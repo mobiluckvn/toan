@@ -97,13 +97,15 @@ export default function App() {
     return <TeacherBoard onExit={signOut} />;
   }
 
-  // Lần đầu đăng nhập: hỏi tên con rồi cho vào ngay
-  if (auth && role === 'learner' && profile && !profile.displayName?.trim()) {
+  // Lần đầu đăng nhập: hỏi tên con rồi cho vào ngay.
+  // Dựa vào cờ profileComplete chứ KHÔNG dựa vào displayName — máy chủ luôn điền sẵn
+  // tên tạm (phần trước @), nên xét theo tên thì màn này không bao giờ hiện.
+  if (auth && role === 'learner' && profile && !profile.profileComplete) {
     return (
       <ProfileSetup
         email={auth.email}
-        onSave={async (d) => { await saveProfile(auth.uid, d); setProfile({ ...profile, ...d }); }}
-        onSkip={() => setProfile({ ...profile, displayName: auth.email })}
+        onSave={async (d) => { await saveProfile(auth.uid, d); setProfile({ ...profile, ...d, profileComplete: true }); }}
+        onSkip={() => setProfile({ ...profile, profileComplete: true })}
       />
     );
   }

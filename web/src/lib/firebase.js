@@ -90,7 +90,8 @@ export async function myProfile(uid) {
 
 export async function saveProfile(uid, { displayName, grade }) {
   if (!db) return;
-  await setDoc(doc(db, COLLECTIONS.users, uid), { displayName, grade }, { merge: true });
+  await setDoc(doc(db, COLLECTIONS.users, uid),
+    { displayName, grade, profileComplete: true }, { merge: true });
 }
 
 /** Sổ học của một tài khoản — chính chủ và giáo viên cùng đọc được */

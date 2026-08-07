@@ -91,6 +91,10 @@ t('email không có tên miền cấp cao bị loại', normalizeEmail('a@b') ==
 const U = buildUserDoc({ uid: 'u1', email: 'An.Nguyen@Mail.vn', now: () => NOW });
 t('tài khoản mới mặc định là học sinh', U.role === 'learner');
 t('chưa đặt tên thì lấy tạm phần trước @', U.displayName === 'an.nguyen');
+t('tài khoản mới CHƯA coi là đã lập hồ sơ',
+  U.profileComplete === false);
+t('có tên thật rồi thì đánh dấu đã lập hồ sơ',
+  buildUserDoc({ uid: 'u1', email: 'a@b.vn', displayName: 'Minh An' }).profileComplete === true);
 t('email lưu dạng đã chuẩn hoá', U.email === 'an.nguyen@mail.vn');
 t('vai trò lạ thì từ chối',
   (() => { try { buildUserDoc({ uid: 'u1', email: 'a@b.vn', role: 'sếp' }); return false; } catch { return true; } })());

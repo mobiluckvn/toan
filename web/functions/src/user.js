@@ -22,9 +22,17 @@ export function buildUserDoc({ uid, email, displayName = '', grade = 5, role = '
   const mail = normalizeEmail(email);
   if (!mail) throw new Error('email không hợp lệ');
   if (!ROLES.includes(role)) throw new Error('vai trò lạ: ' + role);
+  const name = String(displayName || '').trim();
   return {
     uid, email: mail, role, grade,
-    displayName: String(displayName || '').trim() || mail.split('@')[0],
+    // Tên tạm lấy phần trước @ để chỗ nào cũng có cái mà hiện.
+    displayName: name || mail.split('@')[0],
+    /**
+     * Cờ RIÊNG cho biết đã hỏi tên con chưa.
+     * Không suy từ displayName được: máy chủ luôn điền sẵn tên tạm nên trường đó
+     * không bao giờ trống, và màn "Con tên là gì nhỉ?" sẽ không bao giờ hiện ra.
+     */
+    profileComplete: !!name,
     createdAt: now(),
     lastStudiedAt: null,
   };
