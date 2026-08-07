@@ -1,0 +1,651 @@
+{
+ "title": "Nhân chéo dựng cân: n × A = m × B — bớt đĩa đều tay đến khi một phần lộ mặt",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:III.5.2#2"
+  ],
+  "bktUnit": "CASE:III.5.2#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B34",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B34.M1",
+  "next": "DL:KSN5Q1.B34.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B34",
+  "chunks": [
+   "CHUNK:KSN5Q1.B34.S4",
+   "CHUNK:KSN5Q1.B34.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B34.2",
+   "CA:KSN5Q1.B34.3"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B34.2",
+   "TRAP:KSN5Q1.B34.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con dựng được CÂN THĂNG BẰNG khi ba thước gãy: luật nhân chéo \"A = m/n của B\" ⇔ n × A = m × B (kiểm vế bằng một cặp số đẹp trước khi dùng) — gọi phần theo tỉ ĐẦU, dựng cân theo tỉ SAU, rồi BỚT QUẢ CÂN GIỐNG NHAU Ở CẢ HAI ĐĨA đến khi một phần lộ mặt.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
+  "kidText": "Hết thước thì dựng cân: A bằng 3/4 của B nghĩa là 4 lần A bằng 3 lần B. Bớt đều hai đĩa đến khi một phần lộ mặt."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Luật nhân chéo: \"A bằng m/n của B\" ⇔ n × A = m × B (mẫu nhân bên có phân số): truyện = 2/3 SGK ⇔ 3 × truyện = 2 × SGK. CHỐNG LỘN VẾ bằng một cặp số đẹp: 16 và 24 → 3 × 16 = 48 = 2 × 24 ✓."
+   },
+   {
+    "id": "K2",
+    "text": "Kỹ thuật cân: gọi phần theo tỉ ĐẦU (truyện 1 phần, SGK 2 phần) → dựng cân theo tỉ SAU với lượng thêm: 3 × (1 phần + 8) = 2 × (2 phần + 4) → 3 phần + 24 = 4 phần + 8."
+   },
+   {
+    "id": "K3",
+    "text": "Luật cân thiêng liêng: làm gì với đĩa này phải làm Y HỆT với đĩa kia — bớt 3 phần cả hai đĩa: 24 = 1 phần + 8; bớt 8 cả hai: 1 phần = 16 → truyện 16; SGK 32."
+   },
+   {
+    "id": "K4",
+    "text": "Chiều BỚT chạy y hệt chiều thêm: 7 × (3 phần − 6) = 6 × (4 phần − 12) → 21 phần − 42 = 24 phần − 72 → cân dồn: 3 phần = 30 → phần 10."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: XƯỞNG CÂN THĂNG BẰNG. Ba thước gãy — dựng CÂN! Đề: \"truyện = 1/2 SGK; thêm 8 truyện và 4 SGK thì truyện = 2/3 SGK.\" Bước một — gọi phần theo tỉ ĐẦU: truyện MỘT phần, SGK HAI phần. Bước hai — dựng cân theo tỉ SAU bằng luật nhân chéo: truyện-mới bằng hai phần ba SGK-mới ⇔ BA nhân truyện-mới = HAI nhân SGK-mới (thử cặp đẹp 16 và 24: ba nhân mười sáu bằng bốn tám bằng hai nhân hai tư — đúng vế!). Lên cân: 3 × (1 phần + 8) = 2 × (2 phần + 4) — trải ra: 3 phần + 24 = 4 phần + 8. Bước ba — BỚT ĐĨA ĐỀU TAY: nhấc 3 phần khỏi CẢ HAI đĩa — còn 24 = 1 phần + 8; nhấc 8 khỏi cả hai — MỘT PHẦN LỘ MẶT: 16! Truyện mười sáu, SGK ba mươi hai. Cấm bớt lệch: nhấc 3 phần chỉ một đĩa là cân nghiêng — số nói dối ngay!",
+  "canonicalExamples": [
+   {
+    "case": "dựng cân chiều thêm (ca lõi)",
+    "problem": "Lúc đầu số truyện bằng 1/2 số SGK. Mua thêm 8 truyện và 4 SGK thì truyện bằng 2/3 SGK. Tìm số truyện và SGK lúc đầu.",
+    "solution": "Phần theo tỉ đầu: truyện 1, SGK 2. Cân: 3 × (1p + 8) = 2 × (2p + 4) → 3p + 24 = 4p + 8 → bớt đều: 1p = 16 → truyện 16; SGK 32.",
+    "why": "Ca đề A câu 5 — mẫu chuẩn xưởng cân."
+   },
+   {
+    "case": "lượng thêm lệch cả hai (ca biến thể)",
+    "problem": "A bằng 1/3 của B. Thêm 6 vào A và thêm 2 vào B thì A bằng 1/2 của B. Tìm A và B lúc đầu.",
+    "solution": "B = 3p, A = 1p. Cân \"A-mới = 1/2 B-mới\": 2 × (1p + 6) = 3p + 2 → 2p + 12 = 3p + 2 → 1p = 10 → A = 10; B = 30. Thử: 16/32 = 1/2 ✓.",
+    "why": "Ca đề A câu 6 — trap lộn vế rình đây."
+   },
+   {
+    "case": "chiều bớt (ca sư phụ)",
+    "problem": "A bằng 3/4 của B. Bớt 6 ở A và bớt 12 ở B thì A bằng 6/7 của B. Tìm A và B lúc đầu.",
+    "solution": "B = 4p, A = 3p. Cân: 7 × (3p − 6) = 6 × (4p − 12) → 21p − 42 = 24p − 72 → 3p = 30 → p = 10 → A = 30; B = 40. Thử: 24/28 = 6/7 ✓.",
+    "why": "Ca LT8 — chiều bớt cùng luật cân."
+   }
+  ],
+  "numberRange": "Lớp 5: phần ≤ 30; hệ số nhân chéo ≤ 7.",
+  "misconceptions": [
+   {
+    "wrong": "Nhân chéo LỘN VẾ: \"truyện = 2/3 SGK\" viết thành 2 × truyện = 3 × SGK.",
+    "signal": "Bên có phân số lại bị nhân với tử; cặp đẹp thử không khớp.",
+    "fix": "K1 — luật khắc cột: MẪU nhân bên có phân số (n × A = m × B); dựng cân xong THỬ CẶP ĐẸP trước khi bớt đĩa.",
+    "counterExample": "2 × 16 = 32 ≠ 3 × 24 = 72 — cặp đẹp 16/24 tố ngay vế lộn!"
+   },
+   {
+    "wrong": "Bớt đĩa KHÔNG đều tay: từ 3 phần + 24 = 4 phần + 8, bớt 3 phần chỉ bên trái (ra 24 = 4 phần + 8 → phần 4).",
+    "signal": "Phép bớt chỉ xuất hiện một vế.",
+    "fix": "K3 — luật cân thiêng liêng: làm gì với đĩa này phải làm y hệt đĩa kia.",
+    "counterExample": "Phần 4 → truyện 4, SGK 8: thêm 8 & 4 ra 12/12 = 1 ≠ 2/3 — cân nghiêng nói dối!"
+   }
+  ],
+  "vocabulary": [
+   "xưởng cân",
+   "gọi phần theo tỉ đầu",
+   "dựng cân theo tỉ sau",
+   "thử cặp đẹp",
+   "bớt đĩa đều tay"
+  ],
+  "mantra": "DỰNG CÂN — THỬ CẶP ĐẸP; HAI ĐĨA CÙNG BỚT ĐẾN KHI MỘT PHẦN LỘ MẶT!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "3 phần + 24 = 4 phần + 8 → 1 phần = ?",
+    "answerKey": {
+     "value": 16
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B34.M1",
+   "message": "Ôn trạm phân luồng rồi vào xưởng cân nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Ba thước gãy trước đề: \"truyện = 1/2 SGK; thêm 8 truyện và 4 SGK thì truyện = 2/3 SGK.\" Trí Long viết vội: \"truyện bằng 2/3 SGK — tức là 2 nhân truyện bằng 3 nhân SGK!\" Su Kem đưa cặp số đẹp 16 và 24: \"Thử vế trước đã — hai nhân mười sáu có bằng ba nhân hai tư không?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "2 × truyện = 3 × SGK??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để thử cặp đẹp!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Cặp đẹp tố ngay: ba hai khác bảy hai — lộn vế! Luật khắc cột: MẪU nhân bên có phân số — truyện bằng hai phần ba SGK thì BA nhân truyện bằng HAI nhân SGK (ba nhân mười sáu bằng bốn tám bằng hai nhân hai tư — chuẩn!). Giờ dựng cân: gọi phần theo tỉ ĐẦU — truyện một phần, SGK hai phần; cân theo tỉ SAU, trải ra: BA PHẦN CỘNG HAI TƯ bằng BỐN PHẦN CỘNG TÁM!",
+    "display": {
+     "type": "build_scale_interactive",
+     "spec": {
+      "law": "3 × truyện = 2 × SGK (thử 16/24 ✓)",
+      "parts": "truyện 1p · SGK 2p",
+      "scale": "3(1p + 8) = 2(2p + 4) → 3p + 24 = 4p + 8"
+     }
+    },
+    "interaction": {
+     "type": "crosscheck_then_build",
+     "answerKey": {
+      "value": "3p+24=4p+8"
+     },
+     "successMessage": "Vế chuẩn — cân dựng: 3p + 24 = 4p + 8!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "tf",
+     "text": "(Đúng/Sai?) \"A = 2/3 của B\" tương đương với 3 × A = 2 × B.",
+     "answerKey": {
+      "value": true
+     },
+     "wrongFeedback": "Mẫu nhân bên có phân số.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 44,
+    "teaches": [
+     "K3",
+     "K4"
+    ],
+    "narration": "Bớt đĩa ĐỀU TAY: nhấc BA PHẦN khỏi CẢ HAI đĩa — còn hai tư bằng một phần cộng tám; nhấc TÁM khỏi cả hai — một phần lộ mặt: MƯỜI SÁU! Truyện mười sáu, SGK ba hai. Ai nhấc ba phần chỉ MỘT đĩa? Cân nghiêng — ra phần bốn: thêm tám với bốn thành mười hai trên mười hai — bằng nhau chứ đâu phải hai phần ba: số nói dối ngay! Chiều BỚT cùng luật: bảy nhân ngoặc ba phần trừ sáu bằng sáu nhân ngoặc bốn phần trừ mười hai — dồn cân: ba phần bằng ba mươi — phần MƯỜI: A ba mươi, B bốn mươi!",
+    "display": {
+     "type": "counter_example",
+     "cases": [
+      {
+       "input": "bớt đều: −3p cả hai → 24 = 1p + 8 → p = 16",
+       "output": "✓",
+       "valid": true,
+       "reason": "hai đĩa cùng bớt"
+      },
+      {
+       "input": "bớt lệch: −3p một đĩa → p = 4",
+       "output": "✗ 12/12 ≠ 2/3",
+       "valid": false,
+       "reason": "cân nghiêng nói dối"
+      }
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Hai thần chú xưởng cân: dựng cân xong — thử cặp đẹp trước khi bớt đĩa! Hai đĩa cùng bớt — một phần lộ mặt!",
+    "display": {
+     "type": "mantra_card",
+     "text": "THỬ CẶP ĐẸP · HAI ĐĨA CÙNG BỚT!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 87,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Ba thước gãy trước đề: truyện bằng một phần hai SGK; thêm tám truyện và bốn SGK thì truyện bằng hai phần ba SGK. Trí Long viết vội: truyện bằng hai phần ba SGK — tức là hai nhân truyện bằng ba nhân SGK! Su Kem đưa cặp đẹp mười sáu, hai tư: thử vế đã!",
+    "screenText": "2 × truyện = 3 × SGK?? — thử cặp đẹp!",
+    "visual": "Chiếc cân trống chờ dựng; Trí Long viết đẳng thức vội; Su Kem giơ hai thẻ số 16·24, dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Cặp đẹp tố ngay: ba hai khác bảy hai — lộn vế! Luật khắc cột: MẪU nhân bên có phân số — BA nhân truyện bằng HAI nhân SGK — chuẩn! Dựng cân: phần theo tỉ ĐẦU — truyện một, SGK hai; cân theo tỉ SAU, trải ra: BA PHẦN CỘNG HAI TƯ bằng BỐN PHẦN CỘNG TÁM!",
+    "screenText": "3×A = 2×B (16/24 ✓) · cân: 3(1p+8) = 2(2p+4) → 3p+24 = 4p+8",
+    "visual": "Cặp thẻ 16·24 tố vế lộn gạch đỏ rồi vế chuẩn mộc xanh; chiếc cân hai đĩa chất phần và quả cân 24·8 thăng bằng.",
+    "assets": [],
+    "duration": 21
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Bớt đĩa ĐỀU TAY: nhấc BA PHẦN khỏi CẢ HAI đĩa — còn hai tư bằng một phần cộng tám; nhấc TÁM khỏi cả hai — một phần lộ mặt: MƯỜI SÁU! Truyện mười sáu, SGK ba hai. Ai nhấc chỉ MỘT đĩa? Cân nghiêng — ra phần bốn: thử thành mười hai trên mười hai — số nói dối ngay! Chiều BỚT cùng luật: ba phần bằng ba mươi — phần MƯỜI!",
+    "screenText": "−3p cả hai → 24 = 1p+8 → p=16 ✓ · bớt lệch → p=4 ✗ · chiều bớt: p=10",
+    "visual": "Hai tay nhấc phần đều hai đĩa cân giữ thăng bằng; màn bớt lệch cân nghiêng đèn đỏ; ca chiều bớt dồn về 3p=30 mộc xanh.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Hai thần chú xưởng cân: dựng cân xong — thử cặp đẹp trước khi bớt đĩa! Hai đĩa cùng bớt — một phần lộ mặt!",
+    "screenText": "THỬ CẶP ĐẸP · HAI ĐĨA CÙNG BỚT!",
+    "visual": "Thẻ thần chú vàng với icon cân thăng bằng.",
+    "assets": [],
+    "duration": 9
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Xưởng cân của con: truyện bằng một phần hai SGK, thêm tám và bốn thì hai phần ba — dựng cân, tìm hai loại sách! Vào bài luyện ngay!",
+    "screenText": "dựng cân → bớt đều → 1 phần = ?",
+    "visual": "Chiếc cân chờ chất phần; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 11
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Ba nhịp xưởng cân",
+  "problem": "Lúc đầu số truyện bằng 1/2 số SGK. Mua thêm 8 truyện và 4 SGK thì truyện bằng 2/3 SGK. Tìm số truyện và SGK lúc đầu.",
+  "steps": [
+   {
+    "show": "Bước 1 — Gọi phần theo tỉ ĐẦU: truyện = 1 phần; SGK = 2 phần.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "\"truyện = 2/3 SGK\" nhân chéo thành:",
+     "choices": [
+      "3 × truyện = 2 × SGK",
+      "2 × truyện = 3 × SGK",
+      "truyện = SGK"
+     ],
+     "answerKey": {
+      "choice": "3 × truyện = 2 × SGK"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Dựng cân: 3 × (1p + 8) = 2 × (2p + 4) → 3p + 24 = 4p + 8."
+   },
+   {
+    "show": "Bước 3 — Bớt đều: −3p rồi −8 cả hai đĩa → 1p = 16 → truyện 16; SGK 32. Thử: 24/36 = 2/3 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Từ 3p + 24 = 4p + 8, một phần = ?",
+     "answerKey": {
+      "value": 16
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B34.LT2",
+     "text": "\"A bằng 2/3 của B\" — viết đẳng thức nhân chéo, rồi kiểm với cặp A = 16, B = 24.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "đẳng thức",
+        "value": "3 × A = 2 × B"
+       },
+       {
+        "label": "kiểm",
+        "value": "3 × 16 = 48 = 2 × 24"
+       }
+      ]
+     },
+     "hints": [
+      "Mẫu nhân bên có phân số.",
+      "Thử cặp đẹp."
+     ],
+     "solutionNarrative": "3A = 2B (48 = 48 ✓).",
+     "teaches": [
+      "K1"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B34.LT4",
+     "text": "Lúc đầu số truyện bằng 1/2 số SGK. Mua thêm 8 truyện và 4 SGK thì truyện bằng 2/3 SGK. Tìm số truyện và số SGK lúc đầu.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "truyện",
+        "value": 16
+       },
+       {
+        "label": "SGK",
+        "value": 32
+       }
+      ]
+     },
+     "hints": [
+      "Cân: 3(1p + 8) = 2(2p + 4).",
+      "Bớt 3p rồi bớt 8 cả hai đĩa."
+     ],
+     "solutionNarrative": "1p = 16 → 16 & 32 (24/36 = 2/3 ✓).",
+     "teaches": [
+      "K2",
+      "K3"
+     ],
+     "generator": {
+      "template": "A = {m1}/{n1} B; thêm {a} vào A, {b} vào B → {m2}/{n2}. Tìm hai bên.",
+      "constraints": {},
+      "answerRule": "dựng cân nhân chéo → bớt đều"
+     }
+    },
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B34.LT5",
+     "text": "A bằng 1/3 của B. Thêm 6 vào A và thêm 2 vào B thì A bằng 1/2 của B. Tìm A và B lúc đầu.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "A",
+        "value": 10
+       },
+       {
+        "label": "B",
+        "value": 30
+       }
+      ]
+     },
+     "hints": [
+      "Cân: 2 × (1p + 6) = 3p + 2.",
+      "2p + 12 = 3p + 2."
+     ],
+     "solutionNarrative": "1p = 10 → A 10; B 30 (16/32 = 1/2 ✓).",
+     "teaches": [
+      "K2",
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B34.LT8",
+     "text": "A bằng 3/4 của B. Bớt 6 ở A và bớt 12 ở B thì A bằng 6/7 của B. Tìm A và B lúc đầu.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "A",
+        "value": 30
+       },
+       {
+        "label": "B",
+        "value": 40
+       }
+      ]
+     },
+     "hints": [
+      "Cân: 7(3p − 6) = 6(4p − 12).",
+      "21p − 42 = 24p − 72 → 3p = 30."
+     ],
+     "solutionNarrative": "Phần 10 → A 30; B 40 (24/28 = 6/7 ✓).",
+     "teaches": [
+      "K4"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.5.2#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B34.M3",
+   "award": "huy_hieu_xuong_can"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P2"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B34.QZ2",
+    "text": "(Đúng/Sai?) \"A = 2/3 của B\" tương đương với 3 × A = 2 × B.",
+    "answerKey": {
+     "value": true
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B34.QZ3",
+    "text": "Trên cân, muốn bớt 3 phần ở một vế ta phải:",
+    "choices": [
+     "bớt 3 phần ở cả hai vế",
+     "chỉ bớt một vế",
+     "thêm 3 vào vế kia"
+    ],
+    "answerKey": {
+     "choice": "bớt 3 phần ở cả hai vế"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B34.QZ4",
+    "text": "Từ 3 phần + 24 = 4 phần + 8 suy ra 1 phần bằng:",
+    "choices": [
+     "16",
+     "32",
+     "8"
+    ],
+    "answerKey": {
+     "choice": "16"
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Ba thước gãy — dựng cân thế nào?",
+    "back": "(1) Gọi phần theo tỉ ĐẦU (truyện 1p, SGK 2p). (2) Nhân chéo tỉ SAU: A = m/n B ⇔ n×A = m×B — THỬ CẶP ĐẸP chống lộn vế (16/24). (3) Cân 3(1p+8) = 2(2p+4) → 3p+24 = 4p+8 → BỚT ĐỀU HAI ĐĨA → 1p = 16. Chiều bớt cùng luật (3p = 30 → p 10)."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P2",
+   "+7 ngày: câu P4 (chiều bớt)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con dựng cân nhân chéo: n × A = m × B, thử cặp đẹp, bớt đĩa đều tay đến khi một phần lộ mặt. Con đạt {score}/3, {trapResult} câu bẫy.",
+  "homeActivity": "Chơi cân thật (hay tưởng tượng): đặt đề '3 túi + 24 viên = 4 túi + 8 viên' — con nhấc đều hai bên tới khi 1 túi lộ giá.",
+  "watchFor": "Nếu con lộn vế nhân chéo — bắt thử cặp đẹp trước (S1); nếu bớt lệch đĩa — chỉ cân nghiêng (S3)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B34.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "2 × truyện = 3 × SGK??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "truyện bằng 2/3 SGK — tức là 2 nhân truyện bằng 3 nhân SGK!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Thử vế trước đã — hai nhân mười sáu có bằng ba nhân hai tư không?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B34_M2_F1.png",
+   "sha256_16": "5adfff268d58d9f4"
+  },
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+    "wrong": {
+     "head": "CÁCH SAI",
+     "steps": [
+      "bớt lệch: −3p một đĩa → p = 4"
+     ],
+     "result": "12/12 ≠ 2/3"
+    },
+    "right": {
+     "head": "CÁCH ĐÚNG",
+     "steps": [
+      "bớt đều: −3p cả hai → 24 = 1p + 8 → p = 16"
+     ],
+     "result": ""
+    },
+    "verdict": "hai đĩa cùng bớt"
+   },
+   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B34_M2_F2.png",
+   "sha256_16": "464dcf1ec4647a6f"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Luật nhân chéo",
+      "text": "16 và 24 → 3 × 16 = 48 = 2 × 24 .",
+      "tone": "navy"
+     },
+     {
+      "label": "Kỹ thuật cân",
+      "text": "gọi phần theo tỉ ĐẦU (truyện 1 phần",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "DỰNG CÂN — THỬ CẶP ĐẸP; HAI ĐĨA CÙNG BỚT ĐẾN KHI MỘT PHẦN LỘ MẶT!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B34_M2_F3.png",
+   "sha256_16": "be8ca7ae3af799e6"
+  },
+  {
+   "archetype": "balance_scale",
+   "params": {
+    "title": "DỰNG CÂN NHÂN CHÉO: 3 × (1p + 8) = 2 × (2p + 4)",
+    "left": {
+     "text": "3 × (1 phần + 8) = 3p + 24",
+     "weight": 1
+    },
+    "right": {
+     "text": "2 × (2 phần + 4) = 4p + 8",
+     "weight": 1
+    },
+    "verdict": "Bớt đĩa đều tay: 24 − 8 = 1 phần  →  1 phần = 16",
+    "note": "Truyện 16 · SGK 32 — thử: (16+8)/(32+4) = 24/36 = 2/3 ✓"
+   },
+   "caption": "\"A = m/n của B\" ⇔ n × A = m × B — cân hai đĩa rồi bớt đều tay",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B34_M2_F4.png",
+   "sha256_16": "2044a92d4adba0c0"
+  }
+ ]
+}

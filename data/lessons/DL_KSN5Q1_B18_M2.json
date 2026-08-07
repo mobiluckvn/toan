@@ -1,0 +1,610 @@
+{
+ "title": "Neo HIỆU: cộng / bớt cùng số cả hai — tối giản trước, chia phần sau",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:II.1.2#2"
+  ],
+  "bktUnit": "CASE:II.1.2#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B18",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B18.M1",
+  "next": "DL:KSN5Q1.B18.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B18",
+  "chunks": [
+   "CHUNK:KSN5Q1.B18.S4",
+   "CHUNK:KSN5Q1.B18.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B18.2",
+   "CA:KSN5Q1.B18.4"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B18.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải được bài NEO HIỆU: cộng (hoặc bớt) cùng số n vào cả tử và mẫu để được phân số cho trước — dùng hiệu-không-đổi làm thước: TỐI GIẢN đích → hiệu gốc chia số phần chênh của đích = giá một phần → dựng tử mới → suy n; và luôn THỬ LẠI cả giá trị lẫn mỏ neo.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (tối giản đích trước)",
+  "kidText": "Cộng cùng một số vào cả tử và mẫu thì hiệu đứng im. Con dùng chiếc neo đó để tìm ra số phải cộng."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bài \"cộng (bớt) cùng n vào cả tử và mẫu để được phân số p/q\": HIỆU mẫu − tử KHÔNG đổi — đó là cây thước đo cả bài."
+   },
+   {
+    "id": "K2",
+    "text": "Ba nhịp giải: (1) TỐI GIẢN đích p/q; (2) hiệu gốc : (q − p) = giá MỘT PHẦN; (3) tử mới = p × giá phần → n = tử mới − tử gốc (cộng) hoặc tử gốc − tử mới (bớt)."
+   },
+   {
+    "id": "K3",
+    "text": "Vì sao tối giản trước: đích 8/14 chưa tối giản cho \"6 phần chênh\" ảo — bản thật 4/7 chỉ chênh 3 phần; đếm phần trên bản chưa tối giản là chia thước sai ngay từ vạch đầu."
+   },
+   {
+    "id": "K4",
+    "text": "THỬ hai tầng: thay n vào đề tính phân số mới — (a) đúng bằng đích? (b) hiệu mới vẫn bằng hiệu gốc? Cả hai khớp mới ký tên."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: CÂY THƯỚC NEO HIỆU. Bài 34/41 muốn thành 6/7: bè sẽ trôi (cộng n cả hai) nhưng khoảng chênh 41 − 34 = 7 là sợi xích neo KHÔNG ĐỔI. Nhìn đích 6/7: mẫu hơn tử đúng 7 − 6 = MỘT phần — vậy một phần của đích chính là trọn sợi xích 7 đơn vị! Tử mới = 6 phần = 42 → n = 42 − 34 = 8. Nhưng trước khi đo, luật xưởng thước: TỐI GIẢN ĐÍCH — ai cầm đích 8/14 mà đếm '6 phần chênh' là chia thước trên bản phóng to giả: bản thật 4/7 chỉ chênh 3 phần. Tối giản trước — chia phần sau — thử lại cuối: đủ ba nhịp mới đóng mộc.",
+  "canonicalExamples": [
+   {
+    "case": "cộng — chênh 1 phần (ca lõi)",
+    "problem": "Cho 34/41. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng 6/7?",
+    "solution": "Neo hiệu: 41 − 34 = 7. Đích 6/7 (tối giản ✓) chênh 7 − 6 = 1 phần → 1 phần = 7. Tử mới = 6 × 7 = 42 → n = 42 − 34 = 8. Thử: 42/49 = 6/7 ✓, hiệu 7 ✓.",
+    "why": "Ca đề A câu 5 — chênh một phần, thước trọn."
+   },
+   {
+    "case": "bớt — chênh 2 phần (ca đảo chiều)",
+    "problem": "Cho 47/61. Bớt ở cả tử và mẫu cùng số tự nhiên nào để được phân số bằng 3/5?",
+    "solution": "Hiệu 61 − 47 = 14. Đích 3/5 chênh 2 phần → phần = 7. Tử mới = 3 × 7 = 21 → n = 47 − 21 = 26. Thử: 21/35 = 3/5 ✓, hiệu 14 ✓.",
+    "why": "Bớt vẫn một cây thước — n tính bằng tử gốc trừ tử mới."
+   },
+   {
+    "case": "sư phụ đích cần tối giản ngầm (ca ba nhịp)",
+    "problem": "Cho 5/8, cộng cùng n để được 7/10. Và bài sư phụ: 26/39 cộng cùng n để được 3/4.",
+    "solution": "5/8: hiệu 3; đích 7/10 chênh 3 → phần 1 → tử mới 7 → n = 2 (7/10 ✓). Sư phụ: hiệu 13; đích 3/4 chênh 1 → phần 13 → tử mới 39 → n = 13. Thử: 39/52 = 3/4 ✓.",
+    "why": "LT7 + LT9 — thước chia nhiều phần và phần to 13."
+   }
+  ],
+  "numberRange": "Lớp 5: hiệu ≤ 20; đích trong bảng tối giản quen.",
+  "misconceptions": [
+   {
+    "wrong": "Đích 8/14 → hồn nhiên đếm \"chênh 6 phần\" rồi chia hiệu cho 6.",
+    "signal": "Giá một phần lẻ hoặc thử lại không khớp đích.",
+    "fix": "K3 — nghi thức ba nhịp bắt đầu bằng TỐI GIẢN: 8/14 = 4/7 → chênh 3 phần thật.",
+    "counterExample": "Hiệu 6, đích 8/14: chia 6 phần ra phần 1 → tử mới 8 → phân số 8/14 — nhưng đề bản chất đòi 4/7: may trùng giá trị mà hỏng ngay khi hiệu không chia hết!"
+   }
+  ],
+  "vocabulary": [
+   "cây thước neo hiệu",
+   "sợi xích không đổi",
+   "số phần chênh của đích",
+   "giá một phần",
+   "ba nhịp: tối giản — chia phần — thử lại"
+  ],
+  "mantra": "TỐI GIẢN TRƯỚC — CHIA PHẦN SAU — THỬ LẠI CUỐI!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "mcq",
+    "text": "Cộng cùng n vào cả tử và mẫu — đại lượng không đổi? (bài trước)",
+    "choices": [
+     "hiệu",
+     "tổng",
+     "giá trị"
+    ],
+    "answerKey": {
+     "choice": "hiệu"
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B18.M1",
+   "message": "Ôn hai mỏ neo rồi cầm cây thước hiệu nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Đề treo bảng: 34/41 cộng cùng số nào vào cả hai để thành 6/7? Trí Long thử mò: cộng 1… cộng 2… cộng 3… mồ hôi nhễ nhại đến cộng 5. Su Kem cầm thước dây đo khoảng chênh hai thùng: \"7 đơn vị — và nó KHÔNG BAO GIỜ đổi đấy.\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "mò từng số… hay đo một nhát?"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để cầm thước neo!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 48,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Thước neo: hiệu 41 trừ 34 bằng BẢY — cộng bao nhiêu vào cả hai, sợi xích này vẫn 7. Nhìn đích 6/7: mẫu hơn tử đúng MỘT phần — vậy một phần đích ăn trọn 7 đơn vị! Tử mới bằng 6 phần: 42 — n bằng 42 trừ 34: TÁM. Thử hai tầng: 42/49 rút gọn đúng 6/7, hiệu vẫn 7 — đóng mộc!",
+    "display": {
+     "type": "anchor_ruler_interactive",
+     "spec": {
+      "gap": 7,
+      "target": "6/7",
+      "parts": 1,
+      "unit": 7,
+      "newNum": 42,
+      "n": 8,
+      "check": "42/49 = 6/7 ✓ · hiệu 7 ✓"
+     }
+    },
+    "interaction": {
+     "type": "measure_and_solve",
+     "answerKey": {
+      "value": 8
+     },
+     "successMessage": "Một phần = 7 → tử mới 42 → n = 8!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 16,
+    "item": {
+     "format": "num",
+     "text": "Cho 5/8, cộng cùng n để được 7/10. n = ? (hiệu 3, đích chênh 3 phần)",
+     "answerKey": {
+      "value": 2
+     },
+     "wrongFeedback": "Phần = 3 : 3 = 1 → tử mới 7 → n = 7 − 5.",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 42,
+    "teaches": [
+     "K3",
+     "K4"
+    ],
+    "narration": "Cáo Đề phát đề đích 8/14: Trí Long đếm luôn \"chênh 6 phần\"! Khoan — 8/14 là bản PHÓNG TO: tối giản về 4/7 mới là bản thật — chỉ chênh BA phần! Nghi thức ba nhịp khắc bảng: TỐI GIẢN trước — CHIA PHẦN sau — THỬ LẠI cuối. Chiều bớt cũng một thước: 47/61 về 3/5 — hiệu 14, chênh 2 phần, phần 7, tử mới 21, bớt n bằng 26 — thử 21/35 đúng 3/5!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "đích 8/14 → TỐI GIẢN 4/7: chênh 3 (không phải 6!)",
+      "bớt: 47/61 → 3/5: phần 7 → n = 47 − 21 = 26",
+      "ba nhịp: tối giản — chia phần — thử lại"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú cây thước: tối giản trước — chia phần sau — thử lại cuối!",
+    "display": {
+     "type": "mantra_card",
+     "text": "TỐI GIẢN TRƯỚC — CHIA PHẦN SAU!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đề treo bảng: ba tư phần bốn mốt cộng cùng số nào vào cả hai để thành sáu phần bảy? Trí Long thử mò: cộng một… cộng hai… cộng ba… mồ hôi nhễ nhại. Su Kem cầm thước dây đo khoảng chênh hai thùng: BẢY đơn vị — và nó KHÔNG BAO GIỜ đổi đấy!",
+    "screenText": "34/41 + n cả hai = 6/7 — mò hay đo?",
+    "visual": "Bảng đề; Trí Long viết dãy phép thử gạch xóa; Su Kem căng thước dây giữa hai thùng bè, số '7' sáng vàng.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Thước neo: hiệu bốn mốt trừ ba tư bằng BẢY — cộng bao nhiêu vào cả hai, sợi xích vẫn bảy. Nhìn đích sáu phần bảy: mẫu hơn tử đúng MỘT phần — một phần đích ăn trọn BẢY đơn vị! Tử mới bằng sáu phần: BỐN MƯƠI HAI — n bằng bốn hai trừ ba tư: TÁM. Thử: bốn hai phần bốn chín đúng sáu phần bảy, hiệu vẫn bảy — đóng mộc!",
+    "screenText": "hiệu 7 = 1 phần → tử mới 42 → n = 8 ✓",
+    "visual": "Sơ đồ phần: hai băng 6 phần và 7 phần, khoảng chênh 1 phần khớp sợi xích '7'; phép n = 42 − 34 = 8; mộc thử hai tầng.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Cáo Đề phát đề đích tám phần mười bốn: Trí Long đếm luôn chênh SÁU phần! Khoan — đó là bản PHÓNG TO: tối giản về bốn phần bảy mới là bản thật — chỉ chênh BA phần! Ba nhịp khắc bảng: TỐI GIẢN trước — CHIA PHẦN sau — THỬ LẠI cuối. Chiều bớt cùng thước: bốn bảy phần sáu mốt về ba phần năm — phần bảy, bớt HAI SÁU!",
+    "screenText": "8/14 → 4/7: chênh 3! · bớt 26: 21/35 = 3/5 ✓",
+    "visual": "Đích 8/14 co lại thành 4/7 dưới máy ép tối giản; số '6 phần' gạch đỏ thành '3 phần'; ca bớt chạy ba nhịp ba khung màu.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú cây thước: tối giản trước — chia phần sau — thử lại cuối!",
+    "screenText": "TỐI GIẢN — CHIA PHẦN — THỬ LẠI!",
+    "visual": "Thẻ thần chú vàng với icon thước dây ba vạch.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Bài sư phụ chờ con: hai sáu phần ba chín cộng cùng số nào để thành ba phần tư? Nhớ đủ ba nhịp! Vào bài luyện ngay!",
+    "screenText": "26/39 + n = 3/4 → n?",
+    "visual": "Đề sư phụ với thước dây cuộn chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P4",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Đo một nhát thay trăm lần mò",
+  "problem": "Cho 34/41. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng 6/7?",
+  "steps": [
+   {
+    "show": "Bước 1 — Neo hiệu: 41 − 34 = 7 (không đổi). Đích 6/7 đã tối giản ✓, chênh 7 − 6 = 1 phần.",
+    "askBefore": {
+     "format": "num",
+     "text": "Hiệu mẫu trừ tử của 34/41 là?",
+     "answerKey": {
+      "value": 7
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Giá phần: 7 : 1 = 7. Tử mới = 6 × 7 = 42 → n = 42 − 34 = 8."
+   },
+   {
+    "show": "Bước 3 — Thử hai tầng: 42/49 = 6/7 ✓ và hiệu 49 − 42 = 7 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Cho 47/61 bớt cùng n để được 3/5 — n = ?",
+     "answerKey": {
+      "value": 26
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B18.LT4",
+     "text": "Cho phân số 34/41. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng 6/7?",
+     "answerKey": {
+      "value": 8
+     },
+     "hints": [
+      "Neo hiệu 7 — đích chênh mấy phần?",
+      "Tử mới = 6 × 7."
+     ],
+     "solutionNarrative": "Phần = 7 → tử mới 42 → n = 8 (thử 42/49 = 6/7 ✓).",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "generator": {
+      "template": "Cho {a}/{b}, cộng cùng n để được {p}/{q}. Tìm n.",
+      "constraints": {},
+      "answerRule": "(b−a) : (q−p) = phần → n = p×phần − a"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B18.LT5",
+     "text": "Cho phân số 47/61. Bớt ở cả tử và mẫu cùng số tự nhiên nào để được phân số bằng 3/5?",
+     "answerKey": {
+      "value": 26
+     },
+     "hints": [
+      "Hiệu 14; đích 3/5 chênh 2 phần.",
+      "Tử mới 21 → n = 47 − 21."
+     ],
+     "solutionNarrative": "Phần 7 → tử mới 21 → n = 26 (thử 21/35 = 3/5 ✓).",
+     "teaches": [
+      "K2"
+     ]
+    },
+    {
+     "id": "P3",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B18.LT7",
+     "text": "Cho phân số 5/8. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng 7/10?",
+     "answerKey": {
+      "value": 2
+     },
+     "hints": [
+      "Hiệu 3; đích 7/10 chênh 3 phần.",
+      "Phần 1 → tử mới 7."
+     ],
+     "solutionNarrative": "Phần = 1 → tử mới 7 → n = 2 (thử 7/10 ✓).",
+     "teaches": [
+      "K2"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B18.LT9",
+     "text": "Sư phụ Trí Dũng đố: \"Cho phân số 26/39. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng 3/4?\"",
+     "answerKey": {
+      "value": 13
+     },
+     "hints": [
+      "Neo hiệu 13; đích 3/4 chênh 1 phần.",
+      "Tử mới = 3 × 13 = 39."
+     ],
+     "solutionNarrative": "Phần 13 → tử mới 39 → n = 13 (thử 39/52 = 3/4 ✓).",
+     "teaches": [
+      "K2",
+      "K4"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:II.1.2#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B18.M3",
+   "award": "huy_hieu_thuoc_neo_hieu"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B18.QZ4",
+    "text": "Trước khi chia phần, phân số đích phải:",
+    "choices": [
+     "được tối giản",
+     "quy đồng",
+     "giữ nguyên"
+    ],
+    "answerKey": {
+     "choice": "được tối giản"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B18.QZ3",
+    "text": "Cộng cùng n vào cả tử và mẫu, đại lượng KHÔNG đổi là:",
+    "choices": [
+     "hiệu",
+     "tổng",
+     "giá trị phân số"
+    ],
+    "answerKey": {
+     "choice": "hiệu"
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B18.QZ5",
+    "text": "34/41 cộng 8 vào cả hai cho phân số:",
+    "choices": [
+     "42/49",
+     "42/48",
+     "41/49"
+    ],
+    "answerKey": {
+     "choice": "42/49"
+    },
+    "teaches": [
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Bài neo HIỆU giải theo mấy nhịp?",
+    "back": "Ba nhịp: (1) TỐI GIẢN đích; (2) hiệu gốc : số phần chênh = giá phần; (3) tử mới = p × phần → n; THỬ hai tầng (giá trị + hiệu). 34/41 → 6/7: phần 7, tử mới 42, n = 8. TỐI GIẢN TRƯỚC — CHIA PHẦN SAU — THỬ LẠI CUỐI!"
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P4 (sư phụ 26/39)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con giải bài neo hiệu bằng cây thước ba nhịp: tối giản — chia phần — thử lại. Con đạt {score}/3, {trapResult} câu bẫy đích-chưa-tối-giản.",
+  "homeActivity": "Đố đo nhanh: 'từ 5/8 muốn thành 7/10, cộng mấy?' — con đo hiệu 3, chia 3 phần, trả lời 2 kèm phép thử là đạt.",
+  "watchFor": "Nếu con đếm phần trên đích chưa tối giản — đưa ví dụ 8/14 vs 4/7 (S3) cùng con."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B18.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "mò từng số… hay đo một nhát?",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Đề treo bảng: 34/41 cộng cùng số nào vào cả hai để thành 6/7?",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "\"7 đơn vị — và nó KHÔNG BAO GIỜ đổi đấy.\"",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B18_M2_F1.png",
+   "sha256_16": "eedc7a41a5dc0fe2"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con giải được bài NEO HIỆU: cộng (hoặc bớt) cùng số n vào cả tử và mẫu để được phân số cho trước — dùng hiệu-không-đổi làm thước: TỐI GIẢN đích → hiệu gốc chia số phần chênh của đích = giá một phần → dựng tử mới → suy n; và luôn THỬ LẠI cả giá trị lẫn mỏ neo.",
+    "steps": [
+     {
+      "text": "đích 8/14 → TỐI GIẢN 4/7: chênh 3 (không phải 6!)"
+     },
+     {
+      "text": "bớt: 47/61 → 3/5: phần 7 → n = 47 − 21 = 26"
+     },
+     {
+      "text": "ba nhịp: tối giản — chia phần — thử lại"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B18_M2_F2.png",
+   "sha256_16": "1962fa22e0a0a860"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Bài \"cộng (bớt) cùng n vào cả tử và mẫu để được phân số p/q\"",
+      "text": "HIỆU mẫu − tử KHÔNG đổi — đó là cây thước đo cả bài.",
+      "tone": "navy"
+     },
+     {
+      "label": "Ba nhịp giải",
+      "text": "(1) TỐI GIẢN đích p/q",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "TỐI GIẢN TRƯỚC — CHIA PHẦN SAU — THỬ LẠI CUỐI!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B18_M2_F3.png",
+   "sha256_16": "cf8ddecf571f72ad"
+  },
+  {
+   "archetype": "bar_diagram",
+   "params": {
+    "title": "NEO HIỆU: 34/41 CỘNG THÊM BAO NHIÊU ĐỂ THÀNH 6/7?",
+    "bars": [
+     {
+      "name": "tử mới",
+      "units": 6,
+      "label": "6 phần"
+     },
+     {
+      "name": "mẫu mới",
+      "units": 7,
+      "label": "7 phần"
+     }
+    ],
+    "brace": {
+     "text": "hiệu 1 phần = 41 − 34 = 7  →  tử mới = 6 × 7 = 42  →  cộng thêm 8"
+    },
+    "note": "Hiệu KHÔNG ĐỔI khi cộng cùng một số vào cả tử và mẫu — dùng hiệu làm thước đo"
+   },
+   "caption": "Đích 6/7 chênh nhau 1 phần, mà 1 phần đáng đúng 7 đơn vị",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B18_M2_F4.png",
+   "sha256_16": "41474a60d5565216"
+  }
+ ]
+}

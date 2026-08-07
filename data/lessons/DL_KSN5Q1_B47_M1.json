@@ -1,0 +1,641 @@
+{
+ "title": "Đường phụ có giấy khai sinh: 'nối X với Y' — tam giác trong chữ nhật ăn nửa diện tích",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:IV.2.3#1"
+  ],
+  "bktUnit": "CASE:IV.2.3#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B47",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B46.M3",
+  "next": "DL:KSN5Q1.B47.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B47",
+  "chunks": [
+   "CHUNK:KSN5Q1.B47.S3",
+   "CHUNK:KSN5Q1.B47.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B47.1"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B47.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con kẻ ĐƯỜNG PHỤ tạo tam giác trung gian và KHAI BÁO nét kẻ trong bài làm (\"nối A với C\") — luật kỹ sư: mọi nét vẽ thêm phải có giấy khai sinh; nắm định lý con cưng: tam giác có đáy là một cạnh chữ nhật, đỉnh chạy trên cạnh đối diện thì luôn ăn NỬA diện tích chữ nhật (S(DMC) = 96 : 2 = 48 với MỌI vị trí M).",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (kẻ thêm phải khai báo)",
+  "kidText": "Kẻ thêm một nét thì phải khai rõ \"nối A với C\". Tam giác có đáy là cạnh chữ nhật, đỉnh chạy trên cạnh đối diện thì luôn ăn nửa."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Luật kỹ sư: mọi nét vẽ thêm phải có GIẤY KHAI SINH — một dòng khai báo trong bài: \"Nối A với C, ta được hai tam giác ABC và ACD\" — kẻ chay không khai là hình vẽ lậu, mất điểm trình bày."
+   },
+   {
+    "id": "K2",
+    "text": "Đường chéo chữ nhật chia đôi: nối A với C → hai tam giác bằng nhau, mỗi tam giác = 96 : 2 = 48 cm²."
+   },
+   {
+    "id": "K3",
+    "text": "Định lý con cưng — tam giác nửa chữ nhật: đáy là một cạnh (DC), đỉnh M chạy BẤT KỲ trên cạnh đối diện (AB) → cao luôn bằng chiều rộng: S(DMC) = DC × rộng : 2 = 96 : 2 = 48 cm² với MỌI vị trí M — đỉnh trượt ngang, diện tích đứng im."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: GIẤY KHAI SINH CHO NÉT KẺ — VÀ ĐỈNH TRƯỢT TRÊN RAY. Hình chữ nhật ABCD chín mươi sáu xăng-ti-mét vuông. Trí Long kẻ vèo một đường chéo, tính hai tam giác ngon lành — thầy phê: \"đường này ở đâu ra?\" Luật kỹ sư: mọi nét vẽ thêm phải có GIẤY KHAI SINH — một dòng khai báo: \"NỐI A VỚI C\" — rồi mới được dùng: hai tam giác bằng nhau, mỗi tam giác BỐN MƯƠI TÁM! Giờ trò ảo thuật: điểm M chạy trên cạnh AB như hòn bi trên RAY — tam giác DMC đổi dáng liên tục: lúc lệch trái, lúc cân giữa… nhưng diện tích? Đáy DC KHÔNG đổi — đường cao là khoảng cách từ ray AB xuống DC: chính chiều rộng, cũng KHÔNG đổi! S(DMC) bằng chín sáu chia hai — BỐN MƯƠI TÁM với MỌI vị trí M: đỉnh trượt ngang — diện tích đứng im! Định lý con cưng của mọi bài hình phụ: tam giác cắm đáy vào một cạnh chữ nhật, đỉnh chạm cạnh đối diện — ăn đúng NỬA tấm.",
+  "canonicalExamples": [
+   {
+    "case": "khai sinh nét kẻ (ca luật)",
+    "problem": "Hình chữ nhật ABCD có S = 96 cm². Kẻ thêm đường để chia hình thành hai tam giác bằng nhau — trình bày đúng luật.",
+    "solution": "\"Nối A với C, ta được hai tam giác ABC và ACD\" — mỗi tam giác = 96 : 2 = 48 cm².",
+    "why": "Ca LT3 — giấy khai sinh mẫu."
+   },
+   {
+    "case": "đỉnh trượt trên ray (ca con cưng)",
+    "problem": "Hình chữ nhật ABCD có S = 96 cm²; M là điểm bất kỳ trên cạnh AB. Tính S(DMC) — vì sao đáp số không phụ thuộc vị trí M?",
+    "solution": "S(DMC) = DC × rộng : 2 = 96 : 2 = 48 cm² — đáy DC và đường cao (= chiều rộng) đều không đổi khi M trượt trên AB.",
+    "why": "Ca LT1 — đỉnh chạy, S đứng im."
+   },
+   {
+    "case": "mọi E trên DC (ca soi gương)",
+    "problem": "Hình chữ nhật ABCD có S = 120 cm²; E là điểm bất kỳ trên cạnh DC. Chứng tỏ S(AEB) = 60 cm² với mọi vị trí E.",
+    "solution": "S(AEB) = AB × cao : 2 = 120 : 2 = 60 cm² — đáy AB và khoảng cách từ E (trên DC) tới AB không đổi.",
+    "why": "Ca LT7 — cùng định lý, ray đổi cạnh."
+   }
+  ],
+  "numberRange": "Lớp 5: S chữ nhật ≤ 150 cm².",
+  "misconceptions": [
+   {
+    "wrong": "Kẻ vèo đường phụ mà không khai báo — hình vẽ lậu; hoặc tưởng S(DMC) đổi theo vị trí M.",
+    "signal": "Bài làm dùng tam giác chưa được khai sinh; đáp phụ thuộc chỗ đặt M.",
+    "fix": "K1 + K3 — khai báo \"nối X với Y\" trước khi dùng; soi cặp đáy - cao: cả hai đứng im khi M trượt.",
+    "counterExample": "M sát góc A hay chính giữa AB — đáy DC vẫn thế, cao vẫn là chiều rộng: 48 cả hai lần, tự vẽ thử mà xem!"
+   }
+  ],
+  "vocabulary": [
+   "giấy khai sinh nét kẻ",
+   "nối X với Y",
+   "đỉnh trượt trên ray",
+   "định lý con cưng nửa tấm",
+   "hình vẽ lậu"
+  ],
+  "mantra": "KẺ THÊM MỘT NÉT — KHAI SINH MỘT DÒNG!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Ôn B45: tam giác = nửa chữ nhật — chữ nhật 96 thì tam giác nửa tấm = ?",
+    "answerKey": {
+     "value": 48
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B45.M1",
+   "message": "Ôn nửa tấm bánh rồi xin giấy khai sinh nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Trí Long kẻ vèo một đường chéo qua hình chữ nhật, tính hai tam giác ngon lành. Thầy phê đỏ: \"Đường này ở đâu ra?\" Su Kem thì thầm: \"Nét kẻ thêm mà không khai báo — là hình vẽ LẬU đấy!\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "đường chéo… ở đâu ra??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để làm giấy khai sinh!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 42,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Luật kỹ sư: mọi nét vẽ thêm phải có GIẤY KHAI SINH — một dòng khai báo đàng hoàng: \"NỐI A VỚI C, ta được hai tam giác ABC và ACD\"! Có giấy rồi mới được dùng: đường chéo chia chữ nhật thành hai tam giác BẰNG NHAU — mỗi tam giác bằng chín sáu chia hai: BỐN MƯƠI TÁM xăng-ti-mét vuông! Kẻ thêm một nét — khai sinh một dòng: thiếu dòng là mất điểm trình bày dù hình đúng!",
+    "display": {
+     "type": "birth_cert_interactive",
+     "spec": {
+      "declare": "'Nối A với C' — giấy khai sinh",
+      "result": "hai tam giác bằng nhau: 96 : 2 = 48",
+      "law": "kẻ 1 nét — khai 1 dòng"
+     }
+    },
+    "interaction": {
+     "type": "declare_then_use",
+     "answerKey": {
+      "value": 48
+     },
+     "successMessage": "Khai sinh xong — mỗi nửa 48!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "tf",
+     "text": "(Đúng/Sai?) Kẻ thêm đường phụ thì phải khai báo trong bài làm.",
+     "answerKey": {
+      "value": true
+     },
+     "wrongFeedback": "Hình vẽ lậu mất điểm.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 44,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Trò ảo thuật: điểm M chạy trên cạnh AB như hòn bi trên RAY — tam giác DMC đổi dáng liên tục: lệch trái, cân giữa, lệch phải… nhưng diện tích? Soi cặp đáy-cao: đáy DC KHÔNG đổi; đường cao là khoảng cách từ ray AB xuống DC — chính CHIỀU RỘNG, cũng không đổi! S(DMC) bằng chín sáu chia hai: BỐN MƯƠI TÁM với MỌI vị trí M — đỉnh trượt ngang, diện tích đứng im! Soi gương với E trên DC: S(AEB) bằng nửa tấm một trăm hai mươi — SÁU MƯƠI, mọi vị trí E!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "M trượt trên AB: đáy DC im — cao = rộng im",
+      "S(DMC) = 96 : 2 = 48 mọi M",
+      "gương: S(AEB) = 120 : 2 = 60 mọi E"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 12,
+    "narration": "Thần chú kỹ sư: kẻ thêm một nét — khai sinh một dòng!",
+    "display": {
+     "type": "mantra_card",
+     "text": "KẺ 1 NÉT — KHAI 1 DÒNG!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 89,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Trí Long kẻ vèo một đường chéo qua hình chữ nhật, tính hai tam giác ngon lành. Thầy phê đỏ: đường này ở đâu ra? Su Kem thì thầm: nét kẻ thêm mà không khai báo — là hình vẽ LẬU đấy!",
+    "screenText": "đường chéo… ở đâu ra??",
+    "visual": "Bài làm với đường chéo kẻ vụng không lời khai; bút đỏ thầy khoanh tròn; con dấu 'LẬU' đỏ #C0392B.",
+    "assets": [],
+    "duration": 15
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Luật kỹ sư: mọi nét vẽ thêm phải có GIẤY KHAI SINH — một dòng khai báo đàng hoàng: NỐI A VỚI C, ta được hai tam giác ABC và ACD! Có giấy rồi mới được dùng: đường chéo chia chữ nhật thành hai tam giác BẰNG NHAU — mỗi tam giác bằng chín sáu chia hai: BỐN MƯƠI TÁM xăng-ti-mét vuông! Kẻ thêm một nét — khai sinh một dòng: thiếu dòng là mất điểm trình bày dù hình đúng!",
+    "screenText": "'Nối A với C' → 2 tam giác bằng nhau: 96 : 2 = 48",
+    "visual": "Tờ giấy khai sinh vàng đóng dấu cho nét chéo; hai tam giác teal-vàng mỗi nửa 48; dòng khai báo tô sáng.",
+    "assets": [],
+    "duration": 29
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Trò ảo thuật: điểm M chạy trên cạnh AB như hòn bi trên RAY — tam giác DMC đổi dáng liên tục… nhưng diện tích? Soi cặp đáy-cao: đáy DC KHÔNG đổi; đường cao là khoảng cách từ ray AB xuống DC — chính CHIỀU RỘNG, cũng không đổi! S DMC bằng chín sáu chia hai: BỐN MƯƠI TÁM với MỌI vị trí M — đỉnh trượt ngang, diện tích đứng im!",
+    "screenText": "M trượt: đáy DC im · cao = rộng im → S(DMC) = 48 mọi M · S(AEB) = 60 mọi E",
+    "visual": "Hòn bi M trượt trên ray AB kéo ba bóng tam giác chồng mờ cùng nhãn 48; hình gương với E trượt trên DC nhãn 60.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú kỹ sư: kẻ thêm một nét — khai sinh một dòng!",
+    "screenText": "KẺ 1 NÉT — KHAI 1 DÒNG!",
+    "visual": "Thẻ thần chú vàng với icon giấy khai sinh.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Bản vẽ của con: chữ nhật chín sáu — khai sinh đường chéo rồi cho M trượt trên ray, chứng minh diện tích đứng im! Vào bài luyện ngay!",
+    "screenText": "khai sinh → 48 mọi M!",
+    "visual": "Bản vẽ chờ nét kẻ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 11
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Khai sinh rồi cho đỉnh trượt",
+  "problem": "Hình chữ nhật ABCD có S = 96 cm²; M là điểm bất kỳ trên cạnh AB. Tính S(DMC) — vì sao đáp số không phụ thuộc vị trí M?",
+  "steps": [
+   {
+    "show": "Bước 1 — Khai báo: \"Nối D với M và M với C\" — tam giác DMC ra đời hợp lệ.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Nét kẻ thêm cần gì trước khi dùng?",
+     "choices": [
+      "một dòng khai báo",
+      "tẩy sạch",
+      "tô màu"
+     ],
+     "answerKey": {
+      "choice": "một dòng khai báo"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Soi cặp: đáy DC không đổi; cao = khoảng cách AB → DC = chiều rộng, không đổi."
+   },
+   {
+    "show": "Bước 3 — S(DMC) = 96 : 2 = 48 cm² với MỌI vị trí M.",
+    "askAfter": {
+     "format": "num",
+     "text": "Chữ nhật 120, E bất kỳ trên DC → S(AEB) = ?",
+     "answerKey": {
+      "value": 60
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B47.LT3",
+     "text": "Hình chữ nhật ABCD có S = 96 cm². Kẻ thêm đường để chia hình thành hai tam giác bằng nhau — trình bày đúng luật khai báo.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "khai báo",
+        "value": "Nối A với C, ta được hai tam giác ABC và ACD"
+       },
+       {
+        "label": "mỗi tam giác",
+        "value": 48
+       }
+      ]
+     },
+     "hints": [
+      "Giấy khai sinh trước.",
+      "Đường chéo chia đôi."
+     ],
+     "solutionNarrative": "Nối A với C — mỗi nửa 48 cm².",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B47.LT1",
+     "text": "Hình chữ nhật ABCD có S = 96 cm²; M là điểm bất kỳ trên cạnh AB. Tính S(DMC) — vì sao đáp số không phụ thuộc vị trí M?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "S(DMC)",
+        "value": 48
+       },
+       {
+        "label": "vì sao",
+        "value": "đáy DC và đường cao (= chiều rộng) đều không đổi khi M trượt trên AB"
+       }
+      ]
+     },
+     "hints": [
+      "Soi cặp đáy - cao.",
+      "Cao = chiều rộng."
+     ],
+     "solutionNarrative": "48 cm² mọi M.",
+     "teaches": [
+      "K3"
+     ],
+     "generator": {
+      "template": "Chữ nhật S = {S}; M bất kỳ trên AB → S(DMC)?",
+      "constraints": {},
+      "answerRule": "S : 2"
+     }
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B47.LT7",
+     "text": "Hình chữ nhật ABCD có S = 120 cm²; E là điểm bất kỳ trên cạnh DC. Chứng tỏ S(AEB) = 60 cm² với mọi vị trí E.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lập luận",
+        "value": "đáy AB không đổi; khoảng cách từ E (trên DC) tới AB = chiều rộng không đổi → S(AEB) = 120 : 2 = 60 cm²"
+       }
+      ]
+     },
+     "hints": [
+      "Cùng định lý, ray đổi cạnh.",
+      "Nửa tấm."
+     ],
+     "solutionNarrative": "60 cm² mọi E.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:IV.2.3#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B47.M2",
+   "award": "huy_hieu_giay_khai_sinh"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P2"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B47.QZ1",
+    "text": "(Đúng/Sai?) Kẻ thêm đường phụ thì phải khai báo trong bài làm.",
+    "answerKey": {
+     "value": true
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "num",
+    "text": "Chữ nhật 96, M bất kỳ trên AB → S(DMC) = ?",
+    "answerKey": {
+     "value": 48
+    },
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "Chữ nhật 120, E bất kỳ trên DC → S(AEB) = ?",
+    "answerKey": {
+     "value": 60
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Nét kẻ thêm cần gì? Đỉnh trượt trên cạnh đối diện thì S sao?",
+    "back": "GIẤY KHAI SINH: 'Nối A với C' — kẻ chay là hình vẽ lậu, mất điểm. Định lý con cưng: tam giác đáy = 1 cạnh chữ nhật, đỉnh chạy cạnh đối diện → S = NỬA tấm mọi vị trí (DMC = 96:2 = 48; AEB = 120:2 = 60) — đáy im, cao = chiều rộng im."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P2",
+   "+7 ngày: câu P3 (chứng tỏ)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học luật khai-sinh-nét-kẻ và định lý tam-giác-nửa-chữ-nhật với đỉnh trượt. Con đạt {score}/3, {trapResult} câu bẫy vẽ-lậu.",
+  "homeActivity": "Vẽ chữ nhật, cho con di ngón tay dọc cạnh trên làm 'đỉnh M' — hỏi 'tam giác đổi dáng mà diện tích có đổi không?'",
+  "watchFor": "Nếu con kẻ đường không khai — đóng vai thầy hỏi 'đường này ở đâu ra?' (S1)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B47.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "đường chéo… ở đâu ra??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Trí Long kẻ vèo một đường chéo qua hình chữ nhật, tính hai tam giác ngon lành.",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "\"Nét kẻ thêm mà không khai báo — là hình vẽ LẬU đấy!\"",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B47_M1_F1.png",
+   "sha256_16": "1ce37cf1626d72a8"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con kẻ ĐƯỜNG PHỤ tạo tam giác trung gian và KHAI BÁO nét kẻ trong bài làm (\"nối A với C\") — luật kỹ sư: mọi nét vẽ thêm phải có giấy khai sinh; nắm định lý con cưng: tam giác có đáy là một cạnh chữ nhật, đỉnh chạy trên cạnh đối diện thì luôn ăn NỬA diện tích chữ nhật (S(DMC) = 96 : 2 = 48 với MỌI vị trí M).",
+    "steps": [
+     {
+      "text": "M trượt trên AB: đáy DC im — cao = rộng im"
+     },
+     {
+      "text": "S(DMC) = 96 : 2 = 48 mọi M"
+     },
+     {
+      "text": "gương: S(AEB) = 120 : 2 = 60 mọi E"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B47_M1_F2.png",
+   "sha256_16": "c5182855cd8a7039"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Luật kỹ sư",
+      "text": "mọi nét vẽ thêm phải có GIẤY KHAI SINH",
+      "tone": "navy"
+     },
+     {
+      "label": "Đường chéo chữ nhật chia đôi",
+      "text": "nối A với C → hai tam giác bằng nhau, mỗi tam giác = 96 : 2 = 48 cm².",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "KẺ THÊM MỘT NÉT — KHAI SINH MỘT DÒNG!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B47_M1_F3.png",
+   "sha256_16": "b8710444a7947c3c"
+  },
+  {
+   "archetype": "geo_shape",
+   "params": {
+    "title": "ĐỈNH TRƯỢT TRÊN RAY — DIỆN TÍCH KHÔNG ĐỔI",
+    "points": {
+     "A": [
+      0,
+      6
+     ],
+     "B": [
+      12,
+      6
+     ],
+     "C": [
+      12,
+      0
+     ],
+     "D": [
+      0,
+      0
+     ],
+     "M": [
+      4,
+      6
+     ],
+     "M2": [
+      9,
+      6
+     ]
+    },
+    "shapes": [
+     {
+      "pts": [
+       "A",
+       "B",
+       "C",
+       "D"
+      ],
+      "fill": "none"
+     },
+     {
+      "pts": [
+       "D",
+       "M",
+       "C"
+      ],
+      "fill": "teal",
+      "label": "S(DMC) = 48"
+     }
+    ],
+    "segments": [
+     {
+      "from": "D",
+      "to": "M2",
+      "dashed": true,
+      "color": "#C0392B"
+     },
+     {
+      "from": "M2",
+      "to": "C",
+      "dashed": true,
+      "color": "#C0392B"
+     }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "M"
+    ],
+    "formula": "S(DMC) = 96 : 2 = 48 cm²  —  M ở ĐÂU trên AB cũng vậy",
+    "note": "Luật kỹ sư: mọi nét vẽ thêm phải KHAI BÁO — \"nối A với C, ta được hai tam giác bằng nhau\""
+   },
+   "caption": "Đáy DC và đường cao (= chiều rộng) đều không đổi khi M trượt",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B47_M1_F4.png",
+   "sha256_16": "932f1f99b4fb70db"
+  }
+ ]
+}

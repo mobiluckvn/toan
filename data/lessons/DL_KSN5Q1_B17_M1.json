@@ -1,0 +1,653 @@
+{
+ "title": "Hai luật ngược chiều cùng mẫu / cùng tử & so thập phân từng hàng",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:II.1.1#1"
+  ],
+  "bktUnit": "CASE:II.1.1#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B17",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B16.M3",
+  "next": "DL:KSN5Q1.B17.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B17",
+  "chunks": [
+   "CHUNK:KSN5Q1.B17.S3",
+   "CHUNK:KSN5Q1.B17.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B17.1"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B17.1",
+   "TRAP:KSN5Q1.B17.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con dùng thạo HAI LUẬT NGƯỢC CHIỀU: cùng MẪU — tử lớn thì lớn; cùng TỬ — mẫu lớn thì BÉ (chia càng nhiều phần, lát càng mỏng); và so số thập phân theo TỪNG HÀNG từ trái sang — không đếm độ dài đuôi (0,9 > 0,85).",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
+  "kidText": "Cùng mẫu thì tử lớn là lớn. Cùng tử thì mẫu lớn lại BÉ, vì chia càng nhiều phần lát càng mỏng. So thập phân thì so từng hàng từ trái."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Cùng MẪU (bánh cắt cùng cỡ lát): tử lớn hơn — lấy nhiều lát hơn — thì LỚN hơn: 3/7 < 5/7."
+   },
+   {
+    "id": "K2",
+    "text": "Cùng TỬ (lấy cùng số lát): mẫu lớn hơn — bánh bị chia thành nhiều phần hơn, lát MỎNG hơn — thì BÉ hơn: 2/5 > 2/7. Hai luật NGƯỢC CHIỀU nhau — soi chữ \"cùng\" trước khi phán."
+   },
+   {
+    "id": "K3",
+    "text": "Số thập phân so TỪNG HÀNG từ trái sang: phần nguyên trước, rồi phần mười, phần trăm… Hàng nào phân thắng bại thì dừng: 0,9 > 0,85 vì hàng phần mười 9 > 8 — tuyệt đối không so \"85 với 9\" theo độ dài đuôi."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: TIỆM BÁNH HAI QUẦY. Quầy CÙNG MẪU: hai chiếc bánh cắt cùng cỡ lát bảy phần — ai cầm 5 lát thắng ai cầm 3 lát: tử lớn thì lớn, dễ! Quầy CÙNG TỬ mới hiểm: hai bạn cùng lấy 2 lát, nhưng bánh của bạn A chia 5 phần còn bánh bạn B chia 7 phần — lát bánh chia-7 MỎNG hơn hẳn: mẫu càng lớn, lát càng mỏng, phân số càng BÉ! Còn cuộc thi thập phân là ĐẤU TỪNG HÀNG như đấu cờ người: hàng phần mười đấu trước — 0,9 tung quân 9, 0,85 tung quân 8 — 9 thắng 8, TRẬN KẾT THÚC, mấy quân phía sau khỏi ra sân. Kẻ đếm độ dài đuôi \"85 to hơn 9\" là thua từ vòng gửi xe.",
+  "canonicalExamples": [
+   {
+    "case": "cùng mẫu (ca thuận)",
+    "problem": "So sánh: 3/7 và 5/7.",
+    "solution": "Cùng mẫu 7 — cùng cỡ lát: 3 lát < 5 lát → 3/7 < 5/7.",
+    "why": "Ca K1 — luật thuận làm nền."
+   },
+   {
+    "case": "cùng tử (ca ngược chiều)",
+    "problem": "So sánh: 2/5 và 2/7.",
+    "solution": "Cùng tử 2 — cùng số lát nhưng bánh chia 7 lát mỏng hơn bánh chia 5: 2/5 > 2/7.",
+    "why": "Ca đinh bẫy CĐ-17.2 — chiều đảo so với luật cùng mẫu."
+   },
+   {
+    "case": "thập phân từng hàng (ca bẫy)",
+    "problem": "So sánh: 0,9 và 0,85.",
+    "solution": "Hàng phần mười: 9 > 8 — trận kết thúc: 0,9 > 0,85. (Đuôi \"85\" dài hơn \"9\" không có nghĩa gì!)",
+    "why": "Ca đinh bẫy CĐ-17.1 — đề A câu 2."
+   }
+  ],
+  "numberRange": "Lớp 5: mẫu ≤ 100; thập phân ≤ 3 chữ số phần thập phân.",
+  "misconceptions": [
+   {
+    "wrong": "So 0,9 với 0,85 kiểu \"85 to hơn 9 nên 0,85 lớn hơn\" — đếm độ dài đuôi.",
+    "signal": "Kết luận số có đuôi dài hơn là lớn hơn.",
+    "fix": "K3 — đấu từng hàng từ trái: viết thẳng cột 0,90 và 0,85; hàng phần mười 9 > 8 — xong trận.",
+    "counterExample": "0,9 = 0,90 — chín mươi phần trăm so tám lăm phần trăm: 90 > 85 rõ ràng!"
+   },
+   {
+    "wrong": "Cùng tử mà áp luật cùng mẫu: \"7 to hơn 5 nên 2/7 > 2/5\".",
+    "signal": "Phán mẫu lớn thì thắng khi tử bằng nhau.",
+    "fix": "K2 — dựng chiếc bánh: cùng lấy 2 lát, bánh chia 7 lát mỏng hơn; chia càng nhiều phần — lát càng mỏng.",
+    "counterExample": "Nửa bánh (1/2) so một phần trăm bánh (1/100): mẫu 100 to đùng mà bé tí!"
+   }
+  ],
+  "vocabulary": [
+   "tiệm bánh hai quầy",
+   "cùng cỡ lát / cùng số lát",
+   "lát mỏng dần theo mẫu",
+   "đấu từng hàng từ trái",
+   "thua từ vòng gửi xe"
+  ],
+  "mantra": "CHIA CÀNG NHIỀU PHẦN — LÁT CÀNG MỎNG; SO TỪNG HÀNG TỪ TRÁI!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "mcq",
+    "text": "Chiếc bánh chia 8 phần bằng nhau, mỗi lát là:",
+    "choices": [
+     "1/8 chiếc bánh",
+     "8 chiếc bánh",
+     "1/2 chiếc bánh"
+    ],
+    "answerKey": {
+     "choice": "1/8 chiếc bánh"
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "ôn khái niệm phân số (hạt mầm)",
+   "message": "Ôn lát bánh phân số rồi vào tiệm hai quầy nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Tiệm bánh mở đề kép. Đề một: 2/5 với 2/7 — Trí Long phán liền: \"7 to hơn 5, thắng!\" Đề hai: 0,9 với 0,85 — \"85 to hơn 9, cũng thắng!\" Su Kem bưng ra hai chiếc bánh và một bàn cờ…",
+    "display": {
+     "type": "story_panel",
+     "caption": "2/7 thắng? · 0,85 thắng?"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để cắt bánh!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Quầy cùng mẫu: hai bánh cùng cắt 7 lát — 5 lát thắng 3 lát, tử lớn thì lớn. Quầy cùng tử: cả hai cùng lấy HAI lát, nhưng bánh chia 5 với bánh chia 7 — con đặt hai lát cạnh nhau xem: lát chia-7 mỏng dính! Mẫu càng lớn, lát càng mỏng: 2/5 LỚN hơn 2/7. Hai luật ngược chiều — soi chữ CÙNG trước khi phán!",
+    "display": {
+     "type": "cake_compare_interactive",
+     "spec": {
+      "sameDenom": [
+       "3/7",
+       "5/7"
+      ],
+      "sameNumer": {
+       "a": "2/5",
+       "b": "2/7",
+       "visual": "lát 1/7 mỏng hơn lát 1/5"
+      }
+     }
+    },
+    "interaction": {
+     "type": "overlay_slices",
+     "answerKey": {
+      "value": "2/5 > 2/7"
+     },
+     "successMessage": "Chia càng nhiều phần — lát càng mỏng: 2/5 > 2/7!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "So sánh: 3/7 và 5/7.",
+     "choices": [
+      "3/7 < 5/7",
+      "3/7 > 5/7",
+      "bằng nhau"
+     ],
+     "answerKey": {
+      "choice": "3/7 < 5/7"
+     },
+     "wrongFeedback": "Cùng mẫu — cùng cỡ lát: 3 lát < 5 lát.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 40,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Bàn cờ thập phân: 0,9 đấu 0,85 — ĐẤU TỪNG HÀNG từ trái! Viết thẳng cột: 0,90 và 0,85. Hàng phần mười ra quân trước: 9 đấu 8 — 9 thắng, TRẬN KẾT THÚC, quân số 5 phía sau khỏi ra sân! 0,9 lớn hơn 0,85. Còn phép đếm đuôi \"85 to hơn 9\"? Đổi cả hai về phần trăm mà xem: chín mươi so tám lăm — thua từ vòng gửi xe!",
+    "display": {
+     "type": "counter_example",
+     "cases": [
+      {
+       "input": "\"85 dài hơn 9\" → 0,85 thắng",
+       "output": "✗",
+       "valid": false,
+       "reason": "đếm độ dài đuôi"
+      },
+      {
+       "input": "hàng phần mười: 9 > 8 → 0,9 thắng",
+       "output": "✓",
+       "valid": true,
+       "reason": "0,90 vs 0,85: 90 > 85"
+      }
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Hai thần chú tiệm bánh: chia càng nhiều phần — lát càng mỏng! So từng hàng từ trái — không đếm độ dài đuôi!",
+    "display": {
+     "type": "mantra_card",
+     "text": "LÁT CÀNG MỎNG · SO TỪNG HÀNG TỪ TRÁI!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 86,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Tiệm bánh mở đề kép. Đề một: hai phần năm với hai phần bảy — Trí Long phán liền: bảy to hơn năm, thắng! Đề hai: không phẩy chín với không phẩy tám lăm — tám lăm to hơn chín, cũng thắng! Su Kem bưng ra hai chiếc bánh và một bàn cờ…",
+    "screenText": "2/7 thắng? · 0,85 thắng?",
+    "visual": "Tiệm bánh với hai đề treo bảng; Trí Long hai tay hai bảng phán; Su Kem bê khay bánh và bàn cờ, dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 19
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Quầy cùng mẫu: hai bánh cùng cắt bảy lát — năm lát thắng ba lát, tử lớn thì lớn. Quầy cùng tử: cả hai cùng lấy HAI lát, nhưng bánh chia năm với bánh chia bảy — đặt hai lát cạnh nhau xem: lát chia-bảy MỎNG DÍNH! Mẫu càng lớn, lát càng mỏng: hai phần năm LỚN hơn hai phần bảy!",
+    "screenText": "cùng mẫu: tử lớn → lớn · cùng tử: mẫu lớn → BÉ",
+    "visual": "Hai quầy bánh: quầy trái hai bánh 7 lát tô 3 và 5 lát; quầy phải hai lát bánh chồng lên nhau — lát 1/5 dày, lát 1/7 mỏng viền teal #1FC3A6.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Bàn cờ thập phân: không phẩy chín đấu không phẩy tám lăm — ĐẤU TỪNG HÀNG từ trái! Viết thẳng cột: không phẩy chín mươi và không phẩy tám lăm. Hàng phần mười ra quân trước: chín đấu tám — chín thắng, TRẬN KẾT THÚC! Còn phép đếm đuôi? Đổi về phần trăm mà xem: chín mươi so tám lăm — thua từ vòng gửi xe!",
+    "screenText": "0,90 vs 0,85 — hàng phần mười: 9 > 8 → xong trận!",
+    "visual": "Bàn cờ với hai hàng quân số thẳng cột; quân 9 hạ quân 8 ở cột phần mười, các quân sau mờ đi; bảng '85 > 9' gạch chéo đỏ.",
+    "assets": [],
+    "duration": 24
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Hai thần chú tiệm bánh: chia càng nhiều phần — lát càng mỏng! So từng hàng từ trái — không đếm độ dài đuôi!",
+    "screenText": "LÁT CÀNG MỎNG · SO TỪNG HÀNG!",
+    "visual": "Thẻ thần chú vàng với icon lát bánh và bàn cờ.",
+    "assets": [],
+    "duration": 9
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Ba đề tiệm bánh chờ con: ba phần bảy với năm phần bảy; hai phần năm với hai phần bảy; không phẩy chín với không phẩy tám lăm! Vào bài luyện ngay!",
+    "screenText": "3/7 ? 5/7 · 2/5 ? 2/7 · 0,9 ? 0,85",
+    "visual": "Ba tấm đề xếp quầy; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 12
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Hai quầy một bàn cờ",
+  "problem": "So sánh: (a) 2/5 và 2/7; (b) 0,9 và 0,85.",
+  "steps": [
+   {
+    "show": "Bước 1 — Câu (a): soi chữ CÙNG: cùng TỬ 2 → luật lát mỏng: mẫu 7 lớn hơn → 2/7 BÉ hơn → 2/5 > 2/7.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Cùng tử thì mẫu lớn hơn sẽ:",
+     "choices": [
+      "bé hơn",
+      "lớn hơn",
+      "bằng nhau"
+     ],
+     "answerKey": {
+      "choice": "bé hơn"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Câu (b): viết thẳng cột 0,90 và 0,85; đấu hàng phần mười: 9 > 8."
+   },
+   {
+    "show": "Bước 3 — Kết luận: 0,9 > 0,85 — trận kết thúc ngay hàng đầu tiên phân thắng bại.",
+    "askAfter": {
+     "format": "mcq",
+     "text": "So sánh: 0,7 và 0,68.",
+     "choices": [
+      "0,7 > 0,68",
+      "0,7 < 0,68",
+      "bằng nhau"
+     ],
+     "answerKey": {
+      "choice": "0,7 > 0,68"
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mcq",
+     "sourceItem": "ITEM:KSN5Q1.B17.LT1",
+     "text": "So sánh: 3/7 và 5/7.",
+     "choices": [
+      "3/7 < 5/7",
+      "3/7 > 5/7",
+      "bằng nhau"
+     ],
+     "answerKey": {
+      "choice": "3/7 < 5/7"
+     },
+     "hints": [
+      "Cùng mẫu — cùng cỡ lát.",
+      "3 lát so 5 lát."
+     ],
+     "solutionNarrative": "Cùng mẫu: tử bé hơn thì bé hơn — 3/7 < 5/7.",
+     "teaches": [
+      "K1"
+     ],
+     "generator": {
+      "template": "So sánh {a}/{m} và {b}/{m} (cùng mẫu).",
+      "constraints": {
+       "m": "≤ 100"
+      },
+      "answerRule": "so tử"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mcq",
+     "sourceItem": "ITEM:KSN5Q1.B17.LT2",
+     "text": "So sánh: 2/5 và 2/7.",
+     "choices": [
+      "2/5 > 2/7",
+      "2/5 < 2/7",
+      "bằng nhau"
+     ],
+     "answerKey": {
+      "choice": "2/5 > 2/7"
+     },
+     "hints": [
+      "Cùng TỬ — soi luật nào?",
+      "Bánh chia 7: lát mỏng hơn."
+     ],
+     "solutionNarrative": "Cùng tử, mẫu lớn hơn thì bé hơn: 2/5 > 2/7.",
+     "teaches": [
+      "K2"
+     ],
+     "generator": {
+      "template": "So sánh {t}/{a} và {t}/{b} (cùng tử).",
+      "constraints": {},
+      "answerRule": "mẫu lớn → bé hơn"
+     }
+    },
+    {
+     "id": "P3",
+     "format": "mcq",
+     "sourceItem": "ITEM:KSN5Q1.B17.LT3",
+     "text": "So sánh: 0,9 và 0,85.",
+     "choices": [
+      "0,9 > 0,85",
+      "0,9 < 0,85",
+      "bằng nhau"
+     ],
+     "answerKey": {
+      "choice": "0,9 > 0,85"
+     },
+     "hints": [
+      "Đấu hàng phần mười trước.",
+      "0,9 = 0,90."
+     ],
+     "solutionNarrative": "Hàng phần mười 9 > 8 → 0,9 > 0,85.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "mcq",
+     "text": "So sánh: 0,123 và 0,2.",
+     "choices": [
+      "0,123 < 0,2",
+      "0,123 > 0,2",
+      "bằng nhau"
+     ],
+     "answerKey": {
+      "choice": "0,123 < 0,2"
+     },
+     "hints": [
+      "Đuôi dài không có nghĩa!",
+      "Hàng phần mười: 1 so 2."
+     ],
+     "solutionNarrative": "Hàng phần mười 1 < 2 → 0,123 < 0,2 — đuôi ba chữ số vẫn thua.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
+  "onPass": {
+   "updateBKT": [
+    "CASE:II.1.1#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B17.M2",
+   "award": "huy_hieu_tiem_banh_hai_quay"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P2"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B17.QZ1",
+    "text": "(Đúng/Sai?) Hai phân số cùng tử, phân số nào có mẫu lớn hơn thì lớn hơn.",
+    "answerKey": {
+     "value": false
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B17.QZ2",
+    "text": "(Đúng/Sai?) 0,9 > 0,85.",
+    "answerKey": {
+     "value": true
+    },
+    "mustPass": true,
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mcq",
+    "text": "So sánh: 4/9 và 7/9.",
+    "choices": [
+     "4/9 < 7/9",
+     "4/9 > 7/9",
+     "bằng nhau"
+    ],
+    "answerKey": {
+     "choice": "4/9 < 7/9"
+    },
+    "teaches": [
+     "K1"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Hai luật cùng mẫu / cùng tử? So thập phân theo gì?",
+    "back": "Cùng MẪU: tử lớn → lớn. Cùng TỬ: mẫu lớn → BÉ (chia càng nhiều phần — lát càng mỏng). Thập phân: so TỪNG HÀNG từ trái (0,9 > 0,85 vì 9 > 8 hàng phần mười) — không đếm độ dài đuôi!"
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P2",
+   "+7 ngày: câu P4 (đuôi dài vẫn thua)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học hai luật so sánh ngược chiều (cùng mẫu / cùng tử) và so thập phân từng hàng. Con đạt {score}/3, {trapResult} câu bẫy.",
+  "homeActivity": "Cắt hai quả cam: một quả 4 múi, một quả 8 múi — cho con cầm mỗi tay một múi và tự nói 'chia càng nhiều phần, lát càng mỏng'.",
+  "watchFor": "Nếu con so 0,9 với 0,85 kiểu đếm đuôi — viết thẳng cột 0,90 / 0,85 (S3) cùng con."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B17.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "2/7 thắng? · 0,85 thắng?",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Tiệm bánh mở đề kép.",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B17_M1_F1.png",
+   "sha256_16": "03ad9758acbbf1b3"
+  },
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+    "wrong": {
+     "head": "CÁCH SAI",
+     "steps": [
+      "\"85 dài hơn 9\" → 0,85 thắng"
+     ],
+     "result": ""
+    },
+    "right": {
+     "head": "CÁCH ĐÚNG",
+     "steps": [
+      "hàng phần mười: 9 > 8 → 0,9 thắng"
+     ],
+     "result": ""
+    },
+    "verdict": "0,90 vs 0,85: 90 > 85"
+   },
+   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B17_M1_F2.png",
+   "sha256_16": "fb2ff28b734a8898"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Cùng MẪU (bánh cắt cùng cỡ lát)",
+      "text": "tử lớn hơn — lấy nhiều lát hơn — thì LỚN hơn: 3/7 < 5/7.",
+      "tone": "navy"
+     },
+     {
+      "label": "Cùng TỬ (lấy cùng số lát)",
+      "text": "mẫu lớn hơn — bánh bị chia thành nhiều phần hơn, lát MỎNG hơn — thì BÉ hơn: 2/5 > 2/7. Hai luật NGƯỢC CHIỀU nhau — soi chữ \"cùng\" trước khi phán.",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "CHIA CÀNG NHIỀU PHẦN — LÁT CÀNG MỎNG; SO TỪNG HÀNG TỪ TRÁI!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B17_M1_F3.png",
+   "sha256_16": "5261a3eef33470d2"
+  },
+  {
+   "archetype": "fraction_split",
+   "params": {
+    "title": "CÙNG TỬ 2 — MẪU LỚN HƠN THÌ PHÂN SỐ BÉ HƠN",
+    "shapes": [
+     {
+      "parts": 5,
+      "shaded": 2,
+      "label": "2/5 — lát dày",
+      "kind": "circle"
+     },
+     {
+      "parts": 7,
+      "shaded": 2,
+      "label": "2/7 — lát mỏng",
+      "kind": "circle"
+     }
+    ],
+    "note": "Cùng 2 lát nhưng bánh chia 7 phần thì mỗi lát mỏng hơn → 2/5 > 2/7"
+   },
+   "caption": "Hai luật ngược chiều: cùng mẫu thì tử lớn hơn là lớn · cùng tử thì mẫu lớn hơn lại BÉ",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B17_M1_F4.png",
+   "sha256_16": "ed81bfef009ad2ce"
+  }
+ ]
+}

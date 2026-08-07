@@ -1,0 +1,569 @@
+{
+ "title": "Bằng TBC cả nhóm: chiếc cân đứng im",
+ "grade": 5,
+ "durationMinutes": 7,
+ "skills": {
+  "primary": [
+   "CASE:III.1.2#2"
+  ],
+  "bktUnit": "CASE:III.1.2#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B22",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B22.M1",
+  "next": "DL:KSN5Q1.B22.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B22",
+  "chunks": [
+   "CHUNK:KSN5Q1.B22.S4",
+   "CHUNK:KSN5Q1.B22.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B22.1"
+  ],
+  "traps": []
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con xử gọn ca \"số mới góp ĐÚNG BẰNG TBC cả nhóm\": người mới đứng đúng điểm cân — cân ĐỨNG IM, TBC không đổi, số mới = TBC cũ — không cần tính gì thêm; và hiểu vì sao qua luật bù trừ (người mới lệch 0).",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (cân đứng im)",
+  "kidText": "Bạn mới góp đúng bằng mức trung bình thì cân đứng im — mức trung bình không đổi, khỏi phải tính gì thêm."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Số mới góp đúng bằng TBC CẢ NHÓM (tính cả nó): người mới đứng ĐÚNG điểm cân — TBC không đổi; số mới = TBC cũ."
+   },
+   {
+    "id": "K2",
+    "text": "Vì sao (luật bù trừ Bài 21): người mới lệch 0 quanh điểm cân — không kéo ai lên, không dìm ai xuống; tổng tăng đúng một suất TBC, số người tăng 1 — phép chia cho lại đúng TBC cũ."
+   },
+   {
+    "id": "K3",
+    "text": "Nhận diện nhanh: đọc thấy \"góp bằng / đúng bằng mức trung bình của cả nhóm\" — trả lời ngay bằng TBC cũ, dành thời gian cho câu khó."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: NGƯỜI MỚI ĐỨNG ĐÚNG ĐIỂM CÂN. Nhóm ba bạn TBC 24 viên — bàn cân thăng bằng tại vạch 24. Dũng bước vào và góp ĐÚNG BẰNG mức trung bình của cả bốn bạn: Dũng đặt chân ngay TRÊN VẠCH CÂN — không nghiêng trái, không nghiêng phải, lệch bằng KHÔNG! Cân đứng im: TBC vẫn 24, và Dũng góp đúng 24 viên. Kiểm bằng máy Bài trước: phần hơn k = 0, chia kiểu gì cũng ra 0 — cân nhích 0 nấc. Đây là ca TẶNG ĐIỂM của mọi đề thi: nhận diện đúng là trả lời trong ba giây.",
+  "canonicalExamples": [
+   {
+    "case": "ca lõi",
+    "problem": "TBC số kẹo của ba bạn An, Bình, Cường là 24 viên. Bạn Dũng vào nhóm và góp ĐÚNG BẰNG mức trung bình của cả bốn bạn. Hỏi Dũng góp bao nhiêu viên?",
+    "solution": "Góp bằng TBC cả nhóm → cân đứng im → Dũng góp đúng 24 viên. (Thử: (72 + 24) : 4 = 24 ✓.)",
+    "why": "Ca đề A câu 7 — ca tặng điểm."
+   },
+   {
+    "case": "nền tảng hai chiều (ca khởi động)",
+    "problem": "(a) Tính TBC của 22 ; 31 ; 25. (b) TBC của bốn số là 29 — tính tổng bốn số.",
+    "solution": "(a) 78 : 3 = 26. (b) 29 × 4 = 116.",
+    "why": "LT1 + LT2 — hai viên gạch nạp máy cho cả bài."
+   }
+  ],
+  "numberRange": "Lớp 5: nhóm 3–5 phần tử.",
+  "misconceptions": [
+   {
+    "wrong": "Gặp ca \"bằng TBC\" vẫn lôi máy chia-phần-hơn ra quay (0 : 3, cộng trừ lòng vòng) hoặc nghĩ TBC phải tăng vì \"có thêm người\".",
+    "signal": "Bài giải dài dòng cho ca 3 giây; hoặc đáp khác TBC cũ.",
+    "fix": "K1 + K3 — người đứng đúng vạch không làm cân nghiêng: thêm người không tự động tăng TBC.",
+    "counterExample": "(72 + 24) : 4 = 24 — thêm người mà TBC y nguyên."
+   }
+  ],
+  "vocabulary": [
+   "đứng đúng điểm cân",
+   "lệch bằng không",
+   "cân đứng im",
+   "ca tặng điểm"
+  ],
+  "mantra": "ĐỨNG ĐÚNG VẠCH — CÂN ĐỨNG IM!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "TBC bốn số là 29 — tổng bốn số = ?",
+    "answerKey": {
+     "value": 116
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B21.M1",
+   "message": "Ôn cây cầu tổng rồi vào ca tặng điểm nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Nhóm ba bạn TBC 24 viên. Dũng vào nhóm, góp ĐÚNG BẰNG mức trung bình của cả bốn bạn. Trí Long hì hục dựng máy kéo cân: \"phần hơn... ơ, phần hơn bằng mấy nhỉ?\" Su Kem cười: \"Dũng đang đứng ngay TRÊN vạch cân kìa.\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "góp bằng TBC — máy nào đây?"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để nhìn vạch cân!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 42,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Dũng đặt chân ĐÚNG vạch 24 — không nghiêng trái, không nghiêng phải: lệch bằng KHÔNG! Cân đứng im — TBC vẫn hai tư, Dũng góp đúng HAI TƯ viên. Vì sao? Tổng tăng đúng một suất TBC, số người tăng một — phép chia trả lại đúng TBC cũ: bảy hai cộng hai tư, chia bốn, vẫn hai tư! Máy kéo cân cũng gật: phần hơn bằng không, nhích không nấc.",
+    "display": {
+     "type": "stand_on_mark_interactive",
+     "spec": {
+      "tbc": 24,
+      "newcomer": "Dũng",
+      "offset": 0,
+      "check": "(72 + 24) : 4 = 24"
+     }
+    },
+    "interaction": {
+     "type": "place_on_mark",
+     "answerKey": {
+      "value": 24
+     },
+     "successMessage": "Lệch 0 → cân đứng im → Dũng góp 24 viên!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "num",
+     "text": "Nhóm 5 bạn TBC 30; bạn thứ sáu góp đúng bằng TBC cả sáu bạn — bạn ấy góp ?",
+     "answerKey": {
+      "value": 30
+     },
+     "wrongFeedback": "Đứng đúng vạch: bằng TBC cũ.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 34,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Nhận diện ca tặng điểm: đọc thấy cụm \"góp ĐÚNG BẰNG mức trung bình của cả nhóm\" — bút khoanh, miệng trả lời: BẰNG TBC CŨ, ba giây xong! Đề thi cài ca này để thưởng người đọc kỹ: ai lôi máy phức tạp ra quay là vừa mất giờ vừa dễ trượt. Nạp máy sẵn hai viên gạch: TBC của 22, 31, 25 là hai sáu; TBC bốn số hai chín thì tổng một trăm mười sáu.",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "thấy 'bằng TBC cả nhóm' → đáp = TBC cũ",
+      "3 giây — dành sức cho câu khó",
+      "gạch nền: 78 : 3 = 26 · 29 × 4 = 116"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 12,
+    "narration": "Thần chú ca tặng điểm: đứng đúng vạch — cân đứng im!",
+    "display": {
+     "type": "mantra_card",
+     "text": "ĐỨNG ĐÚNG VẠCH — CÂN ĐỨNG IM!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 81,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Nhóm ba bạn TBC hai tư viên. Dũng vào nhóm, góp ĐÚNG BẰNG mức trung bình của cả bốn bạn. Trí Long hì hục dựng máy kéo cân: phần hơn… ơ, phần hơn bằng mấy nhỉ? Su Kem cười: Dũng đang đứng ngay TRÊN vạch cân kìa!",
+    "screenText": "góp bằng TBC cả nhóm — cần máy gì?",
+    "visual": "Bàn cân vạch 24; Dũng bước vào đặt chân đúng vạch; Trí Long ôm cỗ máy phức tạp thừa thãi.",
+    "assets": [],
+    "duration": 17
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Dũng đặt chân ĐÚNG vạch hai tư — không nghiêng trái, không nghiêng phải: lệch bằng KHÔNG! Cân đứng im — TBC vẫn hai tư, Dũng góp đúng HAI TƯ viên. Vì sao? Tổng tăng đúng một suất TBC, số người tăng một — phép chia trả lại đúng TBC cũ: bảy hai cộng hai tư, chia bốn, vẫn hai tư!",
+    "screenText": "lệch 0 → TBC giữ nguyên: Dũng góp 24 (thử 96 : 4 ✓)",
+    "visual": "Dũng đứng cân bằng trên vạch, hai đĩa cân bất động; phép (72 + 24) : 4 = 24 đóng mộc xanh; kim cân im phăng phắc.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Nhận diện ca tặng điểm: đọc thấy cụm góp ĐÚNG BẰNG mức trung bình của cả nhóm — bút khoanh, miệng trả lời: BẰNG TBC CŨ, ba giây xong! Ai lôi máy phức tạp ra quay là vừa mất giờ vừa dễ trượt. Nạp sẵn hai viên gạch: TBC của hai hai, ba mốt, hai lăm là hai sáu; TBC bốn số hai chín thì tổng một trăm mười sáu!",
+    "screenText": "'bằng TBC cả nhóm' → đáp = TBC cũ (3 giây!)",
+    "visual": "Đồng hồ 3 giây; cụm từ khóa được khoanh vàng trong đề; hai viên gạch nền 26 và 116 xếp góc.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú ca tặng điểm: đứng đúng vạch — cân đứng im!",
+    "screenText": "ĐỨNG ĐÚNG VẠCH — CÂN ĐỨNG IM!",
+    "visual": "Thẻ thần chú vàng với icon dấu chân trên vạch cân.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Ca tặng điểm của con: nhóm TBC hai tư, Dũng góp bằng TBC cả bốn bạn — mấy viên? Ba giây! Vào bài luyện ngay!",
+    "screenText": "Dũng góp = ? (3 giây!)",
+    "visual": "Đồng hồ đếm 3 giây; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P3",
+    "assets": [],
+    "duration": 9
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Ba giây ca tặng điểm",
+  "problem": "TBC số kẹo của ba bạn là 24 viên. Bạn Dũng vào nhóm và góp đúng bằng mức trung bình của cả bốn bạn. Hỏi Dũng góp bao nhiêu viên?",
+  "steps": [
+   {
+    "show": "Bước 1 — Nhận diện: 'góp ĐÚNG BẰNG TBC cả nhóm' → ca cân đứng im.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Người góp bằng TBC cả nhóm làm cân:",
+     "choices": [
+      "đứng im",
+      "nhích lên",
+      "tụt xuống"
+     ],
+     "answerKey": {
+      "choice": "đứng im"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Đáp ngay: Dũng góp = TBC cũ = 24 viên."
+   },
+   {
+    "show": "Bước 3 — Thử: (72 + 24) : 4 = 24 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Nhóm TBC 40, người mới góp bằng TBC cả nhóm — góp ?",
+     "answerKey": {
+      "value": 40
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B22.LT1",
+     "text": "Tính trung bình cộng của: 22 ; 31 ; 25.",
+     "answerKey": {
+      "value": 26
+     },
+     "hints": [
+      "Tổng 78.",
+      "78 : 3."
+     ],
+     "solutionNarrative": "78 : 3 = 26.",
+     "teaches": [
+      "K1"
+     ]
+    },
+    {
+     "id": "P2",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B22.LT2",
+     "text": "Trung bình cộng của bốn số là 29. Tính tổng bốn số.",
+     "answerKey": {
+      "value": 116
+     },
+     "hints": [
+      "Cầu ngược Bài 21.",
+      "29 × 4."
+     ],
+     "solutionNarrative": "29 × 4 = 116.",
+     "teaches": [
+      "K2"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P3",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B22.LT3",
+     "text": "TBC số kẹo của ba bạn An, Bình, Cường là 24 viên. Bạn Dũng vào nhóm và góp ĐÚNG BẰNG mức trung bình của cả bốn bạn. Hỏi Dũng góp bao nhiêu viên kẹo?",
+     "answerKey": {
+      "value": 24
+     },
+     "hints": [
+      "Dũng đứng đâu trên bàn cân?",
+      "Cân đứng im."
+     ],
+     "solutionNarrative": "Bằng TBC cả nhóm → góp đúng 24 viên (thử 96 : 4 = 24 ✓).",
+     "teaches": [
+      "K1",
+      "K3"
+     ],
+     "generator": {
+      "template": "Nhóm {n} bạn TBC {t}; người mới góp bằng TBC cả nhóm. Hỏi góp mấy?",
+      "constraints": {},
+      "answerRule": "= t"
+     }
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Thêm một người vào nhóm thì TBC chắc chắn thay đổi.",
+     "answerKey": {
+      "value": false,
+      "note": "Người mới đứng đúng vạch (góp bằng TBC) thì cân đứng im."
+     },
+     "hints": [
+      "Nhớ ca tặng điểm.",
+      "Lệch của người mới bằng mấy?"
+     ],
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.1.2#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B22.M3",
+   "award": "huy_hieu_can_dung_im"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P3"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B22.QZ1",
+    "text": "(Đúng/Sai?) Số mới góp đúng bằng TBC cả nhóm thì TBC không thay đổi.",
+    "answerKey": {
+     "value": true
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "num",
+    "text": "Nhóm TBC 24, Dũng góp bằng TBC cả bốn bạn — Dũng góp ? viên",
+    "answerKey": {
+     "value": 24
+    },
+    "teaches": [
+     "K1",
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "TBC năm số là 12 — tổng năm số = ?",
+    "answerKey": {
+     "value": 60
+    },
+    "teaches": [
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Số mới góp đúng bằng TBC cả nhóm thì sao?",
+    "back": "Đứng ĐÚNG điểm cân — lệch 0 — CÂN ĐỨNG IM: TBC không đổi, số mới = TBC cũ (3 giây!). Vì tổng tăng đúng một suất TBC và số người tăng 1. Ca tặng điểm — nhận diện cụm 'bằng TBC cả nhóm'."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P3",
+   "+7 ngày: câu P4 (thêm người TBC có đổi?)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học ca tặng điểm: góp bằng TBC cả nhóm — cân đứng im, trả lời 3 giây. Con đạt {score}/3.",
+  "homeActivity": "Đố nhanh bữa cơm: 'nhóm TBC 30, người mới góp bằng TBC cả nhóm — góp mấy?' — con đáp trong 3 giây kèm lý do 'đứng đúng vạch'.",
+  "watchFor": "Nếu con dựng máy phức tạp cho ca này — bấm giờ (S3) để con thấy giá của việc đọc kỹ đề."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B22.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "góp bằng TBC — máy nào đây?",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "phần hơn... ơ, phần hơn bằng mấy nhỉ?",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Dũng đang đứng ngay TRÊN vạch cân kìa.",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B22_M2_F1.png",
+   "sha256_16": "c8ebce7558686d32"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con xử gọn ca \"số mới góp ĐÚNG BẰNG TBC cả nhóm\": người mới đứng đúng điểm cân — cân ĐỨNG IM, TBC không đổi, số mới = TBC cũ — không cần tính gì thêm; và hiểu vì sao qua luật bù trừ (người mới lệch 0).",
+    "steps": [
+     {
+      "text": "thấy 'bằng TBC cả nhóm' → đáp = TBC cũ"
+     },
+     {
+      "text": "3 giây — dành sức cho câu khó"
+     },
+     {
+      "text": "gạch nền: 78 : 3 = 26 · 29 × 4 = 116"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B22_M2_F2.png",
+   "sha256_16": "3457034b95e0965e"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Số mới góp đúng bằng TBC CẢ NHÓM (tính cả nó)",
+      "text": "người mới đứng ĐÚNG điểm cân — TBC không đổi; số mới = TBC cũ.",
+      "tone": "navy"
+     },
+     {
+      "label": "Vì sao (luật bù trừ Bài 21)",
+      "text": "người mới lệch 0 quanh điểm cân — không kéo ai lên, không dìm ai xuống; tổng tăng đúng một suất TBC, số người tăng 1 — phép chia cho lại đúng TBC cũ.",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "ĐỨNG ĐÚNG VẠCH — CÂN ĐỨNG IM!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B22_M2_F3.png",
+   "sha256_16": "24027e4f40bcd662"
+  },
+  {
+   "archetype": "balance_scale",
+   "params": {
+    "title": "GÓP ĐÚNG BẰNG TBC CẢ NHÓM — CHIẾC CÂN ĐỨNG IM",
+    "left": {
+     "text": "3 bạn cũ · TBC 24 viên",
+     "weight": 1
+    },
+    "right": {
+     "text": "Dũng góp 24 viên",
+     "weight": 1
+    },
+    "verdict": "Người mới đứng đúng điểm cân → TBC không đổi = 24",
+    "note": "Thử: (72 + 24) : 4 = 24 ✓ — khỏi tính gì thêm"
+   },
+   "caption": "Cân thăng bằng: thêm người đúng mức trung bình thì không kéo lệch",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B22_M2_F4.png",
+   "sha256_16": "3f3e171d33f275d9"
+  }
+ ]
+}

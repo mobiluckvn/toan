@@ -1,0 +1,647 @@
+{
+ "title": "Bài ngược đỉnh cao tìm số người cũ: đo từ cân mới — chia cho bạn cũ",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:III.1.3#3"
+  ],
+  "bktUnit": "CASE:III.1.3#3@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B23",
+  "order": 3,
+  "prev": "DL:KSN5Q1.B23.M2",
+  "next": "DL:KSN5Q1.B24.M1"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B23",
+  "chunks": [
+   "CHUNK:KSN5Q1.B23.S4",
+   "CHUNK:KSN5Q1.B23.S7"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B23.4"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B23.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải được bài ngược ĐỈNH CAO tìm SỐ NGƯỜI nhóm cũ: phần hơn của người mới so với TBC MỚI chính là tổng phần được chia cho các bạn cũ — số bạn cũ = phần hơn : mức kéo cân; nhớ hai mốc đo: phần hơn đo từ CÂN MỚI, chia cho BẠN CŨ.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (đo từ cân mới — chia cho bạn cũ)",
+  "kidText": "Tìm nhóm cũ có mấy bạn: lấy phần bạn mới hơn mức trung bình MỚI đem chia cho mức mà cân bị kéo lên."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Sợi dây vàng (đã hé ở Bài 22): phần người mới HƠN TBC MỚI = mức kéo cân × số người CŨ — vì toàn bộ phần thừa của người mới được chia đều cho các bạn cũ, kéo mỗi người lên đúng một mức."
+   },
+   {
+    "id": "K2",
+    "text": "Bài ngược: số bạn cũ = (phần mang − TBC mới) : (TBC mới − TBC cũ). Ví dụ: mang 40, TBC 25 → 28: phần hơn 40 − 28 = 12; mức kéo 3 → số bạn cũ = 12 : 3 = 4."
+   },
+   {
+    "id": "K3",
+    "text": "Hai mốc dễ nhầm: phần hơn đo từ TBC MỚI (không phải TBC cũ: 40 − 25 = 15 là sai mốc); chia cho số bạn CŨ (không phải nhóm mới)."
+   },
+   {
+    "id": "K4",
+    "text": "Thử lại: dựng nhóm 4 bạn TBC 25 → tổng 100 + 40 = 140 : 5 = 28 ✓ — khớp toàn bộ dữ kiện đề."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: DẤU VẾT TRÊN BÀN CÂN. Vụ án: trước khi Su Bống vào, nhóm TBC 25; Su Bống mang 40 viên vào thì TBC cả nhóm thành 28 — hỏi nhóm cũ MẤY NGƯỜI? Thám tử lần theo dòng kẹo chảy: Su Bống đứng cao hơn CÂN MỚI đúng 40 − 28 = 12 viên — mười hai viên thừa ấy đã CHẢY XUỐNG các bạn cũ, kéo mỗi bạn lên đúng 28 − 25 = 3 nấc. Mỗi bạn nhận 3 — tổng chảy 12 — vậy có 12 : 3 = BỐN người nhận! Hai dấu vết tối kỵ đo nhầm: phần hơn phải đo từ cân MỚI (đo từ cân cũ ra 15 — sai hiện trường); và chia cho bạn CŨ (nhóm mới có cả Su Bống — người không tự nhận kẹo của mình).",
+  "canonicalExamples": [
+   {
+    "case": "quan sát sợi dây (ca nền)",
+    "problem": "Ở bài 4-bạn-TBC-25 thêm Su Bống mang 40 → TBC 28: bạn mới hơn TBC MỚI bao nhiêu? Liên hệ với mức kéo cân?",
+    "solution": "Hơn TBC mới: 40 − 28 = 12 = mức kéo cân (3) × số bạn cũ (4) — phần thừa chia đều cho bạn cũ.",
+    "why": "Ca LT7 — nhìn thấy sợi dây trước khi dùng ngược."
+   },
+   {
+    "case": "bài ngược đỉnh (ca lõi)",
+    "problem": "Trước khi Su Bống vào, nhóm có TBC 25 viên. Su Bống mang 40 viên vào thì TBC cả nhóm thành 28 viên. Hỏi nhóm cũ có mấy người?",
+    "solution": "Phần hơn (đo từ cân MỚI): 40 − 28 = 12. Mức kéo cân: 28 − 25 = 3. Số bạn cũ = 12 : 3 = 4 người. Thử: (25 × 4 + 40) : 5 = 28 ✓.",
+    "why": "Ca đề A câu 11 — LT9 sư phụ."
+   }
+  ],
+  "numberRange": "Lớp 5: mức kéo 2–5; số người ≤ 8.",
+  "misconceptions": [
+   {
+    "wrong": "Đo phần hơn từ cân CŨ (40 − 25 = 15) hoặc chia cho nhóm MỚI (12 : 3 xong lại cộng thêm 1 người bừa).",
+    "signal": "Đáp 5 người (15 : 3) hay đếm dôi một người.",
+    "fix": "K3 — khắc hai mốc: đo từ cân MỚI (40 − 28), chia cho bạn CŨ (12 : 3 = 4 — nhóm mới là 5).",
+    "counterExample": "Thử 5 bạn cũ: tổng 125 + 40 = 165 : 6 = 27,5 ≠ 28 — trượt."
+   }
+  ],
+  "vocabulary": [
+   "dấu vết trên bàn cân",
+   "dòng kẹo chảy xuống",
+   "đo từ cân mới",
+   "chia cho bạn cũ",
+   "sợi dây vàng"
+  ],
+  "mantra": "ĐO TỪ CÂN MỚI — CHIA CHO BẠN CŨ!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Mức kéo cân từ 25 lên 28 là mấy nấc?",
+    "answerKey": {
+     "value": 3
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B23.M2",
+   "message": "Ôn hai tấm ảnh rồi vào vụ án dấu vết nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Vụ án thiếu dữ kiện: \"trước khi Su Bống vào, nhóm TBC 25; Su Bống mang 40 viên thì TBC thành 28 — nhóm cũ mấy người?\" Trí Long lục tung đề: \"Có cho số người đâu mà tính?!\" Thám tử Su Kem chỉ dòng kẹo: \"Số người để lại DẤU VẾT trên bàn cân đấy.\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "không cho số người… vẫn tìm ra?"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để lần theo dấu vết!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Lần theo dòng kẹo: Su Bống đứng cao hơn CÂN MỚI đúng bốn mươi trừ hai tám bằng MƯỜI HAI viên — mười hai viên thừa ấy chảy xuống các bạn cũ, kéo mỗi bạn lên đúng hai tám trừ hai lăm bằng BA nấc. Mỗi bạn nhận ba — tổng chảy mười hai — vậy có mười hai chia ba bằng BỐN người nhận! Nhóm cũ BỐN người. Thử: hai lăm nhân bốn cộng bốn mươi, chia năm — đúng hai tám!",
+    "display": {
+     "type": "trace_flow_interactive",
+     "spec": {
+      "above": "40 − 28 = 12",
+      "perHead": "28 − 25 = 3",
+      "count": "12 : 3 = 4",
+      "check": "(100 + 40) : 5 = 28 ✓"
+     }
+    },
+    "interaction": {
+     "type": "trace_and_divide",
+     "answerKey": {
+      "value": 4
+     },
+     "successMessage": "12 viên chảy — mỗi bạn 3 → 4 bạn cũ!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 16,
+    "item": {
+     "format": "mcq",
+     "text": "Bạn mới hơn TBC mới 12, cân nhích 3 nấc → số bạn cũ:",
+     "choices": [
+      "4",
+      "5",
+      "12"
+     ],
+     "answerKey": {
+      "choice": "4"
+     },
+     "wrongFeedback": "12 : 3 = 4 — chia cho bạn cũ.",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 40,
+    "teaches": [
+     "K3",
+     "K4"
+    ],
+    "narration": "Hai dấu vết tối kỵ đo nhầm! Một: đo phần hơn từ cân CŨ — bốn mươi trừ hai lăm ra mười lăm, chia ba thành NĂM người: thử ngay — năm bạn cũ tổng một trăm hai lăm, cộng bốn mươi chia sáu ra hai bảy phẩy năm, lệch! Hai: chia cho nhóm MỚI — Su Bống đâu tự nhận kẹo của mình: chỉ bạn CŨ nhận. Khắc bảng: đo từ cân MỚI — chia cho bạn CŨ!",
+    "display": {
+     "type": "counter_example",
+     "cases": [
+      {
+       "input": "đo từ cân cũ: 40 − 25 = 15 → 5 người",
+       "output": "✗ thử 165 : 6 = 27,5",
+       "valid": false,
+       "reason": "sai mốc đo"
+      },
+      {
+       "input": "đo từ cân mới: 40 − 28 = 12 → 4 người",
+       "output": "✓ thử 140 : 5 = 28",
+       "valid": true,
+       "reason": "đúng hai mốc"
+      }
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 12,
+    "narration": "Thần chú thám tử: đo từ cân mới — chia cho bạn cũ!",
+    "display": {
+     "type": "mantra_card",
+     "text": "ĐO TỪ CÂN MỚI — CHIA CHO BẠN CŨ!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Vụ án thiếu dữ kiện: trước khi Su Bống vào, nhóm TBC hai lăm; Su Bống mang bốn mươi viên thì TBC thành hai tám — nhóm cũ mấy người? Trí Long lục tung đề: có cho số người đâu mà tính?! Thám tử Su Kem chỉ dòng kẹo: số người để lại DẤU VẾT trên bàn cân đấy!",
+    "screenText": "TBC 25 → 28, mang 40 — nhóm cũ ? người",
+    "visual": "Hồ sơ vụ án với ô 'số người' bỏ trống; Su Kem đội mũ thám tử soi kính lúp lên bàn cân; vệt kẹo mờ.",
+    "assets": [],
+    "duration": 21
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Lần theo dòng kẹo: Su Bống đứng cao hơn CÂN MỚI đúng bốn mươi trừ hai tám bằng MƯỜI HAI viên — mười hai viên thừa chảy xuống các bạn cũ, kéo mỗi bạn lên đúng BA nấc. Mỗi bạn nhận ba — tổng chảy mười hai — vậy mười hai chia ba bằng BỐN người nhận! Thử: hai lăm nhân bốn cộng bốn mươi, chia năm — đúng hai tám!",
+    "screenText": "(40 − 28) : (28 − 25) = 12 : 3 = 4 bạn cũ ✓",
+    "visual": "Su Bống đứng cao hơn vạch 28 đúng 12 nấc; mười hai viên kẹo chia bốn dòng chảy xuống bốn bóng người; mộc thử xanh.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Hai dấu vết tối kỵ đo nhầm! Một: đo phần hơn từ cân CŨ — bốn mươi trừ hai lăm ra mười lăm, chia ba thành NĂM người: thử ngay — tổng một trăm sáu lăm chia sáu ra hai bảy phẩy năm, lệch! Hai: chia cho nhóm MỚI — Su Bống đâu tự nhận kẹo của mình: chỉ bạn CŨ nhận. Khắc bảng: đo từ cân MỚI — chia cho bạn CŨ!",
+    "screenText": "40 − 25 = 15 ✗ (sai mốc) · 40 − 28 = 12 ✓",
+    "visual": "Thước đo đặt nhầm xuống vạch 25 lóe đỏ #C0392B; thước đúng bám vạch 28; Su Bống lắc đầu trước dòng kẹo tự chảy về mình.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú thám tử: đo từ cân mới — chia cho bạn cũ!",
+    "screenText": "ĐO TỪ CÂN MỚI — CHIA CHO BẠN CŨ!",
+    "visual": "Thẻ thần chú vàng với icon kính lúp trên bàn cân.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Vụ án của con: nhóm TBC hai lăm, Su Bống mang bốn mươi viên vào thì TBC hai tám — nhóm cũ mấy người? Lần dấu vết ngay!",
+    "screenText": "12 : 3 = ? bạn cũ",
+    "visual": "Hồ sơ mở chờ điền; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Dấu vết mười hai viên kẹo",
+  "problem": "Trước khi Su Bống vào, nhóm có TBC 25 viên. Su Bống mang 40 viên vào thì TBC cả nhóm thành 28 viên. Hỏi nhóm cũ có mấy người?",
+  "steps": [
+   {
+    "show": "Bước 1 — Phần hơn đo từ cân MỚI: 40 − 28 = 12 viên.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Phần hơn đo từ:",
+     "choices": [
+      "TBC mới (28)",
+      "TBC cũ (25)",
+      "số 40"
+     ],
+     "answerKey": {
+      "choice": "TBC mới (28)"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Mức kéo cân: 28 − 25 = 3 nấc/người."
+   },
+   {
+    "show": "Bước 3 — Số bạn cũ = 12 : 3 = 4 người. Thử: (25 × 4 + 40) : 5 = 28 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Nhóm TBC 20, người mới mang 32, TBC thành 22 — nhóm cũ mấy người? ((32−22):(22−20))",
+     "answerKey": {
+      "value": 5
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B23.LT7",
+     "text": "Ở bài 4-bạn-TBC-25 thêm bạn mang 40 → TBC 28: bạn mới hơn TBC MỚI bao nhiêu viên? Con số ấy liên hệ thế nào với mức kéo cân (28 − 25)?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hơn TBC mới",
+        "value": 12
+       },
+       {
+        "label": "liên hệ",
+        "value": "12 = mức kéo cân 3 × số bạn cũ 4"
+       }
+      ]
+     },
+     "hints": [
+      "40 − 28.",
+      "Phần thừa chia đều cho ai?"
+     ],
+     "solutionNarrative": "12 = 3 × 4 — sợi dây vàng của bài ngược.",
+     "teaches": [
+      "K1"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B23.LT9",
+     "text": "Sư phụ Trí Dũng đố: \"Trước khi Su Bống vào, nhóm có TBC 25 viên. Su Bống mang 40 viên vào thì TBC cả nhóm thành 28 viên. Hỏi nhóm cũ có mấy người?\"",
+     "answerKey": {
+      "value": 4
+     },
+     "hints": [
+      "Đo từ cân mới: 40 − 28.",
+      "12 : mức kéo 3."
+     ],
+     "solutionNarrative": "12 : 3 = 4 người (thử 140 : 5 = 28 ✓).",
+     "teaches": [
+      "K2",
+      "K3",
+      "K4"
+     ],
+     "generator": {
+      "template": "Nhóm TBC {t}; người mới mang {m} → TBC {t2}. Tìm số người cũ.",
+      "constraints": {},
+      "answerRule": "(m − t2) : (t2 − t)"
+     }
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Trong bài trên, có thể lấy 40 − 25 = 15 rồi chia 3 để ra 5 người.",
+     "answerKey": {
+      "value": false,
+      "note": "Sai mốc đo! Phần hơn đo từ cân MỚI: 40 − 28 = 12 → 4 người (thử 165 : 6 = 27,5 ✗)."
+     },
+     "hints": [
+      "Đo từ cân nào?",
+      "Thử đáp 5 người xem."
+     ],
+     "teaches": [
+      "K3",
+      "K4"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.1.3#3@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B24.M1",
+   "award": "huy_hieu_tham_tu_ban_can"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P2"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B23.QZ5",
+    "text": "Bạn mới hơn TBC mới 12, cân nhích 3 nấc → số bạn cũ:",
+    "choices": [
+     "4",
+     "5",
+     "12"
+    ],
+    "answerKey": {
+     "choice": "4"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2",
+     "K3"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "text": "Phần hơn của người mới đo từ:",
+    "choices": [
+     "TBC MỚI",
+     "TBC cũ",
+     "tổng cũ"
+    ],
+    "answerKey": {
+     "choice": "TBC MỚI"
+    },
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "Người mới mang 50, TBC 30 → 34: số bạn cũ = ? ((50−34):(34−30))",
+    "answerKey": {
+     "value": 4
+    },
+    "teaches": [
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Bài ngược tìm số người cũ?",
+    "back": "Sợi dây vàng: phần người mới hơn TBC MỚI = mức kéo cân × số bạn CŨ → số bạn cũ = (mang − TBC mới) : (TBC mới − TBC cũ) = 12 : 3 = 4. Hai mốc: ĐO TỪ CÂN MỚI — CHIA CHO BẠN CŨ. Thử dựng lại cả nhóm."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P2",
+   "+7 ngày: câu P3 (sai mốc đo)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con phá vụ án tìm số người cũ bằng dấu vết trên bàn cân: đo từ cân mới, chia cho bạn cũ. Con đạt {score}/3, {trapResult} câu bẫy sai-mốc.",
+  "homeActivity": "Đóng vai thám tử: 'nhóm TBC 20, người mới mang 32, TBC thành 22 — mấy người cũ?' — con lần 10 : 2 = 5 và thử lại.",
+  "watchFor": "Nếu con đo từ cân cũ — chạy phép thử (S3): 27,5 lệch là tự thấy."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B23.M3",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "không cho số người… vẫn tìm ra?",
+    "lines": [
+     {
+      "who": "Su Bống",
+      "say": "Trí Long lục tung đề:",
+      "tone": "right"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Số người để lại DẤU VẾT trên bàn cân đấy.",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B23_M3_F1.png",
+   "sha256_16": "6ae8fea3d750186e"
+  },
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+    "wrong": {
+     "head": "CÁCH SAI",
+     "steps": [
+      "đo từ cân cũ: 40 − 25 = 15 → 5…"
+     ],
+     "result": "thử 165 : 6 = 27,5"
+    },
+    "right": {
+     "head": "CÁCH ĐÚNG",
+     "steps": [
+      "đo từ cân mới: 40 − 28 = 12 → 4…"
+     ],
+     "result": "thử 140 : 5 = 28"
+    },
+    "verdict": "đúng hai mốc"
+   },
+   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B23_M3_F2.png",
+   "sha256_16": "9754e983c19df9e5"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Sợi dây vàng (đã hé ở Bài 22)",
+      "text": "phần người mới HƠN TBC MỚI = mức kéo cân × số người CŨ — vì toàn bộ phần thừa của người mới được chia đều cho các bạn cũ, kéo mỗi người lên đúng một mức.",
+      "tone": "navy"
+     },
+     {
+      "label": "Bài ngược",
+      "text": "số bạn cũ = (phần mang − TBC mới) : (TBC mới − TBC cũ). Ví dụ: mang 40, TBC 25 → 28: phần hơn 40 − 28 = 12; mức kéo 3 → số bạn cũ = 12 : 3 = 4.",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "ĐO TỪ CÂN MỚI — CHIA CHO BẠN CŨ!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B23_M3_F3.png",
+   "sha256_16": "3ca458fdddeb1c05"
+  },
+  {
+   "archetype": "grid_count",
+   "params": {
+    "title": "BÀI NGƯỢC ĐỈNH CAO: TÌM SỐ BẠN CŨ",
+    "cols": 4,
+    "rows": 3,
+    "show_dims": false,
+    "fill": [
+     [
+      0,
+      0
+     ],
+     [
+      1,
+      0
+     ],
+     [
+      2,
+      0
+     ],
+     [
+      3,
+      0
+     ],
+     [
+      0,
+      1
+     ],
+     [
+      1,
+      1
+     ],
+     [
+      2,
+      1
+     ],
+     [
+      3,
+      1
+     ],
+     [
+      0,
+      2
+     ],
+     [
+      1,
+      2
+     ],
+     [
+      2,
+      2
+     ],
+     [
+      3,
+      2
+     ]
+    ],
+    "fill_color": "#F8B942",
+    "memo": [
+     "phần hơn = 40 − 28 = 12",
+     "mức kéo cân = 28 − 25 = 3",
+     "số bạn cũ = 12 : 3 = 4"
+    ],
+    "note": "Phần thừa của người mới (đo từ cân MỚI) được chia đều cho các bạn cũ"
+   },
+   "caption": "12 viên thừa chia đều 3 viên mỗi bạn → đúng 4 bạn cũ",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B23_M3_F4.png",
+   "sha256_16": "ba2fd64201c0ec74"
+  }
+ ]
+}

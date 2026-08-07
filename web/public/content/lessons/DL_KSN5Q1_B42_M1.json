@@ -1,0 +1,632 @@
+{
+ "title": "Vào cộng — ra trừ: cộng đại số năng suất & chuông soi có-tháo-phải-chậm-hơn",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:III.7.3#1"
+  ],
+  "bktUnit": "CASE:III.7.3#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B42",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B41.M3",
+  "next": "DL:KSN5Q1.B42.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B42",
+  "chunks": [
+   "CHUNK:KSN5Q1.B42.S3",
+   "CHUNK:KSN5Q1.B42.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B42.1"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B42.1"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải bài vòi vào – vòi ra bằng phép cộng năng suất CÓ DẤU: vòi vào mang dấu CỘNG, vòi tháo mang dấu TRỪ (bể không nhận kẻ phá làm trợ thủ); cộng đại số các năng suất rồi lấy 1 chia; và luôn rung CHUÔNG SOI: có vòi tháo cùng mở thì bể phải đầy CHẬM hơn lúc chỉ mình vòi bơm.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (vòi tháo mang dấu trừ)",
+  "kidText": "Vòi vào mang dấu cộng, vòi tháo mang dấu trừ. Có vòi tháo cùng mở thì bể phải đầy CHẬM hơn — nhớ kiểm lại."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bể là giếng làng B41 đổi áo: đầy bể = 1; \"đầy sau 3 giờ\" → năng suất 1/3 bể mỗi giờ; hai vòi cùng VÀO thì cộng cả hai: 1/3 + 1/6 = 1/2 → 2 giờ."
+   },
+   {
+    "id": "K2",
+    "text": "Vòi THÁO chảy NGƯỢC chiều — năng suất mang dấu TRỪ: vào 1/3, tháo 1/6 → mỗi giờ bể thực nhận 1/3 − 1/6 = 1/6 → đầy sau 6 giờ (phép cộng tuốt 1/3 + 1/6 = 1/2 → 2 giờ là nhận kẻ phá làm trợ thủ!)."
+   },
+   {
+    "id": "K3",
+    "text": "Chuông soi vào-ra: có tháo cùng mở thì đầy CHẬM hơn lúc chỉ mình vòi bơm (6 > 3 ✓ — đáp 2 < 3 là sai chắc); nhiều vòi thì cộng đại số hết lượt: 1/3 + 1/6 − 1/4 = 4/12 + 2/12 − 3/12 = 1/4 → 4 giờ."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: BỂ NƯỚC VÀ HAI MŨI TÊN NGƯỢC CHIỀU. Vòi bơm đầy bể sau 3 giờ; van tháo cạn bể đầy sau 6 giờ. Mở cả hai từ bể cạn — bao lâu đầy? Trí Long quen tay bài hai vòi lớp 4, cộng tuốt: 1/3 + 1/6 = 1/2 — hai giờ! Su Kem chỉ hai mũi tên: vòi bơm đẩy nước VÀO — van tháo kéo nước RA: hai kẻ NGƯỢC chiều mà bắt tay nhau à? Vòi tháo mang dấu TRỪ: mỗi giờ bể thực nhận 1/3 trừ 1/6 bằng MỘT PHẦN SÁU — đầy sau SÁU giờ! Chuông soi reo kiểm: sáu LỚN hơn ba — có kẻ tháo thì phải CHẬM hơn: chuẩn! (Đáp hai giờ nhanh hơn cả lúc một mình vòi bơm — van tháo hóa trợ thủ: sai chắc!) Đông vòi hơn cũng một luật — cộng đại số hết lượt: hai vòi vào một van tháo: 1/3 + 1/6 − 1/4 = bốn cộng hai trừ ba phần mười hai: MỘT PHẦN TƯ — bốn giờ đầy!",
+  "canonicalExamples": [
+   {
+    "case": "dịch năng suất bể (ca nền)",
+    "problem": "Vòi nước chảy đầy bể sau 3 giờ. Hỏi mỗi giờ vòi chảy được bao nhiêu phần của bể?",
+    "solution": "1 : 3 = 1/3 bể mỗi giờ.",
+    "why": "Ca LT1 — giếng làng đổi áo."
+   },
+   {
+    "case": "hai vòi cùng vào (ca cộng cả hai)",
+    "problem": "Vòi thứ nhất đầy bể sau 3 giờ, vòi thứ hai sau 6 giờ. Cả hai vòi cùng chảy vào thì bao lâu đầy bể?",
+    "solution": "1/3 + 1/6 = 1/2 → 2 giờ (hai vòi cùng VÀO nên cộng cả hai).",
+    "why": "Ca LT2 — nền so sánh cho ca tháo."
+   },
+   {
+    "case": "vào – tháo (ca lõi)",
+    "problem": "Vòi chảy vào đầy bể sau 3 giờ; van tháo cạn bể sau 6 giờ. Mở cả hai từ bể cạn thì bao lâu đầy?",
+    "solution": "1/3 − 1/6 = 1/6 → 6 giờ. Chuông soi: 6 > 3 — có tháo phải chậm hơn ✓ (đáp 2 giờ của phép cộng tuốt: loại).",
+    "why": "Ca đề A câu 5 — trap dấu cộng rình đây."
+   },
+   {
+    "case": "ba vòi đại số (ca sư phụ)",
+    "problem": "Bể có hai vòi chảy vào (đầy sau 3 giờ và sau 6 giờ) và một van tháo (cạn bể sau 4 giờ). Mở cả ba từ bể cạn thì bao lâu đầy?",
+    "solution": "1/3 + 1/6 − 1/4 = 4/12 + 2/12 − 3/12 = 1/4 → 4 giờ.",
+    "why": "Ca LT8 — cộng đại số hết lượt."
+   }
+  ],
+  "numberRange": "Lớp 5: thời gian 3–12 giờ; mẫu chung ≤ 12.",
+  "misconceptions": [
+   {
+    "wrong": "Cộng tuốt mọi vòi theo quán tính lớp 4: vào 1/3 + tháo 1/6 = 1/2 → 2 giờ.",
+    "signal": "Van tháo mang dấu cộng; đáp NHANH hơn lúc chỉ mình vòi bơm.",
+    "fix": "K2 + K3 — vòi tháo ngược chiều mang dấu TRỪ: 1/3 − 1/6 = 1/6 → 6 giờ; chuông soi có-tháo-phải-chậm-hơn.",
+    "counterExample": "2 giờ < 3 giờ: mở thêm van xả mà bể đầy nhanh gấp rưỡi — van tháo bơm hộ à?!"
+   }
+  ],
+  "vocabulary": [
+   "hai mũi tên ngược chiều",
+   "vào cộng — ra trừ",
+   "cộng đại số hết lượt",
+   "chuông soi có-tháo-chậm-hơn",
+   "kẻ phá không làm trợ thủ"
+  ],
+  "mantra": "VÀO CỘNG — RA TRỪ: BỂ KHÔNG NHẬN KẺ PHÁ LÀM TRỢ THỦ!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "mcq",
+    "text": "Ôn B41: 'đầy bể sau 3 giờ' → năng suất mỗi giờ:",
+    "choices": [
+     "1/3 bể",
+     "3 bể",
+     "1/6 bể"
+    ],
+    "answerKey": {
+     "choice": "1/3 bể"
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B41.M1",
+   "message": "Ôn năng suất 1/t rồi ra bể nước nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Vòi bơm đầy bể sau 3 giờ; van tháo cạn bể sau 6 giờ. Mở cả hai từ bể cạn — bao lâu đầy? Trí Long cộng tuốt: \"1/3 + 1/6 = 1/2 — hai giờ!\" Su Kem chỉ van xả: \"Kẻ đang KÉO NƯỚC RA mà con cộng nó vào phe bơm à?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "vào 1/3 + tháo 1/6 = nhanh hơn??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để xem hai mũi tên!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Hai mũi tên NGƯỢC chiều: vòi bơm đẩy nước VÀO — dấu CỘNG; van tháo kéo nước RA — dấu TRỪ! Mỗi giờ bể thực nhận: một phần ba TRỪ một phần sáu — hai phần sáu trừ một phần sáu bằng MỘT PHẦN SÁU bể! Thời gian đầy: một chia một phần sáu — SÁU giờ!",
+    "display": {
+     "type": "tank_arrows_interactive",
+     "spec": {
+      "inflow": "+1/3 (vào)",
+      "outflow": "−1/6 (tháo)",
+      "net": "1/3 − 1/6 = 1/6 / giờ",
+      "answer": "6 giờ"
+     }
+    },
+    "interaction": {
+     "type": "signed_add",
+     "answerKey": {
+      "value": 6
+     },
+     "successMessage": "Thực nhận 1/6 mỗi giờ → 6 giờ đầy!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Vào 1/3, tháo 1/6 — mỗi giờ bể thực nhận:",
+     "choices": [
+      "1/6",
+      "1/2",
+      "1/9"
+     ],
+     "answerKey": {
+      "choice": "1/6"
+     },
+     "wrongFeedback": "Ra trừ: 1/3 − 1/6.",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 42,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Chuông soi vào-ra: có kẻ tháo cùng mở thì bể phải đầy CHẬM hơn lúc chỉ mình vòi bơm — sáu LỚN hơn ba: chuẩn! Đáp hai giờ nhanh gấp rưỡi là van tháo hóa trợ thủ: sai chắc! Đông vòi hơn cũng một luật — cộng đại số hết lượt: hai vòi vào một van tháo: một phần ba cộng một phần sáu trừ một phần tư — bốn cộng hai trừ ba phần mười hai: MỘT PHẦN TƯ — bốn giờ đầy! Còn hai vòi cùng VÀO thì cộng cả hai thẳng tay: một phần ba cộng một phần sáu bằng một phần hai — hai giờ.",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "chuông: có tháo → chậm hơn (6 > 3 ✓, 2 ✗)",
+      "ba vòi: 4/12 + 2/12 − 3/12 = 1/4 → 4 giờ",
+      "hai vòi cùng vào: 1/2 → 2 giờ"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú bể nước: vào cộng — ra trừ: bể không nhận kẻ phá làm trợ thủ!",
+    "display": {
+     "type": "mantra_card",
+     "text": "VÀO CỘNG — RA TRỪ!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 85,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Vòi bơm đầy bể sau ba giờ; van tháo cạn bể sau sáu giờ. Mở cả hai từ bể cạn — bao lâu đầy? Trí Long cộng tuốt: một phần ba cộng một phần sáu bằng một phần hai — hai giờ! Su Kem chỉ van xả: kẻ đang KÉO NƯỚC RA mà con cộng nó vào phe bơm à?",
+    "screenText": "vào 1/3 + tháo 1/6 = nhanh hơn??",
+    "visual": "Bể nước với vòi bơm trên và van xả dưới; Trí Long kéo cả hai về một phe; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Hai mũi tên NGƯỢC chiều: vòi bơm đẩy nước VÀO — dấu CỘNG; van tháo kéo nước RA — dấu TRỪ! Mỗi giờ bể thực nhận: một phần ba TRỪ một phần sáu — hai phần sáu trừ một phần sáu bằng MỘT PHẦN SÁU bể! Thời gian đầy: một chia một phần sáu — SÁU giờ!",
+    "screenText": "+1/3 (vào) − 1/6 (tháo) = 1/6 / giờ → 6 giờ",
+    "visual": "Bể với mũi tên xanh đi vào và mũi tên đỏ đi ra; mực nước dâng chậm từng vạch 1/6; phép trừ đóng khung teal.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Chuông soi vào-ra: có kẻ tháo cùng mở thì bể phải đầy CHẬM hơn lúc chỉ mình vòi bơm — sáu LỚN hơn ba: chuẩn! Đáp hai giờ nhanh gấp rưỡi là van tháo hóa trợ thủ: sai chắc! Đông vòi cũng một luật — cộng đại số hết lượt: hai vòi vào một van tháo: bốn cộng hai trừ ba phần mười hai — MỘT PHẦN TƯ: bốn giờ đầy!",
+    "screenText": "chuông: 6 > 3 ✓ · 2 ✗ · ba vòi: 1/3 + 1/6 − 1/4 = 1/4 → 4 giờ",
+    "visual": "Chuông teal reo trên phép so 6 > 3; đáp 2 giờ gạch đỏ với van tháo đội mũ trợ thủ; ca ba vòi cộng đại số ba mũi tên.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú bể nước: vào cộng — ra trừ: bể không nhận kẻ phá làm trợ thủ!",
+    "screenText": "VÀO CỘNG — RA TRỪ!",
+    "visual": "Thẻ thần chú vàng với icon hai mũi tên ngược chiều.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Bể của con: vào ba giờ đầy — tháo sáu giờ cạn: cộng có dấu rồi rung chuông soi xem đáp chậm hơn chưa! Vào bài luyện ngay!",
+    "screenText": "1/3 − 1/6 → ? giờ (soi > 3!)",
+    "visual": "Bể chờ mở vòi; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P3",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Cộng có dấu quanh bể",
+  "problem": "Vòi chảy vào đầy bể sau 3 giờ; van tháo cạn bể sau 6 giờ. Mở cả hai từ bể cạn thì bao lâu đầy?",
+  "steps": [
+   {
+    "show": "Bước 1 — Gắn dấu: vào +1/3; tháo −1/6.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Năng suất van tháo mang dấu:",
+     "choices": [
+      "trừ",
+      "cộng",
+      "tùy"
+     ],
+     "answerKey": {
+      "choice": "trừ"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Thực nhận: 1/3 − 1/6 = 1/6 bể mỗi giờ → 6 giờ."
+   },
+   {
+    "show": "Bước 3 — Chuông soi: 6 > 3 ✓ — có tháo phải chậm hơn (đáp 2 giờ: loại).",
+    "askAfter": {
+     "format": "num",
+     "text": "Ba vòi 1/3 + 1/6 − 1/4 = 1/4 → mấy giờ đầy?",
+     "answerKey": {
+      "value": 4
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B42.LT1",
+     "text": "Vòi nước chảy đầy bể sau 3 giờ. Hỏi mỗi giờ vòi chảy được bao nhiêu phần của bể?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "năng suất",
+        "value": "1/3 bể mỗi giờ"
+       }
+      ]
+     },
+     "hints": [
+      "Đầy bể = 1.",
+      "1 : 3."
+     ],
+     "solutionNarrative": "1/3 bể mỗi giờ.",
+     "teaches": [
+      "K1"
+     ]
+    },
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B42.LT2",
+     "text": "Vòi thứ nhất đầy bể sau 3 giờ, vòi thứ hai sau 6 giờ. Cả hai vòi cùng chảy vào thì bao lâu đầy bể?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "thời gian",
+        "value": 2
+       }
+      ]
+     },
+     "hints": [
+      "Cùng VÀO — cộng cả hai.",
+      "1/3 + 1/6."
+     ],
+     "solutionNarrative": "1/2 mỗi giờ → 2 giờ.",
+     "teaches": [
+      "K1"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B42.LT4",
+     "text": "Vòi chảy vào đầy bể sau 3 giờ; van tháo cạn bể sau 6 giờ. Mở cả hai từ bể cạn thì bao lâu đầy? (Rung chuông soi đáp!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "thời gian",
+        "value": 6
+       },
+       {
+        "label": "chuông soi",
+        "value": "6 > 3 — có tháo phải chậm hơn ✓"
+       }
+      ]
+     },
+     "hints": [
+      "Ra trừ: 1/3 − 1/6.",
+      "So đáp với 3 giờ."
+     ],
+     "solutionNarrative": "1/6 mỗi giờ → 6 giờ (đáp 2 giờ: kẻ phá thành trợ thủ!).",
+     "teaches": [
+      "K2",
+      "K3"
+     ],
+     "generator": {
+      "template": "Vào {a} giờ đầy; tháo {b} giờ cạn → ? giờ",
+      "constraints": {
+       "b": "> a"
+      },
+      "answerRule": "1 : (1/a − 1/b)"
+     }
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B42.LT8",
+     "text": "Bể có hai vòi chảy vào (đầy bể sau 3 giờ và sau 6 giờ) và một van tháo (cạn bể sau 4 giờ). Mở cả ba từ bể cạn thì bao lâu đầy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "thời gian",
+        "value": 4
+       }
+      ]
+     },
+     "hints": [
+      "Cộng đại số hết lượt.",
+      "4/12 + 2/12 − 3/12."
+     ],
+     "solutionNarrative": "1/4 mỗi giờ → 4 giờ.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.7.3#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B42.M2",
+   "award": "huy_hieu_hai_mui_ten"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P3"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B42.QZ1",
+    "text": "(Đúng/Sai?) Năng suất của vòi tháo phải mang dấu trừ khi cộng vào bể.",
+    "answerKey": {
+     "value": true
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B42.QZ2",
+    "text": "(Đúng/Sai?) Có vòi tháo cùng mở mà bể đầy nhanh hơn lúc chỉ mình vòi bơm — vẫn có thể đúng.",
+    "answerKey": {
+     "value": false
+    },
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B42.QZ3",
+    "text": "Vào 1/3, tháo 1/6 — mỗi giờ bể thực nhận:",
+    "choices": [
+     "1/6",
+     "1/2",
+     "1/9"
+    ],
+    "answerKey": {
+     "choice": "1/6"
+    },
+    "teaches": [
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Vòi vào – vòi ra tính sao? Chuông soi gì?",
+    "back": "Cộng năng suất CÓ DẤU: vào +, tháo − (1/3 − 1/6 = 1/6 → 6 giờ; cộng tuốt ra 2 giờ = nhận kẻ phá làm trợ thủ!). Chuông soi: có tháo → đầy CHẬM hơn mình-vòi-bơm (6 > 3 ✓). Nhiều vòi: cộng đại số hết lượt (1/3 + 1/6 − 1/4 = 1/4 → 4 giờ)."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P3",
+   "+7 ngày: câu P4 (ba vòi)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học bể vào-ra: vòi tháo mang dấu trừ, chuông soi có-tháo-phải-chậm-hơn. Con đạt {score}/3, {trapResult} câu bẫy cộng-tuốt.",
+  "homeActivity": "Mở vòi bồn rửa rồi rút nhẹ nút xả: con quan sát nước dâng chậm đi và giải thích bằng phép trừ năng suất.",
+  "watchFor": "Nếu con cộng van tháo vào phe bơm — hỏi 'kẻ kéo nước ra giúp bể đầy à?' (S1)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B42.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "vào 1/3 + tháo 1/6 = nhanh hơn??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "1/3 + 1/6 = 1/2 — hai giờ!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Kẻ đang KÉO NƯỚC RA mà con cộng nó vào phe bơm à?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B42_M1_F1.png",
+   "sha256_16": "9e3c8d6b188af47c"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con giải bài vòi vào – vòi ra bằng phép cộng năng suất CÓ DẤU: vòi vào mang dấu CỘNG, vòi tháo mang dấu TRỪ (bể không nhận kẻ phá làm trợ thủ); cộng đại số các năng suất rồi lấy 1 chia; và luôn rung CHUÔNG SOI: có vòi tháo cùng mở thì bể phải đầy CHẬM hơn lúc chỉ mình vòi bơm.",
+    "steps": [
+     {
+      "text": "chuông: có tháo → chậm hơn (6 > 3 , 2 )"
+     },
+     {
+      "text": "ba vòi: 4/12 + 2/12 − 3/12 = 1/4 → 4 giờ"
+     },
+     {
+      "text": "hai vòi cùng vào: 1/2 → 2 giờ"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B42_M1_F2.png",
+   "sha256_16": "d238748da62b09fb"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Bể là giếng làng B41 đổi áo",
+      "text": "đầy bể = 1; \"đầy sau 3 giờ\" → năng suất 1/3 bể mỗi giờ; hai vòi cùng VÀO thì cộng cả hai: 1/3 + 1/6 = 1/2 → 2 giờ.",
+      "tone": "navy"
+     },
+     {
+      "label": "Vòi THÁO chảy NGƯỢC chiều",
+      "text": "năng suất mang dấu TRỪ: vào 1/3, tháo 1/6 → mỗi giờ bể thực nhận 1/3 − 1/6 = 1/6 → đầy sau 6 giờ (phép cộng tuốt 1/3 + 1/6 = 1/2 → 2 giờ là nhận kẻ phá làm trợ thủ!).",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "VÀO CỘNG — RA TRỪ: BỂ KHÔNG NHẬN KẺ PHÁ LÀM TRỢ THỦ!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B42_M1_F3.png",
+   "sha256_16": "6693b63ee54a8f0d"
+  },
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "VÀO THÌ CỘNG — RA THÌ TRỪ",
+    "neutral": true,
+    "wrong": {
+     "head": "HAI VÒI CÙNG VÀO",
+     "steps": [
+      "1/3 + 1/6 = 1/2"
+     ],
+     "result": "đầy sau 2 giờ"
+    },
+    "right": {
+     "head": "VÒI VÀO + VÒI THÁO",
+     "steps": [
+      "1/3 − 1/6 = 1/6"
+     ],
+     "result": "đầy sau 6 giờ"
+    },
+    "verdict": "Chuông soi: có tháo thì PHẢI chậm hơn — 6 > 2 ✓"
+   },
+   "caption": "Bể không nhận, mà bể mất — nên vòi tháo mang dấu trừ",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B42_M1_F4.png",
+   "sha256_16": "7478b2483f4ac1f4"
+  }
+ ]
+}

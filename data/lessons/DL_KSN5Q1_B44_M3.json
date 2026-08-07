@@ -1,0 +1,660 @@
+{
+ "title": "Dirichlet xấu-nhất-+1 (đôi cùng màu ≠ đôi màu đỏ) & bảng logic duyệt giả thiết",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:III.8.4#2"
+  ],
+  "bktUnit": "CASE:III.8.4#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B44",
+  "order": 3,
+  "prev": "DL:KSN5Q1.B44.M2",
+  "next": "DL:KSN5Q1.B45.M1"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B44",
+  "chunks": [
+   "CHUNK:KSN5Q1.B44.S4",
+   "CHUNK:KSN5Q1.B44.S7"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B44.4"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B44.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải Dirichlet \"bốc chắc chắn\" bằng máy KỊCH BẢN XẤU NHẤT + 1 và phân biệt sắc bén hai câu na ná: \"đôi CÙNG MÀU\" (xấu nhất mỗi màu một chiếc: 3 + 1 = 4) khác \"đôi màu ĐỎ\" (xấu nhất vét sạch các màu khác rồi mới + 2: 4 + 3 + 2 = 9); và suy luận bảng đúng – sai: điền chắc chắn trước, loại dần; bài \"chỉ một người nói thật\" thì DUYỆT từng giả thiết tìm mâu thuẫn.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (đôi cùng màu ≠ đôi màu đỏ)",
+  "kidText": "Bốc chắc chắn được một đôi tất: con nghĩ kịch bản xấu nhất rồi cộng thêm 1. Nhớ đọc kỹ \"đôi cùng màu\" hay \"đôi màu đỏ\"."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Nguyên lý chuồng bồ câu: 13 bạn — 12 tháng: ít nhất một tháng có từ 2 bạn (13 chim chui 12 chuồng); \"chắc chắn\" nghĩa là đúng trong MỌI kịch bản — nên máy tính là KỊCH BẢN XẤU NHẤT + 1."
+   },
+   {
+    "id": "K2",
+    "text": "Hai câu na ná — hai máy đếm khác xa: đôi CÙNG MÀU (bất kỳ): xấu nhất mỗi màu MỘT chiếc (3 chiếc 3 màu) → 3 + 1 = 4 chiếc; đôi màu ĐỎ chỉ định: xấu nhất VÉT SẠCH màu khác (4 xanh + 3 vàng) rồi cần thêm 2 đỏ → 4 + 3 + 2 = 9 chiếc — đọc kỹ ĐÔI GÌ!"
+   },
+   {
+    "id": "K3",
+    "text": "Bảng logic: điền ô CHẮC CHẮN trước (Bình không đỏ, không xanh → Bình VÀNG), rồi loại dần (An không đỏ, vàng có chủ → An XANH; Cúc ĐỎ); bài \"chỉ một người nói thật\": DUYỆT từng giả thiết — giả An thật → hai người cùng làm vỡ: mâu thuẫn, loại; giả Bình thật → An dối (Bình không làm ✓), Cúc dối → CÚC làm vỡ: khớp trọn — chốt."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: NGĂN TỦ TRONG BÓNG TỐI VÀ KỊCH BẢN ĐEN ĐỦI NHẤT. Ngăn tủ 5 tất đỏ, 4 xanh, 3 vàng — bốc trong tối. Câu a: bốc mấy chiếc CHẮC CHẮN có một đôi cùng màu? Trí Long: \"hai chiếc là thành đôi!\" — nhưng 'chắc chắn' phải đúng cả khi ĐEN ĐỦI NHẤT: ba chiếc BA màu khác nhau vẫn chưa có đôi! Chiếc thứ TƯ buộc trùng một màu: 3 + 1 = BỐN chiếc! Câu b na ná mà khác xa: chắc chắn có đôi màu ĐỎ? Kịch bản đen đủi: vét SẠCH bốn xanh, ba vàng — bảy chiếc chưa dính đỏ nào — rồi thêm HAI đỏ: 4 + 3 + 2 = CHÍN chiếc! Đôi cùng màu bốn — đôi màu đỏ chín: hai thế giới, đọc kỹ ĐÔI GÌ! Bảng logic ba bạn ba áo: Bình không đỏ không xanh — ô chắc chắn: Bình VÀNG; An không đỏ mà vàng có chủ: An XANH; còn Cúc ĐỎ. Vụ bình vỡ chỉ-một-người-thật: DUYỆT — giả An thật: Bình làm; Cúc \"tớ không làm\" hóa dối → Cúc cũng làm: HAI thủ phạm, mâu thuẫn — loại! Giả Bình thật: An dối khớp, Cúc dối → CÚC làm vỡ — khớp trọn vành: chốt án!",
+  "canonicalExamples": [
+   {
+    "case": "chuồng bồ câu (ca nền)",
+    "problem": "Trong 13 bạn bất kỳ, vì sao chắc chắn có ít nhất 2 bạn sinh cùng tháng?",
+    "solution": "Chỉ có 12 tháng — 13 bạn là \"13 chim bồ câu chui 12 chuồng\": ít nhất một tháng có từ 2 bạn.",
+    "why": "Ca LT2 — nguyên lý gốc."
+   },
+   {
+    "case": "hai câu na ná (ca lõi)",
+    "problem": "Ngăn tủ có 5 tất đỏ, 4 xanh, 3 vàng (lấy trong tối). Phải bốc ít nhất mấy chiếc để chắc chắn có: a) một đôi CÙNG MÀU? b) một đôi màu ĐỎ?",
+    "solution": "a) Xấu nhất 3 chiếc 3 màu → 3 + 1 = 4 chiếc. b) Xấu nhất vét sạch xanh + vàng = 7 chiếc rồi thêm 2 đỏ → 9 chiếc.",
+    "why": "Ca đề A câu 14 — trap đôi-gì rình đây."
+   },
+   {
+    "case": "bảng logic (ca loại dần)",
+    "problem": "Ba bạn An, Bình, Cúc mặc ba áo đỏ, xanh, vàng (mỗi người một màu). An không mặc áo đỏ; Bình không mặc áo đỏ và không mặc áo xanh. Hỏi ai mặc áo gì?",
+    "solution": "Bình không đỏ, không xanh → Bình VÀNG; An không đỏ (vàng đã có chủ) → An XANH; còn lại Cúc ĐỎ.",
+    "why": "Ca LT3 — ô chắc chắn điền trước."
+   },
+   {
+    "case": "duyệt giả thiết (ca sư phụ)",
+    "problem": "Chiếc bình bị vỡ. An nói: \"Bình làm vỡ\"; Bình nói: \"Tớ không làm vỡ\"; Cúc nói: \"Tớ không làm vỡ\". Biết CHỈ MỘT bạn nói thật. Hỏi ai làm vỡ bình?",
+    "solution": "Duyệt: giả An thật → Bình làm; Cúc dối → Cúc làm: hai thủ phạm — mâu thuẫn, loại. Giả Bình thật → An dối (Bình không làm ✓); Cúc dối → CÚC làm vỡ — khớp: Cúc là thủ phạm.",
+    "why": "Ca LT9 — duyệt từng giả thiết tìm mâu thuẫn."
+   }
+  ],
+  "numberRange": "Lớp 5: ≤ 3 màu / 3 nhân vật; số tất ≤ 12.",
+  "misconceptions": [
+   {
+    "wrong": "Coi \"đôi cùng màu\" và \"đôi màu đỏ\" là một: cả hai đều bốc 4 chiếc (hoặc đều tính vét sạch).",
+    "signal": "Hai câu a, b ra cùng đáp; không có dòng kịch bản xấu nhất riêng.",
+    "fix": "K2 — cả hai chạy chung máy xấu-nhất-+1 nhưng kịch bản khác nhau: cùng-màu xấu nhất 3 chiếc 3 màu (→4); màu-đỏ xấu nhất vét sạch 7 chiếc khác màu (→9).",
+    "counterExample": "Bốc 4 chiếc đòi đôi ĐỎ? Đen đủi: 4 xanh — chưa có chiếc đỏ nào chứ đừng nói đôi!"
+   }
+  ],
+  "vocabulary": [
+   "chuồng bồ câu",
+   "kịch bản xấu nhất + 1",
+   "đôi cùng màu — đôi màu chỉ định",
+   "ô chắc chắn điền trước",
+   "duyệt giả thiết tìm mâu thuẫn"
+  ],
+  "mantra": "DIRICHLET = XẤU NHẤT + 1 — VÀ ĐỌC KỸ ĐÔI GÌ!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "13 bạn — 12 tháng: ít nhất một tháng có từ ? bạn",
+    "answerKey": {
+     "value": 2
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "ôn suy luận đơn giản",
+   "message": "Ôn chuồng bồ câu rồi mở ngăn tủ nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Ngăn tủ 5 tất đỏ, 4 xanh, 3 vàng — bốc trong tối. \"Mấy chiếc thì CHẮC CHẮN có đôi cùng màu?\" Trí Long: \"hai chiếc là thành đôi!\" Su Kem lắc đầu: \"'Chắc chắn' là phải thắng cả ván ĐEN ĐỦI NHẤT — hai chiếc mà hai màu thì sao?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "bốc 2 chiếc = chắc có đôi??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để chơi ván đen đủi nhất!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Máy Dirichlet: KỊCH BẢN XẤU NHẤT cộng MỘT! Câu a — đôi CÙNG MÀU: đen đủi nhất là ba chiếc BA màu khác nhau, vẫn chưa đôi nào; chiếc thứ TƯ buộc trùng một màu: ba cộng một — BỐN chiếc! Câu b — đôi màu ĐỎ chỉ định: đen đủi nhất là vét SẠCH bốn xanh ba vàng, bảy chiếc chưa dính đỏ; rồi cần thêm HAI đỏ: bốn cộng ba cộng hai — CHÍN chiếc! Hai câu na ná — hai thế giới: đọc kỹ ĐÔI GÌ!",
+    "display": {
+     "type": "worst_case_interactive",
+     "spec": {
+      "caseA": "cùng màu: xấu nhất 3 chiếc 3 màu → 3+1 = 4",
+      "caseB": "màu đỏ: vét 4 xanh + 3 vàng → +2 = 9",
+      "law": "xấu nhất + 1"
+     }
+    },
+    "interaction": {
+     "type": "draw_worst",
+     "answerKey": {
+      "values": [
+       4,
+       9
+      ]
+     },
+     "successMessage": "4 và 9 — hai thế giới của một ngăn tủ!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Tất 3 màu — bốc chắc chắn có một đôi cùng màu cần:",
+     "choices": [
+      "4 chiếc",
+      "2 chiếc",
+      "6 chiếc"
+     ],
+     "answerKey": {
+      "choice": "4 chiếc"
+     },
+     "wrongFeedback": "Xấu nhất 3 chiếc 3 màu + 1.",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 44,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Bảng logic ba bạn ba áo — điền ô CHẮC CHẮN trước: Bình không đỏ, không xanh — Bình VÀNG! Loại dần: An không đỏ mà vàng đã có chủ — An XANH; còn Cúc ĐỎ. Vụ bình vỡ chỉ-một-người-thật thì DUYỆT từng giả thiết: giả An thật — Bình làm; Cúc nói \"tớ không làm\" hóa dối: Cúc cũng làm — HAI thủ phạm: mâu thuẫn, loại! Giả Bình thật: An dối khớp, Cúc dối — CÚC làm vỡ: khớp trọn vành, chốt án!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "bảng: Bình VÀNG → An XANH → Cúc ĐỎ",
+      "duyệt An thật: 2 thủ phạm ✗",
+      "duyệt Bình thật: Cúc làm vỡ ✓ chốt"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú ngăn tủ: Dirichlet bằng xấu nhất cộng một — và đọc kỹ đôi gì!",
+    "display": {
+     "type": "mantra_card",
+     "text": "XẤU NHẤT + 1 — ĐÔI GÌ?"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 89,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Ngăn tủ năm tất đỏ, bốn xanh, ba vàng — bốc trong tối. Mấy chiếc thì CHẮC CHẮN có đôi cùng màu? Trí Long: hai chiếc là thành đôi! Su Kem lắc đầu: chắc chắn là phải thắng cả ván ĐEN ĐỦI NHẤT — hai chiếc mà hai màu thì sao?",
+    "screenText": "bốc 2 chiếc = chắc có đôi??",
+    "visual": "Ngăn tủ tối om với ba chồng tất ba màu; bàn tay bốc hai chiếc hai màu khác nhau; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 18
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Máy Dirichlet: KỊCH BẢN XẤU NHẤT cộng MỘT! Câu a — đôi CÙNG MÀU: đen đủi nhất là ba chiếc BA màu khác nhau, vẫn chưa đôi nào; chiếc thứ TƯ buộc trùng: ba cộng một — BỐN chiếc! Câu b — đôi màu ĐỎ: đen đủi nhất là vét SẠCH bốn xanh ba vàng, bảy chiếc chưa dính đỏ; rồi cần thêm HAI đỏ: CHÍN chiếc!",
+    "screenText": "cùng màu: 3+1 = 4 · màu ĐỎ: 4+3+2 = 9 — hai thế giới!",
+    "visual": "Hai làn kịch bản: làn A ba chiếc ba màu rồi chiếc thứ tư sáng đèn; làn B bảy chiếc xanh vàng xếp hàng rồi hai đỏ chốt.",
+    "assets": [],
+    "duration": 24
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Bảng logic ba bạn ba áo — điền ô CHẮC CHẮN trước: Bình không đỏ, không xanh — Bình VÀNG! Loại dần: An không đỏ mà vàng đã có chủ — An XANH; còn Cúc ĐỎ. Vụ bình vỡ chỉ-một-người-thật thì DUYỆT: giả An thật — Bình làm; Cúc hóa dối: Cúc cũng làm — HAI thủ phạm: mâu thuẫn, loại! Giả Bình thật: An dối khớp, Cúc dối — CÚC làm vỡ: khớp trọn vành, chốt án!",
+    "screenText": "Bình VÀNG → An XANH → Cúc ĐỎ · duyệt: Bình thật → CÚC làm vỡ ✓",
+    "visual": "Bảng kẻ ô ba hàng ba cột điền dấu ✓✗ theo nhịp; phiên tòa mini duyệt hai giả thiết, giả thiết một gạch đỏ mâu thuẫn.",
+    "assets": [],
+    "duration": 28
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú ngăn tủ: Dirichlet bằng xấu nhất cộng một — và đọc kỹ đôi gì!",
+    "screenText": "XẤU NHẤT + 1 — ĐÔI GÌ?",
+    "visual": "Thẻ thần chú vàng với icon ngăn tủ và đôi tất.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Ngăn tủ của con: năm đỏ bốn xanh ba vàng — tính cả hai câu đôi cùng màu và đôi màu đỏ bằng ván đen đủi nhất! Vào bài luyện ngay!",
+    "screenText": "cùng màu? màu đỏ? — xấu nhất + 1!",
+    "visual": "Ngăn tủ chờ bốc; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 11
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Ván đen đủi nhất",
+  "problem": "Ngăn tủ có 5 tất đỏ, 4 xanh, 3 vàng (lấy trong tối). Phải bốc ít nhất mấy chiếc để chắc chắn có: a) một đôi CÙNG MÀU? b) một đôi màu ĐỎ?",
+  "steps": [
+   {
+    "show": "Bước 1 — (a) Xấu nhất: 3 chiếc 3 màu khác nhau → chiếc thứ 4 buộc trùng: 4 chiếc.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "'Chắc chắn' nghĩa là đúng trong:",
+     "choices": [
+      "mọi kịch bản (kể cả đen đủi nhất)",
+      "kịch bản may mắn",
+      "đa số kịch bản"
+     ],
+     "answerKey": {
+      "choice": "mọi kịch bản (kể cả đen đủi nhất)"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — (b) Xấu nhất: vét sạch 4 xanh + 3 vàng = 7 chiếc chưa có đỏ."
+   },
+   {
+    "show": "Bước 3 — Thêm 2 đỏ: 7 + 2 = 9 chiếc. Hai câu — hai đáp: 4 vs 9!",
+    "askAfter": {
+     "format": "mb",
+     "text": "Ba bạn ba áo: Bình không đỏ không xanh → ai mặc gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Bình",
+        "value": "vàng"
+       },
+       {
+        "label": "An",
+        "value": "xanh"
+       },
+       {
+        "label": "Cúc",
+        "value": "đỏ"
+       }
+      ]
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B44.LT2",
+     "text": "Trong 13 bạn bất kỳ, vì sao chắc chắn có ít nhất 2 bạn sinh cùng tháng?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "giải thích",
+        "value": "12 tháng — 13 bạn: 13 chim chui 12 chuồng, ít nhất một tháng có từ 2 bạn"
+       }
+      ]
+     },
+     "hints": [
+      "Mấy cái chuồng-tháng?",
+      "13 chim 12 chuồng."
+     ],
+     "solutionNarrative": "Chuồng bồ câu.",
+     "teaches": [
+      "K1"
+     ]
+    },
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B44.LT6",
+     "text": "Ngăn tủ có 5 chiếc tất đỏ, 4 xanh, 3 vàng (lấy trong tối). Hỏi phải bốc ít nhất mấy chiếc để chắc chắn có: a) một đôi cùng màu? b) một đôi màu đỏ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "a",
+        "value": 4
+       },
+       {
+        "label": "b",
+        "value": 9
+       }
+      ]
+     },
+     "hints": [
+      "a: xấu nhất 3 chiếc 3 màu.",
+      "b: vét 4 + 3 rồi + 2."
+     ],
+     "solutionNarrative": "4 và 9 — hai thế giới.",
+     "teaches": [
+      "K2"
+     ],
+     "generator": {
+      "template": "Tất {r} đỏ, {x} xanh, {v} vàng: đôi cùng màu? đôi đỏ?",
+      "constraints": {},
+      "answerRule": "3+1; (x+v)+2"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B44.LT3",
+     "text": "Ba bạn An, Bình, Cúc mặc ba áo đỏ, xanh, vàng (mỗi người một màu). An không mặc áo đỏ; Bình không mặc áo đỏ và không mặc áo xanh. Hỏi ai mặc áo gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Bình",
+        "value": "vàng"
+       },
+       {
+        "label": "An",
+        "value": "xanh"
+       },
+       {
+        "label": "Cúc",
+        "value": "đỏ"
+       }
+      ]
+     },
+     "hints": [
+      "Ô chắc chắn: Bình còn màu nào?",
+      "Loại dần."
+     ],
+     "solutionNarrative": "Bình vàng → An xanh → Cúc đỏ.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B44.LT9",
+     "text": "Sư phụ Trí Dũng đố: \"Chiếc bình bị vỡ. An nói: 'Bình làm vỡ'; Bình nói: 'Tớ không làm vỡ'; Cúc nói: 'Tớ không làm vỡ'. Biết chỉ MỘT bạn nói thật. Hỏi ai làm vỡ bình?\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "thủ phạm",
+        "value": "Cúc"
+       },
+       {
+        "label": "người nói thật",
+        "value": "Bình"
+       }
+      ]
+     },
+     "hints": [
+      "Duyệt từng giả thiết.",
+      "Giả An thật → mấy thủ phạm?"
+     ],
+     "solutionNarrative": "Giả An thật: 2 thủ phạm — loại; giả Bình thật: Cúc làm vỡ ✓.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.8.4#2@G5"
+   ],
+   "unlockNext": "DCR:KSN5Q1.C11",
+   "award": "huy_hieu_ngan_tu_dirichlet + mở KỲ SÁT HẠCH CHƯƠNG 11"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P2"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B44.QZ4",
+    "text": "Tất 3 màu — bốc chắc chắn có một đôi cùng màu cần:",
+    "choices": [
+     "4 chiếc",
+     "2 chiếc",
+     "6 chiếc"
+    ],
+    "answerKey": {
+     "choice": "4 chiếc"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B44.QZ5",
+    "text": "Bài \"chỉ một người nói thật\" giải bằng cách:",
+    "choices": [
+     "duyệt từng giả thiết tìm mâu thuẫn",
+     "chọn người hiền nhất",
+     "tung đồng xu"
+    ],
+    "answerKey": {
+     "choice": "duyệt từng giả thiết tìm mâu thuẫn"
+    },
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mb",
+    "text": "5 đỏ 4 xanh 3 vàng: đôi màu ĐỎ cần bốc ? chiếc",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "đáp",
+       "value": 9
+      }
+     ]
+    },
+    "teaches": [
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Đôi cùng màu vs đôi màu đỏ? Chỉ-một-người-thật giải sao?",
+    "back": "Máy chung XẤU NHẤT + 1, kịch bản khác: cùng màu — 3 chiếc 3 màu → 3+1 = 4; màu ĐỎ — vét sạch 4 xanh + 3 vàng → +2 = 9 (đọc kỹ ĐÔI GÌ!). Bảng logic: ô chắc chắn trước (Bình vàng) → loại dần. Chỉ-một-thật: DUYỆT giả thiết — An thật cho 2 thủ phạm (loại); Bình thật → Cúc làm vỡ ✓."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P2",
+   "+7 ngày: câu P4 (duyệt)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học Dirichlet xấu-nhất-+1 (đôi cùng màu 4 ≠ đôi đỏ 9) và duyệt giả thiết bảng logic. Con đạt {score}/3, {trapResult} câu bẫy đôi-gì. Con đã đủ điều kiện vào KỲ SÁT HẠCH CHƯƠNG 11!",
+  "homeActivity": "Chơi bốc tất thật trong túi vải: cả nhà đoán 'mấy chiếc chắc có đôi?' — con diễn ván đen đủi nhất.",
+  "watchFor": "Nếu con đáp 2 chiếc — bốc thử hai chiếc hai màu cho tự thấy (S1)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B44.M3",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "bốc 2 chiếc = chắc có đôi??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "hai chiếc là thành đôi!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "'Chắc chắn' là phải thắng cả ván ĐEN ĐỦI NHẤT — hai chiếc mà hai màu thì sao?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B44_M3_F1.png",
+   "sha256_16": "2455a4964d1c36d1"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con giải Dirichlet \"bốc chắc chắn\" bằng máy KỊCH BẢN XẤU NHẤT + 1 và phân biệt sắc bén hai câu na ná: \"đôi CÙNG MÀU\" (xấu nhất mỗi màu một chiếc: 3 + 1 = 4) khác \"đôi màu ĐỎ\" (xấu nhất vét sạch các màu khác rồi mới + 2: 4 + 3 + 2 = 9); và suy luận bảng đúng – sai: điền chắc chắn trước, loại dần; bài \"chỉ một người nói thật\" thì DUYỆT từng giả thiết tìm mâu thuẫn.",
+    "steps": [
+     {
+      "text": "bảng: Bình VÀNG → An XANH → Cúc ĐỎ"
+     },
+     {
+      "text": "duyệt An thật: 2 thủ phạm"
+     },
+     {
+      "text": "duyệt Bình thật: Cúc làm vỡ chốt"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B44_M3_F2.png",
+   "sha256_16": "9bd591d500de03e6"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Nguyên lý chuồng bồ câu",
+      "text": "13 bạn — 12 tháng: ít nhất một tháng có từ 2 bạn (13 chim chui 12 chuồng); \"chắc chắn\" nghĩa là đúng trong MỌI kịch bản — nên máy tính là KỊCH BẢN XẤU NHẤT + 1.",
+      "tone": "navy"
+     },
+     {
+      "label": "Hai câu na ná",
+      "text": "hai máy đếm khác xa: đôi CÙNG MÀU (bất kỳ): xấu nhất mỗi màu MỘT chiếc (3 chiếc 3 màu) → 3 + 1 = 4 chiếc; đôi màu ĐỎ chỉ định: xấu nhất VÉT SẠCH màu khác (4 xanh + 3 vàng) rồi cần thêm 2 đỏ → 4 + 3 + 2 = 9 chiếc — đọc kỹ ĐÔI GÌ!",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "DIRICHLET = XẤU NHẤT + 1 — VÀ ĐỌC KỸ ĐÔI GÌ!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B44_M3_F3.png",
+   "sha256_16": "410afe9a999f5038"
+  },
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "TỦ TỐI: 5 TẤT ĐỎ · 4 XANH · 3 VÀNG — BỐC MẤY CHIẾC?",
+    "neutral": true,
+    "wrong": {
+     "head": "ĐÔI CÙNG MÀU",
+     "steps": [
+      "xấu nhất: 3 chiếc 3 màu khác nhau"
+     ],
+     "result": "3 + 1 = 4 chiếc"
+    },
+    "right": {
+     "head": "ĐÔI MÀU ĐỎ",
+     "steps": [
+      "xấu nhất: vét sạch xanh + vàng = 7"
+     ],
+     "result": "7 + 2 = 9 chiếc"
+    },
+    "verdict": "Hai câu na ná — kịch bản xấu nhất khác hẳn nhau"
+   },
+   "caption": "Máy Dirichlet: dựng kịch bản XẤU NHẤT rồi cộng thêm cho chắc chắn",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B44_M3_F4.png",
+   "sha256_16": "a1e3aa18644f89d1"
+  }
+ ]
+}

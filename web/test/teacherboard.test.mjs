@@ -1,0 +1,100 @@
+/** Kiểm bảng giáo viên — chạy: node test/teacherboard.test.mjs */
+import {
+  buildTeacherBoard, topTraps, stuckLearners, learnerRows, boardHeadline, stampOf,
+} from '../functions/src/teacherboard.js';
+import { buildAttempts, isCloudLearner } from '../src/lib/sync.js';
+
+let pass = 0, fail = 0;
+const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
+
+const NOW = 1_700_000_000_000;
+const D = (n) => NOW - n * 86400000;
+const att = (learnerId, microId, o = {}) => ({
+  learnerId, microId, sessionId: o.sid || 's1', itemId: o.item || 'A1',
+  phase: o.phase || 'assess', correct: o.ok ?? true, mustPass: o.trap ?? false,
+  tries: o.tries ?? 1, ms: o.ms ?? 1000, ts: o.ts ?? D(1), serverTs: o.serverTs ?? null,
+});
+
+/* ── 1 · mốc thời gian: ưu tiên máy chủ, con chỉnh đồng hồ máy cũng không lệch ── */
+t('có serverTs thì lấy serverTs', stampOf({ ts: 1, serverTs: 999 }) === 999);
+t('chưa có serverTs thì đành lấy giờ máy', stampOf({ ts: 1, serverTs: null }) === 1);
+t('giờ máy con lệch vẫn lọt cửa sổ nhờ serverTs',
+  buildTeacherBoard({
+    roster: [{ uid: 'L1' }], now: NOW,
+    attempts: [att('L1', 'M1', { ts: D(400), serverTs: D(1) })],   // máy con đặt lùi hơn một năm
+  }).answered === 1);
+
+/* ── 2 · bẫy: đếm theo SỐ EM, không theo số lượt ── */
+const trapAtts = [
+  att('L1', 'DL:KSN5Q1.B10.M1', { trap: true, ok: false }),
+  att('L1', 'DL:KSN5Q1.B10.M1', { trap: true, ok: false }),   // cùng một em, làm lại
+  att('L1', 'DL:KSN5Q1.B10.M1', { trap: true, ok: false }),
+  att('L2', 'DL:KSN5Q1.B10.M1', { trap: true, ok: false }),
+  att('L3', 'DL:KSN5Q1.B7.M2', { trap: true, ok: false }),
+  att('L4', 'DL:KSN5Q1.B7.M2', { trap: true, ok: false }),
+  att('L5', 'DL:KSN5Q1.B7.M2', { trap: true, ok: false }),
+  att('L6', 'DL:KSN5Q1.B1.M1', { trap: true, ok: true }),      // đúng thì không tính
+];
+const traps = topTraps(trapAtts);
+t('bài 3 em sập xếp trên bài 2 em sập', traps[0].microId === 'DL:KSN5Q1.B7.M2' && traps[0].learners === 3);
+t('một em làm lại 3 lần vẫn chỉ tính 1 em', traps[1].learners === 2);
+t('câu bẫy làm ĐÚNG không vào bảng', !traps.some((x) => x.microId === 'DL:KSN5Q1.B1.M1'));
+t('lấy được tên bẫy từ chỉ mục',
+  topTraps(trapAtts, { 'DL_KSN5Q1_B7_M2': { trapName: 'từ khác giữa' } })[0].trapName === 'từ khác giữa');
+
+/* ── 3 · em đang tắc: chỉ tính bài CHƯA đạt ── */
+const stuckAtts = [
+  ...Array.from({ length: 4 }, () => att('L1', 'M1', { phase: 'practice', ok: false })),
+  ...Array.from({ length: 5 }, () => att('L2', 'M2', { phase: 'practice', ok: false })),
+  ...Array.from({ length: 2 }, () => att('L3', 'M3', { phase: 'practice', ok: false })),
+];
+const stuck = stuckLearners(stuckAtts, { L2: { M2: { pass: true } } });
+t('em thử 4 lần chưa qua thì vào danh sách tắc', stuck.some((s) => s.learnerId === 'L1'));
+t('em thử 5 lần NHƯNG đã đạt thì không tắc', !stuck.some((s) => s.learnerId === 'L2'));
+t('mới thử 2 lần thì chưa gọi là tắc', !stuck.some((s) => s.learnerId === 'L3'));
+
+/* ── 4 · một dòng mỗi em, kể cả em chưa học buổi nào ── */
+const roster = [{ uid: 'L1', displayName: 'An' }, { uid: 'L2', displayName: 'Bình' },
+                { uid: 'L3', displayName: 'Cúc' }];
+const rows = learnerRows(
+  [att('L1', 'M1', { ok: true }), att('L1', 'M1', { ok: false }), att('L2', 'M1', { ok: true })],
+  roster, { L1: { M1: { pass: true } } });
+t('mọi học sinh đều có một dòng', rows.length === 3);
+t('em chưa học vẫn có dòng, tỉ lệ đúng để trống', rows.find((r) => r.uid === 'L3').correctRate === null);
+t('tính đúng tỉ lệ đúng của từng em', rows.find((r) => r.uid === 'L1').correctRate === 50);
+t('đếm đúng số bài đã đạt', rows.find((r) => r.uid === 'L1').microsPassed === 1);
+t('xếp theo tên tiếng Việt', rows.map((r) => r.displayName).join(',') === 'An,Bình,Cúc');
+t('lượt của tài khoản đã xoá không dựng dòng ma',
+  learnerRows([att('LX', 'M1')], roster, {}).every((r) => r.answered === 0));
+
+/* ── 5 · bảng giáo viên trọn vẹn ── */
+const rep = buildTeacherBoard({
+  roster, progress: { L1: { M1: { pass: true } } },
+  attempts: [...trapAtts.map((a) => ({ ...a, learnerId: 'L1' })), att('L2', 'M1', { ok: true })],
+  index: {}, now: NOW,
+});
+t('đếm đúng tổng số học sinh', rep.learners === 3);
+t('đếm đúng số em có học', rep.activeLearners === 2);
+t('chỉ mặt em chưa học buổi nào', rep.idleLearners.join() === 'L3');
+t('có câu mở đầu đọc lướt', boardHeadline(rep).includes('2/3 em có học'));
+t('chưa ai học thì nói thẳng',
+  boardHeadline(buildTeacherBoard({ roster, now: NOW })).includes('chưa em nào'));
+t('bảng là dữ liệu thuần, đem lưu được', typeof JSON.parse(JSON.stringify(rep)).answered === 'number');
+
+/* ── 6 · attempts vẫn giữ chỗ cho mốc máy chủ ── */
+const recs = buildAttempts({
+  learnerId: 'L1', sessionId: 's1', microId: 'DL:KSN5Q1.B1.M1', serverTs: 'SENTINEL',
+  events: [{ phase: 'practice', itemId: 'P1', ok: true }], now: () => NOW,
+});
+t('mỗi lượt có chỗ cho mốc máy chủ', recs[0].serverTs === 'SENTINEL');
+t('learnerId chính là uid tài khoản', recs[0].learnerId === 'L1');
+
+/* ── 7 · chưa đăng nhập thì KHÔNG đẩy lên máy chủ ──
+   Đây là lỗi âm thầm nguy hiểm nhất: learnerId 'local' không có hồ sơ trên máy chủ,
+   luật bảo mật từ chối, mà từ chối thì không ai biết — bài học của con bay mất. */
+t('chưa đăng nhập thì không coi là học sinh trên máy chủ', !isCloudLearner('local'));
+t('chưa có id thì cũng không', !isCloudLearner(null) && !isCloudLearner(''));
+t('có hồ sơ thật thì mới đẩy lên', isCloudLearner('LxYz123'));
+
+console.log(`\n${pass} PASS · ${fail} FAIL`);
+process.exit(fail ? 1 : 0);

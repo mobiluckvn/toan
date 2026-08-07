@@ -1,0 +1,651 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B1.M3",
+ "title": "Đẳng thức cấu tạo ab = k × (a + b) — khai triển & duyệt nghiệm",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:I.1.1#3"
+  ],
+  "bktUnit": "CASE:I.1.1#3@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B1",
+  "order": 3,
+  "prev": "DL:KSN5Q1.B1.M2",
+  "next": "DL:KSN5Q1.B2.M1"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B1",
+  "chunks": [
+   "CHUNK:KSN5Q1.B1.S4",
+   "CHUNK:KSN5Q1.B1.S7"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B1.4"
+  ],
+  "traps": []
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải được đẳng thức cấu tạo dạng \"số hai chữ số gấp k lần tổng các chữ số\" (kể cả dạng chia có dư): khai triển ab = 10a + b, dọn về quan hệ giữa a và b, duyệt nghiệm có hệ thống và thử lại.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (khai triển đúng 10a + b)",
+  "kidText": "Con tìm được số có hai chữ số gấp mấy lần tổng chữ số của nó — tách số ra rồi dò từng nghiệm, không bỏ sót ai."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Số có hai chữ số ab luôn khai triển được theo hàng: ab = 10 × a + b (a từ 1 đến 9, b từ 0 đến 9)."
+   },
+   {
+    "id": "K2",
+    "text": "Bài \"ab gấp k lần tổng các chữ số\" dịch thành đẳng thức: 10a + b = k × (a + b); dọn hai vế để thu về một quan hệ đơn giản giữa a và b (ví dụ b = 2a hay a = 2b)."
+   },
+   {
+    "id": "K3",
+    "text": "Duyệt nghiệm CÓ HỆ THỐNG: cho a chạy từ 1 đến 9 theo quan hệ vừa tìm, loại các cặp cho b vượt quá 9; kết luận phải liệt kê ĐỦ và thử lại từng số."
+   },
+   {
+    "id": "K4",
+    "text": "Dạng mở rộng chia có dư: \"ab chia cho tổng các chữ số được thương k dư r\" dịch thành 10a + b = k × (a + b) + r rồi làm y hệt."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: chiếc CÂN THĂNG BẰNG của Học Viện. Vế trái đặt số ab — nhưng phải khai ra đúng cấu tạo: một bao 10a và một bao b (không được ném nguyên cục \"ab\" lên cân!). Vế phải đặt k lần bao (a + b). Sau đó DỌN CÂN: bớt những phần giống nhau ở cả hai vế cho đến khi lộ ra quan hệ trần trụi giữa a và b — đó là chìa khóa phòng nghiệm. Cuối cùng mở CUỘC ĐIỂM DANH: cho a đi từ 1 đến 9, ai thỏa quan hệ thì đứng lại, ai làm b vượt 9 thì loại — điểm danh xong phải THỬ LẠI từng em.",
+  "canonicalExamples": [
+   {
+    "case": "k = 4 (ca thường)",
+    "problem": "Tìm số có hai chữ số gấp 4 lần tổng các chữ số của nó.",
+    "solution": "Khai triển: 10a + b = 4(a + b) = 4a + 4b → dọn cân: 6a = 3b → b = 2a. Điểm danh a = 1, 2, 3, 4 → b = 2, 4, 6, 8 → các số 12, 24, 36, 48 (a = 5 cho b = 10 > 9, dừng). Thử: 48 = 4 × 12 ✓.",
+    "why": "Ca chuẩn của dạng, quan hệ b = 2a đẹp."
+   },
+   {
+    "case": "k = 7 (ca ngược chiều)",
+    "problem": "Tìm tất cả các số có hai chữ số gấp 7 lần tổng các chữ số của nó.",
+    "solution": "10a + b = 7a + 7b → 3a = 6b → a = 2b. Điểm danh b = 1, 2, 3, 4 → a = 2, 4, 6, 8 → 21, 42, 63, 84. Thử: 63 = 7 × 9 ✓.",
+    "why": "Quan hệ đảo chiều (a theo b) — chống học vẹt 'b = 2a'."
+   },
+   {
+    "case": "chia có dư (ca sư phụ)",
+    "problem": "Tìm số có hai chữ số, biết số đó chia cho tổng các chữ số của nó được thương là 4 dư 3.",
+    "solution": "10a + b = 4(a + b) + 3 → 6a = 3b + 3 → 2a = b + 1 → b = 2a − 1. Điểm danh a = 1…5 → b = 1, 3, 5, 7, 9 → các số 11, 23, 35, 47, 59. Thử: 47 : 11 = 4 dư 3 ✓.",
+    "why": "Mở rộng K4 — cầu nối sang dạng chia có dư của các chương sau."
+   }
+  ],
+  "numberRange": "Lớp 5: số hai chữ số (a: 1–9, b: 0–9); k từ 3 đến 9; số dư r nhỏ hơn tổng chữ số. Chỉ dùng các k cho lời giải duyệt được bằng tay.",
+  "misconceptions": [
+   {
+    "wrong": "Ném nguyên cục \"ab\" lên cân: viết ab = a + b hoặc ab = a × b.",
+    "signal": "Khai triển thiếu hệ số 10; đáp số lạc hoàn toàn.",
+    "fix": "K1: ab là 10a + b — chữ số a đang ở hàng chục nên cõng theo bao 10 (nối thẳng về Bản đồ các hàng ở M1).",
+    "counterExample": "Số 48: a + b = 12 chứ đâu phải 48; 10 × 4 + 8 = 48 mới đúng."
+   },
+   {
+    "wrong": "Đoán mò một nghiệm rồi dừng, không duyệt đủ.",
+    "signal": "Chỉ trả lời 12 cho bài k = 4 (thiếu 24, 36, 48).",
+    "fix": "K3: đề hỏi \"tìm số\" vẫn phải điểm danh đủ theo quan hệ; nói rõ vì sao dừng (b vượt 9).",
+    "counterExample": "b = 2a có tới 4 cặp hợp lệ — bỏ điểm danh là mất 3 nghiệm."
+   }
+  ],
+  "vocabulary": [
+   "cân thăng bằng",
+   "khai triển theo hàng",
+   "dọn cân",
+   "cuộc điểm danh a từ 1 đến 9",
+   "thử lại",
+   "nhân vật: sư phụ Trí Dũng ra đề nâng cấp"
+  ],
+  "mantra": "KHAI TRIỂN 10a + b — DỌN CÂN — ĐIỂM DANH ĐỦ — THỬ LẠI!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Số 48 khai triển theo hàng là 10 × 4 + mấy?",
+    "answerKey": {
+     "value": 8
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B1.M1",
+   "message": "Ôn lại cách tách số theo bản đồ các hàng rồi quay lại phòng cân nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Sư phụ Trí Dũng dán đề lên cổng Học Viện: \"Tìm số có hai chữ số GẤP 4 LẦN tổng các chữ số của nó.\" Trí Long thử ngay 24: tổng chữ số là 6, mà 24 = 4 × 6... đúng luôn! Nhưng sư phụ mỉm cười: \"Con mới bắt được MỘT — còn đồng bọn của nó thì sao?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "ab = 4 × (a + b) — tìm HẾT!"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để vào phòng cân của Học Viện!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 45,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Đặt lên cân: vế trái là số ab — nhưng phải KHAI ra: một bao 10a và một bao b. Vế phải: 4 bao (a + b), tức 4a và 4b. Giờ con dọn cân: bớt 4a và bớt b ở cả hai vế xem còn lại gì.",
+    "display": {
+     "type": "balance_interactive",
+     "spec": {
+      "left": [
+       "10a",
+       "b"
+      ],
+      "right": [
+       "4a",
+       "4b"
+      ],
+      "removeBoth": [
+       "4a",
+       "b"
+      ],
+      "result": "6a = 3b → b = 2a"
+     }
+    },
+    "interaction": {
+     "type": "drag_remove_pairs",
+     "successMessage": "Dọn xong! 6a = 3b, tức b = 2a — chìa khóa phòng nghiệm đây rồi."
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 20,
+    "item": {
+     "format": "lst",
+     "text": "Điểm danh với chìa khóa b = 2a: cho a = 1, 2, 3, 4 — viết đủ các số tìm được.",
+     "answerKey": {
+      "values": [
+       12,
+       24,
+       36,
+       48
+      ],
+      "ordered": true,
+      "count": 4
+     },
+     "wrongFeedback": "a = 1 → b = 2 → số 12; cứ thế đến khi b vượt 9 thì dừng.",
+     "objective": "O1",
+     "teaches": [
+      "K3"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 35,
+    "teaches": [
+     "K3",
+     "K4"
+    ],
+    "narration": "Vì sao dừng ở 48? Vì a = 5 cho b = 10 — không có chữ số 10! Điểm danh đủ, nói rõ lý do dừng, rồi THỬ LẠI: 48 chia 12 đúng bằng 4. Sư phụ nâng cấp: \"chia cho tổng chữ số được thương 4 DƯ 3 thì sao?\" — chỉ cần thêm số 3 vào vế phải: 10a + b = 4(a + b) + 3, rồi dọn cân y hệt.",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "a = 5 → b = 10 ✗ → DỪNG",
+      "Thử: 48 : 12 = 4 ✓",
+      "Nâng cấp: 10a + b = 4(a + b) + 3 → b = 2a − 1"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 14,
+    "narration": "Bốn nhịp của phòng cân: khai triển mười a cộng b — dọn cân — điểm danh đủ — thử lại!",
+    "display": {
+     "type": "mantra_card",
+     "text": "KHAI TRIỂN 10a + b — DỌN CÂN — ĐIỂM DANH ĐỦ — THỬ LẠI!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 85,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây",
+   "xung_ho": "gọi học sinh là 'con'"
+  },
+  "music": "nhạc nền bí ẩn nhẹ cảnh 1, chuyển sảng khoái từ cảnh 2",
+  "scenes": [
+   {
+    "no": 1,
+    "duration": 18,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Sư phụ Trí Dũng dán đề lên cổng: tìm số có hai chữ số gấp BỐN lần tổng các chữ số của nó. Trí Long thử số hai mươi tư — đúng luôn! Nhưng sư phụ mỉm cười: con mới bắt được một… còn đồng bọn của nó thì sao?",
+    "screenText": "ab = 4 × (a + b) — tìm HẾT!",
+    "visual": "Cổng Học Viện màu #0C3B70, tờ đề dán giữa; Trí Long giơ thẻ '24' kèm dấu ✓; sư phụ râu bạc mỉm cười, ba dấu '?' vàng bay quanh giây 11–15.",
+    "assets": []
+   },
+   {
+    "no": 2,
+    "duration": 19,
+    "templateHint": "balance_scale",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Vào phòng cân! Vế trái đặt số a b — khai ra đúng cấu tạo: bao MƯỜI a và bao b. Vế phải: bốn a và bốn b. Dọn cân — bớt bốn a hai bên, bớt một b hai bên: còn SÁU a bằng BA b, tức b bằng HAI a!",
+    "screenText": "10a + b = 4a + 4b → 6a = 3b → b = 2a",
+    "visual": "Cân thăng bằng lớn giữa màn, khung #0C3B70. Giây 4: bao '10a' và 'b' rơi vào đĩa trái; bao '4a', '4b' vào đĩa phải. Giây 12: từng cặp bao giống nhau hai bên mờ đi kèm hiệu ứng 'phụt'. Giây 19: dòng '6a = 3b → b = 2a' bật vàng #F8B942.",
+    "assets": []
+   },
+   {
+    "no": 3,
+    "duration": 22,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "C1",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Cuộc điểm danh bắt đầu! a bằng một — b bằng hai: số mười hai. a bằng hai — số hai mươi tư. a bằng ba — ba mươi sáu. a bằng bốn — bốn mươi tám. a bằng năm thì b phải bằng mười — không có chữ số mười, DỪNG! Vậy có đúng bốn đồng bọn: 12, 24, 36, 48.",
+    "screenText": "12 · 24 · 36 · 48 (a=5 → b=10 ✗ DỪNG)",
+    "visual": "Bảng điểm danh 5 hàng: a=1→12, a=2→24, a=3→36, a=4→48 lần lượt sáng xanh #1FC3A6; hàng a=5 hiện 'b=10' gạch đỏ #C0392B kèm chữ DỪNG.",
+    "assets": []
+   },
+   {
+    "no": 4,
+    "duration": 17,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Hai bẫy cần né: ném nguyên cục a b lên cân mà quên bao mười — sai từ gốc. Và bắt được một số đã vội nghỉ — thiếu ba đồng bọn. Điểm danh đủ, thử lại: bốn mươi tám chia mười hai đúng bằng bốn!",
+    "screenText": "ab = 10a + b (đừng quên bao 10!) · Điểm danh ĐỦ",
+    "visual": "Chia đôi: trái — phép 'ab = a + b' gạch chéo đỏ, sửa thành '10a + b' xanh; phải — thẻ '12' đơn độc với dấu '…?' rồi 3 thẻ 24·36·48 bay về xếp cạnh.",
+    "assets": []
+   },
+   {
+    "no": 5,
+    "duration": 9,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Thử tài sư phụ: số hai chữ số gấp BẢY lần tổng các chữ số — tìm hết nhé! Vào bài luyện ngay!",
+    "screenText": "ab = 7 × (a + b) → ?",
+    "visual": "Tờ đề mới 'k = 7' rơi xuống; nút 'VÀO BÀI LUYỆN' #1FC3A6 nửa dưới, mũi tên nảy.",
+    "linkItem": "P2",
+    "assets": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bắt trọn băng đồng bọn k = 4",
+  "problem": "Tìm tất cả các số có hai chữ số gấp 4 lần tổng các chữ số của nó.",
+  "steps": [
+   {
+    "show": "Bước 1 — Khai triển lên cân: 10a + b = 4 × (a + b).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Số ab khai triển theo hàng là gì?",
+     "choices": [
+      "a + b",
+      "10a + b",
+      "a × b"
+     ],
+     "answerKey": {
+      "choice": "10a + b"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Dọn cân: 10a + b = 4a + 4b → 6a = 3b → b = 2a."
+   },
+   {
+    "show": "Bước 3 — Điểm danh: a = 1, 2, 3, 4 → 12, 24, 36, 48; a = 5 cho b = 10 ✗ nên dừng.",
+    "askBefore": {
+     "format": "num",
+     "text": "Với a = 3 thì b bằng mấy?",
+     "answerKey": {
+      "value": 6
+     }
+    }
+   },
+   {
+    "show": "Bước 4 — Thử lại: 48 : 12 = 4 ✓; 36 : 9 = 4 ✓. Đáp số: 12; 24; 36; 48.",
+    "askAfter": {
+     "format": "num",
+     "text": "Thử em út: 12 chia tổng chữ số (1 + 2) bằng mấy?",
+     "answerKey": {
+      "value": 4
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể generator; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "lst",
+     "sourceItem": "ITEM:KSN5Q1.B1.LT7",
+     "text": "Tìm số có hai chữ số gấp 4 lần tổng các chữ số của nó.",
+     "answerKey": {
+      "values": [
+       12,
+       24,
+       36,
+       48
+      ],
+      "ordered": true,
+      "count": 4,
+      "rubric": "Nêu được lý do dừng: a = 5 cho b = 10 không hợp lệ."
+     },
+     "hints": [
+      "Khai triển 10a + b = 4(a + b) rồi dọn cân.",
+      "b = 2a — điểm danh a từ 1 đến khi b vượt 9."
+     ],
+     "solutionNarrative": "10a + b = 4(a + b) → b = 2a → 12 ; 24 ; 36 ; 48.",
+     "teaches": [
+      "K1",
+      "K2",
+      "K3"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "lst",
+     "sourceItem": "ITEM:KSN5Q1.B1.LT8",
+     "text": "Tìm tất cả các số có hai chữ số gấp 7 lần tổng các chữ số của nó.",
+     "answerKey": {
+      "values": [
+       21,
+       42,
+       63,
+       84
+      ],
+      "ordered": true,
+      "count": 4
+     },
+     "hints": [
+      "Dọn cân ra quan hệ giữa a và b — lần này chiều nào theo chiều nào?",
+      "3a = 6b → a = 2b: điểm danh theo b."
+     ],
+     "solutionNarrative": "10a + b = 7(a + b) → 3a = 6b → a = 2b → 21 ; 42 ; 63 ; 84. Thử: 63 = 7 × 9 ✓.",
+     "teaches": [
+      "K2",
+      "K3"
+     ],
+     "generator": {
+      "template": "Tìm tất cả các số có hai chữ số gấp {k} lần tổng các chữ số của nó.",
+      "constraints": {
+       "k": "một trong {4, 6, 7} (các k có nghiệm duyệt tay đẹp)"
+      },
+      "answerRule": "k=4 → 12,24,36,48 · k=6 → 54 · k=7 → 21,42,63,84"
+     }
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "lst",
+     "sourceItem": "ITEM:KSN5Q1.B1.LT9",
+     "text": "Sư phụ Trí Dũng đố: \"Tìm số có hai chữ số, biết số đó chia cho tổng các chữ số của nó được thương là 4 dư 3.\"",
+     "answerKey": {
+      "values": [
+       11,
+       23,
+       35,
+       47,
+       59
+      ],
+      "ordered": true,
+      "count": 5
+     },
+     "hints": [
+      "Chia có dư: 10a + b = 4 × (a + b) + 3.",
+      "Dọn cân: 2a = b + 1 → b = 2a − 1, điểm danh a từ 1."
+     ],
+     "solutionNarrative": "10a + b = 4(a + b) + 3 → 2a − b = 1 → các cặp (1;1), (2;3), (3;5), (4;7), (5;9) → 11, 23, 35, 47, 59.",
+     "teaches": [
+      "K4",
+      "K3"
+     ]
+    },
+    {
+     "id": "P4",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Số ab bằng a + b, nên \"ab gấp 4 lần tổng chữ số\" nghĩa là a + b = 4 × (a + b).",
+     "answerKey": {
+      "value": false,
+      "note": "ab = 10a + b — chữ số a ở hàng chục cõng bao 10."
+     },
+     "hints": [
+      "Số 48 có bằng 4 + 8 không?",
+      "Nhớ bản đồ các hàng: a đang ở hàng chục."
+     ],
+     "teaches": [
+      "K1"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:I.1.1#3@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B2.M1",
+   "award": "huy_hieu_phong_can"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "workedExample"
+   ],
+   "retryWith": "đề B sinh từ generator P2"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "text": "Số có hai chữ số ab khai triển theo hàng là:",
+    "choices": [
+     "a + b",
+     "10a + b",
+     "10b + a"
+    ],
+    "answerKey": {
+     "choice": "10a + b"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "lst",
+    "text": "Tìm tất cả các số có hai chữ số gấp 4 lần tổng các chữ số của nó.",
+    "answerKey": {
+     "values": [
+      12,
+      24,
+      36,
+      48
+     ],
+     "ordered": true,
+     "count": 4
+    },
+    "teaches": [
+     "K2",
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "Số có hai chữ số gấp 6 lần tổng các chữ số của nó là số nào?",
+    "answerKey": {
+     "value": 54
+    },
+    "teaches": [
+     "K2",
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Bốn nhịp giải bài \"ab gấp k lần tổng chữ số\"?",
+    "back": "KHAI TRIỂN 10a + b = k(a + b) → DỌN CÂN ra quan hệ a, b → ĐIỂM DANH a (hoặc b) từ 1 đến khi vượt 9 → THỬ LẠI từng nghiệm."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: 1 câu generator P2",
+   "+7 ngày: câu P3 biến thể (thương 4 dư 3)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học giải đẳng thức cấu tạo số bằng 'phòng cân': khai triển — dọn cân — điểm danh — thử lại. Con đạt {score}/3 bài ra cửa.",
+  "homeActivity": "Đố vui bữa tối: 'Số 24 gấp 4 lần tổng hai chữ số của nó — con tìm thêm được mấy số như vậy nữa?' — con kể đủ 12, 36, 48 là đạt.",
+  "watchFor": "Nếu con viết ab = a + b (quên bao 10) — mở lại màn phòng cân S2 cùng con."
+ },
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "ab = 4 × (a + b) — tìm HẾT!",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Sư phụ Trí Dũng dán đề lên cổng Học Viện: \"Tìm số có hai chữ số GẤP 4 LẦN tổng các chữ số của nó.\" Trí Long thử ngay 24: tổng chữ số là 6, mà 24 = 4 × 6... đúng luôn! Nhưng sư phụ mỉm cười: \"Con mới bắt được MỘT — còn đồng bọn của nó thì sao?\"",
+      "tone": "wrong"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B1_M3_F1.png",
+   "sha256_16": "2a622ddaa8da76d8"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con giải được đẳng thức cấu tạo dạng \"số hai chữ số gấp k lần tổng các chữ số\" (kể cả dạng chia có dư): khai triển ab = 10a + b, dọn về quan hệ giữa a và b, duyệt nghiệm có hệ thống và thử lại.",
+    "steps": [
+     {
+      "text": "a = 5 → b = 10 → DỪNG"
+     },
+     {
+      "text": "Thử: 48 : 12 = 4"
+     },
+     {
+      "text": "Nâng cấp: 10a + b = 4(a + b) + 3 → b = 2a − 1"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B1_M3_F2.png",
+   "sha256_16": "9d1d8d3ae0e18cf2"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Số có hai chữ số ab luôn khai triển được theo hàng",
+      "text": "ab = 10 × a + b (a từ 1 đến 9, b từ 0 đến 9).",
+      "tone": "navy"
+     },
+     {
+      "label": "Bài \"ab gấp k lần tổng các chữ số\" dịch thành đẳng thức",
+      "text": "10a + b = k × (a + b); dọn hai vế để thu về một quan hệ đơn giản giữa a và b (ví dụ b = 2a hay a = 2b).",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "KHAI TRIỂN 10a + b — DỌN CÂN — ĐIỂM DANH ĐỦ — THỬ LẠI!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B1_M3_F3.png",
+   "sha256_16": "2513992a2d20c3b2"
+  },
+  {
+   "archetype": "bar_diagram",
+   "params": {
+    "title": "ab = 4 × (a + b)  →  DỌN CÂN CÒN  b = 2a",
+    "bars": [
+     {
+      "name": "chữ số a",
+      "units": 1,
+      "label": "a"
+     },
+     {
+      "name": "chữ số b",
+      "units": 2,
+      "label": "b = 2a"
+     }
+    ],
+    "brace": {
+     "text": "10a + b = 4a + 4b → 6a = 3b → b gấp đôi a"
+    },
+    "note": "Điểm danh a = 1, 2, 3, 4 → các số 12, 24, 36, 48"
+   },
+   "caption": "Sơ đồ đoạn thẳng cho thấy b luôn dài gấp đôi a",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B1_M3_F4.png",
+   "sha256_16": "0b2835894c5e8970"
+  }
+ ]
+}

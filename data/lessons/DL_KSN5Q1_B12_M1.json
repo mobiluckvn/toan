@@ -1,0 +1,586 @@
+{
+ "title": "Số hạng thứ n = đầu + (n − 1) × khoảng · TBC = (đầu + cuối) : 2",
+ "grade": 5,
+ "durationMinutes": 7,
+ "skills": {
+  "primary": [
+   "CASE:I.5.1#1"
+  ],
+  "bktUnit": "CASE:I.5.1#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B12",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B11.M3",
+  "next": "DL:KSN5Q1.B12.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B12",
+  "chunks": [
+   "CHUNK:KSN5Q1.B12.S3",
+   "CHUNK:KSN5Q1.B12.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B12.1"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B12.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con tìm được số hạng thứ n của dãy cách đều bằng công thức: số hạng thứ n = số đầu + (n − 1) × khoảng cách — hiểu vì sao là (n − 1) chứ không phải n; và tính được trung bình cộng của dãy = (đầu + cuối) : 2 không cần cộng cả dãy.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (nhảy n − 1 bước)",
+  "kidText": "Con tìm được số hạng thứ n của dãy cách đều — nhảy n trừ 1 bước chứ không phải n bước."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Số hạng thứ n của dãy cách đều = số đầu + (n − 1) × khoảng cách."
+   },
+   {
+    "id": "K2",
+    "text": "Vì sao (n − 1): đứng ở số ĐẦU là chưa nhảy bước nào; đến số hạng thứ n chỉ mới nhảy (n − 1) bước — họ hàng ruột với luật cọc–khoảng của Bài 7."
+   },
+   {
+    "id": "K3",
+    "text": "Trung bình cộng của dãy cách đều = (số đầu + số cuối) : 2 — hai đầu cân nhau qua điểm giữa, khỏi cộng cả dãy."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: CHIẾC CỌC XUẤT PHÁT quen thuộc từ hàng rào Bài 7 quay lại — lần này để ĐI TỚI. Dãy 2; 5; 8; 11… là con đường cắm cọc cách nhau 3 mét: đứng ở cọc số 1 (số 2) là ĐỨNG YÊN — chưa nhảy phát nào! Muốn tới cọc thứ 10, con chỉ nhảy CHÍN bước: 2 cộng 9 nhân 3 bằng 29. Kẻ vội nhân đủ 10 bước sẽ đứng lố một cọc. Còn TBC của dãy? Dãy cách đều cân xứng như bập bênh: đầu và cuối cân nhau qua tâm — TBC chính là (đầu + cuối) chia 2, khỏi cộng lẻ tẻ.",
+  "canonicalExamples": [
+   {
+    "case": "số hạng thứ n (ca lõi)",
+    "problem": "Dãy 2; 5; 8; 11; … — tìm số hạng thứ 10 của dãy.",
+    "solution": "Khoảng cách 3. Số hạng thứ 10 = 2 + (10 − 1) × 3 = 2 + 27 = 29.",
+    "why": "Ca chuẩn K1+K2 — nơi bẫy CĐ-12.2 rình (2 + 10 × 3 = 32 sai)."
+   },
+   {
+    "case": "TBC bập bênh (ca khỏi-cộng)",
+    "problem": "Tính trung bình cộng của dãy 3; 6; 9; …; 99 mà không cộng cả dãy.",
+    "solution": "TBC dãy cách đều = (đầu + cuối) : 2 = (3 + 99) : 2 = 51.",
+    "why": "Ca K3 — sẽ thành linh kiện của tổng ghép cặp bài sau."
+   },
+   {
+    "case": "kiểm tí hon (ca phản chứng)",
+    "problem": "Dãy 2; 5; 8 — số hạng thứ 3 theo công thức là mấy? Nhân đủ 3 bước thì sao?",
+    "solution": "Đúng: 2 + 2 × 3 = 8 ✓. Nhân đủ 3 bước: 2 + 9 = 11 — lố sang số hạng thứ TƯ!",
+    "why": "Dãy nhỏ tự soi được — khắc luật cọc xuất phát."
+   }
+  ],
+  "numberRange": "Lớp 5: khoảng cách 1–10; n đến 100; có dãy thập phân đơn giản (0,5).",
+  "misconceptions": [
+   {
+    "wrong": "Số hạng thứ n = đầu + n × khoảng (tìm thứ 10 của dãy 2; 5; 8: tính 2 + 10 × 3 = 32).",
+    "signal": "Đáp lố đúng MỘT khoảng cách.",
+    "fix": "K2 — cọc xuất phát không tính bước: đứng ở số đầu là chưa nhảy; thứ n chỉ nhảy (n − 1) bước.",
+    "counterExample": "Dãy tí hon 2; 5; 8: nhân đủ 3 bước ra 11 — mà số hạng thứ ba rõ ràng là 8."
+   }
+  ],
+  "vocabulary": [
+   "cọc xuất phát không tính bước",
+   "nhảy (n − 1) bước",
+   "bập bênh cân đầu–cuối",
+   "TBC khỏi cộng cả dãy"
+  ],
+  "mantra": "THỨ N — NHẢY N TRỪ MỘT BƯỚC!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Dãy 3; 6; 9; …; 99 có bao nhiêu số hạng? (Bài 7)",
+    "answerKey": {
+     "value": 33
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B7.M1",
+   "message": "Ôn hàng rào cọc–khoảng của Bài 7 rồi lên đường nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Đường chạy cắm cọc: 2 — 5 — 8 — 11… Sư phụ hỏi: \"Cọc thứ MƯỜI ghi số mấy?\" Trí Long tính vèo: 2 cộng 10 nhân 3 bằng 32! Su Kem đứng ở cọc đầu, chưa nhúc nhích: \"Khoan — mình đang đứng ở cọc số một, đã nhảy phát nào đâu?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "thứ 10 = 2 + 10 × 3??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để đếm bước nhảy!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 42,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Con đứng ở cọc số 1 — số 2 — và ĐẾM BƯỚC khi nhảy: tới cọc 2 là một bước, cọc 3 là hai bước… tới cọc thứ 10 là mấy bước? CHÍN bước! Mỗi bước 3 mét: 2 cộng 9 nhân 3 bằng 29. Kiểm dãy tí hon 2; 5; 8: thứ ba = 2 + 2 × 3 = 8 ✓ — nhân đủ 3 bước ra 11 là lố sang cọc thứ tư!",
+    "display": {
+     "type": "hop_count_interactive",
+     "spec": {
+      "start": 2,
+      "gap": 3,
+      "targetIndex": 10,
+      "hops": 9,
+      "answer": 29,
+      "tinyCheck": "2;5;8 → thứ 3 = 8"
+     }
+    },
+    "interaction": {
+     "type": "hop_and_compute",
+     "answerKey": {
+      "value": 29
+     },
+     "successMessage": "9 bước × 3 + 2 = 29 — cọc xuất phát không tính bước!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "num",
+     "text": "Số hạng thứ 5 của dãy 4; 9; 14; … là mấy?",
+     "answerKey": {
+      "value": 24
+     },
+     "wrongFeedback": "4 + (5 − 1) × 5 = 24.",
+     "objective": "O1",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 34,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Tuyệt chiêu thứ hai: trung bình cộng của dãy 3; 6; …; 99 — khỏi cộng cả dãy! Dãy cách đều như chiếc bập bênh cân xứng: 3 với 99 cân nhau, 6 với 96 cân nhau — tâm bập bênh nằm ở (3 cộng 99) chia 2 bằng 51. TBC = (đầu + cuối) : 2, gọn một dòng!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "3 ↔ 99 · 6 ↔ 96 · … cân qua tâm",
+      "TBC = (3 + 99) : 2 = 51",
+      "dãy cách đều nào cũng vậy!"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 12,
+    "narration": "Thần chú đường chạy: thứ n — nhảy n trừ một bước!",
+    "display": {
+     "type": "mantra_card",
+     "text": "THỨ N — NHẢY N TRỪ MỘT BƯỚC!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 81,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đường chạy cắm cọc: hai — năm — tám — mười một… Sư phụ hỏi: cọc thứ MƯỜI ghi số mấy? Trí Long tính vèo: hai cộng mười nhân ba bằng ba mươi hai! Su Kem đứng ở cọc đầu, chưa nhúc nhích: khoan — mình đang đứng ở cọc số một, đã nhảy phát nào đâu?",
+    "screenText": "thứ 10 = 2 + 10 × 3??",
+    "visual": "Đường chạy với cọc số 2·5·8·11; Su Kem đứng yên ở cọc đầu, chân chưa rời vạch; Trí Long cầm bảng '32' dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Đứng ở cọc số một — số hai — và ĐẾM BƯỚC khi nhảy: tới cọc hai là một bước, cọc ba là hai bước… tới cọc thứ mười là CHÍN bước! Mỗi bước ba mét: hai cộng chín nhân ba bằng HAI MƯƠI CHÍN. Kiểm dãy tí hon hai, năm, tám: thứ ba bằng tám — nhân đủ ba bước ra mười một là lố sang cọc thứ tư!",
+    "screenText": "thứ 10 → 9 bước · 2 + 9 × 3 = 29",
+    "visual": "Hoạt cảnh nhảy cọc với bộ đếm bước 1…9 hiện dần; phép tính 2+9×3=29 bật vàng #F8B942; góc màn dãy tí hon kiểm chứng.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Tuyệt chiêu thứ hai: trung bình cộng của dãy ba, sáu tới chín chín — khỏi cộng cả dãy! Dãy cách đều như chiếc bập bênh cân xứng: ba với chín chín cân nhau, sáu với chín sáu cân nhau — tâm bập bênh ở ba cộng chín chín chia hai bằng NĂM MƯƠI MỐT!",
+    "screenText": "TBC = (3 + 99) : 2 = 51",
+    "visual": "Bập bênh với các cặp số cân hai bên; tâm bập bênh sáng '51'; công thức đóng khung.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú đường chạy: thứ n — nhảy n trừ một bước!",
+    "screenText": "THỨ N — NHẢY N TRỪ 1 BƯỚC!",
+    "visual": "Thẻ thần chú vàng với icon cọc xuất phát.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Đường chạy của con: số hạng thứ mười của dãy hai, năm, tám là mấy? Vào bài luyện ngay!",
+    "screenText": "2; 5; 8; … → thứ 10 = ?",
+    "visual": "Đường cọc kéo dài với cọc thứ 10 phủ vải hỏi; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 8
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Cọc thứ mười của đường chạy",
+  "problem": "Dãy 2; 5; 8; 11; … — tìm số hạng thứ 10 của dãy.",
+  "steps": [
+   {
+    "show": "Bước 1 — Khoảng cách của dãy: 5 − 2 = 3.",
+    "askBefore": {
+     "format": "num",
+     "text": "Đứng ở số đầu là đã nhảy mấy bước?",
+     "answerKey": {
+      "value": 0
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Tới số hạng thứ 10: nhảy 10 − 1 = 9 bước."
+   },
+   {
+    "show": "Bước 3 — Số hạng thứ 10 = 2 + 9 × 3 = 29.",
+    "askAfter": {
+     "format": "num",
+     "text": "Số hạng thứ 20 của dãy này là?",
+     "answerKey": {
+      "value": 59
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B12.LT1",
+     "text": "Dãy 2; 5; 8; 11; … — tìm số hạng thứ 10 của dãy.",
+     "answerKey": {
+      "value": 29
+     },
+     "hints": [
+      "Thứ 10 → nhảy mấy bước?",
+      "2 + 9 × 3."
+     ],
+     "solutionNarrative": "2 + (10 − 1) × 3 = 29.",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "generator": {
+      "template": "Dãy {a}; {a+d}; {a+2d}; … — tìm số hạng thứ {n}.",
+      "constraints": {
+       "d": "2–10",
+       "n": "5–50"
+      },
+      "answerRule": "a + (n − 1) × d"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B12.LT6",
+     "text": "Tính trung bình cộng của dãy 3; 6; 9; …; 99 mà không cộng cả dãy.",
+     "answerKey": {
+      "value": 51
+     },
+     "hints": [
+      "Bập bênh cân đầu–cuối.",
+      "(3 + 99) : 2."
+     ],
+     "solutionNarrative": "TBC = (3 + 99) : 2 = 51.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "num",
+     "text": "Số hạng thứ 15 của dãy 7; 12; 17; … là mấy?",
+     "answerKey": {
+      "value": 77
+     },
+     "hints": [
+      "Khoảng 5; nhảy 14 bước.",
+      "7 + 14 × 5."
+     ],
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    },
+    {
+     "id": "P4",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Số hạng thứ 4 của dãy 10; 20; 30; … là 10 + 4 × 10 = 50.",
+     "answerKey": {
+      "value": false,
+      "note": "Nhảy 3 bước thôi: 10 + 3 × 10 = 40 — đếm tay: 10, 20, 30, 40 ✓."
+     },
+     "hints": [
+      "Cọc xuất phát tính bước không?",
+      "Đếm tay dãy tí hon!"
+     ],
+     "teaches": [
+      "K2"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:I.5.1#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B12.M2",
+   "award": "huy_hieu_coc_xuat_phat"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "workedExample"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B12.QZ1",
+    "text": "(Đúng/Sai?) Số hạng thứ 10 của dãy cách đều bằng số đầu cộng 10 lần khoảng cách.",
+    "answerKey": {
+     "value": false
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B12.QZ3",
+    "text": "TBC của dãy 3; 6; …; 99 là:",
+    "choices": [
+     "51",
+     "33",
+     "102"
+    ],
+    "answerKey": {
+     "choice": "51"
+    },
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "Số hạng thứ 8 của dãy 5; 9; 13; … là mấy?",
+    "answerKey": {
+     "value": 33
+    },
+    "teaches": [
+     "K1"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Số hạng thứ n của dãy cách đều? TBC của dãy?",
+    "back": "Thứ n = đầu + (n − 1) × khoảng — cọc xuất phát không tính bước! TBC = (đầu + cuối) : 2 (bập bênh cân xứng). Dãy 2;5;8;…: thứ 10 = 2 + 9 × 3 = 29."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P4 (phản chứng)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học công thức số hạng thứ n (nhảy n − 1 bước) và TBC bập bênh của dãy cách đều. Con đạt {score}/3, {trapResult} câu bẫy nhân-lố-một-bước.",
+  "homeActivity": "Đố cầu thang: 'đứng ở bậc 1, muốn lên bậc thứ 10 con bước mấy lần?' — con trả lời 9 và nối sang công thức là đạt.",
+  "watchFor": "Nếu con nhân đủ n bước — đếm tay dãy tí hon 2; 5; 8 cùng con (S2)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B12.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "thứ 10 = 2 + 10 × 3??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Đường chạy cắm cọc: 2 — 5 — 8 — 11… Sư phụ hỏi: \"Cọc thứ MƯỜI ghi số mấy?\" Trí Long tính vèo: 2 cộng 10 nhân 3 bằng 32!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "\"Khoan — mình đang đứng ở cọc số một, đã nhảy phát nào đâu?\"",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B12_M1_F1.png",
+   "sha256_16": "bb58ea4ad6075faa"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con tìm được số hạng thứ n của dãy cách đều bằng công thức: số hạng thứ n = số đầu + (n − 1) × khoảng cách — hiểu vì sao là (n − 1) chứ không phải n; và tính được trung bình cộng của dãy = (đầu + cuối) : 2 không cần cộng cả dãy.",
+    "steps": [
+     {
+      "text": "3 ↔ 99 · 6 ↔ 96 · … cân qua tâm"
+     },
+     {
+      "text": "TBC = (3 + 99) : 2 = 51."
+     },
+     {
+      "text": "dãy cách đều nào cũng vậy!"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B12_M1_F2.png",
+   "sha256_16": "98643fa4193c7cce"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "text": "Số hạng thứ n của dãy cách đều = số đầu + (n − 1) × khoảng cách.",
+      "tone": "navy"
+     },
+     {
+      "label": "Vì sao (n − 1)",
+      "text": "đứng ở số ĐẦU là chưa nhảy bước nào",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "THỨ N — NHẢY N TRỪ MỘT BƯỚC!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B12_M1_F3.png",
+   "sha256_16": "f5f472620f5dd9f0"
+  },
+  {
+   "archetype": "fence_posts",
+   "params": {
+    "title": "DÃY 2; 5; 8; 11; … — SỐ HẠNG THỨ 10 LÀ SỐ NÀO?",
+    "first": 2,
+    "last": 29,
+    "step": 3,
+    "show": 6,
+    "labels": [
+     "2",
+     "5",
+     "8",
+     "…",
+     "26",
+     "29"
+    ],
+    "gap_at": 3,
+    "gap_note": "từ số 1 đến số 10 chỉ có 9 bước nhảy",
+    "formula": "số hạng thứ 10 = 2 + (10 − 1) × 3 = 29",
+    "note": "Là (n − 1) chứ không phải n — vì số đầu tiên chưa nhảy bước nào"
+   },
+   "caption": "Cùng lý lẽ cọc và khoảng: đứng ở cọc thứ 10 thì đã đi 9 khoảng",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B12_M1_F4.png",
+   "sha256_16": "9030eb7f3b458b97"
+  }
+ ]
+}

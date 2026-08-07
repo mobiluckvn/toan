@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body, #root { height: 100%; }
+  body { @apply bg-paper text-ink antialiased; }
+  :focus-visible { outline: 3px solid #F8B942; outline-offset: 2px; }
+}
+
+@layer components {
+  .card      { @apply bg-white rounded-2xl p-4 sm:p-5 shadow-[0_2px_14px_rgba(12,59,112,.07)] mb-3.5; }
+  .kicker    { @apply text-[11px] tracking-[.14em] font-extrabold text-mute mb-2; }
+  .rule-box  { @apply border-l-[5px] border-teal bg-teal-pale rounded-r-xl px-3.5 py-3 my-3 leading-relaxed; }
+  .step0-box { @apply border-l-[5px] border-gold bg-gold-pale rounded-r-xl px-3.5 py-3 my-3; }
+  .warn-box  { @apply border-l-[5px] border-alert bg-alert-pale rounded-r-xl px-3.5 py-3 my-3; }
+  .btn       { @apply w-full rounded-xl px-4 py-3 text-base font-extrabold active:scale-[.99] transition; }
+  .btn-go    { @apply btn bg-teal text-teal-dark; }
+  .btn-gold  { @apply btn bg-gold text-gold-dark; }
+  .btn-ghost { @apply btn bg-white text-navy border-2 border-line; }
+  .opt       { @apply w-full text-left bg-white border-2 border-line rounded-xl px-4 py-3 text-base transition; }
+  .opt-right { @apply border-teal bg-teal-pale font-bold; }
+  .opt-wrong { @apply border-alert bg-alert-pale; }
+  .numin     { @apply flex-1 min-w-[110px] text-lg font-bold text-navy text-center border-2 border-line rounded-xl px-3 py-2.5 focus:border-teal focus:outline-none; }
+  .pill      { @apply inline-block rounded-full px-2.5 py-0.5 text-[11.5px] font-extrabold; }
+
+  /* ── Ô trả lời có nhãn hiện thường trực ──
+     Nhãn PHẢI nằm ngoài ô: để trong chữ mờ thì con gõ ký tự đầu là nhãn biến mất,
+     bài nhiều ô thành ra không biết ô nào hỏi gì. */
+  .field       { @apply rounded-xl border-[1.5px] border-line bg-[#FBFDFF] px-3 py-2.5; }
+  .field-head  { @apply mb-1.5 flex items-baseline gap-1.5 text-[13.5px] font-bold text-navy; }
+  .field-letter{ @apply inline-flex h-[19px] min-w-[19px] items-center justify-center rounded-full bg-navy px-1 text-[11px] font-extrabold text-white; }
+  .field-unit  { @apply ml-auto shrink-0 rounded-md bg-gold-pale px-1.5 py-0.5 text-[11.5px] font-extrabold text-gold-dark; }
+  .field-brief { @apply mb-2.5 flex items-start gap-1.5 rounded-xl bg-[#F2F6FA] px-3 py-2 text-[13.5px] font-semibold leading-snug text-navy; }
+}

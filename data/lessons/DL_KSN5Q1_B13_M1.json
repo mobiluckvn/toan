@@ -1,0 +1,656 @@
+{
+ "title": "Kho cặp số vàng: kéo cặp về gần nhau bằng giao hoán – kết hợp",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:I.7.1#1"
+  ],
+  "bktUnit": "CASE:I.7.1#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B13",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B12.M3",
+  "next": "DL:KSN5Q1.B13.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B13",
+  "chunks": [
+   "CHUNK:KSN5Q1.B13.S3",
+   "CHUNK:KSN5Q1.B13.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B13.1"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B13.1"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con thuộc KHO CẶP SỐ VÀNG (0,25 × 4 = 1; 0,125 × 8 = 1; 2,5 × 4 = 10; 1,25 × 8 = 10; 12,5 × 8 = 100) và dùng giao hoán – kết hợp kéo cặp về gần nhau để tính vèo — kèm hai phép nhẩm 0,5 và 0,25 hiểu theo NGHĨA chứ không theo mặt chữ.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (0,5 là một nửa)",
+  "kidText": "Con thuộc các cặp số vàng như 0,25 nhân 4 bằng 1, rồi kéo chúng lại gần nhau để tính vèo trong đầu."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Kho cặp vàng cho ra số TRÒN: 0,25 × 4 = 1 · 0,5 × 2 = 1 · 0,125 × 8 = 1 · 2,5 × 4 = 10 · 1,25 × 8 = 10 · 12,5 × 8 = 100."
+   },
+   {
+    "id": "K2",
+    "text": "Giao hoán – kết hợp cho phép ĐỔI CHỖ và GHÉP NHÓM tùy ý trong tích: 0,25 × 7,3 × 4 = (0,25 × 4) × 7,3 — kéo cặp vàng về sát nhau trước, nhân số lẻ sau cùng."
+   },
+   {
+    "id": "K3",
+    "text": "Nhẩm theo NGHĨA: nhân 0,5 là lấy MỘT NỬA (chia 2); nhân 0,25 là lấy MỘT PHẦN TƯ (chia 4); nhân 0,2 là chia 5 — vì 0,5 = 1/2, 0,25 = 1/4, chứ không phải vì \"mặt chữ có số 5\"."
+   },
+   {
+    "id": "K4",
+    "text": "Đề càng đông thừa số càng phải soi kỹ: trong đám đông thường giấu HAI cặp vàng (2,5 × 4 và 1,25 × 8) — nhặt đủ cặp rồi mới nhân số còn lại."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: TIỆC KHIÊU VŨ CỦA CÁC THỪA SỐ. Trong phòng tiệc, vài đôi là BẠN NHẢY VÀNG: 0,25 tìm 4, 0,125 tìm 8, 2,5 tìm 4, 1,25 tìm 8, 12,5 tìm 8 — cứ ghép đúng đôi là họ xoay ra số tròn 1, 10, 100 lấp lánh. Luật sàn nhảy (giao hoán – kết hợp) cho phép ai cũng được đổi chỗ: việc của con là KÉO đúng đôi về sát nhau trước, để số lẻ loi như 7,3 hay 3,17 đứng ngoài nhân sau cùng. Riêng bạn 0,5 hay bị gọi nhầm tên: \"phẩy năm\" không phải \"số năm\" — bạn ấy là MỘT NỬA, nhân với ai là người ấy còn một nửa!",
+  "canonicalExamples": [
+   {
+    "case": "một cặp vàng (ca lõi)",
+    "problem": "Tính bằng cách thuận tiện: 0,25 × 7,3 × 4.",
+    "solution": "Kéo cặp: (0,25 × 4) × 7,3 = 1 × 7,3 = 7,3.",
+    "why": "Ca chuẩn K1+K2 — đề A câu 1."
+   },
+   {
+    "case": "cặp ra 100 (ca to hơn)",
+    "problem": "Tính: 12,5 × 4,6 × 8.",
+    "solution": "(12,5 × 8) × 4,6 = 100 × 4,6 = 460.",
+    "why": "Cặp vàng cho 100 — nhân nhẩm một nhịp."
+   },
+   {
+    "case": "hai cặp trong đám đông (ca sư phụ)",
+    "problem": "Tính trong 60 giây: 2,5 × 3,17 × 1,25 × 4 × 8.",
+    "solution": "Nhặt HAI cặp: (2,5 × 4) × (1,25 × 8) × 3,17 = 10 × 10 × 3,17 = 317.",
+    "why": "Ca LT9 — đám đông giấu hai đôi bạn nhảy."
+   }
+  ],
+  "numberRange": "Lớp 5: cặp vàng chuẩn kho; thừa số lẻ 1–2 chữ số thập phân; tích đến 4 chữ số.",
+  "misconceptions": [
+   {
+    "wrong": "Đọc \"phẩy năm\" thành \"số năm\": thuộc vẹt \"nhân 0,5 là chia…\" rồi điền bừa \"chia 5\" (48 × 0,5 = 9,6).",
+    "signal": "Kết quả nhân 0,5 bé bất thường (bằng 1/5 thay vì 1/2).",
+    "fix": "K3 — nhớ theo nghĩa: 0,5 là MỘT NỬA → 48 × 0,5 = 24; kiểm ngược 24 × 2 = 48 ✓.",
+    "counterExample": "Nếu nhân 0,5 mà là chia 5 thì 10 × 0,5 phải bằng 2 — trong khi một nửa của 10 rõ ràng là 5!"
+   }
+  ],
+  "vocabulary": [
+   "kho cặp số vàng",
+   "bạn nhảy vàng",
+   "kéo cặp về sát nhau",
+   "số lẻ loi nhân sau cùng",
+   "nhẩm theo nghĩa"
+  ],
+  "mantra": "PHẨY NĂM LÀ MỘT NỬA — KHÔNG PHẢI SỐ NĂM!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Tính nhẩm: 25 × 4 = ?",
+    "answerKey": {
+     "value": 100
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "ôn nhân nhẩm số tròn (hạt mầm)",
+   "message": "Ôn nhân nhẩm rồi vào tiệc khiêu vũ nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Cuộc thi tính nhanh: 0,25 × 7,3 × 4 — mười giây! Trí Long đặt bút nhân 0,25 với 7,3 theo cột dọc, mồ hôi nhỏ giọt… Su Kem liếc đề rồi viết luôn: 7,3. \"Cậu… chưa tính mà?!\" — \"Tớ chỉ ghép đôi bạn nhảy thôi!\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "0,25 × 7,3 × 4 trong 10 giây?"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để vào phòng tiệc!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Phòng tiệc thừa số: 0,25 và 4 là đôi bạn nhảy vàng — ghép vào là xoay ra số 1! Luật sàn nhảy cho đổi chỗ thoải mái: con kéo 4 vượt qua 7,3 về cạnh 0,25 — thành (0,25 × 4) × 7,3 = 1 × 7,3 = 7,3. Kho đôi vàng đây: 0,25·4 → 1; 0,125·8 → 1; 2,5·4 → 10; 1,25·8 → 10; 12,5·8 → 100 — thuộc mặt từng đôi!",
+    "display": {
+     "type": "dance_pair_interactive",
+     "spec": {
+      "pairs": [
+       [
+        "0,25",
+        "4",
+        "1"
+       ],
+       [
+        "0,125",
+        "8",
+        "1"
+       ],
+       [
+        "2,5",
+        "4",
+        "10"
+       ],
+       [
+        "1,25",
+        "8",
+        "10"
+       ],
+       [
+        "12,5",
+        "8",
+        "100"
+       ]
+      ],
+      "task": "0,25 × 7,3 × 4 → kéo cặp"
+     }
+    },
+    "interaction": {
+     "type": "drag_pair",
+     "answerKey": {
+      "value": 7.3
+     },
+     "successMessage": "(0,25 × 4) × 7,3 = 7,3 — ghép đôi xong là xong bài!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 16,
+    "item": {
+     "format": "num",
+     "text": "Tính thuận tiện: 12,5 × 4,6 × 8 = ?",
+     "answerKey": {
+      "value": 460
+     },
+     "wrongFeedback": "Cặp 12,5 × 8 = 100 trước; còn 100 × 4,6.",
+     "objective": "O1",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 36,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Cáo Đề gài chữ: \"nhân 0,5 là chia… 5 chứ gì!\" Khoan — nhớ theo NGHĨA: 0,5 là MỘT NỬA, nên 48 nhân 0,5 là một nửa của 48: hai mươi tư. Còn 0,25 là một phần tư: 48 nhân 0,25 bằng mười hai. Kiểm ngược: 24 nhân 2 về đúng 48 — nghĩa không bao giờ lừa mình!",
+    "display": {
+     "type": "counter_example",
+     "cases": [
+      {
+       "input": "48 × 0,5 = \"chia 5\" = 9,6",
+       "output": "✗",
+       "valid": false,
+       "reason": "phẩy năm không phải số năm"
+      },
+      {
+       "input": "48 × 0,5 = một nửa = 24",
+       "output": "✓",
+       "valid": true,
+       "reason": "0,5 = 1/2; kiểm 24 × 2 = 48"
+      }
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 12,
+    "narration": "Thần chú phòng tiệc: phẩy năm là một nửa — không phải số năm!",
+    "display": {
+     "type": "mantra_card",
+     "text": "PHẨY NĂM LÀ MỘT NỬA!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 84,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Cuộc thi tính nhanh: không phẩy hai lăm nhân bảy phẩy ba nhân bốn — mười giây! Trí Long đặt bút nhân theo cột dọc, mồ hôi nhỏ giọt… Su Kem liếc đề rồi viết luôn: bảy phẩy ba. Cậu chưa tính mà?! — Tớ chỉ ghép đôi bạn nhảy thôi!",
+    "screenText": "0,25 × 7,3 × 4 — 10 giây!",
+    "visual": "Sân khấu thi đấu với đồng hồ đếm ngược; Trí Long kê cột dọc rối rắm; Su Kem thảnh thơi ghi '7,3'.",
+    "assets": [],
+    "duration": 18
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Phòng tiệc thừa số: không phẩy hai lăm và bốn là đôi bạn nhảy vàng — ghép vào là xoay ra số MỘT! Luật sàn nhảy cho đổi chỗ: kéo bốn về cạnh không phẩy hai lăm — một nhân bảy phẩy ba bằng BẢY PHẨY BA. Kho đôi vàng: hai phẩy năm với bốn ra mười; một phẩy hai lăm với tám ra mười; mười hai phẩy năm với tám ra MỘT TRĂM!",
+    "screenText": "0,25·4=1 · 0,125·8=1 · 2,5·4=10 · 1,25·8=10 · 12,5·8=100",
+    "visual": "Sàn nhảy với các đôi số nắm tay xoay tròn nở ra số tròn vàng #F8B942; số 4 lướt qua 7,3 về với 0,25; bảng kho 5 đôi treo tường.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Cáo Đề gài chữ: nhân không phẩy năm là chia… NĂM chứ gì! Khoan — không phẩy năm là MỘT NỬA: bốn tám nhân không phẩy năm ra HAI MƯƠI TƯ. Không phẩy hai lăm là một phần tư: ra MƯỜI HAI. Kiểm ngược: hai tư nhân hai về đúng bốn tám!",
+    "screenText": "48 × 0,5 = 24 (một nửa!) · 48 × 0,25 = 12",
+    "visual": "Cáo Đề giơ bảng 'chia 5' bị gạch chéo đỏ #C0392B; chiếc bánh cắt đôi minh họa 'một nửa'; phép kiểm 24 × 2 = 48 đóng mộc xanh.",
+    "assets": [],
+    "duration": 19
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú phòng tiệc: phẩy năm là một nửa — không phải số năm!",
+    "screenText": "PHẨY NĂM LÀ MỘT NỬA!",
+    "visual": "Thẻ thần chú vàng với icon nửa chiếc bánh.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Đề sư phụ chờ con: hai phẩy năm nhân ba phẩy mười bảy nhân một phẩy hai lăm nhân bốn nhân tám — trong đám đông ấy giấu HAI đôi bạn nhảy đấy! Vào bài luyện ngay!",
+    "screenText": "2,5 × 3,17 × 1,25 × 4 × 8 = ?",
+    "visual": "Đám đông thừa số với hai đôi phát sáng mờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P4",
+    "assets": [],
+    "duration": 13
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Ghép đôi bạn nhảy",
+  "problem": "Tính bằng cách thuận tiện: 0,25 × 7,3 × 4.",
+  "steps": [
+   {
+    "show": "Bước 1 — Soi kho: 0,25 và 4 là đôi vàng (ra 1).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "0,25 × 4 bằng mấy?",
+     "choices": [
+      "1",
+      "10",
+      "0,1"
+     ],
+     "answerKey": {
+      "choice": "1"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Kéo cặp (giao hoán – kết hợp): 0,25 × 7,3 × 4 = (0,25 × 4) × 7,3."
+   },
+   {
+    "show": "Bước 3 — Nhân: 1 × 7,3 = 7,3.",
+    "askAfter": {
+     "format": "num",
+     "text": "Tính thuận tiện: 1,25 × 6,4 × 8 = ?",
+     "answerKey": {
+      "value": 64
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B13.LT1",
+     "text": "Tính bằng cách thuận tiện: 0,25 × 7,3 × 4.",
+     "answerKey": {
+      "value": 7.3
+     },
+     "hints": [
+      "Đôi vàng nào trong đề?",
+      "(0,25 × 4) × 7,3."
+     ],
+     "solutionNarrative": "(0,25 × 4) × 7,3 = 7,3.",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "generator": {
+      "template": "Tính thuận tiện: {cặp vàng tách rời} × {số lẻ}.",
+      "constraints": {},
+      "answerRule": "ghép cặp ra 1/10/100 rồi nhân số lẻ"
+     }
+    },
+    {
+     "id": "P2",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B13.LT2",
+     "text": "Tính bằng cách thuận tiện: 12,5 × 4,6 × 8.",
+     "answerKey": {
+      "value": 460
+     },
+     "hints": [
+      "12,5 tìm bạn nhảy nào?",
+      "(12,5 × 8) × 4,6."
+     ],
+     "solutionNarrative": "(12,5 × 8) × 4,6 = 100 × 4,6 = 460.",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B13.LT3",
+     "text": "Tính nhẩm: 48 × 0,5 và 48 × 0,25.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "48 × 0,5",
+        "value": 24
+       },
+       {
+        "label": "48 × 0,25",
+        "value": 12
+       }
+      ]
+     },
+     "hints": [
+      "0,5 là một nửa; 0,25 là một phần tư.",
+      "Chia 2 và chia 4."
+     ],
+     "solutionNarrative": "48 × 0,5 = 24 (chia 2); 48 × 0,25 = 12 (chia 4).",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B13.LT9",
+     "text": "Sư phụ Trí Dũng đố: \"Tính trong 60 giây: 2,5 × 3,17 × 1,25 × 4 × 8.\" (Trong đám đông ấy có HAI đôi bạn nhảy!)",
+     "answerKey": {
+      "value": 317
+     },
+     "hints": [
+      "Nhặt cặp 2,5 × 4 và 1,25 × 8.",
+      "10 × 10 × 3,17."
+     ],
+     "solutionNarrative": "(2,5 × 4) × (1,25 × 8) × 3,17 = 10 × 10 × 3,17 = 317.",
+     "teaches": [
+      "K1",
+      "K2",
+      "K4"
+     ]
+    },
+    {
+     "id": "P5",
+     "format": "tf",
+     "text": "(Đúng/Sai?) 60 × 0,5 = 12 vì nhân 0,5 là chia 5.",
+     "answerKey": {
+      "value": false,
+      "note": "0,5 là MỘT NỬA: 60 × 0,5 = 30; kiểm 30 × 2 = 60 ✓."
+     },
+     "hints": [
+      "Phẩy năm là gì theo nghĩa?",
+      "Kiểm ngược nhân 2."
+     ],
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:I.7.1#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B13.M2",
+   "award": "huy_hieu_vu_cong_vang"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B13.QZ1",
+    "text": "(Đúng/Sai?) Nhân một số với 0,5 chính là chia số đó cho 2.",
+    "answerKey": {
+     "value": true
+    },
+    "mustPass": true,
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B13.QZ3",
+    "text": "0,125 × 8 bằng:",
+    "choices": [
+     "1",
+     "10",
+     "0,1"
+    ],
+    "answerKey": {
+     "choice": "1"
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B13.QZ4",
+    "text": "12,5 × 8 bằng:",
+    "choices": [
+     "100",
+     "10",
+     "1000"
+    ],
+    "answerKey": {
+     "choice": "100"
+    },
+    "teaches": [
+     "K1"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Kho cặp số vàng? Nhẩm 0,5 và 0,25 theo nghĩa?",
+    "back": "0,25×4=1 · 0,125×8=1 · 2,5×4=10 · 1,25×8=10 · 12,5×8=100 — giao hoán kéo cặp về sát nhau. 0,5 = MỘT NỬA (chia 2), 0,25 = 1/4 (chia 4), 0,2 = chia 5. PHẨY NĂM LÀ MỘT NỬA!"
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P4 (hai cặp)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con thuộc kho cặp số vàng và nhẩm 0,5 / 0,25 theo nghĩa một-nửa / một-phần-tư. Con đạt {score}/3, {trapResult} câu bẫy phẩy-năm.",
+  "homeActivity": "Đố chợ nhanh: 'mua 4 gói giá 2,5 nghìn và 8 gói giá 1,25 nghìn — nhẩm tổng?' — con ghép cặp ra 10 + 10 = 20 nghìn là đạt.",
+  "watchFor": "Nếu con nhân 0,5 mà đi chia 5 — cắt đôi quả táo thật và hỏi 'một nửa của 48 là mấy' (S3)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B13.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "0,25 × 7,3 × 4 trong 10 giây?",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Cuộc thi tính nhanh: 0,25 × 7,3 × 4 — mười giây!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "7,3.",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B13_M1_F1.png",
+   "sha256_16": "5347fd551db85a5d"
+  },
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+    "wrong": {
+     "head": "CÁCH SAI",
+     "steps": [
+      "48 × 0,5 = \"chia 5\" = 9,6"
+     ],
+     "result": ""
+    },
+    "right": {
+     "head": "CÁCH ĐÚNG",
+     "steps": [
+      "48 × 0,5 = một nửa = 24"
+     ],
+     "result": ""
+    },
+    "verdict": "0,5 = 1/2; kiểm 24 × 2 = 48"
+   },
+   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B13_M1_F2.png",
+   "sha256_16": "ce78977c6ec8e166"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Kho cặp vàng cho ra số TRÒN",
+      "text": "0,25 × 4 = 1 · 0,5 × 2 = 1 · 0,125 × 8 = 1 · 2,5 × 4 = 10 · 1,25 × 8 = 10 · 12,5 × 8 = 100.",
+      "tone": "navy"
+     },
+     {
+      "label": "Giao hoán ",
+      "text": "kết hợp cho phép ĐỔI CHỖ và GHÉP NHÓM tùy ý trong tích: 0,25 × 7,3 × 4 = (0,25 × 4) × 7,3 — kéo cặp vàng về sát nhau trước, nhân số lẻ sau cùng.",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "PHẨY NĂM LÀ MỘT NỬA — KHÔNG PHẢI SỐ NĂM!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B13_M1_F3.png",
+   "sha256_16": "43017a541ca3efd3"
+  },
+  {
+   "archetype": "pair_sum",
+   "params": {
+    "title": "KÉO CẶP SỐ VÀNG VỀ GẦN NHAU: 0,25 × 7,3 × 4",
+    "seq": [
+     "0,25",
+     "7,3",
+     "4"
+    ],
+    "pair_label": "cặp vàng 0,25 × 4 = 1",
+    "formula": "(0,25 × 4) × 7,3 = 1 × 7,3 = 7,3",
+    "note": "Kho cặp vàng: 0,25 × 4 = 1 · 0,125 × 8 = 1 · 2,5 × 4 = 10 · 1,25 × 8 = 10 · 12,5 × 8 = 100"
+   },
+   "caption": "Giao hoán – kết hợp cho phép kéo hai bạn vàng đứng cạnh nhau",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B13_M1_F4.png",
+   "sha256_16": "37980070e1333f44"
+  }
+ ]
+}

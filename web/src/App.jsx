@@ -1,0 +1,158 @@
+import React, { useCallback, useEffect, useState } from 'react';
+import Home from './components/Home.jsx';
+import LessonPlayer from './components/LessonPlayer.jsx';
+import ExamPlayer from './components/ExamPlayer.jsx';
+import ParentReport from './components/ParentReport.jsx';
+import LoginScreen from './components/LoginScreen.jsx';
+import ProfileSetup from './components/ProfileSetup.jsx';
+import TeacherBoard from './components/TeacherBoard.jsx';
+import {
+  loadProgress, saveProgress, recordMicro, recordChapter, saveSpot, resumeSpot,
+} from './lib/progress.js';
+import { neighborIds } from './lib/content.js';
+import {
+  submitSession, syncPending, hasFirebase, watchAuth, myRole, myProfile, saveProfile,
+  myReport, logout,
+} from './lib/firebase.js';
+import { reassignQueue } from './lib/sync.js';
+
+const SKIP_KEY = 'ttd5.skipLogin.v1';
+
+export default function App() {
+  const [progress, setProgress] = useState(() => loadProgress());
+  const [view, setView] = useState({ page: 'home' });
+
+  /* ── Đăng nhập ──
+     auth: undefined = đang hỏi máy chủ · null = chưa đăng nhập · object = đã vào */
+  const [auth, setAuth] = useState(hasFirebase ? undefined : null);
+  const [role, setRole] = useState(null);
+  const [profile, setProfile] = useState(null);
+  const [cloudReport, setCloudReport] = useState(null);
+  const [skipped, setSkipped] = useState(() => {
+    try { return localStorage.getItem(SKIP_KEY) === '1'; } catch { return false; }
+  });
+
+  useEffect(() => { saveProgress(progress); }, [progress]);
+
+  useEffect(() => {
+    if (!hasFirebase) return undefined;
+    return watchAuth(async (user) => {
+      setAuth(user || null);
+      if (!user) { setRole(null); setProfile(null); setCloudReport(null); return; }
+      const r = await myRole(user).catch(() => 'learner');
+      setRole(r);
+      if (r === 'learner') {
+        // Bài học lúc chưa đăng nhập mang mã tạm 'local' — sang tên rồi mới đẩy được,
+        // nếu không luật bảo mật từ chối trong im lặng và công học của con bay sạch.
+        reassignQueue(user.uid);
+        setProgress((p) => ({ ...p, learnerId: user.uid }));
+        syncPending().catch(() => {});
+        myProfile(user.uid).then(setProfile).catch(() => setProfile(null));
+        myReport(user.uid).then(setCloudReport).catch(() => {});
+      }
+    });
+  }, []);
+
+  // học không đăng nhập: vẫn xếp hàng đợi, gửi khi có tài khoản
+  useEffect(() => { if (!hasFirebase) syncPending().catch(() => {}); }, []);
+
+  const learnerId = progress.learnerId || 'local';
+
+  const finishMicro = useCallback((microId, grade, lesson, session = {}) => {
+    setProgress((p) => recordMicro(p, microId, grade));
+    submitSession({
+      learnerId, sessionId: session.sessionId, microId,
+      bktUnit: session.bktUnit, events: session.events || [], grade,
+    }).catch(() => {});                       // mất mạng: đã nằm trong hàng đợi, lần sau gửi
+    const { next } = neighborIds(microId, lesson);
+    setView(next && grade.pass ? { page: 'lesson', microId: next } : { page: 'home' });
+  }, [learnerId]);
+
+  const signOut = async () => {
+    await logout().catch(() => {});
+    try { localStorage.removeItem(SKIP_KEY); } catch { /* chế độ riêng tư */ }
+    setSkipped(false);
+    setView({ page: 'home' });
+  };
+
+  /* ── Các màn trước khi vào học ── */
+  if (auth === undefined) {
+    return <div className="flex min-h-[100dvh] items-center justify-center text-mute">Đang mở…</div>;
+  }
+
+  if (hasFirebase && !auth && !skipped) {
+    return (
+      <LoginScreen
+        onDone={() => { /* watchAuth lo phần còn lại */ }}
+        onSkip={() => {
+          try { localStorage.setItem(SKIP_KEY, '1'); } catch { /* bỏ qua */ }
+          setSkipped(true);
+        }}
+      />
+    );
+  }
+
+  // Giáo viên và quản trị không vào phòng học — họ chỉ xem kết quả
+  if (auth && (role === 'teacher' || role === 'admin')) {
+    return <TeacherBoard onExit={signOut} />;
+  }
+
+  // Lần đầu đăng nhập: hỏi tên con rồi cho vào ngay
+  if (auth && role === 'learner' && profile && !profile.displayName?.trim()) {
+    return (
+      <ProfileSetup
+        email={auth.email}
+        onSave={async (d) => { await saveProfile(auth.uid, d); setProfile({ ...profile, ...d }); }}
+        onSkip={() => setProfile({ ...profile, displayName: auth.email })}
+      />
+    );
+  }
+
+  /* ── Phòng học ── */
+  if (view.page === 'lesson')
+    return (
+      <LessonPlayer
+        microId={view.microId}
+        resumeAt={view.fromStart ? 0 : (resumeSpot(progress, view.microId)?.step || 0)}
+        onMoveStep={(id, step, total) => setProgress((p) => saveSpot(p, id, step, total))}
+        onExit={() => setView({ page: 'home' })}
+        onFinish={(grade, lesson, session) => finishMicro(view.microId, grade, lesson, session)}
+      />
+    );
+
+  if (view.page === 'report')
+    return (
+      <ParentReport
+        progress={progress}
+        cloudReport={cloudReport}
+        onExit={() => setView({ page: 'home' })}
+        onOpenMicro={(id) => setView({ page: 'lesson', microId: id })}
+      />
+    );
+
+  if (view.page === 'exam')
+    return (
+      <ExamPlayer
+        chapter={view.chapter}
+        onExit={() => setView({ page: 'home' })}
+        onOpenMicro={(id) => setView({ page: 'lesson', microId: id })}
+        onDone={(g) => { setProgress((p) => recordChapter(p, view.chapter, g)); setView({ page: 'home' }); }}
+      />
+    );
+
+  return (
+    <Home
+      progress={progress}
+      account={{
+        signedIn: !!auth,
+        name: profile?.displayName || auth?.email || '',
+        onSignIn: () => { try { localStorage.removeItem(SKIP_KEY); } catch { /* bỏ qua */ } setSkipped(false); },
+        onSignOut: signOut,
+        available: hasFirebase,
+      }}
+      onOpenMicro={(id, opts) => setView({ page: 'lesson', microId: id, fromStart: !!opts?.fromStart })}
+      onOpenExam={(c) => setView({ page: 'exam', chapter: c })}
+      onOpenReport={() => setView({ page: 'report' })}
+    />
+  );
+}

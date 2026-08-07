@@ -1,0 +1,593 @@
+{
+ "title": "Bài ngược đánh trang: TRỪ vùng — CHIA — CỘNG mốc",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:I.4.3#2"
+  ],
+  "bktUnit": "CASE:I.4.3#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B8",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B8.M1",
+  "next": "DL:KSN5Q1.B8.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B8",
+  "chunks": [
+   "CHUNK:KSN5Q1.B8.S4",
+   "CHUNK:KSN5Q1.B8.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B8.2"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B8.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải được bài NGƯỢC: biết tổng chữ số đã dùng, tìm số trang sách — theo đúng ba nhịp bắt buộc: TRỪ hết các vùng đầu, CHIA 3, rồi CỘNG lại mốc 99.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (đủ ba nhịp)",
+  "kidText": "Biết đã dùng hết bao nhiêu chữ số, con tìm ngược ra sách dày mấy trang: trừ vùng, chia, rồi cộng mốc."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Chiều ngược có BA NHỊP bắt buộc, nhịp nào cũng ghi thành một dòng: (1) TRỪ vùng: lấy tổng chữ số trừ 9 rồi trừ 180 (tức trừ 189); (2) CHIA 3 ra số trang thuộc vùng ba; (3) CỘNG lại mốc 99 ra số trang cả sách."
+   },
+   {
+    "id": "K2",
+    "text": "Không được chia 3 ngay từ đầu: hai vùng đầu dùng thẻ 1 và 2 chữ số — chia sớm là gán oan cho chúng ba chữ số."
+   },
+   {
+    "id": "K3",
+    "text": "Phép chia ở nhịp hai chia hết (dư 0) nghĩa là vừa khít hết một trang; luôn thử lại bằng phép đếm xuôi."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: LẦN NGƯỢC BA KHU KỆ. Biết tổng số thẻ đã dán, muốn tìm trang cuối thì đi ngược từ cổng: bước qua khu một — trả lại 9 thẻ; bước qua khu hai — trả lại 180 thẻ; số thẻ còn trong tay toàn là loại BA-chữ-số, chia 3 là ra số trang của khu ba; nhưng khoan — số trang ấy mới đếm TỪ TRANG 100, phải CỘNG LẠI MỐC 99 mới ra số trang cả cuốn. Ba nhịp: TRỪ VÙNG — CHIA — CỘNG MỐC. Thiếu nhịp nào cũng trật.",
+  "canonicalExamples": [
+   {
+    "case": "660 chữ số (ca chuẩn)",
+    "problem": "Để đánh số trang một cuốn sách, người ta dùng hết 660 chữ số. Hỏi sách dày bao nhiêu trang?",
+    "solution": "TRỪ vùng: 660 − 9 − 180 = 471. CHIA: 471 : 3 = 157 trang khu ba. CỘNG mốc: 99 + 157 = 256 trang. Thử xuôi: 189 + 157 × 3 = 660 ✓.",
+    "why": "Đảo ngược đúng ca chuẩn của M1 — cặp xuôi–ngược soi nhau."
+   },
+   {
+    "case": "300 chữ số (ca dư 0 đẹp)",
+    "problem": "Dùng hết 300 chữ số — sách dày bao nhiêu trang?",
+    "solution": "300 − 189 = 111; 111 : 3 = 37 dư 0 — vừa khít; 99 + 37 = 136 trang.",
+    "why": "Ca LT6 — chia hết nghĩa là kết thúc gọn một trang."
+   }
+  ],
+  "numberRange": "Lớp 5: tổng chữ số 190–2000 (sách vùng ba); phép chia nhịp hai chia hết.",
+  "misconceptions": [
+   {
+    "wrong": "Chia 3 ngay: 660 : 3 = 220 trang.",
+    "signal": "Bỏ qua nhịp trừ vùng; đáp lệch xa.",
+    "fix": "K1 + K2 — ghi đủ ba dòng: trừ vùng — chia — cộng mốc; hai vùng đầu không dùng thẻ 3 chữ số.",
+    "counterExample": "Sách 220 trang thật ra dùng 189 + 121 × 3 = 552 ≠ 660."
+   },
+   {
+    "wrong": "Chia xong quên cộng mốc 99 (471 : 3 = 157 → trả lời 157 trang).",
+    "signal": "Đáp số chính là thương của nhịp hai.",
+    "fix": "Nhịp ba bắt buộc: 157 mới là số trang KHU BA, tính từ trang 100 — cộng 99.",
+    "counterExample": "Sách 157 trang chỉ dùng 189 + 58 × 3 = 363 chữ số."
+   }
+  ],
+  "vocabulary": [
+   "lần ngược ba khu",
+   "trả lại 9 và 180 thẻ",
+   "ba nhịp: TRỪ VÙNG — CHIA — CỘNG MỐC",
+   "thử xuôi"
+  ],
+  "mantra": "TRỪ VÙNG — CHIA — CỘNG MỐC: THIẾU NHỊP NÀO CŨNG TRẬT!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Sách 256 trang dùng bao nhiêu chữ số? (bài trước)",
+    "answerKey": {
+     "value": 660
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B8.M1",
+   "message": "Ôn đếm xuôi ba vùng rồi quay lại lần ngược nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Vụ án thư viện: hóa đơn ghi 'đã dùng 660 chữ số dán trang' — nhưng bìa sách mất, không biết dày bao nhiêu trang! Trí Long chia luôn: 660 : 3 = 220 trang! Su Kem: 'Khoan — trang số 7 đeo mấy chữ số nhỉ?'",
+    "display": {
+     "type": "story_panel",
+     "caption": "660 : 3 = 220 trang??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để lần ngược ba khu!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 45,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Lần ngược từ cổng. Qua khu một: trả 9 thẻ — còn 651. Qua khu hai: trả 180 thẻ — còn 471. Số thẻ này toàn loại BA chữ số: chia 3 được 157 trang khu ba. Nhịp cuối: 157 trang này đếm từ trang 100 — cộng lại mốc 99: cuốn sách dày 256 trang! Con kéo từng nhịp vào đúng thứ tự.",
+    "display": {
+     "type": "three_beat_interactive",
+     "spec": {
+      "beats": [
+       "TRỪ VÙNG: 660 − 189 = 471",
+       "CHIA: 471 : 3 = 157",
+       "CỘNG MỐC: 99 + 157 = 256"
+      ]
+     }
+    },
+    "interaction": {
+     "type": "order_beats",
+     "successMessage": "TRỪ VÙNG — CHIA — CỘNG MỐC: 256 trang. Thử xuôi: 189 + 471 = 660 ✓!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 18,
+    "item": {
+     "format": "num",
+     "text": "Dùng hết 300 chữ số — sách dày bao nhiêu trang?",
+     "answerKey": {
+      "value": 136
+     },
+     "wrongFeedback": "300 − 189 = 111; 111 : 3 = 37; 99 + 37.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 30,
+    "teaches": [
+     "K2",
+     "K3"
+    ],
+    "narration": "Mổ xẻ hai cú trượt: chia sớm 660 : 3 = 220 — gán oan cho khu một, khu hai dùng thẻ ba chữ số! Và chia xong quên cộng mốc — trả lời 157 là mới đếm mỗi khu ba. Ba nhịp ghi thành BA DÒNG, xong thử xuôi một lượt.",
+    "display": {
+     "type": "counter_example",
+     "cases": [
+      {
+       "input": "660 : 3 ngay",
+       "output": "220 ✗",
+       "valid": false,
+       "reason": "chưa trừ vùng"
+      },
+      {
+       "input": "471 : 3 = 157 rồi dừng",
+       "output": "157 ✗",
+       "valid": false,
+       "reason": "quên cộng mốc 99"
+      }
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú lần ngược: trừ vùng — chia — cộng mốc: thiếu nhịp nào cũng trật!",
+    "display": {
+     "type": "mantra_card",
+     "text": "TRỪ VÙNG — CHIA — CỘNG MỐC!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 79,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Vụ án thư viện: hóa đơn ghi đã dùng sáu trăm sáu mươi chữ số dán trang — nhưng bìa sách mất, không biết dày bao nhiêu! Trí Long chia luôn: sáu sáu mươi chia ba — hai trăm hai mươi trang! Su Kem: khoan — trang số BẢY đeo mấy chữ số nhỉ?",
+    "screenText": "660 : 3 = 220??",
+    "visual": "Hóa đơn '660 chữ số' và cuốn sách mất bìa; thẻ trang '7' phóng to MỘT chữ số; dấu '?' đỏ.",
+    "assets": [],
+    "duration": 19
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Lần ngược từ cổng thư viện. Qua khu một: trả chín thẻ — còn sáu trăm năm mốt. Qua khu hai: trả một trăm tám mươi thẻ — còn bốn trăm bảy mốt, toàn thẻ BA chữ số: chia ba được một trăm năm bảy trang khu ba. Nhịp cuối: cộng lại mốc chín chín — cuốn sách dày HAI TRĂM NĂM SÁU trang!",
+    "screenText": "660 − 189 = 471 → :3 = 157 → +99 = 256",
+    "visual": "Hành trình ngược ba khu, mỗi khu 'trả thẻ' với số dư hiện dần; ba dòng phép xếp bậc thang; 256 đóng mộc xanh.",
+    "assets": [],
+    "duration": 23
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Hai cú trượt kinh điển: chia sớm sáu sáu mươi chia ba — gán oan cho khu một khu hai dùng thẻ ba chữ số! Và chia xong quên cộng mốc — một trăm năm bảy mới là số trang KHU BA thôi. Ba nhịp — ghi thành BA DÒNG, xong thử xuôi một lượt cho chắc.",
+    "screenText": "chia sớm ✗ · quên +99 ✗ → ghi đủ 3 dòng!",
+    "visual": "Hai bảng lỗi gạch chéo đỏ; bảng chuẩn ba dòng bên phải phát sáng; con dấu 'THỬ XUÔI ✓'.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú lần ngược: trừ vùng — chia — cộng mốc: thiếu nhịp nào cũng trật!",
+    "screenText": "TRỪ VÙNG — CHIA — CỘNG MỐC!",
+    "visual": "Thẻ thần chú vàng ba nhịp trống.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Hồ sơ cho con: dùng hết ba trăm chữ số — sách dày bao nhiêu trang? Ba nhịp đủ nhé, vào bài luyện ngay!",
+    "screenText": "300 chữ số → ? trang",
+    "visual": "Hóa đơn '300' chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 9
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Vụ án cuốn sách mất bìa",
+  "problem": "Để đánh số trang một cuốn sách, người ta dùng hết 660 chữ số. Hỏi sách dày bao nhiêu trang?",
+  "steps": [
+   {
+    "show": "Bước 1 — TRỪ VÙNG: 660 − 9 − 180 = 471 chữ số thuộc khu ba.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Vì sao không chia 3 ngay từ 660?",
+     "choices": [
+      "Vì hai khu đầu dùng thẻ 1 và 2 chữ số",
+      "Vì 660 không chia hết cho 3",
+      "Vì phải cộng 99 trước"
+     ],
+     "answerKey": {
+      "choice": "Vì hai khu đầu dùng thẻ 1 và 2 chữ số"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — CHIA: 471 : 3 = 157 trang khu ba (dư 0 — vừa khít)."
+   },
+   {
+    "show": "Bước 3 — CỘNG MỐC: 99 + 157 = 256 trang. Thử xuôi: 189 + 157 × 3 = 660 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Kiểm: 99 + 157 = ?",
+     "answerKey": {
+      "value": 256
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B8.LT5",
+     "text": "Để đánh số trang một cuốn sách, người ta dùng hết 660 chữ số. Hỏi sách dày bao nhiêu trang?",
+     "answerKey": {
+      "value": 256
+     },
+     "hints": [
+      "Ba nhịp: trừ vùng — chia — cộng mốc.",
+      "660 − 189 = 471; 471 : 3; + 99."
+     ],
+     "solutionNarrative": "660 − 189 = 471; 471 : 3 = 157; 99 + 157 = 256 trang.",
+     "teaches": [
+      "K1"
+     ],
+     "generator": {
+      "template": "Dùng hết {m} chữ số để đánh trang — sách dày bao nhiêu trang?",
+      "constraints": {
+       "m": "189 + 3k, k = 10–300"
+      },
+      "answerRule": "99 + (m − 189) : 3"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B8.LT6",
+     "text": "Để đánh số trang một cuốn sách, người ta dùng hết 300 chữ số. Hỏi sách dày bao nhiêu trang? (Chú ý đủ ba nhịp!)",
+     "answerKey": {
+      "value": 136
+     },
+     "hints": [
+      "300 − 189 = 111.",
+      "111 : 3 = 37; cộng mốc 99."
+     ],
+     "solutionNarrative": "300 − 189 = 111; 111 : 3 = 37 dư 0 → 99 + 37 = 136 trang.",
+     "teaches": [
+      "K1",
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "num",
+     "text": "Dùng hết 1 989 chữ số — sách dày bao nhiêu trang?",
+     "answerKey": {
+      "value": 699
+     },
+     "hints": [
+      "1989 − 189 = 1800.",
+      "1800 : 3 = 600; + 99."
+     ],
+     "teaches": [
+      "K1"
+     ]
+    },
+    {
+     "id": "P4",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Dùng 471 chữ số cho khu ba thì sách dày 157 trang.",
+     "answerKey": {
+      "value": false,
+      "note": "157 là số trang KHU BA; cả sách = 99 + 157 = 256."
+     },
+     "hints": [
+      "157 đếm từ trang nào?",
+      "Nhịp ba!"
+     ],
+     "teaches": [
+      "K1"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:I.4.3#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B8.M3",
+   "award": "huy_hieu_lan_nguoc"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B8.QZ4",
+    "text": "Bài ngược, sau khi trừ hai vùng và chia 3, ta phải:",
+    "choices": [
+     "cộng lại mốc 99",
+     "trừ tiếp 99",
+     "giữ nguyên"
+    ],
+    "answerKey": {
+     "choice": "cộng lại mốc 99"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "num",
+    "text": "Dùng hết 522 chữ số — sách dày bao nhiêu trang?",
+    "answerKey": {
+     "value": 210
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "tf",
+    "text": "(Đúng/Sai?) Với 660 chữ số, lấy luôn 660 : 3 = 220 là ra số trang.",
+    "answerKey": {
+     "value": false
+    },
+    "teaches": [
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Bài ngược đánh trang — ba nhịp nào?",
+    "back": "TRỪ VÙNG (− 9 − 180 = − 189) → CHIA 3 (ra số trang khu ba) → CỘNG MỐC 99. Thiếu nhịp nào cũng trật! Luôn thử xuôi: 189 + (n − 99) × 3."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (số to)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học bài ngược đánh trang với ba nhịp TRỪ VÙNG — CHIA — CỘNG MỐC. Con đạt {score}/3, {trapResult} câu bẫy chia-sớm.",
+  "homeActivity": "Đố ngược: 'mẹ dùng 252 chữ số dán trang — sách dày bao nhiêu?' — con làm đủ ba dòng và ra 120 là đạt.",
+  "watchFor": "Nếu con chia 3 ngay từ tổng — mở lại hành trình lần ngược ba khu (S2) cùng con."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B8.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "660 : 3 = 220 trang??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Vụ án thư viện: hóa đơn ghi 'đã dùng 660 chữ số dán trang' — nhưng bìa sách mất, không biết dày bao nhiêu trang!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "'Khoan — trang số 7 đeo mấy chữ số nhỉ?'",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B8_M2_F1.png",
+   "sha256_16": "db52258c2466dac7"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "CA MẪU · 660 chữ số (ca chuẩn)",
+    "formulas": [
+     {
+      "label": "ĐỀ",
+      "text": "Để đánh số trang một cuốn sách, người ta dùng hết 660 chữ số. Hỏi sách dày bao nhiêu trang?",
+      "tone": "navy"
+     },
+     {
+      "label": "LỜI GIẢI",
+      "text": "TRỪ vùng: 660 − 9 − 180 = 471. CHIA: 471 : 3 = 157 trang khu ba. CỘNG mốc: 99 + 157 = 256 trang. Thử xuôi: 189 + 157 × 3 = 660 .",
+      "tone": "teal"
+     }
+    ]
+   },
+   "caption": "Ca mẫu chuẩn của bài",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B8_M2_F2.png",
+   "sha256_16": "fefe98945c4f5195"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Chiều ngược có BA NHỊP bắt buộc, nhịp nào cũng ghi thành một dòng",
+      "text": "(1) TRỪ vùng: lấy tổng chữ số trừ 9 rồi trừ 180 (tức trừ 189); (2) CHIA 3 ra số trang thuộc vùng ba; (3) CỘNG lại mốc 99 ra số trang cả sách.",
+      "tone": "navy"
+     },
+     {
+      "label": "Không được chia 3 ngay từ đầu",
+      "text": "hai vùng đầu dùng thẻ 1 và 2 chữ số — chia sớm là gán oan cho chúng ba chữ số.",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "TRỪ VÙNG — CHIA — CỘNG MỐC: THIẾU NHỊP NÀO CŨNG TRẬT!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B8_M2_F3.png",
+   "sha256_16": "4170082598bf81dc"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "BÀI NGƯỢC: DÙNG 660 CHỮ SỐ — SÁCH DÀY BAO NHIÊU TRANG?",
+    "steps": [
+     {
+      "text": "TRỪ vùng đầu",
+      "sub": "660 − 9 − 180 = 471"
+     },
+     {
+      "text": "CHIA 3",
+      "sub": "471 : 3 = 157 trang khu ba"
+     },
+     {
+      "text": "CỘNG mốc 99",
+      "sub": "99 + 157 = 256 trang"
+     }
+    ],
+    "note": "Thử xuôi lại ra đúng 660 chữ số ✓ — bỏ nhịp nào cũng lệch"
+   },
+   "caption": "Ba nhịp bắt buộc: TRỪ — CHIA — CỘNG MỐC",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B8_M2_F4.png",
+   "sha256_16": "f7536469db4208b3"
+  }
+ ]
+}

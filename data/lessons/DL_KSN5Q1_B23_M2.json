@@ -1,0 +1,567 @@
+{
+ "title": "Bài ngược tìm phần người mới mang: tổng mới trừ tổng cũ",
+ "grade": 5,
+ "durationMinutes": 7,
+ "skills": {
+  "primary": [
+   "CASE:III.1.3#2"
+  ],
+  "bktUnit": "CASE:III.1.3#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B23",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B23.M1",
+  "next": "DL:KSN5Q1.B23.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B23",
+  "chunks": [
+   "CHUNK:KSN5Q1.B23.S4",
+   "CHUNK:KSN5Q1.B23.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B23.3"
+  ],
+  "traps": []
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải được bài NGƯỢC tìm phần người mới mang vào: qua HAI PHÉP NHÂN dựng hai tổng — tổng mới (TBC mới × số người mới) trừ tổng cũ (TBC cũ × số người cũ) = phần người mới mang; thử lại bằng ba nhịp xuôi.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (hai tổng trừ nhau)",
+  "kidText": "Muốn biết bạn mới mang vào bao nhiêu: lấy tổng mới trừ tổng cũ. Hai phép nhân dựng hai tổng là ra."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bài ngược \"thêm người thì TBC đổi — hỏi người mới mang bao nhiêu\": phần mang = TỔNG MỚI − TỔNG CŨ."
+   },
+   {
+    "id": "K2",
+    "text": "Hai tổng dựng bằng hai phép nhân: tổng mới = TBC mới × (n + 1); tổng cũ = TBC cũ × n. Chỉ tổng mới trừ được tổng cũ — TBC không trừ thẳng nhau được."
+   },
+   {
+    "id": "K3",
+    "text": "Thử lại bằng ba nhịp xuôi (bài trước): tổng cũ + phần vừa tìm, chia số người mới — phải ra đúng TBC mới."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: HAI TẤM ẢNH CHỤP RỔ KẸO. Bài ngược cho hai tấm ảnh: ảnh TRƯỚC — nhóm bốn bạn TBC 25; ảnh SAU — năm bạn TBC 28. Người mới mang bao nhiêu? Rửa hai tấm ảnh thành hai con số TỔNG bằng hai phép nhân: ảnh trước 25 × 4 = 100 viên; ảnh sau 28 × 5 = 140 viên. Phần chênh giữa hai tấm ảnh chính là túi kẹo người mới: 140 − 100 = 40 viên! Lưu ý hai TBC (25 và 28) không trừ thẳng nhau được — 28 − 25 = 3 chỉ là mức kéo cân, không phải túi kẹo. Thử xuôi: 100 + 40 = 140, chia 5 đúng 28 — khớp ảnh!",
+  "canonicalExamples": [
+   {
+    "case": "ca lõi",
+    "problem": "Nhóm 4 bạn có TBC 25 viên. Thêm một bạn vào nhóm thì TBC thành 28 viên. Hỏi bạn mới mang bao nhiêu viên?",
+    "solution": "Tổng mới = 28 × 5 = 140; tổng cũ = 25 × 4 = 100 → bạn mới mang 140 − 100 = 40 viên. Thử: (100 + 40) : 5 = 28 ✓.",
+    "why": "Ca đề A câu 9 — hai tấm ảnh chuẩn."
+   },
+   {
+    "case": "nhóm hai số (ca thu nhỏ)",
+    "problem": "TBC của hai số là 15. Thêm số thứ ba thì TBC của cả ba số là 18. Tìm số thứ ba.",
+    "solution": "Tổng mới = 18 × 3 = 54; tổng cũ = 15 × 2 = 30 → số thứ ba = 24. Thử: 54 : 3 = 18 ✓.",
+    "why": "Ca LT6 — cùng máy, cỡ nhỏ."
+   }
+  ],
+  "numberRange": "Lớp 5: nhóm 2–6; tổng ≤ 300.",
+  "misconceptions": [
+   {
+    "wrong": "Trừ thẳng hai TBC: 28 − 25 = 3 rồi đáp \"bạn mới mang 3 viên\".",
+    "signal": "Đáp bé phi lý (3 viên mà kéo cân cả nhóm lên?).",
+    "fix": "K2 — TBC là đại diện, không trừ thẳng: dựng hai tổng bằng hai phép nhân rồi mới trừ.",
+    "counterExample": "Thử 3: (100 + 3) : 5 = 20,6 ≠ 28 — trượt ngay."
+   }
+  ],
+  "vocabulary": [
+   "hai tấm ảnh trước – sau",
+   "rửa ảnh thành tổng",
+   "phần chênh giữa hai ảnh",
+   "mức kéo cân ≠ túi kẹo"
+  ],
+  "mantra": "RỬA HAI ẢNH THÀNH HAI TỔNG — PHẦN MANG LÀ HIỆU HAI TỔNG!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "28 × 5 = ?",
+    "answerKey": {
+     "value": 140
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B23.M1",
+   "message": "Ôn ba nhịp xuôi rồi vào phòng rửa ảnh nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Hai tấm ảnh trên bàn: ảnh trước — bốn bạn TBC 25; ảnh sau — năm bạn TBC 28. \"Người mới mang mấy viên?\" Trí Long trừ vèo: \"28 trừ 25 — mang 3 viên!\" Su Kem: \"3 viên mà kéo được cân của cả nhóm lên á?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "28 − 25 = 3 viên??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để rửa ảnh!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "TBC là ĐẠI DIỆN — hai đại diện không trừ thẳng nhau được! Rửa từng tấm ảnh thành TỔNG: ảnh trước hai lăm nhân bốn bằng MỘT TRĂM viên; ảnh sau hai tám nhân năm bằng MỘT TRĂM BỐN MƯƠI viên. Phần chênh giữa hai tấm ảnh chính là túi kẹo người mới: một trăm bốn mươi trừ một trăm bằng BỐN MƯƠI viên! Còn hai tám trừ hai lăm bằng ba chỉ là mức kéo cân thôi.",
+    "display": {
+     "type": "two_photos_interactive",
+     "spec": {
+      "before": "25 × 4 = 100",
+      "after": "28 × 5 = 140",
+      "bring": 40,
+      "note": "28 − 25 = 3 là mức kéo cân, không phải túi kẹo"
+     }
+    },
+    "interaction": {
+     "type": "develop_and_subtract",
+     "answerKey": {
+      "value": 40
+     },
+     "successMessage": "140 − 100 = 40 viên — hiệu hai tổng!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "num",
+     "text": "TBC hai số là 15; thêm số thứ ba thì TBC ba số là 18. Số thứ ba = ?",
+     "answerKey": {
+      "value": 24
+     },
+     "wrongFeedback": "54 − 30 = 24.",
+     "objective": "O1",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 36,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Chốt án bằng phép thử xuôi ba nhịp: túi bốn mươi vừa tìm đổ vào rổ cũ một trăm — thành một trăm bốn mươi; đếm quân số năm người; chia — đúng HAI TÁM: khớp tấm ảnh sau! Còn đáp ba viên của Trí Long? Một trăm lẻ ba chia năm ra hai mươi phẩy sáu — lệch xa: máy thử không tha đáp ẩu.",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "thử 40: (100 + 40) : 5 = 28 ✓",
+      "thử 3: 103 : 5 = 20,6 ✗",
+      "máy thử không tha đáp ẩu"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 12,
+    "narration": "Thần chú phòng rửa ảnh: rửa hai ảnh thành hai tổng — phần mang là hiệu hai tổng!",
+    "display": {
+     "type": "mantra_card",
+     "text": "PHẦN MANG = HIỆU HAI TỔNG!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 86,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Hai tấm ảnh trên bàn: ảnh trước — bốn bạn TBC hai lăm; ảnh sau — năm bạn TBC hai tám. Người mới mang mấy viên? Trí Long trừ vèo: hai tám trừ hai lăm — mang BA viên! Su Kem: ba viên mà kéo được cân của cả nhóm lên á?",
+    "screenText": "28 − 25 = 3 viên??",
+    "visual": "Bàn với hai tấm ảnh polaroid nhóm 4 và nhóm 5; Trí Long cầm bút trừ hai góc ảnh; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 19
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "TBC là ĐẠI DIỆN — hai đại diện không trừ thẳng nhau được! Rửa từng tấm ảnh thành TỔNG: ảnh trước hai lăm nhân bốn bằng MỘT TRĂM viên; ảnh sau hai tám nhân năm bằng MỘT TRĂM BỐN MƯƠI viên. Phần chênh giữa hai tấm ảnh chính là túi kẹo người mới: BỐN MƯƠI viên! Hai tám trừ hai lăm bằng ba chỉ là mức kéo cân thôi!",
+    "screenText": "100 (trước) → 140 (sau): mang 40 · 3 chỉ là mức kéo cân",
+    "visual": "Hai ảnh nhúng khay rửa hiện ra hai con số tổng 100 và 140; túi kẹo '40' nổi giữa phần chênh; nhãn '3 = kéo cân' tách riêng.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Chốt án bằng phép thử xuôi ba nhịp: túi bốn mươi đổ vào rổ cũ một trăm — thành một trăm bốn mươi; đếm quân số năm người; chia — đúng HAI TÁM: khớp tấm ảnh sau! Còn đáp ba viên? Một trăm lẻ ba chia năm ra hai mươi phẩy sáu — lệch xa: máy thử không tha đáp ẩu!",
+    "screenText": "thử 40: 140 : 5 = 28 ✓ · thử 3: 20,6 ✗",
+    "visual": "Băng thử hai làn: làn 40 chạy tới mộc xanh; làn 3 trật bánh đèn đỏ; kim cân khớp ảnh sau.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú phòng rửa ảnh: rửa hai ảnh thành hai tổng — phần mang là hiệu hai tổng!",
+    "screenText": "PHẦN MANG = HIỆU HAI TỔNG!",
+    "visual": "Thẻ thần chú vàng với icon hai tấm ảnh.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Hai tấm ảnh của con: TBC hai số là mười lăm; thêm số thứ ba thì TBC ba số là mười tám — số thứ ba bằng mấy? Vào bài luyện ngay!",
+    "screenText": "15 (2 số) → 18 (3 số): số thứ ba?",
+    "visual": "Hai ảnh nhỏ chờ rửa; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 12
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Rửa hai tấm ảnh",
+  "problem": "Nhóm 4 bạn có TBC 25 viên. Thêm một bạn vào nhóm thì TBC thành 28 viên. Hỏi bạn mới mang bao nhiêu viên kẹo?",
+  "steps": [
+   {
+    "show": "Bước 1 — Rửa ảnh sau: tổng mới = 28 × 5 = 140.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Có được lấy 28 − 25 làm đáp không?",
+     "choices": [
+      "Không — TBC không trừ thẳng nhau",
+      "Được — nhanh gọn",
+      "Tùy đề"
+     ],
+     "answerKey": {
+      "choice": "Không — TBC không trừ thẳng nhau"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Rửa ảnh trước: tổng cũ = 25 × 4 = 100."
+   },
+   {
+    "show": "Bước 3 — Phần mang = 140 − 100 = 40 viên. Thử: (100 + 40) : 5 = 28 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Nhóm 3 người TBC 30; thêm người thì TBC bốn người 32 — người mới mang ?",
+     "answerKey": {
+      "value": 38
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B23.LT4",
+     "text": "Nhóm 4 bạn có TBC 25 viên. Thêm một bạn vào nhóm thì TBC thành 28 viên. Hỏi bạn mới mang bao nhiêu viên kẹo?",
+     "answerKey": {
+      "value": 40
+     },
+     "hints": [
+      "Rửa hai ảnh: 28 × 5 và 25 × 4.",
+      "140 − 100."
+     ],
+     "solutionNarrative": "140 − 100 = 40 viên (thử 140 : 5 = 28 ✓).",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "generator": {
+      "template": "Nhóm {n} TBC {t}; thêm người thì TBC {t2}. Tìm phần mang.",
+      "constraints": {},
+      "answerRule": "t2×(n+1) − t×n"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B23.LT6",
+     "text": "TBC của hai số là 15. Thêm số thứ ba thì TBC của cả ba số là 18. Tìm số thứ ba.",
+     "answerKey": {
+      "value": 24
+     },
+     "hints": [
+      "Tổng mới 54; tổng cũ 30.",
+      "54 − 30."
+     ],
+     "solutionNarrative": "18 × 3 − 15 × 2 = 24 (thử 54 : 3 = 18 ✓).",
+     "teaches": [
+      "K1",
+      "K2",
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Nhóm TBC 25 thêm người thì TBC 28 — vậy người mới mang 28 − 25 = 3 viên.",
+     "answerKey": {
+      "value": false,
+      "note": "3 là mức kéo cân; phần mang = 140 − 100 = 40 (thử 103 : 5 = 20,6 ✗)."
+     },
+     "hints": [
+      "TBC có trừ thẳng nhau được không?",
+      "Rửa ảnh thành tổng trước."
+     ],
+     "teaches": [
+      "K2",
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.1.3#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B23.M3",
+   "award": "huy_hieu_phong_rua_anh"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "text": "Phần người mới mang bằng:",
+    "choices": [
+     "tổng mới − tổng cũ",
+     "TBC mới − TBC cũ",
+     "TBC mới × 2"
+    ],
+    "answerKey": {
+     "choice": "tổng mới − tổng cũ"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1",
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "num",
+    "text": "Nhóm 4 TBC 25 → thêm người TBC 28: người mới mang ? viên",
+    "answerKey": {
+     "value": 40
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "TBC hai số 15 → thêm số thứ ba TBC 18: số thứ ba = ?",
+    "answerKey": {
+     "value": 24
+    },
+    "teaches": [
+     "K1"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Bài ngược tìm phần người mới mang?",
+    "back": "RỬA HAI ẢNH thành hai tổng: tổng mới = TBC mới × (n+1); tổng cũ = TBC cũ × n → phần mang = HIỆU HAI TỔNG (140 − 100 = 40). TBC không trừ thẳng nhau (28 − 25 = 3 chỉ là mức kéo cân). Thử xuôi ba nhịp."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (phản bẫy trừ TBC)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con giải bài ngược tìm phần người mới mang: rửa hai ảnh thành hai tổng rồi trừ. Con đạt {score}/3.",
+  "homeActivity": "Chụp 'hai tấm ảnh' bằng lời: 'nhóm 3 hộp TBC 30, thêm hộp thì TBC 32' — con dựng hai tổng 90 và 128 rồi tìm hộp mới 38.",
+  "watchFor": "Nếu con trừ thẳng hai TBC — chạy phép thử xuôi (S3) cho thấy 20,6 lệch xa."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B23.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "28 − 25 = 3 viên??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "28 trừ 25 — mang 3 viên!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "3 viên mà kéo được cân của cả nhóm lên á?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B23_M2_F1.png",
+   "sha256_16": "f09222adcb9c007f"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con giải được bài NGƯỢC tìm phần người mới mang vào: qua HAI PHÉP NHÂN dựng hai tổng — tổng mới (TBC mới × số người mới) trừ tổng cũ (TBC cũ × số người cũ) = phần người mới mang; thử lại bằng ba nhịp xuôi.",
+    "steps": [
+     {
+      "text": "thử 40: (100 + 40) : 5 = 28"
+     },
+     {
+      "text": "thử 3: 103 : 5 = 20,6"
+     },
+     {
+      "text": "máy thử không tha đáp ẩu"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B23_M2_F2.png",
+   "sha256_16": "b14e549efef04a13"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Bài ngược \"thêm người thì TBC đổi",
+      "text": "hỏi người mới mang bao nhiêu\": phần mang = TỔNG MỚI − TỔNG CŨ.",
+      "tone": "navy"
+     },
+     {
+      "label": "Hai tổng dựng bằng hai phép nhân",
+      "text": "tổng mới = TBC mới × (n + 1); tổng cũ = TBC cũ × n. Chỉ tổng mới trừ được tổng cũ — TBC không trừ thẳng nhau được.",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "RỬA HAI ẢNH THÀNH HAI TỔNG — PHẦN MANG LÀ HIỆU HAI TỔNG!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B23_M2_F3.png",
+   "sha256_16": "7f8c802bf1eaf095"
+  },
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "BÀI NGƯỢC: BẠN MỚI MANG BAO NHIÊU VIÊN?",
+    "neutral": true,
+    "wrong": {
+     "head": "TỔNG MỚI",
+     "steps": [
+      "TBC mới × số người mới",
+      "28 × 5"
+     ],
+     "result": "140 viên"
+    },
+    "right": {
+     "head": "TỔNG CŨ",
+     "steps": [
+      "TBC cũ × số người cũ",
+      "25 × 4"
+     ],
+     "result": "100 viên"
+    },
+    "verdict": "Bạn mới mang = 140 − 100 = 40 viên  ·  thử (100 + 40) : 5 = 28 ✓"
+   },
+   "caption": "Hai phép nhân dựng hai tổng, rồi trừ ra phần người mới mang",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B23_M2_F4.png",
+   "sha256_16": "6af9eac9fafa86ae"
+  }
+ ]
+}

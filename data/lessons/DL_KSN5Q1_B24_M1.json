@@ -1,0 +1,637 @@
+{
+ "title": "Đòn gánh lệch: gộp nhóm qua ba nhịp tổng — kẻ bảng NHÓM · QUÂN SỐ · TỔNG",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:III.1.4#1"
+  ],
+  "bktUnit": "CASE:III.1.4#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B24",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B23.M3",
+  "next": "DL:KSN5Q1.B24.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B24",
+  "chunks": [
+   "CHUNK:KSN5Q1.B24.S3",
+   "CHUNK:KSN5Q1.B24.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B24.1",
+   "CA:KSN5Q1.B24.4"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B24.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con tính được TBC GỘP của hai (ba) nhóm khác cỡ bằng BA NHỊP: nhân ngược ra TỔNG từng nhóm (TBC × quân số) → cộng các tổng → chia TỔNG số phần tử — với nghi thức kẻ bảng ba cột NHÓM · QUÂN SỐ · TỔNG để không bao giờ lấy nhầm TBC làm tổng.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (nhân ngược ra tổng trước khi cộng)",
+  "kidText": "Gộp hai nhóm khác cỡ: nhân ra tổng từng nhóm, cộng lại, rồi chia cho tổng số người. Kẻ bảng ba cột cho khỏi nhầm."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Chỉ TỔNG mới cộng thẳng được — TBC là ĐẠI DIỆN, muốn góp mặt vào phép cộng phải nhân với quân số để thành tổng: 26 × 2 = 52; 32 × 4 = 128."
+   },
+   {
+    "id": "K2",
+    "text": "Ba nhịp gộp: (1) từng nhóm nhân ra TỔNG; (2) cộng các tổng (52 + 128 = 180); (3) chia TỔNG số phần tử (180 : 6 = 30)."
+   },
+   {
+    "id": "K3",
+    "text": "Nghi thức kẻ bảng ba cột NHÓM · QUÂN SỐ · TỔNG — điền đủ từng dòng rồi mới cộng cột TỔNG; cấm cộng cột TBC (26 + 32 = 58 không phải tổng của ai cả)."
+   },
+   {
+    "id": "K4",
+    "text": "Ba nhóm trở lên vẫn một máy: mọi nhóm về tổng, cộng hết, chia tổng phần tử (52 + 90 + 38 = 180 : 6 = 30); quân số lẻ một-ngày-bán-38 thì tổng chính là 38."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: ĐÒN GÁNH LỆCH HAI THÚNG. Hai ngày đầu TBC 26 chiếc — thúng nhỏ; bốn ngày sau TBC 32 chiếc — thúng to gấp đôi quân số. Muốn biết điểm gánh cả tuần, KHÔNG thể lấy con số dán ngoài thúng ra cộng: 26 với 32 là nhãn ĐẠI DIỆN, phải mở thúng đếm bánh thật! Kẻ bảng ba cột: NHÓM — QUÂN SỐ — TỔNG: thúng một, hai ngày, hai sáu nhân hai bằng NĂM MƯƠI HAI chiếc; thúng hai, bốn ngày, ba hai nhân bốn bằng MỘT TRĂM HAI TÁM. Cộng cột TỔNG: một trăm tám mươi — chia SÁU ngày: điểm gánh 30. Ai vơ luôn 26 + 32 = 58 làm \"tổng\" là cộng hai cái nhãn — thúng vẫn đóng im ỉm!",
+  "canonicalExamples": [
+   {
+    "case": "ba nhịp tách rời (ca nền)",
+    "problem": "(a) Hai ngày đầu TBC 26 chiếc/ngày — tổng? (b) Bốn ngày sau TBC 32 chiếc/ngày — tổng? (c) TBC cả sáu ngày?",
+    "solution": "(a) 26 × 2 = 52. (b) 32 × 4 = 128. (c) (52 + 128) : 6 = 180 : 6 = 30 chiếc.",
+    "why": "LT1–LT3 — ba nhịp dựng tường minh, chính là đề A câu 12."
+   },
+   {
+    "case": "hai tổ góp quỹ (ca đời thực)",
+    "problem": "Tổ Một có 10 bạn góp quỹ TBC 12 nghìn; tổ Hai có 15 bạn góp TBC 8 nghìn. Tính mức góp trung bình cả 25 bạn.",
+    "solution": "Tổng = 10 × 12 + 15 × 8 = 120 + 120 = 240 nghìn → TBC = 240 : 25 = 9,6 nghìn đồng.",
+    "why": "Ca LT7 — quân số lệch 10/15, đáp thập phân."
+   },
+   {
+    "case": "ba nhóm (ca mở rộng)",
+    "problem": "Gộp ba nhóm: 2 ngày TBC 26; 3 ngày TBC 30; 1 ngày bán 38 chiếc. Tính TBC cả sáu ngày.",
+    "solution": "Tổng = 52 + 90 + 38 = 180 → TBC = 180 : 6 = 30 chiếc.",
+    "why": "Ca LT8 — máy chạy với ba dòng bảng, nhóm lẻ 1 ngày."
+   }
+  ],
+  "numberRange": "Lớp 5: 2–3 nhóm; tổng ≤ 300; cho phép đáp thập phân 1 chữ số.",
+  "misconceptions": [
+   {
+    "wrong": "Biết phải \"về tổng\" nhưng lấy luôn 26 + 32 = 58 làm tổng cả tuần rồi chia 6.",
+    "signal": "Không có phép nhân TBC × quân số nào; 'tổng' bé bất thường.",
+    "fix": "K1 + K3 — TBC là nhãn đại diện: nhân với quân số mới thành tổng; kẻ bảng ba cột bắt tay điền từng dòng.",
+    "counterExample": "58 : 6 ≈ 9,7 chiếc/ngày — trong khi ngày nào cũng bán trên 26 chiếc: vô lý lộ liễu!"
+   }
+  ],
+  "vocabulary": [
+   "đòn gánh lệch",
+   "nhãn đại diện ngoài thúng",
+   "mở thúng đếm bánh",
+   "bảng ba cột NHÓM · QUÂN SỐ · TỔNG",
+   "cộng cột tổng"
+  ],
+  "mantra": "TBC LÀ ĐẠI DIỆN — NHÂN VỚI QUÂN SỐ MỚI THÀNH TỔNG!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "TBC 4 ngày là 32 — tổng bốn ngày = ?",
+    "answerKey": {
+     "value": 128
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B21.M1",
+   "message": "Ôn cầu ngược tổng = TBC × n rồi ra gánh thúng nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Hai thúng bánh trên đòn gánh: thúng nhỏ dán nhãn \"2 ngày, TBC 26\", thúng to dán \"4 ngày, TBC 32\". Sư phụ hỏi TBC cả sáu ngày. Trí Long cộng hai nhãn: \"26 với 32 là 58, chia 6…\" Su Kem gõ thúng: \"Cậu vừa cộng hai cái NHÃN — bánh còn nằm nguyên trong thúng!\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "26 + 32 = 58 làm tổng??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để mở thúng!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2",
+     "K3"
+    ],
+    "narration": "Mở thúng đếm bánh thật — kẻ bảng ba cột: NHÓM, QUÂN SỐ, TỔNG! Dòng một: hai ngày, TBC hai sáu — nhân ra NĂM MƯƠI HAI chiếc. Dòng hai: bốn ngày, TBC ba hai — nhân ra MỘT TRĂM HAI TÁM. Giờ mới cộng CỘT TỔNG: một trăm tám mươi chiếc — chia tổng quân số SÁU ngày: điểm gánh BA MƯƠI! Nhãn 58 kia? Chẳng phải tổng của ai cả.",
+    "display": {
+     "type": "table_three_cols_interactive",
+     "spec": {
+      "rows": [
+       [
+        "2 ngày đầu",
+        2,
+        "26 × 2 = 52"
+       ],
+       [
+        "4 ngày sau",
+        4,
+        "32 × 4 = 128"
+       ]
+      ],
+      "sumRow": "180 : 6 = 30"
+     }
+    },
+    "interaction": {
+     "type": "fill_table",
+     "answerKey": {
+      "value": 30
+     },
+     "successMessage": "52 + 128 = 180 : 6 = 30 — cộng cột TỔNG, không cộng nhãn!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "num",
+     "text": "Tổ Một: 10 bạn TBC 12 nghìn — tổng quỹ tổ Một = ? nghìn",
+     "answerKey": {
+      "value": 120
+     },
+     "wrongFeedback": "12 × 10.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 42,
+    "teaches": [
+     "K2",
+     "K4"
+    ],
+    "narration": "Máy chạy mọi cỡ! Hai tổ góp quỹ: tổ Một mười bạn TBC mười hai nghìn — tổng MỘT TRĂM HAI MƯƠI; tổ Hai mười lăm bạn TBC tám nghìn — tổng cũng MỘT TRĂM HAI MƯƠI. Cộng: hai trăm bốn mươi nghìn, chia hai lăm bạn: CHÍN PHẨY SÁU nghìn đồng! Ba nhóm cũng một bảng: năm hai cộng chín mươi cộng ba tám — vẫn một trăm tám mươi, chia sáu: ba mươi. Nhóm lẻ \"một ngày bán ba tám\" thì tổng chính là ba tám.",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "quỹ: 120 + 120 = 240 : 25 = 9,6 nghìn",
+      "ba nhóm: 52 + 90 + 38 = 180 : 6 = 30",
+      "nhóm 1 ngày: tổng = chính nó"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú đòn gánh: TBC là đại diện — nhân với quân số mới thành tổng!",
+    "display": {
+     "type": "mantra_card",
+     "text": "NHÂN VỚI QUÂN SỐ MỚI THÀNH TỔNG!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Hai thúng bánh: thúng nhỏ dán nhãn hai ngày TBC hai sáu, thúng to dán bốn ngày TBC ba hai. Sư phụ hỏi TBC cả sáu ngày. Trí Long cộng hai nhãn: hai sáu với ba hai là năm tám, chia sáu… Su Kem gõ thúng: cậu vừa cộng hai cái NHÃN — bánh còn nằm nguyên trong thúng!",
+    "screenText": "26 + 32 = 58 làm tổng??",
+    "visual": "Đòn gánh với hai thúng lệch cỡ dán nhãn; Trí Long cộng hai tấm nhãn bay lơ lửng; thúng đóng nắp im ỉm, dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 21
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Mở thúng đếm bánh thật — kẻ bảng ba cột: NHÓM, QUÂN SỐ, TỔNG! Dòng một: hai ngày, TBC hai sáu — nhân ra NĂM MƯƠI HAI chiếc. Dòng hai: bốn ngày, TBC ba hai — nhân ra MỘT TRĂM HAI TÁM. Giờ mới cộng CỘT TỔNG: một trăm tám mươi — chia SÁU ngày: điểm gánh BA MƯƠI! Nhãn năm tám kia chẳng phải tổng của ai cả!",
+    "screenText": "NHÓM·QUÂN SỐ·TỔNG: 52 + 128 = 180 : 6 = 30",
+    "visual": "Bảng ba cột kẻ phấn với hai dòng điền dần; hai thúng mở nắp đổ bánh vào rổ chung 180; điểm gánh 30 vàng #F8B942 trên đòn.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Máy chạy mọi cỡ! Hai tổ góp quỹ: tổ Một mười bạn TBC mười hai nghìn — tổng MỘT TRĂM HAI MƯƠI; tổ Hai mười lăm bạn TBC tám nghìn — tổng cũng MỘT TRĂM HAI MƯƠI. Cộng: hai trăm bốn mươi nghìn, chia hai lăm bạn: CHÍN PHẨY SÁU nghìn! Ba nhóm cũng một bảng: năm hai cộng chín mươi cộng ba tám — một trăm tám mươi, chia sáu: ba mươi!",
+    "screenText": "240 : 25 = 9,6 nghìn · 52 + 90 + 38 = 180 : 6 = 30",
+    "visual": "Bảng ba cột hai dòng tổ quỹ rồi bảng ba dòng; nhóm lẻ '1 ngày · 38' điền thẳng cột tổng; hai đáp đóng khung.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú đòn gánh: TBC là đại diện — nhân với quân số mới thành tổng!",
+    "screenText": "NHÂN QUÂN SỐ → THÀNH TỔNG!",
+    "visual": "Thẻ thần chú vàng với icon đòn gánh hai thúng.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Đòn gánh của con: hai ngày TBC hai sáu, bốn ngày TBC ba hai — kẻ bảng ba cột, tìm TBC cả sáu ngày! Vào bài luyện ngay!",
+    "screenText": "kẻ bảng: NHÓM · QUÂN SỐ · TỔNG → ?",
+    "visual": "Bảng ba cột trống chờ điền; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Mở thúng — kẻ bảng ba cột",
+  "problem": "Hai ngày đầu tuần TBC 26 chiếc/ngày; bốn ngày sau TBC 32 chiếc/ngày. Tính TBC của cả sáu ngày.",
+  "steps": [
+   {
+    "show": "Bước 1 — Kẻ bảng: [2 ngày · 26 → 52] và [4 ngày · 32 → 128] (nhân ngược ra TỔNG).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "26 + 32 = 58 có phải tổng bánh cả tuần không?",
+     "choices": [
+      "Không — đó là cộng hai nhãn đại diện",
+      "Có",
+      "Gần đúng"
+     ],
+     "answerKey": {
+      "choice": "Không — đó là cộng hai nhãn đại diện"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Cộng cột TỔNG: 52 + 128 = 180 chiếc; tổng quân số 6 ngày."
+   },
+   {
+    "show": "Bước 3 — TBC gộp = 180 : 6 = 30 chiếc.",
+    "askAfter": {
+     "format": "num",
+     "text": "Gộp ba nhóm 52 + 90 + 38 rồi chia 6 = ?",
+     "answerKey": {
+      "value": 30
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B24.LT1",
+     "text": "Hai ngày đầu tuần TBC 26 chiếc/ngày. Tính tổng số bánh hai ngày ấy. (Điền tiếp dòng 2 của bảng: bốn ngày sau TBC 32 — tổng?)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "2 ngày",
+        "value": 52
+       },
+       {
+        "label": "4 ngày",
+        "value": 128
+       }
+      ]
+     },
+     "hints": [
+      "Nhân ngược: TBC × quân số.",
+      "26 × 2 và 32 × 4."
+     ],
+     "solutionNarrative": "52 và 128 — hai dòng bảng đã mở thúng.",
+     "teaches": [
+      "K1"
+     ]
+    },
+    {
+     "id": "P1b",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B24.LT2",
+     "text": "Bốn ngày sau TBC 32 chiếc/ngày. Tính tổng số bánh bốn ngày ấy.",
+     "answerKey": {
+      "value": 128
+     },
+     "hints": [
+      "Nhân ngược.",
+      "32 × 4."
+     ],
+     "solutionNarrative": "32 × 4 = 128 chiếc.",
+     "teaches": [
+      "K1"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B24.LT3",
+     "text": "Từ hai kết quả trên, tính TBC của cả sáu ngày.",
+     "answerKey": {
+      "value": 30
+     },
+     "hints": [
+      "Cộng cột TỔNG: 52 + 128.",
+      "180 : 6."
+     ],
+     "solutionNarrative": "(52 + 128) : 6 = 30 chiếc.",
+     "teaches": [
+      "K2",
+      "K3"
+     ],
+     "generator": {
+      "template": "Nhóm {n1} TBC {t1}; nhóm {n2} TBC {t2}. TBC gộp?",
+      "constraints": {},
+      "answerRule": "(t1×n1 + t2×n2) : (n1+n2)"
+     }
+    },
+    {
+     "id": "P3",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B24.LT7",
+     "text": "Tổ Một có 10 bạn góp quỹ TBC 12 nghìn đồng; tổ Hai có 15 bạn góp TBC 8 nghìn đồng. Tính mức góp trung bình của cả 25 bạn (nghìn đồng).",
+     "answerKey": {
+      "value": 9.6
+     },
+     "hints": [
+      "Tổng 120 + 120.",
+      "240 : 25."
+     ],
+     "solutionNarrative": "240 : 25 = 9,6 nghìn đồng.",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B24.LT8",
+     "text": "Gộp ba nhóm: 2 ngày TBC 26 chiếc; 3 ngày TBC 30 chiếc; 1 ngày bán 38 chiếc. Tính TBC cả sáu ngày.",
+     "answerKey": {
+      "value": 30
+     },
+     "hints": [
+      "Bảng ba dòng: 52; 90; 38.",
+      "180 : 6."
+     ],
+     "solutionNarrative": "(52 + 90 + 38) : 6 = 30 chiếc.",
+     "teaches": [
+      "K4"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.1.4#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B24.M2",
+   "award": "huy_hieu_don_ganh"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P2"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "text": "Muốn gộp hai nhóm, trước khi cộng phải:",
+    "choices": [
+     "nhân TBC với quân số ra TỔNG từng nhóm",
+     "cộng hai TBC ngay",
+     "chia hai TBC cho nhau"
+    ],
+    "answerKey": {
+     "choice": "nhân TBC với quân số ra TỔNG từng nhóm"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1",
+     "K3"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B24.QZ5",
+    "text": "Muốn gộp nhóm, đại lượng duy nhất cộng thẳng được là:",
+    "choices": [
+     "tổng",
+     "TBC",
+     "quân số nhân đôi"
+    ],
+    "answerKey": {
+     "choice": "tổng"
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "2 ngày TBC 26 và 4 ngày TBC 32 → TBC cả 6 ngày = ?",
+    "answerKey": {
+     "value": 30
+    },
+    "teaches": [
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Gộp hai (ba) nhóm khác cỡ — ba nhịp nào?",
+    "back": "Kẻ bảng NHÓM · QUÂN SỐ · TỔNG: (1) nhân ngược TBC × quân số ra TỔNG từng nhóm (26×2=52; 32×4=128); (2) cộng cột TỔNG (180); (3) chia tổng quân số (: 6 = 30). Chỉ TỔNG cộng thẳng được — TBC là nhãn đại diện!"
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P2",
+   "+7 ngày: câu P3 (quỹ 9,6 nghìn)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học gộp nhóm khác cỡ bằng bảng ba cột NHÓM · QUÂN SỐ · TỔNG. Con đạt {score}/3, {trapResult} câu bẫy cộng-nhãn.",
+  "homeActivity": "Kẻ bảng ba cột thật cho hai túi kẹo (2 ngày TBC 26 / 4 ngày TBC 32) — con điền từng ô rồi tự cộng đúng cột.",
+  "watchFor": "Nếu con lấy 26 + 32 làm tổng — chỉ vào đáp 58 : 6 ≈ 9,7 (S1) và hỏi 'ngày nào bán dưới 26 không?'"
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B24.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "26 + 32 = 58 làm tổng??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "26 với 32 là 58, chia 6…",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Cậu vừa cộng hai cái NHÃN — bánh còn nằm nguyên trong thúng!",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B24_M1_F1.png",
+   "sha256_16": "77b41cb4b5b87678"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con tính được TBC GỘP của hai (ba) nhóm khác cỡ bằng BA NHỊP: nhân ngược ra TỔNG từng nhóm (TBC × quân số) → cộng các tổng → chia TỔNG số phần tử — với nghi thức kẻ bảng ba cột NHÓM · QUÂN SỐ · TỔNG để không bao giờ lấy nhầm TBC làm tổng.",
+    "steps": [
+     {
+      "text": "quỹ: 120 + 120 = 240 : 25 = 9,6 nghìn"
+     },
+     {
+      "text": "ba nhóm: 52 + 90 + 38 = 180 : 6 = 30"
+     },
+     {
+      "text": "nhóm 1 ngày: tổng = chính nó"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B24_M1_F2.png",
+   "sha256_16": "9e0c9b560a645f98"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Chỉ TỔNG mới cộng thẳng được",
+      "text": "TBC là ĐẠI DIỆN, muốn góp mặt vào phép cộng phải nhân với quân số để thành tổng: 26 × 2 = 52; 32 × 4 = 128.",
+      "tone": "navy"
+     },
+     {
+      "label": "Ba nhịp gộp",
+      "text": "(1) từng nhóm nhân ra TỔNG",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "TBC LÀ ĐẠI DIỆN — NHÂN VỚI QUÂN SỐ MỚI THÀNH TỔNG!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B24_M1_F3.png",
+   "sha256_16": "e3b9ad84a5c6aa4d"
+  },
+  {
+   "archetype": "bar_diagram",
+   "params": {
+    "title": "GỘP HAI NHÓM KHÁC CỠ — QUA CẦU TỔNG",
+    "bars": [
+     {
+      "name": "2 ngày đầu",
+      "units": 2,
+      "label": "26 × 2 = 52"
+     },
+     {
+      "name": "4 ngày sau",
+      "units": 4,
+      "label": "32 × 4 = 128"
+     }
+    ],
+    "brace": {
+     "text": "(52 + 128) : 6 ngày = 180 : 6 = 30 chiếc"
+    },
+    "note": "Kẻ bảng NHÓM · QUÂN SỐ · TỔNG rồi mới cộng — đừng cộng TBC với nhau"
+   },
+   "caption": "Nhân ngược ra tổng từng nhóm, cộng tổng, chia tổng quân số",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B24_M1_F4.png",
+   "sha256_16": "1c0dd0cdbdeb9eff"
+  }
+ ]
+}

@@ -1,0 +1,609 @@
+{
+ "title": "X trong phép chia có dư: thương thì nhân – dư thì cộng · ba nhịp ghế số chia",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:I.7.2#3"
+  ],
+  "bktUnit": "CASE:I.7.2#3@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B16",
+  "order": 3,
+  "prev": "DL:KSN5Q1.B16.M2",
+  "next": "DL:KSN5Q1.B17.M1"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B16",
+  "chunks": [
+   "CHUNK:KSN5Q1.B16.S4",
+   "CHUNK:KSN5Q1.B16.S7"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B16.4"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B16.2",
+   "TRAP:KSN5Q1.B16.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con tìm được X ở CẢ HAI GHẾ của phép chia có dư: ghế SỐ BỊ CHIA (X = số chia × thương + dư — thương thì nhân, dư thì cộng) và ghế SỐ CHIA (ba nhịp: TRỪ dư — CHIA thương — KIỂM X > dư) — nối thẳng luật nền của Bài 10.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
+  "kidText": "Tìm X trong phép chia có dư ở cả hai chỗ — thương thì nhân, dư thì cộng; nhớ kiểm X phải lớn hơn số dư."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Ghế SỐ BỊ CHIA — X : a = q dư r: đọc thành câu chuyện \"X gồm q nhóm a VÀ còn r lẻ\": X = a × q + r (X : 4 = 5 dư 3 → X = 4 × 5 + 3 = 23)."
+   },
+   {
+    "id": "K2",
+    "text": "Ghế SỐ CHIA — a : X = q dư r: BA NHỊP: (1) TRỪ dư: a − r (phần chia đều được); (2) CHIA thương: (a − r) : q = X; (3) KIỂM X > r (luật nền Bài 10: dư phải bé hơn số chia)."
+   },
+   {
+    "id": "K3",
+    "text": "Cấm hai đường tắt: bỏ rơi số dư (X = a × q) và chia thẳng a : q khi chưa trừ dư — cả hai đều trượt phép thử."
+   },
+   {
+    "id": "K4",
+    "text": "Nghi thức THỬ LẠI bằng phép chia xuôi: 23 : 4 = 5 dư 3 ✓; 39 : 5 = 7 dư 4 ✓ — chốt án mọi bài chia có dư."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: HAI GHẾ TRONG PHIÊN CHIA KẸO (nối thẳng xưởng túi kẹo Bài 10). Ghế SỐ BỊ CHIA hỏi \"cả rổ bao nhiêu viên?\": 5 túi 4 viên VÀ CÒN 3 viên lẻ — nhân túi rồi CỘNG viên lẻ: 23. Bỏ rơi 3 viên lẻ là thiếu kẹo! Ghế SỐ CHIA khó hơn: 39 viên chia mỗi túi X viên được 7 túi dư 4 — muốn biết cỡ túi phải NHẶT 4 viên lẻ RA TRƯỚC (39 − 4 = 35 mới là phần đóng túi tròn), chia 7 túi: X = 5; và nhịp ba — KIỂM: túi 5 viên mà lẻ tận 4 viên, chưa đủ túi mới — hợp luật nền! Chia thẳng 39 : 7 khi kẹo lẻ còn trộn trong rổ là ra túi méo.",
+  "canonicalExamples": [
+   {
+    "case": "ghế số bị chia (ca bẫy 1)",
+    "problem": "Tìm X: X : 4 = 5 (dư 3).",
+    "solution": "X = 4 × 5 + 3 = 23. Thử: 23 : 4 = 5 dư 3 ✓. (Bỏ dư: 20 — thử 20 : 4 = 5 dư 0 ✗.)",
+    "why": "Ca đinh bẫy CĐ-16.2 — đề A câu 13."
+   },
+   {
+    "case": "ghế số chia ba nhịp (ca bẫy 2)",
+    "problem": "Tìm X: 39 : X = 7 (dư 4).",
+    "solution": "Nhịp 1 — trừ dư: 39 − 4 = 35. Nhịp 2 — chia thương: 35 : 7 = 5 → X = 5. Nhịp 3 — kiểm: 5 > 4 ✓. Thử: 39 : 5 = 7 dư 4 ✓.",
+    "why": "Ca đinh bẫy CĐ-16.3 — đề A câu 14."
+   },
+   {
+    "case": "hai nhịp sư phụ (ca tổng hợp)",
+    "problem": "a) X chia 5 được thương 8 và số dư LỚN NHẤT có thể — tìm X. b) Tìm X biết X × 3 = X + 8.",
+    "solution": "a) Dư max khi chia 5 là 4 (Bài 10!) → X = 5 × 8 + 4 = 44. b) X × 3 hơn X đúng X × 2; phần hơn là 8 → X × 2 = 8 → X = 4 (thử: 4 × 3 = 12 = 4 + 8 ✓).",
+    "why": "Ca LT9 — ghép luật nền + tư duy phần hơn."
+   }
+  ],
+  "numberRange": "Lớp 5: số bị chia ≤ 100; số chia 2–9.",
+  "misconceptions": [
+   {
+    "wrong": "X : 4 = 5 dư 3 → X = 4 × 5 = 20 (bỏ rơi số dư).",
+    "signal": "Thử lại ra dư 0 thay vì dư 3.",
+    "fix": "K1 + K4 — đọc thành câu chuyện: \"5 nhóm 4 VÀ CÒN 3 lẻ\"; thương thì nhân — dư thì cộng.",
+    "counterExample": "20 : 4 = 5 dư 0 ≠ dư 3 — thiếu đúng 3 viên kẹo lẻ."
+   },
+   {
+    "wrong": "39 : X = 7 dư 4 → chia thẳng X = 39 : 7 \"cho nhanh\" (không trừ dư, không kiểm).",
+    "signal": "X không phải số tự nhiên (39 : 7 lẻ), hoặc quên kiểm X > dư.",
+    "fix": "K2 — ba nhịp: TRỪ dư (35) — CHIA thương (5) — KIỂM 5 > 4; kẹo lẻ phải nhặt ra trước khi đo cỡ túi.",
+    "counterExample": "39 : 7 = 5,57… — túi méo ngay từ nhịp một."
+   }
+  ],
+  "vocabulary": [
+   "hai ghế phiên chia kẹo",
+   "thương thì nhân — dư thì cộng",
+   "nhặt kẹo lẻ ra trước",
+   "ba nhịp ghế số chia",
+   "túi méo"
+  ],
+  "mantra": "THƯƠNG THÌ NHÂN — DƯ THÌ CỘNG; TRỪ DƯ — CHIA THƯƠNG — KIỂM DƯ!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Số dư lớn nhất khi chia cho 5 là mấy? (Bài 10)",
+    "answerKey": {
+     "value": 4
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B10.M1",
+   "message": "Ôn luật nền dư < số chia rồi vào phiên chia kẹo nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Phiên tòa chia kẹo mở với hai ghế trống. Vụ một: X : 4 = 5 dư 3 — Trí Long phán nhanh: \"X bằng 4 nhân 5 bằng 20!\" Vụ hai: 39 : X = 7 dư 4 — bạn Bống chia thẳng: \"39 chia 7 cho nhanh!\" Su Kem gõ búa: cả hai đều quên… những viên kẹo lẻ!",
+    "display": {
+     "type": "story_panel",
+     "caption": "X = 20? · X = 39 : 7?"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để mở phiên xử!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K4"
+    ],
+    "narration": "Ghế SỐ BỊ CHIA: X chia 4 được 5 dư 3 — đọc thành câu chuyện: cả rổ gồm NĂM túi bốn viên VÀ CÒN BA viên lẻ! Nhân túi: hai mươi; CỘNG viên lẻ: hai mươi ba. Thử phép chia xuôi: 23 chia 4 đúng 5 dư 3! Còn đáp 20? Thử ra dư KHÔNG — thiếu đúng ba viên kẹo lẻ, tòa bác!",
+    "display": {
+     "type": "candy_court_interactive",
+     "spec": {
+      "bags": 5,
+      "per": 4,
+      "loose": 3,
+      "calc": "4 × 5 + 3 = 23",
+      "check": "23 : 4 = 5 dư 3 ✓",
+      "wrong": "20 : 4 = 5 dư 0 ✗"
+     }
+    },
+    "interaction": {
+     "type": "count_all_candy",
+     "answerKey": {
+      "value": 23
+     },
+     "successMessage": "Thương thì nhân — dư thì cộng: X = 23!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 16,
+    "item": {
+     "format": "num",
+     "text": "Tìm X: X : 6 = 7 (dư 2).",
+     "answerKey": {
+      "value": 44
+     },
+     "wrongFeedback": "6 × 7 + 2 = 44 — đừng bỏ rơi số dư.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 44,
+    "teaches": [
+     "K2",
+     "K3"
+    ],
+    "narration": "Ghế SỐ CHIA — vụ khó: 39 viên, chia túi cỡ X được 7 túi dư 4. BA NHỊP của tòa: nhịp một — NHẶT KẸO LẺ RA: 39 trừ 4 bằng 35, đây mới là phần đóng túi tròn! Nhịp hai — CHIA THƯƠNG: 35 chia 7 bằng NĂM: túi 5 viên. Nhịp ba — KIỂM luật nền: 5 lớn hơn 4 — dư chưa đủ túi mới, hợp lệ! Thử: 39 chia 5 đúng 7 dư 4. Chia thẳng 39 : 7 khi kẹo lẻ còn trộn trong rổ? Ra năm phẩy năm bảy — túi méo, tòa bác!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "nhịp 1: 39 − 4 = 35 (nhặt kẹo lẻ)",
+      "nhịp 2: 35 : 7 = 5 = X",
+      "nhịp 3: kiểm 5 > 4 ✓ · thử 39 : 5 = 7 dư 4 ✓"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 14,
+    "narration": "Hai thần chú phiên tòa: thương thì nhân — dư thì cộng! Trừ dư — chia thương — kiểm dư: ba nhịp của ghế số chia!",
+    "display": {
+     "type": "mantra_card",
+     "text": "TRỪ DƯ — CHIA THƯƠNG — KIỂM DƯ!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Phiên tòa chia kẹo mở với hai ghế trống. Vụ một: X chia bốn bằng năm dư ba — Trí Long phán nhanh: X bằng bốn nhân năm bằng HAI MƯƠI! Vụ hai: ba chín chia X bằng bảy dư bốn — Bống chia thẳng ba chín cho bảy! Su Kem gõ búa: cả hai quên… những viên kẹo lẻ!",
+    "screenText": "X = 20? · X = 39 : 7?",
+    "visual": "Phòng xử với hai ghế 'SỐ BỊ CHIA' và 'SỐ CHIA'; Su Kem thẩm phán gõ búa; ba viên kẹo lẻ lăn giữa sàn.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Ghế SỐ BỊ CHIA: X chia bốn được năm dư ba — đọc thành câu chuyện: cả rổ gồm NĂM túi bốn viên VÀ CÒN BA viên lẻ! Nhân túi: hai mươi; CỘNG viên lẻ: HAI MƯƠI BA. Thử phép chia xuôi: hai ba chia bốn đúng năm dư ba! Đáp hai mươi? Thử ra dư KHÔNG — thiếu đúng ba viên lẻ, tòa bác!",
+    "screenText": "X = 4 × 5 + 3 = 23 ✓ (bỏ dư → 20 ✗)",
+    "visual": "Rổ kẹo: 5 túi × 4 viên xếp hàng + 3 viên lẻ tô đỏ được cộng vào; phép thử 23 : 4 mộc xanh; đáp 20 gạch chéo.",
+    "assets": [],
+    "duration": 23
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Ghế SỐ CHIA — vụ khó: ba chín viên, được bảy túi dư bốn. BA NHỊP: nhịp một — NHẶT KẸO LẺ RA: ba chín trừ bốn bằng ba lăm! Nhịp hai — CHIA THƯƠNG: ba lăm chia bảy bằng NĂM. Nhịp ba — KIỂM: năm lớn hơn bốn — hợp lệ! Thử: ba chín chia năm đúng bảy dư bốn. Chia thẳng khi kẹo lẻ còn trộn trong rổ? Túi méo — tòa bác!",
+    "screenText": "39 − 4 = 35 → 35 : 7 = 5 → kiểm 5 > 4 ✓",
+    "visual": "Ba nhịp đóng khung ba màu; bốn viên lẻ được nhặt ra khay riêng trước; phép 39 : 7 = 5,57 méo mó gạch đỏ #C0392B.",
+    "assets": [],
+    "duration": 27
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Hai thần chú phiên tòa: thương thì nhân — dư thì cộng! Trừ dư — chia thương — kiểm dư!",
+    "screenText": "THƯƠNG NHÂN — DƯ CỘNG · 3 NHỊP GHẾ SỐ CHIA!",
+    "visual": "Thẻ thần chú vàng với icon búa tòa và túi kẹo.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Hai vụ án chờ con: X chia bốn bằng năm dư ba; ba chín chia X bằng bảy dư bốn — đủ ba nhịp! Vào bài luyện ngay!",
+    "screenText": "X : 4 = 5 dư 3 · 39 : X = 7 dư 4",
+    "visual": "Hai hồ sơ vụ án trên bàn; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Hai vụ án chia kẹo",
+  "problem": "Tìm X: (a) X : 4 = 5 (dư 3); (b) 39 : X = 7 (dư 4).",
+  "steps": [
+   {
+    "show": "Bước 1 — Vụ (a), ghế số bị chia: X = 4 × 5 + 3 = 23. Thử: 23 : 4 = 5 dư 3 ✓.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Vì sao phải cộng 3?",
+     "choices": [
+      "Vì rổ còn 3 viên lẻ ngoài các túi",
+      "Cho đáp to hơn",
+      "Không cần cộng"
+     ],
+     "answerKey": {
+      "choice": "Vì rổ còn 3 viên lẻ ngoài các túi"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Vụ (b), nhịp 1: trừ dư 39 − 4 = 35; nhịp 2: 35 : 7 = 5 → X = 5.",
+    "askBefore": {
+     "format": "num",
+     "text": "Nhịp 1: 39 − 4 = ?",
+     "answerKey": {
+      "value": 35
+     }
+    }
+   },
+   {
+    "show": "Bước 3 — Nhịp 3: kiểm 5 > 4 ✓. Thử: 39 : 5 = 7 dư 4 ✓ — chốt án.",
+    "askAfter": {
+     "format": "tf",
+     "text": "(Đúng/Sai?) Nếu tính ra X = 3 cho vụ (b) thì vẫn hợp lệ.",
+     "answerKey": {
+      "value": false,
+      "note": "3 < dư 4 — phạm luật nền!"
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B16.LT7",
+     "text": "Tìm X: X : 4 = 5 (dư 3).",
+     "answerKey": {
+      "value": 23
+     },
+     "hints": [
+      "5 nhóm 4 VÀ còn 3 lẻ.",
+      "4 × 5 + 3; thử lại!"
+     ],
+     "solutionNarrative": "X = 4 × 5 + 3 = 23 (thử: 23 : 4 = 5 dư 3 ✓).",
+     "teaches": [
+      "K1",
+      "K4"
+     ],
+     "generator": {
+      "template": "Tìm X: X : {a} = {q} (dư {r}, r < a).",
+      "constraints": {},
+      "answerRule": "a × q + r, thử phép chia xuôi"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B16.LT8",
+     "text": "Tìm X: 39 : X = 7 (dư 4). (Nhớ đủ ba nhịp của ghế số chia!)",
+     "answerKey": {
+      "value": 5
+     },
+     "hints": [
+      "Nhịp 1: nhặt kẹo lẻ — 39 − 4.",
+      "35 : 7 rồi kiểm X > 4."
+     ],
+     "solutionNarrative": "(39 − 4) : 7 = 5; kiểm 5 > 4 ✓; thử 39 : 5 = 7 dư 4 ✓.",
+     "teaches": [
+      "K2",
+      "K4"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B16.LT9",
+     "text": "Sư phụ Trí Dũng đố hai nhịp: \"a) X chia cho 5 được thương là 8 và số dư là số dư LỚN NHẤT có thể — tìm X. b) Tìm X biết X × 3 = X + 8.\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "a",
+        "value": 44
+       },
+       {
+        "label": "b",
+        "value": 4
+       }
+      ]
+     },
+     "hints": [
+      "a) Dư max khi chia 5 = 4 (Bài 10).",
+      "b) X × 3 hơn X đúng X × 2 = 8."
+     ],
+     "solutionNarrative": "a) 5 × 8 + 4 = 44. b) X × 2 = 8 → X = 4 (thử: 12 = 4 + 8 ✓).",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
+  "onPass": {
+   "updateBKT": [
+    "CASE:I.7.2#3@G5"
+   ],
+   "unlockNext": "DCR:KSN5Q1.C4",
+   "award": "huy_hieu_tham_phan_chia_keo + mở KỲ SÁT HẠCH CHƯƠNG 4"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B16.QZ2",
+    "text": "(Đúng/Sai?) Từ X : 4 = 5 dư 3 suy ra X = 4 × 5 + 3.",
+    "answerKey": {
+     "value": true
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B16.QZ5",
+    "text": "39 : X = 7 dư 4 — bước đầu tiên là:",
+    "choices": [
+     "lấy 39 − 4",
+     "lấy 39 : 7",
+     "lấy 7 × 4"
+    ],
+    "answerKey": {
+     "choice": "lấy 39 − 4"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "Tìm X: 52 : X = 8 (dư 4).",
+    "answerKey": {
+     "value": 6
+    },
+    "teaches": [
+     "K2",
+     "K4"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Tìm X hai ghế của phép chia có dư?",
+    "back": "Ghế SỐ BỊ CHIA: X = số chia × thương + dư (THƯƠNG THÌ NHÂN — DƯ THÌ CỘNG). Ghế SỐ CHIA ba nhịp: TRỪ dư → CHIA thương → KIỂM X > dư. Chốt án bằng phép chia xuôi thử lại."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (sư phụ hai nhịp)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con xử hai ghế tìm X của phép chia có dư: thương-nhân-dư-cộng và ba nhịp trừ-chia-kiểm. Con đạt {score}/3, {trapResult} câu bẫy. Con đã đủ điều kiện vào KỲ SÁT HẠCH CHƯƠNG 4!",
+  "homeActivity": "Chia 23 viên kẹo thật vào túi 4 viên — hỏi con 'đọc phép chia và tìm lại cả rổ từ 5 túi dư 3'.",
+  "watchFor": "Nếu con bỏ rơi số dư hoặc chia thẳng chưa trừ dư — mở lại phiên tòa (S2, S3) với kẹo thật."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B16.M3",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "X = 20? · X = 39 : 7?",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Phiên tòa chia kẹo mở với hai ghế trống.",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "cả hai đều quên… những viên kẹo lẻ!",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B16_M3_F1.png",
+   "sha256_16": "5621bbfa408b4590"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con tìm được X ở CẢ HAI GHẾ của phép chia có dư: ghế SỐ BỊ CHIA (X = số chia × thương + dư — thương thì nhân, dư thì cộng) và ghế SỐ CHIA (ba nhịp: TRỪ dư — CHIA thương — KIỂM X > dư) — nối thẳng luật nền của Bài 10.",
+    "steps": [
+     {
+      "text": "nhịp 1: 39 − 4 = 35 (nhặt kẹo lẻ)"
+     },
+     {
+      "text": "nhịp 2: 35 : 7 = 5 = X"
+     },
+     {
+      "text": "nhịp 3: kiểm 5 > 4 · thử 39 : 5 = 7 dư 4"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B16_M3_F2.png",
+   "sha256_16": "88ad569f10edec9e"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Ghế SỐ BỊ CHIA — X",
+      "text": "4 = 5 dư 3 → X = 4 × 5 + 3 = 23).",
+      "tone": "navy"
+     },
+     {
+      "label": "Ghế SỐ CHIA — a",
+      "text": "X = q dư r: BA NHỊP: (1) TRỪ dư: a − r (phần chia đều được); (2) CHIA thương: (a − r) : q = X; (3) KIỂM X > r (luật nền Bài 10: dư phải bé hơn số chia).",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "THƯƠNG THÌ NHÂN — DƯ THÌ CỘNG; TRỪ DƯ — CHIA THƯƠNG — KIỂM DƯ!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B16_M3_F3.png",
+   "sha256_16": "7b324cb0ced763df"
+  },
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "X TRONG PHÉP CHIA CÓ DƯ — HAI GHẾ KHÁC NHAU",
+    "neutral": true,
+    "wrong": {
+     "head": "GHẾ SỐ BỊ CHIA",
+     "steps": [
+      "X : 4 = 5 (dư 3)",
+      "thương thì NHÂN · dư thì CỘNG"
+     ],
+     "result": "X = 4 × 5 + 3 = 23"
+    },
+    "right": {
+     "head": "GHẾ SỐ CHIA",
+     "steps": [
+      "39 : X = 7 (dư 4)",
+      "trừ dư → chia thương → kiểm"
+     ],
+     "result": "X = 35 : 7 = 5"
+    },
+    "verdict": "Nhịp 3 bắt buộc: số chia 5 phải LỚN HƠN dư 4 ✓"
+   },
+   "caption": "Cùng một phép chia có dư nhưng X ngồi ghế nào thì làm cách ấy",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B16_M3_F4.png",
+   "sha256_16": "87de547938e66324"
+  }
+ ]
+}

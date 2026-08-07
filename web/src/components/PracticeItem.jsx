@@ -1,0 +1,108 @@
+import React, { useState } from 'react';
+import {
+  checkAnswer, inputCount, hintState, canGenerate, makeVariant, answerBrief, answerFields,
+} from '../lib/flow.js';
+import Figure from './Figure.jsx';
+import AnswerFields from './AnswerFields.jsx';
+
+const LEVEL = { warmup: 'KHỞI ĐỘNG', standard: 'CƠ BẢN', challenge: 'THỬ THÁCH' };
+
+/** Luyện tập: gợi ý 2 tầng · sai 3 lần mở đáp án · luôn có lối quay lại nguyên tắc */
+export default function PracticeItem({ item: base, level, figure, onDone, onJumpTeach, onNext }) {
+  const [item, setItem] = useState(base);
+  const [vals, setVals] = useState(() => Array(Math.max(inputCount(base), 1)).fill(''));
+  const [tries, setTries] = useState(0);
+  const [res, setRes] = useState(null);
+
+  const n = inputCount(item);
+  const hs = hintState(item, tries);
+  const finished = res?.ok || hs.reveal;
+  const variantable = !!canGenerate(item);
+
+  const submit = () => {
+    const r = checkAnswer(item, n <= 1 ? vals[0] : vals);
+    setRes(r);
+    if (r.ok || r.mode === 'selfcheck') onDone?.({ id: item.id, ok: true, tries: tries + 1 });
+    else {
+      const t = tries + 1;
+      setTries(t);
+      if (t >= 3) onDone?.({ id: item.id, ok: false, tries: t, revealed: true });
+    }
+  };
+
+  const another = () => {
+    const v = makeVariant(item);
+    if (!v) return;
+    setItem(v); setVals(Array(Math.max(inputCount(v), 1)).fill('')); setTries(0); setRes(null);
+  };
+
+  return (
+    <>
+      <div className="card">
+        <div className="kicker">PHÒNG LUYỆN · {LEVEL[level] || level}</div>
+        <p className="text-[17px] font-semibold leading-snug">{item.text}</p>
+        {item._variant && <span className="pill mt-2 bg-teal-pale text-teal-dark">đề mới cùng dạng</span>}
+        <Figure fig={figure} />
+
+        {n === 0 ? (
+          <div className="mt-3">
+            <p className="field-brief"><span aria-hidden>✎</span><span>{answerBrief(item)}</span></p>
+            <button className="btn-ghost" onClick={submit} disabled={!!res}>
+              Con làm xong rồi — xem lời giải
+            </button>
+          </div>
+        ) : (
+          <>
+            <AnswerFields item={item} vals={vals} disabled={finished}
+                          onChange={setVals} onEnter={submit} />
+            {/* chỉ nhắc chuyện đơn vị khi ô ĐANG chờ một con số — câu trả lời bằng
+                chữ mà bảo "điền số là đủ" thì con lại tưởng mình hiểu sai đề */}
+            {answerFields(item).every((f) => f.kind === 'number') && (
+              <p className="mt-1.5 text-[12.5px] text-mute">
+                Con điền số là đủ — ghi kèm đơn vị cũng được.
+              </p>
+            )}
+          </>
+        )}
+
+        {res && (
+          <div className={`mt-3 rounded-xl border-[1.5px] px-3.5 py-3 text-[15px] ${
+            res.ok || res.mode === 'selfcheck'
+              ? 'border-teal bg-teal-pale text-teal-dark' : 'border-alert bg-alert-pale text-alert'}`}>
+            {res.mode === 'selfcheck' ? <><b>Lời giải mẫu:</b> {res.expected}</>
+              : res.ok ? <>🎉 Chuẩn! {item.solutionNarrative || ''}</>
+              : <>Chưa đúng — con xem gợi ý rồi thử lại nhé!</>}
+          </div>
+        )}
+
+        {hs.show.map((h, i) => (
+          <div key={i} className="step0-box text-[14.5px]">💡 {h}</div>
+        ))}
+
+        {hs.reveal && !res?.ok && (
+          <div className="mt-2 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
+            <b>Đáp án:</b> {res?.expected}
+            {item.solutionNarrative && <div className="mt-1">{item.solutionNarrative}</div>}
+          </div>
+        )}
+      </div>
+
+      <footer className="fixed inset-x-0 bottom-0 border-t border-line bg-white/95 px-3.5 py-2.5 backdrop-blur"
+              style={{ paddingBottom: 'calc(.625rem + env(safe-area-inset-bottom))' }}>
+        <div className="mx-auto flex max-w-[740px] gap-2.5">
+          {finished ? (
+            <>
+              {variantable && <button className="btn-ghost" onClick={another}>Đề khác</button>}
+              <button className="btn-go" onClick={onNext}>Câu tiếp ▶</button>
+            </>
+          ) : (
+            <>
+              <button className="btn-ghost" onClick={onJumpTeach}>Xem lại nguyên tắc</button>
+              <button className="btn-go" onClick={submit}>Kiểm tra</button>
+            </>
+          )}
+        </div>
+      </footer>
+    </>
+  );
+}

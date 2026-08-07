@@ -1,0 +1,33 @@
+{
+  "$schema": "figureSpec/v1",
+  "note": "Trường bổ sung vào mỗi DigitalLesson: payload.figureSpec[]. Gemini CHỈ sinh JSON này — không sinh code. Renderer là code của MOBILUCK đã duyệt mắt, nên chất lượng hình luôn ổn định.",
+  "figureSpec_item": {
+    "id": "F1",
+    "archetype": "một trong 12 giá trị dưới",
+    "params": "object theo đúng schema của archetype",
+    "caption": "một dòng chú thích dưới hình",
+    "usedIn": ["teach1", "sample2", "practice:P3"]
+  },
+  "archetypes": {
+    "formula_card":    { "phủ": "26%", "params": "title, formulas[{label,text,tone:navy|teal|gold|white}], mantra, note" },
+    "character_speech":{ "phủ": "23%", "params": "title, lines[{who:Su Kem|Trí Long|Cáo Đề|Su Bống|sư phụ Trí Dũng, say, tone:normal|wrong|right}]" },
+    "two_way_compare": { "phủ": "14%", "params": "title, wrong{head,steps[],result}, right{head,steps[],result}, verdict" },
+    "motion_track":    { "phủ": "11%", "params": "title, from_label, to_label, length_label, movers[{name,from(0-1),dir:>|<,speed,color}], meet{at(0-1),label}, notes[]" },
+    "plane_geometry":  { "phủ": "9%",  "params": "title, shape:circle|rect|square|triangle|trapezoid, dims{d,r,w,h,base,height,a,b}, memo[], caption" },
+    "solid_3d":        { "phủ": "6%",  "params": "title, kind:box|cube, dims{a,b,c}, layers:int, memo[], caption" },
+    "clock_face":      { "phủ": "5%",  "params": "title, clocks[{hour,minute,label}], note" },
+    "ladder_steps":    { "phủ": "2%",  "params": "title, steps[{text,sub}], note" },
+    "bar_diagram":     { "phủ": "2%",  "params": "title, bars[{name,units:int,label,color}], brace{text}, note" },
+    "balance_scale":   { "phủ": "1%",  "params": "title, left{text,weight}, right{text,weight}, verdict, note — bên NẶNG tự hạ xuống" },
+    "grid_count":      { "phủ": "1%",  "params": "title, cols, rows, fill[[c,r]], fill_color, memo[], note" },
+    "fraction_split":  { "phủ": "1%",  "params": "title, shapes[{parts,shaded,label,kind:bar|circle}], note" }
+  },
+  "luat_render": [
+    "Đ2.2 mọi bbox không giao nhau — renderer tự tính, không phụ thuộc model",
+    "Đ3.4 fit-check: chữ tự thu cỡ cho vừa khung, sàn 9,5pt — không bao giờ tràn hay bị cắt",
+    "Đ5.1 bảng màu đóng: NAVY #0C3B70 · TEAL #1FC3A6 · GOLD #F8B942 · ĐỎ #C0392B",
+    "khung hình tự giãn theo số phần tử — không bao giờ tràn đáy",
+    "output PNG 170dpi nền #F8FBFD, tên file {microId}_{figId}.png"
+  ],
+  "quy_trinh": "extract → Gemini sinh figureSpec (JSON) → validate schema → render → auto-QC (bbox, palette, fit) → Vision QC (Gemini soi ảnh) → người duyệt → figure_manifest.json"
+}

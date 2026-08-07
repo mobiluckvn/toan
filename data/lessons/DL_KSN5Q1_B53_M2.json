@@ -1,0 +1,605 @@
+{
+ "title": "Đổi km/h ↔ m/s: xuống m/s số phải bé đi — chia 3,6, cặp 36-10 canh cửa",
+ "grade": 5,
+ "durationMinutes": 7,
+ "skills": {
+  "primary": [
+   "CASE:V.1.1#2"
+  ],
+  "bktUnit": "CASE:V.1.1#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B53",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B53.M1",
+  "next": "DL:KSN5Q1.B53.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B53",
+  "chunks": [
+   "CHUNK:KSN5Q1.B53.S4",
+   "CHUNK:KSN5Q1.B53.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B53.2"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B53.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con đổi đơn vị vận tốc hai chiều: km/h → m/s CHIA 3,6 (36 : 3,6 = 10 m/s); m/s → km/h NHÂN 3,6 (20 × 3,6 = 72 km/h) — với CẶP KIỂM BỎ TÚI 36 km/h = 10 m/s canh cửa: xuống m/s số phải BÉ ĐI (giây ngắn hơn giờ nhiều), thấy số phình to là nhân nhầm chiều.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (36 km/h = 10 m/s)",
+  "kidText": "Đổi km/h sang m/s thì chia 3,6 — số phải BÉ ĐI. Nhớ cặp kiểm 36 km/h bằng 10 m/s để khỏi nhân nhầm chiều."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Gốc phép đổi: 1 km = 1 000 m; 1 giờ = 3 600 giây → km/h sang m/s: nhân 1 000 chia 3 600 = CHIA 3,6: 36 : 3,6 = 10 m/s; 54 : 3,6 = 15 m/s; chiều ngược m/s → km/h: NHÂN 3,6: 20 × 3,6 = 72 km/h."
+   },
+   {
+    "id": "K2",
+    "text": "Cặp kiểm bỏ túi 36 km/h = 10 m/s canh cửa: trong MỘT GIÂY đi được ít hơn trong MỘT GIỜ rất nhiều → xuống m/s số phải BÉ ĐI; lên km/h số phải TO LÊN."
+   },
+   {
+    "id": "K3",
+    "text": "Vạch mặt nhân nhầm: 36 × 3,6 = 129,6 \"m/s\" — nhanh hơn cả máy bay phản lực sát đất: số phình to khi xuống giây là gãy ngay chiếc cân."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: CÁNH CỬA ĐƠN VỊ VÀ CẶP LÍNH GÁC 36-10. Đổi ba mươi sáu ki-lô-mét giờ sang mét trên giây — Trí Long vớ máy tính nhân ba phẩy sáu: một trăm hai chín phẩy sáu \"mét trên giây\"! Cặp lính gác đứng ngay cửa: BA MƯƠI SÁU km/h chính là MƯỜI m/s — số đi XUỐNG giây phải BÉ ĐI chứ: một giây ngắn hơn một giờ những ba nghìn sáu trăm lần, đi được quãng ít hơn nhiều! Gốc phép đổi: một ki-lô-mét là một nghìn mét, một giờ là ba nghìn sáu trăm giây — nhân nghìn chia ba nghìn sáu: gọn thành CHIA BA PHẨY SÁU! Ba mươi sáu chia ba phẩy sáu — MƯỜI; năm mươi tư chia ba phẩy sáu — MƯỜI LĂM! Chiều ngược lên km/h thì NHÂN: hai mươi mét giây nhân ba phẩy sáu — BẢY MƯƠI HAI ki-lô-mét giờ, số TO LÊN đúng luật! Mỗi lần đổi — liếc cặp lính gác 36-10: số chạy đúng chiều chưa?",
+  "canonicalExamples": [
+   {
+    "case": "ba phép đổi (ca lõi)",
+    "problem": "Đổi: 36 km/h = ... m/s; 54 km/h = ... m/s; 20 m/s = ... km/h.",
+    "solution": "36 : 3,6 = 10 m/s; 54 : 3,6 = 15 m/s; 20 × 3,6 = 72 km/h.",
+    "why": "Ca LT4 — hai chiều một cửa."
+   },
+   {
+    "case": "vạch mặt nhân nhầm (ca phản chứng)",
+    "problem": "Một bạn đổi 36 km/h bằng cách nhân 3,6 ra 129,6 m/s. Dùng cặp kiểm 36-10 chỉ ra chỗ sai.",
+    "solution": "36 km/h = 10 m/s — xuống giây số phải BÉ ĐI; 129,6 m/s nhanh hơn máy bay sát đất: nhân nhầm chiều, phải CHIA 3,6.",
+    "why": "Ca trap — chiếc cân đơn vị."
+   }
+  ],
+  "numberRange": "Lớp 5: bội của 3,6 (36, 54, 72, 90); m/s ≤ 25.",
+  "misconceptions": [
+   {
+    "wrong": "Đổi km/h sang m/s đem NHÂN 3,6 — số phình to khi xuống đơn vị giây.",
+    "signal": "Kết quả m/s lớn hơn số km/h ban đầu.",
+    "fix": "K2 — cặp 36-10 canh cửa: xuống m/s số bé đi → CHIA 3,6.",
+    "counterExample": "129,6 m/s = 466 km/h — xe đạp bay hơn tàu cao tốc: cặp lính gác tuýt còi ngay!"
+   }
+  ],
+  "vocabulary": [
+   "cánh cửa đơn vị",
+   "cặp lính gác 36-10",
+   "xuống giây số bé đi",
+   "chia 3,6 — nhân 3,6",
+   "chiếc cân đơn vị"
+  ],
+  "mantra": "XUỐNG m/s SỐ PHẢI BÉ ĐI — CHIA 3,6, CẶP 36-10 CANH CỬA!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "36 : 3,6 = ?",
+    "answerKey": {
+     "value": 10
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "ôn chia số thập phân",
+   "message": "Ôn chia thập phân rồi qua cửa nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Đổi 36 km/h sang m/s — Trí Long vớ máy tính nhân 3,6: \"129,6 m/s!\" Su Kem chỉ cặp lính gác trước cửa: \"129,6 mét MỖI GIÂY — nhanh hơn máy bay sát đất đấy: một GIÂY bé tí mà đi xa hơn cả giờ à?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "36 km/h = 129,6 m/s??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để gặp lính gác!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Gốc: nhân một nghìn mét — chia ba nghìn sáu trăm giây: gọn thành CHIA BA PHẨY SÁU! Ba mươi sáu chia ba phẩy sáu — MƯỜI; năm mươi tư chia ba phẩy sáu — MƯỜI LĂM! Chiều ngược lên km/h thì NHÂN: hai mươi nhân ba phẩy sáu — BẢY MƯƠI HAI! Cặp lính gác 36-10 canh cửa: xuống giây số phải BÉ ĐI — lên giờ số TO LÊN: liếc một cái là biết đúng chiều chưa!",
+    "display": {
+     "type": "unit_door_interactive",
+     "spec": {
+      "down": "km/h → m/s: CHIA 3,6 (36 → 10; 54 → 15)",
+      "up": "m/s → km/h: NHÂN 3,6 (20 → 72)",
+      "guard": "lính gác: 36 km/h = 10 m/s"
+     }
+    },
+    "interaction": {
+     "type": "pass_the_door",
+     "answerKey": {
+      "values": [
+       10,
+       15,
+       72
+      ]
+     },
+     "successMessage": "Ba phép qua cửa: 10 — 15 — 72!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "36 km/h bằng:",
+     "choices": [
+      "10 m/s",
+      "129,6 m/s",
+      "3,6 m/s"
+     ],
+     "answerKey": {
+      "choice": "10 m/s"
+     },
+     "wrongFeedback": "Xuống giây số bé đi.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 38,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Vạch mặt phép nhân nhầm: ba mươi sáu nhân ba phẩy sáu bằng một trăm hai chín phẩy sáu \"mét trên giây\" — đổi ngược thử: bốn trăm sáu mươi sáu ki-lô-mét giờ: xe đạp bay hơn tàu cao tốc! Cặp lính gác tuýt còi: một giây bé tí — quãng đi phải BÉ hơn nhiều so với một giờ! Quay lại CHIA ba phẩy sáu!",
+    "display": {
+     "type": "counter_example",
+     "cases": [
+      {
+       "input": "36 : 3,6",
+       "output": "✓ 10 m/s (bé đi đúng luật)",
+       "valid": true,
+       "reason": "xuống giây"
+      },
+      {
+       "input": "36 × 3,6",
+       "output": "✗ 129,6 — xe đạp 466 km/h",
+       "valid": false,
+       "reason": "nhân nhầm chiều"
+      }
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú cánh cửa: xuống m/s số phải bé đi — chia ba phẩy sáu, cặp 36-10 canh cửa!",
+    "display": {
+     "type": "mantra_card",
+     "text": "XUỐNG GIÂY — CHIA 3,6!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 88,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đổi ba mươi sáu ki-lô-mét giờ sang mét trên giây — Trí Long vớ máy tính nhân ba phẩy sáu: một trăm hai chín phẩy sáu! Su Kem chỉ cặp lính gác: một trăm hai chín mét MỖI GIÂY — nhanh hơn máy bay sát đất: một GIÂY bé tí mà đi xa hơn cả giờ à?",
+    "screenText": "36 km/h = 129,6 m/s??",
+    "visual": "Máy bay phản lực sát đất bị xe đạp vượt mặt phi lý; hai lính gác 36 và 10 gác cửa; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Gốc: nhân một nghìn mét — chia ba nghìn sáu trăm giây: gọn thành CHIA BA PHẨY SÁU! Ba mươi sáu chia ba phẩy sáu — MƯỜI; năm mươi tư chia ba phẩy sáu — MƯỜI LĂM! Chiều ngược lên km/h thì NHÂN: hai mươi nhân ba phẩy sáu — BẢY MƯƠI HAI! Cặp lính gác 36-10 canh cửa: xuống giây số phải BÉ ĐI — lên giờ số TO LÊN!",
+    "screenText": "↓ m/s: chia 3,6 (36→10 · 54→15) · ↑ km/h: nhân 3,6 (20→72)",
+    "visual": "Cánh cửa hai chiều với mũi tên xuống chia — lên nhân; cặp lính gác 36-10 gật đầu khi số chạy đúng chiều.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Vạch mặt phép nhân nhầm: ba mươi sáu nhân ba phẩy sáu bằng một trăm hai chín phẩy sáu mét trên giây — đổi ngược thử: bốn trăm sáu mươi sáu ki-lô-mét giờ: xe đạp bay hơn tàu cao tốc! Cặp lính gác tuýt còi: một giây bé tí — quãng đi phải BÉ hơn nhiều so với một giờ! Quay lại CHIA ba phẩy sáu!",
+    "screenText": "36 : 3,6 = 10 ✓ · 36 × 3,6 = 129,6 ✗ (= 466 km/h?!)",
+    "visual": "Hai ngả tính: ngả chia đèn xanh; ngả nhân với xe đạp vượt tàu cao tốc bị còi đỏ tuýt.",
+    "assets": [],
+    "duration": 24
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú cánh cửa: xuống m/s số phải bé đi — chia ba phẩy sáu, cặp 36-10 canh cửa!",
+    "screenText": "XUỐNG GIÂY — CHIA 3,6!",
+    "visual": "Thẻ thần chú vàng với icon hai lính gác.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Cánh cửa của con: năm mươi tư ki-lô-mét giờ xuống mét giây, hai mươi mét giây lên ki-lô-mét giờ — liếc lính gác rồi qua! Vào bài luyện ngay!",
+    "screenText": "54 : 3,6 = ? · 20 × 3,6 = ?",
+    "visual": "Cánh cửa mở hé; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 11
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Qua cửa hai chiều",
+  "problem": "Đổi: 36 km/h = ... m/s; 54 km/h = ... m/s; 20 m/s = ... km/h.",
+  "steps": [
+   {
+    "show": "Bước 1 — Xuống m/s: CHIA 3,6: 36 : 3,6 = 10 m/s (lính gác gật: bé đi ✓).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Xuống m/s thì số phải:",
+     "choices": [
+      "bé đi",
+      "to lên",
+      "giữ nguyên"
+     ],
+     "answerKey": {
+      "choice": "bé đi"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — 54 : 3,6 = 15 m/s."
+   },
+   {
+    "show": "Bước 3 — Lên km/h: NHÂN 3,6: 20 × 3,6 = 72 km/h (to lên ✓).",
+    "askAfter": {
+     "format": "num",
+     "text": "72 km/h = ? m/s",
+     "answerKey": {
+      "value": 20
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B53.LT4",
+     "text": "Đổi: 36 km/h = ... m/s; 54 km/h = ... m/s; 20 m/s = ... km/h.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "36 km/h",
+        "value": 10
+       },
+       {
+        "label": "54 km/h",
+        "value": 15
+       },
+       {
+        "label": "20 m/s",
+        "value": 72
+       }
+      ]
+     },
+     "hints": [
+      "Xuống: chia 3,6.",
+      "Lên: nhân 3,6."
+     ],
+     "solutionNarrative": "10 — 15 — 72.",
+     "teaches": [
+      "K1"
+     ],
+     "generator": {
+      "template": "{v} km/h = ? m/s · {u} m/s = ? km/h",
+      "constraints": {},
+      "answerRule": "v : 3,6; u × 3,6"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "tf",
+     "text": "(Đúng/Sai?) 90 km/h = 25 m/s.",
+     "answerKey": {
+      "value": true,
+      "note": "90 : 3,6 = 25 — số bé đi đúng luật, lính gác gật đầu."
+     },
+     "hints": [
+      "Chia 3,6.",
+      "So cặp 36-10."
+     ],
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "text": "Một bạn đổi 36 km/h bằng cách nhân 3,6 ra 129,6 m/s. Dùng cặp kiểm 36-10 chỉ ra chỗ sai — và sửa đúng.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chỗ sai",
+        "value": "xuống giây số phải bé đi — nhân 3,6 làm số phình to (129,6 m/s = 466 km/h!)"
+       },
+       {
+        "label": "sửa",
+        "value": 10
+       }
+      ]
+     },
+     "hints": [
+      "Một giây so một giờ.",
+      "Chia 3,6."
+     ],
+     "solutionNarrative": "36 : 3,6 = 10 m/s.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:V.1.1#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B53.M3",
+   "award": "huy_hieu_linh_gac_36_10"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B53.QZ3",
+    "text": "36 km/h bằng:",
+    "choices": [
+     "10 m/s",
+     "129,6 m/s",
+     "3,6 m/s"
+    ],
+    "answerKey": {
+     "choice": "10 m/s"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "num",
+    "text": "54 km/h = ? m/s",
+    "answerKey": {
+     "value": 15
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "20 m/s = ? km/h",
+    "answerKey": {
+     "value": 72
+    },
+    "teaches": [
+     "K1"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "km/h ↔ m/s đổi sao? Kiểm bằng gì?",
+    "back": "XUỐNG m/s: CHIA 3,6 (36 → 10; 54 → 15) — số phải BÉ ĐI (một giây bé tí!). LÊN km/h: NHÂN 3,6 (20 → 72) — số TO LÊN. Cặp lính gác 36 km/h = 10 m/s canh cửa: nhân nhầm ra 129,6 m/s = 466 km/h — xe đạp vượt tàu cao tốc, tuýt còi!"
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (vạch mặt)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học đổi km/h ↔ m/s với cặp lính gác 36-10 (xuống giây chia 3,6). Con đạt {score}/3, {trapResult} câu bẫy nhân-nhầm.",
+  "homeActivity": "Đố nhanh trên xe: biển 50 km/h, 90 km/h — con ước sang m/s (khoảng 14, đúng 25) bằng phép chia 3,6.",
+  "watchFor": "Nếu con nhân 3,6 khi xuống m/s — hỏi 'một giây đi xa hơn một giờ à?' (S1)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B53.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "36 km/h = 129,6 m/s??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "129,6 m/s!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "129,6 mét MỖI GIÂY — nhanh hơn máy bay sát đất đấy: một GIÂY bé tí mà đi xa hơn cả giờ à?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B53_M2_F1.png",
+   "sha256_16": "0794176d78b828a5"
+  },
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+    "wrong": {
+     "head": "CÁCH SAI",
+     "steps": [
+      "36 × 3,6"
+     ],
+     "result": "129,6 — xe đạp 466 km/h"
+    },
+    "right": {
+     "head": "CÁCH ĐÚNG",
+     "steps": [
+      "36 : 3,6"
+     ],
+     "result": "10 m/s (bé đi đúng luật)"
+    },
+    "verdict": "xuống giây"
+   },
+   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B53_M2_F2.png",
+   "sha256_16": "bf278bc19be711fc"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Gốc phép đổi",
+      "text": "1 km = 1 000 m",
+      "tone": "navy"
+     },
+     {
+      "label": "Cặp kiểm bỏ túi 36 km/h = 10 m/s canh cửa",
+      "text": "trong MỘT GIÂY đi được ít hơn trong MỘT GIỜ rất nhiều → xuống m/s số phải BÉ ĐI; lên km/h số phải TO LÊN.",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "XUỐNG m/s SỐ PHẢI BÉ ĐI — CHIA 3,6, CẶP 36-10 CANH CỬA!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B53_M2_F3.png",
+   "sha256_16": "8c3e6b62b67dff3a"
+  },
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "ĐỔI 36 km/h SANG m/s — CHIA HAY NHÂN 3,6?",
+    "wrong": {
+     "head": "NHÂN 3,6",
+     "steps": [
+      "36 × 3,6 = 129,6",
+      "đổi ngược = 466 km/h"
+     ],
+     "result": "xe đạp vượt tàu cao tốc ✗"
+    },
+    "right": {
+     "head": "CHIA 3,6",
+     "steps": [
+      "36 : 3,6 = 10 m/s"
+     ],
+     "result": "số BÉ ĐI đúng luật ✓"
+    },
+    "verdict": "Cặp lính gác 36 km/h = 10 m/s canh cửa · lên km/h thì nhân: 20 × 3,6 = 72"
+   },
+   "caption": "Một giây ngắn hơn một giờ rất nhiều nên xuống m/s số phải bé đi",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B53_M2_F4.png",
+   "sha256_16": "e830c116c390186d"
+  }
+ ]
+}

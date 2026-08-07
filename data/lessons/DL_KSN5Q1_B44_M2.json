@@ -1,0 +1,583 @@
+{
+ "title": "Ven ba vòng: trừ ba giao đôi — CỘNG TRẢ giao ba đúng một lần",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:III.8.4#1"
+  ],
+  "bktUnit": "CASE:III.8.4#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B44",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B44.M1",
+  "next": "DL:KSN5Q1.B44.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B44",
+  "chunks": [
+   "CHUNK:KSN5Q1.B44.S4",
+   "CHUNK:KSN5Q1.B44.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B44.3"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B44.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con dùng công thức Ven đúng nhịp: hai vòng — cộng hai tập trừ giao (25 + 20 − 10 = 35); BA vòng — cộng ba tập, TRỪ ba giao đôi, rồi CỘNG TRẢ giao ba đúng một lần (nhóm giao ba được cộng 3 lần, bị trừ 3 lần — về 0 nên phải trả về 1); phần ngoài mọi vòng = tổng − phần trong vòng.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (cộng trả giao ba)",
+  "kidText": "Ba vòng tròn chồng nhau: cộng ba nhóm, trừ ba chỗ giao đôi, rồi cộng trả chỗ giao ba đúng một lần."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Ven HAI vòng: học ít nhất một môn = tập A + tập B − giao (kẻo nhóm giao bị đếm hai lần): 25 + 20 − 10 = 35 → không môn nào: 40 − 35 = 5 bạn."
+   },
+   {
+    "id": "K2",
+    "text": "Ven BA vòng — soi số phận nhóm giao ba: được CỘNG 3 lần (trong 3 tập), bị TRỪ 3 lần (trong 3 giao đôi) — về 0 người! Phải CỘNG TRẢ đúng một lần: A + B + C − (ba giao đôi) + giao ba."
+   },
+   {
+    "id": "K3",
+    "text": "Đề A trùm: 15 + 12 + 10 − 5 − 4 − 3 + 2 = 27 bạn học ít nhất một môn → không môn nào: 30 − 27 = 3 bạn; quên cộng trả cho 25 → 5 bạn — hai bạn giao-ba bị xóa sổ oan."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: BA VÒNG DÂY TRÊN SÂN VÀ NHÓM ĐỨNG GIỮA. Lớp 30 bạn: 15 học bơi, 12 học cờ, 10 học vẽ; 5 bạn bơi-cờ, 4 bơi-vẽ, 3 cờ-vẽ; và HAI bạn học cả ba. Trí Long cộng trừ một mạch: 15 + 12 + 10 − 5 − 4 − 3 = 25 — rồi dừng bút! Soi hai bạn đứng GIỮA ba vòng dây: khi cộng ba tập, hai bạn được đếm BA lần; khi trừ ba giao đôi, hai bạn bị trừ BA lần — cộng ba trừ ba bằng KHÔNG: hai bạn học chăm nhất lớp bị xóa sổ khỏi sổ sách! Công lý Ven: CỘNG TRẢ giao ba đúng MỘT lần: 25 + 2 = HAI MƯƠI BẢY bạn học ít nhất một môn — không môn nào: 30 − 27 = BA bạn! Ven hai vòng đơn giản hơn: toán văn 25 + 20 − 10 = 35 — ngoài vòng: 40 − 35 = NĂM bạn. Thần chú sân chơi: giao ba bị trừ lố — cộng trả đúng một lần!",
+  "canonicalExamples": [
+   {
+    "case": "hai vòng (ca nền)",
+    "problem": "Lớp 40 bạn: 25 bạn thích toán, 20 bạn thích văn, trong đó 10 bạn thích cả hai môn. Hỏi mấy bạn không thích môn nào?",
+    "solution": "Ít nhất một môn = 25 + 20 − 10 = 35 → không môn nào: 40 − 35 = 5 bạn.",
+    "why": "Ca đề A câu 13 — giao đếm hai lần phải trừ."
+   },
+   {
+    "case": "ba vòng trùm (ca lõi)",
+    "problem": "Lớp 30 bạn: 15 học bơi, 12 học cờ, 10 học vẽ; 5 bạn bơi-cờ, 4 bạn bơi-vẽ, 3 bạn cờ-vẽ; 2 bạn học cả ba. Hỏi mấy bạn không học môn nào?",
+    "solution": "15 + 12 + 10 − 5 − 4 − 3 + 2 = 27 (cộng trả giao ba!) → 30 − 27 = 3 bạn.",
+    "why": "Ca đề A câu 15 TRÙM — trap quên-cộng-trả rình đây."
+   }
+  ],
+  "numberRange": "Lớp 5: lớp ≤ 45; ba tập; giao ba ≤ 5.",
+  "misconceptions": [
+   {
+    "wrong": "Ba vòng chỉ cộng ba tập trừ ba giao đôi: 15 + 12 + 10 − 5 − 4 − 3 = 25 — quên cộng trả giao ba.",
+    "signal": "Không có số hạng +giao-ba; đáp lệch đúng bằng giao ba.",
+    "fix": "K2 — soi số phận nhóm giữa: +3 lần −3 lần = 0 → cộng trả đúng một lần: 25 + 2 = 27.",
+    "counterExample": "25 nghĩa là hai bạn học CẢ BA môn bị tính là… không học môn nào — chăm nhất lớp mà bay khỏi sổ!"
+   }
+  ],
+  "vocabulary": [
+   "ba vòng dây",
+   "giao đôi — giao ba",
+   "cộng trả một lần",
+   "số phận nhóm giữa",
+   "ngoài mọi vòng"
+  ],
+  "mantra": "GIAO BA BỊ TRỪ LỐ — CỘNG TRẢ ĐÚNG MỘT LẦN!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "25 + 20 − 10 = ?",
+    "answerKey": {
+     "value": 35
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "ôn cộng trừ",
+   "message": "Ôn cộng trừ rồi vào sân ba vòng nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Lớp 30 bạn: bơi 15, cờ 12, vẽ 10; giao đôi 5, 4, 3; và HAI bạn học cả ba. Trí Long cộng trừ một mạch: \"15 + 12 + 10 − 5 − 4 − 3 = 25!\" Su Kem chỉ hai bạn đứng giữa ba vòng dây: \"Hai bạn chăm nhất lớp — trong phép tính của con, họ được đếm mấy lần?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "cộng 3 trừ 3 = hai bạn biến mất?!"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để soi nhóm giữa!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K2",
+     "K3"
+    ],
+    "narration": "Soi số phận hai bạn giữa ba vòng: khi cộng ba tập — được đếm BA lần; khi trừ ba giao đôi — bị trừ BA lần: cộng ba trừ ba bằng KHÔNG — hai bạn học chăm nhất bị xóa sổ! Công lý Ven: CỘNG TRẢ giao ba đúng MỘT lần: hai lăm cộng hai bằng HAI MƯƠI BẢY bạn học ít nhất một môn! Không môn nào: ba mươi trừ hai bảy — BA bạn!",
+    "display": {
+     "type": "venn3_interactive",
+     "spec": {
+      "formula": "15+12+10 −5−4−3 +2 = 27",
+      "fate": "giao ba: +3 lần −3 lần = 0 → trả +1",
+      "outside": "30 − 27 = 3"
+     }
+    },
+    "interaction": {
+     "type": "restore_center",
+     "answerKey": {
+      "value": 27
+     },
+     "successMessage": "+2 cộng trả: 27 trong vòng — 3 ngoài vòng!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "tf",
+     "text": "(Đúng/Sai?) Ven ba vòng: sau khi trừ ba giao đôi phải cộng trả phần giao ba một lần.",
+     "answerKey": {
+      "value": true
+     },
+     "wrongFeedback": "+3 lần −3 lần = 0 → trả 1.",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 40,
+    "teaches": [
+     "K1"
+    ],
+    "narration": "Ven hai vòng đơn giản hơn một nhịp: lớp bốn mươi — toán hai lăm, văn hai mươi, cả hai môn MƯỜI. Nhóm giao bị đếm HAI lần khi cộng — trừ đúng một lần: hai lăm cộng hai mươi trừ mười bằng BA MƯƠI LĂM bạn học ít nhất một môn! Ngoài mọi vòng: bốn mươi trừ ba lăm — NĂM bạn không thích môn nào. Hai vòng trừ giao một lần — ba vòng trừ ba giao đôi rồi CỘNG TRẢ giao ba: nhịp nào ra nhịp nấy!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "hai vòng: 25 + 20 − 10 = 35 → ngoài 5",
+      "ba vòng: trừ 3 giao đôi + trả giao ba",
+      "nhịp nào ra nhịp nấy"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú ba vòng dây: giao ba bị trừ lố — cộng trả đúng một lần!",
+    "display": {
+     "type": "mantra_card",
+     "text": "CỘNG TRẢ GIAO BA MỘT LẦN!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 89,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Lớp ba mươi bạn: bơi mười lăm, cờ mười hai, vẽ mười; giao đôi năm, bốn, ba; và HAI bạn học cả ba. Trí Long cộng trừ một mạch: hai mươi lăm! Su Kem chỉ hai bạn đứng giữa ba vòng dây: hai bạn chăm nhất lớp — trong phép tính của con, họ được đếm mấy lần?",
+    "screenText": "cộng 3 trừ 3 = 2 bạn biến mất?!",
+    "visual": "Sân chơi ba vòng dây màu chồng nhau; hai nhân vật đứng vùng giữa mờ dần như tàng hình; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 21
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Soi số phận hai bạn giữa ba vòng: khi cộng ba tập — được đếm BA lần; khi trừ ba giao đôi — bị trừ BA lần: cộng ba trừ ba bằng KHÔNG — hai bạn học chăm nhất bị xóa sổ! Công lý Ven: CỘNG TRẢ giao ba đúng MỘT lần: hai lăm cộng hai bằng HAI MƯƠI BẢY bạn học ít nhất một môn! Không môn nào: ba mươi trừ hai bảy — BA bạn!",
+    "screenText": "giao ba: +3 −3 = 0 → +2 trả → 27 trong vòng · ngoài: 30 − 27 = 3",
+    "visual": "Vùng giữa ba vòng với bộ đếm +3 rồi −3 về 0; bàn tay vàng đặt trả +2; bảng tổng 27 và 3 bạn ngoài sân mộc xanh.",
+    "assets": [],
+    "duration": 28
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Ven hai vòng đơn giản hơn một nhịp: lớp bốn mươi — toán hai lăm, văn hai mươi, cả hai môn MƯỜI. Nhóm giao bị đếm HAI lần khi cộng — trừ đúng một lần: hai lăm cộng hai mươi trừ mười bằng BA MƯƠI LĂM bạn! Ngoài mọi vòng: bốn mươi trừ ba lăm — NĂM bạn không thích môn nào.",
+    "screenText": "2 vòng: 25+20−10 = 35 → ngoài 5 · 3 vòng: −3 giao đôi +giao ba",
+    "visual": "Hai vòng dây với nhóm giao tô đậm bị trừ một lần; bảng đối chiếu nhịp hai-vòng vs ba-vòng cạnh nhau.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú ba vòng dây: giao ba bị trừ lố — cộng trả đúng một lần!",
+    "screenText": "CỘNG TRẢ GIAO BA MỘT LẦN!",
+    "visual": "Thẻ thần chú vàng với icon ba vòng giao.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Ba vòng của con: bơi cờ vẽ với hai bạn học cả ba — chạy đủ nhịp cộng trả rồi đếm ai ngoài vòng! Vào bài luyện ngay!",
+    "screenText": "−5−4−3 rồi +2! → ngoài vòng?",
+    "visual": "Ba vòng dây chờ xếp; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Trả công cho nhóm giữa",
+  "problem": "Lớp 30 bạn: 15 học bơi, 12 học cờ, 10 học vẽ; 5 bạn bơi-cờ, 4 bạn bơi-vẽ, 3 bạn cờ-vẽ; 2 bạn học cả ba. Hỏi mấy bạn không học môn nào?",
+  "steps": [
+   {
+    "show": "Bước 1 — Cộng ba tập, trừ ba giao đôi: 15 + 12 + 10 − 5 − 4 − 3 = 25.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Nhóm giao ba lúc này được đếm mấy lần?",
+     "choices": [
+      "0 lần (+3 −3)",
+      "1 lần",
+      "3 lần"
+     ],
+     "answerKey": {
+      "choice": "0 lần (+3 −3)"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — CỘNG TRẢ giao ba: 25 + 2 = 27 bạn học ít nhất một môn."
+   },
+   {
+    "show": "Bước 3 — Ngoài vòng: 30 − 27 = 3 bạn.",
+    "askAfter": {
+     "format": "num",
+     "text": "Hai vòng: 40 bạn, toán 25 văn 20 giao 10 → ngoài vòng?",
+     "answerKey": {
+      "value": 5
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B44.LT5",
+     "text": "Lớp 40 bạn: 25 bạn thích toán, 20 bạn thích văn, trong đó 10 bạn thích cả hai môn. Hỏi mấy bạn không thích môn nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "không môn nào",
+        "value": 5
+       }
+      ]
+     },
+     "hints": [
+      "Ít nhất một môn: 25 + 20 − 10.",
+      "40 − 35."
+     ],
+     "solutionNarrative": "35 trong vòng → 5 ngoài vòng.",
+     "teaches": [
+      "K1"
+     ],
+     "generator": {
+      "template": "Lớp {N}: A {a}, B {b}, giao {g} → ngoài?",
+      "constraints": {},
+      "answerRule": "N − (a + b − g)"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B44.LT8",
+     "text": "Lớp 30 bạn: 15 học bơi, 12 học cờ, 10 học vẽ; 5 bạn bơi-cờ, 4 bạn bơi-vẽ, 3 bạn cờ-vẽ; 2 bạn học cả ba. Hỏi mấy bạn không học môn nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "không môn nào",
+        "value": 3
+       }
+      ]
+     },
+     "hints": [
+      "Trừ ba giao đôi rồi CỘNG TRẢ.",
+      "15+12+10−5−4−3+2."
+     ],
+     "solutionNarrative": "27 trong vòng → 3 ngoài vòng.",
+     "teaches": [
+      "K2",
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Ba vòng: 15+12+10−5−4−3 = 25 là số bạn học ít nhất một môn.",
+     "answerKey": {
+      "value": false,
+      "note": "Quên CỘNG TRẢ giao ba: nhóm giữa +3 −3 = 0 — hai bạn học cả ba bị xóa sổ; đúng là 25 + 2 = 27."
+     },
+     "hints": [
+      "Nhóm giữa được đếm mấy lần?",
+      "Ai bị xóa sổ oan?"
+     ],
+     "teaches": [
+      "K2"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.8.4#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B44.M3",
+   "award": "huy_hieu_ba_vong_day"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B44.QZ2",
+    "text": "(Đúng/Sai?) Ven ba vòng: sau khi trừ ba giao đôi phải cộng trả phần giao ba một lần.",
+    "answerKey": {
+     "value": true
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mb",
+    "text": "Lớp 30, bơi-cờ-vẽ như đề → mấy bạn không học môn nào?",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "đáp",
+       "value": 3
+      }
+     ]
+    },
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "Hai vòng: 25 + 20 − 10 = ? bạn trong vòng",
+    "answerKey": {
+     "value": 35
+    },
+    "teaches": [
+     "K1"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Ven ba vòng — công thức và vì sao cộng trả?",
+    "back": "A + B + C − (3 giao đôi) + GIAO BA: nhóm giữa +3 lần −3 lần = 0 → cộng trả đúng 1 lần (15+12+10−5−4−3+2 = 27 → ngoài 30−27 = 3). Quên trả → 25: hai bạn chăm nhất bị xóa sổ! Hai vòng: A + B − giao (25+20−10 = 35 → ngoài 5)."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P2 (ba vòng)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học Ven ba vòng với nhịp cộng-trả giao ba. Con đạt {score}/3, {trapResult} câu bẫy quên-trả.",
+  "homeActivity": "Vẽ ba vòng sở thích của cả nhà (phim, sách, thể thao) — con đặt tên ai vào vùng giữa và đếm thử hai cách.",
+  "watchFor": "Nếu con dừng ở 25 — hỏi 'hai bạn học cả ba đang được đếm mấy lần?' (S1)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B44.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "cộng 3 trừ 3 = hai bạn biến mất?!",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "15 + 12 + 10 − 5 − 4 − 3 = 25!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Hai bạn chăm nhất lớp — trong phép tính của con, họ được đếm mấy lần?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B44_M2_F1.png",
+   "sha256_16": "38fe379dc8c39a40"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con dùng công thức Ven đúng nhịp: hai vòng — cộng hai tập trừ giao (25 + 20 − 10 = 35); BA vòng — cộng ba tập, TRỪ ba giao đôi, rồi CỘNG TRẢ giao ba đúng một lần (nhóm giao ba được cộng 3 lần, bị trừ 3 lần — về 0 nên phải trả về 1); phần ngoài mọi vòng = tổng − phần trong vòng.",
+    "steps": [
+     {
+      "text": "hai vòng: 25 + 20 − 10 = 35 → ngoài 5"
+     },
+     {
+      "text": "ba vòng: trừ 3 giao đôi + trả giao ba"
+     },
+     {
+      "text": "nhịp nào ra nhịp nấy"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B44_M2_F2.png",
+   "sha256_16": "a344dc89324abeab"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Ven HAI vòng",
+      "text": "40 − 35 = 5 bạn.",
+      "tone": "navy"
+     },
+     {
+      "label": "Ven BA vòng",
+      "text": "soi số phận nhóm giao ba: được CỘNG 3 lần (trong 3 tập), bị TRỪ 3 lần (trong 3 giao đôi) — về 0 người! Phải CỘNG TRẢ đúng một lần: A + B + C − (ba giao đôi) + giao ba.",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "GIAO BA BỊ TRỪ LỐ — CỘNG TRẢ ĐÚNG MỘT LẦN!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B44_M2_F3.png",
+   "sha256_16": "16ae4325da7ba3f4"
+  },
+  {
+   "archetype": "venn_three",
+   "params": {
+    "title": "LỚP 30 BẠN: BƠI · CỜ · VẼ",
+    "sets": [
+     {
+      "label": "bơi",
+      "count": 15
+     },
+     {
+      "label": "cờ",
+      "count": 12
+     },
+     {
+      "label": "vẽ",
+      "count": 10
+     }
+    ],
+    "pairs": {
+     "ab": 5,
+     "ac": 4,
+     "bc": 3
+    },
+    "triple": 2,
+    "outside": {
+     "label": "không môn nào",
+     "count": 3
+    },
+    "result": "15 + 12 + 10 − 5 − 4 − 3 + 2 = 27  →  30 − 27 = 3 bạn",
+    "note": "Hai vòng thì đơn giản hơn: 25 + 20 − 10 = 35 → 40 − 35 = 5 bạn"
+   },
+   "caption": "Trừ ba giao đôi rồi CỘNG TRẢ giao ba đúng một lần",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B44_M2_F4.png",
+   "sha256_16": "221f19c2a8549ba3"
+  }
+ ]
+}

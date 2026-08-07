@@ -1,0 +1,624 @@
+{
+ "title": "Phép màu thêm 0: gấp 10 — tổng chia 11, hiệu chia 9",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:II.1.4#3"
+  ],
+  "bktUnit": "CASE:II.1.4#3@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B20",
+  "order": 3,
+  "prev": "DL:KSN5Q1.B20.M2",
+  "next": "DL:KSN5Q1.B21.M1"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B20",
+  "chunks": [
+   "CHUNK:KSN5Q1.B20.S4",
+   "CHUNK:KSN5Q1.B20.S7"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B20.4"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B20.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải được dạng \"số lớn là số bé viết thêm chữ số 0 bên phải\": thêm 0 = GẤP 10 (không phải cộng 10!) → tỉ số 1 : 10 — cho TỔNG chia 11 phần, cho HIỆU chia 9 phần — nối thẳng món nợ dọn-nhà-thập-phân của Chương 1.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (thêm 0 là gấp 10)",
+  "kidText": "Viết thêm số 0 vào bên phải là GẤP 10 lần chứ không phải cộng 10. Con chia tổng ra 11 phần, chia hiệu ra 9 phần."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Viết thêm chữ số 0 vào bên phải một số: mọi chữ số dọn sang TRÁI một hàng — số GẤP 10 lần (nợ Chương 1 đòi về!). Tuyệt đối không phải \"cộng 10\"."
+   },
+   {
+    "id": "K2",
+    "text": "\"Số lớn là số bé thêm 0\" → tỉ số bé : lớn = 1 : 10. Cho TỔNG: tổng gồm 1 + 10 = 11 phần → phần = tổng : 11. Cho HIỆU: hiệu gồm 10 − 1 = 9 phần → phần = hiệu : 9."
+   },
+   {
+    "id": "K3",
+    "text": "Số 10 (và các bội tận cùng 0) KHÔNG bao giờ đóng vai số bé của dạng này khi đề nói số tự nhiên có nghĩa; thử lại bằng cách viết thêm 0 vào số bé xem có ra đúng số lớn."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: CHUNG CƯ SỐ dọn nhà (tái xuất từ Chương 1!). Viết thêm 0 bên phải số 12: cư dân 1 và 2 đồng loạt DỌN SANG TRÁI một tầng — chỗ trống tầng đơn vị đón số 0 vào ở: 12 hóa 120, tức GẤP MƯỜI. Cáo Đề xuyên tạc \"thêm 0 là cộng thêm 10\" — thử ngay: 12 cộng 10 là 22, có thêm được số 0 nào đâu! Với tỉ 1 : 10, băng giấy số bé MỘT ô, số lớn MƯỜI ô: TỔNG là mười một ô — tổng 132 chia 11 ra ô 12; HIỆU là chín ô nhô — hiệu 108 chia 9 cũng ô 12. Cùng một cặp 12 và 120 qua hai cửa!",
+  "canonicalExamples": [
+   {
+    "case": "gấp mấy lần (ca nền)",
+    "problem": "Số B là số A viết thêm chữ số 0 vào bên phải. Hỏi B gấp A bao nhiêu lần?",
+    "solution": "Gấp 10 lần — mỗi chữ số dọn sang trái một hàng.",
+    "why": "Ca K1 — đòi nợ dọn nhà Chương 1."
+   },
+   {
+    "case": "cho tổng (ca lõi)",
+    "problem": "Tổng hai số là 132. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.",
+    "solution": "Tỉ 1 : 10 → tổng 11 phần → phần = 132 : 11 = 12 → hai số 12 và 120. Thử: 12 thêm 0 = 120 ✓; 12 + 120 = 132 ✓.",
+    "why": "Ca đề A câu 14 — trap câu thêm-0-cộng-10."
+   },
+   {
+    "case": "cho hiệu (ca sư phụ)",
+    "problem": "Hiệu hai số là 108. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.",
+    "solution": "Tỉ 1 : 10 → hiệu 9 phần → phần = 108 : 9 = 12 → hai số 12 và 120. Thử: 120 − 12 = 108 ✓.",
+    "why": "Ca LT9 — cùng cặp số qua cửa hiệu."
+   }
+  ],
+  "numberRange": "Lớp 5: tổng ≤ 500; hiệu ≤ 500.",
+  "misconceptions": [
+   {
+    "wrong": "Dịch \"thêm 0\" thành \"cộng 10\" (hoặc cộng 0) rồi dựng sơ đồ sai; hoặc nhớ nhầm tổng chia 10.",
+    "signal": "Sơ đồ hai phần hơn kém 10 đơn vị; hoặc phép 132 : 10 lẻ.",
+    "fix": "K1 + K2 — dọn nhà: thêm 0 là GẤP 10; tổng 11 phần (1 + 10), hiệu 9 phần (10 − 1); thử bằng cách viết thêm 0 kiểm.",
+    "counterExample": "132 : 10 = 13,2 — phần lẻ phi lý; còn cặp 61 và 71 (hơn 10): 61 thêm 0 là 610 ≠ 71!"
+   }
+  ],
+  "vocabulary": [
+   "chung cư số dọn nhà",
+   "số 0 vào ở tầng đơn vị",
+   "tỉ 1 : 10",
+   "tổng 11 phần — hiệu 9 phần"
+  ],
+  "mantra": "THÊM 0 LÀ GẤP 10 — TỔNG CHIA 11, HIỆU CHIA 9!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "12 × 10 = ?",
+    "answerKey": {
+     "value": 120
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B4.M1",
+   "message": "Ôn thang máy nhân 10 ở Bài 4 rồi về chung cư số nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Đề: \"Tổng hai số là 132, số lớn là số bé viết thêm chữ số 0 bên phải.\" Cáo Đề dịch hộ: \"Thêm 0 tức là thêm… 10 đấy — hai số hơn nhau 10 nhé!\" Trí Long vẽ luôn sơ đồ hơn-kém-10. Su Kem viết số 12 rồi thêm 0: \"12 thành 120 — hơn nhau có 10 không?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "thêm 0 = cộng 10??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để về chung cư số!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Chung cư số Chương 1 tái xuất! Thêm 0 bên phải số 12: cư dân 1 và 2 đồng loạt DỌN SANG TRÁI một tầng — số 0 vào ở tầng đơn vị: 12 hóa MỘT TRĂM HAI MƯƠI, tức GẤP MƯỜI! Còn cộng 10 chỉ ra 22 — chẳng có số 0 nào mọc thêm. Tỉ số bé : lớn là MỘT : MƯỜI — băng bé một ô, băng lớn mười ô.",
+    "display": {
+     "type": "apartment_shift_interactive",
+     "spec": {
+      "num": 12,
+      "shifted": 120,
+      "wrong": "12 + 10 = 22 ✗",
+      "ratio": "1 : 10"
+     }
+    },
+    "interaction": {
+     "type": "shift_and_check",
+     "answerKey": {
+      "value": 120
+     },
+     "successMessage": "Dọn nhà sang trái: 12 → 120 — GẤP 10, không phải cộng 10!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "B là A viết thêm chữ số 0 bên phải — B gấp A:",
+     "choices": [
+      "10 lần",
+      "2 lần",
+      "hơn A đúng 10"
+     ],
+     "answerKey": {
+      "choice": "10 lần"
+     },
+     "wrongFeedback": "Mỗi chữ số dọn sang trái một hàng.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 42,
+    "teaches": [
+     "K2",
+     "K3"
+    ],
+    "narration": "Giải cửa TỔNG: băng bé một ô cộng băng lớn mười ô là MƯỜI MỘT ô — tổng 132 chia 11: mỗi ô MƯỜI HAI! Hai số: 12 và 120 — thử: 12 thêm 0 đúng là 120, cộng lại đúng 132! Còn ai chia 132 cho 10 sẽ ôm phần lẻ 13,2 phi lý. Cửa HIỆU của sư phụ: băng lớn nhô CHÍN ô — hiệu 108 chia 9: ô cũng mười hai — vẫn cặp 12 và 120, thử 120 trừ 12 đúng 108!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "TỔNG: 11 ô → 132 : 11 = 12 → 12 & 120 ✓",
+      "chia 10? → 13,2 lẻ ✗",
+      "HIỆU: 9 ô nhô → 108 : 9 = 12 → 12 & 120 ✓"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú chung cư: thêm không là gấp mười — tổng chia mười một, hiệu chia chín!",
+    "display": {
+     "type": "mantra_card",
+     "text": "THÊM 0 = GẤP 10 — TỔNG :11 · HIỆU :9!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 89,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đề: tổng hai số là một trăm ba hai, số lớn là số bé viết thêm chữ số không bên phải. Cáo Đề dịch hộ: thêm không tức là thêm… MƯỜI đấy — hai số hơn nhau mười nhé! Su Kem viết số mười hai rồi thêm không: mười hai thành một trăm hai mươi — hơn nhau có mười không?",
+    "screenText": "thêm 0 = cộng 10??",
+    "visual": "Cáo Đề cầm bảng dịch 'thêm 0 = +10'; Su Kem viết '12 → 120' to đùng; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Chung cư số Chương Một tái xuất! Thêm không bên phải số mười hai: cư dân một và hai đồng loạt DỌN SANG TRÁI một tầng — số không vào ở tầng đơn vị: mười hai hóa MỘT TRĂM HAI MƯƠI, tức GẤP MƯỜI! Còn cộng mười chỉ ra hai mươi hai — chẳng có số không nào mọc thêm. Tỉ số bé trên lớn là MỘT TRÊN MƯỜI!",
+    "screenText": "12 → 120: dọn trái 1 tầng = GẤP 10 (12+10=22 ✗)",
+    "visual": "Chung cư ba tầng với cư dân 1·2 dọn sang trái, số 0 dọn vào tầng đơn vị; phép '22' gạch chéo; băng 1 ô vs 10 ô.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Cửa TỔNG: mười một ô — một trăm ba hai chia mười một: mỗi ô MƯỜI HAI! Hai số: mười hai và một trăm hai mươi — thử khớp! Ai chia cho mười sẽ ôm phần lẻ phi lý. Cửa HIỆU: băng lớn nhô CHÍN ô — một trăm lẻ tám chia chín: ô cũng mười hai — vẫn cặp ấy, thử khớp!",
+    "screenText": "132 : 11 = 12 → 12 & 120 ✓ · 108 : 9 = 12 ✓",
+    "visual": "Hai cửa TỔNG/HIỆU với băng giấy 11 ô và 9 ô nhô; phép 132:10=13,2 gạch đỏ; cặp 12·120 qua cả hai cửa đóng mộc.",
+    "assets": [],
+    "duration": 23
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú chung cư: thêm không là gấp mười — tổng chia mười một, hiệu chia chín!",
+    "screenText": "THÊM 0 = GẤP 10 · TỔNG :11 · HIỆU :9!",
+    "visual": "Thẻ thần chú vàng với icon tòa chung cư.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Đề sư phụ chờ con: hiệu hai số là một trăm lẻ tám, số lớn là số bé thêm chữ số không — tìm hai số! Vào bài luyện ngay!",
+    "screenText": "hiệu 108 · thêm 0 → hai số?",
+    "visual": "Cửa HIỆU mở hé với băng 9 ô nhô; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P3",
+    "assets": [],
+    "duration": 11
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Hai cửa một cặp số",
+  "problem": "(a) Tổng hai số là 132, số lớn là số bé thêm chữ số 0 bên phải — tìm hai số. (b) Cùng dạng nhưng hiệu là 108.",
+  "steps": [
+   {
+    "show": "Bước 1 — Thêm 0 = gấp 10 → tỉ 1 : 10 (băng 1 ô và 10 ô).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Thêm chữ số 0 bên phải làm số:",
+     "choices": [
+      "gấp 10",
+      "cộng 10",
+      "không đổi"
+     ],
+     "answerKey": {
+      "choice": "gấp 10"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Câu (a): tổng 11 ô → phần = 132 : 11 = 12 → hai số 12 và 120 (thử ✓)."
+   },
+   {
+    "show": "Bước 3 — Câu (b): hiệu 9 ô → phần = 108 : 9 = 12 → vẫn 12 và 120 (120 − 12 = 108 ✓).",
+    "askAfter": {
+     "format": "mb",
+     "text": "Tổng 88, cùng dạng — hai số?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bé",
+        "value": 8
+       },
+       {
+        "label": "lớn",
+        "value": 80
+       }
+      ]
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mcq",
+     "sourceItem": "ITEM:KSN5Q1.B20.LT3",
+     "text": "Số B là số A viết thêm chữ số 0 vào bên phải. Hỏi B gấp A bao nhiêu lần?",
+     "choices": [
+      "10 lần",
+      "2 lần",
+      "100 lần"
+     ],
+     "answerKey": {
+      "choice": "10 lần"
+     },
+     "hints": [
+      "Mỗi chữ số dọn đi đâu?",
+      "Chung cư dọn trái một tầng."
+     ],
+     "solutionNarrative": "Gấp 10 — dọn nhà sang trái một hàng.",
+     "teaches": [
+      "K1"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B20.LT6",
+     "text": "Tổng hai số là 132. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số bé",
+        "value": 12
+       },
+       {
+        "label": "số lớn",
+        "value": 120
+       }
+      ]
+     },
+     "hints": [
+      "Tỉ 1 : 10 → tổng 11 phần.",
+      "132 : 11."
+     ],
+     "solutionNarrative": "Phần 12 → 12 và 120 (thử: 12 + 120 = 132 ✓).",
+     "teaches": [
+      "K2"
+     ],
+     "generator": {
+      "template": "Tổng hai số là {S} (S ⋮ 11), số lớn là số bé thêm 0. Tìm hai số.",
+      "constraints": {},
+      "answerRule": "S : 11 và × 10"
+     }
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B20.LT9",
+     "text": "Sư phụ Trí Dũng đố: \"Hiệu hai số là 108. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số bé",
+        "value": 12
+       },
+       {
+        "label": "số lớn",
+        "value": 120
+       }
+      ]
+     },
+     "hints": [
+      "Hiệu = 10 − 1 = 9 phần.",
+      "108 : 9."
+     ],
+     "solutionNarrative": "Phần 12 → 12 và 120 (thử: 120 − 12 = 108 ✓).",
+     "teaches": [
+      "K2",
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:II.1.4#3@G5"
+   ],
+   "unlockNext": "DCR:KSN5Q1.C5",
+   "award": "huy_hieu_chung_cu_so + mở KỲ SÁT HẠCH CHƯƠNG 5"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P2"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B20.QZ4",
+    "text": "B là A viết thêm chữ số 0 bên phải, TỔNG chia cho:",
+    "choices": [
+     "11",
+     "10",
+     "9"
+    ],
+    "answerKey": {
+     "choice": "11"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1",
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B20.QZ5",
+    "text": "Cùng bài ấy nhưng cho HIỆU, ta chia hiệu cho:",
+    "choices": [
+     "9",
+     "10",
+     "11"
+    ],
+    "answerKey": {
+     "choice": "9"
+    },
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mb",
+    "text": "Tổng hai số 44, số lớn là số bé thêm 0. Tìm hai số.",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "bé",
+       "value": 4
+      },
+      {
+       "label": "lớn",
+       "value": 40
+      }
+     ]
+    },
+    "teaches": [
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "\"Số lớn = số bé thêm chữ số 0\" — tỉ số? Tổng/hiệu chia mấy?",
+    "back": "Thêm 0 = GẤP 10 (dọn nhà sang trái — không phải cộng 10!) → tỉ 1 : 10. TỔNG : 11 phần (132 : 11 = 12 → 12 & 120); HIỆU : 9 phần (108 : 9 = 12). Thử bằng cách viết thêm 0 kiểm."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P2",
+   "+7 ngày: câu P3 (cửa hiệu)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con giải dạng thêm-số-0: gấp 10, tổng chia 11, hiệu chia 9 — nối lại bài dọn nhà thập phân Chương 1. Con đạt {score}/3, {trapResult} câu bẫy cộng-10. Con đã đủ điều kiện vào KỲ SÁT HẠCH CHƯƠNG 5!",
+  "homeActivity": "Viết số 7 lên giấy rồi thêm 0 — hỏi con '70 gấp 7 mấy lần? hơn 7 bao nhiêu?' (gấp 10; hơn 63 — không phải 10!).",
+  "watchFor": "Nếu con dịch thêm-0 thành cộng-10 — viết cặp 12 → 120 (S2) và đo khoảng cách thật (108)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B20.M3",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "thêm 0 = cộng 10??",
+    "lines": [
+     {
+      "who": "Cáo Đề",
+      "say": "Thêm 0 tức là thêm… 10 đấy — hai số hơn nhau 10 nhé!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Trí Long",
+      "say": "12 thành 120 — hơn nhau có 10 không?",
+      "tone": "wrong"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B20_M3_F1.png",
+   "sha256_16": "e73490bada338606"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con giải được dạng \"số lớn là số bé viết thêm chữ số 0 bên phải\": thêm 0 = GẤP 10 (không phải cộng 10!) → tỉ số 1 : 10 — cho TỔNG chia 11 phần, cho HIỆU chia 9 phần — nối thẳng món nợ dọn-nhà-thập-phân của Chương 1.",
+    "steps": [
+     {
+      "text": "TỔNG: 11 ô → 132 : 11 = 12 → 12 & 120"
+     },
+     {
+      "text": "chia 10? → 13,2 lẻ"
+     },
+     {
+      "text": "HIỆU: 9 ô nhô → 108 : 9 = 12 → 12 & 120"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B20_M3_F2.png",
+   "sha256_16": "b46ec53e9f8798ea"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Viết thêm chữ số 0 vào bên phải một số",
+      "text": "mọi chữ số dọn sang TRÁI một hàng — số GẤP 10 lần (nợ Chương 1 đòi về!). Tuyệt đối không phải \"cộng 10\".",
+      "tone": "navy"
+     },
+     {
+      "label": "\"Số lớn là số bé thêm 0\" → tỉ số bé",
+      "text": "lớn = 1 : 10. Cho TỔNG: tổng gồm 1 + 10 = 11 phần → phần = tổng : 11. Cho HIỆU: hiệu gồm 10 − 1 = 9 phần → phần = hiệu : 9.",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "THÊM 0 LÀ GẤP 10 — TỔNG CHIA 11, HIỆU CHIA 9!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B20_M3_F3.png",
+   "sha256_16": "e24c5002f62ed62f"
+  },
+  {
+   "archetype": "bar_diagram",
+   "params": {
+    "title": "THÊM CHỮ SỐ 0 = GẤP 10 LẦN (KHÔNG PHẢI CỘNG 10)",
+    "bars": [
+     {
+      "name": "số bé",
+      "units": 1,
+      "label": "1 phần = 12"
+     },
+     {
+      "name": "số lớn",
+      "units": 10,
+      "label": "10 phần = 120"
+     }
+    ],
+    "brace": {
+     "text": "tổng 11 phần = 132  →  1 phần = 12  →  hai số 12 và 120"
+    },
+    "note": "Cho TỔNG thì chia 11 · cho HIỆU thì chia 9 — thử lại: 12 thêm 0 thành 120 ✓"
+   },
+   "caption": "Thêm 0 vào bên phải là mỗi chữ số dọn sang trái một hàng",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B20_M3_F4.png",
+   "sha256_16": "7ff67a696a4951b7"
+  }
+ ]
+}

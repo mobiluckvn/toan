@@ -1,0 +1,622 @@
+{
+ "title": "Chiều ngược khô → tươi & ba câu hỏi: còn kg — bay kg — còn %",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:II.6.1#2"
+  ],
+  "bktUnit": "CASE:II.6.1#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B39",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B39.M1",
+  "next": "DL:KSN5Q1.B39.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B39",
+  "chunks": [
+   "CHUNK:KSN5Q1.B39.S4",
+   "CHUNK:KSN5Q1.B39.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B39.2",
+   "CA:KSN5Q1.B39.3"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B39.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải CHIỀU NGƯỢC khô → tươi bằng cùng cây cầu chất khô đi ngược chiều: chất khô trong khối khô trước, rồi chia cho tỉ lệ chất khô lúc TƯƠI; nhớ luật hai-tấm-ảnh (chương 9 gọi về): mỗi thời điểm MỘT BỘ % riêng — không mang % cũ sang khối mới; và phân biệt rành ba câu hỏi: còn bao nhiêu kg — bay bao nhiêu kg — còn bao nhiêu %.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (cầu = chất khô, mỗi ảnh một bộ %)",
+  "kidText": "Chiều ngược từ khô về tươi cũng qua cây cầu chất khô. Mỗi tấm ảnh có bộ phần trăm riêng, đừng mang số cũ sang."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Chiều ngược cùng cây cầu: muốn 15 kg nho khô (20% nước) → chất khô trong khô = 15 × 80% = 12 kg; 12 kg ấy chiếm 10% khối TƯƠI (vì tươi 90% nước) → tươi = 12 : 10 × 100 = 120 kg."
+   },
+   {
+    "id": "K2",
+    "text": "Mỗi tấm ảnh MỘT BỘ %: khối tươi có bộ (90% nước / 10% khô); khối khô có bộ (20% / 80%) — mang \"nước vẫn 90%\" sang khối đã phơi là dán nhầm nhãn ảnh (quy tắc hai-tấm-ảnh chương 9 gọi về); chỉ CHẤT KHÔ (số kg) đi xuyên."
+   },
+   {
+    "id": "K3",
+    "text": "Ba câu hỏi ba đáp khác nhau — đọc kỹ đề: CÒN bao nhiêu KG (khối khô 50 kg); BAY bao nhiêu KG nước (200 − 50 = 150 kg); còn bao nhiêu PHẦN TRĂM nước (20%) — lấy nhầm câu là mất điểm oan."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: CÂY CẦU HAI CHIỀU — MỖI BỜ MỘT BỘ NHÃN. Đơn đặt hàng: \"giao 15 kg nho khô 20% nước — phải phơi bao nhiêu kg nho tươi 90% nước?\" Đi NGƯỢC cầu: chất khô trong 15 kg khô = 15 nhân 80% = MƯỜI HAI kg. Mười hai kg ấy khi còn tươi chiếm bao nhiêu? Bờ tươi có bộ nhãn riêng: nước 90% — khô MƯỜI phần trăm! Vậy 12 kg = 10% khối tươi → tươi = 12 : 10 × 100 = MỘT TRĂM HAI MƯƠI kg. Cấm dán nhầm nhãn: \"nước vẫn 90%\" cho khối đã phơi là lấy nhãn bờ này dán bờ kia — mỗi tấm ảnh một bộ phần trăm, chỉ CON SỐ KG CHẤT KHÔ đi xuyên! Bài cỏ chạy xuôi kiểm máy: 200 kg cỏ tươi 80% nước — chất khô 40 kg; cỏ khô 20% nước — 40 kg là 80%: khối khô NĂM MƯƠI kg. Ba câu hỏi ba đáp: còn 50 KG — bay 150 KG — còn 20 PHẦN TRĂM nước: đọc đề kỹ kẻo giao nhầm hàng!",
+  "canonicalExamples": [
+   {
+    "case": "khô → tươi (ca lõi)",
+    "problem": "Muốn thu được 15 kg nho khô (20% nước) thì phải phơi bao nhiêu kg nho tươi (90% nước)?",
+    "solution": "Chất khô = 15 × 80% = 12 kg = 10% khối tươi → tươi = 120 kg. Thử xuôi: 120 kg → khô 12 kg = 80% khô → 15 kg ✓.",
+    "why": "Ca đề A câu 10 — cầu đi ngược chiều."
+   },
+   {
+    "case": "xuôi kiểm máy + ba câu hỏi (ca cỏ)",
+    "problem": "Cỏ tươi chứa 80% nước, cỏ khô chứa 20% nước. Hỏi 200 kg cỏ tươi phơi được bao nhiêu kg cỏ khô — và bao nhiêu kg nước bay hơi?",
+    "solution": "Chất khô = 200 × 20% = 40 kg = 80% khối khô → khô = 50 kg; nước bay = 200 − 50 = 150 kg (còn 20% nước là câu % — khác hai câu kg!).",
+    "why": "Ca LT6 — ba câu hỏi tách bạch."
+   }
+  ],
+  "numberRange": "Lớp 5: khối ≤ 500 kg; tỉ lệ chất khô 10–80%.",
+  "misconceptions": [
+   {
+    "wrong": "Giữ nguyên bộ % cũ cho khối mới: tính tiếp với \"nước vẫn 90%\" sau khi phơi; hoặc trả lời nhầm câu (hỏi bay kg lại đáp còn kg).",
+    "signal": "% của bờ này dán sang bờ kia; đáp không khớp câu hỏi.",
+    "fix": "K2 + K3 — mỗi tấm ảnh một bộ %, chỉ kg chất khô đi xuyên; gạch chân câu hỏi: CÒN kg / BAY kg / còn %.",
+    "counterExample": "Khối khô mà 'nước 90%' thì chất khô chỉ 10% — 12 kg thành khối 120 kg khô: phơi xong còn NẶNG hơn lúc tươi?!"
+   }
+  ],
+  "vocabulary": [
+   "cầu hai chiều",
+   "mỗi bờ một bộ nhãn",
+   "chất khô đi xuyên",
+   "ba câu hỏi",
+   "thử xuôi kiểm máy"
+  ],
+  "mantra": "MỖI TẤM ẢNH MỘT BỘ % — CHỈ CHẤT KHÔ ĐI XUYÊN!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Ôn M1: nho khô 20% nước — chất khô = ?% khối khô",
+    "answerKey": {
+     "value": 80
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B39.M1",
+   "message": "Ôn phần bù rồi qua cầu ngược nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Đơn đặt hàng: \"giao 15 kg nho khô 20% nước — phơi bao nhiêu kg nho tươi 90% nước?\" Trí Long lúng túng: \"chiều xuôi thuộc rồi, chiều ngược bắt đầu từ đâu?\" Su Kem chỉ cây cầu: \"Vẫn cầu ấy thôi — đi từ bờ KHÔ về bờ TƯƠI.\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "15 kg khô ← ? kg tươi"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để qua cầu ngược!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Đi ngược cầu: chất khô trong mười lăm kg khô bằng mười lăm nhân tám mươi phần trăm — MƯỜI HAI kg. Bờ tươi có BỘ NHÃN RIÊNG: chất khô MƯỜI phần trăm! Mười hai kg là mười phần trăm khối tươi → tươi bằng mười hai chia mười nhân một trăm: MỘT TRĂM HAI MƯƠI kg! Thử xuôi: một trăm hai mươi kg tươi cho đúng mười lăm kg khô!",
+    "display": {
+     "type": "reverse_bridge_interactive",
+     "spec": {
+      "dry": "15 kg × 80% = 12 kg chất khô",
+      "fresh_label": "bờ tươi: khô = 10%",
+      "result": "12 : 10 × 100 = 120 kg",
+      "check": "thử xuôi ✓"
+     }
+    },
+    "interaction": {
+     "type": "cross_backward",
+     "answerKey": {
+      "value": 120
+     },
+     "successMessage": "12 kg = 10% khối tươi → 120 kg!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Cây cầu nối hai tấm ảnh tươi – khô là:",
+     "choices": [
+      "khối lượng chất khô",
+      "% nước",
+      "tổng khối lượng"
+     ],
+     "answerKey": {
+      "choice": "khối lượng chất khô"
+     },
+     "wrongFeedback": "Chỉ chất khô đi xuyên.",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 42,
+    "teaches": [
+     "K2",
+     "K3"
+    ],
+    "narration": "Cấm dán nhầm nhãn: \"nước vẫn chín mươi phần trăm\" cho khối đã phơi — là lấy nhãn bờ này dán bờ kia: khối khô mà nước chín mươi thì mười hai kg chất khô kéo khối lên một trăm hai mươi kg — phơi xong còn NẶNG hơn lúc tươi, vô lý! Mỗi tấm ảnh một bộ phần trăm. Bài cỏ kiểm máy: hai trăm kg cỏ tươi tám mươi phần trăm nước — chất khô BỐN MƯƠI kg; cỏ khô hai mươi phần trăm nước — bốn mươi là tám mươi phần trăm: khô NĂM MƯƠI kg! Ba câu hỏi ba đáp: CÒN năm mươi KG — BAY một trăm năm mươi KG — còn HAI MƯƠI phần trăm nước: gạch chân câu hỏi kẻo giao nhầm hàng!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "nhãn cũ cho khối mới → khô 120 kg > tươi?! ✗",
+      "cỏ: 40 kg = 80% → khô 50 kg · bay 150 kg",
+      "3 câu: CÒN kg · BAY kg · còn %"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú cây cầu: mỗi tấm ảnh một bộ phần trăm — chỉ chất khô đi xuyên!",
+    "display": {
+     "type": "mantra_card",
+     "text": "MỖI ẢNH MỘT BỘ % — CHẤT KHÔ ĐI XUYÊN!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 86,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đơn đặt hàng: giao mười lăm kg nho khô hai mươi phần trăm nước — phơi bao nhiêu kg nho tươi chín mươi phần trăm nước? Trí Long lúng túng: chiều xuôi thuộc rồi, chiều ngược bắt đầu từ đâu? Su Kem chỉ cây cầu: vẫn cầu ấy thôi — đi từ bờ KHÔ về bờ TƯƠI!",
+    "screenText": "15 kg khô ← ? kg tươi",
+    "visual": "Tờ đơn hàng 15 kg; cây cầu chất khô với mũi tên quay ngược hướng từ bờ khô về bờ tươi; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Đi ngược cầu: chất khô trong mười lăm kg khô bằng mười lăm nhân tám mươi phần trăm — MƯỜI HAI kg. Bờ tươi có BỘ NHÃN RIÊNG: chất khô MƯỜI phần trăm! Mười hai kg là mười phần trăm khối tươi → tươi bằng MỘT TRĂM HAI MƯƠI kg! Thử xuôi: một trăm hai mươi kg tươi cho đúng mười lăm kg khô!",
+    "screenText": "15 × 80% = 12 kg → bờ tươi khô 10% → 12 : 10 × 100 = 120 kg ✓",
+    "visual": "Cầu hai chiều với hai bờ dán hai bộ nhãn khác nhau; kiện 12 kg chất khô đi ngược qua cầu; phép chia và mộc thử xuôi.",
+    "assets": [],
+    "duration": 23
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Cấm dán nhầm nhãn: nước vẫn chín mươi phần trăm cho khối đã phơi: phơi xong còn NẶNG hơn lúc tươi — vô lý! Mỗi tấm ảnh một bộ phần trăm. Bài cỏ: hai trăm kg tươi — chất khô BỐN MƯƠI kg — là tám mươi phần trăm khối khô: NĂM MƯƠI kg! Ba câu ba đáp: CÒN năm mươi kg — BAY một trăm năm mươi — còn HAI MƯƠI phần trăm!",
+    "screenText": "nhãn cũ → khô 120 > tươi ✗ · cỏ: 40 = 80% → 50 kg · bay 150 · còn 20%",
+    "visual": "Nhãn 90% bị xé khỏi khối khô gạch đỏ; ca cỏ chạy máy hai nhịp; ba tấm thẻ câu hỏi CÒN/BAY/% ba màu.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú cây cầu: mỗi tấm ảnh một bộ phần trăm — chỉ chất khô đi xuyên!",
+    "screenText": "MỖI ẢNH MỘT BỘ % — CHẤT KHÔ ĐI XUYÊN!",
+    "visual": "Thẻ thần chú vàng với icon cầu hai bờ hai nhãn.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Đơn hàng của con: cần mười lăm kg nho khô — đi ngược cầu tính khối nho tươi phải phơi! Vào bài luyện ngay!",
+    "screenText": "ngược cầu: 12 kg = 10% → tươi?",
+    "visual": "Cầu ngược chờ bước; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 9
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Qua cầu ngược chiều",
+  "problem": "Muốn thu được 15 kg nho khô (20% nước) thì phải phơi bao nhiêu kg nho tươi (90% nước)?",
+  "steps": [
+   {
+    "show": "Bước 1 — Chất khô trong khô: 15 × 80% = 12 kg (neo).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Ở bờ tươi, chất khô chiếm:",
+     "choices": [
+      "10%",
+      "90%",
+      "80%"
+     ],
+     "answerKey": {
+      "choice": "10%"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — 12 kg = 10% khối tươi → tươi = 12 : 10 × 100 = 120 kg."
+   },
+   {
+    "show": "Bước 3 — Thử xuôi: 120 kg tươi → chất khô 12 kg → khô 15 kg ✓.",
+    "askAfter": {
+     "format": "mb",
+     "text": "200 kg cỏ tươi (80% nước) → cỏ khô (20% nước)?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cỏ khô",
+        "value": 50
+       }
+      ]
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B39.LT5",
+     "text": "Muốn thu được 15 kg nho khô (20% nước) thì phải phơi bao nhiêu kg nho tươi (90% nước)?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "nho tươi",
+        "value": 120
+       }
+      ]
+     },
+     "hints": [
+      "Chất khô = 15 × 80%.",
+      "12 kg = 10% khối tươi."
+     ],
+     "solutionNarrative": "120 kg (thử xuôi ✓).",
+     "teaches": [
+      "K1"
+     ],
+     "generator": {
+      "template": "Cần {D} kg khô ({b}% nước) từ tươi ({a}% nước) → ? kg tươi",
+      "constraints": {},
+      "answerRule": "D(100−b)% : (100−a)%"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B39.LT6",
+     "text": "Cỏ tươi chứa 80% nước, cỏ khô chứa 20% nước. Hỏi 200 kg cỏ tươi phơi được bao nhiêu kg cỏ khô — và bao nhiêu kg nước bay hơi?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cỏ khô",
+        "value": 50
+       },
+       {
+        "label": "nước bay",
+        "value": 150
+       }
+      ]
+     },
+     "hints": [
+      "Chất khô 200 × 20% = 40 kg.",
+      "40 = 80% khối khô."
+     ],
+     "solutionNarrative": "Khô 50 kg; bay 150 kg.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Sau khi phơi, có thể tính tiếp với \"nước vẫn chiếm 90%\" của khối mới.",
+     "answerKey": {
+      "value": false,
+      "note": "Mỗi tấm ảnh một bộ % — mang nhãn 90% sang khối khô cho khối 120 kg nặng hơn lúc tươi: vô lý; chỉ kg chất khô đi xuyên."
+     },
+     "hints": [
+      "Nhãn bờ nào bờ nấy.",
+      "Thử xem khối khô ra bao nhiêu."
+     ],
+     "teaches": [
+      "K2"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:II.6.1#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B39.M3",
+   "award": "huy_hieu_cau_hai_chieu"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B39.QZ5",
+    "text": "Cây cầu nối hai tấm ảnh tươi – khô là:",
+    "choices": [
+     "khối lượng chất khô",
+     "% nước",
+     "tổng khối lượng"
+    ],
+    "answerKey": {
+     "choice": "khối lượng chất khô"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mb",
+    "text": "Cần 15 kg nho khô (20% nước) → phơi ? kg tươi (90% nước)",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "tươi",
+       "value": 120
+      }
+     ]
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mb",
+    "text": "200 kg cỏ tươi: BAY bao nhiêu kg nước (khô 50 kg)?",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "bay",
+       "value": 150
+      }
+     ]
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Khô → tươi đi thế nào? Ba câu hỏi nào dễ lẫn?",
+    "back": "Cùng cầu chất khô đi NGƯỢC: khô 15 × 80% = 12 kg → bờ tươi (bộ nhãn riêng: khô 10%) → 12 : 10% = 120 kg — thử xuôi kiểm. Mỗi ảnh MỘT bộ % (nhãn cũ cho khối mới → khô nặng hơn tươi: vô lý). Ba câu: CÒN kg (50) · BAY kg (150) · còn % (20%)."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (nhãn ảnh)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con đi ngược cầu chất khô (khô → tươi) và tách bạch ba câu hỏi còn/bay/%. Con đạt {score}/3, {trapResult} câu bẫy nhãn-cũ.",
+  "homeActivity": "Đố ngược: 'muốn 1 lạng rau khô thì hái mấy lạng rau tươi?' — con ước lượng qua cầu chất khô.",
+  "watchFor": "Nếu con dùng % cũ cho khối mới — hỏi 'phơi xong sao nặng hơn lúc tươi được?' (S3)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B39.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "15 kg khô ← ? kg tươi",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "chiều xuôi thuộc rồi, chiều ngược bắt đầu từ đâu?",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Vẫn cầu ấy thôi — đi từ bờ KHÔ về bờ TƯƠI.",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B39_M2_F1.png",
+   "sha256_16": "ace47105eddfbb43"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con giải CHIỀU NGƯỢC khô → tươi bằng cùng cây cầu chất khô đi ngược chiều: chất khô trong khối khô trước, rồi chia cho tỉ lệ chất khô lúc TƯƠI; nhớ luật hai-tấm-ảnh (chương 9 gọi về): mỗi thời điểm MỘT BỘ % riêng — không mang % cũ sang khối mới; và phân biệt rành ba câu hỏi: còn bao nhiêu kg — bay bao nhiêu kg — còn bao nhiêu %.",
+    "steps": [
+     {
+      "text": "nhãn cũ cho khối mới → khô 120 kg > tươi?!"
+     },
+     {
+      "text": "cỏ: 40 kg = 80% → khô 50 kg · bay 150 kg"
+     },
+     {
+      "text": "3 câu: CÒN kg · BAY kg · còn %"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B39_M2_F2.png",
+   "sha256_16": "4dce8254b11f6602"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Chiều ngược cùng cây cầu",
+      "text": "muốn 15 kg nho khô (20% nước) → chất khô trong khô = 15 × 80% = 12 kg; 12 kg ấy chiếm 10% khối TƯƠI (vì tươi 90% nước) → tươi = 12 : 10 × 100 = 120 kg.",
+      "tone": "navy"
+     },
+     {
+      "label": "Mỗi tấm ảnh MỘT BỘ %",
+      "text": "khối tươi có bộ (90% nước / 10% khô); khối khô có bộ (20% / 80%) — mang \"nước vẫn 90%\" sang khối đã phơi là dán nhầm nhãn ảnh (quy tắc hai-tấm-ảnh chương 9 gọi về); chỉ CHẤT KHÔ (số kg) đi xuyên.",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "MỖI TẤM ẢNH MỘT BỘ % — CHỈ CHẤT KHÔ ĐI XUYÊN!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B39_M2_F3.png",
+   "sha256_16": "4e75f073f613c577"
+  },
+  {
+   "archetype": "stack_compare",
+   "params": {
+    "title": "CHIỀU NGƯỢC: MUỐN 15 kg NHO KHÔ THÌ PHƠI BAO NHIÊU NHO TƯƠI?",
+    "cols": [
+     {
+      "tag": "nho TƯƠI cần",
+      "total": 120,
+      "total_label": "120 kg",
+      "parts": [
+       {
+        "label": "chất khô 12 kg",
+        "val": 12,
+        "color": "anchor"
+       },
+       {
+        "label": "nước 108 kg (90%)",
+        "val": 108,
+        "color": "water"
+       }
+      ]
+     },
+     {
+      "tag": "nho KHÔ thu",
+      "total": 15,
+      "total_label": "15 kg",
+      "parts": [
+       {
+        "label": "chất khô 12 kg",
+        "val": 12,
+        "color": "anchor"
+       },
+       {
+        "label": "nước 3 kg (20%)",
+        "val": 3,
+        "color": "water"
+       }
+      ]
+     }
+    ],
+    "anchor_label": "đi ngược trên cùng cây cầu: chất khô 12 kg",
+    "formula": "chất khô = 15 × 80% = 12 kg = 10% khối tươi  →  tươi = 120 kg",
+    "note": "Ba câu hỏi thường gặp: còn bao nhiêu kg · bay đi bao nhiêu kg · còn bao nhiêu %"
+   },
+   "caption": "Cùng một cây cầu, chỉ đổi chiều đi",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B39_M2_F4.png",
+   "sha256_16": "fb680aa3f1e1dee3"
+  }
+ ]
+}

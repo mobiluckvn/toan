@@ -1,0 +1,637 @@
+{
+ "title": "Quên phẩy trong phép TRỪ — hai chiều ngược nhau",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:I.2.1#3"
+  ],
+  "bktUnit": "CASE:I.2.1#3@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B4",
+  "order": 3,
+  "prev": "DL:KSN5Q1.B4.M2",
+  "next": "DL:KSN5Q1.B5.M1"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B4",
+  "chunks": [
+   "CHUNK:KSN5Q1.B4.S4",
+   "CHUNK:KSN5Q1.B4.S5",
+   "CHUNK:KSN5Q1.B4.S8"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B4.5",
+   "CA:KSN5Q1.B4.6"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B4.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con phân tích được HAI CHIỀU của vụ quên phẩy trong phép trừ: quên ở SỐ TRỪ làm hiệu GIẢM, quên ở SỐ BỊ TRỪ làm hiệu TĂNG — mỗi chiều lệch đúng 9 (99) lần số thật, và giải được cả bài xuôi lẫn bài ngược.",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (chọn đúng chiều)",
+  "kidText": "Quên phẩy ở số trừ thì hiệu giảm, quên ở số bị trừ thì hiệu tăng. Con phân biệt được hai chiều ngược nhau này."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Trong phép trừ, SỐ BỊ TRỪ đứng TRƯỚC dấu trừ, SỐ TRỪ đứng SAU dấu trừ: hiệu = số bị trừ − số trừ."
+   },
+   {
+    "id": "K2",
+    "text": "Quên dấu phẩy ở SỐ TRỪ: số trừ phình to → hiệu GIẢM đi 9 (99) lần số trừ thật."
+   },
+   {
+    "id": "K3",
+    "text": "Quên dấu phẩy ở SỐ BỊ TRỪ: số bị trừ phình to → hiệu TĂNG thêm 9 (99) lần số bị trừ thật — chiều ngược hẳn K2."
+   },
+   {
+    "id": "K4",
+    "text": "Trước khi tính, vẽ SƠ ĐỒ HIỆN TRƯỜNG: viết hiệu = bị trừ − trừ, khoanh tròn vị trí bị phình, rồi mới kết luận hiệu tăng hay giảm."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: phép trừ là chiếc BẬP BÊNH — số bị trừ ngồi đầu TRƯỚC dấu trừ (đẩy hiệu LÊN), số trừ ngồi đầu SAU (kéo hiệu XUỐNG). Ai bị 'phù phép' phình to gấp 10 thì sức nặng tăng 9 phần: phình ở đầu TRƯỚC — hiệu vọt lên 9 lần số ấy; phình ở đầu SAU — hiệu tụt xuống 9 lần số ấy. Hai vụ án chỉ khác nhau một chữ trong đề — nên thám tử luôn vẽ sơ đồ hiện trường và khoanh tròn kẻ bị phình trước khi phán.",
+  "canonicalExamples": [
+   {
+    "case": "quên ở số trừ (ca chuẩn)",
+    "problem": "Bạn Bống quên dấu phẩy của SỐ TRỪ 6,3 nên đã trừ đi 63. Hiệu tìm được tăng hay giảm, và bao nhiêu?",
+    "solution": "Số trừ phình từ 6,3 thành 63 → hiệu GIẢM đi 63 − 6,3 = 56,7 đơn vị (đúng 9 lần của 6,3).",
+    "why": "Ca K2 lấy nguyên từ sách."
+   },
+   {
+    "case": "quên ở số bị trừ — bài ngược (ca trùm cuối)",
+    "problem": "Hiệu đúng của hai số là 5,37. Do quên dấu phẩy ở SỐ BỊ TRỪ (có một chữ số thập phân), hiệu thành 80,07. Tìm số bị trừ thật.",
+    "solution": "Quên ở số BỊ TRỪ → hiệu TĂNG: mức tăng = 80,07 − 5,37 = 74,7 = 9 lần số bị trừ thật → số bị trừ = 74,7 : 9 = 8,3.",
+    "why": "Ca K3 + bài ngược chia 9 — trùm cuối của chương."
+   },
+   {
+    "case": "đối chiếu hai chiều (ca sơ đồ)",
+    "problem": "Cùng quên phẩy của số 2,5 — một lần ở số trừ, một lần ở số bị trừ. Hiệu thay đổi thế nào trong từng vụ?",
+    "solution": "Phần phình = 25 − 2,5 = 22,5. Ở số TRỪ: hiệu giảm 22,5. Ở số BỊ TRỪ: hiệu tăng 22,5. Cùng độ lớn — ngược chiều!",
+    "why": "Bài đối chiếu tự soạn từ CA5–CA6 để khắc hai chiều."
+   }
+  ],
+  "numberRange": "Lớp 5: số thật có 1–2 chữ số thập phân; mức lệch chia hết đẹp cho 9 / 99; hiệu dương.",
+  "misconceptions": [
+   {
+    "wrong": "Đọc lướt, không phân biệt 'quên ở số trừ' với 'quên ở số bị trừ' — phán bừa chiều tăng/giảm.",
+    "signal": "Trả lời 'tăng' cho vụ số trừ (hoặc ngược lại).",
+    "fix": "K4 — vẽ sơ đồ hiện trường: hiệu = bị trừ − trừ; khoanh kẻ bị phình; phình trước dấu trừ thì hiệu lên, phình sau thì hiệu xuống.",
+    "counterExample": "Số trừ 6,3 → 63: 100 − 63 = 37 nhỏ hơn hẳn 100 − 6,3 = 93,7 — hiệu GIẢM rõ ràng."
+   },
+   {
+    "wrong": "Nhớ máy móc 'quên phẩy là tổng tăng 9 lần' đem áp cho phép trừ mọi chiều.",
+    "signal": "Vụ số trừ vẫn trả lời 'hiệu tăng 9 lần'.",
+    "fix": "K2/K3: phép trừ có HAI chiều — dấu vân tay 9 lần giữ nguyên độ lớn nhưng đổi hướng theo vị trí phình.",
+    "counterExample": "Ca đối chiếu 2,5: cùng 22,5 nhưng một vụ giảm, một vụ tăng."
+   }
+  ],
+  "vocabulary": [
+   "bập bênh phép trừ",
+   "số bị trừ (TRƯỚC dấu trừ) / số trừ (SAU dấu trừ)",
+   "sơ đồ hiện trường",
+   "khoanh kẻ bị phình"
+  ],
+  "mantra": "PHÌNH TRƯỚC DẤU TRỪ — HIỆU VỌT LÊN; PHÌNH SAU DẤU TRỪ — HIỆU TỤT XUỐNG!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "mcq",
+    "text": "Trong phép 9,5 − 2,3: số BỊ trừ là số nào?",
+    "choices": [
+     "9,5",
+     "2,3",
+     "7,2"
+    ],
+    "answerKey": {
+     "choice": "9,5"
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "ôn tên gọi thành phần phép trừ (hạt mầm)",
+   "message": "Ôn nhanh 'bị trừ − trừ = hiệu' rồi lên bập bênh nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Hai hồ sơ trên bàn thám tử, chỉ khác nhau MỘT chữ: vụ A \"quên dấu phẩy ở số TRỪ\", vụ B \"quên dấu phẩy ở số BỊ TRỪ\". Trí Long: \"Giống nhau mà, đều tăng 9 lần chứ gì!\" Su Kem đặt hai hồ sơ lên… chiếc bập bênh.",
+    "display": {
+     "type": "story_panel",
+     "caption": "số TRỪ ≠ số BỊ TRỪ — một chữ, hai số phận"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để lên bập bênh!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 45,
+    "teaches": [
+     "K1",
+     "K2",
+     "K3"
+    ],
+    "narration": "Bập bênh phép trừ: số BỊ TRỪ ngồi đầu trước dấu trừ — đẩy hiệu LÊN; số TRỪ ngồi đầu sau — kéo hiệu XUỐNG. Con thổi phồng lần lượt từng bạn (gấp 10) và nhìn kim hiệu: phình ở số trừ — kim tụt; phình ở số bị trừ — kim vọt!",
+    "display": {
+     "type": "seesaw_interactive",
+     "spec": {
+      "left": "số bị trừ (đẩy hiệu lên)",
+      "right": "số trừ (kéo hiệu xuống)",
+      "inflate": "×10 từng bên",
+      "gauge": "kim HIỆU"
+     }
+    },
+    "interaction": {
+     "type": "inflate_and_observe",
+     "successMessage": "Thấy chưa: cùng một phép phù phép — phình SAU dấu trừ thì hiệu tụt, phình TRƯỚC dấu trừ thì hiệu vọt!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 16,
+    "item": {
+     "format": "mcq",
+     "text": "Quên dấu phẩy ở SỐ TRỪ thì hiệu sẽ:",
+     "answerKey": {
+      "choice": "giảm đi"
+     },
+     "choices": [
+      "giảm đi",
+      "tăng lên",
+      "không đổi"
+     ],
+     "wrongFeedback": "Số trừ kéo hiệu xuống — nó phình to thì kéo càng mạnh.",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 42,
+    "teaches": [
+     "K2",
+     "K3",
+     "K4"
+    ],
+    "narration": "Giải hai vụ bằng sơ đồ hiện trường. Vụ A: số trừ 6,3 phình thành 63 — hiệu GIẢM đi 63 trừ 6,3 bằng 56,7. Vụ B trùm cuối: hiệu đúng 5,37 vọt thành 80,07 vì số BỊ TRỪ phình — mức tăng 74,7 chính là 9 lần số bị trừ thật: 74,7 chia 9 bằng 8,3!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "Vụ A: hiệu GIẢM 63 − 6,3 = 56,7",
+      "Vụ B: tăng = 80,07 − 5,37 = 74,7",
+      "Số bị trừ = 74,7 : 9 = 8,3 ✓"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú bập bênh: phình trước dấu trừ — hiệu vọt lên; phình sau dấu trừ — hiệu tụt xuống!",
+    "display": {
+     "type": "mantra_card",
+     "text": "PHÌNH TRƯỚC — VỌT LÊN · PHÌNH SAU — TỤT XUỐNG!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 76,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Hai hồ sơ trên bàn thám tử, chỉ khác nhau MỘT chữ: vụ A quên dấu phẩy ở số TRỪ, vụ B quên ở số BỊ trừ. Trí Long phán: giống nhau mà! Su Kem lắc đầu, đặt hai hồ sơ lên… chiếc bập bênh.",
+    "screenText": "số TRỪ ≠ số BỊ TRỪ",
+    "visual": "Hai tập hồ sơ A·B trên bàn; chữ 'TRỪ' và 'BỊ TRỪ' phát sáng khác màu; bập bênh #0C3B70 trồi lên góc màn.",
+    "assets": [],
+    "duration": 16
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Bập bênh phép trừ: số BỊ TRỪ ngồi TRƯỚC dấu trừ — đẩy hiệu lên; số TRỪ ngồi SAU — kéo hiệu xuống. Thổi phồng số trừ gấp mười: kim hiệu TỤT thẳng! Thổi phồng số bị trừ: kim hiệu VỌT lên! Cùng phép phù phép — hai số phận ngược nhau.",
+    "screenText": "hiệu = BỊ TRỪ − TRỪ · phình sau → tụt · phình trước → vọt",
+    "visual": "Bập bênh với hai nhân vật số; đồng hồ kim 'HIỆU' ở giữa; hoạt cảnh bơm phồng từng bên, kim tụt/vọt kèm mũi tên đỏ/xanh.",
+    "assets": [],
+    "duration": 19
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Vụ A: số trừ sáu phẩy ba phình thành sáu mươi ba — hiệu GIẢM đi sáu ba trừ sáu phẩy ba: năm mươi sáu phẩy bảy. Vụ B trùm cuối: hiệu đúng năm phẩy ba bảy vọt thành tám mươi phẩy không bảy — mức tăng bảy tư phẩy bảy là chín lần số bị trừ thật: chia chín được TÁM PHẨY BA!",
+    "screenText": "A: giảm 56,7 · B: 74,7 : 9 = 8,3",
+    "visual": "Hai khung án A·B; khung A mũi tên xuống '−56,7' đỏ; khung B mũi tên lên rồi phép '74,7 : 9 = 8,3' đóng mộc ✓ xanh.",
+    "assets": [],
+    "duration": 23
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú bập bênh: phình trước dấu trừ — hiệu vọt lên; phình sau dấu trừ — hiệu tụt xuống!",
+    "screenText": "PHÌNH TRƯỚC — VỌT · PHÌNH SAU — TỤT!",
+    "visual": "Thẻ thần chú vàng với icon bập bênh.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Hồ sơ cuối cho thám tử: quên phẩy của số trừ hai phẩy năm — hiệu thay đổi thế nào, bao nhiêu? Vào bài luyện kết án ngay!",
+    "screenText": "số trừ 2,5 → 25: hiệu ?",
+    "visual": "Hồ sơ '2,5 → 25' với dấu hỏi hai mũi tên lên/xuống; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Trùm cuối: hiệu 5,37 thành 80,07",
+  "problem": "Hiệu đúng của hai số là 5,37. Do quên dấu phẩy ở SỐ BỊ TRỪ (số có một chữ số ở phần thập phân), một bạn tính được hiệu là 80,07. Tìm số bị trừ thật.",
+  "steps": [
+   {
+    "show": "Bước 1 — Sơ đồ hiện trường: hiệu = BỊ TRỪ − trừ; kẻ phình là số BỊ TRỪ (trước dấu trừ) → hiệu TĂNG.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Quên phẩy ở số BỊ TRỪ thì hiệu:",
+     "choices": [
+      "tăng lên",
+      "giảm đi",
+      "không đổi"
+     ],
+     "answerKey": {
+      "choice": "tăng lên"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — Mức tăng = 80,07 − 5,37 = 74,7 = 9 lần số bị trừ thật (1 chữ số thập phân → gấp 10 → chênh 9 phần)."
+   },
+   {
+    "show": "Bước 3 — Số bị trừ = 74,7 : 9 = 8,3. Thử: 8,3 − 2,93 = 5,37 và 83 − 2,93 = 80,07 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Kiểm dấu vân tay: 74,7 : 9 = ?",
+     "answerKey": {
+      "value": "8,3"
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mcq",
+     "sourceItem": "ITEM:KSN5Q1.B4.QZ5",
+     "text": "Quên dấu phẩy ở SỐ TRỪ thì hiệu sẽ:",
+     "choices": [
+      "giảm đi",
+      "tăng lên",
+      "không đổi"
+     ],
+     "answerKey": {
+      "choice": "giảm đi"
+     },
+     "hints": [
+      "Số trừ ngồi đầu nào của bập bênh?",
+      "Kẻ kéo hiệu xuống phình to thì kéo càng mạnh."
+     ],
+     "solutionNarrative": "Số trừ phình to → hiệu tụt xuống.",
+     "teaches": [
+      "K2"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B4.LT7",
+     "text": "Trong một phép trừ, bạn Bống quên dấu phẩy của SỐ TRỪ 6,3 nên đã trừ đi 63. Hỏi hiệu tìm được tăng hay giảm, và bao nhiêu đơn vị?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chiều",
+        "value": "GIẢM"
+       },
+       {
+        "label": "mức",
+        "value": "56,7"
+       }
+      ]
+     },
+     "hints": [
+      "Vẽ sơ đồ: hiệu = bị trừ − trừ; khoanh 6,3 → 63.",
+      "Mức thay đổi = 63 − 6,3."
+     ],
+     "solutionNarrative": "Số trừ phình to → hiệu GIẢM đi 63 − 6,3 = 56,7 đơn vị.",
+     "teaches": [
+      "K2",
+      "K4"
+     ],
+     "generator": {
+      "template": "Quên dấu phẩy của SỐ TRỪ {x} nên đã trừ đi {x0}. Hiệu tăng hay giảm, bao nhiêu?",
+      "constraints": {
+       "x": "một chữ số thập phân"
+      },
+      "answerRule": "GIẢM (x0 − x) = 9x"
+     }
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B4.LT9",
+     "text": "Sư phụ Trí Dũng đố (TRÙM CUỐI): \"Hiệu đúng của hai số là 5,37. Do quên dấu phẩy ở SỐ BỊ TRỪ (số có một chữ số ở phần thập phân), một bạn tính được hiệu là 80,07. Tìm số bị trừ thật.\"",
+     "answerKey": {
+      "value": "8,3"
+     },
+     "hints": [
+      "Quên ở số BỊ TRỪ → hiệu tăng; mức tăng = 80,07 − 5,37.",
+      "74,7 : 9."
+     ],
+     "solutionNarrative": "Mức tăng 74,7 = 9 lần số bị trừ → 74,7 : 9 = 8,3.",
+     "teaches": [
+      "K3",
+      "K4"
+     ]
+    },
+    {
+     "id": "P4",
+     "format": "mb",
+     "text": "Cùng quên dấu phẩy của số 2,5 — vụ A quên ở số TRỪ, vụ B quên ở số BỊ TRỪ. Hiệu mỗi vụ thay đổi thế nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "vụ A",
+        "value": "giảm 22,5"
+       },
+       {
+        "label": "vụ B",
+        "value": "tăng 22,5"
+       }
+      ]
+     },
+     "hints": [
+      "Phần phình = 25 − 2,5.",
+      "Cùng độ lớn — ngược chiều."
+     ],
+     "teaches": [
+      "K2",
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:I.2.1#3@G5"
+   ],
+   "unlockNext": "DCR:KSN5Q1.C1",
+   "award": "huy_hieu_bap_benh + mở KỲ SÁT HẠCH CHƯƠNG 1"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P2 + biến thể P4"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mb",
+    "text": "Điền TĂNG hoặc GIẢM: quên dấu phẩy ở số TRỪ thì hiệu ...; quên ở số BỊ TRỪ thì hiệu ...",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "số trừ",
+       "value": "GIẢM"
+      },
+      {
+       "label": "số bị trừ",
+       "value": "TĂNG"
+      }
+     ]
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2",
+     "K3"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "num",
+    "text": "Quên dấu phẩy của SỐ TRỪ 4,8 (trừ đi 48). Hiệu giảm bao nhiêu đơn vị?",
+    "answerKey": {
+     "value": "43,2"
+    },
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "Hiệu đúng là 3,2; quên phẩy ở số BỊ TRỪ (1 chữ số thập phân) nên hiệu thành 48,2. Tìm số bị trừ thật.",
+    "answerKey": {
+     "value": 5,
+     "extra": "mức tăng 45 = 9 × 5"
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Quên phẩy ở số trừ / số bị trừ — hiệu thay đổi thế nào?",
+    "back": "Số TRỪ (sau dấu trừ) phình → hiệu GIẢM 9 (99) lần số thật. Số BỊ TRỪ (trước dấu trừ) phình → hiệu TĂNG 9 (99) lần. Vẽ sơ đồ hiện trường, khoanh kẻ bị phình trước khi phán!"
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: 1 câu generator P2",
+   "+7 ngày: câu P3 biến thể (trùm cuối)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học hai chiều của vụ quên phẩy trong phép trừ (bập bênh). Con đạt {score}/3, {trapResult} câu bẫy chọn chiều. Con đã đủ điều kiện vào KỲ SÁT HẠCH CHƯƠNG 1!",
+  "homeActivity": "Đố phân vai: bố đọc 'quên phẩy ở số trừ', mẹ đọc 'quên phẩy ở số bị trừ' — con chỉ tay lên/xuống đúng chiều của hiệu, kèm giải thích bập bênh.",
+  "watchFor": "Nếu con phán chiều tăng/giảm mà chưa vẽ sơ đồ hiệu = bị trừ − trừ — luyện lại nghi thức khoanh kẻ bị phình (S3)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B4.M3",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "số TRỪ ≠ số BỊ TRỪ — một chữ, hai số phận",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Hai hồ sơ trên bàn thám tử, chỉ khác nhau MỘT chữ: vụ A \"quên dấu phẩy ở số TRỪ\", vụ B \"quên dấu phẩy ở số BỊ TRỪ\".",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B4_M3_F1.png",
+   "sha256_16": "a4276e0d588169a4"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con phân tích được HAI CHIỀU của vụ quên phẩy trong phép trừ: quên ở SỐ TRỪ làm hiệu GIẢM, quên ở SỐ BỊ TRỪ làm hiệu TĂNG — mỗi chiều lệch đúng 9 (99) lần số thật, và giải được cả bài xuôi lẫn bài ngược.",
+    "steps": [
+     {
+      "text": "Vụ A: hiệu GIẢM 63 − 6,3 = 56,7"
+     },
+     {
+      "text": "Vụ B: tăng = 80,07 − 5,37 = 74,7"
+     },
+     {
+      "text": "Số bị trừ = 74,7 : 9 = 8,3"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B4_M3_F2.png",
+   "sha256_16": "c6e653d25208b938"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Trong phép trừ, SỐ BỊ TRỪ đứng TRƯỚC dấu trừ, SỐ TRỪ đứng SAU dấu trừ",
+      "text": "hiệu = số bị trừ − số trừ.",
+      "tone": "navy"
+     },
+     {
+      "text": "Quên dấu phẩy ở SỐ TRỪ thì hiệu sẽ:",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "PHÌNH TRƯỚC DẤU TRỪ — HIỆU VỌT LÊN; PHÌNH SAU DẤU TRỪ — HIỆU TỤT XUỐNG!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B4_M3_F3.png",
+   "sha256_16": "a4c4228ef18b5b77"
+  },
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "QUÊN PHẨY Ở ĐÂU THÌ HIỆU ĐỔI CHIỀU NẤY",
+    "wrong": {
+     "head": "QUÊN Ở SỐ TRỪ",
+     "steps": [
+      "6,3 phình thành 63"
+     ],
+     "result": "hiệu GIẢM 56,7"
+    },
+    "right": {
+     "head": "QUÊN Ở SỐ BỊ TRỪ",
+     "steps": [
+      "số bị trừ phình 10 lần"
+     ],
+     "result": "hiệu TĂNG"
+    },
+    "verdict": "Hiệu tăng 74,7 → số bị trừ thật = 74,7 : 9 = 8,3"
+   },
+   "caption": "Hai chiều ngược nhau — đọc kỹ quên phẩy ở số nào",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B4_M3_F4.png",
+   "sha256_16": "779339a6a726fb61"
+  }
+ ]
+}

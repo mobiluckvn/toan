@@ -1,0 +1,694 @@
+{
+ "title": "Ba dạng % nền tảng & ba thứ tiếng: cầu 1% — dịch bằng cơ chế 'trên 100'",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:II.4.1#1"
+  ],
+  "bktUnit": "CASE:II.4.1#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B37",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B36.M3",
+  "next": "DL:KSN5Q1.B37.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B37",
+  "chunks": [
+   "CHUNK:KSN5Q1.B37.S3",
+   "CHUNK:KSN5Q1.B37.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B37.1",
+   "CA:KSN5Q1.B37.2"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B37.1"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải nhuần nhuyễn BA DẠNG % nền tảng — tìm a% của N (nhân), tìm N từ a% (qua cầu 1%), tìm tỉ số % (chia rồi đọc sang %) — và dịch trơn BA THỨ TIẾNG phân số ↔ thập phân ↔ % bằng cơ chế \"% nghĩa là TRÊN 100\" (không học vẹt); ưu tiên đổi về phân số đẹp để tính nhẩm; luôn hỏi câu mở màn: phần trăm CỦA AI?",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (dịch đúng cơ chế)",
+  "kidText": "Phần trăm nghĩa là trên 100. Con tìm được a% của N, tìm N khi biết a%, và tính tỉ số phần trăm — luôn hỏi phần trăm CỦA AI."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "% nghĩa là TRÊN 100: 25% = 25/100 = 1/4; 1/5 = 20/100 = 20% (không phải 15%!); 0,25 = 25% (không phải 2,5%); 12,5% = 12,5/100 = 1/8 — dịch bằng cơ chế, cấm học vẹt."
+   },
+   {
+    "id": "K2",
+    "text": "Dạng 1 — tìm a% của N: đổi về phân số đẹp mà nhân nhẩm: 25% của 240 000 = 240 000 : 4 = 60 000."
+   },
+   {
+    "id": "K3",
+    "text": "Dạng 2 — biết a% của N là bao nhiêu, tìm N: đi qua CẦU 1%: 25% là 60 → 1% = 60 : 25 = 2,4 → N = 2,4 × 100 = 240."
+   },
+   {
+    "id": "K4",
+    "text": "Dạng 3 — tìm tỉ số %: chia rồi đọc sang %: 60 : 240 = 1/4 = 25% — nhưng đổi chiều là đổi gốc: 240 : 60 = 4 = 400%! Mỗi con số % đều có CHỦ: câu hỏi đầu tiên luôn là \"phần trăm CỦA AI?\""
+   }
+  ],
+  "mechanism": "Hình ảnh brand: QUẦY ĐỔI TIỀN BA THỨ TIẾNG. Chợ phần trăm khai trương! Ba thứ tiếng cùng lưu hành: tiếng phân số, tiếng thập phân, tiếng %. Trí Long dịch vẹt: \"1/5 là… 15%; 0,25 là 2,5%!\" — dịch trật vì học thuộc lòng. Máy dịch chỉ MỘT cơ chế: % nghĩa là TRÊN MỘT TRĂM. 1/5 — nhân cả tử mẫu với 20 thành 20/100: HAI MƯƠI phần trăm! 0,25 là 25/100: hai lăm phần trăm. Ngược lại 12,5% là 12,5 trên 100 — nhân đôi cả hai: 25/200… hay gọn hơn 1/8! Ba dạng nền chạy trên máy dịch: dạng một — 25% của 240 nghìn: đổi 1/4, chia bốn ra SÁU MƯƠI nghìn; dạng hai — 25% của số nào đó là 60: qua cầu MỘT PHẦN TRĂM — 1% là 2,4 → cả số 240; dạng ba — quầy nước 60, quầy bánh 240: 60 : 240 = 1/4 = 25% — nhưng hỏi ngược thì 240 : 60 = 400%: hai chiều hai gốc, mỗi % có CHỦ!",
+  "canonicalExamples": [
+   {
+    "case": "dạng 1 — phân số đẹp (ca nhẩm)",
+    "problem": "Tính 25% của 240 000 đồng (đổi về phân số để tính nhẩm).",
+    "solution": "25% = 1/4 → 240 000 : 4 = 60 000 đồng.",
+    "why": "Ca đề A câu 1 — nhẩm nhanh nhờ tiếng phân số."
+   },
+   {
+    "case": "ba thứ tiếng (ca máy dịch)",
+    "problem": "Điền ba thứ tiếng: (a) 3/4 = ? = ?%; (b) 1/5 = ? = ?%; (c) 12,5% = ? (phân số).",
+    "solution": "(a) 3/4 = 0,75 = 75%; (b) 1/5 = 0,2 = 20%; (c) 12,5% = 1/8.",
+    "why": "Ca LT2 — trap dịch-vẹt rình ở 1/5 và 12,5%."
+   },
+   {
+    "case": "dạng 2 — cầu 1% (ca ngược)",
+    "problem": "Biết 25% của một số là 60. Tìm số đó.",
+    "solution": "1% = 60 : 25 = 2,4 → số đó = 2,4 × 100 = 240.",
+    "why": "Ca đề A câu 5 — chiếc cầu chung của cả chương."
+   },
+   {
+    "case": "dạng 3 — hai chiều hai gốc (ca chủ %)",
+    "problem": "Quầy nước thu 60 nghìn, quầy bánh thu 240 nghìn. (a) Số thu quầy nước bằng bao nhiêu % quầy bánh? (b) Quầy bánh bằng bao nhiêu % quầy nước?",
+    "solution": "(a) 60 : 240 = 1/4 = 25%; (b) 240 : 60 = 4 = 400% — hai gốc, hai con số.",
+    "why": "Ca LT3 — gieo mầm đổi-gốc cho M2."
+   }
+  ],
+  "numberRange": "Lớp 5: % đẹp (10, 12,5, 20, 25, 50, 75); tiền ≤ 500 nghìn.",
+  "misconceptions": [
+   {
+    "wrong": "Dịch vẹt ba thứ tiếng: 1/5 → 15%; 0,25 → 2,5%; 12,5% thì bí không ra phân số.",
+    "signal": "Con số 'na ná' nhau bị ghép bừa; không có bước nhân về mẫu 100.",
+    "fix": "K1 — cơ chế duy nhất: % là TRÊN 100 — 1/5 = 20/100; 0,25 = 25/100; 12,5% = 1/8.",
+    "counterExample": "1/5 = 15%? Thử: 15% của 100 là 15, còn 1/5 của 100 là 20 — vênh ngay 5 đơn vị!"
+   }
+  ],
+  "vocabulary": [
+   "ba thứ tiếng",
+   "máy dịch trên-100",
+   "cầu 1%",
+   "phần trăm của ai",
+   "phân số đẹp để nhẩm"
+  ],
+  "mantra": "PHẦN TRĂM LÀ 'TRÊN 100' — DỊCH BẰNG CƠ CHẾ, KHÔNG HỌC VẸT!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "240 000 : 4 = ?",
+    "answerKey": {
+     "value": 60000
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "ôn chia nhẩm (hạt mầm)",
+   "message": "Ôn chia nhẩm rồi vào chợ phần trăm nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Chợ phần trăm khai trương — ba thứ tiếng cùng lưu hành! Trí Long dịch vẹt: \"1/5 là 15%, 0,25 là 2,5%!\" Su Kem thử ngay: \"15% của 100 là 15 — mà 1/5 của 100 là 20: vênh 5 đơn vị rồi kìa?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "1/5 = 15%?? 0,25 = 2,5%??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để mở máy dịch!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Máy dịch chỉ MỘT cơ chế: phần trăm nghĩa là TRÊN MỘT TRĂM! Một phần năm — nhân cả tử mẫu với hai mươi: HAI MƯƠI trên một trăm — hai mươi phần trăm! Không phẩy hai lăm là hai lăm trên một trăm; mười hai phẩy năm phần trăm rút gọn thành MỘT PHẦN TÁM. Dạng một: hai lăm phần trăm của hai trăm bốn mươi nghìn — MỘT PHẦN TƯ: chia bốn ra SÁU MƯƠI nghìn!",
+    "display": {
+     "type": "translator_interactive",
+     "spec": {
+      "rule": "% = trên 100",
+      "pairs": [
+       "1/5 = 20/100 = 20%",
+       "0,25 = 25%",
+       "12,5% = 1/8",
+       "3/4 = 0,75 = 75%"
+      ],
+      "d1": "25% của 240 000 = : 4 = 60 000"
+     }
+    },
+    "interaction": {
+     "type": "translate_by_rule",
+     "answerKey": {
+      "value": 20
+     },
+     "successMessage": "1/5 = 20/100 = 20% — cơ chế, không vẹt!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "1/5 viết dưới dạng phần trăm là:",
+     "choices": [
+      "20%",
+      "15%",
+      "5%"
+     ],
+     "answerKey": {
+      "choice": "20%"
+     },
+     "wrongFeedback": "Nhân tử mẫu với 20 về mẫu 100.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 44,
+    "teaches": [
+     "K3",
+     "K4"
+    ],
+    "narration": "Dạng hai — đi ngược qua CẦU MỘT PHẦN TRĂM: hai lăm phần trăm của số nào đó là sáu mươi — vậy MỘT phần trăm là sáu mươi chia hai lăm: hai phẩy tư — cả số bằng hai phẩy tư nhân một trăm: HAI TRĂM BỐN MƯƠI! Dạng ba — tỉ số phần trăm: quầy nước sáu mươi, quầy bánh hai bốn mươi — sáu mươi chia hai bốn mươi là một phần tư: HAI LĂM phần trăm; nhưng hỏi NGƯỢC — hai bốn mươi chia sáu mươi là bốn: BỐN TRĂM phần trăm! Hai chiều hai gốc — mỗi con số phần trăm đều có CHỦ: câu hỏi mở màn luôn là phần trăm CỦA AI?",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "cầu 1%: 60 : 25 = 2,4 → số = 240",
+      "60/240 = 25% — nhưng 240/60 = 400%",
+      "câu mở màn: phần trăm CỦA AI?"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú máy dịch: phần trăm là trên-một-trăm — dịch bằng cơ chế, không học vẹt!",
+    "display": {
+     "type": "mantra_card",
+     "text": "% = TRÊN 100 — CƠ CHẾ, KHÔNG VẸT!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Chợ phần trăm khai trương! Trí Long dịch vẹt: một phần năm là mười lăm phần trăm, không phẩy hai lăm là hai phẩy năm phần trăm! Su Kem thử ngay: mười lăm phần trăm của một trăm là mười lăm — mà một phần năm của một trăm là hai mươi: vênh năm đơn vị rồi kìa?",
+    "screenText": "1/5 = 15%?? 0,25 = 2,5%??",
+    "visual": "Cổng chợ phần trăm với ba lá cờ ba thứ tiếng; Trí Long dán nhãn dịch sai; phép thử vênh 15 ≠ 20 đỏ #C0392B.",
+    "assets": [],
+    "duration": 21
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Máy dịch chỉ MỘT cơ chế: phần trăm nghĩa là TRÊN MỘT TRĂM! Một phần năm — nhân cả tử mẫu với hai mươi: HAI MƯƠI trên một trăm — hai mươi phần trăm! Không phẩy hai lăm là hai lăm trên một trăm; mười hai phẩy năm phần trăm rút gọn thành MỘT PHẦN TÁM. Dạng một: hai lăm phần trăm của hai trăm bốn mươi nghìn — MỘT PHẦN TƯ: chia bốn ra SÁU MƯƠI nghìn!",
+    "screenText": "1/5 = 20/100 = 20% · 0,25 = 25% · 12,5% = 1/8 · 25% của 240k = 60k",
+    "visual": "Máy dịch ba cửa với băng chuyền nhân-về-mẫu-100; bảng bốn cặp dịch chuẩn; ca 240k chia 4 chạy nhoáng.",
+    "assets": [],
+    "duration": 28
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Dạng hai — CẦU MỘT PHẦN TRĂM: hai lăm phần trăm của một số là sáu mươi — MỘT phần trăm là hai phẩy tư: cả số HAI TRĂM BỐN MƯƠI! Dạng ba: sáu mươi chia hai bốn mươi — HAI LĂM phần trăm; hỏi NGƯỢC — bốn: BỐN TRĂM phần trăm! Hai chiều hai gốc — mỗi phần trăm có CHỦ: phần trăm CỦA AI?",
+    "screenText": "cầu 1%: 60:25 = 2,4 → 240 · 60/240 = 25% · 240/60 = 400%!",
+    "visual": "Cây cầu khắc '1%' nối hai bờ; hai quầy nước-bánh với hai mũi tên ngược chiều ra 25% và 400%; con dấu 'CỦA AI?'.",
+    "assets": [],
+    "duration": 24
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú máy dịch: phần trăm là trên-một-trăm — dịch bằng cơ chế, không học vẹt!",
+    "screenText": "% = TRÊN 100 — CƠ CHẾ, KHÔNG VẸT!",
+    "visual": "Thẻ thần chú vàng với icon máy dịch ba cửa.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Quầy: hai lăm phần trăm của một số là sáu mươi — qua cầu một phần trăm tìm số ấy! Vào bài luyện ngay!",
+    "screenText": "25% là 60 → cầu 1% → số = ?",
+    "visual": "Cây cầu 1% chờ bước; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P4",
+    "assets": [],
+    "duration": 9
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Ba dạng một máy dịch",
+  "problem": "(a) Tính 25% của 240 000 đồng. (b) Biết 25% của một số là 60 — tìm số đó. (c) Quầy nước thu 60 nghìn bằng bao nhiêu % quầy bánh 240 nghìn?",
+  "steps": [
+   {
+    "show": "Bước 1 — (a) Đổi tiếng phân số: 25% = 1/4 → 240 000 : 4 = 60 000 đồng.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "25% ở tiếng phân số là:",
+     "choices": [
+      "1/4",
+      "1/5",
+      "2/5"
+     ],
+     "answerKey": {
+      "choice": "1/4"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — (b) Cầu 1%: 60 : 25 = 2,4 → số = 2,4 × 100 = 240."
+   },
+   {
+    "show": "Bước 3 — (c) 60 : 240 = 1/4 = 25% (hỏi ngược sẽ là 400% — gốc khác!).",
+    "askAfter": {
+     "format": "mcq",
+     "text": "Quầy bánh bằng bao nhiêu % quầy nước?",
+     "choices": [
+      "400%",
+      "25%",
+      "75%"
+     ],
+     "answerKey": {
+      "choice": "400%"
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B37.LT1",
+     "text": "Tính 25% của 240 000 đồng (đổi về phân số để tính nhẩm).",
+     "answerKey": {
+      "value": "60 000 đồng"
+     },
+     "hints": [
+      "25% = 1/4.",
+      "240 000 : 4."
+     ],
+     "solutionNarrative": "60 000 đồng.",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "generator": {
+      "template": "Tính {p}% của {N}.",
+      "constraints": {
+       "p": "đẹp: 10/20/25/50/75"
+      },
+      "answerRule": "đổi phân số đẹp rồi chia"
+     }
+    },
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B37.LT2",
+     "text": "Điền ba thứ tiếng: a) 3/4 = ... = ...% ; b) 1/5 = ... = ...% ; c) 12,5% = ... (phân số).",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "a",
+        "value": "0,75 = 75%"
+       },
+       {
+        "label": "b",
+        "value": "0,2 = 20%"
+       },
+       {
+        "label": "c",
+        "value": "1/8"
+       }
+      ]
+     },
+     "hints": [
+      "Cơ chế trên-100.",
+      "12,5/100 rút gọn."
+     ],
+     "solutionNarrative": "75% · 20% · 1/8.",
+     "teaches": [
+      "K1"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B37.LT3",
+     "text": "Quầy nước thu 60 nghìn, quầy bánh thu 240 nghìn. Hỏi: a) số thu quầy nước bằng bao nhiêu % quầy bánh? b) quầy bánh bằng bao nhiêu % quầy nước?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "a",
+        "value": "25%"
+       },
+       {
+        "label": "b",
+        "value": "400%"
+       }
+      ]
+     },
+     "hints": [
+      "Chia rồi đọc sang %.",
+      "Hai chiều — hai gốc."
+     ],
+     "solutionNarrative": "25% và 400% — mỗi % có chủ.",
+     "teaches": [
+      "K4"
+     ]
+    },
+    {
+     "id": "P4",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B37.LT4",
+     "text": "Biết 25% của một số là 60. Tìm số đó.",
+     "answerKey": {
+      "value": 240
+     },
+     "hints": [
+      "Cầu 1%: 60 : 25.",
+      "Nhân 100."
+     ],
+     "solutionNarrative": "1% = 2,4 → số = 240.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P5",
+     "format": "mb",
+     "text": "Dịch nhanh không vẹt: (a) 0,25 = ...%; (b) 50% của 86 = ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "a",
+        "value": "25%"
+       },
+       {
+        "label": "b",
+        "value": 43
+       }
+      ]
+     },
+     "hints": [
+      "25/100.",
+      "50% = 1/2."
+     ],
+     "solutionNarrative": "25% và 43.",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:II.4.1#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B37.M2",
+   "award": "huy_hieu_may_dich_ba_tieng"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B37.QZ3",
+    "text": "1/5 viết dưới dạng phần trăm là:",
+    "choices": [
+     "20%",
+     "15%",
+     "5%"
+    ],
+    "answerKey": {
+     "choice": "20%"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B37.QZ1",
+    "text": "(Đúng/Sai?) 25% của một số bằng số đó chia cho 4.",
+    "answerKey": {
+     "value": true
+    },
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "25% của một số là 60 → số đó = ?",
+    "answerKey": {
+     "value": 240
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Ba dạng % & ba thứ tiếng — chìa khóa?",
+    "back": "% = TRÊN 100 (1/5 = 20%, 0,25 = 25%, 12,5% = 1/8 — cơ chế, không vẹt). D1: đổi phân số đẹp mà nhẩm (25% của 240k = :4 = 60k). D2: CẦU 1% (60 : 25 = 2,4 → 240). D3: chia rồi đọc % — hai chiều hai gốc (25% vs 400%). Câu mở màn: phần trăm CỦA AI?"
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (hai gốc)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học ba dạng % nền tảng và máy dịch ba thứ tiếng theo cơ chế trên-100. Con đạt {score}/3, {trapResult} câu bẫy dịch-vẹt.",
+  "homeActivity": "Đố dịch nhanh khi đi siêu thị: '1/4 là mấy %? 20% là phân số nào?' — con đọc cả cơ chế nhân-về-100.",
+  "watchFor": "Nếu con dịch vẹt (1/5 = 15%) — cho thử trên số 100 là vênh ngay (S1)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B37.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "1/5 = 15%?? 0,25 = 2,5%??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "1/5 là 15%, 0,25 là 2,5%!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "15% của 100 là 15 — mà 1/5 của 100 là 20: vênh 5 đơn vị rồi kìa?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B37_M1_F1.png",
+   "sha256_16": "2b7d9a82e53dc374"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con giải nhuần nhuyễn BA DẠNG % nền tảng — tìm a% của N (nhân), tìm N từ a% (qua cầu 1%), tìm tỉ số % (chia rồi đọc sang %) — và dịch trơn BA THỨ TIẾNG phân số ↔ thập phân ↔ % bằng cơ chế \"% nghĩa là TRÊN 100\" (không học vẹt); ưu tiên đổi về phân số đẹp để tính nhẩm; luôn hỏi câu mở màn: phần trăm CỦA AI?",
+    "steps": [
+     {
+      "text": "cầu 1%: 60 : 25 = 2,4 → số = 240"
+     },
+     {
+      "text": "60/240 = 25% — nhưng 240/60 = 400%"
+     },
+     {
+      "text": "câu mở màn: phần trăm CỦA AI?"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B37_M1_F2.png",
+   "sha256_16": "4782ce6803fcd4ba"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "% nghĩa là TRÊN 100",
+      "text": "25% = 25/100 = 1/4",
+      "tone": "navy"
+     },
+     {
+      "label": "Dạng 1 — tìm a% của N",
+      "text": "đổi về phân số đẹp mà nhân nhẩm: 25% của 240 000 = 240 000 : 4 = 60 000.",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "PHẦN TRĂM LÀ 'TRÊN 100' — DỊCH BẰNG CƠ CHẾ, KHÔNG HỌC VẸT!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B37_M1_F3.png",
+   "sha256_16": "c85050b08a427b79"
+  },
+  {
+   "archetype": "place_value_chart",
+   "params": {
+    "title": "BA THỨ TIẾNG CỦA MỘT LƯỢNG — MÁY DỊCH",
+    "headers": [
+     "phân số",
+     "thập phân",
+     "phần trăm"
+    ],
+    "comma_after": null,
+    "rows": [
+     {
+      "label": "",
+      "cells": [
+       "3/4",
+       "0,75",
+       "75%"
+      ],
+      "color": "#E9F9F4"
+     },
+     {
+      "label": "",
+      "cells": [
+       "1/5",
+       "0,2",
+       "20%"
+      ],
+      "color": "white"
+     },
+     {
+      "label": "",
+      "cells": [
+       "1/4",
+       "0,25",
+       "25%"
+      ],
+      "color": "#E9F9F4"
+     },
+     {
+      "label": "",
+      "cells": [
+       "1/8",
+       "0,125",
+       "12,5%"
+      ],
+      "color": "white"
+     }
+    ],
+    "note": "Cơ chế \"trên 100\": 25% của 240 000 = 240 000 : 4 = 60 000 đồng"
+   },
+   "caption": "Dịch được ba thứ tiếng thì mọi bài phần trăm đều tính nhẩm được",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B37_M1_F4.png",
+   "sha256_16": "0540537019e3802d"
+  }
+ ]
+}

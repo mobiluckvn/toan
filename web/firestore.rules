@@ -1,0 +1,110 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    /* ══════════════════════════════════════════════════════════════════════
+       BA VAI TRÒ — MỘT TÀI KHOẢN LÀ MỘT HỌC SINH
+         · learner  phụ huynh và con dùng chung một tài khoản. Đọc/ghi dữ liệu
+                    của chính mình, không thấy ai khác.
+         · teacher  đọc kết quả của TOÀN BỘ học sinh. Không ghi được gì vào bài làm.
+         · admin    toàn quyền.
+
+       Vai trò đọc từ CUSTOM CLAIM trong token, do Cloud Function đặt lúc đăng nhập —
+       không đọc từ Firestore. Hai lý do: khỏi tốn một lượt đọc cho MỖI lần kiểm quyền,
+       và quan trọng hơn: người dùng ghi được vào users/{uid} của mình, nên nếu tin
+       vào trường role trong đó thì ai cũng tự phong mình làm giáo viên được.
+       ══════════════════════════════════════════════════════════════════════ */
+
+    function signedIn() { return request.auth != null; }
+    function uid()      { return request.auth.uid; }
+    function role()     { return request.auth.token.role; }
+
+    function isTeacher() { return signedIn() && role() == 'teacher'; }
+    function isAdmin()   { return signedIn() && role() == 'admin'; }
+    function isMine(id)  { return signedIn() && id == uid(); }
+
+    /* Ai được XEM kết quả học của một tài khoản: chính chủ, giáo viên, admin */
+    function canRead(id) { return isMine(id) || isTeacher() || isAdmin(); }
+
+    /* ── Hồ sơ người dùng ── */
+    match /users/{userId} {
+      allow read: if canRead(userId);
+
+      /* Chính chủ sửa được tên và lớp, nhưng KHÔNG đụng được vào role.
+         Đây là chốt chặn quan trọng nhất của cả bộ luật: mất nó thì bất kỳ ai
+         cũng ghi role='teacher' vào hồ sơ mình rồi đọc kết quả cả trường. */
+      allow update: if isMine(userId)
+                    && request.resource.data.role == resource.data.role
+                    && request.resource.data.uid == resource.data.uid
+                    && request.resource.data.email == resource.data.email;
+
+      /* Tạo hồ sơ là việc của Cloud Function lúc đăng nhập (Admin SDK bỏ qua luật này).
+         Không mở cho máy con, nếu không người ta tự tạo hồ sơ kèm role tuỳ ý. */
+      allow create, delete: if isAdmin();
+    }
+
+    /* ── Mã OTP: KHÔNG AI đụng tới, kể cả admin ──
+       Chỉ Cloud Function qua Admin SDK. Mở dù chỉ quyền đọc là lộ bản băm,
+       mở quyền ghi là tự đặt mã cho tài khoản người khác. */
+    match /otpCodes/{email} {
+      allow read, write: if false;
+    }
+
+    /* ── NHẬT KÝ TRẢ LỜI — bằng chứng học tập, BẤT BIẾN với tất cả ── */
+    match /attempts/{attemptId} {
+      allow read: if canRead(resource.data.learnerId);
+
+      allow create: if isMine(request.resource.data.learnerId)
+                    && request.resource.data.keys().hasAll(
+                         ['learnerId','microId','itemId','phase','correct','ts'])
+                    && request.resource.data.correct is bool
+                    && request.resource.data.phase in ['practice','assess','check','worked']
+                    /* mốc máy chủ do Firestore đóng dấu, không nhận giờ tự khai */
+                    && (!request.resource.data.keys().hasAny(['serverTs'])
+                        || request.resource.data.serverTs == request.time);
+
+      allow update, delete: if false;   // không ai sửa được điểm đã ghi, kể cả admin
+    }
+
+    /* ── Mức thạo (BKT): chỉ Cloud Function ghi ── */
+    match /mastery/{userId}/units/{unitId} {
+      allow read:  if canRead(userId);
+      allow write: if false;
+    }
+
+    /* ── Tiến độ từng bài ── */
+    match /progress/{userId}/micros/{microId} {
+      allow read: if canRead(userId);
+      allow write: if isMine(userId)
+                   && request.resource.data.pass is bool
+                   && request.resource.data.score is number;
+    }
+
+    /* ── Hàng đợi ôn tập: việc riêng của từng bạn, cô không cần ── */
+    match /reviewQueue/{userId}/cards/{cardId} {
+      allow read:  if isMine(userId) || isAdmin();
+      allow write: if isMine(userId);
+    }
+
+    /* ── Sổ học: Function dựng mỗi đêm ── */
+    match /report/{userId} {
+      allow read:  if canRead(userId);
+      allow write: if false;
+    }
+
+    /* ── Bảng giáo viên: một document cho toàn hệ thống ── */
+    match /teacherBoard/{doc} {
+      allow read:  if isTeacher() || isAdmin();
+      allow write: if false;
+    }
+
+    /* ── Chỉ mục nội dung: ai đăng nhập cũng đọc, chỉ Admin SDK ghi ── */
+    match /contentIndex/{microDoc} {
+      allow read:  if signedIn();
+      allow write: if false;
+    }
+
+    /* ── Mặc định: cấm ── */
+    match /{document=**} { allow read, write: if false; }
+  }
+}

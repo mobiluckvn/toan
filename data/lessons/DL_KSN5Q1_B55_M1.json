@@ -1,0 +1,668 @@
+{
+ "title": "Đường vòng: ngược chiều gặm cả MỘT VÒNG — cùng chiều hơn đúng một vòng; đếm số lần gặp",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:V.3.1#1"
+  ],
+  "bktUnit": "CASE:V.3.1#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B55",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B54.M3",
+  "next": "DL:KSN5Q1.B55.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B55",
+  "chunks": [
+   "CHUNK:KSN5Q1.B55.S3",
+   "CHUNK:KSN5Q1.B55.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B55.1",
+   "CA:KSN5Q1.B55.2"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B55.1"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con chuyển thần chú đuổi-gặp lên ĐƯỜNG VÒNG: xuất phát MỘT ĐIỂM ngược chiều — khoảng cách cần gặm là cả MỘT VÒNG: t = 400 : (3 + 2) = 80 giây (không phải nửa vòng — hai quãng 240/160 khác nhau nhưng CỘNG tròn vòng); cùng chiều — người nhanh phải đi HƠN đúng một vòng: 400 : (3 − 2) = 400 giây; đếm số lần gặp = tổng thời gian : chu kỳ, LẤY PHẦN NGUYÊN (600 : 80 = 7,5 → 7 lần).",
+  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (ngược chiều = một vòng)",
+  "kidText": "Trên đường vòng, ngược chiều thì phải gặm hết CẢ MỘT VÒNG; cùng chiều thì người nhanh phải đi hơn đúng một vòng."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Vòng 400 m xuất phát cùng MỘT ĐIỂM chạy NGƯỢC chiều: hai người gặm khoảng cách từ hai phía của vòng — tổng quãng đến lần gặp đầu = đúng MỘT VÒNG: t = 400 : (3 + 2) = 80 giây."
+   },
+   {
+    "id": "K2",
+    "text": "Điểm gặp KHÔNG ở nửa vòng: người 3 m/s đi 3 × 80 = 240 m; người 2 m/s đi 160 m — hai quãng KHÁC nhau nhưng 240 + 160 = 400 tròn vòng ✓ (kiểm hai phía của B54 lên đường cong)."
+   },
+   {
+    "id": "K3",
+    "text": "CÙNG chiều trên vòng: người nhanh phải dư ra trọn MỘT VÒNG mới bắt kịp (như đuổi mà mục tiêu chạy vòng quanh): t = 400 : (3 − 2) = 400 giây — vẫn đuổi-hiệu-gặp-tổng, chỉ đổi khoảng cách thành một vòng."
+   },
+   {
+    "id": "K4",
+    "text": "Đếm số lần gặp trong thời gian dài: cứ mỗi chu kỳ 80 giây gặp một lần → 600 : 80 = 7,5 → lấy PHẦN NGUYÊN: 7 lần (nửa chu kỳ dở dang chưa kịp gặp)."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: CHIẾC BÁNH VÒNG KHÉP KÍN. Sân vận động vòng bốn trăm mét — hai bạn xuất phát CÙNG MỘT ĐIỂM chạy NGƯỢC chiều, ba mét giây và hai mét giây. Trí Long lẩm bẩm: \"cùng chỗ đứng thì khoảng cách bằng không — chia kiểu gì?!\" Nhìn chiếc bánh vòng: hai bạn quay lưng nhau chạy — muốn CHẠM MẶT lại phải gặm cho hết CẢ MỘT VÒNG bánh từ hai phía! Khoảng cách trên vòng tròn là TRỌN MỘT VÒNG: bốn trăm chia ba-cộng-hai — TÁM MƯƠI giây! Điểm gặp có ở nửa vòng không? Người nhanh gặm hai trăm bốn mươi — người chậm một trăm sáu mươi: hai miếng KHÁC cỡ nhưng cộng tròn BỐN TRĂM: kiểm hai phía đóng mộc! CÙNG chiều thì sao — kẻ nhanh đuổi mà mục tiêu cũng chạy vòng: phải DƯ RA trọn một vòng mới vỗ vai được: bốn trăm chia ba-trừ-hai — BỐN TRĂM giây! Vẫn thần chú cũ đuổi-hiệu-gặp-tổng — chỉ có khoảng cách đổi thành MỘT VÒNG! Chạy mười phút — gặp mấy lần? Sáu trăm chia tám mươi: bảy phẩy năm — lấy PHẦN NGUYÊN: BẢY lần, nửa chu kỳ dở chưa kịp chạm!",
+  "canonicalExamples": [
+   {
+    "case": "ngược chiều một vòng (ca lõi)",
+    "problem": "Vòng chạy 400 m: hai bạn xuất phát cùng một điểm, chạy ngược chiều với vận tốc 3 m/s và 2 m/s. Hỏi sau bao lâu họ gặp nhau lần đầu?",
+    "solution": "Khoảng cách = một vòng: t = 400 : (3 + 2) = 80 giây.",
+    "why": "Ca đề A câu 9 — trap khoảng-cách-bằng-không rình đây."
+   },
+   {
+    "case": "kiểm hai phía trên vòng (ca tự chấm)",
+    "problem": "Với bài trên: mỗi bạn chạy được bao nhiêu mét — điểm gặp có ở đúng nửa vòng không?",
+    "solution": "3 × 80 = 240 m; 2 × 80 = 160 m — không ở nửa vòng, nhưng 240 + 160 = 400 tròn vòng ✓.",
+    "why": "Ca LT4 — hai miếng khác cỡ cộng tròn bánh."
+   },
+   {
+    "case": "cùng chiều dư một vòng (ca đuổi vòng)",
+    "problem": "Hai bạn trên chạy CÙNG chiều từ một điểm. Hỏi sau bao lâu người nhanh bắt kịp người chậm (vỗ vai lần đầu)?",
+    "solution": "Người nhanh phải dư đúng một vòng: t = 400 : (3 − 2) = 400 giây.",
+    "why": "Ca đề A câu 10 — đuổi hiệu trên vòng."
+   }
+  ],
+  "numberRange": "Lớp 5: vòng ≤ 500 m; V ≤ 5 m/s.",
+  "misconceptions": [
+   {
+    "wrong": "Xuất phát cùng điểm → \"khoảng cách = 0, không chia được\"; hoặc đoán gặp ở nửa vòng; hoặc 7,5 làm tròn thành 8 lần.",
+    "signal": "Bí ở đề vòng tròn; đáp mỗi người 200 m; số lần gặp 8.",
+    "fix": "K1 + K2 + K4 — khoảng cách trên vòng = MỘT VÒNG; hai quãng khác cỡ cộng tròn 400; phần nguyên 7.",
+    "counterExample": "Nếu gặp ở nửa vòng thì hai người chạy BẰNG nhau 200 m — mà kẻ 3 m/s người 2 m/s: chạy cùng thời gian sao quãng bằng nhau được?!"
+   }
+  ],
+  "vocabulary": [
+   "chiếc bánh vòng",
+   "gặm cả một vòng",
+   "hai miếng khác cỡ",
+   "dư trọn một vòng",
+   "phần nguyên số lần gặp"
+  ],
+  "mantra": "TRÊN VÒNG TRÒN, KHOẢNG CÁCH CẦN GẶM LÀ CẢ MỘT VÒNG!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Ôn B54: 36 : (10 + 8) = ?",
+    "answerKey": {
+     "value": 2
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B54.M1",
+   "message": "Ôn đuổi-gặp rồi lên đường vòng nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Vòng 400 m, hai bạn xuất phát CÙNG một điểm chạy ngược chiều. Trí Long bí: \"đứng cùng chỗ — khoảng cách bằng 0, chia kiểu gì?!\" Su Kem giơ chiếc bánh vòng: \"Quay lưng nhau chạy thì muốn chạm mặt phải gặm hết cái gì đây?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "khoảng cách = 0??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để cầm bánh vòng!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Nhìn chiếc bánh vòng: hai bạn quay lưng nhau chạy — muốn CHẠM MẶT phải gặm cho hết CẢ MỘT VÒNG từ hai phía! Khoảng cách trên vòng tròn là TRỌN MỘT VÒNG: bốn trăm chia ba-cộng-hai — TÁM MƯƠI giây! Điểm gặp có ở nửa vòng không? Người nhanh gặm hai trăm bốn mươi — người chậm một trăm sáu mươi: hai miếng KHÁC cỡ nhưng cộng tròn BỐN TRĂM: kiểm hai phía đóng mộc!",
+    "display": {
+     "type": "ring_race_interactive",
+     "spec": {
+      "ring": "khoảng cách = 1 vòng = 400",
+      "divide": "400 : (3+2) = 80 giây",
+      "check": "240 + 160 = 400 ✓ (không nửa vòng!)"
+     }
+    },
+    "interaction": {
+     "type": "eat_the_ring",
+     "answerKey": {
+      "value": 80
+     },
+     "successMessage": "Gặm tròn vòng: 80 giây — 240 + 160 khớp!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Cùng điểm xuất phát, ngược chiều trên vòng: khoảng cách cần gặm là:",
+     "choices": [
+      "một vòng",
+      "số 0",
+      "nửa vòng"
+     ],
+     "answerKey": {
+      "choice": "một vòng"
+     },
+     "wrongFeedback": "Gặm cả bánh vòng.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ]
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 44,
+    "teaches": [
+     "K3",
+     "K4"
+    ],
+    "narration": "CÙNG chiều thì sao — kẻ nhanh đuổi mà mục tiêu cũng chạy vòng quanh: phải DƯ RA trọn một vòng mới vỗ vai được! Bốn trăm chia ba-trừ-hai — BỐN TRĂM giây! Vẫn thần chú cũ đuổi-hiệu-gặp-tổng — chỉ có khoảng cách đổi thành MỘT VÒNG! Chạy mười phút — gặp mấy lần? Sáu trăm giây chia chu kỳ tám mươi: bảy phẩy năm — lấy PHẦN NGUYÊN: BẢY lần, nửa chu kỳ dở dang chưa kịp chạm mặt!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "cùng chiều: dư 1 vòng → 400 : 1 = 400 giây",
+      "số lần gặp: 600 : 80 = 7,5 → 7 (phần nguyên)",
+      "thần chú cũ — khoảng cách mới"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Thần chú bánh vòng: trên vòng tròn, khoảng cách cần gặm là cả một vòng!",
+    "display": {
+     "type": "mantra_card",
+     "text": "GẶM CẢ MỘT VÒNG!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0C3B70",
+    "ngoc": "#1FC3A6",
+    "vang": "#F8B942",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Vòng bốn trăm mét, hai bạn xuất phát CÙNG một điểm chạy ngược chiều. Trí Long bí: đứng cùng chỗ — khoảng cách bằng không, chia kiểu gì?! Su Kem giơ chiếc bánh vòng: quay lưng nhau chạy thì muốn chạm mặt phải gặm hết cái gì đây?",
+    "screenText": "khoảng cách = 0??",
+    "visual": "Sân vận động vòng với hai bạn quay lưng cùng vạch; bánh vòng donut teal lơ lửng; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 17
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Nhìn chiếc bánh vòng: hai bạn quay lưng nhau chạy — muốn CHẠM MẶT phải gặm cho hết CẢ MỘT VÒNG từ hai phía! Khoảng cách trên vòng tròn là TRỌN MỘT VÒNG: bốn trăm chia ba-cộng-hai — TÁM MƯƠI giây! Điểm gặp có ở nửa vòng không? Người nhanh gặm hai trăm bốn mươi — người chậm một trăm sáu mươi: hai miếng KHÁC cỡ nhưng cộng tròn BỐN TRĂM: kiểm hai phía đóng mộc!",
+    "screenText": "khoảng cách = 1 vòng → 400 : 5 = 80 giây · 240 + 160 = 400 ✓",
+    "visual": "Bánh vòng bị gặm từ hai phía hai màu teal-vàng, hai miếng khác cỡ 240-160 chạm nhau lệch nửa vòng; mộc xanh 400.",
+    "assets": [],
+    "duration": 27
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "CÙNG chiều thì sao — kẻ nhanh đuổi mà mục tiêu cũng chạy vòng quanh: phải DƯ RA trọn một vòng mới vỗ vai được! Bốn trăm chia ba-trừ-hai — BỐN TRĂM giây! Vẫn thần chú cũ đuổi-hiệu-gặp-tổng — chỉ có khoảng cách đổi thành MỘT VÒNG! Chạy mười phút — gặp mấy lần? Sáu trăm giây chia chu kỳ tám mươi: bảy phẩy năm — lấy PHẦN NGUYÊN: BẢY lần, nửa chu kỳ dở dang chưa kịp chạm mặt!",
+    "screenText": "cùng chiều: 400 : (3−2) = 400 giây · 600 : 80 = 7,5 → 7 lần",
+    "visual": "Đường xoắn ốc người nhanh dư trọn một vòng rồi vỗ vai; băng đếm 7 lần gặp với nửa chu kỳ cuối mờ dở dang.",
+    "assets": [],
+    "duration": 29
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú bánh vòng: trên vòng tròn, khoảng cách cần gặm là cả một vòng!",
+    "screenText": "GẶM CẢ MỘT VÒNG!",
+    "visual": "Thẻ thần chú vàng với icon bánh vòng.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Bánh vòng của con: vòng bốn trăm, ngược chiều ba và hai — gặm tròn vòng rồi kiểm hai miếng! Vào bài luyện ngay!",
+    "screenText": "400 : (3+2) = ? · 240 + 160 = ?",
+    "visual": "Bánh vòng chờ gặm; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 9
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Gặm bánh vòng từ hai phía",
+  "problem": "Vòng chạy 400 m: hai bạn xuất phát cùng một điểm, chạy ngược chiều với vận tốc 3 m/s và 2 m/s. (a) Sau bao lâu gặp nhau lần đầu? (b) Điểm gặp có ở nửa vòng không?",
+  "steps": [
+   {
+    "show": "Bước 1 — Khoảng cách trên vòng = MỘT VÒNG = 400 m.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Ngược chiều trên vòng chia cho:",
+     "choices": [
+      "tổng vận tốc",
+      "hiệu vận tốc",
+      "vận tốc lớn"
+     ],
+     "answerKey": {
+      "choice": "tổng vận tốc"
+     }
+    }
+   },
+   {
+    "show": "Bước 2 — t = 400 : (3 + 2) = 80 giây."
+   },
+   {
+    "show": "Bước 3 — (b) 3 × 80 = 240; 2 × 80 = 160 — KHÔNG nửa vòng, nhưng 240 + 160 = 400 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Cùng chiều: 400 : (3 − 2) = ? giây",
+     "answerKey": {
+      "value": 400
+     }
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B55.LT1",
+     "text": "Vòng chạy 400 m: hai bạn xuất phát cùng một điểm, chạy ngược chiều với vận tốc 3 m/s và 2 m/s. Hỏi sau bao lâu họ gặp nhau lần đầu (giây)?",
+     "answerKey": {
+      "value": 80
+     },
+     "hints": [
+      "Khoảng cách = 1 vòng.",
+      "400 : 5."
+     ],
+     "solutionNarrative": "80 giây.",
+     "teaches": [
+      "K1"
+     ],
+     "generator": {
+      "template": "Vòng {L} m, ngược chiều {v1} và {v2} m/s → gặp sau?",
+      "constraints": {},
+      "answerRule": "L : (v1 + v2)"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B55.LT4",
+     "text": "Với bài trên: mỗi bạn chạy được bao nhiêu mét đến lúc gặp — điểm gặp có ở đúng nửa vòng không? Kiểm tổng.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bạn nhanh",
+        "value": 240
+       },
+       {
+        "label": "bạn chậm",
+        "value": 160
+       },
+       {
+        "label": "kiểm",
+        "value": "240 + 160 = 400 = 1 vòng ✓ — không ở nửa vòng"
+       }
+      ]
+     },
+     "hints": [
+      "3 × 80 và 2 × 80.",
+      "Cộng có tròn vòng?"
+     ],
+     "solutionNarrative": "240 và 160 — hai miếng khác cỡ.",
+     "teaches": [
+      "K2"
+     ]
+    },
+    {
+     "id": "P3",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B55.LT5",
+     "text": "Hai bạn trên chạy CÙNG chiều từ một điểm. Hỏi sau bao lâu người nhanh bắt kịp người chậm (giây)?",
+     "answerKey": {
+      "value": 400
+     },
+     "hints": [
+      "Dư đúng một vòng.",
+      "400 : (3 − 2)."
+     ],
+     "solutionNarrative": "400 giây.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B55.LT8",
+     "text": "Hai bạn ngược chiều trên vòng 400 m (3 và 2 m/s) chạy liên tục trong 10 phút. Hỏi họ gặp nhau bao nhiêu lần?",
+     "answerKey": {
+      "value": 7
+     },
+     "hints": [
+      "Chu kỳ 80 giây.",
+      "600 : 80 lấy phần nguyên."
+     ],
+     "solutionNarrative": "7,5 → 7 lần.",
+     "teaches": [
+      "K4"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 2/3, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:V.3.1#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B55.M2",
+   "award": "huy_hieu_banh_vong"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B55.QZ4",
+    "text": "Cùng điểm xuất phát, ngược chiều trên vòng: tổng quãng đến lần gặp đầu bằng:",
+    "choices": [
+     "một vòng",
+     "số 0",
+     "nửa vòng"
+    ],
+    "answerKey": {
+     "choice": "một vòng"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B55.QZ5",
+    "text": "CÙNG chiều trên vòng: người nhanh bắt kịp khi đi hơn người chậm đúng:",
+    "choices": [
+     "một vòng",
+     "nửa vòng",
+     "hai vòng"
+    ],
+    "answerKey": {
+     "choice": "một vòng"
+    },
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "Vòng 400, ngược chiều 3 + 2 → gặp sau ? giây",
+    "answerKey": {
+     "value": 80
+    },
+    "teaches": [
+     "K1"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Trên vòng tròn: ngược chiều và cùng chiều chia gì?",
+    "back": "Khoảng cách = CẢ MỘT VÒNG: ngược chiều gặm từ hai phía → 400 : (3+2) = 80 giây (hai miếng 240-160 KHÁC cỡ, cộng tròn 400 ✓ — không nửa vòng!); cùng chiều dư trọn một vòng → 400 : (3−2) = 400 giây. Số lần gặp = thời gian : chu kỳ, PHẦN NGUYÊN (600:80 = 7,5 → 7)."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P4 (đếm lần)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học đuổi-gặp trên đường vòng: khoảng cách là cả một vòng, kiểm hai miếng và đếm phần nguyên số lần gặp. Con đạt {score}/3, {trapResult} câu bẫy.",
+  "homeActivity": "Hai bố con đi ngược chiều quanh bàn ăn từ cùng một góc — con đếm xem hai người 'gặm' mấy phần bàn thì chạm mặt.",
+  "watchFor": "Nếu con bí vì 'khoảng cách bằng 0' — đưa chiếc bánh vòng (S1)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B55.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "khoảng cách = 0??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "đứng cùng chỗ — khoảng cách bằng 0, chia kiểu gì?!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Quay lưng nhau chạy thì muốn chạm mặt phải gặm hết cái gì đây?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B55_M1_F1.png",
+   "sha256_16": "9908295b8068c218"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Con chuyển thần chú đuổi-gặp lên ĐƯỜNG VÒNG: xuất phát MỘT ĐIỂM ngược chiều — khoảng cách cần gặm là cả MỘT VÒNG: t = 400 : (3 + 2) = 80 giây (không phải nửa vòng — hai quãng 240/160 khác nhau nhưng CỘNG tròn vòng); cùng chiều — người nhanh phải đi HƠN đúng một vòng: 400 : (3 − 2) = 400 giây; đếm số lần gặp = tổng thời gian : chu kỳ, LẤY PHẦN NGUYÊN (600 : 80 = 7,5 → 7 lần).",
+    "steps": [
+     {
+      "text": "cùng chiều: dư 1 vòng → 400 : 1 = 400 giây"
+     },
+     {
+      "text": "số lần gặp: 600 : 80 = 7,5 → 7 (phần nguyên)"
+     },
+     {
+      "text": "thần chú cũ — khoảng cách mới"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B55_M1_F2.png",
+   "sha256_16": "622984f4f0c43c0d"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Vòng 400 m xuất phát cùng MỘT ĐIỂM chạy NGƯỢC chiều",
+      "text": "hai người gặm khoảng cách từ hai phía của vòng — tổng quãng đến lần gặp đầu = đúng MỘT VÒNG: t = 400 : (3 + 2) = 80 giây.",
+      "tone": "navy"
+     },
+     {
+      "label": "Điểm gặp KHÔNG ở nửa vòng",
+      "text": "người 3 m/s đi 3 × 80 = 240 m; người 2 m/s đi 160 m — hai quãng KHÁC nhau nhưng 240 + 160 = 400 tròn vòng (kiểm hai phía của B54 lên đường cong).",
+      "tone": "teal"
+     }
+    ],
+    "mantra": "TRÊN VÒNG TRÒN, KHOẢNG CÁCH CẦN GẶM LÀ CẢ MỘT VÒNG!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B55_M1_F3.png",
+   "sha256_16": "0595c42237cde0af"
+  },
+  {
+   "archetype": "geo_shape",
+   "params": {
+    "title": "ĐƯỜNG VÒNG 400 m — GẶM TRỌN MỘT VÒNG",
+    "points": {
+     "O": [
+      0,
+      0
+     ],
+     "S": [
+      0,
+      5
+     ],
+     "M": [
+      4.05,
+      -2.94
+     ],
+     "L": [
+      -2.9,
+      4.1
+     ],
+     "R2": [
+      2.9,
+      4.1
+     ]
+    },
+    "shapes": [
+     {
+      "circle": {
+       "at": "O",
+       "r": 5
+      },
+      "fill": "none"
+     }
+    ],
+    "segments": [
+     {
+      "from": "S",
+      "to": "L",
+      "color": "#1FC3A6",
+      "label": "3 m/s →",
+      "dx": -12,
+      "dy": 3
+     },
+     {
+      "from": "S",
+      "to": "R2",
+      "color": "#C0392B",
+      "label": "← 2 m/s",
+      "dx": 12,
+      "dy": 3
+     }
+    ],
+    "labels": [
+     {
+      "at": "S",
+      "text": "xuất phát",
+      "dy": 5
+     },
+     {
+      "at": "M",
+      "text": "gặp nhau",
+      "dy": -5,
+      "dx": 8
+     }
+    ],
+    "show_points": [
+     "S",
+     "M"
+    ],
+    "formula": "ngược chiều: 400 : (3 + 2) = 80 giây  ·  cùng chiều: 400 : (3 − 2) = 400 giây",
+    "note": "240 + 160 = 400 tròn vòng ✓ — điểm gặp KHÔNG ở nửa vòng vì hai bạn chạy khác tốc độ"
+   },
+   "caption": "Xuất phát cùng điểm mà ngược chiều: khoảng cách cần gặm là trọn một vòng",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B55_M1_F4.png",
+   "sha256_16": "a913a7106efe75e4"
+  }
+ ]
+}

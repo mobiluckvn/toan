@@ -1,0 +1,274 @@
+{
+ "id": "DCR:KSN5Q1.C2",
+ "name": "KỲ SÁT HẠCH SỐ · Chương 2 — Kiện tướng xếp số",
+ "chapter": 2,
+ "unlockRule": "mở khi 12/12 micro chương 2 đạt (BKT ≥ 0,85 hoặc pass assessment)",
+ "passRule": "đạt 12/15 → huy hiệu KIỆN TƯỚNG XẾP SỐ + mở chương 3; chưa đạt → tự soi theo micro → Đề B phục thù",
+ "examA": [
+  {
+   "id": "REVITEM:KSN5Q1.C2.A1",
+   "qno": 1,
+   "star": 1,
+   "text": "Từ các thẻ 0; 3; 5; 8 (mỗi thẻ dùng một lần), lập số lớn nhất có bốn chữ số khác nhau.",
+   "answer": "8530",
+   "diagnosesMicro": "DL:KSN5Q1.B5.M1",
+   "hasTrap": false,
+   "trapName": ""
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A2",
+   "qno": 2,
+   "star": 1,
+   "text": "Với bộ thẻ ở Câu 1, lập số nhỏ nhất có bốn chữ số khác nhau.",
+   "answer": "3058 (không phải 0358 — số 0 không cầm đầu)",
+   "diagnosesMicro": "DL:KSN5Q1.B5.M1",
+   "hasTrap": true,
+   "trapName": "SỐ 0 CẦM ĐẦU ĐỘI HÌNH"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A3",
+   "qno": 3,
+   "star": 1,
+   "text": "Với bộ thẻ ở Câu 1, lập số lớn nhất có bốn chữ số khác nhau chia hết cho 5. (Xét đủ các nhánh tận cùng!)",
+   "answer": "so hai nhánh 8530 và 8305 → 8530",
+   "diagnosesMicro": "DL:KSN5Q1.B5.M2",
+   "hasTrap": false,
+   "trapName": ""
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A4",
+   "qno": 4,
+   "star": 1,
+   "text": "Từ các thẻ 0; 2; 5; 7; 9, lập số nhỏ nhất có bốn chữ số khác nhau chia hết cho 5.",
+   "answer": "so hai nhánh 2570 và 2075 → 2075 (nhánh đuôi 5 thắng ngược dòng)",
+   "diagnosesMicro": "DL:KSN5Q1.B5.M2",
+   "hasTrap": true,
+   "trapName": "CHIA HẾT 5 --- CHỐT VỘI MỘT NHÁNH"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A5",
+   "qno": 5,
+   "star": 2,
+   "text": "Từ các chữ số 0; 3; 5; 8 (được lặp lại), lập được bao nhiêu số có ba chữ số?",
+   "answer": "3 × 4 × 4 = 48 số",
+   "diagnosesMicro": "DL:KSN5Q1.B6.M1",
+   "hasTrap": false,
+   "trapName": ""
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A6",
+   "qno": 6,
+   "star": 2,
+   "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau?",
+   "answer": "3 × 3 × 2 = 18 số",
+   "diagnosesMicro": "DL:KSN5Q1.B6.M2",
+   "hasTrap": false,
+   "trapName": ""
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A7",
+   "qno": 7,
+   "star": 2,
+   "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau chia hết cho 5?",
+   "answer": "6 + 4 = 10 số (hai nhánh khác luật, không nhân chung ra 12)",
+   "diagnosesMicro": "DL:KSN5Q1.B6.M3",
+   "hasTrap": true,
+   "trapName": "NHÂN CHUNG HAI NHÁNH KHÁC LUẬT"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A8",
+   "qno": 8,
+   "star": 2,
+   "text": "Từ năm thẻ 1; 2; 3; 5; 8, chọn bốn thẻ để lập số có bốn chữ số khác nhau chia hết cho 9: phải bỏ thẻ nào, và số lớn nhất lập được là bao nhiêu?",
+   "answer": "bỏ thẻ 1 (tổng còn 18); lớn nhất 8532",
+   "diagnosesMicro": "DL:KSN5Q1.B6.M3",
+   "hasTrap": false,
+   "trapName": ""
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A9",
+   "qno": 9,
+   "star": 2,
+   "text": "Từ 1 đến 100 có bao nhiêu số chia hết cho 3? Còn từ 10 đến 100?",
+   "answer": "33 số; từ 10 đến 100: đầu thật 12 → 30 số",
+   "diagnosesMicro": "DL:KSN5Q1.B7.M2",
+   "hasTrap": true,
+   "trapName": "\"TỪ\" VÀ \"GIỮA\" --- MỘT CHỮ LỆCH HAI SỐ"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A10",
+   "qno": 10,
+   "star": 2,
+   "text": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2 hoặc chia hết cho 3?",
+   "answer": "15 + 10 − 5 = 20 số",
+   "diagnosesMicro": "DL:KSN5Q1.B7.M3",
+   "hasTrap": true,
+   "trapName": "CỘNG THẲNG HAI NHÓM \"HOẶC\""
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A11",
+   "qno": 11,
+   "star": 2,
+   "text": "Có bao nhiêu số có hai chữ số?",
+   "answer": "90 số",
+   "diagnosesMicro": "DL:KSN5Q1.B7.M2",
+   "hasTrap": false,
+   "trapName": ""
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A12",
+   "qno": 12,
+   "star": 2,
+   "text": "Đánh số trang một cuốn sách dày 256 trang cần dùng bao nhiêu chữ số?",
+   "answer": "9 + 180 + 471 = 660 chữ số",
+   "diagnosesMicro": "DL:KSN5Q1.B8.M1",
+   "hasTrap": false,
+   "trapName": ""
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A13",
+   "qno": 13,
+   "star": 2,
+   "text": "Để đánh số trang một cuốn sách, người ta dùng hết 300 chữ số. Hỏi sách dày bao nhiêu trang?",
+   "answer": "300 − 189 = 111; 111 : 3 = 37 dư 0 → 99 + 37 = 136 trang",
+   "diagnosesMicro": "DL:KSN5Q1.B8.M2",
+   "hasTrap": true,
+   "trapName": "CHIA SỚM Ở CHIỀU NGƯỢC"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A14",
+   "qno": 14,
+   "star": 3,
+   "text": "Trong dãy 123456789101112..., chữ số thứ 200 là chữ số nào, thuộc số nào?",
+   "answer": "chữ số 0, thuộc số 103",
+   "diagnosesMicro": "DL:KSN5Q1.B8.M3",
+   "hasTrap": false,
+   "trapName": ""
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.A15",
+   "qno": 15,
+   "star": 3,
+   "text": "TRÙM CUỐI: trong dãy 123456789101112..., chữ số thứ 2026 là chữ số nào, thuộc số nào?",
+   "answer": "2026 − 189 = 1837 = 3 × 612 dư 1 → chữ số 7, thuộc số 712",
+   "diagnosesMicro": "DL:KSN5Q1.B8.M3",
+   "hasTrap": false,
+   "trapName": ""
+  }
+ ],
+ "examB": [
+  {
+   "id": "REVITEM:KSN5Q1.C2.B1",
+   "qno": 1,
+   "star": 2,
+   "text": "Từ các thẻ 0; 3; 5; 8, lập số lớn nhất có BA chữ số khác nhau.",
+   "answer": "853"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.B2",
+   "qno": 2,
+   "star": 2,
+   "text": "Từ các thẻ 0; 3; 5; 8, lập số nhỏ nhất có ba chữ số khác nhau.",
+   "answer": "305"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.B3",
+   "qno": 3,
+   "star": 2,
+   "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có hai chữ số khác nhau?",
+   "answer": "3 × 3 = 9 số"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.B4",
+   "qno": 4,
+   "star": 2,
+   "text": "Từ các chữ số 0; 3; 5; 8 (được lặp lại), lập được bao nhiêu số có hai chữ số?",
+   "answer": "3 × 4 = 12 số"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.B5",
+   "qno": 5,
+   "star": 2,
+   "text": "Từ các thẻ 0; 3; 5; 8, lập số lớn nhất có ba chữ số khác nhau chia hết cho 5.",
+   "answer": "đuôi 0: 850; đuôi 5: 835 → 850"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.B6",
+   "qno": 6,
+   "star": 2,
+   "text": "Từ 1 đến 50 có bao nhiêu số chia hết cho 4?",
+   "answer": "(48 − 4) : 4 + 1 = 12 số"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.B7",
+   "qno": 7,
+   "star": 2,
+   "text": "Từ 1 đến 50 có bao nhiêu số chẵn?",
+   "answer": "25 số"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.B8",
+   "qno": 8,
+   "star": 2,
+   "text": "Đánh số trang từ 1 đến 99 cần dùng bao nhiêu chữ số?",
+   "answer": "189 chữ số"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.B9",
+   "qno": 9,
+   "star": 2,
+   "text": "Đánh số trang một cuốn sách dày 120 trang cần dùng bao nhiêu chữ số?",
+   "answer": "9 + 180 + 63 = 252 chữ số"
+  },
+  {
+   "id": "REVITEM:KSN5Q1.C2.B10",
+   "qno": 10,
+   "star": 2,
+   "text": "Trong dãy 123456789101112..., chữ số thứ 15 là chữ số nào, thuộc số nào?",
+   "answer": "15 − 9 = 6; 6 : 2 = 3 dư 0 → chữ số cuối của số 12 → chữ số 2, thuộc số 12"
+  }
+ ],
+ "trapCourt": {
+  "purpose": "6 câu có Cáo Đề gài bẫy — mở phiên tòa: chỉ ra bẫy ở câu nào, gọi tên bẫy, đọc thần chú gỡ",
+  "cases": [
+   {
+    "qno": 2,
+    "trapName": "",
+    "mantra": "\"Số 0 cầm đầu --- đội hình rụng một người.\"",
+    "ref": "REVITEM:KSN5Q1.C2.A2"
+   },
+   {
+    "qno": 4,
+    "trapName": "",
+    "mantra": "\"Đuôi có mấy nhánh --- tính đủ bấy nhiêu rồi mới \n chốt.\"",
+    "ref": "REVITEM:KSN5Q1.C2.A4"
+   },
+   {
+    "qno": 7,
+    "trapName": "",
+    "mantra": "\"Cùng luật mới nhân chung --- khác luật phải tách \n nhánh.\"",
+    "ref": "REVITEM:KSN5Q1.C2.A7"
+   },
+   {
+    "qno": 9,
+    "trapName": "",
+    "mantra": "\"Từ thì giữ hai đầu --- giữa thì đuổi cả đôi.\"",
+    "ref": "REVITEM:KSN5Q1.C2.A9"
+   },
+   {
+    "qno": 10,
+    "trapName": "",
+    "mantra": "\"Ai đứng hai hàng --- chỉ được điểm danh một lần.\"",
+    "ref": "REVITEM:KSN5Q1.C2.A10"
+   },
+   {
+    "qno": 13,
+    "trapName": "",
+    "mantra": "\"Trừ vùng --- chia --- cộng mốc: thiếu nhịp nào cũng \n trật.\"",
+    "ref": "REVITEM:KSN5Q1.C2.A13"
+   }
+  ]
+ },
+ "selfCheck": "BẢNG TỰ SOI phiên bản số: trượt câu nào → nút 'Ôn lại' mở đúng micro trong diagnosesMicro",
+ "homeProject": "SỔ ĐƠN HÀNG — BÀI CỦA RIÊNG CON Tuần này, con hãy mở \"sòng thẻ Cáo Đề\" tại nhà: rút bốn thẻ chữ số bất kỳ (nhớ kéo cả thẻ 0 vào cho gay cấn), tự đặt MỘT đề xếp số có điều kiện chia hết và MỘT đề đếm — trong đó gài đúng một bẫy đã học ở chương này. Thách bố mẹ chơi, rồi con công bố lời giải đủ bốn nhịp Dịch - Giải - Lắp - Soi vào trang này. Bố mẹ sập bẫy thì được quyền ra đề phục thù đấy nhé! QUYỂN 1 · CHƯƠNG 2 · LẬP SỐ & ĐẾM SỐ"
+}
