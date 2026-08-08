@@ -1,642 +1,642 @@
 {
- "title": "S = đáy × cao : 2 và hai bài ngược: NHÂN 2 TRƯỚC — tam giác là nửa chữ nhật",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:IV.2.1#1"
-  ],
-  "bktUnit": "CASE:IV.2.1#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B45",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B44.M3",
-  "next": "DL:KSN5Q1.B45.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B45",
-  "chunks": [
-   "CHUNK:KSN5Q1.B45.S3",
-   "CHUNK:KSN5Q1.B45.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B45.1"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B45.2"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con tính diện tích tam giác S = đáy × cao : 2 (ghim hình ảnh tam giác là NỬA hình chữ nhật cùng đáy cùng cao — nên xuôi phải chia 2) và giải trơn hai bài ngược: đáy = S × 2 : cao; cao = S × 2 : đáy — NHÂN 2 TRƯỚC rồi mới chia (30 : 5 = 6 chỉ ra nửa đáy!); xử lý được bài ngược sâu qua tích đáy × cao = 2S.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (bài ngược nhân 2 trước)",
-  "kidText": "Tam giác là nửa hình chữ nhật nên diện tích bằng đáy nhân cao rồi chia 2. Bài ngược thì NHÂN 2 trước rồi mới chia."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Hình ảnh gốc: tam giác là NỬA hình chữ nhật cùng đáy cùng cao — nên S = đáy × cao : 2: đáy 12, cao 5 → 12 × 5 : 2 = 30 cm² (quên :2 là tam giác béo thành cả chữ nhật!)."
-   },
-   {
-    "id": "K2",
-    "text": "Bài ngược — dựng lại cả chữ nhật trước: NHÂN 2 TRƯỚC: đáy = S × 2 : cao = 30 × 2 : 5 = 12 cm; cao = S × 2 : đáy. Phép 30 : 5 = 6 chia thẳng chỉ ra NỬA đáy — thiếu bước nhân đôi!"
-   },
-   {
-    "id": "K3",
-    "text": "Bài ngược sâu: biết S = 45 và đáy hơn cao 9 → về TÍCH: đáy × cao = 45 × 2 = 90; thử cặp tích 90 có hiệu 9: 15 × 6 ✓ → đáy 15 cm, cao 6 cm — mọi bài ngược đều đi qua cửa nhân-2."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: TAM GIÁC LÀ NỬA TẤM BÁNH CHỮ NHẬT. Tấm bánh chữ nhật đáy 12, cao 5 — cắt chéo một nhát: hai tam giác BẰNG NHAU! Vậy mỗi tam giác ăn NỬA tấm: mười hai nhân năm CHIA HAI — BA MƯƠI xăng-ti-mét vuông. Quên chia hai là tam giác béo thành cả tấm bánh! Bài ngược mới hiểm: biết diện tích ba mươi, cao năm — tìm đáy. Trí Long chia thẳng: ba mươi chia năm bằng sáu! Su Kem lật lại tấm bánh: ba mươi chỉ là NỬA tấm — muốn tìm đáy phải dựng lại CẢ tấm trước: nhân HAI trước! Cả tấm bằng sáu mươi; đáy bằng sáu mươi chia năm — MƯỜI HAI xăng-ti-mét. Sáu chỉ là nửa đáy! Khẩu quyết hai chiều: xuôi CHIA hai — ngược NHÂN hai, và nhân hai TRƯỚC TIÊN. Bài ngược sâu của sư phụ: diện tích bốn lăm, đáy hơn cao chín — về TÍCH: đáy nhân cao bằng chín mươi; lục cặp tích chín mươi có hiệu chín: mười lăm nhân sáu — khớp! Đáy mười lăm, cao sáu.",
-  "canonicalExamples": [
-   {
-    "case": "xuôi (ca nền)",
-    "problem": "Tính diện tích tam giác có đáy 12 cm và đường cao tương ứng 5 cm.",
-    "solution": "S = 12 × 5 : 2 = 30 cm².",
-    "why": "Ca đề A câu 1 — nửa chữ nhật."
-   },
-   {
-    "case": "ngược nhân 2 trước (ca lõi)",
-    "problem": "Một tam giác có diện tích 30 cm², đường cao 5 cm. Tính đáy tương ứng.",
-    "solution": "Đáy = 30 × 2 : 5 = 12 cm — NHÂN 2 TRƯỚC (30 : 5 = 6 chỉ ra nửa đáy!).",
-    "why": "Ca đề A câu 2 — trap chia-thẳng rình đây."
-   },
-   {
-    "case": "ngược sâu qua tích (ca sư phụ)",
-    "problem": "Một tam giác có diện tích 45 cm², đáy dài hơn đường cao tương ứng 9 cm. Tìm đáy và đường cao.",
-    "solution": "Đáy × cao = 45 × 2 = 90; cặp tích 90 hiệu 9: 15 × 6 → đáy 15 cm, cao 6 cm.",
-    "why": "Ca LT8 — cửa nhân-2 mở cả bài sao."
-   }
-  ],
-  "numberRange": "Lớp 5: đáy, cao ≤ 20 cm; S ≤ 100 cm².",
-  "misconceptions": [
-   {
-    "wrong": "Bài ngược chia thẳng S cho cao: đáy = 30 : 5 = 6 (quên dựng lại cả chữ nhật); hoặc xuôi quên :2.",
-    "signal": "Không có bước × 2; đáp bằng nửa đáy thật.",
-    "fix": "K2 — tam giác là nửa chữ nhật: ngược phải NHÂN 2 TRƯỚC (30 × 2 : 5 = 12).",
-    "counterExample": "Đáy 6, cao 5 → S = 6 × 5 : 2 = 15 ≠ 30: thử lại là lộ ngay thiếu một nửa!"
-   }
-  ],
-  "vocabulary": [
-   "nửa tấm bánh chữ nhật",
-   "xuôi chia 2 — ngược nhân 2",
-   "nhân 2 trước tiên",
-   "dựng lại cả tấm",
-   "cặp tích có hiệu"
-  ],
-  "mantra": "TAM GIÁC = NỬA CHỮ NHẬT: XUÔI CHIA 2 — NGƯỢC NHÂN 2 TRƯỚC!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "12 × 5 = ?",
-    "answerKey": {
-     "value": 60
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "ôn nhân chia cơ bản",
-   "message": "Ôn nhân chia rồi cắt bánh nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Bài ngược: tam giác có diện tích 30 cm², cao 5 cm — tìm đáy. Trí Long chia thẳng: \"30 : 5 = 6!\" Su Kem vẽ lại hình: \"Thử xuôi xem: đáy 6 cao 5 thì diện tích 6 × 5 : 2 = 15 — mất một nửa đâu rồi?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "đáy = 30 : 5 = 6??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để lật tấm bánh!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "S = đáy × cao : 2 và hai bài ngược: NHÂN 2 TRƯỚC — tam giác là nửa chữ nhật",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:IV.2.1#1"
     ],
-    "narration": "Tấm bánh chữ nhật đáy mười hai cao năm — cắt chéo MỘT nhát: hai tam giác BẰNG NHAU: mỗi tam giác ăn NỬA tấm: mười hai nhân năm chia hai — BA MƯƠI! Nên bài ngược phải dựng lại CẢ TẤM trước: nhân HAI trước tiên! Cả tấm bằng ba mươi nhân hai — sáu mươi; đáy bằng sáu mươi chia năm: MƯỜI HAI xăng-ti-mét! Phép chia thẳng ba mươi chia năm chỉ ra NỬA đáy — sáu là cái bóng của đáy thật!",
-    "display": {
-     "type": "half_rectangle_interactive",
-     "spec": {
-      "forward": "12 × 5 : 2 = 30",
-      "rebuild": "cả tấm = 30 × 2 = 60",
-      "back": "đáy = 60 : 5 = 12",
-      "wrong": "30 : 5 = 6 = nửa đáy ✗"
-     }
-    },
-    "interaction": {
-     "type": "rebuild_rectangle",
-     "answerKey": {
-      "value": 12
-     },
-     "successMessage": "Dựng cả tấm 60 → đáy 12 — nhân 2 trước!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "Tam giác S = 30, cao 5 → đáy bằng:",
-     "choices": [
-      "12",
-      "6",
-      "3"
-     ],
-     "answerKey": {
-      "choice": "12"
-     },
-     "wrongFeedback": "Nhân 2 trước: 30 × 2 : 5.",
-     "objective": "O1",
-     "teaches": [
-      "K2"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
+    "bktUnit": "CASE:IV.2.1#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B45",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B44.M3",
+    "next": "DL:KSN5Q1.B45.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B45",
+    "chunks": [
+      "CHUNK:KSN5Q1.B45.S3",
+      "CHUNK:KSN5Q1.B45.S4"
     ],
-    "narration": "Bài ngược sâu của sư phụ: diện tích bốn lăm, đáy hơn cao CHÍN — tìm cả hai! Vẫn cửa nhân-hai: đáy nhân cao bằng bốn lăm nhân hai — CHÍN MƯƠI. Giờ lục các cặp tích chín mươi: chín nhân mười — hiệu một; sáu nhân mười lăm — hiệu CHÍN: khớp! Đáy MƯỜI LĂM, cao SÁU. Thử: mười lăm nhân sáu chia hai đúng bốn lăm! Mọi bài ngược tam giác — cạn hay sâu — đều đi qua một cửa: NHÂN HAI TRƯỚC TIÊN.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "tích: đáy × cao = 45 × 2 = 90",
-      "cặp tích 90 hiệu 9: 15 × 6 ✓",
-      "đáy 15 · cao 6 (thử 45 ✓)"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú tấm bánh: tam giác là nửa chữ nhật — xuôi chia hai, ngược nhân hai trước!",
-    "display": {
-     "type": "mantra_card",
-     "text": "NGƯỢC — NHÂN 2 TRƯỚC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 89,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Bài ngược: tam giác có diện tích ba mươi xăng-ti-mét vuông, cao năm xăng-ti-mét — tìm đáy. Trí Long chia thẳng: ba mươi chia năm bằng sáu! Su Kem vẽ lại hình: thử xuôi xem — đáy sáu cao năm thì diện tích chỉ mười lăm: mất một nửa đâu rồi?",
-    "screenText": "đáy = 30 : 5 = 6??",
-    "visual": "Tam giác với dấu hỏi ở đáy; phép thử xuôi ra 15 ≠ 30 gạch đỏ #C0392B; nửa hình mờ biến mất.",
-    "assets": [],
-    "duration": 18
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Tấm bánh chữ nhật đáy mười hai cao năm — cắt chéo MỘT nhát: hai tam giác BẰNG NHAU: mỗi tam giác ăn NỬA tấm: mười hai nhân năm chia hai — BA MƯƠI! Nên bài ngược phải dựng lại CẢ TẤM trước: nhân HAI trước tiên! Cả tấm bằng sáu mươi; đáy bằng sáu mươi chia năm: MƯỜI HAI xăng-ti-mét! Phép chia thẳng chỉ ra NỬA đáy — sáu là cái bóng của đáy thật!",
-    "screenText": "cắt chéo: S = 12 × 5 : 2 = 30 · ngược: ×2 trước → 60 : 5 = 12",
-    "visual": "Tấm bánh chữ nhật cắt chéo thành hai tam giác teal-vàng; mũi tên dựng lại cả tấm 60; đáp 6 mờ như cái bóng gạch đỏ.",
-    "assets": [],
-    "duration": 27
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Bài ngược sâu của sư phụ: diện tích bốn lăm, đáy hơn cao CHÍN — tìm cả hai! Vẫn cửa nhân-hai: đáy nhân cao bằng CHÍN MƯƠI. Lục các cặp tích chín mươi: chín nhân mười — hiệu một; sáu nhân mười lăm — hiệu CHÍN: khớp! Đáy MƯỜI LĂM, cao SÁU. Thử: mười lăm nhân sáu chia hai đúng bốn lăm! Mọi bài ngược tam giác đều đi qua một cửa: NHÂN HAI TRƯỚC TIÊN.",
-    "screenText": "đáy × cao = 90 · cặp hiệu 9: 15 × 6 ✓ → đáy 15 · cao 6",
-    "visual": "Cánh cửa khắc '×2' mở ra bảng các cặp tích 90; cặp 15×6 sáng đèn với thước hiệu 9; mộc thử xanh.",
-    "assets": [],
-    "duration": 27
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú tấm bánh: tam giác là nửa chữ nhật — xuôi chia hai, ngược nhân hai trước!",
-    "screenText": "NGƯỢC — NHÂN 2 TRƯỚC!",
-    "visual": "Thẻ thần chú vàng với icon tấm bánh cắt chéo.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Tấm bánh của con: diện tích ba mươi, cao năm — dựng lại cả tấm rồi tìm đáy, nhớ thử xuôi! Vào bài luyện ngay!",
-    "screenText": "30 ×2 → 60 : 5 → đáy?",
-    "visual": "Tấm bánh chờ dựng; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 9
-   }
-  ]
- },
- "workedExample": {
-  "title": "Dựng lại cả tấm bánh",
-  "problem": "Một tam giác có diện tích 30 cm², đường cao 5 cm. Tính đáy tương ứng.",
-  "steps": [
-   {
-    "show": "Bước 1 — Tam giác = nửa chữ nhật → dựng cả tấm: 30 × 2 = 60 (NHÂN 2 TRƯỚC).",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Vì sao không lấy 30 : 5 luôn?",
-     "choices": [
-      "30 chỉ là nửa tấm — ra nửa đáy",
-      "phép chia khó",
-      "đề cấm"
-     ],
-     "answerKey": {
-      "choice": "30 chỉ là nửa tấm — ra nửa đáy"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Đáy = 60 : 5 = 12 cm."
-   },
-   {
-    "show": "Bước 3 — Thử xuôi: 12 × 5 : 2 = 30 ✓ (đáy 6 chỉ cho 15!).",
-    "askAfter": {
-     "format": "num",
-     "text": "S = 45, đáy hơn cao 9 → đáy × cao = ?",
-     "answerKey": {
-      "value": 90
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B45.LT1",
-     "text": "Tính diện tích tam giác có đáy 12 cm và đường cao tương ứng 5 cm (cm²).",
-     "answerKey": {
-      "value": 30
-     },
-     "hints": [
-      "Nửa chữ nhật.",
-      "12 × 5 : 2."
-     ],
-     "solutionNarrative": "30 cm².",
-     "teaches": [
-      "K1"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B45.LT2",
-     "text": "Một tam giác có diện tích 30 cm², đường cao 5 cm. Tính đáy tương ứng (cm). (Nhân 2 trước!)",
-     "answerKey": {
-      "value": 12
-     },
-     "hints": [
-      "Dựng cả tấm: 30 × 2.",
-      "60 : 5."
-     ],
-     "solutionNarrative": "12 cm (30 : 5 = 6 chỉ là nửa đáy).",
-     "teaches": [
-      "K2"
-     ],
-     "generator": {
-      "template": "S = {S}, cao {h} → đáy?",
-      "constraints": {},
-      "answerRule": "S × 2 : h"
-     }
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B45.LT8",
-     "text": "Một tam giác có diện tích 45 cm², đáy dài hơn đường cao tương ứng 9 cm. Tìm đáy và đường cao.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "đáy",
-        "value": 15
-       },
-       {
-        "label": "cao",
-        "value": 6
-       }
-      ]
-     },
-     "hints": [
-      "Tích = 45 × 2 = 90.",
-      "Cặp tích 90 có hiệu 9."
-     ],
-     "solutionNarrative": "15 × 6 (thử 45 ✓).",
-     "teaches": [
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:IV.2.1#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B45.M2",
-   "award": "huy_hieu_nua_tam_banh"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P2"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B45.QZ2",
-    "text": "(Đúng/Sai?) Tam giác có diện tích 30, cao 5 thì đáy bằng 30 : 5 = 6.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
+    "cases": [
+      "CA:KSN5Q1.B45.1"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B45.2"
     ]
-   },
-   {
-    "id": "A2",
-    "format": "num",
-    "text": "Tính S tam giác đáy 12 cm, cao 5 cm (cm²)",
-    "answerKey": {
-     "value": 30
-    },
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mb",
-    "text": "S = 45, đáy hơn cao 9 → đáy? cao?",
-    "answerKey": {
-     "parts": [
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con tính diện tích tam giác S = đáy × cao : 2 (ghim hình ảnh tam giác là NỬA hình chữ nhật cùng đáy cùng cao — nên xuôi phải chia 2) và giải trơn hai bài ngược: đáy = S × 2 : cao; cao = S × 2 : đáy — NHÂN 2 TRƯỚC rồi mới chia (30 : 5 = 6 chỉ ra nửa đáy!); xử lý được bài ngược sâu qua tích đáy × cao = 2S.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (bài ngược nhân 2 trước)",
+    "kidText": "Tam giác là nửa hình chữ nhật nên diện tích bằng đáy nhân cao rồi chia 2. Bài ngược thì NHÂN 2 trước rồi mới chia."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "đáy",
-       "value": 15
+        "id": "K1",
+        "text": "Hình ảnh gốc: tam giác là NỬA hình chữ nhật cùng đáy cùng cao — nên S = đáy × cao : 2: đáy 12, cao 5 → 12 × 5 : 2 = 30 cm² (quên :2 là tam giác béo thành cả chữ nhật!)."
       },
       {
-       "label": "cao",
-       "value": 6
+        "id": "K2",
+        "text": "Bài ngược — dựng lại cả chữ nhật trước: NHÂN 2 TRƯỚC: đáy = S × 2 : cao = 30 × 2 : 5 = 12 cm; cao = S × 2 : đáy. Phép 30 : 5 = 6 chia thẳng chỉ ra NỬA đáy — thiếu bước nhân đôi!"
+      },
+      {
+        "id": "K3",
+        "text": "Bài ngược sâu: biết S = 45 và đáy hơn cao 9 → về TÍCH: đáy × cao = 45 × 2 = 90; thử cặp tích 90 có hiệu 9: 15 × 6 ✓ → đáy 15 cm, cao 6 cm — mọi bài ngược đều đi qua cửa nhân-2."
       }
-     ]
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "S tam giác — xuôi và ngược chạy sao?",
-    "back": "Tam giác = NỬA chữ nhật: xuôi 12 × 5 : 2 = 30 (quên :2 → béo thành cả tấm). Ngược NHÂN 2 TRƯỚC: đáy = 30 × 2 : 5 = 12 (chia thẳng ra 6 = nửa đáy — thử xuôi chỉ 15!). Ngược sâu: về tích đáy × cao = 2S = 90 → cặp hiệu 9: 15 × 6."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P2",
-   "+7 ngày: câu P3 (cặp tích)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học S tam giác qua hình ảnh nửa-chữ-nhật và bài ngược nhân-2-trước. Con đạt {score}/3, {trapResult} câu bẫy chia-thẳng.",
-  "homeActivity": "Cắt tờ giấy chữ nhật theo đường chéo — con chồng hai nửa lên nhau kiểm chứng 'bằng nhau' rồi đọc công thức.",
-  "watchFor": "Nếu con chia thẳng S cho cao — bắt thử xuôi: đáp ấy cho S bao nhiêu? (S1)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B45.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "đáy = 30 : 5 = 6??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "30 : 5 = 6!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Thử xuôi xem: đáy 6 cao 5 thì diện tích 6 × 5 : 2 = 15 — mất một nửa đâu rồi?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B45_M1_F1.png",
-   "sha256_16": "12bed3d087c8eadc"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con tính diện tích tam giác S = đáy × cao : 2 (ghim hình ảnh tam giác là NỬA hình chữ nhật cùng đáy cùng cao — nên xuôi phải chia 2) và giải trơn hai bài ngược: đáy = S × 2 : cao; cao = S × 2 : đáy — NHÂN 2 TRƯỚC rồi mới chia (30 : 5 = 6 chỉ ra nửa đáy!); xử lý được bài ngược sâu qua tích đáy × cao = 2S.",
-    "steps": [
-     {
-      "text": "tích: đáy × cao = 45 × 2 = 90"
-     },
-     {
-      "text": "cặp tích 90 hiệu 9: 15 × 6"
-     },
-     {
-      "text": "đáy 15 · cao 6 (thử 45 )"
-     }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B45_M1_F2.png",
-   "sha256_16": "2f0141ba72c2f0e5"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Hình ảnh gốc",
-      "text": "Con tính diện tích tam giác S = đáy × cao : 2 (ghim hình ảnh tam giác là NỬA hình chữ nhật cùng đáy cùng cao — nên xuôi phải chia 2) và giải trơn hai bài ngược: đáy = S × 2 : cao; cao = S × 2 : đáy — NHÂN 2 TRƯỚC rồi mới chia (30 : 5 = 6 chỉ ra nửa đáy!); xử lý được bài ngược sâu qua tích đáy × cao = 2S.",
-      "tone": "navy"
-     },
-     {
-      "label": "Bài ngược ",
-      "text": "dựng lại cả chữ nhật trước: NHÂN 2 TRƯỚC: đáy = S × 2 : cao = 30 × 2 : 5 = 12 cm; cao = S × 2 : đáy. Phép 30 : 5 = 6 chia thẳng chỉ ra NỬA đáy — thiếu bước nhân đôi!",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: TAM GIÁC LÀ NỬA TẤM BÁNH CHỮ NHẬT. Tấm bánh chữ nhật đáy 12, cao 5 — cắt chéo một nhát: hai tam giác BẰNG NHAU! Vậy mỗi tam giác ăn NỬA tấm: mười hai nhân năm CHIA HAI — BA MƯƠI xăng-ti-mét vuông. Quên chia hai là tam giác béo thành cả tấm bánh! Bài ngược mới hiểm: biết diện tích ba mươi, cao năm — tìm đáy. Trí Long chia thẳng: ba mươi chia năm bằng sáu! Su Kem lật lại tấm bánh: ba mươi chỉ là NỬA tấm — muốn tìm đáy phải dựng lại CẢ tấm trước: nhân HAI trước! Cả tấm bằng sáu mươi; đáy bằng sáu mươi chia năm — MƯỜI HAI xăng-ti-mét. Sáu chỉ là nửa đáy! Khẩu quyết hai chiều: xuôi CHIA hai — ngược NHÂN hai, và nhân hai TRƯỚC TIÊN. Bài ngược sâu của sư phụ: diện tích bốn lăm, đáy hơn cao chín — về TÍCH: đáy nhân cao bằng chín mươi; lục cặp tích chín mươi có hiệu chín: mười lăm nhân sáu — khớp! Đáy mười lăm, cao sáu.",
+    "canonicalExamples": [
+      {
+        "case": "xuôi (ca nền)",
+        "problem": "Tính diện tích tam giác có đáy 12 cm và đường cao tương ứng 5 cm.",
+        "solution": "S = 12 × 5 : 2 = 30 cm².",
+        "why": "Ca đề A câu 1 — nửa chữ nhật."
+      },
+      {
+        "case": "ngược nhân 2 trước (ca lõi)",
+        "problem": "Một tam giác có diện tích 30 cm², đường cao 5 cm. Tính đáy tương ứng.",
+        "solution": "Đáy = 30 × 2 : 5 = 12 cm — NHÂN 2 TRƯỚC (30 : 5 = 6 chỉ ra nửa đáy!).",
+        "why": "Ca đề A câu 2 — trap chia-thẳng rình đây."
+      },
+      {
+        "case": "ngược sâu qua tích (ca sư phụ)",
+        "problem": "Một tam giác có diện tích 45 cm², đáy dài hơn đường cao tương ứng 9 cm. Tìm đáy và đường cao.",
+        "solution": "Đáy × cao = 45 × 2 = 90; cặp tích 90 hiệu 9: 15 × 6 → đáy 15 cm, cao 6 cm.",
+        "why": "Ca LT8 — cửa nhân-2 mở cả bài sao."
+      }
+    ],
+    "numberRange": "Lớp 5: đáy, cao ≤ 20 cm; S ≤ 100 cm².",
+    "misconceptions": [
+      {
+        "wrong": "Bài ngược chia thẳng S cho cao: đáy = 30 : 5 = 6 (quên dựng lại cả chữ nhật); hoặc xuôi quên :2.",
+        "signal": "Không có bước × 2; đáp bằng nửa đáy thật.",
+        "fix": "K2 — tam giác là nửa chữ nhật: ngược phải NHÂN 2 TRƯỚC (30 × 2 : 5 = 12).",
+        "counterExample": "Đáy 6, cao 5 → S = 6 × 5 : 2 = 15 ≠ 30: thử lại là lộ ngay thiếu một nửa!"
+      }
+    ],
+    "vocabulary": [
+      "nửa tấm bánh chữ nhật",
+      "xuôi chia 2 — ngược nhân 2",
+      "nhân 2 trước tiên",
+      "dựng lại cả tấm",
+      "cặp tích có hiệu"
     ],
     "mantra": "TAM GIÁC = NỬA CHỮ NHẬT: XUÔI CHIA 2 — NGƯỢC NHÂN 2 TRƯỚC!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B45_M1_F3.png",
-   "sha256_16": "53896710d454ae35"
   },
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "TAM GIÁC LÀ NỬA HÌNH CHỮ NHẬT CÙNG ĐÁY CÙNG CAO",
-    "points": {
-     "B": [
-      0,
-      0
-     ],
-     "C": [
-      12,
-      0
-     ],
-     "A": [
-      4,
-      5
-     ],
-     "D": [
-      0,
-      5
-     ],
-     "E": [
-      12,
-      5
-     ],
-     "H": [
-      4,
-      0
-     ]
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "12 × 5 = ?",
+        "answerKey": {
+          "value": 60
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "ôn nhân chia cơ bản",
+      "message": "Ôn nhân chia rồi cắt bánh nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Bài ngược: tam giác có diện tích 30 cm², cao 5 cm — tìm đáy. Trí Long chia thẳng: \"30 : 5 = 6!\" Su Kem vẽ lại hình: \"Thử xuôi xem: đáy 6 cao 5 thì diện tích 6 × 5 : 2 = 15 — mất một nửa đâu rồi?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "đáy = 30 : 5 = 6??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để lật tấm bánh!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Tấm bánh chữ nhật đáy mười hai cao năm — cắt chéo MỘT nhát: hai tam giác BẰNG NHAU: mỗi tam giác ăn NỬA tấm: mười hai nhân năm chia hai — BA MƯƠI! Nên bài ngược phải dựng lại CẢ TẤM trước: nhân HAI trước tiên! Cả tấm bằng ba mươi nhân hai — sáu mươi; đáy bằng sáu mươi chia năm: MƯỜI HAI xăng-ti-mét! Phép chia thẳng ba mươi chia năm chỉ ra NỬA đáy — sáu là cái bóng của đáy thật!",
+        "display": {
+          "type": "half_rectangle_interactive",
+          "spec": {
+            "forward": "12 × 5 : 2 = 30",
+            "rebuild": "cả tấm = 30 × 2 = 60",
+            "back": "đáy = 60 : 5 = 12",
+            "wrong": "30 : 5 = 6 = nửa đáy ✗"
+          }
+        },
+        "interaction": {
+          "type": "rebuild_rectangle",
+          "answerKey": {
+            "value": 12
+          },
+          "successMessage": "Dựng cả tấm 60 → đáy 12 — nhân 2 trước!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "Tam giác S = 30, cao 5 → đáy bằng:",
+          "choices": [
+            "12",
+            "6",
+            "3"
+          ],
+          "answerKey": {
+            "choice": "12"
+          },
+          "wrongFeedback": "Nhân 2 trước: 30 × 2 : 5.",
+          "objective": "O1",
+          "teaches": [
+            "K2"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 42,
+        "teaches": [
+          "K3"
+        ],
+        "narration": "Bài ngược sâu của sư phụ: diện tích bốn lăm, đáy hơn cao CHÍN — tìm cả hai! Vẫn cửa nhân-hai: đáy nhân cao bằng bốn lăm nhân hai — CHÍN MƯƠI. Giờ lục các cặp tích chín mươi: chín nhân mười — hiệu một; sáu nhân mười lăm — hiệu CHÍN: khớp! Đáy MƯỜI LĂM, cao SÁU. Thử: mười lăm nhân sáu chia hai đúng bốn lăm! Mọi bài ngược tam giác — cạn hay sâu — đều đi qua một cửa: NHÂN HAI TRƯỚC TIÊN.",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "tích: đáy × cao = 45 × 2 = 90",
+            "cặp tích 90 hiệu 9: 15 × 6 ✓",
+            "đáy 15 · cao 6 (thử 45 ✓)"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú tấm bánh: tam giác là nửa chữ nhật — xuôi chia hai, ngược nhân hai trước!",
+        "display": {
+          "type": "mantra_card",
+          "text": "NGƯỢC — NHÂN 2 TRƯỚC!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 89,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "shapes": [
-     {
-      "pts": [
-       "B",
-       "C",
-       "E",
-       "D"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Bài ngược: tam giác có diện tích ba mươi xăng-ti-mét vuông, cao năm xăng-ti-mét — tìm đáy. Trí Long chia thẳng: ba mươi chia năm bằng sáu! Su Kem vẽ lại hình: thử xuôi xem — đáy sáu cao năm thì diện tích chỉ mười lăm: mất một nửa đâu rồi?",
+        "screenText": "đáy = 30 : 5 = 6??",
+        "visual": "Tam giác với dấu hỏi ở đáy; phép thử xuôi ra 15 ≠ 30 gạch đỏ #C0392B; nửa hình mờ biến mất.",
+        "assets": [],
+        "duration": 18
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Tấm bánh chữ nhật đáy mười hai cao năm — cắt chéo MỘT nhát: hai tam giác BẰNG NHAU: mỗi tam giác ăn NỬA tấm: mười hai nhân năm chia hai — BA MƯƠI! Nên bài ngược phải dựng lại CẢ TẤM trước: nhân HAI trước tiên! Cả tấm bằng sáu mươi; đáy bằng sáu mươi chia năm: MƯỜI HAI xăng-ti-mét! Phép chia thẳng chỉ ra NỬA đáy — sáu là cái bóng của đáy thật!",
+        "screenText": "cắt chéo: S = 12 × 5 : 2 = 30 · ngược: ×2 trước → 60 : 5 = 12",
+        "visual": "Tấm bánh chữ nhật cắt chéo thành hai tam giác teal-vàng; mũi tên dựng lại cả tấm 60; đáp 6 mờ như cái bóng gạch đỏ.",
+        "assets": [],
+        "duration": 27
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Bài ngược sâu của sư phụ: diện tích bốn lăm, đáy hơn cao CHÍN — tìm cả hai! Vẫn cửa nhân-hai: đáy nhân cao bằng CHÍN MƯƠI. Lục các cặp tích chín mươi: chín nhân mười — hiệu một; sáu nhân mười lăm — hiệu CHÍN: khớp! Đáy MƯỜI LĂM, cao SÁU. Thử: mười lăm nhân sáu chia hai đúng bốn lăm! Mọi bài ngược tam giác đều đi qua một cửa: NHÂN HAI TRƯỚC TIÊN.",
+        "screenText": "đáy × cao = 90 · cặp hiệu 9: 15 × 6 ✓ → đáy 15 · cao 6",
+        "visual": "Cánh cửa khắc '×2' mở ra bảng các cặp tích 90; cặp 15×6 sáng đèn với thước hiệu 9; mộc thử xanh.",
+        "assets": [],
+        "duration": 27
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú tấm bánh: tam giác là nửa chữ nhật — xuôi chia hai, ngược nhân hai trước!",
+        "screenText": "NGƯỢC — NHÂN 2 TRƯỚC!",
+        "visual": "Thẻ thần chú vàng với icon tấm bánh cắt chéo.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Tấm bánh của con: diện tích ba mươi, cao năm — dựng lại cả tấm rồi tìm đáy, nhớ thử xuôi! Vào bài luyện ngay!",
+        "screenText": "30 ×2 → 60 : 5 → đáy?",
+        "visual": "Tấm bánh chờ dựng; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 9
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Dựng lại cả tấm bánh",
+    "problem": "Một tam giác có diện tích 30 cm², đường cao 5 cm. Tính đáy tương ứng.",
+    "steps": [
+      {
+        "show": "Bước 1 — Tam giác = nửa chữ nhật → dựng cả tấm: 30 × 2 = 60 (NHÂN 2 TRƯỚC).",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Vì sao không lấy 30 : 5 luôn?",
+          "choices": [
+            "30 chỉ là nửa tấm — ra nửa đáy",
+            "phép chia khó",
+            "đề cấm"
+          ],
+          "answerKey": {
+            "choice": "30 chỉ là nửa tấm — ra nửa đáy"
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — Đáy = 60 : 5 = 12 cm."
+      },
+      {
+        "show": "Bước 3 — Thử xuôi: 12 × 5 : 2 = 30 ✓ (đáy 6 chỉ cho 15!).",
+        "askAfter": {
+          "format": "num",
+          "text": "S = 45, đáy hơn cao 9 → đáy × cao = ?",
+          "answerKey": {
+            "value": 90
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B45.LT1",
+          "text": "Tính diện tích tam giác có đáy 12 cm và đường cao tương ứng 5 cm (cm²).",
+          "answerKey": {
+            "value": 30
+          },
+          "hints": [
+            "Nửa chữ nhật.",
+            "12 × 5 : 2."
+          ],
+          "solutionNarrative": "30 cm².",
+          "teaches": [
+            "K1"
+          ]
+        }
       ],
-      "fill": "none"
-     },
-     {
-      "pts": [
-       "B",
-       "C",
-       "A"
+      "standard": [
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B45.LT2",
+          "text": "Một tam giác có diện tích 30 cm², đường cao 5 cm. Tính đáy tương ứng (cm). (Nhân 2 trước!)",
+          "answerKey": {
+            "value": 12
+          },
+          "hints": [
+            "Dựng cả tấm: 30 × 2.",
+            "60 : 5."
+          ],
+          "solutionNarrative": "12 cm (30 : 5 = 6 chỉ là nửa đáy).",
+          "teaches": [
+            "K2"
+          ],
+          "generator": {
+            "template": "S = {S}, cao {h} → đáy?",
+            "constraints": {},
+            "answerRule": "S × 2 : h"
+          }
+        }
       ],
-      "fill": "teal",
-      "label": "S = 30 cm²"
-     }
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B45.LT8",
+          "text": "Một tam giác có diện tích 45 cm², đáy dài hơn đường cao tương ứng 9 cm. Tìm đáy và đường cao.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "đáy",
+                "value": 15
+              },
+              {
+                "label": "cao",
+                "value": 6
+              }
+            ]
+          },
+          "hints": [
+            "Tích = 45 × 2 = 90.",
+            "Cặp tích 90 có hiệu 9."
+          ],
+          "solutionNarrative": "15 × 6 (thử 45 ✓).",
+          "teaches": [
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:IV.2.1#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B45.M2",
+      "award": "huy_hieu_nua_tam_banh"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P2"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B45.QZ2",
+        "text": "(Đúng/Sai?) Tam giác có diện tích 30, cao 5 thì đáy bằng 30 : 5 = 6.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "num",
+        "text": "Tính S tam giác đáy 12 cm, cao 5 cm (cm²)",
+        "answerKey": {
+          "value": 30
+        },
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mb",
+        "text": "Một tam giác có diện tích 45 cm², đáy dài hơn chiều cao 9 cm. Tính đáy và chiều cao.",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "đáy",
+              "value": 15
+            },
+            {
+              "label": "chiều cao",
+              "value": 6
+            }
+          ]
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "S tam giác — xuôi và ngược chạy sao?",
+        "back": "Tam giác = NỬA chữ nhật: xuôi 12 × 5 : 2 = 30 (quên :2 → béo thành cả tấm). Ngược NHÂN 2 TRƯỚC: đáy = 30 × 2 : 5 = 12 (chia thẳng ra 6 = nửa đáy — thử xuôi chỉ 15!). Ngược sâu: về tích đáy × cao = 2S = 90 → cặp hiệu 9: 15 × 6."
+      }
     ],
-    "segments": [
-     {
-      "from": "A",
-      "to": "H",
-      "dashed": true,
-      "label": "cao 5",
-      "dx": 6
-     }
-    ],
-    "edge_labels": [
-     {
-      "from": "B",
-      "to": "C",
-      "text": "đáy 12",
-      "dy": -5
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C"
-    ],
-    "formula": "S = đáy × cao : 2 = 12 × 5 : 2 = 30 cm²",
-    "note": "Bài ngược phải NHÂN 2 TRƯỚC: đáy = 30 × 2 : 5 = 12 (lấy 30 : 5 = 6 chỉ ra nửa đáy)"
-   },
-   "caption": "Nhìn tam giác nằm trong hình chữ nhật là hiểu ngay vì sao có dấu chia 2",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B45_M1_F4.png",
-   "sha256_16": "0086f07f99362e65"
-  }
- ]
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P2",
+      "+7 ngày: câu P3 (cặp tích)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học S tam giác qua hình ảnh nửa-chữ-nhật và bài ngược nhân-2-trước. Con đạt {score}/3, {trapResult} câu bẫy chia-thẳng.",
+    "homeActivity": "Cắt tờ giấy chữ nhật theo đường chéo — con chồng hai nửa lên nhau kiểm chứng 'bằng nhau' rồi đọc công thức.",
+    "watchFor": "Nếu con chia thẳng S cho cao — bắt thử xuôi: đáp ấy cho S bao nhiêu? (S1)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B45.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "đáy = 30 : 5 = 6??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "30 : 5 = 6!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Thử xuôi xem: đáy 6 cao 5 thì diện tích 6 × 5 : 2 = 15 — mất một nửa đâu rồi?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B45_M1_F1.png",
+      "sha256_16": "12bed3d087c8eadc"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con tính diện tích tam giác S = đáy × cao : 2 (ghim hình ảnh tam giác là NỬA hình chữ nhật cùng đáy cùng cao — nên xuôi phải chia 2) và giải trơn hai bài ngược: đáy = S × 2 : cao; cao = S × 2 : đáy — NHÂN 2 TRƯỚC rồi mới chia (30 : 5 = 6 chỉ ra nửa đáy!); xử lý được bài ngược sâu qua tích đáy × cao = 2S.",
+        "steps": [
+          {
+            "text": "tích: đáy × cao = 45 × 2 = 90"
+          },
+          {
+            "text": "cặp tích 90 hiệu 9: 15 × 6"
+          },
+          {
+            "text": "đáy 15 · cao 6 (thử 45 )"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B45_M1_F2.png",
+      "sha256_16": "2f0141ba72c2f0e5"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Hình ảnh gốc",
+            "text": "Con tính diện tích tam giác S = đáy × cao : 2 (ghim hình ảnh tam giác là NỬA hình chữ nhật cùng đáy cùng cao — nên xuôi phải chia 2) và giải trơn hai bài ngược: đáy = S × 2 : cao; cao = S × 2 : đáy — NHÂN 2 TRƯỚC rồi mới chia (30 : 5 = 6 chỉ ra nửa đáy!); xử lý được bài ngược sâu qua tích đáy × cao = 2S.",
+            "tone": "navy"
+          },
+          {
+            "label": "Bài ngược ",
+            "text": "dựng lại cả chữ nhật trước: NHÂN 2 TRƯỚC: đáy = S × 2 : cao = 30 × 2 : 5 = 12 cm; cao = S × 2 : đáy. Phép 30 : 5 = 6 chia thẳng chỉ ra NỬA đáy — thiếu bước nhân đôi!",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "TAM GIÁC = NỬA CHỮ NHẬT: XUÔI CHIA 2 — NGƯỢC NHÂN 2 TRƯỚC!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B45_M1_F3.png",
+      "sha256_16": "53896710d454ae35"
+    },
+    {
+      "archetype": "geo_shape",
+      "params": {
+        "title": "TAM GIÁC LÀ NỬA HÌNH CHỮ NHẬT CÙNG ĐÁY CÙNG CAO",
+        "points": {
+          "B": [
+            0,
+            0
+          ],
+          "C": [
+            12,
+            0
+          ],
+          "A": [
+            4,
+            5
+          ],
+          "D": [
+            0,
+            5
+          ],
+          "E": [
+            12,
+            5
+          ],
+          "H": [
+            4,
+            0
+          ]
+        },
+        "shapes": [
+          {
+            "pts": [
+              "B",
+              "C",
+              "E",
+              "D"
+            ],
+            "fill": "none"
+          },
+          {
+            "pts": [
+              "B",
+              "C",
+              "A"
+            ],
+            "fill": "teal",
+            "label": "S = 30 cm²"
+          }
+        ],
+        "segments": [
+          {
+            "from": "A",
+            "to": "H",
+            "dashed": true,
+            "label": "cao 5",
+            "dx": 6
+          }
+        ],
+        "edge_labels": [
+          {
+            "from": "B",
+            "to": "C",
+            "text": "đáy 12",
+            "dy": -5
+          }
+        ],
+        "show_points": [
+          "A",
+          "B",
+          "C"
+        ],
+        "formula": "S = đáy × cao : 2 = 12 × 5 : 2 = 30 cm²",
+        "note": "Bài ngược phải NHÂN 2 TRƯỚC: đáy = 30 × 2 : 5 = 12 (lấy 30 : 5 = 6 chỉ ra nửa đáy)"
+      },
+      "caption": "Nhìn tam giác nằm trong hình chữ nhật là hiểu ngay vì sao có dấu chia 2",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B45_M1_F4.png",
+      "sha256_16": "0086f07f99362e65"
+    }
+  ]
 }

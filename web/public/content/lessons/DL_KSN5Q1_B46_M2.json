@@ -1,653 +1,653 @@
 {
- "title": "Điểm chia m : n & hai mẫu so sánh: so CẢ tam giác (m/(m+n)) ≠ so PHẦN KIA (m : n)",
- "grade": 5,
- "durationMinutes": 8,
- "skills": {
-  "primary": [
-   "CASE:IV.2.2#2"
-  ],
-  "bktUnit": "CASE:IV.2.2#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B46",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B46.M1",
-  "next": "DL:KSN5Q1.B46.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B46",
-  "chunks": [
-   "CHUNK:KSN5Q1.B46.S4",
-   "CHUNK:KSN5Q1.B46.S5"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B46.3"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B46.1"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con dùng điểm chia cạnh: BM : MC = m : n → S(ABM) : S(AMC) = m : n (chung cao từ A) và tách bạch HAI MẪU SO SÁNH quanh cây cọc 1/3: so với CẢ tam giác → S(ABM) = 1/3 S(ABC) (vì BC là 3 phần); so với PHẦN KIA → S(ABM) : S(AMC) = 1 : 2 (vì MC chỉ 2 phần) — hỏi \"so với ai\" trước khi viết tỉ.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (1/3 cả tam giác nhưng 1 : 2 phần kia)",
-  "kidText": "Điểm M chia cạnh BC theo 1 : 2. Con hỏi trước: so với CẢ tam giác hay so với PHẦN KIA? Hai câu cho hai đáp khác nhau."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Điểm chia = chia S: M trên BC với BM : MC = m : n → S(ABM) : S(AMC) = m : n (chung cao từ A xuống BC): BM : MC = 2 : 3, S = 40 → S(ABM) = 16; S(AMC) = 24 (thử 16 + 24 = 40 ✓)."
-   },
-   {
-    "id": "K2",
-    "text": "Cây cọc 1/3 gây ảo giác — tách HAI MẪU: BM = 1/3 BC: (a) so CẢ tam giác: S(ABM) = 1/3 × 36 = 12 (BC là 3 phần, BM chiếm 1); (b) so PHẦN KIA: S(ABM) : S(AMC) = 1 : 2 — vì MC cầm 2 phần còn lại, KHÔNG phải 1 : 3!"
-   },
-   {
-    "id": "K3",
-    "text": "Nghi thức mở bài: hỏi \"SO VỚI AI?\" trước khi viết tỉ — cả tam giác thì mẫu là m + n; phần kia thì mẫu là n; hai câu na ná, hai đáp khác nhau."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: CÂY CỌC TRÊN BỜ ĐÊ VÀ HAI CÂU HỎI. Đóng cây cọc M trên bờ đê BC sao cho BM bằng MỘT PHẦN BA bờ đê. Nối A với M — tam giác xẻ đôi. Trí Long thấy 1/3 là dán luôn: \"S(ABM) bằng 1/3 S(AMC)!\" Khoan — 1/3 đang SO VỚI AI? Bờ đê BC có BA phần: BM cầm MỘT — MC cầm HAI! So với CẢ tam giác: chung cao từ A, tỉ S bằng tỉ đáy — S(ABM) bằng một phần ba của ba sáu: MƯỜI HAI. Nhưng so với PHẦN KIA — anh bạn AMC cầm HAI phần: tỉ là MỘT CHIA HAI, không phải một chia ba! Cây cọc một — hai câu hỏi: hỏi \"so với ai\" trước khi đặt bút! Ca tổng quát chạy êm: BM chia MC bằng hai phần ba, tổng bốn mươi — chia theo 2 : 3: mười sáu và hai mươi tư, thử cộng tròn bốn mươi!",
-  "canonicalExamples": [
-   {
-    "case": "cây cọc 1/3 — hai mẫu (ca lõi)",
-    "problem": "Tam giác ABC có S = 36 cm²; M trên BC với BM = 1/3 BC. Tính S(ABM) — và cho biết S(ABM) : S(AMC) bằng bao nhiêu.",
-    "solution": "So cả tam giác: S(ABM) = 1/3 × 36 = 12 cm². So phần kia: S(ABM) : S(AMC) = 1 : 2 (MC cầm 2 phần) — không phải 1 : 3!",
-    "why": "Ca đề A câu 6 — trap dán-1/3-mọi-nơi rình đây."
-   },
-   {
-    "case": "điểm chia m : n (ca tổng quát)",
-    "problem": "Tam giác ABC có S = 40 cm²; M trên BC với BM : MC = 2 : 3. Tính S(ABM) và S(AMC).",
-    "solution": "Chung cao từ A → chia 40 theo 2 : 3: S(ABM) = 16 cm²; S(AMC) = 24 cm². Thử: 16 + 24 = 40 ✓.",
-    "why": "Ca LT6 — chia S đúng tỉ cọc."
-   }
-  ],
-  "numberRange": "Lớp 5: S ≤ 60; tỉ m : n đơn giản.",
-  "misconceptions": [
-   {
-    "wrong": "Thấy 1/3 là dán cho MỌI câu so sánh: S(ABM) = 1/3 S(AMC).",
-    "signal": "Cùng con số 1/3 xuất hiện ở cả câu so-cả-hình lẫn so-phần-kia.",
-    "fix": "K2 + K3 — hỏi \"so với ai\": cả tam giác → 1/3 (mẫu 3 phần); phần kia → 1 : 2 (MC cầm 2 phần).",
-    "counterExample": "Nếu S(ABM) = 1/3 S(AMC) thì tổng = 12 + 36 = 48 ≠ 36 — tam giác tự phình 12 cm²?!"
-   }
-  ],
-  "vocabulary": [
-   "cây cọc trên bờ đê",
-   "so với ai?",
-   "mẫu m + n — mẫu n",
-   "chia S theo tỉ cọc",
-   "thử cộng tròn tổng"
-  ],
-  "mantra": "HỎI \"SO VỚI AI\" TRƯỚC — CẢ TAM GIÁC HAY PHẦN KIA!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "mcq",
-    "text": "Ôn M1: M trên BC — ABM và AMC chung gì?",
-    "choices": [
-     "cao hạ từ A xuống BC",
-     "đáy",
-     "không chung gì"
+  "title": "Điểm chia m : n & hai mẫu so sánh: so CẢ tam giác (m/(m+n)) ≠ so PHẦN KIA (m : n)",
+  "grade": 5,
+  "durationMinutes": 8,
+  "skills": {
+    "primary": [
+      "CASE:IV.2.2#2"
     ],
-    "answerKey": {
-     "choice": "cao hạ từ A xuống BC"
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B46.M1",
-   "message": "Ôn định lý chung cao rồi ra bờ đê nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Cây cọc M đóng trên bờ đê BC: BM = 1/3 BC, tam giác S = 36. Trí Long dán vèo: \"S(ABM) = 1/3 S(AMC)!\" Su Kem chỉ bờ đê: \"1/3 ấy đang so với AI — cả bờ đê, hay khúc bên kia cây cọc?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "1/3 của AI??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đếm phần bờ đê!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
+    "bktUnit": "CASE:IV.2.2#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B46",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B46.M1",
+    "next": "DL:KSN5Q1.B46.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B46",
+    "chunks": [
+      "CHUNK:KSN5Q1.B46.S4",
+      "CHUNK:KSN5Q1.B46.S5"
     ],
-    "narration": "Đếm bờ đê: BC có BA phần — BM cầm MỘT, MC cầm HAI! Câu một — so CẢ tam giác: chung cao từ A, tỉ S bằng tỉ đáy: S(ABM) bằng một phần ba của ba sáu — MƯỜI HAI! Câu hai — so PHẦN KIA: anh bạn AMC cầm HAI phần: tỉ là MỘT CHIA HAI — không phải một chia ba! Thử ngược đáp sai: nếu ABM bằng một phần ba AMC thì tổng thành bốn tám — tam giác tự phình mười hai xăng-ti-mét vuông?!",
-    "display": {
-     "type": "stake_two_questions_interactive",
-     "spec": {
-      "parts": "BC = 3 phần: BM 1 — MC 2",
-      "q1": "so cả: 1/3 × 36 = 12",
-      "q2": "so phần kia: 1 : 2",
-      "wrong": "1 : 3 → tổng 48 ✗"
-     }
-    },
-    "interaction": {
-     "type": "answer_two_questions",
-     "answerKey": {
-      "values": [
-       12,
-       "1:2"
-      ]
-     },
-     "successMessage": "12 và 1:2 — hai câu hai đáp!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "tf",
-     "text": "(Đúng/Sai?) BM = 1/3 BC thì S(ABM) : S(AMC) = 1 : 3.",
-     "answerKey": {
-      "value": false
-     },
-     "wrongFeedback": "MC cầm 2 phần → 1 : 2.",
-     "objective": "O1",
-     "teaches": [
-      "K2"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K3"
+    "cases": [
+      "CA:KSN5Q1.B46.3"
     ],
-    "narration": "Ca tổng quát chạy êm: BM chia MC bằng HAI phần BA, diện tích tổng bốn mươi. Căn cứ một dòng: chung cao hạ từ A xuống BC — tỉ S bằng tỉ đáy: chia bốn mươi theo hai-ba! Tổng năm phần — một phần bằng tám: S(ABM) mười sáu, S(AMC) hai mươi tư — thử cộng: tròn bốn mươi! Nghi thức mở bài từ nay: hỏi \"SO VỚI AI\" trước khi viết tỉ — cả tam giác thì mẫu là m cộng n; phần kia thì mẫu chỉ là n!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "BM:MC = 2:3 → chia 40: 16 và 24 (thử 40 ✓)",
-      "so cả: mẫu m + n · so phần kia: mẫu n",
-      "nghi thức: hỏi SO VỚI AI trước"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú cây cọc: hỏi so-với-ai trước — cả tam giác hay phần kia!",
-    "display": {
-     "type": "mantra_card",
-     "text": "SO VỚI AI TRƯỚC ĐÃ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 87,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Cây cọc M đóng trên bờ đê BC: BM bằng một phần ba BC, tam giác ba mươi sáu xăng-ti-mét vuông. Trí Long dán vèo: S ABM bằng một phần ba S AMC! Su Kem chỉ bờ đê: một phần ba ấy đang so với AI — cả bờ đê, hay khúc bên kia cây cọc?",
-    "screenText": "1/3 của AI??",
-    "visual": "Bờ đê BC với cây cọc M chia hai khúc lệch; nhãn 1/3 lơ lửng chưa biết dán vào đâu; dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Đếm bờ đê: BC có BA phần — BM cầm MỘT, MC cầm HAI! Câu một — so CẢ tam giác: chung cao từ A, tỉ S bằng tỉ đáy: S ABM bằng một phần ba của ba sáu — MƯỜI HAI! Câu hai — so PHẦN KIA: anh bạn AMC cầm HAI phần: tỉ là MỘT CHIA HAI — không phải một chia ba!",
-    "screenText": "BC = 3 phần: BM 1 · MC 2 → so cả: 12 · so phần kia: 1 : 2 (1:3 ✗)",
-    "visual": "Bờ đê chia 3 khấc; hai bảng câu hỏi song song với hai đáp 12 và 1:2; đáp 1:3 phình tổng 48 gạch đỏ.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Ca tổng quát chạy êm: BM chia MC bằng HAI phần BA, diện tích tổng bốn mươi. Căn cứ một dòng: chung cao hạ từ A xuống BC — tỉ S bằng tỉ đáy: chia bốn mươi theo hai-ba! Tổng năm phần — một phần bằng tám: S ABM mười sáu, S AMC hai mươi tư — thử cộng: tròn bốn mươi! Nghi thức: hỏi SO VỚI AI trước khi viết tỉ!",
-    "screenText": "2:3 → 40 = 16 + 24 ✓ · so cả: /(m+n) · so phần kia: /n",
-    "visual": "Tam giác chia hai mảnh 16-24 với dòng căn cứ vàng bên cạnh; hai công thức mẫu số đóng khung đối chiếu.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú cây cọc: hỏi so-với-ai trước — cả tam giác hay phần kia!",
-    "screenText": "SO VỚI AI TRƯỚC ĐÃ!",
-    "visual": "Thẻ thần chú vàng với icon cây cọc bờ đê.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Cây cọc của con: BM bằng một phần ba BC, tam giác ba sáu — trả lời cả hai câu so-cả và so-phần-kia! Vào bài luyện ngay!",
-    "screenText": "so cả: ? · so phần kia: ?",
-    "visual": "Bờ đê chờ đóng cọc; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Một cây cọc hai câu hỏi",
-  "problem": "Tam giác ABC có S = 36 cm²; M trên BC với BM = 1/3 BC. Tính S(ABM) — và tìm tỉ số S(ABM) : S(AMC).",
-  "steps": [
-   {
-    "show": "Bước 1 — Đếm phần: BC = 3 phần; BM cầm 1, MC cầm 2.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Trước khi viết tỉ phải hỏi:",
-     "choices": [
-      "so với ai — cả tam giác hay phần kia",
-      "đáy dài bao nhiêu",
-      "cao dài bao nhiêu"
-     ],
-     "answerKey": {
-      "choice": "so với ai — cả tam giác hay phần kia"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — So cả tam giác: S(ABM) = 1/3 × 36 = 12 cm² (căn cứ: chung cao từ A xuống BC)."
-   },
-   {
-    "show": "Bước 3 — So phần kia: S(ABM) : S(AMC) = 1 : 2 (thử: 12 + 24 = 36 ✓; tỉ 1:3 phình tổng 48!).",
-    "askAfter": {
-     "format": "mb",
-     "text": "BM : MC = 2 : 3, S = 40 → S(ABM)? S(AMC)?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "ABM",
-        "value": 16
-       },
-       {
-        "label": "AMC",
-        "value": 24
-       }
-      ]
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B46.LT3",
-     "text": "Tam giác ABC có S = 36 cm²; M trên BC với BM = 1/3 BC. Tính S(ABM) — và cho biết S(ABM) so với S(AMC) bằng tỉ số nào.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "S(ABM)",
-        "value": 12
-       },
-       {
-        "label": "tỉ với AMC",
-        "value": "1 : 2"
-       }
-      ]
-     },
-     "hints": [
-      "BC = 3 phần: BM 1 — MC 2.",
-      "So cả: /3; so phần kia: /2."
-     ],
-     "solutionNarrative": "12 cm² và 1 : 2 (không phải 1 : 3).",
-     "teaches": [
-      "K2"
-     ],
-     "generator": {
-      "template": "BM = 1/{n} BC, S = {S} → S(ABM)? tỉ với AMC?",
-      "constraints": {},
-      "answerRule": "S/n; 1 : (n−1)"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B46.LT6",
-     "text": "Tam giác ABC có S = 40 cm²; M trên BC với BM : MC = 2 : 3. Tính S(ABM) và S(AMC).",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "S(ABM)",
-        "value": 16
-       },
-       {
-        "label": "S(AMC)",
-        "value": 24
-       }
-      ]
-     },
-     "hints": [
-      "Chung cao từ A → chia theo 2 : 3.",
-      "5 phần = 40."
-     ],
-     "solutionNarrative": "16 và 24 (thử 40 ✓).",
-     "teaches": [
-      "K1"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "tf",
-     "text": "(Đúng/Sai?) BM = 1/4 BC thì S(ABM) : S(AMC) = 1 : 4.",
-     "answerKey": {
-      "value": false,
-      "note": "MC cầm 3 phần còn lại → tỉ 1 : 3; đáp 1 : 4 là dán nhầm mẫu so-cả sang câu so-phần-kia."
-     },
-     "hints": [
-      "MC cầm mấy phần?",
-      "Hỏi so với ai."
-     ],
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:IV.2.2#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B46.M3",
-   "award": "huy_hieu_cay_coc_bo_de"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B46.QZ2",
-    "text": "(Đúng/Sai?) BM = 1/3 BC thì S(ABM) : S(AMC) = 1 : 3.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
+    "traps": [
+      "TRAP:KSN5Q1.B46.1"
     ]
-   },
-   {
-    "id": "A2",
-    "format": "mb",
-    "text": "BM = 1/3 BC, S = 36 → S(ABM)?",
-    "answerKey": {
-     "parts": [
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con dùng điểm chia cạnh: BM : MC = m : n → S(ABM) : S(AMC) = m : n (chung cao từ A) và tách bạch HAI MẪU SO SÁNH quanh cây cọc 1/3: so với CẢ tam giác → S(ABM) = 1/3 S(ABC) (vì BC là 3 phần); so với PHẦN KIA → S(ABM) : S(AMC) = 1 : 2 (vì MC chỉ 2 phần) — hỏi \"so với ai\" trước khi viết tỉ.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (1/3 cả tam giác nhưng 1 : 2 phần kia)",
+    "kidText": "Điểm M chia cạnh BC theo 1 : 2. Con hỏi trước: so với CẢ tam giác hay so với PHẦN KIA? Hai câu cho hai đáp khác nhau."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "S(ABM)",
-       "value": 12
-      }
-     ]
-    },
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mb",
-    "text": "BM : MC = 2 : 3, S = 40 → hai mảnh?",
-    "answerKey": {
-     "parts": [
-      {
-       "label": "ABM",
-       "value": 16
+        "id": "K1",
+        "text": "Điểm chia = chia S: M trên BC với BM : MC = m : n → S(ABM) : S(AMC) = m : n (chung cao từ A xuống BC): BM : MC = 2 : 3, S = 40 → S(ABM) = 16; S(AMC) = 24 (thử 16 + 24 = 40 ✓)."
       },
       {
-       "label": "AMC",
-       "value": 24
+        "id": "K2",
+        "text": "Cây cọc 1/3 gây ảo giác — tách HAI MẪU: BM = 1/3 BC: (a) so CẢ tam giác: S(ABM) = 1/3 × 36 = 12 (BC là 3 phần, BM chiếm 1); (b) so PHẦN KIA: S(ABM) : S(AMC) = 1 : 2 — vì MC cầm 2 phần còn lại, KHÔNG phải 1 : 3!"
+      },
+      {
+        "id": "K3",
+        "text": "Nghi thức mở bài: hỏi \"SO VỚI AI?\" trước khi viết tỉ — cả tam giác thì mẫu là m + n; phần kia thì mẫu là n; hai câu na ná, hai đáp khác nhau."
       }
-     ]
-    },
-    "teaches": [
-     "K1"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "BM = 1/3 BC — S(ABM) so thế nào?",
-    "back": "Hỏi SO VỚI AI: so CẢ tam giác → 1/3 (mẫu 3 phần: 12/36); so PHẦN KIA → 1 : 2 (MC cầm 2 phần — 1:3 phình tổng 48!). Tổng quát: BM:MC = m:n → chia S theo m:n (40 → 16 + 24, thử cộng tròn). Căn cứ: chung cao từ A xuống BC."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P3 (1/4)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học điểm chia cạnh và hai mẫu so sánh quanh cây cọc 1/3. Con đạt {score}/3, {trapResult} câu bẫy so-nhầm.",
-  "homeActivity": "Bẻ que dài thành 1/3 - 2/3: hỏi con 'khúc ngắn bằng mấy phần cả que? bằng mấy phần khúc dài?' — hai câu hai đáp.",
-  "watchFor": "Nếu con dán 1/3 mọi nơi — hỏi 'so với ai?' rồi thử cộng tổng (S2)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B46.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "1/3 của AI??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "S(ABM) = 1/3 S(AMC)!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "1/3 ấy đang so với AI — cả bờ đê, hay khúc bên kia cây cọc?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B46_M2_F1.png",
-   "sha256_16": "f2d3a85ded683ccd"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con dùng điểm chia cạnh: BM : MC = m : n → S(ABM) : S(AMC) = m : n (chung cao từ A) và tách bạch HAI MẪU SO SÁNH quanh cây cọc 1/3: so với CẢ tam giác → S(ABM) = 1/3 S(ABC) (vì BC là 3 phần); so với PHẦN KIA → S(ABM) : S(AMC) = 1 : 2 (vì MC chỉ 2 phần) — hỏi \"so với ai\" trước khi viết tỉ.",
-    "steps": [
-     {
-      "text": "BM:MC = 2:3 → chia 40: 16 và 24 (thử 40 )"
-     },
-     {
-      "text": "so cả: mẫu m + n · so phần kia: mẫu n"
-     },
-     {
-      "text": "nghi thức: hỏi SO VỚI AI trước"
-     }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B46_M2_F2.png",
-   "sha256_16": "3c08ace24ed67ae5"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Điểm chia = chia S",
-      "text": "M trên BC với BM : MC = m : n → S(ABM) : S(AMC) = m : n (chung cao từ A xuống BC): BM : MC = 2 : 3, S = 40 → S(ABM) = 16; S(AMC) = 24 (thử 16 + 24 = 40 ✓).",
-      "tone": "navy"
-     },
-     {
-      "label": "Cây cọc 1/3 gây ảo giác",
-      "text": "tách HAI MẪU: BM = 1/3 BC: (a) so CẢ tam giác: S(ABM) = 1/3 × 36 = 12 (BC là 3 phần, BM chiếm 1); (b) so PHẦN KIA: S(ABM) : S(AMC) = 1 : 2 — vì MC cầm 2 phần còn lại, KHÔNG phải 1 : 3!",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: CÂY CỌC TRÊN BỜ ĐÊ VÀ HAI CÂU HỎI. Đóng cây cọc M trên bờ đê BC sao cho BM bằng MỘT PHẦN BA bờ đê. Nối A với M — tam giác xẻ đôi. Trí Long thấy 1/3 là dán luôn: \"S(ABM) bằng 1/3 S(AMC)!\" Khoan — 1/3 đang SO VỚI AI? Bờ đê BC có BA phần: BM cầm MỘT — MC cầm HAI! So với CẢ tam giác: chung cao từ A, tỉ S bằng tỉ đáy — S(ABM) bằng một phần ba của ba sáu: MƯỜI HAI. Nhưng so với PHẦN KIA — anh bạn AMC cầm HAI phần: tỉ là MỘT CHIA HAI, không phải một chia ba! Cây cọc một — hai câu hỏi: hỏi \"so với ai\" trước khi đặt bút! Ca tổng quát chạy êm: BM chia MC bằng hai phần ba, tổng bốn mươi — chia theo 2 : 3: mười sáu và hai mươi tư, thử cộng tròn bốn mươi!",
+    "canonicalExamples": [
+      {
+        "case": "cây cọc 1/3 — hai mẫu (ca lõi)",
+        "problem": "Tam giác ABC có S = 36 cm²; M trên BC với BM = 1/3 BC. Tính S(ABM) — và cho biết S(ABM) : S(AMC) bằng bao nhiêu.",
+        "solution": "So cả tam giác: S(ABM) = 1/3 × 36 = 12 cm². So phần kia: S(ABM) : S(AMC) = 1 : 2 (MC cầm 2 phần) — không phải 1 : 3!",
+        "why": "Ca đề A câu 6 — trap dán-1/3-mọi-nơi rình đây."
+      },
+      {
+        "case": "điểm chia m : n (ca tổng quát)",
+        "problem": "Tam giác ABC có S = 40 cm²; M trên BC với BM : MC = 2 : 3. Tính S(ABM) và S(AMC).",
+        "solution": "Chung cao từ A → chia 40 theo 2 : 3: S(ABM) = 16 cm²; S(AMC) = 24 cm². Thử: 16 + 24 = 40 ✓.",
+        "why": "Ca LT6 — chia S đúng tỉ cọc."
+      }
+    ],
+    "numberRange": "Lớp 5: S ≤ 60; tỉ m : n đơn giản.",
+    "misconceptions": [
+      {
+        "wrong": "Thấy 1/3 là dán cho MỌI câu so sánh: S(ABM) = 1/3 S(AMC).",
+        "signal": "Cùng con số 1/3 xuất hiện ở cả câu so-cả-hình lẫn so-phần-kia.",
+        "fix": "K2 + K3 — hỏi \"so với ai\": cả tam giác → 1/3 (mẫu 3 phần); phần kia → 1 : 2 (MC cầm 2 phần).",
+        "counterExample": "Nếu S(ABM) = 1/3 S(AMC) thì tổng = 12 + 36 = 48 ≠ 36 — tam giác tự phình 12 cm²?!"
+      }
+    ],
+    "vocabulary": [
+      "cây cọc trên bờ đê",
+      "so với ai?",
+      "mẫu m + n — mẫu n",
+      "chia S theo tỉ cọc",
+      "thử cộng tròn tổng"
     ],
     "mantra": "HỎI \"SO VỚI AI\" TRƯỚC — CẢ TAM GIÁC HAY PHẦN KIA!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B46_M2_F3.png",
-   "sha256_16": "bb42db4673db2ad2"
   },
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "ĐIỂM CHIA BM : MC = 2 : 3 · S(ABC) = 40 cm²",
-    "points": {
-     "B": [
-      0,
-      0
-     ],
-     "C": [
-      10,
-      0
-     ],
-     "A": [
-      4,
-      6
-     ],
-     "M": [
-      4,
-      0
-     ]
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "mcq",
+        "text": "Ôn M1: M trên BC — ABM và AMC chung gì?",
+        "choices": [
+          "cao hạ từ A xuống BC",
+          "đáy",
+          "không chung gì"
+        ],
+        "answerKey": {
+          "choice": "cao hạ từ A xuống BC"
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B46.M1",
+      "message": "Ôn định lý chung cao rồi ra bờ đê nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Cây cọc M đóng trên bờ đê BC: BM = 1/3 BC, tam giác S = 36. Trí Long dán vèo: \"S(ABM) = 1/3 S(AMC)!\" Su Kem chỉ bờ đê: \"1/3 ấy đang so với AI — cả bờ đê, hay khúc bên kia cây cọc?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "1/3 của AI??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để đếm phần bờ đê!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Đếm bờ đê: BC có BA phần — BM cầm MỘT, MC cầm HAI! Câu một — so CẢ tam giác: chung cao từ A, tỉ S bằng tỉ đáy: S(ABM) bằng một phần ba của ba sáu — MƯỜI HAI! Câu hai — so PHẦN KIA: anh bạn AMC cầm HAI phần: tỉ là MỘT CHIA HAI — không phải một chia ba! Thử ngược đáp sai: nếu ABM bằng một phần ba AMC thì tổng thành bốn tám — tam giác tự phình mười hai xăng-ti-mét vuông?!",
+        "display": {
+          "type": "stake_two_questions_interactive",
+          "spec": {
+            "parts": "BC = 3 phần: BM 1 — MC 2",
+            "q1": "so cả: 1/3 × 36 = 12",
+            "q2": "so phần kia: 1 : 2",
+            "wrong": "1 : 3 → tổng 48 ✗"
+          }
+        },
+        "interaction": {
+          "type": "answer_two_questions",
+          "answerKey": {
+            "values": [
+              12,
+              "1:2"
+            ]
+          },
+          "successMessage": "12 và 1:2 — hai câu hai đáp!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "tf",
+          "text": "(Đúng/Sai?) BM = 1/3 BC thì S(ABM) : S(AMC) = 1 : 3.",
+          "answerKey": {
+            "value": false
+          },
+          "wrongFeedback": "MC cầm 2 phần → 1 : 2.",
+          "objective": "O1",
+          "teaches": [
+            "K2"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 42,
+        "teaches": [
+          "K1",
+          "K3"
+        ],
+        "narration": "Ca tổng quát chạy êm: BM chia MC bằng HAI phần BA, diện tích tổng bốn mươi. Căn cứ một dòng: chung cao hạ từ A xuống BC — tỉ S bằng tỉ đáy: chia bốn mươi theo hai-ba! Tổng năm phần — một phần bằng tám: S(ABM) mười sáu, S(AMC) hai mươi tư — thử cộng: tròn bốn mươi! Nghi thức mở bài từ nay: hỏi \"SO VỚI AI\" trước khi viết tỉ — cả tam giác thì mẫu là m cộng n; phần kia thì mẫu chỉ là n!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "BM:MC = 2:3 → chia 40: 16 và 24 (thử 40 ✓)",
+            "so cả: mẫu m + n · so phần kia: mẫu n",
+            "nghi thức: hỏi SO VỚI AI trước"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú cây cọc: hỏi so-với-ai trước — cả tam giác hay phần kia!",
+        "display": {
+          "type": "mantra_card",
+          "text": "SO VỚI AI TRƯỚC ĐÃ!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 87,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "shapes": [
-     {
-      "pts": [
-       "B",
-       "M",
-       "A"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Cây cọc M đóng trên bờ đê BC: BM bằng một phần ba BC, tam giác ba mươi sáu xăng-ti-mét vuông. Trí Long dán vèo: S ABM bằng một phần ba S AMC! Su Kem chỉ bờ đê: một phần ba ấy đang so với AI — cả bờ đê, hay khúc bên kia cây cọc?",
+        "screenText": "1/3 của AI??",
+        "visual": "Bờ đê BC với cây cọc M chia hai khúc lệch; nhãn 1/3 lơ lửng chưa biết dán vào đâu; dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Đếm bờ đê: BC có BA phần — BM cầm MỘT, MC cầm HAI! Câu một — so CẢ tam giác: chung cao từ A, tỉ S bằng tỉ đáy: S ABM bằng một phần ba của ba sáu — MƯỜI HAI! Câu hai — so PHẦN KIA: anh bạn AMC cầm HAI phần: tỉ là MỘT CHIA HAI — không phải một chia ba!",
+        "screenText": "BC = 3 phần: BM 1 · MC 2 → so cả: 12 · so phần kia: 1 : 2 (1:3 ✗)",
+        "visual": "Bờ đê chia 3 khấc; hai bảng câu hỏi song song với hai đáp 12 và 1:2; đáp 1:3 phình tổng 48 gạch đỏ.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Ca tổng quát chạy êm: BM chia MC bằng HAI phần BA, diện tích tổng bốn mươi. Căn cứ một dòng: chung cao hạ từ A xuống BC — tỉ S bằng tỉ đáy: chia bốn mươi theo hai-ba! Tổng năm phần — một phần bằng tám: S ABM mười sáu, S AMC hai mươi tư — thử cộng: tròn bốn mươi! Nghi thức: hỏi SO VỚI AI trước khi viết tỉ!",
+        "screenText": "2:3 → 40 = 16 + 24 ✓ · so cả: /(m+n) · so phần kia: /n",
+        "visual": "Tam giác chia hai mảnh 16-24 với dòng căn cứ vàng bên cạnh; hai công thức mẫu số đóng khung đối chiếu.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú cây cọc: hỏi so-với-ai trước — cả tam giác hay phần kia!",
+        "screenText": "SO VỚI AI TRƯỚC ĐÃ!",
+        "visual": "Thẻ thần chú vàng với icon cây cọc bờ đê.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Cây cọc của con: BM bằng một phần ba BC, tam giác ba sáu — trả lời cả hai câu so-cả và so-phần-kia! Vào bài luyện ngay!",
+        "screenText": "so cả: ? · so phần kia: ?",
+        "visual": "Bờ đê chờ đóng cọc; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Một cây cọc hai câu hỏi",
+    "problem": "Tam giác ABC có S = 36 cm²; M trên BC với BM = 1/3 BC. Tính S(ABM) — và tìm tỉ số S(ABM) : S(AMC).",
+    "steps": [
+      {
+        "show": "Bước 1 — Đếm phần: BC = 3 phần; BM cầm 1, MC cầm 2.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Trước khi viết tỉ phải hỏi:",
+          "choices": [
+            "so với ai — cả tam giác hay phần kia",
+            "đáy dài bao nhiêu",
+            "cao dài bao nhiêu"
+          ],
+          "answerKey": {
+            "choice": "so với ai — cả tam giác hay phần kia"
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — So cả tam giác: S(ABM) = 1/3 × 36 = 12 cm² (căn cứ: chung cao từ A xuống BC)."
+      },
+      {
+        "show": "Bước 3 — So phần kia: S(ABM) : S(AMC) = 1 : 2 (thử: 12 + 24 = 36 ✓; tỉ 1:3 phình tổng 48!).",
+        "askAfter": {
+          "format": "mb",
+          "text": "Tam giác ABC có diện tích 40 cm². Điểm M nằm trên BC với BM : MC = 2 : 3. Tính diện tích tam giác ABM và tam giác AMC.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "S(ABM)",
+                "value": 16
+              },
+              {
+                "label": "S(AMC)",
+                "value": 24
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B46.LT3",
+          "text": "Tam giác ABC có S = 36 cm²; M trên BC với BM = 1/3 BC. Tính S(ABM) — và cho biết S(ABM) so với S(AMC) bằng tỉ số nào.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "S(ABM)",
+                "value": 12
+              },
+              {
+                "label": "tỉ với AMC",
+                "value": "1 : 2"
+              }
+            ]
+          },
+          "hints": [
+            "BC = 3 phần: BM 1 — MC 2.",
+            "So cả: /3; so phần kia: /2."
+          ],
+          "solutionNarrative": "12 cm² và 1 : 2 (không phải 1 : 3).",
+          "teaches": [
+            "K2"
+          ],
+          "generator": {
+            "template": "BM = 1/{n} BC, S = {S} → S(ABM)? tỉ với AMC?",
+            "constraints": {},
+            "answerRule": "S/n; 1 : (n−1)"
+          }
+        }
       ],
-      "fill": "teal",
-      "label": "2 phần = 16"
-     },
-     {
-      "pts": [
-       "M",
-       "C",
-       "A"
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B46.LT6",
+          "text": "Tam giác ABC có S = 40 cm²; M trên BC với BM : MC = 2 : 3. Tính S(ABM) và S(AMC).",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "S(ABM)",
+                "value": 16
+              },
+              {
+                "label": "S(AMC)",
+                "value": 24
+              }
+            ]
+          },
+          "hints": [
+            "Chung cao từ A → chia theo 2 : 3.",
+            "5 phần = 40."
+          ],
+          "solutionNarrative": "16 và 24 (thử 40 ✓).",
+          "teaches": [
+            "K1"
+          ]
+        }
       ],
-      "fill": "navy",
-      "label": "3 phần = 24"
-     }
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "tf",
+          "text": "(Đúng/Sai?) BM = 1/4 BC thì S(ABM) : S(AMC) = 1 : 4.",
+          "answerKey": {
+            "value": false,
+            "note": "MC cầm 3 phần còn lại → tỉ 1 : 3; đáp 1 : 4 là dán nhầm mẫu so-cả sang câu so-phần-kia."
+          },
+          "hints": [
+            "MC cầm mấy phần?",
+            "Hỏi so với ai."
+          ],
+          "teaches": [
+            "K2",
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:IV.2.2#2@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B46.M3",
+      "award": "huy_hieu_cay_coc_bo_de"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B46.QZ2",
+        "text": "(Đúng/Sai?) BM = 1/3 BC thì S(ABM) : S(AMC) = 1 : 3.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mb",
+        "text": "BM = 1/3 BC, S = 36 → S(ABM)?",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "S(ABM)",
+              "value": 12
+            }
+          ]
+        },
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mb",
+        "text": "BM : MC = 2 : 3, S = 40 → hai mảnh?",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "ABM",
+              "value": 16
+            },
+            {
+              "label": "AMC",
+              "value": 24
+            }
+          ]
+        },
+        "teaches": [
+          "K1"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "BM = 1/3 BC — S(ABM) so thế nào?",
+        "back": "Hỏi SO VỚI AI: so CẢ tam giác → 1/3 (mẫu 3 phần: 12/36); so PHẦN KIA → 1 : 2 (MC cầm 2 phần — 1:3 phình tổng 48!). Tổng quát: BM:MC = m:n → chia S theo m:n (40 → 16 + 24, thử cộng tròn). Căn cứ: chung cao từ A xuống BC."
+      }
     ],
-    "edge_labels": [
-     {
-      "from": "B",
-      "to": "M",
-      "text": "2 phần",
-      "dy": -5
-     },
-     {
-      "from": "M",
-      "to": "C",
-      "text": "3 phần",
-      "dy": -5
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C",
-     "M"
-    ],
-    "formula": "chia 40 theo 2 : 3  →  16 và 24  ·  thử: 16 + 24 = 40 ✓",
-    "note": "HAI MẪU SO SÁNH: so cả tam giác thì 2/5 · so phần kia thì 2 : 3 — đọc kỹ đề hỏi gì"
-   },
-   "caption": "Cây cọc M chia đáy theo tỉ nào thì chia diện tích theo tỉ ấy",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B46_M2_F4.png",
-   "sha256_16": "7257e1eaafd35cdf"
-  }
- ]
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P3 (1/4)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học điểm chia cạnh và hai mẫu so sánh quanh cây cọc 1/3. Con đạt {score}/3, {trapResult} câu bẫy so-nhầm.",
+    "homeActivity": "Bẻ que dài thành 1/3 - 2/3: hỏi con 'khúc ngắn bằng mấy phần cả que? bằng mấy phần khúc dài?' — hai câu hai đáp.",
+    "watchFor": "Nếu con dán 1/3 mọi nơi — hỏi 'so với ai?' rồi thử cộng tổng (S2)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B46.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "1/3 của AI??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "S(ABM) = 1/3 S(AMC)!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "1/3 ấy đang so với AI — cả bờ đê, hay khúc bên kia cây cọc?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B46_M2_F1.png",
+      "sha256_16": "f2d3a85ded683ccd"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con dùng điểm chia cạnh: BM : MC = m : n → S(ABM) : S(AMC) = m : n (chung cao từ A) và tách bạch HAI MẪU SO SÁNH quanh cây cọc 1/3: so với CẢ tam giác → S(ABM) = 1/3 S(ABC) (vì BC là 3 phần); so với PHẦN KIA → S(ABM) : S(AMC) = 1 : 2 (vì MC chỉ 2 phần) — hỏi \"so với ai\" trước khi viết tỉ.",
+        "steps": [
+          {
+            "text": "BM:MC = 2:3 → chia 40: 16 và 24 (thử 40 )"
+          },
+          {
+            "text": "so cả: mẫu m + n · so phần kia: mẫu n"
+          },
+          {
+            "text": "nghi thức: hỏi SO VỚI AI trước"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B46_M2_F2.png",
+      "sha256_16": "3c08ace24ed67ae5"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Điểm chia = chia S",
+            "text": "M trên BC với BM : MC = m : n → S(ABM) : S(AMC) = m : n (chung cao từ A xuống BC): BM : MC = 2 : 3, S = 40 → S(ABM) = 16; S(AMC) = 24 (thử 16 + 24 = 40 ✓).",
+            "tone": "navy"
+          },
+          {
+            "label": "Cây cọc 1/3 gây ảo giác",
+            "text": "tách HAI MẪU: BM = 1/3 BC: (a) so CẢ tam giác: S(ABM) = 1/3 × 36 = 12 (BC là 3 phần, BM chiếm 1); (b) so PHẦN KIA: S(ABM) : S(AMC) = 1 : 2 — vì MC cầm 2 phần còn lại, KHÔNG phải 1 : 3!",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "HỎI \"SO VỚI AI\" TRƯỚC — CẢ TAM GIÁC HAY PHẦN KIA!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B46_M2_F3.png",
+      "sha256_16": "bb42db4673db2ad2"
+    },
+    {
+      "archetype": "geo_shape",
+      "params": {
+        "title": "ĐIỂM CHIA BM : MC = 2 : 3 · S(ABC) = 40 cm²",
+        "points": {
+          "B": [
+            0,
+            0
+          ],
+          "C": [
+            10,
+            0
+          ],
+          "A": [
+            4,
+            6
+          ],
+          "M": [
+            4,
+            0
+          ]
+        },
+        "shapes": [
+          {
+            "pts": [
+              "B",
+              "M",
+              "A"
+            ],
+            "fill": "teal",
+            "label": "2 phần = 16"
+          },
+          {
+            "pts": [
+              "M",
+              "C",
+              "A"
+            ],
+            "fill": "navy",
+            "label": "3 phần = 24"
+          }
+        ],
+        "edge_labels": [
+          {
+            "from": "B",
+            "to": "M",
+            "text": "2 phần",
+            "dy": -5
+          },
+          {
+            "from": "M",
+            "to": "C",
+            "text": "3 phần",
+            "dy": -5
+          }
+        ],
+        "show_points": [
+          "A",
+          "B",
+          "C",
+          "M"
+        ],
+        "formula": "chia 40 theo 2 : 3  →  16 và 24  ·  thử: 16 + 24 = 40 ✓",
+        "note": "HAI MẪU SO SÁNH: so cả tam giác thì 2/5 · so phần kia thì 2 : 3 — đọc kỹ đề hỏi gì"
+      },
+      "caption": "Cây cọc M chia đáy theo tỉ nào thì chia diện tích theo tỉ ấy",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B46_M2_F4.png",
+      "sha256_16": "7257e1eaafd35cdf"
+    }
+  ]
 }

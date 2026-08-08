@@ -7,6 +7,19 @@
 const BASE = import.meta?.env?.BASE_URL || '/';
 export const CONTENT = BASE.replace(/\/$/, '') + '/content';
 
+/**
+ * Dấu phiên bản nội dung — vite.config.js băm public/content rồi dán vào đây.
+ * Nội dung để `immutable` 7 ngày mà tên tệp không đổi, nên không có dấu này thì
+ * sửa bài xong đẩy lên, máy đã từng mở trang vẫn học bản cũ suốt một tuần.
+ * Chạy bằng node (bộ kiểm) thì không có biến, lùi về 'dev' — vô hại.
+ */
+export const NOI_DUNG_V =
+  typeof __NOI_DUNG_V__ === 'string' ? __NOI_DUNG_V__ : 'dev';
+
+/** Gắn dấu phiên bản vào một đường dẫn nội dung */
+export const dongDau = (url, v = NOI_DUNG_V) =>
+  (v && v !== 'dev' ? `${url}?v=${v}` : url);
+
 /** DL:KSN5Q1.B49.M1 → DL_KSN5Q1_B49_M1 */
 export const idToFile = (microId) => microId.replace('DL:', 'DL_').replace(/\./g, '_');
 
@@ -17,7 +30,7 @@ const cache = new Map();
 
 export async function loadLesson(microId) {
   if (cache.has(microId)) return cache.get(microId);
-  const url = `${CONTENT}/lessons/${idToFile(microId)}.json`;
+  const url = dongDau(`${CONTENT}/lessons/${idToFile(microId)}.json`);
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Không nạp được bài ${microId} (${res.status})`);
   const data = await res.json();
@@ -25,8 +38,13 @@ export async function loadLesson(microId) {
   return data;
 }
 
-/** figureSpec lưu "figures/KSN5Q1_B49_M1_F1.png" → URL đầy đủ */
-export const figureSrc = (fig) => (fig?.file ? `${CONTENT}/${fig.file}` : null);
+/**
+ * figureSpec lưu "figures/KSN5Q1_B49_M1_F1.png" → URL đầy đủ.
+ * Mỗi hình đã có mã kiểm riêng, dùng luôn làm dấu phiên bản: vẽ lại MỘT hình thì
+ * chỉ hình ấy được tải lại, 671 hình còn lại vẫn nằm yên trong bộ nhớ đệm.
+ */
+export const figureSrc = (fig) =>
+  (fig?.file ? dongDau(`${CONTENT}/${fig.file}`, fig.sha256_16 || NOI_DUNG_V) : null);
 
 /** Danh sách 168 micro theo đúng thứ tự học */
 export function allMicroIds() {

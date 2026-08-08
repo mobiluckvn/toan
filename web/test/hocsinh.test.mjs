@@ -121,7 +121,16 @@ for (const L of les) {
     /* 9. sai thì phải có gợi ý để bấu víu (câu luyện tập) */
     if (s.type === 'practice' && !(item.hints || []).length) ghi('sai mà không có gợi ý nào', ref);
 
-    /* 10. đề quá dài cho lớp 5 */
+    /* 10. đề viết TẮT KIỂU ĐIỆN TÍN — con lớp 5 không đọc ra đang phải làm gì.
+       Hai dấu hiệu: dùng "?" làm chỗ trống giữa câu ("còn ? kg", "→ đáy? cao?"),
+       và đề toàn ký hiệu, không có lấy một động từ ra lệnh. */
+    const de = (item.text || '').trim();
+    const DON_VI = /\?\s*(kg|g|cm²|m²|cm|m|viên|đồng|tuổi|trang|phút|giờ)(?![\p{L}])/iu;
+    if (DON_VI.test(de) || /→[^?]*\?\s*\S*\?/.test(de)) {
+      ghi('đề viết tắt kiểu điện tín', `${ref} — ${de.slice(0, 80)}`);
+    }
+
+    /* 11. đề quá dài cho lớp 5 */
     const chu = (item.text || '').split(/\s+/).length;
     if (chu > 60) ghi('đề dài quá cho lớp 5', `${ref} ${chu} chữ`);
   }

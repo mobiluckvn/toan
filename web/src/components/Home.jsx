@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { allMicroIds, chapterOf, CONTENT } from '../lib/content.js';
+import { allMicroIds, chapterOf, CONTENT, dongDau } from '../lib/content.js';
 import { microState, chapterStats, overallStats, isChapterExamUnlocked, modeOf } from '../lib/progress.js';
 import { planSession, keyOf } from '../lib/adaptive.js';
 import TodayCard from './TodayCard.jsx';
@@ -21,7 +21,7 @@ export default function Home({ progress, onOpenMicro, onOpenExam, onOpenReport, 
   // tên bài + thời lượng nằm trong chỉ mục; thiếu nó thì màn hình chỉ có mã bài
   useEffect(() => {
     let alive = true;
-    fetch(`${CONTENT}/index_micro.json`).then((r) => r.json())
+    fetch(dongDau(`${CONTENT}/index_micro.json`)).then((r) => r.json())
       .then((d) => alive && setIndex(d)).catch(() => {});
     return () => { alive = false; };
   }, []);

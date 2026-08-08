@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CONTENT } from '../lib/content.js';
+import { CONTENT, dongDau } from '../lib/content.js';
 
 /**
  * Kỳ sát hạch chương: 15 câu tự-soi.
@@ -13,7 +13,7 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit }) {
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
-    fetch(`${CONTENT}/reviews/DCR_KSN5Q1_C${chapter}.json`)
+    fetch(dongDau(`${CONTENT}/reviews/DCR_KSN5Q1_C${chapter}.json`))
       .then((r) => r.json()).then(setDoc).catch(() => setDoc({ error: true }));
   }, [chapter]);
 

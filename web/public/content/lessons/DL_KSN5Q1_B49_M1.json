@@ -1,616 +1,616 @@
 {
- "title": "C = d × 3,14 · S = r × r × 3,14 — nghi thức bước 0: S chỉ chơi với bán kính, thấy d là chia đôi",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:IV.4.1#1"
-  ],
-  "bktUnit": "CASE:IV.4.1#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B49",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B48.M3",
-  "next": "DL:KSN5Q1.B49.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B49",
-  "chunks": [
-   "CHUNK:KSN5Q1.B49.S3",
-   "CHUNK:KSN5Q1.B49.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B49.1"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B49.1"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con tính chu vi C = d × 3,14 = r × 2 × 3,14 và diện tích S = r × r × 3,14 với NGHI THỨC BƯỚC 0: gạch chân chữ \"đường kính\" hay \"bán kính\" trong đề, đổi cho khớp công thức trước khi bấm — C thân với d, nhưng S chỉ chơi với r: thấy d là chia đôi trước (d = 20 → r = 10 → S = 314, không phải 1 256!).",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (S dùng bán kính)",
-  "kidText": "Chu vi thân với đường kính, còn diện tích chỉ chơi với bán kính. Thấy đường kính là con chia đôi trước đã."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Hai công thức hai bạn thân: CHU VI thân với đường kính: C = d × 3,14 (= r × 2 × 3,14); DIỆN TÍCH chỉ chơi với bán kính: S = r × r × 3,14."
-   },
-   {
-    "id": "K2",
-    "text": "Nghi thức BƯỚC 0 trước khi bấm: gạch chân chữ \"đường kính\"/\"bán kính\" trong đề — đổi cho khớp: miệng giếng d = 1 m → C = 3,14 m; nhưng vào S phải đổi r = 0,5 → S = 0,785 m²."
-   },
-   {
-    "id": "K3",
-    "text": "Bẫy thay-d-vào-S: d = 20 thay luôn vào S cho 20 × 20 × 3,14 = 1 256 — GẤP BỐN LẦN hình thật (vì d = 2r nên d × d = 4 × r × r): đổi r = 10 trước → S = 314 cm²."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: HAI CÁNH CỬA HAI BẠN THÂN. Hình tròn có HAI cánh cửa: cửa CHU VI khắc chữ d — đường kính bước thẳng vào: C bằng d nhân ba phẩy mười bốn; cửa DIỆN TÍCH khắc chữ r — CHỈ bán kính được vào: S bằng r nhân r nhân ba phẩy mười bốn! Đề miệng giếng: đường kính MỘT mét — tính chu vi và diện tích nắp đậy. Chu vi dễ: một nhân ba phẩy mười bốn — BA PHẨY MƯỜI BỐN mét. Diện tích — Trí Long thay luôn: một nhân một nhân ba phẩy mười bốn?! Cửa S chặn lại: anh là ĐƯỜNG KÍNH — cửa này chỉ tiếp BÁN KÍNH! Nghi thức bước KHÔNG: gạch chân chữ trong đề — đổi trước khi bấm: r bằng không phẩy năm — S bằng không phẩy năm nhân không phẩy năm nhân ba phẩy mười bốn: KHÔNG PHẨY BẢY TÁM NĂM mét vuông! Thử để d lọt cửa S xem: d hai mươi cho một nghìn hai trăm năm sáu — GẤP BỐN hình thật, vì d bằng hai r nên d nhân d phình bốn lần! S chỉ chơi với bán kính — thấy d là chia đôi trước!",
-  "canonicalExamples": [
-   {
-    "case": "chu vi từ r (ca nền)",
-    "problem": "Tính chu vi hình tròn có bán kính 5 cm.",
-    "solution": "C = 5 × 2 × 3,14 = 31,4 cm.",
-    "why": "Ca đề A câu 1 — r nhân đôi rồi vào cửa C."
-   },
-   {
-    "case": "miệng giếng hai cửa (ca lõi)",
-    "problem": "Miệng giếng tròn có đường kính 1 m. Tính chu vi miệng giếng và diện tích nắp đậy vừa khít.",
-    "solution": "C = 1 × 3,14 = 3,14 m; vào S phải đổi r = 0,5 m → S = 0,5 × 0,5 × 3,14 = 0,785 m².",
-    "why": "Ca LT2 — một đề đi cả hai cửa."
-   },
-   {
-    "case": "vạch mặt đáp gấp bốn (ca phản chứng)",
-    "problem": "Hình tròn có đường kính 20 cm. Tính diện tích — và chỉ ra vì sao đáp 1 256 cm² là sai.",
-    "solution": "r = 20 : 2 = 10 → S = 10 × 10 × 3,14 = 314 cm²; đáp 1 256 là thay d = 20 vào công thức S — phình gấp 4 vì d × d = 4 × r × r.",
-    "why": "Ca đề A câu 2 — trap thay-d rình đây."
-   }
-  ],
-  "numberRange": "Lớp 5: r, d ≤ 20; số 3,14 cố định.",
-  "misconceptions": [
-   {
-    "wrong": "Đề cho đường kính — thay luôn vào công thức S: 20 × 20 × 3,14 = 1 256.",
-    "signal": "Không có dòng đổi r = d : 2; đáp gấp 4 lần đáp thật.",
-    "fix": "K2 + K3 — bước 0: gạch chân chữ, S chỉ tiếp bán kính: r = 10 → 314.",
-    "counterExample": "1 256 : 314 = 4 — hình tròn tự phình gấp bốn: nắp giếng to bằng cả sân à?!"
-   }
-  ],
-  "vocabulary": [
-   "hai cánh cửa C và S",
-   "bước 0 gạch chân chữ",
-   "S chỉ tiếp bán kính",
-   "thấy d chia đôi",
-   "phình gấp bốn"
-  ],
-  "mantra": "S CHỈ CHƠI VỚI BÁN KÍNH — THẤY d LÀ CHIA ĐÔI TRƯỚC!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "20 : 2 = ?",
-    "answerKey": {
-     "value": 10
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "ôn chia cơ bản",
-   "message": "Ôn phép chia rồi mở hai cánh cửa nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Miệng giếng đường kính 1 m — tính diện tích nắp đậy. Trí Long thay luôn: \"1 × 1 × 3,14!\" Su Kem chặn trước cửa S: \"Anh bạn 1 mét kia là ĐƯỜNG KÍNH — mà cửa diện tích chỉ tiếp BÁN KÍNH thôi!\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "d thay thẳng vào S??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đọc bảng cửa!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "C = d × 3,14 · S = r × r × 3,14 — nghi thức bước 0: S chỉ chơi với bán kính, thấy d là chia đôi",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:IV.4.1#1"
     ],
-    "narration": "Hình tròn có HAI cánh cửa hai bạn thân: cửa CHU VI khắc chữ d — đường kính bước thẳng vào: C bằng d nhân ba phẩy mười bốn — giếng của ta: BA PHẨY MƯỜI BỐN mét! Cửa DIỆN TÍCH khắc chữ r — chỉ BÁN KÍNH được vào! Bước KHÔNG: gạch chân chữ, đổi trước khi bấm: r bằng một chia hai — KHÔNG PHẨY NĂM; S bằng không phẩy năm nhân không phẩy năm nhân ba phẩy mười bốn: KHÔNG PHẨY BẢY TÁM NĂM mét vuông!",
-    "display": {
-     "type": "two_doors_interactive",
-     "spec": {
-      "doorC": "cửa C: d vào thẳng → 3,14 m",
-      "doorS": "cửa S: chỉ r! → 0,5 × 0,5 × 3,14 = 0,785 m²",
-      "step0": "bước 0: gạch chân 'đường kính' → r = 0,5"
-     }
-    },
-    "interaction": {
-     "type": "convert_then_enter",
-     "answerKey": {
-      "value": 0.785
-     },
-     "successMessage": "Đổi r = 0,5 rồi mới qua cửa S: 0,785!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "Hình tròn d = 10 cm có chu vi:",
-     "choices": [
-      "31,4 cm",
-      "62,8 cm",
-      "15,7 cm"
-     ],
-     "answerKey": {
-      "choice": "31,4 cm"
-     },
-     "wrongFeedback": "C = d × 3,14.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
+    "bktUnit": "CASE:IV.4.1#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B49",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B48.M3",
+    "next": "DL:KSN5Q1.B49.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B49",
+    "chunks": [
+      "CHUNK:KSN5Q1.B49.S3",
+      "CHUNK:KSN5Q1.B49.S4"
     ],
-    "narration": "Thử để d lọt cửa S xem chuyện gì xảy ra: đường kính hai mươi thay thẳng — hai mươi nhân hai mươi nhân ba phẩy mười bốn: MỘT NGHÌN HAI TRĂM NĂM SÁU! Mà đáp thật: r bằng mười — mười nhân mười nhân ba phẩy mười bốn: BA TRĂM MƯỜI BỐN! Sai GẤP BỐN — vì d bằng hai r nên d nhân d phình đúng bốn lần: nắp giếng to bằng cả sân! Bước 0 cứu cả bài: thấy d là chia đôi trước.",
-    "display": {
-     "type": "counter_example",
-     "cases": [
+    "cases": [
+      "CA:KSN5Q1.B49.1"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B49.1"
+    ]
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con tính chu vi C = d × 3,14 = r × 2 × 3,14 và diện tích S = r × r × 3,14 với NGHI THỨC BƯỚC 0: gạch chân chữ \"đường kính\" hay \"bán kính\" trong đề, đổi cho khớp công thức trước khi bấm — C thân với d, nhưng S chỉ chơi với r: thấy d là chia đôi trước (d = 20 → r = 10 → S = 314, không phải 1 256!).",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (S dùng bán kính)",
+    "kidText": "Chu vi thân với đường kính, còn diện tích chỉ chơi với bán kính. Thấy đường kính là con chia đôi trước đã."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "input": "r = 20 : 2 = 10 → 10 × 10 × 3,14",
-       "output": "✓ 314 cm²",
-       "valid": true,
-       "reason": "bước 0 đổi r"
+        "id": "K1",
+        "text": "Hai công thức hai bạn thân: CHU VI thân với đường kính: C = d × 3,14 (= r × 2 × 3,14); DIỆN TÍCH chỉ chơi với bán kính: S = r × r × 3,14."
       },
       {
-       "input": "20 × 20 × 3,14",
-       "output": "✗ 1 256 — phình gấp 4",
-       "valid": false,
-       "reason": "d lọt cửa S"
+        "id": "K2",
+        "text": "Nghi thức BƯỚC 0 trước khi bấm: gạch chân chữ \"đường kính\"/\"bán kính\" trong đề — đổi cho khớp: miệng giếng d = 1 m → C = 3,14 m; nhưng vào S phải đổi r = 0,5 → S = 0,785 m²."
+      },
+      {
+        "id": "K3",
+        "text": "Bẫy thay-d-vào-S: d = 20 thay luôn vào S cho 20 × 20 × 3,14 = 1 256 — GẤP BỐN LẦN hình thật (vì d = 2r nên d × d = 4 × r × r): đổi r = 10 trước → S = 314 cm²."
       }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú hai cánh cửa: S chỉ chơi với bán kính — thấy d là chia đôi trước!",
-    "display": {
-     "type": "mantra_card",
-     "text": "THẤY d — CHIA ĐÔI TRƯỚC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 90,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Miệng giếng đường kính một mét — tính diện tích nắp đậy. Trí Long thay luôn: một nhân một nhân ba phẩy mười bốn! Su Kem chặn trước cửa S: anh bạn một mét kia là ĐƯỜNG KÍNH — mà cửa diện tích chỉ tiếp BÁN KÍNH thôi!",
-    "screenText": "d thay thẳng vào S??",
-    "visual": "Miệng giếng tròn với thanh d vắt ngang; cánh cửa S khắc chữ r chặn thanh d lại; dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 17
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Hình tròn có HAI cánh cửa hai bạn thân: cửa CHU VI khắc chữ d — đường kính bước thẳng vào: C bằng d nhân ba phẩy mười bốn — giếng của ta: BA PHẨY MƯỜI BỐN mét! Cửa DIỆN TÍCH khắc chữ r — chỉ BÁN KÍNH được vào! Bước KHÔNG: gạch chân chữ, đổi trước khi bấm: r bằng KHÔNG PHẨY NĂM; S bằng không phẩy năm nhân không phẩy năm nhân ba phẩy mười bốn: KHÔNG PHẨY BẢY TÁM NĂM mét vuông!",
-    "screenText": "cửa C: d × 3,14 = 3,14 m · cửa S: chỉ r! 0,5 × 0,5 × 3,14 = 0,785 m²",
-    "visual": "Hai cánh cửa teal-vàng khắc d và r; bút đỏ gạch chân chữ 'đường kính' trên đề; phép đổi r = 0,5 sáng đèn trước cửa S.",
-    "assets": [],
-    "duration": 30
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Thử để d lọt cửa S xem: đường kính hai mươi thay thẳng — hai mươi nhân hai mươi nhân ba phẩy mười bốn: MỘT NGHÌN HAI TRĂM NĂM SÁU! Mà đáp thật: r bằng mười — mười nhân mười nhân ba phẩy mười bốn: BA TRĂM MƯỜI BỐN! Sai GẤP BỐN — vì d bằng hai r nên d nhân d phình đúng bốn lần: nắp giếng to bằng cả sân!",
-    "screenText": "d = 20 → r = 10 → S = 314 ✓ · 20 × 20 × 3,14 = 1 256 ✗ (phình ×4!)",
-    "visual": "Hai phép tính song song: đường r cho 314 mộc xanh; đường d cho 1 256 với nắp giếng phình to bằng sân gạch đỏ.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú hai cánh cửa: S chỉ chơi với bán kính — thấy d là chia đôi trước!",
-    "screenText": "THẤY d — CHIA ĐÔI TRƯỚC!",
-    "visual": "Thẻ thần chú vàng với icon hai cánh cửa.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Hai cánh cửa của con: đường kính hai mươi xăng-ti-mét — gạch chân chữ, đổi bán kính rồi tính diện tích! Vào bài luyện ngay!",
-    "screenText": "bước 0: d = 20 → r = ? → S = ?",
-    "visual": "Đề bài chờ gạch chân; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P3",
-    "assets": [],
-    "duration": 9
-   }
-  ]
- },
- "workedExample": {
-  "title": "Bước 0 trước hai cánh cửa",
-  "problem": "Miệng giếng tròn có đường kính 1 m. Tính chu vi miệng giếng và diện tích nắp đậy vừa khít.",
-  "steps": [
-   {
-    "show": "Bước 0 — Gạch chân: đề cho ĐƯỜNG KÍNH d = 1 m.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Cửa diện tích tiếp ai?",
-     "choices": [
-      "chỉ bán kính",
-      "đường kính",
-      "cả hai"
-     ],
-     "answerKey": {
-      "choice": "chỉ bán kính"
-     }
-    }
-   },
-   {
-    "show": "Bước 1 — Cửa C: C = 1 × 3,14 = 3,14 m."
-   },
-   {
-    "show": "Bước 2 — Cửa S: đổi r = 0,5 → S = 0,5 × 0,5 × 3,14 = 0,785 m².",
-    "askAfter": {
-     "format": "num",
-     "text": "d = 20 cm → S = ? cm²",
-     "answerKey": {
-      "value": 314
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B49.LT1",
-     "text": "Tính chu vi hình tròn có bán kính 5 cm (cm).",
-     "answerKey": {
-      "value": 31.4
-     },
-     "hints": [
-      "r × 2 × 3,14.",
-      "5 × 2 = 10 → × 3,14."
-     ],
-     "solutionNarrative": "31,4 cm.",
-     "teaches": [
-      "K1"
-     ]
-    },
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B49.LT3",
-     "text": "Tính diện tích hình tròn có bán kính 10 cm (cm²).",
-     "answerKey": {
-      "value": 314
-     },
-     "hints": [
-      "r × r × 3,14.",
-      "10 × 10 = 100."
-     ],
-     "solutionNarrative": "314 cm².",
-     "teaches": [
-      "K1"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B49.LT2",
-     "text": "Miệng giếng tròn có đường kính 1 m. Tính chu vi miệng giếng và diện tích nắp đậy vừa khít.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "C",
-        "value": 3.14
-       },
-       {
-        "label": "S",
-        "value": 0.785
-       }
-      ]
-     },
-     "hints": [
-      "Cửa C: d vào thẳng.",
-      "Cửa S: r = 0,5."
-     ],
-     "solutionNarrative": "C = 3,14 m; S = 0,785 m².",
-     "teaches": [
-      "K2"
-     ],
-     "generator": {
-      "template": "Giếng d = {d} → C? S?",
-      "constraints": {},
-      "answerRule": "d × 3,14; (d/2)² × 3,14"
-     }
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P4",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B49.LT6",
-     "text": "Hình tròn có đường kính 20 cm. Tính diện tích — và chỉ ra vì sao đáp 1 256 cm² là sai (kèm phép so).",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "S",
-        "value": 314
-       },
-       {
-        "label": "vì sao",
-        "value": "1 256 là thay d = 20 vào công thức S — phình gấp 4 vì d × d = 4 × r × r"
-       }
-      ]
-     },
-     "hints": [
-      "Bước 0: r = 10.",
-      "1 256 : 314 = ?"
-     ],
-     "solutionNarrative": "314 cm² — đáp kia phình gấp bốn.",
-     "teaches": [
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:IV.4.1#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B49.M2",
-   "award": "huy_hieu_hai_canh_cua"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P3"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B49.QZ1",
-    "text": "(Đúng/Sai?) Công thức diện tích hình tròn dùng bán kính, không dùng đường kính.",
-    "answerKey": {
-     "value": true
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B49.QZ3",
-    "text": "Hình tròn d = 10 cm có chu vi:",
-    "choices": [
-     "31,4 cm",
-     "62,8 cm",
-     "15,7 cm"
     ],
-    "answerKey": {
-     "choice": "31,4 cm"
-    },
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "num",
-    "text": "d = 20 cm → S = ? cm²",
-    "answerKey": {
-     "value": 314
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Hai công thức hình tròn — ai chơi với ai?",
-    "back": "C thân với d: C = d × 3,14 (= r × 2 × 3,14). S CHỈ chơi với r: S = r × r × 3,14 — BƯỚC 0: gạch chân chữ, thấy d chia đôi trước (d = 20 → r = 10 → 314; thay d thẳng → 1 256 phình GẤP 4 vì d×d = 4×r×r)."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P3",
-   "+7 ngày: câu P4 (vạch mặt)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học hai công thức hình tròn với nghi thức bước 0: S chỉ tiếp bán kính. Con đạt {score}/3, {trapResult} câu bẫy thay-d.",
-  "homeActivity": "Đo miệng bát tròn bằng thước (đường kính) — con đọc to 'thấy d chia đôi trước' rồi ước chu vi và diện tích.",
-  "watchFor": "Nếu con thay d vào S — hỏi 'nắp giếng to bằng cả sân à?' (S3)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B49.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "d thay thẳng vào S??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "1 × 1 × 3,14!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Anh bạn 1 mét kia là ĐƯỜNG KÍNH — mà cửa diện tích chỉ tiếp BÁN KÍNH thôi!",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B49_M1_F1.png",
-   "sha256_16": "32c22d9001546842"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "20 × 20 × 3,14"
-     ],
-     "result": "1 256 — phình gấp 4"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "r = 20 : 2 = 10 → 10 × 10 × 3,14"
-     ],
-     "result": "314 cm²"
-    },
-    "verdict": "bước 0 đổi r"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B49_M1_F2.png",
-   "sha256_16": "aa04f2af28bfc8e5"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Hai công thức hai bạn thân",
-      "text": "CHU VI thân với đường kính: C = d × 3,14 (= r × 2 × 3,14); DIỆN TÍCH chỉ chơi với bán kính: S = r × r × 3,14.",
-      "tone": "navy"
-     },
-     {
-      "label": "Nghi thức BƯỚC 0 trước khi bấm",
-      "text": "gạch chân chữ \"đường kính\"/\"bán kính\" trong đề — đổi cho khớp: miệng giếng d = 1 m → C = 3,14 m; nhưng vào S phải đổi r = 0,5 → S = 0,785 m².",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: HAI CÁNH CỬA HAI BẠN THÂN. Hình tròn có HAI cánh cửa: cửa CHU VI khắc chữ d — đường kính bước thẳng vào: C bằng d nhân ba phẩy mười bốn; cửa DIỆN TÍCH khắc chữ r — CHỈ bán kính được vào: S bằng r nhân r nhân ba phẩy mười bốn! Đề miệng giếng: đường kính MỘT mét — tính chu vi và diện tích nắp đậy. Chu vi dễ: một nhân ba phẩy mười bốn — BA PHẨY MƯỜI BỐN mét. Diện tích — Trí Long thay luôn: một nhân một nhân ba phẩy mười bốn?! Cửa S chặn lại: anh là ĐƯỜNG KÍNH — cửa này chỉ tiếp BÁN KÍNH! Nghi thức bước KHÔNG: gạch chân chữ trong đề — đổi trước khi bấm: r bằng không phẩy năm — S bằng không phẩy năm nhân không phẩy năm nhân ba phẩy mười bốn: KHÔNG PHẨY BẢY TÁM NĂM mét vuông! Thử để d lọt cửa S xem: d hai mươi cho một nghìn hai trăm năm sáu — GẤP BỐN hình thật, vì d bằng hai r nên d nhân d phình bốn lần! S chỉ chơi với bán kính — thấy d là chia đôi trước!",
+    "canonicalExamples": [
+      {
+        "case": "chu vi từ r (ca nền)",
+        "problem": "Tính chu vi hình tròn có bán kính 5 cm.",
+        "solution": "C = 5 × 2 × 3,14 = 31,4 cm.",
+        "why": "Ca đề A câu 1 — r nhân đôi rồi vào cửa C."
+      },
+      {
+        "case": "miệng giếng hai cửa (ca lõi)",
+        "problem": "Miệng giếng tròn có đường kính 1 m. Tính chu vi miệng giếng và diện tích nắp đậy vừa khít.",
+        "solution": "C = 1 × 3,14 = 3,14 m; vào S phải đổi r = 0,5 m → S = 0,5 × 0,5 × 3,14 = 0,785 m².",
+        "why": "Ca LT2 — một đề đi cả hai cửa."
+      },
+      {
+        "case": "vạch mặt đáp gấp bốn (ca phản chứng)",
+        "problem": "Hình tròn có đường kính 20 cm. Tính diện tích — và chỉ ra vì sao đáp 1 256 cm² là sai.",
+        "solution": "r = 20 : 2 = 10 → S = 10 × 10 × 3,14 = 314 cm²; đáp 1 256 là thay d = 20 vào công thức S — phình gấp 4 vì d × d = 4 × r × r.",
+        "why": "Ca đề A câu 2 — trap thay-d rình đây."
+      }
+    ],
+    "numberRange": "Lớp 5: r, d ≤ 20; số 3,14 cố định.",
+    "misconceptions": [
+      {
+        "wrong": "Đề cho đường kính — thay luôn vào công thức S: 20 × 20 × 3,14 = 1 256.",
+        "signal": "Không có dòng đổi r = d : 2; đáp gấp 4 lần đáp thật.",
+        "fix": "K2 + K3 — bước 0: gạch chân chữ, S chỉ tiếp bán kính: r = 10 → 314.",
+        "counterExample": "1 256 : 314 = 4 — hình tròn tự phình gấp bốn: nắp giếng to bằng cả sân à?!"
+      }
+    ],
+    "vocabulary": [
+      "hai cánh cửa C và S",
+      "bước 0 gạch chân chữ",
+      "S chỉ tiếp bán kính",
+      "thấy d chia đôi",
+      "phình gấp bốn"
     ],
     "mantra": "S CHỈ CHƠI VỚI BÁN KÍNH — THẤY d LÀ CHIA ĐÔI TRƯỚC!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B49_M1_F3.png",
-   "sha256_16": "4e3e72a8debc3d0d"
   },
-  {
-   "archetype": "plane_geometry",
-   "params": {
-    "title": "HAI CÁNH CỬA: C ĐÓN ĐƯỜNG KÍNH — S CHỈ ĐÓN BÁN KÍNH",
-    "shape": "circle",
-    "dims": {
-     "d": "d = 1 m",
-     "r": "r = 0,5 m"
-    },
-    "memo": [
-     "C = d × 3,14",
-     "S = r × r × 3,14"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "20 : 2 = ?",
+        "answerKey": {
+          "value": 10
+        }
+      }
     ],
-    "caption": "Miệng giếng d = 1 m: C = 3,14 m nhưng S phải đổi r = 0,5 → 0,785 m²"
-   },
-   "caption": "Nghi thức BƯỚC 0: thấy đường kính mà cần diện tích thì chia đôi ngay",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B49_M1_F4.png",
-   "sha256_16": "d2dfa7465e4a4049"
-  }
- ]
+    "onFail": {
+      "action": "suggest_review",
+      "target": "ôn chia cơ bản",
+      "message": "Ôn phép chia rồi mở hai cánh cửa nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Miệng giếng đường kính 1 m — tính diện tích nắp đậy. Trí Long thay luôn: \"1 × 1 × 3,14!\" Su Kem chặn trước cửa S: \"Anh bạn 1 mét kia là ĐƯỜNG KÍNH — mà cửa diện tích chỉ tiếp BÁN KÍNH thôi!\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "d thay thẳng vào S??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để đọc bảng cửa!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Hình tròn có HAI cánh cửa hai bạn thân: cửa CHU VI khắc chữ d — đường kính bước thẳng vào: C bằng d nhân ba phẩy mười bốn — giếng của ta: BA PHẨY MƯỜI BỐN mét! Cửa DIỆN TÍCH khắc chữ r — chỉ BÁN KÍNH được vào! Bước KHÔNG: gạch chân chữ, đổi trước khi bấm: r bằng một chia hai — KHÔNG PHẨY NĂM; S bằng không phẩy năm nhân không phẩy năm nhân ba phẩy mười bốn: KHÔNG PHẨY BẢY TÁM NĂM mét vuông!",
+        "display": {
+          "type": "two_doors_interactive",
+          "spec": {
+            "doorC": "cửa C: d vào thẳng → 3,14 m",
+            "doorS": "cửa S: chỉ r! → 0,5 × 0,5 × 3,14 = 0,785 m²",
+            "step0": "bước 0: gạch chân 'đường kính' → r = 0,5"
+          }
+        },
+        "interaction": {
+          "type": "convert_then_enter",
+          "answerKey": {
+            "value": 0.785
+          },
+          "successMessage": "Đổi r = 0,5 rồi mới qua cửa S: 0,785!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "Hình tròn d = 10 cm có chu vi:",
+          "choices": [
+            "31,4 cm",
+            "62,8 cm",
+            "15,7 cm"
+          ],
+          "answerKey": {
+            "choice": "31,4 cm"
+          },
+          "wrongFeedback": "C = d × 3,14.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 42,
+        "teaches": [
+          "K3"
+        ],
+        "narration": "Thử để d lọt cửa S xem chuyện gì xảy ra: đường kính hai mươi thay thẳng — hai mươi nhân hai mươi nhân ba phẩy mười bốn: MỘT NGHÌN HAI TRĂM NĂM SÁU! Mà đáp thật: r bằng mười — mười nhân mười nhân ba phẩy mười bốn: BA TRĂM MƯỜI BỐN! Sai GẤP BỐN — vì d bằng hai r nên d nhân d phình đúng bốn lần: nắp giếng to bằng cả sân! Bước 0 cứu cả bài: thấy d là chia đôi trước.",
+        "display": {
+          "type": "counter_example",
+          "cases": [
+            {
+              "input": "r = 20 : 2 = 10 → 10 × 10 × 3,14",
+              "output": "✓ 314 cm²",
+              "valid": true,
+              "reason": "bước 0 đổi r"
+            },
+            {
+              "input": "20 × 20 × 3,14",
+              "output": "✗ 1 256 — phình gấp 4",
+              "valid": false,
+              "reason": "d lọt cửa S"
+            }
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú hai cánh cửa: S chỉ chơi với bán kính — thấy d là chia đôi trước!",
+        "display": {
+          "type": "mantra_card",
+          "text": "THẤY d — CHIA ĐÔI TRƯỚC!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 90,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Miệng giếng đường kính một mét — tính diện tích nắp đậy. Trí Long thay luôn: một nhân một nhân ba phẩy mười bốn! Su Kem chặn trước cửa S: anh bạn một mét kia là ĐƯỜNG KÍNH — mà cửa diện tích chỉ tiếp BÁN KÍNH thôi!",
+        "screenText": "d thay thẳng vào S??",
+        "visual": "Miệng giếng tròn với thanh d vắt ngang; cánh cửa S khắc chữ r chặn thanh d lại; dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 17
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Hình tròn có HAI cánh cửa hai bạn thân: cửa CHU VI khắc chữ d — đường kính bước thẳng vào: C bằng d nhân ba phẩy mười bốn — giếng của ta: BA PHẨY MƯỜI BỐN mét! Cửa DIỆN TÍCH khắc chữ r — chỉ BÁN KÍNH được vào! Bước KHÔNG: gạch chân chữ, đổi trước khi bấm: r bằng KHÔNG PHẨY NĂM; S bằng không phẩy năm nhân không phẩy năm nhân ba phẩy mười bốn: KHÔNG PHẨY BẢY TÁM NĂM mét vuông!",
+        "screenText": "cửa C: d × 3,14 = 3,14 m · cửa S: chỉ r! 0,5 × 0,5 × 3,14 = 0,785 m²",
+        "visual": "Hai cánh cửa teal-vàng khắc d và r; bút đỏ gạch chân chữ 'đường kính' trên đề; phép đổi r = 0,5 sáng đèn trước cửa S.",
+        "assets": [],
+        "duration": 30
+      },
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Thử để d lọt cửa S xem: đường kính hai mươi thay thẳng — hai mươi nhân hai mươi nhân ba phẩy mười bốn: MỘT NGHÌN HAI TRĂM NĂM SÁU! Mà đáp thật: r bằng mười — mười nhân mười nhân ba phẩy mười bốn: BA TRĂM MƯỜI BỐN! Sai GẤP BỐN — vì d bằng hai r nên d nhân d phình đúng bốn lần: nắp giếng to bằng cả sân!",
+        "screenText": "d = 20 → r = 10 → S = 314 ✓ · 20 × 20 × 3,14 = 1 256 ✗ (phình ×4!)",
+        "visual": "Hai phép tính song song: đường r cho 314 mộc xanh; đường d cho 1 256 với nắp giếng phình to bằng sân gạch đỏ.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú hai cánh cửa: S chỉ chơi với bán kính — thấy d là chia đôi trước!",
+        "screenText": "THẤY d — CHIA ĐÔI TRƯỚC!",
+        "visual": "Thẻ thần chú vàng với icon hai cánh cửa.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Hai cánh cửa của con: đường kính hai mươi xăng-ti-mét — gạch chân chữ, đổi bán kính rồi tính diện tích! Vào bài luyện ngay!",
+        "screenText": "bước 0: d = 20 → r = ? → S = ?",
+        "visual": "Đề bài chờ gạch chân; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P3",
+        "assets": [],
+        "duration": 9
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Bước 0 trước hai cánh cửa",
+    "problem": "Miệng giếng tròn có đường kính 1 m. Tính chu vi miệng giếng và diện tích nắp đậy vừa khít.",
+    "steps": [
+      {
+        "show": "Bước 0 — Gạch chân: đề cho ĐƯỜNG KÍNH d = 1 m.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Cửa diện tích tiếp ai?",
+          "choices": [
+            "chỉ bán kính",
+            "đường kính",
+            "cả hai"
+          ],
+          "answerKey": {
+            "choice": "chỉ bán kính"
+          }
+        }
+      },
+      {
+        "show": "Bước 1 — Cửa C: C = 1 × 3,14 = 3,14 m."
+      },
+      {
+        "show": "Bước 2 — Cửa S: đổi r = 0,5 → S = 0,5 × 0,5 × 3,14 = 0,785 m².",
+        "askAfter": {
+          "format": "num",
+          "text": "Hình tròn có đường kính 20 cm thì diện tích bằng bao nhiêu xăng-ti-mét vuông?",
+          "answerKey": {
+            "value": 314
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B49.LT1",
+          "text": "Tính chu vi hình tròn có bán kính 5 cm (cm).",
+          "answerKey": {
+            "value": 31.4
+          },
+          "hints": [
+            "r × 2 × 3,14.",
+            "5 × 2 = 10 → × 3,14."
+          ],
+          "solutionNarrative": "31,4 cm.",
+          "teaches": [
+            "K1"
+          ]
+        },
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B49.LT3",
+          "text": "Tính diện tích hình tròn có bán kính 10 cm (cm²).",
+          "answerKey": {
+            "value": 314
+          },
+          "hints": [
+            "r × r × 3,14.",
+            "10 × 10 = 100."
+          ],
+          "solutionNarrative": "314 cm².",
+          "teaches": [
+            "K1"
+          ]
+        }
+      ],
+      "standard": [
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B49.LT2",
+          "text": "Miệng giếng tròn có đường kính 1 m. Tính chu vi miệng giếng và diện tích nắp đậy vừa khít.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "C",
+                "value": 3.14
+              },
+              {
+                "label": "S",
+                "value": 0.785
+              }
+            ]
+          },
+          "hints": [
+            "Cửa C: d vào thẳng.",
+            "Cửa S: r = 0,5."
+          ],
+          "solutionNarrative": "C = 3,14 m; S = 0,785 m².",
+          "teaches": [
+            "K2"
+          ],
+          "generator": {
+            "template": "Giếng d = {d} → C? S?",
+            "constraints": {},
+            "answerRule": "d × 3,14; (d/2)² × 3,14"
+          }
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P4",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B49.LT6",
+          "text": "Hình tròn có đường kính 20 cm. Tính diện tích — và chỉ ra vì sao đáp 1 256 cm² là sai (kèm phép so).",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "S",
+                "value": 314
+              },
+              {
+                "label": "vì sao",
+                "value": "1 256 là thay d = 20 vào công thức S — phình gấp 4 vì d × d = 4 × r × r"
+              }
+            ]
+          },
+          "hints": [
+            "Bước 0: r = 10.",
+            "1 256 : 314 = ?"
+          ],
+          "solutionNarrative": "314 cm² — đáp kia phình gấp bốn.",
+          "teaches": [
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:IV.4.1#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B49.M2",
+      "award": "huy_hieu_hai_canh_cua"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P3"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B49.QZ1",
+        "text": "(Đúng/Sai?) Công thức diện tích hình tròn dùng bán kính, không dùng đường kính.",
+        "answerKey": {
+          "value": true
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B49.QZ3",
+        "text": "Hình tròn d = 10 cm có chu vi:",
+        "choices": [
+          "31,4 cm",
+          "62,8 cm",
+          "15,7 cm"
+        ],
+        "answerKey": {
+          "choice": "31,4 cm"
+        },
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "num",
+        "text": "Một hình tròn có đường kính 20 cm. Tính diện tích hình tròn đó.",
+        "answerKey": {
+          "value": 314
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Hai công thức hình tròn — ai chơi với ai?",
+        "back": "C thân với d: C = d × 3,14 (= r × 2 × 3,14). S CHỈ chơi với r: S = r × r × 3,14 — BƯỚC 0: gạch chân chữ, thấy d chia đôi trước (d = 20 → r = 10 → 314; thay d thẳng → 1 256 phình GẤP 4 vì d×d = 4×r×r)."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P3",
+      "+7 ngày: câu P4 (vạch mặt)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học hai công thức hình tròn với nghi thức bước 0: S chỉ tiếp bán kính. Con đạt {score}/3, {trapResult} câu bẫy thay-d.",
+    "homeActivity": "Đo miệng bát tròn bằng thước (đường kính) — con đọc to 'thấy d chia đôi trước' rồi ước chu vi và diện tích.",
+    "watchFor": "Nếu con thay d vào S — hỏi 'nắp giếng to bằng cả sân à?' (S3)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B49.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "d thay thẳng vào S??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "1 × 1 × 3,14!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Anh bạn 1 mét kia là ĐƯỜNG KÍNH — mà cửa diện tích chỉ tiếp BÁN KÍNH thôi!",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B49_M1_F1.png",
+      "sha256_16": "32c22d9001546842"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+        "wrong": {
+          "head": "CÁCH SAI",
+          "steps": [
+            "20 × 20 × 3,14"
+          ],
+          "result": "1 256 — phình gấp 4"
+        },
+        "right": {
+          "head": "CÁCH ĐÚNG",
+          "steps": [
+            "r = 20 : 2 = 10 → 10 × 10 × 3,14"
+          ],
+          "result": "314 cm²"
+        },
+        "verdict": "bước 0 đổi r"
+      },
+      "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B49_M1_F2.png",
+      "sha256_16": "aa04f2af28bfc8e5"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Hai công thức hai bạn thân",
+            "text": "CHU VI thân với đường kính: C = d × 3,14 (= r × 2 × 3,14); DIỆN TÍCH chỉ chơi với bán kính: S = r × r × 3,14.",
+            "tone": "navy"
+          },
+          {
+            "label": "Nghi thức BƯỚC 0 trước khi bấm",
+            "text": "gạch chân chữ \"đường kính\"/\"bán kính\" trong đề — đổi cho khớp: miệng giếng d = 1 m → C = 3,14 m; nhưng vào S phải đổi r = 0,5 → S = 0,785 m².",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "S CHỈ CHƠI VỚI BÁN KÍNH — THẤY d LÀ CHIA ĐÔI TRƯỚC!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B49_M1_F3.png",
+      "sha256_16": "4e3e72a8debc3d0d"
+    },
+    {
+      "archetype": "plane_geometry",
+      "params": {
+        "title": "HAI CÁNH CỬA: C ĐÓN ĐƯỜNG KÍNH — S CHỈ ĐÓN BÁN KÍNH",
+        "shape": "circle",
+        "dims": {
+          "d": "d = 1 m",
+          "r": "r = 0,5 m"
+        },
+        "memo": [
+          "C = d × 3,14",
+          "S = r × r × 3,14"
+        ],
+        "caption": "Miệng giếng d = 1 m: C = 3,14 m nhưng S phải đổi r = 0,5 → 0,785 m²"
+      },
+      "caption": "Nghi thức BƯỚC 0: thấy đường kính mà cần diện tích thì chia đôi ngay",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B49_M1_F4.png",
+      "sha256_16": "d2dfa7465e4a4049"
+    }
+  ]
 }
