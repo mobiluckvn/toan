@@ -1,21 +1,25 @@
 import React, { useEffect, useState } from 'react';
 import { CONTENT, dongDau } from '../lib/content.js';
+import Figure from './Figure.jsx';
 
 /**
  * Kỳ sát hạch chương: 15 câu tự-soi.
  * Đề trong dữ liệu là câu tự luận có lời giải mẫu → con TỰ CHẤM từng câu
  * (đúng tinh thần "bảng tự soi" của sách), sai câu nào thì mở đúng micro chẩn đoán.
  */
-export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit }) {
+export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
+                                    chuongTrinh = 'lop5' }) {
   const [doc, setDoc] = useState(null);
   const [i, setI] = useState(0);
   const [marks, setMarks] = useState({});     // qno → true/false
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
-    fetch(dongDau(`${CONTENT}/reviews/DCR_KSN5Q1_C${chapter}.json`))
+    /* Hai chương trình cùng một màn sát hạch, chỉ khác tệp nội dung. */
+    const ma = chuongTrinh === 'lop2' ? 'KSN2' : 'KSN5Q1';
+    fetch(dongDau(`${CONTENT}/reviews/DCR_${ma}_C${chapter}.json`))
       .then((r) => r.json()).then(setDoc).catch(() => setDoc({ error: true }));
-  }, [chapter]);
+  }, [chapter, chuongTrinh]);
 
   if (!doc) return <div className="p-6 text-mute">Đang mở kỳ sát hạch…</div>;
   if (doc.error) return <div className="p-6 text-alert">Không nạp được kỳ sát hạch chương {chapter}.</div>;
@@ -23,7 +27,9 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit }) {
   const qs = doc.examA || [];
   const done = i >= qs.length;
   const right = Object.values(marks).filter(Boolean).length;
-  const need = 12;
+  /* Ngưỡng đạt lấy TỪ DỮ LIỆU: sách lớp 2 mỗi chương một ngưỡng (8/12, 8/10,
+     6/8 vụ án). Ghim cứng 12 là chấm sai cho cả 11 kỳ của lớp 2. */
+  const need = doc.need || 12;
 
   if (done) {
     const pass = right >= need;
@@ -40,14 +46,14 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit }) {
 
         {wrong.length > 0 && (
           <div className="card">
-            <div className="kicker">BẢNG TỰ SOI — TRƯỢT CÂU NÀO ÔN MICRO ẤY</div>
+            <div className="kicker">BẢNG TỰ SOI — SAI CÂU NÀO, ÔN BÀI ĐÓ</div>
             {wrong.map((q) => (
               <button key={q.qno} onClick={() => onOpenMicro(q.diagnosesMicro)}
                 className="mt-2 flex w-full items-center gap-2.5 rounded-xl border border-line px-3 py-2.5 text-left text-[14px] hover:bg-[#F0F5F9]">
                 <span className="rounded bg-alert px-1.5 py-0.5 text-[11px] font-extrabold text-white">câu {q.qno}</span>
-                <span className="flex-1">{q.trapName || 'ôn lại micro'}</span>
+                <span className="flex-1">{q.trapName || 'ôn lại bài này'}</span>
                 <span className="font-mono text-[11.5px] text-mute">
-                  {(q.diagnosesMicro || '').replace('DL:KSN5Q1.', '')} ▶
+                  {(q.diagnosesMicro || '').replace(/^DL:(KSN5Q1|KSN2)\./, '')} ▶
                 </span>
               </button>
             ))}
@@ -75,6 +81,10 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit }) {
         <b className="flex-1 text-center text-[14px] text-navy">{doc.name}</b>
         <span className="text-[12px] tabular-nums text-mute">{i + 1}/{qs.length}</span>
       </header>
+
+      {/* Hình dùng CHUNG cho cả kỳ (tranh công viên, cuộn mật thư, bốn trạm…):
+          nhiều câu hỏi cùng nhìn vào nó, nên phải thấy được ở MỌI câu. */}
+      {(doc.hinh || []).map((h) => <Figure key={h.id} fig={h} />)}
 
       <div className="card">
         <div className="kicker">

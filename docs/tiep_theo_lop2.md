@@ -1,82 +1,37 @@
-# Lớp 2 — việc còn lại (bàn giao cho phiên sau)
+# Lớp 2 — trạng thái (cập nhật 2026-08-08)
 
-**Điểm dừng:** `d0fc917` · đã deploy · 556 phép kiểm xanh · 37/37 mục trước deploy.
-**Đã xong:** 33 bài chính · lời văn đã làm dễ hiểu (câu dài 13% → 6%) · màn chọn
-chương trình · phòng học lớp 2.
+**Đã xong toàn bộ nội dung của sách.** Không còn hạng mục nào treo.
 
----
+| | |
+|---|---|
+| 33 bài học | đủ 8 mục, 281 câu luyện tập, 165 câu tự kiểm chấm máy |
+| 70 hình | 64 trong bài · 6 trong kỳ sát hạch · **33/33 bài có hình** |
+| 8 bài ôn tập + 3 ải | 114 câu, đủ đáp án, có Bảng tự soi và đề B |
+| Mã nguồn | **dùng chung với lớp 5** — khác biệt khai ở `data/chuong_trinh.json` |
 
-## Ba việc còn thiếu
-
-### 1 · 75 hình trong sách  ⚠ QUAN TRỌNG NHẤT
-
-Đã khảo sát: **hình lớp 2 KHÁC hẳn hình Quyển 2 lớp 5**.
-
-| | Quyển 2 lớp 5 | Lớp 2 |
-|---|---|---|
-| Loại | sơ đồ chiến thuật (bảng chữ) | **hình toán thật sự** |
-| Thiếu hình thì | vẫn làm bài được | **KHÔNG hiểu được đề** |
-| Hình dạng | đều một khuôn (bảng 2 cột) | mỗi hình một kiểu |
-
-Ví dụ `image1.png`: đoàn tàu 6 toa ghi `5 · 10 · ? · 20 · 25 · ?`, đề bảo tìm nhịp
-tàu rồi điền. **Không có hình thì bé không biết điền vào đâu.**
-
-→ Nên đây là việc phải làm TRƯỚC hai việc kia. Kích thước 1185px, cùng ngôn ngữ
-thị giác với FigForge nhưng **không cùng một khuôn** như 53 sơ đồ Quyển 2 — nên
-không dùng lại được `arch_q2.bang_chien_thuat`, phải khảo sát nhóm hình rồi dựng
-vài nguyên mẫu (đoàn tàu, ngôi nhà trăm-chục-đơn vị, hình học…).
-
-~~**Việc đầu tiên của phiên sau:** phân loại 75 hình thành mấy nhóm.~~
-**✓ ĐÃ XONG** → `docs/phan_loai_hinh_lop2.md`: 15 nhóm, kín 75/75.
-
-Ba điều khảo sát lật lại so với ghi chú trên:
-- Đoán "5–8 nguyên mẫu" là **thiếu** — thực tế cần 13–16.
-- `image13.png` **không phải hình toán** (thang tự chấm 5 sao, lặp ở cả 33 bài); cùng 4 hình
-  nữa nên làm **component giao diện**, không dựng PNG.
-- 107 lượt nhúng nhưng chỉ 75 file — đừng lấy 107 làm khối lượng việc.
-
-Ảnh đã trích sẵn để xem nhanh (thư mục tạm, không nằm trong kho):
-`scratchpad/l2img/image1.png … image75.png` — hoặc trích lại bằng `zipfile` từ
-`docs/Toan_Tu_Duy_Lop2_Ban_hoan_chinh.docx`, phần `word/media/`.
-
-### 2 · 8 bài ôn tập chương
-Sách có "Ôn tập N · …" cuối mỗi chương, kèm **Bảng tự soi** (sai câu nào ôn bài
-đó) và **Đề B** để làm lại. Bộ trích hiện tại (`tools/rut_lop2.py`) chỉ bắt 33 bài
-chính, chưa bắt ôn tập.
-
-Bảng tự soi đáng giá: nó là bản đồ *câu sai → bài cần ôn*, giống trục
-`CĐ-x.y ↔ Bx.My` đã dùng rất hiệu quả ở lớp 5.
-
-### 3 · 3 ải cuối sách
-"Ải 1 ★ Khởi động · Ải 2 ★★ Chiến binh · Ải 3 ★★★ Trùm cuối", có kèm đáp án.
-Vai trò giống kỳ thi thử của lớp 5.
-
-Tổng câu hỏi của mục 2 + 3: khoảng **106 câu** (387 dòng `Câu n.` trong sách trừ
-281 câu đã lấy).
-
----
-
-## Chạy lại dây chuyền
+## Dây chuyền — sáu bước, phải chạy liền nhau
 
 ```bash
-python3 tools/lam_lop2.py    # trích thô → làm dễ hiểu → dựng dữ liệu
-cd web && npm test           # cổng nghiệm thu soi lại
+python3 tools/lam_lop2.py     # trích → dễ hiểu → dựng bài → gắn hình → ôn tập → khuôn chung
+cd web && npm test && npm run build
 ```
 
-Ba bước PHẢI chạy liền nhau. Chạy lẻ `chuan_lop2.py` mà quên `de_hieu_lop2.py` thì
-app hiện lại lời văn khó của sách gốc **mà không có gì báo**.
+Vẽ lại hình thì chạy riêng `python3 tools/ve_hinh_lop2.py` (chậm, mà bản mô tả hình
+gần như không đổi theo lời văn).
 
-## Nhắc lại hai bẫy đã dính, đừng dính lại
+## Ba cái bẫy đã dính, đừng dính lại
 
-- **Ghi đè âm thầm:** ở Quyển 2 lớp 5, chạy lại bộ dựng dữ liệu đã xoá sạch phần
-  `soDo` vừa gắn — dữ liệu vẫn hợp lệ, bài vẫn chạy, chỉ mất hết hình. Nếu gắn
-  hình lớp 2 theo cách tương tự thì phải cho vào `tools/lam_lop2.py` ở **bước cuối**.
-- **Bảng viết tay khớp nguyên văn:** `VIET_LAI` trong `de_hieu_lop2.py` khớp theo
-  đúng từng chữ. Sách sửa một dấu phẩy là câu ấy im lặng giữ nguyên bản khó —
-  đã có cảnh báo, đừng bỏ qua khi nó kêu.
+- **Gắn hình phải ở BƯỚC CUỐI.** Bước dựng dữ liệu ghi đè trọn tệp bài học, gắn hình
+  trước nó là mất sạch hình mà dữ liệu vẫn hợp lệ và bài vẫn chạy — không có gì báo.
+- **Đừng neo hình theo nguyên văn dòng.** Lời văn đã được viết lại cho dễ hiểu ở bước 2.
+  Neo theo THỨ TỰ BƯỚC (`neoBuoc`) hoặc theo MÃ CÂU (`neoCau`).
+- **`npm test` nối bằng `&&`.** Một tệp vỡ là dừng cả chuỗi, mà tổng số PASS trông vẫn
+  đẹp. Luôn soi **mã thoát** và **số tệp chạy xong (17)**.
 
-## Còn treo ở lớp 5 (chưa gấp)
+## Việc còn treo (không thuộc lớp 2)
 
-- 106 câu lớp 2 vẫn dài hơn 20 chữ — phần lớn là lời kể có hội thoại, tự nhiên dài.
 - `firebase-functions` v5 → v7 (breaking changes).
-- Firebase Storage chưa bật (chỉ dùng cho ảnh đại diện).
+- Gói JS 828 KB vượt ngưỡng cảnh báo của Vite — tách gói bằng `manualChunks`.
+- `HomeLop2.jsx` vẫn riêng với `Home.jsx`: hai trang chính khác nhau về bản chất
+  (lớp 2 không khoá bài, có bảng sao; lớp 5 khoá theo chương, có thẻ hôm nay).
+  Mọi thứ khác đã dùng chung.

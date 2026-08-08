@@ -207,8 +207,10 @@ export default function App() {
     return (
       <ExamPlayer
         chapter={view.chapter}
+        chuongTrinh={chuongTrinh || 'lop5'}
         onExit={() => setView({ page: 'home' })}
-        onOpenMicro={(id) => setView({ page: 'lesson', microId: id })}
+        onOpenMicro={(id) => setView(chuongTrinhCua(id) === 'lop2'
+          ? { page: 'lop2bai', baiId: id } : { page: 'lesson', microId: id })}
         onDone={(g) => { setProgress((p) => recordChapter(p, view.chapter, g)); setView({ page: 'home' }); }}
       />
     );
@@ -235,6 +237,7 @@ export default function App() {
       <HomeLop2
         progress={progress}
         onMoBai={(id) => setView({ page: 'lop2bai', baiId: id })}
+        onMoOnTap={(ch) => setView({ page: 'exam', chapter: ch })}
         onSoPhuHuynh={() => setView({ page: 'report' })}
         onDoiChuongTrinh={() => setChuongTrinh(null)}
       />

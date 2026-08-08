@@ -10,8 +10,9 @@ import BangSuuTapSao from './BangSuuTapSao.jsx';
  * chữ để đọc, mà bé chưa có nhu cầu "mở khoá". Thay vào đó đánh dấu bài đã học
  * bằng ngôi sao, và luôn chỉ rõ "bài tiếp theo của con".
  */
-export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuHuynh }) {
+export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuHuynh, onMoOnTap }) {
   const [idx, setIdx] = useState(null);
+  const [onTap, setOnTap] = useState([]);
   const [loi, setLoi] = useState(null);
 
   useEffect(() => {
@@ -21,6 +22,9 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuH
          lớp 5 — ghi nhớ ngay khi nạp để chapterOf/allMicroIds dùng chung được. */
       .then((ds) => { ghiNhoChuong(ds); setIdx(ds); })
       .catch((e) => setLoi(String(e?.message || e)));
+    // 8 bài ôn tập + 3 ải — dùng chung màn sát hạch với lớp 5
+    fetch(dongDau(`${CONTENT}/lop2/ontap.json`))
+      .then((r) => r.json()).then(setOnTap).catch(() => setOnTap([]));
   }, []);
 
   /* Dùng CHUNG sổ tiến độ với lớp 5 (progress.micros) thay vì sổ riêng
@@ -106,8 +110,55 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuH
                 <span className="text-[14px] text-mute">▶</span>
               </button>
             ))}
+
+            {/* Ôn tập của chương đứng NGAY SAU các bài của chương ấy — bé học xong
+                chương là thấy ngay cửa ải, không phải đi tìm ở đâu khác. */}
+            {onTap.filter((o) => o.loai === 'ontap' && o.so === Number(ch)).map((o) => {
+              const kq = progress?.chapters?.[o.chapter];
+              return (
+                <button key={o.id} onClick={() => onMoOnTap(o.chapter)}
+                        className="mt-2 flex w-full items-center gap-2.5 rounded-xl border-2 border-gold bg-gold-pale px-3 py-2.5 text-left">
+                  <span className="text-[18px] leading-none">{kq?.pass ? '🏅' : '🎯'}</span>
+                  <span className="flex-1">
+                    <span className="block text-[15px] font-bold leading-snug text-gold-dark">
+                      {o.name}
+                    </span>
+                    <span className="block text-[12px] text-mute">
+                      {o.soCau} câu · làm đúng {o.need} câu là qua
+                      {kq ? ` · lần trước ${kq.right}/${kq.total}` : ''}
+                    </span>
+                  </span>
+                  <span className="text-[14px] text-mute">▶</span>
+                </button>
+              );
+            })}
           </section>
         ))}
+
+        {/* Ba ải cuối sách — trộn đủ 8 chương */}
+        {onTap.some((o) => o.loai === 'ai') && (
+          <section className="card">
+            <div className="kicker">🏰 BA CỬA ẢI CUỐI SÁCH</div>
+            <p className="text-[13.5px] text-mute">Trộn đủ cả 8 chương. Làm lần lượt từ Ải 1.</p>
+            {onTap.filter((o) => o.loai === 'ai').sort((a, b) => a.so - b.so).map((o) => {
+              const kq = progress?.chapters?.[o.chapter];
+              return (
+                <button key={o.id} onClick={() => onMoOnTap(o.chapter)}
+                        className="mt-1.5 flex w-full items-center gap-2.5 rounded-xl border border-line px-3 py-2.5 text-left hover:bg-soft">
+                  <span className="text-[18px] leading-none">{kq?.pass ? '⭐' : '🚪'}</span>
+                  <span className="flex-1">
+                    <span className="block text-[15px] font-bold leading-snug text-navy">{o.name}</span>
+                    <span className="block text-[12px] text-mute">
+                      {o.soCau} câu · làm đúng {o.need} câu là qua
+                      {kq ? ` · lần trước ${kq.right}/${kq.total}` : ''}
+                    </span>
+                  </span>
+                  <span className="text-[14px] text-mute">▶</span>
+                </button>
+              );
+            })}
+          </section>
+        )}
       </div>
 
       <ChanTrang />

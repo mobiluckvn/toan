@@ -118,8 +118,10 @@ t('hình sang bản khuôn chung KHÔNG rơi rớt', hinhChung.length === hinhTr
 /* Hình đã vẽ nhưng chưa có chỗ đặt (thuộc Ôn tập / ba ải chưa trích) phải khai báo
    rõ, không được im lặng biến mất giữa các bước của dây chuyền. */
 const hoan = Object.values(soTay).filter((h) => h.hoan);
-t(`hình đã vẽ = đã gắn + hoãn (${hinhTrongBai.length} + ${hoan.length})`,
-  hinhTrongBai.length + hoan.length === Object.keys(soTay).length);
+const cuaKy = Object.values(soTay).filter((h) => h.onTap);
+t(`hình đã vẽ = trong bài + trong kỳ sát hạch + hoãn `
+  + `(${hinhTrongBai.length} + ${cuaKy.length} + ${hoan.length})`,
+  hinhTrongBai.length + cuaKy.length + hoan.length === Object.keys(soTay).length);
 t('hình nào cũng chỉ rõ chỗ đứng', hinhChung.every((f) => (f.usedIn || []).length === 1));
 t('mã hình không trùng nhau',
   new Set(hinhTrongBai.map(([, , , h]) => h.id)).size === hinhTrongBai.length);
@@ -216,6 +218,37 @@ t('nối bài liền mạch: prev/next khớp thứ tự',
                      && d.series.next === (k + 1 < chung.length ? chung[k + 1].id : null)));
 t('chỉ mục khớp số bài', idx.length === chung.length);
 t('chỉ mục bài nào cũng ghi chương', idx.every((b) => b.chuong >= 1 && b.chuong <= 8));
+
+
+/* ── 9. 8 BÀI ÔN TẬP + 3 ẢI ──
+   Trích từ phần sách nằm GIỮA hai bài học, chỗ trước đây đổ nhầm vào "Góc bố mẹ".
+   Bảng tự soi của sách khớp thẳng vào diagnosesMicro: sai câu nào mở đúng bài ấy. */
+const RV = new URL('../public/content/reviews/', import.meta.url).pathname;
+const ky = readdirSync(RV).filter((f) => f.startsWith('DCR_KSN2_'))
+  .map((f) => JSON.parse(readFileSync(join(RV, f), 'utf8')));
+const dsBai = new Set(bai.map((b) => b.id));
+
+t(`11 kỳ sát hạch: 8 ôn tập + 3 ải (${ky.length})`, ky.length === 11);
+t('8 ôn tập', ky.filter((k) => k.loai === 'ontap').length === 8);
+t('3 ải', ky.filter((k) => k.loai === 'ai').length === 3);
+const cauKy = ky.flatMap((k) => k.examA || []);
+t(`114 câu (${cauKy.length})`, cauKy.length === 114);
+t('câu nào cũng có đề', cauKy.every((c) => String(c.text || '').length > 8));
+t('câu nào cũng có lời giải mẫu để bé tự chấm',
+  cauKy.every((c) => String(c.answer || '').length > 0));
+t('BẢNG TỰ SOI trỏ vào bài CÓ THẬT',
+  cauKy.every((c) => dsBai.has(c.diagnosesMicro)));
+t('kỳ nào cũng có ngưỡng đạt lấy từ sách',
+  ky.every((k) => k.need >= 1 && k.need <= (k.examA || []).length));
+t('mỗi chương đúng một kỳ ôn tập',
+  new Set(ky.filter((k) => k.loai === 'ontap').map((k) => k.so)).size === 8);
+/* Chỉ ÔN TẬP mới có đề B. Ba ải là cửa cuối, sách cố ý chỉ cho một lượt. */
+t('ôn tập nào cũng có đề B để làm lại',
+  ky.filter((k) => k.loai === 'ontap').every((k) => (k.deB || []).length > 0));
+/* Sáu hình từng chờ vì ôn tập chưa có — nay phải nằm đúng trong kỳ của nó. */
+const hinhKy = ky.flatMap((k) => k.hinh || []);
+t(`hình của kỳ sát hạch đã gắn (${hinhKy.length})`, hinhKy.length === 6);
+t('hình kỳ sát hạch có đủ mã kiểm', hinhKy.every((h) => h.sha256_16 && h.file));
 
 console.log(`\n   ${bai.length} bài · ${cau.length} câu · câu dài ${quaDai}/${tongCau} (${tiLe}%)`);
 console.log(`\n${pass} PASS · ${fail} FAIL`);

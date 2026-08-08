@@ -45,7 +45,10 @@ def main():
     # nhưng phải NÓI RA — im lặng bỏ qua thì lần sau tưởng đã gắn rồi.
     for k, v in sorted((k, v) for k, v in so_tay.items() if v.get('hoan')):
         print(f"  ⏸ {k}: {v['hoan']}")
-    theo_bai = {b: [x for x in ds if not x.get('hoan')] for b, ds in theo_bai.items()}
+    # Hình của bài ÔN TẬP không gắn vào bài học — dung_khuon_chung gắn thẳng vào
+    # tệp kỳ sát hạch, vì ôn tập không phải một bài học mà là một kỳ thi.
+    theo_bai = {b: [x for x in ds if not x.get('hoan') and not x.get('onTap')]
+                for b, ds in theo_bai.items()}
     theo_bai = {b: ds for b, ds in theo_bai.items() if ds}
 
     loi, gan = [], 0

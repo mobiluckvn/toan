@@ -43,7 +43,7 @@ def main(loc=None):
         so_tay[m['id']] = {
             'file': f'figures/{ten}', 'caption': m['caption'], 'bai': m['bai'],
             'muc': m['muc'], 'neoBuoc': m.get('neoBuoc', 0), 'neoCau': m.get('neoCau'),
-            'hoan': m.get('hoan'),
+            'hoan': m.get('hoan'), 'onTap': m.get('onTap'),
             'goc': m['goc'], 'sha256_16': sha,
         }
         print(f"  {m['id']}  {m['goc']:>13s} → {ten}  {sha}")
