@@ -26,8 +26,14 @@ thị giác với FigForge nhưng **không cùng một khuôn** như 53 sơ đ�
 không dùng lại được `arch_q2.bang_chien_thuat`, phải khảo sát nhóm hình rồi dựng
 vài nguyên mẫu (đoàn tàu, ngôi nhà trăm-chục-đơn vị, hình học…).
 
-**Việc đầu tiên của phiên sau:** phân loại 75 hình thành mấy nhóm, đếm mỗi nhóm
-bao nhiêu cái. Có thể chỉ cần 5–8 nguyên mẫu là phủ hết.
+~~**Việc đầu tiên của phiên sau:** phân loại 75 hình thành mấy nhóm.~~
+**✓ ĐÃ XONG** → `docs/phan_loai_hinh_lop2.md`: 15 nhóm, kín 75/75.
+
+Ba điều khảo sát lật lại so với ghi chú trên:
+- Đoán "5–8 nguyên mẫu" là **thiếu** — thực tế cần 13–16.
+- `image13.png` **không phải hình toán** (thang tự chấm 5 sao, lặp ở cả 33 bài); cùng 4 hình
+  nữa nên làm **component giao diện**, không dựng PNG.
+- 107 lượt nhúng nhưng chỉ 75 file — đừng lấy 107 làm khối lượng việc.
 
 Ảnh đã trích sẵn để xem nhanh (thư mục tạm, không nằm trong kho):
 `scratchpad/l2img/image1.png … image75.png` — hoặc trích lại bằng `zipfile` từ
