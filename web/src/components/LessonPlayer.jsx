@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { buildFlow, PHASES } from '../lib/flow.js';
-import { loadLesson, figureSrc, chapterOf } from '../lib/content.js';
+import { loadLesson, figureSrc, chapterOf, cachDoc } from '../lib/content.js';
 import { gradeMicro } from '../lib/flow.js';
 import { newSessionId } from '../lib/sync.js';
 import StepView from './StepView.jsx';
@@ -105,7 +105,7 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
   };
 
   return (
-    <div className="flex flex-col min-h-[100dvh]">
+    <div className={`flex flex-col min-h-[100dvh]${cachDoc(microId).chuTo ? ' doc-to' : ''}`}>
       <header className="sticky top-0 z-20 flex items-center gap-2.5 bg-navy px-3.5 py-2 text-white">
         {/* Nói rõ đây là THOÁT khỏi bài. Trước chỉ có mũi tên ← nên con bấm vào
             tưởng lùi một bước, hoá ra ra thẳng trang chủ. */}
@@ -114,7 +114,7 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
           ⌂ Thoát
         </button>
         <span className="rounded bg-gold px-1.5 py-0.5 text-[11px] font-extrabold text-gold-dark">
-          {microId.replace('DL:KSN5Q1.', '')}
+          {microId.replace(/^DL:(KSN5Q1|KSN2)\./, '')}
         </span>
         <h1 className="flex-1 text-[13px] font-semibold leading-tight line-clamp-2">
           {lesson.title}

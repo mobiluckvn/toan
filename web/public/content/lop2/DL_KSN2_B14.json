@@ -1,314 +1,269 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B14",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 14 · ĐI TÌM SỐ BÍ MẬT X",
+ "durationMinutes": 10,
  "so": 14,
- "ten": "ĐI TÌM SỐ BÍ MẬT X",
  "chuong": 4,
  "tenChuong": "Siêu nhân tính nhanh",
  "dangGoc": "SỐ 7.2 — Tìm thành phần chưa biết (một phép tính, trong bảng cửu chương)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Tìm được số trong ô trống của phép cộng, trừ, nhân, chia bằng cách cho máy \"chạy ngược\".",
-    "Thuộc các đôi máy ngược nhau: + ngược với −, × ngược với :.",
-    "Luôn THỬ LẠI đáp số trước khi chốt."
-   ],
-   "goc": [
-    "Tìm được số trong ô trống của phép cộng, trừ, nhân, chia bằng cách cho máy \"chạy ngược\".",
-    "Thuộc các đôi máy ngược nhau: + ngược với −, × ngược với :.",
-    "Luôn THỬ LẠI đáp số trước khi chốt."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Chiếc hộp giấu số",
-   "dong": [
-    "Trạm thứ ba của Đại hội có một chiếc hộp dán chữ \"?\". Ban giám khảo công bố: \"Một số bí mật đã chui vào MÁY CỘNG 5 và chạy ra thành 12. Ai gọi đúng tên số trong hộp, người đó qua trạm!\" Su Kem đoán bừa: \"Số 8! À không, số 6!\" — Trí Long lắc đầu: \"Không cần đoán. Cho 12 đi ngược qua máy là số bí mật tự bước ra.\""
-   ],
-   "goc": [
-    "Trạm thứ ba của Đại hội có một chiếc hộp dán chữ \"?\". Ban giám khảo công bố: \"Một số bí mật đã chui vào MÁY CỘNG 5 và chạy ra thành 12. Ai gọi đúng tên số trong hộp, người đó qua trạm!\" Su Kem đoán bừa: \"Số 8! À không, số 6!\" — Trí Long lắc đầu: \"Không cần đoán. Cho 12 đi ngược qua máy là số bí mật tự bước ra.\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Cho máy chạy ngược",
-   "dong": [
-    "Bước 1. Máy + 5 chạy xuôi: ▢ + 5 = 12. Muốn tìm ▢, cho 12 chạy NGƯỢC qua máy − 5:",
-    "Bước 2. Máy nhân cũng có bạn ngược của nó — máy chia:",
-    "Bước 3. Cẩn thận ca đặc biệt: 14 − ▢ = 6. Ở đây số bí mật KHÔNG chui vào máy — nó chính là số bị lấy đi! Từ 14 lấy đi bao nhiêu để còn 6? Lấy 14 − 6 = 8. (Thử lại: 14 − 8 = 6 ✓.)",
-    "Bước 4. Luật thép của trạm: tìm xong phải THỬ LẠI. Thay số vừa tìm vào chỗ ▢ tính xuôi một lần. Khớp đề bài mới được hô đáp án!",
-    "MẸO THÁM TỬ: + và − là đôi bạn ngược chiều; × và : cũng vậy. Số bí mật chạy xuôi ra kết quả — cho kết quả chạy ngược là bắt được nó. Và đừng quên còng số 8: THỬ LẠI!"
-   ],
-   "goc": [
-    "Bước 1. Máy + 5 chạy xuôi: ▢ + 5 = 12. Muốn tìm ▢, cho 12 chạy NGƯỢC qua máy − 5:",
-    "Bước 2. Máy nhân cũng có bạn ngược của nó — máy chia:",
-    "Bước 3. Cẩn thận ca đặc biệt: 14 − ▢ = 6. Ở đây số bí mật KHÔNG chui vào máy — nó chính là số bị lấy đi! Từ 14 lấy đi bao nhiêu để còn 6? Lấy 14 − 6 = 8. (Thử lại: 14 − 8 = 6 ✓.)",
-    "Bước 4. Luật thép của trạm: tìm xong phải THỬ LẠI — thay số vừa tìm vào chỗ ▢ tính xuôi một lần. Khớp đề bài mới được hô đáp án!",
-    "MẸO THÁM TỬ: + và − là đôi bạn ngược chiều; × và : cũng vậy. Số bí mật chạy xuôi ra kết quả — cho kết quả chạy ngược là bắt được nó. Và đừng quên còng số 8: THỬ LẠI!"
-   ],
-   "hinh": [
+ "skills": {
+  "bktUnit": "CHUONG:4@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 14,
+  "prev": "DL:KSN2.B13",
+  "next": "DL:KSN2.B15"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tìm được số trong ô trống của phép cộng, trừ, nhân, chia bằng cách cho máy \"chạy ngược\". Thuộc các đôi máy ngược nhau: + ngược với −, × ngược với :. Luôn THỬ LẠI đáp số trước khi chốt.",
+  "kidText": "Tìm được số trong ô trống của phép cộng, trừ, nhân, chia bằng cách cho máy \"chạy ngược\". Thuộc các đôi máy ngược nhau: + ngược với −, × ngược với :. Luôn THỬ LẠI đáp số trước khi chốt.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Máy + 5 chạy xuôi: ▢ + 5 = 12. Muốn tìm ▢, cho 12 chạy NGƯỢC qua máy − 5:"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Máy nhân cũng có bạn ngược của nó — máy chia:"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Cẩn thận ca đặc biệt: 14 − ▢ = 6. Ở đây số bí mật KHÔNG chui vào máy — nó chính là số bị lấy đi! Từ 14 lấy đi bao nhiêu để còn 6? Lấy 14 − 6 = 8. (Thử lại: 14 − 8 = 6 ✓.)"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4. Luật thép của trạm: tìm xong phải THỬ LẠI. Thay số vừa tìm vào chỗ ▢ tính xuôi một lần. Khớp đề bài mới được hô đáp án!"
+   }
+  ],
+  "mantra": "+ và − là đôi bạn ngược chiều; × và : cũng vậy. Số bí mật chạy xuôi ra kết quả — cho kết quả chạy ngược là bắt được nó. Và đừng quên còng số 8: THỬ LẠI!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với bài ▢ − 4 = 9, Su Kem giải: \"Có dấu trừ thì cứ trừ: 9 − 4 = 5. Số bí mật là 5!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Thử lại giúp Su Kem: 5 − 4 có bằng 9 không? Gợi ý 2: Số bí mật này bị máy − 4 lấy bớt đi mà vẫn còn 9. Vậy lúc đầu nó phải TO hơn hay BÉ hơn 9? Cho 9 chạy ngược qua máy nào mới đúng?"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Trạm thứ ba của Đại hội có một chiếc hộp dán chữ \"?\". Ban giám khảo công bố: \"Một số bí mật đã chui vào MÁY CỘNG 5 và chạy ra thành 12. Ai gọi đúng tên số trong hộp, người đó qua trạm!\" Su Kem đoán bừa: \"Số 8! À không, số 6!\" — Trí Long lắc đầu: \"Không cần đoán. Cho 12 đi ngược qua máy là số bí mật tự bước ra.\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Với bài ▢ − 4 = 9, Su Kem giải: \"Có dấu trừ thì cứ trừ: 9 − 4 = 5. Số bí mật là 5!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tìm số thích hợp điền vào ô trống: ▢ × 4 = 28.",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Số cần tìm là: 28 : 4 = 7"
+   },
+   {
+    "show": "Thử lại: 7 × 4 = 28 ✓ (đúng đề bài)."
+   },
+   {
+    "show": "Vậy số trong ô trống là 7."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
     {
-     "id": "L2H_MAY02",
-     "sauDong": 0,
-     "file": "figures/L2H_MAY02.png",
-     "caption": "Máy + 5 chạy ngược là máy − 5",
-     "sha256_16": "dc444f8400bcf195"
+     "id": "C1",
+     "text": "Tìm số trong ô trống: ▢ + 6 = 14; ▢ + 9 = 20.",
+     "solutionNarrative": "14 − 6 = 8 (thử: 8 + 6 = 14 ✓); 20 − 9 = 11"
     },
     {
-     "id": "L2H_MAY03",
-     "sauDong": 1,
-     "file": "figures/L2H_MAY03.png",
-     "caption": "Máy × 3 chạy ngược là máy : 3",
-     "sha256_16": "6aba22a4616e6d65"
+     "id": "C2",
+     "text": "Tìm số trong ô trống: ▢ − 3 = 8; ▢ − 7 = 10.",
+     "solutionNarrative": "8 + 3 = 11; 10 + 7 = 17"
+    },
+    {
+     "id": "C3",
+     "text": "Tìm số trong ô trống: ▢ × 2 = 16; ▢ × 5 = 35.",
+     "solutionNarrative": "16 : 2 = 8; 35 : 5 = 7"
     }
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Tìm số thích hợp điền vào ô trống: ▢ × 4 = 28.",
-    "Bài giải:",
-    "Số cần tìm là: 28 : 4 = 7",
-    "Thử lại: 7 × 4 = 28 ✓ (đúng đề bài).",
-    "Vậy số trong ô trống là 7."
    ],
-   "goc": [
-    "Đề bài: Tìm số thích hợp điền vào ô trống: ▢ × 4 = 28.",
-    "Bài giải:",
-    "Số cần tìm là: 28 : 4 = 7",
-    "Thử lại: 7 × 4 = 28 ✓ (đúng đề bài).",
-    "Vậy số trong ô trống là 7."
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Với bài ▢ − 4 = 9, Su Kem giải: \"Có dấu trừ thì cứ trừ: 9 − 4 = 5. Số bí mật là 5!\"",
-    "Gợi ý 1: Thử lại giúp Su Kem: 5 − 4 có bằng 9 không?",
-    "Gợi ý 2: Số bí mật này bị máy − 4 lấy bớt đi mà vẫn còn 9. Vậy lúc đầu nó phải TO hơn hay BÉ hơn 9? Cho 9 chạy ngược qua máy nào mới đúng?"
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tìm số trong ô trống: 15 − ▢ = 6; 20 − ▢ = 13. (Ca đặc biệt — nghĩ kỹ chiều máy!)",
+     "solutionNarrative": "15 − 6 = 9 (thử: 15 − 9 = 6 ✓); 20 − 13 = 7"
+    },
+    {
+     "id": "C5",
+     "text": "Tìm số trong ô trống: ▢ : 3 = 6; ▢ : 4 = 5.",
+     "solutionNarrative": "6 × 3 = 18; 5 × 4 = 20"
+    },
+    {
+     "id": "C6",
+     "text": "Tìm số trong ô trống: 18 : ▢ = 2; 24 : ▢ = 6.",
+     "solutionNarrative": "18 : 2 = 9; 24 : 6 = 4"
+    },
+    {
+     "id": "C7",
+     "text": "Nghĩ một số, cộng 8 thì được 25. Tìm số đã nghĩ (trình bày như ví dụ mẫu, nhớ thử lại).",
+     "solutionNarrative": "số đã nghĩ là 25 − 8 = 17; thử lại 17 + 8 = 25 ✓"
+    }
    ],
-   "goc": [
-    "Với bài ▢ − 4 = 9, Su Kem giải: \"Có dấu trừ thì cứ trừ: 9 − 4 = 5. Số bí mật là 5!\"",
-    "Gợi ý 1: Thử lại giúp Su Kem: 5 − 4 có bằng 9 không?",
-    "Gợi ý 2: Số bí mật này bị máy − 4 lấy bớt đi mà vẫn còn 9 — vậy lúc đầu nó phải TO hơn hay BÉ hơn 9? Cho 9 chạy ngược qua máy nào mới đúng?"
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Chơi \"máy biến số\" hai chiều: bố mẹ làm máy (+4 chẳng hạn), con thả số vào - máy hô số ra; rồi đổi luật: máy chỉ hô số RA, con truy ngược số VÀO.",
-    "Câu hỏi vàng khi con bí: \"Số bí mật đi qua máy gì? Máy ngược của nó là máy gì?\" — đừng hỏi \"cộng hay trừ?\" kiểu mớm đáp án.",
-    "NÊN: bắt buộc nghi thức THỬ LẠI thành thói quen (con nào cũng thích đóng vai giám khảo tự chấm mình). KHÔNG NÊN: gọi ▢ là \"ẩn số x\" hay viết x — ký hiệu ấy hẹn con ở lớp trên; giờ nó là \"số bí mật trong hộp\"."
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Máy HAI TẦNG: số bí mật chui vào máy + 3, rồi kết quả chui tiếp vào máy × 2, cuối cùng chạy ra 16. Tìm số bí mật. (Mẹo: chạy ngược qua từng máy, máy nào vào SAU thì ngược TRƯỚC: 16 chạy ngược máy × 2 trước, rồi ngược máy + 3.)",
+     "solutionNarrative": "chạy ngược máy × 2 trước: 16 : 2 = 8; rồi ngược máy + 3: 8 − 3 = 5. Số bí mật là 5. Thử xuôi: 5 + 3 = 8; 8 × 2 = 16 ✓"
+    },
+    {
+     "id": "C9",
+     "text": "Trí Long đố: \"Một số nhân với chính nó thì được 16. Số đó là số nào?\" — dò trong bảng cửu chương xem!",
+     "solutionNarrative": "4 × 4 = 16 → số đó là 4"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm số trong ô trống: ▢ + 6 = 14; ▢ + 9 = 20.",
-   "loiChua": "14 − 6 = 8 (thử: 8 + 6 = 14 ✓); 20 − 9 = 11",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm số trong ô trống: ▢ − 3 = 8; ▢ − 7 = 10.",
-   "loiChua": "8 + 3 = 11; 10 + 7 = 17",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm số trong ô trống: ▢ × 2 = 16; ▢ × 5 = 35.",
-   "loiChua": "16 : 2 = 8; 35 : 5 = 7",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm số trong ô trống: 15 − ▢ = 6; 20 − ▢ = 13. (Ca đặc biệt — nghĩ kỹ chiều máy!)",
-   "loiChua": "15 − 6 = 9 (thử: 15 − 9 = 6 ✓); 20 − 13 = 7",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm số trong ô trống: ▢ : 3 = 6; ▢ : 4 = 5.",
-   "loiChua": "6 × 3 = 18; 5 × 4 = 20",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm số trong ô trống: 18 : ▢ = 2; 24 : ▢ = 6.",
-   "loiChua": "18 : 2 = 9; 24 : 6 = 4",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Nghĩ một số, cộng 8 thì được 25. Tìm số đã nghĩ (trình bày như ví dụ mẫu, nhớ thử lại).",
-   "loiChua": "số đã nghĩ là 25 − 8 = 17; thử lại 17 + 8 = 25 ✓",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Máy HAI TẦNG: số bí mật chui vào máy + 3, rồi kết quả chui tiếp vào máy × 2, cuối cùng chạy ra 16. Tìm số bí mật. (Mẹo: chạy ngược qua từng máy, máy nào vào SAU thì ngược TRƯỚC: 16 chạy ngược máy × 2 trước, rồi ngược máy + 3.)",
-   "loiChua": "chạy ngược máy × 2 trước: 16 : 2 = 8; rồi ngược máy + 3: 8 − 3 = 5. Số bí mật là 5. Thử xuôi: 5 + 3 = 8; 8 × 2 = 16 ✓",
-   "tuLuan": true
-  },
-  {
-   "id": "C9",
-   "maSach": "C9",
-   "so": 9,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Trí Long đố: \"Một số nhân với chính nó thì được 16. Số đó là số nào?\" — dò trong bảng cửu chương xem!",
-   "loiChua": "4 × 4 = 16 → số đó là 4",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Máy + 5 chạy ngược là máy − 5.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Máy + 5 chạy ngược là máy − 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Tìm xong số bí mật thì nên thử lại bằng cách tính xuôi.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+   {
+    "id": "Q2",
+    "text": "Tìm xong số bí mật thì nên thử lại bằng cách tính xuôi.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
+   {
+    "id": "Q3",
+    "text": "▢ + 7 = 15. Số trong ô trống là:",
+    "format": "mcq",
+    "choices": [
+     "A. 22",
+     "B. 8",
+     "C. 7"
+    ],
+    "answerKey": {
+     "choice": "B. 8"
+    },
+    "solutionNarrative": "Đáp án: B. 8"
+   },
+   {
+    "id": "Q4",
+    "text": "▢ × 3 = 21. Số trong ô trống là:",
+    "format": "mcq",
+    "choices": [
+     "A. 7",
+     "B. 18",
+     "C. 63"
+    ],
+    "answerKey": {
+     "choice": "A. 7"
+    },
+    "solutionNarrative": "Đáp án: A. 7"
+   },
+   {
+    "id": "Q5",
+    "text": "14 − ▢ = 6. Số trong ô trống là:",
+    "format": "mcq",
+    "choices": [
+     "A. 20",
+     "B. 8",
+     "C. 6"
+    ],
+    "answerKey": {
+     "choice": "B. 8"
+    },
+    "solutionNarrative": "Đáp án: B. 8"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chơi \"máy biến số\" hai chiều: bố mẹ làm máy (+4 chẳng hạn), con thả số vào - máy hô số ra; rồi đổi luật: máy chỉ hô số RA, con truy ngược số VÀO.",
+  "homeActivity": "Câu hỏi vàng khi con bí: \"Số bí mật đi qua máy gì? Máy ngược của nó là máy gì?\" — đừng hỏi \"cộng hay trừ?\" kiểu mớm đáp án.",
+  "watchFor": "NÊN: bắt buộc nghi thức THỬ LẠI thành thói quen (con nào cũng thích đóng vai giám khảo tự chấm mình). KHÔNG NÊN: gọi ▢ là \"ẩn số x\" hay viết x — ký hiệu ấy hẹn con ở lớp trên; giờ nó là \"số bí mật trong hộp\"."
+ },
+ "figureSpec": [
   {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "▢ + 7 = 15. Số trong ô trống là:",
-   "format": "mcq",
-   "choices": [
-    "A. 22",
-    "B. 8",
-    "C. 7"
+   "id": "L2H_MAY02",
+   "usedIn": [
+    "screen:S2"
    ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 8"
-   },
-   "loiChua": "Đáp án: B. 8",
-   "solutionNarrative": ""
+   "file": "figures/L2H_MAY02.png",
+   "caption": "Máy + 5 chạy ngược là máy − 5",
+   "sha256_16": "dc444f8400bcf195",
+   "mucGoc": "khamPha"
   },
   {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "▢ × 3 = 21. Số trong ô trống là:",
-   "format": "mcq",
-   "choices": [
-    "A. 7",
-    "B. 18",
-    "C. 63"
+   "id": "L2H_MAY03",
+   "usedIn": [
+    "screen:S3"
    ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "A. 7"
-   },
-   "loiChua": "Đáp án: A. 7",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "14 − ▢ = 6. Số trong ô trống là:",
-   "format": "mcq",
-   "choices": [
-    "A. 20",
-    "B. 8",
-    "C. 6"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 8"
-   },
-   "loiChua": "Đáp án: B. 8",
-   "solutionNarrative": ""
+   "file": "figures/L2H_MAY03.png",
+   "caption": "Máy × 3 chạy ngược là máy : 3",
+   "sha256_16": "6aba22a4616e6d65",
+   "mucGoc": "khamPha"
   }
  ]
 }

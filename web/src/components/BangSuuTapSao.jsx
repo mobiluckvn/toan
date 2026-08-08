@@ -16,7 +16,7 @@ export default function BangSuuTapSao({ idx, xong }) {
   for (const b of idx) {
     const c = chuong.get(b.chuong) || { ten: b.tenChuong, tong: 0, xong: 0 };
     c.tong += 1;
-    if (xong[b.id]) c.xong += 1;
+    if (xong[b.id]?.pass) c.xong += 1;
     chuong.set(b.chuong, c);
   }
   const ds = [...chuong.entries()].sort((a, b) => a[0] - b[0]);

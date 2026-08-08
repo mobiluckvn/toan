@@ -1,300 +1,251 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B15",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 15 · CHIA KẸO CÒN THỪA",
+ "durationMinutes": 10,
  "so": 15,
- "ten": "CHIA KẸO CÒN THỪA",
  "chuong": 4,
  "tenChuong": "Siêu nhân tính nhanh",
  "dangGoc": "SỐ 6.3 — Tiền thân phép chia có dư (mức thao tác - hình ảnh)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Chia được một nhóm đồ vật thành các phần bằng nhau và nói rõ CÒN THỪA mấy.",
-    "Phân biệt chia HẾT (vừa khít) và chia CÒN THỪA.",
-    "Hiểu luật vàng: số thừa phải BÉ HƠN số bạn được chia — nếu không thì chia tiếp được!"
+ "skills": {
+  "bktUnit": "CHUONG:4@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 15,
+  "prev": "DL:KSN2.B14",
+  "next": "DL:KSN2.B16"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Chia được một nhóm đồ vật thành các phần bằng nhau và nói rõ CÒN THỪA mấy. Phân biệt chia HẾT (vừa khít) và chia CÒN THỪA. Hiểu luật vàng: số thừa phải BÉ HƠN số bạn được chia — nếu không thì chia tiếp được!",
+  "kidText": "Chia được một nhóm đồ vật thành các phần bằng nhau và nói rõ CÒN THỪA mấy. Phân biệt chia HẾT (vừa khít) và chia CÒN THỪA. Hiểu luật vàng: số thừa phải BÉ HƠN số bạn được chia — nếu không thì chia tiếp được!",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Cách chia công bằng nhất: chia theo VÒNG. Mỗi vòng phát cho mỗi bạn đúng 1 viên, tức mỗi vòng tốn 3 viên."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Hết vòng 5 đã phát 15 viên (đúng bảng nhân: 3 × 5 = 15). Trong tay còn 17 − 15 = 2 viên. Mà có tận 3 bạn → không đủ phát vòng 6, dừng! Vậy: mỗi bạn 5 viên, thừa 2 viên."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Luật vàng của phép chia còn thừa: số thừa phải BÉ HƠN số bạn. Nếu ai đó bảo \"thừa 5 viên\" khi chia cho 3 bạn — vô lý! 5 viên đủ phát thêm cả một vòng (3 viên) nữa cơ mà."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4. Có gói chia đẹp vừa khít: 15 viên chia 3 bạn — mỗi bạn 5 viên, thừa 0. Đó là chia HẾT. Bảng cửu chương chính là danh sách các ca \"chia đẹp\": 15 nằm trong bảng nhân 3 nên chia 3 là hết veo!"
+   }
+  ],
+  "mantra": "Chia cho 3 bạn? Lần theo bảng nhân 3 tìm trạm dừng GẦN NHẤT mà không vượt quá: 17 → trạm 15 (3 × 5). Số vòng là 5, số thừa là 17 − 15 = 2. Và luôn soi luật vàng: thừa phải bé hơn số bạn!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Su Kem chia 17 viên cho 3 bạn: \"Mỗi bạn 4 viên, thừa 5 viên. Chỗ thừa để tớ... bảo quản!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Soi luật vàng xem: thừa 5 viên mà chỉ có 3 bạn. 5 có bé hơn 3 không? Gợi ý 2: Với 5 viên \"bảo quản\" đó còn phát thêm được vòng nào không? Chia lại chuẩn giúp Su Kem (và cứu chỗ kẹo) nhé!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Trạm cuối của Đại hội: gói kẹo 17 viên chia đều cho 3 bạn. Su Kem chia một hồi rồi bối rối: \"Kiểu gì cũng có kẹo... mồ côi! Hay tớ ăn luôn chỗ thừa cho gọn nhỉ?\". Ban giám khảo lắc đầu: \"Muốn qua trạm, phải nói ĐÚNG mỗi bạn mấy viên và thừa mấy viên!\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Su Kem chia 17 viên cho 3 bạn: \"Mỗi bạn 4 viên, thừa 5 viên. Chỗ thừa để tớ... bảo quản!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Có 20 viên bi chia đều cho 6 bạn. Hỏi mỗi bạn được mấy viên và còn thừa mấy viên?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Lần theo bảng nhân 6: 6 × 3 = 18 (chưa vượt 20). 6 × 4 = 24 (vượt mất rồi!)."
+   },
+   {
+    "show": "Vậy chia được 3 vòng: mỗi bạn được 3 viên."
+   },
+   {
+    "show": "Số bi còn thừa là: 20 − 18 = 2 (viên)"
+   },
+   {
+    "show": "Đáp số: mỗi bạn 3 viên, thừa 2 viên. (Kiểm tra luật vàng: 2 < 6 ✓)"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Chia 10 viên kẹo cho 2 bạn: mỗi bạn mấy viên, thừa mấy viên? Đây là chia hết hay chia còn thừa?",
+     "solutionNarrative": "mỗi bạn 5 viên, thừa 0 — chia hết"
+    },
+    {
+     "id": "C2",
+     "text": "Chia 11 viên kẹo cho 2 bạn: mỗi bạn mấy viên, thừa mấy viên?",
+     "solutionNarrative": "mỗi bạn 5 viên, thừa 1"
+    },
+    {
+     "id": "C3",
+     "text": "Chia 13 que tính cho 4 bạn (vẽ 4 vòng tròn rồi chia theo vòng nhé): mỗi bạn mấy que, thừa mấy que?",
+     "solutionNarrative": "4 × 3 = 12 → mỗi bạn 3 que, thừa 1"
+    }
    ],
-   "goc": [
-    "Chia được một nhóm đồ vật thành các phần bằng nhau và nói rõ CÒN THỪA mấy.",
-    "Phân biệt chia HẾT (vừa khít) và chia CÒN THỪA.",
-    "Hiểu luật vàng: số thừa phải BÉ HƠN số bạn được chia — nếu không thì chia tiếp được!"
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Gói kẹo 17 viên",
-   "dong": [
-    "Trạm cuối của Đại hội: gói kẹo 17 viên chia đều cho 3 bạn. Su Kem chia một hồi rồi bối rối: \"Kiểu gì cũng có kẹo... mồ côi! Hay tớ ăn luôn chỗ thừa cho gọn nhỉ?\". Ban giám khảo lắc đầu: \"Muốn qua trạm, phải nói ĐÚNG mỗi bạn mấy viên và thừa mấy viên!\""
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Chia 22 viên bi cho 4 bạn: mỗi bạn mấy viên, thừa mấy viên?",
+     "solutionNarrative": "4 × 5 = 20 → mỗi bạn 5 viên, thừa 2"
+    },
+    {
+     "id": "C5",
+     "text": "Chia 30 quyển vở cho 5 bạn: mỗi bạn mấy quyển, thừa mấy quyển? Vì sao lần này \"đẹp\" thế?",
+     "solutionNarrative": "5 × 6 = 30 → mỗi bạn 6 quyển, thừa 0 — \"đẹp\" vì 30 nằm ngay trong bảng nhân 5!"
+    },
+    {
+     "id": "C6",
+     "text": "Chia 26 viên kẹo cho 3 bạn: mỗi bạn mấy viên, thừa mấy viên?",
+     "solutionNarrative": "3 × 8 = 24 → mỗi bạn 8 viên, thừa 2"
+    },
+    {
+     "id": "C7",
+     "text": "Cô giáo có 19 bông hoa cắm đều vào 5 lọ. Mỗi lọ mấy bông và còn thừa mấy bông?",
+     "solutionNarrative": "5 × 3 = 15 → mỗi lọ 3 bông, thừa 4 bông (soi luật vàng: 4 < 5 ✓)"
+    }
    ],
-   "goc": [
-    "Trạm cuối của Đại hội: gói kẹo 17 viên chia đều cho 3 bạn. Su Kem chia một hồi rồi bối rối: \"Kiểu gì cũng có kẹo... mồ côi! Hay tớ ăn luôn chỗ thừa cho gọn nhỉ?\" — Ban giám khảo lắc đầu: \"Muốn qua trạm, phải nói ĐÚNG mỗi bạn mấy viên và thừa mấy viên!\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Chia theo vòng",
-   "dong": [
-    "Bước 1. Cách chia công bằng nhất: chia theo VÒNG. Mỗi vòng phát cho mỗi bạn đúng 1 viên, tức mỗi vòng tốn 3 viên.",
-    "Bước 2. Hết vòng 5 đã phát 15 viên (đúng bảng nhân: 3 × 5 = 15). Trong tay còn 17 − 15 = 2 viên. Mà có tận 3 bạn → không đủ phát vòng 6, dừng! Vậy: mỗi bạn 5 viên, thừa 2 viên.",
-    "Bước 3. Luật vàng của phép chia còn thừa: số thừa phải BÉ HƠN số bạn. Nếu ai đó bảo \"thừa 5 viên\" khi chia cho 3 bạn — vô lý! 5 viên đủ phát thêm cả một vòng (3 viên) nữa cơ mà.",
-    "Bước 4. Có gói chia đẹp vừa khít: 15 viên chia 3 bạn — mỗi bạn 5 viên, thừa 0. Đó là chia HẾT. Bảng cửu chương chính là danh sách các ca \"chia đẹp\": 15 nằm trong bảng nhân 3 nên chia 3 là hết veo!",
-    "MẸO THÁM TỬ: Chia cho 3 bạn? Lần theo bảng nhân 3 tìm trạm dừng GẦN NHẤT mà không vượt quá: 17 → trạm 15 (3 × 5). Số vòng là 5, số thừa là 17 − 15 = 2. Và luôn soi luật vàng: thừa phải bé hơn số bạn!"
-   ],
-   "goc": [
-    "Bước 1. Cách chia công bằng nhất: chia theo VÒNG — mỗi vòng phát cho mỗi bạn đúng 1 viên, tức mỗi vòng tốn 3 viên.",
-    "Bước 2. Hết vòng 5 đã phát 15 viên (đúng bảng nhân: 3 × 5 = 15). Trong tay còn 17 − 15 = 2 viên — mà có tận 3 bạn → không đủ phát vòng 6, dừng! Vậy: mỗi bạn 5 viên, thừa 2 viên.",
-    "Bước 3. Luật vàng của phép chia còn thừa: số thừa phải BÉ HƠN số bạn. Nếu ai đó bảo \"thừa 5 viên\" khi chia cho 3 bạn — vô lý! 5 viên đủ phát thêm cả một vòng (3 viên) nữa cơ mà.",
-    "Bước 4. Có gói chia đẹp vừa khít: 15 viên chia 3 bạn — mỗi bạn 5 viên, thừa 0. Đó là chia HẾT. Bảng cửu chương chính là danh sách các ca \"chia đẹp\": 15 nằm trong bảng nhân 3 nên chia 3 là hết veo!",
-    "MẸO THÁM TỬ: Chia cho 3 bạn? Lần theo bảng nhân 3 tìm trạm dừng GẦN NHẤT mà không vượt quá: 17 → trạm 15 (3 × 5). Số vòng là 5, số thừa là 17 − 15 = 2. Và luôn soi luật vàng: thừa phải bé hơn số bạn!"
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Có 20 viên bi chia đều cho 6 bạn. Hỏi mỗi bạn được mấy viên và còn thừa mấy viên?",
-    "Bài giải:",
-    "Lần theo bảng nhân 6: 6 × 3 = 18 (chưa vượt 20). 6 × 4 = 24 (vượt mất rồi!).",
-    "Vậy chia được 3 vòng: mỗi bạn được 3 viên.",
-    "Số bi còn thừa là: 20 − 18 = 2 (viên)",
-    "Đáp số: mỗi bạn 3 viên, thừa 2 viên. (Kiểm tra luật vàng: 2 < 6 ✓)"
-   ],
-   "goc": [
-    "Đề bài: Có 20 viên bi chia đều cho 6 bạn. Hỏi mỗi bạn được mấy viên và còn thừa mấy viên?",
-    "Bài giải:",
-    "Lần theo bảng nhân 6: 6 × 3 = 18 (chưa vượt 20); 6 × 4 = 24 (vượt mất rồi!).",
-    "Vậy chia được 3 vòng: mỗi bạn được 3 viên.",
-    "Số bi còn thừa là: 20 − 18 = 2 (viên)",
-    "Đáp số: mỗi bạn 3 viên, thừa 2 viên. (Kiểm tra luật vàng: 2 < 6 ✓)"
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Su Kem chia 17 viên cho 3 bạn: \"Mỗi bạn 4 viên, thừa 5 viên. Chỗ thừa để tớ... bảo quản!\"",
-    "Gợi ý 1: Soi luật vàng xem: thừa 5 viên mà chỉ có 3 bạn. 5 có bé hơn 3 không?",
-    "Gợi ý 2: Với 5 viên \"bảo quản\" đó còn phát thêm được vòng nào không? Chia lại chuẩn giúp Su Kem (và cứu chỗ kẹo) nhé!"
-   ],
-   "goc": [
-    "Su Kem chia 17 viên cho 3 bạn: \"Mỗi bạn 4 viên, thừa 5 viên. Chỗ thừa để tớ... bảo quản!\"",
-    "Gợi ý 1: Soi luật vàng xem: thừa 5 viên mà chỉ có 3 bạn — 5 có bé hơn 3 không?",
-    "Gợi ý 2: Với 5 viên \"bảo quản\" đó còn phát thêm được vòng nào không? Chia lại chuẩn giúp Su Kem (và cứu chỗ kẹo) nhé!"
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Chia thật mọi thứ trong nhà: nho, hạt lạc, viên lego — cho 2, 3, 4 \"nhân vật\" (thêm gấu bông cho đủ đội hình). Bàn tay chia trước, con số theo sau.",
-    "Hỏi câu luật vàng mỗi lần chia xong: \"Chỗ thừa có phát thêm được vòng nữa không?\" — đây chính là điều kiện số dư < số chia mà lớp 3 sẽ học thành lời.",
-    "NÊN: cho con gặp cả ca chia hết lẫn chia thừa xen kẽ. KHÔNG NÊN: viết phép tính 17 : 3 = 5 (dư 2) vội — ký hiệu \"dư\" là bài chính khóa lớp 3; lớp 2 nói bằng lời \"mỗi bạn 5 viên, thừa 2 viên\" là chuẩn đẹp."
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Khi chia kẹo cho 4 bạn, số viên THỪA nhiều nhất có thể là mấy? Vì sao không thể thừa nhiều hơn thế? Cho một ví dụ số kẹo bị thừa đúng như vậy.",
+     "solutionNarrative": "thừa nhiều nhất là 3 viên — vì thừa 4 viên là đủ phát thêm một vòng cho 4 bạn rồi! Ví dụ: 19 viên chia 4 bạn → mỗi bạn 4 viên, thừa 3"
+    },
+    {
+     "id": "C9",
+     "text": "Su Kem có một nắm kẹo từ 20 đến 25 viên. Chia cho 4 bạn thì vừa khít không thừa viên nào. Hỏi Su Kem có bao nhiêu viên kẹo? (Lần theo bảng nhân 4 trong khoảng 20-25 xem!)",
+     "solutionNarrative": "lần theo bảng nhân 4 trong khoảng 20-25: chỉ có 4 × 5 = 20 và 4 × 6 = 24 → Su Kem có 20 hoặc 24 viên kẹo (hai đáp án đều đúng!)"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Chia 10 viên kẹo cho 2 bạn: mỗi bạn mấy viên, thừa mấy viên? Đây là chia hết hay chia còn thừa?",
-   "loiChua": "mỗi bạn 5 viên, thừa 0 — chia hết",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Chia 11 viên kẹo cho 2 bạn: mỗi bạn mấy viên, thừa mấy viên?",
-   "loiChua": "mỗi bạn 5 viên, thừa 1",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Chia 13 que tính cho 4 bạn (vẽ 4 vòng tròn rồi chia theo vòng nhé): mỗi bạn mấy que, thừa mấy que?",
-   "loiChua": "4 × 3 = 12 → mỗi bạn 3 que, thừa 1",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Chia 22 viên bi cho 4 bạn: mỗi bạn mấy viên, thừa mấy viên?",
-   "loiChua": "4 × 5 = 20 → mỗi bạn 5 viên, thừa 2",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Chia 30 quyển vở cho 5 bạn: mỗi bạn mấy quyển, thừa mấy quyển? Vì sao lần này \"đẹp\" thế?",
-   "loiChua": "5 × 6 = 30 → mỗi bạn 6 quyển, thừa 0 — \"đẹp\" vì 30 nằm ngay trong bảng nhân 5!",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Chia 26 viên kẹo cho 3 bạn: mỗi bạn mấy viên, thừa mấy viên?",
-   "loiChua": "3 × 8 = 24 → mỗi bạn 8 viên, thừa 2",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Cô giáo có 19 bông hoa cắm đều vào 5 lọ. Mỗi lọ mấy bông và còn thừa mấy bông?",
-   "loiChua": "5 × 3 = 15 → mỗi lọ 3 bông, thừa 4 bông (soi luật vàng: 4 < 5 ✓)",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Khi chia kẹo cho 4 bạn, số viên THỪA nhiều nhất có thể là mấy? Vì sao không thể thừa nhiều hơn thế? Cho một ví dụ số kẹo bị thừa đúng như vậy.",
-   "loiChua": "thừa nhiều nhất là 3 viên — vì thừa 4 viên là đủ phát thêm một vòng cho 4 bạn rồi! Ví dụ: 19 viên chia 4 bạn → mỗi bạn 4 viên, thừa 3",
-   "tuLuan": true
-  },
-  {
-   "id": "C9",
-   "maSach": "C9",
-   "so": 9,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Su Kem có một nắm kẹo từ 20 đến 25 viên. Chia cho 4 bạn thì vừa khít không thừa viên nào. Hỏi Su Kem có bao nhiêu viên kẹo? (Lần theo bảng nhân 4 trong khoảng 20-25 xem!)",
-   "loiChua": "lần theo bảng nhân 4 trong khoảng 20-25: chỉ có 4 × 5 = 20 và 4 × 6 = 24 → Su Kem có 20 hoặc 24 viên kẹo (hai đáp án đều đúng!)",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "17 viên kẹo chia 3 bạn thì mỗi bạn 5 viên, thừa 2 viên.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "17 viên kẹo chia 3 bạn thì mỗi bạn 5 viên, thừa 2 viên.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Chia cho 3 bạn mà thừa 4 viên là kết quả hợp lệ.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": false
+   {
+    "id": "Q2",
+    "text": "Chia cho 3 bạn mà thừa 4 viên là kết quả hợp lệ.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "4 > 3, còn phát thêm vòng nữa"
    },
-   "loiChua": "4 > 3, còn phát thêm vòng nữa",
-   "solutionNarrative": "4 > 3, còn phát thêm vòng nữa"
-  },
-  {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "15 viên chia 3 bạn là phép chia:",
-   "format": "mcq",
-   "choices": [
-    "A. Còn thừa",
-    "B. Hết (vừa khít)",
-    "C. Không chia được"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. Hết (vừa khít)"
+   {
+    "id": "Q3",
+    "text": "15 viên chia 3 bạn là phép chia:",
+    "format": "mcq",
+    "choices": [
+     "A. Còn thừa",
+     "B. Hết (vừa khít)",
+     "C. Không chia được"
+    ],
+    "answerKey": {
+     "choice": "B. Hết (vừa khít)"
+    },
+    "solutionNarrative": "Đáp án: B. Hết (vừa khít)"
    },
-   "loiChua": "Đáp án: B. Hết (vừa khít)",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "22 viên chia 4 bạn thì thừa:",
-   "format": "mcq",
-   "choices": [
-    "A. 1 viên",
-    "B. 2 viên",
-    "C. 3 viên"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 2 viên"
+   {
+    "id": "Q4",
+    "text": "22 viên chia 4 bạn thì thừa:",
+    "format": "mcq",
+    "choices": [
+     "A. 1 viên",
+     "B. 2 viên",
+     "C. 3 viên"
+    ],
+    "answerKey": {
+     "choice": "B. 2 viên"
+    },
+    "solutionNarrative": "Đáp án: B. 2 viên"
    },
-   "loiChua": "Đáp án: B. 2 viên",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Chia cho 5 bạn, số thừa nhiều nhất có thể là:",
-   "format": "mcq",
-   "choices": [
-    "A. 4",
-    "B. 5",
-    "C. 6"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "A. 4"
-   },
-   "loiChua": "Đáp án: A. 4",
-   "solutionNarrative": ""
-  }
- ]
+   {
+    "id": "Q5",
+    "text": "Chia cho 5 bạn, số thừa nhiều nhất có thể là:",
+    "format": "mcq",
+    "choices": [
+     "A. 4",
+     "B. 5",
+     "C. 6"
+    ],
+    "answerKey": {
+     "choice": "A. 4"
+    },
+    "solutionNarrative": "Đáp án: A. 4"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chia thật mọi thứ trong nhà: nho, hạt lạc, viên lego — cho 2, 3, 4 \"nhân vật\" (thêm gấu bông cho đủ đội hình). Bàn tay chia trước, con số theo sau.",
+  "homeActivity": "Hỏi câu luật vàng mỗi lần chia xong: \"Chỗ thừa có phát thêm được vòng nữa không?\" — đây chính là điều kiện số dư < số chia mà lớp 3 sẽ học thành lời.",
+  "watchFor": "NÊN: cho con gặp cả ca chia hết lẫn chia thừa xen kẽ. KHÔNG NÊN: viết phép tính 17 : 3 = 5 (dư 2) vội — ký hiệu \"dư\" là bài chính khóa lớp 3; lớp 2 nói bằng lời \"mỗi bạn 5 viên, thừa 2 viên\" là chuẩn đẹp."
+ },
+ "figureSpec": []
 }

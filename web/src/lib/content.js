@@ -23,6 +23,47 @@ export const dongDau = (url, v = NOI_DUNG_V) =>
 /** DL:KSN5Q1.B49.M1 → DL_KSN5Q1_B49_M1 */
 export const idToFile = (microId) => microId.replace('DL:', 'DL_').replace(/\./g, '_');
 
+/* ─────────── HAI CHƯƠNG TRÌNH, MỘT BỘ MÃ ───────────
+ * Lớp 2 và lớp 5 dùng chung mọi màn hình; khác nhau chỉ ở NỘI DUNG và ở nhịp đọc.
+ * Chỗ khai khác biệt duy nhất là data/chuong_trinh.json — đừng rải điều kiện
+ * "nếu là lớp 2 thì…" ra khắp các component, vì thêm lớp thứ ba là phải đi sửa lại
+ * từng chỗ một.
+ */
+const THU_MUC = { lop2: 'lop2', lop5: 'lessons' };
+
+/* Nhịp đọc theo lớp. Đọc từ content/chuong_trinh.json khi app khởi động; có sẵn
+   bản mặc định để bộ kiểm chạy bằng node (không có mạng) vẫn dùng được. */
+let SO_DK = {
+  lop2: { doc: { chuTo: true, moiManMotMuc: true } },
+  lop5: { doc: { chuTo: false, moiManMotMuc: false } },
+};
+export const chuongTrinh = (ma) => SO_DK[ma] || SO_DK.lop5;
+export const cachDoc = (id) => chuongTrinh(chuongTrinhCua(id)).doc || {};
+export async function napSoDangKy() {
+  try {
+    const r = await fetch(dongDau(`${CONTENT}/chuong_trinh.json`));
+    if (r.ok) SO_DK = { ...SO_DK, ...(await r.json()) };
+  } catch { /* mất mạng: dùng bản mặc định, không chặn bé học */ }
+  return SO_DK;
+}
+
+/** Bài thuộc chương trình nào — nhìn mã bài là biết */
+export const chuongTrinhCua = (id) => (String(id).startsWith('DL:KSN2.') ? 'lop2' : 'lop5');
+
+/* Chương của từng bài lớp 2 nằm trong dữ liệu (8 chương, số bài mỗi chương khác
+   nhau) chứ không suy ra được bằng công thức như lớp 5. Nạp chỉ mục là ghi nhớ. */
+const chuongCua = new Map();
+const baiCua = new Map();          // mã chương trình → danh sách bài đúng thứ tự học
+export function ghiNhoChuong(danhSach) {
+  const ids = [];
+  for (const b of danhSach || []) {
+    if (!b?.id) continue;
+    ids.push(b.id);
+    if (b.chuong) chuongCua.set(b.id, b.chuong);
+  }
+  if (ids.length) baiCua.set(chuongTrinhCua(ids[0]), ids);
+}
+
 /** B49.M1 (dạng gọn người dùng gõ) → DL:KSN5Q1.B49.M1 */
 export const shortToId = (s) => (s.startsWith('DL:') ? s : `DL:KSN5Q1.${s}`);
 
@@ -30,7 +71,7 @@ const cache = new Map();
 
 export async function loadLesson(microId) {
   if (cache.has(microId)) return cache.get(microId);
-  const url = dongDau(`${CONTENT}/lessons/${idToFile(microId)}.json`);
+  const url = dongDau(`${CONTENT}/${THU_MUC[chuongTrinhCua(microId)]}/${idToFile(microId)}.json`);
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Không nạp được bài ${microId} (${res.status})`);
   const data = await res.json();
@@ -47,7 +88,8 @@ export const figureSrc = (fig) =>
   (fig?.file ? dongDau(`${CONTENT}/${fig.file}`, fig.sha256_16 || NOI_DUNG_V) : null);
 
 /** Danh sách 168 micro theo đúng thứ tự học */
-export function allMicroIds() {
+export function allMicroIds(ct = 'lop5') {
+  if (ct !== 'lop5') return baiCua.get(ct) || [];
   const out = [];
   for (let b = 1; b <= 56; b++) for (const k of [1, 2, 3]) out.push(`DL:KSN5Q1.B${b}.M${k}`);
   return out;
@@ -64,8 +106,10 @@ export function neighborIds(microId, lesson) {
   return { prev, next };
 }
 
-/** Chương của một micro (1–14) */
+/** Chương của một bài. Lớp 5 suy ra bằng công thức, lớp 2 tra bảng đã ghi nhớ. */
 export const chapterOf = (microId) => {
-  const b = Number(microId.split('.B')[1].split('.M')[0]);
-  return Math.ceil(b / 4);
+  if (chuongCua.has(microId)) return chuongCua.get(microId);
+  if (chuongTrinhCua(microId) === 'lop2') return 1;   // chưa nạp chỉ mục
+  const b = Number(String(microId).split('.B')[1]?.split('.M')[0]);
+  return Number.isFinite(b) ? Math.ceil(b / 4) : 1;
 };

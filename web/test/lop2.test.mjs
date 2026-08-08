@@ -13,10 +13,15 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 
+/* HAI thư mục, hai vai — cổng này soi cả hai:
+     data/lop2/                bản GỐC giữ 8 mục ①…⑧ của sách, để đối chiếu sách giấy
+     public/content/lop2/      bản KHUÔN CHUNG với lớp 5, là thứ app thật sự đọc */
+const G = new URL('../../data/lop2/', import.meta.url).pathname;
 const D = new URL('../public/content/lop2/', import.meta.url).pathname;
-const tep = readdirSync(D).filter((f) => f.startsWith('DL_KSN2_'));
-const bai = tep.map((f) => JSON.parse(readFileSync(join(D, f), 'utf8')))
-  .sort((a, b) => a.so - b.so);
+const bai = readdirSync(G).filter((f) => f.startsWith('DL_KSN2_'))
+  .map((f) => JSON.parse(readFileSync(join(G, f), 'utf8'))).sort((a, b) => a.so - b.so);
+const chung = readdirSync(D).filter((f) => f.startsWith('DL_KSN2_'))
+  .map((f) => JSON.parse(readFileSync(join(D, f), 'utf8'))).sort((a, b) => a.so - b.so);
 const idx = JSON.parse(readFileSync(join(D, 'index.json'), 'utf8'));
 
 let pass = 0, fail = 0;
@@ -106,9 +111,12 @@ t(`viết lại không làm mất nội dung (${Math.round((chuMoi / chuGoc) * 1
 const soTay = JSON.parse(readFileSync(new URL('../../data/lop2_hinh_manifest.json', import.meta.url).pathname, 'utf8'));
 const hinhTrongBai = bai.flatMap((b) =>
   Object.entries(b.muc).flatMap(([mk, m]) => (m.hinh || []).map((h) => [b, mk, m, h])));
+const hinhChung = chung.flatMap((d) => d.figureSpec || []);
 
 t(`hình đã gắn vào bài (${hinhTrongBai.length})`,
   hinhTrongBai.length === Object.keys(soTay).length);
+t('hình sang được bản khuôn chung', hinhChung.length === hinhTrongBai.length);
+t('hình nào cũng chỉ rõ chỗ đứng', hinhChung.every((f) => (f.usedIn || []).length === 1));
 t('mã hình không trùng nhau',
   new Set(hinhTrongBai.map(([, , , h]) => h.id)).size === hinhTrongBai.length);
 t('hình nào cũng neo vào một dòng có thật',
@@ -141,6 +149,7 @@ t('không bài nào lọt trường sauBai của bản trích thô',
    165 câu quiz (5 câu × 33 bài) từng nằm lẫn trong phần chữ vì mẫu tách câu đòi dấu
    chấm sau số, mà quiz ghi "Câu 1 (Đúng/Sai?):". Không tách được thì không chấm được. */
 const quiz = bai.flatMap((b) => b.cau.filter((c) => c.phan === 'quiz'));
+const satHach = chung.flatMap((d) => d.assessment?.items || []);
 t(`165 câu quiz (${quiz.length})`, quiz.length === 165);
 t('bài nào cũng đúng 5 câu quiz',
   bai.every((b) => b.cau.filter((c) => c.phan === 'quiz').length === 5));
@@ -156,6 +165,48 @@ t('phương án không còn dính trong đề',
   mcq.every((c) => !/\b[AB]\.\s/.test(c.text)));
 t('câu luyện tập vẫn để bé tự chấm',
   bai.flatMap((b) => b.cau.filter((c) => c.phan === 'luyenTap')).every((c) => c.tuLuan === true));
+
+
+/* ── 8. KHUÔN CHUNG với lớp 5 ──
+   Lớp 2 và lớp 5 dùng chung một bộ mã, nên bài lớp 2 phải mang đúng hình dạng mà
+   buildFlow() của lớp 5 đọc được. Lệch một trường là phòng học dựng ra màn trống,
+   mà không có gì báo — bài vẫn mở, chỉ là bé không thấy gì. */
+t('33 bài ở bản khuôn chung', chung.length === 33);
+t('bài nào cũng có mã, tiêu đề, mục tiêu',
+  chung.every((d) => d.id && d.title && d.objective?.kidText));
+t('bài nào cũng có câu chốt (mantra)',
+  chung.every((d) => String(d.knowledgeCore?.mantra || '').length > 5));
+t('bài nào cũng có nguyên tắc để giảng',
+  chung.every((d) => (d.knowledgeCore?.statements || []).length >= 1));
+t('mỗi màn giảng chỉ dạy MỘT nguyên tắc (nhịp đọc lớp 2)',
+  chung.every((d) => (d.lecture?.screens || [])
+    .filter((sc) => sc.kind === 'explain').every((sc) => (sc.teaches || []).length <= 1)));
+t('mã màn không trùng nhau trong một bài',
+  chung.every((d) => new Set((d.lecture?.screens || []).map((sc) => sc.id)).size
+                     === (d.lecture?.screens || []).length));
+t('mọi nguyên tắc đều có màn nhận',
+  chung.every((d) => {
+    const day = new Set((d.lecture?.screens || []).flatMap((sc) => sc.teaches || []));
+    return (d.knowledgeCore?.statements || []).every((k) => day.has(k.id));
+  }));
+t('bài nào cũng có bài mẫu', chung.every((d) => d.workedExample?.problem));
+t('bài nào cũng có câu luyện tập',
+  chung.every((d) => Object.values(d.practice?.pools || {}).some((v) => v.length)));
+t('bài nào cũng có 5 câu sát hạch',
+  chung.every((d) => (d.assessment?.items || []).length === 5));
+t(`sát hạch chấm được hết (${satHach.length})`,
+  satHach.every((it) => it.format === 'tf' || it.format === 'mcq'));
+t('câu luyện tập có lời giải mẫu để bé tự so',
+  chung.flatMap((d) => Object.values(d.practice?.pools || {}).flat())
+    .filter((it) => !it.answerKey).every((it) => it.solutionNarrative));
+t('bài nào cũng có góc bố mẹ', chung.every((d) => d.parentNote?.onComplete));
+t('bài nào cũng khai đơn vị BKT để cô giáo theo dõi',
+  chung.every((d) => String(d.skills?.bktUnit || '').includes('@G2')));
+t('nối bài liền mạch: prev/next khớp thứ tự',
+  chung.every((d, k) => d.series.prev === (k ? chung[k - 1].id : null)
+                     && d.series.next === (k + 1 < chung.length ? chung[k + 1].id : null)));
+t('chỉ mục khớp số bài', idx.length === chung.length);
+t('chỉ mục bài nào cũng ghi chương', idx.every((b) => b.chuong >= 1 && b.chuong <= 8));
 
 console.log(`\n   ${bai.length} bài · ${cau.length} câu · câu dài ${quaDai}/${tongCau} (${tiLe}%)`);
 console.log(`\n${pass} PASS · ${fail} FAIL`);

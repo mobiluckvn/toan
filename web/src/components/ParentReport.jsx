@@ -1,18 +1,22 @@
 import React, { useMemo, useState } from 'react';
 import { overallStats } from '../lib/progress.js';
-import { allMicroIds, chapterOf } from '../lib/content.js';
+import { allMicroIds, chapterOf, chuongTrinhCua } from '../lib/content.js';
 import { weakestUnits } from '../lib/adaptive.js';
 
 /**
  * SỔ HỌC — bản tính tại máy từ tiến độ cục bộ (chạy được cả khi chưa có Firebase).
  * Khi đã nối Firebase, màn này đọc thẳng parentReport/{learnerId} do Function ghi mỗi đêm.
  */
-export default function ParentReport({ progress, cloudReport, onExit, onOpenMicro, onRefresh }) {
-  const list = allMicroIds();
+export default function ParentReport({ progress, cloudReport, onExit, onOpenMicro, onRefresh,
+                                       chuongTrinh = 'lop5' }) {
+  /* Lọc theo CHƯƠNG TRÌNH con đang học. Hai lớp cùng đánh chương 1-8 nên trộn
+     chung là bố mẹ thấy "chương 1: 9 bài" trong khi lớp 2 chương 1 chỉ có 5 bài. */
+  const list = allMicroIds(chuongTrinh);
   const all = overallStats(progress, list);
 
   const local = useMemo(() => {
-    const ms = Object.entries(progress.micros || {});
+    const ms = Object.entries(progress.micros || {})
+      .filter(([id]) => chuongTrinhCua(id) === chuongTrinh);
     const tried = ms.filter(([, m]) => m.done && !m.pass);
     const attempts = ms.reduce((s, [, m]) => s + (m.attempts || 0), 0);
     const byChapter = {};
@@ -22,7 +26,7 @@ export default function ParentReport({ progress, cloudReport, onExit, onOpenMicr
       m.pass ? byChapter[c].done++ : byChapter[c].tried++;
     });
     return { tried, attempts, byChapter };
-  }, [progress]);
+  }, [progress, chuongTrinh]);
 
   const r = cloudReport;
   const weak = r?.weakest || weakestUnits(progress.mastery || {}, 3);

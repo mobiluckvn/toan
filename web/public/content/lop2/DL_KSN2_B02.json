@@ -1,322 +1,255 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B02",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 2 · CHÚ SỐ 0 DIỆU KỲ",
+ "durationMinutes": 10,
  "so": 2,
- "ten": "CHÚ SỐ 0 DIỆU KỲ",
  "chuong": 1,
  "tenChuong": "Vương quốc Số",
  "dangGoc": "SỐ 1.2 + 1.3 — Thêm / xóa chữ số 0 (tiền thân bài toán thêm - xóa chữ số)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Biết: viết thêm số 0 vào bên phải một số thì số đó lớn gấp 10 lần.",
-    "Biết: xóa số 0 ở tận cùng thì số giảm đi 10 lần.",
-    "Giải thích được điều kỳ diệu ấy bằng \"hạt đơn vị biến thành thanh chục\"."
-   ],
-   "goc": [
-    "Biết: viết thêm số 0 vào bên phải một số thì số đó lớn gấp 10 lần.",
-    "Biết: xóa số 0 ở tận cùng thì số giảm đi 10 lần.",
-    "Giải thích được điều kỳ diệu ấy bằng \"hạt đơn vị biến thành thanh chục\"."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Quán nước của Su Kem",
-   "dong": [
-    "Su Kem mở quán nước chanh trước cổng thành. Cậu ấy hí hoáy viết bảng giá, và... khách hàng đầu tiên suýt ngất:",
-    "Su Kem chỉ thêm đúng MỘT chữ số 0 mà giá cốc nước từ 5 nghìn biến thành 50 nghìn. Đắt gấp 10 lần! Trí Long cười: \"Số 0 nhỏ mà có võ đấy. Để tớ kể bí mật của chú ấy!\""
-   ],
-   "goc": [
-    "Su Kem mở quán nước chanh trước cổng thành. Cậu ấy hí hoáy viết bảng giá, và... khách hàng đầu tiên suýt ngất:",
-    "Su Kem chỉ thêm đúng MỘT chữ số 0 mà giá cốc nước từ 5 nghìn biến thành 50 nghìn — đắt gấp 10 lần! Trí Long cười: \"Số 0 nhỏ mà có võ đấy. Để tớ kể bí mật của chú ấy!\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Bí mật của chú Số 0",
-   "dong": [
-    "Bước 1. Vì sao 3 thêm số 0 thành 30 — lớn gấp 10 lần? Vì khi số 0 chen vào phòng đơn vị, chữ số 3 bị đẩy sang phòng chục: mỗi hạt đơn vị lớn lên thành một thanh chục!",
-    "Bước 2. Con có thể tưởng tượng có hai cỗ máy: máy × 10 (thêm số 0) và máy : 10 (xóa số 0 tận cùng). Chúng là hai chiều xuôi - ngược của nhau:",
-    "Bước 3. Thử với số có 2 chữ số: 12 thêm số 0 thành 120 (12 chục!); 45 thành 450. Ngược lại 70 xóa số 0 còn 7; 250 xóa số 0 còn 25. Chú ý quan trọng: phép \"xóa thần kỳ\" chỉ đúng với số 0 ở TẬN CÙNG (phòng đơn vị) thôi nhé!",
-    "MẸO THÁM TỬ: Thêm 0 bên phải = cả số dọn nhà sang trái một phòng (to gấp 10). Xóa 0 tận cùng = dọn về bên phải một phòng (nhỏ đi 10 lần)."
-   ],
-   "goc": [
-    "Bước 1. Vì sao 3 thêm số 0 thành 30 — lớn gấp 10 lần? Vì khi số 0 chen vào phòng đơn vị, chữ số 3 bị đẩy sang phòng chục: mỗi hạt đơn vị lớn lên thành một thanh chục!",
-    "Bước 2. Con có thể tưởng tượng có hai cỗ máy: máy × 10 (thêm số 0) và máy : 10 (xóa số 0 tận cùng) — chúng là hai chiều xuôi - ngược của nhau:",
-    "Bước 3. Thử với số có 2 chữ số: 12 thêm số 0 thành 120 (12 chục!); 45 thành 450. Ngược lại 70 xóa số 0 còn 7; 250 xóa số 0 còn 25. Chú ý quan trọng: phép \"xóa thần kỳ\" chỉ đúng với số 0 ở TẬN CÙNG (phòng đơn vị) thôi nhé!",
-    "MẸO THÁM TỬ: Thêm 0 bên phải = cả số dọn nhà sang trái một phòng (to gấp 10). Xóa 0 tận cùng = dọn về bên phải một phòng (nhỏ đi 10 lần)."
-   ],
-   "hinh": [
+ "skills": {
+  "bktUnit": "CHUONG:1@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 2,
+  "prev": "DL:KSN2.B01",
+  "next": "DL:KSN2.B03"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết: viết thêm số 0 vào bên phải một số thì số đó lớn gấp 10 lần. Biết: xóa số 0 ở tận cùng thì số giảm đi 10 lần. Giải thích được điều kỳ diệu ấy bằng \"hạt đơn vị biến thành thanh chục\".",
+  "kidText": "Biết: viết thêm số 0 vào bên phải một số thì số đó lớn gấp 10 lần. Biết: xóa số 0 ở tận cùng thì số giảm đi 10 lần. Giải thích được điều kỳ diệu ấy bằng \"hạt đơn vị biến thành thanh chục\".",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Vì sao 3 thêm số 0 thành 30 — lớn gấp 10 lần? Vì khi số 0 chen vào phòng đơn vị, chữ số 3 bị đẩy sang phòng chục: mỗi hạt đơn vị lớn lên thành một thanh chục!"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Con có thể tưởng tượng có hai cỗ máy: máy × 10 (thêm số 0) và máy : 10 (xóa số 0 tận cùng). Chúng là hai chiều xuôi - ngược của nhau:"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Thử với số có 2 chữ số: 12 thêm số 0 thành 120 (12 chục!); 45 thành 450. Ngược lại 70 xóa số 0 còn 7; 250 xóa số 0 còn 25. Chú ý quan trọng: phép \"xóa thần kỳ\" chỉ đúng với số 0 ở TẬN CÙNG (phòng đơn vị) thôi nhé!"
+   }
+  ],
+  "mantra": "Thêm 0 bên phải = cả số dọn nhà sang trái một phòng (to gấp 10). Xóa 0 tận cùng = dọn về bên phải một phòng (nhỏ đi 10 lần).",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Su Kem khoe: \"40 xóa số 0 còn 4 đúng không? Vậy số 404 tớ xóa số 0 đi là còn 44!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý: Số 0 trong 404 có đứng ở tận cùng không? Nó đang giữ chỗ ở phòng nào? Nếu xóa nó đi, chữ số 4 phòng trăm bị tụt xuống phòng chục. 404 (bốn trăm linh tư) biến thành 44 (bốn mươi tư), hai số khác nhau một trời một vực! → Con giải thích cho Su Kem: khi nào xóa số 0 mới là phép \": 10\" thần kỳ?"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Su Kem mở quán nước chanh trước cổng thành. Cậu ấy hí hoáy viết bảng giá, và... khách hàng đầu tiên suýt ngất: Su Kem chỉ thêm đúng MỘT chữ số 0 mà giá cốc nước từ 5 nghìn biến thành 50 nghìn. Đắt gấp 10 lần! Trí Long cười: \"Số 0 nhỏ mà có võ đấy. Để tớ kể bí mật của chú ấy!\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "trap",
+    "narration": "Su Kem khoe: \"40 xóa số 0 còn 4 đúng không? Vậy số 404 tớ xóa số 0 đi là còn 44!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Viết thêm một chữ số 0 vào bên phải số 12. Hỏi số mới hơn số cũ bao nhiêu đơn vị?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Viết thêm chữ số 0 vào bên phải số 12 ta được số 120."
+   },
+   {
+    "show": "Số mới hơn số cũ là: 120 − 12 = 108 (đơn vị)"
+   },
+   {
+    "show": "Đáp số: 108 đơn vị."
+   },
+   {
+    "show": "Nói thêm của Trí Long: 120 gấp 10 lần 12, nên phần \"hơn\" chính là 9 lần số cũ: 12 × 9 = 108. Bí mật này lớp 4-5 con sẽ dùng nhiều lắm đấy!"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
     {
-     "id": "L2H_MAY01",
-     "sauDong": 1,
-     "file": "figures/L2H_MAY01.png",
-     "caption": "Máy × 10 thêm số 0, máy : 10 xóa số 0 — hai máy ngược chiều nhau",
-     "sha256_16": "28b5163dd39948a3"
+     "id": "C1",
+     "text": "Viết thêm số 0 vào bên phải mỗi số: 7 → ?; 9 → ?; 25 → ?; 60 → ?",
+     "solutionNarrative": "70; 90; 250; 600"
+    },
+    {
+     "id": "C2",
+     "text": "Xóa số 0 tận cùng của mỗi số: 80 → ?; 140 → ?; 500 → ?",
+     "solutionNarrative": "8; 14; 50"
+    },
+    {
+     "id": "C3",
+     "text": "Số 6 thêm số 0 bên phải thì gấp lên mấy lần?",
+     "solutionNarrative": "gấp 10 lần"
+    },
+    {
+     "id": "C4",
+     "text": "4 chục = ?; 40 gồm mấy chục?",
+     "solutionNarrative": "4 chục = 40; 40 gồm 4 chục"
     }
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Viết thêm một chữ số 0 vào bên phải số 12. Hỏi số mới hơn số cũ bao nhiêu đơn vị?",
-    "Bài giải:",
-    "Viết thêm chữ số 0 vào bên phải số 12 ta được số 120.",
-    "Số mới hơn số cũ là: 120 − 12 = 108 (đơn vị)",
-    "Đáp số: 108 đơn vị.",
-    "Nói thêm của Trí Long: 120 gấp 10 lần 12, nên phần \"hơn\" chính là 9 lần số cũ: 12 × 9 = 108. Bí mật này lớp 4-5 con sẽ dùng nhiều lắm đấy!"
    ],
-   "goc": [
-    "Đề bài: Viết thêm một chữ số 0 vào bên phải số 12. Hỏi số mới hơn số cũ bao nhiêu đơn vị?",
-    "Bài giải:",
-    "Viết thêm chữ số 0 vào bên phải số 12 ta được số 120.",
-    "Số mới hơn số cũ là: 120 − 12 = 108 (đơn vị)",
-    "Đáp số: 108 đơn vị.",
-    "Nói thêm của Trí Long: 120 gấp 10 lần 12, nên phần \"hơn\" chính là 9 lần số cũ: 12 × 9 = 108. Bí mật này lớp 4-5 con sẽ dùng nhiều lắm đấy!"
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Su Kem khoe: \"40 xóa số 0 còn 4 đúng không? Vậy số 404 tớ xóa số 0 đi là còn 44!\"",
-    "Gợi ý: Số 0 trong 404 có đứng ở tận cùng không? Nó đang giữ chỗ ở phòng nào?",
-    "Nếu xóa nó đi, chữ số 4 phòng trăm bị tụt xuống phòng chục. 404 (bốn trăm linh tư) biến thành 44 (bốn mươi tư), hai số khác nhau một trời một vực!",
-    "→ Con giải thích cho Su Kem: khi nào xóa số 0 mới là phép \": 10\" thần kỳ?"
+   "standard": [
+    {
+     "id": "C5",
+     "text": "Su Kem định viết giá 8 nghìn nhưng lỡ tay viết thành 80 nghìn. Giá bị đắt lên bao nhiêu nghìn đồng?",
+     "solutionNarrative": "80 − 8 = 72 (nghìn đồng)"
+    },
+    {
+     "id": "C6",
+     "text": "Viết thêm số 0 vào bên phải số 35, được số mới hơn số cũ bao nhiêu đơn vị?",
+     "solutionNarrative": "350 − 35 = 315 (đơn vị)"
+    },
+    {
+     "id": "C7",
+     "text": "Một số xóa số 0 tận cùng thì còn 32. Hỏi số đó là số nào? Số đó hơn 32 bao nhiêu?",
+     "solutionNarrative": "số đó là 320; hơn 32 là 320 − 32 = 288"
+    }
    ],
-   "goc": [
-    "Su Kem khoe: \"40 xóa số 0 còn 4 đúng không? Vậy số 404 tớ xóa số 0 đi là còn 44!\"",
-    "Gợi ý: Số 0 trong 404 có đứng ở tận cùng không? Nó đang giữ chỗ ở phòng nào?",
-    "Nếu xóa nó đi, chữ số 4 phòng trăm bị tụt xuống phòng chục — 404 (bốn trăm linh tư) biến thành 44 (bốn mươi tư), hai số khác nhau một trời một vực!",
-    "→ Con giải thích cho Su Kem: khi nào xóa số 0 mới là phép \": 10\" thần kỳ?"
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Chơi \"máy nhân 10\" bằng tiền thật: đưa con tờ 5 nghìn, hỏi \"qua máy ×10 thì thành tờ nào?\" (50 nghìn). Đổi vai để con làm máy, bố mẹ làm khách.",
-    "Cắt giấy làm bảng giá quán nước, cố tình viết sai một giá (thêm 0) để con phát hiện — trẻ mê bắt lỗi người lớn lắm!",
-    "NÊN: dùng từ \"gấp 10 lần\" và \"giảm 10 lần\" tự nhiên trong ngày. KHÔNG NÊN: nói \"dịch dấu phẩy\" — khái niệm ấy để dành lớp 5, giờ con chỉ cần hạt-và-thanh-chục."
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Có hai số: số lớn gấp 10 lần số bé, và số lớn hơn số bé 45 đơn vị. Đố con tìm được hai số đó! (Mẹo: phần hơn bằng 9 lần số bé — thử xem 9 nhân mấy bằng 45?)",
+     "solutionNarrative": "phần hơn = 9 lần số bé; 9 × 5 = 45 → số bé là 5, số lớn là 50. Thử lại: 50 = 5 × 10 và 50 − 5 = 45 ✓"
+    },
+    {
+     "id": "C9",
+     "text": "Trong ba số 30, 303, 330 — xóa một chữ số 0 của mỗi số thì số nào giảm đi đúng 10 lần, số nào không? Vì sao?",
+     "solutionNarrative": "chỉ 30 → 3 và 330 → 33 là giảm đúng 10 lần (xóa 0 tận cùng); 303 xóa 0 thành 33 — không phải giảm 10 lần vì số 0 nằm ở giữa, nó đang giữ chỗ phòng chục"
+    },
+    {
+     "id": "C10",
+     "text": "Thử tài gieo mầm: viết thêm chữ số 2 (chứ không phải số 0!) vào bên phải số 3 ta được số 32. Số mới hơn số cũ bao nhiêu? Số mới có gấp đúng 10 lần số cũ không? Từ đó con giải thích: vì sao chỉ CHÚ SỐ 0 mới có phép thuật × 10?",
+     "solutionNarrative": "32 − 3 = 29 — số mới hơn số cũ 29 đơn vị, KHÔNG gấp đúng 10 lần (10 lần của 3 là 30). Giải thích: viết thêm chữ số nào vào bên phải thì số 3 cũng nhảy sang phòng chục thành 3 chục = 30; nhưng thêm chữ số 2 là bỏ thêm 2 hạt vào phòng đơn vị → 30 + 2 = 32. Chỉ khi thêm số 0 — không thêm hạt nào cả — số mới đúng tròn 30, tức gấp đúng 10 lần. Đó là phép thuật riêng của chú Số 0!"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Viết thêm số 0 vào bên phải mỗi số: 7 → ?; 9 → ?; 25 → ?; 60 → ?",
-   "loiChua": "70; 90; 250; 600",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Xóa số 0 tận cùng của mỗi số: 80 → ?; 140 → ?; 500 → ?",
-   "loiChua": "8; 14; 50",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Số 6 thêm số 0 bên phải thì gấp lên mấy lần?",
-   "loiChua": "gấp 10 lần",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "4 chục = ?; 40 gồm mấy chục?",
-   "loiChua": "4 chục = 40; 40 gồm 4 chục",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Su Kem định viết giá 8 nghìn nhưng lỡ tay viết thành 80 nghìn. Giá bị đắt lên bao nhiêu nghìn đồng?",
-   "loiChua": "80 − 8 = 72 (nghìn đồng)",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Viết thêm số 0 vào bên phải số 35, được số mới hơn số cũ bao nhiêu đơn vị?",
-   "loiChua": "350 − 35 = 315 (đơn vị)",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một số xóa số 0 tận cùng thì còn 32. Hỏi số đó là số nào? Số đó hơn 32 bao nhiêu?",
-   "loiChua": "số đó là 320; hơn 32 là 320 − 32 = 288",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Có hai số: số lớn gấp 10 lần số bé, và số lớn hơn số bé 45 đơn vị. Đố con tìm được hai số đó! (Mẹo: phần hơn bằng 9 lần số bé — thử xem 9 nhân mấy bằng 45?)",
-   "loiChua": "phần hơn = 9 lần số bé; 9 × 5 = 45 → số bé là 5, số lớn là 50. Thử lại: 50 = 5 × 10 và 50 − 5 = 45 ✓",
-   "tuLuan": true
-  },
-  {
-   "id": "C9",
-   "maSach": "C9",
-   "so": 9,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Trong ba số 30, 303, 330 — xóa một chữ số 0 của mỗi số thì số nào giảm đi đúng 10 lần, số nào không? Vì sao?",
-   "loiChua": "chỉ 30 → 3 và 330 → 33 là giảm đúng 10 lần (xóa 0 tận cùng); 303 xóa 0 thành 33 — không phải giảm 10 lần vì số 0 nằm ở giữa, nó đang giữ chỗ phòng chục",
-   "tuLuan": true
-  },
-  {
-   "id": "C10",
-   "maSach": "C10",
-   "so": 10,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Thử tài gieo mầm: viết thêm chữ số 2 (chứ không phải số 0!) vào bên phải số 3 ta được số 32. Số mới hơn số cũ bao nhiêu? Số mới có gấp đúng 10 lần số cũ không? Từ đó con giải thích: vì sao chỉ CHÚ SỐ 0 mới có phép thuật × 10?",
-   "loiChua": "32 − 3 = 29 — số mới hơn số cũ 29 đơn vị, KHÔNG gấp đúng 10 lần (10 lần của 3 là 30). Giải thích: viết thêm chữ số nào vào bên phải thì số 3 cũng nhảy sang phòng chục thành 3 chục = 30; nhưng thêm chữ số 2 là bỏ thêm 2 hạt vào phòng đơn vị → 30 + 2 = 32. Chỉ khi thêm số 0 — không thêm hạt nào cả — số mới đúng tròn 30, tức gấp đúng 10 lần. Đó là phép thuật riêng của chú Số 0!",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "5 viết thêm số 0 vào bên phải thành 50, gấp 10 lần 5.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "5 viết thêm số 0 vào bên phải thành 50, gấp 10 lần 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Xóa số 0 nào trong số cũng làm số giảm 10 lần.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": false
+   {
+    "id": "Q2",
+    "text": "Xóa số 0 nào trong số cũng làm số giảm 10 lần.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "chỉ số 0 tận cùng"
    },
-   "loiChua": "chỉ số 0 tận cùng",
-   "solutionNarrative": "chỉ số 0 tận cùng"
-  },
+   {
+    "id": "Q3",
+    "text": "25 thêm số 0 vào bên phải thành:",
+    "format": "mcq",
+    "choices": [
+     "A. 205",
+     "B. 250",
+     "C. 2500"
+    ],
+    "answerKey": {
+     "choice": "B. 250"
+    },
+    "solutionNarrative": "Đáp án: B. 250"
+   },
+   {
+    "id": "Q4",
+    "text": "700 xóa MỘT số 0 tận cùng còn:",
+    "format": "mcq",
+    "choices": [
+     "A. 7",
+     "B. 70",
+     "C. 700"
+    ],
+    "answerKey": {
+     "choice": "B. 70"
+    },
+    "solutionNarrative": "Đáp án: B. 70"
+   },
+   {
+    "id": "Q5",
+    "text": "Số nào gấp 10 lần số 9?",
+    "format": "mcq",
+    "choices": [
+     "A. 19",
+     "B. 90",
+     "C. 900"
+    ],
+    "answerKey": {
+     "choice": "B. 90"
+    },
+    "solutionNarrative": "Đáp án: B. 90"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chơi \"máy nhân 10\" bằng tiền thật: đưa con tờ 5 nghìn, hỏi \"qua máy ×10 thì thành tờ nào?\" (50 nghìn). Đổi vai để con làm máy, bố mẹ làm khách.",
+  "homeActivity": "Cắt giấy làm bảng giá quán nước, cố tình viết sai một giá (thêm 0) để con phát hiện — trẻ mê bắt lỗi người lớn lắm!",
+  "watchFor": "NÊN: dùng từ \"gấp 10 lần\" và \"giảm 10 lần\" tự nhiên trong ngày. KHÔNG NÊN: nói \"dịch dấu phẩy\" — khái niệm ấy để dành lớp 5, giờ con chỉ cần hạt-và-thanh-chục."
+ },
+ "figureSpec": [
   {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "25 thêm số 0 vào bên phải thành:",
-   "format": "mcq",
-   "choices": [
-    "A. 205",
-    "B. 250",
-    "C. 2500"
+   "id": "L2H_MAY01",
+   "usedIn": [
+    "screen:S3"
    ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 250"
-   },
-   "loiChua": "Đáp án: B. 250",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "700 xóa MỘT số 0 tận cùng còn:",
-   "format": "mcq",
-   "choices": [
-    "A. 7",
-    "B. 70",
-    "C. 700"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 70"
-   },
-   "loiChua": "Đáp án: B. 70",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Số nào gấp 10 lần số 9?",
-   "format": "mcq",
-   "choices": [
-    "A. 19",
-    "B. 90",
-    "C. 900"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 90"
-   },
-   "loiChua": "Đáp án: B. 90",
-   "solutionNarrative": ""
+   "file": "figures/L2H_MAY01.png",
+   "caption": "Máy × 10 thêm số 0, máy : 10 xóa số 0 — hai máy ngược chiều nhau",
+   "sha256_16": "28b5163dd39948a3",
+   "mucGoc": "khamPha"
   }
  ]
 }

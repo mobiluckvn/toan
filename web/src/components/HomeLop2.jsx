@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { CONTENT, dongDau } from '../lib/content.js';
+import { CONTENT, dongDau, ghiNhoChuong } from '../lib/content.js';
 import ChanTrang from './ChanTrang.jsx';
 import BangSuuTapSao from './BangSuuTapSao.jsx';
 
@@ -10,25 +10,32 @@ import BangSuuTapSao from './BangSuuTapSao.jsx';
  * chữ để đọc, mà bé chưa có nhu cầu "mở khoá". Thay vào đó đánh dấu bài đã học
  * bằng ngôi sao, và luôn chỉ rõ "bài tiếp theo của con".
  */
-export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh }) {
+export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuHuynh }) {
   const [idx, setIdx] = useState(null);
   const [loi, setLoi] = useState(null);
 
   useEffect(() => {
     fetch(dongDau(`${CONTENT}/lop2/index.json`))
-      .then((r) => r.json()).then(setIdx)
+      .then((r) => r.json())
+      /* Chương của bài lớp 2 nằm trong dữ liệu chứ không suy ra bằng công thức như
+         lớp 5 — ghi nhớ ngay khi nạp để chapterOf/allMicroIds dùng chung được. */
+      .then((ds) => { ghiNhoChuong(ds); setIdx(ds); })
       .catch((e) => setLoi(String(e?.message || e)));
   }, []);
 
-  const xong = progress?.lop2 || {};
-  const tiep = useMemo(() => idx?.find((b) => !xong[b.id]) || null, [idx, xong]);
+  /* Dùng CHUNG sổ tiến độ với lớp 5 (progress.micros) thay vì sổ riêng
+     progress.lop2 — một nguồn sự thật thì sổ phụ huynh và bảng cô giáo mới thấy
+     được bài lớp 2. */
+  const micros = progress?.micros || {};
+  const xong = micros;
+  const tiep = useMemo(() => idx?.find((b) => !micros[b.id]?.pass) || null, [idx, micros]);
 
   if (loi) return <div className="p-6 text-alert">Không mở được chương trình lớp 2: {loi}</div>;
   if (!idx) return <div className="p-6 text-mute">Đang mở bài học…</div>;
 
   const theoChuong = {};
   for (const b of idx) (theoChuong[b.chuong] ??= []).push(b);
-  const soXong = idx.filter((b) => xong[b.id]).length;
+  const soXong = idx.filter((b) => micros[b.id]?.pass).length;
 
   return (
     <div className="mx-auto min-h-[100dvh] max-w-[740px] pb-10">
@@ -45,10 +52,17 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh }) {
               Cùng Trí Long khám phá Vương quốc Số
             </p>
           </div>
-          <button onClick={onDoiChuongTrinh}
-                  className="shrink-0 rounded-full bg-white/70 px-2.5 py-1 text-[11.5px] font-bold text-teal-dark">
-            đổi lớp
-          </button>
+          <div className="flex shrink-0 flex-col gap-1">
+            <button onClick={onDoiChuongTrinh}
+                    className="rounded-full bg-white/70 px-2.5 py-1 text-[11.5px] font-bold text-teal-dark">
+              đổi lớp
+            </button>
+            {/* Lớp 2 nay dùng chung sổ học với lớp 5 — bố mẹ xem được con làm tới đâu */}
+            <button onClick={onSoPhuHuynh}
+                    className="rounded-full bg-white/70 px-2.5 py-1 text-[11.5px] font-bold text-teal-dark">
+              sổ của con
+            </button>
+          </div>
         </div>
         <div className="mt-2.5 rounded-xl bg-white/70 px-3 py-2 text-[13.5px] font-bold text-teal-dark">
           Con đã học xong {soXong} trên {idx.length} bài 🌟
@@ -80,7 +94,7 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh }) {
             {ds.map((b) => (
               <button key={b.id} onClick={() => onMoBai(b.id)}
                       className="mt-1.5 flex w-full items-center gap-2.5 rounded-xl border border-line px-3 py-2.5 text-left hover:bg-soft">
-                <span className="text-[18px] leading-none">{xong[b.id] ? '🌟' : '⭕'}</span>
+                <span className="text-[18px] leading-none">{micros[b.id]?.pass ? '🌟' : micros[b.id]?.done ? '🔸' : '⭕'}</span>
                 <span className="flex-1">
                   <span className="block text-[15px] font-bold leading-snug text-navy">
                     Bài {b.so} · {b.ten}

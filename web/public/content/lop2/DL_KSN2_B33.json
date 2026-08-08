@@ -1,298 +1,248 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B33",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 33 · XEM GIỜ — HAI CHIẾC KIM KỂ CHUYỆN",
+ "durationMinutes": 10,
  "so": 33,
- "ten": "XEM GIỜ — HAI CHIẾC KIM KỂ CHUYỆN",
  "chuong": 8,
  "tenChuong": "Toán trong cuộc sống",
  "dangGoc": "CĐ 6.1 — Giờ đúng, giờ rưỡi (tiền thân toán đồng hồ lớp 3-5)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Phân biệt kim GIỜ (ngắn, mập) và kim PHÚT (dài).",
-    "Đọc được GIỜ ĐÚNG (kim phút chỉ 12) và GIỜ RƯỠI (kim phút chỉ 6).",
-    "Tính được \"1 giờ nữa là mấy giờ\", \"nửa giờ nữa là mấy giờ\"."
+ "skills": {
+  "bktUnit": "CHUONG:8@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 33,
+  "prev": "DL:KSN2.B32",
+  "next": null
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Phân biệt kim GIỜ (ngắn, mập) và kim PHÚT (dài). Đọc được GIỜ ĐÚNG (kim phút chỉ 12) và GIỜ RƯỠI (kim phút chỉ 6). Tính được \"1 giờ nữa là mấy giờ\", \"nửa giờ nữa là mấy giờ\".",
+  "kidText": "Phân biệt kim GIỜ (ngắn, mập) và kim PHÚT (dài). Đọc được GIỜ ĐÚNG (kim phút chỉ 12) và GIỜ RƯỠI (kim phút chỉ 6). Tính được \"1 giờ nữa là mấy giờ\", \"nửa giờ nữa là mấy giờ\".",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Làm quen hai người kể chuyện: kim NGẮN, mập là kim GIỜ; kim DÀI là kim PHÚT. Kim giờ đi chậm rãi, kim phút chạy nhanh gấp nhiều lần."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. GIỜ ĐÚNG: khi kim phút chỉ thẳng số 12, ta có giờ đúng. Kim giờ chỉ số nào, đọc \"số đó giờ\": kim giờ chỉ 3 → \"3 giờ đúng\"."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. GIỜ RƯỠI: khi kim phút chỉ số 6 (đi được MỘT NỬA vòng. Chào bạn Bài 31!), kim giờ cũng đi được nửa đường giữa hai số. Luật đọc: đọc theo số kim giờ ĐÃ ĐI QUA: kim giờ nằm giữa 3 và 4 → \"3 giờ rưỡi\" (chứ không phải 4 giờ rưỡi!)."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4. CỘNG GIỜ: \"1 giờ nữa\" thì kim giờ tiến thêm đúng 1 số: bây giờ 3 giờ → 1 giờ nữa là 4 giờ. \"Nửa giờ nữa\" từ 3 giờ → 3 giờ rưỡi. Từ 3 giờ rưỡi thêm nửa giờ → tròn 4 giờ."
+   }
+  ],
+  "mantra": "Nhìn kim PHÚT trước: chỉ 12 → giờ đúng; chỉ 6 → giờ rưỡi. Rồi mới hỏi kim GIỜ. Và luôn đọc theo số nó ĐÃ ĐI QUA, đừng đọc số nó đang mon men tới gần!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Nhìn đồng hồ có kim phút chỉ 6, kim giờ nằm giữa 3 và 4, Su Kem đọc: \"Bốn giờ rưỡi! Kim giờ gần số 4 hơn số 3 mà — phải đọc theo số gần nhất chứ!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Kim giờ đang trên đường đi TỪ số nào ĐẾN số nào? Nó đã đi QUA số nào rồi, còn số nào thì CHƯA tới? Gợi ý 2: Nghĩ như tuổi ấy: bé 3 tuổi rưỡi đã được gọi là 4 tuổi chưa? Giờ giấc cũng vậy — chưa qua số 4 thì vẫn thuộc về giờ số 3. Đọc lại chuẩn giúp Su Kem nào!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Sáng nay Su Kem trễ học vì \"nhìn đồng hồ mà chẳng hiểu nó nói gì\". Chiều hẹn Trí Long đá bóng lúc 4 giờ rưỡi, cậu ấy đến lúc trời sẩm tối. Su Kem mếu máo: \"Hai cái kim cứ chạy vòng vòng, biết đường nào mà lần!\". Trí Long kéo bạn lại chiếc đồng hồ: \"Hai kim ấy đang KỂ CHUYỆN đấy. Chỉ cần biết ai kể chuyện gì thôi!\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Nhìn đồng hồ có kim phút chỉ 6, kim giờ nằm giữa 3 và 4, Su Kem đọc: \"Bốn giờ rưỡi! Kim giờ gần số 4 hơn số 3 mà — phải đọc theo số gần nhất chứ!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Phim hoạt hình bắt đầu chiếu lúc 8 giờ tối. Bây giờ là 7 giờ tối. Hỏi còn bao lâu nữa thì phim bắt đầu?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Từ 7 giờ đến 8 giờ, kim giờ đi thêm đúng 1 số."
+   },
+   {
+    "show": "Vậy còn 1 giờ nữa thì phim bắt đầu."
+   },
+   {
+    "show": "Đáp số: còn 1 giờ."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Trên đồng hồ, kim nào là kim giờ, kim nào là kim phút? Kim nào chạy nhanh hơn?",
+     "solutionNarrative": "ngắn = giờ, dài = phút; kim phút chạy nhanh hơn"
+    },
+    {
+     "id": "C2",
+     "text": "Kim phút chỉ 12, kim giờ chỉ 9 — đọc giờ. Kim phút chỉ 12, kim giờ chỉ 6 — đọc giờ.",
+     "solutionNarrative": "9 giờ đúng; 6 giờ đúng"
+    },
+    {
+     "id": "C3",
+     "text": "Kim phút chỉ 6, kim giờ nằm giữa 7 và 8 — đọc giờ.",
+     "solutionNarrative": "7 giờ rưỡi (đọc theo số ĐÃ ĐI QUA!)"
+    }
    ],
-   "goc": [
-    "Phân biệt kim GIỜ (ngắn, mập) và kim PHÚT (dài).",
-    "Đọc được GIỜ ĐÚNG (kim phút chỉ 12) và GIỜ RƯỠI (kim phút chỉ 6).",
-    "Tính được \"1 giờ nữa là mấy giờ\", \"nửa giờ nữa là mấy giờ\"."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Một ngày toàn... trễ giờ",
-   "dong": [
-    "Sáng nay Su Kem trễ học vì \"nhìn đồng hồ mà chẳng hiểu nó nói gì\". Chiều hẹn Trí Long đá bóng lúc 4 giờ rưỡi, cậu ấy đến lúc trời sẩm tối. Su Kem mếu máo: \"Hai cái kim cứ chạy vòng vòng, biết đường nào mà lần!\". Trí Long kéo bạn lại chiếc đồng hồ: \"Hai kim ấy đang KỂ CHUYỆN đấy. Chỉ cần biết ai kể chuyện gì thôi!\""
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Bây giờ là 5 giờ chiều. Hỏi 1 giờ nữa là mấy giờ? 2 giờ nữa là mấy giờ?",
+     "solutionNarrative": "6 giờ; 7 giờ"
+    },
+    {
+     "id": "C5",
+     "text": "Bây giờ là 6 giờ. Hỏi nửa giờ nữa là mấy giờ? Từ 6 giờ rưỡi thêm nửa giờ nữa là mấy giờ?",
+     "solutionNarrative": "6 giờ rưỡi; rồi tròn 7 giờ"
+    },
+    {
+     "id": "C6",
+     "text": "Vẽ (hoặc quay đồng hồ đồ chơi) các giờ sau: 2 giờ đúng; 2 giờ rưỡi; 11 giờ đúng. Với mỗi giờ, kim phút chỉ số nào?",
+     "solutionNarrative": "2 giờ và 11 giờ: kim phút chỉ 12; 2 giờ rưỡi: kim phút chỉ 6, kim giờ giữa 2 và 3"
+    },
+    {
+     "id": "C7",
+     "text": "Su Kem hẹn đá bóng lúc 4 giờ rưỡi. Cậu ấy đến sân lúc kim phút chỉ 12, kim giờ chỉ 5. Su Kem đến sớm hay muộn? Muộn khoảng bao lâu?",
+     "solutionNarrative": "5 giờ đúng là MUỘN hơn 4 giờ rưỡi — Su Kem đến muộn khoảng nửa giờ"
+    }
    ],
-   "goc": [
-    "Sáng nay Su Kem trễ học vì \"nhìn đồng hồ mà chẳng hiểu nó nói gì\". Chiều hẹn Trí Long đá bóng lúc 4 giờ rưỡi, cậu ấy đến lúc trời sẩm tối. Su Kem mếu máo: \"Hai cái kim cứ chạy vòng vòng, biết đường nào mà lần!\" — Trí Long kéo bạn lại chiếc đồng hồ: \"Hai kim ấy đang KỂ CHUYỆN đấy. Chỉ cần biết ai kể chuyện gì thôi!\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Nghe hai kim kể chuyện",
-   "dong": [
-    "Bước 1. Làm quen hai người kể chuyện: kim NGẮN, mập là kim GIỜ; kim DÀI là kim PHÚT. Kim giờ đi chậm rãi, kim phút chạy nhanh gấp nhiều lần.",
-    "Bước 2. GIỜ ĐÚNG: khi kim phút chỉ thẳng số 12, ta có giờ đúng. Kim giờ chỉ số nào, đọc \"số đó giờ\": kim giờ chỉ 3 → \"3 giờ đúng\".",
-    "Bước 3. GIỜ RƯỠI: khi kim phút chỉ số 6 (đi được MỘT NỬA vòng. Chào bạn Bài 31!), kim giờ cũng đi được nửa đường giữa hai số. Luật đọc: đọc theo số kim giờ ĐÃ ĐI QUA: kim giờ nằm giữa 3 và 4 → \"3 giờ rưỡi\" (chứ không phải 4 giờ rưỡi!).",
-    "Bước 4. CỘNG GIỜ: \"1 giờ nữa\" thì kim giờ tiến thêm đúng 1 số: bây giờ 3 giờ → 1 giờ nữa là 4 giờ. \"Nửa giờ nữa\" từ 3 giờ → 3 giờ rưỡi. Từ 3 giờ rưỡi thêm nửa giờ → tròn 4 giờ.",
-    "MẸO THÁM TỬ: Nhìn kim PHÚT trước: chỉ 12 → giờ đúng; chỉ 6 → giờ rưỡi. Rồi mới hỏi kim GIỜ. Và luôn đọc theo số nó ĐÃ ĐI QUA, đừng đọc số nó đang mon men tới gần!"
-   ],
-   "goc": [
-    "Bước 1. Làm quen hai người kể chuyện: kim NGẮN, mập là kim GIỜ; kim DÀI là kim PHÚT. Kim giờ đi chậm rãi, kim phút chạy nhanh gấp nhiều lần.",
-    "Bước 2 — GIỜ ĐÚNG: khi kim phút chỉ thẳng số 12, ta có giờ đúng — kim giờ chỉ số nào, đọc \"số đó giờ\": kim giờ chỉ 3 → \"3 giờ đúng\".",
-    "Bước 3 — GIỜ RƯỠI: khi kim phút chỉ số 6 (đi được MỘT NỬA vòng — chào bạn Bài 31!), kim giờ cũng đi được nửa đường giữa hai số. Luật đọc: đọc theo số kim giờ ĐÃ ĐI QUA: kim giờ nằm giữa 3 và 4 → \"3 giờ rưỡi\" (chứ không phải 4 giờ rưỡi!).",
-    "Bước 4 — CỘNG GIỜ: \"1 giờ nữa\" thì kim giờ tiến thêm đúng 1 số: bây giờ 3 giờ → 1 giờ nữa là 4 giờ. \"Nửa giờ nữa\" từ 3 giờ → 3 giờ rưỡi; từ 3 giờ rưỡi thêm nửa giờ → tròn 4 giờ.",
-    "MẸO THÁM TỬ: Nhìn kim PHÚT trước: chỉ 12 → giờ đúng; chỉ 6 → giờ rưỡi. Rồi mới hỏi kim GIỜ — và luôn đọc theo số nó ĐÃ ĐI QUA, đừng đọc số nó đang mon men tới gần!"
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Phim hoạt hình bắt đầu chiếu lúc 8 giờ tối. Bây giờ là 7 giờ tối. Hỏi còn bao lâu nữa thì phim bắt đầu?",
-    "Bài giải:",
-    "Từ 7 giờ đến 8 giờ, kim giờ đi thêm đúng 1 số.",
-    "Vậy còn 1 giờ nữa thì phim bắt đầu.",
-    "Đáp số: còn 1 giờ."
-   ],
-   "goc": [
-    "Đề bài: Phim hoạt hình bắt đầu chiếu lúc 8 giờ tối. Bây giờ là 7 giờ tối. Hỏi còn bao lâu nữa thì phim bắt đầu?",
-    "Bài giải:",
-    "Từ 7 giờ đến 8 giờ, kim giờ đi thêm đúng 1 số.",
-    "Vậy còn 1 giờ nữa thì phim bắt đầu.",
-    "Đáp số: còn 1 giờ."
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Nhìn đồng hồ có kim phút chỉ 6, kim giờ nằm giữa 3 và 4, Su Kem đọc: \"Bốn giờ rưỡi! Kim giờ gần số 4 hơn số 3 mà — phải đọc theo số gần nhất chứ!\"",
-    "Gợi ý 1: Kim giờ đang trên đường đi TỪ số nào ĐẾN số nào? Nó đã đi QUA số nào rồi, còn số nào thì CHƯA tới?",
-    "Gợi ý 2: Nghĩ như tuổi ấy: bé 3 tuổi rưỡi đã được gọi là 4 tuổi chưa? Giờ giấc cũng vậy — chưa qua số 4 thì vẫn thuộc về giờ số 3. Đọc lại chuẩn giúp Su Kem nào!"
-   ],
-   "goc": [
-    "Nhìn đồng hồ có kim phút chỉ 6, kim giờ nằm giữa 3 và 4, Su Kem đọc: \"Bốn giờ rưỡi! Kim giờ gần số 4 hơn số 3 mà — phải đọc theo số gần nhất chứ!\"",
-    "Gợi ý 1: Kim giờ đang trên đường đi TỪ số nào ĐẾN số nào? Nó đã đi QUA số nào rồi, còn số nào thì CHƯA tới?",
-    "Gợi ý 2: Nghĩ như tuổi ấy: bé 3 tuổi rưỡi đã được gọi là 4 tuổi chưa? Giờ giấc cũng vậy — chưa qua số 4 thì vẫn thuộc về giờ số 3. Đọc lại chuẩn giúp Su Kem nào!"
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Mua (hoặc tự làm bằng đĩa giấy + kim bìa) một chiếc đồng hồ quay tay — mỗi tối cho con quay giờ đi ngủ, giờ dậy mai. Đồng hồ kim thật trong nhà là giáo cụ chạy suốt ngày.",
-    "Gắn giờ với việc: \"7 giờ ăn sáng, 4 giờ rưỡi đá bóng\" — trẻ nhớ giờ qua VIỆC nhanh hơn qua con số. Giao con làm \"trưởng ban báo giờ\" của cả nhà một tuần.",
-    "NÊN: chỉ luyện giờ đúng và giờ rưỡi cho thật chắc. KHÔNG NÊN: dạy \"giờ kém\", phút lẻ (7 giờ 15) hay đồng hồ điện tử 24 giờ — các món ấy thuộc thực đơn lớp 3; nêm sớm dễ hóc."
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Quan sát đồng hồ thật: khi kim phút chạy đúng MỘT vòng (từ 12 quay về 12), kim giờ nhích được bao xa? Từ đó nói xem: một vòng kim phút bằng bao nhiêu giờ?",
+     "solutionNarrative": "kim phút quay đúng 1 vòng thì kim giờ nhích đúng 1 số → một vòng kim phút = 1 giờ"
+    },
+    {
+     "id": "C9",
+     "text": "Buổi sáng của Trí Long: bắt đầu học lúc 9 giờ, học 2 giờ liền, rồi nghỉ giải lao nửa giờ. Hỏi lúc kết thúc giờ giải lao, đồng hồ chỉ mấy giờ? (Đi từng chặng: 9 giờ → học xong → nghỉ xong.)",
+     "solutionNarrative": "9 giờ học 2 giờ → 11 giờ; nghỉ thêm nửa giờ → 11 giờ rưỡi"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Trên đồng hồ, kim nào là kim giờ, kim nào là kim phút? Kim nào chạy nhanh hơn?",
-   "loiChua": "ngắn = giờ, dài = phút; kim phút chạy nhanh hơn",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Kim phút chỉ 12, kim giờ chỉ 9 — đọc giờ. Kim phút chỉ 12, kim giờ chỉ 6 — đọc giờ.",
-   "loiChua": "9 giờ đúng; 6 giờ đúng",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Kim phút chỉ 6, kim giờ nằm giữa 7 và 8 — đọc giờ.",
-   "loiChua": "7 giờ rưỡi (đọc theo số ĐÃ ĐI QUA!)",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Bây giờ là 5 giờ chiều. Hỏi 1 giờ nữa là mấy giờ? 2 giờ nữa là mấy giờ?",
-   "loiChua": "6 giờ; 7 giờ",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Bây giờ là 6 giờ. Hỏi nửa giờ nữa là mấy giờ? Từ 6 giờ rưỡi thêm nửa giờ nữa là mấy giờ?",
-   "loiChua": "6 giờ rưỡi; rồi tròn 7 giờ",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Vẽ (hoặc quay đồng hồ đồ chơi) các giờ sau: 2 giờ đúng; 2 giờ rưỡi; 11 giờ đúng. Với mỗi giờ, kim phút chỉ số nào?",
-   "loiChua": "2 giờ và 11 giờ: kim phút chỉ 12; 2 giờ rưỡi: kim phút chỉ 6, kim giờ giữa 2 và 3",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Su Kem hẹn đá bóng lúc 4 giờ rưỡi. Cậu ấy đến sân lúc kim phút chỉ 12, kim giờ chỉ 5. Su Kem đến sớm hay muộn? Muộn khoảng bao lâu?",
-   "loiChua": "5 giờ đúng là MUỘN hơn 4 giờ rưỡi — Su Kem đến muộn khoảng nửa giờ",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Quan sát đồng hồ thật: khi kim phút chạy đúng MỘT vòng (từ 12 quay về 12), kim giờ nhích được bao xa? Từ đó nói xem: một vòng kim phút bằng bao nhiêu giờ?",
-   "loiChua": "kim phút quay đúng 1 vòng thì kim giờ nhích đúng 1 số → một vòng kim phút = 1 giờ",
-   "tuLuan": true
-  },
-  {
-   "id": "C9",
-   "maSach": "C9",
-   "so": 9,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Buổi sáng của Trí Long: bắt đầu học lúc 9 giờ, học 2 giờ liền, rồi nghỉ giải lao nửa giờ. Hỏi lúc kết thúc giờ giải lao, đồng hồ chỉ mấy giờ? (Đi từng chặng: 9 giờ → học xong → nghỉ xong.)",
-   "loiChua": "9 giờ học 2 giờ → 11 giờ; nghỉ thêm nửa giờ → 11 giờ rưỡi",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Kim ngắn là kim giờ, kim dài là kim phút.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Kim ngắn là kim giờ, kim dài là kim phút.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Giờ rưỡi thì kim phút chỉ số 6.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+   {
+    "id": "Q2",
+    "text": "Giờ rưỡi thì kim phút chỉ số 6.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Kim phút chỉ 12, kim giờ chỉ 7 — đó là:",
-   "format": "mcq",
-   "choices": [
-    "A. 7 giờ",
-    "B. 12 giờ",
-    "C. 7 giờ rưỡi"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "A. 7 giờ"
+   {
+    "id": "Q3",
+    "text": "Kim phút chỉ 12, kim giờ chỉ 7 — đó là:",
+    "format": "mcq",
+    "choices": [
+     "A. 7 giờ",
+     "B. 12 giờ",
+     "C. 7 giờ rưỡi"
+    ],
+    "answerKey": {
+     "choice": "A. 7 giờ"
+    },
+    "solutionNarrative": "Đáp án: A. 7 giờ"
    },
-   "loiChua": "Đáp án: A. 7 giờ",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Kim phút chỉ 6, kim giờ giữa 3 và 4 — đó là:",
-   "format": "mcq",
-   "choices": [
-    "A. 4 giờ rưỡi",
-    "B. 3 giờ rưỡi",
-    "C. 6 giờ"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 3 giờ rưỡi"
+   {
+    "id": "Q4",
+    "text": "Kim phút chỉ 6, kim giờ giữa 3 và 4 — đó là:",
+    "format": "mcq",
+    "choices": [
+     "A. 4 giờ rưỡi",
+     "B. 3 giờ rưỡi",
+     "C. 6 giờ"
+    ],
+    "answerKey": {
+     "choice": "B. 3 giờ rưỡi"
+    },
+    "solutionNarrative": "Đáp án: B. 3 giờ rưỡi"
    },
-   "loiChua": "Đáp án: B. 3 giờ rưỡi",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Bây giờ 3 giờ, 1 giờ nữa là:",
-   "format": "mcq",
-   "choices": [
-    "A. 3 giờ rưỡi",
-    "B. 4 giờ",
-    "C. 2 giờ"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 4 giờ"
-   },
-   "loiChua": "Đáp án: B. 4 giờ",
-   "solutionNarrative": ""
-  }
- ]
+   {
+    "id": "Q5",
+    "text": "Bây giờ 3 giờ, 1 giờ nữa là:",
+    "format": "mcq",
+    "choices": [
+     "A. 3 giờ rưỡi",
+     "B. 4 giờ",
+     "C. 2 giờ"
+    ],
+    "answerKey": {
+     "choice": "B. 4 giờ"
+    },
+    "solutionNarrative": "Đáp án: B. 4 giờ"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Mua (hoặc tự làm bằng đĩa giấy + kim bìa) một chiếc đồng hồ quay tay — mỗi tối cho con quay giờ đi ngủ, giờ dậy mai. Đồng hồ kim thật trong nhà là giáo cụ chạy suốt ngày.",
+  "homeActivity": "Gắn giờ với việc: \"7 giờ ăn sáng, 4 giờ rưỡi đá bóng\" — trẻ nhớ giờ qua VIỆC nhanh hơn qua con số. Giao con làm \"trưởng ban báo giờ\" của cả nhà một tuần.",
+  "watchFor": "NÊN: chỉ luyện giờ đúng và giờ rưỡi cho thật chắc. KHÔNG NÊN: dạy \"giờ kém\", phút lẻ (7 giờ 15) hay đồng hồ điện tử 24 giờ — các món ấy thuộc thực đơn lớp 3; nêm sớm dễ hóc."
+ },
+ "figureSpec": []
 }

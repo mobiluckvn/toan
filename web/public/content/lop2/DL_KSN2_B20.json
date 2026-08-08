@@ -1,289 +1,246 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B20",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 20 · BÀI TOÁN TUỔI ANH EM",
+ "durationMinutes": 10,
  "so": 20,
- "ten": "BÀI TOÁN TUỔI ANH EM",
  "chuong": 5,
  "tenChuong": "Chuyện toán lời văn",
  "dangGoc": "LV 6.1 — Toán tuổi (khám phá vàng: HIỆU TUỔI KHÔNG BAO GIỜ ĐỔI)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Giải bài toán tuổi bằng phép cộng, trừ (anh hơn em mấy tuổi, ai bao nhiêu tuổi).",
-    "Tính được tuổi mỗi người SAU vài năm nữa: mỗi người cùng thêm từng ấy tuổi.",
-    "Khám phá bí mật vàng: phần HƠN TUỔI giữa hai người không bao giờ thay đổi."
+ "skills": {
+  "bktUnit": "CHUONG:5@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 20,
+  "prev": "DL:KSN2.B19",
+  "next": "DL:KSN2.B21"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Giải bài toán tuổi bằng phép cộng, trừ (anh hơn em mấy tuổi, ai bao nhiêu tuổi). Tính được tuổi mỗi người SAU vài năm nữa: mỗi người cùng thêm từng ấy tuổi. Khám phá bí mật vàng: phần HƠN TUỔI giữa hai người không bao giờ thay đổi.",
+  "kidText": "Giải bài toán tuổi bằng phép cộng, trừ (anh hơn em mấy tuổi, ai bao nhiêu tuổi). Tính được tuổi mỗi người SAU vài năm nữa: mỗi người cùng thêm từng ấy tuổi. Khám phá bí mật vàng: phần HƠN TUỔI giữa hai người không bao giờ thay đổi.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Năm nay: em 6 tuổi, anh 9 tuổi → anh hơn em: 9 − 6 = 3 tuổi."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Sau 2 năm: MỖI người đều thêm đúng 2 tuổi (thời gian công bằng với tất cả!): em 6 + 2 = 8 tuổi. Anh 9 + 2 = 11 tuổi."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Kiểm tra phần hơn: 11 − 8 = 3 — VẪN LÀ 3 TUỔI! Nhìn hai hàng nến mà xem: hai bên cùng cắm thêm 2 cây, nên phần \"nhô cao hơn\" của anh giữ nguyên:"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4. Vậy câu trả lời cho Su Kem: dù 10 năm hay 100 năm nữa, anh vẫn hơn em đúng 3 tuổi. Em không bao giờ \"đuổi kịp\" anh được, dù ăn bao nhiêu cơm đi nữa!"
+   }
+  ],
+  "mantra": "Thời gian trôi thì AI CŨNG thêm tuổi bằng nhau → phần HƠN giữa hai người là kho báu không đổi. Bài toán tuổi nào cũng nên tìm phần hơn ấy trước tiên!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Su Kem quả quyết: \"Anh hơn em 3 tuổi. Sau 2 năm nữa thì anh hơn em 3 + 2 = 5 tuổi chứ — thời gian trôi mà!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Sau 2 năm, có phải CHỈ MÌNH anh thêm tuổi không? Em đứng yên à? Gợi ý 2: Lấy số cụ thể (em 6, anh 9) tính tuổi hai người sau 2 năm rồi trừ thử. Phần hơn là mấy? Nói lại cho Su Kem bí mật của những ngọn nến nhé."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Nhà Su Kem tổ chức sinh nhật đôi cho hai anh em: em thổi 6 ngọn nến, anh thổi 9 ngọn. Su Kem thắc mắc: \"Sang năm, rồi sang năm nữa... liệu có ngày nào em thổi số nến BẰNG anh không nhỉ? Em ăn nhiều cơm lắm mà!\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Su Kem quả quyết: \"Anh hơn em 3 tuổi. Sau 2 năm nữa thì anh hơn em 3 + 2 = 5 tuổi chứ — thời gian trôi mà!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Năm nay mẹ 32 tuổi, con 7 tuổi. Hỏi: (a) Mẹ hơn con bao nhiêu tuổi? (b) Sau 5 năm nữa, mẹ hơn con bao nhiêu tuổi?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "(a) Mẹ hơn con số tuổi là: 32 − 7 = 25 (tuổi)"
+   },
+   {
+    "show": "(b) Sau 5 năm, mẹ và con ĐỀU thêm 5 tuổi, nên mẹ vẫn hơn con 25 tuổi."
+   },
+   {
+    "show": "(Kiểm tra: mẹ 32 + 5 = 37 tuổi. Con 7 + 5 = 12 tuổi. 37 − 12 = 25 ✓)"
+   },
+   {
+    "show": "Đáp số: (a) 25 tuổi; (b) vẫn 25 tuổi."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Em 6 tuổi, anh hơn em 4 tuổi. Hỏi anh mấy tuổi?",
+     "solutionNarrative": "6 + 4 = 10 tuổi"
+    },
+    {
+     "id": "C2",
+     "text": "Chị 12 tuổi, em kém chị 5 tuổi. Hỏi em mấy tuổi?",
+     "solutionNarrative": "12 − 5 = 7 tuổi"
+    },
+    {
+     "id": "C3",
+     "text": "Bố 38 tuổi, con 8 tuổi. Bố hơn con bao nhiêu tuổi?",
+     "solutionNarrative": "38 − 8 = 30 tuổi"
+    }
    ],
-   "goc": [
-    "Giải bài toán tuổi bằng phép cộng, trừ (anh hơn em mấy tuổi, ai bao nhiêu tuổi).",
-    "Tính được tuổi mỗi người SAU vài năm nữa: mỗi người cùng thêm từng ấy tuổi.",
-    "Khám phá bí mật vàng: phần HƠN TUỔI giữa hai người không bao giờ thay đổi."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Hai chiếc bánh sinh nhật",
-   "dong": [
-    "Nhà Su Kem tổ chức sinh nhật đôi cho hai anh em: em thổi 6 ngọn nến, anh thổi 9 ngọn. Su Kem thắc mắc: \"Sang năm, rồi sang năm nữa... liệu có ngày nào em thổi số nến BẰNG anh không nhỉ? Em ăn nhiều cơm lắm mà!\""
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Năm nay em 7 tuổi, anh 10 tuổi. Hỏi 3 năm nữa mỗi người bao nhiêu tuổi? Khi đó anh hơn em mấy tuổi?",
+     "solutionNarrative": "em 7 + 3 = 10 tuổi; anh 10 + 3 = 13 tuổi; anh vẫn hơn em 3 tuổi"
+    },
+    {
+     "id": "C5",
+     "text": "Năm nay mẹ hơn con 26 tuổi. Hỏi 10 năm nữa mẹ hơn con bao nhiêu tuổi? (Không cần biết tuổi từng người vẫn trả lời được đấy!)",
+     "solutionNarrative": "vẫn 26 tuổi — phần hơn không đổi, chẳng cần biết tuổi từng người!"
+    },
+    {
+     "id": "C6",
+     "text": "Hai năm TRƯỚC, em 4 tuổi. Hỏi năm nay em mấy tuổi? Năm nay anh 9 tuổi thì hai năm trước anh mấy tuổi?",
+     "solutionNarrative": "em nay 4 + 2 = 6 tuổi; anh hai năm trước 9 − 2 = 7 tuổi"
+    }
    ],
-   "goc": [
-    "Nhà Su Kem tổ chức sinh nhật đôi cho hai anh em: em thổi 6 ngọn nến, anh thổi 9 ngọn. Su Kem thắc mắc: \"Sang năm, rồi sang năm nữa... liệu có ngày nào em thổi số nến BẰNG anh không nhỉ? Em ăn nhiều cơm lắm mà!\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Bí mật của những ngọn nến",
-   "dong": [
-    "Bước 1. Năm nay: em 6 tuổi, anh 9 tuổi → anh hơn em: 9 − 6 = 3 tuổi.",
-    "Bước 2. Sau 2 năm: MỖI người đều thêm đúng 2 tuổi (thời gian công bằng với tất cả!): em 6 + 2 = 8 tuổi. Anh 9 + 2 = 11 tuổi.",
-    "Bước 3. Kiểm tra phần hơn: 11 − 8 = 3 — VẪN LÀ 3 TUỔI! Nhìn hai hàng nến mà xem: hai bên cùng cắm thêm 2 cây, nên phần \"nhô cao hơn\" của anh giữ nguyên:",
-    "Bước 4. Vậy câu trả lời cho Su Kem: dù 10 năm hay 100 năm nữa, anh vẫn hơn em đúng 3 tuổi. Em không bao giờ \"đuổi kịp\" anh được, dù ăn bao nhiêu cơm đi nữa!",
-    "MẸO THÁM TỬ: Thời gian trôi thì AI CŨNG thêm tuổi bằng nhau → phần HƠN giữa hai người là kho báu không đổi. Bài toán tuổi nào cũng nên tìm phần hơn ấy trước tiên!"
-   ],
-   "goc": [
-    "Bước 1. Năm nay: em 6 tuổi, anh 9 tuổi → anh hơn em: 9 − 6 = 3 tuổi.",
-    "Bước 2. Sau 2 năm: MỖI người đều thêm đúng 2 tuổi (thời gian công bằng với tất cả!): em 6 + 2 = 8 tuổi; anh 9 + 2 = 11 tuổi.",
-    "Bước 3. Kiểm tra phần hơn: 11 − 8 = 3 — VẪN LÀ 3 TUỔI! Nhìn hai hàng nến mà xem: hai bên cùng cắm thêm 2 cây, nên phần \"nhô cao hơn\" của anh giữ nguyên:",
-    "Bước 4. Vậy câu trả lời cho Su Kem: dù 10 năm hay 100 năm nữa, anh vẫn hơn em đúng 3 tuổi — em không bao giờ \"đuổi kịp\" anh được, dù ăn bao nhiêu cơm đi nữa!",
-    "MẸO THÁM TỬ: Thời gian trôi thì AI CŨNG thêm tuổi bằng nhau → phần HƠN giữa hai người là kho báu không đổi. Bài toán tuổi nào cũng nên tìm phần hơn ấy trước tiên!"
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Năm nay mẹ 32 tuổi, con 7 tuổi. Hỏi: (a) Mẹ hơn con bao nhiêu tuổi? (b) Sau 5 năm nữa, mẹ hơn con bao nhiêu tuổi?",
-    "Bài giải:",
-    "(a) Mẹ hơn con số tuổi là: 32 − 7 = 25 (tuổi)",
-    "(b) Sau 5 năm, mẹ và con ĐỀU thêm 5 tuổi, nên mẹ vẫn hơn con 25 tuổi.",
-    "(Kiểm tra: mẹ 32 + 5 = 37 tuổi. Con 7 + 5 = 12 tuổi. 37 − 12 = 25 ✓)",
-    "Đáp số: (a) 25 tuổi; (b) vẫn 25 tuổi."
-   ],
-   "goc": [
-    "Đề bài: Năm nay mẹ 32 tuổi, con 7 tuổi. Hỏi: (a) Mẹ hơn con bao nhiêu tuổi? (b) Sau 5 năm nữa, mẹ hơn con bao nhiêu tuổi?",
-    "Bài giải:",
-    "(a) Mẹ hơn con số tuổi là: 32 − 7 = 25 (tuổi)",
-    "(b) Sau 5 năm, mẹ và con ĐỀU thêm 5 tuổi, nên mẹ vẫn hơn con 25 tuổi.",
-    "(Kiểm tra: mẹ 32 + 5 = 37 tuổi; con 7 + 5 = 12 tuổi; 37 − 12 = 25 ✓)",
-    "Đáp số: (a) 25 tuổi; (b) vẫn 25 tuổi."
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Su Kem quả quyết: \"Anh hơn em 3 tuổi. Sau 2 năm nữa thì anh hơn em 3 + 2 = 5 tuổi chứ — thời gian trôi mà!\"",
-    "Gợi ý 1: Sau 2 năm, có phải CHỈ MÌNH anh thêm tuổi không? Em đứng yên à?",
-    "Gợi ý 2: Lấy số cụ thể (em 6, anh 9) tính tuổi hai người sau 2 năm rồi trừ thử. Phần hơn là mấy? Nói lại cho Su Kem bí mật của những ngọn nến nhé."
-   ],
-   "goc": [
-    "Su Kem quả quyết: \"Anh hơn em 3 tuổi. Sau 2 năm nữa thì anh hơn em 3 + 2 = 5 tuổi chứ — thời gian trôi mà!\"",
-    "Gợi ý 1: Sau 2 năm, có phải CHỈ MÌNH anh thêm tuổi không? Em đứng yên à?",
-    "Gợi ý 2: Lấy số cụ thể (em 6, anh 9) tính tuổi hai người sau 2 năm rồi trừ thử — phần hơn là mấy? Nói lại cho Su Kem bí mật của những ngọn nến nhé."
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Lấy chính gia đình mình làm đề bài: \"Mẹ hơn con bao nhiêu tuổi? 20 năm nữa thì sao?\" — toán về người thân luôn hấp dẫn gấp đôi toán về nhân vật lạ.",
-    "Câu hỏi \"em có đuổi kịp tuổi chị không?\" đáng để cả nhà thảo luận vui trong bữa cơm — đây là lần đầu con chạm vào một ĐẠI LƯỢNG BẤT BIẾN, khái niệm rất lớn của toán học.",
-    "NÊN: cho con kiểm chứng \"hiệu không đổi\" bằng vài mốc thời gian (2 năm, 5 năm, 10 năm nữa). KHÔNG NÊN: ra bài kiểu \"3 năm nữa tổng tuổi hai mẹ con là...\" — cộng tuổi nhiều người qua thời gian là bẫy lớp 4-5, giờ chưa cần."
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Bây giờ em 5 tuổi, anh 9 tuổi. Hỏi khi em lên 10 tuổi thì anh bao nhiêu tuổi? (Mẹo: em thêm mấy tuổi thì anh cũng thêm bấy nhiêu — hoặc dùng luôn kho báu \"phần hơn không đổi\"!)",
+     "solutionNarrative": "em từ 5 lên 10 là thêm 5 tuổi → anh cũng thêm 5: 9 + 5 = 14 tuổi. (Hoặc: hiệu 4 tuổi không đổi → 10 + 4 = 14.)"
+    },
+    {
+     "id": "C8",
+     "text": "Hai chị em sinh cách nhau 4 năm. Em quả quyết: \"Lớn thật nhanh rồi sẽ có ngày em BẰNG TUỔI chị!\" Con dùng bí mật những ngọn nến để trả lời em ấy — có ngày đó không, vì sao?",
+     "solutionNarrative": "KHÔNG bao giờ — mỗi năm hai chị em cùng thêm đúng 1 tuổi nên khoảng cách 4 năm được \"đóng đinh\" mãi mãi. Em chỉ có thể đuổi kịp chị về... chiều cao thôi!"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Em 6 tuổi, anh hơn em 4 tuổi. Hỏi anh mấy tuổi?",
-   "loiChua": "6 + 4 = 10 tuổi",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Chị 12 tuổi, em kém chị 5 tuổi. Hỏi em mấy tuổi?",
-   "loiChua": "12 − 5 = 7 tuổi",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Bố 38 tuổi, con 8 tuổi. Bố hơn con bao nhiêu tuổi?",
-   "loiChua": "38 − 8 = 30 tuổi",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Năm nay em 7 tuổi, anh 10 tuổi. Hỏi 3 năm nữa mỗi người bao nhiêu tuổi? Khi đó anh hơn em mấy tuổi?",
-   "loiChua": "em 7 + 3 = 10 tuổi; anh 10 + 3 = 13 tuổi; anh vẫn hơn em 3 tuổi",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Năm nay mẹ hơn con 26 tuổi. Hỏi 10 năm nữa mẹ hơn con bao nhiêu tuổi? (Không cần biết tuổi từng người vẫn trả lời được đấy!)",
-   "loiChua": "vẫn 26 tuổi — phần hơn không đổi, chẳng cần biết tuổi từng người!",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Hai năm TRƯỚC, em 4 tuổi. Hỏi năm nay em mấy tuổi? Năm nay anh 9 tuổi thì hai năm trước anh mấy tuổi?",
-   "loiChua": "em nay 4 + 2 = 6 tuổi; anh hai năm trước 9 − 2 = 7 tuổi",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Bây giờ em 5 tuổi, anh 9 tuổi. Hỏi khi em lên 10 tuổi thì anh bao nhiêu tuổi? (Mẹo: em thêm mấy tuổi thì anh cũng thêm bấy nhiêu — hoặc dùng luôn kho báu \"phần hơn không đổi\"!)",
-   "loiChua": "em từ 5 lên 10 là thêm 5 tuổi → anh cũng thêm 5: 9 + 5 = 14 tuổi. (Hoặc: hiệu 4 tuổi không đổi → 10 + 4 = 14.)",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Hai chị em sinh cách nhau 4 năm. Em quả quyết: \"Lớn thật nhanh rồi sẽ có ngày em BẰNG TUỔI chị!\" Con dùng bí mật những ngọn nến để trả lời em ấy — có ngày đó không, vì sao?",
-   "loiChua": "KHÔNG bao giờ — mỗi năm hai chị em cùng thêm đúng 1 tuổi nên khoảng cách 4 năm được \"đóng đinh\" mãi mãi. Em chỉ có thể đuổi kịp chị về... chiều cao thôi!",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Sau 2 năm, cả anh và em đều thêm đúng 2 tuổi.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Sau 2 năm, cả anh và em đều thêm đúng 2 tuổi.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Anh hơn em 3 tuổi; sau 2 năm anh hơn em 5 tuổi.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": false
+   {
+    "id": "Q2",
+    "text": "Anh hơn em 3 tuổi; sau 2 năm anh hơn em 5 tuổi.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "vẫn hơn 3"
    },
-   "loiChua": "vẫn hơn 3",
-   "solutionNarrative": "vẫn hơn 3"
-  },
-  {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Em 6 tuổi, anh hơn em 4 tuổi. Anh mấy tuổi?",
-   "format": "mcq",
-   "choices": [
-    "A. 2",
-    "B. 10",
-    "C. 24"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 10"
+   {
+    "id": "Q3",
+    "text": "Em 6 tuổi, anh hơn em 4 tuổi. Anh mấy tuổi?",
+    "format": "mcq",
+    "choices": [
+     "A. 2",
+     "B. 10",
+     "C. 24"
+    ],
+    "answerKey": {
+     "choice": "B. 10"
+    },
+    "solutionNarrative": "Đáp án: B. 10"
    },
-   "loiChua": "Đáp án: B. 10",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Mẹ hơn con 25 tuổi. Sau 10 năm mẹ hơn con:",
-   "format": "mcq",
-   "choices": [
-    "A. 25 tuổi",
-    "B. 35 tuổi",
-    "C. 15 tuổi"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "A. 25 tuổi"
+   {
+    "id": "Q4",
+    "text": "Mẹ hơn con 25 tuổi. Sau 10 năm mẹ hơn con:",
+    "format": "mcq",
+    "choices": [
+     "A. 25 tuổi",
+     "B. 35 tuổi",
+     "C. 15 tuổi"
+    ],
+    "answerKey": {
+     "choice": "A. 25 tuổi"
+    },
+    "solutionNarrative": "Đáp án: A. 25 tuổi"
    },
-   "loiChua": "Đáp án: A. 25 tuổi",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Em 5 tuổi, anh 9 tuổi. Khi em 10 tuổi thì anh:",
-   "format": "mcq",
-   "choices": [
-    "A. 12 tuổi",
-    "B. 14 tuổi",
-    "C. 19 tuổi"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 14 tuổi"
-   },
-   "loiChua": "Đáp án: B. 14 tuổi",
-   "solutionNarrative": ""
-  }
- ]
+   {
+    "id": "Q5",
+    "text": "Em 5 tuổi, anh 9 tuổi. Khi em 10 tuổi thì anh:",
+    "format": "mcq",
+    "choices": [
+     "A. 12 tuổi",
+     "B. 14 tuổi",
+     "C. 19 tuổi"
+    ],
+    "answerKey": {
+     "choice": "B. 14 tuổi"
+    },
+    "solutionNarrative": "Đáp án: B. 14 tuổi"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Lấy chính gia đình mình làm đề bài: \"Mẹ hơn con bao nhiêu tuổi? 20 năm nữa thì sao?\" — toán về người thân luôn hấp dẫn gấp đôi toán về nhân vật lạ.",
+  "homeActivity": "Câu hỏi \"em có đuổi kịp tuổi chị không?\" đáng để cả nhà thảo luận vui trong bữa cơm — đây là lần đầu con chạm vào một ĐẠI LƯỢNG BẤT BIẾN, khái niệm rất lớn của toán học.",
+  "watchFor": "NÊN: cho con kiểm chứng \"hiệu không đổi\" bằng vài mốc thời gian (2 năm, 5 năm, 10 năm nữa). KHÔNG NÊN: ra bài kiểu \"3 năm nữa tổng tuổi hai mẹ con là...\" — cộng tuổi nhiều người qua thời gian là bẫy lớp 4-5, giờ chưa cần."
+ },
+ "figureSpec": []
 }

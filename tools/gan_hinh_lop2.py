@@ -35,7 +35,7 @@ def main():
     loi, gan = [], 0
     for bai_id, ds in sorted(theo_bai.items()):
         ten = bai_id.replace('DL:', 'DL_').replace('.', '_') + '.json'
-        duong = os.path.join(RA_DIR, ten)
+        duong = os.path.join(RA_DATA, ten)
         if not os.path.exists(duong):
             loi.append(f'{bai_id}: không có tệp bài học {ten}')
             continue
@@ -70,9 +70,8 @@ def main():
             muc['hinh'].sort(key=lambda x: (x['sauDong'], x['id']))
             gan += 1
 
-        for thu_muc in (RA_DIR, RA_DATA):
-            with open(os.path.join(thu_muc, ten), 'w', encoding='utf-8') as f:
-                json.dump(d, f, ensure_ascii=False, indent=1)
+        with open(os.path.join(RA_DATA, ten), 'w', encoding='utf-8') as f:
+            json.dump(d, f, ensure_ascii=False, indent=1)
 
     for m in loi:
         print('  ✗', m)

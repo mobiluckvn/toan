@@ -1,300 +1,251 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B10",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 10 · GIẢI MÃ QUY LUẬT BÍ ẨN",
+ "durationMinutes": 10,
  "so": 10,
- "ten": "GIẢI MÃ QUY LUẬT BÍ ẨN",
  "chuong": 3,
  "tenChuong": "Dãy số kỳ diệu",
  "dangGoc": "SỐ 5.2 — Dãy không cách đều (dãy gấp đôi, dãy bậc thang, dãy Fibonacci)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Phát hiện dãy GẤP ĐÔI: mỗi số bằng số trước cộng chính nó.",
-    "Phát hiện dãy BẬC THANG: các bước nhảy dài thêm 1 (hiệu là +1, +2, +3...).",
-    "Nói được quy luật bằng lời của con và kiểm tra quy luật với TẤT CẢ các số của dãy."
+ "skills": {
+  "bktUnit": "CHUONG:3@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 10,
+  "prev": "DL:KSN2.B09",
+  "next": "DL:KSN2.B11"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Phát hiện dãy GẤP ĐÔI: mỗi số bằng số trước cộng chính nó. Phát hiện dãy BẬC THANG: các bước nhảy dài thêm 1 (hiệu là +1, +2, +3...). Nói được quy luật bằng lời của con và kiểm tra quy luật với TẤT CẢ các số của dãy.",
+  "kidText": "Phát hiện dãy GẤP ĐÔI: mỗi số bằng số trước cộng chính nó. Phát hiện dãy BẬC THANG: các bước nhảy dài thêm 1 (hiệu là +1, +2, +3...). Nói được quy luật bằng lời của con và kiểm tra quy luật với TẤT CẢ các số của dãy.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Gặp dãy lạ, việc đầu tiên là thử chìa khóa số 1: tìm nhịp (như Bài 9). Với dãy 1, 2, 4, 8: hiệu là 1, 2, 4 — không đều! Vậy đây không phải đoàn tàu đếm thêm, phải đổi chìa khóa."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Chìa khóa số 2. DÃY GẤP ĐÔI: để ý 1 + 1 = 2. 2 + 2 = 4. 4 + 4 = 8. Mỗi số bằng số trước cộng chính nó! Số tiếp theo: 8 + 8 = 16."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Còn dãy 1, 2, 4, 7, 11 thì sao? Viết các bước nhảy ra: +1, +2, +3, +4 — mỗi bước dài thêm 1! Đó là chìa khóa số 3 — DÃY BẬC THANG:"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4. Quan trọng nhất: quy luật phải đúng với TẤT CẢ các số đã cho, không phải chỉ hai số cuối. Vì thế 1, 2, 4, 8 là dãy gấp đôi, còn 1, 2, 4, 7 là dãy bậc thang. Chỉ khác nhau đúng một con số mà thành hai câu đố khác nhau!"
+   }
+  ],
+  "mantra": "Gặp dãy lạ, hãy VIẾT CÁC BƯỚC NHẢY RA GIẤY: bước đều → tàu đếm thêm. Bước dài thêm 1 → bậc thang. Số sau bằng số trước cộng chính nó → gấp đôi. Và luôn kiểm tra với mọi số của dãy!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với dãy 1, 2, 4, 8, ... Su Kem điền: \"Số tiếp theo là 12! Vì 8 − 4 = 4, nên cứ cộng 4 là xong.\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Su Kem mới nhìn HAI số cuối. Con thử quy luật \"cộng 4\" với các số đầu dãy xem: 1 + 4 có bằng 2 không? Gợi ý 2: Quy luật thật của dãy là gì? Số tiếp theo đúng phải là bao nhiêu?"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Sau nhà ga có một hang động khắc dòng chữ: \"Cửa chỉ mở cho ai đọc được QUY LUẬT của ta.\" Trên cửa khắc hai dãy số: 1, 2, 4, 8, ... và 1, 2, 4, 7, ... — Su Kem dụi mắt: \"Ơ hay, hai dãy giống hệt nhau mà?\" Trí Long nheo mắt: \"Nhìn kỹ số thứ tư đi. Hai dãy này là hai câu đố khác hẳn nhau đấy!\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Với dãy 1, 2, 4, 8, ... Su Kem điền: \"Số tiếp theo là 12! Vì 8 − 4 = 4, nên cứ cộng 4 là xong.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tìm quy luật rồi viết số tiếp theo của dãy: 2, 3, 5, 8, 12, ...",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Các bước nhảy của dãy là: 3 − 2 = 1. 5 − 3 = 2. 8 − 5 = 3. 12 − 8 = 4."
+   },
+   {
+    "show": "Các bước nhảy dài thêm 1, nên đây là dãy bậc thang; bước tiếp theo dài 5."
+   },
+   {
+    "show": "Số tiếp theo là: 12 + 5 = 17."
+   },
+   {
+    "show": "Đáp số: 17."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Viết số tiếp theo của dãy gấp đôi: 2, 4, 8, 16, ▢.",
+     "solutionNarrative": "16 + 16 = 32"
+    },
+    {
+     "id": "C2",
+     "text": "Viết số tiếp theo của dãy: 1, 2, 4, 7, 11, ▢.",
+     "solutionNarrative": "bước tiếp dài 5 → 11 + 5 = 16"
+    },
+    {
+     "id": "C3",
+     "text": "Dãy 3, 6, 12, 24 có phải dãy đếm thêm (nhịp đều) không? Viết các bước nhảy ra để trả lời.",
+     "solutionNarrative": "bước nhảy là 3, 6, 12 — không đều → KHÔNG phải dãy đếm thêm (nó là dãy gấp đôi)"
+    }
    ],
-   "goc": [
-    "Phát hiện dãy GẤP ĐÔI: mỗi số bằng số trước cộng chính nó.",
-    "Phát hiện dãy BẬC THANG: các bước nhảy dài thêm 1 (hiệu là +1, +2, +3...).",
-    "Nói được quy luật bằng lời của con và kiểm tra quy luật với TẤT CẢ các số của dãy."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Cánh cửa hang mật mã",
-   "dong": [
-    "Sau nhà ga có một hang động khắc dòng chữ: \"Cửa chỉ mở cho ai đọc được QUY LUẬT của ta.\" Trên cửa khắc hai dãy số: 1, 2, 4, 8, ... và 1, 2, 4, 7, ... — Su Kem dụi mắt: \"Ơ hay, hai dãy giống hệt nhau mà?\" Trí Long nheo mắt: \"Nhìn kỹ số thứ tư đi. Hai dãy này là hai câu đố khác hẳn nhau đấy!\""
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tìm quy luật rồi viết HAI số tiếp theo: 5, 6, 8, 11, 15, ▢, ▢.",
+     "solutionNarrative": "bước nhảy 1, 2, 3, 4 → bậc thang → 15 + 5 = 20; 20 + 6 = 26"
+    },
+    {
+     "id": "C5",
+     "text": "Tìm quy luật rồi viết HAI số tiếp theo: 3, 6, 12, 24, ▢, ▢.",
+     "solutionNarrative": "gấp đôi → 48 và 96"
+    },
+    {
+     "id": "C6",
+     "text": "Dãy nào là dãy bậc thang, dãy nào là dãy gấp đôi: (a) 1, 2, 4, 8, 16; (b) 1, 2, 4, 7, 11? Nói quy luật mỗi dãy bằng một câu của con.",
+     "solutionNarrative": "(a) gấp đôi — \"mỗi số bằng số trước cộng chính nó\"; (b) bậc thang — \"mỗi bước nhảy dài thêm 1\""
+    },
+    {
+     "id": "C7",
+     "text": "Điền số bị mờ Ở GIỮA dãy bậc thang: 2, 3, 5, ▢, 12, 17.",
+     "solutionNarrative": "bước nhảy 1, 2, ?, ?, 5 → số mờ là 5 + 3 = 8 (kiểm tra: 8 + 4 = 12 ✓)"
+    }
    ],
-   "goc": [
-    "Sau nhà ga có một hang động khắc dòng chữ: \"Cửa chỉ mở cho ai đọc được QUY LUẬT của ta.\" Trên cửa khắc hai dãy số: 1, 2, 4, 8, ... và 1, 2, 4, 7, ... — Su Kem dụi mắt: \"Ơ hay, hai dãy giống hệt nhau mà?\" Trí Long nheo mắt: \"Nhìn kỹ số thứ tư đi. Hai dãy này là hai câu đố khác hẳn nhau đấy!\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Ba chiếc chìa khóa quy luật",
-   "dong": [
-    "Bước 1. Gặp dãy lạ, việc đầu tiên là thử chìa khóa số 1: tìm nhịp (như Bài 9). Với dãy 1, 2, 4, 8: hiệu là 1, 2, 4 — không đều! Vậy đây không phải đoàn tàu đếm thêm, phải đổi chìa khóa.",
-    "Bước 2. Chìa khóa số 2. DÃY GẤP ĐÔI: để ý 1 + 1 = 2. 2 + 2 = 4. 4 + 4 = 8. Mỗi số bằng số trước cộng chính nó! Số tiếp theo: 8 + 8 = 16.",
-    "Bước 3. Còn dãy 1, 2, 4, 7, 11 thì sao? Viết các bước nhảy ra: +1, +2, +3, +4 — mỗi bước dài thêm 1! Đó là chìa khóa số 3 — DÃY BẬC THANG:",
-    "Bước 4. Quan trọng nhất: quy luật phải đúng với TẤT CẢ các số đã cho, không phải chỉ hai số cuối. Vì thế 1, 2, 4, 8 là dãy gấp đôi, còn 1, 2, 4, 7 là dãy bậc thang. Chỉ khác nhau đúng một con số mà thành hai câu đố khác nhau!",
-    "MẸO THÁM TỬ: Gặp dãy lạ, hãy VIẾT CÁC BƯỚC NHẢY RA GIẤY: bước đều → tàu đếm thêm. Bước dài thêm 1 → bậc thang. Số sau bằng số trước cộng chính nó → gấp đôi. Và luôn kiểm tra với mọi số của dãy!"
-   ],
-   "goc": [
-    "Bước 1. Gặp dãy lạ, việc đầu tiên là thử chìa khóa số 1: tìm nhịp (như Bài 9). Với dãy 1, 2, 4, 8: hiệu là 1, 2, 4 — không đều! Vậy đây không phải đoàn tàu đếm thêm, phải đổi chìa khóa.",
-    "Bước 2. Chìa khóa số 2 — DÃY GẤP ĐÔI: để ý 1 + 1 = 2; 2 + 2 = 4; 4 + 4 = 8. Mỗi số bằng số trước cộng chính nó! Số tiếp theo: 8 + 8 = 16.",
-    "Bước 3. Còn dãy 1, 2, 4, 7, 11 thì sao? Viết các bước nhảy ra: +1, +2, +3, +4 — mỗi bước dài thêm 1! Đó là chìa khóa số 3 — DÃY BẬC THANG:",
-    "Bước 4. Quan trọng nhất: quy luật phải đúng với TẤT CẢ các số đã cho, không phải chỉ hai số cuối. Vì thế 1, 2, 4, 8 là dãy gấp đôi, còn 1, 2, 4, 7 là dãy bậc thang — chỉ khác nhau đúng một con số mà thành hai câu đố khác nhau!",
-    "MẸO THÁM TỬ: Gặp dãy lạ, hãy VIẾT CÁC BƯỚC NHẢY RA GIẤY: bước đều → tàu đếm thêm; bước dài thêm 1 → bậc thang; số sau bằng số trước cộng chính nó → gấp đôi. Và luôn kiểm tra với mọi số của dãy!"
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Tìm quy luật rồi viết số tiếp theo của dãy: 2, 3, 5, 8, 12, ...",
-    "Bài giải:",
-    "Các bước nhảy của dãy là: 3 − 2 = 1. 5 − 3 = 2. 8 − 5 = 3. 12 − 8 = 4.",
-    "Các bước nhảy dài thêm 1, nên đây là dãy bậc thang; bước tiếp theo dài 5.",
-    "Số tiếp theo là: 12 + 5 = 17.",
-    "Đáp số: 17."
-   ],
-   "goc": [
-    "Đề bài: Tìm quy luật rồi viết số tiếp theo của dãy: 2, 3, 5, 8, 12, ...",
-    "Bài giải:",
-    "Các bước nhảy của dãy là: 3 − 2 = 1; 5 − 3 = 2; 8 − 5 = 3; 12 − 8 = 4.",
-    "Các bước nhảy dài thêm 1, nên đây là dãy bậc thang; bước tiếp theo dài 5.",
-    "Số tiếp theo là: 12 + 5 = 17.",
-    "Đáp số: 17."
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Với dãy 1, 2, 4, 8, ... Su Kem điền: \"Số tiếp theo là 12! Vì 8 − 4 = 4, nên cứ cộng 4 là xong.\"",
-    "Gợi ý 1: Su Kem mới nhìn HAI số cuối. Con thử quy luật \"cộng 4\" với các số đầu dãy xem: 1 + 4 có bằng 2 không?",
-    "Gợi ý 2: Quy luật thật của dãy là gì? Số tiếp theo đúng phải là bao nhiêu?"
-   ],
-   "goc": [
-    "Với dãy 1, 2, 4, 8, ... Su Kem điền: \"Số tiếp theo là 12! Vì 8 − 4 = 4, nên cứ cộng 4 là xong.\"",
-    "Gợi ý 1: Su Kem mới nhìn HAI số cuối. Con thử quy luật \"cộng 4\" với các số đầu dãy xem: 1 + 4 có bằng 2 không?",
-    "Gợi ý 2: Quy luật thật của dãy là gì? Số tiếp theo đúng phải là bao nhiêu?"
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Chơi \"hang mật mã\" hai chiều: bố mẹ và con thay nhau ra dãy - giải dãy. Trẻ SÁNG TÁC quy luật học được nhiều gấp đôi trẻ chỉ giải quy luật.",
-    "Với dãy Fibonacci: cùng con đếm cánh của vài bông hoa thật (nhiều hoa có 3, 5, 8 cánh!) — khoảnh khắc \"toán có thật ngoài đời\" quý hơn chục bài tập.",
-    "NÊN: yêu cầu con NÓI quy luật thành câu trước khi điền số. KHÔNG NÊN: chê dãy con sáng tác là \"dễ quá\" — mọi quy luật con tự nghĩ ra đều đáng một tràng vỗ tay."
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "DÃY THỎ FIBONACCI — dãy số nổi tiếng nhất thế giới: 1, 1, 2, 3, 5, 8, ... Mỗi số bằng tổng HAI số liền trước nó (1 + 1 = 2; 1 + 2 = 3; 2 + 3 = 5...). Con hãy viết tiếp HAI số nữa của dãy. Nhà toán học Fibonacci tìm ra dãy này khi đếm... các đôi thỏ đấy!",
+     "solutionNarrative": "5 + 8 = 13; 8 + 13 = 21 → hai số tiếp theo là 13 và 21"
+    },
+    {
+     "id": "C9",
+     "text": "Đến lượt con làm chủ hang mật mã: tự nghĩ MỘT dãy số có quy luật (5 số), viết ra giấy và đố bố mẹ tìm quy luật. Nếu bố mẹ giải sai, con được quyền... kể đáp án một cách oai phong!",
+     "solutionNarrative": "dãy nào con nghĩ ra cũng đáng khen — miễn là con nói được quy luật thành lời!"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Viết số tiếp theo của dãy gấp đôi: 2, 4, 8, 16, ▢.",
-   "loiChua": "16 + 16 = 32",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Viết số tiếp theo của dãy: 1, 2, 4, 7, 11, ▢.",
-   "loiChua": "bước tiếp dài 5 → 11 + 5 = 16",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Dãy 3, 6, 12, 24 có phải dãy đếm thêm (nhịp đều) không? Viết các bước nhảy ra để trả lời.",
-   "loiChua": "bước nhảy là 3, 6, 12 — không đều → KHÔNG phải dãy đếm thêm (nó là dãy gấp đôi)",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm quy luật rồi viết HAI số tiếp theo: 5, 6, 8, 11, 15, ▢, ▢.",
-   "loiChua": "bước nhảy 1, 2, 3, 4 → bậc thang → 15 + 5 = 20; 20 + 6 = 26",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm quy luật rồi viết HAI số tiếp theo: 3, 6, 12, 24, ▢, ▢.",
-   "loiChua": "gấp đôi → 48 và 96",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Dãy nào là dãy bậc thang, dãy nào là dãy gấp đôi: (a) 1, 2, 4, 8, 16; (b) 1, 2, 4, 7, 11? Nói quy luật mỗi dãy bằng một câu của con.",
-   "loiChua": "(a) gấp đôi — \"mỗi số bằng số trước cộng chính nó\"; (b) bậc thang — \"mỗi bước nhảy dài thêm 1\"",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Điền số bị mờ Ở GIỮA dãy bậc thang: 2, 3, 5, ▢, 12, 17.",
-   "loiChua": "bước nhảy 1, 2, ?, ?, 5 → số mờ là 5 + 3 = 8 (kiểm tra: 8 + 4 = 12 ✓)",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "DÃY THỎ FIBONACCI — dãy số nổi tiếng nhất thế giới: 1, 1, 2, 3, 5, 8, ... Mỗi số bằng tổng HAI số liền trước nó (1 + 1 = 2; 1 + 2 = 3; 2 + 3 = 5...). Con hãy viết tiếp HAI số nữa của dãy. Nhà toán học Fibonacci tìm ra dãy này khi đếm... các đôi thỏ đấy!",
-   "loiChua": "5 + 8 = 13; 8 + 13 = 21 → hai số tiếp theo là 13 và 21",
-   "tuLuan": true
-  },
-  {
-   "id": "C9",
-   "maSach": "C9",
-   "so": 9,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Đến lượt con làm chủ hang mật mã: tự nghĩ MỘT dãy số có quy luật (5 số), viết ra giấy và đố bố mẹ tìm quy luật. Nếu bố mẹ giải sai, con được quyền... kể đáp án một cách oai phong!",
-   "loiChua": "dãy nào con nghĩ ra cũng đáng khen — miễn là con nói được quy luật thành lời!",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Trong dãy gấp đôi, mỗi số bằng số trước cộng chính nó.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Trong dãy gấp đôi, mỗi số bằng số trước cộng chính nó.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Quy luật chỉ cần đúng với hai số cuối của dãy là được.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": false
+   {
+    "id": "Q2",
+    "text": "Quy luật chỉ cần đúng với hai số cuối của dãy là được.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "phải đúng với TẤT CẢ các số"
    },
-   "loiChua": "phải đúng với TẤT CẢ các số",
-   "solutionNarrative": "phải đúng với TẤT CẢ các số"
-  },
-  {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Số tiếp theo của dãy 1, 2, 4, 8 là:",
-   "format": "mcq",
-   "choices": [
-    "A. 12",
-    "B. 16",
-    "C. 10"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 16"
+   {
+    "id": "Q3",
+    "text": "Số tiếp theo của dãy 1, 2, 4, 8 là:",
+    "format": "mcq",
+    "choices": [
+     "A. 12",
+     "B. 16",
+     "C. 10"
+    ],
+    "answerKey": {
+     "choice": "B. 16"
+    },
+    "solutionNarrative": "Đáp án: B. 16"
    },
-   "loiChua": "Đáp án: B. 16",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Số tiếp theo của dãy 1, 2, 4, 7 là:",
-   "format": "mcq",
-   "choices": [
-    "A. 11",
-    "B. 10",
-    "C. 14"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "A. 11"
+   {
+    "id": "Q4",
+    "text": "Số tiếp theo của dãy 1, 2, 4, 7 là:",
+    "format": "mcq",
+    "choices": [
+     "A. 11",
+     "B. 10",
+     "C. 14"
+    ],
+    "answerKey": {
+     "choice": "A. 11"
+    },
+    "solutionNarrative": "Đáp án: A. 11"
    },
-   "loiChua": "Đáp án: A. 11",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Trong dãy Fibonacci 1, 1, 2, 3, 5, 8 — số tiếp theo là:",
-   "format": "mcq",
-   "choices": [
-    "A. 11",
-    "B. 12",
-    "C. 13"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "C. 13"
-   },
-   "loiChua": "Đáp án: C. 13",
-   "solutionNarrative": ""
-  }
- ]
+   {
+    "id": "Q5",
+    "text": "Trong dãy Fibonacci 1, 1, 2, 3, 5, 8 — số tiếp theo là:",
+    "format": "mcq",
+    "choices": [
+     "A. 11",
+     "B. 12",
+     "C. 13"
+    ],
+    "answerKey": {
+     "choice": "C. 13"
+    },
+    "solutionNarrative": "Đáp án: C. 13"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chơi \"hang mật mã\" hai chiều: bố mẹ và con thay nhau ra dãy - giải dãy. Trẻ SÁNG TÁC quy luật học được nhiều gấp đôi trẻ chỉ giải quy luật.",
+  "homeActivity": "Với dãy Fibonacci: cùng con đếm cánh của vài bông hoa thật (nhiều hoa có 3, 5, 8 cánh!) — khoảnh khắc \"toán có thật ngoài đời\" quý hơn chục bài tập.",
+  "watchFor": "NÊN: yêu cầu con NÓI quy luật thành câu trước khi điền số. KHÔNG NÊN: chê dãy con sáng tác là \"dễ quá\" — mọi quy luật con tự nghĩ ra đều đáng một tràng vỗ tay."
+ },
+ "figureSpec": []
 }

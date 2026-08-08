@@ -1,289 +1,246 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B08",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 8 · ĐẾM CHỮ SỐ ĐÁNH SỐ TRANG TRUYỆN",
+ "durationMinutes": 10,
  "so": 8,
- "ten": "ĐẾM CHỮ SỐ ĐÁNH SỐ TRANG TRUYỆN",
  "chuong": 2,
  "tenChuong": "Bé là vua đếm",
  "dangGoc": "SỐ 4.3 — Đếm chữ số (mầm non của bài toán đánh trang sách lớp 4-5)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Phân biệt được TRANG và CHỮ SỐ: trang 7 cần 1 chữ số, trang 25 cần 2 chữ số.",
-    "Chia các trang thành hai \"đoàn tàu\": trang 1 chữ số (1-9) và trang 2 chữ số (từ 10 trở đi).",
-    "Tính được tổng số chữ số cần dùng để đánh số một cuốn truyện mỏng."
+ "skills": {
+  "bktUnit": "CHUONG:2@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 8,
+  "prev": "DL:KSN2.B07",
+  "next": "DL:KSN2.B09"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Phân biệt được TRANG và CHỮ SỐ: trang 7 cần 1 chữ số, trang 25 cần 2 chữ số. Chia các trang thành hai \"đoàn tàu\": trang 1 chữ số (1-9) và trang 2 chữ số (từ 10 trở đi). Tính được tổng số chữ số cần dùng để đánh số một cuốn truyện mỏng.",
+  "kidText": "Phân biệt được TRANG và CHỮ SỐ: trang 7 cần 1 chữ số, trang 25 cần 2 chữ số. Chia các trang thành hai \"đoàn tàu\": trang 1 chữ số (1-9) và trang 2 chữ số (từ 10 trở đi). Tính được tổng số chữ số cần dùng để đánh số một cuốn truyện mỏng.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. À ra vậy: trang 7 chỉ cần dán 1 chữ số, nhưng trang 25 phải dán 2 chữ số (chữ 2 và chữ 5). Vậy hãy chia 25 trang thành hai đoàn tàu:"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Đoàn tàu 1 TOA. Trang 1 đến 9: có 9 trang, mỗi trang cần 1 chữ số → cần 9 chữ số."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Đoàn tàu 2 TOA. Trang 10 đến 25: dùng ngay mẹo Bài 6 để đếm số trang: 25 − 10 = 15, thêm 1 → 16 trang. Mỗi trang cần 2 chữ số, tức là 16 + 16 = 32 chữ số."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4. Cộng hai đoàn tàu lại:"
+   }
+  ],
+  "mantra": "TRANG khác CHỮ SỐ! Cứ chia trang thành đoàn tàu 1 toa (1-9) và đoàn tàu 2 toa (10 trở đi), đếm số trang mỗi đoàn (mẹo \"thêm 1\"), rồi mới tính chữ số.",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Su Kem vẫn cãi: \"Truyện của tớ 25 trang thì cần đúng 25 chữ số. Mỗi trang một số mà!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: \"Mỗi trang một SỐ\" thì đúng, nhưng một SỐ có luôn là một CHỮ SỐ không? Trang 18 dán mấy tấm chữ số lấp lánh? Gợi ý 2: Tính giúp Su Kem xem cậu ấy cần mang bao nhiêu nghìn đồng mới đủ (mỗi chữ số giá 1 nghìn)."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Su Kem tự vẽ một cuốn truyện tranh 25 trang và muốn dán số trang bằng những chữ số lấp lánh mua ở tiệm. Mỗi chữ số giá 1 nghìn đồng. Su Kem đếm tiền: \"25 trang thì mua 25 chữ số, mang 25 nghìn là đủ!\". Trí Long nhìn cuốn truyện rồi lắc đầu: \"Cậu sẽ thiếu tiền đấy. Trang 25 cần mấy chữ số dán lên nào?\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Su Kem vẫn cãi: \"Truyện của tớ 25 trang thì cần đúng 25 chữ số. Mỗi trang một số mà!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một cuốn vở có 14 trang. Cần bao nhiêu chữ số để đánh số tất cả các trang?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Trang 1 đến trang 9: có 9 trang, mỗi trang 1 chữ số → cần 9 chữ số."
+   },
+   {
+    "show": "Trang 10 đến trang 14: có 14 − 10 = 4, thêm 1 được 5 trang. Mỗi trang 2 chữ số → cần 5 + 5 = 10 chữ số."
+   },
+   {
+    "show": "Tất cả cần: 9 + 10 = 19 (chữ số)"
+   },
+   {
+    "show": "Đáp số: 19 chữ số."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Mỗi trang sau cần mấy chữ số: trang 4? trang 9? trang 10? trang 37?",
+     "solutionNarrative": "trang 4 và trang 9: mỗi trang 1 chữ số; trang 10 và trang 37: mỗi trang 2 chữ số"
+    },
+    {
+     "id": "C2",
+     "text": "Viết các số từ 1 đến 9 cần tất cả bao nhiêu chữ số?",
+     "solutionNarrative": "9 chữ số"
+    },
+    {
+     "id": "C3",
+     "text": "Viết các số từ 10 đến 13 cần bao nhiêu chữ số?",
+     "solutionNarrative": "4 trang × 2 → 4 + 4 = 8 chữ số"
+    }
    ],
-   "goc": [
-    "Phân biệt được TRANG và CHỮ SỐ: trang 7 cần 1 chữ số, trang 25 cần 2 chữ số.",
-    "Chia các trang thành hai \"đoàn tàu\": trang 1 chữ số (1-9) và trang 2 chữ số (từ 10 trở đi).",
-    "Tính được tổng số chữ số cần dùng để đánh số một cuốn truyện mỏng."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Cuốn truyện tự làm của Su Kem",
-   "dong": [
-    "Su Kem tự vẽ một cuốn truyện tranh 25 trang và muốn dán số trang bằng những chữ số lấp lánh mua ở tiệm. Mỗi chữ số giá 1 nghìn đồng. Su Kem đếm tiền: \"25 trang thì mua 25 chữ số, mang 25 nghìn là đủ!\". Trí Long nhìn cuốn truyện rồi lắc đầu: \"Cậu sẽ thiếu tiền đấy. Trang 25 cần mấy chữ số dán lên nào?\""
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Một cuốn vở có 12 trang. Cần bao nhiêu chữ số để đánh số hết các trang?",
+     "solutionNarrative": "9 + (3 trang × 2 = 6) = 15 chữ số"
+    },
+    {
+     "id": "C5",
+     "text": "Cuốn truyện có 20 trang. Cần bao nhiêu chữ số?",
+     "solutionNarrative": "9 + (11 trang × 2 = 22) = 31 chữ số"
+    },
+    {
+     "id": "C6",
+     "text": "Viết các số từ 1 đến 15 cần bao nhiêu chữ số?",
+     "solutionNarrative": "9 + (6 trang × 2 = 12) = 21 chữ số"
+    }
    ],
-   "goc": [
-    "Su Kem tự vẽ một cuốn truyện tranh 25 trang và muốn dán số trang bằng những chữ số lấp lánh mua ở tiệm. Mỗi chữ số giá 1 nghìn đồng. Su Kem đếm tiền: \"25 trang thì mua 25 chữ số, mang 25 nghìn là đủ!\" — Trí Long nhìn cuốn truyện rồi lắc đầu: \"Cậu sẽ thiếu tiền đấy. Trang 25 cần mấy chữ số dán lên nào?\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Hai đoàn tàu trang sách",
-   "dong": [
-    "Bước 1. À ra vậy: trang 7 chỉ cần dán 1 chữ số, nhưng trang 25 phải dán 2 chữ số (chữ 2 và chữ 5). Vậy hãy chia 25 trang thành hai đoàn tàu:",
-    "Bước 2. Đoàn tàu 1 TOA. Trang 1 đến 9: có 9 trang, mỗi trang cần 1 chữ số → cần 9 chữ số.",
-    "Bước 3. Đoàn tàu 2 TOA. Trang 10 đến 25: dùng ngay mẹo Bài 6 để đếm số trang: 25 − 10 = 15, thêm 1 → 16 trang. Mỗi trang cần 2 chữ số, tức là 16 + 16 = 32 chữ số.",
-    "Bước 4. Cộng hai đoàn tàu lại:",
-    "MẸO THÁM TỬ: TRANG khác CHỮ SỐ! Cứ chia trang thành đoàn tàu 1 toa (1-9) và đoàn tàu 2 toa (10 trở đi), đếm số trang mỗi đoàn (mẹo \"thêm 1\"), rồi mới tính chữ số."
-   ],
-   "goc": [
-    "Bước 1. À ra vậy: trang 7 chỉ cần dán 1 chữ số, nhưng trang 25 phải dán 2 chữ số (chữ 2 và chữ 5). Vậy hãy chia 25 trang thành hai đoàn tàu:",
-    "Bước 2. Đoàn tàu 1 TOA — trang 1 đến 9: có 9 trang, mỗi trang cần 1 chữ số → cần 9 chữ số.",
-    "Bước 3. Đoàn tàu 2 TOA — trang 10 đến 25: dùng ngay mẹo Bài 6 để đếm số trang: 25 − 10 = 15, thêm 1 → 16 trang. Mỗi trang cần 2 chữ số, tức là 16 + 16 = 32 chữ số.",
-    "Bước 4. Cộng hai đoàn tàu lại:",
-    "MẸO THÁM TỬ: TRANG khác CHỮ SỐ! Cứ chia trang thành đoàn tàu 1 toa (1-9) và đoàn tàu 2 toa (10 trở đi), đếm số trang mỗi đoàn (mẹo \"thêm 1\"), rồi mới tính chữ số."
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Một cuốn vở có 14 trang. Cần bao nhiêu chữ số để đánh số tất cả các trang?",
-    "Bài giải:",
-    "Trang 1 đến trang 9: có 9 trang, mỗi trang 1 chữ số → cần 9 chữ số.",
-    "Trang 10 đến trang 14: có 14 − 10 = 4, thêm 1 được 5 trang. Mỗi trang 2 chữ số → cần 5 + 5 = 10 chữ số.",
-    "Tất cả cần: 9 + 10 = 19 (chữ số)",
-    "Đáp số: 19 chữ số."
-   ],
-   "goc": [
-    "Đề bài: Một cuốn vở có 14 trang. Cần bao nhiêu chữ số để đánh số tất cả các trang?",
-    "Bài giải:",
-    "Trang 1 đến trang 9: có 9 trang, mỗi trang 1 chữ số → cần 9 chữ số.",
-    "Trang 10 đến trang 14: có 14 − 10 = 4, thêm 1 được 5 trang; mỗi trang 2 chữ số → cần 5 + 5 = 10 chữ số.",
-    "Tất cả cần: 9 + 10 = 19 (chữ số)",
-    "Đáp số: 19 chữ số."
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Su Kem vẫn cãi: \"Truyện của tớ 25 trang thì cần đúng 25 chữ số. Mỗi trang một số mà!\"",
-    "Gợi ý 1: \"Mỗi trang một SỐ\" thì đúng, nhưng một SỐ có luôn là một CHỮ SỐ không? Trang 18 dán mấy tấm chữ số lấp lánh?",
-    "Gợi ý 2: Tính giúp Su Kem xem cậu ấy cần mang bao nhiêu nghìn đồng mới đủ (mỗi chữ số giá 1 nghìn)."
-   ],
-   "goc": [
-    "Su Kem vẫn cãi: \"Truyện của tớ 25 trang thì cần đúng 25 chữ số — mỗi trang một số mà!\"",
-    "Gợi ý 1: \"Mỗi trang một SỐ\" thì đúng, nhưng một SỐ có luôn là một CHỮ SỐ không? Trang 18 dán mấy tấm chữ số lấp lánh?",
-    "Gợi ý 2: Tính giúp Su Kem xem cậu ấy cần mang bao nhiêu nghìn đồng mới đủ (mỗi chữ số giá 1 nghìn)."
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Lấy một cuốn tập mỏng thật, cùng con dán giấy nhớ đánh số từng trang — con sẽ TỰ vấp đúng chỗ \"trang 10 cần 2 tờ\" và hiểu ngay khác biệt trang - chữ số.",
-    "Trò \"tiệm chữ số\": bố mẹ làm chủ tiệm bán chữ số 1 nghìn/tấm, con tính tiền trước khi \"mua\" — sai thì thiếu tiền thật (bằng kẹo!).",
-    "NÊN: luôn hỏi \"trang này cần mấy chữ số?\" trước khi cho tính tổng. KHÔNG NÊN: mở rộng sang trang 100+ (3 chữ số) vội — phạm vi lớp 2 dừng ở hai đoàn tàu là đủ chắc."
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Cuốn sổ tay của Trí Long có 30 trang. Cần bao nhiêu chữ số để đánh số hết?",
+     "solutionNarrative": "trang 10 → 30 có 30 − 10 = 20, thêm 1 → 21 trang; chữ số: 21 + 21 = 42; tổng: 9 + 42 = 51 chữ số"
+    },
+    {
+     "id": "C8",
+     "text": "Bài toán ngược của Vua Đếm: Su Kem mang đúng 11 tấm chữ số lấp lánh. Cậu ấy dán được đến hết trang mấy thì vừa hết sạch? (Mẹo: dán hết đoàn tàu 1 toa trước xem còn dư mấy tấm.)",
+     "solutionNarrative": "đoàn tàu 1 toa (trang 1-9) dùng hết 9 tấm, còn dư 11 − 9 = 2 tấm — vừa đủ dán trang 10. Vậy Su Kem dán được đến hết trang 10"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Mỗi trang sau cần mấy chữ số: trang 4? trang 9? trang 10? trang 37?",
-   "loiChua": "trang 4 và trang 9: mỗi trang 1 chữ số; trang 10 và trang 37: mỗi trang 2 chữ số",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Viết các số từ 1 đến 9 cần tất cả bao nhiêu chữ số?",
-   "loiChua": "9 chữ số",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Viết các số từ 10 đến 13 cần bao nhiêu chữ số?",
-   "loiChua": "4 trang × 2 → 4 + 4 = 8 chữ số",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một cuốn vở có 12 trang. Cần bao nhiêu chữ số để đánh số hết các trang?",
-   "loiChua": "9 + (3 trang × 2 = 6) = 15 chữ số",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Cuốn truyện có 20 trang. Cần bao nhiêu chữ số?",
-   "loiChua": "9 + (11 trang × 2 = 22) = 31 chữ số",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Viết các số từ 1 đến 15 cần bao nhiêu chữ số?",
-   "loiChua": "9 + (6 trang × 2 = 12) = 21 chữ số",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Cuốn sổ tay của Trí Long có 30 trang. Cần bao nhiêu chữ số để đánh số hết?",
-   "loiChua": "trang 10 → 30 có 30 − 10 = 20, thêm 1 → 21 trang; chữ số: 21 + 21 = 42; tổng: 9 + 42 = 51 chữ số",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Bài toán ngược của Vua Đếm: Su Kem mang đúng 11 tấm chữ số lấp lánh. Cậu ấy dán được đến hết trang mấy thì vừa hết sạch? (Mẹo: dán hết đoàn tàu 1 toa trước xem còn dư mấy tấm.)",
-   "loiChua": "đoàn tàu 1 toa (trang 1-9) dùng hết 9 tấm, còn dư 11 − 9 = 2 tấm — vừa đủ dán trang 10. Vậy Su Kem dán được đến hết trang 10",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Trang 25 cần 2 chữ số để đánh số.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Trang 25 cần 2 chữ số để đánh số.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Cuốn truyện 25 trang cần đúng 25 chữ số.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": false
+   {
+    "id": "Q2",
+    "text": "Cuốn truyện 25 trang cần đúng 25 chữ số.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Đáp án: SAI"
    },
-   "loiChua": "Đáp án: SAI",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Các trang từ 1 đến 9 cần tất cả:",
-   "format": "mcq",
-   "choices": [
-    "A. 9 chữ số",
-    "B. 10 chữ số",
-    "C. 18 chữ số"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "A. 9 chữ số"
+   {
+    "id": "Q3",
+    "text": "Các trang từ 1 đến 9 cần tất cả:",
+    "format": "mcq",
+    "choices": [
+     "A. 9 chữ số",
+     "B. 10 chữ số",
+     "C. 18 chữ số"
+    ],
+    "answerKey": {
+     "choice": "A. 9 chữ số"
+    },
+    "solutionNarrative": "Đáp án: A. 9 chữ số"
    },
-   "loiChua": "Đáp án: A. 9 chữ số",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Từ trang 10 đến trang 25 có bao nhiêu trang?",
-   "format": "mcq",
-   "choices": [
-    "A. 15",
-    "B. 16",
-    "C. 25"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 16"
+   {
+    "id": "Q4",
+    "text": "Từ trang 10 đến trang 25 có bao nhiêu trang?",
+    "format": "mcq",
+    "choices": [
+     "A. 15",
+     "B. 16",
+     "C. 25"
+    ],
+    "answerKey": {
+     "choice": "B. 16"
+    },
+    "solutionNarrative": "Đáp án: B. 16"
    },
-   "loiChua": "Đáp án: B. 16",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Cuốn truyện 25 trang cần tất cả bao nhiêu chữ số?",
-   "format": "mcq",
-   "choices": [
-    "A. 25",
-    "B. 34",
-    "C. 41"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "C. 41"
-   },
-   "loiChua": "9 + 32 = 41",
-   "solutionNarrative": "9 + 32 = 41"
-  }
- ]
+   {
+    "id": "Q5",
+    "text": "Cuốn truyện 25 trang cần tất cả bao nhiêu chữ số?",
+    "format": "mcq",
+    "choices": [
+     "A. 25",
+     "B. 34",
+     "C. 41"
+    ],
+    "answerKey": {
+     "choice": "C. 41"
+    },
+    "solutionNarrative": "9 + 32 = 41"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Lấy một cuốn tập mỏng thật, cùng con dán giấy nhớ đánh số từng trang — con sẽ TỰ vấp đúng chỗ \"trang 10 cần 2 tờ\" và hiểu ngay khác biệt trang - chữ số.",
+  "homeActivity": "Trò \"tiệm chữ số\": bố mẹ làm chủ tiệm bán chữ số 1 nghìn/tấm, con tính tiền trước khi \"mua\" — sai thì thiếu tiền thật (bằng kẹo!).",
+  "watchFor": "NÊN: luôn hỏi \"trang này cần mấy chữ số?\" trước khi cho tính tổng. KHÔNG NÊN: mở rộng sang trang 100+ (3 chữ số) vội — phạm vi lớp 2 dừng ở hai đoàn tàu là đủ chắc."
+ },
+ "figureSpec": []
 }

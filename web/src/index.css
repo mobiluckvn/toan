@@ -32,4 +32,13 @@
   .field-letter{ @apply inline-flex h-[19px] min-w-[19px] items-center justify-center rounded-full bg-navy px-1 text-[11px] font-extrabold text-white; }
   .field-unit  { @apply ml-auto shrink-0 rounded-md bg-gold-pale px-1.5 py-0.5 text-[11.5px] font-extrabold text-gold-dark; }
   .field-brief { @apply mb-2.5 flex items-start gap-1.5 rounded-xl bg-[#F2F6FA] px-3 py-2 text-[13.5px] font-semibold leading-snug text-navy; }
+
+  /* NHỊP ĐỌC LỚP 2 — bé 7-8 tuổi đọc chậm nên chữ to hơn và dòng thưa hơn.
+     Bật bằng lớp `doc-to` ở gốc phòng học, theo cờ trong data/chuong_trinh.json.
+     Gom vào MỘT luật thay vì sửa cỡ chữ rải rác trong StepView, để lớp 5 không
+     bị đụng và thêm lớp thứ ba cũng chỉ phải thêm một cờ. */
+  .doc-to p               { font-size: 17.5px !important; line-height: 1.72 !important; }
+  .doc-to .rule-box,
+  .doc-to .warn-box,
+  .doc-to .step0-box      { font-size: 16.5px !important; line-height: 1.7 !important; }
 }

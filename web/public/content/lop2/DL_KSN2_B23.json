@@ -1,315 +1,260 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B23",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 23 · VỤ ÁN ĐẾM CHÂN GÀ - CHÓ",
+ "durationMinutes": 10,
  "so": 23,
- "ten": "VỤ ÁN ĐẾM CHÂN GÀ - CHÓ",
  "chuong": 6,
  "tenChuong": "Thám tử tí hon",
  "dangGoc": "LV 8.2 — Phương pháp Giả thiết tạm (phiên bản lớp 2: vẽ hình - gắn chân)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Vẽ được sơ đồ \"đầu tròn - chân que\" cho bài toán đếm chân.",
-    "Tìm được số gà và số chó khi biết tổng số đầu và tổng số chân.",
-    "Biết tự kiểm tra lại đáp số: cộng chân của tất cả các con xem có khớp đề bài không."
+ "skills": {
+  "bktUnit": "CHUONG:6@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 23,
+  "prev": "DL:KSN2.B22",
+  "next": "DL:KSN2.B24"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Vẽ được sơ đồ \"đầu tròn - chân que\" cho bài toán đếm chân. Tìm được số gà và số chó khi biết tổng số đầu và tổng số chân. Biết tự kiểm tra lại đáp số: cộng chân của tất cả các con xem có khớp đề bài không.",
+  "kidText": "Vẽ được sơ đồ \"đầu tròn - chân que\" cho bài toán đếm chân. Tìm được số gà và số chó khi biết tổng số đầu và tổng số chân. Biết tự kiểm tra lại đáp số: cộng chân của tất cả các con xem có khớp đề bài không.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Mỗi con vật — dù là gà hay chó — đều chỉ có 1 cái đầu. Bà đếm được 5 cái đầu, vậy chắc chắn có 5 con vật. Ta vẽ 5 vòng tròn làm 5 cái đầu:"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Gà có 2 chân, chó có 4 chân — nghĩa là con nào cũng có ÍT NHẤT 2 chân. Ta gắn tạm cho mỗi con 2 chân que trước đã, vừa gắn vừa đếm:"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Đề bài nói có 14 chân mà ta mới gắn 10 chân → còn thừa 14 − 10 = 4 chân. Chân thừa này của ai? Của các chú CHÓ — mỗi chú cần thêm đúng 1 cặp chân (2 chiếc). Mà 4 chân = 2 cặp → gắn thêm được cho 2 con. Vậy có 2 con chó!"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4. Còn lại 5 − 2 = 3 con chỉ có 2 chân → là GÀ. Nhưng thám tử giỏi không dừng ở đây — phải KIỂM TRA LẠI đã:"
+   }
+  ],
+  "mantra": "bài đếm chân làm theo 3 bước. Một là vẽ đủ số đầu. Hai là gắn 2 chân cho tất cả. Ba là chân còn thừa thì gắn thêm cho con 4 chân. Chân thừa luôn chia thành từng cặp 2 chiếc!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với câu đố của bà (5 đầu, 14 chân), Su Kem giải thế này:",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Con hãy chỉ ra cho Su Kem hai điều vô lý nhé: Gợi ý 1: Chân và đầu có cùng loại không mà đem trừ cho nhau? (14 cái CHÂN trừ 5 cái ĐẦU ra 9 cái gì?) Gợi ý 2: Cả sân chỉ có 5 con vật, làm sao riêng chó đã có tới 9 con được? → Con viết lời giải đúng giúp Su Kem theo 4 bước của Trí Long nhé!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Chiều nay Trí Long và Su Kem sang chơi nhà bà ngoại. Vừa đến cổng, bà đã cười tủm tỉm ra một câu đố: — Sau hàng rào nhà bà có cả gà và chó. Bà đếm được tất cả 5 cái đầu và 14 cái chân. Đố hai đứa: có mấy con gà, mấy con chó nào? Su Kem gãi đầu: \"Sao bà không cho tụi con nhìn từng con ạ?\". Trí Long tủm tỉm: \"Đây là câu đố mà! Không cần nhìn, chỉ cần VẼ là ra ngay. Cậu xem tớ làm nhé!\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Với câu đố của bà (5 đầu, 14 chân), Su Kem giải thế này:",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Trong vườn có gà và thỏ. Đếm được tất cả 4 cái đầu và 10 cái chân. Hỏi có mấy con gà, mấy con thỏ?",
+  "steps": [
+   {
+    "show": "Bài giải (con viết vào vở như sau):"
+   },
+   {
+    "show": "Có 4 cái đầu nên có 4 con vật."
+   },
+   {
+    "show": "Gắn mỗi con 2 chân thì được: 4 × 2 = 8 (chân)"
+   },
+   {
+    "show": "Số chân còn thừa là: 10 − 8 = 2 (chân)"
+   },
+   {
+    "show": "2 chân thừa gắn thêm cho 1 con → có 1 con thỏ."
+   },
+   {
+    "show": "Số con gà là: 4 − 1 = 3 (con)"
+   },
+   {
+    "show": "Thử lại: 3 × 2 + 1 × 4 = 6 + 4 = 10 chân — đúng đề bài!"
+   },
+   {
+    "show": "Đáp số: 3 con gà, 1 con thỏ."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Một con gà có 2 chân. Vậy 3 con gà có bao nhiêu chân? (Con vẽ 3 đầu tròn rồi gắn chân nhé.)",
+     "solutionNarrative": "3 × 2 = 6 chân"
+    },
+    {
+     "id": "C2",
+     "text": "Một con chó có 4 chân. Vậy 2 con chó có bao nhiêu chân?",
+     "solutionNarrative": "2 × 4 = 8 chân"
+    },
+    {
+     "id": "C3",
+     "text": "Đếm được 6 cái đầu. Hỏi có bao nhiêu con vật?",
+     "solutionNarrative": "6 đầu → 6 con vật"
+    },
+    {
+     "id": "C4",
+     "text": "Có 5 con vật, gắn tạm mỗi con 2 chân. Hỏi đã gắn được bao nhiêu chân?",
+     "solutionNarrative": "5 × 2 = 10 chân"
+    }
    ],
-   "goc": [
-    "Vẽ được sơ đồ \"đầu tròn - chân que\" cho bài toán đếm chân.",
-    "Tìm được số gà và số chó khi biết tổng số đầu và tổng số chân.",
-    "Biết tự kiểm tra lại đáp số: cộng chân của tất cả các con xem có khớp đề bài không."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Câu đố của bà ngoại",
-   "dong": [
-    "Chiều nay Trí Long và Su Kem sang chơi nhà bà ngoại. Vừa đến cổng, bà đã cười tủm tỉm ra một câu đố:",
-    "— Sau hàng rào nhà bà có cả gà và chó. Bà đếm được tất cả 5 cái đầu và 14 cái chân. Đố hai đứa: có mấy con gà, mấy con chó nào?",
-    "Su Kem gãi đầu: \"Sao bà không cho tụi con nhìn từng con ạ?\". Trí Long tủm tỉm: \"Đây là câu đố mà! Không cần nhìn, chỉ cần VẼ là ra ngay. Cậu xem tớ làm nhé!\""
+   "standard": [
+    {
+     "id": "C5",
+     "text": "Sân nhà có gà và chó, đếm được 4 cái đầu và 12 cái chân. Hỏi có mấy con gà, mấy con chó?",
+     "solutionNarrative": "gắn tạm 4 × 2 = 8; thừa 12 − 8 = 4 = 2 cặp → 2 con chó; gà: 4 − 2 = 2 con. Thử: 2 × 2 + 2 × 4 = 12 ✓"
+    },
+    {
+     "id": "C6",
+     "text": "Trong chuồng có gà và chó, đếm được 6 cái đầu và 16 cái chân. Hỏi mỗi loại có mấy con?",
+     "solutionNarrative": "gắn tạm 12; thừa 4 → 2 chó, 4 gà (thử: 8 + 8 = 16 ✓)"
+    },
+    {
+     "id": "C7",
+     "text": "Ao nhà bác Ba có vịt và thỏ đứng trên bờ: 5 cái đầu, 12 cái chân. Hỏi có mấy con vịt, mấy con thỏ? (Vịt 2 chân, thỏ 4 chân — giống hệt gà và chó đấy!)",
+     "solutionNarrative": "gắn tạm 10; thừa 2 → 1 thỏ, 4 vịt (thử: 8 + 4 = 12 ✓)"
+    }
    ],
-   "goc": [
-    "Chiều nay Trí Long và Su Kem sang chơi nhà bà ngoại. Vừa đến cổng, bà đã cười tủm tỉm ra một câu đố:",
-    "— Sau hàng rào nhà bà có cả gà và chó. Bà đếm được tất cả 5 cái đầu và 14 cái chân. Đố hai đứa: có mấy con gà, mấy con chó nào?",
-    "Su Kem gãi đầu: \"Sao bà không cho tụi con nhìn từng con ạ?\" — Trí Long tủm tỉm: \"Đây là câu đố mà! Không cần nhìn, chỉ cần VẼ là ra ngay. Cậu xem tớ làm nhé!\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Vẽ hình phá án 4 bước",
-   "dong": [
-    "Bước 1. Mỗi con vật — dù là gà hay chó — đều chỉ có 1 cái đầu. Bà đếm được 5 cái đầu, vậy chắc chắn có 5 con vật. Ta vẽ 5 vòng tròn làm 5 cái đầu:",
-    "Bước 2. Gà có 2 chân, chó có 4 chân — nghĩa là con nào cũng có ÍT NHẤT 2 chân. Ta gắn tạm cho mỗi con 2 chân que trước đã, vừa gắn vừa đếm:",
-    "Bước 3. Đề bài nói có 14 chân mà ta mới gắn 10 chân → còn thừa 14 − 10 = 4 chân. Chân thừa này của ai? Của các chú CHÓ — mỗi chú cần thêm đúng 1 cặp chân (2 chiếc). Mà 4 chân = 2 cặp → gắn thêm được cho 2 con. Vậy có 2 con chó!",
-    "Bước 4. Còn lại 5 − 2 = 3 con chỉ có 2 chân → là GÀ. Nhưng thám tử giỏi không dừng ở đây — phải KIỂM TRA LẠI đã:",
-    "MẸO: bài đếm chân làm theo 3 bước. Một là vẽ đủ số đầu. Hai là gắn 2 chân cho tất cả. Ba là chân còn thừa thì gắn thêm cho con 4 chân. Chân thừa luôn chia thành từng cặp 2 chiếc!"
-   ],
-   "goc": [
-    "Bước 1. Mỗi con vật — dù là gà hay chó — đều chỉ có 1 cái đầu. Bà đếm được 5 cái đầu, vậy chắc chắn có 5 con vật. Ta vẽ 5 vòng tròn làm 5 cái đầu:",
-    "Bước 2. Gà có 2 chân, chó có 4 chân — nghĩa là con nào cũng có ÍT NHẤT 2 chân. Ta gắn tạm cho mỗi con 2 chân que trước đã, vừa gắn vừa đếm:",
-    "Bước 3. Đề bài nói có 14 chân mà ta mới gắn 10 chân → còn thừa 14 − 10 = 4 chân. Chân thừa này của ai? Của các chú CHÓ — mỗi chú cần thêm đúng 1 cặp chân (2 chiếc). Mà 4 chân = 2 cặp → gắn thêm được cho 2 con. Vậy có 2 con chó!",
-    "Bước 4. Còn lại 5 − 2 = 3 con chỉ có 2 chân → là GÀ. Nhưng thám tử giỏi không dừng ở đây — phải KIỂM TRA LẠI đã:",
-    "MẸO THÁM TỬ: Gặp bài đếm chân, con cứ nhớ 3 nhịp: VẼ ĐẦU → GẮN 2 CHÂN CHO TẤT CẢ → CHÂN THỪA ĐEM GẮN TIẾP CHO CON 4 CHÂN. Chân thừa luôn chia thành từng cặp 2 chiếc!"
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Trong vườn có gà và thỏ. Đếm được tất cả 4 cái đầu và 10 cái chân. Hỏi có mấy con gà, mấy con thỏ?",
-    "Bài giải (con viết vào vở như sau):",
-    "Có 4 cái đầu nên có 4 con vật.",
-    "Gắn mỗi con 2 chân thì được: 4 × 2 = 8 (chân)",
-    "Số chân còn thừa là: 10 − 8 = 2 (chân)",
-    "2 chân thừa gắn thêm cho 1 con → có 1 con thỏ.",
-    "Số con gà là: 4 − 1 = 3 (con)",
-    "Thử lại: 3 × 2 + 1 × 4 = 6 + 4 = 10 chân — đúng đề bài!",
-    "Đáp số: 3 con gà, 1 con thỏ."
-   ],
-   "goc": [
-    "Đề bài: Trong vườn có gà và thỏ. Đếm được tất cả 4 cái đầu và 10 cái chân. Hỏi có mấy con gà, mấy con thỏ?",
-    "Bài giải (con viết vào vở như sau):",
-    "Có 4 cái đầu nên có 4 con vật.",
-    "Gắn mỗi con 2 chân thì được: 4 × 2 = 8 (chân)",
-    "Số chân còn thừa là: 10 − 8 = 2 (chân)",
-    "2 chân thừa gắn thêm cho 1 con → có 1 con thỏ.",
-    "Số con gà là: 4 − 1 = 3 (con)",
-    "Thử lại: 3 × 2 + 1 × 4 = 6 + 4 = 10 chân — đúng đề bài!",
-    "Đáp số: 3 con gà, 1 con thỏ."
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Với câu đố của bà (5 đầu, 14 chân), Su Kem giải thế này:",
-    "Con hãy chỉ ra cho Su Kem hai điều vô lý nhé:",
-    "Gợi ý 1: Chân và đầu có cùng loại không mà đem trừ cho nhau? (14 cái CHÂN trừ 5 cái ĐẦU ra 9 cái gì?)",
-    "Gợi ý 2: Cả sân chỉ có 5 con vật, làm sao riêng chó đã có tới 9 con được?",
-    "→ Con viết lời giải đúng giúp Su Kem theo 4 bước của Trí Long nhé!"
-   ],
-   "goc": [
-    "Với câu đố của bà (5 đầu, 14 chân), Su Kem giải thế này:",
-    "Con hãy chỉ ra cho Su Kem hai điều vô lý nhé:",
-    "Gợi ý 1: Chân và đầu có cùng loại không mà đem trừ cho nhau? (14 cái CHÂN trừ 5 cái ĐẦU ra 9 cái gì?)",
-    "Gợi ý 2: Cả sân chỉ có 5 con vật, làm sao riêng chó đã có tới 9 con được?",
-    "→ Con viết lời giải đúng giúp Su Kem theo 4 bước của Trí Long nhé!"
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Chơi thật tại nhà: dùng nắp chai làm \"đầu\", que tăm hoặc cúc áo làm \"chân\". Bố mẹ hô \"5 đầu, 14 chân!\" và để con tự xếp — trẻ hiểu bằng tay nhanh hơn bằng lời.",
-    "Khi con giải xong, hãy hỏi: \"Vì sao chân thừa lại là của chó?\" — con giải thích được tức là đã thật sự hiểu.",
-    "NÊN: khen từng bước vẽ đúng, kể cả khi đáp số sai. KHÔNG NÊN: dạy con công thức \"(tổng chân − 2 × số đầu) : 2\" — ở lớp 2, hình vẽ chính là lời giải; công thức sẽ tự đến ở lớp 4-5.",
-    "Bài này là hạt mầm của phương pháp \"Giả thiết tạm\" lớp 4-5 (Ma trận LV 8.2) — con làm chắc hôm nay, lớp trên chỉ việc thay hình vẽ bằng phép tính."
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Sân đình có gà và chó, đếm được 7 cái đầu và 20 cái chân. Hỏi có mấy con gà, mấy con chó?",
+     "solutionNarrative": "gắn tạm 7 × 2 = 14; thừa 20 − 14 = 6 = 3 cặp → 3 chó, 4 gà (thử: 8 + 12 = 20 ✓)"
+    },
+    {
+     "id": "C9",
+     "text": "Bà đố thêm: \"Nếu sân có 5 con và bà đếm được 11 cái chân thì sao nhỉ?\" — Con thử gắn chân xem có gắn nổi không, rồi giải thích cho bà: vì sao số chân của đàn gà - chó không bao giờ là số lẻ? (Bí mật chẵn - lẻ của Bài 11 lại xuất hiện!)",
+     "solutionNarrative": "gắn tạm 10 chân, thừa 1 chân — không đủ 1 cặp để gắn cho con nào! Chân gà - chó luôn đi theo cặp (2 và 4 đều chẵn) nên tổng chân phải CHẴN; 11 lẻ → bà đố mẹo, sân như vậy không tồn tại"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một con gà có 2 chân. Vậy 3 con gà có bao nhiêu chân? (Con vẽ 3 đầu tròn rồi gắn chân nhé.)",
-   "loiChua": "3 × 2 = 6 chân",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một con chó có 4 chân. Vậy 2 con chó có bao nhiêu chân?",
-   "loiChua": "2 × 4 = 8 chân",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Đếm được 6 cái đầu. Hỏi có bao nhiêu con vật?",
-   "loiChua": "6 đầu → 6 con vật",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Có 5 con vật, gắn tạm mỗi con 2 chân. Hỏi đã gắn được bao nhiêu chân?",
-   "loiChua": "5 × 2 = 10 chân",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Sân nhà có gà và chó, đếm được 4 cái đầu và 12 cái chân. Hỏi có mấy con gà, mấy con chó?",
-   "loiChua": "gắn tạm 4 × 2 = 8; thừa 12 − 8 = 4 = 2 cặp → 2 con chó; gà: 4 − 2 = 2 con. Thử: 2 × 2 + 2 × 4 = 12 ✓",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Trong chuồng có gà và chó, đếm được 6 cái đầu và 16 cái chân. Hỏi mỗi loại có mấy con?",
-   "loiChua": "gắn tạm 12; thừa 4 → 2 chó, 4 gà (thử: 8 + 8 = 16 ✓)",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Ao nhà bác Ba có vịt và thỏ đứng trên bờ: 5 cái đầu, 12 cái chân. Hỏi có mấy con vịt, mấy con thỏ? (Vịt 2 chân, thỏ 4 chân — giống hệt gà và chó đấy!)",
-   "loiChua": "gắn tạm 10; thừa 2 → 1 thỏ, 4 vịt (thử: 8 + 4 = 12 ✓)",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Sân đình có gà và chó, đếm được 7 cái đầu và 20 cái chân. Hỏi có mấy con gà, mấy con chó?",
-   "loiChua": "gắn tạm 7 × 2 = 14; thừa 20 − 14 = 6 = 3 cặp → 3 chó, 4 gà (thử: 8 + 12 = 20 ✓)",
-   "tuLuan": true
-  },
-  {
-   "id": "C9",
-   "maSach": "C9",
-   "so": 9,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Bà đố thêm: \"Nếu sân có 5 con và bà đếm được 11 cái chân thì sao nhỉ?\" — Con thử gắn chân xem có gắn nổi không, rồi giải thích cho bà: vì sao số chân của đàn gà - chó không bao giờ là số lẻ? (Bí mật chẵn - lẻ của Bài 11 lại xuất hiện!)",
-   "loiChua": "gắn tạm 10 chân, thừa 1 chân — không đủ 1 cặp để gắn cho con nào! Chân gà - chó luôn đi theo cặp (2 và 4 đều chẵn) nên tổng chân phải CHẴN; 11 lẻ → bà đố mẹo, sân như vậy không tồn tại",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Mỗi con vật chỉ có 1 cái đầu, nên đếm được 6 cái đầu nghĩa là có 6 con vật.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Mỗi con vật chỉ có 1 cái đầu, nên đếm được 6 cái đầu nghĩa là có 6 con vật.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Gà có 4 chân, chó có 2 chân.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": false
+   {
+    "id": "Q2",
+    "text": "Gà có 4 chân, chó có 2 chân.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "ngược rồi!"
    },
-   "loiChua": "ngược rồi!",
-   "solutionNarrative": "ngược rồi!"
-  },
-  {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "4 con gà có bao nhiêu chân?",
-   "format": "mcq",
-   "choices": [
-    "A. 4",
-    "B. 6",
-    "C. 8"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "C. 8"
+   {
+    "id": "Q3",
+    "text": "4 con gà có bao nhiêu chân?",
+    "format": "mcq",
+    "choices": [
+     "A. 4",
+     "B. 6",
+     "C. 8"
+    ],
+    "answerKey": {
+     "choice": "C. 8"
+    },
+    "solutionNarrative": "Đáp án: C. 8"
    },
-   "loiChua": "Đáp án: C. 8",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Có 5 con vật, gắn tạm mỗi con 2 chân thì gắn được:",
-   "format": "mcq",
-   "choices": [
-    "A. 7 chân",
-    "B. 10 chân",
-    "C. 14 chân"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 10 chân"
+   {
+    "id": "Q4",
+    "text": "Có 5 con vật, gắn tạm mỗi con 2 chân thì gắn được:",
+    "format": "mcq",
+    "choices": [
+     "A. 7 chân",
+     "B. 10 chân",
+     "C. 14 chân"
+    ],
+    "answerKey": {
+     "choice": "B. 10 chân"
+    },
+    "solutionNarrative": "Đáp án: B. 10 chân"
    },
-   "loiChua": "Đáp án: B. 10 chân",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Có 5 đầu và 14 chân. Gắn tạm hết 10 chân, còn thừa 4 chân — gắn thêm được cho mấy con chó?",
-   "format": "mcq",
-   "choices": [
-    "A. 1 con",
-    "B. 2 con",
-    "C. 4 con"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 2 con"
-   },
-   "loiChua": "Đáp án: B. 2 con",
-   "solutionNarrative": ""
-  }
- ]
+   {
+    "id": "Q5",
+    "text": "Có 5 đầu và 14 chân. Gắn tạm hết 10 chân, còn thừa 4 chân — gắn thêm được cho mấy con chó?",
+    "format": "mcq",
+    "choices": [
+     "A. 1 con",
+     "B. 2 con",
+     "C. 4 con"
+    ],
+    "answerKey": {
+     "choice": "B. 2 con"
+    },
+    "solutionNarrative": "Đáp án: B. 2 con"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chơi thật tại nhà: dùng nắp chai làm \"đầu\", que tăm hoặc cúc áo làm \"chân\". Bố mẹ hô \"5 đầu, 14 chân!\" và để con tự xếp — trẻ hiểu bằng tay nhanh hơn bằng lời.",
+  "homeActivity": "Khi con giải xong, hãy hỏi: \"Vì sao chân thừa lại là của chó?\" — con giải thích được tức là đã thật sự hiểu.",
+  "watchFor": "NÊN: khen từng bước vẽ đúng, kể cả khi đáp số sai. KHÔNG NÊN: dạy con công thức \"(tổng chân − 2 × số đầu) : 2\" — ở lớp 2, hình vẽ chính là lời giải; công thức sẽ tự đến ở lớp 4-5."
+ },
+ "figureSpec": []
 }

@@ -1,289 +1,246 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B24",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 24 · BÀI TOÁN TRỒNG CÂY",
+ "durationMinutes": 10,
  "so": 24,
- "ten": "BÀI TOÁN TRỒNG CÂY",
  "chuong": 6,
  "tenChuong": "Thám tử tí hon",
  "dangGoc": "LV 8.4 — Trồng cây: đếm CÂY hay đếm KHOẢNG? (luật bàn tay 5 ngón - 4 kẽ)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Phân biệt được số CÂY và số KHOẢNG giữa các cây.",
-    "Thuộc luật bàn tay: trồng cả hai đầu thì số cây = số khoảng + 1.",
-    "Tính được chiều dài hàng cây, hoặc số cây khi biết chiều dài."
+ "skills": {
+  "bktUnit": "CHUONG:6@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 24,
+  "prev": "DL:KSN2.B23",
+  "next": "DL:KSN2.B25"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Phân biệt được số CÂY và số KHOẢNG giữa các cây. Thuộc luật bàn tay: trồng cả hai đầu thì số cây = số khoảng + 1. Tính được chiều dài hàng cây, hoặc số cây khi biết chiều dài.",
+  "kidText": "Phân biệt được số CÂY và số KHOẢNG giữa các cây. Thuộc luật bàn tay: trồng cả hai đầu thì số cây = số khoảng + 1. Tính được chiều dài hàng cây, hoặc số cây khi biết chiều dài.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Xòe bàn tay: 5 ngón tay nhưng chỉ có... 4 kẽ tay! Ngón là CÂY, kẽ là KHOẢNG. Số khoảng luôn ÍT HƠN số cây đúng 1 (khi trồng cả hai đầu):"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Vẽ hàng cây của bác: 5 cây → chỉ có 4 khoảng, mỗi khoảng 2 m. Khoảng mới là thứ tạo nên chiều dài — cây chỉ đứng ở các mốc thôi!"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Vậy lối đi dài: 2 × 4 = 8 mét. Không phải 10 mét như Su Kem tính (cậu ấy nhân nhầm với số CÂY)."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4. Bài NGƯỢC: lối đi khác dài 12 m, trồng cây cách nhau 3 m từ đầu đến cuối. Số khoảng: 12 : 3 = 4 khoảng → số cây: 4 + 1 = 5 cây. Con nhận ra chưa — luật \"+1 vì tính cả hai đầu\" chính là người quen từ Bài 6!"
+   }
+  ],
+  "mantra": "Trước khi tính, hỏi to: \"Đề đang hỏi CÂY hay hỏi KHOẢNG?\" Chiều dài đi với KHOẢNG. Còn CÂY = KHOẢNG + 1 (trồng cả hai đầu). Bí quá thì... xòe bàn tay ra đếm!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Bài lối đi 12 m, cách 3 m: Su Kem tính \"12 : 3 = 4. Trồng được 4 cây!\" rồi hớn hở đi lấy cuốc.",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: 12 : 3 = 4 tính ra số gì — số CÂY hay số KHOẢNG? Gợi ý 2: Nếu chỉ trồng 4 cây thì hãy vẽ ra xem: một đầu lối đi sẽ bị... trống trơn! Xòe bàn tay nhắc Su Kem luật ngón - kẽ nào."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Bác làm vườn của lâu đài nhờ hai thám tử: \"Bác trồng một hàng 5 cây dọc lối vào, cây nọ cách cây kia 2 mét, trồng từ đầu lối đến cuối lối. Thế mà bác quên khuấy mất lối đi dài bao nhiêu mét rồi!\" Su Kem nhẩm ngay: \"5 cây, mỗi cây 2 mét... 5 × 2 = 10 mét ạ!\" — Trí Long xòe bàn tay ra trước mặt bạn: \"Khoan đã. Cậu đếm hộ tớ bàn tay này có mấy NGÓN, và mấy KẼ?\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Bài lối đi 12 m, cách 3 m: Su Kem tính \"12 : 3 = 4. Trồng được 4 cây!\" rồi hớn hở đi lấy cuốc.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Người ta trồng cây dọc một đoạn đường dài 15 m, cây nọ cách cây kia 3 m, trồng ở cả hai đầu đường. Hỏi trồng được bao nhiêu cây?",
+  "steps": [
+   {
+    "show": "Bài giải: (vẽ nháp đoạn đường và các mốc cây trước!)"
+   },
+   {
+    "show": "Số khoảng cách giữa các cây là: 15 : 3 = 5 (khoảng)"
+   },
+   {
+    "show": "Vì trồng ở cả hai đầu đường nên số cây là: 5 + 1 = 6 (cây)"
+   },
+   {
+    "show": "Thử lại: 6 cây có 5 khoảng; 3 × 5 = 15 m ✓"
+   },
+   {
+    "show": "Đáp số: 6 cây."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Xòe bàn tay: 5 ngón có mấy kẽ? Vậy 6 cây thẳng hàng có mấy khoảng?",
+     "solutionNarrative": "4 kẽ; 6 cây có 5 khoảng"
+    },
+    {
+     "id": "C2",
+     "text": "Một hàng có 4 cây trồng cách đều nhau 5 m (trồng cả hai đầu). Hỏi hàng cây dài bao nhiêu mét?",
+     "solutionNarrative": "4 cây → 3 khoảng → 5 × 3 = 15 m"
+    },
+    {
+     "id": "C3",
+     "text": "Một hàng rào có 7 cọc thẳng hàng. Hỏi giữa các cọc có mấy khoảng?",
+     "solutionNarrative": "7 cọc → 6 khoảng"
+    }
    ],
-   "goc": [
-    "Phân biệt được số CÂY và số KHOẢNG giữa các cây.",
-    "Thuộc luật bàn tay: trồng cả hai đầu thì số cây = số khoảng + 1.",
-    "Tính được chiều dài hàng cây, hoặc số cây khi biết chiều dài."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Bác làm vườn đãng trí",
-   "dong": [
-    "Bác làm vườn của lâu đài nhờ hai thám tử: \"Bác trồng một hàng 5 cây dọc lối vào, cây nọ cách cây kia 2 mét, trồng từ đầu lối đến cuối lối. Thế mà bác quên khuấy mất lối đi dài bao nhiêu mét rồi!\" Su Kem nhẩm ngay: \"5 cây, mỗi cây 2 mét... 5 × 2 = 10 mét ạ!\" — Trí Long xòe bàn tay ra trước mặt bạn: \"Khoan đã. Cậu đếm hộ tớ bàn tay này có mấy NGÓN, và mấy KẼ?\""
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Trồng cây dọc đoạn đường dài 20 m, cây cách cây 4 m, trồng cả hai đầu. Hỏi trồng được mấy cây?",
+     "solutionNarrative": "khoảng: 20 : 4 = 5 → cây: 5 + 1 = 6 cây"
+    },
+    {
+     "id": "C5",
+     "text": "Một hàng 6 bóng đèn treo cách đều nhau 3 m (có đèn ở cả hai đầu dây). Hỏi sợi dây đèn dài bao nhiêu mét?",
+     "solutionNarrative": "6 đèn → 5 khoảng → 3 × 5 = 15 m"
+    },
+    {
+     "id": "C6",
+     "text": "Cầu thang từ tầng 1 lên tầng 2 có các bậc cách đều. Bé Bin bước 8 bước thì lên tới nơi. Hỏi bé đã đi qua mấy \"khoảng bậc\"? (Bước chân giống cây hay giống khoảng nhỉ?)",
+     "solutionNarrative": "bước chân là KHOẢNG → bé đi qua 8 khoảng bậc (bậc thang thì nhiều hơn... để dành lớp 3 bàn tiếp!)"
+    }
    ],
-   "goc": [
-    "Bác làm vườn của lâu đài nhờ hai thám tử: \"Bác trồng một hàng 5 cây dọc lối vào, cây nọ cách cây kia 2 mét, trồng từ đầu lối đến cuối lối. Thế mà bác quên khuấy mất lối đi dài bao nhiêu mét rồi!\" Su Kem nhẩm ngay: \"5 cây, mỗi cây 2 mét... 5 × 2 = 10 mét ạ!\" — Trí Long xòe bàn tay ra trước mặt bạn: \"Khoan đã. Cậu đếm hộ tớ bàn tay này có mấy NGÓN, và mấy KẼ?\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Luật bàn tay",
-   "dong": [
-    "Bước 1. Xòe bàn tay: 5 ngón tay nhưng chỉ có... 4 kẽ tay! Ngón là CÂY, kẽ là KHOẢNG. Số khoảng luôn ÍT HƠN số cây đúng 1 (khi trồng cả hai đầu):",
-    "Bước 2. Vẽ hàng cây của bác: 5 cây → chỉ có 4 khoảng, mỗi khoảng 2 m. Khoảng mới là thứ tạo nên chiều dài — cây chỉ đứng ở các mốc thôi!",
-    "Bước 3. Vậy lối đi dài: 2 × 4 = 8 mét. Không phải 10 mét như Su Kem tính (cậu ấy nhân nhầm với số CÂY).",
-    "Bước 4. Bài NGƯỢC: lối đi khác dài 12 m, trồng cây cách nhau 3 m từ đầu đến cuối. Số khoảng: 12 : 3 = 4 khoảng → số cây: 4 + 1 = 5 cây. Con nhận ra chưa — luật \"+1 vì tính cả hai đầu\" chính là người quen từ Bài 6!",
-    "MẸO THÁM TỬ: Trước khi tính, hỏi to: \"Đề đang hỏi CÂY hay hỏi KHOẢNG?\" Chiều dài đi với KHOẢNG. Còn CÂY = KHOẢNG + 1 (trồng cả hai đầu). Bí quá thì... xòe bàn tay ra đếm!"
-   ],
-   "goc": [
-    "Bước 1. Xòe bàn tay: 5 ngón tay nhưng chỉ có... 4 kẽ tay! Ngón là CÂY, kẽ là KHOẢNG — số khoảng luôn ÍT HƠN số cây đúng 1 (khi trồng cả hai đầu):",
-    "Bước 2. Vẽ hàng cây của bác: 5 cây → chỉ có 4 khoảng, mỗi khoảng 2 m. Khoảng mới là thứ tạo nên chiều dài — cây chỉ đứng ở các mốc thôi!",
-    "Bước 3. Vậy lối đi dài: 2 × 4 = 8 mét — không phải 10 mét như Su Kem tính (cậu ấy nhân nhầm với số CÂY).",
-    "Bước 4. Bài NGƯỢC: lối đi khác dài 12 m, trồng cây cách nhau 3 m từ đầu đến cuối. Số khoảng: 12 : 3 = 4 khoảng → số cây: 4 + 1 = 5 cây. Con nhận ra chưa — luật \"+1 vì tính cả hai đầu\" chính là người quen từ Bài 6!",
-    "MẸO THÁM TỬ: Trước khi tính, hỏi to: \"Đề đang hỏi CÂY hay hỏi KHOẢNG?\" Chiều dài đi với KHOẢNG; còn CÂY = KHOẢNG + 1 (trồng cả hai đầu). Bí quá thì... xòe bàn tay ra đếm!"
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Người ta trồng cây dọc một đoạn đường dài 15 m, cây nọ cách cây kia 3 m, trồng ở cả hai đầu đường. Hỏi trồng được bao nhiêu cây?",
-    "Bài giải: (vẽ nháp đoạn đường và các mốc cây trước!)",
-    "Số khoảng cách giữa các cây là: 15 : 3 = 5 (khoảng)",
-    "Vì trồng ở cả hai đầu đường nên số cây là: 5 + 1 = 6 (cây)",
-    "Thử lại: 6 cây có 5 khoảng; 3 × 5 = 15 m ✓",
-    "Đáp số: 6 cây."
-   ],
-   "goc": [
-    "Đề bài: Người ta trồng cây dọc một đoạn đường dài 15 m, cây nọ cách cây kia 3 m, trồng ở cả hai đầu đường. Hỏi trồng được bao nhiêu cây?",
-    "Bài giải: (vẽ nháp đoạn đường và các mốc cây trước!)",
-    "Số khoảng cách giữa các cây là: 15 : 3 = 5 (khoảng)",
-    "Vì trồng ở cả hai đầu đường nên số cây là: 5 + 1 = 6 (cây)",
-    "Thử lại: 6 cây có 5 khoảng; 3 × 5 = 15 m ✓",
-    "Đáp số: 6 cây."
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Bài lối đi 12 m, cách 3 m: Su Kem tính \"12 : 3 = 4. Trồng được 4 cây!\" rồi hớn hở đi lấy cuốc.",
-    "Gợi ý 1: 12 : 3 = 4 tính ra số gì — số CÂY hay số KHOẢNG?",
-    "Gợi ý 2: Nếu chỉ trồng 4 cây thì hãy vẽ ra xem: một đầu lối đi sẽ bị... trống trơn! Xòe bàn tay nhắc Su Kem luật ngón - kẽ nào."
-   ],
-   "goc": [
-    "Bài lối đi 12 m, cách 3 m: Su Kem tính \"12 : 3 = 4. Trồng được 4 cây!\" rồi hớn hở đi lấy cuốc.",
-    "Gợi ý 1: 12 : 3 = 4 tính ra số gì — số CÂY hay số KHOẢNG?",
-    "Gợi ý 2: Nếu chỉ trồng 4 cây thì hãy vẽ ra xem: một đầu lối đi sẽ bị... trống trơn! Xòe bàn tay nhắc Su Kem luật ngón - kẽ nào."
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Bài này SỜ được khắp nơi: đếm cột điện trên phố, cọc hàng rào, bậc cầu thang, thanh chắn ban công — mỗi lần đếm hỏi con \"cây hay khoảng?\".",
-    "Trò chơi bếp núc: cắt quả chuối/thanh kẹo trước mặt con — \"muốn 4 khúc thì mấy nhát?\" — rồi cắt thật để kiểm chứng. Sai được ăn luôn khúc chuối, đằng nào cũng vui!",
-    "NÊN: luôn cho con VẼ mốc cây trên đoạn thẳng trước khi tính. KHÔNG NÊN: đưa các biến thể khó (trồng một đầu, trồng vòng tròn) làm bài tập chính — lớp 2 chỉ cần vững ca \"cả hai đầu\"; các ca kia là đặc sản lớp 3-4."
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Họ hàng của trồng cây: bác thợ cưa một khúc gỗ dài thành 5 khúc ngắn. Hỏi bác phải cưa mấy nhát? (Nhát cưa là CÂY hay là KHOẢNG? Vẽ ra xem!)",
+     "solutionNarrative": "nhát cưa là KẼ, khúc gỗ là NGÓN: 5 khúc cần 5 − 1 = 4 nhát"
+    },
+    {
+     "id": "C8",
+     "text": "Cắt một chiếc bánh mì dài: cắt 1 nhát được 2 khúc. Hỏi muốn được 6 khúc phải cắt mấy nhát? Từ câu 7 và câu 8, con phát hiện quy luật gì giữa số nhát và số khúc?",
+     "solutionNarrative": "6 khúc cần 5 nhát. Quy luật: số nhát = số khúc − 1 — anh em sinh đôi với \"khoảng = cây − 1\"!"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Xòe bàn tay: 5 ngón có mấy kẽ? Vậy 6 cây thẳng hàng có mấy khoảng?",
-   "loiChua": "4 kẽ; 6 cây có 5 khoảng",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một hàng có 4 cây trồng cách đều nhau 5 m (trồng cả hai đầu). Hỏi hàng cây dài bao nhiêu mét?",
-   "loiChua": "4 cây → 3 khoảng → 5 × 3 = 15 m",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một hàng rào có 7 cọc thẳng hàng. Hỏi giữa các cọc có mấy khoảng?",
-   "loiChua": "7 cọc → 6 khoảng",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Trồng cây dọc đoạn đường dài 20 m, cây cách cây 4 m, trồng cả hai đầu. Hỏi trồng được mấy cây?",
-   "loiChua": "khoảng: 20 : 4 = 5 → cây: 5 + 1 = 6 cây",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một hàng 6 bóng đèn treo cách đều nhau 3 m (có đèn ở cả hai đầu dây). Hỏi sợi dây đèn dài bao nhiêu mét?",
-   "loiChua": "6 đèn → 5 khoảng → 3 × 5 = 15 m",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Cầu thang từ tầng 1 lên tầng 2 có các bậc cách đều. Bé Bin bước 8 bước thì lên tới nơi. Hỏi bé đã đi qua mấy \"khoảng bậc\"? (Bước chân giống cây hay giống khoảng nhỉ?)",
-   "loiChua": "bước chân là KHOẢNG → bé đi qua 8 khoảng bậc (bậc thang thì nhiều hơn... để dành lớp 3 bàn tiếp!)",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Họ hàng của trồng cây: bác thợ cưa một khúc gỗ dài thành 5 khúc ngắn. Hỏi bác phải cưa mấy nhát? (Nhát cưa là CÂY hay là KHOẢNG? Vẽ ra xem!)",
-   "loiChua": "nhát cưa là KẼ, khúc gỗ là NGÓN: 5 khúc cần 5 − 1 = 4 nhát",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Cắt một chiếc bánh mì dài: cắt 1 nhát được 2 khúc. Hỏi muốn được 6 khúc phải cắt mấy nhát? Từ câu 7 và câu 8, con phát hiện quy luật gì giữa số nhát và số khúc?",
-   "loiChua": "6 khúc cần 5 nhát. Quy luật: số nhát = số khúc − 1 — anh em sinh đôi với \"khoảng = cây − 1\"!",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Bàn tay có 5 ngón và 4 kẽ.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Bàn tay có 5 ngón và 4 kẽ.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "5 cây trồng thẳng hàng (cả hai đầu) thì có 5 khoảng.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": false
+   {
+    "id": "Q2",
+    "text": "5 cây trồng thẳng hàng (cả hai đầu) thì có 5 khoảng.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "4 khoảng"
    },
-   "loiChua": "4 khoảng",
-   "solutionNarrative": "4 khoảng"
-  },
-  {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "5 cây cách nhau 2 m (cả hai đầu) — hàng cây dài:",
-   "format": "mcq",
-   "choices": [
-    "A. 10 m",
-    "B. 8 m",
-    "C. 7 m"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 8 m"
+   {
+    "id": "Q3",
+    "text": "5 cây cách nhau 2 m (cả hai đầu) — hàng cây dài:",
+    "format": "mcq",
+    "choices": [
+     "A. 10 m",
+     "B. 8 m",
+     "C. 7 m"
+    ],
+    "answerKey": {
+     "choice": "B. 8 m"
+    },
+    "solutionNarrative": "Đáp án: B. 8 m"
    },
-   "loiChua": "Đáp án: B. 8 m",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Đường 12 m, cây cách 3 m, trồng cả hai đầu — số cây là:",
-   "format": "mcq",
-   "choices": [
-    "A. 4",
-    "B. 5",
-    "C. 36"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 5"
+   {
+    "id": "Q4",
+    "text": "Đường 12 m, cây cách 3 m, trồng cả hai đầu — số cây là:",
+    "format": "mcq",
+    "choices": [
+     "A. 4",
+     "B. 5",
+     "C. 36"
+    ],
+    "answerKey": {
+     "choice": "B. 5"
+    },
+    "solutionNarrative": "Đáp án: B. 5"
    },
-   "loiChua": "Đáp án: B. 5",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Cưa khúc gỗ thành 4 khúc cần:",
-   "format": "mcq",
-   "choices": [
-    "A. 4 nhát",
-    "B. 3 nhát",
-    "C. 5 nhát"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 3 nhát"
-   },
-   "loiChua": "Đáp án: B. 3 nhát",
-   "solutionNarrative": ""
-  }
- ]
+   {
+    "id": "Q5",
+    "text": "Cưa khúc gỗ thành 4 khúc cần:",
+    "format": "mcq",
+    "choices": [
+     "A. 4 nhát",
+     "B. 3 nhát",
+     "C. 5 nhát"
+    ],
+    "answerKey": {
+     "choice": "B. 3 nhát"
+    },
+    "solutionNarrative": "Đáp án: B. 3 nhát"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Bài này SỜ được khắp nơi: đếm cột điện trên phố, cọc hàng rào, bậc cầu thang, thanh chắn ban công — mỗi lần đếm hỏi con \"cây hay khoảng?\".",
+  "homeActivity": "Trò chơi bếp núc: cắt quả chuối/thanh kẹo trước mặt con — \"muốn 4 khúc thì mấy nhát?\" — rồi cắt thật để kiểm chứng. Sai được ăn luôn khúc chuối, đằng nào cũng vui!",
+  "watchFor": "NÊN: luôn cho con VẼ mốc cây trên đoạn thẳng trước khi tính. KHÔNG NÊN: đưa các biến thể khó (trồng một đầu, trồng vòng tròn) làm bài tập chính — lớp 2 chỉ cần vững ca \"cả hai đầu\"; các ca kia là đặc sản lớp 3-4."
+ },
+ "figureSpec": []
 }

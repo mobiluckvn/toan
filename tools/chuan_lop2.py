@@ -22,7 +22,6 @@ W = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
 GOC_KHO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NGUON_DOCX = os.path.join(GOC_KHO, 'docs', 'Toan_Tu_Duy_Lop2_Ban_hoan_chinh.docx')
 NGUON = os.path.join(GOC_KHO, 'data', 'lop2_dehieu.json')
-RA_DIR = os.path.join(GOC_KHO, 'web', 'public', 'content', 'lop2')
 RA_DATA = os.path.join(GOC_KHO, 'data', 'lop2')
 
 R_DAP_BAI = re.compile(r'^B(\d+)\s+ĐÁP ÁN BÀI (\d+)')
@@ -168,7 +167,6 @@ def main():
     ps = doan_van()
     dap = rut_dap_an(ps)
     dap_quiz = rut_dap_an_quiz(ps)
-    os.makedirs(RA_DIR, exist_ok=True)
     os.makedirs(RA_DATA, exist_ok=True)
 
     idx, co_dap, cham_may = [], 0, 0
@@ -200,9 +198,10 @@ def main():
             'cau': cau,
         }
         ten = f'DL_KSN2_B{b["so"]:02d}.json'
-        for thu_muc in (RA_DIR, RA_DATA):
-            with open(os.path.join(thu_muc, ten), 'w', encoding='utf-8') as f:
-                json.dump(bai, f, ensure_ascii=False, indent=1)
+        # CHỈ ghi bản gốc (muc + cau) vào data/. Bản cho app nằm ở khuôn chung với
+        # lớp 5, do bước 5 dựng — xem tools/dung_khuon_chung.py.
+        with open(os.path.join(RA_DATA, ten), 'w', encoding='utf-8') as f:
+            json.dump(bai, f, ensure_ascii=False, indent=1)
         # Tách hai con số: trang chính ghi "n câu luyện tập" nên gộp cả quiz vào là
         # nói sai với bé — quiz là phần tự kiểm cuối bài, không phải bài tập.
         idx.append({'id': bai['id'], 'so': b['so'], 'ten': b['ten'],
@@ -210,12 +209,11 @@ def main():
                     'soCau': sum(1 for c in cau if c['phan'] == 'luyenTap'),
                     'soQuiz': sum(1 for c in cau if c['phan'] == 'quiz')})
 
-    for thu_muc in (RA_DIR, RA_DATA):
-        with open(os.path.join(thu_muc, 'index.json'), 'w', encoding='utf-8') as f:
-            json.dump(idx, f, ensure_ascii=False, indent=1)
+    with open(os.path.join(RA_DATA, 'index.json'), 'w', encoding='utf-8') as f:
+        json.dump(idx, f, ensure_ascii=False, indent=1)
 
     tong = sum(len(b['cau']) for b in B['bai'])
-    print(f'đã ghi {len(idx)} bài vào {RA_DIR}')
+    print(f'đã ghi {len(idx)} bài GỐC vào {RA_DATA}')
     print(f"  {tong} câu · có lời chữa {co_dap} ({co_dap * 100 // tong}%) · chấm máy {cham_may}")
 
 

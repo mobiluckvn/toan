@@ -1,289 +1,234 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B27",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 27 · ĐẾM HÌNH ẨN MÌNH",
+ "durationMinutes": 10,
  "so": 27,
- "ten": "ĐẾM HÌNH ẨN MÌNH",
  "chuong": 7,
  "tenChuong": "Vương quốc hình học",
  "dangGoc": "HH 2.1 — Đếm hình trong hình ghép (đếm đơn → đếm ghép, không sót không trùng)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Biết trong một hình ghép có cả hình ĐƠN (từng mảnh) lẫn hình GHÉP (nhiều mảnh hợp lại).",
-    "Đếm hình theo quy trình: đánh số mảnh → đếm hình đơn → đếm hình ghép.",
-    "Đếm đủ, không sót hình ghép, không đếm trùng."
+ "skills": {
+  "bktUnit": "CHUONG:7@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 27,
+  "prev": "DL:KSN2.B26",
+  "next": "DL:KSN2.B28"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết trong một hình ghép có cả hình ĐƠN (từng mảnh) lẫn hình GHÉP (nhiều mảnh hợp lại). Đếm hình theo quy trình: đánh số mảnh → đếm hình đơn → đếm hình ghép. Đếm đủ, không sót hình ghép, không đếm trùng.",
+  "kidText": "Biết trong một hình ghép có cả hình ĐƠN (từng mảnh) lẫn hình GHÉP (nhiều mảnh hợp lại). Đếm hình theo quy trình: đánh số mảnh → đếm hình đơn → đếm hình ghép. Đếm đủ, không sót hình ghép, không đếm trùng.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Nhịp 1 — ĐÁNH SỐ MẢNH: viết số 1, 2 vào từng mảnh nhỏ của hình. Đây là \"điểm danh cư dân\"."
+   },
+   {
+    "id": "K2",
+    "text": "Nhịp 2. ĐẾM HÌNH ĐƠN: mảnh 1 là một tam giác, mảnh 2 là một tam giác → 2 hình đơn."
+   },
+   {
+    "id": "K3",
+    "text": "Nhịp 3. ĐẾM HÌNH GHÉP: ghép mảnh 1 + mảnh 2 = tam giác TO ôm cả hai → thêm 1 hình. Tổng cộng 2 + 1 = 3 tam giác!"
+   }
+  ],
+  "mantra": "ĐÁNH SỐ → ĐẾM ĐƠN → ĐẾM GHÉP (ghép 2 mảnh, ghép 3 mảnh... ghép cả). Đi tuần tự như tuần tra phố ở Bài 5. Hình to nhất luôn là hình hay ẩn mình nhất!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với ô cửa sổ 2 × 2, Su Kem đếm: \"1, 2, 3, 4. Có 4 hình vuông, chấm hết!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Su Kem mới đếm xong nhịp nào trong 3 nhịp? Còn nhịp nào bị bỏ quên? Gợi ý 2: Lấy ngón tay tô theo đường viền NGOÀI CÙNG của cả ô cửa sổ. Con vừa tô ra hình gì vậy? Bạn ấy có được đếm không?"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Ở Vương quốc Hình học, các hình mê nhất trò trốn tìm. Mà chúng trốn tài lắm: những hình to thường \"tàng hình\" bằng cách... ôm trọn các hình nhỏ vào lòng! Vua Hình treo giải: ai đếm đúng số tam giác trong bức tranh trên cổng thành sẽ được thưởng. Su Kem liếc qua: \"Dễ! 2 tam giác!\" — Vua lắc đầu: \"Còn một bạn đang ẩn mình đấy, thám tử ơi.\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "Thử tài ngay: ô cửa sổ 2 × 2 dưới đây có bao nhiêu hình vuông? Nhớ lùng cả anh TO đang ẩn mình:",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "trap",
+    "narration": "Với ô cửa sổ 2 × 2, Su Kem đếm: \"1, 2, 3, 4. Có 4 hình vuông, chấm hết!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một hình chữ nhật được chia thành 3 ô vuông nhỏ xếp thành hàng ngang (đánh số 1, 2, 3). Hỏi trong hình có bao nhiêu hình chữ nhật? (Chú ý: hình vuông cũng là một kiểu \"chữ nhật đặc biệt\", nhưng ở bài này ta chỉ đếm các hình CHỮ NHẬT DÀI. Ghép từ 2 mảnh trở lên.)",
+  "steps": [
+   {
+    "show": "Bài giải: (vẽ hình ra nháp, đánh số 1, 2, 3)"
+   },
+   {
+    "show": "Hình ghép 2 mảnh: (1+2), (2+3) → 2 hình chữ nhật."
+   },
+   {
+    "show": "Hình ghép 3 mảnh: (1+2+3) → 1 hình chữ nhật."
+   },
+   {
+    "show": "Tất cả có: 2 + 1 = 3 (hình chữ nhật)"
+   },
+   {
+    "show": "Đáp số: 3 hình chữ nhật (và thêm 3 hình vuông nhỏ đứng riêng nữa!)."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Vẽ một hình vuông rồi kẻ một đường chéo (nối hai đỉnh đối nhau). Hỏi tạo thành mấy hình tam giác?",
+     "solutionNarrative": "2 tam giác"
+    },
+    {
+     "id": "C2",
+     "text": "Vẽ một hình chữ nhật rồi kẻ một vạch dọc chia đôi. Đếm số hình trong tranh: mấy hình đơn? Hình ghép nào ẩn mình?",
+     "solutionNarrative": "2 hình đơn (2 chữ nhật đứng) + 1 hình ghép (chữ nhật to ôm cả) = 3 hình"
+    },
+    {
+     "id": "C3",
+     "text": "Trong hình tam giác chia một vạch (như hình đầu bài học): có mấy tam giác đơn, mấy tam giác ghép?",
+     "solutionNarrative": "2 tam giác đơn + 1 tam giác ghép = 3"
+    }
    ],
-   "goc": [
-    "Biết trong một hình ghép có cả hình ĐƠN (từng mảnh) lẫn hình GHÉP (nhiều mảnh hợp lại).",
-    "Đếm hình theo quy trình: đánh số mảnh → đếm hình đơn → đếm hình ghép.",
-    "Đếm đủ, không sót hình ghép, không đếm trùng."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Trò trốn tìm của các hình",
-   "dong": [
-    "Ở Vương quốc Hình học, các hình mê nhất trò trốn tìm. Mà chúng trốn tài lắm: những hình to thường \"tàng hình\" bằng cách... ôm trọn các hình nhỏ vào lòng! Vua Hình treo giải: ai đếm đúng số tam giác trong bức tranh trên cổng thành sẽ được thưởng. Su Kem liếc qua: \"Dễ! 2 tam giác!\" — Vua lắc đầu: \"Còn một bạn đang ẩn mình đấy, thám tử ơi.\""
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Một tam giác lớn bị chia bởi HAI vạch cùng xuất phát từ đỉnh xuống cạnh đáy (tạo 3 mảnh 1, 2, 3). Đếm tất cả tam giác: đơn? ghép 2 mảnh? ghép cả 3 mảnh?",
+     "solutionNarrative": "đơn: 1, 2, 3 → 3 hình; ghép 2 mảnh: (1+2), (2+3) → 2 hình; ghép cả: (1+2+3) → 1 hình. Tất cả 3 + 2 + 1 = 6 tam giác"
+    },
+    {
+     "id": "C5",
+     "text": "Hình chữ nhật chia thành 4 ô vuông hàng ngang (1, 2, 3, 4). Đếm các hình ghép từ 2 mảnh cạnh nhau trở lên.",
+     "solutionNarrative": "ghép 2: (1+2), (2+3), (3+4) → 3; ghép 3: (1+2+3), (2+3+4) → 2; ghép 4: 1. Tổng hình ghép: 3 + 2 + 1 = 6"
+    },
+    {
+     "id": "C6",
+     "text": "Trong ô cửa sổ 2 × 2: ngoài 5 hình vuông, con tìm xem có bao nhiêu hình CHỮ NHẬT DÀI (ghép 2 ô cạnh nhau — cả nằm ngang lẫn thẳng đứng)?",
+     "solutionNarrative": "chữ nhật dài ghép 2 ô: 2 hình nằm ngang + 2 hình thẳng đứng = 4 hình"
+    }
    ],
-   "goc": [
-    "Ở Vương quốc Hình học, các hình mê nhất trò trốn tìm — mà chúng trốn tài lắm: những hình to thường \"tàng hình\" bằng cách... ôm trọn các hình nhỏ vào lòng! Vua Hình treo giải: ai đếm đúng số tam giác trong bức tranh trên cổng thành sẽ được thưởng. Su Kem liếc qua: \"Dễ! 2 tam giác!\" — Vua lắc đầu: \"Còn một bạn đang ẩn mình đấy, thám tử ơi.\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Quy trình lùng hình 3 nhịp",
-   "dong": [
-    "Nhịp 1 — ĐÁNH SỐ MẢNH: viết số 1, 2 vào từng mảnh nhỏ của hình. Đây là \"điểm danh cư dân\".",
-    "Nhịp 2. ĐẾM HÌNH ĐƠN: mảnh 1 là một tam giác, mảnh 2 là một tam giác → 2 hình đơn.",
-    "Nhịp 3. ĐẾM HÌNH GHÉP: ghép mảnh 1 + mảnh 2 = tam giác TO ôm cả hai → thêm 1 hình. Tổng cộng 2 + 1 = 3 tam giác!",
-    "Thử tài ngay: ô cửa sổ 2 × 2 dưới đây có bao nhiêu hình vuông? Nhớ lùng cả anh TO đang ẩn mình:",
-    "MẸO THÁM TỬ: ĐÁNH SỐ → ĐẾM ĐƠN → ĐẾM GHÉP (ghép 2 mảnh, ghép 3 mảnh... ghép cả). Đi tuần tự như tuần tra phố ở Bài 5. Hình to nhất luôn là hình hay ẩn mình nhất!"
-   ],
-   "goc": [
-    "Nhịp 1 — ĐÁNH SỐ MẢNH: viết số 1, 2 vào từng mảnh nhỏ của hình. Đây là \"điểm danh cư dân\".",
-    "Nhịp 2 — ĐẾM HÌNH ĐƠN: mảnh 1 là một tam giác, mảnh 2 là một tam giác → 2 hình đơn.",
-    "Nhịp 3 — ĐẾM HÌNH GHÉP: ghép mảnh 1 + mảnh 2 = tam giác TO ôm cả hai → thêm 1 hình. Tổng cộng 2 + 1 = 3 tam giác!",
-    "Thử tài ngay: ô cửa sổ 2 × 2 dưới đây có bao nhiêu hình vuông? Nhớ lùng cả anh TO đang ẩn mình:",
-    "MẸO THÁM TỬ: ĐÁNH SỐ → ĐẾM ĐƠN → ĐẾM GHÉP (ghép 2 mảnh, ghép 3 mảnh... ghép cả). Đi tuần tự như tuần tra phố ở Bài 5 — hình to nhất luôn là hình hay ẩn mình nhất!"
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Một hình chữ nhật được chia thành 3 ô vuông nhỏ xếp thành hàng ngang (đánh số 1, 2, 3). Hỏi trong hình có bao nhiêu hình chữ nhật? (Chú ý: hình vuông cũng là một kiểu \"chữ nhật đặc biệt\", nhưng ở bài này ta chỉ đếm các hình CHỮ NHẬT DÀI. Ghép từ 2 mảnh trở lên.)",
-    "Bài giải: (vẽ hình ra nháp, đánh số 1, 2, 3)",
-    "Hình ghép 2 mảnh: (1+2), (2+3) → 2 hình chữ nhật.",
-    "Hình ghép 3 mảnh: (1+2+3) → 1 hình chữ nhật.",
-    "Tất cả có: 2 + 1 = 3 (hình chữ nhật)",
-    "Đáp số: 3 hình chữ nhật (và thêm 3 hình vuông nhỏ đứng riêng nữa!)."
-   ],
-   "goc": [
-    "Đề bài: Một hình chữ nhật được chia thành 3 ô vuông nhỏ xếp thành hàng ngang (đánh số 1, 2, 3). Hỏi trong hình có bao nhiêu hình chữ nhật? (Chú ý: hình vuông cũng là một kiểu \"chữ nhật đặc biệt\", nhưng ở bài này ta chỉ đếm các hình CHỮ NHẬT DÀI — ghép từ 2 mảnh trở lên.)",
-    "Bài giải: (vẽ hình ra nháp, đánh số 1, 2, 3)",
-    "Hình ghép 2 mảnh: (1+2), (2+3) → 2 hình chữ nhật.",
-    "Hình ghép 3 mảnh: (1+2+3) → 1 hình chữ nhật.",
-    "Tất cả có: 2 + 1 = 3 (hình chữ nhật)",
-    "Đáp số: 3 hình chữ nhật (và thêm 3 hình vuông nhỏ đứng riêng nữa!)."
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Với ô cửa sổ 2 × 2, Su Kem đếm: \"1, 2, 3, 4. Có 4 hình vuông, chấm hết!\"",
-    "Gợi ý 1: Su Kem mới đếm xong nhịp nào trong 3 nhịp? Còn nhịp nào bị bỏ quên?",
-    "Gợi ý 2: Lấy ngón tay tô theo đường viền NGOÀI CÙNG của cả ô cửa sổ. Con vừa tô ra hình gì vậy? Bạn ấy có được đếm không?"
-   ],
-   "goc": [
-    "Với ô cửa sổ 2 × 2, Su Kem đếm: \"1, 2, 3, 4 — có 4 hình vuông, chấm hết!\"",
-    "Gợi ý 1: Su Kem mới đếm xong nhịp nào trong 3 nhịp? Còn nhịp nào bị bỏ quên?",
-    "Gợi ý 2: Lấy ngón tay tô theo đường viền NGOÀI CÙNG của cả ô cửa sổ — con vừa tô ra hình gì vậy? Bạn ấy có được đếm không?"
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Que diêm/que tăm là giáo cụ vàng: xếp hình ghép rồi cùng đếm; con NHẤC từng nhóm que ra để \"chứng minh\" hình ghép có thật.",
-    "Tô màu là vũ khí chống trùng: mỗi hình tìm được, tô viền một màu khác — hết màu là hết hình, trùng màu là đếm trùng.",
-    "NÊN: dừng ở hình chia 2-4 mảnh. KHÔNG NÊN: đưa lưới 3 × 3 trở lên (14 hình vuông!) — độ phức tạp đó thuộc lớp 3-4; lớp 2 cần nắm chắc QUY TRÌNH, không cần hình khủng."
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Vẽ hình vuông và kẻ CẢ HAI đường chéo. Đếm tất cả các hình tam giác (có 4 tam giác nhỏ... và các bạn ghép nữa — lùng kỹ nhé, đáp số là 8 đấy, tìm cho đủ!).",
+     "solutionNarrative": "4 tam giác nhỏ + 4 tam giác ghép-đôi (mỗi nửa hình vuông: trên, dưới, trái, phải) = 8 tam giác"
+    },
+    {
+     "id": "C8",
+     "text": "Con làm Vua Hình: vẽ một hình ghép sao cho trong đó có ĐÚNG 6 hình tam giác, rồi đố bố mẹ đếm. (Gợi ý: tam giác chia 2 vạch từ đỉnh chính là một đáp án — nhưng con thử sáng tác kiểu khác xem!)",
+     "solutionNarrative": "đề của con \"chuẩn Vua Hình\" khi bố mẹ đếm ra đúng 6 — thiếu hay thừa thì chỉnh vạch chia lại!"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Vẽ một hình vuông rồi kẻ một đường chéo (nối hai đỉnh đối nhau). Hỏi tạo thành mấy hình tam giác?",
-   "loiChua": "2 tam giác",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Vẽ một hình chữ nhật rồi kẻ một vạch dọc chia đôi. Đếm số hình trong tranh: mấy hình đơn? Hình ghép nào ẩn mình?",
-   "loiChua": "2 hình đơn (2 chữ nhật đứng) + 1 hình ghép (chữ nhật to ôm cả) = 3 hình",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Trong hình tam giác chia một vạch (như hình đầu bài học): có mấy tam giác đơn, mấy tam giác ghép?",
-   "loiChua": "2 tam giác đơn + 1 tam giác ghép = 3",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một tam giác lớn bị chia bởi HAI vạch cùng xuất phát từ đỉnh xuống cạnh đáy (tạo 3 mảnh 1, 2, 3). Đếm tất cả tam giác: đơn? ghép 2 mảnh? ghép cả 3 mảnh?",
-   "loiChua": "đơn: 1, 2, 3 → 3 hình; ghép 2 mảnh: (1+2), (2+3) → 2 hình; ghép cả: (1+2+3) → 1 hình. Tất cả 3 + 2 + 1 = 6 tam giác",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Hình chữ nhật chia thành 4 ô vuông hàng ngang (1, 2, 3, 4). Đếm các hình ghép từ 2 mảnh cạnh nhau trở lên.",
-   "loiChua": "ghép 2: (1+2), (2+3), (3+4) → 3; ghép 3: (1+2+3), (2+3+4) → 2; ghép 4: 1. Tổng hình ghép: 3 + 2 + 1 = 6",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Trong ô cửa sổ 2 × 2: ngoài 5 hình vuông, con tìm xem có bao nhiêu hình CHỮ NHẬT DÀI (ghép 2 ô cạnh nhau — cả nằm ngang lẫn thẳng đứng)?",
-   "loiChua": "chữ nhật dài ghép 2 ô: 2 hình nằm ngang + 2 hình thẳng đứng = 4 hình",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Vẽ hình vuông và kẻ CẢ HAI đường chéo. Đếm tất cả các hình tam giác (có 4 tam giác nhỏ... và các bạn ghép nữa — lùng kỹ nhé, đáp số là 8 đấy, tìm cho đủ!).",
-   "loiChua": "4 tam giác nhỏ + 4 tam giác ghép-đôi (mỗi nửa hình vuông: trên, dưới, trái, phải) = 8 tam giác",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Con làm Vua Hình: vẽ một hình ghép sao cho trong đó có ĐÚNG 6 hình tam giác, rồi đố bố mẹ đếm. (Gợi ý: tam giác chia 2 vạch từ đỉnh chính là một đáp án — nhưng con thử sáng tác kiểu khác xem!)",
-   "loiChua": "đề của con \"chuẩn Vua Hình\" khi bố mẹ đếm ra đúng 6 — thiếu hay thừa thì chỉnh vạch chia lại!",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Trong hình ghép, ngoài các mảnh đơn còn có các hình ghép ẩn mình.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Trong hình ghép, ngoài các mảnh đơn còn có các hình ghép ẩn mình.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Ô cửa sổ 2 × 2 có tất cả 4 hình vuông.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": false
+   {
+    "id": "Q2",
+    "text": "Ô cửa sổ 2 × 2 có tất cả 4 hình vuông.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "5 hình!"
    },
-   "loiChua": "5 hình!",
-   "solutionNarrative": "5 hình!"
-  },
-  {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Tam giác chia 1 vạch từ đỉnh có tất cả:",
-   "format": "mcq",
-   "choices": [
-    "A. 2 tam giác",
-    "B. 3 tam giác",
-    "C. 4 tam giác"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 3 tam giác"
+   {
+    "id": "Q3",
+    "text": "Tam giác chia 1 vạch từ đỉnh có tất cả:",
+    "format": "mcq",
+    "choices": [
+     "A. 2 tam giác",
+     "B. 3 tam giác",
+     "C. 4 tam giác"
+    ],
+    "answerKey": {
+     "choice": "B. 3 tam giác"
+    },
+    "solutionNarrative": "Đáp án: B. 3 tam giác"
    },
-   "loiChua": "Đáp án: B. 3 tam giác",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Quy trình lùng hình đúng là:",
-   "format": "mcq",
-   "choices": [
-    "A. đoán nhanh",
-    "B. đánh số → đếm đơn → đếm ghép",
-    "C. chỉ đếm hình to"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. đánh số → đếm đơn → đếm ghép"
+   {
+    "id": "Q4",
+    "text": "Quy trình lùng hình đúng là:",
+    "format": "mcq",
+    "choices": [
+     "A. đoán nhanh",
+     "B. đánh số → đếm đơn → đếm ghép",
+     "C. chỉ đếm hình to"
+    ],
+    "answerKey": {
+     "choice": "B. đánh số → đếm đơn → đếm ghép"
+    },
+    "solutionNarrative": "Đáp án: B. đánh số → đếm đơn → đếm ghép"
    },
-   "loiChua": "Đáp án: B. đánh số → đếm đơn → đếm ghép",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Hình hay bị bỏ sót nhất khi đếm là:",
-   "format": "mcq",
-   "choices": [
-    "A. hình nhỏ nhất",
-    "B. hình TO ôm trọn các mảnh",
-    "C. hình ở góc trái"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. hình TO ôm trọn các mảnh"
-   },
-   "loiChua": "Đáp án: B. hình TO ôm trọn các mảnh",
-   "solutionNarrative": ""
-  }
- ]
+   {
+    "id": "Q5",
+    "text": "Hình hay bị bỏ sót nhất khi đếm là:",
+    "format": "mcq",
+    "choices": [
+     "A. hình nhỏ nhất",
+     "B. hình TO ôm trọn các mảnh",
+     "C. hình ở góc trái"
+    ],
+    "answerKey": {
+     "choice": "B. hình TO ôm trọn các mảnh"
+    },
+    "solutionNarrative": "Đáp án: B. hình TO ôm trọn các mảnh"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Que diêm/que tăm là giáo cụ vàng: xếp hình ghép rồi cùng đếm; con NHẤC từng nhóm que ra để \"chứng minh\" hình ghép có thật.",
+  "homeActivity": "Tô màu là vũ khí chống trùng: mỗi hình tìm được, tô viền một màu khác — hết màu là hết hình, trùng màu là đếm trùng.",
+  "watchFor": "NÊN: dừng ở hình chia 2-4 mảnh. KHÔNG NÊN: đưa lưới 3 × 3 trở lên (14 hình vuông!) — độ phức tạp đó thuộc lớp 3-4; lớp 2 cần nắm chắc QUY TRÌNH, không cần hình khủng."
+ },
+ "figureSpec": []
 }

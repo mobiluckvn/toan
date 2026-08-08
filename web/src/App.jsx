@@ -9,7 +9,7 @@ import TeacherBoard from './components/TeacherBoard.jsx';
 import {
   loadProgress, saveProgress, recordMicro, recordChapter, saveSpot, resumeSpot, setMode,
 } from './lib/progress.js';
-import { neighborIds } from './lib/content.js';
+import { neighborIds, chuongTrinhCua, napSoDangKy } from './lib/content.js';
 import {
   submitSession, pushAttempts, syncPending, hasFirebase, watchAuth, myRole, myProfile, saveProfile, refreshMyReport,
   myReport, logout,
@@ -17,7 +17,6 @@ import {
 import { reassignQueue } from './lib/sync.js';
 import ChonChuongTrinh from './components/ChonChuongTrinh.jsx';
 import HomeLop2 from './components/HomeLop2.jsx';
-import Lop2Player from './components/Lop2Player.jsx';
 import MuaGiai from './components/MuaGiai.jsx';
 import TraiHuanLuyen from './components/TraiHuanLuyen.jsx';
 import HoSoBay from './components/HoSoBay.jsx';
@@ -60,6 +59,9 @@ export default function App() {
 
   useEffect(() => { saveProgress(progress); }, [progress]);
 
+  // Sổ đăng ký chương trình: nơi duy nhất khai khác biệt giữa lớp 2 và lớp 5
+  useEffect(() => { napSoDangKy(); }, []);
+
   useEffect(() => {
     if (!hasFirebase || LOCAL_KHONG_DANG_NHAP) return undefined;
     return watchAuth(async (user) => {
@@ -92,7 +94,12 @@ export default function App() {
       tomTat: session.tomTat || session.events || [], grade,
     }).catch(() => {});                       // mất mạng: đã nằm trong hàng đợi, lần sau gửi
     const { next } = neighborIds(microId, lesson);
-    setView(next && grade.pass ? { page: 'lesson', microId: next } : { page: 'home' });
+    if (!next || !grade.pass) { setView({ page: 'home' }); return; }
+    // Hai chương trình cùng LessonPlayer nhưng khác tên màn, nên phải hỏi bài thuộc
+    // chương trình nào — nếu không, học xong bài lớp 2 là nhảy sang bài lớp 5.
+    setView(chuongTrinhCua(next) === 'lop2'
+      ? { page: 'lop2bai', baiId: next }
+      : { page: 'lesson', microId: next });
   }, [learnerId]);
 
   /**
@@ -182,6 +189,7 @@ export default function App() {
     return (
       <ParentReport
         progress={progress}
+        chuongTrinh={chuongTrinh || 'lop5'}
         cloudReport={cloudReport}
         onRefresh={hasFirebase && learnerId !== 'local'
           ? async () => {
@@ -190,7 +198,8 @@ export default function App() {
             }
           : null}
         onExit={() => setView({ page: 'home' })}
-        onOpenMicro={(id) => setView({ page: 'lesson', microId: id })}
+        onOpenMicro={(id) => setView(chuongTrinhCua(id) === 'lop2'
+          ? { page: 'lop2bai', baiId: id } : { page: 'lesson', microId: id })}
       />
     );
 
@@ -207,23 +216,26 @@ export default function App() {
   /* ══ CHỌN CHƯƠNG TRÌNH ══ */
   if (!chuongTrinh) return <ChonChuongTrinh onChon={chonChuongTrinh} />;
 
-  /* ══ LỚP 2 ══ */
+  /* ══ LỚP 2 ══
+     Cùng LessonPlayer với lớp 5 — dữ liệu lớp 2 đã đưa về chung một khuôn, nên bé
+     lớp 2 cũng có nhật ký học, nhớ chỗ học dở, sổ phụ huynh và bảng cô giáo. */
   if (chuongTrinh === 'lop2') {
     if (view.page === 'lop2bai')
       return (
-        <Lop2Player
-          baiId={view.baiId}
+        <LessonPlayer
+          microId={view.baiId}
+          resumeAt={view.fromStart ? 0 : (resumeSpot(progress, view.baiId)?.step || 0)}
+          onMoveStep={(id, step, total) => setProgress((p) => saveSpot(p, id, step, total))}
+          onEvents={(s) => pushAttempts({ learnerId, ...s }).catch(() => {})}
           onExit={() => setView({ page: 'home' })}
-          onXong={(id) => {
-            setProgress((p) => ({ ...p, lop2: { ...(p.lop2 || {}), [id]: { xong: true, at: new Date().toISOString() } } }));
-            setView({ page: 'home' });
-          }}
+          onFinish={(grade, lesson, session) => finishMicro(view.baiId, grade, lesson, session)}
         />
       );
     return (
       <HomeLop2
         progress={progress}
         onMoBai={(id) => setView({ page: 'lop2bai', baiId: id })}
+        onSoPhuHuynh={() => setView({ page: 'report' })}
         onDoiChuongTrinh={() => setChuongTrinh(null)}
       />
     );

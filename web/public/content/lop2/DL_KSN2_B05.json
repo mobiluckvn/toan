@@ -1,291 +1,240 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B05",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 5 · ĐI TÌM CÁC SỐ CÓ TỔNG BÍ MẬT",
+ "durationMinutes": 10,
  "so": 5,
- "ten": "ĐI TÌM CÁC SỐ CÓ TỔNG BÍ MẬT",
  "chuong": 1,
  "tenChuong": "Vương quốc Số",
  "dangGoc": "SỐ 3.2 — Lập số theo điều kiện tổng chữ số (rèn liệt kê không sót - không trùng)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Tìm được TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng một số cho trước.",
-    "Biết liệt kê theo thứ tự (cho hàng chục tăng dần) để không sót, không trùng.",
-    "Giải thích được khi nào thì dừng liệt kê."
+ "skills": {
+  "bktUnit": "CHUONG:1@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 5,
+  "prev": "DL:KSN2.B04",
+  "next": "DL:KSN2.B06"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tìm được TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng một số cho trước. Biết liệt kê theo thứ tự (cho hàng chục tăng dần) để không sót, không trùng. Giải thích được khi nào thì dừng liệt kê.",
+  "kidText": "Tìm được TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng một số cho trước. Biết liệt kê theo thứ tự (cho hàng chục tăng dần) để không sót, không trùng. Giải thích được khi nào thì dừng liệt kê.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Su Kem hét toáng: \"23! À còn 41! Ơ hình như 32 nữa...\" — kể lộn xộn thế rất dễ sót. Trí Long có cách gọn hơn: cho hàng CHỤC tăng dần từng nấc một, hàng đơn vị sẽ tự động giảm theo."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Vì sao bắt đầu từ chục = 1 mà không phải chục = 0? Vì chục = 0 thì đâu còn là số có 2 chữ số (nhớ luật số 0 nhút nhát ở Bài 4 chứ!)."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Vì sao dừng ở chục = 5? Vì nếu chục = 6 thì đơn vị phải bằng 5 − 6... không có số nào như vậy cả! Vậy đáp án đủ là: 14, 23, 32, 41, 50 — đúng 5 số."
+   }
+  ],
+  "mantra": "\"Tìm TẤT CẢ\" là lệnh phải đi tuần tra CÓ THỨ TỰ: chục đi từ bé đến lớn, mỗi nấc hỏi \"đơn vị phải là mấy?\". Hết đường thì dừng — và phải nói được VÌ SAO dừng!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với tổng bằng 5, Su Kem nộp bài: \"05, 14, 23, 32, 41. Đủ 5 số, chuẩn không cần chỉnh!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: \"05\" có phải số có 2 chữ số không? (Nhớ luật của thẻ 0!) Gợi ý 2: Su Kem liệt kê đến chục = 4 rồi dừng — cậu ấy sót mất số nào? Kiểm tra bằng cách đi tiếp một nấc chục nữa xem."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Người gác kho báu đưa ra chiếc cân kỳ lạ: \"Mật mã kho báu là MỘT SỐ CÓ HAI CHỮ SỐ, đem hai chữ số của nó đặt lên cân thì thăng bằng với quả cân số 5. Nhưng ta sẽ chỉ mở kho nếu các ngươi tìm được TẤT CẢ các số như vậy. Thiếu một số thôi cũng không được!\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "trap",
+    "narration": "Với tổng bằng 5, Su Kem nộp bài: \"05, 14, 23, 32, 41. Đủ 5 số, chuẩn không cần chỉnh!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tìm tất cả các số có 2 chữ số mà tổng hai chữ số bằng 4.",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Chữ số hàng chục là 1 thì chữ số hàng đơn vị là: 4 − 1 = 3 → số 13."
+   },
+   {
+    "show": "Chữ số hàng chục là 2 thì chữ số hàng đơn vị là: 4 − 2 = 2 → số 22."
+   },
+   {
+    "show": "Chữ số hàng chục là 3 thì chữ số hàng đơn vị là: 4 − 3 = 1 → số 31."
+   },
+   {
+    "show": "Chữ số hàng chục là 4 thì chữ số hàng đơn vị là: 4 − 4 = 0 → số 40."
+   },
+   {
+    "show": "Chữ số hàng chục không thể là 5 (vì 4 − 5 không có)."
+   },
+   {
+    "show": "Đáp số: có 4 số là 13; 22; 31; 40."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính tổng hai chữ số của mỗi số: 25; 43; 70; 36.",
+     "solutionNarrative": "7; 7; 7; 9"
+    },
+    {
+     "id": "C2",
+     "text": "Số 61 có tổng hai chữ số bằng bao nhiêu? Đổi chỗ hai chữ số của nó thì tổng có thay đổi không?",
+     "solutionNarrative": "6 + 1 = 7; đổi chỗ thành 16, tổng vẫn là 7 (đổi chỗ không đổi tổng!)"
+    },
+    {
+     "id": "C3",
+     "text": "Tìm 2 số có 2 chữ số mà tổng hai chữ số bằng 3.",
+     "solutionNarrative": "ví dụ 12 và 21 (hoặc 30)"
+    }
    ],
-   "goc": [
-    "Tìm được TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng một số cho trước.",
-    "Biết liệt kê theo thứ tự (cho hàng chục tăng dần) để không sót, không trùng.",
-    "Giải thích được khi nào thì dừng liệt kê."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Chiếc cân của người gác kho báu",
-   "dong": [
-    "Người gác kho báu đưa ra chiếc cân kỳ lạ: \"Mật mã kho báu là MỘT SỐ CÓ HAI CHỮ SỐ, đem hai chữ số của nó đặt lên cân thì thăng bằng với quả cân số 5. Nhưng ta sẽ chỉ mở kho nếu các ngươi tìm được TẤT CẢ các số như vậy. Thiếu một số thôi cũng không được!\""
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 3 (liệt kê theo thứ tự và nói vì sao dừng).",
+     "solutionNarrative": "12; 21; 30 — dừng vì chục = 4 thì đơn vị phải là 3 − 4, không có"
+    },
+    {
+     "id": "C5",
+     "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 6.",
+     "solutionNarrative": "15; 24; 33; 42; 51; 60 — đủ 6 số"
+    },
+    {
+     "id": "C6",
+     "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 2. Có mấy số?",
+     "solutionNarrative": "11; 20 — có 2 số"
+    }
    ],
-   "goc": [
-    "Người gác kho báu đưa ra chiếc cân kỳ lạ: \"Mật mã kho báu là MỘT SỐ CÓ HAI CHỮ SỐ, đem hai chữ số của nó đặt lên cân thì thăng bằng với quả cân số 5. Nhưng ta sẽ chỉ mở kho nếu các ngươi tìm được TẤT CẢ các số như vậy — thiếu một số thôi cũng không được!\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Liệt kê kiểu thám tử",
-   "dong": [
-    "Bước 1. Su Kem hét toáng: \"23! À còn 41! Ơ hình như 32 nữa...\" — kể lộn xộn thế rất dễ sót. Trí Long có cách gọn hơn: cho hàng CHỤC tăng dần từng nấc một, hàng đơn vị sẽ tự động giảm theo.",
-    "Bước 2. Vì sao bắt đầu từ chục = 1 mà không phải chục = 0? Vì chục = 0 thì đâu còn là số có 2 chữ số (nhớ luật số 0 nhút nhát ở Bài 4 chứ!).",
-    "Bước 3. Vì sao dừng ở chục = 5? Vì nếu chục = 6 thì đơn vị phải bằng 5 − 6... không có số nào như vậy cả! Vậy đáp án đủ là: 14, 23, 32, 41, 50 — đúng 5 số.",
-    "MẸO THÁM TỬ: \"Tìm TẤT CẢ\" là lệnh phải đi tuần tra CÓ THỨ TỰ: chục đi từ bé đến lớn, mỗi nấc hỏi \"đơn vị phải là mấy?\". Hết đường thì dừng — và phải nói được VÌ SAO dừng!"
-   ],
-   "goc": [
-    "Bước 1. Su Kem hét toáng: \"23! À còn 41! Ơ hình như 32 nữa...\" — kể lộn xộn thế rất dễ sót. Trí Long có cách gọn hơn: cho hàng CHỤC tăng dần từng nấc một, hàng đơn vị sẽ tự động giảm theo.",
-    "Bước 2. Vì sao bắt đầu từ chục = 1 mà không phải chục = 0? Vì chục = 0 thì đâu còn là số có 2 chữ số (nhớ luật số 0 nhút nhát ở Bài 4 chứ!).",
-    "Bước 3. Vì sao dừng ở chục = 5? Vì nếu chục = 6 thì đơn vị phải bằng 5 − 6... không có số nào như vậy cả! Vậy đáp án đủ là: 14, 23, 32, 41, 50 — đúng 5 số.",
-    "MẸO THÁM TỬ: \"Tìm TẤT CẢ\" là lệnh phải đi tuần tra CÓ THỨ TỰ: chục đi từ bé đến lớn, mỗi nấc hỏi \"đơn vị phải là mấy?\". Hết đường thì dừng — và phải nói được VÌ SAO dừng!"
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Tìm tất cả các số có 2 chữ số mà tổng hai chữ số bằng 4.",
-    "Bài giải:",
-    "Chữ số hàng chục là 1 thì chữ số hàng đơn vị là: 4 − 1 = 3 → số 13.",
-    "Chữ số hàng chục là 2 thì chữ số hàng đơn vị là: 4 − 2 = 2 → số 22.",
-    "Chữ số hàng chục là 3 thì chữ số hàng đơn vị là: 4 − 3 = 1 → số 31.",
-    "Chữ số hàng chục là 4 thì chữ số hàng đơn vị là: 4 − 4 = 0 → số 40.",
-    "Chữ số hàng chục không thể là 5 (vì 4 − 5 không có).",
-    "Đáp số: có 4 số là 13; 22; 31; 40."
-   ],
-   "goc": [
-    "Đề bài: Tìm tất cả các số có 2 chữ số mà tổng hai chữ số bằng 4.",
-    "Bài giải:",
-    "Chữ số hàng chục là 1 thì chữ số hàng đơn vị là: 4 − 1 = 3 → số 13.",
-    "Chữ số hàng chục là 2 thì chữ số hàng đơn vị là: 4 − 2 = 2 → số 22.",
-    "Chữ số hàng chục là 3 thì chữ số hàng đơn vị là: 4 − 3 = 1 → số 31.",
-    "Chữ số hàng chục là 4 thì chữ số hàng đơn vị là: 4 − 4 = 0 → số 40.",
-    "Chữ số hàng chục không thể là 5 (vì 4 − 5 không có).",
-    "Đáp số: có 4 số là 13; 22; 31; 40."
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Với tổng bằng 5, Su Kem nộp bài: \"05, 14, 23, 32, 41. Đủ 5 số, chuẩn không cần chỉnh!\"",
-    "Gợi ý 1: \"05\" có phải số có 2 chữ số không? (Nhớ luật của thẻ 0!)",
-    "Gợi ý 2: Su Kem liệt kê đến chục = 4 rồi dừng — cậu ấy sót mất số nào? Kiểm tra bằng cách đi tiếp một nấc chục nữa xem."
-   ],
-   "goc": [
-    "Với tổng bằng 5, Su Kem nộp bài: \"05, 14, 23, 32, 41 — đủ 5 số, chuẩn không cần chỉnh!\"",
-    "Gợi ý 1: \"05\" có phải số có 2 chữ số không? (Nhớ luật của thẻ 0!)",
-    "Gợi ý 2: Su Kem liệt kê đến chục = 4 rồi dừng — cậu ấy sót mất số nào? Kiểm tra bằng cách đi tiếp một nấc chục nữa xem."
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Chơi \"mật mã kho báu\" bằng bộ thẻ số: bố mẹ nêu tổng, con xếp các cặp thẻ; sau đó đổi vai cho con ra đề.",
-    "Khi con liệt kê, đừng vội xác nhận đủ hay thiếu — hãy hỏi: \"Làm sao con CHẮC là không sót?\". Câu trả lời \"vì con đi từ chục 1 đến hết\" quý hơn cả đáp số.",
-    "NÊN: khen cách liệt kê có thứ tự dù kết quả thiếu. KHÔNG NÊN: chấp nhận kiểu kể lộn xộn dù tình cờ đủ — thói quen tuần tra có thứ tự chính là thứ bài này muốn gieo."
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Không cần liệt kê hết, con đoán xem: tổng bằng 7 thì có mấy số? Tổng bằng 9 thì có mấy số? (Con thử tìm quy luật giữa \"tổng\" và \"số lượng số\" — rồi liệt kê để kiểm chứng dự đoán!)",
+     "solutionNarrative": "quy luật đẹp — tổng bằng bao nhiêu thì có bấy nhiêu số (với tổng từ 1 đến 9): tổng 7 → 7 số (16, 25, 34, 43, 52, 61, 70); tổng 9 → 9 số"
+    },
+    {
+     "id": "C8",
+     "text": "Tìm số có 2 chữ số mà tổng hai chữ số bằng 5 VÀ chữ số hàng chục lớn hơn chữ số hàng đơn vị. Có mấy số như vậy?",
+     "solutionNarrative": "trong 14, 23, 32, 41, 50 chọn số có chục > đơn vị: 32, 41, 50 — có 3 số"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tính tổng hai chữ số của mỗi số: 25; 43; 70; 36.",
-   "loiChua": "7; 7; 7; 9",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Số 61 có tổng hai chữ số bằng bao nhiêu? Đổi chỗ hai chữ số của nó thì tổng có thay đổi không?",
-   "loiChua": "6 + 1 = 7; đổi chỗ thành 16, tổng vẫn là 7 (đổi chỗ không đổi tổng!)",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm 2 số có 2 chữ số mà tổng hai chữ số bằng 3.",
-   "loiChua": "ví dụ 12 và 21 (hoặc 30)",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 3 (liệt kê theo thứ tự và nói vì sao dừng).",
-   "loiChua": "12; 21; 30 — dừng vì chục = 4 thì đơn vị phải là 3 − 4, không có",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 6.",
-   "loiChua": "15; 24; 33; 42; 51; 60 — đủ 6 số",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 2. Có mấy số?",
-   "loiChua": "11; 20 — có 2 số",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Không cần liệt kê hết, con đoán xem: tổng bằng 7 thì có mấy số? Tổng bằng 9 thì có mấy số? (Con thử tìm quy luật giữa \"tổng\" và \"số lượng số\" — rồi liệt kê để kiểm chứng dự đoán!)",
-   "loiChua": "quy luật đẹp — tổng bằng bao nhiêu thì có bấy nhiêu số (với tổng từ 1 đến 9): tổng 7 → 7 số (16, 25, 34, 43, 52, 61, 70); tổng 9 → 9 số",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm số có 2 chữ số mà tổng hai chữ số bằng 5 VÀ chữ số hàng chục lớn hơn chữ số hàng đơn vị. Có mấy số như vậy?",
-   "loiChua": "trong 14, 23, 32, 41, 50 chọn số có chục > đơn vị: 32, 41, 50 — có 3 số",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Số 32 có tổng hai chữ số bằng 5.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Số 32 có tổng hai chữ số bằng 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "\"05\" là một số có 2 chữ số.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": false
+   {
+    "id": "Q2",
+    "text": "\"05\" là một số có 2 chữ số.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Đáp án: SAI"
    },
-   "loiChua": "Đáp án: SAI",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Khi liệt kê các số có tổng chữ số bằng 5, ta bắt đầu từ chữ số hàng chục bằng:",
-   "format": "mcq",
-   "choices": [
-    "A. 0",
-    "B. 1",
-    "C. 5"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 1"
+   {
+    "id": "Q3",
+    "text": "Khi liệt kê các số có tổng chữ số bằng 5, ta bắt đầu từ chữ số hàng chục bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 0",
+     "B. 1",
+     "C. 5"
+    ],
+    "answerKey": {
+     "choice": "B. 1"
+    },
+    "solutionNarrative": "Đáp án: B. 1"
    },
-   "loiChua": "Đáp án: B. 1",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Số nào dưới đây có tổng hai chữ số bằng 6?",
-   "format": "mcq",
-   "choices": [
-    "A. 51",
-    "B. 62",
-    "C. 46"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "A. 51"
+   {
+    "id": "Q4",
+    "text": "Số nào dưới đây có tổng hai chữ số bằng 6?",
+    "format": "mcq",
+    "choices": [
+     "A. 51",
+     "B. 62",
+     "C. 46"
+    ],
+    "answerKey": {
+     "choice": "A. 51"
+    },
+    "solutionNarrative": "5 + 1 = 6"
    },
-   "loiChua": "5 + 1 = 6",
-   "solutionNarrative": "5 + 1 = 6"
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Có bao nhiêu số có 2 chữ số mà tổng hai chữ số bằng 5?",
-   "format": "mcq",
-   "choices": [
-    "A. 4 số",
-    "B. 5 số",
-    "C. 6 số"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 5 số"
-   },
-   "loiChua": "5 số",
-   "solutionNarrative": "5 số"
-  }
- ]
+   {
+    "id": "Q5",
+    "text": "Có bao nhiêu số có 2 chữ số mà tổng hai chữ số bằng 5?",
+    "format": "mcq",
+    "choices": [
+     "A. 4 số",
+     "B. 5 số",
+     "C. 6 số"
+    ],
+    "answerKey": {
+     "choice": "B. 5 số"
+    },
+    "solutionNarrative": "5 số"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chơi \"mật mã kho báu\" bằng bộ thẻ số: bố mẹ nêu tổng, con xếp các cặp thẻ; sau đó đổi vai cho con ra đề.",
+  "homeActivity": "Khi con liệt kê, đừng vội xác nhận đủ hay thiếu — hãy hỏi: \"Làm sao con CHẮC là không sót?\". Câu trả lời \"vì con đi từ chục 1 đến hết\" quý hơn cả đáp số.",
+  "watchFor": "NÊN: khen cách liệt kê có thứ tự dù kết quả thiếu. KHÔNG NÊN: chấp nhận kiểu kể lộn xộn dù tình cờ đủ — thói quen tuần tra có thứ tự chính là thứ bài này muốn gieo."
+ },
+ "figureSpec": []
 }

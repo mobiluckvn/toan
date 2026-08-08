@@ -1,287 +1,222 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B25",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 25 · AI NÓI THẬT?",
+ "durationMinutes": 10,
  "so": 25,
- "ten": "AI NÓI THẬT?",
  "chuong": 6,
  "tenChuong": "Thám tử tí hon",
  "dangGoc": "LV 8.4 — Suy luận đơn giản: xếp thứ tự & bảng loại trừ",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Xếp được thứ tự 3 đối tượng từ 2 manh mối (ai hơn ai) bằng cách vẽ THANG.",
-    "Giải được câu đố \"ai - cái gì\" bằng BẢNG LOẠI TRỪ với dấu ✓ và ✗.",
-    "Hiểu luật thám tử: mỗi kết luận phải có manh mối chống lưng, không đoán mò."
+ "skills": {
+  "bktUnit": "CHUONG:6@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 25,
+  "prev": "DL:KSN2.B24",
+  "next": "DL:KSN2.B26"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Xếp được thứ tự 3 đối tượng từ 2 manh mối (ai hơn ai) bằng cách vẽ THANG. Giải được câu đố \"ai - cái gì\" bằng BẢNG LOẠI TRỪ với dấu ✓ và ✗. Hiểu luật thám tử: mỗi kết luận phải có manh mối chống lưng, không đoán mò.",
+  "kidText": "Xếp được thứ tự 3 đối tượng từ 2 manh mối (ai hơn ai) bằng cách vẽ THANG. Giải được câu đố \"ai - cái gì\" bằng BẢNG LOẠI TRỪ với dấu ✓ và ✗. Hiểu luật thám tử: mỗi kết luận phải có manh mối chống lưng, không đoán mò.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Vũ khí 1 — VẼ THANG xếp thứ tự. Với đố kiểu \"ai hơn ai\": Voi nặng hơn Gấu, Gấu nặng hơn Thỏ → vẽ một chiếc thang, xếp từng bạn theo manh mối. Nhìn thang là đọc được cả: ai nặng nhất, ai nhẹ nhất, và cả điều đề KHÔNG nói thẳng. Voi nặng hơn Thỏ!"
+   },
+   {
+    "id": "K2",
+    "text": "Vũ khí 2 — BẢNG LOẠI TRỪ. Với đố kiểu \"ai - cái gì\": kẻ bảng, mỗi hàng một bạn, mỗi cột một chiếc cặp. Manh mối chắc chắn → đánh ✓. Rồi gạch ✗ hết các ô CÙNG HÀNG và CÙNG CỘT với dấu ✓ (một bạn chỉ đeo một cặp, một cặp chỉ của một bạn!):"
+   }
+  ],
+  "mantra": "\"Hơn - kém\" → vẽ THANG. \"Ai - cái gì\" → kẻ BẢNG, đánh ✓ từ manh mối chắc nhất, gạch ✗ cùng hàng cùng cột. Hàng nào chỉ còn một ô trống — ô đó chính là đáp án!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với vụ chiếc cặp, Su Kem suy luận: \"Tớ không đeo cặp đỏ... vậy chắc tớ đeo cặp VÀNG — màu vàng đẹp nhất mà!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: \"Không đeo đỏ\" thì còn NHỮNG màu nào có thể? Su Kem mới loại được một ô mà đã vội chốt đáp án! Gợi ý 2: Cặp vàng đã có chủ là ai rồi (manh mối 2)? Dùng đủ CẢ HAI manh mối trên bảng loại trừ để tìm đúng cặp của Su Kem nhé."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Giờ ra chơi, ba chiếc cặp sách. Một đỏ, một xanh, một vàng. Nằm lẫn lộn trên ghế đá, của ba bạn Bin, Su Kem và Trí Long. Cô sao đỏ hỏi: \"Cặp nào của bạn nào đây?\" Cả ba nhìn nhau. May quá, có hai manh mối: Su Kem nhớ chắc chắn mình KHÔNG đeo cặp đỏ, còn Bin thì cả lớp đều biết bạn ấy mê màu vàng. Cặp vàng đúng là của Bin."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "Đọc bảng: Bin ✓ vàng (manh mối 2) → gạch ✗ cả hàng Bin lẫn cột vàng. Su Kem không đeo đỏ (manh mối 1) → ✗ ô đỏ. Hàng Su Kem chỉ còn trống ô XANH → ✓ xanh! Cuối cùng hàng Trí Long chỉ còn ô ĐỎ → ✓ đỏ. Ba dấu ✓ — vụ án khép lại, không cần đoán mò một lần nào!",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "trap",
+    "narration": "Với vụ chiếc cặp, Su Kem suy luận: \"Tớ không đeo cặp đỏ... vậy chắc tớ đeo cặp VÀNG — màu vàng đẹp nhất mà!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Ba bạn Mai, Đào, Cúc cầm ba bông hoa: hồng, sen, cúc. Biết: Mai không cầm hoa hồng; Đào cầm hoa sen. Hỏi mỗi bạn cầm hoa gì?",
+  "steps": [
+   {
+    "show": "Bài giải: (kẻ bảng 3 hàng × 3 cột ra nháp)"
+   },
+   {
+    "show": "Đào cầm hoa sen (manh mối chắc chắn) → gạch bỏ cả hàng Đào và cột sen."
+   },
+   {
+    "show": "Mai không cầm hoa hồng, cột sen đã bị gạch → hàng Mai chỉ còn ô hoa cúc → Mai cầm hoa cúc."
+   },
+   {
+    "show": "Còn lại: Cúc cầm hoa hồng."
+   },
+   {
+    "show": "Đáp số: Mai — hoa cúc; Đào — hoa sen; Cúc — hoa hồng. (Bạn tên Cúc lại không cầm hoa cúc. Đề bài trêu mình đấy, nhưng bảng loại trừ không bị lừa!)"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Voi nặng hơn Gấu. Gấu nặng hơn Thỏ. Hỏi con nào nặng nhất, con nào nhẹ nhất? (Vẽ thang!)",
+     "solutionNarrative": "Voi nặng nhất, Thỏ nhẹ nhất"
+    },
+    {
+     "id": "C2",
+     "text": "Trí Long cao hơn Su Kem. Su Kem cao hơn Bin. Hỏi ai đứng giữa về chiều cao? Trí Long có cao hơn Bin không — đề đâu có nói thẳng, sao con biết?",
+     "solutionNarrative": "Su Kem đứng giữa; Trí Long cao hơn Bin vì Trí Long > Su Kem > Bin — cái thang nói hộ điều đề không nói thẳng!"
+    },
+    {
+     "id": "C3",
+     "text": "An chạy nhanh hơn Bích. Cường chạy chậm hơn Bích. Ai chạy nhanh nhất?",
+     "solutionNarrative": "An nhanh nhất (An > Bích > Cường)"
+    }
    ],
-   "goc": [
-    "Xếp được thứ tự 3 đối tượng từ 2 manh mối (ai hơn ai) bằng cách vẽ THANG.",
-    "Giải được câu đố \"ai - cái gì\" bằng BẢNG LOẠI TRỪ với dấu ✓ và ✗.",
-    "Hiểu luật thám tử: mỗi kết luận phải có manh mối chống lưng, không đoán mò."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Chiếc cặp sách để quên",
-   "dong": [
-    "Giờ ra chơi, ba chiếc cặp sách. Một đỏ, một xanh, một vàng. Nằm lẫn lộn trên ghế đá, của ba bạn Bin, Su Kem và Trí Long. Cô sao đỏ hỏi: \"Cặp nào của bạn nào đây?\" Cả ba nhìn nhau. May quá, có hai manh mối: Su Kem nhớ chắc chắn mình KHÔNG đeo cặp đỏ, còn Bin thì cả lớp đều biết bạn ấy mê màu vàng. Cặp vàng đúng là của Bin."
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Ba bạn An, Bình, Cúc cầm ba quả bóng đỏ, xanh, vàng. An không cầm bóng đỏ, Bình cầm bóng vàng. Hỏi ai cầm bóng gì? (Kẻ bảng loại trừ!)",
+     "solutionNarrative": "Bình ✓ vàng; An không đỏ, vàng đã có chủ → An ✓ xanh; Cúc ✓ đỏ"
+    },
+    {
+     "id": "C5",
+     "text": "Ba bạn nuôi ba con vật: mèo, cún, cá vàng. Hoa nuôi cún. Lan không nuôi mèo. Hỏi ai nuôi con gì?",
+     "solutionNarrative": "Hoa ✓ cún; Lan không mèo, cún đã có chủ → Lan ✓ cá vàng; còn lại nuôi mèo"
+    },
+    {
+     "id": "C6",
+     "text": "Xếp thứ tự tuổi: chị Hai nhiều tuổi hơn anh Ba; anh Ba nhiều tuổi hơn bé Tư; bé Tư ít tuổi hơn chị Hai. Manh mối thứ ba có cần thiết không, hay hai manh mối đầu đã đủ xếp thang?",
+     "solutionNarrative": "hai manh mối đầu đã đủ xếp thang (Hai > Ba > Tư); manh mối thứ ba chỉ nói lại điều thang đã biết — thừa nhưng không sai"
+    }
    ],
-   "goc": [
-    "Giờ ra chơi, ba chiếc cặp sách — một đỏ, một xanh, một vàng — nằm lẫn lộn trên ghế đá, của ba bạn Bin, Su Kem và Trí Long. Cô sao đỏ hỏi: \"Cặp nào của bạn nào đây?\" Cả ba nhìn nhau. May quá, có hai manh mối: Su Kem nhớ chắc chắn mình KHÔNG đeo cặp đỏ, còn Bin thì cả lớp đều biết bạn ấy mê màu vàng — cặp vàng đúng là của Bin."
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Hai vũ khí suy luận",
-   "dong": [
-    "Vũ khí 1 — VẼ THANG xếp thứ tự. Với đố kiểu \"ai hơn ai\": Voi nặng hơn Gấu, Gấu nặng hơn Thỏ → vẽ một chiếc thang, xếp từng bạn theo manh mối. Nhìn thang là đọc được cả: ai nặng nhất, ai nhẹ nhất, và cả điều đề KHÔNG nói thẳng. Voi nặng hơn Thỏ!",
-    "Vũ khí 2 — BẢNG LOẠI TRỪ. Với đố kiểu \"ai - cái gì\": kẻ bảng, mỗi hàng một bạn, mỗi cột một chiếc cặp. Manh mối chắc chắn → đánh ✓. Rồi gạch ✗ hết các ô CÙNG HÀNG và CÙNG CỘT với dấu ✓ (một bạn chỉ đeo một cặp, một cặp chỉ của một bạn!):",
-    "Đọc bảng: Bin ✓ vàng (manh mối 2) → gạch ✗ cả hàng Bin lẫn cột vàng. Su Kem không đeo đỏ (manh mối 1) → ✗ ô đỏ. Hàng Su Kem chỉ còn trống ô XANH → ✓ xanh! Cuối cùng hàng Trí Long chỉ còn ô ĐỎ → ✓ đỏ. Ba dấu ✓ — vụ án khép lại, không cần đoán mò một lần nào!",
-    "MẸO THÁM TỬ: \"Hơn - kém\" → vẽ THANG. \"Ai - cái gì\" → kẻ BẢNG, đánh ✓ từ manh mối chắc nhất, gạch ✗ cùng hàng cùng cột. Hàng nào chỉ còn một ô trống — ô đó chính là đáp án!"
-   ],
-   "goc": [
-    "Vũ khí 1 — VẼ THANG xếp thứ tự. Với đố kiểu \"ai hơn ai\": Voi nặng hơn Gấu, Gấu nặng hơn Thỏ → vẽ một chiếc thang, xếp từng bạn theo manh mối. Nhìn thang là đọc được cả: ai nặng nhất, ai nhẹ nhất, và cả điều đề KHÔNG nói thẳng — Voi nặng hơn Thỏ!",
-    "Vũ khí 2 — BẢNG LOẠI TRỪ. Với đố kiểu \"ai - cái gì\": kẻ bảng, mỗi hàng một bạn, mỗi cột một chiếc cặp. Manh mối chắc chắn → đánh ✓; rồi gạch ✗ hết các ô CÙNG HÀNG và CÙNG CỘT với dấu ✓ (một bạn chỉ đeo một cặp, một cặp chỉ của một bạn!):",
-    "Đọc bảng: Bin ✓ vàng (manh mối 2) → gạch ✗ cả hàng Bin lẫn cột vàng. Su Kem không đeo đỏ (manh mối 1) → ✗ ô đỏ; hàng Su Kem chỉ còn trống ô XANH → ✓ xanh! Cuối cùng hàng Trí Long chỉ còn ô ĐỎ → ✓ đỏ. Ba dấu ✓ — vụ án khép lại, không cần đoán mò một lần nào!",
-    "MẸO THÁM TỬ: \"Hơn - kém\" → vẽ THANG. \"Ai - cái gì\" → kẻ BẢNG, đánh ✓ từ manh mối chắc nhất, gạch ✗ cùng hàng cùng cột. Hàng nào chỉ còn một ô trống — ô đó chính là đáp án!"
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Ba bạn Mai, Đào, Cúc cầm ba bông hoa: hồng, sen, cúc. Biết: Mai không cầm hoa hồng; Đào cầm hoa sen. Hỏi mỗi bạn cầm hoa gì?",
-    "Bài giải: (kẻ bảng 3 hàng × 3 cột ra nháp)",
-    "Đào cầm hoa sen (manh mối chắc chắn) → gạch bỏ cả hàng Đào và cột sen.",
-    "Mai không cầm hoa hồng, cột sen đã bị gạch → hàng Mai chỉ còn ô hoa cúc → Mai cầm hoa cúc.",
-    "Còn lại: Cúc cầm hoa hồng.",
-    "Đáp số: Mai — hoa cúc; Đào — hoa sen; Cúc — hoa hồng. (Bạn tên Cúc lại không cầm hoa cúc. Đề bài trêu mình đấy, nhưng bảng loại trừ không bị lừa!)"
-   ],
-   "goc": [
-    "Đề bài: Ba bạn Mai, Đào, Cúc cầm ba bông hoa: hồng, sen, cúc. Biết: Mai không cầm hoa hồng; Đào cầm hoa sen. Hỏi mỗi bạn cầm hoa gì?",
-    "Bài giải: (kẻ bảng 3 hàng × 3 cột ra nháp)",
-    "Đào cầm hoa sen (manh mối chắc chắn) → gạch bỏ cả hàng Đào và cột sen.",
-    "Mai không cầm hoa hồng, cột sen đã bị gạch → hàng Mai chỉ còn ô hoa cúc → Mai cầm hoa cúc.",
-    "Còn lại: Cúc cầm hoa hồng.",
-    "Đáp số: Mai — hoa cúc; Đào — hoa sen; Cúc — hoa hồng. (Bạn tên Cúc lại không cầm hoa cúc — đề bài trêu mình đấy, nhưng bảng loại trừ không bị lừa!)"
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Với vụ chiếc cặp, Su Kem suy luận: \"Tớ không đeo cặp đỏ... vậy chắc tớ đeo cặp VÀNG — màu vàng đẹp nhất mà!\"",
-    "Gợi ý 1: \"Không đeo đỏ\" thì còn NHỮNG màu nào có thể? Su Kem mới loại được một ô mà đã vội chốt đáp án!",
-    "Gợi ý 2: Cặp vàng đã có chủ là ai rồi (manh mối 2)? Dùng đủ CẢ HAI manh mối trên bảng loại trừ để tìm đúng cặp của Su Kem nhé."
-   ],
-   "goc": [
-    "Với vụ chiếc cặp, Su Kem suy luận: \"Tớ không đeo cặp đỏ... vậy chắc tớ đeo cặp VÀNG — màu vàng đẹp nhất mà!\"",
-    "Gợi ý 1: \"Không đeo đỏ\" thì còn NHỮNG màu nào có thể? Su Kem mới loại được một ô mà đã vội chốt đáp án!",
-    "Gợi ý 2: Cặp vàng đã có chủ là ai rồi (manh mối 2)? Dùng đủ CẢ HAI manh mối trên bảng loại trừ để tìm đúng cặp của Su Kem nhé."
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Biến đồ vật trong nhà thành vụ án: ba chiếc cốc ba màu của ba thành viên + hai manh mối — con kẻ bảng phá án trước bữa cơm.",
-    "Câu hỏi vàng sau mỗi kết luận của con: \"Manh mối nào cho con biết điều đó?\" — luyện thói quen nói có sách, mách có chứng, quý cho cả môn Văn lẫn đời sống.",
-    "NÊN: bắt đầu từ 2 manh mối, tăng dần lên 3 khi con thạo bảng. KHÔNG NÊN: ra đố \"kẻ nói dối\" phức tạp (một người luôn nói dối...) — dạng ấy dễ ra đề bị hớ và quá sức lớp 2; xếp thang + bảng loại trừ là đủ sâu rồi."
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Vụ án kết hợp hai vũ khí: ba bạn Tí, Sửu, Dần nuôi ba con: mèo, cún, vẹt. Manh mối: (1) Tí cao hơn Sửu, Sửu cao hơn Dần; (2) bạn THẤP NHẤT nuôi mèo; (3) Tí không nuôi cún. Hỏi ai nuôi con gì? (Vẽ thang trước để tìm bạn thấp nhất, rồi mới kẻ bảng!)",
+     "solutionNarrative": "thang: Tí > Sửu > Dần → Dần thấp nhất → Dần ✓ mèo. Tí không cún, mèo đã của Dần → Tí ✓ vẹt. Còn lại: Sửu ✓ cún"
+    },
+    {
+     "id": "C8",
+     "text": "Con tự làm \"trùm ra đề\": nghĩ một vụ án bảng loại trừ 3 bạn × 3 món đồ với ĐÚNG 2 manh mối, sao cho giải ra được duy nhất một đáp án. Đố bố mẹ giải — và kiểm tra xem manh mối của con có đủ chặt không!",
+     "solutionNarrative": "đề của con \"chặt\" khi bố mẹ chỉ tìm được đúng MỘT đáp án; nếu ra được hai đáp án khác nhau tức là manh mối còn lỏng — thêm một manh mối nữa vào!"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Voi nặng hơn Gấu. Gấu nặng hơn Thỏ. Hỏi con nào nặng nhất, con nào nhẹ nhất? (Vẽ thang!)",
-   "loiChua": "Voi nặng nhất, Thỏ nhẹ nhất",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Trí Long cao hơn Su Kem. Su Kem cao hơn Bin. Hỏi ai đứng giữa về chiều cao? Trí Long có cao hơn Bin không — đề đâu có nói thẳng, sao con biết?",
-   "loiChua": "Su Kem đứng giữa; Trí Long cao hơn Bin vì Trí Long > Su Kem > Bin — cái thang nói hộ điều đề không nói thẳng!",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "An chạy nhanh hơn Bích. Cường chạy chậm hơn Bích. Ai chạy nhanh nhất?",
-   "loiChua": "An nhanh nhất (An > Bích > Cường)",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Ba bạn An, Bình, Cúc cầm ba quả bóng đỏ, xanh, vàng. An không cầm bóng đỏ, Bình cầm bóng vàng. Hỏi ai cầm bóng gì? (Kẻ bảng loại trừ!)",
-   "loiChua": "Bình ✓ vàng; An không đỏ, vàng đã có chủ → An ✓ xanh; Cúc ✓ đỏ",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Ba bạn nuôi ba con vật: mèo, cún, cá vàng. Hoa nuôi cún. Lan không nuôi mèo. Hỏi ai nuôi con gì?",
-   "loiChua": "Hoa ✓ cún; Lan không mèo, cún đã có chủ → Lan ✓ cá vàng; còn lại nuôi mèo",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Xếp thứ tự tuổi: chị Hai nhiều tuổi hơn anh Ba; anh Ba nhiều tuổi hơn bé Tư; bé Tư ít tuổi hơn chị Hai. Manh mối thứ ba có cần thiết không, hay hai manh mối đầu đã đủ xếp thang?",
-   "loiChua": "hai manh mối đầu đã đủ xếp thang (Hai > Ba > Tư); manh mối thứ ba chỉ nói lại điều thang đã biết — thừa nhưng không sai",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Vụ án kết hợp hai vũ khí: ba bạn Tí, Sửu, Dần nuôi ba con: mèo, cún, vẹt. Manh mối: (1) Tí cao hơn Sửu, Sửu cao hơn Dần; (2) bạn THẤP NHẤT nuôi mèo; (3) Tí không nuôi cún. Hỏi ai nuôi con gì? (Vẽ thang trước để tìm bạn thấp nhất, rồi mới kẻ bảng!)",
-   "loiChua": "thang: Tí > Sửu > Dần → Dần thấp nhất → Dần ✓ mèo. Tí không cún, mèo đã của Dần → Tí ✓ vẹt. Còn lại: Sửu ✓ cún",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Con tự làm \"trùm ra đề\": nghĩ một vụ án bảng loại trừ 3 bạn × 3 món đồ với ĐÚNG 2 manh mối, sao cho giải ra được duy nhất một đáp án. Đố bố mẹ giải — và kiểm tra xem manh mối của con có đủ chặt không!",
-   "loiChua": "đề của con \"chặt\" khi bố mẹ chỉ tìm được đúng MỘT đáp án; nếu ra được hai đáp án khác nhau tức là manh mối còn lỏng — thêm một manh mối nữa vào!",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Voi nặng hơn Gấu, Gấu nặng hơn Thỏ thì chắc chắn Voi nặng hơn Thỏ.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Voi nặng hơn Gấu, Gấu nặng hơn Thỏ thì chắc chắn Voi nặng hơn Thỏ.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Trong bảng loại trừ, đánh ✓ một ô thì gạch ✗ các ô cùng hàng và cùng cột.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+   {
+    "id": "Q2",
+    "text": "Trong bảng loại trừ, đánh ✓ một ô thì gạch ✗ các ô cùng hàng và cùng cột.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "\"Su Kem không đeo cặp đỏ\" — từ manh mối này ta biết chắc:",
-   "format": "mcq",
-   "choices": [
-    "A. Su Kem đeo cặp vàng",
-    "B. Su Kem đeo cặp xanh",
-    "C. Chỉ mới loại được cặp đỏ"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "C. Chỉ mới loại được cặp đỏ"
+   {
+    "id": "Q3",
+    "text": "\"Su Kem không đeo cặp đỏ\" — từ manh mối này ta biết chắc:",
+    "format": "mcq",
+    "choices": [
+     "A. Su Kem đeo cặp vàng",
+     "B. Su Kem đeo cặp xanh",
+     "C. Chỉ mới loại được cặp đỏ"
+    ],
+    "answerKey": {
+     "choice": "C. Chỉ mới loại được cặp đỏ"
+    },
+    "solutionNarrative": "Đáp án: C. Chỉ mới loại được cặp đỏ"
    },
-   "loiChua": "Đáp án: C. Chỉ mới loại được cặp đỏ",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "An nhanh hơn Bích, Cường chậm hơn Bích. Ai nhanh nhất?",
-   "format": "mcq",
-   "choices": [
-    "A. An",
-    "B. Bích",
-    "C. Cường"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "A. An"
+   {
+    "id": "Q4",
+    "text": "An nhanh hơn Bích, Cường chậm hơn Bích. Ai nhanh nhất?",
+    "format": "mcq",
+    "choices": [
+     "A. An",
+     "B. Bích",
+     "C. Cường"
+    ],
+    "answerKey": {
+     "choice": "A. An"
+    },
+    "solutionNarrative": "Đáp án: A. An"
    },
-   "loiChua": "Đáp án: A. An",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Hàng của một bạn trong bảng chỉ còn đúng 1 ô trống thì:",
-   "format": "mcq",
-   "choices": [
-    "A. ô đó là đáp án của bạn ấy",
-    "B. phải đoán thêm",
-    "C. bảng bị sai"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "A. ô đó là đáp án của bạn ấy"
-   },
-   "loiChua": "Đáp án: A. ô đó là đáp án của bạn ấy",
-   "solutionNarrative": ""
-  }
- ]
+   {
+    "id": "Q5",
+    "text": "Hàng của một bạn trong bảng chỉ còn đúng 1 ô trống thì:",
+    "format": "mcq",
+    "choices": [
+     "A. ô đó là đáp án của bạn ấy",
+     "B. phải đoán thêm",
+     "C. bảng bị sai"
+    ],
+    "answerKey": {
+     "choice": "A. ô đó là đáp án của bạn ấy"
+    },
+    "solutionNarrative": "Đáp án: A. ô đó là đáp án của bạn ấy"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Biến đồ vật trong nhà thành vụ án: ba chiếc cốc ba màu của ba thành viên + hai manh mối — con kẻ bảng phá án trước bữa cơm.",
+  "homeActivity": "Câu hỏi vàng sau mỗi kết luận của con: \"Manh mối nào cho con biết điều đó?\" — luyện thói quen nói có sách, mách có chứng, quý cho cả môn Văn lẫn đời sống.",
+  "watchFor": "NÊN: bắt đầu từ 2 manh mối, tăng dần lên 3 khi con thạo bảng. KHÔNG NÊN: ra đố \"kẻ nói dối\" phức tạp (một người luôn nói dối...) — dạng ấy dễ ra đề bị hớ và quá sức lớp 2; xếp thang + bảng loại trừ là đủ sâu rồi."
+ },
+ "figureSpec": []
 }

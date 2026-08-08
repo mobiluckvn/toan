@@ -1,309 +1,262 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B22",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 22 · NGHĨ NGƯỢC — ĐI LÙI",
+ "durationMinutes": 10,
  "so": 22,
- "ten": "NGHĨ NGƯỢC — ĐI LÙI",
  "chuong": 6,
  "tenChuong": "Thám tử tí hon",
  "dangGoc": "LV 8.1 — Tính ngược từ cuối (dãy 2 phép tính, chạy máy ngược)",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Tìm được số ban đầu khi biết KẾT QUẢ CUỐI của một chuỗi 2 phép tính.",
-    "Thuộc luật đi lùi: máy vào SAU thì ngược TRƯỚC, và mỗi máy phải ĐẢO phép.",
-    "Thử lại bằng cách chạy xuôi từ số vừa tìm được."
-   ],
-   "goc": [
-    "Tìm được số ban đầu khi biết KẾT QUẢ CUỐI của một chuỗi 2 phép tính.",
-    "Thuộc luật đi lùi: máy vào SAU thì ngược TRƯỚC, và mỗi máy phải ĐẢO phép.",
-    "Thử lại bằng cách chạy xuôi từ số vừa tìm được."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Màn ảo thuật... quên bài",
-   "dong": [
-    "Su Kem biểu diễn ảo thuật: \"Tớ đã nghĩ một số bí mật! Tớ đem nó cộng 3, rồi nhân 2, và kết quả là 16. Đố cả nhà biết số của tớ!\" Cả nhà vỗ tay chờ đáp án... thì Su Kem tái mặt: \"Chết rồi... chính tớ cũng quên mất số ban đầu!\" — Trí Long cười: \"Đừng lo. Số bí mật đi đâu cũng để lại DẤU CHÂN. Mình cứ lần theo dấu chân mà đi lùi về!\""
-   ],
-   "goc": [
-    "Su Kem biểu diễn ảo thuật: \"Tớ đã nghĩ một số bí mật! Tớ đem nó cộng 3, rồi nhân 2, và kết quả là 16. Đố cả nhà biết số của tớ!\" Cả nhà vỗ tay chờ đáp án... thì Su Kem tái mặt: \"Chết rồi... chính tớ cũng quên mất số ban đầu!\" — Trí Long cười: \"Đừng lo. Số bí mật đi đâu cũng để lại DẤU CHÂN. Mình cứ lần theo dấu chân mà đi lùi về!\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Lần theo dấu chân đi lùi",
-   "dong": [
-    "Bước 1. Vẽ HÀNH TRÌNH XUÔI của số bí mật: ? → máy + 3 → máy × 2 → ra 16. Đây là con đường nó đã đi.",
-    "Bước 2. Giờ ĐI LÙI từ 16 về. Nhớ hai điều. Một: máy nào làm SAU CÙNG thì mình đi lùi qua ĐẦU TIÊN. Giống như cởi ba lô trước rồi mới cởi áo. Hai: mỗi máy phải làm ngược lại. Máy × 2 thành máy : 2. Máy + 3 thành máy − 3.",
-    "Bước 3. Đi lùi: 16 : 2 = 8, rồi 8 − 3 = 5. Số bí mật là 5!",
-    "Bước 4. Nghi thức thám tử. THỬ XUÔI: 5 + 3 = 8. 8 × 2 = 16 ✓ khớp lời khai của Su Kem. Vụ án khép lại!",
-    "MẸO THÁM TỬ: \"BA LÔ TRƯỚC, ÁO SAU\": lùi qua máy cuối cùng trước, đảo phép từng máy, và luôn chạy xuôi thử lại. Ba luật — không quên luật nào!"
-   ],
-   "goc": [
-    "Bước 1. Vẽ HÀNH TRÌNH XUÔI của số bí mật: ? → máy + 3 → máy × 2 → ra 16. Đây là con đường nó đã đi.",
-    "Bước 2. Giờ ĐI LÙI từ 16 về. Nhớ hai luật: (1) máy nào số đi qua SAU CÙNG thì mình lùi qua ĐẦU TIÊN — giống buổi sáng con mặc áo rồi mới khoác ba lô, thì lúc về phải tháo ba lô trước rồi mới cởi áo; (2) mỗi máy phải đảo thành máy ngược (Bài 14): × 2 thành : 2, + 3 thành − 3.",
-    "Bước 3. Đi lùi: 16 : 2 = 8, rồi 8 − 3 = 5. Số bí mật là 5!",
-    "Bước 4. Nghi thức thám tử — THỬ XUÔI: 5 + 3 = 8; 8 × 2 = 16 ✓ khớp lời khai của Su Kem. Vụ án khép lại!",
-    "MẸO THÁM TỬ: \"BA LÔ TRƯỚC, ÁO SAU\": lùi qua máy cuối cùng trước, đảo phép từng máy, và luôn chạy xuôi thử lại. Ba luật — không quên luật nào!"
-   ],
-   "hinh": [
+ "skills": {
+  "bktUnit": "CHUONG:6@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 22,
+  "prev": "DL:KSN2.B21",
+  "next": "DL:KSN2.B23"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tìm được số ban đầu khi biết KẾT QUẢ CUỐI của một chuỗi 2 phép tính. Thuộc luật đi lùi: máy vào SAU thì ngược TRƯỚC, và mỗi máy phải ĐẢO phép. Thử lại bằng cách chạy xuôi từ số vừa tìm được.",
+  "kidText": "Tìm được số ban đầu khi biết KẾT QUẢ CUỐI của một chuỗi 2 phép tính. Thuộc luật đi lùi: máy vào SAU thì ngược TRƯỚC, và mỗi máy phải ĐẢO phép. Thử lại bằng cách chạy xuôi từ số vừa tìm được.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Vẽ HÀNH TRÌNH XUÔI của số bí mật: ? → máy + 3 → máy × 2 → ra 16. Đây là con đường nó đã đi."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Giờ ĐI LÙI từ 16 về. Nhớ hai điều. Một: máy nào làm SAU CÙNG thì mình đi lùi qua ĐẦU TIÊN. Giống như cởi ba lô trước rồi mới cởi áo. Hai: mỗi máy phải làm ngược lại. Máy × 2 thành máy : 2. Máy + 3 thành máy − 3."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Đi lùi: 16 : 2 = 8, rồi 8 − 3 = 5. Số bí mật là 5!"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4. Nghi thức thám tử. THỬ XUÔI: 5 + 3 = 8. 8 × 2 = 16 ✓ khớp lời khai của Su Kem. Vụ án khép lại!"
+   }
+  ],
+  "mantra": "\"BA LÔ TRƯỚC, ÁO SAU\": lùi qua máy cuối cùng trước, đảo phép từng máy, và luôn chạy xuôi thử lại. Ba luật — không quên luật nào!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với bài của chính mình (? cộng 3, nhân 2, ra 16), Su Kem đi lùi: \"Ngược của cộng 3 là trừ 3: 16 − 3 = 13. Rồi 13 chia 2 là... ơ, 13 không chia đôi được?!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Su Kem đảo phép ĐÚNG nhưng lùi sai THỨ TỰ. Số bí mật đi qua máy nào sau cùng — phải lùi qua máy đó trước chứ? Gợi ý 2: Chính việc \"13 không chia đôi được\" là chuông báo động cho thám tử: đi lùi mà tắc đường thì gần như chắc chắn nhầm thứ tự. Lùi lại cho đúng giúp Su Kem nhé!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Su Kem biểu diễn ảo thuật: \"Tớ đã nghĩ một số bí mật! Tớ đem nó cộng 3, rồi nhân 2, và kết quả là 16. Đố cả nhà biết số của tớ!\" Cả nhà vỗ tay chờ đáp án... thì Su Kem tái mặt: \"Chết rồi... chính tớ cũng quên mất số ban đầu!\" — Trí Long cười: \"Đừng lo. Số bí mật đi đâu cũng để lại DẤU CHÂN. Mình cứ lần theo dấu chân mà đi lùi về!\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Với bài của chính mình (? cộng 3, nhân 2, ra 16), Su Kem đi lùi: \"Ngược của cộng 3 là trừ 3: 16 − 3 = 13. Rồi 13 chia 2 là... ơ, 13 không chia đôi được?!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Trí Long nghĩ một số. Lấy số đó trừ đi 2, rồi nhân với 3 thì được 12. Tìm số Trí Long đã nghĩ.",
+  "steps": [
+   {
+    "show": "Bài giải: (nháp: ? → − 2 → × 3 → ra 12; đi lùi từ 12)"
+   },
+   {
+    "show": "Trước khi nhân 3, số đó là: 12 : 3 = 4"
+   },
+   {
+    "show": "Trước khi trừ 2, số đó là: 4 + 2 = 6"
+   },
+   {
+    "show": "Thử lại: 6 − 2 = 4; 4 × 3 = 12 ✓"
+   },
+   {
+    "show": "Đáp số: số Trí Long nghĩ là 6."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
     {
-     "id": "L2H_MAY04",
-     "sauDong": 1,
-     "file": "figures/L2H_MAY04.png",
-     "caption": "Hai máy nối nhau: đi lùi thì ngược thứ tự và đảo phép tính",
-     "sha256_16": "1f34466c80fb61cc"
+     "id": "C1",
+     "text": "Một số cộng 5 thì được 13. Tìm số đó.",
+     "solutionNarrative": "13 − 5 = 8"
+    },
+    {
+     "id": "C2",
+     "text": "Một số nhân 4 thì được 24. Tìm số đó.",
+     "solutionNarrative": "24 : 4 = 6"
+    },
+    {
+     "id": "C3",
+     "text": "Một số trừ đi 6 thì được 9. Tìm số đó.",
+     "solutionNarrative": "9 + 6 = 15"
     }
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Trí Long nghĩ một số. Lấy số đó trừ đi 2, rồi nhân với 3 thì được 12. Tìm số Trí Long đã nghĩ.",
-    "Bài giải: (nháp: ? → − 2 → × 3 → ra 12; đi lùi từ 12)",
-    "Trước khi nhân 3, số đó là: 12 : 3 = 4",
-    "Trước khi trừ 2, số đó là: 4 + 2 = 6",
-    "Thử lại: 6 − 2 = 4; 4 × 3 = 12 ✓",
-    "Đáp số: số Trí Long nghĩ là 6."
    ],
-   "goc": [
-    "Đề bài: Trí Long nghĩ một số. Lấy số đó trừ đi 2, rồi nhân với 3 thì được 12. Tìm số Trí Long đã nghĩ.",
-    "Bài giải: (nháp: ? → − 2 → × 3 → ra 12; đi lùi từ 12)",
-    "Trước khi nhân 3, số đó là: 12 : 3 = 4",
-    "Trước khi trừ 2, số đó là: 4 + 2 = 6",
-    "Thử lại: 6 − 2 = 4; 4 × 3 = 12 ✓",
-    "Đáp số: số Trí Long nghĩ là 6."
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Với bài của chính mình (? cộng 3, nhân 2, ra 16), Su Kem đi lùi: \"Ngược của cộng 3 là trừ 3: 16 − 3 = 13. Rồi 13 chia 2 là... ơ, 13 không chia đôi được?!\"",
-    "Gợi ý 1: Su Kem đảo phép ĐÚNG nhưng lùi sai THỨ TỰ. Số bí mật đi qua máy nào sau cùng — phải lùi qua máy đó trước chứ?",
-    "Gợi ý 2: Chính việc \"13 không chia đôi được\" là chuông báo động cho thám tử: đi lùi mà tắc đường thì gần như chắc chắn nhầm thứ tự. Lùi lại cho đúng giúp Su Kem nhé!"
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Một số cộng 4, rồi trừ 6 thì được 10. Tìm số đó.",
+     "solutionNarrative": "đi lùi: 10 + 6 = 16; 16 − 4 = 12 (thử: 12 + 4 = 16; 16 − 6 = 10 ✓)"
+    },
+    {
+     "id": "C5",
+     "text": "Một số nhân 2, rồi cộng 5 thì được 17. Tìm số đó.",
+     "solutionNarrative": "17 − 5 = 12; 12 : 2 = 6"
+    },
+    {
+     "id": "C6",
+     "text": "Một số chia 3, rồi cộng 7 thì được 12. Tìm số đó.",
+     "solutionNarrative": "12 − 7 = 5; 5 × 3 = 15"
+    },
+    {
+     "id": "C7",
+     "text": "Su Kem mua truyện hết 5 nghìn đồng, sau đó được bà cho 8 nghìn. Bây giờ Su Kem có 10 nghìn. Hỏi lúc đầu Su Kem có bao nhiêu tiền? (Vẽ hành trình của ví tiền rồi đi lùi!)",
+     "solutionNarrative": "hành trình ví tiền: ? → − 5 → + 8 → 10; đi lùi: 10 − 8 = 2; 2 + 5 = 7. Lúc đầu Su Kem có 7 nghìn đồng"
+    }
    ],
-   "goc": [
-    "Với bài của chính mình (? cộng 3, nhân 2, ra 16), Su Kem đi lùi: \"Ngược của cộng 3 là trừ 3: 16 − 3 = 13. Rồi 13 chia 2 là... ơ, 13 không chia đôi được?!\"",
-    "Gợi ý 1: Su Kem đảo phép ĐÚNG nhưng lùi sai THỨ TỰ. Số bí mật đi qua máy nào sau cùng — phải lùi qua máy đó trước chứ?",
-    "Gợi ý 2: Chính việc \"13 không chia đôi được\" là chuông báo động cho thám tử: đi lùi mà tắc đường thì gần như chắc chắn nhầm thứ tự. Lùi lại cho đúng giúp Su Kem nhé!"
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Chơi \"ảo thuật đoán số\" cả nhà: con nghĩ số, làm 2 phép tính, đọc kết quả — bố mẹ đi lùi đoán; rồi đổi vai. Trẻ ra đề cho người lớn là lúc trẻ học sâu nhất.",
-    "Ví dụ đời thật rất hợp: hành trình của ví tiền (tiêu bớt - được cho thêm), của rổ táo (ăn bớt - hái thêm) — mọi thứ có \"trước - sau\" đều đi lùi được.",
-    "NÊN: cho con VẼ chuỗi máy ra giấy trước khi lùi. KHÔNG NÊN: gọi đây là \"giải phương trình\" — với con, đây là trò lần theo dấu chân, và cứ để nguyên như thế cho đến lớp trên."
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "BA máy: một số cộng 2, nhân 2, rồi trừ 4 thì được 10. Tìm số đó (lùi qua ba máy — ba lô, áo khoác, rồi mới đến áo!).",
+     "solutionNarrative": "lùi ba máy: 10 + 4 = 14; 14 : 2 = 7; 7 − 2 = 5 → số đó là 5 (thử: 5 + 2 = 7; 7 × 2 = 14; 14 − 4 = 10 ✓)"
+    },
+    {
+     "id": "C9",
+     "text": "Chim mẹ tha mồi về tổ: buổi sáng số sâu trong tổ tăng gấp đôi, buổi chiều chim con ăn mất 6 con, tối đếm còn 4 con sâu. Hỏi sáng sớm tổ có mấy con sâu?",
+     "solutionNarrative": "? → gấp đôi → − 6 → 4; đi lùi: 4 + 6 = 10; 10 : 2 = 5 → sáng sớm tổ có 5 con sâu"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một số cộng 5 thì được 13. Tìm số đó.",
-   "loiChua": "13 − 5 = 8",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một số nhân 4 thì được 24. Tìm số đó.",
-   "loiChua": "24 : 4 = 6",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một số trừ đi 6 thì được 9. Tìm số đó.",
-   "loiChua": "9 + 6 = 15",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một số cộng 4, rồi trừ 6 thì được 10. Tìm số đó.",
-   "loiChua": "đi lùi: 10 + 6 = 16; 16 − 4 = 12 (thử: 12 + 4 = 16; 16 − 6 = 10 ✓)",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một số nhân 2, rồi cộng 5 thì được 17. Tìm số đó.",
-   "loiChua": "17 − 5 = 12; 12 : 2 = 6",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Một số chia 3, rồi cộng 7 thì được 12. Tìm số đó.",
-   "loiChua": "12 − 7 = 5; 5 × 3 = 15",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Su Kem mua truyện hết 5 nghìn đồng, sau đó được bà cho 8 nghìn. Bây giờ Su Kem có 10 nghìn. Hỏi lúc đầu Su Kem có bao nhiêu tiền? (Vẽ hành trình của ví tiền rồi đi lùi!)",
-   "loiChua": "hành trình ví tiền: ? → − 5 → + 8 → 10; đi lùi: 10 − 8 = 2; 2 + 5 = 7. Lúc đầu Su Kem có 7 nghìn đồng",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "BA máy: một số cộng 2, nhân 2, rồi trừ 4 thì được 10. Tìm số đó (lùi qua ba máy — ba lô, áo khoác, rồi mới đến áo!).",
-   "loiChua": "lùi ba máy: 10 + 4 = 14; 14 : 2 = 7; 7 − 2 = 5 → số đó là 5 (thử: 5 + 2 = 7; 7 × 2 = 14; 14 − 4 = 10 ✓)",
-   "tuLuan": true
-  },
-  {
-   "id": "C9",
-   "maSach": "C9",
-   "so": 9,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Chim mẹ tha mồi về tổ: buổi sáng số sâu trong tổ tăng gấp đôi, buổi chiều chim con ăn mất 6 con, tối đếm còn 4 con sâu. Hỏi sáng sớm tổ có mấy con sâu?",
-   "loiChua": "? → gấp đôi → − 6 → 4; đi lùi: 4 + 6 = 10; 10 : 2 = 5 → sáng sớm tổ có 5 con sâu",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Đi lùi thì máy vào sau phải lùi qua trước.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Đi lùi thì máy vào sau phải lùi qua trước.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Đi lùi qua máy × 2 thì dùng phép : 2.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+   {
+    "id": "Q2",
+    "text": "Đi lùi qua máy × 2 thì dùng phép : 2.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
+   {
+    "id": "Q3",
+    "text": "Một số cộng 5 được 12. Số đó là:",
+    "format": "mcq",
+    "choices": [
+     "A. 17",
+     "B. 7",
+     "C. 5"
+    ],
+    "answerKey": {
+     "choice": "B. 7"
+    },
+    "solutionNarrative": "Đáp án: B. 7"
+   },
+   {
+    "id": "Q4",
+    "text": "Một số nhân 2 rồi cộng 1 được 9. Số đó là:",
+    "format": "mcq",
+    "choices": [
+     "A. 4",
+     "B. 5",
+     "C. 16"
+    ],
+    "answerKey": {
+     "choice": "A. 4"
+    },
+    "solutionNarrative": "Đáp án: A. 4"
+   },
+   {
+    "id": "Q5",
+    "text": "Tìm xong số bí mật, thám tử nên:",
+    "format": "mcq",
+    "choices": [
+     "A. chốt đáp án luôn",
+     "B. chạy xuôi thử lại",
+     "C. đi lùi thêm lần nữa"
+    ],
+    "answerKey": {
+     "choice": "B. chạy xuôi thử lại"
+    },
+    "solutionNarrative": "Đáp án: B. chạy xuôi thử lại"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chơi \"ảo thuật đoán số\" cả nhà: con nghĩ số, làm 2 phép tính, đọc kết quả — bố mẹ đi lùi đoán; rồi đổi vai. Trẻ ra đề cho người lớn là lúc trẻ học sâu nhất.",
+  "homeActivity": "Ví dụ đời thật rất hợp: hành trình của ví tiền (tiêu bớt - được cho thêm), của rổ táo (ăn bớt - hái thêm) — mọi thứ có \"trước - sau\" đều đi lùi được.",
+  "watchFor": "NÊN: cho con VẼ chuỗi máy ra giấy trước khi lùi. KHÔNG NÊN: gọi đây là \"giải phương trình\" — với con, đây là trò lần theo dấu chân, và cứ để nguyên như thế cho đến lớp trên."
+ },
+ "figureSpec": [
   {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Một số cộng 5 được 12. Số đó là:",
-   "format": "mcq",
-   "choices": [
-    "A. 17",
-    "B. 7",
-    "C. 5"
+   "id": "L2H_MAY04",
+   "usedIn": [
+    "screen:S3"
    ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 7"
-   },
-   "loiChua": "Đáp án: B. 7",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Một số nhân 2 rồi cộng 1 được 9. Số đó là:",
-   "format": "mcq",
-   "choices": [
-    "A. 4",
-    "B. 5",
-    "C. 16"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "A. 4"
-   },
-   "loiChua": "Đáp án: A. 4",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Tìm xong số bí mật, thám tử nên:",
-   "format": "mcq",
-   "choices": [
-    "A. chốt đáp án luôn",
-    "B. chạy xuôi thử lại",
-    "C. đi lùi thêm lần nữa"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. chạy xuôi thử lại"
-   },
-   "loiChua": "Đáp án: B. chạy xuôi thử lại",
-   "solutionNarrative": ""
+   "file": "figures/L2H_MAY04.png",
+   "caption": "Hai máy nối nhau: đi lùi thì ngược thứ tự và đảo phép tính",
+   "sha256_16": "1f34466c80fb61cc",
+   "mucGoc": "khamPha"
   }
  ]
 }

@@ -1,0 +1,188 @@
+# -*- coding: utf-8 -*-
+"""
+Đưa bài lớp 2 về ĐÚNG khuôn dữ liệu của lớp 5, để hai lớp dùng chung một bộ mã.
+
+Trước đây lớp 2 có khuôn riêng (muc + cau) nên phải có phòng học riêng
+(Lop2Player, HomeLop2), và mọi tính năng của lớp 5 — nhật ký học, sổ phụ huynh,
+bảng cô giáo, BKT, nhớ chỗ học dở, gợi ý theo số lần sai — đều không dùng được.
+
+Bảng khớp mục:
+    ① mucTieu      → objective            (mục tiêu, hiện ở màn mở bài)
+    ② chuyenMoBai  → lecture.screens hook (tình huống mở bài)
+    ③ khamPha      → knowledgeCore.statements + lecture.screens explain
+    ④ viDuMau      → workedExample
+    ⑤ suKemNham    → knowledgeCore.misconceptions + screen kind 'trap'
+    ⑥ luyenTap     → practice.pools warmup/standard/challenge (theo ★ MỨC 1/2/3)
+    ⑦ quiz         → assessment.items  (đã có answerKey nên chấm máy được)
+    ⑧ gocBoMe      → parentNote
+       hình         → figureSpec
+
+KHÔNG bịa dữ liệu cho những trường lớp 5 có mà sách lớp 2 không có (videoSpec,
+entryCheck, spacedReview…): thà thiếu còn hơn hiện ra một màn rỗng cho bé đọc.
+"""
+import re
+
+# Mục nào của lớp 2 rơi vào chỗ nào trong khuôn hình của lớp 5
+NOI_DUNG_HINH = {
+    'chuyenMoBai': 'hook', 'khamPha': 'teach_domain', 'viDuMau': 'teach_core',
+    'suKemNham': 'trap', 'mucTieu': 'mantra', 'luyenTap': 'practice', 'quiz': 'assess',
+}
+MUC_POOL = {1: 'warmup', 2: 'standard', 3: 'challenge'}
+# Sách không nhất quán tên bước: phần lớn ghi "Bước 1.", nhưng bài 16 và 27 ghi
+# "Nhịp 1 —", bài 25 ghi "Vũ khí 2 —". Bỏ sót là bài ấy KHÔNG có nguyên tắc nào,
+# phòng học dựng ra chặng giảng trống trơn mà chẳng có gì báo.
+R_BUOC = re.compile(r'^(Bước|Nhịp|Vũ khí|Chặng)\s*\d+\s*[.—–-]|^(MẸO|LUẬT)[^:]*:')
+
+
+def _dong(bai, ten):
+    return list((bai['muc'].get(ten) or {}).get('dong') or [])
+
+
+def _hinh(bai, ten):
+    return list((bai['muc'].get(ten) or {}).get('hinh') or [])
+
+
+def _cau_meo(dong):
+    """Câu 'MẸO THÁM TỬ: …' là câu chốt của bài — lớp 5 gọi là mantra."""
+    for d in dong:
+        if d.startswith(('MẸO', 'LUẬT')):
+            return re.sub(r'^(MẸO[^:]*|LUẬT[^:]*):\s*', '', d).strip()
+    return ''
+
+
+def sang_khuon_chung(bai, truoc=None, sau=None):
+    """bai: bản lớp 2 (muc + cau) → dict đúng khuôn lớp 5."""
+    so = bai['so']
+    ma = f'KSN2_B{so:02d}'
+
+    # ── ③ khám phá → nguyên tắc + màn giảng ──
+    kham = _dong(bai, 'khamPha')
+    buoc = [d for d in kham if R_BUOC.match(d)]
+    khac = [d for d in kham if not R_BUOC.match(d)]
+    statements = [{'id': f'K{i}', 'text': d} for i, d in enumerate(buoc, 1)
+                  if not d.startswith(('MẸO', 'LUẬT'))]
+
+    # MỖI BƯỚC MỘT MÀN. Bé 7-8 tuổi đọc chậm, dồn cả 4 bước vào một màn là bé nản
+    # ngay từ màn đầu. Đây là chỗ hiện thực "nhịp đọc lớp 2" — làm bằng DỮ LIỆU chứ
+    # không phải bằng một phòng học riêng.
+    screens = []
+    mo = _dong(bai, 'chuyenMoBai')
+    if mo:
+        screens.append({'id': 'S1', 'kind': 'hook', 'narration': ' '.join(mo)})
+    for i, st in enumerate(statements, 1):
+        screens.append({'id': f'S{i + 1}', 'kind': 'explain', 'narration': '',
+                        'teaches': [st['id']]})
+    if khac:
+        # lời dặn thêm (không phải "Bước n") gắn vào màn cuối của phần giảng
+        if screens and screens[-1]['kind'] == 'explain':
+            screens[-1]['narration'] = ' '.join(khac)
+        else:
+            screens.append({'id': f'S{len(screens) + 1}', 'kind': 'explain',
+                            'narration': ' '.join(khac), 'teaches': []})
+
+    # ── ⑤ Su Kem nhầm → chỗ hay sai + màn bẫy ──
+    nham = _dong(bai, 'suKemNham')
+    misconceptions = []
+    if nham:
+        screens.append({'id': f'S{len(screens) + 1}', 'kind': 'trap',
+                        'narration': nham[0], 'teaches': []})
+        misconceptions.append({
+            'wrong': nham[0],
+            'signal': 'Bé làm theo cách Su Kem vừa nói.',
+            'fix': ' '.join(nham[1:]) or 'Con thử làm lại theo đúng các bước ở trên nhé.',
+        })
+
+    # ── hình: gắn vào ĐÚNG màn nó minh hoạ ──
+    # Lớp 5 chỉ đặt được hai hình trong phần giảng (hình khái niệm, hình cách làm).
+    # Hình lớp 2 nhiều hơn thế và mỗi hình thuộc một BƯỚC cụ thể — thiếu hình đúng
+    # chỗ thì lời văn treo lơ lửng ở dấu hai chấm. Nên chỉ đích danh màn: 'screen:S3'.
+    man_cua_buoc = {}                       # số thứ tự dòng "Bước n" → mã màn
+    dem = 0
+    for k, d in enumerate(kham):
+        if R_BUOC.match(d) and not d.startswith(('MẸO', 'LUẬT')):
+            dem += 1
+            man_cua_buoc[k] = f'S{dem + (1 if mo else 0)}'
+
+    fig, n = [], 0
+    for ten_muc, cho in NOI_DUNG_HINH.items():
+        for h in _hinh(bai, ten_muc):
+            n += 1
+            noi = cho
+            if ten_muc == 'khamPha':
+                # hình đứng ngay sau dòng nào thì thuộc màn của dòng ấy
+                # KHÔNG đặt tên `truoc` ở đây: nó là tham số của hàm (bài liền trước),
+                # đè lên là series.prev ra danh sách chỉ số dòng.
+                dong_truoc = [k for k in man_cua_buoc if k <= h.get('sauDong', 0)]
+                if dong_truoc:
+                    noi = f'screen:{man_cua_buoc[max(dong_truoc)]}'
+            fig.append({'id': h.get('id') or f'F{n}', 'usedIn': [noi],
+                        'file': h['file'], 'caption': h.get('caption', ''),
+                        'sha256_16': h.get('sha256_16', ''), 'mucGoc': ten_muc})
+
+    # ── ④ ví dụ mẫu → workedExample ──
+    vd = _dong(bai, 'viDuMau')
+    de = next((d for d in vd if d.startswith('Đề bài')), '')
+    worked = None
+    if vd:
+        worked = {'title': 'Bài mẫu',
+                  'problem': re.sub(r'^Đề bài:\s*', '', de) or vd[0],
+                  'steps': [{'show': d} for d in vd if d is not de and d != de]}
+
+    # ── ⑥⑦ câu hỏi ──
+    pools = {'warmup': [], 'standard': [], 'challenge': []}
+    assess = []
+    for c in bai['cau']:
+        item = {'id': c['id'], 'text': c['text']}
+        if c.get('format'):
+            item['format'] = c['format']
+        if c.get('choices'):
+            item['choices'] = c['choices']
+        if c.get('answerKey'):
+            item['answerKey'] = c['answerKey']
+        # Câu tự luận: lời chữa của sách chính là lời giải mẫu bé đối chiếu.
+        if c.get('loiChua'):
+            item['solutionNarrative'] = c['loiChua']
+        elif not c.get('answerKey'):
+            # Sách có vài câu là VIỆC LÀM BẰNG TAY (úp vật tròn lên giấy rồi tô
+            # theo viền…) nên cố tình không có đáp án. Nói thẳng với bé thay vì
+            # bịa một lời giải, cũng thay vì để trống rồi bé bấm mãi không ra gì.
+            item['thucHanh'] = True
+            item['solutionNarrative'] = ('Câu này con làm bằng tay rồi khoe bố mẹ nhé — '
+                                         'sách không có đáp án để so.')
+        if c['phan'] == 'quiz':
+            assess.append(item)
+        else:
+            pools[MUC_POOL.get(c.get('muc', 1), 'warmup')].append(item)
+
+    # ── ⑧ góc bố mẹ ──
+    gbm = _dong(bai, 'gocBoMe')
+    nen = next((d for d in gbm if d.startswith('NÊN')), '')
+    parent = {'onComplete': gbm[0] if gbm else '',
+              'homeActivity': gbm[1] if len(gbm) > 1 else '',
+              'watchFor': nen}
+
+    muc_tieu = ' '.join(_dong(bai, 'mucTieu'))
+    return {
+        '$schema': 'digital-lesson/v2-micro',
+        'id': bai['id'], 'grade': 2, 'quyen': 'lop2',
+        'title': f"Bài {so} · {bai['ten']}",
+        'durationMinutes': 10,
+        'so': so, 'chuong': bai['chuong'], 'tenChuong': bai['tenChuong'],
+        'dangGoc': bai.get('dangGoc', ''),
+        'skills': {'bktUnit': f"CHUONG:{bai['chuong']}@G2", 'primary': []},
+        'series': {'order': so, 'prev': truoc, 'next': sau},
+        'objective': {'id': 'O1', 'text': muc_tieu, 'kidText': muc_tieu,
+                      'passRule': 'đúng ≥ 4/5 câu tự kiểm'},
+        'knowledgeCore': {
+            'statements': statements,
+            'mantra': _cau_meo(kham) or f"Bài {so}: {bai['ten']}",
+            'vocabulary': [], 'canonicalExamples': [],
+            'misconceptions': misconceptions,
+        },
+        'lecture': {'screens': screens},
+        'workedExample': worked,
+        'practice': {'pools': pools},
+        'assessment': {'passRule': '≥ 4/5', 'items': assess},
+        'parentNote': parent,
+        'figureSpec': fig,
+    }

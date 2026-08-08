@@ -1,300 +1,251 @@
 {
+ "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN2.B11",
+ "grade": 2,
  "quyen": "lop2",
+ "title": "Bài 11 · SỐ CHẴN - SỐ LẺ & BÍ MẬT BẢNG NHÂN",
+ "durationMinutes": 10,
  "so": 11,
- "ten": "SỐ CHẴN - SỐ LẺ & BÍ MẬT BẢNG NHÂN",
  "chuong": 3,
  "tenChuong": "Dãy số kỳ diệu",
  "dangGoc": "SỐ 6.1 + 6.4 — Tiền thân dấu hiệu chia hết và chữ số tận cùng",
- "muc": {
-  "mucTieu": {
-   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
-   "dong": [
-    "Nhận biết số chẵn - số lẻ bằng hai cách: chia đôi kẹo và nhìn chữ số TẬN CÙNG.",
-    "Thuộc hai bí mật: kết quả bảng nhân 2 luôn tận cùng chẵn. Bảng nhân 5 luôn tận cùng 0 hoặc 5.",
-    "Đoán được tổng hai số là chẵn hay lẻ mà KHÔNG cần tính hết."
+ "skills": {
+  "bktUnit": "CHUONG:3@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 11,
+  "prev": "DL:KSN2.B10",
+  "next": "DL:KSN2.B12"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhận biết số chẵn - số lẻ bằng hai cách: chia đôi kẹo và nhìn chữ số TẬN CÙNG. Thuộc hai bí mật: kết quả bảng nhân 2 luôn tận cùng chẵn. Bảng nhân 5 luôn tận cùng 0 hoặc 5. Đoán được tổng hai số là chẵn hay lẻ mà KHÔNG cần tính hết.",
+  "kidText": "Nhận biết số chẵn - số lẻ bằng hai cách: chia đôi kẹo và nhìn chữ số TẬN CÙNG. Thuộc hai bí mật: kết quả bảng nhân 2 luôn tận cùng chẵn. Bảng nhân 5 luôn tận cùng 0 hoặc 5. Đoán được tổng hai số là chẵn hay lẻ mà KHÔNG cần tính hết.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Số CHẴN là số chia đôi được đều tăm tắp (8 = 4 + 4). Số LẺ chia đôi luôn thừa 1 viên (7 = 3 + 3 + 1 viên lẻ loi)."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Bí mật nằm ở chữ số TẬN CÙNG (chữ số cuối cùng bên phải): tận cùng 0, 2, 4, 6, 8 → số chẵn. Tận cùng 1, 3, 5, 7, 9 → số lẻ. Số to cỡ nào cũng vậy: 134 tận cùng 4 → chẵn; 275 tận cùng 5 → lẻ. Không cần chia thử!"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Giờ soi bảng cửu chương bằng con mắt thám tử. Hai bảng quen thuộc đang giấu hai bí mật rất đẹp:"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4. Bí mật cuối. Trò ảo thuật với phép cộng: lấy kẹo ra xếp thử, con sẽ thấy CHẴN + CHẴN = CHẴN. LẺ + LẺ = CHẴN (hai viên lẻ loi bắt cặp với nhau!). CHẴN + LẺ = LẺ. Nhờ vậy chỉ cần nhìn tận cùng hai số là đoán được tổng chẵn hay lẻ — chưa cần tính!"
+   }
+  ],
+  "mantra": "Tính nết chẵn - lẻ của một số nằm hết ở CÁI ĐUÔI của nó. Và hai viên kẹo lẻ loi gặp nhau thì bắt cặp thành... chẵn!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Su Kem tuyên bố: \"35 là số CHẴN nhé! Vì 3 cộng 5 bằng 8, mà 8 chẵn!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Muốn biết chẵn - lẻ, ta nhìn vào đâu của con số. Cái ĐUÔI hay TỔNG các chữ số? Gợi ý 2: Lấy 35 viên kẹo (tưởng tượng thôi!) chia đôi xem có thừa viên nào không, rồi kết luận giúp Su Kem."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Sinh nhật Su Kem! Hai bạn chia kẹo: gói thứ nhất có 8 viên. Chia đôi mỗi người 4 viên, vui vẻ cả làng. Gói thứ hai có 7 viên — chia mãi vẫn thừa đúng MỘT viên lẻ loi nằm giữa bàn. Su Kem thở dài: \"Giá mà nhìn gói kẹo là biết ngay có chia đôi đều được không nhỉ...\". Trí Long bật cười: \"Nhìn được đấy! Chỉ cần liếc một chữ số thôi.\""
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Su Kem tuyên bố: \"35 là số CHẴN nhé! Vì 3 cộng 5 bằng 8, mà 8 chẵn!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Không tính kết quả, cho biết tổng 26 + 13 là số chẵn hay số lẻ.",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Số 26 tận cùng là 6 → số chẵn. Số 13 tận cùng là 3 → số lẻ."
+   },
+   {
+    "show": "Chẵn + Lẻ = Lẻ, nên tổng 26 + 13 là số lẻ."
+   },
+   {
+    "show": "Đáp số: số lẻ."
+   },
+   {
+    "show": "Tự kiểm tra: 26 + 13 = 39, tận cùng 9 — đúng là số lẻ ✓."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Khoanh số chẵn: 12, 7, 30, 45, 68, 91.",
+     "solutionNarrative": "12, 30, 68"
+    },
+    {
+     "id": "C2",
+     "text": "Các số sau là chẵn hay lẻ: 134; 275; 480; 99?",
+     "solutionNarrative": "134 chẵn; 275 lẻ; 480 chẵn; 99 lẻ"
+    },
+    {
+     "id": "C3",
+     "text": "Viết 3 số chẵn liên tiếp bắt đầu từ 16.",
+     "solutionNarrative": "16, 18, 20"
+    }
    ],
-   "goc": [
-    "Nhận biết số chẵn - số lẻ bằng hai cách: chia đôi kẹo và nhìn chữ số TẬN CÙNG.",
-    "Thuộc hai bí mật: kết quả bảng nhân 2 luôn tận cùng chẵn; bảng nhân 5 luôn tận cùng 0 hoặc 5.",
-    "Đoán được tổng hai số là chẵn hay lẻ mà KHÔNG cần tính hết."
-   ]
-  },
-  "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Viên kẹo lẻ loi",
-   "dong": [
-    "Sinh nhật Su Kem! Hai bạn chia kẹo: gói thứ nhất có 8 viên. Chia đôi mỗi người 4 viên, vui vẻ cả làng. Gói thứ hai có 7 viên — chia mãi vẫn thừa đúng MỘT viên lẻ loi nằm giữa bàn. Su Kem thở dài: \"Giá mà nhìn gói kẹo là biết ngay có chia đôi đều được không nhỉ...\". Trí Long bật cười: \"Nhìn được đấy! Chỉ cần liếc một chữ số thôi.\""
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Đọc kết quả bảng nhân 2 (2, 4, ..., 20): các chữ số tận cùng lần lượt là gì? Chúng có gì chung?",
+     "solutionNarrative": "tận cùng lần lượt 2, 4, 6, 8, 0 rồi lặp lại — toàn chữ số chẵn"
+    },
+    {
+     "id": "C5",
+     "text": "Không tính, đoán tổng sau chẵn hay lẻ rồi mới tính kiểm tra: (a) 14 + 22; (b) 15 + 23; (c) 30 + 47.",
+     "solutionNarrative": "(a) chẵn + chẵn = chẵn (= 36 ✓); (b) lẻ + lẻ = chẵn (= 38 ✓); (c) chẵn + lẻ = lẻ (= 77 ✓)"
+    },
+    {
+     "id": "C6",
+     "text": "Số 40 có thuộc bảng nhân 5 không? Số 43 thì sao? Con dùng bí mật tận cùng để trả lời thật nhanh.",
+     "solutionNarrative": "40 tận cùng 0 → thuộc bảng nhân 5 (5 × 8); 43 tận cùng 3 → không thuộc"
+    },
+    {
+     "id": "C7",
+     "text": "Tìm số chẵn lớn nhất có 2 chữ số và số lẻ bé nhất có 3 chữ số.",
+     "solutionNarrative": "số chẵn lớn nhất có 2 chữ số: 98; số lẻ bé nhất có 3 chữ số: 101"
+    }
    ],
-   "goc": [
-    "Sinh nhật Su Kem! Hai bạn chia kẹo: gói thứ nhất có 8 viên — chia đôi mỗi người 4 viên, vui vẻ cả làng. Gói thứ hai có 7 viên — chia mãi vẫn thừa đúng MỘT viên lẻ loi nằm giữa bàn. Su Kem thở dài: \"Giá mà nhìn gói kẹo là biết ngay có chia đôi đều được không nhỉ...\" — Trí Long bật cười: \"Nhìn được đấy! Chỉ cần liếc một chữ số thôi.\""
-   ]
-  },
-  "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Nhìn \"đuôi\" đoán tính nết",
-   "dong": [
-    "Bước 1. Số CHẴN là số chia đôi được đều tăm tắp (8 = 4 + 4). Số LẺ chia đôi luôn thừa 1 viên (7 = 3 + 3 + 1 viên lẻ loi).",
-    "Bước 2. Bí mật nằm ở chữ số TẬN CÙNG (chữ số cuối cùng bên phải): tận cùng 0, 2, 4, 6, 8 → số chẵn. Tận cùng 1, 3, 5, 7, 9 → số lẻ. Số to cỡ nào cũng vậy: 134 tận cùng 4 → chẵn; 275 tận cùng 5 → lẻ. Không cần chia thử!",
-    "Bước 3. Giờ soi bảng cửu chương bằng con mắt thám tử. Hai bảng quen thuộc đang giấu hai bí mật rất đẹp:",
-    "Bước 4. Bí mật cuối. Trò ảo thuật với phép cộng: lấy kẹo ra xếp thử, con sẽ thấy CHẴN + CHẴN = CHẴN. LẺ + LẺ = CHẴN (hai viên lẻ loi bắt cặp với nhau!). CHẴN + LẺ = LẺ. Nhờ vậy chỉ cần nhìn tận cùng hai số là đoán được tổng chẵn hay lẻ — chưa cần tính!",
-    "MẸO THÁM TỬ: Tính nết chẵn - lẻ của một số nằm hết ở CÁI ĐUÔI của nó. Và hai viên kẹo lẻ loi gặp nhau thì bắt cặp thành... chẵn!"
-   ],
-   "goc": [
-    "Bước 1. Số CHẴN là số chia đôi được đều tăm tắp (8 = 4 + 4). Số LẺ chia đôi luôn thừa 1 viên (7 = 3 + 3 + 1 viên lẻ loi).",
-    "Bước 2. Bí mật nằm ở chữ số TẬN CÙNG (chữ số cuối cùng bên phải): tận cùng 0, 2, 4, 6, 8 → số chẵn; tận cùng 1, 3, 5, 7, 9 → số lẻ. Số to cỡ nào cũng vậy: 134 tận cùng 4 → chẵn; 275 tận cùng 5 → lẻ. Không cần chia thử!",
-    "Bước 3. Giờ soi bảng cửu chương bằng con mắt thám tử — hai bảng quen thuộc đang giấu hai bí mật rất đẹp:",
-    "Bước 4. Bí mật cuối — trò ảo thuật với phép cộng: lấy kẹo ra xếp thử, con sẽ thấy CHẴN + CHẴN = CHẴN; LẺ + LẺ = CHẴN (hai viên lẻ loi bắt cặp với nhau!); CHẴN + LẺ = LẺ. Nhờ vậy chỉ cần nhìn tận cùng hai số là đoán được tổng chẵn hay lẻ — chưa cần tính!",
-    "MẸO THÁM TỬ: Tính nết chẵn - lẻ của một số nằm hết ở CÁI ĐUÔI của nó. Và hai viên kẹo lẻ loi gặp nhau thì bắt cặp thành... chẵn!"
-   ]
-  },
-  "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
-   "dong": [
-    "Đề bài: Không tính kết quả, cho biết tổng 26 + 13 là số chẵn hay số lẻ.",
-    "Bài giải:",
-    "Số 26 tận cùng là 6 → số chẵn. Số 13 tận cùng là 3 → số lẻ.",
-    "Chẵn + Lẻ = Lẻ, nên tổng 26 + 13 là số lẻ.",
-    "Đáp số: số lẻ.",
-    "Tự kiểm tra: 26 + 13 = 39, tận cùng 9 — đúng là số lẻ ✓."
-   ],
-   "goc": [
-    "Đề bài: Không tính kết quả, cho biết tổng 26 + 13 là số chẵn hay số lẻ.",
-    "Bài giải:",
-    "Số 26 tận cùng là 6 → số chẵn. Số 13 tận cùng là 3 → số lẻ.",
-    "Chẵn + Lẻ = Lẻ, nên tổng 26 + 13 là số lẻ.",
-    "Đáp số: số lẻ.",
-    "Tự kiểm tra: 26 + 13 = 39, tận cùng 9 — đúng là số lẻ ✓."
-   ]
-  },
-  "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
-   "dong": [
-    "Su Kem tuyên bố: \"35 là số CHẴN nhé! Vì 3 cộng 5 bằng 8, mà 8 chẵn!\"",
-    "Gợi ý 1: Muốn biết chẵn - lẻ, ta nhìn vào đâu của con số. Cái ĐUÔI hay TỔNG các chữ số?",
-    "Gợi ý 2: Lấy 35 viên kẹo (tưởng tượng thôi!) chia đôi xem có thừa viên nào không, rồi kết luận giúp Su Kem."
-   ],
-   "goc": [
-    "Su Kem tuyên bố: \"35 là số CHẴN nhé! Vì 3 cộng 5 bằng 8, mà 8 chẵn!\"",
-    "Gợi ý 1: Muốn biết chẵn - lẻ, ta nhìn vào đâu của con số — cái ĐUÔI hay TỔNG các chữ số?",
-    "Gợi ý 2: Lấy 35 viên kẹo (tưởng tượng thôi!) chia đôi xem có thừa viên nào không, rồi kết luận giúp Su Kem."
-   ]
-  },
-  "luyenTap": {
-   "ten": "LUYỆN TẬP 3 MỨC SAO",
-   "dong": [],
-   "goc": []
-  },
-  "quiz": {
-   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
-   "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
-   ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
-  },
-  "gocBoMe": {
-   "ten": "GÓC BỐ MẸ",
-   "dong": [
-    "Trò \"máy đoán chẵn lẻ\": con làm máy, bố mẹ đọc số bất kỳ (kể cả số to như 4 786) — máy chỉ được nhìn đuôi và trả lời trong 2 giây. Trẻ rất khoái làm máy!",
-    "Chia kẹo/hạt lạc thật để con TỰ khám phá \"lẻ + lẻ = chẵn\" (hai viên lẻ loi bắt cặp) — đừng nói trước kết luận.",
-    "NÊN: dùng đúng từ \"chữ số tận cùng\". KHÔNG NÊN: dạy dấu hiệu chia hết cho 3, 9 (cộng các chữ số) lúc này — dễ trộn lẫn với mẹo nhìn đuôi; các dấu hiệu ấy là bài học lớp 4."
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Không cộng hết, đoán xem tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 là chẵn hay lẻ. (Mẹo: các số lẻ trong đó bắt cặp với nhau — đếm xem có mấy \"viên kẹo lẻ loi\", có bạn nào bị ế cặp không?) Sau đó dùng tuyệt chiêu Gauss nhí của Bài 13 sắp học... à không, dùng máy đếm tay để kiểm tra cũng được!",
+     "solutionNarrative": "các số lẻ trong tổng là 1, 3, 5, 7, 9 — có 5 \"viên kẹo lẻ loi\". Bốn viên bắt thành hai cặp (thành chẵn), còn đúng 1 viên bị ế → tổng là số LẺ. Kiểm tra: 1 + 2 + ... + 9 = 45, tận cùng 5 — lẻ thật ✓"
+    },
+    {
+     "id": "C9",
+     "text": "Su Kem nhân một số trong bảng 5 với một số trong bảng 2 (ví dụ 5 × 4, 15 × 2...). Trí Long chưa nhìn phép tính đã nói ngay: \"Kết quả tận cùng là 0!\" Con thử vài phép tính xem Trí Long nói đúng không, rồi giải thích vì sao bằng lời của con.",
+     "solutionNarrative": "Trí Long nói đúng! Thử: 5 × 4 = 20; 15 × 2 = 30; 5 × 6 = 30 — đều tận cùng 0. Giải thích kiểu lớp 2: số trong bảng 5 tận cùng 0 hoặc 5; nhân với số chẵn (bảng 2) thì phần \"5\" cũng thành chẵn cặp đôi tròn chục → đuôi luôn là 0. (Bí mật đầy đủ \"2 × 5 = 10\" con sẽ gặp lại ở lớp 4!)"
+    }
    ]
   }
  },
- "cau": [
-  {
-   "id": "C1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Khoanh số chẵn: 12, 7, 30, 45, 68, 91.",
-   "loiChua": "12, 30, 68",
-   "tuLuan": true
-  },
-  {
-   "id": "C2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Các số sau là chẵn hay lẻ: 134; 275; 480; 99?",
-   "loiChua": "134 chẵn; 275 lẻ; 480 chẵn; 99 lẻ",
-   "tuLuan": true
-  },
-  {
-   "id": "C3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Viết 3 số chẵn liên tiếp bắt đầu từ 16.",
-   "loiChua": "16, 18, 20",
-   "tuLuan": true
-  },
-  {
-   "id": "C4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Đọc kết quả bảng nhân 2 (2, 4, ..., 20): các chữ số tận cùng lần lượt là gì? Chúng có gì chung?",
-   "loiChua": "tận cùng lần lượt 2, 4, 6, 8, 0 rồi lặp lại — toàn chữ số chẵn",
-   "tuLuan": true
-  },
-  {
-   "id": "C5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Không tính, đoán tổng sau chẵn hay lẻ rồi mới tính kiểm tra: (a) 14 + 22; (b) 15 + 23; (c) 30 + 47.",
-   "loiChua": "(a) chẵn + chẵn = chẵn (= 36 ✓); (b) lẻ + lẻ = chẵn (= 38 ✓); (c) chẵn + lẻ = lẻ (= 77 ✓)",
-   "tuLuan": true
-  },
-  {
-   "id": "C6",
-   "maSach": "C6",
-   "so": 6,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Số 40 có thuộc bảng nhân 5 không? Số 43 thì sao? Con dùng bí mật tận cùng để trả lời thật nhanh.",
-   "loiChua": "40 tận cùng 0 → thuộc bảng nhân 5 (5 × 8); 43 tận cùng 3 → không thuộc",
-   "tuLuan": true
-  },
-  {
-   "id": "C7",
-   "maSach": "C7",
-   "so": 7,
-   "muc": 2,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Tìm số chẵn lớn nhất có 2 chữ số và số lẻ bé nhất có 3 chữ số.",
-   "loiChua": "số chẵn lớn nhất có 2 chữ số: 98; số lẻ bé nhất có 3 chữ số: 101",
-   "tuLuan": true
-  },
-  {
-   "id": "C8",
-   "maSach": "C8",
-   "so": 8,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Không cộng hết, đoán xem tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 là chẵn hay lẻ. (Mẹo: các số lẻ trong đó bắt cặp với nhau — đếm xem có mấy \"viên kẹo lẻ loi\", có bạn nào bị ế cặp không?) Sau đó dùng tuyệt chiêu Gauss nhí của Bài 13 sắp học... à không, dùng máy đếm tay để kiểm tra cũng được!",
-   "loiChua": "các số lẻ trong tổng là 1, 3, 5, 7, 9 — có 5 \"viên kẹo lẻ loi\". Bốn viên bắt thành hai cặp (thành chẵn), còn đúng 1 viên bị ế → tổng là số LẺ. Kiểm tra: 1 + 2 + ... + 9 = 45, tận cùng 5 — lẻ thật ✓",
-   "tuLuan": true
-  },
-  {
-   "id": "C9",
-   "maSach": "C9",
-   "so": 9,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Su Kem nhân một số trong bảng 5 với một số trong bảng 2 (ví dụ 5 × 4, 15 × 2...). Trí Long chưa nhìn phép tính đã nói ngay: \"Kết quả tận cùng là 0!\" Con thử vài phép tính xem Trí Long nói đúng không, rồi giải thích vì sao bằng lời của con.",
-   "loiChua": "Trí Long nói đúng! Thử: 5 × 4 = 20; 15 × 2 = 30; 5 × 6 = 30 — đều tận cùng 0. Giải thích kiểu lớp 2: số trong bảng 5 tận cùng 0 hoặc 5; nhân với số chẵn (bảng 2) thì phần \"5\" cũng thành chẵn cặp đôi tròn chục → đuôi luôn là 0. (Bí mật đầy đủ \"2 × 5 = 10\" con sẽ gặp lại ở lớp 4!)",
-   "tuLuan": true
-  },
-  {
-   "id": "Q1",
-   "maSach": "C1",
-   "so": 1,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Số 134 là số chẵn vì tận cùng là 4.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": true
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Số 134 là số chẵn vì tận cùng là 4.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q2",
-   "maSach": "C2",
-   "so": 2,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Muốn biết chẵn - lẻ, ta cộng các chữ số lại rồi xem.",
-   "format": "tf",
-   "tuLuan": false,
-   "answerKey": {
-    "value": false
+   {
+    "id": "Q2",
+    "text": "Muốn biết chẵn - lẻ, ta cộng các chữ số lại rồi xem.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "nhìn tận cùng, không cộng chữ số"
    },
-   "loiChua": "nhìn tận cùng, không cộng chữ số",
-   "solutionNarrative": "nhìn tận cùng, không cộng chữ số"
-  },
-  {
-   "id": "Q3",
-   "maSach": "C3",
-   "so": 3,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Kết quả bảng nhân 5 luôn tận cùng là:",
-   "format": "mcq",
-   "choices": [
-    "A. 5",
-    "B. 0 hoặc 5",
-    "C. 2, 4, 6, 8"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. 0 hoặc 5"
+   {
+    "id": "Q3",
+    "text": "Kết quả bảng nhân 5 luôn tận cùng là:",
+    "format": "mcq",
+    "choices": [
+     "A. 5",
+     "B. 0 hoặc 5",
+     "C. 2, 4, 6, 8"
+    ],
+    "answerKey": {
+     "choice": "B. 0 hoặc 5"
+    },
+    "solutionNarrative": "Đáp án: B. 0 hoặc 5"
    },
-   "loiChua": "Đáp án: B. 0 hoặc 5",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q4",
-   "maSach": "C4",
-   "so": 4,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Lẻ + Lẻ = ?",
-   "format": "mcq",
-   "choices": [
-    "A. Lẻ",
-    "B. Chẵn",
-    "C. Lúc chẵn lúc lẻ"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. Chẵn"
+   {
+    "id": "Q4",
+    "text": "Lẻ + Lẻ = ?",
+    "format": "mcq",
+    "choices": [
+     "A. Lẻ",
+     "B. Chẵn",
+     "C. Lúc chẵn lúc lẻ"
+    ],
+    "answerKey": {
+     "choice": "B. Chẵn"
+    },
+    "solutionNarrative": "Đáp án: B. Chẵn"
    },
-   "loiChua": "Đáp án: B. Chẵn",
-   "solutionNarrative": ""
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "Không tính, tổng 18 + 25 là:",
-   "format": "mcq",
-   "choices": [
-    "A. Số chẵn",
-    "B. Số lẻ",
-    "C. Không đoán được"
-   ],
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "B. Số lẻ"
-   },
-   "loiChua": "Đáp án: B. Số lẻ",
-   "solutionNarrative": ""
-  }
- ]
+   {
+    "id": "Q5",
+    "text": "Không tính, tổng 18 + 25 là:",
+    "format": "mcq",
+    "choices": [
+     "A. Số chẵn",
+     "B. Số lẻ",
+     "C. Không đoán được"
+    ],
+    "answerKey": {
+     "choice": "B. Số lẻ"
+    },
+    "solutionNarrative": "Đáp án: B. Số lẻ"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Trò \"máy đoán chẵn lẻ\": con làm máy, bố mẹ đọc số bất kỳ (kể cả số to như 4 786) — máy chỉ được nhìn đuôi và trả lời trong 2 giây. Trẻ rất khoái làm máy!",
+  "homeActivity": "Chia kẹo/hạt lạc thật để con TỰ khám phá \"lẻ + lẻ = chẵn\" (hai viên lẻ loi bắt cặp) — đừng nói trước kết luận.",
+  "watchFor": "NÊN: dùng đúng từ \"chữ số tận cùng\". KHÔNG NÊN: dạy dấu hiệu chia hết cho 3, 9 (cộng các chữ số) lúc này — dễ trộn lẫn với mẹo nhìn đuôi; các dấu hiệu ấy là bài học lớp 4."
+ },
+ "figureSpec": []
 }

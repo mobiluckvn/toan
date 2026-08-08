@@ -601,9 +601,13 @@ export function buildTeachSteps(lesson) {
     type: 'teach', phase: 'teach',
     statements: g.statements,
     screen: g.screen,
-    // hình khái niệm trước, hình cách làm sau — đúng thứ tự bài giảng
-    figure: i === 0 ? figFor(lesson, 'teach_domain')
-          : (i === 1 ? figFor(lesson, 'teach_core') : null),
+    /* Hình chỉ đích danh màn ('screen:S3') thì theo nó — bài nào có nhiều hình
+       trong phần giảng mà mỗi hình thuộc một bước riêng thì xếp theo thứ tự
+       khái niệm/cách làm là đặt sai chỗ, lời văn treo giữa chừng.
+       Không chỉ đích danh thì giữ nguyên nếp cũ của lớp 5. */
+    figure: figFor(lesson, `screen:${g.screen?.id}`)
+          || (i === 0 ? figFor(lesson, 'teach_domain')
+          : (i === 1 ? figFor(lesson, 'teach_core') : null)),
     misconception: i === kept.length - 1 ? misconception : null,
   }));
 }
