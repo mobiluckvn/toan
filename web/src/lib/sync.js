@@ -38,6 +38,20 @@ export const isCloudLearner = (id) => !!id && id !== 'local';
 export const attemptId = (learnerId, sessionId, microId, itemId, seq) =>
   `${learnerId}_${sessionId}_${microId.replace('DL:KSN5Q1.', '')}_${itemId}_${seq}`;
 
+/**
+ * PHIÊN BẢN BẢN GHI. Nhật ký là BẤT BIẾN — không sửa lại được, kể cả admin — nên
+ * dòng ghi bằng luật cũ sẽ nằm lẫn với dòng mới mãi mãi.
+ *
+ *   v < 2  (hoặc không có v): `ms` là thời gian tính từ lúc MỞ BÀI chứ không phải
+ *          thời gian làm riêng câu ấy, và cả loạt dùng chung một mốc `ts`.
+ *          Đem tính "câu con làm lâu" hay "số phút học" là ra số SAI.
+ *   v = 2  ms đo riêng từng câu, ts riêng từng lượt, có answer/expected/mode.
+ *
+ * Thống kê theo thời gian chỉ được dùng dòng v ≥ 2. Thà nói "chưa có số liệu" còn
+ * hơn hiện một con số sai cho bố mẹ tin theo.
+ */
+export const PHIEN_BAN_BAN_GHI = 2;
+
 /** Đáp án con gõ có thể là mảng nhiều ô — gọn lại thành một chuỗi đọc được, cắt ngắn */
 export const CHU_TOI_DA = 120;
 export function goiDapAn(v) {
@@ -89,6 +103,7 @@ export function buildAttempts({
      * học trùng y một thời điểm — "số phút con học" tính theo khoảng cách giữa các
      * mốc luôn ra 0, và dòng thời gian trong sổ dồn cục thành một điểm.
      */
+    v: PHIEN_BAN_BAN_GHI,
     ts: e.khiNao ?? ts,
     // ts là giờ máy của con — con chỉnh đồng hồ máy tính bảng là lệch. serverTs do máy chủ
     // đóng dấu, dùng cho mọi thống kê mà cô giáo nhìn vào.

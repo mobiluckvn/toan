@@ -218,6 +218,35 @@ Cạm bẫy đã vấp: header khớp theo **đường dẫn yêu cầu**, khôn
 đặt `source: "/index.html"` thì `/` vẫn rơi vào mặc định `max-age=3600`. Phải thêm
 `**/!(*.*)` mới phủ hết các đường dẫn SPA.
 
+### Nhật ký học: đúng · đủ · kịp thời
+
+Mỗi lượt bấm "Kiểm tra" là MỘT dòng (không phải mỗi câu một dòng) — con sai hai lần
+rồi mới đúng thì cô thấy đủ ba lượt, kèm `answer` (con gõ gì), `expected`, `ms` đo
+riêng câu ấy, `hintsUsed`, `mode`, `revealed`.
+
+| | Trước | Sau |
+|---|---|---|
+| **Đủ** — chặng được ghi | 2/4 (mất 513/1654 câu = 31%) | đủ 4: practice · assess · check · worked |
+| **Đủ** — bỏ dở giữa bài | mất trắng, TB 7 câu/bài | đẩy dần sau mỗi lượt, giữ nguyên |
+| **Đúng** — `ms` | tính từ lúc MỞ BÀI | thời gian riêng từng câu |
+| **Đúng** — `ts` | cả loạt chung một mốc → "0 phút học" | mốc riêng từng lượt |
+| **Kịp thời** | chỉ ở màn kết bài, bảng dựng 21:15 | gửi ngay + nút "↻ Cập nhật ngay" |
+
+Ba cạm bẫy đã vấp, ghi lại kẻo quên:
+
+- **513 câu chốt nhanh / xen ví dụ không có mã.** Ghi lên máy chủ mà không có mã thì
+  cô cũng không biết là câu nào. Phải đặt mã ổn định trước (`C1…`, `W1…`).
+- **Nhật ký BẤT BIẾN nên dữ liệu sai không xoá được.** Dòng ghi bằng luật cũ (`ms`
+  tính từ lúc mở bài) nằm lẫn mãi mãi. Chữa bằng dấu phiên bản `v`: thống kê thời
+  gian chỉ dùng dòng `v ≥ 2`, và sổ hiện "—" kèm lời giải thích thay vì "0 phút".
+  Thà nói chưa đo được còn hơn đưa bố mẹ một con số sai.
+- **Sổ học lọc theo `ts` (giờ máy của con).** Máy tính bảng đặt sai ngày là bản ghi
+  rơi khỏi cửa sổ 7 ngày, sổ trống mà không ai hiểu vì sao. Đã đổi sang `serverTs`.
+
+Đẩy dần dựng lại bản ghi từ TOÀN BỘ nhật ký phiên chứ không chỉ lượt mới: mã nhúng
+số thứ tự nên dựng lại cho ra đúng mã cũ, hàng đợi ghi đè theo mã — gửi bao nhiêu
+lần cũng không sinh dòng trùng.
+
 **Chưa làm (đã ghi rõ, không giấu):**
 - **Máy chủ gửi mail**: hàm OTP cần bốn bí mật `OTP_PEPPER`, `SMTP_HOST`, `SMTP_USER`,
   `SMTP_PASS` (xem `docs/DEPLOY.md` bước 7a). Chưa đặt SMTP thì mã **chỉ in ra log**, không

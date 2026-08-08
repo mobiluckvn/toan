@@ -13,7 +13,8 @@
  */
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { buildAttempts, goiDapAn, attemptId, CHU_TOI_DA } from '../src/lib/sync.js';
+import { buildAttempts, goiDapAn, attemptId, CHU_TOI_DA,
+         enqueue, readQueue, PHIEN_BAN_BAN_GHI } from '../src/lib/sync.js';
 
 const D = new URL('../public/content/lessons/', import.meta.url).pathname;
 const lessons = readdirSync(D).filter((f) => f.endsWith('.json'))
@@ -96,7 +97,34 @@ for (const k of ['learnerId', 'microId', 'itemId', 'phase', 'correct', 'ts']) {
 t('correct luôn là boolean (luật bảo mật kiểm kiểu)', rec.every((r) => typeof r.correct === 'boolean'));
 t('phase luôn nằm trong bốn chặng luật cho phép', rec.every((r) => CHANG.includes(r.phase)));
 
-/* ── 3. gọn đáp án ── */
+/* Dấu phiên bản: để sổ học biết dòng nào ĐỦ TIN CẬY mà tính thời gian. Nhật ký bất
+   biến nên dòng cũ (ms tính từ lúc mở bài) nằm lẫn mãi mãi, không sửa được. */
+t('mọi bản ghi mang dấu phiên bản', rec.every((r) => r.v === PHIEN_BAN_BAN_GHI));
+t('phiên bản hiện tại từ 2 trở lên', PHIEN_BAN_BAN_GHI >= 2);
+
+/* ── 3. ĐẨY DẦN: bỏ dở giữa chừng vẫn giữ được bài đã làm ──
+   Gửi lại nhiều lần phải cho ra ĐÚNG những mã cũ, nếu không hàng đợi sinh dòng
+   trùng và cô giáo đếm nhầm số câu con làm. */
+const phien = { learnerId: 'u1', sessionId: 's1', microId: 'DL:KSN5Q1.B1.M1' };
+const nhatKy = [
+  { phase: 'check', itemId: 'C1', ok: true, khiNao: 1 },
+  { phase: 'worked', itemId: 'W1', ok: false, khiNao: 2 },
+  { phase: 'practice', itemId: 'P1', ok: true, khiNao: 3 },
+];
+const lan1 = buildAttempts({ ...phien, events: nhatKy.slice(0, 2), now: () => 1 });
+const lan2 = buildAttempts({ ...phien, events: nhatKy, now: () => 1 });
+t('gửi dần: lần sau bao trùm lần trước', lan2.length === 3 && lan1.length === 2);
+t('gửi lại KHÔNG đổi mã của lượt cũ',
+  lan1.every((r, i) => r.id === lan2[i].id));
+t('mã của mỗi lượt trong phiên là duy nhất',
+  new Set(lan2.map((r) => r.id)).size === lan2.length);
+
+/* Hàng đợi ghi đè theo mã, nên đẩy đi đẩy lại vẫn ra đúng 3 dòng */
+const kho = (() => { let o = {}; return { getItem: (k) => o[k] ?? null, setItem: (k, v) => { o[k] = v; } }; })();
+enqueue(lan1, kho); enqueue(lan2, kho); enqueue(lan2, kho);
+t('đẩy lại nhiều lần không sinh dòng trùng', readQueue(kho).length === 3);
+
+/* ── 4. gọn đáp án ── */
 t('gộp nhiều ô bằng dấu |', goiDapAn(['3', '4']) === '3 | 4');
 t('cắt bớt đáp án dài quá', goiDapAn('x'.repeat(400)).length === CHU_TOI_DA);
 t('đáp án dài bị cắt có dấu … cho biết còn nữa', goiDapAn('x'.repeat(400)).endsWith('…'));

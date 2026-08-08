@@ -71,7 +71,9 @@ t('xếp yếu nhất lên đầu', w[0].unit === 'B' && w[1].unit === 'C');
 t('bỏ đơn vị chưa từng làm', !w.find((x) => x.unit === 'D'));
 
 /* ── sổ phụ huynh ── */
-const mk = (o) => ({ learnerId: 'L1', sessionId: 's1', microId: mid, correct: true, ts: now, ms: 5000, ...o });
+/* v: 2 = bản ghi ĐỦ TIN CẬY để tính thời gian (ms đo riêng từng câu, ts riêng từng
+   lượt). Bản ghi cũ không có v thì bị loại khỏi mọi thống kê theo thời gian. */
+const mk = (o) => ({ learnerId: 'L1', sessionId: 's1', microId: mid, correct: true, ts: now, ms: 5000, v: 2, ...o });
 const atts = [
   mk({ ts: now - 10 * 60000 }), mk({ ts: now - 9 * 60000 }), mk({ ts: now - 8 * 60000 }),
   mk({ ts: now - 60 * 60000, sessionId: 's2' }),                       // buổi khác, cách xa
@@ -93,6 +95,27 @@ t('đếm đúng số micro đã đạt', rep.microsPassed === 2);
 t('đếm đúng đơn vị đã thạo', rep.unitsMastered === 1 && rep.unitsTotal === 2);
 t('tỉ lệ đúng hợp lý', rep.correctRate > 0 && rep.correctRate < 100);
 t('có câu tóm tắt cho bố mẹ', reportHeadline(rep).includes('phút'));
+
+/* ── bản ghi CŨ không được làm hỏng thống kê thời gian ──
+   Nhật ký bất biến, nên dòng ghi bằng luật cũ (ms tính từ lúc mở bài, cả loạt
+   chung một mốc ts) nằm lẫn với dòng mới mãi mãi. Thà nói "chưa có số liệu" còn
+   hơn hiện một con số sai cho bố mẹ tin theo. */
+const cu = (o) => { const a = mk(o); delete a.v; return a; };
+const lanLon = [
+  cu({ ms: 300000, correct: false, itemId: 'A5', ts: now - 3 * 60000 }),   // 300s = tính từ lúc mở bài
+  cu({ ms: 250000, correct: false, itemId: 'P5', ts: now - 3 * 60000 }),
+  mk({ ms: 62000, correct: false, itemId: 'P9', ts: now - 2 * 60000 }),
+];
+const bt = stuckItems(lanLon);
+t('không lấy bản ghi cũ làm "câu con làm lâu"', bt.length === 1 && bt[0].itemId === 'P9');
+t('bản ghi cũ cùng một mốc ts không thổi phồng số phút học',
+  minutesStudied([cu({ ts: now }), cu({ ts: now }), cu({ ts: now })]) === 0);
+t('bản ghi mới vẫn tính được số phút học',
+  minutesStudied([mk({ ts: now - 120000 }), mk({ ts: now - 60000 }), mk({ ts: now })]) === 2);
+
+const repCu = buildParentReport({ learnerId: 'L1', attempts: lanLon, index, now });
+t('sổ nói rõ có bao nhiêu lượt thiếu dữ liệu giờ giấc', repCu.luotThieuGio === 2);
+t('lượt cũ vẫn được đếm vào tổng số câu đã làm', repCu.answered === 3);
 t('chưa học thì báo rõ', reportHeadline({ answered: 0, topTraps: [] }).includes('chưa vào học'));
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);

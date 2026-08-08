@@ -21,7 +21,7 @@ function PhaseBar({ current }) {
   );
 }
 
-export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, onMoveStep }) {
+export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, onMoveStep, onEvents }) {
   const [lesson, setLesson] = useState(null);
   const [err, setErr] = useState(null);
   const [i, setI] = useState(0);
@@ -50,6 +50,19 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
   const step = flow[i];
 
   useEffect(() => { window.scrollTo(0, 0); }, [i]);
+
+  /**
+   * Đẩy nhật ký lên máy chủ NGAY sau mỗi lượt trả lời, không đợi con học hết bài.
+   * Bỏ dở giữa chừng là chuyện thường ngày (mẹ gọi ăn cơm, hết pin) — đợi tới màn
+   * kết bài mới gửi thì công học của con bay mất, mà cô giáo cũng không thấy gì
+   * cho đến khi con làm xong.
+   */
+  const soLuot = log.raw.length;
+  useEffect(() => {
+    if (!soLuot || !lesson) return;
+    onEvents?.({ sessionId, microId, bktUnit: lesson.skills?.bktUnit || null, events: log.raw });
+    // chỉ theo SỐ LƯỢT: log.raw là mảng mới mỗi lần dựng lại, để nguyên sẽ chạy vô hạn
+  }, [soLuot]);   // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => { if (resumed && flow.length) onMoveStep?.(microId, i, flow.length); },
             [i, resumed, flow.length, microId, onMoveStep]);
 

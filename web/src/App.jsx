@@ -11,7 +11,7 @@ import {
 } from './lib/progress.js';
 import { neighborIds } from './lib/content.js';
 import {
-  submitSession, syncPending, hasFirebase, watchAuth, myRole, myProfile, saveProfile, refreshMyReport,
+  submitSession, pushAttempts, syncPending, hasFirebase, watchAuth, myRole, myProfile, saveProfile, refreshMyReport,
   myReport, logout,
 } from './lib/firebase.js';
 import { reassignQueue } from './lib/sync.js';
@@ -127,6 +127,8 @@ export default function App() {
         microId={view.microId}
         resumeAt={view.fromStart ? 0 : (resumeSpot(progress, view.microId)?.step || 0)}
         onMoveStep={(id, step, total) => setProgress((p) => saveSpot(p, id, step, total))}
+        /* Gửi dần trong lúc con học — bỏ dở giữa chừng vẫn giữ được bài đã làm */
+        onEvents={(s) => pushAttempts({ learnerId, ...s }).catch(() => {})}
         onExit={() => setView({ page: 'home' })}
         onFinish={(grade, lesson, session) => finishMicro(view.microId, grade, lesson, session)}
       />

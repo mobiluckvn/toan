@@ -150,6 +150,25 @@ async function writeRecords(records) {
 }
 
 /**
+ * ĐẨY DẦN trong lúc con đang học — gọi sau MỖI lượt trả lời.
+ *
+ * Trước đây chỉ gửi ở màn KẾT BÀI. Con làm 20/23 bước rồi mẹ gọi ăn cơm, hết pin,
+ * hay bấm nhầm nút quay lại thì mất trắng — trung bình 7 câu mỗi bài, tối đa 1141
+ * câu trên toàn bộ chương trình. Mà cô giáo cũng phải đợi con học xong mới thấy gì.
+ *
+ * Dựng lại bản ghi từ TOÀN BỘ nhật ký của phiên chứ không chỉ lượt mới: mã bản ghi
+ * nhúng số thứ tự nên dựng lại cho ra đúng mã cũ, hàng đợi ghi đè theo mã — chạy
+ * bao nhiêu lần cũng không sinh dòng trùng.
+ */
+export async function pushAttempts({ learnerId, sessionId, microId, bktUnit, events }) {
+  if (!events?.length) return { sent: 0, left: 0 };
+  const recs = buildAttempts({ learnerId, sessionId, microId, bktUnit, events });
+  enqueue(recs);
+  if (!isCloudLearner(learnerId) || !hasFirebase) return { sent: 0, left: recs.length, offlineOnly: true };
+  return flushQueue(writeRecords);
+}
+
+/**
  * Kết thúc một lượt học micro: xếp hàng đợi trước (an toàn khi mất mạng), rồi thử gửi.
  * Không có Firebase (chế độ chỉ-học-máy) thì chỉ xếp hàng, không lỗi.
  */

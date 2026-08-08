@@ -61,12 +61,22 @@ export default function ParentReport({ progress, cloudReport, onExit, onOpenMicr
           </div>
         )}
 
+        {r?.luotThieuGio > 0 && (
+          <p className="mb-2 rounded-xl bg-[#F2F6FA] px-3.5 py-2.5 text-[12.5px] leading-relaxed text-mute">
+            Có {r.luotThieuGio} lượt trả lời ghi từ bản cũ nên chưa đo được thời gian —
+            phần “phút học” và “câu con làm lâu” chỉ tính trên các buổi học từ nay về sau.
+          </p>
+        )}
+
         <div className="card">
           <div className="kicker">TỔNG QUAN</div>
           <div className="flex flex-wrap gap-2.5">
             {[['MICRO ĐÃ ĐẠT', `${all.done}/${all.total}`], ['HUY HIỆU', `${all.badges}/14`],
               ['LƯỢT HỌC', String(local.attempts)],
-              ...(r ? [['PHÚT (7 NGÀY)', String(r.minutes)], ['ĐÚNG', `${r.correctRate}%`]] : [])
+              /* Buổi học ghi bằng luật cũ không có dữ liệu giờ giấc dùng được. Hiện
+                 "0 phút" thì bố mẹ tưởng con không học — nói thẳng là chưa đo được. */
+              ...(r ? [['PHÚT (7 NGÀY)', r.minutes > 0 ? String(r.minutes) : (r.luotThieuGio > 0 ? '—' : '0')],
+                       ['ĐÚNG', `${r.correctRate}%`]] : [])
             ].map(([k, v]) => (
               <div key={k} className="min-w-[92px] flex-1 rounded-xl bg-[#EAF1F7] px-3 py-2.5 text-center">
                 <b className="block text-[21px] text-navy">{v}</b>
