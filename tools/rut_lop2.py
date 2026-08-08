@@ -27,6 +27,13 @@ R_MUC_SAO = re.compile(r'^(★+)\s*MỨC (\d)')
 R_CAU = re.compile(r'^Câu (\d+)\.\s*(.+)$')
 R_DANG = re.compile(r'^Dạng gốc:\s*(.+)$')
 
+# Bài được cắt từ tiêu đề bài này tới tiêu đề bài KẾ TIẾP. Giữa hai bài ấy sách còn
+# chèn ôn tập, đáp án cả chương, tiêu đề chương sau — chúng rơi hết vào mục đang mở,
+# tức luôn là ⑧ Góc bố mẹ. Đây là mốc để DỪNG gom vào bài.
+# Không vứt phần dừng ấy đi: nó chính là chữ của 8 bài ôn tập và 3 ải, cất vào `sauBai`.
+R_KET = re.compile(r'^(?:CHƯƠNG \d+|ÔN TẬP \d+|ĐÁP ÁN|Ải \d+|BẢNG SƯU TẬP'
+                   r'|TOÁN TƯ DUY LỚP 2|LỜI (?:NHẮN|KẾT))\b')
+
 TEN_MUC = {
     '①': 'mucTieu', '②': 'chuyenMoBai', '③': 'khamPha', '④': 'viDuMau',
     '⑤': 'suKemNham', '⑥': 'luyenTap', '⑦': 'quiz', '⑧': 'gocBoMe',
@@ -84,8 +91,13 @@ def main():
         khuc = ps[i + 1:j]
 
         muc, hien, dang, mucsao = {}, None, '', 1
-        cau = []
+        cau, sau_bai, het = [], [], False
         for t in khuc:
+            # từ mốc kết thúc trở đi là phần KHÔNG thuộc bài này nữa
+            if het or R_KET.match(t):
+                het = True
+                sau_bai.append(t)
+                continue
             d = R_DANG.match(t)
             if d:
                 dang = d.group(1); continue
@@ -107,7 +119,7 @@ def main():
 
         bai.append({
             'so': so, 'ten': ten, 'chuong': chuong_tai.get(i, 0),
-            'dangGoc': dang, 'muc': muc, 'cau': cau,
+            'dangGoc': dang, 'muc': muc, 'cau': cau, 'sauBai': sau_bai,
         })
 
     ban = {'nguon': os.path.basename(NGUON), 'soDoan': len(ps),

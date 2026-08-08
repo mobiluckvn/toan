@@ -114,6 +114,19 @@ const lechSha = hinhTrongBai.filter(([, , , h]) => {
 });
 t(`ảnh có thật và đúng bản đã ghi sổ (${lechSha.length} lệch)`, lechSha.length === 0);
 
+
+/* ── 6. Góc bố mẹ không được lẫn phần khác ──
+   Bài được cắt tới tiêu đề bài kế tiếp, nên ôn tập + đáp án cả chương + tiêu đề chương
+   sau từng rơi hết vào mục cuối (Góc bố mẹ): 639 dòng rác, lộ luôn đáp án cho bố mẹ. */
+const racGoc = bai.flatMap((b) => (b.muc.gocBoMe?.dong || [])
+  .filter((s) => /^CHƯƠNG \d+|ĐÁP ÁN|^ÔN TẬP \d+|^Ải \d+|^BẢNG SƯU TẬP/.test(s))
+  .map((s) => `B${b.so}: ${s.slice(0, 40)}`));
+t(`Góc bố mẹ không lẫn ôn tập/đáp án/chương (${racGoc.length} dòng lạ)`, racGoc.length === 0);
+t('Góc bố mẹ bài nào cũng ngắn gọn',
+  bai.every((b) => (b.muc.gocBoMe?.dong || []).length <= 6));
+t('không bài nào lọt trường sauBai của bản trích thô',
+  bai.every((b) => !('sauBai' in b)));
+
 console.log(`\n   ${bai.length} bài · ${cau.length} câu · câu dài ${quaDai}/${tongCau} (${tiLe}%)`);
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
