@@ -25,6 +25,14 @@ RA_DATA = os.path.join(GOC_KHO, 'data', 'quyen2')
 # Vòng đấu n dùng chuyên đề của chương n Quyển 1 → mở khi xong chương ấy.
 # (14 vòng ↔ 14 chương; sách ghi rõ ở dòng "Chuyên đề: … (Chương k Quyển 1 …)")
 R_CHUONG_Q1 = re.compile(r'Chương\s+(\d+)\s+Quyển\s+1')
+# Đề trộn và kỳ thi thử PHỦ NHIỀU CHƯƠNG: "rút từ Chương 1 - 2 - 3",
+# "phủ trọn Chương 1 đến Chương 11". Mở khoá phải theo chương CAO NHẤT nó phủ.
+# Không bắt được thì chuongQ1 = null và khối mở tự do — con mới xong chương 1 đã
+# vào được kỳ chung kết phủ 14 chương (lỗi này chỉ lộ khi chạy thử end-to-end).
+# Bắt cả hai cách sách viết phạm vi:
+#   "Chương 1 đến Chương 11"  → 1, 11
+#   "Chương 1 - 2 - 3"        → 1, 2, 3   (số 2 và 3 KHÔNG đứng sau chữ "Chương")
+R_MOI_CHUONG = re.compile(r'Chương\s+((?:\d+\s*[-–]\s*)*\d+)')
 R_PHUT = re.compile(r'(\d+)\s*phút')
 R_THANG = re.compile(r'thang\s*điểm\s*(\d+)')
 
@@ -109,9 +117,15 @@ def kieu_khoi(loai, so):
 def dung_khoi(loai, k):
     ma = kieu_khoi(loai, k['so'])
     mo = k.get('moTa', '')
-    chuong = int(R_CHUONG_Q1.search(mo).group(1)) if R_CHUONG_Q1.search(mo) else None
     if loai == 'vong':
-        chuong = chuong or k['so']            # vòng n ↔ chương n
+        m = R_CHUONG_Q1.search(mo)
+        chuong = int(m.group(1)) if m else k['so']        # vòng n ↔ chương n
+    else:
+        cac = [int(x) for cum in R_MOI_CHUONG.findall(mo)
+               for x in re.findall(r'\d+', cum)]
+        # Kỳ chung kết không liệt kê chương nào trong dòng mô tả — nó là trận cuối,
+        # phủ trọn cả 14 chương (sách nói ở phần luật).
+        chuong = max(cac) if cac else 14
     phut = int(R_PHUT.search(mo).group(1)) if R_PHUT.search(mo) else None
     thang = int(R_THANG.search(mo).group(1)) if R_THANG.search(mo) else len(k['cau'])
 

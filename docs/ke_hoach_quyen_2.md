@@ -148,12 +148,35 @@ Quyển 1 có 1 141 câu và mất phần lớn dự án. Quyển 2 có **314 c�
 
 ### Tiến độ
 
-- [x] **Bước 1 · Trích xuất trung thực** — xong 08/08/2026, cổng 29/29 xanh
-- [ ] Bước 2 · Bộ rà soát
-- [ ] Bước 3 · Chuẩn hoá đáp án và mã bẫy
-- [ ] Bước 4 · Năng lực mới (đồng hồ · barem · phiên tòa · chấm kép)
-- [ ] Bước 5 · 71 sơ đồ
-- [ ] Bước 6 · Nối vào phần mềm
+- [x] **Bước 1 · Trích xuất trung thực** — cổng 29/29 xanh
+- [x] **Bước 2 · Bộ rà soát** — 26 phép kiểm, bắt được cả lỗi của chính nó
+- [x] **Bước 3 · Chuẩn hoá đáp án** — 102 câu máy chấm · 212 câu tự luận
+- [x] **Bước 4 · Năng lực mới** — đồng hồ · barem 4 mốc · phiên tòa · chấm kép (44 phép kiểm)
+- [ ] **Bước 5 · 71 sơ đồ** — CHƯA LÀM, xem mục 8
+- [x] **Bước 6 · Nối vào phần mềm** — đã kiểm end-to-end trên trình duyệt
+
+### Kết quả đo được (khác kế hoạch ban đầu, ghi đúng số thật)
+
+| | Kế hoạch ước | Thực tế |
+|---|---|---|
+| Câu máy chấm | 292 | **102** |
+| Câu tự luận | 22 | **212** |
+
+Vì sao lệch: kế hoạch đếm "câu có đáp số gọn" theo ĐỀ BÀI, nhưng cái quyết định là
+có rút được đáp số CHẮC CHẮN từ lời chữa văn xuôi hay không. Soi mắt 20 mẫu mới lộ
+ra câu đòi hai giá trị ("Tổng 84, hiệu 16 — tìm hai số") bị rút thành một số, con
+viết đủ "34 và 50" sẽ bị chấm sai. Đã loại hẳn dạng ấy. Thà ít mà đúng.
+
+---
+
+## 8 · Việc còn lại: 71 sơ đồ (Bước 5)
+
+Chưa làm, và tôi nói rõ vì sao chưa: 48 ảnh trong sách là **sơ đồ chiến thuật**
+(bảng bốn kiểu đề, quy trình bốn nhịp…), không phải hình toán cần để giải bài. Con
+vẫn thi đấu trọn vẹn 21 khối mà không có chúng.
+
+Vẽ lại 71 sơ đồ bằng FigForge như đã chốt là việc đáng kể — phải mô tả lại từng sơ
+đồ thành figureSpec. Nên tôi để riêng thành một đợt, thay vì làm dở dang.
 
 ---
 

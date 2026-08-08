@@ -15,6 +15,8 @@ import {
   myReport, logout,
 } from './lib/firebase.js';
 import { reassignQueue } from './lib/sync.js';
+import MuaGiai from './components/MuaGiai.jsx';
+import DauLoader from './components/DauLoader.jsx';
 
 const SKIP_KEY = 'ttd5.skipLogin.v1';
 
@@ -76,6 +78,33 @@ export default function App() {
     }).catch(() => {});                       // mất mạng: đã nằm trong hàng đợi, lần sau gửi
     const { next } = neighborIds(microId, lesson);
     setView(next && grade.pass ? { page: 'lesson', microId: next } : { page: 'home' });
+  }, [learnerId]);
+
+  /**
+   * Lưu kết quả một vòng đấu Quyển 2.
+   *
+   * Ghi vào tiến độ tại máy để mở khoá vòng sau, ĐỒNG THỜI đẩy nhật ký lên máy chủ
+   * bằng đúng đường của Quyển 1 — cô giáo xem một bảng thấy cả hai quyển, không
+   * phải hai hệ thống rời. Mỗi câu một dòng, kèm con trả lời gì và bẫy nào đã sập.
+   */
+  const luuVongDau = useCallback((kq) => {
+    setProgress((p) => ({
+      ...p,
+      dau: { ...(p.dau || {}), [kq.khoiId]: {
+        dat: !!kq.dat, diemBarem: kq.diemBarem,
+        soBaySap: (kq.microCanOn || []).length, at: new Date().toISOString(),
+      } },
+    }));
+    const events = Object.entries(kq.ketQua || {}).map(([itemId, r]) => ({
+      phase: 'assess', itemId,
+      ok: r.ok ?? r.tuChamDung ?? false,
+      answer: r.answer, mode: r.ok === undefined ? 'tuluan' : 'so',
+      khiNao: Date.now(),
+    }));
+    pushAttempts({
+      learnerId, sessionId: `dau_${kq.khoiId}`, microId: kq.khoiId,
+      bktUnit: null, events,
+    }).catch(() => {});
   }, [learnerId]);
 
   const signOut = async () => {
@@ -160,6 +189,26 @@ export default function App() {
       />
     );
 
+  /* ══ QUYỂN 2 · MÙA GIẢI ══ */
+  if (view.page === 'muagiai')
+    return (
+      <MuaGiai
+        progress={progress}
+        onMo={(id) => setView({ page: 'dau', khoiId: id })}
+        onExit={() => setView({ page: 'home' })}
+      />
+    );
+
+  if (view.page === 'dau')
+    return (
+      <DauLoader
+        khoiId={view.khoiId}
+        onExit={() => setView({ page: 'muagiai' })}
+        onMoMicro={(id) => setView({ page: 'lesson', microId: id })}
+        onXong={(kq) => { luuVongDau(kq); setView({ page: 'muagiai' }); }}
+      />
+    );
+
   return (
     <Home
       progress={progress}
@@ -174,6 +223,7 @@ export default function App() {
       onSetMode={(m) => setProgress((p) => setMode(p, m))}
       onOpenExam={(c) => setView({ page: 'exam', chapter: c })}
       onOpenReport={() => setView({ page: 'report' })}
+      onOpenMuaGiai={() => setView({ page: 'muagiai' })}
     />
   );
 }

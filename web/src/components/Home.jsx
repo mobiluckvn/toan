@@ -14,7 +14,7 @@ const CHAPTER_NAMES = {
 const DOT = { passed: 'bg-teal', tried: 'bg-gold', open: 'bg-navy-light', locked: 'bg-line' };
 const WORD = { passed: 'đã đạt', tried: 'chưa qua câu bẫy', open: 'học được ngay', locked: 'chưa mở' };
 
-export default function Home({ progress, onOpenMicro, onOpenExam, onOpenReport, onSetMode, account = {}, mastery = {}, cards = [] }) {
+export default function Home({ onOpenMuaGiai, progress, onOpenMicro, onOpenExam, onOpenReport, onSetMode, account = {}, mastery = {}, cards = [] }) {
   const list = allMicroIds();
   const [index, setIndex] = useState({});
   const [why, setWhy] = useState(null);          // bấm vào bài khoá → nói rõ vì sao
@@ -196,6 +196,23 @@ export default function Home({ progress, onOpenMicro, onOpenExam, onOpenReport, 
             </section>
           );
         })}
+      </div>
+
+      {/* Cửa vào Quyển 2. Đặt SAU danh sách chương: con học Quyển 1 trước, luyện thi
+          sau — nhưng vẫn thấy được để biết còn có phần này. */}
+      <div className="px-3.5 pt-2">
+        <button onClick={onOpenMuaGiai}
+                className="flex w-full items-center gap-3 rounded-2xl border-[1.5px] border-gold bg-gold-pale px-4 py-3.5 text-left">
+          <span className="text-[28px] leading-none">🏆</span>
+          <span className="flex-1">
+            <span className="block text-[11px] font-extrabold tracking-widest text-gold-dark">QUYỂN 2 · LUYỆN THI</span>
+            <span className="block text-[16px] font-bold text-navy">Mùa giải Vô địch</span>
+            <span className="block text-[12.5px] text-mute">
+              14 vòng đấu có đồng hồ · mở dần theo từng chương con học xong
+            </span>
+          </span>
+          <span className="text-[18px] text-gold-dark">▶</span>
+        </button>
       </div>
 
       <ChanTrang />

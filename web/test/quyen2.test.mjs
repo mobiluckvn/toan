@@ -89,6 +89,18 @@ t('vòng đấu nào cũng gắn với một chương Quyển 1',
   vong.every((k) => k.chuongQ1 >= 1 && k.chuongQ1 <= 14));
 t('14 vòng phủ đủ 14 chương, không trùng',
   new Set(vong.map((k) => k.chuongQ1)).size === 14);
+/* Đề trộn và kỳ thi thử phủ NHIỀU chương → phải mở theo chương CAO NHẤT nó phủ.
+   Thiếu chuongQ1 thì khối mở tự do: con mới xong chương 1 đã vào được kỳ chung kết
+   phủ 14 chương. Lỗi này chỉ lộ khi chạy thử end-to-end, bộ kiểm cũ không thấy. */
+t('khối nào cũng gắn chương mở khoá', khoi.every((k) => k.chuongQ1 >= 1 && k.chuongQ1 <= 14));
+const theoPham = { 'DR:KSN5Q2.T01': 3, 'DR:KSN5Q2.T02': 6, 'DR:KSN5Q2.T03': 9,
+                   'DR:KSN5Q2.T04': 13, 'DR:KSN5Q2.K01': 5, 'DR:KSN5Q2.K02': 11,
+                   'DR:KSN5Q2.K03': 14 };
+const saiPham = Object.entries(theoPham)
+  .filter(([id, ch]) => khoi.find((k) => k.id === id)?.chuongQ1 !== ch);
+t(`đề trộn & thi thử mở đúng theo phạm vi sách ghi (${saiPham.length} sai)`, saiPham.length === 0);
+if (saiPham.length) console.log('    ', saiPham.map(([id, ch]) => `${id} cần ${ch}`).join(' · '));
+
 t('khối nào cũng có số phút làm bài', khoi.every((k) => k.phut > 0));
 t('ngưỡng đạt luôn nhỏ hơn thang điểm', khoi.every((k) => k.dat > 0 && k.dat <= k.thang));
 
