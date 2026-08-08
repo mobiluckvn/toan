@@ -174,6 +174,50 @@ hai bong bóng để **trắng**: tô màu là lộ đáp án trước khi con k
 Phép kiểm còn đối chiếu `sha256_16` trong bài **và** trong manifest với PNG thật, vì sửa lời
 thoại mà quên vẽ lại thì con vẫn xem hình cũ mà không ai biết.
 
+### Năm kiểu trả lời — con nhìn là biết phải làm gì
+
+`answerMode()` trong `flow.js` là nguồn sự thật duy nhất; mọi màn hình hỏi nó chứ
+không tự đoán theo `format`. Mỗi kiểu kèm một câu chỉ thị hiện ngay dưới đề.
+
+| Kiểu | Chỉ thị | Số câu |
+|---|---|---|
+| `so` | Con điền một con số vào ô. | 408 |
+| `bieuthuc` | Con điền biểu thức toán vào ô (xem chữ mờ để biết dạng). | 55 |
+| `dungsai` | Con bấm chọn ĐÚNG hoặc SAI. | 77 |
+| `chondapan` | Con bấm chọn một đáp án. | 88 |
+| `tuluan` | Con làm ra nháp, xong xem lời giải mẫu để tự so. | kỳ sát hạch chương |
+
+Lỗi từng có: `inputCount` trả 0 cho Đúng/Sai và trắc nghiệm, nên **90 câu ở phòng
+luyện không có nút nào để bấm** — 68 câu được chấm ĐÚNG dù con chưa trả lời (ô rỗng
+đọc thành `false`, trùng đáp án), 22 câu chấm SAI rồi kẹt cứng. Nay tf/mcq cũng là
+một ô trong `answerFields`, và **sai bao nhiêu lần cũng sửa lại được** — chỉ khoá ô
+khi con đã đúng.
+
+`test/hocsinh.test.mjs` đóng vai học sinh đi hết **168 bài · 2956 bước · 1309 câu**,
+chỉ dùng thứ hiện trên màn hình chứ không đọc lén `answerKey`. Phép kiểm cốt lõi:
+*con làm đúng thì có được công nhận không*. Chạy trên mã cũ nó báo đúng 542 câu
+hỏng — nên kết quả sạch là đáng tin, không phải do phép rà dễ dãi.
+
+### Bộ nhớ đệm: dấu phiên bản nội dung
+
+Nội dung để `immutable` 7 ngày mà tên tệp không đổi khi sửa bài → máy đã mở trang
+giữ bản cũ cả tuần. Ba tầng, mỗi tầng một cách:
+
+| Thứ | Cache-Control | Đổi thì sao |
+|---|---|---|
+| `/`, `/hoc/**`, `index.html` | `no-cache` | deploy ăn ngay |
+| `/content/**` (bài, hình) | 7 ngày `immutable` | đường dẫn mang `?v=…` → thành tệp mới |
+| `/assets/*.js|css` | 1 năm `immutable` | Vite đã băm sẵn vào tên tệp |
+
+Bài/chỉ mục dùng mã băm chung của cả `public/content`; **hình dùng `sha256_16` của
+chính nó**, nên vẽ lại một hình chỉ tải lại đúng hình ấy, 671 hình kia nằm yên.
+Hàm băm ở `tools/noidung_version.mjs`, `vite.config.js` và bộ kiểm dùng **chung** —
+chép hai bản thì sửa một bên mà bên kia vẫn xanh, đúng cái bẫy đang muốn tránh.
+
+Cạm bẫy đã vấp: header khớp theo **đường dẫn yêu cầu**, không phải đích rewrite —
+đặt `source: "/index.html"` thì `/` vẫn rơi vào mặc định `max-age=3600`. Phải thêm
+`**/!(*.*)` mới phủ hết các đường dẫn SPA.
+
 **Chưa làm (đã ghi rõ, không giấu):**
 - **Máy chủ gửi mail**: hàm OTP cần bốn bí mật `OTP_PEPPER`, `SMTP_HOST`, `SMTP_USER`,
   `SMTP_PASS` (xem `docs/DEPLOY.md` bước 7a). Chưa đặt SMTP thì mã **chỉ in ra log**, không
