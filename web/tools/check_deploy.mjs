@@ -81,7 +81,7 @@ t('defineSecret lấy đúng chỗ',
 /* Firebase coi MỌI export là một Cloud Function. Chốt danh sách theo TÊN chứ không
    theo số lượng: đếm số thì thêm một hàm mới lại đỏ, mà đổi tên hàm cũ lại vẫn xanh. */
 const HAM_MONG_DOI = ['onAttempt', 'onMicroDone', 'nightlyReport', 'nightlyTeacherBoard',
-                      'refreshTeacherBoard', 'requestOtp', 'verifyOtp'];
+                      'refreshMyReport', 'refreshTeacherBoard', 'requestOtp', 'verifyOtp'];
 const exported = [...fnSrc.matchAll(/^export const (\w+)/gm)].map((m) => m[1]);
 const thieu = HAM_MONG_DOI.filter((h) => !exported.includes(h));
 const thua = exported.filter((h) => !HAM_MONG_DOI.includes(h));

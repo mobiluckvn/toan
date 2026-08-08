@@ -94,6 +94,16 @@ export async function saveProfile(uid, { displayName, grade }) {
     { displayName, grade, profileComplete: true }, { merge: true });
 }
 
+/**
+ * Dựng lại SỔ HỌC ngay, không chờ 21:00.
+ * Con vừa học xong mà bố mẹ mở sổ thấy trống thì tưởng công học không được lưu.
+ */
+export async function refreshMyReport(uid, soNgay = 7) {
+  if (!fns) throw new Error('chưa cấu hình Firebase');
+  const { data } = await httpsCallable(fns, 'refreshMyReport')({ uid, soNgay });
+  return data;
+}
+
 /** Sổ học của một tài khoản — chính chủ và giáo viên cùng đọc được */
 export async function myReport(uid) {
   if (!db) return null;

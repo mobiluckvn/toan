@@ -11,7 +11,7 @@ import {
 } from './lib/progress.js';
 import { neighborIds } from './lib/content.js';
 import {
-  submitSession, syncPending, hasFirebase, watchAuth, myRole, myProfile, saveProfile,
+  submitSession, syncPending, hasFirebase, watchAuth, myRole, myProfile, saveProfile, refreshMyReport,
   myReport, logout,
 } from './lib/firebase.js';
 import { reassignQueue } from './lib/sync.js';
@@ -137,6 +137,12 @@ export default function App() {
       <ParentReport
         progress={progress}
         cloudReport={cloudReport}
+        onRefresh={hasFirebase && learnerId !== 'local'
+          ? async () => {
+              await refreshMyReport(learnerId, 7);
+              setCloudReport(await myReport(learnerId));
+            }
+          : null}
         onExit={() => setView({ page: 'home' })}
         onOpenMicro={(id) => setView({ page: 'lesson', microId: id })}
       />

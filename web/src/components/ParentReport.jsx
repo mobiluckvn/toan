@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { overallStats } from '../lib/progress.js';
 import { allMicroIds, chapterOf } from '../lib/content.js';
 import { weakestUnits } from '../lib/adaptive.js';
@@ -7,7 +7,7 @@ import { weakestUnits } from '../lib/adaptive.js';
  * SỔ HỌC — bản tính tại máy từ tiến độ cục bộ (chạy được cả khi chưa có Firebase).
  * Khi đã nối Firebase, màn này đọc thẳng parentReport/{learnerId} do Function ghi mỗi đêm.
  */
-export default function ParentReport({ progress, cloudReport, onExit, onOpenMicro }) {
+export default function ParentReport({ progress, cloudReport, onExit, onOpenMicro, onRefresh }) {
   const list = allMicroIds();
   const all = overallStats(progress, list);
 
@@ -26,6 +26,8 @@ export default function ParentReport({ progress, cloudReport, onExit, onOpenMicr
 
   const r = cloudReport;
   const weak = r?.weakest || weakestUnits(progress.mastery || {}, 3);
+  const [dangMoi, setDangMoi] = useState(false);
+  const [loi, setLoi] = useState(null);
 
   return (
     <div className="mx-auto min-h-[100dvh] max-w-[740px] pb-10">
@@ -35,6 +37,30 @@ export default function ParentReport({ progress, cloudReport, onExit, onOpenMicr
       </header>
 
       <div className="px-3.5 pt-3.5">
+        {/* Sổ trên máy chủ chỉ tổng hợp lúc 21:00 mỗi đêm. Con vừa học xong mà bố mẹ
+            mở ra thấy trống thì tưởng công học không được lưu — nên nói rõ mốc tổng
+            hợp và cho dựng lại ngay. */}
+        {onRefresh && (
+          <div className="card flex flex-wrap items-center justify-between gap-2 py-3">
+            <span className="text-[13px] text-mute">
+              {r?.generatedAt
+                ? `Số liệu máy chủ tổng hợp lúc ${new Date(r.generatedAt).toLocaleString('vi-VN')}`
+                : 'Chưa có số liệu máy chủ cho tuần này'}
+            </span>
+            <button
+              className="rounded-full border-[1.5px] border-navy px-3 py-1 text-[12.5px] font-bold text-navy disabled:opacity-50"
+              disabled={dangMoi}
+              onClick={async () => {
+                setDangMoi(true); setLoi(null);
+                try { await onRefresh(); } catch (e) { setLoi(String(e?.message || e)); }
+                finally { setDangMoi(false); }
+              }}>
+              {dangMoi ? 'đang cập nhật…' : '↻ Cập nhật ngay'}
+            </button>
+            {loi && <p className="w-full text-[12.5px] text-alert">{loi}</p>}
+          </div>
+        )}
+
         <div className="card">
           <div className="kicker">TỔNG QUAN</div>
           <div className="flex flex-wrap gap-2.5">

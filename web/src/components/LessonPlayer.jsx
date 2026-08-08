@@ -73,7 +73,7 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
     setLog((L) => {
       const day = { ...entry, phase: kind, itemId: entry.id };
       const tomTat = L[kind] ? { ...L, [kind]: [...L[kind].filter((e) => e.id !== entry.id), day] } : L;
-      return { ...tomTat, raw: [...(L.raw || []), { ...day, at: Date.now() - t0 }] };
+      return { ...tomTat, raw: [...(L.raw || []), { ...day, khiNao: Date.now(), at: Date.now() - t0 }] };
     });
   const jumpTo = (type) => {
     const k = flow.findIndex((s) => s.type === type);

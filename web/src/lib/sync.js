@@ -82,7 +82,14 @@ export function buildAttempts({
     expected: e.expected === undefined ? null : goiDapAn(e.expected),
     mode: e.mode || null,                 // so · bieuthuc · dungsai · chondapan · tuluan
     revealed: !!e.revealed,               // con chịu thua, đã xem đáp án
-    ts,
+    /**
+     * Mốc RIÊNG của từng lượt trả lời (`khiNao` do màn hình đóng ngay lúc con bấm).
+     *
+     * Trước đây cả loạt dùng chung một `ts` đóng lúc GỬI, nên 11 lượt của một buổi
+     * học trùng y một thời điểm — "số phút con học" tính theo khoảng cách giữa các
+     * mốc luôn ra 0, và dòng thời gian trong sổ dồn cục thành một điểm.
+     */
+    ts: e.khiNao ?? ts,
     // ts là giờ máy của con — con chỉnh đồng hồ máy tính bảng là lệch. serverTs do máy chủ
     // đóng dấu, dùng cho mọi thống kê mà cô giáo nhìn vào.
     serverTs,

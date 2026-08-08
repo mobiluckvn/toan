@@ -63,31 +63,70 @@ export const onMicroDone = onDocumentWritten('progress/{learnerId}/micros/{micro
  * SỔ HỌC — tổng hợp 21h mỗi đêm thành MỘT document cho mỗi tài khoản.
  * Mở app đọc 1 lần, thay vì quét hàng nghìn attempts (rẻ và nhanh hơn nhiều).
  */
+/**
+ * Dựng SỔ HỌC của MỘT tài khoản từ dữ liệu hiện tại, ghi vào report/{uid}.
+ * Tách riêng vì có hai nơi gọi: lịch chạy đêm, và nút "Cập nhật ngay" của bố mẹ.
+ *
+ * Lọc theo `serverTs` chứ không theo `ts`. `ts` là giờ máy của con — máy tính bảng
+ * đặt sai ngày là bản ghi rơi ra ngoài cửa sổ 7 ngày, sổ trống mà không ai hiểu vì
+ * sao. Quy luôn `ts` về giờ máy chủ trước khi tính, để "số phút con học" cũng không
+ * bị đồng hồ lệch làm hỏng. (Chỉ mục learnerId + serverTs đã có sẵn.)
+ */
+async function dungSoHoc(learnerId, index, soNgay = 7) {
+  const since = new Date(Date.now() - soNgay * 86400000);
+  const [attSnap, progSnap, mastSnap] = await Promise.all([
+    db.collection('attempts').where('learnerId', '==', learnerId).where('serverTs', '>=', since).get(),
+    db.collection(`progress/${learnerId}/micros`).get(),
+    db.collection(`mastery/${learnerId}/units`).get(),
+  ]);
+  const attempts = attSnap.docs.map((d) => {
+    const a = d.data();
+    const sv = a.serverTs?.toMillis ? a.serverTs.toMillis() : a.serverTs;
+    return { ...a, serverTs: sv, ts: sv ?? a.ts };
+  });
+  const progress = {}; progSnap.forEach((d) => { progress[d.id] = d.data(); });
+  const mastery = {}; mastSnap.forEach((d) => { mastery[d.id] = d.data(); });
+
+  const report = buildParentReport({ learnerId, attempts, progress, mastery, index, days: soNgay });
+  await db.doc(`report/${learnerId}`).set(report, { merge: true });
+  return report;
+}
+
 export const nightlyReport = onSchedule(
   { schedule: '0 21 * * *', timeZone: 'Asia/Ho_Chi_Minh', timeoutSeconds: 540, memory: '512MiB' },
   async () => {
-    const since = Date.now() - 7 * 86400000;
     const index = await loadContentIndex();
-
     // Quét theo LÔ, không đọc hết một lần: một trường vài nghìn học sinh thì
     // câu .get() cũ vừa ngốn bộ nhớ vừa chạm trần 540 giây.
     let done = 0;
     for await (const L of eachDoc(db.collection('users').where('role', '==', 'learner'))) {
-      const learnerId = L.id;
-      const [attSnap, progSnap, mastSnap] = await Promise.all([
-        db.collection('attempts').where('learnerId', '==', learnerId).where('ts', '>=', since).get(),
-        db.collection(`progress/${learnerId}/micros`).get(),
-        db.collection(`mastery/${learnerId}/units`).get(),
-      ]);
-      const attempts = attSnap.docs.map((d) => d.data());
-      const progress = {}; progSnap.forEach((d) => { progress[d.id] = d.data(); });
-      const mastery = {}; mastSnap.forEach((d) => { mastery[d.id] = d.data(); });
-
-      const report = buildParentReport({ learnerId, attempts, progress, mastery, index });
-      await db.doc(`report/${learnerId}`).set(report, { merge: true });
+      await dungSoHoc(L.id, index);
       done++;
     }
     console.log(`sổ học: đã dựng cho ${done} tài khoản`);
+  },
+);
+
+/**
+ * "Cập nhật ngay" cho SỔ HỌC.
+ *
+ * Sổ cũng chỉ dựng lúc 21:00 mỗi đêm, nên con vừa học xong mà bố mẹ mở ra thì thấy
+ * trống trơn — tưởng công học của con không được lưu. Bố mẹ chỉ dựng lại sổ CỦA
+ * MÌNH; thầy cô và quản trị dựng được cho bất kỳ em nào.
+ */
+export const refreshMyReport = onCall(
+  { region: 'asia-southeast1', timeoutSeconds: 300, memory: '512MiB' },
+  async (req) => {
+    const uid = req.auth?.uid;
+    if (!uid) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
+    const vai = req.auth?.token?.role;
+    const target = String(req.data?.uid || uid);
+    if (target !== uid && vai !== 'teacher' && vai !== 'admin') {
+      throw new HttpsError('permission-denied', 'Chỉ xem được sổ học của mình.');
+    }
+    const index = await loadContentIndex();
+    const report = await dungSoHoc(target, index, Number(req.data?.soNgay) || 7);
+    return { ok: true, uid: target, generatedAt: report.generatedAt ?? Date.now() };
   },
 );
 

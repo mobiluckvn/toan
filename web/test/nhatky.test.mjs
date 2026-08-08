@@ -66,6 +66,17 @@ const rec = buildAttempts({
 });
 
 t('mỗi lượt bấm một dòng, không gộp thành một', rec.length === 3);
+
+/* Mỗi lượt phải mang mốc RIÊNG. Dùng chung một mốc đóng lúc gửi thì "số phút con
+   học" (tính theo khoảng cách giữa các mốc) luôn ra 0. */
+const rec2 = buildAttempts({
+  learnerId: 'u1', sessionId: 's1', microId: 'DL:KSN5Q1.B1.M1',
+  events: [{ phase: 'practice', itemId: 'P1', ok: true, khiNao: 5000 },
+           { phase: 'practice', itemId: 'P2', ok: true, khiNao: 95000 }],
+  now: () => 1000,
+});
+t('mỗi lượt giữ mốc thời gian riêng', rec2[0].ts === 5000 && rec2[1].ts === 95000);
+t('không có mốc riêng thì lùi về mốc chung', rec[0].ts === 1000);
 t('hai lượt của CÙNG một câu không đè lên nhau', rec[0].id !== rec[1].id);
 t('giữ lại con đã trả lời gì', rec[0].answer === '3,5');
 t('giữ lại đáp án đúng để đối chiếu', rec[0].expected === '35,46');
