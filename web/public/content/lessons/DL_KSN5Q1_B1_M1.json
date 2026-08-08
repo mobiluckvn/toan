@@ -416,13 +416,21 @@
       "warmup": [
         {
           "id": "P1",
-          "format": "opn",
+          "format": "mb",
           "sourceItem": "ITEM:KSN5Q1.B1.LT1",
           "text": "Viết số 4 507 thành tổng giá trị các hàng.",
           "answerKey": {
-            "accept": [
-              "4 507 = 4 000 + 500 + 7",
-              "4000 + 500 + 7"
+            "parts": [
+              {
+                "label": "tổng giá trị các hàng",
+                "value": "4 000 + 500 + 7",
+                "options": [
+                  "4 000 + 500 + 7",
+                  "4 000 + 50 + 7",
+                  "400 + 50 + 7",
+                  "4 + 5 + 0 + 7"
+                ]
+              }
             ]
           },
           "hints": [
@@ -444,13 +452,21 @@
         },
         {
           "id": "P2",
-          "format": "opn",
+          "format": "mb",
           "sourceItem": "ITEM:KSN5Q1.B1.LT2",
           "text": "Viết số 2,73 thành tổng giá trị các hàng.",
           "answerKey": {
-            "accept": [
-              "2,73 = 2 + 0,7 + 0,03",
-              "2 + 0,7 + 0,03"
+            "parts": [
+              {
+                "label": "tổng giá trị các hàng",
+                "value": "2 + 0,7 + 0,03",
+                "options": [
+                  "2 + 0,7 + 0,03",
+                  "2 + 0,07 + 0,3",
+                  "2 + 7 + 3",
+                  "2 + 0,73"
+                ]
+              }
             ]
           },
           "hints": [
@@ -526,6 +542,16 @@
                 "options": [
                   "bằng nhau",
                   "KHÁC nhau"
+                ]
+              },
+              {
+                "label": "vì sao",
+                "value": "0 ở ĐUÔI bỏ được, 0 ở GIỮA giữ chỗ hàng phần mười nên không bỏ được",
+                "options": [
+                  "0 ở ĐUÔI bỏ được, 0 ở GIỮA giữ chỗ hàng phần mười nên không bỏ được",
+                  "Số 0 nào trong phần thập phân cũng bỏ được",
+                  "Số 0 nào trong phần thập phân cũng phải giữ",
+                  "Vì 3,50 có nhiều chữ số hơn 3,5"
                 ]
               }
             ],

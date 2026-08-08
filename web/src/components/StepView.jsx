@@ -6,6 +6,16 @@ import AnswerInput from './AnswerInput.jsx';
 import PracticeItem from './PracticeItem.jsx';
 import AssessItem from './AssessItem.jsx';
 import FinaleCard from './FinaleCard.jsx';
+import { answerMode } from '../lib/flow.js';
+
+/** Nút chân màn hình lúc con CHƯA trả lời — nhắc đúng việc phải làm cho từng kiểu */
+const CHO_TRA_LOI = {
+  so:        'Con điền số rồi bấm Kiểm tra',
+  bieuthuc:  'Con điền đáp án rồi bấm Kiểm tra',
+  dungsai:   'Con chọn ĐÚNG hoặc SAI đã nhé',
+  chondapan: 'Con chọn đáp án đã nhé',
+  tuluan:    'Con xem lời giải rồi đi tiếp',
+};
 
 const Foot = ({ label = 'Tiếp ▶', cls = 'btn-go', onClick, disabled }) => (
   <footer className="fixed inset-x-0 bottom-0 border-t border-line bg-white/95 px-3.5 py-2.5 backdrop-blur"
@@ -109,7 +119,10 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
             <p className="mt-2 text-[14.5px] text-mute">{step.item.wrongFeedback}</p>
           )}
         </div>
-        <Foot onClick={onNext} disabled={!checked} label={checked ? 'Tiếp ▶' : 'Con chọn đáp án nhé'} />
+        {/* Nút chân màn hình phải nói ĐÚNG việc con đang phải làm: câu điền số mà
+            ghi "Con chọn đáp án nhé" thì con đi tìm nút để bấm, không thấy đâu cả. */}
+        <Foot onClick={onNext} disabled={!checked}
+              label={checked ? 'Tiếp ▶' : CHO_TRA_LOI[answerMode(step.item)]} />
       </>);
 
     case 'mantra':

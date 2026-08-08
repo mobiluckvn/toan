@@ -188,6 +188,24 @@ function matchAtom(expected, input) {
   return false;
 }
 
+/**
+ * So một ô có BỘ CHỌN. Con bấm đúng một nút, nên chỉ cần đối chiếu chữ trên nút —
+ * KHÔNG dùng các phép nới của ô gõ tay.
+ *
+ * Nới lỏng ở đây là chấm sai người đúng lẫn chấm đúng người sai:
+ *   · "8 - 24 - 24 - 8" (đỉnh-cạnh-mặt-lõi) và "8 - 24 - 8 - 24" cùng bộ số, khác
+ *     thứ tự — nhánh "dãy số bỏ qua thứ tự" nhận cả hai, con bấm nhầm vẫn được điểm.
+ *   · "6/9 và 6/8" với "2/3 và 3/4" bằng nhau về GIÁ TRỊ; câu hỏi lại đang hỏi con
+ *     đã quy đồng tử chưa, nên phép so số không phân biệt nổi.
+ * Vẫn tha phần chú thích trong ngoặc / sau gạch ngang, vì nút chỉ in phần cốt lõi.
+ */
+function matchPick(expectedRaw, input) {
+  const { core } = splitAside(expectedRaw);
+  const bare = answerCore(expectedRaw);
+  const b = normText(input);
+  return [expectedRaw, core, bare].some((e) => normText(e) === b);
+}
+
 function matchOne(expectedRaw, input) {
   const { core } = splitAside(expectedRaw);              // lý do trong ngoặc không phải đáp án
   const bare = answerCore(expectedRaw);                  // lý do sau gạch ngang cũng vậy
@@ -222,12 +240,21 @@ export function checkAnswer(item, input) {
   const key = item.answerKey || {};
 
   if (item.format === 'tf') {
-    const got = typeof input === 'boolean' ? input : String(input).toLowerCase() === 'true';
-    return { ok: got === key.value, mode: 'auto', expected: key.value ? 'ĐÚNG' : 'SAI' };
+    /**
+     * Nhận cả nút "ĐÚNG"/"SAI" lẫn boolean. CHƯA TRẢ LỜI thì phải là CHƯA ĐÚNG:
+     * trước đây ô rỗng bị đọc thành `false`, nên 68 câu có đáp án SAI được chấm
+     * đúng dù con chưa bấm gì.
+     */
+    const got = typeof input === 'boolean' ? input
+      : { 'đúng': true, 'true': true, 'sai': false, 'false': false }[normText(input)];
+    return { ok: got !== undefined && got === key.value, mode: 'auto',
+             expected: key.value ? 'ĐÚNG' : 'SAI' };
   }
 
   if (item.format === 'mcq') {
-    return { ok: String(input) === String(key.choice), mode: 'auto', expected: String(key.choice) };
+    const got = Array.isArray(input) ? input[0] : input;
+    return { ok: !!String(got ?? '').trim() && normText(got) === normText(key.choice),
+             mode: 'auto', expected: String(key.choice) };
   }
 
   // Đáp án là DANH SÁCH số ("tìm tất cả các số…"). Trước đây rơi vào nhánh tự-đối-chiếu
@@ -254,7 +281,7 @@ export function checkAnswer(item, input) {
     const parts = gradable.map((p, i) => ({
       label: p.label,
       expected: typeof p.value === 'number' ? fmtNum(p.value) : String(p.value),
-      ok: matchOne(p.value, arr[i]),
+      ok: isPickable(p) ? matchPick(p.value, arr[i]) : matchOne(p.value, arr[i]),
     }));
     return {
       ok: parts.every((p) => p.ok),
@@ -277,9 +304,41 @@ export function checkAnswer(item, input) {
   return { ok: true, mode: 'selfcheck', expected: item.solutionNarrative || '' };
 }
 
-/** Số ô nhập cần hiển thị cho một câu (0 nếu là trắc nghiệm) */
+/* ─────────── NĂM KIỂU TRẢ LỜI — một nguồn sự thật duy nhất ───────────
+ * Con mở bài ra phải biết NGAY mình phải làm gì. Mọi màn hình (luyện tập, chốt
+ * nhanh, sát hạch) đều hỏi hàm này chứ không tự đoán theo `format`.
+ *
+ *   'so'        điền một con số
+ *   'bieuthuc'  điền biểu thức toán (phân số, tỉ số, giờ, dãy số, so sánh)
+ *   'dungsai'   bấm ĐÚNG hoặc SAI
+ *   'chondapan' bấm một đáp án trong danh sách
+ *   'tuluan'    làm ra nháp rồi xem lời giải mẫu để tự so — không phải nhập gì
+ */
+export const CACH_TRA_LOI = {
+  so:        'Con điền một con số vào ô.',
+  bieuthuc:  'Con điền biểu thức toán vào ô (xem chữ mờ trong ô để biết dạng).',
+  dungsai:   'Con bấm chọn ĐÚNG hoặc SAI.',
+  chondapan: 'Con bấm chọn một đáp án.',
+  tuluan:    'Con làm ra giấy nháp. Xong bấm nút để xem lời giải mẫu rồi tự so.',
+};
+const KIEU_BIEUTHUC = ['fraction', 'ratio', 'time', 'minutes', 'divmod', 'numlist', 'list', 'compare'];
+
+export function answerMode(item) {
+  if (item?.format === 'tf') return 'dungsai';
+  if (item?.format === 'mcq') return 'chondapan';
+  const fs = answerFields(item);
+  if (fs.length === 0) return 'tuluan';
+  if (fs.some((f) => f.kind === 'pick')) return 'chondapan';
+  if (fs.some((f) => KIEU_BIEUTHUC.includes(f.kind))) return 'bieuthuc';
+  return 'so';
+}
+
+/** Số ô nhập cần hiển thị cho một câu */
 export function inputCount(item) {
-  if (item.format === 'tf' || item.format === 'mcq') return 0;
+  // Đúng/Sai và trắc nghiệm CŨNG là một ô trả lời — trước đây trả 0, nên màn
+  // luyện tập không dựng nút nào cho 90 câu: 68 câu được chấm ĐÚNG dù con chưa
+  // trả lời, 22 câu bị chấm SAI rồi kẹt cứng vì không có gì để sửa.
+  if (item.format === 'tf' || item.format === 'mcq') return 1;
   const key = item.answerKey || {};
   if (key.values) return 1;              // danh sách nhiều số → một ô, con tự ngăn cách
   if (key.accept) return 1;              // viết cách nào cũng được → vẫn phải có chỗ mà viết
@@ -337,14 +396,39 @@ const LETTERS = ['a', 'b', 'c', 'd', 'e', 'g'];
  * nhãn biến mất, 295 câu nhiều ô thành ra không biết ô nào hỏi gì. Và khi đáp án có
  * đơn vị thì nhãn bị đơn vị chiếm chỗ, hai ô cùng hiện "? %" y hệt nhau.
  */
+export const DUNG_SAI = ['ĐÚNG', 'SAI'];
+
 export function answerFields(item) {
   const key = item?.answerKey || {};
+
+  // Đúng/Sai và trắc nghiệm: một ô BẤM CHỌN, dựng ở đây để mọi màn hình dùng chung
+  // một khối ô trả lời — trước đây chỉ AnswerInput biết dựng, PracticeItem thì không.
+  if (item?.format === 'tf') {
+    return [{ index: 0, letter: '', label: 'Câu này đúng hay sai?', unit: '',
+              kind: 'pick', placeholder: '', options: DUNG_SAI }];
+  }
+  if (item?.format === 'mcq') {
+    const opts = (item.choices || []).filter((c) => String(c ?? '').trim());
+    if (opts.length >= 2) {
+      return [{ index: 0, letter: '', label: 'Chọn đáp án đúng', unit: '',
+                kind: 'pick', placeholder: '', options: opts }];
+    }
+    return [];
+  }
+
   const n = inputCount(item);
   if (n === 0) return [];
-  const gradable = gradableParts(key.parts || []);
-  // Câu tự luận: không có phần nào máy chấm được, nhưng vẫn dựng MỘT ô để con viết.
-  const essay = gradable.length === 0;
-  const prose = essay ? (key.parts || [])[0] : null;
+  const parts = key.parts || [];
+  const gradable = gradableParts(parts);
+  /**
+   * Tự luận là khi CÓ phần trả lời nhưng không phần nào máy chấm được.
+   * Câu không có `parts` thì đáp số nằm ở `key.value` / `key.accept` — vẫn chấm
+   * được như thường. Thiếu vế `parts.length > 0`, 211 câu ĐÁP SỐ LÀ SỐ bị dựng
+   * thành ô viết văn: con được mời "viết cách làm của mình", gõ "Tận cùng là 2"
+   * rồi bị chấm SAI vì máy chỉ nhận đúng "2" — và cổng mustPass chặn luôn bài sau.
+   */
+  const essay = parts.length > 0 && gradable.length === 0;
+  const prose = essay ? parts[0] : null;
   const expects = gradable.length ? gradable.map((p) => p.value)
                 : key.accept ? [[].concat(key.accept)[0]]
                 : [prose ? prose.value : key.value];
@@ -416,10 +500,10 @@ function fieldKind(item, expected) {
 
 /** Một dòng nói thẳng bài này đòi con làm gì — hiện ngay trên các ô nhập. */
 export function answerBrief(item) {
-  if (item?.format === 'tf') return 'Con chọn ĐÚNG hoặc SAI.';
-  if (item?.format === 'mcq') return 'Con chọn một đáp án.';
+  const mode = answerMode(item);
+  if (mode === 'dungsai' || mode === 'tuluan') return CACH_TRA_LOI[mode];
+  if (item?.format === 'mcq') return CACH_TRA_LOI.chondapan;
   const n = inputCount(item);
-  if (n === 0) return 'Câu tự luận — con làm ra nháp, xong bấm nút để đối chiếu lời giải mẫu.';
   // Đề hỏi mấy việc nhưng chỉ mấy việc chấm được bằng máy — phần giải thích để con
   // nói ra nháp. Không nói trước thì con điền xong vẫn tưởng mình còn thiếu.
   const parts = item?.answerKey?.parts || [];

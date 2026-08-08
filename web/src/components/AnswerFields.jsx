@@ -1,14 +1,25 @@
 import React from 'react';
 import { answerFields, answerBrief } from '../lib/flow.js';
 
-/** Một ô trả lời dạng BẤM CHỌN — dùng khi đề đã nói rõ bộ đáp án ("Điền TĂNG hoặc GIẢM") */
+/**
+ * Một ô trả lời dạng BẤM CHỌN — dùng cho Đúng/Sai, trắc nghiệm, và các ô mà đề đã
+ * nói rõ bộ đáp án ("Điền TĂNG hoặc GIẢM").
+ *
+ * Đáp án dài (câu giải thích, dãy số) mà xếp thành viên tròn nằm ngang thì bị bóp
+ * lại, con phải căng mắt đọc. Dài quá thì xếp DỌC, mỗi phương án một dòng đủ rộng.
+ */
 export function PickRow({ options, value, disabled, onPick }) {
+  const dai = options.some((o) => String(o).length > 24);
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div className={dai ? 'flex flex-col gap-2' : 'flex flex-wrap items-center gap-2'}>
       {options.map((o) => (
         <button key={o} type="button" disabled={disabled} onClick={() => onPick(o)}
-          className={`rounded-full border-[1.5px] px-3.5 py-1.5 text-[14.5px] font-bold ${
-            value === o ? 'border-navy bg-navy text-white' : 'border-line bg-white text-navy'}`}>
+          aria-pressed={value === o}
+          className={dai
+            ? `rounded-xl border-[1.5px] px-3.5 py-2.5 text-left text-[15px] leading-snug ${
+                value === o ? 'border-navy bg-navy font-bold text-white' : 'border-line bg-white text-navy'}`
+            : `rounded-full border-[1.5px] px-3.5 py-1.5 text-[14.5px] font-bold ${
+                value === o ? 'border-navy bg-navy text-white' : 'border-line bg-white text-navy'}`}>
           {o}
         </button>
       ))}

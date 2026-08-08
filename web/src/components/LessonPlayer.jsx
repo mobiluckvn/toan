@@ -4,6 +4,7 @@ import { loadLesson, figureSrc, chapterOf } from '../lib/content.js';
 import { gradeMicro } from '../lib/flow.js';
 import { newSessionId } from '../lib/sync.js';
 import StepView from './StepView.jsx';
+import CuonThem from './CuonThem.jsx';
 
 /** Thanh chặng: MỞ BÀI · GIẢNG · BÀI MẪU · LUYỆN TẬP · SÁT HẠCH */
 function PhaseBar({ current }) {
@@ -101,6 +102,8 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
           onRestart={() => { setI(0); setLog({ practice: [], assess: [] }); onMoveStep?.(microId, 0, flow.length); }}
         />
       </main>
+
+      <CuonThem />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { checkAnswer, inputCount, answerBrief } from '../lib/flow.js';
+import { checkAnswer, inputCount, answerBrief, answerFields } from '../lib/flow.js';
 import AnswerFields, { PickRow } from './AnswerFields.jsx';
 
 export { PickRow };
@@ -10,28 +10,20 @@ export { PickRow };
  */
 export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra', autoAdvance }) {
   const n = inputCount(item);
-  const isChoice = item.format === 'tf' || item.format === 'mcq';
-  const choices = item.format === 'tf' ? ['ĐÚNG', 'SAI'] : (item.choices || []);
   const [vals, setVals] = useState(Array(Math.max(n, 1)).fill(''));
   const [res, setRes] = useState(null);
-  const [picked, setPicked] = useState(null);
 
   const settle = (r) => { setRes(r); onResolve?.(r); };
 
-  const pick = (c, idx) => {
-    if (res) return;
-    setPicked(idx);
-    const input = item.format === 'tf' ? idx === 0 : c;
-    settle(checkAnswer(item, input));
-  };
-
+  /* Đúng/Sai và trắc nghiệm nay cũng là một ô trong AnswerFields, nên không còn
+     nhánh riêng ở đây — một khối ô trả lời dùng chung cho mọi màn hình. */
   const submit = () => {
-    if (res && res.mode !== 'selfcheck') return;
+    if (res?.ok) return;                   // đúng rồi thì thôi, còn sai thì thử lại thoải mái
     settle(checkAnswer(item, n <= 1 ? vals[0] : vals));
   };
 
-  /* câu chỉ để tự đối chiếu — không có ô nhập */
-  if (n === 0 && !isChoice) {
+  /* câu tự luận — làm ra nháp rồi tự so, không có ô nhập */
+  if (answerFields(item).length === 0) {
     return (
       <div className="mt-3">
         {!res ? (
@@ -53,30 +45,9 @@ export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra
 
   return (
     <div className="mt-3">
-      {isChoice ? (
-        <>
-          <p className="field-brief"><span aria-hidden>✎</span><span>{answerBrief(item)}</span></p>
-          <div className="flex flex-col gap-2.5">
-            {choices.map((c, idx) => {
-              const isKey = item.format === 'tf'
-                ? (idx === 0) === item.answerKey?.value
-                : c === item.answerKey?.choice;
-              const cls = !res ? '' : isKey ? 'opt-right' : (picked === idx ? 'opt-wrong' : '');
-              return (
-                <button key={idx} className={`opt ${cls}`} disabled={!!res} onClick={() => pick(c, idx)}>
-                  {c}
-                </button>
-              );
-            })}
-          </div>
-        </>
-      ) : (
-        <>
-          <AnswerFields item={item} vals={vals} disabled={!!res && res.ok}
-                        onChange={setVals} onEnter={submit} />
-          {!res?.ok && <button className="btn-go mt-3" onClick={submit}>{submitLabel}</button>}
-        </>
-      )}
+      <AnswerFields item={item} vals={vals} disabled={!!res?.ok}
+                    onChange={setVals} onEnter={submit} />
+      {!res?.ok && <button className="btn-go mt-3" onClick={submit}>{submitLabel}</button>}
 
       {res && (
         <div className={`mt-3 rounded-xl border-[1.5px] px-3.5 py-3 text-[15px] ${
@@ -84,7 +55,7 @@ export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra
             : res.ok ? 'border-teal bg-teal-pale text-teal-dark' : 'border-alert bg-alert-pale text-alert'}`}>
           {res.mode === 'selfcheck' ? <><b>Lời giải mẫu:</b> {res.expected}</>
             : res.ok ? <>🎉 Đúng rồi! {item.solutionNarrative || ''}</>
-            : <>Chưa đúng — con thử lại nhé.</>}
+            : <>Chưa đúng — con chọn/sửa lại rồi bấm {submitLabel} lần nữa nhé.</>}
         </div>
       )}
     </div>

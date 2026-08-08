@@ -17,6 +17,12 @@ export default function PracticeItem({ item: base, level, figure, onDone, onJump
   const n = inputCount(item);
   const hs = hintState(item, tries);
   const finished = res?.ok || hs.reveal;
+  /**
+   * Khoá ô CHỈ khi con đã đúng. Trước đây khoá luôn lúc `finished`, mà `finished`
+   * còn bật khi lộ đáp án sau 3 lần sai — màn hình bảo "con thử lại nhé" trong khi
+   * mọi ô đã tắt, con sửa cũng không được. Sai bao nhiêu lần cũng được thử lại.
+   */
+  const khoaO = !!res?.ok;
   const variantable = !!canGenerate(item);
 
   const submit = () => {
@@ -53,7 +59,7 @@ export default function PracticeItem({ item: base, level, figure, onDone, onJump
           </div>
         ) : (
           <>
-            <AnswerFields item={item} vals={vals} disabled={finished}
+            <AnswerFields item={item} vals={vals} disabled={khoaO}
                           onChange={setVals} onEnter={submit} />
             {/* chỉ nhắc chuyện đơn vị khi ô ĐANG chờ một con số — câu trả lời bằng
                 chữ mà bảo "điền số là đủ" thì con lại tưởng mình hiểu sai đề */}
@@ -71,7 +77,7 @@ export default function PracticeItem({ item: base, level, figure, onDone, onJump
               ? 'border-teal bg-teal-pale text-teal-dark' : 'border-alert bg-alert-pale text-alert'}`}>
             {res.mode === 'selfcheck' ? <><b>Lời giải mẫu:</b> {res.expected}</>
               : res.ok ? <>🎉 Chuẩn! {item.solutionNarrative || ''}</>
-              : <>Chưa đúng — con xem gợi ý rồi thử lại nhé!</>}
+              : <>Chưa đúng — con sửa lại rồi bấm Kiểm tra lần nữa nhé. Thử bao nhiêu lần cũng được.</>}
           </div>
         )}
 
@@ -90,9 +96,16 @@ export default function PracticeItem({ item: base, level, figure, onDone, onJump
       <footer className="fixed inset-x-0 bottom-0 border-t border-line bg-white/95 px-3.5 py-2.5 backdrop-blur"
               style={{ paddingBottom: 'calc(.625rem + env(safe-area-inset-bottom))' }}>
         <div className="mx-auto flex max-w-[740px] gap-2.5">
-          {finished ? (
+          {res?.ok ? (
             <>
               {variantable && <button className="btn-ghost" onClick={another}>Đề khác</button>}
+              <button className="btn-go" onClick={onNext}>Câu tiếp ▶</button>
+            </>
+          ) : hs.reveal ? (
+            /* Đã lộ đáp án sau 3 lần sai — con vẫn được thử lại cho tới khi tự làm
+               đúng, hoặc bấm đi tiếp. Không cụt đường như trước. */
+            <>
+              <button className="btn-ghost" onClick={submit}>Thử lại</button>
               <button className="btn-go" onClick={onNext}>Câu tiếp ▶</button>
             </>
           ) : (

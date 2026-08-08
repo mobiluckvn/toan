@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { buildWorkedSteps } from '../lib/flow.js';
 import AnswerInput from './AnswerInput.jsx';
 import Figure from './Figure.jsx';
@@ -8,12 +8,24 @@ export default function WorkedExample({ we, figure, onNext }) {
   const seq = useMemo(() => buildWorkedSteps(we), [we]);
   const [k, setK] = useState(0);          // đã mở tới bước con thứ mấy
   const [answered, setAnswered] = useState({});
+  const moiRef = useRef(null);
 
   const cur = seq[k];
   const done = k >= seq.length;
   const shown = seq.slice(0, k);
 
   const advance = () => setK((x) => x + 1);
+
+  /**
+   * Bước con mở ra thì nó nằm PHÍA DƯỚI chỗ con đang nhìn, mà nút "Bước tiếp" lại
+   * dán cứng ở chân màn hình — nên con bấm xong thấy màn hình y như cũ, tưởng hỏng.
+   * Kéo đúng phần vừa hiện vào tầm mắt. Bỏ qua bước đầu (k = 0) vì lúc ấy con vẫn
+   * đang ở đầu thẻ, kéo là giật màn hình vô cớ.
+   */
+  useEffect(() => {
+    if (k === 0 || !moiRef.current) return;
+    moiRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }, [k]);
 
   return (
     <>
@@ -24,11 +36,15 @@ export default function WorkedExample({ we, figure, onNext }) {
         </div>
         <Figure fig={figure} />
 
-        {shown.filter((s) => s.kind === 'show').map((s, i) => (
-          <div key={i} className="mt-2.5 flex gap-2.5 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
-            <span className="font-bold text-teal-dark">▸</span><span>{s.text}</span>
-          </div>
-        ))}
+        {(() => {
+          const hien = shown.filter((s) => s.kind === 'show');
+          return hien.map((s, i) => (
+            <div key={i} ref={i === hien.length - 1 ? moiRef : null}
+                 className="mt-2.5 flex gap-2.5 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
+              <span className="font-bold text-teal-dark">▸</span><span>{s.text}</span>
+            </div>
+          ));
+        })()}
 
         {!done && cur?.kind === 'show' && (
           <div className="mt-2.5 flex gap-2.5 rounded-xl border-[1.5px] border-line bg-white px-3.5 py-3 text-[15px] opacity-60">
@@ -37,7 +53,7 @@ export default function WorkedExample({ we, figure, onNext }) {
         )}
 
         {!done && cur?.kind === 'ask' && (
-          <div className="mt-4 border-t border-line pt-3.5">
+          <div ref={moiRef} className="mt-4 border-t border-line pt-3.5">
             <p className="text-[16px] font-semibold leading-snug">❓ {cur.item.text}</p>
             <AnswerInput
               item={cur.item}

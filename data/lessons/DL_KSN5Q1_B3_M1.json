@@ -419,14 +419,23 @@
       "standard": [
         {
           "id": "P3",
-          "format": "opn",
+          "format": "mb",
           "sourceItem": "ITEM:KSN5Q1.B3.LT4",
           "text": "Dùng khai triển theo hàng, chứng tỏ rằng tổng của một số có hai chữ số và số viết ngược của nó luôn chia hết cho 11.",
           "answerKey": {
-            "accept": [
-              "(10a + b) + (10b + a) = 11a + 11b = 11 × (a + b)"
-            ],
-            "rubric": "Phải khai triển đủ hai số và gom nhóm về 11 × (a + b)."
+            "rubric": "Phải khai triển đủ hai số và gom nhóm về 11 × (a + b).",
+            "parts": [
+              {
+                "label": "khai triển",
+                "value": "(10a + b) + (10b + a) = 11a + 11b = 11 × (a + b)",
+                "options": [
+                  "(10a + b) + (10b + a) = 11a + 11b = 11 × (a + b)",
+                  "(10a + b) + (10b + a) = 9a + 9b = 9 × (a + b)",
+                  "(10a + b) + (10b + a) = 10a + 10b = 10 × (a + b)",
+                  "a + b + a + b = 2 × (a + b)"
+                ]
+              }
+            ]
           },
           "hints": [
             "ab = 10a + b; ba = ?",

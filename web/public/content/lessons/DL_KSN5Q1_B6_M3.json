@@ -1,651 +1,657 @@
 {
- "title": "Đếm có điều kiện: toa ràng buộc trước — khác luật phải tách nhánh",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:I.3.2#3"
-  ],
-  "bktUnit": "CASE:I.3.2#3@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B6",
-  "order": 3,
-  "prev": "DL:KSN5Q1.B6.M2",
-  "next": "DL:KSN5Q1.B7.M1"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B6",
-  "chunks": [
-   "CHUNK:KSN5Q1.B6.S4",
-   "CHUNK:KSN5Q1.B6.S7"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B6.3",
-   "CA:KSN5Q1.B6.4"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B6.2",
-   "TRAP:KSN5Q1.B6.3"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con đếm được số lập với điều kiện chẵn / lẻ / chia hết 5 / chia hết 3: chọn toa RÀNG BUỘC trước; các nhánh khác luật thì TÁCH riêng, đếm từng nhánh rồi CỘNG.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A3 (tách nhánh + thứ tự toa)",
-  "kidText": "Đếm số có điều kiện: chọn toa bị ràng buộc trước. Các nhánh khác luật nhau thì tách ra đếm riêng rồi cộng lại."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Có điều kiện tận cùng (chẵn, chia hết 5): chọn toa ĐUÔI (toa ràng buộc) TRƯỚC, rồi mới lắp các toa còn lại."
-   },
-   {
-    "id": "K2",
-    "text": "Các nhánh của toa ràng buộc cho toa sau LUẬT KHÁC NHAU (nhánh đuôi 0 'giam' thẻ 0, nhánh đuôi khác thì không) → TÁCH NHÁNH, đếm riêng, CỘNG lại. Trong một nhánh thì NHÂN; giữa các nhánh thì CỘNG."
-   },
-   {
-    "id": "K3",
-    "text": "Thứ tự vàng chọn toa: toa RÀNG BUỘC trước — toa ĐẦU (luật cấm 0) — các toa dễ tính sau."
-   },
-   {
-    "id": "K4",
-    "text": "Điều kiện chia hết 3, 9 (họ tổng): liệt kê các BỘ THẺ tổng đạt chuẩn trước, đếm cách xếp mỗi bộ (bộ chứa 0 ít cách hơn), rồi cộng các bộ."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: TOA KHÓ TÍNH LÊN TÀU TRƯỚC. Toa đuôi bị điều kiện ràng buộc là hành khách khó tính — mời lên trước để biết nó chiếm thẻ nào. Nó thường có nhiều lựa chọn ghế, và mỗi lựa chọn làm ĐỔI LUẬT cho các toa sau: đuôi lấy thẻ 0 thì toa lái thoải mái hẳn; đuôi lấy thẻ 8 thì thẻ 0 quay về kho mà vẫn bị cấm toa lái. Khác luật là con đường tách đôi — đi riêng từng nhánh, NHÂN trong nhánh, CỘNG ở cửa ra. Cấm nhất: nhân chung 'số nhánh' vào dây chuyền như thể các nhánh cùng luật.",
-  "canonicalExamples": [
-   {
-    "case": "số chẵn — tách nhánh (ca lõi)",
-    "problem": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau là số chẵn?",
-    "solution": "Đuôi chẵn ∈ {0; 8} — hai nhánh KHÁC luật. Nhánh đuôi 0: toa trăm 3, toa chục 2 → 6. Nhánh đuôi 8: toa trăm ∈ {3;5} = 2 (cấm 0!), toa chục 2 → 4. Cộng: 6 + 4 = 10 số.",
-    "why": "Ca chuẩn K1+K2 — nguồn bẫy CĐ-6.2."
-   },
-   {
-    "case": "chia hết 5 (ca song sinh)",
-    "problem": "Từ {0; 3; 5; 8}, lập được bao nhiêu số có ba chữ số khác nhau chia hết cho 5?",
-    "solution": "Đuôi ∈ {0; 5}: nhánh đuôi 0 → 6; nhánh đuôi 5 → 2 × 2 = 4. Tổng 10 số.",
-    "why": "Cùng khuôn với ca chẵn — luyện chuyển giao."
-   },
-   {
-    "case": "chia hết 3 — họ tổng (ca sư phụ)",
-    "problem": "Từ các chữ số 0; 1; 2; 3; 4, lập được bao nhiêu số có ba chữ số khác nhau chia hết cho 3?",
-    "solution": "Bộ ba tổng ⋮ 3: {0;1;2}, {0;2;4}, {1;2;3}, {2;3;4}. Bộ CHỨA 0: 2 × 2 × 1 = 4 số/bộ. Bộ KHÔNG chứa 0: 3 × 2 × 1 = 6 số/bộ. Tổng: 4 + 4 + 6 + 6 = 20 số.",
-    "why": "Ca K4 — họ tổng chọn bộ, đếm cách xếp từng bộ."
-   }
-  ],
-  "numberRange": "Lớp 5: bộ 4–5 thẻ; điều kiện chẵn/lẻ, chia hết 3, 5; kết quả dưới 100.",
-  "misconceptions": [
-   {
-    "wrong": "Nhân chung số lựa chọn đuôi vào dây chuyền ('đuôi có 2 cách' × các toa như nhau).",
-    "signal": "Đáp số kiểu 2 × 3 × 2 = 12 thay vì 10.",
-    "fix": "K2 — hỏi trước khi nhân: các nhánh đuôi có cho toa sau CÙNG luật không? Khác luật → tách nhánh, cộng.",
-    "counterExample": "Nhánh đuôi 0 được 6 số, nhánh đuôi 8 chỉ 4 — nhân chung là gán oan cho nhánh nghèo."
-   },
-   {
-    "wrong": "Chọn toa trăm trước 'cho thuận mắt', đến toa đuôi mới xét điều kiện.",
-    "signal": "Phải quay lại sửa vì trăm đã lấy mất thẻ đuôi cần.",
-    "fix": "K3 — toa khó tính lên tàu trước: ràng buộc → toa đầu → toa dễ.",
-    "counterExample": "Chọn trăm = 8 trước thì nhánh đuôi 8 chết kẹt."
-   }
-  ],
-  "vocabulary": [
-   "toa ràng buộc (hành khách khó tính)",
-   "tách nhánh — cộng ở cửa ra",
-   "trong nhánh NHÂN, giữa nhánh CỘNG",
-   "bộ chứa 0 ít cách hơn"
-  ],
-  "mantra": "CÙNG LUẬT MỚI NHÂN CHUNG — KHÁC LUẬT PHẢI TÁCH NHÁNH!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Từ {0;3;5;8}, số các số ba chữ số khác nhau là? (bài trước)",
-    "answerKey": {
-     "value": 18
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B6.M2",
-   "message": "Ôn kho vơi dần rồi quay lại đón hành khách khó tính nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Đơn hàng VIP: đếm số CHẴN ba chữ số khác nhau từ bộ 0 · 3 · 5 · 8. Trí Long tính gọn: 'Đuôi chẵn có 2 cách (0 hoặc 8), nhân với các toa kia là xong!' Su Kem nhíu mày: 'Hai nhánh ấy… có chung luật không đã?'",
-    "display": {
-     "type": "story_panel",
-     "caption": "đuôi 2 cách × … = ???"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để soi hai nhánh!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 48,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "Đếm có điều kiện: toa ràng buộc trước — khác luật phải tách nhánh",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:I.3.2#3"
     ],
-    "narration": "Mời hành khách khó tính — toa ĐUÔI — lên trước. Nhánh 1, đuôi lấy thẻ 0: toa trăm chọn trong {3;5;8} — 3 cách, toa chục 2 → 6 số. Nhánh 2, đuôi lấy thẻ 8: toa trăm chỉ còn {3;5} — 2 cách (thẻ 0 vẫn bị cấm ghế lái!), toa chục 2 → 4 số. Hai nhánh khác luật — con cộng ở cửa ra.",
-    "display": {
-     "type": "branch_count_interactive",
-     "spec": {
-      "branches": [
-       {
-        "tail": 0,
-        "counts": [
-         3,
-         2
-        ],
-        "sub": 6
-       },
-       {
-        "tail": 8,
-        "counts": [
-         2,
-         2
-        ],
-        "sub": 4
-       }
-      ],
-      "total": 10
-     }
-    },
-    "interaction": {
-     "type": "fill_and_sum",
-     "answerKey": {
-      "value": 10
-     },
-     "successMessage": "6 + 4 = 10 số chẵn — trong nhánh NHÂN, giữa nhánh CỘNG!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 18,
-    "item": {
-     "format": "num",
-     "text": "Cùng bộ ấy: bao nhiêu số ba chữ số khác nhau chia hết cho 5?",
-     "answerKey": {
-      "value": 10
-     },
-     "wrongFeedback": "Đuôi {0;5}: nhánh 0 → 6; nhánh 5 → 2 × 2 = 4; cộng.",
-     "objective": "O1",
-     "teaches": [
-      "K1",
-      "K2"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K3",
-     "K4"
+    "bktUnit": "CASE:I.3.2#3@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B6",
+    "order": 3,
+    "prev": "DL:KSN5Q1.B6.M2",
+    "next": "DL:KSN5Q1.B7.M1"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B6",
+    "chunks": [
+      "CHUNK:KSN5Q1.B6.S4",
+      "CHUNK:KSN5Q1.B6.S7"
     ],
-    "narration": "Thứ tự vàng khắc lên vé tàu: toa RÀNG BUỘC trước — toa ĐẦU (cấm 0) — toa dễ tính sau. Còn điều kiện chia hết BA thì gia tộc TỔNG chỉ huy: tuyển các BỘ ba thẻ tổng chia hết 3 — {0;1;2}, {0;2;4}, {1;2;3}, {2;3;4} — rồi đếm cách xếp từng bộ: bộ chứa 0 được 4 cách, bộ sạch 0 được 6 cách. Cộng: 4 + 4 + 6 + 6 = 20!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "Vé tàu: RÀNG BUỘC → ĐẦU → DỄ",
-      "⋮3: bộ {0;1;2}{0;2;4}: 4 cách/bộ · {1;2;3}{2;3;4}: 6 cách/bộ",
-      "4 + 4 + 6 + 6 = 20"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú sân ga: cùng luật mới nhân chung — khác luật phải tách nhánh! Toa khó tính lên tàu trước!",
-    "display": {
-     "type": "mantra_card",
-     "text": "KHÁC LUẬT PHẢI TÁCH NHÁNH!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 77,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Đơn hàng VIP: đếm số CHẴN ba chữ số khác nhau từ bộ không, ba, năm, tám. Trí Long tính gọn: đuôi chẵn có hai cách — nhân với các toa kia là xong! Su Kem nhíu mày: hai nhánh ấy… có chung luật không đã?",
-    "screenText": "đuôi 2 cách × … = ???",
-    "visual": "Sân ga với hai cổng nhánh 'ĐUÔI 0' và 'ĐUÔI 8'; Trí Long cầm máy tính; Su Kem giơ tay chặn.",
-    "assets": [],
-    "duration": 17
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Mời hành khách khó tính — toa ĐUÔI — lên trước. Nhánh một, đuôi lấy thẻ không: toa trăm ba cách, toa chục hai — SÁU số. Nhánh hai, đuôi lấy thẻ tám: toa trăm chỉ còn hai cách vì thẻ không vẫn bị cấm ghế lái — BỐN số. Khác luật thì cộng ở cửa ra: sáu cộng bốn bằng MƯỜI!",
-    "screenText": "đuôi 0: 3×2=6 · đuôi 8: 2×2=4 → 10",
-    "visual": "Hai đường ray tách nhánh; mỗi nhánh hiện bộ đếm và tổng con; hai dòng tàu gộp ở cổng ra với '10' vàng #F8B942.",
-    "assets": [],
-    "duration": 22
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Thứ tự vàng in trên vé: toa RÀNG BUỘC trước — toa ĐẦU cấm thẻ không — toa dễ tính sau. Còn chia hết BA thì tuyển bộ theo tổng: bốn bộ đạt chuẩn; bộ chứa thẻ không xếp được bốn cách, bộ sạch thẻ không xếp được sáu cách — cộng cả bốn bộ ra HAI MƯƠI số!",
-    "screenText": "RÀNG BUỘC → ĐẦU → DỄ · ⋮3: 4+4+6+6 = 20",
-    "visual": "Chiếc vé tàu in ba dòng thứ tự; bảng bốn bộ thẻ với số cách từng bộ; tổng 20 bật vàng.",
-    "assets": [],
-    "duration": 21
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú sân ga: cùng luật mới nhân chung — khác luật phải tách nhánh! Toa khó tính lên tàu trước!",
-    "screenText": "KHÁC LUẬT PHẢI TÁCH NHÁNH!",
-    "visual": "Thẻ thần chú vàng với icon đường ray tách đôi.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Đơn cuối cho con: cùng bộ thẻ ấy, bao nhiêu số ba chữ số khác nhau là số LẺ? Vào bài luyện ngay!",
-    "screenText": "{0;3;5;8} → số LẺ = ?",
-    "visual": "Hai cổng nhánh 'ĐUÔI 3' 'ĐUÔI 5' chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P3",
-    "assets": [],
-    "duration": 9
-   }
-  ]
- },
- "workedExample": {
-  "title": "Đơn hàng số chẵn",
-  "problem": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau là số chẵn?",
-  "steps": [
-   {
-    "show": "Bước 1 — Toa ràng buộc lên trước: đuôi chẵn ∈ {0; 8} → HAI nhánh.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Vì sao không nhân ngay 'đuôi 2 cách' vào dây chuyền?",
-     "choices": [
-      "Vì hai nhánh cho các toa sau luật khác nhau",
-      "Vì đuôi phải chọn sau cùng",
-      "Vì 2 là số chẵn"
-     ],
-     "answerKey": {
-      "choice": "Vì hai nhánh cho các toa sau luật khác nhau"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Nhánh đuôi 0: toa trăm 3, toa chục 2 → 3 × 2 = 6."
-   },
-   {
-    "show": "Bước 3 — Nhánh đuôi 8: toa trăm 2 (cấm 0, mất 8), toa chục 2 → 4.",
-    "askBefore": {
-     "format": "num",
-     "text": "Nhánh đuôi 8: toa trăm mấy cách?",
-     "answerKey": {
-      "value": 2
-     }
-    }
-   },
-   {
-    "show": "Bước 4 — Cộng cửa ra: 6 + 4 = 10 số chẵn.",
-    "askAfter": {
-     "format": "num",
-     "text": "Kiểm chéo: tổng 'khác nhau' là 18; số LẺ = 18 − 10 = ?",
-     "answerKey": {
-      "value": 8
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B6.LT4",
-     "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau là số chẵn? (Tách nhánh theo đuôi!)",
-     "answerKey": {
-      "value": 10
-     },
-     "hints": [
-      "Đuôi {0; 8} — hai nhánh khác luật.",
-      "6 + 4."
-     ],
-     "solutionNarrative": "Đuôi 0: 3 × 2 = 6; đuôi 8: 2 × 2 = 4 → 6 + 4 = 10 số chẵn.",
-     "teaches": [
-      "K1",
-      "K2"
-     ]
-    },
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B6.LT5",
-     "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau chia hết cho 5?",
-     "answerKey": {
-      "value": 10
-     },
-     "hints": [
-      "Đuôi {0; 5}.",
-      "6 + 4."
-     ],
-     "solutionNarrative": "Đuôi 0: 6; đuôi 5: 2 × 2 = 4 → 10 số.",
-     "teaches": [
-      "K1",
-      "K2"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P3",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B6.LT7",
-     "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau là số LẺ?",
-     "answerKey": {
-      "value": 8
-     },
-     "hints": [
-      "Đuôi lẻ ∈ {3; 5} — hai nhánh CÙNG khuôn.",
-      "Mỗi nhánh: trăm 2 (cấm 0, mất đuôi), chục 2 → 4; cộng."
-     ],
-     "solutionNarrative": "Đuôi ∈ {3;5}: mỗi nhánh 2 × 2 = 4 → 8 số (kiểm: 18 − 10 chẵn = 8 ✓).",
-     "teaches": [
-      "K1",
-      "K2"
-     ]
-    },
-    {
-     "id": "P4",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B6.LT9",
-     "text": "Sư phụ hỏi xoáy: \"Với bộ {0; 3; 5; 8}, vì sao nhánh tận cùng 0 đếm được 6 số mà nhánh tận cùng 5 chỉ được 4?\"",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "lý do",
-        "value": "nhánh đuôi 0 'giam' thẻ 0 ở đuôi — toa trăm chọn thoải mái cả 3 thẻ còn lại; nhánh đuôi 5 thì thẻ 0 quay về kho mà vẫn bị cấm toa trăm → trăm chỉ 2 cách"
-       }
-      ]
-     },
-     "hints": [
-      "Ở mỗi nhánh, thẻ 0 đang ở đâu?",
-      "Toa trăm mỗi nhánh mấy cách, vì sao?"
-     ],
-     "solutionNarrative": "Nhánh đuôi 0 đông dân hơn vì thẻ 0 bị giam ở đuôi — toa trăm tự do cả ba thẻ còn lại.",
-     "teaches": [
-      "K2"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P5",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B6.LT8",
-     "text": "Từ các chữ số 0; 1; 2; 3; 4, lập được bao nhiêu số có ba chữ số khác nhau chia hết cho 3? (Chọn bộ theo tổng trước!)",
-     "answerKey": {
-      "value": 20
-     },
-     "hints": [
-      "Các bộ ba tổng ⋮ 3: {0;1;2}, {0;2;4}, {1;2;3}, {2;3;4}.",
-      "Bộ chứa 0: 4 cách xếp; bộ sạch 0: 6 cách."
-     ],
-     "solutionNarrative": "4 bộ đạt chuẩn: 4 + 4 + 6 + 6 = 20 số.",
-     "teaches": [
-      "K4"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1 và A3",
-  "onPass": {
-   "updateBKT": [
-    "CASE:I.3.2#3@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B7.M1",
-   "award": "huy_hieu_ga_truong_tach_nhanh"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ P1 + P3"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B6.QZ2",
-    "text": "(Đúng/Sai?) Đếm số chia hết cho 5, ta luôn nhân chung \"2 cách chọn tận cùng\" vào dây chuyền.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B6.QZ5",
-    "text": "Trong một nhánh ta NHÂN các lựa chọn; giữa các nhánh ta:",
-    "choices": [
-     "cộng",
-     "nhân",
-     "trừ"
+    "cases": [
+      "CA:KSN5Q1.B6.3",
+      "CA:KSN5Q1.B6.4"
     ],
-    "answerKey": {
-     "choice": "cộng"
-    },
-    "teaches": [
-     "K2"
+    "traps": [
+      "TRAP:KSN5Q1.B6.2",
+      "TRAP:KSN5Q1.B6.3"
     ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "text": "Thứ tự chọn toa đúng là:",
-    "choices": [
-     "Toa ràng buộc → toa đầu → toa dễ",
-     "Toa đầu → toa dễ → toa ràng buộc",
-     "Toa nào trước cũng được"
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con đếm được số lập với điều kiện chẵn / lẻ / chia hết 5 / chia hết 3: chọn toa RÀNG BUỘC trước; các nhánh khác luật thì TÁCH riêng, đếm từng nhánh rồi CỘNG.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A3 (tách nhánh + thứ tự toa)",
+    "kidText": "Đếm số có điều kiện: chọn toa bị ràng buộc trước. Các nhánh khác luật nhau thì tách ra đếm riêng rồi cộng lại."
+  },
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Có điều kiện tận cùng (chẵn, chia hết 5): chọn toa ĐUÔI (toa ràng buộc) TRƯỚC, rồi mới lắp các toa còn lại."
+      },
+      {
+        "id": "K2",
+        "text": "Các nhánh của toa ràng buộc cho toa sau LUẬT KHÁC NHAU (nhánh đuôi 0 'giam' thẻ 0, nhánh đuôi khác thì không) → TÁCH NHÁNH, đếm riêng, CỘNG lại. Trong một nhánh thì NHÂN; giữa các nhánh thì CỘNG."
+      },
+      {
+        "id": "K3",
+        "text": "Thứ tự vàng chọn toa: toa RÀNG BUỘC trước — toa ĐẦU (luật cấm 0) — các toa dễ tính sau."
+      },
+      {
+        "id": "K4",
+        "text": "Điều kiện chia hết 3, 9 (họ tổng): liệt kê các BỘ THẺ tổng đạt chuẩn trước, đếm cách xếp mỗi bộ (bộ chứa 0 ít cách hơn), rồi cộng các bộ."
+      }
     ],
-    "answerKey": {
-     "choice": "Toa ràng buộc → toa đầu → toa dễ"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Đếm số có điều kiện đuôi — quy trình và luật nhân/cộng?",
-    "back": "Toa RÀNG BUỘC lên trước; nhánh khác luật thì TÁCH: trong nhánh NHÂN — giữa nhánh CỘNG. Chẵn từ {0;3;5;8}: 6 + 4 = 10. Thứ tự: ràng buộc → đầu → dễ. Chia hết 3: tuyển bộ theo tổng rồi đếm cách xếp từng bộ."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu P2",
-   "+7 ngày: câu P5 (họ tổng)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học đếm có điều kiện: tách nhánh khi khác luật, thứ tự 'toa khó tính lên trước'. Con đạt {score}/3, {trapResult} câu bẫy nhân-chung.",
-  "homeActivity": "Đố kiểm chứng: 'từ 0, 3, 5, 8 — số chẵn cộng số lẻ ba chữ số khác nhau có ra đủ 18 không?' — con tính 10 + 8 = 18 khớp là đạt.",
-  "watchFor": "Nếu con nhân '2 cách đuôi' thẳng vào dây chuyền — mở lại hai đường ray tách nhánh (S2) cùng con."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B6.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "đuôi 2 cách × … = ???",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Đơn hàng VIP: đếm số CHẴN ba chữ số khác nhau từ bộ 0 · 3 · 5 · 8.",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "'Hai nhánh ấy… có chung luật không đã?'",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B6_M3_F1.png",
-   "sha256_16": "ae3db844d47ffd1a"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "CA MẪU · số chẵn — tách nhánh (ca lõi)",
-    "formulas": [
-     {
-      "label": "ĐỀ",
-      "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau là số LẺ?",
-      "tone": "navy"
-     },
-     {
-      "label": "LỜI GIẢI",
-      "text": "Đuôi chẵn ∈ {0; 8} — hai nhánh KHÁC luật. Nhánh đuôi 0: toa trăm 3, toa chục 2 → 6. Nhánh đuôi 8: toa trăm ∈ {3;5} = 2 (cấm 0!), toa chục 2 → 4. Cộng: 6 + 4 = 10 số.",
-      "tone": "teal"
-     }
-    ]
-   },
-   "caption": "Ca mẫu chuẩn của bài",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B6_M3_F2.png",
-   "sha256_16": "08e4786a31b52f37"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Có điều kiện tận cùng (chẵn, chia hết 5)",
-      "text": "chọn toa ĐUÔI (toa ràng buộc) TRƯỚC, rồi mới lắp các toa còn lại.",
-      "tone": "navy"
-     },
-     {
-      "text": "Các nhánh của toa ràng buộc cho toa sau LUẬT KHÁC NHAU (nhánh đuôi 0 'giam' thẻ 0, nhánh đuôi khác thì không) → TÁCH NHÁNH, đếm riêng, CỘNG lại. Trong một nhánh thì NHÂN; giữa các nhánh thì CỘNG.",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: TOA KHÓ TÍNH LÊN TÀU TRƯỚC. Toa đuôi bị điều kiện ràng buộc là hành khách khó tính — mời lên trước để biết nó chiếm thẻ nào. Nó thường có nhiều lựa chọn ghế, và mỗi lựa chọn làm ĐỔI LUẬT cho các toa sau: đuôi lấy thẻ 0 thì toa lái thoải mái hẳn; đuôi lấy thẻ 8 thì thẻ 0 quay về kho mà vẫn bị cấm toa lái. Khác luật là con đường tách đôi — đi riêng từng nhánh, NHÂN trong nhánh, CỘNG ở cửa ra. Cấm nhất: nhân chung 'số nhánh' vào dây chuyền như thể các nhánh cùng luật.",
+    "canonicalExamples": [
+      {
+        "case": "số chẵn — tách nhánh (ca lõi)",
+        "problem": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau là số chẵn?",
+        "solution": "Đuôi chẵn ∈ {0; 8} — hai nhánh KHÁC luật. Nhánh đuôi 0: toa trăm 3, toa chục 2 → 6. Nhánh đuôi 8: toa trăm ∈ {3;5} = 2 (cấm 0!), toa chục 2 → 4. Cộng: 6 + 4 = 10 số.",
+        "why": "Ca chuẩn K1+K2 — nguồn bẫy CĐ-6.2."
+      },
+      {
+        "case": "chia hết 5 (ca song sinh)",
+        "problem": "Từ {0; 3; 5; 8}, lập được bao nhiêu số có ba chữ số khác nhau chia hết cho 5?",
+        "solution": "Đuôi ∈ {0; 5}: nhánh đuôi 0 → 6; nhánh đuôi 5 → 2 × 2 = 4. Tổng 10 số.",
+        "why": "Cùng khuôn với ca chẵn — luyện chuyển giao."
+      },
+      {
+        "case": "chia hết 3 — họ tổng (ca sư phụ)",
+        "problem": "Từ các chữ số 0; 1; 2; 3; 4, lập được bao nhiêu số có ba chữ số khác nhau chia hết cho 3?",
+        "solution": "Bộ ba tổng ⋮ 3: {0;1;2}, {0;2;4}, {1;2;3}, {2;3;4}. Bộ CHỨA 0: 2 × 2 × 1 = 4 số/bộ. Bộ KHÔNG chứa 0: 3 × 2 × 1 = 6 số/bộ. Tổng: 4 + 4 + 6 + 6 = 20 số.",
+        "why": "Ca K4 — họ tổng chọn bộ, đếm cách xếp từng bộ."
+      }
+    ],
+    "numberRange": "Lớp 5: bộ 4–5 thẻ; điều kiện chẵn/lẻ, chia hết 3, 5; kết quả dưới 100.",
+    "misconceptions": [
+      {
+        "wrong": "Nhân chung số lựa chọn đuôi vào dây chuyền ('đuôi có 2 cách' × các toa như nhau).",
+        "signal": "Đáp số kiểu 2 × 3 × 2 = 12 thay vì 10.",
+        "fix": "K2 — hỏi trước khi nhân: các nhánh đuôi có cho toa sau CÙNG luật không? Khác luật → tách nhánh, cộng.",
+        "counterExample": "Nhánh đuôi 0 được 6 số, nhánh đuôi 8 chỉ 4 — nhân chung là gán oan cho nhánh nghèo."
+      },
+      {
+        "wrong": "Chọn toa trăm trước 'cho thuận mắt', đến toa đuôi mới xét điều kiện.",
+        "signal": "Phải quay lại sửa vì trăm đã lấy mất thẻ đuôi cần.",
+        "fix": "K3 — toa khó tính lên tàu trước: ràng buộc → toa đầu → toa dễ.",
+        "counterExample": "Chọn trăm = 8 trước thì nhánh đuôi 8 chết kẹt."
+      }
+    ],
+    "vocabulary": [
+      "toa ràng buộc (hành khách khó tính)",
+      "tách nhánh — cộng ở cửa ra",
+      "trong nhánh NHÂN, giữa nhánh CỘNG",
+      "bộ chứa 0 ít cách hơn"
     ],
     "mantra": "CÙNG LUẬT MỚI NHÂN CHUNG — KHÁC LUẬT PHẢI TÁCH NHÁNH!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B6_M3_F3.png",
-   "sha256_16": "49601bbc25507b49"
   },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "ĐẾM SỐ CHẴN CÓ 3 CHỮ SỐ KHÁC NHAU TỪ 0; 3; 5; 8",
-    "bars": [
-     {
-      "name": "nhánh đuôi 0",
-      "units": 6,
-      "label": "3 × 2 = 6 số"
-     },
-     {
-      "name": "nhánh đuôi 8",
-      "units": 4,
-      "label": "2 × 2 = 4 số"
-     }
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Từ {0;3;5;8}, số các số ba chữ số khác nhau là? (bài trước)",
+        "answerKey": {
+          "value": 18
+        }
+      }
     ],
-    "brace": {
-     "text": "hai nhánh KHÁC luật → đếm riêng rồi cộng: 6 + 4 = 10 số"
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B6.M2",
+      "message": "Ôn kho vơi dần rồi quay lại đón hành khách khó tính nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Đơn hàng VIP: đếm số CHẴN ba chữ số khác nhau từ bộ 0 · 3 · 5 · 8. Trí Long tính gọn: 'Đuôi chẵn có 2 cách (0 hoặc 8), nhân với các toa kia là xong!' Su Kem nhíu mày: 'Hai nhánh ấy… có chung luật không đã?'",
+        "display": {
+          "type": "story_panel",
+          "caption": "đuôi 2 cách × … = ???"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để soi hai nhánh!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 48,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Mời hành khách khó tính — toa ĐUÔI — lên trước. Nhánh 1, đuôi lấy thẻ 0: toa trăm chọn trong {3;5;8} — 3 cách, toa chục 2 → 6 số. Nhánh 2, đuôi lấy thẻ 8: toa trăm chỉ còn {3;5} — 2 cách (thẻ 0 vẫn bị cấm ghế lái!), toa chục 2 → 4 số. Hai nhánh khác luật — con cộng ở cửa ra.",
+        "display": {
+          "type": "branch_count_interactive",
+          "spec": {
+            "branches": [
+              {
+                "tail": 0,
+                "counts": [
+                  3,
+                  2
+                ],
+                "sub": 6
+              },
+              {
+                "tail": 8,
+                "counts": [
+                  2,
+                  2
+                ],
+                "sub": 4
+              }
+            ],
+            "total": 10
+          }
+        },
+        "interaction": {
+          "type": "fill_and_sum",
+          "answerKey": {
+            "value": 10
+          },
+          "successMessage": "6 + 4 = 10 số chẵn — trong nhánh NHÂN, giữa nhánh CỘNG!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 18,
+        "item": {
+          "format": "num",
+          "text": "Cùng bộ ấy: bao nhiêu số ba chữ số khác nhau chia hết cho 5?",
+          "answerKey": {
+            "value": 10
+          },
+          "wrongFeedback": "Đuôi {0;5}: nhánh 0 → 6; nhánh 5 → 2 × 2 = 4; cộng.",
+          "objective": "O1",
+          "teaches": [
+            "K1",
+            "K2"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 40,
+        "teaches": [
+          "K3",
+          "K4"
+        ],
+        "narration": "Thứ tự vàng khắc lên vé tàu: toa RÀNG BUỘC trước — toa ĐẦU (cấm 0) — toa dễ tính sau. Còn điều kiện chia hết BA thì gia tộc TỔNG chỉ huy: tuyển các BỘ ba thẻ tổng chia hết 3 — {0;1;2}, {0;2;4}, {1;2;3}, {2;3;4} — rồi đếm cách xếp từng bộ: bộ chứa 0 được 4 cách, bộ sạch 0 được 6 cách. Cộng: 4 + 4 + 6 + 6 = 20!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "Vé tàu: RÀNG BUỘC → ĐẦU → DỄ",
+            "⋮3: bộ {0;1;2}{0;2;4}: 4 cách/bộ · {1;2;3}{2;3;4}: 6 cách/bộ",
+            "4 + 4 + 6 + 6 = 20"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú sân ga: cùng luật mới nhân chung — khác luật phải tách nhánh! Toa khó tính lên tàu trước!",
+        "display": {
+          "type": "mantra_card",
+          "text": "KHÁC LUẬT PHẢI TÁCH NHÁNH!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 77,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "note": "Nhánh đuôi 0 rộng hơn vì số 0 nằm ở đuôi thì toa trăm không bị mất thẻ nào"
-   },
-   "caption": "Chọn toa ràng buộc trước — nhánh khác luật thì tách riêng",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B6_M3_F4.png",
-   "sha256_16": "6c80540c60c59768"
-  }
- ]
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Đơn hàng VIP: đếm số CHẴN ba chữ số khác nhau từ bộ không, ba, năm, tám. Trí Long tính gọn: đuôi chẵn có hai cách — nhân với các toa kia là xong! Su Kem nhíu mày: hai nhánh ấy… có chung luật không đã?",
+        "screenText": "đuôi 2 cách × … = ???",
+        "visual": "Sân ga với hai cổng nhánh 'ĐUÔI 0' và 'ĐUÔI 8'; Trí Long cầm máy tính; Su Kem giơ tay chặn.",
+        "assets": [],
+        "duration": 17
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Mời hành khách khó tính — toa ĐUÔI — lên trước. Nhánh một, đuôi lấy thẻ không: toa trăm ba cách, toa chục hai — SÁU số. Nhánh hai, đuôi lấy thẻ tám: toa trăm chỉ còn hai cách vì thẻ không vẫn bị cấm ghế lái — BỐN số. Khác luật thì cộng ở cửa ra: sáu cộng bốn bằng MƯỜI!",
+        "screenText": "đuôi 0: 3×2=6 · đuôi 8: 2×2=4 → 10",
+        "visual": "Hai đường ray tách nhánh; mỗi nhánh hiện bộ đếm và tổng con; hai dòng tàu gộp ở cổng ra với '10' vàng #F8B942.",
+        "assets": [],
+        "duration": 22
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Thứ tự vàng in trên vé: toa RÀNG BUỘC trước — toa ĐẦU cấm thẻ không — toa dễ tính sau. Còn chia hết BA thì tuyển bộ theo tổng: bốn bộ đạt chuẩn; bộ chứa thẻ không xếp được bốn cách, bộ sạch thẻ không xếp được sáu cách — cộng cả bốn bộ ra HAI MƯƠI số!",
+        "screenText": "RÀNG BUỘC → ĐẦU → DỄ · ⋮3: 4+4+6+6 = 20",
+        "visual": "Chiếc vé tàu in ba dòng thứ tự; bảng bốn bộ thẻ với số cách từng bộ; tổng 20 bật vàng.",
+        "assets": [],
+        "duration": 21
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú sân ga: cùng luật mới nhân chung — khác luật phải tách nhánh! Toa khó tính lên tàu trước!",
+        "screenText": "KHÁC LUẬT PHẢI TÁCH NHÁNH!",
+        "visual": "Thẻ thần chú vàng với icon đường ray tách đôi.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Đơn cuối cho con: cùng bộ thẻ ấy, bao nhiêu số ba chữ số khác nhau là số LẺ? Vào bài luyện ngay!",
+        "screenText": "{0;3;5;8} → số LẺ = ?",
+        "visual": "Hai cổng nhánh 'ĐUÔI 3' 'ĐUÔI 5' chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P3",
+        "assets": [],
+        "duration": 9
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Đơn hàng số chẵn",
+    "problem": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau là số chẵn?",
+    "steps": [
+      {
+        "show": "Bước 1 — Toa ràng buộc lên trước: đuôi chẵn ∈ {0; 8} → HAI nhánh.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Vì sao không nhân ngay 'đuôi 2 cách' vào dây chuyền?",
+          "choices": [
+            "Vì hai nhánh cho các toa sau luật khác nhau",
+            "Vì đuôi phải chọn sau cùng",
+            "Vì 2 là số chẵn"
+          ],
+          "answerKey": {
+            "choice": "Vì hai nhánh cho các toa sau luật khác nhau"
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — Nhánh đuôi 0: toa trăm 3, toa chục 2 → 3 × 2 = 6."
+      },
+      {
+        "show": "Bước 3 — Nhánh đuôi 8: toa trăm 2 (cấm 0, mất 8), toa chục 2 → 4.",
+        "askBefore": {
+          "format": "num",
+          "text": "Nhánh đuôi 8: toa trăm mấy cách?",
+          "answerKey": {
+            "value": 2
+          }
+        }
+      },
+      {
+        "show": "Bước 4 — Cộng cửa ra: 6 + 4 = 10 số chẵn.",
+        "askAfter": {
+          "format": "num",
+          "text": "Kiểm chéo: tổng 'khác nhau' là 18; số LẺ = 18 − 10 = ?",
+          "answerKey": {
+            "value": 8
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B6.LT4",
+          "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau là số chẵn? (Tách nhánh theo đuôi!)",
+          "answerKey": {
+            "value": 10
+          },
+          "hints": [
+            "Đuôi {0; 8} — hai nhánh khác luật.",
+            "6 + 4."
+          ],
+          "solutionNarrative": "Đuôi 0: 3 × 2 = 6; đuôi 8: 2 × 2 = 4 → 6 + 4 = 10 số chẵn.",
+          "teaches": [
+            "K1",
+            "K2"
+          ]
+        },
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B6.LT5",
+          "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau chia hết cho 5?",
+          "answerKey": {
+            "value": 10
+          },
+          "hints": [
+            "Đuôi {0; 5}.",
+            "6 + 4."
+          ],
+          "solutionNarrative": "Đuôi 0: 6; đuôi 5: 2 × 2 = 4 → 10 số.",
+          "teaches": [
+            "K1",
+            "K2"
+          ]
+        }
+      ],
+      "standard": [
+        {
+          "id": "P3",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B6.LT7",
+          "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau là số LẺ?",
+          "answerKey": {
+            "value": 8
+          },
+          "hints": [
+            "Đuôi lẻ ∈ {3; 5} — hai nhánh CÙNG khuôn.",
+            "Mỗi nhánh: trăm 2 (cấm 0, mất đuôi), chục 2 → 4; cộng."
+          ],
+          "solutionNarrative": "Đuôi ∈ {3;5}: mỗi nhánh 2 × 2 = 4 → 8 số (kiểm: 18 − 10 chẵn = 8 ✓).",
+          "teaches": [
+            "K1",
+            "K2"
+          ]
+        },
+        {
+          "id": "P4",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B6.LT9",
+          "text": "Sư phụ hỏi xoáy: \"Với bộ {0; 3; 5; 8}, vì sao nhánh tận cùng 0 đếm được 6 số mà nhánh tận cùng 5 chỉ được 4?\"",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "lý do",
+                "value": "Đuôi 0 giam thẻ 0 ở cuối nên toa trăm chọn thoải mái cả 3 thẻ còn lại; đuôi 5 thì thẻ 0 quay về kho mà vẫn bị cấm đứng đầu, toa trăm chỉ còn 2 cách",
+                "options": [
+                  "Đuôi 0 giam thẻ 0 ở cuối nên toa trăm chọn thoải mái cả 3 thẻ còn lại; đuôi 5 thì thẻ 0 quay về kho mà vẫn bị cấm đứng đầu, toa trăm chỉ còn 2 cách",
+                  "Vì thẻ 5 đã dùng ở đuôi nên chỉ còn 2 thẻ để xếp",
+                  "Vì số 0 đứng đâu cũng được còn số 5 thì không",
+                  "Vì đuôi 0 thì số chia hết cho 10 nên có nhiều số hơn"
+                ]
+              }
+            ]
+          },
+          "hints": [
+            "Ở mỗi nhánh, thẻ 0 đang ở đâu?",
+            "Toa trăm mỗi nhánh mấy cách, vì sao?"
+          ],
+          "solutionNarrative": "Nhánh đuôi 0 đông dân hơn vì thẻ 0 bị giam ở đuôi — toa trăm tự do cả ba thẻ còn lại.",
+          "teaches": [
+            "K2"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P5",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B6.LT8",
+          "text": "Từ các chữ số 0; 1; 2; 3; 4, lập được bao nhiêu số có ba chữ số khác nhau chia hết cho 3? (Chọn bộ theo tổng trước!)",
+          "answerKey": {
+            "value": 20
+          },
+          "hints": [
+            "Các bộ ba tổng ⋮ 3: {0;1;2}, {0;2;4}, {1;2;3}, {2;3;4}.",
+            "Bộ chứa 0: 4 cách xếp; bộ sạch 0: 6 cách."
+          ],
+          "solutionNarrative": "4 bộ đạt chuẩn: 4 + 4 + 6 + 6 = 20 số.",
+          "teaches": [
+            "K4"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1 và A3",
+    "onPass": {
+      "updateBKT": [
+        "CASE:I.3.2#3@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B7.M1",
+      "award": "huy_hieu_ga_truong_tach_nhanh"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ P1 + P3"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B6.QZ2",
+        "text": "(Đúng/Sai?) Đếm số chia hết cho 5, ta luôn nhân chung \"2 cách chọn tận cùng\" vào dây chuyền.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B6.QZ5",
+        "text": "Trong một nhánh ta NHÂN các lựa chọn; giữa các nhánh ta:",
+        "choices": [
+          "cộng",
+          "nhân",
+          "trừ"
+        ],
+        "answerKey": {
+          "choice": "cộng"
+        },
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "text": "Thứ tự chọn toa đúng là:",
+        "choices": [
+          "Toa ràng buộc → toa đầu → toa dễ",
+          "Toa đầu → toa dễ → toa ràng buộc",
+          "Toa nào trước cũng được"
+        ],
+        "answerKey": {
+          "choice": "Toa ràng buộc → toa đầu → toa dễ"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Đếm số có điều kiện đuôi — quy trình và luật nhân/cộng?",
+        "back": "Toa RÀNG BUỘC lên trước; nhánh khác luật thì TÁCH: trong nhánh NHÂN — giữa nhánh CỘNG. Chẵn từ {0;3;5;8}: 6 + 4 = 10. Thứ tự: ràng buộc → đầu → dễ. Chia hết 3: tuyển bộ theo tổng rồi đếm cách xếp từng bộ."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu P2",
+      "+7 ngày: câu P5 (họ tổng)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học đếm có điều kiện: tách nhánh khi khác luật, thứ tự 'toa khó tính lên trước'. Con đạt {score}/3, {trapResult} câu bẫy nhân-chung.",
+    "homeActivity": "Đố kiểm chứng: 'từ 0, 3, 5, 8 — số chẵn cộng số lẻ ba chữ số khác nhau có ra đủ 18 không?' — con tính 10 + 8 = 18 khớp là đạt.",
+    "watchFor": "Nếu con nhân '2 cách đuôi' thẳng vào dây chuyền — mở lại hai đường ray tách nhánh (S2) cùng con."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B6.M3",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "đuôi 2 cách × … = ???",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Đơn hàng VIP: đếm số CHẴN ba chữ số khác nhau từ bộ 0 · 3 · 5 · 8.",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "'Hai nhánh ấy… có chung luật không đã?'",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B6_M3_F1.png",
+      "sha256_16": "ae3db844d47ffd1a"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "CA MẪU · số chẵn — tách nhánh (ca lõi)",
+        "formulas": [
+          {
+            "label": "ĐỀ",
+            "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau là số LẺ?",
+            "tone": "navy"
+          },
+          {
+            "label": "LỜI GIẢI",
+            "text": "Đuôi chẵn ∈ {0; 8} — hai nhánh KHÁC luật. Nhánh đuôi 0: toa trăm 3, toa chục 2 → 6. Nhánh đuôi 8: toa trăm ∈ {3;5} = 2 (cấm 0!), toa chục 2 → 4. Cộng: 6 + 4 = 10 số.",
+            "tone": "teal"
+          }
+        ]
+      },
+      "caption": "Ca mẫu chuẩn của bài",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B6_M3_F2.png",
+      "sha256_16": "08e4786a31b52f37"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Có điều kiện tận cùng (chẵn, chia hết 5)",
+            "text": "chọn toa ĐUÔI (toa ràng buộc) TRƯỚC, rồi mới lắp các toa còn lại.",
+            "tone": "navy"
+          },
+          {
+            "text": "Các nhánh của toa ràng buộc cho toa sau LUẬT KHÁC NHAU (nhánh đuôi 0 'giam' thẻ 0, nhánh đuôi khác thì không) → TÁCH NHÁNH, đếm riêng, CỘNG lại. Trong một nhánh thì NHÂN; giữa các nhánh thì CỘNG.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "CÙNG LUẬT MỚI NHÂN CHUNG — KHÁC LUẬT PHẢI TÁCH NHÁNH!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B6_M3_F3.png",
+      "sha256_16": "49601bbc25507b49"
+    },
+    {
+      "archetype": "bar_diagram",
+      "params": {
+        "title": "ĐẾM SỐ CHẴN CÓ 3 CHỮ SỐ KHÁC NHAU TỪ 0; 3; 5; 8",
+        "bars": [
+          {
+            "name": "nhánh đuôi 0",
+            "units": 6,
+            "label": "3 × 2 = 6 số"
+          },
+          {
+            "name": "nhánh đuôi 8",
+            "units": 4,
+            "label": "2 × 2 = 4 số"
+          }
+        ],
+        "brace": {
+          "text": "hai nhánh KHÁC luật → đếm riêng rồi cộng: 6 + 4 = 10 số"
+        },
+        "note": "Nhánh đuôi 0 rộng hơn vì số 0 nằm ở đuôi thì toa trăm không bị mất thẻ nào"
+      },
+      "caption": "Chọn toa ràng buộc trước — nhánh khác luật thì tách riêng",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B6_M3_F4.png",
+      "sha256_16": "6c80540c60c59768"
+    }
+  ]
 }

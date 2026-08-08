@@ -109,7 +109,22 @@ t('sai 3 lần → mở đáp án', hintState(withHints, 3).reveal === true);
 const mb = lessons.flatMap((L) => Object.values(L.practice?.pools || {}).flat())
   .find((i) => i.answerKey?.parts?.filter((p) => typeof p.value === 'number').length >= 2);
 t('câu nhiều phần → nhiều ô nhập', inputCount(mb) >= 2);
-t('câu trắc nghiệm → 0 ô nhập', inputCount({ format: 'mcq', choices: ['a', 'b'] }) === 0);
+/* Trắc nghiệm và Đúng/Sai CŨNG phải có một ô để con bấm. Phép kiểm cũ đòi 0 ô —
+   chính nó hợp thức hoá lỗi: 90 câu không dựng nút nào, 68 câu được chấm ĐÚNG dù
+   con chưa trả lời, 22 câu chấm SAI rồi kẹt vì không có gì để sửa. */
+t('câu trắc nghiệm → 1 ô bấm chọn', inputCount({ format: 'mcq', choices: ['a', 'b'] }) === 1);
+t('câu Đúng/Sai → 1 ô bấm chọn', inputCount({ format: 'tf', answerKey: { value: true } }) === 1);
+t('ô Đúng/Sai có đủ hai nút',
+  JSON.stringify(answerFields({ format: 'tf', answerKey: { value: true } })[0].options) === '["ĐÚNG","SAI"]');
+t('trắc nghiệm lấy đúng bộ phương án của đề',
+  answerFields({ format: 'mcq', choices: ['a', 'b', 'c'] })[0].options.join() === 'a,b,c');
+/* chưa bấm gì thì KHÔNG được tính là đúng */
+t('Đúng/Sai chưa trả lời → chưa đúng', !checkAnswer({ format: 'tf', answerKey: { value: false } }, '').ok);
+t('Đúng/Sai bấm ĐÚNG khớp đáp án', checkAnswer({ format: 'tf', answerKey: { value: true } }, 'ĐÚNG').ok);
+t('Đúng/Sai bấm SAI khớp đáp án', checkAnswer({ format: 'tf', answerKey: { value: false } }, 'SAI').ok);
+t('Đúng/Sai bấm nhầm thì bác', !checkAnswer({ format: 'tf', answerKey: { value: true } }, 'SAI').ok);
+t('trắc nghiệm chưa chọn → chưa đúng', !checkAnswer({ format: 'mcq', answerKey: { choice: 'b' } }, '').ok);
+t('trắc nghiệm chọn đúng thì nhận', checkAnswer({ format: 'mcq', answerKey: { choice: 'b' } }, 'b').ok);
 t('đáp chữ ngắn vẫn chấm được', checkAnswer({format:'mb', answerKey:{parts:[{label:'đến', value:'7 giờ 05 phút'}]}}, ['7 giờ 05 phút']).ok);
 t('chấm chữ bỏ qua hoa/thường', checkAnswer({format:'mb', answerKey:{parts:[{label:'đuổi', value:'HIỆU'}]}}, ['hiệu']).ok);
 t('đáp chữ sai bị bác', !checkAnswer({format:'mb', answerKey:{parts:[{label:'đuổi', value:'HIỆU'}]}}, ['tổng']).ok);
@@ -368,7 +383,13 @@ for (const L of lessons) {
       const raw = gradableParts(it.answerKey?.parts || []).map((p) => String(p.label || '').trim());
       if (raw.length < fields.length || raw.some((l) => !l)) bad.noLabel.push(`${ref} (nhãn dự phòng)`);
     }
-    for (const f of fields) if (f.placeholder === '?' || !f.placeholder) bad.bareQ.push(ref);
+    /* Ô GÕ TAY phải nói rõ dạng cần điền. Ô BẤM CHỌN thì chính các nút đã là câu
+       trả lời sẵn — không cần chữ mờ, và cũng không có chỗ nào hiện nó. */
+    for (const f of fields) {
+      if (f.kind === 'pick') {
+        if (!Array.isArray(f.options) || f.options.length < 2) bad.noWay.push(`${ref} (ô chọn < 2 nút)`);
+      } else if (f.placeholder === '?' || !f.placeholder) bad.bareQ.push(ref);
+    }
   }
 }
 /** đạt khi danh sách RỖNG; không đạt thì in ra vài ví dụ để lần ra ngay */
