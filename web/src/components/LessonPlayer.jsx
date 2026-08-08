@@ -5,6 +5,7 @@ import { gradeMicro } from '../lib/flow.js';
 import { newSessionId } from '../lib/sync.js';
 import StepView from './StepView.jsx';
 import CuonThem from './CuonThem.jsx';
+import TienTrinh from './TienTrinh.jsx';
 
 /** Thanh chặng: MỞ BÀI · GIẢNG · BÀI MẪU · LUYỆN TẬP · SÁT HẠCH */
 function PhaseBar({ current }) {
@@ -29,10 +30,14 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
   const [sessionId] = useState(() => newSessionId());
   const [t0] = useState(() => Date.now());
   const [resumed, setResumed] = useState(false);
+  /* Bước XA NHẤT con từng tới. Quay lại xem bài cũ thì không được kéo mốc này lùi,
+     nếu không con lùi một bước là mất quyền đi tiếp tới chỗ vừa nãy. */
+  const [xaNhat, setXaNhat] = useState(0);
 
   useEffect(() => {
     let alive = true;
-    setLesson(null); setErr(null); setI(0); setLog({ practice: [], assess: [], raw: [] }); setResumed(false);
+    setLesson(null); setErr(null); setI(0); setLog({ practice: [], assess: [], raw: [] });
+    setResumed(false); setXaNhat(0);
     loadLesson(microId).then((d) => alive && setLesson(d)).catch((e) => alive && setErr(e.message));
     return () => { alive = false; };
   }, [microId]);
@@ -50,6 +55,7 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
   const step = flow[i];
 
   useEffect(() => { window.scrollTo(0, 0); }, [i]);
+  useEffect(() => { setXaNhat((x) => Math.max(x, i)); }, [i]);
 
   /**
    * Đẩy nhật ký lên máy chủ NGAY sau mỗi lượt trả lời, không đợi con học hết bài.
@@ -63,8 +69,13 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
     onEvents?.({ sessionId, microId, bktUnit: lesson.skills?.bktUnit || null, events: log.raw });
     // chỉ theo SỐ LƯỢT: log.raw là mảng mới mỗi lần dựng lại, để nguyên sẽ chạy vô hạn
   }, [soLuot]);   // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => { if (resumed && flow.length) onMoveStep?.(microId, i, flow.length); },
-            [i, resumed, flow.length, microId, onMoveStep]);
+  /**
+   * Ghi chỗ để lần sau mở lại: dùng bước XA NHẤT, không dùng bước đang đứng.
+   * Con lùi về xem lại phần 2 rồi tắt máy — nhớ theo chỗ đang đứng thì lần sau
+   * phải bấm lại từ đầu quãng đã học. Muốn xem lại thì lùi tiếp, dễ hơn nhiều.
+   */
+  useEffect(() => { if (resumed && flow.length) onMoveStep?.(microId, xaNhat, flow.length); },
+            [xaNhat, resumed, flow.length, microId, onMoveStep]);
 
   if (err) return <div className="p-6 text-alert">{err}</div>;
   if (!lesson) return <div className="p-6 text-mute">Đang mở bài học…</div>;
@@ -96,7 +107,12 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
   return (
     <div className="flex flex-col min-h-[100dvh]">
       <header className="sticky top-0 z-20 flex items-center gap-2.5 bg-navy px-3.5 py-2 text-white">
-        <button onClick={onExit} aria-label="Về trang chính" className="text-[15px] leading-none">←</button>
+        {/* Nói rõ đây là THOÁT khỏi bài. Trước chỉ có mũi tên ← nên con bấm vào
+            tưởng lùi một bước, hoá ra ra thẳng trang chủ. */}
+        <button onClick={onExit} aria-label="Thoát khỏi bài học"
+                className="rounded-full border border-white/40 px-2 py-0.5 text-[11px] font-bold leading-none">
+          ⌂ Thoát
+        </button>
         <span className="rounded bg-gold px-1.5 py-0.5 text-[11px] font-extrabold text-gold-dark">
           {microId.replace('DL:KSN5Q1.', '')}
         </span>
@@ -106,10 +122,13 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
         <span className="text-[11px] tabular-nums opacity-85">{i + 1}/{flow.length}</span>
       </header>
 
-      <div className="h-[5px] bg-navy-deep">
-        <i className="block h-full bg-gradient-to-r from-teal to-gold transition-[width] duration-500"
-           style={{ width: `${Math.round((i / (flow.length - 1)) * 100)}%` }} />
-      </div>
+      {/* Mỗi bước một đốt, bấm được để quay lại — thay cho vạch gradient cũ vốn
+          chỉ cho biết "được khoảng một nửa" mà không nói nửa của mấy phần. */}
+      <TienTrinh
+        tong={flow.length} hienTai={i} daDi={xaNhat}
+        nhan={flow.map((s2) => PHASES.find((p) => p.id === s2.phase)?.label || '')}
+        onChon={(k) => setI(k)} onLui={() => go(-1)}
+      />
 
       <PhaseBar current={step.phase} />
 

@@ -529,6 +529,19 @@ export function choicesFromText(item) {
 }
 
 /* ─────────── Dựng dòng chảy 5 chặng ─────────── */
+/**
+ * Đi lại trong bài: đốt nào con bấm vào được trên thanh tiến trình.
+ *
+ * Bài vốn chỉ đi MỘT CHIỀU — lỡ tay bấm Tiếp là mất luôn phần vừa đọc, muốn xem
+ * lại hay làm lại cho nhớ cũng chịu. Nay lùi được, và bấm thẳng vào phần đã học
+ * được. Nhưng KHÔNG cho vượt lên phần chưa học: nhảy thẳng tới sát hạch là bỏ qua
+ * cả mạch giảng bài lẫn cổng mustPass — luật sư phạm, không phải chuyện trang trí.
+ *
+ * `daDi` là bước XA NHẤT con từng tới, không phải bước đang đứng: lùi về xem lại
+ * rồi vẫn phải tiến lại được tới chỗ cũ.
+ */
+export const bamDuocDot = (k, hienTai, daDi) => k <= daDi && k !== hienTai;
+
 export const PHASES = [
   { id: 'intro', label: 'MỞ BÀI' },
   { id: 'teach', label: 'GIẢNG' },

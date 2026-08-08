@@ -126,5 +126,24 @@ const M3 = setMode(M2, 'chuongtrinh');
 t('quay lại chế độ đề xuất thì khoá siết lại', !isMicroUnlocked(M3, dauC2, list));
 t('nhưng bài đã ĐẠT vẫn còn nguyên', overallStats(M3, list).done === 1);
 
+
+
+/* ══ Đi lại trong bài: quay lại xem/làm lại, nhưng KHÔNG nhảy cóc ══
+   Bài vốn chỉ đi một chiều — lỡ bấm Tiếp là mất phần vừa đọc. Nay lùi được, và
+   bấm thẳng vào đốt đã học được. Nhưng bấm vượt lên phần chưa học thì phải chặn:
+   nhảy thẳng tới sát hạch là bỏ qua cả mạch giảng bài lẫn cổng mustPass. */
+import { bamDuocDot } from '../src/lib/flow.js';
+
+t('bấm được đốt ĐÃ HỌC để xem lại', bamDuocDot(2, 5, 5) === true);
+t('bấm được đốt ngay trước đó', bamDuocDot(4, 5, 5) === true);
+t('KHÔNG bấm được đốt chưa học', bamDuocDot(9, 5, 5) === false);
+t('KHÔNG bấm được đốt ngay sau chỗ xa nhất', bamDuocDot(6, 5, 5) === false);
+t('bấm vào chính đốt đang đứng thì không làm gì', bamDuocDot(5, 5, 5) === false);
+
+/* Lùi về xem lại rồi vẫn tiến lại được tới chỗ cũ: mốc "xa nhất" giữ nguyên. */
+t('lùi về phần 2 vẫn bấm lại được phần 5 đã đi qua', bamDuocDot(5, 2, 5) === true);
+t('lùi về phần 2 vẫn không vượt quá chỗ xa nhất', bamDuocDot(6, 2, 5) === false);
+t('ở phần đầu thì không có đốt nào để lùi', bamDuocDot(0, 0, 0) === false);
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
