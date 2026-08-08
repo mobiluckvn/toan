@@ -1,676 +1,676 @@
 {
- "title": "Đối chiếu TỬ với KHOẢNG CÁCH: tách thẳng hay nhân hệ số",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:II.2.1#2"
-  ],
-  "bktUnit": "CASE:II.2.1#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B14",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B14.M1",
-  "next": "DL:KSN5Q1.B14.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B14",
-  "chunks": [
-   "CHUNK:KSN5Q1.B14.S4",
-   "CHUNK:KSN5Q1.B14.S5"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B14.2",
-   "CA:KSN5Q1.B14.3"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B14.2"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con xử đúng dãy domino có mẫu cách nhau 2, 3: đối chiếu TỬ với KHOẢNG CÁCH trước khi tách — tử BẰNG khoảng cách thì tách thẳng; tử KHÁC khoảng cách thì nhân hệ số điều chỉnh (tử : khoảng cách) — và luôn tách một quân, thử một quân trước khi đẩy cả hàng.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (hệ số 1/2)",
-  "kidText": "Mẫu cách nhau 2 hay 3 thì phải nhân thêm hệ số. Con so tử với khoảng cách trước, tách thử một quân rồi mới đẩy cả hàng."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Mẫu cách nhau d, tử BẰNG d: tách thẳng — d/(n × (n + d)) = 1/n − 1/(n + d). Ví dụ 2/(1×3) = 1 − 1/3 (kiểm quy đồng: 1 − 1/3 = 2/3 ✓)."
-   },
-   {
-    "id": "K2",
-    "text": "Tử KHÁC khoảng cách: nhân HỆ SỐ ĐIỀU CHỈNH = tử : khoảng cách. Ví dụ tử 1, khoảng 2: 1/(1×3) = (1 − 1/3) × 1/2 — vì 1 − 1/3 = 2/3 gấp ĐÔI 1/3."
-   },
-   {
-    "id": "K3",
-    "text": "Nghi thức TÁCH MỘT QUÂN, THỬ MỘT QUÂN: tách quân đầu, quy đồng kiểm đúng, rồi mới đẩy cả hàng — chống quen tay tách bừa."
-   },
-   {
-    "id": "K4",
-    "text": "Sập xong dãy hệ số: giữ hệ số ngoài ngoặc đến phút cuối — (mảnh đầu − mảnh cuối) × hệ số, rồi dọn tối giản (nghi thức Bài trước)."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: HAI CỠ QUÂN DOMINO. Hàng mẫu-cách-2 dùng quân CỠ ĐẠI: mỗi quân 2/(1×3) nặng đúng bằng hiệu 1 − 1/3 — tử 2 khớp khít khoảng cách 2: tách thẳng, đẩy là sập. Nhưng gặp hàng 1/(1×3): quân chỉ nặng MỘT NỬA cỡ đại (1/3 so với 2/3) — tách như cũ là khai gian trọng lượng gấp đôi! Thợ domino chuyên nghiệp NHÂN HỆ SỐ 1/2 (tử chia khoảng cách) đeo bên hông cả dãy. Luật an toàn xưởng: TÁCH MỘT QUÂN — THỬ MỘT QUÂN (quy đồng kiểm) — rồi mới đẩy cả hàng.",
-  "canonicalExamples": [
-   {
-    "case": "tử = khoảng cách (ca tách thẳng)",
-    "problem": "Tính: 2/(1×3) + 2/(3×5) + 2/(5×7) + 2/(7×9).",
-    "solution": "Tử 2 = khoảng cách 2 → tách thẳng: (1 − 1/3) + (1/3 − 1/5) + … = 1 − 1/9 = 8/9.",
-    "why": "Ca chuẩn K1 — đề A câu 7."
-   },
-   {
-    "case": "tử ≠ khoảng cách (ca hệ số)",
-    "problem": "Tính: 1/(1×3) + 1/(3×5) + 1/(5×7) + 1/(7×9).",
-    "solution": "Tử 1, khoảng cách 2 → hệ số 1/2: [(1 − 1/3) + … + (1/7 − 1/9)] × 1/2 = (1 − 1/9) × 1/2 = 8/9 × 1/2 = 4/9.",
-    "why": "Ca đinh bẫy CĐ-14.2 — đề A câu 6."
-   },
-   {
-    "case": "khoảng cách 3 + sư phụ chẵn (ca mở rộng)",
-    "problem": "Tính: 3/(1×4) + 3/(4×7) + 3/(7×10) + 3/(10×13). Và bài sư phụ: 1/(2×4) + 1/(4×6) + … + 1/(18×20).",
-    "solution": "Bài 1: tử 3 = khoảng 3 → tách thẳng: 1 − 1/13 = 12/13. Bài sư phụ: tử 1, khoảng 2 → hệ số 1/2: (1/2 − 1/20) × 1/2 = 9/20 × 1/2 = 9/40.",
-    "why": "Đổi khoảng cách và dãy bắt đầu từ 1/2 — kỹ thuật giữ nguyên."
-   }
-  ],
-  "numberRange": "Lớp 5: khoảng cách 2, 3; tử 1–3; dãy ≤ 10 quân.",
-  "misconceptions": [
-   {
-    "wrong": "Quen tay với 2/(1×3) = 1 − 1/3, gặp dãy 1/(1×3) cũng tách y hệt (bỏ hệ số).",
-    "signal": "Đáp gấp ĐÔI đáp đúng (8/9 thay vì 4/9).",
-    "fix": "K2 + K3 — đối chiếu tử với khoảng cách TRƯỚC; tách một quân thử quy đồng: 1 − 1/3 = 2/3 ≠ 1/3 → phải đeo hệ số 1/2.",
-    "counterExample": "Thử quân đầu: 1/(1×3) = 1/3, mà tách thẳng cho 2/3 — gấp đôi, lộ ngay."
-   }
-  ],
-  "vocabulary": [
-   "quân cỡ đại / quân nửa cỡ",
-   "hệ số điều chỉnh = tử : khoảng cách",
-   "tách một quân — thử một quân",
-   "khai gian trọng lượng"
-  ],
-  "mantra": "TÁCH MỘT QUÂN, THỬ MỘT QUÂN — RỒI MỚI ĐẨY CẢ HÀNG!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "mcq",
-    "text": "1/(2×3) tách thành gì? (bài trước)",
-    "choices": [
-     "1/2 − 1/3",
-     "1/2 + 1/3",
-     "1/6 − 1/2"
+  "title": "Đối chiếu TỬ với KHOẢNG CÁCH: tách thẳng hay nhân hệ số",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:II.2.1#2"
     ],
-    "answerKey": {
-     "choice": "1/2 − 1/3"
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B14.M1",
-   "message": "Ôn quân domino hai mặt rồi sang xưởng quân cỡ đại nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Trí Long vừa thắng lớn với dãy 2/(1×3) + … = 1 − 1/9, đang hăng: gặp dãy 1/(1×3) + 1/(3×5) + … cậu tách y hệt — \"1 trừ 1/3 nhé!\" Su Kem cân thử quân đầu: 1/(1×3) nặng 1/3… mà 1 − 1/3 nặng tận 2/3?!",
-    "display": {
-     "type": "story_panel",
-     "caption": "1/(1×3) = 1 − 1/3??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để cân quân domino!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 48,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
+    "bktUnit": "CASE:II.2.1#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B14",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B14.M1",
+    "next": "DL:KSN5Q1.B14.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B14",
+    "chunks": [
+      "CHUNK:KSN5Q1.B14.S4",
+      "CHUNK:KSN5Q1.B14.S5"
     ],
-    "narration": "Lên cân: quân cỡ đại 2/(1×3) — tử HAI khớp khoảng cách HAI — nặng đúng 1 − 1/3 = 2/3: tách thẳng hợp lệ! Còn quân 1/(1×3) chỉ nặng 1/3 — đúng MỘT NỬA: muốn tách phải đeo hệ số tử-chia-khoảng-cách: một phần hai! Cả dãy thành (1 − 1/9) × 1/2 = 8/9 × 1/2 = BỐN PHẦN CHÍN. Luật xưởng: tách MỘT quân — THỬ quy đồng — rồi mới đẩy cả hàng!",
-    "display": {
-     "type": "scale_check_interactive",
-     "spec": {
-      "big": {
-       "item": "2/(1×3)",
-       "weight": "2/3",
-       "rule": "tách thẳng"
-      },
-      "half": {
-       "item": "1/(1×3)",
-       "weight": "1/3",
-       "rule": "× hệ số 1/2"
-      },
-      "result": "(1 − 1/9) × 1/2 = 4/9"
-     }
-    },
-    "interaction": {
-     "type": "weigh_and_tag",
-     "answerKey": {
-      "value": "4/9"
-     },
-     "successMessage": "Hệ số 1/2 đeo bên hông — đáp 4/9, không phải 8/9!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "mcq",
-     "text": "Dãy tử 1, mẫu cách nhau 2 — hệ số điều chỉnh là:",
-     "choices": [
-      "1/2",
-      "2",
-      "không cần"
-     ],
-     "answerKey": {
-      "choice": "1/2"
-     },
-     "wrongFeedback": "Hệ số = tử : khoảng cách = 1 : 2.",
-     "objective": "O1",
-     "teaches": [
-      "K2"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K4"
+    "cases": [
+      "CA:KSN5Q1.B14.2",
+      "CA:KSN5Q1.B14.3"
     ],
-    "narration": "Đổi khoảng cách vẫn một luật. Dãy 3/(1×4) + 3/(4×7) + …: tử BA khớp khoảng BA — tách thẳng: 1 − 1/13 = 12/13. Bài sư phụ 1/(2×4) + … + 1/(18×20): tử 1, khoảng 2 — đeo hệ số 1/2, sập từ 1/2: (1/2 − 1/20) × 1/2 = 9/20 × 1/2 = CHÍN PHẦN BỐN MƯƠI. Giữ hệ số ngoài ngoặc tới phút chót rồi mới dọn!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "3/(1×4)…: tử 3 = khoảng 3 → 1 − 1/13 = 12/13",
-      "1/(2×4)…: hệ số 1/2 · (1/2 − 1/20) × 1/2",
-      "= 9/20 × 1/2 = 9/40 (dọn ✓)"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú an toàn xưởng: tách một quân, thử một quân — rồi mới đẩy cả hàng!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TÁCH MỘT QUÂN, THỬ MỘT QUÂN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 85,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Trí Long vừa thắng lớn với dãy tử hai, đang hăng: gặp dãy một phần một-nhân-ba cộng một phần ba-nhân-năm, cậu tách y hệt — một trừ một phần ba nhé! Su Kem cân thử quân đầu: một phần một-nhân-ba nặng một phần ba… mà một trừ một phần ba nặng tận HAI phần ba?!",
-    "screenText": "1/(1×3) = 1 − 1/3??",
-    "visual": "Xưởng domino; Trí Long ôm cúp 'dãy tử 2'; Su Kem đặt quân lên cân, kim lệch hẳn, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Lên cân: quân cỡ đại tử HAI khớp khoảng cách HAI — nặng đúng hai phần ba: tách thẳng hợp lệ! Quân một phần một-nhân-ba chỉ nặng MỘT NỬA — muốn tách phải đeo hệ số tử-chia-khoảng-cách: MỘT PHẦN HAI! Cả dãy thành một trừ một phần chín, nhân một phần hai — bằng BỐN PHẦN CHÍN. Tách một quân — thử quy đồng — rồi mới đẩy cả hàng!",
-    "screenText": "tử = khoảng → thẳng · tử ≠ khoảng → × (tử : khoảng)",
-    "visual": "Cân hai đĩa: quân '2/(1×3)' cân bằng '2/3' ✓; quân '1/(1×3)' kèm thẻ hệ số '×1/2' đeo bên hông; dãy sập ra 4/9 vàng.",
-    "assets": [],
-    "duration": 25
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Đổi khoảng cách vẫn một luật. Dãy tử ba khoảng ba — tách thẳng: một trừ một phần mười ba bằng mười hai phần mười ba. Bài sư phụ từ một phần hai-nhân-bốn tới một phần mười tám-nhân-hai mươi: đeo hệ số một phần hai, sập từ một phần hai: chín phần hai mươi nhân một phần hai — CHÍN PHẦN BỐN MƯƠI!",
-    "screenText": "3/(1×4)… = 12/13 · (1/2 − 1/20) × 1/2 = 9/40",
-    "visual": "Hai hàng domino song song: hàng tử-3 sập thẳng; hàng sư phụ đeo thẻ ×1/2, hai mảnh 1/2 và 1/20 sống sót, đáp 9/40 đóng mộc.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú an toàn xưởng: tách một quân, thử một quân — rồi mới đẩy cả hàng!",
-    "screenText": "TÁCH 1 QUÂN — THỬ 1 QUÂN!",
-    "visual": "Thẻ thần chú vàng với icon quân domino trên bàn cân.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Ca cân quân của con: dãy một phần một-nhân-ba tới một phần bảy-nhân-chín — hệ số mấy, đáp bao nhiêu? Vào bài luyện ngay!",
-    "screenText": "1/(1×3) + … + 1/(7×9) = ?",
-    "visual": "Hàng domino chờ với thẻ hệ số úp; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P3",
-    "assets": [],
-    "duration": 9
-   }
-  ]
- },
- "workedExample": {
-  "title": "Cân quân rồi mới đẩy",
-  "problem": "Tính: 1/(1×3) + 1/(3×5) + 1/(5×7) + 1/(7×9).",
-  "steps": [
-   {
-    "show": "Bước 1 — Đối chiếu: tử 1, khoảng cách 2 → KHÁC nhau → hệ số 1 : 2 = 1/2.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Tách thẳng được không?",
-     "choices": [
-      "Không — tử khác khoảng cách",
-      "Được — cứ quen tay",
-      "Chỉ khi dãy ngắn"
-     ],
-     "answerKey": {
-      "choice": "Không — tử khác khoảng cách"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Thử một quân: 1 − 1/3 = 2/3 gấp đôi 1/3 → xác nhận cần × 1/2."
-   },
-   {
-    "show": "Bước 3 — Đẩy cả hàng: (1 − 1/9) × 1/2 = 8/9 × 1/2 = 4/9 (dọn ✓).",
-    "askAfter": {
-     "format": "mb",
-     "text": "Dãy 2/(1×3) + … + 2/(7×9) (tử 2): đáp?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "đáp",
-        "value": "8/9"
-       }
-      ]
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "tf",
-     "sourceItem": "ITEM:KSN5Q1.B14.LT2",
-     "text": "Kiểm tra bằng quy đồng: 2/(3×5) = 1/3 − 1/5. Đúng không?",
-     "answerKey": {
-      "value": true,
-      "note": "1/3 − 1/5 = 5/15 − 3/15 = 2/15 ✓"
-     },
-     "hints": [
-      "Quy đồng mẫu 15.",
-      "Tử 2 = khoảng cách 2."
-     ],
-     "solutionNarrative": "5/15 − 3/15 = 2/15 = 2/(3×5) ✓ — tách thẳng hợp lệ.",
-     "teaches": [
-      "K1",
-      "K3"
-     ]
-    },
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B14.LT5",
-     "text": "Tính: 2/(1×3) + 2/(3×5) + 2/(5×7) + 2/(7×9).",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "đáp",
-        "value": "8/9"
-       }
-      ]
-     },
-     "hints": [
-      "Tử 2 = khoảng 2 → tách thẳng.",
-      "1 − 1/9."
-     ],
-     "solutionNarrative": "Tách thẳng, sập: 1 − 1/9 = 8/9.",
-     "teaches": [
-      "K1"
-     ],
-     "generator": {
-      "template": "Tính {d}/(1×{1+d}) + … + {d}/({n}×{n+d}).",
-      "constraints": {
-       "d": "2–3"
-      },
-      "answerRule": "1 − 1/(n+d), dọn tối giản"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B14.LT6",
-     "text": "Tính: 1/(1×3) + 1/(3×5) + 1/(5×7) + 1/(7×9). (Đối chiếu tử với khoảng cách trước khi tách!)",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "hệ số",
-        "value": "1/2"
-       },
-       {
-        "label": "đáp",
-        "value": "4/9"
-       }
-      ]
-     },
-     "hints": [
-      "Tử 1, khoảng 2 — khác nhau!",
-      "(1 − 1/9) × 1/2."
-     ],
-     "solutionNarrative": "Hệ số 1/2: 8/9 × 1/2 = 4/9.",
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    },
-    {
-     "id": "P4",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B14.LT8",
-     "text": "Tính: 3/(1×4) + 3/(4×7) + 3/(7×10) + 3/(10×13).",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "đáp",
-        "value": "12/13"
-       }
-      ]
-     },
-     "hints": [
-      "Tử 3 so với khoảng cách?",
-      "Tách thẳng: 1 − 1/13."
-     ],
-     "solutionNarrative": "Tử 3 = khoảng 3: 1 − 1/13 = 12/13.",
-     "teaches": [
-      "K1"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P5",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B14.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Tính trong 90 giây: 1/(2×4) + 1/(4×6) + 1/(6×8) + … + 1/(18×20).\"",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "hệ số",
-        "value": "1/2"
-       },
-       {
-        "label": "đáp",
-        "value": "9/40"
-       }
-      ]
-     },
-     "hints": [
-      "Tử 1, khoảng 2 → × 1/2; dãy sập từ 1/2.",
-      "(1/2 − 1/20) × 1/2."
-     ],
-     "solutionNarrative": "(1/2 − 1/20) × 1/2 = 9/20 × 1/2 = 9/40.",
-     "teaches": [
-      "K2",
-      "K4"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:II.2.1#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B14.M3",
-   "award": "huy_hieu_can_quan"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "workedExample"
-   ],
-   "retryWith": "đề B sinh từ generator P2"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B14.QZ2",
-    "text": "(Đúng/Sai?) 1/(1×3) = 1 − 1/3.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2",
-     "K3"
+    "traps": [
+      "TRAP:KSN5Q1.B14.2"
     ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B14.QZ4",
-    "text": "Dãy tử 1, mẫu cách nhau 2 — hệ số điều chỉnh là:",
-    "choices": [
-     "1/2",
-     "2",
-     "không cần"
-    ],
-    "answerKey": {
-     "choice": "1/2"
-    },
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mb",
-    "text": "Tính: 2/(3×5) + 2/(5×7) + 2/(7×9).",
-    "answerKey": {
-     "parts": [
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con xử đúng dãy domino có mẫu cách nhau 2, 3: đối chiếu TỬ với KHOẢNG CÁCH trước khi tách — tử BẰNG khoảng cách thì tách thẳng; tử KHÁC khoảng cách thì nhân hệ số điều chỉnh (tử : khoảng cách) — và luôn tách một quân, thử một quân trước khi đẩy cả hàng.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (hệ số 1/2)",
+    "kidText": "Mẫu cách nhau 2 hay 3 thì phải nhân thêm hệ số. Con so tử với khoảng cách trước, tách thử một quân rồi mới đẩy cả hàng."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "đáp",
-       "value": "1/3 − 1/9 = 2/9"
+        "id": "K1",
+        "text": "Mẫu cách nhau d, tử BẰNG d: tách thẳng — d/(n × (n + d)) = 1/n − 1/(n + d). Ví dụ 2/(1×3) = 1 − 1/3 (kiểm quy đồng: 1 − 1/3 = 2/3 ✓)."
+      },
+      {
+        "id": "K2",
+        "text": "Tử KHÁC khoảng cách: nhân HỆ SỐ ĐIỀU CHỈNH = tử : khoảng cách. Ví dụ tử 1, khoảng 2: 1/(1×3) = (1 − 1/3) × 1/2 — vì 1 − 1/3 = 2/3 gấp ĐÔI 1/3."
+      },
+      {
+        "id": "K3",
+        "text": "Nghi thức TÁCH MỘT QUÂN, THỬ MỘT QUÂN: tách quân đầu, quy đồng kiểm đúng, rồi mới đẩy cả hàng — chống quen tay tách bừa."
+      },
+      {
+        "id": "K4",
+        "text": "Sập xong dãy hệ số: giữ hệ số ngoài ngoặc đến phút cuối — (mảnh đầu − mảnh cuối) × hệ số, rồi dọn tối giản (nghi thức Bài trước)."
       }
-     ]
-    },
-    "teaches": [
-     "K1",
-     "K4"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Dãy domino mẫu cách nhau d — khi nào tách thẳng, khi nào nhân hệ số?",
-    "back": "Đối chiếu TỬ với KHOẢNG CÁCH: bằng nhau → tách thẳng (2/(1×3) = 1 − 1/3); khác nhau → × hệ số (tử : khoảng): 1/(1×3) = (1 − 1/3) × 1/2. Luật xưởng: TÁCH MỘT QUÂN, THỬ MỘT QUÂN rồi mới đẩy cả hàng!"
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P2",
-   "+7 ngày: câu P5 (sư phụ 9/40)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học cân quân domino: tử bằng khoảng cách tách thẳng, khác thì nhân hệ số tử-chia-khoảng. Con đạt {score}/3, {trapResult} câu bẫy quen-tay.",
-  "homeActivity": "Đố miệng: 'dãy 1/(1×3)… tách thẳng được không?' — con phải nói 'không — thử một quân: 1 − 1/3 = 2/3 gấp đôi' là đạt.",
-  "watchFor": "Nếu con tách bừa theo quán tính — bắt con cân quân đầu bằng quy đồng (S2) trước khi làm tiếp."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B14.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "1/(1×3) = 1 − 1/3??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Trí Long vừa thắng lớn với dãy 2/(1×3) + … = 1 − 1/9, đang hăng: gặp dãy 1/(1×3) + 1/(3×5) + … cậu tách y hệt — \"1 trừ 1/3 nhé!\" Su Kem cân thử quân đầu: 1/(1×3) nặng 1/3… mà 1 − 1/3 nặng tận 2/3?!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "1/(1×3) nặng 1/3… mà 1 − 1/3 nặng tận 2/3?!",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B14_M2_F1.png",
-   "sha256_16": "cb3eb89129c51d19"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con xử đúng dãy domino có mẫu cách nhau 2, 3: đối chiếu TỬ với KHOẢNG CÁCH trước khi tách — tử BẰNG khoảng cách thì tách thẳng; tử KHÁC khoảng cách thì nhân hệ số điều chỉnh (tử : khoảng cách) — và luôn tách một quân, thử một quân trước khi đẩy cả hàng.",
-    "steps": [
-     {
-      "text": "3/(1×4)…: tử 3 = khoảng 3 → 1 − 1/13 = 12/13"
-     },
-     {
-      "text": "1/(2×4)…: hệ số 1/2 · (1/2 − 1/20) × 1/2"
-     },
-     {
-      "text": "= 9/20 × 1/2 = 9/40 (dọn )"
-     }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B14_M2_F2.png",
-   "sha256_16": "c900e4660b8ae3d3"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Mẫu cách nhau d, tử BẰNG d",
-      "text": "tách thẳng — d/(n × (n + d)) = 1/n − 1/(n + d). Ví dụ 2/(1×3) = 1 − 1/3 (kiểm quy đồng: 1 − 1/3 = 2/3 ).",
-      "tone": "navy"
-     },
-     {
-      "label": "Tử KHÁC khoảng cách",
-      "text": "nhân HỆ SỐ ĐIỀU CHỈNH = tử : khoảng cách. Ví dụ tử 1, khoảng 2: 1/(1×3) = (1 − 1/3) × 1/2 — vì 1 − 1/3 = 2/3 gấp ĐÔI 1/3.",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: HAI CỠ QUÂN DOMINO. Hàng mẫu-cách-2 dùng quân CỠ ĐẠI: mỗi quân 2/(1×3) nặng đúng bằng hiệu 1 − 1/3 — tử 2 khớp khít khoảng cách 2: tách thẳng, đẩy là sập. Nhưng gặp hàng 1/(1×3): quân chỉ nặng MỘT NỬA cỡ đại (1/3 so với 2/3) — tách như cũ là khai gian trọng lượng gấp đôi! Thợ domino chuyên nghiệp NHÂN HỆ SỐ 1/2 (tử chia khoảng cách) đeo bên hông cả dãy. Luật an toàn xưởng: TÁCH MỘT QUÂN — THỬ MỘT QUÂN (quy đồng kiểm) — rồi mới đẩy cả hàng.",
+    "canonicalExamples": [
+      {
+        "case": "tử = khoảng cách (ca tách thẳng)",
+        "problem": "Tính: 2/(1×3) + 2/(3×5) + 2/(5×7) + 2/(7×9).",
+        "solution": "Tử 2 = khoảng cách 2 → tách thẳng: (1 − 1/3) + (1/3 − 1/5) + … = 1 − 1/9 = 8/9.",
+        "why": "Ca chuẩn K1 — đề A câu 7."
+      },
+      {
+        "case": "tử ≠ khoảng cách (ca hệ số)",
+        "problem": "Tính: 1/(1×3) + 1/(3×5) + 1/(5×7) + 1/(7×9).",
+        "solution": "Tử 1, khoảng cách 2 → hệ số 1/2: [(1 − 1/3) + … + (1/7 − 1/9)] × 1/2 = (1 − 1/9) × 1/2 = 8/9 × 1/2 = 4/9.",
+        "why": "Ca đinh bẫy CĐ-14.2 — đề A câu 6."
+      },
+      {
+        "case": "khoảng cách 3 + sư phụ chẵn (ca mở rộng)",
+        "problem": "Tính: 3/(1×4) + 3/(4×7) + 3/(7×10) + 3/(10×13). Và bài sư phụ: 1/(2×4) + 1/(4×6) + … + 1/(18×20).",
+        "solution": "Bài 1: tử 3 = khoảng 3 → tách thẳng: 1 − 1/13 = 12/13. Bài sư phụ: tử 1, khoảng 2 → hệ số 1/2: (1/2 − 1/20) × 1/2 = 9/20 × 1/2 = 9/40.",
+        "why": "Đổi khoảng cách và dãy bắt đầu từ 1/2 — kỹ thuật giữ nguyên."
+      }
+    ],
+    "numberRange": "Lớp 5: khoảng cách 2, 3; tử 1–3; dãy ≤ 10 quân.",
+    "misconceptions": [
+      {
+        "wrong": "Quen tay với 2/(1×3) = 1 − 1/3, gặp dãy 1/(1×3) cũng tách y hệt (bỏ hệ số).",
+        "signal": "Đáp gấp ĐÔI đáp đúng (8/9 thay vì 4/9).",
+        "fix": "K2 + K3 — đối chiếu tử với khoảng cách TRƯỚC; tách một quân thử quy đồng: 1 − 1/3 = 2/3 ≠ 1/3 → phải đeo hệ số 1/2.",
+        "counterExample": "Thử quân đầu: 1/(1×3) = 1/3, mà tách thẳng cho 2/3 — gấp đôi, lộ ngay."
+      }
+    ],
+    "vocabulary": [
+      "quân cỡ đại / quân nửa cỡ",
+      "hệ số điều chỉnh = tử : khoảng cách",
+      "tách một quân — thử một quân",
+      "khai gian trọng lượng"
     ],
     "mantra": "TÁCH MỘT QUÂN, THỬ MỘT QUÂN — RỒI MỚI ĐẨY CẢ HÀNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B14_M2_F3.png",
-   "sha256_16": "1ed10a87bf44b254"
   },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "ĐỐI CHIẾU TỬ VỚI KHOẢNG CÁCH TRƯỚC KHI TÁCH",
-    "neutral": true,
-    "wrong": {
-     "head": "TỬ = KHOẢNG CÁCH",
-     "steps": [
-      "2/(1×3) + 2/(3×5) + …",
-      "tách thẳng"
-     ],
-     "result": "1 − 1/9 = 8/9"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "mcq",
+        "text": "1/(2×3) tách thành gì? (bài trước)",
+        "choices": [
+          "1/2 − 1/3",
+          "1/2 + 1/3",
+          "1/6 − 1/2"
+        ],
+        "answerKey": {
+          "choice": "1/2 − 1/3"
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B14.M1",
+      "message": "Ôn quân domino hai mặt rồi sang xưởng quân cỡ đại nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Trí Long vừa thắng lớn với dãy 2/(1×3) + … = 1 − 1/9, đang hăng: gặp dãy 1/(1×3) + 1/(3×5) + … cậu tách y hệt — \"1 trừ 1/3 nhé!\" Su Kem cân thử quân đầu: 1/(1×3) nặng 1/3… mà 1 − 1/3 nặng tận 2/3?!",
+        "display": {
+          "type": "story_panel",
+          "caption": "1/(1×3) = 1 − 1/3??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để cân quân domino!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 48,
+        "teaches": [
+          "K1",
+          "K2",
+          "K3"
+        ],
+        "narration": "Lên cân: quân cỡ đại 2/(1×3) — tử HAI khớp khoảng cách HAI — nặng đúng 1 − 1/3 = 2/3: tách thẳng hợp lệ! Còn quân 1/(1×3) chỉ nặng 1/3 — đúng MỘT NỬA: muốn tách phải đeo hệ số tử-chia-khoảng-cách: một phần hai! Cả dãy thành (1 − 1/9) × 1/2 = 8/9 × 1/2 = BỐN PHẦN CHÍN. Luật xưởng: tách MỘT quân — THỬ quy đồng — rồi mới đẩy cả hàng!",
+        "display": {
+          "type": "scale_check_interactive",
+          "spec": {
+            "big": {
+              "item": "2/(1×3)",
+              "weight": "2/3",
+              "rule": "tách thẳng"
+            },
+            "half": {
+              "item": "1/(1×3)",
+              "weight": "1/3",
+              "rule": "× hệ số 1/2"
+            },
+            "result": "(1 − 1/9) × 1/2 = 4/9"
+          }
+        },
+        "interaction": {
+          "type": "weigh_and_tag",
+          "answerKey": {
+            "value": "4/9"
+          },
+          "successMessage": "Hệ số 1/2 đeo bên hông — đáp 4/9, không phải 8/9!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "mcq",
+          "text": "Dãy tử 1, mẫu cách nhau 2 — hệ số điều chỉnh là:",
+          "choices": [
+            "1/2",
+            "2",
+            "không cần"
+          ],
+          "answerKey": {
+            "choice": "1/2"
+          },
+          "wrongFeedback": "Hệ số = tử : khoảng cách = 1 : 2.",
+          "objective": "O1",
+          "teaches": [
+            "K2"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 42,
+        "teaches": [
+          "K1",
+          "K4"
+        ],
+        "narration": "Đổi khoảng cách vẫn một luật. Dãy 3/(1×4) + 3/(4×7) + …: tử BA khớp khoảng BA — tách thẳng: 1 − 1/13 = 12/13. Bài sư phụ 1/(2×4) + … + 1/(18×20): tử 1, khoảng 2 — đeo hệ số 1/2, sập từ 1/2: (1/2 − 1/20) × 1/2 = 9/20 × 1/2 = CHÍN PHẦN BỐN MƯƠI. Giữ hệ số ngoài ngoặc tới phút chót rồi mới dọn!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "3/(1×4)…: tử 3 = khoảng 3 → 1 − 1/13 = 12/13",
+            "1/(2×4)…: hệ số 1/2 · (1/2 − 1/20) × 1/2",
+            "= 9/20 × 1/2 = 9/40 (dọn ✓)"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú an toàn xưởng: tách một quân, thử một quân — rồi mới đẩy cả hàng!",
+        "display": {
+          "type": "mantra_card",
+          "text": "TÁCH MỘT QUÂN, THỬ MỘT QUÂN!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 85,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "right": {
-     "head": "TỬ ≠ KHOẢNG CÁCH",
-     "steps": [
-      "1/(1×3) + 1/(3×5) + …",
-      "nhân hệ số 1/2"
-     ],
-     "result": "8/9 × 1/2 = 4/9"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "verdict": "Mẫu cách nhau 2 mà tử là 1 → phải nhân thêm hệ số 1/2"
-   },
-   "caption": "Cùng một dãy, chỉ khác tử số — đáp án khác hẳn",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B14_M2_F4.png",
-   "sha256_16": "5d4ee52a107de5e4"
-  }
- ]
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Trí Long vừa thắng lớn với dãy tử hai, đang hăng: gặp dãy một phần một-nhân-ba cộng một phần ba-nhân-năm, cậu tách y hệt — một trừ một phần ba nhé! Su Kem cân thử quân đầu: một phần một-nhân-ba nặng một phần ba… mà một trừ một phần ba nặng tận HAI phần ba?!",
+        "screenText": "1/(1×3) = 1 − 1/3??",
+        "visual": "Xưởng domino; Trí Long ôm cúp 'dãy tử 2'; Su Kem đặt quân lên cân, kim lệch hẳn, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Lên cân: quân cỡ đại tử HAI khớp khoảng cách HAI — nặng đúng hai phần ba: tách thẳng hợp lệ! Quân một phần một-nhân-ba chỉ nặng MỘT NỬA — muốn tách phải đeo hệ số tử-chia-khoảng-cách: MỘT PHẦN HAI! Cả dãy thành một trừ một phần chín, nhân một phần hai — bằng BỐN PHẦN CHÍN. Tách một quân — thử quy đồng — rồi mới đẩy cả hàng!",
+        "screenText": "tử = khoảng → thẳng · tử ≠ khoảng → × (tử : khoảng)",
+        "visual": "Cân hai đĩa: quân '2/(1×3)' cân bằng '2/3' ✓; quân '1/(1×3)' kèm thẻ hệ số '×1/2' đeo bên hông; dãy sập ra 4/9 vàng.",
+        "assets": [],
+        "duration": 25
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Đổi khoảng cách vẫn một luật. Dãy tử ba khoảng ba — tách thẳng: một trừ một phần mười ba bằng mười hai phần mười ba. Bài sư phụ từ một phần hai-nhân-bốn tới một phần mười tám-nhân-hai mươi: đeo hệ số một phần hai, sập từ một phần hai: chín phần hai mươi nhân một phần hai — CHÍN PHẦN BỐN MƯƠI!",
+        "screenText": "3/(1×4)… = 12/13 · (1/2 − 1/20) × 1/2 = 9/40",
+        "visual": "Hai hàng domino song song: hàng tử-3 sập thẳng; hàng sư phụ đeo thẻ ×1/2, hai mảnh 1/2 và 1/20 sống sót, đáp 9/40 đóng mộc.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú an toàn xưởng: tách một quân, thử một quân — rồi mới đẩy cả hàng!",
+        "screenText": "TÁCH 1 QUÂN — THỬ 1 QUÂN!",
+        "visual": "Thẻ thần chú vàng với icon quân domino trên bàn cân.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Ca cân quân của con: dãy một phần một-nhân-ba tới một phần bảy-nhân-chín — hệ số mấy, đáp bao nhiêu? Vào bài luyện ngay!",
+        "screenText": "1/(1×3) + … + 1/(7×9) = ?",
+        "visual": "Hàng domino chờ với thẻ hệ số úp; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P3",
+        "assets": [],
+        "duration": 9
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Cân quân rồi mới đẩy",
+    "problem": "Tính: 1/(1×3) + 1/(3×5) + 1/(5×7) + 1/(7×9).",
+    "steps": [
+      {
+        "show": "Bước 1 — Đối chiếu: tử 1, khoảng cách 2 → KHÁC nhau → hệ số 1 : 2 = 1/2.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Tách thẳng được không?",
+          "choices": [
+            "Không — tử khác khoảng cách",
+            "Được — cứ quen tay",
+            "Chỉ khi dãy ngắn"
+          ],
+          "answerKey": {
+            "choice": "Không — tử khác khoảng cách"
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — Thử một quân: 1 − 1/3 = 2/3 gấp đôi 1/3 → xác nhận cần × 1/2."
+      },
+      {
+        "show": "Bước 3 — Đẩy cả hàng: (1 − 1/9) × 1/2 = 8/9 × 1/2 = 4/9 (dọn ✓).",
+        "askAfter": {
+          "format": "mb",
+          "text": "Dãy 2/(1×3) + … + 2/(7×9) (tử 2): đáp?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "đáp",
+                "value": "8/9"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "tf",
+          "sourceItem": "ITEM:KSN5Q1.B14.LT2",
+          "text": "Kiểm tra bằng quy đồng: 2/(3×5) = 1/3 − 1/5. Đúng không?",
+          "answerKey": {
+            "value": true,
+            "note": "1/3 − 1/5 = 5/15 − 3/15 = 2/15 ✓"
+          },
+          "hints": [
+            "Quy đồng mẫu 15.",
+            "Tử 2 = khoảng cách 2."
+          ],
+          "solutionNarrative": "5/15 − 3/15 = 2/15 = 2/(3×5) ✓ — tách thẳng hợp lệ.",
+          "teaches": [
+            "K1",
+            "K3"
+          ]
+        },
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B14.LT5",
+          "text": "Tính: 2/(1×3) + 2/(3×5) + 2/(5×7) + 2/(7×9).",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "đáp",
+                "value": "8/9"
+              }
+            ]
+          },
+          "hints": [
+            "Tử 2 = khoảng 2 → tách thẳng.",
+            "1 − 1/9."
+          ],
+          "solutionNarrative": "Tách thẳng, sập: 1 − 1/9 = 8/9.",
+          "teaches": [
+            "K1"
+          ],
+          "generator": {
+            "template": "Tính {d}/(1×{1+d}) + … + {d}/({n}×{n+d}).",
+            "constraints": {
+              "d": "2–3"
+            },
+            "answerRule": "1 − 1/(n+d), dọn tối giản"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B14.LT6",
+          "text": "Tính: 1/(1×3) + 1/(3×5) + 1/(5×7) + 1/(7×9). (Đối chiếu tử với khoảng cách trước khi tách!)",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "hệ số",
+                "value": "1/2"
+              },
+              {
+                "label": "đáp",
+                "value": "4/9"
+              }
+            ]
+          },
+          "hints": [
+            "Tử 1, khoảng 2 — khác nhau!",
+            "(1 − 1/9) × 1/2."
+          ],
+          "solutionNarrative": "Hệ số 1/2: 8/9 × 1/2 = 4/9.",
+          "teaches": [
+            "K2",
+            "K3"
+          ]
+        },
+        {
+          "id": "P4",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B14.LT8",
+          "text": "Tính: 3/(1×4) + 3/(4×7) + 3/(7×10) + 3/(10×13).",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "đáp",
+                "value": "12/13"
+              }
+            ]
+          },
+          "hints": [
+            "Tử 3 so với khoảng cách?",
+            "Tách thẳng: 1 − 1/13."
+          ],
+          "solutionNarrative": "Tử 3 = khoảng 3: 1 − 1/13 = 12/13.",
+          "teaches": [
+            "K1"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P5",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B14.LT9",
+          "text": "Sư phụ Trí Dũng đố: \"Tính trong 90 giây: 1/(2×4) + 1/(4×6) + 1/(6×8) + … + 1/(18×20).\"",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "hệ số",
+                "value": "1/2"
+              },
+              {
+                "label": "đáp",
+                "value": "9/40"
+              }
+            ]
+          },
+          "hints": [
+            "Tử 1, khoảng 2 → × 1/2; dãy sập từ 1/2.",
+            "(1/2 − 1/20) × 1/2."
+          ],
+          "solutionNarrative": "(1/2 − 1/20) × 1/2 = 9/20 × 1/2 = 9/40.",
+          "teaches": [
+            "K2",
+            "K4"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:II.2.1#2@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B14.M3",
+      "award": "huy_hieu_can_quan"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "workedExample"
+      ],
+      "retryWith": "đề B sinh từ generator P2"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B14.QZ2",
+        "text": "(Đúng/Sai?) 1/(1×3) = 1 − 1/3.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2",
+          "K3"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B14.QZ4",
+        "text": "Dãy tử 1, mẫu cách nhau 2 — hệ số điều chỉnh là:",
+        "choices": [
+          "1/2",
+          "2",
+          "không cần"
+        ],
+        "answerKey": {
+          "choice": "1/2"
+        },
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mb",
+        "text": "Tính: 2/(3×5) + 2/(5×7) + 2/(7×9).",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "đáp",
+              "value": "1/3 − 1/9 = 2/9"
+            }
+          ]
+        },
+        "teaches": [
+          "K1",
+          "K4"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Dãy domino mẫu cách nhau d — khi nào tách thẳng, khi nào nhân hệ số?",
+        "back": "Đối chiếu TỬ với KHOẢNG CÁCH: bằng nhau → tách thẳng (2/(1×3) = 1 − 1/3); khác nhau → × hệ số (tử : khoảng): 1/(1×3) = (1 − 1/3) × 1/2. Luật xưởng: TÁCH MỘT QUÂN, THỬ MỘT QUÂN rồi mới đẩy cả hàng!"
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P2",
+      "+7 ngày: câu P5 (sư phụ 9/40)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học cân quân domino: tử bằng khoảng cách tách thẳng, khác thì nhân hệ số tử-chia-khoảng. Con đạt {score}/3, {trapResult} câu bẫy quen-tay.",
+    "homeActivity": "Đố miệng: 'dãy 1/(1×3)… tách thẳng được không?' — con phải nói 'không — thử một quân: 1 − 1/3 = 2/3 gấp đôi' là đạt.",
+    "watchFor": "Nếu con tách bừa theo quán tính — bắt con cân quân đầu bằng quy đồng (S2) trước khi làm tiếp."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B14.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "1/(1×3) = 1 − 1/3??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Dãy 1/(1×3) + 1/(3×5) + … thì tách y hệt bài trước thôi: 1 trừ 1/3 nhé!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Cậu cân thử quân đầu đi: 1/(1×3) nặng 1/3, mà 1 − 1/3 nặng tận 2/3 — lệch gấp đôi rồi kìa.",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B14_M2_F1.png",
+      "sha256_16": "7278a579384ae620"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con xử đúng dãy domino có mẫu cách nhau 2, 3: đối chiếu TỬ với KHOẢNG CÁCH trước khi tách — tử BẰNG khoảng cách thì tách thẳng; tử KHÁC khoảng cách thì nhân hệ số điều chỉnh (tử : khoảng cách) — và luôn tách một quân, thử một quân trước khi đẩy cả hàng.",
+        "steps": [
+          {
+            "text": "3/(1×4)…: tử 3 = khoảng 3 → 1 − 1/13 = 12/13"
+          },
+          {
+            "text": "1/(2×4)…: hệ số 1/2 · (1/2 − 1/20) × 1/2"
+          },
+          {
+            "text": "= 9/20 × 1/2 = 9/40 (dọn )"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B14_M2_F2.png",
+      "sha256_16": "c900e4660b8ae3d3"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Mẫu cách nhau d, tử BẰNG d",
+            "text": "tách thẳng — d/(n × (n + d)) = 1/n − 1/(n + d). Ví dụ 2/(1×3) = 1 − 1/3 (kiểm quy đồng: 1 − 1/3 = 2/3 ).",
+            "tone": "navy"
+          },
+          {
+            "label": "Tử KHÁC khoảng cách",
+            "text": "nhân HỆ SỐ ĐIỀU CHỈNH = tử : khoảng cách. Ví dụ tử 1, khoảng 2: 1/(1×3) = (1 − 1/3) × 1/2 — vì 1 − 1/3 = 2/3 gấp ĐÔI 1/3.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "TÁCH MỘT QUÂN, THỬ MỘT QUÂN — RỒI MỚI ĐẨY CẢ HÀNG!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B14_M2_F3.png",
+      "sha256_16": "1ed10a87bf44b254"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "ĐỐI CHIẾU TỬ VỚI KHOẢNG CÁCH TRƯỚC KHI TÁCH",
+        "neutral": true,
+        "wrong": {
+          "head": "TỬ = KHOẢNG CÁCH",
+          "steps": [
+            "2/(1×3) + 2/(3×5) + …",
+            "tách thẳng"
+          ],
+          "result": "1 − 1/9 = 8/9"
+        },
+        "right": {
+          "head": "TỬ ≠ KHOẢNG CÁCH",
+          "steps": [
+            "1/(1×3) + 1/(3×5) + …",
+            "nhân hệ số 1/2"
+          ],
+          "result": "8/9 × 1/2 = 4/9"
+        },
+        "verdict": "Mẫu cách nhau 2 mà tử là 1 → phải nhân thêm hệ số 1/2"
+      },
+      "caption": "Cùng một dãy, chỉ khác tử số — đáp án khác hẳn",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B14_M2_F4.png",
+      "sha256_16": "5d4ee52a107de5e4"
+    }
+  ]
 }

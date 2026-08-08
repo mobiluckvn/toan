@@ -1,637 +1,637 @@
 {
- "title": "Tam giác V - S - T: che ô cần tìm là ra công thức — bài sớm - muộn ba nhịp một mốc giờ thật",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:V.1.1#1"
-  ],
-  "bktUnit": "CASE:V.1.1#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B53",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B52.M3",
-  "next": "DL:KSN5Q1.B53.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B53",
-  "chunks": [
-   "CHUNK:KSN5Q1.B53.S3",
-   "CHUNK:KSN5Q1.B53.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B53.1",
-   "CA:KSN5Q1.B53.3"
-  ],
-  "traps": []
- },
- "objective": {
-  "id": "O1",
-  "text": "Con dùng TAM GIÁC V - S - T (S trên đỉnh, V và T dưới đáy): che ô cần tìm là lộ ra công thức — V = S : T (45 : 3 = 15 km/h); S = V × T; T = S : V; và giải bài SỚM - MUỘN ba nhịp một mốc giờ thật: tính T đi → cộng giờ xuất phát → so giờ hẹn (An 3 km, 12 km/h, đi 6:50 → đến 7:05); trừ giờ nghỉ khỏi thời gian trên đường trước khi dùng.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (V = S : T)",
-  "kidText": "Vẽ tam giác quãng đường – vận tốc – thời gian, che ô cần tìm là ra công thức. Bài sớm muộn thì tính giờ đến rồi so với giờ hẹn."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tam giác thần: S ngồi ĐỈNH, V và T ngồi ĐÁY — che ô cần tìm là lộ công thức: che V → V = S : T = 45 : 3 = 15 km/h; che S → S = V × T = 5 × 2 = 10 km; che T → T = S : V = 30 : 15 = 2 giờ. Một tam giác — ba công thức."
-   },
-   {
-    "id": "K2",
-    "text": "Bài sớm - muộn ba nhịp: (1) T đi = S : V = 3 : 12 = 0,25 giờ = 15 phút; (2) cộng mốc: 6 giờ 50 + 15 phút = 7 giờ 05; (3) so giờ hẹn — giờ trên đồng hồ là mốc THẬT, không phải số trần."
-   },
-   {
-    "id": "K3",
-    "text": "Giờ nghỉ không chạy xe: thời gian TRÊN ĐƯỜNG = giờ đến − giờ đi; thời gian THỰC CHẠY = trên đường − nghỉ: 10 giờ 15 − 7 giờ 15 = 3 giờ; trừ nghỉ 30 phút → 2,5 giờ thực chạy — dùng số này mới vào được tam giác."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: TAM GIÁC THẦN VÀ CHIẾC ĐỒNG HỒ THẬT. Ba đại lượng chuyển động ngồi chung một TAM GIÁC: quãng đường S ngồi ĐỈNH — vận tốc V và thời gian T ngồi ĐÁY. Muốn tìm ai — lấy tay CHE ô ấy: phần còn lại tự xếp thành công thức! Che V: S trên T dưới — V bằng S chia T: bốn lăm chia ba — MƯỜI LĂM ki-lô-mét mỗi giờ! Che S: V với T đứng cạnh nhau — NHÂN: năm nhân hai — MƯỜI ki-lô-mét! Che T: T bằng S chia V — ba mươi chia mười lăm: HAI giờ! Một tam giác — ba công thức, khỏi học thuộc ba lần! Bài sớm-muộn cần thêm chiếc ĐỒNG HỒ THẬT — ba nhịp: nhịp một — T đi: ba chia mười hai bằng không phẩy hai lăm giờ — MƯỜI LĂM PHÚT; nhịp hai — cộng mốc xuất phát: sáu giờ năm mươi cộng mười lăm phút — BẢY GIỜ LINH NĂM; nhịp ba — so giờ hẹn! Còn xe khách có NGHỈ dọc đường: ba giờ trên đường trừ ba mươi phút nghỉ — HAI GIỜ RƯỠI thực chạy: giờ nghỉ bánh xe đứng im, không được đem chia quãng đường!",
-  "canonicalExamples": [
-   {
-    "case": "che V (ca nền)",
-    "problem": "Một người đi xe đạp được 45 km trong 3 giờ. Tính vận tốc của người đó.",
-    "solution": "V = S : T = 45 : 3 = 15 km/h.",
-    "why": "Ca đề A câu 1 — che ô V."
-   },
-   {
-    "case": "sớm - muộn ba nhịp (ca mốc thật)",
-    "problem": "Nhà bạn An cách trường 3 km. An đạp xe với vận tốc 12 km/h, xuất phát lúc 6 giờ 50 phút. Hỏi An đến trường lúc mấy giờ?",
-    "solution": "T đi = 3 : 12 = 0,25 giờ = 15 phút → đến trường lúc 6 giờ 50 + 15 phút = 7 giờ 05 phút.",
-    "why": "Ca LT5 — cộng vào mốc giờ thật."
-   },
-   {
-    "case": "trừ giờ nghỉ (ca xe khách)",
-    "problem": "Xe khách rời bến lúc 7 giờ 15 phút, đến nơi lúc 10 giờ 15 phút, dọc đường nghỉ 30 phút. Tính thời gian xe thực chạy.",
-    "solution": "Trên đường = 10 giờ 15 − 7 giờ 15 = 3 giờ; trừ nghỉ 30 phút → thực chạy 2,5 giờ.",
-    "why": "Ca LT8 — giờ nghỉ bánh đứng im."
-   }
-  ],
-  "numberRange": "Lớp 5: V ≤ 60 km/h; S ≤ 120 km; giờ phút chẵn đẹp.",
-  "misconceptions": [
-   {
-    "wrong": "Lẫn ba công thức (đem nhân khi phải chia); hoặc đem cả giờ nghỉ vào phép chia quãng đường.",
-    "signal": "45 × 3 khi tìm V; dùng 3 giờ thay vì 2,5 giờ cho xe có nghỉ.",
-    "fix": "K1 + K3 — che ô tam giác: trên-dưới là chia, cạnh nhau là nhân; trừ nghỉ trước khi vào tam giác.",
-    "counterExample": "V = 45 × 3 = 135 km/h — xe đạp vượt cả ô tô cao tốc: đạp kiểu gì?!"
-   }
-  ],
-  "vocabulary": [
-   "tam giác thần V-S-T",
-   "che ô cần tìm",
-   "ba nhịp một mốc",
-   "đồng hồ thật",
-   "giờ nghỉ bánh đứng im"
-  ],
-  "mantra": "MỘT TAM GIÁC — BA CÔNG THỨC: CHE Ô CẦN TÌM LÀ RA!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "45 : 3 = ?",
-    "answerKey": {
-     "value": 15
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "ôn chia cơ bản",
-   "message": "Ôn phép chia rồi vẽ tam giác nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Ba bài liên tiếp: tìm V, tìm S, tìm T — Trí Long học thuộc ba công thức rời, làm đến bài hai đã nhân chia lộn tùng phèo: \"45 × 3 = 135 km/h!\" Su Kem vẽ một tam giác: \"Xe đạp 135 cây số giờ á? Một hình vẽ này chấp cả ba công thức đấy!\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "xe đạp 135 km/h??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để vẽ tam giác thần!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1"
+  "title": "Tam giác V - S - T: che ô cần tìm là ra công thức — bài sớm - muộn ba nhịp một mốc giờ thật",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:V.1.1#1"
     ],
-    "narration": "Ba đại lượng chung MỘT TAM GIÁC: quãng đường S ngồi ĐỈNH — vận tốc V và thời gian T ngồi ĐÁY! Muốn tìm ai — CHE ô ấy: phần còn lại tự xếp thành công thức! Che V: S trên T dưới — bốn lăm chia ba: MƯỜI LĂM! Che S: V với T cạnh nhau — NHÂN: MƯỜI! Che T: ba mươi chia mười lăm — HAI giờ! Một tam giác — ba công thức!",
-    "display": {
-     "type": "triangle_cover_interactive",
-     "spec": {
-      "top": "S",
-      "bottom": "V · T",
-      "coverV": "V = S : T = 15",
-      "coverS": "S = V × T = 10",
-      "coverT": "T = S : V = 2"
-     }
-    },
-    "interaction": {
-     "type": "cover_and_read",
-     "answerKey": {
-      "values": [
-       15,
-       10,
-       2
-      ]
-     },
-     "successMessage": "Che ba ô — ra ba công thức!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "tf",
-     "text": "(Đúng/Sai?) V = S : T.",
-     "answerKey": {
-      "value": true
-     },
-     "wrongFeedback": "Che ô V: S trên T dưới.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K2",
-     "K3"
+    "bktUnit": "CASE:V.1.1#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B53",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B52.M3",
+    "next": "DL:KSN5Q1.B53.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B53",
+    "chunks": [
+      "CHUNK:KSN5Q1.B53.S3",
+      "CHUNK:KSN5Q1.B53.S4"
     ],
-    "narration": "Bài sớm-muộn cần chiếc ĐỒNG HỒ THẬT — ba nhịp: nhịp một — thời gian đi: ba chia mười hai bằng không phẩy hai lăm giờ — MƯỜI LĂM PHÚT! Nhịp hai — cộng mốc xuất phát: sáu giờ năm mươi cộng mười lăm phút — BẢY GIỜ LINH NĂM! Nhịp ba — so giờ hẹn! Còn xe khách có NGHỈ: bảy giờ mười lăm đến mười giờ mười lăm là ba giờ trên đường — trừ ba mươi phút nghỉ: HAI GIỜ RƯỠI thực chạy! Giờ nghỉ bánh xe đứng im — không được đem chia quãng đường!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "T đi = 3 : 12 = 15 phút → 6:50 + 15 = 7:05",
-      "xe khách: 3 giờ − nghỉ 30 phút = 2,5 giờ chạy",
-      "giờ nghỉ bánh đứng im"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú tam giác: một tam giác — ba công thức: che ô cần tìm là ra!",
-    "display": {
-     "type": "mantra_card",
-     "text": "CHE Ô CẦN TÌM LÀ RA!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 89,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "cases": [
+      "CA:KSN5Q1.B53.1",
+      "CA:KSN5Q1.B53.3"
+    ],
+    "traps": []
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con dùng TAM GIÁC V - S - T (S trên đỉnh, V và T dưới đáy): che ô cần tìm là lộ ra công thức — V = S : T (45 : 3 = 15 km/h); S = V × T; T = S : V; và giải bài SỚM - MUỘN ba nhịp một mốc giờ thật: tính T đi → cộng giờ xuất phát → so giờ hẹn (An 3 km, 12 km/h, đi 6:50 → đến 7:05); trừ giờ nghỉ khỏi thời gian trên đường trước khi dùng.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (V = S : T)",
+    "kidText": "Vẽ tam giác quãng đường – vận tốc – thời gian, che ô cần tìm là ra công thức. Bài sớm muộn thì tính giờ đến rồi so với giờ hẹn."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Ba bài: tìm V, tìm S, tìm T — Trí Long học ba công thức rời, nhân chia lộn tùng phèo: bốn lăm nhân ba — một trăm ba lăm ki-lô-mét giờ! Su Kem vẽ tam giác: xe đạp một trăm ba lăm á? Một hình vẽ chấp cả ba công thức!",
-    "screenText": "xe đạp 135 km/h??",
-    "visual": "Xe đạp phóng như tên lửa phi lý; ba công thức rời bay lộn xộn; tam giác vàng hiện ra; dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 19
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Ba đại lượng chung MỘT TAM GIÁC: quãng đường S ngồi ĐỈNH — vận tốc V và thời gian T ngồi ĐÁY! Muốn tìm ai — CHE ô ấy: phần còn lại tự xếp thành công thức! Che V: S trên T dưới — bốn lăm chia ba: MƯỜI LĂM! Che S: V với T cạnh nhau — NHÂN: MƯỜI! Che T: ba mươi chia mười lăm — HAI giờ! Một tam giác — ba công thức!",
-    "screenText": "S trên đỉnh · V, T dưới đáy → che V: S:T · che S: V×T · che T: S:V",
-    "visual": "Tam giác thần với S đỉnh, V-T đáy; bàn tay lần lượt che ba ô, mỗi lần công thức sáng đèn teal.",
-    "assets": [],
-    "duration": 28
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Bài sớm-muộn cần chiếc ĐỒNG HỒ THẬT — ba nhịp: nhịp một — thời gian đi: ba chia mười hai — MƯỜI LĂM PHÚT! Nhịp hai — cộng mốc xuất phát: sáu giờ năm mươi cộng mười lăm phút — BẢY GIỜ LINH NĂM! Nhịp ba — so giờ hẹn! Còn xe khách có NGHỈ: ba giờ trên đường trừ ba mươi phút nghỉ: HAI GIỜ RƯỠI thực chạy!",
-    "screenText": "3:12 = 15 phút → 6:50 + 15 = 7:05 · xe khách: 3 giờ − 30 phút nghỉ = 2,5 giờ",
-    "visual": "Đồng hồ thật nhích từ 6:50 sang 7:05; xe khách đỗ trạm nghỉ với đồng hồ tạm dừng 30 phút tô xám.",
-    "assets": [],
-    "duration": 25
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú tam giác: một tam giác — ba công thức: che ô cần tìm là ra!",
-    "screenText": "CHE Ô CẦN TÌM LÀ RA!",
-    "visual": "Thẻ thần chú vàng với icon tam giác V-S-T.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Tam giác của con: An ba cây, mười hai cây giờ — che ô T rồi cộng đồng hồ thật! Vào bài luyện ngay!",
-    "screenText": "T = 3:12 → 6:50 + ? = ?",
-    "visual": "Tam giác và đồng hồ chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P4",
-    "assets": [],
-    "duration": 9
-   }
-  ]
- },
- "workedExample": {
-  "title": "Che ô rồi nhìn đồng hồ",
-  "problem": "Nhà bạn An cách trường 3 km. An đạp xe với vận tốc 12 km/h, xuất phát lúc 6 giờ 50 phút. Hỏi An đến trường lúc mấy giờ?",
-  "steps": [
-   {
-    "show": "Bước 1 — Che ô T: T = S : V = 3 : 12 = 0,25 giờ = 15 phút.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Trong tam giác thần, S ngồi ở đâu?",
-     "choices": [
-      "đỉnh",
-      "đáy trái",
-      "đáy phải"
-     ],
-     "answerKey": {
-      "choice": "đỉnh"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Cộng mốc thật: 6 giờ 50 + 15 phút = 7 giờ 05 phút."
-   },
-   {
-    "show": "Bước 3 — So giờ hẹn (7 giờ vào lớp → muộn 5 phút — mai đi sớm hơn!).",
-    "askAfter": {
-     "format": "num",
-     "text": "Xe khách 7:15 → 10:15, nghỉ 30 phút: thực chạy ? giờ",
-     "answerKey": {
-      "value": 2.5
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B53.LT1",
-     "text": "Một người đi xe đạp được 45 km trong 3 giờ. Tính vận tốc (km/h).",
-     "answerKey": {
-      "value": 15
-     },
-     "hints": [
-      "Che ô V.",
-      "45 : 3."
-     ],
-     "solutionNarrative": "15 km/h.",
-     "teaches": [
-      "K1"
-     ],
-     "generator": {
-      "template": "Đi {S} km trong {T} giờ → V?",
-      "constraints": {},
-      "answerRule": "S : T"
-     }
-    },
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B53.LT2",
-     "text": "Một người đi bộ với vận tốc 5 km/h trong 2 giờ. Tính quãng đường (km).",
-     "answerKey": {
-      "value": 10
-     },
-     "hints": [
-      "Che ô S.",
-      "5 × 2."
-     ],
-     "solutionNarrative": "10 km.",
-     "teaches": [
-      "K1"
-     ]
-    },
-    {
-     "id": "P3",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B53.LT3",
-     "text": "Quãng đường 30 km, đi với vận tốc 15 km/h. Tính thời gian đi (giờ).",
-     "answerKey": {
-      "value": 2
-     },
-     "hints": [
-      "Che ô T.",
-      "30 : 15."
-     ],
-     "solutionNarrative": "2 giờ.",
-     "teaches": [
-      "K1"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P4",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B53.LT5",
-     "text": "Nhà bạn An cách trường 3 km. An đạp xe với vận tốc 12 km/h, xuất phát lúc 6 giờ 50 phút. Hỏi An đến trường lúc mấy giờ?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "T đi",
-        "value": "15 phút"
-       },
-       {
-        "label": "đến lúc",
-        "value": "7 giờ 05 phút"
-       }
-      ]
-     },
-     "hints": [
-      "T = 3 : 12.",
-      "Cộng vào 6:50."
-     ],
-     "solutionNarrative": "7 giờ 05 — mốc đồng hồ thật.",
-     "teaches": [
-      "K2"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P5",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B53.LT8",
-     "text": "Xe khách rời bến lúc 7 giờ 15 phút, đến nơi lúc 10 giờ 15 phút, dọc đường nghỉ 30 phút. Tính thời gian xe thực chạy (giờ).",
-     "answerKey": {
-      "value": 2.5
-     },
-     "hints": [
-      "Trên đường = 10:15 − 7:15.",
-      "Trừ nghỉ 30 phút."
-     ],
-     "solutionNarrative": "3 − 0,5 = 2,5 giờ.",
-     "teaches": [
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:V.1.1#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B53.M2",
-   "award": "huy_hieu_tam_giac_than"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B53.QZ1",
-    "text": "(Đúng/Sai?) V = S : T.",
-    "answerKey": {
-     "value": true
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mb",
-    "text": "An: 3 km, 12 km/h, đi 6:50 → đến lúc?",
-    "answerKey": {
-     "parts": [
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "đến",
-       "value": "7 giờ 05 phút"
+        "id": "K1",
+        "text": "Tam giác thần: S ngồi ĐỈNH, V và T ngồi ĐÁY — che ô cần tìm là lộ công thức: che V → V = S : T = 45 : 3 = 15 km/h; che S → S = V × T = 5 × 2 = 10 km; che T → T = S : V = 30 : 15 = 2 giờ. Một tam giác — ba công thức."
+      },
+      {
+        "id": "K2",
+        "text": "Bài sớm - muộn ba nhịp: (1) T đi = S : V = 3 : 12 = 0,25 giờ = 15 phút; (2) cộng mốc: 6 giờ 50 + 15 phút = 7 giờ 05; (3) so giờ hẹn — giờ trên đồng hồ là mốc THẬT, không phải số trần."
+      },
+      {
+        "id": "K3",
+        "text": "Giờ nghỉ không chạy xe: thời gian TRÊN ĐƯỜNG = giờ đến − giờ đi; thời gian THỰC CHẠY = trên đường − nghỉ: 10 giờ 15 − 7 giờ 15 = 3 giờ; trừ nghỉ 30 phút → 2,5 giờ thực chạy — dùng số này mới vào được tam giác."
       }
-     ]
-    },
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "num",
-    "text": "Xe 7:15 → 10:15 nghỉ 30 phút: thực chạy ? giờ",
-    "answerKey": {
-     "value": 2.5
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Tam giác V-S-T dùng sao? Bài sớm-muộn mấy nhịp?",
-    "back": "S ĐỈNH — V, T ĐÁY: che ô cần tìm là ra (V = S:T = 15; S = V×T; T = S:V). Sớm-muộn BA NHỊP: T đi (15 phút) → cộng mốc thật (6:50 + 15 = 7:05) → so giờ hẹn. Xe có nghỉ: trừ nghỉ trước — 3 giờ − 30 phút = 2,5 giờ thực chạy (giờ nghỉ bánh đứng im)."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P5 (giờ nghỉ)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học tam giác V-S-T che-ô-là-ra và bài sớm-muộn với mốc đồng hồ thật. Con đạt {score}/3.",
-  "homeActivity": "Vẽ tam giác thần lên giấy nhớ dán góc học tập — con lấy tay che từng ô đọc to ba công thức.",
-  "watchFor": "Nếu con nhân khi phải chia — hỏi 'xe đạp 135 km/h á?' (S1)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B53.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "xe đạp 135 km/h??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Ba bài liên tiếp: tìm V, tìm S, tìm T — Trí Long học thuộc ba công thức rời, làm đến bài hai đã nhân chia lộn tùng phèo: \"45 × 3 = 135 km/h!\" Su Kem vẽ một tam giác: \"Xe đạp 135 cây số giờ á? Một hình vẽ này chấp cả ba công thức đấy!\"",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "\"Xe đạp 135 cây số giờ á?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B53_M1_F1.png",
-   "sha256_16": "8daef29d12a8b534"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con dùng TAM GIÁC V - S - T (S trên đỉnh, V và T dưới đáy): che ô cần tìm là lộ ra công thức — V = S : T (45 : 3 = 15 km/h); S = V × T; T = S : V; và giải bài SỚM - MUỘN ba nhịp một mốc giờ thật: tính T đi → cộng giờ xuất phát → so giờ hẹn (An 3 km, 12 km/h, đi 6:50 → đến 7:05); trừ giờ nghỉ khỏi thời gian trên đường trước khi dùng.",
-    "steps": [
-     {
-      "text": "T đi = 3 : 12 = 15 phút → 6:50 + 15 = 7:05"
-     },
-     {
-      "text": "xe khách: 3 giờ − nghỉ 30 phút = 2,5 giờ chạy"
-     },
-     {
-      "text": "giờ nghỉ bánh đứng im"
-     }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B53_M1_F2.png",
-   "sha256_16": "9e7e1ffc07784a40"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tam giác thần",
-      "text": "S ngồi ĐỈNH, V và T ngồi ĐÁY",
-      "tone": "navy"
-     },
-     {
-      "label": "Bài sớm - muộn ba nhịp",
-      "text": "(1) T đi = S : V = 3 : 12 = 0,25 giờ = 15 phút; (2) cộng mốc: 6 giờ 50 + 15 phút = 7 giờ 05; (3) so giờ hẹn — giờ trên đồng hồ là mốc THẬT, không phải số trần.",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: TAM GIÁC THẦN VÀ CHIẾC ĐỒNG HỒ THẬT. Ba đại lượng chuyển động ngồi chung một TAM GIÁC: quãng đường S ngồi ĐỈNH — vận tốc V và thời gian T ngồi ĐÁY. Muốn tìm ai — lấy tay CHE ô ấy: phần còn lại tự xếp thành công thức! Che V: S trên T dưới — V bằng S chia T: bốn lăm chia ba — MƯỜI LĂM ki-lô-mét mỗi giờ! Che S: V với T đứng cạnh nhau — NHÂN: năm nhân hai — MƯỜI ki-lô-mét! Che T: T bằng S chia V — ba mươi chia mười lăm: HAI giờ! Một tam giác — ba công thức, khỏi học thuộc ba lần! Bài sớm-muộn cần thêm chiếc ĐỒNG HỒ THẬT — ba nhịp: nhịp một — T đi: ba chia mười hai bằng không phẩy hai lăm giờ — MƯỜI LĂM PHÚT; nhịp hai — cộng mốc xuất phát: sáu giờ năm mươi cộng mười lăm phút — BẢY GIỜ LINH NĂM; nhịp ba — so giờ hẹn! Còn xe khách có NGHỈ dọc đường: ba giờ trên đường trừ ba mươi phút nghỉ — HAI GIỜ RƯỠI thực chạy: giờ nghỉ bánh xe đứng im, không được đem chia quãng đường!",
+    "canonicalExamples": [
+      {
+        "case": "che V (ca nền)",
+        "problem": "Một người đi xe đạp được 45 km trong 3 giờ. Tính vận tốc của người đó.",
+        "solution": "V = S : T = 45 : 3 = 15 km/h.",
+        "why": "Ca đề A câu 1 — che ô V."
+      },
+      {
+        "case": "sớm - muộn ba nhịp (ca mốc thật)",
+        "problem": "Nhà bạn An cách trường 3 km. An đạp xe với vận tốc 12 km/h, xuất phát lúc 6 giờ 50 phút. Hỏi An đến trường lúc mấy giờ?",
+        "solution": "T đi = 3 : 12 = 0,25 giờ = 15 phút → đến trường lúc 6 giờ 50 + 15 phút = 7 giờ 05 phút.",
+        "why": "Ca LT5 — cộng vào mốc giờ thật."
+      },
+      {
+        "case": "trừ giờ nghỉ (ca xe khách)",
+        "problem": "Xe khách rời bến lúc 7 giờ 15 phút, đến nơi lúc 10 giờ 15 phút, dọc đường nghỉ 30 phút. Tính thời gian xe thực chạy.",
+        "solution": "Trên đường = 10 giờ 15 − 7 giờ 15 = 3 giờ; trừ nghỉ 30 phút → thực chạy 2,5 giờ.",
+        "why": "Ca LT8 — giờ nghỉ bánh đứng im."
+      }
+    ],
+    "numberRange": "Lớp 5: V ≤ 60 km/h; S ≤ 120 km; giờ phút chẵn đẹp.",
+    "misconceptions": [
+      {
+        "wrong": "Lẫn ba công thức (đem nhân khi phải chia); hoặc đem cả giờ nghỉ vào phép chia quãng đường.",
+        "signal": "45 × 3 khi tìm V; dùng 3 giờ thay vì 2,5 giờ cho xe có nghỉ.",
+        "fix": "K1 + K3 — che ô tam giác: trên-dưới là chia, cạnh nhau là nhân; trừ nghỉ trước khi vào tam giác.",
+        "counterExample": "V = 45 × 3 = 135 km/h — xe đạp vượt cả ô tô cao tốc: đạp kiểu gì?!"
+      }
+    ],
+    "vocabulary": [
+      "tam giác thần V-S-T",
+      "che ô cần tìm",
+      "ba nhịp một mốc",
+      "đồng hồ thật",
+      "giờ nghỉ bánh đứng im"
     ],
     "mantra": "MỘT TAM GIÁC — BA CÔNG THỨC: CHE Ô CẦN TÌM LÀ RA!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B53_M1_F3.png",
-   "sha256_16": "f6520403a385492a"
   },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "TAM GIÁC V - S - T: CHE Ô CẦN TÌM LÀ RA CÔNG THỨC",
-    "headers": [
-     "che ô nào",
-     "công thức lộ ra",
-     "ví dụ"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "45 : 3 = ?",
+        "answerKey": {
+          "value": 15
+        }
+      }
     ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "",
-      "cells": [
-       "che V",
-       "V = S : T",
-       "45 : 3 = 15 km/h"
+    "onFail": {
+      "action": "suggest_review",
+      "target": "ôn chia cơ bản",
+      "message": "Ôn phép chia rồi vẽ tam giác nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Ba bài liên tiếp: tìm V, tìm S, tìm T — Trí Long học thuộc ba công thức rời, làm đến bài hai đã nhân chia lộn tùng phèo: \"45 × 3 = 135 km/h!\" Su Kem vẽ một tam giác: \"Xe đạp 135 cây số giờ á? Một hình vẽ này chấp cả ba công thức đấy!\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "xe đạp 135 km/h??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để vẽ tam giác thần!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1"
+        ],
+        "narration": "Ba đại lượng chung MỘT TAM GIÁC: quãng đường S ngồi ĐỈNH — vận tốc V và thời gian T ngồi ĐÁY! Muốn tìm ai — CHE ô ấy: phần còn lại tự xếp thành công thức! Che V: S trên T dưới — bốn lăm chia ba: MƯỜI LĂM! Che S: V với T cạnh nhau — NHÂN: MƯỜI! Che T: ba mươi chia mười lăm — HAI giờ! Một tam giác — ba công thức!",
+        "display": {
+          "type": "triangle_cover_interactive",
+          "spec": {
+            "top": "S",
+            "bottom": "V · T",
+            "coverV": "V = S : T = 15",
+            "coverS": "S = V × T = 10",
+            "coverT": "T = S : V = 2"
+          }
+        },
+        "interaction": {
+          "type": "cover_and_read",
+          "answerKey": {
+            "values": [
+              15,
+              10,
+              2
+            ]
+          },
+          "successMessage": "Che ba ô — ra ba công thức!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "tf",
+          "text": "(Đúng/Sai?) V = S : T.",
+          "answerKey": {
+            "value": true
+          },
+          "wrongFeedback": "Che ô V: S trên T dưới.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 44,
+        "teaches": [
+          "K2",
+          "K3"
+        ],
+        "narration": "Bài sớm-muộn cần chiếc ĐỒNG HỒ THẬT — ba nhịp: nhịp một — thời gian đi: ba chia mười hai bằng không phẩy hai lăm giờ — MƯỜI LĂM PHÚT! Nhịp hai — cộng mốc xuất phát: sáu giờ năm mươi cộng mười lăm phút — BẢY GIỜ LINH NĂM! Nhịp ba — so giờ hẹn! Còn xe khách có NGHỈ: bảy giờ mười lăm đến mười giờ mười lăm là ba giờ trên đường — trừ ba mươi phút nghỉ: HAI GIỜ RƯỠI thực chạy! Giờ nghỉ bánh xe đứng im — không được đem chia quãng đường!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "T đi = 3 : 12 = 15 phút → 6:50 + 15 = 7:05",
+            "xe khách: 3 giờ − nghỉ 30 phút = 2,5 giờ chạy",
+            "giờ nghỉ bánh đứng im"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú tam giác: một tam giác — ba công thức: che ô cần tìm là ra!",
+        "display": {
+          "type": "mantra_card",
+          "text": "CHE Ô CẦN TÌM LÀ RA!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 89,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Ba bài: tìm V, tìm S, tìm T — Trí Long học ba công thức rời, nhân chia lộn tùng phèo: bốn lăm nhân ba — một trăm ba lăm ki-lô-mét giờ! Su Kem vẽ tam giác: xe đạp một trăm ba lăm á? Một hình vẽ chấp cả ba công thức!",
+        "screenText": "xe đạp 135 km/h??",
+        "visual": "Xe đạp phóng như tên lửa phi lý; ba công thức rời bay lộn xộn; tam giác vàng hiện ra; dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 19
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Ba đại lượng chung MỘT TAM GIÁC: quãng đường S ngồi ĐỈNH — vận tốc V và thời gian T ngồi ĐÁY! Muốn tìm ai — CHE ô ấy: phần còn lại tự xếp thành công thức! Che V: S trên T dưới — bốn lăm chia ba: MƯỜI LĂM! Che S: V với T cạnh nhau — NHÂN: MƯỜI! Che T: ba mươi chia mười lăm — HAI giờ! Một tam giác — ba công thức!",
+        "screenText": "S trên đỉnh · V, T dưới đáy → che V: S:T · che S: V×T · che T: S:V",
+        "visual": "Tam giác thần với S đỉnh, V-T đáy; bàn tay lần lượt che ba ô, mỗi lần công thức sáng đèn teal.",
+        "assets": [],
+        "duration": 28
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Bài sớm-muộn cần chiếc ĐỒNG HỒ THẬT — ba nhịp: nhịp một — thời gian đi: ba chia mười hai — MƯỜI LĂM PHÚT! Nhịp hai — cộng mốc xuất phát: sáu giờ năm mươi cộng mười lăm phút — BẢY GIỜ LINH NĂM! Nhịp ba — so giờ hẹn! Còn xe khách có NGHỈ: ba giờ trên đường trừ ba mươi phút nghỉ: HAI GIỜ RƯỠI thực chạy!",
+        "screenText": "3:12 = 15 phút → 6:50 + 15 = 7:05 · xe khách: 3 giờ − 30 phút nghỉ = 2,5 giờ",
+        "visual": "Đồng hồ thật nhích từ 6:50 sang 7:05; xe khách đỗ trạm nghỉ với đồng hồ tạm dừng 30 phút tô xám.",
+        "assets": [],
+        "duration": 25
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú tam giác: một tam giác — ba công thức: che ô cần tìm là ra!",
+        "screenText": "CHE Ô CẦN TÌM LÀ RA!",
+        "visual": "Thẻ thần chú vàng với icon tam giác V-S-T.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Tam giác của con: An ba cây, mười hai cây giờ — che ô T rồi cộng đồng hồ thật! Vào bài luyện ngay!",
+        "screenText": "T = 3:12 → 6:50 + ? = ?",
+        "visual": "Tam giác và đồng hồ chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P4",
+        "assets": [],
+        "duration": 9
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Che ô rồi nhìn đồng hồ",
+    "problem": "Nhà bạn An cách trường 3 km. An đạp xe với vận tốc 12 km/h, xuất phát lúc 6 giờ 50 phút. Hỏi An đến trường lúc mấy giờ?",
+    "steps": [
+      {
+        "show": "Bước 1 — Che ô T: T = S : V = 3 : 12 = 0,25 giờ = 15 phút.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Trong tam giác thần, S ngồi ở đâu?",
+          "choices": [
+            "đỉnh",
+            "đáy trái",
+            "đáy phải"
+          ],
+          "answerKey": {
+            "choice": "đỉnh"
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — Cộng mốc thật: 6 giờ 50 + 15 phút = 7 giờ 05 phút."
+      },
+      {
+        "show": "Bước 3 — So giờ hẹn (7 giờ vào lớp → muộn 5 phút — mai đi sớm hơn!).",
+        "askAfter": {
+          "format": "num",
+          "text": "Xe khách 7:15 → 10:15, nghỉ 30 phút: thực chạy ? giờ",
+          "answerKey": {
+            "value": 2.5
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B53.LT1",
+          "text": "Một người đi xe đạp được 45 km trong 3 giờ. Tính vận tốc (km/h).",
+          "answerKey": {
+            "value": 15
+          },
+          "hints": [
+            "Che ô V.",
+            "45 : 3."
+          ],
+          "solutionNarrative": "15 km/h.",
+          "teaches": [
+            "K1"
+          ],
+          "generator": {
+            "template": "Đi {S} km trong {T} giờ → V?",
+            "constraints": {},
+            "answerRule": "S : T"
+          }
+        },
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B53.LT2",
+          "text": "Một người đi bộ với vận tốc 5 km/h trong 2 giờ. Tính quãng đường (km).",
+          "answerKey": {
+            "value": 10
+          },
+          "hints": [
+            "Che ô S.",
+            "5 × 2."
+          ],
+          "solutionNarrative": "10 km.",
+          "teaches": [
+            "K1"
+          ]
+        },
+        {
+          "id": "P3",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B53.LT3",
+          "text": "Quãng đường 30 km, đi với vận tốc 15 km/h. Tính thời gian đi (giờ).",
+          "answerKey": {
+            "value": 2
+          },
+          "hints": [
+            "Che ô T.",
+            "30 : 15."
+          ],
+          "solutionNarrative": "2 giờ.",
+          "teaches": [
+            "K1"
+          ]
+        }
       ],
-      "color": "#E9F9F4"
-     },
-     {
-      "label": "",
-      "cells": [
-       "che S",
-       "S = V × T",
-       "5 × 2 = 10 km"
+      "standard": [
+        {
+          "id": "P4",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B53.LT5",
+          "text": "Nhà bạn An cách trường 3 km. An đạp xe với vận tốc 12 km/h, xuất phát lúc 6 giờ 50 phút. Hỏi An đến trường lúc mấy giờ?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "T đi",
+                "value": "15 phút"
+              },
+              {
+                "label": "đến lúc",
+                "value": "7 giờ 05 phút"
+              }
+            ]
+          },
+          "hints": [
+            "T = 3 : 12.",
+            "Cộng vào 6:50."
+          ],
+          "solutionNarrative": "7 giờ 05 — mốc đồng hồ thật.",
+          "teaches": [
+            "K2"
+          ]
+        }
       ],
-      "color": "white"
-     },
-     {
-      "label": "",
-      "cells": [
-       "che T",
-       "T = S : V",
-       "30 : 15 = 2 giờ"
+      "challenge": [
+        {
+          "id": "P5",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B53.LT8",
+          "text": "Xe khách rời bến lúc 7 giờ 15 phút, đến nơi lúc 10 giờ 15 phút, dọc đường nghỉ 30 phút. Tính thời gian xe thực chạy (giờ).",
+          "answerKey": {
+            "value": 2.5
+          },
+          "hints": [
+            "Trên đường = 10:15 − 7:15.",
+            "Trừ nghỉ 30 phút."
+          ],
+          "solutionNarrative": "3 − 0,5 = 2,5 giờ.",
+          "teaches": [
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:V.1.1#1@G5"
       ],
-      "color": "#FFF6E2"
-     }
+      "unlockNext": "DL:KSN5Q1.B53.M2",
+      "award": "huy_hieu_tam_giac_than"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B53.QZ1",
+        "text": "(Đúng/Sai?) V = S : T.",
+        "answerKey": {
+          "value": true
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mb",
+        "text": "An: 3 km, 12 km/h, đi 6:50 → đến lúc?",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "đến",
+              "value": "7 giờ 05 phút"
+            }
+          ]
+        },
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "num",
+        "text": "Xe 7:15 → 10:15 nghỉ 30 phút: thực chạy ? giờ",
+        "answerKey": {
+          "value": 2.5
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Tam giác V-S-T dùng sao? Bài sớm-muộn mấy nhịp?",
+        "back": "S ĐỈNH — V, T ĐÁY: che ô cần tìm là ra (V = S:T = 15; S = V×T; T = S:V). Sớm-muộn BA NHỊP: T đi (15 phút) → cộng mốc thật (6:50 + 15 = 7:05) → so giờ hẹn. Xe có nghỉ: trừ nghỉ trước — 3 giờ − 30 phút = 2,5 giờ thực chạy (giờ nghỉ bánh đứng im)."
+      }
     ],
-    "note": "Sớm - muộn ba nhịp: T đi 3 : 12 = 15 phút → 6 giờ 50 + 15 = 7 giờ 05 (mốc đồng hồ THẬT)"
-   },
-   "caption": "Một tam giác — ba công thức, khỏi học thuộc ba lần",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B53_M1_F4.png",
-   "sha256_16": "8f780ef4bc2e8eb3"
-  }
- ]
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P5 (giờ nghỉ)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học tam giác V-S-T che-ô-là-ra và bài sớm-muộn với mốc đồng hồ thật. Con đạt {score}/3.",
+    "homeActivity": "Vẽ tam giác thần lên giấy nhớ dán góc học tập — con lấy tay che từng ô đọc to ba công thức.",
+    "watchFor": "Nếu con nhân khi phải chia — hỏi 'xe đạp 135 km/h á?' (S1)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B53.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "xe đạp 135 km/h??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "45 × 3 = 135 km/h!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Xe đạp mà 135 cây số một giờ á? Tớ vẽ cho cậu một tam giác — che ô cần tìm là ra công thức, khỏi thuộc ba cái.",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B53_M1_F1.png",
+      "sha256_16": "968d119a25912f14"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con dùng TAM GIÁC V - S - T (S trên đỉnh, V và T dưới đáy): che ô cần tìm là lộ ra công thức — V = S : T (45 : 3 = 15 km/h); S = V × T; T = S : V; và giải bài SỚM - MUỘN ba nhịp một mốc giờ thật: tính T đi → cộng giờ xuất phát → so giờ hẹn (An 3 km, 12 km/h, đi 6:50 → đến 7:05); trừ giờ nghỉ khỏi thời gian trên đường trước khi dùng.",
+        "steps": [
+          {
+            "text": "T đi = 3 : 12 = 15 phút → 6:50 + 15 = 7:05"
+          },
+          {
+            "text": "xe khách: 3 giờ − nghỉ 30 phút = 2,5 giờ chạy"
+          },
+          {
+            "text": "giờ nghỉ bánh đứng im"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B53_M1_F2.png",
+      "sha256_16": "9e7e1ffc07784a40"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Tam giác thần",
+            "text": "S ngồi ĐỈNH, V và T ngồi ĐÁY",
+            "tone": "navy"
+          },
+          {
+            "label": "Bài sớm - muộn ba nhịp",
+            "text": "(1) T đi = S : V = 3 : 12 = 0,25 giờ = 15 phút; (2) cộng mốc: 6 giờ 50 + 15 phút = 7 giờ 05; (3) so giờ hẹn — giờ trên đồng hồ là mốc THẬT, không phải số trần.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "MỘT TAM GIÁC — BA CÔNG THỨC: CHE Ô CẦN TÌM LÀ RA!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B53_M1_F3.png",
+      "sha256_16": "f6520403a385492a"
+    },
+    {
+      "archetype": "place_value_chart",
+      "params": {
+        "title": "TAM GIÁC V - S - T: CHE Ô CẦN TÌM LÀ RA CÔNG THỨC",
+        "headers": [
+          "che ô nào",
+          "công thức lộ ra",
+          "ví dụ"
+        ],
+        "comma_after": null,
+        "rows": [
+          {
+            "label": "",
+            "cells": [
+              "che V",
+              "V = S : T",
+              "45 : 3 = 15 km/h"
+            ],
+            "color": "#E9F9F4"
+          },
+          {
+            "label": "",
+            "cells": [
+              "che S",
+              "S = V × T",
+              "5 × 2 = 10 km"
+            ],
+            "color": "white"
+          },
+          {
+            "label": "",
+            "cells": [
+              "che T",
+              "T = S : V",
+              "30 : 15 = 2 giờ"
+            ],
+            "color": "#FFF6E2"
+          }
+        ],
+        "note": "Sớm - muộn ba nhịp: T đi 3 : 12 = 15 phút → 6 giờ 50 + 15 = 7 giờ 05 (mốc đồng hồ THẬT)"
+      },
+      "caption": "Một tam giác — ba công thức, khỏi học thuộc ba lần",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B53_M1_F4.png",
+      "sha256_16": "8f780ef4bc2e8eb3"
+    }
+  ]
 }

@@ -1,621 +1,621 @@
 {
- "title": "Phép đếm \"hoặc\" (cộng trừ giao) & phần bù \"không chia hết\"",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:I.4.2#1"
-  ],
-  "bktUnit": "CASE:I.4.2#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B7",
-  "order": 3,
-  "prev": "DL:KSN5Q1.B7.M2",
-  "next": "DL:KSN5Q1.B8.M1"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B7",
-  "chunks": [
-   "CHUNK:KSN5Q1.B7.S4",
-   "CHUNK:KSN5Q1.B7.S7"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B7.3",
-   "CA:KSN5Q1.B7.4"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B7.3"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con đếm được với hai điều kiện: \"chia hết cho a HOẶC b\" = cộng hai nhóm rồi TRỪ phần giao (nhóm chia hết cả hai); \"KHÔNG chia hết\" = lấy cả đoạn trừ nhóm chia hết (phần bù).",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (trừ phần giao)",
-  "kidText": "Đếm \"chia hết cho 2 hoặc cho 3\": cộng hai nhóm rồi trừ phần bị đếm hai lần. Ai đứng hai hàng chỉ được điểm danh một lần."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "\"⋮ a hoặc ⋮ b\" = (số ⋮ a) + (số ⋮ b) − (số ⋮ cả a và b). Nhóm giao là nhóm chia hết cho BCNN của a và b (⋮ 2 và ⋮ 3 → ⋮ 6)."
-   },
-   {
-    "id": "K2",
-    "text": "Vì sao trừ giao: những số đứng cả hai hàng bị điểm danh HAI lần — phải trả lại một lần."
-   },
-   {
-    "id": "K3",
-    "text": "\"KHÔNG chia hết cho k\" = tổng số của đoạn − số ⋮ k (phần bù) — đếm khó xuôi thì đếm ngược."
-   },
-   {
-    "id": "K4",
-    "text": "Kết hợp: \"⋮ a nhưng KHÔNG ⋮ b\" = (số ⋮ a) − (số ⋮ cả a và b)."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: LỄ ĐIỂM DANH HAI HÀNG. Sân trường xếp hàng ĐỘI CHẴN (⋮ 2) và ĐỘI BA (⋮ 3). Hô 'ai thuộc đội chẵn HOẶC đội ba bước lên' — mấy bạn đa tài (⋮ 6) đứng được cả hai hàng nên bị đếm HAI lần: cộng hai hàng xong phải TRỪ nhóm đứng-hai-hàng. Vẽ nháp hai vòng tròn giao nhau là thấy ngay. Còn hỏi 'ai KHÔNG thuộc đội k' — khỏi đếm từng người: lấy cả sân trừ đội k (phần bù).",
-  "canonicalExamples": [
-   {
-    "case": "hoặc — trừ giao (ca lõi)",
-    "problem": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2 hoặc chia hết cho 3?",
-    "solution": "⋮ 2: 15 số. ⋮ 3: 10 số. Giao (⋮ 6): 5 số. Đáp: 15 + 10 − 5 = 20 số.",
-    "why": "Ca chuẩn K1+K2 — nguồn bẫy CĐ-7.3 (25 sai)."
-   },
-   {
-    "case": "phần bù (ca đếm ngược)",
-    "problem": "Từ 1 đến 100 có bao nhiêu số KHÔNG chia hết cho 3?",
-    "solution": "Cả đoạn: 100 số; ⋮ 3: 33 số → không ⋮ 3: 100 − 33 = 67 số.",
-    "why": "Ca chuẩn K3."
-   },
-   {
-    "case": "a nhưng không b (ca kết hợp)",
-    "problem": "Từ 1 đến 200 có bao nhiêu số chia hết cho 2 nhưng KHÔNG chia hết cho 5?",
-    "solution": "⋮ 2: 100 số. ⋮ cả 2 và 5 (tức ⋮ 10): 20 số → 100 − 20 = 80 số.",
-    "why": "Ca K4 — trừ đúng nhóm giao, không trừ nhóm ⋮ 5."
-   }
-  ],
-  "numberRange": "Lớp 5: đoạn 1–200; cặp điều kiện từ {2, 3, 5} (BCNN 6, 10, 15).",
-  "misconceptions": [
-   {
-    "wrong": "Cộng thẳng hai nhóm 'hoặc': 15 + 10 = 25.",
-    "signal": "Đáp số dôi đúng bằng cỡ nhóm giao.",
-    "fix": "K2 — vẽ hai vòng tròn giao nhau, hỏi 'ai đứng hai hàng?': nhóm ⋮ 6 phải trả lại một lần đếm.",
-    "counterExample": "Số 6, 12, 18, 24, 30 đều bị đếm hai lần trong 25."
-   },
-   {
-    "wrong": "Bài 'a nhưng không b' đem trừ cả nhóm ⋮ b (100 − 40).",
-    "signal": "Trừ nhóm to hơn nhóm giao.",
-    "fix": "K4 — chỉ trừ những bạn ⋮ a mà cũng ⋮ b, tức nhóm ⋮ BCNN.",
-    "counterExample": "Số 5, 15, 25… ⋮ 5 nhưng đâu có ⋮ 2 — chúng chưa từng được đếm, sao lại trừ?"
-   }
-  ],
-  "vocabulary": [
-   "hai vòng tròn giao nhau",
-   "nhóm đứng-hai-hàng (⋮ BCNN)",
-   "phần bù — đếm ngược",
-   "trả lại một lần đếm"
-  ],
-  "mantra": "AI ĐỨNG HAI HÀNG — CHỈ ĐƯỢC ĐIỂM DANH MỘT LẦN!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2? (bài trước)",
-    "answerKey": {
-     "value": 15
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B7.M2",
-   "message": "Ôn đếm ⋮ k trong đoạn rồi ra sân điểm danh nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Lễ điểm danh: 'từ 1 đến 30, ai chia hết cho 2 HOẶC cho 3 bước lên!' Trí Long cộng gọn: 15 bạn đội chẵn + 10 bạn đội ba = 25! Nhưng Su Kem đếm đầu người trên sân… chỉ có 20. Năm bạn nào biến mất?",
-    "display": {
-     "type": "story_panel",
-     "caption": "15 + 10 = 25… mà sân chỉ 20?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để tìm 5 bạn 'ma'!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "Phép đếm \"hoặc\" (cộng trừ giao) & phần bù \"không chia hết\"",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:I.4.2#1"
     ],
-    "narration": "Vẽ hai vòng tròn giao nhau: vòng CHẴN, vòng BA. Con kéo các số 6, 12, 18, 24, 30 vào — chúng đứng ở đâu? Ngay phần GIAO — mỗi bạn bị đếm hai lần! Trả lại một lần: 15 + 10 − 5 = 20.",
-    "display": {
-     "type": "venn_interactive",
-     "spec": {
-      "left": "⋮2 (15)",
-      "right": "⋮3 (10)",
-      "middle": "⋮6 (5)",
-      "dragNumbers": [
-       6,
-       12,
-       18,
-       24,
-       30
-      ]
-     }
-    },
-    "interaction": {
-     "type": "drag_to_venn",
-     "successMessage": "Nhóm ⋮ 6 đứng hai hàng — 15 + 10 − 5 = 20. Ai đứng hai hàng chỉ được điểm danh một lần!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "num",
-     "text": "Từ 1 đến 30, nhóm 'đứng hai hàng' của đội ⋮2 và đội ⋮3 là đội ⋮ mấy — và có mấy bạn?",
-     "answerKey": {
-      "value": 5,
-      "extra": "đội ⋮ 6"
-     },
-     "wrongFeedback": "BCNN của 2 và 3 là 6; dãy 6; 12; …; 30.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K3",
-     "K4"
+    "bktUnit": "CASE:I.4.2#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B7",
+    "order": 3,
+    "prev": "DL:KSN5Q1.B7.M2",
+    "next": "DL:KSN5Q1.B8.M1"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B7",
+    "chunks": [
+      "CHUNK:KSN5Q1.B7.S4",
+      "CHUNK:KSN5Q1.B7.S7"
     ],
-    "narration": "Hai đòn nối tiếp: 'KHÔNG chia hết cho 3 từ 1 đến 100' — khỏi đếm từng người, lấy cả sân trừ đội ba: 100 − 33 = 67. Và 'chia hết cho 2 nhưng KHÔNG cho 5 từ 1 đến 200' — chỉ trừ nhóm đứng hai hàng (⋮ 10): 100 − 20 = 80. Nhớ: trừ nhóm GIAO chứ không trừ cả đội 5!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "Không ⋮3: 100 − 33 = 67 (phần bù)",
-      "⋮2 không ⋮5: 100 − 20 = 80",
-      "(trừ ⋮10 — nhóm giao, KHÔNG trừ 40 của đội 5)"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Thần chú sân trường: ai đứng hai hàng — chỉ được điểm danh một lần!",
-    "display": {
-     "type": "mantra_card",
-     "text": "AI ĐỨNG HAI HÀNG — ĐIỂM DANH MỘT LẦN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 76,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "cases": [
+      "CA:KSN5Q1.B7.3",
+      "CA:KSN5Q1.B7.4"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B7.3"
+    ]
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con đếm được với hai điều kiện: \"chia hết cho a HOẶC b\" = cộng hai nhóm rồi TRỪ phần giao (nhóm chia hết cả hai); \"KHÔNG chia hết\" = lấy cả đoạn trừ nhóm chia hết (phần bù).",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (trừ phần giao)",
+    "kidText": "Đếm \"chia hết cho 2 hoặc cho 3\": cộng hai nhóm rồi trừ phần bị đếm hai lần. Ai đứng hai hàng chỉ được điểm danh một lần."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Lễ điểm danh: từ một đến ba mươi, ai chia hết cho hai HOẶC cho ba bước lên! Trí Long cộng gọn: mười lăm bạn đội chẵn, mười bạn đội ba — hai mươi lăm! Nhưng Su Kem đếm đầu người trên sân… chỉ có HAI MƯƠI. Năm bạn nào biến mất?",
-    "screenText": "15 + 10 = 25… sân chỉ 20?",
-    "visual": "Sân trường với hai hàng học sinh số; bảng đếm '25' gạch đỏ, máy đếm của Su Kem hiện '20'.",
-    "assets": [],
-    "duration": 19
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Vẽ hai vòng tròn giao nhau: vòng CHẴN mười lăm bạn, vòng BA mười bạn. Các số sáu, mười hai, mười tám, hai tư, ba mươi đứng ngay phần GIAO — mỗi bạn bị đếm HAI lần! Trả lại một lần đếm: mười lăm cộng mười trừ năm bằng HAI MƯƠI!",
-    "screenText": "15 + 10 − 5 = 20",
-    "visual": "Biểu đồ Venn hai vòng #0C3B70/#1FC3A6; năm số bay vào phần giao phát sáng vàng; phép tính bật to.",
-    "assets": [],
-    "duration": 18
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Hai đòn nối tiếp. KHÔNG chia hết cho ba từ một đến một trăm? Khỏi đếm từng người — lấy cả sân trừ đội ba: một trăm trừ ba ba bằng sáu mươi bảy. Chia hết hai nhưng KHÔNG chia hết năm từ một đến hai trăm? Chỉ trừ nhóm đứng hai hàng — đội mười: một trăm trừ hai mươi bằng TÁM MƯƠI!",
-    "screenText": "phần bù: 100−33=67 · ⋮2 không ⋮5: 100−20=80",
-    "visual": "Hai khung phép; khung hai có chú thích 'trừ ⋮10, KHÔNG trừ 40' với nhóm ⋮5 lẻ gạch chéo.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú sân trường: ai đứng hai hàng — chỉ được điểm danh một lần!",
-    "screenText": "ĐỨNG HAI HÀNG — ĐIỂM DANH MỘT LẦN!",
-    "visual": "Thẻ thần chú vàng với icon hai vòng tròn giao.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Thử tài điểm danh: từ một đến một trăm, bao nhiêu số KHÔNG chia hết cho ba? Vào bài luyện ngay!",
-    "screenText": "1→100: không ⋮3 = ?",
-    "visual": "Sân trường với đội ⋮3 tách riêng mờ dần; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 8
-   }
-  ]
- },
- "workedExample": {
-  "title": "Lễ điểm danh 'hoặc'",
-  "problem": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2 hoặc chia hết cho 3?",
-  "steps": [
-   {
-    "show": "Bước 1 — Đội CHẴN: (30 − 2) : 2 + 1 = 15. Đội BA: (30 − 3) : 3 + 1 = 10.",
-    "askBefore": {
-     "format": "num",
-     "text": "Đội ⋮ 3 từ 1 đến 30 có mấy bạn?",
-     "answerKey": {
-      "value": 10
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Nhóm đứng hai hàng: ⋮ cả 2 và 3 = ⋮ 6: dãy 6; …; 30 → 5 bạn."
-   },
-   {
-    "show": "Bước 3 — Trả lại một lần đếm: 15 + 10 − 5 = 20 số.",
-    "askAfter": {
-     "format": "num",
-     "text": "Kiểm nhỏ: từ 1 đến 12, ⋮2 hoặc ⋮3 = 6 + 4 − 2 = ?",
-     "answerKey": {
-      "value": 8
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B7.LT6",
-     "text": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2 hoặc chia hết cho 3?",
-     "answerKey": {
-      "value": 20
-     },
-     "hints": [
-      "Hai vòng tròn giao nhau.",
-      "15 + 10 − 5."
-     ],
-     "solutionNarrative": "15 + 10 − 5 = 20 số (trừ nhóm ⋮ 6 bị đếm trùng).",
-     "teaches": [
-      "K1",
-      "K2"
-     ],
-     "generator": {
-      "template": "Từ 1 đến {n} có bao nhiêu số chia hết cho {a} hoặc chia hết cho {b}?",
-      "constraints": {
-       "ab": "cặp (2,3), (2,5), (3,5)"
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "\"⋮ a hoặc ⋮ b\" = (số ⋮ a) + (số ⋮ b) − (số ⋮ cả a và b). Nhóm giao là nhóm chia hết cho BCNN của a và b (⋮ 2 và ⋮ 3 → ⋮ 6)."
       },
-      "answerRule": "⋮a + ⋮b − ⋮BCNN"
-     }
-    },
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B7.LT7",
-     "text": "Từ 1 đến 100 có bao nhiêu số KHÔNG chia hết cho 3?",
-     "answerKey": {
-      "value": 67
-     },
-     "hints": [
-      "Đếm ngược bằng phần bù.",
-      "100 − 33."
-     ],
-     "solutionNarrative": "100 − 33 = 67 số (đếm phần bù).",
-     "teaches": [
-      "K3"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P3",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B7.LT8",
-     "text": "Từ 1 đến 200 có bao nhiêu số chia hết cho 2 nhưng KHÔNG chia hết cho 5?",
-     "answerKey": {
-      "value": 80
-     },
-     "hints": [
-      "⋮2: 100. Nhóm giao ⋮10: 20.",
-      "Chỉ trừ nhóm giao."
-     ],
-     "solutionNarrative": "⋮2: 100; ⋮10: 20 → 100 − 20 = 80 số.",
-     "teaches": [
-      "K4"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P4",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B7.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Có bao nhiêu số có hai chữ số không chia hết cho 2 và cũng không chia hết cho 3?\"",
-     "answerKey": {
-      "value": 30
-     },
-     "hints": [
-      "Cả sân: 90. Đội '⋮2 hoặc ⋮3': 45 + 30 − 15 = 60.",
-      "Phần bù: 90 − 60."
-     ],
-     "solutionNarrative": "90 − (45 + 30 − 15) = 90 − 60 = 30 số.",
-     "teaches": [
-      "K1",
-      "K3"
-     ]
-    },
-    {
-     "id": "P5",
-     "format": "tf",
-     "text": "(Đúng/Sai?) Từ 1 đến 30: 'chia hết cho 2 hoặc cho 3' = 15 + 10 = 25 số.",
-     "answerKey": {
-      "value": false,
-      "note": "Nhóm ⋮6 (5 số) bị đếm hai lần: đáp đúng 20."
-     },
-     "hints": [
-      "Ai đứng hai hàng?",
-      "6, 12, 18, 24, 30 bị đếm mấy lần?"
-     ],
-     "teaches": [
-      "K2"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:I.4.2#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B8.M1",
-   "award": "huy_hieu_diem_danh"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B7.QZ5",
-    "text": "Đếm \"chia hết cho 2 hoặc 3\" ta lấy hai nhóm cộng lại rồi:",
-    "choices": [
-     "trừ phần giao",
-     "cộng phần giao",
-     "giữ nguyên"
+      {
+        "id": "K2",
+        "text": "Vì sao trừ giao: những số đứng cả hai hàng bị điểm danh HAI lần — phải trả lại một lần."
+      },
+      {
+        "id": "K3",
+        "text": "\"KHÔNG chia hết cho k\" = tổng số của đoạn − số ⋮ k (phần bù) — đếm khó xuôi thì đếm ngược."
+      },
+      {
+        "id": "K4",
+        "text": "Kết hợp: \"⋮ a nhưng KHÔNG ⋮ b\" = (số ⋮ a) − (số ⋮ cả a và b)."
+      }
     ],
-    "answerKey": {
-     "choice": "trừ phần giao"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1",
-     "K2"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B7.QZ4",
-    "text": "Từ 1 đến 30, số các số chia hết cho cả 2 và 3 là:",
-    "choices": [
-     "5",
-     "10",
-     "15"
+    "mechanism": "Hình ảnh brand: LỄ ĐIỂM DANH HAI HÀNG. Sân trường xếp hàng ĐỘI CHẴN (⋮ 2) và ĐỘI BA (⋮ 3). Hô 'ai thuộc đội chẵn HOẶC đội ba bước lên' — mấy bạn đa tài (⋮ 6) đứng được cả hai hàng nên bị đếm HAI lần: cộng hai hàng xong phải TRỪ nhóm đứng-hai-hàng. Vẽ nháp hai vòng tròn giao nhau là thấy ngay. Còn hỏi 'ai KHÔNG thuộc đội k' — khỏi đếm từng người: lấy cả sân trừ đội k (phần bù).",
+    "canonicalExamples": [
+      {
+        "case": "hoặc — trừ giao (ca lõi)",
+        "problem": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2 hoặc chia hết cho 3?",
+        "solution": "⋮ 2: 15 số. ⋮ 3: 10 số. Giao (⋮ 6): 5 số. Đáp: 15 + 10 − 5 = 20 số.",
+        "why": "Ca chuẩn K1+K2 — nguồn bẫy CĐ-7.3 (25 sai)."
+      },
+      {
+        "case": "phần bù (ca đếm ngược)",
+        "problem": "Từ 1 đến 100 có bao nhiêu số KHÔNG chia hết cho 3?",
+        "solution": "Cả đoạn: 100 số; ⋮ 3: 33 số → không ⋮ 3: 100 − 33 = 67 số.",
+        "why": "Ca chuẩn K3."
+      },
+      {
+        "case": "a nhưng không b (ca kết hợp)",
+        "problem": "Từ 1 đến 200 có bao nhiêu số chia hết cho 2 nhưng KHÔNG chia hết cho 5?",
+        "solution": "⋮ 2: 100 số. ⋮ cả 2 và 5 (tức ⋮ 10): 20 số → 100 − 20 = 80 số.",
+        "why": "Ca K4 — trừ đúng nhóm giao, không trừ nhóm ⋮ 5."
+      }
     ],
-    "answerKey": {
-     "choice": "5"
-    },
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "num",
-    "text": "Từ 1 đến 60 có bao nhiêu số KHÔNG chia hết cho 5?",
-    "answerKey": {
-     "value": 48
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Đếm 'hoặc', 'không chia hết', 'a nhưng không b' — ba công thức?",
-    "back": "HOẶC: ⋮a + ⋮b − ⋮BCNN (ai đứng hai hàng điểm danh một lần). KHÔNG ⋮k: cả đoạn − ⋮k (phần bù). ⋮a KHÔNG ⋮b: ⋮a − ⋮BCNN."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P4 (kết hợp)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học phép đếm 'hoặc' (trừ phần giao) và phần bù. Con đạt {score}/3, {trapResult} câu bẫy cộng-thẳng.",
-  "homeActivity": "Điểm danh gia đình: 'ai thích phở HOẶC thích bún?' — nếu có người thích cả hai, để con giải thích vì sao không được cộng thẳng hai nhóm.",
-  "watchFor": "Nếu con cộng thẳng hai nhóm — vẽ lại hai vòng tròn giao nhau (S2) cùng con."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B7.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "15 + 10 = 25… mà sân chỉ 20?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Lễ điểm danh: 'từ 1 đến 30, ai chia hết cho 2 HOẶC cho 3 bước lên!' Trí Long cộng gọn: 15 bạn đội chẵn + 10 bạn đội ba = 25! Nhưng Su Kem đếm đầu người trên sân… chỉ có 20. Năm bạn nào biến mất?",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B7_M3_F1.png",
-   "sha256_16": "9a2d68f92d3c75f6"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con đếm được với hai điều kiện: \"chia hết cho a HOẶC b\" = cộng hai nhóm rồi TRỪ phần giao (nhóm chia hết cả hai); \"KHÔNG chia hết\" = lấy cả đoạn trừ nhóm chia hết (phần bù).",
-    "steps": [
-     {
-      "text": "Không ⋮3: 100 − 33 = 67 (phần bù)"
-     },
-     {
-      "text": "⋮2 không ⋮5: 100 − 20 = 80"
-     },
-     {
-      "text": "(trừ ⋮10 — nhóm giao, KHÔNG trừ 40 của đội 5)"
-     }
+    "numberRange": "Lớp 5: đoạn 1–200; cặp điều kiện từ {2, 3, 5} (BCNN 6, 10, 15).",
+    "misconceptions": [
+      {
+        "wrong": "Cộng thẳng hai nhóm 'hoặc': 15 + 10 = 25.",
+        "signal": "Đáp số dôi đúng bằng cỡ nhóm giao.",
+        "fix": "K2 — vẽ hai vòng tròn giao nhau, hỏi 'ai đứng hai hàng?': nhóm ⋮ 6 phải trả lại một lần đếm.",
+        "counterExample": "Số 6, 12, 18, 24, 30 đều bị đếm hai lần trong 25."
+      },
+      {
+        "wrong": "Bài 'a nhưng không b' đem trừ cả nhóm ⋮ b (100 − 40).",
+        "signal": "Trừ nhóm to hơn nhóm giao.",
+        "fix": "K4 — chỉ trừ những bạn ⋮ a mà cũng ⋮ b, tức nhóm ⋮ BCNN.",
+        "counterExample": "Số 5, 15, 25… ⋮ 5 nhưng đâu có ⋮ 2 — chúng chưa từng được đếm, sao lại trừ?"
+      }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B7_M3_F2.png",
-   "sha256_16": "1c871907c509a01c"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "text": "\"⋮ a hoặc ⋮ b\" = (số ⋮ a) + (số ⋮ b) − (số ⋮ cả a và b). Nhóm giao là nhóm chia hết cho BCNN của a và b (⋮ 2 và ⋮ 3 → ⋮ 6).",
-      "tone": "navy"
-     },
-     {
-      "label": "Vì sao trừ giao",
-      "text": "những số đứng cả hai hàng bị điểm danh HAI lần",
-      "tone": "teal"
-     }
+    "vocabulary": [
+      "hai vòng tròn giao nhau",
+      "nhóm đứng-hai-hàng (⋮ BCNN)",
+      "phần bù — đếm ngược",
+      "trả lại một lần đếm"
     ],
     "mantra": "AI ĐỨNG HAI HÀNG — CHỈ ĐƯỢC ĐIỂM DANH MỘT LẦN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B7_M3_F3.png",
-   "sha256_16": "5fa7775931270e35"
   },
-  {
-   "archetype": "venn_two",
-   "params": {
-    "title": "TỪ 1 ĐẾN 30: CHIA HẾT CHO 2 HOẶC CHO 3",
-    "left": {
-     "label": "chia hết 2",
-     "count": 15
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2? (bài trước)",
+        "answerKey": {
+          "value": 15
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B7.M2",
+      "message": "Ôn đếm ⋮ k trong đoạn rồi ra sân điểm danh nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Lễ điểm danh: 'từ 1 đến 30, ai chia hết cho 2 HOẶC cho 3 bước lên!' Trí Long cộng gọn: 15 bạn đội chẵn + 10 bạn đội ba = 25! Nhưng Su Kem đếm đầu người trên sân… chỉ có 20. Năm bạn nào biến mất?",
+        "display": {
+          "type": "story_panel",
+          "caption": "15 + 10 = 25… mà sân chỉ 20?"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để tìm 5 bạn 'ma'!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 45,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Vẽ hai vòng tròn giao nhau: vòng CHẴN, vòng BA. Con kéo các số 6, 12, 18, 24, 30 vào — chúng đứng ở đâu? Ngay phần GIAO — mỗi bạn bị đếm hai lần! Trả lại một lần: 15 + 10 − 5 = 20.",
+        "display": {
+          "type": "venn_interactive",
+          "spec": {
+            "left": "⋮2 (15)",
+            "right": "⋮3 (10)",
+            "middle": "⋮6 (5)",
+            "dragNumbers": [
+              6,
+              12,
+              18,
+              24,
+              30
+            ]
+          }
+        },
+        "interaction": {
+          "type": "drag_to_venn",
+          "successMessage": "Nhóm ⋮ 6 đứng hai hàng — 15 + 10 − 5 = 20. Ai đứng hai hàng chỉ được điểm danh một lần!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "num",
+          "text": "Từ 1 đến 30, nhóm 'đứng hai hàng' của đội ⋮2 và đội ⋮3 là đội ⋮ mấy — và có mấy bạn?",
+          "answerKey": {
+            "value": 5,
+            "extra": "đội ⋮ 6"
+          },
+          "wrongFeedback": "BCNN của 2 và 3 là 6; dãy 6; 12; …; 30.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 40,
+        "teaches": [
+          "K3",
+          "K4"
+        ],
+        "narration": "Hai đòn nối tiếp: 'KHÔNG chia hết cho 3 từ 1 đến 100' — khỏi đếm từng người, lấy cả sân trừ đội ba: 100 − 33 = 67. Và 'chia hết cho 2 nhưng KHÔNG cho 5 từ 1 đến 200' — chỉ trừ nhóm đứng hai hàng (⋮ 10): 100 − 20 = 80. Nhớ: trừ nhóm GIAO chứ không trừ cả đội 5!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "Không ⋮3: 100 − 33 = 67 (phần bù)",
+            "⋮2 không ⋮5: 100 − 20 = 80",
+            "(trừ ⋮10 — nhóm giao, KHÔNG trừ 40 của đội 5)"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 12,
+        "narration": "Thần chú sân trường: ai đứng hai hàng — chỉ được điểm danh một lần!",
+        "display": {
+          "type": "mantra_card",
+          "text": "AI ĐỨNG HAI HÀNG — ĐIỂM DANH MỘT LẦN!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 76,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "right": {
-     "label": "chia hết 3",
-     "count": 10
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "both": {
-     "label": "chia hết cả hai (⋮ 6)",
-     "count": 5
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Lễ điểm danh: từ một đến ba mươi, ai chia hết cho hai HOẶC cho ba bước lên! Trí Long cộng gọn: mười lăm bạn đội chẵn, mười bạn đội ba — hai mươi lăm! Nhưng Su Kem đếm đầu người trên sân… chỉ có HAI MƯƠI. Năm bạn nào biến mất?",
+        "screenText": "15 + 10 = 25… sân chỉ 20?",
+        "visual": "Sân trường với hai hàng học sinh số; bảng đếm '25' gạch đỏ, máy đếm của Su Kem hiện '20'.",
+        "assets": [],
+        "duration": 19
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Vẽ hai vòng tròn giao nhau: vòng CHẴN mười lăm bạn, vòng BA mười bạn. Các số sáu, mười hai, mười tám, hai tư, ba mươi đứng ngay phần GIAO — mỗi bạn bị đếm HAI lần! Trả lại một lần đếm: mười lăm cộng mười trừ năm bằng HAI MƯƠI!",
+        "screenText": "15 + 10 − 5 = 20",
+        "visual": "Biểu đồ Venn hai vòng #0C3B70/#1FC3A6; năm số bay vào phần giao phát sáng vàng; phép tính bật to.",
+        "assets": [],
+        "duration": 18
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Hai đòn nối tiếp. KHÔNG chia hết cho ba từ một đến một trăm? Khỏi đếm từng người — lấy cả sân trừ đội ba: một trăm trừ ba ba bằng sáu mươi bảy. Chia hết hai nhưng KHÔNG chia hết năm từ một đến hai trăm? Chỉ trừ nhóm đứng hai hàng — đội mười: một trăm trừ hai mươi bằng TÁM MƯƠI!",
+        "screenText": "phần bù: 100−33=67 · ⋮2 không ⋮5: 100−20=80",
+        "visual": "Hai khung phép; khung hai có chú thích 'trừ ⋮10, KHÔNG trừ 40' với nhóm ⋮5 lẻ gạch chéo.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú sân trường: ai đứng hai hàng — chỉ được điểm danh một lần!",
+        "screenText": "ĐỨNG HAI HÀNG — ĐIỂM DANH MỘT LẦN!",
+        "visual": "Thẻ thần chú vàng với icon hai vòng tròn giao.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Thử tài điểm danh: từ một đến một trăm, bao nhiêu số KHÔNG chia hết cho ba? Vào bài luyện ngay!",
+        "screenText": "1→100: không ⋮3 = ?",
+        "visual": "Sân trường với đội ⋮3 tách riêng mờ dần; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 8
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Lễ điểm danh 'hoặc'",
+    "problem": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2 hoặc chia hết cho 3?",
+    "steps": [
+      {
+        "show": "Bước 1 — Đội CHẴN: (30 − 2) : 2 + 1 = 15. Đội BA: (30 − 3) : 3 + 1 = 10.",
+        "askBefore": {
+          "format": "num",
+          "text": "Đội ⋮ 3 từ 1 đến 30 có mấy bạn?",
+          "answerKey": {
+            "value": 10
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — Nhóm đứng hai hàng: ⋮ cả 2 và 3 = ⋮ 6: dãy 6; …; 30 → 5 bạn."
+      },
+      {
+        "show": "Bước 3 — Trả lại một lần đếm: 15 + 10 − 5 = 20 số.",
+        "askAfter": {
+          "format": "num",
+          "text": "Kiểm nhỏ: từ 1 đến 12, ⋮2 hoặc ⋮3 = 6 + 4 − 2 = ?",
+          "answerKey": {
+            "value": 8
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
     },
-    "result": "15 + 10 − 5 = 20 số",
-    "note": "Phần giao bị đếm hai lần nên phải trừ đi đúng một lần"
-   },
-   "caption": "Đếm \"hoặc\" = cộng hai nhóm rồi trừ phần giao",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B7_M3_F4.png",
-   "sha256_16": "42020184c262e967"
-  }
- ]
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B7.LT6",
+          "text": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2 hoặc chia hết cho 3?",
+          "answerKey": {
+            "value": 20
+          },
+          "hints": [
+            "Hai vòng tròn giao nhau.",
+            "15 + 10 − 5."
+          ],
+          "solutionNarrative": "15 + 10 − 5 = 20 số (trừ nhóm ⋮ 6 bị đếm trùng).",
+          "teaches": [
+            "K1",
+            "K2"
+          ],
+          "generator": {
+            "template": "Từ 1 đến {n} có bao nhiêu số chia hết cho {a} hoặc chia hết cho {b}?",
+            "constraints": {
+              "ab": "cặp (2,3), (2,5), (3,5)"
+            },
+            "answerRule": "⋮a + ⋮b − ⋮BCNN"
+          }
+        },
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B7.LT7",
+          "text": "Từ 1 đến 100 có bao nhiêu số KHÔNG chia hết cho 3?",
+          "answerKey": {
+            "value": 67
+          },
+          "hints": [
+            "Đếm ngược bằng phần bù.",
+            "100 − 33."
+          ],
+          "solutionNarrative": "100 − 33 = 67 số (đếm phần bù).",
+          "teaches": [
+            "K3"
+          ]
+        }
+      ],
+      "standard": [
+        {
+          "id": "P3",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B7.LT8",
+          "text": "Từ 1 đến 200 có bao nhiêu số chia hết cho 2 nhưng KHÔNG chia hết cho 5?",
+          "answerKey": {
+            "value": 80
+          },
+          "hints": [
+            "⋮2: 100. Nhóm giao ⋮10: 20.",
+            "Chỉ trừ nhóm giao."
+          ],
+          "solutionNarrative": "⋮2: 100; ⋮10: 20 → 100 − 20 = 80 số.",
+          "teaches": [
+            "K4"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P4",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B7.LT9",
+          "text": "Sư phụ Trí Dũng đố: \"Có bao nhiêu số có hai chữ số không chia hết cho 2 và cũng không chia hết cho 3?\"",
+          "answerKey": {
+            "value": 30
+          },
+          "hints": [
+            "Cả sân: 90. Đội '⋮2 hoặc ⋮3': 45 + 30 − 15 = 60.",
+            "Phần bù: 90 − 60."
+          ],
+          "solutionNarrative": "90 − (45 + 30 − 15) = 90 − 60 = 30 số.",
+          "teaches": [
+            "K1",
+            "K3"
+          ]
+        },
+        {
+          "id": "P5",
+          "format": "tf",
+          "text": "(Đúng/Sai?) Từ 1 đến 30: 'chia hết cho 2 hoặc cho 3' = 15 + 10 = 25 số.",
+          "answerKey": {
+            "value": false,
+            "note": "Nhóm ⋮6 (5 số) bị đếm hai lần: đáp đúng 20."
+          },
+          "hints": [
+            "Ai đứng hai hàng?",
+            "6, 12, 18, 24, 30 bị đếm mấy lần?"
+          ],
+          "teaches": [
+            "K2"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:I.4.2#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B8.M1",
+      "award": "huy_hieu_diem_danh"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B7.QZ5",
+        "text": "Đếm \"chia hết cho 2 hoặc 3\" ta lấy hai nhóm cộng lại rồi:",
+        "choices": [
+          "trừ phần giao",
+          "cộng phần giao",
+          "giữ nguyên"
+        ],
+        "answerKey": {
+          "choice": "trừ phần giao"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1",
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B7.QZ4",
+        "text": "Từ 1 đến 30, số các số chia hết cho cả 2 và 3 là:",
+        "choices": [
+          "5",
+          "10",
+          "15"
+        ],
+        "answerKey": {
+          "choice": "5"
+        },
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "num",
+        "text": "Từ 1 đến 60 có bao nhiêu số KHÔNG chia hết cho 5?",
+        "answerKey": {
+          "value": 48
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Đếm 'hoặc', 'không chia hết', 'a nhưng không b' — ba công thức?",
+        "back": "HOẶC: ⋮a + ⋮b − ⋮BCNN (ai đứng hai hàng điểm danh một lần). KHÔNG ⋮k: cả đoạn − ⋮k (phần bù). ⋮a KHÔNG ⋮b: ⋮a − ⋮BCNN."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P4 (kết hợp)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học phép đếm 'hoặc' (trừ phần giao) và phần bù. Con đạt {score}/3, {trapResult} câu bẫy cộng-thẳng.",
+    "homeActivity": "Điểm danh gia đình: 'ai thích phở HOẶC thích bún?' — nếu có người thích cả hai, để con giải thích vì sao không được cộng thẳng hai nhóm.",
+    "watchFor": "Nếu con cộng thẳng hai nhóm — vẽ lại hai vòng tròn giao nhau (S2) cùng con."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B7.M3",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "15 + 10 = 25… mà sân chỉ 20?",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "15 bạn đội chẵn cộng 10 bạn đội ba — 25 bạn!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Nhưng tớ đếm đầu người trên sân chỉ có 20. Cậu tìm hộ tớ bạn nào đang đứng ở CẢ HAI hàng.",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B7_M3_F1.png",
+      "sha256_16": "db062f0c4ddb36be"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con đếm được với hai điều kiện: \"chia hết cho a HOẶC b\" = cộng hai nhóm rồi TRỪ phần giao (nhóm chia hết cả hai); \"KHÔNG chia hết\" = lấy cả đoạn trừ nhóm chia hết (phần bù).",
+        "steps": [
+          {
+            "text": "Không ⋮3: 100 − 33 = 67 (phần bù)"
+          },
+          {
+            "text": "⋮2 không ⋮5: 100 − 20 = 80"
+          },
+          {
+            "text": "(trừ ⋮10 — nhóm giao, KHÔNG trừ 40 của đội 5)"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B7_M3_F2.png",
+      "sha256_16": "1c871907c509a01c"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "text": "\"⋮ a hoặc ⋮ b\" = (số ⋮ a) + (số ⋮ b) − (số ⋮ cả a và b). Nhóm giao là nhóm chia hết cho BCNN của a và b (⋮ 2 và ⋮ 3 → ⋮ 6).",
+            "tone": "navy"
+          },
+          {
+            "label": "Vì sao trừ giao",
+            "text": "những số đứng cả hai hàng bị điểm danh HAI lần",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "AI ĐỨNG HAI HÀNG — CHỈ ĐƯỢC ĐIỂM DANH MỘT LẦN!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B7_M3_F3.png",
+      "sha256_16": "5fa7775931270e35"
+    },
+    {
+      "archetype": "venn_two",
+      "params": {
+        "title": "TỪ 1 ĐẾN 30: CHIA HẾT CHO 2 HOẶC CHO 3",
+        "left": {
+          "label": "chia hết 2",
+          "count": 15
+        },
+        "right": {
+          "label": "chia hết 3",
+          "count": 10
+        },
+        "both": {
+          "label": "chia hết cả hai (⋮ 6)",
+          "count": 5
+        },
+        "result": "15 + 10 − 5 = 20 số",
+        "note": "Phần giao bị đếm hai lần nên phải trừ đi đúng một lần"
+      },
+      "caption": "Đếm \"hoặc\" = cộng hai nhóm rồi trừ phần giao",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B7_M3_F4.png",
+      "sha256_16": "42020184c262e967"
+    }
+  ]
 }

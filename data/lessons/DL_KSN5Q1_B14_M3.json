@@ -1,839 +1,839 @@
 {
- "title": "Dãy nửa dần & chiếc bánh: tổng = 1 − mảnh còn thiếu",
- "grade": 5,
- "durationMinutes": 8,
- "skills": {
-  "primary": [
-   "CASE:II.2.1#3"
-  ],
-  "bktUnit": "CASE:II.2.1#3@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B14",
-  "order": 3,
-  "prev": "DL:KSN5Q1.B14.M2",
-  "next": "DL:KSN5Q1.B15.M1"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B14",
-  "chunks": [
-   "CHUNK:KSN5Q1.B14.S4",
-   "CHUNK:KSN5Q1.B14.S7"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B14.4"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B14.3"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con tính được dãy NỬA DẦN 1/2 + 1/4 + … + 1/2ⁿ bằng hình chiếc bánh: tổng = 1 − MẢNH CUỐI CÙNG (đến 1/64 thì tổng là 63/64) — và hiểu vì sao cộng bao nhiêu số hạng đi nữa tổng vẫn GẦN 1 mà không bao giờ LÀ 1.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (63/64, không phải 1)",
-  "kidText": "Cộng 1/2 + 1/4 + 1/8… con thấy tổng luôn bằng 1 trừ mảnh cuối — gần 1 mãi mà không bao giờ bằng 1."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Dãy nửa dần: 1/2 + 1/4 + 1/8 + … + 1/2ⁿ = 1 − 1/2ⁿ (một trừ MẢNH CUỐI). Đến 1/8: 7/8; đến 1/64: 63/64."
-   },
-   {
-    "id": "K2",
-    "text": "Vì sao: ăn nửa bánh, rồi nửa của phần còn lại, rồi lại nửa… — phần ĐÃ ĂN luôn bằng cả bánh trừ phần CÒN TRỐNG, và phần còn trống đúng bằng mảnh vừa ăn."
-   },
-   {
-    "id": "K3",
-    "text": "Cộng thêm bao nhiêu số hạng, phần trống chỉ NHỎ DẦN chứ không biến mất — tổng GẦN 1 tùy ý nhưng KHÔNG BAO GIỜ bằng 1."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: CHIẾC BÁNH CỦA SU KEM. Bữa một ăn NỬA bánh — còn trống 1/2. Bữa hai ăn nửa phần còn lại (1/4) — còn trống 1/4. Bữa ba ăn 1/8 — còn trống 1/8… Quy luật lộ ra: sau mỗi bữa, phần CÒN TRỐNG đúng bằng mảnh VỪA ĂN! Nên phần đã ăn = cả bánh − mảnh cuối: đến 1/64 là 1 − 1/64 = 63/64. Cáo Đề thủ thỉ \"cộng lắm thế chắc tròn 1 rồi\" — nhưng chiếc bánh không nói dối: góc trống 1/64 vẫn nằm sờ sờ trên đĩa. Gần 1 mà không là 1!",
-  "canonicalExamples": [
-   {
-    "case": "ba bữa đầu (ca lõi)",
-    "problem": "Tính: 1/2 + 1/4 + 1/8.",
-    "solution": "Phần trống sau bữa ba = mảnh vừa ăn = 1/8 → tổng = 1 − 1/8 = 7/8.",
-    "why": "Ca chuẩn K1+K2 — vẽ bánh kiểm được ngay."
-   },
-   {
-    "case": "đến 1/64 (ca bẫy)",
-    "problem": "Tính: 1/2 + 1/4 + 1/8 + 1/16 + 1/32 + 1/64.",
-    "solution": "Tổng = 1 − 1/64 = 63/64 — KHÔNG phải 1: góc trống 1/64 vẫn còn.",
-    "why": "Ca đinh bẫy CĐ-14.3 — đề A câu 8."
-   },
-   {
-    "case": "hỏi ngược (ca hiểu sâu)",
-    "problem": "Cộng dãy nửa dần đến mảnh nào thì tổng bằng 255/256?",
-    "solution": "255/256 = 1 − 1/256 → mảnh cuối là 1/256.",
-    "why": "Chạy máy ngược — khắc công thức 1 − mảnh cuối."
-   }
-  ],
-  "numberRange": "Lớp 5: mảnh cuối đến 1/256.",
-  "misconceptions": [
-   {
-    "wrong": "\"Cộng mãi thì thành 1\" — dãy dài quá nên làm tròn tổng thành 1.",
-    "signal": "Đáp là 1 (hoặc 'xấp xỉ 1' khi đề hỏi giá trị đúng).",
-    "fix": "K2 + K3 — chỉ vào phần trống: nó bằng đúng mảnh cuối, chưa bao giờ bằng 0; tổng = 1 − mảnh cuối.",
-    "counterExample": "Đến 1/64: 63/64 ≠ 1 — thiếu đúng một góc bánh 1/64."
-   }
-  ],
-  "vocabulary": [
-   "chiếc bánh nửa dần",
-   "mảnh vừa ăn = phần còn trống",
-   "góc trống trên đĩa",
-   "gần 1 mà không là 1"
-  ],
-  "mantra": "GẦN 1 MÀ KHÔNG LÀ 1 — CHIẾC BÁNH CÒN MẢNH TRỐNG!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Một nửa của 1/32 là 1/mấy?",
-    "answerKey": {
-     "value": 64
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "ôn nhân chia phân số (hạt mầm)",
-   "message": "Ôn phép nửa của phân số rồi vào tiệc bánh nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Tiệc bánh: Su Kem ăn nửa bánh, rồi nửa phần còn lại, rồi lại nửa… đến mảnh 1/64. Cáo Đề thủ thỉ: \"Cộng lắm thế thì chắc chắn hết bánh — tổng bằng 1 nhé!\" Trí Long định gật… Su Kem chỉ vào cái đĩa: một góc bánh nhỏ xíu vẫn nằm đó.",
-    "display": {
-     "type": "story_panel",
-     "caption": "ăn mãi… hết bánh chưa?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để soi cái đĩa!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "Dãy nửa dần & chiếc bánh: tổng = 1 − mảnh còn thiếu",
+  "grade": 5,
+  "durationMinutes": 8,
+  "skills": {
+    "primary": [
+      "CASE:II.2.1#3"
     ],
-    "narration": "Con cắt bánh theo từng bữa: ăn 1/2 — còn trống 1/2. Ăn thêm 1/4 — còn trống 1/4. Ăn 1/8 — còn trống 1/8! Quy luật hiện ra: phần CÒN TRỐNG luôn bằng đúng mảnh VỪA ĂN. Vậy phần đã ăn bằng cả bánh trừ mảnh cuối: ba bữa đầu là 1 trừ 1/8 — BẢY PHẦN TÁM.",
-    "display": {
-     "type": "cake_slice_interactive",
-     "spec": {
-      "slices": [
-       "1/2",
-       "1/4",
-       "1/8"
-      ],
-      "gaps": [
-       "1/2",
-       "1/4",
-       "1/8"
-      ],
-      "rule": "trống = mảnh vừa ăn",
-      "sum": "1 − 1/8 = 7/8"
-     }
-    },
-    "interaction": {
-     "type": "slice_and_observe",
-     "answerKey": {
-      "value": "7/8"
-     },
-     "successMessage": "Phần trống = mảnh vừa ăn → tổng = 1 − mảnh cuối!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "mcq",
-     "text": "1/2 + 1/4 + … + 1/64 bằng:",
-     "choices": [
-      "63/64",
-      "1",
-      "65/64"
-     ],
-     "answerKey": {
-      "choice": "63/64"
-     },
-     "wrongFeedback": "Góc trống 1/64 vẫn trên đĩa: 1 − 1/64.",
-     "objective": "O1",
-     "teaches": [
-      "K1",
-      "K3"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 38,
-    "teaches": [
-     "K3"
+    "bktUnit": "CASE:II.2.1#3@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B14",
+    "order": 3,
+    "prev": "DL:KSN5Q1.B14.M2",
+    "next": "DL:KSN5Q1.B15.M1"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B14",
+    "chunks": [
+      "CHUNK:KSN5Q1.B14.S4",
+      "CHUNK:KSN5Q1.B14.S7"
     ],
-    "narration": "Vạch mặt lời thủ thỉ của Cáo Đề: mỗi bữa con chỉ ăn ĐÚNG MỘT NỬA phần còn lại — nên phần trống teo đi một nửa chứ không bao giờ về không! Cộng đến 1/64: tổng 63/64. Cộng đến 1/256: tổng 255/256. Gần 1 tùy thích — nhưng chiếc bánh không nói dối: mảnh trống vẫn đó.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "mỗi bữa: trống teo còn MỘT NỬA",
-      "đến 1/64 → 63/64 · đến 1/256 → 255/256",
-      "gần 1 tùy ý — KHÔNG bao giờ = 1"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú tiệc bánh: gần một mà không là một — chiếc bánh còn mảnh trống!",
-    "display": {
-     "type": "mantra_card",
-     "text": "GẦN 1 MÀ KHÔNG LÀ 1!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 85,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "cases": [
+      "CA:KSN5Q1.B14.4"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B14.3"
+    ]
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con tính được dãy NỬA DẦN 1/2 + 1/4 + … + 1/2ⁿ bằng hình chiếc bánh: tổng = 1 − MẢNH CUỐI CÙNG (đến 1/64 thì tổng là 63/64) — và hiểu vì sao cộng bao nhiêu số hạng đi nữa tổng vẫn GẦN 1 mà không bao giờ LÀ 1.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (63/64, không phải 1)",
+    "kidText": "Cộng 1/2 + 1/4 + 1/8… con thấy tổng luôn bằng 1 trừ mảnh cuối — gần 1 mãi mà không bao giờ bằng 1."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Tiệc bánh: Su Kem ăn nửa bánh, rồi nửa phần còn lại, rồi lại nửa… đến mảnh một phần sáu tư. Cáo Đề thủ thỉ: cộng lắm thế thì chắc chắn hết bánh — tổng bằng MỘT nhé! Trí Long định gật… Su Kem chỉ vào cái đĩa: một góc bánh nhỏ xíu vẫn nằm đó.",
-    "screenText": "ăn mãi… tổng = 1??",
-    "visual": "Bàn tiệc với chiếc bánh tròn khuyết dần theo xoắn ốc; góc trống nhỏ phát sáng; Cáo Đề thì thầm bên tai Trí Long.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Cắt bánh theo từng bữa: ăn một phần hai — còn trống một phần hai. Ăn thêm một phần tư — còn trống một phần tư. Ăn một phần tám — còn trống MỘT PHẦN TÁM! Quy luật: phần còn trống luôn bằng đúng mảnh VỪA ĂN. Phần đã ăn bằng cả bánh trừ mảnh cuối: một trừ một phần tám — BẢY PHẦN TÁM!",
-    "screenText": "trống = mảnh vừa ăn → tổng = 1 − mảnh cuối",
-    "visual": "Bánh tròn chia dần 1/2 → 1/4 → 1/8, mỗi lát ăn tô teal, phần trống viền vàng luôn bằng lát mới nhất; công thức nổi lên.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Vạch mặt lời thủ thỉ: mỗi bữa chỉ ăn ĐÚNG MỘT NỬA phần còn lại — phần trống teo đi một nửa chứ không bao giờ về không! Đến một phần sáu tư: tổng SÁU BA phần sáu tư. Đến một phần hai trăm năm sáu: tổng hai trăm năm lăm phần hai trăm năm sáu. Gần một tùy thích — chiếc bánh không nói dối: mảnh trống vẫn đó!",
-    "screenText": "63/64 · 255/256 · … gần 1 — KHÔNG là 1!",
-    "visual": "Kính lúp zoom góc trống ngày càng nhỏ nhưng không biến mất; bảng '= 1' của Cáo Đề gạch chéo đỏ #C0392B.",
-    "assets": [],
-    "duration": 25
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú tiệc bánh: gần một mà không là một — chiếc bánh còn mảnh trống!",
-    "screenText": "GẦN 1 MÀ KHÔNG LÀ 1!",
-    "visual": "Thẻ thần chú vàng với icon bánh khuyết một góc.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Phần bánh của con: một phần hai cộng một phần tư cộng một phần tám — tổng bao nhiêu? Vào bài luyện ngay!",
-    "screenText": "1/2 + 1/4 + 1/8 = ?",
-    "visual": "Bánh ba lát chờ tính; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 9
-   }
-  ]
- },
- "workedExample": {
-  "title": "Ba bữa bánh của Su Kem",
-  "problem": "Tính: 1/2 + 1/4 + 1/8. Rồi cả dãy đến 1/64.",
-  "steps": [
-   {
-    "show": "Bước 1 — Sau mỗi bữa, phần trống = mảnh vừa ăn: trống 1/2 → 1/4 → 1/8.",
-    "askBefore": {
-     "format": "num",
-     "text": "Sau bữa 1/8, phần trống là 1/mấy?",
-     "answerKey": {
-      "value": 8
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Ba bữa: tổng = 1 − 1/8 = 7/8."
-   },
-   {
-    "show": "Bước 3 — Đến 1/64: tổng = 1 − 1/64 = 63/64 (không phải 1!).",
-    "askAfter": {
-     "format": "num",
-     "text": "Cộng đến 1/128 thì tổng là ?/128",
-     "answerKey": {
-      "value": 127
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B14.LT3",
-     "text": "Tính: 1/2 + 1/4 + 1/8.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "đáp",
-        "value": "7/8"
-       }
-      ]
-     },
-     "hints": [
-      "Phần trống = mảnh vừa ăn.",
-      "1 − 1/8."
-     ],
-     "solutionNarrative": "Tổng = 1 − 1/8 = 7/8 (bánh chia đôi ba lần).",
-     "teaches": [
-      "K1",
-      "K2"
-     ],
-     "generator": {
-      "template": "Tính 1/2 + 1/4 + … + 1/{2^n}.",
-      "constraints": {
-       "n": "3–8"
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Dãy nửa dần: 1/2 + 1/4 + 1/8 + … + 1/2ⁿ = 1 − 1/2ⁿ (một trừ MẢNH CUỐI). Đến 1/8: 7/8; đến 1/64: 63/64."
       },
-      "answerRule": "1 − 1/2ⁿ"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B14.LT7",
-     "text": "Tính: 1/2 + 1/4 + 1/8 + 1/16 + 1/32 + 1/64.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "đáp",
-        "value": "63/64"
-       }
-      ]
-     },
-     "hints": [
-      "Mảnh cuối là 1/64.",
-      "1 − mảnh cuối."
-     ],
-     "solutionNarrative": "1 − 1/64 = 63/64.",
-     "teaches": [
-      "K1",
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "num",
-     "text": "Cộng dãy nửa dần đến mảnh nào thì tổng bằng 255/256? (Trả lời mẫu số của mảnh cuối.)",
-     "answerKey": {
-      "value": 256
-     },
-     "hints": [
-      "255/256 = 1 − ?",
-      "Mảnh cuối = phần trống."
-     ],
-     "teaches": [
-      "K1"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:II.2.1#3@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B15.M1",
-   "award": "huy_hieu_tiec_banh"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B14.QZ5",
-    "text": "1/2 + 1/4 + … + 1/64 bằng:",
-    "choices": [
-     "63/64",
-     "1",
-     "65/64"
+      {
+        "id": "K2",
+        "text": "Vì sao: ăn nửa bánh, rồi nửa của phần còn lại, rồi lại nửa… — phần ĐÃ ĂN luôn bằng cả bánh trừ phần CÒN TRỐNG, và phần còn trống đúng bằng mảnh vừa ăn."
+      },
+      {
+        "id": "K3",
+        "text": "Cộng thêm bao nhiêu số hạng, phần trống chỉ NHỎ DẦN chứ không biến mất — tổng GẦN 1 tùy ý nhưng KHÔNG BAO GIỜ bằng 1."
+      }
     ],
-    "answerKey": {
-     "choice": "63/64"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1",
-     "K3"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "num",
-    "text": "1/2 + 1/4 + 1/8 + 1/16 = ?/16",
-    "answerKey": {
-     "value": 15
-    },
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "tf",
-    "text": "(Đúng/Sai?) Cộng dãy nửa dần đủ nhiều số hạng thì tổng sẽ đúng bằng 1.",
-    "answerKey": {
-     "value": false
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Dãy nửa dần 1/2 + 1/4 + … + 1/2ⁿ tính sao? Có bao giờ bằng 1?",
-    "back": "Tổng = 1 − MẢNH CUỐI (phần trống = mảnh vừa ăn): đến 1/64 là 63/64. Không bao giờ bằng 1 — mỗi bữa chỉ ăn nửa phần còn lại, góc trống teo dần nhưng còn mãi. GẦN 1 MÀ KHÔNG LÀ 1!"
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P3 (hỏi ngược 256)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học dãy nửa dần bằng chiếc bánh: tổng = 1 − mảnh cuối, và hiểu vì sao không bao giờ tròn 1. Con đạt {score}/3, {trapResult} câu bẫy cộng-mãi-thành-1.",
-  "homeActivity": "Cắt bánh/quả cam thật: ăn nửa, rồi nửa phần còn lại, ba lần — hỏi con 'đã ăn mấy phần, còn trống mấy phần?' (7/8 và 1/8).",
-  "watchFor": "Nếu con làm tròn tổng thành 1 — chỉ vào góc trống trên đĩa (S3) và hỏi 'nó bằng 0 chưa?'."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B14.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "ăn mãi… hết bánh chưa?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Tiệc bánh: Su Kem ăn nửa bánh, rồi nửa phần còn lại, rồi lại nửa… đến mảnh 1/64.",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B14_M3_F1.png",
-   "sha256_16": "63a9baa8aab40741"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con tính được dãy NỬA DẦN 1/2 + 1/4 + … + 1/2ⁿ bằng hình chiếc bánh: tổng = 1 − MẢNH CUỐI CÙNG (đến 1/64 thì tổng là 63/64) — và hiểu vì sao cộng bao nhiêu số hạng đi nữa tổng vẫn GẦN 1 mà không bao giờ LÀ 1.",
-    "steps": [
-     {
-      "text": "mỗi bữa: trống teo còn MỘT NỬA"
-     },
-     {
-      "text": "đến 1/64 → 63/64 · đến 1/256 → 255/256"
-     },
-     {
-      "text": "gần 1 tùy ý — KHÔNG bao giờ = 1"
-     }
+    "mechanism": "Hình ảnh brand: CHIẾC BÁNH CỦA SU KEM. Bữa một ăn NỬA bánh — còn trống 1/2. Bữa hai ăn nửa phần còn lại (1/4) — còn trống 1/4. Bữa ba ăn 1/8 — còn trống 1/8… Quy luật lộ ra: sau mỗi bữa, phần CÒN TRỐNG đúng bằng mảnh VỪA ĂN! Nên phần đã ăn = cả bánh − mảnh cuối: đến 1/64 là 1 − 1/64 = 63/64. Cáo Đề thủ thỉ \"cộng lắm thế chắc tròn 1 rồi\" — nhưng chiếc bánh không nói dối: góc trống 1/64 vẫn nằm sờ sờ trên đĩa. Gần 1 mà không là 1!",
+    "canonicalExamples": [
+      {
+        "case": "ba bữa đầu (ca lõi)",
+        "problem": "Tính: 1/2 + 1/4 + 1/8.",
+        "solution": "Phần trống sau bữa ba = mảnh vừa ăn = 1/8 → tổng = 1 − 1/8 = 7/8.",
+        "why": "Ca chuẩn K1+K2 — vẽ bánh kiểm được ngay."
+      },
+      {
+        "case": "đến 1/64 (ca bẫy)",
+        "problem": "Tính: 1/2 + 1/4 + 1/8 + 1/16 + 1/32 + 1/64.",
+        "solution": "Tổng = 1 − 1/64 = 63/64 — KHÔNG phải 1: góc trống 1/64 vẫn còn.",
+        "why": "Ca đinh bẫy CĐ-14.3 — đề A câu 8."
+      },
+      {
+        "case": "hỏi ngược (ca hiểu sâu)",
+        "problem": "Cộng dãy nửa dần đến mảnh nào thì tổng bằng 255/256?",
+        "solution": "255/256 = 1 − 1/256 → mảnh cuối là 1/256.",
+        "why": "Chạy máy ngược — khắc công thức 1 − mảnh cuối."
+      }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B14_M3_F2.png",
-   "sha256_16": "88acbfecfd2dcac4"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Dãy nửa dần",
-      "text": "1/2 + 1/4 + 1/8 + … + 1/2ⁿ = 1 − 1/2ⁿ (một trừ MẢNH CUỐI). Đến 1/8: 7/8; đến 1/64: 63/64.",
-      "tone": "navy"
-     },
-     {
-      "label": "Vì sao",
-      "text": "ăn nửa bánh, rồi nửa của phần còn lại, rồi lại nửa… — phần ĐÃ ĂN luôn bằng cả bánh trừ phần CÒN TRỐNG, và phần còn trống đúng bằng mảnh vừa ăn.",
-      "tone": "teal"
-     }
+    "numberRange": "Lớp 5: mảnh cuối đến 1/256.",
+    "misconceptions": [
+      {
+        "wrong": "\"Cộng mãi thì thành 1\" — dãy dài quá nên làm tròn tổng thành 1.",
+        "signal": "Đáp là 1 (hoặc 'xấp xỉ 1' khi đề hỏi giá trị đúng).",
+        "fix": "K2 + K3 — chỉ vào phần trống: nó bằng đúng mảnh cuối, chưa bao giờ bằng 0; tổng = 1 − mảnh cuối.",
+        "counterExample": "Đến 1/64: 63/64 ≠ 1 — thiếu đúng một góc bánh 1/64."
+      }
+    ],
+    "vocabulary": [
+      "chiếc bánh nửa dần",
+      "mảnh vừa ăn = phần còn trống",
+      "góc trống trên đĩa",
+      "gần 1 mà không là 1"
     ],
     "mantra": "GẦN 1 MÀ KHÔNG LÀ 1 — CHIẾC BÁNH CÒN MẢNH TRỐNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B14_M3_F3.png",
-   "sha256_16": "d529efc95777351a"
   },
-  {
-   "archetype": "grid_count",
-   "params": {
-    "title": "DÃY NỬA DẦN 1/2 + 1/4 + … + 1/64 = ?",
-    "cols": 8,
-    "rows": 8,
-    "show_dims": false,
-    "fill": [
-     [
-      0,
-      0
-     ],
-     [
-      1,
-      0
-     ],
-     [
-      2,
-      0
-     ],
-     [
-      3,
-      0
-     ],
-     [
-      4,
-      0
-     ],
-     [
-      5,
-      0
-     ],
-     [
-      6,
-      0
-     ],
-     [
-      7,
-      0
-     ],
-     [
-      0,
-      1
-     ],
-     [
-      1,
-      1
-     ],
-     [
-      2,
-      1
-     ],
-     [
-      3,
-      1
-     ],
-     [
-      4,
-      1
-     ],
-     [
-      5,
-      1
-     ],
-     [
-      6,
-      1
-     ],
-     [
-      7,
-      1
-     ],
-     [
-      0,
-      2
-     ],
-     [
-      1,
-      2
-     ],
-     [
-      2,
-      2
-     ],
-     [
-      3,
-      2
-     ],
-     [
-      4,
-      2
-     ],
-     [
-      5,
-      2
-     ],
-     [
-      6,
-      2
-     ],
-     [
-      7,
-      2
-     ],
-     [
-      0,
-      3
-     ],
-     [
-      1,
-      3
-     ],
-     [
-      2,
-      3
-     ],
-     [
-      3,
-      3
-     ],
-     [
-      4,
-      3
-     ],
-     [
-      5,
-      3
-     ],
-     [
-      6,
-      3
-     ],
-     [
-      7,
-      3
-     ],
-     [
-      0,
-      4
-     ],
-     [
-      1,
-      4
-     ],
-     [
-      2,
-      4
-     ],
-     [
-      3,
-      4
-     ],
-     [
-      4,
-      4
-     ],
-     [
-      5,
-      4
-     ],
-     [
-      6,
-      4
-     ],
-     [
-      7,
-      4
-     ],
-     [
-      0,
-      5
-     ],
-     [
-      1,
-      5
-     ],
-     [
-      2,
-      5
-     ],
-     [
-      3,
-      5
-     ],
-     [
-      4,
-      5
-     ],
-     [
-      5,
-      5
-     ],
-     [
-      6,
-      5
-     ],
-     [
-      7,
-      5
-     ],
-     [
-      0,
-      6
-     ],
-     [
-      1,
-      6
-     ],
-     [
-      2,
-      6
-     ],
-     [
-      3,
-      6
-     ],
-     [
-      4,
-      6
-     ],
-     [
-      5,
-      6
-     ],
-     [
-      6,
-      6
-     ],
-     [
-      7,
-      6
-     ],
-     [
-      0,
-      7
-     ],
-     [
-      1,
-      7
-     ],
-     [
-      2,
-      7
-     ],
-     [
-      3,
-      7
-     ],
-     [
-      4,
-      7
-     ],
-     [
-      5,
-      7
-     ],
-     [
-      6,
-      7
-     ]
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Một nửa của 1/32 là 1/mấy?",
+        "answerKey": {
+          "value": 64
+        }
+      }
     ],
-    "fill_color": "#1FC3A6",
-    "memo": [
-     "chiếc bánh chia 64 phần",
-     "ăn 63 phần",
-     "tổng = 1 − 1/64 = 63/64"
+    "onFail": {
+      "action": "suggest_review",
+      "target": "ôn nhân chia phân số (hạt mầm)",
+      "message": "Ôn phép nửa của phân số rồi vào tiệc bánh nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Tiệc bánh: Su Kem ăn nửa bánh, rồi nửa phần còn lại, rồi lại nửa… đến mảnh 1/64. Cáo Đề thủ thỉ: \"Cộng lắm thế thì chắc chắn hết bánh — tổng bằng 1 nhé!\" Trí Long định gật… Su Kem chỉ vào cái đĩa: một góc bánh nhỏ xíu vẫn nằm đó.",
+        "display": {
+          "type": "story_panel",
+          "caption": "ăn mãi… hết bánh chưa?"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để soi cái đĩa!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Con cắt bánh theo từng bữa: ăn 1/2 — còn trống 1/2. Ăn thêm 1/4 — còn trống 1/4. Ăn 1/8 — còn trống 1/8! Quy luật hiện ra: phần CÒN TRỐNG luôn bằng đúng mảnh VỪA ĂN. Vậy phần đã ăn bằng cả bánh trừ mảnh cuối: ba bữa đầu là 1 trừ 1/8 — BẢY PHẦN TÁM.",
+        "display": {
+          "type": "cake_slice_interactive",
+          "spec": {
+            "slices": [
+              "1/2",
+              "1/4",
+              "1/8"
+            ],
+            "gaps": [
+              "1/2",
+              "1/4",
+              "1/8"
+            ],
+            "rule": "trống = mảnh vừa ăn",
+            "sum": "1 − 1/8 = 7/8"
+          }
+        },
+        "interaction": {
+          "type": "slice_and_observe",
+          "answerKey": {
+            "value": "7/8"
+          },
+          "successMessage": "Phần trống = mảnh vừa ăn → tổng = 1 − mảnh cuối!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "mcq",
+          "text": "1/2 + 1/4 + … + 1/64 bằng:",
+          "choices": [
+            "63/64",
+            "1",
+            "65/64"
+          ],
+          "answerKey": {
+            "choice": "63/64"
+          },
+          "wrongFeedback": "Góc trống 1/64 vẫn trên đĩa: 1 − 1/64.",
+          "objective": "O1",
+          "teaches": [
+            "K1",
+            "K3"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 38,
+        "teaches": [
+          "K3"
+        ],
+        "narration": "Vạch mặt lời thủ thỉ của Cáo Đề: mỗi bữa con chỉ ăn ĐÚNG MỘT NỬA phần còn lại — nên phần trống teo đi một nửa chứ không bao giờ về không! Cộng đến 1/64: tổng 63/64. Cộng đến 1/256: tổng 255/256. Gần 1 tùy thích — nhưng chiếc bánh không nói dối: mảnh trống vẫn đó.",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "mỗi bữa: trống teo còn MỘT NỬA",
+            "đến 1/64 → 63/64 · đến 1/256 → 255/256",
+            "gần 1 tùy ý — KHÔNG bao giờ = 1"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú tiệc bánh: gần một mà không là một — chiếc bánh còn mảnh trống!",
+        "display": {
+          "type": "mantra_card",
+          "text": "GẦN 1 MÀ KHÔNG LÀ 1!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 85,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Tiệc bánh: Su Kem ăn nửa bánh, rồi nửa phần còn lại, rồi lại nửa… đến mảnh một phần sáu tư. Cáo Đề thủ thỉ: cộng lắm thế thì chắc chắn hết bánh — tổng bằng MỘT nhé! Trí Long định gật… Su Kem chỉ vào cái đĩa: một góc bánh nhỏ xíu vẫn nằm đó.",
+        "screenText": "ăn mãi… tổng = 1??",
+        "visual": "Bàn tiệc với chiếc bánh tròn khuyết dần theo xoắn ốc; góc trống nhỏ phát sáng; Cáo Đề thì thầm bên tai Trí Long.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Cắt bánh theo từng bữa: ăn một phần hai — còn trống một phần hai. Ăn thêm một phần tư — còn trống một phần tư. Ăn một phần tám — còn trống MỘT PHẦN TÁM! Quy luật: phần còn trống luôn bằng đúng mảnh VỪA ĂN. Phần đã ăn bằng cả bánh trừ mảnh cuối: một trừ một phần tám — BẢY PHẦN TÁM!",
+        "screenText": "trống = mảnh vừa ăn → tổng = 1 − mảnh cuối",
+        "visual": "Bánh tròn chia dần 1/2 → 1/4 → 1/8, mỗi lát ăn tô teal, phần trống viền vàng luôn bằng lát mới nhất; công thức nổi lên.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Vạch mặt lời thủ thỉ: mỗi bữa chỉ ăn ĐÚNG MỘT NỬA phần còn lại — phần trống teo đi một nửa chứ không bao giờ về không! Đến một phần sáu tư: tổng SÁU BA phần sáu tư. Đến một phần hai trăm năm sáu: tổng hai trăm năm lăm phần hai trăm năm sáu. Gần một tùy thích — chiếc bánh không nói dối: mảnh trống vẫn đó!",
+        "screenText": "63/64 · 255/256 · … gần 1 — KHÔNG là 1!",
+        "visual": "Kính lúp zoom góc trống ngày càng nhỏ nhưng không biến mất; bảng '= 1' của Cáo Đề gạch chéo đỏ #C0392B.",
+        "assets": [],
+        "duration": 25
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú tiệc bánh: gần một mà không là một — chiếc bánh còn mảnh trống!",
+        "screenText": "GẦN 1 MÀ KHÔNG LÀ 1!",
+        "visual": "Thẻ thần chú vàng với icon bánh khuyết một góc.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Phần bánh của con: một phần hai cộng một phần tư cộng một phần tám — tổng bao nhiêu? Vào bài luyện ngay!",
+        "screenText": "1/2 + 1/4 + 1/8 = ?",
+        "visual": "Bánh ba lát chờ tính; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 9
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Ba bữa bánh của Su Kem",
+    "problem": "Tính: 1/2 + 1/4 + 1/8. Rồi cả dãy đến 1/64.",
+    "steps": [
+      {
+        "show": "Bước 1 — Sau mỗi bữa, phần trống = mảnh vừa ăn: trống 1/2 → 1/4 → 1/8.",
+        "askBefore": {
+          "format": "num",
+          "text": "Sau bữa 1/8, phần trống là 1/mấy?",
+          "answerKey": {
+            "value": 8
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — Ba bữa: tổng = 1 − 1/8 = 7/8."
+      },
+      {
+        "show": "Bước 3 — Đến 1/64: tổng = 1 − 1/64 = 63/64 (không phải 1!).",
+        "askAfter": {
+          "format": "num",
+          "text": "Cộng đến 1/128 thì tổng là ?/128",
+          "answerKey": {
+            "value": 127
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B14.LT3",
+          "text": "Tính: 1/2 + 1/4 + 1/8.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "đáp",
+                "value": "7/8"
+              }
+            ]
+          },
+          "hints": [
+            "Phần trống = mảnh vừa ăn.",
+            "1 − 1/8."
+          ],
+          "solutionNarrative": "Tổng = 1 − 1/8 = 7/8 (bánh chia đôi ba lần).",
+          "teaches": [
+            "K1",
+            "K2"
+          ],
+          "generator": {
+            "template": "Tính 1/2 + 1/4 + … + 1/{2^n}.",
+            "constraints": {
+              "n": "3–8"
+            },
+            "answerRule": "1 − 1/2ⁿ"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B14.LT7",
+          "text": "Tính: 1/2 + 1/4 + 1/8 + 1/16 + 1/32 + 1/64.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "đáp",
+                "value": "63/64"
+              }
+            ]
+          },
+          "hints": [
+            "Mảnh cuối là 1/64.",
+            "1 − mảnh cuối."
+          ],
+          "solutionNarrative": "1 − 1/64 = 63/64.",
+          "teaches": [
+            "K1",
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "num",
+          "text": "Cộng dãy nửa dần đến mảnh nào thì tổng bằng 255/256? (Trả lời mẫu số của mảnh cuối.)",
+          "answerKey": {
+            "value": 256
+          },
+          "hints": [
+            "255/256 = 1 − ?",
+            "Mảnh cuối = phần trống."
+          ],
+          "teaches": [
+            "K1"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:II.2.1#3@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B15.M1",
+      "award": "huy_hieu_tiec_banh"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B14.QZ5",
+        "text": "1/2 + 1/4 + … + 1/64 bằng:",
+        "choices": [
+          "63/64",
+          "1",
+          "65/64"
+        ],
+        "answerKey": {
+          "choice": "63/64"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1",
+          "K3"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "num",
+        "text": "1/2 + 1/4 + 1/8 + 1/16 = ?/16",
+        "answerKey": {
+          "value": 15
+        },
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "tf",
+        "text": "(Đúng/Sai?) Cộng dãy nửa dần đủ nhiều số hạng thì tổng sẽ đúng bằng 1.",
+        "answerKey": {
+          "value": false
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Dãy nửa dần 1/2 + 1/4 + … + 1/2ⁿ tính sao? Có bao giờ bằng 1?",
+        "back": "Tổng = 1 − MẢNH CUỐI (phần trống = mảnh vừa ăn): đến 1/64 là 63/64. Không bao giờ bằng 1 — mỗi bữa chỉ ăn nửa phần còn lại, góc trống teo dần nhưng còn mãi. GẦN 1 MÀ KHÔNG LÀ 1!"
+      }
     ],
-    "note": "KHÔNG bằng 1 — góc trống 1/64 (ô trắng duy nhất) vẫn còn nguyên"
-   },
-   "caption": "Tổng = 1 trừ đi đúng mảnh cuối cùng vừa ăn",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B14_M3_F4.png",
-   "sha256_16": "ac43fed1b77cfdef"
-  }
- ]
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P3 (hỏi ngược 256)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học dãy nửa dần bằng chiếc bánh: tổng = 1 − mảnh cuối, và hiểu vì sao không bao giờ tròn 1. Con đạt {score}/3, {trapResult} câu bẫy cộng-mãi-thành-1.",
+    "homeActivity": "Cắt bánh/quả cam thật: ăn nửa, rồi nửa phần còn lại, ba lần — hỏi con 'đã ăn mấy phần, còn trống mấy phần?' (7/8 và 1/8).",
+    "watchFor": "Nếu con làm tròn tổng thành 1 — chỉ vào góc trống trên đĩa (S3) và hỏi 'nó bằng 0 chưa?'."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B14.M3",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "ăn mãi… hết bánh chưa?",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Cáo Đề bảo cộng lắm thế thì hết bánh, tổng bằng 1. Ừ nhỉ, nghe cũng có lý!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Cậu nhìn cái đĩa hộ tớ. Còn một góc bánh bé xíu kia kìa — nó to đúng bằng mảnh cậu vừa ăn.",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B14_M3_F1.png",
+      "sha256_16": "a2445e5be9e7a72f"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con tính được dãy NỬA DẦN 1/2 + 1/4 + … + 1/2ⁿ bằng hình chiếc bánh: tổng = 1 − MẢNH CUỐI CÙNG (đến 1/64 thì tổng là 63/64) — và hiểu vì sao cộng bao nhiêu số hạng đi nữa tổng vẫn GẦN 1 mà không bao giờ LÀ 1.",
+        "steps": [
+          {
+            "text": "mỗi bữa: trống teo còn MỘT NỬA"
+          },
+          {
+            "text": "đến 1/64 → 63/64 · đến 1/256 → 255/256"
+          },
+          {
+            "text": "gần 1 tùy ý — KHÔNG bao giờ = 1"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B14_M3_F2.png",
+      "sha256_16": "88acbfecfd2dcac4"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Dãy nửa dần",
+            "text": "1/2 + 1/4 + 1/8 + … + 1/2ⁿ = 1 − 1/2ⁿ (một trừ MẢNH CUỐI). Đến 1/8: 7/8; đến 1/64: 63/64.",
+            "tone": "navy"
+          },
+          {
+            "label": "Vì sao",
+            "text": "ăn nửa bánh, rồi nửa của phần còn lại, rồi lại nửa… — phần ĐÃ ĂN luôn bằng cả bánh trừ phần CÒN TRỐNG, và phần còn trống đúng bằng mảnh vừa ăn.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "GẦN 1 MÀ KHÔNG LÀ 1 — CHIẾC BÁNH CÒN MẢNH TRỐNG!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B14_M3_F3.png",
+      "sha256_16": "d529efc95777351a"
+    },
+    {
+      "archetype": "grid_count",
+      "params": {
+        "title": "DÃY NỬA DẦN 1/2 + 1/4 + … + 1/64 = ?",
+        "cols": 8,
+        "rows": 8,
+        "show_dims": false,
+        "fill": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            2,
+            0
+          ],
+          [
+            3,
+            0
+          ],
+          [
+            4,
+            0
+          ],
+          [
+            5,
+            0
+          ],
+          [
+            6,
+            0
+          ],
+          [
+            7,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          [
+            3,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            5,
+            1
+          ],
+          [
+            6,
+            1
+          ],
+          [
+            7,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            3,
+            2
+          ],
+          [
+            4,
+            2
+          ],
+          [
+            5,
+            2
+          ],
+          [
+            6,
+            2
+          ],
+          [
+            7,
+            2
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            3
+          ],
+          [
+            5,
+            3
+          ],
+          [
+            6,
+            3
+          ],
+          [
+            7,
+            3
+          ],
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            4,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            6,
+            4
+          ],
+          [
+            7,
+            4
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            2,
+            5
+          ],
+          [
+            3,
+            5
+          ],
+          [
+            4,
+            5
+          ],
+          [
+            5,
+            5
+          ],
+          [
+            6,
+            5
+          ],
+          [
+            7,
+            5
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            6
+          ],
+          [
+            3,
+            6
+          ],
+          [
+            4,
+            6
+          ],
+          [
+            5,
+            6
+          ],
+          [
+            6,
+            6
+          ],
+          [
+            7,
+            6
+          ],
+          [
+            0,
+            7
+          ],
+          [
+            1,
+            7
+          ],
+          [
+            2,
+            7
+          ],
+          [
+            3,
+            7
+          ],
+          [
+            4,
+            7
+          ],
+          [
+            5,
+            7
+          ],
+          [
+            6,
+            7
+          ]
+        ],
+        "fill_color": "#1FC3A6",
+        "memo": [
+          "chiếc bánh chia 64 phần",
+          "ăn 63 phần",
+          "tổng = 1 − 1/64 = 63/64"
+        ],
+        "note": "KHÔNG bằng 1 — góc trống 1/64 (ô trắng duy nhất) vẫn còn nguyên"
+      },
+      "caption": "Tổng = 1 trừ đi đúng mảnh cuối cùng vừa ăn",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B14_M3_F4.png",
+      "sha256_16": "ac43fed1b77cfdef"
+    }
+  ]
 }

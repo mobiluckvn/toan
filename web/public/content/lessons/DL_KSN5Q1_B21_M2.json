@@ -1,584 +1,584 @@
 {
- "title": "Luật bù trừ: tổng lệch quanh TBC bằng 0 & mẹo mốc nhanh",
- "grade": 5,
- "durationMinutes": 7,
- "skills": {
-  "primary": [
-   "CASE:III.1.1#2"
-  ],
-  "bktUnit": "CASE:III.1.1#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B21",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B21.M1",
-  "next": "DL:KSN5Q1.B21.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B21",
-  "chunks": [
-   "CHUNK:KSN5Q1.B21.S4",
-   "CHUNK:KSN5Q1.B21.S5"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B21.3"
-  ],
-  "traps": []
- },
- "objective": {
-  "id": "O1",
-  "text": "Con hiểu LUẬT BÙ TRỪ: tổng các phần lệch quanh TBC bằng 0 (bên thừa bù bên thiếu) — từ đó dùng MẸO MỐC NHANH (chọn số tròn làm mốc, cộng các phần lệch, chia đều, cộng vào mốc) và giải bài lệch quanh TBC không cần biết từng số.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (tổng lệch bằng 0)",
-  "kidText": "Bạn hơn mức trung bình sẽ bù cho bạn kém — cộng hết các phần lệch lại đúng bằng 0. Con dùng mẹo chọn mốc để tính nhanh."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Quanh TBC thật, tổng các phần LỆCH luôn bằng 0: bên thừa bù đúng bên thiếu — vì thế cân mới thăng bằng."
-   },
-   {
-    "id": "K2",
-    "text": "MẸO MỐC NHANH: chọn mốc tròn gần các số (100 cho 97; 103; 101; 99) → ghi lệch từng số (−3; +3; +1; −1) → cộng lệch (0) → chia đều cho số số hạng → cộng vào mốc: TBC = 100 + 0 = 100."
-   },
-   {
-    "id": "K3",
-    "text": "Ứng dụng luật bù trừ: biết các phần lệch của vài thành viên, suy phần lệch của người còn lại sao cho tổng lệch về 0 — không cần biết từng số cụ thể."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: BÀN CÂN THĂNG BẰNG CỦA TIỆM. Đặt điểm cân đúng chỗ TBC: các ngày bán THỪA đứng bên phải, các ngày THIẾU đứng bên trái — cân thăng bằng nghĩa là hai bên nặng đúng bằng nhau: TỔNG LỆCH BẰNG KHÔNG. Từ luật ấy đẻ ra mẹo MỐC NHANH: dãy 97, 103, 101, 99 — thay vì cộng bốn số to, cắm cọc mốc 100 giữa sân: từng số chỉ báo độ lệch −3, +3, +1, −1 — cộng lệch bằng 0 — TBC đúng bằng mốc! Nếu lệch cộng ra 8 với 4 số thì điểm cân trượt khỏi mốc 8 : 4 = 2 nấc. Và bài góp kẹo: An thừa 5, Bình thiếu 3 — muốn cân thăng bằng, Cường phải gánh nốt: thiếu 2. Không cần biết ai góp mấy viên!",
-  "canonicalExamples": [
-   {
-    "case": "mốc nhanh lệch 0 (ca lõi)",
-    "problem": "Dùng mẹo mốc nhanh, tính TBC của: 97 ; 103 ; 101 ; 99.",
-    "solution": "Mốc 100: lệch −3; +3; +1; −1 → tổng lệch 0 → TBC = 100.",
-    "why": "Ca đề A câu 2 — mốc nhanh thuần."
-   },
-   {
-    "case": "mốc nhanh lệch khác 0 (ca trượt nấc)",
-    "problem": "Tính TBC của: 52 ; 47 ; 55 ; 50 bằng mốc 50.",
-    "solution": "Lệch +2; −3; +5; 0 → tổng lệch 4 → chia 4 số = 1 → TBC = 50 + 1 = 51.",
-    "why": "Mốc không trùng TBC — cộng phần trượt."
-   },
-   {
-    "case": "bù trừ ẩn số (ca suy luận)",
-    "problem": "An góp hơn mức trung bình cả nhóm 5 viên, Bình góp kém mức trung bình 3 viên. Hỏi Cường góp hơn hay kém mức trung bình bao nhiêu?",
-    "solution": "Tổng lệch = 0: (+5) + (−3) + (lệch Cường) = 0 → Cường KÉM mức trung bình 2 viên.",
-    "why": "Ca LT7 — luật bù trừ không cần từng số."
-   }
-  ],
-  "numberRange": "Lớp 5: lệch ≤ 10; mốc tròn chục/trăm.",
-  "misconceptions": [
-   {
-    "wrong": "Cộng cả dãy số to khi các số xúm quanh một mốc tròn (97 + 103 + 101 + 99 cột dọc).",
-    "signal": "Phép cộng bốn số ba chữ số cho bài có thể nhẩm 5 giây.",
-    "fix": "K2 — nghi thức liếc mốc: các số có xúm quanh số tròn nào không? Có thì đi đường lệch.",
-    "counterExample": "Đường lệch: −3 +3 +1 −1 = 0 → TBC = 100 — một dòng."
-   }
-  ],
-  "vocabulary": [
-   "bàn cân thăng bằng",
-   "bên thừa bù bên thiếu",
-   "cắm cọc mốc",
-   "độ lệch quanh mốc",
-   "trượt nấc"
-  ],
-  "mantra": "BÊN THỪA BÙ BÊN THIẾU — TỔNG LỆCH BẰNG KHÔNG!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "103 lệch bao nhiêu so với mốc 100? (+?)",
-    "answerKey": {
-     "value": 3
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B21.M1",
-   "message": "Ôn điểm cân rồi ra bàn cân thăng bằng nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Đề tốc độ: TBC của 97, 103, 101, 99 — mười giây! Trí Long kê cột dọc cộng bốn số ba chữ số, trán lấm tấm… Su Kem cắm một cây cọc ghi \"100\" giữa bàn và chỉ nhìn các độ lệch.",
-    "display": {
-     "type": "story_panel",
-     "caption": "97 + 103 + 101 + 99 trong 10 giây?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để cắm cọc mốc!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "Luật bù trừ: tổng lệch quanh TBC bằng 0 & mẹo mốc nhanh",
+  "grade": 5,
+  "durationMinutes": 7,
+  "skills": {
+    "primary": [
+      "CASE:III.1.1#2"
     ],
-    "narration": "Cắm cọc mốc 100: từng số chỉ báo độ lệch — 97 lệch TRỪ BA, 103 lệch CỘNG BA, 101 cộng một, 99 trừ một. Cộng lệch: trừ ba với cộng ba triệt nhau, cộng một với trừ một triệt nhau — TỔNG LỆCH BẰNG KHÔNG: TBC đúng bằng mốc MỘT TRĂM! Đó là luật bù trừ: quanh điểm cân thật, bên thừa bù đúng bên thiếu.",
-    "display": {
-     "type": "peg_offsets_interactive",
-     "spec": {
-      "peg": 100,
-      "offsets": [
-       -3,
-       3,
-       1,
-       -1
-      ],
-      "sum": 0,
-      "tbc": 100
-     }
-    },
-    "interaction": {
-     "type": "sum_offsets",
-     "answerKey": {
-      "value": 100
-     },
-     "successMessage": "Tổng lệch 0 → TBC = mốc 100 — năm giây xong bài!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "num",
-     "text": "Mốc 50, dãy 52 ; 47 ; 55 ; 50: tổng lệch = +2 − 3 + 5 + 0 = ? ",
-     "answerKey": {
-      "value": 4
-     },
-     "wrongFeedback": "2 − 3 + 5 + 0 = 4 → TBC = 50 + 4 : 4 = 51.",
-     "objective": "O1",
-     "teaches": [
-      "K2"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K3"
+    "bktUnit": "CASE:III.1.1#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B21",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B21.M1",
+    "next": "DL:KSN5Q1.B21.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B21",
+    "chunks": [
+      "CHUNK:KSN5Q1.B21.S4",
+      "CHUNK:KSN5Q1.B21.S5"
     ],
-    "narration": "Luật bù trừ còn giải được bài KHÔNG BIẾT TỪNG SỐ: ba bạn góp kẹo — An thừa NĂM viên so với mức trung bình, Bình thiếu BA viên. Cân muốn thăng bằng thì tổng lệch phải về không: cộng năm, trừ ba — còn dư cộng hai — Cường phải gánh TRỪ HAI: Cường góp KÉM mức trung bình hai viên! Chẳng cần biết ai góp mấy viên.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "(+5) + (−3) + (lệch Cường) = 0",
-      "lệch Cường = −2",
-      "Cường kém mức trung bình 2 viên"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Thần chú bàn cân: bên thừa bù bên thiếu — tổng lệch bằng không!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TỔNG LỆCH BẰNG KHÔNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 81,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Đề tốc độ: TBC của chín bảy, một lẻ ba, một lẻ một, chín chín — mười giây! Trí Long kê cột dọc cộng bốn số ba chữ số, trán lấm tấm… Su Kem cắm một cây cọc ghi MỘT TRĂM giữa bàn và chỉ nhìn các độ lệch.",
-    "screenText": "TBC 97 · 103 · 101 · 99 — 10 giây?!",
-    "visual": "Bàn thi với đồng hồ; Trí Long kê cột dọc dài; Su Kem đóng cọc gỗ '100' xuống bàn.",
-    "assets": [],
-    "duration": 18
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Cắm cọc mốc một trăm: từng số chỉ báo độ lệch — chín bảy lệch TRỪ BA, một lẻ ba lệch CỘNG BA, một lẻ một cộng một, chín chín trừ một. Cộng lệch: các cặp triệt nhau — TỔNG LỆCH BẰNG KHÔNG: TBC đúng bằng mốc MỘT TRĂM! Luật bù trừ: quanh điểm cân thật, bên thừa bù đúng bên thiếu!",
-    "screenText": "lệch: −3 +3 +1 −1 = 0 → TBC = 100",
-    "visual": "Bốn số đứng quanh cọc 100 với mũi tên lệch hai màu; các cặp lệch nối dây triệt tiêu thành bọt; bàn cân thăng bằng.",
-    "assets": [],
-    "duration": 22
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Luật bù trừ còn giải được bài KHÔNG BIẾT TỪNG SỐ: ba bạn góp kẹo — An thừa NĂM viên so mức trung bình, Bình thiếu BA viên. Cân muốn thăng bằng thì tổng lệch về không: cộng năm, trừ ba — dư cộng hai — Cường phải gánh TRỪ HAI: góp KÉM mức trung bình hai viên! Chẳng cần biết ai góp mấy viên!",
-    "screenText": "(+5) + (−3) + ? = 0 → Cường: −2",
-    "visual": "Ba bạn trên bàn cân: An phía thừa +5, Bình phía thiếu −3; Cường bước vào ô −2 cho cân thăng bằng; kẹo mờ ẩn số.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú bàn cân: bên thừa bù bên thiếu — tổng lệch bằng không!",
-    "screenText": "TỔNG LỆCH = 0!",
-    "visual": "Thẻ thần chú vàng với icon bàn cân.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Bàn cân của con: mốc một trăm, dãy chín bảy, một lẻ ba, một lẻ một, chín chín — TBC bao nhiêu? Vào bài luyện ngay!",
-    "screenText": "mốc 100 → TBC = ?",
-    "visual": "Cọc mốc chờ cắm; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Cọc mốc năm giây",
-  "problem": "Dùng mẹo mốc nhanh, tính TBC của: 97 ; 103 ; 101 ; 99.",
-  "steps": [
-   {
-    "show": "Bước 1 — Cắm mốc 100 (số tròn gần cả dãy).",
-    "askBefore": {
-     "format": "num",
-     "text": "97 lệch mấy so với mốc? (−?)",
-     "answerKey": {
-      "value": 3
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Lệch: −3; +3; +1; −1 → tổng lệch = 0."
-   },
-   {
-    "show": "Bước 3 — TBC = mốc + 0 : 4 = 100.",
-    "askAfter": {
-     "format": "num",
-     "text": "Mốc 50, dãy 52; 47; 55; 50 → TBC = ?",
-     "answerKey": {
-      "value": 51
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B21.LT4",
-     "text": "Dùng mẹo mốc nhanh, tính trung bình cộng của: 97 ; 103 ; 101 ; 99.",
-     "answerKey": {
-      "value": 100
-     },
-     "hints": [
-      "Cắm mốc 100.",
-      "Lệch −3; +3; +1; −1."
-     ],
-     "solutionNarrative": "Tổng lệch 0 → TBC = 100.",
-     "teaches": [
-      "K1",
-      "K2"
-     ],
-     "generator": {
-      "template": "Tính TBC dãy xúm quanh mốc {tròn}.",
-      "constraints": {},
-      "answerRule": "mốc + tổng lệch : n"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B21.LT7",
-     "text": "Ba bạn góp kẹo. An góp hơn mức trung bình của cả nhóm 5 viên, Bình góp kém mức trung bình 3 viên. Hỏi Cường góp hơn hay kém mức trung bình bao nhiêu viên?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "Cường",
-        "value": "kém mức trung bình 2 viên",
-        "options": [
-         "kém mức trung bình 2 viên",
-         "hơn mức trung bình 2 viên",
-         "đúng bằng mức trung bình"
-        ]
-       }
-      ]
-     },
-     "hints": [
-      "Tổng lệch phải bằng 0.",
-      "(+5) + (−3) + ? = 0."
-     ],
-     "solutionNarrative": "Lệch Cường = −2 → kém 2 viên.",
-     "teaches": [
-      "K1",
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "num",
-     "text": "Tính TBC của: 52 ; 47 ; 55 ; 50 (dùng mốc 50).",
-     "answerKey": {
-      "value": 51
-     },
-     "hints": [
-      "Lệch +2; −3; +5; 0.",
-      "Tổng lệch 4 chia 4 số."
-     ],
-     "solutionNarrative": "TBC = 50 + 4 : 4 = 51.",
-     "teaches": [
-      "K2"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.1.1#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B21.M3",
-   "award": "huy_hieu_ban_can"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B21.QZ3",
-    "text": "Tổng các phần lệch quanh TBC bằng:",
-    "choices": [
-     "0",
-     "TBC",
-     "số số hạng"
+    "cases": [
+      "CA:KSN5Q1.B21.3"
     ],
-    "answerKey": {
-     "choice": "0"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "num",
-    "text": "Mốc 100, lệch −2; +5; +1; 0 → TBC = ?",
-    "answerKey": {
-     "value": 101
-    },
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "text": "An thừa 4, Bình thiếu 1 so mức trung bình — Cường phải:",
-    "choices": [
-     "thiếu 3",
-     "thừa 3",
-     "thiếu 5"
-    ],
-    "answerKey": {
-     "choice": "thiếu 3"
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Luật bù trừ quanh TBC? Mẹo mốc nhanh?",
-    "back": "Tổng lệch quanh TBC = 0 (bên thừa bù bên thiếu). Mốc nhanh: cắm mốc tròn → ghi lệch → cộng lệch → chia đều → cộng vào mốc (97;103;101;99 → mốc 100, lệch 0 → TBC 100). Bù trừ ẩn số: suy lệch người còn lại cho tổng về 0."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P2 (bù trừ ẩn số)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học luật bù trừ (tổng lệch quanh TBC bằng 0) và mẹo mốc nhanh. Con đạt {score}/3.",
-  "homeActivity": "Đọc giá 4 món xúm quanh 20 nghìn (19; 22; 21; 18) — con nhẩm TBC bằng mốc trong 5 giây.",
-  "watchFor": "Nếu con cộng cột dọc dãy số xúm quanh mốc tròn — bấm giờ hai đường làm (S2) cho con tự so."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B21.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "97 + 103 + 101 + 99 trong 10 giây?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Đề tốc độ: TBC của 97, 103, 101, 99 — mười giây!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B21_M2_F1.png",
-   "sha256_16": "8b7b89b2f38bf2ba"
+    "traps": []
   },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con hiểu LUẬT BÙ TRỪ: tổng các phần lệch quanh TBC bằng 0 (bên thừa bù bên thiếu) — từ đó dùng MẸO MỐC NHANH (chọn số tròn làm mốc, cộng các phần lệch, chia đều, cộng vào mốc) và giải bài lệch quanh TBC không cần biết từng số.",
-    "steps": [
-     {
-      "text": "(+5) + (−3) + (lệch Cường) = 0"
-     },
-     {
-      "text": "lệch Cường = −2"
-     },
-     {
-      "text": "Cường kém mức trung bình 2 viên"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B21_M2_F2.png",
-   "sha256_16": "8d7281b3d068d895"
+  "objective": {
+    "id": "O1",
+    "text": "Con hiểu LUẬT BÙ TRỪ: tổng các phần lệch quanh TBC bằng 0 (bên thừa bù bên thiếu) — từ đó dùng MẸO MỐC NHANH (chọn số tròn làm mốc, cộng các phần lệch, chia đều, cộng vào mốc) và giải bài lệch quanh TBC không cần biết từng số.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (tổng lệch bằng 0)",
+    "kidText": "Bạn hơn mức trung bình sẽ bù cho bạn kém — cộng hết các phần lệch lại đúng bằng 0. Con dùng mẹo chọn mốc để tính nhanh."
   },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Quanh TBC thật, tổng các phần LỆCH luôn bằng 0",
-      "text": "bên thừa bù đúng bên thiếu — vì thế cân mới thăng bằng.",
-      "tone": "navy"
-     },
-     {
-      "label": "MẸO MỐC NHANH",
-      "text": "chọn mốc tròn gần các số (100 cho 97",
-      "tone": "teal"
-     }
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Quanh TBC thật, tổng các phần LỆCH luôn bằng 0: bên thừa bù đúng bên thiếu — vì thế cân mới thăng bằng."
+      },
+      {
+        "id": "K2",
+        "text": "MẸO MỐC NHANH: chọn mốc tròn gần các số (100 cho 97; 103; 101; 99) → ghi lệch từng số (−3; +3; +1; −1) → cộng lệch (0) → chia đều cho số số hạng → cộng vào mốc: TBC = 100 + 0 = 100."
+      },
+      {
+        "id": "K3",
+        "text": "Ứng dụng luật bù trừ: biết các phần lệch của vài thành viên, suy phần lệch của người còn lại sao cho tổng lệch về 0 — không cần biết từng số cụ thể."
+      }
+    ],
+    "mechanism": "Hình ảnh brand: BÀN CÂN THĂNG BẰNG CỦA TIỆM. Đặt điểm cân đúng chỗ TBC: các ngày bán THỪA đứng bên phải, các ngày THIẾU đứng bên trái — cân thăng bằng nghĩa là hai bên nặng đúng bằng nhau: TỔNG LỆCH BẰNG KHÔNG. Từ luật ấy đẻ ra mẹo MỐC NHANH: dãy 97, 103, 101, 99 — thay vì cộng bốn số to, cắm cọc mốc 100 giữa sân: từng số chỉ báo độ lệch −3, +3, +1, −1 — cộng lệch bằng 0 — TBC đúng bằng mốc! Nếu lệch cộng ra 8 với 4 số thì điểm cân trượt khỏi mốc 8 : 4 = 2 nấc. Và bài góp kẹo: An thừa 5, Bình thiếu 3 — muốn cân thăng bằng, Cường phải gánh nốt: thiếu 2. Không cần biết ai góp mấy viên!",
+    "canonicalExamples": [
+      {
+        "case": "mốc nhanh lệch 0 (ca lõi)",
+        "problem": "Dùng mẹo mốc nhanh, tính TBC của: 97 ; 103 ; 101 ; 99.",
+        "solution": "Mốc 100: lệch −3; +3; +1; −1 → tổng lệch 0 → TBC = 100.",
+        "why": "Ca đề A câu 2 — mốc nhanh thuần."
+      },
+      {
+        "case": "mốc nhanh lệch khác 0 (ca trượt nấc)",
+        "problem": "Tính TBC của: 52 ; 47 ; 55 ; 50 bằng mốc 50.",
+        "solution": "Lệch +2; −3; +5; 0 → tổng lệch 4 → chia 4 số = 1 → TBC = 50 + 1 = 51.",
+        "why": "Mốc không trùng TBC — cộng phần trượt."
+      },
+      {
+        "case": "bù trừ ẩn số (ca suy luận)",
+        "problem": "An góp hơn mức trung bình cả nhóm 5 viên, Bình góp kém mức trung bình 3 viên. Hỏi Cường góp hơn hay kém mức trung bình bao nhiêu?",
+        "solution": "Tổng lệch = 0: (+5) + (−3) + (lệch Cường) = 0 → Cường KÉM mức trung bình 2 viên.",
+        "why": "Ca LT7 — luật bù trừ không cần từng số."
+      }
+    ],
+    "numberRange": "Lớp 5: lệch ≤ 10; mốc tròn chục/trăm.",
+    "misconceptions": [
+      {
+        "wrong": "Cộng cả dãy số to khi các số xúm quanh một mốc tròn (97 + 103 + 101 + 99 cột dọc).",
+        "signal": "Phép cộng bốn số ba chữ số cho bài có thể nhẩm 5 giây.",
+        "fix": "K2 — nghi thức liếc mốc: các số có xúm quanh số tròn nào không? Có thì đi đường lệch.",
+        "counterExample": "Đường lệch: −3 +3 +1 −1 = 0 → TBC = 100 — một dòng."
+      }
+    ],
+    "vocabulary": [
+      "bàn cân thăng bằng",
+      "bên thừa bù bên thiếu",
+      "cắm cọc mốc",
+      "độ lệch quanh mốc",
+      "trượt nấc"
     ],
     "mantra": "BÊN THỪA BÙ BÊN THIẾU — TỔNG LỆCH BẰNG KHÔNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B21_M2_F3.png",
-   "sha256_16": "dc0d608d26a1d6c3"
   },
-  {
-   "archetype": "level_bars",
-   "params": {
-    "title": "MẸO MỐC NHANH: CHỌN SỐ TRÒN LÀM MỐC RỒI ĐO PHẦN LỆCH",
-    "values": [
-     97,
-     103,
-     101,
-     99
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "103 lệch bao nhiêu so với mốc 100? (+?)",
+        "answerKey": {
+          "value": 3
+        }
+      }
     ],
-    "labels": [
-     "97",
-     "103",
-     "101",
-     "99"
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B21.M1",
+      "message": "Ôn điểm cân rồi ra bàn cân thăng bằng nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Đề tốc độ: TBC của 97, 103, 101, 99 — mười giây! Trí Long kê cột dọc cộng bốn số ba chữ số, trán lấm tấm… Su Kem cắm một cây cọc ghi \"100\" giữa bàn và chỉ nhìn các độ lệch.",
+        "display": {
+          "type": "story_panel",
+          "caption": "97 + 103 + 101 + 99 trong 10 giây?"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để cắm cọc mốc!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 44,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Cắm cọc mốc 100: từng số chỉ báo độ lệch — 97 lệch TRỪ BA, 103 lệch CỘNG BA, 101 cộng một, 99 trừ một. Cộng lệch: trừ ba với cộng ba triệt nhau, cộng một với trừ một triệt nhau — TỔNG LỆCH BẰNG KHÔNG: TBC đúng bằng mốc MỘT TRĂM! Đó là luật bù trừ: quanh điểm cân thật, bên thừa bù đúng bên thiếu.",
+        "display": {
+          "type": "peg_offsets_interactive",
+          "spec": {
+            "peg": 100,
+            "offsets": [
+              -3,
+              3,
+              1,
+              -1
+            ],
+            "sum": 0,
+            "tbc": 100
+          }
+        },
+        "interaction": {
+          "type": "sum_offsets",
+          "answerKey": {
+            "value": 100
+          },
+          "successMessage": "Tổng lệch 0 → TBC = mốc 100 — năm giây xong bài!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "num",
+          "text": "Mốc 50, dãy 52 ; 47 ; 55 ; 50: tổng lệch = +2 − 3 + 5 + 0 = ? ",
+          "answerKey": {
+            "value": 4
+          },
+          "wrongFeedback": "2 − 3 + 5 + 0 = 4 → TBC = 50 + 4 : 4 = 51.",
+          "objective": "O1",
+          "teaches": [
+            "K2"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 38,
+        "teaches": [
+          "K3"
+        ],
+        "narration": "Luật bù trừ còn giải được bài KHÔNG BIẾT TỪNG SỐ: ba bạn góp kẹo — An thừa NĂM viên so với mức trung bình, Bình thiếu BA viên. Cân muốn thăng bằng thì tổng lệch phải về không: cộng năm, trừ ba — còn dư cộng hai — Cường phải gánh TRỪ HAI: Cường góp KÉM mức trung bình hai viên! Chẳng cần biết ai góp mấy viên.",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "(+5) + (−3) + (lệch Cường) = 0",
+            "lệch Cường = −2",
+            "Cường kém mức trung bình 2 viên"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 12,
+        "narration": "Thần chú bàn cân: bên thừa bù bên thiếu — tổng lệch bằng không!",
+        "display": {
+          "type": "mantra_card",
+          "text": "TỔNG LỆCH BẰNG KHÔNG!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 81,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Đề tốc độ: TBC của chín bảy, một lẻ ba, một lẻ một, chín chín — mười giây! Trí Long kê cột dọc cộng bốn số ba chữ số, trán lấm tấm… Su Kem cắm một cây cọc ghi MỘT TRĂM giữa bàn và chỉ nhìn các độ lệch.",
+        "screenText": "TBC 97 · 103 · 101 · 99 — 10 giây?!",
+        "visual": "Bàn thi với đồng hồ; Trí Long kê cột dọc dài; Su Kem đóng cọc gỗ '100' xuống bàn.",
+        "assets": [],
+        "duration": 18
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Cắm cọc mốc một trăm: từng số chỉ báo độ lệch — chín bảy lệch TRỪ BA, một lẻ ba lệch CỘNG BA, một lẻ một cộng một, chín chín trừ một. Cộng lệch: các cặp triệt nhau — TỔNG LỆCH BẰNG KHÔNG: TBC đúng bằng mốc MỘT TRĂM! Luật bù trừ: quanh điểm cân thật, bên thừa bù đúng bên thiếu!",
+        "screenText": "lệch: −3 +3 +1 −1 = 0 → TBC = 100",
+        "visual": "Bốn số đứng quanh cọc 100 với mũi tên lệch hai màu; các cặp lệch nối dây triệt tiêu thành bọt; bàn cân thăng bằng.",
+        "assets": [],
+        "duration": 22
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Luật bù trừ còn giải được bài KHÔNG BIẾT TỪNG SỐ: ba bạn góp kẹo — An thừa NĂM viên so mức trung bình, Bình thiếu BA viên. Cân muốn thăng bằng thì tổng lệch về không: cộng năm, trừ ba — dư cộng hai — Cường phải gánh TRỪ HAI: góp KÉM mức trung bình hai viên! Chẳng cần biết ai góp mấy viên!",
+        "screenText": "(+5) + (−3) + ? = 0 → Cường: −2",
+        "visual": "Ba bạn trên bàn cân: An phía thừa +5, Bình phía thiếu −3; Cường bước vào ô −2 cho cân thăng bằng; kẹo mờ ẩn số.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú bàn cân: bên thừa bù bên thiếu — tổng lệch bằng không!",
+        "screenText": "TỔNG LỆCH = 0!",
+        "visual": "Thẻ thần chú vàng với icon bàn cân.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Bàn cân của con: mốc một trăm, dãy chín bảy, một lẻ ba, một lẻ một, chín chín — TBC bao nhiêu? Vào bài luyện ngay!",
+        "screenText": "mốc 100 → TBC = ?",
+        "visual": "Cọc mốc chờ cắm; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Cọc mốc năm giây",
+    "problem": "Dùng mẹo mốc nhanh, tính TBC của: 97 ; 103 ; 101 ; 99.",
+    "steps": [
+      {
+        "show": "Bước 1 — Cắm mốc 100 (số tròn gần cả dãy).",
+        "askBefore": {
+          "format": "num",
+          "text": "97 lệch mấy so với mốc? (−?)",
+          "answerKey": {
+            "value": 3
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — Lệch: −3; +3; +1; −1 → tổng lệch = 0."
+      },
+      {
+        "show": "Bước 3 — TBC = mốc + 0 : 4 = 100.",
+        "askAfter": {
+          "format": "num",
+          "text": "Mốc 50, dãy 52; 47; 55; 50 → TBC = ?",
+          "answerKey": {
+            "value": 51
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B21.LT4",
+          "text": "Dùng mẹo mốc nhanh, tính trung bình cộng của: 97 ; 103 ; 101 ; 99.",
+          "answerKey": {
+            "value": 100
+          },
+          "hints": [
+            "Cắm mốc 100.",
+            "Lệch −3; +3; +1; −1."
+          ],
+          "solutionNarrative": "Tổng lệch 0 → TBC = 100.",
+          "teaches": [
+            "K1",
+            "K2"
+          ],
+          "generator": {
+            "template": "Tính TBC dãy xúm quanh mốc {tròn}.",
+            "constraints": {},
+            "answerRule": "mốc + tổng lệch : n"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B21.LT7",
+          "text": "Ba bạn góp kẹo. An góp hơn mức trung bình của cả nhóm 5 viên, Bình góp kém mức trung bình 3 viên. Hỏi Cường góp hơn hay kém mức trung bình bao nhiêu viên?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "Cường",
+                "value": "kém mức trung bình 2 viên",
+                "options": [
+                  "kém mức trung bình 2 viên",
+                  "hơn mức trung bình 2 viên",
+                  "đúng bằng mức trung bình"
+                ]
+              }
+            ]
+          },
+          "hints": [
+            "Tổng lệch phải bằng 0.",
+            "(+5) + (−3) + ? = 0."
+          ],
+          "solutionNarrative": "Lệch Cường = −2 → kém 2 viên.",
+          "teaches": [
+            "K1",
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "num",
+          "text": "Tính TBC của: 52 ; 47 ; 55 ; 50 (dùng mốc 50).",
+          "answerKey": {
+            "value": 51
+          },
+          "hints": [
+            "Lệch +2; −3; +5; 0.",
+            "Tổng lệch 4 chia 4 số."
+          ],
+          "solutionNarrative": "TBC = 50 + 4 : 4 = 51.",
+          "teaches": [
+            "K2"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.1.1#2@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B21.M3",
+      "award": "huy_hieu_ban_can"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B21.QZ3",
+        "text": "Tổng các phần lệch quanh TBC bằng:",
+        "choices": [
+          "0",
+          "TBC",
+          "số số hạng"
+        ],
+        "answerKey": {
+          "choice": "0"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "num",
+        "text": "Mốc 100, lệch −2; +5; +1; 0 → TBC = ?",
+        "answerKey": {
+          "value": 101
+        },
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "text": "An thừa 4, Bình thiếu 1 so mức trung bình — Cường phải:",
+        "choices": [
+          "thiếu 3",
+          "thừa 3",
+          "thiếu 5"
+        ],
+        "answerKey": {
+          "choice": "thiếu 3"
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Luật bù trừ quanh TBC? Mẹo mốc nhanh?",
+        "back": "Tổng lệch quanh TBC = 0 (bên thừa bù bên thiếu). Mốc nhanh: cắm mốc tròn → ghi lệch → cộng lệch → chia đều → cộng vào mốc (97;103;101;99 → mốc 100, lệch 0 → TBC 100). Bù trừ ẩn số: suy lệch người còn lại cho tổng về 0."
+      }
     ],
-    "mean": 100,
-    "mean_label": "mốc 100",
-    "verdict": "lệch −3  +3  +1  −1  →  tổng lệch 0  →  TBC = 100",
-    "note": "Nếu tổng lệch khác 0: chia đều cho số số hạng rồi cộng vào mốc (52·47·55·50 → mốc 50 + 1 = 51)"
-   },
-   "caption": "Luật bù trừ: bên thừa bù đúng bên thiếu quanh điểm cân",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B21_M2_F4.png",
-   "sha256_16": "e489d6eaa259ab18"
-  }
- ]
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P2 (bù trừ ẩn số)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học luật bù trừ (tổng lệch quanh TBC bằng 0) và mẹo mốc nhanh. Con đạt {score}/3.",
+    "homeActivity": "Đọc giá 4 món xúm quanh 20 nghìn (19; 22; 21; 18) — con nhẩm TBC bằng mốc trong 5 giây.",
+    "watchFor": "Nếu con cộng cột dọc dãy số xúm quanh mốc tròn — bấm giờ hai đường làm (S2) cho con tự so."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B21.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "97 + 103 + 101 + 99 trong 10 giây?",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "97 cộng 103, cộng 101, cộng 99… để tớ kê cột dọc đã.",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Cậu nhìn kỹ bốn số ấy xem — chúng đang xúm quanh số tròn nào thế?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B21_M2_F1.png",
+      "sha256_16": "098136f3b31d63a2"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con hiểu LUẬT BÙ TRỪ: tổng các phần lệch quanh TBC bằng 0 (bên thừa bù bên thiếu) — từ đó dùng MẸO MỐC NHANH (chọn số tròn làm mốc, cộng các phần lệch, chia đều, cộng vào mốc) và giải bài lệch quanh TBC không cần biết từng số.",
+        "steps": [
+          {
+            "text": "(+5) + (−3) + (lệch Cường) = 0"
+          },
+          {
+            "text": "lệch Cường = −2"
+          },
+          {
+            "text": "Cường kém mức trung bình 2 viên"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B21_M2_F2.png",
+      "sha256_16": "8d7281b3d068d895"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Quanh TBC thật, tổng các phần LỆCH luôn bằng 0",
+            "text": "bên thừa bù đúng bên thiếu — vì thế cân mới thăng bằng.",
+            "tone": "navy"
+          },
+          {
+            "label": "MẸO MỐC NHANH",
+            "text": "chọn mốc tròn gần các số (100 cho 97",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "BÊN THỪA BÙ BÊN THIẾU — TỔNG LỆCH BẰNG KHÔNG!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B21_M2_F3.png",
+      "sha256_16": "dc0d608d26a1d6c3"
+    },
+    {
+      "archetype": "level_bars",
+      "params": {
+        "title": "MẸO MỐC NHANH: CHỌN SỐ TRÒN LÀM MỐC RỒI ĐO PHẦN LỆCH",
+        "values": [
+          97,
+          103,
+          101,
+          99
+        ],
+        "labels": [
+          "97",
+          "103",
+          "101",
+          "99"
+        ],
+        "mean": 100,
+        "mean_label": "mốc 100",
+        "verdict": "lệch −3  +3  +1  −1  →  tổng lệch 0  →  TBC = 100",
+        "note": "Nếu tổng lệch khác 0: chia đều cho số số hạng rồi cộng vào mốc (52·47·55·50 → mốc 50 + 1 = 51)"
+      },
+      "caption": "Luật bù trừ: bên thừa bù đúng bên thiếu quanh điểm cân",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B21_M2_F4.png",
+      "sha256_16": "e489d6eaa259ab18"
+    }
+  ]
 }

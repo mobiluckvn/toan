@@ -1,631 +1,636 @@
 {
- "title": "Mật thư hai ẩn x, y: chốt y theo đuôi trước — dò x theo tổng / xen kẽ sau",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:I.6.2#2"
-  ],
-  "bktUnit": "CASE:I.6.2#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B9",
-  "order": 3,
-  "prev": "DL:KSN5Q1.B9.M2",
-  "next": "DL:KSN5Q1.B10.M1"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B9",
-  "chunks": [
-   "CHUNK:KSN5Q1.B9.S4",
-   "CHUNK:KSN5Q1.B9.S7"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B9.4"
-  ],
-  "traps": []
- },
- "objective": {
-  "id": "O1",
-  "text": "Con giải được mật thư hai ẩn (x…y chia hết cho 45, 55…): tháo số hợp thành cặp chuẩn, CHỐT y theo cửa tận cùng TRƯỚC, mỗi giá trị y mở một nhánh; DÒ x theo cửa tổng (hoặc xen kẽ) trong TỪNG nhánh — tìm đủ mọi nghiệm.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (thứ tự giải + đủ nhánh)",
-  "kidText": "Đề giấu hai chữ số x và y? Con chốt y theo đuôi trước, rồi dò x theo tổng — tìm cho đủ mọi đáp án."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Mật thư hai ẩn với số hợp: tháo cặp chuẩn trước (45 = 9 × 5; 55 = 11 × 5) — mỗi mảnh phụ trách một ẩn."
-   },
-   {
-    "id": "K2",
-    "text": "Chốt y (ẩn đứng ở đuôi) theo cửa TẬN CÙNG trước: ⋮ 5 → y ∈ {0; 5} — vì cửa đuôi cho ÍT lựa chọn nhất, mở nhánh gọn nhất."
-   },
-   {
-    "id": "K3",
-    "text": "Mỗi giá trị y là MỘT NHÁNH riêng: thay y vào rồi dò x theo cửa tổng (⋮ 9) hoặc cửa xen kẽ (⋮ 11) của nhánh ấy. Đi trọn mọi nhánh — mật thư thường có NHIỀU nghiệm."
-   },
-   {
-    "id": "K4",
-    "text": "Ghi đáp số thành cặp (x; y) kèm số hoàn chỉnh, và THỬ LẠI từng số bằng phép chia."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: MẬT THƯ HAI Ổ KHÓA SỐ. Bức thư x47y bị khóa bằng cổng 45 — tháo thành ổ 5 (giữ chân y ở đuôi) và ổ 9 (soi tổng cả thư). Thám tử mở Ổ ĐUÔI trước vì nó chỉ có hai răng: y bằng 0 hay 5 — mỗi răng bật ra MỘT CON ĐƯỜNG. Trên từng con đường, ổ TỔNG mới lộ mật mã riêng: đường y = 0 đòi x + 11 chia hết 9; đường y = 5 đòi x + 16 chia hết 9. Giải xong cả hai đường mới gom đủ kho báu — mật thư hai ẩn hiếm khi chỉ có một nghiệm. Đây chính là 'hai trạm gác' của Bài 5 tái xuất ở cấp độ mật thư: cửa ít lựa chọn mở trước, và đi trọn mọi nhánh như Bài 5 đã dạy.",
-  "canonicalExamples": [
-   {
-    "case": "45 = 9 × 5 (ca chuẩn)",
-    "problem": "Tìm các chữ số x và y để số x47y chia hết cho 45.",
-    "solution": "Tháo 45 = 9 × 5. Ổ đuôi: y ∈ {0; 5}. Nhánh y = 0: tổng x + 4 + 7 + 0 = x + 11 ⋮ 9 → x = 7 → số 7470. Nhánh y = 5: x + 16 ⋮ 9 → x = 2 → số 2475. Thử: 7470 : 45 = 166 ✓; 2475 : 45 = 55 ✓. HAI nghiệm.",
-    "why": "Ca chuẩn K1–K4, đề A câu 4 của chương."
-   },
-   {
-    "case": "55 = 11 × 5 (ca sư phụ — kính so le)",
-    "problem": "Tìm các chữ số x và y để số 2x7y chia hết cho 55.",
-    "solution": "Tháo 55 = 11 × 5. Ổ đuôi: y ∈ {0; 5}. Nhánh y = 0: hiệu xen kẽ (0 + x)… tính từ phải: lẻ 0 + 7, chẵn y? — dựng chuẩn: số 2 x 7 y, vị trí từ phải: y(1), 7(2), x(3), 2(4) → lẻ: y + x? KHÔNG — lẻ là vị trí 1, 3: y + x; chẵn: 7 + 2 = 9. Nhánh y = 0: hiệu (0 + x) − 9 hoặc 9 − (0 + x) ⋮ 11 → x = 9 → 2970. Nhánh y = 5: (5 + x) − 9 ⋮ 11 hoặc = 0 → x = 4 → 2475. Thử: 2970 : 55 = 54 ✓; 2475 : 55 = 45 ✓.",
-    "why": "Ca sư phụ LT9 — phối kính so le của M1 vào mật thư."
-   }
-  ],
-  "numberRange": "Lớp 5: số 4 chữ số, hai ẩn; số hợp 45, 55, 90.",
-  "misconceptions": [
-   {
-    "wrong": "Dò x trước theo cửa tổng khi chưa biết y — phương trình có hai ẩn, bí ngay.",
-    "signal": "Loay hoay 'x + y + 11 chia hết 9' không chốt được gì.",
-    "fix": "K2 — mở ổ ít răng trước: cửa đuôi chốt y chỉ còn 2 giá trị, mỗi giá trị một nhánh, x hiện ra trong từng nhánh.",
-    "counterExample": "x47y ⋮ 45: đứng ở cửa tổng trước thì x + y ràng nhau; đứng cửa đuôi thì y lập tức ∈ {0; 5}."
-   },
-   {
-    "wrong": "Tìm được một nghiệm là dừng (chỉ 7470, bỏ 2475).",
-    "signal": "Đáp số đơn lẻ cho đề hỏi 'các chữ số'.",
-    "fix": "K3 — mỗi y một nhánh, đi trọn: nghiệm nằm rải trên các nhánh (nợ 'so đủ nhánh' của Bài 5).",
-    "counterExample": "Nhánh y = 5 cho 2475 — bỏ nhánh là mất nửa kho báu."
-   }
-  ],
-  "vocabulary": [
-   "mật thư hai ổ khóa",
-   "ổ ít răng mở trước",
-   "mỗi y một con đường",
-   "gom đủ kho báu (mọi nghiệm)"
-  ],
-  "mantra": "CHỐT Y THEO ĐUÔI TRƯỚC — DÒ X TỪNG NHÁNH, GOM ĐỦ MỌI NGHIỆM!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "mcq",
-    "text": "Kiểm ⋮ 45 tháo thành cặp nào? (bài trước)",
-    "choices": [
-     "9 × 5",
-     "15 × 3",
-     "40 + 5"
+  "title": "Mật thư hai ẩn x, y: chốt y theo đuôi trước — dò x theo tổng / xen kẽ sau",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:I.6.2#2"
     ],
-    "answerKey": {
-     "choice": "9 × 5"
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B9.M2",
-   "message": "Ôn luật tháo cặp rồi quay lại phòng mật thư nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Sư phụ Trí Dũng đặt lên bàn bức MẬT THƯ: số x47y — hai chữ bị xóa — chỉ biết cả số chia hết cho 45. Trí Long thử cửa tổng trước: \"x cộng y cộng mười một chia hết chín…\" rồi ôm đầu: hai ẩn ràng nhau, gỡ kiểu gì?!",
-    "display": {
-     "type": "story_panel",
-     "caption": "x47y ⋮ 45 — gỡ ẩn nào trước?"
-    },
-    "interaction": {
-     "type": "mcq_inline",
-     "prompt": "Con chọn cửa mở trước:",
-     "choices": [
-      "Cửa tổng (⋮ 9)",
-      "Cửa đuôi (⋮ 5) — ít lựa chọn nhất",
-      "Đoán đại x"
-     ],
-     "answerKey": {
-      "choice": "Cửa đuôi (⋮ 5) — ít lựa chọn nhất"
-     }
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 48,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
+    "bktUnit": "CASE:I.6.2#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B9",
+    "order": 3,
+    "prev": "DL:KSN5Q1.B9.M2",
+    "next": "DL:KSN5Q1.B10.M1"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B9",
+    "chunks": [
+      "CHUNK:KSN5Q1.B9.S4",
+      "CHUNK:KSN5Q1.B9.S7"
     ],
-    "narration": "Tháo 45 = 9 × 5. Ổ đuôi giữ chân y: chỉ HAI răng — y bằng 0 hoặc 5, mỗi răng một con đường. Đường một, y = 0: tổng thành x + 11, chia hết 9 khi x = 7 — mở ra số 7470! Đường hai, y = 5: tổng x + 16, chia hết 9 khi x = 2 — số 2475! Con đi cả hai đường và gom hai nghiệm.",
-    "display": {
-     "type": "branch_solve_interactive",
-     "spec": {
-      "split": "y ∈ {0; 5}",
-      "branches": [
-       {
-        "y": 0,
-        "eq": "x + 11 ⋮ 9",
-        "x": 7,
-        "num": 7470
-       },
-       {
-        "y": 5,
-        "eq": "x + 16 ⋮ 9",
-        "x": 2,
-        "num": 2475
-       }
-      ]
-     }
-    },
-    "interaction": {
-     "type": "solve_both_branches",
-     "successMessage": "HAI nghiệm: 7470 và 2475 — bỏ một nhánh là mất nửa kho báu!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "num",
-     "text": "Thử lại nghiệm nhánh hai: 2475 : 45 = ?",
-     "answerKey": {
-      "value": 55
-     },
-     "wrongFeedback": "2475 = 45 × 55 — thử lại là nghi thức chốt án.",
-     "objective": "O1",
-     "teaches": [
-      "K4"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K3"
+    "cases": [
+      "CA:KSN5Q1.B9.4"
     ],
-    "narration": "Mật thư cấp sư phụ: 2x7y chia hết 55 — tháo 11 nhân 5. Ổ đuôi vẫn hai đường. Nhưng ổ còn lại là KÍNH SO LE: đường y = 0 đòi hiệu xen kẽ chín trừ x chia hết 11 — x bằng 9, ra 2970. Đường y = 5 đòi hiệu bốn trừ x... bằng 0 khi x = 4 — ra 2475. Kính so le của bài trước ghép thẳng vào mật thư!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "55 = 11 × 5 · y ∈ {0;5}",
-      "y=0: (0+x) so (7+2) → x = 9 → 2970 ✓",
-      "y=5: (5+x) so 9 → x = 4 → 2475 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú mật thư: chốt y theo đuôi trước — dò x từng nhánh, gom đủ mọi nghiệm!",
-    "display": {
-     "type": "mantra_card",
-     "text": "CHỐT Y TRƯỚC — DÒ X TỪNG NHÁNH!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 89,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "traps": []
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con giải được mật thư hai ẩn (x…y chia hết cho 45, 55…): tháo số hợp thành cặp chuẩn, CHỐT y theo cửa tận cùng TRƯỚC, mỗi giá trị y mở một nhánh; DÒ x theo cửa tổng (hoặc xen kẽ) trong TỪNG nhánh — tìm đủ mọi nghiệm.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (thứ tự giải + đủ nhánh)",
+    "kidText": "Đề giấu hai chữ số x và y? Con chốt y theo đuôi trước, rồi dò x theo tổng — tìm cho đủ mọi đáp án."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Sư phụ Trí Dũng đặt lên bàn bức MẬT THƯ: số x bốn bảy y — hai chữ bị xóa — chỉ biết cả số chia hết cho bốn lăm. Trí Long thử cửa tổng trước rồi ôm đầu: hai ẩn ràng nhau, gỡ kiểu gì?!",
-    "screenText": "x47y ⋮ 45 — gỡ ẩn nào trước?",
-    "visual": "Bức thư cổ cháy mép với 'x47y'; hai ô x·y phát sáng đỏ; Trí Long xoay thư ngược xuôi.",
-    "assets": [],
-    "duration": 17
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Tháo bốn lăm bằng chín nhân năm. Ổ đuôi giữ chân y — chỉ HAI răng: y bằng không hoặc năm, mỗi răng một con đường. Đường một, y bằng không: tổng thành x cộng mười một — chia hết chín khi x bằng BẢY: bảy nghìn bốn trăm bảy mươi! Đường hai, y bằng năm: x cộng mười sáu — x bằng HAI: hai nghìn bốn trăm bảy lăm! Đi cả hai đường, gom HAI nghiệm!",
-    "screenText": "y=0 → x=7 → 7470 · y=5 → x=2 → 2475",
-    "visual": "Mật thư tách đôi thành hai con đường; mỗi đường hiện phương trình tổng và đáp; hai rương kho báu mở '7470' '2475' vàng rực.",
-    "assets": [],
-    "duration": 28
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Mật thư cấp sư phụ: hai x bảy y chia hết năm lăm — tháo mười một nhân năm. Ổ đuôi vẫn hai đường; ổ kia là KÍNH SO LE. Đường y bằng không: hiệu chín trừ x chia hết mười một — x bằng CHÍN, ra hai chín bảy mươi. Đường y bằng năm: hiệu về KHÔNG khi x bằng BỐN — ra hai bốn bảy lăm. Kính so le ghép thẳng vào mật thư!",
-    "screenText": "55 = 11 × 5 · y=0→x=9 (2970) · y=5→x=4 (2475)",
-    "visual": "Bức thư '2x7y'; các chữ số tô so le hai màu; hai nhánh giải với đĩa cân xen kẽ; mộc '2970 ✓ · 2475 ✓'.",
-    "assets": [],
-    "duration": 27
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú mật thư: chốt y theo đuôi trước — dò x từng nhánh, gom đủ mọi nghiệm!",
-    "screenText": "CHỐT Y TRƯỚC — GOM ĐỦ MỌI NGHIỆM!",
-    "visual": "Thẻ thần chú vàng với icon phong thư + hai chìa.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Mật thư giao con: x bốn bảy y chia hết bốn lăm — tìm ĐỦ các cặp x, y! Vào phòng giải mã ngay!",
-    "screenText": "x47y ⋮ 45 → mấy nghiệm?",
-    "visual": "Bức thư chờ trên bàn với hai ô trống nhấp nháy; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 9
-   }
-  ]
- },
- "workedExample": {
-  "title": "Giải mật thư x47y ⋮ 45",
-  "problem": "Tìm các chữ số x và y để số x47y chia hết cho 45.",
-  "steps": [
-   {
-    "show": "Bước 1 — Tháo cổng: 45 = 9 × 5 (cặp chuẩn). Ổ đuôi trước: y ∈ {0; 5} → HAI nhánh.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Vì sao mở ổ đuôi trước?",
-     "choices": [
-      "Vì nó cho ít lựa chọn nhất — chốt được y ngay",
-      "Vì y đứng cuối bảng chữ cái",
-      "Vì tổng khó tính"
-     ],
-     "answerKey": {
-      "choice": "Vì nó cho ít lựa chọn nhất — chốt được y ngay"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Nhánh y = 0: tổng x + 4 + 7 + 0 = x + 11 ⋮ 9 → x = 7 → 7470."
-   },
-   {
-    "show": "Bước 3 — Nhánh y = 5: x + 16 ⋮ 9 → x = 2 → 2475.",
-    "askBefore": {
-     "format": "num",
-     "text": "Nhánh y = 5: x + 16 chia hết 9 khi x = ?",
-     "answerKey": {
-      "value": 2
-     }
-    }
-   },
-   {
-    "show": "Bước 4 — Thử cả hai: 7470 : 45 = 166 ✓; 2475 : 45 = 55 ✓. Đáp: (7; 0) và (2; 5).",
-    "askAfter": {
-     "format": "num",
-     "text": "Mật thư này có mấy nghiệm?",
-     "answerKey": {
-      "value": 2
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B9.LT8",
-     "text": "Tìm các chữ số x và y để số x47y chia hết cho 45.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "nhánh y = 0",
-        "value": "x = 7 → 7470"
-       },
-       {
-        "label": "nhánh y = 5",
-        "value": "x = 2 → 2475"
-       }
-      ]
-     },
-     "hints": [
-      "45 = 9 × 5; ổ đuôi trước: y ∈ {0; 5}.",
-      "Từng nhánh: x + 11 ⋮ 9 và x + 16 ⋮ 9."
-     ],
-     "solutionNarrative": "Hai nghiệm 7470 và 2475 — đi trọn hai nhánh.",
-     "teaches": [
-      "K1",
-      "K2",
-      "K3"
-     ],
-     "generator": {
-      "template": "Tìm x, y để số x{ab}y chia hết cho 45.",
-      "constraints": {
-       "ab": "hai chữ số giữa"
-      },
-      "answerRule": "y∈{0;5}; mỗi nhánh giải x theo tổng ⋮ 9"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B9.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Tìm các chữ số x và y để số 2x7y chia hết cho 55.\" (Gợi ý: tháo 55 thành cặp nguyên tố cùng nhau.)",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "nhánh y = 0",
-        "value": "x = 9 → 2970"
-       },
-       {
-        "label": "nhánh y = 5",
-        "value": "x = 4 → 2475"
-       }
-      ]
-     },
-     "hints": [
-      "55 = 11 × 5; y ∈ {0; 5}.",
-      "Từng nhánh dùng kính so le: hiệu hai tổng xen kẽ ⋮ 11 hoặc = 0."
-     ],
-     "solutionNarrative": "y=0: 9 − x ⋮ 11 → x = 9 (2970 = 55 × 54); y=5: hiệu = 0 khi x = 4 (2475 = 55 × 45).",
-     "teaches": [
-      "K1",
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "tf",
-     "text": "(Đúng/Sai?) Mật thư x47y ⋮ 45 chỉ có đúng một nghiệm là 7470.",
-     "answerKey": {
-      "value": false,
-      "note": "Còn 2475 ở nhánh y = 5 — mỗi y một nhánh, phải gom đủ."
-     },
-     "hints": [
-      "Ổ đuôi có mấy răng?",
-      "Nhánh y = 5 cho nghiệm nào?"
-     ],
-     "teaches": [
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:I.6.2#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B10.M1",
-   "award": "huy_hieu_giai_ma_su"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "workedExample"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "text": "Mật thư hai ẩn x…y chia hết cho 45 — trình tự giải đúng:",
-    "choices": [
-     "Chốt y theo cửa đuôi (⋮5) trước, rồi dò x theo cửa tổng trong TỪNG nhánh",
-     "Dò x theo cửa tổng trước rồi mới chốt y",
-     "Đoán x, y đồng thời cho nhanh"
-    ],
-    "answerKey": {
-     "choice": "Chốt y theo cửa đuôi (⋮5) trước, rồi dò x theo cửa tổng trong TỪNG nhánh"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2",
-     "K3"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "num",
-    "text": "Nhánh y = 0 của mật thư x47y ⋮ 45: x bằng mấy?",
-    "answerKey": {
-     "value": 7
-    },
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mb",
-    "text": "Tìm x, y để số 1x3y chia hết cho 45.",
-    "answerKey": {
-     "parts": [
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "y = 0",
-       "value": "x = 5 → 1530"
+        "id": "K1",
+        "text": "Mật thư hai ẩn với số hợp: tháo cặp chuẩn trước (45 = 9 × 5; 55 = 11 × 5) — mỗi mảnh phụ trách một ẩn."
       },
       {
-       "label": "y = 5",
-       "value": "x = 0 → 1035"
+        "id": "K2",
+        "text": "Chốt y (ẩn đứng ở đuôi) theo cửa TẬN CÙNG trước: ⋮ 5 → y ∈ {0; 5} — vì cửa đuôi cho ÍT lựa chọn nhất, mở nhánh gọn nhất."
+      },
+      {
+        "id": "K3",
+        "text": "Mỗi giá trị y là MỘT NHÁNH riêng: thay y vào rồi dò x theo cửa tổng (⋮ 9) hoặc cửa xen kẽ (⋮ 11) của nhánh ấy. Đi trọn mọi nhánh — mật thư thường có NHIỀU nghiệm."
+      },
+      {
+        "id": "K4",
+        "text": "Ghi đáp số thành cặp (x; y) kèm số hoàn chỉnh, và THỬ LẠI từng số bằng phép chia."
       }
-     ],
-     "note": "tổng 4 + x (+5) ⋮ 9"
-    },
-    "teaches": [
-     "K1",
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Mật thư hai ẩn với 45 / 55 — quy trình bốn bước?",
-    "back": "(1) Tháo cặp chuẩn 9×5 / 11×5. (2) CHỐT Y theo cửa đuôi: y ∈ {0;5} → hai nhánh. (3) DÒ X trong từng nhánh theo cửa tổng / kính so le. (4) Thử lại, GOM ĐỦ mọi nghiệm."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P2 (55 — kính so le)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con giải mật thư hai ẩn: chốt y theo đuôi trước, dò x từng nhánh, gom đủ nghiệm. Con đạt {score}/3.",
-  "homeActivity": "Ra mật thư gia đình: 'số 1x3y chia hết cho 45 — tìm đủ các cặp' — con trình bày hai nhánh và ra 1530, 1035 là đạt.",
-  "watchFor": "Nếu con dừng ở một nghiệm — hỏi 'ổ đuôi có mấy răng?' và mở lại hai con đường (S2) cùng con."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B9.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "x47y ⋮ 45 — gỡ ẩn nào trước?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Sư phụ Trí Dũng đặt lên bàn bức MẬT THƯ: số x47y — hai chữ bị xóa — chỉ biết cả số chia hết cho 45.",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B9_M3_F1.png",
-   "sha256_16": "c335d76b65f5cd04"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con giải được mật thư hai ẩn (x…y chia hết cho 45, 55…): tháo số hợp thành cặp chuẩn, CHỐT y theo cửa tận cùng TRƯỚC, mỗi giá trị y mở một nhánh; DÒ x theo cửa tổng (hoặc xen kẽ) trong TỪNG nhánh — tìm đủ mọi nghiệm.",
-    "steps": [
-     {
-      "text": "55 = 11 × 5 · y ∈ {0;5}"
-     },
-     {
-      "text": "y=0: (0+x) so (7+2) → x = 9 → 2970"
-     },
-     {
-      "text": "y=5: (5+x) so 9 → x = 4 → 2475"
-     }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B9_M3_F2.png",
-   "sha256_16": "fd0de3aa764d0878"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Mật thư hai ẩn với số hợp",
-      "text": "tháo cặp chuẩn trước (45 = 9 × 5; 55 = 11 × 5) — mỗi mảnh phụ trách một ẩn.",
-      "tone": "navy"
-     },
-     {
-      "label": "Chốt y (ẩn đứng ở đuôi) theo cửa TẬN CÙNG trước",
-      "text": "⋮ 5 → y ∈ {0; 5} — vì cửa đuôi cho ÍT lựa chọn nhất, mở nhánh gọn nhất.",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: MẬT THƯ HAI Ổ KHÓA SỐ. Bức thư x47y bị khóa bằng cổng 45 — tháo thành ổ 5 (giữ chân y ở đuôi) và ổ 9 (soi tổng cả thư). Thám tử mở Ổ ĐUÔI trước vì nó chỉ có hai răng: y bằng 0 hay 5 — mỗi răng bật ra MỘT CON ĐƯỜNG. Trên từng con đường, ổ TỔNG mới lộ mật mã riêng: đường y = 0 đòi x + 11 chia hết 9; đường y = 5 đòi x + 16 chia hết 9. Giải xong cả hai đường mới gom đủ kho báu — mật thư hai ẩn hiếm khi chỉ có một nghiệm. Đây chính là 'hai trạm gác' của Bài 5 tái xuất ở cấp độ mật thư: cửa ít lựa chọn mở trước, và đi trọn mọi nhánh như Bài 5 đã dạy.",
+    "canonicalExamples": [
+      {
+        "case": "45 = 9 × 5 (ca chuẩn)",
+        "problem": "Tìm các chữ số x và y để số x47y chia hết cho 45.",
+        "solution": "Tháo 45 = 9 × 5. Ổ đuôi: y ∈ {0; 5}. Nhánh y = 0: tổng x + 4 + 7 + 0 = x + 11 ⋮ 9 → x = 7 → số 7470. Nhánh y = 5: x + 16 ⋮ 9 → x = 2 → số 2475. Thử: 7470 : 45 = 166 ✓; 2475 : 45 = 55 ✓. HAI nghiệm.",
+        "why": "Ca chuẩn K1–K4, đề A câu 4 của chương."
+      },
+      {
+        "case": "55 = 11 × 5 (ca sư phụ — kính so le)",
+        "problem": "Tìm các chữ số x và y để số 2x7y chia hết cho 55.",
+        "solution": "Tháo 55 = 11 × 5. Ổ đuôi: y ∈ {0; 5}. Nhánh y = 0: hiệu xen kẽ (0 + x)… tính từ phải: lẻ 0 + 7, chẵn y? — dựng chuẩn: số 2 x 7 y, vị trí từ phải: y(1), 7(2), x(3), 2(4) → lẻ: y + x? KHÔNG — lẻ là vị trí 1, 3: y + x; chẵn: 7 + 2 = 9. Nhánh y = 0: hiệu (0 + x) − 9 hoặc 9 − (0 + x) ⋮ 11 → x = 9 → 2970. Nhánh y = 5: (5 + x) − 9 ⋮ 11 hoặc = 0 → x = 4 → 2475. Thử: 2970 : 55 = 54 ✓; 2475 : 55 = 45 ✓.",
+        "why": "Ca sư phụ LT9 — phối kính so le của M1 vào mật thư."
+      }
+    ],
+    "numberRange": "Lớp 5: số 4 chữ số, hai ẩn; số hợp 45, 55, 90.",
+    "misconceptions": [
+      {
+        "wrong": "Dò x trước theo cửa tổng khi chưa biết y — phương trình có hai ẩn, bí ngay.",
+        "signal": "Loay hoay 'x + y + 11 chia hết 9' không chốt được gì.",
+        "fix": "K2 — mở ổ ít răng trước: cửa đuôi chốt y chỉ còn 2 giá trị, mỗi giá trị một nhánh, x hiện ra trong từng nhánh.",
+        "counterExample": "x47y ⋮ 45: đứng ở cửa tổng trước thì x + y ràng nhau; đứng cửa đuôi thì y lập tức ∈ {0; 5}."
+      },
+      {
+        "wrong": "Tìm được một nghiệm là dừng (chỉ 7470, bỏ 2475).",
+        "signal": "Đáp số đơn lẻ cho đề hỏi 'các chữ số'.",
+        "fix": "K3 — mỗi y một nhánh, đi trọn: nghiệm nằm rải trên các nhánh (nợ 'so đủ nhánh' của Bài 5).",
+        "counterExample": "Nhánh y = 5 cho 2475 — bỏ nhánh là mất nửa kho báu."
+      }
+    ],
+    "vocabulary": [
+      "mật thư hai ổ khóa",
+      "ổ ít răng mở trước",
+      "mỗi y một con đường",
+      "gom đủ kho báu (mọi nghiệm)"
     ],
     "mantra": "CHỐT Y THEO ĐUÔI TRƯỚC — DÒ X TỪNG NHÁNH, GOM ĐỦ MỌI NGHIỆM!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B9_M3_F3.png",
-   "sha256_16": "1b8ffffd5896750c"
   },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "MẬT THƯ x47y CHIA HẾT CHO 45 = 9 × 5",
-    "neutral": true,
-    "wrong": {
-     "head": "NHÁNH y = 0",
-     "steps": [
-      "x + 4 + 7 + 0 = x + 11 ⋮ 9"
-     ],
-     "result": "x = 7 → 7470"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "mcq",
+        "text": "Kiểm ⋮ 45 tháo thành cặp nào? (bài trước)",
+        "choices": [
+          "9 × 5",
+          "15 × 3",
+          "40 + 5"
+        ],
+        "answerKey": {
+          "choice": "9 × 5"
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B9.M2",
+      "message": "Ôn luật tháo cặp rồi quay lại phòng mật thư nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Sư phụ Trí Dũng đặt lên bàn bức MẬT THƯ: số x47y — hai chữ bị xóa — chỉ biết cả số chia hết cho 45. Trí Long thử cửa tổng trước: \"x cộng y cộng mười một chia hết chín…\" rồi ôm đầu: hai ẩn ràng nhau, gỡ kiểu gì?!",
+        "display": {
+          "type": "story_panel",
+          "caption": "x47y ⋮ 45 — gỡ ẩn nào trước?"
+        },
+        "interaction": {
+          "type": "mcq_inline",
+          "prompt": "Con chọn cửa mở trước:",
+          "choices": [
+            "Cửa tổng (⋮ 9)",
+            "Cửa đuôi (⋮ 5) — ít lựa chọn nhất",
+            "Đoán đại x"
+          ],
+          "answerKey": {
+            "choice": "Cửa đuôi (⋮ 5) — ít lựa chọn nhất"
+          }
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 48,
+        "teaches": [
+          "K1",
+          "K2",
+          "K3"
+        ],
+        "narration": "Tháo 45 = 9 × 5. Ổ đuôi giữ chân y: chỉ HAI răng — y bằng 0 hoặc 5, mỗi răng một con đường. Đường một, y = 0: tổng thành x + 11, chia hết 9 khi x = 7 — mở ra số 7470! Đường hai, y = 5: tổng x + 16, chia hết 9 khi x = 2 — số 2475! Con đi cả hai đường và gom hai nghiệm.",
+        "display": {
+          "type": "branch_solve_interactive",
+          "spec": {
+            "split": "y ∈ {0; 5}",
+            "branches": [
+              {
+                "y": 0,
+                "eq": "x + 11 ⋮ 9",
+                "x": 7,
+                "num": 7470
+              },
+              {
+                "y": 5,
+                "eq": "x + 16 ⋮ 9",
+                "x": 2,
+                "num": 2475
+              }
+            ]
+          }
+        },
+        "interaction": {
+          "type": "solve_both_branches",
+          "successMessage": "HAI nghiệm: 7470 và 2475 — bỏ một nhánh là mất nửa kho báu!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "num",
+          "text": "Thử lại nghiệm nhánh hai: 2475 : 45 = ?",
+          "answerKey": {
+            "value": 55
+          },
+          "wrongFeedback": "2475 = 45 × 55 — thử lại là nghi thức chốt án.",
+          "objective": "O1",
+          "teaches": [
+            "K4"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 40,
+        "teaches": [
+          "K3"
+        ],
+        "narration": "Mật thư cấp sư phụ: 2x7y chia hết 55 — tháo 11 nhân 5. Ổ đuôi vẫn hai đường. Nhưng ổ còn lại là KÍNH SO LE: đường y = 0 đòi hiệu xen kẽ chín trừ x chia hết 11 — x bằng 9, ra 2970. Đường y = 5 đòi hiệu bốn trừ x... bằng 0 khi x = 4 — ra 2475. Kính so le của bài trước ghép thẳng vào mật thư!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "55 = 11 × 5 · y ∈ {0;5}",
+            "y=0: (0+x) so (7+2) → x = 9 → 2970 ✓",
+            "y=5: (5+x) so 9 → x = 4 → 2475 ✓"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú mật thư: chốt y theo đuôi trước — dò x từng nhánh, gom đủ mọi nghiệm!",
+        "display": {
+          "type": "mantra_card",
+          "text": "CHỐT Y TRƯỚC — DÒ X TỪNG NHÁNH!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 89,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "right": {
-     "head": "NHÁNH y = 5",
-     "steps": [
-      "x + 4 + 7 + 5 = x + 16 ⋮ 9"
-     ],
-     "result": "x = 2 → 2475"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "verdict": "Chốt y theo cửa tận cùng TRƯỚC — mỗi y mở một nhánh riêng"
-   },
-   "caption": "Hai ẩn thì đi hai nhánh, không được bỏ sót nhánh nào",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B9_M3_F4.png",
-   "sha256_16": "e01cb95d70299913"
-  }
- ]
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Sư phụ Trí Dũng đặt lên bàn bức MẬT THƯ: số x bốn bảy y — hai chữ bị xóa — chỉ biết cả số chia hết cho bốn lăm. Trí Long thử cửa tổng trước rồi ôm đầu: hai ẩn ràng nhau, gỡ kiểu gì?!",
+        "screenText": "x47y ⋮ 45 — gỡ ẩn nào trước?",
+        "visual": "Bức thư cổ cháy mép với 'x47y'; hai ô x·y phát sáng đỏ; Trí Long xoay thư ngược xuôi.",
+        "assets": [],
+        "duration": 17
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Tháo bốn lăm bằng chín nhân năm. Ổ đuôi giữ chân y — chỉ HAI răng: y bằng không hoặc năm, mỗi răng một con đường. Đường một, y bằng không: tổng thành x cộng mười một — chia hết chín khi x bằng BẢY: bảy nghìn bốn trăm bảy mươi! Đường hai, y bằng năm: x cộng mười sáu — x bằng HAI: hai nghìn bốn trăm bảy lăm! Đi cả hai đường, gom HAI nghiệm!",
+        "screenText": "y=0 → x=7 → 7470 · y=5 → x=2 → 2475",
+        "visual": "Mật thư tách đôi thành hai con đường; mỗi đường hiện phương trình tổng và đáp; hai rương kho báu mở '7470' '2475' vàng rực.",
+        "assets": [],
+        "duration": 28
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Mật thư cấp sư phụ: hai x bảy y chia hết năm lăm — tháo mười một nhân năm. Ổ đuôi vẫn hai đường; ổ kia là KÍNH SO LE. Đường y bằng không: hiệu chín trừ x chia hết mười một — x bằng CHÍN, ra hai chín bảy mươi. Đường y bằng năm: hiệu về KHÔNG khi x bằng BỐN — ra hai bốn bảy lăm. Kính so le ghép thẳng vào mật thư!",
+        "screenText": "55 = 11 × 5 · y=0→x=9 (2970) · y=5→x=4 (2475)",
+        "visual": "Bức thư '2x7y'; các chữ số tô so le hai màu; hai nhánh giải với đĩa cân xen kẽ; mộc '2970 ✓ · 2475 ✓'.",
+        "assets": [],
+        "duration": 27
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú mật thư: chốt y theo đuôi trước — dò x từng nhánh, gom đủ mọi nghiệm!",
+        "screenText": "CHỐT Y TRƯỚC — GOM ĐỦ MỌI NGHIỆM!",
+        "visual": "Thẻ thần chú vàng với icon phong thư + hai chìa.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Mật thư giao con: x bốn bảy y chia hết bốn lăm — tìm ĐỦ các cặp x, y! Vào phòng giải mã ngay!",
+        "screenText": "x47y ⋮ 45 → mấy nghiệm?",
+        "visual": "Bức thư chờ trên bàn với hai ô trống nhấp nháy; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 9
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Giải mật thư x47y ⋮ 45",
+    "problem": "Tìm các chữ số x và y để số x47y chia hết cho 45.",
+    "steps": [
+      {
+        "show": "Bước 1 — Tháo cổng: 45 = 9 × 5 (cặp chuẩn). Ổ đuôi trước: y ∈ {0; 5} → HAI nhánh.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Vì sao mở ổ đuôi trước?",
+          "choices": [
+            "Vì nó cho ít lựa chọn nhất — chốt được y ngay",
+            "Vì y đứng cuối bảng chữ cái",
+            "Vì tổng khó tính"
+          ],
+          "answerKey": {
+            "choice": "Vì nó cho ít lựa chọn nhất — chốt được y ngay"
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — Nhánh y = 0: tổng x + 4 + 7 + 0 = x + 11 ⋮ 9 → x = 7 → 7470."
+      },
+      {
+        "show": "Bước 3 — Nhánh y = 5: x + 16 ⋮ 9 → x = 2 → 2475.",
+        "askBefore": {
+          "format": "num",
+          "text": "Nhánh y = 5: x + 16 chia hết 9 khi x = ?",
+          "answerKey": {
+            "value": 2
+          }
+        }
+      },
+      {
+        "show": "Bước 4 — Thử cả hai: 7470 : 45 = 166 ✓; 2475 : 45 = 55 ✓. Đáp: (7; 0) và (2; 5).",
+        "askAfter": {
+          "format": "num",
+          "text": "Mật thư này có mấy nghiệm?",
+          "answerKey": {
+            "value": 2
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B9.LT8",
+          "text": "Tìm các chữ số x và y để số x47y chia hết cho 45.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "nhánh y = 0",
+                "value": "x = 7 → 7470"
+              },
+              {
+                "label": "nhánh y = 5",
+                "value": "x = 2 → 2475"
+              }
+            ]
+          },
+          "hints": [
+            "45 = 9 × 5; ổ đuôi trước: y ∈ {0; 5}.",
+            "Từng nhánh: x + 11 ⋮ 9 và x + 16 ⋮ 9."
+          ],
+          "solutionNarrative": "Hai nghiệm 7470 và 2475 — đi trọn hai nhánh.",
+          "teaches": [
+            "K1",
+            "K2",
+            "K3"
+          ],
+          "generator": {
+            "template": "Tìm x, y để số x{ab}y chia hết cho 45.",
+            "constraints": {
+              "ab": "hai chữ số giữa"
+            },
+            "answerRule": "y∈{0;5}; mỗi nhánh giải x theo tổng ⋮ 9"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B9.LT9",
+          "text": "Sư phụ Trí Dũng đố: \"Tìm các chữ số x và y để số 2x7y chia hết cho 55.\" (Gợi ý: tháo 55 thành cặp nguyên tố cùng nhau.)",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "nhánh y = 0",
+                "value": "x = 9 → 2970"
+              },
+              {
+                "label": "nhánh y = 5",
+                "value": "x = 4 → 2475"
+              }
+            ]
+          },
+          "hints": [
+            "55 = 11 × 5; y ∈ {0; 5}.",
+            "Từng nhánh dùng kính so le: hiệu hai tổng xen kẽ ⋮ 11 hoặc = 0."
+          ],
+          "solutionNarrative": "y=0: 9 − x ⋮ 11 → x = 9 (2970 = 55 × 54); y=5: hiệu = 0 khi x = 4 (2475 = 55 × 45).",
+          "teaches": [
+            "K1",
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "tf",
+          "text": "(Đúng/Sai?) Mật thư x47y ⋮ 45 chỉ có đúng một nghiệm là 7470.",
+          "answerKey": {
+            "value": false,
+            "note": "Còn 2475 ở nhánh y = 5 — mỗi y một nhánh, phải gom đủ."
+          },
+          "hints": [
+            "Ổ đuôi có mấy răng?",
+            "Nhánh y = 5 cho nghiệm nào?"
+          ],
+          "teaches": [
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:I.6.2#2@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B10.M1",
+      "award": "huy_hieu_giai_ma_su"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "workedExample"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "text": "Mật thư hai ẩn x…y chia hết cho 45 — trình tự giải đúng:",
+        "choices": [
+          "Chốt y theo cửa đuôi (⋮5) trước, rồi dò x theo cửa tổng trong TỪNG nhánh",
+          "Dò x theo cửa tổng trước rồi mới chốt y",
+          "Đoán x, y đồng thời cho nhanh"
+        ],
+        "answerKey": {
+          "choice": "Chốt y theo cửa đuôi (⋮5) trước, rồi dò x theo cửa tổng trong TỪNG nhánh"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2",
+          "K3"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "num",
+        "text": "Nhánh y = 0 của mật thư x47y ⋮ 45: x bằng mấy?",
+        "answerKey": {
+          "value": 7
+        },
+        "teaches": [
+          "K3"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mb",
+        "text": "Tìm x, y để số 1x3y chia hết cho 45.",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "y = 0",
+              "value": "x = 5 → 1530"
+            },
+            {
+              "label": "y = 5",
+              "value": "x = 0 → 1035"
+            }
+          ],
+          "note": "tổng 4 + x (+5) ⋮ 9"
+        },
+        "teaches": [
+          "K1",
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Mật thư hai ẩn với 45 / 55 — quy trình bốn bước?",
+        "back": "(1) Tháo cặp chuẩn 9×5 / 11×5. (2) CHỐT Y theo cửa đuôi: y ∈ {0;5} → hai nhánh. (3) DÒ X trong từng nhánh theo cửa tổng / kính so le. (4) Thử lại, GOM ĐỦ mọi nghiệm."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P2 (55 — kính so le)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con giải mật thư hai ẩn: chốt y theo đuôi trước, dò x từng nhánh, gom đủ nghiệm. Con đạt {score}/3.",
+    "homeActivity": "Ra mật thư gia đình: 'số 1x3y chia hết cho 45 — tìm đủ các cặp' — con trình bày hai nhánh và ra 1530, 1035 là đạt.",
+    "watchFor": "Nếu con dừng ở một nghiệm — hỏi 'ổ đuôi có mấy răng?' và mở lại hai con đường (S2) cùng con."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B9.M3",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "x47y ⋮ 45 — gỡ ẩn nào trước?",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "x cộng y cộng mười một chia hết cho chín… rồi sao nữa? Hai ẩn ràng nhau, gỡ kiểu gì?!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Đừng mở cửa hai ẩn trước. 45 gồm 9 và 5 — cửa nào chốt được y ngay chỉ bằng chữ số cuối?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B9_M3_F1.png",
+      "sha256_16": "d48035a0d4b23844"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con giải được mật thư hai ẩn (x…y chia hết cho 45, 55…): tháo số hợp thành cặp chuẩn, CHỐT y theo cửa tận cùng TRƯỚC, mỗi giá trị y mở một nhánh; DÒ x theo cửa tổng (hoặc xen kẽ) trong TỪNG nhánh — tìm đủ mọi nghiệm.",
+        "steps": [
+          {
+            "text": "55 = 11 × 5 · y ∈ {0;5}"
+          },
+          {
+            "text": "y=0: (0+x) so (7+2) → x = 9 → 2970"
+          },
+          {
+            "text": "y=5: (5+x) so 9 → x = 4 → 2475"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B9_M3_F2.png",
+      "sha256_16": "fd0de3aa764d0878"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Mật thư hai ẩn với số hợp",
+            "text": "tháo cặp chuẩn trước (45 = 9 × 5; 55 = 11 × 5) — mỗi mảnh phụ trách một ẩn.",
+            "tone": "navy"
+          },
+          {
+            "label": "Chốt y (ẩn đứng ở đuôi) theo cửa TẬN CÙNG trước",
+            "text": "⋮ 5 → y ∈ {0; 5} — vì cửa đuôi cho ÍT lựa chọn nhất, mở nhánh gọn nhất.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "CHỐT Y THEO ĐUÔI TRƯỚC — DÒ X TỪNG NHÁNH, GOM ĐỦ MỌI NGHIỆM!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B9_M3_F3.png",
+      "sha256_16": "1b8ffffd5896750c"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "MẬT THƯ x47y CHIA HẾT CHO 45 = 9 × 5",
+        "neutral": true,
+        "wrong": {
+          "head": "NHÁNH y = 0",
+          "steps": [
+            "x + 4 + 7 + 0 = x + 11 ⋮ 9"
+          ],
+          "result": "x = 7 → 7470"
+        },
+        "right": {
+          "head": "NHÁNH y = 5",
+          "steps": [
+            "x + 4 + 7 + 5 = x + 16 ⋮ 9"
+          ],
+          "result": "x = 2 → 2475"
+        },
+        "verdict": "Chốt y theo cửa tận cùng TRƯỚC — mỗi y mở một nhánh riêng"
+      },
+      "caption": "Hai ẩn thì đi hai nhánh, không được bỏ sót nhánh nào",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B9_M3_F4.png",
+      "sha256_16": "e01cb95d70299913"
+    }
+  ]
 }

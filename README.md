@@ -150,15 +150,36 @@ bố mẹ tưởng đã lưu lên mạng. Đăng nhập lúc nào thì toàn b�
 tài khoản thật rồi đẩy lên — không sang tên thì luật bảo mật từ chối trong im lặng và công
 học bay sạch, nên có phép kiểm riêng canh đúng chỗ đó.
 
+### Hình mở bài: đối thoại, không phải lời kể
+
+Mỗi micro mở màn bằng một hình `character_speech`: **Trí Long (hoặc Cáo Đề) nói cái sai mà
+trẻ hay mắc — Su Kem hích nhẹ để con tự nhận ra**. Su Kem không đọc đáp án; phần giảng phía
+sau mới làm việc đó.
+
+Bộ sinh `figureSpec` ngày trước bắt lời thoại bằng regex tìm ngoặc kép. Regex ấy hỏng theo
+bốn kiểu, cả bốn đều làm hình không đọc được, và đã sửa hết trên **28/168 hình**:
+
+| Kiểu hỏng | Số hình | Ví dụ |
+|---|---|---|
+| bong bóng **rỗng** | 15 | Su Kem đứng im, chỉ có khung |
+| bong bóng nuốt **cả lời dẫn** | 11 | Trí Long "nói" luôn đoạn kể về Su Kem, dài 243 ký tự |
+| lời thoại **cắt cụt** ở dấu ngoặc | 7 | Su Kem: `100" cho số 3,5.` |
+| **gán nhầm nhân vật / nhầm màu** | 3 | câu SAI của Trí Long gán cho Su Bống, lại tô xanh |
+
+`test/hinhmobai.test.mjs` khoá cả bốn kiểu lại, cộng thêm hai luật màu: Su Kem không bao giờ
+bị tô đỏ, và lời gỡ (xanh) phải đứng **sau** cái sai (đỏ) — đảo lại là tô xanh cho chính câu
+sai. Riêng bài mở đầu B1.M1 cố ý để ngỏ ("cả lớp chia hai phe — con theo phe nào?") nên cả
+hai bong bóng để **trắng**: tô màu là lộ đáp án trước khi con kịp nghĩ.
+
+Phép kiểm còn đối chiếu `sha256_16` trong bài **và** trong manifest với PNG thật, vì sửa lời
+thoại mà quên vẽ lại thì con vẫn xem hình cũ mà không ai biết.
+
 **Chưa làm (đã ghi rõ, không giấu):**
 - **Máy chủ gửi mail**: hàm OTP cần bốn bí mật `OTP_PEPPER`, `SMTP_HOST`, `SMTP_USER`,
   `SMTP_PASS` (xem `docs/DEPLOY.md` bước 7a). Chưa đặt SMTP thì mã **chỉ in ra log**, không
   gửi đi đâu — tiện lúc chạy thử, nhưng chạy thật mà quên là không ai đăng nhập được.
 - Sinh đề biến thể: metadata `generator` trong dữ liệu viết bằng văn xuôi nên chỉ **1/181** câu
   dùng được. Giao diện **ẩn nút "Đề khác"** thay vì sinh đề bừa. Muốn dùng thật phải nâng cấp metadata.
-- **15 hình mở bài thiếu lời của Su Kem** (`figureSpec[0].params.lines[1].say` rỗng): trong lời dẫn
-  bạn ấy chỉ *làm* chứ không *nói*. Hình đang bỏ qua bong bóng rỗng thay vì vẽ khung trắng trơn —
-  muốn có lời gợi ý của Su Kem thì phải viết thêm nội dung, không suy ra được từ dữ liệu.
 - Hình miền cho từng micro hiện là **4 hình/micro**; các màn tương tác đặc thù (kéo thả, đếm ô)
   chưa làm — bản hiện tại là hình tĩnh + câu hỏi.
 - Video: đã có thiết kế (`docs/thiet_ke_agent_videoforge.md`) nhưng chưa dựng. Với kiến trúc hiện tại,

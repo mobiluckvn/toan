@@ -1,669 +1,669 @@
 {
- "title": "Ghép tỉ số ẩn với tổng / hiệu: sơ đồ chia phần",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:II.1.4#2"
-  ],
-  "bktUnit": "CASE:II.1.4#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B20",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B20.M1",
-  "next": "DL:KSN5Q1.B20.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B20",
-  "chunks": [
-   "CHUNK:KSN5Q1.B20.S4",
-   "CHUNK:KSN5Q1.B20.S5"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B20.3"
-  ],
-  "traps": []
- },
- "objective": {
-  "id": "O1",
-  "text": "Con ghép được tỉ số (lộ hoặc ẩn) với TỔNG hay HIỆU để tìm hai đại lượng bằng sơ đồ chia phần: tổng chia TỔNG số phần — hiệu chia HIỆU số phần — rồi nhân ngược ra từng đại lượng và THỬ về đề gốc.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (chia đúng tổng số phần)",
-  "kidText": "Có tỉ số rồi ghép với tổng hay hiệu: tổng chia tổng số phần, hiệu chia hiệu số phần, rồi nhân ngược ra từng số."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tỉ số lộ A = k × B: sơ đồ ngay k : 1 (lớp 4). Tỉ số ẩn: chạy chiêu quy-đồng-tử của bài trước để lấy tỉ trước đã."
-   },
-   {
-    "id": "K2",
-    "text": "Cho TỔNG: giá một phần = tổng : TỔNG số phần (A : B = 9 : 8, tổng 34 → phần = 34 : 17 = 2). Cho HIỆU: giá một phần = hiệu : HIỆU số phần (A : B = 2 : 3, hiệu 5 → phần = 5 : 1 = 5)."
-   },
-   {
-    "id": "K3",
-    "text": "Nhân ngược: A = số phần của A × giá phần; B tương tự — rồi THỬ về đề gốc (cả phép 'của' lẫn tổng/hiệu)."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: BĂNG GIẤY CẮT PHẦN. Sau khi hộp quà cho biết A : B = 9 : 8, vẽ hai BĂNG GIẤY: băng A chín ô, băng B tám ô — mọi ô bằng nhau. Đề cho TỔNG 34 chiếc: cả hai băng gồm 9 + 8 = 17 ô → mỗi ô 34 : 17 = 2 chiếc → A = 18, B = 16. Đề cho HIỆU 5: băng A dài hơn băng B đúng phần NHÔ RA — hiệu số ô — chia hiệu cho phần nhô: mỗi ô 5 chiếc. Nhân ngược từng băng rồi THỬ về đề: một phần hai của 10 có bằng một phần ba của 15 không? Sáu... à năm — phải khớp từng phép mới đóng hộp.",
-  "canonicalExamples": [
-   {
-    "case": "tỉ lộ + tổng (ca lớp 4 ôn)",
-    "problem": "Biết A gấp đôi B và A + B = 36. Tìm A và B.",
-    "solution": "A : B = 2 : 1 → tổng 3 phần → phần = 12 → A = 24; B = 12.",
-    "why": "Ca K1 — sơ đồ tổng-tỉ nền."
-   },
-   {
-    "case": "tỉ ẩn + tổng (ca lõi)",
-    "problem": "Biết 2/3 số bánh khay A bằng 3/4 số bánh khay B và cả hai khay có 34 chiếc. Tìm số bánh mỗi khay.",
-    "solution": "Tỉ ẩn: A : B = 9 : 8 (bài trước). Tổng 17 phần → phần = 34 : 17 = 2 → A = 18; B = 16. Thử: 2/3 × 18 = 12 = 3/4 × 16 ✓.",
-    "why": "Ca đề A câu 13 — nối thẳng M1."
-   },
-   {
-    "case": "tỉ ẩn + hiệu và trùm cuối (ca kép)",
-    "problem": "(a) 1/2 của A = 1/3 của B, B hơn A là 5 — tìm A, B. (b) TRÙM CUỐI: 3/5 của A = 2/3 của B và A + B = 57.",
-    "solution": "(a) Cùng tử sẵn → A : B = 2 : 3; hiệu 1 phần = 5 → A = 10; B = 15 (thử: 5 = 5 ✓). (b) Quy tử 6: 6/10 và 6/9 → A : B = 10 : 9; tổng 19 phần → phần 3 → A = 30; B = 27 (thử: 18 = 18 ✓).",
-    "why": "LT7 + LT8 — hiệu-tỉ và trùm cuối đề A câu 15."
-   }
-  ],
-  "numberRange": "Lớp 5: tổng/hiệu ≤ 200; phần nguyên.",
-  "misconceptions": [
-   {
-    "wrong": "Cho tổng mà chia cho HIỆU phần (34 : 1) hoặc cho hiệu mà chia TỔNG phần (5 : 5) — dùng nhầm thước.",
-    "signal": "Giá phần to/nhỏ bất thường; thử về đề lệch.",
-    "fix": "K2 — gạch chân đề cho TỔNG hay HIỆU: tổng đi với tổng phần, hiệu đi với hiệu phần (phần nhô ra).",
-    "counterExample": "34 : 1 = 34 → A = 306 chiếc — vượt xa tổng: vô lý ngay."
-   }
-  ],
-  "vocabulary": [
-   "băng giấy cắt phần",
-   "ô bằng nhau",
-   "phần nhô ra (hiệu số ô)",
-   "nhân ngược — thử về đề"
-  ],
-  "mantra": "TỔNG CHIA TỔNG PHẦN — HIỆU CHIA HIỆU PHẦN!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "mcq",
-    "text": "2/3 của A = 3/4 của B thì A : B = ? (bài trước)",
-    "choices": [
-     "9 : 8",
-     "8 : 9",
-     "2 : 3"
+  "title": "Ghép tỉ số ẩn với tổng / hiệu: sơ đồ chia phần",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:II.1.4#2"
     ],
-    "answerKey": {
-     "choice": "9 : 8"
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B20.M1",
-   "message": "Ôn tỉ số ẩn rồi cầm kéo cắt băng giấy nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Đề nối dài: \"2/3 khay A bằng 3/4 khay B, cả hai khay 34 chiếc — mỗi khay mấy chiếc?\" Trí Long đã có 9 : 8 từ bài trước, nhưng loay hoay: \"34 chia cho… 9? cho 8?\" Su Kem trải hai băng giấy lên bàn.",
-    "display": {
-     "type": "story_panel",
-     "caption": "34 : 9? 34 : 8?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để trải băng giấy!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
+    "bktUnit": "CASE:II.1.4#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B20",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B20.M1",
+    "next": "DL:KSN5Q1.B20.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B20",
+    "chunks": [
+      "CHUNK:KSN5Q1.B20.S4",
+      "CHUNK:KSN5Q1.B20.S5"
     ],
-    "narration": "Băng A chín ô, băng B tám ô — mọi ô BẰNG NHAU. Đề cho TỔNG: đếm cả hai băng — chín cộng tám là MƯỜI BẢY ô → mỗi ô bằng 34 chia 17: HAI chiếc! Nhân ngược: A chín ô là MƯỜI TÁM, B tám ô là MƯỜI SÁU. Thử về đề: hai phần ba của mười tám là mười hai — ba phần tư của mười sáu cũng mười hai: KHỚP, đóng hộp!",
-    "display": {
-     "type": "strip_diagram_interactive",
-     "spec": {
-      "a": 9,
-      "b": 8,
-      "total": 34,
-      "unit": 2,
-      "A": 18,
-      "B": 16,
-      "check": "2/3×18 = 12 = 3/4×16 ✓"
-     }
-    },
-    "interaction": {
-     "type": "cut_and_count",
-     "answerKey": {
-      "values": [
-       18,
-       16
-      ]
-     },
-     "successMessage": "Phần = 2 → A = 18, B = 16 — thử khớp!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mb",
-     "text": "A gấp đôi B, A + B = 36. Tìm A và B.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "A",
-        "value": 24
-       },
-       {
-        "label": "B",
-        "value": 12
-       }
-      ]
-     },
-     "wrongFeedback": "Tổng 3 phần → phần 12.",
-     "objective": "O1",
-     "teaches": [
-      "K1",
-      "K2"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K3"
+    "cases": [
+      "CA:KSN5Q1.B20.3"
     ],
-    "narration": "Đề cho HIỆU thì đổi thước: 1/2 của A bằng 1/3 của B — cùng tử sẵn: A : B là 2 : 3. B hơn A năm chiếc — trên băng giấy, B NHÔ RA đúng MỘT ô: một ô bằng năm! A hai ô: MƯỜI; B ba ô: MƯỜI LĂM. Trùm cuối 57: quy tử 6 ra 10 : 9 — tổng mười chín phần, phần BA: A ba mươi, B hai bảy — thử: mười tám bằng mười tám!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "hiệu: B nhô 1 ô = 5 → A = 10, B = 15",
-      "trùm cuối: 10 : 9, phần 57 : 19 = 3",
-      "A = 30, B = 27 (thử 18 = 18 ✓)"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Thần chú băng giấy: tổng chia tổng phần — hiệu chia hiệu phần!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TỔNG : TỔNG PHẦN — HIỆU : HIỆU PHẦN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 89,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "traps": []
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con ghép được tỉ số (lộ hoặc ẩn) với TỔNG hay HIỆU để tìm hai đại lượng bằng sơ đồ chia phần: tổng chia TỔNG số phần — hiệu chia HIỆU số phần — rồi nhân ngược ra từng đại lượng và THỬ về đề gốc.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (chia đúng tổng số phần)",
+    "kidText": "Có tỉ số rồi ghép với tổng hay hiệu: tổng chia tổng số phần, hiệu chia hiệu số phần, rồi nhân ngược ra từng số."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Đề nối dài: hai phần ba khay A bằng ba phần tư khay B, cả hai khay ba mươi tư chiếc — mỗi khay mấy chiếc? Trí Long đã có chín trên tám từ bài trước, nhưng loay hoay: ba tư chia cho chín? cho tám? Su Kem trải hai băng giấy lên bàn…",
-    "screenText": "A : B = 9 : 8 · tổng 34 → chia cho gì?",
-    "visual": "Bàn với đề bài và tỉ số 9:8; Trí Long phân vân giữa hai phép chia; Su Kem cầm hai băng giấy kẻ ô.",
-    "assets": [],
-    "duration": 19
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Băng A chín ô, băng B tám ô — mọi ô BẰNG NHAU. Đề cho TỔNG: đếm cả hai băng — MƯỜI BẢY ô → mỗi ô bằng ba tư chia mười bảy: HAI chiếc! Nhân ngược: A chín ô là MƯỜI TÁM, B tám ô là MƯỜI SÁU. Thử về đề: hai phần ba của mười tám là mười hai — ba phần tư của mười sáu cũng mười hai: KHỚP!",
-    "screenText": "17 ô → ô = 2 → A = 18 · B = 16 (thử 12 = 12 ✓)",
-    "visual": "Hai băng giấy 9 ô và 8 ô xếp chồng; kéo cắt từng ô '2'; phép thử hai vế cân bằng '12 = 12' mộc xanh.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Đề cho HIỆU thì đổi thước: một phần hai của A bằng một phần ba của B — cùng tử sẵn: A trên B là hai trên ba. B hơn A năm chiếc — băng B NHÔ RA đúng MỘT ô: ô bằng NĂM! A mười; B mười lăm. Trùm cuối năm bảy: quy tử sáu ra mười trên chín — mười chín phần, phần BA: A ba mươi, B hai bảy!",
-    "screenText": "hiệu → ô nhô = 5: A=10 B=15 · 57:19=3: A=30 B=27",
-    "visual": "Băng B dài hơn băng A một ô nhô sáng đỏ '5'; ca trùm cuối chạy sơ đồ 10:9 với phần '3'; hai mộc thử ✓.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú băng giấy: tổng chia tổng phần — hiệu chia hiệu phần!",
-    "screenText": "TỔNG : TỔNG PHẦN · HIỆU : HIỆU PHẦN!",
-    "visual": "Thẻ thần chú vàng với icon hai băng giấy.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Trùm cuối chờ con: ba phần năm của A bằng hai phần ba của B, tổng năm mươi bảy — tìm A và B! Vào bài luyện ngay!",
-    "screenText": "3/5 A = 2/3 B · A + B = 57 → ?",
-    "visual": "Cửa phòng trùm cuối với hai băng giấy cuộn; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P4",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Băng giấy 34 chiếc bánh",
-  "problem": "Biết 2/3 số bánh khay A bằng 3/4 số bánh khay B và cả hai khay có 34 chiếc. Tìm số bánh mỗi khay.",
-  "steps": [
-   {
-    "show": "Bước 1 — Tỉ ẩn (bài trước): A : B = 9 : 8 → băng A 9 ô, băng B 8 ô.",
-    "askBefore": {
-     "format": "num",
-     "text": "Cả hai băng gồm mấy ô?",
-     "answerKey": {
-      "value": 17
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Tổng chia tổng phần: 34 : 17 = 2 chiếc/ô."
-   },
-   {
-    "show": "Bước 3 — Nhân ngược: A = 9 × 2 = 18; B = 8 × 2 = 16. Thử: 2/3 × 18 = 12 = 3/4 × 16 ✓.",
-    "askAfter": {
-     "format": "mb",
-     "text": "Nếu tổng là 68 thì A, B bằng?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "A",
-        "value": 36
-       },
-       {
-        "label": "B",
-        "value": 32
-       }
-      ]
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B20.LT2",
-     "text": "Biết A gấp đôi B và A + B = 36. Tìm A và B.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "A",
-        "value": 24
-       },
-       {
-        "label": "B",
-        "value": 12
-       }
-      ]
-     },
-     "hints": [
-      "Tỉ lộ 2 : 1 — tổng 3 phần.",
-      "Phần = 36 : 3."
-     ],
-     "solutionNarrative": "Phần 12 → A = 24; B = 12.",
-     "teaches": [
-      "K1",
-      "K2"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B20.LT5",
-     "text": "Biết 2/3 số bánh khay A bằng 3/4 số bánh khay B và cả hai khay có 34 chiếc. Tìm số bánh mỗi khay.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "khay A",
-        "value": 18
-       },
-       {
-        "label": "khay B",
-        "value": 16
-       }
-      ]
-     },
-     "hints": [
-      "Tỉ ẩn 9 : 8 → 17 phần.",
-      "Phần = 34 : 17."
-     ],
-     "solutionNarrative": "Phần 2 → A = 18; B = 16 (thử 12 = 12 ✓).",
-     "teaches": [
-      "K2",
-      "K3"
-     ],
-     "generator": {
-      "template": "{m}/{n} của A = {p}/{q} của B, tổng {S}. Tìm A, B.",
-      "constraints": {},
-      "answerRule": "tỉ ẩn → tổng : tổng phần → nhân ngược"
-     }
-    },
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B20.LT7",
-     "text": "Biết 1/2 của A bằng 1/3 của B và B hơn A là 5. Tìm A và B.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "A",
-        "value": 10
-       },
-       {
-        "label": "B",
-        "value": 15
-       }
-      ]
-     },
-     "hints": [
-      "Cùng tử sẵn: A : B = 2 : 3.",
-      "Hiệu 1 phần = 5."
-     ],
-     "solutionNarrative": "Phần 5 → A = 10; B = 15 (thử 5 = 5 ✓).",
-     "teaches": [
-      "K1",
-      "K2"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P4",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B20.LT8",
-     "text": "TRÙM CUỐI: biết 3/5 của A bằng 2/3 của B và A + B = 57. Tìm A và B.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "tỉ số",
-        "value": "10 : 9"
-       },
-       {
-        "label": "A",
-        "value": 30
-       },
-       {
-        "label": "B",
-        "value": 27
-       }
-      ]
-     },
-     "hints": [
-      "Quy tử 6: 6/10 và 6/9.",
-      "Tổng 19 phần → phần 3."
-     ],
-     "solutionNarrative": "A : B = 10 : 9; phần = 57 : 19 = 3 → A = 30; B = 27 (thử 18 = 18 ✓).",
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:II.1.4#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B20.M3",
-   "award": "huy_hieu_bang_giay"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P2"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "text": "A : B = 9 : 8, tổng 34 — giá một phần bằng:",
-    "choices": [
-     "34 : 17",
-     "34 : 9",
-     "34 : 1"
-    ],
-    "answerKey": {
-     "choice": "34 : 17"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mb",
-    "text": "A : B = 2 : 3, B hơn A là 5. Tìm A và B.",
-    "answerKey": {
-     "parts": [
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "A",
-       "value": 10
+        "id": "K1",
+        "text": "Tỉ số lộ A = k × B: sơ đồ ngay k : 1 (lớp 4). Tỉ số ẩn: chạy chiêu quy-đồng-tử của bài trước để lấy tỉ trước đã."
       },
       {
-       "label": "B",
-       "value": 15
+        "id": "K2",
+        "text": "Cho TỔNG: giá một phần = tổng : TỔNG số phần (A : B = 9 : 8, tổng 34 → phần = 34 : 17 = 2). Cho HIỆU: giá một phần = hiệu : HIỆU số phần (A : B = 2 : 3, hiệu 5 → phần = 5 : 1 = 5)."
+      },
+      {
+        "id": "K3",
+        "text": "Nhân ngược: A = số phần của A × giá phần; B tương tự — rồi THỬ về đề gốc (cả phép 'của' lẫn tổng/hiệu)."
       }
-     ]
-    },
-    "teaches": [
-     "K2",
-     "K3"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "text": "Sau khi tìm được A, B — việc cuối cùng là:",
-    "choices": [
-     "thử về đề gốc",
-     "tối giản A",
-     "cộng thêm phần dư"
     ],
-    "answerKey": {
-     "choice": "thử về đề gốc"
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Ghép tỉ số với tổng / hiệu — chia thế nào?",
-    "back": "Vẽ băng giấy theo tỉ. TỔNG : TỔNG số phần (34 : 17 = 2 → A = 18, B = 16). HIỆU : HIỆU số phần — phần nhô ra (5 : 1 = 5 → A = 10, B = 15). Nhân ngược từng băng rồi THỬ về đề gốc."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P2",
-   "+7 ngày: câu P4 (trùm cuối 57)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con ghép tỉ số ẩn với tổng / hiệu bằng băng giấy chia phần: tổng chia tổng phần, hiệu chia hiệu phần. Con đạt {score}/3.",
-  "homeActivity": "Cắt hai băng giấy 9 ô và 8 ô thật — chia 34 viên kẹo theo băng, con đếm từng ô 2 viên và kiểm 18 + 16 = 34.",
-  "watchFor": "Nếu con chia tổng cho hiệu phần (hay ngược) — nhìn giá phần vô lý (34 chiếc/ô!) và gạch chân chữ TỔNG/HIỆU trong đề."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B20.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "34 : 9? 34 : 8?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Đề nối dài: \"2/3 khay A bằng 3/4 khay B, cả hai khay 34 chiếc — mỗi khay mấy chiếc?\" Trí Long đã có 9 : 8 từ bài trước, nhưng loay hoay: \"34 chia cho… 9? cho 8?\" Su Kem trải hai băng giấy lên bàn.",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B20_M2_F1.png",
-   "sha256_16": "2f8b33472c2e8efb"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con ghép được tỉ số (lộ hoặc ẩn) với TỔNG hay HIỆU để tìm hai đại lượng bằng sơ đồ chia phần: tổng chia TỔNG số phần — hiệu chia HIỆU số phần — rồi nhân ngược ra từng đại lượng và THỬ về đề gốc.",
-    "steps": [
-     {
-      "text": "hiệu: B nhô 1 ô = 5 → A = 10, B = 15"
-     },
-     {
-      "text": "trùm cuối: 10 : 9, phần 57 : 19 = 3"
-     },
-     {
-      "text": "A = 30, B = 27 (thử 18 = 18 )"
-     }
+    "mechanism": "Hình ảnh brand: BĂNG GIẤY CẮT PHẦN. Sau khi hộp quà cho biết A : B = 9 : 8, vẽ hai BĂNG GIẤY: băng A chín ô, băng B tám ô — mọi ô bằng nhau. Đề cho TỔNG 34 chiếc: cả hai băng gồm 9 + 8 = 17 ô → mỗi ô 34 : 17 = 2 chiếc → A = 18, B = 16. Đề cho HIỆU 5: băng A dài hơn băng B đúng phần NHÔ RA — hiệu số ô — chia hiệu cho phần nhô: mỗi ô 5 chiếc. Nhân ngược từng băng rồi THỬ về đề: một phần hai của 10 có bằng một phần ba của 15 không? Sáu... à năm — phải khớp từng phép mới đóng hộp.",
+    "canonicalExamples": [
+      {
+        "case": "tỉ lộ + tổng (ca lớp 4 ôn)",
+        "problem": "Biết A gấp đôi B và A + B = 36. Tìm A và B.",
+        "solution": "A : B = 2 : 1 → tổng 3 phần → phần = 12 → A = 24; B = 12.",
+        "why": "Ca K1 — sơ đồ tổng-tỉ nền."
+      },
+      {
+        "case": "tỉ ẩn + tổng (ca lõi)",
+        "problem": "Biết 2/3 số bánh khay A bằng 3/4 số bánh khay B và cả hai khay có 34 chiếc. Tìm số bánh mỗi khay.",
+        "solution": "Tỉ ẩn: A : B = 9 : 8 (bài trước). Tổng 17 phần → phần = 34 : 17 = 2 → A = 18; B = 16. Thử: 2/3 × 18 = 12 = 3/4 × 16 ✓.",
+        "why": "Ca đề A câu 13 — nối thẳng M1."
+      },
+      {
+        "case": "tỉ ẩn + hiệu và trùm cuối (ca kép)",
+        "problem": "(a) 1/2 của A = 1/3 của B, B hơn A là 5 — tìm A, B. (b) TRÙM CUỐI: 3/5 của A = 2/3 của B và A + B = 57.",
+        "solution": "(a) Cùng tử sẵn → A : B = 2 : 3; hiệu 1 phần = 5 → A = 10; B = 15 (thử: 5 = 5 ✓). (b) Quy tử 6: 6/10 và 6/9 → A : B = 10 : 9; tổng 19 phần → phần 3 → A = 30; B = 27 (thử: 18 = 18 ✓).",
+        "why": "LT7 + LT8 — hiệu-tỉ và trùm cuối đề A câu 15."
+      }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B20_M2_F2.png",
-   "sha256_16": "814fdecc31155c27"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tỉ số lộ A = k × B",
-      "text": "sơ đồ ngay k : 1 (lớp 4). Tỉ số ẩn: chạy chiêu quy-đồng-tử của bài trước để lấy tỉ trước đã.",
-      "tone": "navy"
-     },
-     {
-      "label": "Cho TỔNG",
-      "text": "giá một phần = tổng : TỔNG số phần (A : B = 9 : 8, tổng 34 → phần = 34 : 17 = 2). Cho HIỆU: giá một phần = hiệu : HIỆU số phần (A : B = 2 : 3, hiệu 5 → phần = 5 : 1 = 5).",
-      "tone": "teal"
-     }
+    "numberRange": "Lớp 5: tổng/hiệu ≤ 200; phần nguyên.",
+    "misconceptions": [
+      {
+        "wrong": "Cho tổng mà chia cho HIỆU phần (34 : 1) hoặc cho hiệu mà chia TỔNG phần (5 : 5) — dùng nhầm thước.",
+        "signal": "Giá phần to/nhỏ bất thường; thử về đề lệch.",
+        "fix": "K2 — gạch chân đề cho TỔNG hay HIỆU: tổng đi với tổng phần, hiệu đi với hiệu phần (phần nhô ra).",
+        "counterExample": "34 : 1 = 34 → A = 306 chiếc — vượt xa tổng: vô lý ngay."
+      }
+    ],
+    "vocabulary": [
+      "băng giấy cắt phần",
+      "ô bằng nhau",
+      "phần nhô ra (hiệu số ô)",
+      "nhân ngược — thử về đề"
     ],
     "mantra": "TỔNG CHIA TỔNG PHẦN — HIỆU CHIA HIỆU PHẦN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B20_M2_F3.png",
-   "sha256_16": "d6b558a0203fb242"
   },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "TỈ SỐ ẨN GHÉP VỚI TỔNG: HAI KHAY CÓ 34 CHIẾC BÁNH",
-    "bars": [
-     {
-      "name": "khay A",
-      "units": 9,
-      "label": "9 phần → 18 chiếc"
-     },
-     {
-      "name": "khay B",
-      "units": 8,
-      "label": "8 phần → 16 chiếc"
-     }
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "mcq",
+        "text": "2/3 của A = 3/4 của B thì A : B = ? (bài trước)",
+        "choices": [
+          "9 : 8",
+          "8 : 9",
+          "2 : 3"
+        ],
+        "answerKey": {
+          "choice": "9 : 8"
+        }
+      }
     ],
-    "brace": {
-     "text": "tổng 17 phần = 34  →  1 phần = 2 chiếc"
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B20.M1",
+      "message": "Ôn tỉ số ẩn rồi cầm kéo cắt băng giấy nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Đề nối dài: \"2/3 khay A bằng 3/4 khay B, cả hai khay 34 chiếc — mỗi khay mấy chiếc?\" Trí Long đã có 9 : 8 từ bài trước, nhưng loay hoay: \"34 chia cho… 9? cho 8?\" Su Kem trải hai băng giấy lên bàn.",
+        "display": {
+          "type": "story_panel",
+          "caption": "34 : 9? 34 : 8?"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để trải băng giấy!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2",
+          "K3"
+        ],
+        "narration": "Băng A chín ô, băng B tám ô — mọi ô BẰNG NHAU. Đề cho TỔNG: đếm cả hai băng — chín cộng tám là MƯỜI BẢY ô → mỗi ô bằng 34 chia 17: HAI chiếc! Nhân ngược: A chín ô là MƯỜI TÁM, B tám ô là MƯỜI SÁU. Thử về đề: hai phần ba của mười tám là mười hai — ba phần tư của mười sáu cũng mười hai: KHỚP, đóng hộp!",
+        "display": {
+          "type": "strip_diagram_interactive",
+          "spec": {
+            "a": 9,
+            "b": 8,
+            "total": 34,
+            "unit": 2,
+            "A": 18,
+            "B": 16,
+            "check": "2/3×18 = 12 = 3/4×16 ✓"
+          }
+        },
+        "interaction": {
+          "type": "cut_and_count",
+          "answerKey": {
+            "values": [
+              18,
+              16
+            ]
+          },
+          "successMessage": "Phần = 2 → A = 18, B = 16 — thử khớp!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mb",
+          "text": "A gấp đôi B, A + B = 36. Tìm A và B.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "A",
+                "value": 24
+              },
+              {
+                "label": "B",
+                "value": 12
+              }
+            ]
+          },
+          "wrongFeedback": "Tổng 3 phần → phần 12.",
+          "objective": "O1",
+          "teaches": [
+            "K1",
+            "K2"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 42,
+        "teaches": [
+          "K2",
+          "K3"
+        ],
+        "narration": "Đề cho HIỆU thì đổi thước: 1/2 của A bằng 1/3 của B — cùng tử sẵn: A : B là 2 : 3. B hơn A năm chiếc — trên băng giấy, B NHÔ RA đúng MỘT ô: một ô bằng năm! A hai ô: MƯỜI; B ba ô: MƯỜI LĂM. Trùm cuối 57: quy tử 6 ra 10 : 9 — tổng mười chín phần, phần BA: A ba mươi, B hai bảy — thử: mười tám bằng mười tám!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "hiệu: B nhô 1 ô = 5 → A = 10, B = 15",
+            "trùm cuối: 10 : 9, phần 57 : 19 = 3",
+            "A = 30, B = 27 (thử 18 = 18 ✓)"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 12,
+        "narration": "Thần chú băng giấy: tổng chia tổng phần — hiệu chia hiệu phần!",
+        "display": {
+          "type": "mantra_card",
+          "text": "TỔNG : TỔNG PHẦN — HIỆU : HIỆU PHẦN!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 89,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "note": "Thử lại: 2/3 × 18 = 12 và 3/4 × 16 = 12 — bằng nhau ✓"
-   },
-   "caption": "Tổng thì chia TỔNG số phần · hiệu thì chia HIỆU số phần",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B20_M2_F4.png",
-   "sha256_16": "b03da1b2161f9261"
-  }
- ]
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Đề nối dài: hai phần ba khay A bằng ba phần tư khay B, cả hai khay ba mươi tư chiếc — mỗi khay mấy chiếc? Trí Long đã có chín trên tám từ bài trước, nhưng loay hoay: ba tư chia cho chín? cho tám? Su Kem trải hai băng giấy lên bàn…",
+        "screenText": "A : B = 9 : 8 · tổng 34 → chia cho gì?",
+        "visual": "Bàn với đề bài và tỉ số 9:8; Trí Long phân vân giữa hai phép chia; Su Kem cầm hai băng giấy kẻ ô.",
+        "assets": [],
+        "duration": 19
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Băng A chín ô, băng B tám ô — mọi ô BẰNG NHAU. Đề cho TỔNG: đếm cả hai băng — MƯỜI BẢY ô → mỗi ô bằng ba tư chia mười bảy: HAI chiếc! Nhân ngược: A chín ô là MƯỜI TÁM, B tám ô là MƯỜI SÁU. Thử về đề: hai phần ba của mười tám là mười hai — ba phần tư của mười sáu cũng mười hai: KHỚP!",
+        "screenText": "17 ô → ô = 2 → A = 18 · B = 16 (thử 12 = 12 ✓)",
+        "visual": "Hai băng giấy 9 ô và 8 ô xếp chồng; kéo cắt từng ô '2'; phép thử hai vế cân bằng '12 = 12' mộc xanh.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Đề cho HIỆU thì đổi thước: một phần hai của A bằng một phần ba của B — cùng tử sẵn: A trên B là hai trên ba. B hơn A năm chiếc — băng B NHÔ RA đúng MỘT ô: ô bằng NĂM! A mười; B mười lăm. Trùm cuối năm bảy: quy tử sáu ra mười trên chín — mười chín phần, phần BA: A ba mươi, B hai bảy!",
+        "screenText": "hiệu → ô nhô = 5: A=10 B=15 · 57:19=3: A=30 B=27",
+        "visual": "Băng B dài hơn băng A một ô nhô sáng đỏ '5'; ca trùm cuối chạy sơ đồ 10:9 với phần '3'; hai mộc thử ✓.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú băng giấy: tổng chia tổng phần — hiệu chia hiệu phần!",
+        "screenText": "TỔNG : TỔNG PHẦN · HIỆU : HIỆU PHẦN!",
+        "visual": "Thẻ thần chú vàng với icon hai băng giấy.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Trùm cuối chờ con: ba phần năm của A bằng hai phần ba của B, tổng năm mươi bảy — tìm A và B! Vào bài luyện ngay!",
+        "screenText": "3/5 A = 2/3 B · A + B = 57 → ?",
+        "visual": "Cửa phòng trùm cuối với hai băng giấy cuộn; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P4",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Băng giấy 34 chiếc bánh",
+    "problem": "Biết 2/3 số bánh khay A bằng 3/4 số bánh khay B và cả hai khay có 34 chiếc. Tìm số bánh mỗi khay.",
+    "steps": [
+      {
+        "show": "Bước 1 — Tỉ ẩn (bài trước): A : B = 9 : 8 → băng A 9 ô, băng B 8 ô.",
+        "askBefore": {
+          "format": "num",
+          "text": "Cả hai băng gồm mấy ô?",
+          "answerKey": {
+            "value": 17
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — Tổng chia tổng phần: 34 : 17 = 2 chiếc/ô."
+      },
+      {
+        "show": "Bước 3 — Nhân ngược: A = 9 × 2 = 18; B = 8 × 2 = 16. Thử: 2/3 × 18 = 12 = 3/4 × 16 ✓.",
+        "askAfter": {
+          "format": "mb",
+          "text": "Nếu tổng là 68 thì A, B bằng?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "A",
+                "value": 36
+              },
+              {
+                "label": "B",
+                "value": 32
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B20.LT2",
+          "text": "Biết A gấp đôi B và A + B = 36. Tìm A và B.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "A",
+                "value": 24
+              },
+              {
+                "label": "B",
+                "value": 12
+              }
+            ]
+          },
+          "hints": [
+            "Tỉ lộ 2 : 1 — tổng 3 phần.",
+            "Phần = 36 : 3."
+          ],
+          "solutionNarrative": "Phần 12 → A = 24; B = 12.",
+          "teaches": [
+            "K1",
+            "K2"
+          ]
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B20.LT5",
+          "text": "Biết 2/3 số bánh khay A bằng 3/4 số bánh khay B và cả hai khay có 34 chiếc. Tìm số bánh mỗi khay.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "khay A",
+                "value": 18
+              },
+              {
+                "label": "khay B",
+                "value": 16
+              }
+            ]
+          },
+          "hints": [
+            "Tỉ ẩn 9 : 8 → 17 phần.",
+            "Phần = 34 : 17."
+          ],
+          "solutionNarrative": "Phần 2 → A = 18; B = 16 (thử 12 = 12 ✓).",
+          "teaches": [
+            "K2",
+            "K3"
+          ],
+          "generator": {
+            "template": "{m}/{n} của A = {p}/{q} của B, tổng {S}. Tìm A, B.",
+            "constraints": {},
+            "answerRule": "tỉ ẩn → tổng : tổng phần → nhân ngược"
+          }
+        },
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B20.LT7",
+          "text": "Biết 1/2 của A bằng 1/3 của B và B hơn A là 5. Tìm A và B.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "A",
+                "value": 10
+              },
+              {
+                "label": "B",
+                "value": 15
+              }
+            ]
+          },
+          "hints": [
+            "Cùng tử sẵn: A : B = 2 : 3.",
+            "Hiệu 1 phần = 5."
+          ],
+          "solutionNarrative": "Phần 5 → A = 10; B = 15 (thử 5 = 5 ✓).",
+          "teaches": [
+            "K1",
+            "K2"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P4",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B20.LT8",
+          "text": "TRÙM CUỐI: biết 3/5 của A bằng 2/3 của B và A + B = 57. Tìm A và B.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "tỉ số",
+                "value": "10 : 9"
+              },
+              {
+                "label": "A",
+                "value": 30
+              },
+              {
+                "label": "B",
+                "value": 27
+              }
+            ]
+          },
+          "hints": [
+            "Quy tử 6: 6/10 và 6/9.",
+            "Tổng 19 phần → phần 3."
+          ],
+          "solutionNarrative": "A : B = 10 : 9; phần = 57 : 19 = 3 → A = 30; B = 27 (thử 18 = 18 ✓).",
+          "teaches": [
+            "K2",
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:II.1.4#2@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B20.M3",
+      "award": "huy_hieu_bang_giay"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P2"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "text": "A : B = 9 : 8, tổng 34 — giá một phần bằng:",
+        "choices": [
+          "34 : 17",
+          "34 : 9",
+          "34 : 1"
+        ],
+        "answerKey": {
+          "choice": "34 : 17"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mb",
+        "text": "A : B = 2 : 3, B hơn A là 5. Tìm A và B.",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "A",
+              "value": 10
+            },
+            {
+              "label": "B",
+              "value": 15
+            }
+          ]
+        },
+        "teaches": [
+          "K2",
+          "K3"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "text": "Sau khi tìm được A, B — việc cuối cùng là:",
+        "choices": [
+          "thử về đề gốc",
+          "tối giản A",
+          "cộng thêm phần dư"
+        ],
+        "answerKey": {
+          "choice": "thử về đề gốc"
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Ghép tỉ số với tổng / hiệu — chia thế nào?",
+        "back": "Vẽ băng giấy theo tỉ. TỔNG : TỔNG số phần (34 : 17 = 2 → A = 18, B = 16). HIỆU : HIỆU số phần — phần nhô ra (5 : 1 = 5 → A = 10, B = 15). Nhân ngược từng băng rồi THỬ về đề gốc."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P2",
+      "+7 ngày: câu P4 (trùm cuối 57)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con ghép tỉ số ẩn với tổng / hiệu bằng băng giấy chia phần: tổng chia tổng phần, hiệu chia hiệu phần. Con đạt {score}/3.",
+    "homeActivity": "Cắt hai băng giấy 9 ô và 8 ô thật — chia 34 viên kẹo theo băng, con đếm từng ô 2 viên và kiểm 18 + 16 = 34.",
+    "watchFor": "Nếu con chia tổng cho hiệu phần (hay ngược) — nhìn giá phần vô lý (34 chiếc/ô!) và gạch chân chữ TỔNG/HIỆU trong đề."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B20.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "34 : 9? 34 : 8?",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Có 9 : 8 rồi mà… 34 chia cho 9? Hay chia cho 8?",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Tớ trải hai băng giấy đây: một băng 9 ô, một băng 8 ô. Gộp cả hai băng thì được mấy ô?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B20_M2_F1.png",
+      "sha256_16": "7eb56afa9b865cc6"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con ghép được tỉ số (lộ hoặc ẩn) với TỔNG hay HIỆU để tìm hai đại lượng bằng sơ đồ chia phần: tổng chia TỔNG số phần — hiệu chia HIỆU số phần — rồi nhân ngược ra từng đại lượng và THỬ về đề gốc.",
+        "steps": [
+          {
+            "text": "hiệu: B nhô 1 ô = 5 → A = 10, B = 15"
+          },
+          {
+            "text": "trùm cuối: 10 : 9, phần 57 : 19 = 3"
+          },
+          {
+            "text": "A = 30, B = 27 (thử 18 = 18 )"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B20_M2_F2.png",
+      "sha256_16": "814fdecc31155c27"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Tỉ số lộ A = k × B",
+            "text": "sơ đồ ngay k : 1 (lớp 4). Tỉ số ẩn: chạy chiêu quy-đồng-tử của bài trước để lấy tỉ trước đã.",
+            "tone": "navy"
+          },
+          {
+            "label": "Cho TỔNG",
+            "text": "giá một phần = tổng : TỔNG số phần (A : B = 9 : 8, tổng 34 → phần = 34 : 17 = 2). Cho HIỆU: giá một phần = hiệu : HIỆU số phần (A : B = 2 : 3, hiệu 5 → phần = 5 : 1 = 5).",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "TỔNG CHIA TỔNG PHẦN — HIỆU CHIA HIỆU PHẦN!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B20_M2_F3.png",
+      "sha256_16": "d6b558a0203fb242"
+    },
+    {
+      "archetype": "bar_diagram",
+      "params": {
+        "title": "TỈ SỐ ẨN GHÉP VỚI TỔNG: HAI KHAY CÓ 34 CHIẾC BÁNH",
+        "bars": [
+          {
+            "name": "khay A",
+            "units": 9,
+            "label": "9 phần → 18 chiếc"
+          },
+          {
+            "name": "khay B",
+            "units": 8,
+            "label": "8 phần → 16 chiếc"
+          }
+        ],
+        "brace": {
+          "text": "tổng 17 phần = 34  →  1 phần = 2 chiếc"
+        },
+        "note": "Thử lại: 2/3 × 18 = 12 và 3/4 × 16 = 12 — bằng nhau ✓"
+      },
+      "caption": "Tổng thì chia TỔNG số phần · hiệu thì chia HIỆU số phần",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B20_M2_F4.png",
+      "sha256_16": "b03da1b2161f9261"
+    }
+  ]
 }

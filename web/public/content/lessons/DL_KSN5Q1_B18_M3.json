@@ -1,608 +1,608 @@
 {
- "title": "Neo TỔNG: chuyển qua lại giữa tử và mẫu — gạch chân động từ của đề",
- "grade": 5,
- "durationMinutes": 8,
- "skills": {
-  "primary": [
-   "CASE:II.1.2#3"
-  ],
-  "bktUnit": "CASE:II.1.2#3@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B18",
-  "order": 3,
-  "prev": "DL:KSN5Q1.B18.M2",
-  "next": "DL:KSN5Q1.B19.M1"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B18",
-  "chunks": [
-   "CHUNK:KSN5Q1.B18.S4",
-   "CHUNK:KSN5Q1.B18.S7"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B18.3"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B18.2"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con giải được bài NEO TỔNG: chuyển k đơn vị từ tử sang mẫu (hoặc ngược lại) để được phân số cho trước — tổng-không-đổi làm thước: tổng gốc chia TỔNG số phần của đích = giá phần → tử mới → k; và phản xạ GẠCH CHÂN ĐỘNG TỪ để không tráo neo với bài hiệu.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (chuyển qua lại → neo tổng)",
-  "kidText": "Chuyển từ tử xuống mẫu thì tổng đứng im. Con gạch chân động từ của đề để không lẫn neo tổng với neo hiệu."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Chuyển k đơn vị giữa tử và mẫu: TỔNG tử + mẫu KHÔNG đổi (hàng chỉ dời thùng, cả bè vẫn từng ấy kiện)."
-   },
-   {
-    "id": "K2",
-    "text": "Ba nhịp neo tổng: (1) tối giản đích p/q; (2) tổng gốc : (p + q) = giá MỘT PHẦN; (3) tử mới = p × phần → k = |tử gốc − tử mới| (chuyển xuống nếu tử giảm, chuyển lên nếu tử tăng)."
-   },
-   {
-    "id": "K3",
-    "text": "Phản xạ GẠCH CHÂN ĐỘNG TỪ trước khi chọn neo: \"cộng / bớt CẢ HAI\" → neo HIỆU (chia cho hiệu phần q − p); \"CHUYỂN qua lại\" → neo TỔNG (chia cho tổng phần p + q). Hai đề chỉ khác vài chữ mà khác thước hoàn toàn."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: CẦN CẨU CHUYỂN KIỆN TRÊN BÈ. Bài 41/58 chuyển mấy kiện từ thùng tử xuống thùng mẫu để thành 4/7? Cần cẩu chỉ DỜI hàng giữa hai thùng — cả bè vẫn 41 + 58 = 99 kiện: TỔNG là sợi neo. Đích 4/7 gồm 4 + 7 = MƯỜI MỘT phần cả bè → một phần = 99 : 11 = 9 kiện. Thùng tử mới cần 4 phần = 36 kiện → cẩu chuyển 41 − 36 = 5 kiện xuống. Nhưng trước khi khởi động cẩu, đọc lệnh cho kỹ: Cáo Đề hay tráo hai tờ lệnh chỉ khác VÀI CHỮ — \"cộng cả hai\" là bơm hàng từ ngoài (neo HIỆU, thước chia q − p), còn \"chuyển qua lại\" mới là việc của cẩu (neo TỔNG, thước chia p + q). Gạch chân động từ — rồi mới chọn thước!",
-  "canonicalExamples": [
-   {
-    "case": "chuyển xuống (ca lõi)",
-    "problem": "Cho 41/58. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng 4/7?",
-    "solution": "Neo tổng: 41 + 58 = 99. Đích 4/7: tổng phần 11 → phần = 9. Tử mới = 4 × 9 = 36 → chuyển 41 − 36 = 5. Thử: 36/63 = 4/7 ✓, tổng 99 ✓.",
-    "why": "Ca đề A câu 6 — trap câu tráo neo."
-   },
-   {
-    "case": "chuyển lên (ca đảo chiều)",
-    "problem": "Cho 13/47. Chuyển từ MẪU số lên TỬ số bao nhiêu đơn vị để được phân số bằng 7/13?",
-    "solution": "Tổng 13 + 47 = 60. Đích 7/13: tổng phần 20 → phần = 3. Tử mới = 21 → chuyển lên 21 − 13 = 8. Thử: 21/39 = 7/13 ✓, tổng 60 ✓.",
-    "why": "Ca LT8 — chiều ngược, tổng phần 20."
-   },
-   {
-    "case": "đối chiếu hai tờ lệnh (ca phản xạ)",
-    "problem": "Hai đề: (i) \"cộng n vào cả tử và mẫu của 34/41 để được 6/7\"; (ii) \"chuyển k từ tử xuống mẫu của 41/58 để được 4/7\" — mỗi đề neo nào?",
-    "solution": "(i) động từ CỘNG CẢ HAI → neo HIỆU (chia 7 − 6). (ii) động từ CHUYỂN → neo TỔNG (chia 4 + 7). Gạch chân động từ là chọn đúng thước.",
-    "why": "Ca K3 — đặt hai bài cạnh nhau để khắc phản xạ."
-   }
-  ],
-  "numberRange": "Lớp 5: tổng ≤ 100; đích trong bảng tối giản quen.",
-  "misconceptions": [
-   {
-    "wrong": "Đề chuyển-qua-lại mà bám neo hiệu (hoặc ngược lại): lấy 99 chia cho 7 − 4 = 3.",
-    "signal": "Giá phần to bất thường (33), thử lại lệch cả giá trị lẫn neo.",
-    "fix": "K3 — gạch chân động từ TRƯỚC: chuyển → tổng phần p + q; cộng/bớt cả hai → hiệu phần q − p.",
-    "counterExample": "99 : 3 = 33 → tử mới 132 > cả tổng — vô lý lộ liễu."
-   }
-  ],
-  "vocabulary": [
-   "cần cẩu chuyển kiện",
-   "cả bè vẫn từng ấy kiện",
-   "tổng phần p + q",
-   "gạch chân động từ",
-   "hai tờ lệnh khác vài chữ"
-  ],
-  "mantra": "CỘNG CẢ HAI — NEO HIỆU; CHUYỂN QUA LẠI — NEO TỔNG!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "41 + 58 = ?",
-    "answerKey": {
-     "value": 99
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "ôn cộng nhẩm (hạt mầm)",
-   "message": "Ôn cộng nhẩm rồi lên buồng lái cần cẩu nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Cáo Đề phát hai tờ lệnh giống nhau như đúc: tờ một \"CỘNG n vào cả tử và mẫu\", tờ hai \"CHUYỂN k từ tử xuống mẫu\". Trí Long làm cả hai bằng đúng một thước hiệu quen tay… Su Kem soi kính lúp vào hai ĐỘNG TỪ khác nhau.",
-    "display": {
-     "type": "story_panel",
-     "caption": "hai tờ lệnh — một thước??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để gạch chân động từ!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 48,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "Neo TỔNG: chuyển qua lại giữa tử và mẫu — gạch chân động từ của đề",
+  "grade": 5,
+  "durationMinutes": 8,
+  "skills": {
+    "primary": [
+      "CASE:II.1.2#3"
     ],
-    "narration": "Lệnh CHUYỂN là việc của cần cẩu: chỉ dời kiện giữa hai thùng — cả bè 41 cộng 58 vẫn CHÍN CHÍN kiện: TỔNG là sợi neo! Đích 4/7 gồm 4 cộng 7 bằng MƯỜI MỘT phần cả bè — một phần bằng 99 chia 11: CHÍN kiện. Thùng tử mới cần 4 phần: ba mươi sáu — cẩu chuyển 41 trừ 36 bằng NĂM kiện xuống. Thử: 36/63 đúng 4/7, tổng vẫn 99!",
-    "display": {
-     "type": "crane_interactive",
-     "spec": {
-      "total": 99,
-      "target": "4/7",
-      "parts": 11,
-      "unit": 9,
-      "newNum": 36,
-      "k": 5,
-      "check": "36/63 = 4/7 ✓ · tổng 99 ✓"
-     }
-    },
-    "interaction": {
-     "type": "crane_move",
-     "answerKey": {
-      "value": 5
-     },
-     "successMessage": "Phần 9 → tử mới 36 → chuyển 5 kiện!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "mcq",
-     "text": "Đề \"chuyển k từ tử xuống mẫu\" — chia tổng cho:",
-     "choices": [
-      "p + q (tổng phần đích)",
-      "q − p (hiệu phần)",
-      "luôn chia 2"
-     ],
-     "answerKey": {
-      "choice": "p + q (tổng phần đích)"
-     },
-     "wrongFeedback": "Chuyển → neo TỔNG → tổng phần của đích.",
-     "objective": "O1",
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 40,
-    "teaches": [
-     "K3"
+    "bktUnit": "CASE:II.1.2#3@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B18",
+    "order": 3,
+    "prev": "DL:KSN5Q1.B18.M2",
+    "next": "DL:KSN5Q1.B19.M1"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B18",
+    "chunks": [
+      "CHUNK:KSN5Q1.B18.S4",
+      "CHUNK:KSN5Q1.B18.S7"
     ],
-    "narration": "Vạch mặt trò tráo lệnh: nếu bài chuyển-99-kiện mà bám thước HIỆU — chia 99 cho 7 trừ 4 bằng 3 — ra phần 33, tử mới 132 kiện: to hơn cả bè, vô lý lộ liễu! Phản xạ khắc bảng: gạch chân ĐỘNG TỪ trước khi chọn thước — CỘNG CẢ HAI là bơm hàng từ ngoài: neo hiệu; CHUYỂN QUA LẠI là việc của cẩu: neo tổng. Chiều lên cũng vậy: 13/47 lên 7/13 — tổng 60, hai mươi phần, phần 3, chuyển lên TÁM kiện!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
+    "cases": [
+      "CA:KSN5Q1.B18.3"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B18.2"
+    ]
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con giải được bài NEO TỔNG: chuyển k đơn vị từ tử sang mẫu (hoặc ngược lại) để được phân số cho trước — tổng-không-đổi làm thước: tổng gốc chia TỔNG số phần của đích = giá phần → tử mới → k; và phản xạ GẠCH CHÂN ĐỘNG TỪ để không tráo neo với bài hiệu.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (chuyển qua lại → neo tổng)",
+    "kidText": "Chuyển từ tử xuống mẫu thì tổng đứng im. Con gạch chân động từ của đề để không lẫn neo tổng với neo hiệu."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "input": "bài chuyển mà chia 99 : 3 (hiệu phần)",
-       "output": "phần 33 → tử 132 ✗",
-       "valid": false,
-       "reason": "tráo neo"
+        "id": "K1",
+        "text": "Chuyển k đơn vị giữa tử và mẫu: TỔNG tử + mẫu KHÔNG đổi (hàng chỉ dời thùng, cả bè vẫn từng ấy kiện)."
       },
       {
-       "input": "chia 99 : 11 (tổng phần)",
-       "output": "phần 9 → k = 5 ✓",
-       "valid": true,
-       "reason": "động từ CHUYỂN → neo tổng"
+        "id": "K2",
+        "text": "Ba nhịp neo tổng: (1) tối giản đích p/q; (2) tổng gốc : (p + q) = giá MỘT PHẦN; (3) tử mới = p × phần → k = |tử gốc − tử mới| (chuyển xuống nếu tử giảm, chuyển lên nếu tử tăng)."
+      },
+      {
+        "id": "K3",
+        "text": "Phản xạ GẠCH CHÂN ĐỘNG TỪ trước khi chọn neo: \"cộng / bớt CẢ HAI\" → neo HIỆU (chia cho hiệu phần q − p); \"CHUYỂN qua lại\" → neo TỔNG (chia cho tổng phần p + q). Hai đề chỉ khác vài chữ mà khác thước hoàn toàn."
       }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú buồng lái: cộng cả hai — neo hiệu; chuyển qua lại — neo tổng!",
-    "display": {
-     "type": "mantra_card",
-     "text": "CỘNG → NEO HIỆU · CHUYỂN → NEO TỔNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 90,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Cáo Đề phát hai tờ lệnh giống nhau như đúc: tờ một — CỘNG n vào cả tử và mẫu; tờ hai — CHUYỂN k từ tử xuống mẫu. Trí Long làm cả hai bằng đúng một thước hiệu quen tay… Su Kem soi kính lúp vào hai ĐỘNG TỪ khác nhau!",
-    "screenText": "\"cộng cả hai\" vs \"chuyển qua lại\" — một thước??",
-    "visual": "Hai tờ lệnh song song với hai động từ tô sáng khác màu; Su Kem soi kính lúp; Trí Long cầm một cây thước duy nhất.",
-    "assets": [],
-    "duration": 19
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Lệnh CHUYỂN là việc của cần cẩu: chỉ dời kiện giữa hai thùng — cả bè bốn mốt cộng năm tám vẫn CHÍN CHÍN kiện: TỔNG là sợi neo! Đích bốn phần bảy gồm MƯỜI MỘT phần cả bè — một phần bằng chín kiện. Thùng tử mới cần bốn phần: ba mươi sáu — cẩu chuyển NĂM kiện xuống. Thử: ba sáu phần sáu ba đúng bốn phần bảy, tổng vẫn chín chín!",
-    "screenText": "tổng 99 : 11 phần = 9 → tử mới 36 → chuyển 5 ✓",
-    "visual": "Cần cẩu bốc 5 kiện từ thùng tử sang thùng mẫu; bảng đếm cả bè '99' đứng im; sơ đồ 11 phần với 4 phần tô teal #1FC3A6.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Vạch mặt trò tráo lệnh: bài chuyển mà bám thước HIỆU — chia chín chín cho ba — ra phần ba ba, tử mới một trăm ba hai kiện: TO HƠN CẢ BÈ, vô lý lộ liễu! Gạch chân động từ trước khi chọn thước: CỘNG CẢ HAI — neo hiệu; CHUYỂN QUA LẠI — neo tổng. Chiều lên: mười ba phần bốn bảy — tổng sáu mươi, hai mươi phần, chuyển lên TÁM kiện!",
-    "screenText": "99 : 3 → tử 132 > cả bè ✗ · đúng: 99 : 11 ✓",
-    "visual": "Phép sai với thùng tử phình to vượt bè gạch đỏ #C0392B; phép đúng mộc xanh; ca chiều lên chạy nhanh góc màn với đáp 8.",
-    "assets": [],
-    "duration": 27
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú buồng lái: cộng cả hai — neo hiệu; chuyển qua lại — neo tổng!",
-    "screenText": "CỘNG → HIỆU · CHUYỂN → TỔNG!",
-    "visual": "Thẻ thần chú vàng với icon cần cẩu và mỏ neo.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Ca cẩu của con: mười ba phần bốn bảy — chuyển từ mẫu lên tử mấy đơn vị để thành bảy phần mười ba? Vào bài luyện ngay!",
-    "screenText": "13/47 → 7/13: chuyển lên ?",
-    "visual": "Cần cẩu chờ lệnh với thùng mẫu đầy; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Cần cẩu năm kiện",
-  "problem": "Cho 41/58. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng 4/7?",
-  "steps": [
-   {
-    "show": "Bước 1 — Gạch chân động từ: CHUYỂN → neo TỔNG: 41 + 58 = 99.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Đề này bám neo nào?",
-     "choices": [
-      "neo TỔNG",
-      "neo HIỆU",
-      "cả hai"
-     ],
-     "answerKey": {
-      "choice": "neo TỔNG"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Đích 4/7 (tối giản ✓): tổng phần 4 + 7 = 11 → phần = 99 : 11 = 9."
-   },
-   {
-    "show": "Bước 3 — Tử mới = 4 × 9 = 36 → chuyển 41 − 36 = 5. Thử: 36/63 = 4/7 ✓, tổng 99 ✓.",
-    "askAfter": {
-     "format": "num",
-     "text": "Nếu đích là 5/6 (tổng phần 11) thì tử mới bằng?",
-     "answerKey": {
-      "value": 45
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B18.LT6",
-     "text": "Cho phân số 41/58. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng 4/7?",
-     "answerKey": {
-      "value": 5
-     },
-     "hints": [
-      "Chuyển → neo TỔNG 99.",
-      "Tổng phần 11 → phần 9 → tử mới 36."
-     ],
-     "solutionNarrative": "99 : 11 = 9 → tử mới 36 → chuyển 5 (thử 36/63 = 4/7 ✓).",
-     "teaches": [
-      "K1",
-      "K2"
-     ],
-     "generator": {
-      "template": "Cho {a}/{b}, chuyển k từ tử xuống mẫu để được {p}/{q}. Tìm k.",
-      "constraints": {},
-      "answerRule": "(a+b) : (p+q) = phần → k = a − p×phần"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B18.LT8",
-     "text": "Cho phân số 13/47. Chuyển từ MẪU số lên TỬ số bao nhiêu đơn vị để được phân số bằng 7/13?",
-     "answerKey": {
-      "value": 8
-     },
-     "hints": [
-      "Tổng 60; đích 7/13 có tổng phần 20.",
-      "Phần 3 → tử mới 21 → chuyển lên 21 − 13."
-     ],
-     "solutionNarrative": "Phần 3 → tử mới 21 → chuyển lên 8 (thử 21/39 = 7/13 ✓, tổng 60 ✓).",
-     "teaches": [
-      "K2"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "mb",
-     "text": "Hai đề của Cáo Đề: (i) \"cộng n vào cả tử và mẫu của 34/41 để được 6/7\"; (ii) \"chuyển k từ tử xuống mẫu của 41/58 để được 4/7\". Gạch chân động từ và gọi tên neo mỗi đề (chưa cần giải).",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "i",
-        "value": "CỘNG cả hai → neo HIỆU (chia 7 − 6)",
-        "options": [
-         "CỘNG cả hai → neo HIỆU",
-         "CHUYỂN qua lại → neo TỔNG"
-        ]
-       },
-       {
-        "label": "ii",
-        "value": "CHUYỂN qua lại → neo TỔNG (chia 4 + 7)",
-        "options": [
-         "CỘNG cả hai → neo HIỆU",
-         "CHUYỂN qua lại → neo TỔNG"
-        ]
-       }
-      ]
-     },
-     "hints": [
-      "Động từ nào bơm hàng, động từ nào dời hàng?",
-      "Hiệu phần q − p vs tổng phần p + q."
-     ],
-     "teaches": [
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:II.1.2#3@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B19.M1",
-   "award": "huy_hieu_can_cau"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B18.QZ2",
-    "text": "(Đúng/Sai?) Chuyển k đơn vị từ tử xuống mẫu thì tổng tử và mẫu không đổi.",
-    "answerKey": {
-     "value": true
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "text": "Đề \"chuyển qua lại\" chia tổng gốc cho:",
-    "choices": [
-     "tổng phần p + q của đích",
-     "hiệu phần q − p",
-     "số k cần tìm"
     ],
-    "answerKey": {
-     "choice": "tổng phần p + q của đích"
-    },
-    "teaches": [
-     "K2",
-     "K3"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "num",
-    "text": "Cho 41/58 → 4/7: giá một phần bằng bao nhiêu?",
-    "answerKey": {
-     "value": 9
-    },
-    "teaches": [
-     "K2"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Bài neo TỔNG giải sao? Phân biệt với neo hiệu bằng gì?",
-    "back": "Chuyển qua lại → TỔNG không đổi: tổng : (p + q) = phần → tử mới = p × phần → k. Phân biệt bằng ĐỘNG TỪ: cộng/bớt CẢ HAI → neo hiệu (q − p); CHUYỂN → neo tổng (p + q). 41/58 → 4/7: phần 9, chuyển 5."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P3 (gọi tên neo)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con giải bài neo tổng (cần cẩu chuyển kiện) và luyện phản xạ gạch chân động từ chọn neo. Con đạt {score}/3, {trapResult} câu bẫy tráo-neo.",
-  "homeActivity": "Trò hai hộp kẹo: chuyển 3 viên từ hộp A sang B — hỏi con 'tổng hai hộp đổi chưa?' rồi đọc thần chú chọn neo.",
-  "watchFor": "Nếu con dùng nhầm thước — cho thấy phần 33 tử 132 vô lý (S3) và bắt gạch chân động từ trước."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B18.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "hai tờ lệnh — một thước??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Cáo Đề phát hai tờ lệnh giống nhau như đúc: tờ một \"CỘNG n vào cả tử và mẫu\", tờ hai \"CHUYỂN k từ tử xuống mẫu\".",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B18_M3_F1.png",
-   "sha256_16": "42ff337b89e5234c"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "bài chuyển mà chia 99 : 3 (hiệu phần)"
-     ],
-     "result": "phần 33 → tử 132"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "chia 99 : 11 (tổng phần)"
-     ],
-     "result": "phần 9 → k = 5"
-    },
-    "verdict": "động từ CHUYỂN → neo tổng"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B18_M3_F2.png",
-   "sha256_16": "ae8156ee3ce409df"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Chuyển k đơn vị giữa tử và mẫu",
-      "text": "TỔNG tử + mẫu KHÔNG đổi (hàng chỉ dời thùng, cả bè vẫn từng ấy kiện).",
-      "tone": "navy"
-     },
-     {
-      "label": "Ba nhịp neo tổng",
-      "text": "(1) tối giản đích p/q",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: CẦN CẨU CHUYỂN KIỆN TRÊN BÈ. Bài 41/58 chuyển mấy kiện từ thùng tử xuống thùng mẫu để thành 4/7? Cần cẩu chỉ DỜI hàng giữa hai thùng — cả bè vẫn 41 + 58 = 99 kiện: TỔNG là sợi neo. Đích 4/7 gồm 4 + 7 = MƯỜI MỘT phần cả bè → một phần = 99 : 11 = 9 kiện. Thùng tử mới cần 4 phần = 36 kiện → cẩu chuyển 41 − 36 = 5 kiện xuống. Nhưng trước khi khởi động cẩu, đọc lệnh cho kỹ: Cáo Đề hay tráo hai tờ lệnh chỉ khác VÀI CHỮ — \"cộng cả hai\" là bơm hàng từ ngoài (neo HIỆU, thước chia q − p), còn \"chuyển qua lại\" mới là việc của cẩu (neo TỔNG, thước chia p + q). Gạch chân động từ — rồi mới chọn thước!",
+    "canonicalExamples": [
+      {
+        "case": "chuyển xuống (ca lõi)",
+        "problem": "Cho 41/58. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng 4/7?",
+        "solution": "Neo tổng: 41 + 58 = 99. Đích 4/7: tổng phần 11 → phần = 9. Tử mới = 4 × 9 = 36 → chuyển 41 − 36 = 5. Thử: 36/63 = 4/7 ✓, tổng 99 ✓.",
+        "why": "Ca đề A câu 6 — trap câu tráo neo."
+      },
+      {
+        "case": "chuyển lên (ca đảo chiều)",
+        "problem": "Cho 13/47. Chuyển từ MẪU số lên TỬ số bao nhiêu đơn vị để được phân số bằng 7/13?",
+        "solution": "Tổng 13 + 47 = 60. Đích 7/13: tổng phần 20 → phần = 3. Tử mới = 21 → chuyển lên 21 − 13 = 8. Thử: 21/39 = 7/13 ✓, tổng 60 ✓.",
+        "why": "Ca LT8 — chiều ngược, tổng phần 20."
+      },
+      {
+        "case": "đối chiếu hai tờ lệnh (ca phản xạ)",
+        "problem": "Hai đề: (i) \"cộng n vào cả tử và mẫu của 34/41 để được 6/7\"; (ii) \"chuyển k từ tử xuống mẫu của 41/58 để được 4/7\" — mỗi đề neo nào?",
+        "solution": "(i) động từ CỘNG CẢ HAI → neo HIỆU (chia 7 − 6). (ii) động từ CHUYỂN → neo TỔNG (chia 4 + 7). Gạch chân động từ là chọn đúng thước.",
+        "why": "Ca K3 — đặt hai bài cạnh nhau để khắc phản xạ."
+      }
+    ],
+    "numberRange": "Lớp 5: tổng ≤ 100; đích trong bảng tối giản quen.",
+    "misconceptions": [
+      {
+        "wrong": "Đề chuyển-qua-lại mà bám neo hiệu (hoặc ngược lại): lấy 99 chia cho 7 − 4 = 3.",
+        "signal": "Giá phần to bất thường (33), thử lại lệch cả giá trị lẫn neo.",
+        "fix": "K3 — gạch chân động từ TRƯỚC: chuyển → tổng phần p + q; cộng/bớt cả hai → hiệu phần q − p.",
+        "counterExample": "99 : 3 = 33 → tử mới 132 > cả tổng — vô lý lộ liễu."
+      }
+    ],
+    "vocabulary": [
+      "cần cẩu chuyển kiện",
+      "cả bè vẫn từng ấy kiện",
+      "tổng phần p + q",
+      "gạch chân động từ",
+      "hai tờ lệnh khác vài chữ"
     ],
     "mantra": "CỘNG CẢ HAI — NEO HIỆU; CHUYỂN QUA LẠI — NEO TỔNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B18_M3_F3.png",
-   "sha256_16": "955368817f59b49c"
   },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "NEO TỔNG: 41/58 CHUYỂN TỪ TỬ XUỐNG MẪU BAO NHIÊU ĐỂ BẰNG 4/7?",
-    "bars": [
-     {
-      "name": "tử mới",
-      "units": 4,
-      "label": "4 phần"
-     },
-     {
-      "name": "mẫu mới",
-      "units": 7,
-      "label": "7 phần"
-     }
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "41 + 58 = ?",
+        "answerKey": {
+          "value": 99
+        }
+      }
     ],
-    "brace": {
-     "text": "tổng 11 phần = 41 + 58 = 99  →  1 phần = 9  →  tử mới 36 → chuyển 5"
+    "onFail": {
+      "action": "suggest_review",
+      "target": "ôn cộng nhẩm (hạt mầm)",
+      "message": "Ôn cộng nhẩm rồi lên buồng lái cần cẩu nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Cáo Đề phát hai tờ lệnh giống nhau như đúc: tờ một \"CỘNG n vào cả tử và mẫu\", tờ hai \"CHUYỂN k từ tử xuống mẫu\". Trí Long làm cả hai bằng đúng một thước hiệu quen tay… Su Kem soi kính lúp vào hai ĐỘNG TỪ khác nhau.",
+        "display": {
+          "type": "story_panel",
+          "caption": "hai tờ lệnh — một thước??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để gạch chân động từ!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 48,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Lệnh CHUYỂN là việc của cần cẩu: chỉ dời kiện giữa hai thùng — cả bè 41 cộng 58 vẫn CHÍN CHÍN kiện: TỔNG là sợi neo! Đích 4/7 gồm 4 cộng 7 bằng MƯỜI MỘT phần cả bè — một phần bằng 99 chia 11: CHÍN kiện. Thùng tử mới cần 4 phần: ba mươi sáu — cẩu chuyển 41 trừ 36 bằng NĂM kiện xuống. Thử: 36/63 đúng 4/7, tổng vẫn 99!",
+        "display": {
+          "type": "crane_interactive",
+          "spec": {
+            "total": 99,
+            "target": "4/7",
+            "parts": 11,
+            "unit": 9,
+            "newNum": 36,
+            "k": 5,
+            "check": "36/63 = 4/7 ✓ · tổng 99 ✓"
+          }
+        },
+        "interaction": {
+          "type": "crane_move",
+          "answerKey": {
+            "value": 5
+          },
+          "successMessage": "Phần 9 → tử mới 36 → chuyển 5 kiện!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "mcq",
+          "text": "Đề \"chuyển k từ tử xuống mẫu\" — chia tổng cho:",
+          "choices": [
+            "p + q (tổng phần đích)",
+            "q − p (hiệu phần)",
+            "luôn chia 2"
+          ],
+          "answerKey": {
+            "choice": "p + q (tổng phần đích)"
+          },
+          "wrongFeedback": "Chuyển → neo TỔNG → tổng phần của đích.",
+          "objective": "O1",
+          "teaches": [
+            "K2",
+            "K3"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 40,
+        "teaches": [
+          "K3"
+        ],
+        "narration": "Vạch mặt trò tráo lệnh: nếu bài chuyển-99-kiện mà bám thước HIỆU — chia 99 cho 7 trừ 4 bằng 3 — ra phần 33, tử mới 132 kiện: to hơn cả bè, vô lý lộ liễu! Phản xạ khắc bảng: gạch chân ĐỘNG TỪ trước khi chọn thước — CỘNG CẢ HAI là bơm hàng từ ngoài: neo hiệu; CHUYỂN QUA LẠI là việc của cẩu: neo tổng. Chiều lên cũng vậy: 13/47 lên 7/13 — tổng 60, hai mươi phần, phần 3, chuyển lên TÁM kiện!",
+        "display": {
+          "type": "counter_example",
+          "cases": [
+            {
+              "input": "bài chuyển mà chia 99 : 3 (hiệu phần)",
+              "output": "phần 33 → tử 132 ✗",
+              "valid": false,
+              "reason": "tráo neo"
+            },
+            {
+              "input": "chia 99 : 11 (tổng phần)",
+              "output": "phần 9 → k = 5 ✓",
+              "valid": true,
+              "reason": "động từ CHUYỂN → neo tổng"
+            }
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú buồng lái: cộng cả hai — neo hiệu; chuyển qua lại — neo tổng!",
+        "display": {
+          "type": "mantra_card",
+          "text": "CỘNG → NEO HIỆU · CHUYỂN → NEO TỔNG!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 90,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "note": "Chuyển qua lại giữa tử và mẫu thì TỔNG không đổi — gạch chân động từ của đề"
-   },
-   "caption": "\"Chuyển xuống\" hay \"chuyển lên\" đều giữ nguyên tổng tử + mẫu",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B18_M3_F4.png",
-   "sha256_16": "ca7424168e02a9be"
-  }
- ]
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Cáo Đề phát hai tờ lệnh giống nhau như đúc: tờ một — CỘNG n vào cả tử và mẫu; tờ hai — CHUYỂN k từ tử xuống mẫu. Trí Long làm cả hai bằng đúng một thước hiệu quen tay… Su Kem soi kính lúp vào hai ĐỘNG TỪ khác nhau!",
+        "screenText": "\"cộng cả hai\" vs \"chuyển qua lại\" — một thước??",
+        "visual": "Hai tờ lệnh song song với hai động từ tô sáng khác màu; Su Kem soi kính lúp; Trí Long cầm một cây thước duy nhất.",
+        "assets": [],
+        "duration": 19
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Lệnh CHUYỂN là việc của cần cẩu: chỉ dời kiện giữa hai thùng — cả bè bốn mốt cộng năm tám vẫn CHÍN CHÍN kiện: TỔNG là sợi neo! Đích bốn phần bảy gồm MƯỜI MỘT phần cả bè — một phần bằng chín kiện. Thùng tử mới cần bốn phần: ba mươi sáu — cẩu chuyển NĂM kiện xuống. Thử: ba sáu phần sáu ba đúng bốn phần bảy, tổng vẫn chín chín!",
+        "screenText": "tổng 99 : 11 phần = 9 → tử mới 36 → chuyển 5 ✓",
+        "visual": "Cần cẩu bốc 5 kiện từ thùng tử sang thùng mẫu; bảng đếm cả bè '99' đứng im; sơ đồ 11 phần với 4 phần tô teal #1FC3A6.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Vạch mặt trò tráo lệnh: bài chuyển mà bám thước HIỆU — chia chín chín cho ba — ra phần ba ba, tử mới một trăm ba hai kiện: TO HƠN CẢ BÈ, vô lý lộ liễu! Gạch chân động từ trước khi chọn thước: CỘNG CẢ HAI — neo hiệu; CHUYỂN QUA LẠI — neo tổng. Chiều lên: mười ba phần bốn bảy — tổng sáu mươi, hai mươi phần, chuyển lên TÁM kiện!",
+        "screenText": "99 : 3 → tử 132 > cả bè ✗ · đúng: 99 : 11 ✓",
+        "visual": "Phép sai với thùng tử phình to vượt bè gạch đỏ #C0392B; phép đúng mộc xanh; ca chiều lên chạy nhanh góc màn với đáp 8.",
+        "assets": [],
+        "duration": 27
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú buồng lái: cộng cả hai — neo hiệu; chuyển qua lại — neo tổng!",
+        "screenText": "CỘNG → HIỆU · CHUYỂN → TỔNG!",
+        "visual": "Thẻ thần chú vàng với icon cần cẩu và mỏ neo.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Ca cẩu của con: mười ba phần bốn bảy — chuyển từ mẫu lên tử mấy đơn vị để thành bảy phần mười ba? Vào bài luyện ngay!",
+        "screenText": "13/47 → 7/13: chuyển lên ?",
+        "visual": "Cần cẩu chờ lệnh với thùng mẫu đầy; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Cần cẩu năm kiện",
+    "problem": "Cho 41/58. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng 4/7?",
+    "steps": [
+      {
+        "show": "Bước 1 — Gạch chân động từ: CHUYỂN → neo TỔNG: 41 + 58 = 99.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Đề này bám neo nào?",
+          "choices": [
+            "neo TỔNG",
+            "neo HIỆU",
+            "cả hai"
+          ],
+          "answerKey": {
+            "choice": "neo TỔNG"
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — Đích 4/7 (tối giản ✓): tổng phần 4 + 7 = 11 → phần = 99 : 11 = 9."
+      },
+      {
+        "show": "Bước 3 — Tử mới = 4 × 9 = 36 → chuyển 41 − 36 = 5. Thử: 36/63 = 4/7 ✓, tổng 99 ✓.",
+        "askAfter": {
+          "format": "num",
+          "text": "Nếu đích là 5/6 (tổng phần 11) thì tử mới bằng?",
+          "answerKey": {
+            "value": 45
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B18.LT6",
+          "text": "Cho phân số 41/58. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng 4/7?",
+          "answerKey": {
+            "value": 5
+          },
+          "hints": [
+            "Chuyển → neo TỔNG 99.",
+            "Tổng phần 11 → phần 9 → tử mới 36."
+          ],
+          "solutionNarrative": "99 : 11 = 9 → tử mới 36 → chuyển 5 (thử 36/63 = 4/7 ✓).",
+          "teaches": [
+            "K1",
+            "K2"
+          ],
+          "generator": {
+            "template": "Cho {a}/{b}, chuyển k từ tử xuống mẫu để được {p}/{q}. Tìm k.",
+            "constraints": {},
+            "answerRule": "(a+b) : (p+q) = phần → k = a − p×phần"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B18.LT8",
+          "text": "Cho phân số 13/47. Chuyển từ MẪU số lên TỬ số bao nhiêu đơn vị để được phân số bằng 7/13?",
+          "answerKey": {
+            "value": 8
+          },
+          "hints": [
+            "Tổng 60; đích 7/13 có tổng phần 20.",
+            "Phần 3 → tử mới 21 → chuyển lên 21 − 13."
+          ],
+          "solutionNarrative": "Phần 3 → tử mới 21 → chuyển lên 8 (thử 21/39 = 7/13 ✓, tổng 60 ✓).",
+          "teaches": [
+            "K2"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "mb",
+          "text": "Hai đề của Cáo Đề: (i) \"cộng n vào cả tử và mẫu của 34/41 để được 6/7\"; (ii) \"chuyển k từ tử xuống mẫu của 41/58 để được 4/7\". Gạch chân động từ và gọi tên neo mỗi đề (chưa cần giải).",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "i",
+                "value": "CỘNG cả hai → neo HIỆU (chia 7 − 6)",
+                "options": [
+                  "CỘNG cả hai → neo HIỆU",
+                  "CHUYỂN qua lại → neo TỔNG"
+                ]
+              },
+              {
+                "label": "ii",
+                "value": "CHUYỂN qua lại → neo TỔNG (chia 4 + 7)",
+                "options": [
+                  "CỘNG cả hai → neo HIỆU",
+                  "CHUYỂN qua lại → neo TỔNG"
+                ]
+              }
+            ]
+          },
+          "hints": [
+            "Động từ nào bơm hàng, động từ nào dời hàng?",
+            "Hiệu phần q − p vs tổng phần p + q."
+          ],
+          "teaches": [
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:II.1.2#3@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B19.M1",
+      "award": "huy_hieu_can_cau"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B18.QZ2",
+        "text": "(Đúng/Sai?) Chuyển k đơn vị từ tử xuống mẫu thì tổng tử và mẫu không đổi.",
+        "answerKey": {
+          "value": true
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "text": "Đề \"chuyển qua lại\" chia tổng gốc cho:",
+        "choices": [
+          "tổng phần p + q của đích",
+          "hiệu phần q − p",
+          "số k cần tìm"
+        ],
+        "answerKey": {
+          "choice": "tổng phần p + q của đích"
+        },
+        "teaches": [
+          "K2",
+          "K3"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "num",
+        "text": "Cho 41/58 → 4/7: giá một phần bằng bao nhiêu?",
+        "answerKey": {
+          "value": 9
+        },
+        "teaches": [
+          "K2"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Bài neo TỔNG giải sao? Phân biệt với neo hiệu bằng gì?",
+        "back": "Chuyển qua lại → TỔNG không đổi: tổng : (p + q) = phần → tử mới = p × phần → k. Phân biệt bằng ĐỘNG TỪ: cộng/bớt CẢ HAI → neo hiệu (q − p); CHUYỂN → neo tổng (p + q). 41/58 → 4/7: phần 9, chuyển 5."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P3 (gọi tên neo)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con giải bài neo tổng (cần cẩu chuyển kiện) và luyện phản xạ gạch chân động từ chọn neo. Con đạt {score}/3, {trapResult} câu bẫy tráo-neo.",
+    "homeActivity": "Trò hai hộp kẹo: chuyển 3 viên từ hộp A sang B — hỏi con 'tổng hai hộp đổi chưa?' rồi đọc thần chú chọn neo.",
+    "watchFor": "Nếu con dùng nhầm thước — cho thấy phần 33 tử 132 vô lý (S3) và bắt gạch chân động từ trước."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B18.M3",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "hai tờ lệnh — một thước??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Hai tờ lệnh giống hệt nhau mà — cùng một thước là xong!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Tớ soi kính lúp vào ĐỘNG TỪ nhé: tờ này ghi CỘNG, tờ kia ghi CHUYỂN. Cậu thấy khác chưa?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B18_M3_F1.png",
+      "sha256_16": "fed86af36d90a1ec"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+        "wrong": {
+          "head": "CÁCH SAI",
+          "steps": [
+            "bài chuyển mà chia 99 : 3 (hiệu phần)"
+          ],
+          "result": "phần 33 → tử 132"
+        },
+        "right": {
+          "head": "CÁCH ĐÚNG",
+          "steps": [
+            "chia 99 : 11 (tổng phần)"
+          ],
+          "result": "phần 9 → k = 5"
+        },
+        "verdict": "động từ CHUYỂN → neo tổng"
+      },
+      "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B18_M3_F2.png",
+      "sha256_16": "ae8156ee3ce409df"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Chuyển k đơn vị giữa tử và mẫu",
+            "text": "TỔNG tử + mẫu KHÔNG đổi (hàng chỉ dời thùng, cả bè vẫn từng ấy kiện).",
+            "tone": "navy"
+          },
+          {
+            "label": "Ba nhịp neo tổng",
+            "text": "(1) tối giản đích p/q",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "CỘNG CẢ HAI — NEO HIỆU; CHUYỂN QUA LẠI — NEO TỔNG!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B18_M3_F3.png",
+      "sha256_16": "955368817f59b49c"
+    },
+    {
+      "archetype": "bar_diagram",
+      "params": {
+        "title": "NEO TỔNG: 41/58 CHUYỂN TỪ TỬ XUỐNG MẪU BAO NHIÊU ĐỂ BẰNG 4/7?",
+        "bars": [
+          {
+            "name": "tử mới",
+            "units": 4,
+            "label": "4 phần"
+          },
+          {
+            "name": "mẫu mới",
+            "units": 7,
+            "label": "7 phần"
+          }
+        ],
+        "brace": {
+          "text": "tổng 11 phần = 41 + 58 = 99  →  1 phần = 9  →  tử mới 36 → chuyển 5"
+        },
+        "note": "Chuyển qua lại giữa tử và mẫu thì TỔNG không đổi — gạch chân động từ của đề"
+      },
+      "caption": "\"Chuyển xuống\" hay \"chuyển lên\" đều giữ nguyên tổng tử + mẫu",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B18_M3_F4.png",
+      "sha256_16": "ca7424168e02a9be"
+    }
+  ]
 }

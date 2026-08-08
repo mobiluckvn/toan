@@ -1,645 +1,645 @@
 {
- "title": "Thành viên đến – rời: qua cầu tổng, đếm lại quân số rồi mới chia",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:III.1.3#1"
-  ],
-  "bktUnit": "CASE:III.1.3#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B23",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B22.M3",
-  "next": "DL:KSN5Q1.B23.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B23",
-  "chunks": [
-   "CHUNK:KSN5Q1.B23.S3",
-   "CHUNK:KSN5Q1.B23.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B23.1",
-   "CA:KSN5Q1.B23.2"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B23.1",
-   "TRAP:KSN5Q1.B23.2"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con tính được TBC MỚI khi có thành viên đến / rời bằng BA NHỊP: tổng cũ (TBC × n) → tổng mới (cộng / trừ phần mang) → chia số người MỚI — tuyệt đối không cân một người ngang cả nhóm kiểu (25 + 40) : 2, và luôn đếm lại quân số sau mỗi biến động.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
-  "kidText": "Có bạn đến hoặc rời nhóm: con đi qua cây cầu tổng — tính tổng cũ, sửa tổng, rồi chia cho số người MỚI."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Thêm người: tổng cũ = TBC × n → tổng mới = tổng cũ + phần người mới mang → TBC mới = tổng mới : (n + 1). Ba nhịp luôn đi qua cây cầu TỔNG."
-   },
-   {
-    "id": "K2",
-    "text": "Cấm phép (TBC cũ + số người mới) : 2 — TBC cũ đại diện cho n bạn, còn phần mang chỉ là MỘT bạn: hai đại lượng khác vai, không được cân ngang nhau."
-   },
-   {
-    "id": "K3",
-    "text": "Rời đi: tổng − phần mang đi → chia (n − 1). Chiều nghiêng: người trên mốc rời đi thì cân TỤT; người dưới mốc rời đi thì cân NHÍCH."
-   },
-   {
-    "id": "K4",
-    "text": "Nghi thức ĐẾM LẠI QUÂN SỐ ngay sau mỗi biến động (\"giờ nhóm mấy người?\") — vào thêm chia (n + 1), rời bớt chia (n − 1), vừa rời vừa vào chia đúng số hiện diện."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: CÁNH CỬA PHÒNG SINH HOẠT NHÓM. Nhóm bốn bạn TBC 25 viên kẹo — Su Bống đẩy cửa bước vào, tay ôm túi 40 viên. Trí Long nhanh nhảu: \"25 với 40 — cân đôi: 32,5!\" Sai vai rồi: con số 25 là ĐẠI DIỆN của BỐN bạn, còn 40 chỉ là MỘT bạn — một người không cân ngang cả nhóm! Muốn gộp phải qua CẦU TỔNG: bốn bạn góp 25 × 4 = 100 viên; Su Bống đổ thêm 40 — rổ chung 140; và trước khi chia, ngoảnh ra CÁNH CỬA đếm lại quân số: giờ là NĂM người — 140 : 5 = 28. Người rời đi cũng vậy: bạn ôm 40 viên bước ra — rổ còn 100, cửa đóng còn 4 người: 100 : 4 = 25 — người trên mốc rời đi, cân tụt.",
-  "canonicalExamples": [
-   {
-    "case": "thêm người (ca lõi)",
-    "problem": "Nhóm 4 bạn có tổng 100 viên kẹo; một bạn mang 40 viên vào nhóm. Tính TBC mới của cả 5 bạn.",
-    "solution": "Tổng mới = 100 + 40 = 140; quân số MỚI = 5 → TBC = 140 : 5 = 28 viên.",
-    "why": "Ca đề A câu 8 — ba nhịp chuẩn."
-   },
-   {
-    "case": "rời đi (ca chiều ngược)",
-    "problem": "Nhóm 5 bạn có TBC 28 viên. Bạn cầm 40 viên rời nhóm. Tính TBC của 4 bạn còn lại.",
-    "solution": "Tổng = 28 × 5 = 140 → còn 140 − 40 = 100; quân số 4 → TBC = 25. (Người trên mốc rời — cân tụt 28 → 25 ✓.)",
-    "why": "Ca đề A câu 10 — trừ phần mang, chia n − 1."
-   },
-   {
-    "case": "vừa rời vừa vào (ca kép)",
-    "problem": "Nhóm 5 bạn có TBC 28 viên. Bạn cầm 40 viên rời đi, đồng thời một bạn mang 20 viên vào thay. Tính TBC mới.",
-    "solution": "Tổng mới = 140 − 40 + 20 = 120; quân số vẫn 5 → TBC = 24. (Cân tụt 4 nấc = phần hụt 20 : 5.)",
-    "why": "Ca LT8 — hai biến động, quân số không đổi."
-   }
-  ],
-  "numberRange": "Lớp 5: nhóm 2–6 người; tổng ≤ 300.",
-  "misconceptions": [
-   {
-    "wrong": "Cân người mới ngang cả nhóm: (25 + 40) : 2 = 32,5.",
-    "signal": "Phép chia cho 2 xuất hiện khi nhóm đâu có 2 người.",
-    "fix": "K1 + K2 — 25 đại diện BỐN bạn, 40 là MỘT bạn: khác vai — muốn gộp phải qua cầu tổng (100 + 40) : 5.",
-    "counterExample": "Thử 32,5: tổng phải là 162,5 — mà rổ thật chỉ có 140 viên!"
-   },
-   {
-    "wrong": "Chia nhầm quân số: tổng mới 140 chia cho 4 (quên đếm Su Bống), hoặc bạn rời rồi vẫn chia cho 5.",
-    "signal": "Mẫu số của phép chia không khớp số người hiện diện.",
-    "fix": "K4 — nghi thức ngoảnh ra cánh cửa: 'giờ nhóm mấy người?' — đếm xong mới chia.",
-    "counterExample": "140 : 4 = 35 → thử ngược 35 × 5 = 175 ≠ 140 — lệch ngay."
-   }
-  ],
-  "vocabulary": [
-   "cánh cửa phòng nhóm",
-   "một người không cân ngang cả nhóm",
-   "cầu tổng ba nhịp",
-   "đếm lại quân số",
-   "cân tụt / cân nhích"
-  ],
-  "mantra": "MUỐN GỘP — QUA TỔNG; CỬA MỞ RA VÀO — ĐẾM LẠI QUÂN SỐ!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "TBC 4 bạn là 25 — tổng nhóm = ?",
-    "answerKey": {
-     "value": 100
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B21.M1",
-   "message": "Ôn cầu tổng rồi mở cửa phòng nhóm nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Phòng nhóm bốn bạn, TBC 25 viên kẹo. Su Bống đẩy cửa vào, ôm túi 40 viên. Trí Long nhanh nhảu: \"25 với 40 — cân đôi ra 32,5!\" Su Kem chỉ vào bốn bạn đang ngồi: \"Con số 25 đại diện cho MẤY người thế?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "(25 + 40) : 2??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để qua cầu tổng!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2",
-     "K4"
+  "title": "Thành viên đến – rời: qua cầu tổng, đếm lại quân số rồi mới chia",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:III.1.3#1"
     ],
-    "narration": "Số 25 là ĐẠI DIỆN của BỐN bạn — còn 40 chỉ là MỘT bạn: khác vai, không cân ngang nhau được! Qua cầu tổng ba nhịp: nhịp một — tổng cũ hai lăm nhân bốn bằng MỘT TRĂM; nhịp hai — Su Bống đổ thêm bốn mươi: rổ chung MỘT TRĂM BỐN MƯƠI; nhịp ba — ngoảnh ra cánh cửa đếm quân số: NĂM người — một trăm bốn mươi chia năm bằng HAI MƯƠI TÁM!",
-    "display": {
-     "type": "door_pool_interactive",
-     "spec": {
-      "oldTbc": 25,
-      "n": 4,
-      "bring": 40,
-      "total": 140,
-      "newN": 5,
-      "newTbc": 28
-     }
-    },
-    "interaction": {
-     "type": "three_beats",
-     "answerKey": {
-      "value": 28
-     },
-     "successMessage": "100 → 140 → : 5 = 28 — ba nhịp qua cầu tổng!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "num",
-     "text": "Năm ngày đầu bán tổng 155 chiếc; thứ Bảy bán 55 chiếc. TBC cả 6 ngày = ?",
-     "answerKey": {
-      "value": 35
-     },
-     "wrongFeedback": "(155 + 55) : 6.",
-     "objective": "O1",
-     "teaches": [
-      "K1",
-      "K4"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K3",
-     "K4"
+    "bktUnit": "CASE:III.1.3#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B23",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B22.M3",
+    "next": "DL:KSN5Q1.B23.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B23",
+    "chunks": [
+      "CHUNK:KSN5Q1.B23.S3",
+      "CHUNK:KSN5Q1.B23.S4"
     ],
-    "narration": "Chiều cửa ra: bạn ôm bốn mươi viên rời nhóm năm người TBC hai tám. Tổng một trăm bốn mươi trừ bốn mươi còn MỘT TRĂM — và đếm lại quân số: cửa đóng còn BỐN người — chia bốn: HAI MƯƠI LĂM. Người trên mốc rời đi, cân tụt từ hai tám xuống hai lăm! Ca kép: người ôm bốn mươi ra, người mang hai mươi vào thay — rổ một trăm hai mươi, quân số VẪN NĂM: TBC hai tư — cân tụt bốn nấc đúng bằng phần hụt hai mươi chia năm!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "rời: (140 − 40) : 4 = 25 (đếm lại: 4 người!)",
-      "kép: 140 − 40 + 20 = 120 : 5 = 24",
-      "hụt 20 : 5 người = tụt 4 nấc ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai thần chú phòng nhóm: một người không cân ngang cả nhóm — muốn gộp phải qua tổng! Cửa mở ra vào — đếm lại quân số trước khi chia!",
-    "display": {
-     "type": "mantra_card",
-     "text": "QUA TỔNG · ĐẾM LẠI QUÂN SỐ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 89,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Phòng nhóm bốn bạn, TBC hai lăm viên kẹo. Su Bống đẩy cửa vào, ôm túi bốn mươi viên. Trí Long nhanh nhảu: hai lăm với bốn mươi — cân đôi ra ba hai phẩy năm! Su Kem chỉ vào bốn bạn đang ngồi: con số hai lăm đại diện cho MẤY người thế?",
-    "screenText": "(25 + 40) : 2 = 32,5??",
-    "visual": "Cửa phòng nhóm mở; Su Bống ôm túi kẹo 40; bốn bạn ngồi quanh bàn dưới tấm biển '25'; dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 19
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Số hai lăm là ĐẠI DIỆN của BỐN bạn — còn bốn mươi chỉ là MỘT bạn: khác vai, không cân ngang nhau! Qua cầu tổng ba nhịp: tổng cũ hai lăm nhân bốn bằng MỘT TRĂM; Su Bống đổ thêm bốn mươi: rổ chung MỘT TRĂM BỐN MƯƠI; ngoảnh ra cánh cửa đếm quân số: NĂM người — chia năm bằng HAI MƯƠI TÁM!",
-    "screenText": "100 + 40 = 140 → đếm: 5 người → 140 : 5 = 28",
-    "visual": "Bốn bạn đổ kẹo vào rổ chung '100'; túi 40 đổ tiếp thành '140'; bảng đếm quân số nhảy 4→5 cạnh cánh cửa; đáp 28 vàng.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Chiều cửa ra: bạn ôm bốn mươi viên rời nhóm năm người TBC hai tám. Tổng một trăm bốn mươi trừ bốn mươi còn MỘT TRĂM — đếm lại quân số: còn BỐN người — chia bốn: HAI MƯƠI LĂM. Người trên mốc rời, cân tụt! Ca kép: người ôm bốn mươi ra, người mang hai mươi vào thay — rổ một trăm hai mươi, quân số VẪN NĂM: TBC hai tư!",
-    "screenText": "rời: 100 : 4 = 25 · kép: 120 : 5 = 24 (đếm quân số!)",
-    "visual": "Cửa xoay hai chiều với bảng quân số nhấp nháy; phép chia cho 5 khi chỉ còn 4 người bị gạch đỏ; kim cân tụt 28→25 và 28→24.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Hai thần chú phòng nhóm: một người không cân ngang cả nhóm — muốn gộp phải qua tổng! Cửa mở ra vào — đếm lại quân số trước khi chia!",
-    "screenText": "QUA TỔNG · ĐẾM QUÂN SỐ!",
-    "visual": "Thẻ thần chú vàng với icon cánh cửa và rổ kẹo.",
-    "assets": [],
-    "duration": 11
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Cửa phòng của con: nhóm bốn bạn tổng một trăm viên, bạn mang bốn mươi viên vào — TBC mới của cả năm bạn? Vào bài luyện ngay!",
-    "screenText": "(100 + 40) : ? = ?",
-    "visual": "Cửa hé mở với túi kẹo chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Ba nhịp qua cầu tổng",
-  "problem": "Nhóm 4 bạn có TBC 25 viên. Su Bống mang 40 viên vào nhóm. Tính TBC mới của cả 5 bạn.",
-  "steps": [
-   {
-    "show": "Bước 1 — Tổng cũ: 25 × 4 = 100 viên.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Vì sao không lấy (25 + 40) : 2?",
-     "choices": [
-      "25 đại diện 4 bạn, 40 là 1 bạn — khác vai",
-      "Vì 2 số lẻ",
-      "Lấy được"
-     ],
-     "answerKey": {
-      "choice": "25 đại diện 4 bạn, 40 là 1 bạn — khác vai"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Tổng mới: 100 + 40 = 140; đếm quân số: 5 người."
-   },
-   {
-    "show": "Bước 3 — TBC mới = 140 : 5 = 28 viên.",
-    "askAfter": {
-     "format": "num",
-     "text": "Bạn cầm 40 viên rời nhóm 5 người ấy — TBC còn lại = ?",
-     "answerKey": {
-      "value": 25
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B23.LT1",
-     "text": "Nhóm 4 bạn có TBC 25 viên kẹo. Tính tổng số kẹo của nhóm.",
-     "answerKey": {
-      "value": 100
-     },
-     "hints": [
-      "Cầu ngược Bài 21.",
-      "25 × 4."
-     ],
-     "solutionNarrative": "25 × 4 = 100 viên.",
-     "teaches": [
-      "K1"
-     ]
-    },
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B23.LT2",
-     "text": "Nhóm 4 bạn có tổng 100 viên kẹo; một bạn mang 40 viên vào nhóm. Tính TBC mới của cả 5 bạn.",
-     "answerKey": {
-      "value": 28
-     },
-     "hints": [
-      "Tổng mới 140.",
-      "Đếm quân số: 5."
-     ],
-     "solutionNarrative": "(100 + 40) : 5 = 28.",
-     "teaches": [
-      "K1",
-      "K2",
-      "K4"
-     ],
-     "generator": {
-      "template": "Nhóm {n} TBC {t}; người mới mang {m}. Tính TBC mới.",
-      "constraints": {},
-      "answerRule": "(t×n + m) : (n+1)"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P3",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B23.LT3",
-     "text": "Năm ngày đầu tuần tiệm bán tổng 155 chiếc bánh. Thứ Bảy bán 55 chiếc. Tính TBC cả 6 ngày.",
-     "answerKey": {
-      "value": 35
-     },
-     "hints": [
-      "Tổng mới 210.",
-      "Chia 6 ngày."
-     ],
-     "solutionNarrative": "(155 + 55) : 6 = 35 chiếc.",
-     "teaches": [
-      "K1",
-      "K4"
-     ]
-    },
-    {
-     "id": "P4",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B23.LT5",
-     "text": "Nhóm 5 bạn có TBC 28 viên. Bạn cầm 40 viên rời nhóm. Tính TBC của 4 bạn còn lại.",
-     "answerKey": {
-      "value": 25
-     },
-     "hints": [
-      "Tổng 140 trừ phần mang đi.",
-      "Đếm lại: còn 4 người."
-     ],
-     "solutionNarrative": "(140 − 40) : 4 = 25 — người trên mốc rời, cân tụt.",
-     "teaches": [
-      "K3",
-      "K4"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P5",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B23.LT8",
-     "text": "Nhóm 5 bạn có TBC 28 viên. Bạn cầm 40 viên rời đi, đồng thời một bạn mang 20 viên vào thay. Tính TBC mới.",
-     "answerKey": {
-      "value": 24
-     },
-     "hints": [
-      "140 − 40 + 20.",
-      "Quân số vẫn 5!"
-     ],
-     "solutionNarrative": "120 : 5 = 24 (tụt 4 nấc = hụt 20 : 5).",
-     "teaches": [
-      "K3",
-      "K4"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.1.3#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B23.M2",
-   "award": "huy_hieu_canh_cua"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P2"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B23.QZ1",
-    "text": "(Đúng/Sai?) Thêm bạn mang 40 viên vào nhóm TBC 25 thì TBC mới là (25 + 40) : 2.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B23.QZ4",
-    "text": "Sau khi thêm một bạn, ta chia tổng mới cho:",
-    "choices": [
-     "số người mới",
-     "số người cũ",
-     "2"
+    "cases": [
+      "CA:KSN5Q1.B23.1",
+      "CA:KSN5Q1.B23.2"
     ],
-    "answerKey": {
-     "choice": "số người mới"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K4"
+    "traps": [
+      "TRAP:KSN5Q1.B23.1",
+      "TRAP:KSN5Q1.B23.2"
     ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B23.QZ3",
-    "text": "Nhóm 4 bạn TBC 25, thêm bạn mang 40 → TBC mới:",
-    "choices": [
-     "28",
-     "32,5",
-     "30"
-    ],
-    "answerKey": {
-     "choice": "28"
-    },
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A4",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B23.QZ2",
-    "text": "(Đúng/Sai?) Người mang nhiều hơn TBC rời nhóm thì TBC của nhóm giảm.",
-    "answerKey": {
-     "value": true
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Thêm / rời thành viên — TBC mới tính sao?",
-    "back": "BA NHỊP qua cầu TỔNG: tổng cũ (TBC × n) → cộng/trừ phần mang → chia số người MỚI (đếm lại quân số!). Cấm (TBC + phần mang) : 2 — một người không cân ngang cả nhóm. Người trên mốc rời → cân tụt."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P2",
-   "+7 ngày: câu P5 (ca kép)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học ba nhịp thêm/rời thành viên: qua cầu tổng và đếm lại quân số. Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Chơi rổ kẹo thật: 4 hộp TBC 25, thêm hộp 40 — con đổ chung, đếm hộp, chia lại và so với phép (25 + 40) : 2 để thấy vô lý.",
-  "watchFor": "Nếu con chia nhầm quân số — dựng nghi thức ngoảnh-ra-cánh-cửa: hỏi 'giờ nhóm mấy người?' trước mọi phép chia."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B23.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "(25 + 40) : 2??",
-    "lines": [
-     {
-      "who": "Su Bống",
-      "say": "25 với 40 — cân đôi ra 32,5!",
-      "tone": "right"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Con số 25 đại diện cho MẤY người thế?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B23_M1_F1.png",
-   "sha256_16": "514b36ecfe000f21"
   },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con tính được TBC MỚI khi có thành viên đến / rời bằng BA NHỊP: tổng cũ (TBC × n) → tổng mới (cộng / trừ phần mang) → chia số người MỚI — tuyệt đối không cân một người ngang cả nhóm kiểu (25 + 40) : 2, và luôn đếm lại quân số sau mỗi biến động.",
-    "steps": [
-     {
-      "text": "rời: (140 − 40) : 4 = 25 (đếm lại: 4 người!)"
-     },
-     {
-      "text": "kép: 140 − 40 + 20 = 120 : 5 = 24"
-     },
-     {
-      "text": "hụt 20 : 5 người = tụt 4 nấc"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B23_M1_F2.png",
-   "sha256_16": "860d1c7af59ff16e"
+  "objective": {
+    "id": "O1",
+    "text": "Con tính được TBC MỚI khi có thành viên đến / rời bằng BA NHỊP: tổng cũ (TBC × n) → tổng mới (cộng / trừ phần mang) → chia số người MỚI — tuyệt đối không cân một người ngang cả nhóm kiểu (25 + 40) : 2, và luôn đếm lại quân số sau mỗi biến động.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
+    "kidText": "Có bạn đến hoặc rời nhóm: con đi qua cây cầu tổng — tính tổng cũ, sửa tổng, rồi chia cho số người MỚI."
   },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Thêm người",
-      "text": "tổng cũ = TBC × n → tổng mới = tổng cũ + phần người mới mang → TBC mới = tổng mới : (n + 1). Ba nhịp luôn đi qua cây cầu TỔNG.",
-      "tone": "navy"
-     },
-     {
-      "label": "Cấm phép (TBC cũ + số người mới)",
-      "text": "2 — TBC cũ đại diện cho n bạn, còn phần mang chỉ là MỘT bạn: hai đại lượng khác vai, không được cân ngang nhau.",
-      "tone": "teal"
-     }
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Thêm người: tổng cũ = TBC × n → tổng mới = tổng cũ + phần người mới mang → TBC mới = tổng mới : (n + 1). Ba nhịp luôn đi qua cây cầu TỔNG."
+      },
+      {
+        "id": "K2",
+        "text": "Cấm phép (TBC cũ + số người mới) : 2 — TBC cũ đại diện cho n bạn, còn phần mang chỉ là MỘT bạn: hai đại lượng khác vai, không được cân ngang nhau."
+      },
+      {
+        "id": "K3",
+        "text": "Rời đi: tổng − phần mang đi → chia (n − 1). Chiều nghiêng: người trên mốc rời đi thì cân TỤT; người dưới mốc rời đi thì cân NHÍCH."
+      },
+      {
+        "id": "K4",
+        "text": "Nghi thức ĐẾM LẠI QUÂN SỐ ngay sau mỗi biến động (\"giờ nhóm mấy người?\") — vào thêm chia (n + 1), rời bớt chia (n − 1), vừa rời vừa vào chia đúng số hiện diện."
+      }
+    ],
+    "mechanism": "Hình ảnh brand: CÁNH CỬA PHÒNG SINH HOẠT NHÓM. Nhóm bốn bạn TBC 25 viên kẹo — Su Bống đẩy cửa bước vào, tay ôm túi 40 viên. Trí Long nhanh nhảu: \"25 với 40 — cân đôi: 32,5!\" Sai vai rồi: con số 25 là ĐẠI DIỆN của BỐN bạn, còn 40 chỉ là MỘT bạn — một người không cân ngang cả nhóm! Muốn gộp phải qua CẦU TỔNG: bốn bạn góp 25 × 4 = 100 viên; Su Bống đổ thêm 40 — rổ chung 140; và trước khi chia, ngoảnh ra CÁNH CỬA đếm lại quân số: giờ là NĂM người — 140 : 5 = 28. Người rời đi cũng vậy: bạn ôm 40 viên bước ra — rổ còn 100, cửa đóng còn 4 người: 100 : 4 = 25 — người trên mốc rời đi, cân tụt.",
+    "canonicalExamples": [
+      {
+        "case": "thêm người (ca lõi)",
+        "problem": "Nhóm 4 bạn có tổng 100 viên kẹo; một bạn mang 40 viên vào nhóm. Tính TBC mới của cả 5 bạn.",
+        "solution": "Tổng mới = 100 + 40 = 140; quân số MỚI = 5 → TBC = 140 : 5 = 28 viên.",
+        "why": "Ca đề A câu 8 — ba nhịp chuẩn."
+      },
+      {
+        "case": "rời đi (ca chiều ngược)",
+        "problem": "Nhóm 5 bạn có TBC 28 viên. Bạn cầm 40 viên rời nhóm. Tính TBC của 4 bạn còn lại.",
+        "solution": "Tổng = 28 × 5 = 140 → còn 140 − 40 = 100; quân số 4 → TBC = 25. (Người trên mốc rời — cân tụt 28 → 25 ✓.)",
+        "why": "Ca đề A câu 10 — trừ phần mang, chia n − 1."
+      },
+      {
+        "case": "vừa rời vừa vào (ca kép)",
+        "problem": "Nhóm 5 bạn có TBC 28 viên. Bạn cầm 40 viên rời đi, đồng thời một bạn mang 20 viên vào thay. Tính TBC mới.",
+        "solution": "Tổng mới = 140 − 40 + 20 = 120; quân số vẫn 5 → TBC = 24. (Cân tụt 4 nấc = phần hụt 20 : 5.)",
+        "why": "Ca LT8 — hai biến động, quân số không đổi."
+      }
+    ],
+    "numberRange": "Lớp 5: nhóm 2–6 người; tổng ≤ 300.",
+    "misconceptions": [
+      {
+        "wrong": "Cân người mới ngang cả nhóm: (25 + 40) : 2 = 32,5.",
+        "signal": "Phép chia cho 2 xuất hiện khi nhóm đâu có 2 người.",
+        "fix": "K1 + K2 — 25 đại diện BỐN bạn, 40 là MỘT bạn: khác vai — muốn gộp phải qua cầu tổng (100 + 40) : 5.",
+        "counterExample": "Thử 32,5: tổng phải là 162,5 — mà rổ thật chỉ có 140 viên!"
+      },
+      {
+        "wrong": "Chia nhầm quân số: tổng mới 140 chia cho 4 (quên đếm Su Bống), hoặc bạn rời rồi vẫn chia cho 5.",
+        "signal": "Mẫu số của phép chia không khớp số người hiện diện.",
+        "fix": "K4 — nghi thức ngoảnh ra cánh cửa: 'giờ nhóm mấy người?' — đếm xong mới chia.",
+        "counterExample": "140 : 4 = 35 → thử ngược 35 × 5 = 175 ≠ 140 — lệch ngay."
+      }
+    ],
+    "vocabulary": [
+      "cánh cửa phòng nhóm",
+      "một người không cân ngang cả nhóm",
+      "cầu tổng ba nhịp",
+      "đếm lại quân số",
+      "cân tụt / cân nhích"
     ],
     "mantra": "MUỐN GỘP — QUA TỔNG; CỬA MỞ RA VÀO — ĐẾM LẠI QUÂN SỐ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B23_M1_F3.png",
-   "sha256_16": "70ef11e266f45ffe"
   },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "THÊM NGƯỜI VÀO NHÓM — BA NHỊP QUA CẦU TỔNG",
-    "steps": [
-     {
-      "text": "Tổng cũ",
-      "sub": "4 bạn có 100 viên"
-     },
-     {
-      "text": "Tổng mới",
-      "sub": "100 + 40 = 140 viên"
-     },
-     {
-      "text": "Chia QUÂN SỐ MỚI",
-      "sub": "140 : 5 = 28 viên"
-     }
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "TBC 4 bạn là 25 — tổng nhóm = ?",
+        "answerKey": {
+          "value": 100
+        }
+      }
     ],
-    "note": "Nhớ đếm lại quân số: chia cho 5 chứ không phải 4"
-   },
-   "caption": "Ba nhịp: tổng cũ → tổng mới → chia số người mới",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B23_M1_F4.png",
-   "sha256_16": "95bc2d749c3ee49a"
-  }
- ]
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B21.M1",
+      "message": "Ôn cầu tổng rồi mở cửa phòng nhóm nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Phòng nhóm bốn bạn, TBC 25 viên kẹo. Su Bống đẩy cửa vào, ôm túi 40 viên. Trí Long nhanh nhảu: \"25 với 40 — cân đôi ra 32,5!\" Su Kem chỉ vào bốn bạn đang ngồi: \"Con số 25 đại diện cho MẤY người thế?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "(25 + 40) : 2??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để qua cầu tổng!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2",
+          "K4"
+        ],
+        "narration": "Số 25 là ĐẠI DIỆN của BỐN bạn — còn 40 chỉ là MỘT bạn: khác vai, không cân ngang nhau được! Qua cầu tổng ba nhịp: nhịp một — tổng cũ hai lăm nhân bốn bằng MỘT TRĂM; nhịp hai — Su Bống đổ thêm bốn mươi: rổ chung MỘT TRĂM BỐN MƯƠI; nhịp ba — ngoảnh ra cánh cửa đếm quân số: NĂM người — một trăm bốn mươi chia năm bằng HAI MƯƠI TÁM!",
+        "display": {
+          "type": "door_pool_interactive",
+          "spec": {
+            "oldTbc": 25,
+            "n": 4,
+            "bring": 40,
+            "total": 140,
+            "newN": 5,
+            "newTbc": 28
+          }
+        },
+        "interaction": {
+          "type": "three_beats",
+          "answerKey": {
+            "value": 28
+          },
+          "successMessage": "100 → 140 → : 5 = 28 — ba nhịp qua cầu tổng!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "num",
+          "text": "Năm ngày đầu bán tổng 155 chiếc; thứ Bảy bán 55 chiếc. TBC cả 6 ngày = ?",
+          "answerKey": {
+            "value": 35
+          },
+          "wrongFeedback": "(155 + 55) : 6.",
+          "objective": "O1",
+          "teaches": [
+            "K1",
+            "K4"
+          ]
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 42,
+        "teaches": [
+          "K3",
+          "K4"
+        ],
+        "narration": "Chiều cửa ra: bạn ôm bốn mươi viên rời nhóm năm người TBC hai tám. Tổng một trăm bốn mươi trừ bốn mươi còn MỘT TRĂM — và đếm lại quân số: cửa đóng còn BỐN người — chia bốn: HAI MƯƠI LĂM. Người trên mốc rời đi, cân tụt từ hai tám xuống hai lăm! Ca kép: người ôm bốn mươi ra, người mang hai mươi vào thay — rổ một trăm hai mươi, quân số VẪN NĂM: TBC hai tư — cân tụt bốn nấc đúng bằng phần hụt hai mươi chia năm!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "rời: (140 − 40) : 4 = 25 (đếm lại: 4 người!)",
+            "kép: 140 − 40 + 20 = 120 : 5 = 24",
+            "hụt 20 : 5 người = tụt 4 nấc ✓"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Hai thần chú phòng nhóm: một người không cân ngang cả nhóm — muốn gộp phải qua tổng! Cửa mở ra vào — đếm lại quân số trước khi chia!",
+        "display": {
+          "type": "mantra_card",
+          "text": "QUA TỔNG · ĐẾM LẠI QUÂN SỐ!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 89,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Phòng nhóm bốn bạn, TBC hai lăm viên kẹo. Su Bống đẩy cửa vào, ôm túi bốn mươi viên. Trí Long nhanh nhảu: hai lăm với bốn mươi — cân đôi ra ba hai phẩy năm! Su Kem chỉ vào bốn bạn đang ngồi: con số hai lăm đại diện cho MẤY người thế?",
+        "screenText": "(25 + 40) : 2 = 32,5??",
+        "visual": "Cửa phòng nhóm mở; Su Bống ôm túi kẹo 40; bốn bạn ngồi quanh bàn dưới tấm biển '25'; dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 19
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Số hai lăm là ĐẠI DIỆN của BỐN bạn — còn bốn mươi chỉ là MỘT bạn: khác vai, không cân ngang nhau! Qua cầu tổng ba nhịp: tổng cũ hai lăm nhân bốn bằng MỘT TRĂM; Su Bống đổ thêm bốn mươi: rổ chung MỘT TRĂM BỐN MƯƠI; ngoảnh ra cánh cửa đếm quân số: NĂM người — chia năm bằng HAI MƯƠI TÁM!",
+        "screenText": "100 + 40 = 140 → đếm: 5 người → 140 : 5 = 28",
+        "visual": "Bốn bạn đổ kẹo vào rổ chung '100'; túi 40 đổ tiếp thành '140'; bảng đếm quân số nhảy 4→5 cạnh cánh cửa; đáp 28 vàng.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Chiều cửa ra: bạn ôm bốn mươi viên rời nhóm năm người TBC hai tám. Tổng một trăm bốn mươi trừ bốn mươi còn MỘT TRĂM — đếm lại quân số: còn BỐN người — chia bốn: HAI MƯƠI LĂM. Người trên mốc rời, cân tụt! Ca kép: người ôm bốn mươi ra, người mang hai mươi vào thay — rổ một trăm hai mươi, quân số VẪN NĂM: TBC hai tư!",
+        "screenText": "rời: 100 : 4 = 25 · kép: 120 : 5 = 24 (đếm quân số!)",
+        "visual": "Cửa xoay hai chiều với bảng quân số nhấp nháy; phép chia cho 5 khi chỉ còn 4 người bị gạch đỏ; kim cân tụt 28→25 và 28→24.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Hai thần chú phòng nhóm: một người không cân ngang cả nhóm — muốn gộp phải qua tổng! Cửa mở ra vào — đếm lại quân số trước khi chia!",
+        "screenText": "QUA TỔNG · ĐẾM QUÂN SỐ!",
+        "visual": "Thẻ thần chú vàng với icon cánh cửa và rổ kẹo.",
+        "assets": [],
+        "duration": 11
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Cửa phòng của con: nhóm bốn bạn tổng một trăm viên, bạn mang bốn mươi viên vào — TBC mới của cả năm bạn? Vào bài luyện ngay!",
+        "screenText": "(100 + 40) : ? = ?",
+        "visual": "Cửa hé mở với túi kẹo chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Ba nhịp qua cầu tổng",
+    "problem": "Nhóm 4 bạn có TBC 25 viên. Su Bống mang 40 viên vào nhóm. Tính TBC mới của cả 5 bạn.",
+    "steps": [
+      {
+        "show": "Bước 1 — Tổng cũ: 25 × 4 = 100 viên.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Vì sao không lấy (25 + 40) : 2?",
+          "choices": [
+            "25 đại diện 4 bạn, 40 là 1 bạn — khác vai",
+            "Vì 2 số lẻ",
+            "Lấy được"
+          ],
+          "answerKey": {
+            "choice": "25 đại diện 4 bạn, 40 là 1 bạn — khác vai"
+          }
+        }
+      },
+      {
+        "show": "Bước 2 — Tổng mới: 100 + 40 = 140; đếm quân số: 5 người."
+      },
+      {
+        "show": "Bước 3 — TBC mới = 140 : 5 = 28 viên.",
+        "askAfter": {
+          "format": "num",
+          "text": "Bạn cầm 40 viên rời nhóm 5 người ấy — TBC còn lại = ?",
+          "answerKey": {
+            "value": 25
+          }
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B23.LT1",
+          "text": "Nhóm 4 bạn có TBC 25 viên kẹo. Tính tổng số kẹo của nhóm.",
+          "answerKey": {
+            "value": 100
+          },
+          "hints": [
+            "Cầu ngược Bài 21.",
+            "25 × 4."
+          ],
+          "solutionNarrative": "25 × 4 = 100 viên.",
+          "teaches": [
+            "K1"
+          ]
+        },
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B23.LT2",
+          "text": "Nhóm 4 bạn có tổng 100 viên kẹo; một bạn mang 40 viên vào nhóm. Tính TBC mới của cả 5 bạn.",
+          "answerKey": {
+            "value": 28
+          },
+          "hints": [
+            "Tổng mới 140.",
+            "Đếm quân số: 5."
+          ],
+          "solutionNarrative": "(100 + 40) : 5 = 28.",
+          "teaches": [
+            "K1",
+            "K2",
+            "K4"
+          ],
+          "generator": {
+            "template": "Nhóm {n} TBC {t}; người mới mang {m}. Tính TBC mới.",
+            "constraints": {},
+            "answerRule": "(t×n + m) : (n+1)"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P3",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B23.LT3",
+          "text": "Năm ngày đầu tuần tiệm bán tổng 155 chiếc bánh. Thứ Bảy bán 55 chiếc. Tính TBC cả 6 ngày.",
+          "answerKey": {
+            "value": 35
+          },
+          "hints": [
+            "Tổng mới 210.",
+            "Chia 6 ngày."
+          ],
+          "solutionNarrative": "(155 + 55) : 6 = 35 chiếc.",
+          "teaches": [
+            "K1",
+            "K4"
+          ]
+        },
+        {
+          "id": "P4",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B23.LT5",
+          "text": "Nhóm 5 bạn có TBC 28 viên. Bạn cầm 40 viên rời nhóm. Tính TBC của 4 bạn còn lại.",
+          "answerKey": {
+            "value": 25
+          },
+          "hints": [
+            "Tổng 140 trừ phần mang đi.",
+            "Đếm lại: còn 4 người."
+          ],
+          "solutionNarrative": "(140 − 40) : 4 = 25 — người trên mốc rời, cân tụt.",
+          "teaches": [
+            "K3",
+            "K4"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P5",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B23.LT8",
+          "text": "Nhóm 5 bạn có TBC 28 viên. Bạn cầm 40 viên rời đi, đồng thời một bạn mang 20 viên vào thay. Tính TBC mới.",
+          "answerKey": {
+            "value": 24
+          },
+          "hints": [
+            "140 − 40 + 20.",
+            "Quân số vẫn 5!"
+          ],
+          "solutionNarrative": "120 : 5 = 24 (tụt 4 nấc = hụt 20 : 5).",
+          "teaches": [
+            "K3",
+            "K4"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.1.3#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B23.M2",
+      "award": "huy_hieu_canh_cua"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P2"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B23.QZ1",
+        "text": "(Đúng/Sai?) Thêm bạn mang 40 viên vào nhóm TBC 25 thì TBC mới là (25 + 40) : 2.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B23.QZ4",
+        "text": "Sau khi thêm một bạn, ta chia tổng mới cho:",
+        "choices": [
+          "số người mới",
+          "số người cũ",
+          "2"
+        ],
+        "answerKey": {
+          "choice": "số người mới"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K4"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B23.QZ3",
+        "text": "Nhóm 4 bạn TBC 25, thêm bạn mang 40 → TBC mới:",
+        "choices": [
+          "28",
+          "32,5",
+          "30"
+        ],
+        "answerKey": {
+          "choice": "28"
+        },
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A4",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B23.QZ2",
+        "text": "(Đúng/Sai?) Người mang nhiều hơn TBC rời nhóm thì TBC của nhóm giảm.",
+        "answerKey": {
+          "value": true
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Thêm / rời thành viên — TBC mới tính sao?",
+        "back": "BA NHỊP qua cầu TỔNG: tổng cũ (TBC × n) → cộng/trừ phần mang → chia số người MỚI (đếm lại quân số!). Cấm (TBC + phần mang) : 2 — một người không cân ngang cả nhóm. Người trên mốc rời → cân tụt."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P2",
+      "+7 ngày: câu P5 (ca kép)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học ba nhịp thêm/rời thành viên: qua cầu tổng và đếm lại quân số. Con đạt {score}/3, {trapResult} câu bẫy.",
+    "homeActivity": "Chơi rổ kẹo thật: 4 hộp TBC 25, thêm hộp 40 — con đổ chung, đếm hộp, chia lại và so với phép (25 + 40) : 2 để thấy vô lý.",
+    "watchFor": "Nếu con chia nhầm quân số — dựng nghi thức ngoảnh-ra-cánh-cửa: hỏi 'giờ nhóm mấy người?' trước mọi phép chia."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B23.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "(25 + 40) : 2??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "25 với 40 — cân đôi ra 32,5!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Con số 25 đại diện cho MẤY người thế?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B23_M1_F1.png",
+      "sha256_16": "f1001b1a160c87dc"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con tính được TBC MỚI khi có thành viên đến / rời bằng BA NHỊP: tổng cũ (TBC × n) → tổng mới (cộng / trừ phần mang) → chia số người MỚI — tuyệt đối không cân một người ngang cả nhóm kiểu (25 + 40) : 2, và luôn đếm lại quân số sau mỗi biến động.",
+        "steps": [
+          {
+            "text": "rời: (140 − 40) : 4 = 25 (đếm lại: 4 người!)"
+          },
+          {
+            "text": "kép: 140 − 40 + 20 = 120 : 5 = 24"
+          },
+          {
+            "text": "hụt 20 : 5 người = tụt 4 nấc"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B23_M1_F2.png",
+      "sha256_16": "860d1c7af59ff16e"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Thêm người",
+            "text": "tổng cũ = TBC × n → tổng mới = tổng cũ + phần người mới mang → TBC mới = tổng mới : (n + 1). Ba nhịp luôn đi qua cây cầu TỔNG.",
+            "tone": "navy"
+          },
+          {
+            "label": "Cấm phép (TBC cũ + số người mới)",
+            "text": "2 — TBC cũ đại diện cho n bạn, còn phần mang chỉ là MỘT bạn: hai đại lượng khác vai, không được cân ngang nhau.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "MUỐN GỘP — QUA TỔNG; CỬA MỞ RA VÀO — ĐẾM LẠI QUÂN SỐ!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B23_M1_F3.png",
+      "sha256_16": "70ef11e266f45ffe"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "THÊM NGƯỜI VÀO NHÓM — BA NHỊP QUA CẦU TỔNG",
+        "steps": [
+          {
+            "text": "Tổng cũ",
+            "sub": "4 bạn có 100 viên"
+          },
+          {
+            "text": "Tổng mới",
+            "sub": "100 + 40 = 140 viên"
+          },
+          {
+            "text": "Chia QUÂN SỐ MỚI",
+            "sub": "140 : 5 = 28 viên"
+          }
+        ],
+        "note": "Nhớ đếm lại quân số: chia cho 5 chứ không phải 4"
+      },
+      "caption": "Ba nhịp: tổng cũ → tổng mới → chia số người mới",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B23_M1_F4.png",
+      "sha256_16": "95bc2d749c3ee49a"
+    }
+  ]
 }
