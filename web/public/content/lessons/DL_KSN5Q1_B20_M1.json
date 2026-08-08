@@ -1,630 +1,633 @@
 {
- "title": "Tỉ số ẩn: quy đồng TỬ — mẫu của ai, phần của người ấy",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:II.1.4#1"
-  ],
-  "bktUnit": "CASE:II.1.4#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B20",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B19.M3",
-  "next": "DL:KSN5Q1.B20.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B20",
-  "chunks": [
-   "CHUNK:KSN5Q1.B20.S3",
-   "CHUNK:KSN5Q1.B20.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B20.1",
-   "CA:KSN5Q1.B20.2"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B20.1",
-   "TRAP:KSN5Q1.B20.2"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con tìm được TỈ SỐ ẨN từ đẳng thức \"m/n của A = p/q của B\" bằng quy đồng TỬ: cùng lượng chung hiện hình → A : B = mẫu A : mẫu B (2/3 của A = 3/4 của B → 9 : 8) — và tránh hai bẫy: lấy thẳng phân số đề làm tỉ số, và lộn chiều 9 : 8 thành 8 : 9.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
-  "kidText": "2/3 khay A bằng 3/4 khay B thì tỉ số A : B không phải 2 : 3. Con quy đồng tử để tìm ra tỉ số thật."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "\"2/3 của A bằng 3/4 của B\": hai phân số nói về HAI khay khác nhau — KHÔNG được lấy thẳng 2 : 3 hay 3 : 4 làm tỉ số A : B."
-   },
-   {
-    "id": "K2",
-    "text": "Chiêu quy đồng TỬ: 2/3 = 6/9 và 3/4 = 6/8 → \"6/9 của A = 6/8 của B\" — cùng lượng chung 6 phần → 1/9 của A = 1/8 của B."
-   },
-   {
-    "id": "K3",
-    "text": "Đọc tỉ số đúng chiều: 1/9 của A = 1/8 của B nghĩa là khay A bị chia 9 phần, khay B chia 8 phần mà MỖI PHẦN BẰNG NHAU → A gồm 9 phần, B gồm 8 phần: A : B = MẪU A : MẪU B = 9 : 8. Mẫu của ai — phần của người ấy."
-   },
-   {
-    "id": "K4",
-    "text": "Tỉ số lộ (A = k × B) thì khỏi quy đồng: dùng thẳng k : 1 với sơ đồ tổng-tỉ / hiệu-tỉ lớp 4; và 'p/q của X' tính bằng X : q × p (2/3 của 18 = 12)."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: HAI KHAY BÁNH CHUNG MỘT HỘP QUÀ. \"2/3 khay A = 3/4 khay B\" nghĩa là phần bánh xúc từ khay A đem tặng ĐÚNG BẰNG phần xúc từ khay B — nhưng hai khay to nhỏ khác nhau, hai phân số là hai thước ĐO KHÁC NHAU: chưa thể so! Phép màu: quy đồng TỬ — 2/3 hóa 6/9, 3/4 hóa 6/8 — giờ cả hai khay cùng xúc ra SÁU MIẾNG bằng nhau vào hộp quà: miếng của A là 1/9 khay A, miếng của B là 1/8 khay B, mà miếng bằng miếng! Vậy khay A gồm 9 miếng-chuẩn, khay B gồm 8 miếng-chuẩn: A : B = 9 : 8. Đọc chiều theo luật khắc dao: MẪU CỦA AI — PHẦN CỦA NGƯỜI ẤY (mẫu 9 thuộc A thì A có 9 phần) — khay bị cắt to hơn (nhiều phần hơn) chính là khay nhiều bánh hơn.",
-  "canonicalExamples": [
-   {
-    "case": "phần của số (ca nền)",
-    "problem": "Tính 2/3 của 18.",
-    "solution": "18 : 3 × 2 = 12.",
-    "why": "Ca K4 — thao tác nền 'của' trước khi vào tỉ số ẩn."
-   },
-   {
-    "case": "tỉ số ẩn (ca lõi)",
-    "problem": "Biết 2/3 của A bằng 3/4 của B. Tìm tỉ số A : B.",
-    "solution": "Quy đồng tử: 2/3 = 6/9; 3/4 = 6/8 → 1/9 A = 1/8 B → A : B = 9 : 8.",
-    "why": "Ca đề A câu 12 — hai bẫy cùng rình ở đây."
-   },
-   {
-    "case": "đã cùng tử sẵn (ca nhanh)",
-    "problem": "Biết 1/2 của A bằng 1/3 của B. Tìm tỉ số A : B.",
-    "solution": "Hai phân số đã cùng tử 1 → A : B = mẫu A : mẫu B = 2 : 3.",
-    "why": "Ca nối sang LT7 — nhận diện cùng-tử-sẵn để đi tắt."
-   }
-  ],
-  "numberRange": "Lớp 5: phân số trong bảng quen; tỉ số ≤ 20 : 20.",
-  "misconceptions": [
-   {
-    "wrong": "Nghe \"2/3 của A bằng 3/4 của B\" chớp nhoáng kết luận A : B = 2 : 3 (hay 3 : 4).",
-    "signal": "Tỉ số trùng nguyên xi phân số của đề.",
-    "fix": "K1 + K2 — hai phân số đo hai khay khác nhau, chưa chung đơn vị: phải quy đồng TỬ cho lượng chung hiện hình.",
-    "counterExample": "Nếu A : B = 2 : 3 thì 2/3 A = 2/3 × 2 phần = 4/3 phần còn 3/4 B = 9/4 phần — lệch nhau ngay."
-   },
-   {
-    "wrong": "Quy đồng tử xong (6/9 A = 6/8 B) hấp tấp ghép A với số gần nó: A : B = 8 : 9 — lộn chiều.",
-    "signal": "Tỉ số đảo ngược đáp đúng.",
-    "fix": "K3 — đọc chậm: 6/9 CỦA A nghĩa là khay A bị chia 9 phần → A có 9 phần: mẫu của ai — phần của người ấy.",
-    "counterExample": "Thử số: A = 9, B = 8 → 2/3 × 9 = 6 = 3/4 × 8 ✓; còn A = 8, B = 9 → 16/3 ≠ 27/4 ✗."
-   }
-  ],
-  "vocabulary": [
-   "hai khay chung hộp quà",
-   "miếng-chuẩn bằng nhau",
-   "quy đồng tử — lượng chung hiện hình",
-   "mẫu của ai — phần của người ấy"
-  ],
-  "mantra": "PHÂN SỐ CỦA ĐỀ KHÔNG PHẢI TỈ SỐ CỦA ĐÁP — QUY ĐỒNG TỬ ĐÃ!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Tính 2/3 của 18.",
-    "answerKey": {
-     "value": 12
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "ôn 'phân số của một số' (hạt mầm)",
-   "message": "Ôn phép 'của' rồi vào xưởng hộp quà nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Đề gói quà: \"2/3 khay A bằng 3/4 khay B — tìm tỉ số A : B.\" Trí Long chớp nhoáng: \"Thì 2 : 3 chứ gì!\" Cáo Đề gật lia lịa khả nghi. Su Kem đặt hai khay to nhỏ khác nhau lên bàn: \"Hai phân số này đo HAI khay khác nhau đấy…\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "A : B = 2 : 3??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở hộp quà!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 48,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
+  "title": "Tỉ số ẩn: quy đồng TỬ — mẫu của ai, phần của người ấy",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:II.1.4#1"
     ],
-    "narration": "Phép màu quy đồng TỬ: 2/3 hóa sáu phần chín, 3/4 hóa sáu phần tám — giờ cả hai khay cùng xúc SÁU MIẾNG bằng nhau vào hộp quà! Miếng của A là một phần chín khay A, miếng của B là một phần tám khay B — miếng bằng miếng: khay A gồm CHÍN miếng-chuẩn, khay B gồm TÁM. Đọc chiều theo luật khắc dao: mẫu của ai — phần của người ấy: A : B = CHÍN : TÁM!",
-    "display": {
-     "type": "gift_tray_interactive",
-     "spec": {
-      "convert": "2/3 = 6/9 · 3/4 = 6/8",
-      "common": "6 miếng-chuẩn",
-      "read": "mẫu 9 → A có 9 phần; mẫu 8 → B có 8 phần",
-      "ratio": "9 : 8"
-     }
-    },
-    "interaction": {
-     "type": "pack_and_read",
-     "answerKey": {
-      "value": "9:8"
-     },
-     "successMessage": "1/9 A = 1/8 B → A : B = 9 : 8 — mẫu của ai, phần của người ấy!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "mcq",
-     "text": "1/2 của A = 1/3 của B (đã cùng tử!) thì A : B =",
-     "choices": [
-      "2 : 3",
-      "3 : 2",
-      "1 : 1"
-     ],
-     "answerKey": {
-      "choice": "2 : 3"
-     },
-     "wrongFeedback": "Cùng tử 1 → tỉ số = mẫu A : mẫu B.",
-     "objective": "O1",
-     "teaches": [
-      "K3"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 40,
-    "teaches": [
-     "K1",
-     "K3"
+    "bktUnit": "CASE:II.1.4#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B20",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B19.M3",
+    "next": "DL:KSN5Q1.B20.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B20",
+    "chunks": [
+      "CHUNK:KSN5Q1.B20.S3",
+      "CHUNK:KSN5Q1.B20.S4"
     ],
-    "narration": "Hai cú lừa cùng phá bằng PHÉP THỬ SỐ. Lừa một — lấy thẳng 2 : 3: thử A bằng 2, B bằng 3 — hai phần ba của A là… lệch ngay với ba phần tư của B! Lừa hai — lộn chiều 8 : 9: thử A bằng 8, B bằng 9 — cũng lệch! Còn đáp 9 : 8: hai phần ba của CHÍN là sáu, ba phần tư của TÁM cũng sáu — KHỚP! Nghi ngờ chiều nào, thử số là ra.",
-    "display": {
-     "type": "counter_example",
-     "cases": [
+    "cases": [
+      "CA:KSN5Q1.B20.1",
+      "CA:KSN5Q1.B20.2"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B20.1",
+      "TRAP:KSN5Q1.B20.2"
+    ]
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con tìm được TỈ SỐ ẨN từ đẳng thức \"m/n của A = p/q của B\" bằng quy đồng TỬ: cùng lượng chung hiện hình → A : B = mẫu A : mẫu B (2/3 của A = 3/4 của B → 9 : 8) — và tránh hai bẫy: lấy thẳng phân số đề làm tỉ số, và lộn chiều 9 : 8 thành 8 : 9.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
+    "kidText": "2/3 khay A bằng 3/4 khay B thì tỉ số A : B không phải 2 : 3. Con quy đồng tử để tìm ra tỉ số thật."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "input": "A:B = 2:3 (lấy thẳng đề)",
-       "output": "✗",
-       "valid": false,
-       "reason": "hai thước đo khác nhau"
+        "id": "K1",
+        "text": "\"2/3 của A bằng 3/4 của B\": hai phân số nói về HAI khay khác nhau — KHÔNG được lấy thẳng 2 : 3 hay 3 : 4 làm tỉ số A : B."
       },
       {
-       "input": "A:B = 8:9 (lộn chiều)",
-       "output": "✗",
-       "valid": false,
-       "reason": "2/3×8 ≠ 3/4×9"
+        "id": "K2",
+        "text": "Chiêu quy đồng TỬ: 2/3 = 6/9 và 3/4 = 6/8 → \"6/9 của A = 6/8 của B\" — cùng lượng chung 6 phần → 1/9 của A = 1/8 của B."
       },
       {
-       "input": "A:B = 9:8",
-       "output": "✓",
-       "valid": true,
-       "reason": "2/3×9 = 6 = 3/4×8"
+        "id": "K3",
+        "text": "Đọc tỉ số đúng chiều: 1/9 của A = 1/8 của B nghĩa là khay A bị chia 9 phần, khay B chia 8 phần mà MỖI PHẦN BẰNG NHAU → A gồm 9 phần, B gồm 8 phần: A : B = MẪU A : MẪU B = 9 : 8. Mẫu của ai — phần của người ấy."
+      },
+      {
+        "id": "K4",
+        "text": "Tỉ số lộ (A = k × B) thì khỏi quy đồng: dùng thẳng k : 1 với sơ đồ tổng-tỉ / hiệu-tỉ lớp 4; và 'p/q của X' tính bằng X : q × p (2/3 của 18 = 12)."
       }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú hộp quà: phân số của đề không phải tỉ số của đáp — quy đồng tử đã! Mẫu của ai — phần của người ấy!",
-    "display": {
-     "type": "mantra_card",
-     "text": "QUY ĐỒNG TỬ — MẪU CỦA AI, PHẦN NGƯỜI ẤY!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 90,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Đề gói quà: hai phần ba khay A bằng ba phần tư khay B — tìm tỉ số A trên B. Trí Long chớp nhoáng: thì hai trên ba chứ gì! Cáo Đề gật lia lịa khả nghi. Su Kem đặt hai khay to nhỏ khác nhau lên bàn: hai phân số này đo HAI khay khác nhau đấy…",
-    "screenText": "2/3 A = 3/4 B → A : B = 2 : 3??",
-    "visual": "Bàn gói quà với hai khay bánh cỡ khác nhau; Cáo Đề gật gù gian xảo; dấu hỏi đỏ #C0392B trên '2 : 3'.",
-    "assets": [],
-    "duration": 21
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Phép màu quy đồng TỬ: hai phần ba hóa sáu phần chín, ba phần tư hóa sáu phần tám — cả hai khay cùng xúc SÁU MIẾNG vào hộp quà! Miếng của A là một phần chín khay A, của B là một phần tám khay B — miếng bằng miếng: khay A gồm CHÍN miếng-chuẩn, khay B gồm TÁM. Mẫu của ai — phần người ấy: A trên B: CHÍN TRÊN TÁM!",
-    "screenText": "2/3 = 6/9 · 3/4 = 6/8 → 1/9 A = 1/8 B → 9 : 8",
-    "visual": "Hai khay chia lưới 9 ô và 8 ô; sáu miếng từ mỗi khay bay vào hộp quà giữa, các miếng khít nhau; tỉ số 9:8 vàng #F8B942.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Hai cú lừa cùng phá bằng PHÉP THỬ SỐ. Lừa một — lấy thẳng hai trên ba: thử A bằng hai, B bằng ba — lệch ngay! Lừa hai — lộn chiều tám trên chín: cũng lệch! Còn đáp chín trên tám: hai phần ba của CHÍN là sáu, ba phần tư của TÁM cũng sáu — KHỚP! Nghi ngờ chiều nào, thử số là ra!",
-    "screenText": "thử: 2/3 × 9 = 6 = 3/4 × 8 ✓ — chỉ 9 : 8 khớp!",
-    "visual": "Ba tấm đáp trên bàn thử: hai tấm sai bật đèn đỏ khi cân lệch; tấm 9:8 cân thăng bằng '6 = 6' đèn xanh.",
-    "assets": [],
-    "duration": 24
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú: phân số của đề không phải tỉ số của đáp — quy đồng tử đã! Mẫu ai — phần người ấy!",
-    "screenText": "QUY ĐỒNG TỬ · MẪU AI — PHẦN NGƯỜI ẤY!",
-    "visual": "Thẻ thần chú vàng với icon hộp quà.",
-    "assets": [],
-    "duration": 9
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Đơn quà của con: hai phần ba của A bằng ba phần tư của B — tỉ số A trên B? Nhớ thử số! Vào bài luyện ngay!",
-    "screenText": "2/3 A = 3/4 B → A : B = ?",
-    "visual": "Hai khay chờ gói; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Sáu miếng vào hộp quà",
-  "problem": "Biết 2/3 của A bằng 3/4 của B. Tìm tỉ số A : B.",
-  "steps": [
-   {
-    "show": "Bước 1 — Quy đồng TỬ: 2/3 = 6/9; 3/4 = 6/8 → 6/9 của A = 6/8 của B.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Vì sao không lấy thẳng 2 : 3?",
-     "choices": [
-      "Hai phân số đo hai khay khác nhau",
-      "Vì 2 : 3 chưa tối giản",
-      "Lấy được"
-     ],
-     "answerKey": {
-      "choice": "Hai phân số đo hai khay khác nhau"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Rút lượng chung: 1/9 của A = 1/8 của B — miếng bằng miếng."
-   },
-   {
-    "show": "Bước 3 — Đọc chiều: mẫu của ai — phần của người ấy: A : B = 9 : 8. Thử: 2/3 × 9 = 6 = 3/4 × 8 ✓.",
-    "askAfter": {
-     "format": "mcq",
-     "text": "3/5 của A = 2/3 của B (quy tử 6: 6/10 và 6/9) → A : B =",
-     "choices": [
-      "10 : 9",
-      "9 : 10",
-      "3 : 2"
-     ],
-     "answerKey": {
-      "choice": "10 : 9"
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B20.LT1",
-     "text": "Tính 2/3 của 18.",
-     "answerKey": {
-      "value": 12
-     },
-     "hints": [
-      "Chia 3 rồi nhân 2.",
-      "18 : 3 × 2."
-     ],
-     "solutionNarrative": "18 : 3 × 2 = 12.",
-     "teaches": [
-      "K4"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B20.LT4",
-     "text": "Biết 2/3 của A bằng 3/4 của B. Tìm tỉ số A : B.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "quy tử",
-        "value": "6/9 và 6/8",
-        "options": [
-         "6/9 và 6/8",
-         "6/9 và 8/6",
-         "2/3 và 3/4"
-        ]
-       },
-       {
-        "label": "tỉ số",
-        "value": "9 : 8"
-       }
-      ]
-     },
-     "hints": [
-      "Quy đồng TỬ về 6.",
-      "Mẫu của ai — phần của người ấy."
-     ],
-     "solutionNarrative": "1/9 A = 1/8 B → A : B = 9 : 8 (thử 6 = 6 ✓).",
-     "teaches": [
-      "K1",
-      "K2",
-      "K3"
-     ],
-     "generator": {
-      "template": "Biết {m}/{n} của A = {p}/{q} của B. Tìm A : B.",
-      "constraints": {},
-      "answerRule": "quy đồng tử → mẫu A : mẫu B"
-     }
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "tf",
-     "text": "(Đúng/Sai?) Từ \"2/3 của A = 3/4 của B\" suy ra A : B = 8 : 9.",
-     "answerKey": {
-      "value": false,
-      "note": "Lộn chiều! Mẫu 9 thuộc A → A có 9 phần: 9 : 8. Thử: 2/3 × 9 = 6 = 3/4 × 8 ✓."
-     },
-     "hints": [
-      "Mẫu của ai — phần của người ấy.",
-      "Thử số cả hai chiều."
-     ],
-     "teaches": [
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
-  "onPass": {
-   "updateBKT": [
-    "CASE:II.1.4#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B20.M2",
-   "award": "huy_hieu_hop_qua"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P2"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B20.QZ1",
-    "text": "(Đúng/Sai?) Từ \"2/3 của A bằng 3/4 của B\" suy ra ngay A : B = 2 : 3.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B20.QZ3",
-    "text": "2/3 của A = 3/4 của B thì A : B bằng:",
-    "choices": [
-     "9 : 8",
-     "8 : 9",
-     "2 : 3"
     ],
-    "answerKey": {
-     "choice": "9 : 8"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2",
-     "K3"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B20.QZ2",
-    "text": "(Đúng/Sai?) Muốn tìm tỉ số ẩn, ta quy đồng TỬ số của hai phân số.",
-    "answerKey": {
-     "value": true
-    },
-    "teaches": [
-     "K2"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "\"m/n của A = p/q của B\" → tỉ số A : B tìm sao?",
-    "back": "Quy đồng TỬ (2/3 = 6/9; 3/4 = 6/8) → cùng lượng chung → A : B = MẪU A : MẪU B = 9 : 8. Mẫu của ai — phần của người ấy; nghi ngờ chiều thì thử số (2/3 × 9 = 6 = 3/4 × 8). PHÂN SỐ CỦA ĐỀ KHÔNG PHẢI TỈ SỐ CỦA ĐÁP!"
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P2",
-   "+7 ngày: câu P3 (lộn chiều)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học tỉ số ẩn: quy đồng tử cho lượng chung hiện hình, đọc chiều 'mẫu của ai — phần của người ấy'. Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Thử số cùng con: 'nếu A = 9 cái kẹo, B = 8 cái — 2/3 của A và 3/4 của B mỗi bên mấy cái?' (đều 6 — khớp!).",
-  "watchFor": "Nếu con lấy thẳng 2 : 3 hoặc lộn chiều — làm phép thử số hai chiều (S3) cùng con."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B20.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "A : B = 2 : 3??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Thì 2 : 3 chứ gì!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Hai phân số này đo HAI khay khác nhau đấy…",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B20_M1_F1.png",
-   "sha256_16": "92999f7a57dfb05f"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "A:B = 2:3 (lấy thẳng đề)"
-     ],
-     "result": ""
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "A:B = 9:8"
-     ],
-     "result": ""
-    },
-    "verdict": "2/3×9 = 6 = 3/4×8"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B20_M1_F2.png",
-   "sha256_16": "e6e6357c3c6b7934"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "\"2/3 của A bằng 3/4 của B\"",
-      "text": "hai phân số nói về HAI khay khác nhau — KHÔNG được lấy thẳng 2 : 3 hay 3 : 4 làm tỉ số A : B.",
-      "tone": "navy"
-     },
-     {
-      "label": "Chiêu quy đồng TỬ",
-      "text": "2/3 = 6/9 và 3/4 = 6/8 → \"6/9 của A = 6/8…",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: HAI KHAY BÁNH CHUNG MỘT HỘP QUÀ. \"2/3 khay A = 3/4 khay B\" nghĩa là phần bánh xúc từ khay A đem tặng ĐÚNG BẰNG phần xúc từ khay B — nhưng hai khay to nhỏ khác nhau, hai phân số là hai thước ĐO KHÁC NHAU: chưa thể so! Phép màu: quy đồng TỬ — 2/3 hóa 6/9, 3/4 hóa 6/8 — giờ cả hai khay cùng xúc ra SÁU MIẾNG bằng nhau vào hộp quà: miếng của A là 1/9 khay A, miếng của B là 1/8 khay B, mà miếng bằng miếng! Vậy khay A gồm 9 miếng-chuẩn, khay B gồm 8 miếng-chuẩn: A : B = 9 : 8. Đọc chiều theo luật khắc dao: MẪU CỦA AI — PHẦN CỦA NGƯỜI ẤY (mẫu 9 thuộc A thì A có 9 phần) — khay bị cắt to hơn (nhiều phần hơn) chính là khay nhiều bánh hơn.",
+    "canonicalExamples": [
+      {
+        "case": "phần của số (ca nền)",
+        "problem": "Tính 2/3 của 18.",
+        "solution": "18 : 3 × 2 = 12.",
+        "why": "Ca K4 — thao tác nền 'của' trước khi vào tỉ số ẩn."
+      },
+      {
+        "case": "tỉ số ẩn (ca lõi)",
+        "problem": "Biết 2/3 của A bằng 3/4 của B. Tìm tỉ số A : B.",
+        "solution": "Quy đồng tử: 2/3 = 6/9; 3/4 = 6/8 → 1/9 A = 1/8 B → A : B = 9 : 8.",
+        "why": "Ca đề A câu 12 — hai bẫy cùng rình ở đây."
+      },
+      {
+        "case": "đã cùng tử sẵn (ca nhanh)",
+        "problem": "Biết 1/2 của A bằng 1/3 của B. Tìm tỉ số A : B.",
+        "solution": "Hai phân số đã cùng tử 1 → A : B = mẫu A : mẫu B = 2 : 3.",
+        "why": "Ca nối sang LT7 — nhận diện cùng-tử-sẵn để đi tắt."
+      }
+    ],
+    "numberRange": "Lớp 5: phân số trong bảng quen; tỉ số ≤ 20 : 20.",
+    "misconceptions": [
+      {
+        "wrong": "Nghe \"2/3 của A bằng 3/4 của B\" chớp nhoáng kết luận A : B = 2 : 3 (hay 3 : 4).",
+        "signal": "Tỉ số trùng nguyên xi phân số của đề.",
+        "fix": "K1 + K2 — hai phân số đo hai khay khác nhau, chưa chung đơn vị: phải quy đồng TỬ cho lượng chung hiện hình.",
+        "counterExample": "Nếu A : B = 2 : 3 thì 2/3 A = 2/3 × 2 phần = 4/3 phần còn 3/4 B = 9/4 phần — lệch nhau ngay."
+      },
+      {
+        "wrong": "Quy đồng tử xong (6/9 A = 6/8 B) hấp tấp ghép A với số gần nó: A : B = 8 : 9 — lộn chiều.",
+        "signal": "Tỉ số đảo ngược đáp đúng.",
+        "fix": "K3 — đọc chậm: 6/9 CỦA A nghĩa là khay A bị chia 9 phần → A có 9 phần: mẫu của ai — phần của người ấy.",
+        "counterExample": "Thử số: A = 9, B = 8 → 2/3 × 9 = 6 = 3/4 × 8 ✓; còn A = 8, B = 9 → 16/3 ≠ 27/4 ✗."
+      }
+    ],
+    "vocabulary": [
+      "hai khay chung hộp quà",
+      "miếng-chuẩn bằng nhau",
+      "quy đồng tử — lượng chung hiện hình",
+      "mẫu của ai — phần của người ấy"
     ],
     "mantra": "PHÂN SỐ CỦA ĐỀ KHÔNG PHẢI TỈ SỐ CỦA ĐÁP — QUY ĐỒNG TỬ ĐÃ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B20_M1_F3.png",
-   "sha256_16": "38417b45da25e6f1"
   },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "TỈ SỐ ẨN: 2/3 CỦA A BẰNG 3/4 CỦA B",
-    "neutral": true,
-    "wrong": {
-     "head": "QUY ĐỒNG TỬ — VẾ A",
-     "steps": [
-      "2/3 = 6/9"
-     ],
-     "result": "A chia 9 phần"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Tính 2/3 của 18.",
+        "answerKey": {
+          "value": 12
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "ôn 'phân số của một số' (hạt mầm)",
+      "message": "Ôn phép 'của' rồi vào xưởng hộp quà nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Đề gói quà: \"2/3 khay A bằng 3/4 khay B — tìm tỉ số A : B.\" Trí Long chớp nhoáng: \"Thì 2 : 3 chứ gì!\" Cáo Đề gật lia lịa khả nghi. Su Kem đặt hai khay to nhỏ khác nhau lên bàn: \"Hai phân số này đo HAI khay khác nhau đấy…\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "A : B = 2 : 3??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để mở hộp quà!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 48,
+        "teaches": [
+          "K1",
+          "K2",
+          "K3"
+        ],
+        "narration": "Phép màu quy đồng TỬ: 2/3 hóa sáu phần chín, 3/4 hóa sáu phần tám — giờ cả hai khay cùng xúc SÁU MIẾNG bằng nhau vào hộp quà! Miếng của A là một phần chín khay A, miếng của B là một phần tám khay B — miếng bằng miếng: khay A gồm CHÍN miếng-chuẩn, khay B gồm TÁM. Đọc chiều theo luật khắc dao: mẫu của ai — phần của người ấy: A : B = CHÍN : TÁM!",
+        "display": {
+          "type": "gift_tray_interactive",
+          "spec": {
+            "convert": "2/3 = 6/9 · 3/4 = 6/8",
+            "common": "6 miếng-chuẩn",
+            "read": "mẫu 9 → A có 9 phần; mẫu 8 → B có 8 phần",
+            "ratio": "9 : 8"
+          }
+        },
+        "interaction": {
+          "type": "pack_and_read",
+          "answerKey": {
+            "value": "9:8"
+          },
+          "successMessage": "1/9 A = 1/8 B → A : B = 9 : 8 — mẫu của ai, phần của người ấy!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "mcq",
+          "text": "1/2 của A = 1/3 của B (đã cùng tử!) thì A : B =",
+          "choices": [
+            "2 : 3",
+            "3 : 2",
+            "1 : 1"
+          ],
+          "answerKey": {
+            "choice": "2 : 3"
+          },
+          "wrongFeedback": "Cùng tử 1 → tỉ số = mẫu A : mẫu B.",
+          "objective": "O1",
+          "teaches": [
+            "K3"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 40,
+        "teaches": [
+          "K1",
+          "K3"
+        ],
+        "narration": "Hai cú lừa cùng phá bằng PHÉP THỬ SỐ. Lừa một — lấy thẳng 2 : 3: thử A bằng 2, B bằng 3 — hai phần ba của A là… lệch ngay với ba phần tư của B! Lừa hai — lộn chiều 8 : 9: thử A bằng 8, B bằng 9 — cũng lệch! Còn đáp 9 : 8: hai phần ba của CHÍN là sáu, ba phần tư của TÁM cũng sáu — KHỚP! Nghi ngờ chiều nào, thử số là ra.",
+        "display": {
+          "type": "counter_example",
+          "cases": [
+            {
+              "input": "A:B = 2:3 (lấy thẳng đề)",
+              "output": "✗",
+              "valid": false,
+              "reason": "hai thước đo khác nhau"
+            },
+            {
+              "input": "A:B = 8:9 (lộn chiều)",
+              "output": "✗",
+              "valid": false,
+              "reason": "2/3×8 ≠ 3/4×9"
+            },
+            {
+              "input": "A:B = 9:8",
+              "output": "✓",
+              "valid": true,
+              "reason": "2/3×9 = 6 = 3/4×8"
+            }
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú hộp quà: phân số của đề không phải tỉ số của đáp — quy đồng tử đã! Mẫu của ai — phần của người ấy!",
+        "display": {
+          "type": "mantra_card",
+          "text": "QUY ĐỒNG TỬ — MẪU CỦA AI, PHẦN NGƯỜI ẤY!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 90,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "right": {
-     "head": "QUY ĐỒNG TỬ — VẾ B",
-     "steps": [
-      "3/4 = 6/8"
-     ],
-     "result": "B chia 8 phần"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "verdict": "Cùng 6 phần bằng nhau → A : B = 9 : 8 (mẫu của ai, phần của người ấy)"
-   },
-   "caption": "Quy đồng TỬ để lượng chung hiện hình, rồi đọc tỉ số ở mẫu",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B20_M1_F4.png",
-   "sha256_16": "a1efc6677142e4ff"
-  }
- ]
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Đề gói quà: hai phần ba khay A bằng ba phần tư khay B — tìm tỉ số A trên B. Trí Long chớp nhoáng: thì hai trên ba chứ gì! Cáo Đề gật lia lịa khả nghi. Su Kem đặt hai khay to nhỏ khác nhau lên bàn: hai phân số này đo HAI khay khác nhau đấy…",
+        "screenText": "2/3 A = 3/4 B → A : B = 2 : 3??",
+        "visual": "Bàn gói quà với hai khay bánh cỡ khác nhau; Cáo Đề gật gù gian xảo; dấu hỏi đỏ #C0392B trên '2 : 3'.",
+        "assets": [],
+        "duration": 21
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Phép màu quy đồng TỬ: hai phần ba hóa sáu phần chín, ba phần tư hóa sáu phần tám — cả hai khay cùng xúc SÁU MIẾNG vào hộp quà! Miếng của A là một phần chín khay A, của B là một phần tám khay B — miếng bằng miếng: khay A gồm CHÍN miếng-chuẩn, khay B gồm TÁM. Mẫu của ai — phần người ấy: A trên B: CHÍN TRÊN TÁM!",
+        "screenText": "2/3 = 6/9 · 3/4 = 6/8 → 1/9 A = 1/8 B → 9 : 8",
+        "visual": "Hai khay chia lưới 9 ô và 8 ô; sáu miếng từ mỗi khay bay vào hộp quà giữa, các miếng khít nhau; tỉ số 9:8 vàng #F8B942.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Hai cú lừa cùng phá bằng PHÉP THỬ SỐ. Lừa một — lấy thẳng hai trên ba: thử A bằng hai, B bằng ba — lệch ngay! Lừa hai — lộn chiều tám trên chín: cũng lệch! Còn đáp chín trên tám: hai phần ba của CHÍN là sáu, ba phần tư của TÁM cũng sáu — KHỚP! Nghi ngờ chiều nào, thử số là ra!",
+        "screenText": "thử: 2/3 × 9 = 6 = 3/4 × 8 ✓ — chỉ 9 : 8 khớp!",
+        "visual": "Ba tấm đáp trên bàn thử: hai tấm sai bật đèn đỏ khi cân lệch; tấm 9:8 cân thăng bằng '6 = 6' đèn xanh.",
+        "assets": [],
+        "duration": 24
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú: phân số của đề không phải tỉ số của đáp — quy đồng tử đã! Mẫu ai — phần người ấy!",
+        "screenText": "QUY ĐỒNG TỬ · MẪU AI — PHẦN NGƯỜI ẤY!",
+        "visual": "Thẻ thần chú vàng với icon hộp quà.",
+        "assets": [],
+        "duration": 9
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Đơn quà của con: hai phần ba của A bằng ba phần tư của B — tỉ số A trên B? Nhớ thử số! Vào bài luyện ngay!",
+        "screenText": "2/3 A = 3/4 B → A : B = ?",
+        "visual": "Hai khay chờ gói; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Sáu miếng vào hộp quà",
+    "problem": "Biết 2/3 của A bằng 3/4 của B. Tìm tỉ số A : B.",
+    "steps": [
+      {
+        "show": "Bước 1 — Quy đồng TỬ: 2/3 = 6/9; 3/4 = 6/8 → 6/9 của A = 6/8 của B.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Vì sao không lấy thẳng 2 : 3?",
+          "choices": [
+            "Hai phân số đo hai khay khác nhau",
+            "Vì 2 : 3 chưa tối giản",
+            "Lấy được"
+          ],
+          "answerKey": {
+            "choice": "Hai phân số đo hai khay khác nhau"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Rút lượng chung: 1/9 của A = 1/8 của B — miếng bằng miếng."
+      },
+      {
+        "show": "Bước 3 — Đọc chiều: mẫu của ai — phần của người ấy: A : B = 9 : 8. Thử: 2/3 × 9 = 6 = 3/4 × 8 ✓.",
+        "askAfter": {
+          "format": "mcq",
+          "text": "3/5 của A = 2/3 của B (quy tử 6: 6/10 và 6/9) → A : B =",
+          "choices": [
+            "10 : 9",
+            "9 : 10",
+            "3 : 2"
+          ],
+          "answerKey": {
+            "choice": "10 : 9"
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B20.LT1",
+          "text": "Tính 2/3 của 18.",
+          "answerKey": {
+            "value": 12
+          },
+          "hints": [
+            "Chia 3 rồi nhân 2.",
+            "18 : 3 × 2."
+          ],
+          "solutionNarrative": "18 : 3 × 2 = 12.",
+          "teaches": [
+            "K4"
+          ]
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B20.LT4",
+          "text": "Biết 2/3 của A bằng 3/4 của B. Tìm tỉ số A : B.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "quy tử",
+                "value": "6/9 và 6/8",
+                "options": [
+                  "6/9 và 6/8",
+                  "6/9 và 8/6",
+                  "2/3 và 3/4"
+                ]
+              },
+              {
+                "label": "tỉ số",
+                "value": "9 : 8"
+              }
+            ]
+          },
+          "hints": [
+            "Quy đồng TỬ về 6.",
+            "Mẫu của ai — phần của người ấy."
+          ],
+          "solutionNarrative": "1/9 A = 1/8 B → A : B = 9 : 8 (thử 6 = 6 ✓).",
+          "teaches": [
+            "K1",
+            "K2",
+            "K3"
+          ],
+          "generator": {
+            "template": "Biết {m}/{n} của A = {p}/{q} của B. Tìm A : B.",
+            "constraints": {},
+            "answerRule": "quy đồng tử → mẫu A : mẫu B"
+          }
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "tf",
+          "text": "(Đúng/Sai?) Từ \"2/3 của A = 3/4 của B\" suy ra A : B = 8 : 9.",
+          "answerKey": {
+            "value": false,
+            "note": "Lộn chiều! Mẫu 9 thuộc A → A có 9 phần: 9 : 8. Thử: 2/3 × 9 = 6 = 3/4 × 8 ✓."
+          },
+          "hints": [
+            "Mẫu của ai — phần của người ấy.",
+            "Thử số cả hai chiều."
+          ],
+          "teaches": [
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
+    "onPass": {
+      "updateBKT": [
+        "CASE:II.1.4#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B20.M2",
+      "award": "huy_hieu_hop_qua"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P2"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B20.QZ1",
+        "text": "(Đúng/Sai?) Từ \"2/3 của A bằng 3/4 của B\" suy ra ngay A : B = 2 : 3.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B20.QZ3",
+        "text": "2/3 của A = 3/4 của B thì A : B bằng:",
+        "choices": [
+          "9 : 8",
+          "8 : 9",
+          "2 : 3"
+        ],
+        "answerKey": {
+          "choice": "9 : 8"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2",
+          "K3"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B20.QZ2",
+        "text": "(Đúng/Sai?) Muốn tìm tỉ số ẩn, ta quy đồng TỬ số của hai phân số.",
+        "answerKey": {
+          "value": true
+        },
+        "teaches": [
+          "K2"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "\"m/n của A = p/q của B\" → tỉ số A : B tìm sao?",
+        "back": "Quy đồng TỬ (2/3 = 6/9; 3/4 = 6/8) → cùng lượng chung → A : B = MẪU A : MẪU B = 9 : 8. Mẫu của ai — phần của người ấy; nghi ngờ chiều thì thử số (2/3 × 9 = 6 = 3/4 × 8). PHÂN SỐ CỦA ĐỀ KHÔNG PHẢI TỈ SỐ CỦA ĐÁP!"
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P2",
+      "+7 ngày: câu P3 (lộn chiều)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học tỉ số ẩn: quy đồng tử cho lượng chung hiện hình, đọc chiều 'mẫu của ai — phần của người ấy'. Con đạt {score}/3, {trapResult} câu bẫy.",
+    "homeActivity": "Thử số cùng con: 'nếu A = 9 cái kẹo, B = 8 cái — 2/3 của A và 3/4 của B mỗi bên mấy cái?' (đều 6 — khớp!).",
+    "watchFor": "Nếu con lấy thẳng 2 : 3 hoặc lộn chiều — làm phép thử số hai chiều (S3) cùng con."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B20.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "A : B = 2 : 3??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Thì 2 : 3 chứ gì!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Hai phân số này đo HAI khay khác nhau đấy…",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B20_M1_F1.png",
+      "sha256_16": "92999f7a57dfb05f"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+        "wrong": {
+          "head": "CÁCH SAI",
+          "steps": [
+            "A:B = 2:3 (lấy thẳng đề)"
+          ],
+          "result": ""
+        },
+        "right": {
+          "head": "CÁCH ĐÚNG",
+          "steps": [
+            "A:B = 9:8"
+          ],
+          "result": ""
+        },
+        "verdict": "2/3×9 = 6 = 3/4×8"
+      },
+      "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B20_M1_F2.png",
+      "sha256_16": "e6e6357c3c6b7934"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "\"2/3 của A bằng 3/4 của B\"",
+            "text": "hai phân số nói về HAI khay khác nhau — KHÔNG được lấy thẳng 2 : 3 hay 3 : 4 làm tỉ số A : B.",
+            "tone": "navy"
+          },
+          {
+            "label": "Chiêu quy đồng TỬ",
+            "text": "2/3 = 6/9 và 3/4 = 6/8 → \"6/9 của A = 6/8…",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "PHÂN SỐ CỦA ĐỀ KHÔNG PHẢI TỈ SỐ CỦA ĐÁP — QUY ĐỒNG TỬ ĐÃ!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B20_M1_F3.png",
+      "sha256_16": "38417b45da25e6f1"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "TỈ SỐ ẨN: 2/3 CỦA A BẰNG 3/4 CỦA B",
+        "neutral": true,
+        "wrong": {
+          "head": "QUY ĐỒNG TỬ — VẾ A",
+          "steps": [
+            "2/3 = 6/9"
+          ],
+          "result": "A chia 9 phần"
+        },
+        "right": {
+          "head": "QUY ĐỒNG TỬ — VẾ B",
+          "steps": [
+            "3/4 = 6/8"
+          ],
+          "result": "B chia 8 phần"
+        },
+        "verdict": "Cùng 6 phần bằng nhau → A : B = 9 : 8 (mẫu của ai, phần của người ấy)"
+      },
+      "caption": "Quy đồng TỬ để lượng chung hiện hình, rồi đọc tỉ số ở mẫu",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B20_M1_F4.png",
+      "sha256_16": "a1efc6677142e4ff"
+    }
+  ]
 }

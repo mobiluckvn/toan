@@ -1,593 +1,596 @@
 {
- "title": "Chiều biến thiên: tử tăng — tăng · mẫu tăng — XẸP; neo đứt khi thêm một phía",
- "grade": 5,
- "durationMinutes": 7,
- "skills": {
-  "primary": [
-   "CASE:II.1.3#1"
-  ],
-  "bktUnit": "CASE:II.1.3#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B19",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B18.M3",
-  "next": "DL:KSN5Q1.B19.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B19",
-  "chunks": [
-   "CHUNK:KSN5Q1.B19.S3",
-   "CHUNK:KSN5Q1.B19.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B19.1"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B19.1"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con nắm chắc CHIỀU BIẾN THIÊN: tử tăng (mẫu giữ) → phân số TĂNG; mẫu tăng (tử giữ) → phân số GIẢM — trả lời được câu \"thêm là tăng hay giảm?\" bằng một câu hỏi lại: n rơi vào TỬ hay MẪU? Và nhận ra: thêm MỘT PHÍA thì cả neo hiệu lẫn neo tổng của Bài 18 đều ĐỨT.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (thêm vào mẫu — xẹp)",
-  "kidText": "Tử tăng thì phân số tăng, mẫu tăng thì phân số xẹp xuống. Chỉ thêm một phía thôi là cả hai mỏ neo đều đứt."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tử tăng, mẫu giữ nguyên: phân số TĂNG (lấy thêm lát, bánh vẫn thế)."
-   },
-   {
-    "id": "K2",
-    "text": "Mẫu tăng, tử giữ nguyên: phân số GIẢM (bánh chia thêm phần — lát mỏng đi): 7/15 > 7/18; 3/8 > 3/10."
-   },
-   {
-    "id": "K3",
-    "text": "Thêm n chỉ MỘT PHÍA: hiệu đổi ngay, tổng cũng đổi — hai mỏ neo Bài 18 ĐỨT cả; bài một phía cần đồ nghề khác (quy đồng — bài sau)."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: LY NƯỚC CAM PHA THÊM. Phân số là độ đậm ly cam: tử là số thìa bột cam, mẫu là lượng nước. Thêm bột (tử tăng) — ly ĐẬM lên. Nhưng Cáo Đề hỏi lỡm: \"thêm 3 vào ly là đậm lên chứ?\" — thêm GÌ mới được: thêm NƯỚC (mẫu tăng) là ly NHẠT đi, phân số XẸP xuống! Câu hỏi cứu mạng trước mọi đề \"thêm\": n rơi vào TỬ hay MẪU? Và để ý: đổ thêm một phía thì cả thước hiệu lẫn thước tổng của bến sông Bài 18 đều ĐỨT XÍCH — hiệu đổi, tổng đổi — đừng vác neo cũ sang đây.",
-  "canonicalExamples": [
-   {
-    "case": "mẫu tăng (ca lõi)",
-    "problem": "So sánh: 3/8 và 3/10.",
-    "solution": "Cùng tử 3, mẫu 10 lớn hơn — bánh chia nhiều phần hơn, lát mỏng hơn: 3/8 > 3/10.",
-    "why": "Ca K2 — nối luật cùng tử của Bài 17."
-   },
-   {
-    "case": "không tính vẫn biết (ca lý lẽ)",
-    "problem": "Không tính, cho biết 7/15 và 7/(15 + 3) phân số nào lớn hơn — vì sao?",
-    "solution": "Thêm 3 vào MẪU: nước nhiều hơn, cam nhạt đi — 7/15 > 7/18.",
-    "why": "Ca LT7 — trả lời bằng chiều biến thiên, khỏi quy đồng."
-   },
-   {
-    "case": "neo đứt (ca cảnh báo)",
-    "problem": "Thêm 4 chỉ vào tử của 5/21 — hiệu mẫu trừ tử còn giữ nguyên không?",
-    "solution": "Hiệu cũ 16, hiệu mới 21 − 9 = 12 — ĐỔI rồi! Thêm một phía làm đứt cả neo hiệu lẫn neo tổng.",
-    "why": "Ca K3 — ranh giới với Bài 18."
-   }
-  ],
-  "numberRange": "Lớp 5: tử mẫu ≤ 50.",
-  "misconceptions": [
-   {
-    "wrong": "\"Thêm là tăng\" — nghe chữ thêm là phán phân số lớn lên, bất kể thêm vào đâu.",
-    "signal": "Kết luận tăng khi n rơi vào mẫu.",
-    "fix": "K2 — hỏi lại một câu trước khi phán: n rơi vào TỬ hay MẪU? Mẫu tăng là xẹp.",
-    "counterExample": "1/2 thêm 100 vào mẫu: 1/102 — bé tí tẹo!"
-   }
-  ],
-  "vocabulary": [
-   "ly nước cam",
-   "thìa bột (tử) — lượng nước (mẫu)",
-   "đậm lên / nhạt đi",
-   "neo đứt xích",
-   "câu hỏi cứu mạng: tử hay mẫu?"
-  ],
-  "mantra": "THÊM VÀO MẪU — PHÂN SỐ XẸP XUỐNG!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "mcq",
-    "text": "2/5 và 2/7 — phân số nào lớn hơn? (Bài 17)",
-    "choices": [
-     "2/5",
-     "2/7",
-     "bằng nhau"
+  "title": "Chiều biến thiên: tử tăng — tăng · mẫu tăng — XẸP; neo đứt khi thêm một phía",
+  "grade": 5,
+  "durationMinutes": 7,
+  "skills": {
+    "primary": [
+      "CASE:II.1.3#1"
     ],
-    "answerKey": {
-     "choice": "2/5"
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B17.M1",
-   "message": "Ôn luật lát mỏng rồi vào quầy nước cam nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Quầy nước cam. Cáo Đề bưng ly 7/15 hỏi lỡm: \"Thêm 3 vào ly này — cam đậm lên hay nhạt đi nào?\" Trí Long: \"Thêm thì phải đậm… à mà thêm gì cơ?\" Su Kem gật gù: câu hỏi lại ấy chính là chìa khóa!",
-    "display": {
-     "type": "story_panel",
-     "caption": "thêm 3 — đậm hay nhạt?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để hỏi lại: thêm gì?"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K2"
+    "bktUnit": "CASE:II.1.3#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B19",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B18.M3",
+    "next": "DL:KSN5Q1.B19.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B19",
+    "chunks": [
+      "CHUNK:KSN5Q1.B19.S3",
+      "CHUNK:KSN5Q1.B19.S4"
     ],
-    "narration": "Ly cam: thìa bột là TỬ, lượng nước là MẪU. Thêm BỘT — tử tăng: ly đậm lên, phân số TĂNG. Thêm NƯỚC — mẫu tăng: ly nhạt đi, phân số XẸP: 7/15 lớn hơn 7/18! Trước mọi đề chữ \"thêm\", hỏi câu cứu mạng: n rơi vào TỬ hay MẪU?",
-    "display": {
-     "type": "juice_glass_interactive",
-     "spec": {
-      "addNum": "tử +: đậm ↑",
-      "addDen": "mẫu +: nhạt ↓ (7/15 > 7/18)"
-     }
-    },
-    "interaction": {
-     "type": "pour_both_ways",
-     "successMessage": "Thêm bột — đậm; thêm nước — nhạt: hỏi 'tử hay mẫu' trước!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "So sánh: 3/8 và 3/10.",
-     "choices": [
-      "3/8 > 3/10",
-      "3/8 < 3/10",
-      "bằng nhau"
-     ],
-     "answerKey": {
-      "choice": "3/8 > 3/10"
-     },
-     "wrongFeedback": "Mẫu 10 lớn hơn — lát mỏng hơn.",
-     "objective": "O1",
-     "teaches": [
-      "K2"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 36,
-    "teaches": [
-     "K3"
+    "cases": [
+      "CA:KSN5Q1.B19.1"
     ],
-    "narration": "Cảnh báo đứt neo! Bài 18 sống nhờ hai mỏ neo — nhưng thêm 4 chỉ vào TỬ của 5/21 xem: hiệu cũ 16, hiệu mới 21 trừ 9 là MƯỜI HAI — đổi rồi! Tổng cũng đổi. Thêm MỘT PHÍA là cả hai neo đứt xích — bài một phía cần đồ nghề riêng: quy đồng theo kẻ đứng im, học ngay bài sau.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "5/21 thêm 4 vào tử → 9/21",
-      "hiệu 16 → 12: ĐỨT neo hiệu (tổng cũng đổi)",
-      "một phía → đồ nghề mới: quy đồng (bài sau)"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Thần chú quầy cam: thêm vào mẫu — phân số xẹp xuống!",
-    "display": {
-     "type": "mantra_card",
-     "text": "THÊM VÀO MẪU — XẸP XUỐNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 77,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Quầy nước cam. Cáo Đề bưng ly bảy phần mười lăm hỏi lỡm: thêm ba vào ly này — cam đậm lên hay nhạt đi nào? Trí Long: thêm thì phải đậm… à mà thêm GÌ cơ? Su Kem gật gù: câu hỏi lại ấy chính là chìa khóa!",
-    "screenText": "thêm 3 — đậm hay nhạt?",
-    "visual": "Quầy nước với ly cam '7/15'; Cáo Đề cầm thìa úp mờ; Trí Long khựng lại giữa câu, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 18
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Ly cam: thìa bột là TỬ, lượng nước là MẪU. Thêm BỘT — tử tăng: ly đậm lên, phân số TĂNG. Thêm NƯỚC — mẫu tăng: ly nhạt đi, phân số XẸP: bảy phần mười lăm lớn hơn bảy phần mười tám! Trước mọi đề chữ thêm, hỏi câu cứu mạng: en rơi vào TỬ hay MẪU?",
-    "screenText": "bột (tử) ↑ → đậm · nước (mẫu) ↑ → nhạt: 7/15 > 7/18",
-    "visual": "Hai ly cam song song: ly thêm bột sẫm màu mũi tên lên; ly thêm nước nhạt dần mũi tên xuống; câu hỏi 'TỬ hay MẪU?' đóng khung vàng.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Cảnh báo đứt neo! Thêm bốn chỉ vào TỬ của năm phần hai mốt xem: hiệu cũ mười sáu, hiệu mới hai mốt trừ chín là MƯỜI HAI — đổi rồi! Tổng cũng đổi. Thêm MỘT PHÍA là cả hai neo đứt xích — bài một phía cần đồ nghề riêng: quy đồng theo kẻ đứng im, học ngay bài sau!",
-    "screenText": "thêm 1 phía: hiệu 16→12, tổng đổi — NEO ĐỨT!",
-    "visual": "Hai mỏ neo Bài 18 đứt xích chìm xuống nước; bè trôi tự do; biển chỉ đường 'QUY ĐỒNG — bài sau' teal #1FC3A6.",
-    "assets": [],
-    "duration": 22
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú quầy cam: thêm vào mẫu — phân số xẹp xuống!",
-    "screenText": "THÊM VÀO MẪU — XẸP XUỐNG!",
-    "visual": "Thẻ thần chú vàng với icon ly nước cam.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Ly của con: không tính, bảy phần mười lăm với bảy phần mười tám — ly nào đậm hơn, vì sao? Vào bài luyện ngay!",
-    "screenText": "7/15 ? 7/18 — không tính!",
-    "visual": "Hai ly cam chờ nếm; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 9
-   }
-  ]
- },
- "workedExample": {
-  "title": "Nếm hai ly không cần máy đo",
-  "problem": "Không tính, cho biết 7/15 và 7/(15 + 3) phân số nào lớn hơn — vì sao?",
-  "steps": [
-   {
-    "show": "Bước 1 — Hỏi câu cứu mạng: 3 được thêm vào đâu? → vào MẪU.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Thêm vào mẫu thì phân số:",
-     "choices": [
-      "giảm",
-      "tăng",
-      "không đổi"
-     ],
-     "answerKey": {
-      "choice": "giảm"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Mẫu tăng (nước nhiều hơn) → ly nhạt đi: 7/18 < 7/15."
-   },
-   {
-    "show": "Bước 3 — Kết luận: 7/15 > 7/18 — trả lời bằng chiều biến thiên, khỏi quy đồng.",
-    "askAfter": {
-     "format": "mcq",
-     "text": "9/20 và 9/17 — phân số nào lớn hơn?",
-     "choices": [
-      "9/17",
-      "9/20",
-      "bằng nhau"
-     ],
-     "answerKey": {
-      "choice": "9/17"
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mcq",
-     "sourceItem": "ITEM:KSN5Q1.B19.LT1",
-     "text": "So sánh: 3/8 và 3/10.",
-     "choices": [
-      "3/8 > 3/10",
-      "3/8 < 3/10",
-      "bằng nhau"
-     ],
-     "answerKey": {
-      "choice": "3/8 > 3/10"
-     },
-     "hints": [
-      "Cùng tử — luật lát mỏng.",
-      "Mẫu 10 chia nhiều phần hơn."
-     ],
-     "solutionNarrative": "Cùng tử, mẫu bé hơn thì lớn hơn: 3/8 > 3/10.",
-     "teaches": [
-      "K2"
-     ],
-     "generator": {
-      "template": "So sánh {t}/{a} và {t}/{a+n}.",
-      "constraints": {},
-      "answerRule": "mẫu lớn → bé hơn"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B19.LT7",
-     "text": "Không tính, cho biết 7/15 và 7/(15 + 3) phân số nào lớn hơn — vì sao?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "đáp",
-        "value": "7/15 > 7/18"
-       },
-       {
-        "label": "vì",
-        "value": "tử giữ nguyên, mẫu tăng thì phân số giảm — chia thêm phần, lát mỏng đi"
-       }
-      ]
-     },
-     "hints": [
-      "Thêm 3 vào đâu?",
-      "Nước nhiều hơn — ly thế nào?"
-     ],
-     "solutionNarrative": "Mẫu tăng → giảm: 7/15 > 7/18.",
-     "teaches": [
-      "K2"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "tf",
-     "text": "(Đúng/Sai?) Thêm 4 chỉ vào tử của 5/21 thì hiệu mẫu trừ tử vẫn là 16.",
-     "answerKey": {
-      "value": false,
-      "note": "Hiệu mới 21 − 9 = 12 — thêm một phía làm ĐỨT neo hiệu (tổng cũng đổi)."
-     },
-     "hints": [
-      "Tính hiệu mới thử.",
-      "Neo Bài 18 sống khi nào?"
-     ],
-     "teaches": [
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:II.1.3#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B19.M2",
-   "award": "huy_hieu_ly_nuoc_cam"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B19.QZ1",
-    "text": "(Đúng/Sai?) Thêm một số tự nhiên vào mẫu số (tử giữ nguyên) thì phân số lớn lên.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
+    "traps": [
+      "TRAP:KSN5Q1.B19.1"
     ]
-   },
-   {
-    "id": "A2",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B19.QZ2",
-    "text": "(Đúng/Sai?) Thêm n chỉ vào tử số thì hiệu mẫu trừ tử vẫn không đổi.",
-    "answerKey": {
-     "value": false
-    },
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "text": "Tử tăng, mẫu giữ nguyên — phân số:",
-    "choices": [
-     "tăng",
-     "giảm",
-     "không đổi"
-    ],
-    "answerKey": {
-     "choice": "tăng"
-    },
-    "teaches": [
-     "K1"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Chiều biến thiên của phân số? Thêm một phía thì neo Bài 18 sao?",
-    "back": "Tử tăng → TĂNG (thêm bột — đậm). Mẫu tăng → GIẢM (thêm nước — nhạt): 7/15 > 7/18. Thêm MỘT PHÍA: hiệu và tổng đều đổi — NEO ĐỨT, phải quy đồng. Hỏi cứu mạng: n rơi vào TỬ hay MẪU?"
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P3 (neo đứt)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học chiều biến thiên bằng ly nước cam: thêm bột đậm — thêm nước nhạt, và biết thêm một phía làm đứt neo. Con đạt {score}/3, {trapResult} câu bẫy thêm-là-tăng.",
-  "homeActivity": "Pha nước cam thật: cho con tự thêm nước vào ly đậm và phát biểu 'mẫu tăng — phân số xẹp'.",
-  "watchFor": "Nếu con phán 'thêm là tăng' — hỏi lại đúng một câu: 'thêm vào TỬ hay MẪU?' (S2)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B19.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "thêm 3 — đậm hay nhạt?",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "Thêm 3 vào ly này — cam đậm lên hay nhạt đi nào?",
-      "tone": "wrong"
-     },
-     {
-      "who": "Trí Long",
-      "say": "Thêm thì phải đậm… à mà thêm gì cơ?",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B19_M1_F1.png",
-   "sha256_16": "401d5cc65ac65123"
   },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con nắm chắc CHIỀU BIẾN THIÊN: tử tăng (mẫu giữ) → phân số TĂNG; mẫu tăng (tử giữ) → phân số GIẢM — trả lời được câu \"thêm là tăng hay giảm?\" bằng một câu hỏi lại: n rơi vào TỬ hay MẪU? Và nhận ra: thêm MỘT PHÍA thì cả neo hiệu lẫn neo tổng của Bài 18 đều ĐỨT.",
-    "steps": [
-     {
-      "text": "5/21 thêm 4 vào tử → 9/21"
-     },
-     {
-      "text": "hiệu 16 → 12: ĐỨT neo hiệu (tổng cũng đổi)"
-     },
-     {
-      "text": "một phía → đồ nghề mới: quy đồng (bài sau)"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B19_M1_F2.png",
-   "sha256_16": "e842fdd7440bde08"
+  "objective": {
+    "id": "O1",
+    "text": "Con nắm chắc CHIỀU BIẾN THIÊN: tử tăng (mẫu giữ) → phân số TĂNG; mẫu tăng (tử giữ) → phân số GIẢM — trả lời được câu \"thêm là tăng hay giảm?\" bằng một câu hỏi lại: n rơi vào TỬ hay MẪU? Và nhận ra: thêm MỘT PHÍA thì cả neo hiệu lẫn neo tổng của Bài 18 đều ĐỨT.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (thêm vào mẫu — xẹp)",
+    "kidText": "Tử tăng thì phân số tăng, mẫu tăng thì phân số xẹp xuống. Chỉ thêm một phía thôi là cả hai mỏ neo đều đứt."
   },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tử tăng, mẫu giữ nguyên",
-      "text": "phân số:",
-      "tone": "navy"
-     },
-     {
-      "label": "Mẫu tăng, tử giữ nguyên",
-      "text": "phân số GIẢM (bánh chia thêm phần — lát mỏng đi): 7/15 > 7/18; 3/8 > 3/10.",
-      "tone": "teal"
-     }
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Tử tăng, mẫu giữ nguyên: phân số TĂNG (lấy thêm lát, bánh vẫn thế)."
+      },
+      {
+        "id": "K2",
+        "text": "Mẫu tăng, tử giữ nguyên: phân số GIẢM (bánh chia thêm phần — lát mỏng đi): 7/15 > 7/18; 3/8 > 3/10."
+      },
+      {
+        "id": "K3",
+        "text": "Thêm n chỉ MỘT PHÍA: hiệu đổi ngay, tổng cũng đổi — hai mỏ neo Bài 18 ĐỨT cả; bài một phía cần đồ nghề khác (quy đồng — bài sau)."
+      }
+    ],
+    "mechanism": "Hình ảnh brand: LY NƯỚC CAM PHA THÊM. Phân số là độ đậm ly cam: tử là số thìa bột cam, mẫu là lượng nước. Thêm bột (tử tăng) — ly ĐẬM lên. Nhưng Cáo Đề hỏi lỡm: \"thêm 3 vào ly là đậm lên chứ?\" — thêm GÌ mới được: thêm NƯỚC (mẫu tăng) là ly NHẠT đi, phân số XẸP xuống! Câu hỏi cứu mạng trước mọi đề \"thêm\": n rơi vào TỬ hay MẪU? Và để ý: đổ thêm một phía thì cả thước hiệu lẫn thước tổng của bến sông Bài 18 đều ĐỨT XÍCH — hiệu đổi, tổng đổi — đừng vác neo cũ sang đây.",
+    "canonicalExamples": [
+      {
+        "case": "mẫu tăng (ca lõi)",
+        "problem": "So sánh: 3/8 và 3/10.",
+        "solution": "Cùng tử 3, mẫu 10 lớn hơn — bánh chia nhiều phần hơn, lát mỏng hơn: 3/8 > 3/10.",
+        "why": "Ca K2 — nối luật cùng tử của Bài 17."
+      },
+      {
+        "case": "không tính vẫn biết (ca lý lẽ)",
+        "problem": "Không tính, cho biết 7/15 và 7/(15 + 3) phân số nào lớn hơn — vì sao?",
+        "solution": "Thêm 3 vào MẪU: nước nhiều hơn, cam nhạt đi — 7/15 > 7/18.",
+        "why": "Ca LT7 — trả lời bằng chiều biến thiên, khỏi quy đồng."
+      },
+      {
+        "case": "neo đứt (ca cảnh báo)",
+        "problem": "Thêm 4 chỉ vào tử của 5/21 — hiệu mẫu trừ tử còn giữ nguyên không?",
+        "solution": "Hiệu cũ 16, hiệu mới 21 − 9 = 12 — ĐỔI rồi! Thêm một phía làm đứt cả neo hiệu lẫn neo tổng.",
+        "why": "Ca K3 — ranh giới với Bài 18."
+      }
+    ],
+    "numberRange": "Lớp 5: tử mẫu ≤ 50.",
+    "misconceptions": [
+      {
+        "wrong": "\"Thêm là tăng\" — nghe chữ thêm là phán phân số lớn lên, bất kể thêm vào đâu.",
+        "signal": "Kết luận tăng khi n rơi vào mẫu.",
+        "fix": "K2 — hỏi lại một câu trước khi phán: n rơi vào TỬ hay MẪU? Mẫu tăng là xẹp.",
+        "counterExample": "1/2 thêm 100 vào mẫu: 1/102 — bé tí tẹo!"
+      }
+    ],
+    "vocabulary": [
+      "ly nước cam",
+      "thìa bột (tử) — lượng nước (mẫu)",
+      "đậm lên / nhạt đi",
+      "neo đứt xích",
+      "câu hỏi cứu mạng: tử hay mẫu?"
     ],
     "mantra": "THÊM VÀO MẪU — PHÂN SỐ XẸP XUỐNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B19_M1_F3.png",
-   "sha256_16": "ce1140fe09ef8b12"
   },
-  {
-   "archetype": "fraction_split",
-   "params": {
-    "title": "THÊM VÀO MẪU THÌ PHÂN SỐ XẸP XUỐNG",
-    "shapes": [
-     {
-      "parts": 8,
-      "shaded": 3,
-      "label": "3/8",
-      "kind": "bar"
-     },
-     {
-      "parts": 10,
-      "shaded": 3,
-      "label": "3/10 — bé hơn",
-      "kind": "bar"
-     }
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "mcq",
+        "text": "2/5 và 2/7 — phân số nào lớn hơn? (Bài 17)",
+        "choices": [
+          "2/5",
+          "2/7",
+          "bằng nhau"
+        ],
+        "answerKey": {
+          "choice": "2/5"
+        }
+      }
     ],
-    "note": "Thêm nước vào cốc cam: vẫn 3 phần cam nhưng cam nhạt đi → 3/8 > 3/10"
-   },
-   "caption": "Tử tăng thì phân số TĂNG · mẫu tăng thì phân số XẸP",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B19_M1_F4.png",
-   "sha256_16": "7d0ce24459071517"
-  }
- ]
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B17.M1",
+      "message": "Ôn luật lát mỏng rồi vào quầy nước cam nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Quầy nước cam. Cáo Đề bưng ly 7/15 hỏi lỡm: \"Thêm 3 vào ly này — cam đậm lên hay nhạt đi nào?\" Trí Long: \"Thêm thì phải đậm… à mà thêm gì cơ?\" Su Kem gật gù: câu hỏi lại ấy chính là chìa khóa!",
+        "display": {
+          "type": "story_panel",
+          "caption": "thêm 3 — đậm hay nhạt?"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để hỏi lại: thêm gì?"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 42,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Ly cam: thìa bột là TỬ, lượng nước là MẪU. Thêm BỘT — tử tăng: ly đậm lên, phân số TĂNG. Thêm NƯỚC — mẫu tăng: ly nhạt đi, phân số XẸP: 7/15 lớn hơn 7/18! Trước mọi đề chữ \"thêm\", hỏi câu cứu mạng: n rơi vào TỬ hay MẪU?",
+        "display": {
+          "type": "juice_glass_interactive",
+          "spec": {
+            "addNum": "tử +: đậm ↑",
+            "addDen": "mẫu +: nhạt ↓ (7/15 > 7/18)"
+          }
+        },
+        "interaction": {
+          "type": "pour_both_ways",
+          "successMessage": "Thêm bột — đậm; thêm nước — nhạt: hỏi 'tử hay mẫu' trước!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "So sánh: 3/8 và 3/10.",
+          "choices": [
+            "3/8 > 3/10",
+            "3/8 < 3/10",
+            "bằng nhau"
+          ],
+          "answerKey": {
+            "choice": "3/8 > 3/10"
+          },
+          "wrongFeedback": "Mẫu 10 lớn hơn — lát mỏng hơn.",
+          "objective": "O1",
+          "teaches": [
+            "K2"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 36,
+        "teaches": [
+          "K3"
+        ],
+        "narration": "Cảnh báo đứt neo! Bài 18 sống nhờ hai mỏ neo — nhưng thêm 4 chỉ vào TỬ của 5/21 xem: hiệu cũ 16, hiệu mới 21 trừ 9 là MƯỜI HAI — đổi rồi! Tổng cũng đổi. Thêm MỘT PHÍA là cả hai neo đứt xích — bài một phía cần đồ nghề riêng: quy đồng theo kẻ đứng im, học ngay bài sau.",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "5/21 thêm 4 vào tử → 9/21",
+            "hiệu 16 → 12: ĐỨT neo hiệu (tổng cũng đổi)",
+            "một phía → đồ nghề mới: quy đồng (bài sau)"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 12,
+        "narration": "Thần chú quầy cam: thêm vào mẫu — phân số xẹp xuống!",
+        "display": {
+          "type": "mantra_card",
+          "text": "THÊM VÀO MẪU — XẸP XUỐNG!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 77,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Quầy nước cam. Cáo Đề bưng ly bảy phần mười lăm hỏi lỡm: thêm ba vào ly này — cam đậm lên hay nhạt đi nào? Trí Long: thêm thì phải đậm… à mà thêm GÌ cơ? Su Kem gật gù: câu hỏi lại ấy chính là chìa khóa!",
+        "screenText": "thêm 3 — đậm hay nhạt?",
+        "visual": "Quầy nước với ly cam '7/15'; Cáo Đề cầm thìa úp mờ; Trí Long khựng lại giữa câu, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 18
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Ly cam: thìa bột là TỬ, lượng nước là MẪU. Thêm BỘT — tử tăng: ly đậm lên, phân số TĂNG. Thêm NƯỚC — mẫu tăng: ly nhạt đi, phân số XẸP: bảy phần mười lăm lớn hơn bảy phần mười tám! Trước mọi đề chữ thêm, hỏi câu cứu mạng: en rơi vào TỬ hay MẪU?",
+        "screenText": "bột (tử) ↑ → đậm · nước (mẫu) ↑ → nhạt: 7/15 > 7/18",
+        "visual": "Hai ly cam song song: ly thêm bột sẫm màu mũi tên lên; ly thêm nước nhạt dần mũi tên xuống; câu hỏi 'TỬ hay MẪU?' đóng khung vàng.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Cảnh báo đứt neo! Thêm bốn chỉ vào TỬ của năm phần hai mốt xem: hiệu cũ mười sáu, hiệu mới hai mốt trừ chín là MƯỜI HAI — đổi rồi! Tổng cũng đổi. Thêm MỘT PHÍA là cả hai neo đứt xích — bài một phía cần đồ nghề riêng: quy đồng theo kẻ đứng im, học ngay bài sau!",
+        "screenText": "thêm 1 phía: hiệu 16→12, tổng đổi — NEO ĐỨT!",
+        "visual": "Hai mỏ neo Bài 18 đứt xích chìm xuống nước; bè trôi tự do; biển chỉ đường 'QUY ĐỒNG — bài sau' teal #1FC3A6.",
+        "assets": [],
+        "duration": 22
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú quầy cam: thêm vào mẫu — phân số xẹp xuống!",
+        "screenText": "THÊM VÀO MẪU — XẸP XUỐNG!",
+        "visual": "Thẻ thần chú vàng với icon ly nước cam.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Ly của con: không tính, bảy phần mười lăm với bảy phần mười tám — ly nào đậm hơn, vì sao? Vào bài luyện ngay!",
+        "screenText": "7/15 ? 7/18 — không tính!",
+        "visual": "Hai ly cam chờ nếm; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 9
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Nếm hai ly không cần máy đo",
+    "problem": "Không tính, cho biết 7/15 và 7/(15 + 3) phân số nào lớn hơn — vì sao?",
+    "steps": [
+      {
+        "show": "Bước 1 — Hỏi câu cứu mạng: 3 được thêm vào đâu? → vào MẪU.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Thêm vào mẫu thì phân số:",
+          "choices": [
+            "giảm",
+            "tăng",
+            "không đổi"
+          ],
+          "answerKey": {
+            "choice": "giảm"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Mẫu tăng (nước nhiều hơn) → ly nhạt đi: 7/18 < 7/15."
+      },
+      {
+        "show": "Bước 3 — Kết luận: 7/15 > 7/18 — trả lời bằng chiều biến thiên, khỏi quy đồng.",
+        "askAfter": {
+          "format": "mcq",
+          "text": "9/20 và 9/17 — phân số nào lớn hơn?",
+          "choices": [
+            "9/17",
+            "9/20",
+            "bằng nhau"
+          ],
+          "answerKey": {
+            "choice": "9/17"
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mcq",
+          "sourceItem": "ITEM:KSN5Q1.B19.LT1",
+          "text": "So sánh: 3/8 và 3/10.",
+          "choices": [
+            "3/8 > 3/10",
+            "3/8 < 3/10",
+            "bằng nhau"
+          ],
+          "answerKey": {
+            "choice": "3/8 > 3/10"
+          },
+          "hints": [
+            "Cùng tử — luật lát mỏng.",
+            "Mẫu 10 chia nhiều phần hơn."
+          ],
+          "solutionNarrative": "Cùng tử, mẫu bé hơn thì lớn hơn: 3/8 > 3/10.",
+          "teaches": [
+            "K2"
+          ],
+          "generator": {
+            "template": "So sánh {t}/{a} và {t}/{a+n}.",
+            "constraints": {},
+            "answerRule": "mẫu lớn → bé hơn"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B19.LT7",
+          "text": "Không tính, cho biết 7/15 và 7/(15 + 3) phân số nào lớn hơn — vì sao?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "đáp",
+                "value": "7/15 > 7/18"
+              },
+              {
+                "label": "vì",
+                "value": "tử giữ nguyên, mẫu tăng thì phân số giảm — chia thêm phần, lát mỏng đi"
+              }
+            ]
+          },
+          "hints": [
+            "Thêm 3 vào đâu?",
+            "Nước nhiều hơn — ly thế nào?"
+          ],
+          "solutionNarrative": "Mẫu tăng → giảm: 7/15 > 7/18.",
+          "teaches": [
+            "K2"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "tf",
+          "text": "(Đúng/Sai?) Thêm 4 chỉ vào tử của 5/21 thì hiệu mẫu trừ tử vẫn là 16.",
+          "answerKey": {
+            "value": false,
+            "note": "Hiệu mới 21 − 9 = 12 — thêm một phía làm ĐỨT neo hiệu (tổng cũng đổi)."
+          },
+          "hints": [
+            "Tính hiệu mới thử.",
+            "Neo Bài 18 sống khi nào?"
+          ],
+          "teaches": [
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:II.1.3#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B19.M2",
+      "award": "huy_hieu_ly_nuoc_cam"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B19.QZ1",
+        "text": "(Đúng/Sai?) Thêm một số tự nhiên vào mẫu số (tử giữ nguyên) thì phân số lớn lên.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B19.QZ2",
+        "text": "(Đúng/Sai?) Thêm n chỉ vào tử số thì hiệu mẫu trừ tử vẫn không đổi.",
+        "answerKey": {
+          "value": false
+        },
+        "teaches": [
+          "K3"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "text": "Tử tăng, mẫu giữ nguyên — phân số:",
+        "choices": [
+          "tăng",
+          "giảm",
+          "không đổi"
+        ],
+        "answerKey": {
+          "choice": "tăng"
+        },
+        "teaches": [
+          "K1"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Chiều biến thiên của phân số? Thêm một phía thì neo Bài 18 sao?",
+        "back": "Tử tăng → TĂNG (thêm bột — đậm). Mẫu tăng → GIẢM (thêm nước — nhạt): 7/15 > 7/18. Thêm MỘT PHÍA: hiệu và tổng đều đổi — NEO ĐỨT, phải quy đồng. Hỏi cứu mạng: n rơi vào TỬ hay MẪU?"
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P3 (neo đứt)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học chiều biến thiên bằng ly nước cam: thêm bột đậm — thêm nước nhạt, và biết thêm một phía làm đứt neo. Con đạt {score}/3, {trapResult} câu bẫy thêm-là-tăng.",
+    "homeActivity": "Pha nước cam thật: cho con tự thêm nước vào ly đậm và phát biểu 'mẫu tăng — phân số xẹp'.",
+    "watchFor": "Nếu con phán 'thêm là tăng' — hỏi lại đúng một câu: 'thêm vào TỬ hay MẪU?' (S2)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B19.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "thêm 3 — đậm hay nhạt?",
+        "lines": [
+          {
+            "who": "Cáo Đề",
+            "say": "Thêm 3 vào ly này — cam đậm lên hay nhạt đi nào?",
+            "tone": "wrong"
+          },
+          {
+            "who": "Trí Long",
+            "say": "Thêm thì phải đậm… à mà thêm gì cơ?",
+            "tone": "wrong"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B19_M1_F1.png",
+      "sha256_16": "401d5cc65ac65123"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con nắm chắc CHIỀU BIẾN THIÊN: tử tăng (mẫu giữ) → phân số TĂNG; mẫu tăng (tử giữ) → phân số GIẢM — trả lời được câu \"thêm là tăng hay giảm?\" bằng một câu hỏi lại: n rơi vào TỬ hay MẪU? Và nhận ra: thêm MỘT PHÍA thì cả neo hiệu lẫn neo tổng của Bài 18 đều ĐỨT.",
+        "steps": [
+          {
+            "text": "5/21 thêm 4 vào tử → 9/21"
+          },
+          {
+            "text": "hiệu 16 → 12: ĐỨT neo hiệu (tổng cũng đổi)"
+          },
+          {
+            "text": "một phía → đồ nghề mới: quy đồng (bài sau)"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B19_M1_F2.png",
+      "sha256_16": "e842fdd7440bde08"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Tử tăng, mẫu giữ nguyên",
+            "text": "phân số:",
+            "tone": "navy"
+          },
+          {
+            "label": "Mẫu tăng, tử giữ nguyên",
+            "text": "phân số GIẢM (bánh chia thêm phần — lát mỏng đi): 7/15 > 7/18; 3/8 > 3/10.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "THÊM VÀO MẪU — PHÂN SỐ XẸP XUỐNG!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B19_M1_F3.png",
+      "sha256_16": "ce1140fe09ef8b12"
+    },
+    {
+      "archetype": "fraction_split",
+      "params": {
+        "title": "THÊM VÀO MẪU THÌ PHÂN SỐ XẸP XUỐNG",
+        "shapes": [
+          {
+            "parts": 8,
+            "shaded": 3,
+            "label": "3/8",
+            "kind": "bar"
+          },
+          {
+            "parts": 10,
+            "shaded": 3,
+            "label": "3/10 — bé hơn",
+            "kind": "bar"
+          }
+        ],
+        "note": "Thêm nước vào cốc cam: vẫn 3 phần cam nhưng cam nhạt đi → 3/8 > 3/10"
+      },
+      "caption": "Tử tăng thì phân số TĂNG · mẫu tăng thì phân số XẸP",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B19_M1_F4.png",
+      "sha256_16": "7d0ce24459071517"
+    }
+  ]
 }

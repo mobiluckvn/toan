@@ -1,606 +1,609 @@
 {
- "title": "Gối đầu nhân hệ số: tăng 10 giảm 10 còn 99% — cạnh +10% thì diện tích +21%",
- "grade": 5,
- "durationMinutes": 8,
- "skills": {
-  "primary": [
-   "CASE:II.4.2#1"
-  ],
-  "bktUnit": "CASE:II.4.2#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B37",
-  "order": 3,
-  "prev": "DL:KSN5Q1.B37.M2",
-  "next": "DL:KSN5Q1.B38.M1"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B37",
-  "chunks": [
-   "CHUNK:KSN5Q1.B37.S4",
-   "CHUNK:KSN5Q1.B37.S7"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B37.4"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B37.3"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con tính tăng – giảm LIÊN TIẾP bằng cách NHÂN HỆ SỐ GỐI ĐẦU (tăng 10% rồi giảm 10%: 1,1 × 0,9 = 0,99 — hụt 1%, không về giá cũ) vì lần sau ăn trên giá ĐÃ ĐỔI; hiểu vì sao cạnh tăng 10% thì diện tích tăng 21% (1,1 × 1,1 = 1,21); và xâu chuỗi % của %: A = 80% B, B = 75% C → A = 60% C.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (nhân hệ số, không cộng thẳng)",
-  "kidText": "Tăng 10% rồi giảm 10% không về giá cũ mà chỉ còn 99%. Biến động nối đuôi nhau thì nhân hệ số, cấm cộng thẳng."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Biến động nối nhau thì NHÂN HỆ SỐ: tăng 10% = × 1,1; giảm 10% = × 0,9 — vì lần giảm ăn trên giá ĐÃ TĂNG: 100 → 110 → 99: còn 99% — hụt 1%, KHÔNG về chỗ cũ (cấm cộng thẳng +10 − 10 = 0!)."
-   },
-   {
-    "id": "K2",
-    "text": "Diện tích ăn hệ số HAI LẦN: cạnh × 1,1 thì diện tích × 1,1 × 1,1 = 1,21 — tăng 21% (không phải 20%): hình vuông phình theo cả hai chiều."
-   },
-   {
-    "id": "K3",
-    "text": "% của % cũng là gối đầu: A = 80% B; B = 75% C → A = 0,8 × 0,75 = 0,6 = 60% của C — chuỗi hệ số nhân dồn về một gốc."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: CẦU THANG HỆ SỐ GỐI ĐẦU. Giá tăng 10% rồi giảm 10% — cả chợ phán: \"hòa, về giá cũ!\" Trí Long cộng thẳng: cộng mười trừ mười bằng không. Nhưng hai bậc thang GỐI ĐẦU nhau: bậc giảm đặt chân lên giá ĐÃ TĂNG! Lắp số đẹp: 100 → tăng 10%: 110 — giảm 10% CỦA 110 là 11: còn CHÍN CHÍN! Máy đúng là NHÂN hệ số: 1,1 nhân 0,9 bằng 0,99 — hụt một phần trăm. Hình vuông còn thấm đòn hai lần: cạnh tăng 10% — chiều ngang nhân 1,1, chiều dọc cũng nhân 1,1: diện tích nhân 1,21 — tăng HAI MƯƠI MỐT phần trăm! Chuỗi % của % cùng cầu thang: A là 80% của B, B là 75% của C — A bằng 0,8 nhân 0,75 bằng 0,6: SÁU MƯƠI phần trăm của C.",
-  "canonicalExamples": [
-   {
-    "case": "tăng rồi giảm (ca lõi)",
-    "problem": "Giá một món hàng tăng 10%, sau đó giảm 10% trên giá mới. Hỏi giá cuối bằng bao nhiêu % giá ban đầu?",
-    "solution": "1,1 × 0,9 = 0,99 → còn 99% — hụt 1%, không về giá cũ. Lắp số: 100 → 110 → 99 ✓.",
-    "why": "Ca đề A gốc câu 7 (C10) — trap tưởng-hòa."
-   },
-   {
-    "case": "diện tích hai chiều (ca thấm đòn kép)",
-    "problem": "Cạnh một hình vuông tăng 10%. Hỏi diện tích hình vuông tăng bao nhiêu phần trăm?",
-    "solution": "Diện tích × 1,1 × 1,1 = 1,21 → tăng 21% (không phải 20%).",
-    "why": "Ca LT8 — hệ số ăn hai lần."
-   },
-   {
-    "case": "% của % (ca sư phụ)",
-    "problem": "Số A bằng 80% số B; số B bằng 75% số C. Hỏi số A bằng bao nhiêu phần trăm số C?",
-    "solution": "A = 0,8 × 0,75 = 0,6 → 60% của C.",
-    "why": "Ca LT9 — chuỗi hệ số dồn một gốc."
-   }
-  ],
-  "numberRange": "Lớp 5: hệ số 0,7–1,3; hai bậc gối đầu.",
-  "misconceptions": [
-   {
-    "wrong": "Cộng thẳng các %: tăng 10 giảm 10 → hòa; hoặc diện tích tăng đúng 10 + 10 = 20%.",
-    "signal": "Phép cộng/trừ % thay cho phép nhân hệ số.",
-    "fix": "K1 — bậc sau đặt chân lên giá ĐÃ ĐỔI: nhân hệ số 1,1 × 0,9 = 0,99; lắp số đẹp 100 → 110 → 99 mà soi.",
-    "counterExample": "\"Hòa\" mà ví tiền hụt 1 đồng trên mỗi 100 — chợ nào cũng thích khách tin phép cộng!"
-   }
-  ],
-  "vocabulary": [
-   "cầu thang gối đầu",
-   "hệ số nhân",
-   "bậc sau ăn trên giá đã đổi",
-   "thấm đòn hai chiều",
-   "chuỗi % dồn một gốc"
-  ],
-  "mantra": "BIẾN ĐỘNG NỐI NHAU — NHÂN HỆ SỐ, CẤM CỘNG THẲNG!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Ôn M1: 10% của 110 = ?",
-    "answerKey": {
-     "value": 11
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B37.M1",
-   "message": "Ôn dạng 1 rồi leo cầu thang hệ số nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Bảng giá đổi hai lần: tăng 10% rồi giảm 10%. Cả chợ phán: \"hòa — về giá cũ!\" Trí Long cộng thẳng: \"cộng mười trừ mười bằng không mà!\" Su Kem lắp số đẹp: \"100 tăng lên 110 — thế 10% lần giảm ăn trên con số nào?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "+10% − 10% = hòa??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để leo cầu thang!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1"
+  "title": "Gối đầu nhân hệ số: tăng 10 giảm 10 còn 99% — cạnh +10% thì diện tích +21%",
+  "grade": 5,
+  "durationMinutes": 8,
+  "skills": {
+    "primary": [
+      "CASE:II.4.2#1"
     ],
-    "narration": "Hai bậc thang GỐI ĐẦU: bậc giảm đặt chân lên giá ĐÃ TĂNG! Một trăm — tăng mười phần trăm: MỘT TRĂM MƯỜI; giảm mười phần trăm CỦA một trăm mười là mười một: còn CHÍN MƯƠI CHÍN! Máy đúng là NHÂN hệ số: tăng mười phần trăm — nhân một phẩy một; giảm mười phần trăm — nhân không phẩy chín: một phẩy một nhân không phẩy chín bằng KHÔNG PHẨY CHÍN CHÍN — hụt đúng một phần trăm, không hề hòa!",
-    "display": {
-     "type": "stair_factor_interactive",
-     "spec": {
-      "steps": [
-       "100 × 1,1 = 110",
-       "110 × 0,9 = 99"
-      ],
-      "factor": "1,1 × 0,9 = 0,99",
-      "verdict": "còn 99% — hụt 1%"
-     }
-    },
-    "interaction": {
-     "type": "climb_stairs",
-     "answerKey": {
-      "value": 99
-     },
-     "successMessage": "1,1 × 0,9 = 0,99 → 99 — không hòa!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "Tăng 10% rồi giảm 10% thì còn:",
-     "choices": [
-      "99% giá cũ",
-      "100%",
-      "98%"
-     ],
-     "answerKey": {
-      "choice": "99% giá cũ"
-     },
-     "wrongFeedback": "1,1 × 0,9.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K3"
+    "bktUnit": "CASE:II.4.2#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B37",
+    "order": 3,
+    "prev": "DL:KSN5Q1.B37.M2",
+    "next": "DL:KSN5Q1.B38.M1"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B37",
+    "chunks": [
+      "CHUNK:KSN5Q1.B37.S4",
+      "CHUNK:KSN5Q1.B37.S7"
     ],
-    "narration": "Hình vuông thấm đòn HAI LẦN: cạnh tăng mười phần trăm — chiều ngang nhân một phẩy một, chiều dọc cũng nhân một phẩy một: diện tích nhân MỘT PHẨY HAI MỐT — tăng HAI MƯƠI MỐT phần trăm, không phải hai mươi! Chuỗi phần trăm của phần trăm: A là tám mươi phần trăm của B, B là bảy lăm phần trăm của C — A bằng không phẩy tám nhân không phẩy bảy lăm: không phẩy sáu — SÁU MƯƠI phần trăm của C!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "cạnh ×1,1 hai chiều → S × 1,21 → +21%",
-      "A = 0,8 × 0,75 C = 0,6 C = 60%",
-      "chuỗi hệ số nhân dồn một gốc"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú cầu thang: biến động nối nhau — nhân hệ số, cấm cộng thẳng!",
-    "display": {
-     "type": "mantra_card",
-     "text": "NHÂN HỆ SỐ — CẤM CỘNG THẲNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 90,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Bảng giá đổi hai lần: tăng mười phần trăm rồi giảm mười phần trăm. Cả chợ phán: hòa — về giá cũ! Trí Long cộng thẳng: cộng mười trừ mười bằng không mà! Su Kem lắp số đẹp: một trăm tăng lên một trăm mười — thế mười phần trăm lần giảm ăn trên con số nào?",
-    "screenText": "+10% rồi −10% = hòa??",
-    "visual": "Bảng giá lật hai lần; cả chợ giơ bảng HÒA; Su Kem chỉ vào con số 110 mới toanh, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Hai bậc thang GỐI ĐẦU: bậc giảm đặt chân lên giá ĐÃ TĂNG! Một trăm — tăng mười phần trăm: MỘT TRĂM MƯỜI; giảm mười phần trăm CỦA một trăm mười là mười một: còn CHÍN MƯƠI CHÍN! Máy đúng là NHÂN hệ số: một phẩy một nhân không phẩy chín bằng KHÔNG PHẨY CHÍN CHÍN — hụt đúng một phần trăm, không hề hòa!",
-    "screenText": "100 → ×1,1 → 110 → ×0,9 → 99 · 1,1 × 0,9 = 0,99",
-    "visual": "Cầu thang hai bậc gối đầu với bàn chân bậc hai đặt lên số 110; máy nhân hệ số nhả 0,99; đồng xu hụt 1 lăn ra.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Hình vuông thấm đòn HAI LẦN: cạnh tăng mười phần trăm — chiều ngang nhân một phẩy một, chiều dọc cũng nhân một phẩy một: diện tích nhân MỘT PHẨY HAI MỐT — tăng HAI MƯƠI MỐT phần trăm, không phải hai mươi! Chuỗi phần trăm của phần trăm: A là tám mươi phần trăm của B, B là bảy lăm phần trăm của C — A bằng không phẩy tám nhân không phẩy bảy lăm: SÁU MƯƠI phần trăm của C!",
-    "screenText": "S × 1,1 × 1,1 = 1,21 → +21% · A = 0,8 × 0,75 C = 60% C",
-    "visual": "Hình vuông phình cả hai chiều với viền tăng tô vàng lộ góc 21; chuỗi ba khối A-B-C nối hai hệ số nhân dồn.",
-    "assets": [],
-    "duration": 29
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú cầu thang: biến động nối nhau — nhân hệ số, cấm cộng thẳng!",
-    "screenText": "NHÂN HỆ SỐ — CẤM CỘNG THẲNG!",
-    "visual": "Thẻ thần chú vàng với icon cầu thang gối đầu.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Cầu thang: giá tăng mười phần trăm rồi giảm mười phần trăm — nhân hệ số xem còn bao nhiêu phần trăm giá cũ! Vào bài luyện ngay!",
-    "screenText": "1,1 × 0,9 = ? → còn ?%",
-    "visual": "Cầu thang chờ leo; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Leo hai bậc gối đầu",
-  "problem": "Giá một món hàng tăng 10%, sau đó giảm 10% trên giá mới. Hỏi giá cuối bằng bao nhiêu % giá ban đầu?",
-  "steps": [
-   {
-    "show": "Bước 1 — Hệ số: tăng 10% = × 1,1; giảm 10% = × 0,9.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Lần giảm 10% ăn trên giá nào?",
-     "choices": [
-      "giá ĐÃ TĂNG (110)",
-      "giá gốc (100)",
-      "giá nào cũng thế"
-     ],
-     "answerKey": {
-      "choice": "giá ĐÃ TĂNG (110)"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Nhân gối đầu: 1,1 × 0,9 = 0,99."
-   },
-   {
-    "show": "Bước 3 — Còn 99% — hụt 1%, KHÔNG về giá cũ. Lắp số: 100 → 110 → 99 ✓.",
-    "askAfter": {
-     "format": "mb",
-     "text": "Cạnh hình vuông +10% → diện tích tăng ?%",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "tăng",
-        "value": "21%"
-       }
-      ]
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B37.LT7",
-     "text": "Giá một món hàng tăng 10%, sau đó giảm 10% trên giá mới. Hỏi giá cuối bằng bao nhiêu % giá ban đầu?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "còn",
-        "value": "99%"
-       }
-      ]
-     },
-     "hints": [
-      "Hệ số 1,1 và 0,9.",
-      "Nhân gối đầu."
-     ],
-     "solutionNarrative": "1,1 × 0,9 = 0,99 → 99% — hụt 1%.",
-     "teaches": [
-      "K1"
-     ],
-     "generator": {
-      "template": "Tăng {a}% rồi giảm {b}%. Còn ?% giá cũ.",
-      "constraints": {},
-      "answerRule": "(1 + a/100)(1 − b/100)"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B37.LT8",
-     "text": "Cạnh một hình vuông tăng 10%. Hỏi diện tích hình vuông tăng bao nhiêu phần trăm?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "tăng",
-        "value": "21%"
-       }
-      ]
-     },
-     "hints": [
-      "Diện tích ăn hệ số hai lần.",
-      "1,1 × 1,1."
-     ],
-     "solutionNarrative": "× 1,21 → tăng 21% (không phải 20%).",
-     "teaches": [
-      "K2"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B37.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Số A bằng 80% số B; số B bằng 75% số C. Hỏi số A bằng bao nhiêu phần trăm số C?\"",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "A",
-        "value": "60% của C"
-       }
-      ]
-     },
-     "hints": [
-      "Chuỗi hệ số.",
-      "0,8 × 0,75."
-     ],
-     "solutionNarrative": "0,6 → A = 60% C.",
-     "teaches": [
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:II.4.2#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B38.M1",
-   "award": "huy_hieu_cau_thang_he_so"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B37.QZ4",
-    "text": "Tăng 10% rồi giảm 10% thì còn:",
-    "choices": [
-     "99% giá cũ",
-     "100%",
-     "98%"
+    "cases": [
+      "CA:KSN5Q1.B37.4"
     ],
-    "answerKey": {
-     "choice": "99% giá cũ"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
+    "traps": [
+      "TRAP:KSN5Q1.B37.3"
     ]
-   },
-   {
-    "id": "A2",
-    "format": "mb",
-    "text": "Cạnh +10% → diện tích tăng ?%",
-    "answerKey": {
-     "parts": [
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con tính tăng – giảm LIÊN TIẾP bằng cách NHÂN HỆ SỐ GỐI ĐẦU (tăng 10% rồi giảm 10%: 1,1 × 0,9 = 0,99 — hụt 1%, không về giá cũ) vì lần sau ăn trên giá ĐÃ ĐỔI; hiểu vì sao cạnh tăng 10% thì diện tích tăng 21% (1,1 × 1,1 = 1,21); và xâu chuỗi % của %: A = 80% B, B = 75% C → A = 60% C.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (nhân hệ số, không cộng thẳng)",
+    "kidText": "Tăng 10% rồi giảm 10% không về giá cũ mà chỉ còn 99%. Biến động nối đuôi nhau thì nhân hệ số, cấm cộng thẳng."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "tăng",
-       "value": "21%"
-      }
-     ]
-    },
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mb",
-    "text": "A = 80% B; B = 75% C → A = ?% C",
-    "answerKey": {
-     "parts": [
+        "id": "K1",
+        "text": "Biến động nối nhau thì NHÂN HỆ SỐ: tăng 10% = × 1,1; giảm 10% = × 0,9 — vì lần giảm ăn trên giá ĐÃ TĂNG: 100 → 110 → 99: còn 99% — hụt 1%, KHÔNG về chỗ cũ (cấm cộng thẳng +10 − 10 = 0!)."
+      },
       {
-       "label": "A",
-       "value": "60%"
+        "id": "K2",
+        "text": "Diện tích ăn hệ số HAI LẦN: cạnh × 1,1 thì diện tích × 1,1 × 1,1 = 1,21 — tăng 21% (không phải 20%): hình vuông phình theo cả hai chiều."
+      },
+      {
+        "id": "K3",
+        "text": "% của % cũng là gối đầu: A = 80% B; B = 75% C → A = 0,8 × 0,75 = 0,6 = 60% của C — chuỗi hệ số nhân dồn về một gốc."
       }
-     ]
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Tăng giảm liên tiếp — cộng hay nhân?",
-    "back": "NHÂN HỆ SỐ gối đầu (bậc sau ăn trên giá ĐÃ ĐỔI): +10% rồi −10% = 1,1 × 0,9 = 0,99 → còn 99%, hụt 1% — không hòa! Diện tích ăn hai lần: cạnh ×1,1 → S ×1,21 → +21%. Chuỗi %: A = 0,8 × 0,75 C = 60% C."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P3 (chuỗi %)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học nhân hệ số gối đầu: tăng 10 giảm 10 còn 99%, cạnh +10% thì diện tích +21%. Con đạt {score}/3, {trapResult} câu bẫy cộng-thẳng.",
-  "homeActivity": "Lấy tờ 100 nghìn (tưởng tượng): tăng 10% rồi giảm 10% — con đếm từng bậc 110 rồi 99 và chỉ ra đồng hụt.",
-  "watchFor": "Nếu con cộng thẳng các % — lắp số đẹp 100 → 110 → 99 cho tự thấy (S1)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B37.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "+10% − 10% = hòa??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "cộng mười trừ mười bằng không mà!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "100 tăng lên 110 — thế 10% lần giảm ăn trên con số nào?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B37_M3_F1.png",
-   "sha256_16": "172ece45e8a68617"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con tính tăng – giảm LIÊN TIẾP bằng cách NHÂN HỆ SỐ GỐI ĐẦU (tăng 10% rồi giảm 10%: 1,1 × 0,9 = 0,99 — hụt 1%, không về giá cũ) vì lần sau ăn trên giá ĐÃ ĐỔI; hiểu vì sao cạnh tăng 10% thì diện tích tăng 21% (1,1 × 1,1 = 1,21); và xâu chuỗi % của %: A = 80% B, B = 75% C → A = 60% C.",
-    "steps": [
-     {
-      "text": "cạnh ×1,1 hai chiều → S × 1,21 → +21%"
-     },
-     {
-      "text": "A = 0,8 × 0,75 C = 0,6 C = 60%"
-     },
-     {
-      "text": "chuỗi hệ số nhân dồn một gốc"
-     }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B37_M3_F2.png",
-   "sha256_16": "cb8dd56ed17cc2ed"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Biến động nối nhau thì NHÂN HỆ SỐ",
-      "text": "tăng 10% = × 1,1; giảm 10% = × 0,9 — vì lần giảm ăn trên giá ĐÃ TĂNG: 100 → 110 → 99: còn 99% — hụt 1%, KHÔNG về chỗ cũ (cấm cộng thẳng +10 − 10 = 0!).",
-      "tone": "navy"
-     },
-     {
-      "label": "Diện tích ăn hệ số HAI LẦN",
-      "text": "cạnh × 1,1 thì diện tích × 1,1 × 1,1 = 1,21 — tăng 21% (không phải 20%): hình vuông phình theo cả hai chiều.",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: CẦU THANG HỆ SỐ GỐI ĐẦU. Giá tăng 10% rồi giảm 10% — cả chợ phán: \"hòa, về giá cũ!\" Trí Long cộng thẳng: cộng mười trừ mười bằng không. Nhưng hai bậc thang GỐI ĐẦU nhau: bậc giảm đặt chân lên giá ĐÃ TĂNG! Lắp số đẹp: 100 → tăng 10%: 110 — giảm 10% CỦA 110 là 11: còn CHÍN CHÍN! Máy đúng là NHÂN hệ số: 1,1 nhân 0,9 bằng 0,99 — hụt một phần trăm. Hình vuông còn thấm đòn hai lần: cạnh tăng 10% — chiều ngang nhân 1,1, chiều dọc cũng nhân 1,1: diện tích nhân 1,21 — tăng HAI MƯƠI MỐT phần trăm! Chuỗi % của % cùng cầu thang: A là 80% của B, B là 75% của C — A bằng 0,8 nhân 0,75 bằng 0,6: SÁU MƯƠI phần trăm của C.",
+    "canonicalExamples": [
+      {
+        "case": "tăng rồi giảm (ca lõi)",
+        "problem": "Giá một món hàng tăng 10%, sau đó giảm 10% trên giá mới. Hỏi giá cuối bằng bao nhiêu % giá ban đầu?",
+        "solution": "1,1 × 0,9 = 0,99 → còn 99% — hụt 1%, không về giá cũ. Lắp số: 100 → 110 → 99 ✓.",
+        "why": "Ca đề A gốc câu 7 (C10) — trap tưởng-hòa."
+      },
+      {
+        "case": "diện tích hai chiều (ca thấm đòn kép)",
+        "problem": "Cạnh một hình vuông tăng 10%. Hỏi diện tích hình vuông tăng bao nhiêu phần trăm?",
+        "solution": "Diện tích × 1,1 × 1,1 = 1,21 → tăng 21% (không phải 20%).",
+        "why": "Ca LT8 — hệ số ăn hai lần."
+      },
+      {
+        "case": "% của % (ca sư phụ)",
+        "problem": "Số A bằng 80% số B; số B bằng 75% số C. Hỏi số A bằng bao nhiêu phần trăm số C?",
+        "solution": "A = 0,8 × 0,75 = 0,6 → 60% của C.",
+        "why": "Ca LT9 — chuỗi hệ số dồn một gốc."
+      }
+    ],
+    "numberRange": "Lớp 5: hệ số 0,7–1,3; hai bậc gối đầu.",
+    "misconceptions": [
+      {
+        "wrong": "Cộng thẳng các %: tăng 10 giảm 10 → hòa; hoặc diện tích tăng đúng 10 + 10 = 20%.",
+        "signal": "Phép cộng/trừ % thay cho phép nhân hệ số.",
+        "fix": "K1 — bậc sau đặt chân lên giá ĐÃ ĐỔI: nhân hệ số 1,1 × 0,9 = 0,99; lắp số đẹp 100 → 110 → 99 mà soi.",
+        "counterExample": "\"Hòa\" mà ví tiền hụt 1 đồng trên mỗi 100 — chợ nào cũng thích khách tin phép cộng!"
+      }
+    ],
+    "vocabulary": [
+      "cầu thang gối đầu",
+      "hệ số nhân",
+      "bậc sau ăn trên giá đã đổi",
+      "thấm đòn hai chiều",
+      "chuỗi % dồn một gốc"
     ],
     "mantra": "BIẾN ĐỘNG NỐI NHAU — NHÂN HỆ SỐ, CẤM CỘNG THẲNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B37_M3_F3.png",
-   "sha256_16": "94664fa86403ea27"
   },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "GỐI ĐẦU NHÂN HỆ SỐ: TĂNG 10% RỒI GIẢM 10%",
-    "steps": [
-     {
-      "text": "Giá gốc 100",
-      "sub": "mốc xuất phát"
-     },
-     {
-      "text": "Tăng 10% → × 1,1",
-      "sub": "100 → 110"
-     },
-     {
-      "text": "Giảm 10% trên giá MỚI → × 0,9",
-      "sub": "110 → 99  ·  hụt 1%"
-     }
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Ôn M1: 10% của 110 = ?",
+        "answerKey": {
+          "value": 11
+        }
+      }
     ],
-    "note": "Cạnh hình vuông tăng 10% thì diện tích × 1,1 × 1,1 = 1,21 → tăng 21%, không phải 20%"
-   },
-   "caption": "Không bao giờ cộng trừ phần trăm — phải nhân hệ số gối đầu",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B37_M3_F4.png",
-   "sha256_16": "312b9005b95ea393"
-  }
- ]
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B37.M1",
+      "message": "Ôn dạng 1 rồi leo cầu thang hệ số nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Bảng giá đổi hai lần: tăng 10% rồi giảm 10%. Cả chợ phán: \"hòa — về giá cũ!\" Trí Long cộng thẳng: \"cộng mười trừ mười bằng không mà!\" Su Kem lắp số đẹp: \"100 tăng lên 110 — thế 10% lần giảm ăn trên con số nào?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "+10% − 10% = hòa??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để leo cầu thang!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 44,
+        "teaches": [
+          "K1"
+        ],
+        "narration": "Hai bậc thang GỐI ĐẦU: bậc giảm đặt chân lên giá ĐÃ TĂNG! Một trăm — tăng mười phần trăm: MỘT TRĂM MƯỜI; giảm mười phần trăm CỦA một trăm mười là mười một: còn CHÍN MƯƠI CHÍN! Máy đúng là NHÂN hệ số: tăng mười phần trăm — nhân một phẩy một; giảm mười phần trăm — nhân không phẩy chín: một phẩy một nhân không phẩy chín bằng KHÔNG PHẨY CHÍN CHÍN — hụt đúng một phần trăm, không hề hòa!",
+        "display": {
+          "type": "stair_factor_interactive",
+          "spec": {
+            "steps": [
+              "100 × 1,1 = 110",
+              "110 × 0,9 = 99"
+            ],
+            "factor": "1,1 × 0,9 = 0,99",
+            "verdict": "còn 99% — hụt 1%"
+          }
+        },
+        "interaction": {
+          "type": "climb_stairs",
+          "answerKey": {
+            "value": 99
+          },
+          "successMessage": "1,1 × 0,9 = 0,99 → 99 — không hòa!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "Tăng 10% rồi giảm 10% thì còn:",
+          "choices": [
+            "99% giá cũ",
+            "100%",
+            "98%"
+          ],
+          "answerKey": {
+            "choice": "99% giá cũ"
+          },
+          "wrongFeedback": "1,1 × 0,9.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 42,
+        "teaches": [
+          "K2",
+          "K3"
+        ],
+        "narration": "Hình vuông thấm đòn HAI LẦN: cạnh tăng mười phần trăm — chiều ngang nhân một phẩy một, chiều dọc cũng nhân một phẩy một: diện tích nhân MỘT PHẨY HAI MỐT — tăng HAI MƯƠI MỐT phần trăm, không phải hai mươi! Chuỗi phần trăm của phần trăm: A là tám mươi phần trăm của B, B là bảy lăm phần trăm của C — A bằng không phẩy tám nhân không phẩy bảy lăm: không phẩy sáu — SÁU MƯƠI phần trăm của C!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "cạnh ×1,1 hai chiều → S × 1,21 → +21%",
+            "A = 0,8 × 0,75 C = 0,6 C = 60%",
+            "chuỗi hệ số nhân dồn một gốc"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú cầu thang: biến động nối nhau — nhân hệ số, cấm cộng thẳng!",
+        "display": {
+          "type": "mantra_card",
+          "text": "NHÂN HỆ SỐ — CẤM CỘNG THẲNG!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 90,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Bảng giá đổi hai lần: tăng mười phần trăm rồi giảm mười phần trăm. Cả chợ phán: hòa — về giá cũ! Trí Long cộng thẳng: cộng mười trừ mười bằng không mà! Su Kem lắp số đẹp: một trăm tăng lên một trăm mười — thế mười phần trăm lần giảm ăn trên con số nào?",
+        "screenText": "+10% rồi −10% = hòa??",
+        "visual": "Bảng giá lật hai lần; cả chợ giơ bảng HÒA; Su Kem chỉ vào con số 110 mới toanh, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Hai bậc thang GỐI ĐẦU: bậc giảm đặt chân lên giá ĐÃ TĂNG! Một trăm — tăng mười phần trăm: MỘT TRĂM MƯỜI; giảm mười phần trăm CỦA một trăm mười là mười một: còn CHÍN MƯƠI CHÍN! Máy đúng là NHÂN hệ số: một phẩy một nhân không phẩy chín bằng KHÔNG PHẨY CHÍN CHÍN — hụt đúng một phần trăm, không hề hòa!",
+        "screenText": "100 → ×1,1 → 110 → ×0,9 → 99 · 1,1 × 0,9 = 0,99",
+        "visual": "Cầu thang hai bậc gối đầu với bàn chân bậc hai đặt lên số 110; máy nhân hệ số nhả 0,99; đồng xu hụt 1 lăn ra.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Hình vuông thấm đòn HAI LẦN: cạnh tăng mười phần trăm — chiều ngang nhân một phẩy một, chiều dọc cũng nhân một phẩy một: diện tích nhân MỘT PHẨY HAI MỐT — tăng HAI MƯƠI MỐT phần trăm, không phải hai mươi! Chuỗi phần trăm của phần trăm: A là tám mươi phần trăm của B, B là bảy lăm phần trăm của C — A bằng không phẩy tám nhân không phẩy bảy lăm: SÁU MƯƠI phần trăm của C!",
+        "screenText": "S × 1,1 × 1,1 = 1,21 → +21% · A = 0,8 × 0,75 C = 60% C",
+        "visual": "Hình vuông phình cả hai chiều với viền tăng tô vàng lộ góc 21; chuỗi ba khối A-B-C nối hai hệ số nhân dồn.",
+        "assets": [],
+        "duration": 29
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú cầu thang: biến động nối nhau — nhân hệ số, cấm cộng thẳng!",
+        "screenText": "NHÂN HỆ SỐ — CẤM CỘNG THẲNG!",
+        "visual": "Thẻ thần chú vàng với icon cầu thang gối đầu.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Cầu thang: giá tăng mười phần trăm rồi giảm mười phần trăm — nhân hệ số xem còn bao nhiêu phần trăm giá cũ! Vào bài luyện ngay!",
+        "screenText": "1,1 × 0,9 = ? → còn ?%",
+        "visual": "Cầu thang chờ leo; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Leo hai bậc gối đầu",
+    "problem": "Giá một món hàng tăng 10%, sau đó giảm 10% trên giá mới. Hỏi giá cuối bằng bao nhiêu % giá ban đầu?",
+    "steps": [
+      {
+        "show": "Bước 1 — Hệ số: tăng 10% = × 1,1; giảm 10% = × 0,9.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Lần giảm 10% ăn trên giá nào?",
+          "choices": [
+            "giá ĐÃ TĂNG (110)",
+            "giá gốc (100)",
+            "giá nào cũng thế"
+          ],
+          "answerKey": {
+            "choice": "giá ĐÃ TĂNG (110)"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Nhân gối đầu: 1,1 × 0,9 = 0,99."
+      },
+      {
+        "show": "Bước 3 — Còn 99% — hụt 1%, KHÔNG về giá cũ. Lắp số: 100 → 110 → 99 ✓.",
+        "askAfter": {
+          "format": "mb",
+          "text": "Cạnh hình vuông +10% → diện tích tăng ?%",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "tăng",
+                "value": "21%"
+              }
+            ]
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B37.LT7",
+          "text": "Giá một món hàng tăng 10%, sau đó giảm 10% trên giá mới. Hỏi giá cuối bằng bao nhiêu % giá ban đầu?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "còn",
+                "value": "99%"
+              }
+            ]
+          },
+          "hints": [
+            "Hệ số 1,1 và 0,9.",
+            "Nhân gối đầu."
+          ],
+          "solutionNarrative": "1,1 × 0,9 = 0,99 → 99% — hụt 1%.",
+          "teaches": [
+            "K1"
+          ],
+          "generator": {
+            "template": "Tăng {a}% rồi giảm {b}%. Còn ?% giá cũ.",
+            "constraints": {},
+            "answerRule": "(1 + a/100)(1 − b/100)"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B37.LT8",
+          "text": "Cạnh một hình vuông tăng 10%. Hỏi diện tích hình vuông tăng bao nhiêu phần trăm?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "tăng",
+                "value": "21%"
+              }
+            ]
+          },
+          "hints": [
+            "Diện tích ăn hệ số hai lần.",
+            "1,1 × 1,1."
+          ],
+          "solutionNarrative": "× 1,21 → tăng 21% (không phải 20%).",
+          "teaches": [
+            "K2"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B37.LT9",
+          "text": "Sư phụ Trí Dũng đố: \"Số A bằng 80% số B; số B bằng 75% số C. Hỏi số A bằng bao nhiêu phần trăm số C?\"",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "A",
+                "value": "60% của C"
+              }
+            ]
+          },
+          "hints": [
+            "Chuỗi hệ số.",
+            "0,8 × 0,75."
+          ],
+          "solutionNarrative": "0,6 → A = 60% C.",
+          "teaches": [
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:II.4.2#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B38.M1",
+      "award": "huy_hieu_cau_thang_he_so"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B37.QZ4",
+        "text": "Tăng 10% rồi giảm 10% thì còn:",
+        "choices": [
+          "99% giá cũ",
+          "100%",
+          "98%"
+        ],
+        "answerKey": {
+          "choice": "99% giá cũ"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mb",
+        "text": "Cạnh +10% → diện tích tăng ?%",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "tăng",
+              "value": "21%"
+            }
+          ]
+        },
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mb",
+        "text": "A = 80% B; B = 75% C → A = ?% C",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "A",
+              "value": "60%"
+            }
+          ]
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Tăng giảm liên tiếp — cộng hay nhân?",
+        "back": "NHÂN HỆ SỐ gối đầu (bậc sau ăn trên giá ĐÃ ĐỔI): +10% rồi −10% = 1,1 × 0,9 = 0,99 → còn 99%, hụt 1% — không hòa! Diện tích ăn hai lần: cạnh ×1,1 → S ×1,21 → +21%. Chuỗi %: A = 0,8 × 0,75 C = 60% C."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P3 (chuỗi %)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học nhân hệ số gối đầu: tăng 10 giảm 10 còn 99%, cạnh +10% thì diện tích +21%. Con đạt {score}/3, {trapResult} câu bẫy cộng-thẳng.",
+    "homeActivity": "Lấy tờ 100 nghìn (tưởng tượng): tăng 10% rồi giảm 10% — con đếm từng bậc 110 rồi 99 và chỉ ra đồng hụt.",
+    "watchFor": "Nếu con cộng thẳng các % — lắp số đẹp 100 → 110 → 99 cho tự thấy (S1)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B37.M3",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "+10% − 10% = hòa??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "cộng mười trừ mười bằng không mà!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "100 tăng lên 110 — thế 10% lần giảm ăn trên con số nào?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B37_M3_F1.png",
+      "sha256_16": "172ece45e8a68617"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con tính tăng – giảm LIÊN TIẾP bằng cách NHÂN HỆ SỐ GỐI ĐẦU (tăng 10% rồi giảm 10%: 1,1 × 0,9 = 0,99 — hụt 1%, không về giá cũ) vì lần sau ăn trên giá ĐÃ ĐỔI; hiểu vì sao cạnh tăng 10% thì diện tích tăng 21% (1,1 × 1,1 = 1,21); và xâu chuỗi % của %: A = 80% B, B = 75% C → A = 60% C.",
+        "steps": [
+          {
+            "text": "cạnh ×1,1 hai chiều → S × 1,21 → +21%"
+          },
+          {
+            "text": "A = 0,8 × 0,75 C = 0,6 C = 60%"
+          },
+          {
+            "text": "chuỗi hệ số nhân dồn một gốc"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B37_M3_F2.png",
+      "sha256_16": "cb8dd56ed17cc2ed"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Biến động nối nhau thì NHÂN HỆ SỐ",
+            "text": "tăng 10% = × 1,1; giảm 10% = × 0,9 — vì lần giảm ăn trên giá ĐÃ TĂNG: 100 → 110 → 99: còn 99% — hụt 1%, KHÔNG về chỗ cũ (cấm cộng thẳng +10 − 10 = 0!).",
+            "tone": "navy"
+          },
+          {
+            "label": "Diện tích ăn hệ số HAI LẦN",
+            "text": "cạnh × 1,1 thì diện tích × 1,1 × 1,1 = 1,21 — tăng 21% (không phải 20%): hình vuông phình theo cả hai chiều.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "BIẾN ĐỘNG NỐI NHAU — NHÂN HỆ SỐ, CẤM CỘNG THẲNG!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B37_M3_F3.png",
+      "sha256_16": "94664fa86403ea27"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "GỐI ĐẦU NHÂN HỆ SỐ: TĂNG 10% RỒI GIẢM 10%",
+        "steps": [
+          {
+            "text": "Giá gốc 100",
+            "sub": "mốc xuất phát"
+          },
+          {
+            "text": "Tăng 10% → × 1,1",
+            "sub": "100 → 110"
+          },
+          {
+            "text": "Giảm 10% trên giá MỚI → × 0,9",
+            "sub": "110 → 99  ·  hụt 1%"
+          }
+        ],
+        "note": "Cạnh hình vuông tăng 10% thì diện tích × 1,1 × 1,1 = 1,21 → tăng 21%, không phải 20%"
+      },
+      "caption": "Không bao giờ cộng trừ phần trăm — phải nhân hệ số gối đầu",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B37_M3_F4.png",
+      "sha256_16": "312b9005b95ea393"
+    }
+  ]
 }

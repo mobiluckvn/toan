@@ -1,676 +1,679 @@
 {
- "title": "Cả công việc = 1: năng suất 1/t — chỉ NĂNG SUẤT biết cộng, ngày tháng thì không",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:III.7.1#1"
-  ],
-  "bktUnit": "CASE:III.7.1#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B41",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B40.M3",
-  "next": "DL:KSN5Q1.B41.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B41",
-  "chunks": [
-   "CHUNK:KSN5Q1.B41.S3",
-   "CHUNK:KSN5Q1.B41.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B41.1"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B41.1"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con dịch được \"làm xong trong t ngày\" thành NĂNG SUẤT 1/t công việc mỗi ngày (cả công việc = 1) và chạy đủ ba chiều chuẩn: tính thời gian chung (CỘNG năng suất rồi lấy 1 chia), biết chung tìm riêng (TRỪ năng suất) — khắc cốt: chỉ NĂNG SUẤT biết cộng, ngày tháng thì không; đáp chung phải BÉ hơn thời gian riêng ngắn nhất.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (cấm cộng / chia đôi thời gian)",
-  "kidText": "Làm xong trong 6 ngày nghĩa là mỗi ngày làm 1/6 công việc. Chỉ sức người biết cộng, còn ngày tháng thì không."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Quy ước nền: CẢ CÔNG VIỆC = 1. \"Xong trong 6 ngày\" → năng suất 1 : 6 = 1/6 công việc mỗi ngày — con số cộng được của bài làm-chung."
-   },
-   {
-    "id": "K2",
-    "text": "Chiều 1 — thời gian chung: CỘNG năng suất rồi lấy 1 chia: 1/6 + 1/12 = 1/4 → 1 : 1/4 = 4 ngày. Phép (6 + 12) : 2 = 9 ngày SAI từ gốc: hai người làm mà LÂU hơn một người (6 ngày) — vô lý!"
-   },
-   {
-    "id": "K3",
-    "text": "Chiều 2 — biết chung tìm riêng: TRỪ năng suất: chung 4 ngày (1/4), người một 6 ngày (1/6) → người hai = 1/4 − 1/6 = 1/12 → 12 ngày."
-   },
-   {
-    "id": "K4",
-    "text": "Chuông soi mọi đáp chung: phải BÉ hơn thời gian riêng ngắn nhất (4 < 6 ✓); và máy chạy mọi quân số: ba người 1/6 + 1/12 + 1/4 = 1/2 → 2 ngày."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: GIẾNG LÀNG VÀ NHỮNG LÁT ĐÀO MỖI NGÀY. Bác Ba đào giếng một mình 6 ngày xong; chú Tư 12 ngày. Cùng đào thì mấy ngày? Trí Long tính vèo: \"sáu cộng mười hai chia hai — chín ngày!\" Su Kem tròn mắt: hai người xúm vào mà LÂU hơn bác Ba làm một mình?! Sai từ gốc: NGÀY THÁNG không biết cộng — thứ cộng được là NĂNG SUẤT: mỗi ngày bác Ba đào MỘT PHẦN SÁU giếng, chú Tư MỘT PHẦN MƯỜI HAI. Cả giếng bằng 1 — hai người mỗi ngày đào 1/6 + 1/12 = hai phần mười hai cộng một phần mười hai: BA PHẦN MƯỜI HAI — một phần tư giếng! Thời gian = 1 chia 1/4 = BỐN ngày. Chuông soi: bốn BÉ hơn sáu — chuẩn! Chiều ngược cùng máy: chung 4 ngày, bác Ba riêng 6 — chú Tư mỗi ngày đào 1/4 − 1/6 = 1/12: MƯỜI HAI ngày. Và ba người? Cứ cộng năng suất: 1/6 + 1/12 + 1/4 = 6/12 = một nửa — HAI ngày xong!",
-  "canonicalExamples": [
-   {
-    "case": "dịch năng suất (ca nền)",
-    "problem": "Bác Ba đào giếng một mình 6 ngày thì xong. Hỏi mỗi ngày bác đào được bao nhiêu phần của giếng?",
-    "solution": "1 : 6 = 1/6 giếng mỗi ngày.",
-    "why": "Ca LT1 — bước dịch mở mọi bài."
-   },
-   {
-    "case": "thời gian chung (ca lõi)",
-    "problem": "Bác Ba đào một mình 6 ngày xong, chú Tư 12 ngày xong. Hỏi hai người cùng đào thì mấy ngày xong?",
-    "solution": "1/6 + 1/12 = 1/4 → 1 : 1/4 = 4 ngày. Phản chứng đáp 9 ngày: hai người mà lâu hơn một mình bác Ba — vô lý!",
-    "why": "Ca đề A câu 1 — trap cộng-ngày rình đây."
-   },
-   {
-    "case": "chung tìm riêng (ca ngược)",
-    "problem": "Hai người cùng làm xong một công việc trong 4 ngày. Nếu người thứ nhất làm một mình thì mất 6 ngày. Hỏi người thứ hai làm một mình mất mấy ngày?",
-    "solution": "Năng suất người hai = 1/4 − 1/6 = 1/12 → 12 ngày.",
-    "why": "Ca đề A câu 3 — trừ năng suất."
-   },
-   {
-    "case": "ba người (ca sư phụ)",
-    "problem": "Bác Ba 6 ngày, chú Tư 12 ngày, cô Năm 4 ngày. Cả ba cùng đào thì mấy ngày xong?",
-    "solution": "1/6 + 1/12 + 1/4 = 2/12 + 1/12 + 3/12 = 6/12 = 1/2 → 2 ngày.",
-    "why": "Ca LT9 — máy cộng chạy mọi quân số."
-   }
-  ],
-  "numberRange": "Lớp 5: thời gian riêng 3–12 ngày; mẫu chung ≤ 12.",
-  "misconceptions": [
-   {
-    "wrong": "Cộng (hay chia đôi) THỜI GIAN: hai người 6 và 12 ngày → (6 + 12) : 2 = 9 ngày.",
-    "signal": "Phép tính chạy trên ngày; đáp chung LỚN hơn thời gian riêng ngắn nhất.",
-    "fix": "K2 + K4 — thứ cộng được là NĂNG SUẤT: 1/6 + 1/12 = 1/4 → 4 ngày; chuông soi: chung < riêng ngắn nhất.",
-    "counterExample": "9 ngày > 6 ngày: thêm người mà chậm đi — chú Tư đến để… phá à?!"
-   }
-  ],
-  "vocabulary": [
-   "cả công việc = 1",
-   "năng suất 1/t",
-   "chỉ năng suất biết cộng",
-   "chuông soi chung < riêng",
-   "lát đào mỗi ngày"
-  ],
-  "mantra": "SỨC NGƯỜI BIẾT CỘNG — NGÀY THÁNG THÌ KHÔNG!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Ôn phân số: 1/6 + 1/12 = ?/12",
-    "answerKey": {
-     "value": 3
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "ôn cộng phân số khác mẫu",
-   "message": "Ôn cộng phân số rồi ra giếng làng nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Giếng làng: bác Ba đào một mình 6 ngày xong, chú Tư 12 ngày. Cùng đào thì mấy ngày? Trí Long tính vèo: \"sáu cộng mười hai chia hai — chín ngày!\" Su Kem tròn mắt: \"Hai người xúm vào mà LÂU hơn bác Ba làm một mình á?!\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "(6 + 12) : 2 = 9 ngày??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đo lát đào mỗi ngày!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "Cả công việc = 1: năng suất 1/t — chỉ NĂNG SUẤT biết cộng, ngày tháng thì không",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:III.7.1#1"
     ],
-    "narration": "NGÀY THÁNG không biết cộng — thứ cộng được là NĂNG SUẤT! Cả giếng bằng MỘT: mỗi ngày bác Ba đào MỘT PHẦN SÁU giếng, chú Tư MỘT PHẦN MƯỜI HAI. Hai người mỗi ngày: một phần sáu cộng một phần mười hai — hai phần mười hai cộng một phần mười hai bằng BA PHẦN MƯỜI HAI: một phần tư giếng! Thời gian bằng một chia một phần tư — BỐN ngày! Chuông soi: bốn BÉ hơn sáu — thêm người phải nhanh hơn, chuẩn!",
-    "display": {
-     "type": "well_slices_interactive",
-     "spec": {
-      "unit": "giếng = 1",
-      "r1": "bác Ba 1/6 / ngày",
-      "r2": "chú Tư 1/12 / ngày",
-      "sum": "1/6 + 1/12 = 1/4",
-      "answer": "1 : 1/4 = 4 ngày < 6 ✓"
-     }
-    },
-    "interaction": {
-     "type": "add_rates",
-     "answerKey": {
-      "value": 4
-     },
-     "successMessage": "1/4 giếng mỗi ngày → 4 ngày — bé hơn 6 ✓!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "Năng suất chung của cặp 1/6 và 1/12 là:",
-     "choices": [
-      "1/4",
-      "1/9",
-      "1/18"
-     ],
-     "answerKey": {
-      "choice": "1/4"
-     },
-     "wrongFeedback": "Cộng năng suất — quy đồng 12.",
-     "objective": "O1",
-     "teaches": [
-      "K2"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3",
-     "K4"
+    "bktUnit": "CASE:III.7.1#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B41",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B40.M3",
+    "next": "DL:KSN5Q1.B41.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B41",
+    "chunks": [
+      "CHUNK:KSN5Q1.B41.S3",
+      "CHUNK:KSN5Q1.B41.S4"
     ],
-    "narration": "Chiều ngược cùng máy: hai người chung BỐN ngày xong; bác Ba riêng SÁU ngày — chú Tư mỗi ngày đào một phần tư TRỪ một phần sáu: ba phần mười hai trừ hai phần mười hai bằng MỘT PHẦN MƯỜI HAI — chú Tư riêng MƯỜI HAI ngày! Ba người thì cứ cộng tiếp: một phần sáu cộng một phần mười hai cộng một phần tư — sáu phần mười hai: NỬA giếng mỗi ngày — HAI ngày xong! Khẩu quyết ba dòng: cả công việc bằng một; năng suất bằng một-chia-thời-gian; và chỉ năng suất biết cộng!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "riêng: 1/4 − 1/6 = 1/12 → 12 ngày",
-      "ba người: 6/12 = 1/2 → 2 ngày",
-      "khẩu quyết: việc = 1 · 1/t · chỉ năng suất cộng"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú giếng làng: sức người biết cộng — ngày tháng thì không!",
-    "display": {
-     "type": "mantra_card",
-     "text": "SỨC NGƯỜI BIẾT CỘNG — NGÀY THÁNG THÌ KHÔNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 90,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Giếng làng: bác Ba đào một mình sáu ngày xong, chú Tư mười hai ngày. Cùng đào thì mấy ngày? Trí Long tính vèo: sáu cộng mười hai chia hai — chín ngày! Su Kem tròn mắt: hai người xúm vào mà LÂU hơn bác Ba làm một mình á?!",
-    "screenText": "(6 + 12) : 2 = 9 ngày??",
-    "visual": "Giếng làng với hai nhân vật cầm xẻng; bảng tính (6+12):2 treo lệch; lịch 9 ngày dài hơn lịch 6 ngày, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 18
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "NGÀY THÁNG không biết cộng — thứ cộng được là NĂNG SUẤT! Cả giếng bằng MỘT: mỗi ngày bác Ba đào MỘT PHẦN SÁU giếng, chú Tư MỘT PHẦN MƯỜI HAI. Hai người mỗi ngày: hai phần mười hai cộng một phần mười hai bằng BA PHẦN MƯỜI HAI: một phần tư giếng! Thời gian bằng một chia một phần tư — BỐN ngày! Chuông soi: bốn BÉ hơn sáu — thêm người phải nhanh hơn, chuẩn!",
-    "screenText": "giếng = 1 · 1/6 + 1/12 = 1/4 mỗi ngày → 4 ngày (< 6 ✓)",
-    "visual": "Ống giếng chia 12 vạch; mỗi ngày hai lát đào 2/12 và 1/12 ghép thành 3/12 tô teal; chuông soi 4 < 6 điểm xanh.",
-    "assets": [],
-    "duration": 28
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Chiều ngược cùng máy: hai người chung BỐN ngày xong; bác Ba riêng SÁU ngày — chú Tư mỗi ngày đào một phần tư TRỪ một phần sáu bằng MỘT PHẦN MƯỜI HAI: chú Tư riêng MƯỜI HAI ngày! Ba người cứ cộng tiếp: sáu phần mười hai — NỬA giếng mỗi ngày: HAI ngày xong! Khẩu quyết: cả công việc bằng một — năng suất một-chia-thời-gian — chỉ năng suất biết cộng!",
-    "screenText": "riêng: 1/4 − 1/6 = 1/12 → 12 ngày · ba người: 1/2 → 2 ngày",
-    "visual": "Máy trừ năng suất nhả 1/12; ca ba người với ba lát đào chồng thành nửa giếng; khẩu quyết ba dòng đóng khung vàng.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú giếng làng: sức người biết cộng — ngày tháng thì không!",
-    "screenText": "SỨC NGƯỜI BIẾT CỘNG — NGÀY THÁNG THÌ KHÔNG!",
-    "visual": "Thẻ thần chú vàng với icon xẻng và lịch.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Giếng của con: bác Ba sáu ngày, chú Tư mười hai ngày — cộng năng suất tính ngày chung, rồi rung chuông soi! Vào bài luyện ngay!",
-    "screenText": "1/6 + 1/12 → ? ngày (soi < 6!)",
-    "visual": "Giếng chờ đào; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Ba chiều quanh giếng",
-  "problem": "Bác Ba đào một mình 6 ngày xong, chú Tư 12 ngày xong. (a) Hai người cùng đào mấy ngày xong? (b) Nếu chung 4 ngày và bác Ba riêng 6 ngày thì chú Tư riêng mấy ngày?",
-  "steps": [
-   {
-    "show": "Bước 1 — Dịch năng suất: bác Ba 1/6; chú Tư 1/12 (giếng = 1).",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Thứ cộng được trong bài làm-chung là:",
-     "choices": [
-      "năng suất",
-      "số ngày",
-      "số người"
-     ],
-     "answerKey": {
-      "choice": "năng suất"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — (a) 1/6 + 1/12 = 1/4 → 1 : 1/4 = 4 ngày (chuông soi: 4 < 6 ✓)."
-   },
-   {
-    "show": "Bước 3 — (b) 1/4 − 1/6 = 1/12 → chú Tư riêng 12 ngày.",
-    "askAfter": {
-     "format": "num",
-     "text": "Ba người 1/6 + 1/12 + 1/4 = 1/2 → mấy ngày?",
-     "answerKey": {
-      "value": 2
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B41.LT1",
-     "text": "Bác Ba đào giếng một mình 6 ngày thì xong. Hỏi mỗi ngày bác đào được bao nhiêu phần của giếng?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "năng suất",
-        "value": "1/6 giếng mỗi ngày",
-        "options": [
-         "1/6 giếng mỗi ngày",
-         "6 giếng mỗi ngày",
-         "1/3 giếng mỗi ngày"
-        ]
-       }
-      ]
-     },
-     "hints": [
-      "Cả giếng = 1.",
-      "1 : 6."
-     ],
-     "solutionNarrative": "1/6 giếng mỗi ngày.",
-     "teaches": [
-      "K1"
-     ]
-    },
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B41.LT2",
-     "text": "Bác Ba đào một mình 6 ngày xong, chú Tư 12 ngày xong. Hỏi hai người cùng đào thì mấy ngày xong? (Kèm một câu phản chứng cho đáp 9 ngày.)",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "ngày chung",
-        "value": 4
-       },
-       {
-        "label": "phản chứng",
-        "value": "9 > 6: hai người mà lâu hơn một mình — vô lý"
-       }
-      ]
-     },
-     "hints": [
-      "Cộng năng suất 1/6 + 1/12.",
-      "1 : 1/4."
-     ],
-     "solutionNarrative": "1/4 mỗi ngày → 4 ngày (< 6 ✓).",
-     "teaches": [
-      "K2",
-      "K4"
-     ],
-     "generator": {
-      "template": "Riêng {a} và {b} ngày → chung ?",
-      "constraints": {},
-      "answerRule": "1 : (1/a + 1/b)"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B41.LT3",
-     "text": "Đúng hay sai — giải thích: a) \"Năng suất chung bằng tổng hai năng suất\"; b) \"Thời gian làm chung bằng tổng hai thời gian chia đôi\".",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "a",
-        "value": "ĐÚNG — năng suất biết cộng",
-        "options": [
-         "ĐÚNG",
-         "SAI"
-        ]
-       },
-       {
-        "label": "b",
-        "value": "SAI — đáp chung phải BÉ hơn thời gian riêng ngắn nhất",
-        "options": [
-         "ĐÚNG",
-         "SAI"
-        ]
-       }
-      ]
-     },
-     "hints": [
-      "Thứ gì cộng được?",
-      "Chuông soi chung < riêng."
-     ],
-     "solutionNarrative": "a Đ; b S.",
-     "teaches": [
-      "K2",
-      "K4"
-     ]
-    },
-    {
-     "id": "P4",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B41.LT4",
-     "text": "Hai người cùng làm xong một công việc trong 4 ngày. Nếu người thứ nhất làm một mình thì mất 6 ngày. Hỏi người thứ hai làm một mình mất mấy ngày?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "người hai",
-        "value": 12
-       }
-      ]
-     },
-     "hints": [
-      "Trừ năng suất.",
-      "1/4 − 1/6."
-     ],
-     "solutionNarrative": "1/12 → 12 ngày.",
-     "teaches": [
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P5",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B41.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Bác Ba đào một mình 6 ngày xong, chú Tư 12 ngày, cô Năm 4 ngày. Cả ba cùng đào thì mấy ngày xong?\"",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "ngày chung",
-        "value": 2
-       }
-      ]
-     },
-     "hints": [
-      "Cộng ba năng suất.",
-      "2/12 + 1/12 + 3/12."
-     ],
-     "solutionNarrative": "6/12 = 1/2 → 2 ngày.",
-     "teaches": [
-      "K4"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.7.1#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B41.M2",
-   "award": "huy_hieu_gieng_lang"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P2"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B41.QZ2",
-    "text": "(Đúng/Sai?) Hai người 6 ngày và 12 ngày cùng làm thì mất (6 + 12) : 2 = 9 ngày.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B41.QZ3",
-    "text": "Năng suất chung của cặp 1/6 và 1/12 là:",
-    "choices": [
-     "1/4",
-     "1/9",
-     "1/18"
+    "cases": [
+      "CA:KSN5Q1.B41.1"
     ],
-    "answerKey": {
-     "choice": "1/4"
-    },
-    "teaches": [
-     "K2"
+    "traps": [
+      "TRAP:KSN5Q1.B41.1"
     ]
-   },
-   {
-    "id": "A3",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B41.QZ1",
-    "text": "(Đúng/Sai?) Làm xong trong 6 ngày nghĩa là mỗi ngày làm được 1/6 công việc.",
-    "answerKey": {
-     "value": true
-    },
-    "teaches": [
-     "K1"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Bài làm chung — máy chạy thế nào?",
-    "back": "CẢ CÔNG VIỆC = 1 → năng suất 1/t. Chung: CỘNG năng suất (1/6 + 1/12 = 1/4 → 4 ngày); riêng: TRỪ (1/4 − 1/6 = 1/12 → 12 ngày). Chỉ NĂNG SUẤT biết cộng — cộng ngày (9!) cho hai người lâu hơn một người: vô lý. Chuông soi: chung < riêng ngắn nhất."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P2",
-   "+7 ngày: câu P5 (ba người)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học bài làm chung: cả công việc = 1, cộng năng suất chứ không cộng ngày, chuông soi chung < riêng. Con đạt {score}/3, {trapResult} câu bẫy cộng-ngày.",
-  "homeActivity": "Đố quanh nhà: 'con quét nhà 10 phút, mẹ 5 phút — hai mẹ con cùng quét thì hơn hay kém 5 phút?' — con rung chuông soi trước khi tính.",
-  "watchFor": "Nếu con cộng hay chia đôi thời gian — hỏi 'thêm người mà chậm đi à?' (S1)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B41.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "(6 + 12) : 2 = 9 ngày??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "sáu cộng mười hai chia hai — chín ngày!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Hai người xúm vào mà LÂU hơn bác Ba làm một mình á?!",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B41_M1_F1.png",
-   "sha256_16": "3cfb1af32b86cce2"
   },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con dịch được \"làm xong trong t ngày\" thành NĂNG SUẤT 1/t công việc mỗi ngày (cả công việc = 1) và chạy đủ ba chiều chuẩn: tính thời gian chung (CỘNG năng suất rồi lấy 1 chia), biết chung tìm riêng (TRỪ năng suất) — khắc cốt: chỉ NĂNG SUẤT biết cộng, ngày tháng thì không; đáp chung phải BÉ hơn thời gian riêng ngắn nhất.",
-    "steps": [
-     {
-      "text": "riêng: 1/4 − 1/6 = 1/12 → 12 ngày · ba người: 1/2 → 2 ngày"
-     },
-     {
-      "text": "ba người: 6/12 = 1/2 → 2 ngày"
-     },
-     {
-      "text": "khẩu quyết: việc = 1 · 1/t · chỉ năng suất cộng"
-     }
+  "objective": {
+    "id": "O1",
+    "text": "Con dịch được \"làm xong trong t ngày\" thành NĂNG SUẤT 1/t công việc mỗi ngày (cả công việc = 1) và chạy đủ ba chiều chuẩn: tính thời gian chung (CỘNG năng suất rồi lấy 1 chia), biết chung tìm riêng (TRỪ năng suất) — khắc cốt: chỉ NĂNG SUẤT biết cộng, ngày tháng thì không; đáp chung phải BÉ hơn thời gian riêng ngắn nhất.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (cấm cộng / chia đôi thời gian)",
+    "kidText": "Làm xong trong 6 ngày nghĩa là mỗi ngày làm 1/6 công việc. Chỉ sức người biết cộng, còn ngày tháng thì không."
+  },
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Quy ước nền: CẢ CÔNG VIỆC = 1. \"Xong trong 6 ngày\" → năng suất 1 : 6 = 1/6 công việc mỗi ngày — con số cộng được của bài làm-chung."
+      },
+      {
+        "id": "K2",
+        "text": "Chiều 1 — thời gian chung: CỘNG năng suất rồi lấy 1 chia: 1/6 + 1/12 = 1/4 → 1 : 1/4 = 4 ngày. Phép (6 + 12) : 2 = 9 ngày SAI từ gốc: hai người làm mà LÂU hơn một người (6 ngày) — vô lý!"
+      },
+      {
+        "id": "K3",
+        "text": "Chiều 2 — biết chung tìm riêng: TRỪ năng suất: chung 4 ngày (1/4), người một 6 ngày (1/6) → người hai = 1/4 − 1/6 = 1/12 → 12 ngày."
+      },
+      {
+        "id": "K4",
+        "text": "Chuông soi mọi đáp chung: phải BÉ hơn thời gian riêng ngắn nhất (4 < 6 ✓); và máy chạy mọi quân số: ba người 1/6 + 1/12 + 1/4 = 1/2 → 2 ngày."
+      }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B41_M1_F2.png",
-   "sha256_16": "77af5598701b5e35"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Quy ước nền",
-      "text": "6 = 1/6 công việc mỗi ngày",
-      "tone": "navy"
-     },
-     {
-      "label": "Chiều 1 — thời gian chung",
-      "text": "CỘNG năng suất rồi lấy 1 chia: 1/6 + 1/12 = 1/4 → 1 : 1/4 = 4 ngày. Phép (6 + 12) : 2 = 9 ngày SAI từ gốc: hai người làm mà LÂU hơn một người (6 ngày) — vô lý!",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: GIẾNG LÀNG VÀ NHỮNG LÁT ĐÀO MỖI NGÀY. Bác Ba đào giếng một mình 6 ngày xong; chú Tư 12 ngày. Cùng đào thì mấy ngày? Trí Long tính vèo: \"sáu cộng mười hai chia hai — chín ngày!\" Su Kem tròn mắt: hai người xúm vào mà LÂU hơn bác Ba làm một mình?! Sai từ gốc: NGÀY THÁNG không biết cộng — thứ cộng được là NĂNG SUẤT: mỗi ngày bác Ba đào MỘT PHẦN SÁU giếng, chú Tư MỘT PHẦN MƯỜI HAI. Cả giếng bằng 1 — hai người mỗi ngày đào 1/6 + 1/12 = hai phần mười hai cộng một phần mười hai: BA PHẦN MƯỜI HAI — một phần tư giếng! Thời gian = 1 chia 1/4 = BỐN ngày. Chuông soi: bốn BÉ hơn sáu — chuẩn! Chiều ngược cùng máy: chung 4 ngày, bác Ba riêng 6 — chú Tư mỗi ngày đào 1/4 − 1/6 = 1/12: MƯỜI HAI ngày. Và ba người? Cứ cộng năng suất: 1/6 + 1/12 + 1/4 = 6/12 = một nửa — HAI ngày xong!",
+    "canonicalExamples": [
+      {
+        "case": "dịch năng suất (ca nền)",
+        "problem": "Bác Ba đào giếng một mình 6 ngày thì xong. Hỏi mỗi ngày bác đào được bao nhiêu phần của giếng?",
+        "solution": "1 : 6 = 1/6 giếng mỗi ngày.",
+        "why": "Ca LT1 — bước dịch mở mọi bài."
+      },
+      {
+        "case": "thời gian chung (ca lõi)",
+        "problem": "Bác Ba đào một mình 6 ngày xong, chú Tư 12 ngày xong. Hỏi hai người cùng đào thì mấy ngày xong?",
+        "solution": "1/6 + 1/12 = 1/4 → 1 : 1/4 = 4 ngày. Phản chứng đáp 9 ngày: hai người mà lâu hơn một mình bác Ba — vô lý!",
+        "why": "Ca đề A câu 1 — trap cộng-ngày rình đây."
+      },
+      {
+        "case": "chung tìm riêng (ca ngược)",
+        "problem": "Hai người cùng làm xong một công việc trong 4 ngày. Nếu người thứ nhất làm một mình thì mất 6 ngày. Hỏi người thứ hai làm một mình mất mấy ngày?",
+        "solution": "Năng suất người hai = 1/4 − 1/6 = 1/12 → 12 ngày.",
+        "why": "Ca đề A câu 3 — trừ năng suất."
+      },
+      {
+        "case": "ba người (ca sư phụ)",
+        "problem": "Bác Ba 6 ngày, chú Tư 12 ngày, cô Năm 4 ngày. Cả ba cùng đào thì mấy ngày xong?",
+        "solution": "1/6 + 1/12 + 1/4 = 2/12 + 1/12 + 3/12 = 6/12 = 1/2 → 2 ngày.",
+        "why": "Ca LT9 — máy cộng chạy mọi quân số."
+      }
+    ],
+    "numberRange": "Lớp 5: thời gian riêng 3–12 ngày; mẫu chung ≤ 12.",
+    "misconceptions": [
+      {
+        "wrong": "Cộng (hay chia đôi) THỜI GIAN: hai người 6 và 12 ngày → (6 + 12) : 2 = 9 ngày.",
+        "signal": "Phép tính chạy trên ngày; đáp chung LỚN hơn thời gian riêng ngắn nhất.",
+        "fix": "K2 + K4 — thứ cộng được là NĂNG SUẤT: 1/6 + 1/12 = 1/4 → 4 ngày; chuông soi: chung < riêng ngắn nhất.",
+        "counterExample": "9 ngày > 6 ngày: thêm người mà chậm đi — chú Tư đến để… phá à?!"
+      }
+    ],
+    "vocabulary": [
+      "cả công việc = 1",
+      "năng suất 1/t",
+      "chỉ năng suất biết cộng",
+      "chuông soi chung < riêng",
+      "lát đào mỗi ngày"
     ],
     "mantra": "SỨC NGƯỜI BIẾT CỘNG — NGÀY THÁNG THÌ KHÔNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B41_M1_F3.png",
-   "sha256_16": "85ecde89aea0d5d7"
   },
-  {
-   "archetype": "fraction_split",
-   "params": {
-    "title": "CẢ CÔNG VIỆC = 1 · NĂNG SUẤT MỖI NGÀY LÀ 1/t",
-    "shapes": [
-     {
-      "parts": 12,
-      "shaded": 2,
-      "label": "bác Ba 1/6 = 2/12",
-      "kind": "bar"
-     },
-     {
-      "parts": 12,
-      "shaded": 1,
-      "label": "chú Tư 1/12",
-      "kind": "bar"
-     },
-     {
-      "parts": 12,
-      "shaded": 3,
-      "label": "cùng nhau 3/12 = 1/4",
-      "kind": "bar"
-     }
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Ôn phân số: 1/6 + 1/12 = ?/12",
+        "answerKey": {
+          "value": 3
+        }
+      }
     ],
-    "note": "Chỉ NĂNG SUẤT biết cộng — ngày công thì không: 1 : 1/4 = 4 ngày (không phải 6 + 12)"
-   },
-   "caption": "Phản chứng: hai người mà lâu hơn một người làm một mình thì vô lý",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B41_M1_F4.png",
-   "sha256_16": "1bac9ad064bc6a0d"
-  }
- ]
+    "onFail": {
+      "action": "suggest_review",
+      "target": "ôn cộng phân số khác mẫu",
+      "message": "Ôn cộng phân số rồi ra giếng làng nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Giếng làng: bác Ba đào một mình 6 ngày xong, chú Tư 12 ngày. Cùng đào thì mấy ngày? Trí Long tính vèo: \"sáu cộng mười hai chia hai — chín ngày!\" Su Kem tròn mắt: \"Hai người xúm vào mà LÂU hơn bác Ba làm một mình á?!\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "(6 + 12) : 2 = 9 ngày??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để đo lát đào mỗi ngày!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "NGÀY THÁNG không biết cộng — thứ cộng được là NĂNG SUẤT! Cả giếng bằng MỘT: mỗi ngày bác Ba đào MỘT PHẦN SÁU giếng, chú Tư MỘT PHẦN MƯỜI HAI. Hai người mỗi ngày: một phần sáu cộng một phần mười hai — hai phần mười hai cộng một phần mười hai bằng BA PHẦN MƯỜI HAI: một phần tư giếng! Thời gian bằng một chia một phần tư — BỐN ngày! Chuông soi: bốn BÉ hơn sáu — thêm người phải nhanh hơn, chuẩn!",
+        "display": {
+          "type": "well_slices_interactive",
+          "spec": {
+            "unit": "giếng = 1",
+            "r1": "bác Ba 1/6 / ngày",
+            "r2": "chú Tư 1/12 / ngày",
+            "sum": "1/6 + 1/12 = 1/4",
+            "answer": "1 : 1/4 = 4 ngày < 6 ✓"
+          }
+        },
+        "interaction": {
+          "type": "add_rates",
+          "answerKey": {
+            "value": 4
+          },
+          "successMessage": "1/4 giếng mỗi ngày → 4 ngày — bé hơn 6 ✓!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "Năng suất chung của cặp 1/6 và 1/12 là:",
+          "choices": [
+            "1/4",
+            "1/9",
+            "1/18"
+          ],
+          "answerKey": {
+            "choice": "1/4"
+          },
+          "wrongFeedback": "Cộng năng suất — quy đồng 12.",
+          "objective": "O1",
+          "teaches": [
+            "K2"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 42,
+        "teaches": [
+          "K3",
+          "K4"
+        ],
+        "narration": "Chiều ngược cùng máy: hai người chung BỐN ngày xong; bác Ba riêng SÁU ngày — chú Tư mỗi ngày đào một phần tư TRỪ một phần sáu: ba phần mười hai trừ hai phần mười hai bằng MỘT PHẦN MƯỜI HAI — chú Tư riêng MƯỜI HAI ngày! Ba người thì cứ cộng tiếp: một phần sáu cộng một phần mười hai cộng một phần tư — sáu phần mười hai: NỬA giếng mỗi ngày — HAI ngày xong! Khẩu quyết ba dòng: cả công việc bằng một; năng suất bằng một-chia-thời-gian; và chỉ năng suất biết cộng!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "riêng: 1/4 − 1/6 = 1/12 → 12 ngày",
+            "ba người: 6/12 = 1/2 → 2 ngày",
+            "khẩu quyết: việc = 1 · 1/t · chỉ năng suất cộng"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú giếng làng: sức người biết cộng — ngày tháng thì không!",
+        "display": {
+          "type": "mantra_card",
+          "text": "SỨC NGƯỜI BIẾT CỘNG — NGÀY THÁNG THÌ KHÔNG!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 90,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Giếng làng: bác Ba đào một mình sáu ngày xong, chú Tư mười hai ngày. Cùng đào thì mấy ngày? Trí Long tính vèo: sáu cộng mười hai chia hai — chín ngày! Su Kem tròn mắt: hai người xúm vào mà LÂU hơn bác Ba làm một mình á?!",
+        "screenText": "(6 + 12) : 2 = 9 ngày??",
+        "visual": "Giếng làng với hai nhân vật cầm xẻng; bảng tính (6+12):2 treo lệch; lịch 9 ngày dài hơn lịch 6 ngày, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 18
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "NGÀY THÁNG không biết cộng — thứ cộng được là NĂNG SUẤT! Cả giếng bằng MỘT: mỗi ngày bác Ba đào MỘT PHẦN SÁU giếng, chú Tư MỘT PHẦN MƯỜI HAI. Hai người mỗi ngày: hai phần mười hai cộng một phần mười hai bằng BA PHẦN MƯỜI HAI: một phần tư giếng! Thời gian bằng một chia một phần tư — BỐN ngày! Chuông soi: bốn BÉ hơn sáu — thêm người phải nhanh hơn, chuẩn!",
+        "screenText": "giếng = 1 · 1/6 + 1/12 = 1/4 mỗi ngày → 4 ngày (< 6 ✓)",
+        "visual": "Ống giếng chia 12 vạch; mỗi ngày hai lát đào 2/12 và 1/12 ghép thành 3/12 tô teal; chuông soi 4 < 6 điểm xanh.",
+        "assets": [],
+        "duration": 28
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Chiều ngược cùng máy: hai người chung BỐN ngày xong; bác Ba riêng SÁU ngày — chú Tư mỗi ngày đào một phần tư TRỪ một phần sáu bằng MỘT PHẦN MƯỜI HAI: chú Tư riêng MƯỜI HAI ngày! Ba người cứ cộng tiếp: sáu phần mười hai — NỬA giếng mỗi ngày: HAI ngày xong! Khẩu quyết: cả công việc bằng một — năng suất một-chia-thời-gian — chỉ năng suất biết cộng!",
+        "screenText": "riêng: 1/4 − 1/6 = 1/12 → 12 ngày · ba người: 1/2 → 2 ngày",
+        "visual": "Máy trừ năng suất nhả 1/12; ca ba người với ba lát đào chồng thành nửa giếng; khẩu quyết ba dòng đóng khung vàng.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú giếng làng: sức người biết cộng — ngày tháng thì không!",
+        "screenText": "SỨC NGƯỜI BIẾT CỘNG — NGÀY THÁNG THÌ KHÔNG!",
+        "visual": "Thẻ thần chú vàng với icon xẻng và lịch.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Giếng của con: bác Ba sáu ngày, chú Tư mười hai ngày — cộng năng suất tính ngày chung, rồi rung chuông soi! Vào bài luyện ngay!",
+        "screenText": "1/6 + 1/12 → ? ngày (soi < 6!)",
+        "visual": "Giếng chờ đào; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Ba chiều quanh giếng",
+    "problem": "Bác Ba đào một mình 6 ngày xong, chú Tư 12 ngày xong. (a) Hai người cùng đào mấy ngày xong? (b) Nếu chung 4 ngày và bác Ba riêng 6 ngày thì chú Tư riêng mấy ngày?",
+    "steps": [
+      {
+        "show": "Bước 1 — Dịch năng suất: bác Ba 1/6; chú Tư 1/12 (giếng = 1).",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Thứ cộng được trong bài làm-chung là:",
+          "choices": [
+            "năng suất",
+            "số ngày",
+            "số người"
+          ],
+          "answerKey": {
+            "choice": "năng suất"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — (a) 1/6 + 1/12 = 1/4 → 1 : 1/4 = 4 ngày (chuông soi: 4 < 6 ✓)."
+      },
+      {
+        "show": "Bước 3 — (b) 1/4 − 1/6 = 1/12 → chú Tư riêng 12 ngày.",
+        "askAfter": {
+          "format": "num",
+          "text": "Ba người 1/6 + 1/12 + 1/4 = 1/2 → mấy ngày?",
+          "answerKey": {
+            "value": 2
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B41.LT1",
+          "text": "Bác Ba đào giếng một mình 6 ngày thì xong. Hỏi mỗi ngày bác đào được bao nhiêu phần của giếng?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "năng suất",
+                "value": "1/6 giếng mỗi ngày",
+                "options": [
+                  "1/6 giếng mỗi ngày",
+                  "6 giếng mỗi ngày",
+                  "1/3 giếng mỗi ngày"
+                ]
+              }
+            ]
+          },
+          "hints": [
+            "Cả giếng = 1.",
+            "1 : 6."
+          ],
+          "solutionNarrative": "1/6 giếng mỗi ngày.",
+          "teaches": [
+            "K1"
+          ]
+        },
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B41.LT2",
+          "text": "Bác Ba đào một mình 6 ngày xong, chú Tư 12 ngày xong. Hỏi hai người cùng đào thì mấy ngày xong? (Kèm một câu phản chứng cho đáp 9 ngày.)",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "ngày chung",
+                "value": 4
+              },
+              {
+                "label": "phản chứng",
+                "value": "9 > 6: hai người mà lâu hơn một mình — vô lý"
+              }
+            ]
+          },
+          "hints": [
+            "Cộng năng suất 1/6 + 1/12.",
+            "1 : 1/4."
+          ],
+          "solutionNarrative": "1/4 mỗi ngày → 4 ngày (< 6 ✓).",
+          "teaches": [
+            "K2",
+            "K4"
+          ],
+          "generator": {
+            "template": "Riêng {a} và {b} ngày → chung ?",
+            "constraints": {},
+            "answerRule": "1 : (1/a + 1/b)"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B41.LT3",
+          "text": "Đúng hay sai — giải thích: a) \"Năng suất chung bằng tổng hai năng suất\"; b) \"Thời gian làm chung bằng tổng hai thời gian chia đôi\".",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "a",
+                "value": "ĐÚNG — năng suất biết cộng",
+                "options": [
+                  "ĐÚNG",
+                  "SAI"
+                ]
+              },
+              {
+                "label": "b",
+                "value": "SAI — đáp chung phải BÉ hơn thời gian riêng ngắn nhất",
+                "options": [
+                  "ĐÚNG",
+                  "SAI"
+                ]
+              }
+            ]
+          },
+          "hints": [
+            "Thứ gì cộng được?",
+            "Chuông soi chung < riêng."
+          ],
+          "solutionNarrative": "a Đ; b S.",
+          "teaches": [
+            "K2",
+            "K4"
+          ]
+        },
+        {
+          "id": "P4",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B41.LT4",
+          "text": "Hai người cùng làm xong một công việc trong 4 ngày. Nếu người thứ nhất làm một mình thì mất 6 ngày. Hỏi người thứ hai làm một mình mất mấy ngày?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "người hai",
+                "value": 12
+              }
+            ]
+          },
+          "hints": [
+            "Trừ năng suất.",
+            "1/4 − 1/6."
+          ],
+          "solutionNarrative": "1/12 → 12 ngày.",
+          "teaches": [
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P5",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B41.LT9",
+          "text": "Sư phụ Trí Dũng đố: \"Bác Ba đào một mình 6 ngày xong, chú Tư 12 ngày, cô Năm 4 ngày. Cả ba cùng đào thì mấy ngày xong?\"",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "ngày chung",
+                "value": 2
+              }
+            ]
+          },
+          "hints": [
+            "Cộng ba năng suất.",
+            "2/12 + 1/12 + 3/12."
+          ],
+          "solutionNarrative": "6/12 = 1/2 → 2 ngày.",
+          "teaches": [
+            "K4"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.7.1#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B41.M2",
+      "award": "huy_hieu_gieng_lang"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P2"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B41.QZ2",
+        "text": "(Đúng/Sai?) Hai người 6 ngày và 12 ngày cùng làm thì mất (6 + 12) : 2 = 9 ngày.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B41.QZ3",
+        "text": "Năng suất chung của cặp 1/6 và 1/12 là:",
+        "choices": [
+          "1/4",
+          "1/9",
+          "1/18"
+        ],
+        "answerKey": {
+          "choice": "1/4"
+        },
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B41.QZ1",
+        "text": "(Đúng/Sai?) Làm xong trong 6 ngày nghĩa là mỗi ngày làm được 1/6 công việc.",
+        "answerKey": {
+          "value": true
+        },
+        "teaches": [
+          "K1"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Bài làm chung — máy chạy thế nào?",
+        "back": "CẢ CÔNG VIỆC = 1 → năng suất 1/t. Chung: CỘNG năng suất (1/6 + 1/12 = 1/4 → 4 ngày); riêng: TRỪ (1/4 − 1/6 = 1/12 → 12 ngày). Chỉ NĂNG SUẤT biết cộng — cộng ngày (9!) cho hai người lâu hơn một người: vô lý. Chuông soi: chung < riêng ngắn nhất."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P2",
+      "+7 ngày: câu P5 (ba người)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học bài làm chung: cả công việc = 1, cộng năng suất chứ không cộng ngày, chuông soi chung < riêng. Con đạt {score}/3, {trapResult} câu bẫy cộng-ngày.",
+    "homeActivity": "Đố quanh nhà: 'con quét nhà 10 phút, mẹ 5 phút — hai mẹ con cùng quét thì hơn hay kém 5 phút?' — con rung chuông soi trước khi tính.",
+    "watchFor": "Nếu con cộng hay chia đôi thời gian — hỏi 'thêm người mà chậm đi à?' (S1)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B41.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "(6 + 12) : 2 = 9 ngày??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "sáu cộng mười hai chia hai — chín ngày!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Hai người xúm vào mà LÂU hơn bác Ba làm một mình á?!",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B41_M1_F1.png",
+      "sha256_16": "3cfb1af32b86cce2"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con dịch được \"làm xong trong t ngày\" thành NĂNG SUẤT 1/t công việc mỗi ngày (cả công việc = 1) và chạy đủ ba chiều chuẩn: tính thời gian chung (CỘNG năng suất rồi lấy 1 chia), biết chung tìm riêng (TRỪ năng suất) — khắc cốt: chỉ NĂNG SUẤT biết cộng, ngày tháng thì không; đáp chung phải BÉ hơn thời gian riêng ngắn nhất.",
+        "steps": [
+          {
+            "text": "riêng: 1/4 − 1/6 = 1/12 → 12 ngày · ba người: 1/2 → 2 ngày"
+          },
+          {
+            "text": "ba người: 6/12 = 1/2 → 2 ngày"
+          },
+          {
+            "text": "khẩu quyết: việc = 1 · 1/t · chỉ năng suất cộng"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B41_M1_F2.png",
+      "sha256_16": "77af5598701b5e35"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Quy ước nền",
+            "text": "6 = 1/6 công việc mỗi ngày",
+            "tone": "navy"
+          },
+          {
+            "label": "Chiều 1 — thời gian chung",
+            "text": "CỘNG năng suất rồi lấy 1 chia: 1/6 + 1/12 = 1/4 → 1 : 1/4 = 4 ngày. Phép (6 + 12) : 2 = 9 ngày SAI từ gốc: hai người làm mà LÂU hơn một người (6 ngày) — vô lý!",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "SỨC NGƯỜI BIẾT CỘNG — NGÀY THÁNG THÌ KHÔNG!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B41_M1_F3.png",
+      "sha256_16": "85ecde89aea0d5d7"
+    },
+    {
+      "archetype": "fraction_split",
+      "params": {
+        "title": "CẢ CÔNG VIỆC = 1 · NĂNG SUẤT MỖI NGÀY LÀ 1/t",
+        "shapes": [
+          {
+            "parts": 12,
+            "shaded": 2,
+            "label": "bác Ba 1/6 = 2/12",
+            "kind": "bar"
+          },
+          {
+            "parts": 12,
+            "shaded": 1,
+            "label": "chú Tư 1/12",
+            "kind": "bar"
+          },
+          {
+            "parts": 12,
+            "shaded": 3,
+            "label": "cùng nhau 3/12 = 1/4",
+            "kind": "bar"
+          }
+        ],
+        "note": "Chỉ NĂNG SUẤT biết cộng — ngày công thì không: 1 : 1/4 = 4 ngày (không phải 6 + 12)"
+      },
+      "caption": "Phản chứng: hai người mà lâu hơn một người làm một mình thì vô lý",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B41_M1_F4.png",
+      "sha256_16": "1bac9ad064bc6a0d"
+    }
+  ]
 }

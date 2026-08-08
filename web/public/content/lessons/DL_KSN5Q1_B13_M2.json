@@ -1,612 +1,615 @@
 {
- "title": "Số gần tròn: nhân 99 trừ một lần chính nó · cộng mượn – trả đủ",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:I.7.1#2"
-  ],
-  "bktUnit": "CASE:I.7.1#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B13",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B13.M1",
-  "next": "DL:KSN5Q1.B13.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B13",
-  "chunks": [
-   "CHUNK:KSN5Q1.B13.S4",
-   "CHUNK:KSN5Q1.B13.S5"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B13.2",
-   "CA:KSN5Q1.B13.3"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B13.2",
-   "TRAP:KSN5Q1.B13.3"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con xử được SỐ GẦN TRÒN: a × 99 = a × 100 − a (trừ MỘT LẦN CHÍNH NÓ, không trừ 99); cộng kiểu mượn – trả với sổ nợ (4,98 + 3,97 = 9 − 0,05); và ghép cặp phần thập phân bù nhau cho tròn chục.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
-  "kidText": "Nhân với 99 thì lấy nhân 100 rồi trừ đi một lần chính nó. Cộng số gần tròn thì mượn cho tròn, nhớ trả cho đủ."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Nhân số gần tròn: a × 99 = a × 100 − a (vì 99 = 100 − 1: một trăm lần a bớt đi MỘT lần a); a × 101 = a × 100 + a."
-   },
-   {
-    "id": "K2",
-    "text": "Cộng số gần tròn kiểu MƯỢN – TRẢ: làm tròn lên để cộng nhanh, nhưng lập SỔ NỢ ngay khi mượn — cuối bài trả đủ: 4,98 + 3,97 = (5 + 4) − (0,02 + 0,03) = 9 − 0,05."
-   },
-   {
-    "id": "K3",
-    "text": "Ghép cặp phần thập phân BÙ NHAU: soi các đuôi cộng nhau tròn (0,7 + 0,3; 0,8 + 0,2) để ghép từng cặp tròn chục rồi cộng dồn."
-   },
-   {
-    "id": "K4",
-    "text": "Viết RÕ phép tách một dòng trước khi tính (99 = 100 − 1; mượn 0,02 ghi nợ 0,02) — dòng tách là dây bảo hiểm chống trừ nhầm, quên trả."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: CỬA HÀNG TẠP HÓA LÀM TRÒN. Món 99 nghìn? Cứ đưa tờ 100 — chủ quán thối lại đúng MỘT nghìn: mua 99 lần món a chính là 100 lần a rồi nhận lại MỘT LẦN a (không phải nhận lại 99!). Còn cộng 4,98 với 3,97: con MƯỢN cho tròn — mượn 0,02 thành 5, mượn 0,03 thành 4 — nhưng chủ nợ Su Kem ghi SỔ NỢ từng khoản: cộng xong 9 phải TRẢ đủ 0,05. Mượn mà quên trả là Cáo Đề cười khà: 9 với 8,95 khác nhau đấy!",
-  "canonicalExamples": [
-   {
-    "case": "nhân 99 (ca bẫy 1)",
-    "problem": "Tính bằng cách thuận tiện: 4,3 × 99.",
-    "solution": "Tách 99 = 100 − 1: 4,3 × 99 = 4,3 × 100 − 4,3 × 1 = 430 − 4,3 = 425,7. (Trừ một lần 4,3 — không trừ 99!)",
-    "why": "Ca đinh bẫy CĐ-13.2, đề A câu 2."
-   },
-   {
-    "case": "mượn – trả (ca bẫy 2)",
-    "problem": "Tính bằng cách thuận tiện: 4,98 + 3,97.",
-    "solution": "Mượn: 4,98 → 5 (nợ 0,02); 3,97 → 4 (nợ 0,03). Cộng: 5 + 4 = 9; trả nợ: 9 − 0,05 = 8,95.",
-    "why": "Ca đinh bẫy CĐ-13.3, đề A câu 4."
-   },
-   {
-    "case": "cặp bù nhau (ca ghép tròn)",
-    "problem": "Tính: 1,7 + 2,8 + 8,3 + 7,2.",
-    "solution": "Soi đuôi bù: 0,7 + 0,3 và 0,8 + 0,2 → (1,7 + 8,3) + (2,8 + 7,2) = 10 + 10 = 20.",
-    "why": "Ca K3 — ghép cặp tròn chục."
-   }
-  ],
-  "numberRange": "Lớp 5: nhân 99 / 101; số thập phân 2 chữ số phần thập phân; tổng đến 500.",
-  "misconceptions": [
-   {
-    "wrong": "4,3 × 99 = 430 − 99 = 331 (tách được 100 rồi hào phóng trừ luôn 99).",
-    "signal": "Số bị trừ là 99 thay vì chính thừa số a.",
-    "fix": "K1 + K4 — viết rõ dòng tách: 99 = 100 − 1, nên trừ MỘT LẦN a: 430 − 4,3.",
-    "counterExample": "Thử lùi: 425,7 : 99 ≈ 4,3 ✓ còn 331 : 99 ≈ 3,3 — lệch hẳn."
-   },
-   {
-    "wrong": "Mượn mà quên trả: 4,98 + 3,97 ≈ \"5 + 4 = 9, xong!\".",
-    "signal": "Đáp tròn trịa đúng bằng tổng hai số làm tròn.",
-    "fix": "K2 + K4 — lập sổ nợ ngay khi mượn: nợ 0,02 + 0,03 = 0,05; đáp 9 − 0,05 = 8,95.",
-    "counterExample": "Cộng cột dọc kiểm: 4,98 + 3,97 = 8,95 ≠ 9."
-   }
-  ],
-  "vocabulary": [
-   "cửa hàng làm tròn",
-   "tờ 100 thối một",
-   "sổ nợ mượn – trả",
-   "đuôi bù nhau",
-   "dòng tách bảo hiểm"
-  ],
-  "mantra": "NHÂN 99 — TRỪ MỘT LẦN CHÍNH NÓ; MƯỢN CHO TRÒN — TRẢ CHO ĐỦ!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "4,3 × 100 = ?",
-    "answerKey": {
-     "value": 430
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B4.M1",
-   "message": "Ôn thang máy nhân 100 ở Bài 4 rồi ghé cửa hàng làm tròn nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Cửa hàng tạp hóa: món giá 4,3 nghìn, mua 99 món. Trí Long tách gọn: 4,3 nhân 100 là 430 — rồi hào phóng trừ luôn 99: \"431 trừ… à 430 trừ 99 bằng 331!\" Su Kem đưa tờ 100 mua một món 99: \"Chủ quán thối lại cậu bao nhiêu?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "430 − 99??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để nhận tiền thối!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K4"
+  "title": "Số gần tròn: nhân 99 trừ một lần chính nó · cộng mượn – trả đủ",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:I.7.1#2"
     ],
-    "narration": "Đưa tờ 100 mua món 99 — thối lại đúng MỘT. Mua 99 lần món 4,3 cũng vậy: trả như mua 100 lần — 430 — rồi NHẬN LẠI một lần món: 4,3. Viết dòng tách bảo hiểm: 99 bằng 100 trừ 1, nên 4,3 nhân 99 bằng 430 trừ 4,3 — BỐN TRĂM HAI LĂM PHẨY BẢY. Trừ 99 là trả nhầm tiền món khác!",
-    "display": {
-     "type": "shop_interactive",
-     "spec": {
-      "item": "4,3",
-      "qty": 99,
-      "line": "99 = 100 − 1",
-      "calc": "430 − 4,3 = 425,7"
-     }
-    },
-    "interaction": {
-     "type": "pay_and_change",
-     "answerKey": {
-      "value": 425.7
-     },
-     "successMessage": "430 − 4,3 = 425,7 — thối MỘT LẦN món, không thối 99!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "num",
-     "text": "Tính thuận tiện: 6,2 × 101 = ? (101 = 100 + 1)",
-     "answerKey": {
-      "value": 626.2
-     },
-     "wrongFeedback": "620 + 6,2 — cộng thêm MỘT lần 6,2.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K3"
+    "bktUnit": "CASE:I.7.1#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B13",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B13.M1",
+    "next": "DL:KSN5Q1.B13.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B13",
+    "chunks": [
+      "CHUNK:KSN5Q1.B13.S4",
+      "CHUNK:KSN5Q1.B13.S5"
     ],
-    "narration": "Quầy cộng nhanh: 4,98 cộng 3,97. Mượn cho tròn — 4,98 mượn 0,02 thành 5; 3,97 mượn 0,03 thành 4 — nhưng Su Kem mở SỔ NỢ ghi từng khoản! Cộng: 9. Trả nợ: 0,02 cộng 0,03 là 0,05 — đáp 8,95. Mượn quên trả là thành 9 — sai ngay! Còn dãy 1,7 + 2,8 + 8,3 + 7,2: soi đuôi bù nhau — bảy với ba, tám với hai — ghép hai cặp tròn: 10 cộng 10 bằng 20!",
-    "display": {
-     "type": "debt_ledger_interactive",
-     "spec": {
-      "add": [
-       "4,98→5 (nợ 0,02)",
-       "3,97→4 (nợ 0,03)"
-      ],
-      "sum": "9 − 0,05 = 8,95",
-      "pairs": "(1,7+8,3)+(2,8+7,2)=20"
-     }
-    },
-    "interaction": {
-     "type": "ledger_settle",
-     "answerKey": {
-      "value": 8.95
-     },
-     "successMessage": "9 − 0,05 = 8,95 — sổ nợ sạch, Cáo Đề hết cười!"
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai thần chú cửa hàng: nhân 99 — trừ một lần chính nó! Mượn cho tròn — trả cho đủ!",
-    "display": {
-     "type": "mantra_card",
-     "text": "MƯỢN CHO TRÒN — TRẢ CHO ĐỦ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 90,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "cases": [
+      "CA:KSN5Q1.B13.2",
+      "CA:KSN5Q1.B13.3"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B13.2",
+      "TRAP:KSN5Q1.B13.3"
+    ]
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con xử được SỐ GẦN TRÒN: a × 99 = a × 100 − a (trừ MỘT LẦN CHÍNH NÓ, không trừ 99); cộng kiểu mượn – trả với sổ nợ (4,98 + 3,97 = 9 − 0,05); và ghép cặp phần thập phân bù nhau cho tròn chục.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
+    "kidText": "Nhân với 99 thì lấy nhân 100 rồi trừ đi một lần chính nó. Cộng số gần tròn thì mượn cho tròn, nhớ trả cho đủ."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Cửa hàng tạp hóa: món giá bốn phẩy ba nghìn, mua chín chín món. Trí Long tách gọn: nhân một trăm là bốn trăm ba mươi — rồi hào phóng trừ luôn chín chín: ba trăm ba mốt! Su Kem đưa tờ một trăm mua một món chín chín: chủ quán thối lại cậu bao nhiêu?",
-    "screenText": "4,3 × 99 = 430 − 99??",
-    "visual": "Quầy tạp hóa; bảng giá '99'; Su Kem chìa tờ 100, tay chủ quán cầm đúng MỘT đồng thối; Trí Long với phép '331' gạch hỏi đỏ.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Đưa tờ một trăm mua món chín chín — thối lại đúng MỘT. Mua chín chín lần món bốn phẩy ba cũng vậy: trả như mua một trăm lần — bốn trăm ba mươi — rồi NHẬN LẠI một lần món: bốn phẩy ba. Dòng tách bảo hiểm: chín chín bằng một trăm trừ một — đáp BỐN TRĂM HAI LĂM PHẨY BẢY!",
-    "screenText": "99 = 100 − 1 → 430 − 4,3 = 425,7",
-    "visual": "Băng chuyền 100 món, món cuối quay ngược về tay khách với nhãn '− 4,3'; dòng tách viết tay #0C3B70; đáp vàng.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Quầy cộng nhanh: bốn phẩy chín tám cộng ba phẩy chín bảy. Mượn cho tròn — thành năm và bốn — nhưng Su Kem mở SỔ NỢ: nợ không phẩy không hai và không phẩy không ba! Cộng ra chín; TRẢ NỢ không phẩy không lăm — đáp TÁM PHẨY CHÍN LĂM. Mượn quên trả là sai ngay! Còn dãy dài: soi đuôi bù — bảy với ba, tám với hai — hai cặp tròn: HAI MƯƠI!",
-    "screenText": "9 − 0,05 = 8,95 · (1,7+8,3)+(2,8+7,2) = 20",
-    "visual": "Sổ nợ mở hai dòng 0,02·0,03; phép 9 − 0,05 đóng dấu 'ĐÃ TRẢ'; bốn số ghép cặp bằng dây nối đuôi bù màu teal.",
-    "assets": [],
-    "duration": 28
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Hai thần chú cửa hàng: nhân chín chín — trừ một lần chính nó! Mượn cho tròn — trả cho đủ!",
-    "screenText": "TRỪ 1 LẦN CHÍNH NÓ · TRẢ CHO ĐỦ!",
-    "visual": "Thẻ thần chú vàng với icon sổ nợ.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Phiên chợ của con: năm phẩy hai nhân chín chín — và đừng quên sổ nợ khi cộng bốn phẩy chín tám với ba phẩy chín bảy! Vào bài luyện ngay!",
-    "screenText": "5,2 × 99 = ? · 4,98 + 3,97 = ?",
-    "visual": "Hai quầy hàng chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 11
-   }
-  ]
- },
- "workedExample": {
-  "title": "Phiên chợ hai quầy",
-  "problem": "Tính bằng cách thuận tiện: (a) 4,3 × 99; (b) 4,98 + 3,97.",
-  "steps": [
-   {
-    "show": "Bước 1 — Quầy nhân: dòng tách 99 = 100 − 1 → 4,3 × 99 = 4,3 × 100 − 4,3.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Trừ đi bao nhiêu?",
-     "choices": [
-      "một lần 4,3",
-      "99",
-      "100"
-     ],
-     "answerKey": {
-      "choice": "một lần 4,3"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Tính: 430 − 4,3 = 425,7."
-   },
-   {
-    "show": "Bước 3 — Quầy cộng: mượn 0,02 và 0,03 (sổ nợ 0,05): 5 + 4 = 9 → 9 − 0,05 = 8,95.",
-    "askAfter": {
-     "format": "num",
-     "text": "Sổ nợ tổng cộng bao nhiêu? (phần trăm)",
-     "answerKey": {
-      "value": 0.05
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B13.LT4",
-     "text": "Tính bằng cách thuận tiện: 4,3 × 99.",
-     "answerKey": {
-      "value": 425.7
-     },
-     "hints": [
-      "99 = 100 − 1.",
-      "430 trừ MỘT lần 4,3."
-     ],
-     "solutionNarrative": "4,3 × 100 − 4,3 = 425,7.",
-     "teaches": [
-      "K1",
-      "K4"
-     ],
-     "generator": {
-      "template": "Tính thuận tiện: {a} × 99.",
-      "constraints": {
-       "a": "số thập phân 1 chữ số phần mười"
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Nhân số gần tròn: a × 99 = a × 100 − a (vì 99 = 100 − 1: một trăm lần a bớt đi MỘT lần a); a × 101 = a × 100 + a."
       },
-      "answerRule": "a × 100 − a"
-     }
-    },
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B13.LT5",
-     "text": "Tính bằng cách thuận tiện: 4,98 + 3,97.",
-     "answerKey": {
-      "value": 8.95
-     },
-     "hints": [
-      "Mượn 0,02 và 0,03 — ghi sổ nợ!",
-      "9 − 0,05."
-     ],
-     "solutionNarrative": "(5 + 4) − (0,02 + 0,03) = 8,95.",
-     "teaches": [
-      "K2",
-      "K4"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P3",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B13.LT6",
-     "text": "Tính bằng cách thuận tiện: 1,7 + 2,8 + 8,3 + 7,2.",
-     "answerKey": {
-      "value": 20
-     },
-     "hints": [
-      "Soi đuôi bù nhau: 0,7 + 0,3; 0,8 + 0,2.",
-      "(1,7 + 8,3) + (2,8 + 7,2)."
-     ],
-     "solutionNarrative": "10 + 10 = 20 — ghép cặp tròn chục.",
-     "teaches": [
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P4",
-     "format": "tf",
-     "text": "(Đúng/Sai?) 7,6 × 101 = 760 + 101 = 861.",
-     "answerKey": {
-      "value": false,
-      "note": "Cộng MỘT lần 7,6: 760 + 7,6 = 767,6."
-     },
-     "hints": [
-      "101 = 100 + 1.",
-      "Cộng thêm một lần gì?"
-     ],
-     "teaches": [
-      "K1"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
-  "onPass": {
-   "updateBKT": [
-    "CASE:I.7.1#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B13.M3",
-   "award": "huy_hieu_chu_quan_lam_tron"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B13.QZ2",
-    "text": "(Đúng/Sai?) a × 99 = a × 100 − 99.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B13.QZ5",
-    "text": "4,98 + 3,97 = 9 − ?",
-    "choices": [
-     "0,05",
-     "0,02",
-     "0,5"
+      {
+        "id": "K2",
+        "text": "Cộng số gần tròn kiểu MƯỢN – TRẢ: làm tròn lên để cộng nhanh, nhưng lập SỔ NỢ ngay khi mượn — cuối bài trả đủ: 4,98 + 3,97 = (5 + 4) − (0,02 + 0,03) = 9 − 0,05."
+      },
+      {
+        "id": "K3",
+        "text": "Ghép cặp phần thập phân BÙ NHAU: soi các đuôi cộng nhau tròn (0,7 + 0,3; 0,8 + 0,2) để ghép từng cặp tròn chục rồi cộng dồn."
+      },
+      {
+        "id": "K4",
+        "text": "Viết RÕ phép tách một dòng trước khi tính (99 = 100 − 1; mượn 0,02 ghi nợ 0,02) — dòng tách là dây bảo hiểm chống trừ nhầm, quên trả."
+      }
     ],
-    "answerKey": {
-     "choice": "0,05"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "num",
-    "text": "Tính thuận tiện: 2,5 × 99 = ?",
-    "answerKey": {
-     "value": 247.5
-    },
-    "teaches": [
-     "K1"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Nhân 99 / 101 tách sao? Cộng số gần tròn theo luật gì?",
-    "back": "a × 99 = a × 100 − a (trừ MỘT lần chính nó); a × 101 = a × 100 + a. Cộng: MƯỢN cho tròn — ghi SỔ NỢ — TRẢ đủ cuối bài (4,98 + 3,97 = 9 − 0,05 = 8,95). Đuôi bù nhau thì ghép cặp tròn."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P4 (nhân 101)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học nhân 99 kiểu tờ-100-thối-một và cộng mượn – trả với sổ nợ. Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Đi chợ thật: món 99 nghìn đưa tờ 100 — hỏi con 'mua 5 món kiểu này hết bao nhiêu?' (5 × 100 − 5 = 495 nghìn) là đạt.",
-  "watchFor": "Nếu con trừ 99 thay vì trừ một lần thừa số — diễn lại cảnh thối tiền (S2); nếu quên trả nợ — mở sổ nợ (S3) cùng con."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B13.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "430 − 99??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "431 trừ… à 430 trừ 99 bằng 331!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Chủ quán thối lại cậu bao nhiêu?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B13_M2_F1.png",
-   "sha256_16": "687d39f0991289d9"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "Số gần tròn: nhân 99 trừ một lần chính nó · cộng mượn – trả đủ",
-    "formulas": [
-     {
-      "text": "4,3",
-      "tone": "navy"
-     },
-     {
-      "text": "99 = 100 − 1",
-      "tone": "gold"
-     }
-    ]
-   },
-   "caption": "Ý chính của bài gói trong mấy dòng",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B13_M2_F2.png",
-   "sha256_16": "e143d00c1c7562e4"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Nhân số gần tròn",
-      "text": "a × 99 = a × 100 − a (vì 99 = 100 − 1: một trăm lần a bớt đi MỘT lần a); a × 101 = a × 100 + a.",
-      "tone": "navy"
-     },
-     {
-      "label": "Cộng số gần tròn kiểu MƯỢN",
-      "text": "TRẢ: làm tròn lên để cộng nhanh, nhưng lập SỔ NỢ ngay khi mượn — cuối bài trả đủ: 4,98 + 3,97 = (5 + 4) − (0,02 + 0,03) = 9 − 0,05.",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: CỬA HÀNG TẠP HÓA LÀM TRÒN. Món 99 nghìn? Cứ đưa tờ 100 — chủ quán thối lại đúng MỘT nghìn: mua 99 lần món a chính là 100 lần a rồi nhận lại MỘT LẦN a (không phải nhận lại 99!). Còn cộng 4,98 với 3,97: con MƯỢN cho tròn — mượn 0,02 thành 5, mượn 0,03 thành 4 — nhưng chủ nợ Su Kem ghi SỔ NỢ từng khoản: cộng xong 9 phải TRẢ đủ 0,05. Mượn mà quên trả là Cáo Đề cười khà: 9 với 8,95 khác nhau đấy!",
+    "canonicalExamples": [
+      {
+        "case": "nhân 99 (ca bẫy 1)",
+        "problem": "Tính bằng cách thuận tiện: 4,3 × 99.",
+        "solution": "Tách 99 = 100 − 1: 4,3 × 99 = 4,3 × 100 − 4,3 × 1 = 430 − 4,3 = 425,7. (Trừ một lần 4,3 — không trừ 99!)",
+        "why": "Ca đinh bẫy CĐ-13.2, đề A câu 2."
+      },
+      {
+        "case": "mượn – trả (ca bẫy 2)",
+        "problem": "Tính bằng cách thuận tiện: 4,98 + 3,97.",
+        "solution": "Mượn: 4,98 → 5 (nợ 0,02); 3,97 → 4 (nợ 0,03). Cộng: 5 + 4 = 9; trả nợ: 9 − 0,05 = 8,95.",
+        "why": "Ca đinh bẫy CĐ-13.3, đề A câu 4."
+      },
+      {
+        "case": "cặp bù nhau (ca ghép tròn)",
+        "problem": "Tính: 1,7 + 2,8 + 8,3 + 7,2.",
+        "solution": "Soi đuôi bù: 0,7 + 0,3 và 0,8 + 0,2 → (1,7 + 8,3) + (2,8 + 7,2) = 10 + 10 = 20.",
+        "why": "Ca K3 — ghép cặp tròn chục."
+      }
+    ],
+    "numberRange": "Lớp 5: nhân 99 / 101; số thập phân 2 chữ số phần thập phân; tổng đến 500.",
+    "misconceptions": [
+      {
+        "wrong": "4,3 × 99 = 430 − 99 = 331 (tách được 100 rồi hào phóng trừ luôn 99).",
+        "signal": "Số bị trừ là 99 thay vì chính thừa số a.",
+        "fix": "K1 + K4 — viết rõ dòng tách: 99 = 100 − 1, nên trừ MỘT LẦN a: 430 − 4,3.",
+        "counterExample": "Thử lùi: 425,7 : 99 ≈ 4,3 ✓ còn 331 : 99 ≈ 3,3 — lệch hẳn."
+      },
+      {
+        "wrong": "Mượn mà quên trả: 4,98 + 3,97 ≈ \"5 + 4 = 9, xong!\".",
+        "signal": "Đáp tròn trịa đúng bằng tổng hai số làm tròn.",
+        "fix": "K2 + K4 — lập sổ nợ ngay khi mượn: nợ 0,02 + 0,03 = 0,05; đáp 9 − 0,05 = 8,95.",
+        "counterExample": "Cộng cột dọc kiểm: 4,98 + 3,97 = 8,95 ≠ 9."
+      }
+    ],
+    "vocabulary": [
+      "cửa hàng làm tròn",
+      "tờ 100 thối một",
+      "sổ nợ mượn – trả",
+      "đuôi bù nhau",
+      "dòng tách bảo hiểm"
     ],
     "mantra": "NHÂN 99 — TRỪ MỘT LẦN CHÍNH NÓ; MƯỢN CHO TRÒN — TRẢ CHO ĐỦ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B13_M2_F3.png",
-   "sha256_16": "6739db82bd92ad0a"
   },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "4,3 × 99 — TRỪ MẤY LẦN CHÍNH NÓ?",
-    "wrong": {
-     "head": "TRỪ 99",
-     "steps": [
-      "430 − 99"
-     ],
-     "result": "331 ✗"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "4,3 × 100 = ?",
+        "answerKey": {
+          "value": 430
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B4.M1",
+      "message": "Ôn thang máy nhân 100 ở Bài 4 rồi ghé cửa hàng làm tròn nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Cửa hàng tạp hóa: món giá 4,3 nghìn, mua 99 món. Trí Long tách gọn: 4,3 nhân 100 là 430 — rồi hào phóng trừ luôn 99: \"431 trừ… à 430 trừ 99 bằng 331!\" Su Kem đưa tờ 100 mua một món 99: \"Chủ quán thối lại cậu bao nhiêu?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "430 − 99??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để nhận tiền thối!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K4"
+        ],
+        "narration": "Đưa tờ 100 mua món 99 — thối lại đúng MỘT. Mua 99 lần món 4,3 cũng vậy: trả như mua 100 lần — 430 — rồi NHẬN LẠI một lần món: 4,3. Viết dòng tách bảo hiểm: 99 bằng 100 trừ 1, nên 4,3 nhân 99 bằng 430 trừ 4,3 — BỐN TRĂM HAI LĂM PHẨY BẢY. Trừ 99 là trả nhầm tiền món khác!",
+        "display": {
+          "type": "shop_interactive",
+          "spec": {
+            "item": "4,3",
+            "qty": 99,
+            "line": "99 = 100 − 1",
+            "calc": "430 − 4,3 = 425,7"
+          }
+        },
+        "interaction": {
+          "type": "pay_and_change",
+          "answerKey": {
+            "value": 425.7
+          },
+          "successMessage": "430 − 4,3 = 425,7 — thối MỘT LẦN món, không thối 99!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "num",
+          "text": "Tính thuận tiện: 6,2 × 101 = ? (101 = 100 + 1)",
+          "answerKey": {
+            "value": 626.2
+          },
+          "wrongFeedback": "620 + 6,2 — cộng thêm MỘT lần 6,2.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 42,
+        "teaches": [
+          "K2",
+          "K3"
+        ],
+        "narration": "Quầy cộng nhanh: 4,98 cộng 3,97. Mượn cho tròn — 4,98 mượn 0,02 thành 5; 3,97 mượn 0,03 thành 4 — nhưng Su Kem mở SỔ NỢ ghi từng khoản! Cộng: 9. Trả nợ: 0,02 cộng 0,03 là 0,05 — đáp 8,95. Mượn quên trả là thành 9 — sai ngay! Còn dãy 1,7 + 2,8 + 8,3 + 7,2: soi đuôi bù nhau — bảy với ba, tám với hai — ghép hai cặp tròn: 10 cộng 10 bằng 20!",
+        "display": {
+          "type": "debt_ledger_interactive",
+          "spec": {
+            "add": [
+              "4,98→5 (nợ 0,02)",
+              "3,97→4 (nợ 0,03)"
+            ],
+            "sum": "9 − 0,05 = 8,95",
+            "pairs": "(1,7+8,3)+(2,8+7,2)=20"
+          }
+        },
+        "interaction": {
+          "type": "ledger_settle",
+          "answerKey": {
+            "value": 8.95
+          },
+          "successMessage": "9 − 0,05 = 8,95 — sổ nợ sạch, Cáo Đề hết cười!"
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Hai thần chú cửa hàng: nhân 99 — trừ một lần chính nó! Mượn cho tròn — trả cho đủ!",
+        "display": {
+          "type": "mantra_card",
+          "text": "MƯỢN CHO TRÒN — TRẢ CHO ĐỦ!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 90,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "right": {
-     "head": "TRỪ MỘT LẦN 4,3",
-     "steps": [
-      "4,3 × 100 − 4,3 × 1"
-     ],
-     "result": "430 − 4,3 = 425,7"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "verdict": "99 = 100 − 1 → chỉ trừ ĐÚNG MỘT LẦN chính nó"
-   },
-   "caption": "Số gần tròn: mượn cho tròn rồi trả lại đúng phần đã mượn",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B13_M2_F4.png",
-   "sha256_16": "256a8590110cc9b3"
-  }
- ]
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Cửa hàng tạp hóa: món giá bốn phẩy ba nghìn, mua chín chín món. Trí Long tách gọn: nhân một trăm là bốn trăm ba mươi — rồi hào phóng trừ luôn chín chín: ba trăm ba mốt! Su Kem đưa tờ một trăm mua một món chín chín: chủ quán thối lại cậu bao nhiêu?",
+        "screenText": "4,3 × 99 = 430 − 99??",
+        "visual": "Quầy tạp hóa; bảng giá '99'; Su Kem chìa tờ 100, tay chủ quán cầm đúng MỘT đồng thối; Trí Long với phép '331' gạch hỏi đỏ.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Đưa tờ một trăm mua món chín chín — thối lại đúng MỘT. Mua chín chín lần món bốn phẩy ba cũng vậy: trả như mua một trăm lần — bốn trăm ba mươi — rồi NHẬN LẠI một lần món: bốn phẩy ba. Dòng tách bảo hiểm: chín chín bằng một trăm trừ một — đáp BỐN TRĂM HAI LĂM PHẨY BẢY!",
+        "screenText": "99 = 100 − 1 → 430 − 4,3 = 425,7",
+        "visual": "Băng chuyền 100 món, món cuối quay ngược về tay khách với nhãn '− 4,3'; dòng tách viết tay #0C3B70; đáp vàng.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Quầy cộng nhanh: bốn phẩy chín tám cộng ba phẩy chín bảy. Mượn cho tròn — thành năm và bốn — nhưng Su Kem mở SỔ NỢ: nợ không phẩy không hai và không phẩy không ba! Cộng ra chín; TRẢ NỢ không phẩy không lăm — đáp TÁM PHẨY CHÍN LĂM. Mượn quên trả là sai ngay! Còn dãy dài: soi đuôi bù — bảy với ba, tám với hai — hai cặp tròn: HAI MƯƠI!",
+        "screenText": "9 − 0,05 = 8,95 · (1,7+8,3)+(2,8+7,2) = 20",
+        "visual": "Sổ nợ mở hai dòng 0,02·0,03; phép 9 − 0,05 đóng dấu 'ĐÃ TRẢ'; bốn số ghép cặp bằng dây nối đuôi bù màu teal.",
+        "assets": [],
+        "duration": 28
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Hai thần chú cửa hàng: nhân chín chín — trừ một lần chính nó! Mượn cho tròn — trả cho đủ!",
+        "screenText": "TRỪ 1 LẦN CHÍNH NÓ · TRẢ CHO ĐỦ!",
+        "visual": "Thẻ thần chú vàng với icon sổ nợ.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Phiên chợ của con: năm phẩy hai nhân chín chín — và đừng quên sổ nợ khi cộng bốn phẩy chín tám với ba phẩy chín bảy! Vào bài luyện ngay!",
+        "screenText": "5,2 × 99 = ? · 4,98 + 3,97 = ?",
+        "visual": "Hai quầy hàng chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 11
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Phiên chợ hai quầy",
+    "problem": "Tính bằng cách thuận tiện: (a) 4,3 × 99; (b) 4,98 + 3,97.",
+    "steps": [
+      {
+        "show": "Bước 1 — Quầy nhân: dòng tách 99 = 100 − 1 → 4,3 × 99 = 4,3 × 100 − 4,3.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Trừ đi bao nhiêu?",
+          "choices": [
+            "một lần 4,3",
+            "99",
+            "100"
+          ],
+          "answerKey": {
+            "choice": "một lần 4,3"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Tính: 430 − 4,3 = 425,7."
+      },
+      {
+        "show": "Bước 3 — Quầy cộng: mượn 0,02 và 0,03 (sổ nợ 0,05): 5 + 4 = 9 → 9 − 0,05 = 8,95.",
+        "askAfter": {
+          "format": "num",
+          "text": "Sổ nợ tổng cộng bao nhiêu? (phần trăm)",
+          "answerKey": {
+            "value": 0.05
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B13.LT4",
+          "text": "Tính bằng cách thuận tiện: 4,3 × 99.",
+          "answerKey": {
+            "value": 425.7
+          },
+          "hints": [
+            "99 = 100 − 1.",
+            "430 trừ MỘT lần 4,3."
+          ],
+          "solutionNarrative": "4,3 × 100 − 4,3 = 425,7.",
+          "teaches": [
+            "K1",
+            "K4"
+          ],
+          "generator": {
+            "template": "Tính thuận tiện: {a} × 99.",
+            "constraints": {
+              "a": "số thập phân 1 chữ số phần mười"
+            },
+            "answerRule": "a × 100 − a"
+          }
+        },
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B13.LT5",
+          "text": "Tính bằng cách thuận tiện: 4,98 + 3,97.",
+          "answerKey": {
+            "value": 8.95
+          },
+          "hints": [
+            "Mượn 0,02 và 0,03 — ghi sổ nợ!",
+            "9 − 0,05."
+          ],
+          "solutionNarrative": "(5 + 4) − (0,02 + 0,03) = 8,95.",
+          "teaches": [
+            "K2",
+            "K4"
+          ]
+        }
+      ],
+      "standard": [
+        {
+          "id": "P3",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B13.LT6",
+          "text": "Tính bằng cách thuận tiện: 1,7 + 2,8 + 8,3 + 7,2.",
+          "answerKey": {
+            "value": 20
+          },
+          "hints": [
+            "Soi đuôi bù nhau: 0,7 + 0,3; 0,8 + 0,2.",
+            "(1,7 + 8,3) + (2,8 + 7,2)."
+          ],
+          "solutionNarrative": "10 + 10 = 20 — ghép cặp tròn chục.",
+          "teaches": [
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P4",
+          "format": "tf",
+          "text": "(Đúng/Sai?) 7,6 × 101 = 760 + 101 = 861.",
+          "answerKey": {
+            "value": false,
+            "note": "Cộng MỘT lần 7,6: 760 + 7,6 = 767,6."
+          },
+          "hints": [
+            "101 = 100 + 1.",
+            "Cộng thêm một lần gì?"
+          ],
+          "teaches": [
+            "K1"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
+    "onPass": {
+      "updateBKT": [
+        "CASE:I.7.1#2@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B13.M3",
+      "award": "huy_hieu_chu_quan_lam_tron"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B13.QZ2",
+        "text": "(Đúng/Sai?) a × 99 = a × 100 − 99.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B13.QZ5",
+        "text": "4,98 + 3,97 = 9 − ?",
+        "choices": [
+          "0,05",
+          "0,02",
+          "0,5"
+        ],
+        "answerKey": {
+          "choice": "0,05"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "num",
+        "text": "Tính thuận tiện: 2,5 × 99 = ?",
+        "answerKey": {
+          "value": 247.5
+        },
+        "teaches": [
+          "K1"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Nhân 99 / 101 tách sao? Cộng số gần tròn theo luật gì?",
+        "back": "a × 99 = a × 100 − a (trừ MỘT lần chính nó); a × 101 = a × 100 + a. Cộng: MƯỢN cho tròn — ghi SỔ NỢ — TRẢ đủ cuối bài (4,98 + 3,97 = 9 − 0,05 = 8,95). Đuôi bù nhau thì ghép cặp tròn."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P4 (nhân 101)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học nhân 99 kiểu tờ-100-thối-một và cộng mượn – trả với sổ nợ. Con đạt {score}/3, {trapResult} câu bẫy.",
+    "homeActivity": "Đi chợ thật: món 99 nghìn đưa tờ 100 — hỏi con 'mua 5 món kiểu này hết bao nhiêu?' (5 × 100 − 5 = 495 nghìn) là đạt.",
+    "watchFor": "Nếu con trừ 99 thay vì trừ một lần thừa số — diễn lại cảnh thối tiền (S2); nếu quên trả nợ — mở sổ nợ (S3) cùng con."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B13.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "430 − 99??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "431 trừ… à 430 trừ 99 bằng 331!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Chủ quán thối lại cậu bao nhiêu?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B13_M2_F1.png",
+      "sha256_16": "687d39f0991289d9"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "Số gần tròn: nhân 99 trừ một lần chính nó · cộng mượn – trả đủ",
+        "formulas": [
+          {
+            "text": "4,3",
+            "tone": "navy"
+          },
+          {
+            "text": "99 = 100 − 1",
+            "tone": "gold"
+          }
+        ]
+      },
+      "caption": "Ý chính của bài gói trong mấy dòng",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B13_M2_F2.png",
+      "sha256_16": "e143d00c1c7562e4"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Nhân số gần tròn",
+            "text": "a × 99 = a × 100 − a (vì 99 = 100 − 1: một trăm lần a bớt đi MỘT lần a); a × 101 = a × 100 + a.",
+            "tone": "navy"
+          },
+          {
+            "label": "Cộng số gần tròn kiểu MƯỢN",
+            "text": "TRẢ: làm tròn lên để cộng nhanh, nhưng lập SỔ NỢ ngay khi mượn — cuối bài trả đủ: 4,98 + 3,97 = (5 + 4) − (0,02 + 0,03) = 9 − 0,05.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "NHÂN 99 — TRỪ MỘT LẦN CHÍNH NÓ; MƯỢN CHO TRÒN — TRẢ CHO ĐỦ!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B13_M2_F3.png",
+      "sha256_16": "6739db82bd92ad0a"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "4,3 × 99 — TRỪ MẤY LẦN CHÍNH NÓ?",
+        "wrong": {
+          "head": "TRỪ 99",
+          "steps": [
+            "430 − 99"
+          ],
+          "result": "331 ✗"
+        },
+        "right": {
+          "head": "TRỪ MỘT LẦN 4,3",
+          "steps": [
+            "4,3 × 100 − 4,3 × 1"
+          ],
+          "result": "430 − 4,3 = 425,7"
+        },
+        "verdict": "99 = 100 − 1 → chỉ trừ ĐÚNG MỘT LẦN chính nó"
+      },
+      "caption": "Số gần tròn: mượn cho tròn rồi trả lại đúng phần đã mượn",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B13_M2_F4.png",
+      "sha256_16": "256a8590110cc9b3"
+    }
+  ]
 }

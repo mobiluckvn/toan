@@ -95,35 +95,65 @@ export const nightlyReport = onSchedule(
  * BẢNG GIÁO VIÊN — 21h15 mỗi đêm, MỘT document cho toàn hệ thống.
  * Cô mở app đọc đúng một lần, thay vì quét hàng chục nghìn dòng nhật ký.
  */
+/**
+ * Dựng bảng giáo viên từ dữ liệu HIỆN TẠI và ghi vào teacherBoard/global.
+ * Tách riêng vì có HAI nơi gọi: lịch chạy đêm, và nút "Cập nhật ngay" của cô giáo.
+ */
+async function dungBangGiaoVien(soNgay = 7) {
+  const since = Date.now() - soNgay * 86400000;
+  const index = await loadContentIndex();
+
+  const roster = [];
+  for await (const U of eachDoc(db.collection('users').where('role', '==', 'learner'))) {
+    const d = U.data();
+    roster.push({ uid: U.id, displayName: d.displayName || '', email: d.email || '' });
+  }
+
+  const attSnap = await db.collection('attempts').where('serverTs', '>=', new Date(since)).get();
+  const attempts = attSnap.docs.map((d) => {
+    const a = d.data();
+    // Firestore trả Timestamp; teacherboard.js làm việc với mili-giây
+    return { ...a, serverTs: a.serverTs?.toMillis ? a.serverTs.toMillis() : a.serverTs };
+  });
+
+  const progress = {};
+  for (const r of roster) {
+    const s = await db.collection(`progress/${r.uid}/micros`).get();
+    const m = {}; s.forEach((d) => { m[d.data().microId || d.id] = d.data(); });
+    progress[r.uid] = m;
+  }
+
+  const board = buildTeacherBoard({ roster, attempts, progress, index });
+  await db.doc('teacherBoard/global').set(board, { merge: true });
+  return board;
+}
+
 export const nightlyTeacherBoard = onSchedule(
   { schedule: '15 21 * * *', timeZone: 'Asia/Ho_Chi_Minh', timeoutSeconds: 540, memory: '512MiB' },
   async () => {
-    const since = Date.now() - 7 * 86400000;
-    const index = await loadContentIndex();
-
-    const roster = [];
-    for await (const U of eachDoc(db.collection('users').where('role', '==', 'learner'))) {
-      const d = U.data();
-      roster.push({ uid: U.id, displayName: d.displayName || '', email: d.email || '' });
-    }
-
-    const attSnap = await db.collection('attempts').where('serverTs', '>=', new Date(since)).get();
-    const attempts = attSnap.docs.map((d) => {
-      const a = d.data();
-      // Firestore trả Timestamp; teacherboard.js làm việc với mili-giây
-      return { ...a, serverTs: a.serverTs?.toMillis ? a.serverTs.toMillis() : a.serverTs };
-    });
-
-    const progress = {};
-    for (const r of roster) {
-      const s = await db.collection(`progress/${r.uid}/micros`).get();
-      const m = {}; s.forEach((d) => { m[d.data().microId || d.id] = d.data(); });
-      progress[r.uid] = m;
-    }
-
-    const board = buildTeacherBoard({ roster, attempts, progress, index });
-    await db.doc('teacherBoard/global').set(board, { merge: true });
+    const board = await dungBangGiaoVien();
     console.log(`bảng giáo viên: ${board.learners} học sinh · ${board.answered} lượt trả lời`);
+  },
+);
+
+/**
+ * "Cập nhật ngay" — cô giáo bấm là dựng lại bảng tức thì.
+ *
+ * Vì sao cần: bảng chỉ dựng lúc 21:15 mỗi đêm, nên con học sáng nay thì mãi tối cô
+ * mới thấy — mà cô cần biết NGAY để còn kèm con trong buổi học. Bảng dựng lần đầu
+ * lúc 07:00 còn sớm hơn cả lúc tài khoản học sinh được tạo, nên cô mở ra thấy toàn
+ * số 0 và tưởng hệ thống hỏng.
+ */
+export const refreshTeacherBoard = onCall(
+  { region: 'asia-southeast1', timeoutSeconds: 300, memory: '512MiB' },
+  async (req) => {
+    const vai = req.auth?.token?.role;
+    if (vai !== 'teacher' && vai !== 'admin') {
+      throw new HttpsError('permission-denied', 'Chỉ giáo viên và quản trị dựng lại bảng được.');
+    }
+    const board = await dungBangGiaoVien(Number(req.data?.soNgay) || 7);
+    return { ok: true, learners: board.learners, answered: board.answered,
+             generatedAt: board.generatedAt };
   },
 );
 

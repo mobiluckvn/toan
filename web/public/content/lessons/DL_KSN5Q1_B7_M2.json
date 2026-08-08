@@ -1,636 +1,639 @@
 {
- "title": "Chia hết trong đoạn: dò đầu – cuối thật · \"từ\" khác \"giữa\"",
- "grade": 5,
- "durationMinutes": 8,
- "skills": {
-  "primary": [
-   "CASE:I.4.1#2"
-  ],
-  "bktUnit": "CASE:I.4.1#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B7",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B7.M1",
-  "next": "DL:KSN5Q1.B7.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B7",
-  "chunks": [
-   "CHUNK:KSN5Q1.B7.S4",
-   "CHUNK:KSN5Q1.B7.S5"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B7.2"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B7.2"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con đếm được số chia hết cho k trong một đoạn: dò đúng số ĐẦU và số CUỐI thật sự thỏa mãn rồi mới áp công thức — và phân biệt \"từ a đến b\" (giữ đầu mút) với \"giữa a và b\" (bỏ cả hai đầu).",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (từ/giữa)",
-  "kidText": "Con đếm số chia hết cho k trong một đoạn, và phân biệt được \"từ 10 đến 100\" với \"giữa 10 và 100\" — hai đề khác nhau đấy."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Đếm số ⋮ k trong đoạn: tìm số ĐẦU THẬT (số ⋮ k nhỏ nhất trong đoạn) và số CUỐI THẬT (số ⋮ k lớn nhất trong đoạn) rồi mới áp (cuối − đầu) : k + 1."
-   },
-   {
-    "id": "K2",
-    "text": "\"TỪ a đến b\": các đầu mút được ở lại (nếu thỏa điều kiện). \"GIỮA a và b\": đuổi cả hai đầu mút khỏi đoạn — dù chúng có thỏa."
-   },
-   {
-    "id": "K3",
-    "text": "Khoanh tròn chữ \"từ / giữa\" ngay khi đọc đề — một chữ lệch, hai đáp số."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: HAI TRẠM DÒ ĐẦU–CUỐI. Trước khi dựng hàng rào trong đoạn, thợ rào phải đi DÒ: từ mép trái tiến vào, gặp số chia hết đầu tiên — cắm biển ĐẦU THẬT; từ mép phải lùi vào, gặp số chia hết cuối cùng — cắm biển CUỐI THẬT. Đề nói 'từ 10 đến 100' thì mép được tính (10 và 100 dự tuyển); đề nói 'giữa 10 và 100' thì hai mép bị đuổi trước khi dò. Cắm xong hai biển mới gọi đội hàng rào (công thức +1) vào.",
-  "canonicalExamples": [
-   {
-    "case": "dò đầu thật (ca lõi)",
-    "problem": "Từ 1 đến 100 có bao nhiêu số chia hết cho 3? Từ 10 đến 100 thì sao?",
-    "solution": "Đoạn 1–100: đầu thật 3, cuối thật 99 → (99 − 3) : 3 + 1 = 33. Đoạn 10–100: đầu thật là 12 (10, 11 trượt), cuối thật 99 → (99 − 12) : 3 + 1 = 30.",
-    "why": "Ca chuẩn K1 — đầu thật đổi làm đáp số đổi."
-   },
-   {
-    "case": "từ vs giữa (ca một chữ lệch)",
-    "problem": "\"Từ 10 đến 100\" và \"giữa 10 và 100\" — mỗi trường hợp có bao nhiêu số chia hết cho 5?",
-    "solution": "TỪ: 10; 15; …; 100 → (100 − 10) : 5 + 1 = 19 số. GIỮA: đuổi 10 và 100 → dãy 15; …; 95 → (95 − 15) : 5 + 1 = 17 số. Một chữ lệch — hai số hạng bay mất.",
-    "why": "Ca đinh của bẫy CĐ-7.2."
-   },
-   {
-    "case": "số có hai chữ số (ca quen thuộc)",
-    "problem": "Có bao nhiêu số có hai chữ số?",
-    "solution": "Đoạn từ 10 đến 99, khoảng 1: (99 − 10) : 1 + 1 = 90 số.",
-    "why": "Đoạn phát biểu ngầm — trò phải tự dựng đầu 10, cuối 99."
-   }
-  ],
-  "numberRange": "Lớp 5: đoạn trong 1–1000; k từ 2 đến 10.",
-  "misconceptions": [
-   {
-    "wrong": "Áp công thức thẳng với mép đoạn dù mép không chia hết (đầu = 10 cho bài ⋮ 3).",
-    "signal": "Phép chia có dư ngay trong công thức.",
-    "fix": "K1 — dò đầu–cuối thật trước: 10, 11 trượt, 12 mới là biển ĐẦU.",
-    "counterExample": "(100 − 10) : 3 không chia hết — dấu hiệu đang rào nhầm mép."
-   },
-   {
-    "wrong": "Coi 'giữa 10 và 100' vẫn gồm 10 và 100.",
-    "signal": "Đáp số dôi đúng số đầu mút thỏa điều kiện.",
-    "fix": "K2 + K3 — khoanh chữ 'giữa' và đuổi cả hai đầu trước khi dò.",
-    "counterExample": "Bài ⋮ 5: 'từ' ra 19, 'giữa' chỉ 17."
-   }
-  ],
-  "vocabulary": [
-   "biển ĐẦU THẬT / CUỐI THẬT",
-   "dò từ hai mép",
-   "từ — giữ hai đầu; giữa — đuổi cả đôi"
-  ],
-  "mantra": "TỪ THÌ GIỮ HAI ĐẦU — GIỮA THÌ ĐUỔI CẢ ĐÔI!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Dãy 12; 15; …; 99 có khoảng cách mấy?",
-    "answerKey": {
-     "value": 3
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B7.M1",
-   "message": "Ôn hàng rào cọc rồi quay lại trạm dò nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Cáo Đề ra hai đề SÁT NHAU: 'Từ 10 đến 100 có mấy số chia hết cho 5?' và 'Giữa 10 và 100 có mấy số chia hết cho 5?' Trí Long: 'Thì như nhau chứ gì — 19!' Su Kem khoanh tròn hai chữ khác nhau trong đề…",
-    "display": {
-     "type": "story_panel",
-     "caption": "TỪ 10–100 ?= GIỮA 10–100"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để soi hai chữ bị khoanh!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "Chia hết trong đoạn: dò đầu – cuối thật · \"từ\" khác \"giữa\"",
+  "grade": 5,
+  "durationMinutes": 8,
+  "skills": {
+    "primary": [
+      "CASE:I.4.1#2"
     ],
-    "narration": "Trạm dò làm việc: đề TỪ — mép 10 và 100 được dự tuyển: 10 ⋮ 5 ✓ cắm biển ĐẦU; 100 ⋮ 5 ✓ cắm biển CUỐI → (100 − 10) : 5 + 1 = 19. Đề GIỮA — đuổi cả 10 lẫn 100 trước: dò vào trong gặp 15 và 95 → (95 − 15) : 5 + 1 = 17. Con kéo biển vào đúng chỗ cho từng đề.",
-    "display": {
-     "type": "range_scan_interactive",
-     "spec": {
-      "k": 5,
-      "cases": [
-       {
-        "mode": "từ",
-        "start": 10,
-        "end": 100,
-        "first": 10,
-        "last": 100,
-        "count": 19
-       },
-       {
-        "mode": "giữa",
-        "start": 10,
-        "end": 100,
-        "first": 15,
-        "last": 95,
-        "count": 17
-       }
-      ]
-     }
-    },
-    "interaction": {
-     "type": "place_flags",
-     "successMessage": "TỪ: 19 số · GIỮA: 17 số — một chữ lệch, hai số hạng bay mất!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 18,
-    "item": {
-     "format": "num",
-     "text": "Từ 10 đến 100 có bao nhiêu số chia hết cho 3? (dò đầu thật trước!)",
-     "answerKey": {
-      "value": 30
-     },
-     "wrongFeedback": "10, 11 trượt — đầu thật là 12; cuối thật 99; (99−12):3+1.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 32,
-    "teaches": [
-     "K1",
-     "K3"
+    "bktUnit": "CASE:I.4.1#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B7",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B7.M1",
+    "next": "DL:KSN5Q1.B7.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B7",
+    "chunks": [
+      "CHUNK:KSN5Q1.B7.S4",
+      "CHUNK:KSN5Q1.B7.S5"
     ],
-    "narration": "Vụ quen thuộc nhất của trạm dò: 'có bao nhiêu số có hai chữ số?' — đoạn ngầm từ 10 đến 99, khoảng 1: chín mươi số. Nghi thức đầy đủ: khoanh chữ từ/giữa — dò cắm hai biển thật — rồi mới gọi công thức cộng một.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "Khoanh 'từ / giữa'",
-      "Dò biển ĐẦU THẬT — CUỐI THẬT",
-      "(cuối − đầu) : k + 1 · vd 2 chữ số: (99−10):1+1 = 90"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Thần chú trạm dò: từ thì giữ hai đầu — giữa thì đuổi cả đôi!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TỪ GIỮ HAI ĐẦU — GIỮA ĐUỔI CẢ ĐÔI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 81,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "cases": [
+      "CA:KSN5Q1.B7.2"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B7.2"
+    ]
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con đếm được số chia hết cho k trong một đoạn: dò đúng số ĐẦU và số CUỐI thật sự thỏa mãn rồi mới áp công thức — và phân biệt \"từ a đến b\" (giữ đầu mút) với \"giữa a và b\" (bỏ cả hai đầu).",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (từ/giữa)",
+    "kidText": "Con đếm số chia hết cho k trong một đoạn, và phân biệt được \"từ 10 đến 100\" với \"giữa 10 và 100\" — hai đề khác nhau đấy."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Cáo Đề ra hai đề sát nhau: TỪ mười đến một trăm có mấy số chia hết cho năm? Và GIỮA mười và một trăm có mấy số chia hết cho năm? Trí Long phẩy tay: như nhau chứ gì — mười chín! Su Kem lặng lẽ khoanh tròn hai chữ khác nhau trong đề…",
-    "screenText": "TỪ 10–100 ?= GIỮA 10–100",
-    "visual": "Hai tờ đề song song; chữ 'Từ' và 'Giữa' được khoanh đỏ #C0392B; Cáo Đề nhe răng.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Trạm dò làm việc. Đề TỪ: mép mười và một trăm được dự tuyển — mười chia hết năm, cắm biển ĐẦU; một trăm chia hết năm, cắm biển CUỐI: mười chín số. Đề GIỮA: đuổi cả mười lẫn một trăm trước — dò vào trong gặp mười lăm và chín lăm: mười bảy số. Một chữ lệch — hai số hạng bay mất!",
-    "screenText": "TỪ: 10…100 → 19 · GIỮA: 15…95 → 17",
-    "visual": "Trục số với hai lượt dò; biển cờ xanh cắm 10/100 rồi cảnh hai đầu mút bị 'đuổi' mờ đi, cờ cắm lại 15/95; hai kết quả 19·17 song song.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Đầu thật không phải lúc nào cũng là mép: TỪ mười đến một trăm đếm số chia hết BA — mười trượt, mười một trượt, MƯỜI HAI mới cắm biển đầu; cuối thật chín chín. Chín chín trừ mười hai chia ba cộng một: BA MƯƠI số. Nghi thức: khoanh từ/giữa — dò hai biển — công thức cộng một!",
-    "screenText": "⋮3 từ 10–100: đầu THẬT 12 → 30 số",
-    "visual": "Trục số phóng to đoạn 10-11-12, hai số đầu gạch đỏ, 12 cắm cờ; phép (99−12):3+1=30 bật vàng.",
-    "assets": [],
-    "duration": 22
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú trạm dò: từ thì giữ hai đầu — giữa thì đuổi cả đôi!",
-    "screenText": "TỪ GIỮ HAI ĐẦU — GIỮA ĐUỔI CẢ ĐÔI!",
-    "visual": "Thẻ thần chú vàng với icon hai biển cờ.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Đơn của con: có bao nhiêu số có hai chữ số? Dựng đoạn ngầm rồi rào nhé — vào bài luyện ngay!",
-    "screenText": "số có 2 chữ số = ?",
-    "visual": "Trục số 10…99 mờ chờ cắm cờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 8
-   }
-  ]
- },
- "workedExample": {
-  "title": "Hai biển cờ của bài ⋮ 3",
-  "problem": "Từ 10 đến 100 có bao nhiêu số chia hết cho 3?",
-  "steps": [
-   {
-    "show": "Bước 1 — Khoanh chữ: đề nói TỪ → mép được dự tuyển.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "'Từ 10 đến 100' — số 10 có được dự tuyển không?",
-     "choices": [
-      "Có (nếu thỏa điều kiện)",
-      "Không bao giờ",
-      "Chỉ khi 100 trượt"
-     ],
-     "answerKey": {
-      "choice": "Có (nếu thỏa điều kiện)"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Dò biển ĐẦU THẬT: 10 ✗, 11 ✗, 12 ✓. Biển CUỐI THẬT: 100 ✗, 99 ✓."
-   },
-   {
-    "show": "Bước 3 — Công thức: (99 − 12) : 3 + 1 = 30 số.",
-    "askAfter": {
-     "format": "num",
-     "text": "Còn 'GIỮA 10 và 100' số ⋮ 3 thì sao? (đầu–cuối thật vẫn 12 và 99)",
-     "answerKey": {
-      "value": 30,
-      "extra": "hai mép vốn trượt ⋮3 nên đuổi hay giữ không đổi đáp số"
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B7.LT2",
-     "text": "Có bao nhiêu số có hai chữ số?",
-     "answerKey": {
-      "value": 90
-     },
-     "hints": [
-      "Đoạn ngầm: từ 10 đến 99.",
-      "(99 − 10) : 1 + 1."
-     ],
-     "solutionNarrative": "Từ 10 đến 99: 90 số.",
-     "teaches": [
-      "K1"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B7.LT4",
-     "text": "Từ 1 đến 100 có bao nhiêu số chia hết cho 3? Từ 10 đến 100 có bao nhiêu số chia hết cho 3?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "1–100",
-        "value": 33
-       },
-       {
-        "label": "10–100",
-        "value": 30
-       }
-      ]
-     },
-     "hints": [
-      "Dò đầu thật từng đoạn.",
-      "Đoạn 10–100: đầu thật 12."
-     ],
-     "solutionNarrative": "1–100: (99−3):3+1 = 33. 10–100: đầu thật 12 → (99−12):3+1 = 30.",
-     "teaches": [
-      "K1"
-     ],
-     "generator": {
-      "template": "Từ {a} đến {b} có bao nhiêu số chia hết cho {k}?",
-      "constraints": {
-       "k": "2–9"
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Đếm số ⋮ k trong đoạn: tìm số ĐẦU THẬT (số ⋮ k nhỏ nhất trong đoạn) và số CUỐI THẬT (số ⋮ k lớn nhất trong đoạn) rồi mới áp (cuối − đầu) : k + 1."
       },
-      "answerRule": "dò đầu–cuối thật rồi +1"
-     }
-    },
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B7.LT5",
-     "text": "\"Từ 10 đến 100\" và \"giữa 10 và 100\" — mỗi trường hợp có bao nhiêu số chia hết cho 5? Vì sao hai đáp số khác nhau?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "từ",
-        "value": 19
-       },
-       {
-        "label": "giữa",
-        "value": 17
-       },
-       {
-        "label": "vì sao",
-        "value": "'giữa' đuổi cả 10 và 100 — hai số này đều ⋮ 5 nên mất 2 số hạng",
-        "options": [
-         "'giữa' đuổi cả 10 và 100",
-         "'từ' đuổi cả hai đầu",
-         "hai đề giống hệt nhau"
-        ]
-       }
-      ]
-     },
-     "hints": [
-      "Khoanh chữ từ/giữa.",
-      "GIỮA: dãy 15; …; 95."
-     ],
-     "solutionNarrative": "TỪ: (100−10):5+1 = 19. GIỮA: 15…95 → 17. Khác nhau vì hai đầu mút ⋮5 bị đuổi.",
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P4",
-     "format": "num",
-     "text": "Giữa 20 và 200 có bao nhiêu số chia hết cho 10?",
-     "answerKey": {
-      "value": 17
-     },
-     "hints": [
-      "Đuổi 20 và 200 trước.",
-      "Dãy 30; 40; …; 190."
-     ],
-     "teaches": [
-      "K1",
-      "K2"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:I.4.1#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B7.M3",
-   "award": "huy_hieu_tram_do"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P2"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B7.QZ2",
-    "text": "(Đúng/Sai?) \"Giữa 10 và 100\" nghĩa là kể cả 10 và 100.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B7.QZ3",
-    "text": "Số các số có hai chữ số là:",
-    "choices": [
-     "90",
-     "99",
-     "89"
+      {
+        "id": "K2",
+        "text": "\"TỪ a đến b\": các đầu mút được ở lại (nếu thỏa điều kiện). \"GIỮA a và b\": đuổi cả hai đầu mút khỏi đoạn — dù chúng có thỏa."
+      },
+      {
+        "id": "K3",
+        "text": "Khoanh tròn chữ \"từ / giữa\" ngay khi đọc đề — một chữ lệch, hai đáp số."
+      }
     ],
-    "answerKey": {
-     "choice": "90"
-    },
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "num",
-    "text": "Từ 20 đến 100 có bao nhiêu số chia hết cho 7? (dò đầu–cuối thật)",
-    "answerKey": {
-     "value": 12,
-     "extra": "21…98"
-    },
-    "teaches": [
-     "K1"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Đếm số ⋮ k trong đoạn — nghi thức nào? 'Từ' khác 'giữa' ra sao?",
-    "back": "Khoanh từ/giữa → dò biển ĐẦU THẬT – CUỐI THẬT → (cuối − đầu) : k + 1. TỪ giữ hai đầu (nếu thỏa) — GIỮA đuổi cả đôi. ⋮3 từ 10–100: đầu thật 12 → 30 số."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P2",
-   "+7 ngày: câu P4 (giữa)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học dò đầu–cuối thật và phân biệt 'từ' với 'giữa'. Con đạt {score}/3, {trapResult} câu bẫy một-chữ-lệch.",
-  "homeActivity": "Đố song sinh: 'từ 5 đến 50' và 'giữa 5 và 50' có mấy số chia hết cho 5 — con giải cả hai và chỉ ra hai số bị đuổi là đạt.",
-  "watchFor": "Nếu con áp công thức thẳng với mép đoạn — mở lại trạm dò (S2) cùng con."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B7.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "TỪ 10–100 ?= GIỮA 10–100",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Thì như nhau chứ gì — 19!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Hai chữ khác nhau kìa: TỪ thì giữ hai đầu, GIỮA thì đuổi cả đôi.",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B7_M2_F1.png",
-   "sha256_16": "79fe2234ac2fd946"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con đếm được số chia hết cho k trong một đoạn: dò đúng số ĐẦU và số CUỐI thật sự thỏa mãn rồi mới áp công thức — và phân biệt \"từ a đến b\" (giữ đầu mút) với \"giữa a và b\" (bỏ cả hai đầu).",
-    "steps": [
-     {
-      "text": "Khoanh 'từ / giữa'"
-     },
-     {
-      "text": "Dò biển ĐẦU THẬT — CUỐI THẬT"
-     },
-     {
-      "text": "(cuối − đầu) : k + 1 · vd 2 chữ số: (99−10):1+1 = 90"
-     }
+    "mechanism": "Hình ảnh brand: HAI TRẠM DÒ ĐẦU–CUỐI. Trước khi dựng hàng rào trong đoạn, thợ rào phải đi DÒ: từ mép trái tiến vào, gặp số chia hết đầu tiên — cắm biển ĐẦU THẬT; từ mép phải lùi vào, gặp số chia hết cuối cùng — cắm biển CUỐI THẬT. Đề nói 'từ 10 đến 100' thì mép được tính (10 và 100 dự tuyển); đề nói 'giữa 10 và 100' thì hai mép bị đuổi trước khi dò. Cắm xong hai biển mới gọi đội hàng rào (công thức +1) vào.",
+    "canonicalExamples": [
+      {
+        "case": "dò đầu thật (ca lõi)",
+        "problem": "Từ 1 đến 100 có bao nhiêu số chia hết cho 3? Từ 10 đến 100 thì sao?",
+        "solution": "Đoạn 1–100: đầu thật 3, cuối thật 99 → (99 − 3) : 3 + 1 = 33. Đoạn 10–100: đầu thật là 12 (10, 11 trượt), cuối thật 99 → (99 − 12) : 3 + 1 = 30.",
+        "why": "Ca chuẩn K1 — đầu thật đổi làm đáp số đổi."
+      },
+      {
+        "case": "từ vs giữa (ca một chữ lệch)",
+        "problem": "\"Từ 10 đến 100\" và \"giữa 10 và 100\" — mỗi trường hợp có bao nhiêu số chia hết cho 5?",
+        "solution": "TỪ: 10; 15; …; 100 → (100 − 10) : 5 + 1 = 19 số. GIỮA: đuổi 10 và 100 → dãy 15; …; 95 → (95 − 15) : 5 + 1 = 17 số. Một chữ lệch — hai số hạng bay mất.",
+        "why": "Ca đinh của bẫy CĐ-7.2."
+      },
+      {
+        "case": "số có hai chữ số (ca quen thuộc)",
+        "problem": "Có bao nhiêu số có hai chữ số?",
+        "solution": "Đoạn từ 10 đến 99, khoảng 1: (99 − 10) : 1 + 1 = 90 số.",
+        "why": "Đoạn phát biểu ngầm — trò phải tự dựng đầu 10, cuối 99."
+      }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B7_M2_F2.png",
-   "sha256_16": "c2f0c81df2424063"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Đếm số ⋮ k trong đoạn",
-      "text": "nghi thức nào? 'Từ' khác 'giữa' ra sao?",
-      "tone": "navy"
-     },
-     {
-      "label": "\"TỪ a đến b\"",
-      "text": "các đầu mút được ở lại (nếu thỏa điều kiện).…",
-      "tone": "teal"
-     }
+    "numberRange": "Lớp 5: đoạn trong 1–1000; k từ 2 đến 10.",
+    "misconceptions": [
+      {
+        "wrong": "Áp công thức thẳng với mép đoạn dù mép không chia hết (đầu = 10 cho bài ⋮ 3).",
+        "signal": "Phép chia có dư ngay trong công thức.",
+        "fix": "K1 — dò đầu–cuối thật trước: 10, 11 trượt, 12 mới là biển ĐẦU.",
+        "counterExample": "(100 − 10) : 3 không chia hết — dấu hiệu đang rào nhầm mép."
+      },
+      {
+        "wrong": "Coi 'giữa 10 và 100' vẫn gồm 10 và 100.",
+        "signal": "Đáp số dôi đúng số đầu mút thỏa điều kiện.",
+        "fix": "K2 + K3 — khoanh chữ 'giữa' và đuổi cả hai đầu trước khi dò.",
+        "counterExample": "Bài ⋮ 5: 'từ' ra 19, 'giữa' chỉ 17."
+      }
+    ],
+    "vocabulary": [
+      "biển ĐẦU THẬT / CUỐI THẬT",
+      "dò từ hai mép",
+      "từ — giữ hai đầu; giữa — đuổi cả đôi"
     ],
     "mantra": "TỪ THÌ GIỮ HAI ĐẦU — GIỮA THÌ ĐUỔI CẢ ĐÔI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B7_M2_F3.png",
-   "sha256_16": "2a997cfcf247299c"
   },
-  {
-   "archetype": "fence_posts",
-   "params": {
-    "title": "TỪ 10 ĐẾN 100 CÓ BAO NHIÊU SỐ CHIA HẾT CHO 3?",
-    "first": 12,
-    "last": 99,
-    "step": 3,
-    "show": 6,
-    "labels": [
-     "12",
-     "15",
-     "18",
-     "…",
-     "96",
-     "99"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Dãy 12; 15; …; 99 có khoảng cách mấy?",
+        "answerKey": {
+          "value": 3
+        }
+      }
     ],
-    "gap_at": 3,
-    "gap_note": "đầu THẬT là 12 (10 và 11 trượt) · cuối THẬT là 99",
-    "formula": "(99 − 12) : 3 + 1 = 30 số",
-    "note": "Phải dò số đầu và số cuối THẬT SỰ thỏa mãn rồi mới áp công thức"
-   },
-   "caption": "\"Từ a đến b\" giữ hai đầu · \"giữa a và b\" thì đuổi hai đầu ra",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B7_M2_F4.png",
-   "sha256_16": "09270629599db60c"
-  }
- ]
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B7.M1",
+      "message": "Ôn hàng rào cọc rồi quay lại trạm dò nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Cáo Đề ra hai đề SÁT NHAU: 'Từ 10 đến 100 có mấy số chia hết cho 5?' và 'Giữa 10 và 100 có mấy số chia hết cho 5?' Trí Long: 'Thì như nhau chứ gì — 19!' Su Kem khoanh tròn hai chữ khác nhau trong đề…",
+        "display": {
+          "type": "story_panel",
+          "caption": "TỪ 10–100 ?= GIỮA 10–100"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để soi hai chữ bị khoanh!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 45,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Trạm dò làm việc: đề TỪ — mép 10 và 100 được dự tuyển: 10 ⋮ 5 ✓ cắm biển ĐẦU; 100 ⋮ 5 ✓ cắm biển CUỐI → (100 − 10) : 5 + 1 = 19. Đề GIỮA — đuổi cả 10 lẫn 100 trước: dò vào trong gặp 15 và 95 → (95 − 15) : 5 + 1 = 17. Con kéo biển vào đúng chỗ cho từng đề.",
+        "display": {
+          "type": "range_scan_interactive",
+          "spec": {
+            "k": 5,
+            "cases": [
+              {
+                "mode": "từ",
+                "start": 10,
+                "end": 100,
+                "first": 10,
+                "last": 100,
+                "count": 19
+              },
+              {
+                "mode": "giữa",
+                "start": 10,
+                "end": 100,
+                "first": 15,
+                "last": 95,
+                "count": 17
+              }
+            ]
+          }
+        },
+        "interaction": {
+          "type": "place_flags",
+          "successMessage": "TỪ: 19 số · GIỮA: 17 số — một chữ lệch, hai số hạng bay mất!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 18,
+        "item": {
+          "format": "num",
+          "text": "Từ 10 đến 100 có bao nhiêu số chia hết cho 3? (dò đầu thật trước!)",
+          "answerKey": {
+            "value": 30
+          },
+          "wrongFeedback": "10, 11 trượt — đầu thật là 12; cuối thật 99; (99−12):3+1.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 32,
+        "teaches": [
+          "K1",
+          "K3"
+        ],
+        "narration": "Vụ quen thuộc nhất của trạm dò: 'có bao nhiêu số có hai chữ số?' — đoạn ngầm từ 10 đến 99, khoảng 1: chín mươi số. Nghi thức đầy đủ: khoanh chữ từ/giữa — dò cắm hai biển thật — rồi mới gọi công thức cộng một.",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "Khoanh 'từ / giữa'",
+            "Dò biển ĐẦU THẬT — CUỐI THẬT",
+            "(cuối − đầu) : k + 1 · vd 2 chữ số: (99−10):1+1 = 90"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 12,
+        "narration": "Thần chú trạm dò: từ thì giữ hai đầu — giữa thì đuổi cả đôi!",
+        "display": {
+          "type": "mantra_card",
+          "text": "TỪ GIỮ HAI ĐẦU — GIỮA ĐUỔI CẢ ĐÔI!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 81,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Cáo Đề ra hai đề sát nhau: TỪ mười đến một trăm có mấy số chia hết cho năm? Và GIỮA mười và một trăm có mấy số chia hết cho năm? Trí Long phẩy tay: như nhau chứ gì — mười chín! Su Kem lặng lẽ khoanh tròn hai chữ khác nhau trong đề…",
+        "screenText": "TỪ 10–100 ?= GIỮA 10–100",
+        "visual": "Hai tờ đề song song; chữ 'Từ' và 'Giữa' được khoanh đỏ #C0392B; Cáo Đề nhe răng.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Trạm dò làm việc. Đề TỪ: mép mười và một trăm được dự tuyển — mười chia hết năm, cắm biển ĐẦU; một trăm chia hết năm, cắm biển CUỐI: mười chín số. Đề GIỮA: đuổi cả mười lẫn một trăm trước — dò vào trong gặp mười lăm và chín lăm: mười bảy số. Một chữ lệch — hai số hạng bay mất!",
+        "screenText": "TỪ: 10…100 → 19 · GIỮA: 15…95 → 17",
+        "visual": "Trục số với hai lượt dò; biển cờ xanh cắm 10/100 rồi cảnh hai đầu mút bị 'đuổi' mờ đi, cờ cắm lại 15/95; hai kết quả 19·17 song song.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Đầu thật không phải lúc nào cũng là mép: TỪ mười đến một trăm đếm số chia hết BA — mười trượt, mười một trượt, MƯỜI HAI mới cắm biển đầu; cuối thật chín chín. Chín chín trừ mười hai chia ba cộng một: BA MƯƠI số. Nghi thức: khoanh từ/giữa — dò hai biển — công thức cộng một!",
+        "screenText": "⋮3 từ 10–100: đầu THẬT 12 → 30 số",
+        "visual": "Trục số phóng to đoạn 10-11-12, hai số đầu gạch đỏ, 12 cắm cờ; phép (99−12):3+1=30 bật vàng.",
+        "assets": [],
+        "duration": 22
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú trạm dò: từ thì giữ hai đầu — giữa thì đuổi cả đôi!",
+        "screenText": "TỪ GIỮ HAI ĐẦU — GIỮA ĐUỔI CẢ ĐÔI!",
+        "visual": "Thẻ thần chú vàng với icon hai biển cờ.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Đơn của con: có bao nhiêu số có hai chữ số? Dựng đoạn ngầm rồi rào nhé — vào bài luyện ngay!",
+        "screenText": "số có 2 chữ số = ?",
+        "visual": "Trục số 10…99 mờ chờ cắm cờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 8
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Hai biển cờ của bài ⋮ 3",
+    "problem": "Từ 10 đến 100 có bao nhiêu số chia hết cho 3?",
+    "steps": [
+      {
+        "show": "Bước 1 — Khoanh chữ: đề nói TỪ → mép được dự tuyển.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "'Từ 10 đến 100' — số 10 có được dự tuyển không?",
+          "choices": [
+            "Có (nếu thỏa điều kiện)",
+            "Không bao giờ",
+            "Chỉ khi 100 trượt"
+          ],
+          "answerKey": {
+            "choice": "Có (nếu thỏa điều kiện)"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Dò biển ĐẦU THẬT: 10 ✗, 11 ✗, 12 ✓. Biển CUỐI THẬT: 100 ✗, 99 ✓."
+      },
+      {
+        "show": "Bước 3 — Công thức: (99 − 12) : 3 + 1 = 30 số.",
+        "askAfter": {
+          "format": "num",
+          "text": "Còn 'GIỮA 10 và 100' số ⋮ 3 thì sao? (đầu–cuối thật vẫn 12 và 99)",
+          "answerKey": {
+            "value": 30,
+            "extra": "hai mép vốn trượt ⋮3 nên đuổi hay giữ không đổi đáp số"
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B7.LT2",
+          "text": "Có bao nhiêu số có hai chữ số?",
+          "answerKey": {
+            "value": 90
+          },
+          "hints": [
+            "Đoạn ngầm: từ 10 đến 99.",
+            "(99 − 10) : 1 + 1."
+          ],
+          "solutionNarrative": "Từ 10 đến 99: 90 số.",
+          "teaches": [
+            "K1"
+          ]
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B7.LT4",
+          "text": "Từ 1 đến 100 có bao nhiêu số chia hết cho 3? Từ 10 đến 100 có bao nhiêu số chia hết cho 3?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "1–100",
+                "value": 33
+              },
+              {
+                "label": "10–100",
+                "value": 30
+              }
+            ]
+          },
+          "hints": [
+            "Dò đầu thật từng đoạn.",
+            "Đoạn 10–100: đầu thật 12."
+          ],
+          "solutionNarrative": "1–100: (99−3):3+1 = 33. 10–100: đầu thật 12 → (99−12):3+1 = 30.",
+          "teaches": [
+            "K1"
+          ],
+          "generator": {
+            "template": "Từ {a} đến {b} có bao nhiêu số chia hết cho {k}?",
+            "constraints": {
+              "k": "2–9"
+            },
+            "answerRule": "dò đầu–cuối thật rồi +1"
+          }
+        },
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B7.LT5",
+          "text": "\"Từ 10 đến 100\" và \"giữa 10 và 100\" — mỗi trường hợp có bao nhiêu số chia hết cho 5? Vì sao hai đáp số khác nhau?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "từ",
+                "value": 19
+              },
+              {
+                "label": "giữa",
+                "value": 17
+              },
+              {
+                "label": "vì sao",
+                "value": "'giữa' đuổi cả 10 và 100 — hai số này đều ⋮ 5 nên mất 2 số hạng",
+                "options": [
+                  "'giữa' đuổi cả 10 và 100",
+                  "'từ' đuổi cả hai đầu",
+                  "hai đề giống hệt nhau"
+                ]
+              }
+            ]
+          },
+          "hints": [
+            "Khoanh chữ từ/giữa.",
+            "GIỮA: dãy 15; …; 95."
+          ],
+          "solutionNarrative": "TỪ: (100−10):5+1 = 19. GIỮA: 15…95 → 17. Khác nhau vì hai đầu mút ⋮5 bị đuổi.",
+          "teaches": [
+            "K2",
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P4",
+          "format": "num",
+          "text": "Giữa 20 và 200 có bao nhiêu số chia hết cho 10?",
+          "answerKey": {
+            "value": 17
+          },
+          "hints": [
+            "Đuổi 20 và 200 trước.",
+            "Dãy 30; 40; …; 190."
+          ],
+          "teaches": [
+            "K1",
+            "K2"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:I.4.1#2@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B7.M3",
+      "award": "huy_hieu_tram_do"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P2"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B7.QZ2",
+        "text": "(Đúng/Sai?) \"Giữa 10 và 100\" nghĩa là kể cả 10 và 100.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B7.QZ3",
+        "text": "Số các số có hai chữ số là:",
+        "choices": [
+          "90",
+          "99",
+          "89"
+        ],
+        "answerKey": {
+          "choice": "90"
+        },
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "num",
+        "text": "Từ 20 đến 100 có bao nhiêu số chia hết cho 7? (dò đầu–cuối thật)",
+        "answerKey": {
+          "value": 12,
+          "extra": "21…98"
+        },
+        "teaches": [
+          "K1"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Đếm số ⋮ k trong đoạn — nghi thức nào? 'Từ' khác 'giữa' ra sao?",
+        "back": "Khoanh từ/giữa → dò biển ĐẦU THẬT – CUỐI THẬT → (cuối − đầu) : k + 1. TỪ giữ hai đầu (nếu thỏa) — GIỮA đuổi cả đôi. ⋮3 từ 10–100: đầu thật 12 → 30 số."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P2",
+      "+7 ngày: câu P4 (giữa)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học dò đầu–cuối thật và phân biệt 'từ' với 'giữa'. Con đạt {score}/3, {trapResult} câu bẫy một-chữ-lệch.",
+    "homeActivity": "Đố song sinh: 'từ 5 đến 50' và 'giữa 5 và 50' có mấy số chia hết cho 5 — con giải cả hai và chỉ ra hai số bị đuổi là đạt.",
+    "watchFor": "Nếu con áp công thức thẳng với mép đoạn — mở lại trạm dò (S2) cùng con."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B7.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "TỪ 10–100 ?= GIỮA 10–100",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Thì như nhau chứ gì — 19!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Hai chữ khác nhau kìa: TỪ thì giữ hai đầu, GIỮA thì đuổi cả đôi.",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B7_M2_F1.png",
+      "sha256_16": "79fe2234ac2fd946"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con đếm được số chia hết cho k trong một đoạn: dò đúng số ĐẦU và số CUỐI thật sự thỏa mãn rồi mới áp công thức — và phân biệt \"từ a đến b\" (giữ đầu mút) với \"giữa a và b\" (bỏ cả hai đầu).",
+        "steps": [
+          {
+            "text": "Khoanh 'từ / giữa'"
+          },
+          {
+            "text": "Dò biển ĐẦU THẬT — CUỐI THẬT"
+          },
+          {
+            "text": "(cuối − đầu) : k + 1 · vd 2 chữ số: (99−10):1+1 = 90"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B7_M2_F2.png",
+      "sha256_16": "c2f0c81df2424063"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Đếm số ⋮ k trong đoạn",
+            "text": "nghi thức nào? 'Từ' khác 'giữa' ra sao?",
+            "tone": "navy"
+          },
+          {
+            "label": "\"TỪ a đến b\"",
+            "text": "các đầu mút được ở lại (nếu thỏa điều kiện).…",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "TỪ THÌ GIỮ HAI ĐẦU — GIỮA THÌ ĐUỔI CẢ ĐÔI!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B7_M2_F3.png",
+      "sha256_16": "2a997cfcf247299c"
+    },
+    {
+      "archetype": "fence_posts",
+      "params": {
+        "title": "TỪ 10 ĐẾN 100 CÓ BAO NHIÊU SỐ CHIA HẾT CHO 3?",
+        "first": 12,
+        "last": 99,
+        "step": 3,
+        "show": 6,
+        "labels": [
+          "12",
+          "15",
+          "18",
+          "…",
+          "96",
+          "99"
+        ],
+        "gap_at": 3,
+        "gap_note": "đầu THẬT là 12 (10 và 11 trượt) · cuối THẬT là 99",
+        "formula": "(99 − 12) : 3 + 1 = 30 số",
+        "note": "Phải dò số đầu và số cuối THẬT SỰ thỏa mãn rồi mới áp công thức"
+      },
+      "caption": "\"Từ a đến b\" giữ hai đầu · \"giữa a và b\" thì đuổi hai đầu ra",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B7_M2_F4.png",
+      "sha256_16": "09270629599db60c"
+    }
+  ]
 }

@@ -101,6 +101,17 @@ export async function myReport(uid) {
   return snap.exists() ? snap.data() : null;
 }
 
+/**
+ * Dựng lại bảng NGAY, không chờ lịch chạy đêm.
+ * Bảng vốn chỉ tổng hợp lúc 21:15, nên con học sáng nay thì tối cô mới thấy —
+ * mà cô cần biết trong buổi học để còn kèm con.
+ */
+export async function refreshTeacherBoard(soNgay = 7) {
+  if (!fns) throw new Error('chưa cấu hình Firebase');
+  const { data } = await httpsCallable(fns, 'refreshTeacherBoard')({ soNgay });
+  return data;
+}
+
 /** Bảng toàn hệ thống — chỉ giáo viên và admin đọc được */
 export async function teacherBoard() {
   if (!db) return null;
@@ -132,7 +143,7 @@ async function writeRecords(records) {
  * Kết thúc một lượt học micro: xếp hàng đợi trước (an toàn khi mất mạng), rồi thử gửi.
  * Không có Firebase (chế độ chỉ-học-máy) thì chỉ xếp hàng, không lỗi.
  */
-export async function submitSession({ learnerId, sessionId, microId, bktUnit, events, grade }) {
+export async function submitSession({ learnerId, sessionId, microId, bktUnit, events, tomTat, grade }) {
   // serverTs để null trong hàng đợi: dấu máy chủ chỉ đóng được lúc GỬI THẬT, không
   // đóng trước rồi cất vào localStorage được.
   const recs = buildAttempts({ learnerId, sessionId, microId, bktUnit, events });
@@ -141,7 +152,9 @@ export async function submitSession({ learnerId, sessionId, microId, bktUnit, ev
   if (db && learnerId) {
     await setDoc(
       doc(db, COLLECTIONS.progress(learnerId), microId.replace(/[:.]/g, '_')),
-      { ...buildProgressDoc({ microId, grade, events, sessionId }), serverTs: serverTimestamp() },
+      /* Tiến độ tính trên sổ TÓM TẮT (mỗi câu một dòng). Đưa sổ thô vào đây thì
+         "làm đúng ngay lần đầu" sẽ đếm cả những lượt sai giữa chừng — sai nghĩa. */
+      { ...buildProgressDoc({ microId, grade, events: tomTat || events, sessionId }), serverTs: serverTimestamp() },
       { merge: true },
     );
   }

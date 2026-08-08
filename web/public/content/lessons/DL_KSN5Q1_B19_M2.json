@@ -1,621 +1,624 @@
 {
- "title": "Kẻ nào đứng im — quy đồng theo kẻ ấy",
- "grade": 5,
- "durationMinutes": 8,
- "skills": {
-  "primary": [
-   "CASE:II.1.3#2"
-  ],
-  "bktUnit": "CASE:II.1.3#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B19",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B19.M1",
-  "next": "DL:KSN5Q1.B19.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B19",
-  "chunks": [
-   "CHUNK:KSN5Q1.B19.S4",
-   "CHUNK:KSN5Q1.B19.S5"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B19.2",
-   "CA:KSN5Q1.B19.3"
-  ],
-  "traps": []
- },
- "objective": {
-  "id": "O1",
-  "text": "Con giải được bài thêm n MỘT PHÍA bằng quy đồng theo KẺ ĐỨNG IM: thêm vào TỬ (mẫu đứng im) → đưa đích về CÙNG MẪU; thêm vào MẪU (tử đứng im) → đưa đích về CÙNG TỬ — rồi đối chiếu phần động để suy n.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (quy đồng theo tử đứng im)",
-  "kidText": "Thêm vào tử thì mẫu đứng im, thêm vào mẫu thì tử đứng im. Con quy đồng theo kẻ đứng im ấy là ra."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Thêm n vào TỬ của a/b để được p/q: MẪU b đứng im → viết p/q về mẫu b (cùng MẪU): (5 + n)/21 = 4/7 = 12/21 → 5 + n = 12 → n = 7."
-   },
-   {
-    "id": "K2",
-    "text": "Thêm n vào MẪU của a/b để được p/q: TỬ a đứng im → viết p/q về tử a (cùng TỬ): 3/(8 + n) = 1/4 = 3/12 → 8 + n = 12 → n = 4."
-   },
-   {
-    "id": "K3",
-    "text": "Khẩu quyết chọn sân: KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY; quy đồng xong chỉ còn một phương trình phần động, giải như tìm X, thử lại vào đề."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: CHỤP ẢNH ĐÔI BẠN — MỘT NGƯỜI ĐỨNG IM. Bài thêm-một-phía là bức ảnh có một người ĐỨNG IM (phía không bị thêm) và một người ĐANG BƯỚC (phía nhận n). Muốn ghép ảnh đích 4/7 vào khung của 5/21: người đứng im là MẪU 21 — phóng ảnh đích theo đúng chiều cao 21: 4/7 khoác khung 12/21. Giờ hai ảnh chung khung: người bước phải từ 5 tới 12 — bước n = 7! Ngược lại tử đứng im (số 3) thì phóng đích theo tử: 1/4 thành 3/12 — mẫu bước từ 8 tới 12: n = 4. Khẩu quyết dán gương: kẻ nào đứng im — quy đồng theo kẻ ấy.",
-  "canonicalExamples": [
-   {
-    "case": "thêm vào tử (ca cùng mẫu)",
-    "problem": "Thêm số tự nhiên n vào tử số của 5/21 để được phân số bằng 4/7. Tìm n.",
-    "solution": "Mẫu 21 đứng im → 4/7 = 12/21 → 5 + n = 12 → n = 7. Thử: 12/21 = 4/7 ✓.",
-    "why": "Ca đề A câu 10 — quy đồng cùng mẫu."
-   },
-   {
-    "case": "thêm vào mẫu (ca cùng tử)",
-    "problem": "Thêm số tự nhiên n vào mẫu số của 3/8 để được phân số bằng 1/4. Tìm n.",
-    "solution": "Tử 3 đứng im → 1/4 = 3/12 → 8 + n = 12 → n = 4. Thử: 3/12 = 1/4 ✓.",
-    "why": "Ca đề A câu 8 — quy đồng cùng tử."
-   },
-   {
-    "case": "khởi động nền (ca hai bước nhỏ)",
-    "problem": "(a) 5/21 thêm 7 vào tử được phân số nào (rút gọn)? (b) Tìm n: n/12 = 1/3.",
-    "solution": "(a) 12/21 = 4/7. (b) 1/3 = 4/12 → n = 4.",
-    "why": "LT2 + LT3 — hai viên gạch của kỹ thuật chính."
-   }
-  ],
-  "numberRange": "Lớp 5: mẫu ≤ 50; đích trong bảng quen.",
-  "misconceptions": [
-   {
-    "wrong": "Quy đồng theo kẻ ĐANG BƯỚC (đưa 4/7 về tử 5 khi mẫu mới là kẻ đứng im) — hoặc quy đồng cả hai về mẫu chung to đùng.",
-    "signal": "Phân số trung gian lẻ, phương trình rối.",
-    "fix": "K3 — hỏi trước: phía nào KHÔNG bị thêm? Quy đồng đích theo đúng phía ấy — một phép nhân là chung khung.",
-    "counterExample": "4/7 theo tử 5: 5/8,75 — lẻ ngay, sai đường."
-   }
-  ],
-  "vocabulary": [
-   "người đứng im / người đang bước",
-   "chung khung ảnh",
-   "phóng ảnh đích",
-   "khẩu quyết dán gương"
-  ],
-  "mantra": "KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "4/7 = ?/21 — điền tử.",
-    "answerKey": {
-     "value": 12
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "ôn quy đồng (hạt mầm)",
-   "message": "Ôn quy đồng rồi vào studio ảnh nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Studio ảnh nhận đơn: thêm n vào TỬ của 5/21 để thành 4/7. Trí Long hùng hục quy đồng cả hai về mẫu 147… Su Kem chỉ vào số 21: \"Bạn này có bị thêm gì đâu — bạn ấy ĐỨNG IM mà!\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "quy đồng về 147?!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để tìm người đứng im!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K3"
+  "title": "Kẻ nào đứng im — quy đồng theo kẻ ấy",
+  "grade": 5,
+  "durationMinutes": 8,
+  "skills": {
+    "primary": [
+      "CASE:II.1.3#2"
     ],
-    "narration": "Bức ảnh có một người ĐỨNG IM: mẫu 21 không bị thêm gì! Phóng ảnh đích theo người đứng im: 4/7 khoác khung mẫu 21 — nhân cả hai với 3: MƯỜI HAI phần hai mốt. Chung khung rồi: tử phải bước từ 5 tới 12 — n bằng BẢY! Thử: 12/21 rút gọn đúng 4/7. Một phép nhân thay cho cả trận quy đồng 147!",
-    "display": {
-     "type": "photo_frame_interactive",
-     "spec": {
-      "still": "mẫu 21",
-      "target": "4/7 → 12/21",
-      "eq": "5 + n = 12",
-      "n": 7
-     }
-    },
-    "interaction": {
-     "type": "frame_and_step",
-     "answerKey": {
-      "value": 7
-     },
-     "successMessage": "4/7 = 12/21 → n = 7 — quy đồng theo kẻ đứng im!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "num",
-     "text": "Tìm n: n/12 = 1/3.",
-     "answerKey": {
-      "value": 4
-     },
-     "wrongFeedback": "1/3 = 4/12.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K2",
-     "K3"
+    "bktUnit": "CASE:II.1.3#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B19",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B19.M1",
+    "next": "DL:KSN5Q1.B19.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B19",
+    "chunks": [
+      "CHUNK:KSN5Q1.B19.S4",
+      "CHUNK:KSN5Q1.B19.S5"
     ],
-    "narration": "Chiều ngược: thêm n vào MẪU của 3/8 để thành 1/4 — giờ TỬ số 3 là người đứng im! Phóng đích theo tử: 1/4 thành BA phần mười hai. Chung khung: mẫu bước từ 8 tới 12 — n bằng BỐN. Thử: 3/12 đúng 1/4! Khẩu quyết dán gương studio: kẻ nào đứng im — quy đồng theo kẻ ấy; tử im về cùng tử, mẫu im về cùng mẫu.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "3/(8 + n) = 1/4: TỬ 3 đứng im",
-      "1/4 = 3/12 → 8 + n = 12 → n = 4",
-      "tử im → cùng tử · mẫu im → cùng mẫu"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Khẩu quyết studio: kẻ nào đứng im — quy đồng theo kẻ ấy!",
-    "display": {
-     "type": "mantra_card",
-     "text": "KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 86,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Studio ảnh nhận đơn: thêm en vào TỬ của năm phần hai mốt để thành bốn phần bảy. Trí Long hùng hục quy đồng cả hai về mẫu một trăm bốn bảy… Su Kem chỉ vào số hai mốt: bạn này có bị thêm gì đâu — bạn ấy ĐỨNG IM mà!",
-    "screenText": "(5 + n)/21 = 4/7 — quy đồng về 147?!",
-    "visual": "Studio ảnh; Trí Long ôm chồng giấy nháp mẫu 147; Su Kem chỉ nhân vật '21' đứng bất động như tượng.",
-    "assets": [],
-    "duration": 19
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Bức ảnh có một người ĐỨNG IM: mẫu hai mốt không bị thêm gì! Phóng ảnh đích theo người đứng im: bốn phần bảy khoác khung mẫu hai mốt — nhân cả hai với ba: MƯỜI HAI phần hai mốt. Chung khung rồi: tử phải bước từ năm tới mười hai — en bằng BẢY! Thử: mười hai phần hai mốt đúng bốn phần bảy!",
-    "screenText": "4/7 = 12/21 → 5 + n = 12 → n = 7 ✓",
-    "visual": "Hai khung ảnh: đích 4/7 được phóng to khớp khung 21; nhân vật tử bước 7 bậc từ 5 lên 12; phép nhân ×3 hiện teal #1FC3A6.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Chiều ngược: thêm en vào MẪU của ba phần tám để thành một phần tư — giờ TỬ số ba là người đứng im! Phóng đích theo tử: một phần tư thành BA phần mười hai. Chung khung: mẫu bước từ tám tới mười hai — en bằng BỐN. Khẩu quyết dán gương: kẻ nào đứng im — quy đồng theo kẻ ấy: tử im về cùng tử, mẫu im về cùng mẫu!",
-    "screenText": "3/(8+n) = 1/4 = 3/12 → n = 4 · tử im→cùng tử",
-    "visual": "Khung ảnh chiều ngược với nhân vật '3' đứng im; đích 1/4 phóng thành 3/12; khẩu quyết dán trên gương studio.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Khẩu quyết studio: kẻ nào đứng im — quy đồng theo kẻ ấy!",
-    "screenText": "KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY!",
-    "visual": "Thẻ thần chú vàng với icon khung ảnh.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Đơn chụp của con: thêm en vào mẫu của ba phần tám để thành một phần tư — ai đứng im, en bằng mấy? Vào bài luyện ngay!",
-    "screenText": "3/(8 + n) = 1/4 → n?",
-    "visual": "Studio với đơn hàng mới; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P4",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Hai chiều một khẩu quyết",
-  "problem": "(a) Thêm n vào tử của 5/21 để được 4/7. (b) Thêm n vào mẫu của 3/8 để được 1/4.",
-  "steps": [
-   {
-    "show": "Bước 1 — Câu (a): mẫu 21 đứng im → 4/7 = 12/21 → 5 + n = 12 → n = 7.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Câu (a) quy đồng theo:",
-     "choices": [
-      "mẫu 21 (đứng im)",
-      "tử 5",
-      "cả hai về 147"
-     ],
-     "answerKey": {
-      "choice": "mẫu 21 (đứng im)"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Câu (b): tử 3 đứng im → 1/4 = 3/12 → 8 + n = 12 → n = 4."
-   },
-   {
-    "show": "Bước 3 — Thử cả hai: 12/21 = 4/7 ✓ và 3/12 = 1/4 ✓.",
-    "askAfter": {
-     "format": "num",
-     "text": "Thêm n vào tử của 2/15 để được 3/5 — n = ? (3/5 = 9/15)",
-     "answerKey": {
-      "value": 7
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B19.LT2",
-     "text": "Phân số 5/21: thêm 7 vào tử số ta được phân số nào? Rút gọn kết quả.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "phân số",
-        "value": "12/21"
-       },
-       {
-        "label": "rút gọn",
-        "value": "4/7"
-       }
-      ]
-     },
-     "hints": [
-      "(5 + 7)/21.",
-      "Chia cả hai cho 3."
-     ],
-     "solutionNarrative": "12/21 = 4/7.",
-     "teaches": [
-      "K1"
-     ]
-    },
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B19.LT3",
-     "text": "Tìm n biết: n/12 = 1/3.",
-     "answerKey": {
-      "value": 4
-     },
-     "hints": [
-      "1/3 khoác khung mẫu 12.",
-      "1/3 = 4/12."
-     ],
-     "solutionNarrative": "1/3 = 4/12 → n = 4.",
-     "teaches": [
-      "K1"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P3",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B19.LT4",
-     "text": "Thêm số tự nhiên n vào tử số của phân số 5/21 để được phân số bằng 4/7. Tìm n.",
-     "answerKey": {
-      "value": 7
-     },
-     "hints": [
-      "Mẫu 21 đứng im — cùng mẫu.",
-      "4/7 = 12/21."
-     ],
-     "solutionNarrative": "5 + n = 12 → n = 7.",
-     "teaches": [
-      "K1",
-      "K3"
-     ],
-     "generator": {
-      "template": "Thêm n vào tử của {a}/{b} để được {p}/{q}. Tìm n.",
-      "constraints": {},
-      "answerRule": "p/q về mẫu b → n = tử mới − a"
-     }
-    },
-    {
-     "id": "P4",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B19.LT5",
-     "text": "Thêm số tự nhiên n vào mẫu số của phân số 3/8 để được phân số bằng 1/4. Tìm n.",
-     "answerKey": {
-      "value": 4
-     },
-     "hints": [
-      "Tử 3 đứng im — cùng tử.",
-      "1/4 = 3/12."
-     ],
-     "solutionNarrative": "8 + n = 12 → n = 4.",
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P5",
-     "format": "num",
-     "text": "Thêm n vào mẫu của 5/9 để được 5/12. Tìm n.",
-     "answerKey": {
-      "value": 3
-     },
-     "hints": [
-      "Tử 5 đứng im — đích đã cùng tử 5!",
-      "9 + n = 12."
-     ],
-     "solutionNarrative": "9 + n = 12 → n = 3.",
-     "teaches": [
-      "K2"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:II.1.3#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B19.M3",
-   "award": "huy_hieu_studio_anh"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P3"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B19.QZ3",
-    "text": "3/(8 + n) = 1/4 thì trước hết ta viết 1/4 thành:",
-    "choices": [
-     "3/12",
-     "2/8",
-     "4/16"
+    "cases": [
+      "CA:KSN5Q1.B19.2",
+      "CA:KSN5Q1.B19.3"
     ],
-    "answerKey": {
-     "choice": "3/12"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2",
-     "K3"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "num",
-    "text": "Thêm n vào tử của 5/21 để được 4/7 — n = ?",
-    "answerKey": {
-     "value": 7
-    },
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "text": "Khẩu quyết chọn sân quy đồng:",
-    "choices": [
-     "kẻ nào đứng im — quy đồng theo kẻ ấy",
-     "luôn quy đồng mẫu chung",
-     "theo kẻ đang bước"
-    ],
-    "answerKey": {
-     "choice": "kẻ nào đứng im — quy đồng theo kẻ ấy"
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Bài thêm n một phía giải bằng gì?",
-    "back": "Quy đồng theo KẺ ĐỨNG IM: thêm vào tử (mẫu im) → đích về CÙNG MẪU ((5+n)/21 = 12/21 → n = 7); thêm vào mẫu (tử im) → đích về CÙNG TỬ (3/(8+n) = 3/12 → n = 4). Thử lại vào đề."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P3",
-   "+7 ngày: câu P5 (đích sẵn cùng tử)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học khẩu quyết 'kẻ nào đứng im — quy đồng theo kẻ ấy' cho bài thêm một phía. Con đạt {score}/3.",
-  "homeActivity": "Đố hai chiều liền nhau: 'thêm vào tử của 5/21 để thành 4/7?' rồi 'thêm vào mẫu của 3/8 để thành 1/4?' — con chỉ đúng người đứng im mỗi câu là đạt.",
-  "watchFor": "Nếu con quy đồng mẫu chung to đùng — hỏi 'ai KHÔNG bị thêm?' (S2) trước khi cho tính."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B19.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "quy đồng về 147?!",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Studio ảnh nhận đơn: thêm n vào TỬ của 5/21 để thành 4/7.",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "\"Bạn này có bị thêm gì đâu — bạn ấy ĐỨNG IM mà!\"",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B19_M2_F1.png",
-   "sha256_16": "ca3b7521fd6d4c8e"
+    "traps": []
   },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con giải được bài thêm n MỘT PHÍA bằng quy đồng theo KẺ ĐỨNG IM: thêm vào TỬ (mẫu đứng im) → đưa đích về CÙNG MẪU; thêm vào MẪU (tử đứng im) → đưa đích về CÙNG TỬ — rồi đối chiếu phần động để suy n.",
-    "steps": [
-     {
-      "text": "3/(8 + n) = 1/4: TỬ 3 đứng im"
-     },
-     {
-      "text": "1/4 = 3/12 → 8 + n = 12 → n = 4"
-     },
-     {
-      "text": "tử im → cùng tử · mẫu im → cùng mẫu"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B19_M2_F2.png",
-   "sha256_16": "f03c9149e5be9d2f"
+  "objective": {
+    "id": "O1",
+    "text": "Con giải được bài thêm n MỘT PHÍA bằng quy đồng theo KẺ ĐỨNG IM: thêm vào TỬ (mẫu đứng im) → đưa đích về CÙNG MẪU; thêm vào MẪU (tử đứng im) → đưa đích về CÙNG TỬ — rồi đối chiếu phần động để suy n.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (quy đồng theo tử đứng im)",
+    "kidText": "Thêm vào tử thì mẫu đứng im, thêm vào mẫu thì tử đứng im. Con quy đồng theo kẻ đứng im ấy là ra."
   },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Thêm n vào TỬ của a/b để được p/q",
-      "text": "MẪU b đứng im → viết p/q về mẫu b (cùng MẪU): (5 + n)/21 = 4/7 = 12/21 → 5 + n = 12 → n = 7.",
-      "tone": "navy"
-     },
-     {
-      "label": "Thêm n vào MẪU của a/b để được p/q",
-      "text": "TỬ a đứng im → viết p/q về tử a (cùng TỬ): 3/(8 + n) = 1/4 = 3/12 → 8 + n = 12 → n = 4.",
-      "tone": "teal"
-     }
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Thêm n vào TỬ của a/b để được p/q: MẪU b đứng im → viết p/q về mẫu b (cùng MẪU): (5 + n)/21 = 4/7 = 12/21 → 5 + n = 12 → n = 7."
+      },
+      {
+        "id": "K2",
+        "text": "Thêm n vào MẪU của a/b để được p/q: TỬ a đứng im → viết p/q về tử a (cùng TỬ): 3/(8 + n) = 1/4 = 3/12 → 8 + n = 12 → n = 4."
+      },
+      {
+        "id": "K3",
+        "text": "Khẩu quyết chọn sân: KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY; quy đồng xong chỉ còn một phương trình phần động, giải như tìm X, thử lại vào đề."
+      }
+    ],
+    "mechanism": "Hình ảnh brand: CHỤP ẢNH ĐÔI BẠN — MỘT NGƯỜI ĐỨNG IM. Bài thêm-một-phía là bức ảnh có một người ĐỨNG IM (phía không bị thêm) và một người ĐANG BƯỚC (phía nhận n). Muốn ghép ảnh đích 4/7 vào khung của 5/21: người đứng im là MẪU 21 — phóng ảnh đích theo đúng chiều cao 21: 4/7 khoác khung 12/21. Giờ hai ảnh chung khung: người bước phải từ 5 tới 12 — bước n = 7! Ngược lại tử đứng im (số 3) thì phóng đích theo tử: 1/4 thành 3/12 — mẫu bước từ 8 tới 12: n = 4. Khẩu quyết dán gương: kẻ nào đứng im — quy đồng theo kẻ ấy.",
+    "canonicalExamples": [
+      {
+        "case": "thêm vào tử (ca cùng mẫu)",
+        "problem": "Thêm số tự nhiên n vào tử số của 5/21 để được phân số bằng 4/7. Tìm n.",
+        "solution": "Mẫu 21 đứng im → 4/7 = 12/21 → 5 + n = 12 → n = 7. Thử: 12/21 = 4/7 ✓.",
+        "why": "Ca đề A câu 10 — quy đồng cùng mẫu."
+      },
+      {
+        "case": "thêm vào mẫu (ca cùng tử)",
+        "problem": "Thêm số tự nhiên n vào mẫu số của 3/8 để được phân số bằng 1/4. Tìm n.",
+        "solution": "Tử 3 đứng im → 1/4 = 3/12 → 8 + n = 12 → n = 4. Thử: 3/12 = 1/4 ✓.",
+        "why": "Ca đề A câu 8 — quy đồng cùng tử."
+      },
+      {
+        "case": "khởi động nền (ca hai bước nhỏ)",
+        "problem": "(a) 5/21 thêm 7 vào tử được phân số nào (rút gọn)? (b) Tìm n: n/12 = 1/3.",
+        "solution": "(a) 12/21 = 4/7. (b) 1/3 = 4/12 → n = 4.",
+        "why": "LT2 + LT3 — hai viên gạch của kỹ thuật chính."
+      }
+    ],
+    "numberRange": "Lớp 5: mẫu ≤ 50; đích trong bảng quen.",
+    "misconceptions": [
+      {
+        "wrong": "Quy đồng theo kẻ ĐANG BƯỚC (đưa 4/7 về tử 5 khi mẫu mới là kẻ đứng im) — hoặc quy đồng cả hai về mẫu chung to đùng.",
+        "signal": "Phân số trung gian lẻ, phương trình rối.",
+        "fix": "K3 — hỏi trước: phía nào KHÔNG bị thêm? Quy đồng đích theo đúng phía ấy — một phép nhân là chung khung.",
+        "counterExample": "4/7 theo tử 5: 5/8,75 — lẻ ngay, sai đường."
+      }
+    ],
+    "vocabulary": [
+      "người đứng im / người đang bước",
+      "chung khung ảnh",
+      "phóng ảnh đích",
+      "khẩu quyết dán gương"
     ],
     "mantra": "KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B19_M2_F3.png",
-   "sha256_16": "0abc2cf83ca714b4"
   },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "THÊM MỘT PHÍA — QUY ĐỒNG THEO KẺ ĐỨNG IM",
-    "neutral": true,
-    "wrong": {
-     "head": "THÊM VÀO TỬ",
-     "steps": [
-      "5/21 → 4/7",
-      "mẫu 21 đứng im · 4/7 = 12/21"
-     ],
-     "result": "5 + n = 12 → n = 7"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "4/7 = ?/21 — điền tử.",
+        "answerKey": {
+          "value": 12
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "ôn quy đồng (hạt mầm)",
+      "message": "Ôn quy đồng rồi vào studio ảnh nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Studio ảnh nhận đơn: thêm n vào TỬ của 5/21 để thành 4/7. Trí Long hùng hục quy đồng cả hai về mẫu 147… Su Kem chỉ vào số 21: \"Bạn này có bị thêm gì đâu — bạn ấy ĐỨNG IM mà!\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "quy đồng về 147?!"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để tìm người đứng im!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 44,
+        "teaches": [
+          "K1",
+          "K3"
+        ],
+        "narration": "Bức ảnh có một người ĐỨNG IM: mẫu 21 không bị thêm gì! Phóng ảnh đích theo người đứng im: 4/7 khoác khung mẫu 21 — nhân cả hai với 3: MƯỜI HAI phần hai mốt. Chung khung rồi: tử phải bước từ 5 tới 12 — n bằng BẢY! Thử: 12/21 rút gọn đúng 4/7. Một phép nhân thay cho cả trận quy đồng 147!",
+        "display": {
+          "type": "photo_frame_interactive",
+          "spec": {
+            "still": "mẫu 21",
+            "target": "4/7 → 12/21",
+            "eq": "5 + n = 12",
+            "n": 7
+          }
+        },
+        "interaction": {
+          "type": "frame_and_step",
+          "answerKey": {
+            "value": 7
+          },
+          "successMessage": "4/7 = 12/21 → n = 7 — quy đồng theo kẻ đứng im!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "num",
+          "text": "Tìm n: n/12 = 1/3.",
+          "answerKey": {
+            "value": 4
+          },
+          "wrongFeedback": "1/3 = 4/12.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 38,
+        "teaches": [
+          "K2",
+          "K3"
+        ],
+        "narration": "Chiều ngược: thêm n vào MẪU của 3/8 để thành 1/4 — giờ TỬ số 3 là người đứng im! Phóng đích theo tử: 1/4 thành BA phần mười hai. Chung khung: mẫu bước từ 8 tới 12 — n bằng BỐN. Thử: 3/12 đúng 1/4! Khẩu quyết dán gương studio: kẻ nào đứng im — quy đồng theo kẻ ấy; tử im về cùng tử, mẫu im về cùng mẫu.",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "3/(8 + n) = 1/4: TỬ 3 đứng im",
+            "1/4 = 3/12 → 8 + n = 12 → n = 4",
+            "tử im → cùng tử · mẫu im → cùng mẫu"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 12,
+        "narration": "Khẩu quyết studio: kẻ nào đứng im — quy đồng theo kẻ ấy!",
+        "display": {
+          "type": "mantra_card",
+          "text": "KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 86,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "right": {
-     "head": "THÊM VÀO MẪU",
-     "steps": [
-      "3/8 → 1/4",
-      "tử 3 đứng im · 1/4 = 3/12"
-     ],
-     "result": "8 + n = 12 → n = 4"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "verdict": "Kẻ nào đứng im thì quy đồng theo kẻ ấy"
-   },
-   "caption": "Thêm vào tử thì đưa về cùng mẫu — thêm vào mẫu thì đưa về cùng tử",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B19_M2_F4.png",
-   "sha256_16": "900059ca91da6871"
-  }
- ]
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Studio ảnh nhận đơn: thêm en vào TỬ của năm phần hai mốt để thành bốn phần bảy. Trí Long hùng hục quy đồng cả hai về mẫu một trăm bốn bảy… Su Kem chỉ vào số hai mốt: bạn này có bị thêm gì đâu — bạn ấy ĐỨNG IM mà!",
+        "screenText": "(5 + n)/21 = 4/7 — quy đồng về 147?!",
+        "visual": "Studio ảnh; Trí Long ôm chồng giấy nháp mẫu 147; Su Kem chỉ nhân vật '21' đứng bất động như tượng.",
+        "assets": [],
+        "duration": 19
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Bức ảnh có một người ĐỨNG IM: mẫu hai mốt không bị thêm gì! Phóng ảnh đích theo người đứng im: bốn phần bảy khoác khung mẫu hai mốt — nhân cả hai với ba: MƯỜI HAI phần hai mốt. Chung khung rồi: tử phải bước từ năm tới mười hai — en bằng BẢY! Thử: mười hai phần hai mốt đúng bốn phần bảy!",
+        "screenText": "4/7 = 12/21 → 5 + n = 12 → n = 7 ✓",
+        "visual": "Hai khung ảnh: đích 4/7 được phóng to khớp khung 21; nhân vật tử bước 7 bậc từ 5 lên 12; phép nhân ×3 hiện teal #1FC3A6.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Chiều ngược: thêm en vào MẪU của ba phần tám để thành một phần tư — giờ TỬ số ba là người đứng im! Phóng đích theo tử: một phần tư thành BA phần mười hai. Chung khung: mẫu bước từ tám tới mười hai — en bằng BỐN. Khẩu quyết dán gương: kẻ nào đứng im — quy đồng theo kẻ ấy: tử im về cùng tử, mẫu im về cùng mẫu!",
+        "screenText": "3/(8+n) = 1/4 = 3/12 → n = 4 · tử im→cùng tử",
+        "visual": "Khung ảnh chiều ngược với nhân vật '3' đứng im; đích 1/4 phóng thành 3/12; khẩu quyết dán trên gương studio.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Khẩu quyết studio: kẻ nào đứng im — quy đồng theo kẻ ấy!",
+        "screenText": "KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY!",
+        "visual": "Thẻ thần chú vàng với icon khung ảnh.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Đơn chụp của con: thêm en vào mẫu của ba phần tám để thành một phần tư — ai đứng im, en bằng mấy? Vào bài luyện ngay!",
+        "screenText": "3/(8 + n) = 1/4 → n?",
+        "visual": "Studio với đơn hàng mới; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P4",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Hai chiều một khẩu quyết",
+    "problem": "(a) Thêm n vào tử của 5/21 để được 4/7. (b) Thêm n vào mẫu của 3/8 để được 1/4.",
+    "steps": [
+      {
+        "show": "Bước 1 — Câu (a): mẫu 21 đứng im → 4/7 = 12/21 → 5 + n = 12 → n = 7.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Câu (a) quy đồng theo:",
+          "choices": [
+            "mẫu 21 (đứng im)",
+            "tử 5",
+            "cả hai về 147"
+          ],
+          "answerKey": {
+            "choice": "mẫu 21 (đứng im)"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Câu (b): tử 3 đứng im → 1/4 = 3/12 → 8 + n = 12 → n = 4."
+      },
+      {
+        "show": "Bước 3 — Thử cả hai: 12/21 = 4/7 ✓ và 3/12 = 1/4 ✓.",
+        "askAfter": {
+          "format": "num",
+          "text": "Thêm n vào tử của 2/15 để được 3/5 — n = ? (3/5 = 9/15)",
+          "answerKey": {
+            "value": 7
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B19.LT2",
+          "text": "Phân số 5/21: thêm 7 vào tử số ta được phân số nào? Rút gọn kết quả.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "phân số",
+                "value": "12/21"
+              },
+              {
+                "label": "rút gọn",
+                "value": "4/7"
+              }
+            ]
+          },
+          "hints": [
+            "(5 + 7)/21.",
+            "Chia cả hai cho 3."
+          ],
+          "solutionNarrative": "12/21 = 4/7.",
+          "teaches": [
+            "K1"
+          ]
+        },
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B19.LT3",
+          "text": "Tìm n biết: n/12 = 1/3.",
+          "answerKey": {
+            "value": 4
+          },
+          "hints": [
+            "1/3 khoác khung mẫu 12.",
+            "1/3 = 4/12."
+          ],
+          "solutionNarrative": "1/3 = 4/12 → n = 4.",
+          "teaches": [
+            "K1"
+          ]
+        }
+      ],
+      "standard": [
+        {
+          "id": "P3",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B19.LT4",
+          "text": "Thêm số tự nhiên n vào tử số của phân số 5/21 để được phân số bằng 4/7. Tìm n.",
+          "answerKey": {
+            "value": 7
+          },
+          "hints": [
+            "Mẫu 21 đứng im — cùng mẫu.",
+            "4/7 = 12/21."
+          ],
+          "solutionNarrative": "5 + n = 12 → n = 7.",
+          "teaches": [
+            "K1",
+            "K3"
+          ],
+          "generator": {
+            "template": "Thêm n vào tử của {a}/{b} để được {p}/{q}. Tìm n.",
+            "constraints": {},
+            "answerRule": "p/q về mẫu b → n = tử mới − a"
+          }
+        },
+        {
+          "id": "P4",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B19.LT5",
+          "text": "Thêm số tự nhiên n vào mẫu số của phân số 3/8 để được phân số bằng 1/4. Tìm n.",
+          "answerKey": {
+            "value": 4
+          },
+          "hints": [
+            "Tử 3 đứng im — cùng tử.",
+            "1/4 = 3/12."
+          ],
+          "solutionNarrative": "8 + n = 12 → n = 4.",
+          "teaches": [
+            "K2",
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P5",
+          "format": "num",
+          "text": "Thêm n vào mẫu của 5/9 để được 5/12. Tìm n.",
+          "answerKey": {
+            "value": 3
+          },
+          "hints": [
+            "Tử 5 đứng im — đích đã cùng tử 5!",
+            "9 + n = 12."
+          ],
+          "solutionNarrative": "9 + n = 12 → n = 3.",
+          "teaches": [
+            "K2"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:II.1.3#2@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B19.M3",
+      "award": "huy_hieu_studio_anh"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P3"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B19.QZ3",
+        "text": "3/(8 + n) = 1/4 thì trước hết ta viết 1/4 thành:",
+        "choices": [
+          "3/12",
+          "2/8",
+          "4/16"
+        ],
+        "answerKey": {
+          "choice": "3/12"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2",
+          "K3"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "num",
+        "text": "Thêm n vào tử của 5/21 để được 4/7 — n = ?",
+        "answerKey": {
+          "value": 7
+        },
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "text": "Khẩu quyết chọn sân quy đồng:",
+        "choices": [
+          "kẻ nào đứng im — quy đồng theo kẻ ấy",
+          "luôn quy đồng mẫu chung",
+          "theo kẻ đang bước"
+        ],
+        "answerKey": {
+          "choice": "kẻ nào đứng im — quy đồng theo kẻ ấy"
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Bài thêm n một phía giải bằng gì?",
+        "back": "Quy đồng theo KẺ ĐỨNG IM: thêm vào tử (mẫu im) → đích về CÙNG MẪU ((5+n)/21 = 12/21 → n = 7); thêm vào mẫu (tử im) → đích về CÙNG TỬ (3/(8+n) = 3/12 → n = 4). Thử lại vào đề."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P3",
+      "+7 ngày: câu P5 (đích sẵn cùng tử)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học khẩu quyết 'kẻ nào đứng im — quy đồng theo kẻ ấy' cho bài thêm một phía. Con đạt {score}/3.",
+    "homeActivity": "Đố hai chiều liền nhau: 'thêm vào tử của 5/21 để thành 4/7?' rồi 'thêm vào mẫu của 3/8 để thành 1/4?' — con chỉ đúng người đứng im mỗi câu là đạt.",
+    "watchFor": "Nếu con quy đồng mẫu chung to đùng — hỏi 'ai KHÔNG bị thêm?' (S2) trước khi cho tính."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B19.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "quy đồng về 147?!",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Studio ảnh nhận đơn: thêm n vào TỬ của 5/21 để thành 4/7.",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "\"Bạn này có bị thêm gì đâu — bạn ấy ĐỨNG IM mà!\"",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B19_M2_F1.png",
+      "sha256_16": "ca3b7521fd6d4c8e"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con giải được bài thêm n MỘT PHÍA bằng quy đồng theo KẺ ĐỨNG IM: thêm vào TỬ (mẫu đứng im) → đưa đích về CÙNG MẪU; thêm vào MẪU (tử đứng im) → đưa đích về CÙNG TỬ — rồi đối chiếu phần động để suy n.",
+        "steps": [
+          {
+            "text": "3/(8 + n) = 1/4: TỬ 3 đứng im"
+          },
+          {
+            "text": "1/4 = 3/12 → 8 + n = 12 → n = 4"
+          },
+          {
+            "text": "tử im → cùng tử · mẫu im → cùng mẫu"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B19_M2_F2.png",
+      "sha256_16": "f03c9149e5be9d2f"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Thêm n vào TỬ của a/b để được p/q",
+            "text": "MẪU b đứng im → viết p/q về mẫu b (cùng MẪU): (5 + n)/21 = 4/7 = 12/21 → 5 + n = 12 → n = 7.",
+            "tone": "navy"
+          },
+          {
+            "label": "Thêm n vào MẪU của a/b để được p/q",
+            "text": "TỬ a đứng im → viết p/q về tử a (cùng TỬ): 3/(8 + n) = 1/4 = 3/12 → 8 + n = 12 → n = 4.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B19_M2_F3.png",
+      "sha256_16": "0abc2cf83ca714b4"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "THÊM MỘT PHÍA — QUY ĐỒNG THEO KẺ ĐỨNG IM",
+        "neutral": true,
+        "wrong": {
+          "head": "THÊM VÀO TỬ",
+          "steps": [
+            "5/21 → 4/7",
+            "mẫu 21 đứng im · 4/7 = 12/21"
+          ],
+          "result": "5 + n = 12 → n = 7"
+        },
+        "right": {
+          "head": "THÊM VÀO MẪU",
+          "steps": [
+            "3/8 → 1/4",
+            "tử 3 đứng im · 1/4 = 3/12"
+          ],
+          "result": "8 + n = 12 → n = 4"
+        },
+        "verdict": "Kẻ nào đứng im thì quy đồng theo kẻ ấy"
+      },
+      "caption": "Thêm vào tử thì đưa về cùng mẫu — thêm vào mẫu thì đưa về cùng tử",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B19_M2_F4.png",
+      "sha256_16": "900059ca91da6871"
+    }
+  ]
 }

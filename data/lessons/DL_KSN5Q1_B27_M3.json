@@ -1,641 +1,644 @@
 {
- "title": "Sơ đồ trước – sau: chuyển xong vẫn hơn d & chuyển xong đổi ngôi",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:III.2.3#3"
-  ],
-  "bktUnit": "CASE:III.2.3#3@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B27",
-  "order": 3,
-  "prev": "DL:KSN5Q1.B27.M2",
-  "next": "DL:KSN5Q1.B28.M1"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B27",
-  "chunks": [
-   "CHUNK:KSN5Q1.B27.S4",
-   "CHUNK:KSN5Q1.B27.S7"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B27.3",
-   "CA:KSN5Q1.B27.4"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B27.3"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con xử được hai ca nâng cao bằng SƠ ĐỒ TRƯỚC – SAU hai tầng: nhận thêm mà VẪN hơn / hơn thêm sau cú chuyển (hiệu ban đầu = hiệu sau ∓ 2k tùy chiều) và chuyển xong ĐỔI NGÔI — bên kia hơn ngược lại d (hiệu ban đầu = 2k − d) — không cộng bừa, luôn diễn lại kịch bản để thử.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (đổi ngôi: 2k − d)",
-  "kidText": "Chuyển xong vẫn hơn, hay chuyển xong đổi ngôi bên kia hơn lại? Con vẽ sơ đồ trước – sau rồi diễn lại kịch bản để thử."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Sơ đồ TRƯỚC – SAU hai tầng: tầng trên vẽ hai bên TRƯỚC cú chuyển, tầng dưới vẽ SAU, mũi tên k nối giữa — mọi ca chuyển phức tạp đều đọc được từ sơ đồ này."
-   },
-   {
-    "id": "K2",
-    "text": "Ca nhận thêm mà VẪN hơn: chuyển k TỪ bên ít SANG bên nhiều là NỚI khoảng cách thêm 2k — bên nhiều sau đó hơn d thì hiệu ban đầu = d − 2k. Chuyển từ bên nhiều mà vẫn hơn d: hiệu ban đầu = d + 2k."
-   },
-   {
-    "id": "K3",
-    "text": "Ca ĐỔI NGÔI: chuyển k từ A sang B xong B hơn NGƯỢC lại d — khoảng cách cũ bị khép hết (mất hiệu cũ) rồi mở sang phía kia d: hiệu ban đầu của A = 2k − d."
-   },
-   {
-    "id": "K4",
-    "text": "Thử bằng DIỄN LẠI KỊCH BẢN: lấy đáp trừ / cộng k rồi so hai bên sau chuyển — phải khớp đúng lời đề (ai hơn ai, hơn mấy)."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: SƠ ĐỒ TRƯỚC – SAU HAI TẦNG. Ca một — kệ NHẬN thêm mà vẫn thua độ: chuyển 3 quyển TỪ kệ 2 SANG kệ 1 (kệ 1 vốn đã nhiều!) — khoảng cách bị NỚI thêm 2 × 3 = 6; sau đó kệ 1 hơn 16 — vậy TRƯỚC đó chỉ hơn 16 − 6 = 10: tổng 90 → 50 và 40. Ca hai — ĐỔI NGÔI: chuyển 5 từ kệ 1 sang kệ 2 xong kệ 2 hơn NGƯỢC lại 4! Trí Long cộng bừa 10 + 4… Vẽ hai tầng: cú chuyển khép 10 nấc — khép hết hiệu cũ của kệ 1 rồi còn dư đà mở sang phía kệ 2 đúng 4: hiệu cũ = 2 × 5 − 4 = 6 → kệ 1 = 48, kệ 2 = 42. Diễn lại: 48 − 5 = 43; 42 + 5 = 47 — kệ 2 hơn đúng 4: khớp kịch bản!",
-  "canonicalExamples": [
-   {
-    "case": "nới khoảng cách (ca vẫn hơn)",
-    "problem": "Hai kệ tổng 90 quyển. Chuyển 3 quyển TỪ KỆ 2 sang kệ 1 thì kệ 1 hơn kệ 2 là 16 quyển. Tìm số sách mỗi kệ lúc đầu.",
-    "solution": "Chuyển 3 từ bên ít sang bên nhiều NỚI hiệu thêm 2 × 3 = 6 → hiệu ban đầu = 16 − 6 = 10 → kệ 1 = 50; kệ 2 = 40. Diễn lại: 53 − 37 = 16 ✓.",
-    "why": "Ca LT7 — chiều nới, trừ 2k khỏi hiệu sau."
-   },
-   {
-    "case": "đổi ngôi (ca lõi)",
-    "problem": "Hai kệ tổng 90 quyển. Chuyển 5 quyển từ kệ 1 sang kệ 2 thì kệ 2 hơn NGƯỢC lại kệ 1 là 4 quyển. Tìm mỗi kệ lúc đầu.",
-    "solution": "Hiệu ban đầu = 2 × 5 − 4 = 6 → kệ 1 = (90 + 6) : 2 = 48; kệ 2 = 42. Diễn lại: 48 − 5 = 43; 42 + 5 = 47 — kệ 2 hơn 4 ✓.",
-    "why": "Ca đề A câu 11 — trap lạc chiều."
-   },
-   {
-    "case": "sư phụ (ca lớn số)",
-    "problem": "Hai giá sách tổng 120 quyển. Chuyển 7 quyển từ giá 1 sang giá 2 thì giá 2 hơn ngược lại 6 quyển. Tìm mỗi giá lúc đầu.",
-    "solution": "Hiệu = 2 × 7 − 6 = 8 → giá 1 = (120 + 8) : 2 = 64; giá 2 = 56. Diễn lại: 57 và 63 — giá 2 hơn 6 ✓.",
-    "why": "Ca LT9 — cùng máy đổi ngôi, số to hơn."
-   }
-  ],
-  "numberRange": "Lớp 5: k ≤ 10; d < 2k trong ca đổi ngôi.",
-  "misconceptions": [
-   {
-    "wrong": "Ca đổi ngôi cộng bừa: hiệu = 2k + d = 14 (hoặc lấy nguyên d, hoặc lạc chiều nới / khép).",
-    "signal": "Diễn lại kịch bản: ai-hơn-ai không khớp lời đề.",
-    "fix": "K1 + K3 — vẽ sơ đồ trước – sau hai tầng với mũi tên chuyển: đổi ngôi thì lấy 2k TRỪ d; và luôn diễn lại kịch bản.",
-    "counterExample": "Hiệu 14 → 52 và 38: chuyển 5 ra 47 và 43 — kệ MỘT vẫn hơn 4, trái lời đề 'kệ 2 hơn'!"
-   }
-  ],
-  "vocabulary": [
-   "sơ đồ trước – sau hai tầng",
-   "nới / khép khoảng cách",
-   "đổi ngôi",
-   "dư đà mở sang phía kia",
-   "diễn lại kịch bản"
-  ],
-  "mantra": "ĐỔI NGÔI THÌ LẤY 2k TRỪ d — VÀ DIỄN LẠI KỊCH BẢN!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Máy xuôi: tổng 90, hiệu 6 → số lớn = ?",
-    "answerKey": {
-     "value": 48
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B27.M2",
-   "message": "Ôn máy 2k rồi lên sơ đồ hai tầng nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Đề xoắn: \"chuyển 5 quyển từ kệ 1 sang kệ 2 thì kệ 2 hơn NGƯỢC lại kệ 1 là 4 quyển.\" Trí Long cộng bừa: \"hiệu là 10 cộng 4 bằng 14!\" Su Kem trải tờ giấy kẻ hai tầng: \"Vẽ TRƯỚC – SAU đã, đừng đoán chiều.\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "đổi ngôi: 10 + 4 = 14??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để kẻ hai tầng!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K3"
+  "title": "Sơ đồ trước – sau: chuyển xong vẫn hơn d & chuyển xong đổi ngôi",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:III.2.3#3"
     ],
-    "narration": "Sơ đồ hai tầng: tầng TRƯỚC — kệ một hơn kệ hai một khoảng chưa biết; mũi tên chuyển NĂM nối xuống tầng SAU — kệ HAI hơn ngược bốn! Cú chuyển khép MƯỜI nấc: khép hết khoảng cách cũ, còn dư đà mở sang phía kệ hai đúng BỐN — vậy khoảng cách cũ bằng mười trừ bốn: SÁU! Tổng chín mươi: kệ một BỐN TÁM, kệ hai BỐN HAI.",
-    "display": {
-     "type": "before_after_interactive",
-     "spec": {
-      "total": 90,
-      "k": 5,
-      "dAfter": 4,
-      "flip": true,
-      "diffBefore": "2×5 − 4 = 6",
-      "a": 48,
-      "b": 42
-     }
-    },
-    "interaction": {
-     "type": "draw_two_rows",
-     "answerKey": {
-      "values": [
-       48,
-       42
-      ]
-     },
-     "successMessage": "Hiệu cũ = 10 − 4 = 6 → 48 & 42!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "mcq",
-     "text": "Chuyển 5 từ A sang B thì B hơn A là 4 → hiệu ban đầu của A:",
-     "choices": [
-      "6",
-      "14",
-      "4"
-     ],
-     "answerKey": {
-      "choice": "6"
-     },
-     "wrongFeedback": "2k − d = 10 − 4.",
-     "objective": "O1",
-     "teaches": [
-      "K3"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K4"
+    "bktUnit": "CASE:III.2.3#3@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B27",
+    "order": 3,
+    "prev": "DL:KSN5Q1.B27.M2",
+    "next": "DL:KSN5Q1.B28.M1"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B27",
+    "chunks": [
+      "CHUNK:KSN5Q1.B27.S4",
+      "CHUNK:KSN5Q1.B27.S7"
     ],
-    "narration": "Diễn lại kịch bản để thử: bốn tám đưa năm — còn bốn ba; bốn hai nhận năm — bốn bảy: kệ hai hơn đúng BỐN, khớp lời đề! Còn đáp cộng-bừa mười bốn ra năm hai với ba tám: chuyển năm thành bốn bảy và bốn ba — kệ MỘT vẫn hơn: trái kịch bản, loại! Chiều NỚI cũng đọc từ sơ đồ: chuyển ba TỪ kệ hai SANG kệ một là nới thêm SÁU — sau đó hơn mười sáu thì trước đó chỉ hơn MƯỜI: năm mươi và bốn mươi.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "diễn 48 & 42: 43 vs 47 — kệ 2 hơn 4 ✓",
-      "diễn 52 & 38: 47 vs 43 — kệ 1 hơn ✗ loại",
-      "nới: hiệu = 16 − 2×3 = 10 → 50 & 40"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú hai tầng: đổi ngôi thì lấy hai ka trừ dê — và diễn lại kịch bản!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐỔI NGÔI: 2k − d · DIỄN LẠI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 90,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Đề xoắn: chuyển năm quyển từ kệ một sang kệ hai thì kệ hai hơn NGƯỢC lại kệ một bốn quyển. Trí Long cộng bừa: hiệu là mười cộng bốn bằng mười bốn! Su Kem trải tờ giấy kẻ hai tầng: vẽ TRƯỚC – SAU đã, đừng đoán chiều!",
-    "screenText": "đổi ngôi → hiệu = 10 + 4 = 14??",
-    "visual": "Hai kệ sách với mũi tên đổi ngôi xoắn; Trí Long viết 14 vội vàng; tờ giấy kẻ hai tầng trống chờ, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 18
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Sơ đồ hai tầng: tầng TRƯỚC — kệ một hơn kệ hai một khoảng chưa biết; mũi tên chuyển NĂM nối xuống tầng SAU — kệ HAI hơn ngược bốn! Cú chuyển khép MƯỜI nấc: khép hết khoảng cách cũ, dư đà mở sang phía kệ hai đúng BỐN — khoảng cách cũ bằng mười trừ bốn: SÁU! Tổng chín mươi: kệ một BỐN TÁM, kệ hai BỐN HAI!",
-    "screenText": "TRƯỚC: hơn ? · SAU: thua 4 → hiệu cũ = 2×5 − 4 = 6",
-    "visual": "Sơ đồ hai tầng với mũi tên k=5; thanh khoảng cách 10 nấc khép qua vạch 0 rồi mở 4 nấc phía kia; đáp 48·42 vàng.",
-    "assets": [],
-    "duration": 25
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Diễn lại kịch bản để thử: bốn tám đưa năm — còn bốn ba; bốn hai nhận năm — bốn bảy: kệ hai hơn đúng BỐN, khớp! Đáp cộng-bừa mười bốn ra năm hai với ba tám: chuyển năm thành bốn bảy và bốn ba — kệ MỘT vẫn hơn: trái kịch bản, loại! Chiều NỚI: chuyển ba về bên nhiều là nới SÁU — hơn mười sáu thì trước chỉ hơn MƯỜI: năm mươi và bốn mươi!",
-    "screenText": "diễn 48·42 → 43 vs 47 ✓ · 52·38 → ✗ · nới: 16 − 6 = 10",
-    "visual": "Hai màn diễn lại song song: màn đúng đèn xanh, màn cộng-bừa đèn đỏ kệ một vẫn cao; góc màn ca nới với hiệu 10.",
-    "assets": [],
-    "duration": 28
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú hai tầng: đổi ngôi thì lấy hai ka trừ dê — và diễn lại kịch bản!",
-    "screenText": "ĐỔI NGÔI: 2k − d!",
-    "visual": "Thẻ thần chú vàng với icon sơ đồ hai tầng.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Đề sư phụ chờ con: hai giá tổng một trăm hai mươi, chuyển bảy quyển thì giá hai hơn ngược sáu — tìm mỗi giá! Vào bài luyện ngay!",
-    "screenText": "120 · chuyển 7 · hơn ngược 6 → ?",
-    "visual": "Hai giá sách lớn chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P3",
-    "assets": [],
-    "duration": 11
-   }
-  ]
- },
- "workedExample": {
-  "title": "Hai tầng một mũi tên",
-  "problem": "Hai kệ tổng 90 quyển. Chuyển 5 quyển từ kệ 1 sang kệ 2 thì kệ 2 hơn NGƯỢC lại kệ 1 là 4 quyển. Tìm số sách mỗi kệ lúc đầu.",
-  "steps": [
-   {
-    "show": "Bước 1 — Vẽ hai tầng: TRƯỚC kệ 1 hơn ?; SAU kệ 2 hơn 4 (đổi ngôi). Cú chuyển khép 2 × 5 = 10 nấc.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Đổi ngôi thì hiệu ban đầu =",
-     "choices": [
-      "2k − d = 10 − 4",
-      "2k + d = 14",
-      "d = 4"
-     ],
-     "answerKey": {
-      "choice": "2k − d = 10 − 4"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Hiệu ban đầu = 6; tổng 90 → kệ 1 = 48; kệ 2 = 42."
-   },
-   {
-    "show": "Bước 3 — Diễn lại: 48 − 5 = 43; 42 + 5 = 47 — kệ 2 hơn 4 ✓.",
-    "askAfter": {
-     "format": "mb",
-     "text": "Tổng 120, chuyển 7, giá 2 hơn ngược 6 → hai giá lúc đầu?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "giá 1",
-        "value": 64
-       },
-       {
-        "label": "giá 2",
-        "value": 56
-       }
-      ]
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B27.LT7",
-     "text": "Hai kệ tổng 90 quyển. Chuyển 3 quyển TỪ KỆ 2 sang kệ 1 thì kệ 1 hơn kệ 2 là 16 quyển. Tìm số sách mỗi kệ lúc đầu.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "kệ 1",
-        "value": 50
-       },
-       {
-        "label": "kệ 2",
-        "value": 40
-       }
-      ]
-     },
-     "hints": [
-      "Chuyển về bên nhiều là NỚI thêm 2 × 3.",
-      "Hiệu ban đầu = 16 − 6."
-     ],
-     "solutionNarrative": "Hiệu 10 → 50 & 40 (diễn lại 53 − 37 = 16 ✓).",
-     "teaches": [
-      "K1",
-      "K2"
-     ],
-     "generator": {
-      "template": "Tổng {S}; chuyển {k} (ghi rõ chiều) → sau đó hơn {d}. Tìm hai bên.",
-      "constraints": {},
-      "answerRule": "hiệu ban đầu = d ∓ 2k theo sơ đồ"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B27.LT8",
-     "text": "Hai kệ tổng 90 quyển. Chuyển 5 quyển từ kệ 1 sang kệ 2 thì kệ 2 hơn NGƯỢC lại kệ 1 là 4 quyển. Tìm số sách mỗi kệ lúc đầu.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "kệ 1",
-        "value": 48
-       },
-       {
-        "label": "kệ 2",
-        "value": 42
-       }
-      ]
-     },
-     "hints": [
-      "Vẽ hai tầng — đổi ngôi.",
-      "Hiệu = 2 × 5 − 4 = 6."
-     ],
-     "solutionNarrative": "48 & 42 (diễn lại: 43 vs 47 — kệ 2 hơn 4 ✓).",
-     "teaches": [
-      "K3",
-      "K4"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B27.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Hai giá sách có tổng 120 quyển. Nếu chuyển 7 quyển từ giá 1 sang giá 2 thì giá 2 hơn ngược lại giá 1 là 6 quyển. Tìm số sách mỗi giá lúc đầu.\"",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "giá 1",
-        "value": 64
-       },
-       {
-        "label": "giá 2",
-        "value": 56
-       }
-      ]
-     },
-     "hints": [
-      "Hiệu = 2 × 7 − 6 = 8.",
-      "(120 + 8) : 2."
-     ],
-     "solutionNarrative": "64 & 56 (diễn lại: 57 vs 63 — giá 2 hơn 6 ✓).",
-     "teaches": [
-      "K3",
-      "K4"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.2.3#3@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B28.M1",
-   "award": "huy_hieu_so_do_hai_tang"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P2"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B27.QZ5",
-    "text": "Chuyển 5 từ A sang B thì B hơn A là 4 → hiệu ban đầu của A:",
-    "choices": [
-     "6",
-     "14",
-     "4"
+    "cases": [
+      "CA:KSN5Q1.B27.3",
+      "CA:KSN5Q1.B27.4"
     ],
-    "answerKey": {
-     "choice": "6"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K3"
+    "traps": [
+      "TRAP:KSN5Q1.B27.3"
     ]
-   },
-   {
-    "id": "A2",
-    "format": "mb",
-    "text": "Tổng 90, chuyển 5, kệ 2 hơn ngược 4 → hai kệ lúc đầu?",
-    "answerKey": {
-     "parts": [
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con xử được hai ca nâng cao bằng SƠ ĐỒ TRƯỚC – SAU hai tầng: nhận thêm mà VẪN hơn / hơn thêm sau cú chuyển (hiệu ban đầu = hiệu sau ∓ 2k tùy chiều) và chuyển xong ĐỔI NGÔI — bên kia hơn ngược lại d (hiệu ban đầu = 2k − d) — không cộng bừa, luôn diễn lại kịch bản để thử.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (đổi ngôi: 2k − d)",
+    "kidText": "Chuyển xong vẫn hơn, hay chuyển xong đổi ngôi bên kia hơn lại? Con vẽ sơ đồ trước – sau rồi diễn lại kịch bản để thử."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "kệ 1",
-       "value": 48
+        "id": "K1",
+        "text": "Sơ đồ TRƯỚC – SAU hai tầng: tầng trên vẽ hai bên TRƯỚC cú chuyển, tầng dưới vẽ SAU, mũi tên k nối giữa — mọi ca chuyển phức tạp đều đọc được từ sơ đồ này."
       },
       {
-       "label": "kệ 2",
-       "value": 42
+        "id": "K2",
+        "text": "Ca nhận thêm mà VẪN hơn: chuyển k TỪ bên ít SANG bên nhiều là NỚI khoảng cách thêm 2k — bên nhiều sau đó hơn d thì hiệu ban đầu = d − 2k. Chuyển từ bên nhiều mà vẫn hơn d: hiệu ban đầu = d + 2k."
+      },
+      {
+        "id": "K3",
+        "text": "Ca ĐỔI NGÔI: chuyển k từ A sang B xong B hơn NGƯỢC lại d — khoảng cách cũ bị khép hết (mất hiệu cũ) rồi mở sang phía kia d: hiệu ban đầu của A = 2k − d."
+      },
+      {
+        "id": "K4",
+        "text": "Thử bằng DIỄN LẠI KỊCH BẢN: lấy đáp trừ / cộng k rồi so hai bên sau chuyển — phải khớp đúng lời đề (ai hơn ai, hơn mấy)."
       }
-     ]
-    },
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "text": "Chuyển 3 TỪ bên ít SANG bên nhiều làm khoảng cách:",
-    "choices": [
-     "nới thêm 6",
-     "khép bớt 6",
-     "không đổi"
     ],
-    "answerKey": {
-     "choice": "nới thêm 6"
-    },
-    "teaches": [
-     "K2"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Chuyển xong vẫn hơn d? Chuyển xong đổi ngôi?",
-    "back": "Vẽ SƠ ĐỒ TRƯỚC – SAU hai tầng. Nới (chuyển về bên nhiều): hiệu cũ = d − 2k. Khép mà vẫn hơn: hiệu cũ = d + 2k. ĐỔI NGÔI (bên kia hơn ngược d): hiệu cũ = 2k − d (10 − 4 = 6 → 48 & 42). Luôn DIỄN LẠI KỊCH BẢN thử ai-hơn-ai."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P3 (sư phụ 120)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con xử ca chuyển nâng cao bằng sơ đồ trước – sau hai tầng: nới / khép / đổi ngôi (2k − d), và diễn lại kịch bản để thử. Con đạt {score}/3, {trapResult} câu bẫy lạc chiều.",
-  "homeActivity": "Dựng kịch bản bằng hai chồng sách thật (48 và 42): con chuyển 5 quyển rồi tường thuật 'ai hơn ai, hơn mấy' và so với đề.",
-  "watchFor": "Nếu con cộng bừa 2k + d — bắt diễn lại kịch bản (S3): ai-hơn-ai trái đề là loại."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B27.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "đổi ngôi: 10 + 4 = 14??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "hiệu là 10 cộng 4 bằng 14!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Vẽ TRƯỚC – SAU đã, đừng đoán chiều.",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B27_M3_F1.png",
-   "sha256_16": "b1060bc7bece8841"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con xử được hai ca nâng cao bằng SƠ ĐỒ TRƯỚC – SAU hai tầng: nhận thêm mà VẪN hơn / hơn thêm sau cú chuyển (hiệu ban đầu = hiệu sau ∓ 2k tùy chiều) và chuyển xong ĐỔI NGÔI — bên kia hơn ngược lại d (hiệu ban đầu = 2k − d) — không cộng bừa, luôn diễn lại kịch bản để thử.",
-    "steps": [
-     {
-      "text": "diễn 48 & 42: 43 vs 47 — kệ 2 hơn 4"
-     },
-     {
-      "text": "diễn 52 & 38: 47 vs 43 — kệ 1 hơn loại"
-     },
-     {
-      "text": "nới: hiệu = 16 − 2×3 = 10 → 50 & 40"
-     }
+    "mechanism": "Hình ảnh brand: SƠ ĐỒ TRƯỚC – SAU HAI TẦNG. Ca một — kệ NHẬN thêm mà vẫn thua độ: chuyển 3 quyển TỪ kệ 2 SANG kệ 1 (kệ 1 vốn đã nhiều!) — khoảng cách bị NỚI thêm 2 × 3 = 6; sau đó kệ 1 hơn 16 — vậy TRƯỚC đó chỉ hơn 16 − 6 = 10: tổng 90 → 50 và 40. Ca hai — ĐỔI NGÔI: chuyển 5 từ kệ 1 sang kệ 2 xong kệ 2 hơn NGƯỢC lại 4! Trí Long cộng bừa 10 + 4… Vẽ hai tầng: cú chuyển khép 10 nấc — khép hết hiệu cũ của kệ 1 rồi còn dư đà mở sang phía kệ 2 đúng 4: hiệu cũ = 2 × 5 − 4 = 6 → kệ 1 = 48, kệ 2 = 42. Diễn lại: 48 − 5 = 43; 42 + 5 = 47 — kệ 2 hơn đúng 4: khớp kịch bản!",
+    "canonicalExamples": [
+      {
+        "case": "nới khoảng cách (ca vẫn hơn)",
+        "problem": "Hai kệ tổng 90 quyển. Chuyển 3 quyển TỪ KỆ 2 sang kệ 1 thì kệ 1 hơn kệ 2 là 16 quyển. Tìm số sách mỗi kệ lúc đầu.",
+        "solution": "Chuyển 3 từ bên ít sang bên nhiều NỚI hiệu thêm 2 × 3 = 6 → hiệu ban đầu = 16 − 6 = 10 → kệ 1 = 50; kệ 2 = 40. Diễn lại: 53 − 37 = 16 ✓.",
+        "why": "Ca LT7 — chiều nới, trừ 2k khỏi hiệu sau."
+      },
+      {
+        "case": "đổi ngôi (ca lõi)",
+        "problem": "Hai kệ tổng 90 quyển. Chuyển 5 quyển từ kệ 1 sang kệ 2 thì kệ 2 hơn NGƯỢC lại kệ 1 là 4 quyển. Tìm mỗi kệ lúc đầu.",
+        "solution": "Hiệu ban đầu = 2 × 5 − 4 = 6 → kệ 1 = (90 + 6) : 2 = 48; kệ 2 = 42. Diễn lại: 48 − 5 = 43; 42 + 5 = 47 — kệ 2 hơn 4 ✓.",
+        "why": "Ca đề A câu 11 — trap lạc chiều."
+      },
+      {
+        "case": "sư phụ (ca lớn số)",
+        "problem": "Hai giá sách tổng 120 quyển. Chuyển 7 quyển từ giá 1 sang giá 2 thì giá 2 hơn ngược lại 6 quyển. Tìm mỗi giá lúc đầu.",
+        "solution": "Hiệu = 2 × 7 − 6 = 8 → giá 1 = (120 + 8) : 2 = 64; giá 2 = 56. Diễn lại: 57 và 63 — giá 2 hơn 6 ✓.",
+        "why": "Ca LT9 — cùng máy đổi ngôi, số to hơn."
+      }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B27_M3_F2.png",
-   "sha256_16": "aedb6e50312b8247"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Sơ đồ TRƯỚC",
-      "text": "SAU hai tầng: tầng trên vẽ hai bên TRƯỚC cú chuyển, tầng dưới vẽ SAU, mũi tên k nối giữa — mọi ca chuyển phức tạp đều đọc được từ sơ đồ này.",
-      "tone": "navy"
-     },
-     {
-      "label": "Ca nhận thêm mà VẪN hơn",
-      "text": "chuyển k TỪ bên ít SANG bên nhiều là NỚI khoảng cách thêm 2k — bên nhiều sau đó hơn d thì hiệu ban đầu = d − 2k. Chuyển từ bên nhiều mà vẫn hơn d: hiệu ban đầu = d + 2k.",
-      "tone": "teal"
-     }
+    "numberRange": "Lớp 5: k ≤ 10; d < 2k trong ca đổi ngôi.",
+    "misconceptions": [
+      {
+        "wrong": "Ca đổi ngôi cộng bừa: hiệu = 2k + d = 14 (hoặc lấy nguyên d, hoặc lạc chiều nới / khép).",
+        "signal": "Diễn lại kịch bản: ai-hơn-ai không khớp lời đề.",
+        "fix": "K1 + K3 — vẽ sơ đồ trước – sau hai tầng với mũi tên chuyển: đổi ngôi thì lấy 2k TRỪ d; và luôn diễn lại kịch bản.",
+        "counterExample": "Hiệu 14 → 52 và 38: chuyển 5 ra 47 và 43 — kệ MỘT vẫn hơn 4, trái lời đề 'kệ 2 hơn'!"
+      }
+    ],
+    "vocabulary": [
+      "sơ đồ trước – sau hai tầng",
+      "nới / khép khoảng cách",
+      "đổi ngôi",
+      "dư đà mở sang phía kia",
+      "diễn lại kịch bản"
     ],
     "mantra": "ĐỔI NGÔI THÌ LẤY 2k TRỪ d — VÀ DIỄN LẠI KỊCH BẢN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B27_M3_F3.png",
-   "sha256_16": "e99c33c8135f751f"
   },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "HAI CA NÂNG CAO CỦA CÚ CHUYỂN",
-    "neutral": true,
-    "wrong": {
-     "head": "NỚI KHOẢNG CÁCH",
-     "steps": [
-      "chuyển 3 từ bên ÍT sang bên NHIỀU",
-      "hiệu sau = 16"
-     ],
-     "result": "hiệu đầu = 16 − 6 = 10"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Máy xuôi: tổng 90, hiệu 6 → số lớn = ?",
+        "answerKey": {
+          "value": 48
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B27.M2",
+      "message": "Ôn máy 2k rồi lên sơ đồ hai tầng nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Đề xoắn: \"chuyển 5 quyển từ kệ 1 sang kệ 2 thì kệ 2 hơn NGƯỢC lại kệ 1 là 4 quyển.\" Trí Long cộng bừa: \"hiệu là 10 cộng 4 bằng 14!\" Su Kem trải tờ giấy kẻ hai tầng: \"Vẽ TRƯỚC – SAU đã, đừng đoán chiều.\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "đổi ngôi: 10 + 4 = 14??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để kẻ hai tầng!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K3"
+        ],
+        "narration": "Sơ đồ hai tầng: tầng TRƯỚC — kệ một hơn kệ hai một khoảng chưa biết; mũi tên chuyển NĂM nối xuống tầng SAU — kệ HAI hơn ngược bốn! Cú chuyển khép MƯỜI nấc: khép hết khoảng cách cũ, còn dư đà mở sang phía kệ hai đúng BỐN — vậy khoảng cách cũ bằng mười trừ bốn: SÁU! Tổng chín mươi: kệ một BỐN TÁM, kệ hai BỐN HAI.",
+        "display": {
+          "type": "before_after_interactive",
+          "spec": {
+            "total": 90,
+            "k": 5,
+            "dAfter": 4,
+            "flip": true,
+            "diffBefore": "2×5 − 4 = 6",
+            "a": 48,
+            "b": 42
+          }
+        },
+        "interaction": {
+          "type": "draw_two_rows",
+          "answerKey": {
+            "values": [
+              48,
+              42
+            ]
+          },
+          "successMessage": "Hiệu cũ = 10 − 4 = 6 → 48 & 42!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "mcq",
+          "text": "Chuyển 5 từ A sang B thì B hơn A là 4 → hiệu ban đầu của A:",
+          "choices": [
+            "6",
+            "14",
+            "4"
+          ],
+          "answerKey": {
+            "choice": "6"
+          },
+          "wrongFeedback": "2k − d = 10 − 4.",
+          "objective": "O1",
+          "teaches": [
+            "K3"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 42,
+        "teaches": [
+          "K2",
+          "K4"
+        ],
+        "narration": "Diễn lại kịch bản để thử: bốn tám đưa năm — còn bốn ba; bốn hai nhận năm — bốn bảy: kệ hai hơn đúng BỐN, khớp lời đề! Còn đáp cộng-bừa mười bốn ra năm hai với ba tám: chuyển năm thành bốn bảy và bốn ba — kệ MỘT vẫn hơn: trái kịch bản, loại! Chiều NỚI cũng đọc từ sơ đồ: chuyển ba TỪ kệ hai SANG kệ một là nới thêm SÁU — sau đó hơn mười sáu thì trước đó chỉ hơn MƯỜI: năm mươi và bốn mươi.",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "diễn 48 & 42: 43 vs 47 — kệ 2 hơn 4 ✓",
+            "diễn 52 & 38: 47 vs 43 — kệ 1 hơn ✗ loại",
+            "nới: hiệu = 16 − 2×3 = 10 → 50 & 40"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú hai tầng: đổi ngôi thì lấy hai ka trừ dê — và diễn lại kịch bản!",
+        "display": {
+          "type": "mantra_card",
+          "text": "ĐỔI NGÔI: 2k − d · DIỄN LẠI!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 90,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "right": {
-     "head": "ĐỔI NGÔI",
-     "steps": [
-      "chuyển 5, bên kia hơn ngược 4"
-     ],
-     "result": "hiệu đầu = 2 × 5 − 4 = 6"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "verdict": "Vẽ sơ đồ TRƯỚC – SAU hai tầng rồi mới lắp máy tổng – hiệu"
-   },
-   "caption": "Chuyển từ bên ít sang bên nhiều thì hiệu NỚI thêm 2k",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B27_M3_F4.png",
-   "sha256_16": "cde97dc6eb15b7a2"
-  }
- ]
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Đề xoắn: chuyển năm quyển từ kệ một sang kệ hai thì kệ hai hơn NGƯỢC lại kệ một bốn quyển. Trí Long cộng bừa: hiệu là mười cộng bốn bằng mười bốn! Su Kem trải tờ giấy kẻ hai tầng: vẽ TRƯỚC – SAU đã, đừng đoán chiều!",
+        "screenText": "đổi ngôi → hiệu = 10 + 4 = 14??",
+        "visual": "Hai kệ sách với mũi tên đổi ngôi xoắn; Trí Long viết 14 vội vàng; tờ giấy kẻ hai tầng trống chờ, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 18
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Sơ đồ hai tầng: tầng TRƯỚC — kệ một hơn kệ hai một khoảng chưa biết; mũi tên chuyển NĂM nối xuống tầng SAU — kệ HAI hơn ngược bốn! Cú chuyển khép MƯỜI nấc: khép hết khoảng cách cũ, dư đà mở sang phía kệ hai đúng BỐN — khoảng cách cũ bằng mười trừ bốn: SÁU! Tổng chín mươi: kệ một BỐN TÁM, kệ hai BỐN HAI!",
+        "screenText": "TRƯỚC: hơn ? · SAU: thua 4 → hiệu cũ = 2×5 − 4 = 6",
+        "visual": "Sơ đồ hai tầng với mũi tên k=5; thanh khoảng cách 10 nấc khép qua vạch 0 rồi mở 4 nấc phía kia; đáp 48·42 vàng.",
+        "assets": [],
+        "duration": 25
+      },
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Diễn lại kịch bản để thử: bốn tám đưa năm — còn bốn ba; bốn hai nhận năm — bốn bảy: kệ hai hơn đúng BỐN, khớp! Đáp cộng-bừa mười bốn ra năm hai với ba tám: chuyển năm thành bốn bảy và bốn ba — kệ MỘT vẫn hơn: trái kịch bản, loại! Chiều NỚI: chuyển ba về bên nhiều là nới SÁU — hơn mười sáu thì trước chỉ hơn MƯỜI: năm mươi và bốn mươi!",
+        "screenText": "diễn 48·42 → 43 vs 47 ✓ · 52·38 → ✗ · nới: 16 − 6 = 10",
+        "visual": "Hai màn diễn lại song song: màn đúng đèn xanh, màn cộng-bừa đèn đỏ kệ một vẫn cao; góc màn ca nới với hiệu 10.",
+        "assets": [],
+        "duration": 28
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú hai tầng: đổi ngôi thì lấy hai ka trừ dê — và diễn lại kịch bản!",
+        "screenText": "ĐỔI NGÔI: 2k − d!",
+        "visual": "Thẻ thần chú vàng với icon sơ đồ hai tầng.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Đề sư phụ chờ con: hai giá tổng một trăm hai mươi, chuyển bảy quyển thì giá hai hơn ngược sáu — tìm mỗi giá! Vào bài luyện ngay!",
+        "screenText": "120 · chuyển 7 · hơn ngược 6 → ?",
+        "visual": "Hai giá sách lớn chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P3",
+        "assets": [],
+        "duration": 11
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Hai tầng một mũi tên",
+    "problem": "Hai kệ tổng 90 quyển. Chuyển 5 quyển từ kệ 1 sang kệ 2 thì kệ 2 hơn NGƯỢC lại kệ 1 là 4 quyển. Tìm số sách mỗi kệ lúc đầu.",
+    "steps": [
+      {
+        "show": "Bước 1 — Vẽ hai tầng: TRƯỚC kệ 1 hơn ?; SAU kệ 2 hơn 4 (đổi ngôi). Cú chuyển khép 2 × 5 = 10 nấc.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Đổi ngôi thì hiệu ban đầu =",
+          "choices": [
+            "2k − d = 10 − 4",
+            "2k + d = 14",
+            "d = 4"
+          ],
+          "answerKey": {
+            "choice": "2k − d = 10 − 4"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Hiệu ban đầu = 6; tổng 90 → kệ 1 = 48; kệ 2 = 42."
+      },
+      {
+        "show": "Bước 3 — Diễn lại: 48 − 5 = 43; 42 + 5 = 47 — kệ 2 hơn 4 ✓.",
+        "askAfter": {
+          "format": "mb",
+          "text": "Tổng 120, chuyển 7, giá 2 hơn ngược 6 → hai giá lúc đầu?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "giá 1",
+                "value": 64
+              },
+              {
+                "label": "giá 2",
+                "value": 56
+              }
+            ]
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B27.LT7",
+          "text": "Hai kệ tổng 90 quyển. Chuyển 3 quyển TỪ KỆ 2 sang kệ 1 thì kệ 1 hơn kệ 2 là 16 quyển. Tìm số sách mỗi kệ lúc đầu.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "kệ 1",
+                "value": 50
+              },
+              {
+                "label": "kệ 2",
+                "value": 40
+              }
+            ]
+          },
+          "hints": [
+            "Chuyển về bên nhiều là NỚI thêm 2 × 3.",
+            "Hiệu ban đầu = 16 − 6."
+          ],
+          "solutionNarrative": "Hiệu 10 → 50 & 40 (diễn lại 53 − 37 = 16 ✓).",
+          "teaches": [
+            "K1",
+            "K2"
+          ],
+          "generator": {
+            "template": "Tổng {S}; chuyển {k} (ghi rõ chiều) → sau đó hơn {d}. Tìm hai bên.",
+            "constraints": {},
+            "answerRule": "hiệu ban đầu = d ∓ 2k theo sơ đồ"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B27.LT8",
+          "text": "Hai kệ tổng 90 quyển. Chuyển 5 quyển từ kệ 1 sang kệ 2 thì kệ 2 hơn NGƯỢC lại kệ 1 là 4 quyển. Tìm số sách mỗi kệ lúc đầu.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "kệ 1",
+                "value": 48
+              },
+              {
+                "label": "kệ 2",
+                "value": 42
+              }
+            ]
+          },
+          "hints": [
+            "Vẽ hai tầng — đổi ngôi.",
+            "Hiệu = 2 × 5 − 4 = 6."
+          ],
+          "solutionNarrative": "48 & 42 (diễn lại: 43 vs 47 — kệ 2 hơn 4 ✓).",
+          "teaches": [
+            "K3",
+            "K4"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B27.LT9",
+          "text": "Sư phụ Trí Dũng đố: \"Hai giá sách có tổng 120 quyển. Nếu chuyển 7 quyển từ giá 1 sang giá 2 thì giá 2 hơn ngược lại giá 1 là 6 quyển. Tìm số sách mỗi giá lúc đầu.\"",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "giá 1",
+                "value": 64
+              },
+              {
+                "label": "giá 2",
+                "value": 56
+              }
+            ]
+          },
+          "hints": [
+            "Hiệu = 2 × 7 − 6 = 8.",
+            "(120 + 8) : 2."
+          ],
+          "solutionNarrative": "64 & 56 (diễn lại: 57 vs 63 — giá 2 hơn 6 ✓).",
+          "teaches": [
+            "K3",
+            "K4"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.2.3#3@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B28.M1",
+      "award": "huy_hieu_so_do_hai_tang"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P2"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B27.QZ5",
+        "text": "Chuyển 5 từ A sang B thì B hơn A là 4 → hiệu ban đầu của A:",
+        "choices": [
+          "6",
+          "14",
+          "4"
+        ],
+        "answerKey": {
+          "choice": "6"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K3"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mb",
+        "text": "Tổng 90, chuyển 5, kệ 2 hơn ngược 4 → hai kệ lúc đầu?",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "kệ 1",
+              "value": 48
+            },
+            {
+              "label": "kệ 2",
+              "value": 42
+            }
+          ]
+        },
+        "teaches": [
+          "K3"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "text": "Chuyển 3 TỪ bên ít SANG bên nhiều làm khoảng cách:",
+        "choices": [
+          "nới thêm 6",
+          "khép bớt 6",
+          "không đổi"
+        ],
+        "answerKey": {
+          "choice": "nới thêm 6"
+        },
+        "teaches": [
+          "K2"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Chuyển xong vẫn hơn d? Chuyển xong đổi ngôi?",
+        "back": "Vẽ SƠ ĐỒ TRƯỚC – SAU hai tầng. Nới (chuyển về bên nhiều): hiệu cũ = d − 2k. Khép mà vẫn hơn: hiệu cũ = d + 2k. ĐỔI NGÔI (bên kia hơn ngược d): hiệu cũ = 2k − d (10 − 4 = 6 → 48 & 42). Luôn DIỄN LẠI KỊCH BẢN thử ai-hơn-ai."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P3 (sư phụ 120)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con xử ca chuyển nâng cao bằng sơ đồ trước – sau hai tầng: nới / khép / đổi ngôi (2k − d), và diễn lại kịch bản để thử. Con đạt {score}/3, {trapResult} câu bẫy lạc chiều.",
+    "homeActivity": "Dựng kịch bản bằng hai chồng sách thật (48 và 42): con chuyển 5 quyển rồi tường thuật 'ai hơn ai, hơn mấy' và so với đề.",
+    "watchFor": "Nếu con cộng bừa 2k + d — bắt diễn lại kịch bản (S3): ai-hơn-ai trái đề là loại."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B27.M3",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "đổi ngôi: 10 + 4 = 14??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "hiệu là 10 cộng 4 bằng 14!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Vẽ TRƯỚC – SAU đã, đừng đoán chiều.",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B27_M3_F1.png",
+      "sha256_16": "b1060bc7bece8841"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con xử được hai ca nâng cao bằng SƠ ĐỒ TRƯỚC – SAU hai tầng: nhận thêm mà VẪN hơn / hơn thêm sau cú chuyển (hiệu ban đầu = hiệu sau ∓ 2k tùy chiều) và chuyển xong ĐỔI NGÔI — bên kia hơn ngược lại d (hiệu ban đầu = 2k − d) — không cộng bừa, luôn diễn lại kịch bản để thử.",
+        "steps": [
+          {
+            "text": "diễn 48 & 42: 43 vs 47 — kệ 2 hơn 4"
+          },
+          {
+            "text": "diễn 52 & 38: 47 vs 43 — kệ 1 hơn loại"
+          },
+          {
+            "text": "nới: hiệu = 16 − 2×3 = 10 → 50 & 40"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B27_M3_F2.png",
+      "sha256_16": "aedb6e50312b8247"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Sơ đồ TRƯỚC",
+            "text": "SAU hai tầng: tầng trên vẽ hai bên TRƯỚC cú chuyển, tầng dưới vẽ SAU, mũi tên k nối giữa — mọi ca chuyển phức tạp đều đọc được từ sơ đồ này.",
+            "tone": "navy"
+          },
+          {
+            "label": "Ca nhận thêm mà VẪN hơn",
+            "text": "chuyển k TỪ bên ít SANG bên nhiều là NỚI khoảng cách thêm 2k — bên nhiều sau đó hơn d thì hiệu ban đầu = d − 2k. Chuyển từ bên nhiều mà vẫn hơn d: hiệu ban đầu = d + 2k.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "ĐỔI NGÔI THÌ LẤY 2k TRỪ d — VÀ DIỄN LẠI KỊCH BẢN!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B27_M3_F3.png",
+      "sha256_16": "e99c33c8135f751f"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "HAI CA NÂNG CAO CỦA CÚ CHUYỂN",
+        "neutral": true,
+        "wrong": {
+          "head": "NỚI KHOẢNG CÁCH",
+          "steps": [
+            "chuyển 3 từ bên ÍT sang bên NHIỀU",
+            "hiệu sau = 16"
+          ],
+          "result": "hiệu đầu = 16 − 6 = 10"
+        },
+        "right": {
+          "head": "ĐỔI NGÔI",
+          "steps": [
+            "chuyển 5, bên kia hơn ngược 4"
+          ],
+          "result": "hiệu đầu = 2 × 5 − 4 = 6"
+        },
+        "verdict": "Vẽ sơ đồ TRƯỚC – SAU hai tầng rồi mới lắp máy tổng – hiệu"
+      },
+      "caption": "Chuyển từ bên ít sang bên nhiều thì hiệu NỚI thêm 2k",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B27_M3_F4.png",
+      "sha256_16": "cde97dc6eb15b7a2"
+    }
+  ]
 }

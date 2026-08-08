@@ -1,608 +1,611 @@
 {
- "title": "Hai hệ quy chiếu: lãi 20% theo vốn ≈ 16,7% theo giá bán — giảm theo niêm yết thì nhân trực tiếp",
- "grade": 5,
- "durationMinutes": 7,
- "skills": {
-  "primary": [
-   "CASE:II.5.1#2"
-  ],
-  "bktUnit": "CASE:II.5.1#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B38",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B38.M1",
-  "next": "DL:KSN5Q1.B38.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B38",
-  "chunks": [
-   "CHUNK:KSN5Q1.B38.S4",
-   "CHUNK:KSN5Q1.B38.S5"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B38.2"
-  ],
-  "traps": []
- },
- "objective": {
-  "id": "O1",
-  "text": "Con phân biệt và đổi giữa HAI HỆ QUY CHIẾU của cùng một thương vụ: lãi 20% theo VỐN (40 : 200) tương đương chỉ ≈ 16,7% theo GIÁ BÁN (40 : 240) — hai hệ hai con số; và nhận ra vì sao \"giảm giá 20%\" trên NIÊM YẾT lại nhân trực tiếp 0,8 (gốc 100% là giá niêm yết — con số đã biết) khác hẳn chiều về-vốn phải chia.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (hai hệ hai con số)",
-  "kidText": "Cùng một thương vụ: lãi 20% theo vốn chỉ còn khoảng 16,7% theo giá bán. Gốc đã biết thì nhân, gốc chưa biết thì chia."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Cùng MỘT thương vụ, hai hệ quy chiếu cho hai con số: lãi 40 nghìn — theo VỐN: 40 : 200 = 20%; theo GIÁ BÁN: 40 : 240 = 1/6 ≈ 16,7% — con số theo giá bán luôn NHỎ hơn vì mẫu to hơn."
-   },
-   {
-    "id": "K2",
-    "text": "\"Giảm giá 20%\" trên giá NIÊM YẾT: gốc 100% là niêm yết — con số ĐÃ BIẾT: khách trả = 150 000 × 0,8 = 120 000 (nhân trực tiếp hợp lệ!). Đối chiếu M1: về-vốn phải chia vì gốc 100% (vốn) CHƯA biết — cùng phép nhân-0,8 mà một nơi đúng một nơi sai là do GỐC."
-   },
-   {
-    "id": "K3",
-    "text": "Quy tắc vàng khi đọc đề tiền nong: xác định gốc 100% ĐÃ BIẾT hay CHƯA — đã biết thì nhân thẳng hệ số; chưa biết thì lập 'bán = ?% gốc' rồi CHIA."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: HAI TẤM KÍNH ĐO MỘT THƯƠNG VỤ. Cùng hộp bánh vốn 200 bán 240 — lãi 40 nghìn. Nhìn qua kính VỐN: 40 trên 200 — hai mươi phần trăm. Nhìn qua kính GIÁ BÁN: 40 trên 240 — một phần sáu, chỉ khoảng mười sáu phẩy bảy phần trăm! Cùng một thương vụ mà hai con số — vì hai tấm kính đặt mẫu số khác nhau: kính giá-bán mẫu to hơn nên con số nhỏ hơn. Còn câu đố nhức đầu từ M1: sao \"giảm giá 20%\" lại ĐƯỢC nhân 0,8 thẳng tay? Nhìn gốc: giảm 20% CỦA GIÁ NIÊM YẾT — niêm yết 150 nghìn là con số ĐÃ BIẾT làm 100%: khách trả 150 × 0,8 = MỘT TRĂM HAI MƯƠI nghìn, hợp lệ! Về-vốn phải chia vì gốc (vốn) CHƯA biết. Cùng một phép nhân — khác số phận vì GỐC: gốc đã biết thì nhân, gốc chưa biết thì chia.",
-  "canonicalExamples": [
-   {
-    "case": "hai kính một thương vụ (ca lõi)",
-    "problem": "Thương vụ vốn 200 000 bán 240 000 (lãi 40 000): số tiền lãi bằng bao nhiêu phần trăm so với GIÁ BÁN? So sánh với con số theo vốn.",
-    "solution": "Theo giá bán: 40 000 : 240 000 = 1/6 ≈ 16,7% — nhỏ hơn 20% theo vốn: cùng thương vụ, hai hệ hai con số.",
-    "why": "Ca LT5 — đổi hệ quy chiếu."
-   },
-   {
-    "case": "giảm theo niêm yết (ca nhân hợp lệ)",
-    "problem": "Một món đồ niêm yết 150 000 đồng, giảm giá 20%. Hỏi khách phải trả bao nhiêu tiền?",
-    "solution": "Gốc 100% = giá niêm yết (đã biết) → trả = 150 000 × 0,8 = 120 000 đồng.",
-    "why": "Ca LT2 — đối chiếu với M1: gốc đã biết thì nhân thẳng."
-   }
-  ],
-  "numberRange": "Lớp 5: 1/6 ≈ 16,7%; tiền ≤ 500 nghìn.",
-  "misconceptions": [
-   {
-    "wrong": "Tưởng hai hệ cho cùng một con số %, hoặc tưởng phép nhân 0,8 lúc nào cũng sai sau bài học M1.",
-    "signal": "Lãi% theo vốn và theo giá bán bị dùng lẫn; né nhân 0,8 cả khi gốc đã biết.",
-    "fix": "K1 + K3 — hai kính hai mẫu số; quy tắc gốc: ĐÃ BIẾT thì nhân thẳng, CHƯA biết thì chia.",
-    "counterExample": "Giảm 20% niêm yết 150k mà đòi chia 1,2 ra 125k — cửa hàng nào chịu bán thế!"
-   }
-  ],
-  "vocabulary": [
-   "hai tấm kính",
-   "hệ quy chiếu vốn / giá bán",
-   "gốc đã biết — gốc chưa biết",
-   "nhân thẳng vs chia"
-  ],
-  "mantra": "HAI HỆ HAI CON SỐ — GỐC ĐÃ BIẾT THÌ NHÂN, CHƯA BIẾT THÌ CHIA!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "mcq",
-    "text": "Ôn M1: bán 240 lãi 20% theo vốn → vốn = ?",
-    "choices": [
-     "240 : 1,2 = 200",
-     "240 × 0,8",
-     "240 − 20"
+  "title": "Hai hệ quy chiếu: lãi 20% theo vốn ≈ 16,7% theo giá bán — giảm theo niêm yết thì nhân trực tiếp",
+  "grade": 5,
+  "durationMinutes": 7,
+  "skills": {
+    "primary": [
+      "CASE:II.5.1#2"
     ],
-    "answerKey": {
-     "choice": "240 : 1,2 = 200"
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B38.M1",
-   "message": "Ôn la bàn vốn rồi đeo hai tấm kính nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Cửa hàng khoe: \"thương vụ lãi 20%!\" — kế toán lại ghi: \"lãi 16,7%.\" Trí Long hoang mang: \"Cùng hộp bánh vốn 200 bán 240 — sao hai con số?!\" Su Kem giơ hai tấm kính: \"Xem mỗi bên chia cho AI đã.\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "lãi 20% hay 16,7%??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đeo hai tấm kính!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1"
+    "bktUnit": "CASE:II.5.1#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B38",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B38.M1",
+    "next": "DL:KSN5Q1.B38.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B38",
+    "chunks": [
+      "CHUNK:KSN5Q1.B38.S4",
+      "CHUNK:KSN5Q1.B38.S5"
     ],
-    "narration": "Cùng khoản lãi BỐN MƯƠI nghìn — hai tấm kính hai mẫu số! Kính VỐN: bốn mươi trên hai trăm — HAI MƯƠI phần trăm. Kính GIÁ BÁN: bốn mươi trên hai trăm bốn mươi — một phần sáu: khoảng MƯỜI SÁU PHẨY BẢY phần trăm! Kính giá-bán mẫu to hơn nên con số nhỏ hơn — cùng một thương vụ, hai hệ hai con số: nói lãi bao nhiêu phần trăm phải kèm THEO GÌ!",
-    "display": {
-     "type": "two_lens_interactive",
-     "spec": {
-      "deal": "vốn 200 · bán 240 · lãi 40",
-      "lens1": "40 : 200 = 20% (theo vốn)",
-      "lens2": "40 : 240 = 1/6 ≈ 16,7% (theo giá bán)"
-     }
-    },
-    "interaction": {
-     "type": "look_through_lenses",
-     "answerKey": {
-      "value": "16,7%"
-     },
-     "successMessage": "Hai kính: 20% theo vốn — 16,7% theo giá bán!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "Lãi 40, vốn 200, bán 240 — lãi% theo GIÁ BÁN là:",
-     "choices": [
-      "≈ 16,7%",
-      "20%",
-      "24%"
-     ],
-     "answerKey": {
-      "choice": "≈ 16,7%"
-     },
-     "wrongFeedback": "40 : 240 = 1/6.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K2",
-     "K3"
+    "cases": [
+      "CA:KSN5Q1.B38.2"
     ],
-    "narration": "Giải câu đố từ bài trước: sao \"giảm giá 20%\" lại ĐƯỢC nhân 0,8 thẳng tay? Nhìn GỐC: giảm hai mươi phần trăm CỦA GIÁ NIÊM YẾT — một trăm năm mươi nghìn là con số ĐÃ BIẾT làm một trăm phần trăm: khách trả một trăm năm mươi nhân không phẩy tám — MỘT TRĂM HAI MƯƠI nghìn, hợp lệ! Về-vốn phải chia vì gốc chưa biết. Quy tắc vàng: gốc ĐÃ BIẾT thì nhân thẳng hệ số — gốc CHƯA biết thì lập đẳng thức rồi CHIA!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "giảm 20% niêm yết 150k (gốc ĐÃ biết) → × 0,8 = 120k ✓",
-      "về vốn (gốc CHƯA biết) → : 1,2",
-      "gốc biết: NHÂN — gốc chưa: CHIA"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú hai kính: hai hệ hai con số — gốc đã biết thì nhân, chưa biết thì chia!",
-    "display": {
-     "type": "mantra_card",
-     "text": "GỐC BIẾT: NHÂN — GỐC CHƯA: CHIA!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 90,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "traps": []
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con phân biệt và đổi giữa HAI HỆ QUY CHIẾU của cùng một thương vụ: lãi 20% theo VỐN (40 : 200) tương đương chỉ ≈ 16,7% theo GIÁ BÁN (40 : 240) — hai hệ hai con số; và nhận ra vì sao \"giảm giá 20%\" trên NIÊM YẾT lại nhân trực tiếp 0,8 (gốc 100% là giá niêm yết — con số đã biết) khác hẳn chiều về-vốn phải chia.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (hai hệ hai con số)",
+    "kidText": "Cùng một thương vụ: lãi 20% theo vốn chỉ còn khoảng 16,7% theo giá bán. Gốc đã biết thì nhân, gốc chưa biết thì chia."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Cửa hàng khoe: thương vụ lãi hai mươi phần trăm! — kế toán lại ghi: lãi mười sáu phẩy bảy phần trăm. Trí Long hoang mang: cùng hộp bánh vốn hai trăm bán hai bốn mươi — sao hai con số?! Su Kem giơ hai tấm kính: xem mỗi bên chia cho AI đã!",
-    "screenText": "lãi 20% hay 16,7%?? — chia cho AI?",
-    "visual": "Tấm biển khoe 20% cạnh sổ kế toán ghi 16,7%; Su Kem giơ hai tấm kính màu khác nhau, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 19
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Cùng khoản lãi BỐN MƯƠI nghìn — hai tấm kính hai mẫu số! Kính VỐN: bốn mươi trên hai trăm — HAI MƯƠI phần trăm. Kính GIÁ BÁN: bốn mươi trên hai trăm bốn mươi — một phần sáu: khoảng MƯỜI SÁU PHẨY BẢY phần trăm! Kính giá-bán mẫu to hơn nên con số nhỏ hơn — cùng một thương vụ, hai hệ hai con số: nói lãi bao nhiêu phần trăm phải kèm THEO GÌ!",
-    "screenText": "lãi 40: /vốn 200 = 20% · /bán 240 = 1/6 ≈ 16,7%",
-    "visual": "Khoản lãi 40 nghìn đặt giữa; hai tấm kính chiếu xuống hai mẫu số 200 và 240 cho hai con số; nhãn 'THEO GÌ?' vàng.",
-    "assets": [],
-    "duration": 27
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Sao giảm-giá-hai-mươi-phần-trăm lại ĐƯỢC nhân thẳng tay? Nhìn GỐC: giảm hai mươi phần trăm CỦA GIÁ NIÊM YẾT — một trăm năm mươi nghìn là con số ĐÃ BIẾT làm một trăm phần trăm: khách trả MỘT TRĂM HAI MƯƠI nghìn, hợp lệ! Về-vốn phải chia vì gốc chưa biết. Quy tắc vàng: gốc ĐÃ BIẾT thì nhân thẳng — gốc CHƯA biết thì lập đẳng thức rồi CHIA!",
-    "screenText": "niêm yết 150k (gốc BIẾT) ×0,8 = 120k ✓ · vốn (CHƯA biết) :1,2",
-    "visual": "Hai cánh cổng GỐC-BIẾT và GỐC-CHƯA-BIẾT với phép nhân và phép chia; nhãn 150k sáng rõ đối lập ô vốn dấu hỏi.",
-    "assets": [],
-    "duration": 25
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú hai kính: hai hệ hai con số — gốc đã biết thì nhân, chưa biết thì chia!",
-    "screenText": "GỐC BIẾT: NHÂN — GỐC CHƯA: CHIA!",
-    "visual": "Thẻ thần chú vàng với icon hai tấm kính.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Hai kính: món đồ niêm yết một trăm năm mươi nghìn giảm hai mươi phần trăm — khách trả bao nhiêu, và vì sao được nhân thẳng? Vào bài luyện ngay!",
-    "screenText": "150k giảm 20% → trả ? (vì sao nhân?)",
-    "visual": "Nhãn giảm giá chờ tính; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 11
-   }
-  ]
- },
- "workedExample": {
-  "title": "Đeo hai kính — soi gốc",
-  "problem": "Thương vụ vốn 200 000 bán 240 000: (a) lãi bằng bao nhiêu % giá bán? (b) Món đồ niêm yết 150 000 giảm 20% — khách trả bao nhiêu?",
-  "steps": [
-   {
-    "show": "Bước 1 — (a) Kính giá bán: 40 000 : 240 000 = 1/6 ≈ 16,7% (< 20% theo vốn).",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Vì sao con số theo giá bán nhỏ hơn?",
-     "choices": [
-      "mẫu số 240 to hơn 200",
-      "lãi ít đi",
-      "đề sai"
-     ],
-     "answerKey": {
-      "choice": "mẫu số 240 to hơn 200"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — (b) Gốc = niêm yết 150 000 (ĐÃ biết) → nhân thẳng: 150 000 × 0,8."
-   },
-   {
-    "show": "Bước 3 — Khách trả 120 000 đồng — nhân hợp lệ vì gốc đã biết (khác chiều về-vốn!).",
-    "askAfter": {
-     "format": "mcq",
-     "text": "Gốc CHƯA biết (như vốn) thì dùng phép:",
-     "choices": [
-      "chia",
-      "nhân thẳng",
-      "trừ"
-     ],
-     "answerKey": {
-      "choice": "chia"
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B38.LT2",
-     "text": "Một món đồ niêm yết 150 000 đồng, giảm giá 20%. Hỏi khách phải trả bao nhiêu tiền?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "trả",
-        "value": "120 000 đồng"
-       }
-      ]
-     },
-     "hints": [
-      "Gốc = niêm yết (đã biết).",
-      "150 000 × 0,8."
-     ],
-     "solutionNarrative": "120 000 đồng — nhân thẳng hợp lệ.",
-     "teaches": [
-      "K2"
-     ],
-     "generator": {
-      "template": "Niêm yết {G} giảm {p}%. Khách trả?",
-      "constraints": {},
-      "answerRule": "G × (1 − p/100)"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B38.LT5",
-     "text": "Với thương vụ vốn 200 000 bán 240 000: số tiền lãi bằng bao nhiêu phần trăm so với GIÁ BÁN? So sánh với con số theo vốn.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "theo giá bán",
-        "value": "1/6 ≈ 16,7%",
-        "options": [
-         "1/6 ≈ 16,7%",
-         "nhỏ hơn 20% theo vốn"
-        ]
-       },
-       {
-        "label": "so sánh",
-        "value": "nhỏ hơn 20% theo vốn",
-        "options": [
-         "1/6 ≈ 16,7%",
-         "nhỏ hơn 20% theo vốn"
-        ]
-       }
-      ]
-     },
-     "hints": [
-      "40 000 : 240 000.",
-      "Mẫu to → số nhỏ."
-     ],
-     "solutionNarrative": "16,7% < 20% — hai hệ hai con số.",
-     "teaches": [
-      "K1"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "tf",
-     "text": "(Đúng/Sai?) Sau bài học 'về vốn phải chia', mọi phép nhân 0,8 với giá tiền đều sai.",
-     "answerKey": {
-      "value": false,
-      "note": "Gốc ĐÃ BIẾT (giá niêm yết 150k) thì nhân thẳng 0,8 hợp lệ — chỉ khi gốc CHƯA biết (vốn) mới phải chia."
-     },
-     "hints": [
-      "Soi gốc 100%.",
-      "Niêm yết đã biết chưa?"
-     ],
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:II.5.1#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B38.M3",
-   "award": "huy_hieu_hai_tam_kinh"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "text": "Lãi 40, vốn 200, bán 240 — lãi% theo GIÁ BÁN:",
-    "choices": [
-     "≈ 16,7%",
-     "20%",
-     "24%"
-    ],
-    "answerKey": {
-     "choice": "≈ 16,7%"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mb",
-    "text": "Niêm yết 150 000 giảm 20% → khách trả?",
-    "answerKey": {
-     "parts": [
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "trả",
-       "value": "120 000 đồng"
+        "id": "K1",
+        "text": "Cùng MỘT thương vụ, hai hệ quy chiếu cho hai con số: lãi 40 nghìn — theo VỐN: 40 : 200 = 20%; theo GIÁ BÁN: 40 : 240 = 1/6 ≈ 16,7% — con số theo giá bán luôn NHỎ hơn vì mẫu to hơn."
+      },
+      {
+        "id": "K2",
+        "text": "\"Giảm giá 20%\" trên giá NIÊM YẾT: gốc 100% là niêm yết — con số ĐÃ BIẾT: khách trả = 150 000 × 0,8 = 120 000 (nhân trực tiếp hợp lệ!). Đối chiếu M1: về-vốn phải chia vì gốc 100% (vốn) CHƯA biết — cùng phép nhân-0,8 mà một nơi đúng một nơi sai là do GỐC."
+      },
+      {
+        "id": "K3",
+        "text": "Quy tắc vàng khi đọc đề tiền nong: xác định gốc 100% ĐÃ BIẾT hay CHƯA — đã biết thì nhân thẳng hệ số; chưa biết thì lập 'bán = ?% gốc' rồi CHIA."
       }
-     ]
-    },
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "text": "Gốc 100% CHƯA biết thì tìm nó bằng phép:",
-    "choices": [
-     "chia",
-     "nhân thẳng",
-     "cộng"
     ],
-    "answerKey": {
-     "choice": "chia"
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Lãi 20% theo vốn = ?% theo giá bán? Khi nào nhân 0,8 hợp lệ?",
-    "back": "HAI KÍNH: 40/200 = 20% (vốn) — 40/240 = 1/6 ≈ 16,7% (giá bán): mẫu to số nhỏ, nói lãi phải kèm THEO GÌ. Nhân 0,8 hợp lệ khi gốc ĐÃ BIẾT (niêm yết 150k → trả 120k); gốc CHƯA biết (vốn) thì CHIA 1,2."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P3 (soi gốc)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con phân biệt hai hệ quy chiếu vốn / giá bán và quy tắc gốc-biết-thì-nhân, gốc-chưa-thì-chia. Con đạt {score}/3.",
-  "homeActivity": "Xem hóa đơn giảm giá thật: con chỉ gốc 100% (giá niêm yết) và giải thích vì sao được nhân thẳng.",
-  "watchFor": "Nếu con né mọi phép nhân 0,8 sau bài trước — hỏi 'gốc đã biết chưa?' (S3)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B38.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "lãi 20% hay 16,7%??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Cùng hộp bánh vốn 200 bán 240 — sao hai con số?!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Xem mỗi bên chia cho AI đã.",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B38_M2_F1.png",
-   "sha256_16": "71aaf770440de4b7"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "Hai hệ quy chiếu: lãi 20% theo vốn ≈ 16,7% theo giá bán — giảm theo niêm yết thì nhân trực tiếp",
-    "formulas": [
-     {
-      "text": "vốn 200 · bán 240 · lãi 40",
-      "tone": "navy"
-     },
-     {
-      "text": "40 : 200 = 20% (theo vốn)",
-      "tone": "teal"
-     },
-     {
-      "text": "40 : 240 = 1/6 ≈ 16,7% (theo giá bán)",
-      "tone": "gold"
-     }
-    ]
-   },
-   "caption": "Ý chính của bài gói trong mấy dòng",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B38_M2_F2.png",
-   "sha256_16": "526a6bb8628532f5"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Cùng MỘT thương vụ, hai hệ quy chiếu cho hai con số",
-      "text": "lãi 40 nghìn — theo VỐN: 40 : 200 = 20%; theo GIÁ BÁN: 40 : 240 = 1/6 ≈ 16,7% — con số theo giá bán luôn NHỎ hơn vì mẫu to hơn.",
-      "tone": "navy"
-     },
-     {
-      "label": "\"Giảm giá 20%\" trên giá NIÊM YẾT",
-      "text": "gốc 100% là niêm yết — con số ĐÃ BIẾT: khách trả = 150 000 × 0,8 = 120 000 (nhân trực tiếp hợp lệ!). Đối chiếu M1: về-vốn phải chia vì gốc 100% (vốn) CHƯA biết — cùng phép nhân-0,8 mà một nơi đúng một nơi sai là do GỐC.",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: HAI TẤM KÍNH ĐO MỘT THƯƠNG VỤ. Cùng hộp bánh vốn 200 bán 240 — lãi 40 nghìn. Nhìn qua kính VỐN: 40 trên 200 — hai mươi phần trăm. Nhìn qua kính GIÁ BÁN: 40 trên 240 — một phần sáu, chỉ khoảng mười sáu phẩy bảy phần trăm! Cùng một thương vụ mà hai con số — vì hai tấm kính đặt mẫu số khác nhau: kính giá-bán mẫu to hơn nên con số nhỏ hơn. Còn câu đố nhức đầu từ M1: sao \"giảm giá 20%\" lại ĐƯỢC nhân 0,8 thẳng tay? Nhìn gốc: giảm 20% CỦA GIÁ NIÊM YẾT — niêm yết 150 nghìn là con số ĐÃ BIẾT làm 100%: khách trả 150 × 0,8 = MỘT TRĂM HAI MƯƠI nghìn, hợp lệ! Về-vốn phải chia vì gốc (vốn) CHƯA biết. Cùng một phép nhân — khác số phận vì GỐC: gốc đã biết thì nhân, gốc chưa biết thì chia.",
+    "canonicalExamples": [
+      {
+        "case": "hai kính một thương vụ (ca lõi)",
+        "problem": "Thương vụ vốn 200 000 bán 240 000 (lãi 40 000): số tiền lãi bằng bao nhiêu phần trăm so với GIÁ BÁN? So sánh với con số theo vốn.",
+        "solution": "Theo giá bán: 40 000 : 240 000 = 1/6 ≈ 16,7% — nhỏ hơn 20% theo vốn: cùng thương vụ, hai hệ hai con số.",
+        "why": "Ca LT5 — đổi hệ quy chiếu."
+      },
+      {
+        "case": "giảm theo niêm yết (ca nhân hợp lệ)",
+        "problem": "Một món đồ niêm yết 150 000 đồng, giảm giá 20%. Hỏi khách phải trả bao nhiêu tiền?",
+        "solution": "Gốc 100% = giá niêm yết (đã biết) → trả = 150 000 × 0,8 = 120 000 đồng.",
+        "why": "Ca LT2 — đối chiếu với M1: gốc đã biết thì nhân thẳng."
+      }
+    ],
+    "numberRange": "Lớp 5: 1/6 ≈ 16,7%; tiền ≤ 500 nghìn.",
+    "misconceptions": [
+      {
+        "wrong": "Tưởng hai hệ cho cùng một con số %, hoặc tưởng phép nhân 0,8 lúc nào cũng sai sau bài học M1.",
+        "signal": "Lãi% theo vốn và theo giá bán bị dùng lẫn; né nhân 0,8 cả khi gốc đã biết.",
+        "fix": "K1 + K3 — hai kính hai mẫu số; quy tắc gốc: ĐÃ BIẾT thì nhân thẳng, CHƯA biết thì chia.",
+        "counterExample": "Giảm 20% niêm yết 150k mà đòi chia 1,2 ra 125k — cửa hàng nào chịu bán thế!"
+      }
+    ],
+    "vocabulary": [
+      "hai tấm kính",
+      "hệ quy chiếu vốn / giá bán",
+      "gốc đã biết — gốc chưa biết",
+      "nhân thẳng vs chia"
     ],
     "mantra": "HAI HỆ HAI CON SỐ — GỐC ĐÃ BIẾT THÌ NHÂN, CHƯA BIẾT THÌ CHIA!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B38_M2_F3.png",
-   "sha256_16": "31f0a1fc8dc3c175"
   },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT THƯƠNG VỤ — HAI HỆ QUY CHIẾU",
-    "neutral": true,
-    "wrong": {
-     "head": "THEO VỐN",
-     "steps": [
-      "lãi 40 000 : vốn 200 000"
-     ],
-     "result": "20%"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "mcq",
+        "text": "Ôn M1: bán 240 lãi 20% theo vốn → vốn = ?",
+        "choices": [
+          "240 : 1,2 = 200",
+          "240 × 0,8",
+          "240 − 20"
+        ],
+        "answerKey": {
+          "choice": "240 : 1,2 = 200"
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B38.M1",
+      "message": "Ôn la bàn vốn rồi đeo hai tấm kính nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Cửa hàng khoe: \"thương vụ lãi 20%!\" — kế toán lại ghi: \"lãi 16,7%.\" Trí Long hoang mang: \"Cùng hộp bánh vốn 200 bán 240 — sao hai con số?!\" Su Kem giơ hai tấm kính: \"Xem mỗi bên chia cho AI đã.\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "lãi 20% hay 16,7%??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để đeo hai tấm kính!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 44,
+        "teaches": [
+          "K1"
+        ],
+        "narration": "Cùng khoản lãi BỐN MƯƠI nghìn — hai tấm kính hai mẫu số! Kính VỐN: bốn mươi trên hai trăm — HAI MƯƠI phần trăm. Kính GIÁ BÁN: bốn mươi trên hai trăm bốn mươi — một phần sáu: khoảng MƯỜI SÁU PHẨY BẢY phần trăm! Kính giá-bán mẫu to hơn nên con số nhỏ hơn — cùng một thương vụ, hai hệ hai con số: nói lãi bao nhiêu phần trăm phải kèm THEO GÌ!",
+        "display": {
+          "type": "two_lens_interactive",
+          "spec": {
+            "deal": "vốn 200 · bán 240 · lãi 40",
+            "lens1": "40 : 200 = 20% (theo vốn)",
+            "lens2": "40 : 240 = 1/6 ≈ 16,7% (theo giá bán)"
+          }
+        },
+        "interaction": {
+          "type": "look_through_lenses",
+          "answerKey": {
+            "value": "16,7%"
+          },
+          "successMessage": "Hai kính: 20% theo vốn — 16,7% theo giá bán!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "Lãi 40, vốn 200, bán 240 — lãi% theo GIÁ BÁN là:",
+          "choices": [
+            "≈ 16,7%",
+            "20%",
+            "24%"
+          ],
+          "answerKey": {
+            "choice": "≈ 16,7%"
+          },
+          "wrongFeedback": "40 : 240 = 1/6.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 40,
+        "teaches": [
+          "K2",
+          "K3"
+        ],
+        "narration": "Giải câu đố từ bài trước: sao \"giảm giá 20%\" lại ĐƯỢC nhân 0,8 thẳng tay? Nhìn GỐC: giảm hai mươi phần trăm CỦA GIÁ NIÊM YẾT — một trăm năm mươi nghìn là con số ĐÃ BIẾT làm một trăm phần trăm: khách trả một trăm năm mươi nhân không phẩy tám — MỘT TRĂM HAI MƯƠI nghìn, hợp lệ! Về-vốn phải chia vì gốc chưa biết. Quy tắc vàng: gốc ĐÃ BIẾT thì nhân thẳng hệ số — gốc CHƯA biết thì lập đẳng thức rồi CHIA!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "giảm 20% niêm yết 150k (gốc ĐÃ biết) → × 0,8 = 120k ✓",
+            "về vốn (gốc CHƯA biết) → : 1,2",
+            "gốc biết: NHÂN — gốc chưa: CHIA"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú hai kính: hai hệ hai con số — gốc đã biết thì nhân, chưa biết thì chia!",
+        "display": {
+          "type": "mantra_card",
+          "text": "GỐC BIẾT: NHÂN — GỐC CHƯA: CHIA!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 90,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "right": {
-     "head": "THEO GIÁ BÁN",
-     "steps": [
-      "lãi 40 000 : bán 240 000"
-     ],
-     "result": "1/6 ≈ 16,7%"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "verdict": "Gốc khác nhau nên số khác nhau — phải đọc kỹ \"so với cái gì\""
-   },
-   "caption": "Giảm theo niêm yết thì gốc 100% chính là giá niêm yết",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B38_M2_F4.png",
-   "sha256_16": "b7b14ba97a914a2e"
-  }
- ]
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Cửa hàng khoe: thương vụ lãi hai mươi phần trăm! — kế toán lại ghi: lãi mười sáu phẩy bảy phần trăm. Trí Long hoang mang: cùng hộp bánh vốn hai trăm bán hai bốn mươi — sao hai con số?! Su Kem giơ hai tấm kính: xem mỗi bên chia cho AI đã!",
+        "screenText": "lãi 20% hay 16,7%?? — chia cho AI?",
+        "visual": "Tấm biển khoe 20% cạnh sổ kế toán ghi 16,7%; Su Kem giơ hai tấm kính màu khác nhau, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 19
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Cùng khoản lãi BỐN MƯƠI nghìn — hai tấm kính hai mẫu số! Kính VỐN: bốn mươi trên hai trăm — HAI MƯƠI phần trăm. Kính GIÁ BÁN: bốn mươi trên hai trăm bốn mươi — một phần sáu: khoảng MƯỜI SÁU PHẨY BẢY phần trăm! Kính giá-bán mẫu to hơn nên con số nhỏ hơn — cùng một thương vụ, hai hệ hai con số: nói lãi bao nhiêu phần trăm phải kèm THEO GÌ!",
+        "screenText": "lãi 40: /vốn 200 = 20% · /bán 240 = 1/6 ≈ 16,7%",
+        "visual": "Khoản lãi 40 nghìn đặt giữa; hai tấm kính chiếu xuống hai mẫu số 200 và 240 cho hai con số; nhãn 'THEO GÌ?' vàng.",
+        "assets": [],
+        "duration": 27
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Sao giảm-giá-hai-mươi-phần-trăm lại ĐƯỢC nhân thẳng tay? Nhìn GỐC: giảm hai mươi phần trăm CỦA GIÁ NIÊM YẾT — một trăm năm mươi nghìn là con số ĐÃ BIẾT làm một trăm phần trăm: khách trả MỘT TRĂM HAI MƯƠI nghìn, hợp lệ! Về-vốn phải chia vì gốc chưa biết. Quy tắc vàng: gốc ĐÃ BIẾT thì nhân thẳng — gốc CHƯA biết thì lập đẳng thức rồi CHIA!",
+        "screenText": "niêm yết 150k (gốc BIẾT) ×0,8 = 120k ✓ · vốn (CHƯA biết) :1,2",
+        "visual": "Hai cánh cổng GỐC-BIẾT và GỐC-CHƯA-BIẾT với phép nhân và phép chia; nhãn 150k sáng rõ đối lập ô vốn dấu hỏi.",
+        "assets": [],
+        "duration": 25
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú hai kính: hai hệ hai con số — gốc đã biết thì nhân, chưa biết thì chia!",
+        "screenText": "GỐC BIẾT: NHÂN — GỐC CHƯA: CHIA!",
+        "visual": "Thẻ thần chú vàng với icon hai tấm kính.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Hai kính: món đồ niêm yết một trăm năm mươi nghìn giảm hai mươi phần trăm — khách trả bao nhiêu, và vì sao được nhân thẳng? Vào bài luyện ngay!",
+        "screenText": "150k giảm 20% → trả ? (vì sao nhân?)",
+        "visual": "Nhãn giảm giá chờ tính; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 11
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Đeo hai kính — soi gốc",
+    "problem": "Thương vụ vốn 200 000 bán 240 000: (a) lãi bằng bao nhiêu % giá bán? (b) Món đồ niêm yết 150 000 giảm 20% — khách trả bao nhiêu?",
+    "steps": [
+      {
+        "show": "Bước 1 — (a) Kính giá bán: 40 000 : 240 000 = 1/6 ≈ 16,7% (< 20% theo vốn).",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Vì sao con số theo giá bán nhỏ hơn?",
+          "choices": [
+            "mẫu số 240 to hơn 200",
+            "lãi ít đi",
+            "đề sai"
+          ],
+          "answerKey": {
+            "choice": "mẫu số 240 to hơn 200"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — (b) Gốc = niêm yết 150 000 (ĐÃ biết) → nhân thẳng: 150 000 × 0,8."
+      },
+      {
+        "show": "Bước 3 — Khách trả 120 000 đồng — nhân hợp lệ vì gốc đã biết (khác chiều về-vốn!).",
+        "askAfter": {
+          "format": "mcq",
+          "text": "Gốc CHƯA biết (như vốn) thì dùng phép:",
+          "choices": [
+            "chia",
+            "nhân thẳng",
+            "trừ"
+          ],
+          "answerKey": {
+            "choice": "chia"
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B38.LT2",
+          "text": "Một món đồ niêm yết 150 000 đồng, giảm giá 20%. Hỏi khách phải trả bao nhiêu tiền?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "trả",
+                "value": "120 000 đồng"
+              }
+            ]
+          },
+          "hints": [
+            "Gốc = niêm yết (đã biết).",
+            "150 000 × 0,8."
+          ],
+          "solutionNarrative": "120 000 đồng — nhân thẳng hợp lệ.",
+          "teaches": [
+            "K2"
+          ],
+          "generator": {
+            "template": "Niêm yết {G} giảm {p}%. Khách trả?",
+            "constraints": {},
+            "answerRule": "G × (1 − p/100)"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B38.LT5",
+          "text": "Với thương vụ vốn 200 000 bán 240 000: số tiền lãi bằng bao nhiêu phần trăm so với GIÁ BÁN? So sánh với con số theo vốn.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "theo giá bán",
+                "value": "1/6 ≈ 16,7%",
+                "options": [
+                  "1/6 ≈ 16,7%",
+                  "nhỏ hơn 20% theo vốn"
+                ]
+              },
+              {
+                "label": "so sánh",
+                "value": "nhỏ hơn 20% theo vốn",
+                "options": [
+                  "1/6 ≈ 16,7%",
+                  "nhỏ hơn 20% theo vốn"
+                ]
+              }
+            ]
+          },
+          "hints": [
+            "40 000 : 240 000.",
+            "Mẫu to → số nhỏ."
+          ],
+          "solutionNarrative": "16,7% < 20% — hai hệ hai con số.",
+          "teaches": [
+            "K1"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "tf",
+          "text": "(Đúng/Sai?) Sau bài học 'về vốn phải chia', mọi phép nhân 0,8 với giá tiền đều sai.",
+          "answerKey": {
+            "value": false,
+            "note": "Gốc ĐÃ BIẾT (giá niêm yết 150k) thì nhân thẳng 0,8 hợp lệ — chỉ khi gốc CHƯA biết (vốn) mới phải chia."
+          },
+          "hints": [
+            "Soi gốc 100%.",
+            "Niêm yết đã biết chưa?"
+          ],
+          "teaches": [
+            "K2",
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:II.5.1#2@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B38.M3",
+      "award": "huy_hieu_hai_tam_kinh"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "text": "Lãi 40, vốn 200, bán 240 — lãi% theo GIÁ BÁN:",
+        "choices": [
+          "≈ 16,7%",
+          "20%",
+          "24%"
+        ],
+        "answerKey": {
+          "choice": "≈ 16,7%"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mb",
+        "text": "Niêm yết 150 000 giảm 20% → khách trả?",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "trả",
+              "value": "120 000 đồng"
+            }
+          ]
+        },
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "text": "Gốc 100% CHƯA biết thì tìm nó bằng phép:",
+        "choices": [
+          "chia",
+          "nhân thẳng",
+          "cộng"
+        ],
+        "answerKey": {
+          "choice": "chia"
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Lãi 20% theo vốn = ?% theo giá bán? Khi nào nhân 0,8 hợp lệ?",
+        "back": "HAI KÍNH: 40/200 = 20% (vốn) — 40/240 = 1/6 ≈ 16,7% (giá bán): mẫu to số nhỏ, nói lãi phải kèm THEO GÌ. Nhân 0,8 hợp lệ khi gốc ĐÃ BIẾT (niêm yết 150k → trả 120k); gốc CHƯA biết (vốn) thì CHIA 1,2."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P3 (soi gốc)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con phân biệt hai hệ quy chiếu vốn / giá bán và quy tắc gốc-biết-thì-nhân, gốc-chưa-thì-chia. Con đạt {score}/3.",
+    "homeActivity": "Xem hóa đơn giảm giá thật: con chỉ gốc 100% (giá niêm yết) và giải thích vì sao được nhân thẳng.",
+    "watchFor": "Nếu con né mọi phép nhân 0,8 sau bài trước — hỏi 'gốc đã biết chưa?' (S3)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B38.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "lãi 20% hay 16,7%??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Cùng hộp bánh vốn 200 bán 240 — sao hai con số?!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Xem mỗi bên chia cho AI đã.",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B38_M2_F1.png",
+      "sha256_16": "71aaf770440de4b7"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "Hai hệ quy chiếu: lãi 20% theo vốn ≈ 16,7% theo giá bán — giảm theo niêm yết thì nhân trực tiếp",
+        "formulas": [
+          {
+            "text": "vốn 200 · bán 240 · lãi 40",
+            "tone": "navy"
+          },
+          {
+            "text": "40 : 200 = 20% (theo vốn)",
+            "tone": "teal"
+          },
+          {
+            "text": "40 : 240 = 1/6 ≈ 16,7% (theo giá bán)",
+            "tone": "gold"
+          }
+        ]
+      },
+      "caption": "Ý chính của bài gói trong mấy dòng",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B38_M2_F2.png",
+      "sha256_16": "526a6bb8628532f5"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Cùng MỘT thương vụ, hai hệ quy chiếu cho hai con số",
+            "text": "lãi 40 nghìn — theo VỐN: 40 : 200 = 20%; theo GIÁ BÁN: 40 : 240 = 1/6 ≈ 16,7% — con số theo giá bán luôn NHỎ hơn vì mẫu to hơn.",
+            "tone": "navy"
+          },
+          {
+            "label": "\"Giảm giá 20%\" trên giá NIÊM YẾT",
+            "text": "gốc 100% là niêm yết — con số ĐÃ BIẾT: khách trả = 150 000 × 0,8 = 120 000 (nhân trực tiếp hợp lệ!). Đối chiếu M1: về-vốn phải chia vì gốc 100% (vốn) CHƯA biết — cùng phép nhân-0,8 mà một nơi đúng một nơi sai là do GỐC.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "HAI HỆ HAI CON SỐ — GỐC ĐÃ BIẾT THÌ NHÂN, CHƯA BIẾT THÌ CHIA!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B38_M2_F3.png",
+      "sha256_16": "31f0a1fc8dc3c175"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "CÙNG MỘT THƯƠNG VỤ — HAI HỆ QUY CHIẾU",
+        "neutral": true,
+        "wrong": {
+          "head": "THEO VỐN",
+          "steps": [
+            "lãi 40 000 : vốn 200 000"
+          ],
+          "result": "20%"
+        },
+        "right": {
+          "head": "THEO GIÁ BÁN",
+          "steps": [
+            "lãi 40 000 : bán 240 000"
+          ],
+          "result": "1/6 ≈ 16,7%"
+        },
+        "verdict": "Gốc khác nhau nên số khác nhau — phải đọc kỹ \"so với cái gì\""
+      },
+      "caption": "Giảm theo niêm yết thì gốc 100% chính là giá niêm yết",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B38_M2_F4.png",
+      "sha256_16": "b7b14ba97a914a2e"
+    }
+  ]
 }

@@ -114,7 +114,10 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
         <div className="card">
           <div className="kicker">CHỐT NHANH · CON THỬ NHÉ</div>
           <p className="text-[17px] font-semibold leading-snug">{step.item.text}</p>
-          <AnswerInput item={step.item} onResolve={setChecked} />
+          {/* Chốt nhanh CŨNG là con làm bài — trước đây không ghi lên máy chủ, mất
+              trắng 168 câu (một câu mỗi bài). */}
+          <AnswerInput item={step.item}
+                       onResolve={(r, ct) => { setChecked(r); onRecord?.('check', { id: step.item.id, ...ct }); }} />
           {checked && !checked.ok && step.item.wrongFeedback && (
             <p className="mt-2 text-[14.5px] text-mute">{step.item.wrongFeedback}</p>
           )}
@@ -150,7 +153,7 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
                          figure={step.figure} onNext={onNext} />;
 
     case 'worked':
-      return <WorkedExample we={step.we} figure={step.figure} onNext={onNext} />;
+      return <WorkedExample we={step.we} figure={step.figure} onNext={onNext} onRecord={onRecord} />;
 
     /* ══ LUYỆN TẬP ══ */
     case 'practice':

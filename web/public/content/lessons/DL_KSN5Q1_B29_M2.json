@@ -1,651 +1,654 @@
 {
- "title": "Thay áo tỉ: phần trăm & gấp rưỡi về hai số phần nguyên",
- "grade": 5,
- "durationMinutes": 7,
- "skills": {
-  "primary": [
-   "CASE:III.3.1#2"
-  ],
-  "bktUnit": "CASE:III.3.1#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B29",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B29.M1",
-  "next": "DL:KSN5Q1.B29.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B29",
-  "chunks": [
-   "CHUNK:KSN5Q1.B29.S4",
-   "CHUNK:KSN5Q1.B29.S5"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B29.3"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B29.2"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con THAY ÁO mọi trang phục của tỉ về hai số phần nguyên trước khi kẻ ô: phần trăm đổi về phân số tối giản (75% = 3/4 → 3 : 4; 40% = 2/5 → 2 : 5), \"gấp rưỡi\" = 3 : 2, \"gấp đôi\" = 2 : 1 — thay áo xong bài trở về máy ba nhịp quen.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (thay áo trước khi kẻ ô)",
-  "kidText": "Tỉ số mặc nhiều áo: 75%, gấp rưỡi, gấp đôi. Con thay hết về hai số nguyên rồi mới kẻ ô."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Phần trăm là chiếc áo của phân số: 75% = 75/100 = 3/4 (cùng chia 25); 40% = 40/100 = 2/5; 50% = 1/2 — tối giản xong mới lấy tử : mẫu làm tỉ."
-   },
-   {
-    "id": "K2",
-    "text": "Chữ đời thường cũng là áo: \"gấp rưỡi\" = một lần rưỡi = 3/2 → tỉ 3 : 2; \"gấp đôi\" = 2 : 1; \"bằng nửa\" = 1 : 2."
-   },
-   {
-    "id": "K3",
-    "text": "Nghi thức THAY ÁO: gặp %, gấp rưỡi, hay phân số — lột về HAI SỐ PHẦN NGUYÊN rồi mới kẻ ô; thay áo xong, bài 75% giống hệt bài 3/4 (cùng đáp 15 và 20!)."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: PHÒNG THAY ĐỒ TRƯỚC XƯỞNG KẺ Ô. Tỉ số thích mặc đủ kiểu áo đến xưởng: hôm nay khoác áo \"75%\", mai khoác \"gấp rưỡi\" — Trí Long gặp 75% là nhân chia 100 loạn xạ, gặp gấp rưỡi thì đòi vẽ \"một ô rưỡi\"! Luật xưởng: mọi vị khách phải qua PHÒNG THAY ĐỒ, lột áo về HAI SỐ PHẦN NGUYÊN đã. Áo 75%: lột lớp ngoài ra 75/100, tối giản cùng-chia-25 còn 3/4 — tỉ 3 : 4! Áo \"gấp rưỡi\": một lần rưỡi tức ba nửa — tỉ 3 : 2. Thay áo xong, khách 75% hóa ra chính là khách 3/4 hôm trước: cùng bản vẽ 7 ô, cùng đáp 15 và 20 — bài mới mà máy cũ!",
-  "canonicalExamples": [
-   {
-    "case": "áo phần trăm (ca lõi)",
-    "problem": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 75% số bánh khay bơ. Tìm số bánh mỗi khay.",
-    "solution": "Thay áo: 75% = 3/4 → tỉ 3 : 4 → y hệt bài hôm trước: 7 phần = 35 → mè 15; bơ 20.",
-    "why": "Ca LT4 — cùng đáp với bài 3/4: thay áo là thấy người quen."
-   },
-   {
-    "case": "bảng áo thường gặp (ca tra nhanh)",
-    "problem": "Đổi nhanh: 40%? 50%? gấp rưỡi? bằng nửa?",
-    "solution": "40% = 2/5 → 2 : 5; 50% = 1/2 → 1 : 2; gấp rưỡi = 3 : 2; bằng nửa = 1 : 2.",
-    "why": "Ca K1 + K2 — bộ áo hay gặp nhất lớp 5."
-   }
-  ],
-  "numberRange": "Lớp 5: % quen (25, 40, 50, 75); tối giản ≤ 1 bước.",
-  "misconceptions": [
-   {
-    "wrong": "Gặp 75% thì nhân / chia 100 loạn xạ vào tổng; gặp \"gấp rưỡi\" thì vẽ một ô rưỡi lửng lơ.",
-    "signal": "Xuất hiện phép × 100 hay : 100 vô cớ; sơ đồ có nửa ô.",
-    "fix": "K3 — nghi thức thay áo: 75% = 3/4 → 3 : 4; gấp rưỡi = 3 : 2 — hai số nguyên rồi mới kẻ.",
-    "counterExample": "35 × 75 : 100 = 26,25 chiếc bánh lẻ tư — còn 3 : 4 cho đáp đẹp 15 và 20."
-   }
-  ],
-  "vocabulary": [
-   "phòng thay đồ",
-   "lột áo tỉ",
-   "hai số phần nguyên",
-   "khách quen áo mới",
-   "bảng áo thường gặp"
-  ],
-  "mantra": "THAY ÁO TỈ VỀ HAI SỐ NGUYÊN — RỒI HÃY KẺ Ô!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "mcq",
-    "text": "Máy hôm trước: tổng 35, tỉ 3 : 4 → hai số?",
-    "choices": [
-     "15 và 20",
-     "5 và 30",
-     "12 và 23"
+  "title": "Thay áo tỉ: phần trăm & gấp rưỡi về hai số phần nguyên",
+  "grade": 5,
+  "durationMinutes": 7,
+  "skills": {
+    "primary": [
+      "CASE:III.3.1#2"
     ],
-    "answerKey": {
-     "choice": "15 và 20"
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B29.M1",
-   "message": "Ôn ba nhịp kẻ ô rồi ghé phòng thay đồ nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Khách mới đến xưởng: \"khay mè bằng 75% khay bơ, tổng 35 chiếc.\" Trí Long hoảng: \"75 phần trăm… nhân 100 hay chia 100 nhỉ?!\" — bấm máy ra 26,25 chiếc bánh lẻ tư. Su Kem mở cửa phòng thay đồ: \"Mời khách lột áo đã.\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "75% — nhân hay chia 100?!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở phòng thay đồ!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K3"
+    "bktUnit": "CASE:III.3.1#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B29",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B29.M1",
+    "next": "DL:KSN5Q1.B29.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B29",
+    "chunks": [
+      "CHUNK:KSN5Q1.B29.S4",
+      "CHUNK:KSN5Q1.B29.S5"
     ],
-    "narration": "Lột áo 75%: lớp ngoài là bảy lăm phần một trăm — tối giản cùng-chia-hai-lăm còn BA PHẦN TƯ: tỉ BA TRÊN BỐN! Ơ — khách này chính là vị khách ba-phần-tư hôm trước: cùng bản vẽ ba ô với bốn ô, cùng đếm BẢY, cùng đáp MƯỜI LĂM và HAI MƯƠI! Bài mới mà máy cũ — thay áo xong là thấy người quen.",
-    "display": {
-     "type": "dressing_room_interactive",
-     "spec": {
-      "coat": "75%",
-      "strip": "75/100",
-      "reduce": "÷25 → 3/4",
-      "ratio": "3 : 4",
-      "same": "y hệt bài 3/4: 15 & 20"
-     }
-    },
-    "interaction": {
-     "type": "strip_coat",
-     "answerKey": {
-      "value": "3:4"
-     },
-     "successMessage": "75% = 3/4 — người quen áo mới: 15 & 20!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "75% viết thành phân số tối giản là:",
-     "choices": [
-      "3/4",
-      "7/5",
-      "75/10"
-     ],
-     "answerKey": {
-      "choice": "3/4"
-     },
-     "wrongFeedback": "75/100 cùng chia 25.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K2",
-     "K3"
+    "cases": [
+      "CA:KSN5Q1.B29.3"
     ],
-    "narration": "Áo chữ đời thường: \"gấp RƯỠI\" — một lần rưỡi, tức ba nửa: tỉ BA TRÊN HAI, đừng vẽ ô rưỡi lửng lơ! Bộ áo hay gặp treo sẵn trên giá: bốn mươi phần trăm là hai phần năm — tỉ hai trên năm; năm mươi phần trăm là một nửa — một trên hai; \"bằng nửa\" cũng một trên hai. Nghi thức cửa xưởng: khách nào cũng lột về HAI SỐ NGUYÊN rồi mới được kẻ ô.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "gấp rưỡi = 3/2 → 3 : 2 (không vẽ ô rưỡi!)",
-      "40% = 2/5 · 50% = 1/2 · bằng nửa = 1 : 2",
-      "thay áo xong → máy ba nhịp như thường"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Thần chú phòng thay đồ: thay áo tỉ về hai số nguyên — rồi hãy kẻ ô!",
-    "display": {
-     "type": "mantra_card",
-     "text": "THAY ÁO — RỒI KẺ Ô!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 87,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "traps": [
+      "TRAP:KSN5Q1.B29.2"
+    ]
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con THAY ÁO mọi trang phục của tỉ về hai số phần nguyên trước khi kẻ ô: phần trăm đổi về phân số tối giản (75% = 3/4 → 3 : 4; 40% = 2/5 → 2 : 5), \"gấp rưỡi\" = 3 : 2, \"gấp đôi\" = 2 : 1 — thay áo xong bài trở về máy ba nhịp quen.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (thay áo trước khi kẻ ô)",
+    "kidText": "Tỉ số mặc nhiều áo: 75%, gấp rưỡi, gấp đôi. Con thay hết về hai số nguyên rồi mới kẻ ô."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Khách mới đến xưởng: khay mè bằng bảy lăm phần trăm khay bơ, tổng ba lăm chiếc. Trí Long hoảng: bảy lăm phần trăm… nhân một trăm hay chia một trăm nhỉ?! — bấm máy ra hai sáu phẩy hai lăm chiếc bánh lẻ tư. Su Kem mở cửa phòng thay đồ: mời khách lột áo đã!",
-    "screenText": "75% → ×100? :100? → 26,25 chiếc?!",
-    "visual": "Vị khách tỉ số khoác áo choàng in '75%'; Trí Long bấm máy tính khói bốc; cửa phòng thay đồ hé mở, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Lột áo bảy lăm phần trăm: lớp ngoài là bảy lăm phần một trăm — tối giản cùng-chia-hai-lăm còn BA PHẦN TƯ: tỉ BA TRÊN BỐN! Ơ — khách này chính là vị khách ba-phần-tư hôm trước: cùng bản vẽ ba ô với bốn ô, cùng đếm BẢY, cùng đáp MƯỜI LĂM và HAI MƯƠI! Bài mới mà máy cũ — thay áo xong là thấy người quen!",
-    "screenText": "75% → 75/100 ÷25 → 3/4 → 3 : 4 → 15 & 20 (người quen!)",
-    "visual": "Áo choàng 75% tuột xuống lộ bộ đồ '3/4' quen thuộc; gương phòng thay đồ chiếu đúng vị khách hôm trước; bản vẽ 7 ô tái hiện.",
-    "assets": [],
-    "duration": 24
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Áo chữ đời thường: gấp RƯỠI — một lần rưỡi, tức ba nửa: tỉ BA TRÊN HAI, đừng vẽ ô rưỡi lửng lơ! Bộ áo hay gặp treo sẵn trên giá: bốn mươi phần trăm là hai phần năm; năm mươi phần trăm là một nửa; bằng nửa cũng một trên hai. Nghi thức cửa xưởng: khách nào cũng lột về HAI SỐ NGUYÊN rồi mới được kẻ ô!",
-    "screenText": "gấp rưỡi = 3 : 2 · 40% = 2 : 5 · 50% = 1 : 2",
-    "visual": "Giá treo bộ áo thường gặp với nhãn quy đổi; ô rưỡi lửng lơ bị gạch đỏ; cổng xưởng có biển 'HAI SỐ NGUYÊN MỚI ĐƯỢC VÀO'.",
-    "assets": [],
-    "duration": 25
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú phòng thay đồ: thay áo tỉ về hai số nguyên — rồi hãy kẻ ô!",
-    "screenText": "THAY ÁO — RỒI KẺ Ô!",
-    "visual": "Thẻ thần chú vàng với icon móc áo.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Khách của con: khay mè bằng bảy lăm phần trăm khay bơ, tổng ba lăm chiếc — thay áo rồi tìm mỗi khay! Vào bài luyện ngay!",
-    "screenText": "75% · tổng 35 → thay áo → ?",
-    "visual": "Phòng thay đồ chờ khách; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Người quen sau lớp áo",
-  "problem": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 75% số bánh khay bơ. Tìm số bánh mỗi khay.",
-  "steps": [
-   {
-    "show": "Bước 1 — THAY ÁO: 75% = 75/100 = 3/4 (÷25) → tỉ 3 : 4.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Có nhân 35 với 75 : 100 không?",
-     "choices": [
-      "Không — thay áo về tỉ 3 : 4 đã",
-      "Có",
-      "Tùy"
-     ],
-     "answerKey": {
-      "choice": "Không — thay áo về tỉ 3 : 4 đã"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Máy ba nhịp: 7 phần = 35 → phần 5."
-   },
-   {
-    "show": "Bước 3 — Mè = 15; bơ = 20 — y hệt bài 3/4! Thử: 15 : 20 = 3 : 4 ✓.",
-    "askAfter": {
-     "format": "mcq",
-     "text": "\"Gấp rưỡi\" ứng với tỉ:",
-     "choices": [
-      "3 : 2",
-      "1,5 : 0",
-      "2 : 3"
-     ],
-     "answerKey": {
-      "choice": "3 : 2"
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B29.LT4",
-     "text": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 75% số bánh khay bơ. Tìm số bánh mỗi khay. (Thay áo trước!)",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "mè",
-        "value": 15
-       },
-       {
-        "label": "bơ",
-        "value": 20
-       }
-      ]
-     },
-     "hints": [
-      "75% = 3/4.",
-      "Y hệt bài 3 : 4."
-     ],
-     "solutionNarrative": "Thay áo 3 : 4 → 15 và 20.",
-     "teaches": [
-      "K1",
-      "K3"
-     ],
-     "generator": {
-      "template": "Tổng {S}, tỉ {p}% . Tìm hai số.",
-      "constraints": {
-       "p": "25/40/50/75"
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Phần trăm là chiếc áo của phân số: 75% = 75/100 = 3/4 (cùng chia 25); 40% = 40/100 = 2/5; 50% = 1/2 — tối giản xong mới lấy tử : mẫu làm tỉ."
       },
-      "answerRule": "đổi % → phân số tối giản → máy ba nhịp"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "text": "Đổi nhanh về tỉ hai số nguyên: (a) 40%; (b) gấp rưỡi.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "a",
-        "value": "2 : 5"
-       },
-       {
-        "label": "b",
-        "value": "3 : 2"
-       }
-      ]
-     },
-     "hints": [
-      "40/100 tối giản.",
-      "Một lần rưỡi = ba nửa."
-     ],
-     "solutionNarrative": "40% = 2/5 → 2 : 5; gấp rưỡi = 3 : 2.",
-     "teaches": [
-      "K1",
-      "K2"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "mb",
-     "text": "Tổng hai số là 30, số bé bằng 50% số lớn. Tìm hai số.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "bé",
-        "value": 10
-       },
-       {
-        "label": "lớn",
-        "value": 20
-       }
-      ]
-     },
-     "hints": [
-      "50% = 1/2 → 1 : 2.",
-      "3 phần = 30."
-     ],
-     "solutionNarrative": "Phần 10 → 10 và 20 (thử: 10 = 50% × 20 ✓).",
-     "teaches": [
-      "K1",
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.3.1#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B29.M3",
-   "award": "huy_hieu_phong_thay_do"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B29.QZ3",
-    "text": "75% viết thành phân số tối giản là:",
-    "choices": [
-     "3/4",
-     "7/5",
-     "75/10"
+      {
+        "id": "K2",
+        "text": "Chữ đời thường cũng là áo: \"gấp rưỡi\" = một lần rưỡi = 3/2 → tỉ 3 : 2; \"gấp đôi\" = 2 : 1; \"bằng nửa\" = 1 : 2."
+      },
+      {
+        "id": "K3",
+        "text": "Nghi thức THAY ÁO: gặp %, gấp rưỡi, hay phân số — lột về HAI SỐ PHẦN NGUYÊN rồi mới kẻ ô; thay áo xong, bài 75% giống hệt bài 3/4 (cùng đáp 15 và 20!)."
+      }
     ],
-    "answerKey": {
-     "choice": "3/4"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B29.QZ4",
-    "text": "\"Gấp rưỡi\" ứng với tỉ số:",
-    "choices": [
-     "3 : 2",
-     "1,5 : 0",
-     "2 : 3"
+    "mechanism": "Hình ảnh brand: PHÒNG THAY ĐỒ TRƯỚC XƯỞNG KẺ Ô. Tỉ số thích mặc đủ kiểu áo đến xưởng: hôm nay khoác áo \"75%\", mai khoác \"gấp rưỡi\" — Trí Long gặp 75% là nhân chia 100 loạn xạ, gặp gấp rưỡi thì đòi vẽ \"một ô rưỡi\"! Luật xưởng: mọi vị khách phải qua PHÒNG THAY ĐỒ, lột áo về HAI SỐ PHẦN NGUYÊN đã. Áo 75%: lột lớp ngoài ra 75/100, tối giản cùng-chia-25 còn 3/4 — tỉ 3 : 4! Áo \"gấp rưỡi\": một lần rưỡi tức ba nửa — tỉ 3 : 2. Thay áo xong, khách 75% hóa ra chính là khách 3/4 hôm trước: cùng bản vẽ 7 ô, cùng đáp 15 và 20 — bài mới mà máy cũ!",
+    "canonicalExamples": [
+      {
+        "case": "áo phần trăm (ca lõi)",
+        "problem": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 75% số bánh khay bơ. Tìm số bánh mỗi khay.",
+        "solution": "Thay áo: 75% = 3/4 → tỉ 3 : 4 → y hệt bài hôm trước: 7 phần = 35 → mè 15; bơ 20.",
+        "why": "Ca LT4 — cùng đáp với bài 3/4: thay áo là thấy người quen."
+      },
+      {
+        "case": "bảng áo thường gặp (ca tra nhanh)",
+        "problem": "Đổi nhanh: 40%? 50%? gấp rưỡi? bằng nửa?",
+        "solution": "40% = 2/5 → 2 : 5; 50% = 1/2 → 1 : 2; gấp rưỡi = 3 : 2; bằng nửa = 1 : 2.",
+        "why": "Ca K1 + K2 — bộ áo hay gặp nhất lớp 5."
+      }
     ],
-    "answerKey": {
-     "choice": "3 : 2"
-    },
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "text": "40% ứng với tỉ:",
-    "choices": [
-     "2 : 5",
-     "4 : 10 để nguyên",
-     "5 : 2"
+    "numberRange": "Lớp 5: % quen (25, 40, 50, 75); tối giản ≤ 1 bước.",
+    "misconceptions": [
+      {
+        "wrong": "Gặp 75% thì nhân / chia 100 loạn xạ vào tổng; gặp \"gấp rưỡi\" thì vẽ một ô rưỡi lửng lơ.",
+        "signal": "Xuất hiện phép × 100 hay : 100 vô cớ; sơ đồ có nửa ô.",
+        "fix": "K3 — nghi thức thay áo: 75% = 3/4 → 3 : 4; gấp rưỡi = 3 : 2 — hai số nguyên rồi mới kẻ.",
+        "counterExample": "35 × 75 : 100 = 26,25 chiếc bánh lẻ tư — còn 3 : 4 cho đáp đẹp 15 và 20."
+      }
     ],
-    "answerKey": {
-     "choice": "2 : 5"
-    },
-    "teaches": [
-     "K1"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Tỉ mặc áo % / gấp rưỡi — làm gì trước?",
-    "back": "THAY ÁO về hai số phần nguyên: 75% = 3/4 → 3 : 4; 40% = 2/5; 50% = 1/2; gấp rưỡi = 3 : 2; bằng nửa = 1 : 2 — rồi máy ba nhịp như thường (bài 75% tổng 35 → cùng đáp 15 & 20 với bài 3/4!)."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P3 (50%)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học thay áo tỉ: % và 'gấp rưỡi' về hai số phần nguyên rồi mới kẻ ô. Con đạt {score}/3, {trapResult} câu bẫy nhân-chia-100.",
-  "homeActivity": "Chơi đố áo: bố mẹ hô '75%!', 'gấp rưỡi!', '50%!' — con đáp tỉ hai số nguyên trong 3 giây.",
-  "watchFor": "Nếu con nhân chia 100 loạn xạ — chỉ vào 26,25 chiếc bánh lẻ tư (S1) rồi dẫn qua phòng thay đồ."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B29.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "75% — nhân hay chia 100?!",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "75 phần trăm… nhân 100 hay chia 100 nhỉ?!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Mời khách lột áo đã.",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B29_M2_F1.png",
-   "sha256_16": "78941b9b6f74e49b"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con THAY ÁO mọi trang phục của tỉ về hai số phần nguyên trước khi kẻ ô: phần trăm đổi về phân số tối giản (75% = 3/4 → 3 : 4; 40% = 2/5 → 2 : 5), \"gấp rưỡi\" = 3 : 2, \"gấp đôi\" = 2 : 1 — thay áo xong bài trở về máy ba nhịp quen.",
-    "steps": [
-     {
-      "text": "gấp rưỡi = 3/2 → 3 : 2 (không vẽ ô rưỡi!)"
-     },
-     {
-      "text": "40% = 2/5 · 50% = 1/2 · bằng nửa = 1 : 2"
-     },
-     {
-      "text": "thay áo xong → máy ba nhịp như thường"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B29_M2_F2.png",
-   "sha256_16": "8d500170244132d8"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Phần trăm là chiếc áo của phân số",
-      "text": "75% = 75/100 = 3/4 (cùng chia 25); 40% = 40/100 = 2/5; 50% = 1/2 — tối giản xong mới lấy tử : mẫu làm tỉ.",
-      "tone": "navy"
-     },
-     {
-      "label": "Chữ đời thường cũng là áo",
-      "text": "\"gấp rưỡi\" = một lần rưỡi = 3/2 → tỉ 3 : 2; \"gấp đôi\" = 2 : 1; \"bằng nửa\" = 1 : 2.",
-      "tone": "teal"
-     }
+    "vocabulary": [
+      "phòng thay đồ",
+      "lột áo tỉ",
+      "hai số phần nguyên",
+      "khách quen áo mới",
+      "bảng áo thường gặp"
     ],
     "mantra": "THAY ÁO TỈ VỀ HAI SỐ NGUYÊN — RỒI HÃY KẺ Ô!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B29_M2_F3.png",
-   "sha256_16": "4b807536de9fb917"
   },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "THAY ÁO TỈ SỐ VỀ HAI SỐ PHẦN NGUYÊN",
-    "headers": [
-     "trang phục",
-     "đổi ra phân số",
-     "tỉ số"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "mcq",
+        "text": "Máy hôm trước: tổng 35, tỉ 3 : 4 → hai số?",
+        "choices": [
+          "15 và 20",
+          "5 và 30",
+          "12 và 23"
+        ],
+        "answerKey": {
+          "choice": "15 và 20"
+        }
+      }
     ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "",
-      "cells": [
-       "75%",
-       "3/4",
-       "3 : 4"
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B29.M1",
+      "message": "Ôn ba nhịp kẻ ô rồi ghé phòng thay đồ nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Khách mới đến xưởng: \"khay mè bằng 75% khay bơ, tổng 35 chiếc.\" Trí Long hoảng: \"75 phần trăm… nhân 100 hay chia 100 nhỉ?!\" — bấm máy ra 26,25 chiếc bánh lẻ tư. Su Kem mở cửa phòng thay đồ: \"Mời khách lột áo đã.\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "75% — nhân hay chia 100?!"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để mở phòng thay đồ!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 44,
+        "teaches": [
+          "K1",
+          "K3"
+        ],
+        "narration": "Lột áo 75%: lớp ngoài là bảy lăm phần một trăm — tối giản cùng-chia-hai-lăm còn BA PHẦN TƯ: tỉ BA TRÊN BỐN! Ơ — khách này chính là vị khách ba-phần-tư hôm trước: cùng bản vẽ ba ô với bốn ô, cùng đếm BẢY, cùng đáp MƯỜI LĂM và HAI MƯƠI! Bài mới mà máy cũ — thay áo xong là thấy người quen.",
+        "display": {
+          "type": "dressing_room_interactive",
+          "spec": {
+            "coat": "75%",
+            "strip": "75/100",
+            "reduce": "÷25 → 3/4",
+            "ratio": "3 : 4",
+            "same": "y hệt bài 3/4: 15 & 20"
+          }
+        },
+        "interaction": {
+          "type": "strip_coat",
+          "answerKey": {
+            "value": "3:4"
+          },
+          "successMessage": "75% = 3/4 — người quen áo mới: 15 & 20!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "75% viết thành phân số tối giản là:",
+          "choices": [
+            "3/4",
+            "7/5",
+            "75/10"
+          ],
+          "answerKey": {
+            "choice": "3/4"
+          },
+          "wrongFeedback": "75/100 cùng chia 25.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 38,
+        "teaches": [
+          "K2",
+          "K3"
+        ],
+        "narration": "Áo chữ đời thường: \"gấp RƯỠI\" — một lần rưỡi, tức ba nửa: tỉ BA TRÊN HAI, đừng vẽ ô rưỡi lửng lơ! Bộ áo hay gặp treo sẵn trên giá: bốn mươi phần trăm là hai phần năm — tỉ hai trên năm; năm mươi phần trăm là một nửa — một trên hai; \"bằng nửa\" cũng một trên hai. Nghi thức cửa xưởng: khách nào cũng lột về HAI SỐ NGUYÊN rồi mới được kẻ ô.",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "gấp rưỡi = 3/2 → 3 : 2 (không vẽ ô rưỡi!)",
+            "40% = 2/5 · 50% = 1/2 · bằng nửa = 1 : 2",
+            "thay áo xong → máy ba nhịp như thường"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 12,
+        "narration": "Thần chú phòng thay đồ: thay áo tỉ về hai số nguyên — rồi hãy kẻ ô!",
+        "display": {
+          "type": "mantra_card",
+          "text": "THAY ÁO — RỒI KẺ Ô!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 87,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Khách mới đến xưởng: khay mè bằng bảy lăm phần trăm khay bơ, tổng ba lăm chiếc. Trí Long hoảng: bảy lăm phần trăm… nhân một trăm hay chia một trăm nhỉ?! — bấm máy ra hai sáu phẩy hai lăm chiếc bánh lẻ tư. Su Kem mở cửa phòng thay đồ: mời khách lột áo đã!",
+        "screenText": "75% → ×100? :100? → 26,25 chiếc?!",
+        "visual": "Vị khách tỉ số khoác áo choàng in '75%'; Trí Long bấm máy tính khói bốc; cửa phòng thay đồ hé mở, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Lột áo bảy lăm phần trăm: lớp ngoài là bảy lăm phần một trăm — tối giản cùng-chia-hai-lăm còn BA PHẦN TƯ: tỉ BA TRÊN BỐN! Ơ — khách này chính là vị khách ba-phần-tư hôm trước: cùng bản vẽ ba ô với bốn ô, cùng đếm BẢY, cùng đáp MƯỜI LĂM và HAI MƯƠI! Bài mới mà máy cũ — thay áo xong là thấy người quen!",
+        "screenText": "75% → 75/100 ÷25 → 3/4 → 3 : 4 → 15 & 20 (người quen!)",
+        "visual": "Áo choàng 75% tuột xuống lộ bộ đồ '3/4' quen thuộc; gương phòng thay đồ chiếu đúng vị khách hôm trước; bản vẽ 7 ô tái hiện.",
+        "assets": [],
+        "duration": 24
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Áo chữ đời thường: gấp RƯỠI — một lần rưỡi, tức ba nửa: tỉ BA TRÊN HAI, đừng vẽ ô rưỡi lửng lơ! Bộ áo hay gặp treo sẵn trên giá: bốn mươi phần trăm là hai phần năm; năm mươi phần trăm là một nửa; bằng nửa cũng một trên hai. Nghi thức cửa xưởng: khách nào cũng lột về HAI SỐ NGUYÊN rồi mới được kẻ ô!",
+        "screenText": "gấp rưỡi = 3 : 2 · 40% = 2 : 5 · 50% = 1 : 2",
+        "visual": "Giá treo bộ áo thường gặp với nhãn quy đổi; ô rưỡi lửng lơ bị gạch đỏ; cổng xưởng có biển 'HAI SỐ NGUYÊN MỚI ĐƯỢC VÀO'.",
+        "assets": [],
+        "duration": 25
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú phòng thay đồ: thay áo tỉ về hai số nguyên — rồi hãy kẻ ô!",
+        "screenText": "THAY ÁO — RỒI KẺ Ô!",
+        "visual": "Thẻ thần chú vàng với icon móc áo.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Khách của con: khay mè bằng bảy lăm phần trăm khay bơ, tổng ba lăm chiếc — thay áo rồi tìm mỗi khay! Vào bài luyện ngay!",
+        "screenText": "75% · tổng 35 → thay áo → ?",
+        "visual": "Phòng thay đồ chờ khách; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Người quen sau lớp áo",
+    "problem": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 75% số bánh khay bơ. Tìm số bánh mỗi khay.",
+    "steps": [
+      {
+        "show": "Bước 1 — THAY ÁO: 75% = 75/100 = 3/4 (÷25) → tỉ 3 : 4.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Có nhân 35 với 75 : 100 không?",
+          "choices": [
+            "Không — thay áo về tỉ 3 : 4 đã",
+            "Có",
+            "Tùy"
+          ],
+          "answerKey": {
+            "choice": "Không — thay áo về tỉ 3 : 4 đã"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Máy ba nhịp: 7 phần = 35 → phần 5."
+      },
+      {
+        "show": "Bước 3 — Mè = 15; bơ = 20 — y hệt bài 3/4! Thử: 15 : 20 = 3 : 4 ✓.",
+        "askAfter": {
+          "format": "mcq",
+          "text": "\"Gấp rưỡi\" ứng với tỉ:",
+          "choices": [
+            "3 : 2",
+            "1,5 : 0",
+            "2 : 3"
+          ],
+          "answerKey": {
+            "choice": "3 : 2"
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B29.LT4",
+          "text": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 75% số bánh khay bơ. Tìm số bánh mỗi khay. (Thay áo trước!)",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "mè",
+                "value": 15
+              },
+              {
+                "label": "bơ",
+                "value": 20
+              }
+            ]
+          },
+          "hints": [
+            "75% = 3/4.",
+            "Y hệt bài 3 : 4."
+          ],
+          "solutionNarrative": "Thay áo 3 : 4 → 15 và 20.",
+          "teaches": [
+            "K1",
+            "K3"
+          ],
+          "generator": {
+            "template": "Tổng {S}, tỉ {p}% . Tìm hai số.",
+            "constraints": {
+              "p": "25/40/50/75"
+            },
+            "answerRule": "đổi % → phân số tối giản → máy ba nhịp"
+          }
+        }
       ],
-      "color": "#E9F9F4"
-     },
-     {
-      "label": "",
-      "cells": [
-       "40%",
-       "2/5",
-       "2 : 5"
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "text": "Đổi nhanh về tỉ hai số nguyên: (a) 40%; (b) gấp rưỡi.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "a",
+                "value": "2 : 5"
+              },
+              {
+                "label": "b",
+                "value": "3 : 2"
+              }
+            ]
+          },
+          "hints": [
+            "40/100 tối giản.",
+            "Một lần rưỡi = ba nửa."
+          ],
+          "solutionNarrative": "40% = 2/5 → 2 : 5; gấp rưỡi = 3 : 2.",
+          "teaches": [
+            "K1",
+            "K2"
+          ]
+        }
       ],
-      "color": "white"
-     },
-     {
-      "label": "",
-      "cells": [
-       "gấp rưỡi",
-       "3/2",
-       "3 : 2"
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "mb",
+          "text": "Tổng hai số là 30, số bé bằng 50% số lớn. Tìm hai số.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "bé",
+                "value": 10
+              },
+              {
+                "label": "lớn",
+                "value": 20
+              }
+            ]
+          },
+          "hints": [
+            "50% = 1/2 → 1 : 2.",
+            "3 phần = 30."
+          ],
+          "solutionNarrative": "Phần 10 → 10 và 20 (thử: 10 = 50% × 20 ✓).",
+          "teaches": [
+            "K1",
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.3.1#2@G5"
       ],
-      "color": "#FFF6E2"
-     },
-     {
-      "label": "",
-      "cells": [
-       "bằng nửa",
-       "1/2",
-       "1 : 2"
+      "unlockNext": "DL:KSN5Q1.B29.M3",
+      "award": "huy_hieu_phong_thay_do"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
       ],
-      "color": "white"
-     }
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B29.QZ3",
+        "text": "75% viết thành phân số tối giản là:",
+        "choices": [
+          "3/4",
+          "7/5",
+          "75/10"
+        ],
+        "answerKey": {
+          "choice": "3/4"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B29.QZ4",
+        "text": "\"Gấp rưỡi\" ứng với tỉ số:",
+        "choices": [
+          "3 : 2",
+          "1,5 : 0",
+          "2 : 3"
+        ],
+        "answerKey": {
+          "choice": "3 : 2"
+        },
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "text": "40% ứng với tỉ:",
+        "choices": [
+          "2 : 5",
+          "4 : 10 để nguyên",
+          "5 : 2"
+        ],
+        "answerKey": {
+          "choice": "2 : 5"
+        },
+        "teaches": [
+          "K1"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Tỉ mặc áo % / gấp rưỡi — làm gì trước?",
+        "back": "THAY ÁO về hai số phần nguyên: 75% = 3/4 → 3 : 4; 40% = 2/5; 50% = 1/2; gấp rưỡi = 3 : 2; bằng nửa = 1 : 2 — rồi máy ba nhịp như thường (bài 75% tổng 35 → cùng đáp 15 & 20 với bài 3/4!)."
+      }
     ],
-    "note": "Thay áo xong thì bài 75% giống hệt bài 3/4: 7 phần = 35 → mè 15 · bơ 20"
-   },
-   "caption": "Mọi trang phục của tỉ đều phải thay về hai số phần nguyên trước khi kẻ ô",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B29_M2_F4.png",
-   "sha256_16": "cf80ab7c4646a290"
-  }
- ]
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P3 (50%)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học thay áo tỉ: % và 'gấp rưỡi' về hai số phần nguyên rồi mới kẻ ô. Con đạt {score}/3, {trapResult} câu bẫy nhân-chia-100.",
+    "homeActivity": "Chơi đố áo: bố mẹ hô '75%!', 'gấp rưỡi!', '50%!' — con đáp tỉ hai số nguyên trong 3 giây.",
+    "watchFor": "Nếu con nhân chia 100 loạn xạ — chỉ vào 26,25 chiếc bánh lẻ tư (S1) rồi dẫn qua phòng thay đồ."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B29.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "75% — nhân hay chia 100?!",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "75 phần trăm… nhân 100 hay chia 100 nhỉ?!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Mời khách lột áo đã.",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B29_M2_F1.png",
+      "sha256_16": "78941b9b6f74e49b"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con THAY ÁO mọi trang phục của tỉ về hai số phần nguyên trước khi kẻ ô: phần trăm đổi về phân số tối giản (75% = 3/4 → 3 : 4; 40% = 2/5 → 2 : 5), \"gấp rưỡi\" = 3 : 2, \"gấp đôi\" = 2 : 1 — thay áo xong bài trở về máy ba nhịp quen.",
+        "steps": [
+          {
+            "text": "gấp rưỡi = 3/2 → 3 : 2 (không vẽ ô rưỡi!)"
+          },
+          {
+            "text": "40% = 2/5 · 50% = 1/2 · bằng nửa = 1 : 2"
+          },
+          {
+            "text": "thay áo xong → máy ba nhịp như thường"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B29_M2_F2.png",
+      "sha256_16": "8d500170244132d8"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Phần trăm là chiếc áo của phân số",
+            "text": "75% = 75/100 = 3/4 (cùng chia 25); 40% = 40/100 = 2/5; 50% = 1/2 — tối giản xong mới lấy tử : mẫu làm tỉ.",
+            "tone": "navy"
+          },
+          {
+            "label": "Chữ đời thường cũng là áo",
+            "text": "\"gấp rưỡi\" = một lần rưỡi = 3/2 → tỉ 3 : 2; \"gấp đôi\" = 2 : 1; \"bằng nửa\" = 1 : 2.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "THAY ÁO TỈ VỀ HAI SỐ NGUYÊN — RỒI HÃY KẺ Ô!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B29_M2_F3.png",
+      "sha256_16": "4b807536de9fb917"
+    },
+    {
+      "archetype": "place_value_chart",
+      "params": {
+        "title": "THAY ÁO TỈ SỐ VỀ HAI SỐ PHẦN NGUYÊN",
+        "headers": [
+          "trang phục",
+          "đổi ra phân số",
+          "tỉ số"
+        ],
+        "comma_after": null,
+        "rows": [
+          {
+            "label": "",
+            "cells": [
+              "75%",
+              "3/4",
+              "3 : 4"
+            ],
+            "color": "#E9F9F4"
+          },
+          {
+            "label": "",
+            "cells": [
+              "40%",
+              "2/5",
+              "2 : 5"
+            ],
+            "color": "white"
+          },
+          {
+            "label": "",
+            "cells": [
+              "gấp rưỡi",
+              "3/2",
+              "3 : 2"
+            ],
+            "color": "#FFF6E2"
+          },
+          {
+            "label": "",
+            "cells": [
+              "bằng nửa",
+              "1/2",
+              "1 : 2"
+            ],
+            "color": "white"
+          }
+        ],
+        "note": "Thay áo xong thì bài 75% giống hệt bài 3/4: 7 phần = 35 → mè 15 · bơ 20"
+      },
+      "caption": "Mọi trang phục của tỉ đều phải thay về hai số phần nguyên trước khi kẻ ô",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B29_M2_F4.png",
+      "sha256_16": "cf80ab7c4646a290"
+    }
+  ]
 }

@@ -1,628 +1,631 @@
 {
- "title": "Vành khăn = hiệu HAI DIỆN TÍCH — cấm bình phương hiệu bán kính",
- "grade": 5,
- "durationMinutes": 7,
- "skills": {
-  "primary": [
-   "CASE:IV.4.2#1"
-  ],
-  "bktUnit": "CASE:IV.4.2#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B50",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B49.M3",
-  "next": "DL:KSN5Q1.B50.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B50",
-  "chunks": [
-   "CHUNK:KSN5Q1.B50.S3",
-   "CHUNK:KSN5Q1.B50.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B50.1"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B50.1"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con tính VÀNH KHĂN (hình giữa hai đường tròn cùng tâm) bằng quy trình ba dòng bất di bất dịch: S ngoài — S trong — HIỆU: S = R × R × 3,14 − r × r × 3,14 = 78,5 − 28,26 = 50,24; và vạch mặt được công thức giả \"bình phương hiệu bán kính\" (5 − 3)² × 3,14 = 12,56 — bề rộng vành 2 cm không phải bán kính của hình tròn nào cả.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (vành khăn = hiệu hai S)",
-  "kidText": "Vành khăn bằng diện tích tròn ngoài trừ diện tích tròn trong. Bề rộng vành không phải bán kính của hình tròn nào cả."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Vành khăn = KHOÉT tròn bé khỏi tròn lớn → quy trình ba dòng: S ngoài = 5 × 5 × 3,14 = 78,5; S trong = 3 × 3 × 3,14 = 28,26; HIỆU = 50,24 cm²."
-   },
-   {
-    "id": "K2",
-    "text": "Công thức giả \"bình phương hiệu\": (5 − 3) × (5 − 3) × 3,14 = 12,56 là diện tích của một HÌNH TRÒN BÉ bán kính 2 — mà trong hình chẳng có đường tròn r = 2 nào: bề rộng vành không phải bán kính!"
-   },
-   {
-    "id": "K3",
-    "text": "Kiểm nhanh: vành phải NHỎ hơn tròn lớn nhưng LỚN hơn hiệu tưởng tượng — 50,24 nằm giữa 28,26 và 78,5 hợp lý; 12,56 còn bé hơn cả tròn trong: gãy ngay."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: CHIẾC BÁNH ĐÔ-NÁT VÀ CÔNG THỨC GIẢ MẠO. Vành khăn giữa hai đường tròn cùng tâm bán kính năm và ba — chiếc bánh đô-nát có lỗ! Trí Long thấy bề rộng vành: năm trừ ba bằng hai — \"quá thật\": hai nhân hai nhân ba phẩy mười bốn — mười hai phẩy năm sáu! Khoan — con số ấy là diện tích của hình tròn bán kính HAI: mà trong hình có đường tròn bán kính hai nào đâu?! Bề rộng vành là tấm ván bắc ngang — KHÔNG phải bán kính! Đô-nát sinh ra từ phép KHOÉT: lấy tròn LỚN khoét đi tròn BÉ — nên công thức thật là HIỆU HAI DIỆN TÍCH, quy trình ba dòng bất di bất dịch: dòng một — S ngoài: năm nhân năm nhân ba phẩy mười bốn: bảy tám phẩy năm; dòng hai — S trong: ba nhân ba nhân ba phẩy mười bốn: hai tám phẩy hai sáu; dòng ba — HIỆU: NĂM MƯƠI PHẨY HAI TƯ! Kiểm nhanh chiếc cân: vành 50,24 nằm gọn giữa tròn trong 28,26 và tròn lớn 78,5 — hợp lý; còn 12,56 bé hơn cả cái lỗ: gãy từ vòng gửi xe!",
-  "canonicalExamples": [
-   {
-    "case": "vành khăn chuẩn (ca lõi)",
-    "problem": "Tính diện tích vành khăn giữa hai đường tròn cùng tâm có bán kính 5 cm và 3 cm.",
-    "solution": "S ngoài = 78,5; S trong = 28,26 → vành = 78,5 − 28,26 = 50,24 cm².",
-    "why": "Ca đề A câu 5 — ba dòng bất di bất dịch."
-   },
-   {
-    "case": "vạch mặt công thức giả (ca phản chứng)",
-    "problem": "Với vành khăn R = 5, r = 3: một bạn tính (5 − 3) × (5 − 3) × 3,14 = 12,56. Giải thích vì sao sai.",
-    "solution": "(5 − 3)² × 3,14 = 12,56 là diện tích hình tròn bán kính 2 — trong hình không có đường tròn r = 2 nào; vành khăn là HIỆU hai diện tích: 50,24 cm².",
-    "why": "Ca LT4 — bề rộng vành không phải bán kính."
-   }
-  ],
-  "numberRange": "Lớp 5: R, r ≤ 10; cùng tâm.",
-  "misconceptions": [
-   {
-    "wrong": "Lấy bề rộng vành (R − r = 2) bình phương nhân 3,14 — vì con số 2 nhìn quá \"thật\".",
-    "signal": "Có phép (R − r) × (R − r); đáp bé hơn cả tròn trong.",
-    "fix": "K1 + K2 — khoét là trừ hai DIỆN TÍCH: ba dòng S ngoài — S trong — hiệu = 50,24.",
-    "counterExample": "12,56 < 28,26: vành đô-nát bé hơn cả cái lỗ — cầm bánh lên là biết ngay điêu!"
-   }
-  ],
-  "vocabulary": [
-   "bánh đô-nát có lỗ",
-   "khoét là trừ",
-   "ba dòng bất di bất dịch",
-   "bề rộng ≠ bán kính",
-   "kiểm chiếc cân"
-  ],
-  "mantra": "KHOÉT TRÒN LÀ TRỪ HAI DIỆN TÍCH — KHÔNG BÌNH PHƯƠNG HIỆU!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Ôn B49: r = 5 → S = ? (× 3,14)",
-    "answerKey": {
-     "value": 78.5
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B49.M1",
-   "message": "Ôn S hình tròn rồi ăn đô-nát nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Vành khăn giữa hai vòng tròn bán kính 5 và 3. Trí Long thấy bề rộng vành 5 − 3 = 2 \"quá thật\": \"2 × 2 × 3,14 = 12,56!\" Su Kem cầm bánh đô-nát: \"12,56 còn bé hơn cả cái LỖ 28,26 — vành bánh bé hơn lỗ bánh á?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "vành = (5−3)² × 3,14??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để khoét đô-nát!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "Vành khăn = hiệu HAI DIỆN TÍCH — cấm bình phương hiệu bán kính",
+  "grade": 5,
+  "durationMinutes": 7,
+  "skills": {
+    "primary": [
+      "CASE:IV.4.2#1"
     ],
-    "narration": "Đô-nát sinh ra từ phép KHOÉT: lấy tròn LỚN khoét đi tròn BÉ — công thức thật là HIỆU HAI DIỆN TÍCH! Quy trình ba dòng bất di bất dịch: dòng một — S ngoài: năm nhân năm nhân ba phẩy mười bốn — bảy tám phẩy năm; dòng hai — S trong: ba nhân ba nhân ba phẩy mười bốn — hai tám phẩy hai sáu; dòng ba — HIỆU: NĂM MƯƠI PHẨY HAI TƯ! Còn con số hai kia là tấm ván bề rộng bắc ngang vành — nó KHÔNG phải bán kính của hình tròn nào cả!",
-    "display": {
-     "type": "donut_interactive",
-     "spec": {
-      "line1": "S ngoài = 5 × 5 × 3,14 = 78,5",
-      "line2": "S trong = 3 × 3 × 3,14 = 28,26",
-      "line3": "vành = 78,5 − 28,26 = 50,24"
-     }
-    },
-    "interaction": {
-     "type": "three_lines",
-     "answerKey": {
-      "value": 50.24
-     },
-     "successMessage": "Ba dòng: khoét ra 50,24!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "Vành khăn R = 5, r = 3 có diện tích:",
-     "choices": [
-      "50,24",
-      "12,56",
-      "78,5"
-     ],
-     "answerKey": {
-      "choice": "50,24"
-     },
-     "wrongFeedback": "Hiệu hai S.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 40,
-    "teaches": [
-     "K2",
-     "K3"
+    "bktUnit": "CASE:IV.4.2#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B50",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B49.M3",
+    "next": "DL:KSN5Q1.B50.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B50",
+    "chunks": [
+      "CHUNK:KSN5Q1.B50.S3",
+      "CHUNK:KSN5Q1.B50.S4"
     ],
-    "narration": "Vạch mặt công thức giả: năm-trừ-ba bình phương nhân ba phẩy mười bốn bằng mười hai phẩy năm sáu — chính là diện tích một hình tròn bán kính HAI: mà trong hình chẳng có đường tròn bán kính hai nào! Kiểm chiếc cân: vành thật năm mươi phẩy hai tư nằm gọn GIỮA lỗ hai tám và tròn lớn bảy tám — hợp lý; còn mười hai phẩy năm sáu BÉ hơn cả cái lỗ: vành bánh bé hơn lỗ bánh — cầm đô-nát lên là biết điêu!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
+    "cases": [
+      "CA:KSN5Q1.B50.1"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B50.1"
+    ]
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con tính VÀNH KHĂN (hình giữa hai đường tròn cùng tâm) bằng quy trình ba dòng bất di bất dịch: S ngoài — S trong — HIỆU: S = R × R × 3,14 − r × r × 3,14 = 78,5 − 28,26 = 50,24; và vạch mặt được công thức giả \"bình phương hiệu bán kính\" (5 − 3)² × 3,14 = 12,56 — bề rộng vành 2 cm không phải bán kính của hình tròn nào cả.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (vành khăn = hiệu hai S)",
+    "kidText": "Vành khăn bằng diện tích tròn ngoài trừ diện tích tròn trong. Bề rộng vành không phải bán kính của hình tròn nào cả."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "input": "78,5 − 28,26",
-       "output": "✓ 50,24 (giữa 28,26 và 78,5)",
-       "valid": true,
-       "reason": "hiệu hai S"
+        "id": "K1",
+        "text": "Vành khăn = KHOÉT tròn bé khỏi tròn lớn → quy trình ba dòng: S ngoài = 5 × 5 × 3,14 = 78,5; S trong = 3 × 3 × 3,14 = 28,26; HIỆU = 50,24 cm²."
       },
       {
-       "input": "(5−3)² × 3,14",
-       "output": "✗ 12,56 < cả cái lỗ",
-       "valid": false,
-       "reason": "bề rộng ≠ bán kính"
+        "id": "K2",
+        "text": "Công thức giả \"bình phương hiệu\": (5 − 3) × (5 − 3) × 3,14 = 12,56 là diện tích của một HÌNH TRÒN BÉ bán kính 2 — mà trong hình chẳng có đường tròn r = 2 nào: bề rộng vành không phải bán kính!"
+      },
+      {
+        "id": "K3",
+        "text": "Kiểm nhanh: vành phải NHỎ hơn tròn lớn nhưng LỚN hơn hiệu tưởng tượng — 50,24 nằm giữa 28,26 và 78,5 hợp lý; 12,56 còn bé hơn cả tròn trong: gãy ngay."
       }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Thần chú đô-nát: khoét tròn là trừ hai diện tích — không bình phương hiệu!",
-    "display": {
-     "type": "mantra_card",
-     "text": "KHOÉT = TRỪ HAI DIỆN TÍCH!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 89,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Vành khăn giữa hai vòng tròn bán kính năm và ba. Trí Long thấy bề rộng vành năm trừ ba bằng hai — quá thật: hai nhân hai nhân ba phẩy mười bốn — mười hai phẩy năm sáu! Su Kem: mười hai phẩy năm sáu bé hơn cả cái LỖ hai tám — vành bánh bé hơn lỗ bánh á?",
-    "screenText": "vành = (5−3)² × 3,14??",
-    "visual": "Bánh đô-nát hai vòng tròn cùng tâm; vành teo bé hơn lỗ phi lý; dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 22
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Đô-nát sinh ra từ phép KHOÉT: lấy tròn LỚN khoét đi tròn BÉ — công thức thật là HIỆU HAI DIỆN TÍCH! Quy trình ba dòng bất di bất dịch: dòng một — S ngoài: năm nhân năm nhân ba phẩy mười bốn — bảy tám phẩy năm; dòng hai — S trong: hai tám phẩy hai sáu; dòng ba — HIỆU: NĂM MƯƠI PHẨY HAI TƯ!",
-    "screenText": "S ngoài 78,5 − S trong 28,26 = vành 50,24 (ba dòng!)",
-    "visual": "Tròn lớn bị khoét lỗ tròn bé bay ra; ba dòng tính xếp bậc thang vàng; tấm ván bề-rộng-2 dán nhãn 'không phải bán kính'.",
-    "assets": [],
-    "duration": 24
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Vạch mặt công thức giả: năm-trừ-ba bình phương nhân ba phẩy mười bốn bằng mười hai phẩy năm sáu — chính là diện tích một hình tròn bán kính HAI: mà trong hình chẳng có đường tròn bán kính hai nào! Kiểm chiếc cân: vành thật năm mươi phẩy hai tư nằm gọn GIỮA lỗ hai tám và tròn lớn bảy tám — hợp lý; còn mười hai phẩy năm sáu BÉ hơn cả cái lỗ!",
-    "screenText": "(5−3)² × 3,14 = 12,56 ✗ (< cả lỗ!) · 50,24 nằm giữa 28,26–78,5 ✓",
-    "visual": "Hình tròn ma bán kính 2 mờ ảo bị gạch đỏ; chiếc cân ba quả 28,26 — 50,24 — 78,5 cân bằng hợp lý.",
-    "assets": [],
-    "duration": 27
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú đô-nát: khoét tròn là trừ hai diện tích — không bình phương hiệu!",
-    "screenText": "KHOÉT = TRỪ HAI DIỆN TÍCH!",
-    "visual": "Thẻ thần chú vàng với icon đô-nát.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Đô-nát của con: bán kính năm và ba — chạy đủ ba dòng S ngoài, S trong, hiệu! Vào bài luyện ngay!",
-    "screenText": "78,5 − 28,26 = ?",
-    "visual": "Đô-nát chờ khoét; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 8
-   }
-  ]
- },
- "workedExample": {
-  "title": "Ba dòng khoét đô-nát",
-  "problem": "Tính diện tích vành khăn giữa hai đường tròn cùng tâm có bán kính 5 cm và 3 cm.",
-  "steps": [
-   {
-    "show": "Bước 1 — S ngoài = 5 × 5 × 3,14 = 78,5 cm².",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Bề rộng vành 5 − 3 = 2 có phải bán kính không?",
-     "choices": [
-      "không — chỉ là tấm ván bắc ngang",
-      "có",
-      "tùy hình"
-     ],
-     "answerKey": {
-      "choice": "không — chỉ là tấm ván bắc ngang"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — S trong = 3 × 3 × 3,14 = 28,26 cm²."
-   },
-   {
-    "show": "Bước 3 — Vành = 78,5 − 28,26 = 50,24 cm² (kiểm: nằm giữa 28,26 và 78,5 ✓).",
-    "askAfter": {
-     "format": "num",
-     "text": "R = 10, r = 5 → vành = ? (dùng 314 − 78,5)",
-     "answerKey": {
-      "value": 235.5
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B50.LT1",
-     "text": "Tính diện tích vành khăn giữa hai đường tròn cùng tâm có bán kính 5 cm và 3 cm (cm²).",
-     "answerKey": {
-      "value": 50.24
-     },
-     "hints": [
-      "Ba dòng: ngoài — trong — hiệu.",
-      "78,5 − 28,26."
-     ],
-     "solutionNarrative": "50,24 cm².",
-     "teaches": [
-      "K1"
-     ],
-     "generator": {
-      "template": "Vành R = {R}, r = {r} → S?",
-      "constraints": {},
-      "answerRule": "R²×3,14 − r²×3,14"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B50.LT4",
-     "text": "Với vành khăn R = 5, r = 3: một bạn tính (5 − 3) × (5 − 3) × 3,14 = 12,56. Giải thích vì sao sai — và tính đúng.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "vì sao",
-        "value": "12,56 là diện tích hình tròn bán kính 2 — bề rộng vành không phải bán kính; vành khăn là hiệu hai diện tích"
-       },
-       {
-        "label": "đúng",
-        "value": 50.24
-       }
-      ]
-     },
-     "hints": [
-      "12,56 là S của hình tròn nào?",
-      "So với cái lỗ 28,26."
-     ],
-     "solutionNarrative": "Vành = 50,24 — công thức kia bé hơn cả lỗ.",
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "tf",
-     "text": "(Đúng/Sai?) Vành khăn R = 10, r = 5 có diện tích (10 − 5)² × 3,14 = 78,5.",
-     "answerKey": {
-      "value": false,
-      "note": "Hiệu hai S: 314 − 78,5 = 235,5 — công thức bình phương hiệu cho đúng bằng... cái lỗ: trùng hợp tố cáo!"
-     },
-     "hints": [
-      "Ba dòng.",
-      "78,5 là S của ai?"
-     ],
-     "teaches": [
-      "K2"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:IV.4.2#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B50.M2",
-   "award": "huy_hieu_do_nat"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B50.QZ1",
-    "text": "(Đúng/Sai?) Vành khăn = S tròn lớn − S tròn bé.",
-    "answerKey": {
-     "value": true
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B50.QZ3",
-    "text": "Vành khăn R = 5, r = 3 có diện tích:",
-    "choices": [
-     "50,24",
-     "12,56",
-     "78,5"
     ],
-    "answerKey": {
-     "choice": "50,24"
-    },
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "num",
-    "text": "Vành R = 10, r = 5 → S = ?",
-    "answerKey": {
-     "value": 235.5
-    },
-    "teaches": [
-     "K1"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Vành khăn tính sao? Vì sao (R−r)² × 3,14 sai?",
-    "back": "KHOÉT = TRỪ hai diện tích, ba dòng: S ngoài 78,5 — S trong 28,26 — HIỆU 50,24. (5−3)² × 3,14 = 12,56 là S của hình tròn r = 2 KHÔNG tồn tại trong hình (bề rộng ≠ bán kính) — và 12,56 < cả cái lỗ: vành bé hơn lỗ, điêu!"
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P2 (vạch mặt)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học vành khăn ba dòng (hiệu hai diện tích) và vạch mặt công thức bình-phương-hiệu. Con đạt {score}/3, {trapResult} câu bẫy bề-rộng.",
-  "homeActivity": "Cầm chiếc bánh đô-nát hay vòng đệm: con chỉ 'tròn lớn — cái lỗ — vành' và đọc ba dòng.",
-  "watchFor": "Nếu con bình phương bề rộng — hỏi 'trong hình có đường tròn bán kính 2 không?' (S3)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B50.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "vành = (5−3)² × 3,14??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Vành khăn giữa hai vòng tròn bán kính 5 và 3.",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "\"12,56 còn bé hơn cả cái LỖ 28,26 — vành bánh bé hơn lỗ bánh á?\"",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B50_M1_F1.png",
-   "sha256_16": "121df529fb1b7931"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "(5−3)² × 3,14"
-     ],
-     "result": "12,56 < cả cái lỗ"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "78,5 − 28,26"
-     ],
-     "result": "50,24 (giữa 28,26 và 78,5)"
-    },
-    "verdict": "hiệu hai S"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B50_M1_F2.png",
-   "sha256_16": "fcabc003017c3aad"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Vành khăn = KHOÉT tròn bé khỏi tròn lớn → quy trình ba dòng",
-      "text": "S ngoài = 5 × 5 × 3,14 = 78,5; S trong = 3 × 3 × 3,14 = 28,26; HIỆU = 50,24 cm².",
-      "tone": "navy"
-     },
-     {
-      "label": "Công thức giả \"bình phương hiệu\"",
-      "text": "(5 − 3) × (5 − 3) × 3,14 = 12,56 là diện tích của một HÌNH TRÒN BÉ bán kính 2 — mà trong hình chẳng có đường tròn r = 2 nào: bề rộng vành không phải bán kính!",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: CHIẾC BÁNH ĐÔ-NÁT VÀ CÔNG THỨC GIẢ MẠO. Vành khăn giữa hai đường tròn cùng tâm bán kính năm và ba — chiếc bánh đô-nát có lỗ! Trí Long thấy bề rộng vành: năm trừ ba bằng hai — \"quá thật\": hai nhân hai nhân ba phẩy mười bốn — mười hai phẩy năm sáu! Khoan — con số ấy là diện tích của hình tròn bán kính HAI: mà trong hình có đường tròn bán kính hai nào đâu?! Bề rộng vành là tấm ván bắc ngang — KHÔNG phải bán kính! Đô-nát sinh ra từ phép KHOÉT: lấy tròn LỚN khoét đi tròn BÉ — nên công thức thật là HIỆU HAI DIỆN TÍCH, quy trình ba dòng bất di bất dịch: dòng một — S ngoài: năm nhân năm nhân ba phẩy mười bốn: bảy tám phẩy năm; dòng hai — S trong: ba nhân ba nhân ba phẩy mười bốn: hai tám phẩy hai sáu; dòng ba — HIỆU: NĂM MƯƠI PHẨY HAI TƯ! Kiểm nhanh chiếc cân: vành 50,24 nằm gọn giữa tròn trong 28,26 và tròn lớn 78,5 — hợp lý; còn 12,56 bé hơn cả cái lỗ: gãy từ vòng gửi xe!",
+    "canonicalExamples": [
+      {
+        "case": "vành khăn chuẩn (ca lõi)",
+        "problem": "Tính diện tích vành khăn giữa hai đường tròn cùng tâm có bán kính 5 cm và 3 cm.",
+        "solution": "S ngoài = 78,5; S trong = 28,26 → vành = 78,5 − 28,26 = 50,24 cm².",
+        "why": "Ca đề A câu 5 — ba dòng bất di bất dịch."
+      },
+      {
+        "case": "vạch mặt công thức giả (ca phản chứng)",
+        "problem": "Với vành khăn R = 5, r = 3: một bạn tính (5 − 3) × (5 − 3) × 3,14 = 12,56. Giải thích vì sao sai.",
+        "solution": "(5 − 3)² × 3,14 = 12,56 là diện tích hình tròn bán kính 2 — trong hình không có đường tròn r = 2 nào; vành khăn là HIỆU hai diện tích: 50,24 cm².",
+        "why": "Ca LT4 — bề rộng vành không phải bán kính."
+      }
+    ],
+    "numberRange": "Lớp 5: R, r ≤ 10; cùng tâm.",
+    "misconceptions": [
+      {
+        "wrong": "Lấy bề rộng vành (R − r = 2) bình phương nhân 3,14 — vì con số 2 nhìn quá \"thật\".",
+        "signal": "Có phép (R − r) × (R − r); đáp bé hơn cả tròn trong.",
+        "fix": "K1 + K2 — khoét là trừ hai DIỆN TÍCH: ba dòng S ngoài — S trong — hiệu = 50,24.",
+        "counterExample": "12,56 < 28,26: vành đô-nát bé hơn cả cái lỗ — cầm bánh lên là biết ngay điêu!"
+      }
+    ],
+    "vocabulary": [
+      "bánh đô-nát có lỗ",
+      "khoét là trừ",
+      "ba dòng bất di bất dịch",
+      "bề rộng ≠ bán kính",
+      "kiểm chiếc cân"
     ],
     "mantra": "KHOÉT TRÒN LÀ TRỪ HAI DIỆN TÍCH — KHÔNG BÌNH PHƯƠNG HIỆU!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B50_M1_F3.png",
-   "sha256_16": "929fcdb888c69019"
   },
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "VÀNH KHĂN = HIỆU HAI DIỆN TÍCH",
-    "points": {
-     "O": [
-      0,
-      0
-     ],
-     "A": [
-      5,
-      0
-     ],
-     "C": [
-      0,
-      3
-     ]
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Ôn B49: r = 5 → S = ? (× 3,14)",
+        "answerKey": {
+          "value": 78.5
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B49.M1",
+      "message": "Ôn S hình tròn rồi ăn đô-nát nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Vành khăn giữa hai vòng tròn bán kính 5 và 3. Trí Long thấy bề rộng vành 5 − 3 = 2 \"quá thật\": \"2 × 2 × 3,14 = 12,56!\" Su Kem cầm bánh đô-nát: \"12,56 còn bé hơn cả cái LỖ 28,26 — vành bánh bé hơn lỗ bánh á?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "vành = (5−3)² × 3,14??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để khoét đô-nát!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 44,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Đô-nát sinh ra từ phép KHOÉT: lấy tròn LỚN khoét đi tròn BÉ — công thức thật là HIỆU HAI DIỆN TÍCH! Quy trình ba dòng bất di bất dịch: dòng một — S ngoài: năm nhân năm nhân ba phẩy mười bốn — bảy tám phẩy năm; dòng hai — S trong: ba nhân ba nhân ba phẩy mười bốn — hai tám phẩy hai sáu; dòng ba — HIỆU: NĂM MƯƠI PHẨY HAI TƯ! Còn con số hai kia là tấm ván bề rộng bắc ngang vành — nó KHÔNG phải bán kính của hình tròn nào cả!",
+        "display": {
+          "type": "donut_interactive",
+          "spec": {
+            "line1": "S ngoài = 5 × 5 × 3,14 = 78,5",
+            "line2": "S trong = 3 × 3 × 3,14 = 28,26",
+            "line3": "vành = 78,5 − 28,26 = 50,24"
+          }
+        },
+        "interaction": {
+          "type": "three_lines",
+          "answerKey": {
+            "value": 50.24
+          },
+          "successMessage": "Ba dòng: khoét ra 50,24!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "Vành khăn R = 5, r = 3 có diện tích:",
+          "choices": [
+            "50,24",
+            "12,56",
+            "78,5"
+          ],
+          "answerKey": {
+            "choice": "50,24"
+          },
+          "wrongFeedback": "Hiệu hai S.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 40,
+        "teaches": [
+          "K2",
+          "K3"
+        ],
+        "narration": "Vạch mặt công thức giả: năm-trừ-ba bình phương nhân ba phẩy mười bốn bằng mười hai phẩy năm sáu — chính là diện tích một hình tròn bán kính HAI: mà trong hình chẳng có đường tròn bán kính hai nào! Kiểm chiếc cân: vành thật năm mươi phẩy hai tư nằm gọn GIỮA lỗ hai tám và tròn lớn bảy tám — hợp lý; còn mười hai phẩy năm sáu BÉ hơn cả cái lỗ: vành bánh bé hơn lỗ bánh — cầm đô-nát lên là biết điêu!",
+        "display": {
+          "type": "counter_example",
+          "cases": [
+            {
+              "input": "78,5 − 28,26",
+              "output": "✓ 50,24 (giữa 28,26 và 78,5)",
+              "valid": true,
+              "reason": "hiệu hai S"
+            },
+            {
+              "input": "(5−3)² × 3,14",
+              "output": "✗ 12,56 < cả cái lỗ",
+              "valid": false,
+              "reason": "bề rộng ≠ bán kính"
+            }
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 12,
+        "narration": "Thần chú đô-nát: khoét tròn là trừ hai diện tích — không bình phương hiệu!",
+        "display": {
+          "type": "mantra_card",
+          "text": "KHOÉT = TRỪ HAI DIỆN TÍCH!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 89,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "shapes": [
-     {
-      "circle": {
-       "at": "O",
-       "r": 5
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Vành khăn giữa hai vòng tròn bán kính năm và ba. Trí Long thấy bề rộng vành năm trừ ba bằng hai — quá thật: hai nhân hai nhân ba phẩy mười bốn — mười hai phẩy năm sáu! Su Kem: mười hai phẩy năm sáu bé hơn cả cái LỖ hai tám — vành bánh bé hơn lỗ bánh á?",
+        "screenText": "vành = (5−3)² × 3,14??",
+        "visual": "Bánh đô-nát hai vòng tròn cùng tâm; vành teo bé hơn lỗ phi lý; dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 22
       },
-      "fill": "teal",
-      "label": ""
-     },
-     {
-      "circle": {
-       "at": "O",
-       "r": 3,
-       "z": 4
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Đô-nát sinh ra từ phép KHOÉT: lấy tròn LỚN khoét đi tròn BÉ — công thức thật là HIỆU HAI DIỆN TÍCH! Quy trình ba dòng bất di bất dịch: dòng một — S ngoài: năm nhân năm nhân ba phẩy mười bốn — bảy tám phẩy năm; dòng hai — S trong: hai tám phẩy hai sáu; dòng ba — HIỆU: NĂM MƯƠI PHẨY HAI TƯ!",
+        "screenText": "S ngoài 78,5 − S trong 28,26 = vành 50,24 (ba dòng!)",
+        "visual": "Tròn lớn bị khoét lỗ tròn bé bay ra; ba dòng tính xếp bậc thang vàng; tấm ván bề-rộng-2 dán nhãn 'không phải bán kính'.",
+        "assets": [],
+        "duration": 24
       },
-      "fill": "white",
-      "label": "S trong 28,26",
-      "dy": 0
-     }
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Vạch mặt công thức giả: năm-trừ-ba bình phương nhân ba phẩy mười bốn bằng mười hai phẩy năm sáu — chính là diện tích một hình tròn bán kính HAI: mà trong hình chẳng có đường tròn bán kính hai nào! Kiểm chiếc cân: vành thật năm mươi phẩy hai tư nằm gọn GIỮA lỗ hai tám và tròn lớn bảy tám — hợp lý; còn mười hai phẩy năm sáu BÉ hơn cả cái lỗ!",
+        "screenText": "(5−3)² × 3,14 = 12,56 ✗ (< cả lỗ!) · 50,24 nằm giữa 28,26–78,5 ✓",
+        "visual": "Hình tròn ma bán kính 2 mờ ảo bị gạch đỏ; chiếc cân ba quả 28,26 — 50,24 — 78,5 cân bằng hợp lý.",
+        "assets": [],
+        "duration": 27
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú đô-nát: khoét tròn là trừ hai diện tích — không bình phương hiệu!",
+        "screenText": "KHOÉT = TRỪ HAI DIỆN TÍCH!",
+        "visual": "Thẻ thần chú vàng với icon đô-nát.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Đô-nát của con: bán kính năm và ba — chạy đủ ba dòng S ngoài, S trong, hiệu! Vào bài luyện ngay!",
+        "screenText": "78,5 − 28,26 = ?",
+        "visual": "Đô-nát chờ khoét; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 8
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Ba dòng khoét đô-nát",
+    "problem": "Tính diện tích vành khăn giữa hai đường tròn cùng tâm có bán kính 5 cm và 3 cm.",
+    "steps": [
+      {
+        "show": "Bước 1 — S ngoài = 5 × 5 × 3,14 = 78,5 cm².",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Bề rộng vành 5 − 3 = 2 có phải bán kính không?",
+          "choices": [
+            "không — chỉ là tấm ván bắc ngang",
+            "có",
+            "tùy hình"
+          ],
+          "answerKey": {
+            "choice": "không — chỉ là tấm ván bắc ngang"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — S trong = 3 × 3 × 3,14 = 28,26 cm²."
+      },
+      {
+        "show": "Bước 3 — Vành = 78,5 − 28,26 = 50,24 cm² (kiểm: nằm giữa 28,26 và 78,5 ✓).",
+        "askAfter": {
+          "format": "num",
+          "text": "R = 10, r = 5 → vành = ? (dùng 314 − 78,5)",
+          "answerKey": {
+            "value": 235.5
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B50.LT1",
+          "text": "Tính diện tích vành khăn giữa hai đường tròn cùng tâm có bán kính 5 cm và 3 cm (cm²).",
+          "answerKey": {
+            "value": 50.24
+          },
+          "hints": [
+            "Ba dòng: ngoài — trong — hiệu.",
+            "78,5 − 28,26."
+          ],
+          "solutionNarrative": "50,24 cm².",
+          "teaches": [
+            "K1"
+          ],
+          "generator": {
+            "template": "Vành R = {R}, r = {r} → S?",
+            "constraints": {},
+            "answerRule": "R²×3,14 − r²×3,14"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B50.LT4",
+          "text": "Với vành khăn R = 5, r = 3: một bạn tính (5 − 3) × (5 − 3) × 3,14 = 12,56. Giải thích vì sao sai — và tính đúng.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "vì sao",
+                "value": "12,56 là diện tích hình tròn bán kính 2 — bề rộng vành không phải bán kính; vành khăn là hiệu hai diện tích"
+              },
+              {
+                "label": "đúng",
+                "value": 50.24
+              }
+            ]
+          },
+          "hints": [
+            "12,56 là S của hình tròn nào?",
+            "So với cái lỗ 28,26."
+          ],
+          "solutionNarrative": "Vành = 50,24 — công thức kia bé hơn cả lỗ.",
+          "teaches": [
+            "K2",
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "tf",
+          "text": "(Đúng/Sai?) Vành khăn R = 10, r = 5 có diện tích (10 − 5)² × 3,14 = 78,5.",
+          "answerKey": {
+            "value": false,
+            "note": "Hiệu hai S: 314 − 78,5 = 235,5 — công thức bình phương hiệu cho đúng bằng... cái lỗ: trùng hợp tố cáo!"
+          },
+          "hints": [
+            "Ba dòng.",
+            "78,5 là S của ai?"
+          ],
+          "teaches": [
+            "K2"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:IV.4.2#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B50.M2",
+      "award": "huy_hieu_do_nat"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B50.QZ1",
+        "text": "(Đúng/Sai?) Vành khăn = S tròn lớn − S tròn bé.",
+        "answerKey": {
+          "value": true
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B50.QZ3",
+        "text": "Vành khăn R = 5, r = 3 có diện tích:",
+        "choices": [
+          "50,24",
+          "12,56",
+          "78,5"
+        ],
+        "answerKey": {
+          "choice": "50,24"
+        },
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "num",
+        "text": "Vành R = 10, r = 5 → S = ?",
+        "answerKey": {
+          "value": 235.5
+        },
+        "teaches": [
+          "K1"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Vành khăn tính sao? Vì sao (R−r)² × 3,14 sai?",
+        "back": "KHOÉT = TRỪ hai diện tích, ba dòng: S ngoài 78,5 — S trong 28,26 — HIỆU 50,24. (5−3)² × 3,14 = 12,56 là S của hình tròn r = 2 KHÔNG tồn tại trong hình (bề rộng ≠ bán kính) — và 12,56 < cả cái lỗ: vành bé hơn lỗ, điêu!"
+      }
     ],
-    "segments": [
-     {
-      "from": "O",
-      "to": "A",
-      "label": "R = 5",
-      "dx": 14,
-      "dy": 5
-     },
-     {
-      "from": "O",
-      "to": "C",
-      "label": "r = 3",
-      "dx": -11,
-      "dy": -2
-     }
-    ],
-    "show_points": [],
-    "formula": "vành khăn = 78,5 − 28,26 = 50,24 cm²",
-    "note": "(5 − 3) × (5 − 3) × 3,14 = 12,56 là hình tròn bán kính 2 — trong hình KHÔNG có đường tròn ấy"
-   },
-   "caption": "Khoét tròn là TRỪ hai diện tích, không phải bình phương hiệu bán kính",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B50_M1_F4.png",
-   "sha256_16": "f3a0d7f8a7ec546b"
-  }
- ]
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P2 (vạch mặt)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học vành khăn ba dòng (hiệu hai diện tích) và vạch mặt công thức bình-phương-hiệu. Con đạt {score}/3, {trapResult} câu bẫy bề-rộng.",
+    "homeActivity": "Cầm chiếc bánh đô-nát hay vòng đệm: con chỉ 'tròn lớn — cái lỗ — vành' và đọc ba dòng.",
+    "watchFor": "Nếu con bình phương bề rộng — hỏi 'trong hình có đường tròn bán kính 2 không?' (S3)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B50.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "vành = (5−3)² × 3,14??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Vành khăn giữa hai vòng tròn bán kính 5 và 3.",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "\"12,56 còn bé hơn cả cái LỖ 28,26 — vành bánh bé hơn lỗ bánh á?\"",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B50_M1_F1.png",
+      "sha256_16": "121df529fb1b7931"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+        "wrong": {
+          "head": "CÁCH SAI",
+          "steps": [
+            "(5−3)² × 3,14"
+          ],
+          "result": "12,56 < cả cái lỗ"
+        },
+        "right": {
+          "head": "CÁCH ĐÚNG",
+          "steps": [
+            "78,5 − 28,26"
+          ],
+          "result": "50,24 (giữa 28,26 và 78,5)"
+        },
+        "verdict": "hiệu hai S"
+      },
+      "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B50_M1_F2.png",
+      "sha256_16": "fcabc003017c3aad"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Vành khăn = KHOÉT tròn bé khỏi tròn lớn → quy trình ba dòng",
+            "text": "S ngoài = 5 × 5 × 3,14 = 78,5; S trong = 3 × 3 × 3,14 = 28,26; HIỆU = 50,24 cm².",
+            "tone": "navy"
+          },
+          {
+            "label": "Công thức giả \"bình phương hiệu\"",
+            "text": "(5 − 3) × (5 − 3) × 3,14 = 12,56 là diện tích của một HÌNH TRÒN BÉ bán kính 2 — mà trong hình chẳng có đường tròn r = 2 nào: bề rộng vành không phải bán kính!",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "KHOÉT TRÒN LÀ TRỪ HAI DIỆN TÍCH — KHÔNG BÌNH PHƯƠNG HIỆU!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B50_M1_F3.png",
+      "sha256_16": "929fcdb888c69019"
+    },
+    {
+      "archetype": "geo_shape",
+      "params": {
+        "title": "VÀNH KHĂN = HIỆU HAI DIỆN TÍCH",
+        "points": {
+          "O": [
+            0,
+            0
+          ],
+          "A": [
+            5,
+            0
+          ],
+          "C": [
+            0,
+            3
+          ]
+        },
+        "shapes": [
+          {
+            "circle": {
+              "at": "O",
+              "r": 5
+            },
+            "fill": "teal",
+            "label": ""
+          },
+          {
+            "circle": {
+              "at": "O",
+              "r": 3,
+              "z": 4
+            },
+            "fill": "white",
+            "label": "S trong 28,26",
+            "dy": 0
+          }
+        ],
+        "segments": [
+          {
+            "from": "O",
+            "to": "A",
+            "label": "R = 5",
+            "dx": 14,
+            "dy": 5
+          },
+          {
+            "from": "O",
+            "to": "C",
+            "label": "r = 3",
+            "dx": -11,
+            "dy": -2
+          }
+        ],
+        "show_points": [],
+        "formula": "vành khăn = 78,5 − 28,26 = 50,24 cm²",
+        "note": "(5 − 3) × (5 − 3) × 3,14 = 12,56 là hình tròn bán kính 2 — trong hình KHÔNG có đường tròn ấy"
+      },
+      "caption": "Khoét tròn là TRỪ hai diện tích, không phải bình phương hiệu bán kính",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B50_M1_F4.png",
+      "sha256_16": "f3a0d7f8a7ec546b"
+    }
+  ]
 }

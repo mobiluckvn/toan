@@ -4,7 +4,7 @@ import AnswerInput from './AnswerInput.jsx';
 import Figure from './Figure.jsx';
 
 /** Ví dụ dẫn dắt: đi từng nhịp, có câu hỏi xen giữa — con làm cùng chứ không ngồi xem */
-export default function WorkedExample({ we, figure, onNext }) {
+export default function WorkedExample({ we, figure, onNext, onRecord }) {
   const seq = useMemo(() => buildWorkedSteps(we), [we]);
   const [k, setK] = useState(0);          // đã mở tới bước con thứ mấy
   const [answered, setAnswered] = useState({});
@@ -55,9 +55,14 @@ export default function WorkedExample({ we, figure, onNext }) {
         {!done && cur?.kind === 'ask' && (
           <div ref={moiRef} className="mt-4 border-t border-line pt-3.5">
             <p className="text-[16px] font-semibold leading-snug">❓ {cur.item.text}</p>
+            {/* Câu xen giữa ví dụ cũng là con làm bài thật — 345 câu trên toàn bộ
+                168 bài, trước đây không ghi lên máy chủ dòng nào. */}
             <AnswerInput
               item={cur.item}
-              onResolve={(r) => setAnswered((a) => ({ ...a, [k]: r }))}
+              onResolve={(r, ct) => {
+                setAnswered((a) => ({ ...a, [k]: r }));
+                onRecord?.('worked', { id: cur.item.id, ...ct });
+              }}
             />
           </div>
         )}

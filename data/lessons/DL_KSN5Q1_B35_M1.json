@@ -1,619 +1,622 @@
 {
- "title": "Tuổi một mốc: kéo màn TBC đúng quân số — xâu chuỗi lấy người bé nhất làm gốc",
- "grade": 5,
- "durationMinutes": 8,
- "skills": {
-  "primary": [
-   "CASE:III.6.1#1"
-  ],
-  "bktUnit": "CASE:III.6.1#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B35",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B34.M3",
-  "next": "DL:KSN5Q1.B35.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B35",
-  "chunks": [
-   "CHUNK:KSN5Q1.B35.S3",
-   "CHUNK:KSN5Q1.B35.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B35.1"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B35.3"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con giải bài tuổi MỘT MỐC có TBC và dữ kiện xâu chuỗi: kéo màn TBC nhân ĐÚNG QUÂN SỐ ra tổng (cầu B21/B30), rồi với chuỗi \"bố hơn mẹ, mẹ hơn con…\" lấy NGƯỜI BÉ NHẤT làm gốc — vẽ sơ đồ nhiều đoạn, gom phần hơn, chia ra gốc — và đáp đứng đúng mốc đề hỏi.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (TBC × quân số)",
-  "kidText": "Bài tuổi có trung bình cộng: nhân đúng số người ra tổng. Chuỗi \"bố hơn mẹ, mẹ hơn con\" thì lấy người bé nhất làm gốc."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "TBC là tấm màn che tổng — nhân ĐÚNG QUÂN SỐ: TBC hai bố con 25 → tổng 25 × 2 = 50; TBC ba người 24 → tổng 24 × 3 = 72 (nhân nhầm quân số là gãy từ cửa)."
-   },
-   {
-    "id": "K2",
-    "text": "Kéo màn xong là máy quen: tổng 50, bố hơn con 28 → máy tổng – hiệu: bố (50 + 28) : 2 = 39; con 11."
-   },
-   {
-    "id": "K3",
-    "text": "Chuỗi \"mẹ hơn con 26; bố hơn mẹ 2\" → quy hết về NGƯỜI BÉ NHẤT (con) làm gốc: mẹ = con + 26; bố = con + 26 + 2 = con + 28 → 3 lần con + 54 = 72 → con 6; mẹ 32; bố 34. Thử: cộng lại đúng 72."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: TẤM MÀN TBC VÀ SỢI DÂY XÂU CHUỖI. Đề: \"TBC tuổi bố, mẹ, con là 24; mẹ hơn con 26; bố hơn mẹ 2.\" Trí Long kéo màn vội: 24 nhân HAI bằng 48?! Quân số là BA người — màn kéo đúng: 24 × 3 = BẢY MƯƠI HAI. Ba người lủng lẳng trên sợi dây xâu chuỗi: bố hơn mẹ, mẹ hơn con — gỡ rối bằng cách quy hết về NGƯỜI BÉ NHẤT: con làm gốc! Mẹ = con + 26; bố = mẹ + 2 = con + 28. Cộng cả nhà: ba lần con + 54 = 72 → ba lần con = 18 → con SÁU tuổi; mẹ ba hai; bố ba tư. Thử: 6 + 32 + 34 = 72 ✓ — màn nào quân số nấy, chuỗi nào gốc nấy!",
-  "canonicalExamples": [
-   {
-    "case": "TBC hai người + hiệu (ca nền)",
-    "problem": "TBC tuổi hai bố con là 25, bố hơn con 28 tuổi. Tính tuổi mỗi người.",
-    "solution": "Tổng = 25 × 2 = 50 → bố = (50 + 28) : 2 = 39; con = 11. Thử: 39 − 11 = 28 ✓.",
-    "why": "Ca đề A câu 8 — màn hai người, máy B25."
-   },
-   {
-    "case": "TBC ba người + xâu chuỗi (ca lõi)",
-    "problem": "TBC tuổi của bố, mẹ và con là 24. Mẹ hơn con 26 tuổi; bố hơn mẹ 2 tuổi. Tính tuổi mỗi người.",
-    "solution": "Tổng = 72. Gốc = con: mẹ = con + 26; bố = con + 28 → 3 × con + 54 = 72 → con 6; mẹ 32; bố 34. Thử: 72 ✓.",
-    "why": "Ca LT7 — chuỗi hai mắt xích quy về gốc bé nhất."
-   }
-  ],
-  "numberRange": "Lớp 5: quân số 2–3; tổng ≤ 120.",
-  "misconceptions": [
-   {
-    "wrong": "TBC ba người nhân với 2 (tổng 48); hoặc giải xong ở mốc khác mà nộp thẳng không trượt về mốc đề hỏi.",
-    "signal": "Quân số trong phép nhân khác quân số trong đề; đáp đứng nhầm mốc.",
-    "fix": "K1 — đếm quân số trước khi nhân: TBC × ĐÚNG số người; và nghi thức 'đáp đứng đúng mốc hỏi' (nối B30.M1).",
-    "counterExample": "Tổng 48 chia cho nhà ba người: TBC chỉ còn 16 ≠ 24 — màn kéo lệch lộ ngay."
-   }
-  ],
-  "vocabulary": [
-   "màn TBC quân số",
-   "sợi dây xâu chuỗi",
-   "người bé nhất làm gốc",
-   "gom phần hơn",
-   "đáp đúng mốc hỏi"
-  ],
-  "mantra": "TBC NHÂN ĐÚNG QUÂN SỐ — CHUỖI QUY VỀ GỐC BÉ NHẤT!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Cầu B21: TBC ba số là 24 → tổng = ?",
-    "answerKey": {
-     "value": 72
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B30.M3",
-   "message": "Ôn kéo màn TBC Bài 30 rồi vào bài tuổi nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Đề: \"TBC tuổi bố, mẹ, con là 24; mẹ hơn con 26; bố hơn mẹ 2 — tính tuổi mỗi người.\" Trí Long kéo màn vội: \"tổng bằng 24 nhân 2 là 48!\" Su Kem đếm đầu người: \"Nhà này mấy người mà nhân 2?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "TBC 24 → tổng 48??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đếm quân số!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K3"
+  "title": "Tuổi một mốc: kéo màn TBC đúng quân số — xâu chuỗi lấy người bé nhất làm gốc",
+  "grade": 5,
+  "durationMinutes": 8,
+  "skills": {
+    "primary": [
+      "CASE:III.6.1#1"
     ],
-    "narration": "Quân số BA người — màn kéo đúng: hai tư nhân ba bằng BẢY MƯƠI HAI! Ba người lủng lẳng trên sợi dây xâu chuỗi: bố hơn mẹ, mẹ hơn con — gỡ rối bằng cách quy hết về NGƯỜI BÉ NHẤT: con làm gốc! Mẹ bằng con cộng hai sáu; bố bằng mẹ cộng hai — tức con cộng HAI TÁM. Cộng cả nhà: ba lần con cộng năm tư bằng bảy hai — ba lần con bằng mười tám: con SÁU tuổi, mẹ BA HAI, bố BA TƯ!",
-    "display": {
-     "type": "chain_anchor_interactive",
-     "spec": {
-      "total": 72,
-      "chain": "mẹ = con + 26 · bố = con + 28",
-      "equation": "3 × con + 54 = 72",
-      "values": [
-       6,
-       32,
-       34
-      ]
-     }
-    },
-    "interaction": {
-     "type": "pull_curtain_chain",
-     "answerKey": {
-      "values": [
-       6,
-       32,
-       34
-      ]
-     },
-     "successMessage": "Tổng 72 → 3 con + 54 → con 6; mẹ 32; bố 34!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "TBC tuổi hai bố con là 25 → tổng tuổi là:",
-     "choices": [
-      "50",
-      "25",
-      "75"
-     ],
-     "answerKey": {
-      "choice": "50"
-     },
-     "wrongFeedback": "25 × 2 (quân số 2).",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K2"
+    "bktUnit": "CASE:III.6.1#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B35",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B34.M3",
+    "next": "DL:KSN5Q1.B35.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B35",
+    "chunks": [
+      "CHUNK:KSN5Q1.B35.S3",
+      "CHUNK:KSN5Q1.B35.S4"
     ],
-    "narration": "Ca hai người chạy nhanh: TBC hai bố con hai lăm — quân số HAI: tổng NĂM MƯƠI; bố hơn con hai tám — máy tổng – hiệu quen: bố bằng năm mươi cộng hai tám chia hai — BA MƯƠI CHÍN, con MƯỜI MỘT! Thử: ba chín trừ mười một đúng hai tám. Nghi thức cuối: đáp phải ĐỨNG ĐÚNG MỐC đề hỏi!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "TBC 25 × 2 = 50 · hiệu 28",
-      "bố (50 + 28):2 = 39 · con 11 ✓",
-      "nghi thức: đáp đứng đúng mốc hỏi"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Thần chú màn và chuỗi: TBC nhân đúng quân số — chuỗi quy về gốc bé nhất!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐÚNG QUÂN SỐ · GỐC BÉ NHẤT!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 88,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Đề: TBC tuổi bố, mẹ, con là hai tư; mẹ hơn con hai sáu; bố hơn mẹ hai — tính tuổi mỗi người. Trí Long kéo màn vội: tổng bằng hai tư nhân hai là bốn tám! Su Kem đếm đầu người: nhà này mấy người mà nhân hai?",
-    "screenText": "TBC 24 → ×2 = 48?? nhà mấy người?",
-    "visual": "Tấm màn TBC 24 với ba bóng người sau màn; Trí Long viết ×2; Su Kem chỉ tay đếm ba đầu, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 18
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Quân số BA người — màn kéo đúng: hai tư nhân ba bằng BẢY MƯƠI HAI! Ba người lủng lẳng trên sợi dây xâu chuỗi: bố hơn mẹ, mẹ hơn con — quy hết về NGƯỜI BÉ NHẤT: con làm gốc! Mẹ bằng con cộng hai sáu; bố bằng con cộng HAI TÁM. Cộng cả nhà: ba lần con cộng năm tư bằng bảy hai — con SÁU tuổi, mẹ BA HAI, bố BA TƯ!",
-    "screenText": "24 × 3 = 72 · mẹ = con+26 · bố = con+28 → 3con + 54 = 72 → 6·32·34",
-    "visual": "Màn kéo lộ tổng 72; sơ đồ ba đoạn cùng gốc con với hai khúc hơn 26 và 28; phép gom 3con+54.",
-    "assets": [],
-    "duration": 27
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Ca hai người chạy nhanh: TBC hai bố con hai lăm — quân số HAI: tổng NĂM MƯƠI; bố hơn con hai tám — máy tổng hiệu quen: bố bằng năm mươi cộng hai tám chia hai — BA MƯƠI CHÍN, con MƯỜI MỘT! Thử: ba chín trừ mười một đúng hai tám. Nghi thức cuối: đáp phải ĐỨNG ĐÚNG MỐC đề hỏi!",
-    "screenText": "25 × 2 = 50 · bố 39 · con 11 ✓ · đáp đúng MỐC hỏi!",
-    "visual": "Ca hai người với máy tổng-hiệu quen; tấm biển nghi thức 'ĐÁP ĐỨNG ĐÚNG MỐC' đóng khung vàng.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú màn và chuỗi: TBC nhân đúng quân số — chuỗi quy về gốc bé nhất!",
-    "screenText": "ĐÚNG QUÂN SỐ · GỐC BÉ NHẤT!",
-    "visual": "Thẻ thần chú vàng với icon màn và sợi chuỗi.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Nhà ba người của con: TBC hai tư, mẹ hơn con hai sáu, bố hơn mẹ hai — kéo màn đúng quân số rồi tìm tuổi cả nhà! Vào bài luyện ngay!",
-    "screenText": "TBC 24 ×3 → chuỗi → 3 tuổi?",
-    "visual": "Ba ghế gia đình chờ điền tuổi; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 12
-   }
-  ]
- },
- "workedExample": {
-  "title": "Màn ba người — chuỗi hai mắt",
-  "problem": "TBC tuổi của bố, mẹ và con là 24. Mẹ hơn con 26 tuổi; bố hơn mẹ 2 tuổi. Tính tuổi mỗi người.",
-  "steps": [
-   {
-    "show": "Bước 1 — Kéo màn ĐÚNG quân số: tổng = 24 × 3 = 72.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "TBC 24 của BA người → tổng:",
-     "choices": [
-      "72",
-      "48",
-      "24"
-     ],
-     "answerKey": {
-      "choice": "72"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Gốc = con: mẹ = con + 26; bố = con + 28 → 3 × con + 54 = 72."
-   },
-   {
-    "show": "Bước 3 — Con = 6; mẹ = 32; bố = 34. Thử: 6 + 32 + 34 = 72 ✓.",
-    "askAfter": {
-     "format": "mb",
-     "text": "TBC hai bố con 25, hơn 28 → hai tuổi?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "bố",
-        "value": 39
-       },
-       {
-        "label": "con",
-        "value": 11
-       }
-      ]
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B35.LT1",
-     "text": "TBC tuổi hai bố con là 25, bố hơn con 28 tuổi. Tính tuổi mỗi người.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "bố",
-        "value": 39
-       },
-       {
-        "label": "con",
-        "value": 11
-       }
-      ]
-     },
-     "hints": [
-      "Tổng = 25 × 2.",
-      "Máy tổng – hiệu."
-     ],
-     "solutionNarrative": "Tổng 50 → bố 39; con 11.",
-     "teaches": [
-      "K1",
-      "K2"
-     ],
-     "generator": {
-      "template": "TBC {t} của {n} người, hơn {d}. Tính tuổi.",
-      "constraints": {},
-      "answerRule": "t × n rồi máy tổng-hiệu"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B35.LT7",
-     "text": "TBC tuổi của bố, mẹ và con là 24. Mẹ hơn con 26 tuổi; bố hơn mẹ 2 tuổi. Tính tuổi mỗi người.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "con",
-        "value": 6
-       },
-       {
-        "label": "mẹ",
-        "value": 32
-       },
-       {
-        "label": "bố",
-        "value": 34
-       }
-      ]
-     },
-     "hints": [
-      "Tổng 72; gốc = con.",
-      "Bố = con + 28 → 3 con + 54 = 72."
-     ],
-     "solutionNarrative": "Con 6; mẹ 32; bố 34 (72 ✓).",
-     "teaches": [
-      "K1",
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "tf",
-     "text": "(Đúng/Sai?) Với đề TBC ba người là 24, có thể lấy tổng = 24 × 2 = 48 rồi chia phần.",
-     "answerKey": {
-      "value": false,
-      "note": "Quân số 3 → tổng = 72; tổng 48 cho TBC 16 ≠ 24 — màn kéo lệch."
-     },
-     "hints": [
-      "Đếm đầu người.",
-      "Thử ngược TBC."
-     ],
-     "teaches": [
-      "K1"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.6.1#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B35.M2",
-   "award": "huy_hieu_man_quan_so"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B35.QZ3",
-    "text": "TBC tuổi hai bố con là 25 → tổng tuổi là:",
-    "choices": [
-     "50",
-     "25",
-     "75"
+    "cases": [
+      "CA:KSN5Q1.B35.1"
     ],
-    "answerKey": {
-     "choice": "50"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
+    "traps": [
+      "TRAP:KSN5Q1.B35.3"
     ]
-   },
-   {
-    "id": "A2",
-    "format": "mb",
-    "text": "TBC ba người 24; mẹ = con + 26; bố = con + 28 → tuổi con?",
-    "answerKey": {
-     "parts": [
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con giải bài tuổi MỘT MỐC có TBC và dữ kiện xâu chuỗi: kéo màn TBC nhân ĐÚNG QUÂN SỐ ra tổng (cầu B21/B30), rồi với chuỗi \"bố hơn mẹ, mẹ hơn con…\" lấy NGƯỜI BÉ NHẤT làm gốc — vẽ sơ đồ nhiều đoạn, gom phần hơn, chia ra gốc — và đáp đứng đúng mốc đề hỏi.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (TBC × quân số)",
+    "kidText": "Bài tuổi có trung bình cộng: nhân đúng số người ra tổng. Chuỗi \"bố hơn mẹ, mẹ hơn con\" thì lấy người bé nhất làm gốc."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "con",
-       "value": 6
-      }
-     ]
-    },
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mb",
-    "text": "TBC 25, hơn 28 → bố và con?",
-    "answerKey": {
-     "parts": [
-      {
-       "label": "bố",
-       "value": 39
+        "id": "K1",
+        "text": "TBC là tấm màn che tổng — nhân ĐÚNG QUÂN SỐ: TBC hai bố con 25 → tổng 25 × 2 = 50; TBC ba người 24 → tổng 24 × 3 = 72 (nhân nhầm quân số là gãy từ cửa)."
       },
       {
-       "label": "con",
-       "value": 11
+        "id": "K2",
+        "text": "Kéo màn xong là máy quen: tổng 50, bố hơn con 28 → máy tổng – hiệu: bố (50 + 28) : 2 = 39; con 11."
+      },
+      {
+        "id": "K3",
+        "text": "Chuỗi \"mẹ hơn con 26; bố hơn mẹ 2\" → quy hết về NGƯỜI BÉ NHẤT (con) làm gốc: mẹ = con + 26; bố = con + 26 + 2 = con + 28 → 3 lần con + 54 = 72 → con 6; mẹ 32; bố 34. Thử: cộng lại đúng 72."
       }
-     ]
-    },
-    "teaches": [
-     "K2"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Tuổi một mốc TBC + xâu chuỗi — giải sao?",
-    "back": "Kéo màn TBC × ĐÚNG QUÂN SỐ (2 người → ×2 = 50; 3 người → ×3 = 72). Chuỗi 'bố hơn mẹ, mẹ hơn con' → quy về GỐC BÉ NHẤT: mẹ = con+26, bố = con+28 → 3con + 54 = 72 → 6; 32; 34. Đáp đứng đúng mốc hỏi."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P2 (chuỗi ba người)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con giải bài tuổi một mốc: kéo màn TBC đúng quân số, xâu chuỗi quy về gốc bé nhất. Con đạt {score}/3, {trapResult} câu bẫy quân-số.",
-  "homeActivity": "Tính TBC tuổi cả nhà mình — con đếm quân số to trước khi nhân, rồi thử ngược.",
-  "watchFor": "Nếu con nhân nhầm quân số — cho thử ngược: tổng chia số người có ra đúng TBC không (S1)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B35.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "TBC 24 → tổng 48??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "tổng bằng 24 nhân 2 là 48!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Nhà này mấy người mà nhân 2?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B35_M1_F1.png",
-   "sha256_16": "6c54e201eefa5749"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con giải bài tuổi MỘT MỐC có TBC và dữ kiện xâu chuỗi: kéo màn TBC nhân ĐÚNG QUÂN SỐ ra tổng (cầu B21/B30), rồi với chuỗi \"bố hơn mẹ, mẹ hơn con…\" lấy NGƯỜI BÉ NHẤT làm gốc — vẽ sơ đồ nhiều đoạn, gom phần hơn, chia ra gốc — và đáp đứng đúng mốc đề hỏi.",
-    "steps": [
-     {
-      "text": "TBC 25 × 2 = 50 · hiệu 28"
-     },
-     {
-      "text": "bố (50 + 28):2 = 39 · con 11"
-     },
-     {
-      "text": "nghi thức: đáp đứng đúng mốc hỏi"
-     }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B35_M1_F2.png",
-   "sha256_16": "f714558c3df4a419"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "TBC là tấm màn che tổng",
-      "text": "nhân ĐÚNG QUÂN SỐ: TBC hai bố con 25 → tổng 25 × 2 = 50; TBC ba người 24 → tổng 24 × 3 = 72 (nhân nhầm quân số là gãy từ cửa).",
-      "tone": "navy"
-     },
-     {
-      "label": "Kéo màn xong là máy quen",
-      "text": "tổng 50, bố hơn con 28 → máy tổng – hiệu: bố (50 + 28) : 2 = 39; con 11.",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: TẤM MÀN TBC VÀ SỢI DÂY XÂU CHUỖI. Đề: \"TBC tuổi bố, mẹ, con là 24; mẹ hơn con 26; bố hơn mẹ 2.\" Trí Long kéo màn vội: 24 nhân HAI bằng 48?! Quân số là BA người — màn kéo đúng: 24 × 3 = BẢY MƯƠI HAI. Ba người lủng lẳng trên sợi dây xâu chuỗi: bố hơn mẹ, mẹ hơn con — gỡ rối bằng cách quy hết về NGƯỜI BÉ NHẤT: con làm gốc! Mẹ = con + 26; bố = mẹ + 2 = con + 28. Cộng cả nhà: ba lần con + 54 = 72 → ba lần con = 18 → con SÁU tuổi; mẹ ba hai; bố ba tư. Thử: 6 + 32 + 34 = 72 ✓ — màn nào quân số nấy, chuỗi nào gốc nấy!",
+    "canonicalExamples": [
+      {
+        "case": "TBC hai người + hiệu (ca nền)",
+        "problem": "TBC tuổi hai bố con là 25, bố hơn con 28 tuổi. Tính tuổi mỗi người.",
+        "solution": "Tổng = 25 × 2 = 50 → bố = (50 + 28) : 2 = 39; con = 11. Thử: 39 − 11 = 28 ✓.",
+        "why": "Ca đề A câu 8 — màn hai người, máy B25."
+      },
+      {
+        "case": "TBC ba người + xâu chuỗi (ca lõi)",
+        "problem": "TBC tuổi của bố, mẹ và con là 24. Mẹ hơn con 26 tuổi; bố hơn mẹ 2 tuổi. Tính tuổi mỗi người.",
+        "solution": "Tổng = 72. Gốc = con: mẹ = con + 26; bố = con + 28 → 3 × con + 54 = 72 → con 6; mẹ 32; bố 34. Thử: 72 ✓.",
+        "why": "Ca LT7 — chuỗi hai mắt xích quy về gốc bé nhất."
+      }
+    ],
+    "numberRange": "Lớp 5: quân số 2–3; tổng ≤ 120.",
+    "misconceptions": [
+      {
+        "wrong": "TBC ba người nhân với 2 (tổng 48); hoặc giải xong ở mốc khác mà nộp thẳng không trượt về mốc đề hỏi.",
+        "signal": "Quân số trong phép nhân khác quân số trong đề; đáp đứng nhầm mốc.",
+        "fix": "K1 — đếm quân số trước khi nhân: TBC × ĐÚNG số người; và nghi thức 'đáp đứng đúng mốc hỏi' (nối B30.M1).",
+        "counterExample": "Tổng 48 chia cho nhà ba người: TBC chỉ còn 16 ≠ 24 — màn kéo lệch lộ ngay."
+      }
+    ],
+    "vocabulary": [
+      "màn TBC quân số",
+      "sợi dây xâu chuỗi",
+      "người bé nhất làm gốc",
+      "gom phần hơn",
+      "đáp đúng mốc hỏi"
     ],
     "mantra": "TBC NHÂN ĐÚNG QUÂN SỐ — CHUỖI QUY VỀ GỐC BÉ NHẤT!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B35_M1_F3.png",
-   "sha256_16": "86bda9556986f636"
   },
-  {
-   "archetype": "sum_diff_bars",
-   "params": {
-    "title": "TBC TUỔI HAI BỐ CON LÀ 25 · BỐ HƠN CON 28 TUỔI",
-    "small": {
-     "label": "con 11",
-     "val": 11
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Cầu B21: TBC ba số là 24 → tổng = ?",
+        "answerKey": {
+          "value": 72
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B30.M3",
+      "message": "Ôn kéo màn TBC Bài 30 rồi vào bài tuổi nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Đề: \"TBC tuổi bố, mẹ, con là 24; mẹ hơn con 26; bố hơn mẹ 2 — tính tuổi mỗi người.\" Trí Long kéo màn vội: \"tổng bằng 24 nhân 2 là 48!\" Su Kem đếm đầu người: \"Nhà này mấy người mà nhân 2?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "TBC 24 → tổng 48??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để đếm quân số!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 44,
+        "teaches": [
+          "K1",
+          "K3"
+        ],
+        "narration": "Quân số BA người — màn kéo đúng: hai tư nhân ba bằng BẢY MƯƠI HAI! Ba người lủng lẳng trên sợi dây xâu chuỗi: bố hơn mẹ, mẹ hơn con — gỡ rối bằng cách quy hết về NGƯỜI BÉ NHẤT: con làm gốc! Mẹ bằng con cộng hai sáu; bố bằng mẹ cộng hai — tức con cộng HAI TÁM. Cộng cả nhà: ba lần con cộng năm tư bằng bảy hai — ba lần con bằng mười tám: con SÁU tuổi, mẹ BA HAI, bố BA TƯ!",
+        "display": {
+          "type": "chain_anchor_interactive",
+          "spec": {
+            "total": 72,
+            "chain": "mẹ = con + 26 · bố = con + 28",
+            "equation": "3 × con + 54 = 72",
+            "values": [
+              6,
+              32,
+              34
+            ]
+          }
+        },
+        "interaction": {
+          "type": "pull_curtain_chain",
+          "answerKey": {
+            "values": [
+              6,
+              32,
+              34
+            ]
+          },
+          "successMessage": "Tổng 72 → 3 con + 54 → con 6; mẹ 32; bố 34!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "TBC tuổi hai bố con là 25 → tổng tuổi là:",
+          "choices": [
+            "50",
+            "25",
+            "75"
+          ],
+          "answerKey": {
+            "choice": "50"
+          },
+          "wrongFeedback": "25 × 2 (quân số 2).",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 40,
+        "teaches": [
+          "K2"
+        ],
+        "narration": "Ca hai người chạy nhanh: TBC hai bố con hai lăm — quân số HAI: tổng NĂM MƯƠI; bố hơn con hai tám — máy tổng – hiệu quen: bố bằng năm mươi cộng hai tám chia hai — BA MƯƠI CHÍN, con MƯỜI MỘT! Thử: ba chín trừ mười một đúng hai tám. Nghi thức cuối: đáp phải ĐỨNG ĐÚNG MỐC đề hỏi!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "TBC 25 × 2 = 50 · hiệu 28",
+            "bố (50 + 28):2 = 39 · con 11 ✓",
+            "nghi thức: đáp đứng đúng mốc hỏi"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 12,
+        "narration": "Thần chú màn và chuỗi: TBC nhân đúng quân số — chuỗi quy về gốc bé nhất!",
+        "display": {
+          "type": "mantra_card",
+          "text": "ĐÚNG QUÂN SỐ · GỐC BÉ NHẤT!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 88,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "big": {
-     "label": "bố 39",
-     "val": 39
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "diff_label": "hiệu 28",
-    "total_label": "tổng 50",
-    "formula": "KÉO MÀN: tổng = 25 × 2 = 50  →  bố = (50 + 28) : 2 = 39",
-    "note": "Ba người: tổng 72 · gốc là con → 3 × con + 54 = 72 → con 6 · mẹ 32 · bố 34"
-   },
-   "caption": "Kéo màn TBC nhân ĐÚNG quân số rồi mới lắp máy tổng – hiệu",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B35_M1_F4.png",
-   "sha256_16": "e429cb51060d4e05"
-  }
- ]
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Đề: TBC tuổi bố, mẹ, con là hai tư; mẹ hơn con hai sáu; bố hơn mẹ hai — tính tuổi mỗi người. Trí Long kéo màn vội: tổng bằng hai tư nhân hai là bốn tám! Su Kem đếm đầu người: nhà này mấy người mà nhân hai?",
+        "screenText": "TBC 24 → ×2 = 48?? nhà mấy người?",
+        "visual": "Tấm màn TBC 24 với ba bóng người sau màn; Trí Long viết ×2; Su Kem chỉ tay đếm ba đầu, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 18
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Quân số BA người — màn kéo đúng: hai tư nhân ba bằng BẢY MƯƠI HAI! Ba người lủng lẳng trên sợi dây xâu chuỗi: bố hơn mẹ, mẹ hơn con — quy hết về NGƯỜI BÉ NHẤT: con làm gốc! Mẹ bằng con cộng hai sáu; bố bằng con cộng HAI TÁM. Cộng cả nhà: ba lần con cộng năm tư bằng bảy hai — con SÁU tuổi, mẹ BA HAI, bố BA TƯ!",
+        "screenText": "24 × 3 = 72 · mẹ = con+26 · bố = con+28 → 3con + 54 = 72 → 6·32·34",
+        "visual": "Màn kéo lộ tổng 72; sơ đồ ba đoạn cùng gốc con với hai khúc hơn 26 và 28; phép gom 3con+54.",
+        "assets": [],
+        "duration": 27
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Ca hai người chạy nhanh: TBC hai bố con hai lăm — quân số HAI: tổng NĂM MƯƠI; bố hơn con hai tám — máy tổng hiệu quen: bố bằng năm mươi cộng hai tám chia hai — BA MƯƠI CHÍN, con MƯỜI MỘT! Thử: ba chín trừ mười một đúng hai tám. Nghi thức cuối: đáp phải ĐỨNG ĐÚNG MỐC đề hỏi!",
+        "screenText": "25 × 2 = 50 · bố 39 · con 11 ✓ · đáp đúng MỐC hỏi!",
+        "visual": "Ca hai người với máy tổng-hiệu quen; tấm biển nghi thức 'ĐÁP ĐỨNG ĐÚNG MỐC' đóng khung vàng.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú màn và chuỗi: TBC nhân đúng quân số — chuỗi quy về gốc bé nhất!",
+        "screenText": "ĐÚNG QUÂN SỐ · GỐC BÉ NHẤT!",
+        "visual": "Thẻ thần chú vàng với icon màn và sợi chuỗi.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Nhà ba người của con: TBC hai tư, mẹ hơn con hai sáu, bố hơn mẹ hai — kéo màn đúng quân số rồi tìm tuổi cả nhà! Vào bài luyện ngay!",
+        "screenText": "TBC 24 ×3 → chuỗi → 3 tuổi?",
+        "visual": "Ba ghế gia đình chờ điền tuổi; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 12
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Màn ba người — chuỗi hai mắt",
+    "problem": "TBC tuổi của bố, mẹ và con là 24. Mẹ hơn con 26 tuổi; bố hơn mẹ 2 tuổi. Tính tuổi mỗi người.",
+    "steps": [
+      {
+        "show": "Bước 1 — Kéo màn ĐÚNG quân số: tổng = 24 × 3 = 72.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "TBC 24 của BA người → tổng:",
+          "choices": [
+            "72",
+            "48",
+            "24"
+          ],
+          "answerKey": {
+            "choice": "72"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Gốc = con: mẹ = con + 26; bố = con + 28 → 3 × con + 54 = 72."
+      },
+      {
+        "show": "Bước 3 — Con = 6; mẹ = 32; bố = 34. Thử: 6 + 32 + 34 = 72 ✓.",
+        "askAfter": {
+          "format": "mb",
+          "text": "TBC hai bố con 25, hơn 28 → hai tuổi?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "bố",
+                "value": 39
+              },
+              {
+                "label": "con",
+                "value": 11
+              }
+            ]
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B35.LT1",
+          "text": "TBC tuổi hai bố con là 25, bố hơn con 28 tuổi. Tính tuổi mỗi người.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "bố",
+                "value": 39
+              },
+              {
+                "label": "con",
+                "value": 11
+              }
+            ]
+          },
+          "hints": [
+            "Tổng = 25 × 2.",
+            "Máy tổng – hiệu."
+          ],
+          "solutionNarrative": "Tổng 50 → bố 39; con 11.",
+          "teaches": [
+            "K1",
+            "K2"
+          ],
+          "generator": {
+            "template": "TBC {t} của {n} người, hơn {d}. Tính tuổi.",
+            "constraints": {},
+            "answerRule": "t × n rồi máy tổng-hiệu"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B35.LT7",
+          "text": "TBC tuổi của bố, mẹ và con là 24. Mẹ hơn con 26 tuổi; bố hơn mẹ 2 tuổi. Tính tuổi mỗi người.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "con",
+                "value": 6
+              },
+              {
+                "label": "mẹ",
+                "value": 32
+              },
+              {
+                "label": "bố",
+                "value": 34
+              }
+            ]
+          },
+          "hints": [
+            "Tổng 72; gốc = con.",
+            "Bố = con + 28 → 3 con + 54 = 72."
+          ],
+          "solutionNarrative": "Con 6; mẹ 32; bố 34 (72 ✓).",
+          "teaches": [
+            "K1",
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "tf",
+          "text": "(Đúng/Sai?) Với đề TBC ba người là 24, có thể lấy tổng = 24 × 2 = 48 rồi chia phần.",
+          "answerKey": {
+            "value": false,
+            "note": "Quân số 3 → tổng = 72; tổng 48 cho TBC 16 ≠ 24 — màn kéo lệch."
+          },
+          "hints": [
+            "Đếm đầu người.",
+            "Thử ngược TBC."
+          ],
+          "teaches": [
+            "K1"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.6.1#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B35.M2",
+      "award": "huy_hieu_man_quan_so"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B35.QZ3",
+        "text": "TBC tuổi hai bố con là 25 → tổng tuổi là:",
+        "choices": [
+          "50",
+          "25",
+          "75"
+        ],
+        "answerKey": {
+          "choice": "50"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mb",
+        "text": "TBC ba người 24; mẹ = con + 26; bố = con + 28 → tuổi con?",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "con",
+              "value": 6
+            }
+          ]
+        },
+        "teaches": [
+          "K3"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mb",
+        "text": "TBC 25, hơn 28 → bố và con?",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "bố",
+              "value": 39
+            },
+            {
+              "label": "con",
+              "value": 11
+            }
+          ]
+        },
+        "teaches": [
+          "K2"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Tuổi một mốc TBC + xâu chuỗi — giải sao?",
+        "back": "Kéo màn TBC × ĐÚNG QUÂN SỐ (2 người → ×2 = 50; 3 người → ×3 = 72). Chuỗi 'bố hơn mẹ, mẹ hơn con' → quy về GỐC BÉ NHẤT: mẹ = con+26, bố = con+28 → 3con + 54 = 72 → 6; 32; 34. Đáp đứng đúng mốc hỏi."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P2 (chuỗi ba người)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con giải bài tuổi một mốc: kéo màn TBC đúng quân số, xâu chuỗi quy về gốc bé nhất. Con đạt {score}/3, {trapResult} câu bẫy quân-số.",
+    "homeActivity": "Tính TBC tuổi cả nhà mình — con đếm quân số to trước khi nhân, rồi thử ngược.",
+    "watchFor": "Nếu con nhân nhầm quân số — cho thử ngược: tổng chia số người có ra đúng TBC không (S1)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B35.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "TBC 24 → tổng 48??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "tổng bằng 24 nhân 2 là 48!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Nhà này mấy người mà nhân 2?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B35_M1_F1.png",
+      "sha256_16": "6c54e201eefa5749"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con giải bài tuổi MỘT MỐC có TBC và dữ kiện xâu chuỗi: kéo màn TBC nhân ĐÚNG QUÂN SỐ ra tổng (cầu B21/B30), rồi với chuỗi \"bố hơn mẹ, mẹ hơn con…\" lấy NGƯỜI BÉ NHẤT làm gốc — vẽ sơ đồ nhiều đoạn, gom phần hơn, chia ra gốc — và đáp đứng đúng mốc đề hỏi.",
+        "steps": [
+          {
+            "text": "TBC 25 × 2 = 50 · hiệu 28"
+          },
+          {
+            "text": "bố (50 + 28):2 = 39 · con 11"
+          },
+          {
+            "text": "nghi thức: đáp đứng đúng mốc hỏi"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B35_M1_F2.png",
+      "sha256_16": "f714558c3df4a419"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "TBC là tấm màn che tổng",
+            "text": "nhân ĐÚNG QUÂN SỐ: TBC hai bố con 25 → tổng 25 × 2 = 50; TBC ba người 24 → tổng 24 × 3 = 72 (nhân nhầm quân số là gãy từ cửa).",
+            "tone": "navy"
+          },
+          {
+            "label": "Kéo màn xong là máy quen",
+            "text": "tổng 50, bố hơn con 28 → máy tổng – hiệu: bố (50 + 28) : 2 = 39; con 11.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "TBC NHÂN ĐÚNG QUÂN SỐ — CHUỖI QUY VỀ GỐC BÉ NHẤT!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B35_M1_F3.png",
+      "sha256_16": "86bda9556986f636"
+    },
+    {
+      "archetype": "sum_diff_bars",
+      "params": {
+        "title": "TBC TUỔI HAI BỐ CON LÀ 25 · BỐ HƠN CON 28 TUỔI",
+        "small": {
+          "label": "con 11",
+          "val": 11
+        },
+        "big": {
+          "label": "bố 39",
+          "val": 39
+        },
+        "diff_label": "hiệu 28",
+        "total_label": "tổng 50",
+        "formula": "KÉO MÀN: tổng = 25 × 2 = 50  →  bố = (50 + 28) : 2 = 39",
+        "note": "Ba người: tổng 72 · gốc là con → 3 × con + 54 = 72 → con 6 · mẹ 32 · bố 34"
+      },
+      "caption": "Kéo màn TBC nhân ĐÚNG quân số rồi mới lắp máy tổng – hiệu",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B35_M1_F4.png",
+      "sha256_16": "e429cb51060d4e05"
+    }
+  ]
 }

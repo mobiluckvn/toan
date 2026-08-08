@@ -1,601 +1,604 @@
 {
- "title": "Bốn công thức dòng nước & bộ xương Tổng - Hiệu: xuôi hơn ngược đúng HAI lần V nước — nhớ chia 2",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:V.3.1#2"
-  ],
-  "bktUnit": "CASE:V.3.1#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B55",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B55.M1",
-  "next": "DL:KSN5Q1.B55.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B55",
-  "chunks": [
-   "CHUNK:KSN5Q1.B55.S4",
-   "CHUNK:KSN5Q1.B55.S5"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B55.3"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B55.2"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con thuộc BỐN CÔNG THỨC dòng nước như một gia đình Tổng - Hiệu (bộ xương B43): xuôi = thực + nước (12 + 3 = 15); ngược = thực − nước (12 − 3 = 9); và chiều ngược lại: NƯỚC = (xuôi − ngược) : 2 = (15 − 9) : 2 = 3; THỰC = (xuôi + ngược) : 2 = 12 — hiệu xuôi-ngược là HAI lần vận tốc nước (được cõng một lần, bị cản một lần) nên phải NHỚ CHIA 2.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (nước = hiệu : 2)",
-  "kidText": "Xuôi dòng bằng thực cộng nước, ngược dòng bằng thực trừ nước. Xuôi hơn ngược đúng HAI lần vận tốc nước — nhớ chia 2."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Dòng nước là băng chuyền: XUÔI được cõng — V xuôi = V thực + V nước = 12 + 3 = 15 km/h; NGƯỢC bị cản — V ngược = V thực − V nước = 12 − 3 = 9 km/h."
-   },
-   {
-    "id": "K2",
-    "text": "Chiều ngược là bài TỔNG - HIỆU quen mặt (bộ xương B43): xuôi hơn ngược đúng HAI lần V nước (cõng một lần + cản một lần) → V nước = (15 − 9) : 2 = 3; V thực = (15 + 9) : 2 = 12 — quên chia 2 là nước chảy nhanh gấp đôi sự thật."
-   },
-   {
-    "id": "K3",
-    "text": "Ca sư phụ cho THỜI GIAN: khúc sông 36 km xuôi hết 2,4 giờ, ngược hết 4 giờ → V xuôi = 36 : 2,4 = 15; V ngược = 36 : 4 = 9 → về bài tổng-hiệu: thực 12, nước 3."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: BĂNG CHUYỀN SÂN BAY VÀ GIA ĐÌNH TỔNG - HIỆU. Dòng sông là BĂNG CHUYỀN sân bay đang chạy! Thuyền máy mười hai cây giờ bước lên băng chuyền ba cây giờ: đi XUÔI — băng chuyền CÕNG: mười hai cộng ba — MƯỜI LĂM! Quay NGƯỢC — băng chuyền CẢN: mười hai trừ ba — CHÍN! Hai công thức xuôi cộng ngược trừ — dễ! Nhưng Cáo Đề thích ra chiều NGƯỢC LẠI: biết xuôi mười lăm, ngược chín — tìm nước và thực! Nhìn kỹ: xuôi hơn ngược sáu cây — mà sáu cây này là NƯỚC ĐÓNG HAI LẦN: cõng một lần khi xuôi, cản một lần khi ngược! Hiệu là HAI lần vận tốc nước: nước bằng mười-lăm-trừ-chín chia HAI — BA! Thực bằng cộng chia hai — MƯỜI HAI! Đây là gia đình TỔNG - HIỆU quen mặt từ bài toán tìm hai số — chỉ khoác áo sông nước! Sư phụ nâng cấp cho THỜI GIAN: ba sáu cây xuôi hai phẩy tư giờ — mười lăm; ngược bốn giờ — chín: lại về tổng-hiệu: thực mười hai, nước ba!",
-  "canonicalExamples": [
-   {
-    "case": "xuôi - ngược (ca băng chuyền)",
-    "problem": "Thuyền máy có vận tốc thực 12 km/h trên dòng nước chảy 3 km/h. Tính vận tốc khi xuôi dòng và khi ngược dòng.",
-    "solution": "Xuôi = 12 + 3 = 15 km/h; ngược = 12 − 3 = 9 km/h.",
-    "why": "Ca LT2 — cõng và cản."
-   },
-   {
-    "case": "tổng - hiệu (ca lõi)",
-    "problem": "Thuyền xuôi dòng với 15 km/h, ngược dòng với 9 km/h. Tính vận tốc dòng nước và vận tốc thực của thuyền.",
-    "solution": "Nước = (15 − 9) : 2 = 3 km/h; thực = (15 + 9) : 2 = 12 km/h.",
-    "why": "Ca đề A câu 11 — hiệu là HAI lần nước, nhớ chia 2."
-   },
-   {
-    "case": "từ thời gian (ca sư phụ)",
-    "problem": "Khúc sông dài 36 km. Ca nô xuôi dòng hết 2,4 giờ và ngược dòng hết 4 giờ. Tính vận tốc thực của ca nô và vận tốc dòng nước.",
-    "solution": "V xuôi = 36 : 2,4 = 15; V ngược = 36 : 4 = 9 → thực = 12 km/h, nước = 3 km/h.",
-    "why": "Ca LT9 — tam giác V-S-T mở màn, tổng-hiệu khép sổ."
-   }
-  ],
-  "numberRange": "Lớp 5: V thực ≤ 20; V nước ≤ 5 km/h.",
-  "misconceptions": [
-   {
-    "wrong": "V nước = xuôi − ngược = 6 (quên chia 2) — nước bị tính gấp đôi.",
-    "signal": "Không có phép : 2 sau hiệu; V nước to bất thường so với V thực.",
-    "fix": "K2 — nước đóng HAI lần trong hiệu (cõng + cản) → (15 − 9) : 2 = 3.",
-    "counterExample": "Nếu nước 6 thì xuôi = thực + 6 và ngược = thực − 6: lấy thực 12 → ngược 6 km/h — mà đề đo được 9: lệch ngay 3 cây, phép thử vạch mặt!"
-   }
-  ],
-  "vocabulary": [
-   "băng chuyền sân bay",
-   "cõng và cản",
-   "nước đóng hai lần",
-   "gia đình tổng - hiệu",
-   "khoác áo sông nước"
-  ],
-  "mantra": "XUÔI HƠN NGƯỢC ĐÚNG HAI LẦN VẬN TỐC NƯỚC — NHỚ CHIA 2!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Ôn B43: hai số tổng 24 hiệu 6 — số bé = ?",
-    "answerKey": {
-     "value": 9
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B43.M1",
-   "message": "Ôn tổng-hiệu rồi lên băng chuyền nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Thuyền xuôi 15 km/h, ngược 9 km/h — tìm vận tốc nước. Trí Long trừ phát ăn ngay: \"15 − 9 = 6!\" Su Kem thử ngược: \"Nước 6 thì thuyền thực 12 đi ngược chỉ còn 12 − 6 = 6 — mà đề đo hẳn 9 cơ mà?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "V nước = 15 − 9 = 6??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để lên băng chuyền!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "Bốn công thức dòng nước & bộ xương Tổng - Hiệu: xuôi hơn ngược đúng HAI lần V nước — nhớ chia 2",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:V.3.1#2"
     ],
-    "narration": "Dòng sông là BĂNG CHUYỀN sân bay! Thuyền mười hai bước lên băng chuyền ba: XUÔI — được CÕNG: mười lăm! NGƯỢC — bị CẢN: chín! Chiều ngược lại: xuôi hơn ngược SÁU cây — nước đóng HAI LẦN: cõng khi xuôi, cản khi ngược! Hiệu là HAI lần vận tốc nước: nước bằng mười-lăm-trừ-chín chia HAI — BA! Thực bằng cộng chia hai — MƯỜI HAI: gia đình TỔNG - HIỆU quen mặt khoác áo sông nước!",
-    "display": {
-     "type": "conveyor_interactive",
-     "spec": {
-      "down": "xuôi = 12 + 3 = 15 (cõng)",
-      "up": "ngược = 12 − 3 = 9 (cản)",
-      "reverse": "nước = (15−9):2 = 3 · thực = (15+9):2 = 12"
-     }
-    },
-    "interaction": {
-     "type": "ride_conveyor",
-     "answerKey": {
-      "values": [
-       3,
-       12
-      ]
-     },
-     "successMessage": "Tổng-hiệu khoác áo nước: 3 và 12!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "Xuôi 15, ngược 9 → V nước bằng:",
-     "choices": [
-      "3",
-      "6",
-      "12"
-     ],
-     "answerKey": {
-      "choice": "3"
-     },
-     "wrongFeedback": "Hiệu chia 2.",
-     "objective": "O1",
-     "teaches": [
-      "K2"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
+    "bktUnit": "CASE:V.3.1#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B55",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B55.M1",
+    "next": "DL:KSN5Q1.B55.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B55",
+    "chunks": [
+      "CHUNK:KSN5Q1.B55.S4",
+      "CHUNK:KSN5Q1.B55.S5"
     ],
-    "narration": "Sư phụ nâng cấp — đề chỉ cho THỜI GIAN: khúc sông ba mươi sáu cây, xuôi hết hai phẩy tư giờ — ngược hết bốn giờ! Tam giác V-S-T mở màn: vận tốc xuôi bằng ba sáu chia hai phẩy tư — MƯỜI LĂM; vận tốc ngược ba sáu chia bốn — CHÍN! Rồi tổng-hiệu khép sổ: thực mười hai — nước BA! Hai bài học cũ bắt tay nhau giải một đề mới: tam giác dựng vận tốc, tổng-hiệu tách đôi!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "V xuôi = 36 : 2,4 = 15 · V ngược = 36 : 4 = 9",
-      "nước = (15−9):2 = 3 · thực = 12",
-      "tam giác mở màn — tổng-hiệu khép sổ"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú băng chuyền: xuôi hơn ngược đúng hai lần vận tốc nước — nhớ chia hai!",
-    "display": {
-     "type": "mantra_card",
-     "text": "HIỆU = 2 LẦN NƯỚC — CHIA 2!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 88,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Thuyền xuôi mười lăm cây giờ, ngược chín — tìm vận tốc nước. Trí Long trừ phát ăn ngay: mười lăm trừ chín bằng sáu! Su Kem thử ngược: nước sáu thì thuyền thực mười hai đi ngược chỉ còn sáu — mà đề đo hẳn chín cơ mà?",
-    "screenText": "V nước = 15 − 9 = 6??",
-    "visual": "Dòng sông với hai thuyền xuôi-ngược; phép thử 12 − 6 = 6 lệch số đo 9; dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 18
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Dòng sông là BĂNG CHUYỀN sân bay! Thuyền mười hai bước lên băng chuyền ba: XUÔI — được CÕNG: mười lăm! NGƯỢC — bị CẢN: chín! Chiều ngược lại: xuôi hơn ngược SÁU cây — nước đóng HAI LẦN: cõng khi xuôi, cản khi ngược! Hiệu là HAI lần vận tốc nước: nước bằng mười-lăm-trừ-chín chia HAI — BA! Thực bằng cộng chia hai — MƯỜI HAI: gia đình TỔNG - HIỆU khoác áo sông nước!",
-    "screenText": "xuôi 12+3=15 · ngược 12−3=9 · nước = (15−9):2 = 3 · thực = 12",
-    "visual": "Băng chuyền sân bay cõng thuyền xuôi rồi cản thuyền ngược; hiệu 6 tách đôi thành hai phần nước 3-3 dán nhãn cõng-cản.",
-    "assets": [],
-    "duration": 27
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Sư phụ nâng cấp — đề chỉ cho THỜI GIAN: khúc sông ba mươi sáu cây, xuôi hết hai phẩy tư giờ — ngược hết bốn giờ! Tam giác V-S-T mở màn: vận tốc xuôi bằng ba sáu chia hai phẩy tư — MƯỜI LĂM; vận tốc ngược ba sáu chia bốn — CHÍN! Rồi tổng-hiệu khép sổ: thực mười hai — nước BA! Hai bài học cũ bắt tay nhau giải một đề mới!",
-    "screenText": "36 : 2,4 = 15 · 36 : 4 = 9 → nước 3, thực 12",
-    "visual": "Tam giác V-S-T dựng hai vận tốc rồi chuyền bóng cho bộ xương tổng-hiệu tách đôi; hai huy hiệu bài cũ bắt tay.",
-    "assets": [],
-    "duration": 27
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú băng chuyền: xuôi hơn ngược đúng hai lần vận tốc nước — nhớ chia hai!",
-    "screenText": "HIỆU = 2 LẦN NƯỚC — CHIA 2!",
-    "visual": "Thẻ thần chú vàng với icon băng chuyền.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Băng chuyền của con: xuôi mười lăm ngược chín — tách nước tách thực bằng tổng-hiệu! Vào bài luyện ngay!",
-    "screenText": "(15−9):2 = ? · (15+9):2 = ?",
-    "visual": "Băng chuyền chờ thuyền; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 8
-   }
-  ]
- },
- "workedExample": {
-  "title": "Băng chuyền hai chiều",
-  "problem": "Thuyền xuôi dòng với 15 km/h, ngược dòng với 9 km/h. Tính vận tốc dòng nước và vận tốc thực của thuyền.",
-  "steps": [
-   {
-    "show": "Bước 1 — Hiệu xuôi-ngược = 15 − 9 = 6 = HAI lần V nước (cõng + cản).",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Vì sao hiệu là hai lần nước?",
-     "choices": [
-      "cõng một lần, cản một lần",
-      "nước chảy hai chiều",
-      "đề bắt vậy"
-     ],
-     "answerKey": {
-      "choice": "cõng một lần, cản một lần"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Nước = 6 : 2 = 3 km/h."
-   },
-   {
-    "show": "Bước 3 — Thực = (15 + 9) : 2 = 12 km/h; thử: 12 + 3 = 15 ✓, 12 − 3 = 9 ✓.",
-    "askAfter": {
-     "format": "num",
-     "text": "Xuôi 36 : 2,4 = ? km/h",
-     "answerKey": {
-      "value": 15
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B55.LT2",
-     "text": "Thuyền máy có vận tốc thực 12 km/h trên dòng nước chảy 3 km/h. Tính vận tốc khi xuôi dòng và khi ngược dòng.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "xuôi",
-        "value": 15
-       },
-       {
-        "label": "ngược",
-        "value": 9
-       }
-      ]
-     },
-     "hints": [
-      "Cõng: cộng.",
-      "Cản: trừ."
-     ],
-     "solutionNarrative": "15 và 9.",
-     "teaches": [
-      "K1"
-     ],
-     "generator": {
-      "template": "Thực {v}, nước {n} → xuôi? ngược?",
-      "constraints": {},
-      "answerRule": "v+n; v−n"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B55.LT3",
-     "text": "Thuyền xuôi dòng với 15 km/h, ngược dòng với 9 km/h. Tính vận tốc dòng nước và vận tốc thực của thuyền.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "nước",
-        "value": 3
-       },
-       {
-        "label": "thực",
-        "value": 12
-       }
-      ]
-     },
-     "hints": [
-      "Hiệu = 2 lần nước.",
-      "(15−9):2 và (15+9):2."
-     ],
-     "solutionNarrative": "3 và 12.",
-     "teaches": [
-      "K2"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B55.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Khúc sông dài 36 km. Ca nô xuôi dòng hết 2,4 giờ và ngược dòng hết 4 giờ. Tính vận tốc thực của ca nô và vận tốc dòng nước.\"",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "thực",
-        "value": 12
-       },
-       {
-        "label": "nước",
-        "value": 3
-       }
-      ]
-     },
-     "hints": [
-      "V xuôi = 36 : 2,4; V ngược = 36 : 4.",
-      "Rồi tổng-hiệu."
-     ],
-     "solutionNarrative": "15 và 9 → thực 12, nước 3.",
-     "teaches": [
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:V.3.1#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B55.M3",
-   "award": "huy_hieu_bang_chuyen"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B55.QZ3",
-    "text": "Xuôi 15, ngược 9 → vận tốc dòng nước bằng:",
-    "choices": [
-     "3",
-     "6",
-     "12"
+    "cases": [
+      "CA:KSN5Q1.B55.3"
     ],
-    "answerKey": {
-     "choice": "3"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
+    "traps": [
+      "TRAP:KSN5Q1.B55.2"
     ]
-   },
-   {
-    "id": "A2",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B55.QZ1",
-    "text": "(Đúng/Sai?) V xuôi = V thực + V nước.",
-    "answerKey": {
-     "value": true
-    },
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "num",
-    "text": "Xuôi 15, ngược 9 → V thực = ?",
-    "answerKey": {
-     "value": 12
-    },
-    "teaches": [
-     "K2"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Bốn công thức dòng nước? Vì sao chia 2?",
-    "back": "BĂNG CHUYỀN: xuôi = thực + nước (12+3=15, cõng); ngược = thực − nước (9, cản). Ngược lại — TỔNG-HIỆU B43: NƯỚC = (xuôi−ngược):2 = 3 (hiệu là 2 LẦN nước: cõng 1 + cản 1!); THỰC = (xuôi+ngược):2 = 12. Từ thời gian: 36:2,4 = 15, 36:4 = 9 → về tổng-hiệu."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P3 (sư phụ)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học bốn công thức dòng nước bằng hình băng chuyền và bộ xương tổng-hiệu (hiệu = 2 lần nước). Con đạt {score}/3, {trapResult} câu bẫy quên-chia-2.",
-  "homeActivity": "Đi thang cuốn siêu thị: một lượt đứng yên xuôi, một lượt thử bước ngược chiều — con cảm nhận 'cõng' và 'cản'.",
-  "watchFor": "Nếu con lấy nguyên hiệu làm V nước — bắt thử ngược lại V ngược (S1)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B55.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "V nước = 15 − 9 = 6??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "15 − 9 = 6!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Nước 6 thì thuyền thực 12 đi ngược chỉ còn 12 − 6 = 6 — mà đề đo hẳn 9 cơ mà?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B55_M2_F1.png",
-   "sha256_16": "565952070f5f04c5"
   },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con thuộc BỐN CÔNG THỨC dòng nước như một gia đình Tổng - Hiệu (bộ xương B43): xuôi = thực + nước (12 + 3 = 15); ngược = thực − nước (12 − 3 = 9); và chiều ngược lại: NƯỚC = (xuôi − ngược) : 2 = (15 − 9) : 2 = 3; THỰC = (xuôi + ngược) : 2 = 12 — hiệu xuôi-ngược là HAI lần vận tốc nước (được cõng một lần, bị cản một lần) nên phải NHỚ CHIA 2.",
-    "steps": [
-     {
-      "text": "V xuôi = 36 : 2,4 = 15 · V ngược = 36 : 4 = 9"
-     },
-     {
-      "text": "nước = (15−9):2 = 3 · thực = 12"
-     },
-     {
-      "text": "tam giác mở màn — tổng-hiệu khép sổ"
-     }
+  "objective": {
+    "id": "O1",
+    "text": "Con thuộc BỐN CÔNG THỨC dòng nước như một gia đình Tổng - Hiệu (bộ xương B43): xuôi = thực + nước (12 + 3 = 15); ngược = thực − nước (12 − 3 = 9); và chiều ngược lại: NƯỚC = (xuôi − ngược) : 2 = (15 − 9) : 2 = 3; THỰC = (xuôi + ngược) : 2 = 12 — hiệu xuôi-ngược là HAI lần vận tốc nước (được cõng một lần, bị cản một lần) nên phải NHỚ CHIA 2.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (nước = hiệu : 2)",
+    "kidText": "Xuôi dòng bằng thực cộng nước, ngược dòng bằng thực trừ nước. Xuôi hơn ngược đúng HAI lần vận tốc nước — nhớ chia 2."
+  },
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Dòng nước là băng chuyền: XUÔI được cõng — V xuôi = V thực + V nước = 12 + 3 = 15 km/h; NGƯỢC bị cản — V ngược = V thực − V nước = 12 − 3 = 9 km/h."
+      },
+      {
+        "id": "K2",
+        "text": "Chiều ngược là bài TỔNG - HIỆU quen mặt (bộ xương B43): xuôi hơn ngược đúng HAI lần V nước (cõng một lần + cản một lần) → V nước = (15 − 9) : 2 = 3; V thực = (15 + 9) : 2 = 12 — quên chia 2 là nước chảy nhanh gấp đôi sự thật."
+      },
+      {
+        "id": "K3",
+        "text": "Ca sư phụ cho THỜI GIAN: khúc sông 36 km xuôi hết 2,4 giờ, ngược hết 4 giờ → V xuôi = 36 : 2,4 = 15; V ngược = 36 : 4 = 9 → về bài tổng-hiệu: thực 12, nước 3."
+      }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B55_M2_F2.png",
-   "sha256_16": "a9c33b8f74916380"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Dòng nước là băng chuyền",
-      "text": "XUÔI được cõng — V xuôi = V thực + V nước = 12 + 3 = 15 km/h; NGƯỢC bị cản — V ngược = V thực − V nước = 12 − 3 = 9 km/h.",
-      "tone": "navy"
-     },
-     {
-      "label": "Chiều ngược là bài TỔNG - HIỆU quen mặt (bộ xương B43)",
-      "text": "xuôi hơn ngược đúng HAI lần V nước (cõng một lần + cản một lần) → V nước = (15 − 9) : 2 = 3; V thực = (15 + 9) : 2 = 12 — quên chia 2 là nước chảy nhanh gấp đôi sự thật.",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: BĂNG CHUYỀN SÂN BAY VÀ GIA ĐÌNH TỔNG - HIỆU. Dòng sông là BĂNG CHUYỀN sân bay đang chạy! Thuyền máy mười hai cây giờ bước lên băng chuyền ba cây giờ: đi XUÔI — băng chuyền CÕNG: mười hai cộng ba — MƯỜI LĂM! Quay NGƯỢC — băng chuyền CẢN: mười hai trừ ba — CHÍN! Hai công thức xuôi cộng ngược trừ — dễ! Nhưng Cáo Đề thích ra chiều NGƯỢC LẠI: biết xuôi mười lăm, ngược chín — tìm nước và thực! Nhìn kỹ: xuôi hơn ngược sáu cây — mà sáu cây này là NƯỚC ĐÓNG HAI LẦN: cõng một lần khi xuôi, cản một lần khi ngược! Hiệu là HAI lần vận tốc nước: nước bằng mười-lăm-trừ-chín chia HAI — BA! Thực bằng cộng chia hai — MƯỜI HAI! Đây là gia đình TỔNG - HIỆU quen mặt từ bài toán tìm hai số — chỉ khoác áo sông nước! Sư phụ nâng cấp cho THỜI GIAN: ba sáu cây xuôi hai phẩy tư giờ — mười lăm; ngược bốn giờ — chín: lại về tổng-hiệu: thực mười hai, nước ba!",
+    "canonicalExamples": [
+      {
+        "case": "xuôi - ngược (ca băng chuyền)",
+        "problem": "Thuyền máy có vận tốc thực 12 km/h trên dòng nước chảy 3 km/h. Tính vận tốc khi xuôi dòng và khi ngược dòng.",
+        "solution": "Xuôi = 12 + 3 = 15 km/h; ngược = 12 − 3 = 9 km/h.",
+        "why": "Ca LT2 — cõng và cản."
+      },
+      {
+        "case": "tổng - hiệu (ca lõi)",
+        "problem": "Thuyền xuôi dòng với 15 km/h, ngược dòng với 9 km/h. Tính vận tốc dòng nước và vận tốc thực của thuyền.",
+        "solution": "Nước = (15 − 9) : 2 = 3 km/h; thực = (15 + 9) : 2 = 12 km/h.",
+        "why": "Ca đề A câu 11 — hiệu là HAI lần nước, nhớ chia 2."
+      },
+      {
+        "case": "từ thời gian (ca sư phụ)",
+        "problem": "Khúc sông dài 36 km. Ca nô xuôi dòng hết 2,4 giờ và ngược dòng hết 4 giờ. Tính vận tốc thực của ca nô và vận tốc dòng nước.",
+        "solution": "V xuôi = 36 : 2,4 = 15; V ngược = 36 : 4 = 9 → thực = 12 km/h, nước = 3 km/h.",
+        "why": "Ca LT9 — tam giác V-S-T mở màn, tổng-hiệu khép sổ."
+      }
+    ],
+    "numberRange": "Lớp 5: V thực ≤ 20; V nước ≤ 5 km/h.",
+    "misconceptions": [
+      {
+        "wrong": "V nước = xuôi − ngược = 6 (quên chia 2) — nước bị tính gấp đôi.",
+        "signal": "Không có phép : 2 sau hiệu; V nước to bất thường so với V thực.",
+        "fix": "K2 — nước đóng HAI lần trong hiệu (cõng + cản) → (15 − 9) : 2 = 3.",
+        "counterExample": "Nếu nước 6 thì xuôi = thực + 6 và ngược = thực − 6: lấy thực 12 → ngược 6 km/h — mà đề đo được 9: lệch ngay 3 cây, phép thử vạch mặt!"
+      }
+    ],
+    "vocabulary": [
+      "băng chuyền sân bay",
+      "cõng và cản",
+      "nước đóng hai lần",
+      "gia đình tổng - hiệu",
+      "khoác áo sông nước"
     ],
     "mantra": "XUÔI HƠN NGƯỢC ĐÚNG HAI LẦN VẬN TỐC NƯỚC — NHỚ CHIA 2!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B55_M2_F3.png",
-   "sha256_16": "c021e18427111bf4"
   },
-  {
-   "archetype": "sum_diff_bars",
-   "params": {
-    "title": "DÒNG NƯỚC: XUÔI HƠN NGƯỢC ĐÚNG HAI LẦN V NƯỚC",
-    "small": {
-     "label": "ngược 9 km/h",
-     "val": 9
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Ôn B43: hai số tổng 24 hiệu 6 — số bé = ?",
+        "answerKey": {
+          "value": 9
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B43.M1",
+      "message": "Ôn tổng-hiệu rồi lên băng chuyền nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Thuyền xuôi 15 km/h, ngược 9 km/h — tìm vận tốc nước. Trí Long trừ phát ăn ngay: \"15 − 9 = 6!\" Su Kem thử ngược: \"Nước 6 thì thuyền thực 12 đi ngược chỉ còn 12 − 6 = 6 — mà đề đo hẳn 9 cơ mà?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "V nước = 15 − 9 = 6??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để lên băng chuyền!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Dòng sông là BĂNG CHUYỀN sân bay! Thuyền mười hai bước lên băng chuyền ba: XUÔI — được CÕNG: mười lăm! NGƯỢC — bị CẢN: chín! Chiều ngược lại: xuôi hơn ngược SÁU cây — nước đóng HAI LẦN: cõng khi xuôi, cản khi ngược! Hiệu là HAI lần vận tốc nước: nước bằng mười-lăm-trừ-chín chia HAI — BA! Thực bằng cộng chia hai — MƯỜI HAI: gia đình TỔNG - HIỆU quen mặt khoác áo sông nước!",
+        "display": {
+          "type": "conveyor_interactive",
+          "spec": {
+            "down": "xuôi = 12 + 3 = 15 (cõng)",
+            "up": "ngược = 12 − 3 = 9 (cản)",
+            "reverse": "nước = (15−9):2 = 3 · thực = (15+9):2 = 12"
+          }
+        },
+        "interaction": {
+          "type": "ride_conveyor",
+          "answerKey": {
+            "values": [
+              3,
+              12
+            ]
+          },
+          "successMessage": "Tổng-hiệu khoác áo nước: 3 và 12!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "Xuôi 15, ngược 9 → V nước bằng:",
+          "choices": [
+            "3",
+            "6",
+            "12"
+          ],
+          "answerKey": {
+            "choice": "3"
+          },
+          "wrongFeedback": "Hiệu chia 2.",
+          "objective": "O1",
+          "teaches": [
+            "K2"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 42,
+        "teaches": [
+          "K3"
+        ],
+        "narration": "Sư phụ nâng cấp — đề chỉ cho THỜI GIAN: khúc sông ba mươi sáu cây, xuôi hết hai phẩy tư giờ — ngược hết bốn giờ! Tam giác V-S-T mở màn: vận tốc xuôi bằng ba sáu chia hai phẩy tư — MƯỜI LĂM; vận tốc ngược ba sáu chia bốn — CHÍN! Rồi tổng-hiệu khép sổ: thực mười hai — nước BA! Hai bài học cũ bắt tay nhau giải một đề mới: tam giác dựng vận tốc, tổng-hiệu tách đôi!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "V xuôi = 36 : 2,4 = 15 · V ngược = 36 : 4 = 9",
+            "nước = (15−9):2 = 3 · thực = 12",
+            "tam giác mở màn — tổng-hiệu khép sổ"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú băng chuyền: xuôi hơn ngược đúng hai lần vận tốc nước — nhớ chia hai!",
+        "display": {
+          "type": "mantra_card",
+          "text": "HIỆU = 2 LẦN NƯỚC — CHIA 2!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 88,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "big": {
-     "label": "xuôi 15 km/h",
-     "val": 15
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "diff_label": "hiệu 6 = 2 × nước",
-    "total_label": "tổng 24",
-    "formula": "nước = (15 − 9) : 2 = 3  ·  thực = (15 + 9) : 2 = 12 km/h",
-    "note": "Băng chuyền: xuôi được CÕNG (12 + 3) · ngược bị CẢN (12 − 3) — quên chia 2 là nước gấp đôi"
-   },
-   "caption": "Bộ xương Tổng - Hiệu của bài 43 khoác áo sông nước",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B55_M2_F4.png",
-   "sha256_16": "0708c909cd532111"
-  }
- ]
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Thuyền xuôi mười lăm cây giờ, ngược chín — tìm vận tốc nước. Trí Long trừ phát ăn ngay: mười lăm trừ chín bằng sáu! Su Kem thử ngược: nước sáu thì thuyền thực mười hai đi ngược chỉ còn sáu — mà đề đo hẳn chín cơ mà?",
+        "screenText": "V nước = 15 − 9 = 6??",
+        "visual": "Dòng sông với hai thuyền xuôi-ngược; phép thử 12 − 6 = 6 lệch số đo 9; dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 18
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Dòng sông là BĂNG CHUYỀN sân bay! Thuyền mười hai bước lên băng chuyền ba: XUÔI — được CÕNG: mười lăm! NGƯỢC — bị CẢN: chín! Chiều ngược lại: xuôi hơn ngược SÁU cây — nước đóng HAI LẦN: cõng khi xuôi, cản khi ngược! Hiệu là HAI lần vận tốc nước: nước bằng mười-lăm-trừ-chín chia HAI — BA! Thực bằng cộng chia hai — MƯỜI HAI: gia đình TỔNG - HIỆU khoác áo sông nước!",
+        "screenText": "xuôi 12+3=15 · ngược 12−3=9 · nước = (15−9):2 = 3 · thực = 12",
+        "visual": "Băng chuyền sân bay cõng thuyền xuôi rồi cản thuyền ngược; hiệu 6 tách đôi thành hai phần nước 3-3 dán nhãn cõng-cản.",
+        "assets": [],
+        "duration": 27
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Sư phụ nâng cấp — đề chỉ cho THỜI GIAN: khúc sông ba mươi sáu cây, xuôi hết hai phẩy tư giờ — ngược hết bốn giờ! Tam giác V-S-T mở màn: vận tốc xuôi bằng ba sáu chia hai phẩy tư — MƯỜI LĂM; vận tốc ngược ba sáu chia bốn — CHÍN! Rồi tổng-hiệu khép sổ: thực mười hai — nước BA! Hai bài học cũ bắt tay nhau giải một đề mới!",
+        "screenText": "36 : 2,4 = 15 · 36 : 4 = 9 → nước 3, thực 12",
+        "visual": "Tam giác V-S-T dựng hai vận tốc rồi chuyền bóng cho bộ xương tổng-hiệu tách đôi; hai huy hiệu bài cũ bắt tay.",
+        "assets": [],
+        "duration": 27
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú băng chuyền: xuôi hơn ngược đúng hai lần vận tốc nước — nhớ chia hai!",
+        "screenText": "HIỆU = 2 LẦN NƯỚC — CHIA 2!",
+        "visual": "Thẻ thần chú vàng với icon băng chuyền.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Băng chuyền của con: xuôi mười lăm ngược chín — tách nước tách thực bằng tổng-hiệu! Vào bài luyện ngay!",
+        "screenText": "(15−9):2 = ? · (15+9):2 = ?",
+        "visual": "Băng chuyền chờ thuyền; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 8
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Băng chuyền hai chiều",
+    "problem": "Thuyền xuôi dòng với 15 km/h, ngược dòng với 9 km/h. Tính vận tốc dòng nước và vận tốc thực của thuyền.",
+    "steps": [
+      {
+        "show": "Bước 1 — Hiệu xuôi-ngược = 15 − 9 = 6 = HAI lần V nước (cõng + cản).",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Vì sao hiệu là hai lần nước?",
+          "choices": [
+            "cõng một lần, cản một lần",
+            "nước chảy hai chiều",
+            "đề bắt vậy"
+          ],
+          "answerKey": {
+            "choice": "cõng một lần, cản một lần"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Nước = 6 : 2 = 3 km/h."
+      },
+      {
+        "show": "Bước 3 — Thực = (15 + 9) : 2 = 12 km/h; thử: 12 + 3 = 15 ✓, 12 − 3 = 9 ✓.",
+        "askAfter": {
+          "format": "num",
+          "text": "Xuôi 36 : 2,4 = ? km/h",
+          "answerKey": {
+            "value": 15
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B55.LT2",
+          "text": "Thuyền máy có vận tốc thực 12 km/h trên dòng nước chảy 3 km/h. Tính vận tốc khi xuôi dòng và khi ngược dòng.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "xuôi",
+                "value": 15
+              },
+              {
+                "label": "ngược",
+                "value": 9
+              }
+            ]
+          },
+          "hints": [
+            "Cõng: cộng.",
+            "Cản: trừ."
+          ],
+          "solutionNarrative": "15 và 9.",
+          "teaches": [
+            "K1"
+          ],
+          "generator": {
+            "template": "Thực {v}, nước {n} → xuôi? ngược?",
+            "constraints": {},
+            "answerRule": "v+n; v−n"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B55.LT3",
+          "text": "Thuyền xuôi dòng với 15 km/h, ngược dòng với 9 km/h. Tính vận tốc dòng nước và vận tốc thực của thuyền.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "nước",
+                "value": 3
+              },
+              {
+                "label": "thực",
+                "value": 12
+              }
+            ]
+          },
+          "hints": [
+            "Hiệu = 2 lần nước.",
+            "(15−9):2 và (15+9):2."
+          ],
+          "solutionNarrative": "3 và 12.",
+          "teaches": [
+            "K2"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B55.LT9",
+          "text": "Sư phụ Trí Dũng đố: \"Khúc sông dài 36 km. Ca nô xuôi dòng hết 2,4 giờ và ngược dòng hết 4 giờ. Tính vận tốc thực của ca nô và vận tốc dòng nước.\"",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "thực",
+                "value": 12
+              },
+              {
+                "label": "nước",
+                "value": 3
+              }
+            ]
+          },
+          "hints": [
+            "V xuôi = 36 : 2,4; V ngược = 36 : 4.",
+            "Rồi tổng-hiệu."
+          ],
+          "solutionNarrative": "15 và 9 → thực 12, nước 3.",
+          "teaches": [
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:V.3.1#2@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B55.M3",
+      "award": "huy_hieu_bang_chuyen"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B55.QZ3",
+        "text": "Xuôi 15, ngược 9 → vận tốc dòng nước bằng:",
+        "choices": [
+          "3",
+          "6",
+          "12"
+        ],
+        "answerKey": {
+          "choice": "3"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B55.QZ1",
+        "text": "(Đúng/Sai?) V xuôi = V thực + V nước.",
+        "answerKey": {
+          "value": true
+        },
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "num",
+        "text": "Xuôi 15, ngược 9 → V thực = ?",
+        "answerKey": {
+          "value": 12
+        },
+        "teaches": [
+          "K2"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Bốn công thức dòng nước? Vì sao chia 2?",
+        "back": "BĂNG CHUYỀN: xuôi = thực + nước (12+3=15, cõng); ngược = thực − nước (9, cản). Ngược lại — TỔNG-HIỆU B43: NƯỚC = (xuôi−ngược):2 = 3 (hiệu là 2 LẦN nước: cõng 1 + cản 1!); THỰC = (xuôi+ngược):2 = 12. Từ thời gian: 36:2,4 = 15, 36:4 = 9 → về tổng-hiệu."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P3 (sư phụ)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học bốn công thức dòng nước bằng hình băng chuyền và bộ xương tổng-hiệu (hiệu = 2 lần nước). Con đạt {score}/3, {trapResult} câu bẫy quên-chia-2.",
+    "homeActivity": "Đi thang cuốn siêu thị: một lượt đứng yên xuôi, một lượt thử bước ngược chiều — con cảm nhận 'cõng' và 'cản'.",
+    "watchFor": "Nếu con lấy nguyên hiệu làm V nước — bắt thử ngược lại V ngược (S1)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B55.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "V nước = 15 − 9 = 6??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "15 − 9 = 6!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Nước 6 thì thuyền thực 12 đi ngược chỉ còn 12 − 6 = 6 — mà đề đo hẳn 9 cơ mà?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B55_M2_F1.png",
+      "sha256_16": "565952070f5f04c5"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con thuộc BỐN CÔNG THỨC dòng nước như một gia đình Tổng - Hiệu (bộ xương B43): xuôi = thực + nước (12 + 3 = 15); ngược = thực − nước (12 − 3 = 9); và chiều ngược lại: NƯỚC = (xuôi − ngược) : 2 = (15 − 9) : 2 = 3; THỰC = (xuôi + ngược) : 2 = 12 — hiệu xuôi-ngược là HAI lần vận tốc nước (được cõng một lần, bị cản một lần) nên phải NHỚ CHIA 2.",
+        "steps": [
+          {
+            "text": "V xuôi = 36 : 2,4 = 15 · V ngược = 36 : 4 = 9"
+          },
+          {
+            "text": "nước = (15−9):2 = 3 · thực = 12"
+          },
+          {
+            "text": "tam giác mở màn — tổng-hiệu khép sổ"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B55_M2_F2.png",
+      "sha256_16": "a9c33b8f74916380"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Dòng nước là băng chuyền",
+            "text": "XUÔI được cõng — V xuôi = V thực + V nước = 12 + 3 = 15 km/h; NGƯỢC bị cản — V ngược = V thực − V nước = 12 − 3 = 9 km/h.",
+            "tone": "navy"
+          },
+          {
+            "label": "Chiều ngược là bài TỔNG - HIỆU quen mặt (bộ xương B43)",
+            "text": "xuôi hơn ngược đúng HAI lần V nước (cõng một lần + cản một lần) → V nước = (15 − 9) : 2 = 3; V thực = (15 + 9) : 2 = 12 — quên chia 2 là nước chảy nhanh gấp đôi sự thật.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "XUÔI HƠN NGƯỢC ĐÚNG HAI LẦN VẬN TỐC NƯỚC — NHỚ CHIA 2!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B55_M2_F3.png",
+      "sha256_16": "c021e18427111bf4"
+    },
+    {
+      "archetype": "sum_diff_bars",
+      "params": {
+        "title": "DÒNG NƯỚC: XUÔI HƠN NGƯỢC ĐÚNG HAI LẦN V NƯỚC",
+        "small": {
+          "label": "ngược 9 km/h",
+          "val": 9
+        },
+        "big": {
+          "label": "xuôi 15 km/h",
+          "val": 15
+        },
+        "diff_label": "hiệu 6 = 2 × nước",
+        "total_label": "tổng 24",
+        "formula": "nước = (15 − 9) : 2 = 3  ·  thực = (15 + 9) : 2 = 12 km/h",
+        "note": "Băng chuyền: xuôi được CÕNG (12 + 3) · ngược bị CẢN (12 − 3) — quên chia 2 là nước gấp đôi"
+      },
+      "caption": "Bộ xương Tổng - Hiệu của bài 43 khoác áo sông nước",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B55_M2_F4.png",
+      "sha256_16": "0708c909cd532111"
+    }
+  ]
 }

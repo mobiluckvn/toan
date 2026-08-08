@@ -1,724 +1,727 @@
 {
- "title": "Tách nhóm & ghép nhiều tầng: tổng cả − tổng nhóm biết — xếp hàng chiêu cũ",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:III.6.3#3"
-  ],
-  "bktUnit": "CASE:III.6.3#3@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B36",
-  "order": 3,
-  "prev": "DL:KSN5Q1.B36.M2",
-  "next": "DL:KSN5Q1.B37.M1"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B36",
-  "chunks": [
-   "CHUNK:KSN5Q1.B36.S4",
-   "CHUNK:KSN5Q1.B36.S7"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B36.3",
-   "CA:KSN5Q1.B36.4"
-  ],
-  "traps": []
- },
- "objective": {
-  "id": "O1",
-  "text": "Con giải bài BA NGƯỜI bằng phép TÁCH NHÓM: tuổi con = tổng cả nhà − tổng nhóm bố mẹ (mỗi tổng nhân đúng quân số, trôi đúng quân số trước khi trừ); và GHÉP NHIỀU TẦNG cho bài trùm: chuỗi tỉ, tổng – hiệu, trượt mốc — xếp hàng các chiêu cũ, mỗi tầng một chiêu, thử xâu suốt chuỗi.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (tách nhóm đúng quân số)",
-  "kidText": "Nhà ba người: tuổi con bằng tổng cả nhà trừ tổng bố mẹ. Nhớ kéo hai tổng về cùng một mốc rồi mới trừ."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tách nhóm: tuổi con = TỔNG CẢ NHÀ − TỔNG BỐ MẸ (90 − 78 = 12); mỗi tổng phải đứng CÙNG MỘT MỐC — tổng bố mẹ 4 năm trước là 70 thì trôi về nay bằng quân số 2: 70 + 2 × 4 = 78 rồi mới trừ."
-   },
-   {
-    "id": "K2",
-    "text": "Trong nhóm đã tách, chiêu cũ xử nốt: bố + mẹ = 78, bố hơn mẹ 6 → bố = (78 + 6) : 2 = 42; mẹ 36 (máy tổng – hiệu B25); hoặc chuỗi tỉ 7 + 6 + 1 = 14 phần = 84 → 6; 36; 42 (máy B30)."
-   },
-   {
-    "id": "K3",
-    "text": "Bài trùm ghép tầng = xếp hàng chiêu cũ: tầng 1 tổng trôi (22 − 6 = 16), tầng 2 hiệu – tỉ (4 phần → 4 & 12), tầng 3 trượt (+3 → 7 & 15), tầng 4 trượt tiếp (+9 → 16 & 24) và lập tỉ (24 : 16 = 3/2 — gấp rưỡi); thử xâu suốt: mỗi tầng khớp mới sang tầng sau."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: KÉO TÁCH TOA — XẾP HÀNG CHIÊU CŨ. Bài trùm tách nhóm: \"TBC ba người nay 30; BỐN năm trước tổng riêng bố mẹ là 70; bố hơn mẹ 6 — tuổi từng người?\" Tầng một — màn TBC: tổng cả nhà 90. Tầng hai — toa bố mẹ đang đứng ở mốc −4 năm: kéo về nay bằng nhãn quân số HAI: 70 cộng 2 nhân 4 bằng BẢY TÁM. Tầng ba — kéo tách toa: con = 90 trừ 78 = MƯỜI HAI tuổi! Tầng bốn — trong toa bố mẹ, máy tổng – hiệu quen: bố (78 + 6) : 2 = BỐN HAI, mẹ BA SÁU. Bốn tầng — bốn chiêu cũ xếp hàng, chẳng chiêu nào mới! Bài trùm anh em cũng vậy: tổng trôi → hiệu – tỉ → trượt → trượt tiếp và lập tỉ: nay 15 & 7 — chín năm nữa 24 & 16 — gấp RƯỠI. Đồ sộ mấy cũng chỉ là hàng dọc những chiêu đã thuộc.",
-  "canonicalExamples": [
-   {
-    "case": "tách nhóm cùng mốc (ca xâu chuỗi nay)",
-    "problem": "TBC tuổi ba bố, mẹ, con là 30. Bố hơn con 30 tuổi; mẹ hơn con 24 tuổi. Tính tuổi mỗi người.",
-    "solution": "Tổng 90; gốc con: 3 × con + 54 = 90 → con 12; mẹ 36; bố 42. Thử: 90 ✓.",
-    "why": "Ca LT3 — máy B35.M1 chạy lại làm nền."
-   },
-   {
-    "case": "chuỗi tỉ ba người (ca 14 phần)",
-    "problem": "Tổng tuổi ba bố, mẹ, con là 84. Tuổi bố gấp 7 lần tuổi con; tuổi mẹ gấp 6 lần tuổi con. Tính tuổi mỗi người.",
-    "solution": "7 + 6 + 1 = 14 phần = 84 → con 6; mẹ 36; bố 42. Thử: 42 = 7 × 6 ✓; 36 = 6 × 6 ✓.",
-    "why": "Ca đề A câu 13 — máy chuỗi tỉ B30 về nhà tuổi."
-   },
-   {
-    "case": "trùm tách nhóm lệch mốc (ca lõi)",
-    "problem": "TBC tuổi ba bố, mẹ, con hiện nay là 30. Bốn năm trước, tổng tuổi riêng bố và mẹ là 70; bố hơn mẹ 6 tuổi. Tính tuổi mỗi người hiện nay.",
-    "solution": "Tổng nhà 90. Toa bố mẹ trôi quân số 2: 70 + 8 = 78 → con = 90 − 78 = 12. Trong toa: bố 42; mẹ 36. Thử: 12 + 36 + 42 = 90 ✓.",
-    "why": "Ca LT9 / đề A câu 14 — hai luật trôi M2 vào trận."
-   },
-   {
-    "case": "trùm ghép tầng (ca xếp hàng)",
-    "problem": "Hiện nay tổng tuổi hai anh em là 22. Ba năm trước, tuổi anh gấp 3 lần tuổi em. Hỏi 9 năm nữa tuổi anh gấp mấy lần tuổi em?",
-    "solution": "16 = 4 phần → 4 & 12 → nay 7 & 15 → 9 năm nữa 16 & 24 → 24 : 16 = 3/2 — gấp rưỡi. Thử xâu: 22 ✓.",
-    "why": "Ca LT8 / đề A câu 15 — bốn tầng bốn chiêu cũ."
-   }
-  ],
-  "numberRange": "Lớp 5: 3 người; tổng ≤ 120.",
-  "misconceptions": [
-   {
-    "wrong": "Trừ hai tổng đứng ở HAI MỐC khác nhau (90 @ nay trừ 70 @ −4 năm → con 20).",
-    "signal": "Phép trừ tách nhóm thiếu bước trôi tổng con về cùng mốc.",
-    "fix": "K1 — kéo toa về CÙNG MỐC trước khi tách: 70 + 2 × 4 = 78 rồi mới trừ (nhãn quân số 2 của M2).",
-    "counterExample": "Con 20 → bố mẹ nay 70 — mà 4 năm trước họ đã 70: bốn năm chẳng ai già?!"
-   }
-  ],
-  "vocabulary": [
-   "kéo tách toa",
-   "cùng mốc mới được trừ",
-   "xếp hàng chiêu cũ",
-   "mỗi tầng một chiêu",
-   "thử xâu suốt chuỗi"
-  ],
-  "mantra": "KÉO VỀ CÙNG MỐC — TÁCH NHÓM; ĐỒ SỘ MẤY CŨNG LÀ CHIÊU CŨ XẾP HÀNG!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Ôn M2: tổng bố mẹ (2 người) 4 năm trước là 70 → nay = ?",
-    "answerKey": {
-     "value": 78
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B36.M2",
-   "message": "Ôn nhãn quân số rồi cầm kéo tách toa nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Bài trùm: \"TBC ba người nay 30; BỐN năm trước tổng riêng bố mẹ là 70; bố hơn mẹ 6 — tuổi từng người?\" Trí Long trừ luôn: \"con bằng 90 trừ 70 là 20!\" Su Kem chỉ hai con số: \"90 đứng ở mốc NAY — 70 đứng ở mốc BỐN NĂM TRƯỚC: hai toa hai sân ga mà dám trừ nhau à?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "90 (nay) − 70 (−4 năm) = 20??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để kéo toa về cùng ga!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "Tách nhóm & ghép nhiều tầng: tổng cả − tổng nhóm biết — xếp hàng chiêu cũ",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:III.6.3#3"
     ],
-    "narration": "Tầng một — màn TBC: tổng cả nhà ba mươi nhân ba bằng CHÍN MƯƠI. Tầng hai — kéo toa bố mẹ về ga NAY bằng nhãn quân số HAI: bảy mươi cộng hai nhân bốn bằng BẢY TÁM. Tầng ba — kéo tách toa: con bằng chín mươi trừ bảy tám — MƯỜI HAI tuổi! Tầng bốn — trong toa bố mẹ, máy tổng hiệu quen: bố bằng bảy tám cộng sáu chia hai — BỐN HAI, mẹ BA SÁU. Thử: mười hai cộng ba sáu cộng bốn hai đúng chín mươi!",
-    "display": {
-     "type": "detach_car_interactive",
-     "spec": {
-      "t1": "TBC 30 × 3 = 90",
-      "t2": "70 + 2×4 = 78 (về ga nay)",
-      "t3": "con = 90 − 78 = 12",
-      "t4": "bố (78+6):2 = 42 · mẹ 36"
-     }
-    },
-    "interaction": {
-     "type": "pull_then_detach",
-     "answerKey": {
-      "values": [
-       12,
-       36,
-       42
-      ]
-     },
-     "successMessage": "Kéo về 78 → tách: con 12 → bố 42, mẹ 36!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "Tổng ba người 90, tổng bố mẹ (đã về cùng mốc) 78 → tuổi con:",
-     "choices": [
-      "12",
-      "168",
-      "6"
-     ],
-     "answerKey": {
-      "choice": "12"
-     },
-     "wrongFeedback": "90 − 78.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K2",
-     "K3"
+    "bktUnit": "CASE:III.6.3#3@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B36",
+    "order": 3,
+    "prev": "DL:KSN5Q1.B36.M2",
+    "next": "DL:KSN5Q1.B37.M1"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B36",
+    "chunks": [
+      "CHUNK:KSN5Q1.B36.S4",
+      "CHUNK:KSN5Q1.B36.S7"
     ],
-    "narration": "Bài trùm anh em — xếp hàng bốn chiêu cũ: tầng một tổng trôi — hai hai trừ sáu bằng mười sáu; tầng hai hiệu tỉ — bốn phần: bốn và mười hai; tầng ba trượt về nay — bảy và mười lăm; tầng bốn trượt thêm chín năm — mười sáu và hai tư: lập tỉ hai tư trên mười sáu — GẤP RƯỠI! Chuỗi tỉ ba người cũng chiêu cũ: bố gấp bảy, mẹ gấp sáu — mười bốn phần bằng tám tư: con sáu, mẹ ba sáu, bố bốn hai. Đồ sộ mấy cũng là chiêu cũ xếp hàng!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "22 → 16 → 4 & 12 → 7 & 15 → +9: 16 & 24 → 3/2 gấp rưỡi",
-      "chuỗi 7+6+1 = 14 phần = 84 → 6; 36; 42",
-      "mỗi tầng một chiêu — thử xâu suốt"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú kéo tách toa: kéo về cùng mốc — tách nhóm; đồ sộ mấy cũng là chiêu cũ xếp hàng!",
-    "display": {
-     "type": "mantra_card",
-     "text": "CÙNG MỐC — TÁCH NHÓM · CHIÊU CŨ XẾP HÀNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 89,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Bài trùm: TBC ba người nay ba mươi; BỐN năm trước tổng riêng bố mẹ là bảy mươi; bố hơn mẹ sáu — tuổi từng người? Trí Long trừ luôn: con bằng chín mươi trừ bảy mươi là hai mươi! Su Kem: chín mươi đứng ở ga NAY — bảy mươi ở ga BỐN NĂM TRƯỚC: hai toa hai sân ga mà trừ nhau à?",
-    "screenText": "90 (nay) − 70 (−4 năm) = 20??",
-    "visual": "Hai toa tàu đỗ hai sân ga khác nhau với số 90 và 70; Trí Long bắc phép trừ chênh vênh giữa hai ga; dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Tầng một — màn TBC: tổng cả nhà ba mươi nhân ba bằng CHÍN MƯƠI. Tầng hai — kéo toa bố mẹ về ga NAY bằng nhãn quân số HAI: bảy mươi cộng hai nhân bốn bằng BẢY TÁM. Tầng ba — kéo tách toa: con bằng chín mươi trừ bảy tám — MƯỜI HAI tuổi! Tầng bốn — máy tổng hiệu quen: bố BỐN HAI, mẹ BA SÁU!",
-    "screenText": "90 · 70 +2×4→ 78 · con = 90 − 78 = 12 · bố 42 · mẹ 36 ✓",
-    "visual": "Toa bố mẹ được đầu kéo quân-số-2 kéo về ga nay; chiếc kéo vàng tách toa con mang số 12; máy tổng-hiệu xử nốt trong toa.",
-    "assets": [],
-    "duration": 25
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Bài trùm anh em — xếp hàng bốn chiêu cũ: tầng một tổng trôi — hai hai trừ sáu bằng mười sáu; tầng hai hiệu tỉ — bốn phần: bốn và mười hai; tầng ba trượt về nay — bảy và mười lăm; tầng bốn trượt thêm chín năm — mười sáu và hai tư: lập tỉ — GẤP RƯỠI!",
-    "screenText": "22→16→4&12→7&15→16&24: 3/2 · 14 phần = 84 → 6·36·42",
-    "visual": "Bốn tầng cầu thang mỗi bậc dán tên một chiêu cũ; nhân vật leo tới đỉnh cắm cờ 'gấp rưỡi'; ca 14 phần chạy góc màn.",
-    "assets": [],
-    "duration": 22
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú kéo tách toa: kéo về cùng mốc — tách nhóm; đồ sộ mấy cũng là chiêu cũ xếp hàng!",
-    "screenText": "CÙNG MỐC — TÁCH NHÓM · CHIÊU CŨ XẾP HÀNG!",
-    "visual": "Thẻ thần chú vàng với icon kéo và đoàn toa.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Đoàn tàu: TBC nay ba mươi, tổng bố mẹ bốn năm trước bảy mươi, bố hơn mẹ sáu — kéo toa về cùng ga rồi tách! Vào bài luyện ngay!",
-    "screenText": "kéo 70 → 78 → tách → 3 tuổi?",
-    "visual": "Đoàn tàu chờ kéo về ga; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P4",
-    "assets": [],
-    "duration": 11
-   }
-  ]
- },
- "workedExample": {
-  "title": "Kéo toa — tách nhóm — xử trong toa",
-  "problem": "TBC tuổi ba bố, mẹ, con hiện nay là 30. Bốn năm trước, tổng tuổi riêng bố và mẹ là 70; bố hơn mẹ 6 tuổi. Tính tuổi mỗi người hiện nay.",
-  "steps": [
-   {
-    "show": "Bước 1 — Màn TBC: tổng cả nhà = 30 × 3 = 90 @ nay.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Trừ được 90 − 70 ngay không?",
-     "choices": [
-      "chưa — 70 đứng ở mốc −4 năm",
-      "được luôn",
-      "tùy"
-     ],
-     "answerKey": {
-      "choice": "chưa — 70 đứng ở mốc −4 năm"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Kéo toa: tổng bố mẹ nay = 70 + 2 × 4 = 78 → con = 90 − 78 = 12."
-   },
-   {
-    "show": "Bước 3 — Trong toa: bố = (78 + 6) : 2 = 42; mẹ = 36. Thử: 12 + 36 + 42 = 90 ✓.",
-    "askAfter": {
-     "format": "mb",
-     "text": "Trùm anh em: 9 năm nữa anh gấp mấy em?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "tỉ",
-        "value": "gấp rưỡi (24 : 16 = 3/2)",
-        "options": [
-         "gấp rưỡi",
-         "gấp đôi",
-         "gấp ba"
-        ]
-       }
-      ]
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B36.LT3",
-     "text": "TBC tuổi ba bố, mẹ, con là 30. Bố hơn con 30 tuổi; mẹ hơn con 24 tuổi. Tính tuổi mỗi người.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "con",
-        "value": 12
-       },
-       {
-        "label": "mẹ",
-        "value": 36
-       },
-       {
-        "label": "bố",
-        "value": 42
-       }
-      ]
-     },
-     "hints": [
-      "Tổng 90; gốc con.",
-      "3 con + 54 = 90."
-     ],
-     "solutionNarrative": "Con 12; mẹ 36; bố 42 (90 ✓).",
-     "teaches": [
-      "K2"
-     ]
-    },
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B36.LT5",
-     "text": "Tổng tuổi ba bố, mẹ, con là 84. Tuổi bố gấp 7 lần tuổi con; tuổi mẹ gấp 6 lần tuổi con. Tính tuổi mỗi người.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "con",
-        "value": 6
-       },
-       {
-        "label": "mẹ",
-        "value": 36
-       },
-       {
-        "label": "bố",
-        "value": 42
-       }
-      ]
-     },
-     "hints": [
-      "Chuỗi 7 + 6 + 1 = 14 phần.",
-      "84 : 14."
-     ],
-     "solutionNarrative": "Phần 6 → 6; 36; 42 (thử ✓✓).",
-     "teaches": [
-      "K2"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B36.LT7",
-     "text": "Hiện nay anh 12 tuổi, em 6 tuổi. Hỏi mấy năm nữa tổng tuổi hai anh em là 30 — khi đó tuổi anh gấp mấy lần tuổi em?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "mấy năm",
-        "value": 6
-       },
-       {
-        "label": "tỉ",
-        "value": "gấp rưỡi (18 : 12)",
-        "options": [
-         "gấp rưỡi",
-         "gấp đôi",
-         "gấp ba"
-        ]
-       }
-      ]
-     },
-     "hints": [
-      "Cần thêm 30 − 18 = 12 → chia 2 người.",
-      "Khi đó 18 và 12."
-     ],
-     "solutionNarrative": "6 năm nữa — anh 18, em 12: gấp rưỡi.",
-     "teaches": [
-      "K3"
-     ]
-    },
-    {
-     "id": "P4",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B36.LT9",
-     "text": "Sư phụ Trí Dũng ra bài trùm: \"TBC tuổi ba bố, mẹ, con hiện nay là 30. Bốn năm trước, tổng tuổi riêng bố và mẹ là 70; bố hơn mẹ 6 tuổi. Tính tuổi mỗi người hiện nay.\"",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "con",
-        "value": 12
-       },
-       {
-        "label": "bố",
-        "value": 42
-       },
-       {
-        "label": "mẹ",
-        "value": 36
-       }
-      ]
-     },
-     "hints": [
-      "Kéo toa: 70 + 2 × 4 = 78.",
-      "Con = 90 − 78; trong toa máy tổng – hiệu."
-     ],
-     "solutionNarrative": "Con 12; bố 42; mẹ 36 (90 ✓).",
-     "teaches": [
-      "K1",
-      "K2"
-     ],
-     "generator": {
-      "template": "TBC {t} nay; tổng nhóm 2 người {S} tại −{y} năm; hơn {d}. Tính ba tuổi.",
-      "constraints": {},
-      "answerRule": "3t − (S + 2y) = con; nhóm máy tổng-hiệu"
-     }
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P5",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B36.LT8",
-     "text": "Hiện nay tổng tuổi hai anh em là 22. Ba năm trước, tuổi anh gấp 3 lần tuổi em. Hỏi 9 năm nữa tuổi anh gấp mấy lần tuổi em?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "9 năm nữa",
-        "value": "anh 24, em 16 — gấp rưỡi (3/2)",
-        "options": [
-         "anh 24, em 16",
-         "anh 22, em 14",
-         "anh 24, em 12"
-        ]
-       }
-      ]
-     },
-     "hints": [
-      "Bốn tầng: 16 → 4 & 12 → 7 & 15 → +9.",
-      "24 : 16 tối giản."
-     ],
-     "solutionNarrative": "16 & 24 → 3/2 — gấp rưỡi.",
-     "teaches": [
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.6.3#3@G5"
-   ],
-   "unlockNext": "DCR:KSN5Q1.C9",
-   "award": "huy_hieu_keo_tach_toa + mở KỲ SÁT HẠCH CHƯƠNG 9"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P4"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B36.QZ5",
-    "text": "Tổng ba người 90, tổng bố mẹ 78 (cùng mốc) → tuổi con:",
-    "choices": [
-     "12",
-     "168",
-     "6"
+    "cases": [
+      "CA:KSN5Q1.B36.3",
+      "CA:KSN5Q1.B36.4"
     ],
-    "answerKey": {
-     "choice": "12"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mb",
-    "text": "Bài trùm sư phụ: tuổi ba người hiện nay?",
-    "answerKey": {
-     "parts": [
+    "traps": []
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con giải bài BA NGƯỜI bằng phép TÁCH NHÓM: tuổi con = tổng cả nhà − tổng nhóm bố mẹ (mỗi tổng nhân đúng quân số, trôi đúng quân số trước khi trừ); và GHÉP NHIỀU TẦNG cho bài trùm: chuỗi tỉ, tổng – hiệu, trượt mốc — xếp hàng các chiêu cũ, mỗi tầng một chiêu, thử xâu suốt chuỗi.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (tách nhóm đúng quân số)",
+    "kidText": "Nhà ba người: tuổi con bằng tổng cả nhà trừ tổng bố mẹ. Nhớ kéo hai tổng về cùng một mốc rồi mới trừ."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "con",
-       "value": 12
+        "id": "K1",
+        "text": "Tách nhóm: tuổi con = TỔNG CẢ NHÀ − TỔNG BỐ MẸ (90 − 78 = 12); mỗi tổng phải đứng CÙNG MỘT MỐC — tổng bố mẹ 4 năm trước là 70 thì trôi về nay bằng quân số 2: 70 + 2 × 4 = 78 rồi mới trừ."
       },
       {
-       "label": "bố",
-       "value": 42
+        "id": "K2",
+        "text": "Trong nhóm đã tách, chiêu cũ xử nốt: bố + mẹ = 78, bố hơn mẹ 6 → bố = (78 + 6) : 2 = 42; mẹ 36 (máy tổng – hiệu B25); hoặc chuỗi tỉ 7 + 6 + 1 = 14 phần = 84 → 6; 36; 42 (máy B30)."
       },
       {
-       "label": "mẹ",
-       "value": 36
+        "id": "K3",
+        "text": "Bài trùm ghép tầng = xếp hàng chiêu cũ: tầng 1 tổng trôi (22 − 6 = 16), tầng 2 hiệu – tỉ (4 phần → 4 & 12), tầng 3 trượt (+3 → 7 & 15), tầng 4 trượt tiếp (+9 → 16 & 24) và lập tỉ (24 : 16 = 3/2 — gấp rưỡi); thử xâu suốt: mỗi tầng khớp mới sang tầng sau."
       }
-     ]
-    },
-    "teaches": [
-     "K1",
-     "K2"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mb",
-    "text": "Trùm anh em: 9 năm nữa anh gấp mấy em?",
-    "answerKey": {
-     "parts": [
+    ],
+    "mechanism": "Hình ảnh brand: KÉO TÁCH TOA — XẾP HÀNG CHIÊU CŨ. Bài trùm tách nhóm: \"TBC ba người nay 30; BỐN năm trước tổng riêng bố mẹ là 70; bố hơn mẹ 6 — tuổi từng người?\" Tầng một — màn TBC: tổng cả nhà 90. Tầng hai — toa bố mẹ đang đứng ở mốc −4 năm: kéo về nay bằng nhãn quân số HAI: 70 cộng 2 nhân 4 bằng BẢY TÁM. Tầng ba — kéo tách toa: con = 90 trừ 78 = MƯỜI HAI tuổi! Tầng bốn — trong toa bố mẹ, máy tổng – hiệu quen: bố (78 + 6) : 2 = BỐN HAI, mẹ BA SÁU. Bốn tầng — bốn chiêu cũ xếp hàng, chẳng chiêu nào mới! Bài trùm anh em cũng vậy: tổng trôi → hiệu – tỉ → trượt → trượt tiếp và lập tỉ: nay 15 & 7 — chín năm nữa 24 & 16 — gấp RƯỠI. Đồ sộ mấy cũng chỉ là hàng dọc những chiêu đã thuộc.",
+    "canonicalExamples": [
       {
-       "label": "tỉ",
-       "value": "gấp rưỡi (3/2)",
-       "options": [
-        "gấp rưỡi",
-        "gấp đôi",
-        "gấp ba"
-       ]
+        "case": "tách nhóm cùng mốc (ca xâu chuỗi nay)",
+        "problem": "TBC tuổi ba bố, mẹ, con là 30. Bố hơn con 30 tuổi; mẹ hơn con 24 tuổi. Tính tuổi mỗi người.",
+        "solution": "Tổng 90; gốc con: 3 × con + 54 = 90 → con 12; mẹ 36; bố 42. Thử: 90 ✓.",
+        "why": "Ca LT3 — máy B35.M1 chạy lại làm nền."
+      },
+      {
+        "case": "chuỗi tỉ ba người (ca 14 phần)",
+        "problem": "Tổng tuổi ba bố, mẹ, con là 84. Tuổi bố gấp 7 lần tuổi con; tuổi mẹ gấp 6 lần tuổi con. Tính tuổi mỗi người.",
+        "solution": "7 + 6 + 1 = 14 phần = 84 → con 6; mẹ 36; bố 42. Thử: 42 = 7 × 6 ✓; 36 = 6 × 6 ✓.",
+        "why": "Ca đề A câu 13 — máy chuỗi tỉ B30 về nhà tuổi."
+      },
+      {
+        "case": "trùm tách nhóm lệch mốc (ca lõi)",
+        "problem": "TBC tuổi ba bố, mẹ, con hiện nay là 30. Bốn năm trước, tổng tuổi riêng bố và mẹ là 70; bố hơn mẹ 6 tuổi. Tính tuổi mỗi người hiện nay.",
+        "solution": "Tổng nhà 90. Toa bố mẹ trôi quân số 2: 70 + 8 = 78 → con = 90 − 78 = 12. Trong toa: bố 42; mẹ 36. Thử: 12 + 36 + 42 = 90 ✓.",
+        "why": "Ca LT9 / đề A câu 14 — hai luật trôi M2 vào trận."
+      },
+      {
+        "case": "trùm ghép tầng (ca xếp hàng)",
+        "problem": "Hiện nay tổng tuổi hai anh em là 22. Ba năm trước, tuổi anh gấp 3 lần tuổi em. Hỏi 9 năm nữa tuổi anh gấp mấy lần tuổi em?",
+        "solution": "16 = 4 phần → 4 & 12 → nay 7 & 15 → 9 năm nữa 16 & 24 → 24 : 16 = 3/2 — gấp rưỡi. Thử xâu: 22 ✓.",
+        "why": "Ca LT8 / đề A câu 15 — bốn tầng bốn chiêu cũ."
       }
-     ]
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Bài ba người tách nhóm — trình tự?",
-    "back": "Màn TBC → tổng cả 90 @ nay. Kéo tổng nhóm về CÙNG MỐC (70 + 2×4 = 78 — nhãn quân số 2!) → TÁCH: con = 90 − 78 = 12 → trong nhóm chiêu cũ (tổng–hiệu: bố 42, mẹ 36). Bài trùm = chiêu cũ xếp hàng: tổng trôi → hiệu–tỉ → trượt → lập tỉ (→ gấp rưỡi 3/2). Thử xâu suốt."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P4",
-   "+7 ngày: câu P5 (trùm anh em)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con giải bài trùm ba người: kéo tổng nhóm về cùng mốc rồi tách, và ghép nhiều tầng toàn chiêu cũ. Con đạt {score}/3. Con đã đủ điều kiện vào KỲ SÁT HẠCH CHƯƠNG 9!",
-  "homeActivity": "Đố bằng tuổi thật cả nhà: 'tổng bố mẹ 4 năm trước?' rồi 'suy ra tuổi con từ tổng cả nhà' — con dán nhãn quân số trước khi trừ.",
-  "watchFor": "Nếu con trừ hai tổng khác mốc — hỏi 'hai toa hai sân ga trừ nhau được à?' (S1)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B36.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "90 (nay) − 70 (−4 năm) = 20??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "con bằng 90 trừ 70 là 20!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "90 đứng ở mốc NAY — 70 đứng ở mốc BỐN NĂM TRƯỚC: hai toa hai sân ga mà dám trừ nhau à?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B36_M3_F1.png",
-   "sha256_16": "e1b3154f1f1ebd88"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "Tách nhóm & ghép nhiều tầng: tổng cả − tổng nhóm biết — xếp hàng chiêu cũ",
-    "formulas": [
-     {
-      "text": "TBC 30 × 3 = 90",
-      "tone": "navy"
-     },
-     {
-      "text": "70 + 2×4 = 78 (về ga nay)",
-      "tone": "teal"
-     },
-     {
-      "text": "con = 90 − 78 = 12",
-      "tone": "gold"
-     }
-    ]
-   },
-   "caption": "Ý chính của bài gói trong mấy dòng",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B36_M3_F2.png",
-   "sha256_16": "1a57d1271414ea4b"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tách nhóm",
-      "text": "tuổi con = TỔNG CẢ NHÀ − TỔNG BỐ MẸ (90 − 78…",
-      "tone": "navy"
-     },
-     {
-      "label": "Trong nhóm đã tách, chiêu cũ xử nốt",
-      "text": "bố + mẹ = 78, bố hơn mẹ 6 → bố = (78 + 6) : 2 = 42; mẹ 36 (máy tổng – hiệu B25); hoặc chuỗi tỉ 7 + 6 + 1 = 14 phần = 84 → 6; 36; 42 (máy B30).",
-      "tone": "teal"
-     }
+    ],
+    "numberRange": "Lớp 5: 3 người; tổng ≤ 120.",
+    "misconceptions": [
+      {
+        "wrong": "Trừ hai tổng đứng ở HAI MỐC khác nhau (90 @ nay trừ 70 @ −4 năm → con 20).",
+        "signal": "Phép trừ tách nhóm thiếu bước trôi tổng con về cùng mốc.",
+        "fix": "K1 — kéo toa về CÙNG MỐC trước khi tách: 70 + 2 × 4 = 78 rồi mới trừ (nhãn quân số 2 của M2).",
+        "counterExample": "Con 20 → bố mẹ nay 70 — mà 4 năm trước họ đã 70: bốn năm chẳng ai già?!"
+      }
+    ],
+    "vocabulary": [
+      "kéo tách toa",
+      "cùng mốc mới được trừ",
+      "xếp hàng chiêu cũ",
+      "mỗi tầng một chiêu",
+      "thử xâu suốt chuỗi"
     ],
     "mantra": "KÉO VỀ CÙNG MỐC — TÁCH NHÓM; ĐỒ SỘ MẤY CŨNG LÀ CHIÊU CŨ XẾP HÀNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B36_M3_F3.png",
-   "sha256_16": "39322495648d7305"
   },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "CHUỖI TỈ BA NGƯỜI: TỔNG TUỔI 84",
-    "bars": [
-     {
-      "name": "con",
-      "units": 1,
-      "label": "1 phần = 6 tuổi"
-     },
-     {
-      "name": "mẹ",
-      "units": 6,
-      "label": "6 phần = 36"
-     },
-     {
-      "name": "bố",
-      "units": 7,
-      "label": "7 phần = 42"
-     }
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Ôn M2: tổng bố mẹ (2 người) 4 năm trước là 70 → nay = ?",
+        "answerKey": {
+          "value": 78
+        }
+      }
     ],
-    "brace": {
-     "text": "1 + 6 + 7 = 14 phần = 84  →  1 phần = 6 tuổi"
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B36.M2",
+      "message": "Ôn nhãn quân số rồi cầm kéo tách toa nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Bài trùm: \"TBC ba người nay 30; BỐN năm trước tổng riêng bố mẹ là 70; bố hơn mẹ 6 — tuổi từng người?\" Trí Long trừ luôn: \"con bằng 90 trừ 70 là 20!\" Su Kem chỉ hai con số: \"90 đứng ở mốc NAY — 70 đứng ở mốc BỐN NĂM TRƯỚC: hai toa hai sân ga mà dám trừ nhau à?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "90 (nay) − 70 (−4 năm) = 20??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để kéo toa về cùng ga!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Tầng một — màn TBC: tổng cả nhà ba mươi nhân ba bằng CHÍN MƯƠI. Tầng hai — kéo toa bố mẹ về ga NAY bằng nhãn quân số HAI: bảy mươi cộng hai nhân bốn bằng BẢY TÁM. Tầng ba — kéo tách toa: con bằng chín mươi trừ bảy tám — MƯỜI HAI tuổi! Tầng bốn — trong toa bố mẹ, máy tổng hiệu quen: bố bằng bảy tám cộng sáu chia hai — BỐN HAI, mẹ BA SÁU. Thử: mười hai cộng ba sáu cộng bốn hai đúng chín mươi!",
+        "display": {
+          "type": "detach_car_interactive",
+          "spec": {
+            "t1": "TBC 30 × 3 = 90",
+            "t2": "70 + 2×4 = 78 (về ga nay)",
+            "t3": "con = 90 − 78 = 12",
+            "t4": "bố (78+6):2 = 42 · mẹ 36"
+          }
+        },
+        "interaction": {
+          "type": "pull_then_detach",
+          "answerKey": {
+            "values": [
+              12,
+              36,
+              42
+            ]
+          },
+          "successMessage": "Kéo về 78 → tách: con 12 → bố 42, mẹ 36!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "Tổng ba người 90, tổng bố mẹ (đã về cùng mốc) 78 → tuổi con:",
+          "choices": [
+            "12",
+            "168",
+            "6"
+          ],
+          "answerKey": {
+            "choice": "12"
+          },
+          "wrongFeedback": "90 − 78.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 44,
+        "teaches": [
+          "K2",
+          "K3"
+        ],
+        "narration": "Bài trùm anh em — xếp hàng bốn chiêu cũ: tầng một tổng trôi — hai hai trừ sáu bằng mười sáu; tầng hai hiệu tỉ — bốn phần: bốn và mười hai; tầng ba trượt về nay — bảy và mười lăm; tầng bốn trượt thêm chín năm — mười sáu và hai tư: lập tỉ hai tư trên mười sáu — GẤP RƯỠI! Chuỗi tỉ ba người cũng chiêu cũ: bố gấp bảy, mẹ gấp sáu — mười bốn phần bằng tám tư: con sáu, mẹ ba sáu, bố bốn hai. Đồ sộ mấy cũng là chiêu cũ xếp hàng!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "22 → 16 → 4 & 12 → 7 & 15 → +9: 16 & 24 → 3/2 gấp rưỡi",
+            "chuỗi 7+6+1 = 14 phần = 84 → 6; 36; 42",
+            "mỗi tầng một chiêu — thử xâu suốt"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú kéo tách toa: kéo về cùng mốc — tách nhóm; đồ sộ mấy cũng là chiêu cũ xếp hàng!",
+        "display": {
+          "type": "mantra_card",
+          "text": "CÙNG MỐC — TÁCH NHÓM · CHIÊU CŨ XẾP HÀNG!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 89,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "note": "Tách nhóm: tuổi con = tổng cả nhà − tổng nhóm bố mẹ (mỗi tổng nhân đúng quân số)"
-   },
-   "caption": "Lấy người bé nhất làm gốc rồi xếp hàng như chuỗi tỉ bài 30",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B36_M3_F4.png",
-   "sha256_16": "caf4649485772974"
-  }
- ]
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Bài trùm: TBC ba người nay ba mươi; BỐN năm trước tổng riêng bố mẹ là bảy mươi; bố hơn mẹ sáu — tuổi từng người? Trí Long trừ luôn: con bằng chín mươi trừ bảy mươi là hai mươi! Su Kem: chín mươi đứng ở ga NAY — bảy mươi ở ga BỐN NĂM TRƯỚC: hai toa hai sân ga mà trừ nhau à?",
+        "screenText": "90 (nay) − 70 (−4 năm) = 20??",
+        "visual": "Hai toa tàu đỗ hai sân ga khác nhau với số 90 và 70; Trí Long bắc phép trừ chênh vênh giữa hai ga; dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Tầng một — màn TBC: tổng cả nhà ba mươi nhân ba bằng CHÍN MƯƠI. Tầng hai — kéo toa bố mẹ về ga NAY bằng nhãn quân số HAI: bảy mươi cộng hai nhân bốn bằng BẢY TÁM. Tầng ba — kéo tách toa: con bằng chín mươi trừ bảy tám — MƯỜI HAI tuổi! Tầng bốn — máy tổng hiệu quen: bố BỐN HAI, mẹ BA SÁU!",
+        "screenText": "90 · 70 +2×4→ 78 · con = 90 − 78 = 12 · bố 42 · mẹ 36 ✓",
+        "visual": "Toa bố mẹ được đầu kéo quân-số-2 kéo về ga nay; chiếc kéo vàng tách toa con mang số 12; máy tổng-hiệu xử nốt trong toa.",
+        "assets": [],
+        "duration": 25
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Bài trùm anh em — xếp hàng bốn chiêu cũ: tầng một tổng trôi — hai hai trừ sáu bằng mười sáu; tầng hai hiệu tỉ — bốn phần: bốn và mười hai; tầng ba trượt về nay — bảy và mười lăm; tầng bốn trượt thêm chín năm — mười sáu và hai tư: lập tỉ — GẤP RƯỠI!",
+        "screenText": "22→16→4&12→7&15→16&24: 3/2 · 14 phần = 84 → 6·36·42",
+        "visual": "Bốn tầng cầu thang mỗi bậc dán tên một chiêu cũ; nhân vật leo tới đỉnh cắm cờ 'gấp rưỡi'; ca 14 phần chạy góc màn.",
+        "assets": [],
+        "duration": 22
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú kéo tách toa: kéo về cùng mốc — tách nhóm; đồ sộ mấy cũng là chiêu cũ xếp hàng!",
+        "screenText": "CÙNG MỐC — TÁCH NHÓM · CHIÊU CŨ XẾP HÀNG!",
+        "visual": "Thẻ thần chú vàng với icon kéo và đoàn toa.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Đoàn tàu: TBC nay ba mươi, tổng bố mẹ bốn năm trước bảy mươi, bố hơn mẹ sáu — kéo toa về cùng ga rồi tách! Vào bài luyện ngay!",
+        "screenText": "kéo 70 → 78 → tách → 3 tuổi?",
+        "visual": "Đoàn tàu chờ kéo về ga; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P4",
+        "assets": [],
+        "duration": 11
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Kéo toa — tách nhóm — xử trong toa",
+    "problem": "TBC tuổi ba bố, mẹ, con hiện nay là 30. Bốn năm trước, tổng tuổi riêng bố và mẹ là 70; bố hơn mẹ 6 tuổi. Tính tuổi mỗi người hiện nay.",
+    "steps": [
+      {
+        "show": "Bước 1 — Màn TBC: tổng cả nhà = 30 × 3 = 90 @ nay.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Trừ được 90 − 70 ngay không?",
+          "choices": [
+            "chưa — 70 đứng ở mốc −4 năm",
+            "được luôn",
+            "tùy"
+          ],
+          "answerKey": {
+            "choice": "chưa — 70 đứng ở mốc −4 năm"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Kéo toa: tổng bố mẹ nay = 70 + 2 × 4 = 78 → con = 90 − 78 = 12."
+      },
+      {
+        "show": "Bước 3 — Trong toa: bố = (78 + 6) : 2 = 42; mẹ = 36. Thử: 12 + 36 + 42 = 90 ✓.",
+        "askAfter": {
+          "format": "mb",
+          "text": "Trùm anh em: 9 năm nữa anh gấp mấy em?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "tỉ",
+                "value": "gấp rưỡi (24 : 16 = 3/2)",
+                "options": [
+                  "gấp rưỡi",
+                  "gấp đôi",
+                  "gấp ba"
+                ]
+              }
+            ]
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B36.LT3",
+          "text": "TBC tuổi ba bố, mẹ, con là 30. Bố hơn con 30 tuổi; mẹ hơn con 24 tuổi. Tính tuổi mỗi người.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "con",
+                "value": 12
+              },
+              {
+                "label": "mẹ",
+                "value": 36
+              },
+              {
+                "label": "bố",
+                "value": 42
+              }
+            ]
+          },
+          "hints": [
+            "Tổng 90; gốc con.",
+            "3 con + 54 = 90."
+          ],
+          "solutionNarrative": "Con 12; mẹ 36; bố 42 (90 ✓).",
+          "teaches": [
+            "K2"
+          ]
+        },
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B36.LT5",
+          "text": "Tổng tuổi ba bố, mẹ, con là 84. Tuổi bố gấp 7 lần tuổi con; tuổi mẹ gấp 6 lần tuổi con. Tính tuổi mỗi người.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "con",
+                "value": 6
+              },
+              {
+                "label": "mẹ",
+                "value": 36
+              },
+              {
+                "label": "bố",
+                "value": 42
+              }
+            ]
+          },
+          "hints": [
+            "Chuỗi 7 + 6 + 1 = 14 phần.",
+            "84 : 14."
+          ],
+          "solutionNarrative": "Phần 6 → 6; 36; 42 (thử ✓✓).",
+          "teaches": [
+            "K2"
+          ]
+        }
+      ],
+      "standard": [
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B36.LT7",
+          "text": "Hiện nay anh 12 tuổi, em 6 tuổi. Hỏi mấy năm nữa tổng tuổi hai anh em là 30 — khi đó tuổi anh gấp mấy lần tuổi em?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "mấy năm",
+                "value": 6
+              },
+              {
+                "label": "tỉ",
+                "value": "gấp rưỡi (18 : 12)",
+                "options": [
+                  "gấp rưỡi",
+                  "gấp đôi",
+                  "gấp ba"
+                ]
+              }
+            ]
+          },
+          "hints": [
+            "Cần thêm 30 − 18 = 12 → chia 2 người.",
+            "Khi đó 18 và 12."
+          ],
+          "solutionNarrative": "6 năm nữa — anh 18, em 12: gấp rưỡi.",
+          "teaches": [
+            "K3"
+          ]
+        },
+        {
+          "id": "P4",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B36.LT9",
+          "text": "Sư phụ Trí Dũng ra bài trùm: \"TBC tuổi ba bố, mẹ, con hiện nay là 30. Bốn năm trước, tổng tuổi riêng bố và mẹ là 70; bố hơn mẹ 6 tuổi. Tính tuổi mỗi người hiện nay.\"",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "con",
+                "value": 12
+              },
+              {
+                "label": "bố",
+                "value": 42
+              },
+              {
+                "label": "mẹ",
+                "value": 36
+              }
+            ]
+          },
+          "hints": [
+            "Kéo toa: 70 + 2 × 4 = 78.",
+            "Con = 90 − 78; trong toa máy tổng – hiệu."
+          ],
+          "solutionNarrative": "Con 12; bố 42; mẹ 36 (90 ✓).",
+          "teaches": [
+            "K1",
+            "K2"
+          ],
+          "generator": {
+            "template": "TBC {t} nay; tổng nhóm 2 người {S} tại −{y} năm; hơn {d}. Tính ba tuổi.",
+            "constraints": {},
+            "answerRule": "3t − (S + 2y) = con; nhóm máy tổng-hiệu"
+          }
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P5",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B36.LT8",
+          "text": "Hiện nay tổng tuổi hai anh em là 22. Ba năm trước, tuổi anh gấp 3 lần tuổi em. Hỏi 9 năm nữa tuổi anh gấp mấy lần tuổi em?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "9 năm nữa",
+                "value": "anh 24, em 16 — gấp rưỡi (3/2)",
+                "options": [
+                  "anh 24, em 16",
+                  "anh 22, em 14",
+                  "anh 24, em 12"
+                ]
+              }
+            ]
+          },
+          "hints": [
+            "Bốn tầng: 16 → 4 & 12 → 7 & 15 → +9.",
+            "24 : 16 tối giản."
+          ],
+          "solutionNarrative": "16 & 24 → 3/2 — gấp rưỡi.",
+          "teaches": [
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.6.3#3@G5"
+      ],
+      "unlockNext": "DCR:KSN5Q1.C9",
+      "award": "huy_hieu_keo_tach_toa + mở KỲ SÁT HẠCH CHƯƠNG 9"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P4"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B36.QZ5",
+        "text": "Tổng ba người 90, tổng bố mẹ 78 (cùng mốc) → tuổi con:",
+        "choices": [
+          "12",
+          "168",
+          "6"
+        ],
+        "answerKey": {
+          "choice": "12"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mb",
+        "text": "Bài trùm sư phụ: tuổi ba người hiện nay?",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "con",
+              "value": 12
+            },
+            {
+              "label": "bố",
+              "value": 42
+            },
+            {
+              "label": "mẹ",
+              "value": 36
+            }
+          ]
+        },
+        "teaches": [
+          "K1",
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mb",
+        "text": "Trùm anh em: 9 năm nữa anh gấp mấy em?",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "tỉ",
+              "value": "gấp rưỡi (3/2)",
+              "options": [
+                "gấp rưỡi",
+                "gấp đôi",
+                "gấp ba"
+              ]
+            }
+          ]
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Bài ba người tách nhóm — trình tự?",
+        "back": "Màn TBC → tổng cả 90 @ nay. Kéo tổng nhóm về CÙNG MỐC (70 + 2×4 = 78 — nhãn quân số 2!) → TÁCH: con = 90 − 78 = 12 → trong nhóm chiêu cũ (tổng–hiệu: bố 42, mẹ 36). Bài trùm = chiêu cũ xếp hàng: tổng trôi → hiệu–tỉ → trượt → lập tỉ (→ gấp rưỡi 3/2). Thử xâu suốt."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P4",
+      "+7 ngày: câu P5 (trùm anh em)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con giải bài trùm ba người: kéo tổng nhóm về cùng mốc rồi tách, và ghép nhiều tầng toàn chiêu cũ. Con đạt {score}/3. Con đã đủ điều kiện vào KỲ SÁT HẠCH CHƯƠNG 9!",
+    "homeActivity": "Đố bằng tuổi thật cả nhà: 'tổng bố mẹ 4 năm trước?' rồi 'suy ra tuổi con từ tổng cả nhà' — con dán nhãn quân số trước khi trừ.",
+    "watchFor": "Nếu con trừ hai tổng khác mốc — hỏi 'hai toa hai sân ga trừ nhau được à?' (S1)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B36.M3",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "90 (nay) − 70 (−4 năm) = 20??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "con bằng 90 trừ 70 là 20!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "90 đứng ở mốc NAY — 70 đứng ở mốc BỐN NĂM TRƯỚC: hai toa hai sân ga mà dám trừ nhau à?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B36_M3_F1.png",
+      "sha256_16": "e1b3154f1f1ebd88"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "Tách nhóm & ghép nhiều tầng: tổng cả − tổng nhóm biết — xếp hàng chiêu cũ",
+        "formulas": [
+          {
+            "text": "TBC 30 × 3 = 90",
+            "tone": "navy"
+          },
+          {
+            "text": "70 + 2×4 = 78 (về ga nay)",
+            "tone": "teal"
+          },
+          {
+            "text": "con = 90 − 78 = 12",
+            "tone": "gold"
+          }
+        ]
+      },
+      "caption": "Ý chính của bài gói trong mấy dòng",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B36_M3_F2.png",
+      "sha256_16": "1a57d1271414ea4b"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Tách nhóm",
+            "text": "tuổi con = TỔNG CẢ NHÀ − TỔNG BỐ MẸ (90 − 78…",
+            "tone": "navy"
+          },
+          {
+            "label": "Trong nhóm đã tách, chiêu cũ xử nốt",
+            "text": "bố + mẹ = 78, bố hơn mẹ 6 → bố = (78 + 6) : 2 = 42; mẹ 36 (máy tổng – hiệu B25); hoặc chuỗi tỉ 7 + 6 + 1 = 14 phần = 84 → 6; 36; 42 (máy B30).",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "KÉO VỀ CÙNG MỐC — TÁCH NHÓM; ĐỒ SỘ MẤY CŨNG LÀ CHIÊU CŨ XẾP HÀNG!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B36_M3_F3.png",
+      "sha256_16": "39322495648d7305"
+    },
+    {
+      "archetype": "bar_diagram",
+      "params": {
+        "title": "CHUỖI TỈ BA NGƯỜI: TỔNG TUỔI 84",
+        "bars": [
+          {
+            "name": "con",
+            "units": 1,
+            "label": "1 phần = 6 tuổi"
+          },
+          {
+            "name": "mẹ",
+            "units": 6,
+            "label": "6 phần = 36"
+          },
+          {
+            "name": "bố",
+            "units": 7,
+            "label": "7 phần = 42"
+          }
+        ],
+        "brace": {
+          "text": "1 + 6 + 7 = 14 phần = 84  →  1 phần = 6 tuổi"
+        },
+        "note": "Tách nhóm: tuổi con = tổng cả nhà − tổng nhóm bố mẹ (mỗi tổng nhân đúng quân số)"
+      },
+      "caption": "Lấy người bé nhất làm gốc rồi xếp hàng như chuỗi tỉ bài 30",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B36_M3_F4.png",
+      "sha256_16": "caf4649485772974"
+    }
+  ]
 }

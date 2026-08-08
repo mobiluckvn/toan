@@ -1,636 +1,639 @@
 {
- "title": "Hơn – kém TBC CẢ NHÓM: cân nhích trước — cộng phần hơn sau",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:III.1.2#1"
-  ],
-  "bktUnit": "CASE:III.1.2#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B22",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B21.M3",
-  "next": "DL:KSN5Q1.B22.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B22",
-  "chunks": [
-   "CHUNK:KSN5Q1.B22.S3",
-   "CHUNK:KSN5Q1.B22.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B22.2",
-   "CA:KSN5Q1.B22.3"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B22.1",
-   "TRAP:KSN5Q1.B22.2"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con giải được bài \"số mới HƠN TBC CẢ NHÓM k đơn vị\": phần hơn k được các bạn CŨ chia nhau gánh — TBC mới = TBC cũ + k : (số bạn cũ), rồi số mới = TBC mới + k; chiều KÉM đối xứng với dấu trừ — và tuyệt đối không cộng k thẳng vào TBC cũ.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
-  "kidText": "Bạn mới góp hơn mức trung bình cả nhóm 5 viên thì các bạn cũ chia nhau gánh phần hơn ấy. Cân nhích trước, cộng sau."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "\"Số mới hơn TBC CẢ NHÓM (đã tính cả nó) k đơn vị\": phần hơn k đo từ điểm cân MỚI — không được cộng k thẳng vào TBC cũ."
-   },
-   {
-    "id": "K2",
-    "text": "Phần hơn k của người mới chảy xuống NHỮNG NGƯỜI CŨ chia nhau gánh: mỗi người cũ được kéo lên k : (số người CŨ) nấc → TBC mới = TBC cũ + k : n_cũ."
-   },
-   {
-    "id": "K3",
-    "text": "Số mới = TBC mới + k. Chiều KÉM đối xứng: TBC mới = TBC cũ − k : n_cũ; số mới = TBC mới − k."
-   },
-   {
-    "id": "K4",
-    "text": "THỬ hai tầng: tổng mới : số phần tử mới = TBC mới? và số mới − TBC mới = k? — khớp cả hai mới nộp."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: SỐ MỚI KÉO CÂN. Ba ngày đầu bán 22, 31, 25 — điểm cân 26. Ngày thứ tư nhảy vào và HƠN TBC CỦA CẢ BỐN NGÀY 9 chiếc. Cáo Đề xúi \"26 cộng 9 là 35\" — nhưng phần hơn 9 đo từ điểm cân MỚI, mà cân đã NHÍCH khi ngày tư bước lên! Nhích bao nhiêu? Phần hơn 9 của người mới chảy xuống BA NGƯỜI CŨ chia nhau gánh: mỗi người 9 : 3 = 3 nấc — cân nhích lên 29. Giờ mới cộng phần hơn: ngày tư = 29 + 9 = 38. Cũng đừng chia 9 cho CẢ BỐN: người mới không tự gánh phần hơn của chính mình — chỉ người cũ gánh! Thử: tổng 116 : 4 = 29 ✓, 38 − 29 = 9 ✓.",
-  "canonicalExamples": [
-   {
-    "case": "hơn TBC cả nhóm (ca lõi)",
-    "problem": "Ba ngày đầu bán 22 ; 31 ; 25 chiếc. Ngày thứ tư bán hơn TBC của CẢ BỐN ngày là 9 chiếc. Hỏi ngày thứ tư bán bao nhiêu chiếc?",
-    "solution": "TBC ba ngày = 26. Cân nhích: 26 + 9 : 3 = 29 = TBC bốn ngày. Ngày tư = 29 + 9 = 38. Thử: 116 : 4 = 29 ✓; 38 − 29 = 9 ✓.",
-    "why": "Ca đề A câu 5 — hai bẫy cùng canh."
-   },
-   {
-    "case": "kém TBC cả nhóm (ca đối xứng)",
-    "problem": "Vẫn ba ngày ấy, ngày thứ tư bán KÉM TBC của cả bốn ngày 6 chiếc. Hỏi ngày thứ tư bán bao nhiêu?",
-    "solution": "Cân tụt: 26 − 6 : 3 = 24 = TBC bốn ngày. Ngày tư = 24 − 6 = 18. Thử: 96 : 4 = 24 ✓.",
-    "why": "Ca LT5 — cùng máy, đảo dấu."
-   },
-   {
-    "case": "sư phụ nhóm bốn (ca đổi cỡ)",
-    "problem": "Bốn bạn đầu có TBC 20 nghìn đồng tiền quỹ. Bạn thứ năm góp hơn TBC của cả năm bạn 12 nghìn. Hỏi bạn thứ năm góp bao nhiêu?",
-    "solution": "Cân nhích: 20 + 12 : 4 = 23 = TBC năm bạn. Bạn thứ năm = 23 + 12 = 35 nghìn. Thử: (80 + 35) : 5 = 23 ✓.",
-    "why": "Ca LT9 — số bạn cũ đổi thành 4, máy vẫn chạy."
-   }
-  ],
-  "numberRange": "Lớp 5: nhóm cũ 3–5 phần tử; k chia hết cho số bạn cũ.",
-  "misconceptions": [
-   {
-    "wrong": "Cộng 9 thẳng vào TBC ba ngày: 26 + 9 = 35 (khi đề nói hơn TBC CẢ BỐN ngày).",
-    "signal": "Không có phép chia k : n_cũ nào trong bài.",
-    "fix": "K1 + K2 — phần hơn đo từ cân MỚI: cân nhích trước (26 + 3 = 29) — cộng phần hơn sau (38).",
-    "counterExample": "Thử 35: tổng 113 : 4 = 28,25 — mà 35 − 28,25 ≠ 9: trượt phép thử!"
-   },
-   {
-    "wrong": "Chia phần hơn cho CẢ NHÓM: 9 : 4 = 2,25 — coi người mới cũng gánh phần hơn của chính mình.",
-    "signal": "Kết quả kéo cân lẻ (2,25) bất thường.",
-    "fix": "K2 — phần hơn của người MỚI chảy xuống người CŨ: chia cho 3, không chia cho 4.",
-    "counterExample": "Kéo cân 2,25 → TBC 28,25 lẻ trong khi mọi số liệu đều nguyên — dấu hiệu sai máy."
-   }
-  ],
-  "vocabulary": [
-   "số mới kéo cân",
-   "cân nhích trước — cộng sau",
-   "phần hơn chảy xuống người cũ",
-   "chia cho bạn cũ",
-   "thử hai tầng"
-  ],
-  "mantra": "CÂN NHÍCH TRƯỚC — CỘNG PHẦN HƠN SAU; NGƯỜI CŨ CHIA NHAU GÁNH!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "TBC của 22 ; 31 ; 25 = ?",
-    "answerKey": {
-     "value": 26
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B21.M1",
-   "message": "Ôn điểm cân rồi xem số mới kéo cân nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Ba ngày đầu bán 22, 31, 25 — điểm cân 26. Đề: \"ngày thứ tư bán hơn TBC của CẢ BỐN ngày 9 chiếc.\" Cáo Đề xúi ngọt: \"26 cộng 9 là 35, xong!\" Su Kem chặn: \"Phần hơn 9 đo từ cân nào — cân cũ hay cân MỚI?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "26 + 9 = 35, xong??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để xem cân nhích!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
+  "title": "Hơn – kém TBC CẢ NHÓM: cân nhích trước — cộng phần hơn sau",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:III.1.2#1"
     ],
-    "narration": "Ngày tư bước lên bàn cân — cân NHÍCH! Nhích bao nhiêu? Phần hơn CHÍN của người mới chảy xuống BA người cũ chia nhau gánh: mỗi người chín chia ba bằng BA nấc — cân nhích từ hai sáu lên HAI CHÍN: đó là TBC cả bốn ngày! Giờ mới cộng phần hơn: ngày tư bằng hai chín cộng chín — BA MƯƠI TÁM. Thử hai tầng: tổng một trăm mười sáu chia bốn đúng hai chín; ba tám trừ hai chín đúng chín!",
-    "display": {
-     "type": "scale_shift_interactive",
-     "spec": {
-      "old": 26,
-      "k": 9,
-      "nOld": 3,
-      "lift": 3,
-      "newTbc": 29,
-      "newVal": 38,
-      "check": "116 : 4 = 29 ✓ · 38 − 29 = 9 ✓"
-     }
-    },
-    "interaction": {
-     "type": "lift_and_add",
-     "answerKey": {
-      "value": 38
-     },
-     "successMessage": "Cân nhích 3 → TBC 29 → ngày tư 38!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "num",
-     "text": "Vẫn ba ngày ấy, ngày tư KÉM TBC cả bốn ngày 6 chiếc — ngày tư bán mấy chiếc?",
-     "answerKey": {
-      "value": 18
-     },
-     "wrongFeedback": "Cân tụt: 26 − 6 : 3 = 24 → 24 − 6.",
-     "objective": "O1",
-     "teaches": [
-      "K3"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 40,
-    "teaches": [
-     "K2",
-     "K4"
+    "bktUnit": "CASE:III.1.2#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B22",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B21.M3",
+    "next": "DL:KSN5Q1.B22.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B22",
+    "chunks": [
+      "CHUNK:KSN5Q1.B22.S3",
+      "CHUNK:KSN5Q1.B22.S4"
     ],
-    "narration": "Bẫy thứ hai rình sẵn: \"chia đều thì chia cho cả bốn chứ — chín chia bốn bằng hai phẩy hai lăm!\" KHÔNG: người mới không tự gánh phần hơn của chính mình — phần hơn chảy xuống NGƯỜI CŨ: chia cho BA! Kéo cân lẻ hai phẩy hai lăm giữa toàn số nguyên chính là còi báo sai máy. Nhóm đổi cỡ vẫn một máy: bốn bạn quỹ TBC hai mươi, bạn năm hơn TBC cả năm bạn mười hai — cân nhích mười hai chia BỐN bằng ba, lên hai ba — bạn năm góp BA LĂM nghìn!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
+    "cases": [
+      "CA:KSN5Q1.B22.2",
+      "CA:KSN5Q1.B22.3"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B22.1",
+      "TRAP:KSN5Q1.B22.2"
+    ]
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con giải được bài \"số mới HƠN TBC CẢ NHÓM k đơn vị\": phần hơn k được các bạn CŨ chia nhau gánh — TBC mới = TBC cũ + k : (số bạn cũ), rồi số mới = TBC mới + k; chiều KÉM đối xứng với dấu trừ — và tuyệt đối không cộng k thẳng vào TBC cũ.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
+    "kidText": "Bạn mới góp hơn mức trung bình cả nhóm 5 viên thì các bạn cũ chia nhau gánh phần hơn ấy. Cân nhích trước, cộng sau."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "input": "9 : 4 = 2,25 (chia cả nhóm)",
-       "output": "✗ lẻ bất thường",
-       "valid": false,
-       "reason": "người mới không tự gánh"
+        "id": "K1",
+        "text": "\"Số mới hơn TBC CẢ NHÓM (đã tính cả nó) k đơn vị\": phần hơn k đo từ điểm cân MỚI — không được cộng k thẳng vào TBC cũ."
       },
       {
-       "input": "9 : 3 = 3 (chia bạn cũ)",
-       "output": "✓ TBC 29",
-       "valid": true,
-       "reason": "phần hơn chảy xuống người cũ"
+        "id": "K2",
+        "text": "Phần hơn k của người mới chảy xuống NHỮNG NGƯỜI CŨ chia nhau gánh: mỗi người cũ được kéo lên k : (số người CŨ) nấc → TBC mới = TBC cũ + k : n_cũ."
+      },
+      {
+        "id": "K3",
+        "text": "Số mới = TBC mới + k. Chiều KÉM đối xứng: TBC mới = TBC cũ − k : n_cũ; số mới = TBC mới − k."
+      },
+      {
+        "id": "K4",
+        "text": "THỬ hai tầng: tổng mới : số phần tử mới = TBC mới? và số mới − TBC mới = k? — khớp cả hai mới nộp."
       }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai thần chú kéo cân: cân nhích trước — cộng phần hơn sau! Phần hơn người mới — người cũ chia nhau gánh!",
-    "display": {
-     "type": "mantra_card",
-     "text": "CÂN NHÍCH TRƯỚC — CỘNG SAU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 87,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Ba ngày đầu bán hai hai, ba mốt, hai lăm — điểm cân hai sáu. Đề: ngày thứ tư bán hơn TBC của CẢ BỐN ngày chín chiếc. Cáo Đề xúi ngọt: hai sáu cộng chín là ba lăm, xong! Su Kem chặn: phần hơn chín đo từ cân nào — cân cũ hay cân MỚI?",
-    "screenText": "hơn TBC CẢ 4 ngày 9 → 26 + 9??",
-    "visual": "Bàn cân với ba ngày đứng sẵn, điểm cân 26; ngày thứ tư đứng chờ mép cân; Cáo Đề thì thầm '35', dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Ngày tư bước lên bàn cân — cân NHÍCH! Phần hơn CHÍN của người mới chảy xuống BA người cũ chia nhau gánh: mỗi người ba nấc — cân nhích từ hai sáu lên HAI CHÍN: TBC cả bốn ngày! Giờ mới cộng phần hơn: hai chín cộng chín — BA MƯƠI TÁM. Thử hai tầng: một trăm mười sáu chia bốn đúng hai chín; ba tám trừ hai chín đúng chín!",
-    "screenText": "26 + 9:3 = 29 → ngày 4 = 29 + 9 = 38 ✓",
-    "visual": "Dòng nước '9' từ ngày tư chảy chia ba nhánh xuống ba ngày cũ; kim cân nhích 26→29; ngày tư đứng cao hơn cân đúng 9 nấc.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Bẫy thứ hai: chia đều thì chia cho cả bốn chứ — chín chia bốn bằng hai phẩy hai lăm! KHÔNG: người mới không tự gánh phần hơn của chính mình — chia cho BA! Nhóm đổi cỡ vẫn một máy: quỹ TBC hai mươi, bạn năm hơn TBC cả năm bạn mười hai — nhích ba, lên hai ba — góp BA LĂM nghìn!",
-    "screenText": "9 : 4 ✗ · 9 : 3 ✓ · sư phụ: 20 + 12:4 = 23 → 35",
-    "visual": "Phép 9:4=2,25 kêu còi đỏ; dòng chảy chỉ xuống ba người cũ; ca sư phụ chạy nhanh góc màn với đáp 35 nghìn mộc xanh.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Hai thần chú kéo cân: cân nhích trước — cộng phần hơn sau! Phần hơn người mới — người cũ chia nhau gánh!",
-    "screenText": "CÂN NHÍCH TRƯỚC · NGƯỜI CŨ GÁNH!",
-    "visual": "Thẻ thần chú vàng với icon bàn cân nhích.",
-    "assets": [],
-    "duration": 9
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Ca kéo cân của con: ngày tư KÉM TBC cả bốn ngày sáu chiếc — ngày tư bán mấy chiếc? Vào bài luyện ngay!",
-    "screenText": "kém TBC cả 4 ngày 6 → ngày 4 = ?",
-    "visual": "Bàn cân với mũi tên tụt; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 9
-   }
-  ]
- },
- "workedExample": {
-  "title": "Ngày thứ tư kéo cân",
-  "problem": "Ba ngày đầu bán 22 ; 31 ; 25 chiếc. Ngày thứ tư bán hơn TBC của CẢ BỐN ngày là 9 chiếc. Hỏi ngày thứ tư bán bao nhiêu chiếc?",
-  "steps": [
-   {
-    "show": "Bước 1 — TBC ba ngày = 78 : 3 = 26. Phần hơn 9 chia cho SỐ NGÀY CŨ: 9 : 3 = 3 nấc.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Phần hơn 9 chia cho:",
-     "choices": [
-      "3 (số ngày cũ)",
-      "4 (cả nhóm)",
-      "không chia"
-     ],
-     "answerKey": {
-      "choice": "3 (số ngày cũ)"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Cân nhích: TBC bốn ngày = 26 + 3 = 29."
-   },
-   {
-    "show": "Bước 3 — Ngày tư = 29 + 9 = 38. Thử: 116 : 4 = 29 ✓; 38 − 29 = 9 ✓.",
-    "askAfter": {
-     "format": "num",
-     "text": "Nếu ngày tư hơn TBC cả bốn ngày 12 chiếc thì ngày tư bán mấy chiếc?",
-     "answerKey": {
-      "value": 42
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B22.LT4",
-     "text": "Ba ngày đầu bán 22 ; 31 ; 25 chiếc. Ngày thứ tư bán hơn TBC của CẢ BỐN ngày là 9 chiếc. Hỏi ngày thứ tư bán bao nhiêu chiếc?",
-     "answerKey": {
-      "value": 38
-     },
-     "hints": [
-      "Cân nhích: 9 : 3 nấc.",
-      "TBC mới 29 rồi cộng 9."
-     ],
-     "solutionNarrative": "TBC bốn ngày = 26 + 3 = 29 → ngày tư = 38 (thử 116 : 4 ✓).",
-     "teaches": [
-      "K1",
-      "K2",
-      "K3"
-     ],
-     "generator": {
-      "template": "Nhóm {n} có TBC {t}; số mới hơn TBC cả nhóm {k}. Tìm số mới.",
-      "constraints": {
-       "k": "chia hết cho n"
+    ],
+    "mechanism": "Hình ảnh brand: SỐ MỚI KÉO CÂN. Ba ngày đầu bán 22, 31, 25 — điểm cân 26. Ngày thứ tư nhảy vào và HƠN TBC CỦA CẢ BỐN NGÀY 9 chiếc. Cáo Đề xúi \"26 cộng 9 là 35\" — nhưng phần hơn 9 đo từ điểm cân MỚI, mà cân đã NHÍCH khi ngày tư bước lên! Nhích bao nhiêu? Phần hơn 9 của người mới chảy xuống BA NGƯỜI CŨ chia nhau gánh: mỗi người 9 : 3 = 3 nấc — cân nhích lên 29. Giờ mới cộng phần hơn: ngày tư = 29 + 9 = 38. Cũng đừng chia 9 cho CẢ BỐN: người mới không tự gánh phần hơn của chính mình — chỉ người cũ gánh! Thử: tổng 116 : 4 = 29 ✓, 38 − 29 = 9 ✓.",
+    "canonicalExamples": [
+      {
+        "case": "hơn TBC cả nhóm (ca lõi)",
+        "problem": "Ba ngày đầu bán 22 ; 31 ; 25 chiếc. Ngày thứ tư bán hơn TBC của CẢ BỐN ngày là 9 chiếc. Hỏi ngày thứ tư bán bao nhiêu chiếc?",
+        "solution": "TBC ba ngày = 26. Cân nhích: 26 + 9 : 3 = 29 = TBC bốn ngày. Ngày tư = 29 + 9 = 38. Thử: 116 : 4 = 29 ✓; 38 − 29 = 9 ✓.",
+        "why": "Ca đề A câu 5 — hai bẫy cùng canh."
       },
-      "answerRule": "(t + k : n) + k"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B22.LT5",
-     "text": "Vẫn ba ngày 22 ; 31 ; 25, nhưng ngày thứ tư bán KÉM TBC của cả bốn ngày 6 chiếc. Hỏi ngày thứ tư bán bao nhiêu chiếc?",
-     "answerKey": {
-      "value": 18
-     },
-     "hints": [
-      "Cân tụt 6 : 3 = 2 nấc.",
-      "TBC mới 24 rồi trừ 6."
-     ],
-     "solutionNarrative": "TBC bốn ngày = 26 − 2 = 24 → ngày tư = 18 (thử 96 : 4 ✓).",
-     "teaches": [
-      "K3"
-     ]
-    },
-    {
-     "id": "P3",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B22.LT6",
-     "text": "TBC số kẹo của An, Bình, Cường là 24 viên. Dũng có nhiều hơn TBC số kẹo của cả bốn bạn là 6 viên. Hỏi Dũng có bao nhiêu viên kẹo?",
-     "answerKey": {
-      "value": 32
-     },
-     "hints": [
-      "Cân nhích 6 : 3 = 2.",
-      "TBC bốn bạn 26 rồi cộng 6."
-     ],
-     "solutionNarrative": "TBC bốn bạn = 26 → Dũng = 32 (thử (72 + 32) : 4 = 26 ✓).",
-     "teaches": [
-      "K1",
-      "K2",
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P4",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B22.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Bốn bạn đầu có TBC 20 nghìn đồng tiền quỹ. Bạn thứ năm góp hơn TBC của cả năm bạn 12 nghìn. Hỏi bạn thứ năm góp bao nhiêu?\"",
-     "answerKey": {
-      "value": 35
-     },
-     "hints": [
-      "Cân nhích 12 : 4 = 3.",
-      "TBC năm bạn 23 rồi cộng 12."
-     ],
-     "solutionNarrative": "TBC năm bạn = 23 → bạn năm = 35 nghìn (thử 115 : 5 = 23 ✓).",
-     "teaches": [
-      "K2",
-      "K4"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.1.2#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B22.M2",
-   "award": "huy_hieu_keo_can"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B22.QZ4",
-    "text": "Ba ngày TBC 26; ngày 4 hơn TBC cả bốn ngày 9 → TBC bốn ngày là:",
-    "choices": [
-     "29",
-     "35",
-     "26"
+      {
+        "case": "kém TBC cả nhóm (ca đối xứng)",
+        "problem": "Vẫn ba ngày ấy, ngày thứ tư bán KÉM TBC của cả bốn ngày 6 chiếc. Hỏi ngày thứ tư bán bao nhiêu?",
+        "solution": "Cân tụt: 26 − 6 : 3 = 24 = TBC bốn ngày. Ngày tư = 24 − 6 = 18. Thử: 96 : 4 = 24 ✓.",
+        "why": "Ca LT5 — cùng máy, đảo dấu."
+      },
+      {
+        "case": "sư phụ nhóm bốn (ca đổi cỡ)",
+        "problem": "Bốn bạn đầu có TBC 20 nghìn đồng tiền quỹ. Bạn thứ năm góp hơn TBC của cả năm bạn 12 nghìn. Hỏi bạn thứ năm góp bao nhiêu?",
+        "solution": "Cân nhích: 20 + 12 : 4 = 23 = TBC năm bạn. Bạn thứ năm = 23 + 12 = 35 nghìn. Thử: (80 + 35) : 5 = 23 ✓.",
+        "why": "Ca LT9 — số bạn cũ đổi thành 4, máy vẫn chạy."
+      }
     ],
-    "answerKey": {
-     "choice": "29"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1",
-     "K2"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B22.QZ3",
-    "text": "Số mới hơn TBC cả nhóm k thì phần k chia đều cho:",
-    "choices": [
-     "số bạn cũ",
-     "cả nhóm",
-     "số bạn mới"
+    "numberRange": "Lớp 5: nhóm cũ 3–5 phần tử; k chia hết cho số bạn cũ.",
+    "misconceptions": [
+      {
+        "wrong": "Cộng 9 thẳng vào TBC ba ngày: 26 + 9 = 35 (khi đề nói hơn TBC CẢ BỐN ngày).",
+        "signal": "Không có phép chia k : n_cũ nào trong bài.",
+        "fix": "K1 + K2 — phần hơn đo từ cân MỚI: cân nhích trước (26 + 3 = 29) — cộng phần hơn sau (38).",
+        "counterExample": "Thử 35: tổng 113 : 4 = 28,25 — mà 35 − 28,25 ≠ 9: trượt phép thử!"
+      },
+      {
+        "wrong": "Chia phần hơn cho CẢ NHÓM: 9 : 4 = 2,25 — coi người mới cũng gánh phần hơn của chính mình.",
+        "signal": "Kết quả kéo cân lẻ (2,25) bất thường.",
+        "fix": "K2 — phần hơn của người MỚI chảy xuống người CŨ: chia cho 3, không chia cho 4.",
+        "counterExample": "Kéo cân 2,25 → TBC 28,25 lẻ trong khi mọi số liệu đều nguyên — dấu hiệu sai máy."
+      }
     ],
-    "answerKey": {
-     "choice": "số bạn cũ"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B22.QZ5",
-    "text": "Cùng đề ấy, ngày thứ tư bán:",
-    "choices": [
-     "38",
-     "35",
-     "29"
-    ],
-    "answerKey": {
-     "choice": "38"
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "\"Hơn TBC cả nhóm k\" giải theo máy nào?",
-    "back": "Phần hơn k chảy xuống NGƯỜI CŨ chia nhau gánh: TBC mới = TBC cũ + k : n_cũ (CÂN NHÍCH TRƯỚC) → số mới = TBC mới + k (CỘNG SAU). Kém thì đảo dấu. Thử hai tầng: tổng : n mới và số mới − TBC mới = k."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P4 (sư phụ nhóm 4)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học máy kéo cân: hơn TBC cả nhóm — cân nhích trước (k chia số bạn cũ) rồi cộng phần hơn. Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Đóng vai: ba hộp kẹo 22, 31, 25 viên — con thêm hộp thứ tư sao cho nó hơn TBC cả bốn hộp đúng 9 viên, rồi kiểm bằng phép chia.",
-  "watchFor": "Nếu con cộng k thẳng vào TBC cũ hoặc chia k cho cả nhóm — chạy phép thử hai tầng (S2) cho lộ."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B22.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "26 + 9 = 35, xong??",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "26 cộng 9 là 35, xong!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Phần hơn 9 đo từ cân nào — cân cũ hay cân MỚI?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B22_M1_F1.png",
-   "sha256_16": "c297dbd31c5afe78"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "9 : 4 = 2,25 (chia cả nhóm)"
-     ],
-     "result": "lẻ bất thường"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "9 : 3 = 3 (chia bạn cũ)"
-     ],
-     "result": "TBC 29"
-    },
-    "verdict": "phần hơn chảy xuống người cũ"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B22_M1_F2.png",
-   "sha256_16": "5892667e18f5b56c"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "\"Số mới hơn TBC CẢ NHÓM (đã tính cả nó) k đơn vị\"",
-      "text": "phần hơn k đo từ điểm cân MỚI — không được cộng k thẳng vào TBC cũ.",
-      "tone": "navy"
-     },
-     {
-      "label": "Phần hơn k của người mới chảy xuống NHỮNG NGƯỜI CŨ chia nhau gánh",
-      "text": "mỗi người cũ được kéo lên k : (số người CŨ) nấc → TBC mới = TBC cũ + k : n_cũ.",
-      "tone": "teal"
-     }
+    "vocabulary": [
+      "số mới kéo cân",
+      "cân nhích trước — cộng sau",
+      "phần hơn chảy xuống người cũ",
+      "chia cho bạn cũ",
+      "thử hai tầng"
     ],
     "mantra": "CÂN NHÍCH TRƯỚC — CỘNG PHẦN HƠN SAU; NGƯỜI CŨ CHIA NHAU GÁNH!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B22_M1_F3.png",
-   "sha256_16": "d81d4fff2466cf80"
   },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "NGÀY THỨ TƯ HƠN TBC CẢ BỐN NGÀY 9 CHIẾC",
-    "steps": [
-     {
-      "text": "TBC ba ngày cũ",
-      "sub": "(22 + 31 + 25) : 3 = 26"
-     },
-     {
-      "text": "CÂN NHÍCH lên",
-      "sub": "26 + 9 : 3 = 29 = TBC bốn ngày"
-     },
-     {
-      "text": "Ngày tư = TBC mới + 9",
-      "sub": "29 + 9 = 38  ·  thử 116 : 4 = 29 ✓"
-     }
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "TBC của 22 ; 31 ; 25 = ?",
+        "answerKey": {
+          "value": 26
+        }
+      }
     ],
-    "note": "Phần hơn 9 được BA bạn cũ chia nhau gánh nên cân chỉ nhích 3"
-   },
-   "caption": "Cân nhích trước — cộng phần hơn sau, không được làm ngược",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B22_M1_F4.png",
-   "sha256_16": "45bff31f52c79d60"
-  }
- ]
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B21.M1",
+      "message": "Ôn điểm cân rồi xem số mới kéo cân nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Ba ngày đầu bán 22, 31, 25 — điểm cân 26. Đề: \"ngày thứ tư bán hơn TBC của CẢ BỐN ngày 9 chiếc.\" Cáo Đề xúi ngọt: \"26 cộng 9 là 35, xong!\" Su Kem chặn: \"Phần hơn 9 đo từ cân nào — cân cũ hay cân MỚI?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "26 + 9 = 35, xong??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để xem cân nhích!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2",
+          "K3"
+        ],
+        "narration": "Ngày tư bước lên bàn cân — cân NHÍCH! Nhích bao nhiêu? Phần hơn CHÍN của người mới chảy xuống BA người cũ chia nhau gánh: mỗi người chín chia ba bằng BA nấc — cân nhích từ hai sáu lên HAI CHÍN: đó là TBC cả bốn ngày! Giờ mới cộng phần hơn: ngày tư bằng hai chín cộng chín — BA MƯƠI TÁM. Thử hai tầng: tổng một trăm mười sáu chia bốn đúng hai chín; ba tám trừ hai chín đúng chín!",
+        "display": {
+          "type": "scale_shift_interactive",
+          "spec": {
+            "old": 26,
+            "k": 9,
+            "nOld": 3,
+            "lift": 3,
+            "newTbc": 29,
+            "newVal": 38,
+            "check": "116 : 4 = 29 ✓ · 38 − 29 = 9 ✓"
+          }
+        },
+        "interaction": {
+          "type": "lift_and_add",
+          "answerKey": {
+            "value": 38
+          },
+          "successMessage": "Cân nhích 3 → TBC 29 → ngày tư 38!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "num",
+          "text": "Vẫn ba ngày ấy, ngày tư KÉM TBC cả bốn ngày 6 chiếc — ngày tư bán mấy chiếc?",
+          "answerKey": {
+            "value": 18
+          },
+          "wrongFeedback": "Cân tụt: 26 − 6 : 3 = 24 → 24 − 6.",
+          "objective": "O1",
+          "teaches": [
+            "K3"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 40,
+        "teaches": [
+          "K2",
+          "K4"
+        ],
+        "narration": "Bẫy thứ hai rình sẵn: \"chia đều thì chia cho cả bốn chứ — chín chia bốn bằng hai phẩy hai lăm!\" KHÔNG: người mới không tự gánh phần hơn của chính mình — phần hơn chảy xuống NGƯỜI CŨ: chia cho BA! Kéo cân lẻ hai phẩy hai lăm giữa toàn số nguyên chính là còi báo sai máy. Nhóm đổi cỡ vẫn một máy: bốn bạn quỹ TBC hai mươi, bạn năm hơn TBC cả năm bạn mười hai — cân nhích mười hai chia BỐN bằng ba, lên hai ba — bạn năm góp BA LĂM nghìn!",
+        "display": {
+          "type": "counter_example",
+          "cases": [
+            {
+              "input": "9 : 4 = 2,25 (chia cả nhóm)",
+              "output": "✗ lẻ bất thường",
+              "valid": false,
+              "reason": "người mới không tự gánh"
+            },
+            {
+              "input": "9 : 3 = 3 (chia bạn cũ)",
+              "output": "✓ TBC 29",
+              "valid": true,
+              "reason": "phần hơn chảy xuống người cũ"
+            }
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Hai thần chú kéo cân: cân nhích trước — cộng phần hơn sau! Phần hơn người mới — người cũ chia nhau gánh!",
+        "display": {
+          "type": "mantra_card",
+          "text": "CÂN NHÍCH TRƯỚC — CỘNG SAU!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 87,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Ba ngày đầu bán hai hai, ba mốt, hai lăm — điểm cân hai sáu. Đề: ngày thứ tư bán hơn TBC của CẢ BỐN ngày chín chiếc. Cáo Đề xúi ngọt: hai sáu cộng chín là ba lăm, xong! Su Kem chặn: phần hơn chín đo từ cân nào — cân cũ hay cân MỚI?",
+        "screenText": "hơn TBC CẢ 4 ngày 9 → 26 + 9??",
+        "visual": "Bàn cân với ba ngày đứng sẵn, điểm cân 26; ngày thứ tư đứng chờ mép cân; Cáo Đề thì thầm '35', dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Ngày tư bước lên bàn cân — cân NHÍCH! Phần hơn CHÍN của người mới chảy xuống BA người cũ chia nhau gánh: mỗi người ba nấc — cân nhích từ hai sáu lên HAI CHÍN: TBC cả bốn ngày! Giờ mới cộng phần hơn: hai chín cộng chín — BA MƯƠI TÁM. Thử hai tầng: một trăm mười sáu chia bốn đúng hai chín; ba tám trừ hai chín đúng chín!",
+        "screenText": "26 + 9:3 = 29 → ngày 4 = 29 + 9 = 38 ✓",
+        "visual": "Dòng nước '9' từ ngày tư chảy chia ba nhánh xuống ba ngày cũ; kim cân nhích 26→29; ngày tư đứng cao hơn cân đúng 9 nấc.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Bẫy thứ hai: chia đều thì chia cho cả bốn chứ — chín chia bốn bằng hai phẩy hai lăm! KHÔNG: người mới không tự gánh phần hơn của chính mình — chia cho BA! Nhóm đổi cỡ vẫn một máy: quỹ TBC hai mươi, bạn năm hơn TBC cả năm bạn mười hai — nhích ba, lên hai ba — góp BA LĂM nghìn!",
+        "screenText": "9 : 4 ✗ · 9 : 3 ✓ · sư phụ: 20 + 12:4 = 23 → 35",
+        "visual": "Phép 9:4=2,25 kêu còi đỏ; dòng chảy chỉ xuống ba người cũ; ca sư phụ chạy nhanh góc màn với đáp 35 nghìn mộc xanh.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Hai thần chú kéo cân: cân nhích trước — cộng phần hơn sau! Phần hơn người mới — người cũ chia nhau gánh!",
+        "screenText": "CÂN NHÍCH TRƯỚC · NGƯỜI CŨ GÁNH!",
+        "visual": "Thẻ thần chú vàng với icon bàn cân nhích.",
+        "assets": [],
+        "duration": 9
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Ca kéo cân của con: ngày tư KÉM TBC cả bốn ngày sáu chiếc — ngày tư bán mấy chiếc? Vào bài luyện ngay!",
+        "screenText": "kém TBC cả 4 ngày 6 → ngày 4 = ?",
+        "visual": "Bàn cân với mũi tên tụt; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 9
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Ngày thứ tư kéo cân",
+    "problem": "Ba ngày đầu bán 22 ; 31 ; 25 chiếc. Ngày thứ tư bán hơn TBC của CẢ BỐN ngày là 9 chiếc. Hỏi ngày thứ tư bán bao nhiêu chiếc?",
+    "steps": [
+      {
+        "show": "Bước 1 — TBC ba ngày = 78 : 3 = 26. Phần hơn 9 chia cho SỐ NGÀY CŨ: 9 : 3 = 3 nấc.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Phần hơn 9 chia cho:",
+          "choices": [
+            "3 (số ngày cũ)",
+            "4 (cả nhóm)",
+            "không chia"
+          ],
+          "answerKey": {
+            "choice": "3 (số ngày cũ)"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Cân nhích: TBC bốn ngày = 26 + 3 = 29."
+      },
+      {
+        "show": "Bước 3 — Ngày tư = 29 + 9 = 38. Thử: 116 : 4 = 29 ✓; 38 − 29 = 9 ✓.",
+        "askAfter": {
+          "format": "num",
+          "text": "Nếu ngày tư hơn TBC cả bốn ngày 12 chiếc thì ngày tư bán mấy chiếc?",
+          "answerKey": {
+            "value": 42
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B22.LT4",
+          "text": "Ba ngày đầu bán 22 ; 31 ; 25 chiếc. Ngày thứ tư bán hơn TBC của CẢ BỐN ngày là 9 chiếc. Hỏi ngày thứ tư bán bao nhiêu chiếc?",
+          "answerKey": {
+            "value": 38
+          },
+          "hints": [
+            "Cân nhích: 9 : 3 nấc.",
+            "TBC mới 29 rồi cộng 9."
+          ],
+          "solutionNarrative": "TBC bốn ngày = 26 + 3 = 29 → ngày tư = 38 (thử 116 : 4 ✓).",
+          "teaches": [
+            "K1",
+            "K2",
+            "K3"
+          ],
+          "generator": {
+            "template": "Nhóm {n} có TBC {t}; số mới hơn TBC cả nhóm {k}. Tìm số mới.",
+            "constraints": {
+              "k": "chia hết cho n"
+            },
+            "answerRule": "(t + k : n) + k"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B22.LT5",
+          "text": "Vẫn ba ngày 22 ; 31 ; 25, nhưng ngày thứ tư bán KÉM TBC của cả bốn ngày 6 chiếc. Hỏi ngày thứ tư bán bao nhiêu chiếc?",
+          "answerKey": {
+            "value": 18
+          },
+          "hints": [
+            "Cân tụt 6 : 3 = 2 nấc.",
+            "TBC mới 24 rồi trừ 6."
+          ],
+          "solutionNarrative": "TBC bốn ngày = 26 − 2 = 24 → ngày tư = 18 (thử 96 : 4 ✓).",
+          "teaches": [
+            "K3"
+          ]
+        },
+        {
+          "id": "P3",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B22.LT6",
+          "text": "TBC số kẹo của An, Bình, Cường là 24 viên. Dũng có nhiều hơn TBC số kẹo của cả bốn bạn là 6 viên. Hỏi Dũng có bao nhiêu viên kẹo?",
+          "answerKey": {
+            "value": 32
+          },
+          "hints": [
+            "Cân nhích 6 : 3 = 2.",
+            "TBC bốn bạn 26 rồi cộng 6."
+          ],
+          "solutionNarrative": "TBC bốn bạn = 26 → Dũng = 32 (thử (72 + 32) : 4 = 26 ✓).",
+          "teaches": [
+            "K1",
+            "K2",
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P4",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B22.LT9",
+          "text": "Sư phụ Trí Dũng đố: \"Bốn bạn đầu có TBC 20 nghìn đồng tiền quỹ. Bạn thứ năm góp hơn TBC của cả năm bạn 12 nghìn. Hỏi bạn thứ năm góp bao nhiêu?\"",
+          "answerKey": {
+            "value": 35
+          },
+          "hints": [
+            "Cân nhích 12 : 4 = 3.",
+            "TBC năm bạn 23 rồi cộng 12."
+          ],
+          "solutionNarrative": "TBC năm bạn = 23 → bạn năm = 35 nghìn (thử 115 : 5 = 23 ✓).",
+          "teaches": [
+            "K2",
+            "K4"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.1.2#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B22.M2",
+      "award": "huy_hieu_keo_can"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B22.QZ4",
+        "text": "Ba ngày TBC 26; ngày 4 hơn TBC cả bốn ngày 9 → TBC bốn ngày là:",
+        "choices": [
+          "29",
+          "35",
+          "26"
+        ],
+        "answerKey": {
+          "choice": "29"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1",
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B22.QZ3",
+        "text": "Số mới hơn TBC cả nhóm k thì phần k chia đều cho:",
+        "choices": [
+          "số bạn cũ",
+          "cả nhóm",
+          "số bạn mới"
+        ],
+        "answerKey": {
+          "choice": "số bạn cũ"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B22.QZ5",
+        "text": "Cùng đề ấy, ngày thứ tư bán:",
+        "choices": [
+          "38",
+          "35",
+          "29"
+        ],
+        "answerKey": {
+          "choice": "38"
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "\"Hơn TBC cả nhóm k\" giải theo máy nào?",
+        "back": "Phần hơn k chảy xuống NGƯỜI CŨ chia nhau gánh: TBC mới = TBC cũ + k : n_cũ (CÂN NHÍCH TRƯỚC) → số mới = TBC mới + k (CỘNG SAU). Kém thì đảo dấu. Thử hai tầng: tổng : n mới và số mới − TBC mới = k."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P4 (sư phụ nhóm 4)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học máy kéo cân: hơn TBC cả nhóm — cân nhích trước (k chia số bạn cũ) rồi cộng phần hơn. Con đạt {score}/3, {trapResult} câu bẫy.",
+    "homeActivity": "Đóng vai: ba hộp kẹo 22, 31, 25 viên — con thêm hộp thứ tư sao cho nó hơn TBC cả bốn hộp đúng 9 viên, rồi kiểm bằng phép chia.",
+    "watchFor": "Nếu con cộng k thẳng vào TBC cũ hoặc chia k cho cả nhóm — chạy phép thử hai tầng (S2) cho lộ."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B22.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "26 + 9 = 35, xong??",
+        "lines": [
+          {
+            "who": "Cáo Đề",
+            "say": "26 cộng 9 là 35, xong!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Phần hơn 9 đo từ cân nào — cân cũ hay cân MỚI?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B22_M1_F1.png",
+      "sha256_16": "c297dbd31c5afe78"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+        "wrong": {
+          "head": "CÁCH SAI",
+          "steps": [
+            "9 : 4 = 2,25 (chia cả nhóm)"
+          ],
+          "result": "lẻ bất thường"
+        },
+        "right": {
+          "head": "CÁCH ĐÚNG",
+          "steps": [
+            "9 : 3 = 3 (chia bạn cũ)"
+          ],
+          "result": "TBC 29"
+        },
+        "verdict": "phần hơn chảy xuống người cũ"
+      },
+      "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B22_M1_F2.png",
+      "sha256_16": "5892667e18f5b56c"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "\"Số mới hơn TBC CẢ NHÓM (đã tính cả nó) k đơn vị\"",
+            "text": "phần hơn k đo từ điểm cân MỚI — không được cộng k thẳng vào TBC cũ.",
+            "tone": "navy"
+          },
+          {
+            "label": "Phần hơn k của người mới chảy xuống NHỮNG NGƯỜI CŨ chia nhau gánh",
+            "text": "mỗi người cũ được kéo lên k : (số người CŨ) nấc → TBC mới = TBC cũ + k : n_cũ.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "CÂN NHÍCH TRƯỚC — CỘNG PHẦN HƠN SAU; NGƯỜI CŨ CHIA NHAU GÁNH!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B22_M1_F3.png",
+      "sha256_16": "d81d4fff2466cf80"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "NGÀY THỨ TƯ HƠN TBC CẢ BỐN NGÀY 9 CHIẾC",
+        "steps": [
+          {
+            "text": "TBC ba ngày cũ",
+            "sub": "(22 + 31 + 25) : 3 = 26"
+          },
+          {
+            "text": "CÂN NHÍCH lên",
+            "sub": "26 + 9 : 3 = 29 = TBC bốn ngày"
+          },
+          {
+            "text": "Ngày tư = TBC mới + 9",
+            "sub": "29 + 9 = 38  ·  thử 116 : 4 = 29 ✓"
+          }
+        ],
+        "note": "Phần hơn 9 được BA bạn cũ chia nhau gánh nên cân chỉ nhích 3"
+      },
+      "caption": "Cân nhích trước — cộng phần hơn sau, không được làm ngược",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B22_M1_F4.png",
+      "sha256_16": "45bff31f52c79d60"
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { checkAnswer, inputCount, answerBrief, answerFields } from '../lib/flow.js';
+import { checkAnswer, inputCount, answerBrief, answerFields, answerMode } from '../lib/flow.js';
 import AnswerFields, { PickRow } from './AnswerFields.jsx';
 
 export { PickRow };
@@ -7,19 +7,34 @@ export { PickRow };
 /**
  * Ô trả lời dùng chung cho: chốt nhanh · câu hỏi xen giữa ví dụ dẫn dắt · sát hạch.
  * Tự chọn kiểu nhập theo format và answerKey — không cần cấu hình thêm.
+ *
+ * `onResolve(kq, chiTiet)` — chiTiet là thứ đẩy lên máy chủ cho cô giáo xem:
+ * con GÕ GÌ, mất bao lâu RIÊNG câu này, thử lần thứ mấy. Không có mấy trường ấy
+ * thì cô chỉ biết "sai", không biết sai ra sao — mà hai con sai hai kiểu khác nhau
+ * thì cần hai cách giúp khác nhau.
  */
 export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra', autoAdvance }) {
   const n = inputCount(item);
   const [vals, setVals] = useState(Array(Math.max(n, 1)).fill(''));
   const [res, setRes] = useState(null);
+  const [tries, setTries] = useState(0);
+  const [t0] = useState(() => Date.now());
 
-  const settle = (r) => { setRes(r); onResolve?.(r); };
+  const settle = (r, chiTiet) => { setRes(r); onResolve?.(r, chiTiet); };
 
   /* Đúng/Sai và trắc nghiệm nay cũng là một ô trong AnswerFields, nên không còn
      nhánh riêng ở đây — một khối ô trả lời dùng chung cho mọi màn hình. */
   const submit = () => {
     if (res?.ok) return;                   // đúng rồi thì thôi, còn sai thì thử lại thoải mái
-    settle(checkAnswer(item, n <= 1 ? vals[0] : vals));
+    const dap = n <= 1 ? vals[0] : vals;
+    const r = checkAnswer(item, dap);
+    const lan = tries + 1;
+    setTries(lan);
+    settle(r, {
+      ok: r.ok, tries: lan, ms: Date.now() - t0,
+      answer: dap, expected: r.expected, mode: answerMode(item),
+      mustPass: !!item.mustPass,
+    });
   };
 
   /* câu tự luận — làm ra nháp rồi tự so, không có ô nhập */
@@ -29,7 +44,10 @@ export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra
         {!res ? (
           <>
             <p className="field-brief"><span aria-hidden>✎</span><span>{answerBrief(item)}</span></p>
-            <button className="btn-ghost" onClick={() => settle(checkAnswer(item, ''))}>
+            <button className="btn-ghost" onClick={() => settle(checkAnswer(item, ''), {
+              ok: true, tries: 1, ms: Date.now() - t0, mode: 'tuluan', revealed: true,
+              answer: null, expected: item.solutionNarrative || null, mustPass: !!item.mustPass,
+            })}>
               Con nghĩ xong rồi — xem lời giải
             </button>
           </>

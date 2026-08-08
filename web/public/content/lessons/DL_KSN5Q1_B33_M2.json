@@ -1,642 +1,645 @@
 {
- "title": "Thước hiệu (cùng thêm / cùng bớt): quy đồng khúc thước trước — so phần chênh sau",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:III.5.1#2"
-  ],
-  "bktUnit": "CASE:III.5.1#2@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B33",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B33.M1",
-  "next": "DL:KSN5Q1.B33.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B33",
-  "chunks": [
-   "CHUNK:KSN5Q1.B33.S4",
-   "CHUNK:KSN5Q1.B33.S5"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B33.2"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B33.3"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con giải ca CÙNG THÊM / CÙNG BỚT một lượng như nhau: HIỆU bất biến làm thước — nhưng \"phần\" của hai sơ đồ chỉ so được khi cây thước hiệu bị chia thành SỐ KHÚC NHƯ NHAU: quy đồng số khúc hiệu (nhân sơ đồ, BCNN) rồi mới so phần nhích của một bên = lượng thêm / bớt.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (quy đồng khúc thước trước)",
-  "kidText": "Cùng thêm hoặc cùng bớt một lượng thì hiệu đứng im. Nhưng phải chia thước hiệu thành số khúc như nhau mới so phần được."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Hai bên cùng thêm (hay cùng bớt) MỘT LƯỢNG NHƯ NHAU → hiệu KHÔNG ĐỔI (luật B27): HIỆU là kẻ đứng im — hiệu cầm thước. (Tổng thì tăng / giảm — đừng nhầm!)"
-   },
-   {
-    "id": "K2",
-    "text": "Nhưng mỗi sơ đồ chia hiệu thành số khúc khác nhau: trước 1 : 3 → hiệu 2 khúc; sau 1 : 2 → hiệu 1 khúc — chưa cùng khúc thước, CHƯA ĐƯỢC trừ phần!"
-   },
-   {
-    "id": "K3",
-    "text": "Quy đồng khúc thước hiệu về BCNN: nhân đôi sơ đồ sau thành 2 : 4 (hiệu 2 khúc) — giờ hai tầng cùng thước: A từ 1 phần lên 2 phần — nhích 1 phần = 5 → phần 5 → A 5; B 15."
-   },
-   {
-    "id": "K4",
-    "text": "Ca đã cùng khúc thì so luôn (3 : 4 và 2 : 3 — hiệu đều 1 khúc: A giảm 1 hiệu-khúc = 6 → 18 và 24); ca tuổi cùng-thêm-số-năm cũng chính là máy này (BCNN 6 → con 12, mẹ 48)."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: CÂY THƯỚC HIỆU BỊ CƯA KHÁC KHÚC. \"A bằng 1/3 B; cả hai cùng mua thêm 5 viên thì A bằng 1/2 B.\" Cùng thêm 5 — khoảng cách hai bạn KHÔNG ĐỔI: hiệu cầm thước! Vẽ hai tầng: trước 1 : 3 — hiệu dài 2 khúc; sau 1 : 2 — hiệu dài 1 khúc. Trí Long trừ luôn phần?! Nhìn kỹ: cùng MỘT cây thước hiệu nhưng tầng trên cưa làm 2 khúc, tầng dưới để nguyên 1 khúc — khúc trên ngắn bằng nửa khúc dưới: trừ thẳng là so cam với táo! Quy đồng khúc: nhân ĐÔI cả sơ đồ sau — 2 : 4, hiệu cũng 2 khúc: giờ hai tầng cùng thước! A: một khúc lên hai khúc — nhích MỘT khúc = 5 viên: A năm viên, B mười lăm. Ba trạm: 5/15 = 1/3; 10/20 = 1/2; đúng cùng thêm 5!",
-  "canonicalExamples": [
-   {
-    "case": "cùng thêm — phải quy khúc (ca lõi)",
-    "problem": "A bằng 1/3 của B. Cả hai cùng mua thêm 5 viên thì A bằng 1/2 của B. Tìm A và B lúc đầu.",
-    "solution": "Thước hiệu. Trước 1 : 3 (hiệu 2 khúc); sau 1 : 2 (hiệu 1) → nhân đôi: 2 : 4 → A nhích 1 khúc = 5 → A = 5; B = 15. Thử: 1/3 ✓; 10/20 = 1/2 ✓; +5 ✓.",
-    "why": "Ca đề A câu 4 — trap trừ-thẳng rình đây."
-   },
-   {
-    "case": "cùng bớt — sẵn cùng khúc (ca thuận)",
-    "problem": "A bằng 3/4 của B. Cả hai cùng bớt đi 6 viên thì A bằng 2/3 của B. Tìm A và B lúc đầu.",
-    "solution": "Trước 3 : 4, sau 2 : 3 — hiệu đều 1 khúc (đã cùng thước) → A giảm 1 khúc = 6 → khúc 6 → A = 18; B = 24. Thử: 3/4 ✓; 12/18 = 2/3 ✓; −6 ✓.",
-    "why": "Ca LT6 — nhìn ra cùng-khúc thì so luôn."
-   },
-   {
-    "case": "tuổi cùng trôi (ca sư phụ)",
-    "problem": "Hiện nay tuổi con bằng 1/4 tuổi mẹ. Sau 6 năm nữa, tuổi con bằng 1/3 tuổi mẹ. Tính tuổi hai mẹ con hiện nay.",
-    "solution": "Cùng thêm 6 tuổi → thước hiệu; BCNN(3; 2) = 6: nay 1 : 4 → 2 : 8; sau 1 : 3 → 3 : 9 → con nhích 1 khúc = 6 → nay con 12; mẹ 48. Thử: 12/48 = 1/4 ✓; 18/54 = 1/3 ✓.",
-    "why": "Ca LT9 — thời gian là phép cùng-thêm khổng lồ, cầu sang B35."
-   }
-  ],
-  "numberRange": "Lớp 5: BCNN khúc hiệu ≤ 6; lượng cùng thêm / bớt ≤ 10.",
-  "misconceptions": [
-   {
-    "wrong": "Hai sơ đồ hiệu 2 khúc và 1 khúc mà trừ phần thẳng (1 phần → 1 phần: \"không nhích gì\").",
-    "signal": "Không có bước nhân sơ đồ; phần hai tầng khác cỡ vẫn đem trừ.",
-    "fix": "K2 + K3 — quy đồng khúc thước hiệu (BCNN) trước: nhân đôi sơ đồ sau rồi mới so.",
-    "counterExample": "Khúc tầng trên = nửa khúc tầng dưới — trừ thẳng như lấy 1 gang tay trừ 1 sải tay!"
-   }
-  ],
-  "vocabulary": [
-   "thước hiệu",
-   "khúc thước bị cưa khác nhau",
-   "nhân sơ đồ (BCNN)",
-   "phần nhích",
-   "so cam với táo"
-  ],
-  "mantra": "QUY ĐỒNG KHÚC THƯỚC TRƯỚC — SO PHẦN CHÊNH SAU!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "mcq",
-    "text": "Ôn B27: hai bên cùng thêm 5 thì đại lượng nào không đổi?",
-    "choices": [
-     "hiệu",
-     "tổng",
-     "cả hai"
+  "title": "Thước hiệu (cùng thêm / cùng bớt): quy đồng khúc thước trước — so phần chênh sau",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:III.5.1#2"
     ],
-    "answerKey": {
-     "choice": "hiệu"
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B27.M1",
-   "message": "Ôn luật kép Bài 27 rồi cầm thước hiệu nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Đề: \"A bằng 1/3 B; cả hai cùng mua thêm 5 viên thì A bằng 1/2 B.\" Trí Long vẽ hai tầng chuẩn, rồi trừ phần luôn: \"A một phần cả hai tầng — chẳng nhích gì?!\" Su Kem chỉ vào hai đoạn hiệu: \"Tầng trên hiệu cưa 2 khúc — tầng dưới 1 khúc: khúc có bằng nhau đâu mà trừ?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "hai tầng khác khúc — trừ thẳng??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đo hai khúc thước!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
+    "bktUnit": "CASE:III.5.1#2@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B33",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B33.M1",
+    "next": "DL:KSN5Q1.B33.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B33",
+    "chunks": [
+      "CHUNK:KSN5Q1.B33.S4",
+      "CHUNK:KSN5Q1.B33.S5"
     ],
-    "narration": "Cùng thêm năm — khoảng cách hai bạn KHÔNG ĐỔI: hiệu cầm thước! Nhưng tầng trước chia hiệu làm HAI khúc, tầng sau để NGUYÊN một khúc — trừ thẳng là so cam với táo! Quy đồng khúc: nhân ĐÔI cả sơ đồ sau — một-hai thành HAI-BỐN, hiệu cũng hai khúc. Giờ cùng thước: A từ một khúc lên HAI khúc — nhích MỘT khúc bằng NĂM viên: A năm viên, B mười lăm viên!",
-    "display": {
-     "type": "ruler_segments_interactive",
-     "spec": {
-      "before": "1 : 3 (hiệu 2 khúc)",
-      "after": "1 : 2 → ×2 → 2 : 4 (hiệu 2 khúc)",
-      "gap": "A nhích 1 khúc = 5",
-      "values": [
-       5,
-       15
-      ]
-     }
-    },
-    "interaction": {
-     "type": "equalize_then_compare",
-     "answerKey": {
-      "values": [
-       5,
-       15
-      ]
-     },
-     "successMessage": "Nhân đôi sơ đồ sau → cùng 2 khúc → A nhích 1 = 5!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "Trước: hiệu 2 khúc; sau: hiệu 1 khúc — việc phải làm TRƯỚC khi so phần:",
-     "choices": [
-      "nhân đôi sơ đồ sau (quy đồng khúc)",
-      "trừ phần luôn",
-      "đổi thước"
-     ],
-     "answerKey": {
-      "choice": "nhân đôi sơ đồ sau (quy đồng khúc)"
-     },
-     "wrongFeedback": "Chưa cùng khúc — chưa được trừ.",
-     "objective": "O1",
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K4"
+    "cases": [
+      "CA:KSN5Q1.B33.2"
     ],
-    "narration": "Ca đã CÙNG khúc thì so luôn: A bằng ba phần tư B, cùng bớt sáu còn hai phần ba — trước ba-bốn, sau hai-ba: hiệu đều MỘT khúc! A từ ba xuống hai — giảm một khúc bằng sáu: A mười tám, B hai tư. Và đề tuổi của sư phụ: sau sáu năm — CÙNG THÊM SÁU tuổi, thước hiệu! BCNN của khúc là sáu: nay một-bốn nhân đôi thành hai-tám; sau một-ba nhân ba thành ba-chín — con nhích MỘT khúc bằng sáu: nay con MƯỜI HAI, mẹ BỐN TÁM!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "cùng khúc sẵn: 3:4 → 2:3, giảm 1 = 6 → 18 & 24",
-      "tuổi = cùng thêm 6: BCNN → 2:8 và 3:9",
-      "con nhích 1 = 6 → con 12 · mẹ 48 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú thợ cưa: quy đồng khúc thước trước — so phần chênh sau!",
-    "display": {
-     "type": "mantra_card",
-     "text": "QUY KHÚC TRƯỚC — SO PHẦN SAU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 90,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Đề: A bằng một phần ba B; cùng thêm năm viên thì A bằng một phần hai B. Trí Long trừ phần luôn: A một phần cả hai tầng — chẳng nhích gì?! Su Kem chỉ vào hai đoạn hiệu: tầng trên hiệu cưa hai khúc — tầng dưới một khúc: khúc có bằng nhau đâu mà trừ?",
-    "screenText": "hiệu 2 khúc vs 1 khúc — trừ thẳng??",
-    "visual": "Hai tầng sơ đồ với đoạn hiệu cưa khác khúc; Trí Long đặt dấu trừ giữa hai tầng; thước đo lệch vạch, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 21
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Cùng thêm năm — hiệu KHÔNG ĐỔI: hiệu cầm thước! Nhưng tầng trước chia hiệu làm HAI khúc, tầng sau để NGUYÊN một khúc — trừ thẳng là so cam với táo! Quy đồng khúc: nhân ĐÔI cả sơ đồ sau — một-hai thành HAI-BỐN, hiệu cũng hai khúc. Giờ cùng thước: A từ một khúc lên HAI khúc — nhích MỘT khúc bằng NĂM viên: A năm viên, B mười lăm viên!",
-    "screenText": "hiệu ⚓ · sau ×2: 2 : 4 → cùng 2 khúc → A nhích 1 = 5 → 5 & 15",
-    "visual": "Cây thước hiệu vàng cố định xuyên hai tầng; sơ đồ sau phóng đôi khớp vạch; ô nhích của A sáng ôm số 5.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Ca đã CÙNG khúc thì so luôn: cùng bớt sáu, ba-bốn về hai-ba — hiệu đều MỘT khúc! A giảm một khúc bằng sáu: A mười tám, B hai tư. Đề tuổi sư phụ: sau sáu năm — cùng thêm sáu, thước hiệu! BCNN sáu: nay một-bốn nhân đôi thành hai-tám; sau một-ba nhân ba thành ba-chín — con nhích MỘT khúc bằng sáu: nay con MƯỜI HAI, mẹ BỐN TÁM!",
-    "screenText": "3:4 → 2:3 (cùng khúc): −1 = 6 → 18 & 24 · tuổi: 2:8 & 3:9 → 12 & 48",
-    "visual": "Ca cùng-bớt với hai tầng khớp vạch sẵn; ca tuổi với hai sơ đồ nhân 2 và nhân 3 về cùng 6 khúc hiệu; hai cặp đáp mộc xanh.",
-    "assets": [],
-    "duration": 25
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú thợ cưa: quy đồng khúc thước trước — so phần chênh sau!",
-    "screenText": "QUY KHÚC TRƯỚC — SO PHẦN SAU!",
-    "visual": "Thẻ thần chú vàng với icon cưa và thước.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Xưởng cưa: A bằng một phần ba B, cùng thêm năm thì bằng một phần hai — quy khúc rồi tìm A và B! Vào bài luyện ngay!",
-    "screenText": "quy khúc BCNN → A? B?",
-    "visual": "Cây thước chờ cưa lại; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Cưa lại khúc thước",
-  "problem": "A bằng 1/3 của B. Cả hai cùng mua thêm 5 viên thì A bằng 1/2 của B. Tìm A và B lúc đầu.",
-  "steps": [
-   {
-    "show": "Bước 1 — Cùng thêm 5 → HIỆU không đổi: hiệu cầm thước. Trước 1 : 3 (hiệu 2 khúc); sau 1 : 2 (hiệu 1 khúc).",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Hai tầng đã so phần được chưa?",
-     "choices": [
-      "chưa — khác khúc thước",
-      "rồi",
-      "không cần so"
-     ],
-     "answerKey": {
-      "choice": "chưa — khác khúc thước"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Quy khúc: nhân đôi sơ đồ sau → 2 : 4 (hiệu 2 khúc) — cùng thước."
-   },
-   {
-    "show": "Bước 3 — A nhích 1 khúc = 5 → A = 5; B = 15. Ba trạm: 1/3 ✓; 10/20 = 1/2 ✓; +5 ✓.",
-    "askAfter": {
-     "format": "mb",
-     "text": "Con = 1/4 mẹ; sau 6 năm = 1/3 → tuổi nay?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "con",
-        "value": 12
-       },
-       {
-        "label": "mẹ",
-        "value": 48
-       }
-      ]
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B33.LT5",
-     "text": "A bằng 1/3 của B. Cả hai cùng mua thêm 5 viên thì A bằng 1/2 của B. Tìm A và B lúc đầu.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "A",
-        "value": 5
-       },
-       {
-        "label": "B",
-        "value": 15
-       }
-      ]
-     },
-     "hints": [
-      "Thước hiệu; hai tầng 2 khúc và 1 khúc.",
-      "Nhân đôi sơ đồ sau: 2 : 4."
-     ],
-     "solutionNarrative": "A nhích 1 khúc = 5 → 5 & 15 (ba trạm ✓).",
-     "teaches": [
-      "K1",
-      "K2",
-      "K3"
-     ],
-     "generator": {
-      "template": "A = {m1}/{n1} B; cùng thêm {c} → {m2}/{n2}. Tìm hai bên.",
-      "constraints": {},
-      "answerRule": "quy khúc hiệu BCNN → phần nhích = c"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B33.LT6",
-     "text": "A bằng 3/4 của B. Cả hai cùng bớt đi 6 viên thì A bằng 2/3 của B. Tìm A và B lúc đầu.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "A",
-        "value": 18
-       },
-       {
-        "label": "B",
-        "value": 24
-       }
-      ]
-     },
-     "hints": [
-      "Hiệu hai tầng đều 1 khúc — cùng thước sẵn.",
-      "A giảm 1 khúc = 6."
-     ],
-     "solutionNarrative": "Khúc 6 → 18 & 24 (12/18 = 2/3 ✓).",
-     "teaches": [
-      "K4"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B33.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Hiện nay tuổi con bằng 1/4 tuổi mẹ. Sau 6 năm nữa, tuổi con bằng 1/3 tuổi mẹ. Tính tuổi hai mẹ con hiện nay.\"",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "con",
-        "value": 12
-       },
-       {
-        "label": "mẹ",
-        "value": 48
-       }
-      ]
-     },
-     "hints": [
-      "Cùng thêm 6 tuổi → thước hiệu, BCNN 6.",
-      "2 : 8 và 3 : 9 → con nhích 1 = 6."
-     ],
-     "solutionNarrative": "Khúc 6 → con 12; mẹ 48 (18/54 = 1/3 ✓).",
-     "teaches": [
-      "K4"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.5.1#2@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B33.M3",
-   "award": "huy_hieu_tho_cua_thuoc"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "text": "Trước hiệu 2 khúc, sau hiệu 1 khúc — trước khi so phần ta phải:",
-    "choices": [
-     "nhân đôi sơ đồ sau (quy đồng khúc)",
-     "trừ phần luôn",
-     "đổi thước khác"
-    ],
-    "answerKey": {
-     "choice": "nhân đôi sơ đồ sau (quy đồng khúc)"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2",
-     "K3"
+    "traps": [
+      "TRAP:KSN5Q1.B33.3"
     ]
-   },
-   {
-    "id": "A2",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B33.QZ2",
-    "text": "(Đúng/Sai?) Hai bên cùng thêm một lượng như nhau thì tổng của chúng không đổi.",
-    "answerKey": {
-     "value": false
-    },
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mb",
-    "text": "A = 1/3 B; cùng thêm 5 → 1/2 → A, B lúc đầu?",
-    "answerKey": {
-     "parts": [
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con giải ca CÙNG THÊM / CÙNG BỚT một lượng như nhau: HIỆU bất biến làm thước — nhưng \"phần\" của hai sơ đồ chỉ so được khi cây thước hiệu bị chia thành SỐ KHÚC NHƯ NHAU: quy đồng số khúc hiệu (nhân sơ đồ, BCNN) rồi mới so phần nhích của một bên = lượng thêm / bớt.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (quy đồng khúc thước trước)",
+    "kidText": "Cùng thêm hoặc cùng bớt một lượng thì hiệu đứng im. Nhưng phải chia thước hiệu thành số khúc như nhau mới so phần được."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "A",
-       "value": 5
+        "id": "K1",
+        "text": "Hai bên cùng thêm (hay cùng bớt) MỘT LƯỢNG NHƯ NHAU → hiệu KHÔNG ĐỔI (luật B27): HIỆU là kẻ đứng im — hiệu cầm thước. (Tổng thì tăng / giảm — đừng nhầm!)"
       },
       {
-       "label": "B",
-       "value": 15
+        "id": "K2",
+        "text": "Nhưng mỗi sơ đồ chia hiệu thành số khúc khác nhau: trước 1 : 3 → hiệu 2 khúc; sau 1 : 2 → hiệu 1 khúc — chưa cùng khúc thước, CHƯA ĐƯỢC trừ phần!"
+      },
+      {
+        "id": "K3",
+        "text": "Quy đồng khúc thước hiệu về BCNN: nhân đôi sơ đồ sau thành 2 : 4 (hiệu 2 khúc) — giờ hai tầng cùng thước: A từ 1 phần lên 2 phần — nhích 1 phần = 5 → phần 5 → A 5; B 15."
+      },
+      {
+        "id": "K4",
+        "text": "Ca đã cùng khúc thì so luôn (3 : 4 và 2 : 3 — hiệu đều 1 khúc: A giảm 1 hiệu-khúc = 6 → 18 và 24); ca tuổi cùng-thêm-số-năm cũng chính là máy này (BCNN 6 → con 12, mẹ 48)."
       }
-     ]
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Cùng thêm / cùng bớt — thước gì? So phần thế nào?",
-    "back": "Cùng MỘT lượng → HIỆU bất biến cầm thước (tổng thì trôi!). Hai sơ đồ chia hiệu khác khúc (2 vs 1) → QUY ĐỒNG KHÚC (BCNN, nhân sơ đồ: 1:2 → 2:4) rồi mới so: A nhích 1 khúc = 5 → 5 & 15. Tuổi = cùng thêm số năm (BCNN 6 → 2:8 & 3:9 → con 12, mẹ 48)."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P3 (tuổi BCNN)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học thước hiệu: cùng thêm / bớt giữ hiệu — quy đồng khúc thước (BCNN) rồi mới so phần. Con đạt {score}/3, {trapResult} câu bẫy trừ-thẳng.",
-  "homeActivity": "Cưa giấy: cắt hai băng giấy dài bằng nhau, một băng gấp đôi — con thấy khúc gấp ngắn bằng nửa và nói 'chưa cùng khúc chưa được trừ'.",
-  "watchFor": "Nếu con trừ phần hai tầng khác khúc — hỏi 'một gang trừ một sải được không?' (S2)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B33.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "hai tầng khác khúc — trừ thẳng??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "A một phần cả hai tầng — chẳng nhích gì?!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Tầng trên hiệu cưa 2 khúc — tầng dưới 1 khúc: khúc có bằng nhau đâu mà trừ?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B33_M2_F1.png",
-   "sha256_16": "df1ff8f050ea410f"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con giải ca CÙNG THÊM / CÙNG BỚT một lượng như nhau: HIỆU bất biến làm thước — nhưng \"phần\" của hai sơ đồ chỉ so được khi cây thước hiệu bị chia thành SỐ KHÚC NHƯ NHAU: quy đồng số khúc hiệu (nhân sơ đồ, BCNN) rồi mới so phần nhích của một bên = lượng thêm / bớt.",
-    "steps": [
-     {
-      "text": "cùng khúc sẵn: 3:4 → 2:3, giảm 1 = 6 → 18 & 24"
-     },
-     {
-      "text": "tuổi = cùng thêm 6: BCNN → 2:8 và 3:9"
-     },
-     {
-      "text": "con nhích 1 = 6 → con 12 · mẹ 48"
-     }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B33_M2_F2.png",
-   "sha256_16": "559e0b05040cf55a"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "text": "Hai bên cùng thêm (hay cùng bớt) MỘT LƯỢNG NHƯ NHAU → hiệu KHÔNG ĐỔI (luật B27): HIỆU là kẻ đứng im — hiệu cầm thước. (Tổng thì tăng / giảm — đừng nhầm!)",
-      "tone": "navy"
-     },
-     {
-      "label": "Nhưng mỗi sơ đồ chia hiệu thành số khúc khác nhau",
-      "text": "trước 1 : 3 → hiệu 2 khúc; sau 1 : 2 → hiệu 1 khúc — chưa cùng khúc thước, CHƯA ĐƯỢC trừ phần!",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: CÂY THƯỚC HIỆU BỊ CƯA KHÁC KHÚC. \"A bằng 1/3 B; cả hai cùng mua thêm 5 viên thì A bằng 1/2 B.\" Cùng thêm 5 — khoảng cách hai bạn KHÔNG ĐỔI: hiệu cầm thước! Vẽ hai tầng: trước 1 : 3 — hiệu dài 2 khúc; sau 1 : 2 — hiệu dài 1 khúc. Trí Long trừ luôn phần?! Nhìn kỹ: cùng MỘT cây thước hiệu nhưng tầng trên cưa làm 2 khúc, tầng dưới để nguyên 1 khúc — khúc trên ngắn bằng nửa khúc dưới: trừ thẳng là so cam với táo! Quy đồng khúc: nhân ĐÔI cả sơ đồ sau — 2 : 4, hiệu cũng 2 khúc: giờ hai tầng cùng thước! A: một khúc lên hai khúc — nhích MỘT khúc = 5 viên: A năm viên, B mười lăm. Ba trạm: 5/15 = 1/3; 10/20 = 1/2; đúng cùng thêm 5!",
+    "canonicalExamples": [
+      {
+        "case": "cùng thêm — phải quy khúc (ca lõi)",
+        "problem": "A bằng 1/3 của B. Cả hai cùng mua thêm 5 viên thì A bằng 1/2 của B. Tìm A và B lúc đầu.",
+        "solution": "Thước hiệu. Trước 1 : 3 (hiệu 2 khúc); sau 1 : 2 (hiệu 1) → nhân đôi: 2 : 4 → A nhích 1 khúc = 5 → A = 5; B = 15. Thử: 1/3 ✓; 10/20 = 1/2 ✓; +5 ✓.",
+        "why": "Ca đề A câu 4 — trap trừ-thẳng rình đây."
+      },
+      {
+        "case": "cùng bớt — sẵn cùng khúc (ca thuận)",
+        "problem": "A bằng 3/4 của B. Cả hai cùng bớt đi 6 viên thì A bằng 2/3 của B. Tìm A và B lúc đầu.",
+        "solution": "Trước 3 : 4, sau 2 : 3 — hiệu đều 1 khúc (đã cùng thước) → A giảm 1 khúc = 6 → khúc 6 → A = 18; B = 24. Thử: 3/4 ✓; 12/18 = 2/3 ✓; −6 ✓.",
+        "why": "Ca LT6 — nhìn ra cùng-khúc thì so luôn."
+      },
+      {
+        "case": "tuổi cùng trôi (ca sư phụ)",
+        "problem": "Hiện nay tuổi con bằng 1/4 tuổi mẹ. Sau 6 năm nữa, tuổi con bằng 1/3 tuổi mẹ. Tính tuổi hai mẹ con hiện nay.",
+        "solution": "Cùng thêm 6 tuổi → thước hiệu; BCNN(3; 2) = 6: nay 1 : 4 → 2 : 8; sau 1 : 3 → 3 : 9 → con nhích 1 khúc = 6 → nay con 12; mẹ 48. Thử: 12/48 = 1/4 ✓; 18/54 = 1/3 ✓.",
+        "why": "Ca LT9 — thời gian là phép cùng-thêm khổng lồ, cầu sang B35."
+      }
+    ],
+    "numberRange": "Lớp 5: BCNN khúc hiệu ≤ 6; lượng cùng thêm / bớt ≤ 10.",
+    "misconceptions": [
+      {
+        "wrong": "Hai sơ đồ hiệu 2 khúc và 1 khúc mà trừ phần thẳng (1 phần → 1 phần: \"không nhích gì\").",
+        "signal": "Không có bước nhân sơ đồ; phần hai tầng khác cỡ vẫn đem trừ.",
+        "fix": "K2 + K3 — quy đồng khúc thước hiệu (BCNN) trước: nhân đôi sơ đồ sau rồi mới so.",
+        "counterExample": "Khúc tầng trên = nửa khúc tầng dưới — trừ thẳng như lấy 1 gang tay trừ 1 sải tay!"
+      }
+    ],
+    "vocabulary": [
+      "thước hiệu",
+      "khúc thước bị cưa khác nhau",
+      "nhân sơ đồ (BCNN)",
+      "phần nhích",
+      "so cam với táo"
     ],
     "mantra": "QUY ĐỒNG KHÚC THƯỚC TRƯỚC — SO PHẦN CHÊNH SAU!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B33_M2_F3.png",
-   "sha256_16": "b41c8f374de028d0"
   },
-  {
-   "archetype": "before_after_parts",
-   "params": {
-    "title": "CÙNG THÊM 5 VIÊN — HIỆU BẤT BIẾN LÀM THƯỚC",
-    "before": {
-     "tag": "TRƯỚC",
-     "a": 2,
-     "b": 6,
-     "a_label": "A = 1/3 B (quy ×2)",
-     "b_label": "B 6 khúc"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "mcq",
+        "text": "Ôn B27: hai bên cùng thêm 5 thì đại lượng nào không đổi?",
+        "choices": [
+          "hiệu",
+          "tổng",
+          "cả hai"
+        ],
+        "answerKey": {
+          "choice": "hiệu"
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B27.M1",
+      "message": "Ôn luật kép Bài 27 rồi cầm thước hiệu nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Đề: \"A bằng 1/3 B; cả hai cùng mua thêm 5 viên thì A bằng 1/2 B.\" Trí Long vẽ hai tầng chuẩn, rồi trừ phần luôn: \"A một phần cả hai tầng — chẳng nhích gì?!\" Su Kem chỉ vào hai đoạn hiệu: \"Tầng trên hiệu cưa 2 khúc — tầng dưới 1 khúc: khúc có bằng nhau đâu mà trừ?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "hai tầng khác khúc — trừ thẳng??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để đo hai khúc thước!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2",
+          "K3"
+        ],
+        "narration": "Cùng thêm năm — khoảng cách hai bạn KHÔNG ĐỔI: hiệu cầm thước! Nhưng tầng trước chia hiệu làm HAI khúc, tầng sau để NGUYÊN một khúc — trừ thẳng là so cam với táo! Quy đồng khúc: nhân ĐÔI cả sơ đồ sau — một-hai thành HAI-BỐN, hiệu cũng hai khúc. Giờ cùng thước: A từ một khúc lên HAI khúc — nhích MỘT khúc bằng NĂM viên: A năm viên, B mười lăm viên!",
+        "display": {
+          "type": "ruler_segments_interactive",
+          "spec": {
+            "before": "1 : 3 (hiệu 2 khúc)",
+            "after": "1 : 2 → ×2 → 2 : 4 (hiệu 2 khúc)",
+            "gap": "A nhích 1 khúc = 5",
+            "values": [
+              5,
+              15
+            ]
+          }
+        },
+        "interaction": {
+          "type": "equalize_then_compare",
+          "answerKey": {
+            "values": [
+              5,
+              15
+            ]
+          },
+          "successMessage": "Nhân đôi sơ đồ sau → cùng 2 khúc → A nhích 1 = 5!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "Trước: hiệu 2 khúc; sau: hiệu 1 khúc — việc phải làm TRƯỚC khi so phần:",
+          "choices": [
+            "nhân đôi sơ đồ sau (quy đồng khúc)",
+            "trừ phần luôn",
+            "đổi thước"
+          ],
+          "answerKey": {
+            "choice": "nhân đôi sơ đồ sau (quy đồng khúc)"
+          },
+          "wrongFeedback": "Chưa cùng khúc — chưa được trừ.",
+          "objective": "O1",
+          "teaches": [
+            "K2",
+            "K3"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 42,
+        "teaches": [
+          "K4"
+        ],
+        "narration": "Ca đã CÙNG khúc thì so luôn: A bằng ba phần tư B, cùng bớt sáu còn hai phần ba — trước ba-bốn, sau hai-ba: hiệu đều MỘT khúc! A từ ba xuống hai — giảm một khúc bằng sáu: A mười tám, B hai tư. Và đề tuổi của sư phụ: sau sáu năm — CÙNG THÊM SÁU tuổi, thước hiệu! BCNN của khúc là sáu: nay một-bốn nhân đôi thành hai-tám; sau một-ba nhân ba thành ba-chín — con nhích MỘT khúc bằng sáu: nay con MƯỜI HAI, mẹ BỐN TÁM!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "cùng khúc sẵn: 3:4 → 2:3, giảm 1 = 6 → 18 & 24",
+            "tuổi = cùng thêm 6: BCNN → 2:8 và 3:9",
+            "con nhích 1 = 6 → con 12 · mẹ 48 ✓"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú thợ cưa: quy đồng khúc thước trước — so phần chênh sau!",
+        "display": {
+          "type": "mantra_card",
+          "text": "QUY KHÚC TRƯỚC — SO PHẦN SAU!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 90,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "after": {
-     "tag": "SAU",
-     "a": 3,
-     "b": 6,
-     "a_label": "A = 1/2 B",
-     "b_label": "B 6 khúc"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "delta": {
-     "label": "A nhích 1 khúc = 5"
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Đề: A bằng một phần ba B; cùng thêm năm viên thì A bằng một phần hai B. Trí Long trừ phần luôn: A một phần cả hai tầng — chẳng nhích gì?! Su Kem chỉ vào hai đoạn hiệu: tầng trên hiệu cưa hai khúc — tầng dưới một khúc: khúc có bằng nhau đâu mà trừ?",
+        "screenText": "hiệu 2 khúc vs 1 khúc — trừ thẳng??",
+        "visual": "Hai tầng sơ đồ với đoạn hiệu cưa khác khúc; Trí Long đặt dấu trừ giữa hai tầng; thước đo lệch vạch, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 21
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Cùng thêm năm — hiệu KHÔNG ĐỔI: hiệu cầm thước! Nhưng tầng trước chia hiệu làm HAI khúc, tầng sau để NGUYÊN một khúc — trừ thẳng là so cam với táo! Quy đồng khúc: nhân ĐÔI cả sơ đồ sau — một-hai thành HAI-BỐN, hiệu cũng hai khúc. Giờ cùng thước: A từ một khúc lên HAI khúc — nhích MỘT khúc bằng NĂM viên: A năm viên, B mười lăm viên!",
+        "screenText": "hiệu ⚓ · sau ×2: 2 : 4 → cùng 2 khúc → A nhích 1 = 5 → 5 & 15",
+        "visual": "Cây thước hiệu vàng cố định xuyên hai tầng; sơ đồ sau phóng đôi khớp vạch; ô nhích của A sáng ôm số 5.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Ca đã CÙNG khúc thì so luôn: cùng bớt sáu, ba-bốn về hai-ba — hiệu đều MỘT khúc! A giảm một khúc bằng sáu: A mười tám, B hai tư. Đề tuổi sư phụ: sau sáu năm — cùng thêm sáu, thước hiệu! BCNN sáu: nay một-bốn nhân đôi thành hai-tám; sau một-ba nhân ba thành ba-chín — con nhích MỘT khúc bằng sáu: nay con MƯỜI HAI, mẹ BỐN TÁM!",
+        "screenText": "3:4 → 2:3 (cùng khúc): −1 = 6 → 18 & 24 · tuổi: 2:8 & 3:9 → 12 & 48",
+        "visual": "Ca cùng-bớt với hai tầng khớp vạch sẵn; ca tuổi với hai sơ đồ nhân 2 và nhân 3 về cùng 6 khúc hiệu; hai cặp đáp mộc xanh.",
+        "assets": [],
+        "duration": 25
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú thợ cưa: quy đồng khúc thước trước — so phần chênh sau!",
+        "screenText": "QUY KHÚC TRƯỚC — SO PHẦN SAU!",
+        "visual": "Thẻ thần chú vàng với icon cưa và thước.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Xưởng cưa: A bằng một phần ba B, cùng thêm năm thì bằng một phần hai — quy khúc rồi tìm A và B! Vào bài luyện ngay!",
+        "screenText": "quy khúc BCNN → A? B?",
+        "visual": "Cây thước chờ cưa lại; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Cưa lại khúc thước",
+    "problem": "A bằng 1/3 của B. Cả hai cùng mua thêm 5 viên thì A bằng 1/2 của B. Tìm A và B lúc đầu.",
+    "steps": [
+      {
+        "show": "Bước 1 — Cùng thêm 5 → HIỆU không đổi: hiệu cầm thước. Trước 1 : 3 (hiệu 2 khúc); sau 1 : 2 (hiệu 1 khúc).",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Hai tầng đã so phần được chưa?",
+          "choices": [
+            "chưa — khác khúc thước",
+            "rồi",
+            "không cần so"
+          ],
+          "answerKey": {
+            "choice": "chưa — khác khúc thước"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Quy khúc: nhân đôi sơ đồ sau → 2 : 4 (hiệu 2 khúc) — cùng thước."
+      },
+      {
+        "show": "Bước 3 — A nhích 1 khúc = 5 → A = 5; B = 15. Ba trạm: 1/3 ✓; 10/20 = 1/2 ✓; +5 ✓.",
+        "askAfter": {
+          "format": "mb",
+          "text": "Con = 1/4 mẹ; sau 6 năm = 1/3 → tuổi nay?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "con",
+                "value": 12
+              },
+              {
+                "label": "mẹ",
+                "value": 48
+              }
+            ]
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
     },
-    "formula": "hiệu trước 4 khúc · hiệu sau 3 khúc → quy cùng khúc rồi so: 1 khúc = 5",
-    "note": "\"Phần\" của hai sơ đồ chỉ so được khi cây thước hiệu đã cùng số khúc"
-   },
-   "caption": "Cùng thêm hay cùng bớt thì HIỆU không đổi — nhưng phải quy khúc trước",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B33_M2_F4.png",
-   "sha256_16": "271cda40d23f5fa8"
-  }
- ]
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B33.LT5",
+          "text": "A bằng 1/3 của B. Cả hai cùng mua thêm 5 viên thì A bằng 1/2 của B. Tìm A và B lúc đầu.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "A",
+                "value": 5
+              },
+              {
+                "label": "B",
+                "value": 15
+              }
+            ]
+          },
+          "hints": [
+            "Thước hiệu; hai tầng 2 khúc và 1 khúc.",
+            "Nhân đôi sơ đồ sau: 2 : 4."
+          ],
+          "solutionNarrative": "A nhích 1 khúc = 5 → 5 & 15 (ba trạm ✓).",
+          "teaches": [
+            "K1",
+            "K2",
+            "K3"
+          ],
+          "generator": {
+            "template": "A = {m1}/{n1} B; cùng thêm {c} → {m2}/{n2}. Tìm hai bên.",
+            "constraints": {},
+            "answerRule": "quy khúc hiệu BCNN → phần nhích = c"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B33.LT6",
+          "text": "A bằng 3/4 của B. Cả hai cùng bớt đi 6 viên thì A bằng 2/3 của B. Tìm A và B lúc đầu.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "A",
+                "value": 18
+              },
+              {
+                "label": "B",
+                "value": 24
+              }
+            ]
+          },
+          "hints": [
+            "Hiệu hai tầng đều 1 khúc — cùng thước sẵn.",
+            "A giảm 1 khúc = 6."
+          ],
+          "solutionNarrative": "Khúc 6 → 18 & 24 (12/18 = 2/3 ✓).",
+          "teaches": [
+            "K4"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B33.LT9",
+          "text": "Sư phụ Trí Dũng đố: \"Hiện nay tuổi con bằng 1/4 tuổi mẹ. Sau 6 năm nữa, tuổi con bằng 1/3 tuổi mẹ. Tính tuổi hai mẹ con hiện nay.\"",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "con",
+                "value": 12
+              },
+              {
+                "label": "mẹ",
+                "value": 48
+              }
+            ]
+          },
+          "hints": [
+            "Cùng thêm 6 tuổi → thước hiệu, BCNN 6.",
+            "2 : 8 và 3 : 9 → con nhích 1 = 6."
+          ],
+          "solutionNarrative": "Khúc 6 → con 12; mẹ 48 (18/54 = 1/3 ✓).",
+          "teaches": [
+            "K4"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.5.1#2@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B33.M3",
+      "award": "huy_hieu_tho_cua_thuoc"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "text": "Trước hiệu 2 khúc, sau hiệu 1 khúc — trước khi so phần ta phải:",
+        "choices": [
+          "nhân đôi sơ đồ sau (quy đồng khúc)",
+          "trừ phần luôn",
+          "đổi thước khác"
+        ],
+        "answerKey": {
+          "choice": "nhân đôi sơ đồ sau (quy đồng khúc)"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2",
+          "K3"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B33.QZ2",
+        "text": "(Đúng/Sai?) Hai bên cùng thêm một lượng như nhau thì tổng của chúng không đổi.",
+        "answerKey": {
+          "value": false
+        },
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mb",
+        "text": "A = 1/3 B; cùng thêm 5 → 1/2 → A, B lúc đầu?",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "A",
+              "value": 5
+            },
+            {
+              "label": "B",
+              "value": 15
+            }
+          ]
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Cùng thêm / cùng bớt — thước gì? So phần thế nào?",
+        "back": "Cùng MỘT lượng → HIỆU bất biến cầm thước (tổng thì trôi!). Hai sơ đồ chia hiệu khác khúc (2 vs 1) → QUY ĐỒNG KHÚC (BCNN, nhân sơ đồ: 1:2 → 2:4) rồi mới so: A nhích 1 khúc = 5 → 5 & 15. Tuổi = cùng thêm số năm (BCNN 6 → 2:8 & 3:9 → con 12, mẹ 48)."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P3 (tuổi BCNN)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học thước hiệu: cùng thêm / bớt giữ hiệu — quy đồng khúc thước (BCNN) rồi mới so phần. Con đạt {score}/3, {trapResult} câu bẫy trừ-thẳng.",
+    "homeActivity": "Cưa giấy: cắt hai băng giấy dài bằng nhau, một băng gấp đôi — con thấy khúc gấp ngắn bằng nửa và nói 'chưa cùng khúc chưa được trừ'.",
+    "watchFor": "Nếu con trừ phần hai tầng khác khúc — hỏi 'một gang trừ một sải được không?' (S2)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B33.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "hai tầng khác khúc — trừ thẳng??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "A một phần cả hai tầng — chẳng nhích gì?!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Tầng trên hiệu cưa 2 khúc — tầng dưới 1 khúc: khúc có bằng nhau đâu mà trừ?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B33_M2_F1.png",
+      "sha256_16": "df1ff8f050ea410f"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con giải ca CÙNG THÊM / CÙNG BỚT một lượng như nhau: HIỆU bất biến làm thước — nhưng \"phần\" của hai sơ đồ chỉ so được khi cây thước hiệu bị chia thành SỐ KHÚC NHƯ NHAU: quy đồng số khúc hiệu (nhân sơ đồ, BCNN) rồi mới so phần nhích của một bên = lượng thêm / bớt.",
+        "steps": [
+          {
+            "text": "cùng khúc sẵn: 3:4 → 2:3, giảm 1 = 6 → 18 & 24"
+          },
+          {
+            "text": "tuổi = cùng thêm 6: BCNN → 2:8 và 3:9"
+          },
+          {
+            "text": "con nhích 1 = 6 → con 12 · mẹ 48"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B33_M2_F2.png",
+      "sha256_16": "559e0b05040cf55a"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "text": "Hai bên cùng thêm (hay cùng bớt) MỘT LƯỢNG NHƯ NHAU → hiệu KHÔNG ĐỔI (luật B27): HIỆU là kẻ đứng im — hiệu cầm thước. (Tổng thì tăng / giảm — đừng nhầm!)",
+            "tone": "navy"
+          },
+          {
+            "label": "Nhưng mỗi sơ đồ chia hiệu thành số khúc khác nhau",
+            "text": "trước 1 : 3 → hiệu 2 khúc; sau 1 : 2 → hiệu 1 khúc — chưa cùng khúc thước, CHƯA ĐƯỢC trừ phần!",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "QUY ĐỒNG KHÚC THƯỚC TRƯỚC — SO PHẦN CHÊNH SAU!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B33_M2_F3.png",
+      "sha256_16": "b41c8f374de028d0"
+    },
+    {
+      "archetype": "before_after_parts",
+      "params": {
+        "title": "CÙNG THÊM 5 VIÊN — HIỆU BẤT BIẾN LÀM THƯỚC",
+        "before": {
+          "tag": "TRƯỚC",
+          "a": 2,
+          "b": 6,
+          "a_label": "A = 1/3 B (quy ×2)",
+          "b_label": "B 6 khúc"
+        },
+        "after": {
+          "tag": "SAU",
+          "a": 3,
+          "b": 6,
+          "a_label": "A = 1/2 B",
+          "b_label": "B 6 khúc"
+        },
+        "delta": {
+          "label": "A nhích 1 khúc = 5"
+        },
+        "formula": "hiệu trước 4 khúc · hiệu sau 3 khúc → quy cùng khúc rồi so: 1 khúc = 5",
+        "note": "\"Phần\" của hai sơ đồ chỉ so được khi cây thước hiệu đã cùng số khúc"
+      },
+      "caption": "Cùng thêm hay cùng bớt thì HIỆU không đổi — nhưng phải quy khúc trước",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B33_M2_F4.png",
+      "sha256_16": "271cda40d23f5fa8"
+    }
+  ]
 }

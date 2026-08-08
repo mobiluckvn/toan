@@ -1,629 +1,632 @@
 {
- "title": "Thước tổng (chuyển qua lại) & nghi thức ba trạm thử",
- "grade": 5,
- "durationMinutes": 8,
- "skills": {
-  "primary": [
-   "CASE:III.5.1#3"
-  ],
-  "bktUnit": "CASE:III.5.1#3@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B33",
-  "order": 3,
-  "prev": "DL:KSN5Q1.B33.M2",
-  "next": "DL:KSN5Q1.B34.M1"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B33",
-  "chunks": [
-   "CHUNK:KSN5Q1.B33.S4",
-   "CHUNK:KSN5Q1.B33.S7"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B33.3",
-   "CA:KSN5Q1.B33.4"
-  ],
-  "traps": []
- },
- "objective": {
-  "id": "O1",
-  "text": "Con giải ca CHUYỂN QUA LẠI: TỔNG bất biến làm thước — quy đồng số khúc TỔNG của hai sơ đồ, phần nhích của bên nhận = lượng chuyển; và thuộc nghi thức đóng án của cả chương: BA TRẠM THỬ (tỉ trước — tỉ sau — đúng lượng biến cố), thiếu một trạm là chưa đóng.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (chuyển → tổng cầm thước)",
-  "kidText": "Chuyển qua chuyển lại thì tổng đứng im. Đáp phải qua đủ ba trạm thử: tỉ trước, tỉ sau, và đúng lượng đã chuyển."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Chuyển qua lại giữa hai bên → TỔNG không đổi (của không sinh không mất — neo B18/B27): TỔNG cầm thước."
-   },
-   {
-    "id": "K2",
-    "text": "Quy đồng số khúc TỔNG: trước 2 : 3 (tổng 5 khúc), sau 1 : 1 (tổng 2 khúc) → quy về 10 khúc: 4 : 6 và 5 : 5 — bên nhận nhích 1 khúc = lượng chuyển 10 → khúc 10 → A 40; B 60."
-   },
-   {
-    "id": "K3",
-    "text": "Ca tổng sẵn cùng khúc thì so luôn: 1 : 4 (tổng 5) và 2 : 3 (tổng 5) — A nhích 1 khúc = 9 → A 9; B 36."
-   },
-   {
-    "id": "K4",
-    "text": "Nghi thức đóng án — BA TRẠM THỬ: (1) tỉ trước, (2) tỉ sau, (3) đúng lượng thêm / bớt / chuyển. Thiếu một trạm là án chưa đóng: đáp lọt hai trạm vẫn có thể gãy trạm ba."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: THƯỚC TỔNG VÀ TRẠM GÁC BA CỬA. \"Kệ A bằng 2/3 kệ B; chuyển 10 quyển từ B sang A thì hai kệ bằng nhau.\" Sách chỉ đổi kệ — TỔNG không suy suyển: tổng cầm thước! Hai tấm ảnh: trước 2 : 3 — tổng cưa 5 khúc; sau 1 : 1 — tổng cưa 2 khúc: khác khúc, quy về MƯỜI: tấm trước nhân đôi thành 4 : 6; tấm sau nhân năm thành 5 : 5. Cùng thước rồi — kệ A: bốn khúc lên NĂM khúc, nhích MỘT khúc = 10 quyển chuyển sang! Khúc mười: A bốn mươi, B sáu mươi. Đóng án phải qua BA TRẠM GÁC: trạm một — 40/60 đúng 2/3; trạm hai — 50/50 đúng bằng nhau; trạm ba — đúng chuyển 10 (50 − 40 = 10 nhận vào). Ba cửa cùng mở — án đóng!",
-  "canonicalExamples": [
-   {
-    "case": "chuyển — quy khúc tổng (ca lõi)",
-    "problem": "Kệ A bằng 2/3 kệ B. Chuyển 10 quyển từ kệ B sang kệ A thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
-    "solution": "Tổng cầm thước; quy 10 khúc: 4 : 6 → 5 : 5 — A nhích 1 khúc = 10 → A = 40; B = 60. Ba trạm: 40/60 = 2/3 ✓; 50 = 50 ✓; chuyển 10 ✓.",
-    "why": "Ca đề A câu 3 — thước tổng chuẩn mực."
-   },
-   {
-    "case": "tổng sẵn cùng khúc (ca thuận)",
-    "problem": "A bằng 1/4 của B. Chuyển 9 viên từ B sang A thì A bằng 2/3 của B. Tìm A và B lúc đầu.",
-    "solution": "Trước 1 : 4 (tổng 5); sau 2 : 3 (tổng 5) — cùng khúc sẵn → A nhích 1 khúc = 9 → A = 9; B = 36. Thử: 9/36 = 1/4 ✓; 18/27 = 2/3 ✓; chuyển 9 ✓.",
-    "why": "Ca LT7 — nhận ra cùng-khúc là so luôn."
-   }
-  ],
-  "numberRange": "Lớp 5: khúc tổng quy về ≤ 10; lượng chuyển ≤ 10.",
-  "misconceptions": [
-   {
-    "wrong": "Thử hai trạm rồi nộp: đáp khớp tỉ trước và tỉ sau nhưng lệch đúng lượng chuyển (hoặc quên trạm nào đó).",
-    "signal": "Bài giải không có dòng kiểm lượng biến cố; hoặc chỉ kiểm một tỉ.",
-    "fix": "K4 — nghi thức ba trạm khắc cột: tỉ trước — tỉ sau — lượng biến cố; ba cửa cùng mở mới đóng án.",
-    "counterExample": "Cặp 20 và 30 lọt trạm tỉ trước (2/3) — nhưng chuyển 10 ra 30 và 20: trạm 'bằng nhau' gãy ngay."
-   }
-  ],
-  "vocabulary": [
-   "thước tổng",
-   "quy khúc tổng",
-   "bên nhận nhích",
-   "trạm gác ba cửa",
-   "án đóng"
-  ],
-  "mantra": "CHUYỂN QUA LẠI — TỔNG CẦM THƯỚC; BA TRẠM CÙNG QUA MỚI ĐÓNG ÁN!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "mcq",
-    "text": "Ôn: chuyển 7 viên từ A sang B — đại lượng bảo toàn:",
-    "choices": [
-     "tổng",
-     "hiệu",
-     "tỉ số"
+  "title": "Thước tổng (chuyển qua lại) & nghi thức ba trạm thử",
+  "grade": 5,
+  "durationMinutes": 8,
+  "skills": {
+    "primary": [
+      "CASE:III.5.1#3"
     ],
-    "answerKey": {
-     "choice": "tổng"
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B27.M1",
-   "message": "Ôn neo tổng rồi ra trạm gác nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Đề: \"kệ A bằng 2/3 kệ B; chuyển 10 quyển từ B sang A thì hai kệ bằng nhau.\" Trí Long lúng túng: \"Cả A lẫn B đều đổi — ai đứng im mà cầm thước?!\" Su Kem gõ hai kệ: \"Sách chỉ đổi kệ thôi — có quyển nào rời khỏi phòng đâu?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "cả hai cùng đổi — thước đâu?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để tìm kẻ đứng im!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
+    "bktUnit": "CASE:III.5.1#3@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B33",
+    "order": 3,
+    "prev": "DL:KSN5Q1.B33.M2",
+    "next": "DL:KSN5Q1.B34.M1"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B33",
+    "chunks": [
+      "CHUNK:KSN5Q1.B33.S4",
+      "CHUNK:KSN5Q1.B33.S7"
     ],
-    "narration": "Sách chỉ đổi kệ — TỔNG không suy suyển: tổng cầm thước! Hai tấm ảnh: trước hai-ba — tổng cưa NĂM khúc; sau một-một — tổng cưa HAI khúc: khác khúc, quy về MƯỜI! Tấm trước nhân đôi: BỐN-SÁU; tấm sau nhân năm: NĂM-NĂM. Cùng thước rồi — kệ A: bốn khúc lên NĂM khúc, nhích MỘT khúc bằng mười quyển chuyển sang! Khúc mười: A BỐN MƯƠI, B SÁU MƯƠI!",
-    "display": {
-     "type": "total_ruler_interactive",
-     "spec": {
-      "ruler": "TỔNG (bảo toàn) = 10 khúc",
-      "before": "2:3 → 4:6",
-      "after": "1:1 → 5:5",
-      "gap": "A nhích 1 khúc = 10",
-      "values": [
-       40,
-       60
-      ]
-     }
-    },
-    "interaction": {
-     "type": "equalize_total_compare",
-     "answerKey": {
-      "values": [
-       40,
-       60
-      ]
-     },
-     "successMessage": "Quy 10 khúc: 4:6 → 5:5 — A nhích 1 = 10 → 40 & 60!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "Chuyển qua lại giữa hai bên thì đại lượng bảo toàn là:",
-     "choices": [
-      "tổng",
-      "hiệu",
-      "tỉ số"
-     ],
-     "answerKey": {
-      "choice": "tổng"
-     },
-     "wrongFeedback": "Của không sinh không mất.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3",
-     "K4"
+    "cases": [
+      "CA:KSN5Q1.B33.3",
+      "CA:KSN5Q1.B33.4"
     ],
-    "narration": "Ca tổng sẵn CÙNG khúc: A bằng một phần tư B — tổng năm; chuyển chín thì A bằng hai phần ba B — hai-ba cũng tổng năm: so luôn! A một khúc lên hai — nhích một khúc bằng CHÍN: A chín viên, B ba sáu! Nghi thức đóng án cả chương — BA TRẠM GÁC: trạm một tỉ trước, trạm hai tỉ sau, trạm ba ĐÚNG lượng biến cố. Cặp hai mươi — ba mươi lọt trạm đầu nhưng gãy trạm bằng-nhau: thiếu một trạm là án chưa đóng!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "1:4 và 2:3 — cùng tổng 5: nhích 1 = 9 → 9 & 36",
-      "ba trạm: tỉ trước · tỉ sau · lượng biến cố",
-      "20 & 30: lọt trạm 1, gãy trạm sau — loại"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú trạm gác: chuyển qua lại — tổng cầm thước; ba trạm cùng qua mới đóng án!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TỔNG CẦM THƯỚC · BA TRẠM CÙNG QUA!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 88,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "traps": []
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con giải ca CHUYỂN QUA LẠI: TỔNG bất biến làm thước — quy đồng số khúc TỔNG của hai sơ đồ, phần nhích của bên nhận = lượng chuyển; và thuộc nghi thức đóng án của cả chương: BA TRẠM THỬ (tỉ trước — tỉ sau — đúng lượng biến cố), thiếu một trạm là chưa đóng.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (chuyển → tổng cầm thước)",
+    "kidText": "Chuyển qua chuyển lại thì tổng đứng im. Đáp phải qua đủ ba trạm thử: tỉ trước, tỉ sau, và đúng lượng đã chuyển."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Đề: kệ A bằng hai phần ba kệ B; chuyển mười quyển từ B sang A thì hai kệ bằng nhau. Trí Long lúng túng: cả A lẫn B đều đổi — ai đứng im mà cầm thước?! Su Kem gõ hai kệ: sách chỉ đổi kệ thôi — có quyển nào rời khỏi phòng đâu?",
-    "screenText": "cả hai cùng đổi — ai cầm thước??",
-    "visual": "Hai kệ sách với mũi tên chuyển 10; Trí Long nhìn quanh tìm kẻ đứng im; bóng chữ TỔNG mờ sau lưng, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Sách chỉ đổi kệ — TỔNG không suy suyển: tổng cầm thước! Hai tấm ảnh: trước hai-ba — tổng cưa NĂM khúc; sau một-một — tổng cưa HAI khúc: khác khúc, quy về MƯỜI! Tấm trước nhân đôi: BỐN-SÁU; tấm sau nhân năm: NĂM-NĂM. Cùng thước rồi — kệ A nhích MỘT khúc bằng mười quyển! Khúc mười: A BỐN MƯƠI, B SÁU MƯƠI!",
-    "screenText": "TỔNG ⚓ 10 khúc: 4:6 → 5:5 — A nhích 1 = 10 → 40 & 60",
-    "visual": "Cây thước tổng vàng 10 khúc xuyên hai tầng; hai sơ đồ nhân 2 và nhân 5 khớp vạch; ô nhích của A ôm số 10.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Ca tổng sẵn CÙNG khúc: A bằng một phần tư B — tổng năm; chuyển chín thì hai phần ba — cũng tổng năm: so luôn! A nhích một khúc bằng CHÍN: A chín viên, B ba sáu! Nghi thức đóng án — BA TRẠM GÁC: tỉ trước, tỉ sau, ĐÚNG lượng biến cố. Cặp hai mươi — ba mươi lọt trạm đầu nhưng gãy trạm bằng-nhau: thiếu một trạm là án chưa đóng!",
-    "screenText": "1:4 & 2:3 cùng tổng 5 → 9 & 36 · 3 trạm: 20 & 30 gãy trạm 2 ✗",
-    "visual": "Ca cùng-khúc chạy nhanh; ba trạm gác với ba cổng đèn; cặp đáp giả 20·30 qua cổng một rồi kẹt cổng hai đèn đỏ.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú trạm gác: chuyển qua lại — tổng cầm thước; ba trạm cùng qua mới đóng án!",
-    "screenText": "TỔNG CẦM THƯỚC · 3 TRẠM CÙNG QUA!",
-    "visual": "Thẻ thần chú vàng với icon ba cổng gác.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Trạm gác của con: kệ A bằng hai phần ba kệ B, chuyển mười thì bằng nhau — tìm hai kệ, qua đủ ba trạm! Vào bài luyện ngay!",
-    "screenText": "thước tổng → 2 kệ? → 3 trạm!",
-    "visual": "Ba cổng gác chờ mở; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 11
-   }
-  ]
- },
- "workedExample": {
-  "title": "Thước tổng qua ba trạm",
-  "problem": "Kệ A bằng 2/3 kệ B. Chuyển 10 quyển từ kệ B sang kệ A thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
-  "steps": [
-   {
-    "show": "Bước 1 — Chuyển qua lại → TỔNG cầm thước. Trước 2 : 3 (tổng 5); sau 1 : 1 (tổng 2) → quy 10 khúc: 4 : 6 và 5 : 5.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Vì sao tổng cầm thước?",
-     "choices": [
-      "sách chỉ đổi kệ — tổng bảo toàn",
-      "tổng dễ tính",
-      "đề bảo thế"
-     ],
-     "answerKey": {
-      "choice": "sách chỉ đổi kệ — tổng bảo toàn"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — A nhích 5 − 4 = 1 khúc = 10 → khúc 10 → A = 40; B = 60."
-   },
-   {
-    "show": "Bước 3 — BA TRẠM: 40/60 = 2/3 ✓; 50 = 50 ✓; nhận đúng 10 ✓ — án đóng.",
-    "askAfter": {
-     "format": "mb",
-     "text": "A = 1/4 B; chuyển 9 → 2/3 → A, B lúc đầu?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "A",
-        "value": 9
-       },
-       {
-        "label": "B",
-        "value": 36
-       }
-      ]
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B33.LT3",
-     "text": "Kệ A bằng 2/3 kệ B. Chuyển 10 quyển từ kệ B sang kệ A thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "kệ A",
-        "value": 40
-       },
-       {
-        "label": "kệ B",
-        "value": 60
-       }
-      ]
-     },
-     "hints": [
-      "Tổng cầm thước; quy 10 khúc.",
-      "4 : 6 → 5 : 5: A nhích 1 = 10."
-     ],
-     "solutionNarrative": "Khúc 10 → 40 & 60 (ba trạm ✓).",
-     "teaches": [
-      "K1",
-      "K2"
-     ],
-     "generator": {
-      "template": "A = {m}/{n} B; chuyển {c} thì {tỉ sau}. Tìm hai bên.",
-      "constraints": {},
-      "answerRule": "quy khúc tổng → phần nhích = c"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B33.LT7",
-     "text": "A bằng 1/4 của B. Chuyển 9 viên từ B sang A thì A bằng 2/3 của B. Tìm A và B lúc đầu.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "A",
-        "value": 9
-       },
-       {
-        "label": "B",
-        "value": 36
-       }
-      ]
-     },
-     "hints": [
-      "Tổng 5 ở cả hai tấm — cùng khúc sẵn.",
-      "A nhích 1 khúc = 9."
-     ],
-     "solutionNarrative": "Khúc 9 → 9 & 36 (18/27 = 2/3 ✓).",
-     "teaches": [
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "tf",
-     "text": "(Đúng/Sai?) Đáp lọt cả hai trạm tỉ (trước và sau) thì chắc chắn đúng, khỏi kiểm lượng chuyển.",
-     "answerKey": {
-      "value": false,
-      "note": "Ba trạm mới đóng án — cặp lọt hai trạm tỉ vẫn có thể gãy trạm lượng-biến-cố (mỗi cặp cùng tỉ ứng một lượng chuyển khác nhau)."
-     },
-     "hints": [
-      "Nghi thức mấy trạm?",
-      "Cặp 20 & 30 gãy ở đâu?"
-     ],
-     "teaches": [
-      "K4"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.5.1#3@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B34.M1",
-   "award": "huy_hieu_tram_gac_ba_cua"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B33.QZ4",
-    "text": "Chuyển qua lại giữa hai bên thì đại lượng bảo toàn là:",
-    "choices": [
-     "tổng",
-     "hiệu",
-     "tỉ số"
-    ],
-    "answerKey": {
-     "choice": "tổng"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mb",
-    "text": "Kệ A = 2/3 kệ B; chuyển 10 thì bằng nhau → hai kệ lúc đầu?",
-    "answerKey": {
-     "parts": [
+  "knowledgeCore": {
+    "statements": [
       {
-       "label": "A",
-       "value": 40
+        "id": "K1",
+        "text": "Chuyển qua lại giữa hai bên → TỔNG không đổi (của không sinh không mất — neo B18/B27): TỔNG cầm thước."
       },
       {
-       "label": "B",
-       "value": 60
+        "id": "K2",
+        "text": "Quy đồng số khúc TỔNG: trước 2 : 3 (tổng 5 khúc), sau 1 : 1 (tổng 2 khúc) → quy về 10 khúc: 4 : 6 và 5 : 5 — bên nhận nhích 1 khúc = lượng chuyển 10 → khúc 10 → A 40; B 60."
+      },
+      {
+        "id": "K3",
+        "text": "Ca tổng sẵn cùng khúc thì so luôn: 1 : 4 (tổng 5) và 2 : 3 (tổng 5) — A nhích 1 khúc = 9 → A 9; B 36."
+      },
+      {
+        "id": "K4",
+        "text": "Nghi thức đóng án — BA TRẠM THỬ: (1) tỉ trước, (2) tỉ sau, (3) đúng lượng thêm / bớt / chuyển. Thiếu một trạm là án chưa đóng: đáp lọt hai trạm vẫn có thể gãy trạm ba."
       }
-     ]
-    },
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "text": "Bài hai tỉ số cần thử mấy trạm?",
-    "choices": [
-     "3",
-     "1",
-     "2"
     ],
-    "answerKey": {
-     "choice": "3"
-    },
-    "teaches": [
-     "K4"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Chuyển qua lại — thước gì? Đóng án cần gì?",
-    "back": "TỔNG bảo toàn cầm thước: quy khúc tổng (2:3 tổng 5 & 1:1 tổng 2 → về 10: 4:6 & 5:5) → bên nhận nhích 1 khúc = lượng chuyển (10 → 40 & 60). Đóng án = BA TRẠM: tỉ trước · tỉ sau · đúng lượng biến cố — thiếu một là chưa đóng."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P2 (cùng khúc sẵn)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con giải ca chuyển qua lại bằng thước tổng và thuộc nghi thức ba trạm thử. Con đạt {score}/3.",
-  "homeActivity": "Chuyển 10 hạt giữa hai bát (40 và 60) — con tường thuật 'tổng không suy suyển' rồi kiểm ba trạm bằng đếm thật.",
-  "watchFor": "Nếu con nộp bài thiếu trạm thử — hỏi 'ba cổng gác mở đủ chưa?' (S3)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B33.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "cả hai cùng đổi — thước đâu?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Cả A lẫn B đều đổi — ai đứng im mà cầm thước?!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Sách chỉ đổi kệ thôi — có quyển nào rời khỏi phòng đâu?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B33_M3_F1.png",
-   "sha256_16": "83cf50ea8df88924"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con giải ca CHUYỂN QUA LẠI: TỔNG bất biến làm thước — quy đồng số khúc TỔNG của hai sơ đồ, phần nhích của bên nhận = lượng chuyển; và thuộc nghi thức đóng án của cả chương: BA TRẠM THỬ (tỉ trước — tỉ sau — đúng lượng biến cố), thiếu một trạm là chưa đóng.",
-    "steps": [
-     {
-      "text": "1:4 và 2:3 — cùng tổng 5: nhích 1 = 9 → 9 & 36"
-     },
-     {
-      "text": "ba trạm: tỉ trước · tỉ sau · lượng biến cố"
-     },
-     {
-      "text": "20 & 30: lọt trạm 1, gãy trạm sau — loại"
-     }
+    "mechanism": "Hình ảnh brand: THƯỚC TỔNG VÀ TRẠM GÁC BA CỬA. \"Kệ A bằng 2/3 kệ B; chuyển 10 quyển từ B sang A thì hai kệ bằng nhau.\" Sách chỉ đổi kệ — TỔNG không suy suyển: tổng cầm thước! Hai tấm ảnh: trước 2 : 3 — tổng cưa 5 khúc; sau 1 : 1 — tổng cưa 2 khúc: khác khúc, quy về MƯỜI: tấm trước nhân đôi thành 4 : 6; tấm sau nhân năm thành 5 : 5. Cùng thước rồi — kệ A: bốn khúc lên NĂM khúc, nhích MỘT khúc = 10 quyển chuyển sang! Khúc mười: A bốn mươi, B sáu mươi. Đóng án phải qua BA TRẠM GÁC: trạm một — 40/60 đúng 2/3; trạm hai — 50/50 đúng bằng nhau; trạm ba — đúng chuyển 10 (50 − 40 = 10 nhận vào). Ba cửa cùng mở — án đóng!",
+    "canonicalExamples": [
+      {
+        "case": "chuyển — quy khúc tổng (ca lõi)",
+        "problem": "Kệ A bằng 2/3 kệ B. Chuyển 10 quyển từ kệ B sang kệ A thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
+        "solution": "Tổng cầm thước; quy 10 khúc: 4 : 6 → 5 : 5 — A nhích 1 khúc = 10 → A = 40; B = 60. Ba trạm: 40/60 = 2/3 ✓; 50 = 50 ✓; chuyển 10 ✓.",
+        "why": "Ca đề A câu 3 — thước tổng chuẩn mực."
+      },
+      {
+        "case": "tổng sẵn cùng khúc (ca thuận)",
+        "problem": "A bằng 1/4 của B. Chuyển 9 viên từ B sang A thì A bằng 2/3 của B. Tìm A và B lúc đầu.",
+        "solution": "Trước 1 : 4 (tổng 5); sau 2 : 3 (tổng 5) — cùng khúc sẵn → A nhích 1 khúc = 9 → A = 9; B = 36. Thử: 9/36 = 1/4 ✓; 18/27 = 2/3 ✓; chuyển 9 ✓.",
+        "why": "Ca LT7 — nhận ra cùng-khúc là so luôn."
+      }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B33_M3_F2.png",
-   "sha256_16": "cf2296fb1ce68bfc"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Chuyển qua lại giữa hai bên → TỔNG không đổi (của không sinh không mất",
-      "text": "neo B18/B27): TỔNG cầm thước.",
-      "tone": "navy"
-     },
-     {
-      "label": "Quy đồng số khúc TỔNG",
-      "text": "trước 2 : 3 (tổng 5 khúc), sau 1 : 1 (tổng 2 khúc) → quy về 10 khúc: 4 : 6 và 5 : 5 — bên nhận nhích 1 khúc = lượng chuyển 10 → khúc 10 → A 40; B 60.",
-      "tone": "teal"
-     }
+    "numberRange": "Lớp 5: khúc tổng quy về ≤ 10; lượng chuyển ≤ 10.",
+    "misconceptions": [
+      {
+        "wrong": "Thử hai trạm rồi nộp: đáp khớp tỉ trước và tỉ sau nhưng lệch đúng lượng chuyển (hoặc quên trạm nào đó).",
+        "signal": "Bài giải không có dòng kiểm lượng biến cố; hoặc chỉ kiểm một tỉ.",
+        "fix": "K4 — nghi thức ba trạm khắc cột: tỉ trước — tỉ sau — lượng biến cố; ba cửa cùng mở mới đóng án.",
+        "counterExample": "Cặp 20 và 30 lọt trạm tỉ trước (2/3) — nhưng chuyển 10 ra 30 và 20: trạm 'bằng nhau' gãy ngay."
+      }
+    ],
+    "vocabulary": [
+      "thước tổng",
+      "quy khúc tổng",
+      "bên nhận nhích",
+      "trạm gác ba cửa",
+      "án đóng"
     ],
     "mantra": "CHUYỂN QUA LẠI — TỔNG CẦM THƯỚC; BA TRẠM CÙNG QUA MỚI ĐÓNG ÁN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B33_M3_F3.png",
-   "sha256_16": "7f6ea946ca182580"
   },
-  {
-   "archetype": "before_after_parts",
-   "params": {
-    "title": "CHUYỂN QUA LẠI — TỔNG BẤT BIẾN LÀM THƯỚC",
-    "before": {
-     "tag": "TRƯỚC",
-     "a": 4,
-     "b": 6,
-     "a_label": "kệ A = 2/3 kệ B",
-     "b_label": "kệ B"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "mcq",
+        "text": "Ôn: chuyển 7 viên từ A sang B — đại lượng bảo toàn:",
+        "choices": [
+          "tổng",
+          "hiệu",
+          "tỉ số"
+        ],
+        "answerKey": {
+          "choice": "tổng"
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B27.M1",
+      "message": "Ôn neo tổng rồi ra trạm gác nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 18,
+        "narration": "Đề: \"kệ A bằng 2/3 kệ B; chuyển 10 quyển từ B sang A thì hai kệ bằng nhau.\" Trí Long lúng túng: \"Cả A lẫn B đều đổi — ai đứng im mà cầm thước?!\" Su Kem gõ hai kệ: \"Sách chỉ đổi kệ thôi — có quyển nào rời khỏi phòng đâu?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "cả hai cùng đổi — thước đâu?"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để tìm kẻ đứng im!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Sách chỉ đổi kệ — TỔNG không suy suyển: tổng cầm thước! Hai tấm ảnh: trước hai-ba — tổng cưa NĂM khúc; sau một-một — tổng cưa HAI khúc: khác khúc, quy về MƯỜI! Tấm trước nhân đôi: BỐN-SÁU; tấm sau nhân năm: NĂM-NĂM. Cùng thước rồi — kệ A: bốn khúc lên NĂM khúc, nhích MỘT khúc bằng mười quyển chuyển sang! Khúc mười: A BỐN MƯƠI, B SÁU MƯƠI!",
+        "display": {
+          "type": "total_ruler_interactive",
+          "spec": {
+            "ruler": "TỔNG (bảo toàn) = 10 khúc",
+            "before": "2:3 → 4:6",
+            "after": "1:1 → 5:5",
+            "gap": "A nhích 1 khúc = 10",
+            "values": [
+              40,
+              60
+            ]
+          }
+        },
+        "interaction": {
+          "type": "equalize_total_compare",
+          "answerKey": {
+            "values": [
+              40,
+              60
+            ]
+          },
+          "successMessage": "Quy 10 khúc: 4:6 → 5:5 — A nhích 1 = 10 → 40 & 60!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "Chuyển qua lại giữa hai bên thì đại lượng bảo toàn là:",
+          "choices": [
+            "tổng",
+            "hiệu",
+            "tỉ số"
+          ],
+          "answerKey": {
+            "choice": "tổng"
+          },
+          "wrongFeedback": "Của không sinh không mất.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 42,
+        "teaches": [
+          "K3",
+          "K4"
+        ],
+        "narration": "Ca tổng sẵn CÙNG khúc: A bằng một phần tư B — tổng năm; chuyển chín thì A bằng hai phần ba B — hai-ba cũng tổng năm: so luôn! A một khúc lên hai — nhích một khúc bằng CHÍN: A chín viên, B ba sáu! Nghi thức đóng án cả chương — BA TRẠM GÁC: trạm một tỉ trước, trạm hai tỉ sau, trạm ba ĐÚNG lượng biến cố. Cặp hai mươi — ba mươi lọt trạm đầu nhưng gãy trạm bằng-nhau: thiếu một trạm là án chưa đóng!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "1:4 và 2:3 — cùng tổng 5: nhích 1 = 9 → 9 & 36",
+            "ba trạm: tỉ trước · tỉ sau · lượng biến cố",
+            "20 & 30: lọt trạm 1, gãy trạm sau — loại"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú trạm gác: chuyển qua lại — tổng cầm thước; ba trạm cùng qua mới đóng án!",
+        "display": {
+          "type": "mantra_card",
+          "text": "TỔNG CẦM THƯỚC · BA TRẠM CÙNG QUA!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 88,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "after": {
-     "tag": "SAU",
-     "a": 5,
-     "b": 5,
-     "a_label": "hai kệ bằng nhau",
-     "b_label": "kệ B"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "delta": {
-     "label": "A nhích 1 khúc = 10 quyển"
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Đề: kệ A bằng hai phần ba kệ B; chuyển mười quyển từ B sang A thì hai kệ bằng nhau. Trí Long lúng túng: cả A lẫn B đều đổi — ai đứng im mà cầm thước?! Su Kem gõ hai kệ: sách chỉ đổi kệ thôi — có quyển nào rời khỏi phòng đâu?",
+        "screenText": "cả hai cùng đổi — ai cầm thước??",
+        "visual": "Hai kệ sách với mũi tên chuyển 10; Trí Long nhìn quanh tìm kẻ đứng im; bóng chữ TỔNG mờ sau lưng, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Sách chỉ đổi kệ — TỔNG không suy suyển: tổng cầm thước! Hai tấm ảnh: trước hai-ba — tổng cưa NĂM khúc; sau một-một — tổng cưa HAI khúc: khác khúc, quy về MƯỜI! Tấm trước nhân đôi: BỐN-SÁU; tấm sau nhân năm: NĂM-NĂM. Cùng thước rồi — kệ A nhích MỘT khúc bằng mười quyển! Khúc mười: A BỐN MƯƠI, B SÁU MƯƠI!",
+        "screenText": "TỔNG ⚓ 10 khúc: 4:6 → 5:5 — A nhích 1 = 10 → 40 & 60",
+        "visual": "Cây thước tổng vàng 10 khúc xuyên hai tầng; hai sơ đồ nhân 2 và nhân 5 khớp vạch; ô nhích của A ôm số 10.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Ca tổng sẵn CÙNG khúc: A bằng một phần tư B — tổng năm; chuyển chín thì hai phần ba — cũng tổng năm: so luôn! A nhích một khúc bằng CHÍN: A chín viên, B ba sáu! Nghi thức đóng án — BA TRẠM GÁC: tỉ trước, tỉ sau, ĐÚNG lượng biến cố. Cặp hai mươi — ba mươi lọt trạm đầu nhưng gãy trạm bằng-nhau: thiếu một trạm là án chưa đóng!",
+        "screenText": "1:4 & 2:3 cùng tổng 5 → 9 & 36 · 3 trạm: 20 & 30 gãy trạm 2 ✗",
+        "visual": "Ca cùng-khúc chạy nhanh; ba trạm gác với ba cổng đèn; cặp đáp giả 20·30 qua cổng một rồi kẹt cổng hai đèn đỏ.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú trạm gác: chuyển qua lại — tổng cầm thước; ba trạm cùng qua mới đóng án!",
+        "screenText": "TỔNG CẦM THƯỚC · 3 TRẠM CÙNG QUA!",
+        "visual": "Thẻ thần chú vàng với icon ba cổng gác.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Trạm gác của con: kệ A bằng hai phần ba kệ B, chuyển mười thì bằng nhau — tìm hai kệ, qua đủ ba trạm! Vào bài luyện ngay!",
+        "screenText": "thước tổng → 2 kệ? → 3 trạm!",
+        "visual": "Ba cổng gác chờ mở; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 11
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Thước tổng qua ba trạm",
+    "problem": "Kệ A bằng 2/3 kệ B. Chuyển 10 quyển từ kệ B sang kệ A thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
+    "steps": [
+      {
+        "show": "Bước 1 — Chuyển qua lại → TỔNG cầm thước. Trước 2 : 3 (tổng 5); sau 1 : 1 (tổng 2) → quy 10 khúc: 4 : 6 và 5 : 5.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Vì sao tổng cầm thước?",
+          "choices": [
+            "sách chỉ đổi kệ — tổng bảo toàn",
+            "tổng dễ tính",
+            "đề bảo thế"
+          ],
+          "answerKey": {
+            "choice": "sách chỉ đổi kệ — tổng bảo toàn"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — A nhích 5 − 4 = 1 khúc = 10 → khúc 10 → A = 40; B = 60."
+      },
+      {
+        "show": "Bước 3 — BA TRẠM: 40/60 = 2/3 ✓; 50 = 50 ✓; nhận đúng 10 ✓ — án đóng.",
+        "askAfter": {
+          "format": "mb",
+          "text": "A = 1/4 B; chuyển 9 → 2/3 → A, B lúc đầu?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "A",
+                "value": 9
+              },
+              {
+                "label": "B",
+                "value": 36
+              }
+            ]
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
     },
-    "formula": "quy tổng 10 khúc: 4 : 6 → 5 : 5  →  1 khúc = 10  →  A = 40 · B = 60",
-    "note": "Ba trạm thử: đúng tỉ trước · đúng tỉ sau · đúng lượng chuyển"
-   },
-   "caption": "Chuyển qua lại thì tổng đứng im — quy số khúc TỔNG của hai sơ đồ",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B33_M3_F4.png",
-   "sha256_16": "3a0531570ab62a34"
-  }
- ]
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B33.LT3",
+          "text": "Kệ A bằng 2/3 kệ B. Chuyển 10 quyển từ kệ B sang kệ A thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "kệ A",
+                "value": 40
+              },
+              {
+                "label": "kệ B",
+                "value": 60
+              }
+            ]
+          },
+          "hints": [
+            "Tổng cầm thước; quy 10 khúc.",
+            "4 : 6 → 5 : 5: A nhích 1 = 10."
+          ],
+          "solutionNarrative": "Khúc 10 → 40 & 60 (ba trạm ✓).",
+          "teaches": [
+            "K1",
+            "K2"
+          ],
+          "generator": {
+            "template": "A = {m}/{n} B; chuyển {c} thì {tỉ sau}. Tìm hai bên.",
+            "constraints": {},
+            "answerRule": "quy khúc tổng → phần nhích = c"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B33.LT7",
+          "text": "A bằng 1/4 của B. Chuyển 9 viên từ B sang A thì A bằng 2/3 của B. Tìm A và B lúc đầu.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "A",
+                "value": 9
+              },
+              {
+                "label": "B",
+                "value": 36
+              }
+            ]
+          },
+          "hints": [
+            "Tổng 5 ở cả hai tấm — cùng khúc sẵn.",
+            "A nhích 1 khúc = 9."
+          ],
+          "solutionNarrative": "Khúc 9 → 9 & 36 (18/27 = 2/3 ✓).",
+          "teaches": [
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "tf",
+          "text": "(Đúng/Sai?) Đáp lọt cả hai trạm tỉ (trước và sau) thì chắc chắn đúng, khỏi kiểm lượng chuyển.",
+          "answerKey": {
+            "value": false,
+            "note": "Ba trạm mới đóng án — cặp lọt hai trạm tỉ vẫn có thể gãy trạm lượng-biến-cố (mỗi cặp cùng tỉ ứng một lượng chuyển khác nhau)."
+          },
+          "hints": [
+            "Nghi thức mấy trạm?",
+            "Cặp 20 & 30 gãy ở đâu?"
+          ],
+          "teaches": [
+            "K4"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.5.1#3@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B34.M1",
+      "award": "huy_hieu_tram_gac_ba_cua"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B33.QZ4",
+        "text": "Chuyển qua lại giữa hai bên thì đại lượng bảo toàn là:",
+        "choices": [
+          "tổng",
+          "hiệu",
+          "tỉ số"
+        ],
+        "answerKey": {
+          "choice": "tổng"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mb",
+        "text": "Kệ A = 2/3 kệ B; chuyển 10 thì bằng nhau → hai kệ lúc đầu?",
+        "answerKey": {
+          "parts": [
+            {
+              "label": "A",
+              "value": 40
+            },
+            {
+              "label": "B",
+              "value": 60
+            }
+          ]
+        },
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "text": "Bài hai tỉ số cần thử mấy trạm?",
+        "choices": [
+          "3",
+          "1",
+          "2"
+        ],
+        "answerKey": {
+          "choice": "3"
+        },
+        "teaches": [
+          "K4"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Chuyển qua lại — thước gì? Đóng án cần gì?",
+        "back": "TỔNG bảo toàn cầm thước: quy khúc tổng (2:3 tổng 5 & 1:1 tổng 2 → về 10: 4:6 & 5:5) → bên nhận nhích 1 khúc = lượng chuyển (10 → 40 & 60). Đóng án = BA TRẠM: tỉ trước · tỉ sau · đúng lượng biến cố — thiếu một là chưa đóng."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P2 (cùng khúc sẵn)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con giải ca chuyển qua lại bằng thước tổng và thuộc nghi thức ba trạm thử. Con đạt {score}/3.",
+    "homeActivity": "Chuyển 10 hạt giữa hai bát (40 và 60) — con tường thuật 'tổng không suy suyển' rồi kiểm ba trạm bằng đếm thật.",
+    "watchFor": "Nếu con nộp bài thiếu trạm thử — hỏi 'ba cổng gác mở đủ chưa?' (S3)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B33.M3",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "cả hai cùng đổi — thước đâu?",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Cả A lẫn B đều đổi — ai đứng im mà cầm thước?!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Sách chỉ đổi kệ thôi — có quyển nào rời khỏi phòng đâu?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B33_M3_F1.png",
+      "sha256_16": "83cf50ea8df88924"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con giải ca CHUYỂN QUA LẠI: TỔNG bất biến làm thước — quy đồng số khúc TỔNG của hai sơ đồ, phần nhích của bên nhận = lượng chuyển; và thuộc nghi thức đóng án của cả chương: BA TRẠM THỬ (tỉ trước — tỉ sau — đúng lượng biến cố), thiếu một trạm là chưa đóng.",
+        "steps": [
+          {
+            "text": "1:4 và 2:3 — cùng tổng 5: nhích 1 = 9 → 9 & 36"
+          },
+          {
+            "text": "ba trạm: tỉ trước · tỉ sau · lượng biến cố"
+          },
+          {
+            "text": "20 & 30: lọt trạm 1, gãy trạm sau — loại"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B33_M3_F2.png",
+      "sha256_16": "cf2296fb1ce68bfc"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Chuyển qua lại giữa hai bên → TỔNG không đổi (của không sinh không mất",
+            "text": "neo B18/B27): TỔNG cầm thước.",
+            "tone": "navy"
+          },
+          {
+            "label": "Quy đồng số khúc TỔNG",
+            "text": "trước 2 : 3 (tổng 5 khúc), sau 1 : 1 (tổng 2 khúc) → quy về 10 khúc: 4 : 6 và 5 : 5 — bên nhận nhích 1 khúc = lượng chuyển 10 → khúc 10 → A 40; B 60.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "CHUYỂN QUA LẠI — TỔNG CẦM THƯỚC; BA TRẠM CÙNG QUA MỚI ĐÓNG ÁN!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B33_M3_F3.png",
+      "sha256_16": "7f6ea946ca182580"
+    },
+    {
+      "archetype": "before_after_parts",
+      "params": {
+        "title": "CHUYỂN QUA LẠI — TỔNG BẤT BIẾN LÀM THƯỚC",
+        "before": {
+          "tag": "TRƯỚC",
+          "a": 4,
+          "b": 6,
+          "a_label": "kệ A = 2/3 kệ B",
+          "b_label": "kệ B"
+        },
+        "after": {
+          "tag": "SAU",
+          "a": 5,
+          "b": 5,
+          "a_label": "hai kệ bằng nhau",
+          "b_label": "kệ B"
+        },
+        "delta": {
+          "label": "A nhích 1 khúc = 10 quyển"
+        },
+        "formula": "quy tổng 10 khúc: 4 : 6 → 5 : 5  →  1 khúc = 10  →  A = 40 · B = 60",
+        "note": "Ba trạm thử: đúng tỉ trước · đúng tỉ sau · đúng lượng chuyển"
+      },
+      "caption": "Chuyển qua lại thì tổng đứng im — quy số khúc TỔNG của hai sơ đồ",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B33_M3_F4.png",
+      "sha256_16": "3a0531570ab62a34"
+    }
+  ]
 }

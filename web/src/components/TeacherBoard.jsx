@@ -1,5 +1,8 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { teacherBoard, learnerAttempts, logout } from '../lib/firebase.js';
+import { teacherBoard, learnerAttempts, logout, refreshTeacherBoard } from '../lib/firebase.js';
+
+/** Tên chặng cho cô đọc, thay vì mã tiếng Anh */
+const CHANG = { practice: 'luyện tập', assess: 'sát hạch', check: 'chốt nhanh', worked: 'theo ví dụ' };
 
 const short = (id) => String(id || '').replace('DL:KSN5Q1.', '');
 const when = (ms) => {
@@ -27,6 +30,7 @@ export default function TeacherBoard({ onExit }) {
   const [pick, setPick] = useState(null);           // {uid, displayName}
   const [rows, setRows] = useState(null);
   const [q, setQ] = useState('');
+  const [dangMoi, setDangMoi] = useState(false);
 
   useEffect(() => {
     let alive = true;
@@ -69,17 +73,28 @@ export default function TeacherBoard({ onExit }) {
             <div className="kicker">NHẬT KÝ TỪNG CÂU · {rows.length} LƯỢT GẦN NHẤT</div>
             <div className="max-h-[70vh] overflow-y-auto">
               {rows.map((a, i) => (
-                <div key={i} className="flex items-center gap-2 border-b border-line py-2 text-[13px] last:border-0">
-                  <span className={`h-2 w-2 flex-none rounded-full ${a.correct ? 'bg-teal' : 'bg-alert'}`} />
-                  <span className="w-[76px] flex-none font-mono text-[11.5px] text-mute">{short(a.microId)}</span>
-                  <span className="w-[42px] flex-none font-mono text-[11.5px] text-mute">{a.itemId}</span>
-                  <span className="flex-1">
-                    {a.correct ? 'đúng' : 'sai'}
-                    {a.tries > 1 && <span className="text-mute"> · thử {a.tries} lần</span>}
-                    {a.hintsUsed > 0 && <span className="text-mute"> · xem {a.hintsUsed} gợi ý</span>}
-                  </span>
-                  {a.mustPass && (
-                    <span className="pill flex-none bg-alert-pale text-alert">BẪY</span>
+                <div key={i} className="border-b border-line py-2 text-[13px] last:border-0">
+                  <div className="flex items-center gap-2">
+                    <span className={`h-2 w-2 flex-none rounded-full ${a.correct ? 'bg-teal' : 'bg-alert'}`} />
+                    <span className="w-[76px] flex-none font-mono text-[11.5px] text-mute">{short(a.microId)}</span>
+                    <span className="w-[42px] flex-none font-mono text-[11.5px] text-mute">{a.itemId}</span>
+                    <span className="flex-1">
+                      {a.correct ? 'đúng' : 'sai'}
+                      {a.tries > 1 && <span className="text-mute"> · lần {a.tries}</span>}
+                      {a.hintsUsed > 0 && <span className="text-mute"> · xem {a.hintsUsed} gợi ý</span>}
+                      {a.ms > 0 && <span className="text-mute"> · {Math.round(a.ms / 1000)}s</span>}
+                      {a.phase && <span className="text-mute"> · {CHANG[a.phase] || a.phase}</span>}
+                    </span>
+                    {a.revealed && <span className="pill flex-none bg-[#F2F6FA] text-mute">đã xem đáp án</span>}
+                    {a.mustPass && <span className="pill flex-none bg-alert-pale text-alert">BẪY</span>}
+                  </div>
+                  {/* Con GÕ GÌ — thứ cô cần nhất để đoán con hiểu lệch chỗ nào.
+                      Chỉ hiện khi con SAI: lúc đúng thì đáp án đã biết rồi. */}
+                  {!a.correct && a.answer && (
+                    <div className="mt-1 pl-4 text-[12.5px] leading-snug">
+                      <span className="text-alert">con trả lời: <b>{a.answer}</b></span>
+                      {a.expected && <span className="text-mute"> · đáp án: {a.expected}</span>}
+                    </div>
                   )}
                 </div>
               ))}
@@ -110,8 +125,21 @@ export default function TeacherBoard({ onExit }) {
   return (
     <Wrap onExit={onExit} title="Bảng theo dõi">
       <div className="card">
-        <div className="kicker">
-          7 NGÀY QUA · TỔNG HỢP {new Date(board.generatedAt).toLocaleString('vi-VN')}
+        {/* Bảng tự tổng hợp lúc 21:15 mỗi đêm. Con học sáng nay mà cô mở lúc trưa thì
+            thấy số liệu của hôm qua — nên nói rõ mốc tổng hợp và cho dựng lại ngay. */}
+        <div className="kicker flex flex-wrap items-center gap-2">
+          <span>7 NGÀY QUA · TỔNG HỢP {new Date(board.generatedAt).toLocaleString('vi-VN')}</span>
+          <button
+            className="rounded-full border-[1.5px] border-navy px-2.5 py-0.5 text-[11px] font-bold text-navy disabled:opacity-50"
+            disabled={dangMoi}
+            onClick={async () => {
+              setDangMoi(true);
+              try { await refreshTeacherBoard(7); setBoard(await teacherBoard()); }
+              catch (e) { setErr(String(e?.message || e)); }
+              finally { setDangMoi(false); }
+            }}>
+            {dangMoi ? 'đang cập nhật…' : '↻ Cập nhật ngay'}
+          </button>
         </div>
         <div className="flex flex-wrap gap-2">
           <Stat label="CÓ HỌC" value={`${board.activeLearners}/${board.learners}`} />

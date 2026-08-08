@@ -1,568 +1,571 @@
 {
- "title": "Bài ngược & bài ghép hai tầng: gộp tổng trước — kéo cân sau",
- "grade": 5,
- "durationMinutes": 9,
- "skills": {
-  "primary": [
-   "CASE:III.1.4#3"
-  ],
-  "bktUnit": "CASE:III.1.4#3@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B24",
-  "order": 3,
-  "prev": "DL:KSN5Q1.B24.M2",
-  "next": "DL:KSN5Q1.B25.M1"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B24",
-  "chunks": [
-   "CHUNK:KSN5Q1.B24.S4",
-   "CHUNK:KSN5Q1.B24.S7"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B24.3"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B24.3"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con giải được bài NGƯỢC gộp nhóm (biết TBC gộp và TBC một nhóm — tìm TBC nhóm còn lại, vẫn qua cầu tổng) và bài GHÉP HAI TẦNG trùm cuối: tách tầng như bóc củ hành — TẦNG 1 gộp tổng, TẦNG 2 kéo cân — không trộn hai máy vào một phép.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (tách tầng bài ghép)",
-  "kidText": "Bài ngược thì vẫn qua cầu tổng. Bài ghép hai tầng thì bóc từng tầng: gộp tổng trước, kéo cân sau."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bài ngược gộp: tổng cả (TBC gộp × tổng phần tử) − tổng nhóm biết = tổng nhóm kia → chia quân số của nó: (180 − 52) : 4 = 32."
-   },
-   {
-    "id": "K2",
-    "text": "Bài ghép hai tầng nhận diện: đề chứa CẢ 'TBC nhiều ngày' (máy gộp) LẪN 'hơn TBC cả…' (máy kéo cân) — hai máy phải chạy Ở HAI TẦNG riêng, không trộn vào một phép."
-   },
-   {
-    "id": "K3",
-    "text": "Trình tự trùm: TẦNG 1 (gộp) — nhân ra tổng sáu ngày 30 × 6 = 180. TẦNG 2 (kéo cân — máy B22): TBC bảy ngày = 30 + 12 : 6 = 32 → Chủ nhật = 32 + 12 = 44."
-   },
-   {
-    "id": "K4",
-    "text": "Thử toàn cục: (180 + 44) : 7 = 32 ✓ và 44 − 32 = 12 ✓ — mọi tầng khớp mới đóng hồ sơ."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: CỦ HÀNH HAI LỚP VỎ (nợ Bài 16 đòi về). Đề trùm: \"TBC sáu ngày đầu tuần là 30; Chủ nhật bán hơn TBC cả BẢY ngày 12 chiếc — Chủ nhật bán mấy chiếc?\" Trò hoảng vì đề dài — nhưng đây chỉ là củ hành HAI LỚP: bóc từng lớp một! LỚP NGOÀI (máy gộp): sáu ngày TBC 30 — nhân ra tổng MỘT TRĂM TÁM MƯƠI chiếc: xong tầng gộp, cất máy. LỚP TRONG (máy kéo cân B22): Chủ nhật hơn TBC cả bảy ngày 12 — phần hơn chảy xuống SÁU ngày cũ: cân nhích 12 : 6 = 2, lên 32; Chủ nhật = 32 + 12 = BỐN MƯƠI BỐN chiếc. Ai trộn hai máy vào một phép (đem 12 chia cho 7, hay cộng 12 thẳng vào 30) là nghẹn nguyên củ hành. Bài ngược cũng một cầu tổng: biết TBC cả tuần, lột ra tổng, trừ phần đã biết, chia quân số còn lại.",
-  "canonicalExamples": [
-   {
-    "case": "ngược tìm nhóm còn lại (ca lõi)",
-    "problem": "TBC cả sáu ngày là 30 chiếc; hai ngày đầu TBC 26 chiếc. Tính TBC của bốn ngày sau.",
-    "solution": "Tổng cả = 30 × 6 = 180; tổng hai ngày đầu = 52 → bốn ngày sau = 180 − 52 = 128 → TBC = 128 : 4 = 32.",
-    "why": "Ca đề A câu 13 — cầu tổng chạy ngược."
-   },
-   {
-    "case": "trùm hai tầng (ca đỉnh)",
-    "problem": "TBC sáu ngày đầu tuần là 30 chiếc. Chủ nhật cửa hàng bán hơn TBC của cả BẢY ngày là 12 chiếc. Hỏi Chủ nhật bán bao nhiêu chiếc?",
-    "solution": "TẦNG 1 (gộp): tổng sáu ngày = 180. TẦNG 2 (kéo cân): TBC bảy ngày = 30 + 12 : 6 = 32 → Chủ nhật = 44. Thử: (180 + 44) : 7 = 32 ✓; 44 − 32 = 12 ✓.",
-    "why": "Ca đề A câu 15 — LT9 sư phụ, hai máy hai tầng."
-   }
-  ],
-  "numberRange": "Lớp 5: tổng ≤ 300; phần hơn chia hết cho số ngày cũ.",
-  "misconceptions": [
-   {
-    "wrong": "Bài ghép không tách tầng: đem 12 chia 7 (trộn máy), hoặc cộng 12 thẳng vào 30, hoặc dừng ở TBC 32 quên tính Chủ nhật.",
-    "signal": "Chỉ có một phép gộp cho đề chứa cả cụm 'hơn TBC cả bảy ngày'.",
-    "fix": "K2 + K3 — bóc củ hành: gạch đề thành hai tầng, chạy máy gộp xong CẤT, rồi mới nổ máy kéo cân.",
-    "counterExample": "12 : 7 lẻ ngay; 30 + 12 = 42 thử (180 + 42) : 7 = 31,7 — trượt cả hai."
-   }
-  ],
-  "vocabulary": [
-   "củ hành hai lớp vỏ",
-   "bóc từng lớp — cất máy",
-   "tầng gộp / tầng kéo cân",
-   "nghẹn nguyên củ hành",
-   "thử toàn cục"
-  ],
-  "mantra": "BÀI GHÉP — TÁCH TẦNG: GỘP TỔNG TRƯỚC, KÉO CÂN SAU!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "Máy B22: nhóm 6 ngày TBC 30, ngày mới hơn TBC cả 7 ngày 12 → cân nhích ? nấc (12 : 6)",
-    "answerKey": {
-     "value": 2
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B22.M1",
-   "message": "Ôn máy kéo cân rồi vào bóc củ hành nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Đề trùm dài ngoằng: \"TBC sáu ngày đầu tuần 30 chiếc; Chủ nhật bán hơn TBC cả BẢY ngày 12 chiếc — Chủ nhật bán mấy?\" Trí Long hoa mắt trộn phép: \"30 cộng 12… à mà 12 chia 7…\" Su Kem đặt củ hành lên bàn: \"Nhớ Bài 16 không — bóc TỪNG LỚP!\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "đề dài — trộn máy?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để bóc lớp ngoài!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K2",
-     "K3"
+  "title": "Bài ngược & bài ghép hai tầng: gộp tổng trước — kéo cân sau",
+  "grade": 5,
+  "durationMinutes": 9,
+  "skills": {
+    "primary": [
+      "CASE:III.1.4#3"
     ],
-    "narration": "Gạch đề thành HAI TẦNG. Lớp ngoài — máy GỘP: sáu ngày TBC ba mươi, nhân ra tổng MỘT TRĂM TÁM MƯƠI chiếc — xong, CẤT máy gộp! Lớp trong — máy KÉO CÂN Bài hai hai: Chủ nhật hơn TBC cả bảy ngày mười hai — phần hơn chảy xuống SÁU ngày cũ: cân nhích mười hai chia sáu bằng HAI, lên BA MƯƠI HAI; Chủ nhật bằng ba hai cộng mười hai — BỐN MƯƠI BỐN chiếc!",
-    "display": {
-     "type": "onion_layers_interactive",
-     "spec": {
-      "layer1": "6 ngày × 30 = 180 (cất máy)",
-      "layer2": "TBC 7 ngày = 30 + 12:6 = 32 → CN = 44"
-     }
-    },
-    "interaction": {
-     "type": "peel_two_layers",
-     "answerKey": {
-      "value": 44
-     },
-     "successMessage": "Tầng gộp 180 → tầng kéo cân 32 → Chủ nhật 44!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "num",
-     "text": "Thử toàn cục: (180 + 44) : 7 = ?",
-     "answerKey": {
-      "value": 32
-     },
-     "wrongFeedback": "224 : 7 = 32 — khớp TBC bảy ngày.",
-     "objective": "O1",
-     "teaches": [
-      "K4"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 40,
-    "teaches": [
-     "K1",
-     "K2"
+    "bktUnit": "CASE:III.1.4#3@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B24",
+    "order": 3,
+    "prev": "DL:KSN5Q1.B24.M2",
+    "next": "DL:KSN5Q1.B25.M1"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B24",
+    "chunks": [
+      "CHUNK:KSN5Q1.B24.S4",
+      "CHUNK:KSN5Q1.B24.S7"
     ],
-    "narration": "Trộn máy là nghẹn: mười hai chia bảy — lẻ ngay; ba mươi cộng mười hai bằng bốn hai — thử thì một trăm tám mươi cộng bốn hai chia bảy ra ba mốt phẩy bảy: trượt! Còn bài NGƯỢC đi cùng cầu tổng: TBC cả sáu ngày ba mươi, hai ngày đầu TBC hai sáu — lột tổng cả: một trăm tám mươi; trừ năm hai của hai ngày đầu: bốn ngày sau còn MỘT TRĂM HAI TÁM — chia bốn: TBC BA MƯƠI HAI!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "trộn: 12 : 7 ✗ · 30 + 12 → thử 31,7 ✗",
-      "ngược: 180 − 52 = 128 : 4 = 32 ✓",
-      "hai máy — hai tầng, không trộn"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú củ hành: bài ghép — tách tầng: gộp tổng trước, kéo cân sau!",
-    "display": {
-     "type": "mantra_card",
-     "text": "GỘP TỔNG TRƯỚC — KÉO CÂN SAU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 90,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Đề trùm dài ngoằng: TBC sáu ngày đầu tuần ba mươi chiếc; Chủ nhật bán hơn TBC cả BẢY ngày mười hai chiếc — Chủ nhật bán mấy? Trí Long hoa mắt trộn phép: ba mươi cộng mười hai… à mà mười hai chia bảy… Su Kem đặt củ hành lên bàn: bóc TỪNG LỚP!",
-    "screenText": "đề trùm 2 máy — trộn hay tách?",
-    "visual": "Tờ đề dài cuộn xuống bàn; Trí Long mắt xoáy trôn ốc; Su Kem cầm củ hành hai lớp vỏ, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Gạch đề thành HAI TẦNG. Lớp ngoài — máy GỘP: sáu ngày TBC ba mươi, nhân ra tổng MỘT TRĂM TÁM MƯƠI chiếc — xong, CẤT máy gộp! Lớp trong — máy KÉO CÂN: Chủ nhật hơn TBC cả bảy ngày mười hai — phần hơn chảy xuống SÁU ngày cũ: cân nhích HAI nấc, lên BA MƯƠI HAI; Chủ nhật bằng ba hai cộng mười hai — BỐN MƯƠI BỐN chiếc!",
-    "screenText": "T1: 30 × 6 = 180 · T2: 30 + 12:6 = 32 → CN = 44",
-    "visual": "Củ hành bóc hai lớp: lớp ngoài ghi máy gộp với tổng 180, lớp trong ghi máy kéo cân với 32 → 44; hai máy đặt hai ngăn riêng.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Trộn máy là nghẹn: mười hai chia bảy — lẻ ngay; ba mươi cộng mười hai bằng bốn hai — thử thì ra ba mốt phẩy bảy: trượt! Còn bài NGƯỢC đi cùng cầu tổng: TBC cả sáu ngày ba mươi, hai ngày đầu TBC hai sáu — lột tổng cả: một trăm tám mươi; trừ năm hai: bốn ngày sau còn MỘT TRĂM HAI TÁM — chia bốn: TBC BA MƯƠI HAI!",
-    "screenText": "12:7 ✗ · 30+12 ✗ · ngược: (180 − 52) : 4 = 32 ✓",
-    "visual": "Hai phép trộn máy nghẹn khói gạch đỏ; đường ngược chạy cầu tổng ba trạm 180 → 128 → 32 mộc xanh.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú củ hành: bài ghép — tách tầng: gộp tổng trước, kéo cân sau!",
-    "screenText": "TÁCH TẦNG: GỘP TRƯỚC — KÉO CÂN SAU!",
-    "visual": "Thẻ thần chú vàng với icon củ hành hai lớp.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Củ hành: TBC sáu ngày ba mươi; Chủ nhật hơn TBC cả bảy ngày mười hai — bóc hai lớp tìm Chủ nhật! Vào bài luyện ngay!",
-    "screenText": "bóc 2 lớp → Chủ nhật = ?",
-    "visual": "Củ hành nguyên đợi bóc; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Bóc củ hành trùm cuối",
-  "problem": "TBC sáu ngày đầu tuần là 30 chiếc. Chủ nhật cửa hàng bán hơn TBC của cả BẢY ngày là 12 chiếc. Hỏi Chủ nhật bán bao nhiêu chiếc?",
-  "steps": [
-   {
-    "show": "Bước 1 — TẦNG 1 (gộp): tổng sáu ngày = 30 × 6 = 180. Cất máy gộp.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Đề này có mấy tầng máy?",
-     "choices": [
-      "2 tầng: gộp rồi kéo cân",
-      "1 tầng gộp",
-      "1 tầng kéo cân"
-     ],
-     "answerKey": {
-      "choice": "2 tầng: gộp rồi kéo cân"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — TẦNG 2 (kéo cân B22): TBC bảy ngày = 30 + 12 : 6 = 32."
-   },
-   {
-    "show": "Bước 3 — Chủ nhật = 32 + 12 = 44 chiếc. Thử: (180 + 44) : 7 = 32 ✓; 44 − 32 = 12 ✓.",
-    "askAfter": {
-     "format": "num",
-     "text": "Nếu Chủ nhật hơn TBC cả bảy ngày 18 chiếc thì Chủ nhật bán ? (30 + 18:6 = 33 → +18)",
-     "answerKey": {
-      "value": 51
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B24.LT6",
-     "text": "TBC cả sáu ngày là 30 chiếc; hai ngày đầu TBC 26 chiếc. Tính TBC của bốn ngày sau.",
-     "answerKey": {
-      "value": 32
-     },
-     "hints": [
-      "Lột tổng cả: 30 × 6.",
-      "(180 − 52) : 4."
-     ],
-     "solutionNarrative": "Tổng bốn ngày sau = 128 → TBC = 32.",
-     "teaches": [
-      "K1"
-     ],
-     "generator": {
-      "template": "TBC gộp {t} của {n} phần tử; nhóm {n1} TBC {t1}. TBC nhóm còn lại?",
-      "constraints": {},
-      "answerRule": "(t×n − t1×n1) : (n − n1)"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B24.LT9",
-     "text": "Sư phụ Trí Dũng ra bài trùm: \"TBC sáu ngày đầu tuần là 30 chiếc. Chủ nhật cửa hàng bán hơn TBC của cả BẢY ngày là 12 chiếc. Hỏi Chủ nhật bán bao nhiêu chiếc?\"",
-     "answerKey": {
-      "value": 44
-     },
-     "hints": [
-      "Tầng 1: tổng 180 — cất máy.",
-      "Tầng 2: máy B22 — nhích 12 : 6."
-     ],
-     "solutionNarrative": "TBC bảy ngày = 32 → Chủ nhật = 44 (thử 224 : 7 = 32 ✓).",
-     "teaches": [
-      "K2",
-      "K3",
-      "K4"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "tf",
-     "text": "(Đúng/Sai?) Ở bài trùm trên, có thể tính nhanh Chủ nhật = 30 + 12 = 42.",
-     "answerKey": {
-      "value": false,
-      "note": "Trộn máy! Phần hơn 12 đo từ TBC BẢY ngày (32), không phải từ 30: Chủ nhật = 44 (thử 222 : 7 = 31,7 ✗ với 42)."
-     },
-     "hints": [
-      "12 đo từ cân nào?",
-      "Thử toàn cục hai đáp."
-     ],
-     "teaches": [
-      "K2",
-      "K4"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.1.4#3@G5"
-   ],
-   "unlockNext": "DCR:KSN5Q1.C6",
-   "award": "huy_hieu_cu_hanh_tbc + mở KỲ SÁT HẠCH CHƯƠNG 6"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "mcq",
-    "text": "Bài ghép 'TBC sáu ngày 30 + Chủ nhật hơn TBC cả bảy ngày 12' giải theo:",
-    "choices": [
-     "hai tầng: gộp tổng trước, kéo cân sau",
-     "một phép: 30 + 12",
-     "một phép: 12 : 7"
+    "cases": [
+      "CA:KSN5Q1.B24.3"
     ],
-    "answerKey": {
-     "choice": "hai tầng: gộp tổng trước, kéo cân sau"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2",
-     "K3"
+    "traps": [
+      "TRAP:KSN5Q1.B24.3"
     ]
-   },
-   {
-    "id": "A2",
-    "format": "num",
-    "text": "TBC cả 6 ngày 30; hai ngày đầu TBC 26 → TBC bốn ngày sau = ?",
-    "answerKey": {
-     "value": 32
-    },
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "num",
-    "text": "Bài trùm chuẩn: Chủ nhật bán ? chiếc",
-    "answerKey": {
-     "value": 44
-    },
-    "teaches": [
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Bài ngược gộp? Bài ghép hai tầng?",
-    "back": "NGƯỢC: tổng cả − tổng nhóm biết = tổng nhóm kia → chia quân số nó ((180 − 52) : 4 = 32). GHÉP: bóc củ hành — TẦNG 1 gộp tổng (30 × 6 = 180), TẦNG 2 kéo cân (30 + 12:6 = 32 → CN 44). Không trộn hai máy; thử toàn cục."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P2 (bài trùm)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con giải bài ngược gộp nhóm và bài trùm hai tầng (gộp tổng trước — kéo cân sau). Con đạt {score}/3, {trapResult} câu bẫy trộn-máy. Con đã đủ điều kiện vào KỲ SÁT HẠCH CHƯƠNG 6!",
-  "homeActivity": "Đưa đề trùm và một cây bút hai màu — con gạch tầng gộp một màu, tầng kéo cân màu kia trước khi tính.",
-  "watchFor": "Nếu con trộn máy (12 : 7 hay 30 + 12) — chạy phép thử toàn cục (S3) cho hai đáp tự lộ."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B24.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "đề dài — trộn máy?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "30 cộng 12… à mà 12 chia 7…",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Nhớ Bài 16 không — bóc TỪNG LỚP!",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B24_M3_F1.png",
-   "sha256_16": "3a005bae7ae05293"
   },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con giải được bài NGƯỢC gộp nhóm (biết TBC gộp và TBC một nhóm — tìm TBC nhóm còn lại, vẫn qua cầu tổng) và bài GHÉP HAI TẦNG trùm cuối: tách tầng như bóc củ hành — TẦNG 1 gộp tổng, TẦNG 2 kéo cân — không trộn hai máy vào một phép.",
-    "steps": [
-     {
-      "text": "trộn: 12 : 7 · 30 + 12 → thử 31,7"
-     },
-     {
-      "text": "ngược: 180 − 52 = 128 : 4 = 32"
-     },
-     {
-      "text": "hai máy — hai tầng, không trộn"
-     }
+  "objective": {
+    "id": "O1",
+    "text": "Con giải được bài NGƯỢC gộp nhóm (biết TBC gộp và TBC một nhóm — tìm TBC nhóm còn lại, vẫn qua cầu tổng) và bài GHÉP HAI TẦNG trùm cuối: tách tầng như bóc củ hành — TẦNG 1 gộp tổng, TẦNG 2 kéo cân — không trộn hai máy vào một phép.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (tách tầng bài ghép)",
+    "kidText": "Bài ngược thì vẫn qua cầu tổng. Bài ghép hai tầng thì bóc từng tầng: gộp tổng trước, kéo cân sau."
+  },
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Bài ngược gộp: tổng cả (TBC gộp × tổng phần tử) − tổng nhóm biết = tổng nhóm kia → chia quân số của nó: (180 − 52) : 4 = 32."
+      },
+      {
+        "id": "K2",
+        "text": "Bài ghép hai tầng nhận diện: đề chứa CẢ 'TBC nhiều ngày' (máy gộp) LẪN 'hơn TBC cả…' (máy kéo cân) — hai máy phải chạy Ở HAI TẦNG riêng, không trộn vào một phép."
+      },
+      {
+        "id": "K3",
+        "text": "Trình tự trùm: TẦNG 1 (gộp) — nhân ra tổng sáu ngày 30 × 6 = 180. TẦNG 2 (kéo cân — máy B22): TBC bảy ngày = 30 + 12 : 6 = 32 → Chủ nhật = 32 + 12 = 44."
+      },
+      {
+        "id": "K4",
+        "text": "Thử toàn cục: (180 + 44) : 7 = 32 ✓ và 44 − 32 = 12 ✓ — mọi tầng khớp mới đóng hồ sơ."
+      }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B24_M3_F2.png",
-   "sha256_16": "e8ade57cb23372b4"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Bài ngược gộp",
-      "text": "tổng cả (TBC gộp × tổng phần tử) − tổng nhóm biết = tổng nhóm kia → chia quân số của nó: (180 − 52) : 4 = 32.",
-      "tone": "navy"
-     },
-     {
-      "label": "Bài ghép hai tầng nhận diện",
-      "text": "đề chứa CẢ 'TBC nhiều ngày' (máy gộp) LẪN 'hơn TBC cả…' (máy kéo cân) — hai máy phải chạy Ở HAI TẦNG riêng, không trộn vào một phép.",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: CỦ HÀNH HAI LỚP VỎ (nợ Bài 16 đòi về). Đề trùm: \"TBC sáu ngày đầu tuần là 30; Chủ nhật bán hơn TBC cả BẢY ngày 12 chiếc — Chủ nhật bán mấy chiếc?\" Trò hoảng vì đề dài — nhưng đây chỉ là củ hành HAI LỚP: bóc từng lớp một! LỚP NGOÀI (máy gộp): sáu ngày TBC 30 — nhân ra tổng MỘT TRĂM TÁM MƯƠI chiếc: xong tầng gộp, cất máy. LỚP TRONG (máy kéo cân B22): Chủ nhật hơn TBC cả bảy ngày 12 — phần hơn chảy xuống SÁU ngày cũ: cân nhích 12 : 6 = 2, lên 32; Chủ nhật = 32 + 12 = BỐN MƯƠI BỐN chiếc. Ai trộn hai máy vào một phép (đem 12 chia cho 7, hay cộng 12 thẳng vào 30) là nghẹn nguyên củ hành. Bài ngược cũng một cầu tổng: biết TBC cả tuần, lột ra tổng, trừ phần đã biết, chia quân số còn lại.",
+    "canonicalExamples": [
+      {
+        "case": "ngược tìm nhóm còn lại (ca lõi)",
+        "problem": "TBC cả sáu ngày là 30 chiếc; hai ngày đầu TBC 26 chiếc. Tính TBC của bốn ngày sau.",
+        "solution": "Tổng cả = 30 × 6 = 180; tổng hai ngày đầu = 52 → bốn ngày sau = 180 − 52 = 128 → TBC = 128 : 4 = 32.",
+        "why": "Ca đề A câu 13 — cầu tổng chạy ngược."
+      },
+      {
+        "case": "trùm hai tầng (ca đỉnh)",
+        "problem": "TBC sáu ngày đầu tuần là 30 chiếc. Chủ nhật cửa hàng bán hơn TBC của cả BẢY ngày là 12 chiếc. Hỏi Chủ nhật bán bao nhiêu chiếc?",
+        "solution": "TẦNG 1 (gộp): tổng sáu ngày = 180. TẦNG 2 (kéo cân): TBC bảy ngày = 30 + 12 : 6 = 32 → Chủ nhật = 44. Thử: (180 + 44) : 7 = 32 ✓; 44 − 32 = 12 ✓.",
+        "why": "Ca đề A câu 15 — LT9 sư phụ, hai máy hai tầng."
+      }
+    ],
+    "numberRange": "Lớp 5: tổng ≤ 300; phần hơn chia hết cho số ngày cũ.",
+    "misconceptions": [
+      {
+        "wrong": "Bài ghép không tách tầng: đem 12 chia 7 (trộn máy), hoặc cộng 12 thẳng vào 30, hoặc dừng ở TBC 32 quên tính Chủ nhật.",
+        "signal": "Chỉ có một phép gộp cho đề chứa cả cụm 'hơn TBC cả bảy ngày'.",
+        "fix": "K2 + K3 — bóc củ hành: gạch đề thành hai tầng, chạy máy gộp xong CẤT, rồi mới nổ máy kéo cân.",
+        "counterExample": "12 : 7 lẻ ngay; 30 + 12 = 42 thử (180 + 42) : 7 = 31,7 — trượt cả hai."
+      }
+    ],
+    "vocabulary": [
+      "củ hành hai lớp vỏ",
+      "bóc từng lớp — cất máy",
+      "tầng gộp / tầng kéo cân",
+      "nghẹn nguyên củ hành",
+      "thử toàn cục"
     ],
     "mantra": "BÀI GHÉP — TÁCH TẦNG: GỘP TỔNG TRƯỚC, KÉO CÂN SAU!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B24_M3_F3.png",
-   "sha256_16": "9869f1aac3a250c3"
   },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "TRÙM HAI TẦNG: GỘP TỔNG TRƯỚC — KÉO CÂN SAU",
-    "steps": [
-     {
-      "text": "TẦNG 1 · gộp",
-      "sub": "tổng sáu ngày = 30 × 6 = 180"
-     },
-     {
-      "text": "TẦNG 2 · kéo cân",
-      "sub": "TBC bảy ngày = 30 + 12 : 6 = 32"
-     },
-     {
-      "text": "Chủ nhật",
-      "sub": "32 + 12 = 44 chiếc"
-     }
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "Máy B22: nhóm 6 ngày TBC 30, ngày mới hơn TBC cả 7 ngày 12 → cân nhích ? nấc (12 : 6)",
+        "answerKey": {
+          "value": 2
+        }
+      }
     ],
-    "note": "Bài ngược cùng cầu: tổng cả 180 − 52 = 128 → TBC bốn ngày sau = 32"
-   },
-   "caption": "Hai tầng nối nhau — làm sai thứ tự là lệch ngay",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B24_M3_F4.png",
-   "sha256_16": "17ea64a77ea5eeaf"
-  }
- ]
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B22.M1",
+      "message": "Ôn máy kéo cân rồi vào bóc củ hành nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Đề trùm dài ngoằng: \"TBC sáu ngày đầu tuần 30 chiếc; Chủ nhật bán hơn TBC cả BẢY ngày 12 chiếc — Chủ nhật bán mấy?\" Trí Long hoa mắt trộn phép: \"30 cộng 12… à mà 12 chia 7…\" Su Kem đặt củ hành lên bàn: \"Nhớ Bài 16 không — bóc TỪNG LỚP!\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "đề dài — trộn máy?"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để bóc lớp ngoài!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K2",
+          "K3"
+        ],
+        "narration": "Gạch đề thành HAI TẦNG. Lớp ngoài — máy GỘP: sáu ngày TBC ba mươi, nhân ra tổng MỘT TRĂM TÁM MƯƠI chiếc — xong, CẤT máy gộp! Lớp trong — máy KÉO CÂN Bài hai hai: Chủ nhật hơn TBC cả bảy ngày mười hai — phần hơn chảy xuống SÁU ngày cũ: cân nhích mười hai chia sáu bằng HAI, lên BA MƯƠI HAI; Chủ nhật bằng ba hai cộng mười hai — BỐN MƯƠI BỐN chiếc!",
+        "display": {
+          "type": "onion_layers_interactive",
+          "spec": {
+            "layer1": "6 ngày × 30 = 180 (cất máy)",
+            "layer2": "TBC 7 ngày = 30 + 12:6 = 32 → CN = 44"
+          }
+        },
+        "interaction": {
+          "type": "peel_two_layers",
+          "answerKey": {
+            "value": 44
+          },
+          "successMessage": "Tầng gộp 180 → tầng kéo cân 32 → Chủ nhật 44!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "num",
+          "text": "Thử toàn cục: (180 + 44) : 7 = ?",
+          "answerKey": {
+            "value": 32
+          },
+          "wrongFeedback": "224 : 7 = 32 — khớp TBC bảy ngày.",
+          "objective": "O1",
+          "teaches": [
+            "K4"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 40,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "Trộn máy là nghẹn: mười hai chia bảy — lẻ ngay; ba mươi cộng mười hai bằng bốn hai — thử thì một trăm tám mươi cộng bốn hai chia bảy ra ba mốt phẩy bảy: trượt! Còn bài NGƯỢC đi cùng cầu tổng: TBC cả sáu ngày ba mươi, hai ngày đầu TBC hai sáu — lột tổng cả: một trăm tám mươi; trừ năm hai của hai ngày đầu: bốn ngày sau còn MỘT TRĂM HAI TÁM — chia bốn: TBC BA MƯƠI HAI!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "trộn: 12 : 7 ✗ · 30 + 12 → thử 31,7 ✗",
+            "ngược: 180 − 52 = 128 : 4 = 32 ✓",
+            "hai máy — hai tầng, không trộn"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú củ hành: bài ghép — tách tầng: gộp tổng trước, kéo cân sau!",
+        "display": {
+          "type": "mantra_card",
+          "text": "GỘP TỔNG TRƯỚC — KÉO CÂN SAU!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 90,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Đề trùm dài ngoằng: TBC sáu ngày đầu tuần ba mươi chiếc; Chủ nhật bán hơn TBC cả BẢY ngày mười hai chiếc — Chủ nhật bán mấy? Trí Long hoa mắt trộn phép: ba mươi cộng mười hai… à mà mười hai chia bảy… Su Kem đặt củ hành lên bàn: bóc TỪNG LỚP!",
+        "screenText": "đề trùm 2 máy — trộn hay tách?",
+        "visual": "Tờ đề dài cuộn xuống bàn; Trí Long mắt xoáy trôn ốc; Su Kem cầm củ hành hai lớp vỏ, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Gạch đề thành HAI TẦNG. Lớp ngoài — máy GỘP: sáu ngày TBC ba mươi, nhân ra tổng MỘT TRĂM TÁM MƯƠI chiếc — xong, CẤT máy gộp! Lớp trong — máy KÉO CÂN: Chủ nhật hơn TBC cả bảy ngày mười hai — phần hơn chảy xuống SÁU ngày cũ: cân nhích HAI nấc, lên BA MƯƠI HAI; Chủ nhật bằng ba hai cộng mười hai — BỐN MƯƠI BỐN chiếc!",
+        "screenText": "T1: 30 × 6 = 180 · T2: 30 + 12:6 = 32 → CN = 44",
+        "visual": "Củ hành bóc hai lớp: lớp ngoài ghi máy gộp với tổng 180, lớp trong ghi máy kéo cân với 32 → 44; hai máy đặt hai ngăn riêng.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Trộn máy là nghẹn: mười hai chia bảy — lẻ ngay; ba mươi cộng mười hai bằng bốn hai — thử thì ra ba mốt phẩy bảy: trượt! Còn bài NGƯỢC đi cùng cầu tổng: TBC cả sáu ngày ba mươi, hai ngày đầu TBC hai sáu — lột tổng cả: một trăm tám mươi; trừ năm hai: bốn ngày sau còn MỘT TRĂM HAI TÁM — chia bốn: TBC BA MƯƠI HAI!",
+        "screenText": "12:7 ✗ · 30+12 ✗ · ngược: (180 − 52) : 4 = 32 ✓",
+        "visual": "Hai phép trộn máy nghẹn khói gạch đỏ; đường ngược chạy cầu tổng ba trạm 180 → 128 → 32 mộc xanh.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú củ hành: bài ghép — tách tầng: gộp tổng trước, kéo cân sau!",
+        "screenText": "TÁCH TẦNG: GỘP TRƯỚC — KÉO CÂN SAU!",
+        "visual": "Thẻ thần chú vàng với icon củ hành hai lớp.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Củ hành: TBC sáu ngày ba mươi; Chủ nhật hơn TBC cả bảy ngày mười hai — bóc hai lớp tìm Chủ nhật! Vào bài luyện ngay!",
+        "screenText": "bóc 2 lớp → Chủ nhật = ?",
+        "visual": "Củ hành nguyên đợi bóc; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Bóc củ hành trùm cuối",
+    "problem": "TBC sáu ngày đầu tuần là 30 chiếc. Chủ nhật cửa hàng bán hơn TBC của cả BẢY ngày là 12 chiếc. Hỏi Chủ nhật bán bao nhiêu chiếc?",
+    "steps": [
+      {
+        "show": "Bước 1 — TẦNG 1 (gộp): tổng sáu ngày = 30 × 6 = 180. Cất máy gộp.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Đề này có mấy tầng máy?",
+          "choices": [
+            "2 tầng: gộp rồi kéo cân",
+            "1 tầng gộp",
+            "1 tầng kéo cân"
+          ],
+          "answerKey": {
+            "choice": "2 tầng: gộp rồi kéo cân"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — TẦNG 2 (kéo cân B22): TBC bảy ngày = 30 + 12 : 6 = 32."
+      },
+      {
+        "show": "Bước 3 — Chủ nhật = 32 + 12 = 44 chiếc. Thử: (180 + 44) : 7 = 32 ✓; 44 − 32 = 12 ✓.",
+        "askAfter": {
+          "format": "num",
+          "text": "Nếu Chủ nhật hơn TBC cả bảy ngày 18 chiếc thì Chủ nhật bán ? (30 + 18:6 = 33 → +18)",
+          "answerKey": {
+            "value": 51
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B24.LT6",
+          "text": "TBC cả sáu ngày là 30 chiếc; hai ngày đầu TBC 26 chiếc. Tính TBC của bốn ngày sau.",
+          "answerKey": {
+            "value": 32
+          },
+          "hints": [
+            "Lột tổng cả: 30 × 6.",
+            "(180 − 52) : 4."
+          ],
+          "solutionNarrative": "Tổng bốn ngày sau = 128 → TBC = 32.",
+          "teaches": [
+            "K1"
+          ],
+          "generator": {
+            "template": "TBC gộp {t} của {n} phần tử; nhóm {n1} TBC {t1}. TBC nhóm còn lại?",
+            "constraints": {},
+            "answerRule": "(t×n − t1×n1) : (n − n1)"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B24.LT9",
+          "text": "Sư phụ Trí Dũng ra bài trùm: \"TBC sáu ngày đầu tuần là 30 chiếc. Chủ nhật cửa hàng bán hơn TBC của cả BẢY ngày là 12 chiếc. Hỏi Chủ nhật bán bao nhiêu chiếc?\"",
+          "answerKey": {
+            "value": 44
+          },
+          "hints": [
+            "Tầng 1: tổng 180 — cất máy.",
+            "Tầng 2: máy B22 — nhích 12 : 6."
+          ],
+          "solutionNarrative": "TBC bảy ngày = 32 → Chủ nhật = 44 (thử 224 : 7 = 32 ✓).",
+          "teaches": [
+            "K2",
+            "K3",
+            "K4"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "tf",
+          "text": "(Đúng/Sai?) Ở bài trùm trên, có thể tính nhanh Chủ nhật = 30 + 12 = 42.",
+          "answerKey": {
+            "value": false,
+            "note": "Trộn máy! Phần hơn 12 đo từ TBC BẢY ngày (32), không phải từ 30: Chủ nhật = 44 (thử 222 : 7 = 31,7 ✗ với 42)."
+          },
+          "hints": [
+            "12 đo từ cân nào?",
+            "Thử toàn cục hai đáp."
+          ],
+          "teaches": [
+            "K2",
+            "K4"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.1.4#3@G5"
+      ],
+      "unlockNext": "DCR:KSN5Q1.C6",
+      "award": "huy_hieu_cu_hanh_tbc + mở KỲ SÁT HẠCH CHƯƠNG 6"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "mcq",
+        "text": "Bài ghép 'TBC sáu ngày 30 + Chủ nhật hơn TBC cả bảy ngày 12' giải theo:",
+        "choices": [
+          "hai tầng: gộp tổng trước, kéo cân sau",
+          "một phép: 30 + 12",
+          "một phép: 12 : 7"
+        ],
+        "answerKey": {
+          "choice": "hai tầng: gộp tổng trước, kéo cân sau"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2",
+          "K3"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "num",
+        "text": "TBC cả 6 ngày 30; hai ngày đầu TBC 26 → TBC bốn ngày sau = ?",
+        "answerKey": {
+          "value": 32
+        },
+        "teaches": [
+          "K1"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "num",
+        "text": "Bài trùm chuẩn: Chủ nhật bán ? chiếc",
+        "answerKey": {
+          "value": 44
+        },
+        "teaches": [
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Bài ngược gộp? Bài ghép hai tầng?",
+        "back": "NGƯỢC: tổng cả − tổng nhóm biết = tổng nhóm kia → chia quân số nó ((180 − 52) : 4 = 32). GHÉP: bóc củ hành — TẦNG 1 gộp tổng (30 × 6 = 180), TẦNG 2 kéo cân (30 + 12:6 = 32 → CN 44). Không trộn hai máy; thử toàn cục."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P2 (bài trùm)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con giải bài ngược gộp nhóm và bài trùm hai tầng (gộp tổng trước — kéo cân sau). Con đạt {score}/3, {trapResult} câu bẫy trộn-máy. Con đã đủ điều kiện vào KỲ SÁT HẠCH CHƯƠNG 6!",
+    "homeActivity": "Đưa đề trùm và một cây bút hai màu — con gạch tầng gộp một màu, tầng kéo cân màu kia trước khi tính.",
+    "watchFor": "Nếu con trộn máy (12 : 7 hay 30 + 12) — chạy phép thử toàn cục (S3) cho hai đáp tự lộ."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B24.M3",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "đề dài — trộn máy?",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "30 cộng 12… à mà 12 chia 7…",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Nhớ Bài 16 không — bóc TỪNG LỚP!",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B24_M3_F1.png",
+      "sha256_16": "3a005bae7ae05293"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con giải được bài NGƯỢC gộp nhóm (biết TBC gộp và TBC một nhóm — tìm TBC nhóm còn lại, vẫn qua cầu tổng) và bài GHÉP HAI TẦNG trùm cuối: tách tầng như bóc củ hành — TẦNG 1 gộp tổng, TẦNG 2 kéo cân — không trộn hai máy vào một phép.",
+        "steps": [
+          {
+            "text": "trộn: 12 : 7 · 30 + 12 → thử 31,7"
+          },
+          {
+            "text": "ngược: 180 − 52 = 128 : 4 = 32"
+          },
+          {
+            "text": "hai máy — hai tầng, không trộn"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B24_M3_F2.png",
+      "sha256_16": "e8ade57cb23372b4"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Bài ngược gộp",
+            "text": "tổng cả (TBC gộp × tổng phần tử) − tổng nhóm biết = tổng nhóm kia → chia quân số của nó: (180 − 52) : 4 = 32.",
+            "tone": "navy"
+          },
+          {
+            "label": "Bài ghép hai tầng nhận diện",
+            "text": "đề chứa CẢ 'TBC nhiều ngày' (máy gộp) LẪN 'hơn TBC cả…' (máy kéo cân) — hai máy phải chạy Ở HAI TẦNG riêng, không trộn vào một phép.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "BÀI GHÉP — TÁCH TẦNG: GỘP TỔNG TRƯỚC, KÉO CÂN SAU!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B24_M3_F3.png",
+      "sha256_16": "9869f1aac3a250c3"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "TRÙM HAI TẦNG: GỘP TỔNG TRƯỚC — KÉO CÂN SAU",
+        "steps": [
+          {
+            "text": "TẦNG 1 · gộp",
+            "sub": "tổng sáu ngày = 30 × 6 = 180"
+          },
+          {
+            "text": "TẦNG 2 · kéo cân",
+            "sub": "TBC bảy ngày = 30 + 12 : 6 = 32"
+          },
+          {
+            "text": "Chủ nhật",
+            "sub": "32 + 12 = 44 chiếc"
+          }
+        ],
+        "note": "Bài ngược cùng cầu: tổng cả 180 − 52 = 128 → TBC bốn ngày sau = 32"
+      },
+      "caption": "Hai tầng nối nhau — làm sai thứ tự là lệch ngay",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B24_M3_F4.png",
+      "sha256_16": "17ea64a77ea5eeaf"
+    }
+  ]
 }

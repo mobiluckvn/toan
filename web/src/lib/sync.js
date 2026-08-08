@@ -38,9 +38,26 @@ export const isCloudLearner = (id) => !!id && id !== 'local';
 export const attemptId = (learnerId, sessionId, microId, itemId, seq) =>
   `${learnerId}_${sessionId}_${microId.replace('DL:KSN5Q1.', '')}_${itemId}_${seq}`;
 
+/** Đáp án con gõ có thể là mảng nhiều ô — gọn lại thành một chuỗi đọc được, cắt ngắn */
+export const CHU_TOI_DA = 120;
+export function goiDapAn(v) {
+  const s = Array.isArray(v) ? v.filter((x) => x !== undefined).join(' | ') : String(v ?? '');
+  const g = s.replace(/\s+/g, ' ').trim();
+  return g.length > CHU_TOI_DA ? `${g.slice(0, CHU_TOI_DA - 1)}…` : g;
+}
+
 /**
  * Chuyển nhật ký một phiên học thành các bản ghi attempts.
- * events: [{phase:'practice'|'assess', itemId, ok, tries, hintsUsed, ms, mustPass, bktUnit}]
+ *
+ * MỘT DÒNG CHO MỘT LƯỢT BẤM "Kiểm tra", không phải một dòng cho một câu. Con sai
+ * hai lần rồi mới đúng thì có ba dòng — cô giáo nhìn ra con sai CÁI GÌ trước khi
+ * làm được, chứ không chỉ thấy "cuối cùng cũng xong".
+ *
+ * events: [{phase, itemId, ok, tries, hintsUsed, ms, mustPass, bktUnit,
+ *           answer, expected, mode, revealed}]
+ *   · phase   'practice' | 'assess' | 'check' | 'worked'  (luật bảo mật nhận cả bốn)
+ *   · answer  con gõ/bấm gì — trường quý nhất để cô đoán ra con hiểu sai chỗ nào
+ *   · ms      thời gian làm RIÊNG câu ấy, không phải tính từ lúc mở bài
  */
 export function buildAttempts({
   learnerId, sessionId, microId, bktUnit, events,
@@ -59,6 +76,12 @@ export function buildAttempts({
     hintsUsed: e.hintsUsed ?? 0,
     mustPass: !!e.mustPass,
     ms: e.ms ?? null,
+    /* Con TRẢ LỜI GÌ — không có trường này thì cô chỉ biết "sai", không biết sai ra sao,
+       mà hai con sai hai kiểu khác nhau cần hai cách giúp khác nhau. */
+    answer: e.answer === undefined ? null : goiDapAn(e.answer),
+    expected: e.expected === undefined ? null : goiDapAn(e.expected),
+    mode: e.mode || null,                 // so · bieuthuc · dungsai · chondapan · tuluan
+    revealed: !!e.revealed,               // con chịu thua, đã xem đáp án
     ts,
     // ts là giờ máy của con — con chỉnh đồng hồ máy tính bảng là lệch. serverTs do máy chủ
     // đóng dấu, dùng cho mọi thống kê mà cô giáo nhìn vào.

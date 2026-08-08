@@ -25,14 +25,14 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
   const [lesson, setLesson] = useState(null);
   const [err, setErr] = useState(null);
   const [i, setI] = useState(0);
-  const [log, setLog] = useState({ practice: [], assess: [] });
+  const [log, setLog] = useState({ practice: [], assess: [], raw: [] });
   const [sessionId] = useState(() => newSessionId());
   const [t0] = useState(() => Date.now());
   const [resumed, setResumed] = useState(false);
 
   useEffect(() => {
     let alive = true;
-    setLesson(null); setErr(null); setI(0); setLog({ practice: [], assess: [] }); setResumed(false);
+    setLesson(null); setErr(null); setI(0); setLog({ practice: [], assess: [], raw: [] }); setResumed(false);
     loadLesson(microId).then((d) => alive && setLesson(d)).catch((e) => alive && setErr(e.message));
     return () => { alive = false; };
   }, [microId]);
@@ -57,12 +57,24 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
   if (!lesson) return <div className="p-6 text-mute">Đang mở bài học…</div>;
 
   const go = (d = 1) => setI((x) => Math.max(0, Math.min(flow.length - 1, x + d)));
+  /**
+   * Ghi một lượt bấm "Kiểm tra".
+   *
+   * Hai sổ khác nhau, đừng gộp:
+   *   · L[kind]  — sổ TÓM TẮT, mỗi câu một dòng (dòng sau đè dòng trước). Chấm bài
+   *                dựa vào sổ này, nên nó phải giữ nguyên hình dạng cũ.
+   *   · L.raw    — sổ THÔ, ghi nối đuôi MỌI lượt bấm. Đây là thứ đẩy lên máy chủ:
+   *                con sai hai lần rồi mới đúng thì cô thấy đủ ba lượt.
+   *
+   * Trước đây chỉ ghi 'practice' và 'assess', bỏ trắng 'check' (chốt nhanh) và
+   * 'worked' (câu xen giữa ví dụ) — mất 513/1654 câu, tức 31% số câu con thực làm.
+   */
   const record = (kind, entry) =>
-    setLog((L) => ({
-      ...L,
-      [kind]: [...L[kind].filter((e) => e.id !== entry.id),
-               { ...entry, phase: kind, itemId: entry.id, ms: Date.now() - t0 }],
-    }));
+    setLog((L) => {
+      const day = { ...entry, phase: kind, itemId: entry.id };
+      const tomTat = L[kind] ? { ...L, [kind]: [...L[kind].filter((e) => e.id !== entry.id), day] } : L;
+      return { ...tomTat, raw: [...(L.raw || []), { ...day, at: Date.now() - t0 }] };
+    });
   const jumpTo = (type) => {
     const k = flow.findIndex((s) => s.type === type);
     if (k >= 0) setI(k);
@@ -97,9 +109,11 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
           onFinish={() => onFinish?.(
             gradeMicro(log.assess, lesson.assessment?.passRule || ''),
             lesson,
-            { sessionId, events: [...log.practice, ...log.assess],
+            /* attempts đi từ sổ THÔ (mọi lượt bấm, đủ bốn chặng); tóm tắt tiến độ
+               vẫn đi từ sổ tóm tắt để con số "làm đúng ngay lần đầu" không đổi nghĩa. */
+            { sessionId, events: log.raw, tomTat: [...log.practice, ...log.assess],
               bktUnit: lesson.skills?.bktUnit || null })}
-          onRestart={() => { setI(0); setLog({ practice: [], assess: [] }); onMoveStep?.(microId, 0, flow.length); }}
+          onRestart={() => { setI(0); setLog({ practice: [], assess: [], raw: [] }); onMoveStep?.(microId, 0, flow.length); }}
         />
       </main>
 

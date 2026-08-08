@@ -5,9 +5,11 @@ import AnswerInput from './AnswerInput.jsx';
 export default function AssessItem({ item, index, total, onDone, onNext, isLast }) {
   const [res, setRes] = useState(null);
 
-  const resolve = (r) => {
+  /* Sát hạch chỉ trả lời một lần, nhưng vẫn ghi đủ chi tiết: con bấm gì, mất bao lâu.
+     Câu BẮT BUỘC ĐÚNG mà con chọn nhầm phương án nào — đó là chỗ cô cần nhìn nhất. */
+  const resolve = (r, ct) => {
     setRes(r);
-    onDone?.({ id: item.id, ok: r.ok, mustPass: !!item.mustPass });
+    onDone?.({ id: item.id, ok: r.ok, mustPass: !!item.mustPass, ...ct });
   };
 
   return (

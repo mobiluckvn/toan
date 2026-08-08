@@ -78,8 +78,15 @@ t('runtime còn hạn (Node 20 ngừng hẳn 30/10/2026)',
 t('defineSecret lấy đúng chỗ',
   /from 'firebase-functions\/params'/.test(fnSrc),
   "lấy từ 'firebase-functions/v2' là deploy vỡ ngay bước phân tích");
+/* Firebase coi MỌI export là một Cloud Function. Chốt danh sách theo TÊN chứ không
+   theo số lượng: đếm số thì thêm một hàm mới lại đỏ, mà đổi tên hàm cũ lại vẫn xanh. */
+const HAM_MONG_DOI = ['onAttempt', 'onMicroDone', 'nightlyReport', 'nightlyTeacherBoard',
+                      'refreshTeacherBoard', 'requestOtp', 'verifyOtp'];
 const exported = [...fnSrc.matchAll(/^export const (\w+)/gm)].map((m) => m[1]);
-t(`xuất đúng 6 hàm (${exported.join(', ')})`, exported.length === 6);
+const thieu = HAM_MONG_DOI.filter((h) => !exported.includes(h));
+const thua = exported.filter((h) => !HAM_MONG_DOI.includes(h));
+t(`xuất đúng ${HAM_MONG_DOI.length} hàm (thiếu: ${thieu.join(',') || 'không'} · thừa: ${thua.join(',') || 'không'})`,
+  thieu.length === 0 && thua.length === 0);
 t('không lẫn hàm thường vào danh sách xuất',
   !exported.includes('masteryOf'),
   'Firebase coi mọi export là Cloud Function — hàm thường lọt ra là sinh hàm rác');

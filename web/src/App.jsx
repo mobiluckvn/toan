@@ -71,7 +71,8 @@ export default function App() {
     setProgress((p) => recordMicro(p, microId, grade));
     submitSession({
       learnerId, sessionId: session.sessionId, microId,
-      bktUnit: session.bktUnit, events: session.events || [], grade,
+      bktUnit: session.bktUnit, events: session.events || [],
+      tomTat: session.tomTat || session.events || [], grade,
     }).catch(() => {});                       // mất mạng: đã nằm trong hàng đợi, lần sau gửi
     const { next } = neighborIds(microId, lesson);
     setView(next && grade.pass ? { page: 'lesson', microId: next } : { page: 'home' });

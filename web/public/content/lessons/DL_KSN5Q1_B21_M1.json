@@ -1,614 +1,617 @@
 {
- "title": "Điểm cân sổ bán hàng: TBC = tổng : số số hạng & cây cầu ngược tổng = TBC × n",
- "grade": 5,
- "durationMinutes": 8,
- "skills": {
-  "primary": [
-   "CASE:III.1.1#1"
-  ],
-  "bktUnit": "CASE:III.1.1#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B21",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B20.M3",
-  "next": "DL:KSN5Q1.B21.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B21",
-  "chunks": [
-   "CHUNK:KSN5Q1.B21.S3",
-   "CHUNK:KSN5Q1.B21.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B21.1",
-   "CA:KSN5Q1.B21.2"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B21.1",
-   "TRAP:KSN5Q1.B21.2"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con tính được TBC = TỔNG : SỐ SỐ HẠNG (không phải \"số đứng giữa danh sách\"!), kiểm bằng ước lượng TBC nằm giữa số bé nhất và lớn nhất — và đi thạo CHIỀU NGƯỢC của cây cầu: thấy TBC là nhân ra TỔNG trước đã, để tìm số giấu mặt.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
-  "kidText": "Trung bình cộng bằng tổng chia số số hạng, không phải số đứng giữa danh sách. Thấy trung bình cộng là nhân ra tổng trước đã."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "TBC = tổng : số số hạng. Đó là ĐỊNH NGHĨA duy nhất — TBC nằm ở phép chia, không nằm ở \"chỗ ngồi giữa danh sách\" (đổi chỗ các số, TBC vẫn thế)."
-   },
-   {
-    "id": "K2",
-    "text": "Kiểm nhanh: TBC luôn nằm GIỮA số bé nhất và số lớn nhất — điểm cân không thể lọt ra ngoài hai đầu gánh."
-   },
-   {
-    "id": "K3",
-    "text": "Cây cầu hai chiều: chiều xuôi tổng : n = TBC; chiều ngược TỔNG = TBC × n. Phản xạ: đọc thấy chữ TBC trong đề là viết ngay tổng ra giấy."
-   },
-   {
-    "id": "K4",
-    "text": "Tìm số giấu mặt: tổng cả nhóm (TBC × n) − tổng các số đã biết = số còn thiếu; thử lại bằng phép chia xuôi."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: SỔ BÁN HÀNG CỦA TIỆM BÁNH SU KEM. Năm ngày bán 22, 38, 31, 29, 35 chiếc — TBC là ĐIỂM CÂN: gom hết bánh năm ngày vào một rổ (tổng 155) rồi chia đều lại cho năm ngày — mỗi ngày 31 chiếc. Con số 31 trùng với số \"đứng giữa danh sách\" chỉ là TÌNH CỜ: xáo trộn thứ tự các ngày, kẻ ngồi giữa đổi mặt nhưng điểm cân vẫn 31 — TBC nằm ở phép chia, không nằm ở chỗ ngồi! Và giữa TỔNG với TBC có một CÂY CẦU HAI CHIỀU: qua xuôi thì chia, qua ngược thì nhân. Đề giấu một ngày bán? Thấy chữ TBC — qua cầu ngược NHÂN RA TỔNG TRƯỚC ĐÃ (25 × 4 = 100), rồi trừ các ngày đã biết: số giấu mặt lộ ra.",
-  "canonicalExamples": [
-   {
-    "case": "chiều xuôi (ca lõi)",
-    "problem": "Tính trung bình cộng của: 22 ; 38 ; 31 ; 29 ; 35.",
-    "solution": "Tổng = 155 → TBC = 155 : 5 = 31. Kiểm: 22 < 31 < 38 ✓.",
-    "why": "Ca đề A câu 1 — kèm bẫy 'số ngồi giữa'."
-   },
-   {
-    "case": "chiều ngược ra tổng (ca cầu)",
-    "problem": "Trung bình mỗi ngày bán 31 chiếc. Hỏi 5 ngày bán tất cả bao nhiêu chiếc?",
-    "solution": "Tổng = TBC × n = 31 × 5 = 155 chiếc.",
-    "why": "Ca LT3 — chiều ngược thuần."
-   },
-   {
-    "case": "số giấu mặt (ca bẫy)",
-    "problem": "TBC của bốn số là 25. Ba số là 20 ; 24 ; 28. Tìm số thứ tư.",
-    "solution": "Thấy TBC — nhân ra tổng: 25 × 4 = 100. Số thứ tư = 100 − (20 + 24 + 28) = 100 − 72 = 28. Thử: 100 : 4 = 25 ✓.",
-    "why": "Ca đề A câu 3 — trap quên chiều ngược."
-   }
-  ],
-  "numberRange": "Lớp 5: dãy ≤ 6 số; tổng ≤ 500.",
-  "misconceptions": [
-   {
-    "wrong": "Khoanh \"số đứng giữa danh sách\" làm TBC (dãy 22; 38; 31; 29; 35 → chọn 31 vì nó ngồi giữa).",
-    "signal": "Không có phép chia nào trong bài làm.",
-    "fix": "K1 — TBC chỉ có một định nghĩa: tổng chia số số hạng; thử đổi chỗ các số — chỗ ngồi đổi, TBC không đổi.",
-    "counterExample": "Dãy 1; 100; 2: kẻ ngồi giữa là 100 mà TBC = 103 : 3 ≈ 34 — lệch trời vực!"
-   },
-   {
-    "wrong": "Đề cho TBC mà không nhân ra tổng, loay hoay cộng trừ trực tiếp trên TBC (25 − 20 − 24…).",
-    "signal": "Không thấy phép TBC × n ở đầu bài giải.",
-    "fix": "K3 — phản xạ hóa: đọc thấy TBC là viết ngay 'tổng = 25 × 4 = 100' rồi mới làm tiếp.",
-    "counterExample": "Không có tổng thì số thứ tư biết trừ vào đâu?"
-   }
-  ],
-  "vocabulary": [
-   "sổ bán hàng",
-   "điểm cân",
-   "gom vào rổ — chia đều lại",
-   "cây cầu hai chiều",
-   "số giấu mặt"
-  ],
-  "mantra": "TBC NẰM Ở PHÉP CHIA — THẤY TBC, NHÂN RA TỔNG TRƯỚC ĐÃ!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "155 : 5 = ?",
-    "answerKey": {
-     "value": 31
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "ôn chia nhẩm (hạt mầm)",
-   "message": "Ôn chia nhẩm rồi mở sổ bán hàng nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Sổ bán hàng tuần này: 22, 38, 31, 29, 35. Sư phụ hỏi: \"Trung bình mỗi ngày bán mấy chiếc?\" Trí Long khoanh vút số 31: \"Nó đứng chính giữa danh sách!\" Su Kem xáo trộn thứ tự các trang sổ: \"Giờ 29 ngồi giữa — TBC đổi theo à?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "31 vì… ngồi giữa?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để gom bánh vào rổ!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
+  "title": "Điểm cân sổ bán hàng: TBC = tổng : số số hạng & cây cầu ngược tổng = TBC × n",
+  "grade": 5,
+  "durationMinutes": 8,
+  "skills": {
+    "primary": [
+      "CASE:III.1.1#1"
     ],
-    "narration": "TBC là ĐIỂM CÂN: gom hết bánh năm ngày vào một rổ — tổng MỘT TRĂM NĂM LĂM — rồi chia đều lại cho năm ngày: mỗi ngày BA MƯƠI MỐT chiếc. Số 31 trùng kẻ-ngồi-giữa chỉ là tình cờ: xáo trộn sổ, chỗ ngồi đổi mà điểm cân vẫn 31! Kiểm nhanh: 31 nằm giữa 22 và 38 — điểm cân không lọt ra ngoài hai đầu gánh.",
-    "display": {
-     "type": "balance_basket_interactive",
-     "spec": {
-      "days": [
-       22,
-       38,
-       31,
-       29,
-       35
-      ],
-      "total": 155,
-      "tbc": 31,
-      "check": "22 < 31 < 38"
-     }
-    },
-    "interaction": {
-     "type": "pool_and_share",
-     "answerKey": {
-      "value": 31
-     },
-     "successMessage": "155 : 5 = 31 — TBC nằm ở phép chia, không ở chỗ ngồi!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "num",
-     "text": "Tính TBC của: 12 ; 15 ; 18.",
-     "answerKey": {
-      "value": 15
-     },
-     "wrongFeedback": "Tổng 45 chia 3.",
-     "objective": "O1",
-     "teaches": [
-      "K1"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K3",
-     "K4"
+    "bktUnit": "CASE:III.1.1#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B21",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B20.M3",
+    "next": "DL:KSN5Q1.B21.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B21",
+    "chunks": [
+      "CHUNK:KSN5Q1.B21.S3",
+      "CHUNK:KSN5Q1.B21.S4"
     ],
-    "narration": "Cây cầu hai chiều: qua xuôi thì CHIA, qua ngược thì NHÂN. Đề giấu mặt: TBC bốn số là 25, ba số là 20, 24, 28 — tìm số thứ tư. Trí Long loay hoay trừ thẳng trên 25… Phản xạ đúng: thấy TBC — NHÂN RA TỔNG trước đã: 25 nhân 4 bằng MỘT TRĂM! Trừ ba số đã biết — bảy mươi hai: số giấu mặt là HAI MƯƠI TÁM. Thử: 100 chia 4 đúng 25!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "thấy TBC → tổng = 25 × 4 = 100",
-      "số thứ tư = 100 − 72 = 28",
-      "thử: 100 : 4 = 25 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai thần chú sổ bán hàng: TBC nằm ở phép chia — không nằm ở chỗ ngồi! Thấy TBC — nhân ra tổng trước đã!",
-    "display": {
-     "type": "mantra_card",
-     "text": "THẤY TBC — NHÂN RA TỔNG TRƯỚC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 88,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "cases": [
+      "CA:KSN5Q1.B21.1",
+      "CA:KSN5Q1.B21.2"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B21.1",
+      "TRAP:KSN5Q1.B21.2"
+    ]
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con tính được TBC = TỔNG : SỐ SỐ HẠNG (không phải \"số đứng giữa danh sách\"!), kiểm bằng ước lượng TBC nằm giữa số bé nhất và lớn nhất — và đi thạo CHIỀU NGƯỢC của cây cầu: thấy TBC là nhân ra TỔNG trước đã, để tìm số giấu mặt.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
+    "kidText": "Trung bình cộng bằng tổng chia số số hạng, không phải số đứng giữa danh sách. Thấy trung bình cộng là nhân ra tổng trước đã."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Sổ bán hàng tuần này: hai hai, ba tám, ba mốt, hai chín, ba lăm. Sư phụ hỏi: trung bình mỗi ngày bán mấy chiếc? Trí Long khoanh vút số ba mốt: nó đứng chính giữa danh sách! Su Kem xáo trộn thứ tự các trang sổ: giờ hai chín ngồi giữa — TBC đổi theo à?",
-    "screenText": "22 · 38 · 31 · 29 · 35 — TBC = 31 vì ngồi giữa?",
-    "visual": "Quầy tiệm bánh với sổ năm trang; Trí Long khoanh đỏ số giữa; Su Kem tráo trang sổ, dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 20
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "TBC là ĐIỂM CÂN: gom hết bánh năm ngày vào một rổ — tổng MỘT TRĂM NĂM LĂM — rồi chia đều lại cho năm ngày: mỗi ngày BA MƯƠI MỐT chiếc. Số ba mốt trùng kẻ-ngồi-giữa chỉ là tình cờ: xáo sổ, chỗ ngồi đổi mà điểm cân vẫn ba mốt! Kiểm nhanh: ba mốt nằm giữa hai hai và ba tám — điểm cân không lọt ra ngoài hai đầu gánh!",
-    "screenText": "tổng 155 : 5 = 31 · 22 < 31 < 38 ✓",
-    "visual": "Năm chồng bánh cao thấp đổ vào một rổ lớn rồi chia lại thành năm chồng bằng nhau 31; thước cân nằm giữa hai đầu 22–38.",
-    "assets": [],
-    "duration": 26
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Cây cầu hai chiều: qua xuôi thì CHIA, qua ngược thì NHÂN. Đề giấu mặt: TBC bốn số là hai lăm, ba số là hai mươi, hai tư, hai tám. Phản xạ đúng: thấy TBC — NHÂN RA TỔNG trước: hai lăm nhân bốn bằng MỘT TRĂM! Trừ bảy hai: số giấu mặt là HAI MƯƠI TÁM. Thử: một trăm chia bốn đúng hai lăm!",
-    "screenText": "tổng = 25 × 4 = 100 → 100 − 72 = 28 ✓",
-    "visual": "Cây cầu hai làn TỔNG ↔ TBC với mũi tên nhân/chia; chiếc mặt nạ '?' rơi xuống lộ số 28; mộc thử xanh.",
-    "assets": [],
-    "duration": 23
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Hai thần chú sổ bán hàng: TBC nằm ở phép chia — không nằm ở chỗ ngồi! Thấy TBC — nhân ra tổng trước đã!",
-    "screenText": "TBC Ở PHÉP CHIA · THẤY TBC — NHÂN RA TỔNG!",
-    "visual": "Thẻ thần chú vàng với icon rổ bánh và cây cầu.",
-    "assets": [],
-    "duration": 9
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Sổ của con: TBC bốn số là hai lăm, ba số là hai mươi, hai tư, hai tám — tìm số giấu mặt! Vào bài luyện ngay!",
-    "screenText": "TBC 25 · 20, 24, 28 → số thứ tư?",
-    "visual": "Trang sổ với ô trống '?' chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P4",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Điểm cân và số giấu mặt",
-  "problem": "(a) Tính TBC của 22 ; 38 ; 31 ; 29 ; 35. (b) TBC bốn số là 25, ba số là 20 ; 24 ; 28 — tìm số thứ tư.",
-  "steps": [
-   {
-    "show": "Bước 1 — Câu (a): tổng = 155 → TBC = 155 : 5 = 31 (kiểm: nằm giữa 22 và 38 ✓).",
-    "askBefore": {
-     "format": "mcq",
-     "text": "TBC được tính bằng:",
-     "choices": [
-      "tổng : số số hạng",
-      "số đứng giữa danh sách",
-      "số lớn nhất trừ bé nhất"
-     ],
-     "answerKey": {
-      "choice": "tổng : số số hạng"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Câu (b): thấy TBC → tổng = 25 × 4 = 100."
-   },
-   {
-    "show": "Bước 3 — Số thứ tư = 100 − (20 + 24 + 28) = 28. Thử: 100 : 4 = 25 ✓.",
-    "askAfter": {
-     "format": "num",
-     "text": "TBC ba số là 30, hai số là 28 và 35 — số thứ ba?",
-     "answerKey": {
-      "value": 27
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B21.LT1",
-     "text": "Tính trung bình cộng của: 22 ; 38 ; 31 ; 29 ; 35.",
-     "answerKey": {
-      "value": 31
-     },
-     "hints": [
-      "Gom vào rổ: tổng bao nhiêu?",
-      "155 : 5."
-     ],
-     "solutionNarrative": "(22 + 38 + 31 + 29 + 35) : 5 = 155 : 5 = 31.",
-     "teaches": [
-      "K1",
-      "K2"
-     ],
-     "generator": {
-      "template": "Tính TBC của {n} số cho trước.",
-      "constraints": {
-       "n": "3–6"
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "TBC = tổng : số số hạng. Đó là ĐỊNH NGHĨA duy nhất — TBC nằm ở phép chia, không nằm ở \"chỗ ngồi giữa danh sách\" (đổi chỗ các số, TBC vẫn thế)."
       },
-      "answerRule": "tổng : n, kiểm giữa min–max"
-     }
-    },
-    {
-     "id": "P2",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B21.LT2",
-     "text": "Tính trung bình cộng của: 12 ; 15 ; 18.",
-     "answerKey": {
-      "value": 15
-     },
-     "hints": [
-      "Tổng 45.",
-      "45 : 3."
-     ],
-     "solutionNarrative": "45 : 3 = 15.",
-     "teaches": [
-      "K1"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "P3",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B21.LT3",
-     "text": "Trung bình mỗi ngày bán 31 chiếc bánh. Hỏi 5 ngày bán được tất cả bao nhiêu chiếc?",
-     "answerKey": {
-      "value": 155
-     },
-     "hints": [
-      "Qua cầu ngược: nhân.",
-      "31 × 5."
-     ],
-     "solutionNarrative": "Tổng = 31 × 5 = 155 chiếc.",
-     "teaches": [
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P4",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B21.LT6",
-     "text": "Trung bình cộng của bốn số là 25. Ba số trong đó là 20 ; 24 ; 28. Tìm số thứ tư.",
-     "answerKey": {
-      "value": 28
-     },
-     "hints": [
-      "Thấy TBC — nhân ra tổng: 25 × 4.",
-      "100 − 72."
-     ],
-     "solutionNarrative": "Tổng 100 → số thứ tư = 100 − 72 = 28 (thử 100 : 4 = 25 ✓).",
-     "teaches": [
-      "K3",
-      "K4"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.1.1#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B21.M2",
-   "award": "huy_hieu_diem_can"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B21.QZ1",
-    "text": "(Đúng/Sai?) Trung bình cộng của một dãy số luôn nằm giữa số bé nhất và số lớn nhất của dãy.",
-    "answerKey": {
-     "value": true
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B21.QZ4",
-    "text": "TBC của 4 số là 25 thì tổng bốn số là:",
-    "choices": [
-     "100",
-     "25",
-     "29"
+      {
+        "id": "K2",
+        "text": "Kiểm nhanh: TBC luôn nằm GIỮA số bé nhất và số lớn nhất — điểm cân không thể lọt ra ngoài hai đầu gánh."
+      },
+      {
+        "id": "K3",
+        "text": "Cây cầu hai chiều: chiều xuôi tổng : n = TBC; chiều ngược TỔNG = TBC × n. Phản xạ: đọc thấy chữ TBC trong đề là viết ngay tổng ra giấy."
+      },
+      {
+        "id": "K4",
+        "text": "Tìm số giấu mặt: tổng cả nhóm (TBC × n) − tổng các số đã biết = số còn thiếu; thử lại bằng phép chia xuôi."
+      }
     ],
-    "answerKey": {
-     "choice": "100"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "num",
-    "text": "Tính TBC của: 10 ; 20 ; 30 ; 40.",
-    "answerKey": {
-     "value": 25
-    },
-    "teaches": [
-     "K1"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "TBC định nghĩa? Cây cầu hai chiều?",
-    "back": "TBC = TỔNG : SỐ SỐ HẠNG (nằm ở phép chia, không ở chỗ ngồi giữa danh sách!); luôn nằm giữa min và max. Cầu ngược: TỔNG = TBC × n — thấy TBC là nhân ra tổng trước, rồi trừ các số đã biết tìm số giấu mặt."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P4 (số giấu mặt)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học TBC là điểm cân (tổng chia số số hạng) và cây cầu ngược tổng = TBC × n. Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Mở sổ chi tiêu 3 ngày bất kỳ — con gom tổng, chia 3, và kiểm 'điểm cân có nằm giữa ngày ít nhất và nhiều nhất không'.",
-  "watchFor": "Nếu con khoanh số ngồi giữa — xáo thứ tự dãy (S1) rồi hỏi TBC có đổi không."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B21.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "31 vì… ngồi giữa?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Nó đứng chính giữa danh sách!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Giờ 29 ngồi giữa — TBC đổi theo à?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B21_M1_F1.png",
-   "sha256_16": "6dc667d6707e5c7c"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con tính được TBC = TỔNG : SỐ SỐ HẠNG (không phải \"số đứng giữa danh sách\"!), kiểm bằng ước lượng TBC nằm giữa số bé nhất và lớn nhất — và đi thạo CHIỀU NGƯỢC của cây cầu: thấy TBC là nhân ra TỔNG trước đã, để tìm số giấu mặt.",
-    "steps": [
-     {
-      "text": "thấy TBC → tổng = 25 × 4 = 100"
-     },
-     {
-      "text": "số thứ tư = 100 − 72 = 28"
-     },
-     {
-      "text": "thử: 100 : 4 = 25"
-     }
+    "mechanism": "Hình ảnh brand: SỔ BÁN HÀNG CỦA TIỆM BÁNH SU KEM. Năm ngày bán 22, 38, 31, 29, 35 chiếc — TBC là ĐIỂM CÂN: gom hết bánh năm ngày vào một rổ (tổng 155) rồi chia đều lại cho năm ngày — mỗi ngày 31 chiếc. Con số 31 trùng với số \"đứng giữa danh sách\" chỉ là TÌNH CỜ: xáo trộn thứ tự các ngày, kẻ ngồi giữa đổi mặt nhưng điểm cân vẫn 31 — TBC nằm ở phép chia, không nằm ở chỗ ngồi! Và giữa TỔNG với TBC có một CÂY CẦU HAI CHIỀU: qua xuôi thì chia, qua ngược thì nhân. Đề giấu một ngày bán? Thấy chữ TBC — qua cầu ngược NHÂN RA TỔNG TRƯỚC ĐÃ (25 × 4 = 100), rồi trừ các ngày đã biết: số giấu mặt lộ ra.",
+    "canonicalExamples": [
+      {
+        "case": "chiều xuôi (ca lõi)",
+        "problem": "Tính trung bình cộng của: 22 ; 38 ; 31 ; 29 ; 35.",
+        "solution": "Tổng = 155 → TBC = 155 : 5 = 31. Kiểm: 22 < 31 < 38 ✓.",
+        "why": "Ca đề A câu 1 — kèm bẫy 'số ngồi giữa'."
+      },
+      {
+        "case": "chiều ngược ra tổng (ca cầu)",
+        "problem": "Trung bình mỗi ngày bán 31 chiếc. Hỏi 5 ngày bán tất cả bao nhiêu chiếc?",
+        "solution": "Tổng = TBC × n = 31 × 5 = 155 chiếc.",
+        "why": "Ca LT3 — chiều ngược thuần."
+      },
+      {
+        "case": "số giấu mặt (ca bẫy)",
+        "problem": "TBC của bốn số là 25. Ba số là 20 ; 24 ; 28. Tìm số thứ tư.",
+        "solution": "Thấy TBC — nhân ra tổng: 25 × 4 = 100. Số thứ tư = 100 − (20 + 24 + 28) = 100 − 72 = 28. Thử: 100 : 4 = 25 ✓.",
+        "why": "Ca đề A câu 3 — trap quên chiều ngược."
+      }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B21_M1_F2.png",
-   "sha256_16": "4855ebe62559b76f"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "TBC = tổng",
-      "text": "số số hạng. Đó là ĐỊNH NGHĨA duy nhất",
-      "tone": "navy"
-     },
-     {
-      "label": "Kiểm nhanh",
-      "text": "TBC luôn nằm GIỮA số bé nhất và số lớn nhất",
-      "tone": "teal"
-     }
+    "numberRange": "Lớp 5: dãy ≤ 6 số; tổng ≤ 500.",
+    "misconceptions": [
+      {
+        "wrong": "Khoanh \"số đứng giữa danh sách\" làm TBC (dãy 22; 38; 31; 29; 35 → chọn 31 vì nó ngồi giữa).",
+        "signal": "Không có phép chia nào trong bài làm.",
+        "fix": "K1 — TBC chỉ có một định nghĩa: tổng chia số số hạng; thử đổi chỗ các số — chỗ ngồi đổi, TBC không đổi.",
+        "counterExample": "Dãy 1; 100; 2: kẻ ngồi giữa là 100 mà TBC = 103 : 3 ≈ 34 — lệch trời vực!"
+      },
+      {
+        "wrong": "Đề cho TBC mà không nhân ra tổng, loay hoay cộng trừ trực tiếp trên TBC (25 − 20 − 24…).",
+        "signal": "Không thấy phép TBC × n ở đầu bài giải.",
+        "fix": "K3 — phản xạ hóa: đọc thấy TBC là viết ngay 'tổng = 25 × 4 = 100' rồi mới làm tiếp.",
+        "counterExample": "Không có tổng thì số thứ tư biết trừ vào đâu?"
+      }
+    ],
+    "vocabulary": [
+      "sổ bán hàng",
+      "điểm cân",
+      "gom vào rổ — chia đều lại",
+      "cây cầu hai chiều",
+      "số giấu mặt"
     ],
     "mantra": "TBC NẰM Ở PHÉP CHIA — THẤY TBC, NHÂN RA TỔNG TRƯỚC ĐÃ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B21_M1_F3.png",
-   "sha256_16": "b862ef13323af18f"
   },
-  {
-   "archetype": "level_bars",
-   "params": {
-    "title": "TBC LÀ ĐIỂM CÂN — KHÔNG PHẢI SỐ ĐỨNG GIỮA DANH SÁCH",
-    "values": [
-     22,
-     38,
-     31,
-     29,
-     35
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "155 : 5 = ?",
+        "answerKey": {
+          "value": 31
+        }
+      }
     ],
-    "labels": [
-     "ngày 1",
-     "ngày 2",
-     "ngày 3",
-     "ngày 4",
-     "ngày 5"
+    "onFail": {
+      "action": "suggest_review",
+      "target": "ôn chia nhẩm (hạt mầm)",
+      "message": "Ôn chia nhẩm rồi mở sổ bán hàng nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Sổ bán hàng tuần này: 22, 38, 31, 29, 35. Sư phụ hỏi: \"Trung bình mỗi ngày bán mấy chiếc?\" Trí Long khoanh vút số 31: \"Nó đứng chính giữa danh sách!\" Su Kem xáo trộn thứ tự các trang sổ: \"Giờ 29 ngồi giữa — TBC đổi theo à?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "31 vì… ngồi giữa?"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để gom bánh vào rổ!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 44,
+        "teaches": [
+          "K1",
+          "K2"
+        ],
+        "narration": "TBC là ĐIỂM CÂN: gom hết bánh năm ngày vào một rổ — tổng MỘT TRĂM NĂM LĂM — rồi chia đều lại cho năm ngày: mỗi ngày BA MƯƠI MỐT chiếc. Số 31 trùng kẻ-ngồi-giữa chỉ là tình cờ: xáo trộn sổ, chỗ ngồi đổi mà điểm cân vẫn 31! Kiểm nhanh: 31 nằm giữa 22 và 38 — điểm cân không lọt ra ngoài hai đầu gánh.",
+        "display": {
+          "type": "balance_basket_interactive",
+          "spec": {
+            "days": [
+              22,
+              38,
+              31,
+              29,
+              35
+            ],
+            "total": 155,
+            "tbc": 31,
+            "check": "22 < 31 < 38"
+          }
+        },
+        "interaction": {
+          "type": "pool_and_share",
+          "answerKey": {
+            "value": 31
+          },
+          "successMessage": "155 : 5 = 31 — TBC nằm ở phép chia, không ở chỗ ngồi!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "num",
+          "text": "Tính TBC của: 12 ; 15 ; 18.",
+          "answerKey": {
+            "value": 15
+          },
+          "wrongFeedback": "Tổng 45 chia 3.",
+          "objective": "O1",
+          "teaches": [
+            "K1"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 42,
+        "teaches": [
+          "K3",
+          "K4"
+        ],
+        "narration": "Cây cầu hai chiều: qua xuôi thì CHIA, qua ngược thì NHÂN. Đề giấu mặt: TBC bốn số là 25, ba số là 20, 24, 28 — tìm số thứ tư. Trí Long loay hoay trừ thẳng trên 25… Phản xạ đúng: thấy TBC — NHÂN RA TỔNG trước đã: 25 nhân 4 bằng MỘT TRĂM! Trừ ba số đã biết — bảy mươi hai: số giấu mặt là HAI MƯƠI TÁM. Thử: 100 chia 4 đúng 25!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "thấy TBC → tổng = 25 × 4 = 100",
+            "số thứ tư = 100 − 72 = 28",
+            "thử: 100 : 4 = 25 ✓"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Hai thần chú sổ bán hàng: TBC nằm ở phép chia — không nằm ở chỗ ngồi! Thấy TBC — nhân ra tổng trước đã!",
+        "display": {
+          "type": "mantra_card",
+          "text": "THẤY TBC — NHÂN RA TỔNG TRƯỚC!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 88,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    },
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Sổ bán hàng tuần này: hai hai, ba tám, ba mốt, hai chín, ba lăm. Sư phụ hỏi: trung bình mỗi ngày bán mấy chiếc? Trí Long khoanh vút số ba mốt: nó đứng chính giữa danh sách! Su Kem xáo trộn thứ tự các trang sổ: giờ hai chín ngồi giữa — TBC đổi theo à?",
+        "screenText": "22 · 38 · 31 · 29 · 35 — TBC = 31 vì ngồi giữa?",
+        "visual": "Quầy tiệm bánh với sổ năm trang; Trí Long khoanh đỏ số giữa; Su Kem tráo trang sổ, dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 20
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "TBC là ĐIỂM CÂN: gom hết bánh năm ngày vào một rổ — tổng MỘT TRĂM NĂM LĂM — rồi chia đều lại cho năm ngày: mỗi ngày BA MƯƠI MỐT chiếc. Số ba mốt trùng kẻ-ngồi-giữa chỉ là tình cờ: xáo sổ, chỗ ngồi đổi mà điểm cân vẫn ba mốt! Kiểm nhanh: ba mốt nằm giữa hai hai và ba tám — điểm cân không lọt ra ngoài hai đầu gánh!",
+        "screenText": "tổng 155 : 5 = 31 · 22 < 31 < 38 ✓",
+        "visual": "Năm chồng bánh cao thấp đổ vào một rổ lớn rồi chia lại thành năm chồng bằng nhau 31; thước cân nằm giữa hai đầu 22–38.",
+        "assets": [],
+        "duration": 26
+      },
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Cây cầu hai chiều: qua xuôi thì CHIA, qua ngược thì NHÂN. Đề giấu mặt: TBC bốn số là hai lăm, ba số là hai mươi, hai tư, hai tám. Phản xạ đúng: thấy TBC — NHÂN RA TỔNG trước: hai lăm nhân bốn bằng MỘT TRĂM! Trừ bảy hai: số giấu mặt là HAI MƯƠI TÁM. Thử: một trăm chia bốn đúng hai lăm!",
+        "screenText": "tổng = 25 × 4 = 100 → 100 − 72 = 28 ✓",
+        "visual": "Cây cầu hai làn TỔNG ↔ TBC với mũi tên nhân/chia; chiếc mặt nạ '?' rơi xuống lộ số 28; mộc thử xanh.",
+        "assets": [],
+        "duration": 23
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Hai thần chú sổ bán hàng: TBC nằm ở phép chia — không nằm ở chỗ ngồi! Thấy TBC — nhân ra tổng trước đã!",
+        "screenText": "TBC Ở PHÉP CHIA · THẤY TBC — NHÂN RA TỔNG!",
+        "visual": "Thẻ thần chú vàng với icon rổ bánh và cây cầu.",
+        "assets": [],
+        "duration": 9
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Sổ của con: TBC bốn số là hai lăm, ba số là hai mươi, hai tư, hai tám — tìm số giấu mặt! Vào bài luyện ngay!",
+        "screenText": "TBC 25 · 20, 24, 28 → số thứ tư?",
+        "visual": "Trang sổ với ô trống '?' chờ; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P4",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Điểm cân và số giấu mặt",
+    "problem": "(a) Tính TBC của 22 ; 38 ; 31 ; 29 ; 35. (b) TBC bốn số là 25, ba số là 20 ; 24 ; 28 — tìm số thứ tư.",
+    "steps": [
+      {
+        "show": "Bước 1 — Câu (a): tổng = 155 → TBC = 155 : 5 = 31 (kiểm: nằm giữa 22 và 38 ✓).",
+        "askBefore": {
+          "format": "mcq",
+          "text": "TBC được tính bằng:",
+          "choices": [
+            "tổng : số số hạng",
+            "số đứng giữa danh sách",
+            "số lớn nhất trừ bé nhất"
+          ],
+          "answerKey": {
+            "choice": "tổng : số số hạng"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Câu (b): thấy TBC → tổng = 25 × 4 = 100."
+      },
+      {
+        "show": "Bước 3 — Số thứ tư = 100 − (20 + 24 + 28) = 28. Thử: 100 : 4 = 25 ✓.",
+        "askAfter": {
+          "format": "num",
+          "text": "TBC ba số là 30, hai số là 28 và 35 — số thứ ba?",
+          "answerKey": {
+            "value": 27
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B21.LT1",
+          "text": "Tính trung bình cộng của: 22 ; 38 ; 31 ; 29 ; 35.",
+          "answerKey": {
+            "value": 31
+          },
+          "hints": [
+            "Gom vào rổ: tổng bao nhiêu?",
+            "155 : 5."
+          ],
+          "solutionNarrative": "(22 + 38 + 31 + 29 + 35) : 5 = 155 : 5 = 31.",
+          "teaches": [
+            "K1",
+            "K2"
+          ],
+          "generator": {
+            "template": "Tính TBC của {n} số cho trước.",
+            "constraints": {
+              "n": "3–6"
+            },
+            "answerRule": "tổng : n, kiểm giữa min–max"
+          }
+        },
+        {
+          "id": "P2",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B21.LT2",
+          "text": "Tính trung bình cộng của: 12 ; 15 ; 18.",
+          "answerKey": {
+            "value": 15
+          },
+          "hints": [
+            "Tổng 45.",
+            "45 : 3."
+          ],
+          "solutionNarrative": "45 : 3 = 15.",
+          "teaches": [
+            "K1"
+          ]
+        }
+      ],
+      "standard": [
+        {
+          "id": "P3",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B21.LT3",
+          "text": "Trung bình mỗi ngày bán 31 chiếc bánh. Hỏi 5 ngày bán được tất cả bao nhiêu chiếc?",
+          "answerKey": {
+            "value": 155
+          },
+          "hints": [
+            "Qua cầu ngược: nhân.",
+            "31 × 5."
+          ],
+          "solutionNarrative": "Tổng = 31 × 5 = 155 chiếc.",
+          "teaches": [
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P4",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B21.LT6",
+          "text": "Trung bình cộng của bốn số là 25. Ba số trong đó là 20 ; 24 ; 28. Tìm số thứ tư.",
+          "answerKey": {
+            "value": 28
+          },
+          "hints": [
+            "Thấy TBC — nhân ra tổng: 25 × 4.",
+            "100 − 72."
+          ],
+          "solutionNarrative": "Tổng 100 → số thứ tư = 100 − 72 = 28 (thử 100 : 4 = 25 ✓).",
+          "teaches": [
+            "K3",
+            "K4"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.1.1#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B21.M2",
+      "award": "huy_hieu_diem_can"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B21.QZ1",
+        "text": "(Đúng/Sai?) Trung bình cộng của một dãy số luôn nằm giữa số bé nhất và số lớn nhất của dãy.",
+        "answerKey": {
+          "value": true
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B21.QZ4",
+        "text": "TBC của 4 số là 25 thì tổng bốn số là:",
+        "choices": [
+          "100",
+          "25",
+          "29"
+        ],
+        "answerKey": {
+          "choice": "100"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K3"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "num",
+        "text": "Tính TBC của: 10 ; 20 ; 30 ; 40.",
+        "answerKey": {
+          "value": 25
+        },
+        "teaches": [
+          "K1"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "TBC định nghĩa? Cây cầu hai chiều?",
+        "back": "TBC = TỔNG : SỐ SỐ HẠNG (nằm ở phép chia, không ở chỗ ngồi giữa danh sách!); luôn nằm giữa min và max. Cầu ngược: TỔNG = TBC × n — thấy TBC là nhân ra tổng trước, rồi trừ các số đã biết tìm số giấu mặt."
+      }
     ],
-    "mean": 31,
-    "mean_label": "TBC 31",
-    "verdict": "tổng 155 : 5 số = 31  ·  kiểm: 22 < 31 < 38 ✓",
-    "note": "Cây cầu ngược: biết TBC thì tổng = TBC × n = 31 × 5 = 155"
-   },
-   "caption": "TBC luôn nằm giữa số bé nhất và số lớn nhất — đó là phép thử nhanh",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B21_M1_F4.png",
-   "sha256_16": "52fb41828b88ca98"
-  }
- ]
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P4 (số giấu mặt)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học TBC là điểm cân (tổng chia số số hạng) và cây cầu ngược tổng = TBC × n. Con đạt {score}/3, {trapResult} câu bẫy.",
+    "homeActivity": "Mở sổ chi tiêu 3 ngày bất kỳ — con gom tổng, chia 3, và kiểm 'điểm cân có nằm giữa ngày ít nhất và nhiều nhất không'.",
+    "watchFor": "Nếu con khoanh số ngồi giữa — xáo thứ tự dãy (S1) rồi hỏi TBC có đổi không."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B21.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "31 vì… ngồi giữa?",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "Nó đứng chính giữa danh sách!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "Giờ 29 ngồi giữa — TBC đổi theo à?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B21_M1_F1.png",
+      "sha256_16": "6dc667d6707e5c7c"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con tính được TBC = TỔNG : SỐ SỐ HẠNG (không phải \"số đứng giữa danh sách\"!), kiểm bằng ước lượng TBC nằm giữa số bé nhất và lớn nhất — và đi thạo CHIỀU NGƯỢC của cây cầu: thấy TBC là nhân ra TỔNG trước đã, để tìm số giấu mặt.",
+        "steps": [
+          {
+            "text": "thấy TBC → tổng = 25 × 4 = 100"
+          },
+          {
+            "text": "số thứ tư = 100 − 72 = 28"
+          },
+          {
+            "text": "thử: 100 : 4 = 25"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B21_M1_F2.png",
+      "sha256_16": "4855ebe62559b76f"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "TBC = tổng",
+            "text": "số số hạng. Đó là ĐỊNH NGHĨA duy nhất",
+            "tone": "navy"
+          },
+          {
+            "label": "Kiểm nhanh",
+            "text": "TBC luôn nằm GIỮA số bé nhất và số lớn nhất",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "TBC NẰM Ở PHÉP CHIA — THẤY TBC, NHÂN RA TỔNG TRƯỚC ĐÃ!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B21_M1_F3.png",
+      "sha256_16": "b862ef13323af18f"
+    },
+    {
+      "archetype": "level_bars",
+      "params": {
+        "title": "TBC LÀ ĐIỂM CÂN — KHÔNG PHẢI SỐ ĐỨNG GIỮA DANH SÁCH",
+        "values": [
+          22,
+          38,
+          31,
+          29,
+          35
+        ],
+        "labels": [
+          "ngày 1",
+          "ngày 2",
+          "ngày 3",
+          "ngày 4",
+          "ngày 5"
+        ],
+        "mean": 31,
+        "mean_label": "TBC 31",
+        "verdict": "tổng 155 : 5 số = 31  ·  kiểm: 22 < 31 < 38 ✓",
+        "note": "Cây cầu ngược: biết TBC thì tổng = TBC × n = 31 × 5 = 155"
+      },
+      "caption": "TBC luôn nằm giữa số bé nhất và số lớn nhất — đó là phép thử nhanh",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B21_M1_F4.png",
+      "sha256_16": "52fb41828b88ca98"
+    }
+  ]
 }

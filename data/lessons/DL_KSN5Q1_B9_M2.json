@@ -1,614 +1,617 @@
 {
- "title": "Số hợp không có dấu hiệu riêng — tháo cặp NGUYÊN TỐ CÙNG NHAU",
- "grade": 5,
- "durationMinutes": 8,
- "skills": {
-  "primary": [
-   "CASE:I.6.2#1"
-  ],
-  "bktUnit": "CASE:I.6.2#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B9",
-  "order": 2,
-  "prev": "DL:KSN5Q1.B9.M1",
-  "next": "DL:KSN5Q1.B9.M3"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B9",
-  "chunks": [
-   "CHUNK:KSN5Q1.B9.S4",
-   "CHUNK:KSN5Q1.B9.S5"
-  ],
-  "cases": [],
-  "relatedCa": [
-   "CA:KSN5Q1.B9.2",
-   "CA:KSN5Q1.B9.4"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B9.1",
-   "TRAP:KSN5Q1.B9.3"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con kiểm chia hết cho số hợp (6, 15, 45, 55…) bằng cách THÁO thành cặp thừa số NGUYÊN TỐ CÙNG NHAU rồi khám đủ từng cửa — và biết vì sao không tồn tại \"dấu hiệu tổng cho số 6\", vì sao cấm tháo 45 = 15 × 3.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
-  "kidText": "Số 6 không có dấu hiệu riêng. Con tháo nó thành 2 nhân 3 rồi khám đủ hai cửa — nhưng không phải cặp nào cũng tháo được."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Số hợp KHÔNG có dấu hiệu soi riêng — muốn kiểm phải tháo thành cặp thừa số rồi khám từng cửa: 6 = 2 × 3; 15 = 3 × 5; 45 = 9 × 5; 55 = 11 × 5."
-   },
-   {
-    "id": "K2",
-    "text": "LUẬT THÁO: hai mảnh phải NGUYÊN TỐ CÙNG NHAU (không chung ước ngoài 1). Qua đủ hai cửa như vậy mới chắc chắn chia hết cho tích."
-   },
-   {
-    "id": "K3",
-    "text": "Tháo sai kiểu 45 = 15 × 3 (chung ước 3): có số qua cả cửa 15 lẫn cửa 3 mà vẫn trượt 45 — ví dụ số 15."
-   },
-   {
-    "id": "K4",
-    "text": "Không tồn tại \"dấu hiệu tổng cho 6\": số 15 có tổng 6 mà lẻ. Kiểm 6 = khám cửa CHẴN và cửa TỔNG ⋮ 3."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: CÁNH CỔNG HAI Ổ KHÓA. Số hợp như 45 là cánh cổng không có chìa riêng — phải tháo thành HAI Ổ KHÓA con và mở cả hai. Nhưng luật thợ khóa: hai ổ phải KHÔNG CHUNG RĂNG (nguyên tố cùng nhau). Tháo 45 = 9 × 5: ổ 9 soi tổng, ổ 5 soi đuôi — hai ổ khác răng, mở đủ là cổng bung. Tháo 45 = 15 × 3 là hai ổ CHUNG RĂNG 3: kẻ gian mang chìa 15 (tự động mở luôn được ổ 3) lách qua mà chưa chắc qua nổi cổng 45 — số 15 chính là kẻ đó: qua ổ 15 ✓, qua ổ 3 ✓, nhưng 15 : 45 thì trượt!",
-  "canonicalExamples": [
-   {
-    "case": "cửa đôi số 6 (ca lõi)",
-    "problem": "Tìm chữ số x để số 53x chia hết cho 6.",
-    "solution": "6 = 2 × 3. Cửa TỔNG ⋮ 3: 5 + 3 + x = 8 + x ⋮ 3 → x ∈ {1; 4; 7}. Cửa CHẴN: giữ x chẵn → x = 4. Số 534 = 6 × 89 ✓.",
-    "why": "Ca chuẩn K1 — giao hai cửa."
-   },
-   {
-    "case": "phá tin đồn \"tổng chia 6\" (ca bẫy 1)",
-    "problem": "Bạn Bống nói: \"tổng các chữ số chia hết cho 6 thì số chia hết cho 6\" — đúng không?",
-    "solution": "SAI. Phản chứng: số 15 có tổng 1 + 5 = 6 mà 15 là số LẺ, không chia hết cho 6. Số 6 không có dấu hiệu riêng — phải tháo 2 × 3.",
-    "why": "Bẫy CĐ-9.1 nguyên văn."
-   },
-   {
-    "case": "tháo sai cặp (ca bẫy 2)",
-    "problem": "Kiểm 45 bằng cách tháo 45 = 15 × 3 được không?",
-    "solution": "KHÔNG. 15 và 3 chung ước 3. Kẻ lách luật: số 15 qua cửa 15 ✓ và cửa 3 ✓ nhưng 15 không chia hết 45. Tháo chuẩn: 45 = 9 × 5 (nguyên tố cùng nhau).",
-    "why": "Bẫy CĐ-9.3 với phản ví dụ đắt nhất."
-   }
-  ],
-  "numberRange": "Lớp 5: số hợp 6, 15, 18, 45, 55; số kiểm 2–4 chữ số.",
-  "misconceptions": [
-   {
-    "wrong": "Bịa \"dấu hiệu tổng\" cho 6 (quen tay cộng chữ số cho mọi phép chia hết).",
-    "signal": "Lý giải ⋮ 6 chỉ bằng tổng, quên kiểm chẵn.",
-    "fix": "K4 — số 6 không có dấu hiệu riêng: khám đủ cửa CHẴN và cửa ⋮ 3.",
-    "counterExample": "15: tổng 6 ✓ nhưng lẻ → trượt."
-   },
-   {
-    "wrong": "Tháo cặp chung ước (45 = 15 × 3) vì \"nghe vẫn chặt chẽ\".",
-    "signal": "Hai mảnh tháo ra có ước chung > 1.",
-    "fix": "K2 + K3 — kiểm răng khóa trước khi tháo: 9 và 5 không chung ước → hợp lệ.",
-    "counterExample": "Số 15 qua cả hai cửa 15, 3 mà trượt cổng 45."
-   }
-  ],
-  "vocabulary": [
-   "cổng hai ổ khóa",
-   "nguyên tố cùng nhau (không chung răng)",
-   "kẻ lách luật",
-   "khám đủ từng cửa"
-  ],
-  "mantra": "SÁU KHÔNG CÓ DẤU HIỆU — SÁU LÀ HAI NHÂN BA; THÁO CẶP KHÔNG CHUNG ƯỚC!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "mcq",
-    "text": "Số chia hết cho 3 thì soi gì?",
-    "choices": [
-     "Tổng các chữ số",
-     "Chữ số cuối",
-     "Hiệu xen kẽ"
+  "title": "Số hợp không có dấu hiệu riêng — tháo cặp NGUYÊN TỐ CÙNG NHAU",
+  "grade": 5,
+  "durationMinutes": 8,
+  "skills": {
+    "primary": [
+      "CASE:I.6.2#1"
     ],
-    "answerKey": {
-     "choice": "Tổng các chữ số"
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "DL:KSN5Q1.B3.M3",
-   "message": "Ôn họ tổng ở Bài 3 rồi quay lại xưởng khóa nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Cáo Đề rêu rao giữa chợ: \"Tổng chữ số chia hết cho 6 thì số chia hết cho 6 — dấu hiệu mới toanh, dùng ngay kẻo lỡ!\" Trí Long định chép vào sổ… Su Kem giơ số 15: \"Tổng của nó là 6 đấy — mà nó LẺ kìa!\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "\"dấu hiệu tổng cho 6\" — tin được không?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để vạch mặt tin đồn!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K4"
+    "bktUnit": "CASE:I.6.2#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B9",
+    "order": 2,
+    "prev": "DL:KSN5Q1.B9.M1",
+    "next": "DL:KSN5Q1.B9.M3"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B9",
+    "chunks": [
+      "CHUNK:KSN5Q1.B9.S4",
+      "CHUNK:KSN5Q1.B9.S5"
     ],
-    "narration": "Sự thật: số 6 KHÔNG có chìa riêng — nó là cánh cổng HAI Ổ KHÓA: ổ chẵn và ổ tổng-chia-3. Con thử với 53x: ổ tổng cho x thuộc 1, 4, 7; ổ chẵn gạch 1 và 7 — chỉ x bằng 4 mở được cả hai. Số 534 qua cổng!",
-    "display": {
-     "type": "double_lock_interactive",
-     "spec": {
-      "number": "53x",
-      "lock1": "tổng 8+x ⋮ 3 → {1;4;7}",
-      "lock2": "chẵn",
-      "answer": 4
-     }
-    },
-    "interaction": {
-     "type": "intersect_sets",
-     "answerKey": {
-      "value": 4
-     },
-     "successMessage": "x = 4 — hai ổ cùng mở: 534 = 6 × 89 ✓"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 16,
-    "item": {
-     "format": "tf",
-     "text": "(Đúng/Sai?) Số có tổng chữ số chia hết cho 6 thì chia hết cho 6.",
-     "answerKey": {
-      "value": false
-     },
-     "wrongFeedback": "Số 15: tổng 6 mà lẻ — số 6 không có dấu hiệu riêng!",
-     "objective": "O1",
-     "teaches": [
-      "K4"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K3"
+    "cases": [],
+    "relatedCa": [
+      "CA:KSN5Q1.B9.2",
+      "CA:KSN5Q1.B9.4"
     ],
-    "narration": "Bẫy tinh vi hơn: \"kiểm 45 thì tháo 15 nhân 3 cũng được chứ gì?\" Coi chừng — 15 và 3 CHUNG RĂNG số 3! Kẻ lách luật xuất hiện: số 15 qua ổ 15, qua luôn ổ 3, mà 15 chia 45 thì trượt thẳng cẳng! Luật thợ khóa: hai ổ phải KHÔNG chung ước — tháo 45 = 9 × 5: ổ 9 soi tổng, ổ 5 soi đuôi, khác răng hoàn toàn.",
-    "display": {
-     "type": "counter_example",
-     "cases": [
+    "traps": [
+      "TRAP:KSN5Q1.B9.1",
+      "TRAP:KSN5Q1.B9.3"
+    ]
+  },
+  "objective": {
+    "id": "O1",
+    "text": "Con kiểm chia hết cho số hợp (6, 15, 45, 55…) bằng cách THÁO thành cặp thừa số NGUYÊN TỐ CÙNG NHAU rồi khám đủ từng cửa — và biết vì sao không tồn tại \"dấu hiệu tổng cho số 6\", vì sao cấm tháo 45 = 15 × 3.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
+    "kidText": "Số 6 không có dấu hiệu riêng. Con tháo nó thành 2 nhân 3 rồi khám đủ hai cửa — nhưng không phải cặp nào cũng tháo được."
+  },
+  "knowledgeCore": {
+    "statements": [
       {
-       "input": "45 = 15 × 3",
-       "output": "số 15 lách qua ✗",
-       "valid": false,
-       "reason": "chung ước 3"
+        "id": "K1",
+        "text": "Số hợp KHÔNG có dấu hiệu soi riêng — muốn kiểm phải tháo thành cặp thừa số rồi khám từng cửa: 6 = 2 × 3; 15 = 3 × 5; 45 = 9 × 5; 55 = 11 × 5."
       },
       {
-       "input": "45 = 9 × 5",
-       "output": "kín kẽ ✓",
-       "valid": true,
-       "reason": "nguyên tố cùng nhau"
+        "id": "K2",
+        "text": "LUẬT THÁO: hai mảnh phải NGUYÊN TỐ CÙNG NHAU (không chung ước ngoài 1). Qua đủ hai cửa như vậy mới chắc chắn chia hết cho tích."
+      },
+      {
+        "id": "K3",
+        "text": "Tháo sai kiểu 45 = 15 × 3 (chung ước 3): có số qua cả cửa 15 lẫn cửa 3 mà vẫn trượt 45 — ví dụ số 15."
+      },
+      {
+        "id": "K4",
+        "text": "Không tồn tại \"dấu hiệu tổng cho 6\": số 15 có tổng 6 mà lẻ. Kiểm 6 = khám cửa CHẴN và cửa TỔNG ⋮ 3."
       }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 14,
-    "narration": "Hai thần chú xưởng khóa: sáu không có dấu hiệu — sáu là hai nhân ba! Tháo cặp không chung ước!",
-    "display": {
-     "type": "mantra_card",
-     "text": "THÁO CẶP KHÔNG CHUNG ƯỚC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 85,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
-  },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-  },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Cáo Đề rêu rao giữa chợ: tổng chữ số chia hết cho sáu thì số chia hết cho sáu — dấu hiệu mới toanh, dùng ngay kẻo lỡ! Trí Long định chép vào sổ… Su Kem giơ số mười lăm: tổng của nó là sáu đấy — mà nó LẺ kìa!",
-    "screenText": "\"dấu hiệu tổng cho 6\"???",
-    "visual": "Chợ Học Viện; Cáo Đề rao bảng 'DẤU HIỆU MỚI'; Su Kem giơ thẻ '15' với đuôi 5 khoanh đỏ #C0392B.",
-    "assets": [],
-    "duration": 18
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Sự thật: số sáu KHÔNG có chìa riêng — nó là cánh cổng HAI Ổ KHÓA: ổ chẵn và ổ tổng chia ba. Thử với năm ba x: ổ tổng cho x thuộc một, bốn, bảy; ổ chẵn gạch một và bảy — chỉ x bằng BỐN mở được cả hai. Số năm ba tư qua cổng: sáu nhân tám chín!",
-    "screenText": "6 = 2 × 3 · {1;4;7} ∩ chẵn → x = 4",
-    "visual": "Cổng lớn hai ổ khóa; hai vòng lọc giao nhau: vòng 'tổng ⋮3' chứa 1·4·7, vòng 'chẵn' — số 4 nằm phần giao phát sáng vàng; cổng mở với '534 ✓'.",
-    "assets": [],
-    "duration": 22
-   },
-   {
-    "no": 3,
-    "templateHint": "trap_reveal",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Bẫy tinh vi hơn: kiểm bốn lăm thì tháo mười lăm nhân ba cũng được chứ gì? Coi chừng — mười lăm và ba CHUNG RĂNG số ba! Kẻ lách luật xuất hiện: số mười lăm qua ổ mười lăm, qua luôn ổ ba, mà chia bốn lăm thì trượt thẳng cẳng! Luật thợ khóa: tháo bốn lăm bằng CHÍN nhân NĂM — ổ chín soi tổng, ổ năm soi đuôi, khác răng hoàn toàn!",
-    "screenText": "45 = 15 × 3 ✗ (số 15 lách) · 45 = 9 × 5 ✓",
-    "visual": "Hai phiên bản cổng: bản trái số '15' đội mũ trộm lách qua khe, gạch chéo đỏ; bản phải hai ổ 9·5 răng khác nhau, khiên ✓ xanh.",
-    "assets": [],
-    "duration": 27
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Hai thần chú xưởng khóa: sáu không có dấu hiệu — sáu là hai nhân ba! Tháo cặp không chung ước!",
-    "screenText": "6 = 2 × 3 · THÁO CẶP KHÔNG CHUNG ƯỚC!",
-    "visual": "Thẻ thần chú vàng với icon hai chìa khóa chéo nhau.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Đơn của thợ khóa nhí: tìm chữ số x để năm ba x chia hết cho sáu — mở đủ hai ổ nhé! Vào bài luyện ngay!",
-    "screenText": "53x ⋮ 6 → x = ?",
-    "visual": "Cổng hai ổ chờ, thẻ x nhấp nháy; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P1",
-    "assets": [],
-    "duration": 10
-   }
-  ]
- },
- "workedExample": {
-  "title": "Cổng hai ổ khóa 53x",
-  "problem": "Tìm chữ số x để số 53x chia hết cho 6.",
-  "steps": [
-   {
-    "show": "Bước 1 — Tháo cổng: 6 = 2 × 3 (nguyên tố cùng nhau ✓) → hai ổ: CHẴN và TỔNG ⋮ 3.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Vì sao không dùng \"dấu hiệu tổng cho 6\"?",
-     "choices": [
-      "Vì số 6 không có dấu hiệu riêng — phải tháo 2 × 3",
-      "Vì tổng khó tính",
-      "Vì 6 là số chẵn"
-     ],
-     "answerKey": {
-      "choice": "Vì số 6 không có dấu hiệu riêng — phải tháo 2 × 3"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — Ổ tổng: 5 + 3 + x = 8 + x ⋮ 3 → x ∈ {1; 4; 7}."
-   },
-   {
-    "show": "Bước 3 — Ổ chẵn: trong {1; 4; 7} chỉ 4 chẵn → x = 4. Thử: 534 : 6 = 89 ✓.",
-    "askAfter": {
-     "format": "num",
-     "text": "Kiểm: 534 : 6 = ?",
-     "answerKey": {
-      "value": 89
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "num",
-     "sourceItem": "ITEM:KSN5Q1.B9.LT7",
-     "text": "Tìm chữ số x để số 53x chia hết cho 6.",
-     "answerKey": {
-      "value": 4
-     },
-     "hints": [
-      "Tháo 6 = 2 × 3: hai ổ khóa.",
-      "Ổ tổng: {1;4;7}; ổ chẵn giữ ai?"
-     ],
-     "solutionNarrative": "8 + x ⋮ 3 → {1;4;7}; giao với chẵn → x = 4 (534 = 6 × 89).",
-     "teaches": [
-      "K1"
-     ],
-     "generator": {
-      "template": "Tìm chữ số x để số {ab}x chia hết cho 6.",
-      "constraints": {
-       "ab": "hai chữ số đầu"
-      },
-      "answerRule": "giao tập tổng ⋮3 với tập chẵn"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "text": "Kiểm tra số 234 có chia hết cho 18 không. (Tháo 18 thành cặp nào cho chuẩn?)",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "tháo",
-        "value": "18 = 2 × 9 (nguyên tố cùng nhau)"
-       },
-       {
-        "label": "kết luận",
-        "value": "234 chẵn ✓, tổng 9 ⋮ 9 ✓ → 234 ⋮ 18 (= 18 × 13)"
-       }
-      ]
-     },
-     "hints": [
-      "18 = 2 × 9 hay 6 × 3 — cặp nào không chung ước?",
-      "Khám cửa chẵn + cửa tổng ⋮ 9."
-     ],
-     "teaches": [
-      "K1",
-      "K2"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P3",
-     "format": "tf",
-     "text": "(Đúng/Sai?) Số 15 chia hết cho 15 và chia hết cho 3, vậy số 15 chia hết cho 45.",
-     "answerKey": {
-      "value": false,
-      "note": "15 : 45 trượt — vì cặp 15 × 3 chung ước 3, hai cửa này không đủ kín cho cổng 45."
-     },
-     "hints": [
-      "Kẻ lách luật của xưởng khóa là ai?",
-      "Tháo chuẩn 45 = ?"
-     ],
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
-  "onPass": {
-   "updateBKT": [
-    "CASE:I.6.2#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B9.M3",
-   "award": "huy_hieu_tho_khoa"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B9.QZ2",
-    "text": "(Đúng/Sai?) Một số có tổng các chữ số chia hết cho 6 thì số đó chia hết cho 6.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B9.QZ4",
-    "text": "Muốn kiểm chia hết cho 45 ta tháo 45 thành:",
-    "choices": [
-     "9 × 5",
-     "15 × 3",
-     "45 × 1"
     ],
-    "answerKey": {
-     "choice": "9 × 5"
-    },
-    "mustPass": true,
-    "teaches": [
-     "K2",
-     "K3"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "tf",
-    "text": "(Đúng/Sai?) Số 534 chia hết cho 6.",
-    "answerKey": {
-     "value": true,
-     "note": "chẵn + tổng 12 ⋮ 3"
-    },
-    "teaches": [
-     "K1"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Kiểm chia hết cho số hợp (6, 45, 55) thế nào? Luật tháo?",
-    "back": "Tháo thành cặp NGUYÊN TỐ CÙNG NHAU rồi khám đủ hai cửa: 6 = 2 × 3 · 45 = 9 × 5 · 55 = 11 × 5. CẤM cặp chung ước (45 = 15 × 3: số 15 lách qua). Không có 'dấu hiệu tổng cho 6' — số 15 tổng 6 mà lẻ!"
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P3 (kẻ lách luật)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học kiểm chia hết cho số hợp bằng cách tháo cặp nguyên tố cùng nhau, và vạch mặt hai tin đồn (dấu hiệu tổng cho 6; tháo 45 = 15 × 3). Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Đố con: 'muốn biết 234 chia hết cho 18 không thì tháo 18 thành cặp nào?' — con nói 2 × 9 kèm lý do không-chung-ước là đạt.",
-  "watchFor": "Nếu con kiểm số 6 chỉ bằng tổng — đưa số 15 ra làm phản chứng cùng con (S1)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B9.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "\"dấu hiệu tổng cho 6\" — tin được không?",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "Tổng chữ số chia hết cho 6 thì số chia hết cho 6 — dấu hiệu mới toanh, dùng ngay kẻo lỡ!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Trí Long",
-      "say": "Tổng của nó là 6 đấy — mà nó LẺ kìa!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B9_M2_F1.png",
-   "sha256_16": "b0e291f65e6180ce"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "45 = 15 × 3"
-     ],
-     "result": "số 15 lách qua"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "45 = 9 × 5"
-     ],
-     "result": "kín kẽ"
-    },
-    "verdict": "nguyên tố cùng nhau"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B9_M2_F2.png",
-   "sha256_16": "8cdabeb6453df9f2"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Số hợp KHÔNG có dấu hiệu soi riêng",
-      "text": "muốn kiểm phải tháo thành cặp thừa số rồi khám từng cửa: 6 = 2 × 3; 15 = 3 × 5; 45 = 9 × 5; 55 = 11 × 5.",
-      "tone": "navy"
-     },
-     {
-      "label": "LUẬT THÁO",
-      "text": "hai mảnh phải NGUYÊN TỐ CÙNG NHAU (không chung ước ngoài 1). Qua đủ hai cửa như vậy mới chắc chắn chia hết cho tích.",
-      "tone": "teal"
-     }
+    "mechanism": "Hình ảnh brand: CÁNH CỔNG HAI Ổ KHÓA. Số hợp như 45 là cánh cổng không có chìa riêng — phải tháo thành HAI Ổ KHÓA con và mở cả hai. Nhưng luật thợ khóa: hai ổ phải KHÔNG CHUNG RĂNG (nguyên tố cùng nhau). Tháo 45 = 9 × 5: ổ 9 soi tổng, ổ 5 soi đuôi — hai ổ khác răng, mở đủ là cổng bung. Tháo 45 = 15 × 3 là hai ổ CHUNG RĂNG 3: kẻ gian mang chìa 15 (tự động mở luôn được ổ 3) lách qua mà chưa chắc qua nổi cổng 45 — số 15 chính là kẻ đó: qua ổ 15 ✓, qua ổ 3 ✓, nhưng 15 : 45 thì trượt!",
+    "canonicalExamples": [
+      {
+        "case": "cửa đôi số 6 (ca lõi)",
+        "problem": "Tìm chữ số x để số 53x chia hết cho 6.",
+        "solution": "6 = 2 × 3. Cửa TỔNG ⋮ 3: 5 + 3 + x = 8 + x ⋮ 3 → x ∈ {1; 4; 7}. Cửa CHẴN: giữ x chẵn → x = 4. Số 534 = 6 × 89 ✓.",
+        "why": "Ca chuẩn K1 — giao hai cửa."
+      },
+      {
+        "case": "phá tin đồn \"tổng chia 6\" (ca bẫy 1)",
+        "problem": "Bạn Bống nói: \"tổng các chữ số chia hết cho 6 thì số chia hết cho 6\" — đúng không?",
+        "solution": "SAI. Phản chứng: số 15 có tổng 1 + 5 = 6 mà 15 là số LẺ, không chia hết cho 6. Số 6 không có dấu hiệu riêng — phải tháo 2 × 3.",
+        "why": "Bẫy CĐ-9.1 nguyên văn."
+      },
+      {
+        "case": "tháo sai cặp (ca bẫy 2)",
+        "problem": "Kiểm 45 bằng cách tháo 45 = 15 × 3 được không?",
+        "solution": "KHÔNG. 15 và 3 chung ước 3. Kẻ lách luật: số 15 qua cửa 15 ✓ và cửa 3 ✓ nhưng 15 không chia hết 45. Tháo chuẩn: 45 = 9 × 5 (nguyên tố cùng nhau).",
+        "why": "Bẫy CĐ-9.3 với phản ví dụ đắt nhất."
+      }
+    ],
+    "numberRange": "Lớp 5: số hợp 6, 15, 18, 45, 55; số kiểm 2–4 chữ số.",
+    "misconceptions": [
+      {
+        "wrong": "Bịa \"dấu hiệu tổng\" cho 6 (quen tay cộng chữ số cho mọi phép chia hết).",
+        "signal": "Lý giải ⋮ 6 chỉ bằng tổng, quên kiểm chẵn.",
+        "fix": "K4 — số 6 không có dấu hiệu riêng: khám đủ cửa CHẴN và cửa ⋮ 3.",
+        "counterExample": "15: tổng 6 ✓ nhưng lẻ → trượt."
+      },
+      {
+        "wrong": "Tháo cặp chung ước (45 = 15 × 3) vì \"nghe vẫn chặt chẽ\".",
+        "signal": "Hai mảnh tháo ra có ước chung > 1.",
+        "fix": "K2 + K3 — kiểm răng khóa trước khi tháo: 9 và 5 không chung ước → hợp lệ.",
+        "counterExample": "Số 15 qua cả hai cửa 15, 3 mà trượt cổng 45."
+      }
+    ],
+    "vocabulary": [
+      "cổng hai ổ khóa",
+      "nguyên tố cùng nhau (không chung răng)",
+      "kẻ lách luật",
+      "khám đủ từng cửa"
     ],
     "mantra": "SÁU KHÔNG CÓ DẤU HIỆU — SÁU LÀ HAI NHÂN BA; THÁO CẶP KHÔNG CHUNG ƯỚC!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B9_M2_F3.png",
-   "sha256_16": "99033db1ccebe3d6"
   },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "TÌM x ĐỂ 53x CHIA HẾT CHO 6 = 2 × 3",
-    "neutral": true,
-    "wrong": {
-     "head": "CỬA TỔNG ⋮ 3",
-     "steps": [
-      "5 + 3 + x = 8 + x"
-     ],
-     "result": "x ∈ {1; 4; 7}"
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "mcq",
+        "text": "Số chia hết cho 3 thì soi gì?",
+        "choices": [
+          "Tổng các chữ số",
+          "Chữ số cuối",
+          "Hiệu xen kẽ"
+        ],
+        "answerKey": {
+          "choice": "Tổng các chữ số"
+        }
+      }
+    ],
+    "onFail": {
+      "action": "suggest_review",
+      "target": "DL:KSN5Q1.B3.M3",
+      "message": "Ôn họ tổng ở Bài 3 rồi quay lại xưởng khóa nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Cáo Đề rêu rao giữa chợ: \"Tổng chữ số chia hết cho 6 thì số chia hết cho 6 — dấu hiệu mới toanh, dùng ngay kẻo lỡ!\" Trí Long định chép vào sổ… Su Kem giơ số 15: \"Tổng của nó là 6 đấy — mà nó LẺ kìa!\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "\"dấu hiệu tổng cho 6\" — tin được không?"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để vạch mặt tin đồn!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 45,
+        "teaches": [
+          "K1",
+          "K4"
+        ],
+        "narration": "Sự thật: số 6 KHÔNG có chìa riêng — nó là cánh cổng HAI Ổ KHÓA: ổ chẵn và ổ tổng-chia-3. Con thử với 53x: ổ tổng cho x thuộc 1, 4, 7; ổ chẵn gạch 1 và 7 — chỉ x bằng 4 mở được cả hai. Số 534 qua cổng!",
+        "display": {
+          "type": "double_lock_interactive",
+          "spec": {
+            "number": "53x",
+            "lock1": "tổng 8+x ⋮ 3 → {1;4;7}",
+            "lock2": "chẵn",
+            "answer": 4
+          }
+        },
+        "interaction": {
+          "type": "intersect_sets",
+          "answerKey": {
+            "value": 4
+          },
+          "successMessage": "x = 4 — hai ổ cùng mở: 534 = 6 × 89 ✓"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 16,
+        "item": {
+          "format": "tf",
+          "text": "(Đúng/Sai?) Số có tổng chữ số chia hết cho 6 thì chia hết cho 6.",
+          "answerKey": {
+            "value": false
+          },
+          "wrongFeedback": "Số 15: tổng 6 mà lẻ — số 6 không có dấu hiệu riêng!",
+          "objective": "O1",
+          "teaches": [
+            "K4"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "trap",
+        "estSeconds": 42,
+        "teaches": [
+          "K2",
+          "K3"
+        ],
+        "narration": "Bẫy tinh vi hơn: \"kiểm 45 thì tháo 15 nhân 3 cũng được chứ gì?\" Coi chừng — 15 và 3 CHUNG RĂNG số 3! Kẻ lách luật xuất hiện: số 15 qua ổ 15, qua luôn ổ 3, mà 15 chia 45 thì trượt thẳng cẳng! Luật thợ khóa: hai ổ phải KHÔNG chung ước — tháo 45 = 9 × 5: ổ 9 soi tổng, ổ 5 soi đuôi, khác răng hoàn toàn.",
+        "display": {
+          "type": "counter_example",
+          "cases": [
+            {
+              "input": "45 = 15 × 3",
+              "output": "số 15 lách qua ✗",
+              "valid": false,
+              "reason": "chung ước 3"
+            },
+            {
+              "input": "45 = 9 × 5",
+              "output": "kín kẽ ✓",
+              "valid": true,
+              "reason": "nguyên tố cùng nhau"
+            }
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 14,
+        "narration": "Hai thần chú xưởng khóa: sáu không có dấu hiệu — sáu là hai nhân ba! Tháo cặp không chung ước!",
+        "display": {
+          "type": "mantra_card",
+          "text": "THÁO CẶP KHÔNG CHUNG ƯỚC!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 85,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "right": {
-     "head": "CỬA CHẴN ⋮ 2",
-     "steps": [
-      "giữ lại x chẵn"
-     ],
-     "result": "x = 4 → số 534"
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
     },
-    "verdict": "Phải qua ĐỦ hai cửa — chỉ một cửa là chưa đủ"
-   },
-   "caption": "Số hợp không có dấu hiệu riêng: tháo thành cặp nguyên tố cùng nhau rồi khám từng cửa",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B9_M2_F4.png",
-   "sha256_16": "502a94c86fe80e55"
-  }
- ]
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Cáo Đề rêu rao giữa chợ: tổng chữ số chia hết cho sáu thì số chia hết cho sáu — dấu hiệu mới toanh, dùng ngay kẻo lỡ! Trí Long định chép vào sổ… Su Kem giơ số mười lăm: tổng của nó là sáu đấy — mà nó LẺ kìa!",
+        "screenText": "\"dấu hiệu tổng cho 6\"???",
+        "visual": "Chợ Học Viện; Cáo Đề rao bảng 'DẤU HIỆU MỚI'; Su Kem giơ thẻ '15' với đuôi 5 khoanh đỏ #C0392B.",
+        "assets": [],
+        "duration": 18
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Sự thật: số sáu KHÔNG có chìa riêng — nó là cánh cổng HAI Ổ KHÓA: ổ chẵn và ổ tổng chia ba. Thử với năm ba x: ổ tổng cho x thuộc một, bốn, bảy; ổ chẵn gạch một và bảy — chỉ x bằng BỐN mở được cả hai. Số năm ba tư qua cổng: sáu nhân tám chín!",
+        "screenText": "6 = 2 × 3 · {1;4;7} ∩ chẵn → x = 4",
+        "visual": "Cổng lớn hai ổ khóa; hai vòng lọc giao nhau: vòng 'tổng ⋮3' chứa 1·4·7, vòng 'chẵn' — số 4 nằm phần giao phát sáng vàng; cổng mở với '534 ✓'.",
+        "assets": [],
+        "duration": 22
+      },
+      {
+        "no": 3,
+        "templateHint": "trap_reveal",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Bẫy tinh vi hơn: kiểm bốn lăm thì tháo mười lăm nhân ba cũng được chứ gì? Coi chừng — mười lăm và ba CHUNG RĂNG số ba! Kẻ lách luật xuất hiện: số mười lăm qua ổ mười lăm, qua luôn ổ ba, mà chia bốn lăm thì trượt thẳng cẳng! Luật thợ khóa: tháo bốn lăm bằng CHÍN nhân NĂM — ổ chín soi tổng, ổ năm soi đuôi, khác răng hoàn toàn!",
+        "screenText": "45 = 15 × 3 ✗ (số 15 lách) · 45 = 9 × 5 ✓",
+        "visual": "Hai phiên bản cổng: bản trái số '15' đội mũ trộm lách qua khe, gạch chéo đỏ; bản phải hai ổ 9·5 răng khác nhau, khiên ✓ xanh.",
+        "assets": [],
+        "duration": 27
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Hai thần chú xưởng khóa: sáu không có dấu hiệu — sáu là hai nhân ba! Tháo cặp không chung ước!",
+        "screenText": "6 = 2 × 3 · THÁO CẶP KHÔNG CHUNG ƯỚC!",
+        "visual": "Thẻ thần chú vàng với icon hai chìa khóa chéo nhau.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Đơn của thợ khóa nhí: tìm chữ số x để năm ba x chia hết cho sáu — mở đủ hai ổ nhé! Vào bài luyện ngay!",
+        "screenText": "53x ⋮ 6 → x = ?",
+        "visual": "Cổng hai ổ chờ, thẻ x nhấp nháy; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P1",
+        "assets": [],
+        "duration": 10
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Cổng hai ổ khóa 53x",
+    "problem": "Tìm chữ số x để số 53x chia hết cho 6.",
+    "steps": [
+      {
+        "show": "Bước 1 — Tháo cổng: 6 = 2 × 3 (nguyên tố cùng nhau ✓) → hai ổ: CHẴN và TỔNG ⋮ 3.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Vì sao không dùng \"dấu hiệu tổng cho 6\"?",
+          "choices": [
+            "Vì số 6 không có dấu hiệu riêng — phải tháo 2 × 3",
+            "Vì tổng khó tính",
+            "Vì 6 là số chẵn"
+          ],
+          "answerKey": {
+            "choice": "Vì số 6 không có dấu hiệu riêng — phải tháo 2 × 3"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — Ổ tổng: 5 + 3 + x = 8 + x ⋮ 3 → x ∈ {1; 4; 7}."
+      },
+      {
+        "show": "Bước 3 — Ổ chẵn: trong {1; 4; 7} chỉ 4 chẵn → x = 4. Thử: 534 : 6 = 89 ✓.",
+        "askAfter": {
+          "format": "num",
+          "text": "Kiểm: 534 : 6 = ?",
+          "answerKey": {
+            "value": 89
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "num",
+          "sourceItem": "ITEM:KSN5Q1.B9.LT7",
+          "text": "Tìm chữ số x để số 53x chia hết cho 6.",
+          "answerKey": {
+            "value": 4
+          },
+          "hints": [
+            "Tháo 6 = 2 × 3: hai ổ khóa.",
+            "Ổ tổng: {1;4;7}; ổ chẵn giữ ai?"
+          ],
+          "solutionNarrative": "8 + x ⋮ 3 → {1;4;7}; giao với chẵn → x = 4 (534 = 6 × 89).",
+          "teaches": [
+            "K1"
+          ],
+          "generator": {
+            "template": "Tìm chữ số x để số {ab}x chia hết cho 6.",
+            "constraints": {
+              "ab": "hai chữ số đầu"
+            },
+            "answerRule": "giao tập tổng ⋮3 với tập chẵn"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "text": "Kiểm tra số 234 có chia hết cho 18 không. (Tháo 18 thành cặp nào cho chuẩn?)",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "tháo",
+                "value": "18 = 2 × 9 (nguyên tố cùng nhau)"
+              },
+              {
+                "label": "kết luận",
+                "value": "234 chẵn ✓, tổng 9 ⋮ 9 ✓ → 234 ⋮ 18 (= 18 × 13)"
+              }
+            ]
+          },
+          "hints": [
+            "18 = 2 × 9 hay 6 × 3 — cặp nào không chung ước?",
+            "Khám cửa chẵn + cửa tổng ⋮ 9."
+          ],
+          "teaches": [
+            "K1",
+            "K2"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P3",
+          "format": "tf",
+          "text": "(Đúng/Sai?) Số 15 chia hết cho 15 và chia hết cho 3, vậy số 15 chia hết cho 45.",
+          "answerKey": {
+            "value": false,
+            "note": "15 : 45 trượt — vì cặp 15 × 3 chung ước 3, hai cửa này không đủ kín cho cổng 45."
+          },
+          "hints": [
+            "Kẻ lách luật của xưởng khóa là ai?",
+            "Tháo chuẩn 45 = ?"
+          ],
+          "teaches": [
+            "K2",
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
+    "onPass": {
+      "updateBKT": [
+        "CASE:I.6.2#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B9.M3",
+      "award": "huy_hieu_tho_khoa"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B9.QZ2",
+        "text": "(Đúng/Sai?) Một số có tổng các chữ số chia hết cho 6 thì số đó chia hết cho 6.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K4"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B9.QZ4",
+        "text": "Muốn kiểm chia hết cho 45 ta tháo 45 thành:",
+        "choices": [
+          "9 × 5",
+          "15 × 3",
+          "45 × 1"
+        ],
+        "answerKey": {
+          "choice": "9 × 5"
+        },
+        "mustPass": true,
+        "teaches": [
+          "K2",
+          "K3"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "tf",
+        "text": "(Đúng/Sai?) Số 534 chia hết cho 6.",
+        "answerKey": {
+          "value": true,
+          "note": "chẵn + tổng 12 ⋮ 3"
+        },
+        "teaches": [
+          "K1"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Kiểm chia hết cho số hợp (6, 45, 55) thế nào? Luật tháo?",
+        "back": "Tháo thành cặp NGUYÊN TỐ CÙNG NHAU rồi khám đủ hai cửa: 6 = 2 × 3 · 45 = 9 × 5 · 55 = 11 × 5. CẤM cặp chung ước (45 = 15 × 3: số 15 lách qua). Không có 'dấu hiệu tổng cho 6' — số 15 tổng 6 mà lẻ!"
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P3 (kẻ lách luật)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học kiểm chia hết cho số hợp bằng cách tháo cặp nguyên tố cùng nhau, và vạch mặt hai tin đồn (dấu hiệu tổng cho 6; tháo 45 = 15 × 3). Con đạt {score}/3, {trapResult} câu bẫy.",
+    "homeActivity": "Đố con: 'muốn biết 234 chia hết cho 18 không thì tháo 18 thành cặp nào?' — con nói 2 × 9 kèm lý do không-chung-ước là đạt.",
+    "watchFor": "Nếu con kiểm số 6 chỉ bằng tổng — đưa số 15 ra làm phản chứng cùng con (S1)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B9.M2",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "\"dấu hiệu tổng cho 6\" — tin được không?",
+        "lines": [
+          {
+            "who": "Cáo Đề",
+            "say": "Tổng chữ số chia hết cho 6 thì số chia hết cho 6 — dấu hiệu mới toanh, dùng ngay kẻo lỡ!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Trí Long",
+            "say": "Tổng của nó là 6 đấy — mà nó LẺ kìa!",
+            "tone": "wrong"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B9_M2_F1.png",
+      "sha256_16": "b0e291f65e6180ce"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+        "wrong": {
+          "head": "CÁCH SAI",
+          "steps": [
+            "45 = 15 × 3"
+          ],
+          "result": "số 15 lách qua"
+        },
+        "right": {
+          "head": "CÁCH ĐÚNG",
+          "steps": [
+            "45 = 9 × 5"
+          ],
+          "result": "kín kẽ"
+        },
+        "verdict": "nguyên tố cùng nhau"
+      },
+      "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B9_M2_F2.png",
+      "sha256_16": "8cdabeb6453df9f2"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Số hợp KHÔNG có dấu hiệu soi riêng",
+            "text": "muốn kiểm phải tháo thành cặp thừa số rồi khám từng cửa: 6 = 2 × 3; 15 = 3 × 5; 45 = 9 × 5; 55 = 11 × 5.",
+            "tone": "navy"
+          },
+          {
+            "label": "LUẬT THÁO",
+            "text": "hai mảnh phải NGUYÊN TỐ CÙNG NHAU (không chung ước ngoài 1). Qua đủ hai cửa như vậy mới chắc chắn chia hết cho tích.",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "SÁU KHÔNG CÓ DẤU HIỆU — SÁU LÀ HAI NHÂN BA; THÁO CẶP KHÔNG CHUNG ƯỚC!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B9_M2_F3.png",
+      "sha256_16": "99033db1ccebe3d6"
+    },
+    {
+      "archetype": "two_way_compare",
+      "params": {
+        "title": "TÌM x ĐỂ 53x CHIA HẾT CHO 6 = 2 × 3",
+        "neutral": true,
+        "wrong": {
+          "head": "CỬA TỔNG ⋮ 3",
+          "steps": [
+            "5 + 3 + x = 8 + x"
+          ],
+          "result": "x ∈ {1; 4; 7}"
+        },
+        "right": {
+          "head": "CỬA CHẴN ⋮ 2",
+          "steps": [
+            "giữ lại x chẵn"
+          ],
+          "result": "x = 4 → số 534"
+        },
+        "verdict": "Phải qua ĐỦ hai cửa — chỉ một cửa là chưa đủ"
+      },
+      "caption": "Số hợp không có dấu hiệu riêng: tháo thành cặp nguyên tố cùng nhau rồi khám từng cửa",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B9_M2_F4.png",
+      "sha256_16": "502a94c86fe80e55"
+    }
+  ]
 }

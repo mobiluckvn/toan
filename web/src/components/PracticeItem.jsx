@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  checkAnswer, inputCount, hintState, canGenerate, makeVariant, answerBrief, answerFields,
+  checkAnswer, inputCount, hintState, canGenerate, makeVariant, answerBrief, answerFields, answerMode,
 } from '../lib/flow.js';
 import Figure from './Figure.jsx';
 import AnswerFields from './AnswerFields.jsx';
@@ -13,6 +13,7 @@ export default function PracticeItem({ item: base, level, figure, onDone, onJump
   const [vals, setVals] = useState(() => Array(Math.max(inputCount(base), 1)).fill(''));
   const [tries, setTries] = useState(0);
   const [res, setRes] = useState(null);
+  const [tCau, setTCau] = useState(() => Date.now());   // mốc để đo thời gian RIÊNG câu này
 
   const n = inputCount(item);
   const hs = hintState(item, tries);
@@ -25,21 +26,33 @@ export default function PracticeItem({ item: base, level, figure, onDone, onJump
   const khoaO = !!res?.ok;
   const variantable = !!canGenerate(item);
 
+  /**
+   * Ghi MỌI lượt bấm "Kiểm tra", kể cả lượt sai ở giữa.
+   *
+   * Trước đây chỉ báo khi con ĐÚNG, hoặc khi đã sai đủ 3 lần — nên con sai lần một
+   * rồi tự sửa đúng lần hai thì máy chủ chỉ thấy "đúng ngay", mất sạch dấu vết con
+   * vấp ở đâu. Chính chỗ vấp ấy mới là thứ cô giáo cần để giúp con.
+   */
   const submit = () => {
-    const r = checkAnswer(item, n <= 1 ? vals[0] : vals);
+    const dap = n <= 1 ? vals[0] : vals;
+    const r = checkAnswer(item, dap);
     setRes(r);
-    if (r.ok || r.mode === 'selfcheck') onDone?.({ id: item.id, ok: true, tries: tries + 1 });
-    else {
-      const t = tries + 1;
-      setTries(t);
-      if (t >= 3) onDone?.({ id: item.id, ok: false, tries: t, revealed: true });
-    }
+    const t = tries + 1;
+    const xong = r.ok || r.mode === 'selfcheck';
+    if (!xong) setTries(t);
+    onDone?.({
+      id: item.id, ok: xong, tries: t,
+      ms: Date.now() - tCau, answer: dap, expected: r.expected,
+      mode: answerMode(item), hintsUsed: hs.show.length,
+      revealed: !xong && t >= 3, mustPass: !!item.mustPass,
+    });
   };
 
   const another = () => {
     const v = makeVariant(item);
     if (!v) return;
     setItem(v); setVals(Array(Math.max(inputCount(v), 1)).fill('')); setTries(0); setRes(null);
+    setTCau(Date.now());
   };
 
   return (

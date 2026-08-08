@@ -1,698 +1,701 @@
 {
- "title": "Sơ đồ phần ba nhịp: đếm tổng số phần — chia — nhân ra từng số",
- "grade": 5,
- "durationMinutes": 8,
- "skills": {
-  "primary": [
-   "CASE:III.3.1#1"
-  ],
-  "bktUnit": "CASE:III.3.1#1@G5"
- },
- "series": {
-  "parentBookLesson": "LESSON:KSN5Q1.B29",
-  "order": 1,
-  "prev": "DL:KSN5Q1.B28.M3",
-  "next": "DL:KSN5Q1.B29.M2"
- },
- "sourceRef": {
-  "book": "LESSON:KSN5Q1.B29",
-  "chunks": [
-   "CHUNK:KSN5Q1.B29.S3",
-   "CHUNK:KSN5Q1.B29.S4"
-  ],
-  "cases": [
-   "CA:KSN5Q1.B29.1",
-   "CA:KSN5Q1.B29.2"
-  ],
-  "traps": [
-   "TRAP:KSN5Q1.B29.1"
-  ]
- },
- "objective": {
-  "id": "O1",
-  "text": "Con vẽ được SƠ ĐỒ PHẦN và giải bài TỔNG – TỈ theo ba nhịp: ĐẾM tổng số phần — CHIA tổng cho tổng số phần ra giá một phần — NHÂN ra từng số; hiểu con số tỉ chỉ để ĐẾM PHẦN chứ không phải số chia; thử về cả tổng lẫn tỉ.",
-  "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (chia cho tổng số phần, không chia cho tỉ)",
-  "kidText": "Biết tổng và tỉ số: đếm xem có tất cả mấy phần, chia tổng cho SỐ PHẦN ra giá một phần, rồi nhân ra từng số."
- },
- "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tỉ gấp k lần = k : 1 → sơ đồ (k + 1) phần: 'A gấp đôi B' vẽ A hai ô, B một ô — TỔNG SỐ PHẦN là 3 (không phải 2!)."
-   },
-   {
-    "id": "K2",
-    "text": "Tỉ phân số m/n = m : n → sơ đồ m phần và n phần, tổng m + n phần: khay mè bằng 3/4 khay bơ → 3 ô và 4 ô — 7 phần."
-   },
-   {
-    "id": "K3",
-    "text": "Ba nhịp: ĐẾM tổng số phần → CHIA tổng cho nó ra giá một phần (35 : 7 = 5) → NHÂN ra từng số (3 × 5 = 15; 4 × 5 = 20). Con số trong tỉ chỉ để ĐẾM Ô — tổng số phần mới là số chia."
-   },
-   {
-    "id": "K4",
-    "text": "Thử về HAI cửa: cửa tổng (15 + 20 = 35 ✓) và cửa tỉ (15 : 20 = 3 : 4 ✓ — cùng chia 5); qua đủ hai cửa mới nộp."
-   }
-  ],
-  "mechanism": "Hình ảnh brand: XƯỞNG KẺ Ô CỦA KIẾN TRÚC SƯ. Tổng 36, A gấp đôi B — Trí Long thấy số 2 là chia luôn: 36 : 2 = 18, hai bên 18 đều nhau?! Nhưng con số 2 KHÔNG phải số chia — nó chỉ là bản vẽ: 'A hai ô khi B một ô'. Kiến trúc sư kẻ ô đã: A ▢▢, B ▢ — đếm cả công trình: BA ô! Ba nhịp máy: ĐẾM 3 ô — CHIA 36 : 3 = 12 ra giá một ô — NHÂN: B một ô 12, A hai ô 24. Thử hai cửa: 24 + 12 = 36 và 24 gấp đôi 12 — mộc kép! Tỉ phân số cũng chỉ là bản vẽ khác: khay mè bằng 3/4 khay bơ — mè 3 ô, bơ 4 ô, đếm BẢY: 35 : 7 = 5 → 15 và 20.",
-  "canonicalExamples": [
-   {
-    "case": "gấp k (ca lõi)",
-    "problem": "Tổng hai số là 36. Số lớn gấp đôi số bé. Tìm hai số.",
-    "solution": "Tỉ 2 : 1 → 3 phần = 36 → phần 12 → bé 12; lớn 24. Thử: 36 ✓ và gấp đôi ✓.",
-    "why": "Ca đề A câu 1 — trap chia-cho-tỉ rình đây."
-   },
-   {
-    "case": "tỉ phân số (ca kẻ ô)",
-    "problem": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 3/4 số bánh khay bơ. Tìm số bánh mỗi khay.",
-    "solution": "Tỉ 3 : 4 → 7 phần = 35 → phần 5 → mè 15; bơ 20. Kiểm: 15 : 20 = 3 : 4 (cùng chia 5) ✓.",
-    "why": "Ca đề A câu 2 + LT3 — đếm ô, chia 7."
-   },
-   {
-    "case": "dịch chữ + tỉ to (ca sư phụ)",
-    "problem": "(a) Tổng 55, số bé bằng 2/3 số lớn. (b) Tổng là số nhỏ nhất có ba chữ số, số lớn gấp 4 lần số bé.",
-    "solution": "(a) 5 phần = 55 → 22 và 33. (b) Tổng = 100; tỉ 4 : 1 → 5 phần → phần 20 → 20 và 80.",
-    "why": "LT7 + LT9 — máy chạy mọi bộ số."
-   }
-  ],
-  "numberRange": "Lớp 5: tổng ≤ 200; tổng chia hết cho tổng số phần.",
-  "misconceptions": [
-   {
-    "wrong": "Chia tổng cho con số tỉ: 36 : 2 = 18 rồi cho cả hai bên 18 (hoặc một bên 18 bên kia 36).",
-    "signal": "Phép chia cho k thay vì (k + 1); đáp hai bên bằng nhau dù đề nói gấp đôi.",
-    "fix": "K1 + K3 — số 2 chỉ là bản vẽ đếm ô; kẻ ô rồi đếm cả công trình: 3 ô mới là số chia.",
-    "counterExample": "18 và 18: đâu có ai gấp đôi ai — trượt ngay cửa tỉ!"
-   }
-  ],
-  "vocabulary": [
-   "xưởng kẻ ô",
-   "bản vẽ tỉ số",
-   "giá một ô",
-   "đếm cả công trình",
-   "mộc kép hai cửa"
-  ],
-  "mantra": "TỈ ĐỂ ĐẾM PHẦN — TỔNG SỐ PHẦN MỚI LÀ SỐ CHIA!"
- },
- "entryCheck": {
-  "items": [
-   {
-    "id": "E1",
-    "format": "num",
-    "text": "35 : 7 = ?",
-    "answerKey": {
-     "value": 5
-    }
-   }
-  ],
-  "onFail": {
-   "action": "suggest_review",
-   "target": "ôn chia nhẩm (hạt mầm)",
-   "message": "Ôn chia nhẩm rồi vào xưởng kẻ ô nhé!"
-  }
- },
- "lecture": {
-  "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Đề: tổng 36, số lớn gấp ĐÔI số bé. Trí Long thấy số 2 là chia luôn: \"36 chia 2 bằng 18 — mỗi bên 18!\" Su Kem chỉ vào đáp: \"18 với 18 — thế ai đang gấp đôi ai vậy?\"",
-    "display": {
-     "type": "story_panel",
-     "caption": "36 : 2 = 18 mỗi bên??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để kẻ ô!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K3",
-     "K4"
+  "title": "Sơ đồ phần ba nhịp: đếm tổng số phần — chia — nhân ra từng số",
+  "grade": 5,
+  "durationMinutes": 8,
+  "skills": {
+    "primary": [
+      "CASE:III.3.1#1"
     ],
-    "narration": "Con số 2 KHÔNG phải số chia — nó là BẢN VẼ: A hai ô khi B một ô! Kiến trúc sư kẻ ô: A hai ô, B một ô — đếm cả công trình: BA ô. Ba nhịp máy: ĐẾM ba ô — CHIA ba sáu cho ba ra giá một ô: MƯỜI HAI — NHÂN: B một ô mười hai, A hai ô HAI MƯƠI TƯ! Thử hai cửa: hai tư cộng mười hai đúng ba sáu; hai tư đúng gấp đôi mười hai — mộc kép!",
-    "display": {
-     "type": "part_grid_interactive",
-     "spec": {
-      "ratio": "2 : 1",
-      "totalParts": 3,
-      "total": 36,
-      "unit": 12,
-      "values": [
-       24,
-       12
-      ],
-      "check": "36 ✓ · gấp đôi ✓"
-     }
-    },
-    "interaction": {
-     "type": "count_divide_multiply",
-     "answerKey": {
-      "values": [
-       24,
-       12
-      ]
-     },
-     "successMessage": "3 ô → ô 12 → 24 & 12 — hai cửa mộc kép!"
-    }
-   },
-   {
-    "id": "C1",
-    "kind": "checkpoint",
-    "estSeconds": 15,
-    "item": {
-     "format": "mcq",
-     "text": "Tổng 35, tỉ 3 : 4 — giá một phần là:",
-     "choices": [
-      "5",
-      "7",
-      "35"
-     ],
-     "answerKey": {
-      "choice": "5"
-     },
-     "wrongFeedback": "35 : (3 + 4).",
-     "objective": "O1",
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K4"
+    "bktUnit": "CASE:III.3.1#1@G5"
+  },
+  "series": {
+    "parentBookLesson": "LESSON:KSN5Q1.B29",
+    "order": 1,
+    "prev": "DL:KSN5Q1.B28.M3",
+    "next": "DL:KSN5Q1.B29.M2"
+  },
+  "sourceRef": {
+    "book": "LESSON:KSN5Q1.B29",
+    "chunks": [
+      "CHUNK:KSN5Q1.B29.S3",
+      "CHUNK:KSN5Q1.B29.S4"
     ],
-    "narration": "Bản vẽ phân số: khay mè bằng BA PHẦN TƯ khay bơ — mè ba ô, bơ bốn ô: đếm BẢY ô! Ba lăm chia bảy ra ô NĂM: mè mười lăm, bơ hai mươi — kiểm cửa tỉ: mười lăm trên hai mươi cùng chia năm đúng ba trên bốn! Đề chữ của sư phụ: tổng là số nhỏ nhất có ba chữ số — MỘT TRĂM; gấp bốn — năm ô: ô hai mươi, hai số HAI MƯƠI và TÁM MƯƠI!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "3/4 → 3 ô + 4 ô = 7 ô → 35 : 7 = 5 → 15 & 20",
-      "kiểm tỉ: 15 : 20 = 3 : 4 (cùng chia 5) ✓",
-      "sư phụ: 100 · 4:1 → 5 ô → 20 & 80"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Thần chú xưởng kẻ ô: tỉ để đếm phần — tổng số phần mới là số chia!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TỔNG SỐ PHẦN MỚI LÀ SỐ CHIA!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
-    }
-   }
-  ]
- },
- "videoSpec": {
-  "renderProfile": "vertical_9x16 1080x1920",
-  "maxDuration": 90,
-  "totalDuration": 90,
-  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-  "brand": {
-   "colors": {
-    "nen": "#FFFFFF",
-    "xanh_khien": "#0C3B70",
-    "ngoc": "#1FC3A6",
-    "vang": "#F8B942",
-    "do_bay": "#C0392B"
-   },
-   "font": "chữ tròn dày, cỡ lớn",
-   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "cases": [
+      "CA:KSN5Q1.B29.1",
+      "CA:KSN5Q1.B29.2"
+    ],
+    "traps": [
+      "TRAP:KSN5Q1.B29.1"
+    ]
   },
-  "voice": {
-   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  "objective": {
+    "id": "O1",
+    "text": "Con vẽ được SƠ ĐỒ PHẦN và giải bài TỔNG – TỈ theo ba nhịp: ĐẾM tổng số phần — CHIA tổng cho tổng số phần ra giá một phần — NHÂN ra từng số; hiểu con số tỉ chỉ để ĐẾM PHẦN chứ không phải số chia; thử về cả tổng lẫn tỉ.",
+    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (chia cho tổng số phần, không chia cho tỉ)",
+    "kidText": "Biết tổng và tỉ số: đếm xem có tất cả mấy phần, chia tổng cho SỐ PHẦN ra giá một phần, rồi nhân ra từng số."
   },
-  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-  "scenes": [
-   {
-    "no": 1,
-    "templateHint": "title_hook",
-    "derivedFromScreen": "S1",
-    "transitionOut": "wipe trái",
-    "voiceover": "Đề: tổng ba sáu, số lớn gấp ĐÔI số bé. Trí Long thấy số hai là chia luôn: ba sáu chia hai bằng mười tám — mỗi bên mười tám! Su Kem chỉ vào đáp: mười tám với mười tám — thế ai đang gấp đôi ai vậy?",
-    "screenText": "36 : 2 = 18 mỗi bên?? ai gấp đôi ai?",
-    "visual": "Bảng đề với hai cột 18 bằng chằn chặn; Su Kem chỉ tay nghi vấn; dấu hỏi đỏ #C0392B.",
-    "assets": [],
-    "duration": 17
-   },
-   {
-    "no": 2,
-    "templateHint": "concept_diagram",
-    "derivedFromScreen": "S2",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Con số hai KHÔNG phải số chia — nó là BẢN VẼ: A hai ô khi B một ô! Kiến trúc sư kẻ ô: A hai ô, B một ô — đếm cả công trình: BA ô. Ba nhịp máy: ĐẾM ba ô — CHIA ba sáu cho ba ra giá một ô: MƯỜI HAI — NHÂN: B một ô mười hai, A hai ô HAI MƯƠI TƯ!",
-    "screenText": "A ▢▢ · B ▢ → 3 ô · 36:3 = 12 → 24 & 12 ✓✓",
-    "visual": "Bản vẽ kẻ ô teal: hàng A hai ô, hàng B một ô; thước đếm '3'; mỗi ô điền 12; hai cửa tổng/tỉ đóng mộc kép.",
-    "assets": [],
-    "duration": 24
-   },
-   {
-    "no": 3,
-    "templateHint": "step_by_step",
-    "derivedFromScreen": "S3",
-    "transitionOut": "cắt thẳng",
-    "voiceover": "Bản vẽ phân số: khay mè bằng BA PHẦN TƯ khay bơ — mè ba ô, bơ bốn ô: đếm BẢY ô! Ba lăm chia bảy ra ô NĂM: mè mười lăm, bơ hai mươi — kiểm cửa tỉ: mười lăm trên hai mươi cùng chia năm đúng ba trên bốn! Đề chữ của sư phụ: tổng là số nhỏ nhất có ba chữ số — MỘT TRĂM; gấp bốn — năm ô: ô hai mươi, hai số HAI MƯƠI và TÁM MƯƠI!",
-    "screenText": "3 ô + 4 ô = 7 → 35:7 = 5 → 15 & 20 · 100 → 20 & 80",
-    "visual": "Hai khay bánh kẻ 3 ô và 4 ô; phép kiểm tỉ cùng-chia-5; ca sư phụ với tấm đề chữ dịch ra 100 và sơ đồ 5 ô.",
-    "assets": [],
-    "duration": 30
-   },
-   {
-    "no": 4,
-    "templateHint": "mantra_card",
-    "derivedFromScreen": "S4",
-    "transitionOut": "zoom nhẹ",
-    "voiceover": "Thần chú xưởng kẻ ô: tỉ để đếm phần — tổng số phần mới là số chia!",
-    "screenText": "TỈ ĐẾM PHẦN — TỔNG PHẦN LÀ SỐ CHIA!",
-    "visual": "Thẻ thần chú vàng với icon bản vẽ kẻ ô.",
-    "assets": [],
-    "duration": 8
-   },
-   {
-    "no": 5,
-    "templateHint": "cta_practice",
-    "transitionOut": "kết",
-    "voiceover": "Bản vẽ của con: hai khay ba lăm chiếc bánh, khay mè bằng ba phần tư khay bơ — kẻ ô, đếm phần, tìm mỗi khay! Vào bài luyện ngay!",
-    "screenText": "35 chiếc · tỉ 3 : 4 → mỗi khay?",
-    "visual": "Hai khay trống chờ kẻ ô; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
-    "linkItem": "P2",
-    "assets": [],
-    "duration": 11
-   }
-  ]
- },
- "workedExample": {
-  "title": "Ba nhịp xưởng kẻ ô",
-  "problem": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 3/4 số bánh khay bơ. Tìm số bánh mỗi khay.",
-  "steps": [
-   {
-    "show": "Bước 1 — ĐẾM: mè 3 ô, bơ 4 ô → 7 phần.",
-    "askBefore": {
-     "format": "mcq",
-     "text": "Số chia của bài là:",
-     "choices": [
-      "7 (tổng số phần)",
-      "3",
-      "4"
-     ],
-     "answerKey": {
-      "choice": "7 (tổng số phần)"
-     }
-    }
-   },
-   {
-    "show": "Bước 2 — CHIA: 35 : 7 = 5 = giá một phần."
-   },
-   {
-    "show": "Bước 3 — NHÂN: mè = 3 × 5 = 15; bơ = 4 × 5 = 20. Thử: 35 ✓; 15 : 20 = 3 : 4 ✓.",
-    "askAfter": {
-     "format": "mb",
-     "text": "Tổng 36, gấp đôi → hai số?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "lớn",
-        "value": 24
-       },
-       {
-        "label": "bé",
-        "value": 12
-       }
-      ]
-     }
-    }
-   }
-  ]
- },
- "practice": {
-  "adaptiveRules": {
-   "start": "warmup",
-   "promote": "đúng 2 câu liên tiếp → lên mức",
-   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-  },
-  "pools": {
-   "warmup": [
-    {
-     "id": "P1",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B29.LT1",
-     "text": "Tổng hai số là 36. Số lớn gấp đôi số bé. Tìm hai số.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "bé",
-        "value": 12
-       },
-       {
-        "label": "lớn",
-        "value": 24
-       }
-      ]
-     },
-     "hints": [
-      "Kẻ ô: 2 + 1 = 3 phần.",
-      "36 : 3."
-     ],
-     "solutionNarrative": "Phần 12 → 12 và 24 (mộc kép ✓).",
-     "teaches": [
-      "K1",
-      "K3"
-     ],
-     "generator": {
-      "template": "Tổng {S}, tỉ {m}:{n}. Tìm hai số.",
-      "constraints": {
-       "S": "chia hết m+n"
+  "knowledgeCore": {
+    "statements": [
+      {
+        "id": "K1",
+        "text": "Tỉ gấp k lần = k : 1 → sơ đồ (k + 1) phần: 'A gấp đôi B' vẽ A hai ô, B một ô — TỔNG SỐ PHẦN là 3 (không phải 2!)."
       },
-      "answerRule": "S : (m+n) rồi nhân"
-     }
-    }
-   ],
-   "standard": [
-    {
-     "id": "P2",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B29.LT2",
-     "text": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 3/4 số bánh khay bơ. Tìm số bánh mỗi khay.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "mè",
-        "value": 15
-       },
-       {
-        "label": "bơ",
-        "value": 20
-       }
-      ]
-     },
-     "hints": [
-      "3 ô + 4 ô.",
-      "35 : 7."
-     ],
-     "solutionNarrative": "Phần 5 → 15 và 20.",
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    },
-    {
-     "id": "P3",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B29.LT3",
-     "text": "Kiểm tra: cặp 15 và 20 có đúng tỉ số 3 : 4 không? Vì sao?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "đúng?",
-        "value": "đúng",
-        "options": [
-         "đúng",
-         "sai"
-        ]
-       },
-       {
-        "label": "vì",
-        "value": "15 : 20 cùng chia cho 5 ra 3 : 4",
-        "options": [
-         "15 : 20 cùng chia cho 5 ra 3 : 4",
-         "15 và 20 hơn kém nhau 5 nên đúng tỉ",
-         "20 − 15 = 5 = 4 − 3 + 4"
-        ]
-       }
-      ]
-     },
-     "hints": [
-      "Cùng chia cho mấy?",
-      "Cửa tỉ của phép thử."
-     ],
-     "solutionNarrative": "15 : 20 = 3 : 4 ✓ — cửa tỉ thông.",
-     "teaches": [
-      "K4"
-     ]
-    },
-    {
-     "id": "P4",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B29.LT7",
-     "text": "Tổng hai số là 55. Số bé bằng 2/3 số lớn. Tìm hai số.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "bé",
-        "value": 22
-       },
-       {
-        "label": "lớn",
-        "value": 33
-       }
-      ]
-     },
-     "hints": [
-      "Tỉ 2 : 3 → 5 phần.",
-      "55 : 5."
-     ],
-     "solutionNarrative": "Phần 11 → 22 và 33.",
-     "teaches": [
-      "K2",
-      "K3"
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "P5",
-     "format": "mb",
-     "sourceItem": "ITEM:KSN5Q1.B29.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Tổng của hai số là số nhỏ nhất có ba chữ số; số lớn gấp 4 lần số bé. Tìm hai số.\"",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "bé",
-        "value": 20
-       },
-       {
-        "label": "lớn",
-        "value": 80
-       }
-      ]
-     },
-     "hints": [
-      "Dịch chữ: tổng 100.",
-      "Tỉ 4 : 1 → 5 phần."
-     ],
-     "solutionNarrative": "Phần 20 → 20 và 80.",
-     "teaches": [
-      "K1",
-      "K3"
-     ]
-    }
-   ]
-  }
- },
- "assessment": {
-  "passRule": "≥ 2/3, bắt buộc đúng A1",
-  "onPass": {
-   "updateBKT": [
-    "CASE:III.3.1#1@G5"
-   ],
-   "unlockNext": "DL:KSN5Q1.B29.M2",
-   "award": "huy_hieu_xuong_ke_o"
-  },
-  "onFail": {
-   "action": "review_screens",
-   "target": [
-    "S2",
-    "S3"
-   ],
-   "retryWith": "đề B sinh từ generator P1"
-  },
-  "items": [
-   {
-    "id": "A1",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B29.QZ2",
-    "text": "(Đúng/Sai?) \"A gấp đôi B, tổng 36\" thì mỗi số bằng 36 : 2 = 18.",
-    "answerKey": {
-     "value": false
-    },
-    "mustPass": true,
-    "teaches": [
-     "K1",
-     "K3"
-    ]
-   },
-   {
-    "id": "A2",
-    "format": "tf",
-    "sourceItem": "ITEM:KSN5Q1.B29.QZ1",
-    "text": "(Đúng/Sai?) Với bài tổng – tỉ, ta chia tổng cho tổng số phần.",
-    "answerKey": {
-     "value": true
-    },
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "A3",
-    "format": "mcq",
-    "sourceItem": "ITEM:KSN5Q1.B29.QZ5",
-    "text": "Tổng 35, tỉ 3 : 4 — giá một phần là:",
-    "choices": [
-     "5",
-     "7",
-     "35"
+      {
+        "id": "K2",
+        "text": "Tỉ phân số m/n = m : n → sơ đồ m phần và n phần, tổng m + n phần: khay mè bằng 3/4 khay bơ → 3 ô và 4 ô — 7 phần."
+      },
+      {
+        "id": "K3",
+        "text": "Ba nhịp: ĐẾM tổng số phần → CHIA tổng cho nó ra giá một phần (35 : 7 = 5) → NHÂN ra từng số (3 × 5 = 15; 4 × 5 = 20). Con số trong tỉ chỉ để ĐẾM Ô — tổng số phần mới là số chia."
+      },
+      {
+        "id": "K4",
+        "text": "Thử về HAI cửa: cửa tổng (15 + 20 = 35 ✓) và cửa tỉ (15 : 20 = 3 : 4 ✓ — cùng chia 5); qua đủ hai cửa mới nộp."
+      }
     ],
-    "answerKey": {
-     "choice": "5"
-    },
-    "teaches": [
-     "K2",
-     "K3"
-    ]
-   }
-  ]
- },
- "spacedReview": {
-  "flashcards": [
-   {
-    "front": "Tổng – tỉ ba nhịp? Số chia là gì?",
-    "back": "ĐẾM tổng số phần (gấp k → k+1; m/n → m+n) — CHIA tổng cho TỔNG SỐ PHẦN (36:3=12; 35:7=5) — NHÂN ra từng số. Con số tỉ chỉ để đếm ô! Thử hai cửa: tổng ✓ và tỉ ✓ (15:20 cùng chia 5 = 3:4)."
-   }
-  ],
-  "schedule": [
-   "+1 ngày: flashcard",
-   "+3 ngày: câu generator P1",
-   "+7 ngày: câu P5 (dịch chữ 100)"
-  ]
- },
- "parentNote": {
-  "onComplete": "Hôm nay con học sơ đồ phần tổng – tỉ ba nhịp: đếm — chia — nhân, và hiểu tỉ chỉ để đếm ô. Con đạt {score}/3, {trapResult} câu bẫy chia-cho-tỉ.",
-  "homeActivity": "Chia 36 viên kẹo 'lớn gấp đôi bé' bằng cách kẻ 3 ô thật trên giấy — con đổ đều từng ô rồi gom 2 ô cho phần lớn.",
-  "watchFor": "Nếu con chia tổng cho con số tỉ — hỏi 'ai gấp đôi ai?' trước đáp hai bên bằng nhau (S1)."
- },
- "$schema": "digital-lesson/v2-micro",
- "id": "DL:KSN5Q1.B29.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "36 : 2 = 18 mỗi bên??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "36 chia 2 bằng 18 — mỗi bên 18!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "18 với 18 — thế ai đang gấp đôi ai vậy?",
-      "tone": "right"
-     }
-    ]
-   },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B29_M1_F1.png",
-   "sha256_16": "b0ecc8d67482bd7a"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Con vẽ được SƠ ĐỒ PHẦN và giải bài TỔNG – TỈ theo ba nhịp: ĐẾM tổng số phần — CHIA tổng cho tổng số phần ra giá một phần — NHÂN ra từng số; hiểu con số tỉ chỉ để ĐẾM PHẦN chứ không phải số chia; thử về cả tổng lẫn tỉ.",
-    "steps": [
-     {
-      "text": "3/4 → 3 ô + 4 ô = 7 ô → 35 : 7 = 5 → 15 & 20"
-     },
-     {
-      "text": "kiểm tỉ: 15 : 20 = 3 : 4 (cùng chia 5)"
-     },
-     {
-      "text": "sư phụ: 100 · 4:1 → 5 ô → 20 & 80"
-     }
+    "mechanism": "Hình ảnh brand: XƯỞNG KẺ Ô CỦA KIẾN TRÚC SƯ. Tổng 36, A gấp đôi B — Trí Long thấy số 2 là chia luôn: 36 : 2 = 18, hai bên 18 đều nhau?! Nhưng con số 2 KHÔNG phải số chia — nó chỉ là bản vẽ: 'A hai ô khi B một ô'. Kiến trúc sư kẻ ô đã: A ▢▢, B ▢ — đếm cả công trình: BA ô! Ba nhịp máy: ĐẾM 3 ô — CHIA 36 : 3 = 12 ra giá một ô — NHÂN: B một ô 12, A hai ô 24. Thử hai cửa: 24 + 12 = 36 và 24 gấp đôi 12 — mộc kép! Tỉ phân số cũng chỉ là bản vẽ khác: khay mè bằng 3/4 khay bơ — mè 3 ô, bơ 4 ô, đếm BẢY: 35 : 7 = 5 → 15 và 20.",
+    "canonicalExamples": [
+      {
+        "case": "gấp k (ca lõi)",
+        "problem": "Tổng hai số là 36. Số lớn gấp đôi số bé. Tìm hai số.",
+        "solution": "Tỉ 2 : 1 → 3 phần = 36 → phần 12 → bé 12; lớn 24. Thử: 36 ✓ và gấp đôi ✓.",
+        "why": "Ca đề A câu 1 — trap chia-cho-tỉ rình đây."
+      },
+      {
+        "case": "tỉ phân số (ca kẻ ô)",
+        "problem": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 3/4 số bánh khay bơ. Tìm số bánh mỗi khay.",
+        "solution": "Tỉ 3 : 4 → 7 phần = 35 → phần 5 → mè 15; bơ 20. Kiểm: 15 : 20 = 3 : 4 (cùng chia 5) ✓.",
+        "why": "Ca đề A câu 2 + LT3 — đếm ô, chia 7."
+      },
+      {
+        "case": "dịch chữ + tỉ to (ca sư phụ)",
+        "problem": "(a) Tổng 55, số bé bằng 2/3 số lớn. (b) Tổng là số nhỏ nhất có ba chữ số, số lớn gấp 4 lần số bé.",
+        "solution": "(a) 5 phần = 55 → 22 và 33. (b) Tổng = 100; tỉ 4 : 1 → 5 phần → phần 20 → 20 và 80.",
+        "why": "LT7 + LT9 — máy chạy mọi bộ số."
+      }
     ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B29_M1_F2.png",
-   "sha256_16": "ea6a112e1ffb1bd0"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tỉ gấp k lần = k",
-      "text": "1 → sơ đồ (k + 1) phần: 'A gấp đôi B' vẽ A hai ô, B một ô — TỔNG SỐ PHẦN là 3 (không phải 2!).",
-      "tone": "navy"
-     },
-     {
-      "label": "Tỉ phân số m/n = m",
-      "text": "n → sơ đồ m phần và n phần",
-      "tone": "teal"
-     }
+    "numberRange": "Lớp 5: tổng ≤ 200; tổng chia hết cho tổng số phần.",
+    "misconceptions": [
+      {
+        "wrong": "Chia tổng cho con số tỉ: 36 : 2 = 18 rồi cho cả hai bên 18 (hoặc một bên 18 bên kia 36).",
+        "signal": "Phép chia cho k thay vì (k + 1); đáp hai bên bằng nhau dù đề nói gấp đôi.",
+        "fix": "K1 + K3 — số 2 chỉ là bản vẽ đếm ô; kẻ ô rồi đếm cả công trình: 3 ô mới là số chia.",
+        "counterExample": "18 và 18: đâu có ai gấp đôi ai — trượt ngay cửa tỉ!"
+      }
+    ],
+    "vocabulary": [
+      "xưởng kẻ ô",
+      "bản vẽ tỉ số",
+      "giá một ô",
+      "đếm cả công trình",
+      "mộc kép hai cửa"
     ],
     "mantra": "TỈ ĐỂ ĐẾM PHẦN — TỔNG SỐ PHẦN MỚI LÀ SỐ CHIA!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B29_M1_F3.png",
-   "sha256_16": "c6d242426f413eb8"
   },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "TỔNG 36 · SỐ LỚN GẤP ĐÔI SỐ BÉ",
-    "bars": [
-     {
-      "name": "số bé",
-      "units": 1,
-      "label": "1 phần = 12"
-     },
-     {
-      "name": "số lớn",
-      "units": 2,
-      "label": "2 phần = 24"
-     }
+  "entryCheck": {
+    "items": [
+      {
+        "id": "E1",
+        "format": "num",
+        "text": "35 : 7 = ?",
+        "answerKey": {
+          "value": 5
+        }
+      }
     ],
-    "brace": {
-     "text": "ĐẾM 3 phần  →  CHIA 36 : 3 = 12  →  NHÂN ra từng số"
+    "onFail": {
+      "action": "suggest_review",
+      "target": "ôn chia nhẩm (hạt mầm)",
+      "message": "Ôn chia nhẩm rồi vào xưởng kẻ ô nhé!"
+    }
+  },
+  "lecture": {
+    "screens": [
+      {
+        "id": "S1",
+        "kind": "hook",
+        "estSeconds": 20,
+        "narration": "Đề: tổng 36, số lớn gấp ĐÔI số bé. Trí Long thấy số 2 là chia luôn: \"36 chia 2 bằng 18 — mỗi bên 18!\" Su Kem chỉ vào đáp: \"18 với 18 — thế ai đang gấp đôi ai vậy?\"",
+        "display": {
+          "type": "story_panel",
+          "caption": "36 : 2 = 18 mỗi bên??"
+        },
+        "interaction": {
+          "type": "tap_to_continue",
+          "prompt": "Chạm để kẻ ô!"
+        }
+      },
+      {
+        "id": "S2",
+        "kind": "guided_discovery",
+        "estSeconds": 46,
+        "teaches": [
+          "K1",
+          "K3",
+          "K4"
+        ],
+        "narration": "Con số 2 KHÔNG phải số chia — nó là BẢN VẼ: A hai ô khi B một ô! Kiến trúc sư kẻ ô: A hai ô, B một ô — đếm cả công trình: BA ô. Ba nhịp máy: ĐẾM ba ô — CHIA ba sáu cho ba ra giá một ô: MƯỜI HAI — NHÂN: B một ô mười hai, A hai ô HAI MƯƠI TƯ! Thử hai cửa: hai tư cộng mười hai đúng ba sáu; hai tư đúng gấp đôi mười hai — mộc kép!",
+        "display": {
+          "type": "part_grid_interactive",
+          "spec": {
+            "ratio": "2 : 1",
+            "totalParts": 3,
+            "total": 36,
+            "unit": 12,
+            "values": [
+              24,
+              12
+            ],
+            "check": "36 ✓ · gấp đôi ✓"
+          }
+        },
+        "interaction": {
+          "type": "count_divide_multiply",
+          "answerKey": {
+            "values": [
+              24,
+              12
+            ]
+          },
+          "successMessage": "3 ô → ô 12 → 24 & 12 — hai cửa mộc kép!"
+        }
+      },
+      {
+        "id": "C1",
+        "kind": "checkpoint",
+        "estSeconds": 15,
+        "item": {
+          "format": "mcq",
+          "text": "Tổng 35, tỉ 3 : 4 — giá một phần là:",
+          "choices": [
+            "5",
+            "7",
+            "35"
+          ],
+          "answerKey": {
+            "choice": "5"
+          },
+          "wrongFeedback": "35 : (3 + 4).",
+          "objective": "O1",
+          "teaches": [
+            "K2",
+            "K3"
+          ],
+          "id": "C1"
+        }
+      },
+      {
+        "id": "S3",
+        "kind": "explain",
+        "estSeconds": 42,
+        "teaches": [
+          "K2",
+          "K4"
+        ],
+        "narration": "Bản vẽ phân số: khay mè bằng BA PHẦN TƯ khay bơ — mè ba ô, bơ bốn ô: đếm BẢY ô! Ba lăm chia bảy ra ô NĂM: mè mười lăm, bơ hai mươi — kiểm cửa tỉ: mười lăm trên hai mươi cùng chia năm đúng ba trên bốn! Đề chữ của sư phụ: tổng là số nhỏ nhất có ba chữ số — MỘT TRĂM; gấp bốn — năm ô: ô hai mươi, hai số HAI MƯƠI và TÁM MƯƠI!",
+        "display": {
+          "type": "step_by_step",
+          "lines": [
+            "3/4 → 3 ô + 4 ô = 7 ô → 35 : 7 = 5 → 15 & 20",
+            "kiểm tỉ: 15 : 20 = 3 : 4 (cùng chia 5) ✓",
+            "sư phụ: 100 · 4:1 → 5 ô → 20 & 80"
+          ]
+        }
+      },
+      {
+        "id": "S4",
+        "kind": "mantra",
+        "estSeconds": 13,
+        "narration": "Thần chú xưởng kẻ ô: tỉ để đếm phần — tổng số phần mới là số chia!",
+        "display": {
+          "type": "mantra_card",
+          "text": "TỔNG SỐ PHẦN MỚI LÀ SỐ CHIA!"
+        },
+        "interaction": {
+          "type": "read_aloud_or_tap",
+          "prompt": "Đọc to rồi vào phòng luyện!"
+        }
+      }
+    ]
+  },
+  "videoSpec": {
+    "renderProfile": "vertical_9x16 1080x1920",
+    "maxDuration": 90,
+    "totalDuration": 90,
+    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+    "brand": {
+      "colors": {
+        "nen": "#FFFFFF",
+        "xanh_khien": "#0C3B70",
+        "ngoc": "#1FC3A6",
+        "vang": "#F8B942",
+        "do_bay": "#C0392B"
+      },
+      "font": "chữ tròn dày, cỡ lớn",
+      "logo": "MOBILUCK góc dưới phải, mờ 60%"
     },
-    "note": "Ba nhịp: đếm tổng số phần — chia ra giá một phần — nhân ra từng số"
-   },
-   "caption": "Sơ đồ phần: mỗi ô là một phần bằng nhau",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B29_M1_F4.png",
-   "sha256_16": "ab279b24bb274273"
-  }
- ]
+    "voice": {
+      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    },
+    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+    "scenes": [
+      {
+        "no": 1,
+        "templateHint": "title_hook",
+        "derivedFromScreen": "S1",
+        "transitionOut": "wipe trái",
+        "voiceover": "Đề: tổng ba sáu, số lớn gấp ĐÔI số bé. Trí Long thấy số hai là chia luôn: ba sáu chia hai bằng mười tám — mỗi bên mười tám! Su Kem chỉ vào đáp: mười tám với mười tám — thế ai đang gấp đôi ai vậy?",
+        "screenText": "36 : 2 = 18 mỗi bên?? ai gấp đôi ai?",
+        "visual": "Bảng đề với hai cột 18 bằng chằn chặn; Su Kem chỉ tay nghi vấn; dấu hỏi đỏ #C0392B.",
+        "assets": [],
+        "duration": 17
+      },
+      {
+        "no": 2,
+        "templateHint": "concept_diagram",
+        "derivedFromScreen": "S2",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Con số hai KHÔNG phải số chia — nó là BẢN VẼ: A hai ô khi B một ô! Kiến trúc sư kẻ ô: A hai ô, B một ô — đếm cả công trình: BA ô. Ba nhịp máy: ĐẾM ba ô — CHIA ba sáu cho ba ra giá một ô: MƯỜI HAI — NHÂN: B một ô mười hai, A hai ô HAI MƯƠI TƯ!",
+        "screenText": "A ▢▢ · B ▢ → 3 ô · 36:3 = 12 → 24 & 12 ✓✓",
+        "visual": "Bản vẽ kẻ ô teal: hàng A hai ô, hàng B một ô; thước đếm '3'; mỗi ô điền 12; hai cửa tổng/tỉ đóng mộc kép.",
+        "assets": [],
+        "duration": 24
+      },
+      {
+        "no": 3,
+        "templateHint": "step_by_step",
+        "derivedFromScreen": "S3",
+        "transitionOut": "cắt thẳng",
+        "voiceover": "Bản vẽ phân số: khay mè bằng BA PHẦN TƯ khay bơ — mè ba ô, bơ bốn ô: đếm BẢY ô! Ba lăm chia bảy ra ô NĂM: mè mười lăm, bơ hai mươi — kiểm cửa tỉ: mười lăm trên hai mươi cùng chia năm đúng ba trên bốn! Đề chữ của sư phụ: tổng là số nhỏ nhất có ba chữ số — MỘT TRĂM; gấp bốn — năm ô: ô hai mươi, hai số HAI MƯƠI và TÁM MƯƠI!",
+        "screenText": "3 ô + 4 ô = 7 → 35:7 = 5 → 15 & 20 · 100 → 20 & 80",
+        "visual": "Hai khay bánh kẻ 3 ô và 4 ô; phép kiểm tỉ cùng-chia-5; ca sư phụ với tấm đề chữ dịch ra 100 và sơ đồ 5 ô.",
+        "assets": [],
+        "duration": 30
+      },
+      {
+        "no": 4,
+        "templateHint": "mantra_card",
+        "derivedFromScreen": "S4",
+        "transitionOut": "zoom nhẹ",
+        "voiceover": "Thần chú xưởng kẻ ô: tỉ để đếm phần — tổng số phần mới là số chia!",
+        "screenText": "TỈ ĐẾM PHẦN — TỔNG PHẦN LÀ SỐ CHIA!",
+        "visual": "Thẻ thần chú vàng với icon bản vẽ kẻ ô.",
+        "assets": [],
+        "duration": 8
+      },
+      {
+        "no": 5,
+        "templateHint": "cta_practice",
+        "transitionOut": "kết",
+        "voiceover": "Bản vẽ của con: hai khay ba lăm chiếc bánh, khay mè bằng ba phần tư khay bơ — kẻ ô, đếm phần, tìm mỗi khay! Vào bài luyện ngay!",
+        "screenText": "35 chiếc · tỉ 3 : 4 → mỗi khay?",
+        "visual": "Hai khay trống chờ kẻ ô; nút 'VÀO BÀI LUYỆN' #1FC3A6.",
+        "linkItem": "P2",
+        "assets": [],
+        "duration": 11
+      }
+    ]
+  },
+  "workedExample": {
+    "title": "Ba nhịp xưởng kẻ ô",
+    "problem": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 3/4 số bánh khay bơ. Tìm số bánh mỗi khay.",
+    "steps": [
+      {
+        "show": "Bước 1 — ĐẾM: mè 3 ô, bơ 4 ô → 7 phần.",
+        "askBefore": {
+          "format": "mcq",
+          "text": "Số chia của bài là:",
+          "choices": [
+            "7 (tổng số phần)",
+            "3",
+            "4"
+          ],
+          "answerKey": {
+            "choice": "7 (tổng số phần)"
+          },
+          "id": "W1"
+        }
+      },
+      {
+        "show": "Bước 2 — CHIA: 35 : 7 = 5 = giá một phần."
+      },
+      {
+        "show": "Bước 3 — NHÂN: mè = 3 × 5 = 15; bơ = 4 × 5 = 20. Thử: 35 ✓; 15 : 20 = 3 : 4 ✓.",
+        "askAfter": {
+          "format": "mb",
+          "text": "Tổng 36, gấp đôi → hai số?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "lớn",
+                "value": 24
+              },
+              {
+                "label": "bé",
+                "value": 12
+              }
+            ]
+          },
+          "id": "W2"
+        }
+      }
+    ]
+  },
+  "practice": {
+    "adaptiveRules": {
+      "start": "warmup",
+      "promote": "đúng 2 câu liên tiếp → lên mức",
+      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+    },
+    "pools": {
+      "warmup": [
+        {
+          "id": "P1",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B29.LT1",
+          "text": "Tổng hai số là 36. Số lớn gấp đôi số bé. Tìm hai số.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "bé",
+                "value": 12
+              },
+              {
+                "label": "lớn",
+                "value": 24
+              }
+            ]
+          },
+          "hints": [
+            "Kẻ ô: 2 + 1 = 3 phần.",
+            "36 : 3."
+          ],
+          "solutionNarrative": "Phần 12 → 12 và 24 (mộc kép ✓).",
+          "teaches": [
+            "K1",
+            "K3"
+          ],
+          "generator": {
+            "template": "Tổng {S}, tỉ {m}:{n}. Tìm hai số.",
+            "constraints": {
+              "S": "chia hết m+n"
+            },
+            "answerRule": "S : (m+n) rồi nhân"
+          }
+        }
+      ],
+      "standard": [
+        {
+          "id": "P2",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B29.LT2",
+          "text": "Hai khay có 35 chiếc bánh. Số bánh khay mè bằng 3/4 số bánh khay bơ. Tìm số bánh mỗi khay.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "mè",
+                "value": 15
+              },
+              {
+                "label": "bơ",
+                "value": 20
+              }
+            ]
+          },
+          "hints": [
+            "3 ô + 4 ô.",
+            "35 : 7."
+          ],
+          "solutionNarrative": "Phần 5 → 15 và 20.",
+          "teaches": [
+            "K2",
+            "K3"
+          ]
+        },
+        {
+          "id": "P3",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B29.LT3",
+          "text": "Kiểm tra: cặp 15 và 20 có đúng tỉ số 3 : 4 không? Vì sao?",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "đúng?",
+                "value": "đúng",
+                "options": [
+                  "đúng",
+                  "sai"
+                ]
+              },
+              {
+                "label": "vì",
+                "value": "15 : 20 cùng chia cho 5 ra 3 : 4",
+                "options": [
+                  "15 : 20 cùng chia cho 5 ra 3 : 4",
+                  "15 và 20 hơn kém nhau 5 nên đúng tỉ",
+                  "20 − 15 = 5 = 4 − 3 + 4"
+                ]
+              }
+            ]
+          },
+          "hints": [
+            "Cùng chia cho mấy?",
+            "Cửa tỉ của phép thử."
+          ],
+          "solutionNarrative": "15 : 20 = 3 : 4 ✓ — cửa tỉ thông.",
+          "teaches": [
+            "K4"
+          ]
+        },
+        {
+          "id": "P4",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B29.LT7",
+          "text": "Tổng hai số là 55. Số bé bằng 2/3 số lớn. Tìm hai số.",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "bé",
+                "value": 22
+              },
+              {
+                "label": "lớn",
+                "value": 33
+              }
+            ]
+          },
+          "hints": [
+            "Tỉ 2 : 3 → 5 phần.",
+            "55 : 5."
+          ],
+          "solutionNarrative": "Phần 11 → 22 và 33.",
+          "teaches": [
+            "K2",
+            "K3"
+          ]
+        }
+      ],
+      "challenge": [
+        {
+          "id": "P5",
+          "format": "mb",
+          "sourceItem": "ITEM:KSN5Q1.B29.LT9",
+          "text": "Sư phụ Trí Dũng đố: \"Tổng của hai số là số nhỏ nhất có ba chữ số; số lớn gấp 4 lần số bé. Tìm hai số.\"",
+          "answerKey": {
+            "parts": [
+              {
+                "label": "bé",
+                "value": 20
+              },
+              {
+                "label": "lớn",
+                "value": 80
+              }
+            ]
+          },
+          "hints": [
+            "Dịch chữ: tổng 100.",
+            "Tỉ 4 : 1 → 5 phần."
+          ],
+          "solutionNarrative": "Phần 20 → 20 và 80.",
+          "teaches": [
+            "K1",
+            "K3"
+          ]
+        }
+      ]
+    }
+  },
+  "assessment": {
+    "passRule": "≥ 2/3, bắt buộc đúng A1",
+    "onPass": {
+      "updateBKT": [
+        "CASE:III.3.1#1@G5"
+      ],
+      "unlockNext": "DL:KSN5Q1.B29.M2",
+      "award": "huy_hieu_xuong_ke_o"
+    },
+    "onFail": {
+      "action": "review_screens",
+      "target": [
+        "S2",
+        "S3"
+      ],
+      "retryWith": "đề B sinh từ generator P1"
+    },
+    "items": [
+      {
+        "id": "A1",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B29.QZ2",
+        "text": "(Đúng/Sai?) \"A gấp đôi B, tổng 36\" thì mỗi số bằng 36 : 2 = 18.",
+        "answerKey": {
+          "value": false
+        },
+        "mustPass": true,
+        "teaches": [
+          "K1",
+          "K3"
+        ]
+      },
+      {
+        "id": "A2",
+        "format": "tf",
+        "sourceItem": "ITEM:KSN5Q1.B29.QZ1",
+        "text": "(Đúng/Sai?) Với bài tổng – tỉ, ta chia tổng cho tổng số phần.",
+        "answerKey": {
+          "value": true
+        },
+        "teaches": [
+          "K3"
+        ]
+      },
+      {
+        "id": "A3",
+        "format": "mcq",
+        "sourceItem": "ITEM:KSN5Q1.B29.QZ5",
+        "text": "Tổng 35, tỉ 3 : 4 — giá một phần là:",
+        "choices": [
+          "5",
+          "7",
+          "35"
+        ],
+        "answerKey": {
+          "choice": "5"
+        },
+        "teaches": [
+          "K2",
+          "K3"
+        ]
+      }
+    ]
+  },
+  "spacedReview": {
+    "flashcards": [
+      {
+        "front": "Tổng – tỉ ba nhịp? Số chia là gì?",
+        "back": "ĐẾM tổng số phần (gấp k → k+1; m/n → m+n) — CHIA tổng cho TỔNG SỐ PHẦN (36:3=12; 35:7=5) — NHÂN ra từng số. Con số tỉ chỉ để đếm ô! Thử hai cửa: tổng ✓ và tỉ ✓ (15:20 cùng chia 5 = 3:4)."
+      }
+    ],
+    "schedule": [
+      "+1 ngày: flashcard",
+      "+3 ngày: câu generator P1",
+      "+7 ngày: câu P5 (dịch chữ 100)"
+    ]
+  },
+  "parentNote": {
+    "onComplete": "Hôm nay con học sơ đồ phần tổng – tỉ ba nhịp: đếm — chia — nhân, và hiểu tỉ chỉ để đếm ô. Con đạt {score}/3, {trapResult} câu bẫy chia-cho-tỉ.",
+    "homeActivity": "Chia 36 viên kẹo 'lớn gấp đôi bé' bằng cách kẻ 3 ô thật trên giấy — con đổ đều từng ô rồi gom 2 ô cho phần lớn.",
+    "watchFor": "Nếu con chia tổng cho con số tỉ — hỏi 'ai gấp đôi ai?' trước đáp hai bên bằng nhau (S1)."
+  },
+  "$schema": "digital-lesson/v2-micro",
+  "id": "DL:KSN5Q1.B29.M1",
+  "figureSpec": [
+    {
+      "archetype": "character_speech",
+      "params": {
+        "title": "36 : 2 = 18 mỗi bên??",
+        "lines": [
+          {
+            "who": "Trí Long",
+            "say": "36 chia 2 bằng 18 — mỗi bên 18!",
+            "tone": "wrong"
+          },
+          {
+            "who": "Su Kem",
+            "say": "18 với 18 — thế ai đang gấp đôi ai vậy?",
+            "tone": "right"
+          }
+        ]
+      },
+      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+      "id": "F1",
+      "usedIn": [
+        "hook"
+      ],
+      "file": "figures/KSN5Q1_B29_M1_F1.png",
+      "sha256_16": "b0ecc8d67482bd7a"
+    },
+    {
+      "archetype": "ladder_steps",
+      "params": {
+        "title": "Con vẽ được SƠ ĐỒ PHẦN và giải bài TỔNG – TỈ theo ba nhịp: ĐẾM tổng số phần — CHIA tổng cho tổng số phần ra giá một phần — NHÂN ra từng số; hiểu con số tỉ chỉ để ĐẾM PHẦN chứ không phải số chia; thử về cả tổng lẫn tỉ.",
+        "steps": [
+          {
+            "text": "3/4 → 3 ô + 4 ô = 7 ô → 35 : 7 = 5 → 15 & 20"
+          },
+          {
+            "text": "kiểm tỉ: 15 : 20 = 3 : 4 (cùng chia 5)"
+          },
+          {
+            "text": "sư phụ: 100 · 4:1 → 5 ô → 20 & 80"
+          }
+        ],
+        "note": "Làm đúng thứ tự từng bậc"
+      },
+      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+      "id": "F2",
+      "usedIn": [
+        "teach_core"
+      ],
+      "file": "figures/KSN5Q1_B29_M1_F2.png",
+      "sha256_16": "ea6a112e1ffb1bd0"
+    },
+    {
+      "archetype": "formula_card",
+      "params": {
+        "title": "NGUYÊN TẮC CẦN NHỚ",
+        "formulas": [
+          {
+            "label": "Tỉ gấp k lần = k",
+            "text": "1 → sơ đồ (k + 1) phần: 'A gấp đôi B' vẽ A hai ô, B một ô — TỔNG SỐ PHẦN là 3 (không phải 2!).",
+            "tone": "navy"
+          },
+          {
+            "label": "Tỉ phân số m/n = m",
+            "text": "n → sơ đồ m phần và n phần",
+            "tone": "teal"
+          }
+        ],
+        "mantra": "TỈ ĐỂ ĐẾM PHẦN — TỔNG SỐ PHẦN MỚI LÀ SỐ CHIA!"
+      },
+      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+      "id": "F3",
+      "usedIn": [
+        "mantra"
+      ],
+      "file": "figures/KSN5Q1_B29_M1_F3.png",
+      "sha256_16": "c6d242426f413eb8"
+    },
+    {
+      "archetype": "bar_diagram",
+      "params": {
+        "title": "TỔNG 36 · SỐ LỚN GẤP ĐÔI SỐ BÉ",
+        "bars": [
+          {
+            "name": "số bé",
+            "units": 1,
+            "label": "1 phần = 12"
+          },
+          {
+            "name": "số lớn",
+            "units": 2,
+            "label": "2 phần = 24"
+          }
+        ],
+        "brace": {
+          "text": "ĐẾM 3 phần  →  CHIA 36 : 3 = 12  →  NHÂN ra từng số"
+        },
+        "note": "Ba nhịp: đếm tổng số phần — chia ra giá một phần — nhân ra từng số"
+      },
+      "caption": "Sơ đồ phần: mỗi ô là một phần bằng nhau",
+      "id": "F4",
+      "usedIn": [
+        "teach_domain"
+      ],
+      "file": "figures/KSN5Q1_B29_M1_F4.png",
+      "sha256_16": "ab279b24bb274273"
+    }
+  ]
 }
