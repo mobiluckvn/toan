@@ -57,10 +57,19 @@ export function stuckLearners(attempts, progress = {}, { minTries = 3, n = 20 } 
 }
 
 /** Một dòng cho mỗi học sinh — kể cả em tuần này chưa vào học buổi nào */
+/**
+ * Bản ghi thuộc Quyển 2 hay Quyển 1 — nhận ra bằng tiền tố của mã nội dung.
+ * Quyển 1 ghi "DL:KSN5Q1.B1.M1", Quyển 2 ghi "DR:KSN5Q2.V01".
+ * Không tách thì cô nhìn một cục "đã trả lời 300 câu" mà không biết con đang học
+ * bài hay đang luyện thi — hai việc cần hai cách hỗ trợ khác nhau.
+ */
+export const laQuyen2 = (a) => String(a?.microId || '').startsWith('DR:KSN5Q2');
+
 export function learnerRows(attempts, roster = [], progress = {}) {
   const rows = new Map(roster.map((r) => [r.uid, {
     uid: r.uid, displayName: r.displayName || '', email: r.email || '',
     sessions: new Set(), answered: 0, correct: 0, lastAt: null,
+    q2Answered: 0, q2Correct: 0, q2Vong: new Set(),
   }]));
   for (const a of attempts) {
     const row = rows.get(a.learnerId);
@@ -68,6 +77,11 @@ export function learnerRows(attempts, roster = [], progress = {}) {
     row.sessions.add(a.sessionId);
     row.answered++;
     if (a.correct) row.correct++;
+    if (laQuyen2(a)) {
+      row.q2Answered++;
+      if (a.correct) row.q2Correct++;
+      row.q2Vong.add(a.microId);
+    }
     const t = stampOf(a);
     if (row.lastAt === null || t > row.lastAt) row.lastAt = t;
   }
@@ -79,6 +93,10 @@ export function learnerRows(attempts, roster = [], progress = {}) {
     answered: r.answered,
     correctRate: r.answered ? Math.round((r.correct / r.answered) * 100) : null,
     microsPassed: Object.values(progress[r.uid] || {}).filter((m) => m.pass).length,
+    /* Cột riêng cho Quyển 2 — luyện thi có đồng hồ, khác hẳn học bài */
+    q2Answered: r.q2Answered,
+    q2CorrectRate: r.q2Answered ? Math.round((r.q2Correct / r.q2Answered) * 100) : null,
+    q2Vong: r.q2Vong.size,
     lastAt: r.lastAt,
   })).sort((x, y) => x.displayName.localeCompare(y.displayName, 'vi'));
 }
@@ -96,6 +114,7 @@ export function buildTeacherBoard({
   const rows = learnerRows(win, roster, progress);
   const answered = win.length;
   const active = rows.filter((r) => r.answered > 0);
+  const q2 = win.filter(laQuyen2);
 
   return {
     periodDays: days,
@@ -108,6 +127,13 @@ export function buildTeacherBoard({
     avgMicrosPassed: rows.length
       ? Math.round((rows.reduce((s, r) => s + r.microsPassed, 0) / rows.length) * 10) / 10
       : 0,
+    /* Số liệu Quyển 2 để RIÊNG, không trộn vào cột chung: học bài và luyện thi có
+       đồng hồ là hai việc khác nhau, cô cần nhìn tách ra mới biết giúp kiểu gì. */
+    q2Answered: q2.length,
+    q2CorrectRate: q2.length
+      ? Math.round((q2.filter((a) => a.correct).length / q2.length) * 100) : null,
+    q2Learners: new Set(q2.map((a) => a.learnerId)).size,
+    q2Vong: new Set(q2.map((a) => a.microId)).size,
     topTraps: topTraps(win, index),
     stuck: stuckLearners(win, progress),
     rows,

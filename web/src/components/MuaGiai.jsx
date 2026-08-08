@@ -14,7 +14,7 @@ import ChanTrang from './ChanTrang.jsx';
  */
 const NHAN = { vong: 'VÒNG ĐẤU', detron: 'ĐỀ TRỘN', thithu: 'KỲ THI THỬ' };
 
-export default function MuaGiai({ progress, onMo, onExit }) {
+export default function MuaGiai({ progress, onMo, onExit, onTrai, onHoSo, onThe }) {
   const [idx, setIdx] = useState(null);
   const [loi, setLoi] = useState(null);
 
@@ -57,6 +57,21 @@ export default function MuaGiai({ progress, onMo, onExit }) {
         <div className="rounded-xl bg-gold-pale px-3.5 py-2.5 text-[13.5px] leading-relaxed text-gold-dark">
           <b>Vòng đấu mở dần theo Quyển 1:</b> học xong chương nào thì vòng đấu của
           chương ấy mở ra. Con không phải đợi hết cả quyển.
+        </div>
+
+        {/* Ba cửa phụ. Sách bắt học Khối 1 TRƯỚC khi đấu vòng 1, nên để ngay trên
+            danh sách vòng chứ không giấu dưới đáy. */}
+        <div className="mt-3 grid grid-cols-3 gap-2">
+          {[['🎯', 'Trại huấn luyện', '5 bài kỹ năng', onTrai],
+            ['🦊', 'Hồ sơ Cáo Đề', '168 bẫy', onHoSo],
+            ['🗂', 'Thẻ chiến thuật', '14 thẻ', onThe]].map(([bt, ten, mo2, fn]) => (
+            <button key={ten} onClick={fn}
+                    className="rounded-2xl border-[1.5px] border-line bg-white px-2 py-2.5 text-center hover:border-navy">
+              <div className="text-[20px] leading-none">{bt}</div>
+              <div className="mt-1 text-[12.5px] font-bold leading-tight text-navy">{ten}</div>
+              <div className="text-[11px] text-mute">{mo2}</div>
+            </button>
+          ))}
         </div>
 
         {idx.map((k) => {

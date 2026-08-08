@@ -96,5 +96,42 @@ t('chưa đăng nhập thì không coi là học sinh trên máy chủ', !isClou
 t('chưa có id thì cũng không', !isCloudLearner(null) && !isCloudLearner(''));
 t('có hồ sơ thật thì mới đẩy lên', isCloudLearner('LxYz123'));
 
+
+
+
+/* ══ Quyển 2 tách riêng khỏi Quyển 1 ══
+   Học bài (Quyển 1) và luyện thi có đồng hồ (Quyển 2) là hai việc khác nhau; trộn
+   vào một cột thì cô nhìn "đã trả lời 300 câu" mà không biết giúp con kiểu gì. */
+const { laQuyen2 } = await import('../functions/src/teacherboard.js');
+t('nhận ra bản ghi Quyển 2', laQuyen2({ microId: 'DR:KSN5Q2.V01' }) === true);
+t('không nhầm bản ghi Quyển 1', laQuyen2({ microId: 'DL:KSN5Q1.B1.M1' }) === false);
+t('thiếu mã nội dung thì không tính là Quyển 2', laQuyen2({}) === false);
+
+const ros2 = [{ uid: 'u1', displayName: 'An', email: 'a@x' }];
+const att2 = [
+  { learnerId: 'u1', sessionId: 's1', microId: 'DL:KSN5Q1.B1.M1', correct: true, ts: NOW },
+  { learnerId: 'u1', sessionId: 's1', microId: 'DL:KSN5Q1.B1.M1', correct: false, ts: NOW },
+  { learnerId: 'u1', sessionId: 'd1', microId: 'DR:KSN5Q2.V01', correct: true, ts: NOW },
+  { learnerId: 'u1', sessionId: 'd1', microId: 'DR:KSN5Q2.V01', correct: true, ts: NOW },
+  { learnerId: 'u1', sessionId: 'd2', microId: 'DR:KSN5Q2.V02', correct: false, ts: NOW },
+];
+const b2 = buildTeacherBoard({ roster: ros2, attempts: att2, now: NOW });
+t('cột chung vẫn đếm cả hai quyển', b2.answered === 5);
+t('cột Quyển 2 chỉ đếm Quyển 2', b2.q2Answered === 3);
+t('tỉ lệ đúng của Quyển 2 tính riêng', b2.q2CorrectRate === 67);
+t('đếm đúng số vòng đấu đã đụng tới', b2.q2Vong === 2);
+t('đếm đúng số học sinh có luyện thi', b2.q2Learners === 1);
+const r2 = b2.rows[0];
+t('dòng từng em cũng tách Quyển 2', r2.q2Answered === 3 && r2.answered === 5);
+/* "0%" và "chưa làm" là hai chuyện khác hẳn: 0% nghĩa là con làm SAI HẾT, còn
+   chưa luyện thi thì phải để trống. Cô nhìn 0% sẽ tưởng con đang bế tắc. */
+const chuaThi = buildTeacherBoard({ roster: ros2, attempts: [att2[0]], now: NOW });
+t('em chưa luyện thi thì cột Q2 của em để trống', chuaThi.rows[0].q2CorrectRate === null);
+t('cả bảng chưa ai luyện thi thì cũng để trống', chuaThi.q2CorrectRate === null);
+t('làm sai hết thì mới là 0%',
+  buildTeacherBoard({ roster: ros2, now: NOW,
+    attempts: [{ learnerId: 'u1', sessionId: 'd', microId: 'DR:KSN5Q2.V01', correct: false, ts: NOW }],
+  }).q2CorrectRate === 0);
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);

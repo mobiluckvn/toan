@@ -16,6 +16,9 @@ import {
 } from './lib/firebase.js';
 import { reassignQueue } from './lib/sync.js';
 import MuaGiai from './components/MuaGiai.jsx';
+import TraiHuanLuyen from './components/TraiHuanLuyen.jsx';
+import HoSoBay from './components/HoSoBay.jsx';
+import TheChienThuat from './components/TheChienThuat.jsx';
 import DauLoader from './components/DauLoader.jsx';
 
 const SKIP_KEY = 'ttd5.skipLogin.v1';
@@ -195,9 +198,22 @@ export default function App() {
       <MuaGiai
         progress={progress}
         onMo={(id) => setView({ page: 'dau', khoiId: id })}
+        onTrai={() => setView({ page: 'trai' })}
+        onHoSo={() => setView({ page: 'hosobay' })}
+        onThe={() => setView({ page: 'the' })}
         onExit={() => setView({ page: 'home' })}
       />
     );
+
+  if (view.page === 'trai')
+    return <TraiHuanLuyen onExit={() => setView({ page: 'muagiai' })} />;
+
+  if (view.page === 'hosobay')
+    return <HoSoBay onExit={() => setView({ page: 'muagiai' })}
+                    onMoMicro={(id) => setView({ page: 'lesson', microId: id })} />;
+
+  if (view.page === 'the')
+    return <TheChienThuat onExit={() => setView({ page: 'muagiai' })} />;
 
   if (view.page === 'dau')
     return (

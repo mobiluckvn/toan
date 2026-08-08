@@ -147,6 +147,13 @@ export default function TeacherBoard({ onExit }) {
           <Stat label="TỈ LỆ ĐÚNG" value={`${board.correctRate}%`} />
           <Stat label="BÀI ĐẠT TB" value={board.avgMicrosPassed} />
         </div>
+        {/* Quyển 2 để riêng: luyện thi có đồng hồ, cần hỗ trợ khác với học bài */}
+        <div className="mt-2 flex flex-wrap gap-2">
+          <Stat label="Q2 · LƯỢT" value={board.q2Answered ?? 0} />
+          <Stat label="Q2 · ĐÚNG" value={board.q2CorrectRate == null ? '—' : `${board.q2CorrectRate}%`} />
+          <Stat label="Q2 · HỌC SINH" value={board.q2Learners ?? 0} />
+          <Stat label="Q2 · VÒNG ĐẤU" value={board.q2Vong ?? 0} />
+        </div>
       </div>
 
       {board.topTraps?.length > 0 && (

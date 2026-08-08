@@ -198,11 +198,27 @@ def rut_ky_nang(ps):
         ma = m.group(1)
         if ma not in theo_ma or i > theo_ma[ma][0]:
             theo_ma[ma] = (i, m)
+    moc = sorted((i, m) for i, m in theo_ma.values())
     ra = []
-    for ma in sorted(theo_ma):
-        i, m = theo_ma[ma]
-        ra.append({'ma': ma, 'ten': m.group(2).strip(),
-                   'phuDe': (m.group(3) or '').strip(), 'dongDau': i})
+    for k, (i, m) in enumerate(moc):
+        het = moc[k + 1][0] if k + 1 < len(moc) else min(i + 90, len(ps))
+        # Thân bài chia theo dấu ①②③… của sách; đoạn nào không thuộc mục nào thì
+        # gom vào mục đang mở. Bỏ dòng chân trang lặp lại ở mọi trang.
+        muc, hien = [], None
+        for t in ps[i + 1:het]:
+            if t.startswith(('KỸ SƯ NHÍ', 'QUYỂN 2 ·')):
+                continue
+            d = re.match(r'^([①②③④⑤⑥⑦⑧])\s*(.*)$', t)
+            if d:
+                hien = {'so': d.group(1), 'ten': d.group(2).strip(), 'dong': []}
+                muc.append(hien)
+            elif hien is not None:
+                hien['dong'].append(t)
+            else:
+                muc.append({'so': '', 'ten': '', 'dong': [t]})
+                hien = muc[-1]
+        ra.append({'ma': m.group(1), 'ten': m.group(2).strip(),
+                   'phuDe': (m.group(3) or '').strip(), 'muc': muc})
     return ra
 
 

@@ -154,6 +154,19 @@ Quyển 1 có 1 141 câu và mất phần lớn dự án. Quyển 2 có **314 c�
 - [x] **Bước 4 · Năng lực mới** — đồng hồ · barem 4 mốc · phiên tòa · chấm kép (44 phép kiểm)
 - [x] **Bước 5 · sơ đồ** — 53 sơ đồ vẽ bằng FigForge, gắn vào 21 khối
 - [x] **Bước 6 · Nối vào phần mềm** — đã kiểm end-to-end trên trình duyệt
+- [x] **Trại huấn luyện · Hồ sơ bẫy · Thẻ chiến thuật** — ba màn tra cứu
+- [x] **Sổ cô giáo gộp hai quyển** — cột Quyển 2 để riêng, không trộn
+
+### Chạy lại dây chuyền dữ liệu
+
+```bash
+python3 tools/lam_quyen2.py     # bốn bước, ĐÚNG THỨ TỰ
+npm test                        # cổng nghiệm thu soi lại
+```
+
+Phải chạy bằng một lệnh: `chuan_quyen2.py` dựng lại tệp khối TỪ ĐẦU, nên chạy nó
+sau `ve_so_do_q2.py` là xoá sạch phần `soDo` vừa gắn — dữ liệu vẫn hợp lệ, bài vẫn
+chạy, chỉ mất hết sơ đồ mà không có gì báo. Đã dính đúng lỗi này một lần.
 
 ### Kết quả đo được (khác kế hoạch ban đầu, ghi đúng số thật)
 
