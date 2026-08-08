@@ -46,7 +46,7 @@ export default function Home({ onOpenMuaGiai, onDoiChuongTrinh, progress, onOpen
               <span className="text-[11px] font-extrabold tracking-widest text-gold">MOBILUCK · KỸ SƯ NHÍ</span>
               <button onClick={onDoiChuongTrinh}
                       className="rounded-full bg-white/15 px-2 py-0.5 text-[10.5px] font-bold text-white">
-                lớp 5 · đổi
+                ← kệ sách
               </button>
             </div>
             <h1 className="mt-1 text-[20px] font-bold">Toán Tư Duy lớp 5 — Quyển 1</h1>

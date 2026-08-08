@@ -29,16 +29,25 @@ export const idToFile = (microId) => microId.replace('DL:', 'DL_').replace(/\./g
  * "nếu là lớp 2 thì…" ra khắp các component, vì thêm lớp thứ ba là phải đi sửa lại
  * từng chỗ một.
  */
-const THU_MUC = { lop2: 'lop2', lop5: 'lessons' };
-
-/* Nhịp đọc theo lớp. Đọc từ content/chuong_trinh.json khi app khởi động; có sẵn
-   bản mặc định để bộ kiểm chạy bằng node (không có mạng) vẫn dùng được. */
+/* Sổ đăng ký chương trình. Đọc từ content/chuong_trinh.json khi app khởi động; có
+   sẵn bản tối thiểu để bộ kiểm chạy bằng node (không có mạng) vẫn dùng được.
+   THÊM LỚP/MÔN MỚI thì thêm mục trong data/chuong_trinh.json, KHÔNG sửa tệp này. */
 let SO_DK = {
-  lop2: { doc: { chuTo: true, moiManMotMuc: true } },
-  lop5: { doc: { chuTo: false, moiManMotMuc: false } },
+  mon: { toan: { ten: 'Toán', bieuTuong: '🔢' } },
+  chuongTrinh: {
+    lop2: { ma: 'lop2', mon: 'toan', lop: 2, thuMuc: 'lop2', tienTo: 'DL:KSN2.',
+            ten: 'Toán Tư Duy lớp 2', soBai: 33, doc: { chuTo: true } },
+    lop5: { ma: 'lop5', mon: 'toan', lop: 5, thuMuc: 'lessons', tienTo: 'DL:KSN5Q1.',
+            ten: 'Toán Tư Duy lớp 5', soBai: 168, doc: { chuTo: false } },
+  },
+  sapCo: [], luyenThi: [],
 };
-export const chuongTrinh = (ma) => SO_DK[ma] || SO_DK.lop5;
+
+export const soDangKy = () => SO_DK;
+export const dsChuongTrinh = () => Object.values(SO_DK.chuongTrinh || {});
+export const chuongTrinh = (ma) => (SO_DK.chuongTrinh || {})[ma] || SO_DK.chuongTrinh.lop5;
 export const cachDoc = (id) => chuongTrinh(chuongTrinhCua(id)).doc || {};
+
 export async function napSoDangKy() {
   try {
     const r = await fetch(dongDau(`${CONTENT}/chuong_trinh.json`));
@@ -47,8 +56,15 @@ export async function napSoDangKy() {
   return SO_DK;
 }
 
-/** Bài thuộc chương trình nào — nhìn mã bài là biết */
-export const chuongTrinhCua = (id) => (String(id).startsWith('DL:KSN2.') ? 'lop2' : 'lop5');
+/** Bài thuộc chương trình nào — tra TIỀN TỐ mã bài trong sổ đăng ký.
+ *  Trước đây so cứng 'DL:KSN2.' trong mã; thêm lớp thứ ba là phải sửa hàm này. */
+export const chuongTrinhCua = (id) => {
+  const s = String(id || '');
+  for (const ct of dsChuongTrinh()) if (ct.tienTo && s.startsWith(ct.tienTo)) return ct.ma;
+  return 'lop5';
+};
+
+const THU_MUC_CUA = (ma) => chuongTrinh(ma).thuMuc || 'lessons';
 
 /* Chương của từng bài lớp 2 nằm trong dữ liệu (8 chương, số bài mỗi chương khác
    nhau) chứ không suy ra được bằng công thức như lớp 5. Nạp chỉ mục là ghi nhớ. */
@@ -71,7 +87,7 @@ const cache = new Map();
 
 export async function loadLesson(microId) {
   if (cache.has(microId)) return cache.get(microId);
-  const url = dongDau(`${CONTENT}/${THU_MUC[chuongTrinhCua(microId)]}/${idToFile(microId)}.json`);
+  const url = dongDau(`${CONTENT}/${THU_MUC_CUA(chuongTrinhCua(microId))}/${idToFile(microId)}.json`);
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Không nạp được bài ${microId} (${res.status})`);
   const data = await res.json();

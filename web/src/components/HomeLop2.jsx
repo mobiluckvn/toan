@@ -60,7 +60,7 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuH
           <div className="flex shrink-0 flex-col gap-1">
             <button onClick={onDoiChuongTrinh}
                     className="rounded-full bg-white/70 px-2.5 py-1 text-[11.5px] font-bold text-teal-dark">
-              đổi lớp
+              ← kệ sách
             </button>
             {/* Lớp 2 nay dùng chung sổ học với lớp 5 — bố mẹ xem được con làm tới đâu */}
             <button onClick={onSoPhuHuynh}

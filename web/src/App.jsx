@@ -9,13 +9,13 @@ import TeacherBoard from './components/TeacherBoard.jsx';
 import {
   loadProgress, saveProgress, recordMicro, recordChapter, saveSpot, resumeSpot, setMode,
 } from './lib/progress.js';
-import { neighborIds, chuongTrinhCua, napSoDangKy } from './lib/content.js';
+import { neighborIds, chuongTrinhCua, napSoDangKy, soDangKy } from './lib/content.js';
 import {
   submitSession, pushAttempts, syncPending, hasFirebase, watchAuth, myRole, myProfile, saveProfile, refreshMyReport,
   myReport, logout,
 } from './lib/firebase.js';
 import { reassignQueue } from './lib/sync.js';
-import ChonChuongTrinh from './components/ChonChuongTrinh.jsx';
+import KeSach from './components/KeSach.jsx';
 import HomeLop2 from './components/HomeLop2.jsx';
 import MuaGiai from './components/MuaGiai.jsx';
 import TraiHuanLuyen from './components/TraiHuanLuyen.jsx';
@@ -44,23 +44,26 @@ export default function App() {
   const [role, setRole] = useState(null);
   const [profile, setProfile] = useState(null);
   const [cloudReport, setCloudReport] = useState(null);
-  /* Chương trình con đang học. Nhớ lại để lần sau vào thẳng, nhưng luôn đổi được:
-     người bấm là trẻ con, chọn nhầm mà không lùi được thì bé nản ngay. */
-  const [chuongTrinh, setChuongTrinh] = useState(() => {
-    try { return localStorage.getItem('ttd5.chuongtrinh') || null; } catch { return null; }
-  });
+  /* Quyển con đang mở. KHÔNG nhớ qua các lần mở app: kệ sách là trang chính, mở
+     app ra con thấy mình học dở những gì rồi tự chọn — thay vì bị đưa thẳng vào
+     một quyển và phải "đổi lớp" mới sang được quyển khác. */
+  const [chuongTrinh, setChuongTrinh] = useState(null);
   const chonChuongTrinh = useCallback((ma) => {
-    try { localStorage.setItem('ttd5.chuongtrinh', ma); } catch { /* chế độ riêng tư */ }
     setChuongTrinh(ma); setView({ page: 'home' });
   }, []);
+  const veKeSach = useCallback(() => { setChuongTrinh(null); setView({ page: 'home' }); }, []);
   const [skipped, setSkipped] = useState(() => {
     try { return localStorage.getItem(SKIP_KEY) === '1'; } catch { return false; }
   });
 
   useEffect(() => { saveProgress(progress); }, [progress]);
 
-  // Sổ đăng ký chương trình: nơi duy nhất khai khác biệt giữa lớp 2 và lớp 5
-  useEffect(() => { napSoDangKy(); }, []);
+  /* Sổ đăng ký chương trình — nơi duy nhất khai các lớp và môn.
+     Giữ trong state chứ không chỉ gọi rồi thôi: nạp xong phải VẼ LẠI kệ sách, nếu
+     không kệ sách chỉ thấy bản mặc định tối thiểu (thiếu biểu tượng, thiếu mục
+     "sắp có") mà chẳng có gì báo là đang thiếu. */
+  const [dangKy, setDangKy] = useState(() => soDangKy());
+  useEffect(() => { napSoDangKy().then(setDangKy); }, []);
 
   useEffect(() => {
     if (!hasFirebase || LOCAL_KHONG_DANG_NHAP) return undefined;
@@ -215,8 +218,17 @@ export default function App() {
       />
     );
 
-  /* ══ CHỌN CHƯƠNG TRÌNH ══ */
-  if (!chuongTrinh) return <ChonChuongTrinh onChon={chonChuongTrinh} />;
+  /* ══ KỆ SÁCH — trang chính ══ */
+  if (!chuongTrinh)
+    return (
+      <KeSach
+        dangKy={dangKy}
+        progress={progress}
+        onMoChuongTrinh={chonChuongTrinh}
+        onSoPhuHuynh={() => setView({ page: 'report' })}
+        account={{ signedIn: !!auth, onSignOut: signOut }}
+      />
+    );
 
   /* ══ LỚP 2 ══
      Cùng LessonPlayer với lớp 5 — dữ liệu lớp 2 đã đưa về chung một khuôn, nên bé
@@ -239,7 +251,7 @@ export default function App() {
         onMoBai={(id) => setView({ page: 'lop2bai', baiId: id })}
         onMoOnTap={(ch) => setView({ page: 'exam', chapter: ch })}
         onSoPhuHuynh={() => setView({ page: 'report' })}
-        onDoiChuongTrinh={() => setChuongTrinh(null)}
+        onDoiChuongTrinh={veKeSach}
       />
     );
   }
@@ -292,7 +304,7 @@ export default function App() {
       onOpenExam={(c) => setView({ page: 'exam', chapter: c })}
       onOpenReport={() => setView({ page: 'report' })}
       onOpenMuaGiai={() => setView({ page: 'muagiai' })}
-      onDoiChuongTrinh={() => setChuongTrinh(null)}
+      onDoiChuongTrinh={veKeSach}
     />
   );
 }

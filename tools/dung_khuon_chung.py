@@ -143,7 +143,8 @@ def main():
 
     # sổ đăng ký chương trình — nơi DUY NHẤT khai khác biệt giữa hai lớp
     dk = json.load(open(SO_DK, encoding='utf-8'))
-    dk['lop2']['bai'] = ids
+    dk['chuongTrinh']['lop2']['bai'] = ids
+    dk['chuongTrinh']['lop2']['soBai'] = len(ids)
     for thu_muc, duong in ((None, SO_DK), (None, RA_DK)):
         with open(duong, 'w', encoding='utf-8') as f:
             json.dump(dk, f, ensure_ascii=False, indent=1)
