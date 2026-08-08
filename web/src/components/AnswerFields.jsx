@@ -44,6 +44,13 @@ export default function AnswerFields({ item, vals, disabled, onChange, onEnter }
             {f.kind === 'pick' ? (
               <PickRow options={f.options} value={vals[f.index]} disabled={disabled}
                        onPick={(o) => set(f.index, o)} />
+            ) : f.kind === 'essay' ? (
+              /* Câu tự luận: ô nhiều dòng để con viết lập luận, xong mới so lời giải mẫu.
+                 Enter ở đây là XUỐNG DÒNG, không phải nộp bài. */
+              <textarea id={`ans-${f.index}`} rows={4}
+                        className="numin w-full text-left text-[15px] font-normal leading-relaxed"
+                        placeholder={f.placeholder} value={vals[f.index] ?? ''} disabled={disabled}
+                        onChange={(e) => set(f.index, e.target.value)} />
             ) : (
               <input id={`ans-${f.index}`} className="numin w-full"
                      inputMode={f.kind === 'number' ? 'decimal' : 'text'} autoComplete="off"

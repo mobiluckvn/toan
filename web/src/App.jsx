@@ -7,7 +7,7 @@ import LoginScreen from './components/LoginScreen.jsx';
 import ProfileSetup from './components/ProfileSetup.jsx';
 import TeacherBoard from './components/TeacherBoard.jsx';
 import {
-  loadProgress, saveProgress, recordMicro, recordChapter, saveSpot, resumeSpot,
+  loadProgress, saveProgress, recordMicro, recordChapter, saveSpot, resumeSpot, setMode,
 } from './lib/progress.js';
 import { neighborIds } from './lib/content.js';
 import {
@@ -18,13 +18,22 @@ import { reassignQueue } from './lib/sync.js';
 
 const SKIP_KEY = 'ttd5.skipLogin.v1';
 
+/**
+ * CHẠY LOCAL THÌ KHÔNG HỎI ĐĂNG NHẬP.
+ *
+ * import.meta.env.DEV do Vite đặt: true khi `npm run dev`, false khi `npm run build`.
+ * Nghĩa là cờ này KHÔNG THỂ lọt sang bản đưa lên mạng — không phải nhớ tắt bằng tay,
+ * cũng không phụ thuộc vào một biến môi trường ai đó có thể quên xoá.
+ */
+const LOCAL_KHONG_DANG_NHAP = !!import.meta.env?.DEV;
+
 export default function App() {
   const [progress, setProgress] = useState(() => loadProgress());
   const [view, setView] = useState({ page: 'home' });
 
   /* ── Đăng nhập ──
      auth: undefined = đang hỏi máy chủ · null = chưa đăng nhập · object = đã vào */
-  const [auth, setAuth] = useState(hasFirebase ? undefined : null);
+  const [auth, setAuth] = useState(hasFirebase && !LOCAL_KHONG_DANG_NHAP ? undefined : null);
   const [role, setRole] = useState(null);
   const [profile, setProfile] = useState(null);
   const [cloudReport, setCloudReport] = useState(null);
@@ -35,7 +44,7 @@ export default function App() {
   useEffect(() => { saveProgress(progress); }, [progress]);
 
   useEffect(() => {
-    if (!hasFirebase) return undefined;
+    if (!hasFirebase || LOCAL_KHONG_DANG_NHAP) return undefined;
     return watchAuth(async (user) => {
       setAuth(user || null);
       if (!user) { setRole(null); setProfile(null); setCloudReport(null); return; }
@@ -80,7 +89,7 @@ export default function App() {
     return <div className="flex min-h-[100dvh] items-center justify-center text-mute">Đang mở…</div>;
   }
 
-  if (hasFirebase && !auth && !skipped) {
+  if (hasFirebase && !LOCAL_KHONG_DANG_NHAP && !auth && !skipped) {
     return (
       <LoginScreen
         onDone={() => { /* watchAuth lo phần còn lại */ }}
@@ -150,9 +159,10 @@ export default function App() {
         name: profile?.displayName || auth?.email || '',
         onSignIn: () => { try { localStorage.removeItem(SKIP_KEY); } catch { /* bỏ qua */ } setSkipped(false); },
         onSignOut: signOut,
-        available: hasFirebase,
+        available: hasFirebase && !LOCAL_KHONG_DANG_NHAP,
       }}
       onOpenMicro={(id, opts) => setView({ page: 'lesson', microId: id, fromStart: !!opts?.fromStart })}
+      onSetMode={(m) => setProgress((p) => setMode(p, m))}
       onOpenExam={(c) => setView({ page: 'exam', chapter: c })}
       onOpenReport={() => setView({ page: 'report' })}
     />

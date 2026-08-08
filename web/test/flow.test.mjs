@@ -8,7 +8,7 @@ import {
   buildWorkedSteps, sampleParts, askIsMcq,
   parseRange, isArithmeticRule, evalRule, canGenerate, makeVariant,
   inputPlaceholder, choicesFromText, splitAside, parseCompare, buildTeachSteps,
-  answerFields, answerBrief, answerCore, isNumberList,
+  answerFields, answerBrief, answerCore, isNumberList, gradableParts,
 } from '../src/lib/flow.js';
 
 const DIR = 'public/content/lessons';
@@ -42,7 +42,7 @@ for (const L of lessons) {
     else if (it.format === 'mcq') input = key.choice;
     else if (key.values) input = key.values.join('; ');
     else if (key.accept) input = String([].concat(key.accept)[0]);
-    else if (key.parts) input = key.parts.filter((p) => !isSelfCheck(p.value)).map((p) => String(p.value).replace('.', ','));
+    else if (key.parts) input = gradableParts(key.parts).map((p) => String(p.value).replace('.', ','));
     else if (key.value !== undefined) input = String(key.value).replace('.', ',');
     const r = checkAnswer(it, input);
     if (r.mode === 'selfcheck') { selfCnt++; continue; }
@@ -365,8 +365,7 @@ for (const L of lessons) {
     // ("ô thứ 2") để con không bao giờ thấy ô trống tên, nhưng dự phòng thì vô nghĩa —
     // kiểm ở đây trên dữ liệu gốc, nếu không hàng rào này không bao giờ đỏ được.
     if (fields.length >= 2) {
-      const raw = (it.answerKey?.parts || []).filter((p) => !isSelfCheck(p.value))
-        .map((p) => String(p.label || '').trim());
+      const raw = gradableParts(it.answerKey?.parts || []).map((p) => String(p.label || '').trim());
       if (raw.length < fields.length || raw.some((l) => !l)) bad.noLabel.push(`${ref} (nhãn dự phòng)`);
     }
     for (const f of fields) if (f.placeholder === '?' || !f.placeholder) bad.bareQ.push(ref);
@@ -421,6 +420,35 @@ for (const L of lessons)
       if (!String(ln.say || '').trim()) emptySay.push(`${L.id} fig[${i}].lines[${k}] (${ln.who})`);
     }));
 console.log(`   bong bóng thoại rỗng trong dữ liệu: ${emptySay.length} (hình bỏ qua, không vẽ khung trắng)`);
+
+
+/* ══ Đề hỏi mấy ý thì phải có đủ chừng ấy chỗ điền ══ */
+const demY = (text) => {
+  const t = String(text || '');
+  const abc = [...new Set([...t.matchAll(/(?:^|[\s(;:—–-])([a-eg])\s*[)\.]/g)].map((m) => m[1]))];
+  if (abc.length >= 2) return abc.length;
+  // dấu ? dùng làm CHỖ TRỐNG ("Thêm ? g nước", "= ?") không phải câu hỏi
+  const sach = t.replace(/[=(]\s*[−+-]?\s*\?/g, '').replace(/\?\s*(?=[a-zà-ỹ])/gi, '');
+  const hoi = (sach.match(/\?/g) || []).length;
+  return hoi >= 2 ? hoi : 1;
+};
+const lech = [], goChu = [], khongOChuNao = [];
+for (const L of lessons) {
+  for (const [where, it] of everyItem(L)) {
+    const isChoice = it.format === 'tf' || it.format === 'mcq';
+    const fields = answerFields(it);
+    if (isChoice) continue;
+    const ref = `${L.id} ${where}`;
+    if (fields.length === 0) { khongOChuNao.push(ref); continue; }
+    const y = demY(it.text);
+    if (y > fields.length) lech.push(`${ref} (${y} ý → ${fields.length} ô)`);
+    // ô chờ GÕ CHỮ: con không đoán được phải viết gì → phải thành nút bấm chọn
+    for (const f of fields) if (f.kind === 'text') goChu.push(`${ref} [${f.label}]`);
+  }
+}
+tEmpty('đề hỏi mấy ý thì có đủ chừng ấy ô điền', lech);
+tEmpty('không ô nào bắt con tự nghĩ ra chữ để gõ', goChu);
+tEmpty('câu tự luận vẫn có chỗ cho con viết', khongOChuNao);
 
 /* ══ Mục tiêu bài học con ĐỌC ĐƯỢC ══
    Bản gốc viết cho người lớn: trung vị 61 chữ, có bài 9 cặp ngoặc lồng nhau — con

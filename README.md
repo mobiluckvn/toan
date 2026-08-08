@@ -13,7 +13,7 @@ có mức thạo BKT, ôn tập ngắt quãng và sổ theo dõi cho bố mẹ.
 cd web
 npm install
 npm run dev      # http://localhost:5173  — học được ngay, chưa cần Firebase
-npm test         # 318 phép kiểm chạy trên dữ liệu thật của 168 micro
+npm test         # 339 phép kiểm chạy trên dữ liệu thật của 168 micro
 ```
 
 Chưa cấu hình Firebase thì app **vẫn học bình thường**: tiến độ lưu tại máy, dữ liệu nằm trong hàng đợi
@@ -29,7 +29,7 @@ web/                  Ứng dụng học (React + Vite + Tailwind)
   src/components/     16 component: phòng học · đăng nhập OTP · sổ học · bảng giáo viên
   public/content/     168 bài học · 672 hình · 14 kỳ sát hạch · chỉ mục  (deploy thẳng lên CDN)
   functions/          Cloud Functions: đăng nhập OTP · BKT · ôn tập · sổ học & bảng cô đêm
-  test/               318 phép kiểm (node thuần, không cần trình duyệt)
+  test/               339 phép kiểm (node thuần, không cần trình duyệt)
   firestore.rules     luật bảo mật — nhật ký học BẤT BIẾN
 
 figforge/             Bộ sinh hình: 25 nguyên mẫu + 672 figureSpec
@@ -76,6 +76,24 @@ bài mẫu) bị soi lại bằng chính lõi mà app dùng để dựng ô tr�
 | Bài nhiều ô: nhãn không trùng nhau | ✅ 0 vi phạm |
 | Không ô nào chỉ hiện dấu "?" | ✅ 0 vi phạm |
 | Không đề bài / gợi ý / thẻ công thức nào bị cắt cụt | ✅ 0 vi phạm |
+| **Đề hỏi mấy ý thì có đủ chừng ấy ô điền** | ✅ 0 vi phạm |
+| **Không ô nào bắt con tự nghĩ ra chữ để gõ** | ✅ 0 vi phạm — đáp án bằng chữ đều thành nút bấm |
+| **Câu tự luận vẫn có chỗ cho con viết** | ✅ 0 vi phạm |
+
+**Ô nhập chỉ dành cho SỐ.** Mọi đáp án bằng chữ đã thành **nút bấm chọn** — con không phải
+đoán xem nên gõ "bằng nhau" hay "như nhau". Cách làm: câu phân loại a/b/c thì bộ chọn chính
+là tập đáp án của các ô anh em (không bịa gì cả); còn lại soạn tay 53 bộ, phương án nhiễu
+lấy đúng cái sai trẻ hay mắc. Ký hiệu toán (`3/4`, `9 : 8`, `2 giờ 24 phút`, `9 dư 2`) vẫn
+để con gõ, nhưng chữ mờ nói rõ dạng cần điền.
+
+**Hai lối học.**
+`Theo chương trình` — học lần lượt cả 168 bài, đúng thứ tự sư phạm.
+`Con tự chọn chủ đề` — **bài đầu của mọi chương đều mở**, con thích chủ đề nào vào chủ đề đó;
+nhưng TRONG một chương vẫn phải học lần lượt, vì các bài trong chương xây chồng lên nhau.
+Đổi chế độ ở trang chính, app nhớ lựa chọn.
+
+**Chạy local thì không hỏi đăng nhập** (`import.meta.env.DEV`) — cờ này do Vite đặt nên
+không thể lọt sang bản đưa lên mạng, không phải nhớ tắt bằng tay.
 
 Nhãn nằm **ngoài** ô chứ không phải chữ mờ trong ô — con gõ ký tự đầu tiên mà nhãn vẫn còn đó.
 Bài nhiều ô được đánh số a/b/c/d, có chip đơn vị, và một dòng nói thẳng "bài này cần điền mấy ô".

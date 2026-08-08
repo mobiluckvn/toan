@@ -161,6 +161,14 @@ export const isSelfCheck = (v) =>
   typeof v === 'string' && !isNumberList(v) && normText(answerCore(v)).length > SELFCHECK_LEN;
 
 /**
+ * Phần đáp án có sẵn BỘ CHỌN thì luôn chấm được — dù lời đáp dài bao nhiêu.
+ * Con BẤM chứ không gõ, nên độ dài không còn là vấn đề. Nhờ vậy câu "… Vì sao?"
+ * giữ được đủ hai ô: một ô đáp số, một ô chọn lý do.
+ */
+export const isPickable = (p) => Array.isArray(p?.options) && p.options.length >= 2;
+export const gradableParts = (parts = []) => parts.filter((p) => isPickable(p) || !isSelfCheck(p.value));
+
+/**
  * So một ô đáp án. Nới đúng ba chỗ trẻ hay vấp mà KHÔNG sai về toán:
  *   1. dấu −  ×  ÷  gõ thành  -  x  :          ("1 − 1/20"  ↔  "1 - 1/20")
  *   2. phân số ↔ thập phân                      ("3/4"       ↔  "0,75")
@@ -239,7 +247,7 @@ export function checkAnswer(item, input) {
   }
 
   if (key.parts) {
-    const gradable = key.parts.filter((p) => !isSelfCheck(p.value));
+    const gradable = gradableParts(key.parts);
     const expected = key.parts.map((p) => `${p.label}: ${p.value}`).join(' · ');
     if (gradable.length === 0) return { ok: true, mode: 'selfcheck', expected };
     const arr = Array.isArray(input) ? input : [input];
@@ -276,10 +284,12 @@ export function inputCount(item) {
   if (key.values) return 1;              // danh sách nhiều số → một ô, con tự ngăn cách
   if (key.accept) return 1;              // viết cách nào cũng được → vẫn phải có chỗ mà viết
   if (key.parts) {
-    const n = key.parts.filter((p) => !isSelfCheck(p.value)).length;
-    return n || 0;                       // 0 = câu tự đối chiếu, không cần ô nhập
+    const n = gradableParts(key.parts).length;
+    // Câu tự luận ("giải thích vì sao…") vẫn phải có MỘT chỗ để con viết ra suy nghĩ.
+    // Chỉ đưa cái nút "xem lời giải" thì con chưa nghĩ đã bấm — mất hết tác dụng.
+    return n || (key.parts.length ? 1 : 0);
   }
-  if (key.value !== undefined && isSelfCheck(key.value)) return 0;
+  if (key.value !== undefined && isSelfCheck(key.value)) return 1;
   if (key.value === undefined) return 0;
   return 1;
 }
@@ -312,7 +322,8 @@ export function inputPlaceholder(item, label, expected) {
     if (unit) return `điền số, đơn vị là ${unit}`;
     return nt.tail ? 'điền số kèm chữ' : 'điền số';
   }
-  if (typeof core === 'string' && /\d+\s*\/\s*\d+/.test(core)) return 'điền phân số, vd 3/4';
+  const m = core === undefined ? null : mathKind(core);
+  if (m) return m.hint;
   if (typeof core === 'string') return 'trả lời bằng chữ';
   return label ? `${label} = ?` : 'điền đáp án';
 }
@@ -330,25 +341,66 @@ export function answerFields(item) {
   const key = item?.answerKey || {};
   const n = inputCount(item);
   if (n === 0) return [];
-  const gradable = (key.parts || []).filter((p) => !isSelfCheck(p.value));
+  const gradable = gradableParts(key.parts || []);
+  // Câu tự luận: không có phần nào máy chấm được, nhưng vẫn dựng MỘT ô để con viết.
+  const essay = gradable.length === 0;
+  const prose = essay ? (key.parts || [])[0] : null;
   const expects = gradable.length ? gradable.map((p) => p.value)
                 : key.accept ? [[].concat(key.accept)[0]]
-                : [key.value];
+                : [prose ? prose.value : key.value];
   const options = choicesFromText(item);
 
   return Array.from({ length: n }, (_, i) => {
     const expected = expects[i];
     const raw = (gradable[i]?.label || '').trim();
+    /**
+     * Bộ chọn lấy theo thứ tự ưu tiên:
+     *   1. options đặt sẵn trong dữ liệu cho RIÊNG ô này (đáp án bằng chữ)
+     *   2. bộ đề tự nêu ra ("Điền TĂNG hoặc GIẢM: …")
+     * Có bộ chọn thì con BẤM, khỏi phải đoán gõ chữ gì.
+     */
+    const own = gradable[i]?.options;
+    const pick = Array.isArray(own) && own.length >= 2 ? own : options;
+    if (essay) {
+      return {
+        index: i, letter: '',
+        label: (prose?.label || 'lời giải của con').trim(),
+        unit: '', kind: 'essay',
+        placeholder: 'con viết cách làm của mình vào đây',
+        options: null,
+      };
+    }
     return {
       index: i,
       letter: n > 1 ? LETTERS[i] || String(i + 1) : '',
       label: raw || (n > 1 ? `ô thứ ${i + 1}` : 'đáp số'),
-      unit: options ? '' : unitOf(expected),
-      kind: options ? 'pick' : fieldKind(item, expected),
+      unit: pick ? '' : unitOf(expected),
+      kind: pick ? 'pick' : fieldKind(item, expected),
       placeholder: inputPlaceholder(item, raw, expected),
-      options,
+      options: pick,
     };
   });
+}
+
+/**
+ * Đáp án viết bằng KÝ HIỆU TOÁN — con gõ được, không cần bấm chọn.
+ * Trước đây gộp hết vào 'text' nên ô phân số cũng bị nhắc "trả lời bằng chữ",
+ * mà con thì đang định gõ 3/4.
+ */
+const DANG_TOAN = [
+  ['fraction', /^[+-]?\d+\s*\/\s*\d+$/,            'điền phân số, vd 3/4'],
+  ['ratio',    /^\d+\s*[:：]\s*\d+$/,               'điền tỉ số, vd 3 : 4'],
+  ['divmod',   /^\d+\s*dư\s*\d+$/,                  'điền dạng: 9 dư 2'],
+  ['time',     /^\d+\s*giờ(\s*\d+\s*phút)?$/,       'điền dạng: 2 giờ 24 phút'],
+  ['minutes',  /^\d+\s*phút$/,                      'điền số phút'],
+  ['numlist',  /^[\d\s.,;và]*\d[\d\s.,;và]*$/,      'các số, cách nhau bằng dấu ;'],
+];
+
+export function mathKind(core) {
+  if (typeof core !== 'string') return null;
+  const s = core.trim();
+  for (const [kind, re, hint] of DANG_TOAN) if (re.test(s)) return { kind, hint };
+  return null;
 }
 
 function fieldKind(item, expected) {
@@ -357,6 +409,8 @@ function fieldKind(item, expected) {
   const core = expected === undefined ? undefined : answerCore(expected);
   if (core !== undefined && parseCompare(core)) return 'compare';
   if (core !== undefined && numAndTail(core)) return 'number';
+  const m = core === undefined ? null : mathKind(core);
+  if (m) return m.kind;
   return 'text';
 }
 
@@ -369,7 +423,7 @@ export function answerBrief(item) {
   // Đề hỏi mấy việc nhưng chỉ mấy việc chấm được bằng máy — phần giải thích để con
   // nói ra nháp. Không nói trước thì con điền xong vẫn tưởng mình còn thiếu.
   const parts = item?.answerKey?.parts || [];
-  const prose = parts.length - parts.filter((p) => !isSelfCheck(p.value)).length;
+  const prose = parts.length - gradableParts(parts).length;
   const tail = prose > 0
     ? ` Phần giải thích con nói ra nháp — bấm Kiểm tra xong sẽ có lời giải mẫu để đối chiếu.`
     : '';

@@ -93,9 +93,30 @@ export function recordChapter(progress, chapter, grade) {
  * Micro mở khi micro TRƯỚC đã đạt (đủ điểm VÀ đúng câu bẫy).
  * Micro đầu tiên luôn mở. Cổng mustPass là điểm mấu chốt: sai câu bẫy thì không đi tiếp.
  */
+/* ─────────── Hai chế độ học ─────────── */
+/**
+ * 'chuongtrinh' — đi theo chương trình đề xuất: học lần lượt từ bài đầu đến bài cuối.
+ *                 Đúng thứ tự sư phạm, bài sau dùng lại bẫy của bài trước.
+ * 'tuchon'      — con thích chủ đề nào thì vào chủ đề đó. TRONG một chương vẫn phải
+ *                 học lần lượt, vì các bài trong chương xây chồng lên nhau.
+ */
+export const MODES = ['chuongtrinh', 'tuchon'];
+export const modeOf = (progress) => (MODES.includes(progress?.mode) ? progress.mode : 'chuongtrinh');
+export const setMode = (progress, mode) =>
+  (MODES.includes(mode) ? { ...progress, mode } : progress);
+
 export function isMicroUnlocked(progress, microId, list = allMicroIds()) {
   const i = list.indexOf(microId);
-  if (i <= 0) return true;
+  if (i < 0) return false;
+  if (i === 0) return true;
+
+  if (modeOf(progress) === 'tuchon') {
+    // Bài đầu của MỖI chương luôn mở — con chọn chủ đề nào cũng vào được ngay.
+    const ch = chapterOf(microId);
+    const dauChuong = list.find((id) => chapterOf(id) === ch);
+    if (microId === dauChuong) return true;
+  }
+
   const prev = progress.micros[list[i - 1]];
   return !!(prev?.pass);
 }

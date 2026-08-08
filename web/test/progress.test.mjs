@@ -2,7 +2,7 @@
 import {
   emptyProgress, recordMicro, recordChapter, isMicroUnlocked, isChapterExamUnlocked,
   nextToStudy, chapterStats, overallStats, microState, loadProgress, saveProgress,
-  saveSpot, resumeSpot, clearSpot,
+  saveSpot, resumeSpot, clearSpot, modeOf, setMode, MODES,
 } from '../src/lib/progress.js';
 import { allMicroIds, chapterOf } from '../src/lib/content.js';
 
@@ -85,6 +85,46 @@ t('đã đạt thì không ghi đè dấu mới', resumeSpot(saveSpot(S3, M0, 5,
 const mem2 = (() => { let s = {}; return { getItem: (k) => s[k] ?? null, setItem: (k, v) => { s[k] = v; } }; })();
 saveProgress(saveSpot(emptyProgress(), M0, 7, 23), mem2);
 t('tắt máy mở lại vẫn nhớ chỗ dở', resumeSpot(loadProgress(mem2), M0)?.step === 7);
+
+
+/* ── Hai chế độ học ──
+   Chế độ đề xuất: đi tuần tự cả 168 bài.
+   Chế độ tự chọn: vào chủ đề nào cũng được, NHƯNG trong chương vẫn tuần tự. */
+const dauC1 = list[0];                       // B1.M1
+const haiC1 = list[1];                       // B1.M2
+const dauC2 = list.find((id) => chapterOf(id) === 2);
+const haiC2 = list[list.indexOf(dauC2) + 1];
+const dauC14 = list.find((id) => chapterOf(id) === 14);
+
+let M = emptyProgress();
+t('mặc định là chế độ theo chương trình', modeOf(M) === 'chuongtrinh');
+t('chỉ có đúng hai chế độ', MODES.join() === 'chuongtrinh,tuchon');
+t('chế độ lạ thì bỏ qua, giữ nguyên', modeOf(setMode(M, 'linh tinh')) === 'chuongtrinh');
+
+t('theo chương trình: chương 2 còn khoá', !isMicroUnlocked(M, dauC2, list));
+t('theo chương trình: chương 14 còn khoá', !isMicroUnlocked(M, dauC14, list));
+
+M = setMode(M, 'tuchon');
+t('đổi chế độ thì nhớ', modeOf(M) === 'tuchon');
+t('tự chọn: bài ĐẦU chương 2 mở ngay', isMicroUnlocked(M, dauC2, list));
+t('tự chọn: bài đầu chương 14 cũng mở ngay', isMicroUnlocked(M, dauC14, list));
+t('tự chọn: bài THỨ HAI của chương vẫn khoá', !isMicroUnlocked(M, haiC2, list));
+t('tự chọn: bài đầu cả bộ vẫn mở', isMicroUnlocked(M, dauC1, list));
+
+// học xong bài đầu chương 2 thì bài hai của chương 2 mở ra
+const M2 = recordMicro(M, dauC2, PASS);
+t('tự chọn: học xong bài đầu thì bài kế mở', isMicroUnlocked(M2, haiC2, list));
+// học chương 2 không được phép mở hộ bài THỨ HAI của chương khác
+const dauC3 = list.find((id) => chapterOf(id) === 3);
+const haiC3 = list[list.indexOf(dauC3) + 1];
+t('tự chọn: học chương 2 KHÔNG mở hộ bài 2 của chương 3', !isMicroUnlocked(M2, haiC3, list));
+t('tự chọn: bài đầu chương 3 vẫn mở như mọi chương', isMicroUnlocked(M2, dauC3, list));
+t('tự chọn: bài 2 của chương 1 vẫn khoá vì chưa học bài 1', !isMicroUnlocked(M2, haiC1, list));
+
+// đổi về chế độ đề xuất thì khoá siết lại như cũ
+const M3 = setMode(M2, 'chuongtrinh');
+t('quay lại chế độ đề xuất thì khoá siết lại', !isMicroUnlocked(M3, dauC2, list));
+t('nhưng bài đã ĐẠT vẫn còn nguyên', overallStats(M3, list).done === 1);
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);

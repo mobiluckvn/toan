@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { allMicroIds, chapterOf, CONTENT } from '../lib/content.js';
-import { microState, chapterStats, overallStats, isChapterExamUnlocked } from '../lib/progress.js';
+import { microState, chapterStats, overallStats, isChapterExamUnlocked, modeOf } from '../lib/progress.js';
 import { planSession, keyOf } from '../lib/adaptive.js';
 import TodayCard from './TodayCard.jsx';
 
@@ -13,7 +13,7 @@ const CHAPTER_NAMES = {
 const DOT = { passed: 'bg-teal', tried: 'bg-gold', open: 'bg-navy-light', locked: 'bg-line' };
 const WORD = { passed: 'đã đạt', tried: 'chưa qua câu bẫy', open: 'học được ngay', locked: 'chưa mở' };
 
-export default function Home({ progress, onOpenMicro, onOpenExam, onOpenReport, account = {}, mastery = {}, cards = [] }) {
+export default function Home({ progress, onOpenMicro, onOpenExam, onOpenReport, onSetMode, account = {}, mastery = {}, cards = [] }) {
   const list = allMicroIds();
   const [index, setIndex] = useState({});
   const [why, setWhy] = useState(null);          // bấm vào bài khoá → nói rõ vì sao
@@ -33,6 +33,7 @@ export default function Home({ progress, onOpenMicro, onOpenExam, onOpenReport, 
   useEffect(() => { if (next) setOpen(chapterOf(next)); }, [next]);
 
   const started = all.done > 0;
+  const cheDo = modeOf(progress);
 
   return (
     <div className="mx-auto min-h-[100dvh] max-w-[740px] pb-16">
@@ -108,7 +109,25 @@ export default function Home({ progress, onOpenMicro, onOpenExam, onOpenReport, 
       <TodayCard microId={next} progress={progress} info={index[keyOf(next || '')]}
                  reason={plan.micro?.reason} onOpen={onOpenMicro} />
 
-      <h3 className="px-4 pb-1 pt-5 text-[11px] font-extrabold tracking-widest text-mute">
+      {/* Hai lối học. Khoá cứng tuần tự cả 168 bài thì con muốn ôn riêng một chủ đề
+          cũng không vào được — nên cho chọn, nhưng TRONG chương vẫn phải lần lượt
+          vì các bài trong một chương xây chồng lên nhau. */}
+      <div className="mx-3.5 mt-5">
+        <h3 className="pb-1.5 text-[11px] font-extrabold tracking-widest text-mute">CON MUỐN HỌC THẾ NÀO?</h3>
+        <div className="flex gap-2">
+          {[['chuongtrinh', 'Theo chương trình', 'học lần lượt từ đầu — đúng thứ tự cô soạn'],
+            ['tuchon', 'Con tự chọn chủ đề', 'thích chương nào vào chương đó']].map(([id, ten, mo]) => (
+            <button key={id} onClick={() => onSetMode?.(id)}
+              className={`flex-1 rounded-xl border-[1.5px] px-3 py-2.5 text-left ${
+                cheDo === id ? 'border-navy bg-navy text-white' : 'border-line bg-white text-navy'}`}>
+              <b className="block text-[13.5px]">{ten}</b>
+              <span className={`text-[11.5px] ${cheDo === id ? 'opacity-85' : 'text-mute'}`}>{mo}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <h3 className="px-4 pb-1 pt-4 text-[11px] font-extrabold tracking-widest text-mute">
         TẤT CẢ 14 CHƯƠNG
       </h3>
 
@@ -191,6 +210,12 @@ export default function Home({ progress, onOpenMicro, onOpenExam, onOpenReport, 
             <p className="mt-2 text-[14.5px] leading-relaxed">
               Học xong bài đang mở là bài kế tiếp hiện ra ngay.
             </p>
+            {cheDo === 'chuongtrinh' && (
+              <p className="mt-2 rounded-xl bg-gold-pale px-3 py-2.5 text-[14px] text-gold-dark">
+                Muốn học chủ đề khác trước? Đổi sang <b>“Con tự chọn chủ đề”</b> ở trang chính —
+                khi đó bài đầu của mọi chương đều mở.
+              </p>
+            )}
             <button className="btn-go mt-3.5" onClick={() => setWhy(null)}>Con hiểu rồi</button>
           </div>
         </div>
