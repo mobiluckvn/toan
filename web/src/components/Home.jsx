@@ -4,6 +4,7 @@ import { microState, chapterStats, overallStats, isChapterExamUnlocked, modeOf }
 import { planSession, keyOf } from '../lib/adaptive.js';
 import TodayCard from './TodayCard.jsx';
 import ChanTrang from './ChanTrang.jsx';
+import DongDanhSach from './DongDanhSach.jsx';
 
 const CHAPTER_NAMES = {
   1: 'Bản đồ các hàng', 2: 'Lập số & đếm', 3: 'Chia hết & vòng đuôi', 4: 'Tính nhanh & tìm X',
@@ -188,15 +189,18 @@ export default function Home({ onOpenMuaGiai, onDoiChuongTrinh, progress, onOpen
                     </button>
                   )}
 
-                  <button
-                    disabled={!isChapterExamUnlocked(progress, c, list)}
+                  {/* Cùng một dòng danh sách với lớp 2 — xem DongDanhSach.jsx */}
+                  <DongDanhSach
+                    kieu="nhan" mauChu="text-gold-dark"
+                    khoa={!isChapterExamUnlocked(progress, c, list)}
+                    bieuTuong={st.examPassed ? '🏅' : '⚔'}
+                    tieuDe={`Kỳ sát hạch chương ${c}`}
+                    phuDe={st.examPassed ? 'con đã đạt'
+                      : isChapterExamUnlocked(progress, c, list)
+                        ? 'con đã học hết chương — thi lấy huy hiệu nhé'
+                        : 'học hết chương mới mở'}
                     onClick={() => onOpenExam(c)}
-                    className={`mt-2 w-full rounded-xl px-3 py-2.5 text-[13.5px] font-extrabold ${
-                      isChapterExamUnlocked(progress, c, list)
-                        ? 'bg-alert text-white' : 'bg-soft text-mute'}`}>
-                    ⚔ KỲ SÁT HẠCH CHƯƠNG {c} {st.examPassed ? '· đã đạt 🏅'
-                      : isChapterExamUnlocked(progress, c, list) ? '' : '· học hết chương mới mở'}
-                  </button>
+                  />
                 </div>
               )}
             </section>

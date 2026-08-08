@@ -8,11 +8,11 @@
   "scripts": {
     "serve": "firebase emulators:start --only functions,firestore",
     "deploy": "firebase deploy --only functions",
-    "test": "node ../test/bkt.test.mjs && node ../test/otp.test.mjs && node ../test/teacherboard.test.mjs"
+    "test": "cd .. && node test/bkt.test.mjs && node test/otp.test.mjs && node test/teacherboard.test.mjs"
   },
   "dependencies": {
     "firebase-admin": "^12.3.0",
-    "firebase-functions": "^5.0.1",
+    "firebase-functions": "^7.3.2",
     "nodemailer": "^9.0.5"
   }
 }

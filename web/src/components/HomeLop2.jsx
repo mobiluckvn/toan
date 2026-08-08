@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { CONTENT, dongDau, ghiNhoChuong } from '../lib/content.js';
 import ChanTrang from './ChanTrang.jsx';
 import BangSuuTapSao from './BangSuuTapSao.jsx';
+import DongDanhSach from './DongDanhSach.jsx';
 
 /**
  * TRANG CHÍNH LỚP 2 — danh sách 33 bài theo 8 chương.
@@ -96,19 +97,13 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuH
           <section key={ch} className="card">
             <div className="kicker">CHƯƠNG {ch} · {ds[0].tenChuong}</div>
             {ds.map((b) => (
-              <button key={b.id} onClick={() => onMoBai(b.id)}
-                      className="mt-1.5 flex w-full items-center gap-2.5 rounded-xl border border-line px-3 py-2.5 text-left hover:bg-soft">
-                <span className="text-[18px] leading-none">{micros[b.id]?.pass ? '🌟' : micros[b.id]?.done ? '🔸' : '⭕'}</span>
-                <span className="flex-1">
-                  <span className="block text-[15px] font-bold leading-snug text-navy">
-                    Bài {b.so} · {b.ten}
-                  </span>
-                  <span className="block text-[12px] text-mute">
-                    {b.soCau} câu luyện tập{b.soQuiz ? ` · ${b.soQuiz} câu tự kiểm` : ''}
-                  </span>
-                </span>
-                <span className="text-[14px] text-mute">▶</span>
-              </button>
+              <DongDanhSach
+                key={b.id}
+                bieuTuong={micros[b.id]?.pass ? '🌟' : micros[b.id]?.done ? '🔸' : '⭕'}
+                tieuDe={`Bài ${b.so} · ${b.ten}`}
+                phuDe={`${b.soCau} câu luyện tập${b.soQuiz ? ` · ${b.soQuiz} câu tự kiểm` : ''}`}
+                onClick={() => onMoBai(b.id)}
+              />
             ))}
 
             {/* Ôn tập của chương đứng NGAY SAU các bài của chương ấy — bé học xong
@@ -116,20 +111,14 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuH
             {onTap.filter((o) => o.loai === 'ontap' && o.so === Number(ch)).map((o) => {
               const kq = progress?.chapters?.[o.chapter];
               return (
-                <button key={o.id} onClick={() => onMoOnTap(o.chapter)}
-                        className="mt-2 flex w-full items-center gap-2.5 rounded-xl border-2 border-gold bg-gold-pale px-3 py-2.5 text-left">
-                  <span className="text-[18px] leading-none">{kq?.pass ? '🏅' : '🎯'}</span>
-                  <span className="flex-1">
-                    <span className="block text-[15px] font-bold leading-snug text-gold-dark">
-                      {o.name}
-                    </span>
-                    <span className="block text-[12px] text-mute">
-                      {o.soCau} câu · làm đúng {o.need} câu là qua
-                      {kq ? ` · lần trước ${kq.right}/${kq.total}` : ''}
-                    </span>
-                  </span>
-                  <span className="text-[14px] text-mute">▶</span>
-                </button>
+                <DongDanhSach
+                  key={o.id} kieu="nhan" mauChu="text-gold-dark"
+                  bieuTuong={kq?.pass ? '🏅' : '🎯'}
+                  tieuDe={o.name}
+                  phuDe={`${o.soCau} câu · làm đúng ${o.need} câu là qua`
+                         + (kq ? ` · lần trước ${kq.right}/${kq.total}` : '')}
+                  onClick={() => onMoOnTap(o.chapter)}
+                />
               );
             })}
           </section>
@@ -143,18 +132,14 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuH
             {onTap.filter((o) => o.loai === 'ai').sort((a, b) => a.so - b.so).map((o) => {
               const kq = progress?.chapters?.[o.chapter];
               return (
-                <button key={o.id} onClick={() => onMoOnTap(o.chapter)}
-                        className="mt-1.5 flex w-full items-center gap-2.5 rounded-xl border border-line px-3 py-2.5 text-left hover:bg-soft">
-                  <span className="text-[18px] leading-none">{kq?.pass ? '⭐' : '🚪'}</span>
-                  <span className="flex-1">
-                    <span className="block text-[15px] font-bold leading-snug text-navy">{o.name}</span>
-                    <span className="block text-[12px] text-mute">
-                      {o.soCau} câu · làm đúng {o.need} câu là qua
-                      {kq ? ` · lần trước ${kq.right}/${kq.total}` : ''}
-                    </span>
-                  </span>
-                  <span className="text-[14px] text-mute">▶</span>
-                </button>
+                <DongDanhSach
+                  key={o.id} 
+                  bieuTuong={kq?.pass ? '⭐' : '🚪'}
+                  tieuDe={o.name}
+                  phuDe={`${o.soCau} câu · làm đúng ${o.need} câu là qua`
+                         + (kq ? ` · lần trước ${kq.right}/${kq.total}` : '')}
+                  onClick={() => onMoOnTap(o.chapter)}
+                />
               );
             })}
           </section>
