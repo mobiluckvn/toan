@@ -210,6 +210,19 @@ nến sinh nhật, hàng cây, bàn tay 5 ngón, mặt buồn, công viên đèn
 mỗi cái một kiểu, không cái nào giống cái nào. Đây là phần tốn công nhất và nên làm **cuối
 cùng**, sau khi 13 nguyên mẫu kia đã chạy.
 
+## Đã dựng
+
+| Nhóm | Xong | Nguyên mẫu |
+|---|---|---|
+| Thành phần giao diện | 2 / 5 | `NhietKeHieuBai.jsx` · `BangSuuTapSao.jsx` |
+| Máy biến đổi | 4 / 4 | `figforge/arch_l2.py · may_bien_doi` |
+
+Ba hình giao diện còn lại (`image19` · `image50` · `image68`) nằm trong **Ôn tập 1, 5, 6** —
+chưa trích vào app nên chưa có chỗ đặt. Làm cùng lúc với 8 bài ôn tập.
+
+Dây chuyền hình: `tools/ve_hinh_lop2.py` vẽ PNG + ghi sổ tay → `tools/gan_hinh_lop2.py`
+gắn vào bài (bước CUỐI của `tools/lam_lop2.py`). Bản mô tả hình ở `data/lop2_hinh.json`.
+
 ## Thứ tự nên làm
 
 1. **5 hình giao diện** — làm trước, gỡ được 33 lượt nhúng, không cần FigForge.

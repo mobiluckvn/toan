@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { CONTENT, dongDau } from '../lib/content.js';
 import CuonThem from './CuonThem.jsx';
+import NhietKeHieuBai from './NhietKeHieuBai.jsx';
+import Figure from './Figure.jsx';
 
 /**
  * BÀI HỌC LỚP 2 — đi lần lượt 7 mục con đọc, mục "Góc bố mẹ" để riêng cuối bài.
@@ -78,7 +80,13 @@ export default function Lop2Player({ baiId, onExit, onXong }) {
         <div className="card">
           <div className="kicker">{bieu} {nhan}</div>
           {m.dong.map((d, k) => (
-            <p key={k} className={`${k ? 'mt-2.5' : ''} text-[17px] leading-relaxed`}>{d}</p>
+            <React.Fragment key={k}>
+              <p className={`${k ? 'mt-2.5' : ''} text-[17px] leading-relaxed`}>{d}</p>
+              {/* hình đứng ngay sau dòng nó minh hoạ, đúng chỗ sách đặt */}
+              {(m.hinh || []).filter((h) => h.sauDong === k).map((h) => (
+                <Figure key={h.id} fig={h} />
+              ))}
+            </React.Fragment>
           ))}
           {m.dong.length === 0 && cauCuaMuc.length === 0 && (
             <p className="text-[15px] text-mute">Mục này không có nội dung.</p>
@@ -105,6 +113,10 @@ export default function Lop2Player({ baiId, onExit, onXong }) {
             )}
           </div>
         ))}
+
+        {/* Sách in "nhiệt kế" này ở cuối cả 33 bài, ngay sau quiz — xem
+            NhietKeHieuBai.jsx về lý do làm giao diện thay vì dựng 33 ảnh */}
+        {ma === 'quiz' && <NhietKeHieuBai key={bai.id} />}
 
         {cuoi && bai.muc.gocBoMe && (
           <details className="card">

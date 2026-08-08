@@ -9,7 +9,8 @@
  * Bản gốc của sách luôn được giữ trong `muc[*].goc` để đối chiếu: viết lại lời văn
  * là việc nhạy cảm, phải chứng minh được mình đổi gì.
  */
-import { readFileSync, readdirSync } from 'node:fs';
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 
 const D = new URL('../public/content/lop2/', import.meta.url).pathname;
@@ -88,6 +89,30 @@ const chuMoi = bai.reduce((s, b) => s + CON_DOC.reduce((x, k) =>
   x + (b.muc[k]?.dong || []).join(' ').length, 0), 0);
 t(`viết lại không làm mất nội dung (${Math.round((chuMoi / chuGoc) * 100)}% chữ)`,
   chuMoi >= chuGoc * 0.9);
+
+
+/* ── 5. hình trong bài ──
+   Bẫy đã dính ở Quyển 2 lớp 5: chạy lại bộ dựng dữ liệu xoá sạch hình vừa gắn mà
+   dữ liệu vẫn hợp lệ và bài vẫn chạy. Không có phép kiểm này thì mất hình im lặng. */
+const soTay = JSON.parse(readFileSync(new URL('../../data/lop2_hinh_manifest.json', import.meta.url).pathname, 'utf8'));
+const hinhTrongBai = bai.flatMap((b) =>
+  Object.entries(b.muc).flatMap(([mk, m]) => (m.hinh || []).map((h) => [b, mk, m, h])));
+
+t(`hình đã gắn vào bài (${hinhTrongBai.length})`,
+  hinhTrongBai.length === Object.keys(soTay).length);
+t('mã hình không trùng nhau',
+  new Set(hinhTrongBai.map(([, , , h]) => h.id)).size === hinhTrongBai.length);
+t('hình nào cũng neo vào một dòng có thật',
+  hinhTrongBai.every(([, , m, h]) => h.sauDong >= 0 && h.sauDong < m.dong.length));
+t('hình nào cũng có lời chú', hinhTrongBai.every(([, , , h]) => String(h.caption || '').length > 5));
+
+const F = new URL('../public/content/figures/', import.meta.url).pathname;
+const lechSha = hinhTrongBai.filter(([, , , h]) => {
+  const p = join(F, h.file.replace('figures/', ''));
+  if (!existsSync(p)) return true;
+  return createHash('sha256').update(readFileSync(p)).digest('hex').slice(0, 16) !== h.sha256_16;
+});
+t(`ảnh có thật và đúng bản đã ghi sổ (${lechSha.length} lệch)`, lechSha.length === 0);
 
 console.log(`\n   ${bai.length} bài · ${cau.length} câu · câu dài ${quaDai}/${tongCau} (${tiLe}%)`);
 console.log(`\n${pass} PASS · ${fail} FAIL`);

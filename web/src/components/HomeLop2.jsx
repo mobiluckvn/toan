@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { CONTENT, dongDau } from '../lib/content.js';
 import ChanTrang from './ChanTrang.jsx';
+import BangSuuTapSao from './BangSuuTapSao.jsx';
 
 /**
  * TRANG CHÍNH LỚP 2 — danh sách 33 bài theo 8 chương.
@@ -71,6 +72,8 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh }) {
       )}
 
       <div className="px-3.5 pt-3">
+        <BangSuuTapSao idx={idx} xong={xong} />
+
         {Object.entries(theoChuong).map(([ch, ds]) => (
           <section key={ch} className="card">
             <div className="kicker">CHƯƠNG {ch} · {ds[0].tenChuong}</div>

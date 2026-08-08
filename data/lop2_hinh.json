@@ -1,0 +1,71 @@
+[
+ {
+  "id": "L2H_MAY01",
+  "goc": "image51.png",
+  "bai": "DL:KSN2.B02",
+  "muc": "khamPha",
+  "neo": "Bước 2.",
+  "arch": "may_bien_doi",
+  "caption": "Máy × 10 thêm số 0, máy : 10 xóa số 0 — hai máy ngược chiều nhau",
+  "params": {
+   "title": "Thêm số 0 bên phải = cho số đi qua MÁY × 10 · Xóa số 0 tận cùng = MÁY : 10",
+   "rows": [
+    {"mau": "teal", "o": [{"t": "3"}, {"may": "MÁY  × 10"}, {"t": "30"}]},
+    {"mau": "do",   "o": [{"t": "30"}, {"may": "MÁY  : 10"}, {"t": "3"}]}
+   ]
+  }
+ },
+ {
+  "id": "L2H_MAY02",
+  "goc": "image8.png",
+  "bai": "DL:KSN2.B14",
+  "muc": "khamPha",
+  "neo": "Bước 1.",
+  "arch": "may_bien_doi",
+  "caption": "Máy + 5 chạy ngược là máy − 5",
+  "params": {
+   "title": "Chạy XUÔI ra 12 — muốn tìm số bí mật, cho 12 chạy NGƯỢC!",
+   "rows": [
+    {"mau": "teal", "o": [{"t": "?"}, {"may": "MÁY  + 5"}, {"t": "12"}]},
+    {"mau": "do",   "o": [{"t": "12"}, {"may": "MÁY  − 5"}, {"t": "7"}]}
+   ],
+   "note": "Máy + 5 chạy ngược là máy − 5:  12 − 5 = 7. Thử lại: 7 + 5 = 12 ✓"
+  }
+ },
+ {
+  "id": "L2H_MAY03",
+  "goc": "image2.png",
+  "bai": "DL:KSN2.B14",
+  "muc": "khamPha",
+  "neo": "Bước 2.",
+  "arch": "may_bien_doi",
+  "caption": "Máy × 3 chạy ngược là máy : 3",
+  "params": {
+   "title": "Máy × 3 chạy ngược là máy : 3 — hai chiếc máy là đôi bạn ngược chiều",
+   "rows": [
+    {"mau": "teal", "o": [{"t": "?", "mau": "teal"}, {"may": "MÁY  × 3"}, {"t": "15", "mau": "teal"}]},
+    {"mau": "do",   "o": [{"t": "15", "mau": "teal"}, {"may": "MÁY  : 3"}, {"t": "5", "mau": "teal"}]}
+   ],
+   "note": "15 : 3 = 5. Thử lại: 5 × 3 = 15 ✓ — thám tử luôn THỬ LẠI trước khi chốt án!"
+  }
+ },
+ {
+  "id": "L2H_MAY04",
+  "goc": "image32.png",
+  "bai": "DL:KSN2.B22",
+  "muc": "khamPha",
+  "neo": "Bước 2.",
+  "arch": "may_bien_doi",
+  "caption": "Hai máy nối nhau: đi lùi thì ngược thứ tự và đảo phép tính",
+  "params": {
+   "title": "ĐI XUÔI: số bí mật ? cộng 3, rồi nhân 2, chạy ra 16",
+   "rows": [
+    {"mau": "teal", "o": [{"t": "?", "mau": "do"}, {"may": "+ 3"}, {"may": "× 2"}, {"t": "16"}]},
+    {"mau": "do", "nguoc": true,
+     "o": [{"t": "5", "mau": "teal"}, {"may": "− 3"}, {"may": ": 2"}, {"t": "16"}]}
+   ],
+   "giua": "ĐI LÙI từ 16 — máy vào SAU thì ngược TRƯỚC, và ĐẢO phép tính!",
+   "note": "16 : 2 = 8, rồi 8 − 3 = 5. Thử xuôi lại: 5 + 3 = 8; 8 × 2 = 16 ✓"
+  }
+ }
+]
