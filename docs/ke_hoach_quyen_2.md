@@ -138,7 +138,26 @@ Quyển 1 có 1 141 câu và mất phần lớn dự án. Quyển 2 có **314 c�
 
 ---
 
-## 6 · Ba việc cần bác quyết trước khi tôi bắt tay
+## 6 · Ba việc đã chốt (08/08/2026)
+
+| Việc | Đã chốt |
+|---|---|
+| Nguồn hình | **Vẽ lại toàn bộ 71 sơ đồ bằng FigForge** — một nguồn hình duy nhất, đồng bộ bảng màu icon, sửa/vẽ lại được như 672 hình Quyển 1 |
+| Cách chấm | **Ba tầng** — máy chấm đáp số · con tự chấm barem · con tự soi bẫy |
+| Điều kiện mở | **Theo chương tương ứng** — xong chương 1 Quyển 1 thì mở Vòng 1, học xen kẽ được |
+
+### Tiến độ
+
+- [x] **Bước 1 · Trích xuất trung thực** — xong 08/08/2026, cổng 29/29 xanh
+- [ ] Bước 2 · Bộ rà soát
+- [ ] Bước 3 · Chuẩn hoá đáp án và mã bẫy
+- [ ] Bước 4 · Năng lực mới (đồng hồ · barem · phiên tòa · chấm kép)
+- [ ] Bước 5 · 71 sơ đồ
+- [ ] Bước 6 · Nối vào phần mềm
+
+---
+
+## 6b · Ba việc đã hỏi (giữ lại để tra sau)
 
 ### (a) Hình minh hoạ — 71 chỗ, có 48 ảnh
 | | Ưu | Nhược |
