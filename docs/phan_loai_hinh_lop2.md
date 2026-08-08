@@ -210,15 +210,23 @@ nến sinh nhật, hàng cây, bàn tay 5 ngón, mặt buồn, công viên đèn
 mỗi cái một kiểu, không cái nào giống cái nào. Đây là phần tốn công nhất và nên làm **cuối
 cùng**, sau khi 13 nguyên mẫu kia đã chạy.
 
-## Đã dựng
+## ĐÃ XONG — 2026-08-08
 
-| Nhóm | Xong | Nguyên mẫu |
-|---|---|---|
-| Thành phần giao diện | 2 / 5 | `NhietKeHieuBai.jsx` · `BangSuuTapSao.jsx` |
-| Máy biến đổi | 4 / 4 | `figforge/arch_l2.py · may_bien_doi` |
+**70 / 70 hình đã vẽ.** 64 hình đã gắn vào bài, **33/33 bài đều có hình**.
 
-Ba hình giao diện còn lại (`image19` · `image50` · `image68`) nằm trong **Ôn tập 1, 5, 6** —
-chưa trích vào app nên chưa có chỗ đặt. Làm cùng lúc với 8 bài ôn tập.
+6 hình còn lại đã vẽ xong nhưng **chưa có chỗ đặt** vì thuộc bài Ôn tập / ba ải —
+những bài ấy chưa trích vào app. Đánh dấu `hoan` trong `data/lop2_hinh.json`, bộ gắn
+in ra ⏸ mỗi lần chạy nên không quên được:
+`L2H_HOP07` `L2H_HOP08` `L2H_HOP09` `L2H_CANH07` `L2H_CANH08` `L2H_HH08`.
+
+Thêm 4 hình nữa của sách đã thành **thành phần giao diện** thay vì ảnh tĩnh:
+`image13` → `NhietKeHieuBai.jsx` (lặp ở 33 bài) · `image7` → `BangSuuTapSao.jsx`.
+Còn `image19` · `image50` · `image68` thuộc Ôn tập, làm cùng lúc với ôn tập.
+
+Nguyên mẫu ở `figforge/arch_l2.py`: `day_o` (13) · `hang_hop` (9) · `hinh_phang` (8) ·
+`cham_tron` (5) · `con_vat` (5) · `may_bien_doi` (4) · `cau_truc_so` (4) · `khoi_hop` (3) ·
+`bang_luoi` (3) · `doan_thang` (2) · `tia_so` (2) · `bap_benh` (2) · `noi_cap` (2) ·
+`dong_ho` · `hang_cay` · `ban_tay` · `loi_thoai` (2).
 
 Dây chuyền hình: `tools/ve_hinh_lop2.py` vẽ PNG + ghi sổ tay → `tools/gan_hinh_lop2.py`
 gắn vào bài (bước CUỐI của `tools/lam_lop2.py`). Bản mô tả hình ở `data/lop2_hinh.json`.

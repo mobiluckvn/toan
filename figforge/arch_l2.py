@@ -404,3 +404,363 @@ def tia_so(p, out):
     if p.get('note'):
         txt_fit(ax, 50, y - 11.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
     save(fig, out)
+
+
+def hinh_phang(p, out):
+    """
+    Hình học phẳng — 8 hình. Vẽ ĐÚNG hình, ghi số đo lên đúng cạnh.
+
+    params: title · hinh[{loai, ten, canh[], chia, to_phan}] · note
+      loai: tamgiac | vuong | chunhat | tron | tugiac
+      chia: số phần chia đều (hình tròn) · to_phan: tô mấy phần
+    """
+    from matplotlib.patches import Circle, Polygon, Wedge, Rectangle
+    hs = p.get('hinh') or []
+    n = max(len(hs), 1)
+    W = 88.0 / n
+    tren = 11.0 if p.get('title') else 4.0
+    CAO = min(30.0, W * 0.95)
+    duoi = 8.0 if p.get('note') else 4.0
+    fig, ax, H = canvas(7.6, max(2.4, (tren + CAO + 18.0 + duoi) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    yc = H - tren - CAO / 2 - 2.0
+    for i, h in enumerate(hs):
+        cx = 6.0 + W * (i + 0.5)
+        loai = h.get('loai', 'vuong')
+        vien, nen, chu = MAU.get(h.get('mau', 'teal'), MAU['teal'])
+        r = min(W * 0.36, CAO * 0.42)
+        if loai == 'tron':
+            ax.add_patch(Circle((cx, yc), r, fc=nen, ec=vien, lw=2.4, zorder=4))
+            k = int(h.get('chia', 0) or 0)
+            for j in range(k):
+                import math
+                a = 90 - j * 360 / k
+                ax.plot([cx, cx + r * math.cos(math.radians(a))],
+                        [yc, yc + r * math.sin(math.radians(a))], color=vien, lw=1.8, zorder=5)
+            for j in range(int(h.get('to_phan', 0) or 0)):
+                # tô ĐẬM: đây là phần bé phải nhìn ra, tô nhạt thì không phân biệt được
+                ax.add_patch(Wedge((cx, yc), r, 90 - (j + 1) * 360 / k, 90 - j * 360 / k,
+                                   fc='#F08A72', ec=vien, lw=2.0, zorder=5))
+        elif loai == 'tamgiac':
+            ax.add_patch(Polygon([(cx - r, yc - r * 0.8), (cx + r, yc - r * 0.8), (cx, yc + r)],
+                                 fc=nen, ec=vien, lw=2.4, zorder=4))
+        elif loai == 'tugiac':
+            ax.add_patch(Polygon([(cx - r, yc - r * 0.7), (cx + r * 0.9, yc - r), 
+                                  (cx + r * 0.7, yc + r * 0.85), (cx - r * 0.8, yc + r * 0.5)],
+                                 fc=nen, ec=vien, lw=2.4, zorder=4))
+        else:
+            w2 = r if loai == 'vuong' else r * 1.35
+            ax.add_patch(Rectangle((cx - w2, yc - r * 0.8), w2 * 2, r * 1.6,
+                                   fc=nen, ec=vien, lw=2.4, zorder=4))
+        # Tên hình đọc TRƯỚC, dòng mô tả đọc sau — đúng thứ tự mắt bé đi xuống
+        if h.get('ten'):
+            _txt(ax, cx, yc - r - 4.2, h['ten'], fs=FS['body'], c=chu, w='bold', z=7)
+        for k2, c in enumerate(h.get('canh') or []):
+            _txt(ax, cx, yc - r - 9.0 - k2 * 4.0, c, fs=FS['small'], c=INK, w='normal', z=7)
+    if p.get('note'):
+        txt_fit(ax, 50, yc - CAO / 2 - 13.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def khoi_hop(p, out):
+    """Khối hộp nhìn nghiêng — 3 hình. Vẽ mặt trước + mặt trên + mặt bên."""
+    from matplotlib.patches import Polygon
+    kh = p.get('khoi') or []
+    n = max(len(kh), 1)
+    W = 88.0 / n
+    tren = 11.0 if p.get('title') else 4.0
+    fig, ax, H = canvas(7.6, max(2.2, (tren + 30.0 + (8.0 if p.get('note') else 4.0)) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    yc = H - tren - 12.0
+    for i, k in enumerate(kh):
+        cx = 6.0 + W * (i + 0.5)
+        s = min(W * 0.30, 9.0) * k.get('to', 1.0)
+        d = s * 0.42
+        vien, nen, _ = MAU.get(k.get('mau', 'teal'), MAU['teal'])
+        ax.add_patch(Polygon([(cx-s, yc-s), (cx+s, yc-s), (cx+s, yc+s), (cx-s, yc+s)],
+                             fc=nen, ec=vien, lw=2.2, zorder=5))
+        ax.add_patch(Polygon([(cx-s, yc+s), (cx-s+d, yc+s+d), (cx+s+d, yc+s+d), (cx+s, yc+s)],
+                             fc='#FFF4DF', ec=vien, lw=2.2, zorder=4))
+        ax.add_patch(Polygon([(cx+s, yc-s), (cx+s+d, yc-s+d), (cx+s+d, yc+s+d), (cx+s, yc+s)],
+                             fc='#E8F1FA', ec=vien, lw=2.2, zorder=4))
+        if k.get('ten'):
+            for j, dg in enumerate(str(k['ten']).split('\n')):
+                _txt(ax, cx, yc - s - 4.0 - j * 4.2, dg, fs=FS['small'], c=NAVY, w='bold', z=7)
+    if p.get('note'):
+        txt_fit(ax, 50, yc - 20.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def bang_luoi(p, out):
+    """Bảng lưới — 3 hình. Ô tô màu là ô con phải chú ý."""
+    cot = p.get('cot') or []
+    hang = p.get('hang') or []
+    to = {tuple(x) for x in (p.get('to') or [])}
+    nc, nh = max(len(cot), 1), max(len(hang), 1)
+    W = min(11.0, 86.0 / nc)
+    CAO = min(7.0, W * 0.8)
+    x0 = 50 - W * nc / 2
+    tren = 11.0 if p.get('title') else 4.0
+    fig, ax, H = canvas(7.6, max(2.2, (tren + CAO * (nh + 1) + (9.0 if p.get('note') else 4.0)) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    y = H - tren - CAO
+    for j, c in enumerate(cot):
+        _txt(ax, x0 + W * (j + 0.5), y + CAO / 2, str(c), fs=FS['small'], c=NAVY, w='bold', z=6)
+    y -= CAO
+    for i, h in enumerate(hang):
+        for j, v in enumerate(h):
+            sang = (i, j) in to
+            card(ax, x0 + W * j, y, W, CAO, fc=MAU['gold'][1] if sang else 'white',
+                 ec=MAU['gold'][0] if sang else LINE, lw=1.8 if sang else 1.0, r=0.6)
+            _txt(ax, x0 + W * (j + 0.5), y + CAO / 2, str(v), fs=FS['small'],
+                 c=DARKGOLD if sang else INK, w='bold' if sang else 'normal', z=6)
+        y -= CAO
+    if p.get('note'):
+        txt_fit(ax, 50, y - 1.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def bap_benh(p, out):
+    """Cân bập bênh — 2 hình. Bên nào nặng hơn thì bên ấy chúc xuống."""
+    from matplotlib.patches import Polygon
+    trai, phai = p.get('trai', {}), p.get('phai', {})
+    nghieng = p.get('nghieng', 'phai')
+    tren = 11.0 if p.get('title') else 4.0
+    fig, ax, H = canvas(7.6, max(2.0, (tren + 30.0 + (8.0 if p.get('note') else 4.0)) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    yc = H - tren - 14.0
+    d = 5.0 if nghieng == 'phai' else -5.0
+    ax.plot([18, 82], [yc + d, yc - d], color='#8D6E63', lw=4.0, zorder=4, solid_capstyle='round')
+    ax.add_patch(Polygon([(50, yc - 8.5), (44, yc - 9.5), (56, yc - 9.5)],
+                         fc='#B0BEC5', ec=MUTE, lw=1.8, zorder=3))
+    for x, o, dy in ((22.0, trai, d), (78.0, phai, -d)):
+        vien, nen, chu = MAU.get(o.get('mau', 'gold'), MAU['gold'])
+        card(ax, x - 8.0, yc + dy + 1.5, 16.0, 11.0, fc=nen, ec=vien, lw=2.4, r=1.6)
+        txt_fit(ax, x, yc + dy + 7.0, str(o.get('t', '')), 13, FS['big'], chu, z=6)
+    if p.get('note'):
+        txt_fit(ax, 50, yc - 14.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def noi_cap(p, out):
+    """Cung nối cặp — 2 hình. Hai số nối với nhau là một cặp cộng lại tròn chục."""
+    o = p.get('o') or []
+    cap = p.get('cap') or []
+    n = max(len(o), 1)
+    W = min(9.0, 88.0 / n)
+    x0 = 50 - W * n / 2
+    tren = 11.0 if p.get('title') else 4.0
+    fig, ax, H = canvas(7.6, max(2.2, (tren + 34.0 + (8.0 if p.get('note') else 4.0)) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    y = H - tren - 22.0
+    vt = [x0 + W * (i + 0.5) for i in range(len(o))]
+    for x, c in zip(vt, o):
+        card(ax, x - W * 0.42, y, W * 0.84, 9.0, fc=MAU['teal'][1], ec=MAU['teal'][0], lw=2.2, r=1.4)
+        _txt(ax, x, y + 4.5, str(c), fs=FS['mid'], c=DARKTEAL, w='bold', z=6)
+    for k, cg in enumerate(cap):
+        a, b = vt[cg['tu']], vt[cg['den']]
+        cao = 5.0 + 3.2 * k
+        arrow(ax, (a, y + 9.4), (b, y + 9.4), c=[TEAL, GOLD, '#7E57C2', RED][k % 4],
+              lw=2.4, rad=-0.5 - 0.08 * k, ms=0, style='-', z=5)
+        _txt(ax, (a + b) / 2, y + 9.4 + cao, cg.get('nhan', ''), fs=FS['small'],
+             c=DARKTEAL, w='bold', z=6)
+    if p.get('note'):
+        txt_fit(ax, 50, y - 5.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def cau_truc_so(p, out):
+    """
+    Cấu trúc số — 4 hình: ngôi nhà trăm-chục-đơn vị, tách số, hạt→thanh, phố nhà.
+
+    params: title · kieu (nha|tach|phonha) · … · note
+    """
+    from matplotlib.patches import Polygon, Rectangle, Circle
+    kieu = p.get('kieu', 'nha')
+    tren = 11.0 if p.get('title') else 4.0
+    duoi = 8.0 if p.get('note') else 4.0
+
+    if kieu == 'nha':
+        phong = p.get('phong') or []
+        # +12 để chừa chỗ cho MÁI NHÀ, nếu không mái đè lên tiêu đề
+        fig, ax, H = canvas(7.6, max(2.6, (tren + 12.0 + 42.0 + duoi) * 7.6 / 100))
+        if p.get('title'):
+            txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+        y0, W, CAO = H - tren - 46.0, 26.0, 30.0
+        x0 = 50 - W * len(phong) / 2
+        ax.add_patch(Polygon([(x0 - 3, y0 + CAO), (50, y0 + CAO + 10), (x0 + W * len(phong) + 3, y0 + CAO)],
+                             fc='#F08A72', ec=RED, lw=2.2, zorder=3))
+        for i, ph in enumerate(phong):
+            x = x0 + W * i
+            vien, nen, chu = MAU.get(ph.get('mau', 'teal'), MAU['teal'])
+            ax.add_patch(Rectangle((x, y0), W, CAO, fc=nen, ec=NAVY, lw=2.2, zorder=4))
+            _txt(ax, x + W / 2, y0 + CAO - 5.0, ph.get('ten', ''), fs=FS['body'], c=NAVY, w='bold', z=6)
+            _txt(ax, x + W / 2, y0 + CAO - 13.0, str(ph.get('so', '')), fs=FS['big'] + 4, c=chu, w='bold', z=6)
+            _txt(ax, x + W / 2, y0 + 4.0, ph.get('duoi', ''), fs=FS['tiny'], c=MUTE, w='normal', z=6)
+        if p.get('note'):
+            txt_fit(ax, 50, y0 - 5.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+        save(fig, out); return
+
+    if kieu == 'tach':
+        phan = p.get('phan') or []
+        fig, ax, H = canvas(7.6, max(2.2, (tren + 32.0 + duoi) * 7.6 / 100))
+        if p.get('title'):
+            txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+        yt = H - tren - 11.0
+        card(ax, 36.0, yt, 28.0, 11.0, fc='#E8F1FA', ec=NAVY, lw=2.6, r=1.8)
+        txt_fit(ax, 50, yt + 5.5, str(p.get('so', '')), 24, FS['big'] + 5, NAVY, z=6)
+        yb = yt - 20.0
+        n = max(len(phan), 1)
+        W = min(22.0, 88.0 / n)
+        x0 = 50 - W * n / 2
+        for i, v in enumerate(phan):
+            x = x0 + W * i
+            vien, nen, chu = MAU.get(['gold', 'teal', 'tim', 'do'][i % 4], MAU['gold'])
+            card(ax, x + 1.5, yb, W - 3.0, 11.0, fc=nen, ec=vien, lw=2.4, r=1.6)
+            txt_fit(ax, x + W / 2, yb + 5.5, str(v), W - 6, FS['big'], chu, z=6)
+            arrow(ax, (50, yt - 0.5), (x + W / 2, yb + 12.0), c=TEAL, lw=2.2, ms=13, z=4)
+            if i:
+                _txt(ax, x - 0.2, yb + 5.5, '+', fs=FS['mid'], c=NAVY, w='bold', z=7)
+        if p.get('note'):
+            txt_fit(ax, 50, yb - 5.5, p['note'], 92, FS['body'], DARKTEAL, z=5)
+        save(fig, out); return
+
+    # phố nhà: hai hàng nhà, một bên lẻ một bên chẵn
+    tren_ds, duoi_ds = p.get('tren') or [], p.get('duoi') or []
+    n = max(len(tren_ds), len(duoi_ds), 1)
+    W = min(15.0, 88.0 / n)
+    fig, ax, H = canvas(7.6, max(2.4, (tren + 44.0 + (8.0 if p.get('note') else 4.0)) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    for hang, yy, mau in ((tren_ds, H - tren - 15.0, 'gold'), (duoi_ds, H - tren - 41.0, 'teal')):
+        x0 = 50 - W * len(hang) / 2
+        vien, nen, chu = MAU[mau]
+        for i, v in enumerate(hang):
+            x = x0 + W * i + W * 0.12
+            w = W * 0.76
+            ax.add_patch(Polygon([(x - 1, yy + 9.0), (x + w / 2, yy + 15.0), (x + w + 1, yy + 9.0)],
+                                 fc='#F08A72', ec=RED, lw=1.8, zorder=4))
+            ax.add_patch(Rectangle((x, yy), w, 9.0, fc=nen, ec=vien, lw=2.0, zorder=4))
+            _txt(ax, x + w / 2, yy + 4.5, str(v), fs=FS['body'], c=chu, w='bold', z=6)
+    ax.add_patch(Rectangle((6, H - tren - 25.0), 88, 7.0, fc='#DDE3EA', ec=LINE, lw=1.4, zorder=2))
+    for k in range(9):
+        ax.plot([10 + k * 10, 16 + k * 10], [H - tren - 21.5] * 2, color='white', lw=2.0, zorder=3)
+    if p.get('note'):
+        txt_fit(ax, 50, H - tren - 47.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def dong_ho(p, out):
+    """Đồng hồ — kim ngắn chỉ GIỜ, kim dài chỉ PHÚT. Có vạch số để bé đọc được."""
+    import math
+    from matplotlib.patches import Circle
+    ds = p.get('dongho') or []
+    n = max(len(ds), 1)
+    tren = 11.0 if p.get('title') else 4.0
+    fig, ax, H = canvas(7.6, max(2.6, (tren + 46.0 + (8.0 if p.get('note') else 4.0)) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    yc = H - tren - 20.0
+    R = min(17.0, 84.0 / (n * 2.4))
+    for i, d in enumerate(ds):
+        cx = 6.0 + (88.0 / n) * (i + 0.5)
+        ax.add_patch(Circle((cx, yc), R, fc='white', ec=NAVY, lw=2.8, zorder=4))
+        for k in range(12):
+            a = math.radians(90 - k * 30)
+            _txt(ax, cx + R * 0.8 * math.cos(a), yc + R * 0.8 * math.sin(a),
+                 str(12 if k == 0 else k), fs=FS['tiny'], c=NAVY, w='bold', z=6)
+        gio, phut = d.get('gio', 12), d.get('phut', 0)
+        ap = math.radians(90 - phut * 6)
+        ag = math.radians(90 - (gio % 12) * 30 - phut * 0.5)
+        ax.plot([cx, cx + R * 0.62 * math.cos(ag)], [yc, yc + R * 0.62 * math.sin(ag)],
+                color=RED, lw=4.2, zorder=5, solid_capstyle='round')
+        ax.plot([cx, cx + R * 0.86 * math.cos(ap)], [yc, yc + R * 0.86 * math.sin(ap)],
+                color=TEAL, lw=3.0, zorder=5, solid_capstyle='round')
+        ax.add_patch(Circle((cx, yc), R * 0.07, fc=NAVY, ec='none', zorder=6))
+        for k, dg in enumerate(str(d.get('ten', '')).split('\n')):
+            _txt(ax, cx, yc - R - 5.0 - k * 4.4, dg, fs=FS['small'], c=INK, w='bold', z=6)
+    if p.get('note'):
+        txt_fit(ax, 50, yc - R - 15.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def hang_cay(p, out):
+    """Hàng cây — bé đếm CÂY và đếm KHOẢNG, thấy ngay khoảng ít hơn cây 1."""
+    from matplotlib.patches import Circle, Rectangle
+    n = int(p.get('so_cay', 5))
+    tren = 11.0 if p.get('title') else 4.0
+    fig, ax, H = canvas(7.6, max(2.4, (tren + 40.0 + (8.0 if p.get('note') else 4.0)) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    y = H - tren - 26.0
+    xs = [10.0 + i * (80.0 / (n - 1)) for i in range(n)]
+    ax.plot([6, 94], [y, y], color='#B0895F', lw=2.6, zorder=2)
+    for i, x in enumerate(xs):
+        ax.add_patch(Rectangle((x - 1.0, y), 2.0, 9.0, fc='#A9744F', ec='none', zorder=4))
+        ax.add_patch(Circle((x, y + 13.0), 5.2, fc='#8CD98C', ec='#3E8E3E', lw=2.0, zorder=5))
+        _txt(ax, x, y - 4.0, f'cây {i + 1}', fs=FS['tiny'], c=MUTE, w='normal', z=6)
+    for i in range(n - 1):
+        xm = (xs[i] + xs[i + 1]) / 2
+        arrow(ax, (xs[i] + 1.6, y + 4.5), (xs[i + 1] - 1.6, y + 4.5), c=RED, lw=1.8,
+              style='<|-|>', ms=9, z=6)
+        _txt(ax, xm, y + 7.6, p.get('khoang', '2 m'), fs=FS['tiny'], c=RED, w='bold', z=7)
+    if p.get('note'):
+        txt_fit(ax, 50, y - 10.5, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def ban_tay(p, out):
+    """Bàn tay: 5 ngón nhưng chỉ 4 kẽ — cùng một chuyện với hàng cây."""
+    from matplotlib.patches import Rectangle
+    tren = 11.0 if p.get('title') else 4.0
+    fig, ax, H = canvas(7.6, max(2.4, (tren + 38.0 + (8.0 if p.get('note') else 4.0)) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    y = H - tren - 24.0
+    card(ax, 26.0, y - 2.0, 48.0, 9.0, fc='#FBD9C0', ec='#D98F63', lw=2.2, r=1.4)
+    cao = [12.0, 16.0, 18.0, 16.0, 12.0]
+    xs = [30.0 + i * 10.0 for i in range(5)]
+    for i, (x, c) in enumerate(zip(xs, cao)):
+        ax.add_patch(Rectangle((x - 3.0, y + 6.0), 6.0, c, fc='#FBD9C0', ec='#D98F63', lw=2.2, zorder=4))
+        _txt(ax, x, y + 6.0 + c + 3.0, str(i + 1), fs=FS['body'], c='#8C4A22', w='bold', z=6)
+    for i in range(4):
+        _txt(ax, (xs[i] + xs[i + 1]) / 2, y + 9.5, '↓', fs=FS['body'], c=RED, w='bold', z=7)
+        _txt(ax, (xs[i] + xs[i + 1]) / 2, y + 4.5, str(i + 1), fs=FS['tiny'], c=RED, w='bold', z=7)
+    _txt(ax, 50, y - 7.0, '5 ngón tay · 4 kẽ tay', fs=FS['mid'], c=NAVY, w='bold', z=6)
+    if p.get('note'):
+        txt_fit(ax, 50, y - 13.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def loi_thoai(p, out):
+    """Lời nói của nhân vật — dùng cho chỗ Su Kem làm sai và cho bảng giá viết nhầm."""
+    from matplotlib.patches import Circle
+    tren = 11.0 if p.get('title') else 4.0
+    dong = p.get('dong') or []
+    CAO = 10.0 + 5.2 * len(dong)
+    fig, ax, H = canvas(7.6, max(2.0, (tren + CAO + 12.0) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    y = H - tren - CAO
+    sai = p.get('sai', True)
+    vien, nen, chu = (RED, PALERED, RED) if sai else (TEAL, PALETEAL, DARKTEAL)
+    ax.add_patch(Circle((14.0, y + CAO / 2), 8.0, fc='#FBD9C0', ec='#D98F63', lw=2.2, zorder=5))
+    for dx in (-2.6, 2.6):
+        ax.add_patch(Circle((14.0 + dx, y + CAO / 2 + 2.0), 0.9, fc=NAVY, ec='none', zorder=6))
+    ax.plot([11.6, 14.0, 16.4],
+            [y + CAO / 2 - (4.0 if sai else 2.4), y + CAO / 2 - (2.6 if sai else 4.0),
+             y + CAO / 2 - (4.0 if sai else 2.4)], color=NAVY, lw=1.8, zorder=6,
+            solid_capstyle='round')
+    card(ax, 26.0, y, 68.0, CAO, fc=nen, ec=vien, lw=2.4, r=1.8)
+    for k, d in enumerate(dong):
+        txt_fit(ax, 60.0, y + CAO - 6.0 - k * 5.2, d, 62, FS['body'], chu, z=6)
+    if p.get('ten'):
+        _txt(ax, 14.0, y - 3.5, p['ten'], fs=FS['small'], c=NAVY, w='bold', z=6)
+    if p.get('note'):
+        txt_fit(ax, 50, y - 6.5, p['note'], 92, FS['body'], NAVY, z=5)
+    save(fig, out)
