@@ -250,6 +250,47 @@ const hinhKy = ky.flatMap((k) => k.hinh || []);
 t(`hình của kỳ sát hạch đã gắn (${hinhKy.length})`, hinhKy.length === 6);
 t('hình kỳ sát hạch có đủ mã kiểm', hinhKy.every((h) => h.sha256_16 && h.file));
 
+
+/* ── 10. CÂU LUYỆN TẬP CHẤM ĐƯỢC ──
+   Trước đây 281 câu đều là "làm ra vở rồi tự so": bé làm xong không ai biết đúng
+   sai, sổ phụ huynh và bảng cô giáo không thấy gì. Nay tách thành ô điền/ô chọn. */
+const luyen = chung.flatMap((d) => Object.values(d.practice?.pools || {}).flat());
+const coKhoa = luyen.filter((it) => it.answerKey);
+t(`câu luyện tập chấm máy được ≥ 85% (${coKhoa.length}/${luyen.length})`,
+  coKhoa.length / luyen.length >= 0.85);
+
+/* Đáp án phải ĐÚNG HÌNH DẠNG bộ chấm hiểu — lệch một trường là câu ấy im lặng
+   rơi về tự chấm, mà nhìn dữ liệu vẫn thấy "có answerKey". */
+const hopLe = (k) => !!(k.value !== undefined || k.values || k.accept || k.choice
+  || (Array.isArray(k.parts) && k.parts.length
+      && k.parts.every((p) => p.label && p.value !== undefined)));
+t('đáp án nào cũng đúng hình dạng bộ chấm hiểu', coKhoa.every((it) => hopLe(it.answerKey)));
+
+/* Ô bấm chọn: đáp án BẮT BUỘC nằm trong danh sách phương án, nếu không bé bấm
+   hết các nút cũng không bao giờ đúng. */
+const oChon = coKhoa.flatMap((it) => (it.answerKey.parts || []).filter((p) => p.options));
+t(`ô bấm chọn có đáp án nằm trong phương án (${oChon.length} ô)`,
+  oChon.every((p) => p.options.includes(p.value)));
+t('ô bấm chọn có ít nhất 2 phương án', oChon.every((p) => p.options.length >= 2));
+
+/* Nhãn ô là CHỮ DẪN cho bé biết ô này hỏi gì — phải ngắn và khác đáp án.
+
+   KHÔNG có phép kiểm cho "nhãn lộ đáp án": tôi thử hai cách đo, cả hai đều sai.
+     · "nhãn chứa số đáp án" → báo động giả 6 chỗ, vì nhiều đề buộc phải nêu số ấy
+       mới hỏi được ("(a) 5, 10, 15, 20 — nhịp là mấy?")
+     · "nhãn trùng chữ với lời giải" → báo động giả 8 chỗ, vì "[trong 462] = 60"
+       trùng chữ nhưng chẳng lộ gì
+   Việc ấy phải SOÁT BẰNG MẮT — và đã soát, xem tools/tach_cau_lop2.py. Để một
+   phép kiểm sai ở đây còn tệ hơn không có: nó cho cảm giác an toàn giả. */
+const nhan = coKhoa.flatMap((it) => it.answerKey.parts || []);
+t(`nhãn ô nào cũng ngắn gọn (${nhan.length} ô)`,
+  nhan.every((p) => p.label.length >= 1 && p.label.length <= 30));
+t('nhãn ô không trùng y hệt đáp án',
+  nhan.every((p) => p.label.trim().toLowerCase() !== String(p.value).trim().toLowerCase()));
+
+t('câu chưa chấm được vẫn có lời giải mẫu để bé tự so',
+  luyen.filter((it) => !it.answerKey).every((it) => it.solutionNarrative));
+
 console.log(`\n   ${bai.length} bài · ${cau.length} câu · câu dài ${quaDai}/${tongCau} (${tiLe}%)`);
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);

@@ -140,16 +140,42 @@
     {
      "id": "C1",
      "text": "Cô Ba mua hoa hết 5 nghìn, bán được 9 nghìn. Cô lãi bao nhiêu?",
+     "answerKey": {
+      "value": 4
+     },
      "solutionNarrative": "9 − 5 = 4 nghìn"
     },
     {
      "id": "C2",
      "text": "Su Kem mua kem hết 7 nghìn. Cậu đưa cô bán hàng 10 nghìn. Cô thối lại bao nhiêu?",
+     "answerKey": {
+      "value": 3
+     },
      "solutionNarrative": "10 − 7 = 3 nghìn"
     },
     {
      "id": "C3",
      "text": "Trong các từ sau, từ nào chỉ tiền BỎ RA, từ nào chỉ tiền THU VỀ: tiền vốn, tiền bán?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tiền vốn là tiền",
+        "options": [
+         "bỏ ra",
+         "thu về"
+        ],
+        "value": "bỏ ra"
+       },
+       {
+        "label": "tiền bán là tiền",
+        "options": [
+         "bỏ ra",
+         "thu về"
+        ],
+        "value": "thu về"
+       }
+      ]
+     },
      "solutionNarrative": "tiền vốn — bỏ ra; tiền bán — thu về"
     }
    ],
@@ -157,21 +183,68 @@
     {
      "id": "C4",
      "text": "Bác Năm mua một buồng chuối hết 15 nghìn, bán được 23 nghìn. Bác lãi bao nhiêu? (Trình bày đủ 3 dòng.)",
+     "answerKey": {
+      "value": 8
+     },
      "solutionNarrative": "23 − 15 = 8 nghìn"
     },
     {
      "id": "C5",
      "text": "Quán của Su Kem: vốn 10 nghìn, hôm nay bán được 3 cốc nước chanh, mỗi cốc 4 nghìn. Hỏi tiền bán là bao nhiêu? Su Kem lãi bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tiền bán",
+        "value": 12
+       },
+       {
+        "label": "tiền lãi",
+        "value": 2
+       }
+      ]
+     },
      "solutionNarrative": "tiền bán 4 × 3 = 12 nghìn; lãi 12 − 10 = 2 nghìn"
     },
     {
      "id": "C6",
      "text": "Mẹ đưa 20 nghìn mua bánh mì 8 nghìn và hộp sữa 9 nghìn. Mẹ có đủ tiền không? Được thối lại bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mẹ có đủ tiền không",
+        "options": [
+         "đủ",
+         "không đủ"
+        ],
+        "value": "đủ"
+       },
+       {
+        "label": "thối lại mấy nghìn",
+        "value": 3
+       }
+      ]
+     },
      "solutionNarrative": "8 + 9 = 17 nghìn < 20 nghìn → đủ; thối lại 20 − 17 = 3 nghìn"
     },
     {
      "id": "C7",
      "text": "Chú Bảy mua cá hết 14 nghìn nhưng chợ vắng, chỉ bán được 11 nghìn. Chú lãi hay lỗ? Bao nhiêu tiền?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chú lãi hay lỗ",
+        "options": [
+         "lãi",
+         "lỗ"
+        ],
+        "value": "lỗ"
+       },
+       {
+        "label": "mấy nghìn",
+        "value": 3
+       }
+      ]
+     },
      "solutionNarrative": "bán 11 < vốn 14 → chú bị LỖ 14 − 11 = 3 nghìn"
     }
    ],
@@ -179,11 +252,22 @@
     {
      "id": "C8",
      "text": "Hai ngày bán hàng: quán Su Kem vốn 10 nghìn (mua nguyên liệu dùng cho cả hai ngày). Ngày đầu bán được 7 nghìn, ngày sau bán được 9 nghìn. Hỏi sau hai ngày Su Kem lãi bao nhiêu? (Cộng tiền bán cả hai ngày trước đã!)",
+     "answerKey": {
+      "value": 6
+     },
      "solutionNarrative": "tiền bán hai ngày 7 + 9 = 16 nghìn; lãi = 16 − 10 = 6 nghìn"
     },
     {
      "id": "C9",
      "text": "Bài toán ông chủ: Su Kem muốn lãi ĐÚNG 10 nghìn với vốn 10 nghìn, mỗi cốc bán 4 nghìn. Hỏi cậu ấy phải bán được mấy cốc? (Mẹo: tiền bán cần thu = vốn + lãi; rồi lần theo bảng nhân 4!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phải bán mấy cốc",
+        "value": 5
+       }
+      ]
+     },
      "solutionNarrative": "tiền bán cần thu = vốn + lãi = 10 + 10 = 20 nghìn; lần bảng nhân 4: 4 × 5 = 20 → phải bán được 5 cốc"
     }
    ]

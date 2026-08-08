@@ -125,16 +125,86 @@
     {
      "id": "C1",
      "text": "Trên đồng hồ, kim nào là kim giờ, kim nào là kim phút? Kim nào chạy nhanh hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "kim giờ là kim",
+        "options": [
+         "ngắn",
+         "dài"
+        ],
+        "value": "ngắn"
+       },
+       {
+        "label": "kim nào chạy nhanh hơn",
+        "options": [
+         "kim giờ",
+         "kim phút"
+        ],
+        "value": "kim phút"
+       }
+      ]
+     },
      "solutionNarrative": "ngắn = giờ, dài = phút; kim phút chạy nhanh hơn"
     },
     {
      "id": "C2",
      "text": "Kim phút chỉ 12, kim giờ chỉ 9 — đọc giờ. Kim phút chỉ 12, kim giờ chỉ 6 — đọc giờ.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "kim giờ chỉ 9",
+        "options": [
+         "5 giờ",
+         "6 giờ",
+         "7 giờ",
+         "8 giờ",
+         "9 giờ",
+         "6 giờ rưỡi",
+         "7 giờ rưỡi",
+         "11 giờ rưỡi"
+        ],
+        "value": "9 giờ"
+       },
+       {
+        "label": "kim giờ chỉ 6",
+        "options": [
+         "5 giờ",
+         "6 giờ",
+         "7 giờ",
+         "8 giờ",
+         "9 giờ",
+         "6 giờ rưỡi",
+         "7 giờ rưỡi",
+         "11 giờ rưỡi"
+        ],
+        "value": "6 giờ"
+       }
+      ]
+     },
      "solutionNarrative": "9 giờ đúng; 6 giờ đúng"
     },
     {
      "id": "C3",
      "text": "Kim phút chỉ 6, kim giờ nằm giữa 7 và 8 — đọc giờ.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "đọc giờ",
+        "options": [
+         "5 giờ",
+         "6 giờ",
+         "7 giờ",
+         "8 giờ",
+         "9 giờ",
+         "6 giờ rưỡi",
+         "7 giờ rưỡi",
+         "11 giờ rưỡi"
+        ],
+        "value": "7 giờ rưỡi"
+       }
+      ]
+     },
      "solutionNarrative": "7 giờ rưỡi (đọc theo số ĐÃ ĐI QUA!)"
     }
    ],
@@ -142,11 +212,75 @@
     {
      "id": "C4",
      "text": "Bây giờ là 5 giờ chiều. Hỏi 1 giờ nữa là mấy giờ? 2 giờ nữa là mấy giờ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "1 giờ nữa",
+        "options": [
+         "5 giờ",
+         "6 giờ",
+         "7 giờ",
+         "8 giờ",
+         "9 giờ",
+         "6 giờ rưỡi",
+         "7 giờ rưỡi",
+         "11 giờ rưỡi"
+        ],
+        "value": "6 giờ"
+       },
+       {
+        "label": "2 giờ nữa",
+        "options": [
+         "5 giờ",
+         "6 giờ",
+         "7 giờ",
+         "8 giờ",
+         "9 giờ",
+         "6 giờ rưỡi",
+         "7 giờ rưỡi",
+         "11 giờ rưỡi"
+        ],
+        "value": "7 giờ"
+       }
+      ]
+     },
      "solutionNarrative": "6 giờ; 7 giờ"
     },
     {
      "id": "C5",
      "text": "Bây giờ là 6 giờ. Hỏi nửa giờ nữa là mấy giờ? Từ 6 giờ rưỡi thêm nửa giờ nữa là mấy giờ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "nửa giờ nữa",
+        "options": [
+         "5 giờ",
+         "6 giờ",
+         "7 giờ",
+         "8 giờ",
+         "9 giờ",
+         "6 giờ rưỡi",
+         "7 giờ rưỡi",
+         "11 giờ rưỡi"
+        ],
+        "value": "6 giờ rưỡi"
+       },
+       {
+        "label": "thêm nửa giờ nữa",
+        "options": [
+         "5 giờ",
+         "6 giờ",
+         "7 giờ",
+         "8 giờ",
+         "9 giờ",
+         "6 giờ rưỡi",
+         "7 giờ rưỡi",
+         "11 giờ rưỡi"
+        ],
+        "value": "7 giờ"
+       }
+      ]
+     },
      "solutionNarrative": "6 giờ rưỡi; rồi tròn 7 giờ"
     },
     {
@@ -157,6 +291,19 @@
     {
      "id": "C7",
      "text": "Su Kem hẹn đá bóng lúc 4 giờ rưỡi. Cậu ấy đến sân lúc kim phút chỉ 12, kim giờ chỉ 5. Su Kem đến sớm hay muộn? Muộn khoảng bao lâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Su Kem đến",
+        "options": [
+         "sớm",
+         "đúng giờ",
+         "muộn"
+        ],
+        "value": "muộn"
+       }
+      ]
+     },
      "solutionNarrative": "5 giờ đúng là MUỘN hơn 4 giờ rưỡi — Su Kem đến muộn khoảng nửa giờ"
     }
    ],
@@ -164,11 +311,37 @@
     {
      "id": "C8",
      "text": "Quan sát đồng hồ thật: khi kim phút chạy đúng MỘT vòng (từ 12 quay về 12), kim giờ nhích được bao xa? Từ đó nói xem: một vòng kim phút bằng bao nhiêu giờ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "kim giờ nhích được mấy số",
+        "value": 1
+       }
+      ]
+     },
      "solutionNarrative": "kim phút quay đúng 1 vòng thì kim giờ nhích đúng 1 số → một vòng kim phút = 1 giờ"
     },
     {
      "id": "C9",
      "text": "Buổi sáng của Trí Long: bắt đầu học lúc 9 giờ, học 2 giờ liền, rồi nghỉ giải lao nửa giờ. Hỏi lúc kết thúc giờ giải lao, đồng hồ chỉ mấy giờ? (Đi từng chặng: 9 giờ → học xong → nghỉ xong.)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lúc đó là mấy giờ",
+        "options": [
+         "5 giờ",
+         "6 giờ",
+         "7 giờ",
+         "8 giờ",
+         "9 giờ",
+         "6 giờ rưỡi",
+         "7 giờ rưỡi",
+         "11 giờ rưỡi"
+        ],
+        "value": "11 giờ rưỡi"
+       }
+      ]
+     },
      "solutionNarrative": "9 giờ học 2 giờ → 11 giờ; nghỉ thêm nửa giờ → 11 giờ rưỡi"
     }
    ]

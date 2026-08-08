@@ -24,6 +24,7 @@ NGUON_ON = os.path.join(GOC_KHO, 'data', 'lop2_ontap.json')
 RA_ON = os.path.join(GOC_KHO, 'web', 'public', 'content', 'reviews')
 RA = os.path.join(GOC_KHO, 'web', 'public', 'content', 'lop2')
 SO_DK = os.path.join(GOC_KHO, 'data', 'chuong_trinh.json')
+DAP_AN = os.path.join(GOC_KHO, 'data', 'lop2_dapan.json')
 RA_DK = os.path.join(GOC_KHO, 'web', 'public', 'content', 'chuong_trinh.json')
 
 
@@ -96,6 +97,11 @@ def dung_on_tap(bai_cua_chuong, ten_bai):
     return ra
 
 
+def _cau_luyen(duong):
+    d = json.load(open(duong, encoding='utf-8'))
+    return [x for v in d['practice']['pools'].values() for x in v]
+
+
 def main():
     os.makedirs(RA, exist_ok=True)
     teps = sorted(f for f in os.listdir(NGUON) if f.startswith('DL_KSN2_B'))
@@ -103,10 +109,13 @@ def main():
     bais.sort(key=lambda b: b['so'])
     ids = [b['id'] for b in bais]
 
+    dap_an = json.load(open(DAP_AN, encoding='utf-8')) if os.path.exists(DAP_AN) else {}
+
     idx = []
     for k, b in enumerate(bais):
         d = sang_khuon_chung(b, truoc=ids[k - 1] if k else None,
-                             sau=ids[k + 1] if k + 1 < len(ids) else None)
+                             sau=ids[k + 1] if k + 1 < len(ids) else None,
+                             dap_an=dap_an)
         ten = b['id'].replace('DL:', 'DL_').replace('.', '_') + '.json'
         with open(os.path.join(RA, ten), 'w', encoding='utf-8') as f:
             json.dump(d, f, ensure_ascii=False, indent=1)
@@ -143,7 +152,10 @@ def main():
     tong_cau = sum(x['soCau'] for x in idx)
     tong_quiz = sum(x['soQuiz'] for x in idx)
     print(f'dựng {len(idx)} bài theo khuôn chung → {os.path.relpath(RA, GOC_KHO)}')
-    print(f'  {tong_cau} câu luyện tập · {tong_quiz} câu sát hạch · {tong_hinh} hình')
+    cham_may = sum(1 for f in os.listdir(RA) if f.startswith('DL_')
+                   for it in _cau_luyen(os.path.join(RA, f)) if it.get('answerKey'))
+    print(f'  {tong_cau} câu luyện tập ({cham_may} chấm máy được)'
+          f' · {tong_quiz} câu sát hạch · {tong_hinh} hình')
 
 
 if __name__ == '__main__':

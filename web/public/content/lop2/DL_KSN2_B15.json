@@ -128,16 +128,60 @@
     {
      "id": "C1",
      "text": "Chia 10 viên kẹo cho 2 bạn: mỗi bạn mấy viên, thừa mấy viên? Đây là chia hết hay chia còn thừa?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi bạn mấy viên",
+        "value": 5
+       },
+       {
+        "label": "thừa mấy viên",
+        "value": 0
+       },
+       {
+        "label": "đây là",
+        "options": [
+         "chia hết",
+         "chia còn thừa"
+        ],
+        "value": "chia hết"
+       }
+      ]
+     },
      "solutionNarrative": "mỗi bạn 5 viên, thừa 0 — chia hết"
     },
     {
      "id": "C2",
      "text": "Chia 11 viên kẹo cho 2 bạn: mỗi bạn mấy viên, thừa mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi bạn mấy viên",
+        "value": 5
+       },
+       {
+        "label": "thừa mấy viên",
+        "value": 1
+       }
+      ]
+     },
      "solutionNarrative": "mỗi bạn 5 viên, thừa 1"
     },
     {
      "id": "C3",
      "text": "Chia 13 que tính cho 4 bạn (vẽ 4 vòng tròn rồi chia theo vòng nhé): mỗi bạn mấy que, thừa mấy que?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi bạn mấy que",
+        "value": 3
+       },
+       {
+        "label": "thừa mấy que",
+        "value": 1
+       }
+      ]
+     },
      "solutionNarrative": "4 × 3 = 12 → mỗi bạn 3 que, thừa 1"
     }
    ],
@@ -145,6 +189,18 @@
     {
      "id": "C4",
      "text": "Chia 22 viên bi cho 4 bạn: mỗi bạn mấy viên, thừa mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi bạn mấy viên",
+        "value": 5
+       },
+       {
+        "label": "thừa mấy viên",
+        "value": 2
+       }
+      ]
+     },
      "solutionNarrative": "4 × 5 = 20 → mỗi bạn 5 viên, thừa 2"
     },
     {
@@ -155,11 +211,35 @@
     {
      "id": "C6",
      "text": "Chia 26 viên kẹo cho 3 bạn: mỗi bạn mấy viên, thừa mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi bạn mấy viên",
+        "value": 8
+       },
+       {
+        "label": "thừa mấy viên",
+        "value": 2
+       }
+      ]
+     },
      "solutionNarrative": "3 × 8 = 24 → mỗi bạn 8 viên, thừa 2"
     },
     {
      "id": "C7",
      "text": "Cô giáo có 19 bông hoa cắm đều vào 5 lọ. Mỗi lọ mấy bông và còn thừa mấy bông?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi lọ mấy bông",
+        "value": 3
+       },
+       {
+        "label": "thừa mấy bông",
+        "value": 4
+       }
+      ]
+     },
      "solutionNarrative": "5 × 3 = 15 → mỗi lọ 3 bông, thừa 4 bông (soi luật vàng: 4 < 5 ✓)"
     }
    ],
@@ -172,6 +252,13 @@
     {
      "id": "C9",
      "text": "Su Kem có một nắm kẹo từ 20 đến 25 viên. Chia cho 4 bạn thì vừa khít không thừa viên nào. Hỏi Su Kem có bao nhiêu viên kẹo? (Lần theo bảng nhân 4 trong khoảng 20-25 xem!)",
+     "answerKey": {
+      "ordered": false,
+      "values": [
+       20,
+       24
+      ]
+     },
      "solutionNarrative": "lần theo bảng nhân 4 trong khoảng 20-25: chỉ có 4 × 5 = 20 và 4 × 6 = 24 → Su Kem có 20 hoặc 24 viên kẹo (hai đáp án đều đúng!)"
     }
    ]

@@ -128,11 +128,22 @@
     {
      "id": "C1",
      "text": "Xếp 4 khối thành hàng ngang rồi đặt 1 khối lên trên khối đầu tiên. Hình xếp có mấy khối?",
+     "answerKey": {
+      "value": 5
+     },
      "solutionNarrative": "4 + 1 = 5 khối"
     },
     {
      "id": "C2",
      "text": "Tầng dưới 2 khối, tầng trên 1 khối. Tất cả mấy khối? Khối tầng trên đang ngồi trên khối nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tất cả mấy khối",
+        "value": 3
+       }
+      ]
+     },
      "solutionNarrative": "2 + 1 = 3 khối; khối trên ngồi trên một trong hai khối dưới"
     },
     {
@@ -145,16 +156,25 @@
     {
      "id": "C4",
      "text": "Hình xếp: tầng dưới 2 hàng × 2 khối, tầng trên 1 khối. Tất cả mấy khối? (Đếm cả bạn nấp hàng sau!)",
+     "answerKey": {
+      "value": 5
+     },
      "solutionNarrative": "tầng dưới 2 × 2 = 4 (cả bạn nấp sau!) + tầng trên 1 = 5 khối"
     },
     {
      "id": "C5",
      "text": "Hình xếp: tầng dưới 3 khối hàng ngang, tầng giữa 2 khối, tầng trên 1 khối — xếp kiểu cầu thang. Tất cả mấy khối?",
+     "answerKey": {
+      "value": 6
+     },
      "solutionNarrative": "3 + 2 + 1 = 6 khối"
     },
     {
      "id": "C6",
      "text": "Bin xếp một khối hộp chữ nhật to từ các khối lập phương nhỏ: 2 hàng, mỗi hàng 3 khối, chỉ một tầng. Hỏi Bin dùng mấy khối? (Hàng sau bị hàng trước che — nhưng thám tử không bị lừa!)",
+     "answerKey": {
+      "value": 6
+     },
      "solutionNarrative": "2 hàng × 3 khối = 6 khối — hàng sau bị che nhưng thám tử đếm đủ"
     }
    ],
@@ -162,11 +182,31 @@
     {
      "id": "C7",
      "text": "Tòa tháp 3 tầng: tầng dưới 3 khối, tầng giữa 2 khối, tầng trên 1 khối. (a) Tất cả mấy khối? (b) Con nhận ra dãy số 3, 2, 1 quen thuộc không — nếu xây thêm cho tháp cao 4 tầng theo đúng kiểu này (tầng dưới cùng 4 khối) thì cần tất cả mấy khối?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tháp 3 tầng có mấy khối",
+        "value": 6
+       },
+       {
+        "label": "tháp 4 tầng có mấy khối",
+        "value": 10
+       }
+      ]
+     },
      "solutionNarrative": "(a) 3 + 2 + 1 = 6 khối. (b) Chính là dãy bậc thang của Bài 10! Tháp 4 tầng: 4 + 3 + 2 + 1 = 10 khối — con vừa gặp lại cầu vồng Gauss nhí đấy"
     },
     {
      "id": "C8",
      "text": "Su Kem muốn xếp một khối lập phương TO từ các khối lập phương nhỏ: 2 tầng, mỗi tầng 2 hàng × 2 khối. Hỏi cần bao nhiêu khối nhỏ? Trong hình xếp xong, có mấy khối bị che khuất hoàn toàn (không nhìn thấy tí nào từ phía trước)?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tất cả mấy khối nhỏ",
+        "value": 8
+       }
+      ]
+     },
      "solutionNarrative": "mỗi tầng 2 × 2 = 4 khối, hai tầng → 4 + 4 = 8 khối nhỏ. Trong hình xếp, khối ở GÓC SAU của tầng dưới bị các bạn phía trước và bên trên che khuất hoàn toàn — mắt không thấy nhưng đếm theo tầng vẫn tìm ra nó! Xếp thử bằng lego thật (8 khối thành khối lập phương to) để kiểm chứng nhé"
     }
    ]

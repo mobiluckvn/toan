@@ -128,16 +128,34 @@
     {
      "id": "C1",
      "text": "Viết số tiếp theo của dãy gấp đôi: 2, 4, 8, 16, ▢.",
+     "answerKey": {
+      "value": 32
+     },
      "solutionNarrative": "16 + 16 = 32"
     },
     {
      "id": "C2",
      "text": "Viết số tiếp theo của dãy: 1, 2, 4, 7, 11, ▢.",
+     "answerKey": {
+      "value": 16
+     },
      "solutionNarrative": "bước tiếp dài 5 → 11 + 5 = 16"
     },
     {
      "id": "C3",
      "text": "Dãy 3, 6, 12, 24 có phải dãy đếm thêm (nhịp đều) không? Viết các bước nhảy ra để trả lời.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có phải dãy đếm thêm không",
+        "options": [
+         "phải",
+         "không phải"
+        ],
+        "value": "không phải"
+       }
+      ]
+     },
      "solutionNarrative": "bước nhảy là 3, 6, 12 — không đều → KHÔNG phải dãy đếm thêm (nó là dãy gấp đôi)"
     }
    ],
@@ -145,21 +163,68 @@
     {
      "id": "C4",
      "text": "Tìm quy luật rồi viết HAI số tiếp theo: 5, 6, 8, 11, 15, ▢, ▢.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ô trống 1",
+        "value": 20
+       },
+       {
+        "label": "ô trống 2",
+        "value": 26
+       }
+      ]
+     },
      "solutionNarrative": "bước nhảy 1, 2, 3, 4 → bậc thang → 15 + 5 = 20; 20 + 6 = 26"
     },
     {
      "id": "C5",
      "text": "Tìm quy luật rồi viết HAI số tiếp theo: 3, 6, 12, 24, ▢, ▢.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ô trống 1",
+        "value": 48
+       },
+       {
+        "label": "ô trống 2",
+        "value": 96
+       }
+      ]
+     },
      "solutionNarrative": "gấp đôi → 48 và 96"
     },
     {
      "id": "C6",
      "text": "Dãy nào là dãy bậc thang, dãy nào là dãy gấp đôi: (a) 1, 2, 4, 8, 16; (b) 1, 2, 4, 7, 11? Nói quy luật mỗi dãy bằng một câu của con.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "(a) 1, 2, 4, 8, 16",
+        "options": [
+         "gấp đôi",
+         "bậc thang"
+        ],
+        "value": "gấp đôi"
+       },
+       {
+        "label": "(b) 1, 2, 4, 7, 11",
+        "options": [
+         "gấp đôi",
+         "bậc thang"
+        ],
+        "value": "bậc thang"
+       }
+      ]
+     },
      "solutionNarrative": "(a) gấp đôi — \"mỗi số bằng số trước cộng chính nó\"; (b) bậc thang — \"mỗi bước nhảy dài thêm 1\""
     },
     {
      "id": "C7",
      "text": "Điền số bị mờ Ở GIỮA dãy bậc thang: 2, 3, 5, ▢, 12, 17.",
+     "answerKey": {
+      "value": 8
+     },
      "solutionNarrative": "bước nhảy 1, 2, ?, ?, 5 → số mờ là 5 + 3 = 8 (kiểm tra: 8 + 4 = 12 ✓)"
     }
    ],
@@ -167,6 +232,18 @@
     {
      "id": "C8",
      "text": "DÃY THỎ FIBONACCI — dãy số nổi tiếng nhất thế giới: 1, 1, 2, 3, 5, 8, ... Mỗi số bằng tổng HAI số liền trước nó (1 + 1 = 2; 1 + 2 = 3; 2 + 3 = 5...). Con hãy viết tiếp HAI số nữa của dãy. Nhà toán học Fibonacci tìm ra dãy này khi đếm... các đôi thỏ đấy!",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số tiếp theo thứ nhất",
+        "value": 13
+       },
+       {
+        "label": "số tiếp theo thứ hai",
+        "value": 21
+       }
+      ]
+     },
      "solutionNarrative": "5 + 8 = 13; 8 + 13 = 21 → hai số tiếp theo là 13 và 21"
     },
     {

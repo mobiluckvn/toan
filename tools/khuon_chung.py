@@ -50,8 +50,13 @@ def _cau_meo(dong):
     return ''
 
 
-def sang_khuon_chung(bai, truoc=None, sau=None):
-    """bai: bản lớp 2 (muc + cau) → dict đúng khuôn lớp 5."""
+def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
+    """bai: bản lớp 2 (muc + cau) → dict đúng khuôn lớp 5.
+
+    `dap_an`: {mã bài#mã câu → answerKey} do tools/tach_cau_lop2.py dựng — đây là
+    thứ biến câu luyện tập từ "làm ra vở rồi tự so" thành Ô ĐIỀN ĐƯỢC máy chấm.
+    """
+    dap_an = dap_an or {}
     so = bai['so']
     ma = f'KSN2_B{so:02d}'
 
@@ -141,6 +146,9 @@ def sang_khuon_chung(bai, truoc=None, sau=None):
             item['choices'] = c['choices']
         if c.get('answerKey'):
             item['answerKey'] = c['answerKey']
+        elif dap_an.get(f"{bai['id']}#{c['id']}"):
+            # câu luyện tập đã tách thành ô điền được
+            item['answerKey'] = dap_an[f"{bai['id']}#{c['id']}"]
         # Câu tự luận: lời chữa của sách chính là lời giải mẫu bé đối chiếu.
         if c.get('loiChua'):
             item['solutionNarrative'] = c['loiChua']

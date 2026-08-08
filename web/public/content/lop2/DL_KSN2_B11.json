@@ -128,16 +128,68 @@
     {
      "id": "C1",
      "text": "Khoanh số chẵn: 12, 7, 30, 45, 68, 91.",
+     "answerKey": {
+      "ordered": false,
+      "values": [
+       12,
+       30,
+       68
+      ]
+     },
      "solutionNarrative": "12, 30, 68"
     },
     {
      "id": "C2",
      "text": "Các số sau là chẵn hay lẻ: 134; 275; 480; 99?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "134",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "chẵn"
+       },
+       {
+        "label": "275",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "lẻ"
+       },
+       {
+        "label": "480",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "chẵn"
+       },
+       {
+        "label": "99",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "lẻ"
+       }
+      ]
+     },
      "solutionNarrative": "134 chẵn; 275 lẻ; 480 chẵn; 99 lẻ"
     },
     {
      "id": "C3",
      "text": "Viết 3 số chẵn liên tiếp bắt đầu từ 16.",
+     "answerKey": {
+      "ordered": true,
+      "values": [
+       16,
+       18,
+       20
+      ]
+     },
      "solutionNarrative": "16, 18, 20"
     }
    ],
@@ -145,21 +197,91 @@
     {
      "id": "C4",
      "text": "Đọc kết quả bảng nhân 2 (2, 4, ..., 20): các chữ số tận cùng lần lượt là gì? Chúng có gì chung?",
+     "answerKey": {
+      "ordered": true,
+      "values": [
+       2,
+       4,
+       6,
+       8,
+       0
+      ]
+     },
      "solutionNarrative": "tận cùng lần lượt 2, 4, 6, 8, 0 rồi lặp lại — toàn chữ số chẵn"
     },
     {
      "id": "C5",
      "text": "Không tính, đoán tổng sau chẵn hay lẻ rồi mới tính kiểm tra: (a) 14 + 22; (b) 15 + 23; (c) 30 + 47.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "(a) 14 + 22",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "chẵn"
+       },
+       {
+        "label": "(b) 15 + 23",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "chẵn"
+       },
+       {
+        "label": "(c) 30 + 47",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "lẻ"
+       }
+      ]
+     },
      "solutionNarrative": "(a) chẵn + chẵn = chẵn (= 36 ✓); (b) lẻ + lẻ = chẵn (= 38 ✓); (c) chẵn + lẻ = lẻ (= 77 ✓)"
     },
     {
      "id": "C6",
      "text": "Số 40 có thuộc bảng nhân 5 không? Số 43 thì sao? Con dùng bí mật tận cùng để trả lời thật nhanh.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số 40",
+        "options": [
+         "thuộc",
+         "không thuộc"
+        ],
+        "value": "thuộc"
+       },
+       {
+        "label": "số 43",
+        "options": [
+         "thuộc",
+         "không thuộc"
+        ],
+        "value": "không thuộc"
+       }
+      ]
+     },
      "solutionNarrative": "40 tận cùng 0 → thuộc bảng nhân 5 (5 × 8); 43 tận cùng 3 → không thuộc"
     },
     {
      "id": "C7",
      "text": "Tìm số chẵn lớn nhất có 2 chữ số và số lẻ bé nhất có 3 chữ số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số chẵn lớn nhất có 2 chữ số",
+        "value": 98
+       },
+       {
+        "label": "số lẻ bé nhất có 3 chữ số",
+        "value": 101
+       }
+      ]
+     },
      "solutionNarrative": "số chẵn lớn nhất có 2 chữ số: 98; số lẻ bé nhất có 3 chữ số: 101"
     }
    ],
@@ -167,6 +289,18 @@
     {
      "id": "C8",
      "text": "Không cộng hết, đoán xem tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 là chẵn hay lẻ. (Mẹo: các số lẻ trong đó bắt cặp với nhau — đếm xem có mấy \"viên kẹo lẻ loi\", có bạn nào bị ế cặp không?) Sau đó dùng tuyệt chiêu Gauss nhí của Bài 13 sắp học... à không, dùng máy đếm tay để kiểm tra cũng được!",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng đó là số",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "lẻ"
+       }
+      ]
+     },
      "solutionNarrative": "các số lẻ trong tổng là 1, 3, 5, 7, 9 — có 5 \"viên kẹo lẻ loi\". Bốn viên bắt thành hai cặp (thành chẵn), còn đúng 1 viên bị ế → tổng là số LẺ. Kiểm tra: 1 + 2 + ... + 9 = 45, tận cùng 5 — lẻ thật ✓"
     },
     {

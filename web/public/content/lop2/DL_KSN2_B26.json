@@ -128,6 +128,26 @@
     {
      "id": "C1",
      "text": "Hình tam giác có mấy cạnh, mấy đỉnh? Hình tứ giác có mấy cạnh, mấy đỉnh?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tam giác mấy cạnh",
+        "value": 3
+       },
+       {
+        "label": "tam giác mấy đỉnh",
+        "value": 3
+       },
+       {
+        "label": "tứ giác mấy cạnh",
+        "value": 4
+       },
+       {
+        "label": "tứ giác mấy đỉnh",
+        "value": 4
+       }
+      ]
+     },
      "solutionNarrative": "tam giác 3 cạnh - 3 đỉnh; tứ giác 4 cạnh - 4 đỉnh"
     },
     {
@@ -138,6 +158,14 @@
     {
      "id": "C3",
      "text": "Hình vuông khác hình chữ nhật ở điểm nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mấy cạnh bằng nhau",
+        "value": 4
+       }
+      ]
+     },
      "solutionNarrative": "hình vuông có CẢ 4 cạnh bằng nhau; chữ nhật chỉ cần từng cặp cạnh đối bằng nhau"
     }
    ],
@@ -145,16 +173,25 @@
     {
      "id": "C4",
      "text": "Chú kiến bò một vòng quanh hình tam giác có các cạnh 2 cm, 3 cm, 4 cm. Kiến bò được bao nhiêu cm?",
+     "answerKey": {
+      "value": 9
+     },
      "solutionNarrative": "2 + 3 + 4 = 9 cm"
     },
     {
      "id": "C5",
      "text": "Chú kiến bò một vòng quanh hình vuông có cạnh 5 cm. Kiến bò được bao nhiêu cm? (Hình vuông có mấy cạnh, mỗi cạnh dài bao nhiêu?)",
+     "answerKey": {
+      "value": 20
+     },
      "solutionNarrative": "hình vuông có 4 cạnh bằng nhau, mỗi cạnh 5 cm → 5 + 5 + 5 + 5 = 20 cm"
     },
     {
      "id": "C6",
      "text": "Chú kiến bò một vòng quanh hình chữ nhật có cạnh dài 6 cm, cạnh ngắn 3 cm. Kiến bò được bao nhiêu cm? (Nhớ hình chữ nhật có 2 cạnh dài và 2 cạnh ngắn!)",
+     "answerKey": {
+      "value": 18
+     },
      "solutionNarrative": "6 + 3 + 6 + 3 = 18 cm (hai cạnh dài, hai cạnh ngắn!)"
     }
    ],
@@ -162,11 +199,47 @@
     {
      "id": "C7",
      "text": "Hai chú kiến thi bò: kiến Đỏ bò quanh hình vuông cạnh 4 cm; kiến Đen bò quanh hình tam giác có các cạnh 5 cm, 5 cm, 5 cm. Chú kiến nào bò xa hơn? Xa hơn mấy cm?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "kiến Đỏ bò được",
+        "value": 16
+       },
+       {
+        "label": "kiến Đen bò được",
+        "value": 15
+       },
+       {
+        "label": "con nào xa hơn",
+        "options": [
+         "kiến Đỏ",
+         "kiến Đen"
+        ],
+        "value": "kiến Đỏ"
+       },
+       {
+        "label": "xa hơn mấy cm",
+        "value": 1
+       }
+      ]
+     },
      "solutionNarrative": "kiến Đỏ: 4 + 4 + 4 + 4 = 16 cm; kiến Đen: 5 + 5 + 5 = 15 cm → kiến Đỏ bò xa hơn 16 − 15 = 1 cm"
     },
     {
      "id": "C8",
      "text": "Dùng thước, con hãy VẼ một hình tứ giác mà KHÔNG phải hình vuông cũng KHÔNG phải hình chữ nhật. Đếm lại cạnh - đỉnh để chứng minh nó vẫn là tứ giác \"chính hãng\"!",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tứ giác có mấy cạnh",
+        "value": 4
+       },
+       {
+        "label": "mấy đỉnh",
+        "value": 4
+       }
+      ]
+     },
      "solutionNarrative": "chỉ cần 4 cạnh không đều tăm tắp, 4 đỉnh — đếm đúng 4 cạnh 4 đỉnh là \"chính hãng\"!"
     }
    ]

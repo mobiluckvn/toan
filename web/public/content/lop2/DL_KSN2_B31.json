@@ -145,11 +145,26 @@
     {
      "id": "C2",
      "text": "Một nửa của 6 viên kẹo là mấy viên? Một nửa của 10 viên là mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "một nửa của 6",
+        "value": 3
+       },
+       {
+        "label": "một nửa của 10",
+        "value": 5
+       }
+      ]
+     },
      "solutionNarrative": "6 : 2 = 3 viên; 10 : 2 = 5 viên"
     },
     {
      "id": "C3",
      "text": "Một phần tư của 8 cái bánh là mấy cái?",
+     "answerKey": {
+      "value": 2
+     },
      "solutionNarrative": "8 : 4 = 2 cái"
     }
    ],
@@ -157,16 +172,57 @@
     {
      "id": "C4",
      "text": "Chiếc bánh chưng cắt làm 4 phần bằng nhau. Bố ăn 1 phần. Hỏi bố ăn một phần mấy chiếc bánh? Còn lại mấy phần?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bố ăn một phần mấy chiếc bánh",
+        "options": [
+         "một nửa",
+         "một phần tư",
+         "một phần tám"
+        ],
+        "value": "một phần tư"
+       },
+       {
+        "label": "còn lại mấy phần",
+        "value": 3
+       }
+      ]
+     },
      "solutionNarrative": "bố ăn MỘT PHẦN TƯ chiếc bánh; còn lại 3 phần"
     },
     {
      "id": "C5",
      "text": "Mẹ mua một chục trứng (10 quả), dùng một nửa để rán. Hỏi mẹ rán mấy quả, còn lại mấy quả?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "rán mấy quả",
+        "value": 5
+       },
+       {
+        "label": "còn lại mấy quả",
+        "value": 5
+       }
+      ]
+     },
      "solutionNarrative": "rán 10 : 2 = 5 quả; còn lại 5 quả"
     },
     {
      "id": "C6",
      "text": "Cùng một chiếc bánh: miếng một nửa và miếng một phần tư — miếng nào to hơn? Nếu là hai chiếc bánh KHÁC CỠ nhau thì con còn chắc chắn được không? (Nghĩ thử: nửa của bánh bé xíu với phần tư của bánh khổng lồ!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "miếng nào to hơn",
+        "options": [
+         "một nửa",
+         "một phần tư"
+        ],
+        "value": "một nửa"
+       }
+      ]
+     },
      "solutionNarrative": "cùng một chiếc bánh thì một nửa to hơn; nhưng hai bánh KHÁC CỠ thì chưa chắc — nửa của bánh bé có khi thua cả phần tư của bánh khổng lồ! (So sánh phần chỉ chắc chắn khi cùng một chiếc bánh.)"
     }
    ],
@@ -174,11 +230,35 @@
     {
      "id": "C7",
      "text": "Bí mật gấp giấy: lấy MỘT NỬA tờ giấy, rồi lấy tiếp MỘT NỬA của phần đó. Phần cuối cùng là một phần mấy của cả tờ giấy? Gấp giấy thật để chứng minh!",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phần cuối là một phần mấy",
+        "value": 4
+       }
+      ]
+     },
      "solutionNarrative": "nửa của nửa = MỘT PHẦN TƯ tờ giấy — gấp đôi hai lần, mở ra thấy 4 ô bằng nhau"
     },
     {
      "id": "C8",
      "text": "So tài: một nửa của 12 viên bi và một phần tư của 20 viên bi — bên nào nhiều bi hơn? Nhiều hơn mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "một nửa của 12",
+        "value": 6
+       },
+       {
+        "label": "một phần tư của 20",
+        "value": 5
+       },
+       {
+        "label": "nhiều hơn mấy viên",
+        "value": 1
+       }
+      ]
+     },
      "solutionNarrative": "nửa của 12 là 12 : 2 = 6 viên; phần tư của 20 là 20 : 4 = 5 viên → bên \"nửa của 12\" nhiều hơn 1 viên"
     }
    ]

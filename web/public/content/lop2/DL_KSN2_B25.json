@@ -104,16 +104,72 @@
     {
      "id": "C1",
      "text": "Voi nặng hơn Gấu. Gấu nặng hơn Thỏ. Hỏi con nào nặng nhất, con nào nhẹ nhất? (Vẽ thang!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "con nặng nhất",
+        "options": [
+         "Voi",
+         "Gấu",
+         "Thỏ"
+        ],
+        "value": "Voi"
+       },
+       {
+        "label": "con nhẹ nhất",
+        "options": [
+         "Voi",
+         "Gấu",
+         "Thỏ"
+        ],
+        "value": "Thỏ"
+       }
+      ]
+     },
      "solutionNarrative": "Voi nặng nhất, Thỏ nhẹ nhất"
     },
     {
      "id": "C2",
      "text": "Trí Long cao hơn Su Kem. Su Kem cao hơn Bin. Hỏi ai đứng giữa về chiều cao? Trí Long có cao hơn Bin không — đề đâu có nói thẳng, sao con biết?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ai đứng giữa",
+        "options": [
+         "Trí Long",
+         "Su Kem",
+         "Bin"
+        ],
+        "value": "Su Kem"
+       },
+       {
+        "label": "Trí Long có cao hơn Bin không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
      "solutionNarrative": "Su Kem đứng giữa; Trí Long cao hơn Bin vì Trí Long > Su Kem > Bin — cái thang nói hộ điều đề không nói thẳng!"
     },
     {
      "id": "C3",
      "text": "An chạy nhanh hơn Bích. Cường chạy chậm hơn Bích. Ai chạy nhanh nhất?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ai chạy nhanh nhất",
+        "options": [
+         "An",
+         "Bích",
+         "Cường"
+        ],
+        "value": "An"
+       }
+      ]
+     },
      "solutionNarrative": "An nhanh nhất (An > Bích > Cường)"
     }
    ],
@@ -121,11 +177,64 @@
     {
      "id": "C4",
      "text": "Ba bạn An, Bình, Cúc cầm ba quả bóng đỏ, xanh, vàng. An không cầm bóng đỏ, Bình cầm bóng vàng. Hỏi ai cầm bóng gì? (Kẻ bảng loại trừ!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "An cầm bóng",
+        "options": [
+         "đỏ",
+         "xanh",
+         "vàng"
+        ],
+        "value": "xanh"
+       },
+       {
+        "label": "Bình cầm bóng",
+        "options": [
+         "đỏ",
+         "xanh",
+         "vàng"
+        ],
+        "value": "vàng"
+       },
+       {
+        "label": "Cúc cầm bóng",
+        "options": [
+         "đỏ",
+         "xanh",
+         "vàng"
+        ],
+        "value": "đỏ"
+       }
+      ]
+     },
      "solutionNarrative": "Bình ✓ vàng; An không đỏ, vàng đã có chủ → An ✓ xanh; Cúc ✓ đỏ"
     },
     {
      "id": "C5",
      "text": "Ba bạn nuôi ba con vật: mèo, cún, cá vàng. Hoa nuôi cún. Lan không nuôi mèo. Hỏi ai nuôi con gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Hoa nuôi",
+        "options": [
+         "mèo",
+         "cún",
+         "cá vàng"
+        ],
+        "value": "cún"
+       },
+       {
+        "label": "Lan nuôi",
+        "options": [
+         "mèo",
+         "cún",
+         "cá vàng"
+        ],
+        "value": "cá vàng"
+       }
+      ]
+     },
      "solutionNarrative": "Hoa ✓ cún; Lan không mèo, cún đã có chủ → Lan ✓ cá vàng; còn lại nuôi mèo"
     },
     {
@@ -138,6 +247,37 @@
     {
      "id": "C7",
      "text": "Vụ án kết hợp hai vũ khí: ba bạn Tí, Sửu, Dần nuôi ba con: mèo, cún, vẹt. Manh mối: (1) Tí cao hơn Sửu, Sửu cao hơn Dần; (2) bạn THẤP NHẤT nuôi mèo; (3) Tí không nuôi cún. Hỏi ai nuôi con gì? (Vẽ thang trước để tìm bạn thấp nhất, rồi mới kẻ bảng!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Tí nuôi",
+        "options": [
+         "mèo",
+         "cún",
+         "vẹt"
+        ],
+        "value": "vẹt"
+       },
+       {
+        "label": "Sửu nuôi",
+        "options": [
+         "mèo",
+         "cún",
+         "vẹt"
+        ],
+        "value": "cún"
+       },
+       {
+        "label": "Dần nuôi",
+        "options": [
+         "mèo",
+         "cún",
+         "vẹt"
+        ],
+        "value": "mèo"
+       }
+      ]
+     },
      "solutionNarrative": "thang: Tí > Sửu > Dần → Dần thấp nhất → Dần ✓ mèo. Tí không cún, mèo đã của Dần → Tí ✓ vẹt. Còn lại: Sửu ✓ cún"
     },
     {
