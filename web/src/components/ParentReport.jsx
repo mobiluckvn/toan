@@ -78,7 +78,7 @@ export default function ParentReport({ progress, cloudReport, onExit, onOpenMicr
               ...(r ? [['PHÚT (7 NGÀY)', r.minutes > 0 ? String(r.minutes) : (r.luotThieuGio > 0 ? '—' : '0')],
                        ['ĐÚNG', `${r.correctRate}%`]] : [])
             ].map(([k, v]) => (
-              <div key={k} className="min-w-[92px] flex-1 rounded-xl bg-[#EAF1F7] px-3 py-2.5 text-center">
+              <div key={k} className="min-w-[92px] flex-1 rounded-xl bg-soft px-3 py-2.5 text-center">
                 <b className="block text-[21px] text-navy">{v}</b>
                 <span className="text-[10.5px] font-extrabold text-mute">{k}</span>
               </div>
@@ -154,7 +154,7 @@ export default function ParentReport({ progress, cloudReport, onExit, onOpenMicr
             {weak.map((w) => (
               <div key={w.unit} className="mt-1.5 flex items-center gap-2 text-[13px]">
                 <span className="flex-1 truncate font-mono text-[11.5px] text-mute">{w.unit}</span>
-                <span className="h-1.5 w-24 overflow-hidden rounded-full bg-[#EAF1F7]">
+                <span className="h-1.5 w-24 overflow-hidden rounded-full bg-soft">
                   <i className="block h-full bg-gold" style={{ width: `${Math.round((w.p || 0) * 100)}%` }} />
                 </span>
                 <b className="w-9 text-right text-navy">{Math.round((w.p || 0) * 100)}%</b>

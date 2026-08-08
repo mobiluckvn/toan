@@ -11,7 +11,7 @@ export default function SampleCard({ example, index, total, figure, onNext }) {
     <>
       <div className="card">
         <div className="kicker">BÀI MẪU {index}/{total} · {ex.kind.toUpperCase() || 'CA CHUẨN'}</div>
-        <div className="rounded-xl bg-[#EAF1F7] px-4 py-3.5 text-[16px] font-semibold leading-relaxed">
+        <div className="rounded-xl bg-soft px-4 py-3.5 text-[16px] font-semibold leading-relaxed">
           {ex.problem}
         </div>
         <Figure fig={figure} />

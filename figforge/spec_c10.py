@@ -6,9 +6,9 @@ SPEC = {
 'DL:KSN5Q1.B37.M1': dict(archetype='place_value_chart', params=dict(
     title='BA THỨ TIẾNG CỦA MỘT LƯỢNG — MÁY DỊCH',
     headers=['phân số', 'thập phân', 'phần trăm'], comma_after=None,
-    rows=[dict(label='', cells=['3/4', '0,75', '75%'], color='#E9F9F4'),
+    rows=[dict(label='', cells=['3/4', '0,75', '75%'], color='#E6FAF5'),
           dict(label='', cells=['1/5', '0,2', '20%'], color='white'),
-          dict(label='', cells=['1/4', '0,25', '25%'], color='#E9F9F4'),
+          dict(label='', cells=['1/4', '0,25', '25%'], color='#E6FAF5'),
           dict(label='', cells=['1/8', '0,125', '12,5%'], color='white')],
     note='Cơ chế "trên 100": 25% của 240 000 = 240 000 : 4 = 60 000 đồng'),
     caption='Dịch được ba thứ tiếng thì mọi bài phần trăm đều tính nhẩm được'),
@@ -50,7 +50,7 @@ SPEC = {
     rows=[dict(label='', cells=['giảm 10% rồi 20%', '0,9 × 0,8 = 0,72', '28%'], color='#FDECE9',
                highlight=[2]),
           dict(label='', cells=['mua 4 tặng 1', '4/5 = 0,8', '20%'], color='white'),
-          dict(label='', cells=['giảm 20%', '0,8', '20%'], color='#E9F9F4')],
+          dict(label='', cells=['giảm 20%', '0,8', '20%'], color='#E6FAF5')],
     note='Giảm gối đầu KHÔNG phải 10 + 20 = 30% — nhân hệ số mới ra 28%'),
     caption='Mọi chiêu khuyến mại đều quy được về một hệ số phải trả'),
 
@@ -98,9 +98,9 @@ SPEC = {
 'DL:KSN5Q1.B40.M1': dict(archetype='place_value_chart', params=dict(
     title='CÂU HỎI VÀNG: CHẤT NÀO ĐỨNG IM?',
     headers=['biến cố', 'chất đứng im', 'chất thay đổi'], comma_after=None,
-    rows=[dict(label='', cells=['pha thêm nước', 'ĐƯỜNG', 'nước · khối'], color='#E9F9F4'),
-          dict(label='', cells=['cô cạn bớt nước', 'ĐƯỜNG', 'nước · khối'], color='#E9F9F4'),
-          dict(label='', cells=['thêm đường', 'NƯỚC', 'đường · khối'], color='#FFF6E2',
+    rows=[dict(label='', cells=['pha thêm nước', 'ĐƯỜNG', 'nước · khối'], color='#E6FAF5'),
+          dict(label='', cells=['cô cạn bớt nước', 'ĐƯỜNG', 'nước · khối'], color='#E6FAF5'),
+          dict(label='', cells=['thêm đường', 'NƯỚC', 'đường · khối'], color='#FFF4DF',
                highlight=[1])],
     note='Nồng độ = đường : cả bình · bình 400 g loại 10% có 40 g đường'),
     caption='Mở mọi biến cố bằng câu hỏi vàng — ai đứng im người ấy làm mỏ neo'),

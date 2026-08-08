@@ -51,8 +51,8 @@ SPEC = {
 'DL:KSN5Q1.B42.M3': dict(archetype='place_value_chart', params=dict(
     title='TỈ LỆ NGHỊCH — MỎ NEO LÀ TỔNG CÔNG',
     headers=['số người', 'số ngày', 'tổng công'], comma_after=None,
-    rows=[dict(label='', cells=['6 người', '10 ngày', '60'], color='#E9F9F4', highlight=[2]),
-          dict(label='', cells=['4 người', '15 ngày', '60'], color='#FFF6E2', highlight=[2]),
+    rows=[dict(label='', cells=['6 người', '10 ngày', '60'], color='#E6FAF5', highlight=[2]),
+          dict(label='', cells=['4 người', '15 ngày', '60'], color='#FFF4DF', highlight=[2]),
           dict(label='', cells=['3 máy', '6 giờ', '18'], color='white'),
           dict(label='', cells=['2 máy', '9 giờ', '18'], color='white')],
     note='Kiểm chiều: ÍT người thì NHIỀU ngày — 15 > 10 ✓ (nếu ra ngược là sai)'),

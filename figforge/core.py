@@ -9,9 +9,11 @@ import textwrap
 plt.rcParams['font.family'] = 'DejaVu Sans'
 
 # ── bảng màu đóng (Đ5.1) ──
-NAVY, NAVY2, TEAL, TEAL2, GOLD, RED = '#0C3B70', '#155089', '#1FC3A6', '#12a98f', '#F8B942', '#C0392B'
-INK, MUTE, BG, SOFT, LINE = '#15263A', '#6B7C90', '#F8FBFD', '#E8F1FA', '#D9E3EC'
-DARKTEAL, DARKGOLD, PALERED, PALETEAL = '#04382c', '#3d2a00', '#FDECE9', '#E9F9F4'
+# Bảng màu rút từ icon thương hiệu (icon/icon.jpg) — PHẢI khớp web/tailwind.config.js,
+# lệch một bên là hình và giao diện đá màu nhau.
+NAVY, NAVY2, TEAL, TEAL2, GOLD, RED = '#0B4EA8', '#1268D6', '#1FCBAB', '#12A98F', '#F9B233', '#C0392B'
+INK, MUTE, BG, SOFT, LINE = '#15263A', '#5B6E85', '#F8FBFD', '#E8F1FA', '#D4E1EE'
+DARKTEAL, DARKGOLD, PALERED, PALETEAL = '#04382C', '#5A3A00', '#FDECE9', '#E6FAF5'
 
 FS = dict(title=12.5, big=17, mid=13.5, body=11, small=10, tiny=9.5)   # thang cỡ chữ
 

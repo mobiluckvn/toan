@@ -111,10 +111,10 @@ SPEC = {
 'DL:KSN5Q1.B52.M3': dict(archetype='place_value_chart', params=dict(
     title='BẢN ĐỒ CHỖ NGỒI TRONG RẠP SƠN',
     headers=['chỗ ngồi', 'số mặt sơn', 'công thức', 'khối 3³', 'khối 4³'], comma_after=None,
-    rows=[dict(label='', cells=['ĐỈNH', '3 mặt', 'luôn 8', '8', '8'], color='#FFF6E2', highlight=[2]),
-          dict(label='', cells=['CẠNH', '2 mặt', '12(n−2)', '12', '24'], color='#E9F9F4'),
+    rows=[dict(label='', cells=['ĐỈNH', '3 mặt', 'luôn 8', '8', '8'], color='#FFF4DF', highlight=[2]),
+          dict(label='', cells=['CẠNH', '2 mặt', '12(n−2)', '12', '24'], color='#E6FAF5'),
           dict(label='', cells=['MẶT', '1 mặt', '6(n−2)²', '6', '24'], color='white'),
-          dict(label='', cells=['LÕI', '0 mặt', '(n−2)³', '1', '8'], color='#EAF1F7')],
+          dict(label='', cells=['LÕI', '0 mặt', '(n−2)³', '1', '8'], color='#EAF2FB')],
     note='SOI TỔNG tự chấm: 8 + 12 + 6 + 1 = 27 ✓  ·  8 + 24 + 24 + 8 = 64 ✓'),
     caption='Khối 3 mặt LUÔN là 8 với mọi n — vì hình hộp nào cũng chỉ có 8 đỉnh'),
 }

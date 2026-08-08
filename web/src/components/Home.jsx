@@ -3,6 +3,7 @@ import { allMicroIds, chapterOf, CONTENT, dongDau } from '../lib/content.js';
 import { microState, chapterStats, overallStats, isChapterExamUnlocked, modeOf } from '../lib/progress.js';
 import { planSession, keyOf } from '../lib/adaptive.js';
 import TodayCard from './TodayCard.jsx';
+import ChanTrang from './ChanTrang.jsx';
 
 const CHAPTER_NAMES = {
   1: 'Bản đồ các hàng', 2: 'Lập số & đếm', 3: 'Chia hết & vòng đuôi', 4: 'Tính nhanh & tìm X',
@@ -148,7 +149,7 @@ export default function Home({ progress, onOpenMicro, onOpenExam, onOpenReport, 
                   <span className="text-[11.5px] text-mute">{st.done}/{st.total} bài</span>
                 </span>
                 {st.examPassed && <span className="text-[18px]">🏅</span>}
-                <span className="h-1.5 w-14 overflow-hidden rounded-full bg-[#EAF1F7]">
+                <span className="h-1.5 w-14 overflow-hidden rounded-full bg-soft">
                   <i className="block h-full bg-teal" style={{ width: `${st.percent}%` }} />
                 </span>
               </button>
@@ -186,7 +187,7 @@ export default function Home({ progress, onOpenMicro, onOpenExam, onOpenReport, 
                     onClick={() => onOpenExam(c)}
                     className={`mt-2 w-full rounded-xl px-3 py-2.5 text-[13.5px] font-extrabold ${
                       isChapterExamUnlocked(progress, c, list)
-                        ? 'bg-alert text-white' : 'bg-[#EAF1F7] text-mute'}`}>
+                        ? 'bg-alert text-white' : 'bg-soft text-mute'}`}>
                     ⚔ KỲ SÁT HẠCH CHƯƠNG {c} {st.examPassed ? '· đã đạt 🏅'
                       : isChapterExamUnlocked(progress, c, list) ? '' : '· học hết chương mới mở'}
                   </button>
@@ -196,6 +197,8 @@ export default function Home({ progress, onOpenMicro, onOpenExam, onOpenReport, 
           );
         })}
       </div>
+
+      <ChanTrang />
 
       {why !== null && (
         <div className="fixed inset-0 z-30 flex items-end justify-center bg-black/40 p-3.5"

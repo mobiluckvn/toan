@@ -6,8 +6,8 @@ SPEC = {
 'DL:KSN5Q1.B5.M1': dict(archetype='place_value_chart', params=dict(
     title='BỘ THẺ 0; 3; 5; 8 — LỚN NHẤT VÀ NHỎ NHẤT',
     headers=['nghìn', 'trăm', 'chục', 'đơn vị'], comma_after=None,
-    rows=[dict(label='lớn nhất', cells=['8', '5', '3', '0'], color='#E9F9F4'),
-          dict(label='nhỏ nhất', cells=['3', '0', '5', '8'], color='#FFF6E2')],
+    rows=[dict(label='lớn nhất', cells=['8', '5', '3', '0'], color='#E6FAF5'),
+          dict(label='nhỏ nhất', cells=['3', '0', '5', '8'], color='#FFF4DF')],
     note='Số nhỏ nhất KHÔNG phải 0358 — luật hàng đầu cấm số 0 dẫn đội, thẻ 3 phải ra trước'),
     caption='Tham lam từng hàng: lớn nhất xếp giảm dần · nhỏ nhất xếp tăng dần nhưng né số 0 ở đầu'),
 

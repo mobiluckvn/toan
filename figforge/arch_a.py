@@ -113,7 +113,7 @@ def two_way_compare(p, out):
         txt_fit(ax, 50, y, p['title'], 90, FS['title'], NAVY, z=5); y -= 7
     top = y
     neutral = p.get('neutral')
-    LCOL, LPALE, LMARK = (NAVY, '#EAF1F7', '①') if neutral else (RED, PALERED, '✗')
+    LCOL, LPALE, LMARK = (NAVY, '#EAF2FB', '①') if neutral else (RED, PALERED, '✗')
     RCOL, RMARK = (TEAL, '②') if neutral else (TEAL, '✓')
     for side, (X, Wd, col, pale, mark, head) in {
         'wrong': (4, 45, LCOL, LPALE, LMARK, W), 'right': (51, 45, RCOL, PALETEAL, RMARK, R)}.items():

@@ -30,7 +30,7 @@ SPEC = {
     title='47 : 5 = 9 DƯ 2  —  DƯ LUÔN BÉ HƠN SỐ CHIA',
     cols=5, rows=10,
     fill=[[c, r] for r in range(9) for c in range(5)] + [[0, 9], [1, 9]],
-    fill_color='#1FC3A6', show_dims=False,
+    fill_color='#1FCBAB', show_dims=False,
     row_labels=[dict(row=9, text='lẻ 2'), dict(row=8, text='túi 9'), dict(row=0, text='túi 1')],
     memo=['9 túi đầy × 5 = 45', 'còn lẻ 2 viên', 'dư lớn nhất = 5 − 1 = 4'],
     note='Nếu dư bằng 5 thì gom thêm được một túi nữa — nên dư luôn bé hơn số chia'),

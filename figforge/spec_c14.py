@@ -6,9 +6,9 @@ SPEC = {
 'DL:KSN5Q1.B53.M1': dict(archetype='place_value_chart', params=dict(
     title='TAM GIÁC V - S - T: CHE Ô CẦN TÌM LÀ RA CÔNG THỨC',
     headers=['che ô nào', 'công thức lộ ra', 'ví dụ'], comma_after=None,
-    rows=[dict(label='', cells=['che V', 'V = S : T', '45 : 3 = 15 km/h'], color='#E9F9F4'),
+    rows=[dict(label='', cells=['che V', 'V = S : T', '45 : 3 = 15 km/h'], color='#E6FAF5'),
           dict(label='', cells=['che S', 'S = V × T', '5 × 2 = 10 km'], color='white'),
-          dict(label='', cells=['che T', 'T = S : V', '30 : 15 = 2 giờ'], color='#FFF6E2')],
+          dict(label='', cells=['che T', 'T = S : V', '30 : 15 = 2 giờ'], color='#FFF4DF')],
     note='Sớm - muộn ba nhịp: T đi 3 : 12 = 15 phút → 6 giờ 50 + 15 = 7 giờ 05 (mốc đồng hồ THẬT)'),
     caption='Một tam giác — ba công thức, khỏi học thuộc ba lần'),
 
@@ -61,7 +61,7 @@ SPEC = {
     title='ĐƯỜNG VÒNG 400 m — GẶM TRỌN MỘT VÒNG',
     points=dict(O=[0, 0], S=[0, 5], M=[4.05, -2.94], L=[-2.9, 4.1], R2=[2.9, 4.1]),
     shapes=[dict(circle=dict(at='O', r=5), fill='none')],
-    segments=[dict(**{'from': 'S', 'to': 'L'}, color='#1FC3A6', label='3 m/s →', dx=-12, dy=3),
+    segments=[dict(**{'from': 'S', 'to': 'L'}, color='#1FCBAB', label='3 m/s →', dx=-12, dy=3),
               dict(**{'from': 'S', 'to': 'R2'}, color='#C0392B', label='← 2 m/s', dx=12, dy=3)],
     labels=[dict(at='S', text='xuất phát', dy=5), dict(at='M', text='gặp nhau', dy=-5, dx=8)],
     show_points=['S', 'M'],

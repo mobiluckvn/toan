@@ -13,7 +13,7 @@ const when = (ms) => {
 
 /** Một ô số to ở đầu bảng */
 const Stat = ({ label, value, tone = '' }) => (
-  <div className="min-w-[86px] flex-1 rounded-xl bg-[#EAF1F7] px-3 py-2.5 text-center">
+  <div className="min-w-[86px] flex-1 rounded-xl bg-soft px-3 py-2.5 text-center">
     <b className={`block text-[21px] ${tone || 'text-navy'}`}>{value}</b>
     <span className="text-[10.5px] font-extrabold text-mute">{label}</span>
   </div>

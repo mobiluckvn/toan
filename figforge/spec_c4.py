@@ -49,7 +49,7 @@ SPEC = {
     title='DÃY NỬA DẦN 1/2 + 1/4 + … + 1/64 = ?',
     cols=8, rows=8, show_dims=False,
     fill=[[c, r] for r in range(8) for c in range(8)][:63],
-    fill_color='#1FC3A6',
+    fill_color='#1FCBAB',
     memo=['chiếc bánh chia 64 phần', 'ăn 63 phần', 'tổng = 1 − 1/64 = 63/64'],
     note='KHÔNG bằng 1 — góc trống 1/64 (ô trắng duy nhất) vẫn còn nguyên'),
     caption='Tổng = 1 trừ đi đúng mảnh cuối cùng vừa ăn'),

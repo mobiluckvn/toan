@@ -14,9 +14,9 @@ SPEC = {
 'DL:KSN5Q1.B29.M2': dict(archetype='place_value_chart', params=dict(
     title='THAY ÁO TỈ SỐ VỀ HAI SỐ PHẦN NGUYÊN',
     headers=['trang phục', 'đổi ra phân số', 'tỉ số'], comma_after=None,
-    rows=[dict(label='', cells=['75%', '3/4', '3 : 4'], color='#E9F9F4'),
+    rows=[dict(label='', cells=['75%', '3/4', '3 : 4'], color='#E6FAF5'),
           dict(label='', cells=['40%', '2/5', '2 : 5'], color='white'),
-          dict(label='', cells=['gấp rưỡi', '3/2', '3 : 2'], color='#FFF6E2'),
+          dict(label='', cells=['gấp rưỡi', '3/2', '3 : 2'], color='#FFF4DF'),
           dict(label='', cells=['bằng nửa', '1/2', '1 : 2'], color='white')],
     note='Thay áo xong thì bài 75% giống hệt bài 3/4: 7 phần = 35 → mè 15 · bơ 20'),
     caption='Mọi trang phục của tỉ đều phải thay về hai số phần nguyên trước khi kẻ ô'),

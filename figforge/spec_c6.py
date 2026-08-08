@@ -72,7 +72,7 @@ SPEC = {
     title='BÀI NGƯỢC ĐỈNH CAO: TÌM SỐ BẠN CŨ',
     cols=4, rows=3, show_dims=False,
     fill=[[c, r] for r in range(3) for c in range(4)],
-    fill_color='#F8B942',
+    fill_color='#F9B233',
     memo=['phần hơn = 40 − 28 = 12', 'mức kéo cân = 28 − 25 = 3', 'số bạn cũ = 12 : 3 = 4'],
     note='Phần thừa của người mới (đo từ cân MỚI) được chia đều cho các bạn cũ'),
     caption='12 viên thừa chia đều 3 viên mỗi bạn → đúng 4 bạn cũ'),

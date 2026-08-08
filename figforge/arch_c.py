@@ -591,7 +591,7 @@ def venn_three(p, out):
         txt_fit(ax, lx + 12, 64, f"{s['label']} ({s['count']})", 20, FS['small'], NAVY, z=6)
         lx += 25
     if p.get('outside'):
-        chip(ax, 50, 56.5, f"{p['outside']['label']}: {p['outside']['count']}", '#EAF1F7', NAVY, FS['tiny'])
+        chip(ax, 50, 56.5, f"{p['outside']['label']}: {p['outside']['count']}", '#EAF2FB', NAVY, FS['tiny'])
     if p.get('result'):
         card(ax, 8, 4.2, 84, 8.5, fc=NAVY, ec='none', r=1.4)
         txt_fit(ax, 50, 8.4, p['result'], 80, FS['body'], 'white', z=5)

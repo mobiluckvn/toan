@@ -30,7 +30,7 @@ export default function FinaleCard({ lesson, log, onRetry, onJumpTeach, onFinish
         <div className="mt-4 flex flex-wrap justify-center gap-2.5">
           {[['SÁT HẠCH', `${g.right}/${g.total}`], ['ĐÚNG NGAY', `${firstTry}/${log.practice.length}`],
             ['CÂU BẪY', g.mustOK ? '✓' : '✗']].map(([k, v]) => (
-            <div key={k} className="min-w-[86px] rounded-xl bg-[#EAF1F7] px-3.5 py-2.5">
+            <div key={k} className="min-w-[86px] rounded-xl bg-soft px-3.5 py-2.5">
               <b className="block text-[23px] text-navy">{v}</b>
               <span className="text-[10.5px] font-extrabold text-mute">{k}</span>
             </div>

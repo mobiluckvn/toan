@@ -83,8 +83,8 @@ SPEC = {
     headers=['hiện nay', 'sau 3 năm', 'sau 5 năm'], comma_after=None,
     rows=[dict(label='mẹ', cells=['32', '35', '37'], color='white'),
           dict(label='con', cells=['8', '11', '13'], color='white'),
-          dict(label='hiệu', cells=['24', '24', '24'], color='#E9F9F4', highlight=[0, 1, 2]),
-          dict(label='tổng', cells=['40', '46', '50'], color='#FFF6E2')],
+          dict(label='hiệu', cells=['24', '24', '24'], color='#E6FAF5', highlight=[0, 1, 2]),
+          dict(label='tổng', cells=['40', '46', '50'], color='#FFF4DF')],
     note='Hiệu ĐỨNG IM 24 · tổng TRÔI 2 tuổi mỗi năm (mỗi người thêm 1)'),
     caption='Hai đường ray song song: khoảng cách giữa chúng không bao giờ đổi'),
 

@@ -140,7 +140,7 @@ SPEC = {
     points=dict(A=[0, 6], B=[8, 6], C=[8, 2], D=[5, 2], E=[5, 0], F=[0, 0], P=[5, 6], Q=[0, 2]),
     shapes=[dict(pts=['A', 'B', 'C', 'D', 'E', 'F'], fill='teal', label='S = 42 cm²')],
     segments=[dict(**{'from': 'P', 'to': 'E'}, dashed=True, color='#C0392B'),
-              dict(**{'from': 'Q', 'to': 'C'}, dashed=True, color='#F8B942')],
+              dict(**{'from': 'Q', 'to': 'C'}, dashed=True, color='#F9B233')],
     show_points=['A', 'B', 'C', 'D', 'E', 'F'],
     formula='cách 1: 8 × 6 − 3 × 2 = 42   ·   cách 2: 5 × 6 + 3 × 4 = 42',
     note='Cắt một góc rồi ghép chỗ khác: DIỆN TÍCH giữ nguyên ✓ nhưng CHU VI thay đổi — hai đại lượng hai số phận'),
