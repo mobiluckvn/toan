@@ -27,6 +27,11 @@ TOI_DA = 20          # số chữ tối đa một câu cho trẻ lớp 2
 
 # ── Bảng viết tay: bản gốc → bản cho con. Chỉ đổi CÁCH NÓI, giữ nguyên con số. ──
 VIET_LAI = {
+ # Quiz nay là NÚT BẤM chứ không phải giấy để khoanh bút chì — chữ "khoanh" làm bé
+ # đi tìm cây bút. Sửa cho khớp việc bé thật sự phải làm.
+ "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):":
+   "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):",
+
  "Mỗi số có 3 chữ số sống trong một ngôi nhà có 3 phòng: phòng TRĂM (to nhất, bên trái) → phòng CHỤC (ở giữa) → phòng ĐƠN VỊ (bên phải).":
    "Số có 3 chữ số ở trong một ngôi nhà 3 phòng. Bên trái là phòng TRĂM. Ở giữa là phòng CHỤC. Bên phải là phòng ĐƠN VỊ.",
 
@@ -107,19 +112,23 @@ def main():
 
     # Bảng viết tay khớp theo NGUYÊN VĂN. Sách sửa một dấu phẩy là không khớp nữa,
     # và câu ấy im lặng giữ nguyên bản khó — nên phải báo ngay, đừng để trôi.
-    if tay_tong != len(VIET_LAI):
-        khop = set()
-        for b2 in B['bai']:
-            for k2, v2 in b2['muc'].items():
-                if k2 in CON:
-                    for d2 in v2['goc']:
-                        for c2 in cau_cua(d2):
-                            if c2 in VIET_LAI:
-                                khop.add(c2)
-        thieu = [c for c in VIET_LAI if c not in khop]
+    #
+    # Soi theo TẬP mục đã khớp, không theo số lượt khớp: có câu lặp ở nhiều bài
+    # (dòng mở đầu quiz lặp ở cả 33 bài) nên đếm lượt thì lúc nào cũng lệch, báo
+    # động giả — mà báo động giả kêu mãi thì đến lúc kêu thật cũng chẳng ai nghe.
+    khop = set()
+    for b2 in B['bai']:
+        for k2, v2 in b2['muc'].items():
+            if k2 in CON:
+                for d2 in v2['goc']:
+                    for c2 in cau_cua(d2):
+                        if c2 in VIET_LAI:
+                            khop.add(c2)
+    thieu = [c for c in VIET_LAI if c not in khop]
+    if thieu:
         print(f'  ⚠ {len(thieu)}/{len(VIET_LAI)} câu viết tay KHÔNG khớp bản gốc:')
-        for c in thieu:
-            print(f'     {c[:96]}…')
+    for c in thieu:
+        print(f'     {c[:96]}…')
 
     B['dehieu'] = {'toiDa': TOI_DA, 'soDongDoi': doi_dong, 'soCauVietTay': tay_tong,
                    'soCauDinhVietTay': len(VIET_LAI)}

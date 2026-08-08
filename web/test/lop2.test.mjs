@@ -49,21 +49,30 @@ t(`hầu hết câu có lời giải để bé tự chấm (${thieuChua.length} 
 let tongCau = 0, quaDai = 0;
 const viDu = [];
 for (const b of bai) {
-  for (const k of CON_DOC) {
-    for (const d of b.muc[k]?.dong || []) {
-      for (const c of cauCua(d)) {
-        tongCau++;
-        if (c.split(/\s+/).length > TOI_DA) {
-          quaDai++;
-          if (viDu.length < 4) viDu.push(`bài ${b.so}·${k}: ${c.slice(0, 70)}…`);
-        }
+  /* Đo cả ĐỀ BÀI, không chỉ phần giảng: bé phải đọc đề mới làm được, đề dài dòng
+     cũng làm bé bỏ cuộc y như lời giảng dài. Trước đây 165 câu quiz nằm trong
+     `dong` nên vô tình được tính; khi tách ra thành câu hỏi thì mẫu số tụt mất
+     503 câu và tỉ lệ vọt lên — đo thiếu chỗ chứ bài không hề xấu đi. */
+  const nguon = [
+    ...CON_DOC.flatMap((k) => (b.muc[k]?.dong || []).map((d) => [k, d])),
+    ...b.cau.map((c) => [`câu ${c.id}`, c.text]),
+  ];
+  for (const [k, d] of nguon) {
+    for (const c of cauCua(d)) {
+      tongCau++;
+      if (c.split(/\s+/).length > TOI_DA) {
+        quaDai++;
+        if (viDu.length < 4) viDu.push(`bài ${b.so}·${k}: ${c.slice(0, 70)}…`);
       }
     }
   }
 }
-const tiLe = Math.round((quaDai / tongCau) * 100);
-t(`câu quá ${TOI_DA} chữ dưới 8% (đang ${tiLe}%, ${quaDai}/${tongCau})`, tiLe < 8);
-if (tiLe >= 8) console.log('    ', viDu.join(' · '));
+/* So trên tỉ lệ THẬT, không so trên số đã làm tròn: 7,6% từng bị làm tròn thành 8
+   rồi trượt oan, dù vẫn dưới ngưỡng. Vẫn in số làm tròn cho dễ đọc. */
+const tiLeThat = quaDai / tongCau;
+const tiLe = (tiLeThat * 100).toFixed(1);
+t(`câu quá ${TOI_DA} chữ dưới 8% (đang ${tiLe}%, ${quaDai}/${tongCau})`, tiLeThat < 0.08);
+if (tiLeThat >= 0.08) console.log('    ', viDu.join(' · '));
 
 /* Bản gốc phải còn nguyên để đối chiếu — viết lại lời văn mà xoá mất bản gốc thì
    sau này không ai kiểm được đã đổi gì, đúng hay sai. */
@@ -126,6 +135,27 @@ t('Góc bố mẹ bài nào cũng ngắn gọn',
   bai.every((b) => (b.muc.gocBoMe?.dong || []).length <= 6));
 t('không bài nào lọt trường sauBai của bản trích thô',
   bai.every((b) => !('sauBai' in b)));
+
+
+/* ── 7. quiz chấm được ──
+   165 câu quiz (5 câu × 33 bài) từng nằm lẫn trong phần chữ vì mẫu tách câu đòi dấu
+   chấm sau số, mà quiz ghi "Câu 1 (Đúng/Sai?):". Không tách được thì không chấm được. */
+const quiz = bai.flatMap((b) => b.cau.filter((c) => c.phan === 'quiz'));
+t(`165 câu quiz (${quiz.length})`, quiz.length === 165);
+t('bài nào cũng đúng 5 câu quiz',
+  bai.every((b) => b.cau.filter((c) => c.phan === 'quiz').length === 5));
+t('quiz nào cũng chấm được bằng máy', quiz.every((c) => c.tuLuan === false));
+t('Đúng/Sai có đáp án boolean',
+  quiz.filter((c) => c.format === 'tf').every((c) => typeof c.answerKey?.value === 'boolean'));
+const mcq = quiz.filter((c) => c.format === 'mcq');
+t(`trắc nghiệm có đủ phương án (${mcq.length} câu)`,
+  mcq.every((c) => c.choices?.length >= 2));
+t('đáp án trắc nghiệm luôn nằm trong danh sách phương án',
+  mcq.every((c) => c.choices.includes(c.answerKey?.choice)));
+t('phương án không còn dính trong đề',
+  mcq.every((c) => !/\b[AB]\.\s/.test(c.text)));
+t('câu luyện tập vẫn để bé tự chấm',
+  bai.flatMap((b) => b.cau.filter((c) => c.phan === 'luyenTap')).every((c) => c.tuLuan === true));
 
 console.log(`\n   ${bai.length} bài · ${cau.length} câu · câu dài ${quaDai}/${tongCau} (${tiLe}%)`);
 console.log(`\n${pass} PASS · ${fail} FAIL`);

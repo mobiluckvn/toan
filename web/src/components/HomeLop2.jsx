@@ -85,7 +85,9 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh }) {
                   <span className="block text-[15px] font-bold leading-snug text-navy">
                     Bài {b.so} · {b.ten}
                   </span>
-                  <span className="block text-[12px] text-mute">{b.soCau} câu luyện tập</span>
+                  <span className="block text-[12px] text-mute">
+                    {b.soCau} câu luyện tập{b.soQuiz ? ` · ${b.soQuiz} câu tự kiểm` : ''}
+                  </span>
                 </span>
                 <span className="text-[14px] text-mute">▶</span>
               </button>

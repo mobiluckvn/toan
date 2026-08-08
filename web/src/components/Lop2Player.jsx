@@ -3,6 +3,7 @@ import { CONTENT, dongDau } from '../lib/content.js';
 import CuonThem from './CuonThem.jsx';
 import NhietKeHieuBai from './NhietKeHieuBai.jsx';
 import Figure from './Figure.jsx';
+import AnswerInput from './AnswerInput.jsx';
 
 /**
  * BÀI HỌC LỚP 2 — đi lần lượt 7 mục con đọc, mục "Góc bố mẹ" để riêng cuối bài.
@@ -99,17 +100,26 @@ export default function Lop2Player({ baiId, onExit, onXong }) {
               CÂU {c.so}{c.muc > 1 ? ` · ${'★'.repeat(c.muc)}` : ''}
             </div>
             <p className="text-[17px] font-semibold leading-snug">{c.text}</p>
-            <p className="mt-2 text-[14px] text-mute">
-              Con làm ra vở nhé. Làm xong rồi hãy mở lời giải để tự chấm.
-            </p>
-            {mo[c.id] ? (
-              <div className="mt-2 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[16px]">
-                <b>Lời giải:</b> {c.loiChua || '(sách không ghi lời giải cho câu này)'}
-              </div>
+
+            {c.tuLuan === false ? (
+              /* Quiz: sách ghi sẵn đáp án Đúng/Sai và A·B·C nên bấm chọn là chấm được ngay.
+                 Bé 7 tuổi cần biết đúng/sai LIỀN, đợi tới cuối bài thì quên mất mình chọn gì. */
+              <AnswerInput item={c} submitLabel="Con chọn xong rồi" />
             ) : (
-              <button className="btn-ghost mt-2" onClick={() => setMo({ ...mo, [c.id]: true })}>
-                Con làm xong rồi — xem lời giải
-              </button>
+              <>
+                <p className="mt-2 text-[14px] text-mute">
+                  Con làm ra vở nhé. Làm xong rồi hãy mở lời giải để tự chấm.
+                </p>
+                {mo[c.id] ? (
+                  <div className="mt-2 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[16px]">
+                    <b>Lời giải:</b> {c.loiChua || '(sách không ghi lời giải cho câu này)'}
+                  </div>
+                ) : (
+                  <button className="btn-ghost mt-2" onClick={() => setMo({ ...mo, [c.id]: true })}>
+                    Con làm xong rồi — xem lời giải
+                  </button>
+                )}
+              </>
             )}
           </div>
         ))}

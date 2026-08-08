@@ -24,7 +24,10 @@ R_BAI = re.compile(r'^Bài (\d+)\s*·\s*([A-ZÀ-Ỹ0-9][^a-zà-ỹ]*(?:[^·]|$).
 R_CHUONG = re.compile(r'^CHƯƠNG (\d+)$')
 R_MUC = re.compile(r'^([①②③④⑤⑥⑦⑧])\s*(.*)$')
 R_MUC_SAO = re.compile(r'^(★+)\s*MỨC (\d)')
-R_CAU = re.compile(r'^Câu (\d+)\.\s*(.+)$')
+# Luyện tập ghi "Câu 1. …", quiz ghi "Câu 1 (Đúng/Sai?): …" hoặc "Câu 3: …".
+# Mẫu cũ chỉ nhận dấu chấm nên 165 câu quiz của 33 bài không hề được tách ra —
+# chúng nằm lẫn trong phần chữ, không chấm được, cũng không đếm được.
+R_CAU = re.compile(r'^Câu (\d+)\s*(?:\(([^)]*)\))?\s*[.:]\s*(.+)$')
 R_DANG = re.compile(r'^Dạng gốc:\s*(.+)$')
 
 # Bài được cắt từ tiêu đề bài này tới tiêu đề bài KẾ TIẾP. Giữa hai bài ấy sách còn
@@ -111,8 +114,18 @@ def main():
                 mucsao = int(s.group(2)); continue
             c = R_CAU.match(t)
             if c and hien in ('luyenTap', 'quiz'):
-                cau.append({'id': f'C{len(cau) + 1}', 'so': int(c.group(1)),
-                            'muc': mucsao, 'phan': hien, 'text': c.group(2)})
+                # Sách đánh số lại từ đầu ở mỗi phần ("Luyện tập — C1: …" và
+                # "Quiz: C1 ĐÚNG"), nên `maSach` giữ đúng mã ấy để tra đáp án.
+                # Còn `id` phải DUY NHẤT trong một bài, vì phần mềm dùng nó làm khoá.
+                stt = sum(1 for x in cau if x['phan'] == hien) + 1
+                # Mức sao (★ MỨC 1/2/3) chỉ có ở phần luyện tập. Quiz đứng SAU nên
+                # thừa hưởng nhầm "★★★ MỨC 3" của luyện tập, thành ra câu quiz nào
+                # cũng hiện 3 sao như thể khó nhất bài.
+                cau.append({'id': ('Q' if hien == 'quiz' else 'C') + str(stt),
+                            'maSach': f'C{stt}', 'so': int(c.group(1)),
+                            'muc': 1 if hien == 'quiz' else mucsao,
+                            'phan': hien, 'ghiChu': (c.group(2) or '').strip(),
+                            'text': c.group(3)})
                 continue
             if hien:
                 muc[hien]['dong'].append(t)
