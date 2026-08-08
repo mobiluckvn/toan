@@ -119,8 +119,13 @@ t('hình sang được bản khuôn chung', hinhChung.length === hinhTrongBai.le
 t('hình nào cũng chỉ rõ chỗ đứng', hinhChung.every((f) => (f.usedIn || []).length === 1));
 t('mã hình không trùng nhau',
   new Set(hinhTrongBai.map(([, , , h]) => h.id)).size === hinhTrongBai.length);
-t('hình nào cũng neo vào một dòng có thật',
-  hinhTrongBai.every(([, , m, h]) => h.sauDong >= 0 && h.sauDong < m.dong.length));
+/* Hình neo theo DÒNG (trong phần giảng) hoặc theo CÂU HỎI (đề nằm trong hình).
+   Mục luyện tập không còn dòng nào — câu đã tách riêng — nên hình ở đó phải neo
+   theo mã câu, không phải theo chỉ số dòng. */
+t('hình nào cũng neo vào một chỗ có thật',
+  hinhTrongBai.every(([b, , m, h]) => (h.cau
+    ? b.cau.some((c) => c.id === h.cau)
+    : h.sauDong >= 0 && h.sauDong < m.dong.length)));
 t('hình nào cũng có lời chú', hinhTrongBai.every(([, , , h]) => String(h.caption || '').length > 5));
 
 const F = new URL('../public/content/figures/', import.meta.url).pathname;

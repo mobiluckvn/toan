@@ -9,14 +9,16 @@ docs/phan_loai_hinh_lop2.md. Tệp này dựng dần từng nhóm.
 Đã có:
   may_bien_doi  — nhóm "Máy biến đổi" (4 hình: image2, image8, image32, image51)
 """
-from core import (canvas, card, save, txt_fit, arrow, _txt,
-                  NAVY, TEAL, GOLD, RED, DARKTEAL, DARKGOLD, PALERED, PALETEAL, FS)
+from core import (canvas, card, save, txt_fit, arrow, _txt, fit_fs,
+                  NAVY, TEAL, GOLD, RED, DARKTEAL, DARKGOLD, PALERED, PALETEAL,
+                  LINE, MUTE, FS)
 
 # Ba vai màu của một ô: (viền, nền, chữ)
 MAU = {
     'teal': (TEAL, PALETEAL, DARKTEAL),
     'gold': (GOLD, '#FFF4DF', DARKGOLD),
     'do':   (RED, PALERED, RED),
+    'tim':  ('#7E57C2', '#EDE7F6', '#4527A0'),
 }
 
 W_O, W_MAY = 1.0, 2.35      # bề ngang tương đối: máy rộng hơn ô số
@@ -104,4 +106,105 @@ def may_bien_doi(p, out):
     if p.get('note'):
         txt_fit(ax, 50, day - 4.6, p['note'], 92, FS['body'], DARKTEAL, z=5)
 
+    save(fig, out)
+
+
+def _o(ax, x, y, w, h, c, r=1.8, fs=None):
+    """Một ô số. `c` là dict: t (chữ), mau, mo (làm mờ), danh (dấu ✓/✗ phía trên)."""
+    mau = c.get('mau', 'teal')
+    vien, nen, chu = MAU.get(mau, MAU['teal'])
+    if c.get('mo'):                      # ô mờ = ô KHÔNG được đếm, không phải ô trống
+        vien, nen, chu = LINE, '#F2F4F7', MUTE
+    card(ax, x, y, w, h, fc=nen, ec=vien, lw=2.2, r=r)
+    _txt(ax, x + w / 2, y + h / 2, str(c.get('t', '')), fs=fs or FS['big'], c=chu, w='bold', z=6)
+    if c.get('duoi'):
+        txt_fit(ax, x + w / 2, y - 3.0, str(c['duoi']), w + 3, FS['tiny'], MUTE, z=6, w='normal')
+    if c.get('danh'):
+        txt_fit(ax, x + w / 2, y + h + 3.0, str(c['danh']), w, FS['body'],
+                TEAL if c['danh'] == '✓' else RED, z=6)
+
+
+def _banh_xe(ax, x, w, y):
+    """Hai bánh xe dưới một toa tàu — vẽ đúng cái bé nhìn thấy, không phải hình trang trí."""
+    from matplotlib.patches import Circle
+    for dx in (0.28, 0.72):
+        ax.add_patch(Circle((x + w * dx, y - 1.6), 1.5, fc='#4A4A4A', ec='#333', lw=1, zorder=7))
+
+
+def day_o(p, out):
+    """
+    Dãy ô số nằm ngang — nhóm hình nhiều nhất của lớp 2 (13 hình).
+
+    params:
+      title  tiêu đề
+      hang   [{nhan, o:[ô…], cung:[{tu,den,nhan}], tau:bool}, …]
+             ô = {t, mau: teal|gold|do|tim, mo, danh, duoi}
+      note   dòng chốt
+
+    `cung` vẽ mũi tên vòng từ ô `tu` sang ô `den` kèm nhãn (+3, ×2…) — đó là chỗ bé
+    phải nhìn ra NHỊP của dãy. `tau` thì thêm đầu tàu và bánh xe.
+    """
+    hang = p.get('hang') or []
+    co_cung = any(h.get('cung') for h in hang)
+    co_banh = any(h.get('tau') or h.get('banh') for h in hang)
+    co_duoi = any(c.get('duoi') for h in hang for c in h['o'])
+    # Hàng nào cũng có nhãn thì phải CHỪA chỗ bên trái, nếu không nhãn đè lên ô đầu.
+    co_nhan = any(h.get('nhan') for h in hang)
+    LE_NHAN = 17.0 if co_nhan else 0.0
+    KHE_O = 2.6
+    # Ô rộng bao nhiêu thì cao bấy nhiêu (có trần), để hàng 10 ô không thành
+    # những cột dọc lêu nghêu mà hàng 3 ô cũng không thành băng dẹt.
+    nhieu_nhat = max((len(h['o']) for h in hang), default=1)
+    _rong = (94.0 - 6.0 - KHE_O * (nhieu_nhat - 1)) / nhieu_nhat
+    CAO = max(8.0, min(13.0, _rong * 1.15))
+    # Khoảng cách hàng vừa đủ: có cung nhảy thì phải chừa chỗ cho cung và nhãn của nó,
+    # không có thì để sát lại — hàng cách nhau quá xa là mắt bé không gom được thành dãy.
+    KHE_H = 19.0 if co_cung else (10.5 if co_duoi else 7.0)
+    tren = 11.0 if p.get('title') else 4.0
+    tren += 9.0 if co_cung else 0.0
+    duoi = 8.0 if p.get('note') else 6.0
+    can = tren + CAO * len(hang) + KHE_H * (len(hang) - 1) + duoi
+    fig, ax, H = canvas(7.6, max(2.4, can * 7.6 / 100))
+
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+
+    y = H - tren - CAO
+    day = y
+    for h in hang:
+        o = h['o']
+        x0 = 6.0 + LE_NHAN
+        banh = h.get('tau') or h.get('banh')
+        if h.get('tau'):
+            x0 = max(x0, 20.0)
+            card(ax, 5.0, y, 12.0, CAO, fc='#9FB6DE', ec=NAVY, lw=2.2, r=1.6)
+            card(ax, 7.0, y + CAO * 0.45, 6.0, CAO * 0.42, fc='#DCE6F5', ec=NAVY, lw=1.4, r=0.8)
+            _banh_xe(ax, 5.0, 12.0, y)
+        rong = (94.0 - x0 - KHE_O * (len(o) - 1)) / len(o)
+        vt = [x0 + i * (rong + KHE_O) for i in range(len(o))]
+        if h.get('nhan'):
+            txt_fit(ax, x0 - 2.5, y + CAO / 2, h['nhan'], LE_NHAN - 2, FS['body'],
+                    NAVY, z=6, ha='right')
+        # một cỡ chữ cho CẢ HÀNG: để "2" và "10" cùng cỡ, nhìn mới ra một dãy
+        fs_hang = min(fit_fs(str(c.get('t', '')), rong - 3, FS['big']) for c in o)
+        for x, c in zip(vt, o):
+            _o(ax, x, y, rong, CAO, c, fs=fs_hang)
+            if banh:
+                _banh_xe(ax, x, rong, y)
+        if banh:
+            ax.plot([3, 97], [y - 3.6, y - 3.6], color='#C9CFD6', lw=2.5, zorder=1)
+        for cg in h.get('cung') or []:
+            a, b = vt[cg['tu']], vt[cg['den']]
+            arrow(ax, (a + rong * 0.72, y + CAO + 0.8), (b + rong * 0.28, y + CAO + 0.8),
+                  c=TEAL, lw=2.6, rad=-0.45, ms=14, z=5)
+            txt_fit(ax, (a + b) / 2 + rong / 2, y + CAO + 7.2, cg.get('nhan', ''),
+                    rong + KHE_O, FS['body'], DARKTEAL, z=6)
+        day = y
+        y -= CAO + KHE_H
+
+    # tính từ ĐÁY HÀNG CUỐI (xem may_bien_doi): lấy `y` sau vòng lặp là thừa một
+    # nhịp, dòng chốt rơi xuống tận đáy và hình hở một mảng trắng giữa chừng
+    if p.get('note'):
+        txt_fit(ax, 50, day - (7.0 if co_banh else (7.5 if co_duoi else 4.6)),
+                p['note'], 92, FS['body'], DARKTEAL, z=5)
     save(fig, out)

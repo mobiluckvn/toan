@@ -4,68 +4,1001 @@
   "goc": "image51.png",
   "bai": "DL:KSN2.B02",
   "muc": "khamPha",
-  "neo": "Bước 2.",
   "arch": "may_bien_doi",
   "caption": "Máy × 10 thêm số 0, máy : 10 xóa số 0 — hai máy ngược chiều nhau",
   "params": {
    "title": "Thêm số 0 bên phải = cho số đi qua MÁY × 10 · Xóa số 0 tận cùng = MÁY : 10",
    "rows": [
-    {"mau": "teal", "o": [{"t": "3"}, {"may": "MÁY  × 10"}, {"t": "30"}]},
-    {"mau": "do",   "o": [{"t": "30"}, {"may": "MÁY  : 10"}, {"t": "3"}]}
+    {
+     "mau": "teal",
+     "o": [
+      {
+       "t": "3"
+      },
+      {
+       "may": "MÁY  × 10"
+      },
+      {
+       "t": "30"
+      }
+     ]
+    },
+    {
+     "mau": "do",
+     "o": [
+      {
+       "t": "30"
+      },
+      {
+       "may": "MÁY  : 10"
+      },
+      {
+       "t": "3"
+      }
+     ]
+    }
    ]
-  }
+  },
+  "neoBuoc": 2
  },
  {
   "id": "L2H_MAY02",
   "goc": "image8.png",
   "bai": "DL:KSN2.B14",
   "muc": "khamPha",
-  "neo": "Bước 1.",
   "arch": "may_bien_doi",
   "caption": "Máy + 5 chạy ngược là máy − 5",
   "params": {
    "title": "Chạy XUÔI ra 12 — muốn tìm số bí mật, cho 12 chạy NGƯỢC!",
    "rows": [
-    {"mau": "teal", "o": [{"t": "?"}, {"may": "MÁY  + 5"}, {"t": "12"}]},
-    {"mau": "do",   "o": [{"t": "12"}, {"may": "MÁY  − 5"}, {"t": "7"}]}
+    {
+     "mau": "teal",
+     "o": [
+      {
+       "t": "?"
+      },
+      {
+       "may": "MÁY  + 5"
+      },
+      {
+       "t": "12"
+      }
+     ]
+    },
+    {
+     "mau": "do",
+     "o": [
+      {
+       "t": "12"
+      },
+      {
+       "may": "MÁY  − 5"
+      },
+      {
+       "t": "7"
+      }
+     ]
+    }
    ],
    "note": "Máy + 5 chạy ngược là máy − 5:  12 − 5 = 7. Thử lại: 7 + 5 = 12 ✓"
-  }
+  },
+  "neoBuoc": 1
  },
  {
   "id": "L2H_MAY03",
   "goc": "image2.png",
   "bai": "DL:KSN2.B14",
   "muc": "khamPha",
-  "neo": "Bước 2.",
   "arch": "may_bien_doi",
   "caption": "Máy × 3 chạy ngược là máy : 3",
   "params": {
    "title": "Máy × 3 chạy ngược là máy : 3 — hai chiếc máy là đôi bạn ngược chiều",
    "rows": [
-    {"mau": "teal", "o": [{"t": "?", "mau": "teal"}, {"may": "MÁY  × 3"}, {"t": "15", "mau": "teal"}]},
-    {"mau": "do",   "o": [{"t": "15", "mau": "teal"}, {"may": "MÁY  : 3"}, {"t": "5", "mau": "teal"}]}
+    {
+     "mau": "teal",
+     "o": [
+      {
+       "t": "?",
+       "mau": "teal"
+      },
+      {
+       "may": "MÁY  × 3"
+      },
+      {
+       "t": "15",
+       "mau": "teal"
+      }
+     ]
+    },
+    {
+     "mau": "do",
+     "o": [
+      {
+       "t": "15",
+       "mau": "teal"
+      },
+      {
+       "may": "MÁY  : 3"
+      },
+      {
+       "t": "5",
+       "mau": "teal"
+      }
+     ]
+    }
    ],
    "note": "15 : 3 = 5. Thử lại: 5 × 3 = 15 ✓ — thám tử luôn THỬ LẠI trước khi chốt án!"
-  }
+  },
+  "neoBuoc": 2
  },
  {
   "id": "L2H_MAY04",
   "goc": "image32.png",
   "bai": "DL:KSN2.B22",
   "muc": "khamPha",
-  "neo": "Bước 2.",
   "arch": "may_bien_doi",
   "caption": "Hai máy nối nhau: đi lùi thì ngược thứ tự và đảo phép tính",
   "params": {
    "title": "ĐI XUÔI: số bí mật ? cộng 3, rồi nhân 2, chạy ra 16",
    "rows": [
-    {"mau": "teal", "o": [{"t": "?", "mau": "do"}, {"may": "+ 3"}, {"may": "× 2"}, {"t": "16"}]},
-    {"mau": "do", "nguoc": true,
-     "o": [{"t": "5", "mau": "teal"}, {"may": "− 3"}, {"may": ": 2"}, {"t": "16"}]}
+    {
+     "mau": "teal",
+     "o": [
+      {
+       "t": "?",
+       "mau": "do"
+      },
+      {
+       "may": "+ 3"
+      },
+      {
+       "may": "× 2"
+      },
+      {
+       "t": "16"
+      }
+     ]
+    },
+    {
+     "mau": "do",
+     "nguoc": true,
+     "o": [
+      {
+       "t": "5",
+       "mau": "teal"
+      },
+      {
+       "may": "− 3"
+      },
+      {
+       "may": ": 2"
+      },
+      {
+       "t": "16"
+      }
+     ]
+    }
    ],
    "giua": "ĐI LÙI từ 16 — máy vào SAU thì ngược TRƯỚC, và ĐẢO phép tính!",
    "note": "16 : 2 = 8, rồi 8 − 3 = 5. Thử xuôi lại: 5 + 3 = 8; 8 × 2 = 16 ✓"
-  }
+  },
+  "neoBuoc": 2
+ },
+ {
+  "id": "L2H_DAY01",
+  "goc": "image1.png",
+  "bai": "DL:KSN2.B09",
+  "muc": "khamPha",
+  "arch": "day_o",
+  "caption": "Đoàn tàu 6 toa: tìm nhịp rồi điền số vào hai toa bị mờ",
+  "params": {
+   "title": "Hai toa bị mờ số! Tìm nhịp tàu trước (10 − 5 = ?) rồi điền nhé",
+   "hang": [
+    {
+     "o": [
+      {
+       "t": "5",
+       "mau": "teal"
+      },
+      {
+       "t": "10",
+       "mau": "teal"
+      },
+      {
+       "t": "?",
+       "mau": "do"
+      },
+      {
+       "t": "20",
+       "mau": "teal"
+      },
+      {
+       "t": "25",
+       "mau": "teal"
+      },
+      {
+       "t": "?",
+       "mau": "do"
+      }
+     ],
+     "banh": true
+    }
+   ],
+   "note": "Nhịp tàu là 5: mỗi toa sau hơn toa trước 5."
+  },
+  "neoBuoc": 2
+ },
+ {
+  "id": "L2H_DAY02",
+  "goc": "image56.png",
+  "bai": "DL:KSN2.B09",
+  "muc": "chuyenMoBai",
+  "arch": "day_o",
+  "caption": "Toa sau hơn toa trước 3 — toa cuối chở số nào?",
+  "params": {
+   "title": "Toa sau = toa trước + 3. Toa cuối chở số nào?",
+   "hang": [
+    {
+     "tau": true,
+     "o": [
+      {
+       "t": "3",
+       "mau": "teal"
+      },
+      {
+       "t": "6",
+       "mau": "teal"
+      },
+      {
+       "t": "9",
+       "mau": "teal"
+      },
+      {
+       "t": "12",
+       "mau": "teal"
+      },
+      {
+       "t": "?",
+       "mau": "do"
+      }
+     ],
+     "cung": [
+      {
+       "tu": 0,
+       "den": 1,
+       "nhan": "+3"
+      },
+      {
+       "tu": 1,
+       "den": 2,
+       "nhan": "+3"
+      },
+      {
+       "tu": 2,
+       "den": 3,
+       "nhan": "+3"
+      },
+      {
+       "tu": 3,
+       "den": 4,
+       "nhan": "+3"
+      }
+     ]
+    }
+   ]
+  },
+  "neoBuoc": 0
+ },
+ {
+  "id": "L2H_DAY03",
+  "goc": "image16.png",
+  "bai": "DL:KSN2.B10",
+  "muc": "luyenTap",
+  "arch": "day_o",
+  "caption": "Mỗi số bằng tổng hai số đứng ngay trước nó",
+  "params": {
+   "title": "Mỗi số = hai số liền trước cộng lại",
+   "hang": [
+    {
+     "o": [
+      {
+       "t": "1",
+       "mau": "teal"
+      },
+      {
+       "t": "1",
+       "mau": "teal"
+      },
+      {
+       "t": "2",
+       "mau": "teal"
+      },
+      {
+       "t": "3",
+       "mau": "teal"
+      },
+      {
+       "t": "5",
+       "mau": "teal"
+      },
+      {
+       "t": "8",
+       "mau": "teal"
+      },
+      {
+       "t": "?",
+       "mau": "do"
+      }
+     ]
+    }
+   ],
+   "note": "1 + 1 = 2 · 1 + 2 = 3 · 2 + 3 = 5 · 3 + 5 = 8 · 5 + 8 = ?"
+  },
+  "neoCau": "C8"
+ },
+ {
+  "id": "L2H_DAY04",
+  "goc": "image20.png",
+  "bai": "DL:KSN2.B10",
+  "muc": "khamPha",
+  "arch": "day_o",
+  "caption": "Bước nhảy dài thêm 1 mỗi lần: +1, +2, +3, +4, +5",
+  "params": {
+   "title": "Mỗi bước nhảy dài thêm 1",
+   "hang": [
+    {
+     "o": [
+      {
+       "t": "1",
+       "mau": "gold"
+      },
+      {
+       "t": "2",
+       "mau": "gold"
+      },
+      {
+       "t": "4",
+       "mau": "gold"
+      },
+      {
+       "t": "7",
+       "mau": "gold"
+      },
+      {
+       "t": "11",
+       "mau": "gold"
+      },
+      {
+       "t": "16",
+       "mau": "gold"
+      }
+     ],
+     "cung": [
+      {
+       "tu": 0,
+       "den": 1,
+       "nhan": "+1"
+      },
+      {
+       "tu": 1,
+       "den": 2,
+       "nhan": "+2"
+      },
+      {
+       "tu": 2,
+       "den": 3,
+       "nhan": "+3"
+      },
+      {
+       "tu": 3,
+       "den": 4,
+       "nhan": "+4"
+      },
+      {
+       "tu": 4,
+       "den": 5,
+       "nhan": "+5"
+      }
+     ]
+    }
+   ],
+   "note": "Bước vừa rồi là +5, nên bước tới là +6: 16 + 6 = 22"
+  },
+  "neoBuoc": 3
+ },
+ {
+  "id": "L2H_DAY05",
+  "goc": "image40.png",
+  "bai": "DL:KSN2.B10",
+  "muc": "khamPha",
+  "arch": "day_o",
+  "caption": "Mỗi số bằng số trước cộng chính nó",
+  "params": {
+   "title": "Mỗi số = số trước + chính nó",
+   "hang": [
+    {
+     "o": [
+      {
+       "t": "1",
+       "mau": "teal"
+      },
+      {
+       "t": "2",
+       "mau": "teal"
+      },
+      {
+       "t": "4",
+       "mau": "teal"
+      },
+      {
+       "t": "8",
+       "mau": "teal"
+      },
+      {
+       "t": "16",
+       "mau": "teal"
+      }
+     ],
+     "cung": [
+      {
+       "tu": 0,
+       "den": 1,
+       "nhan": "+1"
+      },
+      {
+       "tu": 1,
+       "den": 2,
+       "nhan": "+2"
+      },
+      {
+       "tu": 2,
+       "den": 3,
+       "nhan": "+4"
+      },
+      {
+       "tu": 3,
+       "den": 4,
+       "nhan": "+8"
+      }
+     ]
+    }
+   ],
+   "note": "1 + 1 = 2 · 2 + 2 = 4 · 4 + 4 = 8 · 8 + 8 = 16"
+  },
+  "neoBuoc": 2
+ },
+ {
+  "id": "L2H_DAY06",
+  "goc": "image28.png",
+  "bai": "DL:KSN2.B11",
+  "muc": "khamPha",
+  "arch": "day_o",
+  "caption": "Bảng nhân 2 tận cùng là 2,4,6,8,0 — bảng nhân 5 tận cùng là 5 hoặc 0",
+  "params": {
+   "title": "Nhìn chữ số cuối của mỗi kết quả",
+   "hang": [
+    {
+     "nhan": "× 2",
+     "o": [
+      {
+       "t": "2",
+       "mau": "teal"
+      },
+      {
+       "t": "4",
+       "mau": "teal"
+      },
+      {
+       "t": "6",
+       "mau": "teal"
+      },
+      {
+       "t": "8",
+       "mau": "teal"
+      },
+      {
+       "t": "10",
+       "mau": "teal"
+      },
+      {
+       "t": "12",
+       "mau": "teal"
+      },
+      {
+       "t": "14",
+       "mau": "teal"
+      },
+      {
+       "t": "16",
+       "mau": "teal"
+      },
+      {
+       "t": "18",
+       "mau": "teal"
+      },
+      {
+       "t": "20",
+       "mau": "teal"
+      }
+     ]
+    },
+    {
+     "nhan": "× 5",
+     "o": [
+      {
+       "t": "5",
+       "mau": "gold"
+      },
+      {
+       "t": "10",
+       "mau": "gold"
+      },
+      {
+       "t": "15",
+       "mau": "gold"
+      },
+      {
+       "t": "20",
+       "mau": "gold"
+      },
+      {
+       "t": "25",
+       "mau": "gold"
+      },
+      {
+       "t": "30",
+       "mau": "gold"
+      },
+      {
+       "t": "35",
+       "mau": "gold"
+      },
+      {
+       "t": "40",
+       "mau": "gold"
+      },
+      {
+       "t": "45",
+       "mau": "gold"
+      },
+      {
+       "t": "50",
+       "mau": "gold"
+      }
+     ]
+    }
+   ],
+   "note": "Bảng nhân 2 cuối là 2, 4, 6, 8, 0 — toàn số chẵn. Bảng nhân 5 cuối là 5 hoặc 0."
+  },
+  "neoBuoc": 3
+ },
+ {
+  "id": "L2H_DAY07",
+  "goc": "image48.png",
+  "bai": "DL:KSN2.B08",
+  "muc": "khamPha",
+  "arch": "day_o",
+  "caption": "Chia 25 trang thành hai nhóm: trang 1 chữ số và trang 2 chữ số",
+  "params": {
+   "title": "Chia 25 trang thành hai nhóm",
+   "hang": [
+    {
+     "nhan": "1 chữ số",
+     "o": [
+      {
+       "t": "1",
+       "mau": "teal"
+      },
+      {
+       "t": "2",
+       "mau": "teal"
+      },
+      {
+       "t": "3",
+       "mau": "teal"
+      },
+      {
+       "t": "…",
+       "mau": "teal"
+      },
+      {
+       "t": "9",
+       "mau": "teal"
+      }
+     ]
+    },
+    {
+     "nhan": "2 chữ số",
+     "o": [
+      {
+       "t": "10",
+       "mau": "gold"
+      },
+      {
+       "t": "11",
+       "mau": "gold"
+      },
+      {
+       "t": "12",
+       "mau": "gold"
+      },
+      {
+       "t": "…",
+       "mau": "gold"
+      },
+      {
+       "t": "25",
+       "mau": "gold"
+      }
+     ]
+    }
+   ],
+   "note": "Nhóm trên có 9 trang. Nhóm dưới có 16 trang."
+  },
+  "neoBuoc": 1
+ },
+ {
+  "id": "L2H_DAY08",
+  "goc": "image60.png",
+  "bai": "DL:KSN2.B01",
+  "muc": "khamPha",
+  "arch": "day_o",
+  "caption": "So hàng trăm trước, hoà thì so hàng chục",
+  "params": {
+   "title": "So từ trái sang: trăm trước, rồi mới đến chục",
+   "hang": [
+    {
+     "nhan": "352",
+     "o": [
+      {
+       "t": "3",
+       "mau": "gold",
+       "duoi": "trăm"
+      },
+      {
+       "t": "5",
+       "mau": "teal",
+       "duoi": "chục"
+      },
+      {
+       "t": "2",
+       "mau": "gold",
+       "duoi": "đơn vị"
+      }
+     ]
+    },
+    {
+     "nhan": "325",
+     "o": [
+      {
+       "t": "3",
+       "mau": "gold",
+       "duoi": "trăm"
+      },
+      {
+       "t": "2",
+       "mau": "do",
+       "duoi": "chục"
+      },
+      {
+       "t": "5",
+       "mau": "gold",
+       "duoi": "đơn vị"
+      }
+     ]
+    }
+   ],
+   "note": "Trăm bằng nhau (3 = 3). Chục: 5 lớn hơn 2 → 352 lớn hơn 325."
+  },
+  "neoBuoc": 4
+ },
+ {
+  "id": "L2H_DAY09",
+  "goc": "image64.png",
+  "bai": "DL:KSN2.B04",
+  "muc": "khamPha",
+  "arch": "day_o",
+  "caption": "Ba thẻ 2, 5, 8: xếp thẻ to nhất lên đầu thì được số lớn nhất",
+  "params": {
+   "title": "Ba thẻ số của con: 2, 5, 8",
+   "hang": [
+    {
+     "nhan": "thẻ",
+     "o": [
+      {
+       "t": "2",
+       "mau": "gold"
+      },
+      {
+       "t": "5",
+       "mau": "gold"
+      },
+      {
+       "t": "8",
+       "mau": "gold"
+      }
+     ]
+    },
+    {
+     "nhan": "lớn nhất",
+     "o": [
+      {
+       "t": "8",
+       "mau": "teal"
+      },
+      {
+       "t": "5",
+       "mau": "teal"
+      },
+      {
+       "t": "2",
+       "mau": "teal"
+      }
+     ]
+    },
+    {
+     "nhan": "bé nhất",
+     "o": [
+      {
+       "t": "2",
+       "mau": "gold"
+      },
+      {
+       "t": "5",
+       "mau": "gold"
+      },
+      {
+       "t": "8",
+       "mau": "gold"
+      }
+     ]
+    }
+   ],
+   "note": "Muốn số LỚN: thẻ to nhất đứng đầu. Muốn số BÉ: thẻ nhỏ nhất đứng đầu."
+  },
+  "neoBuoc": 2
+ },
+ {
+  "id": "L2H_DAY10",
+  "goc": "image66.png",
+  "bai": "DL:KSN2.B04",
+  "muc": "khamPha",
+  "arch": "day_o",
+  "caption": "Số 0 không được đứng đầu — nếu không số 3 chữ số thành số 2 chữ số",
+  "params": {
+   "title": "Ba thẻ 0, 3, 7 — lập số bé nhất có 3 chữ số",
+   "hang": [
+    {
+     "o": [
+      {
+       "t": "0",
+       "mau": "do",
+       "danh": "✗"
+      },
+      {
+       "t": "3",
+       "mau": "do"
+      },
+      {
+       "t": "7",
+       "mau": "do"
+      }
+     ]
+    },
+    {
+     "o": [
+      {
+       "t": "3",
+       "mau": "teal",
+       "danh": "✓"
+      },
+      {
+       "t": "0",
+       "mau": "teal"
+      },
+      {
+       "t": "7",
+       "mau": "teal"
+      }
+     ]
+    }
+   ],
+   "note": "Số 0 đứng đầu thì 037 chỉ là 37, mất một chữ số. Cho thẻ bé nhất khác 0 đứng đầu."
+  },
+  "neoBuoc": 3
+ },
+ {
+  "id": "L2H_DAY11",
+  "goc": "image67.png",
+  "bai": "DL:KSN2.B03",
+  "muc": "khamPha",
+  "arch": "day_o",
+  "caption": "Cùng hai chữ số 2 và 5, đổi chỗ là ra hai số khác hẳn",
+  "params": {
+   "title": "Cùng hai thẻ 2 và 5 — đổi chỗ là ra số khác",
+   "hang": [
+    {
+     "nhan": "25",
+     "o": [
+      {
+       "t": "2",
+       "mau": "gold",
+       "duoi": "chục"
+      },
+      {
+       "t": "5",
+       "mau": "gold",
+       "duoi": "đơn vị"
+      }
+     ]
+    },
+    {
+     "nhan": "52",
+     "o": [
+      {
+       "t": "5",
+       "mau": "teal",
+       "duoi": "chục"
+      },
+      {
+       "t": "2",
+       "mau": "teal",
+       "duoi": "đơn vị"
+      }
+     ]
+    }
+   ],
+   "note": "5 chục nhiều hơn 2 chục, nên 52 lớn hơn 25."
+  },
+  "neoBuoc": 1
+ },
+ {
+  "id": "L2H_DAY12",
+  "goc": "image73.png",
+  "bai": "DL:KSN2.B05",
+  "muc": "khamPha",
+  "arch": "day_o",
+  "caption": "Cho hàng chục tăng dần thì không sót số nào",
+  "params": {
+   "title": "Các số có 2 chữ số mà hai chữ số cộng lại bằng 5",
+   "hang": [
+    {
+     "nhan": "chục",
+     "o": [
+      {
+       "t": "1",
+       "mau": "gold"
+      },
+      {
+       "t": "2",
+       "mau": "gold"
+      },
+      {
+       "t": "3",
+       "mau": "gold"
+      },
+      {
+       "t": "4",
+       "mau": "gold"
+      },
+      {
+       "t": "5",
+       "mau": "gold"
+      }
+     ]
+    },
+    {
+     "nhan": "đơn vị",
+     "o": [
+      {
+       "t": "4",
+       "mau": "teal"
+      },
+      {
+       "t": "3",
+       "mau": "teal"
+      },
+      {
+       "t": "2",
+       "mau": "teal"
+      },
+      {
+       "t": "1",
+       "mau": "teal"
+      },
+      {
+       "t": "0",
+       "mau": "teal"
+      }
+     ]
+    },
+    {
+     "nhan": "số",
+     "o": [
+      {
+       "t": "14",
+       "mau": "tim"
+      },
+      {
+       "t": "23",
+       "mau": "tim"
+      },
+      {
+       "t": "32",
+       "mau": "tim"
+      },
+      {
+       "t": "41",
+       "mau": "tim"
+      },
+      {
+       "t": "50",
+       "mau": "tim"
+      }
+     ]
+    }
+   ],
+   "note": "Chục tăng 1 thì đơn vị giảm 1. Chục bằng 6 thì đơn vị phải là −1, không có → dừng."
+  },
+  "neoBuoc": 1
+ },
+ {
+  "id": "L2H_DAY13",
+  "goc": "image75.png",
+  "bai": "DL:KSN2.B06",
+  "muc": "khamPha",
+  "arch": "day_o",
+  "caption": "Đếm từ nhà 3 đến nhà 7: đếm cả hai nhà ở hai đầu",
+  "params": {
+   "title": "Từ nhà số 3 đến nhà số 7 có mấy nhà?",
+   "hang": [
+    {
+     "o": [
+      {
+       "t": "1",
+       "mau": "teal",
+       "mo": true
+      },
+      {
+       "t": "2",
+       "mau": "teal",
+       "mo": true
+      },
+      {
+       "t": "3",
+       "mau": "teal",
+       "danh": "✓"
+      },
+      {
+       "t": "4",
+       "mau": "teal",
+       "danh": "✓"
+      },
+      {
+       "t": "5",
+       "mau": "teal",
+       "danh": "✓"
+      },
+      {
+       "t": "6",
+       "mau": "teal",
+       "danh": "✓"
+      },
+      {
+       "t": "7",
+       "mau": "teal",
+       "danh": "✓"
+      },
+      {
+       "t": "8",
+       "mau": "teal",
+       "mo": true
+      }
+     ]
+    }
+   ],
+   "note": "Đếm cả nhà 3 và nhà 7: 3, 4, 5, 6, 7 → 5 nhà. Mẹo: 7 − 3 = 4, rồi thêm 1."
+  },
+  "neoBuoc": 1
  }
 ]

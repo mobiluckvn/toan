@@ -9,11 +9,20 @@ ghi đè trọn tệp bài học, nên gắn hình trước nó là mất sạch
 lệ, bài vẫn chạy, chỉ là không còn hình nào và KHÔNG CÓ GÌ BÁO. Đúng lỗi đã dính
 ở Quyển 2 lớp 5.
 
-Neo hình theo chữ đầu dòng (ví dụ "Bước 2."). Không tìm thấy neo là DỪNG HẲN,
-không bỏ qua im lặng: sách sửa một chữ mà mình lặng lẽ thả hình xuống cuối mục
-thì hình đứng lạc chỗ, đọc vào không hiểu tại sao.
+Neo hình theo THỨ TỰ BƯỚC, không theo nguyên văn dòng: `neoBuoc: 2` nghĩa là hình
+đứng ngay sau dòng "Bước 2." (hoặc "Nhịp 2.", "Vũ khí 2 —" — sách không nhất quán).
+`neoBuoc: 0` là hình đứng ở đầu mục, trước mọi bước.
+
+Vì sao không neo theo nguyên văn: lời văn đã được VIẾT LẠI cho dễ hiểu ở bước 2,
+nên so nguyên văn với sách là trượt hết. Số thứ tự bước thì không đổi.
+
+Không tìm đủ bước là DỪNG HẲN, không bỏ qua im lặng: thả hình xuống cuối mục thì
+hình đứng lạc chỗ, đọc vào không hiểu tại sao.
 """
-import hashlib, json, os, sys
+import hashlib, json, os, re, sys
+
+# Sách không nhất quán tên bước: Bước / Nhịp / Vũ khí / Chặng
+R_BUOC = re.compile(r'^(Bước|Nhịp|Vũ khí|Chặng)\s*\d+\s*[.—–-]')
 
 GOC_KHO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SO_TAY = os.path.join(GOC_KHO, 'data', 'lop2_hinh_manifest.json')
@@ -56,11 +65,28 @@ def main():
             if not muc:
                 loi.append(f"{h['id']}: bài {bai_id} không có mục {h['muc']}")
                 continue
+            # Hình của riêng một CÂU HỎI (đề nằm trong hình) — neo theo mã câu chứ
+            # không theo dòng: mục luyện tập không còn dòng nào, câu đã tách riêng.
+            if h.get('neoCau'):
+                if not any(c['id'] == h['neoCau'] and c['phan'] == h['muc'] for c in d['cau']):
+                    loi.append(f"{h['id']}: {bai_id} không có câu {h['neoCau']} ở mục {h['muc']}")
+                    continue
+                muc.setdefault('hinh', [])
+                muc['hinh'] = [x for x in muc['hinh'] if x['id'] != h['id']]
+                muc['hinh'].append({'id': h['id'], 'cau': h['neoCau'], 'file': h['file'],
+                                    'caption': h['caption'], 'sha256_16': h['sha256_16']})
+                gan += 1
+                continue
             dong = muc.get('dong') or []
-            vt = next((k for k, s in enumerate(dong) if str(s).startswith(h['neo'])), None)
+            can = int(h.get('neoBuoc', 0))
+            if can == 0:
+                vt = 0 if dong else None
+            else:
+                moc = [k for k, s in enumerate(dong) if R_BUOC.match(str(s))]
+                vt = moc[can - 1] if len(moc) >= can else None
             if vt is None:
-                loi.append(f"{h['id']}: không thấy neo \"{h['neo']}\" trong mục {h['muc']} "
-                           f'của {bai_id} — sách đổi lời, sửa neo trong data/lop2_hinh.json')
+                loi.append(f"{h['id']}: mục {h['muc']} của {bai_id} không có đủ "
+                           f"{can} bước — sửa neoBuoc trong data/lop2_hinh.json")
                 continue
 
             muc.setdefault('hinh', [])

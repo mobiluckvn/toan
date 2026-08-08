@@ -108,7 +108,9 @@ def sang_khuon_chung(bai, truoc=None, sau=None):
         for h in _hinh(bai, ten_muc):
             n += 1
             noi = cho
-            if ten_muc == 'khamPha':
+            if h.get('cau'):
+                noi = f"item:{h['cau']}"
+            elif ten_muc == 'khamPha':
                 # hình đứng ngay sau dòng nào thì thuộc màn của dòng ấy
                 # KHÔNG đặt tên `truoc` ở đây: nó là tham số của hàm (bài liền trước),
                 # đè lên là series.prev ra danh sách chỉ số dòng.

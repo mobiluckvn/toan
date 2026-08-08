@@ -42,7 +42,8 @@ def main(loc=None):
         sha = hashlib.sha256(open(duong, 'rb').read()).hexdigest()[:16]
         so_tay[m['id']] = {
             'file': f'figures/{ten}', 'caption': m['caption'], 'bai': m['bai'],
-            'muc': m['muc'], 'neo': m['neo'], 'goc': m['goc'], 'sha256_16': sha,
+            'muc': m['muc'], 'neoBuoc': m.get('neoBuoc', 0), 'neoCau': m.get('neoCau'),
+            'goc': m['goc'], 'sha256_16': sha,
         }
         print(f"  {m['id']}  {m['goc']:>13s} → {ten}  {sha}")
 
