@@ -1000,5 +1000,865 @@
    "note": "Đếm cả nhà 3 và nhà 7: 3, 4, 5, 6, 7 → 5 nhà. Mẹo: 7 − 3 = 4, rồi thêm 1."
   },
   "neoBuoc": 1
+ },
+ {
+  "id": "L2H_HOP01",
+  "goc": "image10.png",
+  "bai": "DL:KSN2.B32",
+  "muc": "khamPha",
+  "neoBuoc": 5,
+  "arch": "hang_hop",
+  "caption": "Tiền thừa = tiền khách đưa trừ tiền mua hàng",
+  "params": {
+   "title": "Tiền thừa = tiền khách đưa − tiền mua hàng",
+   "hop": [
+    {
+     "ten": "Khách đưa",
+     "dong": [
+      "10 nghìn"
+     ],
+     "mau": "teal"
+    },
+    {
+     "ten": "Mua hết",
+     "dong": [
+      "7 nghìn"
+     ],
+     "mau": "gold"
+    },
+    {
+     "ten": "Thừa lại",
+     "dong": [
+      "10 − 7 = 3 nghìn"
+     ],
+     "mau": "do"
+    }
+   ],
+   "note": "Người bán đếm lại tiền thừa, người mua cũng đếm lại."
+  }
+ },
+ {
+  "id": "L2H_HOP02",
+  "goc": "image18.png",
+  "bai": "DL:KSN2.B15",
+  "muc": "khamPha",
+  "neoBuoc": 1,
+  "arch": "hang_hop",
+  "caption": "Phát 5 vòng thì hết 15 viên, còn 2 viên không đủ chia",
+  "params": {
+   "title": "Mỗi vòng phát cho mỗi bạn 1 viên (3 bạn → hết 3 viên một vòng)",
+   "hop": [
+    {
+     "ten": "Vòng 1",
+     "dong": [
+      "− 3 viên"
+     ]
+    },
+    {
+     "ten": "Vòng 2",
+     "dong": [
+      "− 3 viên"
+     ]
+    },
+    {
+     "ten": "Vòng 3",
+     "dong": [
+      "− 3 viên"
+     ]
+    },
+    {
+     "ten": "Vòng 4",
+     "dong": [
+      "− 3 viên"
+     ]
+    },
+    {
+     "ten": "Vòng 5",
+     "dong": [
+      "− 3 viên"
+     ]
+    },
+    {
+     "ten": "Còn 2",
+     "dong": [
+      "dừng"
+     ],
+     "mau": "do"
+    }
+   ],
+   "ket": "Hết vòng 5 đã phát 15 viên. Còn 2 viên, ít hơn 3 bạn nên không chia thêm được.",
+   "note": "Mỗi bạn được 5 viên, thừa 2 viên."
+  }
+ },
+ {
+  "id": "L2H_HOP03",
+  "goc": "image42.png",
+  "bai": "DL:KSN2.B23",
+  "muc": "khamPha",
+  "neoBuoc": 4,
+  "arch": "hang_hop",
+  "caption": "Đếm chân gà và chân chó rồi cộng lại để thử lại",
+  "params": {
+   "title": "Thử lại xem có đúng 14 chân không",
+   "hop": [
+    {
+     "ten": "3 con gà",
+     "dong": [
+      "3 × 2 = 6 chân"
+     ],
+     "mau": "gold"
+    },
+    {
+     "ten": "2 con chó",
+     "dong": [
+      "2 × 4 = 8 chân"
+     ],
+     "mau": "do"
+    }
+   ],
+   "ket": "6 + 8 = 14 chân — đúng như đề bài!"
+  }
+ },
+ {
+  "id": "L2H_HOP04",
+  "goc": "image47.png",
+  "bai": "DL:KSN2.B07",
+  "muc": "khamPha",
+  "neoBuoc": 3,
+  "arch": "hang_hop",
+  "caption": "Số 55 nằm ở cả hai nhóm nên chỉ được đếm một lần",
+  "params": {
+   "title": "Đếm các số có chữ số 5 từ 1 đến 100",
+   "hop": [
+    {
+     "ten": "Đuôi là 5",
+     "dong": [
+      "5, 15, 25, …, 95",
+      "10 số"
+     ],
+     "mau": "gold"
+    },
+    {
+     "ten": "Bắt đầu bằng 5",
+     "dong": [
+      "50, 51, …, 59",
+      "10 số"
+     ],
+     "mau": "teal"
+    }
+   ],
+   "ket": "Số 55 nằm ở CẢ HAI nhóm → 10 + 10 − 1 = 19 số"
+  }
+ },
+ {
+  "id": "L2H_HOP05",
+  "goc": "image54.png",
+  "bai": "DL:KSN2.B08",
+  "muc": "khamPha",
+  "neoBuoc": 4,
+  "arch": "hang_hop",
+  "caption": "Cộng chữ số của hai nhóm trang lại",
+  "params": {
+   "title": "Đếm chữ số để đánh số 25 trang",
+   "hop": [
+    {
+     "ten": "Trang 1 → 9",
+     "dong": [
+      "9 trang",
+      "mỗi trang 1 chữ số",
+      "= 9 chữ số"
+     ],
+     "mau": "teal"
+    },
+    {
+     "ten": "Trang 10 → 25",
+     "dong": [
+      "16 trang",
+      "mỗi trang 2 chữ số",
+      "= 32 chữ số"
+     ],
+     "mau": "gold"
+    }
+   ],
+   "ket": "9 + 32 = 41 chữ số"
+  }
+ },
+ {
+  "id": "L2H_HOP06",
+  "goc": "image65.png",
+  "bai": "DL:KSN2.B32",
+  "muc": "chuyenMoBai",
+  "neoBuoc": 0,
+  "arch": "hang_hop",
+  "caption": "Lãi = tiền bán trừ tiền vốn",
+  "params": {
+   "title": "Lãi = tiền bán − tiền vốn",
+   "hop": [
+    {
+     "ten": "Tiền vốn",
+     "dong": [
+      "chanh và đường",
+      "10 nghìn"
+     ],
+     "mau": "do"
+    },
+    {
+     "ten": "Tiền bán",
+     "dong": [
+      "4 cốc × 4 nghìn",
+      "16 nghìn"
+     ],
+     "mau": "teal"
+    },
+    {
+     "ten": "Tiền lãi",
+     "dong": [
+      "16 − 10",
+      "6 nghìn"
+     ],
+     "mau": "gold"
+    }
+   ],
+   "note": "Bán ít hơn tiền vốn thì bị lỗ."
+  }
+ },
+ {
+  "id": "L2H_HOP07",
+  "goc": "image58.png",
+  "bai": "DL:KSN2.B15",
+  "muc": "gocBoMe",
+  "neoBuoc": 0,
+  "arch": "hang_hop",
+  "caption": "Bốn trạm của đại hội tính nhanh",
+  "params": {
+   "title": "Bốn trạm thử thách",
+   "hop": [
+    {
+     "ten": "Trạm 1",
+     "dong": [
+      "Ghép đôi tròn chục"
+     ]
+    },
+    {
+     "ten": "Trạm 2",
+     "dong": [
+      "Cộng dãy số"
+     ],
+     "mau": "gold"
+    },
+    {
+     "ten": "Trạm 3",
+     "dong": [
+      "Tìm số bí mật"
+     ],
+     "mau": "tim"
+    },
+    {
+     "ten": "Trạm 4",
+     "dong": [
+      "Chia kẹo còn thừa"
+     ],
+     "mau": "do"
+    }
+   ],
+   "note": "Làm đúng 8 trên 12 câu là qua cả bốn trạm."
+  },
+  "hoan": "thuộc bài Ôn tập / ba ải — chưa trích vào app"
+ },
+ {
+  "id": "L2H_HOP08",
+  "goc": "image14.png",
+  "bai": "DL:KSN2.B33",
+  "muc": "gocBoMe",
+  "neoBuoc": 0,
+  "arch": "hang_hop",
+  "caption": "Ba ải cuối sách, mỗi ải khó hơn ải trước",
+  "params": {
+   "title": "Ba ải cuối sách",
+   "hop": [
+    {
+     "ten": "Ải 1 ★",
+     "dong": [
+      "Khởi động"
+     ]
+    },
+    {
+     "ten": "Ải 2 ★★",
+     "dong": [
+      "Chiến binh"
+     ],
+     "mau": "gold"
+    },
+    {
+     "ten": "Ải 3 ★★★",
+     "dong": [
+      "Trùm cuối"
+     ],
+     "mau": "do"
+    }
+   ]
+  },
+  "hoan": "thuộc bài Ôn tập / ba ải — chưa trích vào app"
+ },
+ {
+  "id": "L2H_HOP09",
+  "goc": "image6.png",
+  "bai": "DL:KSN2.B33",
+  "muc": "gocBoMe",
+  "neoBuoc": 0,
+  "arch": "hang_hop",
+  "caption": "Bốn việc trong một ngày đi chợ",
+  "params": {
+   "title": "Một ngày ra chợ — làm lần lượt bốn việc",
+   "hop": [
+    {
+     "ten": "Sáng",
+     "dong": [
+      "xem giờ"
+     ]
+    },
+    {
+     "ten": "Trưa",
+     "dong": [
+      "chia bánh"
+     ],
+     "mau": "gold"
+    },
+    {
+     "ten": "Chiều",
+     "dong": [
+      "bán hàng"
+     ],
+     "mau": "tim"
+    },
+    {
+     "ten": "Tối",
+     "dong": [
+      "viết nhật ký"
+     ],
+     "mau": "do"
+    }
+   ]
+  },
+  "hoan": "thuộc bài Ôn tập / ba ải — chưa trích vào app"
+ },
+ {
+  "id": "L2H_CHAM01",
+  "goc": "image4.png",
+  "bai": "DL:KSN2.B12",
+  "muc": "khamPha",
+  "neoBuoc": 3,
+  "arch": "cham_tron",
+  "caption": "Ghép hai khay kẹo lại thành 3 hàng 10 viên",
+  "params": {
+   "title": "3 hàng 4 viên ghép với 3 hàng 6 viên",
+   "nhom": [
+    {
+     "ten": "3 hàng 4 viên = 12",
+     "so": 12,
+     "hang": 4,
+     "mau": "do"
+    },
+    {
+     "ten": "3 hàng 6 viên = 18",
+     "so": 18,
+     "hang": 6,
+     "mau": "teal"
+    },
+    {
+     "ten": "3 hàng 10 viên = 30",
+     "so": 30,
+     "hang": 10,
+     "mau": "gold"
+    }
+   ],
+   "note": "4 + 6 = 10 nên ghép lại vừa tròn chục: 12 + 18 = 30"
+  }
+ },
+ {
+  "id": "L2H_CHAM02",
+  "goc": "image5.png",
+  "bai": "DL:KSN2.B15",
+  "muc": "chuyenMoBai",
+  "neoBuoc": 0,
+  "arch": "cham_tron",
+  "caption": "Chia 17 viên cho 3 bạn: mỗi bạn 5 viên, thừa 2",
+  "params": {
+   "title": "17 viên kẹo chia đều cho 3 bạn",
+   "nhom": [
+    {
+     "ten": "Bạn 1 · 5 viên",
+     "so": 5,
+     "hang": 3,
+     "mau": "do"
+    },
+    {
+     "ten": "Bạn 2 · 5 viên",
+     "so": 5,
+     "hang": 3,
+     "mau": "teal"
+    },
+    {
+     "ten": "Bạn 3 · 5 viên",
+     "so": 5,
+     "hang": 3,
+     "mau": "tim"
+    }
+   ],
+   "du": {
+    "so": 2,
+    "ten": "thừa 2 viên"
+   },
+   "note": "Còn 2 viên, ít hơn 3 bạn nên không chia thêm được nữa."
+  }
+ },
+ {
+  "id": "L2H_CHAM03",
+  "goc": "image17.png",
+  "bai": "DL:KSN2.B11",
+  "muc": "chuyenMoBai",
+  "neoBuoc": 0,
+  "arch": "cham_tron",
+  "caption": "8 viên chia đôi được đều, 7 viên thì thừa 1",
+  "params": {
+   "title": "Chia đôi: số nào chia được đều, số nào còn thừa?",
+   "nhom": [
+    {
+     "ten": "8 viên → 4 và 4",
+     "so": 8,
+     "hang": 4,
+     "mau": "teal"
+    },
+    {
+     "ten": "7 viên → 3 và 3, thừa 1",
+     "so": 7,
+     "hang": 4,
+     "mau": "do"
+    }
+   ],
+   "note": "8 chia đôi được đều nên 8 là số CHẴN. 7 thừa 1 nên 7 là số LẺ."
+  }
+ },
+ {
+  "id": "L2H_CHAM04",
+  "goc": "image25.png",
+  "bai": "DL:KSN2.B16",
+  "muc": "chuyenMoBai",
+  "neoBuoc": 0,
+  "arch": "cham_tron",
+  "caption": "Khay 12 cái bánh chia đều cho 3 bạn",
+  "params": {
+   "title": "12 cái bánh chia đều cho 3 bạn → mỗi bạn 4 cái",
+   "nhom": [
+    {
+     "ten": "Khay: 12 cái",
+     "so": 12,
+     "hang": 6,
+     "mau": "gold"
+    },
+    {
+     "ten": "Bạn 1 · 4 cái",
+     "so": 4,
+     "hang": 2,
+     "mau": "teal"
+    },
+    {
+     "ten": "Bạn 2 · 4 cái",
+     "so": 4,
+     "hang": 2,
+     "mau": "teal"
+    },
+    {
+     "ten": "Bạn 3 · 4 cái",
+     "so": 4,
+     "hang": 2,
+     "mau": "teal"
+    }
+   ],
+   "note": "12 : 3 = 4"
+  }
+ },
+ {
+  "id": "L2H_CHAM05",
+  "goc": "image30.png",
+  "bai": "DL:KSN2.B21",
+  "muc": "chuyenMoBai",
+  "neoBuoc": 0,
+  "arch": "cham_tron",
+  "caption": "Mỗi giờ may 5 cái áo, 3 giờ được 15 cái",
+  "params": {
+   "title": "Mỗi giờ may 5 cái áo — 3 giờ được bao nhiêu?",
+   "nhom": [
+    {
+     "ten": "Giờ thứ 1 · 5 áo",
+     "so": 5,
+     "hang": 5,
+     "mau": "teal"
+    },
+    {
+     "ten": "Giờ thứ 2 · 5 áo",
+     "so": 5,
+     "hang": 5,
+     "mau": "teal"
+    },
+    {
+     "ten": "Giờ thứ 3 · 5 áo",
+     "so": 5,
+     "hang": 5,
+     "mau": "teal"
+    }
+   ],
+   "note": "5 + 5 + 5 = 5 × 3 = 15 cái áo"
+  }
+ },
+ {
+  "id": "L2H_VAT01",
+  "goc": "image35.png",
+  "bai": "DL:KSN2.B23",
+  "muc": "khamPha",
+  "neoBuoc": 1,
+  "arch": "con_vat",
+  "caption": "5 cái đầu nghĩa là 5 con vật",
+  "params": {
+   "title": "Bà đếm được 5 cái đầu → có 5 con vật",
+   "con": [
+    {
+     "chan": 0,
+     "mau": "gold",
+     "ten": ""
+    },
+    {
+     "chan": 0,
+     "mau": "gold",
+     "ten": ""
+    },
+    {
+     "chan": 0,
+     "mau": "gold",
+     "ten": ""
+    },
+    {
+     "chan": 0,
+     "mau": "gold",
+     "ten": ""
+    },
+    {
+     "chan": 0,
+     "mau": "gold",
+     "ten": ""
+    }
+   ],
+   "note": "Chưa biết con nào là gà, con nào là chó — vẽ đầu trước đã."
+  }
+ },
+ {
+  "id": "L2H_VAT02",
+  "goc": "image24.png",
+  "bai": "DL:KSN2.B23",
+  "muc": "khamPha",
+  "neoBuoc": 2,
+  "arch": "con_vat",
+  "caption": "Gắn tạm mỗi con 2 chân, vừa gắn vừa đếm",
+  "params": {
+   "title": "Gắn tạm mỗi con 2 chân — đếm được 10 chân",
+   "con": [
+    {
+     "chan": 2,
+     "mau": "gold",
+     "ten": "2"
+    },
+    {
+     "chan": 2,
+     "mau": "gold",
+     "ten": "4"
+    },
+    {
+     "chan": 2,
+     "mau": "gold",
+     "ten": "6"
+    },
+    {
+     "chan": 2,
+     "mau": "gold",
+     "ten": "8"
+    },
+    {
+     "chan": 2,
+     "mau": "gold",
+     "ten": "10"
+    }
+   ],
+   "note": "Đề bài có 14 chân mà mới gắn 10 chân → còn thừa 4 chân."
+  }
+ },
+ {
+  "id": "L2H_VAT03",
+  "goc": "image22.png",
+  "bai": "DL:KSN2.B23",
+  "muc": "khamPha",
+  "neoBuoc": 3,
+  "arch": "con_vat",
+  "caption": "4 chân thừa gắn thêm cho 2 con — 2 con đó là chó",
+  "params": {
+   "title": "4 chân thừa = 2 cặp chân → gắn thêm cho 2 con",
+   "con": [
+    {
+     "chan": 4,
+     "mau": "do",
+     "ten": "chó · 4 chân"
+    },
+    {
+     "chan": 4,
+     "mau": "do",
+     "ten": "chó · 4 chân"
+    },
+    {
+     "chan": 2,
+     "mau": "gold",
+     "ten": "gà · 2 chân"
+    },
+    {
+     "chan": 2,
+     "mau": "gold",
+     "ten": "gà · 2 chân"
+    },
+    {
+     "chan": 2,
+     "mau": "gold",
+     "ten": "gà · 2 chân"
+    }
+   ],
+   "note": "Thử lại: 2 × 4 + 3 × 2 = 8 + 6 = 14 chân ✓"
+  }
+ },
+ {
+  "id": "L2H_VAT04",
+  "goc": "image45.png",
+  "bai": "DL:KSN2.B23",
+  "muc": "viDuMau",
+  "neoBuoc": 0,
+  "arch": "con_vat",
+  "caption": "4 đầu 10 chân: thừa 2 chân nên có 1 con thỏ",
+  "params": {
+   "title": "4 đầu · 10 chân → gắn 4 × 2 = 8 chân, thừa 2 chân",
+   "con": [
+    {
+     "chan": 4,
+     "mau": "tim",
+     "ten": "thỏ · 4 chân"
+    },
+    {
+     "chan": 2,
+     "mau": "gold",
+     "ten": "gà · 2 chân"
+    },
+    {
+     "chan": 2,
+     "mau": "gold",
+     "ten": "gà · 2 chân"
+    },
+    {
+     "chan": 2,
+     "mau": "gold",
+     "ten": "gà · 2 chân"
+    }
+   ],
+   "note": "2 chân thừa là 1 cặp → chỉ 1 con nhận thêm → 1 thỏ và 3 gà."
+  }
+ },
+ {
+  "id": "L2H_VAT05",
+  "goc": "image26.png",
+  "bai": "DL:KSN2.B23",
+  "muc": "chuyenMoBai",
+  "neoBuoc": 0,
+  "arch": "con_vat",
+  "caption": "Chỉ nhìn thấy 5 cái đầu sau hàng rào",
+  "params": {
+   "title": "Sau hàng rào: nhìn thấy 5 cái đầu, đếm được 14 chân",
+   "con": [
+    {
+     "chan": 0,
+     "mau": "gold",
+     "ten": "?"
+    },
+    {
+     "chan": 0,
+     "mau": "gold",
+     "ten": "?"
+    },
+    {
+     "chan": 0,
+     "mau": "gold",
+     "ten": "?"
+    },
+    {
+     "chan": 0,
+     "mau": "gold",
+     "ten": "?"
+    },
+    {
+     "chan": 0,
+     "mau": "gold",
+     "ten": "?"
+    }
+   ],
+   "note": "Chân bị hàng rào che — phải tính chứ không đếm được."
+  }
+ },
+ {
+  "id": "L2H_DT01",
+  "goc": "image23.png",
+  "bai": "DL:KSN2.B17",
+  "muc": "khamPha",
+  "neoBuoc": 1,
+  "arch": "doan_thang",
+  "caption": "Bình nhiều hơn An 3 viên: vẽ thêm một đoạn ngắn",
+  "params": {
+   "title": "An có 8 viên bi. Bình nhiều hơn An 3 viên.",
+   "thanh": [
+    {
+     "ten": "An",
+     "phan": [
+      {
+       "dai": 8,
+       "nhan": "8 viên",
+       "mau": "teal"
+      }
+     ]
+    },
+    {
+     "ten": "Bình",
+     "phan": [
+      {
+       "dai": 8,
+       "nhan": "8 viên",
+       "mau": "teal"
+      },
+      {
+       "dai": 3,
+       "nhan": "thêm 3",
+       "mau": "do"
+      }
+     ]
+    }
+   ],
+   "note": "Bình có 8 + 3 = 11 viên."
+  }
+ },
+ {
+  "id": "L2H_DT02",
+  "goc": "image21.png",
+  "bai": "DL:KSN2.B19",
+  "muc": "khamPha",
+  "neoBuoc": 1,
+  "arch": "doan_thang",
+  "caption": "Chị gấp 2 lần em: chị hai phần, em một phần",
+  "params": {
+   "title": "Chị có số kẹo gấp 2 lần em. Cả hai có 9 viên.",
+   "thanh": [
+    {
+     "ten": "Em",
+     "phan": [
+      {
+       "dai": 1,
+       "nhan": "1 phần",
+       "mau": "gold"
+      }
+     ]
+    },
+    {
+     "ten": "Chị",
+     "phan": [
+      {
+       "dai": 1,
+       "nhan": "1 phần",
+       "mau": "gold"
+      },
+      {
+       "dai": 1,
+       "nhan": "1 phần",
+       "mau": "gold"
+      }
+     ]
+    }
+   ],
+   "note": "Tất cả có 1 + 2 = 3 phần bằng nhau → 1 phần = 9 : 3 = 3 viên."
+  }
+ },
+ {
+  "id": "L2H_TIA01",
+  "goc": "image43.png",
+  "bai": "DL:KSN2.B06",
+  "muc": "khamPha",
+  "neoBuoc": 4,
+  "arch": "tia_so",
+  "caption": "Đếm cách 5: nhảy từng bước 5 đơn vị",
+  "params": {
+   "title": "Đếm cách 5 — mỗi bước nhảy 5",
+   "nhan": "+5",
+   "moc": [
+    {
+     "so": 5
+    },
+    {
+     "so": 10
+    },
+    {
+     "so": 15
+    },
+    {
+     "so": 20
+    },
+    {
+     "so": 25
+    },
+    {
+     "so": 30
+    }
+   ],
+   "note": "5, 10, 15, 20, 25, 30 — đúng bảng nhân 5."
+  }
+ },
+ {
+  "id": "L2H_TIA02",
+  "goc": "image15.png",
+  "bai": "DL:KSN2.B09",
+  "muc": "khamPha",
+  "neoBuoc": 3,
+  "arch": "tia_so",
+  "caption": "Tàu nhịp 3 bay qua ga 20, không dừng ở đó",
+  "params": {
+   "title": "Tàu nhịp 3 xuất phát từ 3 — có dừng ở ga 20 không?",
+   "nhan": "+3",
+   "moc": [
+    {
+     "so": 3
+    },
+    {
+     "so": 6
+    },
+    {
+     "so": 9
+    },
+    {
+     "so": 12
+    },
+    {
+     "so": 15
+    },
+    {
+     "so": 18
+    },
+    {
+     "so": 20,
+     "danh": true
+    },
+    {
+     "so": 21
+    }
+   ],
+   "note": "Tàu nhảy 18 rồi 21, bay qua ga 20 → 20 không thuộc dãy này."
+  }
  }
 ]

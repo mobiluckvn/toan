@@ -11,7 +11,7 @@ docs/phan_loai_hinh_lop2.md. Tệp này dựng dần từng nhóm.
 """
 from core import (canvas, card, save, txt_fit, arrow, _txt, fit_fs,
                   NAVY, TEAL, GOLD, RED, DARKTEAL, DARKGOLD, PALERED, PALETEAL,
-                  LINE, MUTE, FS)
+                  LINE, MUTE, INK, FS)
 
 # Ba vai màu của một ô: (viền, nền, chữ)
 MAU = {
@@ -207,4 +207,200 @@ def day_o(p, out):
     if p.get('note'):
         txt_fit(ax, 50, day - (7.0 if co_banh else (7.5 if co_duoi else 4.6)),
                 p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def hang_hop(p, out):
+    """
+    Hàng hộp có nhãn — 9 hình. Mỗi hộp: một tiêu đề ngắn + vài dòng bên trong.
+
+    params:
+      title · hop[{ten, dong[], mau}] · ket (hộp kết luận nằm dưới) · note
+    """
+    hop = p.get('hop') or []
+    n = len(hop)
+    W = (92.0 - 3.0 * (n - 1)) / n
+    sd = max(len(h.get('dong') or []) for h in hop) if hop else 1
+    CAO = 12.0 + 4.6 * sd
+    tren = 11.0 if p.get('title') else 4.0
+    cao_ket = 11.0 if p.get('ket') else 0.0
+    duoi = 7.0 if p.get('note') else 4.0
+    can = tren + CAO + cao_ket + duoi
+    fig, ax, H = canvas(7.6, max(2.4, can * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+
+    y = H - tren - CAO
+    for i, h in enumerate(hop):
+        x = 4.0 + i * (W + 3.0)
+        vien, nen, chu = MAU.get(h.get('mau', ['teal', 'gold', 'do', 'tim'][i % 4]), MAU['teal'])
+        card(ax, x, y, W, CAO, fc=nen, ec=vien, lw=2.2, r=1.8)
+        txt_fit(ax, x + W / 2, y + CAO - 4.2, h.get('ten', ''), W - 3, FS['body'], chu, z=6)
+        for k, d in enumerate(h.get('dong') or []):
+            txt_fit(ax, x + W / 2, y + CAO - 9.6 - k * 4.6, str(d), W - 3,
+                    FS['small'], INK, z=6, w='normal')
+    y -= cao_ket
+    if p.get('ket'):
+        card(ax, 20.0, y - 1.0, 60.0, 9.0, fc=PALETEAL, ec=TEAL, lw=2.2, r=1.6)
+        txt_fit(ax, 50, y + 3.5, p['ket'], 56, FS['mid'], DARKTEAL, z=6)
+    if p.get('note'):
+        txt_fit(ax, 50, y - 5.0, p['note'], 92, FS['body'], MUTE, z=5, w='normal')
+    save(fig, out)
+
+
+def cham_tron(p, out):
+    """
+    Chấm tròn & chia nhóm — 5 hình. Bé ĐẾM ĐƯỢC từng chấm, đó là điểm mấu chốt.
+
+    params:
+      title · nhom[{ten, so, mau, hang}] · du{so, ten} · note
+    """
+    from matplotlib.patches import Circle
+    nhom = p.get('nhom') or []
+    du = p.get('du')
+    n = len(nhom) + (1 if du else 0)
+    W = (92.0 - 3.5 * (n - 1)) / n
+    hmax = max([len(_chia_hang(g['so'], g.get('hang', 4))) for g in nhom] or [1])
+    CAO = 9.0 + 5.6 * hmax
+    tren = 11.0 if p.get('title') else 4.0
+    duoi = 7.0 if p.get('note') else 4.0
+    fig, ax, H = canvas(7.6, max(2.4, (tren + CAO + duoi) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+
+    y = H - tren - CAO
+    for i, g in enumerate(nhom + ([{'ten': du.get('ten', 'còn thừa'), 'so': du['so'],
+                                    'mau': 'do'}] if du else [])):
+        x = 4.0 + i * (W + 3.5)
+        vien, nen, chu = MAU.get(g.get('mau', 'teal'), MAU['teal'])
+        card(ax, x, y, W, CAO, fc='white', ec=vien, lw=2.0, r=1.8)
+        hangs = _chia_hang(g['so'], g.get('hang', 4))
+        for r, sl in enumerate(hangs):
+            bw = min(3.4, (W - 6) / max(sl, 1) / 2)
+            x0 = x + W / 2 - (sl - 1) * bw
+            for k in range(sl):
+                ax.add_patch(Circle((x0 + k * 2 * bw, y + CAO - 8.0 - r * 5.6), bw * 0.82,
+                                    fc=nen, ec=vien, lw=1.6, zorder=5))
+        txt_fit(ax, x + W / 2, y + 2.6, g.get('ten', ''), W - 3, FS['small'], chu, z=6)
+    if p.get('note'):
+        txt_fit(ax, 50, y - 4.6, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def _chia_hang(so, moi_hang):
+    return [min(moi_hang, so - i * moi_hang) for i in range((so + moi_hang - 1) // moi_hang)] or [0]
+
+
+def _dau_nguoi(ax, x, y, r, chan, mau='gold', ten=''):
+    """Một con vật: đầu tròn có mặt cười + số chân que. Bé ĐẾM chân được."""
+    from matplotlib.patches import Circle
+    vien, nen, chu = MAU.get(mau, MAU['gold'])
+    for k in range(chan):
+        dx = (k - (chan - 1) / 2) * (r * 0.46)
+        # Chân phải DÀI và tách rời để bé đếm được — đây là việc chính của hình này,
+        # chân ngắn thành mấy cái gạch dính vào nhau thì đếm kiểu gì.
+        ax.plot([x + dx, x + dx], [y - r * 0.55, y - r * 1.95], color=vien, lw=3.0,
+                zorder=4, solid_capstyle='round')
+    ax.add_patch(Circle((x, y), r, fc=nen, ec=vien, lw=2.2, zorder=5))
+    for dx in (-r * 0.34, r * 0.34):
+        ax.add_patch(Circle((x + dx, y + r * 0.24), r * 0.1, fc=NAVY, ec='none', zorder=6))
+    ax.plot([x - r * 0.3, x, x + r * 0.3], [y - r * 0.22, y - r * 0.36, y - r * 0.22],
+            color=NAVY, lw=1.8, zorder=6, solid_capstyle='round')
+    if ten:
+        _txt(ax, x, y - r * 2.35, ten, fs=FS['small'], c=chu, w='bold', z=6)
+
+
+def con_vat(p, out):
+    """
+    Hàng con vật có chân — 5 hình. Đếm ĐẦU ra số con, đếm CHÂN ra số chân.
+
+    params: title · con[{chan, mau, ten}] · note
+    """
+    con = p.get('con') or []
+    n = max(len(con), 1)
+    R = min(6.6, 84.0 / (n * 2.6))
+    CAO = R * 4.6
+    tren = 11.0 if p.get('title') else 4.0
+    duoi = 8.0 if p.get('note') else 4.0
+    fig, ax, H = canvas(7.6, max(2.4, (tren + CAO + duoi) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    y = H - tren - R * 1.3
+    buoc = 92.0 / n
+    for i, c in enumerate(con):
+        _dau_nguoi(ax, 4.0 + buoc * (i + 0.5), y, R, c.get('chan', 2),
+                   c.get('mau', 'gold'), c.get('ten', ''))
+    if p.get('note'):
+        txt_fit(ax, 50, y - R * 2.95, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def doan_thang(p, out):
+    """
+    Sơ đồ đoạn thẳng — 2 hình. Mỗi bạn một thanh; thanh dài hơn = nhiều hơn.
+
+    params: title · thanh[{ten, phan[{dai, nhan, mau}]}] · note
+    """
+    th = p.get('thanh') or []
+    CAO, KHE = 9.5, 6.0
+    tren = 11.0 if p.get('title') else 4.0
+    duoi = 8.0 if p.get('note') else 4.0
+    fig, ax, H = canvas(7.6, max(2.2, (tren + (CAO + KHE) * len(th) + duoi) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    tong = max(sum(x['dai'] for x in t['phan']) for t in th) if th else 1
+    y = H - tren - CAO
+    for t in th:
+        txt_fit(ax, 15.0, y + CAO / 2, t.get('ten', ''), 13, FS['body'], NAVY, z=6, ha='right')
+        x = 18.0
+        for ph in t['phan']:
+            w = 74.0 * ph['dai'] / tong
+            vien, nen, chu = MAU.get(ph.get('mau', 'teal'), MAU['teal'])
+            card(ax, x, y, w, CAO, fc=nen, ec=vien, lw=2.2, r=1.2)
+            txt_fit(ax, x + w / 2, y + CAO / 2, str(ph.get('nhan', '')), w - 2,
+                    FS['body'], chu, z=6)
+            x += w
+        y -= CAO + KHE
+    if p.get('note'):
+        txt_fit(ax, 50, y + KHE - 3.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def tia_so(p, out):
+    """
+    Tia số có bước nhảy — 2 hình. Bé thấy con số NHẢY từng bước bằng nhau.
+
+    params: title · moc[{so, danh}] · nhan (chữ trên mỗi cung) · note
+    """
+    moc = p.get('moc') or []
+    n = max(len(moc), 2)
+    tren = 11.0 if p.get('title') else 4.0
+    fig, ax, H = canvas(7.6, max(2.0, (tren + 26.0 + (7.0 if p.get('note') else 3.0)) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    y = H - tren - 12.0
+    ax.plot([5, 95], [y, y], color=NAVY, lw=2.8, zorder=3)
+    # Đặt mốc theo GIÁ TRỊ, không chia đều: 18 → 20 → 21 mà vẽ cách đều nhau là
+    # nói dối bé rằng ba khoảng ấy bằng nhau. Tia số sai tỉ lệ còn tệ hơn không có.
+    gt = [float(m.get('so', 0)) for m in moc]
+    lo, hi = min(gt), max(gt)
+    xs = [8.0 + (84.0 * (v - lo) / (hi - lo) if hi > lo else 0) for v in gt]
+    for x, m in zip(xs, moc):
+        do = m.get('danh')
+        ax.plot([x, x], [y - 2.2, y + 2.2], color=RED if do else NAVY, lw=2.6, zorder=4)
+        _txt(ax, x, y - 5.6, str(m.get('so', '')), fs=FS['body'],
+             c=RED if do else NAVY, w='bold', z=6)
+        if do:
+            from matplotlib.patches import Circle
+            ax.add_patch(Circle((x, y), 3.2, fc='none', ec=RED, lw=2.4, zorder=5))
+    # Cung nhảy chỉ nối các mốc THUỘC dãy. Mốc `danh` là ga tàu ĐI QUA chứ không
+    # dừng — nối cung vào nó là vẽ ngược hẳn điều bài đang dạy.
+    trong_day = [i for i, m in enumerate(moc) if not m.get('danh')]
+    for a, b in zip(trong_day, trong_day[1:]):
+        arrow(ax, (xs[a], y + 2.6), (xs[b], y + 2.6), c=TEAL, lw=2.4, rad=-0.5, ms=13, z=5)
+        if p.get('nhan'):
+            _txt(ax, (xs[a] + xs[b]) / 2, y + 9.6, p['nhan'], fs=FS['small'],
+                 c=DARKTEAL, w='bold', z=6)
+    if p.get('note'):
+        txt_fit(ax, 50, y - 11.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
     save(fig, out)

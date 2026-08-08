@@ -41,6 +41,13 @@ def main():
     for hid, h in sorted(so_tay.items()):
         theo_bai.setdefault(h['bai'], []).append({'id': hid, **h})
 
+    # Hình đã VẼ nhưng chưa có chỗ đặt (thuộc bài Ôn tập / ba ải còn thiếu). Bỏ qua
+    # nhưng phải NÓI RA — im lặng bỏ qua thì lần sau tưởng đã gắn rồi.
+    for k, v in sorted((k, v) for k, v in so_tay.items() if v.get('hoan')):
+        print(f"  ⏸ {k}: {v['hoan']}")
+    theo_bai = {b: [x for x in ds if not x.get('hoan')] for b, ds in theo_bai.items()}
+    theo_bai = {b: ds for b, ds in theo_bai.items() if ds}
+
     loi, gan = [], 0
     for bai_id, ds in sorted(theo_bai.items()):
         ten = bai_id.replace('DL:', 'DL_').replace('.', '_') + '.json'

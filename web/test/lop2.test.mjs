@@ -113,9 +113,13 @@ const hinhTrongBai = bai.flatMap((b) =>
   Object.entries(b.muc).flatMap(([mk, m]) => (m.hinh || []).map((h) => [b, mk, m, h])));
 const hinhChung = chung.flatMap((d) => d.figureSpec || []);
 
-t(`hình đã gắn vào bài (${hinhTrongBai.length})`,
-  hinhTrongBai.length === Object.keys(soTay).length);
-t('hình sang được bản khuôn chung', hinhChung.length === hinhTrongBai.length);
+t(`hình đã gắn vào bài (${hinhTrongBai.length})`, hinhTrongBai.length > 0);
+t('hình sang bản khuôn chung KHÔNG rơi rớt', hinhChung.length === hinhTrongBai.length);
+/* Hình đã vẽ nhưng chưa có chỗ đặt (thuộc Ôn tập / ba ải chưa trích) phải khai báo
+   rõ, không được im lặng biến mất giữa các bước của dây chuyền. */
+const hoan = Object.values(soTay).filter((h) => h.hoan);
+t(`hình đã vẽ = đã gắn + hoãn (${hinhTrongBai.length} + ${hoan.length})`,
+  hinhTrongBai.length + hoan.length === Object.keys(soTay).length);
 t('hình nào cũng chỉ rõ chỗ đứng', hinhChung.every((f) => (f.usedIn || []).length === 1));
 t('mã hình không trùng nhau',
   new Set(hinhTrongBai.map(([, , , h]) => h.id)).size === hinhTrongBai.length);
