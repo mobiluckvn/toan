@@ -15,6 +15,9 @@ import {
   myReport, logout,
 } from './lib/firebase.js';
 import { reassignQueue } from './lib/sync.js';
+import ChonChuongTrinh from './components/ChonChuongTrinh.jsx';
+import HomeLop2 from './components/HomeLop2.jsx';
+import Lop2Player from './components/Lop2Player.jsx';
 import MuaGiai from './components/MuaGiai.jsx';
 import TraiHuanLuyen from './components/TraiHuanLuyen.jsx';
 import HoSoBay from './components/HoSoBay.jsx';
@@ -42,6 +45,15 @@ export default function App() {
   const [role, setRole] = useState(null);
   const [profile, setProfile] = useState(null);
   const [cloudReport, setCloudReport] = useState(null);
+  /* Chương trình con đang học. Nhớ lại để lần sau vào thẳng, nhưng luôn đổi được:
+     người bấm là trẻ con, chọn nhầm mà không lùi được thì bé nản ngay. */
+  const [chuongTrinh, setChuongTrinh] = useState(() => {
+    try { return localStorage.getItem('ttd5.chuongtrinh') || null; } catch { return null; }
+  });
+  const chonChuongTrinh = useCallback((ma) => {
+    try { localStorage.setItem('ttd5.chuongtrinh', ma); } catch { /* chế độ riêng tư */ }
+    setChuongTrinh(ma); setView({ page: 'home' });
+  }, []);
   const [skipped, setSkipped] = useState(() => {
     try { return localStorage.getItem(SKIP_KEY) === '1'; } catch { return false; }
   });
@@ -192,6 +204,31 @@ export default function App() {
       />
     );
 
+  /* ══ CHỌN CHƯƠNG TRÌNH ══ */
+  if (!chuongTrinh) return <ChonChuongTrinh onChon={chonChuongTrinh} />;
+
+  /* ══ LỚP 2 ══ */
+  if (chuongTrinh === 'lop2') {
+    if (view.page === 'lop2bai')
+      return (
+        <Lop2Player
+          baiId={view.baiId}
+          onExit={() => setView({ page: 'home' })}
+          onXong={(id) => {
+            setProgress((p) => ({ ...p, lop2: { ...(p.lop2 || {}), [id]: { xong: true, at: new Date().toISOString() } } }));
+            setView({ page: 'home' });
+          }}
+        />
+      );
+    return (
+      <HomeLop2
+        progress={progress}
+        onMoBai={(id) => setView({ page: 'lop2bai', baiId: id })}
+        onDoiChuongTrinh={() => setChuongTrinh(null)}
+      />
+    );
+  }
+
   /* ══ QUYỂN 2 · MÙA GIẢI ══ */
   if (view.page === 'muagiai')
     return (
@@ -240,6 +277,7 @@ export default function App() {
       onOpenExam={(c) => setView({ page: 'exam', chapter: c })}
       onOpenReport={() => setView({ page: 'report' })}
       onOpenMuaGiai={() => setView({ page: 'muagiai' })}
+      onDoiChuongTrinh={() => setChuongTrinh(null)}
     />
   );
 }

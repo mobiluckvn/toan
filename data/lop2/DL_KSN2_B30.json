@@ -1,0 +1,260 @@
+{
+ "id": "DL:KSN2.B30",
+ "quyen": "lop2",
+ "so": 30,
+ "ten": "ĐẾM KHỐI BỊ CHE",
+ "chuong": 7,
+ "tenChuong": "Vương quốc hình học",
+ "dangGoc": "HH 6.1 — Đếm khối lập phương trong hình xếp (đếm theo tầng, luật ngồi)",
+ "muc": {
+  "mucTieu": {
+   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
+   "dong": [
+    "Đếm được số khối lập phương trong một hình xếp — kể cả khối BỊ CHE.",
+    "Thuộc LUẬT NGỒI: khối tầng trên phải có khối tầng dưới đỡ.",
+    "Đếm theo TẦNG: tầng dưới trước, tầng trên sau, rồi cộng lại."
+   ],
+   "goc": [
+    "Đếm được số khối lập phương trong một hình xếp — kể cả khối BỊ CHE.",
+    "Thuộc LUẬT NGỒI: khối tầng trên phải có khối tầng dưới đỡ.",
+    "Đếm theo TẦNG: tầng dưới trước, tầng trên sau, rồi cộng lại."
+   ]
+  },
+  "chuyenMoBai": {
+   "ten": "CHUYỆN MỞ BÀI — Trò trốn tìm của các khối",
+   "dong": [
+    "Các khối lập phương trong hộp đồ chơi cũng mê trốn tìm. Nhưng chúng trốn kiểu khác các hình phẳng: chúng NẤP SAU LƯNG và NẰM DƯỚI CHÂN nhau! Vua Hình xếp một tòa tháp nhỏ rồi đố: \"Tháp này xây từ mấy khối?\" Su Kem đếm những khối nhìn thấy: \"1, 2, 3, 4... 4 khối ạ!\". Vua tủm tỉm: \"Thế khối đang è lưng cõng bạn ở góc kia, cháu quên bạn ấy rồi sao?\""
+   ],
+   "goc": [
+    "Các khối lập phương trong hộp đồ chơi cũng mê trốn tìm — nhưng chúng trốn kiểu khác các hình phẳng: chúng NẤP SAU LƯNG và NẰM DƯỚI CHÂN nhau! Vua Hình xếp một tòa tháp nhỏ rồi đố: \"Tháp này xây từ mấy khối?\" Su Kem đếm những khối nhìn thấy: \"1, 2, 3, 4... 4 khối ạ!\" — Vua tủm tỉm: \"Thế khối đang è lưng cõng bạn ở góc kia, cháu quên bạn ấy rồi sao?\""
+   ]
+  },
+  "khamPha": {
+   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Luật ngồi & đếm theo tầng",
+   "dong": [
+    "Bước 1. LUẬT NGỒI: khối ở tầng trên không biết bay. Nó phải NGỒI trên một khối tầng dưới. Vậy nên hễ thấy khối ở tầng 2, con biết chắc bên dưới nó có một khối đỡ, dù khối ấy bị che gần hết:",
+    "Bước 2 — ĐẾM THEO TẦNG: đừng đếm lung tung theo mắt nhìn. Hãy đếm từng tầng như đếm nhà cao tầng: tầng dưới cùng có mấy khối (đếm cả hàng sau bị nấp!), tầng trên có mấy khối. Rồi cộng lại.",
+    "Bước 3. Với tòa tháp của Vua Hình: tầng dưới xếp 2 hàng × 2 khối = 4 khối (một bạn ở góc sau bị che gần hết nhưng vẫn đếm!). Tầng trên 1 khối. Tất cả: 4 + 1 = 5 khối.",
+    "Bước 4. KIỂM TRA: tưởng tượng gỡ tháp ra từng khối một (hoặc xếp lại bằng khối thật). Gỡ đủ 5 lần mới hết tháp ✓.",
+    "MẸO THÁM TỬ: Khối bị che vẫn PHẢI ĐẾM — luật ngồi bảo lãnh cho nó! Đếm theo tầng: tầng dưới (cả hàng nấp sau) + tầng trên, cộng lại là xong."
+   ],
+   "goc": [
+    "Bước 1 — LUẬT NGỒI: khối ở tầng trên không biết bay — nó phải NGỒI trên một khối tầng dưới. Vậy nên hễ thấy khối ở tầng 2, con biết chắc bên dưới nó có một khối đỡ, dù khối ấy bị che gần hết:",
+    "Bước 2 — ĐẾM THEO TẦNG: đừng đếm lung tung theo mắt nhìn. Hãy đếm từng tầng như đếm nhà cao tầng: tầng dưới cùng có mấy khối (đếm cả hàng sau bị nấp!), tầng trên có mấy khối — rồi cộng lại.",
+    "Bước 3. Với tòa tháp của Vua Hình: tầng dưới xếp 2 hàng × 2 khối = 4 khối (một bạn ở góc sau bị che gần hết nhưng vẫn đếm!); tầng trên 1 khối. Tất cả: 4 + 1 = 5 khối.",
+    "Bước 4 — KIỂM TRA: tưởng tượng gỡ tháp ra từng khối một (hoặc xếp lại bằng khối thật) — gỡ đủ 5 lần mới hết tháp ✓.",
+    "MẸO THÁM TỬ: Khối bị che vẫn PHẢI ĐẾM — luật ngồi bảo lãnh cho nó! Đếm theo tầng: tầng dưới (cả hàng nấp sau) + tầng trên, cộng lại là xong."
+   ]
+  },
+  "viDuMau": {
+   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
+   "dong": [
+    "Đề bài: Một hình xếp gồm: tầng dưới có 3 khối lập phương đặt thành hàng ngang, tầng trên có 2 khối đặt trên hai khối ngoài cùng. Hỏi hình xếp có tất cả bao nhiêu khối lập phương?",
+    "Bài giải: (vẽ nháp hình xếp trước nhé!)",
+    "Tầng dưới có: 3 khối.",
+    "Tầng trên có: 2 khối.",
+    "Hình xếp có tất cả: 3 + 2 = 5 (khối)",
+    "Đáp số: 5 khối lập phương."
+   ],
+   "goc": [
+    "Đề bài: Một hình xếp gồm: tầng dưới có 3 khối lập phương đặt thành hàng ngang, tầng trên có 2 khối đặt trên hai khối ngoài cùng. Hỏi hình xếp có tất cả bao nhiêu khối lập phương?",
+    "Bài giải: (vẽ nháp hình xếp trước nhé!)",
+    "Tầng dưới có: 3 khối.",
+    "Tầng trên có: 2 khối.",
+    "Hình xếp có tất cả: 3 + 2 = 5 (khối)",
+    "Đáp số: 5 khối lập phương."
+   ]
+  },
+  "suKemNham": {
+   "ten": "SU KEM ƠI, NHẦM RỒI!",
+   "dong": [
+    "Với tòa tháp 2 tầng của Vua Hình, Su Kem đếm: \"Tớ nhìn thấy 4 khối thì tháp có 4 khối. Mắt tớ tinh lắm, không thể sai!\"",
+    "Gợi ý 1: Khối ở tầng trên đang NGỒI trên cái gì? Nếu góc dưới đó trống trơn thì chuyện gì xảy ra với bạn tầng trên?",
+    "Gợi ý 2: Mắt tinh là tốt, nhưng thám tử giỏi còn tin vào LUẬT: dùng luật ngồi đếm lại tầng dưới giúp Su Kem. Tầng dưới thật ra có mấy khối?"
+   ],
+   "goc": [
+    "Với tòa tháp 2 tầng của Vua Hình, Su Kem đếm: \"Tớ nhìn thấy 4 khối thì tháp có 4 khối. Mắt tớ tinh lắm, không thể sai!\"",
+    "Gợi ý 1: Khối ở tầng trên đang NGỒI trên cái gì? Nếu góc dưới đó trống trơn thì chuyện gì xảy ra với bạn tầng trên?",
+    "Gợi ý 2: Mắt tinh là tốt, nhưng thám tử giỏi còn tin vào LUẬT: dùng luật ngồi đếm lại tầng dưới giúp Su Kem — tầng dưới thật ra có mấy khối?"
+   ]
+  },
+  "luyenTap": {
+   "ten": "LUYỆN TẬP 3 MỨC SAO",
+   "dong": [],
+   "goc": []
+  },
+  "quiz": {
+   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
+   "dong": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):",
+    "Câu 1 (Đúng/Sai?): Khối bị che khuất thì không cần đếm.",
+    "Câu 2 (Đúng/Sai?): Khối ở tầng trên phải có khối tầng dưới đỡ.",
+    "Câu 3: Tầng dưới 4 khối, tầng trên 1 khối — tất cả: A. 4 khối B. 5 khối C. 6 khối",
+    "Câu 4: Cách đếm khối đáng tin nhất là: A. đếm khối nhìn thấy B. đếm theo tầng C. đoán theo độ cao",
+    "Câu 5: Tháp cầu thang 3 + 2 + 1 có: A. 5 khối B. 6 khối C. 7 khối"
+   ],
+   "goc": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):",
+    "Câu 1 (Đúng/Sai?): Khối bị che khuất thì không cần đếm.",
+    "Câu 2 (Đúng/Sai?): Khối ở tầng trên phải có khối tầng dưới đỡ.",
+    "Câu 3: Tầng dưới 4 khối, tầng trên 1 khối — tất cả: A. 4 khối B. 5 khối C. 6 khối",
+    "Câu 4: Cách đếm khối đáng tin nhất là: A. đếm khối nhìn thấy B. đếm theo tầng C. đoán theo độ cao",
+    "Câu 5: Tháp cầu thang 3 + 2 + 1 có: A. 5 khối B. 6 khối C. 7 khối"
+   ]
+  },
+  "gocBoMe": {
+   "ten": "GÓC BỐ MẸ",
+   "dong": [
+    "Không gì thay được KHỐI THẬT: lego, khối gỗ, hộp giấy nhỏ. Con xếp theo hình trong sách rồi GỠ RA ĐẾM — mỗi lần gỡ là một lần kiểm chứng luật ngồi.",
+    "Chơi đảo vai: con xếp một hình che khuất khéo léo rồi đố bố mẹ đếm — bố mẹ thỉnh thoảng \"quên\" khối bị che để con được sửa sai cho người lớn.",
+    "NÊN: luôn hỏi \"khối này đang ngồi trên ai?\". KHÔNG NÊN: đưa hình xếp phức tạp nhiều khối khoét rỗng — dạng \"đếm khối bị khoét\" là đặc sản lớp 3-4; lớp 2 dừng ở 2-3 tầng nhìn rõ luật ngồi.",
+    "CHƯƠNG 7 · VƯƠNG QUỐC HÌNH HỌC",
+    "ÔN TẬP 7 · TRUY TÌM KHO BÁU HÌNH HỌC",
+    "Bài kiểm tra tổng hợp Bài 26-30 · Đạt 8/10 câu: rương kho báu mở + sticker chìa khóa!",
+    "Luật chơi: tấm bản đồ dưới đây do chính Vua Hình vẽ. Câu 5 và câu 10 phải NHÌN BẢN ĐỒ để trả lời — đếm thật kỹ, đếm đúng mới mở được rương!",
+    "★ PHẦN 1 — KHỞI ĐỘNG (3 câu)",
+    "Câu 1. Hình tứ giác có mấy cạnh, mấy đỉnh? Hình vuông thuộc họ tứ giác đúng không?",
+    "Câu 2. Chú kiến bò một vòng quanh hình tam giác có các cạnh 2 cm, 3 cm, 4 cm. Kiến bò được bao nhiêu cm?",
+    "Câu 3. Mặt viên xúc xắc là hình gì? Viên xúc xắc có mấy mặt?",
+    "★★ PHẦN 2 — VẬN DỤNG (4 câu)",
+    "Câu 4. Một tam giác lớn bị chia bởi một vạch từ đỉnh xuống đáy. Hỏi trong hình có tất cả mấy tam giác?",
+    "Câu 5. NHÌN BẢN ĐỒ: mái nhà và hai ngọn núi là hình gì? Mặt trời và hồ nước là hình gì? Thân nhà và chiếc rương là hình gì?",
+    "Câu 6. Ô cửa sổ 2 × 2 có tất cả bao nhiêu hình vuông? (Đừng quên anh to ẩn mình!)",
+    "Câu 7. Hình xếp có tầng dưới 2 hàng × 2 khối, tầng trên 1 khối. Tất cả mấy khối lập phương?",
+    "★★★ PHẦN 3 — TRÙM CUỐI (3 câu)",
+    "Câu 8. Chú kiến Đỏ bò quanh hình vuông cạnh 5 cm, kiến Đen bò quanh hình chữ nhật có cạnh dài 7 cm - cạnh ngắn 3 cm. Kiến nào bò xa hơn? Xa hơn mấy cm?",
+    "Câu 9. Tòa tháp cầu thang: tầng dưới 3 khối, tầng giữa 2 khối, tầng trên 1 khối. Tất cả mấy khối? Nếu xây kiểu ấy cao 4 tầng thì cần mấy khối?",
+    "Câu 10. NHÌN BẢN ĐỒ — thử thách mở rương: đếm trên bản đồ có bao nhiêu hình TAM GIÁC, bao nhiêu hình TRÒN, bao nhiêu hình VUÔNG? (Soi từng góc bản đồ: núi, mái nhà, lá cờ, mặt trời, hồ nước, đồng xu, thân nhà, cửa sổ, rương...)",
+    "✦ BẢNG TỰ SOI — SAI CÂU NÀO, ÔN BÀI ĐÓ",
+    "Câu 1, 2, 8 → thuộc Bài 26 (Nhận mặt hình & chú kiến bò quanh hình).",
+    "Câu 4, 6 và phần đếm hình câu 10 → thuộc Bài 27 (Đếm hình ẩn mình).",
+    "Câu 5 (mặt trời, hồ) và phần hình tròn câu 10 → thuộc Bài 28 (Hình tròn).",
+    "Câu 3 → thuộc Bài 29 (Khối hộp).",
+    "Câu 7, 9 → thuộc Bài 30 (Đếm khối bị che).",
+    "Đạt 8/10 câu trở lên: rương mở — dán sticker CHÌA KHÓA KHO BÁU HÌNH HỌC vào Bảng sưu tập! Chưa đạt: ôn theo bảng trên rồi làm ĐỀ B.",
+    "✦ ĐỀ B — DÀNH CHO LƯỢT TRUY TÌM THỨ HAI",
+    "B1. Hình tam giác có mấy cạnh, mấy đỉnh? B2. Kiến bò quanh tam giác cạnh 3, 3, 5 cm — được mấy cm? B3. Mặt hộp sữa là hình gì, hộp có mấy mặt?",
+    "B4. Hình vuông kẻ một đường chéo — có mấy tam giác? B5. Kể 2 đồ vật mặt tròn, 2 đồ vật mặt chữ nhật trong nhà. B6. Hình chữ nhật chia 3 ô vuông hàng ngang — có mấy hình vuông đơn, mấy hình chữ nhật ghép (2 ô và 3 ô)? B7. Tầng dưới 3 khối, tầng trên 1 khối — tất cả mấy khối?",
+    "B8. Kiến Đỏ bò quanh hình vuông cạnh 6 cm; kiến Đen bò quanh tam giác cạnh 7, 7, 8 cm — ai bò xa hơn? B9. Tháp cầu thang 4 + 3 + 2 + 1 — mấy khối? B10. Vẽ một bức tranh nhà - núi - mặt trời của riêng con, trong đó có đúng 3 tam giác, 2 hình tròn, 2 hình vuông — rồi đố bố mẹ đếm lại!",
+    "CHƯƠNG 7 · VƯƠNG QUỐC HÌNH HỌC",
+    "ĐÁP ÁN CHI TIẾT — GIỌNG TRÍ LONG",
+    "Con hãy tự làm hết sức trước rồi mới mở trang này nhé!",
+    "B26 ĐÁP ÁN BÀI 26 — Nhận mặt hình",
+    "Luyện tập — C1: tam giác 3 cạnh - 3 đỉnh; tứ giác 4 cạnh - 4 đỉnh. C2: ví dụ chữ nhật: quyển vở, cửa ra vào, màn hình ti vi; vuông: viên gạch lát, mặt xúc xắc. C3: hình vuông có CẢ 4 cạnh bằng nhau; chữ nhật chỉ cần từng cặp cạnh đối bằng nhau.",
+    "C4: 2 + 3 + 4 = 9 cm. C5: hình vuông có 4 cạnh bằng nhau, mỗi cạnh 5 cm → 5 + 5 + 5 + 5 = 20 cm. C6: 6 + 3 + 6 + 3 = 18 cm (hai cạnh dài, hai cạnh ngắn!).",
+    "C7: kiến Đỏ: 4 + 4 + 4 + 4 = 16 cm; kiến Đen: 5 + 5 + 5 = 15 cm → kiến Đỏ bò xa hơn 16 − 15 = 1 cm. C8: chỉ cần 4 cạnh không đều tăm tắp, 4 đỉnh — đếm đúng 4 cạnh 4 đỉnh là \"chính hãng\"!",
+    "Quiz: C1 ĐÚNG · C2 SAI (xoay không đổi tên) · C3 A · C4 A · C5 B.",
+    "B27 ĐÁP ÁN BÀI 27 — Đếm hình ẩn mình",
+    "Luyện tập — C1: 2 tam giác. C2: 2 hình đơn (2 chữ nhật đứng) + 1 hình ghép (chữ nhật to ôm cả) = 3 hình. C3: 2 tam giác đơn + 1 tam giác ghép = 3.",
+    "C4: đơn: 1, 2, 3 → 3 hình; ghép 2 mảnh: (1+2), (2+3) → 2 hình; ghép cả: (1+2+3) → 1 hình. Tất cả 3 + 2 + 1 = 6 tam giác. C5: ghép 2: (1+2), (2+3), (3+4) → 3; ghép 3: (1+2+3), (2+3+4) → 2; ghép 4: 1. Tổng hình ghép: 3 + 2 + 1 = 6. C6: chữ nhật dài ghép 2 ô: 2 hình nằm ngang + 2 hình thẳng đứng = 4 hình.",
+    "C7: 4 tam giác nhỏ + 4 tam giác ghép-đôi (mỗi nửa hình vuông: trên, dưới, trái, phải) = 8 tam giác. C8: đề của con \"chuẩn Vua Hình\" khi bố mẹ đếm ra đúng 6 — thiếu hay thừa thì chỉnh vạch chia lại!",
+    "Quiz: C1 ĐÚNG · C2 SAI (5 hình!) · C3 B · C4 B · C5 B.",
+    "B28 ĐÁP ÁN BÀI 28 — Hình tròn",
+    "Luyện tập — C1: ví dụ: mặt đồng hồ, đáy cốc, đĩa, đồng xu, nắp hộp sữa. C2-C3: các nan hoa đo được dài bằng nhau — nếu lệch nhiều là do tô viền chưa khít, thử lại với nắp cứng hơn.",
+    "C4: bánh tròn có nan hoa bằng nhau → trục xe (ở tâm) luôn cao đều → xe chạy êm; bánh vuông nan hoa chỗ dài chỗ ngắn → trục nhấp nhô → xe nảy. C5: tâm ở chính giữa mặt số; kim gắn ở tâm — vì từ tâm quay đi hướng nào nan hoa cũng bằng nhau nên kim quét vừa khít cả mặt đồng hồ. C6: mặt cắt quả cam gần tròn chính hãng hơn; quả trứng cắt dọc cho hình méo.",
+    "C7: ba tâm tạo thành hình TAM GIÁC có 3 cạnh bằng nhau (vì các đồng xu giống hệt nhau chạm khít). C8: sợi dây căng không đổi độ dài — chính nó là \"nan hoa\" luôn bằng nhau → mọi điểm bút vẽ đều cách tâm đúng một đoạn dây → tròn chính hãng!",
+    "Quiz: C1 ĐÚNG · C2 ĐÚNG · C3 B · C4 B · C5 B.",
+    "B29 ĐÁP ÁN BÀI 29 — Khối hộp",
+    "Luyện tập — C1: ví dụ hộp CN: hộp sữa, hộp giày, viên gạch; lập phương: xúc xắc, ru-bích. C2: lập phương — mặt vuông; hộp CN — mặt chữ nhật. C3: 6 mặt.",
+    "C4: xúc xắc in ra hình vuông; hộp sữa nằm ngang in ra hình chữ nhật. C5: nói chặt chẽ thì quyển vở là KHỐI hộp chữ nhật (mỏng nhưng vẫn cầm được, có 6 mặt); còn mỗi TRANG vở mới là hình chữ nhật. C6: nhìn thấy nhiều nhất 3 mặt cùng lúc (trên + 2 mặt bên); không thấy mặt dưới, mặt sau và một mặt bên.",
+    "C7: ghép 2 khối lập phương → khối HỘP CHỮ NHẬT; hai mặt đầu vẫn vuông nhưng 4 mặt quanh thân thành chữ nhật dài. C8: hai mặt đối cộng bằng 7 → mặt dưới là 7 − 2 = 5 chấm.",
+    "Quiz: C1 ĐÚNG · C2 ĐÚNG · C3 B · C4 B · C5 A.",
+    "B30 ĐÁP ÁN BÀI 30 — Đếm khối bị che",
+    "Luyện tập — C1: 4 + 1 = 5 khối. C2: 2 + 1 = 3 khối; khối trên ngồi trên một trong hai khối dưới. C3: ít nhất 2 khối — vì mỗi khối tầng trên cần một khối đỡ riêng (luật ngồi!).",
+    "C4: tầng dưới 2 × 2 = 4 (cả bạn nấp sau!) + tầng trên 1 = 5 khối. C5: 3 + 2 + 1 = 6 khối. C6: 2 hàng × 3 khối = 6 khối — hàng sau bị che nhưng thám tử đếm đủ.",
+    "C7: (a) 3 + 2 + 1 = 6 khối. (b) Chính là dãy bậc thang của Bài 10! Tháp 4 tầng: 4 + 3 + 2 + 1 = 10 khối — con vừa gặp lại cầu vồng Gauss nhí đấy. C8: mỗi tầng 2 × 2 = 4 khối, hai tầng → 4 + 4 = 8 khối nhỏ. Trong hình xếp, khối ở GÓC SAU của tầng dưới bị các bạn phía trước và bên trên che khuất hoàn toàn — mắt không thấy nhưng đếm theo tầng vẫn tìm ra nó! Xếp thử bằng lego thật (8 khối thành khối lập phương to) để kiểm chứng nhé.",
+    "Quiz: C1 SAI (vẫn phải đếm!) · C2 ĐÚNG · C3 B · C4 B · C5 B.",
+    "Ô7 ĐÁP ÁN ÔN TẬP 7 (Đề chính)",
+    "C1: 4 cạnh, 4 đỉnh; đúng — hình vuông là tứ giác đặc biệt. C2: 2 + 3 + 4 = 9 cm. C3: hình vuông; 6 mặt. C4: 3 tam giác (2 đơn + 1 ghép).",
+    "C5: mái nhà và hai ngọn núi: hình TAM GIÁC; mặt trời và hồ nước: hình TRÒN; thân nhà và rương: hình VUÔNG. C6: 4 + 1 = 5 hình vuông. C7: 4 + 1 = 5 khối.",
+    "C8: kiến Đỏ: 5 × 4 cạnh → 20 cm; kiến Đen: 7 + 3 + 7 + 3 = 20 cm — HÒA NHAU! (Câu này Vua Hình gài bẫy \"ai xa hơn\" — đáp án là không ai cả.) C9: 3 + 2 + 1 = 6 khối; tháp 4 tầng: 4 + 3 + 2 + 1 = 10 khối.",
+    "C10 — MỞ RƯƠNG: TAM GIÁC: 2 ngọn núi + 1 mái nhà + 1 lá cờ = 4 hình. TRÒN: mặt trời + hồ nước + đồng xu = 3 hình. VUÔNG: thân nhà + cửa sổ + rương = 3 hình. Đáp số: 4 tam giác, 3 hình tròn, 3 hình vuông — RƯƠNG MỞ!",
+    "Ô7B ĐÁP ÁN ĐỀ B",
+    "B1: 3 cạnh, 3 đỉnh. B2: 3 + 3 + 5 = 11 cm. B3: hình chữ nhật; 6 mặt. B4: 2 tam giác. B5: ví dụ tròn: đĩa, nắp hộp; chữ nhật: quyển sách, cửa sổ. B6: 3 hình vuông đơn; hình chữ nhật ghép: 2 hình (ghép 2 ô) + 1 hình (ghép 3 ô) = 3 hình. B7: 3 + 1 = 4 khối.",
+    "B8: kiến Đỏ: 6 × 4 cạnh → 24 cm; kiến Đen: 7 + 7 + 8 = 22 cm → kiến Đỏ xa hơn 2 cm. B9: 4 + 3 + 2 + 1 = 10 khối. B10: tranh của con đạt chuẩn khi bố mẹ đếm ra đúng 3 - 2 - 2; sai số thì con chính là người... chấm bài bố mẹ!",
+    "RƯƠNG KHO BÁU HÌNH HỌC ĐÃ MỞ! Đôi mắt của con giờ nhìn đâu cũng thấy hình: mái nhà tam giác, bánh xe tròn, hộp sữa khối chữ nhật... Chỉ còn MỘT vùng đất cuối cùng — nơi toán bước hẳn ra đời thật: tiền, bánh và những chiếc đồng hồ. Hẹn con ở Chương 8: TOÁN TRONG CUỘC SỐNG!",
+    "TOÁN TƯ DUY LỚP 2 · CÙNG TRÍ LONG KHÁM PHÁ VƯƠNG QUỐC SỐ",
+    "CHƯƠNG 8",
+    "TOÁN TRONG CUỘC SỐNG",
+    "Bài 31 · Một nửa & một phần tư Bài 32 · Cửa hàng nước chanh — tính lãi Bài 33 · Xem giờ",
+    "Ôn tập 8 · Một ngày ra chợ cùng Su Kem (kèm nhật ký toán + Đề B)",
+    "Chặng cuối của hành trình! Ở vùng đất này, toán không mặc áo bài tập nữa — nó trốn trong chiếc bánh pizza chia tư, trong sổ tính tiền của quán nước chanh, và trên hai chiếc kim đồng hồ tích tắc. Nhiệm vụ cuối cùng của thám tử: chứng minh rằng toán ở NGAY TRONG CUỘC SỐNG mỗi ngày!",
+    "CHƯƠNG 8 · TOÁN TRONG CUỘC SỐNG"
+   ]
+  }
+ },
+ "cau": [
+  {
+   "id": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "luyenTap",
+   "text": "Xếp 4 khối thành hàng ngang rồi đặt 1 khối lên trên khối đầu tiên. Hình xếp có mấy khối?",
+   "loiChua": "4 cạnh, 4 đỉnh; đúng — hình vuông là tứ giác đặc biệt",
+   "tuLuan": true
+  },
+  {
+   "id": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "luyenTap",
+   "text": "Tầng dưới 2 khối, tầng trên 1 khối. Tất cả mấy khối? Khối tầng trên đang ngồi trên khối nào?",
+   "loiChua": "2 + 3 + 4 = 9 cm",
+   "tuLuan": true
+  },
+  {
+   "id": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "luyenTap",
+   "text": "Nhìn một hình xếp thấy tầng trên có 2 khối. Hỏi tầng dưới có ÍT NHẤT mấy khối? Vì sao?",
+   "loiChua": "hình vuông; 6 mặt",
+   "tuLuan": true
+  },
+  {
+   "id": "C4",
+   "so": 4,
+   "muc": 2,
+   "phan": "luyenTap",
+   "text": "Hình xếp: tầng dưới 2 hàng × 2 khối, tầng trên 1 khối. Tất cả mấy khối? (Đếm cả bạn nấp hàng sau!)",
+   "loiChua": "3 tam giác (2 đơn + 1 ghép)",
+   "tuLuan": true
+  },
+  {
+   "id": "C5",
+   "so": 5,
+   "muc": 2,
+   "phan": "luyenTap",
+   "text": "Hình xếp: tầng dưới 3 khối hàng ngang, tầng giữa 2 khối, tầng trên 1 khối — xếp kiểu cầu thang. Tất cả mấy khối?",
+   "loiChua": "mái nhà và hai ngọn núi: hình TAM GIÁC; mặt trời và hồ nước: hình TRÒN; thân nhà và rương: hình VUÔNG",
+   "tuLuan": true
+  },
+  {
+   "id": "C6",
+   "so": 6,
+   "muc": 2,
+   "phan": "luyenTap",
+   "text": "Bin xếp một khối hộp chữ nhật to từ các khối lập phương nhỏ: 2 hàng, mỗi hàng 3 khối, chỉ một tầng. Hỏi Bin dùng mấy khối? (Hàng sau bị hàng trước che — nhưng thám tử không bị lừa!)",
+   "loiChua": "4 + 1 = 5 hình vuông",
+   "tuLuan": true
+  },
+  {
+   "id": "C7",
+   "so": 7,
+   "muc": 3,
+   "phan": "luyenTap",
+   "text": "Tòa tháp 3 tầng: tầng dưới 3 khối, tầng giữa 2 khối, tầng trên 1 khối. (a) Tất cả mấy khối? (b) Con nhận ra dãy số 3, 2, 1 quen thuộc không — nếu xây thêm cho tháp cao 4 tầng theo đúng kiểu này (tầng dưới cùng 4 khối) thì cần tất cả mấy khối?",
+   "loiChua": "4 + 1 = 5 khối",
+   "tuLuan": true
+  },
+  {
+   "id": "C8",
+   "so": 8,
+   "muc": 3,
+   "phan": "luyenTap",
+   "text": "Su Kem muốn xếp một khối lập phương TO từ các khối lập phương nhỏ: 2 tầng, mỗi tầng 2 hàng × 2 khối. Hỏi cần bao nhiêu khối nhỏ? Trong hình xếp xong, có mấy khối bị che khuất hoàn toàn (không nhìn thấy tí nào từ phía trước)?",
+   "loiChua": "kiến Đỏ: 5 × 4 cạnh → 20 cm; kiến Đen: 7 + 3 + 7 + 3 = 20 cm — HÒA NHAU! (Câu này Vua Hình gài bẫy \"ai xa hơn\" — đáp án là không ai cả.)",
+   "tuLuan": true
+  }
+ ]
+}

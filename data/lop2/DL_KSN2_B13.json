@@ -1,0 +1,189 @@
+{
+ "id": "DL:KSN2.B13",
+ "quyen": "lop2",
+ "so": 13,
+ "ten": "CỘNG DÃY SỐ KIỂU GAUSS NHÍ",
+ "chuong": 4,
+ "tenChuong": "Siêu nhân tính nhanh",
+ "dangGoc": "SỐ 5.1/7.1 — Tổng dãy cách đều bằng ghép cặp đầu - cuối",
+ "muc": {
+  "mucTieu": {
+   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
+   "dong": [
+    "Tính được tổng 1 + 2 + ... + 10 bằng cách ghép cặp ĐẦU với CUỐI.",
+    "Giải thích được vì sao mọi cặp đều bằng nhau.",
+    "Áp dụng cầu vồng ghép cặp cho các dãy cách đều khác."
+   ],
+   "goc": [
+    "Tính được tổng 1 + 2 + ... + 10 bằng cách ghép cặp ĐẦU với CUỐI.",
+    "Giải thích được vì sao mọi cặp đều bằng nhau.",
+    "Áp dụng cầu vồng ghép cặp cho các dãy cách đều khác."
+   ]
+  },
+  "chuyenMoBai": {
+   "ten": "CHUYỆN MỞ BÀI — Cậu bé khiến thầy giáo sửng sốt",
+   "dong": [
+    "Trí Long kể: \"Ngày xưa ở nước Đức có cậu bé tên Gauss. Một hôm thầy giáo muốn cả lớp ngồi im thật lâu nên ra bài: cộng tất cả các số từ 1 đến 100! Thầy vừa quay đi, Gauss đã giơ tay nộp bài — ĐÚNG đáp số. Cậu ấy không cộng lần lượt đâu, cậu ấy nhìn thấy một bí mật. Hôm nay tụi mình khám phá bí mật đó với dãy vừa sức hơn: 1 + 2 + 3 + ... + 10.\""
+   ],
+   "goc": [
+    "Trí Long kể: \"Ngày xưa ở nước Đức có cậu bé tên Gauss. Một hôm thầy giáo muốn cả lớp ngồi im thật lâu nên ra bài: cộng tất cả các số từ 1 đến 100! Thầy vừa quay đi, Gauss đã giơ tay nộp bài — ĐÚNG đáp số. Cậu ấy không cộng lần lượt đâu, cậu ấy nhìn thấy một bí mật. Hôm nay tụi mình khám phá bí mật đó với dãy vừa sức hơn: 1 + 2 + 3 + ... + 10.\""
+   ]
+  },
+  "khamPha": {
+   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Bắc cầu vồng qua dãy số",
+   "dong": [
+    "Bước 1. Đừng cộng từ trái sang! Hãy bắc cầu nối số ĐẦU với số CUỐI: 1 + 10 = 11. Rồi cặp kế tiếp: 2 + 9 = 11. Rồi 3 + 8 = 11... Ơ kìa — cặp nào cũng bằng 11!",
+    "Bước 2. Vì sao thế? Mỗi lần lùi vào trong, số bên trái tăng 1 còn số bên phải giảm 1. Một bên đưa, một bên nhận, tổng giữ nguyên như cũ!",
+    "Bước 3. Mười số bắt thành 5 cặp, mỗi cặp 11. Tổng = 11 + 11 + 11 + 11 + 11. Tính nhanh bằng tuyệt chiêu Bài 12: năm số 11 = năm số 10 và năm số 1 = 50 + 5 = 55.",
+    "MẸO THÁM TỬ: Dãy cách đều thì ĐẦU + CUỐI = như nhau ở mọi cặp. Đếm số cặp (nhớ để ý bạn đứng giữa lẻ loi nếu dãy có số lượng lẻ!), rồi cộng dồn là xong."
+   ],
+   "goc": [
+    "Bước 1. Đừng cộng từ trái sang! Hãy bắc cầu nối số ĐẦU với số CUỐI: 1 + 10 = 11. Rồi cặp kế tiếp: 2 + 9 = 11. Rồi 3 + 8 = 11... Ơ kìa — cặp nào cũng bằng 11!",
+    "Bước 2. Vì sao thế? Mỗi lần lùi vào trong, số bên trái tăng 1 còn số bên phải giảm 1 — một bên đưa, một bên nhận, tổng giữ nguyên như cũ!",
+    "Bước 3. Mười số bắt thành 5 cặp, mỗi cặp 11. Tổng = 11 + 11 + 11 + 11 + 11. Tính nhanh bằng tuyệt chiêu Bài 12: năm số 11 = năm số 10 và năm số 1 = 50 + 5 = 55.",
+    "MẸO THÁM TỬ: Dãy cách đều thì ĐẦU + CUỐI = như nhau ở mọi cặp. Đếm số cặp (nhớ để ý bạn đứng giữa lẻ loi nếu dãy có số lượng lẻ!), rồi cộng dồn là xong."
+   ]
+  },
+  "viDuMau": {
+   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
+   "dong": [
+    "Đề bài: Tính nhanh tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8.",
+    "Bài giải:",
+    "Ghép cặp đầu - cuối: (1 + 8) + (2 + 7) + (3 + 6) + (4 + 5)",
+    "= 9 + 9 + 9 + 9",
+    "= 36",
+    "Đáp số: 36.",
+    "Nói thêm của Trí Long: 8 số ghép vừa khít 4 cặp — không bạn nào lẻ loi. Khi nào dãy có số lượng LẺ thì mới có một bạn đứng giữa chờ được cộng riêng nhé!"
+   ],
+   "goc": [
+    "Đề bài: Tính nhanh tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8.",
+    "Bài giải:",
+    "Ghép cặp đầu - cuối: (1 + 8) + (2 + 7) + (3 + 6) + (4 + 5)",
+    "= 9 + 9 + 9 + 9",
+    "= 36",
+    "Đáp số: 36.",
+    "Nói thêm của Trí Long: 8 số ghép vừa khít 4 cặp — không bạn nào lẻ loi. Khi nào dãy có số lượng LẺ thì mới có một bạn đứng giữa chờ được cộng riêng nhé!"
+   ]
+  },
+  "suKemNham": {
+   "ten": "SU KEM ƠI, NHẦM RỒI!",
+   "dong": [
+    "Su Kem tính 1 + 2 + ... + 9: \"Ghép cặp nào: 1+9, 2+8, 3+7, 4+6 — bốn cặp 10, vậy tổng là 40!\"",
+    "Gợi ý 1: Dãy 1 đến 9 có mấy số — chẵn hay lẻ số lượng? Ghép 4 cặp thì mới dùng hết 8 số...",
+    "Gợi ý 2: Có một bạn số đứng chính giữa dãy không được ghép với ai. Bạn ấy là ai, và tổng đúng phải là bao nhiêu?"
+   ],
+   "goc": [
+    "Su Kem tính 1 + 2 + ... + 9: \"Ghép cặp nào: 1+9, 2+8, 3+7, 4+6 — bốn cặp 10, vậy tổng là 40!\"",
+    "Gợi ý 1: Dãy 1 đến 9 có mấy số — chẵn hay lẻ số lượng? Ghép 4 cặp thì mới dùng hết 8 số...",
+    "Gợi ý 2: Có một bạn số đứng chính giữa dãy không được ghép với ai. Bạn ấy là ai, và tổng đúng phải là bao nhiêu?"
+   ]
+  },
+  "luyenTap": {
+   "ten": "LUYỆN TẬP 3 MỨC SAO",
+   "dong": [],
+   "goc": []
+  },
+  "quiz": {
+   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
+   "dong": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):",
+    "Câu 1 (Đúng/Sai?): Trong dãy 1 đến 10, mọi cặp đầu - cuối đều có tổng bằng 11.",
+    "Câu 2 (Đúng/Sai?): Dãy 1 đến 9 ghép vừa khít thành các cặp, không thừa số nào.",
+    "Câu 3: 1 + 2 + ... + 10 = ? A. 50 B. 55 C. 60",
+    "Câu 4: Dãy 1 đến 8 có mấy cặp đầu - cuối? A. 3 B. 4 C. 8",
+    "Câu 5: Trong dãy 1 đến 9, bạn số nào đứng giữa không có cặp? A. 4 B. 5 C. 9"
+   ],
+   "goc": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):",
+    "Câu 1 (Đúng/Sai?): Trong dãy 1 đến 10, mọi cặp đầu - cuối đều có tổng bằng 11.",
+    "Câu 2 (Đúng/Sai?): Dãy 1 đến 9 ghép vừa khít thành các cặp, không thừa số nào.",
+    "Câu 3: 1 + 2 + ... + 10 = ? A. 50 B. 55 C. 60",
+    "Câu 4: Dãy 1 đến 8 có mấy cặp đầu - cuối? A. 3 B. 4 C. 8",
+    "Câu 5: Trong dãy 1 đến 9, bạn số nào đứng giữa không có cặp? A. 4 B. 5 C. 9"
+   ]
+  },
+  "gocBoMe": {
+   "ten": "GÓC BỐ MẸ",
+   "dong": [
+    "Kể trọn câu chuyện Gauss cho con nghe trước giờ ngủ — trẻ nhớ tuyệt chiêu qua câu chuyện bền hơn qua bài tập gấp nhiều lần.",
+    "Xếp 10 lá bài (1-10) thành hàng, cho con lật cặp đầu - cuối và tự cộng — khoảnh khắc \"cặp nào cũng bằng 11!\" phải do chính con thốt lên.",
+    "NÊN: cho con thử dãy lẻ số lượng (1-9) để tự vấp bạn đứng giữa. KHÔNG NÊN: dạy công thức (đầu + cuối) × số số hạng : 2 — đó là kho báu của lớp 3-4.",
+    "CHƯƠNG 4 · SIÊU NHÂN TÍNH NHANH"
+   ]
+  }
+ },
+ "cau": [
+  {
+   "id": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "luyenTap",
+   "text": "Tính các cặp: 1 + 10; 2 + 9; 3 + 8; 4 + 7; 5 + 6. Con nhận xét gì?",
+   "loiChua": "cặp nào cũng bằng 11!",
+   "tuLuan": true
+  },
+  {
+   "id": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "luyenTap",
+   "text": "Dãy 1, 2, 3, ..., 10 ghép được mấy cặp đầu - cuối?",
+   "loiChua": "5 cặp",
+   "tuLuan": true
+  },
+  {
+   "id": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "luyenTap",
+   "text": "Tính nhanh: 1 + 2 + 3 + 4 + 5 + 6. (Ghép 3 cặp nhé.)",
+   "loiChua": "(1 + 6) + (2 + 5) + (3 + 4) = 7 × 3 lần = 7 + 7 + 7 = 21",
+   "tuLuan": true
+  },
+  {
+   "id": "C4",
+   "so": 4,
+   "muc": 2,
+   "phan": "luyenTap",
+   "text": "Tính nhanh: 1 + 2 + 3 + ... + 10.",
+   "loiChua": "5 cặp 11 → 55",
+   "tuLuan": true
+  },
+  {
+   "id": "C5",
+   "so": 5,
+   "muc": 2,
+   "phan": "luyenTap",
+   "text": "Tính nhanh: 3 + 4 + 5 + 6 + 7 + 8. (Dãy không bắt đầu từ 1 vẫn bắc cầu vồng được!)",
+   "loiChua": "(3 + 8) + (4 + 7) + (5 + 6) = 11 + 11 + 11 = 33",
+   "tuLuan": true
+  },
+  {
+   "id": "C6",
+   "so": 6,
+   "muc": 2,
+   "phan": "luyenTap",
+   "text": "Tính nhanh: 2 + 4 + 6 + 8 + 10. (Dãy nhảy cóc 2 — cầu vồng vẫn hoạt động, và có một bạn đứng giữa đấy!)",
+   "loiChua": "(2 + 10) + (4 + 8) + 6 = 12 + 12 + 6 = 30 (bạn 6 đứng giữa)",
+   "tuLuan": true
+  },
+  {
+   "id": "C7",
+   "so": 7,
+   "muc": 3,
+   "phan": "luyenTap",
+   "text": "Tính nhanh: 1 + 2 + 3 + ... + 9. (Bài của Su Kem — lần này con làm chuẩn giúp cậu ấy!)",
+   "loiChua": "(1 + 9) + (2 + 8) + (3 + 7) + (4 + 6) + 5 = 10 × 4 cặp + 5 = 45 — Su Kem quên đúng bạn số 5!",
+   "tuLuan": true
+  },
+  {
+   "id": "C8",
+   "so": 8,
+   "muc": 3,
+   "phan": "luyenTap",
+   "text": "Thử thách Gauss thật sự: 2 + 4 + 6 + ... + 18 + 20. (Mười số chẵn đầu tiên — ghép cặp đầu cuối xem mỗi cặp bằng bao nhiêu, có mấy cặp?)",
+   "loiChua": "(2 + 20) + (4 + 18) + (6 + 16) + (8 + 14) + (10 + 12) = 22 + 22 + 22 + 22 + 22 = 110 — con vừa làm bài của Gauss phiên bản số chẵn đấy!",
+   "tuLuan": true
+  }
+ ]
+}

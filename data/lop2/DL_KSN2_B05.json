@@ -1,0 +1,265 @@
+{
+ "id": "DL:KSN2.B05",
+ "quyen": "lop2",
+ "so": 5,
+ "ten": "ĐI TÌM CÁC SỐ CÓ TỔNG BÍ MẬT",
+ "chuong": 1,
+ "tenChuong": "Vương quốc Số",
+ "dangGoc": "SỐ 3.2 — Lập số theo điều kiện tổng chữ số (rèn liệt kê không sót - không trùng)",
+ "muc": {
+  "mucTieu": {
+   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
+   "dong": [
+    "Tìm được TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng một số cho trước.",
+    "Biết liệt kê theo thứ tự (cho hàng chục tăng dần) để không sót, không trùng.",
+    "Giải thích được khi nào thì dừng liệt kê."
+   ],
+   "goc": [
+    "Tìm được TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng một số cho trước.",
+    "Biết liệt kê theo thứ tự (cho hàng chục tăng dần) để không sót, không trùng.",
+    "Giải thích được khi nào thì dừng liệt kê."
+   ]
+  },
+  "chuyenMoBai": {
+   "ten": "CHUYỆN MỞ BÀI — Chiếc cân của người gác kho báu",
+   "dong": [
+    "Người gác kho báu đưa ra chiếc cân kỳ lạ: \"Mật mã kho báu là MỘT SỐ CÓ HAI CHỮ SỐ, đem hai chữ số của nó đặt lên cân thì thăng bằng với quả cân số 5. Nhưng ta sẽ chỉ mở kho nếu các ngươi tìm được TẤT CẢ các số như vậy. Thiếu một số thôi cũng không được!\""
+   ],
+   "goc": [
+    "Người gác kho báu đưa ra chiếc cân kỳ lạ: \"Mật mã kho báu là MỘT SỐ CÓ HAI CHỮ SỐ, đem hai chữ số của nó đặt lên cân thì thăng bằng với quả cân số 5. Nhưng ta sẽ chỉ mở kho nếu các ngươi tìm được TẤT CẢ các số như vậy — thiếu một số thôi cũng không được!\""
+   ]
+  },
+  "khamPha": {
+   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Liệt kê kiểu thám tử",
+   "dong": [
+    "Bước 1. Su Kem hét toáng: \"23! À còn 41! Ơ hình như 32 nữa...\" — kể lộn xộn thế rất dễ sót. Trí Long có cách gọn hơn: cho hàng CHỤC tăng dần từng nấc một, hàng đơn vị sẽ tự động giảm theo.",
+    "Bước 2. Vì sao bắt đầu từ chục = 1 mà không phải chục = 0? Vì chục = 0 thì đâu còn là số có 2 chữ số (nhớ luật số 0 nhút nhát ở Bài 4 chứ!).",
+    "Bước 3. Vì sao dừng ở chục = 5? Vì nếu chục = 6 thì đơn vị phải bằng 5 − 6... không có số nào như vậy cả! Vậy đáp án đủ là: 14, 23, 32, 41, 50 — đúng 5 số.",
+    "MẸO THÁM TỬ: \"Tìm TẤT CẢ\" là lệnh phải đi tuần tra CÓ THỨ TỰ: chục đi từ bé đến lớn, mỗi nấc hỏi \"đơn vị phải là mấy?\". Hết đường thì dừng — và phải nói được VÌ SAO dừng!"
+   ],
+   "goc": [
+    "Bước 1. Su Kem hét toáng: \"23! À còn 41! Ơ hình như 32 nữa...\" — kể lộn xộn thế rất dễ sót. Trí Long có cách gọn hơn: cho hàng CHỤC tăng dần từng nấc một, hàng đơn vị sẽ tự động giảm theo.",
+    "Bước 2. Vì sao bắt đầu từ chục = 1 mà không phải chục = 0? Vì chục = 0 thì đâu còn là số có 2 chữ số (nhớ luật số 0 nhút nhát ở Bài 4 chứ!).",
+    "Bước 3. Vì sao dừng ở chục = 5? Vì nếu chục = 6 thì đơn vị phải bằng 5 − 6... không có số nào như vậy cả! Vậy đáp án đủ là: 14, 23, 32, 41, 50 — đúng 5 số.",
+    "MẸO THÁM TỬ: \"Tìm TẤT CẢ\" là lệnh phải đi tuần tra CÓ THỨ TỰ: chục đi từ bé đến lớn, mỗi nấc hỏi \"đơn vị phải là mấy?\". Hết đường thì dừng — và phải nói được VÌ SAO dừng!"
+   ]
+  },
+  "viDuMau": {
+   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
+   "dong": [
+    "Đề bài: Tìm tất cả các số có 2 chữ số mà tổng hai chữ số bằng 4.",
+    "Bài giải:",
+    "Chữ số hàng chục là 1 thì chữ số hàng đơn vị là: 4 − 1 = 3 → số 13.",
+    "Chữ số hàng chục là 2 thì chữ số hàng đơn vị là: 4 − 2 = 2 → số 22.",
+    "Chữ số hàng chục là 3 thì chữ số hàng đơn vị là: 4 − 3 = 1 → số 31.",
+    "Chữ số hàng chục là 4 thì chữ số hàng đơn vị là: 4 − 4 = 0 → số 40.",
+    "Chữ số hàng chục không thể là 5 (vì 4 − 5 không có).",
+    "Đáp số: có 4 số là 13; 22; 31; 40."
+   ],
+   "goc": [
+    "Đề bài: Tìm tất cả các số có 2 chữ số mà tổng hai chữ số bằng 4.",
+    "Bài giải:",
+    "Chữ số hàng chục là 1 thì chữ số hàng đơn vị là: 4 − 1 = 3 → số 13.",
+    "Chữ số hàng chục là 2 thì chữ số hàng đơn vị là: 4 − 2 = 2 → số 22.",
+    "Chữ số hàng chục là 3 thì chữ số hàng đơn vị là: 4 − 3 = 1 → số 31.",
+    "Chữ số hàng chục là 4 thì chữ số hàng đơn vị là: 4 − 4 = 0 → số 40.",
+    "Chữ số hàng chục không thể là 5 (vì 4 − 5 không có).",
+    "Đáp số: có 4 số là 13; 22; 31; 40."
+   ]
+  },
+  "suKemNham": {
+   "ten": "SU KEM ƠI, NHẦM RỒI!",
+   "dong": [
+    "Với tổng bằng 5, Su Kem nộp bài: \"05, 14, 23, 32, 41. Đủ 5 số, chuẩn không cần chỉnh!\"",
+    "Gợi ý 1: \"05\" có phải số có 2 chữ số không? (Nhớ luật của thẻ 0!)",
+    "Gợi ý 2: Su Kem liệt kê đến chục = 4 rồi dừng — cậu ấy sót mất số nào? Kiểm tra bằng cách đi tiếp một nấc chục nữa xem."
+   ],
+   "goc": [
+    "Với tổng bằng 5, Su Kem nộp bài: \"05, 14, 23, 32, 41 — đủ 5 số, chuẩn không cần chỉnh!\"",
+    "Gợi ý 1: \"05\" có phải số có 2 chữ số không? (Nhớ luật của thẻ 0!)",
+    "Gợi ý 2: Su Kem liệt kê đến chục = 4 rồi dừng — cậu ấy sót mất số nào? Kiểm tra bằng cách đi tiếp một nấc chục nữa xem."
+   ]
+  },
+  "luyenTap": {
+   "ten": "LUYỆN TẬP 3 MỨC SAO",
+   "dong": [],
+   "goc": []
+  },
+  "quiz": {
+   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
+   "dong": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):",
+    "Câu 1 (Đúng/Sai?): Số 32 có tổng hai chữ số bằng 5.",
+    "Câu 2 (Đúng/Sai?): \"05\" là một số có 2 chữ số.",
+    "Câu 3: Khi liệt kê các số có tổng chữ số bằng 5, ta bắt đầu từ chữ số hàng chục bằng: A. 0 B. 1 C. 5",
+    "Câu 4: Số nào dưới đây có tổng hai chữ số bằng 6? A. 51 B. 62 C. 46",
+    "Câu 5: Có bao nhiêu số có 2 chữ số mà tổng hai chữ số bằng 5? A. 4 số B. 5 số C. 6 số"
+   ],
+   "goc": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):",
+    "Câu 1 (Đúng/Sai?): Số 32 có tổng hai chữ số bằng 5.",
+    "Câu 2 (Đúng/Sai?): \"05\" là một số có 2 chữ số.",
+    "Câu 3: Khi liệt kê các số có tổng chữ số bằng 5, ta bắt đầu từ chữ số hàng chục bằng: A. 0 B. 1 C. 5",
+    "Câu 4: Số nào dưới đây có tổng hai chữ số bằng 6? A. 51 B. 62 C. 46",
+    "Câu 5: Có bao nhiêu số có 2 chữ số mà tổng hai chữ số bằng 5? A. 4 số B. 5 số C. 6 số"
+   ]
+  },
+  "gocBoMe": {
+   "ten": "GÓC BỐ MẸ",
+   "dong": [
+    "Chơi \"mật mã kho báu\" bằng bộ thẻ số: bố mẹ nêu tổng, con xếp các cặp thẻ; sau đó đổi vai cho con ra đề.",
+    "Khi con liệt kê, đừng vội xác nhận đủ hay thiếu — hãy hỏi: \"Làm sao con CHẮC là không sót?\". Câu trả lời \"vì con đi từ chục 1 đến hết\" quý hơn cả đáp số.",
+    "NÊN: khen cách liệt kê có thứ tự dù kết quả thiếu. KHÔNG NÊN: chấp nhận kiểu kể lộn xộn dù tình cờ đủ — thói quen tuần tra có thứ tự chính là thứ bài này muốn gieo.",
+    "CHƯƠNG 1 · VƯƠNG QUỐC SỐ",
+    "ÔN TẬP 1 · VƯỢT CỔNG VƯƠNG QUỐC SỐ",
+    "Bài kiểm tra tổng hợp Bài 1-5 · Đạt 8/12 câu: cổng thành mở, nhận sticker chìa khóa!",
+    "Luật chơi: 12 câu dưới đây trộn lẫn cả 5 bài — không xếp theo thứ tự đâu nhé! Con làm lần lượt, câu nào bí cứ đánh dấu ✿ rồi quay lại sau. Làm xong tự chấm bằng đáp án, rồi dùng BẢNG TỰ SOI để biết mình cần ôn lại bài nào.",
+    "★ PHẦN 1 — KHỞI ĐỘNG (4 câu)",
+    "Câu 1. Số 573 có mấy trăm, mấy chục, mấy đơn vị? Tách số đó thành tổng.",
+    "Câu 2. Viết thêm một chữ số 0 vào bên phải số 46 ta được số nào? Số mới gấp số cũ mấy lần?",
+    "Câu 3. Đổi chỗ hai chữ số của số 29 ta được số nào? Số mới lớn hơn hay bé hơn số cũ?",
+    "Câu 4. Từ ba thẻ 3, 9, 6 hãy lập số lớn nhất có 3 chữ số.",
+    "★★ PHẦN 2 — VẬN DỤNG (5 câu)",
+    "Câu 5. Điền dấu >, <, =: 438 ▢ 483; 560 ▢ 506; 707 ▢ 707.",
+    "Câu 6. Một cửa hàng ghi nhầm giá từ 9 nghìn thành 90 nghìn. Giá bị viết đắt lên bao nhiêu nghìn đồng?",
+    "Câu 7. Số 35 đổi chỗ hai chữ số được số mới. Tính số mới hơn số cũ bao nhiêu đơn vị.",
+    "Câu 8. Từ ba thẻ 8, 0, 5: lập số lớn nhất và số bé nhất có 3 chữ số.",
+    "Câu 9. Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 4.",
+    "★★★ PHẦN 3 — TRÙM CUỐI (3 câu)",
+    "Câu 10. Tớ là số có 3 chữ số: phòng trăm là 6, tổng ba chữ số của tớ bằng 8, và phòng chục lớn hơn phòng đơn vị. Tớ là số nào? (Có thể có nhiều đáp án — tìm hết nhé!)",
+    "Câu 11. Một số có 2 chữ số, đổi chỗ hai chữ số thì được số mới hơn số cũ 45 đơn vị. Biết tổng hai chữ số của nó bằng 9. Tìm số đó. (Mẹo: kết hợp Bài 3 và Bài 5 — liệt kê các số tổng 9 rồi thử đổi chỗ!)",
+    "Câu 12. Từ ba thẻ 5, 0, 5: con lập được những số nào có 3 chữ số? Số lớn nhất trừ số bé nhất bằng bao nhiêu?",
+    "✦ BẢNG TỰ SOI — SAI CÂU NÀO, ÔN BÀI ĐÓ",
+    "Câu 1, 5, 10 → thuộc Bài 1 (Ngôi nhà Trăm - Chục - Đơn vị).",
+    "Câu 2, 6 → thuộc Bài 2 (Chú Số 0 diệu kỳ).",
+    "Câu 3, 7, 11 → thuộc Bài 3 (Đổi chỗ chữ số).",
+    "Câu 4, 8, 12 → thuộc Bài 4 (Xếp thẻ số).",
+    "Câu 9, 10, 11 → thuộc Bài 5 (Tổng bí mật).",
+    "Đạt 8/12 câu trở lên: dán sticker CHÌA KHÓA vào Bảng sưu tập — cổng thành mở! Chưa đạt: ôn lại theo bảng trên rồi làm ĐỀ B bên dưới.",
+    "✦ ĐỀ B — DÀNH CHO LƯỢT VƯỢT CỔNG THỨ HAI",
+    "B1. Tách số 692 thành tổng. B2. Viết thêm số 0 vào bên phải 73 — số mới gấp mấy lần? B3. Đổi chỗ chữ số của 48 — số mới lớn hơn hay bé hơn? B4. Lập số lớn nhất từ 2, 7, 4.",
+    "B5. Điền dấu: 356 ▢ 365; 810 ▢ 801. B6. Giá 7 nghìn viết nhầm thành 70 nghìn — đắt lên bao nhiêu? B7. Số 24 đổi chỗ — số mới hơn số cũ bao nhiêu? B8. Lập số lớn nhất và bé nhất từ 6, 0, 9. B9. Tìm tất cả số có 2 chữ số có tổng chữ số bằng 6.",
+    "B10. Tớ có 3 chữ số: phòng trăm 5, tổng ba chữ số bằng 7, phòng chục bé hơn phòng đơn vị. Tớ là ai (tìm hết)? B11. Số có 2 chữ số, tổng chữ số bằng 7, đổi chỗ thì số mới hơn số cũ 27. Tìm số đó. B12. Từ thẻ 8, 0, 8: lập các số có 3 chữ số; tính hiệu số lớn nhất và bé nhất.",
+    "CHƯƠNG 1 · VƯƠNG QUỐC SỐ",
+    "ĐÁP ÁN CHI TIẾT — GIỌNG TRÍ LONG",
+    "Con hãy tự làm hết sức trước rồi mới mở trang này nhé!",
+    "B1 ĐÁP ÁN BÀI 1 — Ngôi nhà Trăm - Chục - Đơn vị",
+    "Luyện tập — C1: 3 trăm, 6 chục, 8 đơn vị. C2: 452 = 400 + 50 + 2; 703 = 700 + 3; 290 = 200 + 90. C3: trong 462, chữ số 6 ở phòng chục → đáng giá 60; trong 620 nó ở phòng trăm → đáng giá 600. C4: 814.",
+    "C5: 362; 509; 740. C6: 352 > 325 (phòng trăm hòa, phòng chục 5 > 2); 460 > 406; 299 < 302 (phòng trăm 2 < 3 — hai số 9 không cứu được!). C7: 100 = 100; 999 = 900 + 90 + 9.",
+    "C8: phòng trăm 4, phòng chục 4 + 2 = 6, phòng đơn vị bé nhất là 0 → số 460. C9: 555 = 500 + 50 + 5; hai \"anh em sinh ba\" khác ví dụ 111, 222 (hoặc 333... 999 đều đúng).",
+    "Quiz: C1 ĐÚNG · C2 SAI (507 = 500 + 7) · C3 B · C4 A · C5 A.",
+    "B2 ĐÁP ÁN BÀI 2 — Chú Số 0 diệu kỳ",
+    "Luyện tập — C1: 70; 90; 250; 600. C2: 8; 14; 50. C3: gấp 10 lần. C4: 4 chục = 40; 40 gồm 4 chục.",
+    "C5: 80 − 8 = 72 (nghìn đồng). C6: 350 − 35 = 315 (đơn vị). C7: số đó là 320; hơn 32 là 320 − 32 = 288.",
+    "C8: phần hơn = 9 lần số bé; 9 × 5 = 45 → số bé là 5, số lớn là 50. Thử lại: 50 = 5 × 10 và 50 − 5 = 45 ✓. C9: chỉ 30 → 3 và 330 → 33 là giảm đúng 10 lần (xóa 0 tận cùng); 303 xóa 0 thành 33 — không phải giảm 10 lần vì số 0 nằm ở giữa, nó đang giữ chỗ phòng chục.",
+    "C10: 32 − 3 = 29 — số mới hơn số cũ 29 đơn vị, KHÔNG gấp đúng 10 lần (10 lần của 3 là 30). Giải thích: viết thêm chữ số nào vào bên phải thì số 3 cũng nhảy sang phòng chục thành 3 chục = 30; nhưng thêm chữ số 2 là bỏ thêm 2 hạt vào phòng đơn vị → 30 + 2 = 32. Chỉ khi thêm số 0 — không thêm hạt nào cả — số mới đúng tròn 30, tức gấp đúng 10 lần. Đó là phép thuật riêng của chú Số 0!",
+    "Quiz: C1 ĐÚNG · C2 SAI (chỉ số 0 tận cùng) · C3 B · C4 B · C5 B.",
+    "B3 ĐÁP ÁN BÀI 3 — Trò chơi đổi chỗ chữ số",
+    "Luyện tập — C1: 41; 72; 05 không phải số có 2 chữ số → số 50 đổi chỗ không tạo được số 2 chữ số mới hợp lệ (bẫy nhỏ để con nhớ luật số 0!). C2: 63 > 36 (6 chục > 3 chục); 81 > 18. C3: 54 > 45 → số mới lớn hơn.",
+    "C4: 62 − 26 = 36. C5: 71 → 17; kém 71 − 17 = 54. C6: 31 − 13 = 18; 42 − 24 = 18; 75 − 57 = 18 — cả ba đều bằng 18, nằm trong bảng nhân 9 (9 × 2).",
+    "C7: thử 14 → 41: 41 − 14 = 27 ✓. (25 → 52 và 36 → 63... cũng cho hiệu 27 — mọi số mà đơn vị hơn chục đúng 3.) C8: đổi chỗ không đổi → hai chữ số giống nhau; tổng bằng 8 → 4 + 4 → số 44.",
+    "Quiz: C1 ĐÚNG · C2 ĐÚNG · C3 B · C4 C · C5 A.",
+    "B4 ĐÁP ÁN BÀI 4 — Xếp thẻ số",
+    "Luyện tập — C1: 83 và 38. C2: 641. C3: 146. C4: lớn nhất 520; bé nhất 205 (số 0 đứng thứ hai). C5: lớn nhất 773; bé nhất 377. C6: 852 − 258 = 594.",
+    "C7: các số lập được từ 4, 4, 9: 449; 494; 944 — đúng 3 số (vì hai thẻ 4 giống nhau nên nhiều cách xếp cho ra cùng một số). C8: ba thẻ là 9, 7, 6; số bé nhất lập được: 679.",
+    "Quiz: C1 ĐÚNG · C2 SAI (037 chỉ là 37) · C3 A · C4 B · C5 B.",
+    "B5 ĐÁP ÁN BÀI 5 — Tổng bí mật",
+    "Luyện tập — C1: 7; 7; 7; 9. C2: 6 + 1 = 7; đổi chỗ thành 16, tổng vẫn là 7 (đổi chỗ không đổi tổng!). C3: ví dụ 12 và 21 (hoặc 30).",
+    "C4 (tổng 3): 12; 21; 30 — dừng vì chục = 4 thì đơn vị phải là 3 − 4, không có. C5 (tổng 6): 15; 24; 33; 42; 51; 60 — đủ 6 số. C6 (tổng 2): 11; 20 — có 2 số.",
+    "C7: quy luật đẹp — tổng bằng bao nhiêu thì có bấy nhiêu số (với tổng từ 1 đến 9): tổng 7 → 7 số (16, 25, 34, 43, 52, 61, 70); tổng 9 → 9 số. C8: trong 14, 23, 32, 41, 50 chọn số có chục > đơn vị: 32, 41, 50 — có 3 số.",
+    "Quiz: C1 ĐÚNG · C2 SAI · C3 B · C4 A (5 + 1 = 6) · C5 B (5 số).",
+    "Ô1 ĐÁP ÁN ÔN TẬP 1 — Vượt cổng (Đề chính)",
+    "C1: 5 trăm, 7 chục, 3 đơn vị; 573 = 500 + 70 + 3. C2: 460; gấp 10 lần. C3: 92; lớn hơn (9 chục > 2 chục). C4: 963.",
+    "C5: 438 < 483; 560 > 506; 707 = 707. C6: 90 − 9 = 81 (nghìn đồng). C7: 53 − 35 = 18 (đơn vị). C8: lớn nhất 850; bé nhất 508. C9: 13; 22; 31; 40.",
+    "C10: tổng 8, trăm là 6 → chục + đơn vị = 2, chục > đơn vị → chục 2 - đơn vị 0 → 620. (Cặp 1-1 bị loại vì chục không lớn hơn đơn vị.) Đáp án duy nhất: 620.",
+    "C11: các số tổng 9: 18, 27, 36, 45 (và các số đảo của chúng). Thử đổi chỗ: 27 → 72, hơn 72 − 27 = 45 ✓. Vậy số cần tìm là 27.",
+    "C12: từ 5, 0, 5 lập được 505 và 550 (số 0 không đứng đầu). Hiệu: 550 − 505 = 45.",
+    "Ô1B ĐÁP ÁN ĐỀ B",
+    "B1: 692 = 600 + 90 + 2. B2: 730, gấp 10 lần. B3: 84 > 48 → lớn hơn. B4: 742. B5: 356 < 365; 810 > 801. B6: 70 − 7 = 63 (nghìn đồng). B7: 42 − 24 = 18. B8: lớn nhất 960; bé nhất 609. B9: 15; 24; 33; 42; 51; 60.",
+    "B10: trăm 5 → chục + đơn vị = 2, chục < đơn vị → chục 0 - đơn vị 2 → 502. B11: số tổng 7, đổi chỗ hơn 27 → thử 25 → 52: 52 − 25 = 27 ✓ → số 25. B12: 808 và 880; hiệu 880 − 808 = 72.",
+    "CHÚC MỪNG CON ĐÃ VƯỢT QUA CHƯƠNG 1! Cánh cổng Vương quốc Số đã mở. Phía trước là vùng đất của những phép đếm thần kỳ — hẹn con ở Chương 2: BÉ LÀ VUA ĐẾM!",
+    "TOÁN TƯ DUY LỚP 2 · CÙNG TRÍ LONG KHÁM PHÁ VƯƠNG QUỐC SỐ",
+    "CHƯƠNG 2",
+    "BÉ LÀ VUA ĐẾM",
+    "Bài 6 · Đếm số trong khoảng - đếm cách 2, cách 5 Bài 7 · Truy tìm chữ số 5 trốn ở đâu",
+    "Bài 8 · Đếm chữ số đánh số trang truyện Ôn tập 2 · Cuộc thi Vua Đếm (tranh công viên + Bảng tự soi + Đề B)",
+    "Cổng thành đã mở! Trí Long và Su Kem bước vào vùng đất mới và nhận được món quà từ nhà vua: chiếc \"kính lúp đếm thần kỳ\". Nhưng kính chỉ phát huy phép thuật với ai đếm ĐÚNG - đếm NHANH - đếm KHÔNG SÓT. Ba thử thách đang chờ con phía trước!",
+    "CHƯƠNG 2 · BÉ LÀ VUA ĐẾM"
+   ]
+  }
+ },
+ "cau": [
+  {
+   "id": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "luyenTap",
+   "text": "Tính tổng hai chữ số của mỗi số: 25; 43; 70; 36.",
+   "loiChua": "5 trăm, 7 chục, 3 đơn vị; 573 = 500 + 70 + 3",
+   "tuLuan": true
+  },
+  {
+   "id": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "luyenTap",
+   "text": "Số 61 có tổng hai chữ số bằng bao nhiêu? Đổi chỗ hai chữ số của nó thì tổng có thay đổi không?",
+   "loiChua": "460; gấp 10 lần",
+   "tuLuan": true
+  },
+  {
+   "id": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "luyenTap",
+   "text": "Tìm 2 số có 2 chữ số mà tổng hai chữ số bằng 3.",
+   "loiChua": "92; lớn hơn (9 chục > 2 chục)",
+   "tuLuan": true
+  },
+  {
+   "id": "C4",
+   "so": 4,
+   "muc": 2,
+   "phan": "luyenTap",
+   "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 3 (liệt kê theo thứ tự và nói vì sao dừng).",
+   "loiChua": "963",
+   "tuLuan": true
+  },
+  {
+   "id": "C5",
+   "so": 5,
+   "muc": 2,
+   "phan": "luyenTap",
+   "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 6.",
+   "loiChua": "438 < 483; 560 > 506; 707 = 707",
+   "tuLuan": true
+  },
+  {
+   "id": "C6",
+   "so": 6,
+   "muc": 2,
+   "phan": "luyenTap",
+   "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 2. Có mấy số?",
+   "loiChua": "90 − 9 = 81 (nghìn đồng)",
+   "tuLuan": true
+  },
+  {
+   "id": "C7",
+   "so": 7,
+   "muc": 3,
+   "phan": "luyenTap",
+   "text": "Không cần liệt kê hết, con đoán xem: tổng bằng 7 thì có mấy số? Tổng bằng 9 thì có mấy số? (Con thử tìm quy luật giữa \"tổng\" và \"số lượng số\" — rồi liệt kê để kiểm chứng dự đoán!)",
+   "loiChua": "53 − 35 = 18 (đơn vị)",
+   "tuLuan": true
+  },
+  {
+   "id": "C8",
+   "so": 8,
+   "muc": 3,
+   "phan": "luyenTap",
+   "text": "Tìm số có 2 chữ số mà tổng hai chữ số bằng 5 VÀ chữ số hàng chục lớn hơn chữ số hàng đơn vị. Có mấy số như vậy?",
+   "loiChua": "lớn nhất 850; bé nhất 508",
+   "tuLuan": true
+  }
+ ]
+}

@@ -106,6 +106,8 @@ if (existsSync('dist/content/lessons')) {
     hinh.filter((f) => f.startsWith('KSN5Q2_')).length === 53);
   t('bản build có đủ 21 khối Quyển 2',
     readdirSync('dist/content/quyen2').filter((f) => f.startsWith('DR_')).length === 21);
+  t('bản build có đủ 33 bài lớp 2',
+    readdirSync('dist/content/lop2').filter((f) => f.startsWith('DL_KSN2_')).length === 33);
 }
 const micro = JSON.parse(readFileSync('public/content/index_micro.json', 'utf8'));
 t('chỉ mục có tên bài và mục tiêu cho con',

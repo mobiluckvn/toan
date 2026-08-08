@@ -14,7 +14,7 @@ const CHAPTER_NAMES = {
 const DOT = { passed: 'bg-teal', tried: 'bg-gold', open: 'bg-navy-light', locked: 'bg-line' };
 const WORD = { passed: 'đã đạt', tried: 'chưa qua câu bẫy', open: 'học được ngay', locked: 'chưa mở' };
 
-export default function Home({ onOpenMuaGiai, progress, onOpenMicro, onOpenExam, onOpenReport, onSetMode, account = {}, mastery = {}, cards = [] }) {
+export default function Home({ onOpenMuaGiai, onDoiChuongTrinh, progress, onOpenMicro, onOpenExam, onOpenReport, onSetMode, account = {}, mastery = {}, cards = [] }) {
   const list = allMicroIds();
   const [index, setIndex] = useState({});
   const [why, setWhy] = useState(null);          // bấm vào bài khoá → nói rõ vì sao
@@ -41,7 +41,13 @@ export default function Home({ onOpenMuaGiai, progress, onOpenMicro, onOpenExam,
       <header className="bg-navy px-4 py-4 text-white">
         <div className="flex items-start gap-2">
           <div className="flex-1">
-            <div className="text-[11px] font-extrabold tracking-widest text-gold">MOBILUCK · KỸ SƯ NHÍ</div>
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-extrabold tracking-widest text-gold">MOBILUCK · KỸ SƯ NHÍ</span>
+              <button onClick={onDoiChuongTrinh}
+                      className="rounded-full bg-white/15 px-2 py-0.5 text-[10.5px] font-bold text-white">
+                lớp 5 · đổi
+              </button>
+            </div>
             <h1 className="mt-1 text-[20px] font-bold">Toán Tư Duy lớp 5 — Quyển 1</h1>
           </div>
           {/* Sổ học là chỗ của bố mẹ — ghi rõ để con không lạc vào rồi bối rối */}
