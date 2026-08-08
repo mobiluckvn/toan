@@ -96,7 +96,16 @@ head('Nội dung');
 t('bản build có sẵn', existsSync('dist/index.html'), 'chạy: npm run build');
 if (existsSync('dist/content/lessons')) {
   t('bản build có đủ 168 bài', readdirSync('dist/content/lessons').length === 168);
-  t('bản build có đủ 672 hình', readdirSync('dist/content/figures').length === 672);
+  /* Hai quyển dùng chung thư mục hình: 672 hình Quyển 1 + 53 sơ đồ Quyển 2.
+     Đếm riêng theo tiền tố để thiếu bên nào cũng lộ ra, thay vì chốt một con số
+     tổng rồi mỗi lần thêm hình lại phải sửa. */
+  const hinh = readdirSync('dist/content/figures');
+  t('bản build có đủ 672 hình Quyển 1',
+    hinh.filter((f) => f.startsWith('KSN5Q1_')).length === 672);
+  t('bản build có đủ 53 sơ đồ Quyển 2',
+    hinh.filter((f) => f.startsWith('KSN5Q2_')).length === 53);
+  t('bản build có đủ 21 khối Quyển 2',
+    readdirSync('dist/content/quyen2').filter((f) => f.startsWith('DR_')).length === 21);
 }
 const micro = JSON.parse(readFileSync('public/content/index_micro.json', 'utf8'));
 t('chỉ mục có tên bài và mục tiêu cho con',

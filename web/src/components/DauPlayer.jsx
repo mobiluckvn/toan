@@ -5,6 +5,7 @@ import {
 import { checkAnswer, answerFields } from '../lib/flow.js';
 import AnswerFields from './AnswerFields.jsx';
 import CuonThem from './CuonThem.jsx';
+import Figure from './Figure.jsx';
 
 /**
  * VÒNG ĐẤU (Quyển 2) — bốn màn, khác hẳn phòng học Quyển 1.
@@ -19,6 +20,13 @@ import CuonThem from './CuonThem.jsx';
  */
 
 const MAN = ['Làm đề', 'Chữa đề', 'Phiên tòa', 'Nhật ký'];
+
+/** Sơ đồ chiến thuật của màn đang xem — sách chèn chúng đúng chỗ nào thì hiện chỗ ấy */
+const SoDo = ({ khoi, man }) => {
+  const ds = (khoi.soDo || []).filter((s) => (s.man || 1) === man);
+  if (!ds.length) return null;
+  return ds.map((s) => <Figure key={s.id} fig={s} />);
+};
 
 function DongHo({ batDau, phut, onHet }) {
   const [con, setCon] = useState(() => conLai(batDau, phut));
@@ -86,6 +94,7 @@ export default function DauPlayer({ khoi, onExit, onXong, onMoMicro }) {
             <Dong nhan="Số câu" giaTri={`${cau.length} câu`} />
             {khoi.bay?.length > 0 && <Dong nhan="Bẫy đã gài" giaTri={`${khoi.bay.length} bẫy`} />}
           </div>
+          <SoDo khoi={khoi} man={1} />
           <div className="warn-box mt-3 text-[14.5px]">
             Bấm đồng hồ là <b>không xem được đáp án</b> cho tới khi nộp bài. Con chạy
             nghi thức 90 giây trước khi giải câu đầu tiên nhé.
@@ -155,6 +164,7 @@ export default function DauPlayer({ khoi, onExit, onXong, onMoMicro }) {
             Chấm theo <b>barem</b>, không chấm theo cảm giác “mình hiểu bài mà”.
             Mỗi câu 1 điểm chia bốn mốc.
           </p>
+          <SoDo khoi={khoi} man={2} />
         </div>
         {cau.map((q) => (
           <div key={q.id} className="card">
@@ -256,6 +266,7 @@ export default function DauPlayer({ khoi, onExit, onXong, onMoMicro }) {
       </div>
 
       <div className="card">
+        <SoDo khoi={khoi} man={4} />
         <div className="kicker">ĐIỂM TRÌNH BÀY (BAREM)</div>
         <p className="text-[15px]">
           Tổng: <b>{cau.reduce((s, q) => s + diemBarem(barem[q.id]), 0).toFixed(2)}</b>/{cau.length}

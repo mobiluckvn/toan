@@ -152,7 +152,7 @@ Quyển 1 có 1 141 câu và mất phần lớn dự án. Quyển 2 có **314 c�
 - [x] **Bước 2 · Bộ rà soát** — 26 phép kiểm, bắt được cả lỗi của chính nó
 - [x] **Bước 3 · Chuẩn hoá đáp án** — 102 câu máy chấm · 212 câu tự luận
 - [x] **Bước 4 · Năng lực mới** — đồng hồ · barem 4 mốc · phiên tòa · chấm kép (44 phép kiểm)
-- [ ] **Bước 5 · 71 sơ đồ** — CHƯA LÀM, xem mục 8
+- [x] **Bước 5 · sơ đồ** — 53 sơ đồ vẽ bằng FigForge, gắn vào 21 khối
 - [x] **Bước 6 · Nối vào phần mềm** — đã kiểm end-to-end trên trình duyệt
 
 ### Kết quả đo được (khác kế hoạch ban đầu, ghi đúng số thật)
@@ -169,14 +169,24 @@ viết đủ "34 và 50" sẽ bị chấm sai. Đã loại hẳn dạng ấy. Th
 
 ---
 
-## 8 · Việc còn lại: 71 sơ đồ (Bước 5)
+## 8 · Bước 5 — sơ đồ (đã xong)
 
-Chưa làm, và tôi nói rõ vì sao chưa: 48 ảnh trong sách là **sơ đồ chiến thuật**
-(bảng bốn kiểu đề, quy trình bốn nhịp…), không phải hình toán cần để giải bài. Con
-vẫn thi đấu trọn vẹn 21 khối mà không có chúng.
+Hoá ra nhẹ hơn dự tính rất nhiều. Sợ phải "mô tả tay 71 sơ đồ", nhưng khi mở cấu
+trúc `.docx` ra thì **tất cả đều cùng một hình dạng**: một bảng hai cột, ô đầu ghi
+"TÌNH HUỐNG", ô bên cạnh là tiêu đề, các hàng sau là cặp (nhãn · lời giải thích).
 
-Vẽ lại 71 sơ đồ bằng FigForge như đã chốt là việc đáng kể — phải mô tả lại từng sơ
-đồ thành figureSpec. Nên tôi để riêng thành một đợt, thay vì làm dở dang.
+Nên chỉ cần **một nguyên mẫu** `arch_q2.bang_chien_thuat`, không phải 71 mô tả tay.
+Khác hẳn Quyển 1 vốn cần 25 nguyên mẫu vì mỗi hình toán một kiểu.
+
+| | |
+|---|---|
+| Mốc "TÌNH HUỐNG" trong sách | 67 |
+| Trừ bảng phiên tòa (đã dựng thành giao diện bấm được) | −14 |
+| **Sơ đồ đã vẽ** | **53** |
+| Gắn vào 21 khối · trại huấn luyện | 48 · 5 |
+
+Chiều cao tính theo SỐ DÒNG THẬT sau khi ngắt chữ: bảng 4 hàng và bảng 12 hàng mà
+cùng chiều cao thì một cái rỗng toác, một cái chữ đè nhau.
 
 ---
 

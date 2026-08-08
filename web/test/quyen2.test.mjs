@@ -111,7 +111,29 @@ const DON_VI = /\?\s*(kg|g|cm²|m²|cm|m|viên|đồng|tuổi|trang|phút|giờ)
 const dienTin = moiCau.filter(([, c]) => DON_VI.test(c.text) || /→[^?]*\?\s*\S*\?/.test(c.text));
 t(`đề không viết tắt kiểu điện tín (${dienTin.length})`, dienTin.length === 0);
 
-console.log(`\n   ${khoi.length} khối · ${moiCau.length} câu`
+/* ── 9. sơ đồ chiến thuật (Bước 5) ──
+   Vẽ bằng FigForge chứ không dùng 48 ảnh bitmap của sách: ảnh lệch bảng màu vừa
+   đồng bộ theo icon, thiếu mất 49 chỗ, và sửa nội dung sau này không vẽ lại được. */
+import { existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+const HINH = new URL('../public/content/figures/', import.meta.url).pathname;
+const soDo = khoi.flatMap((k) => (k.soDo || []).map((s) => [k, s]));
+t(`có sơ đồ chiến thuật (${soDo.length})`, soDo.length >= 40);
+const thieuTep = soDo.filter(([, s]) => !existsSync(join(HINH, s.file.split('/').pop())));
+t(`sơ đồ nào cũng có tệp PNG thật (${thieuTep.length} thiếu)`, thieuTep.length === 0);
+const shaLech = soDo.filter(([, s]) => {
+  const p = join(HINH, s.file.split('/').pop());
+  if (!existsSync(p)) return false;
+  return createHash('sha256').update(readFileSync(p)).digest('hex').slice(0, 16) !== s.sha256_16;
+});
+t(`mã kiểm sơ đồ khớp PNG thật (${shaLech.length} lệch)`, shaLech.length === 0);
+t('sơ đồ nào cũng có tiêu đề', soDo.every(([, s]) => String(s.caption || '').length > 8));
+/* 14 bảng phiên tòa đã dựng thành giao diện bấm được ở màn 3 — vẽ thêm ảnh tĩnh
+   là thừa và hai bên dễ lệch nhau. */
+t('không vẽ lại bảng phiên tòa thành ảnh tĩnh',
+  soDo.every(([, s]) => !s.caption.includes('BIÊN BẢN PHIÊN TÒA')));
+
+console.log(`\n   ${khoi.length} khối · ${moiCau.length} câu · ${soDo.length} sơ đồ`
   + ` · máy chấm ${mayCham.length} · tự luận ${tuLuan.length}`
   + ` · ${hoSo.length} bẫy · ${the.length} thẻ`);
 console.log(`\n${pass} PASS · ${fail} FAIL`);
