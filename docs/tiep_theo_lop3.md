@@ -21,10 +21,11 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 | 2c | ôn tập & ải | `tools/ontap_lop3.py` → `data/lop3_ontap.json` — **8 ôn tập · 3 ải · 114 câu · 84 câu đề B · mối nối đủ 84/84 câu, cả 8 ôn tập đều `canCu: sach`** |
 | 3 | dựng bài học | `tools/chuan_lop3.py` → `data/lop3/` — **34 bài · 477 câu · 100% có lời chữa · 170 câu chấm máy** |
 | 3b | vẽ & gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **102 hình · 21 nguyên mẫu · đủ 34/34 bài** |
+| 4 | ô nhập chấm máy | `tools/tach_cau_lop3.py` + `data/lop3_dapan_tay.json` → `data/lop3_dapan_o.json` — **200/307 câu luyện tập chấm máy · 294 ô nhập** |
 | 5 | khuôn chung + sổ đăng ký | `tools/dung_khuon_chung_lop3.py` → `web/public/content/lop3/` · `reviews/DCR_KSN3_C*` — **34 bài · 11 kỳ sát hạch · LỚP 3 ĐÃ HIỆN TRONG APP** |
 | — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`), nút đã nối tới `FinaleCard` |
 
-Phép kiểm: `web/test/lop3.test.mjs` (52 phép). Chạy `cd web && npm test`.
+Phép kiểm: `web/test/lop3.test.mjs` (55 phép). Chạy `cd web && npm test`.
 
 **Thứ tự chạy dây chuyền** — đảo là mất hình mà không có gì báo:
 
@@ -261,6 +262,51 @@ Kỳ sát hạch cần đáp án, mà bản đầu của `ontap_lop3.py` ĐÓNG 
 
 ---
 
+## VIỆC 6 — ô nhập cho câu luyện tập  ✔ XONG
+
+**Triệu chứng bác nêu:** cả 307 câu luyện tập đều là "con làm rồi bấm xem lời giải".
+Bé bấm một nút là xong, không ai biết bé có làm hay không — sổ phụ huynh và bảng cô
+giáo trống, tức là KHÔNG đánh giá được việc học.
+
+| | |
+|---|---|
+| suy máy (5 luật hẹp, đã soát tay từng câu) | 88 / 307 |
+| viết tay (`data/lop3_dapan_tay.json`) | 112 / 307 |
+| **chấm máy được** | **200 / 307 · 294 ô nhập** |
+| cố ý để tự chấm (đề mở · vì sao · làm tay · nhiều đáp án đúng) | 35 |
+| chưa khớp luật nào, chờ viết tay tiếp | 72 |
+
+Dạng khoá đã dùng: `parts` (nhiều ô có nhãn) · `value` (một số) · `values` (dãy số,
+giữ thứ tự) · `divmod` cho chia có dư (`"3 dư 1"` — giữ CẢ thương LẪN số dư, vì đề
+"viết chính danh" hỏi cả hai).
+
+### Bốn lỗi bắt được khi soát tay chính luật của mình
+
+1. **Cắt ở dấu `=` ĐẦU TIÊN** → ô nhận đáp án `"30 + 6 = 36"`, bé gõ đúng `36` vẫn
+   bị chấm sai. Phải lấy vế CUỐI.
+2. **Bỏ ngoặc làm mất số dư**: `13 : 4 = 3 (dư 1)` thành `3`. Đề hỏi cả thương lẫn
+   dư — chấm mỗi thương là ĐỔI ĐỀ.
+3. **Đề hỏi hai phép mà chỉ ra một ô** (`18 : 3` bị bỏ vì sách chèn chữ "chia hết"
+   giữa thương và ngoặc). Nay đếm số phép trong ĐỀ và bắt khớp.
+4. **Lời giải nêu MỘT trong nhiều đáp án đúng** ("ví dụ 6 × 6 + 1 = 37") — chấm đúng
+   mỗi 37 là chấm oan mọi số hợp lệ khác. Nay thấy "ví dụ/chẳng hạn" là để tự chấm.
+
+### ⚠ Một lỗi của BỘ CHẤM, không phải của dữ liệu
+
+Gõ `2000 + 400 + 30 + 5` mà sách ghi `2 000 + 400 + 30 + 5` thì **bị báo sai** — bé
+làm ĐÚNG vẫn trượt, ở mọi câu tách số theo hàng. Khoảng trắng giữa hai chữ số là dấu
+phân nghìn kiểu Việt, không mang nghĩa. Đã nới trong `web/src/lib/flow.js` (hàm
+`boPhanNghin`), chỉ bỏ khi khoảng trắng kẹp GIỮA hai chữ số nên không gộp nhầm hai
+số. Nới này **có lợi cho cả lớp 2 và lớp 5**.
+
+### Còn lại
+
+72 câu chưa khớp luật nào — viết tiếp vào `data/lop3_dapan_tay.json`. Chạy
+`python3 tools/tach_cau_lop3.py --in` để in từng câu ra soát. Chốt tự soát đã có sẵn:
+mọi con số viết tay phải XUẤT HIỆN trong lời giải của sách, sai là công cụ kêu.
+
+---
+
 ## Việc đã cân nhắc và LOẠI
 
 - **Vẽ đủ 131 hình giảng, mỗi bước một hình.** Loại: chuẩn dặn "không phải mọi bước
@@ -269,6 +315,9 @@ Kỳ sát hạch cần đáp án, mà bản đầu của `ontap_lop3.py` ĐÓNG 
 - **Tách riêng `cham_tron` cho lớp 3 để khỏi đụng hình lớp 2.** Loại: như thế lớp 2 ở
   lại với lỗi lệch cỡ chấm. Sửa ở gốc, rồi đối chiếu mã băm để biết đúng 3/120 hình
   lớp 2 đổi.
+- **Dựng lại hai luật `r_nhieu_ve` và `r_hai_ben` của lớp 2.** Loại: lớp 2 đã thử
+  và phải GỠ cả hai — chúng suy đáp án từ LỜI VĂN của lời giải và sai hàng loạt. Mã
+  cũ còn trong `tools/tach_cau_lop2.py` kèm lý do.
 - **`npm run deploy` (build + firebase deploy đầy đủ).** Loại: lệnh ấy đẩy cả
   functions và firestore rules — đợt này không đụng tới chúng, đẩy theo là mang lên
   trạng thái cục bộ chưa ai kiểm. Dùng `--only hosting`.

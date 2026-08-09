@@ -131,16 +131,34 @@
     {
      "id": "C1",
      "text": "Mua 4 gói bánh hết 20 nghìn đồng. Hỏi 1 gói bánh giá bao nhiêu?",
+     "answerKey": {
+      "value": 5
+     },
      "solutionNarrative": "20 : 4 = 5 nghìn."
     },
     {
      "id": "C2",
      "text": "Từ câu 1: mua 7 gói bánh như thế hết bao nhiêu tiền?",
+     "answerKey": {
+      "value": 35
+     },
      "solutionNarrative": "5 × 7 = 35 nghìn."
     },
     {
      "id": "C3",
      "text": "Mua 2 chiếc bút hết 16 nghìn đồng. Hỏi mua 5 chiếc bút như thế hết bao nhiêu tiền?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "một chiếc bút",
+        "value": 8
+       },
+       {
+        "label": "năm chiếc bút",
+        "value": 40
+       }
+      ]
+     },
      "solutionNarrative": "một bút 16 : 2 = 8; năm bút 8 × 5 = 40 nghìn."
     }
    ],
@@ -148,21 +166,69 @@
     {
      "id": "C4",
      "text": "Chiều ngược: 3 vé xem xiếc giá 27 nghìn đồng. Có 45 nghìn đồng thì mua được mấy vé?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "một vé",
+        "value": 9
+       },
+       {
+        "label": "mua được mấy vé",
+        "value": 5
+       }
+      ]
+     },
      "solutionNarrative": "một vé 27 : 3 = 9; số vé 45 : 9 = 5 vé."
     },
     {
      "id": "C5",
      "text": "Su Bống gấp 6 con hạc trong 2 phút. Hỏi trong 5 phút, Bống gấp được mấy con? (Rút về MỘT phút!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi phút",
+        "value": 3
+       },
+       {
+        "label": "trong 5 phút",
+        "value": 15
+       }
+      ]
+     },
      "solutionNarrative": "mỗi phút 6 : 2 = 3 con; 5 phút 3 × 5 = 15 con."
     },
     {
      "id": "C6",
      "text": "Mua 6 hộp bút màu hết 42 nghìn đồng. Hỏi mua 4 hộp như thế hết bao nhiêu tiền? (Rút về một rồi... nhân XUỐNG cũng được nhé!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "một hộp",
+        "value": 7
+       },
+       {
+        "label": "bốn hộp",
+        "value": 28
+       }
+      ]
+     },
      "solutionNarrative": "một hộp 42 : 6 = 7; bốn hộp 7 × 4 = 28 nghìn."
     },
     {
      "id": "C7",
      "text": "Xe máy của bố đi 2 giờ được 8 km đường đèo. Hỏi đi 3 giờ như thế được bao nhiêu km?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi giờ",
+        "value": 4
+       },
+       {
+        "label": "ba giờ",
+        "value": 12
+       }
+      ]
+     },
      "solutionNarrative": "mỗi giờ 8 : 2 = 4 km; ba giờ 4 × 3 = 12 km."
     }
    ],
@@ -170,11 +236,35 @@
     {
      "id": "C8",
      "text": "So tài hai cửa tiệm: tiệm A bán 3 hộp sữa chua giá 21 nghìn; tiệm B bán 4 hộp giá 24 nghìn. Mua ở tiệm nào rẻ hơn? (So thứ gì với thứ gì mới công bằng — so cả bịch hay so... trạm MỘT?)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tiệm A một hộp",
+        "value": 7
+       },
+       {
+        "label": "tiệm B một hộp",
+        "value": 6
+       }
+      ]
+     },
      "solutionNarrative": "so trạm MỘT mới công bằng: tiệm A một hộp 21 : 3 = 7 nghìn; tiệm B một hộp 24 : 4 = 6 nghìn → tiệm B rẻ hơn 1 nghìn mỗi hộp."
     },
     {
      "id": "C9",
      "text": "Chị Ngọc Anh ra đề: \"Mẹ trả 63 nghìn đồng cho 9 hộp sữa chua. Nếu hôm ấy mẹ chỉ mua 4 hộp thì hết bao nhiêu tiền?\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "một hộp",
+        "value": 7
+       },
+       {
+        "label": "bốn hộp",
+        "value": 28
+       }
+      ]
+     },
      "solutionNarrative": "một hộp 63 : 9 = 7 nghìn; bốn hộp 7 × 4 = 28 nghìn."
     }
    ]

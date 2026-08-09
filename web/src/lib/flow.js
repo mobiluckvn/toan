@@ -175,9 +175,23 @@ export const gradableParts = (parts = []) => parts.filter((p) => isPickable(p) |
  *   3. đơn vị đo có gõ hay không cũng được      ("60 000 đồng" ↔ "60000" ↔ "60000 đ")
  * Vẫn BÁC khi phần chữ đi kèm đổi nghĩa: "2 năm nữa" không phải "2 năm trước".
  */
+/**
+ * Bỏ dấu phân nghìn kiểu Việt: khoảng trắng NẰM GIỮA HAI CHỮ SỐ.
+ *
+ * Sách viết "2 000 + 400 + 30 + 5", con gõ "2000 + 400 + 30 + 5" — cùng một đáp án,
+ * mà so chuỗi thì lệch. Trước khi có phép nới này, bé lớp 3 gõ ĐÚNG vẫn bị báo sai
+ * ở mọi câu tách số theo hàng; chấm sai một câu là bé mất tin vào cả phần mềm.
+ *
+ * Chỉ bỏ khi khoảng trắng kẹp GIỮA hai chữ số. Hai số khác nhau trong tiếng Việt
+ * luôn có dấu ngăn (dấu ; dấu phẩy hay phép tính) chứ không bao giờ đứng cạnh nhau
+ * bằng mỗi khoảng trắng, nên phép nới này không gộp nhầm hai số thành một.
+ */
+const boPhanNghin = (s) => String(s ?? '').replace(/(\d)[\s ](?=\d)/g, '$1');
+
 function matchAtom(expected, input) {
   const a = normText(expected), b = normText(input);
   if (a === b) return true;
+  if (boPhanNghin(a) === boPhanNghin(b)) return true;
 
   const na = toNumber(expected), nb = toNumber(input);   // "12" ↔ "12,0" ↔ "12/1"
   if (Number.isFinite(na) && Number.isFinite(nb)) return nearEq(na, nb);

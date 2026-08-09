@@ -38,6 +38,10 @@ from khuon_chung import sang_khuon_chung                    # noqa: E402
 NGUON = os.path.join(GOC_KHO, 'data', 'lop3')
 NGUON_ON = os.path.join(GOC_KHO, 'data', 'lop3_ontap.json')
 SO_TAY = os.path.join(GOC_KHO, 'data', 'lop3_hinh_manifest.json')
+# Khoá ô nhập cho câu luyện tập, do tools/tach_cau_lop3.py dựng. Thiếu tệp này thì
+# cả 307 câu luyện tập về "con làm rồi tự so" — bài vẫn chạy, chỉ là không đo được
+# việc học, nên phải NÓI RA chứ đừng im lặng chạy tiếp.
+DAP_AN_O = os.path.join(GOC_KHO, 'data', 'lop3_dapan_o.json')
 RA = os.path.join(GOC_KHO, 'web', 'public', 'content', 'lop3')
 RA_ON = os.path.join(GOC_KHO, 'web', 'public', 'content', 'reviews')
 SO_DK = os.path.join(GOC_KHO, 'data', 'chuong_trinh.json')
@@ -135,10 +139,18 @@ def main():
     bais.sort(key=lambda b: b['so'])
     ids = [b['id'] for b in bais]
 
+    if os.path.exists(DAP_AN_O):
+        dap_an = json.load(open(DAP_AN_O, encoding='utf-8'))
+    else:
+        dap_an = {}
+        print('  ⚠ chưa có data/lop3_dapan_o.json — MỌI câu luyện tập sẽ về tự chấm, '
+              'không đo được việc học. Chạy tools/tach_cau_lop3.py trước.')
+
     idx, canh_bao = [], []
     for k, b in enumerate(bais):
         d = sang_khuon_chung(b, truoc=ids[k - 1] if k else None,
-                             sau=ids[k + 1] if k + 1 < len(ids) else None)
+                             sau=ids[k + 1] if k + 1 < len(ids) else None,
+                             dap_an=dap_an)
         # Chặng giảng rỗng là hỏng CÂM: bài vẫn dựng ra, phòng học vẫn mở, chỉ là
         # không dạy gì. Đây đúng chỗ mẫu tên bước bỏ sót thì không ai hay.
         if not d['knowledgeCore']['statements']:
@@ -156,6 +168,8 @@ def main():
             'soCau': sum(len(v) for v in d['practice']['pools'].values()),
             'soQuiz': len(d['assessment']['items']),
             'soHinh': len(d['figureSpec']),
+            'soChamMay': sum(1 for v in d['practice']['pools'].values()
+                             for x in v if x.get('answerKey')),
             'coDuongLui': 'duongLui' in d,
         })
 
@@ -180,7 +194,9 @@ def main():
     for c in canh_bao:
         print(f'  ⚠ {c}')
     print(f'dựng {len(idx)} bài theo khuôn chung → {os.path.relpath(RA, GOC_KHO)}')
-    print(f"  {sum(x['soCau'] for x in idx)} câu luyện tập"
+    cm = sum(x['soChamMay'] for x in idx)
+    tc = sum(x['soCau'] for x in idx)
+    print(f"  {tc} câu luyện tập ({cm} chấm máy được, {tc - cm} tự chấm)"
           f" · {sum(x['soQuiz'] for x in idx)} câu sát hạch"
           f" · {sum(x['soHinh'] for x in idx)} hình"
           f" · {sum(1 for x in idx if x['coDuongLui'])} bài có đường lùi")

@@ -502,5 +502,20 @@ t('không cắt nhầm dấu trừ',    answerCore('12 − 5') === '12 − 5');
 t('dãy số dài vẫn máy chấm được', isNumberList('29, 38, 47, 56, 65, 74, 83, 92'));
 t('câu chữ dài vẫn là tự đối chiếu', isSelfCheck('12 tháng — 13 bạn: 13 chim chui 12 chuồng, ít nhất một tháng có từ 2 bạn'));
 
+/* ── dấu phân nghìn kiểu Việt: "2 000" và "2000" là MỘT ──
+   Sách viết số bốn chữ số có khoảng trắng phân nghìn; con gõ liền. Trước khi nới
+   chỗ này, bé lớp 3 gõ ĐÚNG vẫn bị báo sai ở mọi câu tách số theo hàng — mà chấm
+   sai một câu là bé mất tin vào cả phần mềm. */
+const oNhap = (key) => ({ id: 'X', text: 'x', answerKey: key });
+t('"2000" khớp đáp án sách ghi "2 000"',
+  checkAnswer(oNhap({ value: '2 000' }), '2000').ok);
+t('"2 000" vẫn khớp chính nó',
+  checkAnswer(oNhap({ value: '2 000' }), '2 000').ok);
+t('tổng theo hàng: gõ liền hay gõ cách đều nhận',
+  checkAnswer(oNhap({ parts: [{ label: 'a', value: '2 000 + 400 + 30 + 5' }] }),
+              ['2000 + 400 + 30 + 5']).ok);
+t('nới phân nghìn KHÔNG gộp nhầm hai số khác nhau',
+  !checkAnswer(oNhap({ value: '2 000' }), '2 001').ok);
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);

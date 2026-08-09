@@ -128,11 +128,35 @@
     {
      "id": "C1",
      "text": "Từ hai thẻ 4 và 7, lập số có 2 chữ số lớn nhất và bé nhất (không lặp).",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn nhất",
+        "value": 74
+       },
+       {
+        "label": "bé nhất",
+        "value": 47
+       }
+      ]
+     },
      "solutionNarrative": "74 và 47."
     },
     {
      "id": "C2",
      "text": "Cũng hai thẻ 4 và 7 nhưng ĐƯỢC LẶP: số 2 chữ số lớn nhất? bé nhất?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn nhất",
+        "value": 77
+       },
+       {
+        "label": "bé nhất",
+        "value": 44
+       }
+      ]
+     },
      "solutionNarrative": "được lặp: 77 và 44."
     },
     {
@@ -145,21 +169,55 @@
     {
      "id": "C4",
      "text": "Từ ba thẻ 2, 9, 6 (không lặp): lập số lớn nhất; số bé nhất; số CHẴN lớn nhất.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn nhất",
+        "value": 962
+       },
+       {
+        "label": "bé nhất",
+        "value": 269
+       },
+       {
+        "label": "chẵn lớn nhất",
+        "value": 962
+       }
+      ]
+     },
      "solutionNarrative": "lớn nhất 962; bé nhất 269; chẵn lớn nhất: đuôi phải chẵn — ứng viên đuôi 2 hoặc 6: đuôi 2 → 962; đuôi 6 → 926; so sánh: 962 lớn hơn → 962 (may quá, số lớn nhất tự do lần này vốn đã chẵn!)."
     },
     {
      "id": "C5",
      "text": "Từ ba thẻ 1, 4, 7 (không lặp): lập số LẺ lớn nhất. (Có hai thẻ lẻ — chọn thẻ nào giữ đuôi để phần đầu to nhất?)",
+     "answerKey": {
+      "value": 741
+     },
      "solutionNarrative": "lẻ lớn nhất: hai thẻ lẻ là 1 và 7 — giữ đuôi bằng thẻ lẻ NHỎ (1) để thẻ 7 lên đầu → 741."
     },
     {
      "id": "C6",
      "text": "Từ ba thẻ 6, 0, 3 (không lặp): lập số chẵn bé nhất; số chẵn lớn nhất. (Cảnh giác chú số 0!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chẵn bé nhất",
+        "value": 306
+       },
+       {
+        "label": "chẵn lớn nhất",
+        "value": 630
+       }
+      ]
+     },
      "solutionNarrative": "chẵn bé nhất: 306; chẵn lớn nhất: đuôi 0 hoặc 6 → 630 vs 360 → 630."
     },
     {
      "id": "C7",
      "text": "Từ hai thẻ 3 và 0, ĐƯỢC LẶP, lập số có 3 chữ số bé nhất. (Số 0 không đứng đầu — nhưng các ghế sau thì sao?)",
+     "answerKey": {
+      "value": 300
+     },
      "solutionNarrative": "đầu phải là 3 (0 cấm đứng đầu), hai ghế sau chọn thẻ nhỏ nhất được lặp: 300."
     }
    ],
@@ -167,11 +225,17 @@
     {
      "id": "C8",
      "text": "Từ bốn thẻ 9, 0, 4, 7 chọn ra BA thẻ để lập số chẵn lớn nhất có ba chữ số khác nhau. (Được quyền bỏ một thẻ — bỏ thẻ nào là cả một nghệ thuật!)",
+     "answerKey": {
+      "value": 974
+     },
      "solutionNarrative": "muốn to: hàng trăm 9; đuôi chẵn chọn trong 0, 4 → đuôi 4 cho phép ghế giữa lấy 7: 974; đuôi 0 thì ghế giữa 7: 970 → chọn 974 (bỏ thẻ 0)."
     },
     {
      "id": "C9",
      "text": "Chị Ngọc Anh ra đề: \"Lập số có 3 chữ số bé nhất mà tổng ba chữ số bằng 3.\" — Liệt kê các bộ ba chữ số có tổng bằng 3 rồi chọn cách xếp bé nhất. (Nhớ: hàng trăm không được là 0!)",
+     "answerKey": {
+      "value": 102
+     },
      "solutionNarrative": "các bộ ba chữ số tổng 3: (3,0,0), (2,1,0), (1,1,1) → cách xếp bé nhất mỗi bộ: 300, 102, 111 → bé nhất là 102."
     }
    ]

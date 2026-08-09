@@ -407,6 +407,42 @@ if (existsSync(APP)) {
   /* HẠT MẦM phải theo sang bản app — nó là lời nối ngược về lớp 2 ở màn kết bài */
   const mam = app.filter((b) => b.hatMam).length;
   t(`hạt mầm theo sang bản app đủ 34 bài (${mam})`, mam === 34);
+
+  /* ── CÂU LUYỆN TẬP PHẢI ĐO ĐƯỢC ──
+     Lượt đầu cả 307 câu đều là "con làm rồi bấm xem lời giải": bé bấm một nút là
+     xong, không ai biết bé có làm hay không — sổ phụ huynh và bảng cô giáo trống,
+     tức là KHÔNG đánh giá được việc học. Phép kiểm này canh cho nó đừng tụt lại. */
+  const lt = app.flatMap((b) => Object.values(b.practice?.pools || {}).flat());
+  const cham = lt.filter((x) => x.answerKey);
+  t(`đa số câu luyện tập chấm máy được (${cham.length}/${lt.length})`,
+    cham.length >= lt.length * 0.6);
+
+  /* Ô nào cũng phải có NHÃN: nhiều ô mà không nhãn thì bé không biết ô nào hỏi gì */
+  const oThieuNhan = cham.filter((x) => (x.answerKey.parts || [])
+    .some((p) => !String(p.label ?? '').trim())).map((x) => x.id);
+  t('ô nhập nào cũng có nhãn', oThieuNhan.length === 0);
+  in5(oThieuNhan);
+
+  /* Nhãn KHÔNG được ĐƯA SẴN đáp án — nhãn dựng từ lời giải là cho không bé đáp số.
+     Không bắt theo kiểu "nhãn có chứa con số ấy": nhãn `20 − (12 − (3 + 1))` chứa
+     chữ số 12 và đáp án cũng là 12, nhưng đó là TOÁN HẠNG của đề, bé vẫn phải tính.
+     Chỉ đỏ khi nhãn CHÍNH LÀ đáp án, hoặc kết thúc bằng "= đáp án". */
+  const nhanLo = [];
+  for (const x of cham) {
+    for (const p of x.answerKey.parts || []) {
+      const v = String(p.value ?? '').trim().replace(/\s/g, '');
+      const l = String(p.label ?? '').trim().replace(/\s/g, '');
+      if (v && (l === v || l.endsWith(`=${v}`))) {
+        nhanLo.push(`${x.id}: nhãn "${p.label}" đưa sẵn đáp án "${p.value}"`);
+      }
+    }
+  }
+  t('nhãn ô không đưa sẵn đáp án', nhanLo.length === 0);
+  in5(nhanLo);
+
+  const soO = cham.reduce((a, x) => a + (x.answerKey.parts?.length || 1), 0);
+  console.log(`   luyện tập: ${cham.length}/${lt.length} chấm máy · ${soO} ô nhập`
+    + ` · ${lt.length - cham.length} cố ý tự chấm`);
 }
 
 /* ── kỳ sát hạch (8 ôn tập + 3 ải) ── */
