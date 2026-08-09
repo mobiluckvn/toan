@@ -24,8 +24,11 @@ RA = os.path.join(GOC_KHO, 'data', 'lop3_dapan.json')
 R_MO = re.compile(r'^(?:\S+\s+)?ĐÁP ÁN BÀI (\d+)\b')
 # Mọi thứ dưới đây ĐÓNG bài đang mở. Thiếu một dòng ở đây là đáp án của nó chảy
 # vào bài trước — xem bẫy 6.
-R_DONG = re.compile(r'^(?:\S+\s+)?(?:ĐÁP ÁN (?:ÔN TẬP|ĐỀ B|BA ẢI)|Đáp án ba ải'
-                    r'|CHƯƠNG \d+|Ải \d+|Ôn tập \d+)')
+# Sách đánh tiêu đề đáp án ba ải là "Ả1 ĐÁP ÁN ẢI 1 — Khởi động" — thiếu "ẢI" ở đây
+# thì đáp án ải chảy vào bài đứng trước. Lượt đầu tôi bỏ sót mà vẫn không hỏng, chỉ
+# vì tình cờ có mốc "CHƯƠNG n" chặn hộ. Dựa vào may là kiểu hỏng chờ sẵn.
+R_DONG = re.compile(r'^(?:\S+\s+)?(?:ĐÁP ÁN (?:ÔN TẬP|ĐỀ B|ẢI|BA ẢI)|Đáp án ba ải'
+                    r'|ÔN TẬP \d+|CHƯƠNG \d+|Ải \d+|Ôn tập \d+)')
 R_PHAN = re.compile(r'^(Luyện tập|Quiz)\s*[—:-]\s*(.*)$')
 # Luyện tập viết "C1: …" — ĐÒI dấu hai chấm, vì lời giải dài có nhắc "C5" giữa câu,
 # nhận bừa là cắt nhầm giữa lời giải.
