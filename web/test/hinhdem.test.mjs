@@ -32,8 +32,8 @@ const hinh = JSON.parse(readFileSync(join(G, 'data/lop2_hinh.json'), 'utf8'));
 
 /* ── 1. Nhãn nói "N cái" mà nguyên mẫu chỉ vẽ MỘT ────────────────────────────
    `hinh_phang` và `khoi_hop` vẽ đúng một hình cho mỗi mục khai báo, nên nhãn ghi
-   "4 khối" nghĩa là một khối đang đeo biển "4 khối". Trừ mục có `luoi`: ô đã được
-   kẻ vạch chia thật, "4 phần" là bốn phần nhìn thấy được. */
+   "4 khối" nghĩa là một khối đang đeo biển "4 khối". Trừ mục có `luoi` (ô kẻ vạch)
+   hoặc `chia` (hình tròn chia phần): những phần ấy đã vẽ ra thật, đếm được. */
 const MOT_MOT = { hinh_phang: 'hinh', khoi_hop: 'khoi' };
 const DEM_SO = /(\d+)\s*(khối|ô|hình|cái|mảnh|tam giác|phần)/g;
 const lac = [];
@@ -41,7 +41,7 @@ for (const x of hinh) {
   const key = MOT_MOT[x.arch];
   if (!key) continue;
   for (const m of x.params?.[key] || []) {
-    if (m.luoi) continue;
+    if (m.luoi || m.chia) continue;
     const nhan = [m.ten, ...(m.canh || [])].filter(Boolean).join(' ');
     for (const [, n, dv] of nhan.matchAll(DEM_SO)) {
       if (Number(n) >= 2) lac.push(`${x.id} (${x.bai}) — nhãn "${n} ${dv}" mà chỉ vẽ một`);

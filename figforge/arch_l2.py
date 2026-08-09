@@ -1074,3 +1074,104 @@ def dong_hinh(p, out):
     if p.get('note'):
         txt_fit(ax, 50, H - tren - O * so_hang - 6.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
     save(fig, out)
+
+
+def hinh_chu_vi(p, out):
+    """
+    HÌNH CÓ SỐ ĐO TRÊN TỪNG CẠNH — cho bài chu vi và bài đếm cạnh/đỉnh.
+
+    params: title · hinh[{loai, canh[số], ten, mau, dinh}] · note
+      loai: tamgiac | vuong | chunhat | tugiac
+      canh: số đo ghi lên từng cạnh, theo thứ tự vẽ. Bỏ trống thì không ghi số.
+      dinh: True → chấm đậm các đỉnh, cho bài "đếm cạnh, đếm đỉnh"
+
+    `hinh_phang` ghi số đo thành một dòng chữ DƯỚI hình ("2 cm · 3 cm · 4 cm"), nên
+    bé không biết số nào của cạnh nào — mà bài chu vi thì phải cộng đúng từng cạnh.
+    """
+    from matplotlib.patches import Circle, Polygon
+    hs = p.get('hinh') or []
+    n = max(len(hs), 1)
+    W = 88.0 / n
+    tren = 11.0 if p.get('title') else 4.0
+    CAO = min(32.0, W * 0.92)
+    duoi = 8.0 if p.get('note') else 4.0
+    fig, ax, H = canvas(7.6, max(2.6, (tren + CAO + 16.0 + duoi) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    yc = H - tren - CAO / 2 - 1.0
+
+    for i, h in enumerate(hs):
+        cx = 6.0 + W * (i + 0.5)
+        vien, nen, chu = MAU.get(h.get('mau', 'teal'), MAU['teal'])
+        r = min(W * 0.34, CAO * 0.40)
+        loai = h.get('loai', 'vuong')
+        if loai == 'tamgiac':
+            pts = [(cx - r, yc - r * 0.75), (cx + r, yc - r * 0.75), (cx, yc + r * 0.85)]
+        elif loai == 'chunhat':
+            a, b = r * 1.25, r * 0.72
+            pts = [(cx - a, yc - b), (cx + a, yc - b), (cx + a, yc + b), (cx - a, yc + b)]
+        elif loai == 'tugiac':
+            pts = [(cx - r, yc - r * 0.7), (cx + r * 0.95, yc - r), (cx + r * 0.7, yc + r * 0.9),
+                   (cx - r * 0.85, yc + r * 0.5)]
+        else:
+            a = r * 0.9
+            pts = [(cx - a, yc - a), (cx + a, yc - a), (cx + a, yc + a), (cx - a, yc + a)]
+        ax.add_patch(Polygon(pts, fc=nen, ec=vien, lw=2.4, zorder=4))
+
+        # số đo đặt ngoài cạnh, đẩy ra theo hướng từ TÂM ra giữa cạnh
+        so = h.get('canh') or []
+        for k in range(len(pts)):
+            if k >= len(so) or so[k] in (None, ''):
+                continue
+            x1, y1 = pts[k]
+            x2, y2 = pts[(k + 1) % len(pts)]
+            mx, my = (x1 + x2) / 2, (y1 + y2) / 2
+            dx, dy = mx - cx, my - yc
+            d = max((dx * dx + dy * dy) ** 0.5, 0.001)
+            _txt(ax, mx + dx / d * 3.6, my + dy / d * 3.6, str(so[k]),
+                 fs=FS['small'], c=chu, w='bold', z=8)
+        if h.get('dinh'):
+            for x, y in pts:
+                ax.add_patch(Circle((x, y), 0.9, fc=vien, ec=vien, zorder=9))
+        if h.get('ten'):
+            _txt(ax, cx, yc - CAO / 2 - 3.0, h['ten'], fs=FS['body'], c=chu, w='bold', z=7)
+    if p.get('note'):
+        txt_fit(ax, 50, yc - CAO / 2 - 10.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def dong_xu_cham(p, out):
+    """
+    MẤY ĐỒNG XU BẰNG NHAU ĐẶT CHẠM NHAU — tâm của chúng nối lại thành hình gì.
+
+    params: title · so (mấy đồng, 3 hoặc 4) · noiTam (True → nối các tâm) · note
+
+    Bài B28 C7 hỏi ba tâm tạo thành hình gì. Không vẽ thì bé phải tự tưởng tượng
+    ba hình tròn chạm nhau — quá sức bé lớp 2.
+    """
+    import math
+    from matplotlib.patches import Circle, Polygon
+    n = int(p.get('so', 3))
+    tren = 11.0 if p.get('title') else 4.0
+    CAO = 34.0
+    duoi = 8.0 if p.get('note') else 4.0
+    fig, ax, H = canvas(7.6, max(2.6, (tren + CAO + 6.0 + duoi) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+    yc = H - tren - CAO / 2
+    r = CAO * 0.26
+    # tâm nằm trên một đường tròn sao cho hai đồng kề nhau CHẠM nhau: khoảng cách
+    # hai tâm đúng bằng 2r, nên bán kính vòng đặt tâm = r / sin(pi/n)
+    R = r / math.sin(math.pi / n)
+    tam = [(50 + R * math.cos(math.pi / 2 + 2 * math.pi * k / n),
+            yc + R * math.sin(math.pi / 2 + 2 * math.pi * k / n)) for k in range(n)]
+    vien, nen, chu = MAU.get(p.get('mau', 'gold'), MAU['gold'])
+    for x, y in tam:
+        ax.add_patch(Circle((x, y), r, fc=nen, ec=vien, lw=2.4, zorder=4))
+    if p.get('noiTam'):
+        ax.add_patch(Polygon(tam, fc='none', ec='#7E57C2', lw=2.6, zorder=7))
+    for x, y in tam:
+        ax.add_patch(Circle((x, y), 1.0, fc='#7E57C2', ec='#7E57C2', zorder=8))
+    if p.get('note'):
+        txt_fit(ax, 50, yc - CAO / 2 - 3.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)

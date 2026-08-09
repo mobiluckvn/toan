@@ -2285,7 +2285,7 @@
   "muc": "chuyenMoBai",
   "neoBuoc": 0,
   "arch": "thap_khoi",
-  "caption": "Tháp 5 khối: tầng dưới 2 hàng × 2 khối, tầng trên 1 khối",
+  "caption": "Hình xếp của đề bài — đếm thử xem mấy khối",
   "params": {
    "title": "Hình xếp này có mấy khối?",
    "mau": "teal",
@@ -2301,7 +2301,8 @@
      "ten": "tầng trên"
     }
    ],
-   "note": "4 + 1 = 5 khối. Khối nấp ở hàng sau vẫn phải đếm!"
+   "note": "4 + 1 = 5 khối. Khối nấp ở hàng sau vẫn phải đếm!",
+   "chiTang": false
   }
  },
  {
@@ -3896,6 +3897,605 @@
    ],
    "note": "4 + 4 = 8 khối nhỏ.",
    "mau": "teal"
+  }
+ },
+ {
+  "id": "L2H_HH09",
+  "goc": "",
+  "bai": "DL:KSN2.B27",
+  "muc": "chuyenMoBai",
+  "neoBuoc": 0,
+  "arch": "hinh_ghep",
+  "caption": "Đề bài — tam giác to bị một vạch chia đôi",
+  "params": {
+   "title": "",
+   "loai": "tamgiac",
+   "vach": 2,
+   "mau": "teal"
+  }
+ },
+ {
+  "id": "L2H_HH10",
+  "goc": "",
+  "bai": "DL:KSN2.B31",
+  "muc": "chuyenMoBai",
+  "neoBuoc": 0,
+  "arch": "hinh_phang",
+  "caption": "Đề bài — chiếc bánh chia làm 4 phần bằng nhau",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "tron",
+     "ten": "chiếc bánh chia 4 phần",
+     "canh": [
+      "mỗi phần là MỘT PHẦN TƯ"
+     ],
+     "mau": "gold",
+     "chia": 4
+    }
+   ]
+  }
+ },
+ {
+  "id": "L2Q_B26C1",
+  "goc": "",
+  "bai": "DL:KSN2.B26",
+  "muc": "luyenTap",
+  "neoCau": "C1",
+  "arch": "hinh_chu_vi",
+  "caption": "Hình của đề bài",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "tamgiac",
+     "canh": [],
+     "mau": "teal",
+     "ten": "tam giác",
+     "dinh": true
+    },
+    {
+     "loai": "tugiac",
+     "canh": [],
+     "mau": "tim",
+     "ten": "tứ giác",
+     "dinh": true
+    }
+   ]
+  }
+ },
+ {
+  "id": "L2Q_B26C1G",
+  "goc": "",
+  "bai": "DL:KSN2.B26",
+  "muc": "luyenTap",
+  "neoCau": "C1",
+  "vaiTro": "giai",
+  "arch": "hinh_chu_vi",
+  "caption": "Lời giải",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "tamgiac",
+     "canh": [
+      "1",
+      "2",
+      "3"
+     ],
+     "mau": "teal",
+     "ten": "tam giác",
+     "dinh": true
+    },
+    {
+     "loai": "tugiac",
+     "canh": [
+      "1",
+      "2",
+      "3",
+      "4"
+     ],
+     "mau": "tim",
+     "ten": "tứ giác",
+     "dinh": true
+    }
+   ],
+   "note": "Tam giác: 3 cạnh · 3 đỉnh. Tứ giác: 4 cạnh · 4 đỉnh."
+  }
+ },
+ {
+  "id": "L2Q_B26C4",
+  "goc": "",
+  "bai": "DL:KSN2.B26",
+  "muc": "luyenTap",
+  "neoCau": "C4",
+  "arch": "hinh_chu_vi",
+  "caption": "Hình của đề bài",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "tamgiac",
+     "canh": [
+      "2 cm",
+      "4 cm",
+      "3 cm"
+     ],
+     "mau": "teal",
+     "ten": "đường kiến bò"
+    }
+   ]
+  }
+ },
+ {
+  "id": "L2Q_B26C4G",
+  "goc": "",
+  "bai": "DL:KSN2.B26",
+  "muc": "luyenTap",
+  "neoCau": "C4",
+  "vaiTro": "giai",
+  "arch": "hinh_chu_vi",
+  "caption": "Lời giải",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "tamgiac",
+     "canh": [
+      "2 cm",
+      "4 cm",
+      "3 cm"
+     ],
+     "mau": "teal",
+     "ten": "đường kiến bò"
+    }
+   ],
+   "note": "2 + 3 + 4 = 9 cm"
+  }
+ },
+ {
+  "id": "L2Q_B26C5",
+  "goc": "",
+  "bai": "DL:KSN2.B26",
+  "muc": "luyenTap",
+  "neoCau": "C5",
+  "arch": "hinh_chu_vi",
+  "caption": "Hình của đề bài",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "vuong",
+     "canh": [
+      "5 cm",
+      "5 cm",
+      "5 cm",
+      "5 cm"
+     ],
+     "mau": "gold",
+     "ten": "hình vuông cạnh 5 cm"
+    }
+   ]
+  }
+ },
+ {
+  "id": "L2Q_B26C5G",
+  "goc": "",
+  "bai": "DL:KSN2.B26",
+  "muc": "luyenTap",
+  "neoCau": "C5",
+  "vaiTro": "giai",
+  "arch": "hinh_chu_vi",
+  "caption": "Lời giải",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "vuong",
+     "canh": [
+      "5 cm",
+      "5 cm",
+      "5 cm",
+      "5 cm"
+     ],
+     "mau": "gold",
+     "ten": "hình vuông cạnh 5 cm"
+    }
+   ],
+   "note": "5 + 5 + 5 + 5 = 20 cm"
+  }
+ },
+ {
+  "id": "L2Q_B26C6",
+  "goc": "",
+  "bai": "DL:KSN2.B26",
+  "muc": "luyenTap",
+  "neoCau": "C6",
+  "arch": "hinh_chu_vi",
+  "caption": "Hình của đề bài",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "chunhat",
+     "canh": [
+      "6 cm",
+      "3 cm",
+      "6 cm",
+      "3 cm"
+     ],
+     "mau": "tim",
+     "ten": "hình chữ nhật"
+    }
+   ]
+  }
+ },
+ {
+  "id": "L2Q_B26C6G",
+  "goc": "",
+  "bai": "DL:KSN2.B26",
+  "muc": "luyenTap",
+  "neoCau": "C6",
+  "vaiTro": "giai",
+  "arch": "hinh_chu_vi",
+  "caption": "Lời giải",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "chunhat",
+     "canh": [
+      "6 cm",
+      "3 cm",
+      "6 cm",
+      "3 cm"
+     ],
+     "mau": "tim",
+     "ten": "hình chữ nhật"
+    }
+   ],
+   "note": "6 + 3 + 6 + 3 = 18 cm — hai cạnh dài, hai cạnh ngắn!"
+  }
+ },
+ {
+  "id": "L2Q_B26C7",
+  "goc": "",
+  "bai": "DL:KSN2.B26",
+  "muc": "luyenTap",
+  "neoCau": "C7",
+  "arch": "hinh_chu_vi",
+  "caption": "Hình của đề bài",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "vuong",
+     "canh": [
+      "4 cm",
+      "4 cm",
+      "4 cm",
+      "4 cm"
+     ],
+     "mau": "do",
+     "ten": "kiến Đỏ"
+    },
+    {
+     "loai": "tamgiac",
+     "canh": [
+      "5 cm",
+      "5 cm",
+      "5 cm"
+     ],
+     "mau": "teal",
+     "ten": "kiến Đen"
+    }
+   ]
+  }
+ },
+ {
+  "id": "L2Q_B26C7G",
+  "goc": "",
+  "bai": "DL:KSN2.B26",
+  "muc": "luyenTap",
+  "neoCau": "C7",
+  "vaiTro": "giai",
+  "arch": "hinh_chu_vi",
+  "caption": "Lời giải",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "vuong",
+     "canh": [
+      "4 cm",
+      "4 cm",
+      "4 cm",
+      "4 cm"
+     ],
+     "mau": "do",
+     "ten": "kiến Đỏ · 16 cm"
+    },
+    {
+     "loai": "tamgiac",
+     "canh": [
+      "5 cm",
+      "5 cm",
+      "5 cm"
+     ],
+     "mau": "teal",
+     "ten": "kiến Đen · 15 cm"
+    }
+   ],
+   "note": "Đỏ: 4 + 4 + 4 + 4 = 16 cm · Đen: 5 + 5 + 5 = 15 cm → Đỏ xa hơn 1 cm."
+  }
+ },
+ {
+  "id": "L2Q_B28C7",
+  "goc": "",
+  "bai": "DL:KSN2.B28",
+  "muc": "luyenTap",
+  "neoCau": "C7",
+  "arch": "dong_xu_cham",
+  "caption": "Hình của đề bài",
+  "params": {
+   "title": "",
+   "so": 3,
+   "mau": "gold"
+  }
+ },
+ {
+  "id": "L2Q_B28C7G",
+  "goc": "",
+  "bai": "DL:KSN2.B28",
+  "muc": "luyenTap",
+  "neoCau": "C7",
+  "vaiTro": "giai",
+  "arch": "dong_xu_cham",
+  "caption": "Lời giải",
+  "params": {
+   "title": "",
+   "so": 3,
+   "mau": "gold",
+   "noiTam": true,
+   "note": "Ba tâm nối lại thành TAM GIÁC có 3 cạnh bằng nhau."
+  }
+ },
+ {
+  "id": "L2Q_B29C6",
+  "goc": "",
+  "bai": "DL:KSN2.B29",
+  "muc": "luyenTap",
+  "neoCau": "C6",
+  "arch": "thap_khoi",
+  "caption": "Hình của đề bài",
+  "params": {
+   "title": "",
+   "tang": [
+    {
+     "hang": 1,
+     "cot": 1,
+     "ten": "một khối"
+    }
+   ],
+   "chiTang": false,
+   "mau": "teal"
+  }
+ },
+ {
+  "id": "L2Q_B29C6G",
+  "goc": "",
+  "bai": "DL:KSN2.B29",
+  "muc": "luyenTap",
+  "neoCau": "C6",
+  "vaiTro": "giai",
+  "arch": "thap_khoi",
+  "caption": "Lời giải",
+  "params": {
+   "title": "",
+   "tang": [
+    {
+     "hang": 1,
+     "cot": 1,
+     "ten": "một khối"
+    }
+   ],
+   "mau": "teal",
+   "note": "Nhìn thấy nhiều nhất 3 mặt: mặt trên và 2 mặt bên. Mặt dưới, mặt sau và một mặt bên bị khuất."
+  }
+ },
+ {
+  "id": "L2Q_B29C7",
+  "goc": "",
+  "bai": "DL:KSN2.B29",
+  "muc": "luyenTap",
+  "neoCau": "C7",
+  "arch": "thap_khoi",
+  "caption": "Hình của đề bài",
+  "params": {
+   "title": "",
+   "tang": [
+    {
+     "hang": 1,
+     "cot": 2,
+     "ten": "ghép 2 khối lập phương"
+    }
+   ],
+   "chiTang": false,
+   "mau": "gold"
+  }
+ },
+ {
+  "id": "L2Q_B29C7G",
+  "goc": "",
+  "bai": "DL:KSN2.B29",
+  "muc": "luyenTap",
+  "neoCau": "C7",
+  "vaiTro": "giai",
+  "arch": "thap_khoi",
+  "caption": "Lời giải",
+  "params": {
+   "title": "",
+   "tang": [
+    {
+     "hang": 1,
+     "cot": 2,
+     "ten": "ghép 2 khối lập phương"
+    }
+   ],
+   "mau": "gold",
+   "note": "Ghép 2 khối lập phương được KHỐI HỘP CHỮ NHẬT: hai mặt đầu vẫn vuông, 4 mặt quanh thân thành chữ nhật."
+  }
+ },
+ {
+  "id": "L2Q_B31C4",
+  "goc": "",
+  "bai": "DL:KSN2.B31",
+  "muc": "luyenTap",
+  "neoCau": "C4",
+  "arch": "hinh_phang",
+  "caption": "Hình của đề bài",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "tron",
+     "ten": "bánh chưng chia 4 phần",
+     "mau": "gold",
+     "chia": 4
+    }
+   ]
+  }
+ },
+ {
+  "id": "L2Q_B31C4G",
+  "goc": "",
+  "bai": "DL:KSN2.B31",
+  "muc": "luyenTap",
+  "neoCau": "C4",
+  "vaiTro": "giai",
+  "arch": "hinh_phang",
+  "caption": "Lời giải",
+  "params": {
+   "title": "",
+   "hinh": [
+    {
+     "loai": "tron",
+     "ten": "bố ăn 1 phần",
+     "mau": "gold",
+     "chia": 4,
+     "to_phan": 1
+    }
+   ],
+   "note": "Bố ăn MỘT PHẦN TƯ chiếc bánh, còn lại 3 phần."
+  }
+ },
+ {
+  "id": "L2Q_B31C2",
+  "goc": "",
+  "bai": "DL:KSN2.B31",
+  "muc": "luyenTap",
+  "neoCau": "C2",
+  "arch": "cham_tron",
+  "caption": "Hình của đề bài",
+  "params": {
+   "title": "",
+   "nhom": [
+    {
+     "ten": "6 viên kẹo",
+     "so": 6,
+     "hang": 3,
+     "mau": "teal"
+    }
+   ]
+  }
+ },
+ {
+  "id": "L2Q_B31C2G",
+  "goc": "",
+  "bai": "DL:KSN2.B31",
+  "muc": "luyenTap",
+  "neoCau": "C2",
+  "vaiTro": "giai",
+  "arch": "cham_tron",
+  "caption": "Lời giải",
+  "params": {
+   "title": "",
+   "nhom": [
+    {
+     "ten": "một nửa",
+     "so": 3,
+     "hang": 3,
+     "mau": "teal"
+    },
+    {
+     "ten": "nửa kia",
+     "so": 3,
+     "hang": 3,
+     "mau": "teal"
+    }
+   ],
+   "note": "6 : 2 = 3 viên."
+  }
+ },
+ {
+  "id": "L2Q_B31C3",
+  "goc": "",
+  "bai": "DL:KSN2.B31",
+  "muc": "luyenTap",
+  "neoCau": "C3",
+  "arch": "cham_tron",
+  "caption": "Hình của đề bài",
+  "params": {
+   "title": "",
+   "nhom": [
+    {
+     "ten": "8 cái bánh",
+     "so": 8,
+     "hang": 4,
+     "mau": "gold"
+    }
+   ]
+  }
+ },
+ {
+  "id": "L2Q_B31C3G",
+  "goc": "",
+  "bai": "DL:KSN2.B31",
+  "muc": "luyenTap",
+  "neoCau": "C3",
+  "vaiTro": "giai",
+  "arch": "cham_tron",
+  "caption": "Lời giải",
+  "params": {
+   "title": "",
+   "nhom": [
+    {
+     "ten": "phần 1",
+     "so": 2,
+     "hang": 2,
+     "mau": "gold"
+    },
+    {
+     "ten": "phần 2",
+     "so": 2,
+     "hang": 2,
+     "mau": "gold"
+    },
+    {
+     "ten": "phần 3",
+     "so": 2,
+     "hang": 2,
+     "mau": "gold"
+    },
+    {
+     "ten": "phần 4",
+     "so": 2,
+     "hang": 2,
+     "mau": "gold"
+    }
+   ],
+   "note": "8 : 4 = 2 cái — một phần tư của 8 là 2."
   }
  }
 ]

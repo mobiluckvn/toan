@@ -1,6 +1,6 @@
 # Chuẩn đưa một quyển sách vào phần mềm
 
-Viết sau khi làm xong **Toán lớp 2** (33 bài · 96 hình · 8 ôn tập · 3 ải) và
+Viết sau khi làm xong **Toán lớp 2** (33 bài · 120 hình · 8 ôn tập · 3 ải) và
 **Quyển 2 lớp 5** (21 khối · 53 sơ đồ). Mọi luật ở đây đều đổi bằng một lần vấp
 thật — phần *"Mười tám cái bẫy"* là chỗ đáng đọc nhất, đọc trước khi gõ dòng nào.
 
@@ -429,7 +429,7 @@ Nhóm lớn trước. Mỗi nhóm: viết nguyên mẫu → vẽ vài hình → 
 so** → sửa → vẽ cả nhóm.
 
 Đừng vẽ hết rồi mới xem. Bốn lỗi trình bày của nhóm đầu tiên (dòng chốt rơi tận đáy,
-nhãn đè ô, hàng cách quá xa, cỡ chữ lẫn lộn) nếu phát hiện muộn thì phải sửa cả 96 hình.
+nhãn đè ô, hàng cách quá xa, cỡ chữ lẫn lộn) nếu phát hiện muộn thì phải sửa cả 120 hình.
 
 ### Bước 4 · Đáp án
 
@@ -481,7 +481,7 @@ curl -s https://ky-su-nhi.web.app/content/figures/<HINH>.png | shasum -a 256 | c
 |---|---|
 | Khảo sát + phân loại hình | 75 hình → 15 nhóm |
 | Dây chuyền bóc tách | 7 bước, ~900 dòng Python |
-| Vẽ hình | 96 hình · 21 nguyên mẫu · ~800 dòng |
+| Vẽ hình | 120 hình · 22 nguyên mẫu · ~800 dòng |
 | Đáp án | 88 suy máy + 154 viết tay |
 | Cổng nghiệm thu | 68 phép kiểm riêng cho quyển |
 

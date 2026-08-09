@@ -73,7 +73,22 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
     screens = []
     mo = _dong(bai, 'chuyenMoBai')
     if mo:
-        screens.append({'id': 'S1', 'kind': 'hook', 'narration': ' '.join(mo)})
+        # MÀN MỞ NGẮN VÀ NÊU THẲNG BÀI TOÁN. Cả đoạn `chuyenMoBai` dài trung bình
+        # 297 chữ — bé bảy tuổi đọc hết chừng ấy vẫn chưa biết bài hỏi gì. Nay giữ
+        # ĐÚNG MỘT câu dẫn (câu đầu, để còn có không khí) rồi vào ngay đề bài.
+        de_bai = re.sub(r'^Đề bài\s*[:.]\s*', '',
+                        next((d for d in _dong(bai, 'viDuMau') if d.startswith('Đề bài')), ''))
+        cau_dau = re.split(r'(?<=[.!?])\s+', ' '.join(mo))[0]
+        # Câu dẫn CHỈ giữ khi không có con số nào: chuyện mở bài hay kể một bộ số
+        # khác với bộ số của đề ("ba tấm thẻ 2, 5, 8" rồi đề lại cho 4, 0, 9) — ghép
+        # vào nhau thành hai đề đá nhau ngay dòng đầu tiên bé đọc.
+        if de_bai:
+            giu = (len(cau_dau) <= 90 and not re.search(r'\d', cau_dau)
+                   and len(cau_dau) + len(de_bai) <= 200)
+            loi = f'{cau_dau} {de_bai}' if giu else de_bai
+        else:
+            loi = ' '.join(mo)
+        screens.append({'id': 'S1', 'kind': 'hook', 'narration': loi})
     for i, st in enumerate(statements, 1):
         screens.append({'id': f'S{i + 1}', 'kind': 'explain', 'narration': '',
                         'teaches': [st['id']]})
