@@ -61,5 +61,35 @@ const theoCanCu = Object.values(gan).reduce((a, v) => {
 }, {});
 console.log('   căn cứ:', Object.entries(theoCanCu).map(([k, v]) => `${k} ${v}`).join(' · '));
 
+/* ── bản trích thô: mốc bất biến, mất chữ ở đây thì mọi bước sau đều thiếu ── */
+const THO = join(G, 'data/lop3_tho.json');
+if (existsSync(THO)) {
+  const d = JSON.parse(readFileSync(THO, 'utf8'));
+  const bai = d.bai || [];
+  t(`trích đủ 34 bài (${bai.length})`, bai.length === 34);
+  const MUC = ['mucTieu', 'chuyenMoBai', 'khamPha', 'viDuMau',
+               'suKemNham', 'luyenTap', 'quiz', 'gocBoMe'];
+  const thieuMuc = bai.filter((b) => MUC.some((m) => !b.muc?.[m])).map((b) => b.so);
+  t('bài nào cũng đủ 8 mục ①…⑧', thieuMuc.length === 0);
+  in5(thieuMuc);
+  /* Mỗi bài 5 câu quiz — sách nói vậy, và nhiệt kế cũng 5 mức. Lệch là mẫu tách
+     câu bỏ sót: lớp 2 từng mất 165 câu quiz vì mẫu chỉ nhận dấu chấm. */
+  const saiQuiz = bai.filter((b) => (b.cau || []).filter((c) => c.phan === 'quiz').length !== 5)
+    .map((b) => `B${b.so}`);
+  t('bài nào cũng đúng 5 câu quiz', saiQuiz.length === 0);
+  in5(saiQuiz);
+  /* `hatMam` là đường lùi về lớp 2 — thiếu là mất luôn lý do tồn tại của bảng gán */
+  const khongHatMam = bai.filter((b) => !b.hatMam).map((b) => `B${b.so}`);
+  t('bài nào cũng có HẠT MẦM NĂM NGOÁI', khongHatMam.length === 0);
+  in5(khongHatMam);
+  /* mã bài trong bảng đường lùi phải khớp số bài có thật trong bản trích */
+  const soTho = new Set(bai.map((b) => `DL:KSN3.B${String(b.so).padStart(2, '0')}`));
+  const lechBang = Object.keys(gan).filter((k) => !soTho.has(k));
+  t('bảng đường lùi không trỏ từ bài lớp 3 không có thật', lechBang.length === 0);
+  in5(lechBang);
+  console.log(`   ${bai.length} bài · ${bai.reduce((a, b) => a + (b.cau || []).length, 0)} câu`
+    + ` · ${bai.reduce((a, b) => a + (b.sauBai || []).length, 0)} dòng ôn tập/ải/đáp án`);
+}
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
