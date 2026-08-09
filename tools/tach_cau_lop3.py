@@ -59,12 +59,19 @@ def _sach(s):
 
 
 def _that(gt, loi):
-    """Giá trị này có THẬT trong lời giải của sách không? Không thì đừng dùng."""
-    g = str(gt).strip()
+    """Giá trị này có THẬT trong lời giải của sách không? Không thì đừng dùng.
+
+    So KHÔNG phân biệt hoa thường: sách viết hoa để nhấn ("cửa PHẢI", "CÓ thuộc",
+    "PHẠM LUẬT") còn khoá thì viết thường cho khớp chữ trên nút bấm. Bộ chấm cũng
+    so không phân biệt hoa thường, nên chốt này phải theo cùng một luật — chặt hơn
+    bộ chấm thì nó đỏ oan chính những khoá đúng.
+    """
+    g = str(gt).strip().lower()
+    l = str(loi).lower()
     if not g:
         return False
     # so cả bản bỏ khoảng trắng, vì số Việt viết "5 321" mà đôi chỗ ghi "5321"
-    return g in loi or g.replace(' ', '') in loi.replace(' ', '')
+    return g in l or g.replace(' ', '') in l.replace(' ', '')
 
 
 def _don(v):
@@ -214,11 +221,22 @@ def r_lon_be(text, loi):
 
 LUAT = [r_chia_du, r_lon_be, r_moi_muc, r_day_so, r_mot_dap]
 
+# Hai câu ĐÃ XÉT và kết luận KHÔNG chấm máy được — khai đích danh để lần sau khỏi
+# tưởng là bỏ sót, và để bảng tổng nói đúng "cố ý" thay vì "chưa khớp luật nào".
+CO_Y = {
+    'DL:KSN3.B01#C1': 'đọc số thành CHỮ — "năm mươi tư" và "năm mươi bốn" đều đúng, '
+                      'ép một cách viết là chấm oan',
+    'DL:KSN3.B17#C3': 'chỉ yêu cầu GẠCH CHÂN và gọi tên trạm giữa — đáp là câu văn, '
+                      'mỗi bé diễn đạt một kiểu',
+}
 
-def suy_ra(c):
+
+def suy_ra(c, ma=''):
     text, loi = c['text'], (c.get('loiChua') or '').strip()
     if not loi:
         return None, 'không có lời chữa'
+    if ma in CO_Y:
+        return None, f'CỐ Ý để tự chấm ({CO_Y[ma]})'
     if BO_QUA.search(text):
         return None, 'CỐ Ý để tự chấm (đề mở · vì sao · làm tay)'
     if R_MO.search(loi):
@@ -250,14 +268,19 @@ def main(chi_soat=False):
                 # TỰ SOÁT BÀI CỦA MÌNH: mọi con số viết tay phải XUẤT HIỆN trong
                 # lời giải của sách. Chốt này bắt lỗi thật ở lớp 2 (sách viết "một
                 # phần tư" bằng chữ, người soạn ghi 4) — và bắt cả lỗi gõ nhầm.
-                loi = (c.get('loiChua') or '')
+                # Soi cả ĐỀ lẫn LỜI GIẢI. Với ô BẤM CHỌN, chữ trên nút là TÊN LOẠI
+                # do chính đề nêu ra ("dãy nào nhịp đều, dãy nào phải thử sâu hơn"),
+                # nên nó nằm ở đề chứ không ở lời giải. Chỉ soi lời giải thì chốt đỏ
+                # oan đúng những khoá đã lấy chữ từ đề — mà lấy chữ từ đề mới là
+                # đúng luật, vì đó là chữ bé đọc thấy.
+                nguon = (c.get('loiChua') or '') + ' ⟂ ' + c['text']
                 for gt in ([p['value'] for p in k['parts']] if 'parts' in k
                            else k.get('values') or [k.get('value')]):
-                    if gt is not None and not _that(gt, loi):
-                        canh_bao.append(f'{ma}: viết tay "{gt}" mà lời giải sách '
-                                        f'không có → {loi[:70]}')
+                    if gt is not None and not _that(gt, nguon):
+                        canh_bao.append(f'{ma}: viết tay "{gt}" mà sách không có '
+                                        f'chữ ấy ở đề lẫn lời giải')
             else:
-                k, ten = suy_ra(c)
+                k, ten = suy_ra(c, ma)
             thong_ke[ten] = thong_ke.get(ten, 0) + 1
             if k:
                 ra[ma] = k

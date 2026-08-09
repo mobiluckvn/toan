@@ -415,7 +415,21 @@ if (existsSync(APP)) {
   const lt = app.flatMap((b) => Object.values(b.practice?.pools || {}).flat());
   const cham = lt.filter((x) => x.answerKey);
   t(`đa số câu luyện tập chấm máy được (${cham.length}/${lt.length})`,
-    cham.length >= lt.length * 0.6);
+    cham.length >= lt.length * 0.85);
+
+  /* Ô BẤM CHỌN: đáp án phải nằm TRONG danh sách nút. Lệch một chữ là bé bấm đúng
+     nút mà máy vẫn báo sai — và bé thì tin máy chứ không tin mình. */
+  const pickHong = [];
+  for (const x of cham) {
+    for (const p of x.answerKey.parts || []) {
+      if (!p.options) continue;
+      if (!p.options.map(String).includes(String(p.value))) {
+        pickHong.push(`${x.id}: đáp "${p.value}" không có trong nút ${JSON.stringify(p.options)}`);
+      }
+    }
+  }
+  t('đáp án ô bấm chọn nào cũng nằm trong danh sách nút', pickHong.length === 0);
+  in5(pickHong);
 
   /* Ô nào cũng phải có NHÃN: nhiều ô mà không nhãn thì bé không biết ô nào hỏi gì */
   const oThieuNhan = cham.filter((x) => (x.answerKey.parts || [])
