@@ -48,9 +48,6 @@ export default function App() {
      app ra con thấy mình học dở những gì rồi tự chọn — thay vì bị đưa thẳng vào
      một quyển và phải "đổi lớp" mới sang được quyển khác. */
   const [chuongTrinh, setChuongTrinh] = useState(null);
-  const chonChuongTrinh = useCallback((ma) => {
-    setChuongTrinh(ma); setView({ page: 'home' });
-  }, []);
   const veKeSach = useCallback(() => { setChuongTrinh(null); setView({ page: 'home' }); }, []);
   const [skipped, setSkipped] = useState(() => {
     try { return localStorage.getItem(SKIP_KEY) === '1'; } catch { return false; }
@@ -63,6 +60,15 @@ export default function App() {
      không kệ sách chỉ thấy bản mặc định tối thiểu (thiếu biểu tượng, thiếu mục
      "sắp có") mà chẳng có gì báo là đang thiếu. */
   const [dangKy, setDangKy] = useState(() => soDangKy());
+  /* Chương trình `loai: 'giai'` không phải chuỗi bài học tuần tự mà là mùa giải —
+     mở thẳng vào bảng đấu, không đi qua màn Home của một lớp. */
+  const chonChuongTrinh = useCallback((ma) => {
+    if (dangKy?.chuongTrinh?.[ma]?.loai === 'giai') {
+      setChuongTrinh('lop5'); setView({ page: 'muagiai' });
+      return;
+    }
+    setChuongTrinh(ma); setView({ page: 'home' });
+  }, [dangKy]);
   useEffect(() => { napSoDangKy().then(setDangKy); }, []);
 
   useEffect(() => {
