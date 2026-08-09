@@ -84,7 +84,8 @@ def main():
                 muc.setdefault('hinh', [])
                 muc['hinh'] = [x for x in muc['hinh'] if x['id'] != h['id']]
                 muc['hinh'].append({'id': h['id'], 'cau': h['neoCau'], 'file': h['file'],
-                                    'caption': h['caption'], 'sha256_16': h['sha256_16']})
+                                    'caption': h['caption'], 'sha256_16': h['sha256_16'],
+                                    'vaiTro': h.get('vaiTro')})
                 gan += 1
                 continue
             dong = muc.get('dong') or []

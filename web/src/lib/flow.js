@@ -643,16 +643,22 @@ export function buildFlow(lesson) {
     steps.push({ type: 'worked', phase: 'sample', we: lesson.workedExample, figure: figDomain });
 
   /* Hình của RIÊNG một câu hỏi ('item:C8'). Có câu mà ĐỀ NẰM TRONG HÌNH — thiếu
-     hình thì bé không có gì mà làm, chứ không phải chỉ mất phần minh hoạ. */
+     hình thì bé không có gì mà làm, chứ không phải chỉ mất phần minh hoạ.
+     'item:C8:giai' là hình của LỜI GIẢI, chỉ hiện sau khi bé làm xong: bài đếm
+     hình thì lời giải phải chỉ ra TỪNG hình tìm được ngay trên hình vẽ, chứ kể
+     bằng lời thì bé vẫn không biết mình sót cái nào. Để chung một hình với đề là
+     lộ đáp án ngay lúc bé chưa làm. */
   const pools = lesson.practice?.pools || {};
   ['warmup', 'standard', 'challenge'].forEach((lv) =>
     (pools[lv] || []).forEach((item) => steps.push({
       type: 'practice', phase: 'practice', item, level: lv,
-      figure: figFor(lesson, `item:${item.id}`) })));
+      figure: figFor(lesson, `item:${item.id}`),
+      figureGiai: figFor(lesson, `item:${item.id}:giai`) })));
 
   (lesson.assessment?.items || []).forEach((item, i) =>
     steps.push({ type: 'assess', phase: 'assess', item, index: i + 1,
                  figure: figFor(lesson, `item:${item.id}`),
+                 figureGiai: figFor(lesson, `item:${item.id}:giai`),
                  total: (lesson.assessment?.items || []).length }));
 
   steps.push({ type: 'finale', phase: 'assess' });

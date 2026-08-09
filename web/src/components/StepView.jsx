@@ -158,6 +158,7 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
     /* ══ LUYỆN TẬP ══ */
     case 'practice':
       return <PracticeItem item={step.item} level={step.level} figure={step.figure}
+                           figureGiai={step.figureGiai}
                            onDone={(e) => onRecord('practice', e)}
                            onJumpTeach={() => onJump('mantra')}
                            onNext={onNext} />;

@@ -114,7 +114,9 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
             n += 1
             noi = cho
             if h.get('cau'):
-                noi = f"item:{h['cau']}"
+                # ':giai' = hình chỉ hiện SAU khi bé làm xong. Bài đếm hình thì lời
+                # giải phải chỉ từng hình tìm được ngay trên hình vẽ.
+                noi = f"item:{h['cau']}" + (':giai' if h.get('vaiTro') == 'giai' else '')
             elif ten_muc == 'khamPha':
                 # hình đứng ngay sau dòng nào thì thuộc màn của dòng ấy
                 # KHÔNG đặt tên `truoc` ở đây: nó là tham số của hàm (bài liền trước),

@@ -807,6 +807,20 @@ def _manh_luoi(cx, yc, w, h, nh, nc):
     return ra
 
 
+def _manh_cheo(cx, yc, w, h, n):
+    """Hình vuông kẻ đường chéo: n=1 → 2 tam giác, n=2 → 4 tam giác.
+
+    Bài B27 có hai câu bắt kẻ đường chéo mà lưới ô vuông không tả được — chéo cắt
+    QUA ô chứ không dọc theo mép ô.
+    """
+    a, b = cx - w / 2, yc - h / 2
+    c, d = cx + w / 2, yc + h / 2
+    if n <= 1:
+        return [[(a, b), (c, b), (c, d)], [(a, b), (c, d), (a, d)]]
+    return [[(a, b), (c, b), (cx, yc)], [(c, b), (c, d), (cx, yc)],
+            [(c, d), (a, d), (cx, yc)], [(a, d), (a, b), (cx, yc)]]
+
+
 def _tam(poly):
     return (sum(x for x, _ in poly) / len(poly), sum(y for _, y in poly) / len(poly))
 
@@ -821,6 +835,11 @@ def _hop_manh(p, cx, yc, w, h, to):
     ds = sorted(to)
     if not ds or ds != list(range(ds[0], ds[-1] + 1)):
         return None                                   # rời rạc thì không gộp được
+    if p.get('cheo'):
+        # Mảnh chia theo ĐƯỜNG CHÉO không nằm trên lưới ô. Đi tiếp xuống nhánh lưới
+        # bên dưới thì nó gộp ra một hình CHỮ NHẬT phủ lên nửa hình — bé nhìn thấy
+        # cột màu chứ không thấy tam giác. Chéo thì tô từng mảnh, không gộp.
+        return None
     if p.get('loai') == 'tamgiac':
         n = int(p.get('vach', 2))
         _, (dinh,), moc = _manh_tamgiac(cx, yc, w, h, n)
@@ -848,7 +867,9 @@ def _ve_ghep(ax, p, cx, yc, w, h, to=(), so=True, lw=2.4):
     """Vẽ hình ghép một lần. `to` = chỉ số các mảnh cần tô đậm."""
     from matplotlib.patches import Polygon
     loai = p.get('loai', 'chunhat')
-    if loai == 'tamgiac':
+    if p.get('cheo'):
+        manh = _manh_cheo(cx, yc, w, h, int(p['cheo']))
+    elif loai == 'tamgiac':
         manh, _, _ = _manh_tamgiac(cx, yc, w, h, int(p.get('vach', 2)))
     else:
         nh, nc = (p.get('luoi') or [1, int(p.get('vach', 2))])[:2]
@@ -880,34 +901,41 @@ def hinh_ghep(p, out):
     giác to ÔM hai mảnh nhỏ, mà đó mới là điều cả bài đang dạy.
     """
     tim = p.get('tim') or []
-    n = max(len(tim), 1)
+    ti = 1.0 if p.get('loai') == 'vuong' else 1.15
+    # Bản nhỏ xếp tối đa 5 cái một hàng, tràn thì xuống hàng. Nhồi cả 8 cái vào một
+    # hàng thì mỗi cái chỉ còn 11 đơn vị bề ngang: hình vuông bị ép thành cột dọc,
+    # nhãn chồng lên nhau, dòng chốt bị đè.
+    MOI_HANG = 5
+    n = min(len(tim), MOI_HANG) or 1
+    so_hang = (len(tim) + MOI_HANG - 1) // MOI_HANG
+    W = 88.0 / n
     tren = 11.0 if p.get('title') else 4.0
-    CAO, CAO_N = 30.0, 17.0
+    CAO = 30.0
+    # cạnh bản nhỏ lấy theo CẢ bề ngang lẫn bề cao — có thế mới giữ đúng tỉ lệ hình
+    O = min(W * 0.72 / ti, 17.0) if tim else 0.0
     duoi = 8.0 if p.get('note') else 4.0
-    fig, ax, H = canvas(7.6, max(3.0, (tren + CAO + CAO_N + 22.0 + duoi) * 7.6 / 100))
+    cao_khung = tren + CAO + (so_hang * (O + 9.0) + 4.0 if tim else 6.0) + duoi
+    fig, ax, H = canvas(7.6, max(3.0, cao_khung * 7.6 / 100))
     if p.get('title'):
         txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
 
-    # Khai là hình VUÔNG thì phải vẽ VUÔNG — bài đang dạy đếm hình vuông, mà ô vẽ
-    # bẹt ra thì bé đọc "ô cửa 2 × 2" lại nhìn thấy toàn chữ nhật.
-    ti = 1.0 if p.get('loai') == 'vuong' else 1.15
     yc = H - tren - CAO / 2 - 1.0
     _ve_ghep(ax, p, 50, yc, CAO * ti, CAO, so=True)
 
     # Hàng bản nhỏ: mỗi bản tô đậm ĐÚNG một hình tìm được. Đây là chỗ bé thấy hình
     # ghép hiện ra — không có nó thì "hình ghép" vẫn chỉ là chữ.
+    ybot = yc - CAO / 2 - 8.0
     if tim:
-        W = 88.0 / n
-        yn = yc - CAO / 2 - 6.0 - CAO_N / 2
-        for i, t in enumerate(tim):
-            cx = 6.0 + W * (i + 0.5)
-            _ve_ghep(ax, p, cx, yn, min(W * 0.72, CAO_N * ti), CAO_N,
-                     to=set(t.get('o') or []), so=False, lw=1.8)
-            _txt(ax, cx, yn - CAO_N / 2 - 4.0, t.get('ten', ''),
+        y = yc - CAO / 2 - 5.0 - O / 2
+        for k, t in enumerate(tim):
+            r_, c_ = divmod(k, MOI_HANG)
+            trong = min(MOI_HANG, len(tim) - r_ * MOI_HANG)
+            cx = 50 - (trong - 1) * W / 2 + c_ * W
+            cy = y - r_ * (O + 9.0)
+            _ve_ghep(ax, p, cx, cy, O * ti, O, to=set(t.get('o') or []), so=False, lw=1.8)
+            _txt(ax, cx, cy - O / 2 - 4.0, t.get('ten', ''),
                  fs=FS['small'], c=INK, w='bold', z=7)
-        ybot = yn - CAO_N / 2 - 10.0
-    else:
-        ybot = yc - CAO / 2 - 8.0
+        ybot = y - (so_hang - 1) * (O + 9.0) - O / 2 - 9.5
     if p.get('note'):
         txt_fit(ax, 50, ybot, p['note'], 92, FS['body'], DARKTEAL, z=5)
     save(fig, out)
@@ -962,7 +990,14 @@ def thap_khoi(p, out):
         ax.add_patch(Polygon([(x + s, y), (x + s + d, y + d), (x + s + d, y + s + d),
                               (x + s, y + s)], fc='#E8F1FA', ec=vien, lw=1.9, zorder=10 - r))
 
-    # Bên phải: từng tầng trải phẳng, mỗi ô là một khối — đếm được từng cái
+    # Bên phải: từng tầng trải phẳng, mỗi ô là một khối — đếm được từng cái.
+    # Đây CHÍNH LÀ lời giải, nên hình ĐỀ BÀI phải tắt đi (`chiTang: false`), không
+    # thì bé chưa đếm đã thấy sẵn "2 × 2 = 4".
+    if p.get('chiTang') is False:
+        if p.get('note'):
+            txt_fit(ax, 50, ytr - 7.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+        save(fig, out)
+        return
     xr = 56.0
     o_s = min(6.0, (100.0 - xr - 4.0) / max(nc, 1) * 0.8)
     y = H - tren - 6.0

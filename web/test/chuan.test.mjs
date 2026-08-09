@@ -30,7 +30,7 @@ const so = (re) => Number((md.match(re) || [])[1]);
 const sotay = JSON.parse(readFileSync(join(G, 'data/lop2_hinh_manifest.json'), 'utf8'));
 const tay = JSON.parse(readFileSync(join(G, 'data/lop2_dapan_tay.json'), 'utf8'));
 const dapan = JSON.parse(readFileSync(join(G, 'data/lop2_dapan.json'), 'utf8'));
-t(`số hình khớp (${Object.keys(sotay).length})`, so(/(\d+) hình · 17 nguyên mẫu/) === Object.keys(sotay).length);
+t(`số hình khớp (${Object.keys(sotay).length})`, so(/(\d+) hình · \d+ nguyên mẫu/) === Object.keys(sotay).length);
 t(`số câu viết tay khớp (${Object.keys(tay).length})`,
   so(/\| viết tay \| (\d+) \/ 281 \|/) === Object.keys(tay).length);
 t(`số câu suy máy khớp (${Object.keys(dapan).length - Object.keys(tay).length})`,

@@ -43,6 +43,9 @@ def main(loc=None):
         so_tay[m['id']] = {
             'file': f'figures/{ten}', 'caption': m['caption'], 'bai': m['bai'],
             'muc': m['muc'], 'neoBuoc': m.get('neoBuoc', 0), 'neoCau': m.get('neoCau'),
+            # 'giai' = hình chỉ hiện sau khi bé làm xong. Sổ tay phải chép lại,
+            # vì bước gắn hình đọc SỔ TAY chứ không đọc bản mô tả.
+            'vaiTro': m.get('vaiTro'),
             'hoan': m.get('hoan'), 'onTap': m.get('onTap'),
             'goc': m['goc'], 'sha256_16': sha,
         }

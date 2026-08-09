@@ -8,7 +8,7 @@ import AnswerFields from './AnswerFields.jsx';
 const LEVEL = { warmup: 'KHỞI ĐỘNG', standard: 'CƠ BẢN', challenge: 'THỬ THÁCH' };
 
 /** Luyện tập: gợi ý 2 tầng · sai 3 lần mở đáp án · luôn có lối quay lại nguyên tắc */
-export default function PracticeItem({ item: base, level, figure, onDone, onJumpTeach, onNext }) {
+export default function PracticeItem({ item: base, level, figure, figureGiai, onDone, onJumpTeach, onNext }) {
   const [item, setItem] = useState(base);
   const [vals, setVals] = useState(() => Array(Math.max(inputCount(base), 1)).fill(''));
   const [tries, setTries] = useState(0);
@@ -102,6 +102,7 @@ export default function PracticeItem({ item: base, level, figure, onDone, onJump
           <div className="mt-2 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
             <b>Đáp án:</b> {res?.expected}
             {item.solutionNarrative && <div className="mt-1">{item.solutionNarrative}</div>}
+            <Figure fig={figureGiai} />
           </div>
         )}
       </div>
