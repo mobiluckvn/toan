@@ -109,11 +109,13 @@ export default function KeSach({ dangKy, progress, onMoChuongTrinh, onSoPhuHuynh
                       {ct.ten}
                     </span>
                     <span className="block text-[12px] text-mute">
+                      {/* Đơn vị đếm khai ở sổ đăng ký: mùa giải đếm bằng vòng đấu,
+                          ghi "26 bài" cho một thứ không có bài nào là sai hẳn. */}
                       {td.xong > 0
-                        ? `đã học xong ${td.xong} trên ${td.tong} bài`
+                        ? `đã học xong ${td.xong} trên ${td.tong} ${ct.donVi || 'bài'}`
                         : td.dangLam > 0
-                          ? `đang học dở · ${td.tong} bài`
-                          : `${td.tong} bài · ${ct.doTuoi || ''}`}
+                          ? `đang học dở · ${td.tong} ${ct.donVi || 'bài'}`
+                          : `${td.tong} ${ct.donVi || 'bài'} · ${ct.doTuoi || ''}`}
                     </span>
                     {/* Vạch tiến độ chỉ hiện khi ĐÃ học — vạch 0% chỉ làm con nản */}
                     {td.xong > 0 && (
