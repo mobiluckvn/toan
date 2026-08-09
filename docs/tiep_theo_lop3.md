@@ -2,6 +2,10 @@
 
 Cập nhật 2026-08-09. Đọc tệp này TRƯỚC, rồi mới đọc `CHUAN_DUA_SACH_VAO_APP.md`.
 
+**ĐÃ DEPLOY** — https://ky-su-nhi.web.app · `npx firebase deploy --only hosting` từ
+thư mục `web/`. Chỉ đẩy hosting: functions và rules không đụng tới trong đợt này nên
+không đẩy theo, tránh mang lên thứ chưa kiểm.
+
 Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn tập · 3 ải.
 
 ---
@@ -256,6 +260,25 @@ Kỳ sát hạch cần đáp án, mà bản đầu của `ontap_lop3.py` ĐÓNG 
 - ôn tập 3 chèn nhãn giữa mã và dấu hai chấm: `C10 — MẬT THƯ: (A) …`
 
 ---
+
+## Việc đã cân nhắc và LOẠI
+
+- **Vẽ đủ 131 hình giảng, mỗi bước một hình.** Loại: chuẩn dặn "không phải mọi bước
+  đều đáng vẽ". Bước nào chỉ diễn giải bằng lời mà thêm hình là thêm thứ để bé phải
+  đọc. 39 hình phủ đủ 34 bài đã đúng liều.
+- **Tách riêng `cham_tron` cho lớp 3 để khỏi đụng hình lớp 2.** Loại: như thế lớp 2 ở
+  lại với lỗi lệch cỡ chấm. Sửa ở gốc, rồi đối chiếu mã băm để biết đúng 3/120 hình
+  lớp 2 đổi.
+- **`npm run deploy` (build + firebase deploy đầy đủ).** Loại: lệnh ấy đẩy cả
+  functions và firestore rules — đợt này không đụng tới chúng, đẩy theo là mang lên
+  trạng thái cục bộ chưa ai kiểm. Dùng `--only hosting`.
+
+## Chưa làm — cân nhắc riêng
+
+Màn NGUYÊN TẮC in mã `K1 · K2 · K3` thành chip xanh trước mỗi nguyên tắc (`StepView.jsx`
+dòng 86). Với bé 8-9 tuổi thì "K2" không mang nghĩa gì — đúng loại "mã nội bộ của
+người soạn" mà chuẩn mục 5 bảo phải bỏ. **Nhưng nó có sẵn từ trước và dùng chung cả
+ba quyển**, nên sửa là đụng cả lớp 2 lẫn lớp 5. Chưa sửa, để bác quyết.
 
 ## Đừng quên
 
