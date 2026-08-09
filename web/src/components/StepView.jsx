@@ -64,7 +64,9 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
     case 'hook':
       return (<>
         <div className="card">
-          <div className="kicker">TÌNH HUỐNG</div>
+          {/* Nhãn cũ là "TÌNH HUỐNG" hồi màn mở còn kể chuyện. Nay nó nêu thẳng
+              đề bài nên gọi đúng tên — bé đọc nhãn là biết phải làm gì. */}
+          <div className="kicker">BÀI TOÁN</div>
           <p className="text-[16.5px] leading-relaxed">{step.screen?.narration}</p>
           <Figure fig={step.figure} />
           {step.screen?.display?.caption && (
