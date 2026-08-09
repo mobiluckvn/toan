@@ -125,6 +125,23 @@ def hinh_tron(p, out):
             nhan_ngoai(math.radians(-90),
                        ' '.join(x for x in (dy.get('ten'), dy.get('so')) if x), '#7E57C2')
 
+        # ── vật trồng ĐỀU quanh vòng: cây quanh hồ, cọc đèn quanh vườn ──
+        # Bài 24 dạy "đi trọn một vòng thì điểm cuối TRÙNG điểm đầu, nên cây = khoảng".
+        # Vẽ ra thì bé đếm được cả cây lẫn khoảng và tự thấy hai số bằng nhau; tả bằng
+        # lời thì bé phải tin, mà đây đúng là chỗ bé hay đếm thừa một.
+        qv = h.get('quanhVong')
+        if qv:
+            n_moc = int(qv.get('so', 0))
+            for kk in range(n_moc):
+                a = math.pi / 2 - 2 * math.pi * kk / n_moc
+                mx, my = cx + r * math.cos(a), yc + r * math.sin(a)
+                ax.add_patch(Circle((mx, my), 1.5, fc='#8CD98C', ec='#3E8E3E',
+                                    lw=1.8, zorder=9))
+                _txt(ax, cx + (r + 4.0) * math.cos(a), yc + (r + 3.2) * math.sin(a),
+                     str(kk + 1), fs=FS['tiny'], c='#3E8E3E', w='bold', z=9)
+            if qv.get('khoang'):
+                _txt(ax, cx, yc, str(qv['khoang']), fs=FS['small'], c=MUTE, w='bold', z=9)
+
         if h.get('tam'):
             ax.add_patch(Circle((cx, yc), 1.1, fc=NAVY, ec=NAVY, zorder=10))
             # đẩy chữ O xuống chếch trái: đường kính chạy ngang qua tâm, đặt sát

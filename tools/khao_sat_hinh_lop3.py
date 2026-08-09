@@ -72,6 +72,33 @@ R_VAT = re.compile(
     r'trồng .{0,12}cây|cây cách cây|nhát cưa|cắm cọc', re.I)
 
 
+# ── KẾT LUẬN SAU KHI SOÁT TAY 134 câu "có thể cần hình" ──
+#
+# Chuẩn đòi phân biệt "chưa làm" với "đã xét và kết luận là không cần". Không ghi
+# lại thì mỗi phiên sau lại quét ra đúng 134 dòng ấy và lại ngồi soát từ đầu.
+#
+# Kết luận: **10 câu** thật sự cần hình, đã vẽ đủ cặp đề + lời giải. 124 câu còn lại
+# KHÔNG cần, vì cùng một lý do: đề đã tả trọn bằng lời và việc của bé là TÍNH, không
+# phải NHÌN. "Tính chu vi hình chữ nhật dài 7 cm rộng 3 cm" thì vẽ cái hình chữ nhật
+# ra chẳng thêm thông tin nào — chỉ thêm một thứ để bé phải đọc.
+#
+# Hình chỉ đáng vẽ khi bé PHẢI NHÌN mới làm được: đếm vật trên vòng tròn, đếm vạch
+# cưa, thấy hai quả cân giống nhau ở hai đĩa, thấy khối nấp hàng sau.
+DA_SOAT_KHONG_CAN = 124
+CAN_HINH = {          # câu → vì sao PHẢI nhìn mới làm được
+    'B24C3': 'đếm cây trên vòng tròn — chỗ bé hay đếm thừa một',
+    'B24C6': 'đếm VẠCH cưa, không đếm đoạn',
+    'B26C8': 'phép thế hai cân — phải thấy cân thứ hai đổi hình',
+    'B27C8': 'một vòng rào ôm hai dáng hình khác nhau',
+    'B29C8': 'vành khăn là hiệu hai bán kính, phải thấy hai vòng',
+    'B30C9': 'chữ nhật ghép từ hai hình vuông — thấy mới tách được',
+    'B31C6': 'bậc thang và chỗ khuyết để vá thành khối hộp',
+    'B31C8': 'khối nấp hàng sau, mắt nhìn nghiêng đếm không ra',
+    'B32C6': 'các ngày cùng CỘT trên tờ lịch',
+    'B33C5': 'hai quả cân GIỐNG NHAU ở hai đĩa — thấy là khỏi trừ',
+}
+
+
 def nhom_cua(text):
     return [t for t, m in NHOM if m.search(text)]
 
@@ -129,7 +156,11 @@ def main(chi_tiet=False):
     print(f'  loại 2 · hình màn mở  — {len(can_mo)} bài, mỗi bài một hình ĐỀ')
     print(f'  loại 3 · hình bài tập — {n_chac} câu CHẮC CHẮN cần hình '
           f'(có "vẽ"/"đếm hình"/"sơ đồ"…)')
-    print(f'                          + {n_co_the} câu có thể cần — phải soát tay')
+    print(f'                          + {n_co_the} câu có thể cần — ĐÃ SOÁT TAY XONG:')
+    print(f'                            · {len(CAN_HINH)} câu thật sự cần, đã vẽ đủ '
+          f'cặp đề + lời giải')
+    print(f'                            · {DA_SOAT_KHONG_CAN} câu KHÔNG cần — đề đã tả '
+          f'trọn bằng lời, việc của bé là TÍNH chứ không phải NHÌN')
     print(f'  ôn tập & ải           — {len(cau_on)} câu nhắc tới hình\n')
     print('  Mỗi câu loại 3 cần HAI hình (đề `item:CX` + lời giải `item:CX:giai`),')
     print(f'  nên riêng phần chắc chắn đã là {n_chac * 2} hình.\n')

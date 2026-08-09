@@ -20,7 +20,7 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 | 2b | bóc đáp án | `tools/dapan_lop3.py` → `data/lop3_dapan.json` — **477 đáp án, khớp 1:1** |
 | 2c | ôn tập & ải | `tools/ontap_lop3.py` → `data/lop3_ontap.json` — **8 ôn tập · 3 ải · 114 câu · 84 câu đề B · mối nối đủ 84/84 câu, cả 8 ôn tập đều `canCu: sach`** |
 | 3 | dựng bài học | `tools/chuan_lop3.py` → `data/lop3/` — **34 bài · 477 câu · 100% có lời chữa · 170 câu chấm máy** |
-| 3b | vẽ & gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **102 hình · 21 nguyên mẫu · đủ 34/34 bài** |
+| 3b | vẽ & gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **122 hình · 21 nguyên mẫu · đủ 34/34 bài, đã soát hết ba loại** |
 | 4 | ô nhập chấm máy | `tools/tach_cau_lop3.py` + `data/lop3_dapan_tay.json` → `data/lop3_dapan_o.json` — **270/307 câu luyện tập chấm máy (87%) · 423 ô nhập** |
 | 5 | khuôn chung + sổ đăng ký | `tools/dung_khuon_chung_lop3.py` → `web/public/content/lop3/` · `reviews/DCR_KSN3_C*` — **34 bài · 11 kỳ sát hạch · LỚP 3 ĐÃ HIỆN TRONG APP** |
 | — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`), nút đã nối tới `FinaleCard` |
@@ -116,7 +116,7 @@ Nhớ mục 6 của chuẩn khi dựng màn mở: lời mở là MỘT CÂU nêu
 | **7 nguyên mẫu** | `figforge/arch_l3.py` — nhập lại 22 nguyên mẫu lớp 2, viết mới 7 |
 | bộ vẽ | `tools/ve_hinh_lop3.py` → `web/public/content/figures/` + sổ tay |
 | bộ gắn | `tools/gan_hinh_lop3.py` — chạy **sau** `chuan_lop3.py`, là bước CUỐI |
-| hình đã vẽ | **102 hình · đủ 34/34 bài, đủ cả ba loại** (`data/lop3_hinh.json`) |
+| hình đã vẽ | **122 hình · đủ 34/34 bài, ba loại đều đã soát hết** (`data/lop3_hinh.json`) |
 
 Bảy nguyên mẫu mới: `hinh_tron` · `luoi_dien_tich` · `ven_hai_vong` · `lich_thang` ·
 `can_ong_dong` · `tien_viet` · `bieu_thuc_ngoac`. Bước 1 đoán "khoảng 5" — hoá ra 7,
@@ -133,15 +133,31 @@ Chạy `python3 tools/khao_sat_hinh_lop3.py --chi-tiet`:
 |---|---|---|
 | ① hình giảng (neo theo bước) | 131 bước ở 34 bài | **39 — đủ 34/34 bài** |
 | ② hình màn mở (bản ĐỀ, bỏ hết đáp án) | 34 bài | **34 — đủ** |
-| ③ hình bài tập (`item:CX` + `:giai`) | 14 câu chắc + 135 câu cần soát tay | **26 hình / 15 câu (14/14 câu chắc)** |
+| ③ hình bài tập (`item:CX` + `:giai`) | 14 câu chắc + 134 câu cần soát tay | **46 hình / 25 câu — ĐÃ SOÁT HẾT** |
 
 **Không vẽ đủ 131 hình giảng, và đó là cố ý.** Chuẩn dặn "không phải mọi bước đều
 đáng vẽ" — vẽ đúng bước mang cái CỐT của bài, còn bước chỉ diễn giải bằng lời thì
 thêm hình là thêm thứ để bé phải đọc. 39 hình phủ đủ 34 bài; bài nào dày ý thì hai
 hình (bài 1, 6).
 
-Còn có thể làm thêm: phần đuôi của 135 câu "có thể cần hình" — phải soát tay từng
-câu, máy không quyết thay được.
+### 134 câu "có thể cần hình" — đã soát tay xong
+
+**10 câu thật sự cần**, đã vẽ đủ cặp đề + lời giải. **124 câu KHÔNG cần**, cùng một
+lý do: đề đã tả trọn bằng lời và việc của bé là TÍNH chứ không phải NHÌN. "Tính chu
+vi hình chữ nhật dài 7 cm rộng 3 cm" mà vẽ cái hình chữ nhật ra thì chẳng thêm thông
+tin nào — chỉ thêm một thứ để bé phải đọc.
+
+Hình chỉ đáng vẽ khi bé **phải nhìn mới làm được**: đếm cây trên vòng tròn (B24C3),
+đếm vạch cưa (B24C6), thấy hai quả cân giống nhau ở hai đĩa (B33C5), thấy khối nấp
+hàng sau (B31C8), thấy các ngày cùng cột lịch (B32C6)…
+
+Kết luận này ghi trong hằng `CAN_HINH` và `DA_SOAT_KHONG_CAN` của
+`tools/khao_sat_hinh_lop3.py`, kèm lý do từng câu — không ghi thì phiên sau lại quét
+ra đúng 134 dòng ấy và lại ngồi soát từ đầu.
+
+Nguyên mẫu `hinh_tron` được thêm tham số `quanhVong` cho bài trồng cây quanh hồ:
+vẽ ra thì bé đếm được cả cây lẫn khoảng và tự thấy hai số bằng nhau — đúng chỗ bé
+hay đếm thừa một.
 
 Lưới quét lượt đầu của tôi ra 306/477 câu "có thể cần" — đó là nhiễu chứ không phải
 sàng lọc, và một danh sách 306 dòng thì không ai soát tay nổi. Bản hiện tại đòi câu
