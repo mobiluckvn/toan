@@ -110,7 +110,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Hai đường chéo cắt thửa hình thang làm bốn vùng. Trí Long chỉ cặp trên - dưới: \"đối đỉnh qua O — bằng nhau tuốt!\" Su Kem chỉ hai đáy: \"Đáy dưới 8 gấp đôi đáy trên 4 — hai tam giác úp lên chúng mà bằng nhau, khác gì úp vung nhỏ lên nồi to?\"",
+    "narration": "Hình thang ABCD (đáy bé AB, đáy lớn CD) có hai đường chéo cắt nhau tại O. Giải thích vì sao S(AOD) = S(BOC).",
     "display": {
      "type": "story_panel",
      "caption": "đối đỉnh = bằng nhau tuốt??"
@@ -515,29 +515,80 @@
  "id": "DL:KSN5Q1.B48.M2",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "đối đỉnh = bằng nhau tuốt??",
-    "lines": [
+    "title": "",
+    "points": {
+     "D": [
+      0,
+      0
+     ],
+     "C": [
+      8,
+      0
+     ],
+     "B": [
+      6,
+      6
+     ],
+     "A": [
+      2,
+      6
+     ],
+     "O": [
+      4,
+      4
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "đối đỉnh qua O — bằng nhau tuốt!",
-      "tone": "wrong"
+      "pts": [
+       "A",
+       "B",
+       "O"
+      ],
+      "fill": "teal"
      },
      {
-      "who": "Su Kem",
-      "say": "Đáy dưới 8 gấp đôi đáy trên 4 — hai tam giác úp lên chúng mà bằng nhau, khác gì úp vung nhỏ lên nồi to?",
-      "tone": "right"
+      "pts": [
+       "D",
+       "C",
+       "O"
+      ],
+      "fill": "navy"
+     },
+     {
+      "pts": [
+       "A",
+       "D",
+       "O"
+      ],
+      "fill": "gold"
+     },
+     {
+      "pts": [
+       "B",
+       "C",
+       "O"
+      ],
+      "fill": "gold"
      }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "O"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B48_M2_F1.png",
-   "sha256_16": "961913401b6fa1c1"
+   "file": "figures/KSN5Q1_B48_M2_F0.png",
+   "sha256_16": "ec4b35e8ac23589b"
   },
   {
    "archetype": "ladder_steps",

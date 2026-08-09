@@ -115,7 +115,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Vòng 400 m, hai bạn xuất phát CÙNG một điểm chạy ngược chiều. Trí Long bí: \"đứng cùng chỗ — khoảng cách bằng 0, chia kiểu gì?!\" Su Kem giơ chiếc bánh vòng: \"Quay lưng nhau chạy thì muốn chạm mặt phải gặm hết cái gì đây?\"",
+    "narration": "Vòng chạy 400 m: hai bạn xuất phát cùng một điểm, chạy ngược chiều với vận tốc 3 m/s và 2 m/s. Hỏi sau bao lâu họ gặp nhau lần đầu?",
     "display": {
      "type": "story_panel",
      "caption": "khoảng cách = 0??"
@@ -516,29 +516,83 @@
  "id": "DL:KSN5Q1.B55.M1",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "khoảng cách = 0??",
-    "lines": [
+    "title": "",
+    "points": {
+     "O": [
+      0,
+      0
+     ],
+     "S": [
+      0,
+      5
+     ],
+     "M": [
+      4.05,
+      -2.94
+     ],
+     "L": [
+      -2.9,
+      4.1
+     ],
+     "R2": [
+      2.9,
+      4.1
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "đứng cùng chỗ — khoảng cách bằng 0, chia kiểu gì?!",
-      "tone": "wrong"
+      "circle": {
+       "at": "O",
+       "r": 5
+      },
+      "fill": "none"
+     }
+    ],
+    "segments": [
+     {
+      "from": "S",
+      "to": "L",
+      "color": "#1FCBAB",
+      "label": "3 m/s →",
+      "dx": -12,
+      "dy": 3
      },
      {
-      "who": "Su Kem",
-      "say": "Quay lưng nhau chạy thì muốn chạm mặt phải gặm hết cái gì đây?",
-      "tone": "right"
+      "from": "S",
+      "to": "R2",
+      "color": "#C0392B",
+      "label": "← 2 m/s",
+      "dx": 12,
+      "dy": 3
      }
+    ],
+    "labels": [
+     {
+      "at": "S",
+      "text": "xuất phát",
+      "dy": 5
+     },
+     {
+      "at": "M",
+      "text": "gặp nhau",
+      "dy": -5,
+      "dx": 8
+     }
+    ],
+    "show_points": [
+     "S",
+     "M"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B55_M1_F1.png",
-   "sha256_16": "eba8038cb633e2db"
+   "file": "figures/KSN5Q1_B55_M1_F0.png",
+   "sha256_16": "b949cd113574239e"
   },
   {
    "archetype": "ladder_steps",

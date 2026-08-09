@@ -104,7 +104,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Thửa đất tam giác: đáy 12 m, cao ứng đáy 5 m, cạnh bên 13 m. Trí Long vớ số to: \"12 × 13 : 2 = 78!\" Su Kem chỉ vào hình: \"Cạnh 13 đang XIÊN XẸO ôm sườn kìa — nó có vuông góc với đáy không mà đòi vào công thức?\"",
+    "narration": "Thửa đất tam giác có đáy 12 m, đường cao ứng với đáy 5 m, cạnh bên 13 m. Tính diện tích thửa đất.",
     "display": {
      "type": "story_panel",
      "caption": "12 × 13 : 2 = 78??"
@@ -484,29 +484,74 @@
  "id": "DL:KSN5Q1.B45.M2",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "12 × 13 : 2 = 78??",
-    "lines": [
+    "title": "",
+    "points": {
+     "B": [
+      0,
+      0
+     ],
+     "C": [
+      12,
+      0
+     ],
+     "A": [
+      4,
+      5
+     ],
+     "H": [
+      4,
+      0
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "12 × 13 : 2 = 78!",
-      "tone": "wrong"
+      "pts": [
+       "B",
+       "C",
+       "A"
+      ],
+      "fill": "pale"
+     }
+    ],
+    "segments": [
+     {
+      "from": "A",
+      "to": "H",
+      "dashed": true,
+      "label": "cao 5 vuông góc với đáy",
+      "dx": 8
+     }
+    ],
+    "edge_labels": [
+     {
+      "from": "B",
+      "to": "C",
+      "text": "đáy 12",
+      "dy": -5
      },
      {
-      "who": "Su Kem",
-      "say": "Cạnh 13 đang XIÊN XẸO ôm sườn kìa — nó có vuông góc với đáy không mà đòi vào công thức?",
-      "tone": "right"
+      "from": "A",
+      "to": "C",
+      "text": "cạnh bên 13 — KHÔNG dùng",
+      "dx": 13,
+      "dy": 3
      }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B45_M2_F1.png",
-   "sha256_16": "c6d64fe2f2d27a9c"
+   "file": "figures/KSN5Q1_B45_M2_F0.png",
+   "sha256_16": "822ebbb3fdf7fe65"
   },
   {
    "archetype": "ladder_steps",

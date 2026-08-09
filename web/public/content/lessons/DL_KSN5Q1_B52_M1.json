@@ -110,7 +110,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Câu lừa kinh điển: \"cạnh lập phương gấp đôi — thể tích gấp mấy?\" Trí Long hô \"gấp 2!\" — trượt; \"gấp 4!\" — vẫn trượt! Su Kem xếp viên đường: \"Cạnh 1 chứa MỘT viên; cạnh 2 con xếp thử xem được mấy viên?\"",
+    "narration": "Bể hình hộp chữ nhật dài 8 dm, rộng 5 dm, cao 4 dm. Tính thể tích bể — bể chứa được tối đa bao nhiêu lít nước?",
     "display": {
      "type": "story_panel",
      "caption": "cạnh ×2 → V ×2? ×4??"
@@ -492,29 +492,30 @@
  "id": "DL:KSN5Q1.B52.M1",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "solid_3d",
    "params": {
-    "title": "cạnh ×2 → V ×2? ×4??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "gấp 2!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Cạnh 1 chứa MỘT viên; cạnh 2 con xếp thử xem được mấy viên?",
-      "tone": "right"
-     }
-    ]
+    "title": "",
+    "kind": "box",
+    "dims": {
+     "a": "dài 8 dm",
+     "b": "rộng 5 dm",
+     "c": "cao 4 dm"
+    },
+    "layers": 4,
+    "memo": [
+     "V = 8 × 5 × 4 = 160 dm³",
+     "1 dm³ = 1 lít",
+     "bể chứa 160 lít"
+    ],
+    "caption": "Hàng 8 viên · 5 hàng một lớp · 4 lớp chồng lên"
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B52_M1_F1.png",
-   "sha256_16": "976e054a5e2ce2d3"
+   "file": "figures/KSN5Q1_B52_M1_F0.png",
+   "sha256_16": "afce63fdc647ca83"
   },
   {
    "archetype": "two_way_compare",

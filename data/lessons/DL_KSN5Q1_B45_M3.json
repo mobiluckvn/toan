@@ -121,7 +121,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Tam giác TÙ trên bảng — Trí Long thả vuông góc từ đỉnh, dò mãi dọc đáy mà không chạm được: \"tam giác này… không có đường cao!\" Su Kem đưa cây thước: \"Cao đang rơi RA NGOÀI đáy kìa — kéo dài đáy ra mà đón nó chứ!\"",
+    "narration": "Tam giác vuông có hai cạnh góc vuông 6 cm và 8 cm. Tính diện tích.",
     "display": {
      "type": "story_panel",
      "caption": "tam giác tù không có cao??"
@@ -528,29 +528,80 @@
  "id": "DL:KSN5Q1.B45.M3",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "tam giác tù không có cao??",
-    "lines": [
+    "title": "",
+    "points": {
+     "A": [
+      0,
+      6
+     ],
+     "B": [
+      0,
+      0
+     ],
+     "C": [
+      8,
+      0
+     ],
+     "H": [
+      2.88,
+      3.84
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "tam giác này… không có đường cao!",
-      "tone": "wrong"
+      "pts": [
+       "A",
+       "B",
+       "C"
+      ],
+      "fill": "teal"
+     }
+    ],
+    "segments": [
+     {
+      "from": "B",
+      "to": "H",
+      "dashed": true,
+      "label": "cao xuống huyền 4,8",
+      "dx": 16
+     }
+    ],
+    "edge_labels": [
+     {
+      "from": "A",
+      "to": "B",
+      "text": "6 cm",
+      "dx": -8
      },
      {
-      "who": "Su Kem",
-      "say": "Cao đang rơi RA NGOÀI đáy kìa — kéo dài đáy ra mà đón nó chứ!",
-      "tone": "right"
+      "from": "B",
+      "to": "C",
+      "text": "8 cm",
+      "dy": -5
+     },
+     {
+      "from": "A",
+      "to": "C",
+      "text": "huyền 10 cm",
+      "dx": 10,
+      "dy": 4
      }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B45_M3_F1.png",
-   "sha256_16": "767bf4d12a809280"
+   "file": "figures/KSN5Q1_B45_M3_F0.png",
+   "sha256_16": "4580e9ac59c7e1b2"
   },
   {
    "archetype": "ladder_steps",

@@ -104,7 +104,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Vành khăn giữa hai vòng tròn bán kính 5 và 3. Trí Long thấy bề rộng vành 5 − 3 = 2 \"quá thật\": \"2 × 2 × 3,14 = 12,56!\" Su Kem cầm bánh đô-nát: \"12,56 còn bé hơn cả cái LỖ 28,26 — vành bánh bé hơn lỗ bánh á?\"",
+    "narration": "Tính diện tích vành khăn giữa hai đường tròn cùng tâm có bán kính 5 cm và 3 cm.",
     "display": {
      "type": "story_panel",
      "caption": "vành = (5−3)² × 3,14??"
@@ -483,29 +483,66 @@
  "id": "DL:KSN5Q1.B50.M1",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "vành = (5−3)² × 3,14??",
-    "lines": [
+    "title": "",
+    "points": {
+     "O": [
+      0,
+      0
+     ],
+     "A": [
+      5,
+      0
+     ],
+     "C": [
+      0,
+      3
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "Vành khăn giữa hai vòng tròn bán kính 5 và 3.",
-      "tone": "wrong"
+      "circle": {
+       "at": "O",
+       "r": 5
+      },
+      "fill": "teal",
+      "label": ""
      },
      {
-      "who": "Su Kem",
-      "say": "\"12,56 còn bé hơn cả cái LỖ 28,26 — vành bánh bé hơn lỗ bánh á?\"",
-      "tone": "right"
+      "circle": {
+       "at": "O",
+       "r": 3,
+       "z": 4
+      },
+      "fill": "white",
+      "label": "S trong 28,26",
+      "dy": 0
      }
-    ]
+    ],
+    "segments": [
+     {
+      "from": "O",
+      "to": "A",
+      "dx": 14,
+      "dy": 5
+     },
+     {
+      "from": "O",
+      "to": "C",
+      "dx": -11,
+      "dy": -2
+     }
+    ],
+    "show_points": []
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B50_M1_F1.png",
-   "sha256_16": "4683e0de251ac3e4"
+   "file": "figures/KSN5Q1_B50_M1_F0.png",
+   "sha256_16": "11328ea82fef5738"
   },
   {
    "archetype": "two_way_compare",

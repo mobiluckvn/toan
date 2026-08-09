@@ -119,7 +119,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Đề chuyên: tam giác 48 cm²; M trung điểm BC, N trung điểm AM — tính S(ABN). Trí Long thấy hai chữ \"nửa\": \"nửa cộng nửa — cả tấm 48 luôn?!\" Su Kem cười: \"Lấy nửa tấm, rồi lấy nửa CỦA MIẾNG ẤY — mà ra cả tấm á?\"",
+    "narration": "Tam giác ABC có S = 48 cm²; M là trung điểm BC, N là trung điểm AM. Tính S(ABN).",
     "display": {
      "type": "story_panel",
      "caption": "1/2 + 1/2 = cả tấm??"
@@ -484,29 +484,83 @@
  "id": "DL:KSN5Q1.B46.M3",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "1/2 + 1/2 = cả tấm??",
-    "lines": [
+    "title": "",
+    "points": {
+     "B": [
+      0,
+      0
+     ],
+     "C": [
+      12,
+      0
+     ],
+     "A": [
+      5,
+      7
+     ],
+     "M": [
+      6,
+      0
+     ],
+     "N": [
+      5.5,
+      3.5
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "Đề chuyên: tam giác 48 cm²; M trung điểm BC, N trung điểm AM — tính S(ABN).",
-      "tone": "wrong"
+      "pts": [
+       "B",
+       "C",
+       "A"
+      ],
+      "fill": "none"
      },
      {
-      "who": "Su Kem",
-      "say": "\"Lấy nửa tấm, rồi lấy nửa CỦA MIẾNG ẤY — mà ra cả tấm á?\"",
-      "tone": "right"
+      "pts": [
+       "A",
+       "B",
+       "M"
+      ],
+      "fill": "pale"
+     },
+     {
+      "pts": [
+       "A",
+       "B",
+       "N"
+      ],
+      "fill": "teal"
      }
+    ],
+    "segments": [
+     {
+      "from": "A",
+      "to": "M",
+      "dashed": true
+     },
+     {
+      "from": "B",
+      "to": "N"
+     }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C",
+     "M",
+     "N"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B46_M3_F1.png",
-   "sha256_16": "ac02b6d87a048819"
+   "file": "figures/KSN5Q1_B46_M3_F0.png",
+   "sha256_16": "71f97a4ce941affc"
   },
   {
    "archetype": "ladder_steps",

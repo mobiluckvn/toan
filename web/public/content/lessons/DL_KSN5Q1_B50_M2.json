@@ -121,7 +121,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Chu vi nửa hình tròn d = 10? Trí Long chia đôi: \"31,4 : 2 = 15,7 — xong!\" Su Kem đặt ngón tay lên mép: \"Lần thử một vòng xem — đi hết phần cong, ngón tay con đang đứng ở đâu? Về được chỗ cũ chưa?\"",
+    "narration": "Tính chu vi nửa hình tròn có đường kính 10 cm (tính cả đoạn đáy thẳng).",
     "display": {
      "type": "story_panel",
      "caption": "nửa tròn = 15,7 — xong??"
@@ -514,29 +514,82 @@
  "id": "DL:KSN5Q1.B50.M2",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "nửa tròn = 15,7 — xong??",
-    "lines": [
+    "title": "",
+    "points": {
+     "D": [
+      0,
+      0
+     ],
+     "C": [
+      10,
+      0
+     ],
+     "B": [
+      10,
+      6
+     ],
+     "A": [
+      0,
+      6
+     ],
+     "O": [
+      5,
+      6
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "31,4 : 2 = 15,7 — xong!",
-      "tone": "wrong"
+      "pts": [
+       "D",
+       "C",
+       "B",
+       "A"
+      ],
+      "fill": "pale",
+      "label": "60 cm²"
      },
      {
-      "who": "Su Kem",
-      "say": "Lần thử một vòng xem — đi hết phần cong, ngón tay con đang đứng ở đâu? Về được chỗ cũ chưa?",
-      "tone": "right"
+      "circle": {
+       "at": "O",
+       "r": 5,
+       "a0": 0,
+       "a1": 180
+      },
+      "fill": "teal",
+      "label": "39,25 cm²",
+      "dy": 2
      }
+    ],
+    "edge_labels": [
+     {
+      "from": "D",
+      "to": "C",
+      "text": "10 cm",
+      "dy": -5
+     },
+     {
+      "from": "D",
+      "to": "A",
+      "text": "6 cm",
+      "dx": -8
+     }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C",
+     "D"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B50_M2_F1.png",
-   "sha256_16": "42a43597a36c77f1"
+   "file": "figures/KSN5Q1_B50_M2_F0.png",
+   "sha256_16": "55df80681e2bd3b6"
   },
   {
    "archetype": "ladder_steps",

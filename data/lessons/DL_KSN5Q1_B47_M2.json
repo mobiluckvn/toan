@@ -111,7 +111,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Tam giác MNC nằm chéo giữa tấm chữ nhật 96 — Trí Long dí thước đo mãi: chẳng đáy nào lộ, chẳng cao nào hiện: \"bài này… không tính được!\" Su Kem phất cờ: \"Không đánh chính diện được thì đánh VU HỒI — quanh nó toàn tam giác góc ngoan ngoãn kìa!\"",
+    "narration": "Hình chữ nhật ABCD có S = 96 cm²; M trung điểm AB, N trung điểm AD. Tính S(MNC) bằng chiêu tổng trừ phần trắng.",
     "display": {
      "type": "story_panel",
      "caption": "tam giác chéo giữa tấm — bó tay??"
@@ -505,29 +505,97 @@
  "id": "DL:KSN5Q1.B47.M2",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "tam giác chéo giữa tấm — bó tay??",
-    "lines": [
+    "title": "",
+    "points": {
+     "A": [
+      0,
+      8
+     ],
+     "B": [
+      12,
+      8
+     ],
+     "C": [
+      12,
+      0
+     ],
+     "D": [
+      0,
+      0
+     ],
+     "M": [
+      6,
+      8
+     ],
+     "N": [
+      0,
+      4
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "bài này… không tính được!",
-      "tone": "wrong"
+      "pts": [
+       "A",
+       "B",
+       "C",
+       "D"
+      ],
+      "fill": "none"
      },
      {
-      "who": "Su Kem",
-      "say": "Không đánh chính diện được thì đánh VU HỒI — quanh nó toàn tam giác góc ngoan ngoãn kìa!",
-      "tone": "right"
+      "pts": [
+       "M",
+       "N",
+       "C"
+      ],
+      "fill": "teal"
+     },
+     {
+      "pts": [
+       "A",
+       "M",
+       "N"
+      ],
+      "fill": "white",
+      "label": "12"
+     },
+     {
+      "pts": [
+       "M",
+       "B",
+       "C"
+      ],
+      "fill": "white",
+      "label": "24"
+     },
+     {
+      "pts": [
+       "N",
+       "D",
+       "C"
+      ],
+      "fill": "white",
+      "label": "24"
      }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "M",
+     "N"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B47_M2_F1.png",
-   "sha256_16": "c2742285b7d8ae79"
+   "file": "figures/KSN5Q1_B47_M2_F0.png",
+   "sha256_16": "83b591c425ec8ae8"
   },
   {
    "archetype": "two_way_compare",

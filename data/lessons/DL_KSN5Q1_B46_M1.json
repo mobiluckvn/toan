@@ -117,7 +117,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Hai tam giác trên bảng, Trí Long phán vèo: \"chung chiều cao — tỉ S bằng tỉ đáy!\" Thẩm phán Su Kem gõ búa: \"BẰNG CHỨNG đâu? Cao hạ từ ĐỈNH nào, xuống ĐƯỜNG nào — hay con phán chay?\"",
+    "narration": "Hai tam giác chung chiều cao, đáy tam giác thứ hai gấp đôi đáy tam giác thứ nhất. So sánh diện tích hai tam giác.",
     "display": {
      "type": "story_panel",
      "caption": "phán 'chung cao' — bằng chứng đâu?"
@@ -531,29 +531,73 @@
  "id": "DL:KSN5Q1.B46.M1",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "phán 'chung cao' — bằng chứng đâu?",
-    "lines": [
+    "title": "",
+    "points": {
+     "B": [
+      0,
+      0
+     ],
+     "C": [
+      12,
+      0
+     ],
+     "A": [
+      5,
+      6
+     ],
+     "M": [
+      6,
+      0
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "chung chiều cao — tỉ S bằng tỉ đáy!",
-      "tone": "wrong"
+      "pts": [
+       "B",
+       "M",
+       "A"
+      ],
+      "fill": "teal"
      },
      {
-      "who": "Su Kem",
-      "say": "BẰNG CHỨNG đâu? Cao hạ từ ĐỈNH nào, xuống ĐƯỜNG nào — hay con phán chay?",
-      "tone": "right"
+      "pts": [
+       "M",
+       "C",
+       "A"
+      ],
+      "fill": "gold"
      }
+    ],
+    "edge_labels": [
+     {
+      "from": "B",
+      "to": "M",
+      "text": "BM",
+      "dy": -5
+     },
+     {
+      "from": "M",
+      "to": "C",
+      "text": "MC = BM",
+      "dy": -5
+     }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C",
+     "M"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B46_M1_F1.png",
-   "sha256_16": "664c1b518ba3e0e3"
+   "file": "figures/KSN5Q1_B46_M1_F0.png",
+   "sha256_16": "b2681912721d206f"
   },
   {
    "archetype": "ladder_steps",

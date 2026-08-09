@@ -110,7 +110,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Bài ngược: tam giác có diện tích 30 cm², cao 5 cm — tìm đáy. Trí Long chia thẳng: \"30 : 5 = 6!\" Su Kem vẽ lại hình: \"Thử xuôi xem: đáy 6 cao 5 thì diện tích 6 × 5 : 2 = 15 — mất một nửa đâu rồi?\"",
+    "narration": "Tính diện tích tam giác có đáy 12 cm và đường cao tương ứng 5 cm.",
     "display": {
      "type": "story_panel",
      "caption": "đáy = 30 : 5 = 6??"
@@ -483,29 +483,84 @@
  "id": "DL:KSN5Q1.B45.M1",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "đáy = 30 : 5 = 6??",
-    "lines": [
+    "title": "",
+    "points": {
+     "B": [
+      0,
+      0
+     ],
+     "C": [
+      12,
+      0
+     ],
+     "A": [
+      4,
+      5
+     ],
+     "D": [
+      0,
+      5
+     ],
+     "E": [
+      12,
+      5
+     ],
+     "H": [
+      4,
+      0
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "30 : 5 = 6!",
-      "tone": "wrong"
+      "pts": [
+       "B",
+       "C",
+       "E",
+       "D"
+      ],
+      "fill": "none"
      },
      {
-      "who": "Su Kem",
-      "say": "Thử xuôi xem: đáy 6 cao 5 thì diện tích 6 × 5 : 2 = 15 — mất một nửa đâu rồi?",
-      "tone": "right"
+      "pts": [
+       "B",
+       "C",
+       "A"
+      ],
+      "fill": "teal"
      }
+    ],
+    "segments": [
+     {
+      "from": "A",
+      "to": "H",
+      "dashed": true,
+      "label": "cao 5",
+      "dx": 6
+     }
+    ],
+    "edge_labels": [
+     {
+      "from": "B",
+      "to": "C",
+      "text": "đáy 12",
+      "dy": -5
+     }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B45_M1_F1.png",
-   "sha256_16": "92fa268c94fe3966"
+   "file": "figures/KSN5Q1_B45_M1_F0.png",
+   "sha256_16": "0fbffe330c60833f"
   },
   {
    "archetype": "ladder_steps",

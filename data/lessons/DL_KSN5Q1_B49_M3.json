@@ -114,7 +114,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Câu đố: \"bán kính gấp đôi thì hình tròn gấp mấy lần?\" Trí Long đáp vèo: \"gấp đôi tuốt — cả chu vi lẫn diện tích!\" Su Kem đưa hai công thức: \"Con đếm hộ chữ r trong mỗi công thức xem — một chữ hay hai chữ?\"",
+    "narration": "Bán kính hình tròn gấp lên 2 lần. Hỏi chu vi gấp lên mấy lần? Diện tích gấp lên mấy lần?",
     "display": {
      "type": "story_panel",
      "caption": "gấp đôi tuốt??"
@@ -498,29 +498,60 @@
  "id": "DL:KSN5Q1.B49.M3",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "gấp đôi tuốt??",
-    "lines": [
+    "title": "",
+    "points": {
+     "O": [
+      0,
+      0
+     ],
+     "A": [
+      10,
+      0
+     ],
+     "B": [
+      5,
+      0
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "gấp đôi tuốt — cả chu vi lẫn diện tích!",
-      "tone": "wrong"
+      "circle": {
+       "at": "O",
+       "r": 10
+      },
+      "fill": "teal",
+      "label": ""
      },
      {
-      "who": "Su Kem",
-      "say": "Con đếm hộ chữ r trong mỗi công thức xem — một chữ hay hai chữ?",
-      "tone": "right"
+      "circle": {
+       "at": "O",
+       "r": 5,
+       "z": 4
+      },
+      "fill": "gold",
+      "label": "hồ cũ 78,5",
+      "dy": 0
      }
-    ]
+    ],
+    "segments": [
+     {
+      "from": "O",
+      "to": "A",
+      "dy": 5,
+      "dx": 12
+     }
+    ],
+    "show_points": []
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B49_M3_F1.png",
-   "sha256_16": "45f9f435b8182c1d"
+   "file": "figures/KSN5Q1_B49_M3_F0.png",
+   "sha256_16": "d332513c1ce3458f"
   },
   {
    "archetype": "ladder_steps",

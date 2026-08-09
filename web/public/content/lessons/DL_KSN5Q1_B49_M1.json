@@ -110,7 +110,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Miệng giếng đường kính 1 m — tính diện tích nắp đậy. Trí Long thay luôn: \"1 × 1 × 3,14!\" Su Kem chặn trước cửa S: \"Anh bạn 1 mét kia là ĐƯỜNG KÍNH — mà cửa diện tích chỉ tiếp BÁN KÍNH thôi!\"",
+    "narration": "Tính chu vi hình tròn có bán kính 5 cm.",
     "display": {
      "type": "story_panel",
      "caption": "d thay thẳng vào S??"
@@ -514,29 +514,27 @@
  "id": "DL:KSN5Q1.B49.M1",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "plane_geometry",
    "params": {
-    "title": "d thay thẳng vào S??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "1 × 1 × 3,14!",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "Anh bạn 1 mét kia là ĐƯỜNG KÍNH — mà cửa diện tích chỉ tiếp BÁN KÍNH thôi!",
-      "tone": "right"
-     }
-    ]
+    "title": "",
+    "shape": "circle",
+    "dims": {
+     "d": "d = 1 m",
+     "r": "r = 0,5 m"
+    },
+    "memo": [
+     "C = d × 3,14",
+     "S = r × r × 3,14"
+    ],
+    "caption": "Miệng giếng d = 1 m: C = 3,14 m nhưng S phải đổi r = 0,5 → 0,785 m²"
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B49_M1_F1.png",
-   "sha256_16": "c213a8600b7aa824"
+   "file": "figures/KSN5Q1_B49_M1_F0.png",
+   "sha256_16": "04a2b674601f92e7"
   },
   {
    "archetype": "two_way_compare",

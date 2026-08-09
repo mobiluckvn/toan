@@ -109,7 +109,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Cây cọc M đóng trên bờ đê BC: BM = 1/3 BC, tam giác S = 36. Trí Long dán vèo: \"S(ABM) = 1/3 S(AMC)!\" Su Kem chỉ bờ đê: \"1/3 ấy đang so với AI — cả bờ đê, hay khúc bên kia cây cọc?\"",
+    "narration": "Tam giác ABC có S = 36 cm²; M trên BC với BM = 1/3 BC. Tính S(ABM) — và cho biết S(ABM) : S(AMC) bằng bao nhiêu.",
     "display": {
      "type": "story_panel",
      "caption": "1/3 của AI??"
@@ -504,29 +504,73 @@
  "id": "DL:KSN5Q1.B46.M2",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "1/3 của AI??",
-    "lines": [
+    "title": "",
+    "points": {
+     "B": [
+      0,
+      0
+     ],
+     "C": [
+      10,
+      0
+     ],
+     "A": [
+      4,
+      6
+     ],
+     "M": [
+      4,
+      0
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "S(ABM) = 1/3 S(AMC)!",
-      "tone": "wrong"
+      "pts": [
+       "B",
+       "M",
+       "A"
+      ],
+      "fill": "teal"
      },
      {
-      "who": "Su Kem",
-      "say": "1/3 ấy đang so với AI — cả bờ đê, hay khúc bên kia cây cọc?",
-      "tone": "right"
+      "pts": [
+       "M",
+       "C",
+       "A"
+      ],
+      "fill": "navy"
      }
+    ],
+    "edge_labels": [
+     {
+      "from": "B",
+      "to": "M",
+      "text": "2 phần",
+      "dy": -5
+     },
+     {
+      "from": "M",
+      "to": "C",
+      "text": "3 phần",
+      "dy": -5
+     }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C",
+     "M"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B46_M2_F1.png",
-   "sha256_16": "cdd507e5f16ba203"
+   "file": "figures/KSN5Q1_B46_M2_F0.png",
+   "sha256_16": "5dc4203ab097222f"
   },
   {
    "archetype": "ladder_steps",

@@ -114,7 +114,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Hình thang đáy 4 và 8, cao 6. Trí Long tách đôi: \"8×6:2 + 4×6:2 = 24 + 12 = 36… Ơ, vẫn đúng mà!\" Su Kem gật: \"Số thì đúng — nhưng mai đề hỏi ngược 'tính TỔNG hai đáy' thì cách tách của con lấy đâu ra chữ TỔNG?\"",
+    "narration": "Tính diện tích hình thang có đáy bé 4 m, đáy lớn 8 m, chiều cao 6 m.",
     "display": {
      "type": "story_panel",
      "caption": "tách đôi vẫn ra 36 — sao phải cộng trước?"
@@ -499,29 +499,79 @@
  "id": "DL:KSN5Q1.B48.M1",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "tách đôi vẫn ra 36 — sao phải cộng trước?",
-    "lines": [
+    "title": "",
+    "points": {
+     "D": [
+      0,
+      0
+     ],
+     "C": [
+      8,
+      0
+     ],
+     "B": [
+      6,
+      6
+     ],
+     "A": [
+      2,
+      6
+     ],
+     "H": [
+      2,
+      0
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "8×6:2 + 4×6:2 = 24 + 12 = 36… Ơ, vẫn đúng mà!",
-      "tone": "wrong"
+      "pts": [
+       "D",
+       "C",
+       "B",
+       "A"
+      ],
+      "fill": "teal"
+     }
+    ],
+    "segments": [
+     {
+      "from": "A",
+      "to": "H",
+      "dashed": true,
+      "label": "cao 6",
+      "dx": 7
+     }
+    ],
+    "edge_labels": [
+     {
+      "from": "A",
+      "to": "B",
+      "text": "đáy bé 4",
+      "dy": 5
      },
      {
-      "who": "Su Kem",
-      "say": "Số thì đúng — nhưng mai đề hỏi ngược 'tính TỔNG hai đáy' thì cách tách của con lấy đâu ra chữ TỔNG?",
-      "tone": "right"
+      "from": "D",
+      "to": "C",
+      "text": "đáy lớn 8",
+      "dy": -5
      }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C",
+     "D"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B48_M1_F1.png",
-   "sha256_16": "0bf7b01969024a67"
+   "file": "figures/KSN5Q1_B48_M1_F0.png",
+   "sha256_16": "4c4dd8759703b2b3"
   },
   {
    "archetype": "ladder_steps",

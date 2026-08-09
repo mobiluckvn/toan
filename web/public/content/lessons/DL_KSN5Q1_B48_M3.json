@@ -120,7 +120,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Cáo Đề của chương 10 đội mũ hình học quay lại: \"cạnh hình vuông tăng 20% — thì diện tích tăng 20 cộng 20 bằng 40%!\" Su Kem vẽ ô vuông: \"Vuông cạnh 10 lên cạnh 12 — con đếm xem được bao nhiêu ô: 140 hay 144?\"",
+    "narration": "Hình chữ L tạo từ hình chữ nhật 8 × 6 khoét góc một hình chữ nhật 3 × 2. Tính diện tích bằng HAI cách.",
     "display": {
      "type": "story_panel",
      "caption": "+20% cạnh = +40% S??"
@@ -550,29 +550,86 @@
  "id": "DL:KSN5Q1.B48.M3",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "+20% cạnh = +40% S??",
-    "lines": [
+    "title": "",
+    "points": {
+     "A": [
+      0,
+      6
+     ],
+     "B": [
+      8,
+      6
+     ],
+     "C": [
+      8,
+      2
+     ],
+     "D": [
+      5,
+      2
+     ],
+     "E": [
+      5,
+      0
+     ],
+     "F": [
+      0,
+      0
+     ],
+     "P": [
+      5,
+      6
+     ],
+     "Q": [
+      0,
+      2
+     ]
+    },
+    "shapes": [
      {
-      "who": "Cáo Đề",
-      "say": "cạnh hình vuông tăng 20% — thì diện tích tăng 20 cộng 20 bằng 40%!",
-      "tone": "wrong"
+      "pts": [
+       "A",
+       "B",
+       "C",
+       "D",
+       "E",
+       "F"
+      ],
+      "fill": "teal"
+     }
+    ],
+    "segments": [
+     {
+      "from": "P",
+      "to": "E",
+      "dashed": true,
+      "color": "#C0392B"
      },
      {
-      "who": "Su Kem",
-      "say": "Vuông cạnh 10 lên cạnh 12 — con đếm xem được bao nhiêu ô: 140 hay 144?",
-      "tone": "right"
+      "from": "Q",
+      "to": "C",
+      "dashed": true,
+      "color": "#F9B233"
      }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B48_M3_F1.png",
-   "sha256_16": "e07c0e29fc70eef1"
+   "file": "figures/KSN5Q1_B48_M3_F0.png",
+   "sha256_16": "4be4e40a71ee1d8f"
   },
   {
    "archetype": "ladder_steps",

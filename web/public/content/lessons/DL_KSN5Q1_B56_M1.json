@@ -112,7 +112,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Tàu dài 120 m qua cột đèn — hết bao lâu? Trí Long ngơ ngác: \"cột đèn có dài đâu mà có quãng đường?!\" Su Kem bật chế độ quay chậm: \"Bấm giờ lúc nào — dừng lúc nào? Xem kỹ cái ĐUÔI tàu nhé!\"",
+    "narration": "Đoàn tàu dài 120 m chạy với vận tốc 15 m/s. Hỏi tàu đi qua một cột đèn hết bao lâu?",
     "display": {
      "type": "story_panel",
      "caption": "cột đèn — quãng = 0??"
@@ -486,29 +486,91 @@
  "id": "DL:KSN5Q1.B56.M1",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "cột đèn — quãng = 0??",
-    "lines": [
+    "title": "",
+    "points": {
+     "A": [
+      0,
+      3.2
+     ],
+     "B": [
+      12,
+      3.2
+     ],
+     "C": [
+      12,
+      4.6
+     ],
+     "D": [
+      0,
+      4.6
+     ],
+     "P": [
+      3,
+      0
+     ],
+     "Q": [
+      21,
+      0
+     ],
+     "R": [
+      3,
+      1.6
+     ],
+     "S2": [
+      21,
+      1.6
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "cột đèn có dài đâu mà có quãng đường?!",
-      "tone": "wrong"
+      "pts": [
+       "P",
+       "Q",
+       "S2",
+       "R"
+      ],
+      "fill": "pale",
+      "label": "cầu 180 m"
      },
      {
-      "who": "Su Kem",
-      "say": "Bấm giờ lúc nào — dừng lúc nào? Xem kỹ cái ĐUÔI tàu nhé!",
-      "tone": "right"
+      "pts": [
+       "A",
+       "B",
+       "C",
+       "D"
+      ],
+      "fill": "navy",
+      "label": "thân tàu 120 m"
      }
-    ]
+    ],
+    "segments": [
+     {
+      "from": "A",
+      "to": "P",
+      "dashed": true,
+      "color": "#C0392B"
+     },
+     {
+      "from": "B",
+      "to": "Q",
+      "dashed": true,
+      "color": "#C0392B",
+      "label": "mũi chạm → đuôi rời",
+      "dx": -6,
+      "dy": 6
+     }
+    ],
+    "show_points": []
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B56_M1_F1.png",
-   "sha256_16": "9412540fdaedf60e"
+   "file": "figures/KSN5Q1_B56_M1_F0.png",
+   "sha256_16": "33bf7cb094a39a4f"
   },
   {
    "archetype": "ladder_steps",

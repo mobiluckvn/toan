@@ -110,7 +110,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Trí Long kẻ vèo một đường chéo qua hình chữ nhật, tính hai tam giác ngon lành. Thầy phê đỏ: \"Đường này ở đâu ra?\" Su Kem thì thầm: \"Nét kẻ thêm mà không khai báo — là hình vẽ LẬU đấy!\"",
+    "narration": "Hình chữ nhật ABCD có S = 96 cm². Kẻ thêm đường để chia hình thành hai tam giác bằng nhau — trình bày đúng luật.",
     "display": {
      "type": "story_panel",
      "caption": "đường chéo… ở đâu ra??"
@@ -489,29 +489,83 @@
  "id": "DL:KSN5Q1.B47.M1",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "geo_shape",
    "params": {
-    "title": "đường chéo… ở đâu ra??",
-    "lines": [
+    "title": "",
+    "points": {
+     "A": [
+      0,
+      6
+     ],
+     "B": [
+      12,
+      6
+     ],
+     "C": [
+      12,
+      0
+     ],
+     "D": [
+      0,
+      0
+     ],
+     "M": [
+      4,
+      6
+     ],
+     "M2": [
+      9,
+      6
+     ]
+    },
+    "shapes": [
      {
-      "who": "Trí Long",
-      "say": "Trí Long kẻ vèo một đường chéo qua hình chữ nhật, tính hai tam giác ngon lành.",
-      "tone": "wrong"
+      "pts": [
+       "A",
+       "B",
+       "C",
+       "D"
+      ],
+      "fill": "none"
      },
      {
-      "who": "Su Kem",
-      "say": "\"Nét kẻ thêm mà không khai báo — là hình vẽ LẬU đấy!\"",
-      "tone": "right"
+      "pts": [
+       "D",
+       "M",
+       "C"
+      ],
+      "fill": "teal"
      }
+    ],
+    "segments": [
+     {
+      "from": "D",
+      "to": "M2",
+      "dashed": true,
+      "color": "#C0392B"
+     },
+     {
+      "from": "M2",
+      "to": "C",
+      "dashed": true,
+      "color": "#C0392B"
+     }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "M"
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B47_M1_F1.png",
-   "sha256_16": "de0b72428ce72bff"
+   "file": "figures/KSN5Q1_B47_M1_F0.png",
+   "sha256_16": "bb89d023fd786f37"
   },
   {
    "archetype": "ladder_steps",

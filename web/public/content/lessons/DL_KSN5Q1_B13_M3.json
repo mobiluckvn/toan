@@ -108,7 +108,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Bài thi tốc độ: 6,8 × 3,7 + 3,7 × 3,2 — ai xong trước? Trí Long lao vào nhân cột dọc hai tích… Su Kem khoanh tròn hai chữ \"3,7\" giống hệt nhau trong đề và mỉm cười.",
+    "narration": "Tính bằng cách thuận tiện: 6,8 × 3,7 + 3,7 × 3,2.",
     "display": {
      "type": "story_panel",
      "caption": "hai tích — một tên quầy?"
@@ -499,29 +499,31 @@
  "id": "DL:KSN5Q1.B13.M3",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "area_split",
    "params": {
-    "title": "hai tích — một tên quầy?",
-    "lines": [
+    "title": "",
+    "height": {
+     "label": "3,7",
+     "val": 3.7
+    },
+    "parts": [
      {
-      "who": "Trí Long",
-      "say": "6,8 × 3,7 rồi 3,7 × 3,2, xong cộng lại — để tớ nhân cột dọc cho nhanh!",
-      "tone": "wrong"
+      "label": "6,8",
+      "val": 6.8
      },
      {
-      "who": "Su Kem",
-      "say": "Khoan đã. Cậu đếm hộ tớ: chữ 3,7 xuất hiện mấy lần trong đề?",
-      "tone": "right"
+      "label": "3,2",
+      "val": 3.2
      }
     ]
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B13_M3_F1.png",
-   "sha256_16": "6feb31a421f4d181"
+   "file": "figures/KSN5Q1_B13_M3_F0.png",
+   "sha256_16": "f6708c2f792f59c1"
   },
   {
    "archetype": "ladder_steps",

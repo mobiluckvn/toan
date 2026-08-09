@@ -1,8 +1,9 @@
 /**
  * Kiểm 168 HÌNH MỞ BÀI — chạy: node test/hinhmobai.test.mjs
  *
- * Hình mở bài là một đoạn ĐỐI THOẠI: Trí Long (hoặc Cáo Đề) nói cái sai mà trẻ hay
- * mắc, Su Kem hích nhẹ để bạn tự nhận ra. Con mở bài ra là phải đọc hiểu ngay.
+ * Hình mở bài giữ ĐÚNG MỘT câu: cái sai mà trẻ hay mắc, do Trí Long hoặc Cáo Đề
+ * nói. Lời dẫn bên trên đã nêu thẳng đề bài, nên hình không lặp lại đề nữa; câu gỡ
+ * của Su Kem chuyển sang phần giảng ở màn ngay sau.
  *
  * Bộ sinh figureSpec ngày trước dùng regex bắt lời thoại trong ngoặc kép. Regex ấy
  * hỏng theo bốn kiểu, đều làm hình không đọc được:
@@ -36,7 +37,7 @@ const manifest = JSON.parse(readFileSync(MANIFEST, 'utf8'));
 
 t('đọc đủ 168 bài', bai.length === 168);
 
-const rong = [], daiQua = [], nuot = [], cut = [], moiMot = [], saiVai = [], shaLech = [];
+const rong = [], daiQua = [], nuot = [], cut = [], saiVai = [], shaLech = [];
 
 for (const j of bai) {
   const mid = j.id.replace('DL:KSN5Q1.', '');
@@ -53,7 +54,6 @@ for (const j of bai) {
     if (s.archetype !== 'character_speech') continue;
 
     const lines = s.params?.lines ?? [];
-    if (lines.length < 2) moiMot.push(mid);
 
     for (const [i, L] of lines.entries()) {
       const say = gon(L.say), who = L.who;
@@ -86,14 +86,22 @@ for (const j of bai) {
 }
 
 t(`không bong bóng nào rỗng (${rong.length})`, rong.length === 0);
-t(`mọi hình đều có đủ hai bong bóng (${moiMot.length})`, moiMot.length === 0);
+/* Trước đây hình mở phải có ĐỦ HAI bong bóng, vì bộ sinh cũ hay để rơi mất một
+   câu. Nay màn mở đã đổi thiết kế: lời dẫn nêu thẳng ĐỀ BÀI, còn hình chỉ giữ
+   ĐÚNG MỘT câu — cái bẫy bé hay mắc. Câu gỡ chuyển sang phần giảng ngay màn sau.
+   Nên điều cần soi bây giờ ngược lại: hình mở không được quá một bong bóng. */
+const thua = [];
+for (const L of bai) for (const f of L.figureSpec || [])
+  if ((f.usedIn || []).includes('hook') && (f.params?.lines || []).length > 1)
+    thua.push(`${L.id} ${f.params.lines.length} bong bóng`);
+t(`hình mở chỉ một bong bóng (${thua.length})`, thua.length === 0);
 t(`không lời thoại nào quá ${TOI_DA} ký tự (${daiQua.length})`, daiQua.length === 0);
 t(`không bong bóng nào nuốt cả lời dẫn (${nuot.length})`, nuot.length === 0);
 t(`không lời thoại nào bị cắt cụt ở dấu ngoặc (${cut.length})`, cut.length === 0);
 t(`không hình nào gán nhầm vai nhân vật (${saiVai.length})`, saiVai.length === 0);
 t(`mã kiểm hình khớp PNG thật (${shaLech.length})`, shaLech.length === 0);
 
-for (const [ten, ds] of [['rỗng', rong], ['một bong bóng', moiMot], ['dài quá', daiQua],
+for (const [ten, ds] of [['rỗng', rong], ['thừa bong bóng', thua], ['dài quá', daiQua],
                          ['nuốt lời dẫn', nuot], ['cắt cụt', cut], ['sai vai', saiVai],
                          ['sha lệch', shaLech]]) {
   if (ds.length) console.log(`    ${ten}:`, ds.slice(0, 8).join(' · '), ds.length > 8 ? `… +${ds.length - 8}` : '');

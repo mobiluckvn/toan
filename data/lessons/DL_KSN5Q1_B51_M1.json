@@ -108,7 +108,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Hộp quà dài 6, rộng 4, cao 3 — dán giấy bốn mặt bên hết bao nhiêu? Trí Long tính bốn mặt lẻ tẻ, cộng lộn tùng phèo. Su Kem cầm kéo: \"Bóc cả bốn mặt ra trải phẳng xem — chúng thành MẤY tấm?\"",
+    "narration": "Tính diện tích xung quanh hình hộp chữ nhật có dài 6 dm, rộng 4 dm, cao 3 dm.",
     "display": {
      "type": "story_panel",
      "caption": "bốn mặt lẻ tẻ — rối tung?"
@@ -470,29 +470,29 @@
  "id": "DL:KSN5Q1.B51.M1",
  "figureSpec": [
   {
-   "archetype": "character_speech",
+   "archetype": "solid_3d",
    "params": {
-    "title": "bốn mặt lẻ tẻ — rối tung?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Hộp quà dài 6, rộng 4, cao 3 — dán giấy bốn mặt bên hết bao nhiêu?",
-      "tone": "wrong"
-     },
-     {
-      "who": "Su Kem",
-      "say": "\"Bóc cả bốn mặt ra trải phẳng xem — chúng thành MẤY tấm?\"",
-      "tone": "right"
-     }
-    ]
+    "title": "",
+    "kind": "box",
+    "dims": {
+     "a": "dài 6 dm",
+     "b": "rộng 4 dm",
+     "c": "cao 3 dm"
+    },
+    "memo": [
+     "Sxq = 20 × 3 = 60 dm²",
+     "hai đáy = 2 × 24 = 48",
+     "Stp = 60 + 48 = 108"
+    ],
+    "caption": "Chu vi đáy (6 + 4) × 2 = 20 chính là chiều dài tấm áo"
    },
-   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-   "id": "F1",
+   "caption": "Đề bài — số đo đã cho",
+   "id": "F0",
    "usedIn": [
     "hook"
    ],
-   "file": "figures/KSN5Q1_B51_M1_F1.png",
-   "sha256_16": "cb9635719274b2eb"
+   "file": "figures/KSN5Q1_B51_M1_F0.png",
+   "sha256_16": "062f8c8cca5dfed7"
   },
   {
    "archetype": "ladder_steps",
