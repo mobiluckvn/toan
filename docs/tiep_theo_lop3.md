@@ -18,9 +18,9 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 | 3 | dựng bài học | `tools/chuan_lop3.py` → `data/lop3/` — **34 bài · 477 câu · 100% có lời chữa · 170 câu chấm máy** |
 | — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`) |
 
-| 3b | nguyên mẫu + bộ vẽ + bộ gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **19 hình · 7 nguyên mẫu mới** |
+| 3b | nguyên mẫu + bộ vẽ + bộ gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **74 hình · 17 nguyên mẫu · đủ 34/34 bài** |
 
-Phép kiểm: `web/test/lop3.test.mjs` (31 phép). Chạy `cd web && npm test`.
+Phép kiểm: `web/test/lop3.test.mjs` (34 phép). Chạy `cd web && npm test`.
 
 **Thứ tự chạy dây chuyền** — đảo là mất hình mà không có gì báo:
 
@@ -108,7 +108,7 @@ Nhớ mục 6 của chuẩn khi dựng màn mở: lời mở là MỘT CÂU nêu
 | **7 nguyên mẫu** | `figforge/arch_l3.py` — nhập lại 22 nguyên mẫu lớp 2, viết mới 7 |
 | bộ vẽ | `tools/ve_hinh_lop3.py` → `web/public/content/figures/` + sổ tay |
 | bộ gắn | `tools/gan_hinh_lop3.py` — chạy **sau** `chuan_lop3.py`, là bước CUỐI |
-| hình đã vẽ | **19 hình · 8 bài** (`data/lop3_hinh.json`) |
+| hình đã vẽ | **74 hình · đủ 34/34 bài** (`data/lop3_hinh.json`) |
 
 Bảy nguyên mẫu mới: `hinh_tron` · `luoi_dien_tich` · `ven_hai_vong` · `lich_thang` ·
 `can_ong_dong` · `tien_viet` · `bieu_thuc_ngoac`. Bước 1 đoán "khoảng 5" — hoá ra 7,
@@ -124,8 +124,11 @@ Chạy `python3 tools/khao_sat_hinh_lop3.py --chi-tiet`:
 | loại | cần | đã vẽ |
 |---|---|---|
 | ① hình giảng (neo theo bước) | 105 bước ở 34 bài | 11 |
-| ② hình màn mở (bản ĐỀ, bỏ hết đáp án) | 34 bài | 0 |
-| ③ hình bài tập (`item:CX` + `:giai`) | 14 câu chắc + 135 câu cần soát tay | 8 |
+| ② hình màn mở (bản ĐỀ, bỏ hết đáp án) | 34 bài | **34 — xong** |
+| ③ hình bài tập (`item:CX` + `:giai`) | 14 câu chắc + 135 câu cần soát tay | **15 câu (14/14 câu chắc)** |
+
+Còn lại là **hình giảng** cho ~94 bước và phần đuôi của 135 câu cần soát tay. Không
+phải mọi bước đều đáng vẽ — soát tay rồi quyết, đừng vẽ đủ 105 cho tròn số.
 
 Lưới quét lượt đầu của tôi ra 306/477 câu "có thể cần" — đó là nhiễu chứ không phải
 sàng lọc, và một danh sách 306 dòng thì không ai soát tay nổi. Bản hiện tại đòi câu
@@ -139,6 +142,19 @@ phải nhắc tới một VẬT THỂ nhìn được, nên còn 135 — đúng c
    Đây là bẫy 26 tái xuất, và nó nguy vì cả bài đang dạy SO hai diện tích
 4. **Hình "RÀO" vẽ y hệt hình "THẢM"**, chỉ khác cái tên bên dưới → hình phản lại
    chính bài. Nay `do: 'rao'` bỏ ô lòng, chỉ còn viền dày kèm vạch chia từng cm
+
+### Ba lỗi nữa bắt được ở lượt vẽ 34 màn mở
+
+5. **`cau_truc_so` tràn khung với 4 tháp.** Nguyên mẫu lớp 2 đóng cứng bề ngang 26,
+   vừa khít ba tháp Trăm - Chục - Đơn vị; lớp 3 xây thêm tháp NGHÌN thành 104 > 88,
+   mái nhà cụt hai đầu. Đã sửa ở `arch_l2.py` bằng `min(26, 88/số phòng)` — **hình
+   lớp 2 giữ nguyên từng bit**, đã đối chiếu mã băm để chắc.
+6. **Ống đong vẽ mọi ống cùng cỡ** → chai 1000 ml cao bằng cốc 350 ml. Cùng kiểu nói
+   dối như ô 1 cm² lệch cỡ. Nay chiều cao tỉ lệ với dung tích.
+7. **Trùng mã hình.** Tôi đặt `L3H_BT01` cho hai hình khác nhau; hình sau đè hình
+   trước và **không kêu ca gì** — chỉ lộ ra vì bộ đếm báo "73 hình · sổ tay 71 mục".
+   Nay bộ vẽ dừng hẳn khi thấy trùng mã, và **sổ tay biết dọn** mã đã bỏ (trước đó
+   nó chỉ thêm, nên mã cũ nằm lại trỏ vào ảnh đã xoá).
 
 ### Hai lỗi DỮ LIỆU, không phải lỗi mã — cả hai đều câm
 

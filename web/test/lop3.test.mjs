@@ -253,9 +253,33 @@ if (existsSync(MOTA) && existsSync(SOTAY)) {
   const sotay = JSON.parse(readFileSync(SOTAY, 'utf8'));
   const FIG = join(G, 'web/public/content/figures');
 
+  /* Trùng mã thì hình sau ĐÈ hình trước và cái mất đi không kêu ca gì — chỉ lộ ra
+     nhờ bộ đếm lệch. Tôi đã dính đúng thế khi đặt L3H_BT01 cho hai hình khác nhau. */
+  const dem = {};
+  for (const m of mota) dem[m.id] = (dem[m.id] || 0) + 1;
+  const trung = Object.entries(dem).filter(([, n]) => n > 1).map(([k]) => k);
+  t('không hai hình nào trùng mã', trung.length === 0);
+  in5(trung);
+
+  /* Sổ tay chỉ THÊM nên mã đã bỏ vẫn nằm lại, trỏ vào ảnh không còn — bước gắn
+     hình đọc sổ tay nên nó sẽ đòi một tệp đã xoá. So hai chiều mới bắt được. */
   const thieu = mota.filter((m) => !sotay[m.id]).map((m) => m.id);
   t(`mọi hình đã mô tả đều có trong sổ tay (${mota.length})`, thieu.length === 0);
   in5(thieu);
+  const thua = Object.keys(sotay).filter((k) => !mota.some((m) => m.id === k));
+  t('sổ tay không giữ lại mã đã bỏ', thua.length === 0);
+  in5(thua);
+
+  /* Mỗi bài một hình MÀN MỞ — chuẩn mục 10 bắt buộc, và lớp 2 trả giá cả một lượt
+     vì lượt đầu chỉ nghĩ tới hình giảng. */
+  const coMo = new Set(mota.filter((m) => m.muc === 'chuyenMoBai').map((m) => m.bai));
+  const khongMo = [];
+  for (let i = 1; i <= 34; i += 1) {
+    const ma = `DL:KSN3.B${String(i).padStart(2, '0')}`;
+    if (!coMo.has(ma)) khongMo.push(ma);
+  }
+  t(`bài nào cũng có hình màn mở (${coMo.size}/34)`, khongMo.length === 0);
+  in5(khongMo);
 
   const lechSha = [];
   for (const [id, h] of Object.entries(sotay)) {

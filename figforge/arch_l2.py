@@ -607,7 +607,12 @@ def cau_truc_so(p, out):
         fig, ax, H = canvas(7.6, max(2.6, (tren + 12.0 + 42.0 + duoi) * 7.6 / 100))
         if p.get('title'):
             txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
-        y0, W, CAO = H - tren - 46.0, 26.0, 30.0
+        # BỀ NGANG PHÒNG PHẢI CO THEO SỐ PHÒNG. Cũ đóng cứng 26: lớp 2 có ba tháp
+        # (trăm - chục - đơn vị) nên vừa khít, nhưng lớp 3 xây thêm tháp NGHÌN thành
+        # bốn phòng → 104 > 88, tràn hẳn ra ngoài khung, mái nhà bị cắt cụt hai đầu.
+        # min() giữ nguyên 26 cho mọi hình ba phòng, nên hình lớp 2 không đổi một nét.
+        y0, CAO = H - tren - 46.0, 30.0
+        W = min(26.0, 88.0 / max(len(phong), 1))
         x0 = 50 - W * len(phong) / 2
         ax.add_patch(Polygon([(x0 - 3, y0 + CAO), (50, y0 + CAO + 10), (x0 + W * len(phong) + 3, y0 + CAO)],
                              fc='#F08A72', ec=RED, lw=2.2, zorder=3))

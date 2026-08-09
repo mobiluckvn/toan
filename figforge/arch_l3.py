@@ -411,12 +411,17 @@ def can_ong_dong(p, out):
                 txt_fit(ax, px, yy + CAO_O / 2, str(nh), 15.5, FS['small'], DARKTEAL, z=7)
         _txt(ax, cx, yd + 3.4, 'THĂNG BẰNG', fs=FS['tiny'], c=RED, w='bold', z=8)
 
+    # CHIỀU CAO ỐNG TỈ LỆ VỚI DUNG TÍCH. Bản đầu vẽ mọi ống cùng cỡ, nên chai
+    # 1000 ml và cốc 350 ml cao bằng nhau — cùng một kiểu nói dối như ô 1 cm² vẽ
+    # hai cỡ: bé nhìn hai vật bằng nhau rồi phải tin lời chú rằng chúng khác nhau.
+    to_nhat = max([float(o.get('toiDa') or o.get('ml') or 1) for o in ong] or [1])
     for i, o in enumerate(ong):
         n = len(ong)
         px = (50 if not can else 73) + (i - (n - 1) / 2) * 16
-        w, hgt = 11.0, 22.0
-        y0 = ytr + 6.0
         toi_da = float(o.get('toiDa') or o.get('ml') or 1)
+        w = 11.0
+        hgt = 22.0 * toi_da / to_nhat
+        y0 = ytr + 6.0
         muc = min(float(o.get('day', 0)) / toi_da, 1.0) * hgt
         ax.add_patch(Rectangle((px - w / 2, y0), w, muc, fc='#BDE9FF', ec='none', zorder=4))
         ax.add_patch(Rectangle((px - w / 2, y0), w, hgt, fc='none', ec=NAVY, lw=2.4, zorder=6))

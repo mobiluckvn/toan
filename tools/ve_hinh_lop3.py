@@ -10,6 +10,7 @@ BƯỚC CUỐI, vì chạy lại `chuan_lop3.py` sẽ ghi đè sạch phần hì
 gì (bẫy đã dính ở Quyển 2 lớp 5, rồi lớp 2 dính lại).
 """
 import hashlib, json, os, sys
+from collections import Counter
 
 GOC_KHO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(GOC_KHO, 'figforge'))
@@ -26,9 +27,16 @@ DAI_TIEU_DE = 120
 
 
 def main(loc=None):
-    mo_ta = json.load(open(NGUON, encoding='utf-8'))
+    tat_ca = json.load(open(NGUON, encoding='utf-8'))
+    trung = [k for k, v in Counter(m['id'] for m in tat_ca).items() if v > 1]
+    if trung:
+        # Trùng mã thì hình sau ĐÈ hình trước, và cái mất đi không kêu ca gì —
+        # tôi đã dính đúng chỗ này khi đặt L3H_BT01 cho hai hình khác nhau.
+        sys.exit(f'DỪNG: trùng mã hình {", ".join(trung)} — mỗi hình một mã riêng')
+
+    mo_ta = tat_ca
     if loc:
-        mo_ta = [m for m in mo_ta if m['id'] in loc]
+        mo_ta = [m for m in tat_ca if m['id'] in loc]
         if not mo_ta:
             sys.exit(f'không có hình nào tên {", ".join(loc)}')
     os.makedirs(RA_HINH, exist_ok=True)
@@ -36,6 +44,19 @@ def main(loc=None):
     so_tay = {}
     if os.path.exists(SO_TAY):
         so_tay = json.load(open(SO_TAY, encoding='utf-8'))
+
+    # Sổ tay CHỈ THÊM thì mã đã bỏ hoặc đã đổi tên vẫn nằm lại, trỏ vào ảnh không
+    # còn — bước gắn hình đọc sổ tay nên nó sẽ đòi một tệp đã xoá. Lượt chạy đầy đủ
+    # phải dọn, và NÓI RA đã dọn cái gì.
+    if not loc:
+        con = {m['id'] for m in tat_ca}
+        bo = sorted(k for k in so_tay if k not in con)
+        for k in bo:
+            so_tay.pop(k)
+            png = os.path.join(RA_HINH, f'{k}.png')
+            if os.path.exists(png):
+                os.remove(png)
+            print(f'  ␡ bỏ {k} — không còn trong bản mô tả')
 
     loi = []
     for m in mo_ta:
