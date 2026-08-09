@@ -1,0 +1,279 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B23",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 23 · GÀ - CHÓ RỜI TRANG TRẠI",
+ "durationMinutes": 10,
+ "so": 23,
+ "chuong": 6,
+ "tenChuong": "Thám tử cao cấp",
+ "dangGoc": "LV 8.2 mức Lớp 3 — Giả thiết tạm bằng phép tính: hết thời vẽ từng cái chân!",
+ "skills": {
+  "bktUnit": "CHUONG:6@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 23,
+  "prev": "DL:KSN3.B22",
+  "next": "DL:KSN3.B24"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Giải bài gà - chó bằng GIẢ THIẾT TẠM: giả sử tất cả cùng một loài rồi đổi dần. Nhớ nhịp then chốt: số chân thừa chia 2 (mỗi cú đổi gà thành chó thêm đúng 2 chân). Áp dụng cho các \"trang trại\" khác: xe đạp - xe ba bánh, ghế 3 chân - ghế 4 chân...",
+  "kidText": "Giải bài gà - chó bằng GIẢ THIẾT TẠM: giả sử tất cả cùng một loài rồi đổi dần. Nhớ nhịp then chốt: số chân thừa chia 2 (mỗi cú đổi gà thành chó thêm đúng 2 chân). Áp dụng cho các \"trang trại\" khác: xe đạp - xe ba bánh, ghế 3 chân - ghế 4 chân...",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Nhịp 1 — GIẢ VỜ: giả sử cả 10 con đều là GÀ → số chân sẽ là 10 × 2 = 20 chân."
+   },
+   {
+    "id": "K2",
+    "text": "Nhịp 2 — SO VỚI SỰ THẬT: đếm thật được 32 chân → thừa ra 32 − 20 = 12 chân chưa có chủ."
+   },
+   {
+    "id": "K3",
+    "text": "Nhịp 3 — ĐỔI DẦN: mỗi lần đổi một \"gà giả\" thành CHÓ thật, đàn thêm đúng 4 − 2 = 2 chân. Muốn tiêu hết 12 chân thừa: 12 : 2 = 6 con chó."
+   },
+   {
+    "id": "K4",
+    "text": "Nhịp 4 — CHỐT & THỬ: gà: 10 − 6 = 4 con. Thử: 4 × 2 + 6 × 4 = 8 + 24 = 32 chân ✓, đầu 4 + 6 = 10 ✓. (Giả sử tất cả là CHÓ cũng phá được án — thiếu 8 chân, mỗi cú đổi bớt 2 → 4 gà. Hai cửa vào một hiện trường!)"
+   }
+  ],
+  "mantra": "GIẢ SỬ tất cả là loài ÍT chân → tính chân giả vờ → THỪA bao nhiêu so với thật → chia cho phần chênh mỗi cú đổi (thường là 2) → ra số con NHIỀU chân. Chốt án bằng phép thử hai cửa: đủ chân VÀ đủ đầu!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với trang trại 10 đầu - 32 chân, Trí Long chạy ba nhịp đầu ngon lành: \"Giả sử toàn gà: 20 chân. Thừa 12 chân. Vậy có... 12 CON CHÓ!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Cả trang trại mới có 10 cái đầu mà Trí Long đếm ra 12 con chó — chuông báo động reo chưa?! Gợi ý 2: MỖI cú đổi gà thành chó tiêu được mấy chân thừa — 1 chân hay 2 chân? 12 chân thừa cần mấy cú đổi? Nhịp thứ ba của vũ khí mới có một phép chia — chớ bỏ quên!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Trong sân có gà và chó, tất cả có 8 con và 22 cái chân. Hỏi có mấy con gà, mấy con chó?"
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Với trang trại 10 đầu - 32 chân, Trí Long chạy ba nhịp đầu ngon lành: \"Giả sử toàn gà: 20 chân. Thừa 12 chân. Vậy có... 12 CON CHÓ!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Trong sân có gà và chó, tất cả có 8 con và 22 cái chân. Hỏi có mấy con gà, mấy con chó?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Giả sử cả 8 con đều là gà, khi đó số chân là: 8 × 2 = 16 (chân)"
+   },
+   {
+    "show": "Số chân thừa ra so với thực tế là: 22 − 16 = 6 (chân)"
+   },
+   {
+    "show": "Mỗi con chó hơn mỗi con gà số chân là: 4 − 2 = 2 (chân)"
+   },
+   {
+    "show": "Số con chó là: 6 : 2 = 3 (con). Số con gà là: 8 − 3 = 5 (con)"
+   },
+   {
+    "show": "Thử lại: 5 × 2 + 3 × 4 = 10 + 12 = 22 chân ✓"
+   },
+   {
+    "show": "Đáp số: 5 con gà, 3 con chó."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Sân có gà và chó: 6 con, 16 chân. Mấy gà, mấy chó?",
+     "solutionNarrative": "toàn gà 12 chân, thừa 4 → 2 chó, 4 gà (thử: 8 + 8 = 16 ✓)."
+    },
+    {
+     "id": "C2",
+     "text": "Sân có gà và chó: 7 con, 18 chân. Mấy gà, mấy chó?",
+     "solutionNarrative": "toàn gà 14, thừa 4 → 2 chó, 5 gà."
+    },
+    {
+     "id": "C3",
+     "text": "Với câu 1: thử \"cửa thứ hai\" — giả sử tất cả là CHÓ, con có ra cùng đáp số không?",
+     "solutionNarrative": "toàn chó 24 chân, THIẾU 24 − 16 = 8; mỗi cú đổi chó→gà bớt 2 chân → 8 : 2 = 4 gà → 2 chó — trùng khớp đáp số cửa một ✓."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Trang trại 10 đầu, 32 chân — trình bày trọn bốn nhịp.",
+     "solutionNarrative": "20 chân giả vờ; thừa 12; chó 12 : 2 = 6; gà 4; thử 8 + 24 = 32 ✓."
+    },
+    {
+     "id": "C5",
+     "text": "Sân có 9 con vừa gà vừa chó, tổng 26 chân. Mấy gà, mấy chó?",
+     "solutionNarrative": "toàn gà 18, thừa 8 → 4 chó, 5 gà (thử: 10 + 16 = 26 ✓)."
+    },
+    {
+     "id": "C6",
+     "text": "Nhà xe có xe đạp (2 bánh) và xe ba bánh: 7 chiếc xe, 16 bánh. Hỏi mỗi loại mấy chiếc? (Phần chênh mỗi cú đổi là mấy bánh?)",
+     "solutionNarrative": "toàn xe đạp 14 bánh, thừa 2; mỗi cú đổi thêm 3 − 2 = 1 bánh → 2 xe ba bánh, 5 xe đạp (thử: 10 + 6 = 16 ✓)."
+    },
+    {
+     "id": "C7",
+     "text": "Kho có ghế 3 chân và ghế 4 chân: 8 chiếc ghế, 27 chân ghế. Mỗi loại mấy chiếc?",
+     "solutionNarrative": "toàn ghế 3 chân: 24, thừa 3; mỗi cú đổi thêm 1 → 3 ghế bốn chân, 5 ghế ba chân (thử: 15 + 12 = 27 ✓)."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Vụ án ngược: sân có gà và chó, biết số chân là 28 và số chó NHIỀU HƠN số gà 1 con. Hỏi mấy gà mấy chó? (Giả thiết tạm không dùng thẳng được — mở lại BẢNG DÒ của lớp 2: vũ khí cũ chưa hề gỉ!)",
+     "solutionNarrative": "bảng dò với chó = gà + 1: gà 3, chó 4 → chân 6 + 16 = 22 (thiếu); gà 4, chó 5 → 8 + 20 = 28 ✓ — 4 gà, 5 chó. Vũ khí cũ phá án đẹp!"
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đưa vụ án to nhất năm: 12 cái đầu, 34 cái chân. Phá án trọn bốn nhịp và thử hai cửa!",
+     "solutionNarrative": "toàn gà 24 chân, thừa 10 → chó 5, gà 7 (thử chân: 14 + 20 = 34 ✓; đầu: 7 + 5 = 12 ✓ — hai cửa đều qua)."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Giả sử tất cả là gà thì 10 con có 20 chân.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "12 chân thừa nghĩa là có 12 con chó.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "phải chia 2!"
+   },
+   {
+    "id": "Q3",
+    "text": "Mỗi cú đổi gà thành chó, đàn thêm:",
+    "format": "mcq",
+    "choices": [
+     "A. 2 chân",
+     "B. 4 chân",
+     "C. 6 chân"
+    ],
+    "answerKey": {
+     "choice": "A. 2 chân"
+    },
+    "solutionNarrative": "Đáp án: A. 2 chân"
+   },
+   {
+    "id": "Q4",
+    "text": "10 đầu, 32 chân → số chó là:",
+    "format": "mcq",
+    "choices": [
+     "A. 4",
+     "B. 6",
+     "C. 12"
+    ],
+    "answerKey": {
+     "choice": "B. 6"
+    },
+    "solutionNarrative": "Đáp án: B. 6"
+   },
+   {
+    "id": "Q5",
+    "text": "7 xe (đạp + ba bánh), 16 bánh → số xe ba bánh:",
+    "format": "mcq",
+    "choices": [
+     "A. 2",
+     "B. 3",
+     "C. 5"
+    ],
+    "answerKey": {
+     "choice": "A. 2"
+    },
+    "solutionNarrative": "Đáp án: A. 2"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chuyển từ VẼ (lớp 2) sang TÍNH (lớp 3) cần một buổi bắc cầu: cho con vẽ bài nhỏ (5 đầu 14 chân) song song với bốn nhịp tính — thấy hai đường cùng đáp số, con sẽ tự tin buông bút vẽ.",
+  "homeActivity": "Chuông báo động \"12 chó trong 10 đầu\" là bài học kiểm tra tính hợp lý — mọi đáp số phải chào hỏi số ĐẦU trước khi được ghi vào vở.",
+  "watchFor": "NÊN: đổi bối cảnh đa dạng (xe, ghế, thuyền) để con thấy cấu trúc chung. KHÔNG NÊN: cho tổng chân lẻ với gà - chó (vô nghiệm) trừ khi muốn đố mẹo — và nếu đố, hãy để con TỰ phát hiện điều vô lý!"
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO23",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO23.png",
+   "caption": "Sân có gà và chó: 8 con, 22 chân",
+   "sha256_16": "f06539708c4cd690",
+   "mucGoc": "chuyenMoBai"
+  }
+ ],
+ "hatMam": "Lớp 2, ở Bài 23, con phá vụ án gà - chó bằng cách vẽ mỗi con 2 chân rồi CHIA ĐÔI số chân thừa để gắn thêm cho chó. Ý tưởng ấy giữ nguyên — hôm nay chỉ thay bút vẽ bằng bốn phép tính, để xử được cả trang trại to!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B23"
+  ],
+  "ten": [
+   "VỤ ÁN ĐẾM CHÂN GÀ - CHÓ"
+  ],
+  "canCu": "sach",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

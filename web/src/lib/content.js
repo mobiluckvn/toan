@@ -65,6 +65,21 @@ export const chuongTrinhCua = (id) => {
 };
 
 const THU_MUC_CUA = (ma) => chuongTrinh(ma).thuMuc || 'lessons';
+export const thuMucCua = THU_MUC_CUA;
+
+/** Quyển này có đi theo NHỊP ĐỌC CHẬM không (chữ to, mỗi màn một mục)?
+ *
+ *  Trước đây App.jsx hỏi thẳng `chuongTrinh === 'lop2'`. Đúng chừng nào chỉ có một
+ *  quyển đọc chậm — thêm lớp 3 là bốn chỗ phải sửa, và quên một chỗ thì bé lớp 3 rơi
+ *  vào phòng học của lớp 5: chữ nhỏ, dồn nhiều khối một màn. Sổ đăng ký đã khai sẵn
+ *  cờ này, hỏi cờ thì thêm quyển thứ ba, thứ tư cũng không phải sửa gì.
+ */
+export const nhipDocCham = (ma) => !!(chuongTrinh(ma).doc || {}).moiManMotMuc;
+export const baiDocCham = (id) => nhipDocCham(chuongTrinhCua(id));
+
+/** Tiền tố tệp kỳ sát hạch: 'DL:KSN3.' → 'KSN3' (tệp reviews/DCR_KSN3_C1.json). */
+export const maKy = (ma) => (chuongTrinh(ma).tienTo || 'DL:KSN5Q1.')
+  .replace(/^[A-Z]+:/, '').replace(/\.$/, '');
 
 /* Chương của từng bài lớp 2 nằm trong dữ liệu (8 chương, số bài mỗi chương khác
    nhau) chứ không suy ra được bằng công thức như lớp 5. Nạp chỉ mục là ghi nhớ. */

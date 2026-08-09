@@ -1,0 +1,261 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B02",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 2 · THÊM CHỮ SỐ BÊN TRÁI — BÊN PHẢI",
+ "durationMinutes": 10,
+ "so": 2,
+ "chuong": 1,
+ "tenChuong": "Vương quốc Vạn Số",
+ "dangGoc": "SỐ 1.2 case \"thêm bên trái\" khởi điểm Lớp 3 — Hai phép biến hình khác nhau một trời một vực",
+ "skills": {
+  "bktUnit": "CHUONG:1@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 2,
+  "prev": "DL:KSN3.B01",
+  "next": "DL:KSN3.B03"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Hiểu thêm chữ số bên PHẢI: cả số nhảy lên một tầng (× 10) rồi cộng chữ số mới. Hiểu thêm chữ số bên TRÁI: các chữ số cũ ĐỨNG YÊN, chỉ cộng thêm \"hàng xóm\" trăm (hoặc nghìn). Tính được số mới hơn số cũ bao nhiêu trong cả hai phép biến hình.",
+  "kidText": "Hiểu thêm chữ số bên PHẢI: cả số nhảy lên một tầng (× 10) rồi cộng chữ số mới. Hiểu thêm chữ số bên TRÁI: các chữ số cũ ĐỨNG YÊN, chỉ cộng thêm \"hàng xóm\" trăm (hoặc nghìn). Tính được số mới hơn số cũ bao nhiêu trong cả hai phép biến hình.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — CỬA PHẢI (ôn + nâng): thêm 0 bên phải: 45 → 450, cả nhà 4 và 5 nhảy lên một tầng → gấp 10 lần. Thêm chữ số 2 bên phải: 45 → 452 = 450 + 2 — tức là × 10 rồi cộng 2 (hạt mầm năm ngoái nở hoa!)."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — CỬA TRÁI (điều mới!): thêm 3 bên trái 45 → 345. Nhìn kỹ: 4 vẫn ở tháp Chục, 5 vẫn ở tháp Đơn vị — không ai di chuyển cả! Chỉ có bạn 3 dọn vào tháp Trăm: 345 = 45 + 300."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Đối chiếu hai cửa: cửa phải là \"cả nhà chuyển tầng\" (nhân), cửa trái là \"hàng xóm mới dọn đến\" (cộng). Thêm 3 bên trái số có 3 chữ số thì hàng xóm là 3 nghìn: 245 → 3 245 = 245 + 3 000."
+   }
+  ],
+  "mantra": "Thêm bên PHẢI → cả số × 10 rồi cộng chữ số mới. Thêm bên TRÁI → số cũ đứng yên, CỘNG thêm chữ-số-mới nhân với hàng nó chiếm (trăm, nghìn...). Hai cửa — hai phép thuật, đừng trộn!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trí Long vẫn giữ tuyên bố trước cửa tiệm: \"Thêm chữ số bên trái thì số cũng gấp 10 lần, giống thêm bên phải thôi! 45 thêm 3 thành 345 — thấy chưa, to hơn hẳn 10 lần... chắc thế!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Gấp 10 lần của 45 là bao nhiêu? 345 có bằng số đó không? Chênh nhau bao nhiêu? Gợi ý 2: Trong số 345, hai bạn 4 và 5 có rời khỏi tháp cũ không? Còn trong số 450 thì sao? Chỉ cho Trí Long chỗ khác nhau cốt lõi của hai cánh cửa — và nhớ khều nhẹ: \"cậu quên bước ĐI THỬ rồi đấy!\""
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Viết thêm chữ số 7 vào bên trái số 26. Hỏi được số mới nào? Số mới hơn số cũ bao nhiêu đơn vị?"
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "trap",
+    "narration": "Trí Long vẫn giữ tuyên bố trước cửa tiệm: \"Thêm chữ số bên trái thì số cũng gấp 10 lần, giống thêm bên phải thôi! 45 thêm 3 thành 345 — thấy chưa, to hơn hẳn 10 lần... chắc thế!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Viết thêm chữ số 7 vào bên trái số 26. Hỏi được số mới nào? Số mới hơn số cũ bao nhiêu đơn vị?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Viết thêm 7 vào bên trái số 26 ta được số 726."
+   },
+   {
+    "show": "Số mới hơn số cũ là: 726 − 26 = 700 (đơn vị)"
+   },
+   {
+    "show": "(Đúng bằng 7 trăm — giá trị của chữ số 7 ở chỗ nó vừa dọn vào!)"
+   },
+   {
+    "show": "Đáp số: số 726; hơn số cũ 700 đơn vị."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Viết thêm chữ số 0 vào bên phải mỗi số: 38; 50. Số mới gấp mấy lần số cũ?",
+     "solutionNarrative": "380 và 500 — gấp 10 lần."
+    },
+    {
+     "id": "C2",
+     "text": "Viết thêm chữ số 5 vào bên trái mỗi số: 12; 70. Được các số nào?",
+     "solutionNarrative": "512 và 570."
+    },
+    {
+     "id": "C3",
+     "text": "Viết thêm chữ số 4 vào bên phải số 21. Được số nào? (Số cũ nhảy tầng rồi cộng thêm mấy?)",
+     "solutionNarrative": "214 = 210 + 4 (nhảy tầng ×10 rồi cộng 4)."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Thêm chữ số 6 vào bên trái số 27. Số mới hơn số cũ bao nhiêu đơn vị?",
+     "solutionNarrative": "627 − 27 = 600."
+    },
+    {
+     "id": "C5",
+     "text": "Thêm chữ số 8 vào bên trái số 145. Được số nào? Số mới hơn số cũ bao nhiêu?",
+     "solutionNarrative": "8 145; hơn 8 000."
+    },
+    {
+     "id": "C6",
+     "text": "Số 39 sau một phép biến hình trở thành 390. Nó đã đi qua cửa nào, với tấm thẻ số mấy? Số 39 muốn thành 839 thì sao?",
+     "solutionNarrative": "39 → 390: cửa PHẢI với thẻ 0; 39 → 839: cửa TRÁI với thẻ 8."
+    },
+    {
+     "id": "C7",
+     "text": "Cùng tấm thẻ số 9 và số 12: đi cửa phải được số nào, đi cửa trái được số nào? Cửa nào cho số lớn hơn — lớn hơn bao nhiêu?",
+     "solutionNarrative": "cửa phải: 129; cửa trái: 912; cửa trái cho số lớn hơn, hơn 912 − 129 = 783."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Viết thêm chữ số 1 vào CẢ bên trái lẫn bên phải số 7. Được số nào? Số mới hơn số 7 ban đầu bao nhiêu đơn vị?",
+     "solutionNarrative": "được số 171; hơn số cũ 171 − 7 = 164."
+    },
+    {
+     "id": "C9",
+     "text": "Bài ngược của tiệm ảo thuật: một số có 2 chữ số, sau khi thêm một chữ số vào bên trái thì được số mới hơn số cũ đúng 400 đơn vị. Hỏi tấm thẻ được thêm là chữ số mấy? Có cần biết số cũ là số nào không — vì sao?",
+     "solutionNarrative": "số mới hơn số cũ đúng bằng giá trị \"hàng xóm\" dọn vào — thêm bên trái số có 2 chữ số thì hàng xóm chiếm tháp Trăm → hơn 400 nghĩa là thẻ số 4. KHÔNG cần biết số cũ — vì số cũ đứng yên, phần hơn chỉ do hàng xóm quyết định!"
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Thêm chữ số 0 vào bên phải một số thì số đó gấp 10 lần.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Thêm chữ số 3 vào bên trái số 45 thì số 45 cũng gấp 10 lần.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "chỉ cộng 300"
+   },
+   {
+    "id": "Q3",
+    "text": "Thêm 7 vào bên trái 26 được:",
+    "format": "mcq",
+    "choices": [
+     "A. 267",
+     "B. 726",
+     "C. 260"
+    ],
+    "answerKey": {
+     "choice": "B. 726"
+    },
+    "solutionNarrative": "Đáp án: B. 726"
+   },
+   {
+    "id": "Q4",
+    "text": "Số 726 hơn số 26 bao nhiêu?",
+    "format": "mcq",
+    "choices": [
+     "A. 7",
+     "B. 70",
+     "C. 700"
+    ],
+    "answerKey": {
+     "choice": "C. 700"
+    },
+    "solutionNarrative": "Đáp án: C. 700"
+   },
+   {
+    "id": "Q5",
+    "text": "Thêm 2 vào bên phải 45 được số:",
+    "format": "mcq",
+    "choices": [
+     "A. 452 = 450 + 2",
+     "B. 245",
+     "C. 47"
+    ],
+    "answerKey": {
+     "choice": "A. 452 = 450 + 2"
+    },
+    "solutionNarrative": "Đáp án: A. 452 = 450 + 2"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Làm hai \"cánh cửa\" bằng bìa dán trên bàn học: con viết số lên thẻ, đẩy qua cửa trái/phải và viết kết quả — trò chơi 5 phút biến quy tắc thành phản xạ.",
+  "homeActivity": "Câu hỏi vàng: \"Các chữ số cũ CÓ DI CHUYỂN không?\" — đây là ranh giới giữa hai phép biến hình, mọi nhầm lẫn đều bắt nguồn từ đây.",
+  "watchFor": "NÊN: luôn cho con KIỂM CHỨNG bằng phép trừ (số mới − số cũ) để thấy đúng 300, 700... KHÔNG NÊN: dạy case \"xen chữ số vào giữa\" — ca hóc đó hẹn lớp 4 theo đúng ma trận."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO02",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO02.png",
+   "caption": "Số 26 đi qua cửa TRÁI thêm chữ số 7 — được số nào",
+   "sha256_16": "603c8d85c2e2375b",
+   "mucGoc": "chuyenMoBai"
+  }
+ ],
+ "hatMam": "Lớp 2 con đã biết phép thuật của chú số 0: thêm 0 vào bên phải là số gấp 10 lần, và câu ★★★ \"gieo mầm\" thêm chữ số 2 vào bên phải số 3 (Bài 2 lớp 2). Hạt mầm ấy hôm nay nảy thành nguyên một bài học!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B02"
+  ],
+  "ten": [
+   "CHÚ SỐ 0 DIỆU KỲ"
+  ],
+  "canCu": "sach",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

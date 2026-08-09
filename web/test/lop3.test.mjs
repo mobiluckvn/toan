@@ -346,5 +346,121 @@ if (existsSync(MOTA) && existsSync(SOTAY)) {
     + ` · ${new Set(mota.map((m) => m.bai)).size} bài · ${capBaiTap} câu có hình đề+giải`);
 }
 
+/* ── bước 5 · bản cho app theo khuôn chung ──
+   Đây là thứ phòng học ĐỌC THẬT. Bản gốc đúng mà bản này hỏng thì bé chịu, chứ
+   không ai biết — hai thư mục cố tình khác nhau nên không so thẳng được. */
+const APP = join(G, 'web/public/content/lop3');
+if (existsSync(APP)) {
+  const tep = readdirSync(APP).filter((f) => f.startsWith('DL_KSN3_B'));
+  const app = tep.map((f) => JSON.parse(readFileSync(join(APP, f), 'utf8')));
+  t(`dựng đủ 34 bài cho app (${app.length})`, app.length === 34);
+
+  const saiLop = app.filter((b) => b.grade !== 3 || b.quyen !== 'lop3').map((b) => b.id);
+  t('bài nào cũng khai đúng lớp 3', saiLop.length === 0);
+  in5(saiLop);
+
+  /* CHẶNG GIẢNG RỖNG LÀ HỎNG CÂM: bài vẫn dựng, phòng học vẫn mở, chỉ là không dạy
+     gì. Sách lớp 3 đặt tên bước mười kiểu (Nhân vật · Phép thử · Thế trận · Kho
+     báu…); mẫu bốn tên của lớp 2 làm 7 bài mất sạch nguyên tắc và 26 bước bốc hơi
+     mà không một dòng cảnh báo. Phép kiểm này canh đúng chỗ ấy. */
+  const rong = app.filter((b) => !(b.knowledgeCore?.statements || []).length)
+    .map((b) => `${b.id} — mẫu tên bước bỏ sót cách sách đặt tên?`);
+  t('bài nào cũng có ít nhất một nguyên tắc để dạy', rong.length === 0);
+  in5(rong);
+
+  const khongMan = app.filter((b) => !(b.lecture?.screens || []).length).map((b) => b.id);
+  t('bài nào cũng có màn giảng', khongMan.length === 0);
+  in5(khongMan);
+
+  /* `duongLui` chỉ ghi khi thật sự có đích — trường rỗng thì giao diện phải đoán
+     "chưa làm" hay "đã xét và không có". Và đích phải là bài lớp 2 CÓ THẬT. */
+  const luiHong = [];
+  for (const b of app) {
+    const dl = b.duongLui;
+    if (!dl) continue;
+    if (!(dl.ve || []).length) luiHong.push(`${b.id}: có trường duongLui mà rỗng`);
+    for (const x of dl.ve || []) if (!coL2.has(x)) luiHong.push(`${b.id} → ${x} không có thật`);
+  }
+  t(`đường lùi trong bản app trỏ đúng (${app.filter((b) => b.duongLui).length}/34 bài)`,
+    luiHong.length === 0);
+  in5(luiHong);
+
+  /* HẠT MẦM phải theo sang bản app — nó là lời nối ngược về lớp 2 ở màn kết bài */
+  const mam = app.filter((b) => b.hatMam).length;
+  t(`hạt mầm theo sang bản app đủ 34 bài (${mam})`, mam === 34);
+}
+
+/* ── kỳ sát hạch (8 ôn tập + 3 ải) ── */
+const REV = join(G, 'web/public/content/reviews');
+if (existsSync(REV)) {
+  const ky = readdirSync(REV).filter((f) => f.startsWith('DCR_KSN3_C'))
+    .map((f) => JSON.parse(readFileSync(join(REV, f), 'utf8')));
+  t(`đủ 11 kỳ sát hạch (${ky.length})`, ky.length === 11);
+
+  /* Không đáp án thì bé làm xong chẳng có gì để so — mà kỳ thi vẫn chạy trơn tru */
+  const khongDap = ky.flatMap((k) => (k.examA || []).filter((c) => !c.answer)
+    .map((c) => `${k.id} ${c.id}`));
+  t('câu sát hạch nào cũng có đáp án', khongDap.length === 0);
+  in5(khongDap);
+
+  /* Mối nối "sai câu nào, ôn bài đó" — thứ đáng giá nhất của phần ôn tập. Ải thì
+     phủ cả sách nên không trỏ riêng bài nào, đó là cố ý. */
+  const noiHong = [];
+  for (const k of ky) {
+    for (const c of k.examA || []) {
+      if (k.loai === 'ai') continue;
+      if (!c.diagnosesMicro) { noiHong.push(`${k.id} ${c.id}: không trỏ về bài nào`); continue; }
+      if (!soTho.has(c.diagnosesMicro)) noiHong.push(`${k.id} ${c.id} → ${c.diagnosesMicro} không có thật`);
+      for (const v of c.veBai || []) {
+        if (!soTho.has(v.id)) noiHong.push(`${k.id} ${c.id} → ${v.id} không có thật`);
+        if (!v.ten) noiHong.push(`${k.id} ${c.id} → ${v.id} thiếu tên bài để hiện cho bé`);
+      }
+    }
+  }
+  t('mọi câu ôn tập trỏ về một bài lớp 3 có thật, kèm tên', noiHong.length === 0);
+  in5(noiHong);
+
+  /* Một câu trỏ về HAI bài là chuyện thật (ôn tập 3 câu 10, ôn tập 4 câu 12).
+     Khuôn lớp 5 chỉ có một ô `diagnosesMicro`, nên `veBai` phải giữ đủ danh sách —
+     rơi mất đích thứ hai thì bé ôn nửa vời mà không ai biết. */
+  const kep = ky.flatMap((k) => (k.examA || []).filter((c) => (c.veBai || []).length > 1)).length;
+  t(`giữ đủ đích kép trong kỳ sát hạch (${kep} câu trỏ về 2 bài)`, kep === 2);
+
+  /* HAI QUYỂN PHẢI DÙNG CHUNG MỘT CÁCH VIẾT. Bản gốc lớp 3 ghi `loai: 'onTap'`,
+     lớp 2 ghi `'ontap'`, mà giao diện lọc theo `'ontap'` — lệch một chữ hoa là cả 8
+     ôn tập lớp 3 biến mất khỏi màn hình: dữ liệu vẫn đủ, tệp vẫn đúng, chỉ là không
+     ai thấy. So thẳng bộ từ vựng của hai quyển mới bắt được. */
+  const tu2 = new Set(JSON.parse(readFileSync(join(G, 'web/public/content/lop2/ontap.json'), 'utf8'))
+    .map((x) => x.loai));
+  const tu3 = new Set(JSON.parse(readFileSync(join(G, 'web/public/content/lop3/ontap.json'), 'utf8'))
+    .map((x) => x.loai));
+  const la = [...tu3].filter((x) => !tu2.has(x));
+  t(`lớp 3 dùng cùng bộ từ 'loai' với lớp 2 (${[...tu3].join(' · ')})`, la.length === 0);
+  in5(la);
+
+  const cauB = ky.reduce((a, k) => a + (k.deB || []).length, 0);
+  console.log(`   ${ky.length} kỳ · ${ky.reduce((a, k) => a + k.examA.length, 0)} câu`
+    + ` · ${cauB} câu đề B`);
+}
+
+/* ── sổ đăng ký: không khai thì lớp 3 không hiện trên kệ sách ── */
+const DK = join(G, 'web/public/content/chuong_trinh.json');
+if (existsSync(DK)) {
+  const dk = JSON.parse(readFileSync(DK, 'utf8')).chuongTrinh || {};
+  const l3 = dk.lop3;
+  t('sổ đăng ký có khai lớp 3', !!l3);
+  if (l3) {
+    /* `loai` và `donVi` là hai trường hay quên nhất (chuẩn mục 10 · bước 6):
+       thiếu `loai: hoc` thì App không mở Home của lớp mà nhảy thẳng bảng đấu. */
+    t("lớp 3 khai loai: 'hoc' và donVi", l3.loai === 'hoc' && !!l3.donVi);
+    t(`lớp 3 khai đủ 34 bài (${l3.soBai})`, l3.soBai === 34 && (l3.bai || []).length === 34);
+    const laMa = (l3.bai || []).filter((x) => !soTho.has(x));
+    t('mã bài trong sổ đăng ký đều có thật', laMa.length === 0);
+    in5(laMa);
+    t('lớp 2 và lớp 5 vẫn còn nguyên trong sổ',
+      !!dk.lop2 && !!dk.lop5 && !!dk.lop5q2);
+  }
+}
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);

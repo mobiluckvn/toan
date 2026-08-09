@@ -28,10 +28,21 @@ NOI_DUNG_HINH = {
     'suKemNham': 'trap', 'mucTieu': 'mantra', 'luyenTap': 'practice', 'quiz': 'assess',
 }
 MUC_POOL = {1: 'warmup', 2: 'standard', 3: 'challenge'}
-# Sách không nhất quán tên bước: phần lớn ghi "Bước 1.", nhưng bài 16 và 27 ghi
-# "Nhịp 1 —", bài 25 ghi "Vũ khí 2 —". Bỏ sót là bài ấy KHÔNG có nguyên tắc nào,
-# phòng học dựng ra chặng giảng trống trơn mà chẳng có gì báo.
-R_BUOC = re.compile(r'^(Bước|Nhịp|Vũ khí|Chặng)\s*\d+\s*[.—–-]|^(MẸO|LUẬT)[^:]*:')
+# Sách không nhất quán tên bước. Lớp 2 có bốn kiểu: phần lớn ghi "Bước 1.", nhưng
+# bài 16 và 27 ghi "Nhịp 1 —", bài 25 ghi "Vũ khí 2 —". Lớp 3 có thêm TÁM kiểu nữa,
+# và chúng không hiếm: bài 29 đặt cả ba bước giảng là "Nhân vật 1/2/3", bài 26 dùng
+# "Phép thử", bài 24 dùng "Thế trận", bài 20 dùng "Kho báu".
+#
+# Bỏ sót là bài ấy KHÔNG có nguyên tắc nào, phòng học dựng ra chặng giảng trống trơn
+# mà chẳng có gì báo — hỏng câm, đúng kiểu đắt nhất của dây chuyền này. Nên liệt kê
+# ĐÍCH DANH rồi canh bằng phép kiểm, chứ không nới mẫu thành "mấy chữ rồi tới số":
+# nới rộng thì "Bài 3 —" hay "Đáp số 2." cũng thành bước.
+#
+# Thêm tám tên KHÔNG làm lệch một dòng nào của lớp 2 — đã đối chiếu cả 33 bài.
+TEN_BUOC = ('Bước', 'Nhịp', 'Vũ khí', 'Chặng', 'Phép thử', 'Chiêu', 'Đường',
+            'Tuyệt kỹ', 'Kho báu', 'Thế trận', 'Nhân vật', 'Câu hỏi')
+R_BUOC = re.compile(r'^(?:' + '|'.join(TEN_BUOC) + r')\s*\d+\s*[.—–-]'
+                    r'|^(?:MẸO|LUẬT)[^:]*:')
 
 
 def _dong(bai, ten):
@@ -58,7 +69,11 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
     """
     dap_an = dap_an or {}
     so = bai['so']
-    ma = f'KSN2_B{so:02d}'
+    # Lớp nào lấy từ CHÍNH bản gốc, không nhận qua tham số: bản gốc đã khai `quyen`
+    # ở bước 3, mà một tham số thừa là một chỗ để gọi nhầm — dựng lớp 3 mà quên
+    # truyền thì cả 34 bài đội mác lớp 2, hợp lệ y như thật.
+    quyen = bai.get('quyen', 'lop2')
+    grade = int(quyen[-1]) if quyen[-1:].isdigit() else 2
 
     # ── ③ khám phá → nguyên tắc + màn giảng ──
     kham = _dong(bai, 'khamPha')
@@ -189,14 +204,14 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
               'watchFor': nen}
 
     muc_tieu = ' '.join(_dong(bai, 'mucTieu'))
-    return {
+    ra = {
         '$schema': 'digital-lesson/v2-micro',
-        'id': bai['id'], 'grade': 2, 'quyen': 'lop2',
+        'id': bai['id'], 'grade': grade, 'quyen': quyen,
         'title': f"Bài {so} · {bai['ten']}",
         'durationMinutes': 10,
         'so': so, 'chuong': bai['chuong'], 'tenChuong': bai['tenChuong'],
         'dangGoc': bai.get('dangGoc', ''),
-        'skills': {'bktUnit': f"CHUONG:{bai['chuong']}@G2", 'primary': []},
+        'skills': {'bktUnit': f"CHUONG:{bai['chuong']}@G{grade}", 'primary': []},
         'series': {'order': so, 'prev': truoc, 'next': sau},
         'objective': {'id': 'O1', 'text': muc_tieu, 'kidText': muc_tieu,
                       'passRule': 'đúng ≥ 4/5 câu tự kiểm'},
@@ -213,3 +228,17 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
         'parentNote': parent,
         'figureSpec': fig,
     }
+
+    # ── hai trường chỉ quyển nối tiếp mới có (lớp 3 nối lớp 2) ──
+    # Chỉ ghi ra khi bản gốc THẬT SỰ có, để bài lớp 2 không mọc thêm trường rỗng —
+    # trường rỗng thì giao diện phải đoán "chưa làm" hay "đã xét và không có".
+    if bai.get('hatMam'):
+        ra['hatMam'] = bai['hatMam']            # lời nối ngược, hiện ở màn kết bài
+    gan = bai.get('ganLop2') or {}
+    if gan.get('ve'):
+        # nút "Học lại bài lớp <n−1>". Danh sách rỗng thì KHÔNG ghi trường, nên chỗ
+        # hiện nút chỉ cần hỏi "có trường không", khỏi phải biết luật `canCu`.
+        ra['duongLui'] = {'ve': gan['ve'], 'ten': gan.get('ten', []),
+                          'canCu': gan.get('canCu', ''),
+                          'nhan': 'Học lại bài lớp 2'}
+    return ra

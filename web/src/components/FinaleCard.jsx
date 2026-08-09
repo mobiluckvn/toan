@@ -1,14 +1,18 @@
 import React from 'react';
 import { gradeMicro } from '../lib/flow.js';
 
-/** Trang kết: huy hiệu · điểm · thẻ ôn · sổ phụ huynh */
-export default function FinaleCard({ lesson, log, onRetry, onJumpTeach, onFinish }) {
+/** Trang kết: huy hiệu · điểm · thẻ ôn · sổ phụ huynh · đường lùi về quyển dưới */
+export default function FinaleCard({ lesson, log, onRetry, onJumpTeach, onFinish, onMoBai }) {
   const rule = lesson.assessment?.passRule || '';
   const g = gradeMicro(log.assess, rule);
   const firstTry = log.practice.filter((p) => p.tries === 1).length;
   const pn = lesson.parentNote || {};
   const flash = lesson.spacedReview?.flashcards?.[0];
   const award = lesson.assessment?.onPass?.award || '';
+  /* Đường LÙI về quyển dưới: bài lớp 3 trỏ về bài lớp 2 cùng chủ đề. Chỉ có ở quyển
+     nối tiếp, và bộ dựng CHỈ ghi trường này khi thật sự có đích — nên ở đây không
+     phải biết luật nào, cứ có thì hiện. */
+  const lui = onMoBai ? lesson.duongLui : null;
 
   const fill = (s) => String(s || '')
     .replace('{score}', g.right)
@@ -41,6 +45,36 @@ export default function FinaleCard({ lesson, log, onRetry, onJumpTeach, onFinish
           <div className="mt-4 rounded-2xl bg-navy px-4 py-3.5 text-left text-[14.5px] leading-relaxed text-white">
             <b className="text-gold">Thẻ ôn (hiện lại sau 1 ngày):</b>
             <div className="mt-1">{flash.back}</div>
+          </div>
+        )}
+
+        {/* HẠT MẦM NĂM NGOÁI — sách viết sẵn ở đầu mỗi bài lớp 3, nối bài hôm nay
+            với thứ con đã học năm ngoái. Đặt ở màn kết để con vừa làm xong thì thấy
+            ngay mình đã đi được bao xa từ quyển trước. */}
+        {lesson.hatMam && (
+          <div className="mt-4 rounded-2xl bg-teal-pale px-4 py-3.5 text-left text-[14.5px] leading-relaxed">
+            <b className="text-teal-dark">🌱 Hạt mầm năm ngoái</b>
+            <p className="mt-1 text-navy">{lesson.hatMam}</p>
+          </div>
+        )}
+
+        {/* Chưa đạt thì đây là lối ra đỡ hụt hẫng nhất: về luyện lại đúng bài gốc của
+            năm ngoái, chứ không phải làm lại bài khó thêm một lượt nữa. */}
+        {lui && (
+          <div className={`mt-3 rounded-2xl px-4 py-3.5 text-left text-[14.5px] ${
+            g.pass ? 'bg-soft' : 'border-[1.5px] border-gold bg-gold-pale'}`}>
+            <b className="text-navy">{lui.nhan}</b>
+            <p className="mt-1 text-mute">
+              {g.pass ? 'Muốn ôn lại gốc của bài này thì mở:' : 'Bài này dựng trên một bài năm ngoái — luyện lại gốc rồi quay lên nhé:'}
+            </p>
+            <div className="mt-2 flex flex-col gap-1.5">
+              {lui.ve.map((id, k) => (
+                <button key={id} className="btn-ghost text-left"
+                        onClick={() => onMoBai(id)}>
+                  ◀ {lui.ten[k] || id}
+                </button>
+              ))}
+            </div>
           </div>
         )}
 

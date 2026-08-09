@@ -22,7 +22,7 @@ function PhaseBar({ current }) {
   );
 }
 
-export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, onMoveStep, onEvents }) {
+export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, onMoveStep, onEvents, onMoBai }) {
   const [lesson, setLesson] = useState(null);
   const [err, setErr] = useState(null);
   const [i, setI] = useState(0);
@@ -138,6 +138,7 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
           step={step} lesson={lesson} microId={microId}
           figureSrc={figureSrc} chapter={chapterOf(microId)}
           log={log} onRecord={record} onNext={() => go(1)} onJump={jumpTo}
+          onMoBai={onMoBai}
           onFinish={() => onFinish?.(
             gradeMicro(log.assess, lesson.assessment?.passRule || ''),
             lesson,

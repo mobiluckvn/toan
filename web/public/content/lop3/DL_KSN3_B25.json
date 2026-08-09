@@ -1,0 +1,343 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B25",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 25 · SƠ ĐỒ VEN HAI VÒNG",
+ "durationMinutes": 10,
+ "so": 25,
+ "chuong": 6,
+ "tenChuong": "Thám tử cao cấp",
+ "dangGoc": "LV 8.5 khởi điểm Lớp 3 — Hai vòng tròn giao nhau và những bạn bị đếm hai lần",
+ "skills": {
+  "bktUnit": "CHUONG:6@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 25,
+  "prev": "DL:KSN3.B24",
+  "next": "DL:KSN3.B26"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Vẽ được sơ đồ Ven hai vòng: vùng riêng mỗi bên và vùng giao ở giữa. Thuộc công thức: ít nhất một môn = nhóm A + nhóm B − cả hai (trừ phần đếm trùng!). Tính được số bạn \"không thuộc nhóm nào\" bằng cách lấy cả lớp trừ đi.",
+  "kidText": "Vẽ được sơ đồ Ven hai vòng: vùng riêng mỗi bên và vùng giao ở giữa. Thuộc công thức: ít nhất một môn = nhóm A + nhóm B − cả hai (trừ phần đếm trùng!). Tính được số bạn \"không thuộc nhóm nào\" bằng cách lấy cả lớp trừ đi.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — VẼ BẢN ĐỒ: hai vòng tròn giao nhau: vòng BÓNG ĐÁ, vòng CẦU LÔNG. Vùng giữa — nơi hai vòng ôm nhau — là chỗ đứng của 8 bạn mê cả hai môn."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — ĐIỀN TỪ GIỮA RA: chỉ mê bóng đá: 20 − 8 = 12 bạn; chỉ mê cầu lông: 18 − 8 = 10 bạn. (Luật vàng: điền vùng GIỮA trước, hai cánh sau!)"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — ĐẾM KHÔNG TRÙNG: mê ít nhất một môn: 12 + 8 + 10 = 30 bạn. Đường tắt: 20 + 18 − 8 = 30 — vì 8 bạn vùng giữa bị hai danh sách đếm HAI lần, phải trả lại một lần! (Đúng bài học hai cánh quân năm xưa.)"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — VÙNG NGOÀI: không mê môn nào: 35 − 30 = 5 bạn — họ đứng ngoài cả hai vòng tròn, có khi đang... mê cờ vua!"
+   }
+  ],
+  "mantra": "Thấy hai nhóm mà cộng thô bị VỠ TRẦN (to hơn cả lớp) — đừng đổ cho đề: đó là dấu vân tay của nhóm \"cả hai\"! Vẽ hai vòng, điền vùng giữa trước, và nhớ công thức: A + B − cả hai.",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trí Long vẫn bảo lưu giả thuyết: \"20 cộng 18 là 38 người đăng ký — mà lớp có 35. Kết luận của tớ: có 3 bạn lớp khác trà trộn vào hội thao lớp mình!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Bạn An mê CẢ bóng đá lẫn cầu lông — tên bạn ấy xuất hiện trong mấy tờ danh sách? Khi Trí Long cộng hai danh sách, bạn An bị đếm mấy lần? Gợi ý 2: 38 − 35 = 3 không phải là \"3 bạn trà trộn\" — nó là dấu vết của những bạn bị đếm TRÙNG. Nhưng khoan: số bạn cả-hai là 8 chứ không phải 3, vì còn 5 bạn chẳng đăng ký môn nào! Vẽ đủ bản đồ bốn vùng rồi giảng lại cho Trí Long nhé."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Lớp 3A có 35 bạn; 20 bạn thích bóng đá, 18 bạn thích cầu lông, trong đó 8 bạn thích cả hai môn. Hỏi có bao nhiêu bạn không thích môn nào?"
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Trí Long vẫn bảo lưu giả thuyết: \"20 cộng 18 là 38 người đăng ký — mà lớp có 35. Kết luận của tớ: có 3 bạn lớp khác trà trộn vào hội thao lớp mình!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Lớp 3A có 35 bạn; 20 bạn thích bóng đá, 18 bạn thích cầu lông, trong đó 8 bạn thích cả hai môn. Hỏi có bao nhiêu bạn không thích môn nào?",
+  "steps": [
+   {
+    "show": "Bài giải: (vẽ sơ đồ Ven hai vòng, điền số 8 vào vùng giữa)"
+   },
+   {
+    "show": "Số bạn thích ít nhất một môn là: 20 + 18 − 8 = 30 (bạn)"
+   },
+   {
+    "show": "Số bạn không thích môn nào là: 35 − 30 = 5 (bạn)"
+   },
+   {
+    "show": "Thử lại: chỉ bóng đá 12 + cả hai 8 + chỉ cầu lông 10 + không môn nào 5 = 35 ✓"
+   },
+   {
+    "show": "Đáp số: 5 bạn."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Nhóm có 15 bạn: 9 bạn thích vẽ, 8 bạn thích hát, 4 bạn thích cả hai. Vẽ sơ đồ Ven và điền số vào ba vùng: chỉ vẽ, cả hai, chỉ hát.",
+     "solutionNarrative": "chỉ vẽ 9 − 4 = 5; cả hai 4; chỉ hát 8 − 4 = 4."
+    },
+    {
+     "id": "C2",
+     "text": "Từ câu 1: có bao nhiêu bạn thích ít nhất một môn?",
+     "solutionNarrative": "5 + 4 + 4 = 13 (hoặc 9 + 8 − 4 = 13)."
+    },
+    {
+     "id": "C3",
+     "text": "Từ câu 1: có bao nhiêu bạn không thích môn nào?",
+     "solutionNarrative": "15 − 13 = 2 bạn."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Lớp 3A: 35 bạn, 20 mê bóng đá, 18 mê cầu lông, 8 mê cả hai — trình bày trọn bài như ví dụ mẫu.",
+     "solutionNarrative": "ít nhất một môn 20 + 18 − 8 = 30; không môn nào 35 − 30 = 5."
+    },
+    {
+     "id": "C5",
+     "text": "Tổ Su Kem có 12 bạn: 7 bạn có anh trai, 6 bạn có chị gái, 3 bạn có cả anh lẫn chị. Hỏi mấy bạn là con một... à nhầm, mấy bạn KHÔNG có anh chị nào?",
+     "solutionNarrative": "có anh hoặc chị: 7 + 6 − 3 = 10 → không có anh chị: 12 − 10 = 2 bạn."
+    },
+    {
+     "id": "C6",
+     "text": "Trong 20 bạn: 11 bạn mang mũ, 9 bạn mang ô, 5 bạn mang cả hai. Hỏi mấy bạn đi tay không giữa trời nắng?",
+     "solutionNarrative": "11 + 9 − 5 = 15 → tay không: 20 − 15 = 5 bạn."
+    },
+    {
+     "id": "C7",
+     "text": "Kiểm chứng kiểu thám tử: ở câu 4, cộng đủ BỐN vùng (chỉ bóng đá + cả hai + chỉ cầu lông + không môn nào) — có ra đúng 35 không?",
+     "solutionNarrative": "12 + 8 + 10 + 5 = 35 ✓ — bản đồ khép kín hoàn hảo."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Bài NGƯỢC: lớp 3B có 30 bạn, 17 bạn thích vẽ, 16 bạn thích hát, và bạn nào cũng thích ÍT NHẤT một môn. Hỏi mấy bạn thích cả hai? (Cộng thô ra bao nhiêu — vỡ trần mấy đơn vị? Phần vỡ trần ấy chính là...)",
+     "solutionNarrative": "cộng thô 17 + 16 = 33, vỡ trần 33 − 30 = 3 → đúng 3 bạn thích cả hai (vì ai cũng thích ít nhất một môn nên phần vỡ trần toàn bộ là phần đếm trùng)."
+    },
+    {
+     "id": "C9",
+     "text": "Chị Ngọc Anh ra đề: \"Lớp có 25 bạn: 12 bạn thích táo, 9 bạn thích ổi, 6 bạn không thích loại quả nào. Hỏi mấy bạn thích cả hai loại?\" (Hai nhịp: tìm số bạn thích ít nhất một loại trước!)",
+     "solutionNarrative": "thích ít nhất một loại: 25 − 6 = 19 → cả hai: 12 + 9 − 19 = 2 bạn."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Bạn thích cả hai môn bị hai danh sách đếm hai lần.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "20 + 18 = 38 > 35 chứng tỏ có bạn lớp khác trà trộn.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "dấu vết đếm trùng!"
+   },
+   {
+    "id": "Q3",
+    "text": "Thích ít nhất một môn (20, 18, cả hai 8):",
+    "format": "mcq",
+    "choices": [
+     "A. 38",
+     "B. 30",
+     "C. 46"
+    ],
+    "answerKey": {
+     "choice": "B. 30"
+    },
+    "solutionNarrative": "Đáp án: B. 30"
+   },
+   {
+    "id": "Q4",
+    "text": "Lớp 35 bạn, 30 bạn thích ít nhất một môn → không môn nào:",
+    "format": "mcq",
+    "choices": [
+     "A. 5",
+     "B. 8",
+     "C. 3"
+    ],
+    "answerKey": {
+     "choice": "A. 5"
+    },
+    "solutionNarrative": "Đáp án: A. 5"
+   },
+   {
+    "id": "Q5",
+    "text": "Vẽ sơ đồ Ven, nên điền vùng nào TRƯỚC?",
+    "format": "mcq",
+    "choices": [
+     "A. vùng riêng",
+     "B. vùng giữa (cả hai)",
+     "C. vùng ngoài"
+    ],
+    "answerKey": {
+     "choice": "B. vùng giữa (cả hai)"
+    },
+    "solutionNarrative": "Đáp án: B. vùng giữa (cả hai)"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Sơ đồ Ven sống động nhất bằng hai vòng dây thừng trên sàn: cả nhà đứng vào vòng \"thích phở\" - \"thích bún\", ai thích cả hai đứng phần giao — cơ thể tự hiểu phép trừ đếm trùng.",
+  "homeActivity": "Câu nói \"vỡ trần là dấu vân tay của nhóm cả-hai\" đáng dán lên bàn học: nó biến một nghịch lý gây hoảng thành manh mối reo vui.",
+  "watchFor": "NÊN: luôn kiểm chứng bằng tổng bốn vùng (như câu 7). KHÔNG NÊN: sang sơ đồ BA vòng — mê cung ấy của lớp 4-5; hai vòng thật chắc đã."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO25",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO25.png",
+   "caption": "Hai vòng giao nhau, mới biết vùng giữa 8 bạn",
+   "sha256_16": "67b7dda8fc452856",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L3H_VEN01",
+   "usedIn": [
+    "screen:S3"
+   ],
+   "file": "figures/L3H_VEN01.png",
+   "caption": "Hai vòng giao nhau: 12 chỉ bóng đá, 8 cả hai, 10 chỉ cầu lông, 5 ngoài cả hai vòng",
+   "sha256_16": "231da424fa2c29e9",
+   "mucGoc": "khamPha"
+  },
+  {
+   "id": "L3H_LT11",
+   "usedIn": [
+    "item:C8"
+   ],
+   "file": "figures/L3H_LT11.png",
+   "caption": "Lớp 30 bạn, không ai đứng ngoài hai vòng — vùng giữa còn trống",
+   "sha256_16": "4c8bbe75be7f72b2",
+   "mucGoc": "luyenTap"
+  },
+  {
+   "id": "L3H_LT12",
+   "usedIn": [
+    "item:C8:giai"
+   ],
+   "file": "figures/L3H_LT12.png",
+   "caption": "Vỡ trần 3 bạn chính là vùng giữa, hai cánh còn 14 và 13",
+   "sha256_16": "a9b7f2d552d73f1e",
+   "mucGoc": "luyenTap"
+  },
+  {
+   "id": "L3H_VEN02",
+   "usedIn": [
+    "item:C1"
+   ],
+   "file": "figures/L3H_VEN02.png",
+   "caption": "Nhóm 15 bạn: 9 thích vẽ, 8 thích hát, 4 thích cả hai — hai cánh còn để trống",
+   "sha256_16": "311b5d148fc396ab",
+   "mucGoc": "luyenTap"
+  },
+  {
+   "id": "L3H_VEN03",
+   "usedIn": [
+    "item:C1:giai"
+   ],
+   "file": "figures/L3H_VEN03.png",
+   "caption": "Điền đủ: 5 chỉ vẽ, 4 cả hai, 4 chỉ hát, 2 bạn ngoài cả hai vòng",
+   "sha256_16": "70f117d833f92bc6",
+   "mucGoc": "luyenTap"
+  },
+  {
+   "id": "L3H_LT13",
+   "usedIn": [
+    "item:Q5"
+   ],
+   "file": "figures/L3H_LT13.png",
+   "caption": "Ba vùng của sơ đồ Ven, chưa vùng nào được điền",
+   "sha256_16": "77102eb3ac312c67",
+   "mucGoc": "quiz"
+  },
+  {
+   "id": "L3H_LT21",
+   "usedIn": [
+    "item:Q5:giai"
+   ],
+   "file": "figures/L3H_LT21.png",
+   "caption": "Điền vùng giữa trước, rồi mới trừ ra hai cánh, cuối cùng mới tới vùng ngoài",
+   "sha256_16": "ffb70f25f5293a4d",
+   "mucGoc": "quiz"
+  }
+ ],
+ "hatMam": "Lớp 2, ở Bài 7, con từng đếm các số chứa chữ số 5 bằng hai cánh quân — và học được bài học vàng: bạn nào bị đếm ở CẢ HAI cánh thì phải trừ đi một lần. Hôm nay bài học ấy có hẳn một tấm bản đồ mang tên SƠ ĐỒ VEN!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B07"
+  ],
+  "ten": [
+   "TRUY TÌM CHỮ SỐ 5 TRỐN Ở ĐÂU"
+  ],
+  "canCu": "sach",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

@@ -1,0 +1,273 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B13",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 13 · LUẬT GIAO THÔNG CỦA PHÉP TÍNH",
+ "durationMinutes": 10,
+ "so": 13,
+ "chuong": 4,
+ "tenChuong": "Mật thất biểu thức",
+ "dangGoc": "SỐ 7.2 mức chuẩn Lớp 3 — Nhân chia đi làn ưu tiên, cộng trừ xếp hàng sau",
+ "skills": {
+  "bktUnit": "CHUONG:4@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 13,
+  "prev": "DL:KSN3.B12",
+  "next": "DL:KSN3.B14"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Thuộc luật: trong biểu thức KHÔNG có ngoặc, nhân chia làm TRƯỚC, cộng trừ làm SAU. Biết: các phép cùng làn thì đi từ trái sang phải. Trình bày tính giá trị biểu thức theo từng bước, gạch chân phép được ưu tiên.",
+  "kidText": "Thuộc luật: trong biểu thức KHÔNG có ngoặc, nhân chia làm TRƯỚC, cộng trừ làm SAU. Biết: các phép cùng làn thì đi từ trái sang phải. Trình bày tính giá trị biểu thức theo từng bước, gạch chân phép được ưu tiên.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — HIỂU BẰNG KẸO: \"5 + 3 × 2\" là chuyện: con có 5 viên kẹo lẻ, mẹ cho thêm 3 túi, MỖI túi 2 viên. Muốn biết tổng phải bóc túi trước: 3 × 2 = 6 viên, rồi mới cộng: 5 + 6 = 11 viên. Phép nhân là \"cụm túi kẹo\" dính chặt với nhau — không ai cộng 5 với 3 CÁI TÚI cả!"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — LUẬT: biểu thức không có ngoặc: nhân, chia đi làn ưu tiên (tính trước); cộng, trừ xếp hàng sau. Ví dụ: 20 − 12 : 4 → 12 : 4 = 3 trước → 20 − 3 = 17."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — CÙNG LÀN THÌ TRÁI TRƯỚC: 24 : 4 × 2 — cả hai đều làn ưu tiên → đi lần lượt từ trái: 24 : 4 = 6, rồi 6 × 2 = 12 (không được nhảy cóc tính 4 × 2 trước!). Chỉ cộng trừ cũng vậy: 20 − 8 + 5 = 12 + 5 = 17."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — TRÌNH BÀY: mỗi dòng làm một bước, gạch chân phép sắp tính: 30 − 4 × 5 = 30 − 20 = 10. Viết rõ từng nhịp — mật thất không nhận đáp án nhảy vọt!"
+   }
+  ],
+  "mantra": "Trước khi tính, RÀ MẮT tìm × và : — khoanh chúng lại như khoanh xe ưu tiên, tính chúng trước. Cùng làn: trái trước phải sau. Cộng trừ luôn là người về đích cuối!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trước cánh cửa è è, Trí Long vẫn cãi: \"5 + 3 × 2 thì cứ trái sang phải: 5 + 3 = 8, nhân 2 bằng 16. Đường một chiều từ lớp 2 giờ đổi luật là sao?!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Kể lại chuyện túi kẹo cho Trí Long: 5 viên lẻ cộng với 3 CÁI TÚI — cộng thế có ổn không? Phải bóc gì ra trước? Gợi ý 2: Đường một chiều lớp 2 không sai — nhưng hồi đó ngã tư chỉ có một loại xe! Nay có thêm xe ưu tiên thì luật phải thêm điều nào? Bấm lại mã đúng giúp hoa tiêu mở cửa."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Tính giá trị biểu thức: 30 − 4 × 5."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Trước cánh cửa è è, Trí Long vẫn cãi: \"5 + 3 × 2 thì cứ trái sang phải: 5 + 3 = 8, nhân 2 bằng 16. Đường một chiều từ lớp 2 giờ đổi luật là sao?!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tính giá trị biểu thức: 30 − 4 × 5.",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "30 − 4 × 5"
+   },
+   {
+    "show": "= 30 − 20 (nhân đi làn ưu tiên: 4 × 5 = 20)"
+   },
+   {
+    "show": "= 10"
+   },
+   {
+    "show": "Đáp số: 10."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính: 4 + 2 × 3; 10 − 2 × 4.",
+     "solutionNarrative": "4 + 6 = 10; 10 − 8 = 2."
+    },
+    {
+     "id": "C2",
+     "text": "Tính: 20 − 12 : 4; 15 + 18 : 3.",
+     "solutionNarrative": "20 − 3 = 17; 15 + 6 = 21."
+    },
+    {
+     "id": "C3",
+     "text": "Khoanh phép được làm trước rồi tính: 7 × 3 − 5; 36 : 6 + 9.",
+     "solutionNarrative": "21 − 5 = 16; 6 + 9 = 15."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tính từng bước: 6 × 3 − 8; 40 − 30 : 5.",
+     "solutionNarrative": "18 − 8 = 10; 40 − 6 = 34."
+    },
+    {
+     "id": "C5",
+     "text": "Cùng làn — trái trước: 24 : 4 × 2; 20 − 8 + 5; 3 × 8 : 4.",
+     "solutionNarrative": "24 : 4 = 6 → 6 × 2 = 12; 20 − 8 = 12 → 12 + 5 = 17; 3 × 8 = 24 → 24 : 4 = 6."
+    },
+    {
+     "id": "C6",
+     "text": "Đúng hay sai, sửa lại nếu sai: (a) 5 + 3 × 2 = 16; (b) 18 − 6 : 3 = 4; (c) 2 × 9 − 5 = 13.",
+     "solutionNarrative": "(a) SAI → 5 + 6 = 11; (b) SAI → 18 − 2 = 16; (c) ĐÚNG: 18 − 5 = 13."
+    },
+    {
+     "id": "C7",
+     "text": "Viết biểu thức rồi tính: \"Su Bống có 4 viên kẹo, được chị cho thêm 2 túi, mỗi túi 5 viên. Hỏi Bống có tất cả mấy viên?\"",
+     "solutionNarrative": "4 + 2 × 5 = 4 + 10 = 14 viên."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Không tính hết, chỉ so sánh rồi điền dấu >, <, =: 5 + 3 × 2 ▢ 5 × 3 + 2; 20 − 2 × 5 ▢ 20 − 2 − 5.",
+     "solutionNarrative": "5 + 3 × 2 = 11 < 5 × 3 + 2 = 17; 20 − 2 × 5 = 10 < 20 − 2 − 5 = 13."
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đưa hai thẻ số 2 và 4, đố xếp vào hai ô: ▢ + ▢ × 3 = 14. Xếp thẻ nào vào ô nào? (Thử cả hai cách — chỉ một cách mở được cửa!)",
+     "solutionNarrative": "thử 2 + 4 × 3 = 2 + 12 = 14 ✓ mở cửa; cách kia 4 + 2 × 3 = 10 ✗ — thẻ 2 vào ô cộng, thẻ 4 vào ô nhân."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Trong biểu thức không có ngoặc, nhân chia được tính trước cộng trừ.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "5 + 3 × 2 = 16.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "= 11"
+   },
+   {
+    "id": "Q3",
+    "text": "20 − 12 : 4 = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 2",
+     "B. 17",
+     "C. 8"
+    ],
+    "answerKey": {
+     "choice": "B. 17"
+    },
+    "solutionNarrative": "Đáp án: B. 17"
+   },
+   {
+    "id": "Q4",
+    "text": "24 : 4 × 2 = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 3",
+     "B. 12",
+     "C. 48"
+    ],
+    "answerKey": {
+     "choice": "B. 12"
+    },
+    "solutionNarrative": "Đáp án: B. 12"
+   },
+   {
+    "id": "Q5",
+    "text": "6 × 3 − 8 = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 10",
+     "B. 30",
+     "C. 26"
+    ],
+    "answerKey": {
+     "choice": "A. 10"
+    },
+    "solutionNarrative": "Đáp án: A. 10"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Diễn kịch túi kẹo: bày 5 viên lẻ + 3 túi kín mỗi túi 2 viên, hỏi \"tổng bao nhiêu?\" — con buộc phải bóc túi (nhân) trước khi cộng; luật ưu tiên đi vào bụng theo đúng nghĩa đen.",
+  "homeActivity": "Khi con làm sai, đừng nói \"nhớ luật đi\" — hỏi \"trong biểu thức này, đâu là cụm túi kẹo?\". Hiểu lý do bền hơn thuộc lòng.",
+  "watchFor": "NÊN: yêu cầu trình bày từng bước một dòng, có gạch chân. KHÔNG NÊN: đưa biểu thức có ngoặc vội (bài sau!), hay biểu thức 4-5 phép dồn dập — mỗi bài 2-3 phép là chuẩn lớp 3."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO13",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO13.png",
+   "caption": "Biểu thức 30 − 4 × 5 với phép nhân được khoanh lại",
+   "sha256_16": "e1deb13902856a28",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L3H_BT01",
+   "usedIn": [
+    "screen:S3"
+   ],
+   "file": "figures/L3H_BT01.png",
+   "caption": "Nhân chia đi làn ưu tiên, tính trước; cộng trừ xếp hàng sau",
+   "sha256_16": "1732d5cc41459e43",
+   "mucGoc": "khamPha"
+  }
+ ],
+ "hatMam": "Lớp 2, mọi biểu thức của con chỉ có cộng và trừ — cứ trái sang phải như đi đường một chiều. Năm nay nhân chia nhập cuộc, và ngã tư cần một luật giao thông mới!"
+}

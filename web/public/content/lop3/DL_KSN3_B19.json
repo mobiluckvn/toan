@@ -1,0 +1,281 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B19",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 19 · THÊM BỚT ĐỂ BẰNG NHAU",
+ "durationMinutes": 10,
+ "so": 19,
+ "chuong": 5,
+ "tenChuong": "Chuyện toán lời văn 2.0",
+ "dangGoc": "LV 2.3 ba case khởi điểm Lớp 3 — Thêm một bên, bớt một bên, và phép CHUYỂN kỳ lạ",
+ "skills": {
+  "bktUnit": "CHUONG:5@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 19,
+  "prev": "DL:KSN3.B18",
+  "next": "DL:KSN3.B20"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "San bằng hai bên theo ba cách: THÊM vào bên ít · BỚT ở bên nhiều · CHUYỂN từ nhiều sang ít. Thuộc bí mật phép chuyển: chuyển 1 — hiệu thay đổi 2 (nên số chuyển = hiệu : 2). Giải bài ba số liên tiếp bằng \"người đứng giữa\".",
+  "kidText": "San bằng hai bên theo ba cách: THÊM vào bên ít · BỚT ở bên nhiều · CHUYỂN từ nhiều sang ít. Thuộc bí mật phép chuyển: chuyển 1 — hiệu thay đổi 2 (nên số chuyển = hiệu : 2). Giải bài ba số liên tiếp bằng \"người đứng giữa\".",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Đường 1 — THÊM VÀO BÊN ÍT: giỏ B thêm đúng phần hiệu: 20 − 14 = 6 quả → hai giỏ cùng 20. Đơn giản, nhưng phải... có thêm cam!"
+   },
+   {
+    "id": "K2",
+    "text": "Đường 2 — BỚT Ở BÊN NHIỀU: giỏ A bớt 6 quả → hai giỏ cùng 14. (Số bớt = số thêm = đúng bằng HIỆU.)"
+   },
+   {
+    "id": "K3",
+    "text": "Đường 3 — CHUYỂN (bí mật!): mỗi quả chuyển từ A sang B khiến A hụt 1 VÀ B phình 1 — hiệu giảm những 2! Hiệu 6 → chỉ cần chuyển 6 : 2 = 3 quả: A còn 17, B được 17 ✓. Công thức bỏ túi: số chuyển = hiệu : 2."
+   },
+   {
+    "id": "K4",
+    "text": "Đường 4 — BA SỐ LIÊN TIẾP: ba số liên tiếp như 7, 8, 9 là ba giỏ lệch đều — chuyển 1 từ giỏ lớn sang giỏ bé là cả ba bằng nhau (đều thành 8)! Vậy tổng ba số liên tiếp = 3 × số giữa: biết tổng là 24 → số giữa 24 : 3 = 8 → ba số 7, 8, 9."
+   }
+  ],
+  "mantra": "Thêm hay bớt MỘT BÊN: dùng đúng bằng HIỆU. Còn CHUYỂN qua lại: chỉ cần HIỆU : 2 — vì mỗi lần chuyển, một bên hụt một bên phình! Ba số liên tiếp: tổng chia 3 ra ngay người đứng giữa.",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Sau vụ hai giỏ đổi bên, Trí Long vẫn gãi đầu: \"Hơn nhau 6 quả thì chuyển 6 quả — logic thế mà sai là sao? Toán học chơi khăm tớ à?\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Làm chậm từng quả một: chuyển quả THỨ NHẤT từ A sang B — A còn mấy, B được mấy, hiệu còn mấy? Hiệu vừa giảm đi bao nhiêu chỉ với MỘT quả? Gợi ý 2: \"Chuyển 6\" khác \"bớt 6\" ở chỗ nào — quả cam bớt đi thì biến mất, còn quả cam chuyển đi thì... chạy sang làm phình bên kia! Tính lại số quả cần chuyển giúp Trí Long để bà đỡ phải xếp lại lần ba."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Giỏ A có 20 quả cam, giỏ B có 14 quả cam. Hỏi phải chuyển từ giỏ A sang giỏ B bao nhiêu quả để hai giỏ bằng nhau?"
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Sau vụ hai giỏ đổi bên, Trí Long vẫn gãi đầu: \"Hơn nhau 6 quả thì chuyển 6 quả — logic thế mà sai là sao? Toán học chơi khăm tớ à?\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Giỏ A có 20 quả cam, giỏ B có 14 quả cam. Hỏi phải chuyển từ giỏ A sang giỏ B bao nhiêu quả để hai giỏ bằng nhau?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Giỏ A hơn giỏ B số quả là: 20 − 14 = 6 (quả)"
+   },
+   {
+    "show": "Mỗi quả chuyển từ A sang B làm hiệu giảm đi 2, nên số quả cần chuyển là:"
+   },
+   {
+    "show": "6 : 2 = 3 (quả)"
+   },
+   {
+    "show": "Thử lại: A còn 20 − 3 = 17; B được 14 + 3 = 17 — bằng nhau ✓"
+   },
+   {
+    "show": "Đáp số: 3 quả."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Hộp A có 15 viên kẹo, hộp B có 9 viên. Phải THÊM vào hộp B mấy viên để hai hộp bằng nhau?",
+     "solutionNarrative": "thêm 15 − 9 = 6 viên."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn hai hộp trên: nếu không thêm mà BỚT ở hộp A thì bớt mấy viên?",
+     "solutionNarrative": "bớt 6 viên."
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn hai hộp trên: nếu CHUYỂN từ A sang B thì chuyển mấy viên? (Ba câu — ba con số khác nhau đấy!)",
+     "solutionNarrative": "chuyển 6 : 2 = 3 viên — ba câu ba đáp số: 6, 6, 3!"
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Ngăn trên có 18 quyển sách, ngăn dưới có 12 quyển. Chuyển mấy quyển từ ngăn trên xuống ngăn dưới để hai ngăn bằng nhau?",
+     "solutionNarrative": "hiệu 6 → chuyển 3 quyển."
+    },
+    {
+     "id": "C5",
+     "text": "Su Kem có 16 viên bi, Trí Long có 10 viên. Su Kem cho Trí Long mấy viên thì hai bạn bằng nhau?",
+     "solutionNarrative": "hiệu 6 → cho 3 viên (thử: 13 và 13 ✓)."
+    },
+    {
+     "id": "C6",
+     "text": "Tìm ba số liên tiếp có tổng bằng 24.",
+     "solutionNarrative": "số giữa 24 : 3 = 8 → 7, 8, 9."
+    },
+    {
+     "id": "C7",
+     "text": "Tìm ba số liên tiếp có tổng bằng 27.",
+     "solutionNarrative": "số giữa 9 → 8, 9, 10."
+    },
+    {
+     "id": "C8",
+     "text": "Bài ngược: sau khi chuyển 2 viên kẹo từ túi anh sang túi em thì hai túi bằng nhau. Hỏi lúc đầu túi anh hơn túi em mấy viên?",
+     "solutionNarrative": "chuyển 2 mà bằng nhau → hiệu ban đầu = 2 × 2 = 4 viên."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C9",
+     "text": "Giỏ A có 20 quả, giỏ B có 8 quả. Hỏi chuyển từ A sang B mấy quả để giỏ A chỉ còn hơn giỏ B đúng 2 quả? (Hiệu phải giảm từ 12 xuống 2 — giảm bao nhiêu, chuyển bao nhiêu?)",
+     "solutionNarrative": "hiệu phải giảm từ 12 xuống 2, tức giảm 10 → chuyển 10 : 2 = 5 quả (thử: A còn 15, B được 13, hơn đúng 2 ✓)."
+    },
+    {
+     "id": "C10",
+     "text": "Anh Trí Dũng đố: \"Tìm BỐN số chẵn liên tiếp có tổng bằng 28.\" (Bốn giỏ lệch đều nhịp 2 — thử san về cặp giữa xem: tổng của cặp giữa là bao nhiêu?)",
+     "solutionNarrative": "bốn số chẵn liên tiếp cách nhau 2; san hai đầu về giữa: tổng cặp giữa = tổng cặp ngoài = 28 : 2 = 14 → cặp giữa là 6 và 8 → bốn số: 4, 6, 8, 10 (thử: 4 + 6 + 8 + 10 = 28 ✓)."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Chuyển 1 quả từ giỏ nhiều sang giỏ ít làm hiệu giảm 2.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "A hơn B 6 quả thì chuyển 6 quả từ A sang B là hai giỏ bằng nhau.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "đổi bên lệch y nguyên!"
+   },
+   {
+    "id": "Q3",
+    "text": "A có 20, B có 14. Số quả cần chuyển từ A sang B là:",
+    "format": "mcq",
+    "choices": [
+     "A. 6",
+     "B. 3",
+     "C. 2"
+    ],
+    "answerKey": {
+     "choice": "B. 3"
+    },
+    "solutionNarrative": "Đáp án: B. 3"
+   },
+   {
+    "id": "Q4",
+    "text": "Ba số liên tiếp có tổng 24 là:",
+    "format": "mcq",
+    "choices": [
+     "A. 7, 8, 9",
+     "B. 8, 9, 10",
+     "C. 6, 8, 10"
+    ],
+    "answerKey": {
+     "choice": "A. 7, 8, 9"
+    },
+    "solutionNarrative": "Đáp án: A. 7, 8, 9"
+   },
+   {
+    "id": "Q5",
+    "text": "Chuyển 2 viên thì bằng nhau → lúc đầu hơn nhau:",
+    "format": "mcq",
+    "choices": [
+     "A. 2 viên",
+     "B. 4 viên",
+     "C. 1 viên"
+    ],
+    "answerKey": {
+     "choice": "B. 4 viên"
+    },
+    "solutionNarrative": "Đáp án: B. 4 viên"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Bí mật \"chuyển 1 hiệu đổi 2\" phải đi qua tay: bày hai chồng nắp chai lệch nhau, con chuyển TỪNG nắp và hô hiệu còn lại — ba lần chơi là thuộc vĩnh viễn.",
+  "homeActivity": "Đây là bài hiếm hoi mà người lớn cũng hay sai (chuyển 6!) — nếu bố mẹ \"lỡ\" sai thật, hãy để con giảng lại: được làm thầy là cách học sâu nhất.",
+  "watchFor": "NÊN: cho đủ bộ ba thêm/bớt/chuyển trên CÙNG một cặp số (như câu 1-3) để con thấy ba đáp số khác nhau. KHÔNG NÊN: sa vào bài chuyển qua lại nhiều vòng — một lần chuyển là đủ chuẩn lớp 3."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO19",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO19.png",
+   "caption": "Giỏ A 20 quả, giỏ B 14 quả — chuyển mấy quả thì bằng nhau",
+   "sha256_16": "78b9a5383f195df7",
+   "mucGoc": "chuyenMoBai"
+  }
+ ],
+ "hatMam": "Lớp 2, ở Bài 18, con tách một tổng thành hai phần hơn kém nhau bằng bảng dò. Năm nay bài toán chạy chiều ngược: hai phần ĐANG lệch nhau — làm sao san cho bằng? Có ba con đường, và con đường thứ ba ẩn chứa một bí mật đánh lừa cả người lớn!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B18"
+  ],
+  "ten": [
+   "TÁCH TỔNG — HAI BẠN CÓ TẤT CẢ 10 VIÊN BI"
+  ],
+  "canCu": "sach",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

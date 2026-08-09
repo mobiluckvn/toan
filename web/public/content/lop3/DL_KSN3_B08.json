@@ -1,0 +1,273 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B08",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 8 · GẤP LÊN — GIẢM ĐI NHIỀU LẦN",
+ "durationMinutes": 10,
+ "so": 8,
+ "chuong": 2,
+ "tenChuong": "Nhân chia ra khơi",
+ "dangGoc": "LV 3.x mức chuẩn Lớp 3 — Cặp bài trùng dễ lẫn nhất năm: GẤP MẤY LẦN vs THÊM MẤY",
+ "skills": {
+  "bktUnit": "CHUONG:2@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 8,
+  "prev": "DL:KSN3.B07",
+  "next": "DL:KSN3.B09"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Gấp một số lên k lần: NHÂN với k. Giảm một số đi k lần: CHIA cho k. Phân biệt rạch ròi: gấp 3 LẦN (× 3) khác hẳn thêm 3 ĐƠN VỊ (+ 3). Trả lời được \"số lớn gấp mấy lần số bé\" bằng phép chia.",
+  "kidText": "Gấp một số lên k lần: NHÂN với k. Giảm một số đi k lần: CHIA cho k. Phân biệt rạch ròi: gấp 3 LẦN (× 3) khác hẳn thêm 3 ĐƠN VỊ (+ 3). Trả lời được \"số lớn gấp mấy lần số bé\" bằng phép chia.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — GẤP k LẦN = NHÂN: \"gấp 3 lần của 5\" là xếp NGUYÊN KHỐI 5 ra ba lần: 5 × 3 = 15. Cá voi mẹ dài 15 mét — đúng như cái bóng dằng dặc Su Bống thấy!"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — GIẢM k LẦN = CHIA: \"sợi dây 18 m giảm đi 3 lần\" → cắt thành 3 phần bằng nhau lấy một phần: 18 : 3 = 6 m. Gấp và giảm là đôi máy ngược chiều — người quen từ Bài 14 lớp 2!"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — SO GĂNG CẶP SONG SINH: \"gấp 3 lần\" mang cả khối đi nhân (5 → 15); \"thêm 3\" chỉ bỏ thêm 3 viên (5 → 8). Chữ LẦN là còi hiệu của phép nhân - chia; không có chữ \"lần\" thì mới là cộng - trừ!"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — GẤP MẤY LẦN? \"12 gấp mấy lần 4?\" — hỏi xem khối 4 xếp mấy lần thì đầy 12: 12 : 4 = 3 lần. Muốn biết \"gấp mấy lần\", lấy số lớn CHIA số bé!"
+   }
+  ],
+  "mantra": "Nghe chữ LẦN → nghĩ nhân - chia; không có LẦN → cộng - trừ. Gấp k lần: × k. Giảm k lần: : k. Hỏi \"gấp mấy lần\": số lớn : số bé!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trí Long vẫn bảo vệ đáp án cá voi: \"Gấp 3 của 5 là 8! Thì đấy — 5 với 3 là 8, tính đâu sai đâu!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Phép cộng 5 + 3 của Trí Long đúng — nhưng đề hỏi phép gì? Chữ nào trong câu \"gấp 3 LẦN\" là còi hiệu mà hoa tiêu nghe sót? Gợi ý 2: Xếp thử bằng khối: \"gấp 3 lần của 5\" là xếp mấy KHỐI 5? Đếm xem được bao nhiêu — rồi ngắm lại cái bóng cá voi mẹ: 8 mét hay 15 mét mới xứng?"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Giữa biển, đàn cá voi nổi lên chào thuyền. Đoạn dây thứ nhất dài 6 m. Đoạn dây thứ hai dài gấp 4 lần đoạn thứ nhất. Hỏi đoạn dây thứ hai dài bao nhiêu mét?"
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Trí Long vẫn bảo vệ đáp án cá voi: \"Gấp 3 của 5 là 8! Thì đấy — 5 với 3 là 8, tính đâu sai đâu!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Đoạn dây thứ nhất dài 6 m. Đoạn dây thứ hai dài gấp 4 lần đoạn thứ nhất. Hỏi đoạn dây thứ hai dài bao nhiêu mét?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Đoạn dây thứ hai dài là:"
+   },
+   {
+    "show": "6 × 4 = 24 (m)"
+   },
+   {
+    "show": "Đáp số: 24 m."
+   },
+   {
+    "show": "Đối chiếu cho chắc: nếu đề nói \"DÀI HƠN 4 m\" thì mới là 6 + 4 = 10 m — hai đề khác nhau một chữ LẦN!"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Gấp 7 lên 4 lần. Gấp 9 lên 3 lần.",
+     "solutionNarrative": "7 × 4 = 28; 9 × 3 = 27."
+    },
+    {
+     "id": "C2",
+     "text": "Giảm 24 đi 3 lần. Giảm 30 đi 5 lần.",
+     "solutionNarrative": "24 : 3 = 8; 30 : 5 = 6."
+    },
+    {
+     "id": "C3",
+     "text": "Điền dấu phép tính: gấp 6 lên 5 lần: 6 ▢ 5; thêm 5 vào 6: 6 ▢ 5.",
+     "solutionNarrative": "6 × 5; 6 + 5."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Thùng thứ nhất có 8 lít nước mắm. Thùng thứ hai có GẤP 3 LẦN thùng thứ nhất. Thùng thứ hai có mấy lít?",
+     "solutionNarrative": "8 × 3 = 24 lít."
+    },
+    {
+     "id": "C5",
+     "text": "Cuộn dây 36 m được cắt giảm đi 4 lần. Đoạn còn lại dài mấy mét?",
+     "solutionNarrative": "36 : 4 = 9 m."
+    },
+    {
+     "id": "C6",
+     "text": "Cặp song sinh — làm CẢ HAI rồi so: (a) Bao gạo 20 kg, bao ngô NHẸ HƠN 5 kg — bao ngô nặng mấy kg? (b) Bao gạo 20 kg, bao ngô nhẹ hơn... à không, NHẸ BẰNG MỘT PHẦN — bao gạo GẤP 5 LẦN bao ngô — bao ngô nặng mấy kg?",
+     "solutionNarrative": "(a) 20 − 5 = 15 kg; (b) 20 : 5 = 4 kg — cùng cặp số 20 và 5, khác một chữ LẦN mà lệch nhau 11 kg!"
+    },
+    {
+     "id": "C7",
+     "text": "Su Bống cao 105 cm... à nhầm, đo lại nào: sợi dây của Su Bống dài 6 m, của anh Su Kem dài 18 m. Dây của anh gấp mấy lần dây của em?",
+     "solutionNarrative": "18 : 6 = 3 lần."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Hai máy nối đuôi: lấy số 6, GẤP 2 LẦN rồi lại GIẢM 4 LẦN. Ra số nào? Hai máy nối nhau ấy tương đương một máy duy nhất nào? (Thử thêm với số 8, 12 để kiểm chứng!)",
+     "solutionNarrative": "6 × 2 = 12; 12 : 4 = 3 → tương đương GIẢM 2 LẦN (thử: 8 → 16 → 4 = 8 : 2 ✓; 12 → 24 → 6 ✓)."
+    },
+    {
+     "id": "C9",
+     "text": "Nhà hai bên chơi chung: Su Bống 5 tuổi, ông nội Trí Long 65 tuổi. Tuổi ông gấp mấy lần tuổi Su Bống? Sang năm (Bống 6, ông 66) phép \"gấp\" ấy còn giữ nguyên không? — So với \"hiệu tuổi không đổi\" của lớp 2, con phát hiện điều gì thú vị?",
+     "solutionNarrative": "65 : 5 = 13 lần. Sang năm: 66 : 6 = 11 lần — phép GẤP thay đổi theo năm, khác hẳn HIỆU tuổi (vẫn 60) không đổi! Hiệu là kho báu bất biến, còn \"gấp\" thì trôi theo thời gian — phát hiện xịn đấy, giữ nó cho Bài 20 nhé."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Gấp 5 lên 3 lần là 5 × 3 = 15.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Gấp 5 lên 3 lần là 5 + 3 = 8.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Đáp án: SAI"
+   },
+   {
+    "id": "Q3",
+    "text": "Giảm 24 đi 3 lần được:",
+    "format": "mcq",
+    "choices": [
+     "A. 21",
+     "B. 8",
+     "C. 72"
+    ],
+    "answerKey": {
+     "choice": "B. 8"
+    },
+    "solutionNarrative": "Đáp án: B. 8"
+   },
+   {
+    "id": "Q4",
+    "text": "12 gấp mấy lần 4?",
+    "format": "mcq",
+    "choices": [
+     "A. 3 lần",
+     "B. 8 lần",
+     "C. 48 lần"
+    ],
+    "answerKey": {
+     "choice": "A. 3 lần"
+    },
+    "solutionNarrative": "Đáp án: A. 3 lần"
+   },
+   {
+    "id": "Q5",
+    "text": "\"Dài hơn 4 m\" là phép:",
+    "format": "mcq",
+    "choices": [
+     "A. × 4",
+     "B. + 4",
+     "C. : 4"
+    ],
+    "answerKey": {
+     "choice": "B. + 4"
+    },
+    "solutionNarrative": "Đáp án: B. + 4"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Trò \"còi hiệu chữ LẦN\": bố mẹ đọc xen kẽ \"gấp 3 lần\" - \"thêm 3\" - \"giảm 2 lần\" - \"bớt 2\", con chỉ hô tên phép tính (nhân! cộng! chia! trừ!) — 2 phút mỗi tối, hai tuần thành phản xạ.",
+  "homeActivity": "Đo đạc thật: gấp đôi - gấp ba đoạn dây, chia tư quả cam... \"lần\" phải đi qua bàn tay trước khi vào phép tính.",
+  "watchFor": "NÊN: cho cặp bài song sinh đứng CẠNH NHAU (như câu 6) để con tự so. KHÔNG NÊN: ra bài \"gấp rồi thêm\" hai tầng dồn dập khi con chưa vững một tầng — nhịp lớp 3 là chắc từng thuyền một."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO08",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO08.png",
+   "caption": "Đoạn dây thứ hai gấp 4 lần đoạn thứ nhất — vẽ thành bốn phần bằng nhau",
+   "sha256_16": "8a25c2278e9094f0",
+   "mucGoc": "chuyenMoBai"
+  }
+ ],
+ "hatMam": "Lớp 2, ở Bài 19, con vẽ sơ đồ phần: chị gấp 2 lần em là chị có 2 khối. Năm nay \"gấp\" và \"giảm\" thành phép tính chính thức — và xuất hiện cặp song sinh chuyên đánh lừa: \"gấp 3 lần\" với \"thêm 3\"!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B19"
+  ],
+  "ten": [
+   "GẤP ĐÔI, GẤP BA — CHIA PHẦN"
+  ],
+  "canCu": "sach",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

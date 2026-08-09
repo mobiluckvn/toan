@@ -1,0 +1,310 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B30",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 30 · DIỆN TÍCH — TẤM THẢM Ô VUÔNG",
+ "durationMinutes": 10,
+ "so": 30,
+ "chuong": 7,
+ "tenChuong": "Hình học lên tầng",
+ "dangGoc": "HH 3.1 mức Lớp 3 — Khái niệm mới tinh: đo phần MẶT bằng những ô vuông 1 cm",
+ "skills": {
+  "bktUnit": "CHUONG:7@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 30,
+  "prev": "DL:KSN3.B29",
+  "next": "DL:KSN3.B31"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Hiểu diện tích là ĐỘ LỚN PHẦN MẶT của hình — đo bằng ô vuông 1 cm (đơn vị cm²). Thuộc công thức: diện tích HCN = dài × rộng; diện tích HV = cạnh × cạnh. Phân biệt rạch ròi: chu vi là VÒNG RÀO (cm), diện tích là TẤM THẢM (cm²).",
+  "kidText": "Hiểu diện tích là ĐỘ LỚN PHẦN MẶT của hình — đo bằng ô vuông 1 cm (đơn vị cm²). Thuộc công thức: diện tích HCN = dài × rộng; diện tích HV = cạnh × cạnh. Phân biệt rạch ròi: chu vi là VÒNG RÀO (cm), diện tích là TẤM THẢM (cm²).",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — Ô VUÔNG CHUẨN: chọn ô vuông mỗi cạnh 1 cm làm \"viên gạch chuẩn\" — tên nó là 1 xăng-ti-mét vuông (cm²). Diện tích một hình = hình ấy chứa được bao nhiêu viên gạch chuẩn."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — ĐẾM KIỂU KHAY KẸO: hình chữ nhật 4 cm × 3 cm lát vừa khít 3 hàng gạch, mỗi hàng 4 viên → 4 × 3 = 12 cm². Không cần đếm từng viên — phép nhân đếm hộ!"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — CÔNG THỨC: diện tích HCN = dài × rộng; hình vuông là chữ nhật có dài = rộng → diện tích HV = cạnh × cạnh (cạnh 5 → 5 × 5 = 25 cm²)."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — RÀO vs THẢM: cùng một hình 4 × 3: chu vi (4 + 3) × 2 = 14 cm (đi VÒNG QUANH, đơn vị cm); diện tích 4 × 3 = 12 cm² (phủ KÍN RUỘT, đơn vị cm²). Hai câu hỏi khác nhau — hai phép tính khác nhau — hai đơn vị khác nhau!"
+   }
+  ],
+  "mantra": "Trước khi tính, hỏi: đề muốn VÒNG RÀO hay TẤM THẢM? Rào → (dài + rộng) × 2, đơn vị cm. Thảm → dài × rộng, đơn vị cm². Viết thiếu cái \"vuông\" bé xíu trên đơn vị là thảm biến thành rào đấy!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Đề hỏi diện tích hình chữ nhật 4 cm × 3 cm. Trí Long áp công thức mới học tuần trước: \"(4 + 3) × 2 = 14 xăng-ti-mét... vuông! Thêm chữ 'vuông' vào là thành diện tích chứ gì!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Công thức (dài + rộng) × 2 đo cái gì — cái viền hay cái ruột? Đề đang hỏi rào hay thảm? Gợi ý 2: Lát thử gạch chuẩn vào hình: 3 hàng × 4 viên — đếm được mấy viên? So với con số 14 của Trí Long. Và nhắn cậu ấy: thêm chữ \"vuông\" vào đơn vị không biến phép tính rào thành phép tính thảm được đâu!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Mẹ mua hai tấm thảm trải bàn, phân vân tấm nào PHỦ được nhiều mặt bàn hơn. Một tấm bìa hình chữ nhật có chiều dài 7 cm, chiều rộng 4 cm. Tính diện tích tấm bìa."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Đề hỏi diện tích hình chữ nhật 4 cm × 3 cm. Trí Long áp công thức mới học tuần trước: \"(4 + 3) × 2 = 14 xăng-ti-mét... vuông! Thêm chữ 'vuông' vào là thành diện tích chứ gì!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một tấm bìa hình chữ nhật có chiều dài 7 cm, chiều rộng 4 cm. Tính diện tích tấm bìa.",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Diện tích tấm bìa là:"
+   },
+   {
+    "show": "7 × 4 = 28 (cm²)"
+   },
+   {
+    "show": "Đáp số: 28 cm²."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính diện tích hình chữ nhật: dài 6 cm, rộng 4 cm.",
+     "solutionNarrative": "6 × 4 = 24 cm²."
+    },
+    {
+     "id": "C2",
+     "text": "Tính diện tích hình vuông cạnh 5 cm; cạnh 8 cm.",
+     "solutionNarrative": "25 cm²; 64 cm²."
+    },
+    {
+     "id": "C3",
+     "text": "Hình chữ nhật 5 cm × 3 cm: tính CẢ chu vi lẫn diện tích — ghi đúng đơn vị từng cái!",
+     "solutionNarrative": "chu vi (5 + 3) × 2 = 16 cm; diện tích 5 × 3 = 15 cm² — hai đơn vị khác nhau!"
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tấm thảm chùi chân hình chữ nhật dài 9 dm... à khoan, đổi về xăng-ti-mét e cồng kềnh — cứ tính bằng dm: dài 9 dm, rộng 6 dm. Diện tích mấy dm²? (Ô gạch chuẩn giờ là ô 1 dm — luật chơi y nguyên!)",
+     "solutionNarrative": "9 × 6 = 54 dm²."
+    },
+    {
+     "id": "C5",
+     "text": "NGƯỢC: hình chữ nhật có diện tích 24 cm², chiều dài 6 cm. Tính chiều rộng.",
+     "solutionNarrative": "24 : 6 = 4 cm."
+    },
+    {
+     "id": "C6",
+     "text": "NGƯỢC: hình vuông có diện tích 25 cm². Cạnh dài mấy xăng-ti-mét? (Số nào nhân với chính nó ra 25?)",
+     "solutionNarrative": "5 × 5 = 25 → cạnh 5 cm."
+    },
+    {
+     "id": "C7",
+     "text": "Nền phòng hình chữ nhật 8 m × 5 m. Tính diện tích nền. Mỗi mét vuông lát hết 4 viên gạch — cần bao nhiêu viên? (Hai bước — Bài 17 trợ chiến!)",
+     "solutionNarrative": "diện tích 8 × 5 = 40 m²; số gạch 40 × 4 = 160 viên."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "PHÁT HIỆN LỚN: hai hình cùng chu vi 20 cm — hình chữ nhật 6 × 4 và hình vuông 5 × 5. Tính diện tích từng hình. Cùng một vòng rào mà tấm thảm bên nào rộng hơn? (Nhớ vụ \"biến hình giữ rào\" ở Bài 28 chứ — giờ con biết vườn bà TRỒNG ĐƯỢC nhiều hơn hay ít đi rồi đấy!)",
+     "solutionNarrative": "6 × 4 = 24 cm²; 5 × 5 = 25 cm² — cùng vòng rào 20 cm mà hình VUÔNG trải thảm rộng hơn! (Vườn bà biến hình 8 × 2 ở Bài 28 chỉ còn 16 m² so với 24 m² cũ — rào y nguyên mà đất trồng hụt hẳn; giờ con hiểu vì sao bác nông dân thích vườn vuông vắn rồi nhé.)"
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đố: \"Hình chữ nhật dài gấp đôi rộng, diện tích 32 cm². Tìm dài và rộng.\" (Ghép hai hình vuông cạnh-bằng-rộng lại mà xem: mỗi hình vuông chiếm mấy cm²?)",
+     "solutionNarrative": "ghép hai hình vuông cạnh-bằng-rộng: mỗi hình vuông 32 : 2 = 16 cm² → cạnh 4 → rộng 4 cm, dài 8 cm (thử: 8 × 4 = 32 ✓)."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Diện tích hình chữ nhật = dài × rộng.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Diện tích hình chữ nhật 4 × 3 là (4 + 3) × 2 = 14 cm².",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "đó là phép tính rào!"
+   },
+   {
+    "id": "Q3",
+    "text": "Diện tích hình vuông cạnh 5 cm:",
+    "format": "mcq",
+    "choices": [
+     "A. 20 cm²",
+     "B. 25 cm²",
+     "C. 10 cm²"
+    ],
+    "answerKey": {
+     "choice": "B. 25 cm²"
+    },
+    "solutionNarrative": "Đáp án: B. 25 cm²"
+   },
+   {
+    "id": "Q4",
+    "text": "Diện tích 24 cm², dài 6 cm → rộng:",
+    "format": "mcq",
+    "choices": [
+     "A. 4 cm",
+     "B. 18 cm",
+     "C. 8 cm"
+    ],
+    "answerKey": {
+     "choice": "A. 4 cm"
+    },
+    "solutionNarrative": "Đáp án: A. 4 cm"
+   },
+   {
+    "id": "Q5",
+    "text": "Đơn vị của diện tích là:",
+    "format": "mcq",
+    "choices": [
+     "A. cm",
+     "B. cm²",
+     "C. kg"
+    ],
+    "answerKey": {
+     "choice": "B. cm²"
+    },
+    "solutionNarrative": "Đáp án: B. cm²"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con LÁT thật trước khi tính: giấy ô li, bộ xếp hình, gạch men nhà tắm — bàn tay lát đủ một hình chữ nhật rồi thì công thức dài × rộng tự chui vào đầu.",
+  "homeActivity": "Cặp \"rào - thảm\" là cặp nhầm lẫn dai dẳng nhất tiểu học; mỗi bài hình nên hỏi kèm \"đề muốn rào hay thảm?\" cho thành phản xạ.",
+  "watchFor": "NÊN: khai thác phát hiện câu 8 (cùng rào, thảm khác) — đó là một trong những sự thật đẹp nhất của hình học. KHÔNG NÊN: dạy đổi m² ↔ cm² hay diện tích hình ghép phức tạp — sân khấu ấy của lớp 4."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO30",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO30.png",
+   "caption": "Tấm bìa 7 cm × 4 cm chia sẵn ô 1 cm² để đếm",
+   "sha256_16": "ac6ad912158e623d",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L3H_DT01",
+   "usedIn": [
+    "screen:S3"
+   ],
+   "file": "figures/L3H_DT01.png",
+   "caption": "Hình chữ nhật 4 cm × 3 cm lát vừa khít 3 hàng, mỗi hàng 4 viên gạch chuẩn",
+   "sha256_16": "be55d10ab42ad779",
+   "mucGoc": "khamPha"
+  },
+  {
+   "id": "L3H_DT02",
+   "usedIn": [
+    "screen:S5"
+   ],
+   "file": "figures/L3H_DT02.png",
+   "caption": "Cùng một hình 4 × 3: chu vi đo cái viền, diện tích đo phần ruột",
+   "sha256_16": "742e1a7aca9de14b",
+   "mucGoc": "khamPha"
+  },
+  {
+   "id": "L3H_DT03",
+   "usedIn": [
+    "item:C8"
+   ],
+   "file": "figures/L3H_DT03.png",
+   "caption": "Hai hình cùng chu vi 20 cm: chữ nhật 6 × 4 và hình vuông 5 × 5",
+   "sha256_16": "1d3b92017b845966",
+   "mucGoc": "luyenTap"
+  },
+  {
+   "id": "L3H_DT04",
+   "usedIn": [
+    "item:C8:giai"
+   ],
+   "file": "figures/L3H_DT04.png",
+   "caption": "Đếm ra 24 ô và 25 ô — hình vuông rộng hơn dù cùng chu vi",
+   "sha256_16": "31c12ffcacde60c1",
+   "mucGoc": "luyenTap"
+  }
+ ],
+ "hatMam": "Lớp 2 con từng xếp hình bằng các ô vuông nhỏ và đếm chúng như đếm khay kẹo. Hôm nay trò xếp ô ấy được phong danh hiệu chính thức: DIỆN TÍCH — đại lượng mới tinh đầu tiên của năm học!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B27"
+  ],
+  "ten": [
+   "ĐẾM HÌNH ẨN MÌNH"
+  ],
+  "canCu": "chuDe",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

@@ -1,0 +1,273 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B11",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 11 · GA NÀY TÀU CÓ DỪNG KHÔNG?",
+ "durationMinutes": 10,
+ "so": 11,
+ "chuong": 3,
+ "tenChuong": "Dãy số thám hiểm",
+ "dangGoc": "SỐ 5.1 case \"thuộc dãy\" Lớp 3 — Máy soi số dư quyết định số có thuộc dãy hay không",
+ "skills": {
+  "bktUnit": "CHUONG:3@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 11,
+  "prev": "DL:KSN3.B10",
+  "next": "DL:KSN3.B12"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tìm được \"MÃ DƯ\" của một dãy đếm thêm: cả dãy chia cho nhịp đều cùng một số dư. Kiểm tra một số có thuộc dãy không bằng cách so mã dư. Hiểu \"điều kiện cần chưa đủ\": số chẵn chưa chắc thuộc dãy toàn số chẵn!",
+  "kidText": "Tìm được \"MÃ DƯ\" của một dãy đếm thêm: cả dãy chia cho nhịp đều cùng một số dư. Kiểm tra một số có thuộc dãy không bằng cách so mã dư. Hiểu \"điều kiện cần chưa đủ\": số chẵn chưa chắc thuộc dãy toàn số chẵn!",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — TÌM MÃ DƯ CỦA DÃY: lấy vài ga chia thử cho nhịp 4: 3 : 4 dư 3; 7 : 4 dư 3; 11 : 4 dư 3; 15 : 4 dư 3... Cả dãy chung một MÃ DƯ = 3! (Vì mỗi lần cộng thêm đúng một nhịp, số dư giữ nguyên — bí mật từ Bài 7.)"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — SOI GA LẠ: ga 30: 30 : 4 = 7 (dư 2). Mã dư 2 ≠ 3 → tàu KHÔNG dừng — mời bác khách đi bộ sang ga 31 gần đó (31 : 4 dư 3 ✓)."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — SOI GA ĐẸP: ga 39 thì sao? 39 : 4 = 9 (dư 3) ✓ tàu dừng! Và tặng kèm địa chỉ: 39 là toa thứ (39 − 3) : 4 + 1 = 10 — Bài 10 và Bài 11 là đôi bạn song hành."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — CẠM BẪY \"CẦN CHƯA ĐỦ\": dãy 4, 8, 12, ... toàn số chẵn. Số 34 chẵn — nhưng 34 : 4 = 8 (dư 2) ≠ 0 → KHÔNG thuộc! Chẵn là điều kiện cần (lẻ thì loại ngay) nhưng chưa đủ — muốn chắc phải qua máy soi dư."
+   }
+  ],
+  "mantra": "Mỗi dãy đếm thêm có một MÃ DƯ (chia cho nhịp). Soi số lạ: chia cho nhịp, so mã dư — khớp thì thuộc, lệch thì loại. Nhìn đuôi, nhìn chẵn lẻ chỉ để LOẠI NHANH; muốn KHẲNG ĐỊNH phải soi dư!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với dãy 4, 8, 12, 16, ..., Trí Long phán chắc nịch: \"Số 34 chắc chắn thuộc dãy! Dãy toàn số chẵn, mà 34 cũng chẵn — logic thép nhé!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Chẵn giúp ta LOẠI những số nào? Nhưng mọi số chẵn có đều đứng trong dãy này không — 2, 6, 10 có mặt không? Gợi ý 2: Cho 34 qua máy soi: 34 : 4 dư mấy? Mã dư của dãy là mấy? \"Logic thép\" của Trí Long thiếu mất bước nào — và bài học \"cần chưa đủ\" đáng giá thế nào với một thám tử?"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Cho dãy số 3, 7, 11, 15, ... Hỏi số 39 có thuộc dãy không? Nếu có, nó là số hạng thứ mấy?"
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Với dãy 4, 8, 12, 16, ..., Trí Long phán chắc nịch: \"Số 34 chắc chắn thuộc dãy! Dãy toàn số chẵn, mà 34 cũng chẵn — logic thép nhé!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Cho dãy số 3, 7, 11, 15, ... Hỏi số 39 có thuộc dãy không? Nếu có, nó là số hạng thứ mấy?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Dãy có nhịp 4; các số của dãy chia 4 đều dư 3 (mã dư 3)."
+   },
+   {
+    "show": "Xét 39: 39 : 4 = 9 (dư 3) — khớp mã dư → 39 thuộc dãy."
+   },
+   {
+    "show": "Vị trí: (39 − 3) : 4 = 9 (bước nhảy) → 39 là số hạng thứ 9 + 1 = 10."
+   },
+   {
+    "show": "Đáp số: 39 thuộc dãy, là số hạng thứ 10."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tìm mã dư của dãy 2, 7, 12, 17, ... (chia thử 3 số cho nhịp 5).",
+     "solutionNarrative": "2 : 5 dư 2; 7 : 5 dư 2; 12 : 5 dư 2 → mã dư 2."
+    },
+    {
+     "id": "C2",
+     "text": "Số 22 có thuộc dãy 2, 7, 12, ... không? Số 24 thì sao?",
+     "solutionNarrative": "22 : 5 dư 2 ✓ thuộc; 24 : 5 dư 4 → không."
+    },
+    {
+     "id": "C3",
+     "text": "Dãy 5, 10, 15, ... có mã dư mấy? Nêu mẹo nhìn đuôi để soi nhanh dãy này.",
+     "solutionNarrative": "mã dư 0 (chia hết); mẹo đuôi: đuôi 0 hoặc 5."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Số 43 có thuộc dãy 3, 8, 13, 18, ... không? Nếu có, là số hạng thứ mấy?",
+     "solutionNarrative": "nhịp 5, mã dư 3; 43 : 5 = 8 (dư 3) ✓ thuộc; vị trí (43 − 3) : 5 + 1 = 9."
+    },
+    {
+     "id": "C5",
+     "text": "Số 50 có thuộc dãy 3, 8, 13, ... không? Vì sao?",
+     "solutionNarrative": "50 : 5 dư 0 ≠ 3 → không thuộc."
+    },
+    {
+     "id": "C6",
+     "text": "Dãy 6, 10, 14, 18, ...: trong hai số 40 và 42, số nào thuộc dãy? (Cả hai đều chẵn đấy — máy soi dư lên tiếng!)",
+     "solutionNarrative": "mã dư của dãy: 6 : 4 dư 2; soi 40 : 4 dư 0 → loại; 42 : 4 dư 2 ✓ → 42 thuộc (cả hai cùng chẵn mà số phận khác hẳn!)."
+    },
+    {
+     "id": "C7",
+     "text": "Bác khách ga 30 (dãy 3, 7, 11, ...) nên đi bộ sang ga bên nào gần nhất để đón được tàu: ga 29, 31 hay 33? Soi cả ba!",
+     "solutionNarrative": "29 : 4 dư 1 ✗; 31 : 4 dư 3 ✓; 33 : 4 dư 1 ✗ → sang ga 31, chỉ một bước chân."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Số 100 có thuộc dãy 2, 9, 16, 23, ... (nhịp 7) không? Nếu có, là số hạng thứ mấy? — Ga tròn trăm đón tàu nào!",
+     "solutionNarrative": "100 : 7 = 14 (dư 2) — khớp mã dư 2 ✓ thuộc; vị trí (100 − 2) : 7 + 1 = 15. Ga tròn trăm đón tàu nhịp 7!"
+    },
+    {
+     "id": "C9",
+     "text": "Chị Ngọc Anh đố hai tàu: tàu Xanh dừng các ga 1, 4, 7, 10, ... (nhịp 3); tàu Đỏ dừng các ga 2, 7, 12, ... (nhịp 5). Trong khoảng 10 - 25, ga nào đón được CẢ HAI tàu? (Liệt kê hai danh sách rồi tìm ga chung — quen tay từ Bài 7!)",
+     "solutionNarrative": "tàu Xanh trong 10-25: 10, 13, 16, 19, 22, 25; tàu Đỏ: 12, 17, 22; ga chung: 22."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Các số của dãy 3, 7, 11, ... chia 4 đều dư 3.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "34 là số chẵn nên chắc chắn thuộc dãy 4, 8, 12, ...",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "cần chưa đủ!"
+   },
+   {
+    "id": "Q3",
+    "text": "Số nào thuộc dãy 2, 7, 12, ...?",
+    "format": "mcq",
+    "choices": [
+     "A. 24",
+     "B. 27",
+     "C. 30"
+    ],
+    "answerKey": {
+     "choice": "B. 27"
+    },
+    "solutionNarrative": "Đáp án: B. 27"
+   },
+   {
+    "id": "Q4",
+    "text": "Số 39 trong dãy 3, 7, 11, ... là số hạng thứ:",
+    "format": "mcq",
+    "choices": [
+     "A. 9",
+     "B. 10",
+     "C. 11"
+    ],
+    "answerKey": {
+     "choice": "B. 10"
+    },
+    "solutionNarrative": "Đáp án: B. 10"
+   },
+   {
+    "id": "Q5",
+    "text": "Muốn khẳng định một số thuộc dãy, cách chắc chắn nhất là:",
+    "format": "mcq",
+    "choices": [
+     "A. nhìn chẵn lẻ",
+     "B. soi mã dư",
+     "C. đoán theo đuôi"
+    ],
+    "answerKey": {
+     "choice": "B. soi mã dư"
+    },
+    "solutionNarrative": "Đáp án: B. soi mã dư"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Trò \"trưởng ga\": bố mẹ công bố dãy (nhịp + ga đầu), con làm máy soi — mỗi số khách đưa ra phải trả lời \"dừng/không dừng\" KÈM phép chia làm bằng chứng.",
+  "homeActivity": "Bài học \"cần chưa đủ\" (chẵn chưa chắc thuộc) là bài học logic đắt giá vượt xa môn toán — hãy nhấn mạnh khi con tự phát hiện 34 trượt máy soi.",
+  "watchFor": "NÊN: cho con nối liền hai kỹ năng (thuộc dãy → tìm vị trí) trong cùng một bài. KHÔNG NÊN: đưa dãy nhịp lớn hơn 9 hay số quá 100 — phép chia dư ngoài phạm vi sẽ che mất tư duy."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO11",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO11.png",
+   "caption": "Dãy 3, 7, 11, 15 nhịp 4 — số 39 có phải một ga của dãy không",
+   "sha256_16": "87057743836050e6",
+   "mucGoc": "chuyenMoBai"
+  }
+ ],
+ "hatMam": "Ở Bài 7 con đã biết: các số chia 5 dư 2 lập thành đoàn tàu nhịp 5 từ ga số 2. Hôm nay đi chiều ngược lại: cho trước một đoàn tàu, hỏi một ga bất kỳ tàu CÓ DỪNG không — và máy soi vẫn là phép chia có dư!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B09"
+  ],
+  "ten": [
+   "ĐOÀN TÀU ĐẾM THÊM"
+  ],
+  "canCu": "chuDe",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

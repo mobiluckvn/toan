@@ -1,0 +1,276 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B10",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 10 · TOA TÀU THỨ n Ở ĐÂU?",
+ "durationMinutes": 10,
+ "so": 10,
+ "chuong": 3,
+ "tenChuong": "Dãy số thám hiểm",
+ "dangGoc": "SỐ 5.1 case \"số hạng thứ n\" khởi điểm Lớp 3 — Tìm toa xa mà không cần đi bộ",
+ "skills": {
+  "bktUnit": "CHUONG:3@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 10,
+  "prev": "DL:KSN3.B09",
+  "next": "DL:KSN3.B11"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Hiểu: từ toa 1 đến toa thứ n chỉ có n − 1 BƯỚC NHẢY (luật cây - khoảng!). Tính được số ở toa thứ n: số đầu + nhịp × (số toa − 1). Giải được bài ngược: biết số trên toa, tìm xem đó là toa thứ mấy.",
+  "kidText": "Hiểu: từ toa 1 đến toa thứ n chỉ có n − 1 BƯỚC NHẢY (luật cây - khoảng!). Tính được số ở toa thứ n: số đầu + nhịp × (số toa − 1). Giải được bài ngược: biết số trên toa, tìm xem đó là toa thứ mấy.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. Dãy 5, 8, 11, 14, ... có nhịp +3. Điều tinh tế nhất nằm ở đây: từ toa 1 đến toa 5 có mấy bước nhảy? Đếm hình mà xem — chỉ 4 bước, không phải 5! Toa là CÂY, bước nhảy là KHOẢNG — luật bàn tay 5 ngón 4 kẽ trở lại!"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2. Vậy toa thứ 5 = số đầu + đi 4 bước nhảy = 5 + 3 × 4 = 17 ✓ (khớp hình). Công thức lời của thám tử: toa thứ n = số đầu + nhịp × (n − 1)."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Toa thứ 10: đứng yên tại ga, tính 5 + 3 × 9 = 5 + 27 = 32. Kiểm chứng bằng cách liệt kê: 5, 8, 11, 14, 17, 20, 23, 26, 29, 32 — đúng toa thứ mười! Hai con đường một đích, nhưng công thức thắng xa khi n lớn."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — BÀI NGƯỢC: số 29 nằm ở toa thứ mấy? Quãng đường từ số đầu: 29 − 5 = 24; số bước nhảy: 24 : 3 = 8 bước → 29 ở toa thứ 8 + 1 = 9 (lại +1 vì đếm cả toa xuất phát!)."
+   }
+  ],
+  "mantra": "Toa thứ n = số đầu + nhịp × (n − 1). Bài ngược: (số trên toa − số đầu) : nhịp + 1. Hai chỗ có \"−1/+1\" đều vì một lẽ: TOA LÀ CÂY, BƯỚC NHẢY LÀ KHOẢNG!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trí Long giơ tay giật giải của trưởng ga: \"Toa thứ mười của dãy 5, 8, 11 hả? Mười toa thì mười bước: 5 + 3 × 10 = 35. Cho cháu vé miễn phí!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Su Kem chỉ cần xòe bàn tay trước mặt bạn: 5 ngón tay có mấy kẽ? Vậy 10 toa tàu có mấy bước nhảy? Gợi ý 2: Liệt kê 10 toa đầu tiên đối chứng: 35 là toa thứ mấy thật sự? Sửa phép tính giúp Trí Long — kẻo trưởng ga bắt cậu ấy... đi bộ dọc tàu đếm lại từ đầu!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Cho dãy số 2, 6, 10, 14, ... Tìm số hạng thứ 8 của dãy."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Trí Long giơ tay giật giải của trưởng ga: \"Toa thứ mười của dãy 5, 8, 11 hả? Mười toa thì mười bước: 5 + 3 × 10 = 35. Cho cháu vé miễn phí!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Cho dãy số 2, 6, 10, 14, ... Tìm số hạng thứ 8 của dãy.",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Dãy có số đầu là 2, hai số liền nhau hơn kém nhau 4 đơn vị (nhịp 4)."
+   },
+   {
+    "show": "Từ số hạng thứ nhất đến số hạng thứ 8 có: 8 − 1 = 7 (bước nhảy)"
+   },
+   {
+    "show": "Số hạng thứ 8 là: 2 + 4 × 7 = 30"
+   },
+   {
+    "show": "Thử lại bằng liệt kê: 2, 6, 10, 14, 18, 22, 26, 30 ✓"
+   },
+   {
+    "show": "Đáp số: 30."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Dãy 4, 7, 10, 13, ... có nhịp mấy? Từ toa 1 đến toa 6 có mấy bước nhảy?",
+     "solutionNarrative": "nhịp 3; từ toa 1 đến toa 6 có 5 bước nhảy."
+    },
+    {
+     "id": "C2",
+     "text": "Viết tiếp 3 số của dãy 6, 10, 14, ...",
+     "solutionNarrative": "18, 22, 26."
+    },
+    {
+     "id": "C3",
+     "text": "Tìm số hạng thứ 5 của dãy 3, 5, 7, ... bằng công thức, rồi liệt kê kiểm chứng.",
+     "solutionNarrative": "3 + 2 × 4 = 11 (liệt kê: 3, 5, 7, 9, 11 ✓)."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tìm số hạng thứ 8 của dãy 3, 8, 13, 18, ...",
+     "solutionNarrative": "3 + 5 × 7 = 38."
+    },
+    {
+     "id": "C5",
+     "text": "Tìm số hạng thứ 10 của dãy 7, 10, 13, ...",
+     "solutionNarrative": "7 + 3 × 9 = 34."
+    },
+    {
+     "id": "C6",
+     "text": "Nhà hát xếp ghế: hàng 1 có 6 ghế, mỗi hàng sau nhiều hơn hàng trước 2 ghế. Hỏi hàng thứ 9 có mấy ghế? (Dãy số đội lốt lời văn!)",
+     "solutionNarrative": "hàng 9 có 6 + 2 × 8 = 22 ghế."
+    },
+    {
+     "id": "C7",
+     "text": "BÀI NGƯỢC: số 33 là số hạng thứ mấy của dãy 5, 9, 13, ...? (Trừ số đầu, chia nhịp, rồi nhớ +1!)",
+     "solutionNarrative": "(33 − 5) : 4 = 7 bước → 33 là số hạng thứ 8."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tìm số hạng thứ 20 của dãy 5, 8, 11, ... — và trả lời trưởng ga: vì sao Su Bống không nên chạy bộ đếm đến toa 20?",
+     "solutionNarrative": "5 + 3 × 19 = 62; vì công thức đứng yên tính một nhoáng, còn chạy bộ đếm 20 toa vừa mệt vừa dễ đếm sót — sức của Bống để dành cổ vũ!"
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng gài đề kép: \"Số 52 là số hạng thứ mấy của dãy 4, 8, 12, ...? Còn số 54 thì sao?\" (Một số về đích êm đẹp, một số... trật đường ray — chuyện của Bài 11 đấy!)",
+     "solutionNarrative": "52: (52 − 4) : 4 = 12 → số hạng thứ 13 ✓; còn 54: 54 − 4 = 50, 50 : 4 = 12 (dư 2) — chia không hết → 54 KHÔNG thuộc dãy, chẳng ở toa nào cả (cầu nối sang Bài 11 của anh Trí Dũng đấy!)."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Từ toa 1 đến toa 10 có 9 bước nhảy.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Số hạng thứ 10 của dãy 5, 8, 11, ... là 5 + 3 × 10 = 35.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "nhân với 9!"
+   },
+   {
+    "id": "Q3",
+    "text": "Số hạng thứ 5 của dãy 3, 5, 7, ... là:",
+    "format": "mcq",
+    "choices": [
+     "A. 11",
+     "B. 13",
+     "C. 15"
+    ],
+    "answerKey": {
+     "choice": "A. 11"
+    },
+    "solutionNarrative": "Đáp án: A. 11"
+   },
+   {
+    "id": "Q4",
+    "text": "Số hạng thứ 8 của dãy 2, 6, 10, ... là:",
+    "format": "mcq",
+    "choices": [
+     "A. 30",
+     "B. 34",
+     "C. 26"
+    ],
+    "answerKey": {
+     "choice": "A. 30"
+    },
+    "solutionNarrative": "Đáp án: A. 30"
+   },
+   {
+    "id": "Q5",
+    "text": "Số 29 là số hạng thứ mấy của dãy 5, 8, 11, ...?",
+    "format": "mcq",
+    "choices": [
+     "A. thứ 8",
+     "B. thứ 9",
+     "C. thứ 10"
+    ],
+    "answerKey": {
+     "choice": "B. thứ 9"
+    },
+    "solutionNarrative": "Đáp án: B. thứ 9"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Trải nghiệm bằng chân: vẽ các ô số cách đều trên sân, con NHẢY từ ô đầu đến ô thứ n và đếm to số bước — cơ thể sẽ nhớ \"n toa chỉ có n − 1 bước\" thay cho trí nhớ.",
+  "homeActivity": "Lỗi \"nhân với n thay vì n − 1\" là lỗi hàng rào (fencepost) nổi tiếng — cả người lớn viết phần mềm còn mắc! Khi con sai, đừng sửa số, hãy hỏi \"toa hay bước nhảy?\".",
+  "watchFor": "NÊN: luôn liệt kê kiểm chứng với n nhỏ trước khi tin công thức với n to. KHÔNG NÊN: đưa dãy giảm dần hay nhịp âm — hẹn lớp 4; và đừng gọi đây là \"cấp số cộng\", cứ để là chuyện đoàn tàu."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO10",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO10.png",
+   "caption": "Dãy 2, 6, 10, 14 với nhịp +4 — tìm toa thứ 8",
+   "sha256_16": "73f0e719dc2d3a8c",
+   "mucGoc": "chuyenMoBai"
+  }
+ ],
+ "hatMam": "Lớp 2, ở Bài 9, con lái đoàn tàu đếm thêm: 5, 8, 11, ... và chỉ cần điền vài toa kế tiếp. Còn ở Bài 24, con thuộc luật bàn tay \"số cây = số khoảng + 1\". Hai người quen ấy hôm nay bắt tay nhau làm nên một công thức lợi hại!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B09"
+  ],
+  "ten": [
+   "ĐOÀN TÀU ĐẾM THÊM"
+  ],
+  "canCu": "chuDe",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

@@ -1,0 +1,273 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B03",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 3 · XẾP THẺ SỐ PHIÊN BẢN KHÓ",
+ "durationMinutes": 10,
+ "so": 3,
+ "chuong": 1,
+ "tenChuong": "Vương quốc Vạn Số",
+ "dangGoc": "SỐ 3.1 hai case khởi điểm Lớp 3 — Được lặp chữ số & điều kiện chẵn - lẻ",
+ "skills": {
+  "bktUnit": "CHUONG:1@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 3,
+  "prev": "DL:KSN3.B02",
+  "next": "DL:KSN3.B04"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Lập được số lớn nhất - bé nhất khi các thẻ ĐƯỢC DÙNG LẶP LẠI. Lập được số CHẴN (hoặc LẺ) lớn nhất - bé nhất: chọn ĐUÔI trước, xếp phần đầu sau. Vẫn cảnh giác chú số 0 không đứng đầu — kể cả trong luật chơi mới.",
+  "kidText": "Lập được số lớn nhất - bé nhất khi các thẻ ĐƯỢC DÙNG LẶP LẠI. Lập được số CHẴN (hoặc LẺ) lớn nhất - bé nhất: chọn ĐUÔI trước, xếp phần đầu sau. Vẫn cảnh giác chú số 0 không đứng đầu — kể cả trong luật chơi mới.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — LUẬT LẶP: từ hai thẻ 2 và 5, KHÔNG lặp thì số 2 chữ số lớn nhất là 52. Nhưng nếu ĐƯỢC LẶP — cứ dùng thẻ to nhất cho mọi vị trí: 55! Bé nhất được lặp: 22."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — LUẬT CHẴN - LẺ: số chẵn hay lẻ do cái ĐUÔI quyết định (bí mật Bài 11 lớp 2!). Vậy muốn lập số chẵn, phải đặt vé giữ đuôi TRƯỚC, rồi mới xếp phần đầu to-trước như thường lệ:"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3. Từ 3, 8, 5: số lớn nhất tự do là 853 — nhưng nó LẺ! Muốn chẵn: đuôi bắt buộc là 8 (thẻ chẵn duy nhất), phần đầu xếp từ 3, 5 to trước → 538. Muốn số LẺ lớn nhất: đuôi chọn thẻ lẻ NHỎ nhất (thẻ 3) để dành thẻ to cho phần đầu → 853."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4. Có số 0 thì sao? Từ 6, 0, 3 lập số chẵn BÉ nhất: phần đầu muốn nhỏ → 3 đứng đầu (0 bị cấm!); đuôi chẵn còn 0 hoặc 6 → chọn 0 nhỏ hơn... khoan, đuôi 0 thì giữa là 6: 360; đuôi 6 thì giữa là 0: 306. So sánh: 306 < 360 → đáp án 306. Bài học: khi phân vân, LIỆT KÊ cả hai ứng viên rồi so — đừng đoán!"
+   }
+  ],
+  "mantra": "Có điều kiện chẵn - lẻ: ĐUÔI ĐẶT VÉ TRƯỚC, phần đầu xếp sau. Được lặp: thẻ tốt nhất dùng cho mọi ghế. Và muôn đời: chú số 0 không đứng đầu, phân vân thì liệt kê ứng viên rồi so!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Vòng thi \"số chẵn lớn nhất từ 3, 8, 5\", Trí Long vỗ bàn nộp bài đầu tiên: \"853! To trước bé sau — công thức vô địch của tớ!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Số 853 to thật đấy — nhưng soi cái đuôi xem: 853 là số chẵn hay số lẻ? Đề thi vòng này yêu cầu gì? Gợi ý 2: Công thức năm ngoái không sai — nó chỉ THIẾU một bước khi đề có thêm điều kiện. Bước nào phải làm TRƯỚC \"to trước bé sau\"? Xếp lại giúp đương kim vô địch kẻo mất đai!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Từ ba tấm thẻ 3, 8, 5 (mỗi thẻ dùng một lần), hãy lập số chẵn lớn nhất có ba chữ số."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Vòng thi \"số chẵn lớn nhất từ 3, 8, 5\", Trí Long vỗ bàn nộp bài đầu tiên: \"853! To trước bé sau — công thức vô địch của tớ!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Từ ba tấm thẻ 3, 8, 5 (mỗi thẻ dùng một lần), hãy lập số chẵn lớn nhất có ba chữ số.",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Số chẵn phải có chữ số tận cùng chẵn. Trong ba thẻ, chỉ thẻ 8 là chẵn → hàng đơn vị là 8."
+   },
+   {
+    "show": "Hai thẻ còn lại 3 và 5 xếp phần đầu theo luật to trước: 5 ở hàng trăm, 3 ở hàng chục."
+   },
+   {
+    "show": "Vậy số cần lập là 538. (Thử lại: 538 tận cùng 8 — chẵn ✓; đổi bất kỳ cách xếp nào khác có đuôi 8 đều bé hơn ✓.)"
+   },
+   {
+    "show": "Đáp số: 538."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Từ hai thẻ 4 và 7, lập số có 2 chữ số lớn nhất và bé nhất (không lặp).",
+     "solutionNarrative": "74 và 47."
+    },
+    {
+     "id": "C2",
+     "text": "Cũng hai thẻ 4 và 7 nhưng ĐƯỢC LẶP: số 2 chữ số lớn nhất? bé nhất?",
+     "solutionNarrative": "được lặp: 77 và 44."
+    },
+    {
+     "id": "C3",
+     "text": "Trong các số 74, 47, 77, 44 — số nào chẵn, số nào lẻ? Nhìn vào đâu để biết?",
+     "solutionNarrative": "chẵn: 74, 44 (đuôi 4); lẻ: 47, 77 (đuôi 7) — nhìn cái đuôi!"
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Từ ba thẻ 2, 9, 6 (không lặp): lập số lớn nhất; số bé nhất; số CHẴN lớn nhất.",
+     "solutionNarrative": "lớn nhất 962; bé nhất 269; chẵn lớn nhất: đuôi phải chẵn — ứng viên đuôi 2 hoặc 6: đuôi 2 → 962; đuôi 6 → 926; so sánh: 962 lớn hơn → 962 (may quá, số lớn nhất tự do lần này vốn đã chẵn!)."
+    },
+    {
+     "id": "C5",
+     "text": "Từ ba thẻ 1, 4, 7 (không lặp): lập số LẺ lớn nhất. (Có hai thẻ lẻ — chọn thẻ nào giữ đuôi để phần đầu to nhất?)",
+     "solutionNarrative": "lẻ lớn nhất: hai thẻ lẻ là 1 và 7 — giữ đuôi bằng thẻ lẻ NHỎ (1) để thẻ 7 lên đầu → 741."
+    },
+    {
+     "id": "C6",
+     "text": "Từ ba thẻ 6, 0, 3 (không lặp): lập số chẵn bé nhất; số chẵn lớn nhất. (Cảnh giác chú số 0!)",
+     "solutionNarrative": "chẵn bé nhất: 306; chẵn lớn nhất: đuôi 0 hoặc 6 → 630 vs 360 → 630."
+    },
+    {
+     "id": "C7",
+     "text": "Từ hai thẻ 3 và 0, ĐƯỢC LẶP, lập số có 3 chữ số bé nhất. (Số 0 không đứng đầu — nhưng các ghế sau thì sao?)",
+     "solutionNarrative": "đầu phải là 3 (0 cấm đứng đầu), hai ghế sau chọn thẻ nhỏ nhất được lặp: 300."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Từ bốn thẻ 9, 0, 4, 7 chọn ra BA thẻ để lập số chẵn lớn nhất có ba chữ số khác nhau. (Được quyền bỏ một thẻ — bỏ thẻ nào là cả một nghệ thuật!)",
+     "solutionNarrative": "muốn to: hàng trăm 9; đuôi chẵn chọn trong 0, 4 → đuôi 4 cho phép ghế giữa lấy 7: 974; đuôi 0 thì ghế giữa 7: 970 → chọn 974 (bỏ thẻ 0)."
+    },
+    {
+     "id": "C9",
+     "text": "Chị Ngọc Anh ra đề: \"Lập số có 3 chữ số bé nhất mà tổng ba chữ số bằng 3.\" — Liệt kê các bộ ba chữ số có tổng bằng 3 rồi chọn cách xếp bé nhất. (Nhớ: hàng trăm không được là 0!)",
+     "solutionNarrative": "các bộ ba chữ số tổng 3: (3,0,0), (2,1,0), (1,1,1) → cách xếp bé nhất mỗi bộ: 300, 102, 111 → bé nhất là 102."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Muốn lập số chẵn, nên chọn chữ số hàng đơn vị trước.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Từ 3, 8, 5 — số chẵn lớn nhất là 853.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "853 lẻ!"
+   },
+   {
+    "id": "Q3",
+    "text": "Từ 2 và 5 được lặp, số 2 chữ số lớn nhất là:",
+    "format": "mcq",
+    "choices": [
+     "A. 52",
+     "B. 55",
+     "C. 25"
+    ],
+    "answerKey": {
+     "choice": "B. 55"
+    },
+    "solutionNarrative": "Đáp án: B. 55"
+   },
+   {
+    "id": "Q4",
+    "text": "Từ 3, 8, 5 — số chẵn lớn nhất là:",
+    "format": "mcq",
+    "choices": [
+     "A. 538",
+     "B. 583",
+     "C. 358"
+    ],
+    "answerKey": {
+     "choice": "A. 538"
+    },
+    "solutionNarrative": "Đáp án: A. 538"
+   },
+   {
+    "id": "Q5",
+    "text": "Từ 6, 0, 3 — số chẵn bé nhất là:",
+    "format": "mcq",
+    "choices": [
+     "A. 036",
+     "B. 306",
+     "C. 360"
+    ],
+    "answerKey": {
+     "choice": "B. 306"
+    },
+    "solutionNarrative": "Đáp án: B. 306"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Bộ thẻ số 0-9 vẫn là giáo cụ quốc dân: mỗi tối rút 3 thẻ, cả nhà thi \"chẵn lớn nhất - lẻ bé nhất\" — thêm luật lặp cho vòng đặc biệt.",
+  "homeActivity": "Khi con trả lời, hỏi ngược: \"Sao con chọn đuôi này?\" — nói được lý do tức là chiến thuật đã thành của con, không phải học vẹt.",
+  "watchFor": "NÊN: cho con gặp ca phân vân (như 306 vs 360) để luyện thói quen liệt kê - so sánh. KHÔNG NÊN: đưa điều kiện chia hết cho 3, 5, 9 — các dấu hiệu đó là đại tiệc của lớp 4."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO03",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO03.png",
+   "caption": "Ba tấm thẻ 3, 8, 5 và ba ô trống phải xếp thành số chẵn lớn nhất",
+   "sha256_16": "d81a76badbb1ce9c",
+   "mucGoc": "chuyenMoBai"
+  }
+ ],
+ "hatMam": "Lớp 2 con đã thạo luật xếp thẻ: lớn nhất thì thẻ to đứng trước, bé nhất thì thẻ nhỏ đứng trước — riêng chú số 0 không được đứng đầu (Bài 4 lớp 2). Năm nay trò chơi thêm hai luật mới toanh!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B04"
+  ],
+  "ten": [
+   "XẾP THẺ SỐ — LẬP SỐ LỚN NHẤT, BÉ NHẤT"
+  ],
+  "canCu": "chuDe",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

@@ -1,0 +1,293 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B22",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 22 · ĐI LÙI NHIỀU TRẠM",
+ "durationMinutes": 10,
+ "so": 22,
+ "chuong": 6,
+ "tenChuong": "Thám tử cao cấp",
+ "dangGoc": "LV 8.1 mức Lớp 3 — Tính ngược ba bước có nhân chia",
+ "skills": {
+  "bktUnit": "CHUONG:6@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 22,
+  "prev": "DL:KSN3.B21",
+  "next": "DL:KSN3.B23"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Đi lùi qua BA trạm máy: đảo cả THỨ TỰ lẫn PHÉP TÍNH. Giải bài lời văn tính ngược: \"bán một nửa rồi bán thêm... còn lại...\". Luôn thử xuôi lại từ đầu để chốt án.",
+  "kidText": "Đi lùi qua BA trạm máy: đảo cả THỨ TỰ lẫn PHÉP TÍNH. Giải bài lời văn tính ngược: \"bán một nửa rồi bán thêm... còn lại...\". Luôn thử xuôi lại từ đầu để chốt án.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — VẼ HÀNH TRÌNH XUÔI: ? → [× 2] → [− 4] → [: 3] → 6. Vẽ ra giấy — hành trình càng dài càng không được lùi... bằng miệng!"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — LUẬT LÙI KÉP: đảo THỨ TỰ (máy cuối gỡ trước — ba lô trước, áo sau) VÀ đảo PHÉP (× thành :, + thành −, và ngược lại). Thiếu một trong hai cú đảo là lạc đường ngay!"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — LÙI: gỡ [: 3] bằng × 3: 6 × 3 = 18. Gỡ [− 4] bằng + 4: 18 + 4 = 22. Gỡ [× 2] bằng : 2: 22 : 2 = 11. Số của Su Bống là 11!"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — THỬ XUÔI: 11 × 2 = 22; 22 − 4 = 18; 18 : 3 = 6 ✓. Án chốt. (Bống vỗ tay: \"Đúng số 11 của em!\")"
+   }
+  ],
+  "mantra": "Đi lùi = ĐẢO KÉP: đảo thứ tự trạm + đảo phép từng trạm. Vẽ hành trình xuôi ra giấy rồi kẻ hàng lùi bên dưới — mỗi trạm một mũi tên ngược. Chốt án bằng chuyến thử xuôi!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trí Long lùi thần tốc: \"Máy cuối là chia 3 — thì mình cũng CHIA 3 mà lùi: 6 : 3 = 2. Rồi máy trừ 4: 2 − 4... ơ, âm mất rồi! Anh Dũng ra đề hỏng!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Luật lùi có HAI cú đảo — Trí Long mới đảo được cú nào? Gỡ một chiếc máy \"chia 3\" thì phải dùng phép gì mới bung ra được? Gợi ý 2: Tiếng \"âm mất rồi\" chính là chuông tắc đường quen thuộc — và lại thêm một lần Trí Long định đổ cho... đề sai! Nhắc cậu ấy châm ngôn Bài 12, rồi lùi lại với đủ hai cú đảo."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Cửa hàng bán một nửa số gạo trong kho, sau đó bán thêm 5 kg nữa thì trong kho còn lại 15 kg. Hỏi lúc đầu kho có bao nhiêu ki-lô-gam gạo?"
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Trí Long lùi thần tốc: \"Máy cuối là chia 3 — thì mình cũng CHIA 3 mà lùi: 6 : 3 = 2. Rồi máy trừ 4: 2 − 4... ơ, âm mất rồi! Anh Dũng ra đề hỏng!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Cửa hàng bán một nửa số gạo trong kho, sau đó bán thêm 5 kg nữa thì trong kho còn lại 15 kg. Hỏi lúc đầu kho có bao nhiêu ki-lô-gam gạo?",
+  "steps": [
+   {
+    "show": "Bài giải: (hành trình xuôi: kho → bán một nửa → bán thêm 5 kg → còn 15 kg)"
+   },
+   {
+    "show": "Trước khi bán thêm 5 kg, kho còn số gạo là: 15 + 5 = 20 (kg)"
+   },
+   {
+    "show": "20 kg chính là MỘT NỬA kho, vậy lúc đầu kho có: 20 × 2 = 40 (kg)"
+   },
+   {
+    "show": "Thử xuôi: 40 kg bán nửa còn 20; bán thêm 5 còn 15 ✓"
+   },
+   {
+    "show": "Đáp số: 40 kg."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Một số nhân 2 rồi cộng 5 thì được 21. Tìm số đó.",
+     "solutionNarrative": "lùi: 21 − 5 = 16; 16 : 2 = 8."
+    },
+    {
+     "id": "C2",
+     "text": "Một số chia 3 rồi trừ 2 thì được 4. Tìm số đó.",
+     "solutionNarrative": "lùi: 4 + 2 = 6; 6 × 3 = 18."
+    },
+    {
+     "id": "C3",
+     "text": "Vẽ hành trình xuôi và hàng lùi cho câu 1 (hai hàng mũi tên ngược chiều).",
+     "solutionNarrative": "hàng xuôi ? →[×2]→[+5]→ 21; hàng lùi 21 →[−5]→[:2]→ 8."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Một số qua ba máy: nhân 2, trừ 4, chia 3 thì được 6. Tìm số đó (trình bày từng trạm lùi).",
+     "solutionNarrative": "6 × 3 = 18 → 18 + 4 = 22 → 22 : 2 = 11 (thử xuôi: 11 × 2 = 22; 22 − 4 = 18; 18 : 3 = 6 ✓)."
+    },
+    {
+     "id": "C5",
+     "text": "Một số qua ba máy: cộng 3, nhân 2, trừ 8 thì được 12. Tìm số đó.",
+     "solutionNarrative": "12 + 8 = 20 → 20 : 2 = 10 → 10 − 3 = 7 (thử: 7 + 3 = 10; 10 × 2 = 20; 20 − 8 = 12 ✓)."
+    },
+    {
+     "id": "C6",
+     "text": "Su Bống ăn một nửa túi kẹo, rồi cho bạn 3 viên thì còn lại 5 viên. Hỏi túi kẹo lúc đầu có mấy viên?",
+     "solutionNarrative": "trước khi cho bạn: 5 + 3 = 8 viên = một nửa túi → túi 8 × 2 = 16 viên."
+    },
+    {
+     "id": "C7",
+     "text": "Bác nông dân bán một nửa số trứng, rồi bán thêm 6 quả thì còn 14 quả. Hỏi lúc đầu bác có bao nhiêu quả trứng?",
+     "solutionNarrative": "14 + 6 = 20 = một nửa → 20 × 2 = 40 quả."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Su Kem đọc truyện: ngày đầu đọc MỘT NỬA cuốn, ngày sau đọc thêm 12 trang thì còn lại 8 trang. Hỏi cuốn truyện dày bao nhiêu trang? (Lùi hai trạm — trạm nào gỡ trước?)",
+     "solutionNarrative": "gỡ sự kiện gần nhất trước: trước khi đọc 12 trang, còn 8 + 12 = 20 trang; 20 trang là NỬA CUỐN còn lại sau ngày đầu → cuốn truyện 20 × 2 = 40 trang (thử: ngày 1 đọc 20, còn 20; ngày 2 đọc 12, còn 8 ✓)."
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng nghĩ một số, nhân 3, cộng 6, chia 2 thì được 9. Tìm số của anh — và thử xuôi để \"bắt quả tang\" cho chắc!",
+     "solutionNarrative": "9 × 2 = 18 → 18 − 6 = 12 → 12 : 3 = 4 (thử xuôi: 4 × 3 = 12; 12 + 6 = 18; 18 : 2 = 9 ✓ — bắt quả tang thành công!)."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Đi lùi phải đảo cả thứ tự trạm lẫn phép tính.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Gỡ máy \"chia 3\" khi đi lùi thì ta chia 3.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "phải nhân 3!"
+   },
+   {
+    "id": "Q3",
+    "text": "Số nhân 2 cộng 5 được 21. Số đó là:",
+    "format": "mcq",
+    "choices": [
+     "A. 8",
+     "B. 13",
+     "C. 16"
+    ],
+    "answerKey": {
+     "choice": "A. 8"
+    },
+    "solutionNarrative": "Đáp án: A. 8"
+   },
+   {
+    "id": "Q4",
+    "text": "Số qua máy × 2, − 4, : 3 ra 6. Số đó là:",
+    "format": "mcq",
+    "choices": [
+     "A. 10",
+     "B. 11",
+     "C. 12"
+    ],
+    "answerKey": {
+     "choice": "B. 11"
+    },
+    "solutionNarrative": "Đáp án: B. 11"
+   },
+   {
+    "id": "Q5",
+    "text": "Bán nửa số gạo rồi thêm 5 kg, còn 15 kg. Lúc đầu có:",
+    "format": "mcq",
+    "choices": [
+     "A. 40 kg",
+     "B. 35 kg",
+     "C. 30 kg"
+    ],
+    "answerKey": {
+     "choice": "A. 40 kg"
+    },
+    "solutionNarrative": "Đáp án: A. 40 kg"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Trò \"nghĩ số ba máy\" chơi được mọi nơi: xếp hàng, ngồi xe — mỗi ván 1 phút; nhưng bài trong vở phải VẼ đủ hai hàng mũi tên xuôi - lùi.",
+  "homeActivity": "Bài \"bán nửa rồi bán thêm\" là dạng thi cực quen của lớp 3-4 — bí quyết duy nhất: đi lùi TỪNG sự kiện một, chớ gộp.",
+  "watchFor": "NÊN: luôn kết bằng chuyến thử xuôi kể lại như kể chuyện. KHÔNG NÊN: quá ba trạm máy hay hai lần \"một nửa\" trong một đề — mê cung ấy hẹn lớp 4."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO22",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO22.png",
+   "caption": "Kho gạo bán một nửa rồi bán thêm 5 kg, còn lại 15 kg",
+   "sha256_16": "7abefb24c3ad4900",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L3H_LT09",
+   "usedIn": [
+    "item:C3"
+   ],
+   "file": "figures/L3H_LT09.png",
+   "caption": "Hàng trên đi xuôi, hàng dưới mũi tên quay ngược lại",
+   "sha256_16": "6d05751af3345baa",
+   "mucGoc": "luyenTap"
+  },
+  {
+   "id": "L3H_LT10",
+   "usedIn": [
+    "item:C3:giai"
+   ],
+   "file": "figures/L3H_LT10.png",
+   "caption": "Lùi ra số 5, thử xuôi lại đúng bằng 6",
+   "sha256_16": "03651cc87a35f5f2",
+   "mucGoc": "luyenTap"
+  }
+ ],
+ "hatMam": "Lớp 2, ở Bài 22, con thuộc luật đi lùi \"ba lô trước, áo sau\" với hai trạm cộng trừ. Bài 15 vừa rồi con mở két hai máy. Hôm nay đường lùi dài THÊM một trạm — và đủ mặt cả bốn phép tính!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B22"
+  ],
+  "ten": [
+   "NGHĨ NGƯỢC — ĐI LÙI"
+  ],
+  "canCu": "sach",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

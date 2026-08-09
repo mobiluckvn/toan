@@ -26,7 +26,7 @@ const Foot = ({ label = 'Tiếp ▶', cls = 'btn-go', onClick, disabled }) => (
   </footer>
 );
 
-export default function StepView({ step, lesson, onNext, onJump, onRecord, log, onFinish, onRestart }) {
+export default function StepView({ step, lesson, onNext, onJump, onRecord, log, onFinish, onRestart, onMoBai }) {
   const K = lesson.knowledgeCore || {};
   const [checked, setChecked] = useState(null);
 
@@ -174,7 +174,7 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
     case 'finale':
       return <FinaleCard lesson={lesson} log={log}
                          onRetry={onRestart} onJumpTeach={() => onJump('teach')}
-                         onFinish={onFinish} />;
+                         onFinish={onFinish} onMoBai={onMoBai} />;
 
     default:
       return (<>

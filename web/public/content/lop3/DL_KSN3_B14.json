@@ -1,0 +1,283 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B14",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 14 · NHỮNG LỚP CỬA NGOẶC",
+ "durationMinutes": 10,
+ "so": 14,
+ "chuong": 4,
+ "tenChuong": "Mật thất biểu thức",
+ "dangGoc": "SỐ 7.2 case \"nhiều lớp ngoặc\" khởi điểm Lớp 3 — Lồng kính đứng trên cả làn ưu tiên",
+ "skills": {
+  "bktUnit": "CHUONG:4@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 14,
+  "prev": "DL:KSN3.B13",
+  "next": "DL:KSN3.B15"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Hiểu: phần trong ngoặc được tính TRƯỚC TIÊN — trên cả làn ưu tiên nhân chia. Tính được biểu thức có một và hai lớp ngoặc: mở từ TRONG CÙNG ra. Thấy rõ: đặt ngoặc khác chỗ, số phận biểu thức khác hẳn.",
+  "kidText": "Hiểu: phần trong ngoặc được tính TRƯỚC TIÊN — trên cả làn ưu tiên nhân chia. Tính được biểu thức có một và hai lớp ngoặc: mở từ TRONG CÙNG ra. Thấy rõ: đặt ngoặc khác chỗ, số phận biểu thức khác hẳn.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1. (5 + 3) × 2: mở lồng kính trước: 5 + 3 = 8; rồi 8 × 2 = 16. So với cửa trước: 5 + 3 × 2 = 11 — cùng bộ số, chiếc lồng kính đổi cả số phận!"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — THỨ TỰ TOÀN CẢNH: ① trong ngoặc trước tiên → ② nhân chia → ③ cộng trừ. Lồng kính là vua, làn ưu tiên là quan, cộng trừ là lính xếp hàng."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — HAI LỚP CỬA: 20 − (12 − (3 + 1)): mở từ TRONG CÙNG ra như bóc hành: (3 + 1) = 4 → (12 − 4) = 8 → 20 − 8 = 12."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — NGOẶC LÀ CÔNG TẮC SỐ PHẬN: 36 : (2 + 4) = 36 : 6 = 6; còn 36 : 2 + 4 = 18 + 4 = 22. Đọc đề mà bỏ sót một chiếc ngoặc là... lạc sang biểu thức khác luôn!"
+   }
+  ],
+  "mantra": "Thấy ngoặc: mở lồng TRONG CÙNG trước, lần lượt ra ngoài. Thứ tự vương quốc biểu thức: NGOẶC → NHÂN CHIA → CỘNG TRỪ. Và khi chép đề: đếm số ngoặc mở - ngoặc đóng cho khớp!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Cửa khắc (10 − 4) × 2. Trí Long tự tin áp dụng bài vừa học: \"Nhân đi làn ưu tiên! 4 × 2 = 8 trước, rồi 10 − 8 = 2. Lần này chắc chắn đúng luật!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Luật làn ưu tiên chỉ áp dụng cho biểu thức KHÔNG có gì? Cửa này có thứ gì đang ôm lấy 10 − 4? Gợi ý 2: Trong vương quốc biểu thức, lồng kính với làn ưu tiên — ai đứng trên ai? Mở đúng thứ tự giúp Trí Long, và ghi vào sổ: học luật mới không được quên soi xem luật nào TO HƠN!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Tính giá trị biểu thức: 36 : (2 + 4)."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Cửa khắc (10 − 4) × 2. Trí Long tự tin áp dụng bài vừa học: \"Nhân đi làn ưu tiên! 4 × 2 = 8 trước, rồi 10 − 8 = 2. Lần này chắc chắn đúng luật!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tính giá trị biểu thức: 36 : (2 + 4).",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "36 : (2 + 4)"
+   },
+   {
+    "show": "= 36 : 6 (mở lồng kính: 2 + 4 = 6)"
+   },
+   {
+    "show": "= 6"
+   },
+   {
+    "show": "Đáp số: 6."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính: (4 + 2) × 3; (10 − 2) × 4.",
+     "solutionNarrative": "6 × 3 = 18; 8 × 4 = 32."
+    },
+    {
+     "id": "C2",
+     "text": "Tính: 36 : (2 + 4); 40 : (13 − 5).",
+     "solutionNarrative": "36 : 6 = 6; 40 : 8 = 5."
+    },
+    {
+     "id": "C3",
+     "text": "Cặp đôi khác số phận — tính cả hai rồi so: 5 + 3 × 2 và (5 + 3) × 2.",
+     "solutionNarrative": "11 và 16 — cùng bộ số, khác 5 đơn vị vì chiếc lồng kính!"
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tính: (25 − 10) : 5; 7 × (2 + 6).",
+     "solutionNarrative": "15 : 5 = 3; 7 × 8 = 56."
+    },
+    {
+     "id": "C5",
+     "text": "Tính: 36 : 2 + 4 và 36 : (2 + 4) — chiếc ngoặc làm kết quả chênh nhau bao nhiêu?",
+     "solutionNarrative": "18 + 4 = 22 và 36 : 6 = 6 — chênh nhau 16!"
+    },
+    {
+     "id": "C6",
+     "text": "Hai lớp cửa — mở từ trong cùng: 20 − (12 − (3 + 1)); 2 × (10 − (2 + 3)).",
+     "solutionNarrative": "20 − (12 − 4) = 20 − 8 = 12; 2 × (10 − 5) = 2 × 5 = 10."
+    },
+    {
+     "id": "C7",
+     "text": "Viết biểu thức CÓ NGOẶC rồi tính: \"Mẹ có 3 chục trứng bớt đi 6 quả, chia đều số còn lại vào 4 hộp. Mỗi hộp mấy quả?\"",
+     "solutionNarrative": "(30 − 6) : 4 = 24 : 4 = 6 quả mỗi hộp."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Đặt MỘT cặp ngoặc vào biểu thức 3 + 5 × 2 để được kết quả 16. Đặt một cặp ngoặc vào 20 − 8 − 4 để được kết quả 16.",
+     "solutionNarrative": "(3 + 5) × 2 = 16 ✓; 20 − (8 − 4) = 20 − 4 = 16 ✓."
+    },
+    {
+     "id": "C9",
+     "text": "Chị Ngọc Anh đố: \"Cùng bộ số 12, 4, 2 và hai phép : và + — hãy viết hai biểu thức (một có ngoặc, một không) cho ra hai kết quả KHÁC nhau, rồi tính cả hai.\" (Ví dụ khởi động: 12 : 4 + 2 và 12 : (4 + 2)...)",
+     "solutionNarrative": "ví dụ chuẩn: 12 : 4 + 2 = 5 và 12 : (4 + 2) = 2 — một chiếc ngoặc, hai số phận; mọi cặp đề của con cho hai kết quả khác nhau đều được điểm tối đa."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Phần trong ngoặc được tính trước cả nhân chia.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "(10 − 4) × 2 = 2.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "= 12"
+   },
+   {
+    "id": "Q3",
+    "text": "(5 + 3) × 2 = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 11",
+     "B. 16",
+     "C. 13"
+    ],
+    "answerKey": {
+     "choice": "B. 16"
+    },
+    "solutionNarrative": "Đáp án: B. 16"
+   },
+   {
+    "id": "Q4",
+    "text": "36 : (2 + 4) = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 22",
+     "B. 6",
+     "C. 12"
+    ],
+    "answerKey": {
+     "choice": "B. 6"
+    },
+    "solutionNarrative": "Đáp án: B. 6"
+   },
+   {
+    "id": "Q5",
+    "text": "20 − (12 − (3 + 1)) = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 12",
+     "B. 4",
+     "C. 8"
+    ],
+    "answerKey": {
+     "choice": "A. 12"
+    },
+    "solutionNarrative": "Đáp án: A. 12"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Làm \"lồng kính\" thật bằng hai bàn tay khum lại ôm cụm số khi đọc đề — nghi thức nhỏ giúp mắt con bắt ngoặc thành phản xạ.",
+  "homeActivity": "Cho con chơi trò \"một bộ số, nhiều số phận\": cùng 5, 3, 2 với + và ×, thi xem đặt ngoặc kiểu gì ra kết quả to nhất, bé nhất — hiểu ngoặc sâu hơn mọi bài chép.",
+  "watchFor": "NÊN: dừng ở tối đa hai lớp ngoặc. KHÔNG NÊN: dùng ngoặc vuông [ ] hay ngoặc nhọn { } — quy ước ấy của lớp trên; lớp 3 chỉ cần ngoặc tròn lồng nhau."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO14",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO14.png",
+   "caption": "Biểu thức 36 : (2 + 4) với chiếc ngoặc được khoanh lại",
+   "sha256_16": "706df6977ed6a046",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L3H_BT02",
+   "usedIn": [
+    "screen:S4"
+   ],
+   "file": "figures/L3H_BT02.png",
+   "caption": "Hai lớp ngoặc: mở từ trong cùng ra ngoài như bóc hành",
+   "sha256_16": "049d862dcde09e92",
+   "mucGoc": "khamPha"
+  }
+ ],
+ "hatMam": "Lớp 2, khi tính thuận tiện, con từng NGẦM ghép cặp \"tính chỗ này trước\" (28 + 45 + 2 → ghép 28 với 2). Dấu ngoặc chính là chiếc lồng kính CÔNG KHAI hóa mệnh lệnh ấy — ai nhìn vào cũng biết phải mở chỗ nào trước!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B12"
+  ],
+  "ten": [
+   "TUYỆT CHIÊU GHÉP ĐÔI TRÒN CHỤC"
+  ],
+  "canCu": "sach",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

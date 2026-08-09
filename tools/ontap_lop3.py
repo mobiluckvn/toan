@@ -77,6 +77,22 @@ R_CAU_B = re.compile(r'(?:^|\s)B(\d+)\.\s*')
 
 MA_BAI = 'DL:KSN3.B{:02}'
 
+# ── đáp án ôn tập, nằm ở khối riêng cuối chương ──
+# "Ô1 ĐÁP ÁN ÔN TẬP 1 — Lễ mở cổng (Đề chính)" rồi "Ô1B ĐÁP ÁN ĐỀ B".
+# Bản đầu của bộ tách này ĐÓNG khối ngay khi gặp chữ ĐÁP ÁN, nên tám bộ đáp án ôn
+# tập rơi hết ra ngoài — mà mất đáp án thì kỳ sát hạch chỉ còn đề, bé làm xong
+# không có gì để so.
+R_DA_ON = re.compile(r'^Ô(\d+)(B?)\s+ĐÁP ÁN')
+# Ải đánh tiêu đề bằng tiền tố "Ả<n>", không phải "★ ĐÁP ÁN ẢI" như tôi đoán lúc đầu
+R_DA_AI = re.compile(r'^Ả(\d+)\s+ĐÁP ÁN')
+# "C1: … C2: … C10: …" viết liền một dòng, cắt theo mã câu.
+# Chữ cái đầu KHÔNG cố định là C: ôn tập 6 đặt tên câu là "Vụ" nên đáp án ghi
+# "V1: … V2: …"; đề B thì luôn là "B<n>". Và ôn tập 3 chèn nhãn giữa mã với dấu hai
+# chấm: "C10 — MẬT THƯ: (A) …". Nhận rộng ở đây rồi CHUẨN HOÁ về mã câu bên dưới,
+# chứ liệt kê từng chữ cái thì cứ mỗi ôn tập lại sót thêm một kiểu.
+R_DA_CAU = re.compile(r'\b([A-ZĐ])(\d+)\s*(?:\([^)]*\))?'
+                      r'(?:\s*[—–-]\s*[^:：]{0,24})?\s*[:：]\s*')
+
 
 def moi_noi(dong, cau, tong):
     """Đọc một dòng bảng tự soi → [(số câu, mã bài)]. Trả rỗng nếu dòng không phải
@@ -93,6 +109,40 @@ def moi_noi(dong, cau, tong):
             if 1 <= x <= tong:                 # số lạc (năm, cỡ…) thì bỏ, đừng đẻ câu ma
                 ra.append((x, MA_BAI.format(bai)))
     return ra
+
+
+def boc_dap_an(dong):
+    """{'onTap1': {'C1': '…'}, 'onTap1B': {'B1': '…'}, 'ai1': {'C1': '…'}} — đáp án
+    của các kỳ ôn tập và ải, gom từ những khối `Ô<n> ĐÁP ÁN …` ở cuối mỗi chương."""
+    ra, hien = {}, None
+    for t in dong:
+        m = R_DA_ON.match(t)
+        if m:
+            hien = f'onTap{int(m.group(1))}' + ('B' if m.group(2) else '')
+            ra.setdefault(hien, {})
+            continue
+        m = R_DA_AI.match(t)
+        if m:
+            hien = f'ai{int(m.group(1))}' if m.group(1) else 'aiChung'
+            ra.setdefault(hien, {})
+            continue
+        # bất kỳ tiêu đề ĐÁP ÁN nào khác (đáp án BÀI) đều ĐÓNG khối đang mở — không
+        # đóng thì đáp án của bài chảy ngược vào ôn tập, mà cả hai cùng đánh C1, C2…
+        if 'ĐÁP ÁN' in t[:40] or R_DONG.match(t):
+            hien = None
+            continue
+        if hien is None:
+            continue
+        de_b = hien.endswith('B')
+        vt = [(x.group(2), x.start(), x.end()) for x in R_DA_CAU.finditer(t)]
+        for i, (so, _, het) in enumerate(vt):
+            ket = vt[i + 1][1] if i + 1 < len(vt) else len(t)
+            loi = t[het:ket].strip().rstrip('.;, ')
+            if loi:
+                # Chuẩn hoá về mã câu: khối đề B giữ "B<n>", khối đề chính về "C<n>"
+                # bất kể sách viết C, V hay chữ nào — mã câu bên bảng đề luôn là C<n>.
+                ra[hien][('B' if de_b else 'C') + so] = loi
+    return {k: v for k, v in ra.items() if v}
 
 
 def main():
@@ -158,10 +208,15 @@ def main():
                 k['can'], k['tong'] = int(dt.group(1)), int(dt.group(2))
         k['dong'].append(t)
 
+    # ── đáp án của chính kỳ ôn tập ──
+    da = boc_dap_an(dong)
+
     # ── mối nối ôn tập → bài, thay cho Bảng tự soi mà lớp 3 không có ──
     canh_bao = []
     for k, v in khoi.items():
         v.pop('_phan', None)
+        v['dapAn'] = da.get(k, {})
+        v['dapAnB'] = da.get(k + 'B', {})
         if v['tong'] is None:
             v['tong'] = len(v['cau'])          # ải không nêu ngưỡng: làm hết là xong
         for t in v['soiTho']:
@@ -207,6 +262,15 @@ def main():
         thieu = [x for x in range(1, v['tong'] + 1) if not any(c['so'] == x for c in v['cau'])]
         if thieu:
             canh_bao.append(f'{ten} thiếu câu số {thieu}')
+        # đáp án phải khớp 1:1 với câu — thiếu thì bé làm xong không có gì để so,
+        # thừa thì có mã lạ không ứng với câu nào
+        hoi = {c['id'] for c in v['cau']}
+        thieu_da = sorted(hoi - set(v['dapAn']))
+        thua_da = sorted(set(v['dapAn']) - hoi)
+        if thieu_da:
+            canh_bao.append(f'{ten} thiếu đáp án {thieu_da}')
+        if thua_da:
+            canh_bao.append(f'{ten} thừa đáp án {thua_da} — đè từ khối khác?')
         if v['loai'] != 'onTap':
             continue
         if not v['cauDeB']:

@@ -1,0 +1,278 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B16",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 16 · TÍNH THUẬN TIỆN CẤP CHIẾN BINH",
+ "durationMinutes": 10,
+ "so": 16,
+ "chuong": 4,
+ "tenChuong": "Mật thất biểu thức",
+ "dangGoc": "SỐ 7.1 mức Lớp 3 — Ghép cặp tròn trăm & tuyệt chiêu GOM KHAY một số nhân một tổng",
+ "skills": {
+  "bktUnit": "CHUONG:4@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 16,
+  "prev": "DL:KSN3.B15",
+  "next": "DL:KSN3.B17"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Ghép cặp tròn chục - tròn trăm trong dãy cộng dài. Dùng tuyệt chiêu GOM KHAY: a × b + a × c = a × (b + c) — khi hai cụm cùng \"mặc áo a ×\". Chạy cầu vồng Gauss với dãy dài hơn: 1 + 2 + ... + 20.",
+  "kidText": "Ghép cặp tròn chục - tròn trăm trong dãy cộng dài. Dùng tuyệt chiêu GOM KHAY: a × b + a × c = a × (b + c) — khi hai cụm cùng \"mặc áo a ×\". Chạy cầu vồng Gauss với dãy dài hơn: 1 + 2 + ... + 20.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Chiêu 1 — GHÉP CẶP (lên cấp trăm): 37 + 25 + 13 + 5: ghép (37 + 13) + (25 + 5) = 50 + 30 = 80. Mắt rà đuôi số: 7 tìm 3, 5 tìm 5 — bạn tri kỷ tròn chục!"
+   },
+   {
+    "id": "K2",
+    "text": "Chiêu 2 — GOM KHAY: 3 × 25 + 3 × 75: hai cụm cùng mặc áo \"3 ×\" (3 khay 25 viên và 3 khay 75 viên) → gom ruột: 3 × (25 + 75) = 3 × 100 = 300. Đây là phép tách khay của Bài 5 chạy chiều ngược — năm ngoái TÁCH để nhân được, năm nay GOM để nhân đẹp!"
+   },
+   {
+    "id": "K3",
+    "text": "Chiêu 3 — ÁO TÀNG HÌNH: 4 × 9 + 4: số 4 lẻ loi thực ra đang mặc áo tàng hình \"4 × 1\"! Gom: 4 × (9 + 1) = 4 × 10 = 40. Mọi số trần trụi đều là chính-nó-nhân-một."
+   },
+   {
+    "id": "K4",
+    "text": "Chiêu 4 — GAUSS ĐƯỜNG DÀI: 1 + 2 + ... + 20: bắc cầu vồng 1 + 20 = 21, 2 + 19 = 21, ... được 10 cặp → 21 × 10 = 210. Cầu vồng cũ, nhịp dài hơn — và nay có phép nhân trợ lực!"
+   }
+  ],
+  "mantra": "Trước khi cắm đầu tính: RÀ một vòng — có cặp tròn chục/trăm không? Có hai cụm CÙNG ÁO \"a ×\" không? Có cầu vồng không? Chiến binh thắng bằng con mắt, không bằng tốc độ tay!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Học xong chiêu gom khay, Trí Long vung kiếm tứ tung: \"3 × 25 + 75 hả? Gom hết: 3 × (25 + 75) = 3 × 100 = 300! Chiêu này vô địch!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Soi kỹ tấm áo: cụm 3 × 25 mặc áo \"3 ×\" rồi, thế còn số 75 đứng sau — nó có mặc áo \"3 ×\" không, hay đang... trần trụi? Gợi ý 2: Tính đàng hoàng theo luật làn ưu tiên: 3 × 25 + 75 bằng bao nhiêu thật? So với 300 của Trí Long — chiêu gom khay chỉ dùng được khi nào? (Luật vào cổng: CẢ HAI phải cùng áo!)"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Tính bằng cách thuận tiện: 2 × 36 + 2 × 64."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Học xong chiêu gom khay, Trí Long vung kiếm tứ tung: \"3 × 25 + 75 hả? Gom hết: 3 × (25 + 75) = 3 × 100 = 300! Chiêu này vô địch!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tính bằng cách thuận tiện: 2 × 36 + 2 × 64.",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "2 × 36 + 2 × 64"
+   },
+   {
+    "show": "= 2 × (36 + 64) (hai cụm cùng mặc áo \"2 ×\" — gom khay!)"
+   },
+   {
+    "show": "= 2 × 100"
+   },
+   {
+    "show": "= 200"
+   },
+   {
+    "show": "Đáp số: 200."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Ghép cặp rồi tính: 28 + 17 + 2 + 3.",
+     "solutionNarrative": "(28 + 2) + (17 + 3) = 30 + 20 = 50."
+    },
+    {
+     "id": "C2",
+     "text": "Ghép cặp tròn trăm: 37 + 25 + 13 + 5.",
+     "solutionNarrative": "(37 + 13) + (25 + 5) = 50 + 30 = 80."
+    },
+    {
+     "id": "C3",
+     "text": "Gom khay: 2 × 7 + 2 × 3; 5 × 6 + 5 × 4.",
+     "solutionNarrative": "2 × (7 + 3) = 20; 5 × (6 + 4) = 50."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tính thuận tiện: 4 × 36 + 4 × 64.",
+     "solutionNarrative": "4 × (36 + 64) = 4 × 100 = 400."
+    },
+    {
+     "id": "C5",
+     "text": "Áo tàng hình: 6 × 9 + 6; 7 × 99 + 7. (Số lẻ loi đang mặc áo gì?)",
+     "solutionNarrative": "6 × (9 + 1) = 60; 7 × (99 + 1) = 700."
+    },
+    {
+     "id": "C6",
+     "text": "Cầu vồng: 1 + 2 + 3 + ... + 20.",
+     "solutionNarrative": "10 cặp 21 → 210."
+    },
+    {
+     "id": "C7",
+     "text": "Chọn đường đẹp mà đi: 45 + 28 + 55 + 72 (rà cặp tròn trăm trước khi động bút!).",
+     "solutionNarrative": "(45 + 55) + (28 + 72) = 100 + 100 = 200."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tuyệt phẩm phòng cuối: 99 × 4 + 4. (Số 4 lẻ loi mặc áo tàng hình, rồi gom — kết quả tròn đến ngỡ ngàng!)",
+     "solutionNarrative": "99 × 4 + 4 = 4 × (99 + 1) = 4 × 100 = 400 — tròn đến ngỡ ngàng!"
+    },
+    {
+     "id": "C9",
+     "text": "Chị Ngọc Anh thách đấu tay ba: tính 5 × 17 × 2 theo cách của chiến binh (ghép ai với ai trước cho tròn?); rồi tự sáng tác một đề \"gom khay\" cho tổng trong ngoặc tròn 100, đố cả nhà!",
+     "solutionNarrative": "5 × 17 × 2 = (5 × 2) × 17 = 10 × 17 = 170 (ghép 5 với 2 thành 10 trước); đề tự sáng tác đạt chuẩn khi tổng trong ngoặc tròn 100 — ví dụ 6 × 28 + 6 × 72."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "3 × 25 + 3 × 75 = 3 × (25 + 75).",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "3 × 25 + 75 cũng bằng 3 × (25 + 75).",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "75 không mặc áo \"3 ×\": 3 × 25 + 75 = 75 + 75 = 150"
+   },
+   {
+    "id": "Q3",
+    "text": "2 × 36 + 2 × 64 = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 200",
+     "B. 172",
+     "C. 264"
+    ],
+    "answerKey": {
+     "choice": "A. 200"
+    },
+    "solutionNarrative": "Đáp án: A. 200"
+   },
+   {
+    "id": "Q4",
+    "text": "6 × 9 + 6 = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 54",
+     "B. 60",
+     "C. 15"
+    ],
+    "answerKey": {
+     "choice": "B. 60"
+    },
+    "solutionNarrative": "Đáp án: B. 60"
+   },
+   {
+    "id": "Q5",
+    "text": "1 + 2 + ... + 20 = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 200",
+     "B. 210",
+     "C. 190"
+    ],
+    "answerKey": {
+     "choice": "B. 210"
+    },
+    "solutionNarrative": "Đáp án: B. 210"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chơi \"cuộc đua hai làn\": bố mẹ tính thô, con tính thuận tiện cùng một đề (2 × 36 + 2 × 64) — con thắng áp đảo sẽ TỰ tin vào giá trị của con mắt rà bài.",
+  "homeActivity": "Chiêu \"gom khay\" là tính chất phân phối — nền của nhân nhẩm và đại số sau này; nhưng với con hãy chỉ gọi là gom khay - chung áo, tuyệt đối không cần tên gọi hàn lâm.",
+  "watchFor": "NÊN: khuyến khích viết rõ bước gom (có ngoặc) để lộ tư duy. KHÔNG NÊN: ép mọi bài phải có mẹo — thỉnh thoảng cho một đề \"không mẹo\" để con học cách rà xong rồi... tính thường, cũng là một quyết định đúng."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO16",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO16.png",
+   "caption": "Hai cụm cùng mặc áo 2 × — gom ruột lại thành một khay",
+   "sha256_16": "179cf425ff9a95a5",
+   "mucGoc": "chuyenMoBai"
+  }
+ ],
+ "hatMam": "Lớp 2 con có hai bảo bối: ghép đôi tròn chục (Bài 12) và cầu vồng Gauss nhí (Bài 13). Năm nay cả hai lên cấp — và con nhận thêm tuyệt chiêu thứ ba: GOM KHAY, chính là phép tách-gộp khay kẹo chạy... chiều ngược lại!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B12",
+   "DL:KSN2.B13"
+  ],
+  "ten": [
+   "TUYỆT CHIÊU GHÉP ĐÔI TRÒN CHỤC",
+   "CỘNG DÃY SỐ KIỂU GAUSS NHÍ"
+  ],
+  "canCu": "sach",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

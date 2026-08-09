@@ -1,0 +1,276 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B21",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 21 · RÚT VỀ ĐƠN VỊ",
+ "durationMinutes": 10,
+ "so": 21,
+ "chuong": 5,
+ "tenChuong": "Chuyện toán lời văn 2.0",
+ "dangGoc": "LV 7.1 mức Lớp 3 — Muốn biết nhiều, hỏi MỘT trước: dạng chính khóa quan trọng nhất học kỳ",
+ "skills": {
+  "bktUnit": "CHUONG:5@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 21,
+  "prev": "DL:KSN3.B20",
+  "next": "DL:KSN3.B22"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Giải bài rút về đơn vị hai bước: chia tìm MỘT, rồi nhân ra NHIỀU. Giải được cả chiều ngược: biết số tiền, hỏi mua được mấy đơn vị (chia hai lần). Cảnh giác bẫy đọc vèo: số trong đề là giá của MẤY đơn vị?",
+  "kidText": "Giải bài rút về đơn vị hai bước: chia tìm MỘT, rồi nhân ra NHIỀU. Giải được cả chiều ngược: biết số tiền, hỏi mua được mấy đơn vị (chia hai lần). Cảnh giác bẫy đọc vèo: số trong đề là giá của MẤY đơn vị?",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — ĐỌC KỸ: 21 nghìn là giá của BA hộp, không phải một hộp! Gạch chân chữ \"3 hộp\" — cái bẫy nằm ngay đó."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — RÚT VỀ MỘT: giá MỘT hộp: 21 : 3 = 7 nghìn. (Đây chính là trạm giữa của Bài 17 — chỉ là trạm này luôn mang tên \"MỘT ĐƠN VỊ\".)"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — NHÂN RA NHIỀU: 5 hộp: 7 × 5 = 35 nghìn. Chuông ước lượng gật gù: 5 hộp đắt hơn 3 hộp chút xíu — 35 so với 21, hợp lý!"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — CHIỀU NGƯỢC: \"Có 42 nghìn thì mua được mấy hộp?\" — vẫn ghé trạm MỘT: giá một hộp 7 nghìn → 42 : 7 = 6 hộp. Chiều xuôi: chia rồi NHÂN; chiều ngược: chia rồi CHIA — nhưng trạm MỘT thì chuyến nào cũng ghé!"
+   }
+  ],
+  "mantra": "Gặp đề \"a đơn vị hết b đồng\": ĐỪNG đụng vào số nhiều vội — rút về MỘT trước (b : a), rồi muốn mấy đơn vị thì nhân, muốn biết mua được mấy thì chia. Trạm MỘT là ga trung tâm của mọi chuyến!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trí Long vẫn chìa tay đòi tờ một trăm: \"Đề có số 21 với số 5 — thì 21 × 5 = 105 chứ còn tính kiểu gì nữa?!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Số 21 nghìn trong đề là giá của MẤY hộp? Trí Long đã nhân giá-của-ba-hộp với 5 — tức là vô tình mua những mấy hộp? Gợi ý 2: Nghe chuông ước lượng của Su Bống: 3 hộp có 21 nghìn mà 5 hộp những 105 nghìn — đắt gấp năm lần, vô lý chưa! Ghé trạm MỘT rồi tính lại giúp hoa tiêu, kẻo mẹ mất oan bảy chục."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Mua 3 hộp sữa chua hết 21 nghìn đồng. Hỏi mua 5 hộp sữa chua như thế hết bao nhiêu tiền?"
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Trí Long vẫn chìa tay đòi tờ một trăm: \"Đề có số 21 với số 5 — thì 21 × 5 = 105 chứ còn tính kiểu gì nữa?!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Mua 3 hộp sữa chua hết 21 nghìn đồng. Hỏi mua 5 hộp sữa chua như thế hết bao nhiêu tiền?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Mua 1 hộp sữa chua hết số tiền là:"
+   },
+   {
+    "show": "21 : 3 = 7 (nghìn đồng)"
+   },
+   {
+    "show": "Mua 5 hộp sữa chua hết số tiền là:"
+   },
+   {
+    "show": "7 × 5 = 35 (nghìn đồng)"
+   },
+   {
+    "show": "Đáp số: 35 nghìn đồng."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Mua 4 gói bánh hết 20 nghìn đồng. Hỏi 1 gói bánh giá bao nhiêu?",
+     "solutionNarrative": "20 : 4 = 5 nghìn."
+    },
+    {
+     "id": "C2",
+     "text": "Từ câu 1: mua 7 gói bánh như thế hết bao nhiêu tiền?",
+     "solutionNarrative": "5 × 7 = 35 nghìn."
+    },
+    {
+     "id": "C3",
+     "text": "Mua 2 chiếc bút hết 16 nghìn đồng. Hỏi mua 5 chiếc bút như thế hết bao nhiêu tiền?",
+     "solutionNarrative": "một bút 16 : 2 = 8; năm bút 8 × 5 = 40 nghìn."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Chiều ngược: 3 vé xem xiếc giá 27 nghìn đồng. Có 45 nghìn đồng thì mua được mấy vé?",
+     "solutionNarrative": "một vé 27 : 3 = 9; số vé 45 : 9 = 5 vé."
+    },
+    {
+     "id": "C5",
+     "text": "Su Bống gấp 6 con hạc trong 2 phút. Hỏi trong 5 phút, Bống gấp được mấy con? (Rút về MỘT phút!)",
+     "solutionNarrative": "mỗi phút 6 : 2 = 3 con; 5 phút 3 × 5 = 15 con."
+    },
+    {
+     "id": "C6",
+     "text": "Mua 6 hộp bút màu hết 42 nghìn đồng. Hỏi mua 4 hộp như thế hết bao nhiêu tiền? (Rút về một rồi... nhân XUỐNG cũng được nhé!)",
+     "solutionNarrative": "một hộp 42 : 6 = 7; bốn hộp 7 × 4 = 28 nghìn."
+    },
+    {
+     "id": "C7",
+     "text": "Xe máy của bố đi 2 giờ được 8 km đường đèo. Hỏi đi 3 giờ như thế được bao nhiêu km?",
+     "solutionNarrative": "mỗi giờ 8 : 2 = 4 km; ba giờ 4 × 3 = 12 km."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "So tài hai cửa tiệm: tiệm A bán 3 hộp sữa chua giá 21 nghìn; tiệm B bán 4 hộp giá 24 nghìn. Mua ở tiệm nào rẻ hơn? (So thứ gì với thứ gì mới công bằng — so cả bịch hay so... trạm MỘT?)",
+     "solutionNarrative": "so trạm MỘT mới công bằng: tiệm A một hộp 21 : 3 = 7 nghìn; tiệm B một hộp 24 : 4 = 6 nghìn → tiệm B rẻ hơn 1 nghìn mỗi hộp."
+    },
+    {
+     "id": "C9",
+     "text": "Chị Ngọc Anh ra đề: \"Mẹ trả 63 nghìn đồng cho 9 hộp sữa chua. Nếu hôm ấy mẹ chỉ mua 4 hộp thì hết bao nhiêu tiền?\"",
+     "solutionNarrative": "một hộp 63 : 9 = 7 nghìn; bốn hộp 7 × 4 = 28 nghìn."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Với đề \"3 hộp hết 21 nghìn\", bước đầu tiên là tính giá 1 hộp.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "3 hộp hết 21 nghìn thì 5 hộp hết 21 × 5 = 105 nghìn.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "21 là giá BA hộp!"
+   },
+   {
+    "id": "Q3",
+    "text": "3 hộp hết 21 nghìn → 1 hộp giá:",
+    "format": "mcq",
+    "choices": [
+     "A. 7 nghìn",
+     "B. 18 nghìn",
+     "C. 63 nghìn"
+    ],
+    "answerKey": {
+     "choice": "A. 7 nghìn"
+    },
+    "solutionNarrative": "Đáp án: A. 7 nghìn"
+   },
+   {
+    "id": "Q4",
+    "text": "3 hộp hết 21 nghìn → 5 hộp hết:",
+    "format": "mcq",
+    "choices": [
+     "A. 26 nghìn",
+     "B. 35 nghìn",
+     "C. 105 nghìn"
+    ],
+    "answerKey": {
+     "choice": "B. 35 nghìn"
+    },
+    "solutionNarrative": "Đáp án: B. 35 nghìn"
+   },
+   {
+    "id": "Q5",
+    "text": "1 hộp 7 nghìn, có 42 nghìn mua được:",
+    "format": "mcq",
+    "choices": [
+     "A. 6 hộp",
+     "B. 7 hộp",
+     "C. 35 hộp"
+    ],
+    "answerKey": {
+     "choice": "A. 6 hộp"
+    },
+    "solutionNarrative": "Đáp án: A. 6 hộp"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Đi siêu thị là phòng luyện rút-về-đơn-vị hoàn hảo: đưa con bảng giá lốc 4 hộp, hỏi giá 1 hộp rồi giá 6 hộp — tiền thật khiến phép chia tỉnh táo hẳn.",
+  "homeActivity": "Câu 8 (so hai tiệm) gieo mầm khái niệm ĐƠN GIÁ — kỹ năng tiêu dùng cả đời; hãy để con tự phát hiện \"phải so trạm MỘT mới công bằng\".",
+  "watchFor": "NÊN: bắt lỗi đọc vèo bằng câu hỏi \"số này là giá của MẤY đơn vị?\" trước khi con đặt bút. KHÔNG NÊN: đưa bài rút về đơn vị có dư (7 hộp 50 nghìn) — số chia phải đẹp ở lớp 3."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO21",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO21.png",
+   "caption": "Ba hộp hết 21 nghìn — hỏi năm hộp",
+   "sha256_16": "19b8b36232ab71db",
+   "mucGoc": "chuyenMoBai"
+  }
+ ],
+ "hatMam": "Lớp 2, ở Bài 21, con săn chữ \"MỖI\" — mỗi giờ gấp 4 chiếc thuyền... Chữ \"mỗi\" ấy chính là trạm \"MỘT ĐƠN VỊ\". Hôm nay đề bài giấu chữ mỗi đi — và nhiệm vụ của con là TỰ RÚT về nó!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B21"
+  ],
+  "ten": [
+   "MỖI GIỜ LÀM ĐƯỢC... — MỖI GIỜ ĐI ĐƯỢC..."
+  ],
+  "canCu": "sach",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

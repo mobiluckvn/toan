@@ -1,0 +1,293 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B31",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 31 · ĐẾM KHỐI THEO TẦNG",
+ "durationMinutes": 10,
+ "so": 31,
+ "chuong": 7,
+ "tenChuong": "Hình học lên tầng",
+ "dangGoc": "HH 4.1 mức Lớp 3 — Tòa nhà bị khoét và tấm bản đồ từng tầng",
+ "skills": {
+  "bktUnit": "CHUONG:7@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 31,
+  "prev": "DL:KSN3.B30",
+  "next": "DL:KSN3.B32"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Đếm khối lập phương của một khối hộp bằng cách đếm THEO TẦNG: mỗi tầng một khay. Xử được hình bị KHOÉT: tầng nào thiếu, trừ đúng tầng ấy. Không bao giờ quên khối bị che khuất — tòa nhà luôn có móng!",
+  "kidText": "Đếm khối lập phương của một khối hộp bằng cách đếm THEO TẦNG: mỗi tầng một khay. Xử được hình bị KHOÉT: tầng nào thiếu, trừ đúng tầng ấy. Không bao giờ quên khối bị che khuất — tòa nhà luôn có móng!",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — MỖI TẦNG MỘT KHAY: tầng dưới nguyên vẹn là khay 3 × 2 = 6 khối (đếm kiểu khay kẹo — diện tích vừa học cũng chào hỏi ở đây!)."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — TẦNG BỊ KHOÉT: tầng trên vốn cũng 6 khối, bị nhấc mất 2 → còn 6 − 2 = 4 khối."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — CỘNG CÁC TẦNG: cả tòa: 6 + 4 = 10 khối. Vẽ bản đồ từng tầng ra giấy (như hình) — mắt không bị hình 3D đánh lừa nữa!"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — LUẬT MÓNG NHÀ: khối đứng sau, đứng dưới bị che khuất — mắt không thấy nhưng bản đồ tầng thấy TẤT. Đếm bằng bản đồ, không đếm bằng... con mắt nhìn nghiêng!"
+   }
+  ],
+  "mantra": "Gặp khối 3D: đừng đếm mặt nhìn thấy! Vẽ BẢN ĐỒ TẦNG — mỗi tầng một lưới, điền số khối (tầng khoét thì trừ), rồi cộng dọc các tầng. Không sót, không trùng, không bị che mắt!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trí Long vẫn tin vào mắt mình: \"Tớ nhìn thấy 7 khối thì chung cư có 7 khối — mắt tớ tinh nhất lớp, sai làm sao được!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: Câu chuyện \"tòa nhà có móng\" năm ngoái nói gì về những khối đứng khuất? Tầng dưới của chung cư có 6 khối — Trí Long nhìn nghiêng thấy được mấy khối trong số đó? Gợi ý 2: Vẽ hai bản đồ tầng giúp Trí Long: lưới 3 × 2 tầng dưới điền đủ, lưới tầng trên gạch 2 ô khoét. Cộng lại xem con số nào mới đúng — và nhắn cậu ấy: mắt tinh mấy cũng không xuyên được... bê tông!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Một khối gỗ gồm hai tầng: tầng dưới xếp 3 × 2 khối lập phương, tầng trên giống hệt nhưng bị lấy đi 2 khối. Hỏi khối gỗ có bao nhiêu khối lập phương?"
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Trí Long vẫn tin vào mắt mình: \"Tớ nhìn thấy 7 khối thì chung cư có 7 khối — mắt tớ tinh nhất lớp, sai làm sao được!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một khối gỗ gồm hai tầng: tầng dưới xếp 3 × 2 khối lập phương, tầng trên giống hệt nhưng bị lấy đi 2 khối. Hỏi khối gỗ có bao nhiêu khối lập phương?",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Tầng dưới có số khối là: 3 × 2 = 6 (khối)"
+   },
+   {
+    "show": "Tầng trên có số khối là: 6 − 2 = 4 (khối)"
+   },
+   {
+    "show": "Cả khối gỗ có: 6 + 4 = 10 (khối)"
+   },
+   {
+    "show": "Đáp số: 10 khối lập phương."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Khối hộp xếp từ khối lập phương: mỗi tầng 4 × 2 khối, cao 2 tầng. Có tất cả mấy khối?",
+     "solutionNarrative": "mỗi tầng 8 → 16 khối."
+    },
+    {
+     "id": "C2",
+     "text": "Khối hộp mỗi tầng 3 × 3, cao 2 tầng. Có mấy khối?",
+     "solutionNarrative": "mỗi tầng 9 → 18 khối."
+    },
+    {
+     "id": "C3",
+     "text": "Với câu 1: đứng nhìn từ phía trước chỉ thấy 8 khối — vì sao đáp số lại nhiều hơn 8?",
+     "solutionNarrative": "vì 8 khối phía sau bị che — bản đồ tầng nhìn thấy tất, mắt thường thì không!"
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tòa nhà 2 tầng, mỗi tầng 3 × 2; tầng trên bị nhấc đi 2 khối. Còn mấy khối? (Trình bày bằng bản đồ tầng.)",
+     "solutionNarrative": "6 + 4 = 10 khối."
+    },
+    {
+     "id": "C5",
+     "text": "Tòa nhà 2 tầng, mỗi tầng 3 × 3; tầng trên bị khoét mất 3 khối. Còn mấy khối?",
+     "solutionNarrative": "9 + 6 = 15 khối."
+    },
+    {
+     "id": "C6",
+     "text": "Bậc thang 3 bậc: tầng dưới 3 khối xếp hàng ngang, tầng giữa 2 khối, tầng trên 1 khối. Có tất cả mấy khối? Muốn \"vá\" bậc thang thành khối hộp 3 × 1 × 3 tầng thì cần thêm mấy khối?",
+     "solutionNarrative": "3 + 2 + 1 = 6 khối; khối hộp đủ 3 tầng × 3 = 9 → cần vá thêm 9 − 6 = 3 khối."
+    },
+    {
+     "id": "C7",
+     "text": "Su Bống xây khối 4 × 2 hai tầng rồi nhấc 3 khối tầng trên tặng em búp bê. Chung cư còn mấy khối?",
+     "solutionNarrative": "tầng dưới 8, tầng trên 8 − 3 = 5 → còn 13 khối."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tòa tháp 3 tầng thu nhỏ dần: tầng dưới 3 × 3, tầng giữa 2 × 2, tầng trên 1 × 1. Cả tháp có mấy khối? — Con vừa đếm ra một tổng rất nổi tiếng đấy: 9 + 4 + 1, các \"số chính phương\" xếp chồng!",
+     "solutionNarrative": "9 + 4 + 1 = 14 khối — tổng các số chính phương xếp chồng, đẹp như tháp thật!"
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đố ngược: \"Một khối hộp hai tầng bằng nhau có tất cả 16 khối, sau khi khoét tầng trên còn 13 khối. Hỏi mỗi tầng vốn có mấy khối, và bị khoét mất mấy khối?\"",
+     "solutionNarrative": "hai tầng bằng nhau 16 khối → mỗi tầng 16 : 2 = 8 khối; khoét mất 16 − 13 = 3 khối."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Khối bị che khuất vẫn phải được đếm.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Nhìn thấy 7 khối nghĩa là hình có đúng 7 khối.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "mắt không xuyên bê tông!"
+   },
+   {
+    "id": "Q3",
+    "text": "Mỗi tầng 3 × 2, cao 2 tầng → tổng:",
+    "format": "mcq",
+    "choices": [
+     "A. 10",
+     "B. 12",
+     "C. 6"
+    ],
+    "answerKey": {
+     "choice": "B. 12"
+    },
+    "solutionNarrative": "Đáp án: B. 12"
+   },
+   {
+    "id": "Q4",
+    "text": "Hai tầng 3 × 2, tầng trên khoét 2 khối → còn:",
+    "format": "mcq",
+    "choices": [
+     "A. 10",
+     "B. 12",
+     "C. 8"
+    ],
+    "answerKey": {
+     "choice": "A. 10"
+    },
+    "solutionNarrative": "Đáp án: A. 10"
+   },
+   {
+    "id": "Q5",
+    "text": "Tháp 3 tầng 3×3, 2×2, 1×1 có:",
+    "format": "mcq",
+    "choices": [
+     "A. 12 khối",
+     "B. 14 khối",
+     "C. 15 khối"
+    ],
+    "answerKey": {
+     "choice": "B. 14 khối"
+    },
+    "solutionNarrative": "9 + 4 + 1 = 14 khối"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Bộ xếp khối (hoặc viên đường, hộp sữa nhỏ) là giáo cụ vàng: con XÂY theo đề rồi tháo từng tầng ra đếm đối chứng với bản đồ tầng — 3D thành 2D ngay trên mặt bàn.",
+  "homeActivity": "Kỹ năng \"cắt lớp theo tầng\" chính là tiền thân của thể tích lớp 5 — nhưng đừng nói chữ thể tích vội, cứ để là trò xây chung cư của Su Bống.",
+  "watchFor": "NÊN: mỗi bài đều yêu cầu vẽ bản đồ tầng dù con nhẩm được. KHÔNG NÊN: đưa hình khoét xuyên tầng hay hình chỉ nhìn được hai mặt — độ hiểm ấy hẹn lớp 4-5."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO31",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO31.png",
+   "caption": "Tòa hai tầng 3 × 2, tầng trên bị nhấc mất 2 khối",
+   "sha256_16": "aed8b0dfb5cc01ba",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L3H_LT19",
+   "usedIn": [
+    "item:C4"
+   ],
+   "file": "figures/L3H_LT19.png",
+   "caption": "Tòa hai tầng 3 × 2, tầng trên nhấc mất 2 khối — chưa có bản đồ tầng",
+   "sha256_16": "f3836415552bd267",
+   "mucGoc": "luyenTap"
+  },
+  {
+   "id": "L3H_LT20",
+   "usedIn": [
+    "item:C4:giai"
+   ],
+   "file": "figures/L3H_LT20.png",
+   "caption": "Bản đồ từng tầng: tầng dưới 6 khối, tầng trên 4 khối",
+   "sha256_16": "4a4271ad44d8abaf",
+   "mucGoc": "luyenTap"
+  }
+ ],
+ "hatMam": "Lớp 2, con đã đếm khối lập phương và thuộc bài học \"tòa nhà có móng\" — khối bị che vẫn phải đếm. Năm nay tòa nhà cao hơn, lại còn bị... khoét mất vài phòng. May thay, thám tử cao cấp có vũ khí mới: BẢN ĐỒ TẦNG!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B30"
+  ],
+  "ten": [
+   "ĐẾM KHỐI BỊ CHE"
+  ],
+  "canCu": "chuDe",
+  "nhan": "Học lại bài lớp 2"
+ }
+}

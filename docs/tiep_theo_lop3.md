@@ -17,14 +17,16 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 | 2c | ôn tập & ải | `tools/ontap_lop3.py` → `data/lop3_ontap.json` — **8 ôn tập · 3 ải · 114 câu · 84 câu đề B · mối nối đủ 84/84 câu, cả 8 ôn tập đều `canCu: sach`** |
 | 3 | dựng bài học | `tools/chuan_lop3.py` → `data/lop3/` — **34 bài · 477 câu · 100% có lời chữa · 170 câu chấm máy** |
 | 3b | vẽ & gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **74 hình · 17 nguyên mẫu · đủ 34/34 bài** |
-| — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`) |
+| 5 | khuôn chung + sổ đăng ký | `tools/dung_khuon_chung_lop3.py` → `web/public/content/lop3/` · `reviews/DCR_KSN3_C*` — **34 bài · 11 kỳ sát hạch · LỚP 3 ĐÃ HIỆN TRONG APP** |
+| — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`), nút đã nối tới `FinaleCard` |
 
-Phép kiểm: `web/test/lop3.test.mjs` (34 phép). Chạy `cd web && npm test`.
+Phép kiểm: `web/test/lop3.test.mjs` (50 phép). Chạy `cd web && npm test`.
 
 **Thứ tự chạy dây chuyền** — đảo là mất hình mà không có gì báo:
 
 ```
-rut_lop3.py → dapan_lop3.py → ontap_lop3.py → chuan_lop3.py → ve_hinh_lop3.py → gan_hinh_lop3.py
+rut_lop3.py → dapan_lop3.py → ontap_lop3.py → chuan_lop3.py → ve_hinh_lop3.py
+  → gan_hinh_lop3.py → dung_khuon_chung_lop3.py
 ```
 
 ---
@@ -64,7 +66,7 @@ bộ đếm kêu, chứ không đẻ ra câu hỏi ma.
 
 ---
 
-## VIỆC 2 — `tools/chuan_lop3.py` dựng dữ liệu bài học  ⚠ LÀM TIẾP TỪ ĐÂY
+## VIỆC 2 — `tools/chuan_lop3.py` dựng dữ liệu bài học  ✔ XONG
 
 **Xong**: `tools/chuan_lop3.py` → `data/lop3/` — 34 bài + `index.json`. 477 câu, **100%
 có lời chữa**, **170 câu chấm máy** (102 trắc nghiệm + 68 Đúng/Sai — cả 170 câu quiz
@@ -87,17 +89,19 @@ thứ hai, mà cả ba đều do SÁCH chỉ đích danh hai bài lớp 2 (bài 
 gộp đúng hai bài riêng biệt). Nên `ganLop2.ve` là **danh sách**. Dòng `canCu: 'khong'`
 có danh sách rỗng sẵn — chỗ hiện nút cứ theo danh sách rỗng mà ẩn, khỏi thêm luật.
 
-### Còn lại của việc 2 — nút chưa làm
+### Nút "Học lại bài lớp 2" — đã nối, đã kiểm bằng mắt
 
-`FinaleCard.jsx` (trang kết bài) và màn khi bé không đạt sát hạch. Làm được **sau**
-bước 5 (khuôn chung), vì trước đó lớp 3 chưa vào tới phòng học.
+`FinaleCard.jsx` hiện **Hạt mầm năm ngoái** và hộp đường lùi. Chưa đạt thì hộp ấy
+viền vàng nổi hẳn lên: đó là lối ra đỡ hụt hẫng nhất, về luyện lại gốc chứ không phải
+làm lại bài khó thêm một lượt. `onMoBai` đi xuyên `App → LessonPlayer → StepView →
+FinaleCard`.
 
 Nhớ mục 6 của chuẩn khi dựng màn mở: lời mở là MỘT CÂU nêu bài toán, lấy từ dòng
 `Đề bài` của mục ④, và câu dẫn chỉ giữ khi không chứa con số.
 
 ---
 
-## VIỆC 3 — Bước 3 · vẽ hình  ⚠ DÂY CHUYỀN XONG · CÒN PHẢI VẼ TIẾP
+## VIỆC 3 — Bước 3 · vẽ hình  ⚠ CÒN PHẢI VẼ TIẾP (việc lớn nhất còn lại)
 
 ### Đã xong — chạy được, có phép kiểm giữ
 
@@ -176,11 +180,60 @@ phải nhắc tới một VẬT THỂ nhìn được, nên còn 135 — đúng c
 
 ---
 
-## VIỆC 4 — bước 5 · qua khuôn chung, rồi khai sổ
+## VIỆC 4 — bước 5 · qua khuôn chung, khai sổ  ✔ XONG
 
-`tools/dung_khuon_chung.py` + `khuon_chung.py` đưa bài về khuôn lớp 5 để dùng chung
-phòng học. Bảng khớp mục ①…⑧ **y hệt lớp 2** (hằng `NOI_DUNG_HINH`). Xong bước này
-lớp 3 mới hiện trong app.
+`tools/dung_khuon_chung_lop3.py` → `web/public/content/lop3/` (34 bài) +
+`reviews/DCR_KSN3_C*.json` (11 kỳ sát hạch) + khai `lop3` vào sổ đăng ký.
+**Lớp 3 đã hiện trong app**, đã kiểm bằng mắt: kệ sách → trang chính → bài → màn mở
+có hình → ôn tập → màn kết → nút "Học lại bài lớp 2".
+
+Dùng CHUNG `khuon_chung.sang_khuon_chung` với lớp 2, không chép bản thứ hai. Hàm ấy
+tự đọc `quyen` từ bản gốc nên **không có tham số nào để gọi nhầm**.
+
+### `khuon_chung.py` — mẫu tên bước, chỗ suýt hỏng câm nhất cả quyển
+
+`R_BUOC` cũ biết bốn tên của lớp 2 (`Bước · Nhịp · Vũ khí · Chặng`). Sách lớp 3 dùng
+**mười hai**: thêm `Phép thử · Chiêu · Đường · Tuyệt kỹ · Kho báu · Thế trận ·
+Nhân vật · Câu hỏi`. Giữ mẫu cũ thì **7 bài không có nguyên tắc nào** (bài 7, 12, 16,
+19, 20, 24, 29) và **26 bước bốc hơi** — bài vẫn dựng ra, phòng học vẫn mở, chỉ là
+không dạy gì và không một dòng cảnh báo.
+
+Đã đối chiếu: thêm tám tên **không làm lệch một dòng nào của lớp 2**, và bản dựng
+lớp 2 sau khi sửa giống bản cũ **từng byte**.
+
+### Ba chỗ giao diện gõ cứng `'lop2'` — đã lái theo sổ đăng ký
+
+`content.js` vốn dặn "đừng rải điều kiện *nếu là lớp 2 thì…* ra khắp component", mà
+chính `App.jsx` lại làm thế. Thêm lớp 3 là ba chỗ hỏng cùng lúc:
+
+| chỗ | hỏng gì nếu không sửa |
+|---|---|
+| `App.jsx` so `chuongTrinh === 'lop2'` | bé lớp 3 rơi vào phòng học lớp 5: chữ nhỏ, dồn nhiều khối một màn |
+| `HomeLop2.jsx` gõ cứng `content/lop2/` và tên quyển | mở lớp 3 ra thấy đúng 33 bài của lớp 2 dưới cái tên lớp 2 |
+| `ExamPlayer.jsx` bảng `lop2 ? KSN2 : KSN5Q1` | mọi kỳ sát hạch lớp 3 nạp nhầm tệp của lớp 5 |
+
+Nay cả ba hỏi **cờ trong sổ**: `nhipDocCham()` (từ `doc.moiManMotMuc`), `thuMuc`,
+`maKy()` (suy từ `tienTo`). Thêm quyển thứ tư không phải sửa gì.
+
+### Hai lỗi câm nữa
+
+- **`onTap` vs `ontap`**: bản gốc lớp 3 ghi hoa chữ T, lớp 2 ghi thường, mà giao diện
+  lọc theo `'ontap'` → **cả 8 ôn tập lớp 3 biến mất khỏi màn hình**, dữ liệu vẫn đủ,
+  tệp vẫn đúng, chỉ là không ai thấy. Chuẩn hoá ở bộ dựng, và có phép kiểm so thẳng
+  bộ từ vựng hai quyển.
+- **`LessonPlayer` thiếu `key`**: bấm "Học lại bài lớp 2" từ màn kết bài lớp 3 thì
+  React giữ nguyên component cũ, số thứ tự màn KHÔNG reset → rơi thẳng vào màn kết
+  bài lớp 2 (24/24, điểm 0/0), coi như chưa học đã xong. `resumeAt` chỉ là giá trị
+  khởi tạo nên không cứu được. Nay có `key={view.baiId}` và đi lùi thì `fromStart`.
+
+### Đáp án ôn tập — bước 2c bổ sung
+
+Kỳ sát hạch cần đáp án, mà bản đầu của `ontap_lop3.py` ĐÓNG khối ngay khi gặp chữ
+`ĐÁP ÁN` nên tám bộ đáp án ôn tập rơi hết ra ngoài. Nay bóc đủ **114 đáp án đề chính
++ 84 đề B**. Ba dạng phải đọc mới biết:
+- ải đánh tiêu đề bằng tiền tố `Ả1`, không phải `★ ĐÁP ÁN ẢI`
+- ôn tập 6 đặt tên câu là "Vụ" nên đáp án ghi `V1:` chứ không phải `C1:`
+- ôn tập 3 chèn nhãn giữa mã và dấu hai chấm: `C10 — MẬT THƯ: (A) …`
 
 ---
 

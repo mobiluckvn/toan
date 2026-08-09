@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { CONTENT, dongDau } from '../lib/content.js';
+import { CONTENT, dongDau, maKy } from '../lib/content.js';
 import Figure from './Figure.jsx';
 
 /**
@@ -15,8 +15,10 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
   const [shown, setShown] = useState(false);
 
   useEffect(() => {
-    /* Hai chương trình cùng một màn sát hạch, chỉ khác tệp nội dung. */
-    const ma = chuongTrinh === 'lop2' ? 'KSN2' : 'KSN5Q1';
+    /* Mọi chương trình cùng một màn sát hạch, chỉ khác tệp nội dung. Tiền tố tệp
+       suy TỪ SỔ ĐĂNG KÝ, không gõ tay: bảng `lop2 ? KSN2 : KSN5Q1` chỉ đúng khi có
+       hai quyển, thêm lớp 3 là mọi kỳ sát hạch của nó nạp nhầm tệp của lớp 5. */
+    const ma = maKy(chuongTrinh);
     fetch(dongDau(`${CONTENT}/reviews/DCR_${ma}_C${chapter}.json`))
       .then((r) => r.json()).then(setDoc).catch(() => setDoc({ error: true }));
   }, [chapter, chuongTrinh]);
@@ -53,7 +55,7 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
                 <span className="rounded bg-alert px-1.5 py-0.5 text-[11px] font-extrabold text-white">câu {q.qno}</span>
                 <span className="flex-1">{q.trapName || 'ôn lại bài này'}</span>
                 <span className="font-mono text-[11.5px] text-mute">
-                  {(q.diagnosesMicro || '').replace(/^DL:(KSN5Q1|KSN2)\./, '')} ▶
+                  {(q.diagnosesMicro || '').replace(/^DL:[A-Z0-9]+\./, '')} ▶
                 </span>
               </button>
             ))}

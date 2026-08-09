@@ -1,32 +1,40 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { CONTENT, dongDau, ghiNhoChuong } from '../lib/content.js';
+import { CONTENT, dongDau, ghiNhoChuong, chuongTrinh as tra } from '../lib/content.js';
 import ChanTrang from './ChanTrang.jsx';
 import BangSuuTapSao from './BangSuuTapSao.jsx';
 import DongDanhSach from './DongDanhSach.jsx';
 
 /**
- * TRANG CHÍNH LỚP 2 — danh sách 33 bài theo 8 chương.
+ * TRANG CHÍNH CỦA QUYỂN ĐỌC CHẬM — lớp 2 (33 bài) và lớp 3 (34 bài), 8 chương.
  *
- * Bé lớp 2 chưa đọc nhanh, nên KHÔNG khoá bài: khoá rồi giải thích vì sao là thêm
- * chữ để đọc, mà bé chưa có nhu cầu "mở khoá". Thay vào đó đánh dấu bài đã học
- * bằng ngôi sao, và luôn chỉ rõ "bài tiếp theo của con".
+ * Bé chưa đọc nhanh, nên KHÔNG khoá bài: khoá rồi giải thích vì sao là thêm chữ để
+ * đọc, mà bé chưa có nhu cầu "mở khoá". Thay vào đó đánh dấu bài đã học bằng ngôi
+ * sao, và luôn chỉ rõ "bài tiếp theo của con".
+ *
+ * MỌI THỨ RIÊNG CỦA TỪNG QUYỂN đọc từ sổ đăng ký: thư mục nội dung, tên quyển, phụ
+ * đề. Bản đầu gõ cứng `content/lop2/` và tên "Toán Tư Duy lớp 2" ngay trong JSX, nên
+ * mở lớp 3 ra là thấy đúng 33 bài của lớp 2 dưới cái tên lớp 2 — sai mà vẫn chạy êm.
  */
-export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuHuynh, onMoOnTap }) {
+export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuHuynh,
+                                   onMoOnTap, chuongTrinh = 'lop2' }) {
   const [idx, setIdx] = useState(null);
   const [onTap, setOnTap] = useState([]);
   const [loi, setLoi] = useState(null);
 
+  const ct = tra(chuongTrinh);
+  const thuMuc = ct.thuMuc || 'lop2';
+
   useEffect(() => {
-    fetch(dongDau(`${CONTENT}/lop2/index.json`))
+    fetch(dongDau(`${CONTENT}/${thuMuc}/index.json`))
       .then((r) => r.json())
       /* Chương của bài lớp 2 nằm trong dữ liệu chứ không suy ra bằng công thức như
          lớp 5 — ghi nhớ ngay khi nạp để chapterOf/allMicroIds dùng chung được. */
       .then((ds) => { ghiNhoChuong(ds); setIdx(ds); })
       .catch((e) => setLoi(String(e?.message || e)));
     // 8 bài ôn tập + 3 ải — dùng chung màn sát hạch với lớp 5
-    fetch(dongDau(`${CONTENT}/lop2/ontap.json`))
+    fetch(dongDau(`${CONTENT}/${thuMuc}/ontap.json`))
       .then((r) => r.json()).then(setOnTap).catch(() => setOnTap([]));
-  }, []);
+  }, [thuMuc]);
 
   /* Dùng CHUNG sổ tiến độ với lớp 5 (progress.micros) thay vì sổ riêng
      progress.lop2 — một nguồn sự thật thì sổ phụ huynh và bảng cô giáo mới thấy
@@ -35,7 +43,7 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuH
   const xong = micros;
   const tiep = useMemo(() => idx?.find((b) => !micros[b.id]?.pass) || null, [idx, micros]);
 
-  if (loi) return <div className="p-6 text-alert">Không mở được chương trình lớp 2: {loi}</div>;
+  if (loi) return <div className="p-6 text-alert">Không mở được {ct.ten || 'chương trình'}: {loi}</div>;
   if (!idx) return <div className="p-6 text-mute">Đang mở bài học…</div>;
 
   const theoChuong = {};
@@ -51,10 +59,10 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuH
               MOBILUCK · KỸ SƯ NHÍ
             </div>
             <h1 className="mt-1 text-[21px] font-extrabold leading-snug text-teal-dark">
-              Toán Tư Duy lớp 2
+              {ct.ten}
             </h1>
             <p className="mt-0.5 text-[13.5px] font-bold text-teal-dark opacity-85">
-              Cùng Trí Long khám phá Vương quốc Số
+              {ct.phuDe}
             </p>
           </div>
           <div className="flex shrink-0 flex-col gap-1">
@@ -62,7 +70,7 @@ export default function HomeLop2({ progress, onMoBai, onDoiChuongTrinh, onSoPhuH
                     className="rounded-full bg-white/70 px-2.5 py-1 text-[11.5px] font-bold text-teal-dark">
               ← kệ sách
             </button>
-            {/* Lớp 2 nay dùng chung sổ học với lớp 5 — bố mẹ xem được con làm tới đâu */}
+            {/* Quyển đọc chậm dùng chung sổ học với lớp 5 — bố mẹ xem được con làm tới đâu */}
             <button onClick={onSoPhuHuynh}
                     className="rounded-full bg-white/70 px-2.5 py-1 text-[11.5px] font-bold text-teal-dark">
               sổ của con

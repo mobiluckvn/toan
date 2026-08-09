@@ -9,7 +9,7 @@ import TeacherBoard from './components/TeacherBoard.jsx';
 import {
   loadProgress, saveProgress, recordMicro, recordChapter, saveSpot, resumeSpot, setMode,
 } from './lib/progress.js';
-import { neighborIds, chuongTrinhCua, napSoDangKy, soDangKy } from './lib/content.js';
+import { neighborIds, napSoDangKy, soDangKy, nhipDocCham, baiDocCham } from './lib/content.js';
 import {
   submitSession, pushAttempts, syncPending, hasFirebase, watchAuth, myRole, myProfile, saveProfile, refreshMyReport,
   myReport, logout,
@@ -104,10 +104,10 @@ export default function App() {
     }).catch(() => {});                       // mất mạng: đã nằm trong hàng đợi, lần sau gửi
     const { next } = neighborIds(microId, lesson);
     if (!next || !grade.pass) { setView({ page: 'home' }); return; }
-    // Hai chương trình cùng LessonPlayer nhưng khác tên màn, nên phải hỏi bài thuộc
-    // chương trình nào — nếu không, học xong bài lớp 2 là nhảy sang bài lớp 5.
-    setView(chuongTrinhCua(next) === 'lop2'
-      ? { page: 'lop2bai', baiId: next }
+    // Hai nhịp đọc cùng LessonPlayer nhưng khác tên màn, nên phải hỏi bài thuộc
+    // quyển nào — nếu không, học xong bài lớp 2 là nhảy sang bài lớp 5.
+    setView(baiDocCham(next)
+      ? { page: 'baiDocCham', baiId: next }
       : { page: 'lesson', microId: next });
   }, [learnerId]);
 
@@ -207,8 +207,8 @@ export default function App() {
             }
           : null}
         onExit={() => setView({ page: 'home' })}
-        onOpenMicro={(id) => setView(chuongTrinhCua(id) === 'lop2'
-          ? { page: 'lop2bai', baiId: id } : { page: 'lesson', microId: id })}
+        onOpenMicro={(id) => setView(baiDocCham(id)
+          ? { page: 'baiDocCham', baiId: id } : { page: 'lesson', microId: id })}
       />
     );
 
@@ -218,8 +218,8 @@ export default function App() {
         chapter={view.chapter}
         chuongTrinh={chuongTrinh || 'lop5'}
         onExit={() => setView({ page: 'home' })}
-        onOpenMicro={(id) => setView(chuongTrinhCua(id) === 'lop2'
-          ? { page: 'lop2bai', baiId: id } : { page: 'lesson', microId: id })}
+        onOpenMicro={(id) => setView(baiDocCham(id)
+          ? { page: 'baiDocCham', baiId: id } : { page: 'lesson', microId: id })}
         onDone={(g) => { setProgress((p) => recordChapter(p, view.chapter, g)); setView({ page: 'home' }); }}
       />
     );
@@ -236,25 +236,43 @@ export default function App() {
       />
     );
 
-  /* ══ LỚP 2 ══
-     Cùng LessonPlayer với lớp 5 — dữ liệu lớp 2 đã đưa về chung một khuôn, nên bé
-     lớp 2 cũng có nhật ký học, nhớ chỗ học dở, sổ phụ huynh và bảng cô giáo. */
-  if (chuongTrinh === 'lop2') {
-    if (view.page === 'lop2bai')
+  /* ══ QUYỂN ĐỌC CHẬM (lớp 2, lớp 3) ══
+     Cùng LessonPlayer với lớp 5 — dữ liệu đã đưa về chung một khuôn, nên bé cũng có
+     nhật ký học, nhớ chỗ học dở, sổ phụ huynh và bảng cô giáo.
+
+     Hỏi CỜ trong sổ đăng ký chứ không so tên quyển: thêm lớp 3 mà vẫn so 'lop2' thì
+     bé lớp 3 rơi vào phòng học lớp 5 — chữ nhỏ, dồn nhiều khối một màn. */
+  if (nhipDocCham(chuongTrinh)) {
+    if (view.page === 'baiDocCham')
       return (
         <LessonPlayer
+          /* `key` BẮT BUỘC: đổi bài mà không đổi key thì React giữ nguyên component
+             cũ, nên số thứ tự màn ở trong nó KHÔNG reset — bấm "Học lại bài lớp 2"
+             từ màn kết bài lớp 3 là rơi thẳng vào màn kết bài lớp 2 (24/24, điểm
+             0/0), coi như chưa học đã xong. `resumeAt` chỉ là giá trị KHỞI TẠO nên
+             không cứu được. */
+          key={view.baiId}
           microId={view.baiId}
           resumeAt={view.fromStart ? 0 : (resumeSpot(progress, view.baiId)?.step || 0)}
           onMoveStep={(id, step, total) => setProgress((p) => saveSpot(p, id, step, total))}
           onEvents={(s) => pushAttempts({ learnerId, ...s }).catch(() => {})}
           onExit={() => setView({ page: 'home' })}
           onFinish={(grade, lesson, session) => finishMicro(view.baiId, grade, lesson, session)}
+          /* Đường LÙI về quyển dưới: bài lớp 3 mở thẳng bài lớp 2 cùng chủ đề. Đích
+             thuộc quyển khác nên phải hỏi lại nhịp đọc của CHÍNH nó — lớp 2 cũng đọc
+             chậm nên vẫn cùng phòng học, nhưng đừng ghim cứng điều đó ở đây. */
+          onMoBai={(id) => setView(baiDocCham(id)
+            /* fromStart: đây là đi LÙI để luyện lại gốc, nên vào từ đầu bài — thả
+               con vào giữa chỗ học dở của năm ngoái thì mất hẳn nghĩa "học lại". */
+            ? { page: 'baiDocCham', baiId: id, fromStart: true }
+            : { page: 'lesson', microId: id })}
         />
       );
     return (
       <HomeLop2
         progress={progress}
-        onMoBai={(id) => setView({ page: 'lop2bai', baiId: id })}
+        chuongTrinh={chuongTrinh}
+        onMoBai={(id) => setView({ page: 'baiDocCham', baiId: id })}
         onMoOnTap={(ch) => setView({ page: 'exam', chapter: ch })}
         onSoPhuHuynh={() => setView({ page: 'report' })}
         onDoiChuongTrinh={veKeSach}

@@ -1,0 +1,276 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN3.B15",
+ "grade": 3,
+ "quyen": "lop3",
+ "title": "Bài 15 · SỐ BÍ MẬT X PHIÊN BẢN 2.0",
+ "durationMinutes": 10,
+ "so": 15,
+ "chuong": 4,
+ "tenChuong": "Mật thất biểu thức",
+ "dangGoc": "SỐ 7.2 + LV 8.1 mức Lớp 3 — Két sắt hai máy: X × 4 + 5 = 29",
+ "skills": {
+  "bktUnit": "CHUONG:4@G3",
+  "primary": []
+ },
+ "series": {
+  "order": 15,
+  "prev": "DL:KSN3.B14",
+  "next": "DL:KSN3.B16"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tìm được X trong biểu thức HAI phép tính có nhân chia: X × 4 + 5 = 29. Trình bày chuẩn hai bước: cô lập cụm chứa X trước, rồi tìm X. Giữ nghi thức vàng: thử lại bằng cách thay X vào đề.",
+  "kidText": "Tìm được X trong biểu thức HAI phép tính có nhân chia: X × 4 + 5 = 29. Trình bày chuẩn hai bước: cô lập cụm chứa X trước, rồi tìm X. Giữ nghi thức vàng: thử lại bằng cách thay X vào đề.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — VẼ HÀNH TRÌNH: X chui qua máy × 4, rồi máy + 5, chạy ra 29. Hai máy gác — đi lùi phải qua máy VÀO SAU trước (ba lô trước, áo sau!)."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — ĐI LÙI: lùi qua máy + 5: lấy 29 − 5 = 24. Lùi tiếp qua máy × 4: lấy 24 : 4 = 6. X = 6!"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — TRÌNH BÀY NGƯỜI LỚN: viết thành hai nấc, mỗi nấc cô lập dần X: X × 4 + 5 = 29 → X × 4 = 29 − 5 = 24 → X = 24 : 4 = 6. Nhìn kỹ: dòng giữa chính là \"cụm X × 4 tạm coi là MỘT Ô TRỐNG TO\" — bài toán hai máy chỉ là hai bài một máy lồng nhau!"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — THỬ LẠI: thay X = 6 vào đề: 6 × 4 + 5 = 24 + 5 = 29 ✓ (nhớ luật làn ưu tiên khi thử!). Két sắt tách một tiếng ngọt lịm."
+   }
+  ],
+  "mantra": "Két hai máy: coi CỤM CHỨA X là một ô trống to → gỡ máy ngoài trước (đi lùi, đảo phép) → còn lại bài một máy quen thuộc → thử lại bằng cách thay X vào đề. Bốn nhịp, không bỏ nhịp nào!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với két X × 4 + 5 = 29, Trí Long lùi phăm phăm: \"Gỡ máy × 4 trước cho oách: 29 : 4 bằng... 7 dư 1?! Két này hỏng, X không nguyên!\"",
+    "signal": "Bé làm theo cách Su Kem vừa nói.",
+    "fix": "Gợi ý 1: X chui qua máy nào SAU CÙNG? Theo luật ba lô - áo, phải gỡ máy nào trước? Trí Long lại quên bài học nào của năm ngoái rồi? Gợi ý 2: Chính tiếng \"chia không hết\" là chuông tắc đường quen thuộc — nó không báo két hỏng, nó báo THỨ TỰ GỠ MÁY sai! Lùi lại cho đúng và mở két giúp hoa tiêu."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Tìm X, biết: X : 3 − 2 = 4."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "narration": "Với két X × 4 + 5 = 29, Trí Long lùi phăm phăm: \"Gỡ máy × 4 trước cho oách: 29 : 4 bằng... 7 dư 1?! Két này hỏng, X không nguyên!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tìm X, biết: X : 3 − 2 = 4.",
+  "steps": [
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "X : 3 − 2 = 4"
+   },
+   {
+    "show": "X : 3 = 4 + 2 = 6 (gỡ máy − 2: đảo thành + 2)"
+   },
+   {
+    "show": "X = 6 × 3 = 18 (gỡ máy : 3: đảo thành × 3)"
+   },
+   {
+    "show": "Thử lại: 18 : 3 − 2 = 6 − 2 = 4 ✓"
+   },
+   {
+    "show": "Đáp số: X = 18."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tìm X: X + 14 = 30; X − 8 = 17.",
+     "solutionNarrative": "X = 16; X = 25."
+    },
+    {
+     "id": "C2",
+     "text": "Tìm X: X × 3 = 27; X : 4 = 6.",
+     "solutionNarrative": "X = 9; X = 24."
+    },
+    {
+     "id": "C3",
+     "text": "Tìm X: 45 − X = 18. (X đứng sau dấu trừ — nghĩ xem 45 bớt đi bao nhiêu thì còn 18?)",
+     "solutionNarrative": "X = 45 − 18 = 27."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tìm X: X × 4 + 5 = 29 (trình bày đủ hai nấc + thử lại).",
+     "solutionNarrative": "X × 4 = 29 − 5 = 24 → X = 24 : 4 = 6 (thử: 6 × 4 + 5 = 29 ✓)."
+    },
+    {
+     "id": "C5",
+     "text": "Tìm X: X × 3 − 7 = 20.",
+     "solutionNarrative": "X × 3 = 27 → X = 9."
+    },
+    {
+     "id": "C6",
+     "text": "Tìm X: X : 2 + 9 = 14.",
+     "solutionNarrative": "X : 2 = 14 − 9 = 5 → X = 10."
+    },
+    {
+     "id": "C7",
+     "text": "Tìm X: X : 5 − 3 = 3.",
+     "solutionNarrative": "X : 5 = 6 → X = 30."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Két có lồng kính: (X − 3) × 2 = 14. (Cụm trong ngoặc là ô trống to — gỡ máy × 2 trước!)",
+     "solutionNarrative": "(X − 3) = 14 : 2 = 7 → X = 7 + 3 = 10 (thử: (10 − 3) × 2 = 14 ✓)."
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng cài két hiểm: 100 − X × 4 = 60. (Cẩn thận: cụm X × 4 là thứ bị ĐEM TRỪ — hỏi xem 100 trừ đi bao nhiêu thì còn 60, rồi mới mở tiếp!)",
+     "solutionNarrative": "100 trừ đi bao nhiêu còn 60? → X × 4 = 100 − 60 = 40 → X = 10 (thử: 100 − 10 × 4 = 100 − 40 = 60 ✓ — nhớ nhân trước khi trừ lúc thử!)."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Với X × 4 + 5 = 29, ta gỡ máy + 5 trước.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Tìm xong X thì nên thay X vào đề để thử lại.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q3",
+    "text": "X × 3 = 27 thì X = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 9",
+     "B. 24",
+     "C. 81"
+    ],
+    "answerKey": {
+     "choice": "A. 9"
+    },
+    "solutionNarrative": "Đáp án: A. 9"
+   },
+   {
+    "id": "Q4",
+    "text": "X × 4 + 5 = 29 thì X = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 7",
+     "B. 6",
+     "C. 96"
+    ],
+    "answerKey": {
+     "choice": "B. 6"
+    },
+    "solutionNarrative": "Đáp án: B. 6"
+   },
+   {
+    "id": "Q5",
+    "text": "X : 2 + 9 = 14 thì X = ?",
+    "format": "mcq",
+    "choices": [
+     "A. 10",
+     "B. 5",
+     "C. 46"
+    ],
+    "answerKey": {
+     "choice": "A. 10"
+    },
+    "solutionNarrative": "Đáp án: A. 10"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Trò \"nghĩ số qua hai máy\" nâng cấp từ năm ngoái: con nghĩ X, hô hai phép và kết quả — bố mẹ mở két; rồi đổi vai. Ai quên thử lại là thua dù đáp án đúng!",
+  "homeActivity": "Cách nói \"cụm X × 4 là một ô trống to\" chính là tư duy đại số sơ khai — hãy dùng đúng hình ảnh đó thay vì dạy \"chuyển vế đổi dấu\".",
+  "watchFor": "NÊN: mọi bài đều kết bằng phép thử thay vào đề. KHÔNG NÊN: dùng X ở cả hai vế hay hai chữ cái X, Y — cửa đó của lớp trên; lớp 3 một két một X là đủ ly kỳ."
+ },
+ "figureSpec": [
+  {
+   "id": "L3H_MO15",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L3H_MO15.png",
+   "caption": "X đi qua máy chia 3 rồi máy trừ 2, chạy ra 4",
+   "sha256_16": "f1136c1c731b2c81",
+   "mucGoc": "chuyenMoBai"
+  }
+ ],
+ "hatMam": "Lớp 2 con đã tìm số bí mật trong ô trống ▢ + 7 = 15 (Bài 14) và thuộc luật đi lùi \"ba lô trước, áo sau\" (Bài 22). Năm nay ô trống đổi tên thành X, và két sắt có tận HAI máy gác cửa!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN2.B14"
+  ],
+  "ten": [
+   "ĐI TÌM SỐ BÍ MẬT X"
+  ],
+  "canCu": "sach",
+  "nhan": "Học lại bài lớp 2"
+ }
+}
