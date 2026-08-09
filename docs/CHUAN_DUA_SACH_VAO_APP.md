@@ -83,7 +83,7 @@ lớp, mọi môn.
   "id": "C1", "text": "đề bài",
   "format": "tf" | "mcq" | undefined,
   "choices": ["A. 38", "B. 308"],        // chỉ với mcq
-  "answerKey": { … },                     // xem mục 6
+  "answerKey": { … },                     // xem mục 7
   "solutionNarrative": "lời giải mẫu để bé tự so"
 }
 ```
@@ -176,6 +176,26 @@ mô tả hình gần như không đổi theo lời văn.
 - Nguyên mẫu vẽ đúng **một hình cho mỗi mục khai báo**: nhãn ghi "4 khối" trên một mục
   nghĩa là một khối đang đeo biển "4 khối". `web/test/hinhdem.test.mjs` soi đúng chỗ này.
 
+### Hình cho BÀI TẬP — đề và lời giải là HAI hình
+
+Bài tập cần hình thì cần **hai** hình, không phải một:
+
+| chặng | `usedIn` | hiện khi nào | được chứa gì |
+|---|---|---|---|
+| đề | `item:C8` | ngay cùng câu hỏi | hình + số đo cho sẵn. **Không** đáp án |
+| lời giải | `item:C8:giai` | sau khi bé làm xong | chỉ ra TỪNG hình tìm được, hoặc trải phẳng từng tầng |
+
+Gộp làm một là lộ đáp án lúc bé chưa làm. Bỏ hình lời giải thì bài đếm hình chỉ còn
+một câu chữ — bé vẫn không biết mình **sót cái nào**.
+
+Trường `vaiTro: 'giai'` phải đi qua **đủ bốn chặng**, rơi ở chặng nào cũng im lặng:
+`data/<quyen>_hinh.json` → sổ tay hình → bước gắn hình → `khuon_chung.py`.
+Sổ tay ghi theo danh sách khoá CỐ ĐỊNH nên thêm trường mới là phải sửa cả chỗ ghi sổ.
+
+Chưa có nguyên mẫu vẽ được thứ đề bài mô tả thì **viết nguyên mẫu mới**, đừng ghi số đo
+thành một dòng chữ dưới hình: `"2 cm · 3 cm · 4 cm"` không cho bé biết số nào của cạnh
+nào, mà bài chu vi thì phải cộng đúng từng cạnh.
+
 **Neo hình** — theo thứ tự bước (`neoBuoc: 2`) hoặc mã câu (`neoCau: "C8"`).
 Không bao giờ neo theo nguyên văn dòng.
 
@@ -231,7 +251,68 @@ cần. Và **đừng viết luật xoá mã giữa câu** — xem bẫy 16.
 
 ---
 
-## 6 · Chuẩn đáp án — chấm máy đúng chỗ chấm được
+## 6 · Chuẩn màn mở bài — ngắn, nêu thẳng bài toán
+
+Màn mở là chỗ phình to nhanh nhất, mà phình theo kiểu rất khó thấy: **lời dẫn và hình
+nói cùng một nội dung**. Đo thật trước khi sửa:
+
+| | lời dẫn | chữ trên hình mở | tổng |
+|---|---|---|---|
+| lớp 5 (168 bài) | 208 chữ | 155 chữ (hình chép lại đúng hai câu ấy) | **363** |
+| lớp 2 (33 bài) | 297 chữ | — | **297** |
+
+Bé đọc hết ngần ấy vẫn **chưa biết bài hỏi gì**, vì đề bài không nằm ở đó.
+
+### Bốn luật
+
+**1 · Lời mở là MỘT CÂU NÊU BÀI TOÁN.** Không kể chuyện dài. Sau khi sửa: lớp 5 còn
+80 chữ, lớp 2 còn 113 chữ. Câu đề lấy từ trường đã soạn sẵn, đừng viết mới:
+
+| quyển | nguồn câu đề |
+|---|---|
+| có `knowledgeCore` | `canonicalExamples[0].problem` → `workedExample.problem` → `objective.kidText` |
+| lớp 2 (mục sách) | dòng mở đầu bằng `Đề bài` trong mục `viDuMau` |
+
+**2 · Lời và hình KHÔNG được nói cùng một nội dung.** Lời nêu đề, hình nêu **cái bẫy**.
+Hình lời thoại giữ **đúng MỘT bong bóng** — câu sai mà bé hay mắc. Câu gỡ chuyển sang
+phần giảng ở màn ngay sau; để ở màn mở là nói trước mất.
+
+**3 · BÀI HÌNH HỌC bắt buộc mở bằng HÌNH VẼ THẬT**, không phải bong bóng chữ. Và đó
+phải là **bản ĐỀ của chính hình giải** — cùng điểm, cùng số đo cho sẵn — để phần giải
+đi tiếp trên đúng hình ấy, bé nhìn một hình từ đầu đến cuối.
+
+Bản đề = bản giải **bỏ hết dấu vết đáp án**:
+
+```
+bỏ  formula · note · verdict · result
+bỏ  mọi nhãn có dấu '='   (nhãn kết quả: "S = 30 cm²")
+giữ nhãn số đo cho sẵn    ("đáy 12", "cao 5") — không có dấu '='
+bỏ  cả TIÊU ĐỀ hình
+```
+
+Bỏ tiêu đề vì lời dẫn ngay trên đã nêu đề, ô "Câu hỏi" ngay dưới đã nêu bẫy — ghi thêm
+lên hình là lặp lần thứ ba, đúng thứ cần tránh.
+
+**4 · Câu dẫn chỉ giữ khi KHÔNG chứa con số.** Chuyện mở bài hay kể một bộ số khác với
+bộ số của đề — *"ba tấm thẻ 2, 5, 8"* rồi đề lại cho *4, 0, 9*. Ghép vào nhau thành hai
+đề đá nhau ngay dòng đầu tiên bé đọc.
+
+### Sửa ở BỘ DỰNG, không sửa tệp đã dựng
+
+Quyển nào dựng qua `tools/khuon_chung.py` thì sửa ở đó. Sửa thẳng `web/public/content/`
+là lần chạy dây chuyền sau ghi đè sạch — mà chẳng có gì báo.
+
+| việc | công cụ |
+|---|---|
+| lớp 5 (tệp bài học rời) | `tools/mo_bai_lop5.py` |
+| lớp 2 (dựng từ mục sách) | `tools/khuon_chung.py`, hàm dựng `screens` |
+
+Nhãn của màn là **"BÀI TOÁN"** (`StepView.jsx`, nhánh `hook`), không phải "TÌNH HUỐNG"
+— bé đọc nhãn là biết phải làm gì.
+
+---
+
+## 7 · Chuẩn đáp án — chấm máy đúng chỗ chấm được
 
 ### Các dạng khoá (bộ chấm `web/src/lib/flow.js` hiểu sẵn)
 
@@ -275,7 +356,7 @@ sách**. Chốt này bắt được lỗi thật (sách viết *"một phần t�
 
 ---
 
-## 7 · Cổng nghiệm thu — phải có những phép kiểm nào
+## 8 · Cổng nghiệm thu — phải có những phép kiểm nào
 
 Mỗi quyển một tệp `web/test/<quyen>.test.mjs`. **Soi loại lỗi HỎNG MÀ KHÔNG BÁO** —
 lỗi làm app vỡ thì tự thấy, không cần kiểm.
@@ -292,14 +373,21 @@ lỗi làm app vỡ thì tự thấy, không cần kiểm.
 - [ ] ô bấm chọn: **đáp án nằm trong danh sách phương án**
 - [ ] Bảng tự soi trỏ vào bài **có thật**
 - [ ] tiền tố mã bài không trùng / không là tiền tố của nhau
+- [ ] **màn mở**: lời dẫn ≤ ~150 chữ và KHÔNG trùng chữ với hình mở
+- [ ] **bài hình học** đều có hình vẽ ở màn mở, và hình ấy KHÔNG chứa đáp án
+- [ ] **bài tập cần hình** có đủ cặp `item:CX` + `item:CX:giai`
+- [ ] hình đếm **đếm được**: không nhãn nào ghi "N cái" mà chỉ vẽ một
+- [ ] không ký hiệu vượt cấp · không mã nội bộ · không ví von (mục 5)
 
 **Chạy cổng đúng cách:**
 
 ```bash
 cd web && npm test
 ```
-Các tệp nối bằng `&&` — một tệp vỡ là **dừng cả chuỗi** mà tổng PASS trông vẫn đẹp.
-Luôn soi **mã thoát** và **số tệp chạy xong**.
+`package.json` quét cả thư mục `test/` nên tệp kiểm mới tự được chạy — đừng quay lại
+kiểu gõ tay từng tệp nối bằng `&&`: quên đăng ký một tệp là nó nằm im, mà tổng PASS
+trông vẫn đẹp. Dù vậy vẫn luôn soi **mã thoát** VÀ **số tệp chạy xong**: một tệp lỗi cú
+pháp thì nó không nạp được, tổng phép kiểm tụt hàng trăm mà chỉ hiện đúng một dòng ✗.
 
 **Đừng để phép kiểm sai.** Tôi viết hai phép kiểm "nhãn có lộ đáp án không", cả hai
 báo động giả (6 chỗ và 8 chỗ) rồi phải bỏ. Việc ấy phải soát bằng mắt. **Một phép
@@ -307,7 +395,7 @@ kiểm sai tệ hơn không có** — nó cho cảm giác an toàn giả.
 
 ---
 
-## 8 · Ba mươi mốt cái bẫy đã dính
+## 9 · Bốn mươi cái bẫy đã dính
 
 Mỗi cái đều thuộc loại **hỏng mà không có gì báo**.
 
@@ -385,9 +473,32 @@ Mỗi cái đều thuộc loại **hỏng mà không có gì báo**.
 31. **`git checkout` để xoá lỗi gieo thử** cuốn theo cả phần sửa CHƯA COMMIT trong cùng
     tệp. Sao lưu trước khi gieo, hoặc commit xong mới thử.
 
+### Màn mở bài
+
+32. **Câu dẫn và đề bài kể HAI BỘ SỐ khác nhau** → hai đề đá nhau ngay dòng đầu.
+33. **Luật lọc so `len(giữ) != len(gốc)`** — 16 bài có CẢ HAI lời cùng loại nên hai vế
+    bằng nhau, luật không chạy mà bảng tổng kết vẫn báo đã sửa. So theo SỐ CÒN LẠI.
+34. **Lời thoại bỏ lửng "…" hợp lệ nhờ đối chiếu với lời dẫn** → đổi lời dẫn là mất chỗ
+    dựa, phép kiểm đỏ oan. Viết lại thành khẳng định trọn vẹn thì vừa đúng vừa hết lệ thuộc.
+35. **Gỡ 'hook' khỏi hình cũ TRƯỚC khi dựng hình mới** → có lúc bài không còn hình mở
+    nào, mà công cụ lại đòi phải có sẵn hình mở mới chịu chạy nên bỏ qua luôn cả bài.
+
+### Mã nguồn (tiếp)
+
+36. **Bản vá chú thích nuốt mất dấu đóng `*/`** → 5 tệp kiểm KHÔNG NẠP ĐƯỢC. Tổng phép
+    kiểm tụt từ 647 xuống 432 mà chỉ hiện đúng một dòng ✗. Đếm SỐ TỆP thực chạy mới thấy.
+37. **Chốt đặt nhầm hàm** vì hai hàm dùng tên biến khác nhau (`loai` với `p.get('loai')`)
+    — bản vá "áp dụng thành công" mà chốt nằm ở chỗ không bao giờ chạy tới.
+38. **Bố cục tính bề ngang theo SỐ MỤC** → 8 mục thì mỗi mục còn 11 đơn vị, hình vuông
+    bị ép thành cột dọc và nhãn chồng lên nhau. Xuống hàng, và lấy cạnh theo cả hai chiều.
+39. **Callback dùng state khai SAU nó** → mảng phụ thuộc chạy ngay lúc render nên là
+    ReferenceError, không phải `undefined`. Đặt hàm ngay sau chỗ khai.
+40. **Đơn vị đếm mặc định "bài"** → kệ sách ghi "26 bài" cho mùa giải, thứ không có bài
+    nào. Khai `donVi` ở sổ đăng ký.
+
 ---
 
-## 9 · Quy trình khi thêm một quyển mới
+## 10 · Quy trình khi thêm một quyển mới
 
 ### Bước 0 · Khảo sát trước khi gõ dòng nào
 
@@ -431,6 +542,18 @@ so** → sửa → vẽ cả nhóm.
 Đừng vẽ hết rồi mới xem. Bốn lỗi trình bày của nhóm đầu tiên (dòng chốt rơi tận đáy,
 nhãn đè ô, hàng cách quá xa, cỡ chữ lẫn lộn) nếu phát hiện muộn thì phải sửa cả 120 hình.
 
+**Ba loại hình, đừng bỏ sót loại nào** (lượt lớp 2 đầu tiên chỉ vẽ loại thứ nhất, phải
+quay lại làm hai loại kia):
+
+1. **hình giảng** — neo theo bước (`neoBuoc`)
+2. **hình màn mở** — bài hình học bắt buộc có; là bản ĐỀ, bỏ hết đáp án (mục 6)
+3. **hình bài tập** — cặp `item:CX` + `item:CX:giai` cho mọi câu mà đề MÔ TẢ một hình
+   ("vẽ hình vuông rồi kẻ đường chéo", "tầng dưới 2 hàng × 2 khối")
+
+Dò loại 3 bằng máy: quét lời câu hỏi tìm từ chỉ hình (`vẽ`, `hình vuông`, `khối`,
+`đếm hình`, `cạnh`…) rồi đối chiếu với `usedIn` đã có. Lượt lớp 2 quét ra **46 câu nói
+tới hình mà 0 câu có hình**.
+
 ### Bước 4 · Đáp án
 
 Viết luật hẹp → **in ra soát tay TỪNG CÂU** → cái nào sai thì bỏ luật, viết tay.
@@ -438,10 +561,19 @@ Viết luật hẹp → **in ra soát tay TỪNG CÂU** → cái nào sai thì b
 
 ### Bước 5 · Cổng nghiệm thu
 
-Viết theo danh sách mục 7. Mỗi lần bắt được lỗi thật thì **thêm một phép kiểm cho
+Viết theo danh sách mục 8. Mỗi lần bắt được lỗi thật thì **thêm một phép kiểm cho
 lỗi ấy**.
 
 ### Bước 6 · Khai vào sổ đăng ký
+
+Ngoài `ma · mon · lop · ten · tienTo · thuMuc · soBai`, để ý hai trường hay quên:
+
+- **`loai`** — `'hoc'` là chuỗi bài học tuần tự (mở màn Home của lớp); `'giai'` là mùa
+  giải, App mở thẳng bảng đấu chứ không đi qua Home.
+- **`donVi`** — đơn vị đếm hiện trên kệ sách, mặc định `'bài'`. Mùa giải đếm bằng vòng
+  đấu nên phải khai riêng.
+
+Khai đủ thì **kệ sách tự hiện, không phải sửa giao diện** — đó là điều sổ đăng ký sinh ra để làm.
 
 `data/chuong_trinh.json` — thêm một mục là kệ sách tự hiện, **không sửa giao diện**:
 
@@ -475,13 +607,20 @@ curl -s https://ky-su-nhi.web.app/content/figures/<HINH>.png | shasum -a 256 | c
 
 ---
 
-## 10 · Ước lượng công sức — số liệu thật của lớp 2
+## 11 · Ước lượng công sức — số liệu thật của lớp 2
+
+Con số đáng nhớ nhất: **45 trên 120 hình là làm ở lượt thứ hai**. Lượt đầu vẽ đủ hình
+cho phần giảng rồi tưởng xong, mãi tới khi có người đọc kỹ mới lộ ra màn mở không có
+hình và 46 câu bài tập nói tới hình mà không câu nào có hình. Quyển lớp 3 nên tính cả
+ba loại hình ngay từ Bước 1 (mục 10) thay vì trả giá hai lượt.
 
 | Việc | Khối lượng |
 |---|---|
 | Khảo sát + phân loại hình | 75 hình → 15 nhóm |
 | Dây chuyền bóc tách | 7 bước, ~900 dòng Python |
-| Vẽ hình | 120 hình · 22 nguyên mẫu · ~800 dòng |
+| Vẽ hình giảng | 75 hình · 17 nguyên mẫu · ~800 dòng |
+| Vẽ hình màn mở + hình bài tập | +45 hình · +5 nguyên mẫu — làm ở lượt SAU, vì lượt đầu chỉ nghĩ tới hình giảng |
+| **Tổng hình** | **tổng 120 hình · 22 nguyên mẫu** |
 | Đáp án | 88 suy máy + 154 viết tay |
 | Cổng nghiệm thu | 68 phép kiểm riêng cho quyển |
 
@@ -490,7 +629,7 @@ Phần **tốn công nhất** là hình (17 nguyên mẫu) và đáp án viết 
 
 ---
 
-## 11 · Tài liệu để lại cho mỗi quyển
+## 12 · Tài liệu để lại cho mỗi quyển
 
 | Tệp | Nội dung |
 |---|---|
