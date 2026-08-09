@@ -18,7 +18,15 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 | 3 | dựng bài học | `tools/chuan_lop3.py` → `data/lop3/` — **34 bài · 477 câu · 100% có lời chữa · 170 câu chấm máy** |
 | — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`) |
 
-Phép kiểm: `web/test/lop3.test.mjs` (25 phép). Chạy `cd web && npm test`.
+| 3b | nguyên mẫu + bộ vẽ + bộ gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **19 hình · 7 nguyên mẫu mới** |
+
+Phép kiểm: `web/test/lop3.test.mjs` (31 phép). Chạy `cd web && npm test`.
+
+**Thứ tự chạy dây chuyền** — đảo là mất hình mà không có gì báo:
+
+```
+rut_lop3.py → dapan_lop3.py → ontap_lop3.py → chuan_lop3.py → ve_hinh_lop3.py → gan_hinh_lop3.py
+```
 
 ---
 
@@ -90,16 +98,66 @@ Nhớ mục 6 của chuẩn khi dựng màn mở: lời mở là MỘT CÂU nêu
 
 ---
 
-## VIỆC 3 — Bước 3 · vẽ hình (phần nặng nhất)
+## VIỆC 3 — Bước 3 · vẽ hình  ⚠ DÂY CHUYỀN XONG · CÒN PHẢI VẼ TIẾP
 
-Xem `docs/phan_loai_hinh_lop3.md`. Con số đáng nhớ: sách cho **46 hình toán** nhưng
-gần hết nằm ở màn mở; **mục giảng chỉ 6 hình cho 34 bài**, bài tập KHÔNG có hình nào.
-Việc vẽ nhiều hơn lớp 2 chứ không ít, dù ảnh gốc ít hơn (bẫy 43).
+### Đã xong — chạy được, có phép kiểm giữ
 
-- 13 nhóm nguyên mẫu; **9 nhóm dùng lại được** nguyên mẫu lớp 2 đã có
-- phải dựng mới ~5: Ven hai vòng · lịch tháng · cân & ống đong · tiền Việt · biểu thức có ngoặc
+| việc | kết quả |
+|---|---|
+| đếm khối lượng trước khi vẽ | `tools/khao_sat_hinh_lop3.py` |
+| **7 nguyên mẫu** | `figforge/arch_l3.py` — nhập lại 22 nguyên mẫu lớp 2, viết mới 7 |
+| bộ vẽ | `tools/ve_hinh_lop3.py` → `web/public/content/figures/` + sổ tay |
+| bộ gắn | `tools/gan_hinh_lop3.py` — chạy **sau** `chuan_lop3.py`, là bước CUỐI |
+| hình đã vẽ | **19 hình · 8 bài** (`data/lop3_hinh.json`) |
+
+Bảy nguyên mẫu mới: `hinh_tron` · `luoi_dien_tich` · `ven_hai_vong` · `lich_thang` ·
+`can_ong_dong` · `tien_viet` · `bieu_thuc_ngoac`. Bước 1 đoán "khoảng 5" — hoá ra 7,
+vì hình tròn và lưới diện tích không nguyên mẫu lớp 2 nào đỡ được.
+
+`arch_l3.py` **nhập** nguyên mẫu lớp 2 chứ không chép: sửa một nguyên mẫu lớp 2 thì
+hình lớp 3 được sửa theo. Bản chép tay không làm được thế.
+
+### Khối lượng còn lại — máy đếm ra, đừng đoán
+
+Chạy `python3 tools/khao_sat_hinh_lop3.py --chi-tiet`:
+
+| loại | cần | đã vẽ |
+|---|---|---|
+| ① hình giảng (neo theo bước) | 105 bước ở 34 bài | 11 |
+| ② hình màn mở (bản ĐỀ, bỏ hết đáp án) | 34 bài | 0 |
+| ③ hình bài tập (`item:CX` + `:giai`) | 14 câu chắc + 135 câu cần soát tay | 8 |
+
+Lưới quét lượt đầu của tôi ra 306/477 câu "có thể cần" — đó là nhiễu chứ không phải
+sàng lọc, và một danh sách 306 dòng thì không ai soát tay nổi. Bản hiện tại đòi câu
+phải nhắc tới một VẬT THỂ nhìn được, nên còn 135 — đúng cỡ soát được.
+
+### Bốn lỗi trình bày đã bắt ở nhóm đầu (chuẩn dặn phải bắt sớm, không thì sửa cả trăm hình)
+
+1. **Tên hình thu nhỏ mãi vẫn tràn** → dùng `txt_wrap` ngắt dòng, đừng dùng `txt_fit`
+2. **Nhãn đè lên nét vẽ** → mọi nhãn của `hinh_tron` đặt NGOÀI mép
+3. **Ô 1 cm² vẽ hai cỡ trong cùng một bức** → cạnh ô tính MỘT LẦN cho cả hình.
+   Đây là bẫy 26 tái xuất, và nó nguy vì cả bài đang dạy SO hai diện tích
+4. **Hình "RÀO" vẽ y hệt hình "THẢM"**, chỉ khác cái tên bên dưới → hình phản lại
+   chính bài. Nay `do: 'rao'` bỏ ô lòng, chỉ còn viền dày kèm vạch chia từng cm
+
+### Hai lỗi DỮ LIỆU, không phải lỗi mã — cả hai đều câm
+
+- **Lịch tháng nói dối**: tôi nhập `batDau` sai nên 6·13·20·27 rơi cột thứ Hai trong
+  khi nhãn cột và lời chú đều nói Chủ nhật. Sách nói ngày 6 là **Chủ nhật**. Hình vẽ
+  đẹp, dữ liệu hợp lệ, chỉ có sự thật là sai. Nay có phép kiểm soi đúng chỗ này.
+- **Sách lớp 3 đặt tên bước MƯỜI KIỂU**, lớp 2 chỉ có bốn. Bài 29 đặt cả ba bước
+  giảng là "Nhân vật 1/2/3", bài 23 dùng "Nhịp", bài 26 dùng "Phép thử". Mẫu lớp 2
+  bỏ sót 26 bước, mà bỏ sót thì im lặng: bài vẫn dựng, chỉ là chặng giảng trống trơn.
+  `gan_hinh_lop3.py` liệt kê đủ 12 tên VÀ canh — bài nào không nhận ra bước nào thì kêu.
+  ⚠ **`khuon_chung.py` vẫn dùng `R_BUOC` bốn tên** — phải sửa ở VIỆC 4, không thì
+  `statements` và `lecture.screens` của mấy bài ấy rỗng.
+
+### Còn lại
+
 - `image3.png` (nhiệt kế, dùng 34 lần) làm **component**, không phải PNG
-- vẽ **cả ba loại hình ngay từ đầu** — giảng · màn mở · bài tập (`item:CX` + `:giai`)
+- thẻ "Luật chơi" của 8 ôn tập cũng là khung chữ → làm giao diện
+- vẽ **cả ba loại hình**, đừng vẽ xong loại ① rồi tưởng xong (lớp 2 trả giá hai lượt:
+  45 trên 120 hình là làm ở lượt thứ hai)
 
 ---
 

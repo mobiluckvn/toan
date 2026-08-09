@@ -12,6 +12,7 @@
  * và căn cứ phải là một trong ba giá trị đã khai.
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
 import { join } from 'node:path';
 
 const G = new URL('../../', import.meta.url).pathname;
@@ -239,6 +240,86 @@ if (existsSync(BAI)) {
   const cham = bai.reduce((a, b) => a + b.cau.filter((c) => c.answerKey).length, 0);
   console.log(`   ${bai.length} bài · ${bai.reduce((a, b) => a + b.cau.length, 0)} câu`
     + ` · chấm máy ${cham} · có đường lùi ${bai.filter((b) => b.ganLop2?.ve?.length).length}`);
+}
+
+/* ── hình vẽ: bản mô tả, ảnh thật và sổ tay phải nói CÙNG một chuyện ──
+   Kiểu hỏng đắt nhất ở đây không làm gì vỡ: sửa `params` mà quên vẽ lại thì dữ
+   liệu nói một đằng ảnh hiện một nẻo, và cả hai đều hợp lệ (bẫy 20). Nên phép
+   kiểm phải so bằng mã băm, không so bằng "có tệp hay không". */
+const MOTA = join(G, 'data/lop3_hinh.json');
+const SOTAY = join(G, 'data/lop3_hinh_manifest.json');
+if (existsSync(MOTA) && existsSync(SOTAY)) {
+  const mota = JSON.parse(readFileSync(MOTA, 'utf8'));
+  const sotay = JSON.parse(readFileSync(SOTAY, 'utf8'));
+  const FIG = join(G, 'web/public/content/figures');
+
+  const thieu = mota.filter((m) => !sotay[m.id]).map((m) => m.id);
+  t(`mọi hình đã mô tả đều có trong sổ tay (${mota.length})`, thieu.length === 0);
+  in5(thieu);
+
+  const lechSha = [];
+  for (const [id, h] of Object.entries(sotay)) {
+    const png = join(FIG, id + '.png');
+    if (!existsSync(png)) { lechSha.push(`${id}: thiếu ảnh`); continue; }
+    const sha = createHash('sha256').update(readFileSync(png)).digest('hex').slice(0, 16);
+    if (sha !== h.sha256_16) lechSha.push(`${id}: ảnh lệch sổ tay — vẽ lại`);
+  }
+  t('ảnh thật khớp mã băm ghi trong sổ tay', lechSha.length === 0);
+  in5(lechSha);
+
+  /* Tiêu đề quá dài biến thành đoạn văn đè kín đầu hình — 122 hình lớp 5 từng
+     dính, mà phần hình bên dưới vẫn vẽ đẹp nên nhìn lướt không thấy sai. */
+  const daiQua = mota.filter((m) => (m.params?.title || '').length > 120
+    || (m.params?.note || '').length > 120).map((m) => m.id);
+  t('tiêu đề và dòng chốt đều dưới 120 chữ', daiQua.length === 0);
+  in5(daiQua);
+
+  /* Câu nào có hình ĐỀ thì BẮT BUỘC có hình lời giải. Bỏ hình lời giải thì bé
+     làm xong vẫn không biết mình sót cái nào.
+
+     Chiều ngược lại KHÔNG phải lỗi: câu "vẽ hai hình tròn cùng tâm O" chỉ có hình
+     giải, vì vẽ sẵn ra là làm hộ bé đúng cái việc đề bảo bé làm. Luật đầu tôi viết
+     đòi đủ cặp cả hai chiều nên đỏ oan đúng câu ấy — đề đã tả trọn bằng lời thì
+     không cần hình đề. */
+  const theoCau = {};
+  for (const m of mota) {
+    if (!m.neoCau) continue;
+    const k = `${m.bai}#${m.neoCau}`;
+    (theoCau[k] ||= []).push(m.vaiTro === 'giai' ? 'giai' : 'de');
+  }
+  const leCap = Object.entries(theoCau)
+    .filter(([, v]) => v.includes('de') && !v.includes('giai'))
+    .map(([k]) => `${k}: có hình đề mà không có hình lời giải`);
+  t('câu nào có hình đề thì cũng có hình lời giải', leCap.length === 0);
+  in5(leCap);
+
+  /* Bản ĐỀ không được chứa đáp án. Với hình lưới diện tích, `hienTich` in sẵn
+     "6 × 4 = 24 cm²" — để bật ở bản đề là bé khỏi phải đếm ô nào. */
+  const loDap = mota.filter((m) => m.neoCau && m.vaiTro !== 'giai')
+    .filter((m) => (m.params?.hinh || []).some((h) => h.hienTich))
+    .map((m) => m.id);
+  t('hình ĐỀ không in sẵn đáp án', loDap.length === 0);
+  in5(loDap);
+
+  /* Lịch tháng tự mâu thuẫn: cột được tô phải đúng là thứ của các ngày làm nổi.
+     Bản đầu tôi nhập batDau sai nên 6·13·20·27 rơi cột thứ Hai trong khi nhãn
+     cột và lời chú đều nói Chủ nhật — hình vẽ đẹp mà dạy sai một sự thật. */
+  const THU = ['Hai', 'Ba', 'Tư', 'Năm', 'Sáu', 'Bảy', 'CN'];
+  const lechLich = [];
+  for (const m of mota.filter((x) => x.arch === 'lich_thang')) {
+    const { batDau = 0, cot, toDam = [] } = m.params || {};
+    if (cot === undefined) continue;
+    for (const ngay of toDam) {
+      const c = (batDau + ngay - 1) % 7;
+      if (c !== cot) lechLich.push(`${m.id}: ngày ${ngay} là ${THU[c]}, không phải ${THU[cot]}`);
+    }
+  }
+  t('lịch tháng: ngày làm nổi đúng cột đã tô', lechLich.length === 0);
+  in5(lechLich);
+
+  const capBaiTap = Object.keys(theoCau).length;
+  console.log(`   ${mota.length} hình · ${new Set(mota.map((m) => m.arch)).size} nguyên mẫu`
+    + ` · ${new Set(mota.map((m) => m.bai)).size} bài · ${capBaiTap} câu có hình đề+giải`);
 }
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);
