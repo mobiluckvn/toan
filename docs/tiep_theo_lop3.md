@@ -21,11 +21,11 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 | 2c | ôn tập & ải | `tools/ontap_lop3.py` → `data/lop3_ontap.json` — **8 ôn tập · 3 ải · 114 câu · 84 câu đề B · mối nối đủ 84/84 câu, cả 8 ôn tập đều `canCu: sach`** |
 | 3 | dựng bài học | `tools/chuan_lop3.py` → `data/lop3/` — **34 bài · 477 câu · 100% có lời chữa · 170 câu chấm máy** |
 | 3b | vẽ & gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **122 hình · 21 nguyên mẫu · đủ 34/34 bài, đã soát hết ba loại** |
-| 4 | ô nhập chấm máy | `tools/tach_cau_lop3.py` + `data/lop3_dapan_tay.json` → `data/lop3_dapan_o.json` — **270/307 câu luyện tập chấm máy (87%) · 423 ô nhập** |
+| 4 | ô nhập chấm máy | `tools/tach_cau_lop3.py` + `data/lop3_dapan_tay.json` → `data/lop3_dapan_o.json` — **298/307 câu luyện tập chấm máy (97%) · 468 ô nhập · 0 ô gõ chữ** |
 | 5 | khuôn chung + sổ đăng ký | `tools/dung_khuon_chung_lop3.py` → `web/public/content/lop3/` · `reviews/DCR_KSN3_C*` — **34 bài · 11 kỳ sát hạch · LỚP 3 ĐÃ HIỆN TRONG APP** |
 | — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`), nút đã nối tới `FinaleCard` |
 
-Phép kiểm: `web/test/lop3.test.mjs` (56 phép). Chạy `cd web && npm test`.
+Phép kiểm: `web/test/lop3.test.mjs` (57 phép). Chạy `cd web && npm test`.
 
 **Thứ tự chạy dây chuyền** — đảo là mất hình mà không có gì báo:
 
@@ -287,10 +287,29 @@ giáo trống, tức là KHÔNG đánh giá được việc học.
 | | |
 |---|---|
 | suy máy (5 luật hẹp, đã soát tay từng câu) | 88 / 307 |
-| viết tay (`data/lop3_dapan_tay.json`) | 182 / 307 |
-| **chấm máy được** | **270 / 307 (87%) · 423 ô nhập** |
-| CỐ Ý để tự chấm, đã khai lý do từng câu | 37 |
+| viết tay (`data/lop3_dapan_tay.json`) | 210 / 307 |
+| **chấm máy được** | **298 / 307 (97%) · 468 ô nhập** |
+| CỐ Ý để tự chấm, đã khai lý do từng câu | 9 |
 | chưa xét | **0** |
+
+### Không ô nào bắt bé GÕ CHỮ
+
+| loại ô | số ô |
+|---|---|
+| điền số | 406 |
+| điền biểu thức (`2 000 + 400 + 30 + 5`) | 6 |
+| **bấm chọn** (nút) | **56** |
+| **gõ chữ** | **0** |
+
+Bé lớp 3 gõ chậm và sai chính tả một chữ là mất điểm oan, mà bài thì đang kiểm TOÁN
+chứ không kiểm kỹ năng gõ. Nên mọi đáp án là CHỮ đều thành nút bấm: chia có dư
+(`3 dư 1`) · tên bốn thành phần phép chia · đọc giờ · giờ "kém" · thứ trong tuần ·
+chẵn/lẻ · thuộc/không · hợp lệ/phạm luật · đơn vị đo.
+
+Mồi nhử của ô chia có dư dựng theo đúng ba lỗi sách nêu — sai thương, sai số dư, và
+số dư ≥ số chia — và mỗi mồi được kiểm bằng chính phép chia để chắc chắn nó SAI.
+
+Phép kiểm `không ô nào bắt bé gõ chữ` canh chỗ này.
 
 Dạng khoá đã dùng: `parts` (nhiều ô có nhãn) · `value` (một số) · `values` (dãy số,
 giữ thứ tự) · `divmod` cho chia có dư (`"3 dư 1"` — giữ CẢ thương LẪN số dư, vì đề
@@ -315,10 +334,14 @@ phân nghìn kiểu Việt, không mang nghĩa. Đã nới trong `web/src/lib/fl
 `boPhanNghin`), chỉ bỏ khi khoảng trắng kẹp GIỮA hai chữ số nên không gộp nhầm hai
 số. Nới này **có lợi cho cả lớp 2 và lớp 5**.
 
-### 37 câu tự chấm — CỐ Ý, đã khai lý do
+### 9 câu tự chấm — CỐ Ý, đã khai lý do
 
-Không còn câu nào "chưa xét". Bốn nhóm:
-- **đề mở · hỏi vì sao · việc làm bằng tay** (33) — chuẩn mục 7 luật 6
+Không còn câu nào "chưa xét". Phần lớn câu "vì sao" hoá ra vẫn đo được: đề hỏi MỘT
+con số kèm MỘT lời giải thích, nên tách con số ra thành ô là đo được ngay, còn lời
+giải thích để bé đối chiếu với `solutionNarrative`. 28 câu chuyển được nhờ cách ấy.
+
+Bốn nhóm còn giữ tự chấm:
+- **đề mở · việc làm bằng tay** (6) — chuẩn mục 7 luật 6
 - **nhiều đáp án đều đúng** (2) — sách ghi "ví dụ 6 × 6 + 1 = 37" thì 43, 49… cũng đúng
 - **đọc số thành CHỮ** (1) — "năm mươi tư" và "năm mươi bốn" đều đúng
 - **chỉ yêu cầu gạch chân, đáp là câu văn** (1) — mỗi bé diễn đạt một kiểu

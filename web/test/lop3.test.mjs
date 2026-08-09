@@ -415,7 +415,21 @@ if (existsSync(APP)) {
   const lt = app.flatMap((b) => Object.values(b.practice?.pools || {}).flat());
   const cham = lt.filter((x) => x.answerKey);
   t(`đa số câu luyện tập chấm máy được (${cham.length}/${lt.length})`,
-    cham.length >= lt.length * 0.85);
+    cham.length >= lt.length * 0.95);
+
+  /* KHÔNG Ô NÀO BẮT BÉ GÕ CHỮ. Bé lớp 3 gõ chậm và sai chính tả một chữ là mất
+     điểm oan, mà bài thì đang kiểm TOÁN chứ không kiểm kỹ năng gõ. Đáp án là chữ
+     thì phải cho bấm nút — có `options` — chứ đừng để ô trống. */
+  const goChu = [];
+  for (const x of cham) {
+    for (const p of x.answerKey.parts || [{ value: x.answerKey.value }]) {
+      const v = String(p.value ?? '').trim();
+      if (!v || p.options) continue;
+      if (!/^[\d\s+\-−×x:/().,]+$/.test(v)) goChu.push(`${x.id} [${p.label || ''}] → ${v}`);
+    }
+  }
+  t('không ô nào bắt bé gõ chữ (đáp án chữ thì phải cho bấm chọn)', goChu.length === 0);
+  in5(goChu);
 
   /* Ô BẤM CHỌN: đáp án phải nằm TRONG danh sách nút. Lệch một chữ là bé bấm đúng
      nút mà máy vẫn báo sai — và bé thì tin máy chứ không tin mình. */

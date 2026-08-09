@@ -192,7 +192,26 @@ def r_chia_du(text, loi):
         # tự kiểm bằng chính phép chia — sách chép nhầm thì đừng chấm theo
         if int(a) != int(b) * int(q) + int(r) or int(r) >= int(b):
             return None
-        parts.append({'label': f'{a} : {b}', 'value': f'{q} dư {r}'})
+        # NÚT BẤM thay vì ô gõ. Gõ "3 dư 1" bằng bàn phím là việc của người lớn;
+        # bé lớp 3 gõ chậm, sai chính tả một chữ là mất điểm oan, mà cái bài đang
+        # kiểm là PHÉP CHIA chứ không phải kỹ năng gõ.
+        #
+        # Ba mồi nhử dựng theo đúng ba lỗi sách nêu: sai thương, sai số dư, và số
+        # dư ≥ số chia (luật vàng của bài 6). Mồi nhử phải THẬT SỰ SAI — kiểm bằng
+        # chính phép chia, không tin mắt mình.
+        nhu = [f'{q} dư {r}']
+        for tq, tr in ((int(q) + 1, r), (q, int(r) + 1), (int(q) - 1, int(b))):
+            if int(tq) < 0 or int(tr) < 0:
+                continue
+            if int(tq) * int(b) + int(tr) == int(a) and int(tr) < int(b):
+                continue                       # trùng đáp án đúng → bỏ, đừng nhử bậy
+            s = f'{tq} dư {tr}'
+            if s not in nhu:
+                nhu.append(s)
+        if len(nhu) < 3:
+            return None
+        parts.append({'label': f'{a} : {b}', 'value': f'{q} dư {r}',
+                      'options': sorted(nhu[:3], key=lambda s: [int(x) for x in re.findall(r'\d+', s)])})
     if len({p['label'] for p in parts}) != len(parts):
         return None
     return {'parts': parts}

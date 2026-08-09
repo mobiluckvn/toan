@@ -1,207 +1,2148 @@
 {
  "_doc": "Khoá ô nhập VIẾT TAY cho câu luyện tập lớp 3 — đè lên bản suy máy của tools/tach_cau_lop3.py. Mọi giá trị rút từ lời giải của sách; nhãn ô lấy từ ĐỀ BÀI. Đề hỏi mấy thứ thì mấy ô.",
  "_vi_sao_viet_tay": "Suy máy chỉ dùng được cho khuôn CỐ ĐỊNH. Câu lời văn hai-ba chặng thì đáp số nằm lẫn trong câu chữ, máy đoán là đoán sai — lớp 2 đã thử và phải gỡ hai luật.",
-
- "DL:KSN3.B01#C2": {"parts": [{"label": "năm nghìn ba trăm hai mươi mốt", "value": "5 321"}, {"label": "tám nghìn không trăm linh sáu", "value": "8 006"}]},
- "DL:KSN3.B01#C6": {"values": [5000, 500, 50, 5], "ordered": true},
- "DL:KSN3.B01#C7": {"parts": [{"label": "số lớn nhất có 4 chữ số", "value": "9 999"}, {"label": "số bé nhất có 4 chữ số", "value": "1 000"}, {"label": "hơn kém nhau", "value": "8 999"}]},
- "DL:KSN3.B01#C8": {"value": 4002},
-
- "DL:KSN3.B02#C1": {"parts": [{"label": "38 thêm 0 bên phải", "value": 380}, {"label": "50 thêm 0 bên phải", "value": 500}, {"label": "gấp mấy lần số cũ", "value": 10}]},
- "DL:KSN3.B02#C2": {"parts": [{"label": "12 thêm 5 bên trái", "value": 512}, {"label": "70 thêm 5 bên trái", "value": 570}]},
- "DL:KSN3.B02#C3": {"value": 214},
- "DL:KSN3.B02#C5": {"parts": [{"label": "số mới", "value": "8 145"}, {"label": "hơn số cũ", "value": "8 000"}]},
- "DL:KSN3.B02#C7": {"parts": [{"label": "cửa phải", "value": 129}, {"label": "cửa trái", "value": 912}, {"label": "lớn hơn bao nhiêu", "value": 783}]},
- "DL:KSN3.B02#C8": {"parts": [{"label": "số mới", "value": 171}, {"label": "hơn số 7 ban đầu", "value": 164}]},
-
- "DL:KSN3.B03#C4": {"parts": [{"label": "lớn nhất", "value": 962}, {"label": "bé nhất", "value": 269}, {"label": "chẵn lớn nhất", "value": 962}]},
- "DL:KSN3.B03#C5": {"value": 741},
- "DL:KSN3.B03#C6": {"parts": [{"label": "chẵn bé nhất", "value": 306}, {"label": "chẵn lớn nhất", "value": 630}]},
- "DL:KSN3.B03#C7": {"value": 300},
- "DL:KSN3.B03#C8": {"value": 974},
- "DL:KSN3.B03#C9": {"value": 102},
-
- "DL:KSN3.B04#C1": {"parts": [{"label": "số có 1 chữ số", "value": 9}, {"label": "số có 2 chữ số", "value": 90}]},
- "DL:KSN3.B04#C2": {"value": 900},
- "DL:KSN3.B04#C3": {"parts": [{"label": "có mấy số", "value": 2}]},
- "DL:KSN3.B04#C4": {"parts": [{"label": "lập được mấy số", "value": 6}]},
- "DL:KSN3.B04#C7": {"value": 27},
- "DL:KSN3.B04#C8": {"value": 15},
-
- "DL:KSN3.B05#C3": {"parts": [{"label": "ướm quanh số nào", "value": 80}, {"label": "tính chính xác", "value": 82}]},
- "DL:KSN3.B05#C4": {"parts": [{"label": "26 × 3", "value": 78}, {"label": "45 × 2", "value": 90}]},
- "DL:KSN3.B05#C5": {"parts": [{"label": "123 × 3", "value": 369}, {"label": "212 × 4", "value": 848}]},
- "DL:KSN3.B05#C6": {"value": 68},
- "DL:KSN3.B05#C8": {"parts": [{"label": "25 × 4", "value": 100}, {"label": "199 × 3", "value": 597}]},
-
- "DL:KSN3.B06#C5": {"value": 5},
- "DL:KSN3.B07#C1": {"parts": [{"label": "11 chia 5 dư", "value": 1}, {"label": "15 chia 5 dư", "value": 0}, {"label": "23 chia 5 dư", "value": 3}]},
- "DL:KSN3.B07#C4": {"values": [7, 12, 17, 22, 27], "ordered": true},
- "DL:KSN3.B07#C8": {"values": [7, 17, 27], "ordered": true},
- "DL:KSN3.B07#C9": {"value": 16},
-
- "DL:KSN3.B08#C2": {"parts": [{"label": "giảm 24 đi 3 lần", "value": 8}, {"label": "giảm 30 đi 5 lần", "value": 6}]},
- "DL:KSN3.B08#C4": {"value": 24},
- "DL:KSN3.B08#C6": {"parts": [{"label": "(a) nhẹ hơn 5 kg", "value": 15}, {"label": "(b) nhẹ hơn 5 lần", "value": 4}]},
- "DL:KSN3.B08#C8": {"parts": [{"label": "gấp 2 lần 6", "value": 12}, {"label": "rồi giảm 4 lần", "value": 3}]},
- "DL:KSN3.B08#C9": {"parts": [{"label": "tuổi ông gấp mấy lần", "value": 13}, {"label": "sang năm gấp mấy lần", "value": 11}]},
-
- "DL:KSN3.B09#C5": {"parts": [{"label": "mẹ dùng mấy quả", "value": 6}, {"label": "còn lại mấy quả", "value": 12}]},
- "DL:KSN3.B09#C6": {"parts": [{"label": "1/2 của 24", "value": 12}, {"label": "1/3 của 24", "value": 8}, {"label": "1/4 của 24", "value": 6}]},
- "DL:KSN3.B09#C8": {"value": 8},
- "DL:KSN3.B09#C9": {"parts": [{"label": "Su Bống", "value": 6}, {"label": "Trí Long", "value": 8}, {"label": "chị Ngọc Anh", "value": 10}]},
-
- "DL:KSN3.B10#C1": {"parts": [{"label": "nhịp của dãy", "value": 3}, {"label": "số bước nhảy từ toa 1 đến toa 6", "value": 5}]},
- "DL:KSN3.B10#C3": {"value": 11},
- "DL:KSN3.B10#C6": {"value": 22},
- "DL:KSN3.B10#C7": {"value": 8},
-
- "DL:KSN3.B11#C1": {"value": 2},
- "DL:KSN3.B11#C4": {"parts": [{"label": "43 là số hạng thứ mấy", "value": 9}]},
- "DL:KSN3.B11#C6": {"value": 42},
- "DL:KSN3.B11#C7": {"value": 31},
- "DL:KSN3.B11#C8": {"value": 15},
-
- "DL:KSN3.B12#C1": {"values": [13, 21], "ordered": true},
- "DL:KSN3.B12#C3": {"values": [16, 22], "ordered": true},
- "DL:KSN3.B12#C4": {"values": [15, 21], "ordered": true},
- "DL:KSN3.B12#C5": {"values": [30, 31], "ordered": true},
- "DL:KSN3.B12#C6": {"values": [31, 50], "ordered": true},
- "DL:KSN3.B12#C8": {"value": 20},
-
- "DL:KSN3.B14#C3": {"parts": [{"label": "5 + 3 × 2", "value": 11}, {"label": "(5 + 3) × 2", "value": 16}]},
- "DL:KSN3.B14#C5": {"parts": [{"label": "36 : 2 + 4", "value": 22}, {"label": "36 : (2 + 4)", "value": 6}, {"label": "chênh nhau", "value": 16}]},
- "DL:KSN3.B14#C7": {"value": 6},
- "DL:KSN3.B15#C8": {"value": 10},
-
- "DL:KSN3.B16#C5": {"parts": [{"label": "6 × 9 + 6", "value": 60}, {"label": "7 × 99 + 7", "value": 700}]},
- "DL:KSN3.B16#C6": {"value": 210},
- "DL:KSN3.B16#C8": {"value": 400},
-
- "DL:KSN3.B17#C1": {"parts": [{"label": "Bình có mấy viên", "value": 17}, {"label": "cả hai bạn", "value": 29}]},
- "DL:KSN3.B17#C2": {"parts": [{"label": "số bạn nữ", "value": 10}, {"label": "cả lớp", "value": 24}]},
- "DL:KSN3.B17#C4": {"parts": [{"label": "biếu bà mấy quả", "value": 8}, {"label": "mẹ còn lại", "value": 16}]},
- "DL:KSN3.B17#C5": {"parts": [{"label": "thùng thứ hai", "value": 32}, {"label": "cả hai thùng", "value": 48}]},
- "DL:KSN3.B17#C6": {"value": 13},
- "DL:KSN3.B17#C8": {"parts": [{"label": "Su Kem", "value": 12}, {"label": "chị Ngọc Anh", "value": 15}, {"label": "cả ba", "value": 33}]},
- "DL:KSN3.B17#C9": {"parts": [{"label": "tổng số bánh", "value": 24}, {"label": "mỗi người mấy chiếc", "value": 6}]},
-
- "DL:KSN3.B18#C5": {"value": 9},
- "DL:KSN3.B18#C6": {"parts": [{"label": "(a) túi ngô", "value": 12}, {"label": "(b) túi muối", "value": 3}]},
- "DL:KSN3.B18#C8": {"parts": [{"label": "hộp nhỏ", "value": 4}, {"label": "hộp lớn", "value": 12}]},
- "DL:KSN3.B18#C9": {"parts": [{"label": "tuổi bố", "value": 40}, {"label": "tuổi ông nội", "value": 65}]},
-
- "DL:KSN3.B19#C2": {"value": 6},
- "DL:KSN3.B19#C3": {"value": 3},
- "DL:KSN3.B19#C4": {"value": 3},
- "DL:KSN3.B19#C5": {"value": 3},
- "DL:KSN3.B19#C6": {"values": [7, 8, 9], "ordered": true},
- "DL:KSN3.B19#C7": {"values": [8, 9, 10], "ordered": true},
- "DL:KSN3.B19#C9": {"value": 5},
-
- "DL:KSN3.B20#C1": {"parts": [{"label": "Trí Dũng hơn Trí Long", "value": 6}, {"label": "Su Kem hơn Su Bống", "value": 3}]},
- "DL:KSN3.B20#C2": {"values": [17, 14, 11, 11, 8], "ordered": true},
- "DL:KSN3.B20#C3": {"parts": [{"label": "tổng tuổi bây giờ", "value": 13}, {"label": "bốn năm nữa", "value": 21}]},
- "DL:KSN3.B20#C5": {"value": 11},
- "DL:KSN3.B20#C7": {"value": 45},
- "DL:KSN3.B20#C8": {"value": 1},
-
- "DL:KSN3.B21#C3": {"parts": [{"label": "một chiếc bút", "value": 8}, {"label": "năm chiếc bút", "value": 40}]},
- "DL:KSN3.B21#C4": {"parts": [{"label": "một vé", "value": 9}, {"label": "mua được mấy vé", "value": 5}]},
- "DL:KSN3.B21#C5": {"parts": [{"label": "mỗi phút", "value": 3}, {"label": "trong 5 phút", "value": 15}]},
- "DL:KSN3.B21#C6": {"parts": [{"label": "một hộp", "value": 7}, {"label": "bốn hộp", "value": 28}]},
- "DL:KSN3.B21#C7": {"parts": [{"label": "mỗi giờ", "value": 4}, {"label": "ba giờ", "value": 12}]},
- "DL:KSN3.B21#C8": {"parts": [{"label": "tiệm A một hộp", "value": 7}, {"label": "tiệm B một hộp", "value": 6}]},
- "DL:KSN3.B21#C9": {"parts": [{"label": "một hộp", "value": 7}, {"label": "bốn hộp", "value": 28}]},
-
- "DL:KSN3.B22#C1": {"value": 8},
- "DL:KSN3.B22#C2": {"value": 18},
- "DL:KSN3.B22#C4": {"value": 11},
- "DL:KSN3.B22#C5": {"value": 7},
- "DL:KSN3.B22#C7": {"value": 40},
- "DL:KSN3.B22#C8": {"value": 40},
- "DL:KSN3.B22#C9": {"value": 4},
-
- "DL:KSN3.B23#C1": {"parts": [{"label": "mấy gà", "value": 4}, {"label": "mấy chó", "value": 2}]},
- "DL:KSN3.B23#C2": {"parts": [{"label": "mấy gà", "value": 5}, {"label": "mấy chó", "value": 2}]},
- "DL:KSN3.B23#C4": {"parts": [{"label": "mấy gà", "value": 4}, {"label": "mấy chó", "value": 6}]},
- "DL:KSN3.B23#C5": {"parts": [{"label": "mấy gà", "value": 5}, {"label": "mấy chó", "value": 4}]},
- "DL:KSN3.B23#C6": {"parts": [{"label": "xe đạp", "value": 5}, {"label": "xe ba bánh", "value": 2}]},
- "DL:KSN3.B23#C7": {"parts": [{"label": "ghế 3 chân", "value": 5}, {"label": "ghế 4 chân", "value": 3}]},
- "DL:KSN3.B23#C8": {"parts": [{"label": "mấy gà", "value": 4}, {"label": "mấy chó", "value": 5}]},
- "DL:KSN3.B23#C9": {"parts": [{"label": "mấy gà", "value": 7}, {"label": "mấy chó", "value": 5}]},
-
- "DL:KSN3.B24#C1": {"value": 5},
- "DL:KSN3.B24#C3": {"value": 4},
- "DL:KSN3.B24#C4": {"value": 6},
- "DL:KSN3.B02#C6": {"parts": [{"label": "39 → 390 đi cửa nào", "value": "cửa phải", "options": ["cửa trái", "cửa phải"]}, {"label": "với thẻ số mấy", "value": 0}, {"label": "39 → 839 đi cửa nào", "value": "cửa trái", "options": ["cửa trái", "cửa phải"]}, {"label": "với thẻ số mấy", "value": 8}]},
- "DL:KSN3.B03#C3": {"parts": [{"label": "74", "value": "chẵn", "options": ["chẵn", "lẻ"]}, {"label": "47", "value": "lẻ", "options": ["chẵn", "lẻ"]}, {"label": "77", "value": "lẻ", "options": ["chẵn", "lẻ"]}, {"label": "44", "value": "chẵn", "options": ["chẵn", "lẻ"]}]},
- "DL:KSN3.B06#C2": {"parts": [{"label": "17 là", "value": "số bị chia"}, {"label": "3 là", "value": "số chia"}, {"label": "5 là", "value": "thương"}, {"label": "2 là", "value": "số dư"}]},
- "DL:KSN3.B06#C6": {"parts": [{"label": "(a) 23 : 4 = 5 (dư 3)", "value": "hợp lệ", "options": ["hợp lệ", "phạm luật"]}, {"label": "(b) 23 : 4 = 4 (dư 7)", "value": "phạm luật", "options": ["hợp lệ", "phạm luật"]}]},
- "DL:KSN3.B07#C3": {"parts": [{"label": "14 chia 4 dư mấy", "value": 2}, {"label": "14 có thuộc đoàn tàu không", "value": "có", "options": ["có", "không"]}]},
- "DL:KSN3.B07#C7": {"parts": [{"label": "22 với đoàn chia 4 dư 2", "value": "thuộc", "options": ["thuộc", "không"]}, {"label": "12 với đoàn chia 5 dư 2", "value": "thuộc", "options": ["thuộc", "không"]}, {"label": "12 với đoàn chia 4 dư 2", "value": "không", "options": ["thuộc", "không"]}]},
- "DL:KSN3.B10#C9": {"parts": [{"label": "52 là số hạng thứ mấy", "value": 13}, {"label": "54 có thuộc dãy không", "value": "không", "options": ["có", "không"]}]},
- "DL:KSN3.B11#C2": {"parts": [{"label": "số 22", "value": "thuộc", "options": ["thuộc", "không"]}, {"label": "số 24", "value": "không", "options": ["thuộc", "không"]}]},
- "DL:KSN3.B11#C3": {"parts": [{"label": "mã dư của dãy", "value": 0}]},
- "DL:KSN3.B12#C2": {"values": [1, 2, 3, 4], "ordered": true},
- "DL:KSN3.B14#C8": {"parts": [{"label": "đặt ngoặc vào 3 + 5 × 2", "value": "(3 + 5) × 2"}, {"label": "đặt ngoặc vào 20 − 8 − 4", "value": "20 − (8 − 4)"}]},
- "DL:KSN3.B23#C3": {"parts": [{"label": "mấy gà", "value": 4}, {"label": "mấy chó", "value": 2}]},
- "DL:KSN3.B24#C5": {"parts": [{"label": "mấy khoảng", "value": 5}, {"label": "mất mấy giây", "value": 10}]},
- "DL:KSN3.B24#C6": {"parts": [{"label": "mấy nhát cưa", "value": 4}, {"label": "cưa xong mất mấy phút", "value": 8}]},
- "DL:KSN3.B24#C8": {"parts": [{"label": "mấy khoảng", "value": 11}, {"label": "mất mấy giây", "value": 22}]},
- "DL:KSN3.B25#C1": {"parts": [{"label": "chỉ thích vẽ", "value": 5}, {"label": "cả hai", "value": 4}, {"label": "chỉ thích hát", "value": 4}]},
- "DL:KSN3.B25#C4": {"parts": [{"label": "thích ít nhất một môn", "value": 30}, {"label": "không thích môn nào", "value": 5}]},
- "DL:KSN3.B25#C7": {"parts": [{"label": "cộng bốn vùng được", "value": 35}]},
- "DL:KSN3.B25#C8": {"parts": [{"label": "cộng thô hai nhóm", "value": 33}, {"label": "mấy bạn thích cả hai", "value": 3}]},
- "DL:KSN3.B26#C1": {"value": 6},
- "DL:KSN3.B26#C2": {"value": 7},
- "DL:KSN3.B26#C3": {"value": 4},
- "DL:KSN3.B26#C4": {"value": 11},
- "DL:KSN3.B26#C5": {"value": 13},
- "DL:KSN3.B26#C6": {"parts": [{"label": "cả đàn bằng mấy con gà", "value": 8}, {"label": "nặng bao nhiêu kg", "value": 16}]},
- "DL:KSN3.B26#C7": {"value": 4},
- "DL:KSN3.B26#C8": {"parts": [{"label": "mỗi con gà nặng", "value": 2}, {"label": "mỗi con vịt nặng", "value": 4}]},
- "DL:KSN3.B27#C2": {"parts": [{"label": "hình vuông cạnh 6 cm", "value": 24}, {"label": "hình vuông cạnh 9 cm", "value": 36}]},
- "DL:KSN3.B27#C3": {"value": 30},
- "DL:KSN3.B27#C4": {"value": 30},
- "DL:KSN3.B27#C8": {"parts": [{"label": "cạnh hình vuông", "value": 6}, {"label": "chiều rộng hình chữ nhật", "value": 4}]},
- "DL:KSN3.B28#C1": {"parts": [{"label": "chu vi ban đầu", "value": 16}, {"label": "chu vi mới", "value": 18}]},
- "DL:KSN3.B28#C4": {"value": 4},
- "DL:KSN3.B28#C8": {"value": 20},
- "DL:KSN3.B29#C2": {"parts": [{"label": "đường kính 10 cm", "value": 5}, {"label": "đường kính 14 cm", "value": 7}]},
- "DL:KSN3.B29#C4": {"parts": [{"label": "điểm giữa đoạn 8 cm", "value": 4}, {"label": "điểm giữa đoạn 12 cm", "value": 6}]},
- "DL:KSN3.B29#C8": {"value": 2},
- "DL:KSN3.B30#C2": {"parts": [{"label": "hình vuông cạnh 5 cm", "value": 25}, {"label": "hình vuông cạnh 8 cm", "value": 64}]},
- "DL:KSN3.B30#C3": {"parts": [{"label": "chu vi", "value": 16}, {"label": "diện tích", "value": 15}]},
- "DL:KSN3.B30#C4": {"value": 54},
- "DL:KSN3.B30#C6": {"value": 5},
- "DL:KSN3.B30#C7": {"parts": [{"label": "diện tích nền", "value": 40}, {"label": "số viên gạch", "value": 160}]},
- "DL:KSN3.B30#C8": {"parts": [{"label": "diện tích hình 6 × 4", "value": 24}, {"label": "diện tích hình 5 × 5", "value": 25}]},
- "DL:KSN3.B31#C1": {"value": 16},
- "DL:KSN3.B31#C2": {"value": 18},
- "DL:KSN3.B31#C6": {"parts": [{"label": "bậc thang có mấy khối", "value": 6}, {"label": "cần vá thêm mấy khối", "value": 3}]},
- "DL:KSN3.B31#C7": {"value": 13},
- "DL:KSN3.B31#C8": {"value": 14},
- "DL:KSN3.B32#C1": {"parts": [{"label": "kim phút chỉ số 6", "value": 30}, {"label": "kim phút chỉ số 9", "value": 45}]},
- "DL:KSN3.B32#C2": {"parts": [{"label": "(a)", "value": "3 giờ 20 phút"}, {"label": "(b)", "value": "5 giờ 50 phút"}]},
- "DL:KSN3.B32#C3": {"parts": [{"label": "theo cách nhà đài", "value": "16 giờ 30 phút"}]},
- "DL:KSN3.B32#C4": {"parts": [{"label": "(a) 7 giờ 50 phút", "value": "8 giờ kém 10"}, {"label": "(b) 11 giờ 45 phút", "value": "12 giờ kém 15"}]},
- "DL:KSN3.B32#C5": {"parts": [{"label": "phim hết lúc", "value": "8 giờ 45 phút"}]},
- "DL:KSN3.B32#C7": {"value": 30},
- "DL:KSN3.B33#C3": {"parts": [{"label": "cân một bạn học sinh", "value": "kg", "options": ["g", "kg", "ml", "l"]}, {"label": "cân một gói bim bim", "value": "g", "options": ["g", "kg", "ml", "l"]}, {"label": "đong một thìa si-rô", "value": "ml", "options": ["g", "kg", "ml", "l"]}, {"label": "đong một xô nước", "value": "l", "options": ["g", "kg", "ml", "l"]}]},
- "DL:KSN3.B33#C5": {"value": 500},
- "DL:KSN3.B33#C6": {"parts": [{"label": "tổng nguyên liệu khô", "value": 400}, {"label": "gấp đôi: bột", "value": 400}, {"label": "gấp đôi: đường", "value": 300}, {"label": "gấp đôi: bơ", "value": 100}]},
- "DL:KSN3.B33#C7": {"value": 4},
- "DL:KSN3.B33#C8": {"parts": [{"label": "mỗi cốc", "value": 125}, {"label": "Su Bống uống", "value": 250}]},
- "DL:KSN3.B33#C9": {"parts": [{"label": "quả dưa nặng", "value": 900}, {"label": "cả dưa lẫn một quả cam", "value": 1200}]},
- "DL:KSN3.B34#C1": {"parts": [{"label": "mấy tờ 5 nghìn", "value": 2}, {"label": "mấy tờ 2 nghìn", "value": 5}]},
- "DL:KSN3.B34#C4": {"parts": [{"label": "3 cốc hết bao nhiêu", "value": 15}, {"label": "trả lại khách", "value": 5}]},
- "DL:KSN3.B34#C5": {"value": 5},
- "DL:KSN3.B34#C7": {"parts": [{"label": "giá vốn mỗi cốc", "value": 3}, {"label": "lãi mỗi cốc", "value": 2}]},
- "DL:KSN3.B34#C8": {"parts": [{"label": "(a) tổng tiền bán", "value": 45}, {"label": "(a) lãi", "value": 18}, {"label": "(b) lãi mỗi cốc", "value": 2}, {"label": "(b) lãi cả buổi", "value": 18}]},
- "DL:KSN3.B34#C9": {"parts": [{"label": "quỹ đang có", "value": 57}, {"label": "còn thiếu", "value": 8}, {"label": "cần bán thêm mấy cốc", "value": 4}]},
- "DL:KSN3.B12#C7": {"parts": [{"label": "(a) 4, 9, 14, 19", "value": "nhịp đều", "options": ["nhịp đều", "phép thử sâu hơn"]}, {"label": "(b) 1, 2, 4, 8", "value": "phép thử sâu hơn", "options": ["nhịp đều", "phép thử sâu hơn"]}, {"label": "(c) 5, 6, 8, 11", "value": "phép thử sâu hơn", "options": ["nhịp đều", "phép thử sâu hơn"]}]},
- "DL:KSN3.B17#C7": {"parts": [{"label": "Su Kem gấp được", "value": 18}, {"label": "cả hai anh em", "value": 24}]},
- "DL:KSN3.B18#C3": {"parts": [{"label": "câu 1 vẽ sơ đồ", "value": "đoạn", "options": ["đoạn", "phần"]}, {"label": "câu 2 vẽ sơ đồ", "value": "phần", "options": ["đoạn", "phần"]}]},
- "DL:KSN3.B32#C8": {"parts": [{"label": "ngày 20 là thứ mấy", "value": "thứ Hai"}]}
+ "DL:KSN3.B01#C2": {
+  "parts": [
+   {
+    "label": "năm nghìn ba trăm hai mươi mốt",
+    "value": "5 321"
+   },
+   {
+    "label": "tám nghìn không trăm linh sáu",
+    "value": "8 006"
+   }
+  ]
+ },
+ "DL:KSN3.B01#C6": {
+  "values": [
+   5000,
+   500,
+   50,
+   5
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B01#C7": {
+  "parts": [
+   {
+    "label": "số lớn nhất có 4 chữ số",
+    "value": "9 999"
+   },
+   {
+    "label": "số bé nhất có 4 chữ số",
+    "value": "1 000"
+   },
+   {
+    "label": "hơn kém nhau",
+    "value": "8 999"
+   }
+  ]
+ },
+ "DL:KSN3.B01#C8": {
+  "value": 4002
+ },
+ "DL:KSN3.B02#C1": {
+  "parts": [
+   {
+    "label": "38 thêm 0 bên phải",
+    "value": 380
+   },
+   {
+    "label": "50 thêm 0 bên phải",
+    "value": 500
+   },
+   {
+    "label": "gấp mấy lần số cũ",
+    "value": 10
+   }
+  ]
+ },
+ "DL:KSN3.B02#C2": {
+  "parts": [
+   {
+    "label": "12 thêm 5 bên trái",
+    "value": 512
+   },
+   {
+    "label": "70 thêm 5 bên trái",
+    "value": 570
+   }
+  ]
+ },
+ "DL:KSN3.B02#C3": {
+  "value": 214
+ },
+ "DL:KSN3.B02#C5": {
+  "parts": [
+   {
+    "label": "số mới",
+    "value": "8 145"
+   },
+   {
+    "label": "hơn số cũ",
+    "value": "8 000"
+   }
+  ]
+ },
+ "DL:KSN3.B02#C7": {
+  "parts": [
+   {
+    "label": "cửa phải",
+    "value": 129
+   },
+   {
+    "label": "cửa trái",
+    "value": 912
+   },
+   {
+    "label": "lớn hơn bao nhiêu",
+    "value": 783
+   }
+  ]
+ },
+ "DL:KSN3.B02#C8": {
+  "parts": [
+   {
+    "label": "số mới",
+    "value": 171
+   },
+   {
+    "label": "hơn số 7 ban đầu",
+    "value": 164
+   }
+  ]
+ },
+ "DL:KSN3.B03#C4": {
+  "parts": [
+   {
+    "label": "lớn nhất",
+    "value": 962
+   },
+   {
+    "label": "bé nhất",
+    "value": 269
+   },
+   {
+    "label": "chẵn lớn nhất",
+    "value": 962
+   }
+  ]
+ },
+ "DL:KSN3.B03#C5": {
+  "value": 741
+ },
+ "DL:KSN3.B03#C6": {
+  "parts": [
+   {
+    "label": "chẵn bé nhất",
+    "value": 306
+   },
+   {
+    "label": "chẵn lớn nhất",
+    "value": 630
+   }
+  ]
+ },
+ "DL:KSN3.B03#C7": {
+  "value": 300
+ },
+ "DL:KSN3.B03#C8": {
+  "value": 974
+ },
+ "DL:KSN3.B03#C9": {
+  "value": 102
+ },
+ "DL:KSN3.B04#C1": {
+  "parts": [
+   {
+    "label": "số có 1 chữ số",
+    "value": 9
+   },
+   {
+    "label": "số có 2 chữ số",
+    "value": 90
+   }
+  ]
+ },
+ "DL:KSN3.B04#C2": {
+  "value": 900
+ },
+ "DL:KSN3.B04#C3": {
+  "parts": [
+   {
+    "label": "có mấy số",
+    "value": 2
+   }
+  ]
+ },
+ "DL:KSN3.B04#C4": {
+  "parts": [
+   {
+    "label": "lập được mấy số",
+    "value": 6
+   }
+  ]
+ },
+ "DL:KSN3.B04#C7": {
+  "value": 27
+ },
+ "DL:KSN3.B04#C8": {
+  "value": 15
+ },
+ "DL:KSN3.B05#C3": {
+  "parts": [
+   {
+    "label": "ướm quanh số nào",
+    "value": 80
+   },
+   {
+    "label": "tính chính xác",
+    "value": 82
+   }
+  ]
+ },
+ "DL:KSN3.B05#C4": {
+  "parts": [
+   {
+    "label": "26 × 3",
+    "value": 78
+   },
+   {
+    "label": "45 × 2",
+    "value": 90
+   }
+  ]
+ },
+ "DL:KSN3.B05#C5": {
+  "parts": [
+   {
+    "label": "123 × 3",
+    "value": 369
+   },
+   {
+    "label": "212 × 4",
+    "value": 848
+   }
+  ]
+ },
+ "DL:KSN3.B05#C6": {
+  "value": 68
+ },
+ "DL:KSN3.B05#C8": {
+  "parts": [
+   {
+    "label": "25 × 4",
+    "value": 100
+   },
+   {
+    "label": "199 × 3",
+    "value": 597
+   }
+  ]
+ },
+ "DL:KSN3.B06#C5": {
+  "value": 5
+ },
+ "DL:KSN3.B07#C1": {
+  "parts": [
+   {
+    "label": "11 chia 5 dư",
+    "value": 1
+   },
+   {
+    "label": "15 chia 5 dư",
+    "value": 0
+   },
+   {
+    "label": "23 chia 5 dư",
+    "value": 3
+   }
+  ]
+ },
+ "DL:KSN3.B07#C4": {
+  "values": [
+   7,
+   12,
+   17,
+   22,
+   27
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B07#C8": {
+  "values": [
+   7,
+   17,
+   27
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B07#C9": {
+  "value": 16
+ },
+ "DL:KSN3.B08#C2": {
+  "parts": [
+   {
+    "label": "giảm 24 đi 3 lần",
+    "value": 8
+   },
+   {
+    "label": "giảm 30 đi 5 lần",
+    "value": 6
+   }
+  ]
+ },
+ "DL:KSN3.B08#C4": {
+  "value": 24
+ },
+ "DL:KSN3.B08#C6": {
+  "parts": [
+   {
+    "label": "(a) nhẹ hơn 5 kg",
+    "value": 15
+   },
+   {
+    "label": "(b) nhẹ hơn 5 lần",
+    "value": 4
+   }
+  ]
+ },
+ "DL:KSN3.B08#C8": {
+  "parts": [
+   {
+    "label": "gấp 2 lần 6",
+    "value": 12
+   },
+   {
+    "label": "rồi giảm 4 lần",
+    "value": 3
+   }
+  ]
+ },
+ "DL:KSN3.B08#C9": {
+  "parts": [
+   {
+    "label": "tuổi ông gấp mấy lần",
+    "value": 13
+   },
+   {
+    "label": "sang năm gấp mấy lần",
+    "value": 11
+   }
+  ]
+ },
+ "DL:KSN3.B09#C5": {
+  "parts": [
+   {
+    "label": "mẹ dùng mấy quả",
+    "value": 6
+   },
+   {
+    "label": "còn lại mấy quả",
+    "value": 12
+   }
+  ]
+ },
+ "DL:KSN3.B09#C6": {
+  "parts": [
+   {
+    "label": "1/2 của 24",
+    "value": 12
+   },
+   {
+    "label": "1/3 của 24",
+    "value": 8
+   },
+   {
+    "label": "1/4 của 24",
+    "value": 6
+   }
+  ]
+ },
+ "DL:KSN3.B09#C8": {
+  "value": 8
+ },
+ "DL:KSN3.B09#C9": {
+  "parts": [
+   {
+    "label": "Su Bống",
+    "value": 6
+   },
+   {
+    "label": "Trí Long",
+    "value": 8
+   },
+   {
+    "label": "chị Ngọc Anh",
+    "value": 10
+   }
+  ]
+ },
+ "DL:KSN3.B10#C1": {
+  "parts": [
+   {
+    "label": "nhịp của dãy",
+    "value": 3
+   },
+   {
+    "label": "số bước nhảy từ toa 1 đến toa 6",
+    "value": 5
+   }
+  ]
+ },
+ "DL:KSN3.B10#C3": {
+  "value": 11
+ },
+ "DL:KSN3.B10#C6": {
+  "value": 22
+ },
+ "DL:KSN3.B10#C7": {
+  "value": 8
+ },
+ "DL:KSN3.B11#C1": {
+  "value": 2
+ },
+ "DL:KSN3.B11#C4": {
+  "parts": [
+   {
+    "label": "43 là số hạng thứ mấy",
+    "value": 9
+   }
+  ]
+ },
+ "DL:KSN3.B11#C6": {
+  "value": 42
+ },
+ "DL:KSN3.B11#C7": {
+  "value": 31
+ },
+ "DL:KSN3.B11#C8": {
+  "value": 15
+ },
+ "DL:KSN3.B12#C1": {
+  "values": [
+   13,
+   21
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B12#C3": {
+  "values": [
+   16,
+   22
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B12#C4": {
+  "values": [
+   15,
+   21
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B12#C5": {
+  "values": [
+   30,
+   31
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B12#C6": {
+  "values": [
+   31,
+   50
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B12#C8": {
+  "value": 20
+ },
+ "DL:KSN3.B14#C3": {
+  "parts": [
+   {
+    "label": "5 + 3 × 2",
+    "value": 11
+   },
+   {
+    "label": "(5 + 3) × 2",
+    "value": 16
+   }
+  ]
+ },
+ "DL:KSN3.B14#C5": {
+  "parts": [
+   {
+    "label": "36 : 2 + 4",
+    "value": 22
+   },
+   {
+    "label": "36 : (2 + 4)",
+    "value": 6
+   },
+   {
+    "label": "chênh nhau",
+    "value": 16
+   }
+  ]
+ },
+ "DL:KSN3.B14#C7": {
+  "value": 6
+ },
+ "DL:KSN3.B15#C8": {
+  "value": 10
+ },
+ "DL:KSN3.B16#C5": {
+  "parts": [
+   {
+    "label": "6 × 9 + 6",
+    "value": 60
+   },
+   {
+    "label": "7 × 99 + 7",
+    "value": 700
+   }
+  ]
+ },
+ "DL:KSN3.B16#C6": {
+  "value": 210
+ },
+ "DL:KSN3.B16#C8": {
+  "value": 400
+ },
+ "DL:KSN3.B17#C1": {
+  "parts": [
+   {
+    "label": "Bình có mấy viên",
+    "value": 17
+   },
+   {
+    "label": "cả hai bạn",
+    "value": 29
+   }
+  ]
+ },
+ "DL:KSN3.B17#C2": {
+  "parts": [
+   {
+    "label": "số bạn nữ",
+    "value": 10
+   },
+   {
+    "label": "cả lớp",
+    "value": 24
+   }
+  ]
+ },
+ "DL:KSN3.B17#C4": {
+  "parts": [
+   {
+    "label": "biếu bà mấy quả",
+    "value": 8
+   },
+   {
+    "label": "mẹ còn lại",
+    "value": 16
+   }
+  ]
+ },
+ "DL:KSN3.B17#C5": {
+  "parts": [
+   {
+    "label": "thùng thứ hai",
+    "value": 32
+   },
+   {
+    "label": "cả hai thùng",
+    "value": 48
+   }
+  ]
+ },
+ "DL:KSN3.B17#C6": {
+  "value": 13
+ },
+ "DL:KSN3.B17#C8": {
+  "parts": [
+   {
+    "label": "Su Kem",
+    "value": 12
+   },
+   {
+    "label": "chị Ngọc Anh",
+    "value": 15
+   },
+   {
+    "label": "cả ba",
+    "value": 33
+   }
+  ]
+ },
+ "DL:KSN3.B17#C9": {
+  "parts": [
+   {
+    "label": "tổng số bánh",
+    "value": 24
+   },
+   {
+    "label": "mỗi người mấy chiếc",
+    "value": 6
+   }
+  ]
+ },
+ "DL:KSN3.B18#C5": {
+  "value": 9
+ },
+ "DL:KSN3.B18#C6": {
+  "parts": [
+   {
+    "label": "(a) túi ngô",
+    "value": 12
+   },
+   {
+    "label": "(b) túi muối",
+    "value": 3
+   }
+  ]
+ },
+ "DL:KSN3.B18#C8": {
+  "parts": [
+   {
+    "label": "hộp nhỏ",
+    "value": 4
+   },
+   {
+    "label": "hộp lớn",
+    "value": 12
+   }
+  ]
+ },
+ "DL:KSN3.B18#C9": {
+  "parts": [
+   {
+    "label": "tuổi bố",
+    "value": 40
+   },
+   {
+    "label": "tuổi ông nội",
+    "value": 65
+   }
+  ]
+ },
+ "DL:KSN3.B19#C2": {
+  "value": 6
+ },
+ "DL:KSN3.B19#C3": {
+  "value": 3
+ },
+ "DL:KSN3.B19#C4": {
+  "value": 3
+ },
+ "DL:KSN3.B19#C5": {
+  "value": 3
+ },
+ "DL:KSN3.B19#C6": {
+  "values": [
+   7,
+   8,
+   9
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B19#C7": {
+  "values": [
+   8,
+   9,
+   10
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B19#C9": {
+  "value": 5
+ },
+ "DL:KSN3.B20#C1": {
+  "parts": [
+   {
+    "label": "Trí Dũng hơn Trí Long",
+    "value": 6
+   },
+   {
+    "label": "Su Kem hơn Su Bống",
+    "value": 3
+   }
+  ]
+ },
+ "DL:KSN3.B20#C2": {
+  "values": [
+   17,
+   14,
+   11,
+   11,
+   8
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B20#C3": {
+  "parts": [
+   {
+    "label": "tổng tuổi bây giờ",
+    "value": 13
+   },
+   {
+    "label": "bốn năm nữa",
+    "value": 21
+   }
+  ]
+ },
+ "DL:KSN3.B20#C5": {
+  "value": 11
+ },
+ "DL:KSN3.B20#C7": {
+  "value": 45
+ },
+ "DL:KSN3.B20#C8": {
+  "value": 1
+ },
+ "DL:KSN3.B21#C3": {
+  "parts": [
+   {
+    "label": "một chiếc bút",
+    "value": 8
+   },
+   {
+    "label": "năm chiếc bút",
+    "value": 40
+   }
+  ]
+ },
+ "DL:KSN3.B21#C4": {
+  "parts": [
+   {
+    "label": "một vé",
+    "value": 9
+   },
+   {
+    "label": "mua được mấy vé",
+    "value": 5
+   }
+  ]
+ },
+ "DL:KSN3.B21#C5": {
+  "parts": [
+   {
+    "label": "mỗi phút",
+    "value": 3
+   },
+   {
+    "label": "trong 5 phút",
+    "value": 15
+   }
+  ]
+ },
+ "DL:KSN3.B21#C6": {
+  "parts": [
+   {
+    "label": "một hộp",
+    "value": 7
+   },
+   {
+    "label": "bốn hộp",
+    "value": 28
+   }
+  ]
+ },
+ "DL:KSN3.B21#C7": {
+  "parts": [
+   {
+    "label": "mỗi giờ",
+    "value": 4
+   },
+   {
+    "label": "ba giờ",
+    "value": 12
+   }
+  ]
+ },
+ "DL:KSN3.B21#C8": {
+  "parts": [
+   {
+    "label": "tiệm A một hộp",
+    "value": 7
+   },
+   {
+    "label": "tiệm B một hộp",
+    "value": 6
+   }
+  ]
+ },
+ "DL:KSN3.B21#C9": {
+  "parts": [
+   {
+    "label": "một hộp",
+    "value": 7
+   },
+   {
+    "label": "bốn hộp",
+    "value": 28
+   }
+  ]
+ },
+ "DL:KSN3.B22#C1": {
+  "value": 8
+ },
+ "DL:KSN3.B22#C2": {
+  "value": 18
+ },
+ "DL:KSN3.B22#C4": {
+  "value": 11
+ },
+ "DL:KSN3.B22#C5": {
+  "value": 7
+ },
+ "DL:KSN3.B22#C7": {
+  "value": 40
+ },
+ "DL:KSN3.B22#C8": {
+  "value": 40
+ },
+ "DL:KSN3.B22#C9": {
+  "value": 4
+ },
+ "DL:KSN3.B23#C1": {
+  "parts": [
+   {
+    "label": "mấy gà",
+    "value": 4
+   },
+   {
+    "label": "mấy chó",
+    "value": 2
+   }
+  ]
+ },
+ "DL:KSN3.B23#C2": {
+  "parts": [
+   {
+    "label": "mấy gà",
+    "value": 5
+   },
+   {
+    "label": "mấy chó",
+    "value": 2
+   }
+  ]
+ },
+ "DL:KSN3.B23#C4": {
+  "parts": [
+   {
+    "label": "mấy gà",
+    "value": 4
+   },
+   {
+    "label": "mấy chó",
+    "value": 6
+   }
+  ]
+ },
+ "DL:KSN3.B23#C5": {
+  "parts": [
+   {
+    "label": "mấy gà",
+    "value": 5
+   },
+   {
+    "label": "mấy chó",
+    "value": 4
+   }
+  ]
+ },
+ "DL:KSN3.B23#C6": {
+  "parts": [
+   {
+    "label": "xe đạp",
+    "value": 5
+   },
+   {
+    "label": "xe ba bánh",
+    "value": 2
+   }
+  ]
+ },
+ "DL:KSN3.B23#C7": {
+  "parts": [
+   {
+    "label": "ghế 3 chân",
+    "value": 5
+   },
+   {
+    "label": "ghế 4 chân",
+    "value": 3
+   }
+  ]
+ },
+ "DL:KSN3.B23#C8": {
+  "parts": [
+   {
+    "label": "mấy gà",
+    "value": 4
+   },
+   {
+    "label": "mấy chó",
+    "value": 5
+   }
+  ]
+ },
+ "DL:KSN3.B23#C9": {
+  "parts": [
+   {
+    "label": "mấy gà",
+    "value": 7
+   },
+   {
+    "label": "mấy chó",
+    "value": 5
+   }
+  ]
+ },
+ "DL:KSN3.B24#C1": {
+  "value": 5
+ },
+ "DL:KSN3.B24#C3": {
+  "value": 4
+ },
+ "DL:KSN3.B24#C4": {
+  "value": 6
+ },
+ "DL:KSN3.B02#C6": {
+  "parts": [
+   {
+    "label": "39 → 390 đi cửa nào",
+    "value": "cửa phải",
+    "options": [
+     "cửa trái",
+     "cửa phải"
+    ]
+   },
+   {
+    "label": "với thẻ số mấy",
+    "value": 0
+   },
+   {
+    "label": "39 → 839 đi cửa nào",
+    "value": "cửa trái",
+    "options": [
+     "cửa trái",
+     "cửa phải"
+    ]
+   },
+   {
+    "label": "với thẻ số mấy",
+    "value": 8
+   }
+  ]
+ },
+ "DL:KSN3.B03#C3": {
+  "parts": [
+   {
+    "label": "74",
+    "value": "chẵn",
+    "options": [
+     "chẵn",
+     "lẻ"
+    ]
+   },
+   {
+    "label": "47",
+    "value": "lẻ",
+    "options": [
+     "chẵn",
+     "lẻ"
+    ]
+   },
+   {
+    "label": "77",
+    "value": "lẻ",
+    "options": [
+     "chẵn",
+     "lẻ"
+    ]
+   },
+   {
+    "label": "44",
+    "value": "chẵn",
+    "options": [
+     "chẵn",
+     "lẻ"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B06#C2": {
+  "parts": [
+   {
+    "label": "17 là",
+    "value": "số bị chia",
+    "options": [
+     "số bị chia",
+     "số chia",
+     "thương",
+     "số dư"
+    ]
+   },
+   {
+    "label": "3 là",
+    "value": "số chia",
+    "options": [
+     "số bị chia",
+     "số chia",
+     "thương",
+     "số dư"
+    ]
+   },
+   {
+    "label": "5 là",
+    "value": "thương",
+    "options": [
+     "số bị chia",
+     "số chia",
+     "thương",
+     "số dư"
+    ]
+   },
+   {
+    "label": "2 là",
+    "value": "số dư",
+    "options": [
+     "số bị chia",
+     "số chia",
+     "thương",
+     "số dư"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B06#C6": {
+  "parts": [
+   {
+    "label": "(a) 23 : 4 = 5 (dư 3)",
+    "value": "hợp lệ",
+    "options": [
+     "hợp lệ",
+     "phạm luật"
+    ]
+   },
+   {
+    "label": "(b) 23 : 4 = 4 (dư 7)",
+    "value": "phạm luật",
+    "options": [
+     "hợp lệ",
+     "phạm luật"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B07#C3": {
+  "parts": [
+   {
+    "label": "14 chia 4 dư mấy",
+    "value": 2
+   },
+   {
+    "label": "14 có thuộc đoàn tàu không",
+    "value": "có",
+    "options": [
+     "có",
+     "không"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B07#C7": {
+  "parts": [
+   {
+    "label": "22 với đoàn chia 4 dư 2",
+    "value": "thuộc",
+    "options": [
+     "thuộc",
+     "không"
+    ]
+   },
+   {
+    "label": "12 với đoàn chia 5 dư 2",
+    "value": "thuộc",
+    "options": [
+     "thuộc",
+     "không"
+    ]
+   },
+   {
+    "label": "12 với đoàn chia 4 dư 2",
+    "value": "không",
+    "options": [
+     "thuộc",
+     "không"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B10#C9": {
+  "parts": [
+   {
+    "label": "52 là số hạng thứ mấy",
+    "value": 13
+   },
+   {
+    "label": "54 có thuộc dãy không",
+    "value": "không",
+    "options": [
+     "có",
+     "không"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B11#C2": {
+  "parts": [
+   {
+    "label": "số 22",
+    "value": "thuộc",
+    "options": [
+     "thuộc",
+     "không"
+    ]
+   },
+   {
+    "label": "số 24",
+    "value": "không",
+    "options": [
+     "thuộc",
+     "không"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B11#C3": {
+  "parts": [
+   {
+    "label": "mã dư của dãy",
+    "value": 0
+   }
+  ]
+ },
+ "DL:KSN3.B12#C2": {
+  "values": [
+   1,
+   2,
+   3,
+   4
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B14#C8": {
+  "parts": [
+   {
+    "label": "đặt ngoặc vào 3 + 5 × 2",
+    "value": "(3 + 5) × 2"
+   },
+   {
+    "label": "đặt ngoặc vào 20 − 8 − 4",
+    "value": "20 − (8 − 4)"
+   }
+  ]
+ },
+ "DL:KSN3.B23#C3": {
+  "parts": [
+   {
+    "label": "mấy gà",
+    "value": 4
+   },
+   {
+    "label": "mấy chó",
+    "value": 2
+   }
+  ]
+ },
+ "DL:KSN3.B24#C5": {
+  "parts": [
+   {
+    "label": "mấy khoảng",
+    "value": 5
+   },
+   {
+    "label": "mất mấy giây",
+    "value": 10
+   }
+  ]
+ },
+ "DL:KSN3.B24#C6": {
+  "parts": [
+   {
+    "label": "mấy nhát cưa",
+    "value": 4
+   },
+   {
+    "label": "cưa xong mất mấy phút",
+    "value": 8
+   }
+  ]
+ },
+ "DL:KSN3.B24#C8": {
+  "parts": [
+   {
+    "label": "mấy khoảng",
+    "value": 11
+   },
+   {
+    "label": "mất mấy giây",
+    "value": 22
+   }
+  ]
+ },
+ "DL:KSN3.B25#C1": {
+  "parts": [
+   {
+    "label": "chỉ thích vẽ",
+    "value": 5
+   },
+   {
+    "label": "cả hai",
+    "value": 4
+   },
+   {
+    "label": "chỉ thích hát",
+    "value": 4
+   }
+  ]
+ },
+ "DL:KSN3.B25#C4": {
+  "parts": [
+   {
+    "label": "thích ít nhất một môn",
+    "value": 30
+   },
+   {
+    "label": "không thích môn nào",
+    "value": 5
+   }
+  ]
+ },
+ "DL:KSN3.B25#C7": {
+  "parts": [
+   {
+    "label": "cộng bốn vùng được",
+    "value": 35
+   }
+  ]
+ },
+ "DL:KSN3.B25#C8": {
+  "parts": [
+   {
+    "label": "cộng thô hai nhóm",
+    "value": 33
+   },
+   {
+    "label": "mấy bạn thích cả hai",
+    "value": 3
+   }
+  ]
+ },
+ "DL:KSN3.B26#C1": {
+  "value": 6
+ },
+ "DL:KSN3.B26#C2": {
+  "value": 7
+ },
+ "DL:KSN3.B26#C3": {
+  "value": 4
+ },
+ "DL:KSN3.B26#C4": {
+  "value": 11
+ },
+ "DL:KSN3.B26#C5": {
+  "value": 13
+ },
+ "DL:KSN3.B26#C6": {
+  "parts": [
+   {
+    "label": "cả đàn bằng mấy con gà",
+    "value": 8
+   },
+   {
+    "label": "nặng bao nhiêu kg",
+    "value": 16
+   }
+  ]
+ },
+ "DL:KSN3.B26#C7": {
+  "value": 4
+ },
+ "DL:KSN3.B26#C8": {
+  "parts": [
+   {
+    "label": "mỗi con gà nặng",
+    "value": 2
+   },
+   {
+    "label": "mỗi con vịt nặng",
+    "value": 4
+   }
+  ]
+ },
+ "DL:KSN3.B27#C2": {
+  "parts": [
+   {
+    "label": "hình vuông cạnh 6 cm",
+    "value": 24
+   },
+   {
+    "label": "hình vuông cạnh 9 cm",
+    "value": 36
+   }
+  ]
+ },
+ "DL:KSN3.B27#C3": {
+  "value": 30
+ },
+ "DL:KSN3.B27#C4": {
+  "value": 30
+ },
+ "DL:KSN3.B27#C8": {
+  "parts": [
+   {
+    "label": "cạnh hình vuông",
+    "value": 6
+   },
+   {
+    "label": "chiều rộng hình chữ nhật",
+    "value": 4
+   }
+  ]
+ },
+ "DL:KSN3.B28#C1": {
+  "parts": [
+   {
+    "label": "chu vi ban đầu",
+    "value": 16
+   },
+   {
+    "label": "chu vi mới",
+    "value": 18
+   }
+  ]
+ },
+ "DL:KSN3.B28#C4": {
+  "value": 4
+ },
+ "DL:KSN3.B28#C8": {
+  "value": 20
+ },
+ "DL:KSN3.B29#C2": {
+  "parts": [
+   {
+    "label": "đường kính 10 cm",
+    "value": 5
+   },
+   {
+    "label": "đường kính 14 cm",
+    "value": 7
+   }
+  ]
+ },
+ "DL:KSN3.B29#C4": {
+  "parts": [
+   {
+    "label": "điểm giữa đoạn 8 cm",
+    "value": 4
+   },
+   {
+    "label": "điểm giữa đoạn 12 cm",
+    "value": 6
+   }
+  ]
+ },
+ "DL:KSN3.B29#C8": {
+  "value": 2
+ },
+ "DL:KSN3.B30#C2": {
+  "parts": [
+   {
+    "label": "hình vuông cạnh 5 cm",
+    "value": 25
+   },
+   {
+    "label": "hình vuông cạnh 8 cm",
+    "value": 64
+   }
+  ]
+ },
+ "DL:KSN3.B30#C3": {
+  "parts": [
+   {
+    "label": "chu vi",
+    "value": 16
+   },
+   {
+    "label": "diện tích",
+    "value": 15
+   }
+  ]
+ },
+ "DL:KSN3.B30#C4": {
+  "value": 54
+ },
+ "DL:KSN3.B30#C6": {
+  "value": 5
+ },
+ "DL:KSN3.B30#C7": {
+  "parts": [
+   {
+    "label": "diện tích nền",
+    "value": 40
+   },
+   {
+    "label": "số viên gạch",
+    "value": 160
+   }
+  ]
+ },
+ "DL:KSN3.B30#C8": {
+  "parts": [
+   {
+    "label": "diện tích hình 6 × 4",
+    "value": 24
+   },
+   {
+    "label": "diện tích hình 5 × 5",
+    "value": 25
+   }
+  ]
+ },
+ "DL:KSN3.B31#C1": {
+  "value": 16
+ },
+ "DL:KSN3.B31#C2": {
+  "value": 18
+ },
+ "DL:KSN3.B31#C6": {
+  "parts": [
+   {
+    "label": "bậc thang có mấy khối",
+    "value": 6
+   },
+   {
+    "label": "cần vá thêm mấy khối",
+    "value": 3
+   }
+  ]
+ },
+ "DL:KSN3.B31#C7": {
+  "value": 13
+ },
+ "DL:KSN3.B31#C8": {
+  "value": 14
+ },
+ "DL:KSN3.B32#C1": {
+  "parts": [
+   {
+    "label": "kim phút chỉ số 6",
+    "value": 30
+   },
+   {
+    "label": "kim phút chỉ số 9",
+    "value": 45
+   }
+  ]
+ },
+ "DL:KSN3.B32#C2": {
+  "parts": [
+   {
+    "label": "(a) kim giờ qua số 3, kim phút số 4",
+    "value": "3 giờ 20 phút",
+    "options": [
+     "3 giờ 20 phút",
+     "4 giờ 20 phút",
+     "3 giờ 4 phút"
+    ]
+   },
+   {
+    "label": "(b) kim giờ gần số 6, kim phút số 10",
+    "value": "5 giờ 50 phút",
+    "options": [
+     "5 giờ 50 phút",
+     "6 giờ 50 phút",
+     "5 giờ 10 phút"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B32#C3": {
+  "parts": [
+   {
+    "label": "theo cách nhà đài",
+    "value": "16 giờ 30 phút",
+    "options": [
+     "14 giờ 30 phút",
+     "16 giờ 30 phút",
+     "18 giờ 30 phút"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B32#C4": {
+  "parts": [
+   {
+    "label": "(a) 7 giờ 50 phút",
+    "value": "8 giờ kém 10",
+    "options": [
+     "7 giờ kém 10",
+     "8 giờ kém 10",
+     "8 giờ kém 50"
+    ]
+   },
+   {
+    "label": "(b) 11 giờ 45 phút",
+    "value": "12 giờ kém 15",
+    "options": [
+     "11 giờ kém 15",
+     "12 giờ kém 15",
+     "12 giờ kém 45"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B32#C5": {
+  "parts": [
+   {
+    "label": "phim hết lúc",
+    "value": "8 giờ 45 phút",
+    "options": [
+     "8 giờ 30 phút",
+     "8 giờ 45 phút",
+     "9 giờ 15 phút"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B32#C7": {
+  "value": 30
+ },
+ "DL:KSN3.B33#C3": {
+  "parts": [
+   {
+    "label": "cân một bạn học sinh",
+    "value": "kg",
+    "options": [
+     "g",
+     "kg",
+     "ml",
+     "l"
+    ]
+   },
+   {
+    "label": "cân một gói bim bim",
+    "value": "g",
+    "options": [
+     "g",
+     "kg",
+     "ml",
+     "l"
+    ]
+   },
+   {
+    "label": "đong một thìa si-rô",
+    "value": "ml",
+    "options": [
+     "g",
+     "kg",
+     "ml",
+     "l"
+    ]
+   },
+   {
+    "label": "đong một xô nước",
+    "value": "l",
+    "options": [
+     "g",
+     "kg",
+     "ml",
+     "l"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B33#C5": {
+  "value": 500
+ },
+ "DL:KSN3.B33#C6": {
+  "parts": [
+   {
+    "label": "tổng nguyên liệu khô",
+    "value": 400
+   },
+   {
+    "label": "gấp đôi: bột",
+    "value": 400
+   },
+   {
+    "label": "gấp đôi: đường",
+    "value": 300
+   },
+   {
+    "label": "gấp đôi: bơ",
+    "value": 100
+   }
+  ]
+ },
+ "DL:KSN3.B33#C7": {
+  "value": 4
+ },
+ "DL:KSN3.B33#C8": {
+  "parts": [
+   {
+    "label": "mỗi cốc",
+    "value": 125
+   },
+   {
+    "label": "Su Bống uống",
+    "value": 250
+   }
+  ]
+ },
+ "DL:KSN3.B33#C9": {
+  "parts": [
+   {
+    "label": "quả dưa nặng",
+    "value": 900
+   },
+   {
+    "label": "cả dưa lẫn một quả cam",
+    "value": 1200
+   }
+  ]
+ },
+ "DL:KSN3.B34#C1": {
+  "parts": [
+   {
+    "label": "mấy tờ 5 nghìn",
+    "value": 2
+   },
+   {
+    "label": "mấy tờ 2 nghìn",
+    "value": 5
+   }
+  ]
+ },
+ "DL:KSN3.B34#C4": {
+  "parts": [
+   {
+    "label": "3 cốc hết bao nhiêu",
+    "value": 15
+   },
+   {
+    "label": "trả lại khách",
+    "value": 5
+   }
+  ]
+ },
+ "DL:KSN3.B34#C5": {
+  "value": 5
+ },
+ "DL:KSN3.B34#C7": {
+  "parts": [
+   {
+    "label": "giá vốn mỗi cốc",
+    "value": 3
+   },
+   {
+    "label": "lãi mỗi cốc",
+    "value": 2
+   }
+  ]
+ },
+ "DL:KSN3.B34#C8": {
+  "parts": [
+   {
+    "label": "(a) tổng tiền bán",
+    "value": 45
+   },
+   {
+    "label": "(a) lãi",
+    "value": 18
+   },
+   {
+    "label": "(b) lãi mỗi cốc",
+    "value": 2
+   },
+   {
+    "label": "(b) lãi cả buổi",
+    "value": 18
+   }
+  ]
+ },
+ "DL:KSN3.B34#C9": {
+  "parts": [
+   {
+    "label": "quỹ đang có",
+    "value": 57
+   },
+   {
+    "label": "còn thiếu",
+    "value": 8
+   },
+   {
+    "label": "cần bán thêm mấy cốc",
+    "value": 4
+   }
+  ]
+ },
+ "DL:KSN3.B12#C7": {
+  "parts": [
+   {
+    "label": "(a) 4, 9, 14, 19",
+    "value": "nhịp đều",
+    "options": [
+     "nhịp đều",
+     "phép thử sâu hơn"
+    ]
+   },
+   {
+    "label": "(b) 1, 2, 4, 8",
+    "value": "phép thử sâu hơn",
+    "options": [
+     "nhịp đều",
+     "phép thử sâu hơn"
+    ]
+   },
+   {
+    "label": "(c) 5, 6, 8, 11",
+    "value": "phép thử sâu hơn",
+    "options": [
+     "nhịp đều",
+     "phép thử sâu hơn"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B17#C7": {
+  "parts": [
+   {
+    "label": "Su Kem gấp được",
+    "value": 18
+   },
+   {
+    "label": "cả hai anh em",
+    "value": 24
+   }
+  ]
+ },
+ "DL:KSN3.B18#C3": {
+  "parts": [
+   {
+    "label": "câu 1 vẽ sơ đồ",
+    "value": "đoạn",
+    "options": [
+     "đoạn",
+     "phần"
+    ]
+   },
+   {
+    "label": "câu 2 vẽ sơ đồ",
+    "value": "phần",
+    "options": [
+     "đoạn",
+     "phần"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B32#C8": {
+  "parts": [
+   {
+    "label": "ngày 20 là thứ mấy",
+    "value": "thứ Hai",
+    "options": [
+     "thứ Hai",
+     "thứ Ba",
+     "thứ Tư",
+     "thứ Năm",
+     "thứ Sáu",
+     "thứ Bảy",
+     "Chủ nhật"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B01#C9": {
+  "parts": [
+   {
+    "label": "số nào lớn hơn",
+    "value": "2 202",
+    "options": [
+     "2 022",
+     "2 202"
+    ]
+   },
+   {
+    "label": "lớn hơn bao nhiêu",
+    "value": 180
+   }
+  ]
+ },
+ "DL:KSN3.B02#C9": {
+  "parts": [
+   {
+    "label": "tấm thẻ số mấy",
+    "value": 4
+   }
+  ]
+ },
+ "DL:KSN3.B04#C5": {
+  "parts": [
+   {
+    "label": "lập được mấy số",
+    "value": 4
+   }
+  ]
+ },
+ "DL:KSN3.B04#C9": {
+  "parts": [
+   {
+    "label": "có mấy số",
+    "value": 9
+   },
+   {
+    "label": "nhịp của đoàn tàu",
+    "value": 111
+   }
+  ]
+ },
+ "DL:KSN3.B05#C7": {
+  "parts": [
+   {
+    "label": "kết quả nào CHẮC CHẮN sai",
+    "value": "516",
+    "options": [
+     "156",
+     "516"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B05#C9": {
+  "parts": [
+   {
+    "label": "15 × 6 so với 6 × 15",
+    "value": "tích không đổi",
+    "options": [
+     "tích không đổi",
+     "tích gấp đôi",
+     "tích giảm một nửa"
+    ]
+   },
+   {
+    "label": "15 × 6 bằng bao nhiêu",
+    "value": 90
+   }
+  ]
+ },
+ "DL:KSN3.B06#C7": {
+  "parts": [
+   {
+    "label": "số dư lớn nhất",
+    "value": 4
+   }
+  ]
+ },
+ "DL:KSN3.B06#C9": {
+  "parts": [
+   {
+    "label": "số dư lớn nhất khi chia 6",
+    "value": 5
+   },
+   {
+    "label": "số đó",
+    "value": 47
+   }
+  ]
+ },
+ "DL:KSN3.B08#C1": {
+  "parts": [
+   {
+    "label": "gấp 7 lên 4 lần",
+    "value": 28
+   },
+   {
+    "label": "gấp 9 lên 3 lần",
+    "value": 27
+   }
+  ]
+ },
+ "DL:KSN3.B10#C8": {
+  "parts": [
+   {
+    "label": "số hạng thứ 20",
+    "value": 62
+   }
+  ]
+ },
+ "DL:KSN3.B11#C5": {
+  "parts": [
+   {
+    "label": "50 với dãy 3, 8, 13",
+    "value": "không",
+    "options": [
+     "thuộc",
+     "không"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B11#C9": {
+  "parts": [
+   {
+    "label": "ga chung của hai tàu",
+    "value": 22
+   }
+  ]
+ },
+ "DL:KSN3.B13#C6": {
+  "parts": [
+   {
+    "label": "(a) 5 + 3 × 2 = 16",
+    "value": "SAI",
+    "options": [
+     "ĐÚNG",
+     "SAI"
+    ]
+   },
+   {
+    "label": "(a) sửa lại thành",
+    "value": 11
+   },
+   {
+    "label": "(b) 18 − 6 : 3 = 4",
+    "value": "SAI",
+    "options": [
+     "ĐÚNG",
+     "SAI"
+    ]
+   },
+   {
+    "label": "(b) sửa lại thành",
+    "value": 16
+   },
+   {
+    "label": "(c) 2 × 9 − 5 = 13",
+    "value": "ĐÚNG",
+    "options": [
+     "ĐÚNG",
+     "SAI"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B13#C9": {
+  "parts": [
+   {
+    "label": "thẻ vào ô CỘNG",
+    "value": 2,
+    "options": [
+     "2",
+     "4"
+    ]
+   },
+   {
+    "label": "thẻ vào ô NHÂN",
+    "value": 4,
+    "options": [
+     "2",
+     "4"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B16#C9": {
+  "parts": [
+   {
+    "label": "5 × 17 × 2",
+    "value": 170
+   }
+  ]
+ },
+ "DL:KSN3.B19#C10": {
+  "values": [
+   4,
+   6,
+   8,
+   10
+  ],
+  "ordered": true
+ },
+ "DL:KSN3.B20#C9": {
+  "parts": [
+   {
+    "label": "mấy năm nữa",
+    "value": 6
+   }
+  ]
+ },
+ "DL:KSN3.B22#C3": {
+  "parts": [
+   {
+    "label": "số cần tìm",
+    "value": 8
+   }
+  ]
+ },
+ "DL:KSN3.B24#C9": {
+  "parts": [
+   {
+    "label": "mấy nhát cưa",
+    "value": 4
+   },
+   {
+    "label": "mấy đoạn",
+    "value": 5
+   }
+  ]
+ },
+ "DL:KSN3.B26#C9": {
+  "parts": [
+   {
+    "label": "1 quả dưa đổi được mấy quả cam",
+    "value": 6
+   }
+  ]
+ },
+ "DL:KSN3.B27#C9": {
+  "parts": [
+   {
+    "label": "chiều rộng",
+    "value": 5
+   },
+   {
+    "label": "chiều dài",
+    "value": 10
+   }
+  ]
+ },
+ "DL:KSN3.B28#C9": {
+  "parts": [
+   {
+    "label": "chu vi giảm bao nhiêu",
+    "value": 8
+   }
+  ]
+ },
+ "DL:KSN3.B29#C5": {
+  "parts": [
+   {
+    "label": "AB có phải đường kính",
+    "value": "KHÔNG",
+    "options": [
+     "CÓ",
+     "KHÔNG"
+    ]
+   },
+   {
+    "label": "đường kính thật dài bao nhiêu",
+    "value": 10
+   }
+  ]
+ },
+ "DL:KSN3.B29#C6": {
+  "parts": [
+   {
+    "label": "trục cách mặt đất",
+    "value": 30
+   }
+  ]
+ },
+ "DL:KSN3.B31#C3": {
+  "parts": [
+   {
+    "label": "vì sao nhiều hơn 8",
+    "value": "khối phía sau bị che",
+    "options": [
+     "khối phía sau bị che",
+     "đếm nhầm",
+     "hình vẽ sai"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B31#C9": {
+  "parts": [
+   {
+    "label": "mỗi tầng vốn có",
+    "value": 8
+   },
+   {
+    "label": "khoét mất",
+    "value": 3
+   }
+  ]
+ },
+ "DL:KSN3.B32#C6": {
+  "parts": [
+   {
+    "label": "ngày 12",
+    "value": "thứ Năm",
+    "options": [
+     "thứ Hai",
+     "thứ Ba",
+     "thứ Tư",
+     "thứ Năm",
+     "thứ Sáu",
+     "thứ Bảy",
+     "Chủ nhật"
+    ]
+   },
+   {
+    "label": "ngày 19",
+    "value": "thứ Năm",
+    "options": [
+     "thứ Hai",
+     "thứ Ba",
+     "thứ Tư",
+     "thứ Năm",
+     "thứ Sáu",
+     "thứ Bảy",
+     "Chủ nhật"
+    ]
+   },
+   {
+    "label": "ngày 26",
+    "value": "thứ Năm",
+    "options": [
+     "thứ Hai",
+     "thứ Ba",
+     "thứ Tư",
+     "thứ Năm",
+     "thứ Sáu",
+     "thứ Bảy",
+     "Chủ nhật"
+    ]
+   }
+  ]
+ },
+ "DL:KSN3.B32#C9": {
+  "parts": [
+   {
+    "label": "30 : 7 dư mấy",
+    "value": 2
+   },
+   {
+    "label": "30 ngày nữa là",
+    "value": "thứ Sáu",
+    "options": [
+     "thứ Hai",
+     "thứ Ba",
+     "thứ Tư",
+     "thứ Năm",
+     "thứ Sáu",
+     "thứ Bảy",
+     "Chủ nhật"
+    ]
+   }
+  ]
+ }
 }
