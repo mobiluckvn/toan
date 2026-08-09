@@ -395,7 +395,7 @@ kiểm sai tệ hơn không có** — nó cho cảm giác an toàn giả.
 
 ---
 
-## 9 · Bốn mươi cái bẫy đã dính
+## 9 · Bốn mươi hai cái bẫy đã dính
 
 Mỗi cái đều thuộc loại **hỏng mà không có gì báo**.
 
@@ -495,6 +495,15 @@ Mỗi cái đều thuộc loại **hỏng mà không có gì báo**.
     ReferenceError, không phải `undefined`. Đặt hàm ngay sau chỗ khai.
 40. **Đơn vị đếm mặc định "bài"** → kệ sách ghi "26 bài" cho mùa giải, thứ không có bài
     nào. Khai `donVi` ở sổ đăng ký.
+
+### Chữ Việt
+
+41. **Dải `à-ỹ` (U+00E0–U+1EF9) CHỨA CẢ `Đ` `Ơ` `Ư` VIẾT HOA** (U+0110, U+01A0, U+01AF).
+    Phép thử "dòng này in hoa" viết kiểu `[^a-zà-ỹ]+$` trượt mọi tiêu đề có Đ/Ơ/Ư — mà
+    tiếng Việt thì tiêu đề nào chẳng có. So bằng `s == s.upper()`.
+42. **Tiêu đề trong sách có tiền tố dấu trang** (`B1  ĐÁP ÁN BÀI 1`) và **mục lục dán
+    số trang vào cuối tiêu đề** (`…chính danh27`). Mẫu neo `^ĐÁP ÁN BÀI` hay `…$` đều
+    trượt. Cho phép tiền tố, và cắt đuôi số trang trước khi so.
 
 ---
 
