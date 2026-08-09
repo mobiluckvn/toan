@@ -269,16 +269,26 @@ def cham_tron(p, out):
         txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
 
     y = H - tren - CAO
-    for i, g in enumerate(nhom + ([{'ten': du.get('ten', 'còn thừa'), 'so': du['so'],
-                                    'mau': 'do'}] if du else [])):
+    o_ds = nhom + ([{'ten': du.get('ten', 'còn thừa'), 'so': du['so'],
+                     'mau': 'do'}] if du else [])
+    # CỠ CHẤM TÍNH MỘT LẦN CHO CẢ BỨC, theo hàng dài nhất ở BẤT KỲ nhóm nào.
+    #
+    # Bản trước tính riêng từng nhóm, nên nhóm nào xếp hàng ngắn thì chấm to hơn:
+    # rương "3 viên xếp 1 hàng dọc" ra chấm bán kính 2,6 còn phần dư "2 viên một
+    # hàng ngang" chỉ 1,3 — đúng một nửa. Cùng một viên ngọc mà vẽ hai cỡ trong
+    # cùng một bức thì bé đếm vẫn ra số đúng, nhưng nhìn ra hai thứ khác nhau, và
+    # bài chia có dư thì phần dư PHẢI trông y hệt phần đã chia.
+    #
+    # Đây là bẫy 26 của chuẩn, lần này nằm một tầng cao hơn: không phải giữa các
+    # HÀNG trong một nhóm mà giữa các NHÓM trong một bức. Lời chú cũ nói "dùng
+    # chung cho cả nhóm" — đúng chữ, nhưng cả nhóm chưa phải cả bức.
+    rong_nhat = max([max(_chia_hang(g['so'], g.get('hang', 4))) for g in o_ds] or [1])
+    bw = min(3.4, (W - 6) / rong_nhat / 2)
+    for i, g in enumerate(o_ds):
         x = 4.0 + i * (W + 3.5)
         vien, nen, chu = MAU.get(g.get('mau', 'teal'), MAU['teal'])
         card(ax, x, y, W, CAO, fc='white', ec=vien, lw=2.0, r=1.8)
         hangs = _chia_hang(g['so'], g.get('hang', 4))
-        # Cỡ chấm tính theo HÀNG DÀI NHẤT, dùng chung cho cả nhóm. Tính riêng từng
-        # hàng thì hàng 2 chấm vẽ to hơn hàng 3 chấm — cùng một rổ kẹo mà viên to
-        # viên nhỏ, bé đếm thì vẫn ra đúng nhưng nhìn như hai thứ khác nhau.
-        bw = min(3.4, (W - 6) / max(max(hangs), 1) / 2)
         for r, sl in enumerate(hangs):
             x0 = x + W / 2 - (sl - 1) * bw
             for k in range(sl):

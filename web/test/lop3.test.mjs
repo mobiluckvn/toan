@@ -281,6 +281,25 @@ if (existsSync(MOTA) && existsSync(SOTAY)) {
   t(`bài nào cũng có hình màn mở (${coMo.size}/34)`, khongMo.length === 0);
   in5(khongMo);
 
+  /* …và ít nhất một hình GIẢNG. Chặng giảng không hình thì lời văn treo lơ lửng ở
+     dấu hai chấm — sách lớp 3 chỉ cho sẵn 6 hình giảng cho 34 bài, phần còn lại
+     phải tự dựng, nên chỗ này rất dễ tưởng xong mà chưa xong. */
+  const coGiang = new Set(mota.filter((m) => m.muc === 'khamPha').map((m) => m.bai));
+  const khongGiang = [];
+  for (let i = 1; i <= 34; i += 1) {
+    const ma = `DL:KSN3.B${String(i).padStart(2, '0')}`;
+    if (!coGiang.has(ma)) khongGiang.push(ma);
+  }
+  t(`bài nào cũng có hình giảng (${coGiang.size}/34)`, khongGiang.length === 0);
+  in5(khongGiang);
+
+  /* Hình giảng neo theo THỨ TỰ BƯỚC. Neo quá số bước thật thì bộ gắn dừng hẳn,
+     nhưng bắt sớm ở đây thì biết ngay hình nào sai thay vì đọc log bộ gắn. */
+  const buocQua = mota.filter((m) => m.muc === 'khamPha' && (m.neoBuoc || 0) > 6)
+    .map((m) => `${m.id}: neoBuoc ${m.neoBuoc}`);
+  t('không hình giảng nào neo vào bước quá xa', buocQua.length === 0);
+  in5(buocQua);
+
   const lechSha = [];
   for (const [id, h] of Object.entries(sotay)) {
     const png = join(FIG, id + '.png');

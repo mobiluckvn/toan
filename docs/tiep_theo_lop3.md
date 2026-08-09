@@ -16,11 +16,11 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 | 2b | bóc đáp án | `tools/dapan_lop3.py` → `data/lop3_dapan.json` — **477 đáp án, khớp 1:1** |
 | 2c | ôn tập & ải | `tools/ontap_lop3.py` → `data/lop3_ontap.json` — **8 ôn tập · 3 ải · 114 câu · 84 câu đề B · mối nối đủ 84/84 câu, cả 8 ôn tập đều `canCu: sach`** |
 | 3 | dựng bài học | `tools/chuan_lop3.py` → `data/lop3/` — **34 bài · 477 câu · 100% có lời chữa · 170 câu chấm máy** |
-| 3b | vẽ & gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **74 hình · 17 nguyên mẫu · đủ 34/34 bài** |
+| 3b | vẽ & gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **102 hình · 21 nguyên mẫu · đủ 34/34 bài** |
 | 5 | khuôn chung + sổ đăng ký | `tools/dung_khuon_chung_lop3.py` → `web/public/content/lop3/` · `reviews/DCR_KSN3_C*` — **34 bài · 11 kỳ sát hạch · LỚP 3 ĐÃ HIỆN TRONG APP** |
 | — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`), nút đã nối tới `FinaleCard` |
 
-Phép kiểm: `web/test/lop3.test.mjs` (50 phép). Chạy `cd web && npm test`.
+Phép kiểm: `web/test/lop3.test.mjs` (52 phép). Chạy `cd web && npm test`.
 
 **Thứ tự chạy dây chuyền** — đảo là mất hình mà không có gì báo:
 
@@ -101,7 +101,7 @@ Nhớ mục 6 của chuẩn khi dựng màn mở: lời mở là MỘT CÂU nêu
 
 ---
 
-## VIỆC 3 — Bước 3 · vẽ hình  ⚠ CÒN PHẢI VẼ TIẾP (việc lớn nhất còn lại)
+## VIỆC 3 — Bước 3 · vẽ hình  ✔ XONG BA LOẠI
 
 ### Đã xong — chạy được, có phép kiểm giữ
 
@@ -111,7 +111,7 @@ Nhớ mục 6 của chuẩn khi dựng màn mở: lời mở là MỘT CÂU nêu
 | **7 nguyên mẫu** | `figforge/arch_l3.py` — nhập lại 22 nguyên mẫu lớp 2, viết mới 7 |
 | bộ vẽ | `tools/ve_hinh_lop3.py` → `web/public/content/figures/` + sổ tay |
 | bộ gắn | `tools/gan_hinh_lop3.py` — chạy **sau** `chuan_lop3.py`, là bước CUỐI |
-| hình đã vẽ | **74 hình · đủ 34/34 bài** (`data/lop3_hinh.json`) |
+| hình đã vẽ | **102 hình · đủ 34/34 bài, đủ cả ba loại** (`data/lop3_hinh.json`) |
 
 Bảy nguyên mẫu mới: `hinh_tron` · `luoi_dien_tich` · `ven_hai_vong` · `lich_thang` ·
 `can_ong_dong` · `tien_viet` · `bieu_thuc_ngoac`. Bước 1 đoán "khoảng 5" — hoá ra 7,
@@ -126,12 +126,17 @@ Chạy `python3 tools/khao_sat_hinh_lop3.py --chi-tiet`:
 
 | loại | cần | đã vẽ |
 |---|---|---|
-| ① hình giảng (neo theo bước) | 105 bước ở 34 bài | 11 |
-| ② hình màn mở (bản ĐỀ, bỏ hết đáp án) | 34 bài | **34 — xong** |
-| ③ hình bài tập (`item:CX` + `:giai`) | 14 câu chắc + 135 câu cần soát tay | **15 câu (14/14 câu chắc)** |
+| ① hình giảng (neo theo bước) | 131 bước ở 34 bài | **39 — đủ 34/34 bài** |
+| ② hình màn mở (bản ĐỀ, bỏ hết đáp án) | 34 bài | **34 — đủ** |
+| ③ hình bài tập (`item:CX` + `:giai`) | 14 câu chắc + 135 câu cần soát tay | **26 hình / 15 câu (14/14 câu chắc)** |
 
-Còn lại là **hình giảng** cho ~94 bước và phần đuôi của 135 câu cần soát tay. Không
-phải mọi bước đều đáng vẽ — soát tay rồi quyết, đừng vẽ đủ 105 cho tròn số.
+**Không vẽ đủ 131 hình giảng, và đó là cố ý.** Chuẩn dặn "không phải mọi bước đều
+đáng vẽ" — vẽ đúng bước mang cái CỐT của bài, còn bước chỉ diễn giải bằng lời thì
+thêm hình là thêm thứ để bé phải đọc. 39 hình phủ đủ 34 bài; bài nào dày ý thì hai
+hình (bài 1, 6).
+
+Còn có thể làm thêm: phần đuôi của 135 câu "có thể cần hình" — phải soát tay từng
+câu, máy không quyết thay được.
 
 Lưới quét lượt đầu của tôi ra 306/477 câu "có thể cần" — đó là nhiễu chứ không phải
 sàng lọc, và một danh sách 306 dòng thì không ai soát tay nổi. Bản hiện tại đòi câu
@@ -158,6 +163,21 @@ phải nhắc tới một VẬT THỂ nhìn được, nên còn 135 — đúng c
    trước và **không kêu ca gì** — chỉ lộ ra vì bộ đếm báo "73 hình · sổ tay 71 mục".
    Nay bộ vẽ dừng hẳn khi thấy trùng mã, và **sổ tay biết dọn** mã đã bỏ (trước đó
    nó chỉ thêm, nên mã cũ nằm lại trỏ vào ảnh đã xoá).
+
+### Bẫy 26 lần thứ ba — lần này nằm trong nguyên mẫu DÙNG CHUNG
+
+`cham_tron` tính cỡ chấm RIÊNG cho từng nhóm, nên trong cùng một bức, rương "3 viên
+xếp một hàng dọc" ra chấm bán kính 2,6 còn phần dư "2 viên một hàng ngang" chỉ 1,3 —
+đúng một nửa. Cùng một viên ngọc mà vẽ hai cỡ: bé đếm vẫn ra số đúng, nhưng nhìn ra
+hai thứ khác nhau, mà bài chia có dư thì phần dư PHẢI trông y hệt phần đã chia.
+
+Lời chú cũ nói *"cỡ chấm dùng chung cho cả nhóm"* — đúng chữ, nhưng **cả nhóm chưa
+phải cả bức**. Nay tính một lần cho cả bức.
+
+⚠ **Sửa cái này làm đổi 3 hình của LỚP 2** (`L2H_CHAM01 · 02 · 04`) — chúng dính cùng
+lỗi từ trước. 117/120 hình lớp 2 còn lại giữ nguyên từng byte, đã đối chiếu mã băm.
+Đã chạy lại trọn đuôi dây chuyền lớp 2: `ve_hinh_lop2 → gan_hinh_lop2 →
+dung_khuon_chung`.
 
 ### Hai lỗi DỮ LIỆU, không phải lỗi mã — cả hai đều câm
 
