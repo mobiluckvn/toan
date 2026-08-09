@@ -161,6 +161,21 @@ mô tả hình gần như không đổi theo lời văn.
 - **Đúng toán trước, đẹp sau**: tia số phải đặt mốc theo GIÁ TRỊ, cung nhảy chỉ nối
   các mốc THUỘC dãy.
 
+**Hình ĐẾM thì phải ĐẾM ĐƯỢC.** Bài "đếm hình / đếm khối / chia có dư" chỉ đạt khi bé
+đếm được ngay trên hình:
+
+- Vẽ **đủ số vật**, đừng vẽ một cái rồi ghi "3 cái" bên dưới — đáp án nằm sẵn thì bé
+  không đếm gì, mà hình vẫn "có hình, có số, có lời chú" nên nhìn lướt không thấy sai.
+- Hình ghép phải là **một hình liền** bị vạch chia, không phải mấy hình rời xếp cạnh
+  nhau. Vẽ rời thì cái hình TO đang ẩn — thứ cả bài đang dạy — biến mất.
+- Bản tô đậm hình ghép phải **bỏ vạch chia bên trong**, không thì bé vẫn thấy hai mảnh
+  chứ không thấy một hình.
+- Đếm khối thì xếp **tháp thật**, có khối nấp hàng sau; kèm bản trải phẳng từng tầng.
+- Chia có dư thì **vẽ cả phần dư**.
+- Hình trộn nhiều loại thì **xếp xen kẽ**; gom theo loại là nhìn một cái ra số, khỏi đếm.
+- Nguyên mẫu vẽ đúng **một hình cho mỗi mục khai báo**: nhãn ghi "4 khối" trên một mục
+  nghĩa là một khối đang đeo biển "4 khối". `web/test/hinhdem.test.mjs` soi đúng chỗ này.
+
 **Neo hình** — theo thứ tự bước (`neoBuoc: 2`) hoặc mã câu (`neoCau: "C8"`).
 Không bao giờ neo theo nguyên văn dòng.
 
@@ -292,7 +307,7 @@ kiểm sai tệ hơn không có** — nó cho cảm giác an toàn giả.
 
 ---
 
-## 8 · Hai mươi lăm cái bẫy đã dính
+## 8 · Ba mươi mốt cái bẫy đã dính
 
 Mỗi cái đều thuộc loại **hỏng mà không có gì báo**.
 
@@ -349,14 +364,26 @@ Mỗi cái đều thuộc loại **hỏng mà không có gì báo**.
 21. **Quên cập nhật `data/figure_manifest.json`** — nơi THỨ BA chép lại mã kiểm và lời
     chú. Bài học đúng, sổ sai. Khoá sổ là `<mã bài>#<mã hình>`, không phải `<mã hình>`.
 
+### Hình đếm
+
+22. **Vẽ mỗi loại một cái rồi ghi sẵn số** → bé không đếm được gì. 4 hình lớp 2 dính.
+23. **Hình ghép vẽ thành mấy hình RỜI** → mất hẳn cái hình to đang ẩn, tức là mất bài.
+24. **Chia có dư mà không vẽ phần dư** → đề nói 17 viên, bé đếm trên hình ra 15.
+25. **Nguyên mẫu vẽ `vuong` thành chữ nhật** (2r × 1,6r) trong khi bài dạy phân biệt
+    vuông với chữ nhật. Lỗi ở NGUYÊN MẪU nên lan ra mọi hình dùng nó.
+26. **Cỡ chấm tính theo từng hàng** → hàng 2 chấm to hơn hàng 3 chấm, cùng một rổ kẹo
+    mà viên to viên nhỏ.
+
 ### Mã nguồn
 
-22. **Biến trong vòng lặp đè tham số của hàm** → `series.prev` ra danh sách chỉ số dòng.
-23. **Phép kiểm so trên số ĐÃ LÀM TRÒN** → 7,6% bị làm tròn thành 8 rồi trượt oan.
-24. **Component đọc dữ liệu bất đồng bộ MỘT LẦN lúc dựng** → sổ đăng ký về sau thì
+27. **Biến trong vòng lặp đè tham số của hàm** → `series.prev` ra danh sách chỉ số dòng.
+28. **Phép kiểm so trên số ĐÃ LÀM TRÒN** → 7,6% bị làm tròn thành 8 rồi trượt oan.
+29. **Component đọc dữ liệu bất đồng bộ MỘT LẦN lúc dựng** → sổ đăng ký về sau thì
     màn hình thiếu hẳn một mảng.
-25. **Danh sách tệp kiểm gõ tay trong `package.json`** → thêm tệp kiểm mà quên đăng ký
+30. **Danh sách tệp kiểm gõ tay trong `package.json`** → thêm tệp kiểm mà quên đăng ký
     thì nó nằm im, tưởng có kiểm mà không có. Quét cả thư mục: `for f in test/*.test.mjs`.
+31. **`git checkout` để xoá lỗi gieo thử** cuốn theo cả phần sửa CHƯA COMMIT trong cùng
+    tệp. Sao lưu trước khi gieo, hoặc commit xong mới thử.
 
 ---
 
