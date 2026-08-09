@@ -1,676 +1,676 @@
 {
-  "title": "Bốn vùng hai đường chéo: bên bằng bên — trên : dưới = tỉ đáy lặp HAI lần, đặt phần chia trọn",
-  "grade": 5,
-  "durationMinutes": 9,
-  "skills": {
-    "primary": [
-      "CASE:IV.3.2#1"
+ "title": "Bốn vùng hai đường chéo: bên bằng bên — trên : dưới = tỉ đáy lặp HAI lần, đặt phần chia trọn",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:IV.3.2#1"
+  ],
+  "bktUnit": "CASE:IV.3.2#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B48",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B48.M1",
+  "next": "DL:KSN5Q1.B48.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B48",
+  "chunks": [
+   "CHUNK:KSN5Q1.B48.S4",
+   "CHUNK:KSN5Q1.B48.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B48.2",
+   "CA:KSN5Q1.B48.3"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B48.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con thuộc LUẬT BỐN VÙNG của hai đường chéo hình thang — hai vế tách bạch: (1) hai tam giác BÊN bằng nhau (chứng minh bằng chung đáy - chung cao trừ phần chung); (2) vùng trên : vùng dưới = tỉ đáy LẶP HAI LẦN (1 : 2 → 1 : 4) — cấm suy \"đối đỉnh thì bằng nhau\" cho cặp trên - dưới; giải trọn bằng đặt phần: đáy 1 : 2 → 1 - 4 - 2 - 2 = 9 phần.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (hai tam giác bên bằng nhau)",
+  "kidText": "Hai đường chéo hình thang chia ra bốn vùng: hai vùng bên bằng nhau, còn vùng trên với vùng dưới thì tỉ đáy lặp HAI lần."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Vế 1 — HAI BÊN BẰNG NHAU: S(ABD) = S(ABC) vì chung đáy AB, chung chiều cao (khoảng cách hai đáy); cùng trừ phần chung AOB → S(AOD) = S(BOC) — hai tam giác bên luôn bằng nhau, mọi hình thang."
+   },
+   {
+    "id": "K2",
+    "text": "Vế 2 — TRÊN : DƯỚI = tỉ đáy LẶP HAI LẦN: đáy bé : đáy lớn = 1 : 2 → S(AOB) : S(DOC) = 1 : 4 (tỉ 1:2 nhân chính nó) — KHÔNG phải 1 : 2; và cấm suy \"đối đỉnh bằng nhau\" cho cặp trên-dưới: chỉ HAI BÊN mới bằng."
+   },
+   {
+    "id": "K3",
+    "text": "Đặt phần chia trọn: đáy 1 : 2 → trên 1 — dưới 4 — hai bên mỗi bên 2: tổng 9 phần; S = 36 → 1 phần = 4 → bốn vùng: 4 - 16 - 8 - 8 m² (thử cộng 36 ✓)."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: HAI SỢI CHÉO CẮT THỬA RUỘNG LÀM BỐN. Hình thang đáy bé 4 đáy lớn 8, hai đường chéo cắt nhau tại O — bốn vùng: trên, dưới, hai bên. Trí Long nhìn hai vùng bên đối nhau qua O: \"đối đỉnh thì bằng nhau — cả trên với dưới cũng thế!\" Khoan — luật bốn vùng có HAI VẾ tách bạch! Vế một: hai tam giác ABD và ABC CHUNG ĐÁY AB, CHUNG CHIỀU CAO là khoảng cách hai đáy — bằng nhau; cùng trừ đi phần chung AOB: hai tam giác BÊN bằng nhau — chứng minh ba nhát, không phải vì \"đối đỉnh\"! Vế hai: trên với dưới KHÔNG bằng — tỉ của chúng là tỉ đáy LẶP HAI LẦN: đáy một-hai thì diện tích một-BỐN! Đặt phần chia trọn thửa: trên MỘT — dưới BỐN — mỗi bên HAI: chín phần! Ba sáu chia chín — một phần bốn mét vuông: bốn vùng BỐN - MƯỜI SÁU - TÁM - TÁM, cộng lại tròn ba sáu! Bên bằng bên — trên dưới lặp tỉ hai lần!",
+  "canonicalExamples": [
+   {
+    "case": "chứng minh hai bên (ca vế 1)",
+    "problem": "Hình thang ABCD (đáy bé AB, đáy lớn CD) có hai đường chéo cắt nhau tại O. Giải thích vì sao S(AOD) = S(BOC).",
+    "solution": "ABD và ABC chung đáy AB, chung chiều cao (khoảng cách hai đáy) → S bằng nhau; cùng trừ phần chung AOB → S(AOD) = S(BOC).",
+    "why": "Ca LT4 — ba nhát chứng minh."
+   },
+   {
+    "case": "đặt phần bốn vùng (ca lõi)",
+    "problem": "Hình thang đáy bé 4 m, đáy lớn 8 m, cao 6 m; hai đường chéo chia thửa thành bốn vùng. Tính diện tích từng vùng.",
+    "solution": "S = 36; đáy 1 : 2 → phần: trên 1 - dưới 4 - bên 2 - bên 2 = 9 phần → 1 phần = 4 → bốn vùng 4 - 16 - 8 - 8 m². Thử: cộng = 36 ✓.",
+    "why": "Ca đề A câu 13 — trap trên-dưới-bằng-nhau rình đây."
+   }
+  ],
+  "numberRange": "Lớp 5: tỉ đáy 1:2, 1:3; S ≤ 60 m².",
+  "misconceptions": [
+   {
+    "wrong": "Suy \"đối đỉnh thì bằng nhau\" cho cả bốn vùng: vùng trên = vùng dưới.",
+    "signal": "S(AOB) = S(DOC) trong bài làm; không có bước lặp tỉ hai lần.",
+    "fix": "luật hai vế: chỉ HAI BÊN bằng nhau (chứng minh trừ-phần-chung); trên : dưới = tỉ đáy lặp hai lần (1:2 → 1:4).",
+    "counterExample": "Trên = dưới thì 1 + 1 + 2 + 2 = 6 phần đều nhau kiểu gì cũng lệch: đáy 8 gấp đôi đáy 4 mà hai tam giác úp lên chúng lại bằng nhau — úp vung nhỏ lên nồi to à?!"
+   }
+  ],
+  "vocabulary": [
+   "hai sợi chéo bốn vùng",
+   "chứng minh ba nhát",
+   "trừ phần chung",
+   "tỉ đáy lặp hai lần",
+   "đặt phần chia trọn"
+  ],
+  "mantra": "BÊN BẰNG BÊN — TRÊN DƯỚI LẶP TỈ HAI LẦN!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "mcq",
+    "text": "Ôn B46: chung đáy → tỉ S = tỉ gì?",
+    "choices": [
+     "tỉ cao",
+     "tỉ đáy",
+     "1:1"
     ],
-    "bktUnit": "CASE:IV.3.2#1@G5"
+    "answerKey": {
+     "choice": "tỉ cao"
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B46.M1",
+   "message": "Ôn hai định lý nền rồi ra thửa ruộng nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Hai đường chéo cắt thửa hình thang làm bốn vùng. Trí Long chỉ cặp trên - dưới: \"đối đỉnh qua O — bằng nhau tuốt!\" Su Kem chỉ hai đáy: \"Đáy dưới 8 gấp đôi đáy trên 4 — hai tam giác úp lên chúng mà bằng nhau, khác gì úp vung nhỏ lên nồi to?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "đối đỉnh = bằng nhau tuốt??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để đọc luật hai vế!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Luật bốn vùng có HAI VẾ! Vế một — hai BÊN bằng nhau, chứng minh ba nhát: tam giác ABD và ABC chung đáy AB — chung chiều cao là khoảng cách hai đáy — bằng nhau; cùng TRỪ phần chung AOB: hai bên bằng nhau! Vế hai — trên với dưới KHÔNG bằng: tỉ của chúng là tỉ đáy LẶP HAI LẦN — đáy một-hai thì diện tích một-BỐN, không phải một-hai!",
+    "display": {
+     "type": "four_zones_interactive",
+     "spec": {
+      "v1": "ABD = ABC (chung đáy AB, chung cao) − AOB → bên = bên",
+      "v2": "trên : dưới = (1:2) lặp 2 lần = 1 : 4",
+      "warn": "đối đỉnh ≠ căn cứ"
+     }
+    },
+    "interaction": {
+     "type": "prove_three_cuts",
+     "answerKey": {
+      "values": [
+       "bằng nhau",
+       "1:4"
+      ]
+     },
+     "successMessage": "Bên bằng bên — trên dưới 1:4!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Đáy bé : đáy lớn = 1 : 2 → vùng trên : vùng dưới =",
+     "choices": [
+      "1 : 4",
+      "1 : 2",
+      "1 : 3"
+     ],
+     "answerKey": {
+      "choice": "1 : 4"
+     },
+     "wrongFeedback": "Tỉ đáy lặp hai lần.",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 44,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Đặt phần chia trọn thửa ba sáu mét vuông: đáy một-hai → vùng trên MỘT phần — vùng dưới BỐN phần — mỗi bên HAI phần: tổng CHÍN phần! Một phần bằng ba sáu chia chín — BỐN mét vuông: bốn vùng lần lượt BỐN - MƯỜI SÁU - TÁM - TÁM! Thử cộng: bốn cộng mười sáu cộng tám cộng tám — tròn ba mươi sáu! Nhớ đổi về mét vuông thật — bài đặt phần nào cũng phải trả tiền thật ở đáp số!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "phần: trên 1 · dưới 4 · bên 2 · bên 2 = 9",
+      "1 phần = 36 : 9 = 4 → 4 - 16 - 8 - 8",
+      "thử: cộng = 36 ✓ (tiền thật m²)"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: bên bằng bên — trên dưới lặp tỉ hai lần!",
+    "display": {
+     "type": "mantra_card",
+     "text": "BÊN BẰNG BÊN — LẶP TỈ HAI LẦN!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 84,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B48",
-    "order": 2,
-    "prev": "DL:KSN5Q1.B48.M1",
-    "next": "DL:KSN5Q1.B48.M3"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B48",
-    "chunks": [
-      "CHUNK:KSN5Q1.B48.S4",
-      "CHUNK:KSN5Q1.B48.S5"
-    ],
-    "cases": [
-      "CA:KSN5Q1.B48.2",
-      "CA:KSN5Q1.B48.3"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B48.2"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Hai đường chéo cắt thửa hình thang làm bốn vùng. Trí Long chỉ cặp trên - dưới: đối đỉnh qua O — bằng nhau tuốt! Su Kem chỉ hai đáy: đáy dưới tám gấp đôi đáy trên bốn — hai tam giác úp lên chúng mà bằng nhau, khác gì úp vung nhỏ lên nồi to?",
+    "screenText": "đối đỉnh = bằng nhau tuốt??",
+    "visual": "Hình thang với hai chéo cắt tại O tô bốn vùng bốn màu; vung nhỏ úp nồi to vênh váo; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Luật bốn vùng có HAI VẾ! Vế một — hai BÊN bằng nhau, chứng minh ba nhát: tam giác ABD và ABC chung đáy AB — chung chiều cao là khoảng cách hai đáy — bằng nhau; cùng TRỪ phần chung AOB: hai bên bằng nhau! Vế hai — trên với dưới KHÔNG bằng: tỉ của chúng là tỉ đáy LẶP HAI LẦN — đáy một-hai thì diện tích một-BỐN, không phải một-hai!",
+    "screenText": "ABD = ABC (chung AB, chung cao) − AOB → bên = bên · trên:dưới = 1:4",
+    "visual": "Hai tam giác lớn chồng mờ chung đáy AB; phần chung AOB bóc ra để lộ hai bên bằng nhau; cặp trên-dưới với tỉ 1:4 khắc đậm.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Đặt phần chia trọn thửa ba sáu mét vuông: đáy một-hai → vùng trên MỘT phần — vùng dưới BỐN phần — mỗi bên HAI phần: tổng CHÍN phần! Một phần bằng ba sáu chia chín — BỐN mét vuông: bốn vùng lần lượt BỐN - MƯỜI SÁU - TÁM - TÁM! Thử cộng: tròn ba mươi sáu!",
+    "screenText": "1 + 4 + 2 + 2 = 9 phần · 1 phần = 4 → 4 - 16 - 8 - 8 (Σ = 36 ✓)",
+    "visual": "Bốn vùng dán tem số phần 1-4-2-2; quầy đổi 1 phần = 4 m²; bốn đáp số bốn màu cộng về 36 mộc xanh.",
+    "assets": [],
+    "duration": 21
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú thửa ruộng: bên bằng bên — trên dưới lặp tỉ hai lần!",
+    "screenText": "BÊN BẰNG BÊN — LẶP TỈ HAI LẦN!",
+    "visual": "Thẻ thần chú vàng với icon bốn vùng.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Thửa ruộng của con: đáy bốn và tám, diện tích ba sáu — đặt chín phần rồi chia trọn bốn vùng! Vào bài luyện ngay!",
+    "screenText": "1-4-2-2 → mỗi vùng ? m²",
+    "visual": "Thửa ruộng chờ chia; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 9
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Hai vế một thửa ruộng",
+  "problem": "Hình thang đáy bé 4 m, đáy lớn 8 m, cao 6 m; hai đường chéo chia thửa thành bốn vùng. Tính diện tích từng vùng.",
+  "steps": [
+   {
+    "show": "Bước 1 — S = (8 + 4) × 6 : 2 = 36 m²; luật hai vế: bên = bên; trên : dưới = 1 : 4.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Vùng trên và vùng dưới có bằng nhau không?",
+     "choices": [
+      "không — tỉ đáy lặp hai lần: 1 : 4",
+      "có — đối đỉnh",
+      "tùy hình"
+     ],
+     "answerKey": {
+      "choice": "không — tỉ đáy lặp hai lần: 1 : 4"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Đặt phần: trên 1, dưới 4, bên 2, bên 2 → 9 phần; 1 phần = 36 : 9 = 4 m²."
+   },
+   {
+    "show": "Bước 3 — Bốn vùng: 4 - 16 - 8 - 8 m². Thử: cộng = 36 ✓.",
+    "askAfter": {
+     "format": "mb",
+     "text": "Vì sao S(AOD) = S(BOC)?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "căn cứ",
+        "value": "ABD = ABC (chung đáy AB, chung cao) rồi cùng trừ phần chung AOB"
+       }
+      ]
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B48.LT4",
+     "text": "Hình thang ABCD (đáy bé AB, đáy lớn CD) có hai đường chéo cắt nhau tại O. Giải thích vì sao S(AOD) = S(BOC).",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chứng minh",
+        "value": "S(ABD) = S(ABC) vì chung đáy AB và chung chiều cao; cùng bớt phần chung AOB thì còn S(AOD) = S(BOC)",
+        "options": [
+         "S(ABD) = S(ABC) vì chung đáy AB và chung chiều cao; cùng bớt phần chung AOB thì còn S(AOD) = S(BOC)",
+         "Vì O là trung điểm của cả hai đường chéo",
+         "Vì AOD và BOC đối đỉnh nhau nên bằng nhau",
+         "Vì hai đáy AB và CD bằng nhau"
+        ]
+       }
+      ]
+     },
+     "hints": [
+      "Hai tam giác lớn chung gì?",
+      "Trừ phần chung."
+     ],
+     "solutionNarrative": "Ba nhát: chung đáy — chung cao — trừ chung.",
+     "teaches": [
+      "K1"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B48.LT5",
+     "text": "Hình thang đáy bé 4 m, đáy lớn 8 m, cao 6 m; hai đường chéo chia thửa thành bốn vùng. Tính diện tích từng vùng.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "trên",
+        "value": 4
+       },
+       {
+        "label": "dưới",
+        "value": 16
+       },
+       {
+        "label": "mỗi bên",
+        "value": 8
+       }
+      ]
+     },
+     "hints": [
+      "Phần: 1 - 4 - 2 - 2 = 9.",
+      "1 phần = 36 : 9."
+     ],
+     "solutionNarrative": "4 - 16 - 8 - 8 m² (Σ 36 ✓).",
+     "teaches": [
+      "K2",
+      "K3"
+     ],
+     "generator": {
+      "template": "Thang đáy {a}:{b}, S = {S} → 4 vùng?",
+      "constraints": {},
+      "answerRule": "phần a², b², ab, ab"
+     }
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Đáy 1 : 3 thì vùng trên : vùng dưới = 1 : 3.",
+     "answerKey": {
+      "value": false,
+      "note": "Tỉ đáy lặp HAI lần: 1 : 9 — chỉ hai vùng BÊN mới bằng nhau (mỗi bên 3 phần: 1 + 9 + 3 + 3 = 16 phần)."
+     },
+     "hints": [
+      "Lặp tỉ mấy lần?",
+      "Bên thì sao?"
+     ],
+     "teaches": [
+      "K2"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:IV.3.2#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B48.M3",
+   "award": "huy_hieu_bon_vung"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P2"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B48.QZ2",
+    "text": "(Đúng/Sai?) Hai đường chéo hình thang chia hình thành bốn vùng có hai tam giác bên bằng nhau.",
+    "answerKey": {
+     "value": true
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B48.QZ4",
+    "text": "Đáy bé : đáy lớn = 1 : 2 → vùng trên : vùng dưới =",
+    "choices": [
+     "1 : 4",
+     "1 : 2",
+     "1 : 3"
+    ],
+    "answerKey": {
+     "choice": "1 : 4"
+    },
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mb",
+    "text": "Thang đáy 4-8, S = 36: bốn vùng = ?",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "trên",
+       "value": 4
+      },
+      {
+       "label": "dưới",
+       "value": 16
+      },
+      {
+       "label": "bên",
+       "value": 8
+      }
+     ]
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Luật bốn vùng hai chéo hình thang?",
+    "back": "HAI VẾ: (1) hai BÊN bằng nhau — chứng minh ba nhát: ABD = ABC (chung đáy AB, chung cao) − phần chung AOB; (2) trên : dưới = tỉ đáy LẶP HAI LẦN (1:2 → 1:4 — không phải đối đỉnh!). Đặt phần: 1-4-2-2 = 9 → 36:9 = 4 → vùng 4-16-8-8 (thử Σ 36)."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P2",
+   "+7 ngày: câu P3 (1:3)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học luật bốn vùng: bên bằng bên (chứng minh trừ-phần-chung) và trên:dưới lặp tỉ hai lần. Con đạt {score}/3, {trapResult} câu bẫy đối-đỉnh.",
+  "homeActivity": "Vẽ hình thang, kẻ hai chéo, tô bốn vùng bốn màu — con chỉ cặp nào bằng nhau và đọc tỉ cặp trên-dưới.",
+  "watchFor": "Nếu con phán trên = dưới — hỏi 'úp vung nhỏ lên nồi to vừa không?' (S1)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B48.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "đối đỉnh = bằng nhau tuốt??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "đối đỉnh qua O — bằng nhau tuốt!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Đáy dưới 8 gấp đôi đáy trên 4 — hai tam giác úp lên chúng mà bằng nhau, khác gì úp vung nhỏ lên nồi to?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B48_M2_F1.png",
+   "sha256_16": "961913401b6fa1c1"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con thuộc LUẬT BỐN VÙNG của hai đường chéo hình thang — hai vế tách bạch: (1) hai tam giác BÊN bằng nhau (chứng minh bằng chung đáy - chung cao trừ phần chung); (2) vùng trên : vùng dưới = tỉ đáy LẶP HAI LẦN (1 : 2 → 1 : 4) — cấm suy \"đối đỉnh thì bằng nhau\" cho cặp trên - dưới; giải trọn bằng đặt phần: đáy 1 : 2 → 1 - 4 - 2 - 2 = 9 phần.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (hai tam giác bên bằng nhau)",
-    "kidText": "Hai đường chéo hình thang chia ra bốn vùng: hai vùng bên bằng nhau, còn vùng trên với vùng dưới thì tỉ đáy lặp HAI lần."
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Bốn vùng hai đường chéo: bên bằng bên — trên : dưới = tỉ đáy lặp HAI lần, đặt phần chia trọn",
+    "steps": [
+     {
+      "text": "phần: trên 1 · dưới 4 · bên 2 · bên 2 = 9"
+     },
+     {
+      "text": "1 phần = 36 : 9 = 4 → 4 - 16 - 8 - 8"
+     },
+     {
+      "text": "thử: cộng = 36 (tiền thật m²)"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B48_M2_F2.png",
+   "sha256_16": "6d91a3ebc402a6e4"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Vế 1 — HAI BÊN BẰNG NHAU: S(ABD) = S(ABC) vì chung đáy AB, chung chiều cao (khoảng cách hai đáy); cùng trừ phần chung AOB → S(AOD) = S(BOC) — hai tam giác bên luôn bằng nhau, mọi hình thang."
-      },
-      {
-        "id": "K2",
-        "text": "Vế 2 — TRÊN : DƯỚI = tỉ đáy LẶP HAI LẦN: đáy bé : đáy lớn = 1 : 2 → S(AOB) : S(DOC) = 1 : 4 (tỉ 1:2 nhân chính nó) — KHÔNG phải 1 : 2; và cấm suy \"đối đỉnh bằng nhau\" cho cặp trên-dưới: chỉ HAI BÊN mới bằng."
-      },
-      {
-        "id": "K3",
-        "text": "Đặt phần chia trọn: đáy 1 : 2 → trên 1 — dưới 4 — hai bên mỗi bên 2: tổng 9 phần; S = 36 → 1 phần = 4 → bốn vùng: 4 - 16 - 8 - 8 m² (thử cộng 36 ✓)."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: HAI SỢI CHÉO CẮT THỬA RUỘNG LÀM BỐN. Hình thang đáy bé 4 đáy lớn 8, hai đường chéo cắt nhau tại O — bốn vùng: trên, dưới, hai bên. Trí Long nhìn hai vùng bên đối nhau qua O: \"đối đỉnh thì bằng nhau — cả trên với dưới cũng thế!\" Khoan — luật bốn vùng có HAI VẾ tách bạch! Vế một: hai tam giác ABD và ABC CHUNG ĐÁY AB, CHUNG CHIỀU CAO là khoảng cách hai đáy — bằng nhau; cùng trừ đi phần chung AOB: hai tam giác BÊN bằng nhau — chứng minh ba nhát, không phải vì \"đối đỉnh\"! Vế hai: trên với dưới KHÔNG bằng — tỉ của chúng là tỉ đáy LẶP HAI LẦN: đáy một-hai thì diện tích một-BỐN! Đặt phần chia trọn thửa: trên MỘT — dưới BỐN — mỗi bên HAI: chín phần! Ba sáu chia chín — một phần bốn mét vuông: bốn vùng BỐN - MƯỜI SÁU - TÁM - TÁM, cộng lại tròn ba sáu! Bên bằng bên — trên dưới lặp tỉ hai lần!",
-    "canonicalExamples": [
-      {
-        "case": "chứng minh hai bên (ca vế 1)",
-        "problem": "Hình thang ABCD (đáy bé AB, đáy lớn CD) có hai đường chéo cắt nhau tại O. Giải thích vì sao S(AOD) = S(BOC).",
-        "solution": "ABD và ABC chung đáy AB, chung chiều cao (khoảng cách hai đáy) → S bằng nhau; cùng trừ phần chung AOB → S(AOD) = S(BOC).",
-        "why": "Ca LT4 — ba nhát chứng minh."
-      },
-      {
-        "case": "đặt phần bốn vùng (ca lõi)",
-        "problem": "Hình thang đáy bé 4 m, đáy lớn 8 m, cao 6 m; hai đường chéo chia thửa thành bốn vùng. Tính diện tích từng vùng.",
-        "solution": "S = 36; đáy 1 : 2 → phần: trên 1 - dưới 4 - bên 2 - bên 2 = 9 phần → 1 phần = 4 → bốn vùng 4 - 16 - 8 - 8 m². Thử: cộng = 36 ✓.",
-        "why": "Ca đề A câu 13 — trap trên-dưới-bằng-nhau rình đây."
-      }
-    ],
-    "numberRange": "Lớp 5: tỉ đáy 1:2, 1:3; S ≤ 60 m².",
-    "misconceptions": [
-      {
-        "wrong": "Suy \"đối đỉnh thì bằng nhau\" cho cả bốn vùng: vùng trên = vùng dưới.",
-        "signal": "S(AOB) = S(DOC) trong bài làm; không có bước lặp tỉ hai lần.",
-        "fix": "K2 — luật hai vế: chỉ HAI BÊN bằng nhau (chứng minh trừ-phần-chung); trên : dưới = tỉ đáy lặp hai lần (1:2 → 1:4).",
-        "counterExample": "Trên = dưới thì 1 + 1 + 2 + 2 = 6 phần đều nhau kiểu gì cũng lệch: đáy 8 gấp đôi đáy 4 mà hai tam giác úp lên chúng lại bằng nhau — úp vung nhỏ lên nồi to à?!"
-      }
-    ],
-    "vocabulary": [
-      "hai sợi chéo bốn vùng",
-      "chứng minh ba nhát",
-      "trừ phần chung",
-      "tỉ đáy lặp hai lần",
-      "đặt phần chia trọn"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Vế 1 — HAI BÊN BẰNG NHAU",
+      "text": "S(ABD) = S(ABC) vì chung đáy AB, chung chiều cao (khoảng cách hai đáy); cùng trừ phần chung AOB → S(AOD) = S(BOC) — hai tam giác bên luôn bằng nhau, mọi hình thang.",
+      "tone": "navy"
+     },
+     {
+      "label": "Vế 2 — TRÊN",
+      "text": "DƯỚI = tỉ đáy LẶP HAI LẦN: đáy bé : đáy lớn = 1 : 2 → S(AOB) : S(DOC) = 1 : 4 (tỉ 1:2 nhân chính nó) — KHÔNG phải 1 : 2; và cấm suy \"đối đỉnh bằng nhau\" cho cặp trên-dưới: chỉ HAI BÊN mới bằng.",
+      "tone": "teal"
+     }
     ],
     "mantra": "BÊN BẰNG BÊN — TRÊN DƯỚI LẶP TỈ HAI LẦN!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B48_M2_F3.png",
+   "sha256_16": "ba159dd668e43168"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "mcq",
-        "text": "Ôn B46: chung đáy → tỉ S = tỉ gì?",
-        "choices": [
-          "tỉ cao",
-          "tỉ đáy",
-          "1:1"
-        ],
-        "answerKey": {
-          "choice": "tỉ cao"
-        }
-      }
+  {
+   "archetype": "geo_shape",
+   "params": {
+    "title": "HAI ĐƯỜNG CHÉO CHIA HÌNH THANG THÀNH BỐN VÙNG",
+    "points": {
+     "D": [
+      0,
+      0
+     ],
+     "C": [
+      8,
+      0
+     ],
+     "B": [
+      6,
+      6
+     ],
+     "A": [
+      2,
+      6
+     ],
+     "O": [
+      4,
+      4
+     ]
+    },
+    "shapes": [
+     {
+      "pts": [
+       "A",
+       "B",
+       "O"
+      ],
+      "fill": "teal",
+      "label": "trên 1p = 4"
+     },
+     {
+      "pts": [
+       "D",
+       "C",
+       "O"
+      ],
+      "fill": "navy",
+      "label": "dưới 4p = 16"
+     },
+     {
+      "pts": [
+       "A",
+       "D",
+       "O"
+      ],
+      "fill": "gold",
+      "label": "bên 2p = 8"
+     },
+     {
+      "pts": [
+       "B",
+       "C",
+       "O"
+      ],
+      "fill": "gold",
+      "label": "bên 2p = 8"
+     }
     ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B46.M1",
-      "message": "Ôn hai định lý nền rồi ra thửa ruộng nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 18,
-        "narration": "Hai đường chéo cắt thửa hình thang làm bốn vùng. Trí Long chỉ cặp trên - dưới: \"đối đỉnh qua O — bằng nhau tuốt!\" Su Kem chỉ hai đáy: \"Đáy dưới 8 gấp đôi đáy trên 4 — hai tam giác úp lên chúng mà bằng nhau, khác gì úp vung nhỏ lên nồi to?\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "đối đỉnh = bằng nhau tuốt??"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để đọc luật hai vế!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 46,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Luật bốn vùng có HAI VẾ! Vế một — hai BÊN bằng nhau, chứng minh ba nhát: tam giác ABD và ABC chung đáy AB — chung chiều cao là khoảng cách hai đáy — bằng nhau; cùng TRỪ phần chung AOB: hai bên bằng nhau! Vế hai — trên với dưới KHÔNG bằng: tỉ của chúng là tỉ đáy LẶP HAI LẦN — đáy một-hai thì diện tích một-BỐN, không phải một-hai!",
-        "display": {
-          "type": "four_zones_interactive",
-          "spec": {
-            "v1": "ABD = ABC (chung đáy AB, chung cao) − AOB → bên = bên",
-            "v2": "trên : dưới = (1:2) lặp 2 lần = 1 : 4",
-            "warn": "đối đỉnh ≠ căn cứ"
-          }
-        },
-        "interaction": {
-          "type": "prove_three_cuts",
-          "answerKey": {
-            "values": [
-              "bằng nhau",
-              "1:4"
-            ]
-          },
-          "successMessage": "Bên bằng bên — trên dưới 1:4!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "mcq",
-          "text": "Đáy bé : đáy lớn = 1 : 2 → vùng trên : vùng dưới =",
-          "choices": [
-            "1 : 4",
-            "1 : 2",
-            "1 : 3"
-          ],
-          "answerKey": {
-            "choice": "1 : 4"
-          },
-          "wrongFeedback": "Tỉ đáy lặp hai lần.",
-          "objective": "O1",
-          "teaches": [
-            "K2"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 44,
-        "teaches": [
-          "K3"
-        ],
-        "narration": "Đặt phần chia trọn thửa ba sáu mét vuông: đáy một-hai → vùng trên MỘT phần — vùng dưới BỐN phần — mỗi bên HAI phần: tổng CHÍN phần! Một phần bằng ba sáu chia chín — BỐN mét vuông: bốn vùng lần lượt BỐN - MƯỜI SÁU - TÁM - TÁM! Thử cộng: bốn cộng mười sáu cộng tám cộng tám — tròn ba mươi sáu! Nhớ đổi về mét vuông thật — bài đặt phần nào cũng phải trả tiền thật ở đáp số!",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "phần: trên 1 · dưới 4 · bên 2 · bên 2 = 9",
-            "1 phần = 36 : 9 = 4 → 4 - 16 - 8 - 8",
-            "thử: cộng = 36 ✓ (tiền thật m²)"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú thửa ruộng: bên bằng bên — trên dưới lặp tỉ hai lần!",
-        "display": {
-          "type": "mantra_card",
-          "text": "BÊN BẰNG BÊN — LẶP TỈ HAI LẦN!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 84,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
-    },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Hai đường chéo cắt thửa hình thang làm bốn vùng. Trí Long chỉ cặp trên - dưới: đối đỉnh qua O — bằng nhau tuốt! Su Kem chỉ hai đáy: đáy dưới tám gấp đôi đáy trên bốn — hai tam giác úp lên chúng mà bằng nhau, khác gì úp vung nhỏ lên nồi to?",
-        "screenText": "đối đỉnh = bằng nhau tuốt??",
-        "visual": "Hình thang với hai chéo cắt tại O tô bốn vùng bốn màu; vung nhỏ úp nồi to vênh váo; dấu hỏi đỏ #C0392B.",
-        "assets": [],
-        "duration": 20
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Luật bốn vùng có HAI VẾ! Vế một — hai BÊN bằng nhau, chứng minh ba nhát: tam giác ABD và ABC chung đáy AB — chung chiều cao là khoảng cách hai đáy — bằng nhau; cùng TRỪ phần chung AOB: hai bên bằng nhau! Vế hai — trên với dưới KHÔNG bằng: tỉ của chúng là tỉ đáy LẶP HAI LẦN — đáy một-hai thì diện tích một-BỐN, không phải một-hai!",
-        "screenText": "ABD = ABC (chung AB, chung cao) − AOB → bên = bên · trên:dưới = 1:4",
-        "visual": "Hai tam giác lớn chồng mờ chung đáy AB; phần chung AOB bóc ra để lộ hai bên bằng nhau; cặp trên-dưới với tỉ 1:4 khắc đậm.",
-        "assets": [],
-        "duration": 26
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Đặt phần chia trọn thửa ba sáu mét vuông: đáy một-hai → vùng trên MỘT phần — vùng dưới BỐN phần — mỗi bên HAI phần: tổng CHÍN phần! Một phần bằng ba sáu chia chín — BỐN mét vuông: bốn vùng lần lượt BỐN - MƯỜI SÁU - TÁM - TÁM! Thử cộng: tròn ba mươi sáu!",
-        "screenText": "1 + 4 + 2 + 2 = 9 phần · 1 phần = 4 → 4 - 16 - 8 - 8 (Σ = 36 ✓)",
-        "visual": "Bốn vùng dán tem số phần 1-4-2-2; quầy đổi 1 phần = 4 m²; bốn đáp số bốn màu cộng về 36 mộc xanh.",
-        "assets": [],
-        "duration": 21
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú thửa ruộng: bên bằng bên — trên dưới lặp tỉ hai lần!",
-        "screenText": "BÊN BẰNG BÊN — LẶP TỈ HAI LẦN!",
-        "visual": "Thẻ thần chú vàng với icon bốn vùng.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Thửa ruộng của con: đáy bốn và tám, diện tích ba sáu — đặt chín phần rồi chia trọn bốn vùng! Vào bài luyện ngay!",
-        "screenText": "1-4-2-2 → mỗi vùng ? m²",
-        "visual": "Thửa ruộng chờ chia; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P2",
-        "assets": [],
-        "duration": 9
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Hai vế một thửa ruộng",
-    "problem": "Hình thang đáy bé 4 m, đáy lớn 8 m, cao 6 m; hai đường chéo chia thửa thành bốn vùng. Tính diện tích từng vùng.",
-    "steps": [
-      {
-        "show": "Bước 1 — S = (8 + 4) × 6 : 2 = 36 m²; luật hai vế: bên = bên; trên : dưới = 1 : 4.",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Vùng trên và vùng dưới có bằng nhau không?",
-          "choices": [
-            "không — tỉ đáy lặp hai lần: 1 : 4",
-            "có — đối đỉnh",
-            "tùy hình"
-          ],
-          "answerKey": {
-            "choice": "không — tỉ đáy lặp hai lần: 1 : 4"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Đặt phần: trên 1, dưới 4, bên 2, bên 2 → 9 phần; 1 phần = 36 : 9 = 4 m²."
-      },
-      {
-        "show": "Bước 3 — Bốn vùng: 4 - 16 - 8 - 8 m². Thử: cộng = 36 ✓.",
-        "askAfter": {
-          "format": "mb",
-          "text": "Vì sao S(AOD) = S(BOC)?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "căn cứ",
-                "value": "ABD = ABC (chung đáy AB, chung cao) rồi cùng trừ phần chung AOB"
-              }
-            ]
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B48.LT4",
-          "text": "Hình thang ABCD (đáy bé AB, đáy lớn CD) có hai đường chéo cắt nhau tại O. Giải thích vì sao S(AOD) = S(BOC).",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "chứng minh",
-                "value": "S(ABD) = S(ABC) vì chung đáy AB và chung chiều cao; cùng bớt phần chung AOB thì còn S(AOD) = S(BOC)",
-                "options": [
-                  "S(ABD) = S(ABC) vì chung đáy AB và chung chiều cao; cùng bớt phần chung AOB thì còn S(AOD) = S(BOC)",
-                  "Vì O là trung điểm của cả hai đường chéo",
-                  "Vì AOD và BOC đối đỉnh nhau nên bằng nhau",
-                  "Vì hai đáy AB và CD bằng nhau"
-                ]
-              }
-            ]
-          },
-          "hints": [
-            "Hai tam giác lớn chung gì?",
-            "Trừ phần chung."
-          ],
-          "solutionNarrative": "Ba nhát: chung đáy — chung cao — trừ chung.",
-          "teaches": [
-            "K1"
-          ]
-        }
-      ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B48.LT5",
-          "text": "Hình thang đáy bé 4 m, đáy lớn 8 m, cao 6 m; hai đường chéo chia thửa thành bốn vùng. Tính diện tích từng vùng.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "trên",
-                "value": 4
-              },
-              {
-                "label": "dưới",
-                "value": 16
-              },
-              {
-                "label": "mỗi bên",
-                "value": 8
-              }
-            ]
-          },
-          "hints": [
-            "Phần: 1 - 4 - 2 - 2 = 9.",
-            "1 phần = 36 : 9."
-          ],
-          "solutionNarrative": "4 - 16 - 8 - 8 m² (Σ 36 ✓).",
-          "teaches": [
-            "K2",
-            "K3"
-          ],
-          "generator": {
-            "template": "Thang đáy {a}:{b}, S = {S} → 4 vùng?",
-            "constraints": {},
-            "answerRule": "phần a², b², ab, ab"
-          }
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P3",
-          "format": "tf",
-          "text": "(Đúng/Sai?) Đáy 1 : 3 thì vùng trên : vùng dưới = 1 : 3.",
-          "answerKey": {
-            "value": false,
-            "note": "Tỉ đáy lặp HAI lần: 1 : 9 — chỉ hai vùng BÊN mới bằng nhau (mỗi bên 3 phần: 1 + 9 + 3 + 3 = 16 phần)."
-          },
-          "hints": [
-            "Lặp tỉ mấy lần?",
-            "Bên thì sao?"
-          ],
-          "teaches": [
-            "K2"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:IV.3.2#1@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B48.M3",
-      "award": "huy_hieu_bon_vung"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P2"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "tf",
-        "sourceItem": "ITEM:KSN5Q1.B48.QZ2",
-        "text": "(Đúng/Sai?) Hai đường chéo hình thang chia hình thành bốn vùng có hai tam giác bên bằng nhau.",
-        "answerKey": {
-          "value": true
-        },
-        "mustPass": true,
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B48.QZ4",
-        "text": "Đáy bé : đáy lớn = 1 : 2 → vùng trên : vùng dưới =",
-        "choices": [
-          "1 : 4",
-          "1 : 2",
-          "1 : 3"
-        ],
-        "answerKey": {
-          "choice": "1 : 4"
-        },
-        "teaches": [
-          "K2"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "mb",
-        "text": "Thang đáy 4-8, S = 36: bốn vùng = ?",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "trên",
-              "value": 4
-            },
-            {
-              "label": "dưới",
-              "value": 16
-            },
-            {
-              "label": "bên",
-              "value": 8
-            }
-          ]
-        },
-        "teaches": [
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Luật bốn vùng hai chéo hình thang?",
-        "back": "HAI VẾ: (1) hai BÊN bằng nhau — chứng minh ba nhát: ABD = ABC (chung đáy AB, chung cao) − phần chung AOB; (2) trên : dưới = tỉ đáy LẶP HAI LẦN (1:2 → 1:4 — không phải đối đỉnh!). Đặt phần: 1-4-2-2 = 9 → 36:9 = 4 → vùng 4-16-8-8 (thử Σ 36)."
-      }
+    "show_points": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "O"
     ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P2",
-      "+7 ngày: câu P3 (1:3)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con học luật bốn vùng: bên bằng bên (chứng minh trừ-phần-chung) và trên:dưới lặp tỉ hai lần. Con đạt {score}/3, {trapResult} câu bẫy đối-đỉnh.",
-    "homeActivity": "Vẽ hình thang, kẻ hai chéo, tô bốn vùng bốn màu — con chỉ cặp nào bằng nhau và đọc tỉ cặp trên-dưới.",
-    "watchFor": "Nếu con phán trên = dưới — hỏi 'úp vung nhỏ lên nồi to vừa không?' (S1)."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B48.M2",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "đối đỉnh = bằng nhau tuốt??",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "đối đỉnh qua O — bằng nhau tuốt!",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "Đáy dưới 8 gấp đôi đáy trên 4 — hai tam giác úp lên chúng mà bằng nhau, khác gì úp vung nhỏ lên nồi to?",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B48_M2_F1.png",
-      "sha256_16": "961913401b6fa1c1"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con thuộc LUẬT BỐN VÙNG của hai đường chéo hình thang — hai vế tách bạch: (1) hai tam giác BÊN bằng nhau (chứng minh bằng chung đáy - chung cao trừ phần chung); (2) vùng trên : vùng dưới = tỉ đáy LẶP HAI LẦN (1 : 2 → 1 : 4) — cấm suy \"đối đỉnh thì bằng nhau\" cho cặp trên - dưới; giải trọn bằng đặt phần: đáy 1 : 2 → 1 - 4 - 2 - 2 = 9 phần.",
-        "steps": [
-          {
-            "text": "phần: trên 1 · dưới 4 · bên 2 · bên 2 = 9"
-          },
-          {
-            "text": "1 phần = 36 : 9 = 4 → 4 - 16 - 8 - 8"
-          },
-          {
-            "text": "thử: cộng = 36 (tiền thật m²)"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B48_M2_F2.png",
-      "sha256_16": "9b83f62fd4ff6690"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Vế 1 — HAI BÊN BẰNG NHAU",
-            "text": "S(ABD) = S(ABC) vì chung đáy AB, chung chiều cao (khoảng cách hai đáy); cùng trừ phần chung AOB → S(AOD) = S(BOC) — hai tam giác bên luôn bằng nhau, mọi hình thang.",
-            "tone": "navy"
-          },
-          {
-            "label": "Vế 2 — TRÊN",
-            "text": "DƯỚI = tỉ đáy LẶP HAI LẦN: đáy bé : đáy lớn = 1 : 2 → S(AOB) : S(DOC) = 1 : 4 (tỉ 1:2 nhân chính nó) — KHÔNG phải 1 : 2; và cấm suy \"đối đỉnh bằng nhau\" cho cặp trên-dưới: chỉ HAI BÊN mới bằng.",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "BÊN BẰNG BÊN — TRÊN DƯỚI LẶP TỈ HAI LẦN!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B48_M2_F3.png",
-      "sha256_16": "ba159dd668e43168"
-    },
-    {
-      "archetype": "geo_shape",
-      "params": {
-        "title": "HAI ĐƯỜNG CHÉO CHIA HÌNH THANG THÀNH BỐN VÙNG",
-        "points": {
-          "D": [
-            0,
-            0
-          ],
-          "C": [
-            8,
-            0
-          ],
-          "B": [
-            6,
-            6
-          ],
-          "A": [
-            2,
-            6
-          ],
-          "O": [
-            4,
-            4
-          ]
-        },
-        "shapes": [
-          {
-            "pts": [
-              "A",
-              "B",
-              "O"
-            ],
-            "fill": "teal",
-            "label": "trên 1p = 4"
-          },
-          {
-            "pts": [
-              "D",
-              "C",
-              "O"
-            ],
-            "fill": "navy",
-            "label": "dưới 4p = 16"
-          },
-          {
-            "pts": [
-              "A",
-              "D",
-              "O"
-            ],
-            "fill": "gold",
-            "label": "bên 2p = 8"
-          },
-          {
-            "pts": [
-              "B",
-              "C",
-              "O"
-            ],
-            "fill": "gold",
-            "label": "bên 2p = 8"
-          }
-        ],
-        "show_points": [
-          "A",
-          "B",
-          "C",
-          "D",
-          "O"
-        ],
-        "formula": "9 phần = 36  →  1 phần = 4  ·  trên 1 · dưới 4 · bên 2 · 2",
-        "note": "Hai tam giác BÊN luôn bằng nhau · trên : dưới = tỉ đáy LẶP HAI LẦN (1 : 4 chứ không phải 1 : 2)"
-      },
-      "caption": "Bốn vùng: bên bằng bên, còn trên và dưới ăn tỉ đáy bình phương",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B48_M2_F4.png",
-      "sha256_16": "d2a8c377904a7114"
-    }
-  ]
+    "formula": "9 phần = 36 → 1 phần = 4 · trên 1 · dưới 4 · bên 2 · 2",
+    "note": "Hai tam giác BÊN luôn bằng nhau · trên : dưới = tỉ đáy LẶP HAI LẦN (1 : 4 chứ không phải 1 : 2)"
+   },
+   "caption": "Bốn vùng: bên bằng bên, còn trên và dưới ăn tỉ đáy bình phương",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B48_M2_F4.png",
+   "sha256_16": "23c9ba16e40e2a5c"
+  }
+ ]
 }

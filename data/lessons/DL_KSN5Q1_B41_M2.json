@@ -1,597 +1,597 @@
 {
-  "title": "Ghép đoạn: chung rồi riêng — riêng rồi chung: cộng dồn phần việc về đủ 1",
-  "grade": 5,
-  "durationMinutes": 7,
-  "skills": {
-    "primary": [
-      "CASE:III.7.1#2"
+ "title": "Ghép đoạn: chung rồi riêng — riêng rồi chung: cộng dồn phần việc về đủ 1",
+ "grade": 5,
+ "durationMinutes": 7,
+ "skills": {
+  "primary": [
+   "CASE:III.7.1#2"
+  ],
+  "bktUnit": "CASE:III.7.1#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B41",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B41.M1",
+  "next": "DL:KSN5Q1.B41.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B41",
+  "chunks": [
+   "CHUNK:KSN5Q1.B41.S4",
+   "CHUNK:KSN5Q1.B41.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B41.2"
+  ],
+  "traps": []
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải kịch bản GHÉP ĐOẠN — chung rồi riêng, riêng rồi chung: tính PHẦN VIỆC của từng đoạn (số ngày × năng suất đoạn ấy), cộng dồn về đủ 1 công việc; phần còn thiếu chia cho năng suất đoạn kế để ra thời gian — mỗi đoạn một năng suất, không trộn lẫn.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (phần việc từng đoạn)",
+  "kidText": "Làm chung một đoạn rồi làm riêng: con tính phần việc của từng đoạn rồi cộng dồn cho đủ 1 công việc."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Ghép đoạn = chia bài thành các KHÚC, mỗi khúc một năng suất: khúc chung dùng năng suất chung (1/4); khúc riêng dùng năng suất riêng (1/6) — phần việc khúc = số ngày × năng suất khúc."
+   },
+   {
+    "id": "K2",
+    "text": "Chung rồi riêng: 2 ngày chung = 2 × 1/4 = 1/2 giếng; CÒN 1 − 1/2 = 1/2 → bác Ba đào nốt: 1/2 : 1/6 = 3 ngày (bác đào tổng cộng 2 + 3 = 5 ngày)."
+   },
+   {
+    "id": "K3",
+    "text": "Riêng rồi chung chạy y hệt, đổi thứ tự khúc: bác Ba riêng 3 ngày = 3/6 = 1/2; còn 1/2 : 1/4 = 2 ngày chung nữa — cộng dồn các khúc phải về ĐỦ 1."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: THƯỚC GIẾNG GHÉP KHÚC HAI MÀU. Kịch bản một: bác Ba và chú Tư cùng đào 2 ngày thì chú Tư bận, bác Ba đào nốt. Chia bài thành hai KHÚC: khúc chung — hai ngày nhân năng suất chung một phần tư: NỬA giếng (tô màu teal); còn nửa giếng cho khúc riêng — bác Ba một mình một phần sáu mỗi ngày: một phần hai chia một phần sáu bằng BA ngày (tô màu vàng). Bác Ba cầm xẻng tổng cộng hai cộng ba — NĂM ngày. Kịch bản hai lật thứ tự: bác Ba đào riêng ba ngày trước — ba phần sáu: nửa giếng; chú Tư đến — khúc chung: nửa còn lại chia một phần tư bằng HAI ngày. Hai kịch bản một luật: mỗi khúc MỘT năng suất, phần việc các khúc cộng dồn về ĐỦ MỘT — thước giếng ghép khúc hai màu phải phủ kín từ miệng tới đáy!",
+  "canonicalExamples": [
+   {
+    "case": "chung rồi riêng (ca lõi)",
+    "problem": "Bác Ba (6 ngày) và chú Tư (12 ngày) cùng đào giếng được 2 ngày thì chú Tư bận, bác Ba đào nốt một mình. Hỏi bác Ba phải đào thêm mấy ngày — và bác cầm xẻng tổng cộng mấy ngày?",
+    "solution": "Khúc chung: 2 × 1/4 = 1/2; còn 1/2 → khúc riêng: 1/2 : 1/6 = 3 ngày. Bác Ba tổng 2 + 3 = 5 ngày.",
+    "why": "Ca LT5 — hai khúc hai màu."
+   },
+   {
+    "case": "riêng rồi chung (ca lật)",
+    "problem": "Bác Ba đào một mình 3 ngày trước, rồi chú Tư đến cùng đào. Hỏi hai người phải đào chung thêm mấy ngày nữa?",
+    "solution": "Khúc riêng: 3/6 = 1/2; còn 1/2 → khúc chung: 1/2 : 1/4 = 2 ngày.",
+    "why": "Ca LT6 — cùng luật, đổi thứ tự khúc."
+   }
+  ],
+  "numberRange": "Lớp 5: 2 khúc; năng suất mẫu ≤ 12.",
+  "misconceptions": [
+   {
+    "wrong": "Trộn năng suất giữa các khúc: lấy năng suất chung tính cho khúc riêng (hoặc ngược lại); hoặc quên kiểm cộng dồn đủ 1.",
+    "signal": "Một năng suất chạy suốt bài nhiều khúc; các phần việc cộng lại ≠ 1.",
+    "fix": "mỗi khúc MỘT năng suất, tô hai màu tách bạch; cuối bài cộng dồn các khúc kiểm đủ 1.",
+    "counterExample": "Khúc riêng mà dùng 1/4: bác Ba một mình bỗng khỏe bằng cả hai người — chú Tư về rồi mà sức còn ở lại?!"
+   }
+  ],
+  "vocabulary": [
+   "thước giếng ghép khúc",
+   "mỗi khúc một năng suất",
+   "phần việc khúc",
+   "cộng dồn đủ 1",
+   "hai màu tách bạch"
+  ],
+  "mantra": "MỖI KHÚC MỘT NĂNG SUẤT — CỘNG DỒN VỀ ĐỦ MỘT!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "mcq",
+    "text": "Ôn M1: năng suất chung của bác Ba (1/6) và chú Tư (1/12):",
+    "choices": [
+     "1/4",
+     "1/18",
+     "1/9"
     ],
-    "bktUnit": "CASE:III.7.1#2@G5"
-  },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B41",
-    "order": 2,
-    "prev": "DL:KSN5Q1.B41.M1",
-    "next": "DL:KSN5Q1.B41.M3"
-  },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B41",
-    "chunks": [
-      "CHUNK:KSN5Q1.B41.S4",
-      "CHUNK:KSN5Q1.B41.S5"
+    "answerKey": {
+     "choice": "1/4"
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B41.M1",
+   "message": "Ôn cộng năng suất rồi ghép khúc nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Kịch bản mới: bác Ba và chú Tư cùng đào 2 ngày thì chú Tư bận việc làng, bác Ba đào nốt một mình. Trí Long bối rối: \"nửa bài dùng 1/4, nửa bài dùng 1/6 — tính kiểu gì đây?\" Su Kem đưa cây thước giếng: \"Thì chia bài thành từng KHÚC — mỗi khúc một màu!\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "chung 2 ngày rồi riêng — tính sao?"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để ghép khúc!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
     ],
-    "cases": [
-      "CA:KSN5Q1.B41.2"
+    "narration": "Khúc một — CHUNG: hai ngày nhân năng suất chung một phần tư bằng NỬA giếng, tô teal! Khúc hai — RIÊNG: bác Ba một mình một phần sáu mỗi ngày — nửa giếng chia một phần sáu bằng BA ngày, tô vàng! Bác Ba cầm xẻng tổng cộng hai cộng ba — NĂM ngày. Thước hai màu phủ kín từ miệng tới đáy: cộng dồn đủ MỘT!",
+    "display": {
+     "type": "segment_ruler_interactive",
+     "spec": {
+      "seg1": "chung 2 ngày × 1/4 = 1/2 (teal)",
+      "left": "còn 1/2",
+      "seg2": "riêng: 1/2 : 1/6 = 3 ngày (vàng)",
+      "total": "bác Ba: 2 + 3 = 5 ngày"
+     }
+    },
+    "interaction": {
+     "type": "fill_two_segments",
+     "answerKey": {
+      "value": 3
+     },
+     "successMessage": "Khúc riêng 3 ngày — thước phủ kín đủ 1!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Khúc bác Ba đào MỘT MÌNH phải dùng năng suất:",
+     "choices": [
+      "1/6 (riêng)",
+      "1/4 (chung)",
+      "1/12"
+     ],
+     "answerKey": {
+      "choice": "1/6 (riêng)"
+     },
+     "wrongFeedback": "Mỗi khúc một năng suất.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 40,
+    "teaches": [
+     "K3"
     ],
-    "traps": []
+    "narration": "Kịch bản lật — riêng rồi chung: bác Ba đào một mình BA ngày trước: ba phần sáu — nửa giếng, tô vàng trước! Chú Tư đến — khúc chung: nửa còn lại chia một phần tư bằng HAI ngày teal. Hai kịch bản một luật: mỗi khúc MỘT năng suất — cấm để sức chú Tư ở lại khi người đã về; và cuối bài cộng dồn các khúc kiểm về đủ MỘT!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "riêng trước: 3/6 = 1/2 (vàng)",
+      "chung sau: 1/2 : 1/4 = 2 ngày (teal)",
+      "luật: mỗi khúc một năng suất · dồn đủ 1"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 12,
+    "narration": "Câu cần nhớ: mỗi khúc một năng suất — cộng dồn về đủ một!",
+    "display": {
+     "type": "mantra_card",
+     "text": "MỖI KHÚC MỘT NĂNG SUẤT!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con giải kịch bản GHÉP ĐOẠN — chung rồi riêng, riêng rồi chung: tính PHẦN VIỆC của từng đoạn (số ngày × năng suất đoạn ấy), cộng dồn về đủ 1 công việc; phần còn thiếu chia cho năng suất đoạn kế để ra thời gian — mỗi đoạn một năng suất, không trộn lẫn.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (phần việc từng đoạn)",
-    "kidText": "Làm chung một đoạn rồi làm riêng: con tính phần việc của từng đoạn rồi cộng dồn cho đủ 1 công việc."
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "knowledgeCore": {
-    "statements": [
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Kịch bản mới: bác Ba và chú Tư cùng đào hai ngày thì chú Tư bận việc làng, bác Ba đào nốt một mình. Trí Long bối rối: nửa bài dùng một phần tư, nửa bài dùng một phần sáu — tính kiểu gì đây? Su Kem đưa cây thước giếng: thì chia bài thành từng KHÚC — mỗi khúc một màu!",
+    "screenText": "chung 2 ngày → riêng nốt: tính sao?",
+    "visual": "Chú Tư vẫy tay rời giếng giữa chừng; bác Ba cầm xẻng một mình; cây thước giếng trống chờ tô hai màu, dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Khúc một — CHUNG: hai ngày nhân năng suất chung một phần tư bằng NỬA giếng, tô teal! Khúc hai — RIÊNG: bác Ba một mình một phần sáu mỗi ngày — nửa giếng chia một phần sáu bằng BA ngày, tô vàng! Bác Ba cầm xẻng tổng cộng hai cộng ba — NĂM ngày. Thước hai màu phủ kín từ miệng tới đáy: cộng dồn đủ MỘT!",
+    "screenText": "chung: 2 × 1/4 = 1/2 · riêng: 1/2 : 1/6 = 3 ngày → bác Ba 5 ngày",
+    "visual": "Thước giếng dọc tô nửa teal nửa vàng phủ kín; hai nhãn năng suất 1/4 và 1/6 gắn đúng khúc; tổng 5 ngày mộc xanh.",
+    "assets": [],
+    "duration": 24
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Kịch bản lật — riêng rồi chung: bác Ba đào một mình BA ngày trước: ba phần sáu — nửa giếng, tô vàng trước! Chú Tư đến — khúc chung: nửa còn lại chia một phần tư bằng HAI ngày teal. Hai kịch bản một luật: mỗi khúc MỘT năng suất — cấm để sức chú Tư ở lại khi người đã về; cuối bài cộng dồn các khúc kiểm về đủ MỘT!",
+    "screenText": "riêng 3/6 = 1/2 (vàng) → chung 1/2 : 1/4 = 2 ngày (teal)",
+    "visual": "Thước lật thứ tự vàng trước teal sau; bóng mờ chú Tư bị gạch khỏi khúc riêng; phép cộng dồn 1/2 + 1/2 = 1.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú thước ghép: mỗi khúc một năng suất — cộng dồn về đủ một!",
+    "screenText": "MỖI KHÚC MỘT NĂNG SUẤT!",
+    "visual": "Thẻ thần chú vàng với icon thước hai màu.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Thước của con: bác Ba đào riêng ba ngày rồi chú Tư đến — tô hai khúc, tính ngày chung còn lại! Vào bài luyện ngay!",
+    "screenText": "riêng 3 ngày → chung ? ngày",
+    "visual": "Thước ghép chờ tô; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Tô hai khúc thước giếng",
+  "problem": "Bác Ba (6 ngày) và chú Tư (12 ngày) cùng đào 2 ngày thì chú Tư bận, bác Ba đào nốt. Hỏi bác Ba đào thêm mấy ngày — và bác cầm xẻng tổng cộng mấy ngày?",
+  "steps": [
+   {
+    "show": "Bước 1 — Khúc chung: 2 × 1/4 = 1/2 giếng (teal).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Khúc chung dùng năng suất nào?",
+     "choices": [
+      "1/4 (chung)",
+      "1/6",
+      "1/12"
+     ],
+     "answerKey": {
+      "choice": "1/4 (chung)"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Còn 1 − 1/2 = 1/2 → khúc riêng: 1/2 : 1/6 = 3 ngày (vàng)."
+   },
+   {
+    "show": "Bước 3 — Bác Ba tổng 2 + 3 = 5 ngày. Kiểm dồn: 1/2 + 1/2 = 1 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Riêng 3 ngày trước (3/6 = 1/2) → chung thêm ? ngày",
+     "answerKey": {
+      "value": 2
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B41.LT5",
+     "text": "Bác Ba và chú Tư cùng đào giếng được 2 ngày thì chú Tư bận, bác Ba đào nốt một mình. Hỏi bác Ba đào thêm mấy ngày — và bác cầm xẻng tổng cộng mấy ngày?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "thêm",
+        "value": 3
+       },
+       {
+        "label": "tổng của bác Ba",
+        "value": 5
+       }
+      ]
+     },
+     "hints": [
+      "Khúc chung 2 × 1/4.",
+      "Còn 1/2 : 1/6."
+     ],
+     "solutionNarrative": "Thêm 3 ngày → bác Ba 5 ngày.",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "generator": {
+      "template": "Chung {d} ngày rồi một người ({t} ngày) làm nốt.",
+      "constraints": {},
+      "answerRule": "(1 − d×chung) : 1/t"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B41.LT6",
+     "text": "Bác Ba đào một mình 3 ngày trước, rồi chú Tư đến cùng đào. Hỏi hai người phải đào chung thêm mấy ngày nữa?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chung thêm",
+        "value": 2
+       }
+      ]
+     },
+     "hints": [
+      "Khúc riêng 3/6 = 1/2.",
+      "Còn 1/2 : 1/4."
+     ],
+     "solutionNarrative": "2 ngày chung nữa (dồn đủ 1 ✓).",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Ở khúc bác Ba đào một mình, vẫn dùng năng suất chung 1/4 cho tiện.",
+     "answerKey": {
+      "value": false,
+      "note": "Mỗi khúc MỘT năng suất: khúc riêng dùng 1/6 — dùng 1/4 là để sức chú Tư ở lại khi người đã về."
+     },
+     "hints": [
+      "Chú Tư còn ở giếng không?",
+      "Mỗi khúc một màu."
+     ],
+     "teaches": [
+      "K1"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.7.1#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B41.M3",
+   "award": "huy_hieu_thuoc_ghep_khuc"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mb",
+    "text": "Chung 2 ngày (1/4) rồi bác Ba (1/6) đào nốt: phần việc khúc chung và số ngày khúc riêng?",
+    "answerKey": {
+     "parts": [
       {
-        "id": "K1",
-        "text": "Ghép đoạn = chia bài thành các KHÚC, mỗi khúc một năng suất: khúc chung dùng năng suất chung (1/4); khúc riêng dùng năng suất riêng (1/6) — phần việc khúc = số ngày × năng suất khúc."
+       "label": "khúc chung",
+       "value": "1/2"
       },
       {
-        "id": "K2",
-        "text": "Chung rồi riêng: 2 ngày chung = 2 × 1/4 = 1/2 giếng; CÒN 1 − 1/2 = 1/2 → bác Ba đào nốt: 1/2 : 1/6 = 3 ngày (bác đào tổng cộng 2 + 3 = 5 ngày)."
-      },
-      {
-        "id": "K3",
-        "text": "Riêng rồi chung chạy y hệt, đổi thứ tự khúc: bác Ba riêng 3 ngày = 3/6 = 1/2; còn 1/2 : 1/4 = 2 ngày chung nữa — cộng dồn các khúc phải về ĐỦ 1."
+       "label": "khúc riêng",
+       "value": 3
       }
+     ]
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1",
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "num",
+    "text": "Bác Ba riêng 3 ngày trước → chung thêm? ngày",
+    "answerKey": {
+     "value": 2
+    },
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mcq",
+    "text": "Cuối bài ghép đoạn, các phần việc cộng dồn phải bằng:",
+    "choices": [
+     "1",
+     "1/2",
+     "số khúc"
     ],
-    "mechanism": "Hình ảnh brand: THƯỚC GIẾNG GHÉP KHÚC HAI MÀU. Kịch bản một: bác Ba và chú Tư cùng đào 2 ngày thì chú Tư bận, bác Ba đào nốt. Chia bài thành hai KHÚC: khúc chung — hai ngày nhân năng suất chung một phần tư: NỬA giếng (tô màu teal); còn nửa giếng cho khúc riêng — bác Ba một mình một phần sáu mỗi ngày: một phần hai chia một phần sáu bằng BA ngày (tô màu vàng). Bác Ba cầm xẻng tổng cộng hai cộng ba — NĂM ngày. Kịch bản hai lật thứ tự: bác Ba đào riêng ba ngày trước — ba phần sáu: nửa giếng; chú Tư đến — khúc chung: nửa còn lại chia một phần tư bằng HAI ngày. Hai kịch bản một luật: mỗi khúc MỘT năng suất, phần việc các khúc cộng dồn về ĐỦ MỘT — thước giếng ghép khúc hai màu phải phủ kín từ miệng tới đáy!",
-    "canonicalExamples": [
-      {
-        "case": "chung rồi riêng (ca lõi)",
-        "problem": "Bác Ba (6 ngày) và chú Tư (12 ngày) cùng đào giếng được 2 ngày thì chú Tư bận, bác Ba đào nốt một mình. Hỏi bác Ba phải đào thêm mấy ngày — và bác cầm xẻng tổng cộng mấy ngày?",
-        "solution": "Khúc chung: 2 × 1/4 = 1/2; còn 1/2 → khúc riêng: 1/2 : 1/6 = 3 ngày. Bác Ba tổng 2 + 3 = 5 ngày.",
-        "why": "Ca LT5 — hai khúc hai màu."
-      },
-      {
-        "case": "riêng rồi chung (ca lật)",
-        "problem": "Bác Ba đào một mình 3 ngày trước, rồi chú Tư đến cùng đào. Hỏi hai người phải đào chung thêm mấy ngày nữa?",
-        "solution": "Khúc riêng: 3/6 = 1/2; còn 1/2 → khúc chung: 1/2 : 1/4 = 2 ngày.",
-        "why": "Ca LT6 — cùng luật, đổi thứ tự khúc."
-      }
+    "answerKey": {
+     "choice": "1"
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Bài chung-rồi-riêng giải sao?",
+    "back": "Chia KHÚC — mỗi khúc MỘT năng suất: khúc chung 2 × 1/4 = 1/2 (teal); còn 1/2 → khúc riêng 1/2 : 1/6 = 3 ngày (vàng) → bác Ba 5 ngày. Lật thứ tự cùng luật (3/6 = 1/2 → chung 2 ngày). Cộng dồn các khúc về ĐỦ 1."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P2 (lật thứ tự)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con giải bài ghép đoạn: mỗi khúc một năng suất, cộng dồn phần việc về đủ 1. Con đạt {score}/3.",
+  "homeActivity": "Rửa bát hai chặng: hai mẹ con cùng rửa 2 phút rồi con rửa nốt — con ước phần việc từng khúc.",
+  "watchFor": "Nếu con dùng một năng suất chạy suốt — hỏi 'chú Tư về rồi mà sức còn ở lại à?' (S3)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B41.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "chung 2 ngày rồi riêng — tính sao?",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "nửa bài dùng 1/4, nửa bài dùng 1/6 — tính kiểu gì đây?",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Thì chia bài thành từng KHÚC — mỗi khúc một màu!",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B41_M2_F1.png",
+   "sha256_16": "1e1d64589cfc69cd"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Ghép đoạn: chung rồi riêng — riêng rồi chung: cộng dồn phần việc về đủ 1",
+    "steps": [
+     {
+      "text": "riêng trước: 3/6 = 1/2 (vàng)"
+     },
+     {
+      "text": "chung sau: 1/2 : 1/4 = 2 ngày (teal)"
+     },
+     {
+      "text": "luật: mỗi khúc một năng suất · dồn đủ 1"
+     }
     ],
-    "numberRange": "Lớp 5: 2 khúc; năng suất mẫu ≤ 12.",
-    "misconceptions": [
-      {
-        "wrong": "Trộn năng suất giữa các khúc: lấy năng suất chung tính cho khúc riêng (hoặc ngược lại); hoặc quên kiểm cộng dồn đủ 1.",
-        "signal": "Một năng suất chạy suốt bài nhiều khúc; các phần việc cộng lại ≠ 1.",
-        "fix": "K1 + K3 — mỗi khúc MỘT năng suất, tô hai màu tách bạch; cuối bài cộng dồn các khúc kiểm đủ 1.",
-        "counterExample": "Khúc riêng mà dùng 1/4: bác Ba một mình bỗng khỏe bằng cả hai người — chú Tư về rồi mà sức còn ở lại?!"
-      }
-    ],
-    "vocabulary": [
-      "thước giếng ghép khúc",
-      "mỗi khúc một năng suất",
-      "phần việc khúc",
-      "cộng dồn đủ 1",
-      "hai màu tách bạch"
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B41_M2_F2.png",
+   "sha256_16": "c432e1b5ff1ca233"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Ghép đoạn = chia bài thành các KHÚC, mỗi khúc một năng suất",
+      "text": "khúc chung dùng năng suất chung (1/4); khúc riêng dùng năng suất riêng (1/6) — phần việc khúc = số ngày × năng suất khúc.",
+      "tone": "navy"
+     },
+     {
+      "label": "Chung rồi riêng",
+      "text": "2 ngày chung = 2 × 1/4 = 1/2 giếng",
+      "tone": "teal"
+     }
     ],
     "mantra": "MỖI KHÚC MỘT NĂNG SUẤT — CỘNG DỒN VỀ ĐỦ MỘT!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B41_M2_F3.png",
+   "sha256_16": "588bd78eecb054d1"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "mcq",
-        "text": "Ôn M1: năng suất chung của bác Ba (1/6) và chú Tư (1/12):",
-        "choices": [
-          "1/4",
-          "1/18",
-          "1/9"
-        ],
-        "answerKey": {
-          "choice": "1/4"
-        }
-      }
-    ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B41.M1",
-      "message": "Ôn cộng năng suất rồi ghép khúc nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 18,
-        "narration": "Kịch bản mới: bác Ba và chú Tư cùng đào 2 ngày thì chú Tư bận việc làng, bác Ba đào nốt một mình. Trí Long bối rối: \"nửa bài dùng 1/4, nửa bài dùng 1/6 — tính kiểu gì đây?\" Su Kem đưa cây thước giếng: \"Thì chia bài thành từng KHÚC — mỗi khúc một màu!\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "chung 2 ngày rồi riêng — tính sao?"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để ghép khúc!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 44,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Khúc một — CHUNG: hai ngày nhân năng suất chung một phần tư bằng NỬA giếng, tô teal! Khúc hai — RIÊNG: bác Ba một mình một phần sáu mỗi ngày — nửa giếng chia một phần sáu bằng BA ngày, tô vàng! Bác Ba cầm xẻng tổng cộng hai cộng ba — NĂM ngày. Thước hai màu phủ kín từ miệng tới đáy: cộng dồn đủ MỘT!",
-        "display": {
-          "type": "segment_ruler_interactive",
-          "spec": {
-            "seg1": "chung 2 ngày × 1/4 = 1/2 (teal)",
-            "left": "còn 1/2",
-            "seg2": "riêng: 1/2 : 1/6 = 3 ngày (vàng)",
-            "total": "bác Ba: 2 + 3 = 5 ngày"
-          }
-        },
-        "interaction": {
-          "type": "fill_two_segments",
-          "answerKey": {
-            "value": 3
-          },
-          "successMessage": "Khúc riêng 3 ngày — thước phủ kín đủ 1!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "mcq",
-          "text": "Khúc bác Ba đào MỘT MÌNH phải dùng năng suất:",
-          "choices": [
-            "1/6 (riêng)",
-            "1/4 (chung)",
-            "1/12"
-          ],
-          "answerKey": {
-            "choice": "1/6 (riêng)"
-          },
-          "wrongFeedback": "Mỗi khúc một năng suất.",
-          "objective": "O1",
-          "teaches": [
-            "K1"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 40,
-        "teaches": [
-          "K3"
-        ],
-        "narration": "Kịch bản lật — riêng rồi chung: bác Ba đào một mình BA ngày trước: ba phần sáu — nửa giếng, tô vàng trước! Chú Tư đến — khúc chung: nửa còn lại chia một phần tư bằng HAI ngày teal. Hai kịch bản một luật: mỗi khúc MỘT năng suất — cấm để sức chú Tư ở lại khi người đã về; và cuối bài cộng dồn các khúc kiểm về đủ MỘT!",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "riêng trước: 3/6 = 1/2 (vàng)",
-            "chung sau: 1/2 : 1/4 = 2 ngày (teal)",
-            "luật: mỗi khúc một năng suất · dồn đủ 1"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 12,
-        "narration": "Thần chú thước ghép: mỗi khúc một năng suất — cộng dồn về đủ một!",
-        "display": {
-          "type": "mantra_card",
-          "text": "MỖI KHÚC MỘT NĂNG SUẤT!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 90,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
-    },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Kịch bản mới: bác Ba và chú Tư cùng đào hai ngày thì chú Tư bận việc làng, bác Ba đào nốt một mình. Trí Long bối rối: nửa bài dùng một phần tư, nửa bài dùng một phần sáu — tính kiểu gì đây? Su Kem đưa cây thước giếng: thì chia bài thành từng KHÚC — mỗi khúc một màu!",
-        "screenText": "chung 2 ngày → riêng nốt: tính sao?",
-        "visual": "Chú Tư vẫy tay rời giếng giữa chừng; bác Ba cầm xẻng một mình; cây thước giếng trống chờ tô hai màu, dấu hỏi đỏ #C0392B.",
-        "assets": [],
-        "duration": 22
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Khúc một — CHUNG: hai ngày nhân năng suất chung một phần tư bằng NỬA giếng, tô teal! Khúc hai — RIÊNG: bác Ba một mình một phần sáu mỗi ngày — nửa giếng chia một phần sáu bằng BA ngày, tô vàng! Bác Ba cầm xẻng tổng cộng hai cộng ba — NĂM ngày. Thước hai màu phủ kín từ miệng tới đáy: cộng dồn đủ MỘT!",
-        "screenText": "chung: 2 × 1/4 = 1/2 · riêng: 1/2 : 1/6 = 3 ngày → bác Ba 5 ngày",
-        "visual": "Thước giếng dọc tô nửa teal nửa vàng phủ kín; hai nhãn năng suất 1/4 và 1/6 gắn đúng khúc; tổng 5 ngày mộc xanh.",
-        "assets": [],
-        "duration": 24
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Kịch bản lật — riêng rồi chung: bác Ba đào một mình BA ngày trước: ba phần sáu — nửa giếng, tô vàng trước! Chú Tư đến — khúc chung: nửa còn lại chia một phần tư bằng HAI ngày teal. Hai kịch bản một luật: mỗi khúc MỘT năng suất — cấm để sức chú Tư ở lại khi người đã về; cuối bài cộng dồn các khúc kiểm về đủ MỘT!",
-        "screenText": "riêng 3/6 = 1/2 (vàng) → chung 1/2 : 1/4 = 2 ngày (teal)",
-        "visual": "Thước lật thứ tự vàng trước teal sau; bóng mờ chú Tư bị gạch khỏi khúc riêng; phép cộng dồn 1/2 + 1/2 = 1.",
-        "assets": [],
-        "duration": 26
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú thước ghép: mỗi khúc một năng suất — cộng dồn về đủ một!",
-        "screenText": "MỖI KHÚC MỘT NĂNG SUẤT!",
-        "visual": "Thẻ thần chú vàng với icon thước hai màu.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Thước của con: bác Ba đào riêng ba ngày rồi chú Tư đến — tô hai khúc, tính ngày chung còn lại! Vào bài luyện ngay!",
-        "screenText": "riêng 3 ngày → chung ? ngày",
-        "visual": "Thước ghép chờ tô; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P2",
-        "assets": [],
-        "duration": 10
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Tô hai khúc thước giếng",
-    "problem": "Bác Ba (6 ngày) và chú Tư (12 ngày) cùng đào 2 ngày thì chú Tư bận, bác Ba đào nốt. Hỏi bác Ba đào thêm mấy ngày — và bác cầm xẻng tổng cộng mấy ngày?",
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "GHÉP ĐOẠN: CHUNG 2 NGÀY RỒI BÁC BA LÀM NỐT",
     "steps": [
-      {
-        "show": "Bước 1 — Khúc chung: 2 × 1/4 = 1/2 giếng (teal).",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Khúc chung dùng năng suất nào?",
-          "choices": [
-            "1/4 (chung)",
-            "1/6",
-            "1/12"
-          ],
-          "answerKey": {
-            "choice": "1/4 (chung)"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Còn 1 − 1/2 = 1/2 → khúc riêng: 1/2 : 1/6 = 3 ngày (vàng)."
-      },
-      {
-        "show": "Bước 3 — Bác Ba tổng 2 + 3 = 5 ngày. Kiểm dồn: 1/2 + 1/2 = 1 ✓.",
-        "askAfter": {
-          "format": "num",
-          "text": "Riêng 3 ngày trước (3/6 = 1/2) → chung thêm ? ngày",
-          "answerKey": {
-            "value": 2
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B41.LT5",
-          "text": "Bác Ba và chú Tư cùng đào giếng được 2 ngày thì chú Tư bận, bác Ba đào nốt một mình. Hỏi bác Ba đào thêm mấy ngày — và bác cầm xẻng tổng cộng mấy ngày?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "thêm",
-                "value": 3
-              },
-              {
-                "label": "tổng của bác Ba",
-                "value": 5
-              }
-            ]
-          },
-          "hints": [
-            "Khúc chung 2 × 1/4.",
-            "Còn 1/2 : 1/6."
-          ],
-          "solutionNarrative": "Thêm 3 ngày → bác Ba 5 ngày.",
-          "teaches": [
-            "K1",
-            "K2"
-          ],
-          "generator": {
-            "template": "Chung {d} ngày rồi một người ({t} ngày) làm nốt.",
-            "constraints": {},
-            "answerRule": "(1 − d×chung) : 1/t"
-          }
-        }
-      ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B41.LT6",
-          "text": "Bác Ba đào một mình 3 ngày trước, rồi chú Tư đến cùng đào. Hỏi hai người phải đào chung thêm mấy ngày nữa?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "chung thêm",
-                "value": 2
-              }
-            ]
-          },
-          "hints": [
-            "Khúc riêng 3/6 = 1/2.",
-            "Còn 1/2 : 1/4."
-          ],
-          "solutionNarrative": "2 ngày chung nữa (dồn đủ 1 ✓).",
-          "teaches": [
-            "K3"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P3",
-          "format": "tf",
-          "text": "(Đúng/Sai?) Ở khúc bác Ba đào một mình, vẫn dùng năng suất chung 1/4 cho tiện.",
-          "answerKey": {
-            "value": false,
-            "note": "Mỗi khúc MỘT năng suất: khúc riêng dùng 1/6 — dùng 1/4 là để sức chú Tư ở lại khi người đã về."
-          },
-          "hints": [
-            "Chú Tư còn ở giếng không?",
-            "Mỗi khúc một màu."
-          ],
-          "teaches": [
-            "K1"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:III.7.1#2@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B41.M3",
-      "award": "huy_hieu_thuoc_ghep_khuc"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mb",
-        "text": "Chung 2 ngày (1/4) rồi bác Ba (1/6) đào nốt: phần việc khúc chung và số ngày khúc riêng?",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "khúc chung",
-              "value": "1/2"
-            },
-            {
-              "label": "khúc riêng",
-              "value": 3
-            }
-          ]
-        },
-        "mustPass": true,
-        "teaches": [
-          "K1",
-          "K2"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "num",
-        "text": "Bác Ba riêng 3 ngày trước → chung thêm ? ngày",
-        "answerKey": {
-          "value": 2
-        },
-        "teaches": [
-          "K3"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "mcq",
-        "text": "Cuối bài ghép đoạn, các phần việc cộng dồn phải bằng:",
-        "choices": [
-          "1",
-          "1/2",
-          "số khúc"
-        ],
-        "answerKey": {
-          "choice": "1"
-        },
-        "teaches": [
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Bài chung-rồi-riêng giải sao?",
-        "back": "Chia KHÚC — mỗi khúc MỘT năng suất: khúc chung 2 × 1/4 = 1/2 (teal); còn 1/2 → khúc riêng 1/2 : 1/6 = 3 ngày (vàng) → bác Ba 5 ngày. Lật thứ tự cùng luật (3/6 = 1/2 → chung 2 ngày). Cộng dồn các khúc về ĐỦ 1."
-      }
+     {
+      "text": "Khúc CHUNG 2 ngày",
+      "sub": "2 × 1/4 = 1/2 công việc"
+     },
+     {
+      "text": "Phần việc CÒN LẠI",
+      "sub": "1 − 1/2 = 1/2"
+     },
+     {
+      "text": "Khúc RIÊNG của bác Ba",
+      "sub": "1/2 : 1/6 = 3 ngày → bác Ba làm tổng 5 ngày"
+     }
     ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P2 (lật thứ tự)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con giải bài ghép đoạn: mỗi khúc một năng suất, cộng dồn phần việc về đủ 1. Con đạt {score}/3.",
-    "homeActivity": "Rửa bát hai chặng: hai mẹ con cùng rửa 2 phút rồi con rửa nốt — con ước phần việc từng khúc.",
-    "watchFor": "Nếu con dùng một năng suất chạy suốt — hỏi 'chú Tư về rồi mà sức còn ở lại à?' (S3)."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B41.M2",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "chung 2 ngày rồi riêng — tính sao?",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "nửa bài dùng 1/4, nửa bài dùng 1/6 — tính kiểu gì đây?",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "Thì chia bài thành từng KHÚC — mỗi khúc một màu!",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B41_M2_F1.png",
-      "sha256_16": "1e1d64589cfc69cd"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con giải kịch bản GHÉP ĐOẠN — chung rồi riêng, riêng rồi chung: tính PHẦN VIỆC của từng đoạn (số ngày × năng suất đoạn ấy), cộng dồn về đủ 1 công việc; phần còn thiếu chia cho năng suất đoạn kế để ra thời gian — mỗi đoạn một năng suất, không trộn lẫn.",
-        "steps": [
-          {
-            "text": "riêng trước: 3/6 = 1/2 (vàng)"
-          },
-          {
-            "text": "chung sau: 1/2 : 1/4 = 2 ngày (teal)"
-          },
-          {
-            "text": "luật: mỗi khúc một năng suất · dồn đủ 1"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B41_M2_F2.png",
-      "sha256_16": "9a88a6ee31a397be"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Ghép đoạn = chia bài thành các KHÚC, mỗi khúc một năng suất",
-            "text": "khúc chung dùng năng suất chung (1/4); khúc riêng dùng năng suất riêng (1/6) — phần việc khúc = số ngày × năng suất khúc.",
-            "tone": "navy"
-          },
-          {
-            "label": "Chung rồi riêng",
-            "text": "2 ngày chung = 2 × 1/4 = 1/2 giếng",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "MỖI KHÚC MỘT NĂNG SUẤT — CỘNG DỒN VỀ ĐỦ MỘT!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B41_M2_F3.png",
-      "sha256_16": "588bd78eecb054d1"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "GHÉP ĐOẠN: CHUNG 2 NGÀY RỒI BÁC BA LÀM NỐT",
-        "steps": [
-          {
-            "text": "Khúc CHUNG 2 ngày",
-            "sub": "2 × 1/4 = 1/2 công việc"
-          },
-          {
-            "text": "Phần việc CÒN LẠI",
-            "sub": "1 − 1/2 = 1/2"
-          },
-          {
-            "text": "Khúc RIÊNG của bác Ba",
-            "sub": "1/2 : 1/6 = 3 ngày  →  bác Ba làm tổng 5 ngày"
-          }
-        ],
-        "note": "Chiều lật: riêng 3 ngày trước (3/6 = 1/2) → khúc chung còn 1/2 : 1/4 = 2 ngày"
-      },
-      "caption": "Cộng dồn phần việc từng đoạn cho đủ 1 rồi mới đọc số ngày",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B41_M2_F4.png",
-      "sha256_16": "1965a874ec5fe4c7"
-    }
-  ]
+    "note": "Chiều lật: riêng 3 ngày trước (3/6 = 1/2) → khúc chung còn 1/2 : 1/4 = 2 ngày"
+   },
+   "caption": "Cộng dồn phần việc từng đoạn cho đủ 1 rồi mới đọc số ngày",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B41_M2_F4.png",
+   "sha256_16": "1965a874ec5fe4c7"
+  }
+ ]
 }

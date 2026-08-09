@@ -1,615 +1,615 @@
 {
-  "title": "Phối hợp TBC: kéo màn trung bình — cầu tổng Bài 21 rồi chia phần",
-  "grade": 5,
-  "durationMinutes": 7,
-  "skills": {
-    "primary": [
-      "CASE:III.3.2#3"
+ "title": "Phối hợp TBC: kéo màn trung bình — cầu tổng Bài 21 rồi chia phần",
+ "grade": 5,
+ "durationMinutes": 7,
+ "skills": {
+  "primary": [
+   "CASE:III.3.2#3"
+  ],
+  "bktUnit": "CASE:III.3.2#3@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B30",
+  "order": 3,
+  "prev": "DL:KSN5Q1.B30.M2",
+  "next": "DL:KSN5Q1.B31.M1"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B30",
+  "chunks": [
+   "CHUNK:KSN5Q1.B30.S4",
+   "CHUNK:KSN5Q1.B30.S7"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B30.4"
+  ],
+  "traps": []
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải được bài PHỐI HỢP TBC với tỉ số: gặp trung bình cộng thì KÉO MÀN trước — nhân TBC với số phần tử ra TỔNG (cây cầu Bài 21) — rồi bài trở về tổng – tỉ / chuỗi tỉ nguyên chất: cộng phần, chia, nhân.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (TBC × n = tổng trước tiên)",
+  "kidText": "Gặp trung bình cộng thì kéo màn ra tổng trước, nhân với số người. Xong là bài trở về tổng – tỉ quen thuộc."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "TBC là tấm màn che TỔNG: TBC ba số là 24 → tổng = 24 × 3 = 72 (cây cầu ngược Bài 21) — kéo màn xong mới thấy bài tổng – tỉ bên trong."
+   },
+   {
+    "id": "K2",
+    "text": "Sau màn là máy quen: tổng 72, chuỗi 1 : 2 : 3 → 6 phần → phần 12 → ba số 12; 24; 36 — thử cả TBC (72 : 3 = 24 ✓) lẫn mắt xích tỉ."
+   },
+   {
+    "id": "K3",
+    "text": "Nhận diện bài hai tầng: đề có CẢ chữ \"trung bình cộng\" LẪN tỉ số — tầng 1 kéo màn TBC, tầng 2 chia phần: hai máy nối tiếp, không trộn."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: TẤM MÀN SÂN KHẤU TBC. Đề sư phụ: \"TBC ba số là 24; số thứ hai gấp đôi số thứ nhất; số thứ ba gấp rưỡi số thứ hai — tìm ba số.\" Trò khựng: TBC lẫn tỉ số?! Bình tĩnh — chữ TBC chỉ là TẤM MÀN che tổng: kéo màn bằng cây cầu Bài 21 — hai tư nhân ba bằng BẢY MƯƠI HAI: tổng lộ diện! Sau màn là sân khấu quen: quy thước — số một MỘT phần, số hai HAI phần, số ba gấp rưỡi số hai: ba phần — cộng SÁU phần bằng bảy hai: phần MƯỜI HAI — ba số 12, 24, 36. Thử hai lớp: TBC bảy hai chia ba đúng hai tư; ba sáu đúng gấp rưỡi hai tư — màn nào máy nấy, khớp cả hai tầng!",
+  "canonicalExamples": [
+   {
+    "case": "TBC + tỉ ba ngôi (ca đề A)",
+    "problem": "Trung bình cộng của ba số là 20. Ba số theo tỉ 1 : 2 : 3. Tìm ba số.",
+    "solution": "Kéo màn: tổng = 20 × 3 = 60 → 6 phần → phần 10 → 10; 20; 30. Thử: 60 : 3 = 20 ✓.",
+    "why": "Ca đề A câu 7 — hai tầng chuẩn mực."
+   },
+   {
+    "case": "TBC + chuỗi gấp rưỡi (ca sư phụ)",
+    "problem": "Trung bình cộng của ba số là 24. Số thứ hai gấp đôi số thứ nhất; số thứ ba gấp rưỡi số thứ hai. Tìm ba số.",
+    "solution": "Tổng = 24 × 3 = 72; phần: 1 + 2 + 3 = 6 → phần 12 → 12; 24; 36. Thử: gấp rưỡi của 24 = 36 ✓; TBC = 24 ✓.",
+    "why": "Ca LT9 — gấp rưỡi thay áo 3:2 trên nền TBC."
+   }
+  ],
+  "numberRange": "Lớp 5: TBC ≤ 50; 3 phần tử.",
+  "misconceptions": [
+   {
+    "wrong": "Chia phần thẳng trên con số TBC (24 : 6 = 4) hoặc quên nhân số phần tử.",
+    "signal": "Tổng không xuất hiện; đáp bé bất thường.",
+    "fix": "kéo màn trước: TBC × n = tổng, rồi mới chia phần.",
+    "counterExample": "Ba số 4; 8; 12 có TBC là 8 ≠ 24 — màn chưa kéo mà đã diễn!"
+   }
+  ],
+  "vocabulary": [
+   "tấm màn TBC",
+   "kéo màn lộ tổng",
+   "cầu Bài 21",
+   "hai tầng hai máy",
+   "thử hai lớp"
+  ],
+  "mantra": "GẶP TBC — KÉO MÀN RA TỔNG TRƯỚC, RỒI MỚI CHIA PHẦN!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Cầu B21: TBC ba số là 24 → tổng = ?",
+    "answerKey": {
+     "value": 72
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B21.M1",
+   "message": "Ôn cây cầu tổng Bài 21 rồi ra sân khấu nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Đề sư phụ trộn hai thứ: \"TBC ba số là 24; số hai gấp đôi số một; số ba gấp rưỡi số hai.\" Trí Long khựng: \"TBC lẫn tỉ số — chia 24 cho 6 phần luôn nhé?\" Su Kem chỉ tấm màn sân khấu: \"Chữ TBC chỉ là tấm màn — kéo ra đã.\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "24 : 6 = 4 luôn??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để kéo màn!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
     ],
-    "bktUnit": "CASE:III.3.2#3@G5"
-  },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B30",
-    "order": 3,
-    "prev": "DL:KSN5Q1.B30.M2",
-    "next": "DL:KSN5Q1.B31.M1"
-  },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B30",
-    "chunks": [
-      "CHUNK:KSN5Q1.B30.S4",
-      "CHUNK:KSN5Q1.B30.S7"
+    "narration": "Kéo màn bằng cây cầu Bài hai mốt: TBC hai tư của BA số — tổng bằng hai tư nhân ba: BẢY MƯƠI HAI, tổng lộ diện! Sau màn là sân khấu quen: số một MỘT phần; số hai HAI phần; số ba gấp rưỡi số hai — BA phần. Cộng SÁU phần bằng bảy hai: phần MƯỜI HAI — ba số MƯỜI HAI, HAI TƯ, BA SÁU! Thử hai lớp: bảy hai chia ba đúng hai tư; ba sáu đúng gấp rưỡi hai tư!",
+    "display": {
+     "type": "curtain_interactive",
+     "spec": {
+      "tbc": 24,
+      "n": 3,
+      "total": 72,
+      "chain": "1 + 2 + 3 = 6",
+      "unit": 12,
+      "values": [
+       12,
+       24,
+       36
+      ],
+      "check": "TBC 24 ✓ · gấp rưỡi ✓"
+     }
+    },
+    "interaction": {
+     "type": "pull_curtain_then_grid",
+     "answerKey": {
+      "values": [
+       12,
+       24,
+       36
+      ]
+     },
+     "successMessage": "Màn kéo: tổng 72 → 6 phần → 12; 24; 36!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "TBC ba số là 24 thì tổng ba số là:",
+     "choices": [
+      "72",
+      "24",
+      "8"
+     ],
+     "answerKey": {
+      "choice": "72"
+     },
+     "wrongFeedback": "24 × 3.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 36,
+    "teaches": [
+     "K2",
+     "K3"
     ],
-    "cases": [
-      "CA:KSN5Q1.B30.4"
+    "narration": "Nhận diện bài hai tầng: đề có CẢ chữ trung-bình-cộng LẪN tỉ số — tầng một kéo màn, tầng hai chia phần: hai máy nối tiếp, không trộn! Ca đề gọn: TBC ba số hai mươi, tỉ một-hai-ba — kéo màn: tổng SÁU MƯƠI; sáu phần: mười, hai mươi, ba mươi — thử TBC sáu mươi chia ba đúng hai mươi!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "tầng 1: TBC 20 × 3 = 60",
+      "tầng 2: 6 phần → 10; 20; 30",
+      "thử: 60 : 3 = 20 ✓"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 12,
+    "narration": "Câu cần nhớ: gặp TBC — kéo màn ra tổng trước, rồi mới chia phần!",
+    "display": {
+     "type": "mantra_card",
+     "text": "KÉO MÀN RA TỔNG TRƯỚC!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 88,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đề sư phụ trộn hai thứ: TBC ba số là hai tư; số hai gấp đôi số một; số ba gấp rưỡi số hai. Trí Long khựng: TBC lẫn tỉ số — chia hai tư cho sáu phần luôn nhé? Su Kem chỉ tấm màn sân khấu: chữ TBC chỉ là tấm màn — kéo ra đã!",
+    "screenText": "TBC 24 + tỉ số → 24 : 6 = 4??",
+    "visual": "Sân khấu với tấm màn đỏ thêu chữ 'TBC 24'; Trí Long định chia thẳng lên màn; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Kéo màn bằng cây cầu Bài hai mốt: TBC hai tư của BA số — tổng bằng hai tư nhân ba: BẢY MƯƠI HAI, tổng lộ diện! Sau màn là sân khấu quen: số một MỘT phần; số hai HAI phần; số ba gấp rưỡi số hai — BA phần. Cộng SÁU phần bằng bảy hai: phần MƯỜI HAI — ba số MƯỜI HAI, HAI TƯ, BA SÁU! Thử hai lớp: bảy hai chia ba đúng hai tư; ba sáu đúng gấp rưỡi hai tư!",
+    "screenText": "màn kéo: 24 × 3 = 72 → 6 phần → 12; 24; 36 ✓✓",
+    "visual": "Màn sân khấu kéo sang lộ con số tổng 72 sáng vàng; dàn 6 ô chia ba nhân vật; hai mộc thử TBC và gấp-rưỡi.",
+    "assets": [],
+    "duration": 30
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Nhận diện bài hai tầng: đề có CẢ chữ trung-bình-cộng LẪN tỉ số — tầng một kéo màn, tầng hai chia phần: hai máy nối tiếp, không trộn! Ca đề gọn: TBC ba số hai mươi, tỉ một-hai-ba — kéo màn: tổng SÁU MƯƠI; sáu phần: mười, hai mươi, ba mươi — thử TBC sáu mươi chia ba đúng hai mươi!",
+    "screenText": "T1: 20 × 3 = 60 · T2: 6 phần → 10; 20; 30 ✓",
+    "visual": "Sơ đồ hai tầng máy nối tiếp: máy kéo màn rồi máy kẻ ô; ca 1:2:3 chạy trọn với mộc thử TBC.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú sân khấu: gặp TBC — kéo màn ra tổng trước, rồi mới chia phần!",
+    "screenText": "KÉO MÀN RA TỔNG TRƯỚC!",
+    "visual": "Thẻ thần chú vàng với icon màn sân khấu.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Sân khấu của con: TBC ba số hai mươi, tỉ một-hai-ba — kéo màn rồi chia phần! Vào bài luyện ngay!",
+    "screenText": "TBC 20 · 1:2:3 → ba số?",
+    "visual": "Màn khép chờ kéo; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 8
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Kéo màn hai tầng",
+  "problem": "Trung bình cộng của ba số là 24. Số thứ hai gấp đôi số thứ nhất; số thứ ba gấp rưỡi số thứ hai. Tìm ba số.",
+  "steps": [
+   {
+    "show": "Bước 1 — TẦNG 1 kéo màn: tổng = 24 × 3 = 72.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Việc đầu tiên khi gặp TBC là:",
+     "choices": [
+      "nhân ra tổng",
+      "chia cho số phần",
+      "cộng tỉ"
+     ],
+     "answerKey": {
+      "choice": "nhân ra tổng"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — TẦNG 2 quy thước: 1; 2; gấp rưỡi của 2 = 3 → 6 phần → phần 12."
+   },
+   {
+    "show": "Bước 3 — Ba số: 12; 24; 36. Thử: TBC 72 : 3 = 24 ✓; 36 = 1,5 × 24 ✓.",
+    "askAfter": {
+     "format": "mb",
+     "text": "TBC ba số 20, tỉ 1:2:3 → ba số?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ba số",
+        "value": "10; 20; 30"
+       }
+      ]
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "text": "Trung bình cộng của ba số là 20. Ba số theo tỉ 1 : 2 : 3. Tìm ba số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ba số",
+        "value": "10; 20; 30"
+       }
+      ]
+     },
+     "hints": [
+      "Kéo màn: 20 × 3.",
+      "6 phần = 60."
+     ],
+     "solutionNarrative": "Tổng 60 → 10; 20; 30 (TBC ✓).",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "generator": {
+      "template": "TBC {t} của 3 số, tỉ {a}:{b}:{c}. Tìm ba số.",
+      "constraints": {},
+      "answerRule": "t×3 : (a+b+c) rồi nhân"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B30.LT9",
+     "text": "Sư phụ Trí Dũng đố: \"Trung bình cộng của ba số là 24. Số thứ hai gấp đôi số thứ nhất; số thứ ba gấp rưỡi số thứ hai. Tìm ba số.\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ba số",
+        "value": "12; 24; 36"
+       }
+      ]
+     },
+     "hints": [
+      "Tổng 72.",
+      "Phần: 1 + 2 + 3 = 6."
+     ],
+     "solutionNarrative": "Phần 12 → 12; 24; 36 (36 = gấp rưỡi 24 ✓).",
+     "teaches": [
+      "K1",
+      "K2",
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Với đề 'TBC ba số là 24, tỉ 1 : 2 : 3', có thể chia thẳng 24 : 6 để ra giá một phần.",
+     "answerKey": {
+      "value": false,
+      "note": "Phải kéo màn trước: tổng = 72 mới là số đem chia — 24 : 6 = 4 cho TBC 8 ≠ 24."
+     },
+     "hints": [
+      "24 là TBC hay tổng?",
+      "Thử đáp của phép chia thẳng."
+     ],
+     "teaches": [
+      "K1",
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.3.2#3@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B31.M1",
+   "award": "huy_hieu_keo_man"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B30.QZ5",
+    "text": "TBC ba số là 24 thì tổng ba số là:",
+    "choices": [
+     "72",
+     "24",
+     "8"
     ],
-    "traps": []
-  },
-  "objective": {
-    "id": "O1",
-    "text": "Con giải được bài PHỐI HỢP TBC với tỉ số: gặp trung bình cộng thì KÉO MÀN trước — nhân TBC với số phần tử ra TỔNG (cây cầu Bài 21) — rồi bài trở về tổng – tỉ / chuỗi tỉ nguyên chất: cộng phần, chia, nhân.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (TBC × n = tổng trước tiên)",
-    "kidText": "Gặp trung bình cộng thì kéo màn ra tổng trước, nhân với số người. Xong là bài trở về tổng – tỉ quen thuộc."
-  },
-  "knowledgeCore": {
-    "statements": [
+    "answerKey": {
+     "choice": "72"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mb",
+    "text": "TBC ba số 20, tỉ 1:2:3 → ba số?",
+    "answerKey": {
+     "parts": [
       {
-        "id": "K1",
-        "text": "TBC là tấm màn che TỔNG: TBC ba số là 24 → tổng = 24 × 3 = 72 (cây cầu ngược Bài 21) — kéo màn xong mới thấy bài tổng – tỉ bên trong."
-      },
-      {
-        "id": "K2",
-        "text": "Sau màn là máy quen: tổng 72, chuỗi 1 : 2 : 3 → 6 phần → phần 12 → ba số 12; 24; 36 — thử cả TBC (72 : 3 = 24 ✓) lẫn mắt xích tỉ."
-      },
-      {
-        "id": "K3",
-        "text": "Nhận diện bài hai tầng: đề có CẢ chữ \"trung bình cộng\" LẪN tỉ số — tầng 1 kéo màn TBC, tầng 2 chia phần: hai máy nối tiếp, không trộn."
+       "label": "ba số",
+       "value": "10; 20; 30"
       }
-    ],
-    "mechanism": "Hình ảnh brand: TẤM MÀN SÂN KHẤU TBC. Đề sư phụ: \"TBC ba số là 24; số thứ hai gấp đôi số thứ nhất; số thứ ba gấp rưỡi số thứ hai — tìm ba số.\" Trò khựng: TBC lẫn tỉ số?! Bình tĩnh — chữ TBC chỉ là TẤM MÀN che tổng: kéo màn bằng cây cầu Bài 21 — hai tư nhân ba bằng BẢY MƯƠI HAI: tổng lộ diện! Sau màn là sân khấu quen: quy thước — số một MỘT phần, số hai HAI phần, số ba gấp rưỡi số hai: ba phần — cộng SÁU phần bằng bảy hai: phần MƯỜI HAI — ba số 12, 24, 36. Thử hai lớp: TBC bảy hai chia ba đúng hai tư; ba sáu đúng gấp rưỡi hai tư — màn nào máy nấy, khớp cả hai tầng!",
-    "canonicalExamples": [
+     ]
+    },
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mb",
+    "text": "Đề sư phụ (TBC 24, gấp đôi + gấp rưỡi) → ba số?",
+    "answerKey": {
+     "parts": [
       {
-        "case": "TBC + tỉ ba ngôi (ca đề A)",
-        "problem": "Trung bình cộng của ba số là 20. Ba số theo tỉ 1 : 2 : 3. Tìm ba số.",
-        "solution": "Kéo màn: tổng = 20 × 3 = 60 → 6 phần → phần 10 → 10; 20; 30. Thử: 60 : 3 = 20 ✓.",
-        "why": "Ca đề A câu 7 — hai tầng chuẩn mực."
-      },
-      {
-        "case": "TBC + chuỗi gấp rưỡi (ca sư phụ)",
-        "problem": "Trung bình cộng của ba số là 24. Số thứ hai gấp đôi số thứ nhất; số thứ ba gấp rưỡi số thứ hai. Tìm ba số.",
-        "solution": "Tổng = 24 × 3 = 72; phần: 1 + 2 + 3 = 6 → phần 12 → 12; 24; 36. Thử: gấp rưỡi của 24 = 36 ✓; TBC = 24 ✓.",
-        "why": "Ca LT9 — gấp rưỡi thay áo 3:2 trên nền TBC."
+       "label": "ba số",
+       "value": "12; 24; 36"
       }
+     ]
+    },
+    "teaches": [
+     "K2",
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Bài trộn TBC + tỉ số — trình tự?",
+    "back": "HAI TẦNG: (1) kéo màn TBC → tổng = TBC × n (cầu B21: 24 × 3 = 72); (2) máy tổng – tỉ / chuỗi: 6 phần → 12; 24; 36. Không chia thẳng trên con số TBC! Thử hai lớp: TBC ✓ và mắt xích tỉ ✓."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P2 (đề sư phụ)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con giải bài phối hợp TBC + tỉ số theo hai tầng: kéo màn ra tổng rồi chia phần. Con đạt {score}/3.",
+  "homeActivity": "Ra đề miệng 'TBC ba hộp là 20, tỉ 1:2:3' — con hô 'kéo màn: tổng 60!' trước khi chia.",
+  "watchFor": "Nếu con chia thẳng trên TBC — thử đáp: TBC ra 8 thay vì 24 là tự thấy (S1)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B30.M3",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "24 : 6 = 4 luôn??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "TBC lẫn tỉ số — chia 24 cho 6 phần luôn nhé?",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Chữ TBC chỉ là tấm màn — kéo ra đã.",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B30_M3_F1.png",
+   "sha256_16": "d6ce76a0f2c2972e"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Phối hợp TBC: kéo màn trung bình — cầu tổng Bài 21 rồi chia phần",
+    "steps": [
+     {
+      "text": "tầng 1: TBC 20 × 3 = 60"
+     },
+     {
+      "text": "tầng 2: 6 phần → 10; 20; 30"
+     },
+     {
+      "text": "thử: 60 : 3 = 20"
+     }
     ],
-    "numberRange": "Lớp 5: TBC ≤ 50; 3 phần tử.",
-    "misconceptions": [
-      {
-        "wrong": "Chia phần thẳng trên con số TBC (24 : 6 = 4) hoặc quên nhân số phần tử.",
-        "signal": "Tổng không xuất hiện; đáp bé bất thường.",
-        "fix": "K1 + K3 — kéo màn trước: TBC × n = tổng, rồi mới chia phần.",
-        "counterExample": "Ba số 4; 8; 12 có TBC là 8 ≠ 24 — màn chưa kéo mà đã diễn!"
-      }
-    ],
-    "vocabulary": [
-      "tấm màn TBC",
-      "kéo màn lộ tổng",
-      "cầu Bài 21",
-      "hai tầng hai máy",
-      "thử hai lớp"
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B30_M3_F2.png",
+   "sha256_16": "122c52fa0375cf98"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "TBC là tấm màn che TỔNG",
+      "text": "TBC ba số là 24 → tổng = 24 × 3 = 72 (cây cầu ngược Bài 21) — kéo màn xong mới thấy bài tổng – tỉ bên trong.",
+      "tone": "navy"
+     },
+     {
+      "label": "Sau màn là máy quen",
+      "text": "tổng 72, chuỗi 1 : 2 : 3 → 6 phần → phần 12…",
+      "tone": "teal"
+     }
     ],
     "mantra": "GẶP TBC — KÉO MÀN RA TỔNG TRƯỚC, RỒI MỚI CHIA PHẦN!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B30_M3_F3.png",
+   "sha256_16": "dc72ef0b458a4591"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "Cầu B21: TBC ba số là 24 → tổng = ?",
-        "answerKey": {
-          "value": 72
-        }
-      }
+  {
+   "archetype": "bar_diagram",
+   "params": {
+    "title": "TBC 20 CỦA BA SỐ · TỈ 1 : 2 : 3",
+    "bars": [
+     {
+      "name": "số 1",
+      "units": 1,
+      "label": "10"
+     },
+     {
+      "name": "số 2",
+      "units": 2,
+      "label": "20"
+     },
+     {
+      "name": "số 3",
+      "units": 3,
+      "label": "30"
+     }
     ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B21.M1",
-      "message": "Ôn cây cầu tổng Bài 21 rồi ra sân khấu nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 18,
-        "narration": "Đề sư phụ trộn hai thứ: \"TBC ba số là 24; số hai gấp đôi số một; số ba gấp rưỡi số hai.\" Trí Long khựng: \"TBC lẫn tỉ số — chia 24 cho 6 phần luôn nhé?\" Su Kem chỉ tấm màn sân khấu: \"Chữ TBC chỉ là tấm màn — kéo ra đã.\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "24 : 6 = 4 luôn??"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để kéo màn!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 44,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Kéo màn bằng cây cầu Bài hai mốt: TBC hai tư của BA số — tổng bằng hai tư nhân ba: BẢY MƯƠI HAI, tổng lộ diện! Sau màn là sân khấu quen: số một MỘT phần; số hai HAI phần; số ba gấp rưỡi số hai — BA phần. Cộng SÁU phần bằng bảy hai: phần MƯỜI HAI — ba số MƯỜI HAI, HAI TƯ, BA SÁU! Thử hai lớp: bảy hai chia ba đúng hai tư; ba sáu đúng gấp rưỡi hai tư!",
-        "display": {
-          "type": "curtain_interactive",
-          "spec": {
-            "tbc": 24,
-            "n": 3,
-            "total": 72,
-            "chain": "1 + 2 + 3 = 6",
-            "unit": 12,
-            "values": [
-              12,
-              24,
-              36
-            ],
-            "check": "TBC 24 ✓ · gấp rưỡi ✓"
-          }
-        },
-        "interaction": {
-          "type": "pull_curtain_then_grid",
-          "answerKey": {
-            "values": [
-              12,
-              24,
-              36
-            ]
-          },
-          "successMessage": "Màn kéo: tổng 72 → 6 phần → 12; 24; 36!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "mcq",
-          "text": "TBC ba số là 24 thì tổng ba số là:",
-          "choices": [
-            "72",
-            "24",
-            "8"
-          ],
-          "answerKey": {
-            "choice": "72"
-          },
-          "wrongFeedback": "24 × 3.",
-          "objective": "O1",
-          "teaches": [
-            "K1"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 36,
-        "teaches": [
-          "K2",
-          "K3"
-        ],
-        "narration": "Nhận diện bài hai tầng: đề có CẢ chữ trung-bình-cộng LẪN tỉ số — tầng một kéo màn, tầng hai chia phần: hai máy nối tiếp, không trộn! Ca đề gọn: TBC ba số hai mươi, tỉ một-hai-ba — kéo màn: tổng SÁU MƯƠI; sáu phần: mười, hai mươi, ba mươi — thử TBC sáu mươi chia ba đúng hai mươi!",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "tầng 1: TBC 20 × 3 = 60",
-            "tầng 2: 6 phần → 10; 20; 30",
-            "thử: 60 : 3 = 20 ✓"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 12,
-        "narration": "Thần chú sân khấu: gặp TBC — kéo màn ra tổng trước, rồi mới chia phần!",
-        "display": {
-          "type": "mantra_card",
-          "text": "KÉO MÀN RA TỔNG TRƯỚC!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 88,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "brace": {
+     "text": "KÉO MÀN: tổng = 20 × 3 = 60 → 6 phần → 1 phần = 10"
     },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Đề sư phụ trộn hai thứ: TBC ba số là hai tư; số hai gấp đôi số một; số ba gấp rưỡi số hai. Trí Long khựng: TBC lẫn tỉ số — chia hai tư cho sáu phần luôn nhé? Su Kem chỉ tấm màn sân khấu: chữ TBC chỉ là tấm màn — kéo ra đã!",
-        "screenText": "TBC 24 + tỉ số → 24 : 6 = 4??",
-        "visual": "Sân khấu với tấm màn đỏ thêu chữ 'TBC 24'; Trí Long định chia thẳng lên màn; dấu hỏi đỏ #C0392B.",
-        "assets": [],
-        "duration": 20
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Kéo màn bằng cây cầu Bài hai mốt: TBC hai tư của BA số — tổng bằng hai tư nhân ba: BẢY MƯƠI HAI, tổng lộ diện! Sau màn là sân khấu quen: số một MỘT phần; số hai HAI phần; số ba gấp rưỡi số hai — BA phần. Cộng SÁU phần bằng bảy hai: phần MƯỜI HAI — ba số MƯỜI HAI, HAI TƯ, BA SÁU! Thử hai lớp: bảy hai chia ba đúng hai tư; ba sáu đúng gấp rưỡi hai tư!",
-        "screenText": "màn kéo: 24 × 3 = 72 → 6 phần → 12; 24; 36 ✓✓",
-        "visual": "Màn sân khấu kéo sang lộ con số tổng 72 sáng vàng; dàn 6 ô chia ba nhân vật; hai mộc thử TBC và gấp-rưỡi.",
-        "assets": [],
-        "duration": 30
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Nhận diện bài hai tầng: đề có CẢ chữ trung-bình-cộng LẪN tỉ số — tầng một kéo màn, tầng hai chia phần: hai máy nối tiếp, không trộn! Ca đề gọn: TBC ba số hai mươi, tỉ một-hai-ba — kéo màn: tổng SÁU MƯƠI; sáu phần: mười, hai mươi, ba mươi — thử TBC sáu mươi chia ba đúng hai mươi!",
-        "screenText": "T1: 20 × 3 = 60 · T2: 6 phần → 10; 20; 30 ✓",
-        "visual": "Sơ đồ hai tầng máy nối tiếp: máy kéo màn rồi máy kẻ ô; ca 1:2:3 chạy trọn với mộc thử TBC.",
-        "assets": [],
-        "duration": 22
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú sân khấu: gặp TBC — kéo màn ra tổng trước, rồi mới chia phần!",
-        "screenText": "KÉO MÀN RA TỔNG TRƯỚC!",
-        "visual": "Thẻ thần chú vàng với icon màn sân khấu.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Sân khấu của con: TBC ba số hai mươi, tỉ một-hai-ba — kéo màn rồi chia phần! Vào bài luyện ngay!",
-        "screenText": "TBC 20 · 1:2:3 → ba số?",
-        "visual": "Màn khép chờ kéo; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P1",
-        "assets": [],
-        "duration": 8
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Kéo màn hai tầng",
-    "problem": "Trung bình cộng của ba số là 24. Số thứ hai gấp đôi số thứ nhất; số thứ ba gấp rưỡi số thứ hai. Tìm ba số.",
-    "steps": [
-      {
-        "show": "Bước 1 — TẦNG 1 kéo màn: tổng = 24 × 3 = 72.",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Việc đầu tiên khi gặp TBC là:",
-          "choices": [
-            "nhân ra tổng",
-            "chia cho số phần",
-            "cộng tỉ"
-          ],
-          "answerKey": {
-            "choice": "nhân ra tổng"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — TẦNG 2 quy thước: 1; 2; gấp rưỡi của 2 = 3 → 6 phần → phần 12."
-      },
-      {
-        "show": "Bước 3 — Ba số: 12; 24; 36. Thử: TBC 72 : 3 = 24 ✓; 36 = 1,5 × 24 ✓.",
-        "askAfter": {
-          "format": "mb",
-          "text": "TBC ba số 20, tỉ 1:2:3 → ba số?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "ba số",
-                "value": "10; 20; 30"
-              }
-            ]
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "mb",
-          "text": "Trung bình cộng của ba số là 20. Ba số theo tỉ 1 : 2 : 3. Tìm ba số.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "ba số",
-                "value": "10; 20; 30"
-              }
-            ]
-          },
-          "hints": [
-            "Kéo màn: 20 × 3.",
-            "6 phần = 60."
-          ],
-          "solutionNarrative": "Tổng 60 → 10; 20; 30 (TBC ✓).",
-          "teaches": [
-            "K1",
-            "K2"
-          ],
-          "generator": {
-            "template": "TBC {t} của 3 số, tỉ {a}:{b}:{c}. Tìm ba số.",
-            "constraints": {},
-            "answerRule": "t×3 : (a+b+c) rồi nhân"
-          }
-        }
-      ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B30.LT9",
-          "text": "Sư phụ Trí Dũng đố: \"Trung bình cộng của ba số là 24. Số thứ hai gấp đôi số thứ nhất; số thứ ba gấp rưỡi số thứ hai. Tìm ba số.\"",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "ba số",
-                "value": "12; 24; 36"
-              }
-            ]
-          },
-          "hints": [
-            "Tổng 72.",
-            "Phần: 1 + 2 + 3 = 6."
-          ],
-          "solutionNarrative": "Phần 12 → 12; 24; 36 (36 = gấp rưỡi 24 ✓).",
-          "teaches": [
-            "K1",
-            "K2",
-            "K3"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P3",
-          "format": "tf",
-          "text": "(Đúng/Sai?) Với đề 'TBC ba số là 24, tỉ 1 : 2 : 3', có thể chia thẳng 24 : 6 để ra giá một phần.",
-          "answerKey": {
-            "value": false,
-            "note": "Phải kéo màn trước: tổng = 72 mới là số đem chia — 24 : 6 = 4 cho TBC 8 ≠ 24."
-          },
-          "hints": [
-            "24 là TBC hay tổng?",
-            "Thử đáp của phép chia thẳng."
-          ],
-          "teaches": [
-            "K1",
-            "K3"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:III.3.2#3@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B31.M1",
-      "award": "huy_hieu_keo_man"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B30.QZ5",
-        "text": "TBC ba số là 24 thì tổng ba số là:",
-        "choices": [
-          "72",
-          "24",
-          "8"
-        ],
-        "answerKey": {
-          "choice": "72"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "mb",
-        "text": "TBC ba số 20, tỉ 1:2:3 → ba số?",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "ba số",
-              "value": "10; 20; 30"
-            }
-          ]
-        },
-        "teaches": [
-          "K2"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "mb",
-        "text": "Đề sư phụ (TBC 24, gấp đôi + gấp rưỡi) → ba số?",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "ba số",
-              "value": "12; 24; 36"
-            }
-          ]
-        },
-        "teaches": [
-          "K2",
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Bài trộn TBC + tỉ số — trình tự?",
-        "back": "HAI TẦNG: (1) kéo màn TBC → tổng = TBC × n (cầu B21: 24 × 3 = 72); (2) máy tổng – tỉ / chuỗi: 6 phần → 12; 24; 36. Không chia thẳng trên con số TBC! Thử hai lớp: TBC ✓ và mắt xích tỉ ✓."
-      }
-    ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P2 (đề sư phụ)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con giải bài phối hợp TBC + tỉ số theo hai tầng: kéo màn ra tổng rồi chia phần. Con đạt {score}/3.",
-    "homeActivity": "Ra đề miệng 'TBC ba hộp là 20, tỉ 1:2:3' — con hô 'kéo màn: tổng 60!' trước khi chia.",
-    "watchFor": "Nếu con chia thẳng trên TBC — thử đáp: TBC ra 8 thay vì 24 là tự thấy (S1)."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B30.M3",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "24 : 6 = 4 luôn??",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "TBC lẫn tỉ số — chia 24 cho 6 phần luôn nhé?",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "Chữ TBC chỉ là tấm màn — kéo ra đã.",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B30_M3_F1.png",
-      "sha256_16": "d6ce76a0f2c2972e"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con giải được bài PHỐI HỢP TBC với tỉ số: gặp trung bình cộng thì KÉO MÀN trước — nhân TBC với số phần tử ra TỔNG (cây cầu Bài 21) — rồi bài trở về tổng – tỉ / chuỗi tỉ nguyên chất: cộng phần, chia, nhân.",
-        "steps": [
-          {
-            "text": "tầng 1: TBC 20 × 3 = 60"
-          },
-          {
-            "text": "tầng 2: 6 phần → 10; 20; 30"
-          },
-          {
-            "text": "thử: 60 : 3 = 20"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B30_M3_F2.png",
-      "sha256_16": "9b5f17ac6c31ed63"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "TBC là tấm màn che TỔNG",
-            "text": "TBC ba số là 24 → tổng = 24 × 3 = 72 (cây cầu ngược Bài 21) — kéo màn xong mới thấy bài tổng – tỉ bên trong.",
-            "tone": "navy"
-          },
-          {
-            "label": "Sau màn là máy quen",
-            "text": "tổng 72, chuỗi 1 : 2 : 3 → 6 phần → phần 12…",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "GẶP TBC — KÉO MÀN RA TỔNG TRƯỚC, RỒI MỚI CHIA PHẦN!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B30_M3_F3.png",
-      "sha256_16": "dc72ef0b458a4591"
-    },
-    {
-      "archetype": "bar_diagram",
-      "params": {
-        "title": "TBC 20 CỦA BA SỐ · TỈ 1 : 2 : 3",
-        "bars": [
-          {
-            "name": "số 1",
-            "units": 1,
-            "label": "10"
-          },
-          {
-            "name": "số 2",
-            "units": 2,
-            "label": "20"
-          },
-          {
-            "name": "số 3",
-            "units": 3,
-            "label": "30"
-          }
-        ],
-        "brace": {
-          "text": "KÉO MÀN: tổng = 20 × 3 = 60  →  6 phần  →  1 phần = 10"
-        },
-        "note": "Gặp trung bình cộng thì kéo màn trước — nhân ra TỔNG rồi mới chia phần"
-      },
-      "caption": "Cây cầu tổng của bài 21 nối thẳng sang máy chia phần",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B30_M3_F4.png",
-      "sha256_16": "a76f8cfebf8d3a40"
-    }
-  ]
+    "note": "Gặp trung bình cộng thì kéo màn trước — nhân ra TỔNG rồi mới chia phần"
+   },
+   "caption": "Cây cầu tổng của bài 21 nối thẳng sang máy chia phần",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B30_M3_F4.png",
+   "sha256_16": "ffca81716f0dd5d8"
+  }
+ ]
 }

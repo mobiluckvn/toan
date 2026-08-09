@@ -1,713 +1,713 @@
 {
-  "title": "Tìm số từ tổng / hiệu với gương — coi chừng GƯƠNG VỠ",
-  "grade": 5,
-  "durationMinutes": 9,
-  "skills": {
-    "primary": [
-      "CASE:I.1.4#2"
+ "title": "Tìm số từ tổng / hiệu với gương — coi chừng GƯƠNG VỠ",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:I.1.4#2"
+  ],
+  "bktUnit": "CASE:I.1.4#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B3",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B3.M1",
+  "next": "DL:KSN5Q1.B3.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B3",
+  "chunks": [
+   "CHUNK:KSN5Q1.B3.S4",
+   "CHUNK:KSN5Q1.B3.S5",
+   "CHUNK:KSN5Q1.B3.S8"
+  ],
+  "cases": [],
+  "relatedCa": [
+   "CA:KSN5Q1.B3.1",
+   "CA:KSN5Q1.B3.2",
+   "CA:KSN5Q1.B3.3"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B3.1",
+   "TRAP:KSN5Q1.B3.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải được bài tìm số từ TỔNG hoặc HIỆU của số và số viết ngược: chia 11 (hoặc 9, 99) ra quan hệ chữ số, duyệt cặp có hệ thống, và LOẠI nghiệm ma có chữ số tận cùng 0 (bóng gương vỡ).",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (loại nghiệm gương vỡ)",
+  "kidText": "Con tìm được số khi biết tổng hoặc hiệu của nó với số soi gương — và loại đúng những đáp án giả có đuôi bằng 0."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Từ TỔNG: tổng : 11 = a + b → duyệt các cặp (a; b) có tổng ấy, mỗi cặp cho một số ab."
+   },
+   {
+    "id": "K2",
+    "text": "Từ HIỆU: hiệu : 9 = a − b → duyệt các cặp a > b; ba chữ số thì hiệu : 99 = a − c."
+   },
+   {
+    "id": "K3",
+    "text": "Điều kiện ẩn phải ghi vào tóm tắt ngay từ đầu: BÓNG GƯƠNG cũng phải là số có đủ chữ số — nên chữ số hàng đơn vị (hoặc hàng cuối) phải lớn hơn hoặc bằng 1. Cặp chứa 0 ở vị trí ấy là NGHIỆM MA, phải loại."
+   },
+   {
+    "id": "K4",
+    "text": "Hiệu ab − ba chỉ chia hết cho 11 khi a = b (hiệu bằng 0) — tổng ăn 11, hiệu ăn 9, đừng trả lời theo quán tính."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: PHIÊN TÒA GƯƠNG VỠ. Mỗi cặp chữ số duyệt được là một 'nghi phạm' bước qua máy soi gương. Nghi phạm nào có chữ số cuối bằng 0 thì khi soi, bóng gương bị MẤT một chữ số (60 soi thành 06 — chỉ còn là số 6): gương vỡ loảng xoảng, nghi phạm bị loại khỏi danh sách dù thoạt nhìn rất hợp lệ. Quy trình: chia (11 / 9 / 99) → điểm danh cặp → cho từng cặp qua máy soi → loại gương vỡ → thử lại các cặp sống sót.",
+  "canonicalExamples": [
+   {
+    "case": "từ tổng (ca chuẩn có gương vỡ)",
+    "problem": "Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng 66.",
+    "solution": "11 × (a + b) = 66 → a + b = 6. Điểm danh: 15, 24, 33, 42, 51 và ứng viên 60. Soi gương 60 → 06 chỉ là số 6, không còn hai chữ số — GƯƠNG VỠ, loại! Đáp số: 15, 24, 33, 42, 51.",
+    "why": "Ca đinh của bẫy CĐ-3.1."
+   },
+   {
+    "case": "từ hiệu (ca chuẩn)",
+    "problem": "Tìm tất cả các số có hai chữ số sao cho số đó trừ số viết ngược bằng 45.",
+    "solution": "9 × (a − b) = 45 → a − b = 5 → các cặp (6;1), (7;2), (8;3), (9;4) → 61, 72, 83, 94. Cặp (5;0) cho số 50 nhưng bóng 05 vỡ gương — loại!",
+    "why": "Hiệu + gương vỡ ở b = 0."
+   },
+   {
+    "case": "ba chữ số (ca mở rộng)",
+    "problem": "Hiệu của một số có ba chữ số và số viết ngược của nó bằng 594. Tìm hiệu của chữ số hàng trăm và hàng đơn vị, và các cặp có thể.",
+    "solution": "99 × (a − c) = 594 → a − c = 6 → các cặp (7;1), (8;2), (9;3); cặp (6;0) loại vì bóng gương mất chữ số.",
+    "why": "Nối K2 mở rộng 99 với điều kiện c lớn hơn hoặc bằng 1."
+   }
+  ],
+  "numberRange": "Lớp 5: tổng là bội của 11 (22–176); hiệu là bội của 9 (9–72) hoặc bội của 99 (99–792).",
+  "misconceptions": [
+   {
+    "wrong": "Duyệt đủ cặp nhưng quên loại cặp có chữ số 0 (giữ 60 trong đáp số tổng 66).",
+    "signal": "Đáp số thừa đúng một số tận cùng 0.",
+    "fix": "ghi điều kiện ẩn vào tóm tắt NGAY TỪ ĐẦU: bóng gương phải đủ chữ số; cho mọi ứng viên qua máy soi.",
+    "counterExample": "60 + 06? 06 chỉ là 6; 60 + 6 = 66 nhưng 6 không phải số có hai chữ số — đề đòi cả hai đều hai chữ số."
+   },
+   {
+    "wrong": "Trả lời quán tính 'hiệu cũng chia hết cho 11'.",
+    "signal": "Chọn ĐÚNG cho câu 'ab − ba chia hết cho 11'.",
+    "fix": "hiệu ăn 9; chỉ chia hết 11 khi hai chữ số bằng nhau (hiệu 0).",
+    "counterExample": "74 − 47 = 27 không chia hết cho 11."
+   }
+  ],
+  "vocabulary": [
+   "phiên tòa gương vỡ",
+   "nghiệm ma",
+   "máy soi gương",
+   "điều kiện ẩn ghi vào tóm tắt"
+  ],
+  "mantra": "SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Tổng ab + ba = 11 × (a + b). Nếu tổng bằng 88 thì a + b bằng mấy?",
+    "answerKey": {
+     "value": 8
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B3.M1",
+   "message": "Ôn ba công thức gương 3 phút rồi vào phiên tòa nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Đề bài: tổng của số và bóng gương bằng 66. Trí Long duyệt vèo vèo: a cộng b bằng 6 — có 15, 24, 33, 42, 51 và... 60! Cáo Đề vỗ tay khen. Su Kem hét lên: \"KHOAN! Cho 60 soi gương thử xem!\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "a+b=6 → …51, 60?!"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để mở phiên tòa!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "trap",
+    "estSeconds": 45,
+    "teaches": [
+     "K1",
+     "K3"
     ],
-    "bktUnit": "CASE:I.1.4#2@G5"
+    "narration": "Cho 60 qua máy soi: bóng của nó là 06 — mà 06 chỉ là số 6, đâu còn hai chữ số! Gương vỡ loảng xoảng: 60 là NGHIỆM MA, phải loại. Điều kiện ẩn của mọi bài gương: bóng cũng phải đủ chữ số — ghi ngay vào tóm tắt từ đầu.",
+    "display": {
+     "type": "counter_example",
+     "cases": [
+      {
+       "input": "51",
+       "output": "15 ✓",
+       "valid": true,
+       "reason": "bóng đủ 2 chữ số"
+      },
+      {
+       "input": "60",
+       "output": "06 = 6 ✗",
+       "valid": false,
+       "reason": "bóng mất chữ số — GƯƠNG VỠ"
+      }
+     ]
+    },
+    "interaction": {
+     "type": "sort_cards",
+     "prompt": "Nghi phạm nào qua được máy soi? Kéo vào giỏ HỢP LỆ / GƯƠNG VỠ",
+     "cards": [
+      24,
+      33,
+      42,
+      60
+     ],
+     "answerKey": {
+      "HỢP LỆ": [
+       24,
+       33,
+       42
+      ],
+      "GƯƠNG VỠ": [
+       60
+      ]
+     }
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 18,
+    "item": {
+     "format": "lst",
+     "text": "Chốt đáp số bài tổng 66: liệt kê đủ các số hợp lệ.",
+     "answerKey": {
+      "values": [
+       15,
+       24,
+       33,
+       42,
+       51
+      ],
+      "ordered": true,
+      "count": 5
+     },
+     "wrongFeedback": "a + b = 6, duyệt từ a = 1; loại ứng viên tận cùng 0.",
+     "objective": "O1",
+     "teaches": [
+      "K1",
+      "K3"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 38,
+    "teaches": [
+     "K2",
+     "K4"
+    ],
+    "narration": "Bài hiệu làm y hệt với số 9: hiệu 45 chia 9 được a trừ b bằng 5 → 61, 72, 83, 94 — còn cặp (5;0) cho số 50 thì bóng 05 vỡ gương, loại. Và cảnh giác câu hỏi xoáy: hiệu có chia hết cho 11 không? KHÔNG — tổng ăn 11, hiệu ăn 9; hiệu chỉ chia hết 11 khi hai chữ số bằng nhau.",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "45 : 9 = 5 → a − b = 5",
+      "(6;1)(7;2)(8;3)(9;4) ✓ · (5;0) GƯƠNG VỠ",
+      "ab − ba ⋮ 11 ⇔ a = b"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: số tận cùng không — soi gương là vỡ!",
+    "display": {
+     "type": "mantra_card",
+     "text": "SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 84,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B3",
-    "order": 2,
-    "prev": "DL:KSN5Q1.B3.M1",
-    "next": "DL:KSN5Q1.B3.M3"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B3",
-    "chunks": [
-      "CHUNK:KSN5Q1.B3.S4",
-      "CHUNK:KSN5Q1.B3.S5",
-      "CHUNK:KSN5Q1.B3.S8"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đề bài: tổng của số và bóng gương bằng sáu mươi sáu. Trí Long duyệt vèo vèo: a cộng b bằng sáu — có mười lăm, hai tư, ba ba, bốn hai, năm mốt và… SÁU MƯƠI! Cáo Đề vỗ tay khen. Su Kem hét lên: khoan! Cho sáu mươi soi gương thử xem!",
+    "screenText": "a + b = 6 → … 51, 60?!",
+    "visual": "Danh sách nghi phạm 15·24·33·42·51·60 xếp hàng; Cáo Đề vỗ tay; Su Kem chỉ vào thẻ 60 với dấu '!' đỏ.",
+    "assets": [],
+    "duration": 19
+   },
+   {
+    "no": 2,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Máy soi gương khởi động. Năm mốt soi ra mười lăm — hợp lệ! Nhưng sáu mươi soi ra… KHÔNG SÁU — mà không sáu chỉ là số sáu, đâu còn hai chữ số! Choang — gương vỡ! Sáu mươi là nghiệm ma, loại khỏi phiên tòa. Ghi điều kiện ẩn vào tóm tắt ngay từ đầu: bóng gương phải đủ chữ số.",
+    "screenText": "60 → 06 = 6 ✗ GƯƠNG VỠ!",
+    "visual": "Máy soi kiểu cổng an ninh: thẻ 51 qua, hiện '15 ✓' xanh; thẻ 60 qua, gương nứt toác hiệu ứng vỡ, '06 = 6' đỏ #C0392B; con dấu 'LOẠI'.",
+    "assets": [],
+    "duration": 23
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Bài hiệu làm y hệt với số chín: hiệu bốn lăm chia chín được a trừ b bằng năm — ra sáu mốt, bảy hai, tám ba, chín tư. Cặp năm-không cho số năm mươi thì bóng vỡ gương — loại! Và nhớ câu hỏi xoáy: hiệu có ăn mười một không? Không — hiệu ăn chín; chỉ chia hết mười một khi hai chữ số bằng nhau.",
+    "screenText": "45 : 9 = 5 → 61 · 72 · 83 · 94 (50 ✗)",
+    "visual": "Sơ đồ chia 45:9=5, bốn thẻ đáp số bay vào hàng, thẻ 50 vỡ gương; góc dưới bảng nhỏ 'TỔNG→11 · HIỆU→9'.",
+    "assets": [],
+    "duration": 24
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú phiên tòa: số tận cùng không — soi gương là vỡ!",
+    "screenText": "SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!",
+    "visual": "Thẻ thần chú vàng với vết nứt gương trang trí góc.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Vào vai thẩm phán: tổng của số và bóng gương bằng một trăm hai mốt — tìm hết nghi phạm và xử đúng nhé! Vào bài luyện ngay!",
+    "screenText": "tổng = 121 → a + b = 11 → ?",
+    "visual": "Búa thẩm phán gõ xuống, đề '121' hiện; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P4",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Phiên tòa tổng 66",
+  "problem": "Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng 66.",
+  "steps": [
+   {
+    "show": "Bước 1 — Định luật bắt tay: 11 × (a + b) = 66 → a + b = 6.",
+    "askBefore": {
+     "format": "num",
+     "text": "66 : 11 = ?",
+     "answerKey": {
+      "value": 6
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Điểm danh nghi phạm: (1;5) (2;4) (3;3) (4;2) (5;1) (6;0) → 15, 24, 33, 42, 51, 60."
+   },
+   {
+    "show": "Bước 3 — Máy soi gương: 60 → 06 = 6 mất một chữ số → GƯƠNG VỠ, loại. Đáp số: 15, 24, 33, 42, 51.",
+    "askAfter": {
+     "format": "tf",
+     "text": "(Đúng/Sai?) 33 soi gương vẫn là 33 nên hợp lệ.",
+     "answerKey": {
+      "value": true
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "lst",
+     "sourceItem": "ITEM:KSN5Q1.B3.LT5",
+     "text": "Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng 66.",
+     "answerKey": {
+      "values": [
+       15,
+       24,
+       33,
+       42,
+       51
+      ],
+      "ordered": true,
+      "count": 5,
+      "rubric": "Phải nêu lý do loại 60 (gương vỡ)."
+     },
+     "hints": [
+      "66 : 11 = a + b.",
+      "Ứng viên tận cùng 0 thì soi gương thế nào?"
+     ],
+     "solutionNarrative": "11(a + b) = 66 → a + b = 6 → 15, 24, 33, 42, 51 (loại 60 vì bóng 06 mất chữ số).",
+     "teaches": [
+      "K1",
+      "K3"
+     ],
+     "generator": {
+      "template": "Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng {S}.",
+      "constraints": {
+       "S": "bội của 11: 44–154"
+      },
+      "answerRule": "duyệt a+b = S:11, loại b=0... và a+b>9 tự giới hạn"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "lst",
+     "sourceItem": "ITEM:KSN5Q1.B3.LT6",
+     "text": "Tìm tất cả các số có hai chữ số sao cho số đó trừ số viết ngược bằng 45. (Cẩn thận nghiệm có chữ số 0!)",
+     "answerKey": {
+      "values": [
+       61,
+       72,
+       83,
+       94
+      ],
+      "ordered": true,
+      "count": 4
+     },
+     "hints": [
+      "45 : 9 = a − b.",
+      "Cặp (5;0) qua máy soi có sống sót không?"
+     ],
+     "solutionNarrative": "9(a − b) = 45 → a − b = 5 → 61, 72, 83, 94 (loại 50 — gương vỡ).",
+     "teaches": [
+      "K2",
+      "K3"
+     ],
+     "generator": {
+      "template": "Tìm tất cả các số có hai chữ số sao cho số đó trừ số viết ngược bằng {H}.",
+      "constraints": {
+       "H": "bội của 9: 9–72"
+      },
+      "answerRule": "a − b = H:9, duyệt b ≥ 1"
+     }
+    },
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B3.LT7",
+     "text": "Hiệu của một số có ba chữ số và số viết ngược của nó bằng 594. Tìm hiệu của chữ số hàng trăm và chữ số hàng đơn vị; kể các cặp (hàng trăm; hàng đơn vị) có thể.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "a − c",
+        "value": 6
+       },
+       {
+        "label": "các cặp",
+        "value": "(7;1), (8;2), (9;3) — loại (6;0)",
+        "options": [
+         "(7;1), (8;2), (9;3)",
+         "(6;0), (7;1), (8;2)",
+         "(5;1), (6;2), (7;3)"
+        ]
+       }
+      ]
+     },
+     "hints": [
+      "Hiệu ba chữ số ăn 99.",
+      "594 : 99 = ?; điều kiện c lớn hơn hoặc bằng 1."
+     ],
+     "solutionNarrative": "99(a − c) = 594 → a − c = 6; các cặp (7;1), (8;2), (9;3) — cặp (6;0) loại vì bóng gương mất chữ số.",
+     "teaches": [
+      "K2",
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B3.LT9",
+     "text": "Sư phụ đố: \"Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng 121. Trong các số tìm được, số nào chia hết cho 9?\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "các số",
+        "value": "29, 38, 47, 56, 65, 74, 83, 92"
+       },
+       {
+        "label": "chia hết 9",
+        "value": "không số nào — tổng chữ số là 11, không chia hết cho 9",
+        "options": [
+         "không số nào",
+         "chỉ số 92",
+         "tất cả các số tìm được"
+        ]
+       }
+      ]
+     },
+     "hints": [
+      "121 : 11 = 11 → a + b = 11.",
+      "Chia hết cho 9 nhìn tổng chữ số — tổng đang là 11."
+     ],
+     "solutionNarrative": "a + b = 11 → 29, 38, 47, 56, 65, 74, 83, 92; không số nào chia hết cho 9 vì tổng chữ số 11.",
+     "teaches": [
+      "K1"
+     ]
+    },
+    {
+     "id": "P5",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Hiệu của một số có hai chữ số và số viết ngược của nó luôn chia hết cho 11.",
+     "answerKey": {
+      "value": false,
+      "note": "Hiệu ăn 9; chỉ ⋮ 11 khi a = b (hiệu 0)."
+     },
+     "hints": [
+      "Thử 74 − 47.",
+      "Tổng ăn 11 — hiệu ăn 9."
+     ],
+     "teaches": [
+      "K4"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1 và A2",
+  "onPass": {
+   "updateBKT": [
+    "CASE:I.1.4#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B3.M3",
+   "award": "huy_hieu_tham_phan_guong"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "workedExample"
+   ],
+   "retryWith": "đề B sinh từ generator P1 + P2"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B3.QZ5",
+    "text": "Số 60 viết ngược thì:",
+    "choices": [
+     "không còn là số có hai chữ số",
+     "thành 06 vẫn là số có hai chữ số",
+     "thành 66"
     ],
-    "cases": [],
-    "relatedCa": [
-      "CA:KSN5Q1.B3.1",
-      "CA:KSN5Q1.B3.2",
-      "CA:KSN5Q1.B3.3"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B3.1",
-      "TRAP:KSN5Q1.B3.2"
+    "answerKey": {
+     "choice": "không còn là số có hai chữ số"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K3"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B3.QZ2",
+    "text": "(Đúng/Sai?) Hiệu của một số có hai chữ số và số viết ngược của nó luôn chia hết cho 11.",
+    "answerKey": {
+     "value": false
+    },
+    "teaches": [
+     "K4"
+    ],
+    "mustPass": true
+   },
+   {
+    "id": "A3",
+    "format": "lst",
+    "text": "Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng 44.",
+    "answerKey": {
+     "values": [
+      13,
+      22,
+      31
+     ],
+     "ordered": true,
+     "count": 3
+    },
+    "teaches": [
+     "K1",
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Quy trình bài tìm số với gương? Điều kiện ẩn nào hay quên?",
+    "back": "Chia 11 (tổng) / 9 (hiệu) / 99 (3 chữ số) → điểm danh cặp → MÁY SOI GƯƠNG: loại cặp có chữ số 0 ở cuối (bóng mất chữ số) → thử lại. SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!"
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: 1 câu generator P1",
+   "+7 ngày: 1 câu generator P2"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học tìm số từ tổng/hiệu với số viết ngược và cách loại 'nghiệm ma' gương vỡ. Con đạt {score}/3, {trapResult} câu bẫy gương vỡ.",
+  "homeActivity": "Đố cả nhà: 'tổng của số và số viết ngược bằng 66 — ai tìm được nhiều số nhất?' rồi để con làm thẩm phán loại số 60 kèm lý do.",
+  "watchFor": "Nếu con giữ số tận cùng 0 trong đáp số — mở lại máy soi gương (S2) cùng con."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B3.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "a+b=6 → …51, 60?!",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Tổng số và bóng gương bằng 66, tức a cộng b bằng 6: có 15, 24, 33, 42, 51 và… 60!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "KHOAN! Cậu cho số 60 soi gương thử xem nào.",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B3_M2_F1.png",
+   "sha256_16": "b49948b73a51cfaf"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con giải được bài tìm số từ TỔNG hoặc HIỆU của số và số viết ngược: chia 11 (hoặc 9, 99) ra quan hệ chữ số, duyệt cặp có hệ thống, và LOẠI nghiệm ma có chữ số tận cùng 0 (bóng gương vỡ).",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (loại nghiệm gương vỡ)",
-    "kidText": "Con tìm được số khi biết tổng hoặc hiệu của nó với số soi gương — và loại đúng những đáp án giả có đuôi bằng 0."
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+    "wrong": {
+     "head": "CÁCH SAI",
+     "steps": [
+      "60"
+     ],
+     "result": "06 = 6"
+    },
+    "right": {
+     "head": "CÁCH ĐÚNG",
+     "steps": [
+      "51"
+     ],
+     "result": "15"
+    },
+    "verdict": "bóng đủ 2 chữ số"
+   },
+   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B3_M2_F2.png",
+   "sha256_16": "baf843d1a8d33ca5"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Từ TỔNG: tổng : 11 = a + b → duyệt các cặp (a; b) có tổng ấy, mỗi cặp cho một số ab."
-      },
-      {
-        "id": "K2",
-        "text": "Từ HIỆU: hiệu : 9 = a − b → duyệt các cặp a > b; ba chữ số thì hiệu : 99 = a − c."
-      },
-      {
-        "id": "K3",
-        "text": "Điều kiện ẩn phải ghi vào tóm tắt ngay từ đầu: BÓNG GƯƠNG cũng phải là số có đủ chữ số — nên chữ số hàng đơn vị (hoặc hàng cuối) phải ≥ 1. Cặp chứa 0 ở vị trí ấy là NGHIỆM MA, phải loại."
-      },
-      {
-        "id": "K4",
-        "text": "Hiệu ab − ba chỉ chia hết cho 11 khi a = b (hiệu bằng 0) — tổng ăn 11, hiệu ăn 9, đừng trả lời theo quán tính."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: PHIÊN TÒA GƯƠNG VỠ. Mỗi cặp chữ số duyệt được là một 'nghi phạm' bước qua máy soi gương. Nghi phạm nào có chữ số cuối bằng 0 thì khi soi, bóng gương bị MẤT một chữ số (60 soi thành 06 — chỉ còn là số 6): gương vỡ loảng xoảng, nghi phạm bị loại khỏi danh sách dù thoạt nhìn rất hợp lệ. Quy trình: chia (11 / 9 / 99) → điểm danh cặp → cho từng cặp qua máy soi → loại gương vỡ → thử lại các cặp sống sót.",
-    "canonicalExamples": [
-      {
-        "case": "từ tổng (ca chuẩn có gương vỡ)",
-        "problem": "Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng 66.",
-        "solution": "11 × (a + b) = 66 → a + b = 6. Điểm danh: 15, 24, 33, 42, 51 và ứng viên 60. Soi gương 60 → 06 chỉ là số 6, không còn hai chữ số — GƯƠNG VỠ, loại! Đáp số: 15, 24, 33, 42, 51.",
-        "why": "Ca đinh của bẫy CĐ-3.1."
-      },
-      {
-        "case": "từ hiệu (ca chuẩn)",
-        "problem": "Tìm tất cả các số có hai chữ số sao cho số đó trừ số viết ngược bằng 45.",
-        "solution": "9 × (a − b) = 45 → a − b = 5 → các cặp (6;1), (7;2), (8;3), (9;4) → 61, 72, 83, 94. Cặp (5;0) cho số 50 nhưng bóng 05 vỡ gương — loại!",
-        "why": "Hiệu + gương vỡ ở b = 0."
-      },
-      {
-        "case": "ba chữ số (ca mở rộng)",
-        "problem": "Hiệu của một số có ba chữ số và số viết ngược của nó bằng 594. Tìm hiệu của chữ số hàng trăm và hàng đơn vị, và các cặp có thể.",
-        "solution": "99 × (a − c) = 594 → a − c = 6 → các cặp (7;1), (8;2), (9;3); cặp (6;0) loại vì bóng gương mất chữ số. ",
-        "why": "Nối K2 mở rộng 99 với điều kiện c ≥ 1."
-      }
-    ],
-    "numberRange": "Lớp 5: tổng là bội của 11 (22–176); hiệu là bội của 9 (9–72) hoặc bội của 99 (99–792).",
-    "misconceptions": [
-      {
-        "wrong": "Duyệt đủ cặp nhưng quên loại cặp có chữ số 0 (giữ 60 trong đáp số tổng 66).",
-        "signal": "Đáp số thừa đúng một số tận cùng 0.",
-        "fix": "K3 — ghi điều kiện ẩn vào tóm tắt NGAY TỪ ĐẦU: bóng gương phải đủ chữ số; cho mọi ứng viên qua máy soi.",
-        "counterExample": "60 + 06? 06 chỉ là 6; 60 + 6 = 66 nhưng 6 không phải số có hai chữ số — đề đòi cả hai đều hai chữ số."
-      },
-      {
-        "wrong": "Trả lời quán tính 'hiệu cũng chia hết cho 11'.",
-        "signal": "Chọn ĐÚNG cho câu 'ab − ba ⋮ 11'.",
-        "fix": "K4: hiệu ăn 9; chỉ chia hết 11 khi hai chữ số bằng nhau (hiệu 0).",
-        "counterExample": "74 − 47 = 27 không chia hết cho 11."
-      }
-    ],
-    "vocabulary": [
-      "phiên tòa gương vỡ",
-      "nghiệm ma",
-      "máy soi gương",
-      "điều kiện ẩn ghi vào tóm tắt"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Từ TỔNG",
+      "text": "11 = a + b → duyệt các cặp (a",
+      "tone": "navy"
+     },
+     {
+      "label": "Từ HIỆU",
+      "text": "9 = a − b → duyệt các cặp a > b",
+      "tone": "teal"
+     }
     ],
     "mantra": "SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B3_M2_F3.png",
+   "sha256_16": "22cd8d89595390fc"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "Tổng ab + ba = 11 × (a + b). Nếu tổng bằng 88 thì a + b bằng mấy?",
-        "answerKey": {
-          "value": 8
-        }
-      }
-    ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B3.M1",
-      "message": "Ôn ba công thức gương 3 phút rồi vào phiên tòa nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 20,
-        "narration": "Đề bài: tổng của số và bóng gương bằng 66. Trí Long duyệt vèo vèo: a cộng b bằng 6 — có 15, 24, 33, 42, 51 và... 60! Cáo Đề vỗ tay khen. Su Kem hét lên: \"KHOAN! Cho 60 soi gương thử xem!\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "a+b=6 → …51, 60?!"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để mở phiên tòa!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "trap",
-        "estSeconds": 45,
-        "teaches": [
-          "K1",
-          "K3"
-        ],
-        "narration": "Cho 60 qua máy soi: bóng của nó là 06 — mà 06 chỉ là số 6, đâu còn hai chữ số! Gương vỡ loảng xoảng: 60 là NGHIỆM MA, phải loại. Điều kiện ẩn của mọi bài gương: bóng cũng phải đủ chữ số — ghi ngay vào tóm tắt từ đầu.",
-        "display": {
-          "type": "counter_example",
-          "cases": [
-            {
-              "input": "51",
-              "output": "15 ✓",
-              "valid": true,
-              "reason": "bóng đủ 2 chữ số"
-            },
-            {
-              "input": "60",
-              "output": "06 = 6 ✗",
-              "valid": false,
-              "reason": "bóng mất chữ số — GƯƠNG VỠ"
-            }
-          ]
-        },
-        "interaction": {
-          "type": "sort_cards",
-          "prompt": "Nghi phạm nào qua được máy soi? Kéo vào giỏ HỢP LỆ / GƯƠNG VỠ",
-          "cards": [
-            24,
-            33,
-            42,
-            60
-          ],
-          "answerKey": {
-            "HỢP LỆ": [
-              24,
-              33,
-              42
-            ],
-            "GƯƠNG VỠ": [
-              60
-            ]
-          }
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 18,
-        "item": {
-          "format": "lst",
-          "text": "Chốt đáp số bài tổng 66: liệt kê đủ các số hợp lệ.",
-          "answerKey": {
-            "values": [
-              15,
-              24,
-              33,
-              42,
-              51
-            ],
-            "ordered": true,
-            "count": 5
-          },
-          "wrongFeedback": "a + b = 6, duyệt từ a = 1; loại ứng viên tận cùng 0.",
-          "objective": "O1",
-          "teaches": [
-            "K1",
-            "K3"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 38,
-        "teaches": [
-          "K2",
-          "K4"
-        ],
-        "narration": "Bài hiệu làm y hệt với số 9: hiệu 45 chia 9 được a trừ b bằng 5 → 61, 72, 83, 94 — còn cặp (5;0) cho số 50 thì bóng 05 vỡ gương, loại. Và cảnh giác câu hỏi xoáy: hiệu có chia hết cho 11 không? KHÔNG — tổng ăn 11, hiệu ăn 9; hiệu chỉ chia hết 11 khi hai chữ số bằng nhau.",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "45 : 9 = 5 → a − b = 5",
-            "(6;1)(7;2)(8;3)(9;4) ✓ · (5;0) GƯƠNG VỠ",
-            "ab − ba ⋮ 11 ⇔ a = b"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú phiên tòa: số tận cùng không — soi gương là vỡ!",
-        "display": {
-          "type": "mantra_card",
-          "text": "SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 84,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "TÌM SỐ CÓ TỔNG VỚI BÓNG GƯƠNG BẰNG 66",
+    "wrong": {
+     "head": "QUÊN SOI GƯƠNG VỠ",
+     "steps": [
+      "nhận cả số 60"
+     ],
+     "result": "6 đáp án"
     },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    "right": {
+     "head": "LOẠI SỐ TẬN CÙNG 0",
+     "steps": [
+      "60 soi ra 06 = 6"
+     ],
+     "result": "5 đáp án"
     },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Đề bài: tổng của số và bóng gương bằng sáu mươi sáu. Trí Long duyệt vèo vèo: a cộng b bằng sáu — có mười lăm, hai tư, ba ba, bốn hai, năm mốt và… SÁU MƯƠI! Cáo Đề vỗ tay khen. Su Kem hét lên: khoan! Cho sáu mươi soi gương thử xem!",
-        "screenText": "a + b = 6 → … 51, 60?!",
-        "visual": "Danh sách nghi phạm 15·24·33·42·51·60 xếp hàng; Cáo Đề vỗ tay; Su Kem chỉ vào thẻ 60 với dấu '!' đỏ.",
-        "assets": [],
-        "duration": 19
-      },
-      {
-        "no": 2,
-        "templateHint": "trap_reveal",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Máy soi gương khởi động. Năm mốt soi ra mười lăm — hợp lệ! Nhưng sáu mươi soi ra… KHÔNG SÁU — mà không sáu chỉ là số sáu, đâu còn hai chữ số! Choang — gương vỡ! Sáu mươi là nghiệm ma, loại khỏi phiên tòa. Ghi điều kiện ẩn vào tóm tắt ngay từ đầu: bóng gương phải đủ chữ số.",
-        "screenText": "60 → 06 = 6 ✗ GƯƠNG VỠ!",
-        "visual": "Máy soi kiểu cổng an ninh: thẻ 51 qua, hiện '15 ✓' xanh; thẻ 60 qua, gương nứt toác hiệu ứng vỡ, '06 = 6' đỏ #C0392B; con dấu 'LOẠI'.",
-        "assets": [],
-        "duration": 23
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Bài hiệu làm y hệt với số chín: hiệu bốn lăm chia chín được a trừ b bằng năm — ra sáu mốt, bảy hai, tám ba, chín tư. Cặp năm-không cho số năm mươi thì bóng vỡ gương — loại! Và nhớ câu hỏi xoáy: hiệu có ăn mười một không? Không — hiệu ăn chín; chỉ chia hết mười một khi hai chữ số bằng nhau.",
-        "screenText": "45 : 9 = 5 → 61 · 72 · 83 · 94 (50 ✗)",
-        "visual": "Sơ đồ chia 45:9=5, bốn thẻ đáp số bay vào hàng, thẻ 50 vỡ gương; góc dưới bảng nhỏ 'TỔNG→11 · HIỆU→9'.",
-        "assets": [],
-        "duration": 24
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú phiên tòa: số tận cùng không — soi gương là vỡ!",
-        "screenText": "SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!",
-        "visual": "Thẻ thần chú vàng với vết nứt gương trang trí góc.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Vào vai thẩm phán: tổng của số và bóng gương bằng một trăm hai mốt — tìm hết nghi phạm và xử đúng nhé! Vào bài luyện ngay!",
-        "screenText": "tổng = 121 → a + b = 11 → ?",
-        "visual": "Búa thẩm phán gõ xuống, đề '121' hiện; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P4",
-        "assets": [],
-        "duration": 10
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Phiên tòa tổng 66",
-    "problem": "Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng 66.",
-    "steps": [
-      {
-        "show": "Bước 1 — Định luật bắt tay: 11 × (a + b) = 66 → a + b = 6.",
-        "askBefore": {
-          "format": "num",
-          "text": "66 : 11 = ?",
-          "answerKey": {
-            "value": 6
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Điểm danh nghi phạm: (1;5) (2;4) (3;3) (4;2) (5;1) (6;0) → 15, 24, 33, 42, 51, 60."
-      },
-      {
-        "show": "Bước 3 — Máy soi gương: 60 → 06 = 6 mất một chữ số → GƯƠNG VỠ, loại. Đáp số: 15, 24, 33, 42, 51.",
-        "askAfter": {
-          "format": "tf",
-          "text": "(Đúng/Sai?) 33 soi gương vẫn là 33 nên hợp lệ.",
-          "answerKey": {
-            "value": true
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "lst",
-          "sourceItem": "ITEM:KSN5Q1.B3.LT5",
-          "text": "Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng 66.",
-          "answerKey": {
-            "values": [
-              15,
-              24,
-              33,
-              42,
-              51
-            ],
-            "ordered": true,
-            "count": 5,
-            "rubric": "Phải nêu lý do loại 60 (gương vỡ)."
-          },
-          "hints": [
-            "66 : 11 = a + b.",
-            "Ứng viên tận cùng 0 thì soi gương thế nào?"
-          ],
-          "solutionNarrative": "11(a + b) = 66 → a + b = 6 → 15, 24, 33, 42, 51 (loại 60 vì bóng 06 mất chữ số).",
-          "teaches": [
-            "K1",
-            "K3"
-          ],
-          "generator": {
-            "template": "Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng {S}.",
-            "constraints": {
-              "S": "bội của 11: 44–154"
-            },
-            "answerRule": "duyệt a+b = S:11, loại b=0... và a+b>9 tự giới hạn"
-          }
-        }
-      ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "lst",
-          "sourceItem": "ITEM:KSN5Q1.B3.LT6",
-          "text": "Tìm tất cả các số có hai chữ số sao cho số đó trừ số viết ngược bằng 45. (Cẩn thận nghiệm có chữ số 0!)",
-          "answerKey": {
-            "values": [
-              61,
-              72,
-              83,
-              94
-            ],
-            "ordered": true,
-            "count": 4
-          },
-          "hints": [
-            "45 : 9 = a − b.",
-            "Cặp (5;0) qua máy soi có sống sót không?"
-          ],
-          "solutionNarrative": "9(a − b) = 45 → a − b = 5 → 61, 72, 83, 94 (loại 50 — gương vỡ).",
-          "teaches": [
-            "K2",
-            "K3"
-          ],
-          "generator": {
-            "template": "Tìm tất cả các số có hai chữ số sao cho số đó trừ số viết ngược bằng {H}.",
-            "constraints": {
-              "H": "bội của 9: 9–72"
-            },
-            "answerRule": "a − b = H:9, duyệt b ≥ 1"
-          }
-        },
-        {
-          "id": "P3",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B3.LT7",
-          "text": "Hiệu của một số có ba chữ số và số viết ngược của nó bằng 594. Tìm hiệu của chữ số hàng trăm và chữ số hàng đơn vị; kể các cặp (hàng trăm; hàng đơn vị) có thể.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "a − c",
-                "value": 6
-              },
-              {
-                "label": "các cặp",
-                "value": "(7;1), (8;2), (9;3) — loại (6;0)",
-                "options": [
-                  "(7;1), (8;2), (9;3)",
-                  "(6;0), (7;1), (8;2)",
-                  "(5;1), (6;2), (7;3)"
-                ]
-              }
-            ]
-          },
-          "hints": [
-            "Hiệu ba chữ số ăn 99.",
-            "594 : 99 = ?; điều kiện c ≥ 1."
-          ],
-          "solutionNarrative": "99(a − c) = 594 → a − c = 6; các cặp (7;1), (8;2), (9;3) — cặp (6;0) loại vì bóng gương mất chữ số.",
-          "teaches": [
-            "K2",
-            "K3"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P4",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B3.LT9",
-          "text": "Sư phụ đố: \"Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng 121. Trong các số tìm được, số nào chia hết cho 9?\"",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "các số",
-                "value": "29, 38, 47, 56, 65, 74, 83, 92"
-              },
-              {
-                "label": "chia hết 9",
-                "value": "không số nào — tổng chữ số là 11, không chia hết cho 9",
-                "options": [
-                  "không số nào",
-                  "chỉ số 92",
-                  "tất cả các số tìm được"
-                ]
-              }
-            ]
-          },
-          "hints": [
-            "121 : 11 = 11 → a + b = 11.",
-            "Chia hết cho 9 nhìn tổng chữ số — tổng đang là 11."
-          ],
-          "solutionNarrative": "a + b = 11 → 29, 38, 47, 56, 65, 74, 83, 92; không số nào ⋮ 9 vì tổng chữ số 11.",
-          "teaches": [
-            "K1"
-          ]
-        },
-        {
-          "id": "P5",
-          "format": "tf",
-          "text": "(Đúng/Sai?) Hiệu của một số có hai chữ số và số viết ngược của nó luôn chia hết cho 11.",
-          "answerKey": {
-            "value": false,
-            "note": "Hiệu ăn 9; chỉ ⋮ 11 khi a = b (hiệu 0)."
-          },
-          "hints": [
-            "Thử 74 − 47.",
-            "Tổng ăn 11 — hiệu ăn 9."
-          ],
-          "teaches": [
-            "K4"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
-    "onPass": {
-      "updateBKT": [
-        "CASE:I.1.4#2@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B3.M3",
-      "award": "huy_hieu_tham_phan_guong"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "workedExample"
-      ],
-      "retryWith": "đề B sinh từ generator P1 + P2"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B3.QZ5",
-        "text": "Số 60 viết ngược thì:",
-        "choices": [
-          "không còn là số có hai chữ số",
-          "thành 06 vẫn là số có hai chữ số",
-          "thành 66"
-        ],
-        "answerKey": {
-          "choice": "không còn là số có hai chữ số"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K3"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "tf",
-        "sourceItem": "ITEM:KSN5Q1.B3.QZ2",
-        "text": "(Đúng/Sai?) Hiệu của một số có hai chữ số và số viết ngược của nó luôn chia hết cho 11.",
-        "answerKey": {
-          "value": false
-        },
-        "teaches": [
-          "K4"
-        ],
-        "mustPass": true
-      },
-      {
-        "id": "A3",
-        "format": "lst",
-        "text": "Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng 44.",
-        "answerKey": {
-          "values": [
-            13,
-            22,
-            31
-          ],
-          "ordered": true,
-          "count": 3
-        },
-        "teaches": [
-          "K1",
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Quy trình bài tìm số với gương? Điều kiện ẩn nào hay quên?",
-        "back": "Chia 11 (tổng) / 9 (hiệu) / 99 (3 chữ số) → điểm danh cặp → MÁY SOI GƯƠNG: loại cặp có chữ số 0 ở cuối (bóng mất chữ số) → thử lại. SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!"
-      }
-    ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: 1 câu generator P1",
-      "+7 ngày: 1 câu generator P2"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con học tìm số từ tổng/hiệu với số viết ngược và cách loại 'nghiệm ma' gương vỡ. Con đạt {score}/3, {trapResult} câu bẫy gương vỡ.",
-    "homeActivity": "Đố cả nhà: 'tổng của số và số viết ngược bằng 66 — ai tìm được nhiều số nhất?' rồi để con làm thẩm phán loại số 60 kèm lý do.",
-    "watchFor": "Nếu con giữ số tận cùng 0 trong đáp số — mở lại máy soi gương (S2) cùng con."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B3.M2",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "a+b=6 → …51, 60?!",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "Tổng số và bóng gương bằng 66, tức a cộng b bằng 6: có 15, 24, 33, 42, 51 và… 60!",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "KHOAN! Cậu cho số 60 soi gương thử xem nào.",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B3_M2_F1.png",
-      "sha256_16": "b49948b73a51cfaf"
-    },
-    {
-      "archetype": "two_way_compare",
-      "params": {
-        "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-        "wrong": {
-          "head": "CÁCH SAI",
-          "steps": [
-            "60"
-          ],
-          "result": "06 = 6"
-        },
-        "right": {
-          "head": "CÁCH ĐÚNG",
-          "steps": [
-            "51"
-          ],
-          "result": "15"
-        },
-        "verdict": "bóng đủ 2 chữ số"
-      },
-      "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B3_M2_F2.png",
-      "sha256_16": "baf843d1a8d33ca5"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Từ TỔNG",
-            "text": "11 = a + b → duyệt các cặp (a",
-            "tone": "navy"
-          },
-          {
-            "label": "Từ HIỆU",
-            "text": "9 = a − b → duyệt các cặp a > b",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B3_M2_F3.png",
-      "sha256_16": "22cd8d89595390fc"
-    },
-    {
-      "archetype": "two_way_compare",
-      "params": {
-        "title": "TÌM SỐ CÓ TỔNG VỚI BÓNG GƯƠNG BẰNG 66",
-        "wrong": {
-          "head": "QUÊN SOI GƯƠNG VỠ",
-          "steps": [
-            "nhận cả số 60"
-          ],
-          "result": "6 đáp án"
-        },
-        "right": {
-          "head": "LOẠI SỐ TẬN CÙNG 0",
-          "steps": [
-            "60 soi ra 06 = 6"
-          ],
-          "result": "5 đáp án"
-        },
-        "verdict": "15 · 24 · 33 · 42 · 51 — số 60 bị loại"
-      },
-      "caption": "Gương vỡ: số tận cùng bằng 0 soi ngược không còn là số hai chữ số",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B3_M2_F4.png",
-      "sha256_16": "c407327365456e11"
-    }
-  ]
+    "verdict": "15 · 24 · 33 · 42 · 51 — số 60 bị loại"
+   },
+   "caption": "Gương vỡ: số tận cùng bằng 0 soi ngược không còn là số hai chữ số",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B3_M2_F4.png",
+   "sha256_16": "c407327365456e11"
+  }
+ ]
 }

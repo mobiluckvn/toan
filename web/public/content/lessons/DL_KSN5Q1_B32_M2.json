@@ -1,605 +1,605 @@
 {
-  "title": "Tỉ ẩn trong cấu tạo số: thêm 0 = gấp 10 — tổng 11 phần, hiệu 9 phần",
-  "grade": 5,
-  "durationMinutes": 7,
-  "skills": {
-    "primary": [
-      "CASE:III.3.3#2"
+ "title": "Tỉ ẩn trong cấu tạo số: thêm 0 = gấp 10 — tổng 11 phần, hiệu 9 phần",
+ "grade": 5,
+ "durationMinutes": 7,
+ "skills": {
+  "primary": [
+   "CASE:III.3.3#2"
+  ],
+  "bktUnit": "CASE:III.3.3#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B32",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B32.M1",
+  "next": "DL:KSN5Q1.B32.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B32",
+  "chunks": [
+   "CHUNK:KSN5Q1.B32.S4",
+   "CHUNK:KSN5Q1.B32.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B32.3"
+  ],
+  "traps": []
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con khui được tỉ ẩn trong CẤU TẠO SỐ: \"số lớn là số bé viết thêm chữ số 0 bên phải\" = GẤP 10 → tỉ 1 : 10 — nên tổng chia 11 phần, hiệu chia 9 phần (số 10 KHÔNG phải số chia) — nợ Bài 20 trả trọn.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (hiệu 9 phần)",
+  "kidText": "Viết thêm số 0 là gấp 10, nên tỉ số là 1 : 10. Tổng chia 11 phần, hiệu chia 9 phần — số 10 không phải số chia."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Thêm chữ số 0 vào bên phải một số = nhân số ấy với 10 (12 → 120): tỉ số bé : số lớn = 1 : 10 — lời khai cấu tạo số dịch thẳng ra tỉ."
+   },
+   {
+    "id": "K2",
+    "text": "Với tỉ 1 : 10: TỔNG = 1 + 10 = 11 phần; HIỆU = 10 − 1 = 9 phần — số 10 chỉ để đếm ô, không phải số chia (nhịp B29/B31 nguyên xi)."
+   },
+   {
+    "id": "K3",
+    "text": "Máy chạy: hiệu 108 → 9 phần → phần 12 → hai số 12 và 120. Thử cấu tạo: viết thêm 0 vào 12 đúng ra 120 ✓; 120 − 12 = 108 ✓."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: TOA SỐ MÓC THÊM TOA 0. \"Số lớn là số bé viết thêm chữ số 0 bên phải\" — nghe như câu đố chữ, thật ra là LỜI KHAI TỈ SỐ: móc thêm toa 0 vào đuôi là cả đoàn tàu chạy nhanh GẤP MƯỜI (12 hóa 120)! Tỉ 1 : 10 lộ diện — giờ chỉ việc nhớ nhịp cũ: con số 10 để ĐẾM Ô thôi. Hiệu 108? Chồng hai dãy: phần thò ra mười trừ một — CHÍN ô = 108: phần MƯỜI HAI — hai số 12 và 120! Thử hai cửa: viết thêm 0 vào 12 đúng ra 120; trừ nhau đúng 108. (Tổng mà đề cho thì đếm MƯỜI MỘT ô — cũng một máy.)",
+  "canonicalExamples": [
+   {
+    "case": "lời khai gấp 10 (ca nền)",
+    "problem": "Số B là số A viết thêm chữ số 0 vào bên phải. Hỏi B gấp A bao nhiêu lần?",
+    "solution": "Gấp 10 lần (12 → 120) → tỉ A : B = 1 : 10.",
+    "why": "Ca LT3 — dịch lời khai cấu tạo số."
+   },
+   {
+    "case": "ghép hiệu (ca lõi)",
+    "problem": "Hiệu hai số là 108. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.",
+    "solution": "Tỉ 1 : 10 → hiệu 9 phần = 108 → phần 12 → 12 và 120. Thử: thêm 0 vào 12 = 120 ✓; 120 − 12 = 108 ✓.",
+    "why": "Ca đề A câu 14 — hiệu chia 9, không chia 10."
+   }
+  ],
+  "numberRange": "Lớp 5: hiệu chia hết cho 9; tổng chia hết cho 11.",
+  "misconceptions": [
+   {
+    "wrong": "Chia hiệu cho 10 (108 : 10 = 10,8) hoặc cho 11 khi đề cho hiệu.",
+    "signal": "Số 10 hay 11 làm số chia trực tiếp cho bài hiệu.",
+    "fix": "số 10 để đếm ô: hiệu = 9 phần, tổng = 11 phần — khoanh chữ tổng / hiệu như B31.",
+    "counterExample": "10,8 lẻ — mà thử thêm 0: 10,8 → 108? 108 − 10,8 = 97,2 ≠ 108: trượt."
+   }
+  ],
+  "vocabulary": [
+   "toa số móc toa 0",
+   "chạy nhanh gấp mười",
+   "lời khai cấu tạo số",
+   "9 phần / 11 phần"
+  ],
+  "mantra": "THÊM 0 = GẤP 10 — TỔNG 11 PHẦN, HIỆU 9 PHẦN!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "12 viết thêm chữ số 0 bên phải thành ?",
+    "answerKey": {
+     "value": 120
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B20.M3",
+   "message": "Ôn thêm-0-gấp-10 Bài 20 rồi lên tàu nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Đề đố chữ: \"hiệu hai số là 108; số lớn là số bé viết thêm chữ số 0 bên phải — tìm hai số.\" Trí Long gãi đầu: \"Chẳng thấy tỉ số đâu cả?!\" Su Kem chỉ toa tàu: \"Lời khai 'thêm 0' chính LÀ tỉ số đấy — móc thêm toa 0 thì tàu chạy nhanh gấp mấy?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "'thêm 0' — tỉ số ở đâu?"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để móc toa 0!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
     ],
-    "bktUnit": "CASE:III.3.3#2@G5"
-  },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B32",
-    "order": 2,
-    "prev": "DL:KSN5Q1.B32.M1",
-    "next": "DL:KSN5Q1.B32.M3"
-  },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B32",
-    "chunks": [
-      "CHUNK:KSN5Q1.B32.S4",
-      "CHUNK:KSN5Q1.B32.S5"
+    "narration": "Móc toa 0 vào đuôi số mười hai — thành MỘT TRĂM HAI MƯƠI: cả đoàn tàu chạy nhanh GẤP MƯỜI! Lời khai \"thêm 0\" dịch ra tỉ MỘT TRÊN MƯỜI. Nhớ nhịp cũ: số mười chỉ để ĐẾM Ô — đề cho HIỆU thì chồng hai dãy: phần thò ra mười trừ một — CHÍN ô bằng một trăm lẻ tám: phần MƯỜI HAI — hai số MƯỜI HAI và MỘT TRĂM HAI MƯƠI!",
+    "display": {
+     "type": "train_zero_interactive",
+     "spec": {
+      "claim": "thêm 0 = ×10 → tỉ 1 : 10",
+      "diff": 108,
+      "chenh": 9,
+      "unit": 12,
+      "values": [
+       12,
+       120
+      ]
+     }
+    },
+    "interaction": {
+     "type": "attach_zero_solve",
+     "answerKey": {
+      "values": [
+       12,
+       120
+      ]
+     },
+     "successMessage": "Tỉ 1 : 10 → 9 phần = 108 → 12 & 120!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Hiệu 108, số lớn = số bé thêm chữ số 0 — hiệu gồm:",
+     "choices": [
+      "9 phần",
+      "10 phần",
+      "11 phần"
+     ],
+     "answerKey": {
+      "choice": "9 phần"
+     },
+     "wrongFeedback": "10 − 1 = 9.",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 36,
+    "teaches": [
+     "K2",
+     "K3"
     ],
-    "cases": [
-      "CA:KSN5Q1.B32.3"
+    "narration": "Thử hai cửa đóng hồ sơ: viết thêm không vào mười hai — đúng một trăm hai mươi; trừ nhau — đúng một trăm lẻ tám! Còn nếu đề cho TỔNG thay vì hiệu? Vẫn một máy — chỉ đổi số đếm: một cộng mười là MƯỜI MỘT phần. Khoanh chữ: tổng đi với mười một — hiệu đi với chín; số mười không bao giờ là số chia!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "thử: 12 → thêm 0 → 120 ✓ · 120 − 12 = 108 ✓",
+      "đề cho TỔNG: 11 phần",
+      "10 không bao giờ là số chia"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 12,
+    "narration": "Câu cần nhớ: thêm không là gấp mười — tổng mười một phần, hiệu chín phần!",
+    "display": {
+     "type": "mantra_card",
+     "text": "TỔNG 11 — HIỆU 9 PHẦN!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đề đố chữ: hiệu hai số là một trăm lẻ tám; số lớn là số bé viết thêm chữ số không bên phải — tìm hai số. Trí Long gãi đầu: chẳng thấy tỉ số đâu cả?! Su Kem chỉ toa tàu: lời khai thêm-không chính LÀ tỉ số đấy — móc thêm toa không thì tàu chạy nhanh gấp mấy?",
+    "screenText": "'thêm 0' = tỉ số trá hình!",
+    "visual": "Đoàn tàu số 12 với toa 0 chờ móc; Trí Long lật đề tìm tỉ; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Móc toa không vào đuôi số mười hai — thành MỘT TRĂM HAI MƯƠI: cả đoàn tàu chạy nhanh GẤP MƯỜI! Lời khai thêm-không dịch ra tỉ MỘT TRÊN MƯỜI. Nhớ nhịp cũ: số mười chỉ để ĐẾM Ô — đề cho HIỆU thì chồng hai dãy: phần thò ra CHÍN ô bằng một trăm lẻ tám: phần MƯỜI HAI — hai số MƯỜI HAI và MỘT TRĂM HAI MƯƠI!",
+    "screenText": "12 +toa 0→ 120 (×10) · hiệu 9 phần = 108 → 12 & 120",
+    "visual": "Toa 0 móc vào tàu 12 phóng thành 120; hai dãy ô 1 và 10 chồng mép, phần thò 9 ô ôm số 108; đáp vàng.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Thử hai cửa đóng hồ sơ: viết thêm không vào mười hai — đúng một trăm hai mươi; trừ nhau — đúng một trăm lẻ tám! Còn nếu đề cho TỔNG thay vì hiệu? Vẫn một máy — chỉ đổi số đếm: một cộng mười là MƯỜI MỘT phần. Khoanh chữ: tổng đi với mười một — hiệu đi với chín; số mười không bao giờ là số chia!",
+    "screenText": "thử ✓✓ · TỔNG → 11 phần · HIỆU → 9 phần · 10 ≠ số chia",
+    "visual": "Hai cửa thử đóng mộc; bảng đối chiếu tổng-11 / hiệu-9 với số 10 bị gạch khỏi ghế số chia.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú toa tàu: thêm không là gấp mười — tổng mười một phần, hiệu chín phần!",
+    "screenText": "THÊM 0 = ×10 · TỔNG 11 · HIỆU 9!",
+    "visual": "Thẻ thần chú vàng với icon toa tàu số 0.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Đoàn tàu của con: hiệu một trăm lẻ tám, số lớn là số bé thêm chữ số không — tìm hai số! Vào bài luyện ngay!",
+    "screenText": "hiệu 108 · thêm 0 → hai số?",
+    "visual": "Đoàn tàu chờ toa; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Móc toa 0 — chia 9 phần",
+  "problem": "Hiệu hai số là 108. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.",
+  "steps": [
+   {
+    "show": "Bước 1 — Dịch lời khai: thêm 0 = gấp 10 → tỉ 1 : 10.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Số lớn gấp số bé:",
+     "choices": [
+      "10 lần",
+      "100 lần",
+      "2 lần"
+     ],
+     "answerKey": {
+      "choice": "10 lần"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Đề cho HIỆU: chênh 10 − 1 = 9 phần = 108 → phần 12."
+   },
+   {
+    "show": "Bước 3 — Hai số: 12 và 120. Thử: thêm 0 vào 12 → 120 ✓; 120 − 12 = 108 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Nếu đề cho TỔNG hai số ấy thì chia cho mấy phần?",
+     "answerKey": {
+      "value": 11
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B32.LT3",
+     "text": "Số B là số A viết thêm chữ số 0 vào bên phải. Hỏi B gấp A bao nhiêu lần?",
+     "answerKey": {
+      "value": 10
+     },
+     "hints": [
+      "12 → 120.",
+      "Móc toa 0."
+     ],
+     "solutionNarrative": "Gấp 10 lần → tỉ 1 : 10.",
+     "teaches": [
+      "K1"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B32.LT6",
+     "text": "Hiệu hai số là 108. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bé",
+        "value": 12
+       },
+       {
+        "label": "lớn",
+        "value": 120
+       }
+      ]
+     },
+     "hints": [
+      "Tỉ 1 : 10 → hiệu 9 phần.",
+      "108 : 9."
+     ],
+     "solutionNarrative": "Phần 12 → 12 và 120 (thử ✓✓).",
+     "teaches": [
+      "K2",
+      "K3"
+     ],
+     "generator": {
+      "template": "Hiệu {d} (chia hết 9); thêm 0. Tìm hai số.",
+      "constraints": {},
+      "answerRule": "d : 9 → x và 10x"
+     }
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "text": "Tổng hai số là 132. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bé",
+        "value": 12
+       },
+       {
+        "label": "lớn",
+        "value": 120
+       }
+      ]
+     },
+     "hints": [
+      "Tổng → 11 phần.",
+      "132 : 11."
+     ],
+     "solutionNarrative": "Phần 12 → 12 và 120 (12 + 120 = 132 ✓).",
+     "teaches": [
+      "K2",
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.3.3#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B32.M3",
+   "award": "huy_hieu_toa_so_0"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P2"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B32.QZ5",
+    "text": "Hiệu 108, số lớn = số bé thêm chữ số 0 — hiệu gồm:",
+    "choices": [
+     "9 phần",
+     "10 phần",
+     "11 phần"
     ],
-    "traps": []
-  },
-  "objective": {
-    "id": "O1",
-    "text": "Con khui được tỉ ẩn trong CẤU TẠO SỐ: \"số lớn là số bé viết thêm chữ số 0 bên phải\" = GẤP 10 → tỉ 1 : 10 — nên tổng chia 11 phần, hiệu chia 9 phần (số 10 KHÔNG phải số chia) — nợ Bài 20 trả trọn.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (hiệu 9 phần)",
-    "kidText": "Viết thêm số 0 là gấp 10, nên tỉ số là 1 : 10. Tổng chia 11 phần, hiệu chia 9 phần — số 10 không phải số chia."
-  },
-  "knowledgeCore": {
-    "statements": [
+    "answerKey": {
+     "choice": "9 phần"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "num",
+    "text": "Thêm chữ số 0 bên phải = gấp? lần",
+    "answerKey": {
+     "value": 10
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mb",
+    "text": "Hiệu 108, thêm 0 → hai số?",
+    "answerKey": {
+     "parts": [
       {
-        "id": "K1",
-        "text": "Thêm chữ số 0 vào bên phải một số = nhân số ấy với 10 (12 → 120): tỉ số bé : số lớn = 1 : 10 — lời khai cấu tạo số dịch thẳng ra tỉ."
+       "label": "bé",
+       "value": 12
       },
       {
-        "id": "K2",
-        "text": "Với tỉ 1 : 10: TỔNG = 1 + 10 = 11 phần; HIỆU = 10 − 1 = 9 phần — số 10 chỉ để đếm ô, không phải số chia (nhịp B29/B31 nguyên xi)."
-      },
-      {
-        "id": "K3",
-        "text": "Máy chạy: hiệu 108 → 9 phần → phần 12 → hai số 12 và 120. Thử cấu tạo: viết thêm 0 vào 12 đúng ra 120 ✓; 120 − 12 = 108 ✓."
+       "label": "lớn",
+       "value": 120
       }
+     ]
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "\"Số lớn = số bé viết thêm 0\" — tỉ? Chia mấy phần?",
+    "back": "Thêm 0 = GẤP 10 → tỉ 1 : 10 (12 → 120). TỔNG → 11 phần; HIỆU → 9 phần (108 : 9 = 12 → 12 & 120) — số 10 chỉ để đếm ô, không bao giờ là số chia. Thử: thêm 0 + trừ nhau."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P2",
+   "+7 ngày: câu P3 (tổng 132)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con khui tỉ ẩn trong cấu tạo số: thêm 0 = gấp 10 — tổng 11 phần, hiệu 9 phần. Con đạt {score}/3.",
+  "homeActivity": "Viết số 25 lên giấy, thêm số 0 — con đọc 250 và nói 'gấp 10, tỉ 1 : 10, hiệu 9 phần'.",
+  "watchFor": "Nếu con chia hiệu cho 10 — đáp 10,8 lẻ là còi báo; quay lại đếm ô thò ra (S2)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B32.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "'thêm 0' — tỉ số ở đâu?",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Chẳng thấy tỉ số đâu cả?!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Lời khai 'thêm 0' chính LÀ tỉ số đấy — móc thêm toa 0 thì tàu chạy nhanh gấp mấy?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B32_M2_F1.png",
+   "sha256_16": "816da43764154806"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Tỉ ẩn trong cấu tạo số: thêm 0 = gấp 10 — tổng 11 phần, hiệu 9 phần",
+    "steps": [
+     {
+      "text": "thử: 12 → thêm 0 → 120 · 120 − 12 = 108"
+     },
+     {
+      "text": "đề cho TỔNG: 11 phần"
+     },
+     {
+      "text": "10 không bao giờ là số chia"
+     }
     ],
-    "mechanism": "Hình ảnh brand: TOA SỐ MÓC THÊM TOA 0. \"Số lớn là số bé viết thêm chữ số 0 bên phải\" — nghe như câu đố chữ, thật ra là LỜI KHAI TỈ SỐ: móc thêm toa 0 vào đuôi là cả đoàn tàu chạy nhanh GẤP MƯỜI (12 hóa 120)! Tỉ 1 : 10 lộ diện — giờ chỉ việc nhớ nhịp cũ: con số 10 để ĐẾM Ô thôi. Hiệu 108? Chồng hai dãy: phần thò ra mười trừ một — CHÍN ô = 108: phần MƯỜI HAI — hai số 12 và 120! Thử hai cửa: viết thêm 0 vào 12 đúng ra 120; trừ nhau đúng 108. (Tổng mà đề cho thì đếm MƯỜI MỘT ô — cũng một máy.)",
-    "canonicalExamples": [
-      {
-        "case": "lời khai gấp 10 (ca nền)",
-        "problem": "Số B là số A viết thêm chữ số 0 vào bên phải. Hỏi B gấp A bao nhiêu lần?",
-        "solution": "Gấp 10 lần (12 → 120) → tỉ A : B = 1 : 10.",
-        "why": "Ca LT3 — dịch lời khai cấu tạo số."
-      },
-      {
-        "case": "ghép hiệu (ca lõi)",
-        "problem": "Hiệu hai số là 108. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.",
-        "solution": "Tỉ 1 : 10 → hiệu 9 phần = 108 → phần 12 → 12 và 120. Thử: thêm 0 vào 12 = 120 ✓; 120 − 12 = 108 ✓.",
-        "why": "Ca đề A câu 14 — hiệu chia 9, không chia 10."
-      }
-    ],
-    "numberRange": "Lớp 5: hiệu chia hết cho 9; tổng chia hết cho 11.",
-    "misconceptions": [
-      {
-        "wrong": "Chia hiệu cho 10 (108 : 10 = 10,8) hoặc cho 11 khi đề cho hiệu.",
-        "signal": "Số 10 hay 11 làm số chia trực tiếp cho bài hiệu.",
-        "fix": "K2 — số 10 để đếm ô: hiệu = 9 phần, tổng = 11 phần — khoanh chữ tổng / hiệu như B31.",
-        "counterExample": "10,8 lẻ — mà thử thêm 0: 10,8 → 108? 108 − 10,8 = 97,2 ≠ 108: trượt."
-      }
-    ],
-    "vocabulary": [
-      "toa số móc toa 0",
-      "chạy nhanh gấp mười",
-      "lời khai cấu tạo số",
-      "9 phần / 11 phần"
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B32_M2_F2.png",
+   "sha256_16": "b8247db3c5fb566e"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Thêm chữ số 0 vào bên phải một số = nhân số ấy với 10 (12 → 120)",
+      "text": "tỉ số bé : số lớn = 1 : 10 — lời khai cấu tạo số dịch thẳng ra tỉ.",
+      "tone": "navy"
+     },
+     {
+      "label": "Với tỉ 1",
+      "text": "TỔNG = 1 + 10 = 11 phần",
+      "tone": "teal"
+     }
     ],
     "mantra": "THÊM 0 = GẤP 10 — TỔNG 11 PHẦN, HIỆU 9 PHẦN!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B32_M2_F3.png",
+   "sha256_16": "fe8a217ec4e564e4"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "12 viết thêm chữ số 0 bên phải thành ?",
-        "answerKey": {
-          "value": 120
-        }
-      }
+  {
+   "archetype": "bar_diagram",
+   "params": {
+    "title": "THÊM CHỮ SỐ 0 = GẤP 10 · HIỆU 108",
+    "bars": [
+     {
+      "name": "số bé",
+      "units": 1,
+      "label": "1 phần = 12"
+     },
+     {
+      "name": "số lớn",
+      "units": 10,
+      "label": "10 phần = 120"
+     }
     ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B20.M3",
-      "message": "Ôn thêm-0-gấp-10 Bài 20 rồi lên tàu nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 18,
-        "narration": "Đề đố chữ: \"hiệu hai số là 108; số lớn là số bé viết thêm chữ số 0 bên phải — tìm hai số.\" Trí Long gãi đầu: \"Chẳng thấy tỉ số đâu cả?!\" Su Kem chỉ toa tàu: \"Lời khai 'thêm 0' chính LÀ tỉ số đấy — móc thêm toa 0 thì tàu chạy nhanh gấp mấy?\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "'thêm 0' — tỉ số ở đâu?"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để móc toa 0!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 44,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Móc toa 0 vào đuôi số mười hai — thành MỘT TRĂM HAI MƯƠI: cả đoàn tàu chạy nhanh GẤP MƯỜI! Lời khai \"thêm 0\" dịch ra tỉ MỘT TRÊN MƯỜI. Nhớ nhịp cũ: số mười chỉ để ĐẾM Ô — đề cho HIỆU thì chồng hai dãy: phần thò ra mười trừ một — CHÍN ô bằng một trăm lẻ tám: phần MƯỜI HAI — hai số MƯỜI HAI và MỘT TRĂM HAI MƯƠI!",
-        "display": {
-          "type": "train_zero_interactive",
-          "spec": {
-            "claim": "thêm 0 = ×10 → tỉ 1 : 10",
-            "diff": 108,
-            "chenh": 9,
-            "unit": 12,
-            "values": [
-              12,
-              120
-            ]
-          }
-        },
-        "interaction": {
-          "type": "attach_zero_solve",
-          "answerKey": {
-            "values": [
-              12,
-              120
-            ]
-          },
-          "successMessage": "Tỉ 1 : 10 → 9 phần = 108 → 12 & 120!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "mcq",
-          "text": "Hiệu 108, số lớn = số bé thêm chữ số 0 — hiệu gồm:",
-          "choices": [
-            "9 phần",
-            "10 phần",
-            "11 phần"
-          ],
-          "answerKey": {
-            "choice": "9 phần"
-          },
-          "wrongFeedback": "10 − 1 = 9.",
-          "objective": "O1",
-          "teaches": [
-            "K2"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 36,
-        "teaches": [
-          "K2",
-          "K3"
-        ],
-        "narration": "Thử hai cửa đóng hồ sơ: viết thêm không vào mười hai — đúng một trăm hai mươi; trừ nhau — đúng một trăm lẻ tám! Còn nếu đề cho TỔNG thay vì hiệu? Vẫn một máy — chỉ đổi số đếm: một cộng mười là MƯỜI MỘT phần. Khoanh chữ: tổng đi với mười một — hiệu đi với chín; số mười không bao giờ là số chia!",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "thử: 12 → thêm 0 → 120 ✓ · 120 − 12 = 108 ✓",
-            "đề cho TỔNG: 11 phần",
-            "10 không bao giờ là số chia"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 12,
-        "narration": "Thần chú toa tàu: thêm không là gấp mười — tổng mười một phần, hiệu chín phần!",
-        "display": {
-          "type": "mantra_card",
-          "text": "TỔNG 11 — HIỆU 9 PHẦN!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 90,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "brace": {
+     "text": "HIỆU 9 phần = 108 → 1 phần = 12 → hai số 12 và 120"
     },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Đề đố chữ: hiệu hai số là một trăm lẻ tám; số lớn là số bé viết thêm chữ số không bên phải — tìm hai số. Trí Long gãi đầu: chẳng thấy tỉ số đâu cả?! Su Kem chỉ toa tàu: lời khai thêm-không chính LÀ tỉ số đấy — móc thêm toa không thì tàu chạy nhanh gấp mấy?",
-        "screenText": "'thêm 0' = tỉ số trá hình!",
-        "visual": "Đoàn tàu số 12 với toa 0 chờ móc; Trí Long lật đề tìm tỉ; dấu hỏi đỏ #C0392B.",
-        "assets": [],
-        "duration": 22
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Móc toa không vào đuôi số mười hai — thành MỘT TRĂM HAI MƯƠI: cả đoàn tàu chạy nhanh GẤP MƯỜI! Lời khai thêm-không dịch ra tỉ MỘT TRÊN MƯỜI. Nhớ nhịp cũ: số mười chỉ để ĐẾM Ô — đề cho HIỆU thì chồng hai dãy: phần thò ra CHÍN ô bằng một trăm lẻ tám: phần MƯỜI HAI — hai số MƯỜI HAI và MỘT TRĂM HAI MƯƠI!",
-        "screenText": "12 +toa 0→ 120 (×10) · hiệu 9 phần = 108 → 12 & 120",
-        "visual": "Toa 0 móc vào tàu 12 phóng thành 120; hai dãy ô 1 và 10 chồng mép, phần thò 9 ô ôm số 108; đáp vàng.",
-        "assets": [],
-        "duration": 25
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Thử hai cửa đóng hồ sơ: viết thêm không vào mười hai — đúng một trăm hai mươi; trừ nhau — đúng một trăm lẻ tám! Còn nếu đề cho TỔNG thay vì hiệu? Vẫn một máy — chỉ đổi số đếm: một cộng mười là MƯỜI MỘT phần. Khoanh chữ: tổng đi với mười một — hiệu đi với chín; số mười không bao giờ là số chia!",
-        "screenText": "thử ✓✓ · TỔNG → 11 phần · HIỆU → 9 phần · 10 ≠ số chia",
-        "visual": "Hai cửa thử đóng mộc; bảng đối chiếu tổng-11 / hiệu-9 với số 10 bị gạch khỏi ghế số chia.",
-        "assets": [],
-        "duration": 25
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú toa tàu: thêm không là gấp mười — tổng mười một phần, hiệu chín phần!",
-        "screenText": "THÊM 0 = ×10 · TỔNG 11 · HIỆU 9!",
-        "visual": "Thẻ thần chú vàng với icon toa tàu số 0.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Đoàn tàu của con: hiệu một trăm lẻ tám, số lớn là số bé thêm chữ số không — tìm hai số! Vào bài luyện ngay!",
-        "screenText": "hiệu 108 · thêm 0 → hai số?",
-        "visual": "Đoàn tàu chờ toa; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P2",
-        "assets": [],
-        "duration": 10
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Móc toa 0 — chia 9 phần",
-    "problem": "Hiệu hai số là 108. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.",
-    "steps": [
-      {
-        "show": "Bước 1 — Dịch lời khai: thêm 0 = gấp 10 → tỉ 1 : 10.",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Số lớn gấp số bé:",
-          "choices": [
-            "10 lần",
-            "100 lần",
-            "2 lần"
-          ],
-          "answerKey": {
-            "choice": "10 lần"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Đề cho HIỆU: chênh 10 − 1 = 9 phần = 108 → phần 12."
-      },
-      {
-        "show": "Bước 3 — Hai số: 12 và 120. Thử: thêm 0 vào 12 → 120 ✓; 120 − 12 = 108 ✓.",
-        "askAfter": {
-          "format": "num",
-          "text": "Nếu đề cho TỔNG hai số ấy thì chia cho mấy phần?",
-          "answerKey": {
-            "value": 11
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "num",
-          "sourceItem": "ITEM:KSN5Q1.B32.LT3",
-          "text": "Số B là số A viết thêm chữ số 0 vào bên phải. Hỏi B gấp A bao nhiêu lần?",
-          "answerKey": {
-            "value": 10
-          },
-          "hints": [
-            "12 → 120.",
-            "Móc toa 0."
-          ],
-          "solutionNarrative": "Gấp 10 lần → tỉ 1 : 10.",
-          "teaches": [
-            "K1"
-          ]
-        }
-      ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B32.LT6",
-          "text": "Hiệu hai số là 108. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "bé",
-                "value": 12
-              },
-              {
-                "label": "lớn",
-                "value": 120
-              }
-            ]
-          },
-          "hints": [
-            "Tỉ 1 : 10 → hiệu 9 phần.",
-            "108 : 9."
-          ],
-          "solutionNarrative": "Phần 12 → 12 và 120 (thử ✓✓).",
-          "teaches": [
-            "K2",
-            "K3"
-          ],
-          "generator": {
-            "template": "Hiệu {d} (chia hết 9); thêm 0. Tìm hai số.",
-            "constraints": {},
-            "answerRule": "d : 9 → x và 10x"
-          }
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P3",
-          "format": "mb",
-          "text": "Tổng hai số là 132. Số lớn là số bé viết thêm chữ số 0 vào bên phải. Tìm hai số.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "bé",
-                "value": 12
-              },
-              {
-                "label": "lớn",
-                "value": 120
-              }
-            ]
-          },
-          "hints": [
-            "Tổng → 11 phần.",
-            "132 : 11."
-          ],
-          "solutionNarrative": "Phần 12 → 12 và 120 (12 + 120 = 132 ✓).",
-          "teaches": [
-            "K2",
-            "K3"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:III.3.3#2@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B32.M3",
-      "award": "huy_hieu_toa_so_0"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P2"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B32.QZ5",
-        "text": "Hiệu 108, số lớn = số bé thêm chữ số 0 — hiệu gồm:",
-        "choices": [
-          "9 phần",
-          "10 phần",
-          "11 phần"
-        ],
-        "answerKey": {
-          "choice": "9 phần"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K2"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "num",
-        "text": "Thêm chữ số 0 bên phải = gấp ? lần",
-        "answerKey": {
-          "value": 10
-        },
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "mb",
-        "text": "Hiệu 108, thêm 0 → hai số?",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "bé",
-              "value": 12
-            },
-            {
-              "label": "lớn",
-              "value": 120
-            }
-          ]
-        },
-        "teaches": [
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "\"Số lớn = số bé viết thêm 0\" — tỉ? Chia mấy phần?",
-        "back": "Thêm 0 = GẤP 10 → tỉ 1 : 10 (12 → 120). TỔNG → 11 phần; HIỆU → 9 phần (108 : 9 = 12 → 12 & 120) — số 10 chỉ để đếm ô, không bao giờ là số chia. Thử: thêm 0 + trừ nhau."
-      }
-    ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P2",
-      "+7 ngày: câu P3 (tổng 132)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con khui tỉ ẩn trong cấu tạo số: thêm 0 = gấp 10 — tổng 11 phần, hiệu 9 phần. Con đạt {score}/3.",
-    "homeActivity": "Viết số 25 lên giấy, thêm số 0 — con đọc 250 và nói 'gấp 10, tỉ 1 : 10, hiệu 9 phần'.",
-    "watchFor": "Nếu con chia hiệu cho 10 — đáp 10,8 lẻ là còi báo; quay lại đếm ô thò ra (S2)."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B32.M2",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "'thêm 0' — tỉ số ở đâu?",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "Chẳng thấy tỉ số đâu cả?!",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "Lời khai 'thêm 0' chính LÀ tỉ số đấy — móc thêm toa 0 thì tàu chạy nhanh gấp mấy?",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B32_M2_F1.png",
-      "sha256_16": "816da43764154806"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con khui được tỉ ẩn trong CẤU TẠO SỐ: \"số lớn là số bé viết thêm chữ số 0 bên phải\" = GẤP 10 → tỉ 1 : 10 — nên tổng chia 11 phần, hiệu chia 9 phần (số 10 KHÔNG phải số chia) — nợ Bài 20 trả trọn.",
-        "steps": [
-          {
-            "text": "thử: 12 → thêm 0 → 120 · 120 − 12 = 108"
-          },
-          {
-            "text": "đề cho TỔNG: 11 phần"
-          },
-          {
-            "text": "10 không bao giờ là số chia"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B32_M2_F2.png",
-      "sha256_16": "91507e2396bdd80b"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Thêm chữ số 0 vào bên phải một số = nhân số ấy với 10 (12 → 120)",
-            "text": "tỉ số bé : số lớn = 1 : 10 — lời khai cấu tạo số dịch thẳng ra tỉ.",
-            "tone": "navy"
-          },
-          {
-            "label": "Với tỉ 1",
-            "text": "TỔNG = 1 + 10 = 11 phần",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "THÊM 0 = GẤP 10 — TỔNG 11 PHẦN, HIỆU 9 PHẦN!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B32_M2_F3.png",
-      "sha256_16": "fe8a217ec4e564e4"
-    },
-    {
-      "archetype": "bar_diagram",
-      "params": {
-        "title": "THÊM CHỮ SỐ 0 = GẤP 10 · HIỆU 108",
-        "bars": [
-          {
-            "name": "số bé",
-            "units": 1,
-            "label": "1 phần = 12"
-          },
-          {
-            "name": "số lớn",
-            "units": 10,
-            "label": "10 phần = 120"
-          }
-        ],
-        "brace": {
-          "text": "HIỆU 9 phần = 108  →  1 phần = 12  →  hai số 12 và 120"
-        },
-        "note": "Cho TỔNG thì chia 11 phần · cho HIỆU thì chia 9 phần — thử: 120 − 12 = 108 ✓"
-      },
-      "caption": "Cùng một tỉ 1 : 10 nhưng tổng và hiệu đọc ở hai chỗ khác nhau",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B32_M2_F4.png",
-      "sha256_16": "70923047fd7b9fd6"
-    }
-  ]
+    "note": "Cho TỔNG thì chia 11 phần · cho HIỆU thì chia 9 phần — thử: 120 − 12 = 108 ✓"
+   },
+   "caption": "Cùng một tỉ 1 : 10 nhưng tổng và hiệu đọc ở hai chỗ khác nhau",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B32_M2_F4.png",
+   "sha256_16": "1141dd647b1c8899"
+  }
+ ]
 }

@@ -1,623 +1,623 @@
 {
-  "title": "Hang trốn thứ nhất: khui hiệu bằng luật 2k rồi mới kẻ ô",
-  "grade": 5,
-  "durationMinutes": 8,
-  "skills": {
-    "primary": [
-      "CASE:III.4.1#2"
+ "title": "Hang trốn thứ nhất: khui hiệu bằng luật 2k rồi mới kẻ ô",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:III.4.1#2"
+  ],
+  "bktUnit": "CASE:III.4.1#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B31",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B31.M1",
+  "next": "DL:KSN5Q1.B31.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B31",
+  "chunks": [
+   "CHUNK:KSN5Q1.B31.S4",
+   "CHUNK:KSN5Q1.B31.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B31.3"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B31.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con khui được HIỆU đang trốn trong cú chuyển (hang thứ nhất) theo quy trình hai tầng đóng đinh: TẦNG 1 khui hiệu bằng luật 2k của Bài 27 (\"chuyển 10 thì bằng nhau\" → hiệu 20; đổi ngôi → 2k − d) — TẦNG 2 kẻ ô hiệu – tỉ — rồi DIỄN LẠI cú chuyển để thử.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (khui hiệu 2k trước)",
+  "kidText": "Hiệu đang trốn trong câu \"chuyển 10 thì bằng nhau\" — khui ra thì hiệu bằng 20. Khui xong mới kẻ ô."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Đề trộn hai tầng: có CẢ tỉ số LẪN cú chuyển — hiệu không cho sẵn mà TRỐN trong cú chuyển: khui bằng luật B27 (chuyển k thì bằng → hiệu = 2k; đổi ngôi hơn ngược d → hiệu = 2k − d)."
+   },
+   {
+    "id": "K2",
+    "text": "Quy trình hai tầng đóng đinh: TẦNG 1 khui hiệu (2 × 10 = 20) — TẦNG 2 kẻ ô hiệu – tỉ (gấp 3 → chênh 2 phần = 20 → phần 10 → 10 và 30) — không nhét thẳng con số chuyển vào sơ đồ phần."
+   },
+   {
+    "id": "K3",
+    "text": "Thử bằng DIỄN LẠI cú chuyển: 30 − 10 = 20 = 10 + 10 — hai kệ bằng nhau đúng lời đề; bài đổi ngôi diễn cả chiều ai-hơn-ai."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: HANG TRỐN THỨ NHẤT CỦA HIỆU. Bài hiệu – tỉ mà đề… không cho hiệu: \"kệ trên gấp 3 kệ dưới; chuyển 10 quyển từ trên xuống thì hai kệ bằng nhau.\" Trí Long nhét luôn số 10 vào sơ đồ phần — chênh 2 phần = 10?! Số 10 là LƯỢNG CHUYỂN, đâu phải hiệu — hiệu đang trốn trong hang cú chuyển! Soi đèn luật Bài 27: chuyển mười thì bằng nhau — hiệu bằng HAI nhân mười: HAI MƯƠI. Giờ mới kẻ ô tầng hai: gấp 3 — chênh 2 phần = 20 → phần MƯỜI: kệ dưới 10, kệ trên 30. Diễn lại thử: 30 đưa 10 còn 20; 10 nhận 10 thành 20 — bằng nhau chằn chặn! Hang sâu hơn: \"A gấp đôi B; chuyển 6 từ A sang B thì B hơn NGƯỢC lại 4\" — đèn B27 chiếu tiếp: hiệu = 2 × 6 − 4 = 8; gấp đôi — chênh MỘT phần = 8: B tám, A mười sáu.",
+  "canonicalExamples": [
+   {
+    "case": "chuyển thì bằng (ca lõi)",
+    "problem": "Kệ trên gấp 3 lần kệ dưới. Chuyển 10 quyển từ kệ trên xuống kệ dưới thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
+    "solution": "TẦNG 1: hiệu = 2 × 10 = 20. TẦNG 2: chênh 3 − 1 = 2 phần = 20 → phần 10 → kệ dưới 10; kệ trên 30. Diễn lại: 30 − 10 = 20 = 10 + 10 ✓.",
+    "why": "Ca đề A câu 10 — trap nhét-10-vào-sơ-đồ."
+   },
+   {
+    "case": "đổi ngôi (ca sư phụ)",
+    "problem": "Số A gấp đôi số B. Nếu chuyển 6 đơn vị từ A sang B thì B hơn NGƯỢC lại A là 4. Tìm A và B.",
+    "solution": "TẦNG 1: hiệu = 2 × 6 − 4 = 8 (luật đổi ngôi B27). TẦNG 2: gấp đôi → chênh 1 phần = 8 → B = 8; A = 16. Diễn: 16 − 6 = 10; 8 + 6 = 14 — B hơn 4 ✓.",
+    "why": "Ca LT8 — hai chiêu B27 nối nhau trong áo tỉ."
+   }
+  ],
+  "numberRange": "Lớp 5: k chuyển ≤ 10; hiệu khui ra chia hết cho phần chênh.",
+  "misconceptions": [
+   {
+    "wrong": "Không khui hiệu tầng một: nhét thẳng lượng chuyển 10 làm hiệu (chênh 2 phần = 10 → 5 và 15).",
+    "signal": "Con số chuyển xuất hiện trực tiếp trong phép chia phần.",
+    "fix": "quy trình hai tầng đóng đinh: khui hiệu bằng luật 2k trước, kẻ ô sau, diễn lại cuối.",
+    "counterExample": "5 và 15: chuyển 10 thì 15 − 10 = 5 còn 5 + 10 = 15 — đổi ngôi chứ đâu bằng nhau: trái lời đề!"
+   }
+  ],
+  "vocabulary": [
+   "hang trốn của hiệu",
+   "đèn soi luật 2k",
+   "hai tầng đóng đinh",
+   "nhét nhầm lượng chuyển",
+   "diễn lại cú chuyển"
+  ],
+  "mantra": "KHUI HIỆU TẦNG MỘT — KẺ Ô TẦNG HAI — DIỄN LẠI!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Luật B27: chuyển 10 thì bằng nhau → hiệu ban đầu = ?",
+    "answerKey": {
+     "value": 20
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B27.M2",
+   "message": "Ôn cầu 2k Bài 27 rồi cầm đèn vào hang nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Đề lạ: \"kệ trên gấp 3 kệ dưới; chuyển 10 quyển từ trên xuống thì hai kệ bằng nhau — tìm mỗi kệ lúc đầu.\" Trí Long nhét luôn số 10: \"chênh 2 phần bằng 10 — phần 5: kệ 5 và 15!\" Su Kem soi đèn: \"Số 10 là lượng CHUYỂN — hiệu đang trốn trong hang kìa!\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "chênh 2 phần = 10??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để soi đèn vào hang!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2"
     ],
-    "bktUnit": "CASE:III.4.1#2@G5"
+    "narration": "Soi đèn luật Bài hai bảy vào hang: chuyển MƯỜI thì bằng nhau — cú chuyển khép trọn khoảng cách: hiệu bằng HAI nhân mười — HAI MƯƠI! Tầng một xong, giờ tầng hai kẻ ô: gấp ba — chênh ba trừ một bằng HAI phần, hai phần bằng hai mươi: phần MƯỜI — kệ dưới MƯỜI, kệ trên BA MƯƠI! Diễn lại thử: ba mươi đưa mười còn hai mươi; mười nhận mười thành hai mươi — bằng nhau chằn chặn!",
+    "display": {
+     "type": "two_layer_cave_interactive",
+     "spec": {
+      "layer1": "hiệu = 2 × 10 = 20",
+      "layer2": "chênh 2 phần = 20 → phần 10",
+      "values": [
+       10,
+       30
+      ],
+      "replay": "30 − 10 = 20 = 10 + 10"
+     }
+    },
+    "interaction": {
+     "type": "unlock_then_grid",
+     "answerKey": {
+      "values": [
+       10,
+       30
+      ]
+     },
+     "successMessage": "Khui hiệu 20 → kẻ ô → 10 & 30 — diễn lại khớp!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "\"Chuyển 10 thì bằng nhau\" cho biết hiệu ban đầu là:",
+     "choices": [
+      "20",
+      "10",
+      "5"
+     ],
+     "answerKey": {
+      "choice": "20"
+     },
+     "wrongFeedback": "2 × 10.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 42,
+    "teaches": [
+     "K2",
+     "K3"
+    ],
+    "narration": "Nhét nhầm lượng chuyển thì sao? Chênh hai phần bằng mười — ra năm và mười lăm: diễn lại — mười lăm đưa mười còn NĂM, năm nhận mười thành MƯỜI LĂM: hai kệ ĐỔI NGÔI chứ đâu bằng nhau — trái lời đề, loại! Hang sâu hơn của sư phụ: A gấp đôi B; chuyển sáu từ A sang B thì B hơn NGƯỢC lại bốn — đèn đổi ngôi Bài hai bảy: hiệu bằng hai nhân sáu trừ bốn — TÁM; gấp đôi — chênh MỘT phần bằng tám: B TÁM, A MƯỜI SÁU!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "nhét 10: 5 & 15 → diễn: đổi ngôi ✗ loại",
+      "sư phụ: hiệu = 2×6 − 4 = 8",
+      "chênh 1 phần = 8 → B 8; A 16 ✓"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: khui hiệu tầng một — kẻ ô tầng hai — diễn lại!",
+    "display": {
+     "type": "mantra_card",
+     "text": "KHUI — KẺ Ô — DIỄN LẠI!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B31",
-    "order": 2,
-    "prev": "DL:KSN5Q1.B31.M1",
-    "next": "DL:KSN5Q1.B31.M3"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B31",
-    "chunks": [
-      "CHUNK:KSN5Q1.B31.S4",
-      "CHUNK:KSN5Q1.B31.S5"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đề lạ: kệ trên gấp ba kệ dưới; chuyển mười quyển từ trên xuống thì hai kệ bằng nhau — tìm mỗi kệ lúc đầu. Trí Long nhét luôn số mười: chênh hai phần bằng mười — phần năm: kệ năm và mười lăm! Su Kem soi đèn: số mười là lượng CHUYỂN — hiệu đang trốn trong hang kìa!",
+    "screenText": "chênh 2 phần = 10?? — hiệu trốn trong hang!",
+    "visual": "Cửa hang tối với tấm biển 'HIỆU'; Trí Long nhét số 10 vào sơ đồ phần; Su Kem cầm đèn pin khắc chữ 'B27', dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Soi đèn luật Bài hai bảy vào hang: chuyển MƯỜI thì bằng nhau — cú chuyển khép trọn khoảng cách: hiệu bằng HAI nhân mười — HAI MƯƠI! Tầng một xong, tầng hai kẻ ô: gấp ba — chênh HAI phần bằng hai mươi: phần MƯỜI — kệ dưới MƯỜI, kệ trên BA MƯƠI! Diễn lại thử: ba mươi đưa mười còn hai mươi; mười nhận mười thành hai mươi — bằng nhau chằn chặn!",
+    "screenText": "T1: hiệu = 2×10 = 20 · T2: chênh 2 = 20 → 10 & 30 ✓",
+    "visual": "Đèn pin chiếu vào hang lộ con số hiệu 20; hai dãy ô 1-3 chồng mép với phần thò 2 ô; màn diễn lại hai kệ 20 = 20.",
+    "assets": [],
+    "duration": 27
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Nhét nhầm lượng chuyển thì sao? Chênh hai phần bằng mười — ra năm và mười lăm: diễn lại — đổi ngôi chứ đâu bằng nhau: trái lời đề, loại! Hang sâu của sư phụ: A gấp đôi B; chuyển sáu thì B hơn NGƯỢC bốn — đèn đổi ngôi: hiệu bằng hai nhân sáu trừ bốn — TÁM; chênh MỘT phần: B TÁM, A MƯỜI SÁU!",
+    "screenText": "nhét 10 → 5 & 15: đổi ngôi ✗ · 2×6 − 4 = 8 → B 8 · A 16",
+    "visual": "Màn diễn lại đáp sai với hai kệ hoán vị đèn đỏ; hang thứ hai sâu hơn với đèn '2k − d' chiếu số 8; đáp 8·16 mộc xanh.",
+    "assets": [],
+    "duration": 24
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú cửa hang: khui hiệu tầng một — kẻ ô tầng hai — diễn lại!",
+    "screenText": "KHUI — KẺ Ô — DIỄN LẠI!",
+    "visual": "Thẻ thần chú vàng với icon đèn pin và cửa hang.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Hang của con: kệ trên gấp ba kệ dưới, chuyển mười thì bằng nhau — khui hiệu rồi kẻ ô! Vào bài luyện ngay!",
+    "screenText": "khui 2k → kẻ ô → mỗi kệ?",
+    "visual": "Cửa hang hé sáng; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 9
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Đèn 2k soi hang",
+  "problem": "Kệ trên gấp 3 lần kệ dưới. Chuyển 10 quyển từ kệ trên xuống kệ dưới thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
+  "steps": [
+   {
+    "show": "Bước 1 — TẦNG 1 khui hiệu: 'chuyển 10 thì bằng' → hiệu = 2 × 10 = 20.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Số 10 trong đề là:",
+     "choices": [
+      "lượng chuyển (hiệu = 20)",
+      "hiệu",
+      "một phần"
+     ],
+     "answerKey": {
+      "choice": "lượng chuyển (hiệu = 20)"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — TẦNG 2 kẻ ô: gấp 3 → chênh 2 phần = 20 → phần 10."
+   },
+   {
+    "show": "Bước 3 — Kệ dưới 10; kệ trên 30. Diễn lại: 30 − 10 = 20 = 10 + 10 ✓.",
+    "askAfter": {
+     "format": "mb",
+     "text": "A gấp đôi B, chuyển 6 thì B hơn ngược 4 → A, B?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "B",
+        "value": 8
+       },
+       {
+        "label": "A",
+        "value": 16
+       }
+      ]
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B31.LT6",
+     "text": "Kệ trên gấp 3 lần kệ dưới. Chuyển 10 quyển từ kệ trên xuống kệ dưới thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "kệ dưới",
+        "value": 10
+       },
+       {
+        "label": "kệ trên",
+        "value": 30
+       }
+      ]
+     },
+     "hints": [
+      "Khui hiệu: 2 × 10.",
+      "Chênh 2 phần = 20."
+     ],
+     "solutionNarrative": "Hiệu 20 → phần 10 → 10 & 30 (diễn lại ✓).",
+     "teaches": [
+      "K1",
+      "K2",
+      "K3"
+     ],
+     "generator": {
+      "template": "Gấp {k}; chuyển {c} thì bằng nhau. Tìm hai bên.",
+      "constraints": {},
+      "answerRule": "hiệu = 2c → chia (k−1)"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Ở bài trên, có thể lấy chênh 2 phần = 10 (số quyển chuyển) để ra 5 và 15.",
+     "answerKey": {
+      "value": false,
+      "note": "10 là LƯỢNG CHUYỂN — hiệu = 2 × 10 = 20; đáp 5 & 15 diễn lại bị đổi ngôi, trái đề."
+     },
+     "hints": [
+      "10 là hiệu hay lượng chuyển?",
+      "Diễn lại đáp 5 & 15."
+     ],
+     "teaches": [
+      "K2",
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B31.LT8",
+     "text": "Số A gấp đôi số B. Nếu chuyển 6 đơn vị từ A sang B thì B hơn NGƯỢC lại A là 4. Tìm A và B. (Khui hiệu bằng luật đổi ngôi!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "B",
+        "value": 8
+       },
+       {
+        "label": "A",
+        "value": 16
+       }
+      ]
+     },
+     "hints": [
+      "Hiệu = 2 × 6 − 4.",
+      "Gấp đôi → chênh 1 phần."
+     ],
+     "solutionNarrative": "Hiệu 8 → B 8; A 16 (diễn: 10 vs 14 — B hơn 4 ✓).",
+     "teaches": [
+      "K1",
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.4.1#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B31.M3",
+   "award": "huy_hieu_den_2k"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B31.QZ4",
+    "text": "\"Chuyển 10 thì bằng nhau\" cho biết hiệu ban đầu là:",
+    "choices": [
+     "20",
+     "10",
+     "5"
     ],
-    "cases": [
-      "CA:KSN5Q1.B31.3"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B31.3"
+    "answerKey": {
+     "choice": "20"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "mb",
+    "text": "Kệ trên gấp 3, chuyển 10 thì bằng → hai kệ lúc đầu?",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "dưới",
+       "value": 10
+      },
+      {
+       "label": "trên",
+       "value": 30
+      }
+     ]
+    },
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mcq",
+    "text": "Trình tự đúng của bài tỉ + cú chuyển:",
+    "choices": [
+     "khui hiệu 2k → kẻ ô → diễn lại",
+     "kẻ ô với số chuyển",
+     "chia tổng cho phần"
+    ],
+    "answerKey": {
+     "choice": "khui hiệu 2k → kẻ ô → diễn lại"
+    },
+    "teaches": [
+     "K2",
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Bài tỉ số + cú chuyển — hiệu ở đâu?",
+    "back": "Hiệu TRỐN trong cú chuyển — KHUI TẦNG 1 bằng luật B27: 'chuyển k thì bằng' → hiệu 2k (chuyển 10 → 20); đổi ngôi hơn ngược d → 2k − d. TẦNG 2 kẻ ô hiệu – tỉ (chênh k − 1). DIỄN LẠI cú chuyển thử (30 − 10 = 20 = 10 + 10)."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (đổi ngôi)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con khui hiệu trốn trong cú chuyển: hai tầng khui 2k rồi kẻ ô, diễn lại để thử. Con đạt {score}/3, {trapResult} câu bẫy nhét-nhầm-lượng-chuyển.",
+  "homeActivity": "Xếp hai chồng sách 30 và 10 — con chuyển 10 quyển và tường thuật 'hiệu 20 khép trọn' trước khi kiểm bằng nhau.",
+  "watchFor": "Nếu con nhét số chuyển vào sơ đồ — cho diễn lại đáp: đổi ngôi là tự lộ (S3)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B31.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "chênh 2 phần = 10??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "chênh 2 phần bằng 10 — phần 5: kệ 5 và 15!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Số 10 là lượng CHUYỂN — hiệu đang trốn trong hang kìa!",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B31_M2_F1.png",
+   "sha256_16": "f31320dac73b1d70"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con khui được HIỆU đang trốn trong cú chuyển (hang thứ nhất) theo quy trình hai tầng đóng đinh: TẦNG 1 khui hiệu bằng luật 2k của Bài 27 (\"chuyển 10 thì bằng nhau\" → hiệu 20; đổi ngôi → 2k − d) — TẦNG 2 kẻ ô hiệu – tỉ — rồi DIỄN LẠI cú chuyển để thử.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (khui hiệu 2k trước)",
-    "kidText": "Hiệu đang trốn trong câu \"chuyển 10 thì bằng nhau\" — khui ra thì hiệu bằng 20. Khui xong mới kẻ ô."
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Hang trốn thứ nhất: khui hiệu bằng luật 2k rồi mới kẻ ô",
+    "steps": [
+     {
+      "text": "nhét 10: 5 & 15 → diễn: đổi ngôi loại"
+     },
+     {
+      "text": "sư phụ: hiệu = 2×6 − 4 = 8"
+     },
+     {
+      "text": "chênh 1 phần = 8 → B 8; A 16"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B31_M2_F2.png",
+   "sha256_16": "6c5d63b0253fa806"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Đề trộn hai tầng: có CẢ tỉ số LẪN cú chuyển — hiệu không cho sẵn mà TRỐN trong cú chuyển: khui bằng luật B27 (chuyển k thì bằng → hiệu = 2k; đổi ngôi hơn ngược d → hiệu = 2k − d)."
-      },
-      {
-        "id": "K2",
-        "text": "Quy trình hai tầng đóng đinh: TẦNG 1 khui hiệu (2 × 10 = 20) — TẦNG 2 kẻ ô hiệu – tỉ (gấp 3 → chênh 2 phần = 20 → phần 10 → 10 và 30) — không nhét thẳng con số chuyển vào sơ đồ phần."
-      },
-      {
-        "id": "K3",
-        "text": "Thử bằng DIỄN LẠI cú chuyển: 30 − 10 = 20 = 10 + 10 — hai kệ bằng nhau đúng lời đề; bài đổi ngôi diễn cả chiều ai-hơn-ai."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: HANG TRỐN THỨ NHẤT CỦA HIỆU. Bài hiệu – tỉ mà đề… không cho hiệu: \"kệ trên gấp 3 kệ dưới; chuyển 10 quyển từ trên xuống thì hai kệ bằng nhau.\" Trí Long nhét luôn số 10 vào sơ đồ phần — chênh 2 phần = 10?! Số 10 là LƯỢNG CHUYỂN, đâu phải hiệu — hiệu đang trốn trong hang cú chuyển! Soi đèn luật Bài 27: chuyển mười thì bằng nhau — hiệu bằng HAI nhân mười: HAI MƯƠI. Giờ mới kẻ ô tầng hai: gấp 3 — chênh 2 phần = 20 → phần MƯỜI: kệ dưới 10, kệ trên 30. Diễn lại thử: 30 đưa 10 còn 20; 10 nhận 10 thành 20 — bằng nhau chằn chặn! Hang sâu hơn: \"A gấp đôi B; chuyển 6 từ A sang B thì B hơn NGƯỢC lại 4\" — đèn B27 chiếu tiếp: hiệu = 2 × 6 − 4 = 8; gấp đôi — chênh MỘT phần = 8: B tám, A mười sáu.",
-    "canonicalExamples": [
-      {
-        "case": "chuyển thì bằng (ca lõi)",
-        "problem": "Kệ trên gấp 3 lần kệ dưới. Chuyển 10 quyển từ kệ trên xuống kệ dưới thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
-        "solution": "TẦNG 1: hiệu = 2 × 10 = 20. TẦNG 2: chênh 3 − 1 = 2 phần = 20 → phần 10 → kệ dưới 10; kệ trên 30. Diễn lại: 30 − 10 = 20 = 10 + 10 ✓.",
-        "why": "Ca đề A câu 10 — trap nhét-10-vào-sơ-đồ."
-      },
-      {
-        "case": "đổi ngôi (ca sư phụ)",
-        "problem": "Số A gấp đôi số B. Nếu chuyển 6 đơn vị từ A sang B thì B hơn NGƯỢC lại A là 4. Tìm A và B.",
-        "solution": "TẦNG 1: hiệu = 2 × 6 − 4 = 8 (luật đổi ngôi B27). TẦNG 2: gấp đôi → chênh 1 phần = 8 → B = 8; A = 16. Diễn: 16 − 6 = 10; 8 + 6 = 14 — B hơn 4 ✓.",
-        "why": "Ca LT8 — hai chiêu B27 nối nhau trong áo tỉ."
-      }
-    ],
-    "numberRange": "Lớp 5: k chuyển ≤ 10; hiệu khui ra chia hết cho phần chênh.",
-    "misconceptions": [
-      {
-        "wrong": "Không khui hiệu tầng một: nhét thẳng lượng chuyển 10 làm hiệu (chênh 2 phần = 10 → 5 và 15).",
-        "signal": "Con số chuyển xuất hiện trực tiếp trong phép chia phần.",
-        "fix": "K2 — quy trình hai tầng đóng đinh: khui hiệu bằng luật 2k trước, kẻ ô sau, diễn lại cuối.",
-        "counterExample": "5 và 15: chuyển 10 thì 15 − 10 = 5 còn 5 + 10 = 15 — đổi ngôi chứ đâu bằng nhau: trái lời đề!"
-      }
-    ],
-    "vocabulary": [
-      "hang trốn của hiệu",
-      "đèn soi luật 2k",
-      "hai tầng đóng đinh",
-      "nhét nhầm lượng chuyển",
-      "diễn lại cú chuyển"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Đề trộn hai tầng",
+      "text": "có CẢ tỉ số LẪN cú chuyển",
+      "tone": "navy"
+     },
+     {
+      "label": "Quy trình hai tầng đóng đinh",
+      "text": "TẦNG 1 khui hiệu (2 × 10 = 20) — TẦNG 2 kẻ ô hiệu – tỉ (gấp 3 → chênh 2 phần = 20 → phần 10 → 10 và 30) — không nhét thẳng con số chuyển vào sơ đồ phần.",
+      "tone": "teal"
+     }
     ],
     "mantra": "KHUI HIỆU TẦNG MỘT — KẺ Ô TẦNG HAI — DIỄN LẠI!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B31_M2_F3.png",
+   "sha256_16": "b7413af8bd43c73d"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "Luật B27: chuyển 10 thì bằng nhau → hiệu ban đầu = ?",
-        "answerKey": {
-          "value": 20
-        }
-      }
-    ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B27.M2",
-      "message": "Ôn cầu 2k Bài 27 rồi cầm đèn vào hang nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 20,
-        "narration": "Đề lạ: \"kệ trên gấp 3 kệ dưới; chuyển 10 quyển từ trên xuống thì hai kệ bằng nhau — tìm mỗi kệ lúc đầu.\" Trí Long nhét luôn số 10: \"chênh 2 phần bằng 10 — phần 5: kệ 5 và 15!\" Su Kem soi đèn: \"Số 10 là lượng CHUYỂN — hiệu đang trốn trong hang kìa!\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "chênh 2 phần = 10??"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để soi đèn vào hang!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 46,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Soi đèn luật Bài hai bảy vào hang: chuyển MƯỜI thì bằng nhau — cú chuyển khép trọn khoảng cách: hiệu bằng HAI nhân mười — HAI MƯƠI! Tầng một xong, giờ tầng hai kẻ ô: gấp ba — chênh ba trừ một bằng HAI phần, hai phần bằng hai mươi: phần MƯỜI — kệ dưới MƯỜI, kệ trên BA MƯƠI! Diễn lại thử: ba mươi đưa mười còn hai mươi; mười nhận mười thành hai mươi — bằng nhau chằn chặn!",
-        "display": {
-          "type": "two_layer_cave_interactive",
-          "spec": {
-            "layer1": "hiệu = 2 × 10 = 20",
-            "layer2": "chênh 2 phần = 20 → phần 10",
-            "values": [
-              10,
-              30
-            ],
-            "replay": "30 − 10 = 20 = 10 + 10"
-          }
-        },
-        "interaction": {
-          "type": "unlock_then_grid",
-          "answerKey": {
-            "values": [
-              10,
-              30
-            ]
-          },
-          "successMessage": "Khui hiệu 20 → kẻ ô → 10 & 30 — diễn lại khớp!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "mcq",
-          "text": "\"Chuyển 10 thì bằng nhau\" cho biết hiệu ban đầu là:",
-          "choices": [
-            "20",
-            "10",
-            "5"
-          ],
-          "answerKey": {
-            "choice": "20"
-          },
-          "wrongFeedback": "2 × 10.",
-          "objective": "O1",
-          "teaches": [
-            "K1"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "trap",
-        "estSeconds": 42,
-        "teaches": [
-          "K2",
-          "K3"
-        ],
-        "narration": "Nhét nhầm lượng chuyển thì sao? Chênh hai phần bằng mười — ra năm và mười lăm: diễn lại — mười lăm đưa mười còn NĂM, năm nhận mười thành MƯỜI LĂM: hai kệ ĐỔI NGÔI chứ đâu bằng nhau — trái lời đề, loại! Hang sâu hơn của sư phụ: A gấp đôi B; chuyển sáu từ A sang B thì B hơn NGƯỢC lại bốn — đèn đổi ngôi Bài hai bảy: hiệu bằng hai nhân sáu trừ bốn — TÁM; gấp đôi — chênh MỘT phần bằng tám: B TÁM, A MƯỜI SÁU!",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "nhét 10: 5 & 15 → diễn: đổi ngôi ✗ loại",
-            "sư phụ: hiệu = 2×6 − 4 = 8",
-            "chênh 1 phần = 8 → B 8; A 16 ✓"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú cửa hang: khui hiệu tầng một — kẻ ô tầng hai — diễn lại!",
-        "display": {
-          "type": "mantra_card",
-          "text": "KHUI — KẺ Ô — DIỄN LẠI!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 90,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
-    },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Đề lạ: kệ trên gấp ba kệ dưới; chuyển mười quyển từ trên xuống thì hai kệ bằng nhau — tìm mỗi kệ lúc đầu. Trí Long nhét luôn số mười: chênh hai phần bằng mười — phần năm: kệ năm và mười lăm! Su Kem soi đèn: số mười là lượng CHUYỂN — hiệu đang trốn trong hang kìa!",
-        "screenText": "chênh 2 phần = 10?? — hiệu trốn trong hang!",
-        "visual": "Cửa hang tối với tấm biển 'HIỆU'; Trí Long nhét số 10 vào sơ đồ phần; Su Kem cầm đèn pin khắc chữ 'B27', dấu hỏi đỏ #C0392B.",
-        "assets": [],
-        "duration": 22
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Soi đèn luật Bài hai bảy vào hang: chuyển MƯỜI thì bằng nhau — cú chuyển khép trọn khoảng cách: hiệu bằng HAI nhân mười — HAI MƯƠI! Tầng một xong, tầng hai kẻ ô: gấp ba — chênh HAI phần bằng hai mươi: phần MƯỜI — kệ dưới MƯỜI, kệ trên BA MƯƠI! Diễn lại thử: ba mươi đưa mười còn hai mươi; mười nhận mười thành hai mươi — bằng nhau chằn chặn!",
-        "screenText": "T1: hiệu = 2×10 = 20 · T2: chênh 2 = 20 → 10 & 30 ✓",
-        "visual": "Đèn pin chiếu vào hang lộ con số hiệu 20; hai dãy ô 1-3 chồng mép với phần thò 2 ô; màn diễn lại hai kệ 20 = 20.",
-        "assets": [],
-        "duration": 27
-      },
-      {
-        "no": 3,
-        "templateHint": "trap_reveal",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Nhét nhầm lượng chuyển thì sao? Chênh hai phần bằng mười — ra năm và mười lăm: diễn lại — đổi ngôi chứ đâu bằng nhau: trái lời đề, loại! Hang sâu của sư phụ: A gấp đôi B; chuyển sáu thì B hơn NGƯỢC bốn — đèn đổi ngôi: hiệu bằng hai nhân sáu trừ bốn — TÁM; chênh MỘT phần: B TÁM, A MƯỜI SÁU!",
-        "screenText": "nhét 10 → 5 & 15: đổi ngôi ✗ · 2×6 − 4 = 8 → B 8 · A 16",
-        "visual": "Màn diễn lại đáp sai với hai kệ hoán vị đèn đỏ; hang thứ hai sâu hơn với đèn '2k − d' chiếu số 8; đáp 8·16 mộc xanh.",
-        "assets": [],
-        "duration": 24
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú cửa hang: khui hiệu tầng một — kẻ ô tầng hai — diễn lại!",
-        "screenText": "KHUI — KẺ Ô — DIỄN LẠI!",
-        "visual": "Thẻ thần chú vàng với icon đèn pin và cửa hang.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Hang của con: kệ trên gấp ba kệ dưới, chuyển mười thì bằng nhau — khui hiệu rồi kẻ ô! Vào bài luyện ngay!",
-        "screenText": "khui 2k → kẻ ô → mỗi kệ?",
-        "visual": "Cửa hang hé sáng; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P1",
-        "assets": [],
-        "duration": 9
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Đèn 2k soi hang",
-    "problem": "Kệ trên gấp 3 lần kệ dưới. Chuyển 10 quyển từ kệ trên xuống kệ dưới thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "HANG TRỐN THỨ NHẤT: HIỆU NÚP TRONG CÚ CHUYỂN",
     "steps": [
-      {
-        "show": "Bước 1 — TẦNG 1 khui hiệu: 'chuyển 10 thì bằng' → hiệu = 2 × 10 = 20.",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Số 10 trong đề là:",
-          "choices": [
-            "lượng chuyển (hiệu = 20)",
-            "hiệu",
-            "một phần"
-          ],
-          "answerKey": {
-            "choice": "lượng chuyển (hiệu = 20)"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — TẦNG 2 kẻ ô: gấp 3 → chênh 2 phần = 20 → phần 10."
-      },
-      {
-        "show": "Bước 3 — Kệ dưới 10; kệ trên 30. Diễn lại: 30 − 10 = 20 = 10 + 10 ✓.",
-        "askAfter": {
-          "format": "mb",
-          "text": "A gấp đôi B, chuyển 6 thì B hơn ngược 4 → A, B?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "B",
-                "value": 8
-              },
-              {
-                "label": "A",
-                "value": 16
-              }
-            ]
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B31.LT6",
-          "text": "Kệ trên gấp 3 lần kệ dưới. Chuyển 10 quyển từ kệ trên xuống kệ dưới thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "kệ dưới",
-                "value": 10
-              },
-              {
-                "label": "kệ trên",
-                "value": 30
-              }
-            ]
-          },
-          "hints": [
-            "Khui hiệu: 2 × 10.",
-            "Chênh 2 phần = 20."
-          ],
-          "solutionNarrative": "Hiệu 20 → phần 10 → 10 & 30 (diễn lại ✓).",
-          "teaches": [
-            "K1",
-            "K2",
-            "K3"
-          ],
-          "generator": {
-            "template": "Gấp {k}; chuyển {c} thì bằng nhau. Tìm hai bên.",
-            "constraints": {},
-            "answerRule": "hiệu = 2c → chia (k−1)"
-          }
-        }
-      ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "tf",
-          "text": "(Đúng/Sai?) Ở bài trên, có thể lấy chênh 2 phần = 10 (số quyển chuyển) để ra 5 và 15.",
-          "answerKey": {
-            "value": false,
-            "note": "10 là LƯỢNG CHUYỂN — hiệu = 2 × 10 = 20; đáp 5 & 15 diễn lại bị đổi ngôi, trái đề."
-          },
-          "hints": [
-            "10 là hiệu hay lượng chuyển?",
-            "Diễn lại đáp 5 & 15."
-          ],
-          "teaches": [
-            "K2",
-            "K3"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P3",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B31.LT8",
-          "text": "Số A gấp đôi số B. Nếu chuyển 6 đơn vị từ A sang B thì B hơn NGƯỢC lại A là 4. Tìm A và B. (Khui hiệu bằng luật đổi ngôi!)",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "B",
-                "value": 8
-              },
-              {
-                "label": "A",
-                "value": 16
-              }
-            ]
-          },
-          "hints": [
-            "Hiệu = 2 × 6 − 4.",
-            "Gấp đôi → chênh 1 phần."
-          ],
-          "solutionNarrative": "Hiệu 8 → B 8; A 16 (diễn: 10 vs 14 — B hơn 4 ✓).",
-          "teaches": [
-            "K1",
-            "K3"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:III.4.1#2@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B31.M3",
-      "award": "huy_hieu_den_2k"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B31.QZ4",
-        "text": "\"Chuyển 10 thì bằng nhau\" cho biết hiệu ban đầu là:",
-        "choices": [
-          "20",
-          "10",
-          "5"
-        ],
-        "answerKey": {
-          "choice": "20"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "mb",
-        "text": "Kệ trên gấp 3, chuyển 10 thì bằng → hai kệ lúc đầu?",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "dưới",
-              "value": 10
-            },
-            {
-              "label": "trên",
-              "value": 30
-            }
-          ]
-        },
-        "teaches": [
-          "K2"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "mcq",
-        "text": "Trình tự đúng của bài tỉ + cú chuyển:",
-        "choices": [
-          "khui hiệu 2k → kẻ ô → diễn lại",
-          "kẻ ô với số chuyển",
-          "chia tổng cho phần"
-        ],
-        "answerKey": {
-          "choice": "khui hiệu 2k → kẻ ô → diễn lại"
-        },
-        "teaches": [
-          "K2",
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Bài tỉ số + cú chuyển — hiệu ở đâu?",
-        "back": "Hiệu TRỐN trong cú chuyển — KHUI TẦNG 1 bằng luật B27: 'chuyển k thì bằng' → hiệu 2k (chuyển 10 → 20); đổi ngôi hơn ngược d → 2k − d. TẦNG 2 kẻ ô hiệu – tỉ (chênh k − 1). DIỄN LẠI cú chuyển thử (30 − 10 = 20 = 10 + 10)."
-      }
+     {
+      "text": "TẦNG 1 · khui hiệu",
+      "sub": "chuyển 10 thì bằng nhau → hiệu = 2 × 10 = 20"
+     },
+     {
+      "text": "TẦNG 2 · kẻ ô hiệu – tỉ",
+      "sub": "gấp 3 → chênh 2 phần = 20 → 1 phần = 10"
+     },
+     {
+      "text": "Đọc đáp",
+      "sub": "kệ dưới 10 · kệ trên 30 · thử: 20 = 20 ✓"
+     }
     ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P3 (đổi ngôi)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con khui hiệu trốn trong cú chuyển: hai tầng khui 2k rồi kẻ ô, diễn lại để thử. Con đạt {score}/3, {trapResult} câu bẫy nhét-nhầm-lượng-chuyển.",
-    "homeActivity": "Xếp hai chồng sách 30 và 10 — con chuyển 10 quyển và tường thuật 'hiệu 20 khép trọn' trước khi kiểm bằng nhau.",
-    "watchFor": "Nếu con nhét số chuyển vào sơ đồ — cho diễn lại đáp: đổi ngôi là tự lộ (S3)."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B31.M2",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "chênh 2 phần = 10??",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "chênh 2 phần bằng 10 — phần 5: kệ 5 và 15!",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "Số 10 là lượng CHUYỂN — hiệu đang trốn trong hang kìa!",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B31_M2_F1.png",
-      "sha256_16": "f31320dac73b1d70"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con khui được HIỆU đang trốn trong cú chuyển (hang thứ nhất) theo quy trình hai tầng đóng đinh: TẦNG 1 khui hiệu bằng luật 2k của Bài 27 (\"chuyển 10 thì bằng nhau\" → hiệu 20; đổi ngôi → 2k − d) — TẦNG 2 kẻ ô hiệu – tỉ — rồi DIỄN LẠI cú chuyển để thử.",
-        "steps": [
-          {
-            "text": "nhét 10: 5 & 15 → diễn: đổi ngôi loại"
-          },
-          {
-            "text": "sư phụ: hiệu = 2×6 − 4 = 8"
-          },
-          {
-            "text": "chênh 1 phần = 8 → B 8; A 16"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B31_M2_F2.png",
-      "sha256_16": "4857c353ec41a6f0"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Đề trộn hai tầng",
-            "text": "có CẢ tỉ số LẪN cú chuyển",
-            "tone": "navy"
-          },
-          {
-            "label": "Quy trình hai tầng đóng đinh",
-            "text": "TẦNG 1 khui hiệu (2 × 10 = 20) — TẦNG 2 kẻ ô hiệu – tỉ (gấp 3 → chênh 2 phần = 20 → phần 10 → 10 và 30) — không nhét thẳng con số chuyển vào sơ đồ phần.",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "KHUI HIỆU TẦNG MỘT — KẺ Ô TẦNG HAI — DIỄN LẠI!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B31_M2_F3.png",
-      "sha256_16": "b7413af8bd43c73d"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "HANG TRỐN THỨ NHẤT: HIỆU NÚP TRONG CÚ CHUYỂN",
-        "steps": [
-          {
-            "text": "TẦNG 1 · khui hiệu",
-            "sub": "chuyển 10 thì bằng nhau → hiệu = 2 × 10 = 20"
-          },
-          {
-            "text": "TẦNG 2 · kẻ ô hiệu – tỉ",
-            "sub": "gấp 3 → chênh 2 phần = 20 → 1 phần = 10"
-          },
-          {
-            "text": "Đọc đáp",
-            "sub": "kệ dưới 10 · kệ trên 30 · thử: 20 = 20 ✓"
-          }
-        ],
-        "note": "Ca đổi ngôi: chuyển 6 mà bên kia hơn ngược 4 → hiệu = 2 × 6 − 4 = 8"
-      },
-      "caption": "Khui hiệu bằng luật 2k của bài 27 rồi mới kẻ ô",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B31_M2_F4.png",
-      "sha256_16": "b651be17f609f100"
-    }
-  ]
+    "note": "Ca đổi ngôi: chuyển 6 mà bên kia hơn ngược 4 → hiệu = 2 × 6 − 4 = 8"
+   },
+   "caption": "Khui hiệu bằng luật 2k của bài 27 rồi mới kẻ ô",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B31_M2_F4.png",
+   "sha256_16": "b651be17f609f100"
+  }
+ ]
 }

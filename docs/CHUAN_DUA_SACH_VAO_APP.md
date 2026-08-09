@@ -83,7 +83,7 @@ lớp, mọi môn.
   "id": "C1", "text": "đề bài",
   "format": "tf" | "mcq" | undefined,
   "choices": ["A. 38", "B. 308"],        // chỉ với mcq
-  "answerKey": { … },                     // xem mục 5
+  "answerKey": { … },                     // xem mục 6
   "solutionNarrative": "lời giải mẫu để bé tự so"
 }
 ```
@@ -169,7 +169,54 @@ là lần sau tưởng đã gắn rồi.
 
 ---
 
-## 5 · Chuẩn đáp án — chấm máy đúng chỗ chấm được
+## 5 · Chuẩn lời văn — bé đọc phải hiểu ngay
+
+Sách gốc viết cho người lớn đọc và cho người soạn dùng. Ba thứ luôn lọt ra màn hình:
+
+**1. Ký hiệu vượt cấp.** Lớp 5 chưa học tập hợp, chia hết bằng ký hiệu, `≤ ≥`, suy ra.
+Viết bằng lời: `108 ⋮ 9` → **"108 chia hết cho 9"**; `d ∈ {2;3;7;8}` → **"d là 2, 3, 7
+hoặc 8"**; `0 ≤ số dư < số chia` → **"số dư bé hơn số chia"**.
+GIỮ những dấu đã học: `< > = ≠` và dấu phép tính.
+
+**2. Mã nội bộ của người soạn.** `K3 — hỏi ngược:` · `Ca chuẩn K1+K2` · `Đ5.1` đứng
+ngay đầu câu. Bé đọc không hiểu gì mà lại là chữ đầu tiên nhìn thấy.
+
+**3. Ví von bọc ngoài câu toán.** `Thần chú tiệm bánh: chia càng nhiều phần — lát càng
+mỏng!` Phần sau dấu hai chấm đã là toán nói thẳng; chỉ cái vỏ là ví von — **bỏ vỏ, giữ
+ruột**: `Câu cần nhớ: chia càng nhiều phần — lát càng mỏng!`
+Giữ nhân vật và mô hình đếm được (đóng kẹo vào túi); bỏ thứ chỉ để cho kêu.
+
+**Tiêu đề hình không quá 120 chữ.** Trên ngưỡng ấy nó là một đoạn văn đè lên đầu hình,
+không ai đọc — dù phần hình bên dưới vẽ rất rõ. Mượn `title` của bài làm tiêu đề.
+
+### Cách làm — và ba cái chốt bắt buộc
+
+| việc | công cụ |
+|---|---|
+| sửa lời văn theo luật | `tools/de_hieu_lop5.py` |
+| rút gọn tiêu đề hình | `tools/tieu_de_hinh_lop5.py` |
+| vẽ lại hình có chữ vừa đổi | `tools/ve_lai_lop5.py` |
+| chỗ ví von phải viết tay | `data/lop5_loi_van_tay.json` |
+| giữ không cho mọc lại | `web/test/lop5.test.mjs` |
+
+**Chốt 1 — chỉ sửa TRƯỜNG BÉ ĐỌC.** Chốt danh sách bằng cách ĐỌC MÃ GIAO DIỆN, đừng
+đoán: `mechanism`, `skills`, `videoSpec`, `numberRange`, `display.lines` không hiện lên
+màn hình. Sửa cả những chỗ ấy là đụng dữ liệu người soạn dùng mà chẳng lợi gì.
+
+**Chốt 2 — soát mất số trước khi ghi.** So *đa tập* chữ số trước và sau. Luật dịch sai
+thường nuốt mất một con số mà câu vẫn đọc trôi. Chỉ ba nguồn mất số là hợp lệ: chữ số
+trong mã `K1`/`Đ5.1`, và số `0`/`1` của vế `0 ≤ x <`.
+
+**Chốt 3 — bảng viết tay phải khớp.** Mục nào không khớp chỗ nào **và** bản thay cũng
+không có mặt trong sách thì báo ngay: bảng đang nói một đằng, sách một nẻo. Đừng báo khi
+chỉ thiếu vế đầu — công cụ chạy được nhiều lần, lần thứ hai thì chữ đã đổi xong.
+
+**Luật hẹp trước, luật rộng sau.** Luật rộng chạy trước sẽ nuốt mất ngữ cảnh mà luật hẹp
+cần. Và **đừng viết luật xoá mã giữa câu** — xem bẫy 16.
+
+---
+
+## 6 · Chuẩn đáp án — chấm máy đúng chỗ chấm được
 
 ### Các dạng khoá (bộ chấm `web/src/lib/flow.js` hiểu sẵn)
 
@@ -213,7 +260,7 @@ sách**. Chốt này bắt được lỗi thật (sách viết *"một phần t�
 
 ---
 
-## 6 · Cổng nghiệm thu — phải có những phép kiểm nào
+## 7 · Cổng nghiệm thu — phải có những phép kiểm nào
 
 Mỗi quyển một tệp `web/test/<quyen>.test.mjs`. **Soi loại lỗi HỎNG MÀ KHÔNG BÁO** —
 lỗi làm app vỡ thì tự thấy, không cần kiểm.
@@ -245,7 +292,7 @@ kiểm sai tệ hơn không có** — nó cho cảm giác an toàn giả.
 
 ---
 
-## 7 · Mười tám cái bẫy đã dính
+## 8 · Hai mươi lăm cái bẫy đã dính
 
 Mỗi cái đều thuộc loại **hỏng mà không có gì báo**.
 
@@ -282,16 +329,38 @@ Mỗi cái đều thuộc loại **hỏng mà không có gì báo**.
 14. **Cung nhảy nối vào ga tàu ĐI QUA** → dạy ngược điều bài đang dạy.
 15. **Nhãn hàng đè ô đầu · cỡ chữ mỗi ô tính riêng** (`2` to hơn `10` trong cùng hàng).
 
+### Lời văn
+
+16. **Luật xoá mã nội bộ GIỮA CÂU.** Mẫu `K<số>` + khoảng trắng + chữ thường biến
+    *"Ca chuẩn K1+K2 từ sách"* thành *"Ca chuẩn K1+từ sách"* — hỏng câu mà vẫn đọc
+    trôi nên rất dễ lọt. Mã giữa câu phải xử bằng luật RIÊNG cho từng cụm.
+17. **Dọn khoảng trắng đụng dấu `:`** → `47 : 5` thành `47: 5`, hỏng mọi phép chia của
+    cả quyển. Trong toán Việt `:` là PHÉP CHIA, không phải dấu câu. `= ?` cũng phải
+    giữ nguyên dấu cách.
+18. **Bỏ mã nội bộ xong còn trơ dấu chấm** → màn bài mẫu hiện đúng một dấu `.` dưới
+    biểu tượng 📌. Kết quả chỉ còn dấu câu thì trả về RỖNG.
+19. **Tiêu đề hình chép nguyên `objective.text`** → 397 chữ đè kín đầu hình. 122 hình
+    dính, mà phần hình bên dưới vẫn vẽ đẹp nên nhìn lướt không thấy sai.
+
+### Hình và sổ
+
+20. **Sửa `figureSpec.params` mà không vẽ lại** → dữ liệu nói một đằng, ảnh hiện một
+    nẻo. Bé vẫn nhìn thấy ký hiệu cũ trên hình. Không có gì báo, vì cả hai đều hợp lệ.
+21. **Quên cập nhật `data/figure_manifest.json`** — nơi THỨ BA chép lại mã kiểm và lời
+    chú. Bài học đúng, sổ sai. Khoá sổ là `<mã bài>#<mã hình>`, không phải `<mã hình>`.
+
 ### Mã nguồn
 
-16. **Biến trong vòng lặp đè tham số của hàm** → `series.prev` ra danh sách chỉ số dòng.
-17. **Phép kiểm so trên số ĐÃ LÀM TRÒN** → 7,6% bị làm tròn thành 8 rồi trượt oan.
-18. **Component đọc dữ liệu bất đồng bộ MỘT LẦN lúc dựng** → sổ đăng ký về sau thì
+22. **Biến trong vòng lặp đè tham số của hàm** → `series.prev` ra danh sách chỉ số dòng.
+23. **Phép kiểm so trên số ĐÃ LÀM TRÒN** → 7,6% bị làm tròn thành 8 rồi trượt oan.
+24. **Component đọc dữ liệu bất đồng bộ MỘT LẦN lúc dựng** → sổ đăng ký về sau thì
     màn hình thiếu hẳn một mảng.
+25. **Danh sách tệp kiểm gõ tay trong `package.json`** → thêm tệp kiểm mà quên đăng ký
+    thì nó nằm im, tưởng có kiểm mà không có. Quét cả thư mục: `for f in test/*.test.mjs`.
 
 ---
 
-## 8 · Quy trình khi thêm một quyển mới
+## 9 · Quy trình khi thêm một quyển mới
 
 ### Bước 0 · Khảo sát trước khi gõ dòng nào
 
@@ -342,7 +411,7 @@ Viết luật hẹp → **in ra soát tay TỪNG CÂU** → cái nào sai thì b
 
 ### Bước 5 · Cổng nghiệm thu
 
-Viết theo danh sách mục 6. Mỗi lần bắt được lỗi thật thì **thêm một phép kiểm cho
+Viết theo danh sách mục 7. Mỗi lần bắt được lỗi thật thì **thêm một phép kiểm cho
 lỗi ấy**.
 
 ### Bước 6 · Khai vào sổ đăng ký
@@ -379,7 +448,7 @@ curl -s https://ky-su-nhi.web.app/content/figures/<HINH>.png | shasum -a 256 | c
 
 ---
 
-## 9 · Ước lượng công sức — số liệu thật của lớp 2
+## 10 · Ước lượng công sức — số liệu thật của lớp 2
 
 | Việc | Khối lượng |
 |---|---|
@@ -394,7 +463,7 @@ Phần **tốn công nhất** là hình (17 nguyên mẫu) và đáp án viết 
 
 ---
 
-## 10 · Tài liệu để lại cho mỗi quyển
+## 11 · Tài liệu để lại cho mỗi quyển
 
 | Tệp | Nội dung |
 |---|---|

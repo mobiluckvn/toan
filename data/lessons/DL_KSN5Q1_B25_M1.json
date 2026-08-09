@@ -1,677 +1,677 @@
 {
-  "title": "Sơ đồ đoạn thẳng & cặp công thức: lớn = (tổng + hiệu) : 2 — bớt trước, chia đôi, trả sau",
-  "grade": 5,
-  "durationMinutes": 8,
-  "skills": {
-    "primary": [
-      "CASE:III.2.1#1"
+ "title": "Sơ đồ đoạn thẳng & cặp công thức: lớn = (tổng + hiệu) : 2 — bớt trước, chia đôi, trả sau",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:III.2.1#1"
+  ],
+  "bktUnit": "CASE:III.2.1#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B25",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B24.M3",
+  "next": "DL:KSN5Q1.B25.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B25",
+  "chunks": [
+   "CHUNK:KSN5Q1.B25.S3",
+   "CHUNK:KSN5Q1.B25.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B25.1"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B25.1"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải thành thạo bài TỔNG – HIỆU bằng sơ đồ hai đoạn thẳng và cặp công thức: LỚN = (tổng + hiệu) : 2; BÉ = (tổng − hiệu) : 2 — hiểu vì sao qua nghi thức \"bớt trước — chia đôi — trả sau\", và không bao giờ cộng phần hơn thẳng vào nửa tổng.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (không cộng hiệu vào nửa tổng)",
+  "kidText": "Biết tổng và hiệu hai số: số lớn bằng tổng cộng hiệu rồi chia đôi. Bớt trước — chia đôi — trả sau, đừng cộng thẳng."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Sơ đồ hai đoạn: số bé một đoạn, số lớn = đoạn bé + phần hơn (hiệu). Cả hai đoạn gộp lại đúng bằng TỔNG."
+   },
+   {
+    "id": "K2",
+    "text": "Đường tìm số BÉ: bớt phần hơn ra khỏi tổng (50 − 8 = 42) → hai đoạn bằng nhau → chia đôi (21) → TRẢ phần hơn cho số lớn (21 + 8 = 29). Gói thành công thức: bé = (tổng − hiệu) : 2."
+   },
+   {
+    "id": "K3",
+    "text": "Đường tìm số LỚN: bù thêm một phần hơn vào tổng (50 + 8 = 58) → hai đoạn đều bằng đoạn lớn → chia đôi: lớn = (tổng + hiệu) : 2 = 29. Hai đường về MỘT đáp."
+   },
+   {
+    "id": "K4",
+    "text": "CẤM cộng phần hơn thẳng vào nửa tổng (25 + 8 = 33): phần hơn phải \"mọc\" từ BÊN TRONG tổng — cộng từ ngoài vào là tổng phình sai; nếu chia đều rồi thì mỗi bên chỉ dịch NỬA hiệu (25 + 4 = 29; 25 − 4 = 21)."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: HAI HỘP KẸO MỘT PHẦN HƠN. Tổng 50 viên chia hai hộp, hộp lớn hơn hộp bé 8 viên. Vẽ sơ đồ: đoạn bé + (đoạn bé + khúc 8) = 50. Nghi thức ba nhịp BỚT — CHIA — TRẢ: BỚT khúc 8 ra khỏi rổ (còn 42 — giờ hai hộp y hệt nhau); CHIA đôi (mỗi hộp 21); TRẢ khúc 8 về hộp lớn (29). Trí Long đi tắt: \"nửa tổng 25, cộng 8 vào một hộp — 33!\" — nhưng khúc 8 ấy lấy từ đâu? Từ ngoài rổ! Kiểm hai trạm: 33 + 17 = 50 nhưng 33 − 17 = 16 — hiệu gấp đôi đề: SẬP. Nếu đã lỡ chia đôi trước, mỗi hộp chỉ được dịch NỬA khúc: 25 + 4 và 25 − 4 — vẫn về 29 và 21.",
+  "canonicalExamples": [
+   {
+    "case": "hai đường một đáp (ca lõi)",
+    "problem": "Tổng hai số là 50, hiệu hai số là 8. Tìm hai số.",
+    "solution": "Đường bé: (50 − 8) : 2 = 21 → lớn = 29. Đường lớn: (50 + 8) : 2 = 29 → bé = 21. Thử: 29 + 21 = 50 ✓; 29 − 21 = 8 ✓.",
+    "why": "Ca đề A câu 1 — cặp công thức song hành."
+   },
+   {
+    "case": "đối chiếu ngược (ca đóng vòng)",
+    "problem": "Hai số là 29 và 21 — tính tổng và hiệu, đối chiếu với đề trên.",
+    "solution": "Tổng 50; hiệu 8 — đúng bộ dữ kiện gốc: phép thử hai trạm chạy được cả hai chiều.",
+    "why": "Ca LT3 — dạy thử lại như một phép toán thuận."
+   },
+   {
+    "case": "áo lời văn (ca đời thực)",
+    "problem": "Hai bạn có tất cả 42 nghìn đồng, An có nhiều hơn Bình 28 nghìn. Hỏi mỗi bạn có bao nhiêu?",
+    "solution": "An = (42 + 28) : 2 = 35 nghìn; Bình = 42 − 35 = 7 nghìn. Thử: 35 − 7 = 28 ✓.",
+    "why": "Ca LT7 — tổng-hiệu khoác áo tiền."
+   }
+  ],
+  "numberRange": "Lớp 5: tổng ≤ 200; tổng và hiệu cùng chẵn lẻ.",
+  "misconceptions": [
+   {
+    "wrong": "Lấy nửa tổng 25 rồi cộng thẳng phần hơn: 25 + 8 = 33 (và 25 − 8 = 17).",
+    "signal": "Hiệu của đáp gấp đôi hiệu đề (16 thay vì 8).",
+    "fix": "phần hơn mọc từ trong tổng: bớt trước — chia đôi — trả sau; hoặc mỗi bên chỉ dịch nửa hiệu.",
+    "counterExample": "Thử trạm hiệu: 33 − 17 = 16 ≠ 8 — sập ngay trạm hai."
+   }
+  ],
+  "vocabulary": [
+   "hai hộp một phần hơn",
+   "bớt trước — chia đôi — trả sau",
+   "khúc phần hơn",
+   "hai đường một đáp",
+   "thử hai trạm"
+  ],
+  "mantra": "BỚT TRƯỚC — CHIA ĐÔI — TRẢ SAU: PHẦN HƠN KHÔNG CỘNG THẲNG VÀO NỬA TỔNG!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "(50 − 8) : 2 = ?",
+    "answerKey": {
+     "value": 21
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "ôn trừ – chia nhẩm (hạt mầm)",
+   "message": "Ôn tính nhẩm rồi mở hai hộp kẹo nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Hai hộp kẹo tổng 50 viên, hộp lớn hơn hộp bé 8 viên. Trí Long chia vèo: \"Nửa tổng 25 — cộng 8 cho hộp lớn: 33 và 17, xong!\" Su Kem bấm thử trạm hiệu: 33 trừ 17 bằng… MƯỜI SÁU?!",
+    "display": {
+     "type": "story_panel",
+     "caption": "25 + 8 = 33 — hiệu 16?!"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để vẽ sơ đồ!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2",
+     "K3"
     ],
-    "bktUnit": "CASE:III.2.1#1@G5"
+    "narration": "Vẽ sơ đồ hai đoạn: đoạn bé, và đoạn lớn bằng đoạn bé cộng khúc TÁM. Nghi thức ba nhịp: BỚT khúc tám ra khỏi rổ — còn bốn hai, hai hộp y hệt nhau; CHIA đôi — mỗi hộp HAI MƯƠI MỐT; TRẢ khúc tám về hộp lớn — HAI MƯƠI CHÍN! Đường kia cũng thông: bù thêm khúc tám vào tổng — năm tám chia hai thẳng ra hai chín. Hai đường — một đáp!",
+    "display": {
+     "type": "bar_model_interactive",
+     "spec": {
+      "total": 50,
+      "gap": 8,
+      "small": 21,
+      "large": 29,
+      "pathA": "(50 − 8):2 = 21 → +8",
+      "pathB": "(50 + 8):2 = 29"
+     }
+    },
+    "interaction": {
+     "type": "cut_share_return",
+     "answerKey": {
+      "values": [
+       21,
+       29
+      ]
+     },
+     "successMessage": "Bớt — chia — trả: 21 và 29!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mb",
+     "text": "Tổng 100, hiệu 20 — tìm hai số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn",
+        "value": 60
+       },
+       {
+        "label": "bé",
+        "value": 40
+       }
+      ]
+     },
+     "wrongFeedback": "(100 + 20) : 2 = 60.",
+     "objective": "O1",
+     "teaches": [
+      "K2",
+      "K3"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 40,
+    "teaches": [
+     "K4"
+    ],
+    "narration": "Vì sao 25 cộng 8 sập? Khúc tám ấy lấy từ NGOÀI rổ — tổng phình thành năm tám chui! Thử hai trạm: ba ba cộng mười bảy đúng năm mươi, nhưng ba ba TRỪ mười bảy ra MƯỜI SÁU — hiệu gấp đôi đề: trạm hai tuýt còi! Nếu lỡ chia đôi trước thì mỗi hộp chỉ được dịch NỬA khúc: hai lăm cộng bốn — hai chín; hai lăm trừ bốn — hai mốt: vẫn về đúng đáp.",
+    "display": {
+     "type": "counter_example",
+     "cases": [
+      {
+       "input": "25 + 8 = 33 · 25 − 8 = 17",
+       "output": "✗ hiệu 16",
+       "valid": false,
+       "reason": "cộng khúc từ ngoài rổ"
+      },
+      {
+       "input": "25 + 4 = 29 · 25 − 4 = 21",
+       "output": "✓ hiệu 8",
+       "valid": true,
+       "reason": "mỗi bên dịch NỬA hiệu"
+      }
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: bớt trước — chia đôi — trả sau: phần hơn không cộng thẳng vào nửa tổng!",
+    "display": {
+     "type": "mantra_card",
+     "text": "BỚT TRƯỚC — CHIA ĐÔI — TRẢ SAU!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 89,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B25",
-    "order": 1,
-    "prev": "DL:KSN5Q1.B24.M3",
-    "next": "DL:KSN5Q1.B25.M2"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B25",
-    "chunks": [
-      "CHUNK:KSN5Q1.B25.S3",
-      "CHUNK:KSN5Q1.B25.S4"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Hai hộp kẹo tổng năm mươi viên, hộp lớn hơn hộp bé tám viên. Trí Long chia vèo: nửa tổng hai lăm — cộng tám cho hộp lớn: ba ba và mười bảy, xong! Su Kem bấm thử trạm hiệu: ba ba trừ mười bảy bằng… MƯỜI SÁU?!",
+    "screenText": "25 + 8 = 33? → hiệu 16 ≠ 8!",
+    "visual": "Hai hộp kẹo với rổ tổng 50; Trí Long dán số 33·17; máy thử trạm hiệu nháy đỏ '16' #C0392B.",
+    "assets": [],
+    "duration": 17
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Vẽ sơ đồ hai đoạn: đoạn bé, và đoạn lớn bằng đoạn bé cộng khúc TÁM. Ba nhịp: BỚT khúc tám ra khỏi rổ — còn bốn hai, hai hộp y hệt nhau; CHIA đôi — mỗi hộp HAI MƯƠI MỐT; TRẢ khúc tám về hộp lớn — HAI MƯƠI CHÍN! Đường kia cũng thông: bù thêm khúc tám — năm tám chia hai thẳng ra hai chín. Hai đường — một đáp!",
+    "screenText": "(50 − 8):2 = 21 → 29 · (50 + 8):2 = 29 → 21",
+    "visual": "Sơ đồ hai đoạn thẳng với khúc '8' tô vàng bị nhấc ra, chia đôi, trả lại; hai mũi tên hai đường cùng chỉ về cặp 21·29.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Vì sao hai lăm cộng tám sập? Khúc tám ấy lấy từ NGOÀI rổ — tổng phình thành năm tám chui! Thử hai trạm: ba ba cộng mười bảy đúng năm mươi, nhưng ba ba TRỪ mười bảy ra MƯỜI SÁU — hiệu gấp đôi đề: trạm hai tuýt còi! Nếu lỡ chia đôi trước thì mỗi hộp chỉ dịch NỬA khúc: hai lăm cộng bốn, hai lăm trừ bốn — vẫn về đúng đáp!",
+    "screenText": "33 − 17 = 16 ✗ · dịch nửa hiệu: 25 ± 4 ✓",
+    "visual": "Khúc 8 bay từ ngoài rổ vào bị chặn bởi biển cấm; trạm hiệu tuýt còi đỏ; cặp 25±4 chạy về 29·21 mộc xanh.",
+    "assets": [],
+    "duration": 27
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú hai hộp: bớt trước — chia đôi — trả sau: phần hơn không cộng thẳng vào nửa tổng!",
+    "screenText": "BỚT — CHIA — TRẢ!",
+    "visual": "Thẻ thần chú vàng với icon hai hộp kẹo.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Hai hộp của con: hai bạn có tất cả bốn hai nghìn đồng, An nhiều hơn Bình hai tám nghìn — mỗi bạn có bao nhiêu? Vào bài luyện ngay!",
+    "screenText": "tổng 42 · hiệu 28 → An? Bình?",
+    "visual": "Hai ví tiền chờ chia; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P4",
+    "assets": [],
+    "duration": 11
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Ba nhịp bớt — chia — trả",
+  "problem": "Tổng hai số là 50, hiệu hai số là 8. Tìm hai số.",
+  "steps": [
+   {
+    "show": "Bước 1 — BỚT: 50 − 8 = 42 (hai đoạn bằng nhau).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Có được lấy 25 + 8 làm số lớn không?",
+     "choices": [
+      "Không — phần hơn phải mọc từ trong tổng",
+      "Được",
+      "Tùy"
+     ],
+     "answerKey": {
+      "choice": "Không — phần hơn phải mọc từ trong tổng"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — CHIA: 42 : 2 = 21 = số bé."
+   },
+   {
+    "show": "Bước 3 — TRẢ: 21 + 8 = 29 = số lớn. Thử: 29 + 21 = 50 ✓; 29 − 21 = 8 ✓.",
+    "askAfter": {
+     "format": "mb",
+     "text": "Tổng 100, hiệu 20 → hai số?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn",
+        "value": 60
+       },
+       {
+        "label": "bé",
+        "value": 40
+       }
+      ]
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B25.LT1",
+     "text": "Tổng hai số là 50, hiệu hai số là 8. Tìm hai số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bé",
+        "value": 21
+       },
+       {
+        "label": "lớn",
+        "value": 29
+       }
+      ]
+     },
+     "hints": [
+      "Bớt 8 khỏi tổng trước.",
+      "42 : 2 rồi trả 8."
+     ],
+     "solutionNarrative": "(50 − 8) : 2 = 21; lớn = 29 (thử hai trạm ✓).",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "generator": {
+      "template": "Tổng {S}, hiệu {d} (cùng chẵn lẻ). Tìm hai số.",
+      "constraints": {},
+      "answerRule": "(S ± d) : 2"
+     }
+    },
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B25.LT2",
+     "text": "Tổng hai số là 100, hiệu hai số là 20. Tìm hai số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn",
+        "value": 60
+       },
+       {
+        "label": "bé",
+        "value": 40
+       }
+      ]
+     },
+     "hints": [
+      "Đường lớn: (100 + 20) : 2.",
+      "Bé = 100 − 60."
+     ],
+     "solutionNarrative": "Lớn = 60; bé = 40.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B25.LT3",
+     "text": "Hai số là 29 và 21. Tính tổng và hiệu của chúng — đối chiếu với bài đầu tiên.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng",
+        "value": 50
+       },
+       {
+        "label": "hiệu",
+        "value": 8
+       }
+      ]
+     },
+     "hints": [
+      "29 + 21 và 29 − 21.",
+      "Đúng bộ dữ kiện gốc chưa?"
+     ],
+     "solutionNarrative": "Tổng 50, hiệu 8 — phép thử chạy được cả hai chiều.",
+     "teaches": [
+      "K2",
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B25.LT7",
+     "text": "Hai bạn có tất cả 42 nghìn đồng, bạn An có nhiều hơn bạn Bình 28 nghìn đồng. Hỏi mỗi bạn có bao nhiêu nghìn đồng?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "An",
+        "value": 35
+       },
+       {
+        "label": "Bình",
+        "value": 7
+       }
+      ]
+     },
+     "hints": [
+      "Tổng 42, hiệu 28.",
+      "(42 + 28) : 2."
+     ],
+     "solutionNarrative": "An = 35; Bình = 7 (thử 35 − 7 = 28 ✓).",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.2.1#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B25.M2",
+   "award": "huy_hieu_hai_hop_keo"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B25.QZ3",
+    "text": "Tổng 50, hiệu 8 — số bé là:",
+    "choices": [
+     "21",
+     "29",
+     "25"
     ],
-    "cases": [
-      "CA:KSN5Q1.B25.1"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B25.1"
+    "answerKey": {
+     "choice": "21"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2",
+     "K4"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B25.QZ1",
+    "text": "(Đúng/Sai?) Số lớn = (tổng + hiệu) : 2.",
+    "answerKey": {
+     "value": true
+    },
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mb",
+    "text": "Tổng 80, hiệu 10 → hai số?",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "lớn",
+       "value": 45
+      },
+      {
+       "label": "bé",
+       "value": 35
+      }
+     ]
+    },
+    "teaches": [
+     "K2",
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Cặp công thức tổng – hiệu? Vì sao không cộng hiệu vào nửa tổng?",
+    "back": "LỚN = (tổng + hiệu) : 2; BÉ = (tổng − hiệu) : 2 — ba nhịp BỚT TRƯỚC — CHIA ĐÔI — TRẢ SAU. Cộng hiệu thẳng vào nửa tổng (25 + 8 = 33) làm hiệu gấp đôi (16 ≠ 8); nếu đã chia đôi thì mỗi bên chỉ dịch NỬA hiệu. Thử cả hai trạm."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P4 (áo lời văn)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học bài tổng – hiệu với ba nhịp bớt – chia – trả và cặp công thức. Con đạt {score}/3, {trapResult} câu bẫy cộng-hiệu-vào-nửa-tổng.",
+  "homeActivity": "Chia 50 viên kẹo/hạt thật thành hai phần hơn nhau 8 — con làm đúng ba nhịp: nhấc 8 ra, chia đôi, trả lại.",
+  "watchFor": "Nếu con lấy nửa tổng cộng hiệu — bấm thử trạm hiệu (S3): 16 ≠ 8 tự lộ."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B25.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "25 + 8 = 33 — hiệu 16?!",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Hai hộp kẹo tổng 50 viên, hộp lớn hơn hộp bé 8 viên.",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "33 trừ 17 bằng… MƯỜI SÁU?!",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B25_M1_F1.png",
+   "sha256_16": "a2ca82c28a819731"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con giải thành thạo bài TỔNG – HIỆU bằng sơ đồ hai đoạn thẳng và cặp công thức: LỚN = (tổng + hiệu) : 2; BÉ = (tổng − hiệu) : 2 — hiểu vì sao qua nghi thức \"bớt trước — chia đôi — trả sau\", và không bao giờ cộng phần hơn thẳng vào nửa tổng.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (không cộng hiệu vào nửa tổng)",
-    "kidText": "Biết tổng và hiệu hai số: số lớn bằng tổng cộng hiệu rồi chia đôi. Bớt trước — chia đôi — trả sau, đừng cộng thẳng."
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+    "wrong": {
+     "head": "CÁCH SAI",
+     "steps": [
+      "25 + 8 = 33 · 25 − 8 = 17"
+     ],
+     "result": "hiệu 16"
+    },
+    "right": {
+     "head": "CÁCH ĐÚNG",
+     "steps": [
+      "25 + 4 = 29 · 25 − 4 = 21"
+     ],
+     "result": "hiệu 8"
+    },
+    "verdict": "mỗi bên dịch NỬA hiệu"
+   },
+   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B25_M1_F2.png",
+   "sha256_16": "80787d38064bbef1"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Sơ đồ hai đoạn: số bé một đoạn, số lớn = đoạn bé + phần hơn (hiệu). Cả hai đoạn gộp lại đúng bằng TỔNG."
-      },
-      {
-        "id": "K2",
-        "text": "Đường tìm số BÉ: bớt phần hơn ra khỏi tổng (50 − 8 = 42) → hai đoạn bằng nhau → chia đôi (21) → TRẢ phần hơn cho số lớn (21 + 8 = 29). Gói thành công thức: bé = (tổng − hiệu) : 2."
-      },
-      {
-        "id": "K3",
-        "text": "Đường tìm số LỚN: bù thêm một phần hơn vào tổng (50 + 8 = 58) → hai đoạn đều bằng đoạn lớn → chia đôi: lớn = (tổng + hiệu) : 2 = 29. Hai đường về MỘT đáp."
-      },
-      {
-        "id": "K4",
-        "text": "CẤM cộng phần hơn thẳng vào nửa tổng (25 + 8 = 33): phần hơn phải \"mọc\" từ BÊN TRONG tổng — cộng từ ngoài vào là tổng phình sai; nếu chia đều rồi thì mỗi bên chỉ dịch NỬA hiệu (25 + 4 = 29; 25 − 4 = 21)."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: HAI HỘP KẸO MỘT PHẦN HƠN. Tổng 50 viên chia hai hộp, hộp lớn hơn hộp bé 8 viên. Vẽ sơ đồ: đoạn bé + (đoạn bé + khúc 8) = 50. Nghi thức ba nhịp BỚT — CHIA — TRẢ: BỚT khúc 8 ra khỏi rổ (còn 42 — giờ hai hộp y hệt nhau); CHIA đôi (mỗi hộp 21); TRẢ khúc 8 về hộp lớn (29). Trí Long đi tắt: \"nửa tổng 25, cộng 8 vào một hộp — 33!\" — nhưng khúc 8 ấy lấy từ đâu? Từ ngoài rổ! Kiểm hai trạm: 33 + 17 = 50 nhưng 33 − 17 = 16 — hiệu gấp đôi đề: SẬP. Nếu đã lỡ chia đôi trước, mỗi hộp chỉ được dịch NỬA khúc: 25 + 4 và 25 − 4 — vẫn về 29 và 21.",
-    "canonicalExamples": [
-      {
-        "case": "hai đường một đáp (ca lõi)",
-        "problem": "Tổng hai số là 50, hiệu hai số là 8. Tìm hai số.",
-        "solution": "Đường bé: (50 − 8) : 2 = 21 → lớn = 29. Đường lớn: (50 + 8) : 2 = 29 → bé = 21. Thử: 29 + 21 = 50 ✓; 29 − 21 = 8 ✓.",
-        "why": "Ca đề A câu 1 — cặp công thức song hành."
-      },
-      {
-        "case": "đối chiếu ngược (ca đóng vòng)",
-        "problem": "Hai số là 29 và 21 — tính tổng và hiệu, đối chiếu với đề trên.",
-        "solution": "Tổng 50; hiệu 8 — đúng bộ dữ kiện gốc: phép thử hai trạm chạy được cả hai chiều.",
-        "why": "Ca LT3 — dạy thử lại như một phép toán thuận."
-      },
-      {
-        "case": "áo lời văn (ca đời thực)",
-        "problem": "Hai bạn có tất cả 42 nghìn đồng, An có nhiều hơn Bình 28 nghìn. Hỏi mỗi bạn có bao nhiêu?",
-        "solution": "An = (42 + 28) : 2 = 35 nghìn; Bình = 42 − 35 = 7 nghìn. Thử: 35 − 7 = 28 ✓.",
-        "why": "Ca LT7 — tổng-hiệu khoác áo tiền."
-      }
-    ],
-    "numberRange": "Lớp 5: tổng ≤ 200; tổng và hiệu cùng chẵn lẻ.",
-    "misconceptions": [
-      {
-        "wrong": "Lấy nửa tổng 25 rồi cộng thẳng phần hơn: 25 + 8 = 33 (và 25 − 8 = 17).",
-        "signal": "Hiệu của đáp gấp đôi hiệu đề (16 thay vì 8).",
-        "fix": "K4 — phần hơn mọc từ trong tổng: bớt trước — chia đôi — trả sau; hoặc mỗi bên chỉ dịch nửa hiệu.",
-        "counterExample": "Thử trạm hiệu: 33 − 17 = 16 ≠ 8 — sập ngay trạm hai."
-      }
-    ],
-    "vocabulary": [
-      "hai hộp một phần hơn",
-      "bớt trước — chia đôi — trả sau",
-      "khúc phần hơn",
-      "hai đường một đáp",
-      "thử hai trạm"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Sơ đồ hai đoạn",
+      "text": "số bé một đoạn, số lớn = đoạn bé + phần hơn (hiệu). Cả hai đoạn gộp lại đúng bằng TỔNG.",
+      "tone": "navy"
+     },
+     {
+      "label": "Đường tìm số BÉ",
+      "text": "bớt phần hơn ra khỏi tổng (50 − 8 = 42) →…",
+      "tone": "teal"
+     }
     ],
     "mantra": "BỚT TRƯỚC — CHIA ĐÔI — TRẢ SAU: PHẦN HƠN KHÔNG CỘNG THẲNG VÀO NỬA TỔNG!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B25_M1_F3.png",
+   "sha256_16": "fe53658f201fc339"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "(50 − 8) : 2 = ?",
-        "answerKey": {
-          "value": 21
-        }
-      }
-    ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "ôn trừ – chia nhẩm (hạt mầm)",
-      "message": "Ôn tính nhẩm rồi mở hai hộp kẹo nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 20,
-        "narration": "Hai hộp kẹo tổng 50 viên, hộp lớn hơn hộp bé 8 viên. Trí Long chia vèo: \"Nửa tổng 25 — cộng 8 cho hộp lớn: 33 và 17, xong!\" Su Kem bấm thử trạm hiệu: 33 trừ 17 bằng… MƯỜI SÁU?!",
-        "display": {
-          "type": "story_panel",
-          "caption": "25 + 8 = 33 — hiệu 16?!"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để vẽ sơ đồ!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 46,
-        "teaches": [
-          "K1",
-          "K2",
-          "K3"
-        ],
-        "narration": "Vẽ sơ đồ hai đoạn: đoạn bé, và đoạn lớn bằng đoạn bé cộng khúc TÁM. Nghi thức ba nhịp: BỚT khúc tám ra khỏi rổ — còn bốn hai, hai hộp y hệt nhau; CHIA đôi — mỗi hộp HAI MƯƠI MỐT; TRẢ khúc tám về hộp lớn — HAI MƯƠI CHÍN! Đường kia cũng thông: bù thêm khúc tám vào tổng — năm tám chia hai thẳng ra hai chín. Hai đường — một đáp!",
-        "display": {
-          "type": "bar_model_interactive",
-          "spec": {
-            "total": 50,
-            "gap": 8,
-            "small": 21,
-            "large": 29,
-            "pathA": "(50 − 8):2 = 21 → +8",
-            "pathB": "(50 + 8):2 = 29"
-          }
-        },
-        "interaction": {
-          "type": "cut_share_return",
-          "answerKey": {
-            "values": [
-              21,
-              29
-            ]
-          },
-          "successMessage": "Bớt — chia — trả: 21 và 29!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "mb",
-          "text": "Tổng 100, hiệu 20 — tìm hai số.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "lớn",
-                "value": 60
-              },
-              {
-                "label": "bé",
-                "value": 40
-              }
-            ]
-          },
-          "wrongFeedback": "(100 + 20) : 2 = 60.",
-          "objective": "O1",
-          "teaches": [
-            "K2",
-            "K3"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "trap",
-        "estSeconds": 40,
-        "teaches": [
-          "K4"
-        ],
-        "narration": "Vì sao 25 cộng 8 sập? Khúc tám ấy lấy từ NGOÀI rổ — tổng phình thành năm tám chui! Thử hai trạm: ba ba cộng mười bảy đúng năm mươi, nhưng ba ba TRỪ mười bảy ra MƯỜI SÁU — hiệu gấp đôi đề: trạm hai tuýt còi! Nếu lỡ chia đôi trước thì mỗi hộp chỉ được dịch NỬA khúc: hai lăm cộng bốn — hai chín; hai lăm trừ bốn — hai mốt: vẫn về đúng đáp.",
-        "display": {
-          "type": "counter_example",
-          "cases": [
-            {
-              "input": "25 + 8 = 33 · 25 − 8 = 17",
-              "output": "✗ hiệu 16",
-              "valid": false,
-              "reason": "cộng khúc từ ngoài rổ"
-            },
-            {
-              "input": "25 + 4 = 29 · 25 − 4 = 21",
-              "output": "✓ hiệu 8",
-              "valid": true,
-              "reason": "mỗi bên dịch NỬA hiệu"
-            }
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú hai hộp: bớt trước — chia đôi — trả sau: phần hơn không cộng thẳng vào nửa tổng!",
-        "display": {
-          "type": "mantra_card",
-          "text": "BỚT TRƯỚC — CHIA ĐÔI — TRẢ SAU!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 89,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  {
+   "archetype": "sum_diff_bars",
+   "params": {
+    "title": "TỔNG 50 · HIỆU 8 — SƠ ĐỒ HAI ĐOẠN THẲNG",
+    "small": {
+     "label": "số bé 21",
+     "val": 21
     },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    "big": {
+     "label": "số lớn 29",
+     "val": 29
     },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Hai hộp kẹo tổng năm mươi viên, hộp lớn hơn hộp bé tám viên. Trí Long chia vèo: nửa tổng hai lăm — cộng tám cho hộp lớn: ba ba và mười bảy, xong! Su Kem bấm thử trạm hiệu: ba ba trừ mười bảy bằng… MƯỜI SÁU?!",
-        "screenText": "25 + 8 = 33? → hiệu 16 ≠ 8!",
-        "visual": "Hai hộp kẹo với rổ tổng 50; Trí Long dán số 33·17; máy thử trạm hiệu nháy đỏ '16' #C0392B.",
-        "assets": [],
-        "duration": 17
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Vẽ sơ đồ hai đoạn: đoạn bé, và đoạn lớn bằng đoạn bé cộng khúc TÁM. Ba nhịp: BỚT khúc tám ra khỏi rổ — còn bốn hai, hai hộp y hệt nhau; CHIA đôi — mỗi hộp HAI MƯƠI MỐT; TRẢ khúc tám về hộp lớn — HAI MƯƠI CHÍN! Đường kia cũng thông: bù thêm khúc tám — năm tám chia hai thẳng ra hai chín. Hai đường — một đáp!",
-        "screenText": "(50 − 8):2 = 21 → 29 · (50 + 8):2 = 29 → 21",
-        "visual": "Sơ đồ hai đoạn thẳng với khúc '8' tô vàng bị nhấc ra, chia đôi, trả lại; hai mũi tên hai đường cùng chỉ về cặp 21·29.",
-        "assets": [],
-        "duration": 26
-      },
-      {
-        "no": 3,
-        "templateHint": "trap_reveal",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Vì sao hai lăm cộng tám sập? Khúc tám ấy lấy từ NGOÀI rổ — tổng phình thành năm tám chui! Thử hai trạm: ba ba cộng mười bảy đúng năm mươi, nhưng ba ba TRỪ mười bảy ra MƯỜI SÁU — hiệu gấp đôi đề: trạm hai tuýt còi! Nếu lỡ chia đôi trước thì mỗi hộp chỉ dịch NỬA khúc: hai lăm cộng bốn, hai lăm trừ bốn — vẫn về đúng đáp!",
-        "screenText": "33 − 17 = 16 ✗ · dịch nửa hiệu: 25 ± 4 ✓",
-        "visual": "Khúc 8 bay từ ngoài rổ vào bị chặn bởi biển cấm; trạm hiệu tuýt còi đỏ; cặp 25±4 chạy về 29·21 mộc xanh.",
-        "assets": [],
-        "duration": 27
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú hai hộp: bớt trước — chia đôi — trả sau: phần hơn không cộng thẳng vào nửa tổng!",
-        "screenText": "BỚT — CHIA — TRẢ!",
-        "visual": "Thẻ thần chú vàng với icon hai hộp kẹo.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Hai hộp của con: hai bạn có tất cả bốn hai nghìn đồng, An nhiều hơn Bình hai tám nghìn — mỗi bạn có bao nhiêu? Vào bài luyện ngay!",
-        "screenText": "tổng 42 · hiệu 28 → An? Bình?",
-        "visual": "Hai ví tiền chờ chia; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P4",
-        "assets": [],
-        "duration": 11
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Ba nhịp bớt — chia — trả",
-    "problem": "Tổng hai số là 50, hiệu hai số là 8. Tìm hai số.",
-    "steps": [
-      {
-        "show": "Bước 1 — BỚT: 50 − 8 = 42 (hai đoạn bằng nhau).",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Có được lấy 25 + 8 làm số lớn không?",
-          "choices": [
-            "Không — phần hơn phải mọc từ trong tổng",
-            "Được",
-            "Tùy"
-          ],
-          "answerKey": {
-            "choice": "Không — phần hơn phải mọc từ trong tổng"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — CHIA: 42 : 2 = 21 = số bé."
-      },
-      {
-        "show": "Bước 3 — TRẢ: 21 + 8 = 29 = số lớn. Thử: 29 + 21 = 50 ✓; 29 − 21 = 8 ✓.",
-        "askAfter": {
-          "format": "mb",
-          "text": "Tổng 100, hiệu 20 → hai số?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "lớn",
-                "value": 60
-              },
-              {
-                "label": "bé",
-                "value": 40
-              }
-            ]
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B25.LT1",
-          "text": "Tổng hai số là 50, hiệu hai số là 8. Tìm hai số.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "bé",
-                "value": 21
-              },
-              {
-                "label": "lớn",
-                "value": 29
-              }
-            ]
-          },
-          "hints": [
-            "Bớt 8 khỏi tổng trước.",
-            "42 : 2 rồi trả 8."
-          ],
-          "solutionNarrative": "(50 − 8) : 2 = 21; lớn = 29 (thử hai trạm ✓).",
-          "teaches": [
-            "K1",
-            "K2"
-          ],
-          "generator": {
-            "template": "Tổng {S}, hiệu {d} (cùng chẵn lẻ). Tìm hai số.",
-            "constraints": {},
-            "answerRule": "(S ± d) : 2"
-          }
-        },
-        {
-          "id": "P2",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B25.LT2",
-          "text": "Tổng hai số là 100, hiệu hai số là 20. Tìm hai số.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "lớn",
-                "value": 60
-              },
-              {
-                "label": "bé",
-                "value": 40
-              }
-            ]
-          },
-          "hints": [
-            "Đường lớn: (100 + 20) : 2.",
-            "Bé = 100 − 60."
-          ],
-          "solutionNarrative": "Lớn = 60; bé = 40.",
-          "teaches": [
-            "K3"
-          ]
-        }
-      ],
-      "standard": [
-        {
-          "id": "P3",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B25.LT3",
-          "text": "Hai số là 29 và 21. Tính tổng và hiệu của chúng — đối chiếu với bài đầu tiên.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "tổng",
-                "value": 50
-              },
-              {
-                "label": "hiệu",
-                "value": 8
-              }
-            ]
-          },
-          "hints": [
-            "29 + 21 và 29 − 21.",
-            "Đúng bộ dữ kiện gốc chưa?"
-          ],
-          "solutionNarrative": "Tổng 50, hiệu 8 — phép thử chạy được cả hai chiều.",
-          "teaches": [
-            "K2",
-            "K3"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P4",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B25.LT7",
-          "text": "Hai bạn có tất cả 42 nghìn đồng, bạn An có nhiều hơn bạn Bình 28 nghìn đồng. Hỏi mỗi bạn có bao nhiêu nghìn đồng?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "An",
-                "value": 35
-              },
-              {
-                "label": "Bình",
-                "value": 7
-              }
-            ]
-          },
-          "hints": [
-            "Tổng 42, hiệu 28.",
-            "(42 + 28) : 2."
-          ],
-          "solutionNarrative": "An = 35; Bình = 7 (thử 35 − 7 = 28 ✓).",
-          "teaches": [
-            "K3"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:III.2.1#1@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B25.M2",
-      "award": "huy_hieu_hai_hop_keo"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B25.QZ3",
-        "text": "Tổng 50, hiệu 8 — số bé là:",
-        "choices": [
-          "21",
-          "29",
-          "25"
-        ],
-        "answerKey": {
-          "choice": "21"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K2",
-          "K4"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "tf",
-        "sourceItem": "ITEM:KSN5Q1.B25.QZ1",
-        "text": "(Đúng/Sai?) Số lớn = (tổng + hiệu) : 2.",
-        "answerKey": {
-          "value": true
-        },
-        "teaches": [
-          "K3"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "mb",
-        "text": "Tổng 80, hiệu 10 → hai số?",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "lớn",
-              "value": 45
-            },
-            {
-              "label": "bé",
-              "value": 35
-            }
-          ]
-        },
-        "teaches": [
-          "K2",
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Cặp công thức tổng – hiệu? Vì sao không cộng hiệu vào nửa tổng?",
-        "back": "LỚN = (tổng + hiệu) : 2; BÉ = (tổng − hiệu) : 2 — ba nhịp BỚT TRƯỚC — CHIA ĐÔI — TRẢ SAU. Cộng hiệu thẳng vào nửa tổng (25 + 8 = 33) làm hiệu gấp đôi (16 ≠ 8); nếu đã chia đôi thì mỗi bên chỉ dịch NỬA hiệu. Thử cả hai trạm."
-      }
-    ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P4 (áo lời văn)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con học bài tổng – hiệu với ba nhịp bớt – chia – trả và cặp công thức. Con đạt {score}/3, {trapResult} câu bẫy cộng-hiệu-vào-nửa-tổng.",
-    "homeActivity": "Chia 50 viên kẹo/hạt thật thành hai phần hơn nhau 8 — con làm đúng ba nhịp: nhấc 8 ra, chia đôi, trả lại.",
-    "watchFor": "Nếu con lấy nửa tổng cộng hiệu — bấm thử trạm hiệu (S3): 16 ≠ 8 tự lộ."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B25.M1",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "25 + 8 = 33 — hiệu 16?!",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "Hai hộp kẹo tổng 50 viên, hộp lớn hơn hộp bé 8 viên.",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "33 trừ 17 bằng… MƯỜI SÁU?!",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B25_M1_F1.png",
-      "sha256_16": "a2ca82c28a819731"
-    },
-    {
-      "archetype": "two_way_compare",
-      "params": {
-        "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-        "wrong": {
-          "head": "CÁCH SAI",
-          "steps": [
-            "25 + 8 = 33 · 25 − 8 = 17"
-          ],
-          "result": "hiệu 16"
-        },
-        "right": {
-          "head": "CÁCH ĐÚNG",
-          "steps": [
-            "25 + 4 = 29 · 25 − 4 = 21"
-          ],
-          "result": "hiệu 8"
-        },
-        "verdict": "mỗi bên dịch NỬA hiệu"
-      },
-      "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B25_M1_F2.png",
-      "sha256_16": "80787d38064bbef1"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Sơ đồ hai đoạn",
-            "text": "số bé một đoạn, số lớn = đoạn bé + phần hơn (hiệu). Cả hai đoạn gộp lại đúng bằng TỔNG.",
-            "tone": "navy"
-          },
-          {
-            "label": "Đường tìm số BÉ",
-            "text": "bớt phần hơn ra khỏi tổng (50 − 8 = 42) →…",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "BỚT TRƯỚC — CHIA ĐÔI — TRẢ SAU: PHẦN HƠN KHÔNG CỘNG THẲNG VÀO NỬA TỔNG!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B25_M1_F3.png",
-      "sha256_16": "fe53658f201fc339"
-    },
-    {
-      "archetype": "sum_diff_bars",
-      "params": {
-        "title": "TỔNG 50 · HIỆU 8 — SƠ ĐỒ HAI ĐOẠN THẲNG",
-        "small": {
-          "label": "số bé 21",
-          "val": 21
-        },
-        "big": {
-          "label": "số lớn 29",
-          "val": 29
-        },
-        "diff_label": "hiệu 8",
-        "total_label": "tổng 50",
-        "formula": "bé = (50 − 8) : 2 = 21    ·    lớn = (50 + 8) : 2 = 29",
-        "note": "Thử hai trạm: 29 + 21 = 50 ✓  và  29 − 21 = 8 ✓"
-      },
-      "caption": "Bớt phần dôi ra rồi chia đôi — hoặc thêm vào rồi chia đôi",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B25_M1_F4.png",
-      "sha256_16": "f0dbf13ae1abbdfb"
-    }
-  ]
+    "diff_label": "hiệu 8",
+    "total_label": "tổng 50",
+    "formula": "bé = (50 − 8) : 2 = 21 · lớn = (50 + 8) : 2 = 29",
+    "note": "Thử hai trạm: 29 + 21 = 50 ✓ và 29 − 21 = 8 ✓"
+   },
+   "caption": "Bớt phần dôi ra rồi chia đôi — hoặc thêm vào rồi chia đôi",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B25_M1_F4.png",
+   "sha256_16": "12c72e562ba273d3"
+  }
+ ]
 }

@@ -1,0 +1,90 @@
+{
+ "_doc": "LỚP 5 — những chỗ ví von phải viết TAY. Luật regex chỉ xử được mẫu lặp đều (\"Thần chú <tên>: …\"); còn ví von nằm lẫn giữa câu thì mỗi chỗ một kiểu, viết luật là hỏng nghĩa. Mỗi dòng dưới đây là một phép thay NGUYÊN VĂN, áp vào các trường bé đọc.",
+ "_luat": "Mỗi mục PHẢI khớp ít nhất một chỗ. Sửa nội dung sách mà quên sửa bảng này thì `tools/de_hieu_lop5.py` báo lỗi ngay, không im lặng bỏ qua.",
+ "thay": [
+  {
+   "tim": "Bí kíp gì vậy?",
+   "thay": "Cậu ấy làm cách nào vậy?",
+   "vi_sao": "\"bí kíp\" là chữ truyện kiếm hiệp; bé cần biết đây là một CÁCH TÍNH"
+  },
+  {
+   "tim": "bí kíp một nét đứt KÉO DÀI đáy mà đón lấy",
+   "thay": "cách vẽ một nét đứt: KÉO DÀI đáy để đón lấy"
+  },
+  { "tim": "Bí kíp MỘT NÉT ĐỨT:", "thay": "Cách vẽ MỘT NÉT ĐỨT:" },
+  { "tim": "bí kíp MỘT NÉT ĐỨT:", "thay": "cách vẽ MỘT NÉT ĐỨT:" },
+  { "tim": "bí kíp một nét đứt:", "thay": "cách vẽ một nét đứt:" },
+  { "tim": "nêu bí kíp vẽ hình", "thay": "nêu cách vẽ hình" },
+
+  {
+   "tim": "Con làm chủ hai địa hình đặc biệt:",
+   "thay": "Con làm chủ hai dạng tam giác đặc biệt:",
+   "vi_sao": "tam giác không phải \"địa hình\" — gọi thẳng tên hình"
+  },
+  {
+   "tim": " (bất biến M2 gánh)",
+   "thay": "",
+   "vi_sao": "\"M2\" là mã bài của người soạn, bé đọc không hiểu"
+  },
+  {
+   "tim": "Miếng bánh tù vẫn ăn no — nó luôn có đủ ba đường cao, chỉ là có đường rơi ra ngoài!",
+   "thay": "Tam giác tù vẫn tính diện tích như thường — nó vẫn có đủ ba đường cao, chỉ là có đường rơi ra ngoài đáy!"
+  },
+
+  {
+   "tim": "Giấu tổng sau cánh cửa kho: tỉ là ảnh chụp có ngày giờ — giải mốc có tỉ, trả lời mốc được hỏi",
+   "thay": "Đề chưa cho tổng: tỉ số luôn gắn với MỘT thời điểm — giải ở thời điểm có tỉ, rồi trả lời thời điểm đề hỏi",
+   "vi_sao": "\"cánh cửa kho\", \"ảnh chụp có ngày giờ\" là ví von; điều cần nói là tỉ số gắn với thời điểm nào"
+  },
+  { "tim": "Quy trình cánh cửa kho:", "thay": "Quy trình giải theo thời điểm:" },
+  { "tim": "Quy trình cánh cửa kho", "thay": "Quy trình giải theo thời điểm" },
+  { "tim": "cánh cửa kho", "thay": "mốc thời điểm" },
+
+  {
+   "tim": "Hình tròn có HAI cánh cửa hai bạn thân: cửa CHU VI khắc chữ d — đường kính bước thẳng vào:",
+   "thay": "Hình tròn có HAI công thức: công thức CHU VI dùng chữ d, tức là dùng ĐƯỜNG KÍNH:",
+   "vi_sao": "công thức không phải cánh cửa; nói thẳng công thức nào dùng số đo nào"
+  },
+  {
+   "tim": "Cửa DIỆN TÍCH khắc chữ r — chỉ BÁN KÍNH được vào!",
+   "thay": "Công thức DIỆN TÍCH dùng chữ r — chỉ dùng BÁN KÍNH!"
+  },
+  { "tim": "hai cánh cửa C và S", "thay": "hai công thức C và S" },
+  { "tim": "Bước 0 trước hai cánh cửa", "thay": "Bước 0 trước khi chọn công thức" },
+  {
+   "tim": "HAI CÁNH CỬA: C ĐÓN ĐƯỜNG KÍNH — S CHỈ ĐÓN BÁN KÍNH",
+   "thay": "HAI CÔNG THỨC: C DÙNG ĐƯỜNG KÍNH — S CHỈ DÙNG BÁN KÍNH"
+  },
+  { "tim": "cánh cửa đơn vị", "thay": "đổi đơn vị" },
+  {
+   "tim": "cánh cửa phòng nhóm",
+   "thay": "đếm lại số người trong nhóm",
+   "vi_sao": "mục từ vựng phải là điều cần học, không phải tên gọi trong truyện"
+  },
+
+  {
+   "tim": "NỬA CHU VI VẪN LÀ CÂU THẦN CHÚ!",
+   "thay": "NỬA CHU VI VẪN LÀ CÂU CẦN NHỚ!"
+  },
+  { "tim": "Đọc thần chú trước khi kẻ ô", "thay": "Đọc câu cần nhớ trước khi kẻ ô" },
+  { "tim": "Bước 1 — Thần chú B25:", "thay": "Bước 1 — Câu cần nhớ ở Bài 25:" },
+  {
+   "tim": "Con chuyển thần chú đuổi-gặp lên ĐƯỜNG VÒNG:",
+   "thay": "Con đưa cách làm đuổi-gặp lên ĐƯỜNG VÒNG:"
+  },
+  {
+   "tim": "Vẫn thần chú cũ đuổi-hiệu-gặp-tổng",
+   "thay": "Vẫn cách cũ: đuổi nhau thì chia HIỆU, gặp nhau thì chia TỔNG"
+  },
+  { "tim": "thần chú cũ — khoảng cách mới", "thay": "cách cũ — khoảng cách mới" },
+  {
+   "tim": "thần chú mũi tên B54 lên tàu:",
+   "thay": "cách xét mũi tên ở Bài 54, áp lên tàu:"
+  },
+  {
+   "tim": "Hai thần chú bắt tay!",
+   "thay": "Hai điều cần nhớ ghép lại!"
+  },
+  { "tim": "Hai thần chú một đường ray", "thay": "Hai điều cần nhớ trên một đường ray" }
+ ]
+}

@@ -1,725 +1,725 @@
 {
-  "title": "Hiệu – tỉ ba nhịp: hiệu nằm ở PHẦN CHÊNH — tổng cặp tổng phần, hiệu cặp phần chênh",
-  "grade": 5,
-  "durationMinutes": 9,
-  "skills": {
-    "primary": [
-      "CASE:III.4.1#1"
+ "title": "Hiệu – tỉ ba nhịp: hiệu nằm ở PHẦN CHÊNH — tổng cặp tổng phần, hiệu cặp phần chênh",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:III.4.1#1"
+  ],
+  "bktUnit": "CASE:III.4.1#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B31",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B30.M3",
+  "next": "DL:KSN5Q1.B31.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B31",
+  "chunks": [
+   "CHUNK:KSN5Q1.B31.S3",
+   "CHUNK:KSN5Q1.B31.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B31.1",
+   "CA:KSN5Q1.B31.2"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B31.1",
+   "TRAP:KSN5Q1.B31.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải bài HIỆU – TỈ ba nhịp: đếm PHẦN CHÊNH (tỉ m : n → chênh |m − n|; gấp k → chênh k − 1) — chia HIỆU cho phần chênh — nhân ra từng số; phân biệt rành mạch hai họ máy: TỔNG cặp với tổng phần, HIỆU cặp với phần chênh; chạy trơn với thập phân và tỉ phần trăm.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
+  "kidText": "Biết hiệu và tỉ: hiệu nằm ở phần thò ra. Con chia hiệu cho SỐ PHẦN CHÊNH chứ không phải tổng số phần."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Chồng hai dãy ô: gấp 4 → dãy lớn 4 ô, dãy bé 1 ô — hiệu nằm ở PHẦN THÒ RA: 4 − 1 = 3 ô (không phải 4!). Tỉ m : n → chênh |m − n|."
+   },
+   {
+    "id": "K2",
+    "text": "Ba nhịp hiệu – tỉ: ĐẾM phần chênh — CHIA hiệu cho phần chênh (15 : 3 = 5) — NHÂN ra từng số (5 và 20). Thử về cả hiệu lẫn tỉ."
+   },
+   {
+    "id": "K3",
+    "text": "Hai họ máy đối xứng: TỔNG đi với TỔNG SỐ PHẦN (B29) — HIỆU đi với PHẦN CHÊNH; đọc đề khoanh chữ TỔNG hay HIỆU trước tiên, cấm nhầm nhà (hiệu 15 chia 5 phần tổng là lạc sang họ kia)."
+   },
+   {
+    "id": "K4",
+    "text": "Áo thập phân và %: máy y nguyên — hiệu 4,5 gấp 4 → chênh 3 → phần 1,5; A = 40% B thay áo 2 : 5 → chênh 3 phần = 15 → phần 5."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: HAI DÃY Ô CHỒNG MÉP. Hiệu 15, số lớn gấp 4 số bé — Trí Long chia luôn 15 : 4 = 3,75 viên bi vỡ tư?! Chồng hai dãy ô cùng mép trái: dãy bé MỘT ô, dãy lớn BỐN ô — nhìn phần THÒ RA khỏi mép dãy bé: chỉ BA ô! Hiệu 15 nằm trọn ở ba ô thò ra ấy: phần NĂM — số bé 5, số lớn 20. Cáo Đề còn mũi gài thứ hai: quen tay bài tổng – tỉ, đem 15 chia cho 4 + 1 = 5 phần — NHẦM NHÀ! Khoanh chữ trước khi chia: đề nói HIỆU — hiệu cặp với phần chênh; tổng mới cặp với tổng phần. Máy chạy mọi áo: hiệu 4,5 gấp 4 — chênh 3, phần 1,5; A bằng 40% B — thay áo 2 : 5, chênh 3 phần = 15: A mười, B hai lăm.",
+  "canonicalExamples": [
+   {
+    "case": "gấp k (ca lõi)",
+    "problem": "Hiệu hai số là 15, số lớn gấp 4 lần số bé. Tìm hai số.",
+    "solution": "Chênh 4 − 1 = 3 phần = 15 → phần 5 → bé 5; lớn 20. Thử: 20 − 5 = 15 ✓; 20 = 4 × 5 ✓.",
+    "why": "Ca đề A câu 8 — hai bẫy cùng rình một đề."
+   },
+   {
+    "case": "tuổi làm nền (ca quen)",
+    "problem": "Mẹ hơn con 24 tuổi và tuổi mẹ gấp 3 lần tuổi con. Tính tuổi mỗi người. Kiểm: hiệu bằng mấy phần?",
+    "solution": "Chênh 3 − 1 = 2 phần = 24 → phần 12 → con 12; mẹ 36. Kiểm: hiệu = 2 phần, mỗi phần 12 tuổi.",
+    "why": "Ca LT2 + LT3 — B28 chính danh trong bộ áo tỉ."
+   },
+   {
+    "case": "thập phân & % (ca thay áo)",
+    "problem": "(a) Hiệu 4,5, số lớn gấp 4 số bé. (b) A = 40% B, B hơn A 15 đơn vị.",
+    "solution": "(a) Chênh 3 = 4,5 → phần 1,5 → 1,5 và 6. (b) 40% = 2/5 → 2 : 5 → chênh 3 = 15 → phần 5 → A = 10; B = 25 (10 = 40% × 25 ✓).",
+    "why": "Ca đề A câu 9 + LT5 — máy y nguyên dưới hai lớp áo."
+   }
+  ],
+  "numberRange": "Lớp 5: hiệu ≤ 120; hiệu chia hết cho phần chênh.",
+  "misconceptions": [
+   {
+    "wrong": "Chia hiệu cho tỉ số k: 15 : 4 = 3,75.",
+    "signal": "Phép chia cho k thay vì (k − 1); đáp lẻ vô cớ.",
+    "fix": "chồng hai dãy ô: phần thò ra chỉ (k − 1) ô — hiệu nằm ở đó.",
+    "counterExample": "3,75 và 15? Thử tỉ: 15 : 3,75 = 4 ✓ nhưng hiệu 11,25 ≠ 15 — trượt trạm hiệu!"
+   },
+   {
+    "wrong": "Nhầm nhà: đem hiệu 15 chia cho TỔNG số phần 4 + 1 = 5 → phần 3 → 3 và 12.",
+    "signal": "Cụm '+1' của họ tổng xuất hiện trong bài hiệu.",
+    "fix": "khoanh chữ TỔNG / HIỆU ngay khi đọc đề: hiệu cặp phần chênh, tổng cặp tổng phần.",
+    "counterExample": "3 và 12: hiệu 9 ≠ 15 — chia nhầm nhà là trượt trạm hiệu ngay."
+   }
+  ],
+  "vocabulary": [
+   "hai dãy ô chồng mép",
+   "phần thò ra",
+   "khoanh chữ tổng / hiệu",
+   "nhầm nhà",
+   "hai họ máy đối xứng"
+  ],
+  "mantra": "HIỆU NẰM Ở PHẦN THÒ RA — TỔNG CẶP TỔNG PHẦN, HIỆU CẶP PHẦN CHÊNH!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Gấp 4 lần → phần chênh = ? phần",
+    "answerKey": {
+     "value": 3
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B28.M2",
+   "message": "Ôn (k − 1) phần Bài 28 rồi vào chồng dãy ô nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Đề: hiệu 15, số lớn gấp 4 số bé. Trí Long chia vèo: \"15 chia 4 bằng 3,75 — viên bi vỡ làm tư?!\" Cáo Đề còn xúi thêm: \"hay chia cho 5 phần như bài tổng hôm trước?\" Su Kem chồng hai dãy ô lên bàn: \"Nhìn xem hiệu nằm ở MẤY ô đã.\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "15 : 4? hay 15 : 5??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để chồng hai dãy ô!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2"
     ],
-    "bktUnit": "CASE:III.4.1#1@G5"
+    "narration": "Chồng hai dãy cùng mép trái: dãy bé MỘT ô — dãy lớn BỐN ô. Phần THÒ RA khỏi mép dãy bé: bốn trừ một — chỉ BA ô! Hiệu mười lăm nằm trọn ở ba ô thò ra ấy: mười lăm chia ba — phần NĂM! Số bé một ô: NĂM; số lớn bốn ô: HAI MƯƠI. Thử hai trạm: hai mươi trừ năm đúng mười lăm; hai mươi đúng gấp bốn lần năm!",
+    "display": {
+     "type": "overhang_grid_interactive",
+     "spec": {
+      "ratio": "4 : 1",
+      "overhang": 3,
+      "diff": 15,
+      "unit": 5,
+      "values": [
+       5,
+       20
+      ],
+      "check": "15 ✓ · ×4 ✓"
+     }
+    },
+    "interaction": {
+     "type": "stack_and_measure",
+     "answerKey": {
+      "values": [
+       5,
+       20
+      ]
+     },
+     "successMessage": "Thò ra 3 ô = 15 → phần 5 → 5 & 20!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Hiệu 15, tỉ 4 : 1 — giá một phần là:",
+     "choices": [
+      "5",
+      "3,75",
+      "3"
+     ],
+     "answerKey": {
+      "choice": "5"
+     },
+     "wrongFeedback": "15 : (4 − 1).",
+     "objective": "O1",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 42,
+    "teaches": [
+     "K3",
+     "K4"
+    ],
+    "narration": "Mũi gài nhầm nhà: đem hiệu mười lăm chia cho BỐN CỘNG MỘT là năm phần — ra ba và mười hai: hiệu chín, trượt trạm! Khoanh chữ trước khi chia: đề nói HIỆU — hiệu cặp với PHẦN CHÊNH; tổng mới cặp với tổng phần: hai họ máy đối xứng, cấm lẫn! Áo nào máy nấy chạy: hiệu bốn phẩy năm gấp bốn — chênh ba, phần MỘT PHẨY NĂM: một phẩy năm và sáu! A bằng bốn mươi phần trăm B — thay áo hai trên năm: chênh BA phần bằng mười lăm — A MƯỜI, B HAI LĂM!",
+    "display": {
+     "type": "counter_example",
+     "cases": [
+      {
+       "input": "nhầm nhà: 15 : (4+1) → 3 & 12",
+       "output": "✗ hiệu 9",
+       "valid": false,
+       "reason": "tổng phần là của họ tổng"
+      },
+      {
+       "input": "đúng nhà: 15 : (4−1) → 5 & 20",
+       "output": "✓ hiệu 15",
+       "valid": true,
+       "reason": "hiệu cặp phần chênh"
+      }
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: hiệu nằm ở phần thò ra — tổng cặp tổng phần, hiệu cặp phần chênh!",
+    "display": {
+     "type": "mantra_card",
+     "text": "HIỆU CẶP PHẦN CHÊNH!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 88,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B31",
-    "order": 1,
-    "prev": "DL:KSN5Q1.B30.M3",
-    "next": "DL:KSN5Q1.B31.M2"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B31",
-    "chunks": [
-      "CHUNK:KSN5Q1.B31.S3",
-      "CHUNK:KSN5Q1.B31.S4"
-    ],
-    "cases": [
-      "CA:KSN5Q1.B31.1",
-      "CA:KSN5Q1.B31.2"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B31.1",
-      "TRAP:KSN5Q1.B31.2"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đề: hiệu mười lăm, số lớn gấp bốn số bé. Trí Long chia vèo: mười lăm chia bốn bằng ba phẩy bảy lăm — viên bi vỡ làm tư?! Cáo Đề còn xúi thêm: hay chia cho năm phần như bài tổng hôm trước? Su Kem chồng hai dãy ô lên bàn: nhìn xem hiệu nằm ở MẤY ô đã!",
+    "screenText": "15 : 4 = 3,75?? hay 15 : 5??",
+    "visual": "Viên bi vỡ làm tư cạnh phép 15:4; Cáo Đề thì thầm '5 phần'; hai dãy ô chờ chồng, dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Chồng hai dãy cùng mép trái: dãy bé MỘT ô — dãy lớn BỐN ô. Phần THÒ RA khỏi mép dãy bé: bốn trừ một — chỉ BA ô! Hiệu mười lăm nằm trọn ở ba ô thò ra ấy: mười lăm chia ba — phần NĂM! Số bé một ô: NĂM; số lớn bốn ô: HAI MƯƠI.",
+    "screenText": "thò ra 4 − 1 = 3 ô = 15 → phần 5 → 5 & 20 ✓✓",
+    "visual": "Hai dãy ô chồng mép trái, ba ô thò ra tô vàng #F9B233 ôm trọn số 15; phần 5 điền từng ô; hai mộc thử.",
+    "assets": [],
+    "duration": 21
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Mũi gài nhầm nhà: đem hiệu mười lăm chia cho BỐN CỘNG MỘT là năm phần — ra ba và mười hai: hiệu chín, trượt trạm! Khoanh chữ trước khi chia: đề nói HIỆU — hiệu cặp với PHẦN CHÊNH; tổng mới cặp tổng phần! Áo nào máy nấy: A bằng bốn mươi phần trăm B — thay áo hai trên năm: chênh BA phần bằng mười lăm — A MƯỜI, B HAI LĂM!",
+    "screenText": "15 : 5 ✗ (nhầm nhà) · 4,5 : 3 = 1,5 · 40% → 2:5 → 10 & 25",
+    "visual": "Hai cánh cổng họ TỔNG và họ HIỆU với bút khoanh chữ đề; phép nhầm nhà gạch đỏ; hai ca áo thập phân và % chạy mộc xanh.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú hai dãy ô: hiệu nằm ở phần thò ra — tổng cặp tổng phần, hiệu cặp phần chênh!",
+    "screenText": "HIỆU = PHẦN THÒ RA (k − 1)!",
+    "visual": "Thẻ thần chú vàng với icon hai dãy ô chồng mép.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Hai dãy ô của con: mẹ hơn con hai tư tuổi, tuổi mẹ gấp ba tuổi con — đếm phần chênh rồi tìm tuổi mỗi người! Vào bài luyện ngay!",
+    "screenText": "hiệu 24 · gấp 3 → chênh ? phần → ?",
+    "visual": "Hai dãy ô mẹ-con chờ chồng; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 11
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Đo phần thò ra",
+  "problem": "Hiệu hai số là 15, số lớn gấp 4 lần số bé. Tìm hai số.",
+  "steps": [
+   {
+    "show": "Bước 1 — ĐẾM chênh: 4 − 1 = 3 phần (phần thò ra).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Số chia của bài hiệu – tỉ là:",
+     "choices": [
+      "phần chênh (3)",
+      "tỉ số (4)",
+      "tổng phần (5)"
+     ],
+     "answerKey": {
+      "choice": "phần chênh (3)"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — CHIA: 15 : 3 = 5 = giá một phần."
+   },
+   {
+    "show": "Bước 3 — NHÂN: bé = 5; lớn = 20. Thử: 20 − 5 = 15 ✓; 20 = 4 × 5 ✓.",
+    "askAfter": {
+     "format": "mb",
+     "text": "Mẹ hơn con 24, gấp 3 → tuổi hai mẹ con?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "con",
+        "value": 12
+       },
+       {
+        "label": "mẹ",
+        "value": 36
+       }
+      ]
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B31.LT1",
+     "text": "Hiệu hai số là 15, số lớn gấp 4 lần số bé. Tìm hai số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bé",
+        "value": 5
+       },
+       {
+        "label": "lớn",
+        "value": 20
+       }
+      ]
+     },
+     "hints": [
+      "Chênh 4 − 1 = 3.",
+      "15 : 3."
+     ],
+     "solutionNarrative": "Phần 5 → 5 và 20 (hai trạm ✓).",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "generator": {
+      "template": "Hiệu {d}, gấp {k}. Tìm hai số.",
+      "constraints": {
+       "d": "chia hết k−1"
+      },
+      "answerRule": "d : (k−1) rồi nhân"
+     }
+    },
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B31.LT2",
+     "text": "Mẹ hơn con 24 tuổi và tuổi mẹ gấp 3 lần tuổi con. Tính tuổi mỗi người.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "con",
+        "value": 12
+       },
+       {
+        "label": "mẹ",
+        "value": 36
+       }
+      ]
+     },
+     "hints": [
+      "Chênh 2 phần.",
+      "24 : 2."
+     ],
+     "solutionNarrative": "Phần 12 → con 12; mẹ 36.",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B31.LT3",
+     "text": "Với đáp số bài trên, kiểm tra: hiệu tuổi bằng mấy phần? Mỗi phần bao nhiêu tuổi?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hiệu",
+        "value": "2 phần"
+       },
+       {
+        "label": "mỗi phần",
+        "value": 12
+       }
+      ]
+     },
+     "hints": [
+      "3 − 1.",
+      "24 : 2."
+     ],
+     "solutionNarrative": "Hiệu = 2 phần, mỗi phần 12 tuổi.",
+     "teaches": [
+      "K1"
+     ]
+    },
+    {
+     "id": "P4",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B31.LT4",
+     "text": "Hiệu hai số là 4,5 và số lớn gấp 4 lần số bé. Tìm hai số. (nhập 1.5 và 6)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bé",
+        "value": 1.5
+       },
+       {
+        "label": "lớn",
+        "value": 6
+       }
+      ]
+     },
+     "hints": [
+      "Chênh 3.",
+      "4,5 : 3."
+     ],
+     "solutionNarrative": "Phần 1,5 → 1,5 và 6.",
+     "teaches": [
+      "K4"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P5",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B31.LT5",
+     "text": "Số A bằng 40% số B, và B hơn A 15 đơn vị. Tìm A và B.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "A",
+        "value": 10
+       },
+       {
+        "label": "B",
+        "value": 25
+       }
+      ]
+     },
+     "hints": [
+      "Thay áo: 40% = 2 : 5.",
+      "Chênh 3 phần = 15."
+     ],
+     "solutionNarrative": "Phần 5 → A = 10; B = 25 (10 = 40% × 25 ✓).",
+     "teaches": [
+      "K4"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1 và A2",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.4.1#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B31.M2",
+   "award": "huy_hieu_phan_tho_ra"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B31.QZ2",
+    "text": "(Đúng/Sai?) Số lớn gấp 4 số bé thì phần chênh là 4 phần.",
+    "answerKey": {
+     "value": false
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B31.QZ3",
+    "text": "Hiệu 15, tỉ 4 : 1 — giá một phần là:",
+    "choices": [
+     "5",
+     "3,75",
+     "3"
+    ],
+    "answerKey": {
+     "choice": "5"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2",
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B31.QZ1",
+    "text": "(Đúng/Sai?) Với bài hiệu – tỉ, ta chia hiệu cho hiệu số phần (phần chênh).",
+    "answerKey": {
+     "value": true
+    },
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A4",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B31.QZ5",
+    "text": "A = 40% B ứng với tỉ số:",
+    "choices": [
+     "2 : 5",
+     "4 : 10 chưa tối giản cũng được",
+     "5 : 2"
+    ],
+    "answerKey": {
+     "choice": "2 : 5"
+    },
+    "teaches": [
+     "K4"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Hiệu – tỉ khác tổng – tỉ chỗ nào?",
+    "back": "MỘT CHỮ: chia HIỆU cho PHẦN CHÊNH |m − n| (gấp k → k − 1; 15 : 3 = 5 → 5 & 20) — còn TỔNG chia cho TỔNG PHẦN. Khoanh chữ TỔNG/HIỆU trước khi chia. Áo % thay về phân số (40% = 2:5 → chênh 3). Thử hai trạm hiệu + tỉ."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P5 (40%)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học hiệu – tỉ: hiệu nằm ở phần thò ra (k − 1 phần), phân biệt hai họ máy tổng / hiệu. Con đạt {score}/4, {trapResult} câu bẫy.",
+  "homeActivity": "Xếp hai dãy nắp chai 1 ô và 4 ô chồng mép — con chỉ tay phần thò ra và đếm to '3 ô'.",
+  "watchFor": "Nếu con chia hiệu cho k hay cho tổng phần — bắt khoanh chữ TỔNG/HIỆU trong đề trước (S3)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B31.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "15 : 4? hay 15 : 5??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "15 chia 4 bằng 3,75 — viên bi vỡ làm tư?!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Cáo Đề",
+      "say": "hay chia cho 5 phần như bài tổng hôm trước?",
+      "tone": "wrong"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B31_M1_F1.png",
+   "sha256_16": "6eb3d49a1be31644"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con giải bài HIỆU – TỈ ba nhịp: đếm PHẦN CHÊNH (tỉ m : n → chênh |m − n|; gấp k → chênh k − 1) — chia HIỆU cho phần chênh — nhân ra từng số; phân biệt rành mạch hai họ máy: TỔNG cặp với tổng phần, HIỆU cặp với phần chênh; chạy trơn với thập phân và tỉ phần trăm.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
-    "kidText": "Biết hiệu và tỉ: hiệu nằm ở phần thò ra. Con chia hiệu cho SỐ PHẦN CHÊNH chứ không phải tổng số phần."
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+    "wrong": {
+     "head": "CÁCH SAI",
+     "steps": [
+      "nhầm nhà: 15 : (4+1) → 3 & 12"
+     ],
+     "result": "hiệu 9"
+    },
+    "right": {
+     "head": "CÁCH ĐÚNG",
+     "steps": [
+      "đúng nhà: 15 : (4−1) → 5 & 20"
+     ],
+     "result": "hiệu 15"
+    },
+    "verdict": "hiệu cặp phần chênh"
+   },
+   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B31_M1_F2.png",
+   "sha256_16": "e175c90bdc488742"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Chồng hai dãy ô: gấp 4 → dãy lớn 4 ô, dãy bé 1 ô — hiệu nằm ở PHẦN THÒ RA: 4 − 1 = 3 ô (không phải 4!). Tỉ m : n → chênh |m − n|."
-      },
-      {
-        "id": "K2",
-        "text": "Ba nhịp hiệu – tỉ: ĐẾM phần chênh — CHIA hiệu cho phần chênh (15 : 3 = 5) — NHÂN ra từng số (5 và 20). Thử về cả hiệu lẫn tỉ."
-      },
-      {
-        "id": "K3",
-        "text": "Hai họ máy đối xứng: TỔNG đi với TỔNG SỐ PHẦN (B29) — HIỆU đi với PHẦN CHÊNH; đọc đề khoanh chữ TỔNG hay HIỆU trước tiên, cấm nhầm nhà (hiệu 15 chia 5 phần tổng là lạc sang họ kia)."
-      },
-      {
-        "id": "K4",
-        "text": "Áo thập phân và %: máy y nguyên — hiệu 4,5 gấp 4 → chênh 3 → phần 1,5; A = 40% B thay áo 2 : 5 → chênh 3 phần = 15 → phần 5."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: HAI DÃY Ô CHỒNG MÉP. Hiệu 15, số lớn gấp 4 số bé — Trí Long chia luôn 15 : 4 = 3,75 viên bi vỡ tư?! Chồng hai dãy ô cùng mép trái: dãy bé MỘT ô, dãy lớn BỐN ô — nhìn phần THÒ RA khỏi mép dãy bé: chỉ BA ô! Hiệu 15 nằm trọn ở ba ô thò ra ấy: phần NĂM — số bé 5, số lớn 20. Cáo Đề còn mũi gài thứ hai: quen tay bài tổng – tỉ, đem 15 chia cho 4 + 1 = 5 phần — NHẦM NHÀ! Khoanh chữ trước khi chia: đề nói HIỆU — hiệu cặp với phần chênh; tổng mới cặp với tổng phần. Máy chạy mọi áo: hiệu 4,5 gấp 4 — chênh 3, phần 1,5; A bằng 40% B — thay áo 2 : 5, chênh 3 phần = 15: A mười, B hai lăm.",
-    "canonicalExamples": [
-      {
-        "case": "gấp k (ca lõi)",
-        "problem": "Hiệu hai số là 15, số lớn gấp 4 lần số bé. Tìm hai số.",
-        "solution": "Chênh 4 − 1 = 3 phần = 15 → phần 5 → bé 5; lớn 20. Thử: 20 − 5 = 15 ✓; 20 = 4 × 5 ✓.",
-        "why": "Ca đề A câu 8 — hai bẫy cùng rình một đề."
-      },
-      {
-        "case": "tuổi làm nền (ca quen)",
-        "problem": "Mẹ hơn con 24 tuổi và tuổi mẹ gấp 3 lần tuổi con. Tính tuổi mỗi người. Kiểm: hiệu bằng mấy phần?",
-        "solution": "Chênh 3 − 1 = 2 phần = 24 → phần 12 → con 12; mẹ 36. Kiểm: hiệu = 2 phần, mỗi phần 12 tuổi.",
-        "why": "Ca LT2 + LT3 — B28 chính danh trong bộ áo tỉ."
-      },
-      {
-        "case": "thập phân & % (ca thay áo)",
-        "problem": "(a) Hiệu 4,5, số lớn gấp 4 số bé. (b) A = 40% B, B hơn A 15 đơn vị.",
-        "solution": "(a) Chênh 3 = 4,5 → phần 1,5 → 1,5 và 6. (b) 40% = 2/5 → 2 : 5 → chênh 3 = 15 → phần 5 → A = 10; B = 25 (10 = 40% × 25 ✓).",
-        "why": "Ca đề A câu 9 + LT5 — máy y nguyên dưới hai lớp áo."
-      }
-    ],
-    "numberRange": "Lớp 5: hiệu ≤ 120; hiệu chia hết cho phần chênh.",
-    "misconceptions": [
-      {
-        "wrong": "Chia hiệu cho tỉ số k: 15 : 4 = 3,75.",
-        "signal": "Phép chia cho k thay vì (k − 1); đáp lẻ vô cớ.",
-        "fix": "K1 — chồng hai dãy ô: phần thò ra chỉ (k − 1) ô — hiệu nằm ở đó.",
-        "counterExample": "3,75 và 15? Thử tỉ: 15 : 3,75 = 4 ✓ nhưng hiệu 11,25 ≠ 15 — trượt trạm hiệu!"
-      },
-      {
-        "wrong": "Nhầm nhà: đem hiệu 15 chia cho TỔNG số phần 4 + 1 = 5 → phần 3 → 3 và 12.",
-        "signal": "Cụm '+1' của họ tổng xuất hiện trong bài hiệu.",
-        "fix": "K3 — khoanh chữ TỔNG / HIỆU ngay khi đọc đề: hiệu cặp phần chênh, tổng cặp tổng phần.",
-        "counterExample": "3 và 12: hiệu 9 ≠ 15 — chia nhầm nhà là trượt trạm hiệu ngay."
-      }
-    ],
-    "vocabulary": [
-      "hai dãy ô chồng mép",
-      "phần thò ra",
-      "khoanh chữ tổng / hiệu",
-      "nhầm nhà",
-      "hai họ máy đối xứng"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Chồng hai dãy ô",
+      "text": "gấp 4 → dãy lớn 4 ô, dãy bé 1 ô",
+      "tone": "navy"
+     },
+     {
+      "label": "Ba nhịp hiệu – tỉ",
+      "text": "ĐẾM phần chênh",
+      "tone": "teal"
+     }
     ],
     "mantra": "HIỆU NẰM Ở PHẦN THÒ RA — TỔNG CẶP TỔNG PHẦN, HIỆU CẶP PHẦN CHÊNH!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B31_M1_F3.png",
+   "sha256_16": "eab88fe687df3db5"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "Gấp 4 lần → phần chênh = ? phần",
-        "answerKey": {
-          "value": 3
-        }
-      }
+  {
+   "archetype": "bar_diagram",
+   "params": {
+    "title": "HIỆU 15 · SỐ LỚN GẤP 4 LẦN SỐ BÉ",
+    "bars": [
+     {
+      "name": "số bé",
+      "units": 1,
+      "label": "1 phần = 5"
+     },
+     {
+      "name": "số lớn",
+      "units": 4,
+      "label": "4 phần = 20"
+     }
     ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B28.M2",
-      "message": "Ôn (k − 1) phần Bài 28 rồi vào chồng dãy ô nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 20,
-        "narration": "Đề: hiệu 15, số lớn gấp 4 số bé. Trí Long chia vèo: \"15 chia 4 bằng 3,75 — viên bi vỡ làm tư?!\" Cáo Đề còn xúi thêm: \"hay chia cho 5 phần như bài tổng hôm trước?\" Su Kem chồng hai dãy ô lên bàn: \"Nhìn xem hiệu nằm ở MẤY ô đã.\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "15 : 4? hay 15 : 5??"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để chồng hai dãy ô!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 46,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Chồng hai dãy cùng mép trái: dãy bé MỘT ô — dãy lớn BỐN ô. Phần THÒ RA khỏi mép dãy bé: bốn trừ một — chỉ BA ô! Hiệu mười lăm nằm trọn ở ba ô thò ra ấy: mười lăm chia ba — phần NĂM! Số bé một ô: NĂM; số lớn bốn ô: HAI MƯƠI. Thử hai trạm: hai mươi trừ năm đúng mười lăm; hai mươi đúng gấp bốn lần năm!",
-        "display": {
-          "type": "overhang_grid_interactive",
-          "spec": {
-            "ratio": "4 : 1",
-            "overhang": 3,
-            "diff": 15,
-            "unit": 5,
-            "values": [
-              5,
-              20
-            ],
-            "check": "15 ✓ · ×4 ✓"
-          }
-        },
-        "interaction": {
-          "type": "stack_and_measure",
-          "answerKey": {
-            "values": [
-              5,
-              20
-            ]
-          },
-          "successMessage": "Thò ra 3 ô = 15 → phần 5 → 5 & 20!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "mcq",
-          "text": "Hiệu 15, tỉ 4 : 1 — giá một phần là:",
-          "choices": [
-            "5",
-            "3,75",
-            "3"
-          ],
-          "answerKey": {
-            "choice": "5"
-          },
-          "wrongFeedback": "15 : (4 − 1).",
-          "objective": "O1",
-          "teaches": [
-            "K1",
-            "K2"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "trap",
-        "estSeconds": 42,
-        "teaches": [
-          "K3",
-          "K4"
-        ],
-        "narration": "Mũi gài nhầm nhà: đem hiệu mười lăm chia cho BỐN CỘNG MỘT là năm phần — ra ba và mười hai: hiệu chín, trượt trạm! Khoanh chữ trước khi chia: đề nói HIỆU — hiệu cặp với PHẦN CHÊNH; tổng mới cặp với tổng phần: hai họ máy đối xứng, cấm lẫn! Áo nào máy nấy chạy: hiệu bốn phẩy năm gấp bốn — chênh ba, phần MỘT PHẨY NĂM: một phẩy năm và sáu! A bằng bốn mươi phần trăm B — thay áo hai trên năm: chênh BA phần bằng mười lăm — A MƯỜI, B HAI LĂM!",
-        "display": {
-          "type": "counter_example",
-          "cases": [
-            {
-              "input": "nhầm nhà: 15 : (4+1) → 3 & 12",
-              "output": "✗ hiệu 9",
-              "valid": false,
-              "reason": "tổng phần là của họ tổng"
-            },
-            {
-              "input": "đúng nhà: 15 : (4−1) → 5 & 20",
-              "output": "✓ hiệu 15",
-              "valid": true,
-              "reason": "hiệu cặp phần chênh"
-            }
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú hai dãy ô: hiệu nằm ở phần thò ra — tổng cặp tổng phần, hiệu cặp phần chênh!",
-        "display": {
-          "type": "mantra_card",
-          "text": "HIỆU CẶP PHẦN CHÊNH!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 88,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "brace": {
+     "text": "PHẦN CHÊNH = 4 − 1 = 3 phần = 15 → 1 phần = 5"
     },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Đề: hiệu mười lăm, số lớn gấp bốn số bé. Trí Long chia vèo: mười lăm chia bốn bằng ba phẩy bảy lăm — viên bi vỡ làm tư?! Cáo Đề còn xúi thêm: hay chia cho năm phần như bài tổng hôm trước? Su Kem chồng hai dãy ô lên bàn: nhìn xem hiệu nằm ở MẤY ô đã!",
-        "screenText": "15 : 4 = 3,75?? hay 15 : 5??",
-        "visual": "Viên bi vỡ làm tư cạnh phép 15:4; Cáo Đề thì thầm '5 phần'; hai dãy ô chờ chồng, dấu hỏi đỏ #C0392B.",
-        "assets": [],
-        "duration": 22
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Chồng hai dãy cùng mép trái: dãy bé MỘT ô — dãy lớn BỐN ô. Phần THÒ RA khỏi mép dãy bé: bốn trừ một — chỉ BA ô! Hiệu mười lăm nằm trọn ở ba ô thò ra ấy: mười lăm chia ba — phần NĂM! Số bé một ô: NĂM; số lớn bốn ô: HAI MƯƠI.",
-        "screenText": "thò ra 4 − 1 = 3 ô = 15 → phần 5 → 5 & 20 ✓✓",
-        "visual": "Hai dãy ô chồng mép trái, ba ô thò ra tô vàng #F9B233 ôm trọn số 15; phần 5 điền từng ô; hai mộc thử.",
-        "assets": [],
-        "duration": 21
-      },
-      {
-        "no": 3,
-        "templateHint": "trap_reveal",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Mũi gài nhầm nhà: đem hiệu mười lăm chia cho BỐN CỘNG MỘT là năm phần — ra ba và mười hai: hiệu chín, trượt trạm! Khoanh chữ trước khi chia: đề nói HIỆU — hiệu cặp với PHẦN CHÊNH; tổng mới cặp tổng phần! Áo nào máy nấy: A bằng bốn mươi phần trăm B — thay áo hai trên năm: chênh BA phần bằng mười lăm — A MƯỜI, B HAI LĂM!",
-        "screenText": "15 : 5 ✗ (nhầm nhà) · 4,5 : 3 = 1,5 · 40% → 2:5 → 10 & 25",
-        "visual": "Hai cánh cổng họ TỔNG và họ HIỆU với bút khoanh chữ đề; phép nhầm nhà gạch đỏ; hai ca áo thập phân và % chạy mộc xanh.",
-        "assets": [],
-        "duration": 26
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú hai dãy ô: hiệu nằm ở phần thò ra — tổng cặp tổng phần, hiệu cặp phần chênh!",
-        "screenText": "HIỆU = PHẦN THÒ RA (k − 1)!",
-        "visual": "Thẻ thần chú vàng với icon hai dãy ô chồng mép.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Hai dãy ô của con: mẹ hơn con hai tư tuổi, tuổi mẹ gấp ba tuổi con — đếm phần chênh rồi tìm tuổi mỗi người! Vào bài luyện ngay!",
-        "screenText": "hiệu 24 · gấp 3 → chênh ? phần → ?",
-        "visual": "Hai dãy ô mẹ-con chờ chồng; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P2",
-        "assets": [],
-        "duration": 11
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Đo phần thò ra",
-    "problem": "Hiệu hai số là 15, số lớn gấp 4 lần số bé. Tìm hai số.",
-    "steps": [
-      {
-        "show": "Bước 1 — ĐẾM chênh: 4 − 1 = 3 phần (phần thò ra).",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Số chia của bài hiệu – tỉ là:",
-          "choices": [
-            "phần chênh (3)",
-            "tỉ số (4)",
-            "tổng phần (5)"
-          ],
-          "answerKey": {
-            "choice": "phần chênh (3)"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — CHIA: 15 : 3 = 5 = giá một phần."
-      },
-      {
-        "show": "Bước 3 — NHÂN: bé = 5; lớn = 20. Thử: 20 − 5 = 15 ✓; 20 = 4 × 5 ✓.",
-        "askAfter": {
-          "format": "mb",
-          "text": "Mẹ hơn con 24, gấp 3 → tuổi hai mẹ con?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "con",
-                "value": 12
-              },
-              {
-                "label": "mẹ",
-                "value": 36
-              }
-            ]
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B31.LT1",
-          "text": "Hiệu hai số là 15, số lớn gấp 4 lần số bé. Tìm hai số.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "bé",
-                "value": 5
-              },
-              {
-                "label": "lớn",
-                "value": 20
-              }
-            ]
-          },
-          "hints": [
-            "Chênh 4 − 1 = 3.",
-            "15 : 3."
-          ],
-          "solutionNarrative": "Phần 5 → 5 và 20 (hai trạm ✓).",
-          "teaches": [
-            "K1",
-            "K2"
-          ],
-          "generator": {
-            "template": "Hiệu {d}, gấp {k}. Tìm hai số.",
-            "constraints": {
-              "d": "chia hết k−1"
-            },
-            "answerRule": "d : (k−1) rồi nhân"
-          }
-        },
-        {
-          "id": "P2",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B31.LT2",
-          "text": "Mẹ hơn con 24 tuổi và tuổi mẹ gấp 3 lần tuổi con. Tính tuổi mỗi người.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "con",
-                "value": 12
-              },
-              {
-                "label": "mẹ",
-                "value": 36
-              }
-            ]
-          },
-          "hints": [
-            "Chênh 2 phần.",
-            "24 : 2."
-          ],
-          "solutionNarrative": "Phần 12 → con 12; mẹ 36.",
-          "teaches": [
-            "K1",
-            "K2"
-          ]
-        }
-      ],
-      "standard": [
-        {
-          "id": "P3",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B31.LT3",
-          "text": "Với đáp số bài trên, kiểm tra: hiệu tuổi bằng mấy phần? Mỗi phần bao nhiêu tuổi?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "hiệu",
-                "value": "2 phần"
-              },
-              {
-                "label": "mỗi phần",
-                "value": 12
-              }
-            ]
-          },
-          "hints": [
-            "3 − 1.",
-            "24 : 2."
-          ],
-          "solutionNarrative": "Hiệu = 2 phần, mỗi phần 12 tuổi.",
-          "teaches": [
-            "K1"
-          ]
-        },
-        {
-          "id": "P4",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B31.LT4",
-          "text": "Hiệu hai số là 4,5 và số lớn gấp 4 lần số bé. Tìm hai số. (nhập 1.5 và 6)",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "bé",
-                "value": 1.5
-              },
-              {
-                "label": "lớn",
-                "value": 6
-              }
-            ]
-          },
-          "hints": [
-            "Chênh 3.",
-            "4,5 : 3."
-          ],
-          "solutionNarrative": "Phần 1,5 → 1,5 và 6.",
-          "teaches": [
-            "K4"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P5",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B31.LT5",
-          "text": "Số A bằng 40% số B, và B hơn A 15 đơn vị. Tìm A và B.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "A",
-                "value": 10
-              },
-              {
-                "label": "B",
-                "value": 25
-              }
-            ]
-          },
-          "hints": [
-            "Thay áo: 40% = 2 : 5.",
-            "Chênh 3 phần = 15."
-          ],
-          "solutionNarrative": "Phần 5 → A = 10; B = 25 (10 = 40% × 25 ✓).",
-          "teaches": [
-            "K4"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
-    "onPass": {
-      "updateBKT": [
-        "CASE:III.4.1#1@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B31.M2",
-      "award": "huy_hieu_phan_tho_ra"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "tf",
-        "sourceItem": "ITEM:KSN5Q1.B31.QZ2",
-        "text": "(Đúng/Sai?) Số lớn gấp 4 số bé thì phần chênh là 4 phần.",
-        "answerKey": {
-          "value": false
-        },
-        "mustPass": true,
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B31.QZ3",
-        "text": "Hiệu 15, tỉ 4 : 1 — giá một phần là:",
-        "choices": [
-          "5",
-          "3,75",
-          "3"
-        ],
-        "answerKey": {
-          "choice": "5"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K2",
-          "K3"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "tf",
-        "sourceItem": "ITEM:KSN5Q1.B31.QZ1",
-        "text": "(Đúng/Sai?) Với bài hiệu – tỉ, ta chia hiệu cho hiệu số phần (phần chênh).",
-        "answerKey": {
-          "value": true
-        },
-        "teaches": [
-          "K2"
-        ]
-      },
-      {
-        "id": "A4",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B31.QZ5",
-        "text": "A = 40% B ứng với tỉ số:",
-        "choices": [
-          "2 : 5",
-          "4 : 10 chưa tối giản cũng được",
-          "5 : 2"
-        ],
-        "answerKey": {
-          "choice": "2 : 5"
-        },
-        "teaches": [
-          "K4"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Hiệu – tỉ khác tổng – tỉ chỗ nào?",
-        "back": "MỘT CHỮ: chia HIỆU cho PHẦN CHÊNH |m − n| (gấp k → k − 1; 15 : 3 = 5 → 5 & 20) — còn TỔNG chia cho TỔNG PHẦN. Khoanh chữ TỔNG/HIỆU trước khi chia. Áo % thay về phân số (40% = 2:5 → chênh 3). Thử hai trạm hiệu + tỉ."
-      }
-    ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P5 (40%)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con học hiệu – tỉ: hiệu nằm ở phần thò ra (k − 1 phần), phân biệt hai họ máy tổng / hiệu. Con đạt {score}/4, {trapResult} câu bẫy.",
-    "homeActivity": "Xếp hai dãy nắp chai 1 ô và 4 ô chồng mép — con chỉ tay phần thò ra và đếm to '3 ô'.",
-    "watchFor": "Nếu con chia hiệu cho k hay cho tổng phần — bắt khoanh chữ TỔNG/HIỆU trong đề trước (S3)."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B31.M1",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "15 : 4? hay 15 : 5??",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "15 chia 4 bằng 3,75 — viên bi vỡ làm tư?!",
-            "tone": "wrong"
-          },
-          {
-            "who": "Cáo Đề",
-            "say": "hay chia cho 5 phần như bài tổng hôm trước?",
-            "tone": "wrong"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B31_M1_F1.png",
-      "sha256_16": "6eb3d49a1be31644"
-    },
-    {
-      "archetype": "two_way_compare",
-      "params": {
-        "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-        "wrong": {
-          "head": "CÁCH SAI",
-          "steps": [
-            "nhầm nhà: 15 : (4+1) → 3 & 12"
-          ],
-          "result": "hiệu 9"
-        },
-        "right": {
-          "head": "CÁCH ĐÚNG",
-          "steps": [
-            "đúng nhà: 15 : (4−1) → 5 & 20"
-          ],
-          "result": "hiệu 15"
-        },
-        "verdict": "hiệu cặp phần chênh"
-      },
-      "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B31_M1_F2.png",
-      "sha256_16": "e175c90bdc488742"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Chồng hai dãy ô",
-            "text": "gấp 4 → dãy lớn 4 ô, dãy bé 1 ô",
-            "tone": "navy"
-          },
-          {
-            "label": "Ba nhịp hiệu – tỉ",
-            "text": "ĐẾM phần chênh",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "HIỆU NẰM Ở PHẦN THÒ RA — TỔNG CẶP TỔNG PHẦN, HIỆU CẶP PHẦN CHÊNH!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B31_M1_F3.png",
-      "sha256_16": "eab88fe687df3db5"
-    },
-    {
-      "archetype": "bar_diagram",
-      "params": {
-        "title": "HIỆU 15 · SỐ LỚN GẤP 4 LẦN SỐ BÉ",
-        "bars": [
-          {
-            "name": "số bé",
-            "units": 1,
-            "label": "1 phần = 5"
-          },
-          {
-            "name": "số lớn",
-            "units": 4,
-            "label": "4 phần = 20"
-          }
-        ],
-        "brace": {
-          "text": "PHẦN CHÊNH = 4 − 1 = 3 phần = 15  →  1 phần = 5"
-        },
-        "note": "Tổng thì cặp với TỔNG số phần · hiệu thì cặp với PHẦN CHÊNH — đừng lẫn"
-      },
-      "caption": "Hiệu nằm ở phần chênh, không phải ở tổng số phần",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B31_M1_F4.png",
-      "sha256_16": "8063b255b2af73e1"
-    }
-  ]
+    "note": "Tổng thì cặp với TỔNG số phần · hiệu thì cặp với PHẦN CHÊNH — đừng lẫn"
+   },
+   "caption": "Hiệu nằm ở phần chênh, không phải ở tổng số phần",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B31_M1_F4.png",
+   "sha256_16": "fb4a1fb6c3279c6d"
+  }
+ ]
 }

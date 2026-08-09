@@ -1,651 +1,651 @@
 {
-  "title": "Bài chặn hai bờ: bờ đứng ngoài & sân cùng tử mẫu chạy ngược",
-  "grade": 5,
-  "durationMinutes": 9,
-  "skills": {
-    "primary": [
-      "CASE:II.1.3#3"
+ "title": "Bài chặn hai bờ: bờ đứng ngoài & sân cùng tử mẫu chạy ngược",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:II.1.3#3"
+  ],
+  "bktUnit": "CASE:II.1.3#3@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B19",
+  "order": 3,
+  "prev": "DL:KSN5Q1.B19.M2",
+  "next": "DL:KSN5Q1.B20.M1"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B19",
+  "chunks": [
+   "CHUNK:KSN5Q1.B19.S4",
+   "CHUNK:KSN5Q1.B19.S7"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B19.4"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B19.2",
+   "TRAP:KSN5Q1.B19.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con giải trọn bài CHẶN: tìm mọi số tự nhiên n để phân số chứa n nằm giữa hai bờ — kéo cả ba lên CHUNG SÂN (cùng mẫu hoặc cùng tử), nhớ hai luật sinh tử: dấu < nghiêm — HAI BỜ ĐỨNG NGOÀI; và trên SÂN CÙNG TỬ, phân số với mẫu chạy NGƯỢC chiều — viết điều kiện mẫu riêng một dòng.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
+  "kidText": "Tìm mọi số n để phân số nằm giữa hai bờ: kéo cả ba về chung sân. Dấu bé hơn thì hai bờ đứng ngoài, không được lấy."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bài chặn kiểu n/12 (mẫu chứa n đứng im): kéo hai bờ về CÙNG MẪU 12: 1/3 < n/12 < 3/4 → 4/12 < n/12 < 9/12 → 4 < n < 9."
+   },
+   {
+    "id": "K2",
+    "text": "Dấu < NGHIÊM (không có gạch ngang): hai bờ ĐỨNG NGOÀI — n = 4 và n = 9 đều loại: n là 5, 6, 7 hoặc 8."
+   },
+   {
+    "id": "K3",
+    "text": "Bài chặn kiểu 8/n (tử chứa n đứng im): kéo hai bờ về CÙNG TỬ 8: 1/2 = 8/16; 2/3 = 8/12 → 8/16 < 8/n < 8/12. Trên sân cùng tử, phân số và MẪU chạy NGƯỢC chiều: viết riêng một dòng 12 < n < 16 → n là 13, 14 hoặc 15."
+   },
+   {
+    "id": "K4",
+    "text": "Bài chặn phức ((n + 3)/17): so từng bờ bằng nhân chéo hoặc quy đồng, chốt khoảng của cụm (n + 3) rồi lùi về n; THỬ MÉP: thay giá trị biên vào đề kiểm cả hai vế."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: SÂN BÓNG HAI BỜ RÀO. Bài chặn là trận bóng: n phải đứng TRONG SÂN giữa hai hàng rào. Nghi thức một — kéo cả ba lên CHUNG SÂN (cùng mẫu 12: rào 4/12 và 9/12). Luật một — RÀO KHÔNG PHẢI CHỖ ĐỨNG: dấu < nghiêm nghĩa là bờ để tựa mắt, không để đứng vào — n chỉ được 5, 6, 7, 8. Luật hai — có loại sân đặc biệt: SÂN CÙNG TỬ (bài 8/n): trên sân này bảng tỉ số hiển thị NGƯỢC — phân số to thì mẫu bé! Rào 8/16 và 8/12: phân số kẹp giữa nghĩa là mẫu kẹp giữa 12 và 16 — nhưng phải VIẾT RIÊNG MỘT DÒNG '12 < n < 16' kẻo chép xuôi 16 < n < 12 vô nghĩa. Trước khi nộp: THỬ MÉP — thả n biên vào đề đá thử cả hai vế.",
+  "canonicalExamples": [
+   {
+    "case": "sân cùng mẫu (ca bẫy bờ)",
+    "problem": "Tìm tất cả các số tự nhiên n sao cho: 1/3 < n/12 < 3/4.",
+    "solution": "Chung sân mẫu 12: 4/12 < n/12 < 9/12 → 4 < n < 9. Bờ đứng ngoài: n là 5, 6, 7 hoặc 8 — bốn số.",
+    "why": "Ca đề A câu 9 — trap lấy nhầm cả hai bờ."
+   },
+   {
+    "case": "sân cùng tử (ca chạy ngược)",
+    "problem": "Tìm tất cả các số tự nhiên n sao cho 8/n lớn hơn 1/2 và bé hơn 2/3.",
+    "solution": "Chung sân tử 8: 1/2 = 8/16; 2/3 = 8/12 → 8/16 < 8/n < 8/12. Mẫu chạy ngược: 12 < n < 16 → n là 13, 14 hoặc 15. Thử mép: 8/13 < 2/3 ✓; 8/15 > 1/2 ✓.",
+    "why": "Ca đề A câu 11 — trap chặn xuôi chiều."
+   },
+   {
+    "case": "cụm (n + 3) sư phụ (ca lùi cụm)",
+    "problem": "Tìm tất cả các số tự nhiên n sao cho (n + 3)/17 lớn hơn 1/2 và bé hơn 4/5.",
+    "solution": "Vế trái: 2 × (n + 3) > 17 → n + 3 lớn hơn hoặc bằng 9. Vế phải: 5 × (n + 3) < 68 → n + 3 bé hơn hoặc bằng 13. Cụm là 9, … hoặc 13 → n là 6, 7, 8, 9 hoặc 10. Thử mép: 9/17 > 1/2 ✓; 13/17 < 4/5 ✓.",
+    "why": "Ca LT9 — chặn cụm rồi lùi về n."
+   }
+  ],
+  "numberRange": "Lớp 5: mẫu ≤ 20; bờ trong bảng quen.",
+  "misconceptions": [
+   {
+    "wrong": "Lấy nhầm cả hai bờ: 4 < n < 9 mà đáp {4; 5; …; 9}.",
+    "signal": "Đáp chứa giá trị biên.",
+    "fix": "dấu < không có gạch ngang: bờ để tựa mắt, không để đứng vào; thử biên n = 4: 4/12 = 1/3 không LỚN HƠN 1/3 — loại.",
+    "counterExample": "n = 9: 9/12 = 3/4, đề đòi BÉ hơn 3/4 — trượt."
+   },
+   {
+    "wrong": "Sân cùng tử mà chặn xuôi: từ 8/16 < 8/n < 8/12 chép luôn 16 < n < 12 (vô nghĩa) hoặc kết luận n giữa 16 và… hoang mang.",
+    "signal": "Bất đẳng thức mẫu viết xuôi theo thứ tự phân số.",
+    "fix": "khắc: sân cùng tử bảng tỉ số NGƯỢC — phân số to thì mẫu bé; viết điều kiện mẫu RIÊNG MỘT DÒNG: 12 < n < 16.",
+    "counterExample": "8/13 với 8/15: mẫu 13 bé hơn mà phân số lớn hơn — bảng ngược sờ sờ."
+   }
+  ],
+  "vocabulary": [
+   "sân bóng hai bờ rào",
+   "bờ để tựa mắt",
+   "sân cùng tử — bảng tỉ số ngược",
+   "viết riêng một dòng",
+   "thử mép"
+  ],
+  "mantra": "BỜ ĐỨNG NGOÀI — SÂN CÙNG TỬ MẪU CHẠY NGƯỢC!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "1/3 = ?/12 — điền tử.",
+    "answerKey": {
+     "value": 4
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B19.M2",
+   "message": "Ôn quy đồng theo kẻ đứng im rồi ra sân bóng nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Trận chặn mở màn: 1/3 < n/12 < 3/4. Trí Long quy sân chuẩn: 4/12 < n/12 < 9/12 — rồi hớn hở điểm danh \"4, 5, 6, 7, 8, 9 — sáu cầu thủ!\" Trọng tài Su Kem tuýt còi: hai bạn 4 và 9 đang… ĐỨNG TRÊN HÀNG RÀO kìa!",
+    "display": {
+     "type": "story_panel",
+     "caption": "{4,…,9} — sáu cầu thủ??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để soi hàng rào!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
     ],
-    "bktUnit": "CASE:II.1.3#3@G5"
+    "narration": "Soi dấu: bé hơn NGHIÊM — không có gạch ngang! Bờ 4/12 chính là 1/3: n bằng 4 thì n/12 BẰNG bờ chứ đâu LỚN HƠN — loại! n bằng 9 chạm bờ 3/4 — loại nốt! Bờ để tựa mắt, không để đứng vào: sân chỉ còn NĂM, SÁU, BẢY, TÁM — bốn cầu thủ hợp lệ.",
+    "display": {
+     "type": "fence_field_interactive",
+     "spec": {
+      "left": "4/12",
+      "right": "9/12",
+      "inside": [
+       5,
+       6,
+       7,
+       8
+      ],
+      "out": [
+       4,
+       9
+      ]
+     }
+    },
+    "interaction": {
+     "type": "place_players",
+     "answerKey": {
+      "values": [
+       5,
+       6,
+       7,
+       8
+      ]
+     },
+     "successMessage": "Bờ đứng ngoài: n ∈ {5; 6; 7; 8}!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 16,
+    "item": {
+     "format": "mcq",
+     "text": "4/12 < n/12 < 9/12 thì n gồm:",
+     "choices": [
+      "5; 6; 7; 8",
+      "4; 5; …; 9",
+      "5; 6; 7"
+     ],
+     "answerKey": {
+      "choice": "5; 6; 7; 8"
+     },
+     "wrongFeedback": "Dấu < nghiêm — hai bờ loại.",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 44,
+    "teaches": [
+     "K3",
+     "K4"
+    ],
+    "narration": "Sân đặc biệt: 8/n giữa 1/2 và 2/3 — kéo về CÙNG TỬ 8: bờ 8/16 và 8/12. Trí Long chép xuôi \"16 bé hơn n bé hơn 12\"… vô nghĩa! Sân cùng tử bảng tỉ số NGƯỢC: phân số to thì mẫu BÉ — viết riêng một dòng: mười hai bé hơn n bé hơn mười sáu: n là 13, 14, 15! Thử mép: 8/13 chưa chạm 2/3, 8/15 vẫn hơn 1/2 — chuẩn. Bài cụm sư phụ cũng vậy: chặn cụm (n + 3) từ 9 đến 13 rồi lùi về n từ 6 đến 10.",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "8/16 < 8/n < 8/12 → NGƯỢC: 12 < n < 16",
+      "n ∈ {13; 14; 15} · thử mép ✓",
+      "cụm (n+3) ∈ {9..13} → n ∈ {6..10}"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Hai câu cần nhớ: bờ để tựa mắt — không để đứng vào! Sân cùng tử — mẫu chạy ngược: viết riêng một dòng!",
+    "display": {
+     "type": "mantra_card",
+     "text": "BỜ ĐỨNG NGOÀI · MẪU CHẠY NGƯỢC!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B19",
-    "order": 3,
-    "prev": "DL:KSN5Q1.B19.M2",
-    "next": "DL:KSN5Q1.B20.M1"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B19",
-    "chunks": [
-      "CHUNK:KSN5Q1.B19.S4",
-      "CHUNK:KSN5Q1.B19.S7"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Trận chặn mở màn: một phần ba bé hơn en phần mười hai bé hơn ba phần tư. Trí Long quy sân: bốn phần mười hai và chín phần mười hai — rồi hớn hở điểm danh bốn, năm, sáu, bảy, tám, chín — sáu cầu thủ! Trọng tài tuýt còi: hai bạn bốn và chín đang ĐỨNG TRÊN HÀNG RÀO kìa!",
+    "screenText": "1/3 < n/12 < 3/4 → {4,…,9}??",
+    "visual": "Sân bóng với hai hàng rào 4/12 · 9/12; hai cầu thủ số 4 và 9 vắt vẻo trên rào; còi trọng tài đỏ #C0392B.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Soi dấu: bé hơn NGHIÊM — không có gạch ngang! Bờ bốn phần mười hai chính là một phần ba: en bằng bốn thì BẰNG bờ chứ đâu lớn hơn — loại! En bằng chín chạm bờ ba phần tư — loại nốt! Bờ để tựa mắt, không để đứng vào: sân chỉ còn NĂM, SÁU, BẢY, TÁM — bốn cầu thủ hợp lệ!",
+    "screenText": "4 < n < 9 → n ∈ {5; 6; 7; 8} (bờ loại!)",
+    "visual": "Hai cầu thủ 4 và 9 bị mời xuống khỏi rào; bốn cầu thủ 5-8 đứng giữa sân sáng đèn teal #1FCBAB.",
+    "assets": [],
+    "duration": 23
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Sân đặc biệt: tám phần en — kéo về CÙNG TỬ tám: bờ tám phần mười sáu và tám phần mười hai. Trí Long chép xuôi mười sáu bé hơn en bé hơn mười hai… vô nghĩa! Sân cùng tử bảng tỉ số NGƯỢC: phân số to thì mẫu BÉ — viết riêng một dòng: mười hai bé hơn en bé hơn mười sáu: MƯỜI BA, MƯỜI BỐN, MƯỜI LĂM! Thử mép — chuẩn!",
+    "screenText": "8/16 < 8/n < 8/12 → NGƯỢC: 12 < n < 16 → {13;14;15}",
+    "visual": "Bảng tỉ số điện tử hiển thị ngược chiều với mũi tên đảo; dòng '16 < n < 12' gạch đỏ; dòng riêng '12 < n < 16' đóng khung vàng.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Hai thần chú sân bóng: bờ để tựa mắt — không để đứng vào! Sân cùng tử — mẫu chạy ngược!",
+    "screenText": "BỜ ĐỨNG NGOÀI · MẪU CHẠY NGƯỢC!",
+    "visual": "Thẻ thần chú vàng với icon hàng rào và bảng tỉ số đảo.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Trận sư phụ chờ con: en cộng ba, tất cả phần mười bảy — nằm giữa một phần hai và bốn phần năm: tìm hết en! Vào bài luyện ngay!",
+    "screenText": "(n + 3)/17 giữa 1/2 và 4/5 → n?",
+    "visual": "Sân đấu cụm với cầu thủ '(n+3)'; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P3",
+    "assets": [],
+    "duration": 11
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Hai sân một trận",
+  "problem": "(a) Tìm mọi n: 1/3 < n/12 < 3/4. (b) Tìm mọi n: 8/n lớn hơn 1/2 và bé hơn 2/3.",
+  "steps": [
+   {
+    "show": "Bước 1 — Câu (a): chung sân mẫu 12: 4/12 < n/12 < 9/12 → 4 < n < 9 → {5; 6; 7; 8} (bờ loại!).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "n = 4 có được lấy không?",
+     "choices": [
+      "Không — bằng bờ",
+      "Có — sát bờ vẫn tính",
+      "Tùy đề"
+     ],
+     "answerKey": {
+      "choice": "Không — bằng bờ"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Câu (b): chung sân tử 8: 8/16 < 8/n < 8/12."
+   },
+   {
+    "show": "Bước 3 — Mẫu chạy ngược, viết riêng: 12 < n < 16 → {13; 14; 15}. Thử mép ✓.",
+    "askAfter": {
+     "format": "mcq",
+     "text": "Trên sân cùng tử, phân số và mẫu chạy:",
+     "choices": [
+      "ngược chiều",
+      "cùng chiều",
+      "không liên quan"
+     ],
+     "answerKey": {
+      "choice": "ngược chiều"
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "lst",
+     "sourceItem": "ITEM:KSN5Q1.B19.LT6",
+     "text": "Tìm tất cả các số tự nhiên n sao cho: 1/3 < n/12 < 3/4.",
+     "answerKey": {
+      "values": [
+       5,
+       6,
+       7,
+       8
+      ],
+      "ordered": true,
+      "count": 4
+     },
+     "hints": [
+      "Chung sân mẫu 12: 4/12 và 9/12.",
+      "Dấu < nghiêm — bờ đứng ngoài!"
+     ],
+     "solutionNarrative": "4 < n < 9 → n là 5, 6, 7 hoặc 8.",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "generator": {
+      "template": "Tìm n: {p}/{q} < n/{m} < {r}/{s}.",
+      "constraints": {},
+      "answerRule": "quy cùng mẫu m, bờ loại"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "lst",
+     "sourceItem": "ITEM:KSN5Q1.B19.LT8",
+     "text": "Tìm tất cả các số tự nhiên n sao cho 8/n lớn hơn 1/2 và bé hơn 2/3. (Cẩn thận: sân cùng tử — mẫu chạy ngược!)",
+     "answerKey": {
+      "values": [
+       13,
+       14,
+       15
+      ],
+      "ordered": true,
+      "count": 3
+     },
+     "hints": [
+      "Cùng tử 8: 1/2 = 8/16; 2/3 = 8/12.",
+      "Mẫu chạy ngược: viết riêng 12 < n < 16."
+     ],
+     "solutionNarrative": "12 < n < 16 → n là 13, 14 hoặc 15 (thử mép ✓).",
+     "teaches": [
+      "K3",
+      "K4"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "lst",
+     "sourceItem": "ITEM:KSN5Q1.B19.LT9",
+     "text": "Sư phụ Trí Dũng đố: \"Tìm tất cả các số tự nhiên n sao cho (n + 3)/17 lớn hơn 1/2 và bé hơn 4/5.\"",
+     "answerKey": {
+      "values": [
+       6,
+       7,
+       8,
+       9,
+       10
+      ],
+      "ordered": true,
+      "count": 5
+     },
+     "hints": [
+      "Chặn cụm: 2 × (n + 3) > 17 và 5 × (n + 3) < 68.",
+      "Cụm từ 9 đến 13 → lùi 3."
+     ],
+     "solutionNarrative": "(n + 3) là 9, … hoặc 13 → n là 6, 7, 8, 9 hoặc 10 (thử mép 9/17 và 13/17 ✓).",
+     "teaches": [
+      "K4"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1 và A2",
+  "onPass": {
+   "updateBKT": [
+    "CASE:II.1.3#3@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B20.M1",
+   "award": "huy_hieu_san_hai_bo"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B19.QZ4",
+    "text": "4/12 < n/12 < 9/12 thì n gồm:",
+    "choices": [
+     "5; 6; 7; 8",
+     "4; 5; …; 9",
+     "5; 6; 7"
     ],
-    "cases": [
-      "CA:KSN5Q1.B19.4"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B19.2",
-      "TRAP:KSN5Q1.B19.3"
+    "answerKey": {
+     "choice": "5; 6; 7; 8"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B19.QZ5",
+    "text": "Trên sân cùng tử, phân số và mẫu số chạy:",
+    "choices": [
+     "ngược chiều nhau",
+     "cùng chiều",
+     "không liên quan"
+    ],
+    "answerKey": {
+     "choice": "ngược chiều nhau"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "lst",
+    "text": "Tìm mọi n: 1/4 < n/8 < 3/4.",
+    "answerKey": {
+     "values": [
+      3,
+      4,
+      5
+     ],
+     "ordered": true,
+     "count": 3
+    },
+    "teaches": [
+     "K1",
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Bài chặn hai bờ — hai luật sinh tử?",
+    "back": "(1) Dấu < nghiêm: HAI BỜ ĐỨNG NGOÀI (4 < n < 9 → {5;6;7;8}). (2) SÂN CÙNG TỬ: phân số và mẫu chạy NGƯỢC — viết điều kiện mẫu riêng một dòng (8/16 < 8/n < 8/12 → 12 < n < 16 → {13;14;15}). Chốt bằng THỬ MÉP."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (cụm n + 3)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con giải bài chặn hai bờ: bờ đứng ngoài và sân cùng tử mẫu chạy ngược. Con đạt {score}/3, {trapResult} câu bẫy.",
+  "homeActivity": "Kẻ hai vạch phấn làm rào, đặt các tấm số — con xếp cầu thủ hợp lệ vào sân và giải thích vì sao hai số biên phải đứng ngoài.",
+  "watchFor": "Nếu con lấy cả biên hoặc chép xuôi bất đẳng thức mẫu — thử mép với con (S3): thay số biên vào đề xem vế nào trượt."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B19.M3",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "{4,…,9} — sáu cầu thủ??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Trận chặn mở màn: 1/3 < n/12 < 3/4.",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "hai bạn 4 và 9 đang… ĐỨNG TRÊN HÀNG RÀO kìa!",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B19_M3_F1.png",
+   "sha256_16": "a5a9ec1ebeb3a385"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con giải trọn bài CHẶN: tìm mọi số tự nhiên n để phân số chứa n nằm giữa hai bờ — kéo cả ba lên CHUNG SÂN (cùng mẫu hoặc cùng tử), nhớ hai luật sinh tử: dấu < nghiêm — HAI BỜ ĐỨNG NGOÀI; và trên SÂN CÙNG TỬ, phân số với mẫu chạy NGƯỢC chiều — viết điều kiện mẫu riêng một dòng.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
-    "kidText": "Tìm mọi số n để phân số nằm giữa hai bờ: kéo cả ba về chung sân. Dấu bé hơn thì hai bờ đứng ngoài, không được lấy."
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Bài chặn hai bờ: bờ đứng ngoài & sân cùng tử mẫu chạy ngược",
+    "steps": [
+     {
+      "text": "8/16 < 8/n < 8/12 → NGƯỢC: 12 < n < 16 → {13;14;15}"
+     },
+     {
+      "text": "n là 13, 14 hoặc 15 · thử mép"
+     },
+     {
+      "text": "cụm (n+3) là 9..13 → n là 6..10"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B19_M3_F2.png",
+   "sha256_16": "839eb825b413963f"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Bài chặn kiểu n/12 (mẫu chứa n đứng im): kéo hai bờ về CÙNG MẪU 12: 1/3 < n/12 < 3/4 → 4/12 < n/12 < 9/12 → 4 < n < 9."
-      },
-      {
-        "id": "K2",
-        "text": "Dấu < NGHIÊM (không có gạch ngang): hai bờ ĐỨNG NGOÀI — n = 4 và n = 9 đều loại: n ∈ {5; 6; 7; 8}."
-      },
-      {
-        "id": "K3",
-        "text": "Bài chặn kiểu 8/n (tử chứa n đứng im): kéo hai bờ về CÙNG TỬ 8: 1/2 = 8/16; 2/3 = 8/12 → 8/16 < 8/n < 8/12. Trên sân cùng tử, phân số và MẪU chạy NGƯỢC chiều: viết riêng một dòng 12 < n < 16 → n ∈ {13; 14; 15}."
-      },
-      {
-        "id": "K4",
-        "text": "Bài chặn phức ((n + 3)/17): so từng bờ bằng nhân chéo hoặc quy đồng, chốt khoảng của cụm (n + 3) rồi lùi về n; THỬ MÉP: thay giá trị biên vào đề kiểm cả hai vế."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: SÂN BÓNG HAI BỜ RÀO. Bài chặn là trận bóng: n phải đứng TRONG SÂN giữa hai hàng rào. Nghi thức một — kéo cả ba lên CHUNG SÂN (cùng mẫu 12: rào 4/12 và 9/12). Luật một — RÀO KHÔNG PHẢI CHỖ ĐỨNG: dấu < nghiêm nghĩa là bờ để tựa mắt, không để đứng vào — n chỉ được 5, 6, 7, 8. Luật hai — có loại sân đặc biệt: SÂN CÙNG TỬ (bài 8/n): trên sân này bảng tỉ số hiển thị NGƯỢC — phân số to thì mẫu bé! Rào 8/16 và 8/12: phân số kẹp giữa nghĩa là mẫu kẹp giữa 12 và 16 — nhưng phải VIẾT RIÊNG MỘT DÒNG '12 < n < 16' kẻo chép xuôi 16 < n < 12 vô nghĩa. Trước khi nộp: THỬ MÉP — thả n biên vào đề đá thử cả hai vế.",
-    "canonicalExamples": [
-      {
-        "case": "sân cùng mẫu (ca bẫy bờ)",
-        "problem": "Tìm tất cả các số tự nhiên n sao cho: 1/3 < n/12 < 3/4.",
-        "solution": "Chung sân mẫu 12: 4/12 < n/12 < 9/12 → 4 < n < 9. Bờ đứng ngoài: n ∈ {5; 6; 7; 8} — bốn số.",
-        "why": "Ca đề A câu 9 — trap lấy nhầm cả hai bờ."
-      },
-      {
-        "case": "sân cùng tử (ca chạy ngược)",
-        "problem": "Tìm tất cả các số tự nhiên n sao cho 8/n lớn hơn 1/2 và bé hơn 2/3.",
-        "solution": "Chung sân tử 8: 1/2 = 8/16; 2/3 = 8/12 → 8/16 < 8/n < 8/12. Mẫu chạy ngược: 12 < n < 16 → n ∈ {13; 14; 15}. Thử mép: 8/13 < 2/3 ✓; 8/15 > 1/2 ✓.",
-        "why": "Ca đề A câu 11 — trap chặn xuôi chiều."
-      },
-      {
-        "case": "cụm (n + 3) sư phụ (ca lùi cụm)",
-        "problem": "Tìm tất cả các số tự nhiên n sao cho (n + 3)/17 lớn hơn 1/2 và bé hơn 4/5.",
-        "solution": "Vế trái: 2 × (n + 3) > 17 → n + 3 ≥ 9. Vế phải: 5 × (n + 3) < 68 → n + 3 ≤ 13. Cụm ∈ {9; …; 13} → n ∈ {6; 7; 8; 9; 10}. Thử mép: 9/17 > 1/2 ✓; 13/17 < 4/5 ✓.",
-        "why": "Ca LT9 — chặn cụm rồi lùi về n."
-      }
-    ],
-    "numberRange": "Lớp 5: mẫu ≤ 20; bờ trong bảng quen.",
-    "misconceptions": [
-      {
-        "wrong": "Lấy nhầm cả hai bờ: 4 < n < 9 mà đáp {4; 5; …; 9}.",
-        "signal": "Đáp chứa giá trị biên.",
-        "fix": "K2 — dấu < không có gạch ngang: bờ để tựa mắt, không để đứng vào; thử biên n = 4: 4/12 = 1/3 không LỚN HƠN 1/3 — loại.",
-        "counterExample": "n = 9: 9/12 = 3/4, đề đòi BÉ hơn 3/4 — trượt."
-      },
-      {
-        "wrong": "Sân cùng tử mà chặn xuôi: từ 8/16 < 8/n < 8/12 chép luôn 16 < n < 12 (vô nghĩa) hoặc kết luận n giữa 16 và… hoang mang.",
-        "signal": "Bất đẳng thức mẫu viết xuôi theo thứ tự phân số.",
-        "fix": "K3 — khắc: sân cùng tử bảng tỉ số NGƯỢC — phân số to thì mẫu bé; viết điều kiện mẫu RIÊNG MỘT DÒNG: 12 < n < 16.",
-        "counterExample": "8/13 với 8/15: mẫu 13 bé hơn mà phân số lớn hơn — bảng ngược sờ sờ."
-      }
-    ],
-    "vocabulary": [
-      "sân bóng hai bờ rào",
-      "bờ để tựa mắt",
-      "sân cùng tử — bảng tỉ số ngược",
-      "viết riêng một dòng",
-      "thử mép"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Bài chặn kiểu n/12 (mẫu chứa n đứng im)",
+      "text": "kéo hai bờ về CÙNG MẪU 12: 1/3 < n/12 < 3/4 → 4/12 < n/12 < 9/12 → 4 < n < 9.",
+      "tone": "navy"
+     },
+     {
+      "label": "Dấu < NGHIÊM (không có gạch ngang)",
+      "text": "hai bờ ĐỨNG NGOÀI — n = 4 và n = 9 đều loại: n là 5, 6, 7 hoặc 8.",
+      "tone": "teal"
+     }
     ],
     "mantra": "BỜ ĐỨNG NGOÀI — SÂN CÙNG TỬ MẪU CHẠY NGƯỢC!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B19_M3_F3.png",
+   "sha256_16": "af029ac418fd1e41"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "1/3 = ?/12 — điền tử.",
-        "answerKey": {
-          "value": 4
-        }
-      }
+  {
+   "archetype": "fence_posts",
+   "params": {
+    "title": "CHẶN HAI BỜ: 1/3 < n/12 < 3/4 → 4 < n < 9",
+    "first": 4,
+    "last": 9,
+    "step": 1,
+    "show": 6,
+    "labels": [
+     "4",
+     "5",
+     "6",
+     "7",
+     "8",
+     "9"
     ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B19.M2",
-      "message": "Ôn quy đồng theo kẻ đứng im rồi ra sân bóng nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 20,
-        "narration": "Trận chặn mở màn: 1/3 < n/12 < 3/4. Trí Long quy sân chuẩn: 4/12 < n/12 < 9/12 — rồi hớn hở điểm danh \"4, 5, 6, 7, 8, 9 — sáu cầu thủ!\" Trọng tài Su Kem tuýt còi: hai bạn 4 và 9 đang… ĐỨNG TRÊN HÀNG RÀO kìa!",
-        "display": {
-          "type": "story_panel",
-          "caption": "{4,…,9} — sáu cầu thủ??"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để soi hàng rào!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 44,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Soi dấu: bé hơn NGHIÊM — không có gạch ngang! Bờ 4/12 chính là 1/3: n bằng 4 thì n/12 BẰNG bờ chứ đâu LỚN HƠN — loại! n bằng 9 chạm bờ 3/4 — loại nốt! Bờ để tựa mắt, không để đứng vào: sân chỉ còn NĂM, SÁU, BẢY, TÁM — bốn cầu thủ hợp lệ.",
-        "display": {
-          "type": "fence_field_interactive",
-          "spec": {
-            "left": "4/12",
-            "right": "9/12",
-            "inside": [
-              5,
-              6,
-              7,
-              8
-            ],
-            "out": [
-              4,
-              9
-            ]
-          }
-        },
-        "interaction": {
-          "type": "place_players",
-          "answerKey": {
-            "values": [
-              5,
-              6,
-              7,
-              8
-            ]
-          },
-          "successMessage": "Bờ đứng ngoài: n ∈ {5; 6; 7; 8}!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 16,
-        "item": {
-          "format": "mcq",
-          "text": "4/12 < n/12 < 9/12 thì n gồm:",
-          "choices": [
-            "5; 6; 7; 8",
-            "4; 5; …; 9",
-            "5; 6; 7"
-          ],
-          "answerKey": {
-            "choice": "5; 6; 7; 8"
-          },
-          "wrongFeedback": "Dấu < nghiêm — hai bờ loại.",
-          "objective": "O1",
-          "teaches": [
-            "K2"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "trap",
-        "estSeconds": 44,
-        "teaches": [
-          "K3",
-          "K4"
-        ],
-        "narration": "Sân đặc biệt: 8/n giữa 1/2 và 2/3 — kéo về CÙNG TỬ 8: bờ 8/16 và 8/12. Trí Long chép xuôi \"16 bé hơn n bé hơn 12\"… vô nghĩa! Sân cùng tử bảng tỉ số NGƯỢC: phân số to thì mẫu BÉ — viết riêng một dòng: mười hai bé hơn n bé hơn mười sáu: n là 13, 14, 15! Thử mép: 8/13 chưa chạm 2/3, 8/15 vẫn hơn 1/2 — chuẩn. Bài cụm sư phụ cũng vậy: chặn cụm (n + 3) từ 9 đến 13 rồi lùi về n từ 6 đến 10.",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "8/16 < 8/n < 8/12 → NGƯỢC: 12 < n < 16",
-            "n ∈ {13; 14; 15} · thử mép ✓",
-            "cụm (n+3) ∈ {9..13} → n ∈ {6..10}"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Hai thần chú sân bóng: bờ để tựa mắt — không để đứng vào! Sân cùng tử — mẫu chạy ngược: viết riêng một dòng!",
-        "display": {
-          "type": "mantra_card",
-          "text": "BỜ ĐỨNG NGOÀI · MẪU CHẠY NGƯỢC!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 90,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
-    },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Trận chặn mở màn: một phần ba bé hơn en phần mười hai bé hơn ba phần tư. Trí Long quy sân: bốn phần mười hai và chín phần mười hai — rồi hớn hở điểm danh bốn, năm, sáu, bảy, tám, chín — sáu cầu thủ! Trọng tài tuýt còi: hai bạn bốn và chín đang ĐỨNG TRÊN HÀNG RÀO kìa!",
-        "screenText": "1/3 < n/12 < 3/4 → {4,…,9}??",
-        "visual": "Sân bóng với hai hàng rào 4/12 · 9/12; hai cầu thủ số 4 và 9 vắt vẻo trên rào; còi trọng tài đỏ #C0392B.",
-        "assets": [],
-        "duration": 22
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Soi dấu: bé hơn NGHIÊM — không có gạch ngang! Bờ bốn phần mười hai chính là một phần ba: en bằng bốn thì BẰNG bờ chứ đâu lớn hơn — loại! En bằng chín chạm bờ ba phần tư — loại nốt! Bờ để tựa mắt, không để đứng vào: sân chỉ còn NĂM, SÁU, BẢY, TÁM — bốn cầu thủ hợp lệ!",
-        "screenText": "4 < n < 9 → n ∈ {5; 6; 7; 8} (bờ loại!)",
-        "visual": "Hai cầu thủ 4 và 9 bị mời xuống khỏi rào; bốn cầu thủ 5-8 đứng giữa sân sáng đèn teal #1FCBAB.",
-        "assets": [],
-        "duration": 23
-      },
-      {
-        "no": 3,
-        "templateHint": "trap_reveal",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Sân đặc biệt: tám phần en — kéo về CÙNG TỬ tám: bờ tám phần mười sáu và tám phần mười hai. Trí Long chép xuôi mười sáu bé hơn en bé hơn mười hai… vô nghĩa! Sân cùng tử bảng tỉ số NGƯỢC: phân số to thì mẫu BÉ — viết riêng một dòng: mười hai bé hơn en bé hơn mười sáu: MƯỜI BA, MƯỜI BỐN, MƯỜI LĂM! Thử mép — chuẩn!",
-        "screenText": "8/16 < 8/n < 8/12 → NGƯỢC: 12 < n < 16 → {13;14;15}",
-        "visual": "Bảng tỉ số điện tử hiển thị ngược chiều với mũi tên đảo; dòng '16 < n < 12' gạch đỏ; dòng riêng '12 < n < 16' đóng khung vàng.",
-        "assets": [],
-        "duration": 26
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Hai thần chú sân bóng: bờ để tựa mắt — không để đứng vào! Sân cùng tử — mẫu chạy ngược!",
-        "screenText": "BỜ ĐỨNG NGOÀI · MẪU CHẠY NGƯỢC!",
-        "visual": "Thẻ thần chú vàng với icon hàng rào và bảng tỉ số đảo.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Trận sư phụ chờ con: en cộng ba, tất cả phần mười bảy — nằm giữa một phần hai và bốn phần năm: tìm hết en! Vào bài luyện ngay!",
-        "screenText": "(n + 3)/17 giữa 1/2 và 4/5 → n?",
-        "visual": "Sân đấu cụm với cầu thủ '(n+3)'; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P3",
-        "assets": [],
-        "duration": 11
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Hai sân một trận",
-    "problem": "(a) Tìm mọi n: 1/3 < n/12 < 3/4. (b) Tìm mọi n: 8/n lớn hơn 1/2 và bé hơn 2/3.",
-    "steps": [
-      {
-        "show": "Bước 1 — Câu (a): chung sân mẫu 12: 4/12 < n/12 < 9/12 → 4 < n < 9 → {5; 6; 7; 8} (bờ loại!).",
-        "askBefore": {
-          "format": "mcq",
-          "text": "n = 4 có được lấy không?",
-          "choices": [
-            "Không — bằng bờ",
-            "Có — sát bờ vẫn tính",
-            "Tùy đề"
-          ],
-          "answerKey": {
-            "choice": "Không — bằng bờ"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Câu (b): chung sân tử 8: 8/16 < 8/n < 8/12."
-      },
-      {
-        "show": "Bước 3 — Mẫu chạy ngược, viết riêng: 12 < n < 16 → {13; 14; 15}. Thử mép ✓.",
-        "askAfter": {
-          "format": "mcq",
-          "text": "Trên sân cùng tử, phân số và mẫu chạy:",
-          "choices": [
-            "ngược chiều",
-            "cùng chiều",
-            "không liên quan"
-          ],
-          "answerKey": {
-            "choice": "ngược chiều"
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "lst",
-          "sourceItem": "ITEM:KSN5Q1.B19.LT6",
-          "text": "Tìm tất cả các số tự nhiên n sao cho: 1/3 < n/12 < 3/4.",
-          "answerKey": {
-            "values": [
-              5,
-              6,
-              7,
-              8
-            ],
-            "ordered": true,
-            "count": 4
-          },
-          "hints": [
-            "Chung sân mẫu 12: 4/12 và 9/12.",
-            "Dấu < nghiêm — bờ đứng ngoài!"
-          ],
-          "solutionNarrative": "4 < n < 9 → n ∈ {5; 6; 7; 8}.",
-          "teaches": [
-            "K1",
-            "K2"
-          ],
-          "generator": {
-            "template": "Tìm n: {p}/{q} < n/{m} < {r}/{s}.",
-            "constraints": {},
-            "answerRule": "quy cùng mẫu m, bờ loại"
-          }
-        }
-      ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "lst",
-          "sourceItem": "ITEM:KSN5Q1.B19.LT8",
-          "text": "Tìm tất cả các số tự nhiên n sao cho 8/n lớn hơn 1/2 và bé hơn 2/3. (Cẩn thận: sân cùng tử — mẫu chạy ngược!)",
-          "answerKey": {
-            "values": [
-              13,
-              14,
-              15
-            ],
-            "ordered": true,
-            "count": 3
-          },
-          "hints": [
-            "Cùng tử 8: 1/2 = 8/16; 2/3 = 8/12.",
-            "Mẫu chạy ngược: viết riêng 12 < n < 16."
-          ],
-          "solutionNarrative": "12 < n < 16 → n ∈ {13; 14; 15} (thử mép ✓).",
-          "teaches": [
-            "K3",
-            "K4"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P3",
-          "format": "lst",
-          "sourceItem": "ITEM:KSN5Q1.B19.LT9",
-          "text": "Sư phụ Trí Dũng đố: \"Tìm tất cả các số tự nhiên n sao cho (n + 3)/17 lớn hơn 1/2 và bé hơn 4/5.\"",
-          "answerKey": {
-            "values": [
-              6,
-              7,
-              8,
-              9,
-              10
-            ],
-            "ordered": true,
-            "count": 5
-          },
-          "hints": [
-            "Chặn cụm: 2 × (n + 3) > 17 và 5 × (n + 3) < 68.",
-            "Cụm từ 9 đến 13 → lùi 3."
-          ],
-          "solutionNarrative": "(n + 3) ∈ {9; …; 13} → n ∈ {6; 7; 8; 9; 10} (thử mép 9/17 và 13/17 ✓).",
-          "teaches": [
-            "K4"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1 và A2",
-    "onPass": {
-      "updateBKT": [
-        "CASE:II.1.3#3@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B20.M1",
-      "award": "huy_hieu_san_hai_bo"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B19.QZ4",
-        "text": "4/12 < n/12 < 9/12 thì n gồm:",
-        "choices": [
-          "5; 6; 7; 8",
-          "4; 5; …; 9",
-          "5; 6; 7"
-        ],
-        "answerKey": {
-          "choice": "5; 6; 7; 8"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K2"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B19.QZ5",
-        "text": "Trên sân cùng tử, phân số và mẫu số chạy:",
-        "choices": [
-          "ngược chiều nhau",
-          "cùng chiều",
-          "không liên quan"
-        ],
-        "answerKey": {
-          "choice": "ngược chiều nhau"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K3"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "lst",
-        "text": "Tìm mọi n: 1/4 < n/8 < 3/4.",
-        "answerKey": {
-          "values": [
-            3,
-            4,
-            5
-          ],
-          "ordered": true,
-          "count": 3
-        },
-        "teaches": [
-          "K1",
-          "K2"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Bài chặn hai bờ — hai luật sinh tử?",
-        "back": "(1) Dấu < nghiêm: HAI BỜ ĐỨNG NGOÀI (4 < n < 9 → {5;6;7;8}). (2) SÂN CÙNG TỬ: phân số và mẫu chạy NGƯỢC — viết điều kiện mẫu riêng một dòng (8/16 < 8/n < 8/12 → 12 < n < 16 → {13;14;15}). Chốt bằng THỬ MÉP."
-      }
+    "highlight": [
+     1,
+     2,
+     3,
+     4
     ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P3 (cụm n + 3)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con giải bài chặn hai bờ: bờ đứng ngoài và sân cùng tử mẫu chạy ngược. Con đạt {score}/3, {trapResult} câu bẫy.",
-    "homeActivity": "Kẻ hai vạch phấn làm rào, đặt các tấm số — con xếp cầu thủ hợp lệ vào sân và giải thích vì sao hai số biên phải đứng ngoài.",
-    "watchFor": "Nếu con lấy cả biên hoặc chép xuôi bất đẳng thức mẫu — thử mép với con (S3): thay số biên vào đề xem vế nào trượt."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B19.M3",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "{4,…,9} — sáu cầu thủ??",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "Trận chặn mở màn: 1/3 < n/12 < 3/4.",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "hai bạn 4 và 9 đang… ĐỨNG TRÊN HÀNG RÀO kìa!",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B19_M3_F1.png",
-      "sha256_16": "a5a9ec1ebeb3a385"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con giải trọn bài CHẶN: tìm mọi số tự nhiên n để phân số chứa n nằm giữa hai bờ — kéo cả ba lên CHUNG SÂN (cùng mẫu hoặc cùng tử), nhớ hai luật sinh tử: dấu < nghiêm — HAI BỜ ĐỨNG NGOÀI; và trên SÂN CÙNG TỬ, phân số với mẫu chạy NGƯỢC chiều — viết điều kiện mẫu riêng một dòng.",
-        "steps": [
-          {
-            "text": "8/16 < 8/n < 8/12 → NGƯỢC: 12 < n < 16 → {13;14;15}"
-          },
-          {
-            "text": "n ∈ {13; 14; 15} · thử mép"
-          },
-          {
-            "text": "cụm (n+3) ∈ {9..13} → n ∈ {6..10}"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B19_M3_F2.png",
-      "sha256_16": "c92410c6767b9dc0"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Bài chặn kiểu n/12 (mẫu chứa n đứng im)",
-            "text": "kéo hai bờ về CÙNG MẪU 12: 1/3 < n/12 < 3/4 → 4/12 < n/12 < 9/12 → 4 < n < 9.",
-            "tone": "navy"
-          },
-          {
-            "label": "Dấu < NGHIÊM (không có gạch ngang)",
-            "text": "hai bờ ĐỨNG NGOÀI — n = 4 và n = 9 đều loại: n ∈ {5; 6; 7; 8}.",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "BỜ ĐỨNG NGOÀI — SÂN CÙNG TỬ MẪU CHẠY NGƯỢC!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B19_M3_F3.png",
-      "sha256_16": "31ec520f7e2ed0db"
-    },
-    {
-      "archetype": "fence_posts",
-      "params": {
-        "title": "CHẶN HAI BỜ: 1/3 < n/12 < 3/4  →  4 < n < 9",
-        "first": 4,
-        "last": 9,
-        "step": 1,
-        "show": 6,
-        "labels": [
-          "4",
-          "5",
-          "6",
-          "7",
-          "8",
-          "9"
-        ],
-        "highlight": [
-          1,
-          2,
-          3,
-          4
-        ],
-        "show_step": false,
-        "gap_note": "hai BỜ đứng ngoài — không được nhận",
-        "formula": "n ∈ {5; 6; 7; 8} — bốn số",
-        "note": "Sân cùng tử thì mẫu chạy ngược: 8/16 < 8/n < 8/12 → 12 < n < 16"
-      },
-      "caption": "Kéo cả ba lên chung sân rồi đọc — nhớ hai bờ đứng ngoài",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B19_M3_F4.png",
-      "sha256_16": "28d2057057774748"
-    }
-  ]
+    "show_step": false,
+    "gap_note": "hai BỜ đứng ngoài — không được nhận",
+    "formula": "n là 5, 6, 7 hoặc 8 — bốn số",
+    "note": "Sân cùng tử thì mẫu chạy ngược: 8/16 < 8/n < 8/12 → 12 < n < 16"
+   },
+   "caption": "Kéo cả ba lên chung sân rồi đọc — nhớ hai bờ đứng ngoài",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B19_M3_F4.png",
+   "sha256_16": "5a1402b0ed9a00f0"
+  }
+ ]
 }

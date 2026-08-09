@@ -1,666 +1,666 @@
 {
-  "title": "Đổi chỗ chữ số: họ TỔNG bình an — họ TẬN CÙNG khám lại",
-  "grade": 5,
-  "durationMinutes": 7,
-  "skills": {
-    "primary": [
-      "CASE:I.1.4#3"
+ "title": "Đổi chỗ chữ số: họ TỔNG bình an — họ TẬN CÙNG khám lại",
+ "grade": 5,
+ "durationMinutes": 7,
+ "skills": {
+  "primary": [
+   "CASE:I.1.4#3"
+  ],
+  "bktUnit": "CASE:I.1.4#3@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B3",
+  "order": 3,
+  "prev": "DL:KSN5Q1.B3.M2",
+  "next": "DL:KSN5Q1.B4.M1"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B3",
+  "chunks": [
+   "CHUNK:KSN5Q1.B3.S4",
+   "CHUNK:KSN5Q1.B3.S6"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B3.4"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B3.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con phân biệt được hai HỌ dấu hiệu chia hết khi đổi chỗ chữ số: họ TỔNG (chia 3, chia 9) bất biến vì tổng chữ số không đổi; họ TẬN CÙNG (chia 2, chia 5) phải kiểm tra lại vì chữ số cuối đã thay đổi.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "kidText": "Đổi chỗ hai chữ số thì chia 3 và chia 9 vẫn y nguyên, còn chia 2 và chia 5 phải khám lại. Con phân biệt được hai họ."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Đổi chỗ các chữ số KHÔNG làm thay đổi TỔNG các chữ số — nên dấu hiệu chia hết cho 3 và cho 9 (họ TỔNG) được bảo toàn."
+   },
+   {
+    "id": "K2",
+    "text": "Đổi chỗ các chữ số CÓ THỂ làm thay đổi chữ số TẬN CÙNG — nên dấu hiệu chia hết cho 2 và cho 5 (họ TẬN CÙNG) phải khám lại từng trường hợp."
+   },
+   {
+    "id": "K3",
+    "text": "Quy trình trả lời: chẻ câu hỏi làm hai họ TRƯỚC, rồi mới phán — họ tổng trả lời 'chắc chắn', họ tận cùng trả lời 'chưa chắc, phải xem chữ số cuối mới'."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: HAI GIA TỘC DẤU HIỆU. Gia tộc TỔNG (số 3 và số 9) chỉ nhìn TÚI CHUNG của cả nhà — đổi chỗ các thành viên thì túi chung vẫn từng ấy tiền, nên gia tộc Tổng bình an vô sự. Gia tộc TẬN CÙNG (số 2 và số 5) chỉ nhìn NGƯỜI GÁC CỔNG (chữ số cuối) — đổi chỗ là đổi người gác cổng, phải khám lại từ đầu. Trước mọi câu hỏi 'đổi chỗ xong còn chia hết không?', việc đầu tiên là hỏi: dấu hiệu này thuộc gia tộc nào?",
+  "canonicalExamples": [
+   {
+    "case": "ca chuẩn của bài",
+    "problem": "Một số có hai chữ số chia hết cho 9. Đổi chỗ hai chữ số: số mới có chắc chắn chia hết cho 9 không? Có chắc chắn chia hết cho 2 không?",
+    "solution": "Chia 9 thuộc họ TỔNG: tổng chữ số không đổi → CHẮC CHẮN vẫn chia hết cho 9. Chia 2 thuộc họ TẬN CÙNG: chữ số cuối đã đổi → CHƯA chắc, phải xem số mới.",
+    "why": "Đề gốc LT8 — trả lời hai vế bằng hai họ."
+   },
+   {
+    "case": "phản chứng họ tận cùng",
+    "problem": "Số 18 chia hết cho cả 9 và 2. Viết ngược thành 81 — còn chia hết cho 9 và cho 2 không?",
+    "solution": "81: tổng chữ số vẫn 9 → chia hết cho 9 ✓ (họ tổng bình an). Nhưng tận cùng là 1 (lẻ) → KHÔNG chia hết cho 2 (người gác cổng đã đổi).",
+    "why": "Phản chứng số đôi 18/81 — nguồn bẫy CĐ-3.3."
+   },
+   {
+    "case": "họ tận cùng may mắn",
+    "problem": "Số 20 chia hết cho 5. Đổi chỗ thành 02 = 2 — chuyện gì xảy ra?",
+    "solution": "Đây vừa là bài họ tận cùng vừa dính gương vỡ (bài trước): 02 chỉ là 2 — vừa mất chữ số vừa hết chia hết cho 5. Hai bẫy có thể chồng nhau!",
+    "why": "Nối kiến thức M2 (gương vỡ) với M3."
+   }
+  ],
+  "numberRange": "Lớp 5: số 2–3 chữ số; dấu hiệu chia hết 2, 3, 5, 9 theo chương trình.",
+  "misconceptions": [
+   {
+    "wrong": "Suy 'đổi chỗ giữ mọi dấu hiệu chia hết' (81 vẫn chia hết cho 2 vì 18 chia hết).",
+    "signal": "Trả lời 'vẫn chia hết cho 2' không kiểm chữ số cuối.",
+    "fix": "chẻ hai họ trước khi trả lời; họ tận cùng phải khám người gác cổng mới.",
+    "counterExample": "18 chia hết cho 2 nhưng 81 lẻ."
+   }
+  ],
+  "vocabulary": [
+   "gia tộc TỔNG (3, 9)",
+   "gia tộc TẬN CÙNG (2, 5)",
+   "túi chung",
+   "người gác cổng"
+  ],
+  "mantra": "ĐỔI CHỖ: HỌ TỔNG BÌNH AN — HỌ TẬN CÙNG KHÁM LẠI!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "mcq",
+    "text": "Số chia hết cho 9 khi nào?",
+    "choices": [
+     "Tận cùng là 9",
+     "Tổng các chữ số chia hết cho 9",
+     "Có chữ số 9"
     ],
-    "bktUnit": "CASE:I.1.4#3@G5"
+    "answerKey": {
+     "choice": "Tổng các chữ số chia hết cho 9"
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "ôn dấu hiệu chia hết 2, 3, 5, 9 (hạt mầm lớp 4)",
+   "message": "Ôn nhanh bốn dấu hiệu chia hết rồi quay lại gặp hai gia tộc nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Cáo Đề chỉ số 18: \"Chia hết cho cả 9 và 2 nhé. Giờ viết ngược thành 81 — thì vẫn chia hết cho cả hai chứ gì?\" Trí Long định gật… Su Kem kéo áo: \"Khoan, hỏi hai GIA TỘC đã!\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "18 → 81: còn chia hết cho 9? còn chia hết cho 2?"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để gặp hai gia tộc!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 42,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Gia tộc TỔNG chỉ nhìn túi chung: 18 có tổng 1 + 8 = 9; đổi thành 81 túi chung vẫn 9 → chia 9 bình an. Gia tộc TẬN CÙNG chỉ nhìn người gác cổng: 18 gác cổng là 8 (chẵn); 81 đổi gác cổng thành 1 (lẻ) → chia 2 sụp đổ! Con kéo từng dấu hiệu về đúng gia tộc.",
+    "display": {
+     "type": "sort_interactive",
+     "spec": {
+      "families": {
+       "HỌ TỔNG": [
+        "chia 3",
+        "chia 9"
+       ],
+       "HỌ TẬN CÙNG": [
+        "chia 2",
+        "chia 5"
+       ]
+      }
+     }
+    },
+    "interaction": {
+     "type": "sort_cards",
+     "prompt": "Kéo 4 dấu hiệu về đúng gia tộc:",
+     "cards": [
+      "chia 2",
+      "chia 3",
+      "chia 5",
+      "chia 9"
+     ],
+     "answerKey": {
+      "HỌ TỔNG": [
+       "chia 3",
+       "chia 9"
+      ],
+      "HỌ TẬN CÙNG": [
+       "chia 2",
+       "chia 5"
+      ]
+     }
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 16,
+    "item": {
+     "format": "tf",
+     "text": "(Đúng/Sai?) Số 45 chia hết cho 9; đổi chỗ thành 54 thì chắc chắn vẫn chia hết cho 9.",
+     "answerKey": {
+      "value": true
+     },
+     "wrongFeedback": "Chia 9 là họ TỔNG — túi chung 4 + 5 = 9 không đổi.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "trap",
+    "estSeconds": 30,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Xử vụ 18: chia 9 — họ tổng, túi chung vẫn 9, CHẮC CHẮN. Chia 2 — họ tận cùng, gác cổng mới là số 1 lẻ nhoẹt, HẾT chia hết! Trước mọi câu 'đổi chỗ còn chia hết không', câu cửa miệng là: dấu hiệu này thuộc gia tộc nào?",
+    "display": {
+     "type": "counter_example",
+     "cases": [
+      {
+       "input": "81 ⋮ 9?",
+       "output": "CÓ (tổng 9)",
+       "valid": true,
+       "reason": "họ tổng"
+      },
+      {
+       "input": "81 ⋮ 2?",
+       "output": "KHÔNG (tận cùng 1)",
+       "valid": false,
+       "reason": "họ tận cùng — khám lại"
+      }
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 12,
+    "narration": "Câu cần nhớ: đổi chỗ — họ tổng bình an, họ tận cùng khám lại!",
+    "display": {
+     "type": "mantra_card",
+     "text": "ĐỔI CHỖ: HỌ TỔNG BÌNH AN — HỌ TẬN CÙNG KHÁM LẠI!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 78,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B3",
-    "order": 3,
-    "prev": "DL:KSN5Q1.B3.M2",
-    "next": "DL:KSN5Q1.B4.M1"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B3",
-    "chunks": [
-      "CHUNK:KSN5Q1.B3.S4",
-      "CHUNK:KSN5Q1.B3.S6"
-    ],
-    "cases": [
-      "CA:KSN5Q1.B3.4"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B3.3"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Cáo Đề chỉ số mười tám: chia hết cho cả chín và hai nhé! Giờ viết ngược thành tám mươi mốt — vẫn chia hết cho cả hai chứ gì? Trí Long định gật… Su Kem kéo áo: khoan, hỏi hai gia tộc đã!",
+    "screenText": "18 → 81: còn ⋮9? còn ⋮2?",
+    "visual": "Thẻ '18' lật thành '81'; Cáo Đề nheo mắt; hai huy hiệu gia tộc TỔNG và TẬN CÙNG hiện mờ hai góc.",
+    "assets": [],
+    "duration": 16
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Gia tộc TỔNG — số ba và số chín — chỉ nhìn túi chung cả nhà: mười tám có túi chung một cộng tám bằng chín; đổi thành tám mốt, túi chung vẫn chín — bình an! Gia tộc TẬN CÙNG — số hai và số năm — chỉ nhìn người gác cổng: gác cổng cũ là tám, gác cổng mới là một — phải khám lại từ đầu!",
+    "screenText": "HỌ TỔNG (3·9): túi chung · HỌ TẬN CÙNG (2·5): gác cổng",
+    "visual": "Hai dinh thự: bên trái 'TỔNG' với túi tiền chung ghi '9'; bên phải 'TẬN CÙNG' với người gác cổng đổi ca 8 → 1; các dấu hiệu 2·3·5·9 bay về đúng dinh.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 3,
+    "templateHint": "trap_reveal",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Phán quyết vụ mười tám: chia chín — họ tổng, túi chung vẫn chín, CHẮC CHẮN còn chia hết! Chia hai — họ tận cùng, gác cổng mới là số một lẻ nhoẹt — HẾT chia hết! Cùng một phép đổi chỗ, hai số phận khác nhau.",
+    "screenText": "81 ⋮ 9 ✓ · 81 ⋮ 2 ✗",
+    "visual": "Bảng phán quyết hai dòng: dòng ⋮9 mộc xanh ✓; dòng ⋮2 mộc đỏ ✗ kèm chú thích 'tận cùng 1 — lẻ'.",
+    "assets": [],
+    "duration": 17
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú hai gia tộc: đổi chỗ — họ tổng bình an, họ tận cùng khám lại!",
+    "screenText": "HỌ TỔNG BÌNH AN — HỌ TẬN CÙNG KHÁM LẠI!",
+    "visual": "Thẻ thần chú vàng, hai huy hiệu gia tộc hai góc.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Đến lượt con phán quyết: số bốn mươi lăm chia hết cho cả chín và năm — viết ngược thành năm mươi tư thì còn chia hết cho số nào? Vào bài luyện ngay!",
+    "screenText": "45 → 54: còn ⋮ 9? ⋮ 5?",
+    "visual": "Thẻ '45' lật thành '54' với hai dấu hỏi; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 12
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Phán quyết vụ đổi chỗ",
+  "problem": "Một số có hai chữ số chia hết cho 9. Đổi chỗ hai chữ số của nó: số mới có chắc chắn chia hết cho 9 không? Có chắc chắn chia hết cho 2 không?",
+  "steps": [
+   {
+    "show": "Bước 1 — Chẻ câu hỏi làm hai họ: chia 9 → họ TỔNG; chia 2 → họ TẬN CÙNG.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Dấu hiệu chia hết cho 9 nhìn vào đâu?",
+     "choices": [
+      "Chữ số tận cùng",
+      "Tổng các chữ số",
+      "Chữ số đầu tiên"
+     ],
+     "answerKey": {
+      "choice": "Tổng các chữ số"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Họ tổng: đổi chỗ không đổi tổng chữ số → CHẮC CHẮN vẫn chia hết cho 9."
+   },
+   {
+    "show": "Bước 3 — Họ tận cùng: chữ số cuối đã thay đổi → CHƯA chắc chia hết cho 2; phải xem số cụ thể (18 → 81: hết chia hết).",
+    "askAfter": {
+     "format": "tf",
+     "text": "(Đúng/Sai?) 36 đổi chỗ thành 63: 63 vẫn chia hết cho 9.",
+     "answerKey": {
+      "value": true
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "text": "Xếp bốn dấu hiệu chia hết vào đúng họ: chia 2 · chia 3 · chia 5 · chia 9.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "HỌ TỔNG (nhìn tổng chữ số)",
+        "value": "chia 3; chia 9",
+        "options": [
+         "chia 3; chia 9",
+         "chia 2; chia 5"
+        ]
+       },
+       {
+        "label": "HỌ TẬN CÙNG (nhìn chữ số cuối)",
+        "value": "chia 2; chia 5",
+        "options": [
+         "chia 3; chia 9",
+         "chia 2; chia 5"
+        ]
+       }
+      ]
+     },
+     "hints": [
+      "Họ nào nhìn túi chung, họ nào nhìn gác cổng?",
+      "3 và 9 nhìn tổng chữ số."
+     ],
+     "solutionNarrative": "HỌ TỔNG: chia 3, chia 9 — cộng hết chữ số lại mới biết. HỌ TẬN CÙNG: chia 2, chia 5 — chỉ liếc chữ số cuối.",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B3.LT8",
+     "text": "Một số có hai chữ số chia hết cho 9. Đổi chỗ hai chữ số: số mới có chắc chắn chia hết cho 9 không? Có chắc chắn chia hết cho 2 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chia 9",
+        "value": "CHẮC CHẮN — họ tổng, tổng chữ số không đổi",
+        "options": [
+         "CHẮC CHẮN",
+         "CHƯA chắc"
+        ]
+       },
+       {
+        "label": "chia 2",
+        "value": "CHƯA chắc — họ tận cùng, chữ số cuối đã đổi",
+        "options": [
+         "CHẮC CHẮN",
+         "CHƯA chắc"
+        ]
+       }
+      ]
+     },
+     "hints": [
+      "Chẻ hai họ trước.",
+      "18 → 81 là phản chứng cho họ nào?"
+     ],
+     "solutionNarrative": "Chia 9: CHẮC (họ TỔNG). Chia 2: CHƯA chắc (họ TẬN CÙNG — xem 18 → 81).",
+     "teaches": [
+      "K1",
+      "K2",
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "text": "Số 90 chia hết cho 2, 3, 5, 9. Viết ngược thành 09 = 9. Dấu hiệu nào còn, dấu hiệu nào mất — và có chuyện gì đặc biệt xảy ra?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "còn",
+        "value": "chia 3, chia 9 (họ tổng)",
+        "options": [
+         "chia 3, chia 9",
+         "chia 2, chia 5"
+        ]
+       },
+       {
+        "label": "mất",
+        "value": "chia 2, chia 5 (tận cùng 9)",
+        "options": [
+         "chia 3, chia 9",
+         "chia 2, chia 5"
+        ]
+       },
+       {
+        "label": "đặc biệt",
+        "value": "09 mất một chữ số — gương vỡ (bài trước) chồng lên bài này"
+       }
+      ]
+     },
+     "hints": [
+      "Họ tổng có mất không?",
+      "Số tận cùng 0 soi gương thì sao?"
+     ],
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:I.1.4#3@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B4.M1",
+   "award": "huy_hieu_hai_gia_toc"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B: biến thể 27/72, 45/54"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "text": "(Đúng/Sai?) Số 18 chia hết cho 2; viết ngược thành 81 thì 81 cũng chia hết cho 2.",
+    "answerKey": {
+     "value": false
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2",
+     "K3"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "tf",
+    "text": "(Đúng/Sai?) Một số chia hết cho 3 thì đổi chỗ các chữ số, số mới vẫn chia hết cho 3.",
+    "answerKey": {
+     "value": true
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mcq",
+    "text": "Số 45 viết ngược thành 54. Số 54 chia hết cho:",
+    "choices": [
+     "9 (không chia hết 5)",
+     "5 (không chia hết 9)",
+     "cả 9 và 5"
+    ],
+    "answerKey": {
+     "choice": "9 (không chia hết 5)"
+    },
+    "teaches": [
+     "K1",
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Đổi chỗ chữ số: dấu hiệu nào giữ, dấu hiệu nào phải khám lại?",
+    "back": "Họ TỔNG (chia 3, 9) BÌNH AN — tổng chữ số không đổi. Họ TẬN CÙNG (chia 2, 5) KHÁM LẠI — người gác cổng đã đổi. Chẻ hai họ trước khi trả lời!"
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu P2 biến thể",
+   "+7 ngày: câu P3 (chồng bẫy gương vỡ)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học hai 'gia tộc' dấu hiệu chia hết khi đổi chỗ chữ số. Con đạt {score}/3, {trapResult} câu bẫy 18/81.",
+  "homeActivity": "Đố nhanh: '36 chia hết cho 9 và cho 2. Đảo thành 63 thì sao?' — con trả lời '63 vẫn chia 9 (họ tổng) nhưng hết chia 2 (tận cùng lẻ)' là đạt.",
+  "watchFor": "Nếu con nghĩ mọi dấu hiệu đều giữ khi đảo số — mở lại màn hai dinh thự (S2) cùng con."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B3.M3",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "18 → 81: còn chia hết cho 9? còn chia hết cho 2?",
+    "lines": [
+     {
+      "who": "Cáo Đề",
+      "say": "Chia hết cho cả 9 và 2 nhé. Giờ viết ngược thành 81 — thì vẫn chia hết cho cả hai chứ gì?",
+      "tone": "wrong"
+     },
+     {
+      "who": "Trí Long",
+      "say": "Khoan, hỏi hai GIA TỘC đã!",
+      "tone": "wrong"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B3_M3_F1.png",
+   "sha256_16": "544c7ddfcc8a1575"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con phân biệt được hai HỌ dấu hiệu chia hết khi đổi chỗ chữ số: họ TỔNG (chia 3, chia 9) bất biến vì tổng chữ số không đổi; họ TẬN CÙNG (chia 2, chia 5) phải kiểm tra lại vì chữ số cuối đã thay đổi.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1",
-    "kidText": "Đổi chỗ hai chữ số thì chia 3 và chia 9 vẫn y nguyên, còn chia 2 và chia 5 phải khám lại. Con phân biệt được hai họ."
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
+    "wrong": {
+     "head": "CÁCH SAI",
+     "steps": [
+      "81 chia hết cho 2?"
+     ],
+     "result": "KHÔNG (tận cùng 1)"
+    },
+    "right": {
+     "head": "CÁCH ĐÚNG",
+     "steps": [
+      "81 chia hết cho 9?"
+     ],
+     "result": "CÓ (tổng 9)"
+    },
+    "verdict": "họ tổng"
+   },
+   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B3_M3_F2.png",
+   "sha256_16": "375999ecc060e74c"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Đổi chỗ các chữ số KHÔNG làm thay đổi TỔNG các chữ số — nên dấu hiệu chia hết cho 3 và cho 9 (họ TỔNG) được bảo toàn."
-      },
-      {
-        "id": "K2",
-        "text": "Đổi chỗ các chữ số CÓ THỂ làm thay đổi chữ số TẬN CÙNG — nên dấu hiệu chia hết cho 2 và cho 5 (họ TẬN CÙNG) phải khám lại từng trường hợp."
-      },
-      {
-        "id": "K3",
-        "text": "Quy trình trả lời: chẻ câu hỏi làm hai họ TRƯỚC, rồi mới phán — họ tổng trả lời 'chắc chắn', họ tận cùng trả lời 'chưa chắc, phải xem chữ số cuối mới'."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: HAI GIA TỘC DẤU HIỆU. Gia tộc TỔNG (số 3 và số 9) chỉ nhìn TÚI CHUNG của cả nhà — đổi chỗ các thành viên thì túi chung vẫn từng ấy tiền, nên gia tộc Tổng bình an vô sự. Gia tộc TẬN CÙNG (số 2 và số 5) chỉ nhìn NGƯỜI GÁC CỔNG (chữ số cuối) — đổi chỗ là đổi người gác cổng, phải khám lại từ đầu. Trước mọi câu hỏi 'đổi chỗ xong còn chia hết không?', việc đầu tiên là hỏi: dấu hiệu này thuộc gia tộc nào?",
-    "canonicalExamples": [
-      {
-        "case": "ca chuẩn của bài",
-        "problem": "Một số có hai chữ số chia hết cho 9. Đổi chỗ hai chữ số: số mới có chắc chắn chia hết cho 9 không? Có chắc chắn chia hết cho 2 không?",
-        "solution": "Chia 9 thuộc họ TỔNG: tổng chữ số không đổi → CHẮC CHẮN vẫn chia hết cho 9. Chia 2 thuộc họ TẬN CÙNG: chữ số cuối đã đổi → CHƯA chắc, phải xem số mới.",
-        "why": "Đề gốc LT8 — trả lời hai vế bằng hai họ."
-      },
-      {
-        "case": "phản chứng họ tận cùng",
-        "problem": "Số 18 chia hết cho cả 9 và 2. Viết ngược thành 81 — còn chia hết cho 9 và cho 2 không?",
-        "solution": "81: tổng chữ số vẫn 9 → chia hết cho 9 ✓ (họ tổng bình an). Nhưng tận cùng là 1 (lẻ) → KHÔNG chia hết cho 2 (người gác cổng đã đổi).",
-        "why": "Phản chứng số đôi 18/81 — nguồn bẫy CĐ-3.3."
-      },
-      {
-        "case": "họ tận cùng may mắn",
-        "problem": "Số 20 chia hết cho 5. Đổi chỗ thành 02 = 2 — chuyện gì xảy ra?",
-        "solution": "Đây vừa là bài họ tận cùng vừa dính gương vỡ (bài trước): 02 chỉ là 2 — vừa mất chữ số vừa hết chia hết cho 5. Hai bẫy có thể chồng nhau!",
-        "why": "Nối kiến thức M2 (gương vỡ) với M3."
-      }
-    ],
-    "numberRange": "Lớp 5: số 2–3 chữ số; dấu hiệu chia hết 2, 3, 5, 9 theo chương trình.",
-    "misconceptions": [
-      {
-        "wrong": "Suy 'đổi chỗ giữ mọi dấu hiệu chia hết' (81 vẫn chia hết cho 2 vì 18 chia hết).",
-        "signal": "Trả lời 'vẫn chia hết cho 2' không kiểm chữ số cuối.",
-        "fix": "K3 — chẻ hai họ trước khi trả lời; họ tận cùng phải khám người gác cổng mới.",
-        "counterExample": "18 ⋮ 2 nhưng 81 lẻ."
-      }
-    ],
-    "vocabulary": [
-      "gia tộc TỔNG (3, 9)",
-      "gia tộc TẬN CÙNG (2, 5)",
-      "túi chung",
-      "người gác cổng"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "text": "Đổi chỗ các chữ số KHÔNG làm thay đổi TỔNG các chữ số — nên dấu hiệu chia hết cho 3 và cho 9 (họ TỔNG) được bảo toàn.",
+      "tone": "navy"
+     },
+     {
+      "text": "Đổi chỗ các chữ số CÓ THỂ làm thay đổi chữ số TẬN CÙNG — nên dấu hiệu chia hết cho 2 và cho 5 (họ TẬN CÙNG) phải khám lại từng trường hợp.",
+      "tone": "teal"
+     }
     ],
     "mantra": "ĐỔI CHỖ: HỌ TỔNG BÌNH AN — HỌ TẬN CÙNG KHÁM LẠI!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B3_M3_F3.png",
+   "sha256_16": "0b03b7ebdd49ed50"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "mcq",
-        "text": "Số chia hết cho 9 khi nào?",
-        "choices": [
-          "Tận cùng là 9",
-          "Tổng các chữ số chia hết cho 9",
-          "Có chữ số 9"
-        ],
-        "answerKey": {
-          "choice": "Tổng các chữ số chia hết cho 9"
-        }
-      }
+  {
+   "archetype": "place_value_chart",
+   "params": {
+    "title": "ĐỔI CHỖ CHỮ SỐ: 18 → 81",
+    "headers": [
+     "chục",
+     "đơn vị"
     ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "ôn dấu hiệu chia hết 2, 3, 5, 9 (hạt mầm lớp 4)",
-      "message": "Ôn nhanh bốn dấu hiệu chia hết rồi quay lại gặp hai gia tộc nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 18,
-        "narration": "Cáo Đề chỉ số 18: \"Chia hết cho cả 9 và 2 nhé. Giờ viết ngược thành 81 — thì vẫn chia hết cho cả hai chứ gì?\" Trí Long định gật… Su Kem kéo áo: \"Khoan, hỏi hai GIA TỘC đã!\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "18 → 81: còn ⋮ 9? còn ⋮ 2?"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để gặp hai gia tộc!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 42,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Gia tộc TỔNG chỉ nhìn túi chung: 18 có tổng 1 + 8 = 9; đổi thành 81 túi chung vẫn 9 → chia 9 bình an. Gia tộc TẬN CÙNG chỉ nhìn người gác cổng: 18 gác cổng là 8 (chẵn); 81 đổi gác cổng thành 1 (lẻ) → chia 2 sụp đổ! Con kéo từng dấu hiệu về đúng gia tộc.",
-        "display": {
-          "type": "sort_interactive",
-          "spec": {
-            "families": {
-              "HỌ TỔNG": [
-                "chia 3",
-                "chia 9"
-              ],
-              "HỌ TẬN CÙNG": [
-                "chia 2",
-                "chia 5"
-              ]
-            }
-          }
-        },
-        "interaction": {
-          "type": "sort_cards",
-          "prompt": "Kéo 4 dấu hiệu về đúng gia tộc:",
-          "cards": [
-            "chia 2",
-            "chia 3",
-            "chia 5",
-            "chia 9"
-          ],
-          "answerKey": {
-            "HỌ TỔNG": [
-              "chia 3",
-              "chia 9"
-            ],
-            "HỌ TẬN CÙNG": [
-              "chia 2",
-              "chia 5"
-            ]
-          }
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 16,
-        "item": {
-          "format": "tf",
-          "text": "(Đúng/Sai?) Số 45 chia hết cho 9; đổi chỗ thành 54 thì chắc chắn vẫn chia hết cho 9.",
-          "answerKey": {
-            "value": true
-          },
-          "wrongFeedback": "Chia 9 là họ TỔNG — túi chung 4 + 5 = 9 không đổi.",
-          "objective": "O1",
-          "teaches": [
-            "K1"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "trap",
-        "estSeconds": 30,
-        "teaches": [
-          "K3"
-        ],
-        "narration": "Xử vụ 18: chia 9 — họ tổng, túi chung vẫn 9, CHẮC CHẮN. Chia 2 — họ tận cùng, gác cổng mới là số 1 lẻ nhoẹt, HẾT chia hết! Trước mọi câu 'đổi chỗ còn chia hết không', câu cửa miệng là: dấu hiệu này thuộc gia tộc nào?",
-        "display": {
-          "type": "counter_example",
-          "cases": [
-            {
-              "input": "81 ⋮ 9?",
-              "output": "CÓ (tổng 9)",
-              "valid": true,
-              "reason": "họ tổng"
-            },
-            {
-              "input": "81 ⋮ 2?",
-              "output": "KHÔNG (tận cùng 1)",
-              "valid": false,
-              "reason": "họ tận cùng — khám lại"
-            }
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 12,
-        "narration": "Thần chú hai gia tộc: đổi chỗ — họ tổng bình an, họ tận cùng khám lại!",
-        "display": {
-          "type": "mantra_card",
-          "text": "ĐỔI CHỖ: HỌ TỔNG BÌNH AN — HỌ TẬN CÙNG KHÁM LẠI!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 78,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
-    },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Cáo Đề chỉ số mười tám: chia hết cho cả chín và hai nhé! Giờ viết ngược thành tám mươi mốt — vẫn chia hết cho cả hai chứ gì? Trí Long định gật… Su Kem kéo áo: khoan, hỏi hai gia tộc đã!",
-        "screenText": "18 → 81: còn ⋮9? còn ⋮2?",
-        "visual": "Thẻ '18' lật thành '81'; Cáo Đề nheo mắt; hai huy hiệu gia tộc TỔNG và TẬN CÙNG hiện mờ hai góc.",
-        "assets": [],
-        "duration": 16
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Gia tộc TỔNG — số ba và số chín — chỉ nhìn túi chung cả nhà: mười tám có túi chung một cộng tám bằng chín; đổi thành tám mốt, túi chung vẫn chín — bình an! Gia tộc TẬN CÙNG — số hai và số năm — chỉ nhìn người gác cổng: gác cổng cũ là tám, gác cổng mới là một — phải khám lại từ đầu!",
-        "screenText": "HỌ TỔNG (3·9): túi chung · HỌ TẬN CÙNG (2·5): gác cổng",
-        "visual": "Hai dinh thự: bên trái 'TỔNG' với túi tiền chung ghi '9'; bên phải 'TẬN CÙNG' với người gác cổng đổi ca 8 → 1; các dấu hiệu 2·3·5·9 bay về đúng dinh.",
-        "assets": [],
-        "duration": 25
-      },
-      {
-        "no": 3,
-        "templateHint": "trap_reveal",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Phán quyết vụ mười tám: chia chín — họ tổng, túi chung vẫn chín, CHẮC CHẮN còn chia hết! Chia hai — họ tận cùng, gác cổng mới là số một lẻ nhoẹt — HẾT chia hết! Cùng một phép đổi chỗ, hai số phận khác nhau.",
-        "screenText": "81 ⋮ 9 ✓ · 81 ⋮ 2 ✗",
-        "visual": "Bảng phán quyết hai dòng: dòng ⋮9 mộc xanh ✓; dòng ⋮2 mộc đỏ ✗ kèm chú thích 'tận cùng 1 — lẻ'.",
-        "assets": [],
-        "duration": 17
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú hai gia tộc: đổi chỗ — họ tổng bình an, họ tận cùng khám lại!",
-        "screenText": "HỌ TỔNG BÌNH AN — HỌ TẬN CÙNG KHÁM LẠI!",
-        "visual": "Thẻ thần chú vàng, hai huy hiệu gia tộc hai góc.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Đến lượt con phán quyết: số bốn mươi lăm chia hết cho cả chín và năm — viết ngược thành năm mươi tư thì còn chia hết cho số nào? Vào bài luyện ngay!",
-        "screenText": "45 → 54: còn ⋮ 9? ⋮ 5?",
-        "visual": "Thẻ '45' lật thành '54' với hai dấu hỏi; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P2",
-        "assets": [],
-        "duration": 12
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Phán quyết vụ đổi chỗ",
-    "problem": "Một số có hai chữ số chia hết cho 9. Đổi chỗ hai chữ số của nó: số mới có chắc chắn chia hết cho 9 không? Có chắc chắn chia hết cho 2 không?",
-    "steps": [
-      {
-        "show": "Bước 1 — Chẻ câu hỏi làm hai họ: chia 9 → họ TỔNG; chia 2 → họ TẬN CÙNG.",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Dấu hiệu chia hết cho 9 nhìn vào đâu?",
-          "choices": [
-            "Chữ số tận cùng",
-            "Tổng các chữ số",
-            "Chữ số đầu tiên"
-          ],
-          "answerKey": {
-            "choice": "Tổng các chữ số"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Họ tổng: đổi chỗ không đổi tổng chữ số → CHẮC CHẮN vẫn chia hết cho 9."
-      },
-      {
-        "show": "Bước 3 — Họ tận cùng: chữ số cuối đã thay đổi → CHƯA chắc chia hết cho 2; phải xem số cụ thể (18 → 81: hết chia hết).",
-        "askAfter": {
-          "format": "tf",
-          "text": "(Đúng/Sai?) 36 đổi chỗ thành 63: 63 vẫn chia hết cho 9.",
-          "answerKey": {
-            "value": true
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "mb",
-          "text": "Xếp bốn dấu hiệu chia hết vào đúng họ: chia 2 · chia 3 · chia 5 · chia 9.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "HỌ TỔNG (nhìn tổng chữ số)",
-                "value": "chia 3; chia 9",
-                "options": [
-                  "chia 3; chia 9",
-                  "chia 2; chia 5"
-                ]
-              },
-              {
-                "label": "HỌ TẬN CÙNG (nhìn chữ số cuối)",
-                "value": "chia 2; chia 5",
-                "options": [
-                  "chia 3; chia 9",
-                  "chia 2; chia 5"
-                ]
-              }
-            ]
-          },
-          "hints": [
-            "Họ nào nhìn túi chung, họ nào nhìn gác cổng?",
-            "3 và 9 nhìn tổng chữ số."
-          ],
-          "solutionNarrative": "HỌ TỔNG: chia 3, chia 9 — cộng hết chữ số lại mới biết. HỌ TẬN CÙNG: chia 2, chia 5 — chỉ liếc chữ số cuối.",
-          "teaches": [
-            "K1",
-            "K2"
-          ]
-        }
+    "comma_after": null,
+    "rows": [
+     {
+      "label": "18",
+      "cells": [
+       "1",
+       "8"
       ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B3.LT8",
-          "text": "Một số có hai chữ số chia hết cho 9. Đổi chỗ hai chữ số: số mới có chắc chắn chia hết cho 9 không? Có chắc chắn chia hết cho 2 không?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "chia 9",
-                "value": "CHẮC CHẮN — họ tổng, tổng chữ số không đổi",
-                "options": [
-                  "CHẮC CHẮN",
-                  "CHƯA chắc"
-                ]
-              },
-              {
-                "label": "chia 2",
-                "value": "CHƯA chắc — họ tận cùng, chữ số cuối đã đổi",
-                "options": [
-                  "CHẮC CHẮN",
-                  "CHƯA chắc"
-                ]
-              }
-            ]
-          },
-          "hints": [
-            "Chẻ hai họ trước.",
-            "18 → 81 là phản chứng cho họ nào?"
-          ],
-          "solutionNarrative": "Chia 9: CHẮC (họ TỔNG). Chia 2: CHƯA chắc (họ TẬN CÙNG — xem 18 → 81).",
-          "teaches": [
-            "K1",
-            "K2",
-            "K3"
-          ]
-        }
+      "color": "white"
+     },
+     {
+      "label": "81",
+      "cells": [
+       "8",
+       "1"
       ],
-      "challenge": [
-        {
-          "id": "P3",
-          "format": "mb",
-          "text": "Số 90 chia hết cho 2, 3, 5, 9. Viết ngược thành 09 = 9. Dấu hiệu nào còn, dấu hiệu nào mất — và có chuyện gì đặc biệt xảy ra?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "còn",
-                "value": "chia 3, chia 9 (họ tổng)",
-                "options": [
-                  "chia 3, chia 9",
-                  "chia 2, chia 5"
-                ]
-              },
-              {
-                "label": "mất",
-                "value": "chia 2, chia 5 (tận cùng 9)",
-                "options": [
-                  "chia 3, chia 9",
-                  "chia 2, chia 5"
-                ]
-              },
-              {
-                "label": "đặc biệt",
-                "value": "09 mất một chữ số — gương vỡ (bài trước) chồng lên bài này"
-              }
-            ]
-          },
-          "hints": [
-            "Họ tổng có mất không?",
-            "Số tận cùng 0 soi gương thì sao?"
-          ],
-          "teaches": [
-            "K1",
-            "K2"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:I.1.4#3@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B4.M1",
-      "award": "huy_hieu_hai_gia_toc"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B: biến thể 27/72, 45/54"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "tf",
-        "text": "(Đúng/Sai?) Số 18 chia hết cho 2; viết ngược thành 81 thì 81 cũng chia hết cho 2.",
-        "answerKey": {
-          "value": false
-        },
-        "mustPass": true,
-        "teaches": [
-          "K2",
-          "K3"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "tf",
-        "text": "(Đúng/Sai?) Một số chia hết cho 3 thì đổi chỗ các chữ số, số mới vẫn chia hết cho 3.",
-        "answerKey": {
-          "value": true
-        },
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "mcq",
-        "text": "Số 45 viết ngược thành 54. Số 54 chia hết cho:",
-        "choices": [
-          "9 (không chia hết 5)",
-          "5 (không chia hết 9)",
-          "cả 9 và 5"
-        ],
-        "answerKey": {
-          "choice": "9 (không chia hết 5)"
-        },
-        "teaches": [
-          "K1",
-          "K2"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Đổi chỗ chữ số: dấu hiệu nào giữ, dấu hiệu nào phải khám lại?",
-        "back": "Họ TỔNG (chia 3, 9) BÌNH AN — tổng chữ số không đổi. Họ TẬN CÙNG (chia 2, 5) KHÁM LẠI — người gác cổng đã đổi. Chẻ hai họ trước khi trả lời!"
-      }
+      "color": "#FFF4DF"
+     }
     ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu P2 biến thể",
-      "+7 ngày: câu P3 (chồng bẫy gương vỡ)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con học hai 'gia tộc' dấu hiệu chia hết khi đổi chỗ chữ số. Con đạt {score}/3, {trapResult} câu bẫy 18/81.",
-    "homeActivity": "Đố nhanh: '36 chia hết cho 9 và cho 2. Đảo thành 63 thì sao?' — con trả lời '63 vẫn chia 9 (họ tổng) nhưng hết chia 2 (tận cùng lẻ)' là đạt.",
-    "watchFor": "Nếu con nghĩ mọi dấu hiệu đều giữ khi đảo số — mở lại màn hai dinh thự (S2) cùng con."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B3.M3",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "18 → 81: còn ⋮ 9? còn ⋮ 2?",
-        "lines": [
-          {
-            "who": "Cáo Đề",
-            "say": "Chia hết cho cả 9 và 2 nhé. Giờ viết ngược thành 81 — thì vẫn chia hết cho cả hai chứ gì?",
-            "tone": "wrong"
-          },
-          {
-            "who": "Trí Long",
-            "say": "Khoan, hỏi hai GIA TỘC đã!",
-            "tone": "wrong"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B3_M3_F1.png",
-      "sha256_16": "6263b87c03b003b7"
-    },
-    {
-      "archetype": "two_way_compare",
-      "params": {
-        "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-        "wrong": {
-          "head": "CÁCH SAI",
-          "steps": [
-            "81 ⋮ 2?"
-          ],
-          "result": "KHÔNG (tận cùng 1)"
-        },
-        "right": {
-          "head": "CÁCH ĐÚNG",
-          "steps": [
-            "81 ⋮ 9?"
-          ],
-          "result": "CÓ (tổng 9)"
-        },
-        "verdict": "họ tổng"
-      },
-      "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B3_M3_F2.png",
-      "sha256_16": "69054355d0d1a451"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "text": "Đổi chỗ các chữ số KHÔNG làm thay đổi TỔNG các chữ số — nên dấu hiệu chia hết cho 3 và cho 9 (họ TỔNG) được bảo toàn.",
-            "tone": "navy"
-          },
-          {
-            "text": "Đổi chỗ các chữ số CÓ THỂ làm thay đổi chữ số TẬN CÙNG — nên dấu hiệu chia hết cho 2 và cho 5 (họ TẬN CÙNG) phải khám lại từng trường hợp.",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "ĐỔI CHỖ: HỌ TỔNG BÌNH AN — HỌ TẬN CÙNG KHÁM LẠI!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B3_M3_F3.png",
-      "sha256_16": "0b03b7ebdd49ed50"
-    },
-    {
-      "archetype": "place_value_chart",
-      "params": {
-        "title": "ĐỔI CHỖ CHỮ SỐ: 18 → 81",
-        "headers": [
-          "chục",
-          "đơn vị"
-        ],
-        "comma_after": null,
-        "rows": [
-          {
-            "label": "18",
-            "cells": [
-              "1",
-              "8"
-            ],
-            "color": "white"
-          },
-          {
-            "label": "81",
-            "cells": [
-              "8",
-              "1"
-            ],
-            "color": "#FFF4DF"
-          }
-        ],
-        "note": "Tổng chữ số vẫn 9 → chia hết cho 9 ✓  ·  nhưng tận cùng đổi từ 8 sang 1 → hết chia hết cho 2"
-      },
-      "caption": "Họ TỔNG bình an khi đổi chỗ — họ TẬN CÙNG phải khám lại",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B3_M3_F4.png",
-      "sha256_16": "c0514ec5fe8138fa"
-    }
-  ]
+    "note": "Tổng chữ số vẫn 9 → chia hết cho 9 ✓ · nhưng tận cùng đổi từ 8 sang 1 → hết chia hết cho 2"
+   },
+   "caption": "Họ TỔNG bình an khi đổi chỗ — họ TẬN CÙNG phải khám lại",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B3_M3_F4.png",
+   "sha256_16": "9c151704843fc5dd"
+  }
+ ]
 }

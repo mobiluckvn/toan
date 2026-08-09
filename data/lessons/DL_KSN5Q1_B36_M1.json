@@ -1,706 +1,706 @@
 {
-  "title": "Một neo xử cả dãy mức gấp: tính neo một lần — các mốc soi lẫn nhau",
-  "grade": 5,
-  "durationMinutes": 9,
-  "skills": {
-    "primary": [
-      "CASE:III.6.3#1"
+ "title": "Một neo xử cả dãy mức gấp: tính neo một lần — các mốc soi lẫn nhau",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:III.6.3#1"
+  ],
+  "bktUnit": "CASE:III.6.3#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B36",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B35.M3",
+  "next": "DL:KSN5Q1.B36.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B36",
+  "chunks": [
+   "CHUNK:KSN5Q1.B36.S3",
+   "CHUNK:KSN5Q1.B36.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B36.1"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B36.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con dùng MỘT neo hiệu xử cả DÃY điều kiện gấp tại nhiều mốc: tính neo một lần (32 − 8 = 24) rồi với từng mức \"gấp k\" chia neo cho (k − 1) phần ra tuổi con tại mốc ấy — so với tuổi nay để nói trước / sau / ngay hôm nay; đọc được chiều thời gian: số lần gấp CO DẦN về tương lai; các mốc soi lẫn nhau thay vì giải rời từng bài từ số không.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (neo chia (k − 1) phần)",
+  "kidText": "Một chiếc neo hiệu tính một lần là dùng được cho cả dãy mốc. Mỗi mức \"gấp k\" thì chia neo cho k trừ 1 phần."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Cả dãy câu hỏi \"khi nào gấp 5? gấp 4? gấp 3?\" dùng chung MỘT neo hiệu (32 − 8 = 24, bất biến — B28/B31): tính neo MỘT lần, đừng giải rời từng bài từ số không."
+   },
+   {
+    "id": "K2",
+    "text": "Máy soi từng mức: gấp k cũng có nghĩa là hiệu = (k − 1) phần → tuổi con tại mốc ấy = neo : (k − 1); so tuổi nay để đọc mốc: gấp 5 → 24 : 4 = 6 < 8 → 2 năm TRƯỚC; gấp 4 → 24 : 3 = 8 = nay → NGAY HÔM NAY; gấp 3 → 24 : 2 = 12 > 8 → 4 năm NỮA."
+   },
+   {
+    "id": "K3",
+    "text": "Chiều thời gian đọc từ dãy: số lần gấp CO DẦN về tương lai (5 → 4 → 3) vì con lớn nhanh hơn theo tỉ lệ — dãy đáp 6, 8, 12 tăng dần soi lẫn nhau: lệch một mắt là cả dãy tố."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: MỘT NEO — CẢ DÃY CỜ TRÊN TRỤC. Đề: \"con 8, mẹ 32 — khi nào mẹ gấp 5 con? gấp 4? gấp 3?\" Trí Long hì hục giải BA bài rời, mỗi bài dựng lại từ đầu — mệt mà dễ lệch! Kìa: cả ba câu chung MỘT chiếc neo — hiệu 32 trừ 8 bằng HAI TƯ, bất biến mọi mốc: tính MỘT lần, dùng cả dãy! Cắm cờ từng mức: gấp NĂM — hiệu bốn phần: con 24 : 4 = 6, bé hơn 8 — HAI NĂM TRƯỚC; gấp BỐN — ba phần: con 8 — NGAY HÔM NAY (mẹ 32 đúng gấp 4!); gấp BA — hai phần: con 12 — BỐN NĂM NỮA. Nhìn cả dãy: 6 → 8 → 12 tăng dần, số gấp 5 → 4 → 3 co dần — các lá cờ soi lẫn nhau: lệch một lá là dãy tố ngay!",
+  "canonicalExamples": [
+   {
+    "case": "mức nay (ca mở)",
+    "problem": "Hiện nay con 8 tuổi, mẹ 32 tuổi. Hỏi hiện nay tuổi mẹ gấp mấy lần tuổi con?",
+    "solution": "32 : 8 = 4 — gấp 4 lần ngay hôm nay.",
+    "why": "Ca LT1 — lá cờ mốc nay cắm sẵn."
+   },
+   {
+    "case": "một mức quá khứ (ca máy)",
+    "problem": "Với hiệu tuổi 24: khi tuổi mẹ gấp 7 lần tuổi con thì con bao nhiêu tuổi? Thời điểm ấy là mấy năm trước?",
+    "solution": "Gấp 7 → hiệu 6 phần → con = 24 : 6 = 4 tuổi → 8 − 4 = 4 năm trước. Thử: mẹ 28 = 7 × 4 ✓.",
+    "why": "Ca LT2 — neo chia (k − 1)."
+   },
+   {
+    "case": "cả dãy một neo (ca lõi)",
+    "problem": "Con 8 tuổi, mẹ 32 tuổi. Trả lời cả ba câu trên cùng một chiếc neo: a) khi nào mẹ gấp 5 lần con? b) gấp 4 lần? c) gấp 3 lần?",
+    "solution": "Neo 24: a) 4 phần → con 6 → 2 năm TRƯỚC; b) 3 phần → con 8 → NGAY HÔM NAY; c) 2 phần → con 12 → 4 năm NỮA. Dãy 6, 8, 12 soi nhau ✓.",
+    "why": "Ca LT4 — trap giải-rời bị một-neo đánh bại."
+   }
+  ],
+  "numberRange": "Lớp 5: neo ≤ 30; k = 2–7, neo chia hết (k − 1).",
+  "misconceptions": [
+   {
+    "wrong": "Giải ba câu gấp 5 / 4 / 3 thành ba bài ĐỘC LẬP, mỗi lần dựng sơ đồ lại từ số không — chậm, và các đáp không được đối chiếu nhau.",
+    "signal": "Neo 24 bị tính lại nhiều lần; không có dòng so dãy đáp.",
+    "fix": "một neo tính một lần, chia cho từng kiểu phần (4, 3, 2); xong xếp dãy đáp 6, 8, 12 soi lẫn nhau.",
+    "counterExample": "Giải rời lỡ ghi nhầm neo 26 ở câu b: con 8,67 lẻ — nếu soi dãy 6 → ? → 12 là thấy gãy ngay giữa chuỗi."
+   }
+  ],
+  "vocabulary": [
+   "một neo cả dãy",
+   "cắm cờ từng mức",
+   "số gấp co dần",
+   "dãy đáp soi nhau",
+   "giải rời từ số không"
+  ],
+  "mantra": "MỘT NEO TÍNH MỘT LẦN — CẢ DÃY MỐC SOI LẪN NHAU!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Ôn B31: hiệu 24, gấp 5 → con tại mốc ấy = ?",
+    "answerKey": {
+     "value": 6
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B31.M3",
+   "message": "Ôn mượn neo Bài 31 rồi cắm cả dãy cờ nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Đề ba câu: \"con 8, mẹ 32 — khi nào mẹ gấp 5 con? gấp 4? gấp 3?\" Trí Long xắn tay giải BA bài rời, mỗi bài dựng sơ đồ lại từ đầu — toát mồ hôi! Su Kem giơ một chiếc neo: \"Ba câu chung một chiếc neo đấy — tính mấy lần?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "ba câu — ba bài rời?!"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để cầm một chiếc neo!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2"
     ],
-    "bktUnit": "CASE:III.6.3#1@G5"
+    "narration": "Neo hiệu tính MỘT lần: ba hai trừ tám bằng HAI TƯ — bất biến mọi mốc! Cắm cờ từng mức: gấp NĂM — hiệu bốn phần: con hai tư chia bốn bằng SÁU, bé hơn tám — HAI NĂM TRƯỚC! Gấp BỐN — ba phần: con TÁM — NGAY HÔM NAY, mẹ ba hai đúng gấp bốn! Gấp BA — hai phần: con MƯỜI HAI, lớn hơn tám — BỐN NĂM NỮA!",
+    "display": {
+     "type": "anchor_flags_interactive",
+     "spec": {
+      "anchor": 24,
+      "flags": [
+       {
+        "k": 5,
+        "parts": 4,
+        "con": 6,
+        "when": "2 năm trước"
+       },
+       {
+        "k": 4,
+        "parts": 3,
+        "con": 8,
+        "when": "ngay hôm nay"
+       },
+       {
+        "k": 3,
+        "parts": 2,
+        "con": 12,
+        "when": "4 năm nữa"
+       }
+      ]
+     }
+    },
+    "interaction": {
+     "type": "plant_flags",
+     "answerKey": {
+      "values": [
+       6,
+       8,
+       12
+      ]
+     },
+     "successMessage": "Một neo 24 → cờ 6, 8, 12 — ba mốc xong một hơi!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Hiệu 24, mẹ gấp 4 lần con → tuổi con lúc đó:",
+     "choices": [
+      "8",
+      "6",
+      "12"
+     ],
+     "answerKey": {
+      "choice": "8"
+     },
+     "wrongFeedback": "24 : (4 − 1).",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 42,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Nhìn cả dãy cờ: đáp sáu — tám — mười hai TĂNG dần; số gấp năm — bốn — ba CO dần về tương lai: con lớn nhanh hơn theo tỉ lệ mà! Dãy soi lẫn nhau: đáp lẻ chen giữa dãy đẹp là bị tố ngay. Và lá cờ mốc nay cắm sẵn chẳng cần máy: ba hai chia tám bằng BỐN — gấp bốn ngay hôm nay, khớp lá cờ giữa!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "dãy đáp 6 → 8 → 12 tăng dần",
+      "số gấp 5 → 4 → 3 co dần về tương lai",
+      "mốc nay: 32 : 8 = 4 — khớp cờ giữa ✓"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: một neo tính một lần — cả dãy mốc soi lẫn nhau!",
+    "display": {
+     "type": "mantra_card",
+     "text": "MỘT NEO — CẢ DÃY SOI NHAU!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B36",
-    "order": 1,
-    "prev": "DL:KSN5Q1.B35.M3",
-    "next": "DL:KSN5Q1.B36.M2"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B36",
-    "chunks": [
-      "CHUNK:KSN5Q1.B36.S3",
-      "CHUNK:KSN5Q1.B36.S4"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đề ba câu: con tám, mẹ ba hai — khi nào mẹ gấp năm con? gấp bốn? gấp ba? Trí Long xắn tay giải BA bài rời, mỗi bài dựng sơ đồ lại từ đầu — toát mồ hôi! Su Kem giơ một chiếc neo: ba câu chung một chiếc neo đấy — tính mấy lần?",
+    "screenText": "3 câu gấp 5/4/3 — 3 bài rời?!",
+    "visual": "Ba tờ đề xếp chồng với Trí Long vẽ ba sơ đồ riêng mồ hôi nhễ nhại; Su Kem giơ neo khắc '24', dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Neo hiệu tính MỘT lần: ba hai trừ tám bằng HAI TƯ — bất biến mọi mốc! Cắm cờ từng mức: gấp NĂM — hiệu bốn phần: con hai tư chia bốn bằng SÁU, bé hơn tám — HAI NĂM TRƯỚC! Gấp BỐN — ba phần: con TÁM — NGAY HÔM NAY, mẹ ba hai đúng gấp bốn! Gấp BA — hai phần: con MƯỜI HAI, lớn hơn tám — BỐN NĂM NỮA!",
+    "screenText": "neo 24 · gấp 5 → 6 (−2 năm) · gấp 4 → 8 (NAY) · gấp 3 → 12 (+4 năm)",
+    "visual": "Trục thời gian với một neo vàng 24 và ba lá cờ cắm ở −2, nay, +4; mỗi cờ ghi phép chia 24 : (k−1).",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Nhìn cả dãy cờ: đáp sáu — tám — mười hai TĂNG dần; số gấp năm — bốn — ba CO dần về tương lai: con lớn nhanh hơn theo tỉ lệ mà! Dãy soi lẫn nhau: đáp lẻ chen giữa dãy đẹp là bị tố ngay. Và lá cờ mốc nay cắm sẵn chẳng cần máy: ba hai chia tám bằng BỐN — gấp bốn ngay hôm nay, khớp lá cờ giữa!",
+    "screenText": "6 → 8 → 12 tăng · gấp 5 → 4 → 3 co dần · nay: 32:8 = 4 ✓",
+    "visual": "Dãy ba cờ nối đường cong mượt; một cờ lệch giả định bật đèn đỏ giữa dãy; phép 32:8 đóng mộc lá cờ giữa.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú dãy cờ: một neo tính một lần — cả dãy mốc soi lẫn nhau!",
+    "screenText": "MỘT NEO — CẢ DÃY SOI NHAU!",
+    "visual": "Thẻ thần chú vàng với icon neo và dãy cờ.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Dãy cờ: con tám, mẹ ba hai — cắm đủ ba lá cờ gấp năm, gấp bốn, gấp ba bằng một chiếc neo! Vào bài luyện ngay!",
+    "screenText": "neo 24 → 3 lá cờ?",
+    "visual": "Trục trống chờ cắm cờ; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P3",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Một neo — ba lá cờ",
+  "problem": "Con 8 tuổi, mẹ 32 tuổi. Trả lời cả ba câu cùng một chiếc neo: a) khi nào mẹ gấp 5 lần con? b) gấp 4 lần? c) gấp 3 lần?",
+  "steps": [
+   {
+    "show": "Bước 1 — Neo tính MỘT lần: 32 − 8 = 24 (bất biến).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Ba câu cần tính neo mấy lần?",
+     "choices": [
+      "1 lần",
+      "3 lần",
+      "tùy câu"
+     ],
+     "answerKey": {
+      "choice": "1 lần"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Cắm cờ: gấp 5 → 24 : 4 = 6 → 2 năm TRƯỚC; gấp 4 → 24 : 3 = 8 → NGAY HÔM NAY."
+   },
+   {
+    "show": "Bước 3 — Gấp 3 → 24 : 2 = 12 → 4 năm NỮA. Soi dãy: 6, 8, 12 tăng dần ✓.",
+    "askAfter": {
+     "format": "mcq",
+     "text": "Số lần gấp theo thời gian trôi về tương lai sẽ:",
+     "choices": [
+      "co dần",
+      "tăng dần",
+      "đứng im"
+     ],
+     "answerKey": {
+      "choice": "co dần"
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B36.LT1",
+     "text": "Hiện nay con 8 tuổi, mẹ 32 tuổi. Hỏi hiện nay tuổi mẹ gấp mấy lần tuổi con?",
+     "answerKey": {
+      "value": 4
+     },
+     "hints": [
+      "32 : 8."
+     ],
+     "solutionNarrative": "Gấp 4 lần ngay hôm nay.",
+     "teaches": [
+      "K2"
+     ]
+    },
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B36.LT2",
+     "text": "Với hiệu tuổi 24: khi tuổi mẹ gấp 7 lần tuổi con thì con bao nhiêu tuổi? Thời điểm ấy là mấy năm trước (con nay 8 tuổi)?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "con lúc đó",
+        "value": 4
+       },
+       {
+        "label": "thời điểm",
+        "value": "4 năm trước"
+       }
+      ]
+     },
+     "hints": [
+      "Gấp 7 → hiệu 6 phần.",
+      "24 : 6 rồi so tuổi nay."
+     ],
+     "solutionNarrative": "Con 4 → 4 năm trước (mẹ 28 = 7 × 4 ✓).",
+     "teaches": [
+      "K2"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B36.LT4",
+     "text": "Con 8 tuổi, mẹ 32 tuổi. Trả lời cả ba câu cùng MỘT chiếc neo: a) khi nào mẹ gấp 5 lần con? b) gấp 4 lần? c) gấp 3 lần?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "a",
+        "value": "con 6 — 2 năm trước",
+        "options": [
+         "con 6",
+         "con 8",
+         "con 12"
+        ]
+       },
+       {
+        "label": "b",
+        "value": "con 8 — ngay hôm nay",
+        "options": [
+         "con 6",
+         "con 8",
+         "con 12"
+        ]
+       },
+       {
+        "label": "c",
+        "value": "con 12 — 4 năm nữa",
+        "options": [
+         "con 6",
+         "con 8",
+         "con 12"
+        ]
+       }
+      ]
+     },
+     "hints": [
+      "Neo 24 tính một lần.",
+      "Chia cho 4, 3, 2 phần; so tuổi nay 8."
+     ],
+     "solutionNarrative": "Cờ 6, 8, 12 — dãy soi nhau ✓.",
+     "teaches": [
+      "K1",
+      "K2",
+      "K3"
+     ],
+     "generator": {
+      "template": "Con {a}, mẹ {b}. Khi nào gấp {k1}/{k2}/{k3}?",
+      "constraints": {},
+      "answerRule": "neo = b − a; từng mức chia (k − 1)"
+     }
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Ba câu gấp 5 / 4 / 3 nên giải thành ba bài độc lập cho chắc.",
+     "answerKey": {
+      "value": false,
+      "note": "Một neo 24 tính MỘT lần dùng cả dãy — dãy đáp 6, 8, 12 còn soi lẫn nhau bắt lỗi; giải rời vừa chậm vừa mất lưới soi."
+     },
+     "hints": [
+      "Neo có đổi giữa các câu không?",
+      "Dãy đáp đẹp giúp gì?"
+     ],
+     "teaches": [
+      "K1",
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.6.3#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B36.M2",
+   "award": "huy_hieu_day_co_mot_neo"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P3"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B36.QZ4",
+    "text": "Hiệu 24, mẹ gấp 4 lần con → tuổi con lúc đó:",
+    "choices": [
+     "8",
+     "6",
+     "12"
     ],
-    "cases": [
-      "CA:KSN5Q1.B36.1"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B36.3"
+    "answerKey": {
+     "choice": "8"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B36.QZ2",
+    "text": "(Đúng/Sai?) Số lần \"mẹ gấp con\" co dần khi thời gian trôi về tương lai.",
+    "answerKey": {
+     "value": true
+    },
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mb",
+    "text": "Neo 24, con nay 8: gấp 5 và gấp 3 rơi vào lúc nào?",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "gấp 5",
+       "value": "2 năm trước"
+      },
+      {
+       "label": "gấp 3",
+       "value": "4 năm nữa"
+      }
+     ]
+    },
+    "teaches": [
+     "K1",
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Dãy câu 'khi nào gấp 5/4/3?' — giải sao?",
+    "back": "MỘT NEO hiệu tính MỘT lần (32 − 8 = 24) → từng mức: con = neo : (k − 1) → so tuổi nay đọc mốc (6 → 2 năm trước; 8 → ngay hôm nay; 12 → 4 năm nữa). Số gấp CO DẦN về tương lai; dãy đáp 6, 8, 12 soi lẫn nhau."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P3",
+   "+7 ngày: câu P2 (gấp 7)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con dùng một neo hiệu xử cả dãy mức gấp và đọc chiều thời gian qua số-gấp-co-dần. Con đạt {score}/3, {trapResult} câu bẫy giải-rời.",
+  "homeActivity": "Với tuổi thật hai mẹ con, đố cả dãy: 'khi nào gấp 5? 4? 3? 2?' — con tính neo một lần rồi cắm cờ liên tiếp.",
+  "watchFor": "Nếu con dựng lại sơ đồ từng câu — hỏi 'neo có đổi đâu mà tính lại?' (S1)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B36.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "ba câu — ba bài rời?!",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Khi nào mẹ gấp 5 con? Gấp 4? Gấp 3? Ba câu là ba bài, dựng lại sơ đồ từ đầu thôi!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Ba câu chung đúng một chiếc neo đấy — cậu định tính nó mấy lần?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B36_M1_F1.png",
+   "sha256_16": "9d44d99cbd9e4914"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con dùng MỘT neo hiệu xử cả DÃY điều kiện gấp tại nhiều mốc: tính neo một lần (32 − 8 = 24) rồi với từng mức \"gấp k\" chia neo cho (k − 1) phần ra tuổi con tại mốc ấy — so với tuổi nay để nói trước / sau / ngay hôm nay; đọc được chiều thời gian: số lần gấp CO DẦN về tương lai; các mốc soi lẫn nhau thay vì giải rời từng bài từ số không.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (neo chia (k − 1) phần)",
-    "kidText": "Một chiếc neo hiệu tính một lần là dùng được cho cả dãy mốc. Mỗi mức \"gấp k\" thì chia neo cho k trừ 1 phần."
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Một neo xử cả dãy mức gấp: tính neo một lần — các mốc soi lẫn nhau",
+    "steps": [
+     {
+      "text": "dãy đáp 6 → 8 → 12 tăng dần"
+     },
+     {
+      "text": "số gấp 5 → 4 → 3 co dần về tương lai"
+     },
+     {
+      "text": "mốc nay: 32 : 8 = 4 — khớp cờ giữa"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B36_M1_F2.png",
+   "sha256_16": "0879f6b17b6b5f3c"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Cả dãy câu hỏi \"khi nào gấp 5? gấp 4? gấp 3?\" dùng chung MỘT neo hiệu (32 − 8 = 24, bất biến — B28/B31): tính neo MỘT lần, đừng giải rời từng bài từ số không."
-      },
-      {
-        "id": "K2",
-        "text": "Máy soi từng mức: gấp k ⇔ hiệu = (k − 1) phần → tuổi con tại mốc ấy = neo : (k − 1); so tuổi nay để đọc mốc: gấp 5 → 24 : 4 = 6 < 8 → 2 năm TRƯỚC; gấp 4 → 24 : 3 = 8 = nay → NGAY HÔM NAY; gấp 3 → 24 : 2 = 12 > 8 → 4 năm NỮA."
-      },
-      {
-        "id": "K3",
-        "text": "Chiều thời gian đọc từ dãy: số lần gấp CO DẦN về tương lai (5 → 4 → 3) vì con lớn nhanh hơn theo tỉ lệ — dãy đáp 6, 8, 12 tăng dần soi lẫn nhau: lệch một mắt là cả dãy tố."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: MỘT NEO — CẢ DÃY CỜ TRÊN TRỤC. Đề: \"con 8, mẹ 32 — khi nào mẹ gấp 5 con? gấp 4? gấp 3?\" Trí Long hì hục giải BA bài rời, mỗi bài dựng lại từ đầu — mệt mà dễ lệch! Kìa: cả ba câu chung MỘT chiếc neo — hiệu 32 trừ 8 bằng HAI TƯ, bất biến mọi mốc: tính MỘT lần, dùng cả dãy! Cắm cờ từng mức: gấp NĂM — hiệu bốn phần: con 24 : 4 = 6, bé hơn 8 — HAI NĂM TRƯỚC; gấp BỐN — ba phần: con 8 — NGAY HÔM NAY (mẹ 32 đúng gấp 4!); gấp BA — hai phần: con 12 — BỐN NĂM NỮA. Nhìn cả dãy: 6 → 8 → 12 tăng dần, số gấp 5 → 4 → 3 co dần — các lá cờ soi lẫn nhau: lệch một lá là dãy tố ngay!",
-    "canonicalExamples": [
-      {
-        "case": "mức nay (ca mở)",
-        "problem": "Hiện nay con 8 tuổi, mẹ 32 tuổi. Hỏi hiện nay tuổi mẹ gấp mấy lần tuổi con?",
-        "solution": "32 : 8 = 4 — gấp 4 lần ngay hôm nay.",
-        "why": "Ca LT1 — lá cờ mốc nay cắm sẵn."
-      },
-      {
-        "case": "một mức quá khứ (ca máy)",
-        "problem": "Với hiệu tuổi 24: khi tuổi mẹ gấp 7 lần tuổi con thì con bao nhiêu tuổi? Thời điểm ấy là mấy năm trước?",
-        "solution": "Gấp 7 → hiệu 6 phần → con = 24 : 6 = 4 tuổi → 8 − 4 = 4 năm trước. Thử: mẹ 28 = 7 × 4 ✓.",
-        "why": "Ca LT2 — neo chia (k − 1)."
-      },
-      {
-        "case": "cả dãy một neo (ca lõi)",
-        "problem": "Con 8 tuổi, mẹ 32 tuổi. Trả lời cả ba câu trên cùng một chiếc neo: a) khi nào mẹ gấp 5 lần con? b) gấp 4 lần? c) gấp 3 lần?",
-        "solution": "Neo 24: a) 4 phần → con 6 → 2 năm TRƯỚC; b) 3 phần → con 8 → NGAY HÔM NAY; c) 2 phần → con 12 → 4 năm NỮA. Dãy 6, 8, 12 soi nhau ✓.",
-        "why": "Ca LT4 — trap giải-rời bị một-neo đánh bại."
-      }
-    ],
-    "numberRange": "Lớp 5: neo ≤ 30; k = 2–7, neo chia hết (k − 1).",
-    "misconceptions": [
-      {
-        "wrong": "Giải ba câu gấp 5 / 4 / 3 thành ba bài ĐỘC LẬP, mỗi lần dựng sơ đồ lại từ số không — chậm, và các đáp không được đối chiếu nhau.",
-        "signal": "Neo 24 bị tính lại nhiều lần; không có dòng so dãy đáp.",
-        "fix": "K1 + K3 — một neo tính một lần, chia cho từng kiểu phần (4, 3, 2); xong xếp dãy đáp 6, 8, 12 soi lẫn nhau.",
-        "counterExample": "Giải rời lỡ ghi nhầm neo 26 ở câu b: con 8,67 lẻ — nếu soi dãy 6 → ? → 12 là thấy gãy ngay giữa chuỗi."
-      }
-    ],
-    "vocabulary": [
-      "một neo cả dãy",
-      "cắm cờ từng mức",
-      "số gấp co dần",
-      "dãy đáp soi nhau",
-      "giải rời từ số không"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "text": "Cả dãy câu hỏi \"khi nào gấp 5? gấp 4? gấp 3?\" dùng chung MỘT neo hiệu (32 − 8 = 24, bất biến — B28/B31): tính neo MỘT lần, đừng giải rời từng bài từ số không.",
+      "tone": "navy"
+     },
+     {
+      "label": "Máy soi từng mức",
+      "text": "gấp k cũng có nghĩa là hiệu = (k − 1) phần → tuổi con tại mốc ấy = neo : (k − 1); so tuổi nay để đọc mốc: gấp 5 → 24 : 4 = 6 < 8 → 2 năm TRƯỚC; gấp 4 → 24 : 3 = 8 = nay → NGAY HÔM NAY; gấp 3 → 24 : 2 = 12 > 8 → 4 năm NỮA.",
+      "tone": "teal"
+     }
     ],
     "mantra": "MỘT NEO TÍNH MỘT LẦN — CẢ DÃY MỐC SOI LẪN NHAU!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B36_M1_F3.png",
+   "sha256_16": "319af26cf92864e9"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "Ôn B31: hiệu 24, gấp 5 → con tại mốc ấy = ?",
-        "answerKey": {
-          "value": 6
-        }
-      }
+  {
+   "archetype": "place_value_chart",
+   "params": {
+    "title": "MỘT NEO 24 XỬ CẢ DÃY MỨC GẤP",
+    "headers": [
+     "mức gấp",
+     "hiệu mấy phần",
+     "tuổi con",
+     "thời điểm"
     ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B31.M3",
-      "message": "Ôn mượn neo Bài 31 rồi cắm cả dãy cờ nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 18,
-        "narration": "Đề ba câu: \"con 8, mẹ 32 — khi nào mẹ gấp 5 con? gấp 4? gấp 3?\" Trí Long xắn tay giải BA bài rời, mỗi bài dựng sơ đồ lại từ đầu — toát mồ hôi! Su Kem giơ một chiếc neo: \"Ba câu chung một chiếc neo đấy — tính mấy lần?\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "ba câu — ba bài rời?!"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để cầm một chiếc neo!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 46,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Neo hiệu tính MỘT lần: ba hai trừ tám bằng HAI TƯ — bất biến mọi mốc! Cắm cờ từng mức: gấp NĂM — hiệu bốn phần: con hai tư chia bốn bằng SÁU, bé hơn tám — HAI NĂM TRƯỚC! Gấp BỐN — ba phần: con TÁM — NGAY HÔM NAY, mẹ ba hai đúng gấp bốn! Gấp BA — hai phần: con MƯỜI HAI, lớn hơn tám — BỐN NĂM NỮA!",
-        "display": {
-          "type": "anchor_flags_interactive",
-          "spec": {
-            "anchor": 24,
-            "flags": [
-              {
-                "k": 5,
-                "parts": 4,
-                "con": 6,
-                "when": "2 năm trước"
-              },
-              {
-                "k": 4,
-                "parts": 3,
-                "con": 8,
-                "when": "ngay hôm nay"
-              },
-              {
-                "k": 3,
-                "parts": 2,
-                "con": 12,
-                "when": "4 năm nữa"
-              }
-            ]
-          }
-        },
-        "interaction": {
-          "type": "plant_flags",
-          "answerKey": {
-            "values": [
-              6,
-              8,
-              12
-            ]
-          },
-          "successMessage": "Một neo 24 → cờ 6, 8, 12 — ba mốc xong một hơi!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "mcq",
-          "text": "Hiệu 24, mẹ gấp 4 lần con → tuổi con lúc đó:",
-          "choices": [
-            "8",
-            "6",
-            "12"
-          ],
-          "answerKey": {
-            "choice": "8"
-          },
-          "wrongFeedback": "24 : (4 − 1).",
-          "objective": "O1",
-          "teaches": [
-            "K2"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 42,
-        "teaches": [
-          "K3"
-        ],
-        "narration": "Nhìn cả dãy cờ: đáp sáu — tám — mười hai TĂNG dần; số gấp năm — bốn — ba CO dần về tương lai: con lớn nhanh hơn theo tỉ lệ mà! Dãy soi lẫn nhau: đáp lẻ chen giữa dãy đẹp là bị tố ngay. Và lá cờ mốc nay cắm sẵn chẳng cần máy: ba hai chia tám bằng BỐN — gấp bốn ngay hôm nay, khớp lá cờ giữa!",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "dãy đáp 6 → 8 → 12 tăng dần",
-            "số gấp 5 → 4 → 3 co dần về tương lai",
-            "mốc nay: 32 : 8 = 4 — khớp cờ giữa ✓"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú dãy cờ: một neo tính một lần — cả dãy mốc soi lẫn nhau!",
-        "display": {
-          "type": "mantra_card",
-          "text": "MỘT NEO — CẢ DÃY SOI NHAU!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 90,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
-    },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Đề ba câu: con tám, mẹ ba hai — khi nào mẹ gấp năm con? gấp bốn? gấp ba? Trí Long xắn tay giải BA bài rời, mỗi bài dựng sơ đồ lại từ đầu — toát mồ hôi! Su Kem giơ một chiếc neo: ba câu chung một chiếc neo đấy — tính mấy lần?",
-        "screenText": "3 câu gấp 5/4/3 — 3 bài rời?!",
-        "visual": "Ba tờ đề xếp chồng với Trí Long vẽ ba sơ đồ riêng mồ hôi nhễ nhại; Su Kem giơ neo khắc '24', dấu hỏi đỏ #C0392B.",
-        "assets": [],
-        "duration": 20
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Neo hiệu tính MỘT lần: ba hai trừ tám bằng HAI TƯ — bất biến mọi mốc! Cắm cờ từng mức: gấp NĂM — hiệu bốn phần: con hai tư chia bốn bằng SÁU, bé hơn tám — HAI NĂM TRƯỚC! Gấp BỐN — ba phần: con TÁM — NGAY HÔM NAY, mẹ ba hai đúng gấp bốn! Gấp BA — hai phần: con MƯỜI HAI, lớn hơn tám — BỐN NĂM NỮA!",
-        "screenText": "neo 24 · gấp 5 → 6 (−2 năm) · gấp 4 → 8 (NAY) · gấp 3 → 12 (+4 năm)",
-        "visual": "Trục thời gian với một neo vàng 24 và ba lá cờ cắm ở −2, nay, +4; mỗi cờ ghi phép chia 24 : (k−1).",
-        "assets": [],
-        "duration": 26
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Nhìn cả dãy cờ: đáp sáu — tám — mười hai TĂNG dần; số gấp năm — bốn — ba CO dần về tương lai: con lớn nhanh hơn theo tỉ lệ mà! Dãy soi lẫn nhau: đáp lẻ chen giữa dãy đẹp là bị tố ngay. Và lá cờ mốc nay cắm sẵn chẳng cần máy: ba hai chia tám bằng BỐN — gấp bốn ngay hôm nay, khớp lá cờ giữa!",
-        "screenText": "6 → 8 → 12 tăng · gấp 5 → 4 → 3 co dần · nay: 32:8 = 4 ✓",
-        "visual": "Dãy ba cờ nối đường cong mượt; một cờ lệch giả định bật đèn đỏ giữa dãy; phép 32:8 đóng mộc lá cờ giữa.",
-        "assets": [],
-        "duration": 26
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú dãy cờ: một neo tính một lần — cả dãy mốc soi lẫn nhau!",
-        "screenText": "MỘT NEO — CẢ DÃY SOI NHAU!",
-        "visual": "Thẻ thần chú vàng với icon neo và dãy cờ.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Dãy cờ: con tám, mẹ ba hai — cắm đủ ba lá cờ gấp năm, gấp bốn, gấp ba bằng một chiếc neo! Vào bài luyện ngay!",
-        "screenText": "neo 24 → 3 lá cờ?",
-        "visual": "Trục trống chờ cắm cờ; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P3",
-        "assets": [],
-        "duration": 10
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Một neo — ba lá cờ",
-    "problem": "Con 8 tuổi, mẹ 32 tuổi. Trả lời cả ba câu cùng một chiếc neo: a) khi nào mẹ gấp 5 lần con? b) gấp 4 lần? c) gấp 3 lần?",
-    "steps": [
-      {
-        "show": "Bước 1 — Neo tính MỘT lần: 32 − 8 = 24 (bất biến).",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Ba câu cần tính neo mấy lần?",
-          "choices": [
-            "1 lần",
-            "3 lần",
-            "tùy câu"
-          ],
-          "answerKey": {
-            "choice": "1 lần"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Cắm cờ: gấp 5 → 24 : 4 = 6 → 2 năm TRƯỚC; gấp 4 → 24 : 3 = 8 → NGAY HÔM NAY."
-      },
-      {
-        "show": "Bước 3 — Gấp 3 → 24 : 2 = 12 → 4 năm NỮA. Soi dãy: 6, 8, 12 tăng dần ✓.",
-        "askAfter": {
-          "format": "mcq",
-          "text": "Số lần gấp theo thời gian trôi về tương lai sẽ:",
-          "choices": [
-            "co dần",
-            "tăng dần",
-            "đứng im"
-          ],
-          "answerKey": {
-            "choice": "co dần"
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "num",
-          "sourceItem": "ITEM:KSN5Q1.B36.LT1",
-          "text": "Hiện nay con 8 tuổi, mẹ 32 tuổi. Hỏi hiện nay tuổi mẹ gấp mấy lần tuổi con?",
-          "answerKey": {
-            "value": 4
-          },
-          "hints": [
-            "32 : 8."
-          ],
-          "solutionNarrative": "Gấp 4 lần ngay hôm nay.",
-          "teaches": [
-            "K2"
-          ]
-        },
-        {
-          "id": "P2",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B36.LT2",
-          "text": "Với hiệu tuổi 24: khi tuổi mẹ gấp 7 lần tuổi con thì con bao nhiêu tuổi? Thời điểm ấy là mấy năm trước (con nay 8 tuổi)?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "con lúc đó",
-                "value": 4
-              },
-              {
-                "label": "thời điểm",
-                "value": "4 năm trước"
-              }
-            ]
-          },
-          "hints": [
-            "Gấp 7 → hiệu 6 phần.",
-            "24 : 6 rồi so tuổi nay."
-          ],
-          "solutionNarrative": "Con 4 → 4 năm trước (mẹ 28 = 7 × 4 ✓).",
-          "teaches": [
-            "K2"
-          ]
-        }
+    "comma_after": null,
+    "rows": [
+     {
+      "label": "",
+      "cells": [
+       "gấp 7",
+       "6 phần",
+       "4 tuổi",
+       "4 năm trước"
       ],
-      "standard": [
-        {
-          "id": "P3",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B36.LT4",
-          "text": "Con 8 tuổi, mẹ 32 tuổi. Trả lời cả ba câu cùng MỘT chiếc neo: a) khi nào mẹ gấp 5 lần con? b) gấp 4 lần? c) gấp 3 lần?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "a",
-                "value": "con 6 — 2 năm trước",
-                "options": [
-                  "con 6",
-                  "con 8",
-                  "con 12"
-                ]
-              },
-              {
-                "label": "b",
-                "value": "con 8 — ngay hôm nay",
-                "options": [
-                  "con 6",
-                  "con 8",
-                  "con 12"
-                ]
-              },
-              {
-                "label": "c",
-                "value": "con 12 — 4 năm nữa",
-                "options": [
-                  "con 6",
-                  "con 8",
-                  "con 12"
-                ]
-              }
-            ]
-          },
-          "hints": [
-            "Neo 24 tính một lần.",
-            "Chia cho 4, 3, 2 phần; so tuổi nay 8."
-          ],
-          "solutionNarrative": "Cờ 6, 8, 12 — dãy soi nhau ✓.",
-          "teaches": [
-            "K1",
-            "K2",
-            "K3"
-          ],
-          "generator": {
-            "template": "Con {a}, mẹ {b}. Khi nào gấp {k1}/{k2}/{k3}?",
-            "constraints": {},
-            "answerRule": "neo = b − a; từng mức chia (k − 1)"
-          }
-        }
+      "color": "white"
+     },
+     {
+      "label": "",
+      "cells": [
+       "gấp 5",
+       "4 phần",
+       "6 tuổi",
+       "2 năm trước"
       ],
-      "challenge": [
-        {
-          "id": "P4",
-          "format": "tf",
-          "text": "(Đúng/Sai?) Ba câu gấp 5 / 4 / 3 nên giải thành ba bài độc lập cho chắc.",
-          "answerKey": {
-            "value": false,
-            "note": "Một neo 24 tính MỘT lần dùng cả dãy — dãy đáp 6, 8, 12 còn soi lẫn nhau bắt lỗi; giải rời vừa chậm vừa mất lưới soi."
-          },
-          "hints": [
-            "Neo có đổi giữa các câu không?",
-            "Dãy đáp đẹp giúp gì?"
-          ],
-          "teaches": [
-            "K1",
-            "K3"
-          ]
-        }
+      "color": "#E6FAF5"
+     },
+     {
+      "label": "",
+      "cells": [
+       "gấp 4",
+       "3 phần",
+       "8 tuổi",
+       "hiện nay"
+      ],
+      "color": "#FFF4DF",
+      "highlight": [
+       3
       ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:III.6.3#1@G5"
+     },
+     {
+      "label": "",
+      "cells": [
+       "gấp 3",
+       "2 phần",
+       "12 tuổi",
+       "4 năm nữa"
       ],
-      "unlockNext": "DL:KSN5Q1.B36.M2",
-      "award": "huy_hieu_day_co_mot_neo"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P3"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B36.QZ4",
-        "text": "Hiệu 24, mẹ gấp 4 lần con → tuổi con lúc đó:",
-        "choices": [
-          "8",
-          "6",
-          "12"
-        ],
-        "answerKey": {
-          "choice": "8"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K2"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "tf",
-        "sourceItem": "ITEM:KSN5Q1.B36.QZ2",
-        "text": "(Đúng/Sai?) Số lần \"mẹ gấp con\" co dần khi thời gian trôi về tương lai.",
-        "answerKey": {
-          "value": true
-        },
-        "teaches": [
-          "K3"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "mb",
-        "text": "Neo 24, con nay 8: gấp 5 và gấp 3 rơi vào lúc nào?",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "gấp 5",
-              "value": "2 năm trước"
-            },
-            {
-              "label": "gấp 3",
-              "value": "4 năm nữa"
-            }
-          ]
-        },
-        "teaches": [
-          "K1",
-          "K2"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Dãy câu 'khi nào gấp 5/4/3?' — giải sao?",
-        "back": "MỘT NEO hiệu tính MỘT lần (32 − 8 = 24) → từng mức: con = neo : (k − 1) → so tuổi nay đọc mốc (6 → 2 năm trước; 8 → ngay hôm nay; 12 → 4 năm nữa). Số gấp CO DẦN về tương lai; dãy đáp 6, 8, 12 soi lẫn nhau."
-      }
+      "color": "white"
+     }
     ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P3",
-      "+7 ngày: câu P2 (gấp 7)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con dùng một neo hiệu xử cả dãy mức gấp và đọc chiều thời gian qua số-gấp-co-dần. Con đạt {score}/3, {trapResult} câu bẫy giải-rời.",
-    "homeActivity": "Với tuổi thật hai mẹ con, đố cả dãy: 'khi nào gấp 5? 4? 3? 2?' — con tính neo một lần rồi cắm cờ liên tiếp.",
-    "watchFor": "Nếu con dựng lại sơ đồ từng câu — hỏi 'neo có đổi đâu mà tính lại?' (S1)."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B36.M1",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "ba câu — ba bài rời?!",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "Khi nào mẹ gấp 5 con? Gấp 4? Gấp 3? Ba câu là ba bài, dựng lại sơ đồ từ đầu thôi!",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "Ba câu chung đúng một chiếc neo đấy — cậu định tính nó mấy lần?",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B36_M1_F1.png",
-      "sha256_16": "9d44d99cbd9e4914"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con dùng MỘT neo hiệu xử cả DÃY điều kiện gấp tại nhiều mốc: tính neo một lần (32 − 8 = 24) rồi với từng mức \"gấp k\" chia neo cho (k − 1) phần ra tuổi con tại mốc ấy — so với tuổi nay để nói trước / sau / ngay hôm nay; đọc được chiều thời gian: số lần gấp CO DẦN về tương lai; các mốc soi lẫn nhau thay vì giải rời từng bài từ số không.",
-        "steps": [
-          {
-            "text": "dãy đáp 6 → 8 → 12 tăng dần"
-          },
-          {
-            "text": "số gấp 5 → 4 → 3 co dần về tương lai"
-          },
-          {
-            "text": "mốc nay: 32 : 8 = 4 — khớp cờ giữa"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B36_M1_F2.png",
-      "sha256_16": "742f544974af22c4"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "text": "Cả dãy câu hỏi \"khi nào gấp 5? gấp 4? gấp 3?\" dùng chung MỘT neo hiệu (32 − 8 = 24, bất biến — B28/B31): tính neo MỘT lần, đừng giải rời từng bài từ số không.",
-            "tone": "navy"
-          },
-          {
-            "label": "Máy soi từng mức",
-            "text": "gấp k ⇔ hiệu = (k − 1) phần → tuổi con tại mốc ấy = neo : (k − 1); so tuổi nay để đọc mốc: gấp 5 → 24 : 4 = 6 < 8 → 2 năm TRƯỚC; gấp 4 → 24 : 3 = 8 = nay → NGAY HÔM NAY; gấp 3 → 24 : 2 = 12 > 8 → 4 năm NỮA.",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "MỘT NEO TÍNH MỘT LẦN — CẢ DÃY MỐC SOI LẪN NHAU!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B36_M1_F3.png",
-      "sha256_16": "a04c0e1e206ef185"
-    },
-    {
-      "archetype": "place_value_chart",
-      "params": {
-        "title": "MỘT NEO 24 XỬ CẢ DÃY MỨC GẤP",
-        "headers": [
-          "mức gấp",
-          "hiệu mấy phần",
-          "tuổi con",
-          "thời điểm"
-        ],
-        "comma_after": null,
-        "rows": [
-          {
-            "label": "",
-            "cells": [
-              "gấp 7",
-              "6 phần",
-              "4 tuổi",
-              "4 năm trước"
-            ],
-            "color": "white"
-          },
-          {
-            "label": "",
-            "cells": [
-              "gấp 5",
-              "4 phần",
-              "6 tuổi",
-              "2 năm trước"
-            ],
-            "color": "#E6FAF5"
-          },
-          {
-            "label": "",
-            "cells": [
-              "gấp 4",
-              "3 phần",
-              "8 tuổi",
-              "hiện nay"
-            ],
-            "color": "#FFF4DF",
-            "highlight": [
-              3
-            ]
-          },
-          {
-            "label": "",
-            "cells": [
-              "gấp 3",
-              "2 phần",
-              "12 tuổi",
-              "4 năm nữa"
-            ],
-            "color": "white"
-          }
-        ],
-        "note": "Neo = 32 − 8 = 24 · gấp k thì hiệu chiếm (k − 1) phần → con = 24 : (k − 1)"
-      },
-      "caption": "Tính neo MỘT lần rồi mọi mốc soi lẫn nhau — mức gấp càng lớn càng lùi xa",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B36_M1_F4.png",
-      "sha256_16": "2911c512df8e551c"
-    }
-  ]
+    "note": "Neo = 32 − 8 = 24 · gấp k thì hiệu chiếm (k − 1) phần → con = 24 : (k − 1)"
+   },
+   "caption": "Tính neo MỘT lần rồi mọi mốc soi lẫn nhau — mức gấp càng lớn càng lùi xa",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B36_M1_F4.png",
+   "sha256_16": "2911c512df8e551c"
+  }
+ ]
 }

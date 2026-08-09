@@ -1,635 +1,635 @@
 {
-  "title": "Ba cặp đáy - cao & bất biến đáy × cao = 2S — cặp vào công thức phải VUÔNG GÓC",
-  "grade": 5,
-  "durationMinutes": 8,
-  "skills": {
-    "primary": [
-      "CASE:IV.2.1#2"
+ "title": "Ba cặp đáy - cao & bất biến đáy × cao = 2S — cặp vào công thức phải VUÔNG GÓC",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:IV.2.1#2"
+  ],
+  "bktUnit": "CASE:IV.2.1#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B45",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B45.M1",
+  "next": "DL:KSN5Q1.B45.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B45",
+  "chunks": [
+   "CHUNK:KSN5Q1.B45.S4",
+   "CHUNK:KSN5Q1.B45.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B45.2"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B45.1"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con nhận diện tam giác có BA cặp đáy - cao (mỗi cạnh một đường cao riêng) và nghi thức chỉ-tay-trước-khi-bấm: hai đường vào công thức phải VUÔNG GÓC — số không vuông góc (cạnh bên 13!) là mồi nhử; dùng bất biến đáy × cao = 2 × S để tính chéo giữa các cặp (đáy 12 cao 5 → cao ứng đáy 10 là 60 : 10 = 6).",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (cặp phải vuông góc)",
+  "kidText": "Một tam giác có ba cặp đáy – cao. Hai đường đưa vào công thức phải vuông góc với nhau — số không vuông góc là mồi nhử."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Một tam giác có BA cặp đáy - cao: mỗi cạnh làm đáy thì có một đường cao riêng hạ từ đỉnh đối diện — ba cặp, một diện tích."
+   },
+   {
+    "id": "K2",
+    "text": "Nghi thức trước khi bấm: chỉ tay vào hình hỏi \"hai đường này có VUÔNG GÓC không?\" — cạnh bên 13 không vuông góc với đáy 12 nên KHÔNG được vào công thức: S = 12 × 5 : 2 = 30 (số 13 là mồi nhử nằm chình ình)."
+   },
+   {
+    "id": "K3",
+    "text": "Bất biến ba cặp: đáy × cao = 2 × S với MỌI cặp — biết cặp này suy cặp kia: 12 × 5 = 60 → cao ứng đáy 10 là 60 : 10 = 6 cm (không cần tính lại S)."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: BA ĐÔI GIÀY CỦA MỘT TAM GIÁC. Mỗi tam giác có BA đôi giày đáy-cao: chọn cạnh nào làm đáy thì từ đỉnh đối diện thả một đường cao vuông góc xuống — ba cặp, chung MỘT diện tích! Đề mồi: \"thửa đất tam giác đáy 12 m, đường cao ứng với đáy 5 m, cạnh bên 13 m — tính diện tích.\" Trí Long vớ ngay số to: mười hai nhân mười ba chia hai! Nghi thức chỉ tay: hai đường sắp vào công thức — có VUÔNG GÓC với nhau không? Cạnh bên mười ba XIÊN XẸO ôm sườn, không vuông góc với đáy: nó là MỒI NHỬ nằm chình ình! Chỉ cặp vuông góc 12 và 5 được qua cửa: ba mươi mét vuông. Và ba đôi giày chung một bất biến: đáy nhân cao bằng HAI LẦN diện tích — sáu mươi với mọi cặp! Hỏi đường cao ứng với đáy mười? Khỏi tính lại: sáu mươi chia mười — SÁU xăng-ti-mét. Số thừa là mồi — cặp vuông góc mới là chìa!",
+  "canonicalExamples": [
+   {
+    "case": "mồi nhử cạnh bên (ca lõi)",
+    "problem": "Thửa đất tam giác có đáy 12 m, đường cao ứng với đáy 5 m, cạnh bên 13 m. Tính diện tích thửa đất.",
+    "solution": "S = 12 × 5 : 2 = 30 m² — số 13 (cạnh bên) không vuông góc với đáy: mồi nhử, không vào công thức.",
+    "why": "Ca đề A câu 4 — trap vớ-số-to rình đây."
+   },
+   {
+    "case": "bất biến tính chéo (ca ba cặp)",
+    "problem": "Một tam giác có đáy 12 cm với đường cao tương ứng 5 cm. Hỏi đường cao ứng với đáy 10 cm của tam giác ấy dài bao nhiêu?",
+    "solution": "Bất biến: đáy × cao = 2S = 60 → cao ứng đáy 10 = 60 : 10 = 6 cm.",
+    "why": "Ca LT4 — ba cặp một bất biến."
+   }
+  ],
+  "numberRange": "Lớp 5: cạnh ≤ 20; bộ số đẹp (5-12-13, 6-8-10).",
+  "misconceptions": [
+   {
+    "wrong": "Ghép đáy này với \"cao\" kia: vớ cạnh bên 13 (số to nằm chình ình) nhân với đáy 12.",
+    "signal": "Hai số vào công thức không vuông góc; mọi số trong đề đều được dùng.",
+    "fix": "nghi thức chỉ tay: hai đường phải VUÔNG GÓC; số thừa là mồi — đề cho để thử con.",
+    "counterExample": "12 × 13 : 2 = 78 m² — thửa đất phình gấp 2,6 lần thửa thật: đo bằng cạnh xiên là đo gian!"
+   }
+  ],
+  "vocabulary": [
+   "ba đôi giày đáy - cao",
+   "nghi thức chỉ tay",
+   "vuông góc mới qua cửa",
+   "số thừa là mồi",
+   "bất biến 2S"
+  ],
+  "mantra": "CẶP VÀO CÔNG THỨC PHẢI VUÔNG GÓC — SỐ THỪA LÀ MỒI!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Ôn M1: S tam giác đáy 12 cao 5 = ? cm²",
+    "answerKey": {
+     "value": 30
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B45.M1",
+   "message": "Ôn công thức rồi thử giày nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Thửa đất tam giác: đáy 12 m, cao ứng đáy 5 m, cạnh bên 13 m. Trí Long vớ số to: \"12 × 13 : 2 = 78!\" Su Kem chỉ vào hình: \"Cạnh 13 đang XIÊN XẸO ôm sườn kìa — nó có vuông góc với đáy không mà đòi vào công thức?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "12 × 13 : 2 = 78??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để chỉ tay kiểm tra!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
     ],
-    "bktUnit": "CASE:IV.2.1#2@G5"
+    "narration": "Nghi thức chỉ tay trước khi bấm: hai đường sắp vào công thức — có VUÔNG GÓC không? Cạnh bên mười ba xiên xẹo — KHÔNG vuông góc với đáy: nó là MỒI NHỬ đề cài để thử con! Chỉ cặp vuông góc mười hai và năm được qua cửa: mười hai nhân năm chia hai — BA MƯƠI mét vuông! Và mỗi tam giác có BA đôi giày đáy-cao: mỗi cạnh làm đáy — một đường cao riêng từ đỉnh đối diện: ba cặp, chung MỘT diện tích!",
+    "display": {
+     "type": "pair_check_interactive",
+     "spec": {
+      "gate": "cửa vuông góc ⊾",
+      "pass_": "12 ⊥ 5 → vào",
+      "block": "13 xiên — mồi nhử",
+      "answer": "S = 30 m²",
+      "note": "3 cặp đáy-cao / tam giác"
+     }
+    },
+    "interaction": {
+     "type": "gate_pairs",
+     "answerKey": {
+      "value": 30
+     },
+     "successMessage": "Chỉ 12 ⊥ 5 qua cửa → 30 m² — số 13 là mồi!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Một tam giác có mấy cặp đáy - cao?",
+     "choices": [
+      "3",
+      "1",
+      "2"
+     ],
+     "answerKey": {
+      "choice": "3"
+     },
+     "wrongFeedback": "Mỗi cạnh một đường cao riêng.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 40,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Ba đôi giày chung một BẤT BIẾN: đáy nhân cao bằng HAI LẦN diện tích — với mọi cặp! Cặp một: mười hai nhân năm bằng SÁU MƯƠI. Hỏi đường cao ứng với đáy MƯỜI? Khỏi tính lại diện tích — bất biến trả lời luôn: sáu mươi chia mười bằng SÁU xăng-ti-mét! Đây chính là chiếc cầu sẽ gánh bài đường-cao-xuống-huyền ở phần tam giác vuông: biết một cặp — suy mọi cặp.",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "bất biến: đáy × cao = 2S = 60 (mọi cặp)",
+      "cao ứng đáy 10: 60 : 10 = 6",
+      "biết một cặp — suy mọi cặp"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: cặp vào công thức phải vuông góc — số thừa là mồi!",
+    "display": {
+     "type": "mantra_card",
+     "text": "VUÔNG GÓC MỚI QUA CỬA!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B45",
-    "order": 2,
-    "prev": "DL:KSN5Q1.B45.M1",
-    "next": "DL:KSN5Q1.B45.M3"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B45",
-    "chunks": [
-      "CHUNK:KSN5Q1.B45.S4",
-      "CHUNK:KSN5Q1.B45.S5"
-    ],
-    "cases": [
-      "CA:KSN5Q1.B45.2"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B45.1"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Thửa đất tam giác: đáy mười hai mét, cao ứng đáy năm mét, cạnh bên mười ba mét. Trí Long vớ số to: mười hai nhân mười ba chia hai — bảy mươi tám! Su Kem chỉ vào hình: cạnh mười ba đang XIÊN XẸO ôm sườn kìa — nó có vuông góc với đáy không mà đòi vào công thức?",
+    "screenText": "12 × 13 : 2 = 78??",
+    "visual": "Thửa đất tam giác với cạnh bên 13 tô đỏ xiên xẹo; Trí Long kéo số 13 về máy tính; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Nghi thức chỉ tay trước khi bấm: hai đường sắp vào công thức — có VUÔNG GÓC không? Cạnh bên mười ba xiên xẹo — KHÔNG vuông góc: nó là MỒI NHỬ đề cài để thử con! Chỉ cặp vuông góc mười hai và năm được qua cửa: BA MƯƠI mét vuông! Và mỗi tam giác có BA đôi giày đáy-cao: ba cặp — chung MỘT diện tích!",
+    "screenText": "cửa ⊾: 12 ⊥ 5 vào → 30 m² · 13 xiên = mồi · 3 cặp/tam giác",
+    "visual": "Cánh cửa khắc ký hiệu vuông góc; cặp 12-5 nắm tay qua cửa, số 13 bị chặn ngoài dán nhãn MỒI; ba đôi giày ba màu quanh tam giác.",
+    "assets": [],
+    "duration": 24
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Ba đôi giày chung một BẤT BIẾN: đáy nhân cao bằng HAI LẦN diện tích — với mọi cặp! Cặp một: mười hai nhân năm bằng SÁU MƯƠI. Hỏi đường cao ứng với đáy MƯỜI? Khỏi tính lại diện tích — bất biến trả lời luôn: sáu mươi chia mười bằng SÁU xăng-ti-mét! Đây chính là chiếc cầu sẽ gánh bài đường-cao-xuống-huyền ở phần tam giác vuông: biết một cặp — suy mọi cặp!",
+    "screenText": "đáy × cao = 2S = 60 (mọi cặp) → cao ứng đáy 10 = 6 cm",
+    "visual": "Ba cặp đáy-cao nối chung két bất biến khắc 60; phép chia 60:10 nhả đáp 6; cầu teal dẫn sang bài huyền.",
+    "assets": [],
+    "duration": 26
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú ba đôi giày: cặp vào công thức phải vuông góc — số thừa là mồi!",
+    "screenText": "VUÔNG GÓC MỚI QUA CỬA!",
+    "visual": "Thẻ thần chú vàng với icon cửa vuông góc.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Thửa đất của con: đáy mười hai, cao năm, cạnh bên mười ba — chỉ tay kiểm vuông góc rồi mới bấm! Vào bài luyện ngay!",
+    "screenText": "⊥ chưa? → S = ? (13 = mồi!)",
+    "visual": "Bàn tay chỉ vào hai đường chờ kiểm; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Qua cửa vuông góc",
+  "problem": "Thửa đất tam giác có đáy 12 m, đường cao ứng với đáy 5 m, cạnh bên 13 m. Tính diện tích thửa đất.",
+  "steps": [
+   {
+    "show": "Bước 1 — Chỉ tay: 12 vuông góc với 5 ✓ (cặp tương ứng); 13 xiên — mồi nhử, loại.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Số 13 trong đề dùng để làm gì?",
+     "choices": [
+      "mồi nhử — không vào công thức",
+      "nhân với 12",
+      "cộng vào đáy"
+     ],
+     "answerKey": {
+      "choice": "mồi nhử — không vào công thức"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — S = 12 × 5 : 2 = 30 m²."
+   },
+   {
+    "show": "Bước 3 — Bất biến: đáy × cao = 60 với mọi cặp → cao ứng đáy 10 = 6.",
+    "askAfter": {
+     "format": "num",
+     "text": "Đáy 12 cao 5 → cao ứng đáy 10 = ?",
+     "answerKey": {
+      "value": 6
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B45.LT5",
+     "text": "Thửa đất tam giác có đáy 12 m, đường cao ứng với đáy 5 m, cạnh bên 13 m. Tính diện tích thửa đất — và cho biết số nào là mồi nhử.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "S",
+        "value": 30
+       },
+       {
+        "label": "mồi nhử",
+        "value": "cạnh bên 13 m — không vuông góc với đáy",
+        "options": [
+         "cạnh bên 13 m",
+         "đáy 12 m",
+         "đường cao 5 m"
+        ]
+       }
+      ]
+     },
+     "hints": [
+      "Chỉ tay kiểm vuông góc.",
+      "Chỉ 12 vuông góc với 5 vào công thức."
+     ],
+     "solutionNarrative": "30 m² — số 13 là mồi.",
+     "teaches": [
+      "K2"
+     ],
+     "generator": {
+      "template": "Đáy {a}, cao {h}, cạnh bên {c} → S?",
+      "constraints": {},
+      "answerRule": "a × h : 2 (c là mồi)"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B45.LT4",
+     "text": "Một tam giác có đáy 12 cm với đường cao tương ứng 5 cm. Hỏi đường cao ứng với đáy 10 cm của tam giác ấy dài bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cao",
+        "value": 6
+       }
+      ]
+     },
+     "hints": [
+      "Bất biến đáy × cao = 2S.",
+      "60 : 10."
+     ],
+     "solutionNarrative": "6 cm — khỏi tính lại S.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Trong công thức S tam giác, có thể lấy đáy nhân với cạnh bên cho tiện khi cạnh bên dài đẹp.",
+     "answerKey": {
+      "value": false,
+      "note": "Cặp vào công thức phải VUÔNG GÓC — cạnh bên xiên cho 78 m² thay vì 30: đo bằng cạnh xiên là đo gian."
+     },
+     "hints": [
+      "Nghi thức chỉ tay.",
+      "Thử 12 × 13 xem phình cỡ nào."
+     ],
+     "teaches": [
+      "K2"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:IV.2.1#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B45.M3",
+   "award": "huy_hieu_cua_vuong_goc"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B45.QZ1",
+    "text": "(Đúng/Sai?) Đáy và đường cao trong công thức phải vuông góc với nhau.",
+    "answerKey": {
+     "value": true
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B45.QZ4",
+    "text": "Một tam giác có mấy cặp đáy - cao?",
+    "choices": [
+     "3",
+     "1",
+     "2"
+    ],
+    "answerKey": {
+     "choice": "3"
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "Một tam giác có đáy 12 cm và chiều cao tương ứng 5 cm. Hỏi chiều cao ứng với đáy 10 cm dài bao nhiêu xăng-ti-mét?",
+    "answerKey": {
+     "value": 6
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Cạnh bên 13 trong đề S tam giác — dùng không? Ba cặp liên hệ gì?",
+    "back": "KHÔNG — nghi thức chỉ tay: cặp vào công thức phải VUÔNG GÓC (12 ⊥ 5 → 30 m²; 12 × 13 phình 78: đo gian!). Số thừa là mồi. Tam giác có 3 cặp đáy-cao chung bất biến đáy × cao = 2S = 60 → cao ứng đáy 10 = 6 (khỏi tính lại)."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P2 (bất biến)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học ba cặp đáy-cao, nghi thức chỉ-tay-kiểm-vuông-góc và bất biến 2S. Con đạt {score}/3, {trapResult} câu bẫy mồi-nhử.",
+  "homeActivity": "Vẽ một tam giác to trên giấy — con dùng êke thả cả ba đường cao và gọi tên ba đôi giày.",
+  "watchFor": "Nếu con vớ số to nhất trong đề — hỏi 'hai đường ấy vuông góc chưa?' (S1)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B45.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "12 × 13 : 2 = 78??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "12 × 13 : 2 = 78!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Cạnh 13 đang XIÊN XẸO ôm sườn kìa — nó có vuông góc với đáy không mà đòi vào công thức?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B45_M2_F1.png",
+   "sha256_16": "c6d64fe2f2d27a9c"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con nhận diện tam giác có BA cặp đáy - cao (mỗi cạnh một đường cao riêng) và nghi thức chỉ-tay-trước-khi-bấm: hai đường vào công thức phải VUÔNG GÓC — số không vuông góc (cạnh bên 13!) là mồi nhử; dùng bất biến đáy × cao = 2 × S để tính chéo giữa các cặp (đáy 12 cao 5 → cao ứng đáy 10 là 60 : 10 = 6).",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (cặp phải vuông góc)",
-    "kidText": "Một tam giác có ba cặp đáy – cao. Hai đường đưa vào công thức phải vuông góc với nhau — số không vuông góc là mồi nhử."
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Ba cặp đáy - cao & bất biến đáy × cao = 2S — cặp vào công thức phải VUÔNG GÓC",
+    "steps": [
+     {
+      "text": "bất biến: đáy × cao = 2S = 60 (mọi cặp)"
+     },
+     {
+      "text": "cao ứng đáy 10: 60 : 10 = 6"
+     },
+     {
+      "text": "biết một cặp — suy mọi cặp"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B45_M2_F2.png",
+   "sha256_16": "88711c9675246862"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Một tam giác có BA cặp đáy - cao: mỗi cạnh làm đáy thì có một đường cao riêng hạ từ đỉnh đối diện — ba cặp, một diện tích."
-      },
-      {
-        "id": "K2",
-        "text": "Nghi thức trước khi bấm: chỉ tay vào hình hỏi \"hai đường này có VUÔNG GÓC không?\" — cạnh bên 13 không vuông góc với đáy 12 nên KHÔNG được vào công thức: S = 12 × 5 : 2 = 30 (số 13 là mồi nhử nằm chình ình)."
-      },
-      {
-        "id": "K3",
-        "text": "Bất biến ba cặp: đáy × cao = 2 × S với MỌI cặp — biết cặp này suy cặp kia: 12 × 5 = 60 → cao ứng đáy 10 là 60 : 10 = 6 cm (không cần tính lại S)."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: BA ĐÔI GIÀY CỦA MỘT TAM GIÁC. Mỗi tam giác có BA đôi giày đáy-cao: chọn cạnh nào làm đáy thì từ đỉnh đối diện thả một đường cao vuông góc xuống — ba cặp, chung MỘT diện tích! Đề mồi: \"thửa đất tam giác đáy 12 m, đường cao ứng với đáy 5 m, cạnh bên 13 m — tính diện tích.\" Trí Long vớ ngay số to: mười hai nhân mười ba chia hai! Nghi thức chỉ tay: hai đường sắp vào công thức — có VUÔNG GÓC với nhau không? Cạnh bên mười ba XIÊN XẸO ôm sườn, không vuông góc với đáy: nó là MỒI NHỬ nằm chình ình! Chỉ cặp vuông góc 12 và 5 được qua cửa: ba mươi mét vuông. Và ba đôi giày chung một bất biến: đáy nhân cao bằng HAI LẦN diện tích — sáu mươi với mọi cặp! Hỏi đường cao ứng với đáy mười? Khỏi tính lại: sáu mươi chia mười — SÁU xăng-ti-mét. Số thừa là mồi — cặp vuông góc mới là chìa!",
-    "canonicalExamples": [
-      {
-        "case": "mồi nhử cạnh bên (ca lõi)",
-        "problem": "Thửa đất tam giác có đáy 12 m, đường cao ứng với đáy 5 m, cạnh bên 13 m. Tính diện tích thửa đất.",
-        "solution": "S = 12 × 5 : 2 = 30 m² — số 13 (cạnh bên) không vuông góc với đáy: mồi nhử, không vào công thức.",
-        "why": "Ca đề A câu 4 — trap vớ-số-to rình đây."
-      },
-      {
-        "case": "bất biến tính chéo (ca ba cặp)",
-        "problem": "Một tam giác có đáy 12 cm với đường cao tương ứng 5 cm. Hỏi đường cao ứng với đáy 10 cm của tam giác ấy dài bao nhiêu?",
-        "solution": "Bất biến: đáy × cao = 2S = 60 → cao ứng đáy 10 = 60 : 10 = 6 cm.",
-        "why": "Ca LT4 — ba cặp một bất biến."
-      }
-    ],
-    "numberRange": "Lớp 5: cạnh ≤ 20; bộ số đẹp (5-12-13, 6-8-10).",
-    "misconceptions": [
-      {
-        "wrong": "Ghép đáy này với \"cao\" kia: vớ cạnh bên 13 (số to nằm chình ình) nhân với đáy 12.",
-        "signal": "Hai số vào công thức không vuông góc; mọi số trong đề đều được dùng.",
-        "fix": "K2 — nghi thức chỉ tay: hai đường phải VUÔNG GÓC; số thừa là mồi — đề cho để thử con.",
-        "counterExample": "12 × 13 : 2 = 78 m² — thửa đất phình gấp 2,6 lần thửa thật: đo bằng cạnh xiên là đo gian!"
-      }
-    ],
-    "vocabulary": [
-      "ba đôi giày đáy - cao",
-      "nghi thức chỉ tay",
-      "vuông góc mới qua cửa",
-      "số thừa là mồi",
-      "bất biến 2S"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Một tam giác có BA cặp đáy - cao",
+      "text": "mỗi cạnh làm đáy thì có một đường cao riêng hạ từ đỉnh đối diện — ba cặp, một diện tích.",
+      "tone": "navy"
+     },
+     {
+      "label": "Nghi thức trước khi bấm",
+      "text": "chỉ tay vào hình hỏi \"hai đường này có VUÔNG GÓC không?\" — cạnh bên 13 không vuông góc với đáy 12 nên KHÔNG được vào công thức: S = 12 × 5 : 2 = 30 (số 13 là mồi nhử nằm chình ình).",
+      "tone": "teal"
+     }
     ],
     "mantra": "CẶP VÀO CÔNG THỨC PHẢI VUÔNG GÓC — SỐ THỪA LÀ MỒI!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B45_M2_F3.png",
+   "sha256_16": "411d7b30789adf0b"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "Ôn M1: S tam giác đáy 12 cao 5 = ? cm²",
-        "answerKey": {
-          "value": 30
-        }
-      }
+  {
+   "archetype": "geo_shape",
+   "params": {
+    "title": "CẶP ĐÁY - CAO PHẢI VUÔNG GÓC — CẠNH BÊN 13 LÀ MỒI NHỬ",
+    "points": {
+     "B": [
+      0,
+      0
+     ],
+     "C": [
+      12,
+      0
+     ],
+     "A": [
+      4,
+      5
+     ],
+     "H": [
+      4,
+      0
+     ]
+    },
+    "shapes": [
+     {
+      "pts": [
+       "B",
+       "C",
+       "A"
+      ],
+      "fill": "pale"
+     }
     ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B45.M1",
-      "message": "Ôn công thức rồi thử giày nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 18,
-        "narration": "Thửa đất tam giác: đáy 12 m, cao ứng đáy 5 m, cạnh bên 13 m. Trí Long vớ số to: \"12 × 13 : 2 = 78!\" Su Kem chỉ vào hình: \"Cạnh 13 đang XIÊN XẸO ôm sườn kìa — nó có vuông góc với đáy không mà đòi vào công thức?\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "12 × 13 : 2 = 78??"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để chỉ tay kiểm tra!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 44,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Nghi thức chỉ tay trước khi bấm: hai đường sắp vào công thức — có VUÔNG GÓC không? Cạnh bên mười ba xiên xẹo — KHÔNG vuông góc với đáy: nó là MỒI NHỬ đề cài để thử con! Chỉ cặp vuông góc mười hai và năm được qua cửa: mười hai nhân năm chia hai — BA MƯƠI mét vuông! Và mỗi tam giác có BA đôi giày đáy-cao: mỗi cạnh làm đáy — một đường cao riêng từ đỉnh đối diện: ba cặp, chung MỘT diện tích!",
-        "display": {
-          "type": "pair_check_interactive",
-          "spec": {
-            "gate": "cửa vuông góc ⊾",
-            "pass_": "12 ⊥ 5 → vào",
-            "block": "13 xiên — mồi nhử",
-            "answer": "S = 30 m²",
-            "note": "3 cặp đáy-cao / tam giác"
-          }
-        },
-        "interaction": {
-          "type": "gate_pairs",
-          "answerKey": {
-            "value": 30
-          },
-          "successMessage": "Chỉ 12 ⊥ 5 qua cửa → 30 m² — số 13 là mồi!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "mcq",
-          "text": "Một tam giác có mấy cặp đáy - cao?",
-          "choices": [
-            "3",
-            "1",
-            "2"
-          ],
-          "answerKey": {
-            "choice": "3"
-          },
-          "wrongFeedback": "Mỗi cạnh một đường cao riêng.",
-          "objective": "O1",
-          "teaches": [
-            "K1"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 40,
-        "teaches": [
-          "K3"
-        ],
-        "narration": "Ba đôi giày chung một BẤT BIẾN: đáy nhân cao bằng HAI LẦN diện tích — với mọi cặp! Cặp một: mười hai nhân năm bằng SÁU MƯƠI. Hỏi đường cao ứng với đáy MƯỜI? Khỏi tính lại diện tích — bất biến trả lời luôn: sáu mươi chia mười bằng SÁU xăng-ti-mét! Đây chính là chiếc cầu sẽ gánh bài đường-cao-xuống-huyền ở phần tam giác vuông: biết một cặp — suy mọi cặp.",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "bất biến: đáy × cao = 2S = 60 (mọi cặp)",
-            "cao ứng đáy 10: 60 : 10 = 6",
-            "biết một cặp — suy mọi cặp"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú ba đôi giày: cặp vào công thức phải vuông góc — số thừa là mồi!",
-        "display": {
-          "type": "mantra_card",
-          "text": "VUÔNG GÓC MỚI QUA CỬA!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 90,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
-    },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Thửa đất tam giác: đáy mười hai mét, cao ứng đáy năm mét, cạnh bên mười ba mét. Trí Long vớ số to: mười hai nhân mười ba chia hai — bảy mươi tám! Su Kem chỉ vào hình: cạnh mười ba đang XIÊN XẸO ôm sườn kìa — nó có vuông góc với đáy không mà đòi vào công thức?",
-        "screenText": "12 × 13 : 2 = 78??",
-        "visual": "Thửa đất tam giác với cạnh bên 13 tô đỏ xiên xẹo; Trí Long kéo số 13 về máy tính; dấu hỏi đỏ #C0392B.",
-        "assets": [],
-        "duration": 22
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Nghi thức chỉ tay trước khi bấm: hai đường sắp vào công thức — có VUÔNG GÓC không? Cạnh bên mười ba xiên xẹo — KHÔNG vuông góc: nó là MỒI NHỬ đề cài để thử con! Chỉ cặp vuông góc mười hai và năm được qua cửa: BA MƯƠI mét vuông! Và mỗi tam giác có BA đôi giày đáy-cao: ba cặp — chung MỘT diện tích!",
-        "screenText": "cửa ⊾: 12 ⊥ 5 vào → 30 m² · 13 xiên = mồi · 3 cặp/tam giác",
-        "visual": "Cánh cửa khắc ký hiệu vuông góc; cặp 12-5 nắm tay qua cửa, số 13 bị chặn ngoài dán nhãn MỒI; ba đôi giày ba màu quanh tam giác.",
-        "assets": [],
-        "duration": 24
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Ba đôi giày chung một BẤT BIẾN: đáy nhân cao bằng HAI LẦN diện tích — với mọi cặp! Cặp một: mười hai nhân năm bằng SÁU MƯƠI. Hỏi đường cao ứng với đáy MƯỜI? Khỏi tính lại diện tích — bất biến trả lời luôn: sáu mươi chia mười bằng SÁU xăng-ti-mét! Đây chính là chiếc cầu sẽ gánh bài đường-cao-xuống-huyền ở phần tam giác vuông: biết một cặp — suy mọi cặp!",
-        "screenText": "đáy × cao = 2S = 60 (mọi cặp) → cao ứng đáy 10 = 6 cm",
-        "visual": "Ba cặp đáy-cao nối chung két bất biến khắc 60; phép chia 60:10 nhả đáp 6; cầu teal dẫn sang bài huyền.",
-        "assets": [],
-        "duration": 26
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú ba đôi giày: cặp vào công thức phải vuông góc — số thừa là mồi!",
-        "screenText": "VUÔNG GÓC MỚI QUA CỬA!",
-        "visual": "Thẻ thần chú vàng với icon cửa vuông góc.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Thửa đất của con: đáy mười hai, cao năm, cạnh bên mười ba — chỉ tay kiểm vuông góc rồi mới bấm! Vào bài luyện ngay!",
-        "screenText": "⊥ chưa? → S = ? (13 = mồi!)",
-        "visual": "Bàn tay chỉ vào hai đường chờ kiểm; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P1",
-        "assets": [],
-        "duration": 10
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Qua cửa vuông góc",
-    "problem": "Thửa đất tam giác có đáy 12 m, đường cao ứng với đáy 5 m, cạnh bên 13 m. Tính diện tích thửa đất.",
-    "steps": [
-      {
-        "show": "Bước 1 — Chỉ tay: 12 ⊥ 5 ✓ (cặp tương ứng); 13 xiên — mồi nhử, loại.",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Số 13 trong đề dùng để làm gì?",
-          "choices": [
-            "mồi nhử — không vào công thức",
-            "nhân với 12",
-            "cộng vào đáy"
-          ],
-          "answerKey": {
-            "choice": "mồi nhử — không vào công thức"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — S = 12 × 5 : 2 = 30 m²."
-      },
-      {
-        "show": "Bước 3 — Bất biến: đáy × cao = 60 với mọi cặp → cao ứng đáy 10 = 6.",
-        "askAfter": {
-          "format": "num",
-          "text": "Đáy 12 cao 5 → cao ứng đáy 10 = ?",
-          "answerKey": {
-            "value": 6
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B45.LT5",
-          "text": "Thửa đất tam giác có đáy 12 m, đường cao ứng với đáy 5 m, cạnh bên 13 m. Tính diện tích thửa đất — và cho biết số nào là mồi nhử.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "S",
-                "value": 30
-              },
-              {
-                "label": "mồi nhử",
-                "value": "cạnh bên 13 m — không vuông góc với đáy",
-                "options": [
-                  "cạnh bên 13 m",
-                  "đáy 12 m",
-                  "đường cao 5 m"
-                ]
-              }
-            ]
-          },
-          "hints": [
-            "Chỉ tay kiểm vuông góc.",
-            "Chỉ 12 ⊥ 5 vào công thức."
-          ],
-          "solutionNarrative": "30 m² — số 13 là mồi.",
-          "teaches": [
-            "K2"
-          ],
-          "generator": {
-            "template": "Đáy {a}, cao {h}, cạnh bên {c} → S?",
-            "constraints": {},
-            "answerRule": "a × h : 2 (c là mồi)"
-          }
-        }
-      ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B45.LT4",
-          "text": "Một tam giác có đáy 12 cm với đường cao tương ứng 5 cm. Hỏi đường cao ứng với đáy 10 cm của tam giác ấy dài bao nhiêu?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "cao",
-                "value": 6
-              }
-            ]
-          },
-          "hints": [
-            "Bất biến đáy × cao = 2S.",
-            "60 : 10."
-          ],
-          "solutionNarrative": "6 cm — khỏi tính lại S.",
-          "teaches": [
-            "K3"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P3",
-          "format": "tf",
-          "text": "(Đúng/Sai?) Trong công thức S tam giác, có thể lấy đáy nhân với cạnh bên cho tiện khi cạnh bên dài đẹp.",
-          "answerKey": {
-            "value": false,
-            "note": "Cặp vào công thức phải VUÔNG GÓC — cạnh bên xiên cho 78 m² thay vì 30: đo bằng cạnh xiên là đo gian."
-          },
-          "hints": [
-            "Nghi thức chỉ tay.",
-            "Thử 12 × 13 xem phình cỡ nào."
-          ],
-          "teaches": [
-            "K2"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:IV.2.1#2@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B45.M3",
-      "award": "huy_hieu_cua_vuong_goc"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "tf",
-        "sourceItem": "ITEM:KSN5Q1.B45.QZ1",
-        "text": "(Đúng/Sai?) Đáy và đường cao trong công thức phải vuông góc với nhau.",
-        "answerKey": {
-          "value": true
-        },
-        "mustPass": true,
-        "teaches": [
-          "K2"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B45.QZ4",
-        "text": "Một tam giác có mấy cặp đáy - cao?",
-        "choices": [
-          "3",
-          "1",
-          "2"
-        ],
-        "answerKey": {
-          "choice": "3"
-        },
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "num",
-        "text": "Một tam giác có đáy 12 cm và chiều cao tương ứng 5 cm. Hỏi chiều cao ứng với đáy 10 cm dài bao nhiêu xăng-ti-mét?",
-        "answerKey": {
-          "value": 6
-        },
-        "teaches": [
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Cạnh bên 13 trong đề S tam giác — dùng không? Ba cặp liên hệ gì?",
-        "back": "KHÔNG — nghi thức chỉ tay: cặp vào công thức phải VUÔNG GÓC (12 ⊥ 5 → 30 m²; 12 × 13 phình 78: đo gian!). Số thừa là mồi. Tam giác có 3 cặp đáy-cao chung bất biến đáy × cao = 2S = 60 → cao ứng đáy 10 = 6 (khỏi tính lại)."
-      }
+    "segments": [
+     {
+      "from": "A",
+      "to": "H",
+      "dashed": true,
+      "label": "cao 5 vuông góc với đáy",
+      "dx": 8
+     }
     ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P2 (bất biến)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con học ba cặp đáy-cao, nghi thức chỉ-tay-kiểm-vuông-góc và bất biến 2S. Con đạt {score}/3, {trapResult} câu bẫy mồi-nhử.",
-    "homeActivity": "Vẽ một tam giác to trên giấy — con dùng êke thả cả ba đường cao và gọi tên ba đôi giày.",
-    "watchFor": "Nếu con vớ số to nhất trong đề — hỏi 'hai đường ấy vuông góc chưa?' (S1)."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B45.M2",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "12 × 13 : 2 = 78??",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "12 × 13 : 2 = 78!",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "Cạnh 13 đang XIÊN XẸO ôm sườn kìa — nó có vuông góc với đáy không mà đòi vào công thức?",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B45_M2_F1.png",
-      "sha256_16": "c6d64fe2f2d27a9c"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con nhận diện tam giác có BA cặp đáy - cao (mỗi cạnh một đường cao riêng) và nghi thức chỉ-tay-trước-khi-bấm: hai đường vào công thức phải VUÔNG GÓC — số không vuông góc (cạnh bên 13!) là mồi nhử; dùng bất biến đáy × cao = 2 × S để tính chéo giữa các cặp (đáy 12 cao 5 → cao ứng đáy 10 là 60 : 10 = 6).",
-        "steps": [
-          {
-            "text": "bất biến: đáy × cao = 2S = 60 (mọi cặp)"
-          },
-          {
-            "text": "cao ứng đáy 10: 60 : 10 = 6"
-          },
-          {
-            "text": "biết một cặp — suy mọi cặp"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B45_M2_F2.png",
-      "sha256_16": "26bb18ac97d61ee3"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Một tam giác có BA cặp đáy - cao",
-            "text": "mỗi cạnh làm đáy thì có một đường cao riêng hạ từ đỉnh đối diện — ba cặp, một diện tích.",
-            "tone": "navy"
-          },
-          {
-            "label": "Nghi thức trước khi bấm",
-            "text": "chỉ tay vào hình hỏi \"hai đường này có VUÔNG GÓC không?\" — cạnh bên 13 không vuông góc với đáy 12 nên KHÔNG được vào công thức: S = 12 × 5 : 2 = 30 (số 13 là mồi nhử nằm chình ình).",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "CẶP VÀO CÔNG THỨC PHẢI VUÔNG GÓC — SỐ THỪA LÀ MỒI!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B45_M2_F3.png",
-      "sha256_16": "411d7b30789adf0b"
-    },
-    {
-      "archetype": "geo_shape",
-      "params": {
-        "title": "CẶP ĐÁY - CAO PHẢI VUÔNG GÓC — CẠNH BÊN 13 LÀ MỒI NHỬ",
-        "points": {
-          "B": [
-            0,
-            0
-          ],
-          "C": [
-            12,
-            0
-          ],
-          "A": [
-            4,
-            5
-          ],
-          "H": [
-            4,
-            0
-          ]
-        },
-        "shapes": [
-          {
-            "pts": [
-              "B",
-              "C",
-              "A"
-            ],
-            "fill": "pale"
-          }
-        ],
-        "segments": [
-          {
-            "from": "A",
-            "to": "H",
-            "dashed": true,
-            "label": "cao 5 ⊥ đáy",
-            "dx": 8
-          }
-        ],
-        "edge_labels": [
-          {
-            "from": "B",
-            "to": "C",
-            "text": "đáy 12",
-            "dy": -5
-          },
-          {
-            "from": "A",
-            "to": "C",
-            "text": "cạnh bên 13 — KHÔNG dùng",
-            "dx": 13,
-            "dy": 3
-          }
-        ],
-        "show_points": [
-          "A",
-          "B",
-          "C"
-        ],
-        "formula": "12 × 5 : 2 = 30 m²  ·  bất biến: đáy × cao = 2S = 60",
-        "note": "Đường cao ứng đáy 10 = 60 : 10 = 6 cm — mỗi cạnh có một đường cao riêng"
-      },
-      "caption": "Nghi thức chỉ tay: hai đường vào công thức phải vuông góc với nhau",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B45_M2_F4.png",
-      "sha256_16": "05ccaceafe76a564"
-    }
-  ]
+    "edge_labels": [
+     {
+      "from": "B",
+      "to": "C",
+      "text": "đáy 12",
+      "dy": -5
+     },
+     {
+      "from": "A",
+      "to": "C",
+      "text": "cạnh bên 13 — KHÔNG dùng",
+      "dx": 13,
+      "dy": 3
+     }
+    ],
+    "show_points": [
+     "A",
+     "B",
+     "C"
+    ],
+    "formula": "12 × 5 : 2 = 30 m² · bất biến: đáy × cao = 2S = 60",
+    "note": "Đường cao ứng đáy 10 = 60 : 10 = 6 cm — mỗi cạnh có một đường cao riêng"
+   },
+   "caption": "Nghi thức chỉ tay: hai đường vào công thức phải vuông góc với nhau",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B45_M2_F4.png",
+   "sha256_16": "504a44ba58c2f52b"
+  }
+ ]
 }

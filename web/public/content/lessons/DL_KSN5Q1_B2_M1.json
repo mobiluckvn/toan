@@ -1,706 +1,706 @@
 {
-  "title": "Sáu ca thêm – xóa chữ số: chuyện chuyển nhà",
-  "grade": 5,
-  "durationMinutes": 9,
-  "skills": {
-    "primary": [
-      "CASE:I.1.2#1"
+ "title": "Sáu ca thêm – xóa chữ số: chuyện chuyển nhà",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:I.1.2#1"
+  ],
+  "bktUnit": "CASE:I.1.2#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B2",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B1.M3",
+  "next": "DL:KSN5Q1.B2.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B2",
+  "chunks": [
+   "CHUNK:KSN5Q1.B2.S3",
+   "CHUNK:KSN5Q1.B2.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B2.1",
+   "CA:KSN5Q1.B2.2",
+   "CA:KSN5Q1.B2.3",
+   "CA:KSN5Q1.B2.4"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B2.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con làm chủ các ca thêm – xóa chữ số của số tự nhiên bằng chìa khóa cấu tạo số: thêm phải, thêm trái, thêm/xóa giữa, xóa cuối — kể cả ca khó nhất là xóa chữ số ở GIỮA.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (bẫy xóa giữa)",
+  "kidText": "Thêm hay xoá một chữ số là cả dãy số chuyển nhà. Con tính được số mới, kể cả ca khó nhất là xoá chữ số ở giữa."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Thêm chữ số c vào BÊN PHẢI: số mới = số cũ × 10 + c (mọi chữ số cũ dọn nhà sang trái một hàng)."
+   },
+   {
+    "id": "K2",
+    "text": "Thêm chữ số c vào BÊN TRÁI: số mới = số cũ + c × 10ⁿ (các chữ số cũ đứng yên, c chiếm hàng cao nhất mới)."
+   },
+   {
+    "id": "K3",
+    "text": "Thêm hoặc xóa chữ số ở GIỮA: tách số thành hai khúc theo cấu tạo rồi ráp lại — tuyệt đối không phải cộng/trừ chữ số đó."
+   },
+   {
+    "id": "K4",
+    "text": "Xóa chữ số c ở TẬN CÙNG: số mới = (số cũ − c) : 10; mức giảm khi xóa tận cùng số ab là 9a + b."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: mỗi con số là một DÃY NHÀ trên bản đồ các hàng. Thêm chữ số bên phải là có cư dân mới chen vào hàng đơn vị — CẢ DÃY dọn sang trái, ai cũng giàu gấp 10. Thêm bên trái là xây thêm căn đầu phố — không ai phải dọn. Xóa một chữ số ở giữa là rút một căn khỏi giữa phố: mọi căn phía TRƯỚC nó tụt hàng, nên phải tách phố làm hai khúc, tính lại từng khúc rồi ráp. Mọi ca đều quy về một câu hỏi: ai dọn nhà, ai đứng yên?",
+  "canonicalExamples": [
+   {
+    "case": "thêm phải (ca thường)",
+    "problem": "Viết thêm chữ số 2 vào bên phải số 47. Số mới hơn số cũ bao nhiêu?",
+    "solution": "Số mới = 47 × 10 + 2 = 472. Mức tăng: 472 − 47 = 425. Đối chiếu công thức: 9 × 47 + 2 = 425 ✓.",
+    "why": ", có đối chiếu công thức 9 lần + c."
+   },
+   {
+    "case": "thêm trái (ca đối xứng)",
+    "problem": "Viết thêm chữ số 3 vào bên trái số 58. Số mới hơn số cũ bao nhiêu?",
+    "solution": "Số mới = 358; các chữ số 5, 8 đứng yên, chữ số 3 chiếm hàng trăm → tăng đúng 3 × 100 = 300.",
+    "why": "Đối chứng với thêm phải: không ai dọn nhà."
+   },
+   {
+    "case": "xóa giữa (ca bẫy)",
+    "problem": "Xóa chữ số 4 khỏi số 345. Số giảm đi bao nhiêu?",
+    "solution": "345 = 300 + 40 + 5 → xóa 4 ở hàng chục: chữ số 3 tụt từ trăm xuống chục → số mới 35. Giảm: 345 − 35 = 310 — KHÔNG phải giảm 4!",
+    "why": "Nguồn bẫy CĐ-2.3: xóa giữa không phải phép trừ chữ số."
+   },
+   {
+    "case": "bài ngược xóa cuối (ca chìa khóa)",
+    "problem": "Xóa chữ số tận cùng của một số có hai chữ số thì số đó giảm đi 76 đơn vị. Tìm số đó.",
+    "solution": "Xóa tận cùng số ab giảm 9a + b → 9a + b = 76 → a = 8, b = 4 → số 84. Thử: 84 xóa 4 còn 8, giảm 76 ✓.",
+    "why": "Khớp K4 và nối sang phòng cân của B1.M3."
+   }
+  ],
+  "numberRange": "Lớp 5: số tự nhiên đến 5 chữ số; chữ số thêm/xóa 0–9; mức tăng giảm trong phạm vi 100 000.",
+  "misconceptions": [
+   {
+    "wrong": "Xóa chữ số 4 thì số giảm đi 4 (345 → giảm 4).",
+    "signal": "Trả lời mức giảm bằng đúng chữ số bị xóa.",
+    "fix": "xóa giữa làm các chữ số phía trước TỤT HÀNG — tách cấu tạo hai khúc, tính hiệu: 345 − 35 = 310.",
+    "counterExample": "345 xóa 4 còn 35; 345 − 35 = 310 ≠ 4."
+   },
+   {
+    "wrong": "Thêm bên trái cũng làm cả số gấp 10 như thêm bên phải.",
+    "signal": "58 thêm 3 trái → trả lời 580 hoặc 'gấp 10'.",
+    "fix": "thêm trái không ai dọn nhà — số chỉ tăng đúng c × 10ⁿ (58 → 358, tăng 300).",
+    "counterExample": "358 : 58 không phải 10 lần."
+   }
+  ],
+  "vocabulary": [
+   "dãy nhà chuyển trái",
+   "tách hai khúc — ráp lại",
+   "tụt hàng",
+   "mức giảm 9a + b",
+   "nhân vật: Cáo Đề gợi ý ngọt ngào 'trừ đi 4 thôi'"
+  ],
+  "mantra": "XÓA MỘT CHỮ SỐ — CẢ DÃY CHUYỂN NHÀ: TÍNH BẰNG HIỆU, ĐỪNG TRỪ CHỮ SỐ!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Số 345 tách theo hàng: 300 + 40 + mấy?",
+    "answerKey": {
+     "value": 5
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B1.M1",
+   "message": "Ôn bản đồ các hàng 3 phút rồi quay lại khu phố số nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Cáo Đề gợi ý ngọt như mía: \"Xóa chữ số 4 khỏi 345 hả? Mất số 4 thì trừ đi 4 — còn 341!\" Su Kem nhíu mày: \"Khoan… xóa hẳn một CĂN NHÀ giữa phố mà chỉ mất có 4 đồng thôi sao?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "345 xóa 4 → 341???"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để vào khu phố số!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 45,
+    "teaches": [
+     "K3"
     ],
-    "bktUnit": "CASE:I.1.2#1@G5"
+    "narration": "Con kéo căn nhà số 4 ra khỏi phố 345 xem chuyện gì xảy ra với căn số 3.",
+    "display": {
+     "type": "drag_interactive",
+     "spec": {
+      "houses": [
+       "TRĂM",
+       "CHỤC",
+       "ĐƠN VỊ"
+      ],
+      "start": {
+       "TRĂM": 3,
+       "CHỤC": 4,
+       "ĐƠN VỊ": 5
+      },
+      "dragItem": "rút chữ số 4 khỏi hàng chục",
+      "end": {
+       "CHỤC": 3,
+       "ĐƠN VỊ": 5
+      },
+      "animation": "chữ số 3 tụt từ trăm xuống chục, giá trị 300 → 30"
+     }
+    },
+    "interaction": {
+     "type": "drag_digit",
+     "successMessage": "345 thành 35! Chữ số 3 tụt hàng, mất những 310 chứ không phải 4: 345 − 35 = 310."
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 18,
+    "item": {
+     "format": "num",
+     "text": "Viết thêm chữ số 2 vào bên phải số 47 — số mới hơn số cũ bao nhiêu đơn vị?",
+     "answerKey": {
+      "value": 425
+     },
+     "wrongFeedback": "Số mới = 47 × 10 + 2 = 472; lấy 472 − 47.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 40,
+    "teaches": [
+     "K1",
+     "K2",
+     "K4"
+    ],
+    "narration": "Bốn ca trong một bảng: thêm PHẢI — cả dãy dọn trái, số mới bằng cũ nhân 10 cộng c. Thêm TRÁI — không ai dọn, chỉ cộng thêm c nhân giá hàng mới. Xóa CUỐI — cả dãy dọn phải: số mới bằng cũ trừ c rồi chia 10; và mức giảm của số ab khi xóa tận cùng luôn là chín a cộng b — chìa khóa của mọi bài ngược!",
+    "display": {
+     "type": "four_case_table",
+     "rows": [
+      [
+       "Thêm phải",
+       "= cũ × 10 + c",
+       "47 → 472 (tăng 425)"
+      ],
+      [
+       "Thêm trái",
+       "= cũ + c × 10ⁿ",
+       "58 → 358 (tăng 300)"
+      ],
+      [
+       "Xóa giữa",
+       "tách 2 khúc — ráp lại",
+       "345 → 35 (giảm 310)"
+      ],
+      [
+       "Xóa cuối",
+       "= (cũ − c) : 10 · giảm 9a + b",
+       "84 → 8 (giảm 76)"
+      ]
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: xóa một chữ số — cả dãy chuyển nhà: tính bằng hiệu, đừng trừ chữ số!",
+    "display": {
+     "type": "mantra_card",
+     "text": "XÓA MỘT CHỮ SỐ — CẢ DÃY CHUYỂN NHÀ!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 80,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B2",
-    "order": 1,
-    "prev": "DL:KSN5Q1.B1.M3",
-    "next": "DL:KSN5Q1.B2.M2"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B2",
-    "chunks": [
-      "CHUNK:KSN5Q1.B2.S3",
-      "CHUNK:KSN5Q1.B2.S4"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Cáo Đề gợi ý ngọt như mía: xóa chữ số 4 khỏi ba trăm bốn mươi lăm hả? Mất số 4 thì trừ đi 4 — còn ba trăm bốn mươi mốt! Su Kem nhíu mày: xóa hẳn một căn nhà giữa phố mà chỉ mất có 4 đồng thôi sao?",
+    "screenText": "345 xóa 4 → 341???",
+    "visual": "Dãy phố ba căn 3·4·5 khung #0B4EA8; Cáo Đề chỉ vào căn số 4, bong bóng '−4 thôi!'; Su Kem khoanh tay, dấu '?' đỏ #C0392B phóng to.",
+    "assets": [],
+    "duration": 18
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Rút căn số 4 khỏi giữa phố xem sao. Căn số 3 lập tức TỤT HÀNG — từ hàng trăm xuống hàng chục, tài sản từ ba trăm còn ba mươi! Số mới chỉ là ba mươi lăm. Mức giảm: ba trăm bốn lăm trừ ba mươi lăm bằng BA TRĂM MƯỜI — chứ đâu phải bốn!",
+    "screenText": "345 → 35 · giảm 310 (không phải 4!)",
+    "visual": "Căn '4' bị nhấc khỏi hàng CHỤC (hiệu ứng cẩu); chữ số 3 trượt từ TRĂM xuống CHỤC kèm nhãn '300 → 30' đỏ; phép '345 − 35 = 310' bật vàng #F9B233.",
+    "assets": [],
+    "duration": 20
+   },
+   {
+    "no": 3,
+    "templateHint": "four_case_table",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Bản đồ bốn ca: thêm PHẢI — cả dãy dọn trái, số mới bằng cũ nhân mười cộng c. Thêm TRÁI — không ai dọn, chỉ cộng c nhân giá hàng mới. Xóa GIỮA — tách hai khúc rồi ráp. Xóa CUỐI — cả dãy dọn phải, và mức giảm luôn là chín a cộng b: chìa khóa mọi bài ngược!",
+    "screenText": "PHẢI ×10+c · TRÁI +c·10ⁿ · GIỮA tách-ráp · CUỐI 9a+b",
+    "visual": "Bảng 4 hàng trượt vào lần lượt, mỗi hàng kèm ví dụ số 47→472 / 58→358 / 345→35 / 84→8; hàng đang đọc phát sáng #1FCBAB.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú khu phố: xóa một chữ số — cả dãy chuyển nhà: tính bằng hiệu, đừng trừ chữ số!",
+    "screenText": "XÓA MỘT CHỮ SỐ — CẢ DÃY CHUYỂN NHÀ!",
+    "visual": "Thẻ thần chú vàng #F9B233 chữ #0B4EA8, lấp lánh 2 nhịp.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Thử tài: xóa chữ số tận cùng của một số có hai chữ số thì số giảm đi bảy mươi sáu. Số đó là số nào? Vào bài luyện phá án ngay!",
+    "screenText": "xóa tận cùng → giảm 76 → số ?",
+    "visual": "Thẻ 'ab' với chữ số cuối mờ dần, nhãn '−76'; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P4",
+    "assets": [],
+    "duration": 12
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Vụ án căn nhà giữa phố",
+  "problem": "Xóa chữ số 4 khỏi số 345. Hỏi số giảm đi bao nhiêu đơn vị?",
+  "steps": [
+   {
+    "show": "Bước 1 — Tách phố theo cấu tạo: 345 = 300 + 40 + 5.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Xóa chữ số 4 (hàng chục) thì chữ số 3 sẽ thế nào?",
+     "choices": [
+      "Đứng yên ở hàng trăm",
+      "Tụt xuống hàng chục",
+      "Biến mất"
+     ],
+     "answerKey": {
+      "choice": "Tụt xuống hàng chục"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Ráp lại hai khúc còn lại: chữ số 3 tụt xuống chục, chữ số 5 giữ đơn vị → số mới 35."
+   },
+   {
+    "show": "Bước 3 — Mức giảm = 345 − 35 = 310. Đáp số: giảm 310 đơn vị (không phải 4!).",
+    "askAfter": {
+     "format": "num",
+     "text": "Kiểm nhanh chiều thêm: 35 thêm chữ số 4 vào GIỮA (hàng chục) lại thành số nào?",
+     "answerKey": {
+      "value": 345
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể generator; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B2.LT1",
+     "text": "Viết thêm chữ số 0 vào bên phải số 47. Số mới gấp số cũ bao nhiêu lần?",
+     "answerKey": {
+      "value": 10,
+      "extra": "số mới 470"
+     },
+     "hints": [
+      "Cả dãy dọn sang trái một hàng.",
+      "Thêm 0 bên phải = × 10."
+     ],
+     "solutionNarrative": "470 — gấp 10 lần.",
+     "teaches": [
+      "K1"
+     ],
+     "generator": {
+      "template": "Viết thêm chữ số 0 vào bên phải số {a}. Số mới gấp số cũ bao nhiêu lần?",
+      "constraints": {
+       "a": "hai chữ số 11–99"
+      },
+      "answerRule": "10 lần"
+     }
+    },
+    {
+     "id": "P2",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B2.LT5",
+     "text": "Viết thêm chữ số 3 vào bên trái số 58. Số mới hơn số cũ bao nhiêu đơn vị?",
+     "answerKey": {
+      "value": 300
+     },
+     "hints": [
+      "Thêm trái: ai dọn nhà, ai đứng yên?",
+      "Chữ số 3 chiếm hàng trăm → tăng 3 × 100."
+     ],
+     "solutionNarrative": "358 − 58 = 300 (thêm 3 vào hàng trăm).",
+     "teaches": [
+      "K2"
+     ],
+     "generator": {
+      "template": "Viết thêm chữ số {c} vào bên trái số {ab}. Số mới hơn số cũ bao nhiêu đơn vị?",
+      "constraints": {
+       "c": "1–9",
+       "ab": "hai chữ số"
+      },
+      "answerRule": "c × 100"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P3",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B2.LT4",
+     "text": "Viết thêm chữ số 2 vào bên phải số 47. Số mới hơn số cũ bao nhiêu đơn vị? Đối chiếu với công thức 9 × số cũ + c.",
+     "answerKey": {
+      "value": 425
+     },
+     "hints": [
+      "Số mới = 47 × 10 + 2.",
+      "472 − 47 = ? So với 9 × 47 + 2."
+     ],
+     "solutionNarrative": "472 − 47 = 425; đối chiếu: 9 × 47 + 2 = 425 ✓.",
+     "teaches": [
+      "K1"
+     ],
+     "generator": {
+      "template": "Viết thêm chữ số {c} vào bên phải số {ab}. Số mới hơn số cũ bao nhiêu đơn vị?",
+      "constraints": {
+       "c": "0–9",
+       "ab": "hai chữ số"
+      },
+      "answerRule": "9 × ab + c"
+     }
+    },
+    {
+     "id": "P4",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B2.LT7",
+     "text": "Xóa chữ số tận cùng của một số có hai chữ số thì số đó giảm đi 76 đơn vị. Tìm số đó.",
+     "answerKey": {
+      "value": 84
+     },
+     "hints": [
+      "Xóa tận cùng số ab giảm 9a + b.",
+      "9a + b = 76: a phải bằng 8 (vì 9 × 9 = 81 > 76 cho b âm? thử a = 8 → b = 4)."
+     ],
+     "solutionNarrative": "9a + b = 76 → a = 8, b = 4 → số 84. Thử: 84 xóa 4 còn 8, giảm 76 ✓.",
+     "teaches": [
+      "K4"
+     ],
+     "generator": {
+      "template": "Xóa chữ số tận cùng của một số có hai chữ số thì số đó giảm đi {m} đơn vị. Tìm số đó.",
+      "constraints": {
+       "m": "9a + b với a 1–9, b 0–9 — chọn m cho nghiệm duy nhất"
+      },
+      "answerRule": "số ab với 9a + b = m"
+     }
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P5",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B2.LT8",
+     "text": "Xóa chữ số hàng chục của một số có ba chữ số thì được số mới kém số cũ 750 đơn vị. Tìm chữ số hàng trăm và chữ số hàng chục của số đó.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hàng trăm",
+        "value": 8
+       },
+       {
+        "label": "hàng chục",
+        "value": 3
+       }
+      ]
+     },
+     "hints": [
+      "Xóa hàng chục của abc: a tụt xuống chục → mức giảm = 90a + 10b.",
+      "90a + 10b = 750 → 9a + b = 75."
+     ],
+     "solutionNarrative": "Mức giảm 90a + 10b = 750 → 9a + b = 75 → a = 8, b = 3 (các số 830–839 đều thỏa).",
+     "teaches": [
+      "K3",
+      "K4"
+     ]
+    },
+    {
+     "id": "P6",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Xóa chữ số 7 khỏi số 273 thì số giảm đi 70 đơn vị.",
+     "answerKey": {
+      "value": false,
+      "note": "Xóa 7 (hàng chục): 273 → 23; giảm 273 − 23 = 250 — chữ số 2 tụt hàng."
+     },
+     "hints": [
+      "Ai tụt hàng khi rút căn giữa phố?",
+      "Tách 2 khúc: còn 2_3 → 23; tính hiệu."
+     ],
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:I.1.2#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B2.M2",
+   "award": "huy_hieu_khu_pho_so"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "workedExample"
+   ],
+   "retryWith": "đề B sinh từ generator P3 + P4"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B2.QZ5",
+    "text": "Xóa chữ số 4 khỏi số 345 (xóa hàng chục), số giảm đi:",
+    "choices": [
+     "310",
+     "4",
+     "41"
     ],
-    "cases": [
-      "CA:KSN5Q1.B2.1",
-      "CA:KSN5Q1.B2.2",
-      "CA:KSN5Q1.B2.3",
-      "CA:KSN5Q1.B2.4"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B2.3"
+    "answerKey": {
+     "choice": "310"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K3"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B2.QZ1",
+    "text": "(Đúng/Sai?) Thêm chữ số 0 vào bên phải một số tự nhiên thì số đó gấp lên 10 lần.",
+    "answerKey": {
+     "value": true
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "Xóa chữ số tận cùng của một số có hai chữ số thì số giảm đi 58 đơn vị. Tìm số đó.",
+    "answerKey": {
+     "value": 64
+    },
+    "teaches": [
+     "K4"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Bốn ca thêm – xóa chữ số và công thức từng ca?",
+    "back": "Thêm PHẢI: ×10 + c · Thêm TRÁI: + c×10ⁿ · Xóa GIỮA: tách 2 khúc — ráp lại (tính bằng hiệu!) · Xóa CUỐI: (cũ − c):10, mức giảm 9a + b."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: 1 câu generator P3",
+   "+7 ngày: 1 câu generator P4 (bài ngược)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học 4 ca thêm – xóa chữ số bằng hình ảnh khu phố chuyển nhà. Con đạt {score}/3, {trapResult} câu bẫy xóa-giữa.",
+  "homeActivity": "Đố con: 'Xóa chữ số 5 khỏi 254 thì số giảm bao nhiêu?' — con tách phố và trả lời 254 − 24 = 230 là đạt.",
+  "watchFor": "Nếu con nói 'xóa 5 thì giảm 5' — mở lại màn rút căn nhà (S2) cùng con."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B2.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "345 xóa 4 → 341???",
+    "lines": [
+     {
+      "who": "Cáo Đề",
+      "say": "Xóa chữ số 4 khỏi 345 hả? Mất số 4 thì trừ đi 4 — còn 341!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Khoan… xóa hẳn một CĂN NHÀ giữa phố mà chỉ mất có 4 đồng thôi sao?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B2_M1_F1.png",
+   "sha256_16": "cf3e92d37f05aeb7"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con làm chủ các ca thêm – xóa chữ số của số tự nhiên bằng chìa khóa cấu tạo số: thêm phải, thêm trái, thêm/xóa giữa, xóa cuối — kể cả ca khó nhất là xóa chữ số ở GIỮA.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (bẫy xóa giữa)",
-    "kidText": "Thêm hay xoá một chữ số là cả dãy số chuyển nhà. Con tính được số mới, kể cả ca khó nhất là xoá chữ số ở giữa."
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "CA MẪU · thêm phải (ca thường)",
+    "formulas": [
+     {
+      "label": "ĐỀ",
+      "text": "Viết thêm chữ số 2 vào bên phải số 47. Số mới hơn số cũ bao nhiêu?",
+      "tone": "navy"
+     },
+     {
+      "label": "LỜI GIẢI",
+      "text": "Số mới = 47 × 10 + 2 = 472. Mức tăng: 472 − 47 = 425. Đối chiếu công thức: 9 × 47 + 2 = 425.",
+      "tone": "teal"
+     }
+    ]
+   },
+   "caption": "Ca mẫu chuẩn của bài",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B2_M1_F2.png",
+   "sha256_16": "456f0e90e035a9d2"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Thêm chữ số c vào BÊN PHẢI: số mới = số cũ × 10 + c (mọi chữ số cũ dọn nhà sang trái một hàng)."
-      },
-      {
-        "id": "K2",
-        "text": "Thêm chữ số c vào BÊN TRÁI: số mới = số cũ + c × 10ⁿ (các chữ số cũ đứng yên, c chiếm hàng cao nhất mới)."
-      },
-      {
-        "id": "K3",
-        "text": "Thêm hoặc xóa chữ số ở GIỮA: tách số thành hai khúc theo cấu tạo rồi ráp lại — tuyệt đối không phải cộng/trừ chữ số đó."
-      },
-      {
-        "id": "K4",
-        "text": "Xóa chữ số c ở TẬN CÙNG: số mới = (số cũ − c) : 10; mức giảm khi xóa tận cùng số ab là 9a + b."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: mỗi con số là một DÃY NHÀ trên bản đồ các hàng. Thêm chữ số bên phải là có cư dân mới chen vào hàng đơn vị — CẢ DÃY dọn sang trái, ai cũng giàu gấp 10. Thêm bên trái là xây thêm căn đầu phố — không ai phải dọn. Xóa một chữ số ở giữa là rút một căn khỏi giữa phố: mọi căn phía TRƯỚC nó tụt hàng, nên phải tách phố làm hai khúc, tính lại từng khúc rồi ráp. Mọi ca đều quy về một câu hỏi: ai dọn nhà, ai đứng yên?",
-    "canonicalExamples": [
-      {
-        "case": "thêm phải (ca thường)",
-        "problem": "Viết thêm chữ số 2 vào bên phải số 47. Số mới hơn số cũ bao nhiêu?",
-        "solution": "Số mới = 47 × 10 + 2 = 472. Mức tăng: 472 − 47 = 425. Đối chiếu công thức: 9 × 47 + 2 = 425 ✓.",
-        "why": "Ca chuẩn K1, có đối chiếu công thức 9 lần + c."
-      },
-      {
-        "case": "thêm trái (ca đối xứng)",
-        "problem": "Viết thêm chữ số 3 vào bên trái số 58. Số mới hơn số cũ bao nhiêu?",
-        "solution": "Số mới = 358; các chữ số 5, 8 đứng yên, chữ số 3 chiếm hàng trăm → tăng đúng 3 × 100 = 300.",
-        "why": "Đối chứng với thêm phải: không ai dọn nhà."
-      },
-      {
-        "case": "xóa giữa (ca bẫy)",
-        "problem": "Xóa chữ số 4 khỏi số 345. Số giảm đi bao nhiêu?",
-        "solution": "345 = 300 + 40 + 5 → xóa 4 ở hàng chục: chữ số 3 tụt từ trăm xuống chục → số mới 35. Giảm: 345 − 35 = 310 — KHÔNG phải giảm 4!",
-        "why": "Nguồn bẫy CĐ-2.3: xóa giữa không phải phép trừ chữ số."
-      },
-      {
-        "case": "bài ngược xóa cuối (ca chìa khóa)",
-        "problem": "Xóa chữ số tận cùng của một số có hai chữ số thì số đó giảm đi 76 đơn vị. Tìm số đó.",
-        "solution": "Xóa tận cùng số ab giảm 9a + b → 9a + b = 76 → a = 8, b = 4 → số 84. Thử: 84 xóa 4 còn 8, giảm 76 ✓.",
-        "why": "Khớp K4 và nối sang phòng cân của B1.M3."
-      }
-    ],
-    "numberRange": "Lớp 5: số tự nhiên đến 5 chữ số; chữ số thêm/xóa 0–9; mức tăng giảm trong phạm vi 100 000.",
-    "misconceptions": [
-      {
-        "wrong": "Xóa chữ số 4 thì số giảm đi 4 (345 → giảm 4).",
-        "signal": "Trả lời mức giảm bằng đúng chữ số bị xóa.",
-        "fix": "K3: xóa giữa làm các chữ số phía trước TỤT HÀNG — tách cấu tạo hai khúc, tính hiệu: 345 − 35 = 310.",
-        "counterExample": "345 xóa 4 còn 35; 345 − 35 = 310 ≠ 4."
-      },
-      {
-        "wrong": "Thêm bên trái cũng làm cả số gấp 10 như thêm bên phải.",
-        "signal": "58 thêm 3 trái → trả lời 580 hoặc 'gấp 10'.",
-        "fix": "K2: thêm trái không ai dọn nhà — số chỉ tăng đúng c × 10ⁿ (58 → 358, tăng 300).",
-        "counterExample": "358 : 58 không phải 10 lần."
-      }
-    ],
-    "vocabulary": [
-      "dãy nhà chuyển trái",
-      "tách hai khúc — ráp lại",
-      "tụt hàng",
-      "mức giảm 9a + b",
-      "nhân vật: Cáo Đề gợi ý ngọt ngào 'trừ đi 4 thôi'"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Thêm chữ số c vào BÊN PHẢI",
+      "text": "số mới = số cũ × 10 + c (mọi chữ số cũ dọn nhà sang trái một hàng).",
+      "tone": "navy"
+     },
+     {
+      "label": "Thêm chữ số c vào BÊN TRÁI",
+      "text": "số mới = số cũ + c × 10ⁿ (các chữ số cũ đứng yên, c chiếm hàng cao nhất mới).",
+      "tone": "teal"
+     }
     ],
     "mantra": "XÓA MỘT CHỮ SỐ — CẢ DÃY CHUYỂN NHÀ: TÍNH BẰNG HIỆU, ĐỪNG TRỪ CHỮ SỐ!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B2_M1_F3.png",
+   "sha256_16": "66f1231fdd121d3b"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "Số 345 tách theo hàng: 300 + 40 + mấy?",
-        "answerKey": {
-          "value": 5
-        }
-      }
+  {
+   "archetype": "bar_diagram",
+   "params": {
+    "title": "VIẾT THÊM 2 VÀO BÊN PHẢI SỐ 47",
+    "bars": [
+     {
+      "name": "số cũ 47",
+      "units": 1,
+      "label": "47"
+     },
+     {
+      "name": "số mới 472",
+      "units": 10,
+      "label": "47 × 10 + 2"
+     }
     ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B1.M1",
-      "message": "Ôn bản đồ các hàng 3 phút rồi quay lại khu phố số nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 20,
-        "narration": "Cáo Đề gợi ý ngọt như mía: \"Xóa chữ số 4 khỏi 345 hả? Mất số 4 thì trừ đi 4 — còn 341!\" Su Kem nhíu mày: \"Khoan… xóa hẳn một CĂN NHÀ giữa phố mà chỉ mất có 4 đồng thôi sao?\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "345 xóa 4 → 341???"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để vào khu phố số!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 45,
-        "teaches": [
-          "K3"
-        ],
-        "narration": "Con kéo căn nhà số 4 ra khỏi phố 345 xem chuyện gì xảy ra với căn số 3.",
-        "display": {
-          "type": "drag_interactive",
-          "spec": {
-            "houses": [
-              "TRĂM",
-              "CHỤC",
-              "ĐƠN VỊ"
-            ],
-            "start": {
-              "TRĂM": 3,
-              "CHỤC": 4,
-              "ĐƠN VỊ": 5
-            },
-            "dragItem": "rút chữ số 4 khỏi hàng chục",
-            "end": {
-              "CHỤC": 3,
-              "ĐƠN VỊ": 5
-            },
-            "animation": "chữ số 3 tụt từ trăm xuống chục, giá trị 300 → 30"
-          }
-        },
-        "interaction": {
-          "type": "drag_digit",
-          "successMessage": "345 thành 35! Chữ số 3 tụt hàng, mất những 310 chứ không phải 4: 345 − 35 = 310."
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 18,
-        "item": {
-          "format": "num",
-          "text": "Viết thêm chữ số 2 vào bên phải số 47 — số mới hơn số cũ bao nhiêu đơn vị?",
-          "answerKey": {
-            "value": 425
-          },
-          "wrongFeedback": "Số mới = 47 × 10 + 2 = 472; lấy 472 − 47.",
-          "objective": "O1",
-          "teaches": [
-            "K1"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 40,
-        "teaches": [
-          "K1",
-          "K2",
-          "K4"
-        ],
-        "narration": "Bốn ca trong một bảng: thêm PHẢI — cả dãy dọn trái, số mới bằng cũ nhân 10 cộng c. Thêm TRÁI — không ai dọn, chỉ cộng thêm c nhân giá hàng mới. Xóa CUỐI — cả dãy dọn phải: số mới bằng cũ trừ c rồi chia 10; và mức giảm của số ab khi xóa tận cùng luôn là chín a cộng b — chìa khóa của mọi bài ngược!",
-        "display": {
-          "type": "four_case_table",
-          "rows": [
-            [
-              "Thêm phải",
-              "= cũ × 10 + c",
-              "47 → 472 (tăng 425)"
-            ],
-            [
-              "Thêm trái",
-              "= cũ + c × 10ⁿ",
-              "58 → 358 (tăng 300)"
-            ],
-            [
-              "Xóa giữa",
-              "tách 2 khúc — ráp lại",
-              "345 → 35 (giảm 310)"
-            ],
-            [
-              "Xóa cuối",
-              "= (cũ − c) : 10 · giảm 9a + b",
-              "84 → 8 (giảm 76)"
-            ]
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú khu phố: xóa một chữ số — cả dãy chuyển nhà: tính bằng hiệu, đừng trừ chữ số!",
-        "display": {
-          "type": "mantra_card",
-          "text": "XÓA MỘT CHỮ SỐ — CẢ DÃY CHUYỂN NHÀ!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 80,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+    "brace": {
+     "text": "mức tăng = 9 × 47 + 2 = 425"
     },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Cáo Đề gợi ý ngọt như mía: xóa chữ số 4 khỏi ba trăm bốn mươi lăm hả? Mất số 4 thì trừ đi 4 — còn ba trăm bốn mươi mốt! Su Kem nhíu mày: xóa hẳn một căn nhà giữa phố mà chỉ mất có 4 đồng thôi sao?",
-        "screenText": "345 xóa 4 → 341???",
-        "visual": "Dãy phố ba căn 3·4·5 khung #0B4EA8; Cáo Đề chỉ vào căn số 4, bong bóng '−4 thôi!'; Su Kem khoanh tay, dấu '?' đỏ #C0392B phóng to.",
-        "assets": [],
-        "duration": 18
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Rút căn số 4 khỏi giữa phố xem sao. Căn số 3 lập tức TỤT HÀNG — từ hàng trăm xuống hàng chục, tài sản từ ba trăm còn ba mươi! Số mới chỉ là ba mươi lăm. Mức giảm: ba trăm bốn lăm trừ ba mươi lăm bằng BA TRĂM MƯỜI — chứ đâu phải bốn!",
-        "screenText": "345 → 35 · giảm 310 (không phải 4!)",
-        "visual": "Căn '4' bị nhấc khỏi hàng CHỤC (hiệu ứng cẩu); chữ số 3 trượt từ TRĂM xuống CHỤC kèm nhãn '300 → 30' đỏ; phép '345 − 35 = 310' bật vàng #F9B233.",
-        "assets": [],
-        "duration": 20
-      },
-      {
-        "no": 3,
-        "templateHint": "four_case_table",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Bản đồ bốn ca: thêm PHẢI — cả dãy dọn trái, số mới bằng cũ nhân mười cộng c. Thêm TRÁI — không ai dọn, chỉ cộng c nhân giá hàng mới. Xóa GIỮA — tách hai khúc rồi ráp. Xóa CUỐI — cả dãy dọn phải, và mức giảm luôn là chín a cộng b: chìa khóa mọi bài ngược!",
-        "screenText": "PHẢI ×10+c · TRÁI +c·10ⁿ · GIỮA tách-ráp · CUỐI 9a+b",
-        "visual": "Bảng 4 hàng trượt vào lần lượt, mỗi hàng kèm ví dụ số 47→472 / 58→358 / 345→35 / 84→8; hàng đang đọc phát sáng #1FCBAB.",
-        "assets": [],
-        "duration": 22
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú khu phố: xóa một chữ số — cả dãy chuyển nhà: tính bằng hiệu, đừng trừ chữ số!",
-        "screenText": "XÓA MỘT CHỮ SỐ — CẢ DÃY CHUYỂN NHÀ!",
-        "visual": "Thẻ thần chú vàng #F9B233 chữ #0B4EA8, lấp lánh 2 nhịp.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Thử tài: xóa chữ số tận cùng của một số có hai chữ số thì số giảm đi bảy mươi sáu. Số đó là số nào? Vào bài luyện phá án ngay!",
-        "screenText": "xóa tận cùng → giảm 76 → số ?",
-        "visual": "Thẻ 'ab' với chữ số cuối mờ dần, nhãn '−76'; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P4",
-        "assets": [],
-        "duration": 12
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Vụ án căn nhà giữa phố",
-    "problem": "Xóa chữ số 4 khỏi số 345. Hỏi số giảm đi bao nhiêu đơn vị?",
-    "steps": [
-      {
-        "show": "Bước 1 — Tách phố theo cấu tạo: 345 = 300 + 40 + 5.",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Xóa chữ số 4 (hàng chục) thì chữ số 3 sẽ thế nào?",
-          "choices": [
-            "Đứng yên ở hàng trăm",
-            "Tụt xuống hàng chục",
-            "Biến mất"
-          ],
-          "answerKey": {
-            "choice": "Tụt xuống hàng chục"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Ráp lại hai khúc còn lại: chữ số 3 tụt xuống chục, chữ số 5 giữ đơn vị → số mới 35."
-      },
-      {
-        "show": "Bước 3 — Mức giảm = 345 − 35 = 310. Đáp số: giảm 310 đơn vị (không phải 4!).",
-        "askAfter": {
-          "format": "num",
-          "text": "Kiểm nhanh chiều thêm: 35 thêm chữ số 4 vào GIỮA (hàng chục) lại thành số nào?",
-          "answerKey": {
-            "value": 345
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể generator; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "num",
-          "sourceItem": "ITEM:KSN5Q1.B2.LT1",
-          "text": "Viết thêm chữ số 0 vào bên phải số 47. Số mới gấp số cũ bao nhiêu lần?",
-          "answerKey": {
-            "value": 10,
-            "extra": "số mới 470"
-          },
-          "hints": [
-            "Cả dãy dọn sang trái một hàng.",
-            "Thêm 0 bên phải = × 10."
-          ],
-          "solutionNarrative": "470 — gấp 10 lần.",
-          "teaches": [
-            "K1"
-          ],
-          "generator": {
-            "template": "Viết thêm chữ số 0 vào bên phải số {a}. Số mới gấp số cũ bao nhiêu lần?",
-            "constraints": {
-              "a": "hai chữ số 11–99"
-            },
-            "answerRule": "10 lần"
-          }
-        },
-        {
-          "id": "P2",
-          "format": "num",
-          "sourceItem": "ITEM:KSN5Q1.B2.LT5",
-          "text": "Viết thêm chữ số 3 vào bên trái số 58. Số mới hơn số cũ bao nhiêu đơn vị?",
-          "answerKey": {
-            "value": 300
-          },
-          "hints": [
-            "Thêm trái: ai dọn nhà, ai đứng yên?",
-            "Chữ số 3 chiếm hàng trăm → tăng 3 × 100."
-          ],
-          "solutionNarrative": "358 − 58 = 300 (thêm 3 vào hàng trăm).",
-          "teaches": [
-            "K2"
-          ],
-          "generator": {
-            "template": "Viết thêm chữ số {c} vào bên trái số {ab}. Số mới hơn số cũ bao nhiêu đơn vị?",
-            "constraints": {
-              "c": "1–9",
-              "ab": "hai chữ số"
-            },
-            "answerRule": "c × 100"
-          }
-        }
-      ],
-      "standard": [
-        {
-          "id": "P3",
-          "format": "num",
-          "sourceItem": "ITEM:KSN5Q1.B2.LT4",
-          "text": "Viết thêm chữ số 2 vào bên phải số 47. Số mới hơn số cũ bao nhiêu đơn vị? Đối chiếu với công thức 9 × số cũ + c.",
-          "answerKey": {
-            "value": 425
-          },
-          "hints": [
-            "Số mới = 47 × 10 + 2.",
-            "472 − 47 = ? So với 9 × 47 + 2."
-          ],
-          "solutionNarrative": "472 − 47 = 425; đối chiếu: 9 × 47 + 2 = 425 ✓.",
-          "teaches": [
-            "K1"
-          ],
-          "generator": {
-            "template": "Viết thêm chữ số {c} vào bên phải số {ab}. Số mới hơn số cũ bao nhiêu đơn vị?",
-            "constraints": {
-              "c": "0–9",
-              "ab": "hai chữ số"
-            },
-            "answerRule": "9 × ab + c"
-          }
-        },
-        {
-          "id": "P4",
-          "format": "num",
-          "sourceItem": "ITEM:KSN5Q1.B2.LT7",
-          "text": "Xóa chữ số tận cùng của một số có hai chữ số thì số đó giảm đi 76 đơn vị. Tìm số đó.",
-          "answerKey": {
-            "value": 84
-          },
-          "hints": [
-            "Xóa tận cùng số ab giảm 9a + b.",
-            "9a + b = 76: a phải bằng 8 (vì 9 × 9 = 81 > 76 cho b âm? thử a = 8 → b = 4)."
-          ],
-          "solutionNarrative": "9a + b = 76 → a = 8, b = 4 → số 84. Thử: 84 xóa 4 còn 8, giảm 76 ✓.",
-          "teaches": [
-            "K4"
-          ],
-          "generator": {
-            "template": "Xóa chữ số tận cùng của một số có hai chữ số thì số đó giảm đi {m} đơn vị. Tìm số đó.",
-            "constraints": {
-              "m": "9a + b với a 1–9, b 0–9 — chọn m cho nghiệm duy nhất"
-            },
-            "answerRule": "số ab với 9a + b = m"
-          }
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P5",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B2.LT8",
-          "text": "Xóa chữ số hàng chục của một số có ba chữ số thì được số mới kém số cũ 750 đơn vị. Tìm chữ số hàng trăm và chữ số hàng chục của số đó.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "hàng trăm",
-                "value": 8
-              },
-              {
-                "label": "hàng chục",
-                "value": 3
-              }
-            ]
-          },
-          "hints": [
-            "Xóa hàng chục của abc: a tụt xuống chục → mức giảm = 90a + 10b.",
-            "90a + 10b = 750 → 9a + b = 75."
-          ],
-          "solutionNarrative": "Mức giảm 90a + 10b = 750 → 9a + b = 75 → a = 8, b = 3 (các số 830–839 đều thỏa).",
-          "teaches": [
-            "K3",
-            "K4"
-          ]
-        },
-        {
-          "id": "P6",
-          "format": "tf",
-          "text": "(Đúng/Sai?) Xóa chữ số 7 khỏi số 273 thì số giảm đi 70 đơn vị.",
-          "answerKey": {
-            "value": false,
-            "note": "Xóa 7 (hàng chục): 273 → 23; giảm 273 − 23 = 250 — chữ số 2 tụt hàng."
-          },
-          "hints": [
-            "Ai tụt hàng khi rút căn giữa phố?",
-            "Tách 2 khúc: còn 2_3 → 23; tính hiệu."
-          ],
-          "teaches": [
-            "K3"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:I.1.2#1@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B2.M2",
-      "award": "huy_hieu_khu_pho_so"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "workedExample"
-      ],
-      "retryWith": "đề B sinh từ generator P3 + P4"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B2.QZ5",
-        "text": "Xóa chữ số 4 khỏi số 345 (xóa hàng chục), số giảm đi:",
-        "choices": [
-          "310",
-          "4",
-          "41"
-        ],
-        "answerKey": {
-          "choice": "310"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K3"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "tf",
-        "sourceItem": "ITEM:KSN5Q1.B2.QZ1",
-        "text": "(Đúng/Sai?) Thêm chữ số 0 vào bên phải một số tự nhiên thì số đó gấp lên 10 lần.",
-        "answerKey": {
-          "value": true
-        },
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "num",
-        "text": "Xóa chữ số tận cùng của một số có hai chữ số thì số giảm đi 58 đơn vị. Tìm số đó.",
-        "answerKey": {
-          "value": 64
-        },
-        "teaches": [
-          "K4"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Bốn ca thêm – xóa chữ số và công thức từng ca?",
-        "back": "Thêm PHẢI: ×10 + c · Thêm TRÁI: + c×10ⁿ · Xóa GIỮA: tách 2 khúc — ráp lại (tính bằng hiệu!) · Xóa CUỐI: (cũ − c):10, mức giảm 9a + b."
-      }
-    ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: 1 câu generator P3",
-      "+7 ngày: 1 câu generator P4 (bài ngược)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con học 4 ca thêm – xóa chữ số bằng hình ảnh khu phố chuyển nhà. Con đạt {score}/3, {trapResult} câu bẫy xóa-giữa.",
-    "homeActivity": "Đố con: 'Xóa chữ số 5 khỏi 254 thì số giảm bao nhiêu?' — con tách phố và trả lời 254 − 24 = 230 là đạt.",
-    "watchFor": "Nếu con nói 'xóa 5 thì giảm 5' — mở lại màn rút căn nhà (S2) cùng con."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B2.M1",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "345 xóa 4 → 341???",
-        "lines": [
-          {
-            "who": "Cáo Đề",
-            "say": "Xóa chữ số 4 khỏi 345 hả? Mất số 4 thì trừ đi 4 — còn 341!",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "Khoan… xóa hẳn một CĂN NHÀ giữa phố mà chỉ mất có 4 đồng thôi sao?",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B2_M1_F1.png",
-      "sha256_16": "cf3e92d37f05aeb7"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "CA MẪU · thêm phải (ca thường)",
-        "formulas": [
-          {
-            "label": "ĐỀ",
-            "text": "Viết thêm chữ số 2 vào bên phải số 47. Số mới hơn số cũ bao nhiêu?",
-            "tone": "navy"
-          },
-          {
-            "label": "LỜI GIẢI",
-            "text": "Số mới = 47 × 10 + 2 = 472. Mức tăng: 472 − 47 = 425. Đối chiếu công thức: 9 × 47 + 2 = 425 .",
-            "tone": "teal"
-          }
-        ]
-      },
-      "caption": "Ca mẫu chuẩn của bài",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B2_M1_F2.png",
-      "sha256_16": "aef3d7b354c7361a"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Thêm chữ số c vào BÊN PHẢI",
-            "text": "số mới = số cũ × 10 + c (mọi chữ số cũ dọn nhà sang trái một hàng).",
-            "tone": "navy"
-          },
-          {
-            "label": "Thêm chữ số c vào BÊN TRÁI",
-            "text": "số mới = số cũ + c × 10ⁿ (các chữ số cũ đứng yên, c chiếm hàng cao nhất mới).",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "XÓA MỘT CHỮ SỐ — CẢ DÃY CHUYỂN NHÀ: TÍNH BẰNG HIỆU, ĐỪNG TRỪ CHỮ SỐ!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B2_M1_F3.png",
-      "sha256_16": "66f1231fdd121d3b"
-    },
-    {
-      "archetype": "bar_diagram",
-      "params": {
-        "title": "VIẾT THÊM 2 VÀO BÊN PHẢI SỐ 47",
-        "bars": [
-          {
-            "name": "số cũ 47",
-            "units": 1,
-            "label": "47"
-          },
-          {
-            "name": "số mới 472",
-            "units": 10,
-            "label": "47 × 10 + 2"
-          }
-        ],
-        "brace": {
-          "text": "mức tăng = 9 × 47 + 2 = 425"
-        },
-        "note": "Thêm chữ số bên PHẢI: cả số cũ bị đẩy lên một hàng — gấp 10 rồi cộng chữ số mới"
-      },
-      "caption": "Số cũ chiếm 1 ô, số mới chiếm 10 ô — phần dôi ra chính là 9 lần số cũ",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B2_M1_F4.png",
-      "sha256_16": "b39a1eabd406156a"
-    }
-  ]
+    "note": "Thêm chữ số bên PHẢI: cả số cũ bị đẩy lên một hàng — gấp 10 rồi cộng chữ số mới"
+   },
+   "caption": "Số cũ chiếm 1 ô, số mới chiếm 10 ô — phần dôi ra chính là 9 lần số cũ",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B2_M1_F4.png",
+   "sha256_16": "b39a1eabd406156a"
+  }
+ ]
 }

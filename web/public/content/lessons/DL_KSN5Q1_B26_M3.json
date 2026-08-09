@@ -1,622 +1,622 @@
 {
-  "title": "Máy chẵn lẻ soi đề: tổng lẻ của hai số cùng họ — vô nghiệm từ cổng",
-  "grade": 5,
-  "durationMinutes": 7,
-  "skills": {
-    "primary": [
-      "CASE:III.2.2#3"
+ "title": "Máy chẵn lẻ soi đề: tổng lẻ của hai số cùng họ — vô nghiệm từ cổng",
+ "grade": 5,
+ "durationMinutes": 7,
+ "skills": {
+  "primary": [
+   "CASE:III.2.2#3"
+  ],
+  "bktUnit": "CASE:III.2.2#3@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B26",
+  "order": 3,
+  "prev": "DL:KSN5Q1.B26.M2",
+  "next": "DL:KSN5Q1.B27.M1"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B26",
+  "chunks": [
+   "CHUNK:KSN5Q1.B26.S4",
+   "CHUNK:KSN5Q1.B26.S7"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B26.4"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B26.3"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con bật MÁY CHẴN LẺ soi đề trước khi giải: chẵn + chẵn = chẵn, lẻ + lẻ = chẵn — nên tổng của hai số cùng họ liên tiếp LUÔN CHẴN; đề cho tổng LẺ là VÔ NGHIỆM, loại ngay từ cổng với lý do — và biết \"vô nghiệm có lý do\" cũng là một đáp án trọn điểm.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (tổng lẻ — vô nghiệm)",
+  "kidText": "Lẻ cộng lẻ luôn ra chẵn. Nên đề cho tổng lẻ của hai số cùng họ là vô nghiệm — con loại ngay từ cổng, vẫn trọn điểm."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Máy chẵn lẻ: chẵn + chẵn = CHẴN; lẻ + lẻ = CHẴN; chẵn + lẻ = LẺ. Hai số cùng họ (hai chẵn liên tiếp, hai lẻ liên tiếp) cộng lại LUÔN chẵn."
+   },
+   {
+    "id": "K2",
+    "text": "Soi đề TRƯỚC KHI giải: \"hai số chẵn liên tiếp có tổng 99\" — 99 lẻ → VÔ NGHIỆM, không cần mò; viết lý do là trọn điểm: \"chẵn + chẵn phải chẵn, mà 99 lẻ\"."
+   },
+   {
+    "id": "K3",
+    "text": "Máy chẵn lẻ còn soi được bài ba số: ba số LẺ liên tiếp là dãy cách đều 2 → số giữa = tổng : 3 (99 : 3 = 33 → 31; 33; 35) — tổng chia hết cho 3 và số giữa phải LẺ mới có nghiệm."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: CỔNG SOI VÉ TRƯỚC SÂN GA. Trước khi cho bài toán lên tàu giải, mọi đề phải qua CỔNG SOI CHẴN LẺ. Cáo Đề trà trộn tấm vé ma: \"hai số chẵn liên tiếp có tổng 99\" — Trí Long cặm cụi mò: 48 với 50 ra 98… 49 với 51 thì lẻ mất họ… loay hoay cả buổi! Đưa vé qua cổng soi: hai hành khách CÙNG HỌ CHẴN — cộng lại bắt buộc ra CHẴN; vé ghi 99 LẺ: VÉ GIẢ, mời xuống — VÔ NGHIỆM ngay từ cổng, kèm biên bản lý do là trọn điểm! Cổng còn soi vé ba người: ba số lẻ liên tiếp tổng 99 — chia 3 ra số giữa 33, lẻ chuẩn họ: vé thật — lên tàu: 31, 33, 35.",
+  "canonicalExamples": [
+   {
+    "case": "vé thật ba người (ca thuận)",
+    "problem": "Tổng của ba số lẻ liên tiếp là 99 — tìm ba số.",
+    "solution": "Dãy lẻ liên tiếp cách đều 2 → số giữa = 99 : 3 = 33 (lẻ ✓) → ba số 31; 33; 35. Thử: 31 + 33 + 35 = 99 ✓.",
+    "why": "Ca LT9a — nối đặc quyền dãy cách đều B21."
+   },
+   {
+    "case": "vé ma (ca vô nghiệm)",
+    "problem": "Giải thích vì sao KHÔNG tồn tại hai số chẵn liên tiếp có tổng bằng 99.",
+    "solution": "Chẵn + chẵn = CHẴN, mà 99 LẺ → vô nghiệm. Biên bản một dòng — trọn điểm, khỏi mò.",
+    "why": "Ca LT9b — 'vô nghiệm có lý do' cũng là đáp."
+   }
+  ],
+  "numberRange": "Lớp 5: tổng ≤ 200.",
+  "misconceptions": [
+   {
+    "wrong": "Cặm cụi mò nghiệm cho đề ma (48 + 50 = 98… 50 + 52 = 102…) mà không soi chẵn lẻ; hoặc ngại kết luận vô nghiệm vì tưởng đề nào cũng phải có đáp số.",
+    "signal": "Bài giải dài dòng thử-sai không có dòng soi chẵn lẻ.",
+    "fix": "bật cổng soi TRƯỚC TIÊN; khắc: 'vô nghiệm có lý do' là một đáp án trọn vẹn, không phải bỏ cuộc.",
+    "counterExample": "Mọi cặp chẵn liên tiếp cho tổng 98, 102, 106… — nhảy cóc qua 99 mãi mãi."
+   }
+  ],
+  "vocabulary": [
+   "cổng soi vé",
+   "vé ma / vé thật",
+   "cùng họ cộng ra chẵn",
+   "biên bản vô nghiệm",
+   "trọn điểm không cần mò"
+  ],
+  "mantra": "SOI CHẴN LẺ TRƯỚC — \"VÔ NGHIỆM CÓ LÝ DO\" CŨNG LÀ ĐÁP!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "mcq",
+    "text": "Chẵn + chẵn = ?",
+    "choices": [
+     "chẵn",
+     "lẻ",
+     "tùy"
     ],
-    "bktUnit": "CASE:III.2.2#3@G5"
+    "answerKey": {
+     "choice": "chẵn"
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B26.M2",
+   "message": "Ôn dãy phố hai họ rồi ra cổng soi vé nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Cáo Đề thả vé ma: \"hai số chẵn liên tiếp có tổng 99 — tìm đi!\" Trí Long cặm cụi mò: 48 với 50 ra 98… thiếu 1! 50 với 52 ra 102… thừa 3! Mồ hôi nhễ nhại. Su Kem đứng ở cổng soi vé: \"Đưa vé đây soi đã — hai khách CÙNG HỌ CHẴN mà vé ghi tổng LẺ?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "chẵn + chẵn = 99??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để soi vé!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Cổng soi chạy ba phép nền: chẵn cộng chẵn ra CHẴN; lẻ cộng lẻ cũng ra CHẴN; chỉ chẵn cộng lẻ mới ra LẺ. Hai số chẵn liên tiếp — cùng họ chẵn — cộng lại BẮT BUỘC chẵn: mà vé ghi chín chín LẺ: VÉ GIẢ! Vô nghiệm ngay từ cổng — viết biên bản một dòng: \"chẵn cộng chẵn phải chẵn, chín chín lẻ\" — TRỌN ĐIỂM, khỏi mò cả buổi!",
+    "display": {
+     "type": "parity_gate_interactive",
+     "spec": {
+      "rules": [
+       "C + C = C",
+       "L + L = C",
+       "C + L = L"
+      ],
+      "ticket": "chẵn liên tiếp, tổng 99",
+      "verdict": "VÉ GIẢ — vô nghiệm"
+     }
+    },
+    "interaction": {
+     "type": "scan_ticket",
+     "answerKey": {
+      "value": "vô nghiệm"
+     },
+     "successMessage": "99 lẻ — vé giả: biên bản một dòng, trọn điểm!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Hai số LẺ liên tiếp có tổng 85 — kết luận?",
+     "choices": [
+      "vô nghiệm (lẻ + lẻ phải chẵn)",
+      "42 và 43",
+      "cần mò thêm"
+     ],
+     "answerKey": {
+      "choice": "vô nghiệm (lẻ + lẻ phải chẵn)"
+     },
+     "wrongFeedback": "Lẻ + lẻ = chẵn, 85 lẻ.",
+     "objective": "O1",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 38,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Cổng còn soi vé BA người: ba số lẻ liên tiếp tổng chín chín — dãy cách đều hai, đặc quyền Bài hai mốt: số GIỮA bằng chín chín chia ba — BA MƯƠI BA, lẻ chuẩn họ: vé thật! Lên tàu: ba mốt, ba ba, ba lăm — thử cộng đúng chín chín. Cổng gật khi đủ hai điều: tổng chia hết cho ba, và số giữa đúng họ.",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "3 số lẻ liên tiếp: số giữa = 99 : 3 = 33 (lẻ ✓)",
+      "ba số: 31; 33; 35 — thử 99 ✓",
+      "cổng gật: chia hết 3 + số giữa đúng họ"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: soi chẵn lẻ trước — vô nghiệm có lý do cũng là đáp!",
+    "display": {
+     "type": "mantra_card",
+     "text": "SOI CHẴN LẺ TRƯỚC!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B26",
-    "order": 3,
-    "prev": "DL:KSN5Q1.B26.M2",
-    "next": "DL:KSN5Q1.B27.M1"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B26",
-    "chunks": [
-      "CHUNK:KSN5Q1.B26.S4",
-      "CHUNK:KSN5Q1.B26.S7"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Cáo Đề thả vé ma: hai số chẵn liên tiếp có tổng chín chín — tìm đi! Trí Long cặm cụi mò: bốn tám với năm mươi ra chín tám… thiếu một! Năm mươi với năm hai — thừa ba! Su Kem đứng ở cổng soi vé: đưa vé đây soi đã — hai khách CÙNG HỌ CHẴN mà vé ghi tổng LẺ?",
+    "screenText": "chẵn liên tiếp · tổng 99 — mò mãi?!",
+    "visual": "Sân ga với cổng soi vé; Trí Long ôm chồng giấy nháp thử-sai; Cáo Đề nấp sau cột cười; vé ghi '99' nhấp nháy đỏ.",
+    "assets": [],
+    "duration": 23
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Cổng soi chạy ba phép nền: chẵn cộng chẵn ra CHẴN; lẻ cộng lẻ cũng ra CHẴN; chỉ chẵn cộng lẻ mới ra LẺ. Hai số chẵn liên tiếp — cùng họ — cộng lại BẮT BUỘC chẵn: mà vé ghi chín chín LẺ: VÉ GIẢ! Vô nghiệm ngay từ cổng — biên bản một dòng: chẵn cộng chẵn phải chẵn, chín chín lẻ — TRỌN ĐIỂM, khỏi mò cả buổi!",
+    "screenText": "C+C=C · L+L=C · C+L=L → tổng 99 lẻ: VÉ GIẢ!",
+    "visual": "Cổng soi với bảng ba luật sáng đèn; vé 99 bị đóng dấu 'VÉ GIẢ' đỏ #C0392B; biên bản một dòng đóng mộc trọn điểm.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Cổng còn soi vé BA người: ba số lẻ liên tiếp tổng chín chín — dãy cách đều hai, đặc quyền Bài hai mốt: số GIỮA bằng chín chín chia ba — BA MƯƠI BA, lẻ chuẩn họ: vé thật! Lên tàu: ba mốt, ba ba, ba lăm — thử cộng đúng chín chín. Cổng gật khi đủ hai điều: tổng chia hết cho ba, và số giữa đúng họ!",
+    "screenText": "99 : 3 = 33 (lẻ ✓) → 31 · 33 · 35 lên tàu!",
+    "visual": "Ba hành khách lẻ 31·33·35 qua cổng đèn xanh lên tàu; số giữa 33 cầm vé thật; phép thử tổng 99 trên bảng ga.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú cổng soi: soi chẵn lẻ trước — vô nghiệm có lý do cũng là đáp!",
+    "screenText": "SOI TRƯỚC — VÔ NGHIỆM CŨNG LÀ ĐÁP!",
+    "visual": "Thẻ thần chú vàng với icon máy soi vé.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Ca trực cổng của con: ba số lẻ liên tiếp tổng chín chín — vé thật hay giả, ba số nào? Vào bài luyện ngay!",
+    "screenText": "3 số lẻ liên tiếp · tổng 99 → ?",
+    "visual": "Vé ba người chờ soi; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 9
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Một vé thật — một vé ma",
+  "problem": "a) Tổng của ba số lẻ liên tiếp là 99 — tìm ba số. b) Giải thích vì sao không có hai số chẵn liên tiếp tổng 99.",
+  "steps": [
+   {
+    "show": "Bước 1 — Câu (a): dãy lẻ cách đều 2 → số giữa = 99 : 3 = 33 (lẻ ✓).",
+    "askBefore": {
+     "format": "num",
+     "text": "Số giữa của ba số = tổng chia mấy?",
+     "answerKey": {
+      "value": 3
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Ba số: 31; 33; 35. Thử: 99 ✓."
+   },
+   {
+    "show": "Bước 3 — Câu (b): chẵn + chẵn = CHẴN, mà 99 lẻ → vô nghiệm (biên bản một dòng — trọn điểm).",
+    "askAfter": {
+     "format": "mcq",
+     "text": "Hai số lẻ liên tiếp tổng 96 — vé thật hay giả?",
+     "choices": [
+      "thật (96 chẵn): 47 và 49",
+      "giả",
+      "không soi được"
+     ],
+     "answerKey": {
+      "choice": "thật (96 chẵn): 47 và 49"
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B26.LT9",
+     "text": "Sư phụ Trí Dũng đố hai nhịp: \"a) Tổng của ba số lẻ liên tiếp là 99 — tìm ba số. b) Giải thích vì sao không tồn tại hai số chẵn liên tiếp có tổng 99.\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "a",
+        "value": "31; 33; 35"
+       },
+       {
+        "label": "b",
+        "value": "chẵn + chẵn luôn chẵn, mà 99 lẻ → vô nghiệm"
+       }
+      ]
+     },
+     "hints": [
+      "Số giữa = 99 : 3.",
+      "Bật cổng soi cho câu b."
+     ],
+     "solutionNarrative": "a) 31; 33; 35. b) Vô nghiệm có lý do — trọn điểm.",
+     "teaches": [
+      "K1",
+      "K2",
+      "K3"
+     ],
+     "generator": {
+      "template": "a) 3 số {họ} liên tiếp tổng {S}; b) soi đề tổng {S'} cùng họ.",
+      "constraints": {},
+      "answerRule": "số giữa = S : 3; soi chẵn lẻ"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mcq",
+     "text": "Hai số lẻ liên tiếp có tổng 85 — kết luận?",
+     "choices": [
+      "vô nghiệm — lẻ + lẻ phải chẵn",
+      "42 và 43",
+      "41 và 44"
+     ],
+     "answerKey": {
+      "choice": "vô nghiệm — lẻ + lẻ phải chẵn"
+     },
+     "hints": [
+      "Soi cổng trước.",
+      "85 chẵn hay lẻ?"
+     ],
+     "solutionNarrative": "Lẻ + lẻ = chẵn ≠ 85 → vô nghiệm.",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "text": "Ba số lẻ liên tiếp có tổng 105 — vé thật hay giả? Nếu thật, tìm ba số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "soi",
+        "value": "105 : 3 = 35 lẻ — vé thật",
+        "options": [
+         "105 : 3 = 35 lẻ",
+         "105 : 3 = 35 chẵn",
+         "105 không chia hết cho 3"
+        ]
+       },
+       {
+        "label": "ba số",
+        "value": "33; 35; 37"
+       }
+      ]
+     },
+     "hints": [
+      "Số giữa = 105 : 3.",
+      "Số giữa có đúng họ lẻ?"
+     ],
+     "solutionNarrative": "Số giữa 35 → 33; 35; 37 (thử 105 ✓).",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.2.2#3@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B27.M1",
+   "award": "huy_hieu_cong_soi_ve"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B26.QZ5",
+    "text": "Hai số chẵn liên tiếp có tổng 99 — kết luận:",
+    "choices": [
+     "vô nghiệm (tổng phải chẵn)",
+     "49 và 50",
+     "48 và 51"
     ],
-    "cases": [
-      "CA:KSN5Q1.B26.4"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B26.3"
+    "answerKey": {
+     "choice": "vô nghiệm (tổng phải chẵn)"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1",
+     "K2"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "text": "Lẻ + lẻ =",
+    "choices": [
+     "chẵn",
+     "lẻ",
+     "tùy"
+    ],
+    "answerKey": {
+     "choice": "chẵn"
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mb",
+    "text": "Ba số lẻ liên tiếp tổng 99 → ba số?",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "ba số",
+       "value": "31; 33; 35"
+      }
+     ]
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Máy chẵn lẻ soi đề thế nào?",
+    "back": "C+C=C, L+L=C, C+L=L → hai số CÙNG HỌ liên tiếp có tổng LUÔN CHẴN: đề tổng lẻ (99) = VÔ NGHIỆM từ cổng — biên bản lý do là trọn điểm. Ba số lẻ liên tiếp: số giữa = tổng : 3 (99:3=33 → 31;33;35), cần chia hết 3 + số giữa đúng họ."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (tổng 105)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học soi chẵn lẻ trước khi giải: nhận diện đề vô nghiệm và viết biên bản lý do trọn điểm. Con đạt {score}/3, {trapResult} câu bẫy đề-ma.",
+  "homeActivity": "Ra hai đề liền: 'hai số chẵn liên tiếp tổng 90' và 'tổng 99' — con soi vé, giải cái thật, lập biên bản cái ma.",
+  "watchFor": "Nếu con ngại kết luận vô nghiệm — nhắc 'vô nghiệm có lý do cũng là đáp trọn điểm' (S2)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B26.M3",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "chẵn + chẵn = 99??",
+    "lines": [
+     {
+      "who": "Cáo Đề",
+      "say": "hai số chẵn liên tiếp có tổng 99 — tìm đi!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Đưa vé đây soi đã — hai khách CÙNG HỌ CHẴN mà vé ghi tổng LẺ?",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B26_M3_F1.png",
+   "sha256_16": "69bd3483438bc76e"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con bật MÁY CHẴN LẺ soi đề trước khi giải: chẵn + chẵn = chẵn, lẻ + lẻ = chẵn — nên tổng của hai số cùng họ liên tiếp LUÔN CHẴN; đề cho tổng LẺ là VÔ NGHIỆM, loại ngay từ cổng với lý do — và biết \"vô nghiệm có lý do\" cũng là một đáp án trọn điểm.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (tổng lẻ — vô nghiệm)",
-    "kidText": "Lẻ cộng lẻ luôn ra chẵn. Nên đề cho tổng lẻ của hai số cùng họ là vô nghiệm — con loại ngay từ cổng, vẫn trọn điểm."
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Máy chẵn lẻ soi đề: tổng lẻ của hai số cùng họ — vô nghiệm từ cổng",
+    "steps": [
+     {
+      "text": "3 số lẻ liên tiếp: số giữa = 99 : 3 = 33 (lẻ )"
+     },
+     {
+      "text": "ba số: 31; 33; 35 — thử 99"
+     },
+     {
+      "text": "cổng gật: chia hết 3 + số giữa đúng họ"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B26_M3_F2.png",
+   "sha256_16": "bf9e91b1f39c8569"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Máy chẵn lẻ: chẵn + chẵn = CHẴN; lẻ + lẻ = CHẴN; chẵn + lẻ = LẺ. Hai số cùng họ (hai chẵn liên tiếp, hai lẻ liên tiếp) cộng lại LUÔN chẵn."
-      },
-      {
-        "id": "K2",
-        "text": "Soi đề TRƯỚC KHI giải: \"hai số chẵn liên tiếp có tổng 99\" — 99 lẻ → VÔ NGHIỆM, không cần mò; viết lý do là trọn điểm: \"chẵn + chẵn phải chẵn, mà 99 lẻ\"."
-      },
-      {
-        "id": "K3",
-        "text": "Máy chẵn lẻ còn soi được bài ba số: ba số LẺ liên tiếp là dãy cách đều 2 → số giữa = tổng : 3 (99 : 3 = 33 → 31; 33; 35) — tổng chia hết cho 3 và số giữa phải LẺ mới có nghiệm."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: CỔNG SOI VÉ TRƯỚC SÂN GA. Trước khi cho bài toán lên tàu giải, mọi đề phải qua CỔNG SOI CHẴN LẺ. Cáo Đề trà trộn tấm vé ma: \"hai số chẵn liên tiếp có tổng 99\" — Trí Long cặm cụi mò: 48 với 50 ra 98… 49 với 51 thì lẻ mất họ… loay hoay cả buổi! Đưa vé qua cổng soi: hai hành khách CÙNG HỌ CHẴN — cộng lại bắt buộc ra CHẴN; vé ghi 99 LẺ: VÉ GIẢ, mời xuống — VÔ NGHIỆM ngay từ cổng, kèm biên bản lý do là trọn điểm! Cổng còn soi vé ba người: ba số lẻ liên tiếp tổng 99 — chia 3 ra số giữa 33, lẻ chuẩn họ: vé thật — lên tàu: 31, 33, 35.",
-    "canonicalExamples": [
-      {
-        "case": "vé thật ba người (ca thuận)",
-        "problem": "Tổng của ba số lẻ liên tiếp là 99 — tìm ba số.",
-        "solution": "Dãy lẻ liên tiếp cách đều 2 → số giữa = 99 : 3 = 33 (lẻ ✓) → ba số 31; 33; 35. Thử: 31 + 33 + 35 = 99 ✓.",
-        "why": "Ca LT9a — nối đặc quyền dãy cách đều B21."
-      },
-      {
-        "case": "vé ma (ca vô nghiệm)",
-        "problem": "Giải thích vì sao KHÔNG tồn tại hai số chẵn liên tiếp có tổng bằng 99.",
-        "solution": "Chẵn + chẵn = CHẴN, mà 99 LẺ → vô nghiệm. Biên bản một dòng — trọn điểm, khỏi mò.",
-        "why": "Ca LT9b — 'vô nghiệm có lý do' cũng là đáp."
-      }
-    ],
-    "numberRange": "Lớp 5: tổng ≤ 200.",
-    "misconceptions": [
-      {
-        "wrong": "Cặm cụi mò nghiệm cho đề ma (48 + 50 = 98… 50 + 52 = 102…) mà không soi chẵn lẻ; hoặc ngại kết luận vô nghiệm vì tưởng đề nào cũng phải có đáp số.",
-        "signal": "Bài giải dài dòng thử-sai không có dòng soi chẵn lẻ.",
-        "fix": "K2 — bật cổng soi TRƯỚC TIÊN; khắc: 'vô nghiệm có lý do' là một đáp án trọn vẹn, không phải bỏ cuộc.",
-        "counterExample": "Mọi cặp chẵn liên tiếp cho tổng 98, 102, 106… — nhảy cóc qua 99 mãi mãi."
-      }
-    ],
-    "vocabulary": [
-      "cổng soi vé",
-      "vé ma / vé thật",
-      "cùng họ cộng ra chẵn",
-      "biên bản vô nghiệm",
-      "trọn điểm không cần mò"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Máy chẵn lẻ",
+      "text": "chẵn + chẵn = CHẴN",
+      "tone": "navy"
+     },
+     {
+      "label": "Soi đề TRƯỚC KHI giải",
+      "text": "\"hai số chẵn liên tiếp có tổng 99\" — 99 lẻ → VÔ NGHIỆM, không cần mò; viết lý do là trọn điểm: \"chẵn + chẵn phải chẵn, mà 99 lẻ\".",
+      "tone": "teal"
+     }
     ],
     "mantra": "SOI CHẴN LẺ TRƯỚC — \"VÔ NGHIỆM CÓ LÝ DO\" CŨNG LÀ ĐÁP!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B26_M3_F3.png",
+   "sha256_16": "5c778bf539f60baf"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "mcq",
-        "text": "Chẵn + chẵn = ?",
-        "choices": [
-          "chẵn",
-          "lẻ",
-          "tùy"
-        ],
-        "answerKey": {
-          "choice": "chẵn"
-        }
-      }
-    ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B26.M2",
-      "message": "Ôn dãy phố hai họ rồi ra cổng soi vé nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 20,
-        "narration": "Cáo Đề thả vé ma: \"hai số chẵn liên tiếp có tổng 99 — tìm đi!\" Trí Long cặm cụi mò: 48 với 50 ra 98… thiếu 1! 50 với 52 ra 102… thừa 3! Mồ hôi nhễ nhại. Su Kem đứng ở cổng soi vé: \"Đưa vé đây soi đã — hai khách CÙNG HỌ CHẴN mà vé ghi tổng LẺ?\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "chẵn + chẵn = 99??"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để soi vé!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 44,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Cổng soi chạy ba phép nền: chẵn cộng chẵn ra CHẴN; lẻ cộng lẻ cũng ra CHẴN; chỉ chẵn cộng lẻ mới ra LẺ. Hai số chẵn liên tiếp — cùng họ chẵn — cộng lại BẮT BUỘC chẵn: mà vé ghi chín chín LẺ: VÉ GIẢ! Vô nghiệm ngay từ cổng — viết biên bản một dòng: \"chẵn cộng chẵn phải chẵn, chín chín lẻ\" — TRỌN ĐIỂM, khỏi mò cả buổi!",
-        "display": {
-          "type": "parity_gate_interactive",
-          "spec": {
-            "rules": [
-              "C + C = C",
-              "L + L = C",
-              "C + L = L"
-            ],
-            "ticket": "chẵn liên tiếp, tổng 99",
-            "verdict": "VÉ GIẢ — vô nghiệm"
-          }
-        },
-        "interaction": {
-          "type": "scan_ticket",
-          "answerKey": {
-            "value": "vô nghiệm"
-          },
-          "successMessage": "99 lẻ — vé giả: biên bản một dòng, trọn điểm!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "mcq",
-          "text": "Hai số LẺ liên tiếp có tổng 85 — kết luận?",
-          "choices": [
-            "vô nghiệm (lẻ + lẻ phải chẵn)",
-            "42 và 43",
-            "cần mò thêm"
-          ],
-          "answerKey": {
-            "choice": "vô nghiệm (lẻ + lẻ phải chẵn)"
-          },
-          "wrongFeedback": "Lẻ + lẻ = chẵn, 85 lẻ.",
-          "objective": "O1",
-          "teaches": [
-            "K1",
-            "K2"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 38,
-        "teaches": [
-          "K3"
-        ],
-        "narration": "Cổng còn soi vé BA người: ba số lẻ liên tiếp tổng chín chín — dãy cách đều hai, đặc quyền Bài hai mốt: số GIỮA bằng chín chín chia ba — BA MƯƠI BA, lẻ chuẩn họ: vé thật! Lên tàu: ba mốt, ba ba, ba lăm — thử cộng đúng chín chín. Cổng gật khi đủ hai điều: tổng chia hết cho ba, và số giữa đúng họ.",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "3 số lẻ liên tiếp: số giữa = 99 : 3 = 33 (lẻ ✓)",
-            "ba số: 31; 33; 35 — thử 99 ✓",
-            "cổng gật: chia hết 3 + số giữa đúng họ"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú cổng soi: soi chẵn lẻ trước — vô nghiệm có lý do cũng là đáp!",
-        "display": {
-          "type": "mantra_card",
-          "text": "SOI CHẴN LẺ TRƯỚC!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 90,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "MÁY CHẴN LẺ SOI ĐỀ TRƯỚC KHI GIẢI",
+    "wrong": {
+     "head": "VÉ MA — vô nghiệm",
+     "steps": [
+      "hai số CHẴN liên tiếp",
+      "tổng = 99 (LẺ)"
+     ],
+     "result": "chẵn + chẵn = CHẴN ✗"
     },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    "right": {
+     "head": "VÉ THẬT",
+     "steps": [
+      "ba số LẺ liên tiếp",
+      "tổng 99 : 3 = 33"
+     ],
+     "result": "31 · 33 · 35 ✓"
     },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Cáo Đề thả vé ma: hai số chẵn liên tiếp có tổng chín chín — tìm đi! Trí Long cặm cụi mò: bốn tám với năm mươi ra chín tám… thiếu một! Năm mươi với năm hai — thừa ba! Su Kem đứng ở cổng soi vé: đưa vé đây soi đã — hai khách CÙNG HỌ CHẴN mà vé ghi tổng LẺ?",
-        "screenText": "chẵn liên tiếp · tổng 99 — mò mãi?!",
-        "visual": "Sân ga với cổng soi vé; Trí Long ôm chồng giấy nháp thử-sai; Cáo Đề nấp sau cột cười; vé ghi '99' nhấp nháy đỏ.",
-        "assets": [],
-        "duration": 23
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Cổng soi chạy ba phép nền: chẵn cộng chẵn ra CHẴN; lẻ cộng lẻ cũng ra CHẴN; chỉ chẵn cộng lẻ mới ra LẺ. Hai số chẵn liên tiếp — cùng họ — cộng lại BẮT BUỘC chẵn: mà vé ghi chín chín LẺ: VÉ GIẢ! Vô nghiệm ngay từ cổng — biên bản một dòng: chẵn cộng chẵn phải chẵn, chín chín lẻ — TRỌN ĐIỂM, khỏi mò cả buổi!",
-        "screenText": "C+C=C · L+L=C · C+L=L → tổng 99 lẻ: VÉ GIẢ!",
-        "visual": "Cổng soi với bảng ba luật sáng đèn; vé 99 bị đóng dấu 'VÉ GIẢ' đỏ #C0392B; biên bản một dòng đóng mộc trọn điểm.",
-        "assets": [],
-        "duration": 25
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Cổng còn soi vé BA người: ba số lẻ liên tiếp tổng chín chín — dãy cách đều hai, đặc quyền Bài hai mốt: số GIỮA bằng chín chín chia ba — BA MƯƠI BA, lẻ chuẩn họ: vé thật! Lên tàu: ba mốt, ba ba, ba lăm — thử cộng đúng chín chín. Cổng gật khi đủ hai điều: tổng chia hết cho ba, và số giữa đúng họ!",
-        "screenText": "99 : 3 = 33 (lẻ ✓) → 31 · 33 · 35 lên tàu!",
-        "visual": "Ba hành khách lẻ 31·33·35 qua cổng đèn xanh lên tàu; số giữa 33 cầm vé thật; phép thử tổng 99 trên bảng ga.",
-        "assets": [],
-        "duration": 25
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú cổng soi: soi chẵn lẻ trước — vô nghiệm có lý do cũng là đáp!",
-        "screenText": "SOI TRƯỚC — VÔ NGHIỆM CŨNG LÀ ĐÁP!",
-        "visual": "Thẻ thần chú vàng với icon máy soi vé.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Ca trực cổng của con: ba số lẻ liên tiếp tổng chín chín — vé thật hay giả, ba số nào? Vào bài luyện ngay!",
-        "screenText": "3 số lẻ liên tiếp · tổng 99 → ?",
-        "visual": "Vé ba người chờ soi; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P1",
-        "assets": [],
-        "duration": 9
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Một vé thật — một vé ma",
-    "problem": "a) Tổng của ba số lẻ liên tiếp là 99 — tìm ba số. b) Giải thích vì sao không có hai số chẵn liên tiếp tổng 99.",
-    "steps": [
-      {
-        "show": "Bước 1 — Câu (a): dãy lẻ cách đều 2 → số giữa = 99 : 3 = 33 (lẻ ✓).",
-        "askBefore": {
-          "format": "num",
-          "text": "Số giữa của ba số = tổng chia mấy?",
-          "answerKey": {
-            "value": 3
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Ba số: 31; 33; 35. Thử: 99 ✓."
-      },
-      {
-        "show": "Bước 3 — Câu (b): chẵn + chẵn = CHẴN, mà 99 lẻ → vô nghiệm (biên bản một dòng — trọn điểm).",
-        "askAfter": {
-          "format": "mcq",
-          "text": "Hai số lẻ liên tiếp tổng 96 — vé thật hay giả?",
-          "choices": [
-            "thật (96 chẵn): 47 và 49",
-            "giả",
-            "không soi được"
-          ],
-          "answerKey": {
-            "choice": "thật (96 chẵn): 47 và 49"
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B26.LT9",
-          "text": "Sư phụ Trí Dũng đố hai nhịp: \"a) Tổng của ba số lẻ liên tiếp là 99 — tìm ba số. b) Giải thích vì sao không tồn tại hai số chẵn liên tiếp có tổng 99.\"",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "a",
-                "value": "31; 33; 35"
-              },
-              {
-                "label": "b",
-                "value": "chẵn + chẵn luôn chẵn, mà 99 lẻ → vô nghiệm"
-              }
-            ]
-          },
-          "hints": [
-            "Số giữa = 99 : 3.",
-            "Bật cổng soi cho câu b."
-          ],
-          "solutionNarrative": "a) 31; 33; 35. b) Vô nghiệm có lý do — trọn điểm.",
-          "teaches": [
-            "K1",
-            "K2",
-            "K3"
-          ],
-          "generator": {
-            "template": "a) 3 số {họ} liên tiếp tổng {S}; b) soi đề tổng {S'} cùng họ.",
-            "constraints": {},
-            "answerRule": "số giữa = S : 3; soi chẵn lẻ"
-          }
-        }
-      ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "mcq",
-          "text": "Hai số lẻ liên tiếp có tổng 85 — kết luận?",
-          "choices": [
-            "vô nghiệm — lẻ + lẻ phải chẵn",
-            "42 và 43",
-            "41 và 44"
-          ],
-          "answerKey": {
-            "choice": "vô nghiệm — lẻ + lẻ phải chẵn"
-          },
-          "hints": [
-            "Soi cổng trước.",
-            "85 chẵn hay lẻ?"
-          ],
-          "solutionNarrative": "Lẻ + lẻ = chẵn ≠ 85 → vô nghiệm.",
-          "teaches": [
-            "K1",
-            "K2"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P3",
-          "format": "mb",
-          "text": "Ba số lẻ liên tiếp có tổng 105 — vé thật hay giả? Nếu thật, tìm ba số.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "soi",
-                "value": "105 : 3 = 35 lẻ — vé thật",
-                "options": [
-                  "105 : 3 = 35 lẻ",
-                  "105 : 3 = 35 chẵn",
-                  "105 không chia hết cho 3"
-                ]
-              },
-              {
-                "label": "ba số",
-                "value": "33; 35; 37"
-              }
-            ]
-          },
-          "hints": [
-            "Số giữa = 105 : 3.",
-            "Số giữa có đúng họ lẻ?"
-          ],
-          "solutionNarrative": "Số giữa 35 → 33; 35; 37 (thử 105 ✓).",
-          "teaches": [
-            "K3"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:III.2.2#3@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B27.M1",
-      "award": "huy_hieu_cong_soi_ve"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B26.QZ5",
-        "text": "Hai số chẵn liên tiếp có tổng 99 — kết luận:",
-        "choices": [
-          "vô nghiệm (tổng phải chẵn)",
-          "49 và 50",
-          "48 và 51"
-        ],
-        "answerKey": {
-          "choice": "vô nghiệm (tổng phải chẵn)"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K1",
-          "K2"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "mcq",
-        "text": "Lẻ + lẻ =",
-        "choices": [
-          "chẵn",
-          "lẻ",
-          "tùy"
-        ],
-        "answerKey": {
-          "choice": "chẵn"
-        },
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "mb",
-        "text": "Ba số lẻ liên tiếp tổng 99 → ba số?",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "ba số",
-              "value": "31; 33; 35"
-            }
-          ]
-        },
-        "teaches": [
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Máy chẵn lẻ soi đề thế nào?",
-        "back": "C+C=C, L+L=C, C+L=L → hai số CÙNG HỌ liên tiếp có tổng LUÔN CHẴN: đề tổng lẻ (99) = VÔ NGHIỆM từ cổng — biên bản lý do là trọn điểm. Ba số lẻ liên tiếp: số giữa = tổng : 3 (99:3=33 → 31;33;35), cần chia hết 3 + số giữa đúng họ."
-      }
-    ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P3 (tổng 105)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con học soi chẵn lẻ trước khi giải: nhận diện đề vô nghiệm và viết biên bản lý do trọn điểm. Con đạt {score}/3, {trapResult} câu bẫy đề-ma.",
-    "homeActivity": "Ra hai đề liền: 'hai số chẵn liên tiếp tổng 90' và 'tổng 99' — con soi vé, giải cái thật, lập biên bản cái ma.",
-    "watchFor": "Nếu con ngại kết luận vô nghiệm — nhắc 'vô nghiệm có lý do cũng là đáp trọn điểm' (S2)."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B26.M3",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "chẵn + chẵn = 99??",
-        "lines": [
-          {
-            "who": "Cáo Đề",
-            "say": "hai số chẵn liên tiếp có tổng 99 — tìm đi!",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "Đưa vé đây soi đã — hai khách CÙNG HỌ CHẴN mà vé ghi tổng LẺ?",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B26_M3_F1.png",
-      "sha256_16": "69bd3483438bc76e"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con bật MÁY CHẴN LẺ soi đề trước khi giải: chẵn + chẵn = chẵn, lẻ + lẻ = chẵn — nên tổng của hai số cùng họ liên tiếp LUÔN CHẴN; đề cho tổng LẺ là VÔ NGHIỆM, loại ngay từ cổng với lý do — và biết \"vô nghiệm có lý do\" cũng là một đáp án trọn điểm.",
-        "steps": [
-          {
-            "text": "3 số lẻ liên tiếp: số giữa = 99 : 3 = 33 (lẻ )"
-          },
-          {
-            "text": "ba số: 31; 33; 35 — thử 99"
-          },
-          {
-            "text": "cổng gật: chia hết 3 + số giữa đúng họ"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B26_M3_F2.png",
-      "sha256_16": "1a420020bea810da"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Máy chẵn lẻ",
-            "text": "chẵn + chẵn = CHẴN",
-            "tone": "navy"
-          },
-          {
-            "label": "Soi đề TRƯỚC KHI giải",
-            "text": "\"hai số chẵn liên tiếp có tổng 99\" — 99 lẻ → VÔ NGHIỆM, không cần mò; viết lý do là trọn điểm: \"chẵn + chẵn phải chẵn, mà 99 lẻ\".",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "SOI CHẴN LẺ TRƯỚC — \"VÔ NGHIỆM CÓ LÝ DO\" CŨNG LÀ ĐÁP!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B26_M3_F3.png",
-      "sha256_16": "5c778bf539f60baf"
-    },
-    {
-      "archetype": "two_way_compare",
-      "params": {
-        "title": "MÁY CHẴN LẺ SOI ĐỀ TRƯỚC KHI GIẢI",
-        "wrong": {
-          "head": "VÉ MA — vô nghiệm",
-          "steps": [
-            "hai số CHẴN liên tiếp",
-            "tổng = 99 (LẺ)"
-          ],
-          "result": "chẵn + chẵn = CHẴN ✗"
-        },
-        "right": {
-          "head": "VÉ THẬT",
-          "steps": [
-            "ba số LẺ liên tiếp",
-            "tổng 99 : 3 = 33"
-          ],
-          "result": "31 · 33 · 35 ✓"
-        },
-        "verdict": "Biên bản một dòng là trọn điểm — khỏi mò mẫm"
-      },
-      "caption": "Soi chẵn lẻ ở cổng: đề vô nghiệm thì phát hiện ngay",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B26_M3_F4.png",
-      "sha256_16": "df2848c757eb21da"
-    }
-  ]
+    "verdict": "Biên bản một dòng là trọn điểm — khỏi mò mẫm"
+   },
+   "caption": "Soi chẵn lẻ ở cổng: đề vô nghiệm thì phát hiện ngay",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B26_M3_F4.png",
+   "sha256_16": "df2848c757eb21da"
+  }
+ ]
 }

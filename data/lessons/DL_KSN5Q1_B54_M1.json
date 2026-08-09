@@ -1,639 +1,639 @@
 {
-  "title": "Đuổi chia HIỆU — gặp chia TỔNG: nghi thức hai mũi tên, tính cả vị trí và kiểm hai phía",
-  "grade": 5,
-  "durationMinutes": 9,
-  "skills": {
-    "primary": [
-      "CASE:V.2.1#1"
+ "title": "Đuổi chia HIỆU — gặp chia TỔNG: nghi thức hai mũi tên, tính cả vị trí và kiểm hai phía",
+ "grade": 5,
+ "durationMinutes": 9,
+ "skills": {
+  "primary": [
+   "CASE:V.2.1#1"
+  ],
+  "bktUnit": "CASE:V.2.1#1@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B54",
+  "order": 1,
+  "prev": "DL:KSN5Q1.B53.M3",
+  "next": "DL:KSN5Q1.B54.M2"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B54",
+  "chunks": [
+   "CHUNK:KSN5Q1.B54.S3",
+   "CHUNK:KSN5Q1.B54.S4"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B54.1",
+   "CA:KSN5Q1.B54.3"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B54.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con chọn đúng phép chia bằng NGHI THỨC HAI MŨI TÊN vẽ trước khi tính: cùng hướng → đuổi → chia HIỆU V (5 : (15 − 10) = 1 giờ); đối đầu → gặp → chia TỔNG V (36 : (10 + 8) = 2 giờ); rồi tính VỊ TRÍ gặp (10 × 2 = 20 km) và KIỂM HAI PHÍA (8 × 2 = 16; 20 + 16 = 36 ✓) — Cáo Đề chỉ cần đổi hai chữ \"chiều\" là tráo cả phép tính.",
+  "passRule": "assessment đúng từ 3 trên 4 câu, bắt buộc đúng A1 (đuổi chia hiệu)",
+  "kidText": "Vẽ hai mũi tên trước khi tính: cùng hướng thì đuổi nhau, chia HIỆU vận tốc; đối đầu thì gặp nhau, chia TỔNG vận tốc."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Nghi thức HAI MŨI TÊN — vẽ trước khi tính: CÙNG hướng →→ là ĐUỔI: mỗi giờ khoảng cách co lại bằng HIỆU V → t = khoảng cách : hiệu = 5 : (15 − 10) = 1 giờ."
+   },
+   {
+    "id": "K2",
+    "text": "ĐỐI ĐẦU →← là GẶP: mỗi giờ hai bên cùng gặm khoảng cách — co lại bằng TỔNG V → t = 36 : (10 + 8) = 2 giờ; đọc kỹ hai chữ CHIỀU cuối câu — đổi \"cùng\" thành \"ngược\" là tráo cả phép!"
+   },
+   {
+    "id": "K3",
+    "text": "Tính VỊ TRÍ và kiểm hai phía: điểm gặp cách chỗ xuất phát người 10 km/h là 10 × 2 = 20 km; kiểm phía kia: 8 × 2 = 16 km — 20 + 16 = 36 ✓: hai phía cộng tròn khoảng cách là bài tự chấm."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: HAI MŨI TÊN QUYẾT ĐỊNH PHÉP CHIA. Cáo Đề ra hai đề sinh đôi chỉ khác HAI CHỮ: \"đi CÙNG chiều\" và \"đi NGƯỢC chiều\" — tráo chữ là tráo phép tính! Nghi thức bất di bất dịch: VẼ HAI MŨI TÊN trước khi đụng máy tính! Cùng hướng — hai mũi tên song song →→: kẻ trước chạy, kẻ sau ĐUỔI — mỗi giờ khoảng cách chỉ co lại bằng phần CHÊNH: chia HIỆU! Năm cây, hiệu mười lăm trừ mười — năm: một GIỜ đuổi kịp! Đối đầu — hai mũi tên châu vào nhau →←: hai bên CÙNG GẶM khoảng cách từ hai phía — mỗi giờ co bằng TỔNG: ba sáu chia mười-cộng-tám — HAI giờ gặp nhau! Chưa xong — đề hỏi tiếp GẶP Ở ĐÂU: người mười cây giờ đi hai giờ — cách chỗ xuất phát HAI MƯƠI cây! Kiểm hai phía như kiểm hai đầu cầu: người kia tám nhân hai — mười sáu: hai mươi cộng mười sáu tròn BA SÁU — bài tự chấm điểm mười!",
+  "canonicalExamples": [
+   {
+    "case": "đuổi cùng chiều (ca hiệu)",
+    "problem": "Hai người đi cùng chiều, người sau cách người trước 5 km; vận tốc lần lượt 15 km/h và 10 km/h. Hỏi sau bao lâu người sau đuổi kịp?",
+    "solution": "Mũi tên →→: đuổi chia hiệu: 5 : (15 − 10) = 1 giờ.",
+    "why": "Ca LT1 — khoảng cách co bằng phần chênh."
+   },
+   {
+    "case": "gặp ngược chiều (ca tổng)",
+    "problem": "Hai người cách nhau 36 km đi ngược chiều vào nhau với vận tốc 10 km/h và 8 km/h, khởi hành cùng lúc. Hỏi sau bao lâu họ gặp nhau?",
+    "solution": "Mũi tên →←: gặp chia tổng: 36 : (10 + 8) = 2 giờ.",
+    "why": "Ca LT2 — hai bên cùng gặm."
+   },
+   {
+    "case": "vị trí + kiểm hai phía (ca tự chấm)",
+    "problem": "Với bài trên: điểm gặp cách vị trí xuất phát của người đi 10 km/h bao nhiêu km? Kiểm lại bằng phía bên kia.",
+    "solution": "10 × 2 = 20 km; kiểm: 8 × 2 = 16 km và 20 + 16 = 36 ✓.",
+    "why": "Ca LT4 — hai phía cộng tròn khoảng cách."
+   }
+  ],
+  "numberRange": "Lớp 5: V ≤ 60 km/h; khoảng cách ≤ 50 km.",
+  "misconceptions": [
+   {
+    "wrong": "Đọc lướt hai chữ \"chiều\" — bài đuổi đem chia tổng (hoặc bài gặp chia hiệu).",
+    "signal": "Không có hình hai mũi tên; đáp 5 : 25 = 0,2 giờ cho bài đuổi.",
+    "fix": "vẽ hai mũi tên trước: song song → hiệu; châu đầu → tổng.",
+    "counterExample": "Đuổi mà chia tổng 5 : 25 = 12 phút — người sau chỉ nhanh hơn 5 km/h mỗi giờ co được 5 km, sao 12 phút gặm nổi 5 km?!"
+   }
+  ],
+  "vocabulary": [
+   "hai mũi tên quyết định",
+   "đuổi chia hiệu",
+   "gặp chia tổng",
+   "cùng gặm khoảng cách",
+   "kiểm hai phía tự chấm"
+  ],
+  "mantra": "VẼ HAI MŨI TÊN TRƯỚC — CÙNG HƯỚNG HIỆU, ĐỐI ĐẦU TỔNG!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "Ôn B53: 15 − 10 = ? và 10 + 8 = ?",
+    "answerKey": {
+     "value": 5
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B53.M1",
+   "message": "Ôn tam giác rồi vẽ mũi tên nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Cáo Đề ra hai đề sinh đôi chỉ khác HAI CHỮ: \"cùng chiều\" — \"ngược chiều\". Trí Long chia tuốt cho tổng: bài đuổi 5 km ra \"12 phút\"! Su Kem: \"Người sau mỗi giờ chỉ nhanh hơn 5 km — 12 phút gặm sao nổi 5 cây số?\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "đuổi cũng chia tổng??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để vẽ mũi tên!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 46,
+    "teaches": [
+     "K1",
+     "K2"
     ],
-    "bktUnit": "CASE:V.2.1#1@G5"
+    "narration": "Nghi thức: VẼ HAI MŨI TÊN trước khi đụng máy tính! Cùng hướng — song song: kẻ sau ĐUỔI — mỗi giờ khoảng cách co bằng phần CHÊNH: chia HIỆU! Năm cây, hiệu năm — MỘT giờ đuổi kịp! Đối đầu — châu vào nhau: hai bên CÙNG GẶM khoảng cách từ hai phía — mỗi giờ co bằng TỔNG: ba sáu chia mười tám — HAI giờ gặp nhau! Đọc kỹ hai chữ CHIỀU cuối câu — tráo chữ là tráo phép!",
+    "display": {
+     "type": "two_arrows_interactive",
+     "spec": {
+      "same": "→→ ĐUỔI: 5 : (15−10) = 1 giờ",
+      "opposite": "→← GẶP: 36 : (10+8) = 2 giờ",
+      "rule": "mũi tên trước — máy tính sau"
+     }
+    },
+    "interaction": {
+     "type": "draw_arrows",
+     "answerKey": {
+      "values": [
+       1,
+       2
+      ]
+     },
+     "successMessage": "Mũi tên chọn phép: 1 giờ và 2 giờ!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "tf",
+     "text": "(Đúng/Sai?) Đuổi nhau cùng chiều thì chia HIỆU vận tốc.",
+     "answerKey": {
+      "value": true
+     },
+     "wrongFeedback": "Song song → hiệu.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 42,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Chưa xong — đề hỏi tiếp GẶP Ở ĐÂU! Người mười cây giờ đi hai giờ: điểm gặp cách chỗ xuất phát của bạn ấy HAI MƯƠI cây! Kiểm hai phía như kiểm hai đầu cầu: người kia tám nhân hai — MƯỜI SÁU cây; hai mươi cộng mười sáu — tròn BA MƯƠI SÁU: bài tự chấm điểm mười! Lệch một cây là có chỗ tính trượt!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "vị trí: 10 × 2 = 20 km",
+      "kiểm phía kia: 8 × 2 = 16",
+      "20 + 16 = 36 ✓ tự chấm"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: vẽ hai mũi tên trước — cùng hướng hiệu, đối đầu tổng!",
+    "display": {
+     "type": "mantra_card",
+     "text": "CÙNG HƯỚNG HIỆU — ĐỐI ĐẦU TỔNG!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 90,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B54",
-    "order": 1,
-    "prev": "DL:KSN5Q1.B53.M3",
-    "next": "DL:KSN5Q1.B54.M2"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B54",
-    "chunks": [
-      "CHUNK:KSN5Q1.B54.S3",
-      "CHUNK:KSN5Q1.B54.S4"
-    ],
-    "cases": [
-      "CA:KSN5Q1.B54.1",
-      "CA:KSN5Q1.B54.3"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B54.2"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Cáo Đề ra hai đề sinh đôi chỉ khác HAI CHỮ: cùng chiều — ngược chiều. Trí Long chia tuốt cho tổng: bài đuổi năm cây ra mười hai phút! Su Kem: người sau mỗi giờ chỉ nhanh hơn năm cây — mười hai phút gặm sao nổi năm cây số?",
+    "screenText": "đuổi cũng chia tổng??",
+    "visual": "Hai tờ đề sinh đôi với hai chữ CHIỀU khoanh đỏ; phép chia tổng chạy nhầm; dấu hỏi đỏ #C0392B.",
+    "assets": [],
+    "duration": 18
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Nghi thức: VẼ HAI MŨI TÊN trước khi đụng máy tính! Cùng hướng — song song: kẻ sau ĐUỔI — mỗi giờ khoảng cách co bằng phần CHÊNH: chia HIỆU! Năm cây, hiệu năm — MỘT giờ đuổi kịp! Đối đầu — châu vào nhau: hai bên CÙNG GẶM khoảng cách từ hai phía — mỗi giờ co bằng TỔNG: ba sáu chia mười tám — HAI giờ gặp nhau! Đọc kỹ hai chữ CHIỀU cuối câu — tráo chữ là tráo phép!",
+    "screenText": "→→ đuổi: 5 : (15−10) = 1 giờ · →← gặp: 36 : 18 = 2 giờ",
+    "visual": "Hai cặp mũi tên teal-vàng: cặp song song với thước khoảng cách co dần theo hiệu; cặp châu đầu gặm hai phía theo tổng.",
+    "assets": [],
+    "duration": 30
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Chưa xong — đề hỏi tiếp GẶP Ở ĐÂU! Người mười cây giờ đi hai giờ: điểm gặp cách chỗ xuất phát của bạn ấy HAI MƯƠI cây! Kiểm hai phía như kiểm hai đầu cầu: người kia tám nhân hai — MƯỜI SÁU cây; hai mươi cộng mười sáu — tròn BA MƯƠI SÁU: bài tự chấm điểm mười! Lệch một cây là có chỗ tính trượt!",
+    "screenText": "vị trí: 10 × 2 = 20 km · kiểm: 8 × 2 = 16 · 20 + 16 = 36 ✓",
+    "visual": "Vạch đường 36 km với ngôi sao điểm gặp tại km 20; hai đoạn 20-16 từ hai đầu cộng khớp, mộc xanh tự chấm.",
+    "assets": [],
+    "duration": 24
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú mũi tên: vẽ hai mũi tên trước — cùng hướng hiệu, đối đầu tổng!",
+    "screenText": "CÙNG HƯỚNG HIỆU — ĐỐI ĐẦU TỔNG!",
+    "visual": "Thẻ thần chú vàng với icon hai cặp mũi tên.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Mũi tên của con: cách ba sáu cây ngược chiều mười và tám — chia tổng, tìm vị trí, kiểm hai phía! Vào bài luyện ngay!",
+    "screenText": "36 : 18 = ? · gặp ở km ?",
+    "visual": "Vạch đường chờ mũi tên; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P2",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Mũi tên trước — máy tính sau",
+  "problem": "Hai người cách nhau 36 km đi ngược chiều vào nhau với vận tốc 10 km/h và 8 km/h, khởi hành cùng lúc. Sau bao lâu họ gặp nhau — và gặp ở đâu?",
+  "steps": [
+   {
+    "show": "Bước 1 — Vẽ mũi tên: →← đối đầu → GẶP → chia TỔNG.",
+    "askBefore": {
+     "format": "mcq",
+     "text": "Đối đầu thì mỗi giờ khoảng cách co bằng:",
+     "choices": [
+      "tổng hai vận tốc",
+      "hiệu hai vận tốc",
+      "vận tốc lớn"
+     ],
+     "answerKey": {
+      "choice": "tổng hai vận tốc"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — t = 36 : (10 + 8) = 2 giờ."
+   },
+   {
+    "show": "Bước 3 — Vị trí: 10 × 2 = 20 km; kiểm: 8 × 2 = 16, 20 + 16 = 36 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Hai xe cách nhau 5 km và đi cùng chiều: xe sau 15 km/giờ, xe trước 10 km/giờ. Hỏi sau bao nhiêu giờ xe sau đuổi kịp xe trước?",
+     "answerKey": {
+      "value": 1
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B54.LT1",
+     "text": "Hai người đi cùng chiều, người sau cách người trước 5 km; vận tốc lần lượt 15 km/h và 10 km/h. Hỏi sau bao lâu người sau đuổi kịp (giờ)?",
+     "answerKey": {
+      "value": 1
+     },
+     "hints": [
+      "Mũi tên →→.",
+      "Chia hiệu 15 − 10."
+     ],
+     "solutionNarrative": "5 : 5 = 1 giờ.",
+     "teaches": [
+      "K1"
+     ],
+     "generator": {
+      "template": "Cách {d} km cùng chiều, V {v1} và {v2} → t?",
+      "constraints": {},
+      "answerRule": "d : (v1 − v2)"
+     }
+    },
+    {
+     "id": "P2",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B54.LT2",
+     "text": "Hai người cách nhau 36 km đi ngược chiều vào nhau với vận tốc 10 km/h và 8 km/h, khởi hành cùng lúc. Hỏi sau bao lâu họ gặp nhau (giờ)?",
+     "answerKey": {
+      "value": 2
+     },
+     "hints": [
+      "Mũi tên →←.",
+      "Chia tổng 10 + 8."
+     ],
+     "solutionNarrative": "36 : 18 = 2 giờ.",
+     "teaches": [
+      "K2"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B54.LT3",
+     "text": "Điền \"tổng\" hoặc \"hiệu\": đuổi nhau cùng chiều chia... vận tốc; gặp nhau ngược chiều chia... vận tốc.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "đuổi",
+        "value": "HIỆU"
+       },
+       {
+        "label": "gặp",
+        "value": "TỔNG"
+       }
+      ]
+     },
+     "hints": [
+      "Song song hay châu đầu?",
+      "Co bằng chênh hay cả hai gặm?"
+     ],
+     "solutionNarrative": "Đuổi HIỆU — gặp TỔNG.",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B54.LT4",
+     "text": "Với bài 36 km ngược chiều (10 và 8 km/h, gặp sau 2 giờ): điểm gặp cách vị trí xuất phát của người đi 10 km/h bao nhiêu km? Kiểm lại bằng phía bên kia.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "vị trí",
+        "value": 20
+       },
+       {
+        "label": "kiểm",
+        "value": "8 × 2 = 16 và 20 + 16 = 36 ✓"
+       }
+      ]
+     },
+     "hints": [
+      "10 × 2.",
+      "Hai phía cộng tròn 36?"
+     ],
+     "solutionNarrative": "20 km — tự chấm khớp.",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 3 trên 4 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:V.2.1#1@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B54.M2",
+   "award": "huy_hieu_hai_mui_ten"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B54.QZ1",
+    "text": "(Đúng/Sai?) Đuổi nhau cùng chiều thì chia HIỆU vận tốc.",
+    "answerKey": {
+     "value": true
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B54.QZ3",
+    "text": "Cách 5 km, hiệu vận tốc 5 km/h → đuổi kịp sau:",
+    "choices": [
+     "1 giờ",
+     "25 giờ",
+     "nửa giờ"
+    ],
+    "answerKey": {
+     "choice": "1 giờ"
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B54.QZ4",
+    "text": "Cách 36 km, ngược chiều 10 và 8 km/h → gặp sau:",
+    "choices": [
+     "2 giờ",
+     "18 giờ",
+     "4 giờ"
+    ],
+    "answerKey": {
+     "choice": "2 giờ"
+    },
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A4",
+    "format": "num",
+    "text": "Điểm gặp cách chỗ người 10 km/h: ? km",
+    "answerKey": {
+     "value": 20
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Đuổi chia gì — gặp chia gì? Kiểm bằng gì?",
+    "back": "VẼ HAI MŨI TÊN trước: →→ ĐUỔI chia HIỆU (5 : 5 = 1 giờ — khoảng cách co bằng phần chênh); →← GẶP chia TỔNG (36 : 18 = 2 giờ — hai bên cùng gặm). VỊ TRÍ: 10 × 2 = 20 km; KIỂM HAI PHÍA: 16 + 20 = 36 ✓ tự chấm. Hai chữ CHIỀU cuối câu — tráo chữ là tráo phép!"
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P4 (kiểm hai phía)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học thần chú đuổi-hiệu-gặp-tổng với nghi thức vẽ hai mũi tên và phép kiểm hai phía. Con đạt {score}/4, {trapResult} câu bẫy tráo-chiều.",
+  "homeActivity": "Hai bố con đi bộ trong sân: lượt cùng chiều, lượt ngược chiều — con cảm nhận khoảng cách co nhanh hẳn khi đối đầu.",
+  "watchFor": "Nếu con chia nhầm tổng/hiệu — bắt vẽ hai mũi tên trước (S2)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B54.M1",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "đuổi cũng chia tổng??",
+    "lines": [
+     {
+      "who": "Cáo Đề",
+      "say": "cùng chiều",
+      "tone": "wrong"
+     },
+     {
+      "who": "Trí Long",
+      "say": "12 phút",
+      "tone": "wrong"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B54_M1_F1.png",
+   "sha256_16": "5eaaee8a32da817e"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con chọn đúng phép chia bằng NGHI THỨC HAI MŨI TÊN vẽ trước khi tính: cùng hướng → đuổi → chia HIỆU V (5 : (15 − 10) = 1 giờ); đối đầu → gặp → chia TỔNG V (36 : (10 + 8) = 2 giờ); rồi tính VỊ TRÍ gặp (10 × 2 = 20 km) và KIỂM HAI PHÍA (8 × 2 = 16; 20 + 16 = 36 ✓) — Cáo Đề chỉ cần đổi hai chữ \"chiều\" là tráo cả phép tính.",
-    "passRule": "assessment đúng ≥ 3/4, bắt buộc đúng A1 (đuổi chia hiệu)",
-    "kidText": "Vẽ hai mũi tên trước khi tính: cùng hướng thì đuổi nhau, chia HIỆU vận tốc; đối đầu thì gặp nhau, chia TỔNG vận tốc."
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Đuổi chia HIỆU — gặp chia TỔNG: nghi thức hai mũi tên, tính cả vị trí và kiểm hai phía",
+    "steps": [
+     {
+      "text": "vị trí: 10 × 2 = 20 km · kiểm: 8 × 2 = 16 · 20 + 16 = 36"
+     },
+     {
+      "text": "kiểm phía kia: 8 × 2 = 16"
+     },
+     {
+      "text": "20 + 16 = 36 tự chấm"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B54_M1_F2.png",
+   "sha256_16": "218cf45ea076afc6"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Nghi thức HAI MŨI TÊN — vẽ trước khi tính: CÙNG hướng →→ là ĐUỔI: mỗi giờ khoảng cách co lại bằng HIỆU V → t = khoảng cách : hiệu = 5 : (15 − 10) = 1 giờ."
-      },
-      {
-        "id": "K2",
-        "text": "ĐỐI ĐẦU →← là GẶP: mỗi giờ hai bên cùng gặm khoảng cách — co lại bằng TỔNG V → t = 36 : (10 + 8) = 2 giờ; đọc kỹ hai chữ CHIỀU cuối câu — đổi \"cùng\" thành \"ngược\" là tráo cả phép!"
-      },
-      {
-        "id": "K3",
-        "text": "Tính VỊ TRÍ và kiểm hai phía: điểm gặp cách chỗ xuất phát người 10 km/h là 10 × 2 = 20 km; kiểm phía kia: 8 × 2 = 16 km — 20 + 16 = 36 ✓: hai phía cộng tròn khoảng cách là bài tự chấm."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: HAI MŨI TÊN QUYẾT ĐỊNH PHÉP CHIA. Cáo Đề ra hai đề sinh đôi chỉ khác HAI CHỮ: \"đi CÙNG chiều\" và \"đi NGƯỢC chiều\" — tráo chữ là tráo phép tính! Nghi thức bất di bất dịch: VẼ HAI MŨI TÊN trước khi đụng máy tính! Cùng hướng — hai mũi tên song song →→: kẻ trước chạy, kẻ sau ĐUỔI — mỗi giờ khoảng cách chỉ co lại bằng phần CHÊNH: chia HIỆU! Năm cây, hiệu mười lăm trừ mười — năm: một GIỜ đuổi kịp! Đối đầu — hai mũi tên châu vào nhau →←: hai bên CÙNG GẶM khoảng cách từ hai phía — mỗi giờ co bằng TỔNG: ba sáu chia mười-cộng-tám — HAI giờ gặp nhau! Chưa xong — đề hỏi tiếp GẶP Ở ĐÂU: người mười cây giờ đi hai giờ — cách chỗ xuất phát HAI MƯƠI cây! Kiểm hai phía như kiểm hai đầu cầu: người kia tám nhân hai — mười sáu: hai mươi cộng mười sáu tròn BA SÁU — bài tự chấm điểm mười!",
-    "canonicalExamples": [
-      {
-        "case": "đuổi cùng chiều (ca hiệu)",
-        "problem": "Hai người đi cùng chiều, người sau cách người trước 5 km; vận tốc lần lượt 15 km/h và 10 km/h. Hỏi sau bao lâu người sau đuổi kịp?",
-        "solution": "Mũi tên →→: đuổi chia hiệu: 5 : (15 − 10) = 1 giờ.",
-        "why": "Ca LT1 — khoảng cách co bằng phần chênh."
-      },
-      {
-        "case": "gặp ngược chiều (ca tổng)",
-        "problem": "Hai người cách nhau 36 km đi ngược chiều vào nhau với vận tốc 10 km/h và 8 km/h, khởi hành cùng lúc. Hỏi sau bao lâu họ gặp nhau?",
-        "solution": "Mũi tên →←: gặp chia tổng: 36 : (10 + 8) = 2 giờ.",
-        "why": "Ca LT2 — hai bên cùng gặm."
-      },
-      {
-        "case": "vị trí + kiểm hai phía (ca tự chấm)",
-        "problem": "Với bài trên: điểm gặp cách vị trí xuất phát của người đi 10 km/h bao nhiêu km? Kiểm lại bằng phía bên kia.",
-        "solution": "10 × 2 = 20 km; kiểm: 8 × 2 = 16 km và 20 + 16 = 36 ✓.",
-        "why": "Ca LT4 — hai phía cộng tròn khoảng cách."
-      }
-    ],
-    "numberRange": "Lớp 5: V ≤ 60 km/h; khoảng cách ≤ 50 km.",
-    "misconceptions": [
-      {
-        "wrong": "Đọc lướt hai chữ \"chiều\" — bài đuổi đem chia tổng (hoặc bài gặp chia hiệu).",
-        "signal": "Không có hình hai mũi tên; đáp 5 : 25 = 0,2 giờ cho bài đuổi.",
-        "fix": "K1 + K2 — vẽ hai mũi tên trước: song song → hiệu; châu đầu → tổng.",
-        "counterExample": "Đuổi mà chia tổng 5 : 25 = 12 phút — người sau chỉ nhanh hơn 5 km/h mỗi giờ co được 5 km, sao 12 phút gặm nổi 5 km?!"
-      }
-    ],
-    "vocabulary": [
-      "hai mũi tên quyết định",
-      "đuổi chia hiệu",
-      "gặp chia tổng",
-      "cùng gặm khoảng cách",
-      "kiểm hai phía tự chấm"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Nghi thức HAI MŨI TÊN",
+      "text": "vẽ trước khi tính: CÙNG hướng →→ là ĐUỔI: mỗi giờ khoảng cách co lại bằng HIỆU V → t = khoảng cách : hiệu = 5 : (15 − 10) = 1 giờ.",
+      "tone": "navy"
+     },
+     {
+      "label": "ĐỐI ĐẦU →← là GẶP",
+      "text": "mỗi giờ hai bên cùng gặm khoảng cách",
+      "tone": "teal"
+     }
     ],
     "mantra": "VẼ HAI MŨI TÊN TRƯỚC — CÙNG HƯỚNG HIỆU, ĐỐI ĐẦU TỔNG!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B54_M1_F3.png",
+   "sha256_16": "58feaf91144de8a9"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "Ôn B53: 15 − 10 = ? và 10 + 8 = ?",
-        "answerKey": {
-          "value": 5
-        }
-      }
+  {
+   "archetype": "motion_track",
+   "params": {
+    "title": "NGƯỢC CHIỀU: GẶP NHAU CHIA TỔNG VẬN TỐC",
+    "from_label": "A",
+    "to_label": "B",
+    "length_label": "36 km",
+    "movers": [
+     {
+      "name": "xe 1",
+      "from": 0.06,
+      "dir": ">",
+      "speed": "10 km/h"
+     },
+     {
+      "name": "xe 2",
+      "from": 0.94,
+      "dir": "<",
+      "speed": "8 km/h"
+     }
     ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B53.M1",
-      "message": "Ôn tam giác rồi vẽ mũi tên nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 18,
-        "narration": "Cáo Đề ra hai đề sinh đôi chỉ khác HAI CHỮ: \"cùng chiều\" — \"ngược chiều\". Trí Long chia tuốt cho tổng: bài đuổi 5 km ra \"12 phút\"! Su Kem: \"Người sau mỗi giờ chỉ nhanh hơn 5 km — 12 phút gặm sao nổi 5 cây số?\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "đuổi cũng chia tổng??"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để vẽ mũi tên!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 46,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Nghi thức: VẼ HAI MŨI TÊN trước khi đụng máy tính! Cùng hướng — song song: kẻ sau ĐUỔI — mỗi giờ khoảng cách co bằng phần CHÊNH: chia HIỆU! Năm cây, hiệu năm — MỘT giờ đuổi kịp! Đối đầu — châu vào nhau: hai bên CÙNG GẶM khoảng cách từ hai phía — mỗi giờ co bằng TỔNG: ba sáu chia mười tám — HAI giờ gặp nhau! Đọc kỹ hai chữ CHIỀU cuối câu — tráo chữ là tráo phép!",
-        "display": {
-          "type": "two_arrows_interactive",
-          "spec": {
-            "same": "→→ ĐUỔI: 5 : (15−10) = 1 giờ",
-            "opposite": "→← GẶP: 36 : (10+8) = 2 giờ",
-            "rule": "mũi tên trước — máy tính sau"
-          }
-        },
-        "interaction": {
-          "type": "draw_arrows",
-          "answerKey": {
-            "values": [
-              1,
-              2
-            ]
-          },
-          "successMessage": "Mũi tên chọn phép: 1 giờ và 2 giờ!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "tf",
-          "text": "(Đúng/Sai?) Đuổi nhau cùng chiều thì chia HIỆU vận tốc.",
-          "answerKey": {
-            "value": true
-          },
-          "wrongFeedback": "Song song → hiệu.",
-          "objective": "O1",
-          "teaches": [
-            "K1"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 42,
-        "teaches": [
-          "K3"
-        ],
-        "narration": "Chưa xong — đề hỏi tiếp GẶP Ở ĐÂU! Người mười cây giờ đi hai giờ: điểm gặp cách chỗ xuất phát của bạn ấy HAI MƯƠI cây! Kiểm hai phía như kiểm hai đầu cầu: người kia tám nhân hai — MƯỜI SÁU cây; hai mươi cộng mười sáu — tròn BA MƯƠI SÁU: bài tự chấm điểm mười! Lệch một cây là có chỗ tính trượt!",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "vị trí: 10 × 2 = 20 km",
-            "kiểm phía kia: 8 × 2 = 16",
-            "20 + 16 = 36 ✓ tự chấm"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú mũi tên: vẽ hai mũi tên trước — cùng hướng hiệu, đối đầu tổng!",
-        "display": {
-          "type": "mantra_card",
-          "text": "CÙNG HƯỚNG HIỆU — ĐỐI ĐẦU TỔNG!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
+    "meet": {
+     "at": 0.555,
+     "label": "gặp sau 2 giờ · cách A 20 km"
+    },
+    "notes": [
+     "36 : (10 + 8) = 2 giờ",
+     "kiểm hai phía: 20 + 16 = 36 ✓"
     ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 90,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
-    },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
-    },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Cáo Đề ra hai đề sinh đôi chỉ khác HAI CHỮ: cùng chiều — ngược chiều. Trí Long chia tuốt cho tổng: bài đuổi năm cây ra mười hai phút! Su Kem: người sau mỗi giờ chỉ nhanh hơn năm cây — mười hai phút gặm sao nổi năm cây số?",
-        "screenText": "đuổi cũng chia tổng??",
-        "visual": "Hai tờ đề sinh đôi với hai chữ CHIỀU khoanh đỏ; phép chia tổng chạy nhầm; dấu hỏi đỏ #C0392B.",
-        "assets": [],
-        "duration": 18
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Nghi thức: VẼ HAI MŨI TÊN trước khi đụng máy tính! Cùng hướng — song song: kẻ sau ĐUỔI — mỗi giờ khoảng cách co bằng phần CHÊNH: chia HIỆU! Năm cây, hiệu năm — MỘT giờ đuổi kịp! Đối đầu — châu vào nhau: hai bên CÙNG GẶM khoảng cách từ hai phía — mỗi giờ co bằng TỔNG: ba sáu chia mười tám — HAI giờ gặp nhau! Đọc kỹ hai chữ CHIỀU cuối câu — tráo chữ là tráo phép!",
-        "screenText": "→→ đuổi: 5 : (15−10) = 1 giờ · →← gặp: 36 : 18 = 2 giờ",
-        "visual": "Hai cặp mũi tên teal-vàng: cặp song song với thước khoảng cách co dần theo hiệu; cặp châu đầu gặm hai phía theo tổng.",
-        "assets": [],
-        "duration": 30
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Chưa xong — đề hỏi tiếp GẶP Ở ĐÂU! Người mười cây giờ đi hai giờ: điểm gặp cách chỗ xuất phát của bạn ấy HAI MƯƠI cây! Kiểm hai phía như kiểm hai đầu cầu: người kia tám nhân hai — MƯỜI SÁU cây; hai mươi cộng mười sáu — tròn BA MƯƠI SÁU: bài tự chấm điểm mười! Lệch một cây là có chỗ tính trượt!",
-        "screenText": "vị trí: 10 × 2 = 20 km · kiểm: 8 × 2 = 16 · 20 + 16 = 36 ✓",
-        "visual": "Vạch đường 36 km với ngôi sao điểm gặp tại km 20; hai đoạn 20-16 từ hai đầu cộng khớp, mộc xanh tự chấm.",
-        "assets": [],
-        "duration": 24
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú mũi tên: vẽ hai mũi tên trước — cùng hướng hiệu, đối đầu tổng!",
-        "screenText": "CÙNG HƯỚNG HIỆU — ĐỐI ĐẦU TỔNG!",
-        "visual": "Thẻ thần chú vàng với icon hai cặp mũi tên.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Mũi tên của con: cách ba sáu cây ngược chiều mười và tám — chia tổng, tìm vị trí, kiểm hai phía! Vào bài luyện ngay!",
-        "screenText": "36 : 18 = ? · gặp ở km ?",
-        "visual": "Vạch đường chờ mũi tên; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P2",
-        "assets": [],
-        "duration": 10
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Mũi tên trước — máy tính sau",
-    "problem": "Hai người cách nhau 36 km đi ngược chiều vào nhau với vận tốc 10 km/h và 8 km/h, khởi hành cùng lúc. Sau bao lâu họ gặp nhau — và gặp ở đâu?",
-    "steps": [
-      {
-        "show": "Bước 1 — Vẽ mũi tên: →← đối đầu → GẶP → chia TỔNG.",
-        "askBefore": {
-          "format": "mcq",
-          "text": "Đối đầu thì mỗi giờ khoảng cách co bằng:",
-          "choices": [
-            "tổng hai vận tốc",
-            "hiệu hai vận tốc",
-            "vận tốc lớn"
-          ],
-          "answerKey": {
-            "choice": "tổng hai vận tốc"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — t = 36 : (10 + 8) = 2 giờ."
-      },
-      {
-        "show": "Bước 3 — Vị trí: 10 × 2 = 20 km; kiểm: 8 × 2 = 16, 20 + 16 = 36 ✓.",
-        "askAfter": {
-          "format": "num",
-          "text": "Hai xe cách nhau 5 km và đi cùng chiều: xe sau 15 km/giờ, xe trước 10 km/giờ. Hỏi sau bao nhiêu giờ xe sau đuổi kịp xe trước?",
-          "answerKey": {
-            "value": 1
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "num",
-          "sourceItem": "ITEM:KSN5Q1.B54.LT1",
-          "text": "Hai người đi cùng chiều, người sau cách người trước 5 km; vận tốc lần lượt 15 km/h và 10 km/h. Hỏi sau bao lâu người sau đuổi kịp (giờ)?",
-          "answerKey": {
-            "value": 1
-          },
-          "hints": [
-            "Mũi tên →→.",
-            "Chia hiệu 15 − 10."
-          ],
-          "solutionNarrative": "5 : 5 = 1 giờ.",
-          "teaches": [
-            "K1"
-          ],
-          "generator": {
-            "template": "Cách {d} km cùng chiều, V {v1} và {v2} → t?",
-            "constraints": {},
-            "answerRule": "d : (v1 − v2)"
-          }
-        },
-        {
-          "id": "P2",
-          "format": "num",
-          "sourceItem": "ITEM:KSN5Q1.B54.LT2",
-          "text": "Hai người cách nhau 36 km đi ngược chiều vào nhau với vận tốc 10 km/h và 8 km/h, khởi hành cùng lúc. Hỏi sau bao lâu họ gặp nhau (giờ)?",
-          "answerKey": {
-            "value": 2
-          },
-          "hints": [
-            "Mũi tên →←.",
-            "Chia tổng 10 + 8."
-          ],
-          "solutionNarrative": "36 : 18 = 2 giờ.",
-          "teaches": [
-            "K2"
-          ]
-        }
-      ],
-      "standard": [
-        {
-          "id": "P3",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B54.LT3",
-          "text": "Điền \"tổng\" hoặc \"hiệu\": đuổi nhau cùng chiều chia ... vận tốc; gặp nhau ngược chiều chia ... vận tốc.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "đuổi",
-                "value": "HIỆU"
-              },
-              {
-                "label": "gặp",
-                "value": "TỔNG"
-              }
-            ]
-          },
-          "hints": [
-            "Song song hay châu đầu?",
-            "Co bằng chênh hay cả hai gặm?"
-          ],
-          "solutionNarrative": "Đuổi HIỆU — gặp TỔNG.",
-          "teaches": [
-            "K1",
-            "K2"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P4",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B54.LT4",
-          "text": "Với bài 36 km ngược chiều (10 và 8 km/h, gặp sau 2 giờ): điểm gặp cách vị trí xuất phát của người đi 10 km/h bao nhiêu km? Kiểm lại bằng phía bên kia.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "vị trí",
-                "value": 20
-              },
-              {
-                "label": "kiểm",
-                "value": "8 × 2 = 16 và 20 + 16 = 36 ✓"
-              }
-            ]
-          },
-          "hints": [
-            "10 × 2.",
-            "Hai phía cộng tròn 36?"
-          ],
-          "solutionNarrative": "20 km — tự chấm khớp.",
-          "teaches": [
-            "K3"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 3/4, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:V.2.1#1@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B54.M2",
-      "award": "huy_hieu_hai_mui_ten"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "tf",
-        "sourceItem": "ITEM:KSN5Q1.B54.QZ1",
-        "text": "(Đúng/Sai?) Đuổi nhau cùng chiều thì chia HIỆU vận tốc.",
-        "answerKey": {
-          "value": true
-        },
-        "mustPass": true,
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B54.QZ3",
-        "text": "Cách 5 km, hiệu vận tốc 5 km/h → đuổi kịp sau:",
-        "choices": [
-          "1 giờ",
-          "25 giờ",
-          "nửa giờ"
-        ],
-        "answerKey": {
-          "choice": "1 giờ"
-        },
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B54.QZ4",
-        "text": "Cách 36 km, ngược chiều 10 và 8 km/h → gặp sau:",
-        "choices": [
-          "2 giờ",
-          "18 giờ",
-          "4 giờ"
-        ],
-        "answerKey": {
-          "choice": "2 giờ"
-        },
-        "teaches": [
-          "K2"
-        ]
-      },
-      {
-        "id": "A4",
-        "format": "num",
-        "text": "Điểm gặp cách chỗ người 10 km/h: ? km",
-        "answerKey": {
-          "value": 20
-        },
-        "teaches": [
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Đuổi chia gì — gặp chia gì? Kiểm bằng gì?",
-        "back": "VẼ HAI MŨI TÊN trước: →→ ĐUỔI chia HIỆU (5 : 5 = 1 giờ — khoảng cách co bằng phần chênh); →← GẶP chia TỔNG (36 : 18 = 2 giờ — hai bên cùng gặm). VỊ TRÍ: 10 × 2 = 20 km; KIỂM HAI PHÍA: 16 + 20 = 36 ✓ tự chấm. Hai chữ CHIỀU cuối câu — tráo chữ là tráo phép!"
-      }
-    ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P4 (kiểm hai phía)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con học thần chú đuổi-hiệu-gặp-tổng với nghi thức vẽ hai mũi tên và phép kiểm hai phía. Con đạt {score}/4, {trapResult} câu bẫy tráo-chiều.",
-    "homeActivity": "Hai bố con đi bộ trong sân: lượt cùng chiều, lượt ngược chiều — con cảm nhận khoảng cách co nhanh hẳn khi đối đầu.",
-    "watchFor": "Nếu con chia nhầm tổng/hiệu — bắt vẽ hai mũi tên trước (S2)."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B54.M1",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "đuổi cũng chia tổng??",
-        "lines": [
-          {
-            "who": "Cáo Đề",
-            "say": "cùng chiều",
-            "tone": "wrong"
-          },
-          {
-            "who": "Trí Long",
-            "say": "12 phút",
-            "tone": "wrong"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B54_M1_F1.png",
-      "sha256_16": "5eaaee8a32da817e"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con chọn đúng phép chia bằng NGHI THỨC HAI MŨI TÊN vẽ trước khi tính: cùng hướng → đuổi → chia HIỆU V (5 : (15 − 10) = 1 giờ); đối đầu → gặp → chia TỔNG V (36 : (10 + 8) = 2 giờ); rồi tính VỊ TRÍ gặp (10 × 2 = 20 km) và KIỂM HAI PHÍA (8 × 2 = 16; 20 + 16 = 36 ) — Cáo Đề chỉ cần đổi hai chữ \"chiều\" là tráo cả phép tính.",
-        "steps": [
-          {
-            "text": "vị trí: 10 × 2 = 20 km · kiểm: 8 × 2 = 16 · 20 + 16 = 36"
-          },
-          {
-            "text": "kiểm phía kia: 8 × 2 = 16"
-          },
-          {
-            "text": "20 + 16 = 36 tự chấm"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B54_M1_F2.png",
-      "sha256_16": "610e1ee54ac24894"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Nghi thức HAI MŨI TÊN",
-            "text": "vẽ trước khi tính: CÙNG hướng →→ là ĐUỔI: mỗi giờ khoảng cách co lại bằng HIỆU V → t = khoảng cách : hiệu = 5 : (15 − 10) = 1 giờ.",
-            "tone": "navy"
-          },
-          {
-            "label": "ĐỐI ĐẦU →← là GẶP",
-            "text": "mỗi giờ hai bên cùng gặm khoảng cách",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "VẼ HAI MŨI TÊN TRƯỚC — CÙNG HƯỚNG HIỆU, ĐỐI ĐẦU TỔNG!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B54_M1_F3.png",
-      "sha256_16": "58feaf91144de8a9"
-    },
-    {
-      "archetype": "motion_track",
-      "params": {
-        "title": "NGƯỢC CHIỀU: GẶP NHAU CHIA TỔNG VẬN TỐC",
-        "from_label": "A",
-        "to_label": "B",
-        "length_label": "36 km",
-        "movers": [
-          {
-            "name": "xe 1",
-            "from": 0.06,
-            "dir": ">",
-            "speed": "10 km/h"
-          },
-          {
-            "name": "xe 2",
-            "from": 0.94,
-            "dir": "<",
-            "speed": "8 km/h"
-          }
-        ],
-        "meet": {
-          "at": 0.555,
-          "label": "gặp sau 2 giờ · cách A 20 km"
-        },
-        "notes": [
-          "36 : (10 + 8) = 2 giờ",
-          "kiểm hai phía: 20 + 16 = 36 ✓"
-        ]
-      },
-      "caption": "Cùng hướng thì chia HIỆU (5 : 5 = 1 giờ) — đối đầu thì chia TỔNG",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B54_M1_F4.png",
-      "sha256_16": "dacc0453f0b86490"
-    }
-  ]
+   },
+   "caption": "Cùng hướng thì chia HIỆU (5 : 5 = 1 giờ) — đối đầu thì chia TỔNG",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B54_M1_F4.png",
+   "sha256_16": "dacc0453f0b86490"
+  }
+ ]
 }

@@ -1,600 +1,600 @@
 {
-  "title": "Tử – mẫu cả cụm: đặt thừa số chung từng tầng, rút NGUYÊN CỤM",
-  "grade": 5,
-  "durationMinutes": 8,
-  "skills": {
-    "primary": [
-      "CASE:II.2.2#3"
+ "title": "Tử – mẫu cả cụm: đặt thừa số chung từng tầng, rút NGUYÊN CỤM",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:II.2.2#3"
+  ],
+  "bktUnit": "CASE:II.2.2#3@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B15",
+  "order": 3,
+  "prev": "DL:KSN5Q1.B15.M2",
+  "next": "DL:KSN5Q1.B16.M1"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B15",
+  "chunks": [
+   "CHUNK:KSN5Q1.B15.S4",
+   "CHUNK:KSN5Q1.B15.S7"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B15.4"
+  ],
+  "traps": []
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con xử được biểu thức tử – mẫu dài (tổng nhiều tích trên tổng nhiều tích): đặt thừa số chung TỪNG TẦNG cho tử và mẫu, nhận ra CỤM CHUNG giống hệt nhau hai tầng, rút NGUYÊN CỤM — chỉ còn phân số nhỏ để dọn.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (rút nguyên cụm)",
+  "kidText": "Biểu thức tử mẫu dài ngoằng? Con gom thừa số chung từng tầng, thấy cụm giống hệt nhau ở hai tầng thì rút cả cụm."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Biểu thức dạng (tổng nhiều tích)/(tổng nhiều tích): đặt thừa số chung cho TỬ và cho MẪU riêng từng tầng (dùng chiêu rút chung của Bài 13, nay trên phân số)."
+   },
+   {
+    "id": "K2",
+    "text": "Sau khi rút từng tầng, thường lộ ra CỤM CHUNG giống hệt nhau ở cả tử lẫn mẫu — rút NGUYÊN CỤM như rút một thừa số: (2 × cụm)/(6 × cụm) = 2/6."
+   },
+   {
+    "id": "K3",
+    "text": "Kiểm cụm phải GIỐNG HỆT từng số hạng rồi mới rút; rút xong DỌN tối giản (2/6 = 1/3)."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: HAI KHAY BÁNH ĐỒNG PHỤC. Tử là khay trên: 1×2 + 2×4 + 3×6 — soi kỹ: mỗi chiếc bánh đều gấp ĐÔI bộ lõi (1×1, 2×2, 3×3): khay trên = 2 × (1 + 4 + 9). Mẫu là khay dưới: 2×3 + 4×6 + 6×9 — mỗi chiếc gấp SÁU bộ lõi ấy: 6 × (1 + 4 + 9). Hai khay dùng CHUNG một bộ lõi bánh (1 + 4 + 9) — nhấc nguyên bộ lõi ra khỏi cả hai khay một lượt: còn lại 2 trên 6 — dọn về MỘT PHẦN BA. Không cần nướng (tính) bộ lõi bằng bao nhiêu: nó giống hệt nhau hai tầng là đủ tư cách rút!",
+  "canonicalExamples": [
+   {
+    "case": "trùm cuối chương (ca lõi)",
+    "problem": "Tính: (1×2 + 2×4 + 3×6) / (2×3 + 4×6 + 6×9).",
+    "solution": "Tử: 1×2 = 2×(1×1); 2×4 = 2×(2×2); 3×6 = 2×(3×3) → 2 × (1 + 4 + 9) = 28. Mẫu: 2×3 = 6×1; 4×6 = 6×4; 6×9 = 6×9 → 6 × (1 + 4 + 9) = 84. Rút nguyên cụm (1 + 4 + 9): còn 2/6 = 1/3.",
+    "why": "Ca LT8 — đề A câu 15 TRÙM CUỐI của chương."
+   },
+   {
+    "case": "kiểm không rút ẩu (ca đối chiếu)",
+    "problem": "(1 + 2 + 3)/(2 + 4 + 7) có rút 'nguyên cụm' được không?",
+    "solution": "Mẫu = 2×1 + 2×2 + 7?? — số hạng cuối 7 ≠ 2×3: KHÔNG cùng bộ lõi → không rút được, phải tính thẳng: 6/13.",
+    "why": "Luật K3 — cụm phải giống hệt TỪNG số hạng."
+   }
+  ],
+  "numberRange": "Lớp 5: 3 số hạng mỗi tầng; hệ số 2–9.",
+  "misconceptions": [
+   {
+    "wrong": "Rút 'cụm' khi hai tầng chỉ giống nhau vài số hạng (hoặc rút chéo lẻ tẻ từng con số giữa tử và mẫu của tổng).",
+    "signal": "Gạch xóa số bên trong TỔNG chưa đặt thừa số chung.",
+    "fix": "chỉ được rút khi đã đưa cả tầng về dạng (hệ số × cụm) và hai cụm GIỐNG HỆT; trong tổng chưa gom cụm thì cấm gạch.",
+    "counterExample": "(1 + 2)/(2 + 2) mà gạch số 2 → 1/2 — trong khi đáp thật là 3/4!"
+   }
+  ],
+  "vocabulary": [
+   "hai khay bánh đồng phục",
+   "bộ lõi chung",
+   "nhấc nguyên cụm",
+   "cấm gạch trong tổng"
+  ],
+  "mantra": "GOM TỪNG TẦNG — RÚT NGUYÊN CỤM; TRONG TỔNG CHƯA GOM, CẤM GẠCH!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "mcq",
+    "text": "6,8 × 3,7 + 3,7 × 3,2 rút thành gì? (Bài 13)",
+    "choices": [
+     "3,7 × (6,8 + 3,2)",
+     "6,8 × (3,7 + 3,2)",
+     "không rút được"
     ],
-    "bktUnit": "CASE:II.2.2#3@G5"
+    "answerKey": {
+     "choice": "3,7 × (6,8 + 3,2)"
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B13.M3",
+   "message": "Ôn rút thừa số chung ở Bài 13 rồi vào xưởng bánh nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 20,
+    "narration": "Trùm cuối xuất hiện: (1×2 + 2×4 + 3×6) trên (2×3 + 4×6 + 6×9). Trí Long định gạch chéo số 2 trên với số 2 dưới, số 6 trên với 6 dưới… Su Kem chặn bút: \"Trong TỔNG chưa gom cụm — cấm gạch! Nhìn hai khay bánh đã.\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "gạch 2 với 2, 6 với 6… được không?"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để soi hai khay bánh!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 48,
+    "teaches": [
+     "K1",
+     "K2"
+    ],
+    "narration": "Khay trên: 1 nhân 2 là HAI lần 1×1; 2 nhân 4 là HAI lần 2×2; 3 nhân 6 là HAI lần 3×3 — cả khay bằng 2 nhân bộ lõi (1 + 4 + 9)! Khay dưới: 2×3, 4×6, 6×9 — mỗi chiếc gấp SÁU bộ lõi ấy: 6 nhân (1 + 4 + 9). Hai khay chung MỘT bộ lõi — nhấc nguyên bộ ra khỏi cả hai: còn 2 trên 6, dọn về MỘT PHẦN BA. Không cần biết bộ lõi bằng bao nhiêu!",
+    "display": {
+     "type": "tray_factor_interactive",
+     "spec": {
+      "top": "2 × (1 + 4 + 9)",
+      "bottom": "6 × (1 + 4 + 9)",
+      "lift": "(1 + 4 + 9)",
+      "left": "2/6 = 1/3"
+     }
+    },
+    "interaction": {
+     "type": "lift_cluster",
+     "answerKey": {
+      "value": "1/3"
+     },
+     "successMessage": "Nhấc nguyên cụm: 2/6 = 1/3 — trùm cuối gục!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 16,
+    "item": {
+     "format": "num",
+     "text": "Tử 2 × (1 + 4 + 9) bằng bao nhiêu? (kiểm tay)",
+     "answerKey": {
+      "value": 28
+     },
+     "wrongFeedback": "2 × 14 = 28 — khớp với 2 + 8 + 18 ✓.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 38,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Luật an toàn hai điều. MỘT: cụm phải giống hệt TỪNG số hạng — (1 + 2 + 3) với (2 + 4 + 7): số hạng cuối 7 không phải 2 nhân 3 — khác bộ lõi, cấm rút, tính thẳng 6/13. HAI: trong tổng chưa gom cụm thì cấm gạch lẻ: (1 + 2)/(2 + 2) mà gạch số 2 ra 1/2 — trong khi đáp thật là 3/4! Gom từng tầng xong mới được nhấc.",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "cụm phải GIỐNG HỆT từng số hạng",
+      "(1+2)/(2+2): gạch 2 → 1/2 ✗ (thật: 3/4)",
+      "gom (hệ số × cụm) rồi mới nhấc"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: gom từng tầng — rút nguyên cụm; trong tổng chưa gom, cấm gạch!",
+    "display": {
+     "type": "mantra_card",
+     "text": "TRONG TỔNG CHƯA GOM — CẤM GẠCH!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 78,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B15",
-    "order": 3,
-    "prev": "DL:KSN5Q1.B15.M2",
-    "next": "DL:KSN5Q1.B16.M1"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B15",
-    "chunks": [
-      "CHUNK:KSN5Q1.B15.S4",
-      "CHUNK:KSN5Q1.B15.S7"
-    ],
-    "cases": [
-      "CA:KSN5Q1.B15.4"
-    ],
-    "traps": []
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Trùm cuối xuất hiện: một-nhân-hai cộng hai-nhân-bốn cộng ba-nhân-sáu, trên hai-nhân-ba cộng bốn-nhân-sáu cộng sáu-nhân-chín. Trí Long định gạch chéo số hai trên với số hai dưới… Su Kem chặn bút: trong TỔNG chưa gom cụm — cấm gạch! Nhìn hai khay bánh đã!",
+    "screenText": "(1×2+2×4+3×6)/(2×3+4×6+6×9) — gạch được không?",
+    "visual": "Đề trùm cuối trên cuộn giấy; bút chì Trí Long bị bàn tay Su Kem chặn; biển 'CẤM GẠCH' đỏ #C0392B.",
+    "assets": [],
+    "duration": 16
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Khay trên: một nhân hai là HAI lần một-nhân-một; hai nhân bốn là HAI lần hai-nhân-hai; ba nhân sáu là HAI lần ba-nhân-ba — cả khay bằng HAI nhân bộ lõi một cộng bốn cộng chín! Khay dưới: mỗi chiếc gấp SÁU bộ lõi ấy. Hai khay chung MỘT bộ lõi — nhấc nguyên bộ ra: còn hai trên sáu — MỘT PHẦN BA!",
+    "screenText": "2 × (1+4+9) / 6 × (1+4+9) → 2/6 = 1/3",
+    "visual": "Hai khay bánh xếp tầng; từng chiếc bánh tách lớp lộ nhân đôi/nhân sáu bộ lõi; bàn tay nhấc nguyên khối lõi vàng ra khỏi cả hai khay; đáp 1/3.",
+    "assets": [],
+    "duration": 23
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Luật an toàn hai điều. MỘT: cụm phải giống hệt TỪNG số hạng — số hạng lệch một chiếc là khác bộ lõi, cấm rút. HAI: trong tổng chưa gom, cấm gạch lẻ: một cộng hai trên hai cộng hai mà gạch số hai ra một phần hai — trong khi đáp thật là BA PHẦN TƯ! Gom từng tầng xong mới được nhấc!",
+    "screenText": "(1+2)/(2+2): gạch 2 → 1/2 ✗ · thật: 3/4 ✓",
+    "visual": "Phản ví dụ đóng khung: phép gạch ẩu bị dấu ✗ đỏ; phép tính thẳng 3/4 mộc xanh; hai điều luật treo bảng.",
+    "assets": [],
+    "duration": 23
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú xưởng bánh: gom từng tầng — rút nguyên cụm; trong tổng chưa gom, cấm gạch!",
+    "screenText": "GOM TỪNG TẦNG — RÚT NGUYÊN CỤM!",
+    "visual": "Thẻ thần chú vàng với icon khay bánh.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Trùm cuối chờ con trong phòng luyện: hai khay bánh — nhấc bộ lõi nào? Vào bài luyện ngay!",
+    "screenText": "TRÙM CUỐI: rút nguyên cụm!",
+    "visual": "Cửa phòng luyện với bóng trùm cuối; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 8
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Hạ trùm cuối hai khay bánh",
+  "problem": "Tính: (1×2 + 2×4 + 3×6) / (2×3 + 4×6 + 6×9).",
+  "steps": [
+   {
+    "show": "Bước 1 — Gom khay trên: 2×(1×1) + 2×(2×2) + 2×(3×3) = 2 × (1 + 4 + 9).",
+    "askBefore": {
+     "format": "num",
+     "text": "Bộ lõi 1 + 4 + 9 = ?",
+     "answerKey": {
+      "value": 14
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Gom khay dưới: 6×1 + 6×4 + 6×9 = 6 × (1 + 4 + 9)."
+   },
+   {
+    "show": "Bước 3 — Nhấc nguyên cụm (1 + 4 + 9): còn 2/6 = 1/3. (Kiểm tay: 28/84 = 1/3 ✓.)",
+    "askAfter": {
+     "format": "mcq",
+     "text": "Vì sao không cần tính cụm bằng bao nhiêu?",
+     "choices": [
+      "Vì cụm giống hệt hai tầng — rút là biến mất",
+      "Vì cụm quá khó tính",
+      "Vì đề cho sẵn"
+     ],
+     "answerKey": {
+      "choice": "Vì cụm giống hệt hai tầng — rút là biến mất"
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con xử được biểu thức tử – mẫu dài (tổng nhiều tích trên tổng nhiều tích): đặt thừa số chung TỪNG TẦNG cho tử và mẫu, nhận ra CỤM CHUNG giống hệt nhau hai tầng, rút NGUYÊN CỤM — chỉ còn phân số nhỏ để dọn.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (rút nguyên cụm)",
-    "kidText": "Biểu thức tử mẫu dài ngoằng? Con gom thừa số chung từng tầng, thấy cụm giống hệt nhau ở hai tầng thì rút cả cụm."
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B15.LT8",
+     "text": "Tính: (1×2 + 2×4 + 3×6) / (2×3 + 4×6 + 6×9). (Đặt thừa số chung từng tầng — cụm nào chung?)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tử",
+        "value": "2 × (1 + 4 + 9) = 28"
+       },
+       {
+        "label": "mẫu",
+        "value": "6 × (1 + 4 + 9) = 84"
+       },
+       {
+        "label": "đáp",
+        "value": "1/3"
+       }
+      ]
+     },
+     "hints": [
+      "Mỗi tích khay trên gấp đôi 1×1, 2×2, 3×3.",
+      "Nhấc nguyên cụm (1 + 4 + 9)."
+     ],
+     "solutionNarrative": "2 × cụm / 6 × cụm = 2/6 = 1/3.",
+     "teaches": [
+      "K1",
+      "K2",
+      "K3"
+     ],
+     "generator": {
+      "template": "Tính ({a}×cụm)/({b}×cụm) dạng tổng ba tích.",
+      "constraints": {},
+      "answerRule": "a/b dọn tối giản"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "text": "Tính: (2×5 + 4×10 + 6×15) / (3×5 + 6×10 + 9×15).",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tử",
+        "value": "2 × (5 + 20 + 45)"
+       },
+       {
+        "label": "mẫu",
+        "value": "3 × (5 + 20 + 45)"
+       },
+       {
+        "label": "đáp",
+        "value": "2/3"
+       }
+      ]
+     },
+     "hints": [
+      "Khay trên: 2×5, 2×(2×10)? — soi: 2×5, 4×10 = 2×(2×10)… gom theo 1×5, 2×10, 3×15!",
+      "Tử = 2 × bộ lõi; mẫu = 3 × bộ lõi."
+     ],
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "tf",
+     "text": "(Đúng/Sai?) (1 + 2)/(2 + 2): gạch số 2 ở tử với số 2 ở mẫu, còn 1/2.",
+     "answerKey": {
+      "value": false,
+      "note": "Trong tổng chưa gom cụm — cấm gạch: đáp thật 3/4."
+     },
+     "hints": [
+      "Tính thẳng hai tầng.",
+      "Luật cấm gạch trong tổng."
+     ],
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:II.2.2#3@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B16.M1",
+   "award": "huy_hieu_trum_cuoi_hai_khay"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Biểu thức dạng (tổng nhiều tích)/(tổng nhiều tích): đặt thừa số chung cho TỬ và cho MẪU riêng từng tầng (dùng chiêu rút chung của Bài 13, nay trên phân số)."
-      },
-      {
-        "id": "K2",
-        "text": "Sau khi rút từng tầng, thường lộ ra CỤM CHUNG giống hệt nhau ở cả tử lẫn mẫu — rút NGUYÊN CỤM như rút một thừa số: (2 × cụm)/(6 × cụm) = 2/6."
-      },
-      {
-        "id": "K3",
-        "text": "Kiểm cụm phải GIỐNG HỆT từng số hạng rồi mới rút; rút xong DỌN tối giản (2/6 = 1/3)."
-      }
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "text": "(1×2 + 2×4 + 3×6)/(2×3 + 4×6 + 6×9): sau khi gom hai tầng, rút NGUYÊN CỤM nào?",
+    "choices": [
+     "(1 + 4 + 9)",
+     "số 2 với số 2",
+     "(2 + 4 + 6)"
     ],
-    "mechanism": "Hình ảnh brand: HAI KHAY BÁNH ĐỒNG PHỤC. Tử là khay trên: 1×2 + 2×4 + 3×6 — soi kỹ: mỗi chiếc bánh đều gấp ĐÔI bộ lõi (1×1, 2×2, 3×3): khay trên = 2 × (1 + 4 + 9). Mẫu là khay dưới: 2×3 + 4×6 + 6×9 — mỗi chiếc gấp SÁU bộ lõi ấy: 6 × (1 + 4 + 9). Hai khay dùng CHUNG một bộ lõi bánh (1 + 4 + 9) — nhấc nguyên bộ lõi ra khỏi cả hai khay một lượt: còn lại 2 trên 6 — dọn về MỘT PHẦN BA. Không cần nướng (tính) bộ lõi bằng bao nhiêu: nó giống hệt nhau hai tầng là đủ tư cách rút!",
-    "canonicalExamples": [
-      {
-        "case": "trùm cuối chương (ca lõi)",
-        "problem": "Tính: (1×2 + 2×4 + 3×6) / (2×3 + 4×6 + 6×9).",
-        "solution": "Tử: 1×2 = 2×(1×1); 2×4 = 2×(2×2); 3×6 = 2×(3×3) → 2 × (1 + 4 + 9) = 28. Mẫu: 2×3 = 6×1; 4×6 = 6×4; 6×9 = 6×9 → 6 × (1 + 4 + 9) = 84. Rút nguyên cụm (1 + 4 + 9): còn 2/6 = 1/3.",
-        "why": "Ca LT8 — đề A câu 15 TRÙM CUỐI của chương."
-      },
-      {
-        "case": "kiểm không rút ẩu (ca đối chiếu)",
-        "problem": "(1 + 2 + 3)/(2 + 4 + 7) có rút 'nguyên cụm' được không?",
-        "solution": "Mẫu = 2×1 + 2×2 + 7?? — số hạng cuối 7 ≠ 2×3: KHÔNG cùng bộ lõi → không rút được, phải tính thẳng: 6/13.",
-        "why": "Luật K3 — cụm phải giống hệt TỪNG số hạng."
-      }
+    "answerKey": {
+     "choice": "(1 + 4 + 9)"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K1",
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "text": "Đáp số cuối cùng của biểu thức trên:",
+    "choices": [
+     "1/3",
+     "2/6 để nguyên",
+     "1/2"
     ],
-    "numberRange": "Lớp 5: 3 số hạng mỗi tầng; hệ số 2–9.",
-    "misconceptions": [
-      {
-        "wrong": "Rút 'cụm' khi hai tầng chỉ giống nhau vài số hạng (hoặc rút chéo lẻ tẻ từng con số giữa tử và mẫu của tổng).",
-        "signal": "Gạch xóa số bên trong TỔNG chưa đặt thừa số chung.",
-        "fix": "K1 + K3 — chỉ được rút khi đã đưa cả tầng về dạng (hệ số × cụm) và hai cụm GIỐNG HỆT; trong tổng chưa gom cụm thì cấm gạch.",
-        "counterExample": "(1 + 2)/(2 + 2) mà gạch số 2 → 1/2 — trong khi đáp thật là 3/4!"
-      }
+    "answerKey": {
+     "choice": "1/3"
+    },
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "tf",
+    "text": "(Đúng/Sai?) Được gạch chéo một con số ở tử với một con số ở mẫu ngay cả khi chúng đang nằm trong tổng chưa gom cụm.",
+    "answerKey": {
+     "value": false
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Biểu thức tử – mẫu dài (tổng nhiều tích) xử sao?",
+    "back": "Gom TỪNG TẦNG về (hệ số × cụm); hai cụm GIỐNG HỆT → rút NGUYÊN CỤM: 2×(1+4+9) / 6×(1+4+9) = 2/6 = 1/3. Trong tổng chưa gom — CẤM GẠCH ((1+2)/(2+2) = 3/4, không phải 1/2!)."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (cấm gạch)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con hạ trùm cuối tử – mẫu cả cụm: gom từng tầng, rút nguyên cụm, và luật cấm-gạch-trong-tổng. Con đạt {score}/3.",
+  "homeActivity": "Đố nhanh phản ví dụ: '(1 + 2)/(2 + 2) — gạch số 2 được không?' — con nói 'không, đáp là 3/4' kèm lý do là đạt.",
+  "watchFor": "Nếu con gạch số lẻ tẻ trong tổng — đưa phản ví dụ 3/4 (S3) và yêu cầu gom cụm trước."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B15.M3",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "gạch 2 với 2, 6 với 6… được không?",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Gạch chéo thôi: số 2 ở trên với số 2 ở dưới, số 6 trên với số 6 dưới!",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Trong TỔNG chưa gom cụm — cấm gạch! Nhìn hai khay bánh đã.",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B15_M3_F1.png",
+   "sha256_16": "503affde25c293b2"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Tử – mẫu cả cụm: đặt thừa số chung từng tầng, rút NGUYÊN CỤM",
+    "steps": [
+     {
+      "text": "cụm phải GIỐNG HỆT từng số hạng"
+     },
+     {
+      "text": "(1+2)/(2+2): gạch 2 → 1/2 (thật: 3/4)"
+     },
+     {
+      "text": "gom (hệ số × cụm) rồi mới nhấc"
+     }
     ],
-    "vocabulary": [
-      "hai khay bánh đồng phục",
-      "bộ lõi chung",
-      "nhấc nguyên cụm",
-      "cấm gạch trong tổng"
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B15_M3_F2.png",
+   "sha256_16": "cab948eadfa188df"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Biểu thức dạng (tổng nhiều tích)/(tổng nhiều tích)",
+      "text": "đặt thừa số chung cho TỬ và cho MẪU riêng từng tầng (dùng chiêu rút chung của Bài 13, nay trên phân số).",
+      "tone": "navy"
+     },
+     {
+      "text": "Sau khi rút từng tầng, thường lộ ra CỤM CHUNG giống hệt nhau ở cả tử lẫn mẫu — rút NGUYÊN CỤM như rút một thừa số: (2 × cụm)/(6 × cụm) = 2/6.",
+      "tone": "teal"
+     }
     ],
     "mantra": "GOM TỪNG TẦNG — RÚT NGUYÊN CỤM; TRONG TỔNG CHƯA GOM, CẤM GẠCH!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B15_M3_F3.png",
+   "sha256_16": "ce5efe558c8197ef"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "mcq",
-        "text": "6,8 × 3,7 + 3,7 × 3,2 rút thành gì? (Bài 13)",
-        "choices": [
-          "3,7 × (6,8 + 3,2)",
-          "6,8 × (3,7 + 3,2)",
-          "không rút được"
-        ],
-        "answerKey": {
-          "choice": "3,7 × (6,8 + 3,2)"
-        }
-      }
-    ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B13.M3",
-      "message": "Ôn rút thừa số chung ở Bài 13 rồi vào xưởng bánh nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 20,
-        "narration": "Trùm cuối xuất hiện: (1×2 + 2×4 + 3×6) trên (2×3 + 4×6 + 6×9). Trí Long định gạch chéo số 2 trên với số 2 dưới, số 6 trên với 6 dưới… Su Kem chặn bút: \"Trong TỔNG chưa gom cụm — cấm gạch! Nhìn hai khay bánh đã.\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "gạch 2 với 2, 6 với 6… được không?"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để soi hai khay bánh!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 48,
-        "teaches": [
-          "K1",
-          "K2"
-        ],
-        "narration": "Khay trên: 1 nhân 2 là HAI lần 1×1; 2 nhân 4 là HAI lần 2×2; 3 nhân 6 là HAI lần 3×3 — cả khay bằng 2 nhân bộ lõi (1 + 4 + 9)! Khay dưới: 2×3, 4×6, 6×9 — mỗi chiếc gấp SÁU bộ lõi ấy: 6 nhân (1 + 4 + 9). Hai khay chung MỘT bộ lõi — nhấc nguyên bộ ra khỏi cả hai: còn 2 trên 6, dọn về MỘT PHẦN BA. Không cần biết bộ lõi bằng bao nhiêu!",
-        "display": {
-          "type": "tray_factor_interactive",
-          "spec": {
-            "top": "2 × (1 + 4 + 9)",
-            "bottom": "6 × (1 + 4 + 9)",
-            "lift": "(1 + 4 + 9)",
-            "left": "2/6 = 1/3"
-          }
-        },
-        "interaction": {
-          "type": "lift_cluster",
-          "answerKey": {
-            "value": "1/3"
-          },
-          "successMessage": "Nhấc nguyên cụm: 2/6 = 1/3 — trùm cuối gục!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 16,
-        "item": {
-          "format": "num",
-          "text": "Tử 2 × (1 + 4 + 9) bằng bao nhiêu? (kiểm tay)",
-          "answerKey": {
-            "value": 28
-          },
-          "wrongFeedback": "2 × 14 = 28 — khớp với 2 + 8 + 18 ✓.",
-          "objective": "O1",
-          "teaches": [
-            "K1"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 38,
-        "teaches": [
-          "K3"
-        ],
-        "narration": "Luật an toàn hai điều. MỘT: cụm phải giống hệt TỪNG số hạng — (1 + 2 + 3) với (2 + 4 + 7): số hạng cuối 7 không phải 2 nhân 3 — khác bộ lõi, cấm rút, tính thẳng 6/13. HAI: trong tổng chưa gom cụm thì cấm gạch lẻ: (1 + 2)/(2 + 2) mà gạch số 2 ra 1/2 — trong khi đáp thật là 3/4! Gom từng tầng xong mới được nhấc.",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "cụm phải GIỐNG HỆT từng số hạng",
-            "(1+2)/(2+2): gạch 2 → 1/2 ✗ (thật: 3/4)",
-            "gom (hệ số × cụm) rồi mới nhấc"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú xưởng bánh: gom từng tầng — rút nguyên cụm; trong tổng chưa gom, cấm gạch!",
-        "display": {
-          "type": "mantra_card",
-          "text": "TRONG TỔNG CHƯA GOM — CẤM GẠCH!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 78,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "RÚT NGUYÊN CỤM — NHƯNG PHẢI KIỂM BỘ LÕI",
+    "wrong": {
+     "head": "RÚT ẨU",
+     "steps": [
+      "(1+2+3) / (2+4+7)",
+      "số cuối 7 ≠ 2 × 3"
+     ],
+     "result": "KHÔNG rút được"
     },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    "right": {
+     "head": "CÙNG BỘ LÕI",
+     "steps": [
+      "tử = 2 × (1 + 4 + 9)",
+      "mẫu = 6 × (1 + 4 + 9)"
+     ],
+     "result": "= 2/6 = 1/3"
     },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Trùm cuối xuất hiện: một-nhân-hai cộng hai-nhân-bốn cộng ba-nhân-sáu, trên hai-nhân-ba cộng bốn-nhân-sáu cộng sáu-nhân-chín. Trí Long định gạch chéo số hai trên với số hai dưới… Su Kem chặn bút: trong TỔNG chưa gom cụm — cấm gạch! Nhìn hai khay bánh đã!",
-        "screenText": "(1×2+2×4+3×6)/(2×3+4×6+6×9) — gạch được không?",
-        "visual": "Đề trùm cuối trên cuộn giấy; bút chì Trí Long bị bàn tay Su Kem chặn; biển 'CẤM GẠCH' đỏ #C0392B.",
-        "assets": [],
-        "duration": 16
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Khay trên: một nhân hai là HAI lần một-nhân-một; hai nhân bốn là HAI lần hai-nhân-hai; ba nhân sáu là HAI lần ba-nhân-ba — cả khay bằng HAI nhân bộ lõi một cộng bốn cộng chín! Khay dưới: mỗi chiếc gấp SÁU bộ lõi ấy. Hai khay chung MỘT bộ lõi — nhấc nguyên bộ ra: còn hai trên sáu — MỘT PHẦN BA!",
-        "screenText": "2 × (1+4+9) / 6 × (1+4+9) → 2/6 = 1/3",
-        "visual": "Hai khay bánh xếp tầng; từng chiếc bánh tách lớp lộ nhân đôi/nhân sáu bộ lõi; bàn tay nhấc nguyên khối lõi vàng ra khỏi cả hai khay; đáp 1/3.",
-        "assets": [],
-        "duration": 23
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Luật an toàn hai điều. MỘT: cụm phải giống hệt TỪNG số hạng — số hạng lệch một chiếc là khác bộ lõi, cấm rút. HAI: trong tổng chưa gom, cấm gạch lẻ: một cộng hai trên hai cộng hai mà gạch số hai ra một phần hai — trong khi đáp thật là BA PHẦN TƯ! Gom từng tầng xong mới được nhấc!",
-        "screenText": "(1+2)/(2+2): gạch 2 → 1/2 ✗ · thật: 3/4 ✓",
-        "visual": "Phản ví dụ đóng khung: phép gạch ẩu bị dấu ✗ đỏ; phép tính thẳng 3/4 mộc xanh; hai điều luật treo bảng.",
-        "assets": [],
-        "duration": 23
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú xưởng bánh: gom từng tầng — rút nguyên cụm; trong tổng chưa gom, cấm gạch!",
-        "screenText": "GOM TỪNG TẦNG — RÚT NGUYÊN CỤM!",
-        "visual": "Thẻ thần chú vàng với icon khay bánh.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Trùm cuối chờ con trong phòng luyện: hai khay bánh — nhấc bộ lõi nào? Vào bài luyện ngay!",
-        "screenText": "TRÙM CUỐI: rút nguyên cụm!",
-        "visual": "Cửa phòng luyện với bóng trùm cuối; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P1",
-        "assets": [],
-        "duration": 8
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Hạ trùm cuối hai khay bánh",
-    "problem": "Tính: (1×2 + 2×4 + 3×6) / (2×3 + 4×6 + 6×9).",
-    "steps": [
-      {
-        "show": "Bước 1 — Gom khay trên: 2×(1×1) + 2×(2×2) + 2×(3×3) = 2 × (1 + 4 + 9).",
-        "askBefore": {
-          "format": "num",
-          "text": "Bộ lõi 1 + 4 + 9 = ?",
-          "answerKey": {
-            "value": 14
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Gom khay dưới: 6×1 + 6×4 + 6×9 = 6 × (1 + 4 + 9)."
-      },
-      {
-        "show": "Bước 3 — Nhấc nguyên cụm (1 + 4 + 9): còn 2/6 = 1/3. (Kiểm tay: 28/84 = 1/3 ✓.)",
-        "askAfter": {
-          "format": "mcq",
-          "text": "Vì sao không cần tính cụm bằng bao nhiêu?",
-          "choices": [
-            "Vì cụm giống hệt hai tầng — rút là biến mất",
-            "Vì cụm quá khó tính",
-            "Vì đề cho sẵn"
-          ],
-          "answerKey": {
-            "choice": "Vì cụm giống hệt hai tầng — rút là biến mất"
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B15.LT8",
-          "text": "Tính: (1×2 + 2×4 + 3×6) / (2×3 + 4×6 + 6×9). (Đặt thừa số chung từng tầng — cụm nào chung?)",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "tử",
-                "value": "2 × (1 + 4 + 9) = 28"
-              },
-              {
-                "label": "mẫu",
-                "value": "6 × (1 + 4 + 9) = 84"
-              },
-              {
-                "label": "đáp",
-                "value": "1/3"
-              }
-            ]
-          },
-          "hints": [
-            "Mỗi tích khay trên gấp đôi 1×1, 2×2, 3×3.",
-            "Nhấc nguyên cụm (1 + 4 + 9)."
-          ],
-          "solutionNarrative": "2 × cụm / 6 × cụm = 2/6 = 1/3.",
-          "teaches": [
-            "K1",
-            "K2",
-            "K3"
-          ],
-          "generator": {
-            "template": "Tính ({a}×cụm)/({b}×cụm) dạng tổng ba tích.",
-            "constraints": {},
-            "answerRule": "a/b dọn tối giản"
-          }
-        }
-      ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "mb",
-          "text": "Tính: (2×5 + 4×10 + 6×15) / (3×5 + 6×10 + 9×15).",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "tử",
-                "value": "2 × (5 + 20 + 45)"
-              },
-              {
-                "label": "mẫu",
-                "value": "3 × (5 + 20 + 45)"
-              },
-              {
-                "label": "đáp",
-                "value": "2/3"
-              }
-            ]
-          },
-          "hints": [
-            "Khay trên: 2×5, 2×(2×10)? — soi: 2×5, 4×10 = 2×(2×10)… gom theo 1×5, 2×10, 3×15!",
-            "Tử = 2 × bộ lõi; mẫu = 3 × bộ lõi."
-          ],
-          "teaches": [
-            "K1",
-            "K2"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P3",
-          "format": "tf",
-          "text": "(Đúng/Sai?) (1 + 2)/(2 + 2): gạch số 2 ở tử với số 2 ở mẫu, còn 1/2.",
-          "answerKey": {
-            "value": false,
-            "note": "Trong tổng chưa gom cụm — cấm gạch: đáp thật 3/4."
-          },
-          "hints": [
-            "Tính thẳng hai tầng.",
-            "Luật cấm gạch trong tổng."
-          ],
-          "teaches": [
-            "K3"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:II.2.2#3@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B16.M1",
-      "award": "huy_hieu_trum_cuoi_hai_khay"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mcq",
-        "text": "(1×2 + 2×4 + 3×6)/(2×3 + 4×6 + 6×9): sau khi gom hai tầng, rút NGUYÊN CỤM nào?",
-        "choices": [
-          "(1 + 4 + 9)",
-          "số 2 với số 2",
-          "(2 + 4 + 6)"
-        ],
-        "answerKey": {
-          "choice": "(1 + 4 + 9)"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K1",
-          "K2"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "mcq",
-        "text": "Đáp số cuối cùng của biểu thức trên:",
-        "choices": [
-          "1/3",
-          "2/6 để nguyên",
-          "1/2"
-        ],
-        "answerKey": {
-          "choice": "1/3"
-        },
-        "teaches": [
-          "K3"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "tf",
-        "text": "(Đúng/Sai?) Được gạch chéo một con số ở tử với một con số ở mẫu ngay cả khi chúng đang nằm trong tổng chưa gom cụm.",
-        "answerKey": {
-          "value": false
-        },
-        "teaches": [
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Biểu thức tử – mẫu dài (tổng nhiều tích) xử sao?",
-        "back": "Gom TỪNG TẦNG về (hệ số × cụm); hai cụm GIỐNG HỆT → rút NGUYÊN CỤM: 2×(1+4+9) / 6×(1+4+9) = 2/6 = 1/3. Trong tổng chưa gom — CẤM GẠCH ((1+2)/(2+2) = 3/4, không phải 1/2!)."
-      }
-    ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P3 (cấm gạch)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con hạ trùm cuối tử – mẫu cả cụm: gom từng tầng, rút nguyên cụm, và luật cấm-gạch-trong-tổng. Con đạt {score}/3.",
-    "homeActivity": "Đố nhanh phản ví dụ: '(1 + 2)/(2 + 2) — gạch số 2 được không?' — con nói 'không, đáp là 3/4' kèm lý do là đạt.",
-    "watchFor": "Nếu con gạch số lẻ tẻ trong tổng — đưa phản ví dụ 3/4 (S3) và yêu cầu gom cụm trước."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B15.M3",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "gạch 2 với 2, 6 với 6… được không?",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "Gạch chéo thôi: số 2 ở trên với số 2 ở dưới, số 6 trên với số 6 dưới!",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "Trong TỔNG chưa gom cụm — cấm gạch! Nhìn hai khay bánh đã.",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B15_M3_F1.png",
-      "sha256_16": "503affde25c293b2"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con xử được biểu thức tử – mẫu dài (tổng nhiều tích trên tổng nhiều tích): đặt thừa số chung TỪNG TẦNG cho tử và mẫu, nhận ra CỤM CHUNG giống hệt nhau hai tầng, rút NGUYÊN CỤM — chỉ còn phân số nhỏ để dọn.",
-        "steps": [
-          {
-            "text": "cụm phải GIỐNG HỆT từng số hạng"
-          },
-          {
-            "text": "(1+2)/(2+2): gạch 2 → 1/2 (thật: 3/4)"
-          },
-          {
-            "text": "gom (hệ số × cụm) rồi mới nhấc"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B15_M3_F2.png",
-      "sha256_16": "7b6dc03365a17eaa"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Biểu thức dạng (tổng nhiều tích)/(tổng nhiều tích)",
-            "text": "đặt thừa số chung cho TỬ và cho MẪU riêng từng tầng (dùng chiêu rút chung của Bài 13, nay trên phân số).",
-            "tone": "navy"
-          },
-          {
-            "text": "Sau khi rút từng tầng, thường lộ ra CỤM CHUNG giống hệt nhau ở cả tử lẫn mẫu — rút NGUYÊN CỤM như rút một thừa số: (2 × cụm)/(6 × cụm) = 2/6.",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "GOM TỪNG TẦNG — RÚT NGUYÊN CỤM; TRONG TỔNG CHƯA GOM, CẤM GẠCH!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B15_M3_F3.png",
-      "sha256_16": "ce5efe558c8197ef"
-    },
-    {
-      "archetype": "two_way_compare",
-      "params": {
-        "title": "RÚT NGUYÊN CỤM — NHƯNG PHẢI KIỂM BỘ LÕI",
-        "wrong": {
-          "head": "RÚT ẨU",
-          "steps": [
-            "(1+2+3) / (2+4+7)",
-            "số cuối 7 ≠ 2 × 3"
-          ],
-          "result": "KHÔNG rút được"
-        },
-        "right": {
-          "head": "CÙNG BỘ LÕI",
-          "steps": [
-            "tử = 2 × (1 + 4 + 9)",
-            "mẫu = 6 × (1 + 4 + 9)"
-          ],
-          "result": "= 2/6 = 1/3"
-        },
-        "verdict": "Chỉ rút được khi tử và mẫu cùng một bộ lõi"
-      },
-      "caption": "Đặt thừa số chung từng tầng, kiểm đủ mọi số hạng rồi mới rút",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B15_M3_F4.png",
-      "sha256_16": "0e246331c769584c"
-    }
-  ]
+    "verdict": "Chỉ rút được khi tử và mẫu cùng một bộ lõi"
+   },
+   "caption": "Đặt thừa số chung từng tầng, kiểm đủ mọi số hạng rồi mới rút",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B15_M3_F4.png",
+   "sha256_16": "0e246331c769584c"
+  }
+ ]
 }

@@ -1,624 +1,624 @@
 {
-  "title": "Tổng – hiệu trên số thập phân & phép thử hai trạm",
-  "grade": 5,
-  "durationMinutes": 7,
-  "skills": {
-    "primary": [
-      "CASE:III.2.1#2"
+ "title": "Tổng – hiệu trên số thập phân & phép thử hai trạm",
+ "grade": 5,
+ "durationMinutes": 7,
+ "skills": {
+  "primary": [
+   "CASE:III.2.1#2"
+  ],
+  "bktUnit": "CASE:III.2.1#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B25",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B25.M1",
+  "next": "DL:KSN5Q1.B25.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B25",
+  "chunks": [
+   "CHUNK:KSN5Q1.B25.S4",
+   "CHUNK:KSN5Q1.B25.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B25.2"
+  ],
+  "traps": []
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con chạy trơn cặp công thức tổng – hiệu trên SỐ THẬP PHÂN (dấu phẩy không đổi luật — chỉ đòi cẩn thận ở phép cộng trừ thẳng hàng và phép chia đôi), và rèn PHÉP THỬ HAI TRẠM thành nghi thức bắt buộc: đáp phải qua cả trạm tổng lẫn trạm hiệu.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (thử cả hai trạm)",
+  "kidText": "Vẫn cặp công thức ấy nhưng với số thập phân. Đáp án phải qua cả hai trạm kiểm: trạm tổng và trạm hiệu."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Luật y nguyên trên thập phân: lớn = (tổng + hiệu) : 2; bé = (tổng − hiệu) : 2 — dấu phẩy không đổi luật, chỉ đòi thẳng hàng khi cộng trừ (9,5 + 1,3 = 10,8) và cẩn thận khi chia đôi (10,8 : 2 = 5,4)."
+   },
+   {
+    "id": "K2",
+    "text": "PHÉP THỬ HAI TRẠM là nghi thức đóng bài: trạm TỔNG (5,4 + 4,1 = 9,5 ✓) và trạm HIỆU (5,4 − 4,1 = 1,3 ✓) — qua một trạm chưa đủ, phải qua cả hai."
+   },
+   {
+    "id": "K3",
+    "text": "Đề chữ cần DỊCH ra bộ tổng – hiệu trước: \"số lớn nhất có hai chữ số\" = 99; \"số lẻ bé nhất có hai chữ số\" = 11 — dịch xong mới lắp công thức."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: TRẠM CÂN ĐÔI CUỐI ĐƯỜNG. Mọi bài tổng – hiệu, dù mang dấu phẩy hay khoác áo chữ, đều phải qua HAI TRẠM CÂN trước khi xuất xưởng: trạm TỔNG và trạm HIỆU. Bài 9,5 và 1,3: cỗ máy chạy y luật cũ — cộng thẳng hàng ra 10,8, chia đôi ra 5,4; số bé lấy 9,5 trừ 5,4 bằng 4,1. Xe chở cặp (5,4 ; 4,1) lăn qua trạm tổng: 9,5 — đèn xanh; qua trạm hiệu: 1,3 — đèn xanh: xuất xưởng! Vì sao phải đủ hai trạm? Cặp sai (33 ; 17) của bài trước qua lọt trạm tổng mà chết ở trạm hiệu — một trạm là chưa đủ tin. Đề sư phụ giấu số sau chữ: \"tổng là số lớn nhất có hai chữ số, hiệu là số lẻ bé nhất có hai chữ số\" — dịch: 99 và 11, rồi máy chạy như thường: 55 và 44.",
+  "canonicalExamples": [
+   {
+    "case": "thập phân (ca lõi)",
+    "problem": "Tổng hai số là 9,5 và hiệu hai số là 1,3. Tìm hai số.",
+    "solution": "Lớn = (9,5 + 1,3) : 2 = 10,8 : 2 = 5,4; bé = 9,5 − 5,4 = 4,1. Thử: 5,4 + 4,1 = 9,5 ✓; 5,4 − 4,1 = 1,3 ✓.",
+    "why": "Ca đề A câu 2 — dấu phẩy không đổi luật, nhớ chia 2."
+   },
+   {
+    "case": "dịch chữ ra số (ca sư phụ)",
+    "problem": "Tổng của hai số là số lớn nhất có hai chữ số; hiệu của chúng là số lẻ bé nhất có hai chữ số. Tìm hai số.",
+    "solution": "Dịch: tổng = 99; hiệu = 11. Lớn = (99 + 11) : 2 = 55; bé = 44. Thử: 55 + 44 = 99 ✓; 55 − 44 = 11 ✓.",
+    "why": "Ca LT9 — hai lớp: dịch rồi mới lắp máy."
+   }
+  ],
+  "numberRange": "Lớp 5: thập phân 1 chữ số phần thập phân; tổng + hiệu chia hết cho 2 (hoặc chia được gọn).",
+  "misconceptions": [
+   {
+    "wrong": "Trên thập phân, cộng tổng với hiệu xong QUÊN chia 2 (10,8 làm luôn số lớn) — hoặc thử mỗi trạm tổng rồi nộp.",
+    "signal": "Số lớn to hơn cả tổng; hoặc bài không có dòng thử hiệu.",
+    "fix": "dấu phẩy làm rối mắt nhưng luật y nguyên: (tổng + hiệu) : 2 đủ ba phép; thử ĐỦ hai trạm mới đóng bài.",
+    "counterExample": "10,8 > 9,5 — số lớn vượt tổng: vô lý ngay từ ước lượng."
+   }
+  ],
+  "vocabulary": [
+   "trạm cân đôi cuối đường",
+   "đèn xanh hai trạm",
+   "cộng trừ thẳng hàng",
+   "dịch chữ ra số"
+  ],
+  "mantra": "DẤU PHẨY KHÔNG ĐỔI LUẬT — ĐÁP PHẢI QUA CẢ HAI TRẠM!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "num",
+    "text": "10,8 : 2 = ? (điền dạng thập phân, ví dụ 5,4 → nhập 5.4)",
+    "answerKey": {
+     "value": 5.4
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B13.M1",
+   "message": "Ôn phép chia thập phân Bài 13 rồi ra trạm cân nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Đề mang dấu phẩy: tổng 9,5 — hiệu 1,3. Trí Long chột dạ: \"Số thập phân… chắc phải có luật riêng?\" Cáo Đề gật gù mời chào công thức mới. Su Kem lắc đầu chỉ vào cỗ máy cũ: \"Máy này chạy được hết — dấu phẩy không đổi luật.\"",
+    "display": {
+     "type": "story_panel",
+     "caption": "9,5 và 1,3 — luật mới??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để nổ máy cũ!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 42,
+    "teaches": [
+     "K1"
     ],
-    "bktUnit": "CASE:III.2.1#2@G5"
-  },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B25",
-    "order": 2,
-    "prev": "DL:KSN5Q1.B25.M1",
-    "next": "DL:KSN5Q1.B25.M3"
-  },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B25",
-    "chunks": [
-      "CHUNK:KSN5Q1.B25.S4",
-      "CHUNK:KSN5Q1.B25.S5"
+    "narration": "Máy cũ chạy: cộng thẳng hàng — chín phẩy năm cộng một phẩy ba bằng MƯỜI PHẨY TÁM; chia đôi — NĂM PHẨY BỐN: số lớn! Số bé: chín phẩy năm trừ năm phẩy bốn bằng BỐN PHẨY MỘT. Chỉ hai chỗ cần căn ke: cộng trừ phải THẲNG HÀNG dấu phẩy, và đừng quên nhịp CHIA ĐÔI — mười phẩy tám còn to hơn cả tổng, đâu thể là số lớn!",
+    "display": {
+     "type": "decimal_machine_interactive",
+     "spec": {
+      "sum": 9.5,
+      "diff": 1.3,
+      "big": 5.4,
+      "small": 4.1,
+      "warn": "10,8 > 9,5 → chưa chia 2!"
+     }
+    },
+    "interaction": {
+     "type": "run_machine",
+     "answerKey": {
+      "values": [
+       5.4,
+       4.1
+      ]
+     },
+     "successMessage": "5,4 và 4,1 — luật y nguyên!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 15,
+    "item": {
+     "format": "mcq",
+     "text": "Đáp (5,4 ; 4,1) phải thử qua:",
+     "choices": [
+      "cả trạm tổng lẫn trạm hiệu",
+      "chỉ trạm tổng",
+      "chỉ trạm hiệu"
+     ],
+     "answerKey": {
+      "choice": "cả trạm tổng lẫn trạm hiệu"
+     },
+     "wrongFeedback": "Cặp (33; 17) từng lọt trạm tổng mà chết trạm hiệu!",
+     "objective": "O1",
+     "teaches": [
+      "K2"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 40,
+    "teaches": [
+     "K2",
+     "K3"
     ],
-    "cases": [
-      "CA:KSN5Q1.B25.2"
+    "narration": "Vì sao đủ HAI trạm? Nhớ cặp gian lận ba ba — mười bảy: qua lọt trạm tổng năm mươi, nhưng trạm hiệu tuýt còi mười sáu! Một trạm là chưa đủ tin — hai đèn xanh mới xuất xưởng. Đề sư phụ còn giấu số sau chữ: tổng là SỐ LỚN NHẤT CÓ HAI CHỮ SỐ — chín chín; hiệu là SỐ LẺ BÉ NHẤT CÓ HAI CHỮ SỐ — mười một. Dịch xong máy chạy như thường: NĂM LĂM và BỐN BỐN!",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "(33; 17): trạm tổng ✓ — trạm hiệu ✗ → loại",
+      "dịch chữ: tổng 99 · hiệu 11",
+      "(99 + 11) : 2 = 55 → 55 và 44 ✓✓"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 12,
+    "narration": "Câu cần nhớ: dấu phẩy không đổi luật — đáp phải qua cả hai trạm!",
+    "display": {
+     "type": "mantra_card",
+     "text": "QUA CẢ HAI TRẠM!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 89,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  },
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+  },
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Đề mang dấu phẩy: tổng chín phẩy năm — hiệu một phẩy ba. Trí Long chột dạ: số thập phân… chắc phải có luật riêng? Cáo Đề gật gù mời chào công thức mới. Su Kem lắc đầu chỉ vào cỗ máy cũ: máy này chạy được hết — dấu phẩy không đổi luật!",
+    "screenText": "tổng 9,5 · hiệu 1,3 — cần luật mới?",
+    "visual": "Cỗ máy tổng-hiệu quen thuộc; Cáo Đề chào bán 'công thức thập phân' dỏm; Su Kem phủi bụi máy cũ.",
+    "assets": [],
+    "duration": 19
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Máy cũ chạy: cộng thẳng hàng — chín phẩy năm cộng một phẩy ba bằng MƯỜI PHẨY TÁM; chia đôi — NĂM PHẨY BỐN: số lớn! Số bé: chín phẩy năm trừ năm phẩy bốn bằng BỐN PHẨY MỘT. Hai chỗ căn ke: cộng trừ phải THẲNG HÀNG dấu phẩy, và đừng quên nhịp CHIA ĐÔI — mười phẩy tám còn to hơn cả tổng, đâu thể là số lớn!",
+    "screenText": "(9,5 + 1,3) : 2 = 5,4 · bé = 4,1 (10,8 chưa chia ✗)",
+    "visual": "Phép cộng thẳng cột dấu phẩy khớp hàng; băng chuyền qua nhịp ':2'; số 10,8 bị chặn ở cổng với biển 'to hơn tổng!'.",
+    "assets": [],
+    "duration": 25
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Vì sao đủ HAI trạm? Nhớ cặp gian lận ba ba — mười bảy: qua lọt trạm tổng năm mươi, nhưng trạm hiệu tuýt còi mười sáu! Hai đèn xanh mới xuất xưởng. Đề sư phụ giấu số sau chữ: tổng là SỐ LỚN NHẤT CÓ HAI CHỮ SỐ — chín chín; hiệu là SỐ LẺ BÉ NHẤT CÓ HAI CHỮ SỐ — mười một. Dịch xong máy chạy như thường: NĂM LĂM và BỐN BỐN!",
+    "screenText": "2 trạm cân: tổng ✓ + hiệu ✓ · dịch 99 & 11 → 55 · 44",
+    "visual": "Hai trạm cân nối tiếp với đèn xanh đôi; cặp 33·17 bị giữ ở trạm hai; tấm đề chữ được phiên dịch ra 99 và 11.",
+    "assets": [],
+    "duration": 27
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú trạm cân: dấu phẩy không đổi luật — đáp phải qua cả hai trạm!",
+    "screenText": "DẤU PHẨY KHÔNG ĐỔI LUẬT · QUA 2 TRẠM!",
+    "visual": "Thẻ thần chú vàng với icon hai trạm đèn xanh.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Chuyến xe của con: tổng chín phẩy năm, hiệu một phẩy ba — tìm hai số và cho xe qua đủ hai trạm! Vào bài luyện ngay!",
+    "screenText": "9,5 · 1,3 → ? qua 2 trạm",
+    "visual": "Xe chở cặp số trống chờ xuất phát; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P1",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Chuyến xe qua hai trạm",
+  "problem": "Tổng hai số là 9,5 và hiệu hai số là 1,3. Tìm hai số.",
+  "steps": [
+   {
+    "show": "Bước 1 — Lớn = (9,5 + 1,3) : 2 = 10,8 : 2 = 5,4 (nhớ nhịp chia 2!).",
+    "askBefore": {
+     "format": "mcq",
+     "text": "10,8 có thể là số lớn không?",
+     "choices": [
+      "Không — to hơn cả tổng",
+      "Có",
+      "Tùy"
+     ],
+     "answerKey": {
+      "choice": "Không — to hơn cả tổng"
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Bé = 9,5 − 5,4 = 4,1."
+   },
+   {
+    "show": "Bước 3 — Hai trạm: 5,4 + 4,1 = 9,5 ✓ và 5,4 − 4,1 = 1,3 ✓ — xuất xưởng.",
+    "askAfter": {
+     "format": "mb",
+     "text": "Tổng 7,6, hiệu 1,2 → hai số? (nhập 4.4 và 3.2)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn",
+        "value": 4.4
+       },
+       {
+        "label": "bé",
+        "value": 3.2
+       }
+      ]
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B25.LT4",
+     "text": "Tổng hai số là 9,5 và hiệu hai số là 1,3. Tìm hai số. (nhập dạng 5.4)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn",
+        "value": 5.4
+       },
+       {
+        "label": "bé",
+        "value": 4.1
+       }
+      ]
+     },
+     "hints": [
+      "Cộng thẳng hàng: 10,8.",
+      "Chia đôi rồi trừ ngược."
+     ],
+     "solutionNarrative": "Lớn 5,4; bé 4,1 (hai trạm ✓✓).",
+     "teaches": [
+      "K1",
+      "K2"
+     ],
+     "generator": {
+      "template": "Tổng {S,x} hiệu {d,y} thập phân. Tìm hai số.",
+      "constraints": {},
+      "answerRule": "(S ± d) : 2, thử hai trạm"
+     }
+    }
+   ],
+   "standard": [
+    {
+     "id": "P2",
+     "format": "mb",
+     "text": "Tổng hai số là 12,8 và hiệu là 2,4. Tìm hai số. (nhập dạng 7.6)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn",
+        "value": 7.6
+       },
+       {
+        "label": "bé",
+        "value": 5.2
+       }
+      ]
+     },
+     "hints": [
+      "(12,8 + 2,4) : 2.",
+      "Thử đủ hai trạm."
+     ],
+     "solutionNarrative": "Lớn 7,6; bé 5,2.",
+     "teaches": [
+      "K1",
+      "K2"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B25.LT9",
+     "text": "Sư phụ Trí Dũng đố: \"Tổng của hai số là số lớn nhất có hai chữ số; hiệu của chúng là số lẻ bé nhất có hai chữ số. Tìm hai số.\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn",
+        "value": 55
+       },
+       {
+        "label": "bé",
+        "value": 44
+       }
+      ]
+     },
+     "hints": [
+      "Dịch chữ: 99 và 11.",
+      "(99 + 11) : 2."
+     ],
+     "solutionNarrative": "55 và 44 (thử 99 ✓ và 11 ✓).",
+     "teaches": [
+      "K3"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:III.2.1#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B25.M3",
+   "award": "huy_hieu_tram_can_doi"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B25.QZ5",
+    "text": "Đáp số tổng – hiệu phải thử qua:",
+    "choices": [
+     "cả trạm tổng lẫn trạm hiệu",
+     "chỉ trạm tổng",
+     "chỉ trạm hiệu"
     ],
-    "traps": []
-  },
-  "objective": {
-    "id": "O1",
-    "text": "Con chạy trơn cặp công thức tổng – hiệu trên SỐ THẬP PHÂN (dấu phẩy không đổi luật — chỉ đòi cẩn thận ở phép cộng trừ thẳng hàng và phép chia đôi), và rèn PHÉP THỬ HAI TRẠM thành nghi thức bắt buộc: đáp phải qua cả trạm tổng lẫn trạm hiệu.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (thử cả hai trạm)",
-    "kidText": "Vẫn cặp công thức ấy nhưng với số thập phân. Đáp án phải qua cả hai trạm kiểm: trạm tổng và trạm hiệu."
-  },
-  "knowledgeCore": {
-    "statements": [
+    "answerKey": {
+     "choice": "cả trạm tổng lẫn trạm hiệu"
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "A2",
+    "format": "mb",
+    "text": "Tổng 9,5, hiệu 1,3 → hai số? (nhập 5.4)",
+    "answerKey": {
+     "parts": [
       {
-        "id": "K1",
-        "text": "Luật y nguyên trên thập phân: lớn = (tổng + hiệu) : 2; bé = (tổng − hiệu) : 2 — dấu phẩy không đổi luật, chỉ đòi thẳng hàng khi cộng trừ (9,5 + 1,3 = 10,8) và cẩn thận khi chia đôi (10,8 : 2 = 5,4)."
+       "label": "lớn",
+       "value": 5.4
       },
       {
-        "id": "K2",
-        "text": "PHÉP THỬ HAI TRẠM là nghi thức đóng bài: trạm TỔNG (5,4 + 4,1 = 9,5 ✓) và trạm HIỆU (5,4 − 4,1 = 1,3 ✓) — qua một trạm chưa đủ, phải qua cả hai."
+       "label": "bé",
+       "value": 4.1
+      }
+     ]
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "mb",
+    "text": "Tổng = số lớn nhất có hai chữ số, hiệu = số lẻ bé nhất có hai chữ số → hai số?",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "lớn",
+       "value": 55
       },
       {
-        "id": "K3",
-        "text": "Đề chữ cần DỊCH ra bộ tổng – hiệu trước: \"số lớn nhất có hai chữ số\" = 99; \"số lẻ bé nhất có hai chữ số\" = 11 — dịch xong mới lắp công thức."
+       "label": "bé",
+       "value": 44
       }
+     ]
+    },
+    "teaches": [
+     "K3"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Tổng – hiệu thập phân có luật riêng không? Nghi thức đóng bài?",
+    "back": "KHÔNG — dấu phẩy không đổi luật: (tổng ± hiệu) : 2, chỉ cần thẳng hàng và nhớ chia 2 (9,5 & 1,3 → 5,4 & 4,1). Nghi thức: THỬ HAI TRẠM tổng + hiệu ((33;17) lọt trạm tổng mà chết trạm hiệu). Đề chữ: dịch ra số trước (99; 11 → 55; 44)."
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (dịch chữ)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con chạy tổng – hiệu trên số thập phân và rèn phép thử hai trạm. Con đạt {score}/3.",
+  "homeActivity": "Đọc đề miệng 'tổng 7,6 hiệu 1,2' — con tính rồi tự hô 'trạm tổng đèn xanh, trạm hiệu đèn xanh' mới được chốt.",
+  "watchFor": "Nếu con quên chia 2 — hỏi 'số lớn mà to hơn cả tổng à?' (S2)."
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B25.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "9,5 và 1,3 — luật mới??",
+    "lines": [
+     {
+      "who": "Trí Long",
+      "say": "Số thập phân… chắc phải có luật riêng?",
+      "tone": "wrong"
+     },
+     {
+      "who": "Su Kem",
+      "say": "Máy này chạy được hết — dấu phẩy không đổi luật.",
+      "tone": "right"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B25_M2_F1.png",
+   "sha256_16": "e171bec01ec2a537"
+  },
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Tổng – hiệu trên số thập phân & phép thử hai trạm",
+    "steps": [
+     {
+      "text": "(33; 17): trạm tổng — trạm hiệu → loại"
+     },
+     {
+      "text": "dịch chữ: tổng 99 · hiệu 11"
+     },
+     {
+      "text": "(99 + 11) : 2 = 55 → 55 và 44"
+     }
     ],
-    "mechanism": "Hình ảnh brand: TRẠM CÂN ĐÔI CUỐI ĐƯỜNG. Mọi bài tổng – hiệu, dù mang dấu phẩy hay khoác áo chữ, đều phải qua HAI TRẠM CÂN trước khi xuất xưởng: trạm TỔNG và trạm HIỆU. Bài 9,5 và 1,3: cỗ máy chạy y luật cũ — cộng thẳng hàng ra 10,8, chia đôi ra 5,4; số bé lấy 9,5 trừ 5,4 bằng 4,1. Xe chở cặp (5,4 ; 4,1) lăn qua trạm tổng: 9,5 — đèn xanh; qua trạm hiệu: 1,3 — đèn xanh: xuất xưởng! Vì sao phải đủ hai trạm? Cặp sai (33 ; 17) của bài trước qua lọt trạm tổng mà chết ở trạm hiệu — một trạm là chưa đủ tin. Đề sư phụ giấu số sau chữ: \"tổng là số lớn nhất có hai chữ số, hiệu là số lẻ bé nhất có hai chữ số\" — dịch: 99 và 11, rồi máy chạy như thường: 55 và 44.",
-    "canonicalExamples": [
-      {
-        "case": "thập phân (ca lõi)",
-        "problem": "Tổng hai số là 9,5 và hiệu hai số là 1,3. Tìm hai số.",
-        "solution": "Lớn = (9,5 + 1,3) : 2 = 10,8 : 2 = 5,4; bé = 9,5 − 5,4 = 4,1. Thử: 5,4 + 4,1 = 9,5 ✓; 5,4 − 4,1 = 1,3 ✓.",
-        "why": "Ca đề A câu 2 — dấu phẩy không đổi luật, nhớ chia 2."
-      },
-      {
-        "case": "dịch chữ ra số (ca sư phụ)",
-        "problem": "Tổng của hai số là số lớn nhất có hai chữ số; hiệu của chúng là số lẻ bé nhất có hai chữ số. Tìm hai số.",
-        "solution": "Dịch: tổng = 99; hiệu = 11. Lớn = (99 + 11) : 2 = 55; bé = 44. Thử: 55 + 44 = 99 ✓; 55 − 44 = 11 ✓.",
-        "why": "Ca LT9 — hai lớp: dịch rồi mới lắp máy."
-      }
-    ],
-    "numberRange": "Lớp 5: thập phân 1 chữ số phần thập phân; tổng + hiệu chia hết cho 2 (hoặc chia được gọn).",
-    "misconceptions": [
-      {
-        "wrong": "Trên thập phân, cộng tổng với hiệu xong QUÊN chia 2 (10,8 làm luôn số lớn) — hoặc thử mỗi trạm tổng rồi nộp.",
-        "signal": "Số lớn to hơn cả tổng; hoặc bài không có dòng thử hiệu.",
-        "fix": "K1 + K2 — dấu phẩy làm rối mắt nhưng luật y nguyên: (tổng + hiệu) : 2 đủ ba phép; thử ĐỦ hai trạm mới đóng bài.",
-        "counterExample": "10,8 > 9,5 — số lớn vượt tổng: vô lý ngay từ ước lượng."
-      }
-    ],
-    "vocabulary": [
-      "trạm cân đôi cuối đường",
-      "đèn xanh hai trạm",
-      "cộng trừ thẳng hàng",
-      "dịch chữ ra số"
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B25_M2_F2.png",
+   "sha256_16": "38557313693d498d"
+  },
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Luật y nguyên trên thập phân",
+      "text": "lớn = (tổng + hiệu) : 2; bé = (tổng − hiệu) : 2 — dấu phẩy không đổi luật, chỉ đòi thẳng hàng khi cộng trừ (9,5 + 1,3 = 10,8) và cẩn thận khi chia đôi (10,8 : 2 = 5,4).",
+      "tone": "navy"
+     },
+     {
+      "label": "PHÉP THỬ HAI TRẠM là nghi thức đóng bài",
+      "text": "trạm TỔNG (5,4 + 4,1 = 9,5 ) và trạm HIỆU (5,4 − 4,1 = 1,3 ) — qua một trạm chưa đủ, phải qua cả hai.",
+      "tone": "teal"
+     }
     ],
     "mantra": "DẤU PHẨY KHÔNG ĐỔI LUẬT — ĐÁP PHẢI QUA CẢ HAI TRẠM!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B25_M2_F3.png",
+   "sha256_16": "15a1e50f8ae980e1"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "num",
-        "text": "10,8 : 2 = ? (điền dạng thập phân, ví dụ 5,4 → nhập 5.4)",
-        "answerKey": {
-          "value": 5.4
-        }
-      }
-    ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B13.M1",
-      "message": "Ôn phép chia thập phân Bài 13 rồi ra trạm cân nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 18,
-        "narration": "Đề mang dấu phẩy: tổng 9,5 — hiệu 1,3. Trí Long chột dạ: \"Số thập phân… chắc phải có luật riêng?\" Cáo Đề gật gù mời chào công thức mới. Su Kem lắc đầu chỉ vào cỗ máy cũ: \"Máy này chạy được hết — dấu phẩy không đổi luật.\"",
-        "display": {
-          "type": "story_panel",
-          "caption": "9,5 và 1,3 — luật mới??"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để nổ máy cũ!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 42,
-        "teaches": [
-          "K1"
-        ],
-        "narration": "Máy cũ chạy: cộng thẳng hàng — chín phẩy năm cộng một phẩy ba bằng MƯỜI PHẨY TÁM; chia đôi — NĂM PHẨY BỐN: số lớn! Số bé: chín phẩy năm trừ năm phẩy bốn bằng BỐN PHẨY MỘT. Chỉ hai chỗ cần căn ke: cộng trừ phải THẲNG HÀNG dấu phẩy, và đừng quên nhịp CHIA ĐÔI — mười phẩy tám còn to hơn cả tổng, đâu thể là số lớn!",
-        "display": {
-          "type": "decimal_machine_interactive",
-          "spec": {
-            "sum": 9.5,
-            "diff": 1.3,
-            "big": 5.4,
-            "small": 4.1,
-            "warn": "10,8 > 9,5 → chưa chia 2!"
-          }
-        },
-        "interaction": {
-          "type": "run_machine",
-          "answerKey": {
-            "values": [
-              5.4,
-              4.1
-            ]
-          },
-          "successMessage": "5,4 và 4,1 — luật y nguyên!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 15,
-        "item": {
-          "format": "mcq",
-          "text": "Đáp (5,4 ; 4,1) phải thử qua:",
-          "choices": [
-            "cả trạm tổng lẫn trạm hiệu",
-            "chỉ trạm tổng",
-            "chỉ trạm hiệu"
-          ],
-          "answerKey": {
-            "choice": "cả trạm tổng lẫn trạm hiệu"
-          },
-          "wrongFeedback": "Cặp (33; 17) từng lọt trạm tổng mà chết trạm hiệu!",
-          "objective": "O1",
-          "teaches": [
-            "K2"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 40,
-        "teaches": [
-          "K2",
-          "K3"
-        ],
-        "narration": "Vì sao đủ HAI trạm? Nhớ cặp gian lận ba ba — mười bảy: qua lọt trạm tổng năm mươi, nhưng trạm hiệu tuýt còi mười sáu! Một trạm là chưa đủ tin — hai đèn xanh mới xuất xưởng. Đề sư phụ còn giấu số sau chữ: tổng là SỐ LỚN NHẤT CÓ HAI CHỮ SỐ — chín chín; hiệu là SỐ LẺ BÉ NHẤT CÓ HAI CHỮ SỐ — mười một. Dịch xong máy chạy như thường: NĂM LĂM và BỐN BỐN!",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "(33; 17): trạm tổng ✓ — trạm hiệu ✗ → loại",
-            "dịch chữ: tổng 99 · hiệu 11",
-            "(99 + 11) : 2 = 55 → 55 và 44 ✓✓"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 12,
-        "narration": "Thần chú trạm cân: dấu phẩy không đổi luật — đáp phải qua cả hai trạm!",
-        "display": {
-          "type": "mantra_card",
-          "text": "QUA CẢ HAI TRẠM!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 89,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  {
+   "archetype": "sum_diff_bars",
+   "params": {
+    "title": "DẤU PHẨY KHÔNG ĐỔI LUẬT: TỔNG 9,5 · HIỆU 1,3",
+    "small": {
+     "label": "số bé 4,1",
+     "val": 4.1
     },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    "big": {
+     "label": "số lớn 5,4",
+     "val": 5.4
     },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Đề mang dấu phẩy: tổng chín phẩy năm — hiệu một phẩy ba. Trí Long chột dạ: số thập phân… chắc phải có luật riêng? Cáo Đề gật gù mời chào công thức mới. Su Kem lắc đầu chỉ vào cỗ máy cũ: máy này chạy được hết — dấu phẩy không đổi luật!",
-        "screenText": "tổng 9,5 · hiệu 1,3 — cần luật mới?",
-        "visual": "Cỗ máy tổng-hiệu quen thuộc; Cáo Đề chào bán 'công thức thập phân' dỏm; Su Kem phủi bụi máy cũ.",
-        "assets": [],
-        "duration": 19
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Máy cũ chạy: cộng thẳng hàng — chín phẩy năm cộng một phẩy ba bằng MƯỜI PHẨY TÁM; chia đôi — NĂM PHẨY BỐN: số lớn! Số bé: chín phẩy năm trừ năm phẩy bốn bằng BỐN PHẨY MỘT. Hai chỗ căn ke: cộng trừ phải THẲNG HÀNG dấu phẩy, và đừng quên nhịp CHIA ĐÔI — mười phẩy tám còn to hơn cả tổng, đâu thể là số lớn!",
-        "screenText": "(9,5 + 1,3) : 2 = 5,4 · bé = 4,1 (10,8 chưa chia ✗)",
-        "visual": "Phép cộng thẳng cột dấu phẩy khớp hàng; băng chuyền qua nhịp ':2'; số 10,8 bị chặn ở cổng với biển 'to hơn tổng!'.",
-        "assets": [],
-        "duration": 25
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Vì sao đủ HAI trạm? Nhớ cặp gian lận ba ba — mười bảy: qua lọt trạm tổng năm mươi, nhưng trạm hiệu tuýt còi mười sáu! Hai đèn xanh mới xuất xưởng. Đề sư phụ giấu số sau chữ: tổng là SỐ LỚN NHẤT CÓ HAI CHỮ SỐ — chín chín; hiệu là SỐ LẺ BÉ NHẤT CÓ HAI CHỮ SỐ — mười một. Dịch xong máy chạy như thường: NĂM LĂM và BỐN BỐN!",
-        "screenText": "2 trạm cân: tổng ✓ + hiệu ✓ · dịch 99 & 11 → 55 · 44",
-        "visual": "Hai trạm cân nối tiếp với đèn xanh đôi; cặp 33·17 bị giữ ở trạm hai; tấm đề chữ được phiên dịch ra 99 và 11.",
-        "assets": [],
-        "duration": 27
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú trạm cân: dấu phẩy không đổi luật — đáp phải qua cả hai trạm!",
-        "screenText": "DẤU PHẨY KHÔNG ĐỔI LUẬT · QUA 2 TRẠM!",
-        "visual": "Thẻ thần chú vàng với icon hai trạm đèn xanh.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Chuyến xe của con: tổng chín phẩy năm, hiệu một phẩy ba — tìm hai số và cho xe qua đủ hai trạm! Vào bài luyện ngay!",
-        "screenText": "9,5 · 1,3 → ? qua 2 trạm",
-        "visual": "Xe chở cặp số trống chờ xuất phát; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P1",
-        "assets": [],
-        "duration": 10
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Chuyến xe qua hai trạm",
-    "problem": "Tổng hai số là 9,5 và hiệu hai số là 1,3. Tìm hai số.",
-    "steps": [
-      {
-        "show": "Bước 1 — Lớn = (9,5 + 1,3) : 2 = 10,8 : 2 = 5,4 (nhớ nhịp chia 2!).",
-        "askBefore": {
-          "format": "mcq",
-          "text": "10,8 có thể là số lớn không?",
-          "choices": [
-            "Không — to hơn cả tổng",
-            "Có",
-            "Tùy"
-          ],
-          "answerKey": {
-            "choice": "Không — to hơn cả tổng"
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Bé = 9,5 − 5,4 = 4,1."
-      },
-      {
-        "show": "Bước 3 — Hai trạm: 5,4 + 4,1 = 9,5 ✓ và 5,4 − 4,1 = 1,3 ✓ — xuất xưởng.",
-        "askAfter": {
-          "format": "mb",
-          "text": "Tổng 7,6, hiệu 1,2 → hai số? (nhập 4.4 và 3.2)",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "lớn",
-                "value": 4.4
-              },
-              {
-                "label": "bé",
-                "value": 3.2
-              }
-            ]
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B25.LT4",
-          "text": "Tổng hai số là 9,5 và hiệu hai số là 1,3. Tìm hai số. (nhập dạng 5.4)",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "lớn",
-                "value": 5.4
-              },
-              {
-                "label": "bé",
-                "value": 4.1
-              }
-            ]
-          },
-          "hints": [
-            "Cộng thẳng hàng: 10,8.",
-            "Chia đôi rồi trừ ngược."
-          ],
-          "solutionNarrative": "Lớn 5,4; bé 4,1 (hai trạm ✓✓).",
-          "teaches": [
-            "K1",
-            "K2"
-          ],
-          "generator": {
-            "template": "Tổng {S,x} hiệu {d,y} thập phân. Tìm hai số.",
-            "constraints": {},
-            "answerRule": "(S ± d) : 2, thử hai trạm"
-          }
-        }
-      ],
-      "standard": [
-        {
-          "id": "P2",
-          "format": "mb",
-          "text": "Tổng hai số là 12,8 và hiệu là 2,4. Tìm hai số. (nhập dạng 7.6)",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "lớn",
-                "value": 7.6
-              },
-              {
-                "label": "bé",
-                "value": 5.2
-              }
-            ]
-          },
-          "hints": [
-            "(12,8 + 2,4) : 2.",
-            "Thử đủ hai trạm."
-          ],
-          "solutionNarrative": "Lớn 7,6; bé 5,2.",
-          "teaches": [
-            "K1",
-            "K2"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P3",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B25.LT9",
-          "text": "Sư phụ Trí Dũng đố: \"Tổng của hai số là số lớn nhất có hai chữ số; hiệu của chúng là số lẻ bé nhất có hai chữ số. Tìm hai số.\"",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "lớn",
-                "value": 55
-              },
-              {
-                "label": "bé",
-                "value": 44
-              }
-            ]
-          },
-          "hints": [
-            "Dịch chữ: 99 và 11.",
-            "(99 + 11) : 2."
-          ],
-          "solutionNarrative": "55 và 44 (thử 99 ✓ và 11 ✓).",
-          "teaches": [
-            "K3"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:III.2.1#2@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B25.M3",
-      "award": "huy_hieu_tram_can_doi"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B25.QZ5",
-        "text": "Đáp số tổng – hiệu phải thử qua:",
-        "choices": [
-          "cả trạm tổng lẫn trạm hiệu",
-          "chỉ trạm tổng",
-          "chỉ trạm hiệu"
-        ],
-        "answerKey": {
-          "choice": "cả trạm tổng lẫn trạm hiệu"
-        },
-        "mustPass": true,
-        "teaches": [
-          "K2"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "mb",
-        "text": "Tổng 9,5, hiệu 1,3 → hai số? (nhập 5.4)",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "lớn",
-              "value": 5.4
-            },
-            {
-              "label": "bé",
-              "value": 4.1
-            }
-          ]
-        },
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "mb",
-        "text": "Tổng = số lớn nhất có hai chữ số, hiệu = số lẻ bé nhất có hai chữ số → hai số?",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "lớn",
-              "value": 55
-            },
-            {
-              "label": "bé",
-              "value": 44
-            }
-          ]
-        },
-        "teaches": [
-          "K3"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Tổng – hiệu thập phân có luật riêng không? Nghi thức đóng bài?",
-        "back": "KHÔNG — dấu phẩy không đổi luật: (tổng ± hiệu) : 2, chỉ cần thẳng hàng và nhớ chia 2 (9,5 & 1,3 → 5,4 & 4,1). Nghi thức: THỬ HAI TRẠM tổng + hiệu ((33;17) lọt trạm tổng mà chết trạm hiệu). Đề chữ: dịch ra số trước (99; 11 → 55; 44)."
-      }
-    ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P3 (dịch chữ)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con chạy tổng – hiệu trên số thập phân và rèn phép thử hai trạm. Con đạt {score}/3.",
-    "homeActivity": "Đọc đề miệng 'tổng 7,6 hiệu 1,2' — con tính rồi tự hô 'trạm tổng đèn xanh, trạm hiệu đèn xanh' mới được chốt.",
-    "watchFor": "Nếu con quên chia 2 — hỏi 'số lớn mà to hơn cả tổng à?' (S2)."
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B25.M2",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "9,5 và 1,3 — luật mới??",
-        "lines": [
-          {
-            "who": "Trí Long",
-            "say": "Số thập phân… chắc phải có luật riêng?",
-            "tone": "wrong"
-          },
-          {
-            "who": "Su Kem",
-            "say": "Máy này chạy được hết — dấu phẩy không đổi luật.",
-            "tone": "right"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B25_M2_F1.png",
-      "sha256_16": "e171bec01ec2a537"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con chạy trơn cặp công thức tổng – hiệu trên SỐ THẬP PHÂN (dấu phẩy không đổi luật — chỉ đòi cẩn thận ở phép cộng trừ thẳng hàng và phép chia đôi), và rèn PHÉP THỬ HAI TRẠM thành nghi thức bắt buộc: đáp phải qua cả trạm tổng lẫn trạm hiệu.",
-        "steps": [
-          {
-            "text": "(33; 17): trạm tổng — trạm hiệu → loại"
-          },
-          {
-            "text": "dịch chữ: tổng 99 · hiệu 11"
-          },
-          {
-            "text": "(99 + 11) : 2 = 55 → 55 và 44"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B25_M2_F2.png",
-      "sha256_16": "41a6f0aaea958e7e"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Luật y nguyên trên thập phân",
-            "text": "lớn = (tổng + hiệu) : 2; bé = (tổng − hiệu) : 2 — dấu phẩy không đổi luật, chỉ đòi thẳng hàng khi cộng trừ (9,5 + 1,3 = 10,8) và cẩn thận khi chia đôi (10,8 : 2 = 5,4).",
-            "tone": "navy"
-          },
-          {
-            "label": "PHÉP THỬ HAI TRẠM là nghi thức đóng bài",
-            "text": "trạm TỔNG (5,4 + 4,1 = 9,5 ) và trạm HIỆU (5,4 − 4,1 = 1,3 ) — qua một trạm chưa đủ, phải qua cả hai.",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "DẤU PHẨY KHÔNG ĐỔI LUẬT — ĐÁP PHẢI QUA CẢ HAI TRẠM!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B25_M2_F3.png",
-      "sha256_16": "15a1e50f8ae980e1"
-    },
-    {
-      "archetype": "sum_diff_bars",
-      "params": {
-        "title": "DẤU PHẨY KHÔNG ĐỔI LUẬT: TỔNG 9,5 · HIỆU 1,3",
-        "small": {
-          "label": "số bé 4,1",
-          "val": 4.1
-        },
-        "big": {
-          "label": "số lớn 5,4",
-          "val": 5.4
-        },
-        "diff_label": "hiệu 1,3",
-        "total_label": "tổng 9,5",
-        "formula": "lớn = (9,5 + 1,3) : 2 = 5,4    ·    bé = 9,5 − 5,4 = 4,1",
-        "note": "Ca sư phụ dịch chữ ra số: tổng = 99 · hiệu = 11 → 55 và 44"
-      },
-      "caption": "Chỉ cần cẩn thận đặt thẳng hàng dấu phẩy khi cộng trừ",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B25_M2_F4.png",
-      "sha256_16": "017a63ca1405e8a7"
-    }
-  ]
+    "diff_label": "hiệu 1,3",
+    "total_label": "tổng 9,5",
+    "formula": "lớn = (9,5 + 1,3) : 2 = 5,4 · bé = 9,5 − 5,4 = 4,1",
+    "note": "Ca sư phụ dịch chữ ra số: tổng = 99 · hiệu = 11 → 55 và 44"
+   },
+   "caption": "Chỉ cần cẩn thận đặt thẳng hàng dấu phẩy khi cộng trừ",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B25_M2_F4.png",
+   "sha256_16": "bb2c857c658fafba"
+  }
+ ]
 }

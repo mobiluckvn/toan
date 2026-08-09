@@ -1,627 +1,627 @@
 {
-  "title": "Vá cho tròn: BỚT bằng dư — THÊM bằng bù",
-  "grade": 5,
-  "durationMinutes": 8,
-  "skills": {
-    "primary": [
-      "CASE:I.6.3#2"
+ "title": "Vá cho tròn: BỚT bằng dư — THÊM bằng bù",
+ "grade": 5,
+ "durationMinutes": 8,
+ "skills": {
+  "primary": [
+   "CASE:I.6.3#2"
+  ],
+  "bktUnit": "CASE:I.6.3#2@G5"
+ },
+ "series": {
+  "parentBookLesson": "LESSON:KSN5Q1.B10",
+  "order": 2,
+  "prev": "DL:KSN5Q1.B10.M1",
+  "next": "DL:KSN5Q1.B10.M3"
+ },
+ "sourceRef": {
+  "book": "LESSON:KSN5Q1.B10",
+  "chunks": [
+   "CHUNK:KSN5Q1.B10.S4",
+   "CHUNK:KSN5Q1.B10.S5"
+  ],
+  "cases": [
+   "CA:KSN5Q1.B10.2"
+  ],
+  "traps": [
+   "TRAP:KSN5Q1.B10.2"
+  ]
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Con \"vá\" được một số cho chia hết: BỚT đi đúng SỐ DƯ (lùi về vạch sau) hoặc THÊM đúng PHẦN BÙ = số chia − dư (tiến tới vạch trước) — và hiểu vì sao hai đáp số cộng lại đúng bằng số chia.",
+  "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (thêm = bù, không phải dư)",
+  "kidText": "Muốn một số chia hết: bớt đi đúng số dư, hoặc thêm vào đúng phần còn thiếu. Hai cách cộng lại vừa tròn một khoảng."
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Muốn BỚT ít nhất để chia hết: bớt đúng SỐ DƯ (100 : 9 dư 1 → bớt 1 được 99)."
+   },
+   {
+    "id": "K2",
+    "text": "Muốn THÊM ít nhất để chia hết: thêm PHẦN BÙ = số chia − dư (dư 1, chia 9 → thêm 8 được 108)."
+   },
+   {
+    "id": "K3",
+    "text": "Hai cửa ngược chiều nhau và cộng lại tròn một khoảng: bớt + thêm = dư + bù = số chia."
+   },
+   {
+    "id": "K4",
+    "text": "Nghi thức: vẽ CON ĐƯỜNG KẺ VẠCH — chấm vị trí mình đứng, hỏi \"vạch sau cách mấy (= dư)? vạch trước cách mấy (= bù)?\" rồi mới trả lời."
+   }
+  ],
+  "mechanism": "Hình ảnh brand: CON ĐƯỜNG KẺ VẠCH mỗi 9 mét một vạch sơn: 90 — 99 — 108 — 117… Số 100 đứng GIỮA đường, cách vạch 99 phía sau đúng 1 bước (số dư!) và cách vạch 108 phía trước đúng 8 bước (phần bù!). Muốn đứng lên vạch: LÙI 1 hoặc TIẾN 8 — hai lựa chọn ngược chiều, cộng lại đúng 9 mét tròn một khoảng vạch. Bẫy kinh điển: nghe \"thêm ít nhất\" mà đem cộng SỐ DƯ — tức tiến 1 bước tới… 101, vẫn lơ lửng giữa đường!",
+  "canonicalExamples": [
+   {
+    "case": "cửa THÊM (ca bẫy)",
+    "problem": "Phải thêm vào 100 ít nhất bao nhiêu đơn vị để được số chia hết cho 9?",
+    "solution": "100 : 9 = 11 dư 1 → thêm PHẦN BÙ 9 − 1 = 8, được 108 = 9 × 12 ✓. (Thêm 1 chỉ ra 101 — vẫn dư 2!)",
+    "why": "Ca đinh của bẫy CĐ-10.2."
+   },
+   {
+    "case": "cửa BỚT (ca đối chiếu)",
+    "problem": "Phải bớt đi ở 100 ít nhất bao nhiêu đơn vị để chia hết cho 9? So sánh với câu thêm.",
+    "solution": "Bớt đúng số dư: 1, được 99 = 9 × 11 ✓. Hai đáp 1 + 8 = 9 — lùi tới vạch sau và tiến tới vạch trước cộng lại tròn một khoảng.",
+    "why": "cặp đối chiếu khắc luật."
+   }
+  ],
+  "numberRange": "Lớp 5: số đến 4 chữ số; số chia 3–9.",
+  "misconceptions": [
+   {
+    "wrong": "\"Thêm ít nhất\" = thêm đúng số dư (100 + 1 = 101).",
+    "signal": "Đáp án thêm trùng với số dư.",
+    "fix": "vẽ đường kẻ vạch: dư đo khoảng cách về vạch SAU; muốn tiến phải đo tới vạch TRƯỚC: bù = số chia − dư.",
+    "counterExample": "101 : 9 = 11 dư 2 — càng thêm càng lệch!"
+   }
+  ],
+  "vocabulary": [
+   "con đường kẻ vạch",
+   "vạch sau / vạch trước",
+   "phần bù = số chia − dư",
+   "lùi bằng dư — tiến bằng bù"
+  ],
+  "mantra": "BỚT BẰNG DƯ — THÊM BẰNG BÙ; CỘNG LẠI TRÒN MỘT KHOẢNG!"
+ },
+ "entryCheck": {
+  "items": [
+   {
+    "id": "E1",
+    "format": "mb",
+    "text": "100 : 9 = ? (thương và dư — bài trước)",
+    "answerKey": {
+     "parts": [
+      {
+       "label": "thương",
+       "value": 11
+      },
+      {
+       "label": "dư",
+       "value": 1
+      }
+     ]
+    }
+   }
+  ],
+  "onFail": {
+   "action": "suggest_review",
+   "target": "DL:KSN5Q1.B10.M1",
+   "message": "Ôn phép chia có dư rồi ra con đường kẻ vạch nhé!"
+  }
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "estSeconds": 18,
+    "narration": "Cáo Đề đố: \"100 chia 9 dư 1 — vậy THÊM ít nhất bao nhiêu vào 100 để chia hết cho 9?\" Trí Long nhanh nhảu: \"Dư 1 thì thêm 1 — 101!\" Su Kem bấm máy: 101 chia 9… vẫn dư 2?!",
+    "display": {
+     "type": "story_panel",
+     "caption": "thêm 1 → 101 vẫn dư??"
+    },
+    "interaction": {
+     "type": "tap_to_continue",
+     "prompt": "Chạm để ra con đường kẻ vạch!"
+    }
+   },
+   {
+    "id": "S2",
+    "kind": "guided_discovery",
+    "estSeconds": 44,
+    "teaches": [
+     "K1",
+     "K2",
+     "K4"
     ],
-    "bktUnit": "CASE:I.6.3#2@G5"
+    "narration": "Con đường sơn vạch mỗi 9 mét: 90 — 99 — 108. Con đặt số 100 lên đường: nó đứng giữa! Vạch SAU 99 cách 1 bước — đó chính là số dư: muốn BỚT thì lùi 1. Vạch TRƯỚC 108 cách 8 bước — đó là phần bù 9 trừ 1: muốn THÊM phải tiến đủ 8.",
+    "display": {
+     "type": "number_line_interactive",
+     "spec": {
+      "marks": [
+       90,
+       99,
+       108,
+       117
+      ],
+      "pos": 100,
+      "back": {
+       "to": 99,
+       "steps": 1,
+       "label": "BỚT = dư"
+      },
+      "forward": {
+       "to": 108,
+       "steps": 8,
+       "label": "THÊM = bù"
+      }
+     }
+    },
+    "interaction": {
+     "type": "walk_both_ways",
+     "successMessage": "Lùi 1 → 99 ✓ · Tiến 8 → 108 ✓ — thêm 1 chỉ tới 101, vẫn lơ lửng giữa đường!"
+    }
+   },
+   {
+    "id": "C1",
+    "kind": "checkpoint",
+    "estSeconds": 16,
+    "item": {
+     "format": "num",
+     "text": "Phải bớt 100 đi ít nhất bao nhiêu để chia hết cho 9?",
+     "answerKey": {
+      "value": 1
+     },
+     "wrongFeedback": "Bớt đúng số dư — lùi về vạch 99.",
+     "objective": "O1",
+     "teaches": [
+      "K1"
+     ],
+     "id": "C1"
+    }
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "estSeconds": 34,
+    "teaches": [
+     "K3"
+    ],
+    "narration": "Nhìn lại hai đáp: bớt 1 và thêm 8 — cộng lại đúng 9, tròn một khoảng vạch! Đây là phép thử nhanh: nếu \"bớt\" cộng \"thêm\" của con không bằng số chia, chắc chắn có một cửa tính sai. Luật bỏ túi: bớt bằng dư — thêm bằng bù.",
+    "display": {
+     "type": "step_by_step",
+     "lines": [
+      "BỚT 1 (dư) → 99 ✓",
+      "THÊM 8 (bù = 9 − 1) → 108 ✓",
+      "kiểm: 1 + 8 = 9 = số chia ✓"
+     ]
+    }
+   },
+   {
+    "id": "S4",
+    "kind": "mantra",
+    "estSeconds": 13,
+    "narration": "Câu cần nhớ: bớt bằng dư — thêm bằng bù; cộng lại tròn một khoảng!",
+    "display": {
+     "type": "mantra_card",
+     "text": "BỚT BẰNG DƯ — THÊM BẰNG BÙ!"
+    },
+    "interaction": {
+     "type": "read_aloud_or_tap",
+     "prompt": "Đọc to rồi vào phòng luyện!"
+    }
+   }
+  ]
+ },
+ "videoSpec": {
+  "renderProfile": "vertical_9x16 1080x1920",
+  "maxDuration": 90,
+  "totalDuration": 75,
+  "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
+  "brand": {
+   "colors": {
+    "nen": "#FFFFFF",
+    "xanh_khien": "#0B4EA8",
+    "ngoc": "#1FCBAB",
+    "vang": "#F9B233",
+    "do_bay": "#C0392B"
+   },
+   "font": "chữ tròn dày, cỡ lớn",
+   "logo": "MOBILUCK góc dưới phải, mờ 60%"
   },
-  "series": {
-    "parentBookLesson": "LESSON:KSN5Q1.B10",
-    "order": 2,
-    "prev": "DL:KSN5Q1.B10.M1",
-    "next": "DL:KSN5Q1.B10.M3"
+  "voice": {
+   "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
+   "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
   },
-  "sourceRef": {
-    "book": "LESSON:KSN5Q1.B10",
-    "chunks": [
-      "CHUNK:KSN5Q1.B10.S4",
-      "CHUNK:KSN5Q1.B10.S5"
-    ],
-    "cases": [
-      "CA:KSN5Q1.B10.2"
-    ],
-    "traps": [
-      "TRAP:KSN5Q1.B10.2"
+  "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
+  "scenes": [
+   {
+    "no": 1,
+    "templateHint": "title_hook",
+    "derivedFromScreen": "S1",
+    "transitionOut": "wipe trái",
+    "voiceover": "Cáo Đề đố: một trăm chia chín dư một — vậy THÊM ít nhất bao nhiêu vào một trăm để chia hết cho chín? Trí Long nhanh nhảu: dư một thì thêm một — một linh một! Su Kem bấm máy: một linh một chia chín… vẫn dư HAI?!",
+    "screenText": "thêm 1 → 101 vẫn dư 2??",
+    "visual": "Máy tính hiện '101 : 9 = 11 dư 2' đèn đỏ; Trí Long ngơ ngác; Cáo Đề cười khẩy.",
+    "assets": [],
+    "duration": 18
+   },
+   {
+    "no": 2,
+    "templateHint": "concept_diagram",
+    "derivedFromScreen": "S2",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Ra con đường sơn vạch mỗi chín mét: chín mươi — chín chín — một không tám. Số một trăm đứng GIỮA đường! Vạch SAU chín chín cách MỘT bước — chính là số dư: muốn bớt thì lùi một. Vạch TRƯỚC một không tám cách TÁM bước — phần bù chín trừ một: muốn thêm phải tiến đủ tám!",
+    "screenText": "99 ←1— [100] —8→ 108",
+    "visual": "Trục đường với vạch sơn vàng 90·99·108; nhân vật 100 đứng giữa; mũi tên lùi '1 = DƯ' đỏ và mũi tên tiến '8 = BÙ' xanh #1FCBAB.",
+    "assets": [],
+    "duration": 22
+   },
+   {
+    "no": 3,
+    "templateHint": "step_by_step",
+    "derivedFromScreen": "S3",
+    "transitionOut": "cắt thẳng",
+    "voiceover": "Nhìn lại hai đáp: bớt MỘT và thêm TÁM — cộng lại đúng CHÍN, tròn một khoảng vạch! Đây là phép thử nhanh: nếu bớt cộng thêm không bằng số chia, chắc chắn một cửa tính sai. Luật bỏ túi: bớt bằng dư — thêm bằng bù!",
+    "screenText": "1 + 8 = 9 ✓ (phép thử nhanh)",
+    "visual": "Hai mũi tên gộp thành một khoảng vạch trọn; phép '1 + 8 = 9' đóng khung vàng.",
+    "assets": [],
+    "duration": 17
+   },
+   {
+    "no": 4,
+    "templateHint": "mantra_card",
+    "derivedFromScreen": "S4",
+    "transitionOut": "zoom nhẹ",
+    "voiceover": "Thần chú vá đường: bớt bằng dư — thêm bằng bù; cộng lại tròn một khoảng!",
+    "screenText": "BỚT = DƯ · THÊM = BÙ!",
+    "visual": "Thẻ thần chú vàng với icon vạch đường.",
+    "assets": [],
+    "duration": 8
+   },
+   {
+    "no": 5,
+    "templateHint": "cta_practice",
+    "transitionOut": "kết",
+    "voiceover": "Vá thử nào: số hai trăm lẻ ba chia bảy dư mấy — bớt bao nhiêu, thêm bao nhiêu cho chia hết? Vào bài luyện ngay!",
+    "screenText": "203 : 7 → bớt? thêm?",
+    "visual": "Con đường vạch 7 mét với 203 đứng giữa; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
+    "linkItem": "P3",
+    "assets": [],
+    "duration": 10
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Vá số 100 trên đường vạch 9",
+  "problem": "Phải thêm vào 100 ít nhất bao nhiêu đơn vị để được số chia hết cho 9? Còn bớt thì sao?",
+  "steps": [
+   {
+    "show": "Bước 1 — Định vị: 100 : 9 = 11 dư 1 → đứng sau vạch 99 một bước.",
+    "askBefore": {
+     "format": "num",
+     "text": "100 : 9 dư mấy?",
+     "answerKey": {
+      "value": 1
+     },
+     "id": "W1"
+    }
+   },
+   {
+    "show": "Bước 2 — Cửa BỚT: lùi đúng dư = 1 → 99 = 9 × 11 ✓."
+   },
+   {
+    "show": "Bước 3 — Cửa THÊM: tiến phần bù = 9 − 1 = 8 → 108 = 9 × 12 ✓. Kiểm: 1 + 8 = 9 ✓.",
+    "askAfter": {
+     "format": "num",
+     "text": "Số 50 chia 7 dư 1 — thêm ít nhất bao nhiêu để chia hết cho 7?",
+     "answerKey": {
+      "value": 6
+     },
+     "id": "W2"
+    }
+   }
+  ]
+ },
+ "practice": {
+  "adaptiveRules": {
+   "start": "warmup",
+   "promote": "đúng 2 câu liên tiếp → lên mức",
+   "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
+  },
+  "pools": {
+   "warmup": [
+    {
+     "id": "P1",
+     "format": "num",
+     "sourceItem": "ITEM:KSN5Q1.B10.LT3",
+     "text": "Phải thêm vào 100 ít nhất bao nhiêu đơn vị để được số chia hết cho 9?",
+     "answerKey": {
+      "value": 8
+     },
+     "hints": [
+      "Dư 1 — nhưng thêm có bằng dư không?",
+      "Bù = 9 − 1."
+     ],
+     "solutionNarrative": "Thêm phần bù 9 − 1 = 8 (được 108 chia hết cho 9).",
+     "teaches": [
+      "K2",
+      "K4"
+     ],
+     "generator": {
+      "template": "Phải thêm vào {a} ít nhất bao nhiêu để chia hết cho {d}?",
+      "constraints": {
+       "d": "3–9"
+      },
+      "answerRule": "d − (a mod d)"
+     }
+    },
+    {
+     "id": "P2",
+     "format": "mb",
+     "sourceItem": "ITEM:KSN5Q1.B10.LT4",
+     "text": "Phải bớt đi ở 100 ít nhất bao nhiêu đơn vị để được số chia hết cho 9? So sánh với câu \"thêm\" và giải thích.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bớt",
+        "value": 1
+       },
+       {
+        "label": "so sánh",
+        "value": "1 + 8 = 9 — lùi vạch sau và tiến vạch trước cộng lại tròn một khoảng"
+       }
+      ]
+     },
+     "hints": [
+      "Bớt = đúng số dư.",
+      "Hai đáp cộng lại bằng gì?"
+     ],
+     "solutionNarrative": "Bớt 1 (→ 99); 1 + 8 = 9 = số chia.",
+     "teaches": [
+      "K1",
+      "K3"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "P3",
+     "format": "mb",
+     "text": "Số 203 chia 7 dư mấy? Bớt ít nhất bao nhiêu, thêm ít nhất bao nhiêu để 203 chia hết cho 7?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "dư",
+        "value": 0
+       },
+       {
+        "label": "bớt",
+        "value": 0
+       },
+       {
+        "label": "thêm",
+        "value": 0
+       }
+      ],
+      "note": "203 = 7 × 29 — đã đứng ngay trên vạch, khỏi vá!"
+     },
+     "hints": [
+      "Chia thử trước đã!",
+      "Đứng trên vạch thì lùi/tiến mấy bước?"
+     ],
+     "teaches": [
+      "K4"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "P4",
+     "format": "tf",
+     "text": "(Đúng/Sai?) Một số chia 8 dư 3 thì cần thêm ít nhất 3 đơn vị để chia hết cho 8.",
+     "answerKey": {
+      "value": false,
+      "note": "Thêm phần bù 8 − 3 = 5; thêm 3 mới tới giữa đường."
+     },
+     "hints": [
+      "Thêm bằng dư hay bằng bù?",
+      "8 − 3 = ?"
+     ],
+     "teaches": [
+      "K2"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "đúng từ 2 trên 3 câu, bắt buộc đúng A1",
+  "onPass": {
+   "updateBKT": [
+    "CASE:I.6.3#2@G5"
+   ],
+   "unlockNext": "DL:KSN5Q1.B10.M3",
+   "award": "huy_hieu_va_duong"
+  },
+  "onFail": {
+   "action": "review_screens",
+   "target": [
+    "S2",
+    "S3"
+   ],
+   "retryWith": "đề B sinh từ generator P1"
+  },
+  "items": [
+   {
+    "id": "A1",
+    "format": "tf",
+    "sourceItem": "ITEM:KSN5Q1.B10.QZ2",
+    "text": "(Đúng/Sai?) Muốn 100 chia hết cho 9, chỉ cần thêm vào đúng số dư của phép chia 100 : 9.",
+    "answerKey": {
+     "value": false
+    },
+    "mustPass": true,
+    "teaches": [
+     "K2"
     ]
+   },
+   {
+    "id": "A2",
+    "format": "mcq",
+    "sourceItem": "ITEM:KSN5Q1.B10.QZ5",
+    "text": "Bớt 100 đi bao nhiêu để chia hết cho 9?",
+    "choices": [
+     "1",
+     "8",
+     "9"
+    ],
+    "answerKey": {
+     "choice": "1"
+    },
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "A3",
+    "format": "num",
+    "text": "Số 75 chia 4 dư 3 — thêm ít nhất bao nhiêu để chia hết cho 4?",
+    "answerKey": {
+     "value": 1
+    },
+    "teaches": [
+     "K2"
+    ]
+   }
+  ]
+ },
+ "spacedReview": {
+  "flashcards": [
+   {
+    "front": "Vá một số cho chia hết — hai cửa tính thế nào? Phép thử nhanh?",
+    "back": "BỚT = đúng số DƯ (lùi vạch sau) · THÊM = PHẦN BÙ = số chia − dư (tiến vạch trước) · thử nhanh: bớt + thêm = số chia. BỚT BẰNG DƯ — THÊM BẰNG BÙ!"
+   }
+  ],
+  "schedule": [
+   "+1 ngày: flashcard",
+   "+3 ngày: câu generator P1",
+   "+7 ngày: câu P3 (đứng ngay vạch)"
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hôm nay con học vá số cho chia hết: bớt bằng dư, thêm bằng bù, hai đáp cộng lại bằng số chia. Con đạt {score}/3, {trapResult} câu bẫy thêm-nhầm-dư.",
+  "homeActivity": "Đố tiền lẻ: 'mẹ có 100 nghìn, muốn chia đều 9 phong bao — bớt hay thêm ít nhất bao nhiêu?' — con vẽ đường vạch và trả lời cả hai cửa là đạt.",
+  "watchFor": "Nếu con thêm đúng bằng số dư — dắt con đi bộ trên đường vạch (S2): tiến 1 bước có tới vạch không?"
+ },
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN5Q1.B10.M2",
+ "figureSpec": [
+  {
+   "archetype": "character_speech",
+   "params": {
+    "title": "thêm 1 → 101 vẫn dư??",
+    "lines": [
+     {
+      "who": "Cáo Đề",
+      "say": "100 chia 9 dư 1 — vậy THÊM ít nhất bao nhiêu vào 100 để chia hết cho 9?",
+      "tone": "wrong"
+     },
+     {
+      "who": "Trí Long",
+      "say": "Dư 1 thì thêm 1 — 101!",
+      "tone": "wrong"
+     }
+    ]
+   },
+   "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
+   "id": "F1",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/KSN5Q1_B10_M2_F1.png",
+   "sha256_16": "dadb89c5482c804a"
   },
-  "objective": {
-    "id": "O1",
-    "text": "Con \"vá\" được một số cho chia hết: BỚT đi đúng SỐ DƯ (lùi về vạch sau) hoặc THÊM đúng PHẦN BÙ = số chia − dư (tiến tới vạch trước) — và hiểu vì sao hai đáp số cộng lại đúng bằng số chia.",
-    "passRule": "assessment đúng ≥ 2/3, bắt buộc đúng A1 (thêm = bù, không phải dư)",
-    "kidText": "Muốn một số chia hết: bớt đi đúng số dư, hoặc thêm vào đúng phần còn thiếu. Hai cách cộng lại vừa tròn một khoảng."
+  {
+   "archetype": "ladder_steps",
+   "params": {
+    "title": "Vá cho tròn: BỚT bằng dư — THÊM bằng bù",
+    "steps": [
+     {
+      "text": "BỚT 1 (dư) → 99"
+     },
+     {
+      "text": "THÊM 8 (bù = 9 − 1) → 108"
+     },
+     {
+      "text": "kiểm: 1 + 8 = 9 = số chia"
+     }
+    ],
+    "note": "Làm đúng thứ tự từng bậc"
+   },
+   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
+   "id": "F2",
+   "usedIn": [
+    "teach_core"
+   ],
+   "file": "figures/KSN5Q1_B10_M2_F2.png",
+   "sha256_16": "a2eef4c64fdf1712"
   },
-  "knowledgeCore": {
-    "statements": [
-      {
-        "id": "K1",
-        "text": "Muốn BỚT ít nhất để chia hết: bớt đúng SỐ DƯ (100 : 9 dư 1 → bớt 1 được 99)."
-      },
-      {
-        "id": "K2",
-        "text": "Muốn THÊM ít nhất để chia hết: thêm PHẦN BÙ = số chia − dư (dư 1, chia 9 → thêm 8 được 108)."
-      },
-      {
-        "id": "K3",
-        "text": "Hai cửa ngược chiều nhau và cộng lại tròn một khoảng: bớt + thêm = dư + bù = số chia."
-      },
-      {
-        "id": "K4",
-        "text": "Nghi thức: vẽ CON ĐƯỜNG KẺ VẠCH — chấm vị trí mình đứng, hỏi \"vạch sau cách mấy (= dư)? vạch trước cách mấy (= bù)?\" rồi mới trả lời."
-      }
-    ],
-    "mechanism": "Hình ảnh brand: CON ĐƯỜNG KẺ VẠCH mỗi 9 mét một vạch sơn: 90 — 99 — 108 — 117… Số 100 đứng GIỮA đường, cách vạch 99 phía sau đúng 1 bước (số dư!) và cách vạch 108 phía trước đúng 8 bước (phần bù!). Muốn đứng lên vạch: LÙI 1 hoặc TIẾN 8 — hai lựa chọn ngược chiều, cộng lại đúng 9 mét tròn một khoảng vạch. Bẫy kinh điển: nghe \"thêm ít nhất\" mà đem cộng SỐ DƯ — tức tiến 1 bước tới… 101, vẫn lơ lửng giữa đường!",
-    "canonicalExamples": [
-      {
-        "case": "cửa THÊM (ca bẫy)",
-        "problem": "Phải thêm vào 100 ít nhất bao nhiêu đơn vị để được số chia hết cho 9?",
-        "solution": "100 : 9 = 11 dư 1 → thêm PHẦN BÙ 9 − 1 = 8, được 108 = 9 × 12 ✓. (Thêm 1 chỉ ra 101 — vẫn dư 2!)",
-        "why": "Ca đinh của bẫy CĐ-10.2."
-      },
-      {
-        "case": "cửa BỚT (ca đối chiếu)",
-        "problem": "Phải bớt đi ở 100 ít nhất bao nhiêu đơn vị để chia hết cho 9? So sánh với câu thêm.",
-        "solution": "Bớt đúng số dư: 1, được 99 = 9 × 11 ✓. Hai đáp 1 + 8 = 9 — lùi tới vạch sau và tiến tới vạch trước cộng lại tròn một khoảng.",
-        "why": "Ca K1+K3 — cặp đối chiếu khắc luật."
-      }
-    ],
-    "numberRange": "Lớp 5: số đến 4 chữ số; số chia 3–9.",
-    "misconceptions": [
-      {
-        "wrong": "\"Thêm ít nhất\" = thêm đúng số dư (100 + 1 = 101).",
-        "signal": "Đáp án thêm trùng với số dư.",
-        "fix": "K2 + K4 — vẽ đường kẻ vạch: dư đo khoảng cách về vạch SAU; muốn tiến phải đo tới vạch TRƯỚC: bù = số chia − dư.",
-        "counterExample": "101 : 9 = 11 dư 2 — càng thêm càng lệch!"
-      }
-    ],
-    "vocabulary": [
-      "con đường kẻ vạch",
-      "vạch sau / vạch trước",
-      "phần bù = số chia − dư",
-      "lùi bằng dư — tiến bằng bù"
+  {
+   "archetype": "formula_card",
+   "params": {
+    "title": "NGUYÊN TẮC CẦN NHỚ",
+    "formulas": [
+     {
+      "label": "Muốn BỚT ít nhất để chia hết",
+      "text": "bớt đúng SỐ DƯ (100 : 9 dư 1 → bớt 1 được 99).",
+      "tone": "navy"
+     },
+     {
+      "label": "Muốn THÊM ít nhất để chia hết",
+      "text": "thêm PHẦN BÙ = số chia − dư (dư 1, chia 9 → thêm 8 được 108).",
+      "tone": "teal"
+     }
     ],
     "mantra": "BỚT BẰNG DƯ — THÊM BẰNG BÙ; CỘNG LẠI TRÒN MỘT KHOẢNG!"
+   },
+   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
+   "id": "F3",
+   "usedIn": [
+    "mantra"
+   ],
+   "file": "figures/KSN5Q1_B10_M2_F3.png",
+   "sha256_16": "cdca768b39460d1c"
   },
-  "entryCheck": {
-    "items": [
-      {
-        "id": "E1",
-        "format": "mb",
-        "text": "100 : 9 = ? (thương và dư — bài trước)",
-        "answerKey": {
-          "parts": [
-            {
-              "label": "thương",
-              "value": 11
-            },
-            {
-              "label": "dư",
-              "value": 1
-            }
-          ]
-        }
-      }
-    ],
-    "onFail": {
-      "action": "suggest_review",
-      "target": "DL:KSN5Q1.B10.M1",
-      "message": "Ôn phép chia có dư rồi ra con đường kẻ vạch nhé!"
-    }
-  },
-  "lecture": {
-    "screens": [
-      {
-        "id": "S1",
-        "kind": "hook",
-        "estSeconds": 18,
-        "narration": "Cáo Đề đố: \"100 chia 9 dư 1 — vậy THÊM ít nhất bao nhiêu vào 100 để chia hết cho 9?\" Trí Long nhanh nhảu: \"Dư 1 thì thêm 1 — 101!\" Su Kem bấm máy: 101 chia 9… vẫn dư 2?!",
-        "display": {
-          "type": "story_panel",
-          "caption": "thêm 1 → 101 vẫn dư??"
-        },
-        "interaction": {
-          "type": "tap_to_continue",
-          "prompt": "Chạm để ra con đường kẻ vạch!"
-        }
-      },
-      {
-        "id": "S2",
-        "kind": "guided_discovery",
-        "estSeconds": 44,
-        "teaches": [
-          "K1",
-          "K2",
-          "K4"
-        ],
-        "narration": "Con đường sơn vạch mỗi 9 mét: 90 — 99 — 108. Con đặt số 100 lên đường: nó đứng giữa! Vạch SAU 99 cách 1 bước — đó chính là số dư: muốn BỚT thì lùi 1. Vạch TRƯỚC 108 cách 8 bước — đó là phần bù 9 trừ 1: muốn THÊM phải tiến đủ 8.",
-        "display": {
-          "type": "number_line_interactive",
-          "spec": {
-            "marks": [
-              90,
-              99,
-              108,
-              117
-            ],
-            "pos": 100,
-            "back": {
-              "to": 99,
-              "steps": 1,
-              "label": "BỚT = dư"
-            },
-            "forward": {
-              "to": 108,
-              "steps": 8,
-              "label": "THÊM = bù"
-            }
-          }
-        },
-        "interaction": {
-          "type": "walk_both_ways",
-          "successMessage": "Lùi 1 → 99 ✓ · Tiến 8 → 108 ✓ — thêm 1 chỉ tới 101, vẫn lơ lửng giữa đường!"
-        }
-      },
-      {
-        "id": "C1",
-        "kind": "checkpoint",
-        "estSeconds": 16,
-        "item": {
-          "format": "num",
-          "text": "Phải bớt 100 đi ít nhất bao nhiêu để chia hết cho 9?",
-          "answerKey": {
-            "value": 1
-          },
-          "wrongFeedback": "Bớt đúng số dư — lùi về vạch 99.",
-          "objective": "O1",
-          "teaches": [
-            "K1"
-          ],
-          "id": "C1"
-        }
-      },
-      {
-        "id": "S3",
-        "kind": "explain",
-        "estSeconds": 34,
-        "teaches": [
-          "K3"
-        ],
-        "narration": "Nhìn lại hai đáp: bớt 1 và thêm 8 — cộng lại đúng 9, tròn một khoảng vạch! Đây là phép thử nhanh: nếu \"bớt\" cộng \"thêm\" của con không bằng số chia, chắc chắn có một cửa tính sai. Luật bỏ túi: bớt bằng dư — thêm bằng bù.",
-        "display": {
-          "type": "step_by_step",
-          "lines": [
-            "BỚT 1 (dư) → 99 ✓",
-            "THÊM 8 (bù = 9 − 1) → 108 ✓",
-            "kiểm: 1 + 8 = 9 = số chia ✓"
-          ]
-        }
-      },
-      {
-        "id": "S4",
-        "kind": "mantra",
-        "estSeconds": 13,
-        "narration": "Thần chú vá đường: bớt bằng dư — thêm bằng bù; cộng lại tròn một khoảng!",
-        "display": {
-          "type": "mantra_card",
-          "text": "BỚT BẰNG DƯ — THÊM BẰNG BÙ!"
-        },
-        "interaction": {
-          "type": "read_aloud_or_tap",
-          "prompt": "Đọc to rồi vào phòng luyện!"
-        }
-      }
-    ]
-  },
-  "videoSpec": {
-    "renderProfile": "vertical_9x16 1080x1920",
-    "maxDuration": 90,
-    "totalDuration": 75,
-    "note": "KHỐI TỰ ĐỦ: đọc riêng khối này là dựng được video. derivedFromScreen chỉ để truy nguồn.",
-    "brand": {
-      "colors": {
-        "nen": "#FFFFFF",
-        "xanh_khien": "#0B4EA8",
-        "ngoc": "#1FCBAB",
-        "vang": "#F9B233",
-        "do_bay": "#C0392B"
-      },
-      "font": "chữ tròn dày, cỡ lớn",
-      "logo": "MOBILUCK góc dưới phải, mờ 60%"
+  {
+   "archetype": "two_way_compare",
+   "params": {
+    "title": "VÁ SỐ 100 CHO CHIA HẾT CHO 9 (100 : 9 = 11 dư 1)",
+    "neutral": true,
+    "wrong": {
+     "head": "CỬA BỚT — lùi vạch sau",
+     "steps": [
+      "bớt đúng SỐ DƯ = 1"
+     ],
+     "result": "99 = 9 × 11"
     },
-    "voice": {
-      "giong": "nữ trẻ trung, ấm, ~2,7 từ/giây, ngắt nghỉ rõ",
-      "xung_ho": "gọi học sinh là 'con'; nhân vật giữ nguyên tên"
+    "right": {
+     "head": "CỬA THÊM — tiến vạch trước",
+     "steps": [
+      "thêm PHẦN BÙ = 9 − 1 = 8"
+     ],
+     "result": "108 = 9 × 12"
     },
-    "music": "nhạc nền vui nhẹ, hạ 50% khi có lời đọc",
-    "scenes": [
-      {
-        "no": 1,
-        "templateHint": "title_hook",
-        "derivedFromScreen": "S1",
-        "transitionOut": "wipe trái",
-        "voiceover": "Cáo Đề đố: một trăm chia chín dư một — vậy THÊM ít nhất bao nhiêu vào một trăm để chia hết cho chín? Trí Long nhanh nhảu: dư một thì thêm một — một linh một! Su Kem bấm máy: một linh một chia chín… vẫn dư HAI?!",
-        "screenText": "thêm 1 → 101 vẫn dư 2??",
-        "visual": "Máy tính hiện '101 : 9 = 11 dư 2' đèn đỏ; Trí Long ngơ ngác; Cáo Đề cười khẩy.",
-        "assets": [],
-        "duration": 18
-      },
-      {
-        "no": 2,
-        "templateHint": "concept_diagram",
-        "derivedFromScreen": "S2",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Ra con đường sơn vạch mỗi chín mét: chín mươi — chín chín — một không tám. Số một trăm đứng GIỮA đường! Vạch SAU chín chín cách MỘT bước — chính là số dư: muốn bớt thì lùi một. Vạch TRƯỚC một không tám cách TÁM bước — phần bù chín trừ một: muốn thêm phải tiến đủ tám!",
-        "screenText": "99 ←1— [100] —8→ 108",
-        "visual": "Trục đường với vạch sơn vàng 90·99·108; nhân vật 100 đứng giữa; mũi tên lùi '1 = DƯ' đỏ và mũi tên tiến '8 = BÙ' xanh #1FCBAB.",
-        "assets": [],
-        "duration": 22
-      },
-      {
-        "no": 3,
-        "templateHint": "step_by_step",
-        "derivedFromScreen": "S3",
-        "transitionOut": "cắt thẳng",
-        "voiceover": "Nhìn lại hai đáp: bớt MỘT và thêm TÁM — cộng lại đúng CHÍN, tròn một khoảng vạch! Đây là phép thử nhanh: nếu bớt cộng thêm không bằng số chia, chắc chắn một cửa tính sai. Luật bỏ túi: bớt bằng dư — thêm bằng bù!",
-        "screenText": "1 + 8 = 9 ✓ (phép thử nhanh)",
-        "visual": "Hai mũi tên gộp thành một khoảng vạch trọn; phép '1 + 8 = 9' đóng khung vàng.",
-        "assets": [],
-        "duration": 17
-      },
-      {
-        "no": 4,
-        "templateHint": "mantra_card",
-        "derivedFromScreen": "S4",
-        "transitionOut": "zoom nhẹ",
-        "voiceover": "Thần chú vá đường: bớt bằng dư — thêm bằng bù; cộng lại tròn một khoảng!",
-        "screenText": "BỚT = DƯ · THÊM = BÙ!",
-        "visual": "Thẻ thần chú vàng với icon vạch đường.",
-        "assets": [],
-        "duration": 8
-      },
-      {
-        "no": 5,
-        "templateHint": "cta_practice",
-        "transitionOut": "kết",
-        "voiceover": "Vá thử nào: số hai trăm lẻ ba chia bảy dư mấy — bớt bao nhiêu, thêm bao nhiêu cho chia hết? Vào bài luyện ngay!",
-        "screenText": "203 : 7 → bớt? thêm?",
-        "visual": "Con đường vạch 7 mét với 203 đứng giữa; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
-        "linkItem": "P3",
-        "assets": [],
-        "duration": 10
-      }
-    ]
-  },
-  "workedExample": {
-    "title": "Vá số 100 trên đường vạch 9",
-    "problem": "Phải thêm vào 100 ít nhất bao nhiêu đơn vị để được số chia hết cho 9? Còn bớt thì sao?",
-    "steps": [
-      {
-        "show": "Bước 1 — Định vị: 100 : 9 = 11 dư 1 → đứng sau vạch 99 một bước.",
-        "askBefore": {
-          "format": "num",
-          "text": "100 : 9 dư mấy?",
-          "answerKey": {
-            "value": 1
-          },
-          "id": "W1"
-        }
-      },
-      {
-        "show": "Bước 2 — Cửa BỚT: lùi đúng dư = 1 → 99 = 9 × 11 ✓."
-      },
-      {
-        "show": "Bước 3 — Cửa THÊM: tiến phần bù = 9 − 1 = 8 → 108 = 9 × 12 ✓. Kiểm: 1 + 8 = 9 ✓.",
-        "askAfter": {
-          "format": "num",
-          "text": "Số 50 chia 7 dư 1 — thêm ít nhất bao nhiêu để chia hết cho 7?",
-          "answerKey": {
-            "value": 6
-          },
-          "id": "W2"
-        }
-      }
-    ]
-  },
-  "practice": {
-    "adaptiveRules": {
-      "start": "warmup",
-      "promote": "đúng 2 câu liên tiếp → lên mức",
-      "support": "sai 1 → hint 1; sai 2 → hint 2 + biến thể; sai 3 → mở lại workedExample"
-    },
-    "pools": {
-      "warmup": [
-        {
-          "id": "P1",
-          "format": "num",
-          "sourceItem": "ITEM:KSN5Q1.B10.LT3",
-          "text": "Phải thêm vào 100 ít nhất bao nhiêu đơn vị để được số chia hết cho 9?",
-          "answerKey": {
-            "value": 8
-          },
-          "hints": [
-            "Dư 1 — nhưng thêm có bằng dư không?",
-            "Bù = 9 − 1."
-          ],
-          "solutionNarrative": "Thêm phần bù 9 − 1 = 8 (được 108 ⋮ 9).",
-          "teaches": [
-            "K2",
-            "K4"
-          ],
-          "generator": {
-            "template": "Phải thêm vào {a} ít nhất bao nhiêu để chia hết cho {d}?",
-            "constraints": {
-              "d": "3–9"
-            },
-            "answerRule": "d − (a mod d)"
-          }
-        },
-        {
-          "id": "P2",
-          "format": "mb",
-          "sourceItem": "ITEM:KSN5Q1.B10.LT4",
-          "text": "Phải bớt đi ở 100 ít nhất bao nhiêu đơn vị để được số chia hết cho 9? So sánh với câu \"thêm\" và giải thích.",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "bớt",
-                "value": 1
-              },
-              {
-                "label": "so sánh",
-                "value": "1 + 8 = 9 — lùi vạch sau và tiến vạch trước cộng lại tròn một khoảng"
-              }
-            ]
-          },
-          "hints": [
-            "Bớt = đúng số dư.",
-            "Hai đáp cộng lại bằng gì?"
-          ],
-          "solutionNarrative": "Bớt 1 (→ 99); 1 + 8 = 9 = số chia.",
-          "teaches": [
-            "K1",
-            "K3"
-          ]
-        }
-      ],
-      "standard": [
-        {
-          "id": "P3",
-          "format": "mb",
-          "text": "Số 203 chia 7 dư mấy? Bớt ít nhất bao nhiêu, thêm ít nhất bao nhiêu để 203 chia hết cho 7?",
-          "answerKey": {
-            "parts": [
-              {
-                "label": "dư",
-                "value": 0
-              },
-              {
-                "label": "bớt",
-                "value": 0
-              },
-              {
-                "label": "thêm",
-                "value": 0
-              }
-            ],
-            "note": "203 = 7 × 29 — đã đứng ngay trên vạch, khỏi vá!"
-          },
-          "hints": [
-            "Chia thử trước đã!",
-            "Đứng trên vạch thì lùi/tiến mấy bước?"
-          ],
-          "teaches": [
-            "K4"
-          ]
-        }
-      ],
-      "challenge": [
-        {
-          "id": "P4",
-          "format": "tf",
-          "text": "(Đúng/Sai?) Một số chia 8 dư 3 thì cần thêm ít nhất 3 đơn vị để chia hết cho 8.",
-          "answerKey": {
-            "value": false,
-            "note": "Thêm phần bù 8 − 3 = 5; thêm 3 mới tới giữa đường."
-          },
-          "hints": [
-            "Thêm bằng dư hay bằng bù?",
-            "8 − 3 = ?"
-          ],
-          "teaches": [
-            "K2"
-          ]
-        }
-      ]
-    }
-  },
-  "assessment": {
-    "passRule": "≥ 2/3, bắt buộc đúng A1",
-    "onPass": {
-      "updateBKT": [
-        "CASE:I.6.3#2@G5"
-      ],
-      "unlockNext": "DL:KSN5Q1.B10.M3",
-      "award": "huy_hieu_va_duong"
-    },
-    "onFail": {
-      "action": "review_screens",
-      "target": [
-        "S2",
-        "S3"
-      ],
-      "retryWith": "đề B sinh từ generator P1"
-    },
-    "items": [
-      {
-        "id": "A1",
-        "format": "tf",
-        "sourceItem": "ITEM:KSN5Q1.B10.QZ2",
-        "text": "(Đúng/Sai?) Muốn 100 chia hết cho 9, chỉ cần thêm vào đúng số dư của phép chia 100 : 9.",
-        "answerKey": {
-          "value": false
-        },
-        "mustPass": true,
-        "teaches": [
-          "K2"
-        ]
-      },
-      {
-        "id": "A2",
-        "format": "mcq",
-        "sourceItem": "ITEM:KSN5Q1.B10.QZ5",
-        "text": "Bớt 100 đi bao nhiêu để chia hết cho 9?",
-        "choices": [
-          "1",
-          "8",
-          "9"
-        ],
-        "answerKey": {
-          "choice": "1"
-        },
-        "teaches": [
-          "K1"
-        ]
-      },
-      {
-        "id": "A3",
-        "format": "num",
-        "text": "Số 75 chia 4 dư 3 — thêm ít nhất bao nhiêu để chia hết cho 4?",
-        "answerKey": {
-          "value": 1
-        },
-        "teaches": [
-          "K2"
-        ]
-      }
-    ]
-  },
-  "spacedReview": {
-    "flashcards": [
-      {
-        "front": "Vá một số cho chia hết — hai cửa tính thế nào? Phép thử nhanh?",
-        "back": "BỚT = đúng số DƯ (lùi vạch sau) · THÊM = PHẦN BÙ = số chia − dư (tiến vạch trước) · thử nhanh: bớt + thêm = số chia. BỚT BẰNG DƯ — THÊM BẰNG BÙ!"
-      }
-    ],
-    "schedule": [
-      "+1 ngày: flashcard",
-      "+3 ngày: câu generator P1",
-      "+7 ngày: câu P3 (đứng ngay vạch)"
-    ]
-  },
-  "parentNote": {
-    "onComplete": "Hôm nay con học vá số cho chia hết: bớt bằng dư, thêm bằng bù, hai đáp cộng lại bằng số chia. Con đạt {score}/3, {trapResult} câu bẫy thêm-nhầm-dư.",
-    "homeActivity": "Đố tiền lẻ: 'mẹ có 100 nghìn, muốn chia đều 9 phong bao — bớt hay thêm ít nhất bao nhiêu?' — con vẽ đường vạch và trả lời cả hai cửa là đạt.",
-    "watchFor": "Nếu con thêm đúng bằng số dư — dắt con đi bộ trên đường vạch (S2): tiến 1 bước có tới vạch không?"
-  },
-  "$schema": "digital-lesson/v2-micro",
-  "id": "DL:KSN5Q1.B10.M2",
-  "figureSpec": [
-    {
-      "archetype": "character_speech",
-      "params": {
-        "title": "thêm 1 → 101 vẫn dư??",
-        "lines": [
-          {
-            "who": "Cáo Đề",
-            "say": "100 chia 9 dư 1 — vậy THÊM ít nhất bao nhiêu vào 100 để chia hết cho 9?",
-            "tone": "wrong"
-          },
-          {
-            "who": "Trí Long",
-            "say": "Dư 1 thì thêm 1 — 101!",
-            "tone": "wrong"
-          }
-        ]
-      },
-      "caption": "Tình huống mở bài — chỗ bạn Trí Long hay nhầm",
-      "id": "F1",
-      "usedIn": [
-        "hook"
-      ],
-      "file": "figures/KSN5Q1_B10_M2_F1.png",
-      "sha256_16": "dadb89c5482c804a"
-    },
-    {
-      "archetype": "ladder_steps",
-      "params": {
-        "title": "Con \"vá\" được một số cho chia hết: BỚT đi đúng SỐ DƯ (lùi về vạch sau) hoặc THÊM đúng PHẦN BÙ = số chia − dư (tiến tới vạch trước) — và hiểu vì sao hai đáp số cộng lại đúng bằng số chia.",
-        "steps": [
-          {
-            "text": "BỚT 1 (dư) → 99"
-          },
-          {
-            "text": "THÊM 8 (bù = 9 − 1) → 108"
-          },
-          {
-            "text": "kiểm: 1 + 8 = 9 = số chia"
-          }
-        ],
-        "note": "Làm đúng thứ tự từng bậc"
-      },
-      "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-      "id": "F2",
-      "usedIn": [
-        "teach_core"
-      ],
-      "file": "figures/KSN5Q1_B10_M2_F2.png",
-      "sha256_16": "4e137a815a3cc145"
-    },
-    {
-      "archetype": "formula_card",
-      "params": {
-        "title": "NGUYÊN TẮC CẦN NHỚ",
-        "formulas": [
-          {
-            "label": "Muốn BỚT ít nhất để chia hết",
-            "text": "bớt đúng SỐ DƯ (100 : 9 dư 1 → bớt 1 được 99).",
-            "tone": "navy"
-          },
-          {
-            "label": "Muốn THÊM ít nhất để chia hết",
-            "text": "thêm PHẦN BÙ = số chia − dư (dư 1, chia 9 → thêm 8 được 108).",
-            "tone": "teal"
-          }
-        ],
-        "mantra": "BỚT BẰNG DƯ — THÊM BẰNG BÙ; CỘNG LẠI TRÒN MỘT KHOẢNG!"
-      },
-      "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-      "id": "F3",
-      "usedIn": [
-        "mantra"
-      ],
-      "file": "figures/KSN5Q1_B10_M2_F3.png",
-      "sha256_16": "cdca768b39460d1c"
-    },
-    {
-      "archetype": "two_way_compare",
-      "params": {
-        "title": "VÁ SỐ 100 CHO CHIA HẾT CHO 9  (100 : 9 = 11 dư 1)",
-        "neutral": true,
-        "wrong": {
-          "head": "CỬA BỚT — lùi vạch sau",
-          "steps": [
-            "bớt đúng SỐ DƯ = 1"
-          ],
-          "result": "99 = 9 × 11"
-        },
-        "right": {
-          "head": "CỬA THÊM — tiến vạch trước",
-          "steps": [
-            "thêm PHẦN BÙ = 9 − 1 = 8"
-          ],
-          "result": "108 = 9 × 12"
-        },
-        "verdict": "Hai đáp cộng lại đúng bằng số chia: 1 + 8 = 9"
-      },
-      "caption": "Thêm 1 không đủ — phải thêm đúng phần bù mới tới vạch kế tiếp",
-      "id": "F4",
-      "usedIn": [
-        "teach_domain"
-      ],
-      "file": "figures/KSN5Q1_B10_M2_F4.png",
-      "sha256_16": "1b900d2b5ae0eef7"
-    }
-  ]
+    "verdict": "Hai đáp cộng lại đúng bằng số chia: 1 + 8 = 9"
+   },
+   "caption": "Thêm 1 không đủ — phải thêm đúng phần bù mới tới vạch kế tiếp",
+   "id": "F4",
+   "usedIn": [
+    "teach_domain"
+   ],
+   "file": "figures/KSN5Q1_B10_M2_F4.png",
+   "sha256_16": "ca866fa3ecf7b7ad"
+  }
+ ]
 }
