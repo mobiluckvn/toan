@@ -42,6 +42,11 @@ BE_DOC = {
     'assessment.passRule', 'assessment.items[].text',
     'assessment.items[].solutionNarrative', 'assessment.items[].wrongFeedback',
     'figureSpec[].caption',
+    # Trang kết bài: FinaleCard.jsx đọc `flashcards[0].back` và ba dòng parentNote.
+    # Sót hai chỗ này ở lần đầu — danh sách phải chốt bằng cách ĐỌC MÃ GIAO DIỆN
+    # cho tới hết, không dừng ở màn học.
+    'spacedReview.flashcards[].back',
+    'parentNote.onComplete', 'parentNote.homeActivity', 'parentNote.watchFor',
 }
 R_POOL = re.compile(r'^practice\.pools\.(warmup|standard|challenge)\[\]\.'
                     r'(text|solutionNarrative|wrongFeedback|hints\[\])$')

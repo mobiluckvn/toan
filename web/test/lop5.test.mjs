@@ -32,6 +32,9 @@ const BE_DOC = new Set([
   'assessment.passRule', 'assessment.items[].text',
   'assessment.items[].solutionNarrative', 'assessment.items[].wrongFeedback',
   'figureSpec[].caption',
+  // trang kết bài (FinaleCard.jsx) — sót ở lần đầu, bé và bố mẹ đều đọc
+  'spacedReview.flashcards[].back',
+  'parentNote.onComplete', 'parentNote.homeActivity', 'parentNote.watchFor',
 ]);
 const beDoc = (p) => BE_DOC.has(p)
   || /^practice\.pools\.(warmup|standard|challenge)\[\]\.(text|solutionNarrative|wrongFeedback|hints\[\])$/.test(p)
