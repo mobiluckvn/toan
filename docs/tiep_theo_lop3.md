@@ -16,9 +16,8 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 | 2b | bóc đáp án | `tools/dapan_lop3.py` → `data/lop3_dapan.json` — **477 đáp án, khớp 1:1** |
 | 2c | ôn tập & ải | `tools/ontap_lop3.py` → `data/lop3_ontap.json` — **8 ôn tập · 3 ải · 114 câu · 84 câu đề B · mối nối đủ 84/84 câu, cả 8 ôn tập đều `canCu: sach`** |
 | 3 | dựng bài học | `tools/chuan_lop3.py` → `data/lop3/` — **34 bài · 477 câu · 100% có lời chữa · 170 câu chấm máy** |
+| 3b | vẽ & gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **74 hình · 17 nguyên mẫu · đủ 34/34 bài** |
 | — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`) |
-
-| 3b | nguyên mẫu + bộ vẽ + bộ gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **74 hình · 17 nguyên mẫu · đủ 34/34 bài** |
 
 Phép kiểm: `web/test/lop3.test.mjs` (34 phép). Chạy `cd web && npm test`.
 
