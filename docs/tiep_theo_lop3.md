@@ -10,6 +10,32 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 
 ---
 
+## MAI VÀO VIỆC TỪ ĐÂU
+
+**Lớp 3 XONG TRỌN, không còn việc tồn.** 23/23 tệp kiểm xanh, cây làm việc sạch, đã
+deploy. Ba hướng đi tiếp, xếp theo giá trị:
+
+| # | việc | trạng thái |
+|---|---|---|
+| 1 | **Đưa quyển LỚP 4 vào app** | chưa có bản `.docx` nguồn. Dây chuyền và phép kiểm đã sẵn — xem "Sẵn sàng cho quyển sau" bên dưới |
+| 2 | Bỏ chip mã `K1 · K2 · K3` ở màn nguyên tắc | **chờ bác quyết** — sửa là đụng cả lớp 2 và lớp 5 đang chạy |
+| 3 | Deploy `functions` và `firestore rules` | cả phiên chưa đụng tới chúng nên KHÔNG đẩy. Muốn đẩy thì soát trước |
+
+### Sẵn sàng cho quyển sau — chép được ngay
+
+| dùng lại | cách |
+|---|---|
+| `figforge/arch_l3.py` | 29 nguyên mẫu hình (22 của lớp 2 + 7 mới). Quyển sau `import` chứ đừng chép |
+| `khuon_chung.py` | tự đọc `quyen` từ bản gốc, biết 12 cách sách đặt tên bước |
+| 6 bộ công cụ `*_lop3.py` | chép làm mẫu: `rut · dapan · ontap · chuan · ve_hinh · gan_hinh · tach_cau · dung_khuon_chung` |
+| `web/test/luat_o_nhap.test.mjs` | **KHÔNG cần chép** — nó tự đọc sổ đăng ký, quyển mới khai vào là bị soi ngay |
+| giao diện | đã lái hết theo cờ trong sổ; khai `doc.moiManMotMuc` là xong, không sửa component nào |
+
+**Bắt đầu quyển mới thì đọc `CHUAN_DUA_SACH_VAO_APP.md` trước** — 44 cái bẫy, và mục 7
+nay có thêm năm luật ô nhập.
+
+---
+
 ## Đã xong — chạy được, có phép kiểm giữ
 
 | bước | việc | kết quả |
