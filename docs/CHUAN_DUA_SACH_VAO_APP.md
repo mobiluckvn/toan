@@ -196,6 +196,26 @@ Chưa có nguyên mẫu vẽ được thứ đề bài mô tả thì **viết ng
 thành một dòng chữ dưới hình: `"2 cm · 3 cm · 4 cm"` không cho bé biết số nào của cạnh
 nào, mà bài chu vi thì phải cộng đúng từng cạnh.
 
+### Đường LÙI về quyển dưới
+
+Quyển nào nối tiếp một quyển đã có thì **phải khai đường lùi**: bài lớp 3 trỏ về bài
+lớp 2 cùng chủ đề, để bé học đuối thì quay lại luyện gốc chứ không bỏ dở.
+
+Bảng ở `data/<quyen>_gan_<quyenduoi>.json`, mỗi dòng ghi cả **CĂN CỨ**:
+
+| căn cứ | nghĩa |
+|---|---|
+| `sach` | sách CHỈ ĐÍCH DANH "Bài n lớp 2" — chắc chắn |
+| `chuDe` | sách chỉ nhắc chủ đề, không nêu số bài; ghép theo tên bài — **cần soát tay** |
+| `khong` | quyển dưới không có bài cùng chủ đề — cố ghép là chỉ đường sai |
+
+Phải có **đủ mọi bài**, kể cả dòng `khong`. Bỏ trống thì không phân biệt được "chưa
+làm" với "đã xét và kết luận là không có". Trỏ sai còn tệ hơn không trỏ: bé bấm vào
+rồi lạc sang bài chẳng liên quan, mất niềm tin vào chính cái nút ấy.
+
+Sách lớp 3 để sẵn mối nối này ở mục `HẠT MẦM NĂM NGOÁI` — 21/34 bài nêu đích danh số
+bài lớp 2, 11 bài chỉ nhắc chủ đề, 2 bài lớp 2 không có gì tương ứng.
+
 **Neo hình** — theo thứ tự bước (`neoBuoc: 2`) hoặc mã câu (`neoCau: "C8"`).
 Không bao giờ neo theo nguyên văn dòng.
 

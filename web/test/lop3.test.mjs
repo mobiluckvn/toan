@@ -1,0 +1,65 @@
+/**
+ * LỚP 3 — đường lùi về lớp 2 có trỏ đúng chỗ không.
+ * chạy: node test/lop3.test.mjs
+ *
+ * Bảng `data/lop3_gan_lop2.json` là đường LÙI: học lớp 3 mà đuối thì quay về luyện
+ * lại bài lớp 2 cùng chủ đề. Trỏ sai còn tệ hơn không trỏ — bé bấm vào rồi lạc sang
+ * một bài chẳng liên quan, mất niềm tin vào chính cái nút ấy.
+ *
+ * Ba điều máy khẳng định được: bài lớp 2 được trỏ tới phải CÓ THẬT; mọi bài lớp 3
+ * đều phải có một dòng trong bảng (kể cả dòng nói "không có bài tương ứng" — im lặng
+ * bỏ trống thì không phân biệt được "chưa làm" với "đã xét và kết luận là không có");
+ * và căn cứ phải là một trong ba giá trị đã khai.
+ */
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { join } from 'node:path';
+
+const G = new URL('../../', import.meta.url).pathname;
+let pass = 0, fail = 0;
+const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
+const in5 = (xs) => xs.slice(0, 5).forEach((x) => console.log('     ', x));
+
+const BANG = join(G, 'data/lop3_gan_lop2.json');
+t('bảng đường lùi có thật', existsSync(BANG));
+const b = JSON.parse(readFileSync(BANG, 'utf8'));
+const gan = b.gan || {};
+
+/* bài lớp 2 được trỏ tới phải có tệp thật */
+const coL2 = new Set(readdirSync(join(G, 'data/lop2'))
+  .filter((f) => f.startsWith('DL_KSN2_'))
+  .map((f) => f.replace('.json', '').replace('DL_KSN2_', 'DL:KSN2.')));
+const lac = [];
+for (const [ma, v] of Object.entries(gan)) {
+  for (const ve of v.ve || []) if (!coL2.has(ve)) lac.push(`${ma} → ${ve} (không có bài này)`);
+}
+t(`mọi đích đến đều là bài lớp 2 CÓ THẬT (${coL2.size} bài)`, lac.length === 0);
+in5(lac);
+
+/* đủ 34 bài lớp 3, không sót dòng nào */
+const thieu = [];
+for (let i = 1; i <= 34; i += 1) {
+  const ma = `DL:KSN3.B${String(i).padStart(2, '0')}`;
+  if (!gan[ma]) thieu.push(ma);
+}
+t(`đủ 34 bài lớp 3 trong bảng (${Object.keys(gan).length})`, thieu.length === 0);
+in5(thieu);
+
+/* căn cứ phải nằm trong ba giá trị đã khai ở `_canCu` */
+const hopLe = new Set(Object.keys(b._canCu || {}));
+const sai = Object.entries(gan).filter(([, v]) => !hopLe.has(v.canCu)).map(([k]) => k);
+t(`căn cứ nào cũng được khai nghĩa (${[...hopLe].join(' · ')})`, sai.length === 0);
+in5(sai);
+
+/* dòng "khong" phải RỖNG đích đến — khai không có mà vẫn trỏ đi đâu đó là mâu thuẫn */
+const mauThuan = Object.entries(gan)
+  .filter(([, v]) => v.canCu === 'khong' && (v.ve || []).length > 0).map(([k]) => k);
+t('dòng "không có bài tương ứng" thì không trỏ đi đâu cả', mauThuan.length === 0);
+in5(mauThuan);
+
+const theoCanCu = Object.values(gan).reduce((a, v) => {
+  a[v.canCu] = (a[v.canCu] || 0) + 1; return a;
+}, {});
+console.log('   căn cứ:', Object.entries(theoCanCu).map(([k, v]) => `${k} ${v}`).join(' · '));
+
+console.log(`\n${pass} PASS · ${fail} FAIL`);
+process.exit(fail ? 1 : 0);
