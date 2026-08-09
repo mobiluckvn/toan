@@ -15,9 +15,10 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 | 2a | bộ trích thô | `tools/rut_lop3.py` → `data/lop3_tho.json` — **34 bài · 477 câu** |
 | 2b | bóc đáp án | `tools/dapan_lop3.py` → `data/lop3_dapan.json` — **477 đáp án, khớp 1:1** |
 | 2c | ôn tập & ải | `tools/ontap_lop3.py` → `data/lop3_ontap.json` — **8 ôn tập · 3 ải · 114 câu · 84 câu đề B · mối nối đủ 84/84 câu, cả 8 ôn tập đều `canCu: sach`** |
+| 3 | dựng bài học | `tools/chuan_lop3.py` → `data/lop3/` — **34 bài · 477 câu · 100% có lời chữa · 170 câu chấm máy** |
 | — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`) |
 
-Phép kiểm: `web/test/lop3.test.mjs` (18 phép). Chạy `cd web && npm test`.
+Phép kiểm: `web/test/lop3.test.mjs` (25 phép). Chạy `cd web && npm test`.
 
 ---
 
@@ -58,23 +59,38 @@ bộ đếm kêu, chứ không đẻ ra câu hỏi ma.
 
 ## VIỆC 2 — `tools/chuan_lop3.py` dựng dữ liệu bài học  ⚠ LÀM TIẾP TỪ ĐÂY
 
-Chép `tools/chuan_lop2.py`. Bảng khớp mục ①…⑧ **y hệt lớp 2** (xem `khuon_chung.py`,
-hằng `NOI_DUNG_HINH`). Hai trường phải THÊM so với lớp 2:
+**Xong**: `tools/chuan_lop3.py` → `data/lop3/` — 34 bài + `index.json`. 477 câu, **100%
+có lời chữa**, **170 câu chấm máy** (102 trắc nghiệm + 68 Đúng/Sai — cả 170 câu quiz
+đều chấm được, không câu nào phải bỏ). Luyện tập (307 câu) giữ TỰ CHẤM như lớp 2:
+đáp án phần lớn là câu chữ, ép thành ô nhập số là chấm oan con viết đúng.
+
+Không chép `chuan_lop2.py` mà **dùng lại** `tach_phuong_an` và `dung_cau_quiz` của nó
+— hai hàm ấy mang sẵn mấy bài học đắt, chép ra bản thứ hai là bản ấy tụt hậu ngay lần
+sửa sau. Cũng không mở lại docx: đáp án đã bóc xong ở bước 2b.
+
+Hai trường thêm so với lớp 2, cả hai đã có trong bài dựng ra:
 
 | trường | nguồn | dùng làm gì |
 |---|---|---|
-| `hatMam` | đã có trong `lop3_tho.json` | lời nối ngược về lớp 2, hiện ở màn kết bài |
-| `ganLop2` | `data/lop3_gan_lop2.json` | nút **"Học lại bài lớp 2"** — việc bác dặn |
+| `hatMam` | `lop3_tho.json` | lời nối ngược về lớp 2, hiện ở màn kết bài — đủ 34/34 |
+| `ganLop2` | `lop3_gan_lop2.json` | nút **"Học lại bài lớp 2"** — 32/34 bài có đích |
 
-Nút ấy chưa làm. Chỗ đặt: `FinaleCard.jsx` (trang kết bài) và màn khi bé không đạt
-sát hạch. Lấy `ve[0]` làm đích; dòng `canCu: 'khong'` thì KHÔNG hiện nút.
+⚠ **Sổ này từng dặn sai: "lấy `ve[0]` làm đích".** Làm thế thì bài 4, 16, 18 mất đích
+thứ hai, mà cả ba đều do SÁCH chỉ đích danh hai bài lớp 2 (bài 4 "đếm số & đếm trang"
+gộp đúng hai bài riêng biệt). Nên `ganLop2.ve` là **danh sách**. Dòng `canCu: 'khong'`
+có danh sách rỗng sẵn — chỗ hiện nút cứ theo danh sách rỗng mà ẩn, khỏi thêm luật.
+
+### Còn lại của việc 2 — nút chưa làm
+
+`FinaleCard.jsx` (trang kết bài) và màn khi bé không đạt sát hạch. Làm được **sau**
+bước 5 (khuôn chung), vì trước đó lớp 3 chưa vào tới phòng học.
 
 Nhớ mục 6 của chuẩn khi dựng màn mở: lời mở là MỘT CÂU nêu bài toán, lấy từ dòng
 `Đề bài` của mục ④, và câu dẫn chỉ giữ khi không chứa con số.
 
 ---
 
-## Sau đó — Bước 3 · vẽ hình (phần nặng nhất)
+## VIỆC 3 — Bước 3 · vẽ hình (phần nặng nhất)
 
 Xem `docs/phan_loai_hinh_lop3.md`. Con số đáng nhớ: sách cho **46 hình toán** nhưng
 gần hết nằm ở màn mở; **mục giảng chỉ 6 hình cho 34 bài**, bài tập KHÔNG có hình nào.
@@ -87,8 +103,18 @@ Việc vẽ nhiều hơn lớp 2 chứ không ít, dù ảnh gốc ít hơn (b�
 
 ---
 
+## VIỆC 4 — bước 5 · qua khuôn chung, rồi khai sổ
+
+`tools/dung_khuon_chung.py` + `khuon_chung.py` đưa bài về khuôn lớp 5 để dùng chung
+phòng học. Bảng khớp mục ①…⑧ **y hệt lớp 2** (hằng `NOI_DUNG_HINH`). Xong bước này
+lớp 3 mới hiện trong app.
+
+---
+
 ## Đừng quên
 
-- Tiền tố mã bài: `DL:KSN3.` — chưa kiểm trùng với `DL:KSN2.` / `DL:KSN5Q1.` / `DR:KSN5Q2.`
+- ~~Tiền tố mã bài `DL:KSN3.` chưa kiểm trùng~~ — **đã kiểm, không trùng**: 235 mã bài
+  hiện có chia làm `DL:KSN5Q1` (168) · `DL:KSN3` (34) · `DL:KSN2` (33), cộng
+  `DR:KSN5Q2` (42) · `DCR:*` (25) ở nội dung đã dựng. Không mã nào đụng mã nào.
 - Khai sổ đăng ký (`data/chuong_trinh.json`): nhớ `loai: 'hoc'` và `donVi`
 - 44 cái bẫy trong chuẩn — sách lớp 3 đã dính lại bẫy 5, 6, 7 y như lớp 2

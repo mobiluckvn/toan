@@ -1,0 +1,278 @@
+{
+ "id": "DL:KSN3.B07",
+ "quyen": "lop3",
+ "so": 7,
+ "ten": "TRUY TÌM SỐ CHIA a DƯ b",
+ "chuong": 2,
+ "tenChuong": "Nhân chia ra khơi",
+ "dangGoc": "SỐ 6.3 case \"một điều kiện\" khởi điểm Lớp 3 — Mật khẩu của quần đảo kho báu",
+ "hatMam": "Bài 6 vừa trao cho con phép chia có dư và công thức vàng. Bây giờ chạy công thức ấy NGƯỢC CHIỀU: không phải \"chia ra dư mấy\" mà là \"truy tìm những số chia 5 dư 2\" — nghề ruột của thám tử!",
+ "ganLop2": {
+  "ve": [
+   "DL:KSN2.B15"
+  ],
+  "ten": [
+   "CHIA KẸO CÒN THỪA"
+  ],
+  "canCu": "chuDe"
+ },
+ "muc": {
+  "mucTieu": {
+   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
+   "dong": [
+    "Kiểm tra được một số chia cho a dư bao nhiêu.",
+    "Liệt kê được các số chia a dư b trong một khoảng: chúng lập thành đoàn tàu nhịp a!",
+    "Chế được số theo đơn đặt hàng bằng công thức: số = a × thương + b."
+   ]
+  },
+  "chuyenMoBai": {
+   "ten": "CHUYỆN MỞ BÀI — Mật khẩu của hải tặc già",
+   "dong": [
+    "Tấm da dê trong chai thủy tinh ghi: \"Kho báu chỉ chôn trên những hòn đảo mang số CHIA 5 DƯ 2. Kẻ nào đào nhầm đảo sẽ gặp... bạch tuộc khổng lồ.\" Trước mặt đoàn là dãy đảo đánh số 7, 12, 15, 17, 20, 22, 24, 27. Trí Long đã vác xẻng nhảy xuống xuồng — Su Kem kịp túm áo: \"Soi số trước, đào sau!\""
+   ]
+  },
+  "khamPha": {
+   "ten": "KHÁM PHÁ CÙNG SU KEM — Ba tuyệt kỹ soi đảo",
+   "dong": [
+    "Tuyệt kỹ 1 — SOI TỪNG SỐ: muốn biết 17 chia 5 dư mấy: 17 : 5 = 3 (dư 2) → đảo 17 có kho báu ✓. Số 15: 15 : 5 = 3 (dư 0) — chia hết, không phải dư 2 → bơi qua!",
+    "Tuyệt kỹ 2 — LẦN THEO ĐOÀN TÀU: các số chia 5 dư 2 xếp hàng rất trật tự: 2, 7, 12, 17, 22, 27, ... — một đoàn tàu nhịp 5 xuất phát từ ga số 2! (Vì cứ cộng thêm đúng một lần số chia thì số dư giữ nguyên.) Muốn liệt kê trong khoảng nào, cứ cho tàu chạy qua khoảng đó.",
+    "Tuyệt kỹ 3 — CHẾ SỐ THEO ĐƠN: công thức vàng chạy ngược: số = 5 × thương + 2. Muốn một số chia 5 dư 2 to cỡ ba chục? Lấy 5 × 6 + 2 = 32 — xong!",
+    "Mẹo nhìn đuôi (riêng số chia 5): chia 5 chỉ cần soi ĐUÔI: đuôi 0 hoặc 5 → chia hết; đuôi 1 hoặc 6 → dư 1; đuôi 2 hoặc 7 → dư 2... Mỗi mức dư có ĐÚNG HAI cái đuôi — nhớ đủ cặp!",
+    "MẸO THÁM TỬ: Số chia a dư b lập thành đoàn tàu NHỊP a, ga xuất phát là b. Soi một số: cứ chia thử. Liệt kê cả loạt: cho tàu chạy. Chế số: a × thương + b!"
+   ]
+  },
+  "viDuMau": {
+   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
+   "dong": [
+    "Đề bài: Tìm tất cả các số chia cho 4 dư 1 trong khoảng từ 10 đến 25.",
+    "Bài giải:",
+    "Các số chia 4 dư 1 lập thành dãy đếm thêm 4, bắt đầu từ 1: 1, 5, 9, 13, 17, 21, 25, ...",
+    "Trong khoảng từ 10 đến 25, tàu dừng ở các ga: 13, 17, 21, 25.",
+    "Thử một ga: 21 : 4 = 5 (dư 1) ✓",
+    "Đáp số: 13, 17, 21, 25."
+   ]
+  },
+  "suKemNham": {
+   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "dong": [
+    "Nhận lệnh liệt kê các đảo chia 5 dư 2 trong khoảng 5 đến 30, Trí Long hô vang: \"Dễ! Đuôi 2 là dư 2: đảo 12, đảo 22 — hết! Nhổ neo!\"",
+    "Gợi ý 1: Trí Long soi đuôi 2 đúng rồi — nhưng mẹo nhìn đuôi của số chia 5 nói mỗi mức dư có MẤY cái đuôi? Đuôi nào bị hoa tiêu bỏ quên?",
+    "Gợi ý 2: Chia thử đảo 17 và đảo 27 xem dư mấy? Đoàn tàu nhịp 5 từ ga 2 chạy qua khoảng 5-30 dừng ở đủ những ga nào? Kê lại danh sách kẻo đoàn bỏ sót kho báu — tiếc lắm!"
+   ]
+  },
+  "luyenTap": {
+   "ten": "LUYỆN TẬP 3 MỨC SAO",
+   "dong": []
+  },
+  "quiz": {
+   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
+   "dong": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
+   ]
+  },
+  "gocBoMe": {
+   "ten": "GÓC BỐ MẸ",
+   "dong": [
+    "Trò \"đảo kho báu\" trên giấy: vẽ dãy đảo 1-30, ra mật khẩu (chia 4 dư 3...) và cho con tô đảo có kho báu — nhìn dãy đảo tô màu, con TỰ THẤY chúng cách đều nhau.",
+    "Đây là hạt mầm của đồng dư và bài \"tìm số thỏa nhiều điều kiện chia\" lớp 4-5; câu 9 cho nếm trước đúng một thìa — đủ thơm, đừng múc thêm.",
+    "NÊN: luôn thử lại một ga bất kỳ trong danh sách. KHÔNG NÊN: dạy dấu hiệu chia hết cho 3, 9 (cộng chữ số) — pháo hoa đó để dành lớp 4."
+   ]
+  }
+ },
+ "cau": [
+  {
+   "id": "C1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Mỗi số sau chia cho 5 dư mấy: 11; 15; 23?",
+   "loiChua": "11 : 5 dư 1; 15 dư 0; 23 dư 3.",
+   "tuLuan": true
+  },
+  {
+   "id": "C2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Viết 5 số đầu tiên của \"đoàn tàu chia 3 dư 1\" (bắt đầu từ 1).",
+   "loiChua": "1, 4, 7, 10, 13.",
+   "tuLuan": true
+  },
+  {
+   "id": "C3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Số 14 có thuộc đoàn tàu \"chia 4 dư 2\" không? Chia thử mà xem!",
+   "loiChua": "14 : 4 = 3 (dư 2) → CÓ thuộc ✓.",
+   "tuLuan": true
+  },
+  {
+   "id": "C4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Liệt kê các số chia 5 dư 2 trong khoảng từ 5 đến 30.",
+   "loiChua": "7, 12, 17, 22, 27 (Trí Long chỉ kê 12 và 22 — sót trọn đội đuôi 7!).",
+   "tuLuan": true
+  },
+  {
+   "id": "C5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Liệt kê các số chia 4 dư 3 trong khoảng từ 10 đến 30.",
+   "loiChua": "11, 15, 19, 23, 27.",
+   "tuLuan": true
+  },
+  {
+   "id": "C6",
+   "maSach": "C6",
+   "so": 6,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Chế số theo đơn: viết một số chia 6 dư 1 lớn hơn 30 (dùng công thức 6 × thương + 1; thử lại!).",
+   "loiChua": "ví dụ 6 × 6 + 1 = 37 (thử: 37 : 6 = 6 dư 1 ✓).",
+   "tuLuan": true
+  },
+  {
+   "id": "C7",
+   "maSach": "C7",
+   "so": 7,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Hai đoàn tàu gặp nhau: số 22 thuộc đoàn \"chia 5 dư 2\"; nó có thuộc đoàn \"chia 4 dư 2\" không? Còn số 12 thì sao — thử cả hai đoàn!",
+   "loiChua": "22 : 4 = 5 (dư 2) → 22 thuộc CẢ HAI đoàn tàu. Còn 12: 12 : 5 = 2 (dư 2) ✓ thuộc đoàn \"chia 5 dư 2\", nhưng 12 : 4 = 3 (dư 0) — chia hết → KHÔNG thuộc đoàn \"chia 4 dư 2\". Bài học: mỗi số phải chia thử với TỪNG đoàn, không suy bừa từ đoàn này sang đoàn kia!",
+   "tuLuan": true
+  },
+  {
+   "id": "C8",
+   "maSach": "C8",
+   "so": 8,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tìm các số VỪA chia 5 dư 2 VỪA là số lẻ, trong khoảng từ 5 đến 30. (Lấy danh sách câu 4 rồi lọc tiếp — thám tử hai vòng!)",
+   "loiChua": "từ danh sách 7, 12, 17, 22, 27 lọc số lẻ → 7, 17, 27.",
+   "tuLuan": true
+  },
+  {
+   "id": "C9",
+   "maSach": "C9",
+   "so": 9,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Anh Trí Dũng gài đề: \"Một số trong khoảng 10 - 20, chia 3 dư 1 và chia 5 CŨNG dư 1. Số nào?\" (Liệt kê hai đoàn tàu rồi tìm ga chung!)",
+   "loiChua": "đoàn chia 3 dư 1 trong 10-20: 10, 13, 16, 19; đoàn chia 5 dư 1: 11, 16; ga chung: 16.",
+   "tuLuan": true
+  },
+  {
+   "id": "Q1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "Các số chia 5 dư 2 hơn kém nhau đúng 5 đơn vị.",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": true
+   },
+   "loiChua": "Đáp án: ĐÚNG",
+   "solutionNarrative": ""
+  },
+  {
+   "id": "Q2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "Trong khoảng 5 - 30, các số chia 5 dư 2 chỉ gồm 12 và 22.",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": false
+   },
+   "loiChua": "còn 7, 17, 27",
+   "solutionNarrative": "còn 7, 17, 27"
+  },
+  {
+   "id": "Q3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Số 23 chia 5 dư:",
+   "format": "mcq",
+   "choices": [
+    "A. 2",
+    "B. 3",
+    "C. 4"
+   ],
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "B. 3"
+   },
+   "loiChua": "Đáp án: B. 3",
+   "solutionNarrative": ""
+  },
+  {
+   "id": "Q4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Số nào chia 4 dư 1?",
+   "format": "mcq",
+   "choices": [
+    "A. 12",
+    "B. 13",
+    "C. 14"
+   ],
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "B. 13"
+   },
+   "loiChua": "Đáp án: B. 13",
+   "solutionNarrative": ""
+  },
+  {
+   "id": "Q5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Chế một số chia 6 dư 1 với thương 5:",
+   "format": "mcq",
+   "choices": [
+    "A. 31",
+    "B. 30",
+    "C. 35"
+   ],
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 31"
+   },
+   "loiChua": "Đáp án: A. 31",
+   "solutionNarrative": ""
+  }
+ ]
+}

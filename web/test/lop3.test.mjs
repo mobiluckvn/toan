@@ -183,5 +183,63 @@ if (existsSync(ON)) {
     + ` · ${khoi.reduce((a, v) => a + v.cauDeB.length, 0)} câu đề B`);
 }
 
+/* ── bài đã dựng (data/lop3) — thứ phòng học sẽ đọc ── */
+const BAI = join(G, 'data/lop3');
+if (existsSync(BAI)) {
+  const tep = readdirSync(BAI).filter((f) => f.startsWith('DL_KSN3_'));
+  const bai = tep.map((f) => JSON.parse(readFileSync(join(BAI, f), 'utf8')));
+  t(`dựng đủ 34 bài (${bai.length})`, bai.length === 34);
+
+  /* mã bài phải khớp bản trích — lệch là phòng học mở ra bài không có thật */
+  const laMa = bai.filter((b) => !soTho.has(b.id)).map((b) => b.id);
+  t('mã bài nào cũng có trong bản trích', laMa.length === 0);
+  in5(laMa);
+
+  /* lời chữa: sách có đáp án cho cả 477 câu, mất câu nào là bé làm xong không so được */
+  const khongLoi = bai.flatMap((b) => (b.cau || [])
+    .filter((c) => !c.loiChua && !c.answerKey && !c.solutionNarrative)
+    .map((c) => `${b.id} ${c.id}`));
+  t('câu nào cũng có lời chữa hoặc đáp án', khongLoi.length === 0);
+  in5(khongLoi);
+
+  /* Chấm máy chỉ được phép khi CHẮC. Trắc nghiệm phải có đáp án nằm trong chính
+     danh sách phương án của đề — lệch một chữ là bé chọn đúng mà máy báo sai, và
+     bé thì tin máy chứ không tin mình. */
+  const chamHong = bai.flatMap((b) => (b.cau || []).filter((c) => c.format === 'mcq')
+    .filter((c) => !(c.choices || []).includes(c.answerKey?.choice))
+    .map((c) => `${b.id} ${c.id}: đáp án ${JSON.stringify(c.answerKey)} không có trong ${JSON.stringify(c.choices)}`));
+  t('đáp án trắc nghiệm nào cũng nằm trong phương án của đề', chamHong.length === 0);
+  in5(chamHong);
+
+  /* HẠT MẦM và đường LÙI — hai thứ lớp 2 không có, và là lý do quyển này nối được
+     với quyển trước. Thiếu lặng lẽ thì app vẫn chạy, chỉ mất mối nối giữa hai năm. */
+  const khongMam = bai.filter((b) => !b.hatMam).map((b) => b.id);
+  t('bài nào cũng có HẠT MẦM NĂM NGOÁI', khongMam.length === 0);
+  in5(khongMam);
+
+  const luiHong = [];
+  for (const b of bai) {
+    const g = b.ganLop2 || {};
+    if (!hopLe.has(g.canCu)) luiHong.push(`${b.id}: căn cứ lạ "${g.canCu}"`);
+    /* khai "không có bài tương ứng" mà vẫn trỏ đi đâu đó là mâu thuẫn; ngược lại,
+       khai có mà danh sách rỗng thì nút hiện ra rồi bấm chẳng tới đâu */
+    if (g.canCu === 'khong' && (g.ve || []).length) luiHong.push(`${b.id}: khai "khong" mà vẫn trỏ`);
+    if (g.canCu !== 'khong' && !(g.ve || []).length) luiHong.push(`${b.id}: khai có mà không trỏ đâu`);
+    for (const x of g.ve || []) if (!coL2.has(x)) luiHong.push(`${b.id} → ${x} (không có bài lớp 2 này)`);
+    if ((g.ve || []).length !== (g.ten || []).length) luiHong.push(`${b.id}: số đích và số tên lệch nhau`);
+  }
+  t('đường lùi về lớp 2 trỏ đúng và không tự mâu thuẫn', luiHong.length === 0);
+  in5(luiHong);
+
+  /* đường lùi phải chép ĐỦ đích, không cắt còn một. Bài 4, 16, 18 mỗi bài do sách
+     chỉ đích danh HAI bài lớp 2 — lấy mỗi cái đầu là bỏ mất nửa đường về. */
+  const hai = bai.filter((b) => (b.ganLop2?.ve || []).length > 1).length;
+  t(`giữ đủ đích kép (${hai} bài trỏ về 2 bài lớp 2)`, hai === 3);
+
+  const cham = bai.reduce((a, b) => a + b.cau.filter((c) => c.answerKey).length, 0);
+  console.log(`   ${bai.length} bài · ${bai.reduce((a, b) => a + b.cau.length, 0)} câu`
+    + ` · chấm máy ${cham} · có đường lùi ${bai.filter((b) => b.ganLop2?.ve?.length).length}`);
+}
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
