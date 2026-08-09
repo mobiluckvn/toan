@@ -415,7 +415,7 @@ kiểm sai tệ hơn không có** — nó cho cảm giác an toàn giả.
 
 ---
 
-## 9 · Bốn mươi hai cái bẫy đã dính
+## 9 · Bốn mươi bốn cái bẫy đã dính
 
 Mỗi cái đều thuộc loại **hỏng mà không có gì báo**.
 
@@ -521,7 +521,13 @@ Mỗi cái đều thuộc loại **hỏng mà không có gì báo**.
 41. **Dải `à-ỹ` (U+00E0–U+1EF9) CHỨA CẢ `Đ` `Ơ` `Ư` VIẾT HOA** (U+0110, U+01A0, U+01AF).
     Phép thử "dòng này in hoa" viết kiểu `[^a-zà-ỹ]+$` trượt mọi tiêu đề có Đ/Ơ/Ư — mà
     tiếng Việt thì tiêu đề nào chẳng có. So bằng `s == s.upper()`.
-42. **Tiêu đề trong sách có tiền tố dấu trang** (`B1  ĐÁP ÁN BÀI 1`) và **mục lục dán
+42. **Đếm số ẢNH mà tưởng là đếm số HÌNH** → một ảnh dùng lại nhiều chỗ. Sách lớp 3
+    có 80 chỗ neo trên 47 tệp, mà riêng cái nhiệt kế đã chiếm 34 chỗ. Đếm theo TỆP
+    thì hụt, đếm theo CHỖ NEO thì thừa — phải tách ảnh lặp ra trước.
+43. **Nhìn số ảnh gốc mà ước lượng công vẽ** → lớp 3 có 46 hình toán nhưng gần hết
+    nằm ở màn mở; mục giảng chỉ 6 hình cho 34 bài, bài tập KHÔNG có hình nào. Việc
+    vẽ nhiều hơn lớp 2 chứ không ít, dù ảnh gốc ít hơn.
+44. **Tiêu đề trong sách có tiền tố dấu trang** (`B1  ĐÁP ÁN BÀI 1`) và **mục lục dán
     số trang vào cuối tiêu đề** (`…chính danh27`). Mẫu neo `^ĐÁP ÁN BÀI` hay `…$` đều
     trượt. Cho phép tiền tố, và cắt đuôi số trang trước khi so.
 

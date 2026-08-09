@@ -13,7 +13,7 @@ const G = new URL('../../', import.meta.url).pathname;
 const CHUAN = join(G, 'docs/CHUAN_DUA_SACH_VAO_APP.md');
 
 /* Số viết bằng chữ, để soi tiêu đề "Bốn mươi cái bẫy" khớp số mục thật sự có. */
-const SO_CHU = { 31: 'Ba mươi mốt', 35: 'Ba mươi lăm', 40: 'Bốn mươi', 42: 'Bốn mươi hai',
+const SO_CHU = { 31: 'Ba mươi mốt', 35: 'Ba mươi lăm', 40: 'Bốn mươi', 42: 'Bốn mươi hai', 44: 'Bốn mươi bốn',
                  45: 'Bốn mươi lăm', 50: 'Năm mươi' };
 
 let pass = 0, fail = 0;
