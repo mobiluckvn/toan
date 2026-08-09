@@ -91,5 +91,32 @@ if (existsSync(THO)) {
     + ` · ${bai.reduce((a, b) => a + (b.sauBai || []).length, 0)} dòng ôn tập/ải/đáp án`);
 }
 
+/* ── đáp án: phải khớp 1:1 với câu hỏi ──
+   Lớp 2 từng có 60 lời giải gắn SAI CÂU vì đáp án ôn tập cũng đánh C1, C2… và
+   ghi đè lên đáp án bài (bẫy 6). Kiểu hỏng ấy không làm app vỡ, không làm số
+   liệu lệch — chỉ làm bé đọc lời giải của một câu khác. Chỉ đếm khớp mới bắt được. */
+const DA = join(G, 'data/lop3_dapan.json');
+if (existsSync(THO) && existsSync(DA)) {
+  const tho = JSON.parse(readFileSync(THO, 'utf8')).bai || [];
+  const da = JSON.parse(readFileSync(DA, 'utf8'));
+  const lech = [];
+  for (const b of tho) {
+    const ma = `DL:KSN3.B${String(b.so).padStart(2, '0')}`;
+    for (const [phan, key] of [['luyenTap', 'luyenTap'], ['quiz', 'quiz']]) {
+      const hoi = (b.cau || []).filter((c) => c.phan === phan).map((c) => c.maSach);
+      const dap = Object.keys(da[ma]?.[key] || {});
+      const thieuDap = hoi.filter((x) => !dap.includes(x));
+      const thuaDap = dap.filter((x) => !hoi.includes(x));
+      if (thieuDap.length) lech.push(`${ma} ${phan}: thiếu đáp án ${thieuDap.join(',')}`);
+      if (thuaDap.length) lech.push(`${ma} ${phan}: thừa đáp án ${thuaDap.join(',')} (đè từ ôn tập?)`);
+    }
+  }
+  t('mọi câu hỏi đều có đáp án, và không đáp án nào thừa', lech.length === 0);
+  in5(lech);
+  const n = Object.values(da).reduce((a, v) =>
+    a + Object.keys(v.luyenTap || {}).length + Object.keys(v.quiz || {}).length, 0);
+  console.log(`   ${Object.keys(da).length} bài · ${n} đáp án`);
+}
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
