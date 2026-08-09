@@ -368,6 +368,21 @@ của nút thường do chính ĐỀ nêu ra.
 
 ---
 
+## Luật đã rút ra — QUYỂN SAU ĐƯỢC RÀ TỰ ĐỘNG
+
+`web/test/luat_o_nhap.test.mjs` đọc danh sách quyển từ `content/chuong_trinh.json`,
+nên **lớp 4 vừa khai vào sổ là bị soi ngay** — không ai phải nhớ chép lại luật, và
+không ai chép thiếu. Năm luật: cấm ô gõ chữ (quyển đọc chậm) · mồi nhử phải thật sự
+sai · đáp án bấm chọn nằm trong nút · ô nào cũng có nhãn và nhãn không lộ đáp án ·
+chấm máy ≥ 85%.
+
+Luật 1 lái theo cờ `doc.moiManMotMuc` trong sổ, không theo tên quyển — lớp 4 chỉ cần
+khai cờ ấy. Lớp 5 không bật cờ nên 209 ô gõ chữ của nó là CHỦ Ý, không phải nợ.
+
+Toàn văn năm luật + ba lần phép kiểm đỏ oan: `CHUAN_DUA_SACH_VAO_APP.md` mục 7.
+
+---
+
 ## Việc đã cân nhắc và LOẠI
 
 - **Vẽ đủ 131 hình giảng, mỗi bước một hình.** Loại: chuẩn dặn "không phải mọi bước

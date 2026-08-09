@@ -358,14 +358,57 @@ Nhãn của màn là **"BÀI TOÁN"** (`StepView.jsx`, nhánh `hook`), không ph
 5. Không chắc → để tự chấm, có `solutionNarrative` để bé đối chiếu.
 6. Việc làm bằng tay, câu "vì sao", đề mở → **cố ý** giữ tự chấm, đánh dấu `thucHanh`.
 
+### Ô NHẬP — năm luật, có phép kiểm TỰ ĐỘNG áp cho mọi quyển
+
+`web/test/luat_o_nhap.test.mjs` đọc danh sách quyển từ `content/chuong_trinh.json`,
+nên **quyển mới vừa khai vào sổ là bị soi ngay** — không ai phải nhớ chép lại luật,
+và không ai chép thiếu. Năm luật, mỗi luật rút từ một lỗi ĐÃ XẢY RA THẬT:
+
+| # | luật | vì sao |
+|---|---|---|
+| 1 | **Quyển ĐỌC CHẬM: mọi ô là điền SỐ hoặc BẤM CHỌN** | bé 7-9 tuổi gõ chậm; sai chính tả một chữ, hay thừa một dấu cách trong biểu thức, là mất điểm oan — bài đang kiểm TOÁN chứ không kiểm kỹ năng gõ |
+| 2 | **Mồi nhử phải THẬT SỰ SAI** | mồi vô tình cũng đúng thì bé chọn nó bị chấm sai oan, tệ hơn cả không có trắc nghiệm |
+| 3 | **Đáp án bấm chọn nằm trong danh sách nút** | lệch một chữ là bé bấm đúng mà máy báo sai — bé thì tin máy chứ không tin mình |
+| 4 | **Ô nào cũng có nhãn, nhãn không đưa sẵn đáp án** | nhiều ô không nhãn thì bé không biết ô nào hỏi gì; nhãn dựng từ lời giải là cho không đáp số |
+| 5 | **Chấm máy ≥ 85% câu luyện tập** (quyển đọc chậm) | dưới ngưỡng ấy bé làm xong không ai biết đúng sai — sổ phụ huynh và bảng cô giáo trống |
+
+**Luật 1 chỉ áp cho quyển đọc chậm**, nhận theo cờ `doc.moiManMotMuc` trong sổ đăng
+ký chứ không theo tên quyển. Lớp 5 là bạn 10-11 tuổi, gõ biểu thức được — 209 ô gõ
+chữ của nó là CHỦ Ý, không phải nợ bỏ quên. Thêm lớp 4 chỉ cần khai cờ, khỏi sửa
+phép kiểm.
+
+**Ba lần phép kiểm này đỏ OAN, và cả ba đều dạy một điều: phép kiểm chặt hơn bộ chấm
+là sai, không phải nghiêm.**
+
+1. So chuỗi thô nên đỏ 5 câu lớp 5 — quyển ấy cố ý để lý do trong ngoặc ở `value`
+   (`"cặp vàng (1,25 × 8)"`) còn nút chỉ in phần cốt lõi, mà bộ chấm tha đúng chỗ đó.
+   → dùng chung `splitAside` / `answerCore` với bộ chấm.
+2. Quy gạch ngang ngắn `–` (U+2013) thành phép trừ, nên nhãn `mắt 3–4` (một KHOẢNG)
+   bị tính ra −1. → chỉ tính khi có dấu phép tính không nhập nhằng.
+3. So mồi nhử bằng GIÁ TRỊ ở câu hỏi về DẠNG VIẾT: lớp 5 hỏi "viết 2,73 thành tổng
+   giá trị các hàng", mồi `2 + 0,73` cộng lại cũng ra 2,73 nhưng không phải tách theo
+   hàng — đó là mồi TỐT, đúng lỗi bài muốn bẫy. → luật 2 chỉ áp khi đáp án là một
+   CON SỐ TRẦN.
+
+### Cách hạ số câu tự chấm
+
+Câu "vì sao" thường hỏi **một con số kèm một lời giải thích**. Tách con số ra thành ô
+là đo được ngay, lời giải thích để bé đối chiếu với `solutionNarrative`. Lớp 3 chuyển
+được 28 câu nhờ cách ấy, kéo tự chấm từ 37 xuống 9.
+
+Còn giữ tự chấm là CỐ Ý cho: đề mở (bé tự sáng tác đề) · việc làm bằng tay (dùng
+compa vẽ) · đọc số thành chữ (*"năm mươi tư"* và *"năm mươi bốn"* đều đúng) · sách chỉ
+nêu MỘT trong nhiều đáp án đúng (*"ví dụ 6 × 6 + 1 = 37"*). Khai đích danh từng câu
+kèm lý do, để lần sau không ai tưởng là bỏ sót.
+
 ### Suy máy được tới đâu
 
 Suy đáp án từ lời văn **chỉ dùng được cho khuôn cố định**. Số liệu thật của lớp 2:
 
 | | |
 |---|---|
-| máy suy ra (8 luật hẹp, đã soát tay từng câu) | 88 / 281 |
-| viết tay | 154 / 281 |
+| máy suy ra (8 luật hẹp, đã soát tay từng câu) | 87 / 281 |
+| viết tay | 155 / 281 |
 | cố ý để tự chấm | 39 / 281 |
 
 Đã thử 3 luật "thông minh" hơn, **phải bỏ 2** vì suy sai. Đừng thử lại — mã và lý do
@@ -605,6 +648,9 @@ Ngoài `ma · mon · lop · ten · tienTo · thuMuc · soBai`, để ý hai trư
 
 - **`loai`** — `'hoc'` là chuỗi bài học tuần tự (mở màn Home của lớp); `'giai'` là mùa
   giải, App mở thẳng bảng đấu chứ không đi qua Home.
+- **`doc.moiManMotMuc`** — cờ NHỊP ĐỌC CHẬM. Nó quyết ba thứ cùng lúc: phòng học nào
+  mở ra, chữ to hay nhỏ, và **có bị áp luật "cấm ô gõ chữ" hay không**. Quyển cho bé
+  tiểu học nhỏ (lớp 2, 3, 4) phải bật; bật xong là `luat_o_nhap.test.mjs` soi ngay.
 - **`donVi`** — đơn vị đếm hiện trên kệ sách, mặc định `'bài'`. Mùa giải đếm bằng vòng
   đấu nên phải khai riêng.
 
