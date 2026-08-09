@@ -1407,7 +1407,7 @@
    ],
    "du": {
     "so": 2,
-    "ten": "thừa 2 viên"
+    "ten": "còn thừa · 2 viên"
    },
    "note": "Còn 2 viên, ít hơn 3 bạn nên không chia thêm được nữa."
   }
@@ -1424,15 +1424,15 @@
    "title": "Chia đôi: số nào chia được đều, số nào còn thừa?",
    "nhom": [
     {
-     "ten": "8 viên → 4 và 4",
+     "ten": "8 viên → 4 cặp, không thừa",
      "so": 8,
-     "hang": 4,
+     "hang": 2,
      "mau": "teal"
     },
     {
-     "ten": "7 viên → 3 và 3, thừa 1",
+     "ten": "7 viên → 3 cặp, thừa 1",
      "so": 7,
-     "hang": 4,
+     "hang": 2,
      "mau": "do"
     }
    ],
@@ -2010,7 +2010,11 @@
      "canh": [
       "2 phần bằng nhau"
      ],
-     "mau": "gold"
+     "mau": "gold",
+     "luoi": [
+      1,
+      2
+     ]
     },
     {
      "loai": "vuong",
@@ -2018,7 +2022,11 @@
      "canh": [
       "4 phần bằng nhau"
      ],
-     "mau": "tim"
+     "mau": "tim",
+     "luoi": [
+      2,
+      2
+     ]
     }
    ],
    "note": "Các phần phải bằng nhau tăm tắp thì mới gọi là một nửa, một phần tư."
@@ -2030,37 +2038,35 @@
   "bai": "DL:KSN2.B27",
   "muc": "khamPha",
   "neoBuoc": 3,
-  "arch": "hinh_phang",
-  "caption": "Đếm cả hình đơn lẫn hình ghép",
+  "arch": "hinh_ghep",
+  "caption": "Tam giác to ôm trọn hai mảnh nhỏ — đó là hình đang ẩn",
   "params": {
-   "title": "Đếm hình: có hình đơn, lại có hình GHÉP đang ẩn",
-   "hinh": [
+   "title": "Tam giác to bị một vạch chia đôi — đếm được mấy tam giác?",
+   "loai": "tamgiac",
+   "vach": 2,
+   "mau": "teal",
+   "tim": [
     {
-     "loai": "tamgiac",
      "ten": "mảnh 1",
-     "canh": [
-      "hình đơn"
-     ],
-     "mau": "teal"
+     "o": [
+      0
+     ]
     },
     {
-     "loai": "tamgiac",
      "ten": "mảnh 2",
-     "canh": [
-      "hình đơn"
-     ],
-     "mau": "gold"
+     "o": [
+      1
+     ]
     },
     {
-     "loai": "tamgiac",
      "ten": "mảnh 1 + 2",
-     "canh": [
-      "hình ghép"
-     ],
-     "mau": "tim"
+     "o": [
+      0,
+      1
+     ]
     }
    ],
-   "note": "2 hình đơn + 1 hình ghép = 3 tam giác."
+   "note": "2 tam giác đơn + 1 tam giác ghép = 3 tam giác."
   }
  },
  {
@@ -2069,29 +2075,52 @@
   "bai": "DL:KSN2.B27",
   "muc": "khamPha",
   "neoBuoc": 3,
-  "arch": "hinh_phang",
-  "caption": "Ô cửa 2×2: 4 hình vuông nhỏ và 1 hình vuông to",
+  "arch": "hinh_ghep",
+  "caption": "Ô cửa 2×2: bốn ô nhỏ, cộng ô to ghép cả bốn",
   "params": {
    "title": "Ô cửa sổ 2 × 2 có mấy hình vuông?",
-   "hinh": [
+   "loai": "vuong",
+   "luoi": [
+    2,
+    2
+   ],
+   "mau": "gold",
+   "tim": [
     {
-     "loai": "vuong",
-     "ten": "4 ô nhỏ",
-     "canh": [
-      "1, 2, 3, 4"
-     ],
-     "mau": "gold"
+     "ten": "ô 1",
+     "o": [
+      0
+     ]
     },
     {
-     "loai": "vuong",
-     "ten": "1 ô to",
-     "canh": [
-      "ghép cả 4 ô"
-     ],
-     "mau": "do"
+     "ten": "ô 2",
+     "o": [
+      1
+     ]
+    },
+    {
+     "ten": "ô 3",
+     "o": [
+      2
+     ]
+    },
+    {
+     "ten": "ô 4",
+     "o": [
+      3
+     ]
+    },
+    {
+     "ten": "cả 4 ô ghép lại",
+     "o": [
+      0,
+      1,
+      2,
+      3
+     ]
     }
    ],
-   "note": "4 hình nhỏ + 1 hình to = 5 hình vuông."
+   "note": "4 hình vuông nhỏ + 1 hình vuông to = 5 hình vuông."
   }
  },
  {
@@ -2100,36 +2129,28 @@
   "bai": "DL:KSN2.B30",
   "muc": "gocBoMe",
   "neoBuoc": 0,
-  "arch": "hinh_phang",
-  "caption": "Đếm từng loại hình trên bản đồ",
+  "arch": "dong_hinh",
+  "caption": "Đếm từng loại hình trong đống hình trộn lẫn",
   "params": {
    "title": "Đếm xem có mấy hình mỗi loại",
    "hinh": [
     {
      "loai": "tamgiac",
-     "ten": "tam giác",
-     "canh": [
-      "3 cái"
-     ],
-     "mau": "tim"
+     "mau": "tim",
+     "soLuong": 3
     },
     {
      "loai": "vuong",
-     "ten": "hình vuông",
-     "canh": [
-      "2 cái"
-     ],
-     "mau": "teal"
+     "mau": "teal",
+     "soLuong": 2
     },
     {
      "loai": "tron",
-     "ten": "hình tròn",
-     "canh": [
-      "3 cái"
-     ],
-     "mau": "gold"
+     "mau": "gold",
+     "soLuong": 3
     }
-   ]
+   ],
+   "note": "Đếm rồi hãy soi: 3 tam giác · 2 hình vuông · 3 hình tròn."
   },
   "onTap": "C7"
  },
@@ -2263,21 +2284,24 @@
   "bai": "DL:KSN2.B30",
   "muc": "chuyenMoBai",
   "neoBuoc": 0,
-  "arch": "khoi_hop",
-  "caption": "Đếm cả khối bị che ở tầng dưới",
+  "arch": "thap_khoi",
+  "caption": "Tháp 5 khối: tầng dưới 2 hàng × 2 khối, tầng trên 1 khối",
   "params": {
    "title": "Hình xếp này có mấy khối?",
-   "khoi": [
+   "mau": "teal",
+   "tang": [
     {
-     "ten": "tầng dưới\n4 khối",
-     "mau": "teal"
+     "hang": 2,
+     "cot": 2,
+     "ten": "tầng dưới"
     },
     {
-     "ten": "tầng trên\n1 khối",
-     "mau": "gold"
+     "hang": 1,
+     "cot": 1,
+     "ten": "tầng trên"
     }
    ],
-   "note": "4 + 1 = 5 khối. Khối bị che vẫn phải đếm!"
+   "note": "4 + 1 = 5 khối. Khối nấp ở hàng sau vẫn phải đếm!"
   }
  },
  {

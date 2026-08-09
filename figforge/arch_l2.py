@@ -275,8 +275,11 @@ def cham_tron(p, out):
         vien, nen, chu = MAU.get(g.get('mau', 'teal'), MAU['teal'])
         card(ax, x, y, W, CAO, fc='white', ec=vien, lw=2.0, r=1.8)
         hangs = _chia_hang(g['so'], g.get('hang', 4))
+        # Cỡ chấm tính theo HÀNG DÀI NHẤT, dùng chung cho cả nhóm. Tính riêng từng
+        # hàng thì hàng 2 chấm vẽ to hơn hàng 3 chấm — cùng một rổ kẹo mà viên to
+        # viên nhỏ, bé đếm thì vẫn ra đúng nhưng nhìn như hai thứ khác nhau.
+        bw = min(3.4, (W - 6) / max(max(hangs), 1) / 2)
         for r, sl in enumerate(hangs):
-            bw = min(3.4, (W - 6) / max(sl, 1) / 2)
             x0 = x + W / 2 - (sl - 1) * bw
             for k in range(sl):
                 ax.add_patch(Circle((x0 + k * 2 * bw, y + CAO - 8.0 - r * 5.6), bw * 0.82,
@@ -450,9 +453,22 @@ def hinh_phang(p, out):
                                   (cx + r * 0.7, yc + r * 0.85), (cx - r * 0.8, yc + r * 0.5)],
                                  fc=nen, ec=vien, lw=2.4, zorder=4))
         else:
-            w2 = r if loai == 'vuong' else r * 1.35
-            ax.add_patch(Rectangle((cx - w2, yc - r * 0.8), w2 * 2, r * 1.6,
+            # HÌNH VUÔNG PHẢI VUÔNG. Cũ: rộng 2r × cao 1,6r — tức là chữ nhật, mà bài
+            # lại đang dạy phân biệt vuông với chữ nhật. Nay lấy CẠNH BẰNG NHAU.
+            cao = r * 1.6
+            w2 = cao / 2 if loai == 'vuong' else r * 1.35
+            ax.add_patch(Rectangle((cx - w2, yc - cao / 2), w2 * 2, cao,
                                    fc=nen, ec=vien, lw=2.4, zorder=4))
+            # `luoi: [số hàng, số cột]` — kẻ vạch chia đều. Không có vạch thì bé
+            # không thấy tờ giấy đã gấp làm mấy phần, chỉ đọc được con số ghi bên dưới.
+            lh, lc = (h.get('luoi') or [1, 1])[:2]
+            x0, y0 = cx - w2, yc - cao / 2
+            for j in range(1, int(lc)):
+                ax.plot([x0 + w2 * 2 * j / lc] * 2, [y0, y0 + cao],
+                        color=vien, lw=1.8, zorder=5)
+            for j in range(1, int(lh)):
+                ax.plot([x0, x0 + w2 * 2], [y0 + cao * j / lh] * 2,
+                        color=vien, lw=1.8, zorder=5)
         # Tên hình đọc TRƯỚC, dòng mô tả đọc sau — đúng thứ tự mắt bé đi xuống
         if h.get('ten'):
             _txt(ax, cx, yc - r - 4.2, h['ten'], fs=FS['body'], c=chu, w='bold', z=7)
@@ -763,4 +779,263 @@ def loi_thoai(p, out):
         _txt(ax, 14.0, y - 3.5, p['ten'], fs=FS['small'], c=NAVY, w='bold', z=6)
     if p.get('note'):
         txt_fit(ax, 50, y - 6.5, p['note'], 92, FS['body'], NAVY, z=5)
+    save(fig, out)
+
+
+# ── ba nguyên mẫu cho bài ĐẾM ────────────────────────────────────────────────
+# Bài đếm hình có một đòi hỏi mà các nguyên mẫu cũ không đáp được: bé phải ĐẾM
+# ĐƯỢC TRÊN HÌNH. Vẽ mỗi loại một cái rồi ghi số bên dưới thì đáp án nằm sẵn trên
+# hình, bé chẳng đếm gì — mà nhìn lướt vẫn thấy "có hình, có số", nên lọt rất dễ.
+
+def _manh_tamgiac(cx, yc, w, h, n):
+    """Tam giác to bị n−1 vạch từ ĐỈNH xuống đáy cắt thành n mảnh."""
+    dinh = (cx, yc + h / 2)
+    day_y = yc - h / 2
+    moc = [(cx - w / 2 + w * i / n, day_y) for i in range(n + 1)]
+    return [[dinh, moc[i], moc[i + 1]] for i in range(n)], [dinh], moc
+
+
+def _manh_luoi(cx, yc, w, h, nh, nc):
+    """Hình chữ nhật / vuông chia thành lưới nh × nc. Mảnh đánh số từ TRÁI SANG,
+    TRÊN XUỐNG — đúng thứ tự mắt bé đọc, để số trên hình khớp lời giải."""
+    x0, y0 = cx - w / 2, yc - h / 2
+    ra = []
+    for i in range(nh):
+        for j in range(nc):
+            a, b = x0 + w * j / nc, y0 + h * (nh - 1 - i) / nh
+            ra.append([(a, b), (a + w / nc, b), (a + w / nc, b + h / nh), (a, b + h / nh)])
+    return ra
+
+
+def _tam(poly):
+    return (sum(x for x, _ in poly) / len(poly), sum(y for _, y in poly) / len(poly))
+
+
+def _hop_manh(p, cx, yc, w, h, to):
+    """Gộp các mảnh được tô thành MỘT đa giác, nếu chúng ghép ra hình liền khối.
+
+    Không gộp thì bản "mảnh 1 + 2" vẫn còn vạch chia chạy giữa vùng tô — bé nhìn
+    ra hai mảnh, chứ không nhìn ra MỘT tam giác to. Mà nhìn ra hình to mới đúng
+    là điều bài đang dạy.
+    """
+    ds = sorted(to)
+    if not ds or ds != list(range(ds[0], ds[-1] + 1)):
+        return None                                   # rời rạc thì không gộp được
+    if p.get('loai') == 'tamgiac':
+        n = int(p.get('vach', 2))
+        _, (dinh,), moc = _manh_tamgiac(cx, yc, w, h, n)
+        return [dinh, moc[ds[0]], moc[ds[-1] + 1]]
+    nh, nc = (p.get('luoi') or [1, int(p.get('vach', 2))])[:2]
+    nh, nc = int(nh), int(nc)
+    hang = {i // nc for i in ds}
+    cot = {i % nc for i in ds}
+    # chỉ gộp khi vùng tô là một khối chữ nhật ĐẶC, không thủng lỗ
+    if len(ds) != len(hang) * len(cot):
+        return None
+    if sorted(hang) != list(range(min(hang), max(hang) + 1)):
+        return None
+    if sorted(cot) != list(range(min(cot), max(cot) + 1)):
+        return None
+    x0, y0 = cx - w / 2, yc - h / 2
+    a = x0 + w * min(cot) / nc
+    b = x0 + w * (max(cot) + 1) / nc
+    t = y0 + h * (nh - 1 - max(hang)) / nh
+    d = y0 + h * (nh - min(hang)) / nh
+    return [(a, t), (b, t), (b, d), (a, d)]
+
+
+def _ve_ghep(ax, p, cx, yc, w, h, to=(), so=True, lw=2.4):
+    """Vẽ hình ghép một lần. `to` = chỉ số các mảnh cần tô đậm."""
+    from matplotlib.patches import Polygon
+    loai = p.get('loai', 'chunhat')
+    if loai == 'tamgiac':
+        manh, _, _ = _manh_tamgiac(cx, yc, w, h, int(p.get('vach', 2)))
+    else:
+        nh, nc = (p.get('luoi') or [1, int(p.get('vach', 2))])[:2]
+        manh = _manh_luoi(cx, yc, w, h, int(nh), int(nc))
+    vien, nen, chu = MAU.get(p.get('mau', 'teal'), MAU['teal'])
+    for i, m in enumerate(manh):
+        ax.add_patch(Polygon(m, fc=nen, ec=vien, lw=lw, zorder=4))
+        if so:
+            mx, my = _tam(m)
+            _txt(ax, mx, my, str(i + 1), fs=FS['body'], c=chu, w='bold', z=7)
+    if to:
+        gop = _hop_manh(p, cx, yc, w, h, to)
+        for m in ([gop] if gop else [manh[i] for i in to]):
+            ax.add_patch(Polygon(m, fc='#F08A72', ec=vien, lw=lw, zorder=6))
+    return manh
+
+
+def hinh_ghep(p, out):
+    """
+    ĐẾM HÌNH TRONG HÌNH GHÉP — một hình to bị vạch chia thành nhiều mảnh.
+
+    params:
+      title · loai: tamgiac|vuong|chunhat · vach: n  |  luoi: [hàng, cột]
+      tim: [{ten, o: [chỉ số mảnh]}]   các hình tìm được, mỗi cái một bản nhỏ tô đậm
+      note · mau
+
+    VÌ SAO CẦN: bản cũ vẽ ba tam giác RỜI NHAU to bằng nhau cho câu "2 hình đơn +
+    1 hình ghép = 3". Bé đếm trên hình ấy được 3 tam giác rời — không hề thấy tam
+    giác to ÔM hai mảnh nhỏ, mà đó mới là điều cả bài đang dạy.
+    """
+    tim = p.get('tim') or []
+    n = max(len(tim), 1)
+    tren = 11.0 if p.get('title') else 4.0
+    CAO, CAO_N = 30.0, 17.0
+    duoi = 8.0 if p.get('note') else 4.0
+    fig, ax, H = canvas(7.6, max(3.0, (tren + CAO + CAO_N + 22.0 + duoi) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+
+    # Khai là hình VUÔNG thì phải vẽ VUÔNG — bài đang dạy đếm hình vuông, mà ô vẽ
+    # bẹt ra thì bé đọc "ô cửa 2 × 2" lại nhìn thấy toàn chữ nhật.
+    ti = 1.0 if p.get('loai') == 'vuong' else 1.15
+    yc = H - tren - CAO / 2 - 1.0
+    _ve_ghep(ax, p, 50, yc, CAO * ti, CAO, so=True)
+
+    # Hàng bản nhỏ: mỗi bản tô đậm ĐÚNG một hình tìm được. Đây là chỗ bé thấy hình
+    # ghép hiện ra — không có nó thì "hình ghép" vẫn chỉ là chữ.
+    if tim:
+        W = 88.0 / n
+        yn = yc - CAO / 2 - 6.0 - CAO_N / 2
+        for i, t in enumerate(tim):
+            cx = 6.0 + W * (i + 0.5)
+            _ve_ghep(ax, p, cx, yn, min(W * 0.72, CAO_N * ti), CAO_N,
+                     to=set(t.get('o') or []), so=False, lw=1.8)
+            _txt(ax, cx, yn - CAO_N / 2 - 4.0, t.get('ten', ''),
+                 fs=FS['small'], c=INK, w='bold', z=7)
+        ybot = yn - CAO_N / 2 - 10.0
+    else:
+        ybot = yc - CAO / 2 - 8.0
+    if p.get('note'):
+        txt_fit(ax, 50, ybot, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def thap_khoi(p, out):
+    """
+    THÁP KHỐI THẬT — xếp từng khối lập phương theo tầng, khối hàng sau bị che một phần.
+
+    params:
+      title · tang: [{hang, cot, ten}]  (kể từ TẦNG DƯỚI lên) · note
+
+    Bên phải vẽ lại từng tầng thành lưới phẳng — đúng cách bài dạy: "đếm theo
+    tầng, đếm cả bạn nấp hàng sau". Bản cũ vẽ hai khối rời ghi sẵn "4 khối" và
+    "1 khối": không có tháp, không có khối bị che, tức là mất cả bài học.
+    """
+    from matplotlib.patches import Polygon, Rectangle
+    tang = p.get('tang') or []
+    if not tang:
+        raise ValueError('thap_khoi cần ít nhất một tầng')
+    nh = max(int(t.get('hang', 1)) for t in tang)
+    nc = max(int(t.get('cot', 1)) for t in tang)
+    nt = len(tang)
+
+    tren = 11.0 if p.get('title') else 4.0
+    KHUNG_W, KHUNG_H = 46.0, 32.0
+    duoi = 8.0 if p.get('note') else 4.0
+    fig, ax, H = canvas(7.6, max(2.8, (tren + KHUNG_H + 14.0 + duoi) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+
+    # cạnh khối: vừa cả bề ngang lẫn bề cao của khung trái
+    s = min(KHUNG_W / (nc + (nh - 1) * 0.45 + 0.45), KHUNG_H / (nt + (nh - 1) * 0.45 + 0.45))
+    d = s * 0.45
+    x0 = 5.0
+    ytr = H - tren - KHUNG_H
+    vien, nen, _ = MAU.get(p.get('mau', 'teal'), MAU['teal'])
+
+    # HÀNG SAU VẼ TRƯỚC. Vẽ ngược lại thì khối trước bị khối sau đè lên, nhìn ra
+    # một mớ đường kẻ chứ không ra cái tháp.
+    o = []
+    for L, t in enumerate(tang):
+        for r in range(int(t.get('hang', 1))):
+            for c in range(int(t.get('cot', 1))):
+                o.append((r, L, c))
+    for r, L, c in sorted(o, key=lambda k: (-k[0], k[1], k[2])):
+        x = x0 + c * s + r * d
+        y = ytr + L * s + r * d
+        ax.add_patch(Rectangle((x, y), s, s, fc=nen, ec=vien, lw=1.9, zorder=10 - r))
+        ax.add_patch(Polygon([(x, y + s), (x + d, y + s + d), (x + s + d, y + s + d),
+                              (x + s, y + s)], fc='#FFF4DF', ec=vien, lw=1.9, zorder=10 - r))
+        ax.add_patch(Polygon([(x + s, y), (x + s + d, y + d), (x + s + d, y + s + d),
+                              (x + s, y + s)], fc='#E8F1FA', ec=vien, lw=1.9, zorder=10 - r))
+
+    # Bên phải: từng tầng trải phẳng, mỗi ô là một khối — đếm được từng cái
+    xr = 56.0
+    o_s = min(6.0, (100.0 - xr - 4.0) / max(nc, 1) * 0.8)
+    y = H - tren - 6.0
+    for L in range(nt - 1, -1, -1):
+        t = tang[L]
+        hh, cc = int(t.get('hang', 1)), int(t.get('cot', 1))
+        _txt(ax, xr, y, t.get('ten') or f'tầng {L + 1}', fs=FS['small'], c=NAVY,
+             w='bold', ha='left', z=7)
+        y -= 4.6
+        for r in range(hh):
+            for c in range(cc):
+                ax.add_patch(Rectangle((xr + c * o_s, y - (r + 1) * o_s * 0.86),
+                                       o_s * 0.9, o_s * 0.78, fc=nen, ec=vien, lw=1.5, zorder=6))
+        _txt(ax, xr + cc * o_s + 2.0, y - hh * o_s * 0.86 / 2 - 1.0,
+             f'{cc} × {hh} = {cc * hh}' if hh > 1 else f'{cc} khối',
+             fs=FS['small'], c=INK, ha='left', z=7)
+        y -= hh * o_s * 0.86 + 5.0
+
+    if p.get('note'):
+        txt_fit(ax, 50, ytr - 7.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
+    save(fig, out)
+
+
+def dong_hinh(p, out):
+    """
+    ĐỐNG HÌNH TRỘN LẪN — vẽ ĐỦ số hình mỗi loại, xếp xen kẽ để bé phải đếm thật.
+
+    params: title · hinh: [{loai, mau, soLuong}] · note
+
+    Xếp XEN KẼ chứ không gom theo loại: gom lại thì nhìn một cái là ra số, khỏi
+    đếm. Thứ tự xen kẽ tính bằng chia lấy dư nên lần vẽ nào cũng y hệt — hình
+    không được đổi mỗi lần chạy, đổi là mã kiểm đổi theo và máy bé tải lại.
+    """
+    from matplotlib.patches import Circle, Polygon, Rectangle
+    hs = p.get('hinh') or []
+    tui = []
+    for i, h in enumerate(hs):
+        tui += [h] * int(h.get('soLuong', 1))
+    if not tui:
+        raise ValueError('dong_hinh cần ít nhất một hình')
+    # xen kẽ: rải vòng tròn theo loại
+    xen, con = [], [[h] * int(h.get('soLuong', 1)) for h in hs]
+    while any(con):
+        for nhom in con:
+            if nhom:
+                xen.append(nhom.pop(0))
+    n = len(xen)
+    moi_hang = min(n, 5)
+    so_hang = (n + moi_hang - 1) // moi_hang
+    tren = 11.0 if p.get('title') else 4.0
+    O = min(15.0, 84.0 / moi_hang)
+    duoi = 9.0 if p.get('note') else 4.0
+    fig, ax, H = canvas(7.6, max(2.4, (tren + O * so_hang + 10.0 + duoi) * 7.6 / 100))
+    if p.get('title'):
+        txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
+
+    for k, h in enumerate(xen):
+        r_, c_ = divmod(k, moi_hang)
+        trong_hang = min(moi_hang, n - r_ * moi_hang)
+        cx = 50 - (trong_hang - 1) * O / 2 + c_ * O
+        cy = H - tren - O / 2 - r_ * O
+        rr = O * 0.34
+        vien, nen, _ = MAU.get(h.get('mau', 'teal'), MAU['teal'])
+        loai = h.get('loai', 'vuong')
+        if loai == 'tron':
+            ax.add_patch(Circle((cx, cy), rr, fc=nen, ec=vien, lw=2.2, zorder=4))
+        elif loai == 'tamgiac':
+            ax.add_patch(Polygon([(cx - rr, cy - rr * 0.8), (cx + rr, cy - rr * 0.8),
+                                  (cx, cy + rr)], fc=nen, ec=vien, lw=2.2, zorder=4))
+        else:
+            w2 = rr if loai == 'vuong' else rr * 1.3
+            ax.add_patch(Rectangle((cx - w2, cy - rr), w2 * 2, rr * 2,
+                                   fc=nen, ec=vien, lw=2.2, zorder=4))
+    if p.get('note'):
+        txt_fit(ax, 50, H - tren - O * so_hang - 6.0, p['note'], 92, FS['body'], DARKTEAL, z=5)
     save(fig, out)
