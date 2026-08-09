@@ -63,6 +63,7 @@ console.log('   căn cứ:', Object.entries(theoCanCu).map(([k, v]) => `${k} ${v
 
 /* ── bản trích thô: mốc bất biến, mất chữ ở đây thì mọi bước sau đều thiếu ── */
 const THO = join(G, 'data/lop3_tho.json');
+let soTho = new Set();          /* mã 34 bài có thật — mọi đích đến đều phải nằm trong đây */
 if (existsSync(THO)) {
   const d = JSON.parse(readFileSync(THO, 'utf8'));
   const bai = d.bai || [];
@@ -83,7 +84,7 @@ if (existsSync(THO)) {
   t('bài nào cũng có HẠT MẦM NĂM NGOÁI', khongHatMam.length === 0);
   in5(khongHatMam);
   /* mã bài trong bảng đường lùi phải khớp số bài có thật trong bản trích */
-  const soTho = new Set(bai.map((b) => `DL:KSN3.B${String(b.so).padStart(2, '0')}`));
+  soTho = new Set(bai.map((b) => `DL:KSN3.B${String(b.so).padStart(2, '0')}`));
   const lechBang = Object.keys(gan).filter((k) => !soTho.has(k));
   t('bảng đường lùi không trỏ từ bài lớp 3 không có thật', lechBang.length === 0);
   in5(lechBang);
@@ -116,6 +117,70 @@ if (existsSync(THO) && existsSync(DA)) {
   const n = Object.values(da).reduce((a, v) =>
     a + Object.keys(v.luyenTap || {}).length + Object.keys(v.quiz || {}).length, 0);
   console.log(`   ${Object.keys(da).length} bài · ${n} đáp án`);
+}
+
+/* ── ôn tập & ải: mối nối "sai câu nào, ôn bài đó" ──
+   Bộ tách đầu tiên nhận nhầm dòng BẢNG TỰ SOI thành câu hỏi — 5/8 ôn tập thừa 1-5
+   câu. Cái thừa thì bộ đếm kêu; cái THIẾU đi kèm mới nguy: mối nối trượt là câu ấy
+   mất đường về bài, hoặc tệ hơn, cả ôn tập tụt xuống "suy theo chương" và trỏ mỗi
+   câu về cả 5 bài. Bé bấm vào rồi phải tự đoán học lại bài nào — đúng cái việc mà
+   nút này sinh ra để khỏi phải làm. */
+const ON = join(G, 'data/lop3_ontap.json');
+if (existsSync(ON)) {
+  const o = JSON.parse(readFileSync(ON, 'utf8'));
+  const khoi = Object.values(o.khoi || {});
+  const on = khoi.filter((v) => v.loai === 'onTap');
+  t(`đủ 8 ôn tập và 3 ải (${on.length} · ${khoi.length - on.length})`,
+    on.length === 8 && khoi.length - on.length === 3);
+
+  const ten = (v) => `${v.loai === 'onTap' ? 'Ôn tập' : 'Ải'} ${v.so}`;
+  /* số câu tách được phải bằng con số chính sách nêu ("Đạt 8/10", "Phá 6/8 vụ án") */
+  const lechSo = khoi.filter((v) => (v.cau || []).length !== v.tong)
+    .map((v) => `${ten(v)}: tách ${v.cau.length}, sách nói ${v.tong}`);
+  t('số câu mỗi khối khớp con số sách nêu', lechSo.length === 0);
+  in5(lechSo);
+
+  /* số câu liền mạch 1…n — thủng một số là mẫu bỏ sót đúng câu ấy */
+  const thung = khoi.filter((v) => (v.cau || []).some((c, i) => c.so !== i + 1))
+    .map((v) => ten(v));
+  t('số câu chạy liền mạch 1…n', thung.length === 0);
+  in5(thung);
+
+  /* dòng bảng tự soi lọt vào làm câu hỏi — kiểu hỏng gốc. Dấu nhận biết KHÔNG phải
+     mũi tên: sách dùng → ngay trong đề ("Bán kính 4 cm → đường kính?"). Chỉ mũi tên
+     TRỎ TỚI MỘT SỐ BÀI mới là mối nối. */
+  const lot = khoi.flatMap((v) => (v.cau || []).concat(v.cauDeB || [])
+    .filter((c) => /→[^→]*Bài\s*\d/.test(c.text))
+    .map((c) => `${ten(v)} ${c.id}: ${c.text.slice(0, 60)}`));
+  t('không dòng bảng tự soi nào lọt vào làm câu hỏi', lot.length === 0);
+  in5(lot);
+
+  /* sách chỉ đích danh từng câu — phải đọc được, không được tụt xuống suy theo chương */
+  const phaiSuy = on.filter((v) => v.canCu !== 'sach').map((v) => ten(v));
+  t('mọi ôn tập đều đọc được mối nối SÁCH CHỈ ĐÍCH DANH', phaiSuy.length === 0);
+  in5(phaiSuy);
+
+  /* mọi câu có đường về, và đích đến phải là bài lớp 3 CÓ THẬT */
+  const hong = [];
+  for (const v of on) {
+    for (const c of v.cau || []) {
+      const ve = v.veCau?.[c.id] || [];
+      if (!ve.length) hong.push(`${ten(v)} ${c.id}: không trỏ về bài nào`);
+      for (const x of ve) if (!soTho.has(x)) hong.push(`${ten(v)} ${c.id} → ${x} (không có bài này)`);
+    }
+  }
+  t('mọi câu ôn tập đều trỏ về một bài lớp 3 có thật', hong.length === 0);
+  in5(hong);
+
+  /* đề B là thứ bé làm khi chưa đạt — thiếu câu nào là chỗ ấy không luyện lại được */
+  const lechB = on.filter((v) => (v.cauDeB || []).length !== v.tong)
+    .map((v) => `${ten(v)}: đề B ${v.cauDeB.length} câu, đề chính ${v.tong}`);
+  t('đề B đủ câu như đề chính', lechB.length === 0);
+  in5(lechB);
+
+  console.log(`   ${on.length} ôn tập · ${khoi.length - on.length} ải`
+    + ` · ${khoi.reduce((a, v) => a + v.cau.length, 0)} câu`
+    + ` · ${khoi.reduce((a, v) => a + v.cauDeB.length, 0)} câu đề B`);
 }
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);

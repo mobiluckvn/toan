@@ -14,42 +14,49 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 | 1 | phân loại hình | `docs/phan_loai_hinh_lop3.md` |
 | 2a | bộ trích thô | `tools/rut_lop3.py` → `data/lop3_tho.json` — **34 bài · 477 câu** |
 | 2b | bóc đáp án | `tools/dapan_lop3.py` → `data/lop3_dapan.json` — **477 đáp án, khớp 1:1** |
+| 2c | ôn tập & ải | `tools/ontap_lop3.py` → `data/lop3_ontap.json` — **8 ôn tập · 3 ải · 114 câu · 84 câu đề B · mối nối đủ 84/84 câu, cả 8 ôn tập đều `canCu: sach`** |
 | — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`) |
 
-Phép kiểm: `web/test/lop3.test.mjs` (11 phép). Chạy `cd web && npm test`.
+Phép kiểm: `web/test/lop3.test.mjs` (18 phép). Chạy `cd web && npm test`.
 
 ---
 
-## VIỆC 1 — chữa bộ tách câu ôn tập  ⚠ ĐANG DỞ
+## Bài học từ VIỆC 1 (đã xong) — đọc trước khi vá bất kỳ bộ tách nào
 
-`tools/ontap_lop3.py` → `data/lop3_ontap.json`. Bóc được 8 ôn tập · 3 ải · mối nối
-từng câu về từng bài. **Nhưng 5/8 ôn tập tách THỪA 1–5 câu** so với số sách nêu:
+Triệu chứng cũ: 5/8 ôn tập tách THỪA 1–5 câu. Tôi đã đoán mẫu tách câu hỏng. **Sai.**
+In nguyên văn thân khối ra đọc thì mọi câu thừa đều là một dòng **BẢNG TỰ SOI** bị
+nhận nhầm: mẫu mối nối trượt → dòng rơi xuống mẫu câu hỏi ở dưới → `Câu 6 và câu 11
+→ thuộc Bài 7` hoá ra câu hỏi số 6.
 
-```
-Ôn tập 2: 13 câu, sách nói 12       Ôn tập 5: 13 câu, sách nói 12
-Ôn tập 3: 12 câu, sách nói 10       Ôn tập 6: 13 câu, sách nói 8
-Ôn tập 4: 14 câu, sách nói 10
-```
+Cái THỪA thì bộ đếm kêu. Ba hỏng câm đi kèm mới đáng sợ, không phép đếm nào bắt:
 
-Ôn tập 1, 7, 8 đã khớp. Công cụ IN CẢNH BÁO cho từng chỗ lệch, không im lặng ghi bừa.
+- **ôn tập 6** trượt cả 5 dòng (sách viết `→ vũ khí ĐI LÙI (Bài 22)`, không có chữ
+  "thuộc") → tụt xuống `canCu: chuong`, mỗi câu trỏ về **cả 5 bài** của chương
+- **ôn tập 8** nhét cả 3 mối nối vào **một dòng**, mẫu cũ chỉ lấy cái đầu → 5/10 câu
+  mất đường về
+- **ôn tập 4** và **7**: `tong` không đọc được (`Nhập đúng 9/12 mã` · `Nghiệm thu
+  8/10 phòng` — mẫu chỉ biết `Đạt|Phá|Vượt`) nên lấy mặc định 10; ôn tập 7 đúng nhờ
+  ăn may, ôn tập 4 báo "sách nói 10" trong khi sách nói 12
 
-**Hai giả thuyết chưa kiểm:**
-1. lời chữa đề trong cùng khối cũng đánh số (`Câu 4, 5 → thuộc Bài 2` đã rào, nhưng
-   có thể còn dạng khác)
-2. vài ôn tập không có mốc `✦ ĐỀ B` rõ ràng nên câu Đề B vẫn gộp vào đề chính
+**Cách chữa đã dùng — đọc CẤU TRÚC, đừng dò từng dòng.** Mỗi ôn tập luôn có ba phần
+ngăn bởi hai mốc `✦`: `thân đề → ✦ BẢNG TỰ SOI → ✦ ĐỀ B`. Ở phần nào chỉ dùng mẫu của
+phần ấy. Dòng mối nối hết cửa rơi xuống thành câu hỏi; mẫu trượt thì mất mối nối và
+bộ đếm kêu, chứ không đẻ ra câu hỏi ma.
 
-**Cách làm đúng:** in nguyên văn thân từng khối ôn tập lệch rồi ĐỌC, đừng vá mẫu
-regex theo cảm tính. Tôi đã vá ba lượt liên tiếp và mỗi lượt lộ thêm một dạng mới —
-đó là dấu hiệu phải đọc chứ không phải đoán.
-
-**Ba dạng đã biết, đã rào, đừng làm hỏng khi sửa:**
+**Dạng đã rào, đừng làm hỏng khi sửa:**
 - tiêu đề ải có tiền tố `①②③` — mẫu `^ẢI` trượt hết
-- mỗi ôn tập đặt tên câu theo CHỦ ĐỀ: `Câu` · `Vụ` · `Phòng` · `Đảo` · `Mã` · `Trạm` · `Cửa`
-- số câu cần đạt KHÔNG cố định: `Đạt 8/10 câu` · `Phá 6/8 vụ án` — đọc từ chính dòng ấy
+- tên câu theo CHỦ ĐỀ: `Câu` · `Vụ` · `Phòng` · `Đảo` · `Mã` · `Trạm` · `Cửa`
+- ôn tập 6 gọi đề B là `✦ TẬP HỒ SƠ B`, không phải `✦ ĐỀ B`
+- ngưỡng đạt nhận theo **hình dạng `a/b`** trong phần mở đầu, không liệt kê động từ —
+  liệt kê thì sót, và sót lặng lẽ
+- đề B nhồi nhiều câu trên một dòng (`B1. … B2. … B3. …`), phải cắt theo `B<số>.`
+- một câu trỏ về HAI bài là chuyện thật, không phải lỗi: ôn tập 3 câu 10 (mật thư
+  A/B/C) → Bài 10 + 12; ôn tập 4 câu 12 (mã kép a/b) → Bài 14 + 16. Nên `veCau` là
+  **danh sách** mã bài, không phải một mã
 
 ---
 
-## VIỆC 2 — `tools/chuan_lop3.py` dựng dữ liệu bài học
+## VIỆC 2 — `tools/chuan_lop3.py` dựng dữ liệu bài học  ⚠ LÀM TIẾP TỪ ĐÂY
 
 Chép `tools/chuan_lop2.py`. Bảng khớp mục ①…⑧ **y hệt lớp 2** (xem `khuon_chung.py`,
 hằng `NOI_DUNG_HINH`). Hai trường phải THÊM so với lớp 2:

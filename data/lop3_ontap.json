@@ -5,6 +5,7 @@
   "sach": "sách chỉ đích danh \"Câu n → thuộc Bài m\" — chắc chắn",
   "ai": "ải phủ cả sách, không trỏ riêng bài nào"
  },
+ "_veCau": "mã câu → DANH SÁCH mã bài. Một câu trỏ về hai bài là chuyện có thật, không phải lỗi: câu chốt của ôn tập thường ghép ý của hai bài (ôn tập 3 câu 10, ôn tập 4 câu 12).",
  "khoi": {
   "onTap1": {
    "loai": "onTap",
@@ -12,80 +13,174 @@
    "ten": "LỄ MỞ CỔNG VẠN SỐ",
    "dong": [
     "Bài kiểm tra tổng hợp Bài 1-4 · Đạt 8/10 câu: cổng nghìn cân mở + sticker chìa khóa đầu tiên của lớp 3!",
-    "Luật chơi: cổng Vạn Số nặng nghìn cân chỉ mở cho thám tử trả lời đúng 8/10 câu. Su Bống đứng cạnh cổng cổ vũ — và giám sát xem anh chị có THỬ LẠI trước khi chốt không đấy!",
-    "★ PHẦN 1 — KHỞI ĐỘNG (3 câu)",
-    "★★ PHẦN 2 — VẬN DỤNG (4 câu)",
-    "★★★ PHẦN 3 — TRÙM CUỐI (3 câu)",
-    "✦ BẢNG TỰ SOI — SAI CÂU NÀO, ÔN BÀI ĐÓ",
-    "Đạt 8/10 câu trở lên: dán sticker CỔNG VẠN SỐ vào Bảng sưu tập lớp 3! Chưa đạt: ôn theo bảng trên rồi làm ĐỀ B bên dưới.",
-    "B1. Đọc số 4 209; viết số \"bảy nghìn không trăm mười lăm\". B2. Tách 5 208 thành tổng theo hàng. B3. Giá trị chữ số 6 trong 6 543 và trong 2 461?",
-    "B4. Thêm chữ số 5 vào bên trái số 43 — được số nào, hơn số cũ bao nhiêu? B5. Thêm chữ số 0 vào bên phải 78 — số mới gấp mấy lần? B6. Từ 2, 9, 6: số lớn nhất và bé nhất? B7. Từ 2, 9, 6: số chẵn lớn nhất?",
-    "B8. Có mấy số có 1 chữ số, mấy số có 2 chữ số? B9. Cuốn vở 28 trang cần mấy chữ số? B10. Dùng hết 27 chữ số đánh trang — sách dày mấy trang? (Thử xuôi!)"
+    "Luật chơi: cổng Vạn Số nặng nghìn cân chỉ mở cho thám tử trả lời đúng 8/10 câu. Su Bống đứng cạnh cổng cổ vũ — và giám sát xem anh chị có THỬ LẠI trước khi chốt không đấy!"
+   ],
+   "phan": [
+    {
+     "mucDo": 1,
+     "ten": "PHẦN 1 — KHỞI ĐỘNG (3 câu)"
+    },
+    {
+     "mucDo": 2,
+     "ten": "PHẦN 2 — VẬN DỤNG (4 câu)"
+    },
+    {
+     "mucDo": 3,
+     "ten": "PHẦN 3 — TRÙM CUỐI (3 câu)"
+    }
    ],
    "cau": [
     {
      "id": "C1",
      "so": 1,
-     "text": "Đọc số 3 507. Viết số \"sáu nghìn không trăm hai mươi\"."
+     "text": "Đọc số 3 507. Viết số \"sáu nghìn không trăm hai mươi\".",
+     "mucDo": 1
     },
     {
      "id": "C2",
      "so": 2,
-     "text": "Tách số 2 435 thành tổng theo các hàng."
+     "text": "Tách số 2 435 thành tổng theo các hàng.",
+     "mucDo": 1
     },
     {
      "id": "C3",
      "so": 3,
-     "text": "Nêu giá trị của chữ số 8 trong số 8 156 và trong số 3 048."
+     "text": "Nêu giá trị của chữ số 8 trong số 8 156 và trong số 3 048.",
+     "mucDo": 1
     },
     {
      "id": "C4",
      "so": 4,
-     "text": "Viết thêm chữ số 6 vào bên trái số 27. Được số nào? Số mới hơn số cũ bao nhiêu?"
+     "text": "Viết thêm chữ số 6 vào bên trái số 27. Được số nào? Số mới hơn số cũ bao nhiêu?",
+     "mucDo": 2
     },
     {
      "id": "C5",
      "so": 5,
-     "text": "Viết thêm chữ số 0 vào bên phải số 39. Được số nào? Số mới gấp mấy lần số cũ?"
+     "text": "Viết thêm chữ số 0 vào bên phải số 39. Được số nào? Số mới gấp mấy lần số cũ?",
+     "mucDo": 2
     },
     {
      "id": "C6",
      "so": 6,
-     "text": "Từ ba thẻ 3, 8, 5 (không lặp): lập số lớn nhất và số bé nhất có 3 chữ số."
+     "text": "Từ ba thẻ 3, 8, 5 (không lặp): lập số lớn nhất và số bé nhất có 3 chữ số.",
+     "mucDo": 2
     },
     {
      "id": "C7",
      "so": 7,
-     "text": "Cũng ba thẻ 3, 8, 5: lập số CHẴN lớn nhất có 3 chữ số. (Đuôi đặt vé trước!)"
+     "text": "Cũng ba thẻ 3, 8, 5: lập số CHẴN lớn nhất có 3 chữ số. (Đuôi đặt vé trước!)",
+     "mucDo": 2
     },
     {
      "id": "C8",
      "so": 8,
-     "text": "Từ 10 đến 99 có bao nhiêu số? Từ 100 đến 999 có bao nhiêu số?"
+     "text": "Từ 10 đến 99 có bao nhiêu số? Từ 100 đến 999 có bao nhiêu số?",
+     "mucDo": 3
     },
     {
      "id": "C9",
      "so": 9,
-     "text": "Cuốn truyện dày 25 trang. Cần bao nhiêu chữ số để đánh số hết? (Bài quen từ năm ngoái — năm nay trình bày bằng phép nhân nhé!)"
+     "text": "Cuốn truyện dày 25 trang. Cần bao nhiêu chữ số để đánh số hết? (Bài quen từ năm ngoái — năm nay trình bày bằng phép nhân nhé!)",
+     "mucDo": 3
     },
     {
      "id": "C10",
      "so": 10,
-     "text": "TRÙM CUỐI — bài ngược: đánh số trang một cuốn sổ dùng hết đúng 21 chữ số. Cuốn sổ dày bao nhiêu trang? Thử xuôi để chứng minh!"
+     "text": "TRÙM CUỐI — bài ngược: đánh số trang một cuốn sổ dùng hết đúng 21 chữ số. Cuốn sổ dày bao nhiêu trang? Thử xuôi để chứng minh!",
+     "mucDo": 3
     }
    ],
-   "cauDeB": [],
+   "cauDeB": [
+    {
+     "id": "B1",
+     "so": 1,
+     "text": "Đọc số 4 209; viết số \"bảy nghìn không trăm mười lăm\"."
+    },
+    {
+     "id": "B2",
+     "so": 2,
+     "text": "Tách 5 208 thành tổng theo hàng."
+    },
+    {
+     "id": "B3",
+     "so": 3,
+     "text": "Giá trị chữ số 6 trong 6 543 và trong 2 461?"
+    },
+    {
+     "id": "B4",
+     "so": 4,
+     "text": "Thêm chữ số 5 vào bên trái số 43 — được số nào, hơn số cũ bao nhiêu?"
+    },
+    {
+     "id": "B5",
+     "so": 5,
+     "text": "Thêm chữ số 0 vào bên phải 78 — số mới gấp mấy lần?"
+    },
+    {
+     "id": "B6",
+     "so": 6,
+     "text": "Từ 2, 9, 6: số lớn nhất và bé nhất?"
+    },
+    {
+     "id": "B7",
+     "so": 7,
+     "text": "Từ 2, 9, 6: số chẵn lớn nhất?"
+    },
+    {
+     "id": "B8",
+     "so": 8,
+     "text": "Có mấy số có 1 chữ số, mấy số có 2 chữ số?"
+    },
+    {
+     "id": "B9",
+     "so": 9,
+     "text": "Cuốn vở 28 trang cần mấy chữ số?"
+    },
+    {
+     "id": "B10",
+     "so": 10,
+     "text": "Dùng hết 27 chữ số đánh trang — sách dày mấy trang? (Thử xuôi!)"
+    }
+   ],
+   "soiTho": [
+    "Câu 1, 2, 3 → thuộc Bài 1 (Tòa tháp Nghìn & giá trị theo chỗ đứng).",
+    "Câu 4, 5 → thuộc Bài 2 (Thêm chữ số bên trái - bên phải).",
+    "Câu 6, 7 → thuộc Bài 3 (Xếp thẻ phiên bản khó).",
+    "Câu 8, 9, 10 → thuộc Bài 4 (Đếm số & đếm trang nâng cấp).",
+    "Đạt 8/10 câu trở lên: dán sticker CỔNG VẠN SỐ vào Bảng sưu tập lớp 3! Chưa đạt: ôn theo bảng trên rồi làm ĐỀ B bên dưới."
+   ],
    "veCau": {
-    "C1": "DL:KSN3.B01",
-    "C2": "DL:KSN3.B01",
-    "C3": "DL:KSN3.B01",
-    "C4": "DL:KSN3.B02",
-    "C5": "DL:KSN3.B02",
-    "C6": "DL:KSN3.B03",
-    "C7": "DL:KSN3.B03",
-    "C8": "DL:KSN3.B04",
-    "C9": "DL:KSN3.B04",
-    "C10": "DL:KSN3.B04"
+    "C1": [
+     "DL:KSN3.B01"
+    ],
+    "C2": [
+     "DL:KSN3.B01"
+    ],
+    "C3": [
+     "DL:KSN3.B01"
+    ],
+    "C4": [
+     "DL:KSN3.B02"
+    ],
+    "C5": [
+     "DL:KSN3.B02"
+    ],
+    "C6": [
+     "DL:KSN3.B03"
+    ],
+    "C7": [
+     "DL:KSN3.B03"
+    ],
+    "C8": [
+     "DL:KSN3.B04"
+    ],
+    "C9": [
+     "DL:KSN3.B04"
+    ],
+    "C10": [
+     "DL:KSN3.B04"
+    ]
    },
    "can": 8,
    "tong": 10,
@@ -97,95 +192,203 @@
    "ten": "HẢI TRÌNH RA KHƠI",
    "dong": [
     "Bài kiểm tra tổng hợp Bài 5-9 · Đạt 9/12 câu: cập bến kho báu + sticker Thủy thủ Vạn Số!",
-    "Luật chơi: hải trình đi qua 5 hòn đảo — mỗi đảo là một bài học, mỗi câu trả lời đúng là một hải lý thuận gió. Đúng 9/12 câu thì thuyền cập Bến Kho Báu!",
-    "★ CHẶNG 1 — RỜI CẢNG (4 câu)",
-    "★★ CHẶNG 2 — GIỮA KHƠI (5 câu)",
-    "★★★ CHẶNG 3 — BẾN KHO BÁU (3 câu)",
-    "✦ BẢNG TỰ SOI — SAI CÂU NÀO, ÔN BÀI ĐÓ",
-    "Đạt 9/12 câu trở lên: dán sticker THỦY THỦ VẠN SỐ vào Bảng sưu tập! Chưa đạt: ôn theo bảng trên rồi giăng buồm làm ĐỀ B.",
-    "B1. 43 × 2; 25 × 3. B2. 312 × 3. B3. 22 : 5 — viết chính danh và thử lại. B4. 34 : 4; 40 : 8.",
-    "B5. Chia cho 7, số dư lớn nhất là mấy? B6. Liệt kê các số chia 5 dư 3 trong khoảng 10 - 30. B7. Gấp 7 lên 3 lần? Thêm 3 vào 7? B8. 36 m giảm 4 lần còn mấy mét? B9. 40 gấp mấy lần 8?",
-    "B10. 1/5 của 30? 1/3 của 30? — suất nào nhiều hơn? B11. Một số chia 6 được thương 4 dư 5 — tìm số đó. B12. 1/4 kho ngọc là 5 viên: (a) cả kho mấy viên? (b) kho gấp mấy lần túi 4 viên?"
+    "Luật chơi: hải trình đi qua 5 hòn đảo — mỗi đảo là một bài học, mỗi câu trả lời đúng là một hải lý thuận gió. Đúng 9/12 câu thì thuyền cập Bến Kho Báu!"
+   ],
+   "phan": [
+    {
+     "mucDo": 1,
+     "ten": "CHẶNG 1 — RỜI CẢNG (4 câu)"
+    },
+    {
+     "mucDo": 2,
+     "ten": "CHẶNG 2 — GIỮA KHƠI (5 câu)"
+    },
+    {
+     "mucDo": 3,
+     "ten": "CHẶNG 3 — BẾN KHO BÁU (3 câu)"
+    }
    ],
    "cau": [
     {
      "id": "C1",
      "so": 1,
-     "text": "Tính: 32 × 3; 24 × 2."
+     "text": "Tính: 32 × 3; 24 × 2.",
+     "mucDo": 1
     },
     {
      "id": "C2",
      "so": 2,
-     "text": "Tính: 213 × 3."
+     "text": "Tính: 213 × 3.",
+     "mucDo": 1
     },
     {
      "id": "C3",
      "so": 3,
-     "text": "Tính rồi viết chính danh và thử lại: 17 : 3."
+     "text": "Tính rồi viết chính danh và thử lại: 17 : 3.",
+     "mucDo": 1
     },
     {
      "id": "C4",
      "so": 4,
-     "text": "Tính: 26 : 4; 30 : 5."
+     "text": "Tính: 26 : 4; 30 : 5.",
+     "mucDo": 1
     },
     {
      "id": "C5",
      "so": 5,
-     "text": "Khi chia một số cho 5, số dư lớn nhất có thể là mấy?"
+     "text": "Khi chia một số cho 5, số dư lớn nhất có thể là mấy?",
+     "mucDo": 2
     },
     {
      "id": "C6",
      "so": 6,
-     "text": "Liệt kê các số chia 4 dư 1 trong khoảng từ 10 đến 25."
+     "text": "Liệt kê các số chia 4 dư 1 trong khoảng từ 10 đến 25.",
+     "mucDo": 2
     },
     {
      "id": "C7",
      "so": 7,
-     "text": "Gấp 6 lên 4 lần được bao nhiêu? Còn thêm 4 vào 6 được bao nhiêu? (Cặp song sinh — chớ lên nhầm thuyền!)"
+     "text": "Gấp 6 lên 4 lần được bao nhiêu? Còn thêm 4 vào 6 được bao nhiêu? (Cặp song sinh — chớ lên nhầm thuyền!)",
+     "mucDo": 2
     },
     {
      "id": "C8",
      "so": 8,
-     "text": "Cuộn dây 27 m giảm đi 3 lần còn mấy mét?"
+     "text": "Cuộn dây 27 m giảm đi 3 lần còn mấy mét?",
+     "mucDo": 2
     },
     {
      "id": "C9",
      "so": 9,
-     "text": "Số 45 gấp mấy lần số 9?"
+     "text": "Số 45 gấp mấy lần số 9?",
+     "mucDo": 2
     },
     {
      "id": "C10",
      "so": 10,
-     "text": "Tìm 1/4 của 24 viên ngọc. Rồi tìm 1/3 của 24 — suất nào nhiều hơn?"
+     "text": "Tìm 1/4 của 24 viên ngọc. Rồi tìm 1/3 của 24 — suất nào nhiều hơn?",
+     "mucDo": 3
     },
     {
      "id": "C11",
      "so": 11,
-     "text": "Bài ngược: một số chia cho 4 được thương 5 và dư 2. Tìm số đó (công thức vàng chạy ngược!)."
+     "text": "Bài ngược: một số chia cho 4 được thương 5 và dư 2. Tìm số đó (công thức vàng chạy ngược!).",
+     "mucDo": 3
     },
     {
      "id": "C12",
      "so": 12,
-     "text": "TRÙM CUỐI hai tầng: 1/3 của một kho ngọc là 6 viên. (a) Cả kho có mấy viên? (b) Kho ấy gấp mấy lần túi 2 viên của Su Bống?"
-    },
-    {
-     "id": "C13",
-     "so": 6,
-     "text": "và câu 11 → thuộc Bài 7 (Truy tìm số chia a dư b) và công thức vàng."
+     "text": "TRÙM CUỐI hai tầng: 1/3 của một kho ngọc là 6 viên. (a) Cả kho có mấy viên? (b) Kho ấy gấp mấy lần túi 2 viên của Su Bống?",
+     "mucDo": 3
     }
    ],
-   "cauDeB": [],
+   "cauDeB": [
+    {
+     "id": "B1",
+     "so": 1,
+     "text": "43 × 2; 25 × 3."
+    },
+    {
+     "id": "B2",
+     "so": 2,
+     "text": "312 × 3."
+    },
+    {
+     "id": "B3",
+     "so": 3,
+     "text": "22 : 5 — viết chính danh và thử lại."
+    },
+    {
+     "id": "B4",
+     "so": 4,
+     "text": "34 : 4; 40 : 8."
+    },
+    {
+     "id": "B5",
+     "so": 5,
+     "text": "Chia cho 7, số dư lớn nhất là mấy?"
+    },
+    {
+     "id": "B6",
+     "so": 6,
+     "text": "Liệt kê các số chia 5 dư 3 trong khoảng 10 - 30."
+    },
+    {
+     "id": "B7",
+     "so": 7,
+     "text": "Gấp 7 lên 3 lần? Thêm 3 vào 7?"
+    },
+    {
+     "id": "B8",
+     "so": 8,
+     "text": "36 m giảm 4 lần còn mấy mét?"
+    },
+    {
+     "id": "B9",
+     "so": 9,
+     "text": "40 gấp mấy lần 8?"
+    },
+    {
+     "id": "B10",
+     "so": 10,
+     "text": "1/5 của 30? 1/3 của 30? — suất nào nhiều hơn?"
+    },
+    {
+     "id": "B11",
+     "so": 11,
+     "text": "Một số chia 6 được thương 4 dư 5 — tìm số đó."
+    },
+    {
+     "id": "B12",
+     "so": 12,
+     "text": "1/4 kho ngọc là 5 viên: (a) cả kho mấy viên? (b) kho gấp mấy lần túi 4 viên?"
+    }
+   ],
+   "soiTho": [
+    "Câu 1, 2 → thuộc Bài 5 (Nhân ra ngoài bảng).",
+    "Câu 3, 4, 5 → thuộc Bài 6 (Chia có dư chính danh).",
+    "Câu 6 và câu 11 → thuộc Bài 7 (Truy tìm số chia a dư b) và công thức vàng.",
+    "Câu 7, 8, 9 → thuộc Bài 8 (Gấp lên - giảm đi nhiều lần).",
+    "Câu 10, 12 → thuộc Bài 9 (Tìm một phần mấy).",
+    "Đạt 9/12 câu trở lên: dán sticker THỦY THỦ VẠN SỐ vào Bảng sưu tập! Chưa đạt: ôn theo bảng trên rồi giăng buồm làm ĐỀ B."
+   ],
    "veCau": {
-    "C1": "DL:KSN3.B05",
-    "C2": "DL:KSN3.B05",
-    "C3": "DL:KSN3.B06",
-    "C4": "DL:KSN3.B06",
-    "C5": "DL:KSN3.B06",
-    "C7": "DL:KSN3.B08",
-    "C8": "DL:KSN3.B08",
-    "C9": "DL:KSN3.B08",
-    "C10": "DL:KSN3.B09",
-    "C12": "DL:KSN3.B09"
+    "C1": [
+     "DL:KSN3.B05"
+    ],
+    "C2": [
+     "DL:KSN3.B05"
+    ],
+    "C3": [
+     "DL:KSN3.B06"
+    ],
+    "C4": [
+     "DL:KSN3.B06"
+    ],
+    "C5": [
+     "DL:KSN3.B06"
+    ],
+    "C6": [
+     "DL:KSN3.B07"
+    ],
+    "C11": [
+     "DL:KSN3.B07"
+    ],
+    "C7": [
+     "DL:KSN3.B08"
+    ],
+    "C8": [
+     "DL:KSN3.B08"
+    ],
+    "C9": [
+     "DL:KSN3.B08"
+    ],
+    "C10": [
+     "DL:KSN3.B09"
+    ],
+    "C12": [
+     "DL:KSN3.B09"
+    ]
    },
    "can": 9,
    "tong": 12,
@@ -197,83 +400,174 @@
    "ten": "NHẬT KÝ THÁM HIỂM DÃY SỐ",
    "dong": [
     "Bài kiểm tra tổng hợp Bài 10-12 · Đạt 8/10 câu + giải mật thư: sticker Nhà Thám Hiểm Dãy Số!",
-    "Luật chơi: 9 câu đầu ghi vào nhật ký thám hiểm; câu 10 là MẬT THƯ 2.0 — giải ba dãy để lấy ba con số, tra bảng mã đọc mật khẩu mở kho sách cổ của Fibonacci!",
-    "★ PHẦN 1 — KHỞI ĐỘNG (3 câu)",
-    "★★ PHẦN 2 — VẬN DỤNG (4 câu)",
-    "★★★ PHẦN 3 — TRÙM CUỐI & MẬT THƯ (3 câu)",
-    "✦ BẢNG TỰ SOI — SAI CÂU NÀO, ÔN BÀI ĐÓ",
-    "Đạt 8/10 câu và đọc đúng mật khẩu: dán sticker NHÀ THÁM HIỂM DÃY SỐ! Chưa đạt: ôn theo bảng trên rồi mở ĐỀ B.",
-    "B1. Viết tiếp 2 số: 5, 9, 13, ... B2. Dãy 2, 7, 12, ... nhịp mấy, mã dư mấy? B3. Viết tiếp 2 số của dãy thỏ hạt giống mới: 2, 2, 4, 6, 10, ..., ...",
-    "B4. Số hạng thứ 9 của dãy 4, 9, 14, ...? B5. Số hạng thứ 10 của dãy 6, 9, 12, ...? B6. Số 38 có thuộc dãy 5, 10, 15, ... không — nhìn đuôi trả lời ngay! B7. Số 47 có thuộc dãy 2, 7, 12, ... không? Nếu có, là số hạng thứ mấy?",
-    "B8. Giải mã, viết tiếp 2 số: 2, 3, 5, 8, 12, ..., ... B9. Giải mã, viết tiếp 1 số: 2, 4, 5, 10, 11, ... B10. Mật thư B — tra cùng bảng mã trên hình: (A) số hạng thứ 5 của dãy 4, 8, 12, ...; (B) số hạng thứ 4 của dãy 4, 7, 10, ...; (C) số tiếp theo của dãy 4, 7, 11, ... — mật khẩu Đề B là gì?"
+    "Luật chơi: 9 câu đầu ghi vào nhật ký thám hiểm; câu 10 là MẬT THƯ 2.0 — giải ba dãy để lấy ba con số, tra bảng mã đọc mật khẩu mở kho sách cổ của Fibonacci!"
+   ],
+   "phan": [
+    {
+     "mucDo": 1,
+     "ten": "PHẦN 1 — KHỞI ĐỘNG (3 câu)"
+    },
+    {
+     "mucDo": 2,
+     "ten": "PHẦN 2 — VẬN DỤNG (4 câu)"
+    },
+    {
+     "mucDo": 3,
+     "ten": "PHẦN 3 — TRÙM CUỐI & MẬT THƯ (3 câu)"
+    }
    ],
    "cau": [
     {
      "id": "C1",
      "so": 1,
-     "text": "Viết tiếp 2 số của dãy: 6, 10, 14, ..., ..."
+     "text": "Viết tiếp 2 số của dãy: 6, 10, 14, ..., ...",
+     "mucDo": 1
     },
     {
      "id": "C2",
      "so": 2,
-     "text": "Dãy 3, 8, 13, 18, ... có nhịp mấy? Mã dư của dãy (chia cho nhịp) là mấy?"
+     "text": "Dãy 3, 8, 13, 18, ... có nhịp mấy? Mã dư của dãy (chia cho nhịp) là mấy?",
+     "mucDo": 1
     },
     {
      "id": "C3",
      "so": 3,
-     "text": "Viết tiếp 2 số của dãy thỏ: 1, 1, 2, 3, 5, 8, ..., ..."
+     "text": "Viết tiếp 2 số của dãy thỏ: 1, 1, 2, 3, 5, 8, ..., ...",
+     "mucDo": 1
     },
     {
      "id": "C4",
      "so": 4,
-     "text": "Tìm số hạng thứ 8 của dãy 3, 8, 13, ..."
+     "text": "Tìm số hạng thứ 8 của dãy 3, 8, 13, ...",
+     "mucDo": 2
     },
     {
      "id": "C5",
      "so": 5,
-     "text": "Tìm số hạng thứ 10 của dãy 2, 6, 10, ..."
+     "text": "Tìm số hạng thứ 10 của dãy 2, 6, 10, ...",
+     "mucDo": 2
     },
     {
      "id": "C6",
      "so": 6,
-     "text": "Số 27 có thuộc dãy 4, 8, 12, ... không? Vì sao? (Hai vũ khí: chẵn - lẻ loại nhanh, máy soi dư khẳng định!)"
+     "text": "Số 27 có thuộc dãy 4, 8, 12, ... không? Vì sao? (Hai vũ khí: chẵn - lẻ loại nhanh, máy soi dư khẳng định!)",
+     "mucDo": 2
     },
     {
      "id": "C7",
      "so": 7,
-     "text": "Số 43 có thuộc dãy 3, 8, 13, ... không? Nếu có, là số hạng thứ mấy?"
+     "text": "Số 43 có thuộc dãy 3, 8, 13, ... không? Nếu có, là số hạng thứ mấy?",
+     "mucDo": 2
     },
     {
      "id": "C8",
      "so": 8,
-     "text": "Giải mã và viết tiếp 2 số: 1, 3, 6, 10, ..., ..."
+     "text": "Giải mã và viết tiếp 2 số: 1, 3, 6, 10, ..., ...",
+     "mucDo": 3
     },
     {
      "id": "C9",
      "so": 9,
-     "text": "Giải mã và viết tiếp 1 số: 3, 6, 7, 14, 15, ..."
+     "text": "Giải mã và viết tiếp 1 số: 3, 6, 7, 14, 15, ...",
+     "mucDo": 3
     },
     {
      "id": "C10",
      "so": 10,
-     "text": "MẬT THƯ 2.0 — tìm ba con số rồi tra bảng mã trên hình: (A) số hạng thứ 6 của dãy 5, 8, 11, ...; (B) số hạng thứ 7 của dãy thỏ 1, 1, 2, 3, 5, 8, ...; (C) số tiếp theo của dãy 1, 2, 4, 7, 11, ... — Ghép ba chữ cái theo thứ tự A-B-C: mật khẩu là gì?"
-    },
-    {
-     "id": "C11",
-     "so": 1,
-     "text": ", 4, 5 và mật thư (A) → thuộc Bài 10 (Toa tàu thứ n)."
-    },
-    {
-     "id": "C12",
-     "so": 3,
-     "text": ", 8, 9 và mật thư (B), (C) → thuộc Bài 12 (Fibonacci & hai tầng)."
+     "text": "MẬT THƯ 2.0 — tìm ba con số rồi tra bảng mã trên hình: (A) số hạng thứ 6 của dãy 5, 8, 11, ...; (B) số hạng thứ 7 của dãy thỏ 1, 1, 2, 3, 5, 8, ...; (C) số tiếp theo của dãy 1, 2, 4, 7, 11, ... — Ghép ba chữ cái theo thứ tự A-B-C: mật khẩu là gì?",
+     "mucDo": 3
     }
    ],
-   "cauDeB": [],
+   "cauDeB": [
+    {
+     "id": "B1",
+     "so": 1,
+     "text": "Viết tiếp 2 số: 5, 9, 13, ..."
+    },
+    {
+     "id": "B2",
+     "so": 2,
+     "text": "Dãy 2, 7, 12, ... nhịp mấy, mã dư mấy?"
+    },
+    {
+     "id": "B3",
+     "so": 3,
+     "text": "Viết tiếp 2 số của dãy thỏ hạt giống mới: 2, 2, 4, 6, 10, ..., ..."
+    },
+    {
+     "id": "B4",
+     "so": 4,
+     "text": "Số hạng thứ 9 của dãy 4, 9, 14, ...?"
+    },
+    {
+     "id": "B5",
+     "so": 5,
+     "text": "Số hạng thứ 10 của dãy 6, 9, 12, ...?"
+    },
+    {
+     "id": "B6",
+     "so": 6,
+     "text": "Số 38 có thuộc dãy 5, 10, 15, ... không — nhìn đuôi trả lời ngay!"
+    },
+    {
+     "id": "B7",
+     "so": 7,
+     "text": "Số 47 có thuộc dãy 2, 7, 12, ... không? Nếu có, là số hạng thứ mấy?"
+    },
+    {
+     "id": "B8",
+     "so": 8,
+     "text": "Giải mã, viết tiếp 2 số: 2, 3, 5, 8, 12, ..., ..."
+    },
+    {
+     "id": "B9",
+     "so": 9,
+     "text": "Giải mã, viết tiếp 1 số: 2, 4, 5, 10, 11, ..."
+    },
+    {
+     "id": "B10",
+     "so": 10,
+     "text": "Mật thư B — tra cùng bảng mã trên hình: (A) số hạng thứ 5 của dãy 4, 8, 12, ...; (B) số hạng thứ 4 của dãy 4, 7, 10, ...; (C) số tiếp theo của dãy 4, 7, 11, ... — mật khẩu Đề B là gì?"
+    }
+   ],
+   "soiTho": [
+    "Câu 1, 4, 5 và mật thư (A) → thuộc Bài 10 (Toa tàu thứ n).",
+    "Câu 2, 6, 7 → thuộc Bài 11 (Ga này tàu có dừng không — mã dư).",
+    "Câu 3, 8, 9 và mật thư (B), (C) → thuộc Bài 12 (Fibonacci & hai tầng).",
+    "Đạt 8/10 câu và đọc đúng mật khẩu: dán sticker NHÀ THÁM HIỂM DÃY SỐ! Chưa đạt: ôn theo bảng trên rồi mở ĐỀ B."
+   ],
    "veCau": {
-    "C2": "DL:KSN3.B11",
-    "C6": "DL:KSN3.B11",
-    "C7": "DL:KSN3.B11"
+    "C1": [
+     "DL:KSN3.B10"
+    ],
+    "C4": [
+     "DL:KSN3.B10"
+    ],
+    "C5": [
+     "DL:KSN3.B10"
+    ],
+    "C10": [
+     "DL:KSN3.B10",
+     "DL:KSN3.B12"
+    ],
+    "C2": [
+     "DL:KSN3.B11"
+    ],
+    "C6": [
+     "DL:KSN3.B11"
+    ],
+    "C7": [
+     "DL:KSN3.B11"
+    ],
+    "C3": [
+     "DL:KSN3.B12"
+    ],
+    "C8": [
+     "DL:KSN3.B12"
+    ],
+    "C9": [
+     "DL:KSN3.B12"
+    ]
    },
    "can": 8,
    "tong": 10,
@@ -285,99 +579,206 @@
    "ten": "GIẢI MÃ MẬT THẤT",
    "dong": [
     "Bài kiểm tra tổng hợp Bài 13-16 · Nhập đúng 9/12 mã: cửa thép mở + sticker Chiến Binh Biểu Thức!",
-    "Luật chơi: bánh xe mã số của mật thất cần đủ 12 mã. Mỗi câu trả lời đúng là một mã sáng đèn. Đủ 9/12 đèn xanh — cửa thép rùng rùng chuyển bánh!",
-    "★ MÃ 1-4 — VÒNG NGOÀI",
-    "★★ MÃ 5-9 — VÒNG GIỮA",
-    "★★★ MÃ 10-12 — LÕI KÉT",
-    "✦ BẢNG TỰ SOI — SAI MÃ NÀO, ÔN BÀI ĐÓ",
-    "Nhập đúng 9/12 mã: dán sticker CHIẾN BINH BIỂU THỨC vào Bảng sưu tập! Chưa đủ đèn xanh: ôn theo bảng trên rồi quay bánh xe ĐỀ B.",
-    "B1. 4 + 2 × 5. B2. 30 − 18 : 3. B3. 36 : 6 × 2. B4. (4 + 2) × 5 — so với B1?",
-    "B5. 40 : (13 − 5). B6. 30 − (16 − (4 + 2)). B7. Tìm X: X × 4 = 32. B8. Tìm X: X × 3 + 8 = 29. B9. Tìm X: X : 3 − 2 = 5.",
-    "B10. Tính thuận tiện: 46 + 39 + 4 + 11. B11. Tính thuận tiện: 4 × 45 + 4 × 55. B12. (a) 98 × 5 + 5 + 5; (b) đặt một cặp ngoặc vào 20 − 8 − 4 để được 16."
+    "Luật chơi: bánh xe mã số của mật thất cần đủ 12 mã. Mỗi câu trả lời đúng là một mã sáng đèn. Đủ 9/12 đèn xanh — cửa thép rùng rùng chuyển bánh!"
+   ],
+   "phan": [
+    {
+     "mucDo": 1,
+     "ten": "MÃ 1-4 — VÒNG NGOÀI"
+    },
+    {
+     "mucDo": 2,
+     "ten": "MÃ 5-9 — VÒNG GIỮA"
+    },
+    {
+     "mucDo": 3,
+     "ten": "MÃ 10-12 — LÕI KÉT"
+    }
    ],
    "cau": [
     {
      "id": "C1",
      "so": 1,
-     "text": "Tính: 5 + 3 × 2."
+     "text": "Tính: 5 + 3 × 2.",
+     "mucDo": 1
     },
     {
      "id": "C2",
      "so": 2,
-     "text": "Tính: 20 − 12 : 4."
+     "text": "Tính: 20 − 12 : 4.",
+     "mucDo": 1
     },
     {
      "id": "C3",
      "so": 3,
-     "text": "Tính: 24 : 4 × 2."
+     "text": "Tính: 24 : 4 × 2.",
+     "mucDo": 1
     },
     {
      "id": "C4",
      "so": 4,
-     "text": "Tính: (5 + 3) × 2 — so với mã số 1, chiếc ngoặc đổi kết quả thế nào?"
+     "text": "Tính: (5 + 3) × 2 — so với mã số 1, chiếc ngoặc đổi kết quả thế nào?",
+     "mucDo": 1
     },
     {
      "id": "C5",
      "so": 5,
-     "text": "Tính: 36 : (2 + 4)."
+     "text": "Tính: 36 : (2 + 4).",
+     "mucDo": 2
     },
     {
      "id": "C6",
      "so": 6,
-     "text": "Hai lớp cửa: 20 − (12 − (3 + 1))."
+     "text": "Hai lớp cửa: 20 − (12 − (3 + 1)).",
+     "mucDo": 2
     },
     {
      "id": "C7",
      "so": 7,
-     "text": "Tìm X: X × 3 = 27."
+     "text": "Tìm X: X × 3 = 27.",
+     "mucDo": 2
     },
     {
      "id": "C8",
      "so": 8,
-     "text": "Tìm X: X × 4 + 5 = 29 (trình bày hai nấc + thử lại)."
+     "text": "Tìm X: X × 4 + 5 = 29 (trình bày hai nấc + thử lại).",
+     "mucDo": 2
     },
     {
      "id": "C9",
      "so": 9,
-     "text": "Tìm X: X : 2 − 3 = 7."
+     "text": "Tìm X: X : 2 − 3 = 7.",
+     "mucDo": 2
     },
     {
      "id": "C10",
      "so": 10,
-     "text": "Tính thuận tiện: 37 + 25 + 13 + 5."
+     "text": "Tính thuận tiện: 37 + 25 + 13 + 5.",
+     "mucDo": 3
     },
     {
      "id": "C11",
      "so": 11,
-     "text": "Tính thuận tiện: 3 × 25 + 3 × 75."
+     "text": "Tính thuận tiện: 3 × 25 + 3 × 75.",
+     "mucDo": 3
     },
     {
      "id": "C12",
      "so": 12,
-     "text": "MÃ KÉP: (a) tính thuận tiện 99 × 4 + 4; (b) đặt một cặp ngoặc vào 3 + 5 × 2 để được 16."
-    },
-    {
-     "id": "C13",
-     "so": 4,
-     "text": ", 5, 6 và câu (b) mã 12 → thuộc Bài 14 (Những lớp cửa ngoặc)."
-    },
-    {
-     "id": "C14",
-     "so": 10,
-     "text": ", 11 và câu (a) mã 12 → thuộc Bài 16 (Tính thuận tiện chiến binh)."
+     "text": "MÃ KÉP: (a) tính thuận tiện 99 × 4 + 4; (b) đặt một cặp ngoặc vào 3 + 5 × 2 để được 16.",
+     "mucDo": 3
     }
    ],
-   "cauDeB": [],
+   "cauDeB": [
+    {
+     "id": "B1",
+     "so": 1,
+     "text": "4 + 2 × 5."
+    },
+    {
+     "id": "B2",
+     "so": 2,
+     "text": "30 − 18 : 3."
+    },
+    {
+     "id": "B3",
+     "so": 3,
+     "text": "36 : 6 × 2."
+    },
+    {
+     "id": "B4",
+     "so": 4,
+     "text": "(4 + 2) × 5 — so với B1?"
+    },
+    {
+     "id": "B5",
+     "so": 5,
+     "text": "40 : (13 − 5)."
+    },
+    {
+     "id": "B6",
+     "so": 6,
+     "text": "30 − (16 − (4 + 2))."
+    },
+    {
+     "id": "B7",
+     "so": 7,
+     "text": "Tìm X: X × 4 = 32."
+    },
+    {
+     "id": "B8",
+     "so": 8,
+     "text": "Tìm X: X × 3 + 8 = 29."
+    },
+    {
+     "id": "B9",
+     "so": 9,
+     "text": "Tìm X: X : 3 − 2 = 5."
+    },
+    {
+     "id": "B10",
+     "so": 10,
+     "text": "Tính thuận tiện: 46 + 39 + 4 + 11."
+    },
+    {
+     "id": "B11",
+     "so": 11,
+     "text": "Tính thuận tiện: 4 × 45 + 4 × 55."
+    },
+    {
+     "id": "B12",
+     "so": 12,
+     "text": "(a) 98 × 5 + 5 + 5; (b) đặt một cặp ngoặc vào 20 − 8 − 4 để được 16."
+    }
+   ],
+   "soiTho": [
+    "Mã 1, 2, 3 → thuộc Bài 13 (Luật giao thông của phép tính).",
+    "Mã 4, 5, 6 và câu (b) mã 12 → thuộc Bài 14 (Những lớp cửa ngoặc).",
+    "Mã 7, 8, 9 → thuộc Bài 15 (Số bí mật X 2.0).",
+    "Mã 10, 11 và câu (a) mã 12 → thuộc Bài 16 (Tính thuận tiện chiến binh).",
+    "Nhập đúng 9/12 mã: dán sticker CHIẾN BINH BIỂU THỨC vào Bảng sưu tập! Chưa đủ đèn xanh: ôn theo bảng trên rồi quay bánh xe ĐỀ B."
+   ],
    "veCau": {
-    "C1": "DL:KSN3.B13",
-    "C2": "DL:KSN3.B13",
-    "C3": "DL:KSN3.B13",
-    "C7": "DL:KSN3.B15",
-    "C8": "DL:KSN3.B15",
-    "C9": "DL:KSN3.B15"
+    "C1": [
+     "DL:KSN3.B13"
+    ],
+    "C2": [
+     "DL:KSN3.B13"
+    ],
+    "C3": [
+     "DL:KSN3.B13"
+    ],
+    "C4": [
+     "DL:KSN3.B14"
+    ],
+    "C5": [
+     "DL:KSN3.B14"
+    ],
+    "C6": [
+     "DL:KSN3.B14"
+    ],
+    "C12": [
+     "DL:KSN3.B14",
+     "DL:KSN3.B16"
+    ],
+    "C7": [
+     "DL:KSN3.B15"
+    ],
+    "C8": [
+     "DL:KSN3.B15"
+    ],
+    "C9": [
+     "DL:KSN3.B15"
+    ],
+    "C10": [
+     "DL:KSN3.B16"
+    ],
+    "C11": [
+     "DL:KSN3.B16"
+    ]
    },
-   "can": null,
-   "tong": null,
+   "can": 9,
+   "tong": 12,
    "canCu": "sach"
   },
   "onTap5": {
@@ -386,94 +787,203 @@
    "ten": "TUYỂN TẬP CHUYỆN TOÁN MÙA HAI",
    "dong": [
     "Bài kiểm tra tổng hợp Bài 17-21 · Đạt 9/12 câu: sticker NGƯỜI KỂ CHUYỆN TOÁN MÙA HAI!",
-    "Luật chơi: 12 mẩu chuyện dưới đây đều là chuyện thật của hai gia đình trong tuần qua. Mỗi bài giải trọn vẹn (đủ lời văn - phép tính - đáp số) là một trang tuyển tập được đóng dấu!",
-    "★ TRANG 1-4 — CHUYỆN MỞ TẬP",
-    "★★ TRANG 5-9 — CHUYỆN GIỮA TẬP",
-    "★★★ TRANG 10-12 — CHUYỆN CHỐT TẬP",
-    "✦ BẢNG TỰ SOI — SAI CÂU NÀO, ÔN BÀI ĐÓ",
-    "Đạt 9/12 câu: dán sticker NGƯỜI KỂ CHUYỆN TOÁN MÙA HAI! Chưa đạt: ôn theo bảng trên rồi mở ĐỀ B — tập truyện thứ hai đang chờ.",
-    "B1. An có 14 viên bi, Bình ít hơn An 5 viên — cả hai có mấy viên? B2. Cửa hàng có 50 kg đường, bán sáng 16 kg, chiều 14 kg — còn mấy kg? B3. Mẹ 36 tuổi, gấp 4 lần con — con mấy tuổi? B4. Sợi dây 6 m, sợi thứ hai gấp 4 lần — sợi thứ hai dài mấy mét?",
-    "B5. Hộp A 16 viên, hộp B 10 viên — chuyển từ A sang B mấy viên để bằng nhau? B6. Ba số liên tiếp tổng 30? B7. Tổng tuổi hai anh em Trí Dũng - Trí Long là 22 — bốn năm nữa là bao nhiêu? B8. Khi Trí Long bằng tuổi anh Trí Dũng bây giờ thì anh bao nhiêu tuổi? B9. 4 gói bánh 20 nghìn — 7 gói hết bao nhiêu?",
-    "B10. Số lớn gấp 4 lần số bé và hơn số bé 9 — tìm hai số. B11. Mấy năm nữa tổng tuổi hai anh em Trí Dũng - Trí Long bằng 34? B12. Tiệm C: 2 bút 16 nghìn; tiệm D: 5 bút 35 nghìn — tiệm nào rẻ hơn mỗi chiếc, rẻ hơn bao nhiêu?"
+    "Luật chơi: 12 mẩu chuyện dưới đây đều là chuyện thật của hai gia đình trong tuần qua. Mỗi bài giải trọn vẹn (đủ lời văn - phép tính - đáp số) là một trang tuyển tập được đóng dấu!"
+   ],
+   "phan": [
+    {
+     "mucDo": 1,
+     "ten": "TRANG 1-4 — CHUYỆN MỞ TẬP"
+    },
+    {
+     "mucDo": 2,
+     "ten": "TRANG 5-9 — CHUYỆN GIỮA TẬP"
+    },
+    {
+     "mucDo": 3,
+     "ten": "TRANG 10-12 — CHUYỆN CHỐT TẬP"
+    }
    ],
    "cau": [
     {
      "id": "C1",
      "so": 1,
-     "text": "Su Bống có 6 viên kẹo, anh Su Kem có nhiều hơn em 4 viên. Hỏi hai anh em có tất cả bao nhiêu viên?"
+     "text": "Su Bống có 6 viên kẹo, anh Su Kem có nhiều hơn em 4 viên. Hỏi hai anh em có tất cả bao nhiêu viên?",
+     "mucDo": 1
     },
     {
      "id": "C2",
      "so": 2,
-     "text": "Nhà có 40 kg gạo, tuần đầu ăn hết 12 kg, tuần sau ăn hết 15 kg. Hỏi còn lại bao nhiêu kg?"
+     "text": "Nhà có 40 kg gạo, tuần đầu ăn hết 12 kg, tuần sau ăn hết 15 kg. Hỏi còn lại bao nhiêu kg?",
+     "mucDo": 1
     },
     {
      "id": "C3",
      "so": 3,
-     "text": "Bố Su Kem 40 tuổi, Su Kem 8 tuổi. Tuổi bố gấp mấy lần tuổi Su Kem?"
+     "text": "Bố Su Kem 40 tuổi, Su Kem 8 tuổi. Tuổi bố gấp mấy lần tuổi Su Kem?",
+     "mucDo": 1
     },
     {
      "id": "C4",
      "so": 4,
-     "text": "Chị Ngọc Anh có 15 chiếc nhãn vở, gấp 3 lần Su Bống. Hỏi Su Bống có mấy chiếc?"
+     "text": "Chị Ngọc Anh có 15 chiếc nhãn vở, gấp 3 lần Su Bống. Hỏi Su Bống có mấy chiếc?",
+     "mucDo": 1
     },
     {
      "id": "C5",
      "so": 5,
-     "text": "Ngăn sách của Trí Long có 18 quyển, ngăn của Ngọc Anh có 12 quyển. Trí Long chuyển cho chị mấy quyển thì hai ngăn bằng nhau?"
+     "text": "Ngăn sách của Trí Long có 18 quyển, ngăn của Ngọc Anh có 12 quyển. Trí Long chuyển cho chị mấy quyển thì hai ngăn bằng nhau?",
+     "mucDo": 2
     },
     {
      "id": "C6",
      "so": 6,
-     "text": "Tìm ba số liên tiếp có tổng bằng 27."
+     "text": "Tìm ba số liên tiếp có tổng bằng 27.",
+     "mucDo": 2
     },
     {
      "id": "C7",
      "so": 7,
-     "text": "Tổng tuổi của năm anh chị em (Trí Dũng, Ngọc Anh, Trí Long, Su Kem, Su Bống) bây giờ là 46. Hỏi ba năm nữa tổng ấy là bao nhiêu?"
+     "text": "Tổng tuổi của năm anh chị em (Trí Dũng, Ngọc Anh, Trí Long, Su Kem, Su Bống) bây giờ là 46. Hỏi ba năm nữa tổng ấy là bao nhiêu?",
+     "mucDo": 2
     },
     {
      "id": "C8",
      "so": 8,
-     "text": "Khi Su Bống bằng tuổi Su Kem bây giờ thì Su Kem bao nhiêu tuổi?"
+     "text": "Khi Su Bống bằng tuổi Su Kem bây giờ thì Su Kem bao nhiêu tuổi?",
+     "mucDo": 2
     },
     {
      "id": "C9",
      "so": 9,
-     "text": "Mua 3 hộp sữa chua hết 21 nghìn đồng. Hỏi mua 5 hộp như thế hết bao nhiêu tiền?"
+     "text": "Mua 3 hộp sữa chua hết 21 nghìn đồng. Hỏi mua 5 hộp như thế hết bao nhiêu tiền?",
+     "mucDo": 2
     },
     {
      "id": "C10",
      "so": 10,
-     "text": "Hộp kẹo lớn có số kẹo gấp 3 lần hộp nhỏ và nhiều hơn hộp nhỏ 8 viên. Hỏi mỗi hộp có mấy viên?"
+     "text": "Hộp kẹo lớn có số kẹo gấp 3 lần hộp nhỏ và nhiều hơn hộp nhỏ 8 viên. Hỏi mỗi hộp có mấy viên?",
+     "mucDo": 3
     },
     {
      "id": "C11",
      "so": 11,
-     "text": "Hôm nay chị Ngọc Anh 11 tuổi, Su Bống 5 tuổi. Mấy năm nữa tuổi chị gấp đúng 2 lần tuổi em?"
+     "text": "Hôm nay chị Ngọc Anh 11 tuổi, Su Bống 5 tuổi. Mấy năm nữa tuổi chị gấp đúng 2 lần tuổi em?",
+     "mucDo": 3
     },
     {
      "id": "C12",
      "so": 12,
-     "text": "Tiệm A: 3 hộp sữa chua 21 nghìn. Tiệm B: 4 hộp 24 nghìn. Mẹ nên mua tiệm nào cho rẻ — và rẻ hơn mỗi hộp bao nhiêu?"
-    },
-    {
-     "id": "C13",
-     "so": 3,
-     "text": ", 4 và câu 10 → thuộc Bài 18 (Hơn đơn vị hay gấp lần)."
+     "text": "Tiệm A: 3 hộp sữa chua 21 nghìn. Tiệm B: 4 hộp 24 nghìn. Mẹ nên mua tiệm nào cho rẻ — và rẻ hơn mỗi hộp bao nhiêu?",
+     "mucDo": 3
     }
    ],
-   "cauDeB": [],
+   "cauDeB": [
+    {
+     "id": "B1",
+     "so": 1,
+     "text": "An có 14 viên bi, Bình ít hơn An 5 viên — cả hai có mấy viên?"
+    },
+    {
+     "id": "B2",
+     "so": 2,
+     "text": "Cửa hàng có 50 kg đường, bán sáng 16 kg, chiều 14 kg — còn mấy kg?"
+    },
+    {
+     "id": "B3",
+     "so": 3,
+     "text": "Mẹ 36 tuổi, gấp 4 lần con — con mấy tuổi?"
+    },
+    {
+     "id": "B4",
+     "so": 4,
+     "text": "Sợi dây 6 m, sợi thứ hai gấp 4 lần — sợi thứ hai dài mấy mét?"
+    },
+    {
+     "id": "B5",
+     "so": 5,
+     "text": "Hộp A 16 viên, hộp B 10 viên — chuyển từ A sang B mấy viên để bằng nhau?"
+    },
+    {
+     "id": "B6",
+     "so": 6,
+     "text": "Ba số liên tiếp tổng 30?"
+    },
+    {
+     "id": "B7",
+     "so": 7,
+     "text": "Tổng tuổi hai anh em Trí Dũng - Trí Long là 22 — bốn năm nữa là bao nhiêu?"
+    },
+    {
+     "id": "B8",
+     "so": 8,
+     "text": "Khi Trí Long bằng tuổi anh Trí Dũng bây giờ thì anh bao nhiêu tuổi?"
+    },
+    {
+     "id": "B9",
+     "so": 9,
+     "text": "4 gói bánh 20 nghìn — 7 gói hết bao nhiêu?"
+    },
+    {
+     "id": "B10",
+     "so": 10,
+     "text": "Số lớn gấp 4 lần số bé và hơn số bé 9 — tìm hai số."
+    },
+    {
+     "id": "B11",
+     "so": 11,
+     "text": "Mấy năm nữa tổng tuổi hai anh em Trí Dũng - Trí Long bằng 34?"
+    },
+    {
+     "id": "B12",
+     "so": 12,
+     "text": "Tiệm C: 2 bút 16 nghìn; tiệm D: 5 bút 35 nghìn — tiệm nào rẻ hơn mỗi chiếc, rẻ hơn bao nhiêu?"
+    }
+   ],
+   "soiTho": [
+    "Câu 1, 2 → thuộc Bài 17 (Bài toán hai bước tính).",
+    "Câu 3, 4 và câu 10 → thuộc Bài 18 (Hơn đơn vị hay gấp lần).",
+    "Câu 5, 6 → thuộc Bài 19 (Thêm bớt để bằng nhau & ba số liên tiếp).",
+    "Câu 7, 8, 11 → thuộc Bài 20 (Toán tuổi hai gia đình).",
+    "Câu 9, 12 → thuộc Bài 21 (Rút về đơn vị).",
+    "Đạt 9/12 câu: dán sticker NGƯỜI KỂ CHUYỆN TOÁN MÙA HAI! Chưa đạt: ôn theo bảng trên rồi mở ĐỀ B — tập truyện thứ hai đang chờ."
+   ],
    "veCau": {
-    "C1": "DL:KSN3.B17",
-    "C2": "DL:KSN3.B17",
-    "C5": "DL:KSN3.B19",
-    "C6": "DL:KSN3.B19",
-    "C7": "DL:KSN3.B20",
-    "C8": "DL:KSN3.B20",
-    "C11": "DL:KSN3.B20",
-    "C9": "DL:KSN3.B21",
-    "C12": "DL:KSN3.B21"
+    "C1": [
+     "DL:KSN3.B17"
+    ],
+    "C2": [
+     "DL:KSN3.B17"
+    ],
+    "C3": [
+     "DL:KSN3.B18"
+    ],
+    "C4": [
+     "DL:KSN3.B18"
+    ],
+    "C10": [
+     "DL:KSN3.B18"
+    ],
+    "C5": [
+     "DL:KSN3.B19"
+    ],
+    "C6": [
+     "DL:KSN3.B19"
+    ],
+    "C7": [
+     "DL:KSN3.B20"
+    ],
+    "C8": [
+     "DL:KSN3.B20"
+    ],
+    "C11": [
+     "DL:KSN3.B20"
+    ],
+    "C9": [
+     "DL:KSN3.B21"
+    ],
+    "C12": [
+     "DL:KSN3.B21"
+    ]
    },
    "can": 9,
    "tong": 12,
@@ -485,181 +995,151 @@
    "ten": "HỒ SƠ CHUYÊN ÁN CẤP CAO",
    "dong": [
     "Bài kiểm tra tổng hợp Bài 22-26 · Phá 6/8 vụ án: nhận phù hiệu THÁM TỬ CAO CẤP!",
-    "Luật chơi: tập hồ sơ TỐI MẬT gồm 8 vụ án — mỗi vụ cần đúng một vũ khí trong kho mới của con. Đọc kỹ hiện trường, chọn đúng vũ khí, trình bày trọn vẹn. Phá 6/8 vụ là được thăng hàm!",
-    "★ VỤ ÁN 1-3 — HỒ SƠ MỎNG",
-    "★★ VỤ ÁN 4-6 — HỒ SƠ DÀY",
-    "★★★ VỤ ÁN 7-8 — HỒ SƠ TỐI MẬT",
-    "✦ BẢNG TỰ SOI — TRƯỢT VỤ NÀO, MÀI VŨ KHÍ ĐÓ",
-    "Phá 6/8 vụ: dán sticker THÁM TỬ CAO CẤP vào Bảng sưu tập — phù hiệu danh giá nhất từ đầu sách! Chưa đủ: mài vũ khí theo bảng trên rồi mở tập hồ sơ B.",
-    "✦ TẬP HỒ SƠ B — TÁM VỤ ÁN DỰ PHÒNG",
-    "B1. Một số nhân 3 rồi trừ 4 thì được 17 — tìm số đó. B2. Su Bống ăn một nửa túi kẹo rồi cho bạn 2 viên, còn 6 viên — túi lúc đầu mấy viên? B3. Sân có gà và chó: 9 đầu, 24 chân — mấy gà mấy chó?",
-    "B4. Bãi xe có xe đạp và xe ba bánh: 8 xe, 19 bánh — mỗi loại mấy chiếc? B5. Quanh vườn tròn chu vi 30 m cắm cọc cách nhau 6 m — mấy cọc? B6. Cưa khúc gỗ thành 4 đoạn, mỗi nhát 3 phút — cưa xong mất mấy phút?",
-    "B7. Nhóm 25 bạn: 14 thích truyện tranh, 12 thích truyện chữ, 6 thích cả hai — mấy bạn thích ít nhất một loại, mấy bạn không thích loại nào? B8. 1 dưa = 3 cam: (a) 2 dưa + 5 cam bằng mấy cam? (b) 1 dưa + 1 cam nặng 4 kg — mỗi quả nặng mấy kg?"
+    "Luật chơi: tập hồ sơ TỐI MẬT gồm 8 vụ án — mỗi vụ cần đúng một vũ khí trong kho mới của con. Đọc kỹ hiện trường, chọn đúng vũ khí, trình bày trọn vẹn. Phá 6/8 vụ là được thăng hàm!"
+   ],
+   "phan": [
+    {
+     "mucDo": 1,
+     "ten": "VỤ ÁN 1-3 — HỒ SƠ MỎNG"
+    },
+    {
+     "mucDo": 2,
+     "ten": "VỤ ÁN 4-6 — HỒ SƠ DÀY"
+    },
+    {
+     "mucDo": 3,
+     "ten": "VỤ ÁN 7-8 — HỒ SƠ TỐI MẬT"
+    }
    ],
    "cau": [
     {
      "id": "C1",
      "so": 1,
-     "text": "Một số nhân 2 rồi cộng 5 thì được 21. Tìm số đó."
+     "text": "Một số nhân 2 rồi cộng 5 thì được 21. Tìm số đó.",
+     "mucDo": 1
     },
     {
      "id": "C2",
      "so": 2,
-     "text": "Cửa hàng bán một nửa số gạo, rồi bán thêm 5 kg thì còn 15 kg. Lúc đầu có bao nhiêu kg?"
+     "text": "Cửa hàng bán một nửa số gạo, rồi bán thêm 5 kg thì còn 15 kg. Lúc đầu có bao nhiêu kg?",
+     "mucDo": 1
     },
     {
      "id": "C3",
      "so": 3,
-     "text": "Trang trại có gà và chó: 10 cái đầu, 32 cái chân. Mấy gà, mấy chó?"
+     "text": "Trang trại có gà và chó: 10 cái đầu, 32 cái chân. Mấy gà, mấy chó?",
+     "mucDo": 1
     },
     {
      "id": "C4",
      "so": 4,
-     "text": "Nhà xe có xe đạp và xe ba bánh: 7 chiếc, 16 bánh. Mỗi loại mấy chiếc?"
+     "text": "Nhà xe có xe đạp và xe ba bánh: 7 chiếc, 16 bánh. Mỗi loại mấy chiếc?",
+     "mucDo": 2
     },
     {
      "id": "C5",
      "so": 5,
-     "text": "Trồng cây quanh hồ tròn chu vi 24 m, cây cách cây 4 m. Trồng được mấy cây?"
+     "text": "Trồng cây quanh hồ tròn chu vi 24 m, cây cách cây 4 m. Trồng được mấy cây?",
+     "mucDo": 2
     },
     {
      "id": "C6",
      "so": 6,
-     "text": "Cưa một khúc gỗ thành 6 đoạn. Cần mấy nhát cưa?"
+     "text": "Cưa một khúc gỗ thành 6 đoạn. Cần mấy nhát cưa?",
+     "mucDo": 2
     },
     {
      "id": "C7",
      "so": 7,
-     "text": "Lớp 3A có 35 bạn: 20 mê bóng đá, 18 mê cầu lông, 8 mê cả hai. Hỏi mấy bạn thích ít nhất một môn — và mấy bạn không mê môn nào?"
+     "text": "Lớp 3A có 35 bạn: 20 mê bóng đá, 18 mê cầu lông, 8 mê cả hai. Hỏi mấy bạn thích ít nhất một môn — và mấy bạn không mê môn nào?",
+     "mucDo": 3
     },
     {
      "id": "C8",
      "so": 8,
-     "text": "Chợ phiên: 1 vịt = 2 gà. (a) Đàn 3 vịt + 2 gà đáng giá bằng mấy con gà? (b) Thêm manh mối: 1 vịt + 1 gà nặng 6 kg — mỗi con nặng mấy kg?"
-    },
-    {
-     "id": "C9",
-     "so": 1,
-     "text": ", 2 → vũ khí ĐI LÙI (Bài 22)."
-    },
-    {
-     "id": "C10",
-     "so": 3,
-     "text": ", 4 → vũ khí GIẢ THIẾT TẠM (Bài 23)."
-    },
-    {
-     "id": "C11",
-     "so": 5,
-     "text": ", 6 → vũ khí THẾ TRẬN CÂY - KHOẢNG (Bài 24)."
-    },
-    {
-     "id": "C12",
-     "so": 7,
-     "text": "→ vũ khí SƠ ĐỒ VEN (Bài 25)."
-    },
-    {
-     "id": "C13",
-     "so": 8,
-     "text": "→ vũ khí PHÉP THẾ (Bài 26)."
+     "text": "Chợ phiên: 1 vịt = 2 gà. (a) Đàn 3 vịt + 2 gà đáng giá bằng mấy con gà? (b) Thêm manh mối: 1 vịt + 1 gà nặng 6 kg — mỗi con nặng mấy kg?",
+     "mucDo": 3
     }
    ],
-   "cauDeB": [],
+   "cauDeB": [
+    {
+     "id": "B1",
+     "so": 1,
+     "text": "Một số nhân 3 rồi trừ 4 thì được 17 — tìm số đó."
+    },
+    {
+     "id": "B2",
+     "so": 2,
+     "text": "Su Bống ăn một nửa túi kẹo rồi cho bạn 2 viên, còn 6 viên — túi lúc đầu mấy viên?"
+    },
+    {
+     "id": "B3",
+     "so": 3,
+     "text": "Sân có gà và chó: 9 đầu, 24 chân — mấy gà mấy chó?"
+    },
+    {
+     "id": "B4",
+     "so": 4,
+     "text": "Bãi xe có xe đạp và xe ba bánh: 8 xe, 19 bánh — mỗi loại mấy chiếc?"
+    },
+    {
+     "id": "B5",
+     "so": 5,
+     "text": "Quanh vườn tròn chu vi 30 m cắm cọc cách nhau 6 m — mấy cọc?"
+    },
+    {
+     "id": "B6",
+     "so": 6,
+     "text": "Cưa khúc gỗ thành 4 đoạn, mỗi nhát 3 phút — cưa xong mất mấy phút?"
+    },
+    {
+     "id": "B7",
+     "so": 7,
+     "text": "Nhóm 25 bạn: 14 thích truyện tranh, 12 thích truyện chữ, 6 thích cả hai — mấy bạn thích ít nhất một loại, mấy bạn không thích loại nào?"
+    },
+    {
+     "id": "B8",
+     "so": 8,
+     "text": "1 dưa = 3 cam: (a) 2 dưa + 5 cam bằng mấy cam? (b) 1 dưa + 1 cam nặng 4 kg — mỗi quả nặng mấy kg?"
+    }
+   ],
+   "soiTho": [
+    "Vụ 1, 2 → vũ khí ĐI LÙI (Bài 22).",
+    "Vụ 3, 4 → vũ khí GIẢ THIẾT TẠM (Bài 23).",
+    "Vụ 5, 6 → vũ khí THẾ TRẬN CÂY - KHOẢNG (Bài 24).",
+    "Vụ 7 → vũ khí SƠ ĐỒ VEN (Bài 25).",
+    "Vụ 8 → vũ khí PHÉP THẾ (Bài 26).",
+    "Phá 6/8 vụ: dán sticker THÁM TỬ CAO CẤP vào Bảng sưu tập — phù hiệu danh giá nhất từ đầu sách! Chưa đủ: mài vũ khí theo bảng trên rồi mở tập hồ sơ B."
+   ],
    "veCau": {
     "C1": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
+     "DL:KSN3.B22"
     ],
     "C2": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
+     "DL:KSN3.B22"
     ],
     "C3": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
+     "DL:KSN3.B23"
     ],
     "C4": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
+     "DL:KSN3.B23"
     ],
     "C5": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
+     "DL:KSN3.B24"
     ],
     "C6": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
+     "DL:KSN3.B24"
     ],
     "C7": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
+     "DL:KSN3.B25"
     ],
     "C8": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
-    ],
-    "C9": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
-    ],
-    "C10": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
-    ],
-    "C11": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
-    ],
-    "C12": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
-     "DL:KSN3.B26"
-    ],
-    "C13": [
-     "DL:KSN3.B22",
-     "DL:KSN3.B23",
-     "DL:KSN3.B24",
-     "DL:KSN3.B25",
      "DL:KSN3.B26"
     ]
    },
    "can": 6,
    "tong": 8,
-   "canCu": "chuong"
+   "canCu": "sach"
   },
   "onTap7": {
    "loai": "onTap",
@@ -667,83 +1147,178 @@
    "ten": "LỄ KHÁNH THÀNH TẦNG LẦU",
    "dong": [
     "Bài kiểm tra tổng hợp Bài 27-31 · Nghiệm thu 8/10 phòng: sticker KIẾN TRÚC SƯ NHÍ!",
-    "Luật chơi: tầng lầu mới của Vương quốc Hình học có 10 căn phòng chờ nghiệm thu — mỗi câu trả lời đúng là một phòng được gắn biển \"ĐẠT CHUẨN\". Nghiệm thu đủ 8/10 phòng, con được phong Kiến trúc sư nhí!",
-    "★ PHÒNG 1-4 — TẦNG CHU VI",
-    "★★ PHÒNG 5-7 — TẦNG HÌNH TRÒN & DIỆN TÍCH",
-    "★★★ PHÒNG 8-10 — TẦNG THƯỢNG",
-    "✦ BẢNG TỰ SOI — TRƯỢT PHÒNG NÀO, ÔN BÀI ĐÓ",
-    "Nghiệm thu 8/10 phòng: dán sticker KIẾN TRÚC SƯ NHÍ vào Bảng sưu tập! Chưa đạt: ôn theo bảng trên rồi nghiệm thu lại bằng ĐỀ B.",
-    "B1. Chu vi HCN dài 9 cm, rộng 4 cm? B2. Chu vi HV cạnh 6 cm? B3. HV chu vi 36 cm → cạnh? HCN chu vi 20 cm, dài 6 cm → rộng? B4. Chu vi 26 cm, tăng rộng thêm 2 cm → chu vi mới?",
-    "B5. Bán kính 6 cm → đường kính? Đường kính 18 cm → bán kính? B6. Diện tích HCN 7 × 5? Diện tích HV cạnh 6? B7. Diện tích 42 cm², dài 7 cm → rộng?",
-    "B8. HCN 6 × 2: tính chu vi và diện tích, ghi đúng đơn vị. B9. Hình 6 × 2 và hình 4 × 4 cùng chu vi 16 cm — diện tích mỗi hình? Hình nào thảm rộng hơn? B10. Tòa nhà 2 tầng, mỗi tầng 4 × 2; tầng trên khoét 3 khối — còn mấy khối?"
+    "Luật chơi: tầng lầu mới của Vương quốc Hình học có 10 căn phòng chờ nghiệm thu — mỗi câu trả lời đúng là một phòng được gắn biển \"ĐẠT CHUẨN\". Nghiệm thu đủ 8/10 phòng, con được phong Kiến trúc sư nhí!"
+   ],
+   "phan": [
+    {
+     "mucDo": 1,
+     "ten": "PHÒNG 1-4 — TẦNG CHU VI"
+    },
+    {
+     "mucDo": 2,
+     "ten": "PHÒNG 5-7 — TẦNG HÌNH TRÒN & DIỆN TÍCH"
+    },
+    {
+     "mucDo": 3,
+     "ten": "PHÒNG 8-10 — TẦNG THƯỢNG"
+    }
    ],
    "cau": [
     {
      "id": "C1",
      "so": 1,
-     "text": "Tính chu vi hình chữ nhật dài 8 cm, rộng 5 cm."
+     "text": "Tính chu vi hình chữ nhật dài 8 cm, rộng 5 cm.",
+     "mucDo": 1
     },
     {
      "id": "C2",
      "so": 2,
-     "text": "Tính chu vi hình vuông cạnh 7 cm."
+     "text": "Tính chu vi hình vuông cạnh 7 cm.",
+     "mucDo": 1
     },
     {
      "id": "C3",
      "so": 3,
-     "text": "NGƯỢC: hình vuông có chu vi 20 cm — tính cạnh. Hình chữ nhật chu vi 24 cm, dài 8 cm — tính rộng."
+     "text": "NGƯỢC: hình vuông có chu vi 20 cm — tính cạnh. Hình chữ nhật chu vi 24 cm, dài 8 cm — tính rộng.",
+     "mucDo": 1
     },
     {
      "id": "C4",
      "so": 4,
-     "text": "Hình chữ nhật có chu vi 30 cm. Tăng chiều dài thêm 3 cm thì chu vi mới là bao nhiêu?"
+     "text": "Hình chữ nhật có chu vi 30 cm. Tăng chiều dài thêm 3 cm thì chu vi mới là bao nhiêu?",
+     "mucDo": 1
     },
     {
      "id": "C5",
      "so": 5,
-     "text": "Bán kính 4 cm → đường kính? Đường kính 14 cm → bán kính?"
+     "text": "Bán kính 4 cm → đường kính? Đường kính 14 cm → bán kính?",
+     "mucDo": 2
     },
     {
      "id": "C6",
      "so": 6,
-     "text": "Tính diện tích hình chữ nhật 6 cm × 4 cm và diện tích hình vuông cạnh 5 cm."
+     "text": "Tính diện tích hình chữ nhật 6 cm × 4 cm và diện tích hình vuông cạnh 5 cm.",
+     "mucDo": 2
     },
     {
      "id": "C7",
      "so": 7,
-     "text": "NGƯỢC: hình chữ nhật có diện tích 32 cm², chiều dài 8 cm — tính chiều rộng."
+     "text": "NGƯỢC: hình chữ nhật có diện tích 32 cm², chiều dài 8 cm — tính chiều rộng.",
+     "mucDo": 2
     },
     {
      "id": "C8",
      "so": 8,
-     "text": "Hình chữ nhật 5 cm × 3 cm: tính CẢ chu vi lẫn diện tích, ghi đúng hai đơn vị."
+     "text": "Hình chữ nhật 5 cm × 3 cm: tính CẢ chu vi lẫn diện tích, ghi đúng hai đơn vị.",
+     "mucDo": 3
     },
     {
      "id": "C9",
      "so": 9,
-     "text": "PHÁT HIỆN LỚN: hình 6 × 4 và hình 5 × 5 cùng chu vi 20 cm — diện tích mỗi hình là bao nhiêu, hình nào \"thảm\" rộng hơn?"
+     "text": "PHÁT HIỆN LỚN: hình 6 × 4 và hình 5 × 5 cùng chu vi 20 cm — diện tích mỗi hình là bao nhiêu, hình nào \"thảm\" rộng hơn?",
+     "mucDo": 3
     },
     {
      "id": "C10",
      "so": 10,
-     "text": "TRÙM CUỐI: tòa nhà 2 tầng, mỗi tầng 3 × 2 khối; tầng trên bị nhấc mất 2 khối. Cả tòa còn mấy khối? (Bản đồ tầng ra trận!)"
+     "text": "TRÙM CUỐI: tòa nhà 2 tầng, mỗi tầng 3 × 2 khối; tầng trên bị nhấc mất 2 khối. Cả tòa còn mấy khối? (Bản đồ tầng ra trận!)",
+     "mucDo": 3
     }
    ],
-   "cauDeB": [],
+   "cauDeB": [
+    {
+     "id": "B1",
+     "so": 1,
+     "text": "Chu vi HCN dài 9 cm, rộng 4 cm?"
+    },
+    {
+     "id": "B2",
+     "so": 2,
+     "text": "Chu vi HV cạnh 6 cm?"
+    },
+    {
+     "id": "B3",
+     "so": 3,
+     "text": "HV chu vi 36 cm → cạnh? HCN chu vi 20 cm, dài 6 cm → rộng?"
+    },
+    {
+     "id": "B4",
+     "so": 4,
+     "text": "Chu vi 26 cm, tăng rộng thêm 2 cm → chu vi mới?"
+    },
+    {
+     "id": "B5",
+     "so": 5,
+     "text": "Bán kính 6 cm → đường kính? Đường kính 18 cm → bán kính?"
+    },
+    {
+     "id": "B6",
+     "so": 6,
+     "text": "Diện tích HCN 7 × 5? Diện tích HV cạnh 6?"
+    },
+    {
+     "id": "B7",
+     "so": 7,
+     "text": "Diện tích 42 cm², dài 7 cm → rộng?"
+    },
+    {
+     "id": "B8",
+     "so": 8,
+     "text": "HCN 6 × 2: tính chu vi và diện tích, ghi đúng đơn vị."
+    },
+    {
+     "id": "B9",
+     "so": 9,
+     "text": "Hình 6 × 2 và hình 4 × 4 cùng chu vi 16 cm — diện tích mỗi hình? Hình nào thảm rộng hơn?"
+    },
+    {
+     "id": "B10",
+     "so": 10,
+     "text": "Tòa nhà 2 tầng, mỗi tầng 4 × 2; tầng trên khoét 3 khối — còn mấy khối?"
+    }
+   ],
+   "soiTho": [
+    "Phòng 1, 2, 3 → thuộc Bài 27 (Chu vi có công thức).",
+    "Phòng 4 → thuộc Bài 28 (Chu vi biến hình).",
+    "Phòng 5 → thuộc Bài 29 (Giải phẫu hình tròn).",
+    "Phòng 6, 7 và 8, 9 → thuộc Bài 30 (Diện tích) — riêng phòng 8, 9 kiểm tra cả cặp rào - thảm.",
+    "Phòng 10 → thuộc Bài 31 (Đếm khối theo tầng).",
+    "Nghiệm thu 8/10 phòng: dán sticker KIẾN TRÚC SƯ NHÍ vào Bảng sưu tập! Chưa đạt: ôn theo bảng trên rồi nghiệm thu lại bằng ĐỀ B."
+   ],
    "veCau": {
-    "C1": "DL:KSN3.B27",
-    "C2": "DL:KSN3.B27",
-    "C3": "DL:KSN3.B27",
-    "C4": "DL:KSN3.B28",
-    "C5": "DL:KSN3.B29",
-    "C6": "DL:KSN3.B30",
-    "C7": "DL:KSN3.B30",
-    "C8": "DL:KSN3.B30",
-    "C9": "DL:KSN3.B30",
-    "C10": "DL:KSN3.B31"
+    "C1": [
+     "DL:KSN3.B27"
+    ],
+    "C2": [
+     "DL:KSN3.B27"
+    ],
+    "C3": [
+     "DL:KSN3.B27"
+    ],
+    "C4": [
+     "DL:KSN3.B28"
+    ],
+    "C5": [
+     "DL:KSN3.B29"
+    ],
+    "C6": [
+     "DL:KSN3.B30"
+    ],
+    "C7": [
+     "DL:KSN3.B30"
+    ],
+    "C8": [
+     "DL:KSN3.B30"
+    ],
+    "C9": [
+     "DL:KSN3.B30"
+    ],
+    "C10": [
+     "DL:KSN3.B31"
+    ]
    },
-   "can": null,
-   "tong": null,
+   "can": 8,
+   "tong": 10,
    "canCu": "sach"
   },
   "onTap8": {
@@ -752,75 +1327,170 @@
    "ten": "CHỦ NHẬT TRỌN VẸN CỦA HAI GIA ĐÌNH",
    "dong": [
     "Bài kiểm tra tổng hợp Bài 32-34 · Đạt 8/10 câu: sticker NHÀ THÔNG THÁI CUỘC SỐNG!",
-    "Luật chơi: hôm nay là Chủ nhật ngày 20 — sinh nhật Su Bống! Cả hai gia đình có một ngày kín lịch: dậy sớm, ra chợ, vào bếp, mở quán rồi thổi nến. Mỗi câu hỏi là một chặng trong ngày; trả lời đúng, kim đồng hồ mới nhích tiếp. Vượt đủ 8/10 chặng, con được phong NHÀ THÔNG THÁI CUỘC SỐNG — danh hiệu khép lại 8 chương phiêu lưu!",
-    "★ CHẶNG SÁNG SỚM & RA CHỢ — Câu 1-4",
-    "★★ CHẶNG VÀO BẾP — Câu 5-7",
-    "★★★ CHẶNG QUÁN CHANH & TIỆC SINH NHẬT — Câu 8-10",
-    "✦ BẢNG TỰ SOI — TRƯỢT CHẶNG NÀO, ÔN BÀI ĐÓ",
-    "B1. Kim phút chỉ số 7 là bao nhiêu phút? B2. Đọc kiểu \"kém\": 5 giờ 50 phút. B3. Ngày 4 là thứ Ba — ngày 18 là thứ mấy?",
-    "B4. Đổi: 4 kg = ... g; 3 l = ... ml. B5. Đĩa trái: vật + quả 50 g; đĩa phải: quả 250 g (thăng bằng) — vật nặng bao nhiêu? B6. Ca 200 ml đong 3 ca được bao nhiêu ml?",
-    "B7. 2 tờ 20 nghìn và 1 tờ 5 nghìn là bao nhiêu? B8. Mua hàng hết 35 nghìn, đưa tờ 50 nghìn — trả lại bao nhiêu? B9. Vốn 16 nghìn pha 8 cốc — giá vốn mỗi cốc?",
-    "B10. Quán bán được 30 nghìn, vốn 12 nghìn — lãi bao nhiêu? Và: phim dài 45 phút chiếu từ 7 giờ 30 — hết phim lúc mấy giờ?"
+    "Luật chơi: hôm nay là Chủ nhật ngày 20 — sinh nhật Su Bống! Cả hai gia đình có một ngày kín lịch: dậy sớm, ra chợ, vào bếp, mở quán rồi thổi nến. Mỗi câu hỏi là một chặng trong ngày; trả lời đúng, kim đồng hồ mới nhích tiếp. Vượt đủ 8/10 chặng, con được phong NHÀ THÔNG THÁI CUỘC SỐNG — danh hiệu khép lại 8 chương phiêu lưu!"
+   ],
+   "phan": [
+    {
+     "mucDo": 1,
+     "ten": "CHẶNG SÁNG SỚM & RA CHỢ — Câu 1-4"
+    },
+    {
+     "mucDo": 2,
+     "ten": "CHẶNG VÀO BẾP — Câu 5-7"
+    },
+    {
+     "mucDo": 3,
+     "ten": "CHẶNG QUÁN CHANH & TIỆC SINH NHẬT — Câu 8-10"
+    }
    ],
    "cau": [
     {
      "id": "C1",
      "so": 1,
-     "text": "6 giờ 55 phút sáng, mẹ gọi cả nhà dậy. Đọc giờ ấy theo kiểu \"kém\"."
+     "text": "6 giờ 55 phút sáng, mẹ gọi cả nhà dậy. Đọc giờ ấy theo kiểu \"kém\".",
+     "mucDo": 1
     },
     {
      "id": "C2",
      "so": 2,
-     "text": "Ra khỏi nhà khi kim giờ vừa qua số 8, kim phút chỉ số 6 — đó là mấy giờ?"
+     "text": "Ra khỏi nhà khi kim giờ vừa qua số 8, kim phút chỉ số 6 — đó là mấy giờ?",
+     "mucDo": 1
     },
     {
      "id": "C3",
      "so": 3,
-     "text": "Chủ nhật này là ngày 20. Chủ nhật tuần sau là ngày mấy? Ngày 6 vừa rồi là thứ mấy — vì sao con biết ngay?"
+     "text": "Chủ nhật này là ngày 20. Chủ nhật tuần sau là ngày mấy? Ngày 6 vừa rồi là thứ mấy — vì sao con biết ngay?",
+     "mucDo": 1
     },
     {
      "id": "C4",
      "so": 4,
-     "text": "Ở chợ, mẹ mua chanh 12 nghìn và đường 15 nghìn, đưa cô bán hàng tờ 50 nghìn. Cô trả lại bao nhiêu?"
+     "text": "Ở chợ, mẹ mua chanh 12 nghìn và đường 15 nghìn, đưa cô bán hàng tờ 50 nghìn. Cô trả lại bao nhiêu?",
+     "mucDo": 1
     },
     {
      "id": "C5",
      "so": 5,
-     "text": "Cân bột: đĩa trái đặt túi bột và quả 200 g, đĩa phải đặt quả 500 g — thăng bằng. Túi bột nặng bao nhiêu gam?"
+     "text": "Cân bột: đĩa trái đặt túi bột và quả 200 g, đĩa phải đặt quả 500 g — thăng bằng. Túi bột nặng bao nhiêu gam?",
+     "mucDo": 2
     },
     {
      "id": "C6",
      "so": 6,
-     "text": "Công thức cần 100 ml sữa, nhưng chị Ngọc Anh làm GẤP ĐÔI cho đủ khách. Cần bao nhiêu ml sữa? Đong bằng cốc 50 ml thì mấy cốc?"
+     "text": "Công thức cần 100 ml sữa, nhưng chị Ngọc Anh làm GẤP ĐÔI cho đủ khách. Cần bao nhiêu ml sữa? Đong bằng cốc 50 ml thì mấy cốc?",
+     "mucDo": 2
     },
     {
      "id": "C7",
      "so": 7,
-     "text": "Bánh vào lò lúc 10 giờ 15 phút, nướng đúng 30 phút. Bánh chín lúc mấy giờ? Đọc thêm giờ ấy theo kiểu \"kém\"."
+     "text": "Bánh vào lò lúc 10 giờ 15 phút, nướng đúng 30 phút. Bánh chín lúc mấy giờ? Đọc thêm giờ ấy theo kiểu \"kém\".",
+     "mucDo": 2
     },
     {
      "id": "C8",
      "so": 8,
-     "text": "Quán chanh mở buổi chiều: vốn 20 nghìn, bán hết 9 cốc giá 5 nghìn. Buổi chiều lãi bao nhiêu nghìn đồng?"
+     "text": "Quán chanh mở buổi chiều: vốn 20 nghìn, bán hết 9 cốc giá 5 nghìn. Buổi chiều lãi bao nhiêu nghìn đồng?",
+     "mucDo": 3
     },
     {
      "id": "C9",
      "so": 9,
-     "text": "Giữa tiệc, anh Trí Dũng đố trò thay thế: 1 quả dứa nặng bằng 2 quả cam, mỗi quả cam nặng 250 g. Quả dứa nặng bao nhiêu? Cả dứa lẫn hai quả cam nặng bao nhiêu — đổi ra ki-lô-gam xem có gì đẹp?"
+     "text": "Giữa tiệc, anh Trí Dũng đố trò thay thế: 1 quả dứa nặng bằng 2 quả cam, mỗi quả cam nặng 250 g. Quả dứa nặng bao nhiêu? Cả dứa lẫn hai quả cam nặng bao nhiêu — đổi ra ki-lô-gam xem có gì đẹp?",
+     "mucDo": 3
     },
     {
      "id": "C10",
      "so": 10,
-     "text": "Tiệc thổi nến lúc 4 giờ kém 15 chiều. Đồng hồ đang chỉ 3 giờ 15 phút — còn bao nhiêu phút nữa Su Bống được thổi nến?"
+     "text": "Tiệc thổi nến lúc 4 giờ kém 15 chiều. Đồng hồ đang chỉ 3 giờ 15 phút — còn bao nhiêu phút nữa Su Bống được thổi nến?",
+     "mucDo": 3
     }
    ],
-   "cauDeB": [],
+   "cauDeB": [
+    {
+     "id": "B1",
+     "so": 1,
+     "text": "Kim phút chỉ số 7 là bao nhiêu phút?"
+    },
+    {
+     "id": "B2",
+     "so": 2,
+     "text": "Đọc kiểu \"kém\": 5 giờ 50 phút."
+    },
+    {
+     "id": "B3",
+     "so": 3,
+     "text": "Ngày 4 là thứ Ba — ngày 18 là thứ mấy?"
+    },
+    {
+     "id": "B4",
+     "so": 4,
+     "text": "Đổi: 4 kg = ... g; 3 l = ... ml."
+    },
+    {
+     "id": "B5",
+     "so": 5,
+     "text": "Đĩa trái: vật + quả 50 g; đĩa phải: quả 250 g (thăng bằng) — vật nặng bao nhiêu?"
+    },
+    {
+     "id": "B6",
+     "so": 6,
+     "text": "Ca 200 ml đong 3 ca được bao nhiêu ml?"
+    },
+    {
+     "id": "B7",
+     "so": 7,
+     "text": "2 tờ 20 nghìn và 1 tờ 5 nghìn là bao nhiêu?"
+    },
+    {
+     "id": "B8",
+     "so": 8,
+     "text": "Mua hàng hết 35 nghìn, đưa tờ 50 nghìn — trả lại bao nhiêu?"
+    },
+    {
+     "id": "B9",
+     "so": 9,
+     "text": "Vốn 16 nghìn pha 8 cốc — giá vốn mỗi cốc?"
+    },
+    {
+     "id": "B10",
+     "so": 10,
+     "text": "Quán bán được 30 nghìn, vốn 12 nghìn — lãi bao nhiêu? Và: phim dài 45 phút chiếu từ 7 giờ 30 — hết phim lúc mấy giờ?"
+    }
+   ],
+   "soiTho": [
+    "Câu 1, 2, 3, 7, 10 → thuộc Bài 32 (Xem giờ đến từng phút & tờ lịch). Câu 5, 6, 9 → thuộc Bài 33 (Cân và đong — gam & mi-li-lít). Câu 4, 8 → thuộc Bài 34 (Tiền Việt & vốn - bán - lãi). Đạt 8/10 câu trở lên: dán sticker NHÀ THÔNG THÁI CUỘC SỐNG vào Bảng sưu tập — danh hiệu cuối cùng trước cổng VƯỢT ẢI TOÀN SÁCH! Chưa đạt: ôn theo bảng trên rồi sống lại một Chủ nhật nữa với ĐỀ B."
+   ],
    "veCau": {
-    "C1": "DL:KSN3.B32",
-    "C2": "DL:KSN3.B32",
-    "C3": "DL:KSN3.B32",
-    "C7": "DL:KSN3.B32",
-    "C10": "DL:KSN3.B32"
+    "C1": [
+     "DL:KSN3.B32"
+    ],
+    "C2": [
+     "DL:KSN3.B32"
+    ],
+    "C3": [
+     "DL:KSN3.B32"
+    ],
+    "C7": [
+     "DL:KSN3.B32"
+    ],
+    "C10": [
+     "DL:KSN3.B32"
+    ],
+    "C5": [
+     "DL:KSN3.B33"
+    ],
+    "C6": [
+     "DL:KSN3.B33"
+    ],
+    "C9": [
+     "DL:KSN3.B33"
+    ],
+    "C4": [
+     "DL:KSN3.B34"
+    ],
+    "C8": [
+     "DL:KSN3.B34"
+    ]
    },
    "can": 8,
    "tong": 10,
@@ -831,62 +1501,74 @@
    "so": 1,
    "ten": "KHỞI ĐỘNG — kiểm tra vũ khí cơ bản",
    "dong": [],
+   "phan": [],
    "cau": [
     {
      "id": "C1",
      "so": 1,
-     "text": "Đặt tính rồi tính: 427 + 385; 612 − 258."
+     "text": "Đặt tính rồi tính: 427 + 385; 612 − 258.",
+     "mucDo": 1
     },
     {
      "id": "C2",
      "so": 2,
-     "text": "Tính nhẩm: 7 × 8; 56 : 7; 6 × 9; 72 : 8."
+     "text": "Tính nhẩm: 7 × 8; 56 : 7; 6 × 9; 72 : 8.",
+     "mucDo": 1
     },
     {
      "id": "C3",
      "so": 3,
-     "text": "Dãy số nhà nhịp 5: 5, 10, 15, ... — viết ba số tiếp theo."
+     "text": "Dãy số nhà nhịp 5: 5, 10, 15, ... — viết ba số tiếp theo.",
+     "mucDo": 1
     },
     {
      "id": "C4",
      "so": 4,
-     "text": "Tính: 4 × 6 + 12; 40 − 20 : 5."
+     "text": "Tính: 4 × 6 + 12; 40 − 20 : 5.",
+     "mucDo": 1
     },
     {
      "id": "C5",
      "so": 5,
-     "text": "Tìm X: X × 5 = 45; X − 27 = 15."
+     "text": "Tìm X: X × 5 = 45; X − 27 = 15.",
+     "mucDo": 1
     },
     {
      "id": "C6",
      "so": 6,
-     "text": "Gấp 8 lên 4 lần được bao nhiêu? Giảm 36 đi 4 lần được bao nhiêu?"
+     "text": "Gấp 8 lên 4 lần được bao nhiêu? Giảm 36 đi 4 lần được bao nhiêu?",
+     "mucDo": 1
     },
     {
      "id": "C7",
      "so": 7,
-     "text": "Tính chu vi hình chữ nhật dài 8 cm, rộng 4 cm; chu vi hình vuông cạnh 7 cm."
+     "text": "Tính chu vi hình chữ nhật dài 8 cm, rộng 4 cm; chu vi hình vuông cạnh 7 cm.",
+     "mucDo": 1
     },
     {
      "id": "C8",
      "so": 8,
-     "text": "Kim phút chỉ số 9 là bao nhiêu phút? Đổi: 3 kg = ... g."
+     "text": "Kim phút chỉ số 9 là bao nhiêu phút? Đổi: 3 kg = ... g.",
+     "mucDo": 1
     },
     {
      "id": "C9",
      "so": 9,
-     "text": "Su Bống giữ 1 tờ 20 nghìn và 2 tờ 5 nghìn. Em có tất cả bao nhiêu?"
+     "text": "Su Bống giữ 1 tờ 20 nghìn và 2 tờ 5 nghìn. Em có tất cả bao nhiêu?",
+     "mucDo": 1
     },
     {
      "id": "C10",
      "so": 10,
-     "text": "Mỗi hộp có 6 chiếc bút. Hỏi 5 hộp như thế có bao nhiêu chiếc bút?"
+     "text": "Mỗi hộp có 6 chiếc bút. Hỏi 5 hộp như thế có bao nhiêu chiếc bút?",
+     "mucDo": 1
     }
    ],
    "cauDeB": [],
+   "soiTho": [],
    "veCau": {},
    "can": null,
-   "tong": null,
+   "tong": 10,
    "canCu": "ai"
   },
   "ai2": {
@@ -894,127 +1576,149 @@
    "so": 2,
    "ten": "TĂNG TỐC — phối hợp hai vũ khí một lúc",
    "dong": [],
+   "phan": [],
    "cau": [
     {
      "id": "C1",
      "so": 1,
-     "text": "Tính: 936 − 407 + 258."
+     "text": "Tính: 936 − 407 + 258.",
+     "mucDo": 1
     },
     {
      "id": "C2",
      "so": 2,
-     "text": "Tính: (35 − 15) : 4; 3 × (14 − 6)."
+     "text": "Tính: (35 − 15) : 4; 3 × (14 − 6).",
+     "mucDo": 1
     },
     {
      "id": "C3",
      "so": 3,
-     "text": "Tìm X: X : 4 = 12; 63 : X = 7."
+     "text": "Tìm X: X : 4 = 12; 63 : X = 7.",
+     "mucDo": 1
     },
     {
      "id": "C4",
      "so": 4,
-     "text": "Dãy số gấp đôi: 2, 4, 8, 16, ... — số tiếp theo là số nào? Vì sao?"
+     "text": "Dãy số gấp đôi: 2, 4, 8, 16, ... — số tiếp theo là số nào? Vì sao?",
+     "mucDo": 1
     },
     {
      "id": "C5",
      "so": 5,
-     "text": "Mẹ 36 tuổi, tuổi mẹ gấp 4 lần tuổi con. Con mấy tuổi? Mẹ hơn con bao nhiêu tuổi?"
+     "text": "Mẹ 36 tuổi, tuổi mẹ gấp 4 lần tuổi con. Con mấy tuổi? Mẹ hơn con bao nhiêu tuổi?",
+     "mucDo": 1
     },
     {
      "id": "C6",
      "so": 6,
-     "text": "RÚT VỀ ĐƠN VỊ: 4 gói kẹo như nhau có 32 viên. Hỏi 7 gói như thế có bao nhiêu viên?"
+     "text": "RÚT VỀ ĐƠN VỊ: 4 gói kẹo như nhau có 32 viên. Hỏi 7 gói như thế có bao nhiêu viên?",
+     "mucDo": 1
     },
     {
      "id": "C7",
      "so": 7,
-     "text": "Hình vuông có chu vi 36 cm — tính cạnh. Tính diện tích hình chữ nhật dài 9 cm, rộng 6 cm."
+     "text": "Hình vuông có chu vi 36 cm — tính cạnh. Tính diện tích hình chữ nhật dài 9 cm, rộng 6 cm.",
+     "mucDo": 1
     },
     {
      "id": "C8",
      "so": 8,
-     "text": "Phim bắt đầu 8 giờ 45, dài 30 phút — kết thúc lúc mấy giờ? Đọc \"9 giờ 55\" theo kiểu kém."
+     "text": "Phim bắt đầu 8 giờ 45, dài 30 phút — kết thúc lúc mấy giờ? Đọc \"9 giờ 55\" theo kiểu kém.",
+     "mucDo": 1
     },
     {
      "id": "C9",
      "so": 9,
-     "text": "Cân thăng bằng: đĩa trái là túi táo và quả cân 200 g, đĩa phải là quả cân 1 kg. Túi táo nặng bao nhiêu gam?"
+     "text": "Cân thăng bằng: đĩa trái là túi táo và quả cân 200 g, đĩa phải là quả cân 1 kg. Túi táo nặng bao nhiêu gam?",
+     "mucDo": 1
     },
     {
      "id": "C10",
      "so": 10,
-     "text": "Quán nước chanh: vốn 25 nghìn, bán được 60 nghìn. Tính tiền lãi."
+     "text": "Quán nước chanh: vốn 25 nghìn, bán được 60 nghìn. Tính tiền lãi.",
+     "mucDo": 1
     }
    ],
    "cauDeB": [],
+   "soiTho": [],
    "veCau": {},
    "can": null,
-   "tong": null,
+   "tong": 10,
    "canCu": "ai"
   },
   "ai3": {
    "loai": "ai",
    "so": 3,
    "ten": "TRÙM CUỐI — dành cho thám tử thực thụ",
-   "dong": [
-    "PHẦN CUỐI SÁCH"
-   ],
+   "dong": [],
+   "phan": [],
    "cau": [
     {
      "id": "C1",
      "so": 1,
-     "text": "Tổng hai số là 425, một số là 168. Tìm số kia. Hai số hơn kém nhau bao nhiêu?"
+     "text": "Tổng hai số là 425, một số là 168. Tìm số kia. Hai số hơn kém nhau bao nhiêu?",
+     "mucDo": 1
     },
     {
      "id": "C2",
      "so": 2,
-     "text": "Tính bằng cách thuận tiện nhất: 25 + 48 + 75. (Gợi ý: cặp nào \"tròn trăm\"?)"
+     "text": "Tính bằng cách thuận tiện nhất: 25 + 48 + 75. (Gợi ý: cặp nào \"tròn trăm\"?)",
+     "mucDo": 1
     },
     {
      "id": "C3",
      "so": 3,
-     "text": "Tìm X hai tầng: (X − 15) : 3 = 8."
+     "text": "Tìm X hai tầng: (X − 15) : 3 = 8.",
+     "mucDo": 1
     },
     {
      "id": "C4",
      "so": 4,
-     "text": "Dãy Fibonacci: 1, 1, 2, 3, 5, 8, ... — số tiếp theo? Nêu quy luật."
+     "text": "Dãy Fibonacci: 1, 1, 2, 3, 5, 8, ... — số tiếp theo? Nêu quy luật.",
+     "mucDo": 1
     },
     {
      "id": "C5",
      "so": 5,
-     "text": "Tờ lịch: tháng đó ngày 1 là thứ Năm. Ngày 29 tháng đó là thứ mấy? (Soi số dư!)"
+     "text": "Tờ lịch: tháng đó ngày 1 là thứ Năm. Ngày 29 tháng đó là thứ mấy? (Soi số dư!)",
+     "mucDo": 1
     },
     {
      "id": "C6",
      "so": 6,
-     "text": "THAY THẾ: 1 con gà nặng bằng 2 con vịt; 1 con vịt nặng bằng 3 con chim. Hỏi 2 con gà nặng bằng mấy con chim?"
+     "text": "THAY THẾ: 1 con gà nặng bằng 2 con vịt; 1 con vịt nặng bằng 3 con chim. Hỏi 2 con gà nặng bằng mấy con chim?",
+     "mucDo": 1
     },
     {
      "id": "C7",
      "so": 7,
-     "text": "Hình vuông cạnh 5 cm và hình chữ nhật 6 cm × 4 cm CÙNG chu vi 20 cm. Tính diện tích mỗi hình — \"tấm thảm\" nào rộng hơn?"
+     "text": "Hình vuông cạnh 5 cm và hình chữ nhật 6 cm × 4 cm CÙNG chu vi 20 cm. Tính diện tích mỗi hình — \"tấm thảm\" nào rộng hơn?",
+     "mucDo": 1
     },
     {
      "id": "C8",
      "so": 8,
-     "text": "Tòa nhà 2 tầng, mỗi tầng xếp 4 × 2 khối lập phương; tầng trên bị nhấc mất 3 khối. Cả tòa còn bao nhiêu khối?"
+     "text": "Tòa nhà 2 tầng, mỗi tầng xếp 4 × 2 khối lập phương; tầng trên bị nhấc mất 3 khối. Cả tòa còn bao nhiêu khối?",
+     "mucDo": 1
     },
     {
      "id": "C9",
      "so": 9,
-     "text": "Món quà giá 80 nghìn; quỹ đang có 47 nghìn. Mỗi cốc nước chanh lãi 3 nghìn — cần bán thêm ít nhất mấy cốc cho đủ?"
+     "text": "Món quà giá 80 nghìn; quỹ đang có 47 nghìn. Mỗi cốc nước chanh lãi 3 nghìn — cần bán thêm ít nhất mấy cốc cho đủ?",
+     "mucDo": 1
     },
     {
      "id": "C10",
      "so": 10,
-     "text": "Trí Long ra câu đố chia tay: \"Tớ nghĩ một số. Nhân nó với 8 rồi bớt đi 8 thì được 56. Số của tớ là số nào?\""
+     "text": "Trí Long ra câu đố chia tay: \"Tớ nghĩ một số. Nhân nó với 8 rồi bớt đi 8 thì được 56. Số của tớ là số nào?\"",
+     "mucDo": 1
     }
    ],
    "cauDeB": [],
+   "soiTho": [],
    "veCau": {},
    "can": null,
-   "tong": null,
+   "tong": 10,
    "canCu": "ai"
   }
  }
