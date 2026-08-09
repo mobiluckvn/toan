@@ -21,11 +21,11 @@ Nguồn: `docs/Toan_Tu_Duy_Lop3_Cuoc.docx` · 34 bài · 8 chương · 8 ôn t�
 | 2c | ôn tập & ải | `tools/ontap_lop3.py` → `data/lop3_ontap.json` — **8 ôn tập · 3 ải · 114 câu · 84 câu đề B · mối nối đủ 84/84 câu, cả 8 ôn tập đều `canCu: sach`** |
 | 3 | dựng bài học | `tools/chuan_lop3.py` → `data/lop3/` — **34 bài · 477 câu · 100% có lời chữa · 170 câu chấm máy** |
 | 3b | vẽ & gắn hình | `figforge/arch_l3.py` · `tools/ve_hinh_lop3.py` · `tools/gan_hinh_lop3.py` — **122 hình · 21 nguyên mẫu · đủ 34/34 bài, đã soát hết ba loại** |
-| 4 | ô nhập chấm máy | `tools/tach_cau_lop3.py` + `data/lop3_dapan_tay.json` → `data/lop3_dapan_o.json` — **298/307 câu luyện tập chấm máy (97%) · 468 ô nhập · 0 ô gõ chữ** |
+| 4 | ô nhập chấm máy | `tools/tach_cau_lop3.py` + `data/lop3_dapan_tay.json` → `data/lop3_dapan_o.json` — **298/307 câu luyện tập chấm máy (97%) · 468 ô nhập · 62 ô bấm chọn · 0 ô gõ chữ** |
 | 5 | khuôn chung + sổ đăng ký | `tools/dung_khuon_chung_lop3.py` → `web/public/content/lop3/` · `reviews/DCR_KSN3_C*` — **34 bài · 11 kỳ sát hạch · LỚP 3 ĐÃ HIỆN TRONG APP** |
 | — | đường lùi về lớp 2 | `data/lop3_gan_lop2.json` — 34 bài (21 `sach` · 11 `chuDe` · 2 `khong`), nút đã nối tới `FinaleCard` |
 
-Phép kiểm: `web/test/lop3.test.mjs` (57 phép). Chạy `cd web && npm test`.
+Phép kiểm: `web/test/lop3.test.mjs` (58 phép). Chạy `cd web && npm test`.
 
 **Thứ tự chạy dây chuyền** — đảo là mất hình mà không có gì báo:
 
@@ -297,9 +297,12 @@ giáo trống, tức là KHÔNG đánh giá được việc học.
 | loại ô | số ô |
 |---|---|
 | điền số | 406 |
-| điền biểu thức (`2 000 + 400 + 30 + 5`) | 6 |
-| **bấm chọn** (nút) | **56** |
-| **gõ chữ** | **0** |
+| **bấm chọn** (nút) | **62** |
+| gõ chữ hay biểu thức | **0** |
+
+Luật cứng: **mỗi ô chỉ được là điền SỐ hoặc BẤM CHỌN.** Sáu ô biểu thức cuối cùng
+(`2 000 + 400 + 30 + 5` · `6 ▢ 5` · đặt ngoặc) cũng đã thành nút — gõ biểu thức thì
+thừa thiếu một dấu cách là mất điểm oan, y như gõ chữ.
 
 Bé lớp 3 gõ chậm và sai chính tả một chữ là mất điểm oan, mà bài thì đang kiểm TOÁN
 chứ không kiểm kỹ năng gõ. Nên mọi đáp án là CHỮ đều thành nút bấm: chia có dư
@@ -308,6 +311,13 @@ chẵn/lẻ · thuộc/không · hợp lệ/phạm luật · đơn vị đo.
 
 Mồi nhử của ô chia có dư dựng theo đúng ba lỗi sách nêu — sai thương, sai số dư, và
 số dư ≥ số chia — và mỗi mồi được kiểm bằng chính phép chia để chắc chắn nó SAI.
+
+Với câu **đặt ngoặc** thì hai lựa chọn chính là HAI CÁCH ĐẶT DUY NHẤT có thể
+(`(3 + 5) × 2` và `3 + (5 × 2)`) — không phải bịa mồi, chỉ liệt kê hết khả năng.
+
+Phép kiểm `không mồi nhử nào vô tình cũng đúng` tự tính giá trị mọi lựa chọn là
+biểu thức số rồi so — mồi mà cũng ra đáp án đúng thì bé chọn nó bị chấm sai oan,
+tệ hơn cả việc không có trắc nghiệm.
 
 Phép kiểm `không ô nào bắt bé gõ chữ` canh chỗ này.
 

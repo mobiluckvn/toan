@@ -417,19 +417,47 @@ if (existsSync(APP)) {
   t(`đa số câu luyện tập chấm máy được (${cham.length}/${lt.length})`,
     cham.length >= lt.length * 0.95);
 
-  /* KHÔNG Ô NÀO BẮT BÉ GÕ CHỮ. Bé lớp 3 gõ chậm và sai chính tả một chữ là mất
-     điểm oan, mà bài thì đang kiểm TOÁN chứ không kiểm kỹ năng gõ. Đáp án là chữ
-     thì phải cho bấm nút — có `options` — chứ đừng để ô trống. */
+  /* MỖI Ô CHỈ ĐƯỢC LÀ MỘT TRONG HAI: điền SỐ, hoặc BẤM CHỌN.
+     Bé lớp 3 gõ chậm; gõ chữ thì sai chính tả một chữ là mất điểm oan, gõ biểu
+     thức thì thừa thiếu một dấu cách cũng vậy — mà bài đang kiểm TOÁN chứ không
+     kiểm kỹ năng gõ. Đáp án không phải một con số thì PHẢI cho bấm nút. */
   const goChu = [];
   for (const x of cham) {
     for (const p of x.answerKey.parts || [{ value: x.answerKey.value }]) {
       const v = String(p.value ?? '').trim();
       if (!v || p.options) continue;
-      if (!/^[\d\s+\-−×x:/().,]+$/.test(v)) goChu.push(`${x.id} [${p.label || ''}] → ${v}`);
+      if (!/^[\d\s.,]+$/.test(v)) goChu.push(`${x.id} [${p.label || ''}] → ${v}`);
     }
   }
-  t('không ô nào bắt bé gõ chữ (đáp án chữ thì phải cho bấm chọn)', goChu.length === 0);
+  t('mọi ô đều là điền SỐ hoặc BẤM CHỌN — không ô nào bắt gõ chữ hay biểu thức',
+    goChu.length === 0);
   in5(goChu);
+
+  /* Mồi nhử phải THẬT SỰ SAI. Một mồi vô tình cũng đúng thì bé chọn nó bị chấm sai
+     oan — tệ hơn cả việc không có trắc nghiệm. Kiểm được với ô mà mọi lựa chọn đều
+     là biểu thức số: tính ra rồi so. */
+  const moiHong = [];
+  const tinh = (s) => {
+    const t2 = String(s).replace(/×/g, '*').replace(/[−–]/g, '-').replace(/:/g, '/')
+      .replace(/\s/g, '');
+    if (!/^[\d+\-*/().]+$/.test(t2)) return null;
+    try { return Function(`"use strict";return(${t2})`)(); } catch { return null; }
+  };
+  for (const x of cham) {
+    for (const p of x.answerKey.parts || []) {
+      if (!p.options) continue;
+      /* so bằng CHUỖI: "4" và 4 là một đáp án, khác kiểu thôi. So kiểu chặt thì
+         chính đáp án đúng bị đếm thành mồi nhử và phép kiểm đỏ oan. */
+      const dung = tinh(p.value);
+      if (dung === null) continue;
+      for (const o of p.options) {
+        if (String(o) === String(p.value)) continue;
+        if (tinh(o) === dung) moiHong.push(`${x.id} [${p.label}]: mồi "${o}" cũng ra ${dung}`);
+      }
+    }
+  }
+  t('không mồi nhử nào vô tình cũng đúng', moiHong.length === 0);
+  in5(moiHong);
 
   /* Ô BẤM CHỌN: đáp án phải nằm TRONG danh sách nút. Lệch một chữ là bé bấm đúng
      nút mà máy vẫn báo sai — và bé thì tin máy chứ không tin mình. */
