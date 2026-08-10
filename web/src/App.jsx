@@ -8,6 +8,7 @@ import ProfileSetup from './components/ProfileSetup.jsx';
 import TeacherBoard from './components/TeacherBoard.jsx';
 import {
   loadProgress, saveProgress, recordMicro, recordChapter, saveSpot, resumeSpot, setMode,
+  ghiLuyenChuDe,
 } from './lib/progress.js';
 import { neighborIds, napSoDangKy, soDangKy, nhipDocCham, baiDocCham } from './lib/content.js';
 import {
@@ -17,6 +18,7 @@ import {
 import { reassignQueue } from './lib/sync.js';
 import KeSach from './components/KeSach.jsx';
 import ChuDe from './components/ChuDe.jsx';
+import LuyenChuDe from './components/LuyenChuDe.jsx';
 import HomeLop2 from './components/HomeLop2.jsx';
 import MuaGiai from './components/MuaGiai.jsx';
 import TraiHuanLuyen from './components/TraiHuanLuyen.jsx';
@@ -265,11 +267,42 @@ export default function App() {
       <ChuDe
         progress={progress}
         viTri={view.viTri}
+        /* Bậc xuất phát lấy theo lớp con khai lúc lập hồ sơ. Chưa khai thì lấy 5 —
+           quyển đầy đủ nhất — và vòng luyện tự lùi nếu con chưa với tới. */
+        lopCon={profile?.grade || 5}
         onThoat={() => setView({ page: 'home' })}
         onMoBai={(id, viTri) => setView({
           ...(baiDocCham(id) ? { page: 'baiDocCham', baiId: id }
                              : { page: 'lesson', microId: id }),
           fromStart: true, veLai: { page: 'chuDe', viTri },
+        })}
+        /* Không chuyền `view.viTri` sang: lúc này con đã đi sâu bằng state bên
+           trong ChuDe nên trường ấy đã cũ. Mã dạng bài là đủ — ChuDe suy ra mảng
+           từ chính nó. */
+        onLuyen={(maDang, lop) => setView({ page: 'luyenChuDe', maDang, lop })}
+      />
+    );
+
+  /* ══ LUYỆN MỘT CHỦ ĐỀ — tự lùi khi kém, tự tiến khi đạt ══
+     Lùi thì mở BÀI HỌC của bậc dưới (con thiếu phần giảng, không phải thiếu bài
+     tập), và `veLai` đưa con thẳng về vòng luyện CỦA BẬC ẤY — học xong là đo lại
+     ngay, không phải tự tìm đường quay lại. */
+  if (view.page === 'luyenChuDe')
+    return (
+      <LuyenChuDe
+        key={`${view.maDang}@${view.lop}`}
+        maDang={view.maDang}
+        lop={view.lop}
+        progress={progress}
+        onXongLuot={(maDang, lop, kq) =>
+          setProgress((p) => ghiLuyenChuDe(p, maDang, lop, kq))}
+        onDoiBac={(lop) => setView({ ...view, lop })}
+        onThoat={() => setView({ page: 'chuDe', viTri: { maDang: view.maDang } })}
+        onMoBai={(id, lopDich) => setView({
+          ...(baiDocCham(id) ? { page: 'baiDocCham', baiId: id }
+                             : { page: 'lesson', microId: id }),
+          fromStart: true,
+          veLai: { page: 'luyenChuDe', maDang: view.maDang, lop: lopDich },
         })}
       />
     );

@@ -145,5 +145,63 @@ t('lùi về phần 2 vẫn bấm lại được phần 5 đã đi qua', bamDuoc
 t('lùi về phần 2 vẫn không vượt quá chỗ xa nhất', bamDuocDot(6, 2, 5) === false);
 t('ở phần đầu thì không có đốt nào để lùi', bamDuocDot(0, 0, 0) === false);
 
+
+/* ═══════════ THANG LÙI / TIẾN CỦA LUYỆN CHỦ ĐỀ ═══════════
+ *
+ * Đây là chỗ quyết định con được đẩy đi đâu sau mỗi lượt luyện, nên sai là sai
+ * lặng lẽ: con vẫn có bài để làm, chỉ là làm sai bậc. Hai NGẢ BÌA nguy nhất —
+ * chạm sàn (không còn lớp dưới) và chạm trần (không còn lớp trên) — vì làm hụt
+ * là đẩy con vào một bậc không tồn tại.
+ */
+import {
+  nguongDat, bacBatDau, buocSau, ghiLuyenChuDe, bacDaVung,
+} from '../src/lib/progress.js';
+
+const THANG4 = [{ lop: 2 }, { lop: 3 }, { lop: 4 }, { lop: 5 }];
+const THANG_TREN = [{ lop: 4 }, { lop: 5 }];        // chủ đề chỉ có ở lớp trên
+const THANG1 = [{ lop: 5 }];                        // dạng riêng lớp 5
+
+t('đạt là 2/3 số câu (6 câu → 4)', nguongDat(6) === 4);
+t('ngưỡng không bao giờ bằng 0', nguongDat(1) === 1 && nguongDat(0) === 1);
+
+t('bắt đầu ở đúng lớp của con', bacBatDau(THANG4, 4) === 4);
+t('con lớp 3 mà chủ đề chỉ có từ lớp 4 thì bắt đầu ở bậc thấp nhất',
+  bacBatDau(THANG_TREN, 3) === 4);
+t('con lớp 5 mà thang thiếu bậc 5 thì lấy bậc dưới gần nhất',
+  bacBatDau([{ lop: 2 }, { lop: 4 }], 5) === 4);
+t('thang rỗng thì không có bậc nào để bắt đầu', bacBatDau([], 5) === null);
+
+t('đạt ở bậc giữa thì LÊN', JSON.stringify(buocSau(THANG4, 4, 4, 6))
+  === JSON.stringify({ hanh: 'len', lop: 5 }));
+t('đạt ở bậc CAO NHẤT thì XONG, không đẩy lên bậc không có',
+  buocSau(THANG4, 5, 6, 6).hanh === 'xong');
+t('kém ở bậc giữa thì XUỐNG', JSON.stringify(buocSau(THANG4, 4, 1, 6))
+  === JSON.stringify({ hanh: 'xuong', lop: 3 }));
+t('kém ở bậc THẤP NHẤT thì dừng, không lùi vào hư không',
+  buocSau(THANG4, 2, 0, 6).hanh === 'san');
+t('thang một bậc: đạt là xong ngay', buocSau(THANG1, 5, 5, 6).hanh === 'xong');
+t('thang một bậc: kém là chạm sàn ngay', buocSau(THANG1, 5, 1, 6).hanh === 'san');
+t('bậc không có trong thang thì coi như chạm sàn, không nổ',
+  buocSau(THANG4, 9, 6, 6).hanh === 'san');
+t('lùi từng bậc MỘT, không nhảy hai bậc',
+  buocSau(THANG4, 5, 0, 6).lop === 4);
+
+/* Ghi sổ: mỗi bậc một dòng, và `best` giữ lần cao nhất — lùi xuống rồi lên lại
+   thì lần sau đè lên lần trước, mà cái đáng nhớ là con ĐÃ từng làm được tới đâu. */
+let p = emptyProgress();
+p = ghiLuyenChuDe(p, 'PT:I.1.1', 5, { dat: 2, tong: 6 });
+t('ghi một lượt luyện chủ đề', p.chuDe['PT:I.1.1'].bac['5'].dat === 2);
+t('2/6 là chưa đạt', p.chuDe['PT:I.1.1'].bac['5'].pass === false);
+t('chưa đạt bậc nào thì bacDaVung là null', bacDaVung(p, 'PT:I.1.1') === null);
+p = ghiLuyenChuDe(p, 'PT:I.1.1', 4, { dat: 5, tong: 6 });
+t('ghi thêm bậc khác không xoá bậc cũ', Object.keys(p.chuDe['PT:I.1.1'].bac).length === 2);
+t('5/6 là đạt', p.chuDe['PT:I.1.1'].bac['4'].pass === true);
+t('bacDaVung lấy bậc CAO NHẤT đã đạt', bacDaVung(p, 'PT:I.1.1') === 4);
+p = ghiLuyenChuDe(p, 'PT:I.1.1', 5, { dat: 1, tong: 6 });
+t('làm lại kém hơn thì best vẫn giữ lần cao nhất', p.chuDe['PT:I.1.1'].bac['5'].best === 2);
+t('đếm số lần luyện của một bậc', p.chuDe['PT:I.1.1'].bac['5'].lan === 2);
+t('lát chuDe không đụng vào micros', Object.keys(p.micros).length === 0);
+t('chủ đề chưa luyện thì bacDaVung là null', bacDaVung(p, 'PT:V.9.9') === null);
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);

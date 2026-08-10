@@ -160,3 +160,81 @@ export function microState(progress, microId, list = allMicroIds()) {
   if (m?.done) return 'tried';
   return isMicroUnlocked(progress, microId, list) ? 'open' : 'locked';
 }
+
+/* ═══════════ LUYỆN THEO CHỦ ĐỀ — thang lùi/tiến ═══════════
+ *
+ * Khác hẳn `micros`/`chapters` ở trên: hai thứ ấy đo "con đã học xong bài nào",
+ * còn lát này đo "con vững chủ đề nào tới lớp mấy". Cùng một chủ đề trải bốn lớp,
+ * nên chỗ hổng của con là một CON SỐ LỚP, không phải một danh sách bài.
+ *
+ * Luật đi: đạt thì lên bậc trên, kém thì lùi bậc dưới, chạm sàn thì dừng tử tế.
+ * Viết thành hàm thuần ở đây (không nhét trong component) để phép kiểm chạy được
+ * mọi ngả — nhất là hai ngả bìa, chạm sàn và chạm trần, là chỗ dễ rơi vào hư không.
+ */
+
+/** Đạt là đúng 2/3 số câu — cân với ngưỡng 8/10 của kỳ sát hạch. */
+export const nguongDat = (tong) => Math.max(1, Math.ceil((tong * 2) / 3));
+
+/**
+ * Bậc con nên bắt đầu: bậc CAO NHẤT không vượt lớp của con. Thang thiếu bậc đúng
+ * lớp ấy thì lấy bậc dưới gần nhất; thấp hơn mọi bậc thì lấy bậc thấp nhất — thà
+ * cho con làm bài trên lớp mình còn hơn không có gì để làm.
+ */
+export function bacBatDau(thang = [], lopCon = 5) {
+  const lops = thang.map((b) => b.lop);
+  if (!lops.length) return null;
+  const vua = lops.filter((l) => l <= lopCon);
+  return vua.length ? vua[vua.length - 1] : lops[0];
+}
+
+/**
+ * Sau một lượt luyện thì đi đâu.
+ *   { hanh: 'len',   lop }  đạt rồi, còn bậc trên
+ *   { hanh: 'xong' }        đạt ở bậc cao nhất — vững chủ đề này
+ *   { hanh: 'xuong', lop }  chưa đạt, lùi một bậc cho chắc gốc
+ *   { hanh: 'san' }         chưa đạt mà đã ở bậc thấp nhất — dừng, báo bố mẹ
+ */
+export function buocSau(thang = [], lop, dat = 0, tong = 0) {
+  const lops = thang.map((b) => b.lop);
+  const i = lops.indexOf(lop);
+  if (i < 0) return { hanh: 'san' };
+  if (dat >= nguongDat(tong)) {
+    return i === lops.length - 1 ? { hanh: 'xong' } : { hanh: 'len', lop: lops[i + 1] };
+  }
+  return i === 0 ? { hanh: 'san' } : { hanh: 'xuong', lop: lops[i - 1] };
+}
+
+/** Ghi kết quả một lượt luyện chủ đề tại một bậc. */
+export function ghiLuyenChuDe(progress, maDang, lop, { dat = 0, tong = 0 } = {}) {
+  const cu = progress.chuDe?.[maDang] || { bac: {} };
+  const bacCu = cu.bac[String(lop)] || {};
+  return {
+    ...progress,
+    chuDe: {
+      ...(progress.chuDe || {}),
+      [maDang]: {
+        ...cu,
+        bac: {
+          ...cu.bac,
+          [String(lop)]: {
+            dat, tong,
+            pass: dat >= nguongDat(tong),
+            /* `best` giữ lần cao nhất: lùi xuống rồi lên lại thì lần sau đè lên lần
+               trước, mà cái đáng nhớ là con ĐÃ từng làm được tới đâu. */
+            best: Math.max(bacCu.best || 0, dat),
+            lan: (bacCu.lan || 0) + 1,
+            at: new Date().toISOString(),
+          },
+        },
+        dangO: lop,
+      },
+    },
+  };
+}
+
+/** Bậc cao nhất con đã đạt ở một chủ đề — null nếu chưa đạt bậc nào. */
+export function bacDaVung(progress, maDang) {
+  const bac = progress.chuDe?.[maDang]?.bac || {};
+  const dat = Object.entries(bac).filter(([, v]) => v.pass).map(([l]) => Number(l));
+  return dat.length ? Math.max(...dat) : null;
+}

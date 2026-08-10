@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { CONTENT, dongDau, chuongTrinhCua } from '../lib/content.js';
+import { bacBatDau, bacDaVung } from '../lib/progress.js';
 import DongDanhSach from './DongDanhSach.jsx';
 import ChanTrang from './ChanTrang.jsx';
 
@@ -60,11 +61,13 @@ function HuyHieuLop({ thang, progress }) {
   );
 }
 
-export default function ChuDe({ progress, onMoBai, onLuyen, onThoat, viTri = {} }) {
+export default function ChuDe({ progress, onMoBai, onLuyen, onThoat, viTri = {},
+                                lopCon = 5 }) {
   const [bd, setBd] = useState(null);
-  /* Khởi tạo từ `viTri`: con học xong một bài rồi quay về đây thì phải về ĐÚNG cái
-     thang vừa đứng, chứ không phải về đầu màn rồi bấm lại ba tầng. Vị trí do App
-     giữ trong `view.veLai`, vì state của component này mất khi rời màn. */
+  /* Khởi tạo từ `viTri`: con học xong một bài (hoặc xong một vòng luyện) rồi quay
+     về đây thì phải về ĐÚNG cái thang vừa đứng, chứ không phải về đầu màn rồi bấm
+     lại ba tầng. Vị trí do App giữ trong `view.veLai`, vì state của component này
+     mất khi rời màn. */
   const [maMang, setMaMang] = useState(viTri.maMang || null);
   const [maDang, setMaDang] = useState(viTri.maDang || null);
   const oDau = () => ({ maMang, maDang });
@@ -76,6 +79,12 @@ export default function ChuDe({ progress, onMoBai, onLuyen, onThoat, viTri = {} 
 
   if (!bd) return <div className="p-6 text-mute">Đang mở bản đồ chủ đề…</div>;
   if (bd.loi) return <div className="p-6 text-alert">Không nạp được bản đồ chủ đề.</div>;
+
+  /* Về từ vòng luyện thì chỉ có mã DẠNG BÀI trong tay — mảng suy ra được từ chính
+     nó, nên đừng bắt nơi gọi phải nhớ thêm một thứ nó không cần biết. Nhờ vậy bấm
+     "Quay lại" ở màn thang vẫn ra đúng danh sách chủ đề của mảng ấy. */
+  const mangCua = maDang && bd.dang?.[maDang] ? `AREA:${bd.dang[maDang].mang}` : null;
+  const mangDang = maMang || mangCua;
 
   const dsMang = SO_MANG.map((s) => bd.mang[`AREA:${s}`]).filter(Boolean);
   /* Trả CẶP [mã, dạng] chứ không riêng dạng: màn dưới cần mã để mở thang, mà dò
@@ -106,7 +115,35 @@ export default function ChuDe({ progress, onMoBai, onLuyen, onThoat, viTri = {} 
     const cb = d.soTruongHop?.CB || 0, nc = d.soTruongHop?.NC || 0;
     return (
       <div className="mx-auto min-h-[100dvh] max-w-[740px] pb-10">
-        <DauTrang tieuDe={d.ten} phuDe={cd?.ten} quayLai={() => setMaDang(null)} />
+        {/* Quay lại từ thang: về danh sách chủ đề của mảng chứa nó. `mangDang` lo
+            trường hợp con về đây từ vòng luyện, khi trong tay chỉ có mã dạng bài. */}
+        <DauTrang tieuDe={d.ten} phuDe={cd?.ten}
+                  quayLai={() => { setMaMang(mangDang); setMaDang(null); }} />
+
+        {/* Nút LỚN NHẤT màn hình: bắt đầu luyện ngay ở bậc đúng lớp của con, không
+            bắt con tự chọn bậc. Kém thì vòng luyện tự lùi, đạt thì tự tiến — nên
+            chọn sai bậc cũng không hỏng, chỉ mất một lượt. */}
+        {onLuyen && d.thang.length > 0 && (() => {
+          const batDau = bacBatDau(d.thang, lopCon);
+          const vung = bacDaVung(progress, maDang);
+          return (
+            <div className="px-3.5 pt-3.5">
+              <div className="rounded-2xl bg-gold-pale px-4 py-3.5">
+                <div className="text-[11px] font-extrabold tracking-widest text-gold-dark">
+                  LUYỆN CHỦ ĐỀ NÀY
+                </div>
+                <p className="mt-1 text-[13.5px] leading-relaxed text-navy">
+                  {vung
+                    ? `Con đã vững tới bậc lớp ${vung}. Luyện tiếp từ bậc lớp ${batDau}.`
+                    : `Bắt đầu ở bậc lớp ${batDau}. Chưa qua thì mình lùi xuống lớp dưới cùng chủ đề, học lại gốc rồi quay lên.`}
+                </p>
+                <button className="btn-gold mt-2.5" onClick={() => onLuyen(maDang, batDau)}>
+                  Luyện từ bậc lớp {batDau} ▶
+                </button>
+              </div>
+            </div>
+          );
+        })()}
 
         <div className="px-3.5 pt-3.5">
           <section className="card">
@@ -174,8 +211,8 @@ export default function ChuDe({ progress, onMoBai, onLuyen, onThoat, viTri = {} 
   }
 
   /* ── TẦNG 2 · chủ đề và dạng bài của một mảng ────────────────────────────── */
-  if (maMang && bd.mang[maMang]) {
-    const m = bd.mang[maMang];
+  if (mangDang && bd.mang[mangDang]) {
+    const m = bd.mang[mangDang];
     return (
       <div className="mx-auto min-h-[100dvh] max-w-[740px] pb-10">
         <DauTrang tieuDe={m.ten} quayLai={() => setMaMang(null)} />
