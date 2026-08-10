@@ -256,6 +256,17 @@ Cũng phát hiện `deB` **là dữ liệu chết** ở mọi quyển — dựng
 giao diện không có lối nào mở. Nay thi trượt thì hiện nút **Làm ĐỀ B ▶**, và `need`
 được co theo số câu của đề B chứ không bê nguyên ngưỡng của đề A.
 
+**Rồi lại một lỗi nữa chỉ lộ ra khi đi thật trên bản đã deploy** (bài học cũ, lần thứ
+bảy): sai một câu thì màn hình hiện ngay `Lời giải: 6 020`, mà ô nhập vốn cho sửa lại
+rồi bấm lại — nên bé chỉ việc chép con số vừa đọc vào ô là được tính **đúng**. Vòng
+đúng về chỗ hổng cũ, chỉ khác cái vỏ. Nay `AnswerInput` có cờ `chotMotLan`: kỳ sát
+hạch khoá ô sau lần bấm đầu. Phần **luyện tập không đổi** — ở đấy sai rồi thử lại
+chính là việc cần làm, vì mục đích là học được chứ không phải đo.
+
+Cùng lúc gộp hai hộp báo kết quả làm một: ô nhập in một hộp, màn sát hạch in thêm hộp
+nữa ngay dưới, hai hộp nói cùng một điều — và hộp trên còn mời "con chọn/sửa lại rồi
+bấm Kiểm tra lần nữa nhé".
+
 ### 2 · Nhiệt kế của LỚP 3 vẫn là ảnh
 
 `NhietKeHieuBai.jsx` nhận `tong` nên dùng chung cho mọi quyển; lớp 4 đã bỏ hẳn ảnh
