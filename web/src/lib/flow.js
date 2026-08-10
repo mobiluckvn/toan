@@ -623,6 +623,11 @@ export function buildTeachSteps(lesson) {
           || (i === 0 ? figFor(lesson, 'teach_domain')
           : (i === 1 ? figFor(lesson, 'teach_core') : null)),
     misconception: i === kept.length - 1 ? misconception : null,
+    /* Hình của CHỖ HAY NHẦM đi kèm đúng màn in ra chỗ hay nhầm. Ô `trap` vốn có
+       trong dữ liệu từ lâu mà chưa nơi nào gọi tới — 168 hình lời thoại của lớp 5
+       nằm ở màn MỞ BÀI, tức bé thấy một câu SAI được nói chắc nịch trước khi học
+       gì. Nay chúng dọn về đây, sau khi giảng xong, đúng chỗ để soi lại cái bẫy. */
+    figureBay: i === kept.length - 1 ? figFor(lesson, 'trap') : null,
   }));
 }
 

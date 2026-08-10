@@ -701,7 +701,8 @@ ba loại hình ngay từ Bước 1 (mục 10) thay vì trả giá hai lượt.
 | Dây chuyền bóc tách | 7 bước, ~900 dòng Python |
 | Vẽ hình giảng | 75 hình · 17 nguyên mẫu · ~800 dòng |
 | Vẽ hình màn mở + hình bài tập | +45 hình · +5 nguyên mẫu — làm ở lượt SAU, vì lượt đầu chỉ nghĩ tới hình giảng |
-| **Tổng hình** | **tổng 120 hình · 22 nguyên mẫu** |
+| Vá nốt hình màn mở | +16 hình — lượt trên vẫn để 16/33 bài mở ra KHÔNG có hình nào, chỉ lộ khi đếm |
+| **Tổng hình** | **tổng 136 hình · 22 nguyên mẫu** |
 | Đáp án | 88 suy máy + 154 viết tay |
 | Cổng nghiệm thu | 68 phép kiểm riêng cho quyển |
 

@@ -47,9 +47,12 @@ def main(loc=None):
             # vì bước gắn hình đọc SỔ TAY chứ không đọc bản mô tả.
             'vaiTro': m.get('vaiTro'),
             'hoan': m.get('hoan'), 'onTap': m.get('onTap'),
-            'goc': m['goc'], 'sha256_16': sha,
+            # `goc` là tên ảnh gốc trong sách. Hình VẼ MỚI (16 hình mở bài bổ
+            # sung ở đợt rà soát màn mở) không có ảnh gốc nào để dẫn về, nên để
+            # rỗng thay vì nổ — sổ tay vẫn ghi đủ mã kiểm.
+            'goc': m.get('goc', ''), 'sha256_16': sha,
         }
-        print(f"  {m['id']}  {m['goc']:>13s} → {ten}  {sha}")
+        print(f"  {m['id']}  {m.get('goc', '(vẽ mới)'):>13s} → {ten}  {sha}")
 
     with open(SO_TAY, 'w', encoding='utf-8') as f:
         json.dump(so_tay, f, ensure_ascii=False, indent=1, sort_keys=True)

@@ -78,7 +78,7 @@ SO_HINH = os.path.join(GOC_KHO, 'data', 'figure_manifest.json')
 
 
 def main(chi_soat=False):
-    n_loi = n_hinh = n_hh = 0
+    n_loi = n_hinh = n_hh = n_hoi = n_bay = 0
     bo_qua = []
     so_hinh = json.load(open(SO_HINH, encoding='utf-8'))
     for ten in sorted(os.listdir(DATA)):
@@ -144,6 +144,37 @@ def main(chi_soat=False):
                 n_hinh += 1
                 doi = True
 
+        # 4 · CÂU SAI KHÔNG ĐƯỢC ĐỨNG Ở MÀN MỞ BÀI — sửa lại quyết định ở mục 2.
+        #
+        # Mục 2 cố ý giữ câu sai làm hình mở, tính rằng bé thấy cái bẫy trước thì
+        # nhớ lâu. Đi thật thì hỏng: bé mở bài ra, thấy ngay một bạn nói chắc nịch
+        # "Đuôi 5 quay này: 5 — 25 — 125 — vòng dài ghê!" mà KHÔNG có một chữ nào
+        # đính chính, vì lời phản bác đã bị bỏ và phần giảng thì còn ở màn sau. Câu
+        # sai đứng một mình trước khi học là dạy sai, không phải cảnh báo.
+        #
+        # 128/148 hình lời thoại là khẳng định sai như thế → dọn về ô `trap`, hiện
+        # ngay trên dòng "SAI:" của màn chỗ-hay-nhầm, sau khi giảng xong.
+        # 20 hình còn lại vốn là CÂU HỎI ("số dư lớn nhất là mấy nhỉ?") mà vẫn bị
+        # gắn giọng `wrong` nên tô đỏ như một câu sai → chỉ gỡ nhãn, giữ ở màn mở.
+        if f_hook is not None and f_hook.get('archetype') == 'character_speech' \
+                and 'hook' in (f_hook.get('usedIn') or []):
+            ln = (f_hook.get('params') or {}).get('lines') or []
+            noi = ' '.join(l.get('say', '') for l in ln).rstrip()
+            if noi.endswith('?'):
+                for l in ln:
+                    if l.get('tone') == 'wrong':
+                        l['tone'] = 'normal'
+                        doi = True
+                if f_hook.get('caption', '').startswith('Tình huống mở bài'):
+                    f_hook['caption'] = 'Câu hỏi mở bài'
+                    doi = True
+                n_hoi += 1
+            else:
+                f_hook['usedIn'] = ['trap']
+                f_hook['caption'] = 'Chỗ hay nhầm'
+                n_bay += 1
+                doi = True
+
         if doi and not chi_soat:
             for thu_muc in (DATA, PUBLIC):
                 with open(os.path.join(thu_muc, ten), 'w', encoding='utf-8') as f:
@@ -155,9 +186,11 @@ def main(chi_soat=False):
     print(f'{n_loi} lời mở rút thành câu đề · {n_hinh} hình mở bớt lời thoại · '
           f'{n_hh} bài hình học đưa hình vẽ lên màn mở'
           + (' (CHƯA ghi)' if chi_soat else ''))
+    print(f'{n_bay} hình CÂU SAI dọn từ màn mở về màn chỗ-hay-nhầm · '
+          f'{n_hoi} hình vốn là CÂU HỎI được gỡ nhãn sai')
     for i, ly in bo_qua:
         print(f'  ⚠ {i}: {ly}')
-    return n_loi, n_hinh, n_hh
+    return n_loi, n_hinh, n_hh, n_hoi, n_bay
 
 
 if __name__ == '__main__':

@@ -79,9 +79,13 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
           <div className="kicker">BÀI TOÁN</div>
           <p className="text-[16.5px] leading-relaxed">{step.screen?.narration}</p>
           <Figure fig={step.figure} />
+          {/* Lời nhắc phụ của màn mở. Trước đây câu này viết "…con thử đoán xem
+              BẠN ẤY sai ở đâu nhé", vì cạnh nó từng có bong bóng lời thoại một bạn
+              nói câu sai. Bong bóng ấy nay đã dọn về màn chỗ-hay-nhầm, nên "bạn ấy"
+              trỏ vào người không còn trên màn — bé đọc không hiểu đang nói về ai. */}
           {step.screen?.display?.caption && (
             <div className="warn-box text-[15px]">
-              <b>Câu hỏi:</b> {step.screen.display.caption} — con thử đoán xem bạn ấy sai ở đâu nhé!
+              <b>Thử đoán xem:</b> {step.screen.display.caption}
             </div>
           )}
         </div>
@@ -125,6 +129,11 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
           )}
           {step.misconception && (
             <div className="warn-box text-[15px]">
+              {/* Hình của chỗ hay nhầm — thường là bong bóng lời thoại một bạn nói
+                  chắc nịch một câu SAI. Đặt ở ĐÂY, ngay trên dòng "SAI:", thì bé
+                  đọc xong biết ngay đó là bẫy. Trước kia nó nằm ở màn mở bài, tức
+                  hiện trước khi bé học gì và không có gì đính chính. */}
+              <Figure fig={step.figureBay} />
               <div><b className="text-alert">SAI:</b> {step.misconception.wrong}</div>
               <div className="mt-1 text-[13.5px] text-mute">Dấu hiệu: {step.misconception.signal}</div>
               <div className="mt-2 rounded-lg bg-teal-pale px-3 py-2">
