@@ -27,6 +27,7 @@ import json, os, re, sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from chuan_lop2 import tach_phuong_an                             # noqa: E402
+from de_hieu_lop4 import sua, soat_mat_so                         # noqa: E402
 
 GOC_KHO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 THO = os.path.join(GOC_KHO, 'data', 'lop4_tho.json')
@@ -80,6 +81,68 @@ def dung_cau_quiz(c, dap):
 TIEU_DE_COT = {'TRANG VỞ CỦA CON', 'VÌ SAO VIẾT DÒNG NÀY?'}
 
 
+# Tên chương của sách cũng bọc ví von. Đổi sang tên nói đúng nội dung chương —
+# bé đọc tên chương là biết sắp học gì, thay vì phải giải mã một hình ảnh.
+TEN_CHUONG = {
+    1: 'SỐ ĐẾN LỚP TRIỆU', 2: 'BỐN PHÉP TÍNH VÀ TÍNH NHANH',
+    3: 'DẤU HIỆU CHIA HẾT', 4: 'DÃY SỐ', 5: 'TRUNG BÌNH CỘNG',
+    6: 'TỔNG - HIỆU', 7: 'TỔNG - TỈ VÀ HIỆU - TỈ',
+    8: 'BÀI TOÁN CÓ LỜI VĂN', 9: 'PHÂN SỐ',
+    10: 'CHU VI, DIỆN TÍCH VÀ HÌNH KHỐI', 11: 'QUÃNG ĐƯỜNG VÀ THỜI GIAN',
+}
+
+
+# Tiêu đề bài — viết tay cả 44, vì luật máy bỏ ví von sẽ để lại những mảnh cụt
+# ("TÍNH NHANH CẤP KỸ SƯ" bỏ chữ "kỹ sư" thành "TÍNH NHANH CẤP"). Tiêu đề là chữ
+# bé đọc nhiều nhất — nó phải nói thẳng bài dạy gì, không phải một hình ảnh đẹp.
+TEN_BAI = {
+    1:  'ĐỌC VÀ VIẾT SỐ ĐẾN LỚP TRIỆU',
+    2:  'THÊM MỘT CHỮ SỐ VÀO SỐ ĐÃ CHO',
+    3:  'XOÁ MỘT CHỮ SỐ, NHÂN VÀ CHIA CHO 10',
+    4:  'LẬP SỐ TỪ THẺ SỐ VÀ SỐ VIẾT NGƯỢC',
+    5:  'TÍNH NHANH BỐN PHÉP TÍNH',
+    6:  'TÌM X NÂNG CAO',
+    7:  'ĐẾM SỐ VÀ ĐẾM CHỮ SỐ KHI ĐÁNH SỐ TRANG',
+    8:  'ĐẾM BẰNG QUY TẮC NHÂN VÀ PHẦN BÙ',
+    9:  'DẤU HIỆU CHIA HẾT CHO 2 VÀ CHO 5',
+    10: 'DẤU HIỆU CHIA HẾT CHO 3 VÀ CHO 9',
+    11: 'PHÉP CHIA CÓ DƯ VÀ BÀI TOÁN THỪA - THIẾU',
+    12: 'CHỮ SỐ TẬN CÙNG CỦA MỘT TÍCH',
+    13: 'DÃY SỐ CÁCH ĐỀU',
+    14: 'DÃY SỐ HAI TẦNG VÀ DÃY NHÂN',
+    15: 'BÀI TOÁN TRỒNG CÂY — BA TRƯỜNG HỢP',
+    16: 'TRUNG BÌNH CỘNG VÀ BÀI TOÁN NGƯỢC',
+    17: 'HƠN KÉM MỨC TRUNG BÌNH BAO NHIÊU?',
+    18: 'THÊM MỘT SỐ VÀO NHÓM, TRUNG BÌNH ĐỔI THẾ NÀO?',
+    19: 'BÀI TOÁN TỔNG - HIỆU',
+    20: 'KHI ĐỀ KHÔNG CHO SẴN TỔNG',
+    21: 'KHI ĐỀ KHÔNG CHO SẴN HIỆU',
+    22: 'KHI CẢ TỔNG VÀ HIỆU CÙNG THAY ĐỔI',
+    23: 'BÀI TOÁN TỔNG - TỈ',
+    24: 'KHI ĐỀ KHÔNG CHO SẴN TỔNG HOẶC TỈ SỐ',
+    25: 'BÀI TOÁN HIỆU - TỈ',
+    26: 'BA SỐ TRÊN MỘT SƠ ĐỒ, NỐI HAI TỈ SỐ',
+    27: 'BÀI TOÁN VỀ TUỔI',
+    28: 'BÀI TOÁN LÀM CHUNG CÔNG VIỆC',
+    29: 'TÍNH NGƯỢC TỪ CUỐI',
+    30: 'PHƯƠNG PHÁP GIẢ THIẾT TẠM',
+    31: 'PHƯƠNG PHÁP KHỬ VÀ THẾ',
+    32: 'SƠ ĐỒ VEN VÀ NGUYÊN LÝ CHUỒNG THỎ',
+    33: 'SO SÁNH HAI PHÂN SỐ',
+    34: 'TÌM PHÂN SỐ CỦA MỘT SỐ',
+    35: 'DÃY PHÂN SỐ — TÁCH HIỆU VÀ RÚT GỌN CHÉO',
+    36: 'PHÂN SỐ VÀ ĐẠI LƯỢNG KHÔNG ĐỔI',
+    37: 'PHÂN SỐ TRONG BÀI TOÁN LÃI, BAY HƠI, PHA TRỘN',
+    38: 'CHU VI VÀ DIỆN TÍCH HÌNH CHỮ NHẬT',
+    39: 'ĐỔI KÍCH THƯỚC THÌ DIỆN TÍCH ĐỔI THẾ NÀO?',
+    40: 'GÓC, ĐƯỜNG CAO, CẮT GHÉP VÀ HÌNH TRÒN',
+    41: 'HÌNH HỘP TRẢI PHẲNG VÀ ĐẾM KHỐI',
+    42: 'QUÃNG ĐƯỜNG ĐI ĐƯỢC TRONG MỘT GIỜ',
+    43: 'BÀI TOÁN ĐUỔI KỊP VÀ GẶP NHAU',
+    44: 'GÓC GIỮA HAI KIM ĐỒNG HỒ',
+}
+
+
 def _muc_sach(muc):
     """Dọn danh sách hình về RỖNG trước khi ghi tầng GỐC.
 
@@ -88,9 +151,12 @@ def _muc_sach(muc):
     tìm khoá `id` trong danh sách ấy — để lẫn hai loại vào nhau là bước gắn vỡ, hoặc
     tệ hơn: gắn xen kẽ ảnh sách với hình vẽ mới, hai bảng màu đá nhau trên cùng màn.
     """
-    return {k: {**v, 'hinh': [],
-                'dong': [d for d in v.get('dong', []) if d not in TIEU_DE_COT]}
-            for k, v in muc.items()}
+    ra = {}
+    for k, v in muc.items():
+        dong = [sua(d) for d in v.get('dong', []) if d not in TIEU_DE_COT]
+        ra[k] = {**v, 'hinh': [], 'dong': [d for d in dong if d],
+                 'nhip': sua(v.get('nhip', ''))}
+    return ra
 
 
 def main():
@@ -109,7 +175,9 @@ def main():
             tong += 1
             loi = dap.get(f"{ma}#{c['id']}", '')
             if c['phan'] == 'quiz':
-                x = dung_cau_quiz(c, doc_dap_quiz(loi))
+                x = dung_cau_quiz({**c, 'text': sua(c['text'])}, doc_dap_quiz(loi))
+                x['loiChua'] = sua(x.get('loiChua', ''))
+                x['solutionNarrative'] = sua(x.get('solutionNarrative', ''))
                 cau.append(x)
                 if x.get('answerKey'):
                     cham_may += 1
@@ -122,15 +190,17 @@ def main():
                 co_dap += 1
             else:
                 canh_bao.append(f'{ma} {c["id"]}: không có lời chữa')
-            cau.append({**c, 'loiChua': loi, 'tuLuan': True})
+            cau.append({**c, 'text': sua(c['text']), 'loiChua': sua(loi),
+                        'tuLuan': True})
 
         g = gan.get(ma) or {'ve': [], 'ten': [], 'canCu': 'khong'}
         bai = {
-            'id': ma, 'quyen': 'lop4', 'so': b['so'], 'ten': b['ten'],
-            'chuong': b['chuong'], 'tenChuong': b['tenChuong'],
+            'id': ma, 'quyen': 'lop4', 'so': b['so'], 'ten': TEN_BAI.get(b['so'], sua(b['ten'], True)),
+            'chuong': b['chuong'],
+            'tenChuong': TEN_CHUONG.get(b['chuong'], b['tenChuong']),
             'dangGoc': b['dangGoc'],
             # lời nối ngược về lớp 3, sách viết sẵn ở đầu mỗi bài
-            'hatMam': b.get('hatMam', ''),
+            'hatMam': sua(b.get('hatMam', '')),
             # đường lùi: rỗng thì màn kết bài KHÔNG hiện nút "Học lại bài lớp 3"
             'ganDuoi': {'ve': g['ve'], 'ten': g['ten'], 'canCu': g['canCu'],
                         'lopDuoi': 3},
@@ -139,14 +209,30 @@ def main():
         with open(os.path.join(RA_DATA, f'DL_KSN4_B{b["so"]:02}.json'), 'w',
                   encoding='utf-8') as f:
             json.dump(bai, f, ensure_ascii=False, indent=1)
-        idx.append({'id': ma, 'so': b['so'], 'ten': b['ten'], 'chuong': b['chuong'],
-                    'tenChuong': b['tenChuong'],
+        idx.append({'id': ma, 'so': b['so'], 'ten': bai['ten'], 'chuong': b['chuong'],
+                    'tenChuong': bai['tenChuong'],
                     'soCau': sum(1 for c in cau if c['phan'] == 'luyenTap'),
                     'soQuiz': sum(1 for c in cau if c['phan'] == 'quiz'),
                     'coDuongLui': bool(g['ve'])})
 
     with open(os.path.join(RA_DATA, 'index.json'), 'w', encoding='utf-8') as f:
         json.dump(idx, f, ensure_ascii=False, indent=1)
+
+    # CHỐT chuẩn mục 5 · chốt 2 — luật viết lại rất dễ nuốt mất một con số mà câu
+    # vẫn đọc trôi, nên so đa tập chữ số trước và sau cho TỪNG chuỗi đã sửa.
+    mat = []
+    for b in d['bai']:
+        for c in b['cau']:
+            m = soat_mat_so(c['text'], sua(c['text']))
+            if m:
+                mat.append(f"{MA_BAI.format(b['so'])}#{c['id']}: mất chữ số {m}")
+        for v in b['muc'].values():
+            for dg in v.get('dong', []):
+                m = soat_mat_so(dg, sua(dg))
+                if m:
+                    mat.append(f"bài {b['so']}: mất chữ số {m} — {dg[:50]}")
+    if mat:
+        canh_bao.extend(mat[:10])
 
     lui = sum(1 for x in idx if x['coDuongLui'])
     print(f'đã ghi {len(idx)} bài GỐC vào {RA_DATA}')

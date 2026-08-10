@@ -1,6 +1,6 @@
 import React from 'react';
 import { gradeMicro } from '../lib/flow.js';
-import NhietKe from './NhietKe.jsx';
+import NhietKeHieuBai from './NhietKeHieuBai.jsx';
 
 /** Trang kết: huy hiệu · điểm · thẻ ôn · sổ phụ huynh · đường lùi về quyển dưới */
 export default function FinaleCard({ lesson, log, onRetry, onJumpTeach, onFinish, onMoBai }) {
@@ -45,7 +45,7 @@ export default function FinaleCard({ lesson, log, onRetry, onJumpTeach, onFinish
         {/* Nhiệt kế tự đánh giá — sách lớp 4 in ở cuối mỗi bài. Là THÀNH PHẦN chứ
             không phải ảnh: nó tô đúng nấc con vừa đạt, việc mà ảnh tĩnh không làm
             được. Quyển nào cũng dùng được vì nó nhận số câu sát hạch thật. */}
-        {g.total > 0 && <NhietKe dat={g.right} tong={g.total} />}
+        {g.total > 0 && <NhietKeHieuBai dat={g.right} tong={g.total} />}
 
         {flash && (
           <div className="mt-4 rounded-2xl bg-navy px-4 py-3.5 text-left text-[14.5px] leading-relaxed text-white">

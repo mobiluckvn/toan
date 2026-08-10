@@ -3,11 +3,11 @@
  "id": "DL:KSN4.B14",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 14 · DÃY SỐ HAI TẦNG & DÃY NHÂN",
+ "title": "Bài 14 · DÃY SỐ HAI TẦNG VÀ DÃY NHÂN",
  "durationMinutes": 10,
  "so": 14,
  "chuong": 4,
- "tenChuong": "NHÀ GA DÃY SỐ",
+ "tenChuong": "DÃY SỐ",
  "dangGoc": "SỐ 5.2 mức Lớp 4 — Số hạng thứ n xa hơn của dãy tầng 2 · dãy nhân k lần · giải thích quy luật bằng lời",
  "skills": {
   "bktUnit": "CHUONG:4@G4",
@@ -28,7 +28,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — SOI TẦNG DƯỚI: dãy 1, 3, 6, 10, 15: lấy số sau trừ số trước được tầng dưới: 2, 3, 4, 5 — một dãy cách đều tăng dần! Hai số tiếp của tầng trên: 15 + 6 = 21 và 21 + 7 = 28. LỜI QUY LUẬT (luật xưởng bắt buộc): \"Mỗi số bằng số liền trước cộng thêm một số; phần cộng thêm tăng dần 2, 3, 4, ...\""
+    "text": "Bước 1 — SOI TẦNG DƯỚI: dãy 1, 3, 6, 10, 15: lấy số sau trừ số trước được tầng dưới: 2, 3, 4, 5 — một dãy cách đều tăng dần! Hai số tiếp của tầng trên: 15 + 6 = 21 và 21 + 7 = 28. LỜI QUY LUẬT (luật bắt buộc): \"Mỗi số bằng số liền trước cộng thêm một số; phần cộng thêm tăng dần 2, 3, 4, ...\""
    },
    {
     "id": "K2",
@@ -43,7 +43,7 @@
     "text": "Bước 4 — VỀ ĐÍCH MŨ BẢO HIỂM: cần 120 nghìn: tìm n để 1 + 2 + ... + n = 120. Thử bằng Gauss: n = 15 → (1 + 15) × 15 : 2 = 120 — vừa khít tuần 15! (Soi hàng xóm: n = 14 cho 105, chưa đủ.) Chiến dịch heo đất có ngày về đích chính xác."
    }
   ],
-  "mantra": "Gặp dãy lạ: soi TẦNG DƯỚI trước — trừ nhau ra dãy đẹp là dãy hai tầng; chia nhau ra số không đổi là dãy nhân. Số hạng ở xa của dãy hai tầng = số đầu + tổng các bước nhảy (Gauss lo khoản tổng). Và luật xưởng: quy luật nào cũng phải NÓI ĐƯỢC THÀNH MỘT CÂU.",
+  "mantra": "Gặp dãy lạ: soi TẦNG DƯỚI trước — trừ nhau ra dãy đẹp là dãy hai tầng; chia nhau ra số không đổi là dãy nhân. Số hạng ở xa của dãy hai tầng = số đầu + tổng các bước nhảy (Gauss lo khoản tổng). Và luật : quy luật nào cũng phải NÓI ĐƯỢC THÀNH MỘT CÂU.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
@@ -66,7 +66,7 @@
     "kind": "explain",
     "narration": "CHO GÌ? khoản bỏ heo: tuần 1 là 1 nghìn, mỗi tuần sau nhiều hơn tuần trước 1 nghìn; bảng TỔNG tiền: 1, 3, 6, 10, 15, ...\nHỎI GÌ? hai số tiếp theo của bảng tổng; tổng sau tuần thứ 10; và đến tuần nào đủ 120 nghìn mua mũ bảo hiểm.\nĐẠI LƯỢNG & ĐƠN VỊ: tiền (nghìn đồng) theo tuần — phân biệt \"khoản bỏ MỖI tuần\" với \"TỔNG trong heo\".\nQUAN HỆ GIỮA CHÚNG: khoản bỏ các tuần là 1, 2, 3, 4, ... nên tổng trong heo tăng theo bước nhảy lớn dần — hiệu hai số liền nhau của bảng tổng chính là khoản bỏ tuần đó.\nCHỌN CÔNG CỤ: BẢNG HAI TẦNG: tầng trên ghi tổng, tầng dưới ghi các bước nhảy +2, +3, +4, ... — và công thức Gauss để cộng dồn.\nƯỚC LƯỢNG TRƯỚC: tổng sau tuần 10 = 1 + 2 + ... + 10, cỡ dăm chục nghìn.",
     "teaches": [],
-    "nhan": "NHỊP 1 · DỊCH — từ bảng heo đất sang hai tầng số"
+    "nhan": "NHỊP 1, DỊCH — từ bảng heo đất sang hai tầng số"
    },
    {
     "id": "S3",
@@ -105,7 +105,7 @@
     "kind": "explain",
     "narration": "LẮP: thông báo dán cạnh heo đất: \"Theo giao kèo, sau tuần 10 heo có 55 nghìn; mũ bảo hiểm 120 nghìn sẽ về tay đúng TUẦN 15.\" Su Bống đánh dấu ngày ấy lên tờ lịch — mục tiêu tài chính có hạn chót rõ ràng!\nSOI: soi bằng bảng thật: cộng tay 5 tuần đầu 1 + 2 + 3 + 4 + 5 = 15 khớp ô thứ 5 của bảng ✓; và Gauss n = 15 cho đúng 120 trong khi n = 14 mới 105 — hạn chót tuần 15 là chuẩn, không sớm không muộn.\nDÙNG NGOÀI ĐỜI: mọi kế hoạch tiết kiệm \"tăng dần đều\" — tiền heo, số trang đọc sách, số vòng chạy bộ — đều là dãy hai tầng: con vừa học cách dự báo NGÀY VỀ ĐÍCH của chúng.",
     "teaches": [],
-    "nhan": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+    "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
@@ -120,7 +120,7 @@
   "problem": "Cho dãy số: 1 ; 2 ; 4 ; 7 ; 11 ; ... a) Nêu quy luật của dãy bằng lời. b) Tìm số hạng thứ 10 của dãy.",
   "steps": [
    {
-    "show": "Tóm tắt:"
+    "show": "Tóm tắt"
    },
    {
     "show": "Dãy 1 ; 2 ; 4 ; 7 ; 11 ; ... — nêu quy luật và tìm số hạng thứ 10."
@@ -129,7 +129,7 @@
     "show": "Bài dãy số vẫn cần tóm tắt — chép lại dãy cho chuẩn."
    },
    {
-    "show": "Mô hình (soi tầng dưới):"
+    "show": "Mô hình (soi tầng dưới)"
    },
    {
     "show": "Dãy: 1 2 4 7 11"
@@ -141,16 +141,16 @@
     "show": "Bảng hai tầng là sơ đồ của bài — tầng dưới lộ quy luật."
    },
    {
-    "show": "Bài giải:"
+    "show": "Bài giải"
    },
    {
-    "show": "a) Quy luật: mỗi số bằng số liền trước cộng thêm một số;"
+    "show": "A) Quy luật: mỗi số bằng số liền trước cộng thêm một số"
    },
    {
-    "show": "phần cộng thêm tăng dần: 1 ; 2 ; 3 ; 4 ; ..."
+    "show": "Phần cộng thêm tăng dần: 1 ; 2 ; 3 ; 4 ; ..."
    },
    {
-    "show": "b) Từ số thứ nhất đến số thứ 10 có 9 bước nhảy: +1, +2, ..., +9."
+    "show": "B) Từ số thứ nhất đến số thứ 10 có 9 bước nhảy: +1, +2, ..., +9."
    },
    {
     "show": "Tổng các bước nhảy là: (1 + 9) × 9 : 2 = 45"
@@ -220,7 +220,7 @@
        }
       ]
      },
-     "solutionNarrative": "dãy nhân 3: 2, 6, 18, 54, 162 → số hạng thứ 5 là 162."
+     "solutionNarrative": "Dãy nhân 3: 2, 6, 18, 54, 162 → số hạng thứ 5 là 162."
     },
     {
      "id": "C5",
@@ -240,7 +240,7 @@
      "answerKey": {
       "value": 46
      },
-     "solutionNarrative": "từ số thứ nhất đến số thứ 10 có 9 bước nhảy +1, +2, ..., +9; tổng bước nhảy = (1 + 9) × 9 : 2 = 45 → số thứ 10 = 1 + 45 = 46."
+     "solutionNarrative": "Từ số thứ nhất đến số thứ 10 có 9 bước nhảy +1, +2, ..., +9; tổng bước nhảy = (1 + 9) × 9 : 2 = 45 → số thứ 10 = 1 + 45 = 46."
     },
     {
      "id": "C7",
@@ -248,7 +248,7 @@
      "answerKey": {
       "value": 55
      },
-     "solutionNarrative": "tổng trong heo = 1 + 2 + ... + 10 = (1 + 10) × 10 : 2 = 55 nghìn đồng."
+     "solutionNarrative": "Tổng trong heo = 1 + 2 + ... + 10 = (1 + 10) × 10 : 2 = 55 nghìn đồng."
     }
    ],
    "challenge": [
@@ -258,11 +258,11 @@
      "answerKey": {
       "value": 15
      },
-     "solutionNarrative": "cần 1 + 2 + ... + n = 120; thử n = 15: (1 + 15) × 15 : 2 = 120 ✓ (n = 14 mới được 105, chưa đủ) → đúng tuần thứ 15."
+     "solutionNarrative": "Cần 1 + 2 + ... + n = 120; thử n = 15: (1 + 15) × 15 : 2 = 120 ✓ (n = 14 mới được 105, chưa đủ) → đúng tuần thứ 15."
     },
     {
      "id": "C9",
-     "text": "Anh Trí Dũng đố: \"Dãy 1 ; 1 ; 2 ; 3 ; 5 ; 8 ; ... — viết ba số tiếp theo, nêu lời quy luật, rồi soi tầng dưới của nó: con nhận ra điều gì thú vị?\"",
+     "text": "Dãy 1 ; 1 ; 2 ; 3 ; 5 ; 8 ; ... — viết ba số tiếp theo, nêu lời quy luật, rồi soi tầng dưới của nó: con nhận ra điều gì thú vị?",
      "answerKey": {
       "ordered": true,
       "values": [
@@ -295,7 +295,7 @@
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "bước nhảy 1, 2, 3 không đều."
+    "solutionNarrative": "Bước nhảy 1, 2, 3 không đều."
    },
    {
     "id": "Q3",
@@ -323,7 +323,7 @@
     "answerKey": {
      "choice": "A. 25"
     },
-    "solutionNarrative": "bước nhảy 3, 5, 7, tiếp là +9: 16 + 9 = 25."
+    "solutionNarrative": "Bước nhảy 3, 5, 7, tiếp là +9: 16 + 9 = 25."
    },
    {
     "id": "Q5",
@@ -368,7 +368,7 @@
    "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Lớp 3, ở Bài 12, con đã gặp Fibonacci và dãy \"hiệu tầng hai\" ở mức nhận diện. Năm nay xưởng đặt ra hai yêu cầu kỹ sư: tìm số hạng thứ n Ở XA (không viết cả dãy — dùng Gauss của Bài 13!), và quan trọng không kém: NÓI ĐƯỢC quy luật thành lời văn cho người khác hiểu. Quy luật chưa nói được thành lời là quy luật chưa thuộc về mình.",
+ "hatMam": "Lớp 3, ở Bài 12, con đã gặp Fibonacci và dãy \"hiệu tầng hai\" ở mức nhận diện. Năm nay đặt ra hai yêu cầu người giải: tìm số hạng thứ n Ở XA (không viết cả dãy — dùng Gauss của Bài 13!), và quan trọng không kém: NÓI ĐƯỢC quy luật thành lời văn cho người khác hiểu. Quy luật chưa nói được thành lời là quy luật chưa thuộc về mình.",
  "duongLui": {
   "ve": [
    "DL:KSN3.B12"

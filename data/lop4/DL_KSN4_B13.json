@@ -2,9 +2,9 @@
  "id": "DL:KSN4.B13",
  "quyen": "lop4",
  "so": 13,
- "ten": "BỘ TỨ HOÀN HẢO CỦA DÃY CÁCH ĐỀU",
+ "ten": "DÃY SỐ CÁCH ĐỀU",
  "chuong": 4,
- "tenChuong": "NHÀ GA DÃY SỐ",
+ "tenChuong": "DÃY SỐ",
  "dangGoc": "SỐ 5.1 mức Lớp 4 — Đủ 4 bài: số hạng thứ n · số số hạng · tổng dãy (Gauss) · kiểm tra thuộc dãy",
  "hatMam": "Lớp 3, ở Bài 10-11, con đã biết \"toa tàu thứ n\" và kiểm tra \"ga này tàu có dừng không\" bằng chia dư. Chương 2 vừa rồi lại rèn công thức đếm số hạng. Hôm nay ba mảnh ấy ghép với mảnh cuối cùng — TÍNH TỔNG cả dãy theo kiểu thần đồng Gauss — thành BỘ TỨ hoàn hảo: một dãy số, bốn câu hỏi, câu nào cũng có công thức trả lời.",
  "ganDuoi": {
@@ -33,7 +33,7 @@
   "chuyenMoBai": {
    "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 13: tấm vé số 113",
    "dong": [
-    "Cô chủ rạp phim mini mang đến sơ đồ ghế: \"Rạp cô mỗi hàng đúng 8 ghế, đánh số liền từ 1. Khách cầm vé cứ hỏi: ghế em ở hàng mấy? Hàng 15 bắt đầu từ ghế số bao nhiêu? Cả rạp 18 hàng thì bao nhiêu chỗ? Các kỹ sư lập giúp cô bộ công thức trả lời TỨC THÌ — khách đông, không kịp đếm đâu!\" Trí Long liếc sơ đồ: \"Ghế đầu các hàng là 1, 9, 17, 25... viết tiếp đến hàng 15 chắc cũng nhanh mà?\" Su Kem cười: \"Nhanh — nhưng cô cần TỨC THÌ. Nghĩa là cần công thức, không cần kiên nhẫn.\""
+    "Cô chủ rạp phim mini mang đến sơ đồ ghế: \"Rạp cô mỗi hàng đúng 8 ghế, đánh số liền từ 1. Khách cầm vé cứ hỏi: ghế em ở hàng mấy? Hàng 15 bắt đầu từ ghế số bao nhiêu? Cả rạp 18 hàng thì bao nhiêu chỗ? Các lập giúp cô bộ công thức trả lời TỨC THÌ — khách đông, không kịp đếm đâu!\" Trí Long liếc sơ đồ: \"Ghế đầu các hàng là 1, 9, 17, 25... viết tiếp đến hàng 15 chắc cũng nhanh mà?\" Su Kem cười: \"Nhanh — nhưng cô cần TỨC THÌ. Nghĩa là cần công thức, không cần kiên nhẫn.\""
    ],
    "hinh": [
     {
@@ -53,20 +53,20 @@
     "HỎI GÌ? ghế đầu của hàng 15 là số mấy; cả rạp 18 hàng có bao nhiêu ghế; vé số 113 thuộc hàng nào.",
     "ĐẠI LƯỢNG & ĐƠN VỊ: số ghế (chiếc) và số thứ tự hàng — hai loại số khác nhau, chớ lẫn!",
     "QUAN HỆ GIỮA CHÚNG: ghế đầu mỗi hàng tạo thành DÃY CÁCH ĐỀU: bắt đầu từ 1, mỗi bước nhảy đúng 8 (vì mỗi hàng 8 ghế).",
-    "CHỌN CÔNG CỤ: BỘ TỨ CÔNG THỨC của dãy cách đều: thứ n · số số hạng · tổng · thuộc dãy.",
+    "CHỌN CÔNG CỤ: BỘ TỨ CÔNG THỨC của dãy cách đều: thứ n, số số hạng, tổng, thuộc dãy.",
     "ƯỚC LƯỢNG TRƯỚC: hàng 15 cách hàng 1 mười bốn bước nhảy — ghế đầu cỡ 1 + 14 × 8, tầm hơn trăm."
    ],
    "hinh": [],
-   "nhip": "NHỊP 1 · DỊCH — từ sơ đồ ghế sang dãy cách đều"
+   "nhip": "NHỊP 1, DỊCH — từ sơ đồ ghế sang dãy cách đều"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
    "dong": [
-    "Bước 1 — CÔNG THỨC ① SỐ HẠNG THỨ n: từ hàng 1 đến hàng 15 có 15 − 1 = 14 bước nhảy, mỗi bước cộng 8 → ghế đầu hàng 15 = 1 + 8 × 14 = 113. Tổng quát: số hạng thứ n = số đầu + khoảng cách × (n − 1). Đếm BƯỚC NHẢY, không đếm toa — nên phải trừ 1!",
-    "Bước 2 — CÔNG THỨC ② VÀ NGƯỜI QUEN: số số hạng = (cuối − đầu) : khoảng + 1 — chính là công thức đếm nhãn của Bài 7, nay về chung một nhà. Dãy 5, 10, ..., 100 có (100 − 5) : 5 + 1 = 20 số hạng.",
-    "Bước 3 — CÔNG THỨC ③ TỔNG DÃY — TUYỆT CHIÊU GAUSS: tính 1 + 2 + ... + 50: ghép đầu với cuối: 1 + 50 = 51; 2 + 49 = 51... được 50 : 2 = 25 cặp, cặp nào cũng 51 → tổng = 51 × 25 = 1 275. Tổng quát: tổng = (đầu + cuối) × số số hạng : 2. Với dãy 5 + 10 + ... + 100: (5 + 100) × 20 : 2 = 1 050.",
-    "Bước 4 — CÔNG THỨC ④ THUỘC DÃY & BÀI VÉ 113: vé 113 thuộc dãy ghế-đầu-hàng 1, 9, 17, ...? Soi: (113 − 1) : 8 = 14 chia hết → thuộc dãy, đứng thứ 14 + 1 = 15 → vé 113 là ghế ĐẦU của hàng 15! Còn vé 100: (100 − 1) : 8 = 99 : 8 dư 3 → không phải ghế đầu hàng; 100 = 8 × 12 + 4 → khách ngồi hàng 13, ghế thứ 4 trong hàng. Mật mã chia hết của Chương 3 gác cổng cho công thức ④!",
-    "MẸO THÁM TỬ: Bộ tứ của dãy cách đều: ① thứ n = đầu + khoảng × (n − 1); ② số số hạng = (cuối − đầu) : khoảng + 1; ③ tổng = (đầu + cuối) × số số hạng : 2; ④ thuộc dãy khi (x − đầu) chia hết cho khoảng. Nhớ mẹo chống nhầm: công thức ① trừ 1 (đếm bước nhảy), công thức ② cộng 1 (đếm cả người đầu hàng)."
+    "Bước 1 — CÔNG THỨC SỐ HẠNG THỨ n: từ hàng 1 đến hàng 15 có 15 − 1 = 14 bước nhảy, mỗi bước cộng 8 → ghế đầu hàng 15 = 1 + 8 × 14 = 113. Tổng quát: số hạng thứ n = số đầu + khoảng cách × (n − 1). Đếm BƯỚC NHẢY, không đếm toa — nên phải trừ 1!",
+    "Bước 2 — CÔNG THỨC VÀ NGƯỜI QUEN: số số hạng = (cuối − đầu) : khoảng + 1 — chính là công thức đếm nhãn của Bài 7, nay về chung một nhà. Dãy 5, 10, ..., 100 có (100 − 5) : 5 + 1 = 20 số hạng.",
+    "Bước 3 — CÔNG THỨC TỔNG DÃY — CÁCH GAUSS: tính 1 + 2 + ... + 50: ghép đầu với cuối: 1 + 50 = 51; 2 + 49 = 51... được 50 : 2 = 25 cặp, cặp nào cũng 51 → tổng = 51 × 25 = 1 275. Tổng quát: tổng = (đầu + cuối) × số số hạng : 2. Với dãy 5 + 10 + ... + 100: (5 + 100) × 20 : 2 = 1 050.",
+    "Bước 4 — CÔNG THỨC THUỘC DÃY & BÀI VÉ 113: vé 113 thuộc dãy ghế-đầu-hàng 1, 9, 17, ...? Soi: (113 − 1) : 8 = 14 chia hết → thuộc dãy, đứng thứ 14 + 1 = 15 → vé 113 là ghế ĐẦU của hàng 15! Còn vé 100: (100 − 1) : 8 = 99 : 8 dư 3 → không phải ghế đầu hàng; 100 = 8 × 12 + 4 → khách ngồi hàng 13, ghế thứ 4 trong hàng. Dấu hiệu chia hết của Chương 3 gác cổng cho công thức ④!",
+    "MẸO NGƯỜI GIẢI: Bộ tứ của dãy cách đều: ① thứ n = đầu + khoảng × (n − 1); ② số số hạng = (cuối − đầu) : khoảng + 1; ③ tổng = (đầu + cuối) × số số hạng : 2; ④ thuộc dãy khi (x − đầu) chia hết cho khoảng. Nhớ mẹo chống nhầm: công thức ① trừ 1 (đếm bước nhảy), công thức ② cộng 1 (đếm cả người đầu hàng)."
    ],
    "hinh": [
     {
@@ -77,7 +77,7 @@
      "sha256_16": "5e4a9209880e46ea"
     }
    ],
-   "nhip": "NHỊP 2 · GIẢI"
+   "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
@@ -87,20 +87,20 @@
     "DÙNG NGOÀI ĐỜI: số nhà chẵn - lẻ trên phố, ngày các thứ Bảy trong tháng, số trang mở đầu mỗi chương sách — toàn dãy cách đều chờ con tra bằng bộ tứ!"
    ],
    "hinh": [],
-   "nhip": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
     "Đề bài: Tính tổng: 5 + 10 + 15 + ... + 100.",
-    "Tóm tắt:",
+    "Tóm tắt",
     "Tính tổng dãy cách đều 5, 10, 15, ..., 100 (khoảng cách 5).",
     "Gọi tên \"dãy cách đều, khoảng cách 5\" — nhận diện xong nửa bài.",
-    "Mô hình (ghép cặp Gauss):",
+    "Mô hình (ghép cặp Gauss)",
     "5 + 100 = 105 ; 10 + 95 = 105 ; ...",
     "Cặp nào cũng có tổng bằng đầu + cuối.",
     "Chỉ ra \"vì sao nhân rồi chia 2\" — công thức có gốc, không học vẹt.",
-    "Bài giải:",
+    "Bài giải",
     "Số số hạng của dãy là: (100 − 5) : 5 + 1 = 20 (số hạng)",
     "Tổng của dãy là: (5 + 100) × 20 : 2 = 105 × 10 = 1 050",
     "Hai công thức của bộ tứ nối nhau: đếm trước, tính tổng sau.",
@@ -131,7 +131,7 @@
   "quiz": {
    "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
    "dong": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★)"
    ],
    "hinh": [],
    "nhip": ""
@@ -156,7 +156,7 @@
    "phan": "luyenTap",
    "ghiChu": "",
    "text": "Dãy 4 ; 7 ; 10 ; ... có khoảng cách bằng mấy? Viết ba số hạng tiếp theo.",
-   "loiChua": "khoảng cách 3; ba số tiếp theo: 13, 16, 19.",
+   "loiChua": "Khoảng cách 3; ba số tiếp theo: 13, 16, 19.",
    "tuLuan": true
   },
   {
@@ -211,7 +211,7 @@
    "phan": "luyenTap",
    "ghiChu": "",
    "text": "Tính tổng: 5 + 10 + 15 + ... + 100.",
-   "loiChua": "số số hạng (100 − 5) : 5 + 1 = 20 → tổng = (5 + 100) × 20 : 2 = 1 050.",
+   "loiChua": "Số số hạng (100 − 5) : 5 + 1 = 20 → tổng = (5 + 100) × 20 : 2 = 1 050.",
    "tuLuan": true
   },
   {
@@ -233,7 +233,7 @@
    "phan": "luyenTap",
    "ghiChu": "",
    "text": "Rạp phim mỗi hàng 8 ghế, đánh số liền từ 1. Hỏi ghế ĐẦU và ghế CUỐI của hàng 15 mang số bao nhiêu?",
-   "loiChua": "ghế đầu hàng 15 = 1 + 8 × 14 = 113; ghế cuối = 113 + 7 = 120.",
+   "loiChua": "Ghế đầu hàng 15 = 1 + 8 × 14 = 113; ghế cuối = 113 + 7 = 120.",
    "tuLuan": true
   },
   {
@@ -243,7 +243,7 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Anh Trí Dũng đố: \"Tính tổng 15 số lẻ đầu tiên: 1 + 3 + 5 + ... + 29 — rồi so kết quả với 15 × 15. Trùng hợp hay bí mật? Thử thêm với 5 số lẻ đầu tiên xem sao!\"",
+   "text": "Tính tổng 15 số lẻ đầu tiên: 1 + 3 + 5 + ... + 29 — rồi so kết quả với 15 × 15. Trùng hợp hay bí mật? Thử thêm với 5 số lẻ đầu tiên xem sao!",
    "loiChua": "(1 + 29) × 15 : 2 = 225 = 15 × 15! Với 5 số lẻ đầu: 1 + 3 + 5 + 7 + 9 = 25 = 5 × 5. Bí mật đẹp: tổng n số lẻ đầu tiên luôn bằng n × n — xếp các số lẻ thành hình vuông mà xem!",
    "tuLuan": true
   },
@@ -276,8 +276,8 @@
    "answerKey": {
     "value": false
    },
-   "loiChua": "còn phải chia 2.",
-   "solutionNarrative": "còn phải chia 2."
+   "loiChua": "Còn phải chia 2.",
+   "solutionNarrative": "Còn phải chia 2."
   },
   {
    "id": "Q3",

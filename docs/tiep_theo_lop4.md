@@ -4,9 +4,9 @@ Cập nhật 2026-08-10. Đọc tệp này TRƯỚC, rồi mới đọc `CHUAN_D
 
 Nguồn: `docs/KSN4_SACH_HOAN_CHINH_Ky_Su_Nhi_Lop4.docx` · 44 bài · 11 chương · 11 ôn tập.
 
-> **XONG TRỌN — lớp 4 đã hiện trên kệ sách.** 44 bài · 92 hình · 392/396 câu luyện
-> tập chấm máy (98%) · đường lùi hai chiều đã nối. Cổng nghiệm thu: **24 tệp kiểm ·
-> 775 PASS · 0 FAIL**. Chưa deploy — xem "Việc còn lại" ở cuối.
+> **XONG TRỌN — lớp 4 đã hiện trên kệ sách và đã deploy.** 44 bài · 92 hình ·
+> **392/396 câu luyện tập** và **234/236 câu kỳ sát hạch** chấm máy · đường lùi hai
+> chiều đã nối. Cổng nghiệm thu: **24 tệp kiểm · 779 PASS · 0 FAIL**.
 
 ---
 
@@ -44,7 +44,9 @@ cd web && npm test && npm run build
 | 2c | ôn tập | `tools/ontap_lop4.py` → `data/lop4_ontap.json` — **11 kỳ · 124 + 112 câu · mối nối đủ 124/124** |
 | 3 | dựng bài học | `tools/chuan_lop4.py` → `data/lop4/` — **616 câu · 100% có lời chữa · 220/220 quiz chấm máy** |
 | 3b | vẽ & gắn hình | `tools/mota_hinh_lop4.py` · `ve_hinh_lop4.py` · `gan_hinh_lop4.py` — **92 hình · 4 nguyên mẫu mới · đủ ba loại: 44 màn mở · 32 hình giảng · 8 cặp hình bài tập** |
-| 4 | ô nhập | `tools/tach_cau_lop4.py` + `data/lop4_dapan_tay.json` — **392/396 (98%) · 559 ô · 77 ô bấm chọn · 0 ô gõ chữ** |
+| 4 | ô nhập luyện tập | `tools/tach_cau_lop4.py` + `data/lop4_dapan_tay.json` — **392/396 (98%) · 559 ô · 77 ô bấm chọn · 0 ô gõ chữ** |
+| 4b | ô nhập KỲ SÁT HẠCH | `tools/tach_ontap_lop4.py` + `data/lop4_ontap_tay.json` — **234/236 (99%) · 316 ô · 31 ô bấm chọn** |
+| 4c | lời văn nói thẳng | `tools/de_hieu_lop4.py` — bỏ ví von, bỏ dấu · giữa câu, 44 tiêu đề viết tay |
 | 5 | khuôn chung | `tools/dung_khuon_chung_lop4.py` → `web/public/content/lop4/` + 11 `DCR_KSN4_C*` |
 | — | đường lùi 4→3 | `data/lop4_gan_lop3.json` — 44 dòng (13 `sach` · 1 `sachSua` · 29 `chuDe` · 1 `khong`) |
 | — | đường lùi 5→4 | `data/lop5_gan_lop4.json` — 56 bài sách → **168 micro**, đã gắn vào cả hai nơi |
@@ -159,18 +161,87 @@ trượt ở mức micro, nên trượt micro nào cũng phải thấy đúng l�
 
 ---
 
+## Đợt RÀ SOÁT theo bốn điểm bác nêu
+
+### 1 · Kỳ sát hạch chấm tay 100% — chỗ hổng lớn nhất
+
+Bác nói "bài tập nào cũng để con làm rồi xem đáp án". Phần luyện tập thì không phải
+vậy (98% chấm máy), nhưng **kỳ sát hạch thì đúng y như thế**: `ExamPlayer.jsx` chỉ
+có một nút *"Con làm xong — xem lời giải"* rồi hỏi *"Mình làm đúng / Mình làm sai"*.
+
+Nghĩa là **236 câu quan trọng nhất của quyển** — chỗ quyết định bé qua chương hay
+không — nằm ngoài mọi phép đo, và sổ phụ huynh nhận đúng con số bé tự chấm cho mình.
+Nếp ấy đến từ lớp 5 (câu sát hạch là tự luận dài nên tự chấm hợp lý); sách lớp 4 thì
+236 câu đều có đáp số xác định.
+
+Nay: `tach_ontap_lop4.py` dựng ô nhập (234/236), `ExamPlayer` gọi `AnswerInput` khi
+câu có `answerKey` và tự ghi kết quả — không hỏi bé nữa. Hai câu còn tự chấm là đọc
+số thành CHỮ, mỗi bé đọc một cách.
+
+**Phép kiểm `luat_o_nhap.test.mjs` nay soi CẢ kỳ sát hạch**, và việc mở rộng ấy lộ
+ra: **lớp 2 (138 câu) và lớp 3 (198 câu) cũng đang chấm tay 100%.** Ngưỡng 85% đo
+RIÊNG hai phần nên hai quyển ấy không đỏ oan, nhưng cổng in ra dòng ⏸ nói thẳng là
+còn nợ. Đó là việc nên làm tiếp.
+
+### 2 · Ví von và ẩn dụ — 99 lượt trong chữ bé đọc
+
+Sách bọc mọi thứ trong "Xưởng Mô Hình": bài toán là *đơn hàng*, cách làm là *tuyệt
+kỹ*, dấu hiệu chia hết là *mật mã*, người giải là *kỹ sư / thám tử / quan tòa*, và
+44 câu hỏi khó mở bằng *"Anh Trí Dũng đố: …"*. Bé phải đọc qua lớp vỏ ấy mới tới
+được bài toán.
+
+`de_hieu_lop4.py` bóc vỏ ngay khi dựng tầng GỐC (không sửa tệp đã dựng — lần chạy
+sau ghi đè sạch). **Giữ tên nhân vật trong đề toán** (Su Bống, bác Hòa): đó là "ai"
+của bài toán, đúng như mọi sách toán vẫn viết.
+
+**44 tiêu đề viết tay**, vì luật máy để lại mảnh cụt — "TÍNH NHANH CẤP KỸ SƯ" bỏ chữ
+"kỹ sư" thành "TÍNH NHANH CẤP". Nay là "TÍNH NHANH BỐN PHÉP TÍNH". Tên chương và tên
+11 kỳ sát hạch cũng đổi sang tên nói đúng nội dung.
+
+⚠ Bản đầu viết mỗi kiểu viết hoa một luật nên `MẬT MÃ` và `mật mã` thì trúng, còn
+`Mật mã` đầu câu thì lọt — **20 chỗ sót lại đúng vì thế**. Nay thay theo từ điển,
+một luật lo cả ba kiểu.
+
+### 3 · Dấu · dùng làm dấu ngăn giữa câu — 251 chỗ
+
+*"9-3 · 8-4 · 7-5 · 6-6"* — bé không biết dấu ấy nghĩa gì. Nay là dấu phẩy.
+**GIỮ dấu · ở TIÊU ĐỀ** (`Bài 1 · TÊN BÀI`): chỗ ấy nó ngăn số bài với tên bài, cả
+bốn quyển đều dùng, và bé không phải đọc nó thành lời.
+
+### 4 · Hình — bốn hình sai và một lỗi nguyên mẫu
+
+| hình | hỏng gì |
+|---|---|
+| `L4H_B09_MO` | vẽ **12 chấm** "hàng đôi" trong khi đề nói **234 em** — hình không nói về bài toán đang hỏi. Nay là chính số 234 với chữ số tận cùng được chỉ ra |
+| `L4H_B11_MO` | vẽ 8 + 3 = **11 chiếc ghế** trong khi đề nói **từ 30 đến 50** — hình đá nhau với đề. Nay chỉ bày ba dữ kiện, không con số nào là đáp án |
+| `L4H_B12_MO` | **tô đỏ số 5 và 6** — chỉ thẳng cặp 2 × 5 cho đuôi 0, tức lộ lời giải trên bản ĐỀ |
+| `bang_luoi` | tiêu đề cột đè lên nhau (*"nhóm trangcó mấynỗi số mấy chữ số"*). Nay hàng tiêu đề **ngắt hai dòng** và cột hai-cột được nới rộng |
+
+`cau_truc_so` cũng dính cùng bệnh ở bảng bảy phòng lớp triệu — đã sửa ở đợt trước.
+
+**Sửa `bang_luoi` làm đổi 3 hình của lớp 2** (`L2H_BL01 · 02 · 03`) — chúng dính cùng
+lỗi từ trước, nay hết tràn. 117/120 hình lớp 2 còn lại giữ nguyên từng byte.
+
+### 5 · Một thành phần dựng TRÙNG
+
+Tôi dựng `NhietKe.jsx` trong khi `NhietKeHieuBai.jsx` **đã có từ đợt lớp 2** — và bản
+cũ ấy còn đang mồ côi, không ai import. Nay gộp làm một: giữ tên cũ, nhận `dat`/`tong`
+để tô đúng nấc bé vừa đạt (quiz đã chấm máy thì hỏi lại bé được mấy sao là thừa).
+
+---
+
 ## Việc còn lại
 
-### 1 · Chưa deploy
+### 1 · Kỳ sát hạch của LỚP 2 và LỚP 3 vẫn chấm tay
 
-Dữ liệu, hình và cổng nghiệm thu đều xong; `npm run build` đã chạy nên `web/dist/`
-khớp `web/public/`. Deploy bằng `npx firebase deploy --only hosting` từ `web/`, rồi
-**gọi thẳng vào bản chạy thật** chứ đừng tin dòng "Deploy complete".
+138 câu (lớp 2) và 198 câu (lớp 3) — cổng in dòng ⏸ mỗi lần chạy. Cách làm y hệt
+lớp 4: viết `tach_ontap_lop2.py` / `_lop3.py` dùng lại luật sẵn có, rồi nối vào bộ
+dựng. `ExamPlayer` **đã sẵn sàng** — nó tự chấm máy khi câu có `answerKey`.
 
 ### 2 · Nhiệt kế của LỚP 3 vẫn là ảnh
 
-`NhietKe.jsx` nhận `tong` nên dùng chung cho mọi quyển; lớp 4 đã bỏ hẳn ảnh gốc.
-Lớp 3 vẫn còn `image3.png` (dùng 34 lần) — món nợ cũ, nay đã có sẵn thành phần thay.
+`NhietKeHieuBai.jsx` nhận `tong` nên dùng chung cho mọi quyển; lớp 4 đã bỏ hẳn ảnh
+gốc. Lớp 3 vẫn còn `image3.png` (dùng 34 lần) — món nợ cũ, nay đã có sẵn thành phần thay.
 
 ### 3 · Bốn câu CỐ Ý để tự chấm
 

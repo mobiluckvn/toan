@@ -1,18 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { CONTENT, dongDau, maKy } from '../lib/content.js';
 import Figure from './Figure.jsx';
+import AnswerInput from './AnswerInput.jsx';
 
 /**
- * Kỳ sát hạch chương: 15 câu tự-soi.
- * Đề trong dữ liệu là câu tự luận có lời giải mẫu → con TỰ CHẤM từng câu
- * (đúng tinh thần "bảng tự soi" của sách), sai câu nào thì mở đúng micro chẩn đoán.
+ * Kỳ sát hạch chương — MÁY CHẤM khi câu có `answerKey`, tự chấm khi không có.
+ *
+ * Trước đây màn này chấm tay 100%: mỗi câu chỉ có một nút "Con làm xong — xem lời
+ * giải" rồi hỏi bé "Mình làm đúng / Mình làm sai". Nghĩa là chỗ QUAN TRỌNG NHẤT của
+ * quyển — nơi quyết định bé có qua chương hay không — lại là chỗ không đo được gì:
+ * sổ phụ huynh và bảng cô giáo nhận đúng con số bé tự chấm cho mình. Nếp ấy đến từ
+ * lớp 5, nơi câu sát hạch là tự luận dài nên tự chấm là hợp lý; sách lớp 4 thì 236
+ * câu đều có đáp số xác định.
+ *
+ * Nay: câu nào có `answerKey` thì `AnswerInput` lo cả việc nhập lẫn việc chấm, và
+ * kết quả tự ghi vào `marks`. Câu nào KHÔNG có (đọc số thành chữ — mỗi bé đọc một
+ * cách) thì vẫn giữ hai nút tự chấm. Bảng tự soi ở cuối không đổi.
  */
 export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
                                     chuongTrinh = 'lop5' }) {
   const [doc, setDoc] = useState(null);
   const [i, setI] = useState(0);
   const [marks, setMarks] = useState({});     // qno → true/false
-  const [shown, setShown] = useState(false);
+  const [shown, setShown] = useState(false);   // chỉ dùng cho câu KHÔNG có answerKey
+  const [res, setRes] = useState(null);        // kết quả máy chấm câu đang làm
 
   useEffect(() => {
     /* Mọi chương trình cùng một màn sát hạch, chỉ khác tệp nội dung. Tiền tố tệp
@@ -95,7 +106,26 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
         </div>
         <p className="text-[16.5px] font-semibold leading-relaxed">{q.text}</p>
 
-        {shown && (
+        {/* Có khoá đáp án thì máy chấm — bé điền số hoặc bấm chọn, không phải tự
+            phán mình đúng hay sai. `key` theo mã câu để sang câu mới thì ô nhập
+            reset; thiếu nó là câu sau thừa hưởng đáp án câu trước. */}
+        {q.answerKey && (
+          <AnswerInput key={q.id} item={q} submitLabel="Kiểm tra"
+                       onResolve={(r) => {
+                         setRes(r);
+                         setMarks((m) => ({ ...m, [q.qno]: !!r.ok }));
+                       }} />
+        )}
+
+        {q.answerKey && res && (
+          <div className={`mt-3 rounded-xl border-[1.5px] px-3.5 py-3 text-[15px] ${
+            res.ok ? 'border-teal bg-teal-pale text-teal-dark'
+                   : 'border-alert bg-alert-pale text-alert'}`}>
+            {res.ok ? <>🎉 Chuẩn!</> : <><b>Chưa đúng.</b> Lời giải: {q.answer}</>}
+          </div>
+        )}
+
+        {!q.answerKey && shown && (
           <div className="mt-3 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
             <b>Lời giải:</b> {q.answer}
             {q.hasTrap && q.trapName && (
@@ -108,7 +138,14 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
       <footer className="fixed inset-x-0 bottom-0 border-t border-line bg-white/95 px-3.5 py-2.5"
               style={{ paddingBottom: 'calc(.625rem + env(safe-area-inset-bottom))' }}>
         <div className="mx-auto flex max-w-[740px] gap-2.5">
-          {!shown ? (
+          {q.answerKey ? (
+            /* Máy đã chấm rồi thì không hỏi lại bé đúng hay sai — chỉ đi tiếp.
+               Chưa trả lời thì nút nhắc đúng việc đang phải làm. */
+            <button className="btn-go" disabled={!res}
+                    onClick={() => { setRes(null); setI(i + 1); }}>
+              {res ? 'Câu tiếp ▶' : 'Con trả lời rồi bấm Kiểm tra'}
+            </button>
+          ) : !shown ? (
             <button className="btn-go" onClick={() => setShown(true)}>Con làm xong — xem lời giải</button>
           ) : (
             <>

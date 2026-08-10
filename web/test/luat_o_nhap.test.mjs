@@ -86,6 +86,10 @@ function nutKhop(options, value) {
   return options.some((o) => dang.includes(normText(o)));
 }
 
+/* 'DL:KSN3.' → 'KSN3' — cùng luật với `maKy` của content.js, suy TỪ SỔ ĐĂNG KÝ
+   chứ không gõ tay tên tệp. */
+const maKyCua = (ct) => (ct.tienTo || 'DL:KSN5Q1.').replace(/^[A-Z]+:/, '').replace(/\.$/, '');
+
 let soQuyen = 0;
 for (const [ma, ct] of Object.entries(dk)) {
   const thuMuc = join(G, ct.thuMuc || '');
@@ -95,8 +99,24 @@ for (const [ma, ct] of Object.entries(dk)) {
   soQuyen += 1;
 
   const bais = teps.map((f) => JSON.parse(readFileSync(join(thuMuc, f), 'utf8')));
-  const cau = bais.flatMap((b) => Object.values(b.practice?.pools || {}).flat());
+  /* Năm luật phải áp cho CẢ KỲ SÁT HẠCH, không chỉ phần luyện tập.
+     Trước đây chỉ soi `practice.pools`, nên 236 câu ôn tập của lớp 4 — chỗ quyết
+     định bé qua chương hay không — nằm ngoài tầm mọi phép kiểm, và ExamPlayer thì
+     hỏi bé "Mình làm đúng / Mình làm sai". Ô nhập của kỳ sát hạch cũng là ô nhập. */
+  const thuMucKy = join(G, 'reviews');
+  const ky = existsSync(thuMucKy)
+    ? readdirSync(thuMucKy).filter((f) => f.startsWith(`DCR_${maKyCua(ct)}_`))
+        .map((f) => JSON.parse(readFileSync(join(thuMucKy, f), 'utf8')))
+    : [];
+  const cauLuyen = bais.flatMap((b) => Object.values(b.practice?.pools || {}).flat());
+  const cauKy = ky.flatMap((k) => [...(k.examA || []), ...(k.deB || [])]);
+  /* Bốn luật CHẤT LƯỢNG (nhãn, mồi nhử, đáp án trong nút, cấm ô gõ chữ) soi CẢ HAI
+     phần — ô nhập của kỳ sát hạch cũng là ô nhập. Còn luật 5 (ngưỡng phủ) thì tách
+     riêng, xem cuối tệp. */
+  const cau = [...cauLuyen, ...cauKy];
   const cham = cau.filter((x) => x.answerKey);
+  const chamLuyen = cauLuyen.filter((x) => x.answerKey);
+  const chamKy = cauKy.filter((x) => x.answerKey);
   /* Cờ nhịp đọc chậm nằm trong sổ, không đoán theo tên quyển — thêm lớp 4 chỉ cần
      khai cờ, khỏi sửa tệp này. */
   const docCham = !!(ct.doc || {}).moiManMotMuc;
@@ -153,7 +173,8 @@ for (const [ma, ct] of Object.entries(dk)) {
   in5(nhanHong);
 
   if (!docCham) {
-    console.log(`   ${ma}: ${bais.length} bài · ${cham.length}/${cau.length} chấm máy`
+    console.log(`   ${ma}: ${bais.length} bài · luyện ${chamLuyen.length}/${cauLuyen.length}`
+    + ` · sát hạch ${chamKy.length}/${cauKy.length} chấm máy`
       + ' · nhịp đọc nhanh nên KHÔNG áp luật "cấm ô gõ chữ"');
     continue;
   }
@@ -171,13 +192,26 @@ for (const [ma, ct] of Object.entries(dk)) {
   t(`${ma} · mọi ô là điền SỐ hoặc BẤM CHỌN (quyển đọc chậm)`, goChu.length === 0);
   in5(goChu);
 
-  /* ── luật 5 ── */
-  t(`${ma} · chấm máy ≥ 85% câu luyện tập (${cham.length}/${cau.length})`,
-    cau.length === 0 || cham.length >= cau.length * 0.85);
+  /* ── luật 5 · ngưỡng phủ, đo RIÊNG hai phần ──
+     Gộp chung thì con số nói dối theo cả hai chiều: quyển làm tốt phần luyện tập mà
+     bỏ trống kỳ sát hạch vẫn qua ngưỡng, còn quyển vừa thêm kỳ sát hạch lại bị kéo
+     tụt. Lớp 2 và lớp 3 hiện CHƯA có ô nhập cho kỳ sát hạch — đó là việc còn nợ
+     thật, ghi trong docs/tiep_theo_lop4.md, nên phép kiểm nói ra chứ không đỏ oan
+     hai quyển đang chạy. Quyển nào ĐÃ khai ô nhập cho kỳ sát hạch thì bị soi ngay. */
+  t(`${ma} · chấm máy ≥ 85% câu luyện tập (${chamLuyen.length}/${cauLuyen.length})`,
+    cauLuyen.length === 0 || chamLuyen.length >= cauLuyen.length * 0.85);
+  if (chamKy.length) {
+    t(`${ma} · chấm máy ≥ 85% câu kỳ sát hạch (${chamKy.length}/${cauKy.length})`,
+      chamKy.length >= cauKy.length * 0.85);
+  } else if (cauKy.length) {
+    console.log(`   ${ma}: ⏸ ${cauKy.length} câu kỳ sát hạch CHƯA có ô nhập — `
+      + 'bé tự đánh dấu đúng/sai, không đo được');
+  }
 
   const soO = cham.reduce((a, x) => a + (x.answerKey.parts?.length || 1), 0);
   const nut = cham.reduce((a, x) => a + o(x).filter((p) => p.options).length, 0);
-  console.log(`   ${ma}: ${bais.length} bài · ${cham.length}/${cau.length} chấm máy`
+  console.log(`   ${ma}: ${bais.length} bài · luyện ${chamLuyen.length}/${cauLuyen.length}`
+    + ` · sát hạch ${chamKy.length}/${cauKy.length} chấm máy`
     + ` · ${soO} ô (${nut} bấm chọn) · đọc chậm`);
 }
 

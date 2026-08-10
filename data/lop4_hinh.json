@@ -492,8 +492,8 @@
    "title": "ĐÁNH SỐ 250 TRANG — CẦN BAO NHIÊU MIẾNG DECAL?",
    "cot": [
     "nhóm trang",
-    "có mấy số",
-    "mỗi số mấy chữ số"
+    "mấy số",
+    "mấy chữ số"
    ],
    "hang": [
     [
@@ -614,19 +614,31 @@
  },
  {
   "id": "L4H_B09_MO",
-  "arch": "cham_tron",
+  "arch": "day_o",
   "params": {
    "title": "234 EM RƯỚC ĐÈN — XẾP HÀNG ĐÔI CÓ VỪA KHÔNG?",
-   "nhom": [
+   "hang": [
     {
-     "ten": "hàng đôi",
-     "so": 12,
-     "mau": "teal",
-     "hang": 2
+     "nhan": "số em",
+     "o": [
+      {
+       "t": "2",
+       "mo": true
+      },
+      {
+       "t": "3",
+       "mo": true
+      },
+      {
+       "t": "4",
+       "mau": "teal",
+       "duoi": "chữ số tận cùng"
+      }
+     ]
     }
    ]
   },
-  "caption": "Xếp hàng đôi — bé đếm được từng em một.",
+  "caption": "Số 234 với chữ số tận cùng được chỉ ra.",
   "bai": "DL:KSN4.B09",
   "muc": "chuyenMoBai",
   "goc": "B9 ②"
@@ -711,23 +723,35 @@
  },
  {
   "id": "L4H_B11_MO",
-  "arch": "cham_tron",
+  "arch": "hang_hop",
   "params": {
-   "title": "XẾP HÀNG 4 THÌ THỪA 3 — CHỒNG GHẾ CÓ MẤY CÁI?",
-   "nhom": [
+   "title": "CHỒNG GHẾ CÓ MẤY CÁI?",
+   "hop": [
     {
-     "ten": "xếp hàng 4",
-     "so": 8,
-     "mau": "teal",
-     "hang": 4
+     "ten": "Xếp hàng 4",
+     "dong": [
+      "thừa 3 cái"
+     ],
+     "mau": "gold"
+    },
+    {
+     "ten": "Xếp hàng 5",
+     "dong": [
+      "thừa 4 cái"
+     ],
+     "mau": "gold"
+    },
+    {
+     "ten": "Biết thêm",
+     "dong": [
+      "có từ 30",
+      "đến 50 cái"
+     ],
+     "mau": "teal"
     }
-   ],
-   "du": {
-    "so": 3,
-    "ten": "thừa"
-   }
+   ]
   },
-  "caption": "Chia thành hàng 4, còn thừa 3 cái ngoài hàng.",
+  "caption": "Ba dữ kiện của đề, chưa có con số nào là đáp án.",
   "bai": "DL:KSN4.B11",
   "muc": "chuyenMoBai",
   "goc": "B11 ②"
@@ -792,12 +816,10 @@
        "t": "4"
       },
       {
-       "t": "5",
-       "mau": "do"
+       "t": "5"
       },
       {
-       "t": "6",
-       "mau": "do"
+       "t": "6"
       },
       {
        "t": "7"
@@ -2498,7 +2520,7 @@
    "title": "XE SAU NHANH HƠN 10 KM MỖI GIỜ — BAO LÂU ĐUỔI KỊP?",
    "cot": [
     "sau mấy giờ",
-    "khoảng cách còn lại"
+    "còn cách (km)"
    ],
    "hang": [
     [
@@ -2531,7 +2553,7 @@
    "title": "MỖI GIỜ KHÉP ĐƯỢC BAO NHIÊU?",
    "cot": [
     "sau mấy giờ",
-    "khoảng cách còn lại"
+    "còn cách (km)"
    ],
    "hang": [
     [

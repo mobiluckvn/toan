@@ -2,11 +2,11 @@
  "id": "DL:KSN4.B12",
  "quyen": "lop4",
  "so": 12,
- "ten": "CHỮ SỐ TẬN CÙNG CỦA TÍCH",
+ "ten": "CHỮ SỐ TẬN CÙNG CỦA MỘT TÍCH",
  "chuong": 3,
- "tenChuong": "MẬT MÃ CHIA HẾT",
+ "tenChuong": "DẤU HIỆU CHIA HẾT",
  "dangGoc": "SỐ 6.4 mức Lớp 4 — Tận cùng của tích nhiều thừa số · cặp 2 × 5 và thừa số tròn chục cho tận cùng 0",
- "hatMam": "Bài 9 dạy con đọc mật mã ĐUÔI của một số có sẵn. Bài này lợi hại hơn: DỰ ĐOÁN đuôi của một số CHƯA TÍNH RA — tích của cả dãy thừa số dài. Bí mật nằm ở chỗ: khi nhân, các chữ số tận cùng chỉ \"nói chuyện\" với nhau, không thèm để ý phần còn lại của con số.",
+ "hatMam": "Bài 9 dạy con đọc dấu hiệu ĐUÔI của một số có sẵn. Bài này lợi hại hơn: DỰ ĐOÁN đuôi của một số CHƯA TÍNH RA — tích của cả dãy thừa số dài. Bí mật nằm ở chỗ: khi nhân, các chữ số tận cùng chỉ \"nói chuyện\" với nhau, không thèm để ý phần còn lại của con số.",
  "ganDuoi": {
   "ve": [
    "DL:KSN3.B05"
@@ -31,7 +31,7 @@
   "chuyenMoBai": {
    "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 12: dàn đèn nháy đánh số",
    "dong": [
-    "Đêm hội đến gần, chú thợ điện mắc dàn đèn nháy quanh sân đình và đố cả xưởng: \"Chú lập trình cho bảng điện tử hiện tích 1 × 2 × 3 × 4 × ... × 9 — đố các cháu biết TRƯỚC con số ấy tận cùng bằng mấy, đoán trúng chú thưởng đèn ông sao!\" Trí Long nhẩm: \"1 nhân 2 là 2, nhân 3 là 6, nhân 4 là 24...\" Su Kem đã giơ tay: \"Tận cùng bằng 0 ạ — và cháu không cần nhân đến cùng!\""
+    "Đêm hội đến gần, chú thợ điện mắc dàn đèn nháy quanh sân đình và đố cả nhóm: \"Chú lập trình cho bảng điện tử hiện tích 1 × 2 × 3 × 4 × ... × 9 — đố các cháu biết TRƯỚC con số ấy tận cùng bằng mấy, đoán trúng chú thưởng đèn ông sao!\" Trí Long nhẩm: \"1 nhân 2 là 2, nhân 3 là 6, nhân 4 là 24...\" Su Kem đã giơ tay: \"Tận cùng bằng 0 ạ — và cháu không cần nhân đến cùng!\""
    ],
    "hinh": [
     {
@@ -39,7 +39,7 @@
      "sauDong": 0,
      "file": "figures/L4H_B12_MO.png",
      "caption": "Cả dãy thừa số — chưa nhân, chỉ nhìn đuôi.",
-     "sha256_16": "9b40198a7fc04548"
+     "sha256_16": "58d63bf3797df2ec"
     }
    ],
    "nhip": ""
@@ -55,7 +55,7 @@
     "ƯỚC LƯỢNG TRƯỚC: đã thấy 2 × 5 = 10 trong dãy — cả tích ắt tận cùng 0."
    ],
    "hinh": [],
-   "nhip": "NHỊP 1 · DỊCH — từ dàn đèn sang các chữ số tận cùng"
+   "nhip": "NHỊP 1, DỊCH — từ dàn đèn sang các chữ số tận cùng"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
@@ -64,33 +64,33 @@
     "Bước 2 — CẶP ĐÔI VÀNG 2 × 5: hễ trong tích có một thừa số chẵn gặp một thừa số có đuôi 5 (hoặc có sẵn thừa số tròn chục) → sinh ra tích con tận cùng 0 — mà số nào nhân với số đuôi 0 cũng ra đuôi 0. Ví dụ 4 × 35: trong 4 có sẵn thừa số 2, gặp 35 → đuôi 0 (140 ✓). Dàn đèn 1 × 2 × ... × 9 chứa cả bóng 2 lẫn bóng 5 → tận cùng 0, chú thợ điện thua cuộc trong một nốt nhạc!",
     "Bước 3 — DÂY CHUYỀN TẬN CÙNG: tích toàn thừa số \"cứng đầu\" thì lần theo dây chuyền: 7 × 7 × 7 → đuôi: 7 × 7 = 49 ra đuôi 9; 9 × 7 = 63 ra đuôi 3 → tận cùng 3 (343 ✓). Mỗi bước chỉ nhân HAI chữ số — nhẹ tênh dù tích to đùng.",
     "Bước 4 — CHỮ KÝ THỨ HAI CỦA SỐ 5: tích toàn thừa số LẺ mà có mặt số 5 thì sao? 1 × 3 × 5 × 7 × 9: đuôi lần lượt 3 → 5 → 5 → 5: một khi đuôi 5 gặp số lẻ, nó giữ đuôi 5 mãi. Hai chữ ký của số 5: gặp chẵn ra 0, sống giữa toàn lẻ thì ra 5.",
-    "MẸO THÁM TỬ: Đoán đuôi của tích: chỉ nhân các ĐUÔI với nhau, mỗi bước giữ lại một chữ số. Soi trước cặp 2 × 5 hay thừa số tròn chục — thấy là hô \"đuôi 0\" khỏi nhân. Tích toàn số lẻ có mặt 5 → đuôi 5. Và nhớ: biết đuôi là biết ngay tích có chia hết cho 2, 5, 10 hay không!"
+    "MẸO NGƯỜI GIẢI: Đoán đuôi của tích: chỉ nhân các ĐUÔI với nhau, mỗi bước giữ lại một chữ số. Soi trước cặp 2 × 5 hay thừa số tròn chục — thấy là hô \"đuôi 0\" khỏi nhân. Tích toàn số lẻ có mặt 5 → đuôi 5. Và nhớ: biết đuôi là biết ngay tích có chia hết cho 2, 5, 10 hay không!"
    ],
    "hinh": [],
-   "nhip": "NHỊP 2 · GIẢI"
+   "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
    "dong": [
-    "LẮP: đúng 8 giờ tối, bảng điện tử hiện con số 362 880 — tận cùng 0 y như xưởng dự đoán từ chiều! Chú thợ điện trao chiếc đèn ông sao kèm lời phục: \"Đoán trước máy tính — các cháu đúng là kỹ sư.\"",
+    "LẮP: đúng 8 giờ tối, bảng điện tử hiện con số 362 880 — tận cùng 0 y như dự đoán từ chiều! Chú thợ điện trao chiếc đèn ông sao kèm lời phục: \"Đoán trước máy tính — các cháu đúng là người giải.\"",
     "SOI: soi lại đường suy luận: cặp 2 × 5 nằm trong dãy → tích chia hết cho 10 → đuôi 0; kiểm chéo trên con số thật 362 880: chia hết cho 10 ✓. Suy luận và thực tế bắt tay nhau.",
-    "DÙNG NGOÀI ĐỜI: dự đoán trước khi máy tính trả lời — đó là thói quen của kỹ sư thật: nếu máy hiện số đuôi khác 0, con biết ngay AI đó bấm nhầm, dù chưa cần tính lại!"
+    "DÙNG NGOÀI ĐỜI: dự đoán trước khi máy tính trả lời — đó là thói quen của thật: nếu máy hiện số đuôi khác 0, con biết ngay AI đó bấm nhầm, dù chưa cần tính lại!"
    ],
    "hinh": [],
-   "nhip": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
     "Đề bài: Không tính cả tích, hãy tìm chữ số tận cùng của tích 21 × 22 × 23 × 24 × 25.",
-    "Tóm tắt:",
+    "Tóm tắt",
     "Tìm chữ số tận cùng của 21 × 22 × 23 × 24 × 25 (không tính cả tích).",
-    "\"Không tính cả tích\" — đề cấm đường vòng, phải dùng mật mã.",
-    "Mô hình (soi cặp 2 × 5):",
-    "Thừa số 24 là số chẵn (chứa thừa số 2);",
-    "thừa số 25 có tận cùng 5.",
+    "\"Không tính cả tích\" — đề cấm đường vòng, phải dùng dấu hiệu.",
+    "Mô hình (soi cặp 2 × 5)",
+    "Thừa số 24 là số chẵn (chứa thừa số 2)",
+    "Thừa số 25 có tận cùng 5.",
     "Chưa vội nhân dây chuyền — soi cặp đặc biệt trước, có khi trúng lớn.",
-    "Bài giải:",
+    "Bài giải",
     "Trong tích có 24 × 25 = 600 là số có tận cùng bằng 0.",
     "Một tích có thừa số tận cùng bằng 0 thì cả tích tận cùng bằng 0.",
     "Vậy tích 21 × 22 × 23 × 24 × 25 có chữ số tận cùng là 0.",
@@ -122,7 +122,7 @@
   "quiz": {
    "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
    "dong": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★)"
    ],
    "hinh": [],
    "nhip": ""
@@ -191,7 +191,7 @@
    "phan": "luyenTap",
    "ghiChu": "",
    "text": "Tìm chữ số tận cùng của 7 × 7 × 7 bằng dây chuyền tận cùng.",
-   "loiChua": "dây chuyền: 7 × 7 = 49 → đuôi 9; 9 × 7 = 63 → đuôi 3. Tận cùng 3 (343 ✓).",
+   "loiChua": "Dây chuyền: 7 × 7 = 49 → đuôi 9; 9 × 7 = 63 → đuôi 3. Tận cùng 3 (343 ✓).",
    "tuLuan": true
   },
   {
@@ -202,7 +202,7 @@
    "phan": "luyenTap",
    "ghiChu": "",
    "text": "Không tính, tìm chữ số tận cùng của 21 × 22 × 23 × 24 × 25.",
-   "loiChua": "có 24 × 25 = 600 tận cùng 0 → cả tích tận cùng 0.",
+   "loiChua": "Có 24 × 25 = 600 tận cùng 0 → cả tích tận cùng 0.",
    "tuLuan": true
   },
   {
@@ -224,7 +224,7 @@
    "phan": "luyenTap",
    "ghiChu": "",
    "text": "Tìm chữ số tận cùng của: a) 1 × 2 × 3 × ... × 9; b) 1 × 3 × 5 × 7 × 9. Vì sao hai đáp số khác nhau?",
-   "loiChua": "a) dãy chứa 2 × 5 → tận cùng 0 (tích bằng 362 880); b) toàn thừa số lẻ có mặt 5: đuôi chạy 3 → 5 → 5 → 5 → tận cùng 5 (tích bằng 945). Khác nhau vì dãy a có thừa số chẵn \"bắt cặp\" với 5, dãy b thì không.",
+   "loiChua": "A) dãy chứa 2 × 5 → tận cùng 0 (tích bằng 362 880); b) toàn thừa số lẻ có mặt 5: đuôi chạy 3 → 5 → 5 → 5 → tận cùng 5 (tích bằng 945). Khác nhau vì dãy a có thừa số chẵn \"bắt cặp\" với 5, dãy b thì không.",
    "tuLuan": true
   },
   {
@@ -234,8 +234,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Anh Trí Dũng đố: \"Tích của MƯỜI thừa số 2 (tức 2 × 2 × ... × 2, mười lần) tận cùng bằng mấy? Lần theo dây chuyền 2 → 4 → 8 → 6 → 2 → ... và tìm quy luật vòng lặp!\"",
-   "loiChua": "dây chuyền đuôi của các lũy thừa 2: 2, 4, 8, 6, 2, 4, 8, 6, ... — vòng lặp 4 nhịp. Mười thừa số: đếm 10 = 4 + 4 + 2 → dừng ở nhịp thứ hai của vòng: tận cùng 4 (2 × 2 × ... × 2 mười lần = 1 024 ✓).",
+   "text": "Tích của MƯỜI thừa số 2 (tức 2 × 2 × ... × 2, mười lần) tận cùng bằng mấy? Lần theo dây chuyền 2 → 4 → 8 → 6 → 2 → ... và tìm quy luật vòng lặp!",
+   "loiChua": "Dây chuyền đuôi của các lũy thừa 2: 2, 4, 8, 6, 2, 4, 8, 6, ... — vòng lặp 4 nhịp. Mười thừa số: đếm 10 = 4 + 4 + 2 → dừng ở nhịp thứ hai của vòng: tận cùng 4 (2 × 2 × ... × 2 mười lần = 1 024 ✓).",
    "tuLuan": true
   },
   {
@@ -267,8 +267,8 @@
    "answerKey": {
     "value": false
    },
-   "loiChua": "cặp 2 × 5 cho tận cùng 0.",
-   "solutionNarrative": "cặp 2 × 5 cho tận cùng 0."
+   "loiChua": "Cặp 2 × 5 cho tận cùng 0.",
+   "solutionNarrative": "Cặp 2 × 5 cho tận cùng 0."
   },
   {
    "id": "Q3",
@@ -330,8 +330,8 @@
    "answerKey": {
     "choice": "A. 0"
    },
-   "loiChua": "chứa 2 × 5 → đuôi 0 (120).",
-   "solutionNarrative": "chứa 2 × 5 → đuôi 0 (120)."
+   "loiChua": "Chứa 2 × 5 → đuôi 0 (120).",
+   "solutionNarrative": "Chứa 2 × 5 → đuôi 0 (120)."
   }
  ]
 }

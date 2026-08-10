@@ -151,7 +151,7 @@ giang(6, 'L4H_B06_G1', 'may_bien_doi', {
 
 mo(7, 'L4H_B07_MO', 'bang_luoi', {
     'title': 'ĐÁNH SỐ 250 TRANG — CẦN BAO NHIÊU MIẾNG DECAL?',
-    'cot': ['nhóm trang', 'có mấy số', 'mỗi số mấy chữ số'],
+    'cot': ['nhóm trang', 'mấy số', 'mấy chữ số'],
     'hang': [['1 → 9', '9', '1'], ['10 → 99', '90', '2'], ['100 → 250', '151', '3']],
 }, 'Ba nhóm trang, mỗi nhóm số chữ số khác nhau.')
 giang(7, 'L4H_B07_G1', 'tia_so', {
@@ -175,10 +175,15 @@ giang(8, 'L4H_B08_G1', 'hang_hop', {
 
 # ═══════════ CHƯƠNG 3 · MẬT MÃ CHIA HẾT ═══════════
 
-mo(9, 'L4H_B09_MO', 'cham_tron', {
+mo(9, 'L4H_B09_MO', 'day_o', {
+    # Bản đầu vẽ 12 chấm "hàng đôi" — mà đề nói 234 em. Bé không đếm nổi 234 chấm,
+    # và 12 thì chẳng dính gì tới đề: hình có vẽ, có nhãn, nhưng KHÔNG nói về bài
+    # toán đang hỏi. Bài này dạy "chỉ cần nhìn CHỮ SỐ TẬN CÙNG", nên hình phải là
+    # chính con số ấy với cái đuôi được chỉ ra.
     'title': '234 EM RƯỚC ĐÈN — XẾP HÀNG ĐÔI CÓ VỪA KHÔNG?',
-    'nhom': [{'ten': 'hàng đôi', 'so': 12, 'mau': 'teal', 'hang': 2}],
-}, 'Xếp hàng đôi — bé đếm được từng em một.')
+    'hang': [{'nhan': 'số em', 'o': [{'t': '2', 'mo': True}, {'t': '3', 'mo': True},
+                                     {'t': '4', 'mau': 'teal', 'duoi': 'chữ số tận cùng'}]}],
+}, 'Số 234 với chữ số tận cùng được chỉ ra.')
 
 mo(10, 'L4H_B10_MO', 'day_o', {
     'title': '348 CHIẾC BÁNH — ĐÓNG HỘP 3 CÓ VỪA KHÔNG?',
@@ -194,11 +199,15 @@ giang(10, 'L4H_B10_G1', 'day_o', {
     'note': '15 chia hết cho 3 nên 348 chia hết cho 3.',
 }, 'Dấu hiệu 3 và 9 xem TỔNG các chữ số, không xem đuôi.', 1)
 
-mo(11, 'L4H_B11_MO', 'cham_tron', {
-    'title': 'XẾP HÀNG 4 THÌ THỪA 3 — CHỒNG GHẾ CÓ MẤY CÁI?',
-    'nhom': [{'ten': 'xếp hàng 4', 'so': 8, 'mau': 'teal', 'hang': 4}],
-    'du': {'so': 3, 'ten': 'thừa'},
-}, 'Chia thành hàng 4, còn thừa 3 cái ngoài hàng.')
+mo(11, 'L4H_B11_MO', 'hang_hop', {
+    # Bản đầu vẽ 8 chấm + 3 chấm thừa, tức 11 chiếc — trong khi đề nói chồng ghế có
+    # TỪ 30 ĐẾN 50 chiếc. Hình đá nhau với đề ngay dòng đầu bé đọc. Số ghế đúng là
+    # thứ bé phải TÌM, nên bản đề chỉ được bày ba dữ kiện, không bày một con số nào.
+    'title': 'CHỒNG GHẾ CÓ MẤY CÁI?',
+    'hop': [{'ten': 'Xếp hàng 4', 'dong': ['thừa 3 cái'], 'mau': 'gold'},
+            {'ten': 'Xếp hàng 5', 'dong': ['thừa 4 cái'], 'mau': 'gold'},
+            {'ten': 'Biết thêm', 'dong': ['có từ 30', 'đến 50 cái'], 'mau': 'teal'}],
+}, 'Ba dữ kiện của đề, chưa có con số nào là đáp án.')
 giang(11, 'L4H_B11_G2', 'hang_hop', {
     'title': 'NHÌN PHẦN THIẾU THAY VÌ PHẦN THỪA',
     'hop': [{'ten': 'Hàng 4 thừa 3', 'dong': ['còn THIẾU 1 cái', 'là tròn hàng'],
@@ -211,8 +220,10 @@ giang(11, 'L4H_B11_G2', 'hang_hop', {
 
 mo(12, 'L4H_B12_MO', 'day_o', {
     'title': 'TÍCH 1 × 2 × … × 9 TẬN CÙNG LÀ SỐ MẤY?',
+    # KHÔNG tô đỏ 5 và 6: bài hỏi "tận cùng là số mấy", mà tô đỏ đúng cặp 2 × 5 cho
+    # đuôi 0 là chỉ thẳng lời giải ngay trên bản ĐỀ.
     'hang': [{'nhan': 'dãy thừa số', 'o': [{'t': '1'}, {'t': '2'}, {'t': '3'}, {'t': '4'},
-                                           {'t': '5', 'mau': 'do'}, {'t': '6', 'mau': 'do'},
+                                           {'t': '5'}, {'t': '6'},
                                            {'t': '7'}, {'t': '8'}, {'t': '9'}]}],
 }, 'Cả dãy thừa số — chưa nhân, chỉ nhìn đuôi.')
 
@@ -577,12 +588,12 @@ giang(42, 'L4H_B42_G1', 'bang_luoi', {
 
 mo(43, 'L4H_B43_MO', 'bang_luoi', {
     'title': 'XE SAU NHANH HƠN 10 KM MỖI GIỜ — BAO LÂU ĐUỔI KỊP?',
-    'cot': ['sau mấy giờ', 'khoảng cách còn lại'],
+    'cot': ['sau mấy giờ', 'còn cách (km)'],
     'hang': [['lúc đầu', '30 km'], ['1 giờ', '?'], ['2 giờ', '?'], ['3 giờ', '?']],
 }, 'Bảng theo giờ, cột khoảng cách còn trống.')
 giang(43, 'L4H_B43_G1', 'bang_luoi', {
     'title': 'MỖI GIỜ KHÉP ĐƯỢC BAO NHIÊU?',
-    'cot': ['sau mấy giờ', 'khoảng cách còn lại'],
+    'cot': ['sau mấy giờ', 'còn cách (km)'],
     'hang': [['lúc đầu', '30 km'], ['1 giờ', '20 km'], ['2 giờ', '10 km'],
              ['3 giờ', '0 km']],
     'to': [[3, 1]],

@@ -254,6 +254,62 @@ if (existsSync(APP)) {
   in5(nhanSai.map((d) => `${d.id}: ${d.duongLui.nhan}`));
 }
 
+/* ══ 5b · LỜI VĂN NÓI THẲNG (bác yêu cầu) ══
+   Sách bọc mọi thứ trong "Xưởng Mô Hình": bài toán là "đơn hàng", cách làm là
+   "tuyệt kỹ", dấu hiệu chia hết là "mật mã", người giải là "kỹ sư"/"thám tử".
+   Bé phải đọc qua lớp vỏ ấy mới tới được bài toán. `tools/de_hieu_lop4.py` bóc vỏ
+   khi dựng; hai phép dưới canh không cho nó mọc lại. */
+const BO_TRUONG = new Set(['id', 'file', 'sha256_16', 'usedIn', 'skills', 'series',
+  '$schema', 'quyen', 'mucGoc', 'dangGoc']);
+function* chuBeDoc(o, p = '') {
+  if (typeof o === 'string') yield [p, o];
+  else if (Array.isArray(o)) { for (const v of o) yield* chuBeDoc(v, p); }
+  else if (o && typeof o === 'object') {
+    for (const [k, v] of Object.entries(o)) {
+      if (BO_TRUONG.has(k)) continue;
+      yield* chuBeDoc(v, p ? `${p}.${k}` : k);
+    }
+  }
+}
+const VI_VON = /\b(kỹ sư|xưởng|thám tử|tuyệt kỹ|vũ khí|bí kíp|thần chú|mật mã|mật thư|hoa tiêu|quan tòa|cao thủ|đơn hàng|Anh Trí Dũng đố|TRÙM CUỐI|GÓC KHÁM PHÁ)\b/i;
+const moiTep = [
+  ...readdirSync(APP).filter((f) => /^DL_KSN4_B\d+\.json$/.test(f))
+    .map((f) => join(APP, f)),
+  ...readdirSync(join(G, 'web/public/content/reviews'))
+    .filter((f) => /^DCR_KSN4_C\d+\.json$/.test(f))
+    .map((f) => join(G, 'web/public/content/reviews', f)),
+];
+const conViVon = [], conCham = [];
+for (const tep of moiTep) {
+  for (const [p, s] of chuBeDoc(doc(tep))) {
+    const m = s.match(VI_VON);
+    if (m) conViVon.push(`${tep.split('/').pop()} · ${p}: "${m[1]}"`);
+    /* Dấu · giữa câu — bé không biết nó nghĩa gì. Ở TIÊU ĐỀ thì giữ: chỗ ấy nó
+       ngăn số bài với tên bài, cả bốn quyển đều dùng, bé không đọc nó thành lời. */
+    const truong = p.split('.').pop();
+    if (!/^(title|name|trapName|ten|tenChuong)$/i.test(truong) && s.includes(' · ')) {
+      conCham.push(`${tep.split('/').pop()} · ${p}: ${s.slice(0, 50)}`);
+    }
+  }
+}
+t('không còn ví von / ẩn dụ trong chữ bé đọc', conViVon.length === 0);
+in5(conViVon);
+t('không còn dấu · làm dấu ngăn giữa câu', conCham.length === 0);
+in5(conCham);
+
+/* ══ 5c · KỲ SÁT HẠCH PHẢI CHẤM MÁY (bác yêu cầu) ══
+   Trước đây ExamPlayer chỉ hỏi bé "Mình làm đúng / Mình làm sai" — 236 câu quan
+   trọng nhất của quyển nằm ngoài mọi phép đo. */
+const cauKy = readdirSync(join(G, 'web/public/content/reviews'))
+  .filter((f) => /^DCR_KSN4_C\d+\.json$/.test(f))
+  .flatMap((f) => {
+    const d = doc(join(G, 'web/public/content/reviews', f));
+    return [...(d.examA || []), ...(d.deB || [])];
+  });
+const kyCham = cauKy.filter((q) => q.answerKey);
+t(`kỳ sát hạch chấm máy ≥ 95% (${kyCham.length}/${cauKy.length})`,
+  kyCham.length >= cauKy.length * 0.95);
+
 /* ══ 6 · kỳ sát hạch ══ */
 const on = doc(join(G, 'data/lop4_ontap.json')).ky;
 t(`đủ 11 kỳ ôn tập (${on.length})`, on.length === 11);

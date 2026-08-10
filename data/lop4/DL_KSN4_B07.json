@@ -2,9 +2,9 @@
  "id": "DL:KSN4.B07",
  "quyen": "lop4",
  "so": 7,
- "ten": "ĐẾM SỐ & CÔNG TRÌNH ĐÁNH SỐ THƯ VIỆN",
+ "ten": "ĐẾM SỐ VÀ ĐẾM CHỮ SỐ KHI ĐÁNH SỐ TRANG",
  "chuong": 2,
- "tenChuong": "CỖ MÁY BỐN PHÉP TÍNH",
+ "tenChuong": "BỐN PHÉP TÍNH VÀ TÍNH NHANH",
  "dangGoc": "SỐ 4.1 + SỐ 4.3 mức Lớp 4 — Công thức đếm khoảng bất kỳ · đếm chia hết · đếm chữ số trang sách & bài ngược",
  "hatMam": "Lớp 3, ở Bài 4 và Bài 10-11, con đã đếm số bằng công thức \"(cuối − đầu) : khoảng + 1\" với các dãy quen. Năm nay công thức ấy ra công trường thật: dãy khoảng cách BẤT KỲ, đếm số chia hết trong một khoảng, và siêu dự án đếm CHỮ SỐ — tính trước cần bao nhiêu decal để đánh số cả một thư viện.",
  "ganDuoi": {
@@ -35,7 +35,7 @@
   "chuyenMoBai": {
    "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 7: dự án decal thư viện",
    "dong": [
-    "Cô thủ thư gửi xưởng một đơn hàng \"khủng\": dán mã số cho kệ sách và đánh số trang cho cuốn sổ kho dày 250 trang bằng decal — mỗi CHỮ SỐ là một miếng decal riêng. \"Cô cần đặt in bao nhiêu miếng? Đặt thiếu thì dở dang, đặt thừa thì phí tiền trường.\" Trí Long xung phong: \"Cháu ngồi đếm từng trang cho!\" Cô thủ thư cười: \"250 trang đấy cháu ạ.\" Su Kem mở sổ: \"Không đếm từng trang — mình đếm từng NHÓM.\""
+    "Cô thủ thư gửi một bài toán \"khủng\": dán mã số cho kệ sách và đánh số trang cho cuốn sổ kho dày 250 trang bằng decal — mỗi CHỮ SỐ là một miếng decal riêng. \"Cô cần đặt in bao nhiêu miếng? Đặt thiếu thì dở dang, đặt thừa thì phí tiền trường.\" Trí Long xung phong: \"Cháu ngồi đếm từng trang cho!\" Cô thủ thư cười: \"250 trang đấy cháu ạ.\" Su Kem mở sổ: \"Không đếm từng trang — mình đếm từng NHÓM.\""
    ],
    "hinh": [
     {
@@ -43,7 +43,7 @@
      "sauDong": 0,
      "file": "figures/L4H_B07_MO.png",
      "caption": "Ba nhóm trang, mỗi nhóm số chữ số khác nhau.",
-     "sha256_16": "d18d57f0d1096100"
+     "sha256_16": "a5f69cc4b9e4ddda"
     }
    ],
    "nhip": ""
@@ -59,7 +59,7 @@
     "ƯỚC LƯỢNG TRƯỚC: nhóm 3 chữ số đông nhất (hơn 150 trang × 3) — tổng phải hơn 450, cỡ sáu trăm miếng."
    ],
    "hinh": [],
-   "nhip": "NHỊP 1 · DỊCH — từ cuốn sổ 250 trang sang các nhóm số"
+   "nhip": "NHỊP 1, DỊCH — từ cuốn sổ 250 trang sang các nhóm số"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
@@ -68,7 +68,7 @@
     "Bước 2 — ĐẾM SỐ CHIA HẾT TRONG KHOẢNG: từ 1 đến 200 có bao nhiêu số chia hết cho 5? Dãy 5, 10, ..., 200 → (200 − 5) : 5 + 1 = 40. Khoảng lệch đầu: từ 20 đến 150 chia hết cho 4 → số đầu 20, số cuối 148 → (148 − 20) : 4 + 1 = 33. Mẹo: tự tìm \"người đầu hàng\" và \"người cuối hàng\" của dãy trước, công thức lo phần còn lại.",
     "Bước 3 — ĐẠI DỰ ÁN ĐẾM CHỮ SỐ: chia trang sổ theo nhóm: trang 1-9: 9 trang × 1 = 9 chữ số; trang 10-99: 90 trang × 2 = 180; trang 100-250: (250 − 100) + 1 = 151 trang × 3 = 453. Tổng: 9 + 180 + 453 = 642 miếng decal. Ba phép nhân thay cho 250 lần đếm!",
     "Bước 4 — BÀI NGƯỢC (trừ dần theo nhóm): một cuốn sách dùng hết 552 chữ số — dày bao nhiêu trang? Trừ dần: nhóm 1 chữ số \"ăn\" 9, còn 552 − 9 = 543; nhóm 2 chữ số \"ăn\" 180, còn 543 − 180 = 363; số trang 3 chữ số: 363 : 3 = 121 trang → trang cuối là 99 + 121 = 220. Đi xuôi bằng nhân, đi ngược bằng trừ dần rồi chia.",
-    "MẸO THÁM TỬ: Đếm số: tìm ĐẦU - CUỐI - KHOẢNG rồi áp (cuối − đầu) : khoảng + 1 — và đừng bao giờ quên \"+ 1\". Đếm chữ số: chia nhóm theo độ dài số 1-9 | 10-99 | 100-999, mỗi nhóm một phép nhân. Bài ngược: bóc từng nhóm bằng phép trừ, nhóm cuối chia đều."
+    "MẸO NGƯỜI GIẢI: Đếm số: tìm ĐẦU - CUỐI - KHOẢNG rồi áp (cuối − đầu) : khoảng + 1 — và đừng bao giờ quên \"+ 1\". Đếm chữ số: chia nhóm theo độ dài số 1-9 | 10-99 | 100-999, mỗi nhóm một phép nhân. Bài ngược: bóc từng nhóm bằng phép trừ, nhóm cuối chia đều."
    ],
    "hinh": [
     {
@@ -79,7 +79,7 @@
      "sha256_16": "28dac3c68ee35471"
     }
    ],
-   "nhip": "NHỊP 2 · GIẢI"
+   "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
@@ -89,21 +89,21 @@
     "DÙNG NGOÀI ĐỜI: mọi dự án in ấn, đặt vật tư theo dãy (biển số nhà, vé số thứ tự, huy hiệu giải chạy) đều cần phép đếm này — sai một nhóm là lệch cả đơn đặt hàng."
    ],
    "hinh": [],
-   "nhip": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
     "Đề bài: Để đánh số trang một cuốn sổ dày 250 trang, cần dùng tất cả bao nhiêu chữ số?",
-    "Tóm tắt:",
+    "Tóm tắt",
     "Sổ 250 trang, đánh số từ 1. Hỏi tổng số chữ số.",
     "Đề ngắn nhưng vẫn tóm tắt — thói quen không bỏ.",
-    "Mô hình (chia nhóm):",
+    "Mô hình (chia nhóm)",
     "Nhóm 1: trang 1 - 9 (số có 1 chữ số)",
     "Nhóm 2: trang 10 - 99 (số có 2 chữ số)",
     "Nhóm 3: trang 100 - 250 (số có 3 chữ số)",
     "Chia nhóm theo ĐỘ DÀI số — trái tim của mô hình đếm chữ số.",
-    "Bài giải:",
+    "Bài giải",
     "Từ trang 1 đến trang 9 có 9 trang, dùng: 9 × 1 = 9 (chữ số)",
     "Từ trang 10 đến trang 99 có 90 trang, dùng: 90 × 2 = 180 (chữ số)",
     "Từ trang 100 đến trang 250 có: (250 − 100) + 1 = 151 (trang)",
@@ -137,7 +137,7 @@
   "quiz": {
    "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
    "dong": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★)"
    ],
    "hinh": [],
    "nhip": ""
@@ -184,7 +184,7 @@
    "phan": "luyenTap",
    "ghiChu": "",
    "text": "Đánh số trang từ 1 đến 9 dùng bao nhiêu chữ số? Từ 10 đến 99 dùng bao nhiêu chữ số?",
-   "loiChua": "từ 1-9: 9 chữ số; từ 10-99: 90 × 2 = 180 chữ số.",
+   "loiChua": "Từ 1-9: 9 chữ số; từ 10-99: 90 × 2 = 180 chữ số.",
    "tuLuan": true
   },
   {
@@ -206,7 +206,7 @@
    "phan": "luyenTap",
    "ghiChu": "",
    "text": "Từ 1 đến 200 có bao nhiêu số chia hết cho 5?",
-   "loiChua": "dãy 5, 10, ..., 200 → (200 − 5) : 5 + 1 = 40 số.",
+   "loiChua": "Dãy 5, 10, ..., 200 → (200 − 5) : 5 + 1 = 40 số.",
    "tuLuan": true
   },
   {
@@ -239,7 +239,7 @@
    "phan": "luyenTap",
    "ghiChu": "",
    "text": "Đánh số trang một cuốn sách phải dùng hết 552 chữ số. Hỏi cuốn sách dày bao nhiêu trang? (Trừ dần theo nhóm như Su Kem!)",
-   "loiChua": "trừ dần theo nhóm: 552 − 9 = 543; 543 − 180 = 363; 363 : 3 = 121 trang ba chữ số → sách dày 99 + 121 = 220 trang. Thử: 9 + 180 + 121 × 3 = 552 ✓.",
+   "loiChua": "Trừ dần theo nhóm: 552 − 9 = 543; 543 − 180 = 363; 363 : 3 = 121 trang ba chữ số → sách dày 99 + 121 = 220 trang. Thử: 9 + 180 + 121 × 3 = 552 ✓.",
    "tuLuan": true
   },
   {
@@ -249,8 +249,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Anh Trí Dũng đố: \"Thư viện dán mã từ 1 đến 1 200 cho các đầu sách. Cần tất cả bao nhiêu chữ số decal?\" (Cẩn thận: có tận BỐN nhóm!)",
-   "loiChua": "bốn nhóm: 1-9: 9; 10-99: 180; 100-999: 900 × 3 = 2 700; 1000-1200: 201 × 4 = 804. Tổng: 9 + 180 + 2 700 + 804 = 3 693 chữ số.",
+   "text": "Thư viện dán mã từ 1 đến 1 200 cho các đầu sách. Cần tất cả bao nhiêu chữ số decal? (Cẩn thận: có tận BỐN nhóm!)",
+   "loiChua": "Bốn nhóm: 1-9: 9; 10-99: 180; 100-999: 900 × 3 = 2 700; 1000-1200: 201 × 4 = 804. Tổng: 9 + 180 + 2 700 + 804 = 3 693 chữ số.",
    "tuLuan": true
   },
   {
@@ -282,8 +282,8 @@
    "answerKey": {
     "value": false
    },
-   "loiChua": "có đúng 100 số.",
-   "solutionNarrative": "có đúng 100 số."
+   "loiChua": "Có đúng 100 số.",
+   "solutionNarrative": "Có đúng 100 số."
   },
   {
    "id": "Q3",

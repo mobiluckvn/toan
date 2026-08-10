@@ -9,7 +9,7 @@ docs/phan_loai_hinh_lop2.md. Tệp này dựng dần từng nhóm.
 Đã có:
   may_bien_doi  — nhóm "Máy biến đổi" (4 hình: image2, image8, image32, image51)
 """
-from core import (canvas, card, save, txt_fit, arrow, _txt, fit_fs,
+from core import (canvas, card, save, txt_fit, txt_wrap, arrow, _txt, fit_fs,
                   NAVY, TEAL, GOLD, RED, DARKTEAL, DARKGOLD, PALERED, PALETEAL,
                   LINE, MUTE, INK, FS)
 
@@ -525,16 +525,25 @@ def bang_luoi(p, out):
     hang = p.get('hang') or []
     to = {tuple(x) for x in (p.get('to') or [])}
     nc, nh = max(len(cot), 1), max(len(hang), 1)
-    W = min(11.0, 86.0 / nc)
-    CAO = min(7.0, W * 0.8)
+    # Bề ngang cột nới theo SỐ CỘT: bảng hai cột thì mỗi cột được rộng gấp đôi, chứ
+    # đóng cứng 11 thì nhãn "khoảng cách còn lại" tràn sang cột bên và hai nhãn đè
+    # lên nhau thành một khối chữ. Bảng ba cột trở lên giữ đúng 11 như cũ.
+    W = min(max(11.0, 40.0 / nc), 86.0 / nc)
+    CAO = min(7.0, 11.0 * 0.8)
     x0 = 50 - W * nc / 2
     tren = 11.0 if p.get('title') else 4.0
-    fig, ax, H = canvas(7.6, max(2.2, (tren + CAO * (nh + 1) + (9.0 if p.get('note') else 4.0)) * 7.6 / 100))
+    # Hàng tiêu đề cao gấp rưỡi để nhãn dài NGẮT ĐƯỢC HAI DÒNG. Bài học lớp 3: nhãn
+    # tràn thì phải ngắt dòng (`txt_wrap`), thu nhỏ mãi (`txt_fit`) vẫn tràn —
+    # xuống tới cỡ chữ sàn mà chuỗi vẫn dài hơn cột thì nó cứ thế đi ra ngoài.
+    CAO_TD = CAO * 1.5
+    fig, ax, H = canvas(7.6, max(2.2, (tren + CAO_TD + CAO * nh
+                                       + (9.0 if p.get('note') else 4.0)) * 7.6 / 100))
     if p.get('title'):
         txt_fit(ax, 50, H - 5.4, p['title'], 92, FS['title'], NAVY, z=6)
-    y = H - tren - CAO
+    y = H - tren - CAO_TD
     for j, c in enumerate(cot):
-        _txt(ax, x0 + W * (j + 0.5), y + CAO / 2, str(c), fs=FS['small'], c=NAVY, w='bold', z=6)
+        txt_wrap(ax, x0 + W * (j + 0.5), y + CAO_TD / 2, str(c), W - 1.2,
+                 FS['small'], NAVY, z=6, max_lines=2)
     y -= CAO
     for i, h in enumerate(hang):
         for j, v in enumerate(h):

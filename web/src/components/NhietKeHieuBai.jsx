@@ -1,57 +1,58 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 /**
- * NHIỆT KẾ HIỂU BÀI — bé tự chấm mình được mấy sao ở phần quiz cuối bài.
+ * NHIỆT KẾ HIỂU BÀI — con đạt mấy sao ở phần sát hạch cuối bài.
  *
- * Trong sách đây là một HÌNH (image13.png) lặp nguyên si ở cả 33 bài, và bé "tô
- * màu" ô sao mình đạt bằng bút chì. Dựng thành PNG là dựng 33 lần một tấm ảnh
- * chết mà bé không tô được — nên làm giao diện bấm chọn, đúng ý sách hơn.
+ * Trong sách đây là một HÌNH lặp nguyên si ở mọi bài (lớp 2: `image13.png` 33 lần;
+ * lớp 4: `image1.png` 44 lần), và bé "tô màu" ô sao mình đạt bằng bút chì. Dựng
+ * thành PNG là dựng mấy chục lần một tấm ảnh chết mà bé không tô được — nên làm
+ * giao diện, đúng ý sách hơn.
  *
- * Sách tô 5 ô thành 5 sắc chuyển dần, nhưng bảng màu thương hiệu chỉ có ba nền
- * nhạt. Không chế thêm mã màu thô: gom 5 ô về ĐÚNG BA MỨC LỜI KHUYÊN của sách,
- * nhờ vậy màu và lời khuyên nói cùng một điều thay vì hai thang song song.
+ * ── VÌ SAO NAY KHÔNG BẮT BÉ TỰ BẤM NỮA ──
  *
- * KHÔNG ghi vào tiến trình: sách để bé tự chấm cho mình, không phải để chấm điểm.
+ * Bản đầu (đợt lớp 2) cho bé tự bấm số sao của mình, vì hồi ấy phần quiz chưa chấm
+ * máy được. Nay cả 220 câu quiz của lớp 4 đều có đáp án nên MÁY BIẾT bé được mấy
+ * sao — hỏi lại là vừa thừa một thao tác, vừa cho bé cơ hội tự chấm khác với kết
+ * quả thật. Thành phần nhận thẳng `dat`/`tong` và tô đúng nấc.
+ *
+ * Nhận `tong` chứ không ghim 5 sao, nên quyển nào cũng dùng được.
  */
+
+/* Ba mốc lời khuyên của sách. Bảng màu thương hiệu chỉ có ba nền nhạt — gom 5 ô về
+   ĐÚNG BA MỨC ấy để màu và lời khuyên nói cùng một điều, thay vì hai thang song song. */
 const MUC = [
-  { den: 2, nen: 'bg-alert-pale', vien: 'border-alert/45', chu: 'Ôn lại cùng bố mẹ nhé',   mau: 'text-alert' },
-  { den: 3, nen: 'bg-gold-pale',  vien: 'border-gold/60',  chu: 'Khá lắm, xem lại câu sai', mau: 'text-gold-dark' },
-  { den: 5, nen: 'bg-teal-pale',  vien: 'border-teal/60',  chu: 'Tuyệt vời! Sang bài mới',  mau: 'text-teal-dark' },
+  { den: 0.4, nen: 'bg-alert-pale', vien: 'border-alert', chu: 'text-alert',
+    nhan: 'Ôn lại cùng bố mẹ nhé' },
+  { den: 0.7, nen: 'bg-gold-pale', vien: 'border-gold', chu: 'text-gold-dark',
+    nhan: 'Khá lắm, xem lại câu sai' },
+  { den: 1.0, nen: 'bg-teal-pale', vien: 'border-teal', chu: 'text-teal-dark',
+    nhan: 'Tuyệt vời! Sang bài mới' },
 ];
 
-const mucCua = (sao) => MUC.find((m) => sao <= m.den);
+const mucCua = (dat, tong) => MUC.find((m) => dat <= Math.round(m.den * tong)) || MUC[2];
 
-export default function NhietKeHieuBai() {
-  const [chon, setChon] = useState(null);
-  const m = chon == null ? null : mucCua(chon);
-
+export default function NhietKeHieuBai({ dat = 0, tong = 5 }) {
+  const muc = mucCua(dat, tong);
   return (
-    <div className="card">
-      <div className="kicker">🌡️ NHIỆT KẾ HIỂU BÀI</div>
-      <p className="text-[15px] leading-snug text-ink">
-        Con được mấy sao ở phần quiz? Bấm vào ô của con nhé.
-      </p>
-
-      <div className="mt-3 flex gap-1.5" role="group" aria-label="Con được mấy sao">
-        {[1, 2, 3, 4, 5].map((sao) => {
-          const o = mucCua(sao);
-          const dang = chon === sao;
+    <div className="mt-4">
+      <h4 className="mb-2 text-[11.5px] font-extrabold tracking-widest text-mute">
+        🌡️ NHIỆT KẾ HIỂU BÀI
+      </h4>
+      <div className="flex justify-center gap-1.5" role="img"
+           aria-label={`Con đạt ${dat} trên ${tong} sao. ${muc.nhan}.`}>
+        {Array.from({ length: tong }, (_, i) => i + 1).map((n) => {
+          const m = mucCua(n, tong);
+          const sang = n <= dat;
           return (
-            <button
-              key={sao}
-              type="button"
-              aria-pressed={dang}
-              onClick={() => setChon(dang ? null : sao)}
-              className={`flex-1 rounded-xl border-2 py-3 text-[17px] font-extrabold text-navy
-                          ${o.nen} ${dang ? 'border-navy ring-2 ring-navy/30' : o.vien}`}
-            >
-              {sao} ★
-            </button>
+            <div key={n}
+                 className={`flex-1 rounded-xl border-[1.5px] py-2 text-center transition
+                   ${sang ? `${m.nen} ${m.vien}` : 'border-line bg-white'}`}>
+              <b className={`text-[15px] ${sang ? m.chu : 'text-line'}`}>{n} ★</b>
+            </div>
           );
         })}
       </div>
-
-      {m && <p className={`mt-2.5 text-center text-[15px] font-bold ${m.mau}`}>{m.chu}</p>}
+      <p className={`mt-1.5 text-center text-[13.5px] font-bold ${muc.chu}`}>{muc.nhan}</p>
     </div>
   );
 }
