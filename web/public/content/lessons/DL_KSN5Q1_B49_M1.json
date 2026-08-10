@@ -29,7 +29,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con tính chu vi C = d × 3,14 = r × 2 × 3,14 và diện tích S = r × r × 3,14 với NGHI THỨC BƯỚC 0: gạch chân chữ \"đường kính\" hay \"bán kính\" trong đề, đổi cho khớp công thức trước khi bấm — C thân với d, nhưng S chỉ chơi với r: thấy d là chia đôi trước (d = 20 → r = 10 → S = 314, không phải 1 256!).",
+  "text": "Con tính chu vi C = d × 3,14 = r × $2  \\times  3,14$ và diện tích S = r × r × 3,14 với NGHI THỨC BƯỚC 0: gạch chân chữ \"đường kính\" hay \"bán kính\" trong đề, đổi cho khớp công thức trước khi bấm — C thân với d, nhưng S chỉ chơi với r: thấy d là chia đôi trước (d = 20 → r = 10 → S = 314, không phải 1 256!).",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (S dùng bán kính)",
   "kidText": "Chu vi thân với đường kính, còn diện tích chỉ chơi với bán kính. Thấy đường kính là con chia đôi trước đã."
  },
@@ -37,7 +37,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Hai công thức hai bạn thân: CHU VI thân với đường kính: C = d × 3,14 (= r × 2 × 3,14); DIỆN TÍCH chỉ chơi với bán kính: S = r × r × 3,14."
+    "text": "Hai công thức hai bạn thân: CHU VI thân với đường kính: C = d × 3,14 (= r × $2  \\times  3,14$); DIỆN TÍCH chỉ chơi với bán kính: S = r × r × 3,14."
    },
    {
     "id": "K2",
@@ -45,7 +45,7 @@
    },
    {
     "id": "K3",
-    "text": "Bẫy thay-d-vào-S: d = 20 thay luôn vào S cho 20 × 20 × 3,14 = 1 256 — GẤP BỐN LẦN hình thật (vì d = 2r nên d × d = 4 × r × r): đổi r = 10 trước → S = 314 cm²."
+    "text": "Bẫy thay-d-vào-S: d = 20 thay luôn vào S cho $20  \\times  20  \\times  3,14 = 1$ 256 — GẤP BỐN LẦN hình thật (vì d = 2r nên d × d = 4 × r × r): đổi r = 10 trước → S = 314 $cm^2$."
    }
   ],
   "mechanism": "Hình ảnh brand: HAI CÁNH CỬA HAI BẠN THÂN. Hình tròn có HAI cánh cửa: cửa CHU VI khắc chữ d — đường kính bước thẳng vào: C bằng d nhân ba phẩy mười bốn; cửa DIỆN TÍCH khắc chữ r — CHỈ bán kính được vào: S bằng r nhân r nhân ba phẩy mười bốn! Đề miệng giếng: đường kính MỘT mét — tính chu vi và diện tích nắp đậy. Chu vi dễ: một nhân ba phẩy mười bốn — BA PHẨY MƯỜI BỐN mét. Diện tích — Trí Long thay luôn: một nhân một nhân ba phẩy mười bốn?! Cửa S chặn lại: anh là ĐƯỜNG KÍNH — cửa này chỉ tiếp BÁN KÍNH! Nghi thức bước KHÔNG: gạch chân chữ trong đề — đổi trước khi bấm: r bằng không phẩy năm — S bằng không phẩy năm nhân không phẩy năm nhân ba phẩy mười bốn: KHÔNG PHẨY BẢY TÁM NĂM mét vuông! Thử để d lọt cửa S xem: d hai mươi cho một nghìn hai trăm năm sáu — GẤP BỐN hình thật, vì d bằng hai r nên d nhân d phình bốn lần! S chỉ chơi với bán kính — thấy d là chia đôi trước!",
@@ -72,10 +72,10 @@
   "numberRange": "Lớp 5: r, d ≤ 20; số 3,14 cố định.",
   "misconceptions": [
    {
-    "wrong": "Đề cho đường kính — thay luôn vào công thức S: 20 × 20 × 3,14 = 1 256.",
+    "wrong": "Đề cho đường kính — thay luôn vào công thức S: $20  \\times  20  \\times  3,14 = 1$ 256.",
     "signal": "Không có dòng đổi r = d : 2; đáp gấp 4 lần đáp thật.",
     "fix": "bước 0: gạch chân chữ, S chỉ tiếp bán kính: r = 10 → 314.",
-    "counterExample": "1 256 : 314 = 4 — hình tròn tự phình gấp bốn: nắp giếng to bằng cả sân à?!"
+    "counterExample": "1 $256 : 314 = 4$ — hình tròn tự phình gấp bốn: nắp giếng to bằng cả sân à?!"
    }
   ],
   "vocabulary": [
@@ -92,7 +92,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "20 : 2 = ?",
+    "text": "$20 : 2$ = ?",
     "answerKey": {
      "value": 10
     }
@@ -310,10 +310,10 @@
     }
    },
    {
-    "show": "Bước 1 — Cửa C: C = 1 × 3,14 = 3,14 m."
+    "show": "Bước 1 — Cửa C: C = $1  \\times  3,14 = 3,14$ m."
    },
    {
-    "show": "Bước 2 — Cửa S: đổi r = 0,5 → S = 0,5 × 0,5 × 3,14 = 0,785 m².",
+    "show": "Bước 2 — Cửa S: đổi r = 0,5 → S = $0,5  \\times  0,5  \\times  3,14 = 0,785 m^2$.",
     "askAfter": {
      "format": "num",
      "text": "Hình tròn có đường kính 20 cm thì diện tích bằng bao nhiêu xăng-ti-mét vuông?",
@@ -496,7 +496,7 @@
   "flashcards": [
    {
     "front": "Hai công thức hình tròn — ai chơi với ai?",
-    "back": "C thân với d: C = d × 3,14 (= r × 2 × 3,14). S CHỈ chơi với r: S = r × r × 3,14 — BƯỚC 0: gạch chân chữ, thấy d chia đôi trước (d = 20 → r = 10 → 314; thay d thẳng → 1 256 phình GẤP 4 vì d×d = 4×r×r)."
+    "back": "C thân với d: C = d × 3,14 (= r × $2  \\times  3,14$). S CHỈ chơi với r: S = r × r × 3,14 — BƯỚC 0: gạch chân chữ, thấy d chia đôi trước (d = 20 → r = 10 → 314; thay d thẳng → 1 256 phình GẤP 4 vì d×d = 4×r×r)."
    }
   ],
   "schedule": [

@@ -72,7 +72,7 @@
   "numberRange": "Lớp 5: khoảng cách 1–10; n đến 100; có dãy thập phân đơn giản (0,5).",
   "misconceptions": [
    {
-    "wrong": "Số hạng thứ n = đầu + n × khoảng (tìm thứ 10 của dãy 2; 5; 8: tính 2 + 10 × 3 = 32).",
+    "wrong": "Số hạng thứ n = đầu + n × khoảng (tìm thứ 10 của dãy 2; 5; 8: tính $2 + 10  \\times  3 = 32$).",
     "signal": "Đáp lố đúng MỘT khoảng cách.",
     "fix": "cọc xuất phát không tính bước: đứng ở số đầu là chưa nhảy; thứ n chỉ nhảy (n − 1) bước.",
     "counterExample": "Dãy tí hon 2; 5; 8: nhân đủ 3 bước ra 11 — mà số hạng thứ ba rõ ràng là 8."
@@ -112,7 +112,7 @@
     "narration": "Dãy 2; 5; 8; 11; … — tìm số hạng thứ 10 của dãy.",
     "display": {
      "type": "story_panel",
-     "caption": "thứ 10 = 2 + 10 × 3??"
+     "caption": "thứ $10 = 2 + 10  \\times  3$??"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -127,7 +127,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Con đứng ở cọc số 1 — số 2 — và ĐẾM BƯỚC khi nhảy: tới cọc 2 là một bước, cọc 3 là hai bước… tới cọc thứ 10 là mấy bước? CHÍN bước! Mỗi bước 3 mét: 2 cộng 9 nhân 3 bằng 29. Kiểm dãy tí hon 2; 5; 8: thứ ba = 2 + 2 × 3 = 8 ✓ — nhân đủ 3 bước ra 11 là lố sang cọc thứ tư!",
+    "narration": "Con đứng ở cọc số 1 — số 2 — và ĐẾM BƯỚC khi nhảy: tới cọc 2 là một bước, cọc 3 là hai bước… tới cọc thứ 10 là mấy bước? CHÍN bước! Mỗi bước 3 mét: 2 cộng 9 nhân 3 bằng 29. Kiểm dãy tí hon 2; 5; 8: thứ ba = $2 + 2  \\times  3 = 8$ ✓ — nhân đủ 3 bước ra 11 là lố sang cọc thứ tư!",
     "display": {
      "type": "hop_count_interactive",
      "spec": {
@@ -283,7 +283,7 @@
   "problem": "Dãy 2; 5; 8; 11; … — tìm số hạng thứ 10 của dãy.",
   "steps": [
    {
-    "show": "Bước 1 — Khoảng cách của dãy: 5 − 2 = 3.",
+    "show": "Bước 1 — Khoảng cách của dãy: $5 - 2 = 3$.",
     "askBefore": {
      "format": "num",
      "text": "Đứng ở số đầu là đã nhảy mấy bước?",
@@ -294,10 +294,10 @@
     }
    },
    {
-    "show": "Bước 2 — Tới số hạng thứ 10: nhảy 10 − 1 = 9 bước."
+    "show": "Bước 2 — Tới số hạng thứ 10: nhảy $10 - 1 = 9$ bước."
    },
    {
-    "show": "Bước 3 — Số hạng thứ 10 = 2 + 9 × 3 = 29.",
+    "show": "Bước 3 — Số hạng thứ $10 = 2 + 9  \\times  3 = 29$.",
     "askAfter": {
      "format": "num",
      "text": "Số hạng thứ 20 của dãy này là?",
@@ -329,7 +329,7 @@
       "Thứ 10 → nhảy mấy bước?",
       "2 + 9 × 3."
      ],
-     "solutionNarrative": "2 + (10 − 1) × 3 = 29.",
+     "solutionNarrative": "2 + ($10 - 1$) × $3 = 29$.",
      "teaches": [
       "K1",
       "K2"
@@ -357,7 +357,7 @@
       "Bập bênh cân đầu–cuối.",
       "(3 + 99) : 2."
      ],
-     "solutionNarrative": "TBC = (3 + 99) : 2 = 51.",
+     "solutionNarrative": "TBC = ($3 + 99$) : $2 = 51$.",
      "teaches": [
       "K3"
      ]
@@ -383,7 +383,7 @@
     {
      "id": "P4",
      "format": "tf",
-     "text": "(Đúng/Sai?) Số hạng thứ 4 của dãy 10; 20; 30; … là 10 + 4 × 10 = 50.",
+     "text": "(Đúng/Sai?) Số hạng thứ 4 của dãy 10; 20; 30; … là $10 + 4  \\times  10 = 50$.",
      "answerKey": {
       "value": false,
       "note": "Nhảy 3 bước thôi: 10 + 3 × 10 = 40 — đếm tay: 10, 20, 30, 40 ✓."
@@ -464,7 +464,7 @@
   "flashcards": [
    {
     "front": "Số hạng thứ n của dãy cách đều? TBC của dãy?",
-    "back": "Thứ n = đầu + (n − 1) × khoảng — cọc xuất phát không tính bước! TBC = (đầu + cuối) : 2 (bập bênh cân xứng). Dãy 2;5;8;…: thứ 10 = 2 + 9 × 3 = 29."
+    "back": "Thứ n = đầu + (n − 1) × khoảng — cọc xuất phát không tính bước! TBC = (đầu + cuối) : 2 (bập bênh cân xứng). Dãy 2;5;8;…: thứ $10 = 2 + 9  \\times  3 = 29$."
    }
   ],
   "schedule": [

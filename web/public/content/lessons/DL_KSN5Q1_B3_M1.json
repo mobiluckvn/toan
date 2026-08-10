@@ -57,7 +57,7 @@
   "canonicalExamples": [
    {
     "case": "tổng ăn 11 (ca chuẩn)",
-    "problem": "Tính 35 + 53. Tổng ấy có chia hết cho 11 không?",
+    "problem": "Tính $35 + 53$. Tổng ấy có chia hết cho 11 không?",
     "solution": "35 + 53 = 88 = 11 × 8. Đối chiếu định luật: 11 × (3 + 5) = 11 × 8 = 88 ✓ — chia hết cho 11.",
     "why": "với kiểm chứng công thức."
    },
@@ -80,13 +80,13 @@
     "wrong": "Lẫn định luật: tổng chia 9, hiệu chia 11.",
     "signal": "Trả lời 'tổng chia hết cho 9' hoặc 'hiệu chia hết cho 11'.",
     "fix": "Tra công thức chứ đừng tra cảm giác: TỔNG ăn 11, HIỆU ăn 9 (khai triển ra là thấy).",
-    "counterExample": "35 + 53 = 88 không chia hết cho 9; 74 − 47 = 27 không chia hết cho 11."
+    "counterExample": "$35 + 53 = 88$ không chia hết cho 9; $74 - 47 = 27$ không chia hết cho 11."
    },
    {
     "wrong": "Nghĩ hiệu ba chữ số chia hết 9 nhưng quên 99 (chỉ lấy 9).",
     "signal": "abc − cba đoán 'chia hết cho 9' mà bỏ sót 99.",
-    "fix": "chữ số giữa triệt tiêu, hệ số là 99 = 9 × 11 — ăn cả 9 lẫn 11.",
-    "counterExample": "594 = 99 × 6."
+    "fix": "chữ số giữa triệt tiêu, hệ số là $99 = 9  \\times  11$ — ăn cả 9 lẫn 11.",
+    "counterExample": "$594 = 99  \\times  6$."
    }
   ],
   "vocabulary": [
@@ -125,7 +125,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Tính 35 + 53. Tổng ấy có chia hết cho 11 không?",
+    "narration": "Tính $35 + 53$. Tổng ấy có chia hết cho 11 không?",
     "display": {
      "type": "story_panel",
      "caption": "47 ⇄ 74 · 121? · 27?"
@@ -178,7 +178,7 @@
     "estSeconds": 16,
     "item": {
      "format": "num",
-     "text": "Không đặt tính: 62 + 26 chia hết cho số nào (trong 9 và 11)? Tính nhanh tổng bằng định luật.",
+     "text": "Không đặt tính: $62 + 26$ chia hết cho số nào (trong 9 và 11)? Tính nhanh tổng bằng định luật.",
      "answerKey": {
       "value": 88,
       "extra": "chia hết cho 11: 11 × (6 + 2)"
@@ -327,10 +327,10 @@
     "show": "Bước 2 — Cộng và gom nhóm: (10a + b) + (10b + a) = 11a + 11b = 11 × (a + b)."
    },
    {
-    "show": "Bước 3 — Kết luận: tổng là 11 nhân một số tự nhiên → luôn chia hết cho 11. Kiểm: 35 + 53 = 88 = 11 × 8 ✓.",
+    "show": "Bước 3 — Kết luận: tổng là 11 nhân một số tự nhiên → luôn chia hết cho 11. Kiểm: $35 + 53 = 88 = 11  \\times  8$ ✓.",
     "askAfter": {
      "format": "num",
-     "text": "Vậy 45 + 54 = 11 × mấy?",
+     "text": "Vậy $45 + 54 = 11$ × mấy?",
      "answerKey": {
       "value": 9
      },
@@ -351,7 +351,7 @@
      "id": "P1",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B3.LT2",
-     "text": "Tính 35 + 53. Tổng ấy có chia hết cho 11 không?",
+     "text": "Tính $35 + 53$. Tổng ấy có chia hết cho 11 không?",
      "answerKey": {
       "parts": [
        {
@@ -372,7 +372,7 @@
       "Định luật bắt tay: 11 × (a + b).",
       "11 × (3 + 5)."
      ],
-     "solutionNarrative": "35 + 53 = 88 = 11 × 8 — chia hết cho 11.",
+     "solutionNarrative": "$35 + 53 = 88 = 11  \\times  8$ — chia hết cho 11.",
      "teaches": [
       "K1"
      ],
@@ -413,7 +413,7 @@
       "Hiệu ăn 9: 9 × (hiệu hai chữ số).",
       "9 × (7 − 4)."
      ],
-     "solutionNarrative": "74; 74 − 47 = 27 = 9 × 3 — chia hết cho 9.",
+     "solutionNarrative": "74; $74 - 47 = 27 = 9  \\times  3$ — chia hết cho 9.",
      "teaches": [
       "K2"
      ]
@@ -472,7 +472,7 @@
     {
      "id": "P5",
      "format": "num",
-     "text": "Không đặt tính trừ: hiệu 81 − 18 bằng 9 nhân mấy?",
+     "text": "Không đặt tính trừ: hiệu $81 - 18$ bằng 9 nhân mấy?",
      "answerKey": {
       "value": 7
      },
@@ -545,7 +545,7 @@
     "id": "A2",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B3.QZ3",
-    "text": "74 − 47 bằng:",
+    "text": "$74 - 47$ bằng:",
     "choices": [
      "27",
      "37",
@@ -593,7 +593,7 @@
  "parentNote": {
   "onComplete": "Hôm nay con học ba định luật soi gương 11 · 9 · 99 và tự chứng minh bằng khai triển. Con đạt {score}/3.",
   "homeActivity": "Ảo thuật gia đình: bảo bố mẹ chọn số hai chữ số bất kỳ, cộng với số viết ngược — con đoán ngay 'kết quả chia hết cho 11!' rồi giải thích.",
-  "watchFor": "Nếu con lẫn 'tổng chia 9, hiệu chia 11' — đọc lại câu cần nhớ rồi thử với 35 + 53, 74 − 47."
+  "watchFor": "Nếu con lẫn 'tổng chia 9, hiệu chia 11' — đọc lại câu cần nhớ rồi thử với $35 + 53$, $74 - 47$."
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B3.M1",

@@ -32,7 +32,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con kiểm chia hết cho số hợp (6, 15, 45, 55…) bằng cách THÁO thành cặp thừa số NGUYÊN TỐ CÙNG NHAU rồi khám đủ từng cửa — và biết vì sao không tồn tại \"dấu hiệu tổng cho số 6\", vì sao cấm tháo 45 = 15 × 3.",
+  "text": "Con kiểm chia hết cho số hợp (6, 15, 45, 55…) bằng cách THÁO thành cặp thừa số NGUYÊN TỐ CÙNG NHAU rồi khám đủ từng cửa — và biết vì sao không tồn tại \"dấu hiệu tổng cho số 6\", vì sao cấm tháo $45 = 15  \\times  3$.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
   "kidText": "Số 6 không có dấu hiệu riêng. Con tháo nó thành 2 nhân 3 rồi khám đủ hai cửa — nhưng không phải cặp nào cũng tháo được."
  },
@@ -40,7 +40,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Số hợp KHÔNG có dấu hiệu soi riêng — muốn kiểm phải tháo thành cặp thừa số rồi khám từng cửa: 6 = 2 × 3; 15 = 3 × 5; 45 = 9 × 5; 55 = 11 × 5."
+    "text": "Số hợp KHÔNG có dấu hiệu soi riêng — muốn kiểm phải tháo thành cặp thừa số rồi khám từng cửa: $6 = 2  \\times  3$; $15 = 3  \\times  5$; $45 = 9  \\times  5$; $55 = 11  \\times  5$."
    },
    {
     "id": "K2",
@@ -48,7 +48,7 @@
    },
    {
     "id": "K3",
-    "text": "Tháo sai kiểu 45 = 15 × 3 (chung ước 3): có số qua cả cửa 15 lẫn cửa 3 mà vẫn trượt 45 — ví dụ số 15."
+    "text": "Tháo sai kiểu $45 = 15  \\times  3$ (chung ước 3): có số qua cả cửa 15 lẫn cửa 3 mà vẫn trượt 45 — ví dụ số 15."
    },
    {
     "id": "K4",
@@ -71,7 +71,7 @@
    },
    {
     "case": "tháo sai cặp (ca bẫy 2)",
-    "problem": "Kiểm 45 bằng cách tháo 45 = 15 × 3 được không?",
+    "problem": "Kiểm 45 bằng cách tháo $45 = 15  \\times  3$ được không?",
     "solution": "KHÔNG. 15 và 3 chung ước 3. Kẻ lách luật: số 15 qua cửa 15 ✓ và cửa 3 ✓ nhưng 15 không chia hết 45. Tháo chuẩn: 45 = 9 × 5 (nguyên tố cùng nhau).",
     "why": "Bẫy CĐ-9.3 với phản ví dụ đắt nhất."
    }
@@ -85,7 +85,7 @@
     "counterExample": "15: tổng 6 ✓ nhưng lẻ → trượt."
    },
    {
-    "wrong": "Tháo cặp chung ước (45 = 15 × 3) vì \"nghe vẫn chặt chẽ\".",
+    "wrong": "Tháo cặp chung ước ($45 = 15  \\times  3$) vì \"nghe vẫn chặt chẽ\".",
     "signal": "Hai mảnh tháo ra có ước chung > 1.",
     "fix": "kiểm răng khóa trước khi tháo: 9 và 5 không chung ước → hợp lệ.",
     "counterExample": "Số 15 qua cả hai cửa 15, 3 mà trượt cổng 45."
@@ -189,7 +189,7 @@
      "K2",
      "K3"
     ],
-    "narration": "Bẫy tinh vi hơn: \"kiểm 45 thì tháo 15 nhân 3 cũng được chứ gì?\" Coi chừng — 15 và 3 CHUNG RĂNG số 3! Kẻ lách luật xuất hiện: số 15 qua ổ 15, qua luôn ổ 3, mà 15 chia 45 thì trượt thẳng cẳng! Luật thợ khóa: hai ổ phải KHÔNG chung ước — tháo 45 = 9 × 5: ổ 9 soi tổng, ổ 5 soi đuôi, khác răng hoàn toàn.",
+    "narration": "Bẫy tinh vi hơn: \"kiểm 45 thì tháo 15 nhân 3 cũng được chứ gì?\" Coi chừng — 15 và 3 CHUNG RĂNG số 3! Kẻ lách luật xuất hiện: số 15 qua ổ 15, qua luôn ổ 3, mà 15 chia 45 thì trượt thẳng cẳng! Luật thợ khóa: hai ổ phải KHÔNG chung ước — tháo $45 = 9  \\times  5$: ổ 9 soi tổng, ổ 5 soi đuôi, khác răng hoàn toàn.",
     "display": {
      "type": "counter_example",
      "cases": [
@@ -308,7 +308,7 @@
   "problem": "Tìm chữ số x để số 53x chia hết cho 6.",
   "steps": [
    {
-    "show": "Bước 1 — Tháo cổng: 6 = 2 × 3 (nguyên tố cùng nhau ✓) → hai ổ: CHẴN và TỔNG chia hết cho 3.",
+    "show": "Bước 1 — Tháo cổng: $6 = 2  \\times  3$ (nguyên tố cùng nhau ✓) → hai ổ: CHẴN và TỔNG chia hết cho 3.",
     "askBefore": {
      "format": "mcq",
      "text": "Vì sao không dùng \"dấu hiệu tổng cho 6\"?",
@@ -324,13 +324,13 @@
     }
    },
    {
-    "show": "Bước 2 — Ổ tổng: 5 + 3 + x = 8 + x chia hết cho 3 → x là 1, 4 hoặc 7."
+    "show": "Bước 2 — Ổ tổng: $5 + 3$ + x = 8 + x chia hết cho 3 → x là 1, 4 hoặc 7."
    },
    {
-    "show": "Bước 3 — Ổ chẵn: trong {1; 4; 7} chỉ 4 chẵn → x = 4. Thử: 534 : 6 = 89 ✓.",
+    "show": "Bước 3 — Ổ chẵn: trong {1; 4; 7} chỉ 4 chẵn → x = 4. Thử: $534 : 6 = 89$ ✓.",
     "askAfter": {
      "format": "num",
-     "text": "Kiểm: 534 : 6 = ?",
+     "text": "Kiểm: $534 : 6$ = ?",
      "answerKey": {
       "value": 89
      },
@@ -359,7 +359,7 @@
       "Tháo 6 = 2 × 3: hai ổ khóa.",
       "Ổ tổng: {1;4;7}; ổ chẵn giữ ai?"
      ],
-     "solutionNarrative": "8 + x chia hết cho 3 → {1;4;7}; giao với chẵn → x = 4 (534 = 6 × 89).",
+     "solutionNarrative": "8 + x chia hết cho 3 → {1;4;7}; giao với chẵn → x = 4 ($534 = 6  \\times  89$).",
      "teaches": [
       "K1"
      ],
@@ -488,7 +488,7 @@
   "flashcards": [
    {
     "front": "Kiểm chia hết cho số hợp (6, 45, 55) thế nào? Luật tháo?",
-    "back": "Tháo thành cặp NGUYÊN TỐ CÙNG NHAU rồi khám đủ hai cửa: 6 = 2 × 3 · 45 = 9 × 5 · 55 = 11 × 5. CẤM cặp chung ước (45 = 15 × 3: số 15 lách qua). Không có 'dấu hiệu tổng cho 6' — số 15 tổng 6 mà lẻ!"
+    "back": "Tháo thành cặp NGUYÊN TỐ CÙNG NHAU rồi khám đủ hai cửa: $6 = 2  \\times  3$ · $45 = 9  \\times  5$ · $55 = 11  \\times  5$. CẤM cặp chung ước ($45 = 15  \\times  3$: số 15 lách qua). Không có 'dấu hiệu tổng cho 6' — số 15 tổng 6 mà lẻ!"
    }
   ],
   "schedule": [
@@ -498,8 +498,8 @@
   ]
  },
  "parentNote": {
-  "onComplete": "Hôm nay con học kiểm chia hết cho số hợp bằng cách tháo cặp nguyên tố cùng nhau, và vạch mặt hai tin đồn (dấu hiệu tổng cho 6; tháo 45 = 15 × 3). Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Đố con: 'muốn biết 234 chia hết cho 18 không thì tháo 18 thành cặp nào?' — con nói 2 × 9 kèm lý do không-chung-ước là đạt.",
+  "onComplete": "Hôm nay con học kiểm chia hết cho số hợp bằng cách tháo cặp nguyên tố cùng nhau, và vạch mặt hai tin đồn (dấu hiệu tổng cho 6; tháo $45 = 15  \\times  3$). Con đạt {score}/3, {trapResult} câu bẫy.",
+  "homeActivity": "Đố con: 'muốn biết 234 chia hết cho 18 không thì tháo 18 thành cặp nào?' — con nói $2  \\times  9$ kèm lý do không-chung-ước là đạt.",
   "watchFor": "Nếu con kiểm số 6 chỉ bằng tổng — đưa số 15 ra làm phản chứng cùng con (S1)."
  },
  "$schema": "digital-lesson/v2-micro",

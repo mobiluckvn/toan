@@ -29,7 +29,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con dùng MỘT neo hiệu xử cả DÃY điều kiện gấp tại nhiều mốc: tính neo một lần (32 − 8 = 24) rồi với từng mức \"gấp k\" chia neo cho (k − 1) phần ra tuổi con tại mốc ấy — so với tuổi nay để nói trước / sau / ngay hôm nay; đọc được chiều thời gian: số lần gấp CO DẦN về tương lai; các mốc soi lẫn nhau thay vì giải rời từng bài từ số không.",
+  "text": "Con dùng MỘT neo hiệu xử cả DÃY điều kiện gấp tại nhiều mốc: tính neo một lần ($32 - 8 = 24$) rồi với từng mức \"gấp k\" chia neo cho (k − 1) phần ra tuổi con tại mốc ấy — so với tuổi nay để nói trước / sau / ngay hôm nay; đọc được chiều thời gian: số lần gấp CO DẦN về tương lai; các mốc soi lẫn nhau thay vì giải rời từng bài từ số không.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (neo chia (k − 1) phần)",
   "kidText": "Một chiếc neo hiệu tính một lần là dùng được cho cả dãy mốc. Mỗi mức \"gấp k\" thì chia neo cho k trừ 1 phần."
  },
@@ -37,11 +37,11 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Cả dãy câu hỏi \"khi nào gấp 5? gấp 4? gấp 3?\" dùng chung MỘT neo hiệu (32 − 8 = 24, bất biến — B28/B31): tính neo MỘT lần, đừng giải rời từng bài từ số không."
+    "text": "Cả dãy câu hỏi \"khi nào gấp 5? gấp 4? gấp 3?\" dùng chung MỘT neo hiệu ($32 - 8 = 24$, bất biến — B28/B31): tính neo MỘT lần, đừng giải rời từng bài từ số không."
    },
    {
     "id": "K2",
-    "text": "Máy soi từng mức: gấp k cũng có nghĩa là hiệu = (k − 1) phần → tuổi con tại mốc ấy = neo : (k − 1); so tuổi nay để đọc mốc: gấp 5 → 24 : 4 = 6 < 8 → 2 năm TRƯỚC; gấp 4 → 24 : 3 = 8 = nay → NGAY HÔM NAY; gấp 3 → 24 : 2 = 12 > 8 → 4 năm NỮA."
+    "text": "Máy soi từng mức: gấp k cũng có nghĩa là hiệu = (k − 1) phần → tuổi con tại mốc ấy = neo : (k − 1); so tuổi nay để đọc mốc: gấp 5 → $24 : 4 = 6 < 8$ → 2 năm TRƯỚC; gấp 4 → $24 : 3 = 8$ = nay → NGAY HÔM NAY; gấp 3 → $24 : 2 = 12 > 8$ → 4 năm NỮA."
    },
    {
     "id": "K3",
@@ -72,7 +72,7 @@
   "numberRange": "Lớp 5: neo ≤ 30; k = 2–7, neo chia hết (k − 1).",
   "misconceptions": [
    {
-    "wrong": "Giải ba câu gấp 5 / 4 / 3 thành ba bài ĐỘC LẬP, mỗi lần dựng sơ đồ lại từ số không — chậm, và các đáp không được đối chiếu nhau.",
+    "wrong": "Giải ba câu gấp $\\frac{5}{4}$ / 3 thành ba bài ĐỘC LẬP, mỗi lần dựng sơ đồ lại từ số không — chậm, và các đáp không được đối chiếu nhau.",
     "signal": "Neo 24 bị tính lại nhiều lần; không có dòng so dãy đáp.",
     "fix": "một neo tính một lần, chia cho từng kiểu phần (4, 3, 2); xong xếp dãy đáp 6, 8, 12 soi lẫn nhau.",
     "counterExample": "Giải rời lỡ ghi nhầm neo 26 ở câu b: con 8,67 lẻ — nếu soi dãy 6 → ? → 12 là thấy gãy ngay giữa chuỗi."
@@ -307,7 +307,7 @@
   "problem": "Con 8 tuổi, mẹ 32 tuổi. Trả lời cả ba câu cùng một chiếc neo: a) khi nào mẹ gấp 5 lần con? b) gấp 4 lần? c) gấp 3 lần?",
   "steps": [
    {
-    "show": "Bước 1 — Neo tính MỘT lần: 32 − 8 = 24 (bất biến).",
+    "show": "Bước 1 — Neo tính MỘT lần: $32 - 8 = 24$ (bất biến).",
     "askBefore": {
      "format": "mcq",
      "text": "Ba câu cần tính neo mấy lần?",
@@ -323,10 +323,10 @@
     }
    },
    {
-    "show": "Bước 2 — Cắm cờ: gấp 5 → 24 : 4 = 6 → 2 năm TRƯỚC; gấp 4 → 24 : 3 = 8 → NGAY HÔM NAY."
+    "show": "Bước 2 — Cắm cờ: gấp 5 → $24 : 4 = 6$ → 2 năm TRƯỚC; gấp 4 → $24 : 3 = 8$ → NGAY HÔM NAY."
    },
    {
-    "show": "Bước 3 — Gấp 3 → 24 : 2 = 12 → 4 năm NỮA. Soi dãy: 6, 8, 12 tăng dần ✓.",
+    "show": "Bước 3 — Gấp 3 → $24 : 2 = 12$ → 4 năm NỮA. Soi dãy: 6, 8, 12 tăng dần ✓.",
     "askAfter": {
      "format": "mcq",
      "text": "Số lần gấp theo thời gian trôi về tương lai sẽ:",
@@ -388,7 +388,7 @@
       "Gấp 7 → hiệu 6 phần.",
       "24 : 6 rồi so tuổi nay."
      ],
-     "solutionNarrative": "Con 4 → 4 năm trước (mẹ 28 = 7 × 4 ✓).",
+     "solutionNarrative": "Con 4 → 4 năm trước (mẹ $28 = 7  \\times  4$ ✓).",
      "teaches": [
       "K2"
      ]
@@ -452,7 +452,7 @@
     {
      "id": "P4",
      "format": "tf",
-     "text": "(Đúng/Sai?) Ba câu gấp 5 / 4 / 3 nên giải thành ba bài độc lập cho chắc.",
+     "text": "(Đúng/Sai?) Ba câu gấp $\\frac{5}{4}$ / 3 nên giải thành ba bài độc lập cho chắc.",
      "answerKey": {
       "value": false,
       "note": "Một neo 24 tính MỘT lần dùng cả dãy — dãy đáp 6, 8, 12 còn soi lẫn nhau bắt lỗi; giải rời vừa chậm vừa mất lưới soi."
@@ -544,7 +544,7 @@
   "flashcards": [
    {
     "front": "Dãy câu 'khi nào gấp 5/4/3?' — giải sao?",
-    "back": "MỘT NEO hiệu tính MỘT lần (32 − 8 = 24) → từng mức: con = neo : (k − 1) → so tuổi nay đọc mốc (6 → 2 năm trước; 8 → ngay hôm nay; 12 → 4 năm nữa). Số gấp CO DẦN về tương lai; dãy đáp 6, 8, 12 soi lẫn nhau."
+    "back": "MỘT NEO hiệu tính MỘT lần ($32 - 8 = 24$) → từng mức: con = neo : (k − 1) → so tuổi nay đọc mốc (6 → 2 năm trước; 8 → ngay hôm nay; 12 → 4 năm nữa). Số gấp CO DẦN về tương lai; dãy đáp 6, 8, 12 soi lẫn nhau."
    }
   ],
   "schedule": [

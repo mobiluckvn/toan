@@ -52,7 +52,7 @@
   "canonicalExamples": [
    {
     "case": "bốn ô thuận (ca khởi động)",
-    "problem": "Tìm X: X + 3,7 = 10 và X × 3,5 = 14.",
+    "problem": "Tìm X: X + $3,7 = 10$ và X × $3,5 = 14$.",
     "solution": "X = 10 − 3,7 = 6,3 (thử: 6,3 + 3,7 = 10 ✓). X = 14 : 3,5 = 4 (thử: 4 × 3,5 = 14 ✓).",
     "why": "Hai ca X đứng trước dấu — phép ngược thẳng."
    },
@@ -64,7 +64,7 @@
    },
    {
     "case": "X sau dấu chia (ca bẫy anh em)",
-    "problem": "Tìm X: 15 : X = 3 — và X : 2,5 = 4,2.",
+    "problem": "Tìm X: 15 : X = 3 — và X : $2,5 = 4,2$.",
     "solution": "15 : X = 3 → X = 15 : 3 = 5 (KHÔNG phải 15 × 3 = 45: thử 15 : 45 lộ ngay). X : 2,5 = 4,2 → X đứng trước dấu: X = 2,5 × 4,2 = 10,5.",
     "why": "Cặp đối chiếu — vị trí X quyết định chiều gỡ."
    }
@@ -72,10 +72,10 @@
   "numberRange": "Lớp 5: số thập phân 1 chữ số phần mười; bốn phép cơ bản.",
   "misconceptions": [
    {
-    "wrong": "Học vẹt \"tìm số trừ thì lấy hiệu cộng số bị trừ\" kiểu lộn quy tắc, hoặc gỡ 15 : X = 3 thành X = 15 × 3.",
+    "wrong": "Học vẹt \"tìm số trừ thì lấy hiệu cộng số bị trừ\" kiểu lộn quy tắc, hoặc gỡ 15 : X = 3 thành X = $15  \\times  3$.",
     "signal": "Đáp to bất thường (17,4; 45) — thử lại là âm hoặc lệch.",
     "fix": "nhìn VỊ TRÍ X trước: sau dấu trừ/chia thì tra bảng (a − b; a : b); nghi thức thử lại bắt mọi nhầm chiều.",
-    "counterExample": "X = 45 cho 15 : X = 3? Thử: 15 : 45 = 1/3 ≠ 3 — nút thắt chặt hơn!"
+    "counterExample": "X = 45 cho 15 : X = 3? Thử: $15 : 45$ = $\\frac{1}{3}$ ≠ 3 — nút thắt chặt hơn!"
    }
   ],
   "vocabulary": [
@@ -91,7 +91,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "14 : 3,5 = ?",
+    "text": "$14 : 3,5$ = ?",
     "answerKey": {
      "value": 4
     }
@@ -109,10 +109,10 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Tìm X: X + 3,7 = 10 và X × 3,5 = 14.",
+    "narration": "Tìm X: X + $3,7 = 10$ và X × $3,5 = 14$.",
     "display": {
      "type": "story_panel",
-     "caption": "X = 12,6 + 4,8??"
+     "caption": "X = $12,6 + 4,8$??"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -168,7 +168,7 @@
     "estSeconds": 16,
     "item": {
      "format": "num",
-     "text": "Tìm X: X + 3,7 = 10.",
+     "text": "Tìm X: X + $3,7 = 10$.",
      "answerKey": {
       "value": 6.3
      },
@@ -314,10 +314,10 @@
     }
    },
    {
-    "show": "Bước 2 — Tra bảng: số trừ = số bị trừ − hiệu = 12,6 − 4,8 = 7,8."
+    "show": "Bước 2 — Tra bảng: số trừ = số bị trừ − hiệu = $12,6 - 4,8 = 7,8$."
    },
    {
-    "show": "Bước 3 — Thử lại: 12,6 − 7,8 = 4,8 ✓ — ký tên nộp.",
+    "show": "Bước 3 — Thử lại: $12,6 - 7,8 = 4,8$ ✓ — ký tên nộp.",
     "askAfter": {
      "format": "num",
      "text": "Tìm X: 15 : X = 3.",
@@ -341,7 +341,7 @@
      "id": "P1",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B16.LT1",
-     "text": "Tìm X: X + 3,7 = 10.",
+     "text": "Tìm X: X + $3,7 = 10$.",
      "answerKey": {
       "value": 6.3
      },
@@ -349,7 +349,7 @@
       "X trước dấu cộng.",
       "10 − 3,7."
      ],
-     "solutionNarrative": "X = 10 − 3,7 = 6,3.",
+     "solutionNarrative": "X = $10 - 3,7 = 6,3$.",
      "teaches": [
       "K1"
      ],
@@ -363,7 +363,7 @@
      "id": "P2",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B16.LT2",
-     "text": "Tìm X: X × 3,5 = 14.",
+     "text": "Tìm X: X × $3,5 = 14$.",
      "answerKey": {
       "value": 4
      },
@@ -371,7 +371,7 @@
       "Nhân gỡ bằng chia.",
       "14 : 3,5."
      ],
-     "solutionNarrative": "X = 14 : 3,5 = 4.",
+     "solutionNarrative": "X = $14 : 3,5 = 4$.",
      "teaches": [
       "K1"
      ]
@@ -390,7 +390,7 @@
       "X đứng SAU dấu trừ!",
       "Số trừ = số bị trừ − hiệu."
      ],
-     "solutionNarrative": "X = 12,6 − 4,8 = 7,8 (thử ✓).",
+     "solutionNarrative": "X = $12,6 - 4,8 = 7,8$ (thử ✓).",
      "teaches": [
       "K2",
       "K3"
@@ -400,7 +400,7 @@
      "id": "P4",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B16.LT4",
-     "text": "Tìm X: X : 2,5 = 4,2.",
+     "text": "Tìm X: X : $2,5 = 4,2$.",
      "answerKey": {
       "value": 10.5
      },
@@ -408,7 +408,7 @@
       "X trước dấu chia.",
       "2,5 × 4,2."
      ],
-     "solutionNarrative": "X = 2,5 × 4,2 = 10,5.",
+     "solutionNarrative": "X = $2,5  \\times  4,2 = 10,5$.",
      "teaches": [
       "K1"
      ]
@@ -418,7 +418,7 @@
     {
      "id": "P5",
      "format": "tf",
-     "text": "(Đúng/Sai?) Từ 20 : X = 4 suy ra X = 20 × 4 = 80.",
+     "text": "(Đúng/Sai?) Từ 20 : X = 4 suy ra X = $20  \\times  4 = 80$.",
      "answerKey": {
       "value": false,
       "note": "X là số chia: X = 20 : 4 = 5; thử 20 : 80 lộ ngay."
@@ -457,7 +457,7 @@
     "id": "A1",
     "format": "tf",
     "sourceItem": "ITEM:KSN5Q1.B16.QZ1",
-    "text": "(Đúng/Sai?) Từ 15 : X = 3 suy ra X = 15 × 3.",
+    "text": "(Đúng/Sai?) Từ 15 : X = 3 suy ra X = $15  \\times  3$.",
     "answerKey": {
      "value": false
     },
@@ -486,7 +486,7 @@
    {
     "id": "A3",
     "format": "num",
-    "text": "Tìm X: X − 2,4 = 5,1.",
+    "text": "Tìm X: X − $2,4 = 5,1$.",
     "answerKey": {
      "value": 7.5
     },
@@ -511,7 +511,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con học bảng chiều ngược tìm X, đặc biệt hai ca X đứng sau dấu trừ / dấu chia, kèm nghi thức thử lại. Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Đố miệng đối xứng: 'X − 3 = 7 thì X mấy? Còn 10 − X = 3?' — con gỡ đúng hai chiều (10 và 7) là đạt.",
+  "homeActivity": "Đố miệng đối xứng: 'X − $3 = 7$ thì X mấy? Còn 10 − X = 3?' — con gỡ đúng hai chiều (10 và 7) là đạt.",
   "watchFor": "Nếu con gỡ theo quán tính — bắt thử lại đáp vào đề (S3): kết quả âm/lệch sẽ tự tố cáo."
  },
  "$schema": "digital-lesson/v2-micro",

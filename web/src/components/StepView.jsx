@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Chu from './Chu.jsx';
 import Figure from './Figure.jsx';
 import SampleCard from './SampleCard.jsx';
 import WorkedExample from './WorkedExample.jsx';
@@ -25,6 +26,36 @@ const Foot = ({ label = 'Tiếp ▶', cls = 'btn-go', onClick, disabled }) => (
     </div>
   </footer>
 );
+
+/**
+ * PHẦN PHÂN TÍCH — mấy dòng "NHÃN: nội dung" của bước dịch đề (CHO GÌ · HỎI GÌ ·
+ * ĐẠI LƯỢNG · QUAN HỆ · CHỌN CÔNG CỤ · ƯỚC LƯỢNG TRƯỚC).
+ *
+ * Trước đây in nguyên một khối chữ, sáu dòng dính nhau thành bức tường. Nay mỗi
+ * dòng một mục, NHÃN tách hẳn ra bên trên — đọc như một bài toán được phân tích
+ * từng bước, đúng thứ cô giáo gạch đầu dòng lên bảng.
+ */
+function PhanTich({ t }) {
+  const dong = String(t || '').split('\n').map((d) => d.trim()).filter(Boolean);
+  const coNhan = dong.filter((d) => /^[A-ZÀ-Ỹ][A-ZÀ-Ỹ\s&]{2,26}[:?]/.test(d)).length >= 2;
+  if (!coNhan) return <Chu t={t} khoi className="text-[16px] leading-relaxed" />;
+  return (
+    <div className="mt-1 space-y-2">
+      {dong.map((d, i) => {
+        const m = d.match(/^([A-ZÀ-Ỹ][A-ZÀ-Ỹ\s&]{2,26}[:?])\s*(.*)$/);
+        if (!m) return <p key={i} className="text-[16px] leading-relaxed"><Chu t={d} /></p>;
+        return (
+          <div key={i} className="rounded-xl border-l-[3px] border-teal bg-soft px-3 py-2">
+            <div className="text-[11px] font-extrabold tracking-widest text-teal-dark">
+              {m[1].replace(/[:?]$/, '')}
+            </div>
+            <p className="mt-0.5 text-[15.5px] leading-relaxed"><Chu t={m[2]} /></p>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 export default function StepView({ step, lesson, onNext, onJump, onRecord, log, onFinish, onRestart, onMoBai }) {
   const K = lesson.knowledgeCore || {};
@@ -84,7 +115,7 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
       return (<>
         <div className="card">
           <div className="kicker">BÀI TOÁN</div>
-          <p className="text-[16.5px] leading-relaxed">{step.screen?.narration}</p>
+          <p className="text-[16.5px] leading-relaxed"><Chu t={step.screen?.narration} khoi /></p>
           <Figure fig={step.figure} />
         </div>
         <Foot label="Nghe cô giảng ▶" onClick={onNext} />
@@ -108,7 +139,7 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
               <span className="mr-2 rounded bg-navy px-1.5 py-0.5 align-[2px] text-[11px] font-extrabold text-white">
                 {st.id}
               </span>
-              {st.text}
+              <Chu t={st.text} />
             </div>
           ))}
           <Figure fig={step.figure} />
@@ -121,9 +152,7 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
               giữ ô SAI vì nó có kèm dấu hiệu và lời gỡ. */}
           {step.screen?.narration
             && step.screen.narration !== step.misconception?.wrong && (
-            <p className="whitespace-pre-line text-[16px] leading-relaxed">
-              {step.screen.narration}
-            </p>
+            <PhanTich t={step.screen.narration} />
           )}
           {step.misconception && (
             <div className="warn-box text-[15px]">
@@ -150,7 +179,7 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
       return (<>
         <div className="card">
           <div className="kicker">CHỐT NHANH · CON THỬ NHÉ</div>
-          <p className="text-[17px] font-semibold leading-snug">{step.item.text}</p>
+          <p className="text-[17px] font-semibold leading-snug"><Chu t={step.item.text} /></p>
           {/* Chốt nhanh CŨNG là con làm bài — trước đây không ghi lên máy chủ, mất
               trắng 168 câu (một câu mỗi bài). */}
           <AnswerInput item={step.item}

@@ -45,7 +45,7 @@
    },
    {
     "id": "K3",
-    "text": "Kiểm bằng vòng nhỏ khi nghi ngờ: 4 thừa số 2 = 16 — đuôi 6 đúng là phần tử CUỐI vòng 2-4-8-6."
+    "text": "Kiểm bằng vòng nhỏ khi nghi ngờ: 4 thừa số $2 = 16$ — đuôi 6 đúng là phần tử CUỐI vòng 2-4-8-6."
    }
   ],
   "mechanism": "Hình ảnh brand: chiếc MÁY ĐỊNH VỊ từ thư viện Bài 8 được chuyển sang xưởng vòng quay! Nhập số thừa số n, máy chia cho chu kỳ 4: thương là số VÒNG TRỌN kim đã chạy, dư là số NHỊP lấn thêm. Dư 2? — kim lấn hai nhịp: dừng ở phần tử thứ hai. Dư 0? — kim vừa đi TRÒN các vòng: nó đang đậu ở phần tử CUỐI (đuôi 6 của vòng số 2), tuyệt đối không phải nhảy ngược về vạch xuất phát! Cùng một luật hai-cửa với chữ số thứ n — học một lần, dùng hai xưởng.",
@@ -74,7 +74,7 @@
    {
     "wrong": "Dư 0 thì \"quay về đầu vòng\" — lấy phần tử thứ nhất (20 thừa số 2 → đuôi 2).",
     "signal": "Đáp là phần tử đầu khi phép chia hết.",
-    "fix": "dư 0 nghĩa là đi TRÒN VÒNG: kim đậu ở phần tử CUỐI; kiểm vòng nhỏ 4 thừa số 2 = 16.",
+    "fix": "dư 0 nghĩa là đi TRÒN VÒNG: kim đậu ở phần tử CUỐI; kiểm vòng nhỏ 4 thừa số $2 = 16$.",
     "counterExample": "Nếu dư 0 về đầu thì 16 phải có đuôi 2 — mà 16 đuôi 6!"
    }
   ],
@@ -163,7 +163,7 @@
     "estSeconds": 16,
     "item": {
      "format": "num",
-     "text": "Tận cùng của tích 5 thừa số 2 là mấy? (5 : 4 = 1 dư 1)",
+     "text": "Tận cùng của tích 5 thừa số 2 là mấy? ($5 : 4 = 1$ dư 1)",
      "answerKey": {
       "value": 2
      },
@@ -293,10 +293,10 @@
   "problem": "Tìm chữ số tận cùng của tích gồm 20 thừa số 2.",
   "steps": [
    {
-    "show": "Bước 1 — Vòng của 2: 2-4-8-6, chu kỳ 4. Chia: 20 : 4 = 5 dư 0.",
+    "show": "Bước 1 — Vòng của 2: 2-4-8-6, chu kỳ 4. Chia: $20 : 4 = 5$ dư 0.",
     "askBefore": {
      "format": "num",
-     "text": "20 : 4 dư mấy?",
+     "text": "$20 : 4$ dư mấy?",
      "answerKey": {
       "value": 0
      },
@@ -307,7 +307,7 @@
     "show": "Bước 2 — Cửa dư 0: kim đi tròn 5 vòng → đậu phần tử CUỐI: đuôi 6."
    },
    {
-    "show": "Bước 3 — Kiểm vòng nhỏ: 2×2×2×2 = 16 đuôi 6 ✓. Đáp: 6.",
+    "show": "Bước 3 — Kiểm vòng nhỏ: $2 \\times 2 \\times 2 \\times 2 = 16$ đuôi 6 ✓. Đáp: 6.",
     "askAfter": {
      "format": "num",
      "text": "Tận cùng của tích 8 thừa số 2 là mấy?",
@@ -339,7 +339,7 @@
       "5 : 4 dư mấy?",
       "Dư 1 → phần tử thứ nhất."
      ],
-     "solutionNarrative": "5 : 4 = 1 dư 1 → đuôi 2 (thử: 32 ✓).",
+     "solutionNarrative": "$5 : 4 = 1$ dư 1 → đuôi 2 (thử: 32 ✓).",
      "teaches": [
       "K1",
       "K2"
@@ -414,7 +414,7 @@
     {
      "id": "P5",
      "format": "tf",
-     "text": "(Đúng/Sai?) 24 thừa số 8: vì 24 : 4 = 6 dư 0 nên tận cùng là 8 (phần tử đầu vòng).",
+     "text": "(Đúng/Sai?) 24 thừa số 8: vì $24 : 4 = 6$ dư 0 nên tận cùng là 8 (phần tử đầu vòng).",
      "answerKey": {
       "value": false,
       "note": "Dư 0 lấy phần tử CUỐI vòng 8-4-2-6: đuôi 6."
@@ -464,7 +464,7 @@
    {
     "id": "A2",
     "format": "num",
-    "text": "Tận cùng của tích 9 thừa số 3 (9 : 4 = 2 dư 1) là mấy?",
+    "text": "Tận cùng của tích 9 thừa số 3 ($9 : 4 = 2$ dư 1) là mấy?",
     "answerKey": {
      "value": 3
     },
@@ -490,7 +490,7 @@
   "flashcards": [
    {
     "front": "Tận cùng của tích n thừa số giống nhau (đuôi 2·3·7·8)?",
-    "back": "Chia n cho 4, đọc dư HAI CỬA: dư r → phần tử thứ r của vòng; DƯ 0 → phần tử CUỐI (đi tròn vòng — không về vạch xuất phát). Kiểm vòng nhỏ: 4 thừa số 2 = 16 đuôi 6."
+    "back": "Chia n cho 4, đọc dư HAI CỬA: dư r → phần tử thứ r của vòng; DƯ 0 → phần tử CUỐI (đi tròn vòng — không về vạch xuất phát). Kiểm vòng nhỏ: 4 thừa số $2 = 16$ đuôi 6."
    }
   ],
   "schedule": [

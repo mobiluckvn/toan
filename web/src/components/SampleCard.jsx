@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Chu from './Chu.jsx';
 import { sampleParts } from '../lib/flow.js';
 import Figure from './Figure.jsx';
 
@@ -12,7 +13,7 @@ export default function SampleCard({ example, index, total, figure, onNext }) {
       <div className="card">
         <div className="kicker">BÀI MẪU {index}/{total} · {ex.kind.toUpperCase() || 'CA CHUẨN'}</div>
         <div className="rounded-xl bg-soft px-4 py-3.5 text-[16px] font-semibold leading-relaxed">
-          {ex.problem}
+          <Chu t={ex.problem} />
         </div>
         <Figure fig={figure} />
         {!open ? (

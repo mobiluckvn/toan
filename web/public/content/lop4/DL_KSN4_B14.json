@@ -29,11 +29,11 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — SOI TẦNG DƯỚI: dãy 1, 3, 6, 10, 15: lấy số sau trừ số trước được tầng dưới: 2, 3, 4, 5 — một dãy cách đều tăng dần! Hai số tiếp của tầng trên: 15 + 6 = 21 và 21 + 7 = 28. LỜI QUY LUẬT (luật bắt buộc): \"Mỗi số bằng số liền trước cộng thêm một số; phần cộng thêm tăng dần 2, 3, 4, ...\""
+    "text": "Bước 1 — SOI TẦNG DƯỚI: dãy 1, 3, 6, 10, 15: lấy số sau trừ số trước được tầng dưới: 2, 3, 4, 5 — một dãy cách đều tăng dần! Hai số tiếp của tầng trên: $15 + 6 = 21$ và $21 + 7 = 28$. LỜI QUY LUẬT (luật bắt buộc): \"Mỗi số bằng số liền trước cộng thêm một số; phần cộng thêm tăng dần 2, 3, 4, ...\""
    },
    {
     "id": "K2",
-    "text": "Bước 2 — SỐ HẠNG Ở XA — GỌI GAUSS TRỢ CHIẾN: tổng trong heo sau tuần n = 1 + 2 + ... + n. Sau tuần 10: (1 + 10) × 10 : 2 = 55 nghìn — không cần viết đủ mười tuần! Dãy 1, 2, 4, 7, 11 cũng vậy: số thứ 10 = 1 + (1 + 2 + ... + 9) = 1 + 45 = 46. Bí quyết: số hạng xa = số đầu + TỔNG các bước nhảy."
+    "text": "Bước 2 — SỐ HẠNG Ở XA — GỌI GAUSS TRỢ CHIẾN: tổng trong heo sau tuần n = $1 + 2$ + ... + n. Sau tuần 10: ($1 + 10$) × $10 : 2 = 55$ nghìn — không cần viết đủ mười tuần! Dãy 1, 2, 4, 7, 11 cũng vậy: số thứ $10 = 1$ + ($1 + 2$ + ... + 9) = $1 + 45 = 46$. Bí quyết: số hạng xa = số đầu + TỔNG các bước nhảy."
    },
    {
     "id": "K3",
@@ -41,7 +41,7 @@
    },
    {
     "id": "K4",
-    "text": "Bước 4 — VỀ ĐÍCH MŨ BẢO HIỂM: cần 120 nghìn: tìm n để 1 + 2 + ... + n = 120. Thử bằng Gauss: n = 15 → (1 + 15) × 15 : 2 = 120 — vừa khít tuần 15! (Soi hàng xóm: n = 14 cho 105, chưa đủ.) Chiến dịch heo đất có ngày về đích chính xác."
+    "text": "Bước 4 — VỀ ĐÍCH MŨ BẢO HIỂM: cần 120 nghìn: tìm n để $1 + 2$ + ... + n = 120. Thử bằng Gauss: n = 15 → ($1 + 15$) × $15 : 2 = 120$ — vừa khít tuần 15! (Soi hàng xóm: n = 14 cho 105, chưa đủ.) Chiến dịch heo đất có ngày về đích chính xác."
    }
   ],
   "mantra": "Gặp dãy lạ: soi TẦNG DƯỚI trước — trừ nhau ra dãy đẹp là dãy hai tầng; chia nhau ra số không đổi là dãy nhân. Số hạng ở xa của dãy hai tầng = số đầu + tổng các bước nhảy (Gauss lo khoản tổng). Và luật : quy luật nào cũng phải NÓI ĐƯỢC THÀNH MỘT CÂU.",
@@ -51,7 +51,7 @@
    {
     "wrong": "Gặp dãy 3, 6, 12, 24, Trí Long phán: \"Hiệu là 3, 6, 12 — tăng dần nè! Đây là dãy hai tầng, số tiếp theo cộng thêm 24: bằng 48... à không, cộng thêm bao nhiêu ta?!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Tầng dưới 3, 6, 12 của Trí Long có phải dãy cách đều \"tăng dần ĐỀU\" không — hay chính nó cũng đang nhân đôi? Khi tầng dưới rối như tầng trên, hãy nghi ngờ mình chọn nhầm phép soi. Gợi ý 2: Thử phép CHIA: 6 : 3, 12 : 6, 24 : 12 — con thấy gì? Gọi đúng tên dãy, nêu lời quy luật chuẩn và tìm hai số tiếp theo giúp Trí Long. (Kết quả 48 của cậu ấy đúng hay chỉ... ăn may?)"
+    "fix": "Gợi ý 1: Tầng dưới 3, 6, 12 của Trí Long có phải dãy cách đều \"tăng dần ĐỀU\" không — hay chính nó cũng đang nhân đôi? Khi tầng dưới rối như tầng trên, hãy nghi ngờ mình chọn nhầm phép soi. Gợi ý 2: Thử phép CHIA: $6 : 3$, $12 : 6$, $24 : 12$ — con thấy gì? Gọi đúng tên dãy, nêu lời quy luật chuẩn và tìm hai số tiếp theo giúp Trí Long. (Kết quả 48 của cậu ấy đúng hay chỉ... ăn may?)"
    }
   ]
  },
@@ -65,7 +65,7 @@
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? khoản bỏ heo: tuần 1 là 1 nghìn, mỗi tuần sau nhiều hơn tuần trước 1 nghìn; bảng TỔNG tiền: 1, 3, 6, 10, 15, ...\nHỎI GÌ? hai số tiếp theo của bảng tổng; tổng sau tuần thứ 10; và đến tuần nào đủ 120 nghìn mua mũ bảo hiểm.\nĐẠI LƯỢNG & ĐƠN VỊ: tiền (nghìn đồng) theo tuần — phân biệt \"khoản bỏ MỖI tuần\" với \"TỔNG trong heo\".\nQUAN HỆ GIỮA CHÚNG: khoản bỏ các tuần là 1, 2, 3, 4, ... nên tổng trong heo tăng theo bước nhảy lớn dần — hiệu hai số liền nhau của bảng tổng chính là khoản bỏ tuần đó.\nCHỌN CÔNG CỤ: BẢNG HAI TẦNG: tầng trên ghi tổng, tầng dưới ghi các bước nhảy +2, +3, +4, ... — và công thức Gauss để cộng dồn.\nƯỚC LƯỢNG TRƯỚC: tổng sau tuần 10 = 1 + 2 + ... + 10, cỡ dăm chục nghìn.",
+    "narration": "CHO GÌ? khoản bỏ heo: tuần 1 là 1 nghìn, mỗi tuần sau nhiều hơn tuần trước 1 nghìn; bảng TỔNG tiền: 1, 3, 6, 10, 15, ...\nHỎI GÌ? hai số tiếp theo của bảng tổng; tổng sau tuần thứ 10; và đến tuần nào đủ 120 nghìn mua mũ bảo hiểm.\nĐẠI LƯỢNG & ĐƠN VỊ: tiền (nghìn đồng) theo tuần — phân biệt \"khoản bỏ MỖI tuần\" với \"TỔNG trong heo\".\nQUAN HỆ GIỮA CHÚNG: khoản bỏ các tuần là 1, 2, 3, 4, ... nên tổng trong heo tăng theo bước nhảy lớn dần — hiệu hai số liền nhau của bảng tổng chính là khoản bỏ tuần đó.\nCHỌN CÔNG CỤ: BẢNG HAI TẦNG: tầng trên ghi tổng, tầng dưới ghi các bước nhảy +2, +3, +4, ... — và công thức Gauss để cộng dồn.\nƯỚC LƯỢNG TRƯỚC: tổng sau tuần $10 = 1 + 2$ + ... + 10, cỡ dăm chục nghìn.",
     "teaches": [],
     "nhan": "NHỊP 1, DỊCH — từ bảng heo đất sang hai tầng số"
    },
@@ -104,7 +104,7 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: thông báo dán cạnh heo đất: \"Theo giao kèo, sau tuần 10 heo có 55 nghìn; mũ bảo hiểm 120 nghìn sẽ về tay đúng TUẦN 15.\" Su Bống đánh dấu ngày ấy lên tờ lịch — mục tiêu tài chính có hạn chót rõ ràng!\nSOI: soi bằng bảng thật: cộng tay 5 tuần đầu 1 + 2 + 3 + 4 + 5 = 15 khớp ô thứ 5 của bảng ✓; và Gauss n = 15 cho đúng 120 trong khi n = 14 mới 105 — hạn chót tuần 15 là chuẩn, không sớm không muộn.\nDÙNG NGOÀI ĐỜI: mọi kế hoạch tiết kiệm \"tăng dần đều\" — tiền heo, số trang đọc sách, số vòng chạy bộ — đều là dãy hai tầng: con vừa học cách dự báo NGÀY VỀ ĐÍCH của chúng.",
+    "narration": "LẮP: thông báo dán cạnh heo đất: \"Theo giao kèo, sau tuần 10 heo có 55 nghìn; mũ bảo hiểm 120 nghìn sẽ về tay đúng TUẦN 15.\" Su Bống đánh dấu ngày ấy lên tờ lịch — mục tiêu tài chính có hạn chót rõ ràng!\nSOI: soi bằng bảng thật: cộng tay 5 tuần đầu $1 + 2 + 3 + 4 + 5 = 15$ khớp ô thứ 5 của bảng ✓; và Gauss n = 15 cho đúng 120 trong khi n = 14 mới 105 — hạn chót tuần 15 là chuẩn, không sớm không muộn.\nDÙNG NGOÀI ĐỜI: mọi kế hoạch tiết kiệm \"tăng dần đều\" — tiền heo, số trang đọc sách, số vòng chạy bộ — đều là dãy hai tầng: con vừa học cách dự báo NGÀY VỀ ĐÍCH của chúng.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
@@ -136,7 +136,7 @@
     "show": "Dãy: 1 2 4 7 11"
    },
    {
-    "show": "Bước nhảy: +1 +2 +3 +4"
+    "show": "Bước nhảy: +$1 +2 +3 +4$"
    },
    {
     "show": "Bảng hai tầng là sơ đồ của bài — tầng dưới lộ quy luật."
@@ -154,10 +154,10 @@
     "show": "B) Từ số thứ nhất đến số thứ 10 có 9 bước nhảy: +1, +2, ..., +9."
    },
    {
-    "show": "Tổng các bước nhảy là: (1 + 9) × 9 : 2 = 45"
+    "show": "Tổng các bước nhảy là: ($1 + 9$) × $9 : 2 = 45$"
    },
    {
-    "show": "Số hạng thứ 10 là: 1 + 45 = 46"
+    "show": "Số hạng thứ 10 là: $1 + 45 = 46$"
    },
    {
     "show": "Câu lời quy luật viết TRỌN MỘT CÂU; phần b gọi công thức Gauss thay cho việc viết cả dãy."
@@ -241,7 +241,7 @@
      "answerKey": {
       "value": 46
      },
-     "solutionNarrative": "Từ số thứ nhất đến số thứ 10 có 9 bước nhảy +1, +2, ..., +9; tổng bước nhảy = (1 + 9) × 9 : 2 = 45 → số thứ 10 = 1 + 45 = 46."
+     "solutionNarrative": "Từ số thứ nhất đến số thứ 10 có 9 bước nhảy +1, +2, ..., +9; tổng bước nhảy = ($1 + 9$) × $9 : 2 = 45$ → số thứ $10 = 1 + 45 = 46$."
     },
     {
      "id": "C7",
@@ -249,7 +249,7 @@
      "answerKey": {
       "value": 55
      },
-     "solutionNarrative": "Tổng trong heo = 1 + 2 + ... + 10 = (1 + 10) × 10 : 2 = 55 nghìn đồng."
+     "solutionNarrative": "Tổng trong heo = $1 + 2$ + ... + 10 = ($1 + 10$) × $10 : 2 = 55$ nghìn đồng."
     }
    ],
    "challenge": [
@@ -259,7 +259,7 @@
      "answerKey": {
       "value": 15
      },
-     "solutionNarrative": "Cần 1 + 2 + ... + n = 120; thử n = 15: (1 + 15) × 15 : 2 = 120 ✓ (n = 14 mới được 105, chưa đủ) → đúng tuần thứ 15."
+     "solutionNarrative": "Cần $1 + 2$ + ... + n = 120; thử n = 15: ($1 + 15$) × $15 : 2 = 120$ ✓ (n = 14 mới được 105, chưa đủ) → đúng tuần thứ 15."
     },
     {
      "id": "C9",
@@ -287,7 +287,7 @@
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "10 : 5 = 20 : 10 = 40 : 20 = 2."
+    "solutionNarrative": "$10 : 5 = 20 : 10 = 40 : 20 = 2$."
    },
    {
     "id": "Q2",
@@ -324,7 +324,7 @@
     "answerKey": {
      "choice": "A. 25"
     },
-    "solutionNarrative": "Bước nhảy 3, 5, 7, tiếp là +9: 16 + 9 = 25."
+    "solutionNarrative": "Bước nhảy 3, 5, 7, tiếp là +9: $16 + 9 = 25$."
    },
    {
     "id": "Q5",

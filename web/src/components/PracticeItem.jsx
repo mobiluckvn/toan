@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Chu from './Chu.jsx';
 import {
   checkAnswer, inputCount, hintState, canGenerate, makeVariant, answerBrief, answerFields, answerMode,
 } from '../lib/flow.js';
@@ -59,7 +60,7 @@ export default function PracticeItem({ item: base, level, figure, figureGiai, on
     <>
       <div className="card">
         <div className="kicker">PHÒNG LUYỆN · {LEVEL[level] || level}</div>
-        <p className="text-[17px] font-semibold leading-snug">{item.text}</p>
+        <p className="text-[17px] font-semibold leading-snug"><Chu t={item.text} /></p>
         {item._variant && <span className="pill mt-2 bg-teal-pale text-teal-dark">đề mới cùng dạng</span>}
         <Figure fig={figure} />
 
@@ -89,7 +90,7 @@ export default function PracticeItem({ item: base, level, figure, figureGiai, on
             res.ok || res.mode === 'selfcheck'
               ? 'border-teal bg-teal-pale text-teal-dark' : 'border-alert bg-alert-pale text-alert'}`}>
             {res.mode === 'selfcheck' ? <><b>Lời giải mẫu:</b> {res.expected}</>
-              : res.ok ? <>🎉 Chuẩn! {item.solutionNarrative || ''}</>
+              : res.ok ? <>🎉 Chuẩn! <Chu t={item.solutionNarrative || ''} /></>
               : <>Chưa đúng — con sửa lại rồi bấm Kiểm tra lần nữa nhé. Thử bao nhiêu lần cũng được.</>}
           </div>
         )}
@@ -101,7 +102,7 @@ export default function PracticeItem({ item: base, level, figure, figureGiai, on
         {hs.reveal && !res?.ok && (
           <div className="mt-2 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
             <b>Đáp án:</b> {res?.expected}
-            {item.solutionNarrative && <div className="mt-1">{item.solutionNarrative}</div>}
+            {item.solutionNarrative && <div className="mt-1"><Chu t={item.solutionNarrative} /></div>}
             <Figure fig={figureGiai} />
           </div>
         )}

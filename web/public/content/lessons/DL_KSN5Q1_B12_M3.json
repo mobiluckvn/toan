@@ -79,10 +79,10 @@
     "wrong": "Dư 0 quay về phần tử ĐẦU chu kỳ (bóng thứ 100 của bộ bốn → phần tử đầu).",
     "signal": "Đáp là phần tử đầu khi chia hết.",
     "fix": "dư 0 nghĩa là vừa khép TRỌN chu kỳ: dừng ở phần tử CUỐI. Cùng luật với chữ số thứ n (B8) và vòng đuôi (B11).",
-    "counterExample": "Dãy 2; 0; 2; 6: phần tử thứ 4 (4 : 4 dư 0) đếm tay chính là 6 — phần tử cuối."
+    "counterExample": "Dãy 2; 0; 2; 6: phần tử thứ 4 ($4 : 4$ dư 0) đếm tay chính là 6 — phần tử cuối."
    },
    {
-    "wrong": "Tính tổng chỉ nhân số chu kỳ trọn, bỏ quên cái đuôi lẻ (2026 phần tử → 675 × 6 = 4050).",
+    "wrong": "Tính tổng chỉ nhân số chu kỳ trọn, bỏ quên cái đuôi lẻ (2026 phần tử → $675  \\times  6 = 4050$).",
     "signal": "Đáp hụt đúng bằng tổng vài phần tử đầu.",
     "fix": "nghi thức hai dòng: dòng \"trọn × tổng + ĐUÔI\" bắt buộc viết cả số hạng đuôi (dù đuôi rỗng cũng ghi \"+ 0\").",
     "counterExample": "4050 thiếu mất số 1 mở đầu chu kỳ 676 — đáp đúng 4051."
@@ -102,7 +102,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "100 : 4 dư mấy?",
+    "text": "$100 : 4$ dư mấy?",
     "answerKey": {
      "value": 0
     }
@@ -307,7 +307,7 @@
   "problem": "Dãy lặp 2; 0; 2; 6; … — phần tử thứ 100 là số nào? Và tổng 2026 phần tử đầu của dãy 1; 2; 3; 1; 2; 3; … bằng bao nhiêu?",
   "steps": [
    {
-    "show": "Bước 1 — Phần tử thứ 100: chu kỳ 4; 100 : 4 = 25 dư 0 → phần tử CUỐI: số 6.",
+    "show": "Bước 1 — Phần tử thứ 100: chu kỳ 4; $100 : 4 = 25$ dư 0 → phần tử CUỐI: số 6.",
     "askBefore": {
      "format": "mcq",
      "text": "Dư 0 lấy phần tử nào?",
@@ -323,10 +323,10 @@
     }
    },
    {
-    "show": "Bước 2 — Tổng: 2026 : 3 = 675 dư 1 → 675 chu kỳ trọn × 6 = 4050.",
+    "show": "Bước 2 — Tổng: $2026 : 3 = 675$ dư 1 → 675 chu kỳ trọn × $6 = 4050$.",
     "askBefore": {
      "format": "num",
-     "text": "Tổng một chu kỳ 1 + 2 + 3 = ?",
+     "text": "Tổng một chu kỳ $1 + 2 + 3$ = ?",
      "answerKey": {
       "value": 6
      },
@@ -334,10 +334,10 @@
     }
    },
    {
-    "show": "Bước 3 — Cộng đuôi lẻ: dư 1 → một phần tử đầu (số 1): 4050 + 1 = 4051.",
+    "show": "Bước 3 — Cộng đuôi lẻ: dư 1 → một phần tử đầu (số 1): $4050 + 1 = 4051$.",
     "askAfter": {
      "format": "num",
-     "text": "Nếu là 2027 phần tử (dư 2, đuôi 1 + 2) thì tổng bằng?",
+     "text": "Nếu là 2027 phần tử (dư 2, đuôi $1 + 2$) thì tổng bằng?",
      "answerKey": {
       "value": 4053
      },
@@ -371,7 +371,7 @@
       "14 : 3 dư mấy?",
       "Dư 2 → phần tử thứ hai của bộ."
      ],
-     "solutionNarrative": "14 : 3 = 4 dư 2 → màu ĐỎ.",
+     "solutionNarrative": "$14 : 3 = 4$ dư 2 → màu ĐỎ.",
      "teaches": [
       "K1",
       "K2"
@@ -399,7 +399,7 @@
       "Chu kỳ 4; 100 : 4 dư 0.",
       "Dư 0 → phần tử CUỐI (bóng thứ tư làm chứng)."
      ],
-     "solutionNarrative": "100 : 4 = 25 dư 0 → phần tử cuối: 6.",
+     "solutionNarrative": "$100 : 4 = 25$ dư 0 → phần tử cuối: 6.",
      "teaches": [
       "K2"
      ]
@@ -418,7 +418,7 @@
       "2026 : 3 = 675 dư 1.",
       "675 × 6 + đuôi lẻ (số 1)."
      ],
-     "solutionNarrative": "675 chu kỳ × 6 + 1 = 4051.",
+     "solutionNarrative": "675 chu kỳ × $6 + 1 = 4051$.",
      "teaches": [
       "K3",
       "K4"
@@ -427,7 +427,7 @@
     {
      "id": "P4",
      "format": "tf",
-     "text": "(Đúng/Sai?) Tổng 100 phần tử đầu của dãy 2; 0; 2; 6 lặp là 25 × 10 = 250, khỏi cộng gì thêm.",
+     "text": "(Đúng/Sai?) Tổng 100 phần tử đầu của dãy 2; 0; 2; 6 lặp là $25  \\times  10 = 250$, khỏi cộng gì thêm.",
      "answerKey": {
       "value": true,
       "note": "100 : 4 dư 0 — đuôi RỖNG: 25 chu kỳ × (2+0+2+6) = 250 ✓; nghi thức vẫn ghi '+ 0'."
@@ -466,7 +466,7 @@
     "id": "A1",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B12.QZ4",
-    "text": "Dãy lặp chu kỳ 4, phần tử thứ 100 (100 : 4 dư 0) là phần tử:",
+    "text": "Dãy lặp chu kỳ 4, phần tử thứ 100 ($100 : 4$ dư 0) là phần tử:",
     "choices": [
      "cuối chu kỳ",
      "đầu chu kỳ",
@@ -483,7 +483,7 @@
    {
     "id": "A2",
     "format": "num",
-    "text": "Dãy lặp 5; 1; 4; 5; 1; 4; … — phần tử thứ 20 là số nào? (20 : 3 = 6 dư 2)",
+    "text": "Dãy lặp 5; 1; 4; 5; 1; 4; … — phần tử thứ 20 là số nào? ($20 : 3 = 6$ dư 2)",
     "answerKey": {
      "value": 1
     },
@@ -495,7 +495,7 @@
    {
     "id": "A3",
     "format": "num",
-    "text": "Tổng 10 phần tử đầu của dãy 1; 2; 3 lặp (10 : 3 = 3 dư 1) bằng bao nhiêu?",
+    "text": "Tổng 10 phần tử đầu của dãy 1; 2; 3 lặp ($10 : 3 = 3$ dư 1) bằng bao nhiêu?",
     "answerKey": {
      "value": 19
     },
@@ -509,7 +509,7 @@
   "flashcards": [
    {
     "front": "Dãy lặp chu kỳ — phần tử thứ n và tổng n phần tử?",
-    "back": "Thứ n: chia n cho chu kỳ, dư r → thứ r; DƯ 0 → phần tử CUỐI. Tổng: (chu kỳ trọn × tổng một chu kỳ) + ĐUÔI LẺ (r phần tử đầu; dư 0 đuôi rỗng). 2026 của 1;2;3: 675 × 6 + 1 = 4051."
+    "back": "Thứ n: chia n cho chu kỳ, dư r → thứ r; DƯ 0 → phần tử CUỐI. Tổng: (chu kỳ trọn × tổng một chu kỳ) + ĐUÔI LẺ (r phần tử đầu; dư 0 đuôi rỗng). 2026 của 1;2;3: $675  \\times  6 + 1 = 4051$."
    }
   ],
   "schedule": [
@@ -520,7 +520,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con làm chủ dãy lặp chu kỳ: máy định vị lần thứ ba (dư 0 lấy cuối) và tổng theo xấp cộng đuôi lẻ. Con đạt {score}/3, {trapResult} câu bẫy. Con đã đủ điều kiện vào KỲ SÁT HẠCH CHƯƠNG 3!",
-  "homeActivity": "Đố lịch tuần: 'hôm nay thứ Hai; 100 ngày nữa là thứ mấy?' — con chia 100 : 7 dư 2 và đếm lấn hai ngày là đạt.",
+  "homeActivity": "Đố lịch tuần: 'hôm nay thứ Hai; 100 ngày nữa là thứ mấy?' — con chia $100 : 7$ dư 2 và đếm lấn hai ngày là đạt.",
   "watchFor": "Nếu con để dư 0 quay về đầu bộ — đếm tay bốn bóng đèn đầu tiên (S2) cùng con."
  },
  "$schema": "digital-lesson/v2-micro",

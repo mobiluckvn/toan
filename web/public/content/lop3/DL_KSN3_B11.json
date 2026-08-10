@@ -29,19 +29,19 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — TÌM MÃ DƯ CỦA DÃY: lấy vài ga chia thử cho nhịp 4: 3 : 4 dư 3; 7 : 4 dư 3; 11 : 4 dư 3; 15 : 4 dư 3... Cả dãy chung một MÃ DƯ = 3! (Vì mỗi lần cộng thêm đúng một nhịp, số dư giữ nguyên — bí mật từ Bài 7.)"
+    "text": "Bước 1 — TÌM MÃ DƯ CỦA DÃY: lấy vài ga chia thử cho nhịp 4: $3 : 4$ dư 3; $7 : 4$ dư 3; $11 : 4$ dư 3; $15 : 4$ dư 3... Cả dãy chung một MÃ DƯ = 3! (Vì mỗi lần cộng thêm đúng một nhịp, số dư giữ nguyên — bí mật từ Bài 7.)"
    },
    {
     "id": "K2",
-    "text": "Bước 2 — SOI GA LẠ: ga 30: 30 : 4 = 7 (dư 2). Mã dư 2 ≠ 3 → tàu KHÔNG dừng — mời bác khách đi bộ sang ga 31 gần đó (31 : 4 dư 3 ✓)."
+    "text": "Bước 2 — SOI GA LẠ: ga 30: $30 : 4 = 7$ (dư 2). Mã dư 2 ≠ 3 → tàu KHÔNG dừng — mời bác khách đi bộ sang ga 31 gần đó ($31 : 4$ dư 3 ✓)."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — SOI GA ĐẸP: ga 39 thì sao? 39 : 4 = 9 (dư 3) ✓ tàu dừng! Và tặng kèm địa chỉ: 39 là toa thứ (39 − 3) : 4 + 1 = 10 — Bài 10 và Bài 11 là đôi bạn song hành."
+    "text": "Bước 3 — SOI GA ĐẸP: ga 39 thì sao? $39 : 4 = 9$ (dư 3) ✓ tàu dừng! Và tặng kèm địa chỉ: 39 là toa thứ ($39 - 3$) : $4 + 1 = 10$ — Bài 10 và Bài 11 là đôi bạn song hành."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — CẠM BẪY \"CẦN CHƯA ĐỦ\": dãy 4, 8, 12, ... toàn số chẵn. Số 34 chẵn — nhưng 34 : 4 = 8 (dư 2) ≠ 0 → KHÔNG thuộc! Chẵn là điều kiện cần (lẻ thì loại ngay) nhưng chưa đủ — muốn chắc phải qua máy soi dư."
+    "text": "Bước 4 — CẠM BẪY \"CẦN CHƯA ĐỦ\": dãy 4, 8, 12, ... toàn số chẵn. Số 34 chẵn — nhưng $34 : 4 = 8$ (dư 2) ≠ 0 → KHÔNG thuộc! Chẵn là điều kiện cần (lẻ thì loại ngay) nhưng chưa đủ — muốn chắc phải qua máy soi dư."
    }
   ],
   "mantra": "Mỗi dãy đếm thêm có một MÃ DƯ (chia cho nhịp). Soi số lạ: chia cho nhịp, so mã dư — khớp thì thuộc, lệch thì loại. Nhìn đuôi, nhìn chẵn lẻ chỉ để LOẠI NHANH; muốn KHẲNG ĐỊNH phải soi dư!",
@@ -51,7 +51,7 @@
    {
     "wrong": "Với dãy 4, 8, 12, 16, ..., Trí Long phán chắc nịch: \"Số 34 chắc chắn thuộc dãy! Dãy toàn số chẵn, mà 34 cũng chẵn — logic thép nhé!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Chẵn giúp ta LOẠI những số nào? Nhưng mọi số chẵn có đều đứng trong dãy này không — 2, 6, 10 có mặt không? Gợi ý 2: Cho 34 qua máy soi: 34 : 4 dư mấy? Mã dư của dãy là mấy? \"Logic thép\" của Trí Long thiếu mất bước nào — và bài học \"cần chưa đủ\" đáng giá thế nào với một thám tử?"
+    "fix": "Gợi ý 1: Chẵn giúp ta LOẠI những số nào? Nhưng mọi số chẵn có đều đứng trong dãy này không — 2, 6, 10 có mặt không? Gợi ý 2: Cho 34 qua máy soi: $34 : 4$ dư mấy? Mã dư của dãy là mấy? \"Logic thép\" của Trí Long thiếu mất bước nào — và bài học \"cần chưa đủ\" đáng giá thế nào với một thám tử?"
    }
   ]
  },
@@ -113,10 +113,10 @@
     "show": "Dãy có nhịp 4; các số của dãy chia 4 đều dư 3 (mã dư 3)."
    },
    {
-    "show": "Xét 39: 39 : 4 = 9 (dư 3) — khớp mã dư → 39 thuộc dãy."
+    "show": "Xét 39: $39 : 4 = 9$ (dư 3) — khớp mã dư → 39 thuộc dãy."
    },
    {
-    "show": "Vị trí: (39 − 3) : 4 = 9 (bước nhảy) → 39 là số hạng thứ 9 + 1 = 10."
+    "show": "Vị trí: ($39 - 3$) : $4 = 9$ (bước nhảy) → 39 là số hạng thứ $9 + 1 = 10$."
    },
    {
     "show": "Đáp số: 39 thuộc dãy, là số hạng thứ 10."
@@ -132,7 +132,7 @@
      "answerKey": {
       "value": 2
      },
-     "solutionNarrative": "2 : 5 dư 2; 7 : 5 dư 2; 12 : 5 dư 2 → mã dư 2."
+     "solutionNarrative": "$2 : 5$ dư 2; $7 : 5$ dư 2; $12 : 5$ dư 2 → mã dư 2."
     },
     {
      "id": "C2",
@@ -157,7 +157,7 @@
        }
       ]
      },
-     "solutionNarrative": "22 : 5 dư 2 ✓ thuộc; 24 : 5 dư 4 → không."
+     "solutionNarrative": "$22 : 5$ dư 2 ✓ thuộc; $24 : 5$ dư 4 → không."
     },
     {
      "id": "C3",
@@ -185,7 +185,7 @@
        }
       ]
      },
-     "solutionNarrative": "nhịp 5, mã dư 3; 43 : 5 = 8 (dư 3) ✓ thuộc; vị trí (43 − 3) : 5 + 1 = 9."
+     "solutionNarrative": "nhịp 5, mã dư 3; $43 : 5 = 8$ (dư 3) ✓ thuộc; vị trí ($43 - 3$) : $5 + 1 = 9$."
     },
     {
      "id": "C5",
@@ -202,7 +202,7 @@
        }
       ]
      },
-     "solutionNarrative": "50 : 5 dư 0 ≠ 3 → không thuộc."
+     "solutionNarrative": "$50 : 5$ dư 0 ≠ 3 → không thuộc."
     },
     {
      "id": "C6",
@@ -210,7 +210,7 @@
      "answerKey": {
       "value": 42
      },
-     "solutionNarrative": "mã dư của dãy: 6 : 4 dư 2; soi 40 : 4 dư 0 → loại; 42 : 4 dư 2 ✓ → 42 thuộc (cả hai cùng chẵn mà số phận khác hẳn!)."
+     "solutionNarrative": "mã dư của dãy: $6 : 4$ dư 2; soi $40 : 4$ dư 0 → loại; $42 : 4$ dư 2 ✓ → 42 thuộc (cả hai cùng chẵn mà số phận khác hẳn!)."
     },
     {
      "id": "C7",
@@ -218,7 +218,7 @@
      "answerKey": {
       "value": 31
      },
-     "solutionNarrative": "29 : 4 dư 1 ✗; 31 : 4 dư 3 ✓; 33 : 4 dư 1 ✗ → sang ga 31, chỉ một bước chân."
+     "solutionNarrative": "$29 : 4$ dư 1 ✗; $31 : 4$ dư 3 ✓; $33 : 4$ dư 1 ✗ → sang ga 31, chỉ một bước chân."
     }
    ],
    "challenge": [
@@ -228,11 +228,11 @@
      "answerKey": {
       "value": 15
      },
-     "solutionNarrative": "100 : 7 = 14 (dư 2) — khớp mã dư 2 ✓ thuộc; vị trí (100 − 2) : 7 + 1 = 15. Ga tròn trăm đón tàu nhịp 7!"
+     "solutionNarrative": "$100 : 7 = 14$ (dư 2) — khớp mã dư 2 ✓ thuộc; vị trí ($100 - 2$) : $7 + 1 = 15$. Ga tròn trăm đón tàu nhịp 7!"
     },
     {
      "id": "C9",
-     "text": "Chị Ngọc Anh đố hai tàu: tàu Xanh dừng các ga 1, 4, 7, 10, ... (nhịp 3); tàu Đỏ dừng các ga 2, 7, 12, ... (nhịp 5). Trong khoảng 10 - 25, ga nào đón được CẢ HAI tàu? (Liệt kê hai danh sách rồi tìm ga chung — quen tay từ Bài 7!)",
+     "text": "Chị Ngọc Anh đố hai tàu: tàu Xanh dừng các ga 1, 4, 7, 10, ... (nhịp 3); tàu Đỏ dừng các ga 2, 7, 12, ... (nhịp 5). Trong khoảng $10 - 25$, ga nào đón được CẢ HAI tàu? (Liệt kê hai danh sách rồi tìm ga chung — quen tay từ Bài 7!)",
      "answerKey": {
       "parts": [
        {

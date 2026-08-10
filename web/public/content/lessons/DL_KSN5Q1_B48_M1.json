@@ -37,11 +37,11 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Cấu trúc chuẩn: S = (ĐÁY LỚN + ĐÁY BÉ) × cao : 2 — cộng hai đáy TRƯỚC: (8 + 4) × 6 : 2 = 36 m². (Phép tách 8×6:2 + 4×6:2 tình cờ cũng ra 36 — nhưng cấu trúc chuẩn mới có \"tổng hai đáy\" để chạy bài ngược!)"
+    "text": "Cấu trúc chuẩn: S = (ĐÁY LỚN + ĐÁY BÉ) × cao : 2 — cộng hai đáy TRƯỚC: ($8 + 4$) × $6 : 2 = 36 m^2$. (Phép tách $8 \\times 6$:$2 + 4 \\times 6$:2 tình cờ cũng ra 36 — nhưng cấu trúc chuẩn mới có \"tổng hai đáy\" để chạy bài ngược!)"
    },
    {
     "id": "K2",
-    "text": "Bài ngược cùng cửa nhân-2 của tam giác B45: TỔNG hai đáy = S × 2 : cao = 36 × 2 : 6 = 12 m."
+    "text": "Bài ngược cùng cửa nhân-2 của tam giác B45: TỔNG hai đáy = S × 2 : cao = $36  \\times  2 : 6 = 12$ m."
    },
    {
     "id": "K3",
@@ -49,7 +49,7 @@
    },
    {
     "id": "K4",
-    "text": "Mở rộng thang: kéo đáy bé 4 dài ra thành 8 (bằng đáy lớn) — phần mở thêm là TAM GIÁC đáy 8 − 4 = 4, cao 6: S thêm = 4 × 6 : 2 = 12 m² (hình mới là hình bình hành 8 × 6 = 48 = 36 + 12 ✓)."
+    "text": "Mở rộng thang: kéo đáy bé 4 dài ra thành 8 (bằng đáy lớn) — phần mở thêm là TAM GIÁC đáy $8 - 4 = 4$, cao 6: S thêm = $4  \\times  6 : 2 = 12 m^2$ (hình mới là hình bình hành $8  \\times  6 = 48 = 36 + 12$ ✓)."
    }
   ],
   "mechanism": "Hình ảnh brand: CHIẾC CẦU THANG VÀ CÁI ÔM HAI ĐÁY. Hình thang đáy bé 4, đáy lớn 8, cao 6. Trí Long tách đôi: \"8 nhân 6 chia 2 cộng 4 nhân 6 chia 2 — hai tư cộng mười hai: ba sáu… Ơ, vẫn ra 36?!\" Đúng số — nhưng sai CẤU TRÚC: công thức chuẩn là CÁI ÔM HAI ĐÁY: cộng đáy lớn với đáy bé TRƯỚC — tám cộng bốn bằng mười hai — rồi nhân cao chia hai: BA MƯƠI SÁU! Vì sao phải giữ cái ôm? Vì bài NGƯỢC chỉ mở cửa cho nó: \"diện tích ba sáu, cao sáu — tính TỔNG hai đáy\": tổng bằng ba sáu nhân hai chia sáu — MƯỜI HAI mét, cửa nhân-hai-trước của tam giác quen thuộc! Và bản lĩnh ĐỦ LÀ DỪNG: đề không cho hai đáy hơn kém nhau bao nhiêu — thì chỉ TỔNG là tìm được: dừng ở mười hai, không bịa số tách riêng! Bài mở rộng khép vòng: kéo đáy bé bốn thành tám — phần mở thêm là TAM GIÁC đáy bốn cao sáu: MƯỜI HAI mét vuông, và hình mới hóa bình hành bốn mươi tám — đúng ba sáu cộng mười hai!",
@@ -78,8 +78,8 @@
    {
     "wrong": "Nhân riêng từng đáy rồi cộng (tình cờ đúng số nên tưởng đúng cấu trúc) — đến bài ngược thì bí vì không có khái niệm \"tổng hai đáy\"; hoặc bịa quan hệ hai đáy để tách riêng.",
     "signal": "Không có bước cộng đáy; bài ngược tự chế thêm dữ kiện.",
-    "fix": "cái ôm hai đáy trước: (8 + 4) × 6 : 2; ngược: tổng = S × 2 : cao; đủ là dừng.",
-    "counterExample": "Bài ngược hỏi tổng hai đáy: tách kiểu 8×6:2 + 4×6:2 thì lấy đâu ra 'tổng' mà chia — cấu trúc chuẩn mới gánh nổi!"
+    "fix": "cái ôm hai đáy trước: ($8 + 4$) × $6 : 2$; ngược: tổng = S × 2 : cao; đủ là dừng.",
+    "counterExample": "Bài ngược hỏi tổng hai đáy: tách kiểu $8 \\times 6$:$2 + 4 \\times 6$:2 thì lấy đâu ra 'tổng' mà chia — cấu trúc chuẩn mới gánh nổi!"
    }
   ],
   "vocabulary": [
@@ -290,10 +290,10 @@
   "problem": "Hình thang có diện tích 36 m², chiều cao 6 m. Tính TỔNG hai đáy — vì sao không tách được từng đáy?",
   "steps": [
    {
-    "show": "Bước 1 — Cửa nhân-2: tổng hai đáy = 36 × 2 : 6 = 12 m.",
+    "show": "Bước 1 — Cửa nhân-2: tổng hai đáy = $36  \\times  2 : 6 = 12$ m.",
     "askBefore": {
      "format": "mcq",
-     "text": "Cách tách 8×6:2 + 4×6:2 có chạy được bài này không?",
+     "text": "Cách tách $8 \\times 6$:$2 + 4 \\times 6$:2 có chạy được bài này không?",
      "choices": [
       "không — nó không có khái niệm 'tổng hai đáy'",
       "có",
@@ -309,10 +309,10 @@
     "show": "Bước 2 — Đề không cho quan hệ hai đáy → ĐỦ LÀ DỪNG: đáp là tổng 12 m."
    },
    {
-    "show": "Bước 3 — Mở rộng: kéo đáy bé 4 → 8: phần thêm = tam giác 4 × 6 : 2 = 12 m² (bình hành 48 ✓).",
+    "show": "Bước 3 — Mở rộng: kéo đáy bé 4 → 8: phần thêm = tam giác $4  \\times  6 : 2 = 12 m^2$ (bình hành 48 ✓).",
     "askAfter": {
      "format": "num",
-     "text": "(8 + 4) × 6 : 2 = ?",
+     "text": "($8 + 4$) × $6 : 2$ = ?",
      "answerKey": {
       "value": 36
      },
@@ -481,7 +481,7 @@
   "flashcards": [
    {
     "front": "S hình thang — vì sao phải cộng đáy trước? Bài ngược?",
-    "back": "CÁI ÔM: (8+4) × 6 : 2 = 36 — cấu trúc chuẩn sinh ra chữ TỔNG để chạy bài ngược: tổng đáy = S × 2 : cao = 12 (cửa nhân-2 tam giác tái xuất). ĐỦ LÀ DỪNG: không cho quan hệ hai đáy thì dừng ở tổng, không bịa tách. Mở rộng: thang + tam giác 12 = bình hành 48."
+    "back": "CÁI ÔM: ($8+4$) × $6 : 2 = 36$ — cấu trúc chuẩn sinh ra chữ TỔNG để chạy bài ngược: tổng đáy = S × 2 : cao = 12 (cửa nhân-2 tam giác tái xuất). ĐỦ LÀ DỪNG: không cho quan hệ hai đáy thì dừng ở tổng, không bịa tách. Mở rộng: thang + tam giác 12 = bình hành 48."
    }
   ],
   "schedule": [

@@ -29,7 +29,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con tính nồng độ % (đường : cả bình) và lượng chất tan; mở mọi biến cố bằng CÂU HỎI VÀNG \"chất nào đứng im?\": thêm nước / cô cạn → ĐƯỜNG đứng im làm neo — nhưng bình phình / co nên NỒNG ĐỘ PHẢI TÍNH LẠI (thêm 100 g nước: 40/500 = 8%; cô cạn còn 250 g: 40/250 = 16%) — cấm giữ nguyên nhãn cũ.",
+  "text": "Con tính nồng độ % (đường : cả bình) và lượng chất tan; mở mọi biến cố bằng CÂU HỎI VÀNG \"chất nào đứng im?\": thêm nước / cô cạn → ĐƯỜNG đứng im làm neo — nhưng bình phình / co nên NỒNG ĐỘ PHẢI TÍNH LẠI (thêm 100 g nước: $\\frac{40}{500}$ = 8%; cô cạn còn 250 g: $\\frac{40}{250}$ = 16%) — cấm giữ nguyên nhãn cũ.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (bình phình — nồng độ tính lại)",
   "kidText": "Thêm nước hay cô cạn thì lượng đường đứng im, nhưng bình phình ra hay co lại nên nồng độ phải tính lại."
  },
@@ -37,7 +37,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Nồng độ = ĐƯỜNG : CẢ BÌNH (đọc sang %): bình 400 g loại 10% → đường 40 g; bình 500 g chứa 40 g đường → 40 : 500 = 8% — anh em ruột của máy tươi – khô B39."
+    "text": "Nồng độ = ĐƯỜNG : CẢ BÌNH (đọc sang %): bình 400 g loại 10% → đường 40 g; bình 500 g chứa 40 g đường → $40 : 500$ = 8% — anh em ruột của máy tươi – khô B39."
    },
    {
     "id": "K2",
@@ -45,7 +45,7 @@
    },
    {
     "id": "K3",
-    "text": "Đường đứng im NHƯNG bình đổi cỡ → nồng độ PHẢI tính lại trên bình mới: thêm 100 g nước: 40 : (400 + 100) = 8% (giảm); cô cạn còn 250 g: 40 : 250 = 16% (tăng) — cô cạn là thêm-nước chạy ngược."
+    "text": "Đường đứng im NHƯNG bình đổi cỡ → nồng độ PHẢI tính lại trên bình mới: thêm 100 g nước: 40 : ($400 + 100$) = 8% (giảm); cô cạn còn 250 g: $40 : 250$ = 16% (tăng) — cô cạn là thêm-nước chạy ngược."
    }
   ],
   "mechanism": "Hình ảnh brand: GIAN HÀNG NƯỚC ĐƯỜNG — NHÃN DÁN TRÊN BÌNH PHÌNH. Bình 400 g nước đường loại 10% — đường BỐN MƯƠI g. Pha thêm 100 g nước lọc. Trí Long khoát tay: \"chỉ thêm nước, có động vào đường đâu — nhãn vẫn 10%!\" Câu hỏi vàng: chất nào đứng im? ĐƯỜNG — bốn mươi g vẫn nguyên: đường cầm neo! Nhưng nồng độ là đường chia CẢ BÌNH — mẫu số đã PHÌNH từ 400 lên NĂM TRĂM g: bốn mươi chia năm trăm bằng TÁM phần trăm! Đường đứng im mà nhãn vẫn phải thay — vì bình phình. Cô cạn là thêm-nước chạy NGƯỢC: đun bay bớt nước còn 250 g — đường vẫn bốn mươi g nhưng bình CO lại: bốn mươi chia hai trăm năm mươi bằng MƯỜI SÁU phần trăm — nồng độ TĂNG! Một neo đường — hai chiều bình: phình thì loãng, co thì đậm.",
@@ -74,7 +74,7 @@
    {
     "wrong": "Chỉ thêm nước, không đụng đường — giữ nguyên nhãn 10% cho bình mới.",
     "signal": "Nồng độ không được tính lại sau biến cố; mẫu số cũ.",
-    "fix": "nồng độ = đường : CẢ BÌNH: mẫu đã phình 400 → 500 thì 40/500 = 8%; neo giữ ĐƯỜNG chứ không giữ NHÃN.",
+    "fix": "nồng độ = đường : CẢ BÌNH: mẫu đã phình 400 → 500 thì $\\frac{40}{500}$ = 8%; neo giữ ĐƯỜNG chứ không giữ NHÃN.",
     "counterExample": "Nếu vẫn 10% thì bình 500 g phải chứa 50 g đường — 10 g đường mới ở đâu ra khi chỉ đổ nước lọc?!"
    }
   ],
@@ -304,10 +304,10 @@
     }
    },
    {
-    "show": "Bước 2 — (a) Bình phình 500 g: 40 : 500 = 8% (loãng đi)."
+    "show": "Bước 2 — (a) Bình phình 500 g: $40 : 500$ = 8% (loãng đi)."
    },
    {
-    "show": "Bước 3 — (b) Bình co 250 g: 40 : 250 = 16% (đậm lên). Thử: 250 × 16% = 40 ✓.",
+    "show": "Bước 3 — (b) Bình co 250 g: $40 : 250$ = 16% (đậm lên). Thử: 250 × 16% = 40 ✓.",
     "askAfter": {
      "format": "mcq",
      "text": "Cô cạn bình nước đường thì nồng độ:",
@@ -409,7 +409,7 @@
       "Neo đường 40 g.",
       "Bình mới 500 g."
      ],
-     "solutionNarrative": "40 : 500 = 8%.",
+     "solutionNarrative": "$40 : 500$ = 8%.",
      "teaches": [
       "K3"
      ],
@@ -460,7 +460,7 @@
       "Đường : cả bình.",
       "Đọc sang %."
      ],
-     "solutionNarrative": "40 : 500 = 8%.",
+     "solutionNarrative": "$40 : 500$ = 8%.",
      "teaches": [
       "K1"
      ]

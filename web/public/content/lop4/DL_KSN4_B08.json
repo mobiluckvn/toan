@@ -20,7 +20,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Đếm số lượng số theo quy tắc nhân: mỗi hàng đếm số cách chọn, rồi nhân các cách với nhau. Giải thích vì sao có 900 số có ba chữ số (9 × 10 × 10) — khớp với phép đếm của Bài 7. Dùng phần bù để đếm \"số CÓ chứa chữ số 0\": lấy tất cả trừ số KHÔNG chứa.",
+  "text": "Đếm số lượng số theo quy tắc nhân: mỗi hàng đếm số cách chọn, rồi nhân các cách với nhau. Giải thích vì sao có 900 số có ba chữ số ($9  \\times  10  \\times  10$) — khớp với phép đếm của Bài 7. Dùng phần bù để đếm \"số CÓ chứa chữ số 0\": lấy tất cả trừ số KHÔNG chứa.",
   "kidText": "Mật khẩu ba chữ số, mỗi chữ số từ 1 đến 9. Có bao nhiêu mật khẩu như thế — đủ an toàn chưa nhỉ?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
@@ -29,19 +29,19 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — QUY TẮC NHÂN THEO HÀNG: vòng 1: 9 cách (1-9); vòng 2: 9 cách; vòng 3: 9 cách. Mỗi cách của vòng 1 ghép được với đủ 9 cách của vòng 2, rồi mỗi cặp lại ghép đủ 9 cách của vòng 3 → tổng: 9 × 9 × 9 = 729 mật khẩu. Không viết ra số nào mà đếm được tất cả!"
+    "text": "Bước 1 — QUY TẮC NHÂN THEO HÀNG: vòng 1: 9 cách (1-9); vòng 2: 9 cách; vòng 3: 9 cách. Mỗi cách của vòng 1 ghép được với đủ 9 cách của vòng 2, rồi mỗi cặp lại ghép đủ 9 cách của vòng 3 → tổng: $9  \\times  9  \\times  9 = 729$ mật khẩu. Không viết ra số nào mà đếm được tất cả!"
    },
    {
     "id": "K2",
-    "text": "Bước 2 — KIỂM CHỨNG BẰNG NGƯỜI QUEN: đếm mọi số có 3 chữ số (không kiêng gì): hàng trăm 9 cách (1-9, vì không đứng đầu bằng 0), hàng chục 10 cách, hàng đơn vị 10 cách → 9 × 10 × 10 = 900. Bài 7 từng đếm dãy 100...999 được 900 số — hai con đường, một đáp số: quy tắc nhân đã qua kiểm định!"
+    "text": "Bước 2 — KIỂM CHỨNG BẰNG NGƯỜI QUEN: đếm mọi số có 3 chữ số (không kiêng gì): hàng trăm 9 cách (1-9, vì không đứng đầu bằng 0), hàng chục 10 cách, hàng đơn vị 10 cách → $9  \\times  10  \\times  10 = 900$. Bài 7 từng đếm dãy 100...999 được 900 số — hai con đường, một đáp số: quy tắc nhân đã qua kiểm định!"
    },
    {
     "id": "K3",
-    "text": "Bước 3 — PHẦN BÙ, PHÉP ĐẾM NGƯỢC ĐỜI: \"có bao nhiêu số 3 chữ số CÓ chứa chữ số 0?\" — đếm thẳng thì rối vì số 0 có thể ở chục, ở đơn vị, ở cả hai. Đếm ngược: KHÔNG chứa 0 là 9 × 9 × 9 = 729 → CÓ chứa 0 = 900 − 729 = 171. Khẩu quyết: khó đếm cái CÓ, hãy đếm cái KHÔNG rồi trừ."
+    "text": "Bước 3 — PHẦN BÙ, PHÉP ĐẾM NGƯỢC ĐỜI: \"có bao nhiêu số 3 chữ số CÓ chứa chữ số 0?\" — đếm thẳng thì rối vì số 0 có thể ở chục, ở đơn vị, ở cả hai. Đếm ngược: KHÔNG chứa 0 là $9  \\times  9  \\times  9 = 729$ → CÓ chứa $0 = 900 - 729 = 171$. Khẩu quyết: khó đếm cái CÓ, hãy đếm cái KHÔNG rồi trừ."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — THÊM ĐIỀU KIỆN VÀO TỪNG HÀNG: mật khẩu không chứa 0 VÀ là số chẵn? Chỉ hàng đơn vị bị siết: phải thuộc {2, 4, 6, 8} — 4 cách. Kết quả: 9 × 9 × 4 = 324. Điều kiện rơi vào hàng nào, sửa số cách của ĐÚNG hàng ấy."
+    "text": "Bước 4 — THÊM ĐIỀU KIỆN VÀO TỪNG HÀNG: mật khẩu không chứa 0 VÀ là số chẵn? Chỉ hàng đơn vị bị siết: phải thuộc {2, 4, 6, 8} — 4 cách. Kết quả: $9  \\times  9  \\times  4 = 324$. Điều kiện rơi vào hàng nào, sửa số cách của ĐÚNG hàng ấy."
    }
   ],
   "mantra": "Cách đếm: kẻ một ô cho mỗi hàng, điền số cách chọn của hàng ấy (nhớ: hàng đầu không được là 0), rồi nhân dồn. Gặp chữ \"CÓ chứa\": nghĩ ngay phần bù. Gặp thêm điều kiện chẵn - lẻ: siết đúng hàng đơn vị. Và luôn kiểm chứng công cụ bằng một trường hợp đã biết đáp số!",
@@ -49,7 +49,7 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Được hỏi \"có bao nhiêu số ba chữ số?\", Trí Long tính ngay: \"Ba hàng, hàng nào cũng 10 chữ số 0-9, vậy là 10 × 10 × 10 = 1000 số!\"",
+    "wrong": "Được hỏi \"có bao nhiêu số ba chữ số?\", Trí Long tính ngay: \"Ba hàng, hàng nào cũng 10 chữ số 0-9, vậy là $10  \\times  10  \\times  10 = 1000$ số!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
     "fix": "Gợi ý 1: Viết thử một \"số\" mà hàng trăm bằng 0 — chẳng hạn 047. Nó có thật là số có BA chữ số không, hay chỉ là số 47 đội mũ? Gợi ý 2: Hàng nào bị cấm chữ số 0? Sửa số cách của đúng hàng ấy rồi tính lại — và đối chiếu với phép đếm dãy 100 đến 999 của Bài 7 để phân xử: 1000 hay 900 mới đúng?"
    }
@@ -111,7 +111,7 @@
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Được hỏi \"có bao nhiêu số ba chữ số?\", Trí Long tính ngay: \"Ba hàng, hàng nào cũng 10 chữ số 0-9, vậy là 10 × 10 × 10 = 1000 số!\"",
+    "narration": "Được hỏi \"có bao nhiêu số ba chữ số?\", Trí Long tính ngay: \"Ba hàng, hàng nào cũng 10 chữ số 0-9, vậy là $10  \\times  10  \\times  10 = 1000$ số!\"",
     "teaches": []
    }
   ]
@@ -154,7 +154,7 @@
     "show": "Ba hàng chọn độc lập với nhau nên số các số cần đếm là"
    },
    {
-    "show": "9 × 9 × 9 = 729 (số)"
+    "show": "$9  \\times  9  \\times  9 = 729$ (số)"
    },
    {
     "show": "Chữ \"độc lập\" là căn cứ cho phép NHÂN — thiếu nó phép nhân thành vô căn cứ."
@@ -166,7 +166,7 @@
     "show": "Đáp số kèm đơn vị \"số\"."
    },
    {
-    "show": "Thử lại: tất cả số 3 chữ số là 900; số có chứa 0 là 900 − 729 = 171 — cộng lại đủ 900 ✓"
+    "show": "Thử lại: tất cả số 3 chữ số là 900; số có chứa 0 là $900 - 729 = 171$ — cộng lại đủ 900 ✓"
    },
    {
     "show": "Soi bằng phần bù: hai mảnh phải ghép khít lại thành tổng."
@@ -182,7 +182,7 @@
      "answerKey": {
       "value": 90
      },
-     "solutionNarrative": "Hàng chục 9 cách (1-9), hàng đơn vị 10 cách → 9 × 10 = 90 số."
+     "solutionNarrative": "Hàng chục 9 cách (1-9), hàng đơn vị 10 cách → $9  \\times  10 = 90$ số."
     },
     {
      "id": "C2",
@@ -190,7 +190,7 @@
      "answerKey": {
       "value": 81
      },
-     "solutionNarrative": "9 × 9 = 81 số."
+     "solutionNarrative": "$9  \\times  9 = 81$ số."
     },
     {
      "id": "C3",
@@ -203,7 +203,7 @@
        }
       ]
      },
-     "solutionNarrative": "90 − 81 = 9 số; liệt kê: 10, 20, 30, 40, 50, 60, 70, 80, 90 — đúng 9 số ✓."
+     "solutionNarrative": "$90 - 81 = 9$ số; liệt kê: 10, 20, 30, 40, 50, 60, 70, 80, 90 — đúng 9 số ✓."
     }
    ],
    "standard": [
@@ -213,7 +213,7 @@
      "answerKey": {
       "value": 900
      },
-     "solutionNarrative": "Hàng trăm 9 cách (không được 0), hàng chục 10, hàng đơn vị 10 → 9 × 10 × 10 = 900 số."
+     "solutionNarrative": "Hàng trăm 9 cách (không được 0), hàng chục 10, hàng đơn vị 10 → $9  \\times  10  \\times  10 = 900$ số."
     },
     {
      "id": "C5",
@@ -226,7 +226,7 @@
        }
       ]
      },
-     "solutionNarrative": "9 × 9 × 9 = 729 lựa chọn."
+     "solutionNarrative": "$9  \\times  9  \\times  9 = 729$ lựa chọn."
     },
     {
      "id": "C6",
@@ -234,7 +234,7 @@
      "answerKey": {
       "value": 171
      },
-     "solutionNarrative": "Phần bù: 900 − 729 = 171 số."
+     "solutionNarrative": "Phần bù: $900 - 729 = 171$ số."
     },
     {
      "id": "C7",
@@ -242,7 +242,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "Hàng chục chọn trong 2, 4, 6, 8 (4 cách — số 0 không được đứng đầu!), hàng đơn vị chọn trong 0, 2, 4, 6, 8 (5 cách) → 4 × 5 = 20 số."
+     "solutionNarrative": "Hàng chục chọn trong 2, 4, 6, 8 (4 cách — số 0 không được đứng đầu!), hàng đơn vị chọn trong 0, 2, 4, 6, 8 (5 cách) → $4  \\times  5 = 20$ số."
     }
    ],
    "challenge": [
@@ -257,7 +257,7 @@
        }
       ]
      },
-     "solutionNarrative": "Mỗi hàng chọn trong 1, 3, 5, 7, 9 → 5 × 5 × 5 = 125 số."
+     "solutionNarrative": "Mỗi hàng chọn trong 1, 3, 5, 7, 9 → $5  \\times  5  \\times  5 = 125$ số."
     },
     {
      "id": "C9",
@@ -270,7 +270,7 @@
        }
       ]
      },
-     "solutionNarrative": "Chữ số 0 không đứng được hàng trăm. Trường hợp 0 ở hàng chục (đơn vị khác 0): 9 × 1 × 9 = 81; trường hợp 0 ở hàng đơn vị (chục khác 0): 9 × 9 × 1 = 81 → đúng một chữ số 0: 81 + 81 = 162 số. Kiểm chứng: có chứa 0 (171) = đúng một 0 (162) + hai chữ số 0 (100, 200, ..., 900: 9 số) ✓."
+     "solutionNarrative": "Chữ số 0 không đứng được hàng trăm. Trường hợp 0 ở hàng chục (đơn vị khác 0): $9  \\times  1  \\times  9 = 81$; trường hợp 0 ở hàng đơn vị (chục khác 0): $9  \\times  9  \\times  1 = 81$ → đúng một chữ số 0: $81 + 81 = 162$ số. Kiểm chứng: có chứa 0 (171) = đúng một 0 (162) + hai chữ số 0 (100, 200, ..., 900: 9 số) ✓."
     }
    ]
   }
@@ -294,7 +294,7 @@
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "9 × 9 = 81 số."
+    "solutionNarrative": "$9  \\times  9 = 81$ số."
    },
    {
     "id": "Q3",

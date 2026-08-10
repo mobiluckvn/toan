@@ -37,11 +37,11 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Ba vùng đánh trang: vùng 1 (trang 1–9): 9 trang × 1 chữ số = 9; vùng 2 (trang 10–99): 90 trang × 2 = 180; vùng 3 (trang 100 trở đi): mỗi trang 3 chữ số."
+    "text": "Ba vùng đánh trang: vùng 1 (trang 1–9): 9 trang × 1 chữ số = 9; vùng 2 (trang 10–99): 90 trang × $2 = 180$; vùng 3 (trang 100 trở đi): mỗi trang 3 chữ số."
    },
    {
     "id": "K2",
-    "text": "Hai mốc vàng phải thuộc: hết trang 9 — 9 chữ số; hết trang 99 — 9 + 180 = 189 chữ số."
+    "text": "Hai mốc vàng phải thuộc: hết trang 9 — 9 chữ số; hết trang 99 — $9 + 180 = 189$ chữ số."
    },
    {
     "id": "K3",
@@ -79,7 +79,7 @@
     "wrong": "Tính gộp 'trang 1–100 mỗi trang chừng 2 chữ số, vị chi 200'.",
     "signal": "Ước lượng tròn trịa, không chia vùng.",
     "fix": "kẻ bảng ba vùng trước khi tính, ghi rõ biên 1–9 \\ 10–99 \\ 100–…; trang 100 ngốn BA thẻ chứ không phải hai.",
-    "counterExample": "Đúng ra 1–100 dùng 9 + 180 + 3 = 192 chữ số, không phải 200."
+    "counterExample": "Đúng ra 1–100 dùng $9 + 180 + 3 = 192$ chữ số, không phải 200."
    }
   ],
   "vocabulary": [
@@ -313,7 +313,7 @@
   "problem": "Đánh số trang một cuốn sách dày 256 trang cần dùng bao nhiêu chữ số?",
   "steps": [
    {
-    "show": "Bước 1 — Hai khu đầu (mốc vàng): 9 + 180 = 189 chữ số cho trang 1–99.",
+    "show": "Bước 1 — Hai khu đầu (mốc vàng): $9 + 180 = 189$ chữ số cho trang 1–99.",
     "askBefore": {
      "format": "num",
      "text": "Hết trang 99 dùng bao nhiêu chữ số?",
@@ -324,10 +324,10 @@
     }
    },
    {
-    "show": "Bước 2 — Khu ba: từ trang 100 đến 256 có 256 − 99 = 157 trang, mỗi trang 3 chữ số → 471."
+    "show": "Bước 2 — Khu ba: từ trang 100 đến 256 có $256 - 99 = 157$ trang, mỗi trang 3 chữ số → 471."
    },
    {
-    "show": "Bước 3 — Tổng: 189 + 471 = 660 chữ số.",
+    "show": "Bước 3 — Tổng: $189 + 471 = 660$ chữ số.",
     "askAfter": {
      "format": "num",
      "text": "Bây giờ đến lượt cuốn sách dày 175 trang: đánh số trang cần dùng bao nhiêu chữ số?",
@@ -359,7 +359,7 @@
       "Hai khu: 9 × 1 và 90 × 2.",
       "9 + 180."
      ],
-     "solutionNarrative": "9 + 90 × 2 = 189 chữ số.",
+     "solutionNarrative": "$9 + 90  \\times  2 = 189$ chữ số.",
      "teaches": [
       "K1",
       "K2"
@@ -377,7 +377,7 @@
       "Mốc vàng 189 rồi cộng khu ba.",
       "Khu ba: 120 − 99 = 21 trang × 3."
      ],
-     "solutionNarrative": "189 + 21 × 3 = 252 chữ số.",
+     "solutionNarrative": "$189 + 21  \\times  3 = 252$ chữ số.",
      "teaches": [
       "K3"
      ],
@@ -403,7 +403,7 @@
       "Khu ba: 175 − 99 = 76 trang.",
       "189 + 76 × 3."
      ],
-     "solutionNarrative": "189 + 76 × 3 = 417 chữ số.",
+     "solutionNarrative": "$189 + 76  \\times  3 = 417$ chữ số.",
      "teaches": [
       "K3"
      ]
@@ -420,7 +420,7 @@
       "157 trang khu ba.",
       "189 + 471."
      ],
-     "solutionNarrative": "189 + 157 × 3 = 660 chữ số.",
+     "solutionNarrative": "$189 + 157  \\times  3 = 660$ chữ số.",
      "teaches": [
       "K3"
      ]
@@ -430,7 +430,7 @@
     {
      "id": "P5",
      "format": "tf",
-     "text": "(Đúng/Sai?) Đánh trang từ 1 đến 100 dùng 9 + 90 × 2 + 1 × 2 = 191 chữ số.",
+     "text": "(Đúng/Sai?) Đánh trang từ 1 đến 100 dùng $9 + 90  \\times  2 + 1  \\times  2 = 191$ chữ số.",
      "answerKey": {
       "value": false,
       "note": "Trang 100 dùng BA chữ số: 189 + 3 = 192."

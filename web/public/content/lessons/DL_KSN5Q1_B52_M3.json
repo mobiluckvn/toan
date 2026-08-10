@@ -27,7 +27,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con đếm khối sơn 3-2-1-0 mặt của khối n × n × n sơn kín ngoài rồi xẻ nhỏ theo BẢN ĐỒ VỊ TRÍ: ĐỈNH → 3 mặt (luôn 8); CẠNH → 2 mặt (12 × (n − 2)); MẶT → 1 mặt (6 × (n − 2)²); LÕI → 0 mặt ((n − 2)³) — và SOI TỔNG bằng n³ để tự chấm (3³: 8 + 12 + 6 + 1 = 27 ✓; 4³: 8 + 24 + 24 + 8 = 64 ✓); giải ngược từ số-khối-2-mặt về n.",
+  "text": "Con đếm khối sơn 3-2-1-0 mặt của khối n × n × n sơn kín ngoài rồi xẻ nhỏ theo BẢN ĐỒ VỊ TRÍ: ĐỈNH → 3 mặt (luôn 8); CẠNH → 2 mặt (12 × (n − 2)); MẶT → 1 mặt (6 × (n − 2)²); LÕI → 0 mặt ((n − 2)³) — và SOI TỔNG bằng n³ để tự chấm (3³: $8 + 12 + 6 + 1 = 27$ ✓; 4³: $8 + 24 + 24 + 8 = 64$ ✓); giải ngược từ số-khối-2-mặt về n.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (khối 3 mặt luôn là 8)",
   "kidText": "Khối lập phương sơn ngoài rồi xẻ nhỏ: đỉnh 3 mặt, cạnh 2 mặt, mặt 1 mặt, lõi 0 mặt. Cộng lại phải đúng bằng n nhân n nhân n."
  },
@@ -43,24 +43,24 @@
    },
    {
     "id": "K3",
-    "text": "Nghi thức SOI TỔNG tự chấm: bốn loại cộng lại phải bằng n³: 3³: 8 + 12 + 6 + 1 = 27 ✓; 4³: 8 + 24 + 24 + 8 = 64 ✓ — lệch một khối là đếm sót."
+    "text": "Nghi thức SOI TỔNG tự chấm: bốn loại cộng lại phải bằng n³: 3³: $8 + 12 + 6 + 1 = 27$ ✓; 4³: $8 + 24 + 24 + 8 = 64$ ✓ — lệch một khối là đếm sót."
    },
    {
     "id": "K4",
-    "text": "Giải ngược của sư phụ: đúng 24 khối 2-mặt → 12 × (n − 2) = 24 → n − 2 = 2 → n = 4 → tra bản đồ: 8 - 24 - 24 - 8 (soi 64 ✓)."
+    "text": "Giải ngược của sư phụ: đúng 24 khối 2-mặt → 12 × (n − 2) = 24 → n − $2 = 2$ → n = 4 → tra bản đồ: $8 - 24 - 24 - 8$ (soi 64 ✓)."
    }
   ],
   "mechanism": "Hình ảnh brand: BẢN ĐỒ CHỖ NGỒI TRONG RẠP SƠN. Khối lập phương ba-nhân-ba-nhân-ba sơn kín ngoài rồi xẻ thành hai mươi bảy khối nhỏ — sơn dính theo CHỖ NGỒI trong rạp! Ghế ĐỈNH — góc phòng phơi BA mặt: hình hộp nào cũng đúng TÁM đỉnh — luôn TÁM khối ba-mặt, bất kể n! Ghế CẠNH — gờ tường phơi HAI mặt: mười hai cạnh, mỗi cạnh trừ hai đầu đỉnh còn n-trừ-hai khối: ba-trừ-hai bằng một — MƯỜI HAI khối hai-mặt! Ghế MẶT — giữa tường phơi MỘT mặt: sáu mặt nhân n-trừ-hai bình phương — SÁU khối! Ghế LÕI — kín mít KHÔNG mặt: củ hành bóc vỏ còn lõi n-trừ-hai lập phương — MỘT khối! Nghi thức SOI TỔNG tự chấm: tám cộng mười hai cộng sáu cộng một — HAI MƯƠI BẢY: khớp n lập phương! Khối bốn: tám — hai tư — hai tư — tám: SOI sáu tư khớp! Sư phụ đố ngược: đúng hai mươi bốn khối hai-mặt — mười hai nhân n-trừ-hai bằng hai tư: n bằng BỐN!",
   "canonicalExamples": [
    {
     "case": "khối 3³ (ca bản đồ)",
-    "problem": "Khối lập phương 3 × 3 × 3 sơn kín ngoài rồi xẻ thành 27 khối nhỏ. Đếm số khối có 3 mặt, 2 mặt, 1 mặt, 0 mặt sơn.",
+    "problem": "Khối lập phương $3  \\times  3  \\times  3$ sơn kín ngoài rồi xẻ thành 27 khối nhỏ. Đếm số khối có 3 mặt, 2 mặt, 1 mặt, 0 mặt sơn.",
     "solution": "Đỉnh 8; cạnh 12 × 1 = 12; mặt 6 × 1 = 6; lõi 1. Soi: 8 + 12 + 6 + 1 = 27 ✓.",
     "why": "Ca LT7 — bốn loại ghế."
    },
    {
     "case": "khối 4³ (ca trùm đề A)",
-    "problem": "Khối lập phương 4 × 4 × 4 sơn kín ngoài rồi xẻ thành 64 khối nhỏ. Đếm đủ bốn loại 3 - 2 - 1 - 0 mặt.",
+    "problem": "Khối lập phương $4  \\times  4  \\times  4$ sơn kín ngoài rồi xẻ thành 64 khối nhỏ. Đếm đủ bốn loại $3 - 2 - 1 - 0$ mặt.",
     "solution": "8; 12 × 2 = 24; 6 × 4 = 24; 2³ = 8. Soi: 8 + 24 + 24 + 8 = 64 ✓.",
     "why": "Ca đề A câu 15 TRÙM — soi tổng tự chấm."
    },
@@ -94,7 +94,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "Ôn M1: 4 × 4 × 4 = ?",
+    "text": "Ôn M1: $4  \\times  4  \\times  4$ = ?",
     "answerKey": {
      "value": 64
     }
@@ -112,7 +112,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Khối lập phương 3 × 3 × 3 sơn kín ngoài rồi xẻ thành 27 khối nhỏ. Đếm số khối có 3 mặt, 2 mặt, 1 mặt, 0 mặt sơn.",
+    "narration": "Khối lập phương $3  \\times  3  \\times  3$ sơn kín ngoài rồi xẻ thành 27 khối nhỏ. Đếm số khối có 3 mặt, 2 mặt, 1 mặt, 0 mặt sơn.",
     "display": {
      "type": "story_panel",
      "caption": "bốc 27 khối đếm tay??"
@@ -291,10 +291,10 @@
  },
  "workedExample": {
   "title": "Tra bản đồ — soi tổng",
-  "problem": "Khối lập phương 4 × 4 × 4 sơn kín ngoài rồi xẻ thành 64 khối nhỏ. Đếm đủ bốn loại 3 - 2 - 1 - 0 mặt sơn.",
+  "problem": "Khối lập phương $4  \\times  4  \\times  4$ sơn kín ngoài rồi xẻ thành 64 khối nhỏ. Đếm đủ bốn loại $3 - 2 - 1 - 0$ mặt sơn.",
   "steps": [
    {
-    "show": "Bước 1 — Ghế đỉnh: 8 khối 3-mặt (mọi n!); ghế cạnh: 12 × (4 − 2) = 24 khối 2-mặt.",
+    "show": "Bước 1 — Ghế đỉnh: 8 khối 3-mặt (mọi n!); ghế cạnh: 12 × ($4 - 2$) = 24 khối 2-mặt.",
     "askBefore": {
      "format": "mcq",
      "text": "Số khối 3-mặt của khối 100³ là:",
@@ -313,7 +313,7 @@
     "show": "Bước 2 — Ghế mặt: 6 × 2² = 24 khối 1-mặt; lõi: 2³ = 8 khối 0-mặt."
    },
    {
-    "show": "Bước 3 — Soi tổng: 8 + 24 + 24 + 8 = 64 ✓ tự chấm.",
+    "show": "Bước 3 — Soi tổng: $8 + 24 + 24 + 8 = 64$ ✓ tự chấm.",
     "askAfter": {
      "format": "num",
      "text": "12(n − 2) = 24 → n = ?",
@@ -337,7 +337,7 @@
      "id": "P1",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B52.LT7",
-     "text": "Khối lập phương 3 × 3 × 3 sơn kín ngoài rồi xẻ thành 27 khối nhỏ. Đếm số khối có 3 mặt, 2 mặt, 1 mặt, 0 mặt sơn — và soi tổng.",
+     "text": "Khối lập phương $3  \\times  3  \\times  3$ sơn kín ngoài rồi xẻ thành 27 khối nhỏ. Đếm số khối có 3 mặt, 2 mặt, 1 mặt, 0 mặt sơn — và soi tổng.",
      "answerKey": {
       "parts": [
        {
@@ -362,7 +362,7 @@
       "Bốn loại ghế.",
       "Soi: cộng = 27?"
      ],
-     "solutionNarrative": "8 - 12 - 6 - 1 (Σ 27 ✓).",
+     "solutionNarrative": "$8 - 12 - 6 - 1$ (Σ 27 ✓).",
      "teaches": [
       "K1",
       "K2",
@@ -375,7 +375,7 @@
      "id": "P2",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B52.LT8",
-     "text": "Khối lập phương 4 × 4 × 4 sơn kín ngoài rồi xẻ thành 64 khối nhỏ. Đếm đủ bốn loại 3 - 2 - 1 - 0 mặt sơn — và soi tổng.",
+     "text": "Khối lập phương $4  \\times  4  \\times  4$ sơn kín ngoài rồi xẻ thành 64 khối nhỏ. Đếm đủ bốn loại $3 - 2 - 1 - 0$ mặt sơn — và soi tổng.",
      "answerKey": {
       "parts": [
        {
@@ -400,7 +400,7 @@
       "12 × 2; 6 × 4; 2³.",
       "Soi 64."
      ],
-     "solutionNarrative": "8 - 24 - 24 - 8 (Σ 64 ✓).",
+     "solutionNarrative": "$8 - 24 - 24 - 8$ (Σ 64 ✓).",
      "teaches": [
       "K2",
       "K3"
@@ -540,7 +540,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con khép chương 13 với khối sơn 3-2-1-0 mặt: bản đồ đỉnh-cạnh-mặt-lõi và nghi thức soi tổng n³. Con đạt {score}/3. Con đã đủ điều kiện vào KỲ SÁT HẠCH CHƯƠNG 13!",
-  "homeActivity": "Xếp rubik hay 27 viên xúc xắc thành khối 3×3×3: con chỉ tay bốn loại ghế — góc, gờ, giữa mặt, lõi.",
+  "homeActivity": "Xếp rubik hay 27 viên xúc xắc thành khối $3 \\times 3 \\times 3$: con chỉ tay bốn loại ghế — góc, gờ, giữa mặt, lõi.",
   "watchFor": "Nếu con nghĩ khối 3-mặt tăng theo n — hỏi 'căn phòng có mấy góc?' (S2)."
  },
  "$schema": "digital-lesson/v2-micro",

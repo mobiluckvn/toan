@@ -38,11 +38,11 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Mẫu cách nhau d, tử BẰNG d: tách thẳng — d/(n × (n + d)) = 1/n − 1/(n + d). Ví dụ 2/(1×3) = 1 − 1/3 (kiểm quy đồng: 1 − 1/3 = 2/3 ✓)."
+    "text": "Mẫu cách nhau d, tử BẰNG d: tách thẳng — d/(n × (n + d)) = 1/n − 1/(n + d). Ví dụ $\\frac{2}{1 \\times 3}$ = 1 − $\\frac{1}{3}$ (kiểm quy đồng: 1 − $\\frac{1}{3}$ = $\\frac{2}{3}$ ✓)."
    },
    {
     "id": "K2",
-    "text": "Tử KHÁC khoảng cách: nhân HỆ SỐ ĐIỀU CHỈNH = tử : khoảng cách. Ví dụ tử 1, khoảng 2: 1/(1×3) = (1 − 1/3) × 1/2 — vì 1 − 1/3 = 2/3 gấp ĐÔI 1/3."
+    "text": "Tử KHÁC khoảng cách: nhân HỆ SỐ ĐIỀU CHỈNH = tử : khoảng cách. Ví dụ tử 1, khoảng 2: $\\frac{1}{1 \\times 3}$ = (1 − $\\frac{1}{3}$) × $\\frac{1}{2}$ — vì 1 − $\\frac{1}{3}$ = 2/3 gấp ĐÔI 1/3."
    },
    {
     "id": "K3",
@@ -57,19 +57,19 @@
   "canonicalExamples": [
    {
     "case": "tử = khoảng cách (ca tách thẳng)",
-    "problem": "Tính: 2/(1×3) + 2/(3×5) + 2/(5×7) + 2/(7×9).",
+    "problem": "Tính: $\\frac{2}{1 \\times 3}$ + $\\frac{2}{3 \\times 5}$ + $\\frac{2}{5 \\times 7}$ + $\\frac{2}{7 \\times 9}$.",
     "solution": "Tử 2 = khoảng cách 2 → tách thẳng: (1 − 1/3) + (1/3 − 1/5) + … = 1 − 1/9 = 8/9.",
     "why": "đề A câu 7."
    },
    {
     "case": "tử ≠ khoảng cách (ca hệ số)",
-    "problem": "Tính: 1/(1×3) + 1/(3×5) + 1/(5×7) + 1/(7×9).",
+    "problem": "Tính: $\\frac{1}{1 \\times 3}$ + $\\frac{1}{3 \\times 5}$ + $\\frac{1}{5 \\times 7}$ + $\\frac{1}{7 \\times 9}$.",
     "solution": "Tử 1, khoảng cách 2 → hệ số 1/2: [(1 − 1/3) + … + (1/7 − 1/9)] × 1/2 = (1 − 1/9) × 1/2 = 8/9 × 1/2 = 4/9.",
     "why": "Ca đinh bẫy CĐ-14.2 — đề A câu 6."
    },
    {
     "case": "khoảng cách 3 + sư phụ chẵn (ca mở rộng)",
-    "problem": "Tính: 3/(1×4) + 3/(4×7) + 3/(7×10) + 3/(10×13). Và bài sư phụ: 1/(2×4) + 1/(4×6) + … + 1/(18×20).",
+    "problem": "Tính: $\\frac{3}{1 \\times 4}$ + $\\frac{3}{4 \\times 7}$ + $\\frac{3}{7 \\times 10}$ + $\\frac{3}{10 \\times 13}$. Và bài sư phụ: $\\frac{1}{2 \\times 4}$ + $\\frac{1}{4 \\times 6}$ + … + $\\frac{1}{18 \\times 20}$.",
     "solution": "Bài 1: tử 3 = khoảng 3 → tách thẳng: 1 − 1/13 = 12/13. Bài sư phụ: tử 1, khoảng 2 → hệ số 1/2: (1/2 − 1/20) × 1/2 = 9/20 × 1/2 = 9/40.",
     "why": "Đổi khoảng cách và dãy bắt đầu từ 1/2 — kỹ thuật giữ nguyên."
    }
@@ -77,10 +77,10 @@
   "numberRange": "Lớp 5: khoảng cách 2, 3; tử 1–3; dãy ≤ 10 quân.",
   "misconceptions": [
    {
-    "wrong": "Quen tay với 2/(1×3) = 1 − 1/3, gặp dãy 1/(1×3) cũng tách y hệt (bỏ hệ số).",
-    "signal": "Đáp gấp ĐÔI đáp đúng (8/9 thay vì 4/9).",
-    "fix": "đối chiếu tử với khoảng cách TRƯỚC; tách một quân thử quy đồng: 1 − 1/3 = 2/3 ≠ 1/3 → phải đeo hệ số 1/2.",
-    "counterExample": "Thử quân đầu: 1/(1×3) = 1/3, mà tách thẳng cho 2/3 — gấp đôi, lộ ngay."
+    "wrong": "Quen tay với $\\frac{2}{1 \\times 3}$ = $1 - 1$/3, gặp dãy $\\frac{1}{1 \\times 3}$ cũng tách y hệt (bỏ hệ số).",
+    "signal": "Đáp gấp ĐÔI đáp đúng (8/9 thay vì $\\frac{4}{9}$).",
+    "fix": "đối chiếu tử với khoảng cách TRƯỚC; tách một quân thử quy đồng: 1 − $\\frac{1}{3}$ = $\\frac{2}{3}$ ≠ $\\frac{1}{3}$ → phải đeo hệ số 1/2.",
+    "counterExample": "Thử quân đầu: $\\frac{1}{1 \\times 3}$ = 1/3, mà tách thẳng cho $\\frac{2}{3}$ — gấp đôi, lộ ngay."
    }
   ],
   "vocabulary": [
@@ -96,7 +96,7 @@
    {
     "id": "E1",
     "format": "mcq",
-    "text": "1/(2×3) tách thành gì? (bài trước)",
+    "text": "$\\frac{1}{2 \\times 3}$ tách thành gì? (bài trước)",
     "choices": [
      "1/2 − 1/3",
      "1/2 + 1/3",
@@ -119,10 +119,10 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Tính: 2/(1×3) + 2/(3×5) + 2/(5×7) + 2/(7×9).",
+    "narration": "Tính: $\\frac{2}{1 \\times 3}$ + $\\frac{2}{3 \\times 5}$ + $\\frac{2}{5 \\times 7}$ + $\\frac{2}{7 \\times 9}$.",
     "display": {
      "type": "story_panel",
-     "caption": "1/(1×3) = 1 − 1/3??"
+     "caption": "$\\frac{1}{1 \\times 3}$ = 1 − $\\frac{1}{3}$??"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -138,7 +138,7 @@
      "K2",
      "K3"
     ],
-    "narration": "Lên cân: quân cỡ đại 2/(1×3) — tử HAI khớp khoảng cách HAI — nặng đúng 1 − 1/3 = 2/3: tách thẳng hợp lệ! Còn quân 1/(1×3) chỉ nặng 1/3 — đúng MỘT NỬA: muốn tách phải đeo hệ số tử-chia-khoảng-cách: một phần hai! Cả dãy thành (1 − 1/9) × 1/2 = 8/9 × 1/2 = BỐN PHẦN CHÍN. Luật xưởng: tách MỘT quân — THỬ quy đồng — rồi mới đẩy cả hàng!",
+    "narration": "Lên cân: quân cỡ đại $\\frac{2}{1 \\times 3}$ — tử HAI khớp khoảng cách HAI — nặng đúng 1 − $\\frac{1}{3}$ = $\\frac{2}{3}$: tách thẳng hợp lệ! Còn quân $\\frac{1}{1 \\times 3}$ chỉ nặng $\\frac{1}{3}$ — đúng MỘT NỬA: muốn tách phải đeo hệ số tử-chia-khoảng-cách: một phần hai! Cả dãy thành (1 − $\\frac{1}{9}$) × $\\frac{1}{2}$ = $\\frac{8}{9}$ × $\\frac{1}{2}$ = BỐN PHẦN CHÍN. Luật xưởng: tách MỘT quân — THỬ quy đồng — rồi mới đẩy cả hàng!",
     "display": {
      "type": "scale_check_interactive",
      "spec": {
@@ -194,7 +194,7 @@
      "K1",
      "K4"
     ],
-    "narration": "Đổi khoảng cách vẫn một luật. Dãy 3/(1×4) + 3/(4×7) + …: tử BA khớp khoảng BA — tách thẳng: 1 − 1/13 = 12/13. Bài sư phụ 1/(2×4) + … + 1/(18×20): tử 1, khoảng 2 — đeo hệ số 1/2, sập từ 1/2: (1/2 − 1/20) × 1/2 = 9/20 × 1/2 = CHÍN PHẦN BỐN MƯƠI. Giữ hệ số ngoài ngoặc tới phút chót rồi mới dọn!",
+    "narration": "Đổi khoảng cách vẫn một luật. Dãy $\\frac{3}{1 \\times 4}$ + $\\frac{3}{4 \\times 7}$ + …: tử BA khớp khoảng BA — tách thẳng: 1 − $\\frac{1}{13}$ = 12/13. Bài sư phụ $\\frac{1}{2 \\times 4}$ + … + $\\frac{1}{18 \\times 20}$: tử 1, khoảng 2 — đeo hệ số 1/2, sập từ $\\frac{1}{2}$: ($\\frac{1}{2}$ − $\\frac{1}{20}$) × $\\frac{1}{2}$ = $\\frac{9}{20}$ × $\\frac{1}{2}$ = CHÍN PHẦN BỐN MƯƠI. Giữ hệ số ngoài ngoặc tới phút chót rồi mới dọn!",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -301,10 +301,10 @@
  },
  "workedExample": {
   "title": "Cân quân rồi mới đẩy",
-  "problem": "Tính: 1/(1×3) + 1/(3×5) + 1/(5×7) + 1/(7×9).",
+  "problem": "Tính: $\\frac{1}{1 \\times 3}$ + $\\frac{1}{3 \\times 5}$ + $\\frac{1}{5 \\times 7}$ + $\\frac{1}{7 \\times 9}$.",
   "steps": [
    {
-    "show": "Bước 1 — Đối chiếu: tử 1, khoảng cách 2 → KHÁC nhau → hệ số 1 : 2 = 1/2.",
+    "show": "Bước 1 — Đối chiếu: tử 1, khoảng cách 2 → KHÁC nhau → hệ số $1 : 2 = 1$/2.",
     "askBefore": {
      "format": "mcq",
      "text": "Tách thẳng được không?",
@@ -320,13 +320,13 @@
     }
    },
    {
-    "show": "Bước 2 — Thử một quân: 1 − 1/3 = 2/3 gấp đôi 1/3 → xác nhận cần × 1/2."
+    "show": "Bước 2 — Thử một quân: 1 − $\\frac{1}{3}$ = 2/3 gấp đôi $\\frac{1}{3}$ → xác nhận cần × 1/2."
    },
    {
-    "show": "Bước 3 — Đẩy cả hàng: (1 − 1/9) × 1/2 = 8/9 × 1/2 = 4/9 (dọn ✓).",
+    "show": "Bước 3 — Đẩy cả hàng: (1 − $\\frac{1}{9}$) × $\\frac{1}{2}$ = $\\frac{8}{9}$ × $\\frac{1}{2}$ = $\\frac{4}{9}$ (dọn ✓).",
     "askAfter": {
      "format": "mb",
-     "text": "Dãy 2/(1×3) + … + 2/(7×9) (tử 2): đáp?",
+     "text": "Dãy $\\frac{2}{1 \\times 3}$ + … + $\\frac{2}{7 \\times 9}$ (tử 2): đáp?",
      "answerKey": {
       "parts": [
        {
@@ -352,7 +352,7 @@
      "id": "P1",
      "format": "tf",
      "sourceItem": "ITEM:KSN5Q1.B14.LT2",
-     "text": "Kiểm tra bằng quy đồng: 2/(3×5) = 1/3 − 1/5. Đúng không?",
+     "text": "Kiểm tra bằng quy đồng: $\\frac{2}{3 \\times 5}$ = $\\frac{1}{3}$ − 1/5. Đúng không?",
      "answerKey": {
       "value": true,
       "note": "1/3 − 1/5 = 5/15 − 3/15 = 2/15 ✓"
@@ -361,7 +361,7 @@
       "Quy đồng mẫu 15.",
       "Tử 2 = khoảng cách 2."
      ],
-     "solutionNarrative": "5/15 − 3/15 = 2/15 = 2/(3×5) ✓ — tách thẳng hợp lệ.",
+     "solutionNarrative": "$\\frac{5}{15}$ − $\\frac{3}{15}$ = $\\frac{2}{15}$ = $\\frac{2}{3 \\times 5}$ ✓ — tách thẳng hợp lệ.",
      "teaches": [
       "K1",
       "K3"
@@ -371,7 +371,7 @@
      "id": "P2",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B14.LT5",
-     "text": "Tính: 2/(1×3) + 2/(3×5) + 2/(5×7) + 2/(7×9).",
+     "text": "Tính: $\\frac{2}{1 \\times 3}$ + $\\frac{2}{3 \\times 5}$ + $\\frac{2}{5 \\times 7}$ + $\\frac{2}{7 \\times 9}$.",
      "answerKey": {
       "parts": [
        {
@@ -384,7 +384,7 @@
       "Tử 2 = khoảng 2 → tách thẳng.",
       "1 − 1/9."
      ],
-     "solutionNarrative": "Tách thẳng, sập: 1 − 1/9 = 8/9.",
+     "solutionNarrative": "Tách thẳng, sập: 1 − $\\frac{1}{9}$ = 8/9.",
      "teaches": [
       "K1"
      ],
@@ -402,7 +402,7 @@
      "id": "P3",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B14.LT6",
-     "text": "Tính: 1/(1×3) + 1/(3×5) + 1/(5×7) + 1/(7×9). (Đối chiếu tử với khoảng cách trước khi tách!)",
+     "text": "Tính: $\\frac{1}{1 \\times 3}$ + $\\frac{1}{3 \\times 5}$ + $\\frac{1}{5 \\times 7}$ + $\\frac{1}{7 \\times 9}$. (Đối chiếu tử với khoảng cách trước khi tách!)",
      "answerKey": {
       "parts": [
        {
@@ -419,7 +419,7 @@
       "Tử 1, khoảng 2 — khác nhau!",
       "(1 − 1/9) × 1/2."
      ],
-     "solutionNarrative": "Hệ số 1/2: 8/9 × 1/2 = 4/9.",
+     "solutionNarrative": "Hệ số $\\frac{1}{2}$: $\\frac{8}{9}$ × $\\frac{1}{2}$ = 4/9.",
      "teaches": [
       "K2",
       "K3"
@@ -429,7 +429,7 @@
      "id": "P4",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B14.LT8",
-     "text": "Tính: 3/(1×4) + 3/(4×7) + 3/(7×10) + 3/(10×13).",
+     "text": "Tính: $\\frac{3}{1 \\times 4}$ + $\\frac{3}{4 \\times 7}$ + $\\frac{3}{7 \\times 10}$ + $\\frac{3}{10 \\times 13}$.",
      "answerKey": {
       "parts": [
        {
@@ -442,7 +442,7 @@
       "Tử 3 so với khoảng cách?",
       "Tách thẳng: 1 − 1/13."
      ],
-     "solutionNarrative": "Tử 3 = khoảng 3: 1 − 1/13 = 12/13.",
+     "solutionNarrative": "Tử 3 = khoảng 3: 1 − $\\frac{1}{13}$ = 12/13.",
      "teaches": [
       "K1"
      ]
@@ -453,7 +453,7 @@
      "id": "P5",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B14.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Tính trong 90 giây: 1/(2×4) + 1/(4×6) + 1/(6×8) + … + 1/(18×20).\"",
+     "text": "Sư phụ Trí Dũng đố: \"Tính trong 90 giây: $\\frac{1}{2 \\times 4}$ + $\\frac{1}{4 \\times 6}$ + $\\frac{1}{6 \\times 8}$ + … + $\\frac{1}{18 \\times 20}$.\"",
      "answerKey": {
       "parts": [
        {
@@ -470,7 +470,7 @@
       "Tử 1, khoảng 2 → × 1/2; dãy sập từ 1/2.",
       "(1/2 − 1/20) × 1/2."
      ],
-     "solutionNarrative": "(1/2 − 1/20) × 1/2 = 9/20 × 1/2 = 9/40.",
+     "solutionNarrative": "($\\frac{1}{2}$ − $\\frac{1}{20}$) × $\\frac{1}{2}$ = $\\frac{9}{20}$ × $\\frac{1}{2}$ = 9/40.",
      "teaches": [
       "K2",
       "K4"
@@ -501,7 +501,7 @@
     "id": "A1",
     "format": "tf",
     "sourceItem": "ITEM:KSN5Q1.B14.QZ2",
-    "text": "(Đúng/Sai?) 1/(1×3) = 1 − 1/3.",
+    "text": "(Đúng/Sai?) $\\frac{1}{1 \\times 3}$ = $1 - 1$/3.",
     "answerKey": {
      "value": false
     },
@@ -531,7 +531,7 @@
    {
     "id": "A3",
     "format": "mb",
-    "text": "Tính: 2/(3×5) + 2/(5×7) + 2/(7×9).",
+    "text": "Tính: $\\frac{2}{3 \\times 5}$ + $\\frac{2}{5 \\times 7}$ + $\\frac{2}{7 \\times 9}$.",
     "answerKey": {
      "parts": [
       {
@@ -551,7 +551,7 @@
   "flashcards": [
    {
     "front": "Dãy domino mẫu cách nhau d — khi nào tách thẳng, khi nào nhân hệ số?",
-    "back": "Đối chiếu TỬ với KHOẢNG CÁCH: bằng nhau → tách thẳng (2/(1×3) = 1 − 1/3); khác nhau → × hệ số (tử : khoảng): 1/(1×3) = (1 − 1/3) × 1/2. Luật xưởng: TÁCH MỘT QUÂN, THỬ MỘT QUÂN rồi mới đẩy cả hàng!"
+    "back": "Đối chiếu TỬ với KHOẢNG CÁCH: bằng nhau → tách thẳng ($\\frac{2}{1 \\times 3}$ = 1 − $\\frac{1}{3}$); khác nhau → × hệ số (tử : khoảng): $\\frac{1}{1 \\times 3}$ = (1 − $\\frac{1}{3}$) × 1/2. Luật xưởng: TÁCH MỘT QUÂN, THỬ MỘT QUÂN rồi mới đẩy cả hàng!"
    }
   ],
   "schedule": [
@@ -562,7 +562,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con học cân quân domino: tử bằng khoảng cách tách thẳng, khác thì nhân hệ số tử-chia-khoảng. Con đạt {score}/3, {trapResult} câu bẫy quen-tay.",
-  "homeActivity": "Đố miệng: 'dãy 1/(1×3)… tách thẳng được không?' — con phải nói 'không — thử một quân: 1 − 1/3 = 2/3 gấp đôi' là đạt.",
+  "homeActivity": "Đố miệng: 'dãy $\\frac{1}{1 \\times 3}$… tách thẳng được không?' — con phải nói 'không — thử một quân: 1 − $\\frac{1}{3}$ = 2/3 gấp đôi' là đạt.",
   "watchFor": "Nếu con tách bừa theo quán tính — bắt con cân quân đầu bằng quy đồng (S2) trước khi làm tiếp."
  },
  "$schema": "digital-lesson/v2-micro",

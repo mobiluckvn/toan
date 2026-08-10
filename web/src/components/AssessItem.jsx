@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Chu from './Chu.jsx';
 import AnswerInput from './AnswerInput.jsx';
 
 /** Sát hạch: không gợi ý, không làm lại — trả lời một lần rồi đi tiếp */
@@ -17,7 +18,7 @@ export default function AssessItem({ item, index, total, onDone, onNext, isLast 
       <div className="card">
         <div className="kicker">SÁT HẠCH · CÂU {index}/{total}</div>
         {item.mustPass && <span className="pill bg-alert text-white">CÂU BẮT BUỘC ĐÚNG</span>}
-        <p className="mt-2 text-[17px] font-semibold leading-snug">{item.text}</p>
+        <p className="mt-2 text-[17px] font-semibold leading-snug"><Chu t={item.text} /></p>
         <AnswerInput item={item} onResolve={resolve} submitLabel="Nộp câu này" />
       </div>
 

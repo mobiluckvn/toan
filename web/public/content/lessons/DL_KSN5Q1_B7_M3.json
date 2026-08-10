@@ -77,13 +77,13 @@
   "numberRange": "Lớp 5: đoạn 1–200; cặp điều kiện từ {2, 3, 5} (BCNN 6, 10, 15).",
   "misconceptions": [
    {
-    "wrong": "Cộng thẳng hai nhóm 'hoặc': 15 + 10 = 25.",
+    "wrong": "Cộng thẳng hai nhóm 'hoặc': $15 + 10 = 25$.",
     "signal": "Đáp số dôi đúng bằng cỡ nhóm giao.",
     "fix": "vẽ hai vòng tròn giao nhau, hỏi 'ai đứng hai hàng?': nhóm chia hết cho 6 phải trả lại một lần đếm.",
     "counterExample": "Số 6, 12, 18, 24, 30 đều bị đếm hai lần trong 25."
    },
    {
-    "wrong": "Bài 'a nhưng không b' đem trừ cả nhóm chia hết cho b (100 − 40).",
+    "wrong": "Bài 'a nhưng không b' đem trừ cả nhóm chia hết cho b ($100 - 40$).",
     "signal": "Trừ nhóm to hơn nhóm giao.",
     "fix": "chỉ trừ những bạn chia hết cho a mà cũng chia hết cho b, tức nhóm chia hết cho BCNN.",
     "counterExample": "Số 5, 15, 25… chia hết cho 5 nhưng đâu có chia hết cho 2 — chúng chưa từng được đếm, sao lại trừ?"
@@ -123,7 +123,7 @@
     "narration": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2 hoặc chia hết cho 3?",
     "display": {
      "type": "story_panel",
-     "caption": "15 + 10 = 25… mà sân chỉ 20?"
+     "caption": "$15 + 10 = 25$… mà sân chỉ 20?"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -138,7 +138,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Vẽ hai vòng tròn giao nhau: vòng CHẴN, vòng BA. Con kéo các số 6, 12, 18, 24, 30 vào — chúng đứng ở đâu? Ngay phần GIAO — mỗi bạn bị đếm hai lần! Trả lại một lần: 15 + 10 − 5 = 20.",
+    "narration": "Vẽ hai vòng tròn giao nhau: vòng CHẴN, vòng BA. Con kéo các số 6, 12, 18, 24, 30 vào — chúng đứng ở đâu? Ngay phần GIAO — mỗi bạn bị đếm hai lần! Trả lại một lần: $15 + 10 - 5 = 20$.",
     "display": {
      "type": "venn_interactive",
      "spec": {
@@ -186,7 +186,7 @@
      "K3",
      "K4"
     ],
-    "narration": "Hai đòn nối tiếp: 'KHÔNG chia hết cho 3 từ 1 đến 100' — khỏi đếm từng người, lấy cả sân trừ đội ba: 100 − 33 = 67. Và 'chia hết cho 2 nhưng KHÔNG cho 5 từ 1 đến 200' — chỉ trừ nhóm đứng hai hàng ( chia hết cho 10): 100 − 20 = 80. Nhớ: trừ nhóm GIAO chứ không trừ cả đội 5!",
+    "narration": "Hai đòn nối tiếp: 'KHÔNG chia hết cho 3 từ 1 đến 100' — khỏi đếm từng người, lấy cả sân trừ đội ba: $100 - 33 = 67$. Và 'chia hết cho 2 nhưng KHÔNG cho 5 từ 1 đến 200' — chỉ trừ nhóm đứng hai hàng ( chia hết cho 10): $100 - 20 = 80$. Nhớ: trừ nhóm GIAO chứ không trừ cả đội 5!",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -296,7 +296,7 @@
   "problem": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2 hoặc chia hết cho 3?",
   "steps": [
    {
-    "show": "Bước 1 — Đội CHẴN: (30 − 2) : 2 + 1 = 15. Đội BA: (30 − 3) : 3 + 1 = 10.",
+    "show": "Bước 1 — Đội CHẴN: ($30 - 2$) : $2 + 1 = 15$. Đội BA: ($30 - 3$) : $3 + 1 = 10$.",
     "askBefore": {
      "format": "num",
      "text": "Đội chia hết cho 3 từ 1 đến 30 có mấy bạn?",
@@ -310,10 +310,10 @@
     "show": "Bước 2 — Nhóm đứng hai hàng: chia hết cho cả 2 và 3 = chia hết cho 6: dãy 6; …; 30 → 5 bạn."
    },
    {
-    "show": "Bước 3 — Trả lại một lần đếm: 15 + 10 − 5 = 20 số.",
+    "show": "Bước 3 — Trả lại một lần đếm: $15 + 10 - 5 = 20$ số.",
     "askAfter": {
      "format": "num",
-     "text": "Kiểm nhỏ: từ 1 đến 12, ⋮2 hoặc ⋮3 = 6 + 4 − 2 = ?",
+     "text": "Kiểm nhỏ: từ 1 đến 12, ⋮2 hoặc ⋮$3 = 6 + 4 - 2$ = ?",
      "answerKey": {
       "value": 8
      },
@@ -342,7 +342,7 @@
       "Hai vòng tròn giao nhau.",
       "15 + 10 − 5."
      ],
-     "solutionNarrative": "15 + 10 − 5 = 20 số (trừ nhóm chia hết cho 6 bị đếm trùng).",
+     "solutionNarrative": "$15 + 10 - 5 = 20$ số (trừ nhóm chia hết cho 6 bị đếm trùng).",
      "teaches": [
       "K1",
       "K2"
@@ -367,7 +367,7 @@
       "Đếm ngược bằng phần bù.",
       "100 − 33."
      ],
-     "solutionNarrative": "100 − 33 = 67 số (đếm phần bù).",
+     "solutionNarrative": "$100 - 33 = 67$ số (đếm phần bù).",
      "teaches": [
       "K3"
      ]
@@ -386,7 +386,7 @@
       "chia hết cho 2: 100. Nhóm giao chia hết cho 10: 20.",
       "Chỉ trừ nhóm giao."
      ],
-     "solutionNarrative": "chia hết cho 2: 100; chia hết cho 10: 20 → 100 − 20 = 80 số.",
+     "solutionNarrative": "chia hết cho 2: 100; chia hết cho 10: 20 → $100 - 20 = 80$ số.",
      "teaches": [
       "K4"
      ]
@@ -405,7 +405,7 @@
       "Cả sân: 90. Đội ' chia hết cho 2 hoặc chia hết cho 3': 45 + 30 − 15 = 60.",
       "Phần bù: 90 − 60."
      ],
-     "solutionNarrative": "90 − (45 + 30 − 15) = 90 − 60 = 30 số.",
+     "solutionNarrative": "90 − ($45 + 30 - 15$) = $90 - 60 = 30$ số.",
      "teaches": [
       "K1",
       "K3"
@@ -414,7 +414,7 @@
     {
      "id": "P5",
      "format": "tf",
-     "text": "(Đúng/Sai?) Từ 1 đến 30: 'chia hết cho 2 hoặc cho 3' = 15 + 10 = 25 số.",
+     "text": "(Đúng/Sai?) Từ 1 đến 30: 'chia hết cho 2 hoặc cho 3' = $15 + 10 = 25$ số.",
      "answerKey": {
       "value": false,
       "note": "Nhóm ⋮6 (5 số) bị đếm hai lần: đáp đúng 20."

@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Ghép cặp tròn chục - tròn trăm trong dãy cộng dài. Dùng tuyệt chiêu GOM KHAY: a × b + a × c = a × (b + c) — khi hai cụm cùng \"mặc áo a ×\". Chạy cầu vồng Gauss với dãy dài hơn: 1 + 2 + ... + 20.",
-  "kidText": "Tính 2 × 36 + 2 × 64 thật nhanh. Hai cụm này có gì giống nhau, con thấy không?",
+  "text": "Ghép cặp tròn chục - tròn trăm trong dãy cộng dài. Dùng tuyệt chiêu GOM KHAY: a × b + a × c = a × (b + c) — khi hai cụm cùng \"mặc áo a ×\". Chạy cầu vồng Gauss với dãy dài hơn: $1 + 2$ + ... + 20.",
+  "kidText": "Tính $2  \\times  36 + 2  \\times  64$ thật nhanh. Hai cụm này có gì giống nhau, con thấy không?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,19 +29,19 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Chiêu 1 — GHÉP CẶP (lên cấp trăm): 37 + 25 + 13 + 5: ghép (37 + 13) + (25 + 5) = 50 + 30 = 80. Mắt rà đuôi số: 7 tìm 3, 5 tìm 5 — bạn tri kỷ tròn chục!"
+    "text": "Chiêu 1 — GHÉP CẶP (lên cấp trăm): $37 + 25 + 13 + 5$: ghép ($37 + 13$) + ($25 + 5$) = $50 + 30 = 80$. Mắt rà đuôi số: 7 tìm 3, 5 tìm 5 — bạn tri kỷ tròn chục!"
    },
    {
     "id": "K2",
-    "text": "Chiêu 2 — GOM KHAY: 3 × 25 + 3 × 75: hai cụm cùng mặc áo \"3 ×\" (3 khay 25 viên và 3 khay 75 viên) → gom ruột: 3 × (25 + 75) = 3 × 100 = 300. Đây là phép tách khay của Bài 5 chạy chiều ngược — năm ngoái TÁCH để nhân được, năm nay GOM để nhân đẹp!"
+    "text": "Chiêu 2 — GOM KHAY: $3  \\times  25 + 3  \\times  75$: hai cụm cùng mặc áo \"3 ×\" (3 khay 25 viên và 3 khay 75 viên) → gom ruột: 3 × ($25 + 75$) = $3  \\times  100 = 300$. Đây là phép tách khay của Bài 5 chạy chiều ngược — năm ngoái TÁCH để nhân được, năm nay GOM để nhân đẹp!"
    },
    {
     "id": "K3",
-    "text": "Chiêu 3 — ÁO TÀNG HÌNH: 4 × 9 + 4: số 4 lẻ loi thực ra đang mặc áo tàng hình \"4 × 1\"! Gom: 4 × (9 + 1) = 4 × 10 = 40. Mọi số trần trụi đều là chính-nó-nhân-một."
+    "text": "Chiêu 3 — ÁO TÀNG HÌNH: $4  \\times  9 + 4$: số 4 lẻ loi thực ra đang mặc áo tàng hình \"$4  \\times  1$\"! Gom: 4 × ($9 + 1$) = $4  \\times  10 = 40$. Mọi số trần trụi đều là chính-nó-nhân-một."
    },
    {
     "id": "K4",
-    "text": "Chiêu 4 — GAUSS ĐƯỜNG DÀI: 1 + 2 + ... + 20: bắc cầu vồng 1 + 20 = 21, 2 + 19 = 21, ... được 10 cặp → 21 × 10 = 210. Cầu vồng cũ, nhịp dài hơn — và nay có phép nhân trợ lực!"
+    "text": "Chiêu 4 — GAUSS ĐƯỜNG DÀI: $1 + 2$ + ... + 20: bắc cầu vồng $1 + 20 = 21$, $2 + 19 = 21$, ... được 10 cặp → $21  \\times  10 = 210$. Cầu vồng cũ, nhịp dài hơn — và nay có phép nhân trợ lực!"
    }
   ],
   "mantra": "Trước khi cắm đầu tính: RÀ một vòng — có cặp tròn chục/trăm không? Có hai cụm CÙNG ÁO \"a ×\" không? Có cầu vồng không? Chiến binh thắng bằng con mắt, không bằng tốc độ tay!",
@@ -49,9 +49,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Học xong chiêu gom khay, Trí Long vung kiếm tứ tung: \"3 × 25 + 75 hả? Gom hết: 3 × (25 + 75) = 3 × 100 = 300! Chiêu này vô địch!\"",
+    "wrong": "Học xong chiêu gom khay, Trí Long vung kiếm tứ tung: \"$3  \\times  25 + 75$ hả? Gom hết: 3 × ($25 + 75$) = $3  \\times  100 = 300$! Chiêu này vô địch!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Soi kỹ tấm áo: cụm 3 × 25 mặc áo \"3 ×\" rồi, thế còn số 75 đứng sau — nó có mặc áo \"3 ×\" không, hay đang... trần trụi? Gợi ý 2: Tính đàng hoàng theo luật làn ưu tiên: 3 × 25 + 75 bằng bao nhiêu thật? So với 300 của Trí Long — chiêu gom khay chỉ dùng được khi nào? (Luật vào cổng: CẢ HAI phải cùng áo!)"
+    "fix": "Gợi ý 1: Soi kỹ tấm áo: cụm $3  \\times  25$ mặc áo \"3 ×\" rồi, thế còn số 75 đứng sau — nó có mặc áo \"3 ×\" không, hay đang... trần trụi? Gợi ý 2: Tính đàng hoàng theo luật làn ưu tiên: $3  \\times  25 + 75$ bằng bao nhiêu thật? So với 300 của Trí Long — chiêu gom khay chỉ dùng được khi nào? (Luật vào cổng: CẢ HAI phải cùng áo!)"
    }
   ]
  },
@@ -60,7 +60,7 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Tính bằng cách thuận tiện: 2 × 36 + 2 × 64."
+    "narration": "Tính bằng cách thuận tiện: $2  \\times  36 + 2  \\times  64$."
    },
    {
     "id": "S2",
@@ -97,26 +97,26 @@
    {
     "id": "S6",
     "kind": "trap",
-    "narration": "Học xong chiêu gom khay, Trí Long vung kiếm tứ tung: \"3 × 25 + 75 hả? Gom hết: 3 × (25 + 75) = 3 × 100 = 300! Chiêu này vô địch!\"",
+    "narration": "Học xong chiêu gom khay, Trí Long vung kiếm tứ tung: \"$3  \\times  25 + 75$ hả? Gom hết: 3 × ($25 + 75$) = $3  \\times  100 = 300$! Chiêu này vô địch!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính bằng cách thuận tiện: 2 × 36 + 2 × 64.",
+  "problem": "Tính bằng cách thuận tiện: $2  \\times  36 + 2  \\times  64$.",
   "steps": [
    {
     "show": "Bài giải:"
    },
    {
-    "show": "2 × 36 + 2 × 64"
+    "show": "$2  \\times  36 + 2  \\times  64$"
    },
    {
-    "show": "= 2 × (36 + 64) (hai cụm cùng mặc áo \"2 ×\" — gom khay!)"
+    "show": "= 2 × ($36 + 64$) (hai cụm cùng mặc áo \"2 ×\" — gom khay!)"
    },
    {
-    "show": "= 2 × 100"
+    "show": "= $2  \\times  100$"
    },
    {
     "show": "= 200"
@@ -131,23 +131,23 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Ghép cặp rồi tính: 28 + 17 + 2 + 3.",
+     "text": "Ghép cặp rồi tính: $28 + 17 + 2 + 3$.",
      "answerKey": {
       "value": 50
      },
-     "solutionNarrative": "(28 + 2) + (17 + 3) = 30 + 20 = 50."
+     "solutionNarrative": "($28 + 2$) + ($17 + 3$) = $30 + 20 = 50$."
     },
     {
      "id": "C2",
-     "text": "Ghép cặp tròn trăm: 37 + 25 + 13 + 5.",
+     "text": "Ghép cặp tròn trăm: $37 + 25 + 13 + 5$.",
      "answerKey": {
       "value": 80
      },
-     "solutionNarrative": "(37 + 13) + (25 + 5) = 50 + 30 = 80."
+     "solutionNarrative": "($37 + 13$) + ($25 + 5$) = $50 + 30 = 80$."
     },
     {
      "id": "C3",
-     "text": "Gom khay: 2 × 7 + 2 × 3; 5 × 6 + 5 × 4.",
+     "text": "Gom khay: $2  \\times  7 + 2  \\times  3$; $5  \\times  6 + 5  \\times  4$.",
      "answerKey": {
       "parts": [
        {
@@ -160,21 +160,21 @@
        }
       ]
      },
-     "solutionNarrative": "2 × (7 + 3) = 20; 5 × (6 + 4) = 50."
+     "solutionNarrative": "2 × ($7 + 3$) = 20; 5 × ($6 + 4$) = 50."
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Tính thuận tiện: 4 × 36 + 4 × 64.",
+     "text": "Tính thuận tiện: $4  \\times  36 + 4  \\times  64$.",
      "answerKey": {
       "value": 400
      },
-     "solutionNarrative": "4 × (36 + 64) = 4 × 100 = 400."
+     "solutionNarrative": "4 × ($36 + 64$) = $4  \\times  100 = 400$."
     },
     {
      "id": "C5",
-     "text": "Áo tàng hình: 6 × 9 + 6; 7 × 99 + 7. (Số lẻ loi đang mặc áo gì?)",
+     "text": "Áo tàng hình: $6  \\times  9 + 6$; $7  \\times  99 + 7$. (Số lẻ loi đang mặc áo gì?)",
      "answerKey": {
       "parts": [
        {
@@ -187,11 +187,11 @@
        }
       ]
      },
-     "solutionNarrative": "6 × (9 + 1) = 60; 7 × (99 + 1) = 700."
+     "solutionNarrative": "6 × ($9 + 1$) = 60; 7 × ($99 + 1$) = 700."
     },
     {
      "id": "C6",
-     "text": "Cầu vồng: 1 + 2 + 3 + ... + 20.",
+     "text": "Cầu vồng: $1 + 2 + 3$ + ... + 20.",
      "answerKey": {
       "value": 210
      },
@@ -199,25 +199,25 @@
     },
     {
      "id": "C7",
-     "text": "Chọn đường đẹp mà đi: 45 + 28 + 55 + 72 (rà cặp tròn trăm trước khi động bút!).",
+     "text": "Chọn đường đẹp mà đi: $45 + 28 + 55 + 72$ (rà cặp tròn trăm trước khi động bút!).",
      "answerKey": {
       "value": 200
      },
-     "solutionNarrative": "(45 + 55) + (28 + 72) = 100 + 100 = 200."
+     "solutionNarrative": "($45 + 55$) + ($28 + 72$) = $100 + 100 = 200$."
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Tuyệt phẩm phòng cuối: 99 × 4 + 4. (Số 4 lẻ loi mặc áo tàng hình, rồi gom — kết quả tròn đến ngỡ ngàng!)",
+     "text": "Tuyệt phẩm phòng cuối: $99  \\times  4 + 4$. (Số 4 lẻ loi mặc áo tàng hình, rồi gom — kết quả tròn đến ngỡ ngàng!)",
      "answerKey": {
       "value": 400
      },
-     "solutionNarrative": "99 × 4 + 4 = 4 × (99 + 1) = 4 × 100 = 400 — tròn đến ngỡ ngàng!"
+     "solutionNarrative": "$99  \\times  4 + 4 = 4$ × ($99 + 1$) = $4  \\times  100 = 400$ — tròn đến ngỡ ngàng!"
     },
     {
      "id": "C9",
-     "text": "Chị Ngọc Anh thách đấu tay ba: tính 5 × 17 × 2 theo cách của chiến binh (ghép ai với ai trước cho tròn?); rồi tự sáng tác một đề \"gom khay\" cho tổng trong ngoặc tròn 100, đố cả nhà!",
+     "text": "Chị Ngọc Anh thách đấu tay ba: tính $5  \\times  17  \\times  2$ theo cách của chiến binh (ghép ai với ai trước cho tròn?); rồi tự sáng tác một đề \"gom khay\" cho tổng trong ngoặc tròn 100, đố cả nhà!",
      "answerKey": {
       "parts": [
        {
@@ -226,7 +226,7 @@
        }
       ]
      },
-     "solutionNarrative": "5 × 17 × 2 = (5 × 2) × 17 = 10 × 17 = 170 (ghép 5 với 2 thành 10 trước); đề tự sáng tác đạt chuẩn khi tổng trong ngoặc tròn 100 — ví dụ 6 × 28 + 6 × 72."
+     "solutionNarrative": "$5  \\times  17  \\times  2$ = ($5  \\times  2$) × $17 = 10  \\times  17 = 170$ (ghép 5 với 2 thành 10 trước); đề tự sáng tác đạt chuẩn khi tổng trong ngoặc tròn 100 — ví dụ $6  \\times  28 + 6  \\times  72$."
     }
    ]
   }
@@ -236,7 +236,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "3 × 25 + 3 × 75 = 3 × (25 + 75).",
+    "text": "$3  \\times  25 + 3  \\times  75 = 3$ × ($25 + 75$).",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -245,16 +245,16 @@
    },
    {
     "id": "Q2",
-    "text": "3 × 25 + 75 cũng bằng 3 × (25 + 75).",
+    "text": "$3  \\times  25 + 75$ cũng bằng 3 × ($25 + 75$).",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "75 không mặc áo \"3 ×\": 3 × 25 + 75 = 75 + 75 = 150"
+    "solutionNarrative": "75 không mặc áo \"3 ×\": $3  \\times  25 + 75 = 75 + 75 = 150$"
    },
    {
     "id": "Q3",
-    "text": "2 × 36 + 2 × 64 = ?",
+    "text": "$2  \\times  36 + 2  \\times  64$ = ?",
     "format": "mcq",
     "choices": [
      "A. 200",
@@ -268,7 +268,7 @@
    },
    {
     "id": "Q4",
-    "text": "6 × 9 + 6 = ?",
+    "text": "$6  \\times  9 + 6$ = ?",
     "format": "mcq",
     "choices": [
      "A. 54",
@@ -282,7 +282,7 @@
    },
    {
     "id": "Q5",
-    "text": "1 + 2 + ... + 20 = ?",
+    "text": "$1 + 2$ + ... + 20 = ?",
     "format": "mcq",
     "choices": [
      "A. 200",
@@ -297,7 +297,7 @@
   ]
  },
  "parentNote": {
-  "onComplete": "Chơi \"cuộc đua hai làn\": bố mẹ tính thô, con tính thuận tiện cùng một đề (2 × 36 + 2 × 64) — con thắng áp đảo sẽ TỰ tin vào giá trị của con mắt rà bài.",
+  "onComplete": "Chơi \"cuộc đua hai làn\": bố mẹ tính thô, con tính thuận tiện cùng một đề ($2  \\times  36 + 2  \\times  64$) — con thắng áp đảo sẽ TỰ tin vào giá trị của con mắt rà bài.",
   "homeActivity": "Chiêu \"gom khay\" là tính chất phân phối — nền của nhân nhẩm và đại số sau này; nhưng với con hãy chỉ gọi là gom khay - chung áo, tuyệt đối không cần tên gọi hàn lâm.",
   "watchFor": "NÊN: khuyến khích viết rõ bước gom (có ngoặc) để lộ tư duy. KHÔNG NÊN: ép mọi bài phải có mẹo — thỉnh thoảng cho một đề \"không mẹo\" để con học cách rà xong rồi... tính thường, cũng là một quyết định đúng."
  },

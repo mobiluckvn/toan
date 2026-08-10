@@ -46,26 +46,26 @@
    },
    {
     "id": "K3",
-    "text": "Bài ngược 1 + 2 + … + n = S: suy ra n × (n + 1) = 2 × S; tách 2 × S thành tích HAI SỐ TỰ NHIÊN LIÊN TIẾP → n là số bé."
+    "text": "Bài ngược $1 + 2$ + … + n = S: suy ra n × (n + 1) = 2 × S; tách 2 × S thành tích HAI SỐ TỰ NHIÊN LIÊN TIẾP → n là số bé."
    }
   ],
   "mechanism": "Hình ảnh brand: LỄ BẮT TAY HAI ĐẦU HÀNG. Cả dãy 1 đến 100 xếp hàng; bạn 1 chạy xuống bắt tay bạn 100 — cặp tổng 101; bạn 2 bắt tay 99 — lại 101! Năm mươi cái bắt tay, mỗi cái \"ngốn\" HAI bạn: tổng = 101 nhân 50 = 5050. Công thức (đầu + cuối) × số số hạng phải CHIA 2 vì số cặp chỉ bằng nửa số bạn — quên chia là mỗi bạn bị đếm hai lần, tổng phình gấp đôi! Bài ngược thì chạy máy lùi: tổng 210 → n nhân (n cộng 1) bằng 420 — tìm hai số sát vách nhân ra 420: hai mươi và hai mốt!",
   "canonicalExamples": [
    {
     "case": "Gauss huyền thoại (ca nền)",
-    "problem": "Tính tổng: 1 + 2 + 3 + … + 100.",
+    "problem": "Tính tổng: $1 + 2 + 3$ + … + 100.",
     "solution": "100 số hạng → 50 cặp, mỗi cặp (1 + 100) = 101 → tổng = 101 × 100 : 2 = 5050.",
     "why": "Ca nền của mọi tổng ghép cặp."
    },
    {
     "case": "dãy nhảy 3 (ca bẫy)",
-    "problem": "Tính tổng: 3 + 6 + 9 + … + 99.",
+    "problem": "Tính tổng: $3 + 6 + 9$ + … + 99.",
     "solution": "Số số hạng: (99 − 3) : 3 + 1 = 33. Tổng = (3 + 99) × 33 : 2 = 102 × 33 : 2 = 51 × 33 = 1683. (Quên \": 2\" sẽ ra 3366 — phình gấp đôi!)",
     "why": "Ca đinh của bẫy CĐ-12.1, đề A câu 13."
    },
    {
     "case": "bài ngược (ca máy lùi)",
-    "problem": "Tổng 1 + 2 + … + n = 210. Tìm n.",
+    "problem": "Tổng $1 + 2$ + … + n = 210. Tìm n.",
     "solution": "(1 + n) × n : 2 = 210 → n × (n + 1) = 420 = 20 × 21 → n = 20.",
     "why": "tách tích hai số liên tiếp."
    }
@@ -73,10 +73,10 @@
   "numberRange": "Lớp 5: tổng đến 6000; dãy thập phân bước 0,5; bài ngược với 2 × S ≤ 500.",
   "misconceptions": [
    {
-    "wrong": "Thuộc vẹt \"(đầu + cuối) nhân số số hạng\" và dừng ở đó: (3 + 99) × 33 = 3366.",
+    "wrong": "Thuộc vẹt \"(đầu + cuối) nhân số số hạng\" và dừng ở đó: ($3 + 99$) × $33 = 3366$.",
     "signal": "Tổng phình gấp ĐÔI đáp đúng.",
-    "fix": "nhớ bằng lý lẽ: một CẶP ăn HAI số hạng; kiểm nhanh tổng nhỏ 1 + 2 + 3 = 6 chứ không phải (1 + 3) × 3 = 12.",
-    "counterExample": "1 + 2 + 3: công thức thiếu \": 2\" cho 12 — gấp đôi 6."
+    "fix": "nhớ bằng lý lẽ: một CẶP ăn HAI số hạng; kiểm nhanh tổng nhỏ $1 + 2 + 3 = 6$ chứ không phải ($1 + 3$) × $3 = 12$.",
+    "counterExample": "$1 + 2 + 3$: công thức thiếu \": 2\" cho 12 — gấp đôi 6."
    }
   ],
   "vocabulary": [
@@ -111,7 +111,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Tính tổng: 1 + 2 + 3 + … + 100.",
+    "narration": "Tính tổng: $1 + 2 + 3$ + … + 100.",
     "display": {
      "type": "story_panel",
      "caption": "Gauss 10 giây · 3366 đúng không?"
@@ -129,7 +129,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Lễ bắt tay: bạn 1 bắt tay bạn 100 — tổng 101; bạn 2 với 99 — lại 101! Mỗi cái bắt tay ngốn HAI bạn, nên 100 bạn chỉ có 50 cặp: tổng bằng 101 nhân 50 — năm nghìn không trăm năm mươi. Con thử máy trên dãy tí hon 1 + 2 + 3: một cặp rưỡi... đúng ra (1 + 3) × 3 : 2 = 6 ✓. Thiếu \": 2\" ra 12 — mỗi bạn bị đếm HAI lần!",
+    "narration": "Lễ bắt tay: bạn 1 bắt tay bạn 100 — tổng 101; bạn 2 với 99 — lại 101! Mỗi cái bắt tay ngốn HAI bạn, nên 100 bạn chỉ có 50 cặp: tổng bằng 101 nhân 50 — năm nghìn không trăm năm mươi. Con thử máy trên dãy tí hon $1 + 2 + 3$: một cặp rưỡi... đúng ra ($1 + 3$) × $3 : 2 = 6$ ✓. Thiếu \": 2\" ra 12 — mỗi bạn bị đếm HAI lần!",
     "display": {
      "type": "handshake_interactive",
      "spec": {
@@ -154,7 +154,7 @@
     "estSeconds": 18,
     "item": {
      "format": "num",
-     "text": "Tính tổng 3 + 6 + 9 + … + 99 (33 số hạng).",
+     "text": "Tính tổng $3 + 6 + 9$ + … + 99 (33 số hạng).",
      "answerKey": {
       "value": 1683
      },
@@ -281,10 +281,10 @@
  },
  "workedExample": {
   "title": "Lễ bắt tay dãy nhảy ba",
-  "problem": "Tính tổng: 3 + 6 + 9 + … + 99.",
+  "problem": "Tính tổng: $3 + 6 + 9$ + … + 99.",
   "steps": [
    {
-    "show": "Bước 1 — Đếm số hạng (Bài 7): (99 − 3) : 3 + 1 = 33.",
+    "show": "Bước 1 — Đếm số hạng (Bài 7): ($99 - 3$) : $3 + 1 = 33$.",
     "askBefore": {
      "format": "num",
      "text": "Dãy có bao nhiêu số hạng?",
@@ -295,13 +295,13 @@
     }
    },
    {
-    "show": "Bước 2 — Ghép cặp: mỗi cặp (3 + 99) = 102; một cặp ăn HAI số hạng."
+    "show": "Bước 2 — Ghép cặp: mỗi cặp ($3 + 99$) = 102; một cặp ăn HAI số hạng."
    },
    {
-    "show": "Bước 3 — Tổng = 102 × 33 : 2 = 51 × 33 = 1683. (Quên :2 → 3366 phình đôi!)",
+    "show": "Bước 3 — Tổng = $102  \\times  33 : 2 = 51  \\times  33 = 1683$. (Quên :2 → 3366 phình đôi!)",
     "askAfter": {
      "format": "tf",
-     "text": "(Đúng/Sai?) (3 + 99) × 33 = 3366 là tổng của dãy.",
+     "text": "(Đúng/Sai?) ($3 + 99$) × $33 = 3366$ là tổng của dãy.",
      "answerKey": {
       "value": false
      },
@@ -322,7 +322,7 @@
      "id": "P1",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B12.LT2",
-     "text": "Tính tổng: 1 + 2 + 3 + … + 100.",
+     "text": "Tính tổng: $1 + 2 + 3$ + … + 100.",
      "answerKey": {
       "value": 5050
      },
@@ -330,7 +330,7 @@
       "Bắt tay hai đầu hàng.",
       "(1 + 100) × 100 : 2."
      ],
-     "solutionNarrative": "(1 + 100) × 100 : 2 = 5050.",
+     "solutionNarrative": "($1 + 100$) × $100 : 2 = 5050$.",
      "teaches": [
       "K1",
       "K2"
@@ -349,7 +349,7 @@
      "id": "P2",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B12.LT4",
-     "text": "Tính tổng: 3 + 6 + 9 + … + 99.",
+     "text": "Tính tổng: $3 + 6 + 9$ + … + 99.",
      "answerKey": {
       "value": 1683
      },
@@ -357,7 +357,7 @@
       "33 số hạng (Bài 7).",
       "(3 + 99) × 33 : 2."
      ],
-     "solutionNarrative": "102 × 33 : 2 = 1683 — nhớ chia đôi!",
+     "solutionNarrative": "$102  \\times  33 : 2 = 1683$ — nhớ chia đôi!",
      "teaches": [
       "K1",
       "K2"
@@ -384,7 +384,7 @@
       "(10 − 0,5) : 0,5 + 1.",
       "(0,5 + 10) × 20 : 2."
      ],
-     "solutionNarrative": "20 số hạng; tổng = 10,5 × 20 : 2 = 105.",
+     "solutionNarrative": "20 số hạng; tổng = $10,5  \\times  20 : 2 = 105$.",
      "teaches": [
       "K1"
      ]
@@ -395,7 +395,7 @@
      "id": "P4",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B12.LT8",
-     "text": "Tổng 1 + 2 + 3 + … + n = 210. Tìm n. (Gợi ý: đưa về tích của hai số tự nhiên liên tiếp.)",
+     "text": "Tổng $1 + 2 + 3$ + … + n = 210. Tìm n. (Gợi ý: đưa về tích của hai số tự nhiên liên tiếp.)",
      "answerKey": {
       "value": 20
      },
@@ -403,7 +403,7 @@
       "n × (n + 1) = 2 × 210.",
       "420 = 20 × 21."
      ],
-     "solutionNarrative": "n × (n + 1) = 420 = 20 × 21 → n = 20.",
+     "solutionNarrative": "n × (n + 1) = $420 = 20  \\times  21$ → n = 20.",
      "teaches": [
       "K3"
      ]
@@ -432,7 +432,7 @@
    {
     "id": "A1",
     "format": "tf",
-    "text": "(Đúng/Sai?) Tổng dãy 3 + 6 + … + 99 bằng (3 + 99) × 33 = 3366.",
+    "text": "(Đúng/Sai?) Tổng dãy $3 + 6$ + … + 99 bằng ($3 + 99$) × $33 = 3366$.",
     "answerKey": {
      "value": false,
      "note": "Thiếu \": 2\" — mỗi số bị đếm hai lần; tổng đúng là 1683."
@@ -458,7 +458,7 @@
     "id": "A3",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B12.QZ5",
-    "text": "1 + 2 + … + n = 210 thì n × (n + 1) bằng:",
+    "text": "$1 + 2$ + … + n = 210 thì n × (n + 1) bằng:",
     "choices": [
      "420",
      "210",
@@ -477,7 +477,7 @@
   "flashcards": [
    {
     "front": "Tổng dãy cách đều? Vì sao chia 2? Bài ngược giải sao?",
-    "back": "Tổng = (đầu + cuối) × số số hạng : 2 — một CẶP ăn HAI số hạng nên số cặp = nửa số hạng. Bài ngược: n × (n + 1) = 2 × tổng → tách tích hai số liên tiếp (420 = 20 × 21 → n = 20)."
+    "back": "Tổng = (đầu + cuối) × số số hạng : 2 — một CẶP ăn HAI số hạng nên số cặp = nửa số hạng. Bài ngược: n × (n + 1) = 2 × tổng → tách tích hai số liên tiếp ($420 = 20  \\times  21$ → n = 20)."
    }
   ],
   "schedule": [
@@ -488,8 +488,8 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con học tổng ghép cặp kiểu Gauss (nhân xong phải chia đôi) và bài ngược tách tích hai số liên tiếp. Con đạt {score}/3, {trapResult} câu bẫy rơi-chia-2.",
-  "homeActivity": "Thi Gauss gia đình: 'cộng 1 tới 20 trong 10 giây!' — con bắt cặp (1+20) × 20 : 2 = 210 là thắng.",
-  "watchFor": "Nếu tổng của con phình gấp đôi — kiểm dãy tí hon 1 + 2 + 3 = 6 cùng con (S2)."
+  "homeActivity": "Thi Gauss gia đình: 'cộng 1 tới 20 trong 10 giây!' — con bắt cặp ($1+20$) × $20 : 2 = 210$ là thắng.",
+  "watchFor": "Nếu tổng của con phình gấp đôi — kiểm dãy tí hon $1 + 2 + 3 = 6$ cùng con (S2)."
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B12.M2",

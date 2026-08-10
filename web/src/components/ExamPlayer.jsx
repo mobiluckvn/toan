@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Chu from './Chu.jsx';
 import { CONTENT, dongDau, maKy } from '../lib/content.js';
 import Figure from './Figure.jsx';
 import AnswerInput from './AnswerInput.jsx';
@@ -138,7 +139,7 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
           CÂU {q.qno} {q.star ? '· ' + '★'.repeat(q.star) : ''}
           {q.hasTrap && <span className="pill ml-2 bg-alert text-white">CÓ BẪY</span>}
         </div>
-        <p className="text-[16.5px] font-semibold leading-relaxed">{q.text}</p>
+        <p className="text-[16.5px] font-semibold leading-relaxed"><Chu t={q.text} /></p>
 
         {/* Có khoá đáp án thì máy chấm — bé điền số hoặc bấm chọn, không phải tự
             phán mình đúng hay sai. `key` theo mã câu để sang câu mới thì ô nhập
@@ -162,8 +163,8 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
             res.ok ? 'border-teal bg-teal-pale text-teal-dark'
                    : 'border-alert bg-alert-pale text-alert'}`}>
             {res.ok
-              ? <><b>🎉 Đúng rồi!</b> {q.solutionNarrative || ''}</>
-              : <><b>Chưa đúng.</b> Lời giải: {q.answer}</>}
+              ? <><b>🎉 Đúng rồi!</b> <Chu t={q.solutionNarrative || ''} /></>
+              : <><b>Chưa đúng.</b> Lời giải: <Chu t={q.answer} /></>}
             {!res.ok && q.hasTrap && q.trapName && (
               <div className="mt-2 text-[13.5px]"><b>Bẫy:</b> {q.trapName}</div>
             )}

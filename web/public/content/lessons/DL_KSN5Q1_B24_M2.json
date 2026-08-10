@@ -37,7 +37,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "(26 + 32) : 2 = 29 là phép CHIA ĐÔI LẬU khi hai nhóm khác cỡ: nhóm bốn ngày đông gấp đôi nhóm hai ngày — kéo điểm cân về phía 32: TBC gộp thật là 30, không phải 29."
+    "text": "($26 + 32$) : $2 = 29$ là phép CHIA ĐÔI LẬU khi hai nhóm khác cỡ: nhóm bốn ngày đông gấp đôi nhóm hai ngày — kéo điểm cân về phía 32: TBC gộp thật là 30, không phải 29."
    },
    {
     "id": "K2",
@@ -45,24 +45,24 @@
    },
    {
     "id": "K3",
-    "text": "CÂU HỎI CỬA NGÕ trước khi chia đôi: \"hai nhóm có BẰNG số phần tử không?\" BẰNG → (a + b) : 2 hợp lệ (3 ngày TBC 26 + 3 ngày TBC 32 → 29 ✓). KHÁC → phải đi ba nhịp bảng tổng."
+    "text": "CÂU HỎI CỬA NGÕ trước khi chia đôi: \"hai nhóm có BẰNG số phần tử không?\" BẰNG → (a + b) : 2 hợp lệ (3 ngày TBC $26 + 3$ ngày TBC 32 → 29 ✓). KHÁC → phải đi ba nhịp bảng tổng."
    },
    {
     "id": "K4",
-    "text": "Kiểm chứng hai đường khi hai nhóm bằng cỡ: (78 + 96) : 6 = 29 = (26 + 32) : 2 — chia đôi chỉ là lối tắt của cùng một phép tính."
+    "text": "Kiểm chứng hai đường khi hai nhóm bằng cỡ: ($78 + 96$) : $6 = 29$ = ($26 + 32$) : 2 — chia đôi chỉ là lối tắt của cùng một phép tính."
    }
   ],
   "mechanism": "Hình ảnh brand: CHÍNH CÁO ĐỀ CŨNG TỰ SẬP. Cáo Đề đứng lớp dạy nhanh: \"hai sáu với ba hai — chia đôi ra hai chín, gọn!\" — rồi tự mở thúng đếm lại: 180 chia 6 ra BA MƯƠI. Cáo tái mặt: sai ở đâu?! Ở QUÂN SỐ: nhóm bốn ngày ĐÔNG GẤP ĐÔI — mỗi ngày TBC 32 là BỐN phiếu bầu kéo điểm cân về phía 32, trong khi phe 26 chỉ hai phiếu: điểm cân ngả về nhóm đông, đậu ở 30 chứ không đứng giữa 29! Từ đó khắc CÂU HỎI CỬA NGÕ: \"hai nhóm có BẰNG quân số không?\" — Bằng thì chia đôi thoải mái (ba ngày 26 với ba ngày 32: đúng 29, kiểm bằng bảng tổng cũng 29). Khác thì cửa đóng — đi đường bảng ba cột.",
   "canonicalExamples": [
    {
     "case": "khác cỡ — chia đôi sập (ca lõi)",
-    "problem": "2 ngày TBC 26, 4 ngày TBC 32 → TBC cả 6 ngày? So sánh với (26 + 32) : 2 và giải thích.",
+    "problem": "2 ngày TBC 26, 4 ngày TBC 32 → TBC cả 6 ngày? So sánh với ($26 + 32$) : 2 và giải thích.",
     "solution": "TBC gộp = 180 : 6 = 30. Còn (26 + 32) : 2 = 29 SAI vì nhóm bốn ngày đông gấp đôi, kéo điểm cân về phía 32.",
     "why": "Ca đề A câu 12 — trap chia đôi lậu."
    },
    {
     "case": "bằng cỡ — chia đôi hợp lệ (ca đối chứng)",
-    "problem": "Ba ngày đầu TBC 26 chiếc, ba ngày sau TBC 32 chiếc. Tính TBC cả sáu ngày — lần này (26 + 32) : 2 có dùng được không?",
+    "problem": "Ba ngày đầu TBC 26 chiếc, ba ngày sau TBC 32 chiếc. Tính TBC cả sáu ngày — lần này ($26 + 32$) : 2 có dùng được không?",
     "solution": "(78 + 96) : 6 = 174 : 6 = 29 = (26 + 32) : 2 — DÙNG ĐƯỢC vì hai nhóm BẰNG số ngày.",
     "why": "Ca đề A câu 14 — cửa ngõ mở đúng lúc."
    }
@@ -73,7 +73,7 @@
     "wrong": "Cộng hai TBC chia đôi bất kể quân số (29 thay vì 30).",
     "signal": "Không có câu trả lời cho 'hai nhóm mấy phần tử?' trước phép chia 2.",
     "fix": "câu hỏi cửa ngõ thành phản xạ: hỏi quân số trước — chia đôi sau (nếu được).",
-    "counterExample": "Bảng tổng: 180 : 6 = 30 ≠ 29 — chia đôi lậu lệch đúng về phía nhóm ít."
+    "counterExample": "Bảng tổng: $180 : 6 = 30$ ≠ 29 — chia đôi lậu lệch đúng về phía nhóm ít."
    }
   ],
   "vocabulary": [
@@ -90,7 +90,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "Máy bài trước: (52 + 128) : 6 = ?",
+    "text": "Máy bài trước: ($52 + 128$) : 6 = ?",
     "answerKey": {
      "value": 30
     }
@@ -108,7 +108,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "2 ngày TBC 26, 4 ngày TBC 32 → TBC cả 6 ngày? So sánh với (26 + 32) : 2 và giải thích.",
+    "narration": "2 ngày TBC 26, 4 ngày TBC 32 → TBC cả 6 ngày? So sánh với ($26 + 32$) : 2 và giải thích.",
     "display": {
      "type": "story_panel",
      "caption": "29 hay 30 — Cáo tự sập?!"
@@ -290,7 +290,7 @@
   "problem": "(a) 2 ngày TBC 26, 4 ngày TBC 32: TBC cả 6 ngày? Vì sao không phải 29? (b) 3 ngày TBC 26, 3 ngày TBC 32: lần này chia đôi được không?",
   "steps": [
    {
-    "show": "Bước 1 — Câu (a): bảng tổng (52 + 128) : 6 = 30. Phe 32 có 4 phiếu — kéo điểm cân ngả về nhóm đông: 30 ≠ 29.",
+    "show": "Bước 1 — Câu (a): bảng tổng ($52 + 128$) : $6 = 30$. Phe 32 có 4 phiếu — kéo điểm cân ngả về nhóm đông: 30 ≠ 29.",
     "askBefore": {
      "format": "mcq",
      "text": "Câu hỏi cửa ngõ trước khi chia đôi:",
@@ -306,10 +306,10 @@
     }
    },
    {
-    "show": "Bước 2 — Câu (b): 3 = 3 → cửa mở: (26 + 32) : 2 = 29."
+    "show": "Bước 2 — Câu (b): $3 = 3$ → cửa mở: ($26 + 32$) : $2 = 29$."
    },
    {
-    "show": "Bước 3 — Kiểm: (78 + 96) : 6 = 29 ✓ — lối tắt khớp bảng tổng.",
+    "show": "Bước 3 — Kiểm: ($78 + 96$) : $6 = 29$ ✓ — lối tắt khớp bảng tổng.",
     "askAfter": {
      "format": "num",
      "text": "5 ngày TBC 20 và 5 ngày TBC 30 → TBC cả 10 ngày = ?",
@@ -333,7 +333,7 @@
      "id": "P1",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B24.LT4",
-     "text": "Giải trọn bài: 2 ngày TBC 26, 4 ngày TBC 32 → TBC cả 6 ngày? So sánh với (26 + 32) : 2 và giải thích vì sao khác nhau.",
+     "text": "Giải trọn bài: 2 ngày TBC 26, 4 ngày TBC 32 → TBC cả 6 ngày? So sánh với ($26 + 32$) : 2 và giải thích vì sao khác nhau.",
      "answerKey": {
       "parts": [
        {
@@ -350,7 +350,7 @@
       "Bảng tổng: 52 + 128.",
       "Nhóm nào nhiều phiếu bầu hơn?"
      ],
-     "solutionNarrative": "180 : 6 = 30 ≠ 29 — chia đôi lậu ngả sai.",
+     "solutionNarrative": "$180 : 6 = 30$ ≠ 29 — chia đôi lậu ngả sai.",
      "teaches": [
       "K1",
       "K2"
@@ -367,7 +367,7 @@
      "id": "P2",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B24.LT5",
-     "text": "Ba ngày đầu TBC 26 chiếc, ba ngày sau TBC 32 chiếc. Tính TBC cả sáu ngày — lần này (26 + 32) : 2 có dùng được không?",
+     "text": "Ba ngày đầu TBC 26 chiếc, ba ngày sau TBC 32 chiếc. Tính TBC cả sáu ngày — lần này ($26 + 32$) : 2 có dùng được không?",
      "answerKey": {
       "parts": [
        {
@@ -388,7 +388,7 @@
       "Hỏi quân số: 3 và 3?",
       "Kiểm hai đường."
      ],
-     "solutionNarrative": "(78 + 96) : 6 = 29 = (26 + 32) : 2 ✓.",
+     "solutionNarrative": "($78 + 96$) : $6 = 29$ = ($26 + 32$) : 2 ✓.",
      "teaches": [
       "K3",
       "K4"
@@ -399,7 +399,7 @@
     {
      "id": "P3",
      "format": "tf",
-     "text": "(Đúng/Sai?) 1 ngày bán 26 chiếc và 5 ngày TBC 32 chiếc thì TBC cả 6 ngày là (26 + 32) : 2 = 29.",
+     "text": "(Đúng/Sai?) 1 ngày bán 26 chiếc và 5 ngày TBC 32 chiếc thì TBC cả 6 ngày là ($26 + 32$) : $2 = 29$.",
      "answerKey": {
       "value": false,
       "note": "Quân số 1 ≠ 5: bảng tổng (26 + 160) : 6 = 31 — ngả hẳn về nhóm 5 ngày."
@@ -500,7 +500,7 @@
   "flashcards": [
    {
     "front": "Khi nào TBC gộp = (a + b) : 2? Khác cỡ thì sao?",
-    "back": "CHỈ khi hai nhóm BẰNG số phần tử (3+3 ngày: 29 ✓ kiểm 174:6). Khác cỡ: chia đôi LẬU — TBC gộp ngả về NHÓM ĐÔNG (2+4 ngày: 30 ≠ 29). Câu hỏi cửa ngõ: HỎI QUÂN SỐ TRƯỚC — CHIA ĐÔI SAU (nếu được)!"
+    "back": "CHỈ khi hai nhóm BẰNG số phần tử ($3+3$ ngày: 29 ✓ kiểm 174:6). Khác cỡ: chia đôi LẬU — TBC gộp ngả về NHÓM ĐÔNG ($2+4$ ngày: 30 ≠ 29). Câu hỏi cửa ngõ: HỎI QUÂN SỐ TRƯỚC — CHIA ĐÔI SAU (nếu được)!"
    }
   ],
   "schedule": [

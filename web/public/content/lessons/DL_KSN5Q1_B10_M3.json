@@ -30,7 +30,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con giải được bài HAI điều kiện dư đồng thời: dò nghiệm đầu tiên trên dãy thưa hơn, rồi NHẢY BƯỚC bằng TÍCH hai số chia (15 = 3 × 5) để kể hết nghiệm; nhận diện được mẹo \"cùng hụt 1\" và \"chia 9 dư 5 suy ra chia 3 dư 2\".",
+  "text": "Con giải được bài HAI điều kiện dư đồng thời: dò nghiệm đầu tiên trên dãy thưa hơn, rồi NHẢY BƯỚC bằng TÍCH hai số chia ($15 = 3  \\times  5$) để kể hết nghiệm; nhận diện được mẹo \"cùng hụt 1\" và \"chia 9 dư 5 suy ra chia 3 dư 2\".",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (bước nhảy = tích)",
   "kidText": "Vừa chia 3 dư 1 vừa chia 5 dư 2? Con dò số đầu tiên rồi nhảy bước bằng tích hai số chia để kể hết mọi số."
  },
@@ -50,7 +50,7 @@
    },
    {
     "id": "K4",
-    "text": "Suy dư lồng nhau: số chia 9 dư 5 → viết số = 9k + 5 = 3(3k + 1) + 2 → luôn chia 3 dư 2, đúng với MỌI k."
+    "text": "Suy dư lồng nhau: số chia 9 dư 5 → viết số = 9k + $5 = 3$(3k + 1) + 2 → luôn chia 3 dư 2, đúng với MỌI k."
    }
   ],
   "mechanism": "Hình ảnh brand: HAI LỊCH TƯỚI CÂY. Vòi số 3 tưới các gốc 1, 4, 7, 10… (chia 3 dư 1); vòi số 5 tưới gốc 2, 7, 12… (chia 5 dư 2). Gốc nào được CẢ HAI vòi tưới? Dò trên lịch thưa của vòi 5: gốc 2 — vòi 3 trượt; gốc 7 — vòi 3 trúng! Nghiệm đầu: 7. Từ đó, hai lịch chỉ tái trùng khi cả hai vòi cùng quay đủ vòng: sau đúng 3 × 5 = 15 gốc — nhảy 7, 22, 37, 52… Kẻ vội nhảy bước 3 (ra 10) là gãy ngay lịch vòi 5!",
@@ -80,7 +80,7 @@
     "wrong": "Tìm được nghiệm đầu 7 rồi nhảy bước 3 (hoặc 5): 10, 13…",
     "signal": "Các \"nghiệm\" sau chỉ thỏa MỘT điều kiện.",
     "fix": "hỏi trước khi nhảy: bước này có giữ nguyên CẢ HAI số dư không? Chỉ bội chung 15 mới giữ được.",
-    "counterExample": "10 : 5 = 2 dư 0 — gãy lịch vòi 5 ngay bước đầu."
+    "counterExample": "$10 : 5 = 2$ dư 0 — gãy lịch vòi 5 ngay bước đầu."
    }
   ],
   "vocabulary": [
@@ -296,7 +296,7 @@
   "problem": "Tìm số nhỏ nhất chia cho 3 dư 1 và chia cho 5 dư 2. Kể tiếp ba số nữa cũng thỏa mãn.",
   "steps": [
    {
-    "show": "Bước 1 — Dò trên dãy THƯA (chia 5 dư 2): 2, 7, 12, … Kiểm điều kiện kia: 2 : 3 dư 2 ✗; 7 : 3 dư 1 ✓ → nghiệm đầu 7.",
+    "show": "Bước 1 — Dò trên dãy THƯA (chia 5 dư 2): 2, 7, 12, … Kiểm điều kiện kia: $2 : 3$ dư 2 ✗; $7 : 3$ dư 1 ✓ → nghiệm đầu 7.",
     "askBefore": {
      "format": "mcq",
      "text": "Vì sao dò trên dãy chia-5 trước?",
@@ -312,10 +312,10 @@
     }
    },
    {
-    "show": "Bước 2 — Bước nhảy: phải giữ CẢ HAI dư → bước = 3 × 5 = 15."
+    "show": "Bước 2 — Bước nhảy: phải giữ CẢ HAI dư → bước = $3  \\times  5 = 15$."
    },
    {
-    "show": "Bước 3 — Kể nghiệm: 7; 22; 37; 52. Thử 22: 22 : 3 = 7 dư 1 ✓; 22 : 5 = 4 dư 2 ✓.",
+    "show": "Bước 3 — Kể nghiệm: 7; 22; 37; 52. Thử 22: $22 : 3 = 7$ dư 1 ✓; $22 : 5 = 4$ dư 2 ✓.",
     "askAfter": {
      "format": "num",
      "text": "Nghiệm thứ năm của dãy là?",
@@ -383,7 +383,7 @@
       "Dãy 7 + 15 × k.",
       "Chặn dưới 100: k = 6."
      ],
-     "solutionNarrative": "7 + 15 × 6 = 97 (số kế 112 vượt hai chữ số).",
+     "solutionNarrative": "$7 + 15  \\times  6 = 97$ (số kế 112 vượt hai chữ số).",
      "teaches": [
       "K2"
      ]
@@ -400,7 +400,7 @@
       "Dư 2 = 3 − 1; dư 4 = 5 − 1.",
       "Số + 1 chia hết 15."
      ],
-     "solutionNarrative": "Cùng hụt 1 → số + 1 = 15 → số 14.",
+     "solutionNarrative": "Cùng hụt 1 → số + $1 = 15$ → số 14.",
      "teaches": [
       "K3"
      ]
@@ -428,7 +428,7 @@
       "Viết số theo 9k + 5.",
       "Tách 9k + 5 = 3 ×? + ?"
      ],
-     "solutionNarrative": "9k + 5 = 3(3k + 1) + 2 → luôn dư 2.",
+     "solutionNarrative": "9k + $5 = 3$(3k + 1) + 2 → luôn dư 2.",
      "teaches": [
       "K4"
      ]
@@ -445,7 +445,7 @@
       "Dãy 7 + 15k, cần lớn hơn hoặc bằng 100.",
       "7 + 15 × 7."
      ],
-     "solutionNarrative": "7 + 15 × 7 = 112 (112 : 3 dư 1 ✓; 112 : 5 dư 2 ✓).",
+     "solutionNarrative": "$7 + 15  \\times  7 = 112$ ($112 : 3$ dư 1 ✓; $112 : 5$ dư 2 ✓).",
      "teaches": [
       "K2"
      ]
@@ -523,7 +523,7 @@
   "flashcards": [
    {
     "front": "Bài hai điều kiện dư — quy trình và hai mẹo?",
-    "back": "Dò nghiệm đầu trên dãy THƯA, kiểm bằng điều kiện kia; NHẢY BƯỚC = tích hai số chia (15). Mẹo cùng-hụt-1: số + 1 chia hết cho tích. Suy dư lồng: 9k + 5 = 3(3k+1) + 2 → chia 3 dư 2."
+    "back": "Dò nghiệm đầu trên dãy THƯA, kiểm bằng điều kiện kia; NHẢY BƯỚC = tích hai số chia (15). Mẹo cùng-hụt-1: số + 1 chia hết cho tích. Suy dư lồng: 9k + $5 = 3$(3k+1) + 2 → chia 3 dư 2."
    }
   ],
   "schedule": [

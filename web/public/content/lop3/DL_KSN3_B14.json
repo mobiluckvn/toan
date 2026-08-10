@@ -21,7 +21,7 @@
  "objective": {
   "id": "O1",
   "text": "Hiểu: phần trong ngoặc được tính TRƯỚC TIÊN — trên cả làn ưu tiên nhân chia. Tính được biểu thức có một và hai lớp ngoặc: mở từ TRONG CÙNG ra. Thấy rõ: đặt ngoặc khác chỗ, số phận biểu thức khác hẳn.",
-  "kidText": "Tính 36 : (2 + 4). Dấu ngoặc kia có phép gì mà đứng đó nhỉ?",
+  "kidText": "Tính 36 : ($2 + 4$). Dấu ngoặc kia có phép gì mà đứng đó nhỉ?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,7 +29,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1. (5 + 3) × 2: mở lồng kính trước: 5 + 3 = 8; rồi 8 × 2 = 16. So với cửa trước: 5 + 3 × 2 = 11 — cùng bộ số, chiếc lồng kính đổi cả số phận!"
+    "text": "Bước 1. ($5 + 3$) × 2: mở lồng kính trước: $5 + 3 = 8$; rồi $8  \\times  2 = 16$. So với cửa trước: $5 + 3  \\times  2 = 11$ — cùng bộ số, chiếc lồng kính đổi cả số phận!"
    },
    {
     "id": "K2",
@@ -37,11 +37,11 @@
    },
    {
     "id": "K3",
-    "text": "Bước 3 — HAI LỚP CỬA: 20 − (12 − (3 + 1)): mở từ TRONG CÙNG ra như bóc hành: (3 + 1) = 4 → (12 − 4) = 8 → 20 − 8 = 12."
+    "text": "Bước 3 — HAI LỚP CỬA: 20 − (12 − ($3 + 1$)): mở từ TRONG CÙNG ra như bóc hành: ($3 + 1$) = 4 → ($12 - 4$) = 8 → $20 - 8 = 12$."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — NGOẶC LÀ CÔNG TẮC SỐ PHẬN: 36 : (2 + 4) = 36 : 6 = 6; còn 36 : 2 + 4 = 18 + 4 = 22. Đọc đề mà bỏ sót một chiếc ngoặc là... lạc sang biểu thức khác luôn!"
+    "text": "Bước 4 — NGOẶC LÀ CÔNG TẮC SỐ PHẬN: 36 : ($2 + 4$) = $36 : 6 = 6$; còn $36 : 2 + 4 = 18 + 4 = 22$. Đọc đề mà bỏ sót một chiếc ngoặc là... lạc sang biểu thức khác luôn!"
    }
   ],
   "mantra": "Thấy ngoặc: mở lồng TRONG CÙNG trước, lần lượt ra ngoài. Thứ tự vương quốc biểu thức: NGOẶC → NHÂN CHIA → CỘNG TRỪ. Và khi chép đề: đếm số ngoặc mở - ngoặc đóng cho khớp!",
@@ -49,9 +49,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Cửa khắc (10 − 4) × 2. Trí Long tự tin áp dụng bài vừa học: \"Nhân đi làn ưu tiên! 4 × 2 = 8 trước, rồi 10 − 8 = 2. Lần này chắc chắn đúng luật!\"",
+    "wrong": "Cửa khắc ($10 - 4$) × 2. Trí Long tự tin áp dụng bài vừa học: \"Nhân đi làn ưu tiên! $4  \\times  2 = 8$ trước, rồi $10 - 8 = 2$. Lần này chắc chắn đúng luật!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Luật làn ưu tiên chỉ áp dụng cho biểu thức KHÔNG có gì? Cửa này có thứ gì đang ôm lấy 10 − 4? Gợi ý 2: Trong vương quốc biểu thức, lồng kính với làn ưu tiên — ai đứng trên ai? Mở đúng thứ tự giúp Trí Long, và ghi vào sổ: học luật mới không được quên soi xem luật nào TO HƠN!"
+    "fix": "Gợi ý 1: Luật làn ưu tiên chỉ áp dụng cho biểu thức KHÔNG có gì? Cửa này có thứ gì đang ôm lấy $10 - 4$? Gợi ý 2: Trong vương quốc biểu thức, lồng kính với làn ưu tiên — ai đứng trên ai? Mở đúng thứ tự giúp Trí Long, và ghi vào sổ: học luật mới không được quên soi xem luật nào TO HƠN!"
    }
   ]
  },
@@ -60,7 +60,7 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Tính giá trị biểu thức: 36 : (2 + 4)."
+    "narration": "Tính giá trị biểu thức: 36 : ($2 + 4$)."
    },
    {
     "id": "S2",
@@ -97,23 +97,23 @@
    {
     "id": "S6",
     "kind": "trap",
-    "narration": "Cửa khắc (10 − 4) × 2. Trí Long tự tin áp dụng bài vừa học: \"Nhân đi làn ưu tiên! 4 × 2 = 8 trước, rồi 10 − 8 = 2. Lần này chắc chắn đúng luật!\"",
+    "narration": "Cửa khắc ($10 - 4$) × 2. Trí Long tự tin áp dụng bài vừa học: \"Nhân đi làn ưu tiên! $4  \\times  2 = 8$ trước, rồi $10 - 8 = 2$. Lần này chắc chắn đúng luật!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính giá trị biểu thức: 36 : (2 + 4).",
+  "problem": "Tính giá trị biểu thức: 36 : ($2 + 4$).",
   "steps": [
    {
     "show": "Bài giải:"
    },
    {
-    "show": "36 : (2 + 4)"
+    "show": "36 : ($2 + 4$)"
    },
    {
-    "show": "= 36 : 6 (mở lồng kính: 2 + 4 = 6)"
+    "show": "= $36 : 6$ (mở lồng kính: $2 + 4 = 6$)"
    },
    {
     "show": "= 6"
@@ -128,7 +128,7 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tính: (4 + 2) × 3; (10 − 2) × 4.",
+     "text": "Tính: ($4 + 2$) × 3; ($10 - 2$) × 4.",
      "answerKey": {
       "parts": [
        {
@@ -141,11 +141,11 @@
        }
       ]
      },
-     "solutionNarrative": "6 × 3 = 18; 8 × 4 = 32."
+     "solutionNarrative": "$6  \\times  3 = 18$; $8  \\times  4 = 32$."
     },
     {
      "id": "C2",
-     "text": "Tính: 36 : (2 + 4); 40 : (13 − 5).",
+     "text": "Tính: 36 : ($2 + 4$); 40 : ($13 - 5$).",
      "answerKey": {
       "parts": [
        {
@@ -158,11 +158,11 @@
        }
       ]
      },
-     "solutionNarrative": "36 : 6 = 6; 40 : 8 = 5."
+     "solutionNarrative": "$36 : 6 = 6$; $40 : 8 = 5$."
     },
     {
      "id": "C3",
-     "text": "Cặp đôi khác số phận — tính cả hai rồi so: 5 + 3 × 2 và (5 + 3) × 2.",
+     "text": "Cặp đôi khác số phận — tính cả hai rồi so: $5 + 3  \\times  2$ và ($5 + 3$) × 2.",
      "answerKey": {
       "parts": [
        {
@@ -181,7 +181,7 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Tính: (25 − 10) : 5; 7 × (2 + 6).",
+     "text": "Tính: ($25 - 10$) : 5; 7 × ($2 + 6$).",
      "answerKey": {
       "parts": [
        {
@@ -194,11 +194,11 @@
        }
       ]
      },
-     "solutionNarrative": "15 : 5 = 3; 7 × 8 = 56."
+     "solutionNarrative": "$15 : 5 = 3$; $7  \\times  8 = 56$."
     },
     {
      "id": "C5",
-     "text": "Tính: 36 : 2 + 4 và 36 : (2 + 4) — chiếc ngoặc làm kết quả chênh nhau bao nhiêu?",
+     "text": "Tính: $36 : 2 + 4$ và 36 : ($2 + 4$) — chiếc ngoặc làm kết quả chênh nhau bao nhiêu?",
      "answerKey": {
       "parts": [
        {
@@ -215,11 +215,11 @@
        }
       ]
      },
-     "solutionNarrative": "18 + 4 = 22 và 36 : 6 = 6 — chênh nhau 16!"
+     "solutionNarrative": "$18 + 4 = 22$ và $36 : 6 = 6$ — chênh nhau 16!"
     },
     {
      "id": "C6",
-     "text": "Hai lớp cửa — mở từ trong cùng: 20 − (12 − (3 + 1)); 2 × (10 − (2 + 3)).",
+     "text": "Hai lớp cửa — mở từ trong cùng: 20 − (12 − ($3 + 1$)); 2 × (10 − ($2 + 3$)).",
      "answerKey": {
       "parts": [
        {
@@ -232,7 +232,7 @@
        }
       ]
      },
-     "solutionNarrative": "20 − (12 − 4) = 20 − 8 = 12; 2 × (10 − 5) = 2 × 5 = 10."
+     "solutionNarrative": "20 − ($12 - 4$) = $20 - 8 = 12$; 2 × ($10 - 5$) = $2  \\times  5 = 10$."
     },
     {
      "id": "C7",
@@ -240,13 +240,13 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "(30 − 6) : 4 = 24 : 4 = 6 quả mỗi hộp."
+     "solutionNarrative": "($30 - 6$) : $4 = 24 : 4 = 6$ quả mỗi hộp."
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Đặt MỘT cặp ngoặc vào biểu thức 3 + 5 × 2 để được kết quả 16. Đặt một cặp ngoặc vào 20 − 8 − 4 để được kết quả 16.",
+     "text": "Đặt MỘT cặp ngoặc vào biểu thức $3 + 5  \\times  2$ để được kết quả 16. Đặt một cặp ngoặc vào $20 - 8 - 4$ để được kết quả 16.",
      "answerKey": {
       "parts": [
        {
@@ -267,12 +267,12 @@
        }
       ]
      },
-     "solutionNarrative": "(3 + 5) × 2 = 16 ✓; 20 − (8 − 4) = 20 − 4 = 16 ✓."
+     "solutionNarrative": "($3 + 5$) × $2 = 16$ ✓; 20 − ($8 - 4$) = $20 - 4 = 16$ ✓."
     },
     {
      "id": "C9",
-     "text": "Chị Ngọc Anh đố: \"Cùng bộ số 12, 4, 2 và hai phép : và + — hãy viết hai biểu thức (một có ngoặc, một không) cho ra hai kết quả KHÁC nhau, rồi tính cả hai.\" (Ví dụ khởi động: 12 : 4 + 2 và 12 : (4 + 2)...)",
-     "solutionNarrative": "ví dụ chuẩn: 12 : 4 + 2 = 5 và 12 : (4 + 2) = 2 — một chiếc ngoặc, hai số phận; mọi cặp đề của con cho hai kết quả khác nhau đều được điểm tối đa."
+     "text": "Chị Ngọc Anh đố: \"Cùng bộ số 12, 4, 2 và hai phép : và + — hãy viết hai biểu thức (một có ngoặc, một không) cho ra hai kết quả KHÁC nhau, rồi tính cả hai.\" (Ví dụ khởi động: $12 : 4 + 2$ và 12 : ($4 + 2$)...)",
+     "solutionNarrative": "ví dụ chuẩn: $12 : 4 + 2 = 5$ và 12 : ($4 + 2$) = 2 — một chiếc ngoặc, hai số phận; mọi cặp đề của con cho hai kết quả khác nhau đều được điểm tối đa."
     }
    ]
   }
@@ -291,7 +291,7 @@
    },
    {
     "id": "Q2",
-    "text": "(10 − 4) × 2 = 2.",
+    "text": "($10 - 4$) × $2 = 2$.",
     "format": "tf",
     "answerKey": {
      "value": false
@@ -300,7 +300,7 @@
    },
    {
     "id": "Q3",
-    "text": "(5 + 3) × 2 = ?",
+    "text": "($5 + 3$) × 2 = ?",
     "format": "mcq",
     "choices": [
      "A. 11",
@@ -314,7 +314,7 @@
    },
    {
     "id": "Q4",
-    "text": "36 : (2 + 4) = ?",
+    "text": "36 : ($2 + 4$) = ?",
     "format": "mcq",
     "choices": [
      "A. 22",
@@ -328,7 +328,7 @@
    },
    {
     "id": "Q5",
-    "text": "20 − (12 − (3 + 1)) = ?",
+    "text": "20 − (12 − ($3 + 1$)) = ?",
     "format": "mcq",
     "choices": [
      "A. 12",

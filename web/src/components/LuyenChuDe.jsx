@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Chu from './Chu.jsx';
 import { CONTENT, dongDau, loadLesson } from '../lib/content.js';
 import { buocSau, nguongDat } from '../lib/progress.js';
 import AnswerInput from './AnswerInput.jsx';
@@ -214,7 +215,7 @@ export default function LuyenChuDe({ maDang, lop, progress, onXongLuot, onMoBai,
             {q.tenBai}
           </span>
         </div>
-        <p className="text-[16.5px] font-semibold leading-relaxed">{q.text}</p>
+        <p className="text-[16.5px] font-semibold leading-relaxed"><Chu t={q.text} /></p>
 
         <AnswerInput key={q.id} item={q} submitLabel="Kiểm tra" chotMotLan
                      onResolve={(r) => {
@@ -227,8 +228,8 @@ export default function LuyenChuDe({ maDang, lop, progress, onXongLuot, onMoBai,
             res.ok ? 'border-teal bg-teal-pale text-teal-dark'
                    : 'border-alert bg-alert-pale text-alert'}`}>
             {res.ok
-              ? <><b>🎉 Đúng rồi!</b> {q.solutionNarrative || ''}</>
-              : <><b>Chưa đúng.</b> Lời giải: {q.solutionNarrative || res.expected}</>}
+              ? <><b>🎉 Đúng rồi!</b> <Chu t={q.solutionNarrative || ''} /></>
+              : <><b>Chưa đúng.</b> Lời giải: <Chu t={q.solutionNarrative || res.expected} /></>}
           </div>
         )}
       </div>

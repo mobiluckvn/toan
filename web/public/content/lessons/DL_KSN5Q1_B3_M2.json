@@ -84,13 +84,13 @@
     "wrong": "Duyệt đủ cặp nhưng quên loại cặp có chữ số 0 (giữ 60 trong đáp số tổng 66).",
     "signal": "Đáp số thừa đúng một số tận cùng 0.",
     "fix": "ghi điều kiện ẩn vào tóm tắt NGAY TỪ ĐẦU: bóng gương phải đủ chữ số; cho mọi ứng viên qua máy soi.",
-    "counterExample": "60 + 06? 06 chỉ là 6; 60 + 6 = 66 nhưng 6 không phải số có hai chữ số — đề đòi cả hai đều hai chữ số."
+    "counterExample": "$60 + 06$? 06 chỉ là 6; $60 + 6 = 66$ nhưng 6 không phải số có hai chữ số — đề đòi cả hai đều hai chữ số."
    },
    {
     "wrong": "Trả lời quán tính 'hiệu cũng chia hết cho 11'.",
     "signal": "Chọn ĐÚNG cho câu 'ab − ba chia hết cho 11'.",
     "fix": "hiệu ăn 9; chỉ chia hết 11 khi hai chữ số bằng nhau (hiệu 0).",
-    "counterExample": "74 − 47 = 27 không chia hết cho 11."
+    "counterExample": "$74 - 47 = 27$ không chia hết cho 11."
    }
   ],
   "vocabulary": [
@@ -329,7 +329,7 @@
     "show": "Bước 1 — Định luật bắt tay: 11 × (a + b) = 66 → a + b = 6.",
     "askBefore": {
      "format": "num",
-     "text": "66 : 11 = ?",
+     "text": "$66 : 11$ = ?",
      "answerKey": {
       "value": 6
      },
@@ -340,7 +340,7 @@
     "show": "Bước 2 — Điểm danh nghi phạm: (1;5) (2;4) (3;3) (4;2) (5;1) (6;0) → 15, 24, 33, 42, 51, 60."
    },
    {
-    "show": "Bước 3 — Máy soi gương: 60 → 06 = 6 mất một chữ số → GƯƠNG VỠ, loại. Đáp số: 15, 24, 33, 42, 51.",
+    "show": "Bước 3 — Máy soi gương: 60 → $06 = 6$ mất một chữ số → GƯƠNG VỠ, loại. Đáp số: 15, 24, 33, 42, 51.",
     "askAfter": {
      "format": "tf",
      "text": "(Đúng/Sai?) 33 soi gương vẫn là 33 nên hợp lệ.",

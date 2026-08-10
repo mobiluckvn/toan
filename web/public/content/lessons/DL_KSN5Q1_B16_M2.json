@@ -28,7 +28,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con gỡ được biểu thức HAI BƯỚC theo luật củ hành — khoanh cụm chứa X thành một khối, bóc VỎ NGOÀI trước, mỗi lớp một dòng (X × 2 + 3,5 = 10,5) — và đếm đúng các số tự nhiên X bị KẸP giữa hai số thập phân (2,5 < X < 5,5).",
+  "text": "Con gỡ được biểu thức HAI BƯỚC theo luật củ hành — khoanh cụm chứa X thành một khối, bóc VỎ NGOÀI trước, mỗi lớp một dòng (X × $2 + 3,5 = 10,5$) — và đếm đúng các số tự nhiên X bị KẸP giữa hai số thập phân (2,5 < X < 5,5).",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (bóc vỏ ngoài trước)",
   "kidText": "Biểu thức hai bước thì bóc như bóc củ hành: khoanh khối chứa X, bóc vỏ ngoài trước, mỗi lớp một dòng."
  },
@@ -40,7 +40,7 @@
    },
    {
     "id": "K2",
-    "text": "Bài mẫu: X × 2 + 3,5 = 10,5 → bóc vỏ cộng: X × 2 = 10,5 − 3,5 = 7 → bóc vỏ nhân: X = 7 : 2 = 3,5. Thử: 3,5 × 2 + 3,5 = 10,5 ✓."
+    "text": "Bài mẫu: X × $2 + 3,5 = 10,5$ → bóc vỏ cộng: X × $2 = 10,5 - 3,5 = 7$ → bóc vỏ nhân: X = $7 : 2 = 3,5$. Thử: $3,5  \\times  2 + 3,5 = 10,5$ ✓."
    },
    {
     "id": "K3",
@@ -51,7 +51,7 @@
   "canonicalExamples": [
    {
     "case": "củ hành hai lớp (ca lõi)",
-    "problem": "Tìm X: X × 2 + 3,5 = 10,5.",
+    "problem": "Tìm X: X × $2 + 3,5 = 10,5$.",
     "solution": "Khoanh khối [X × 2]. Bóc vỏ cộng: X × 2 = 10,5 − 3,5 = 7. Bóc vỏ nhân: X = 7 : 2 = 3,5. Thử ✓.",
     "why": "đề A câu 12."
    },
@@ -65,16 +65,16 @@
   "numberRange": "Lớp 5: củ hành ≤ 2 lớp; mốc kẹp thập phân một chữ số phần mười.",
   "misconceptions": [
    {
-    "wrong": "Bóc từ TRONG ra: chia 2 trước cả hai vế khi vỏ cộng còn nguyên (10,5 : 2 rồi loay hoay với 3,5).",
+    "wrong": "Bóc từ TRONG ra: chia 2 trước cả hai vế khi vỏ cộng còn nguyên ($10,5 : 2$ rồi loay hoay với 3,5).",
     "signal": "Các dòng gỡ rối, số lẻ bất thường.",
     "fix": "khoanh khối chứa X, hỏi 'lớp NGOÀI cùng là gì?' — bóc nó trước, mỗi lớp một dòng.",
-    "counterExample": "Bóc đúng chỉ hai dòng sạch: X × 2 = 7 rồi X = 3,5."
+    "counterExample": "Bóc đúng chỉ hai dòng sạch: X × $2 = 7$ rồi X = 3,5."
    },
    {
     "wrong": "Đếm X kẹp lấy cả đầu mút hoặc hụt biên: 2,5 < X < 5,5 trả lời {2; 3; 4; 5} hay {3; 4}.",
     "signal": "Thừa số 2 (chưa vượt tường) hoặc thiếu số 5.",
     "fix": "đọc thành lời: VƯỢT 2,5 là từ 3; CHƯA CHẠM 5,5 là tới 5 — điểm danh trên tia số.",
-    "counterExample": "Số 2 < 2,5: còn kẹt sau tường — loại."
+    "counterExample": "Số $2 < 2,5$: còn kẹt sau tường — loại."
    }
   ],
   "vocabulary": [
@@ -91,7 +91,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "Tìm X: X × 2 = 7 (bài trước).",
+    "text": "Tìm X: X × $2 = 7$ (bài trước).",
     "answerKey": {
      "value": 3.5
     }
@@ -109,7 +109,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Tìm X: X × 2 + 3,5 = 10,5.",
+    "narration": "Tìm X: X × $2 + 3,5 = 10,5$.",
     "display": {
      "type": "story_panel",
      "caption": "chia 2 trước… rồi 3,5 để đâu?"
@@ -156,7 +156,7 @@
     "estSeconds": 16,
     "item": {
      "format": "num",
-     "text": "Tìm X: X × 3 − 1,5 = 7,5. (Bóc vỏ trừ trước!)",
+     "text": "Tìm X: X × $3 - 1,5 = 7,5$. (Bóc vỏ trừ trước!)",
      "answerKey": {
       "value": 3
      },
@@ -283,7 +283,7 @@
  },
  "workedExample": {
   "title": "Bóc củ hành hai lớp",
-  "problem": "Tìm X: X × 2 + 3,5 = 10,5.",
+  "problem": "Tìm X: X × $2 + 3,5 = 10,5$.",
   "steps": [
    {
     "show": "Bước 1 — Khoanh khối [X × 2]; lớp NGOÀI cùng là + 3,5.",
@@ -302,13 +302,13 @@
     }
    },
    {
-    "show": "Bước 2 — Bóc vỏ cộng: X × 2 = 10,5 − 3,5 = 7."
+    "show": "Bước 2 — Bóc vỏ cộng: X × $2 = 10,5 - 3,5 = 7$."
    },
    {
-    "show": "Bước 3 — Bóc vỏ nhân: X = 7 : 2 = 3,5. Thử: 3,5 × 2 + 3,5 = 10,5 ✓.",
+    "show": "Bước 3 — Bóc vỏ nhân: X = $7 : 2 = 3,5$. Thử: $3,5  \\times  2 + 3,5 = 10,5$ ✓.",
     "askAfter": {
      "format": "num",
-     "text": "Tìm X: X × 4 + 2 = 14.",
+     "text": "Tìm X: X × $4 + 2 = 14$.",
      "answerKey": {
       "value": 3
      },
@@ -329,7 +329,7 @@
      "id": "P1",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B16.LT5",
-     "text": "Tìm X: X × 2 + 3,5 = 10,5.",
+     "text": "Tìm X: X × $2 + 3,5 = 10,5$.",
      "answerKey": {
       "value": 3.5
      },
@@ -337,7 +337,7 @@
       "Khoanh khối [X × 2]; vỏ ngoài là + 3,5.",
       "X × 2 = 7 rồi chia 2."
      ],
-     "solutionNarrative": "X × 2 = 10,5 − 3,5 = 7 → X = 3,5.",
+     "solutionNarrative": "X × $2 = 10,5 - 3,5 = 7$ → X = 3,5.",
      "teaches": [
       "K1",
       "K2"
@@ -378,7 +378,7 @@
     {
      "id": "P3",
      "format": "num",
-     "text": "Tìm X: (X + 1,5) × 4 = 22.",
+     "text": "Tìm X: (X + 1,5) × $4 = 22$.",
      "answerKey": {
       "value": 4
      },
@@ -386,7 +386,7 @@
       "Vỏ ngoài giờ là × 4 — bóc trước!",
       "X + 1,5 = 5,5."
      ],
-     "solutionNarrative": "X + 1,5 = 22 : 4 = 5,5 → X = 4.",
+     "solutionNarrative": "X + $1,5 = 22 : 4 = 5,5$ → X = 4.",
      "teaches": [
       "K1",
       "K2"
@@ -416,7 +416,7 @@
    {
     "id": "A1",
     "format": "mcq",
-    "text": "X × 2 + 3,5 = 10,5 — bước ĐẦU TIÊN đúng là:",
+    "text": "X × $2 + 3,5 = 10,5$ — bước ĐẦU TIÊN đúng là:",
     "choices": [
      "X × 2 = 10,5 − 3,5",
      "X = 10,5 : 2",
@@ -450,7 +450,7 @@
    {
     "id": "A3",
     "format": "num",
-    "text": "Tìm X: X × 5 − 2,5 = 12,5.",
+    "text": "Tìm X: X × $5 - 2,5 = 12,5$.",
     "answerKey": {
      "value": 3
     },
@@ -465,7 +465,7 @@
   "flashcards": [
    {
     "front": "Biểu thức hai bước gỡ theo luật nào? Đếm X bị kẹp?",
-    "back": "Luật CỦ HÀNH: khoanh khối chứa X, bóc VỎ NGOÀI trước, mỗi lớp một dòng (X × 2 + 3,5 = 10,5 → X × 2 = 7 → X = 3,5). X kẹp 2,5 < X < 5,5: vượt mốc dưới, chưa chạm mốc trên → {3; 4; 5}."
+    "back": "Luật CỦ HÀNH: khoanh khối chứa X, bóc VỎ NGOÀI trước, mỗi lớp một dòng (X × $2 + 3,5 = 10,5$ → X × $2 = 7$ → X = 3,5). X kẹp 2,5 < X < 5,5: vượt mốc dưới, chưa chạm mốc trên → {3; 4; 5}."
    }
   ],
   "schedule": [
@@ -476,7 +476,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con học luật củ hành (bóc vỏ ngoài trước, mỗi lớp một dòng) và đếm X kẹp giữa hai mốc. Con đạt {score}/3.",
-  "homeActivity": "Bóc củ hành/quả quýt thật theo lớp — con vừa bóc vừa đọc thứ tự gỡ của bài X × 2 + 3,5 = 10,5.",
+  "homeActivity": "Bóc củ hành/quả quýt thật theo lớp — con vừa bóc vừa đọc thứ tự gỡ của bài X × $2 + 3,5 = 10,5$.",
   "watchFor": "Nếu con chia 2 trước khi trừ 3,5 — hỏi 'lớp ngoài cùng là lớp nào?' (S2) và yêu cầu khoanh khối trước."
  },
  "$schema": "digital-lesson/v2-micro",

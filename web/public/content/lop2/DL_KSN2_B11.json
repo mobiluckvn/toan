@@ -21,7 +21,7 @@
  "objective": {
   "id": "O1",
   "text": "Nhận biết số chẵn - số lẻ bằng hai cách: chia đôi kẹo và nhìn chữ số TẬN CÙNG. Thuộc hai bí mật: kết quả bảng nhân 2 luôn tận cùng chẵn. Bảng nhân 5 luôn tận cùng 0 hoặc 5. Đoán được tổng hai số là chẵn hay lẻ mà KHÔNG cần tính hết.",
-  "kidText": "Sinh nhật Su Kem! Đố con: 26 + 13 là số chẵn hay số lẻ — mà không được tính ra?",
+  "kidText": "Sinh nhật Su Kem! Đố con: $26 + 13$ là số chẵn hay số lẻ — mà không được tính ra?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,7 +29,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1. Số CHẴN là số chia đôi được đều tăm tắp (8 = 4 + 4). Số LẺ chia đôi luôn thừa 1 viên (7 = 3 + 3 + 1 viên lẻ loi)."
+    "text": "Bước 1. Số CHẴN là số chia đôi được đều tăm tắp ($8 = 4 + 4$). Số LẺ chia đôi luôn thừa 1 viên ($7 = 3 + 3 + 1$ viên lẻ loi)."
    },
    {
     "id": "K2",
@@ -60,7 +60,7 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Sinh nhật Su Kem! Không tính kết quả, cho biết tổng 26 + 13 là số chẵn hay số lẻ."
+    "narration": "Sinh nhật Su Kem! Không tính kết quả, cho biết tổng $26 + 13$ là số chẵn hay số lẻ."
    },
    {
     "id": "S2",
@@ -104,7 +104,7 @@
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Không tính kết quả, cho biết tổng 26 + 13 là số chẵn hay số lẻ.",
+  "problem": "Không tính kết quả, cho biết tổng $26 + 13$ là số chẵn hay số lẻ.",
   "steps": [
    {
     "show": "Bài giải:"
@@ -113,13 +113,13 @@
     "show": "Số 26 tận cùng là 6 → số chẵn. Số 13 tận cùng là 3 → số lẻ."
    },
    {
-    "show": "Chẵn + Lẻ = Lẻ, nên tổng 26 + 13 là số lẻ."
+    "show": "Chẵn + Lẻ = Lẻ, nên tổng $26 + 13$ là số lẻ."
    },
    {
     "show": "Đáp số: số lẻ."
    },
    {
-    "show": "Tự kiểm tra: 26 + 13 = 39, tận cùng 9 — đúng là số lẻ ✓."
+    "show": "Tự kiểm tra: $26 + 13 = 39$, tận cùng 9 — đúng là số lẻ ✓."
    }
   ]
  },
@@ -212,7 +212,7 @@
     },
     {
      "id": "C5",
-     "text": "Không tính, đoán tổng sau chẵn hay lẻ rồi mới tính kiểm tra: (a) 14 + 22; (b) 15 + 23; (c) 30 + 47.",
+     "text": "Không tính, đoán tổng sau chẵn hay lẻ rồi mới tính kiểm tra: (a) $14 + 22$; (b) $15 + 23$; (c) $30 + 47$.",
      "answerKey": {
       "parts": [
        {
@@ -266,7 +266,7 @@
        }
       ]
      },
-     "solutionNarrative": "40 tận cùng 0 → thuộc bảng nhân 5 (5 × 8); 43 tận cùng 3 → không thuộc"
+     "solutionNarrative": "40 tận cùng 0 → thuộc bảng nhân 5 ($5  \\times  8$); 43 tận cùng 3 → không thuộc"
     },
     {
      "id": "C7",
@@ -289,7 +289,7 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Không cộng hết, đoán xem tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 là chẵn hay lẻ. (Mẹo: các số lẻ trong đó bắt cặp với nhau — đếm xem có mấy \"viên kẹo lẻ loi\", có bạn nào bị ế cặp không?) Sau đó dùng tuyệt chiêu Gauss nhí của Bài 13 sắp học... à không, dùng máy đếm tay để kiểm tra cũng được!",
+     "text": "Không cộng hết, đoán xem tổng $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9$ là chẵn hay lẻ. (Mẹo: các số lẻ trong đó bắt cặp với nhau — đếm xem có mấy \"viên kẹo lẻ loi\", có bạn nào bị ế cặp không?) Sau đó dùng tuyệt chiêu Gauss nhí của Bài 13 sắp học... à không, dùng máy đếm tay để kiểm tra cũng được!",
      "answerKey": {
       "parts": [
        {
@@ -302,12 +302,12 @@
        }
       ]
      },
-     "solutionNarrative": "các số lẻ trong tổng là 1, 3, 5, 7, 9 — có 5 \"viên kẹo lẻ loi\". Bốn viên bắt thành hai cặp (thành chẵn), còn đúng 1 viên bị ế → tổng là số LẺ. Kiểm tra: 1 + 2 + ... + 9 = 45, tận cùng 5 — lẻ thật ✓"
+     "solutionNarrative": "các số lẻ trong tổng là 1, 3, 5, 7, 9 — có 5 \"viên kẹo lẻ loi\". Bốn viên bắt thành hai cặp (thành chẵn), còn đúng 1 viên bị ế → tổng là số LẺ. Kiểm tra: $1 + 2$ + ... + $9 = 45$, tận cùng 5 — lẻ thật ✓"
     },
     {
      "id": "C9",
-     "text": "Su Kem nhân một số trong bảng 5 với một số trong bảng 2 (ví dụ 5 × 4, 15 × 2...). Trí Long chưa nhìn phép tính đã nói ngay: \"Kết quả tận cùng là 0!\" Con thử vài phép tính xem Trí Long nói đúng không, rồi giải thích vì sao bằng lời của con.",
-     "solutionNarrative": "Trí Long nói đúng! Thử: 5 × 4 = 20; 15 × 2 = 30; 5 × 6 = 30 — đều tận cùng 0. Giải thích kiểu lớp 2: số trong bảng 5 tận cùng 0 hoặc 5; nhân với số chẵn (bảng 2) thì phần \"5\" cũng thành chẵn cặp đôi tròn chục → đuôi luôn là 0. (Bí mật đầy đủ \"2 × 5 = 10\" con sẽ gặp lại ở lớp 4!)"
+     "text": "Su Kem nhân một số trong bảng 5 với một số trong bảng 2 (ví dụ $5  \\times  4$, $15  \\times  2$...). Trí Long chưa nhìn phép tính đã nói ngay: \"Kết quả tận cùng là 0!\" Con thử vài phép tính xem Trí Long nói đúng không, rồi giải thích vì sao bằng lời của con.",
+     "solutionNarrative": "Trí Long nói đúng! Thử: $5  \\times  4 = 20$; $15  \\times  2 = 30$; $5  \\times  6 = 30$ — đều tận cùng 0. Giải thích kiểu lớp 2: số trong bảng 5 tận cùng 0 hoặc 5; nhân với số chẵn (bảng 2) thì phần \"5\" cũng thành chẵn cặp đôi tròn chục → đuôi luôn là 0. (Bí mật đầy đủ \"$2  \\times  5 = 10$\" con sẽ gặp lại ở lớp 4!)"
     }
    ]
   }
@@ -363,7 +363,7 @@
    },
    {
     "id": "Q5",
-    "text": "Không tính, tổng 18 + 25 là:",
+    "text": "Không tính, tổng $18 + 25$ là:",
     "format": "mcq",
     "choices": [
      "A. Số chẵn",

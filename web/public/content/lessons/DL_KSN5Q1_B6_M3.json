@@ -79,7 +79,7 @@
   "misconceptions": [
    {
     "wrong": "Nhân chung số lựa chọn đuôi vào dây chuyền ('đuôi có 2 cách' × các toa như nhau).",
-    "signal": "Đáp số kiểu 2 × 3 × 2 = 12 thay vì 10.",
+    "signal": "Đáp số kiểu $2  \\times  3  \\times  2 = 12$ thay vì 10.",
     "fix": "hỏi trước khi nhân: các nhánh đuôi có cho toa sau CÙNG luật không? Khác luật → tách nhánh, cộng.",
     "counterExample": "Nhánh đuôi 0 được 6 số, nhánh đuôi 8 chỉ 4 — nhân chung là gán oan cho nhánh nghèo."
    },
@@ -199,7 +199,7 @@
      "K3",
      "K4"
     ],
-    "narration": "Thứ tự vàng khắc lên vé tàu: toa RÀNG BUỘC trước — toa ĐẦU (cấm 0) — toa dễ tính sau. Còn điều kiện chia hết BA thì gia tộc TỔNG chỉ huy: tuyển các BỘ ba thẻ tổng chia hết 3 — {0;1;2}, {0;2;4}, {1;2;3}, {2;3;4} — rồi đếm cách xếp từng bộ: bộ chứa 0 được 4 cách, bộ sạch 0 được 6 cách. Cộng: 4 + 4 + 6 + 6 = 20!",
+    "narration": "Thứ tự vàng khắc lên vé tàu: toa RÀNG BUỘC trước — toa ĐẦU (cấm 0) — toa dễ tính sau. Còn điều kiện chia hết BA thì gia tộc TỔNG chỉ huy: tuyển các BỘ ba thẻ tổng chia hết 3 — {0;1;2}, {0;2;4}, {1;2;3}, {2;3;4} — rồi đếm cách xếp từng bộ: bộ chứa 0 được 4 cách, bộ sạch 0 được 6 cách. Cộng: $4 + 4 + 6 + 6 = 20$!",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -325,7 +325,7 @@
     }
    },
    {
-    "show": "Bước 2 — Nhánh đuôi 0: toa trăm 3, toa chục 2 → 3 × 2 = 6."
+    "show": "Bước 2 — Nhánh đuôi 0: toa trăm 3, toa chục 2 → $3  \\times  2 = 6$."
    },
    {
     "show": "Bước 3 — Nhánh đuôi 8: toa trăm 2 (cấm 0, mất 8), toa chục 2 → 4.",
@@ -339,10 +339,10 @@
     }
    },
    {
-    "show": "Bước 4 — Cộng cửa ra: 6 + 4 = 10 số chẵn.",
+    "show": "Bước 4 — Cộng cửa ra: $6 + 4 = 10$ số chẵn.",
     "askAfter": {
      "format": "num",
-     "text": "Kiểm chéo: tổng 'khác nhau' là 18; số LẺ = 18 − 10 = ?",
+     "text": "Kiểm chéo: tổng 'khác nhau' là 18; số LẺ = $18 - 10$ = ?",
      "answerKey": {
       "value": 8
      },
@@ -371,7 +371,7 @@
       "Đuôi {0; 8} — hai nhánh khác luật.",
       "6 + 4."
      ],
-     "solutionNarrative": "Đuôi 0: 3 × 2 = 6; đuôi 8: 2 × 2 = 4 → 6 + 4 = 10 số chẵn.",
+     "solutionNarrative": "Đuôi 0: $3  \\times  2 = 6$; đuôi 8: $2  \\times  2 = 4$ → $6 + 4 = 10$ số chẵn.",
      "teaches": [
       "K1",
       "K2"
@@ -389,7 +389,7 @@
       "Đuôi {0; 5}.",
       "6 + 4."
      ],
-     "solutionNarrative": "Đuôi 0: 6; đuôi 5: 2 × 2 = 4 → 10 số.",
+     "solutionNarrative": "Đuôi 0: 6; đuôi 5: $2  \\times  2 = 4$ → 10 số.",
      "teaches": [
       "K1",
       "K2"
@@ -409,7 +409,7 @@
       "Đuôi lẻ là 3 hoặc 5 — hai nhánh CÙNG khuôn.",
       "Mỗi nhánh: trăm 2 (cấm 0, mất đuôi), chục 2 → 4; cộng."
      ],
-     "solutionNarrative": "Đuôi là 3 hoặc 5: mỗi nhánh 2 × 2 = 4 → 8 số (kiểm: 18 − 10 chẵn = 8 ✓).",
+     "solutionNarrative": "Đuôi là 3 hoặc 5: mỗi nhánh $2  \\times  2 = 4$ → 8 số (kiểm: $18 - 10$ chẵn = 8 ✓).",
      "teaches": [
       "K1",
       "K2"
@@ -457,7 +457,7 @@
       "Các bộ ba tổng chia hết cho 3: {0;1;2}, {0;2;4}, {1;2;3}, {2;3;4}.",
       "Bộ chứa 0: 4 cách xếp; bộ sạch 0: 6 cách."
      ],
-     "solutionNarrative": "4 bộ đạt chuẩn: 4 + 4 + 6 + 6 = 20 số.",
+     "solutionNarrative": "4 bộ đạt chuẩn: $4 + 4 + 6 + 6 = 20$ số.",
      "teaches": [
       "K4"
      ]
@@ -536,7 +536,7 @@
   "flashcards": [
    {
     "front": "Đếm số có điều kiện đuôi — quy trình và luật nhân/cộng?",
-    "back": "Toa RÀNG BUỘC lên trước; nhánh khác luật thì TÁCH: trong nhánh NHÂN — giữa nhánh CỘNG. Chẵn từ {0;3;5;8}: 6 + 4 = 10. Thứ tự: ràng buộc → đầu → dễ. Chia hết 3: tuyển bộ theo tổng rồi đếm cách xếp từng bộ."
+    "back": "Toa RÀNG BUỘC lên trước; nhánh khác luật thì TÁCH: trong nhánh NHÂN — giữa nhánh CỘNG. Chẵn từ {0;3;5;8}: $6 + 4 = 10$. Thứ tự: ràng buộc → đầu → dễ. Chia hết 3: tuyển bộ theo tổng rồi đếm cách xếp từng bộ."
    }
   ],
   "schedule": [
@@ -547,7 +547,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con học đếm có điều kiện: tách nhánh khi khác luật, thứ tự 'toa khó tính lên trước'. Con đạt {score}/3, {trapResult} câu bẫy nhân-chung.",
-  "homeActivity": "Đố kiểm chứng: 'từ 0, 3, 5, 8 — số chẵn cộng số lẻ ba chữ số khác nhau có ra đủ 18 không?' — con tính 10 + 8 = 18 khớp là đạt.",
+  "homeActivity": "Đố kiểm chứng: 'từ 0, 3, 5, 8 — số chẵn cộng số lẻ ba chữ số khác nhau có ra đủ 18 không?' — con tính $10 + 8 = 18$ khớp là đạt.",
   "watchFor": "Nếu con nhân '2 cách đuôi' thẳng vào dây chuyền — mở lại hai đường ray tách nhánh (S2) cùng con."
  },
  "$schema": "digital-lesson/v2-micro",

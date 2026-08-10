@@ -81,12 +81,12 @@
     "wrong": "Khoanh \"số đứng giữa danh sách\" làm TBC (dãy 22; 38; 31; 29; 35 → chọn 31 vì nó ngồi giữa).",
     "signal": "Không có phép chia nào trong bài làm.",
     "fix": "TBC chỉ có một định nghĩa: tổng chia số số hạng; thử đổi chỗ các số — chỗ ngồi đổi, TBC không đổi.",
-    "counterExample": "Dãy 1; 100; 2: kẻ ngồi giữa là 100 mà TBC = 103 : 3 khoảng 34 — lệch trời vực!"
+    "counterExample": "Dãy 1; 100; 2: kẻ ngồi giữa là 100 mà TBC = $103 : 3$ khoảng 34 — lệch trời vực!"
    },
    {
-    "wrong": "Đề cho TBC mà không nhân ra tổng, loay hoay cộng trừ trực tiếp trên TBC (25 − 20 − 24…).",
+    "wrong": "Đề cho TBC mà không nhân ra tổng, loay hoay cộng trừ trực tiếp trên TBC ($25 - 20 - 24$…).",
     "signal": "Không thấy phép TBC × n ở đầu bài giải.",
-    "fix": "phản xạ hóa: đọc thấy TBC là viết ngay 'tổng = 25 × 4 = 100' rồi mới làm tiếp.",
+    "fix": "phản xạ hóa: đọc thấy TBC là viết ngay 'tổng = $25  \\times  4 = 100$' rồi mới làm tiếp.",
     "counterExample": "Không có tổng thì số thứ tư biết trừ vào đâu?"
    }
   ],
@@ -104,7 +104,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "155 : 5 = ?",
+    "text": "$155 : 5$ = ?",
     "answerKey": {
      "value": 31
     }
@@ -300,7 +300,7 @@
   "problem": "(a) Tính TBC của 22; 38; 31; 29; 35. (b) TBC bốn số là 25, ba số là 20; 24; 28 — tìm số thứ tư.",
   "steps": [
    {
-    "show": "Bước 1 — Câu (a): tổng = 155 → TBC = 155 : 5 = 31 (kiểm: nằm giữa 22 và 38 ✓).",
+    "show": "Bước 1 — Câu (a): tổng = 155 → TBC = $155 : 5 = 31$ (kiểm: nằm giữa 22 và 38 ✓).",
     "askBefore": {
      "format": "mcq",
      "text": "TBC được tính bằng:",
@@ -316,10 +316,10 @@
     }
    },
    {
-    "show": "Bước 2 — Câu (b): thấy TBC → tổng = 25 × 4 = 100."
+    "show": "Bước 2 — Câu (b): thấy TBC → tổng = $25  \\times  4 = 100$."
    },
    {
-    "show": "Bước 3 — Số thứ tư = 100 − (20 + 24 + 28) = 28. Thử: 100 : 4 = 25 ✓.",
+    "show": "Bước 3 — Số thứ tư = 100 − ($20 + 24 + 28$) = 28. Thử: $100 : 4 = 25$ ✓.",
     "askAfter": {
      "format": "num",
      "text": "TBC ba số là 30, hai số là 28 và 35 — số thứ ba?",
@@ -351,7 +351,7 @@
       "Gom vào rổ: tổng bao nhiêu?",
       "155 : 5."
      ],
-     "solutionNarrative": "(22 + 38 + 31 + 29 + 35) : 5 = 155 : 5 = 31.",
+     "solutionNarrative": "($22 + 38 + 31 + 29 + 35$) : $5 = 155 : 5 = 31$.",
      "teaches": [
       "K1",
       "K2"
@@ -376,7 +376,7 @@
       "Tổng 45.",
       "45 : 3."
      ],
-     "solutionNarrative": "45 : 3 = 15.",
+     "solutionNarrative": "$45 : 3 = 15$.",
      "teaches": [
       "K1"
      ]
@@ -395,7 +395,7 @@
       "Qua cầu ngược: nhân.",
       "31 × 5."
      ],
-     "solutionNarrative": "Tổng = 31 × 5 = 155 chiếc.",
+     "solutionNarrative": "Tổng = $31  \\times  5 = 155$ chiếc.",
      "teaches": [
       "K3"
      ]
@@ -414,7 +414,7 @@
       "Thấy TBC — nhân ra tổng: 25 × 4.",
       "100 − 72."
      ],
-     "solutionNarrative": "Tổng 100 → số thứ tư = 100 − 72 = 28 (thử 100 : 4 = 25 ✓).",
+     "solutionNarrative": "Tổng 100 → số thứ tư = $100 - 72 = 28$ (thử $100 : 4 = 25$ ✓).",
      "teaches": [
       "K3",
       "K4"

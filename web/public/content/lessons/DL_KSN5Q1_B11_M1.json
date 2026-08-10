@@ -38,7 +38,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Đuôi 0, 1, 5, 6: nhân với chính nó bao nhiêu lần đuôi vẫn NGUYÊN (6 × 6 = 36 đuôi 6; 5 × 5 = 25 đuôi 5) — nhóm ĐỨNG IM, trả lời không cần chia chác."
+    "text": "Đuôi 0, 1, 5, 6: nhân với chính nó bao nhiêu lần đuôi vẫn NGUYÊN ($6  \\times  6 = 36$ đuôi 6; $5  \\times  5 = 25$ đuôi 5) — nhóm ĐỨNG IM, trả lời không cần chia chác."
    },
    {
     "id": "K2",
@@ -50,14 +50,14 @@
    },
    {
     "id": "K4",
-    "text": "Cách dựng lại vòng khi quên: nhân đuôi liên tiếp và chỉ GIỮ CHỮ SỐ CUỐI mỗi lần (2, 4, 8, 16→6, rồi 6×2=12→2: khép vòng)."
+    "text": "Cách dựng lại vòng khi quên: nhân đuôi liên tiếp và chỉ GIỮ CHỮ SỐ CUỐI mỗi lần (2, 4, 8, 16→6, rồi $6 \\times 2=12$→2: khép vòng)."
    }
   ],
   "mechanism": "Hình ảnh brand: SÀN NHẢY VÒNG QUAY của các chữ số đuôi. Giữa sàn là dãy GHẾ LƯỜI: 0, 1, 5, 6 ngồi im không nhảy — nhân kiểu gì đuôi vẫn thế (5 nhân 5 là 25, đuôi vẫn 5!). Cạnh đó hai vũ công nhảy ĐÔI: anh 4 lắc qua lắc lại 4-6, chị 9 lắc 9-1. Còn bốn tay chơi 2, 3, 7, 8 nhảy vòng BỐN nhịp quanh sàn. Bẫy kinh điển: thấy ai cũng quay, lôi cả anh 5 ra bắt nhảy \"5, 25, 125 — vòng dài ghê!\" — nhìn lại xem: đuôi TOÀN là 5, anh ấy có rời ghế đâu!",
   "canonicalExamples": [
    {
     "case": "ghế lười (ca lõi)",
-    "problem": "Tìm chữ số tận cùng của 6 × 6 × 6 và của 5 × 5 × 5 × 5.",
+    "problem": "Tìm chữ số tận cùng của $6  \\times  6  \\times  6$ và của $5  \\times  5  \\times  5  \\times  5$.",
     "solution": "Đuôi 6 và đuôi 5 thuộc nhóm ĐỨNG IM: đuôi lần lượt là 6 và 5 — không cần tính gì thêm (thử: 216 và 625 ✓).",
     "why": ""
    },
@@ -77,10 +77,10 @@
   "numberRange": "Lớp 5: đuôi 0–9; tích đến 4 thừa số khi thử tay.",
   "misconceptions": [
    {
-    "wrong": "Bắt số 5 (hay 6) chạy vòng: \"5 - 25 - 125, vòng của 5 dài lắm\".",
+    "wrong": "Bắt số 5 (hay 6) chạy vòng: \"$5 - 25 - 125$, vòng của 5 dài lắm\".",
     "signal": "Kê 'vòng quay' cho đuôi 0, 1, 5, 6.",
     "fix": "thuộc nhóm ĐỨNG IM trước tiên; kiểm nhanh: các tích 25, 125, 625 đuôi có đổi đâu!",
-    "counterExample": "5 × 5 = 25; 25 × 5 = 125 — đuôi ba lần liền đều là 5."
+    "counterExample": "$5  \\times  5 = 25$; $25  \\times  5 = 125$ — đuôi ba lần liền đều là 5."
    }
   ],
   "vocabulary": [
@@ -97,7 +97,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "Chữ số tận cùng của 7 × 8 là mấy?",
+    "text": "Chữ số tận cùng của $7  \\times  8$ là mấy?",
     "answerKey": {
      "value": 6
     }
@@ -115,7 +115,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Tìm chữ số tận cùng của 6 × 6 × 6 và của 5 × 5 × 5 × 5.",
+    "narration": "Tìm chữ số tận cùng của $6  \\times  6  \\times  6$ và của $5  \\times  5  \\times  5  \\times  5$.",
     "display": {
      "type": "story_panel",
      "caption": "5 → 25 → 125: quay hay… ngồi im?"
@@ -180,7 +180,7 @@
     "estSeconds": 15,
     "item": {
      "format": "num",
-     "text": "Chữ số tận cùng của 6 × 6 × 6 là mấy?",
+     "text": "Chữ số tận cùng của $6  \\times  6  \\times  6$ là mấy?",
      "answerKey": {
       "value": 6
      },
@@ -307,7 +307,7 @@
  },
  "workedExample": {
   "title": "Ai quay, ai ngồi im?",
-  "problem": "Tìm chữ số tận cùng của 6 × 6 × 6 và của 5 × 5 × 5 × 5. Sau đó dựng vòng quay của số 2.",
+  "problem": "Tìm chữ số tận cùng của $6  \\times  6  \\times  6$ và của $5  \\times  5  \\times  5  \\times  5$. Sau đó dựng vòng quay của số 2.",
   "steps": [
    {
     "show": "Bước 1 — Tra bản đồ: đuôi 6 và 5 thuộc GHẾ LƯỜI → đuôi giữ nguyên: 6 và 5.",
@@ -353,7 +353,7 @@
      "id": "P1",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B11.LT1",
-     "text": "Tìm chữ số tận cùng của: 6 × 6 × 6 và 5 × 5 × 5 × 5.",
+     "text": "Tìm chữ số tận cùng của: $6  \\times  6  \\times  6$ và $5  \\times  5  \\times  5  \\times  5$.",
      "answerKey": {
       "parts": [
        {
@@ -436,7 +436,7 @@
     {
      "id": "P4",
      "format": "tf",
-     "text": "(Đúng/Sai?) Vòng quay tận cùng của số 5 là 5 - 25 - 125.",
+     "text": "(Đúng/Sai?) Vòng quay tận cùng của số 5 là $5 - 25 - 125$.",
      "answerKey": {
       "value": false,
       "note": "Đuôi luôn là 5 — số 5 thuộc nhóm đứng im, không có vòng."
@@ -503,7 +503,7 @@
    {
     "id": "A3",
     "format": "num",
-    "text": "Tận cùng của 4 × 4 (hai thừa số — chẵn) là mấy?",
+    "text": "Tận cùng của $4  \\times  4$ (hai thừa số — chẵn) là mấy?",
     "answerKey": {
      "value": 6
     },

@@ -37,34 +37,34 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Dây chuyền a/b × b/c × c/d: mẫu của phân số trước TRÙNG tử của phân số sau → rút chéo từng cặp — cuối cùng chỉ còn TỬ ĐẦU / MẪU CUỐI (2/3 × 3/4 × 4/5 = 2/5)."
+    "text": "Dây chuyền a/b × b/c × c/d: mẫu của phân số trước TRÙNG tử của phân số sau → rút chéo từng cặp — cuối cùng chỉ còn TỬ ĐẦU / MẪU CUỐI ($\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$ = $\\frac{2}{5}$)."
    },
    {
     "id": "K2",
-    "text": "Trước khi rút phải DÒ MỘT LƯỢT: mẫu anh trước có ĐÚNG BẰNG tử anh sau không? Thiếu một mắt xích (2/3 × 3/4 × 5/6: mắt 4–5 đứt) là KHÔNG rút xuyên qua được — chỉ rút những cặp thật sự trùng."
+    "text": "Trước khi rút phải DÒ MỘT LƯỢT: mẫu anh trước có ĐÚNG BẰNG tử anh sau không? Thiếu một mắt xích ($\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{5}{6}$: mắt 4–5 đứt) là KHÔNG rút xuyên qua được — chỉ rút những cặp thật sự trùng."
    },
    {
     "id": "K3",
-    "text": "Sống sót xong vẫn phải DỌN (nghi thức Bài 14): 2/10 rút về 1/5 — đáp số luôn tối giản."
+    "text": "Sống sót xong vẫn phải DỌN (nghi thức Bài 14): 2/10 rút về $\\frac{1}{5}$ — đáp số luôn tối giản."
    }
   ],
   "mechanism": "Hình ảnh brand: DÂY CHUYỀN XÔ NƯỚC chữa cháy. Mỗi phân số là một người: tay TRÁI (tử) nhận xô, tay PHẢI (mẫu) chuyền đi. Người 2/3 chuyền cho người 3/4: tay phải số 3 trao đúng tay trái số 3 — xô lướt qua, hai số 3 tự xóa nhau! Chuyền suốt hàng: mọi cặp giữa tan biến, chỉ còn tay trái người ĐẦU (2) và tay phải người CUỐI (5): 2/5. Nhưng đội trưởng luôn DÒ DÂY trước hiệu lệnh: nếu người 3/4 đứng cạnh người 5/6 — tay phải 4 chìa ra mà tay trái bên kia là 5 — mắt xích ĐỨT: xô đổ tung tóe, ai trùng người nấy rút, tuyệt đối không rút xuyên chỗ đứt.",
   "canonicalExamples": [
    {
     "case": "dây liền ba người (ca lõi)",
-    "problem": "Tính bằng rút gọn chéo: 2/3 × 3/4 × 4/5.",
+    "problem": "Tính bằng rút gọn chéo: $\\frac{2}{3}$ × $\\frac{3}{4}$ × 4/5.",
     "solution": "Dò dây: 3–3 ✓, 4–4 ✓ — liền! Rút chéo: còn tử đầu 2, mẫu cuối 5 → 2/5.",
     "why": "dây ba mắt trọn vẹn."
    },
    {
     "case": "dây liền có dọn (ca số chẵn)",
-    "problem": "Tính: 2/4 × 4/6 × 6/8 × 8/10.",
+    "problem": "Tính: $\\frac{2}{4}$ × $\\frac{4}{6}$ × $\\frac{6}{8}$ × 8/10.",
     "solution": "Dò: 4–4, 6–6, 8–8 ✓. Rút: 2/10. DỌN: 2/10 = 1/5.",
     "why": "Ca đề A câu 11 họ hàng — sống sót xong phải tối giản."
    },
    {
     "case": "dây đứt (ca cảnh giác)",
-    "problem": "Tính: 2/3 × 3/4 × 5/6 — rút chéo được đến đâu?",
+    "problem": "Tính: $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{5}{6}$ — rút chéo được đến đâu?",
     "solution": "Dò: 3–3 ✓ nhưng 4–5 ✗ ĐỨT! Chỉ rút cặp 3: (2/4) × (5/6) = 1/2 × 5/6 = 5/12 — không rút xuyên chỗ đứt.",
     "why": "Ca đinh bẫy CĐ-15.1."
    }
@@ -72,10 +72,10 @@
   "numberRange": "Lớp 5: dây ≤ 5 mắt; tử mẫu ≤ 20.",
   "misconceptions": [
    {
-    "wrong": "Gặp tích nhiều phân số là rút chéo ào ào như dây liền — kể cả khi có mắt đứt (2/3 × 3/4 × 5/6 \"= 2/6\").",
+    "wrong": "Gặp tích nhiều phân số là rút chéo ào ào như dây liền — kể cả khi có mắt đứt ($\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{5}{6}$ \"= $\\frac{2}{6}$\").",
     "signal": "Rút cả cặp KHÔNG trùng nhau (4 với 5).",
     "fix": "nghi thức dò dây một lượt: từng khớp mẫu-trước = tử-sau; đứt ở đâu dừng tay ở đó, chỉ rút cặp trùng thật.",
-    "counterExample": "2/3 × 3/4 × 5/6 = 5/12 (tính tay kiểm: 30/72 = 5/12) ≠ 2/6."
+    "counterExample": "$\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{5}{6}$ = $\\frac{5}{12}$ (tính tay kiểm: $\\frac{30}{72}$ = $\\frac{5}{12}$) ≠ 2/6."
    }
   ],
   "vocabulary": [
@@ -92,7 +92,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "Rút gọn 6/8 = 3/mấy?",
+    "text": "Rút gọn $\\frac{6}{8}$ = 3/mấy?",
     "answerKey": {
      "value": 4
     }
@@ -110,10 +110,10 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Tính bằng rút gọn chéo: 2/3 × 3/4 × 4/5.",
+    "narration": "Tính bằng rút gọn chéo: $\\frac{2}{3}$ × $\\frac{3}{4}$ × 4/5.",
     "display": {
      "type": "story_panel",
-     "caption": "2/3 × 3/4 × 4/5 — 15 giây!"
+     "caption": "$\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$ — 15 giây!"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -127,7 +127,7 @@
     "teaches": [
      "K1"
     ],
-    "narration": "Hàng chuyền xô: người 2/3 tay phải cầm số 3, người 3/4 tay trái cũng số 3 — xô lướt qua, HAI SỐ 3 TỰ XÓA! Tiếp: số 4 phải gặp số 4 trái — xóa! Cả dây tan biến các cặp giữa, chỉ còn tay trái người đầu — số 2 — và tay phải người cuối — số 5: HAI PHẦN NĂM. Kiểm tay: 24/60 = 2/5 ✓ — dây chuyền không ăn gian!",
+    "narration": "Hàng chuyền xô: người 2/3 tay phải cầm số 3, người 3/4 tay trái cũng số 3 — xô lướt qua, HAI SỐ 3 TỰ XÓA! Tiếp: số 4 phải gặp số 4 trái — xóa! Cả dây tan biến các cặp giữa, chỉ còn tay trái người đầu — số 2 — và tay phải người cuối — số 5: HAI PHẦN NĂM. Kiểm tay: $\\frac{24}{60}$ = $\\frac{2}{5}$ ✓ — dây chuyền không ăn gian!",
     "display": {
      "type": "bucket_chain_interactive",
      "spec": {
@@ -167,7 +167,7 @@
     "estSeconds": 16,
     "item": {
      "format": "mcq",
-     "text": "Tính: 2/4 × 4/6 × 6/8 × 8/10 = ?",
+     "text": "Tính: $\\frac{2}{4}$ × $\\frac{4}{6}$ × $\\frac{6}{8}$ × $\\frac{8}{10}$ = ?",
      "choices": [
       "1/5",
       "2/10 để nguyên cũng được",
@@ -192,7 +192,7 @@
     "teaches": [
      "K2"
     ],
-    "narration": "Cáo Đề trà trộn vào hàng: 2/3 × 3/4 × 5/6 — Trí Long rút ào ào như mọi khi! Đội trưởng Su Kem hô DỪNG: dò dây đã! Số 3 gặp số 3 — khớp. Nhưng tay phải số 4 chìa ra… tay trái bên kia là số 5: MẮT ĐỨT! Chỉ rút cặp 3: còn 2/4 nhân 5/6 — một phần hai nhân năm phần sáu bằng NĂM PHẦN MƯỜI HAI. Rút xuyên chỗ đứt là xô đổ tung tóe!",
+    "narration": "Cáo Đề trà trộn vào hàng: $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{5}{6}$ — Trí Long rút ào ào như mọi khi! Đội trưởng Su Kem hô DỪNG: dò dây đã! Số 3 gặp số 3 — khớp. Nhưng tay phải số 4 chìa ra… tay trái bên kia là số 5: MẮT ĐỨT! Chỉ rút cặp 3: còn 2/4 nhân $\\frac{5}{6}$ — một phần hai nhân năm phần sáu bằng NĂM PHẦN MƯỜI HAI. Rút xuyên chỗ đứt là xô đổ tung tóe!",
     "display": {
      "type": "counter_example",
      "cases": [
@@ -308,7 +308,7 @@
  },
  "workedExample": {
   "title": "Diễn tập chuyền xô",
-  "problem": "Tính bằng rút gọn chéo: 2/3 × 3/4 × 4/5.",
+  "problem": "Tính bằng rút gọn chéo: $\\frac{2}{3}$ × $\\frac{3}{4}$ × 4/5.",
   "steps": [
    {
     "show": "Bước 1 — DÒ DÂY: mẫu 3 = tử 3 ✓; mẫu 4 = tử 4 ✓ — dây liền.",
@@ -330,10 +330,10 @@
     "show": "Bước 2 — Rút chéo: hai cặp 3 và 4 tự xóa."
    },
    {
-    "show": "Bước 3 — Sống sót: tử đầu 2, mẫu cuối 5 → 2/5 (tối giản ✓).",
+    "show": "Bước 3 — Sống sót: tử đầu 2, mẫu cuối 5 → $\\frac{2}{5}$ (tối giản ✓).",
     "askAfter": {
      "format": "num",
-     "text": "3/5 × 5/7 × 7/9 = 3/mấy?",
+     "text": "$\\frac{3}{5}$ × $\\frac{5}{7}$ × $\\frac{7}{9}$ = 3/mấy?",
      "answerKey": {
       "value": 9
      },
@@ -354,7 +354,7 @@
      "id": "P1",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B15.LT1",
-     "text": "Tính bằng rút gọn chéo: 2/3 × 3/4 × 4/5.",
+     "text": "Tính bằng rút gọn chéo: $\\frac{2}{3}$ × $\\frac{3}{4}$ × 4/5.",
      "answerKey": {
       "parts": [
        {
@@ -383,7 +383,7 @@
      "id": "P2",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B15.LT6",
-     "text": "Tính: 2/4 × 4/6 × 6/8 × 8/10.",
+     "text": "Tính: $\\frac{2}{4}$ × $\\frac{4}{6}$ × $\\frac{6}{8}$ × 8/10.",
      "answerKey": {
       "parts": [
        {
@@ -400,7 +400,7 @@
       "Dây liền 4–6–8.",
       "Nhớ nghi thức dọn!"
      ],
-     "solutionNarrative": "Rút chéo còn 2/10 = 1/5.",
+     "solutionNarrative": "Rút chéo còn $\\frac{2}{10}$ = 1/5.",
      "teaches": [
       "K1",
       "K3"
@@ -411,7 +411,7 @@
     {
      "id": "P3",
      "format": "mb",
-     "text": "Tính: 2/3 × 3/4 × 5/6. (Dò dây cẩn thận!)",
+     "text": "Tính: $\\frac{2}{3}$ × $\\frac{3}{4}$ × 5/6. (Dò dây cẩn thận!)",
      "answerKey": {
       "parts": [
        {
@@ -433,7 +433,7 @@
       "Mẫu 4 có gặp tử 4 không?",
       "Chỉ rút cặp 3; (2/4) × (5/6)."
      ],
-     "solutionNarrative": "Mắt 4–5 đứt: 1/2 × 5/6 = 5/12.",
+     "solutionNarrative": "Mắt 4–5 đứt: $\\frac{1}{2}$ × $\\frac{5}{6}$ = 5/12.",
      "teaches": [
       "K2"
      ]
@@ -462,7 +462,7 @@
    {
     "id": "A1",
     "format": "tf",
-    "text": "(Đúng/Sai?) Trong tích 2/3 × 3/4 × 5/6 có thể rút chéo hết như dây liền vì \"trông giống nhau\".",
+    "text": "(Đúng/Sai?) Trong tích $\\frac{2}{3}$ × $\\frac{3}{4}$ × 5/6 có thể rút chéo hết như dây liền vì \"trông giống nhau\".",
     "answerKey": {
      "value": false,
      "note": "Mắt 4–5 đứt — chỉ rút cặp trùng thật."
@@ -488,7 +488,7 @@
     "id": "A3",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B15.QZ5",
-    "text": "2/4 × 4/6 × 6/8 × 8/10 bằng:",
+    "text": "$\\frac{2}{4}$ × $\\frac{4}{6}$ × $\\frac{6}{8}$ × 8/10 bằng:",
     "choices": [
      "1/5",
      "2/10 chưa rút gọn cũng được",
@@ -508,7 +508,7 @@
   "flashcards": [
    {
     "front": "Dây chuyền a/b × b/c × c/d rút thế nào? Nghi thức trước khi rút?",
-    "back": "Rút chéo các cặp mẫu-trước = tử-sau: chỉ TỬ ĐẦU / MẪU CUỐI sống sót (2/3 × 3/4 × 4/5 = 2/5). DÒ DÂY một lượt trước — đứt một mắt là dừng tay, chỉ rút cặp trùng thật; xong nhớ dọn tối giản."
+    "back": "Rút chéo các cặp mẫu-trước = tử-sau: chỉ TỬ ĐẦU / MẪU CUỐI sống sót ($\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$ = $\\frac{2}{5}$). DÒ DÂY một lượt trước — đứt một mắt là dừng tay, chỉ rút cặp trùng thật; xong nhớ dọn tối giản."
    }
   ],
   "schedule": [

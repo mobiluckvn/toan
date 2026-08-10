@@ -36,15 +36,15 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Tách nhóm: tuổi con = TỔNG CẢ NHÀ − TỔNG BỐ MẸ (90 − 78 = 12); mỗi tổng phải đứng CÙNG MỘT MỐC — tổng bố mẹ 4 năm trước là 70 thì trôi về nay bằng quân số 2: 70 + 2 × 4 = 78 rồi mới trừ."
+    "text": "Tách nhóm: tuổi con = TỔNG CẢ NHÀ − TỔNG BỐ MẸ ($90 - 78 = 12$); mỗi tổng phải đứng CÙNG MỘT MỐC — tổng bố mẹ 4 năm trước là 70 thì trôi về nay bằng quân số 2: $70 + 2  \\times  4 = 78$ rồi mới trừ."
    },
    {
     "id": "K2",
-    "text": "Trong nhóm đã tách, chiêu cũ xử nốt: bố + mẹ = 78, bố hơn mẹ 6 → bố = (78 + 6) : 2 = 42; mẹ 36 (máy tổng – hiệu B25); hoặc chuỗi tỉ 7 + 6 + 1 = 14 phần = 84 → 6; 36; 42 (máy B30)."
+    "text": "Trong nhóm đã tách, chiêu cũ xử nốt: bố + mẹ = 78, bố hơn mẹ 6 → bố = ($78 + 6$) : $2 = 42$; mẹ 36 (máy tổng – hiệu B25); hoặc chuỗi tỉ $7 + 6 + 1 = 14$ phần = 84 → 6; 36; 42 (máy B30)."
    },
    {
     "id": "K3",
-    "text": "Bài trùm ghép tầng = xếp hàng chiêu cũ: tầng 1 tổng trôi (22 − 6 = 16), tầng 2 hiệu – tỉ (4 phần → 4 & 12), tầng 3 trượt (+3 → 7 & 15), tầng 4 trượt tiếp (+9 → 16 & 24) và lập tỉ (24 : 16 = 3/2 — gấp rưỡi); thử xâu suốt: mỗi tầng khớp mới sang tầng sau."
+    "text": "Bài trùm ghép tầng = xếp hàng chiêu cũ: tầng 1 tổng trôi ($22 - 6 = 16$), tầng 2 hiệu – tỉ (4 phần → 4 & 12), tầng 3 trượt (+3 → 7 & 15), tầng 4 trượt tiếp (+9 → 16 & 24) và lập tỉ ($24 : 16$ = $\\frac{3}{2}$ — gấp rưỡi); thử xâu suốt: mỗi tầng khớp mới sang tầng sau."
    }
   ],
   "mechanism": "Hình ảnh brand: KÉO TÁCH TOA — XẾP HÀNG CHIÊU CŨ. Bài trùm tách nhóm: \"TBC ba người nay 30; BỐN năm trước tổng riêng bố mẹ là 70; bố hơn mẹ 6 — tuổi từng người?\" Tầng một — màn TBC: tổng cả nhà 90. Tầng hai — toa bố mẹ đang đứng ở mốc −4 năm: kéo về nay bằng nhãn quân số HAI: 70 cộng 2 nhân 4 bằng BẢY TÁM. Tầng ba — kéo tách toa: con = 90 trừ 78 = MƯỜI HAI tuổi! Tầng bốn — trong toa bố mẹ, máy tổng – hiệu quen: bố (78 + 6) : 2 = BỐN HAI, mẹ BA SÁU. Bốn tầng — bốn chiêu cũ xếp hàng, chẳng chiêu nào mới! Bài trùm anh em cũng vậy: tổng trôi → hiệu – tỉ → trượt → trượt tiếp và lập tỉ: nay 15 & 7 — chín năm nữa 24 & 16 — gấp RƯỠI. Đồ sộ mấy cũng chỉ là hàng dọc những chiêu đã thuộc.",
@@ -79,7 +79,7 @@
    {
     "wrong": "Trừ hai tổng đứng ở HAI MỐC khác nhau (90 @ nay trừ 70 @ −4 năm → con 20).",
     "signal": "Phép trừ tách nhóm thiếu bước trôi tổng con về cùng mốc.",
-    "fix": "kéo toa về CÙNG MỐC trước khi tách: 70 + 2 × 4 = 78 rồi mới trừ (nhãn quân số 2 của M2).",
+    "fix": "kéo toa về CÙNG MỐC trước khi tách: $70 + 2  \\times  4 = 78$ rồi mới trừ (nhãn quân số 2 của M2).",
     "counterExample": "Con 20 → bố mẹ nay 70 — mà 4 năm trước họ đã 70: bốn năm chẳng ai già?!"
    }
   ],
@@ -296,10 +296,10 @@
   "problem": "TBC tuổi ba bố, mẹ, con hiện nay là 30. Bốn năm trước, tổng tuổi riêng bố và mẹ là 70; bố hơn mẹ 6 tuổi. Tính tuổi mỗi người hiện nay.",
   "steps": [
    {
-    "show": "Bước 1 — Màn TBC: tổng cả nhà = 30 × 3 = 90 @ nay.",
+    "show": "Bước 1 — Màn TBC: tổng cả nhà = $30  \\times  3 = 90$ @ nay.",
     "askBefore": {
      "format": "mcq",
-     "text": "Trừ được 90 − 70 ngay không?",
+     "text": "Trừ được $90 - 70$ ngay không?",
      "choices": [
       "chưa — 70 đứng ở mốc −4 năm",
       "được luôn",
@@ -312,10 +312,10 @@
     }
    },
    {
-    "show": "Bước 2 — Kéo toa: tổng bố mẹ nay = 70 + 2 × 4 = 78 → con = 90 − 78 = 12."
+    "show": "Bước 2 — Kéo toa: tổng bố mẹ nay = $70 + 2  \\times  4 = 78$ → con = $90 - 78 = 12$."
    },
    {
-    "show": "Bước 3 — Trong toa: bố = (78 + 6) : 2 = 42; mẹ = 36. Thử: 12 + 36 + 42 = 90 ✓.",
+    "show": "Bước 3 — Trong toa: bố = ($78 + 6$) : $2 = 42$; mẹ = 36. Thử: $12 + 36 + 42 = 90$ ✓.",
     "askAfter": {
      "format": "mb",
      "text": "Trùm anh em: 9 năm nữa anh gấp mấy em?",
@@ -498,7 +498,7 @@
       "Bốn tầng: 16 → 4 & 12 → 7 & 15 → +9.",
       "24 : 16 tối giản."
      ],
-     "solutionNarrative": "16 & 24 → 3/2 — gấp rưỡi.",
+     "solutionNarrative": "16 & 24 → $\\frac{3}{2}$ — gấp rưỡi.",
      "teaches": [
       "K3"
      ]
@@ -594,7 +594,7 @@
   "flashcards": [
    {
     "front": "Bài ba người tách nhóm — trình tự?",
-    "back": "Màn TBC → tổng cả 90 @ nay. Kéo tổng nhóm về CÙNG MỐC (70 + 2×4 = 78 — nhãn quân số 2!) → TÁCH: con = 90 − 78 = 12 → trong nhóm chiêu cũ (tổng–hiệu: bố 42, mẹ 36). Bài trùm = chiêu cũ xếp hàng: tổng trôi → hiệu–tỉ → trượt → lập tỉ (→ gấp rưỡi 3/2). Thử xâu suốt."
+    "back": "Màn TBC → tổng cả 90 @ nay. Kéo tổng nhóm về CÙNG MỐC ($70 + 2 \\times 4 = 78$ — nhãn quân số 2!) → TÁCH: con = $90 - 78 = 12$ → trong nhóm chiêu cũ (tổng–hiệu: bố 42, mẹ 36). Bài trùm = chiêu cũ xếp hàng: tổng trôi → hiệu–tỉ → trượt → lập tỉ (→ gấp rưỡi $\\frac{3}{2}$). Thử xâu suốt."
    }
   ],
   "schedule": [

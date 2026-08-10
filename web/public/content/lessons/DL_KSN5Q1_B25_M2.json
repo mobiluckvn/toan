@@ -35,11 +35,11 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Luật y nguyên trên thập phân: lớn = (tổng + hiệu) : 2; bé = (tổng − hiệu) : 2 — dấu phẩy không đổi luật, chỉ đòi thẳng hàng khi cộng trừ (9,5 + 1,3 = 10,8) và cẩn thận khi chia đôi (10,8 : 2 = 5,4)."
+    "text": "Luật y nguyên trên thập phân: lớn = (tổng + hiệu) : 2; bé = (tổng − hiệu) : 2 — dấu phẩy không đổi luật, chỉ đòi thẳng hàng khi cộng trừ ($9,5 + 1,3 = 10,8$) và cẩn thận khi chia đôi ($10,8 : 2 = 5,4$)."
    },
    {
     "id": "K2",
-    "text": "PHÉP THỬ HAI TRẠM là nghi thức đóng bài: trạm TỔNG (5,4 + 4,1 = 9,5 ✓) và trạm HIỆU (5,4 − 4,1 = 1,3 ✓) — qua một trạm chưa đủ, phải qua cả hai."
+    "text": "PHÉP THỬ HAI TRẠM là nghi thức đóng bài: trạm TỔNG ($5,4 + 4,1 = 9,5$ ✓) và trạm HIỆU ($5,4 - 4,1 = 1,3$ ✓) — qua một trạm chưa đủ, phải qua cả hai."
    },
    {
     "id": "K3",
@@ -67,7 +67,7 @@
     "wrong": "Trên thập phân, cộng tổng với hiệu xong QUÊN chia 2 (10,8 làm luôn số lớn) — hoặc thử mỗi trạm tổng rồi nộp.",
     "signal": "Số lớn to hơn cả tổng; hoặc bài không có dòng thử hiệu.",
     "fix": "dấu phẩy làm rối mắt nhưng luật y nguyên: (tổng + hiệu) : 2 đủ ba phép; thử ĐỦ hai trạm mới đóng bài.",
-    "counterExample": "10,8 > 9,5 — số lớn vượt tổng: vô lý ngay từ ước lượng."
+    "counterExample": "$10,8 > 9,5$ — số lớn vượt tổng: vô lý ngay từ ước lượng."
    }
   ],
   "vocabulary": [
@@ -83,7 +83,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "10,8 : 2 = ? (điền dạng thập phân, ví dụ 5,4 → nhập 5.4)",
+    "text": "$10,8 : 2$ = ? (điền dạng thập phân, ví dụ 5,4 → nhập 5.4)",
     "answerKey": {
      "value": 5.4
     }
@@ -281,7 +281,7 @@
   "problem": "Tổng hai số là 9,5 và hiệu hai số là 1,3. Tìm hai số.",
   "steps": [
    {
-    "show": "Bước 1 — Lớn = (9,5 + 1,3) : 2 = 10,8 : 2 = 5,4 (nhớ nhịp chia 2!).",
+    "show": "Bước 1 — Lớn = ($9,5 + 1,3$) : $2 = 10,8 : 2 = 5,4$ (nhớ nhịp chia 2!).",
     "askBefore": {
      "format": "mcq",
      "text": "10,8 có thể là số lớn không?",
@@ -297,10 +297,10 @@
     }
    },
    {
-    "show": "Bước 2 — Bé = 9,5 − 5,4 = 4,1."
+    "show": "Bước 2 — Bé = $9,5 - 5,4 = 4,1$."
    },
    {
-    "show": "Bước 3 — Hai trạm: 5,4 + 4,1 = 9,5 ✓ và 5,4 − 4,1 = 1,3 ✓ — xuất xưởng.",
+    "show": "Bước 3 — Hai trạm: $5,4 + 4,1 = 9,5$ ✓ và $5,4 - 4,1 = 1,3$ ✓ — xuất xưởng.",
     "askAfter": {
      "format": "mb",
      "text": "Tổng 7,6, hiệu 1,2 → hai số? (nhập 4.4 và 3.2)",

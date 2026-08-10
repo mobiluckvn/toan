@@ -29,7 +29,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con giải chuỗi TÍNH NGƯỢC nhiều tầng bằng lưu đồ hai chiều: xuôi dòng ghi từng tầng \"dùng m/n chỗ còn lại\", rồi gỡ NGƯỢC từ số cuối — mỗi tầng nhân với NGHỊCH ĐẢO PHẦN CÒN n/(n − m) (dùng 1/3 → còn 2/3 → nhân 3/2, tuyệt đối không nhân 3!); kiểm nhanh bằng tích các phần còn.",
+  "text": "Con giải chuỗi TÍNH NGƯỢC nhiều tầng bằng lưu đồ hai chiều: xuôi dòng ghi từng tầng \"dùng m/n chỗ còn lại\", rồi gỡ NGƯỢC từ số cuối — mỗi tầng nhân với NGHỊCH ĐẢO PHẦN CÒN n/(n − m) (dùng $\\frac{1}{3}$ → còn $\\frac{2}{3}$ → nhân 3/2, tuyệt đối không nhân 3!); kiểm nhanh bằng tích các phần còn.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (hệ số từ phần CÒN)",
   "kidText": "Bài tính ngược nhiều tầng: con gỡ từ số cuối đi lên. Dùng 1/3 thì còn 2/3, nên tầng ấy phải nhân 3/2 chứ không nhân 3."
  },
@@ -41,11 +41,11 @@
    },
    {
     "id": "K2",
-    "text": "Con số đang cầm là PHẦN CÒN: tầng \"dùng 1/3 chỗ còn lại\" → còn 2/3 → đi ngược nhân 3/2 (nhân 3 là lấy nhầm hệ số từ phần DÙNG — gấp đôi oan!); \"dùng 1/2\" → còn 1/2 → nhân 2; \"dùng 1/4\" → còn 3/4 → nhân 4/3."
+    "text": "Con số đang cầm là PHẦN CÒN: tầng \"dùng 1/3 chỗ còn lại\" → còn $\\frac{2}{3}$ → đi ngược nhân $\\frac{3}{2}$ (nhân 3 là lấy nhầm hệ số từ phần DÙNG — gấp đôi oan!); \"dùng $\\frac{1}{2}$\" → còn $\\frac{1}{2}$ → nhân 2; \"dùng $\\frac{1}{4}$\" → còn $\\frac{3}{4}$ → nhân 4/3."
    },
    {
     "id": "K3",
-    "text": "Chuỗi ba tầng gỡ đúng thứ tự ngược: còn 9 viên sau dùng 1/2 → 1/3 còn lại → 1/4 còn lại: 9 × 4/3 = 12 → × 3/2 = 18 → × 2 = 36 viên; kiểm nhanh bằng TÍCH PHẦN CÒN: 1/2 × 2/3 × 3/4 = 1/4 → 9 = 1/4 tổng → 36 ✓."
+    "text": "Chuỗi ba tầng gỡ đúng thứ tự ngược: còn 9 viên sau dùng $\\frac{1}{2}$ → 1/3 còn lại → 1/4 còn lại: 9 × $\\frac{4}{3}$ = 12 → × $\\frac{3}{2}$ = 18 → × $2 = 36$ viên; kiểm nhanh bằng TÍCH PHẦN CÒN: $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ = $\\frac{1}{4}$ → $9 = 1$/4 tổng → 36 ✓."
    }
   ],
   "mechanism": "Hình ảnh brand: LƯU ĐỒ HAI CHIỀU — ĐI XUÔI GHI, ĐI NGƯỢC NHÂN. Túi kẹo bị dùng 1/2, rồi 1/3 chỗ còn lại, rồi 1/4 chỗ còn lại — cuối cùng còn CHÍN viên. Tìm túi lúc đầu? Trí Long gỡ ngược hùng hổ: \"dùng 1/4 thì nhân 4, dùng 1/3 nhân 3, dùng 1/2 nhân 2: 9 × 4 × 3 × 2 = 216 viên!\" — túi kẹo nào chứa nổi! Nhìn lại tay mình: sau tầng \"dùng 1/4\", con số 9 đang cầm là PHẦN CÒN — ba phần tư! Hệ số ngược phải là nghịch đảo phần CÒN: chín nhân BỐN PHẦN BA bằng mười hai. Tầng \"dùng 1/3\": còn hai phần ba — nhân BA PHẦN HAI: mười tám. Tầng \"dùng 1/2\": còn một nửa — nhân HAI: BA MƯƠI SÁU viên! Kiểm nhanh bằng tích phần còn: 1/2 nhân 2/3 nhân 3/4 — rút gọn đẹp như xếp domino — bằng MỘT PHẦN TƯ: chín viên đúng là một phần tư của ba sáu. Con số đang cầm là phần còn — nghịch đảo phần còn!",
@@ -78,10 +78,10 @@
   "numberRange": "Lớp 5: ≤ 3 tầng; phân số dùng 1/2, 1/3, 1/4.",
   "misconceptions": [
    {
-    "wrong": "Gỡ tầng \"dùng 1/3\" bằng phép nhân 3 (hệ số lấy từ phần DÙNG) — nghe rất xuôi tai.",
+    "wrong": "Gỡ tầng \"dùng $\\frac{1}{3}$\" bằng phép nhân 3 (hệ số lấy từ phần DÙNG) — nghe rất xuôi tai.",
     "signal": "Đáp phình to phi lý (216 viên); hệ số ngược là số nguyên n.",
-    "fix": "con số đang cầm là phần CÒN 2/3 → nhân nghịch đảo 3/2; kiểm tích phần còn.",
-    "counterExample": "9 × 4 × 3 × 2 = 216: thử xuôi 216 → 108 → 72 → 54 ≠ 9 — lệch xa sáu lần!"
+    "fix": "con số đang cầm là phần CÒN $\\frac{2}{3}$ → nhân nghịch đảo $\\frac{3}{2}$; kiểm tích phần còn.",
+    "counterExample": "$9  \\times  4  \\times  3  \\times  2 = 216$: thử xuôi 216 → 108 → 72 → 54 ≠ 9 — lệch xa sáu lần!"
    }
   ],
   "vocabulary": [
@@ -119,7 +119,7 @@
     "narration": "Su Bống dùng 1/2 số kẹo thì còn lại 12 viên. Hỏi lúc đầu có bao nhiêu viên?",
     "display": {
      "type": "story_panel",
-     "caption": "9 × 4 × 3 × 2 = 216 viên??"
+     "caption": "$9  \\times  4  \\times  3  \\times  2 = 216$ viên??"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -143,7 +143,7 @@
        "12 × 3/2 = 18 (còn 2/3)",
        "18 × 2 = 36 (còn 1/2)"
       ],
-      "wrong": "× 4 × 3 × 2 = 216 ✗"
+      "wrong": "× $4  \\times  3  \\times  2 = 216$ ✗"
      }
     },
     "interaction": {
@@ -289,7 +289,7 @@
   "problem": "Một túi kẹo bị dùng 1/2, rồi 1/3 chỗ còn lại, rồi 1/4 chỗ còn lại — cuối cùng còn 9 viên. Tìm số kẹo lúc đầu.",
   "steps": [
    {
-    "show": "Bước 1 — Tầng cuối \"dùng 1/4\" → còn 3/4: 9 × 4/3 = 12.",
+    "show": "Bước 1 — Tầng cuối \"dùng $\\frac{1}{4}$\" → còn $\\frac{3}{4}$: 9 × $\\frac{4}{3}$ = 12.",
     "askBefore": {
      "format": "mcq",
      "text": "Hệ số ngược của tầng \"dùng 1/4 còn lại\" là:",
@@ -305,10 +305,10 @@
     }
    },
    {
-    "show": "Bước 2 — Tầng \"dùng 1/3\" → còn 2/3: 12 × 3/2 = 18; tầng \"dùng 1/2\": 18 × 2 = 36 viên."
+    "show": "Bước 2 — Tầng \"dùng $\\frac{1}{3}$\" → còn $\\frac{2}{3}$: 12 × $\\frac{3}{2}$ = 18; tầng \"dùng $\\frac{1}{2}$\": $18  \\times  2 = 36$ viên."
    },
    {
-    "show": "Bước 3 — Kiểm tích: 1/2 × 2/3 × 3/4 = 1/4 → 9 = 1/4 × 36 ✓.",
+    "show": "Bước 3 — Kiểm tích: $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ = $\\frac{1}{4}$ → 9 = $\\frac{1}{4}$ × 36 ✓.",
     "askAfter": {
      "format": "num",
      "text": "Cáo Đề: còn 8 viên → túi lúc đầu?",
@@ -467,7 +467,7 @@
     "id": "A2",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B43.QZ5",
-    "text": "Chuỗi dùng 1/2 → 1/3 còn lại → 1/4 còn lại thì cuối cùng còn:",
+    "text": "Chuỗi dùng $\\frac{1}{2}$ → 1/3 còn lại → 1/4 còn lại thì cuối cùng còn:",
     "choices": [
      "1/4 tổng",
      "1/12 tổng",
@@ -497,7 +497,7 @@
   "flashcards": [
    {
     "front": "Gỡ ngược tầng 'dùng m/n chỗ còn lại' — nhân gì?",
-    "back": "Con số đang cầm là PHẦN CÒN (n−m)/n → nhân NGHỊCH ĐẢO n/(n−m): dùng 1/3 → ×3/2 (không phải ×3 — túi phình 216!). Chuỗi: 9 × 4/3 × 3/2 × 2 = 36. Kiểm tích domino: 1/2 × 2/3 × 3/4 = 1/4 → 9 = 1/4 tổng ✓."
+    "back": "Con số đang cầm là PHẦN CÒN (n−m)/n → nhân NGHỊCH ĐẢO n/(n−m): dùng $\\frac{1}{3}$ → ×$\\frac{3}{2}$ (không phải ×3 — túi phình 216!). Chuỗi: 9 × $\\frac{4}{3}$ × $\\frac{3}{2}$ × $2 = 36$. Kiểm tích domino: $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ = $\\frac{1}{4}$ → $9 = 1$/4 tổng ✓."
    }
   ],
   "schedule": [
@@ -509,7 +509,7 @@
  "parentNote": {
   "onComplete": "Hôm nay con gỡ chuỗi tính ngược bằng hệ số nghịch-đảo-phần-còn và kiểm tích domino. Con đạt {score}/3, {trapResult} câu bẫy nhân-phần-dùng.",
   "homeActivity": "Chơi 'túi kẹo bí ẩn': mẹ giấu số kẹo, kể chuỗi dùng-còn — con gỡ ngược rồi đếm kiểm.",
-  "watchFor": "Nếu con nhân 3 cho tầng dùng-1/3 — hỏi 'số con cầm là phần dùng hay phần còn?' (S1)."
+  "watchFor": "Nếu con nhân 3 cho tầng dùng-$\\frac{1}{3}$ — hỏi 'số con cầm là phần dùng hay phần còn?' (S1)."
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B43.M1",

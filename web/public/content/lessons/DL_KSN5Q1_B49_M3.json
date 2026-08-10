@@ -29,7 +29,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con thuộc phép gấp của hình tròn: r gấp k → CHU VI gấp k (chứa MỘT lần r) nhưng DIỆN TÍCH gấp k × k (chứa HAI lần r) — không để câu \"gấp mấy lần\" tráo hai đại lượng (họ hàng hệ-số-kép B48); áp dụng tính hồ mở rộng (hiệu hai S: 314 − 78,5 = 235,5) và chu vi miếng pizza phần tư (cung + HAI bán kính).",
+  "text": "Con thuộc phép gấp của hình tròn: r gấp k → CHU VI gấp k (chứa MỘT lần r) nhưng DIỆN TÍCH gấp k × k (chứa HAI lần r) — không để câu \"gấp mấy lần\" tráo hai đại lượng (họ hàng hệ-số-kép B48); áp dụng tính hồ mở rộng (hiệu hai S: $314 - 78,5 = 235,5$) và chu vi miếng pizza phần tư (cung + HAI bán kính).",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (r gấp 2 → S gấp 4)",
   "kidText": "Bán kính gấp đôi thì chu vi gấp đôi nhưng diện tích gấp bốn, vì diện tích chứa bán kính tới hai lần."
  },
@@ -37,7 +37,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Soi công thức đếm r: C = r × 2 × 3,14 chứa MỘT lần r → r gấp k thì C gấp k; S = r × r × 3,14 chứa HAI lần r → r gấp k thì S gấp k × k: r gấp 2 → C gấp 2, S gấp 4; r gấp 3 → S gấp 9."
+    "text": "Soi công thức đếm r: C = r × $2  \\times  3,14$ chứa MỘT lần r → r gấp k thì C gấp k; S = r × r × 3,14 chứa HAI lần r → r gấp k thì S gấp k × k: r gấp 2 → C gấp 2, S gấp 4; r gấp 3 → S gấp 9."
    },
    {
     "id": "K2",
@@ -45,11 +45,11 @@
    },
    {
     "id": "K3",
-    "text": "Hồ mở rộng r 5 → 10 (cùng tâm): phần tăng = HIỆU hai diện tích: 10 × 10 × 3,14 − 5 × 5 × 3,14 = 314 − 78,5 = 235,5 m² (gấp đôi bán kính nhưng phần thêm gấp BA hồ cũ — vì S mới gấp 4!)."
+    "text": "Hồ mở rộng r 5 → 10 (cùng tâm): phần tăng = HIỆU hai diện tích: $10  \\times  10  \\times  3,14 - 5  \\times  5  \\times  3,14 = 314 - 78,5 = 235,5 m^2$ (gấp đôi bán kính nhưng phần thêm gấp BA hồ cũ — vì S mới gấp 4!)."
    },
    {
     "id": "K4",
-    "text": "Pizza phần tư d = 30: chu vi MIẾNG = cung (94,2 : 4 = 23,55) + HAI cạnh thẳng là HAI BÁN KÍNH (15 + 15 = 30) → 53,55 cm — lần ngón tay một vòng kín quanh miếng."
+    "text": "Pizza phần tư d = 30: chu vi MIẾNG = cung ($94,2 : 4 = 23,55$) + HAI cạnh thẳng là HAI BÁN KÍNH ($15 + 15 = 30$) → 53,55 cm — lần ngón tay một vòng kín quanh miếng."
    }
   ],
   "mechanism": "Hình ảnh brand: SOI CÔNG THỨC ĐẾM CHỮ r. Câu đố: \"bán kính gấp đôi thì hình tròn gấp mấy lần?\" Trí Long đáp vèo: \"gấp đôi tuốt!\" Khoan — soi hai công thức mà ĐẾM chữ r: chu vi r nhân HAI nhân ba phẩy mười bốn — chỉ MỘT chữ r: r gấp hai thì C gấp HAI! Diện tích r nhân r nhân ba phẩy mười bốn — HAI chữ r: r gấp hai thì S gấp hai nhân hai — BỐN! Một lần r gấp k — hai lần r gấp k nhân k: người anh em của hệ-số-kép cạnh-tăng-hai-mươi ở hình vuông! Hồ tròn kiểm chứng: bán kính năm mở rộng thành mười — diện tích từ bảy tám phẩy năm vọt lên ba trăm mười bốn: GẤP BỐN đúng hẹn; phần đào thêm là HIỆU: hai trăm ba lăm phẩy năm mét vuông — gấp BA hồ cũ! Pizza của sư phụ: bánh ba mươi cắt tư — chu vi miếng đâu chỉ cung cong hai ba phẩy năm lăm: lần ngón tay một vòng KÍN còn HAI cạnh thẳng — hai BÁN KÍNH mười lăm: tổng NĂM MƯƠI BA PHẨY NĂM LĂM!",
@@ -79,7 +79,7 @@
     "wrong": "\"Bán kính gấp 2 thì hình tròn gấp 2\" — trả lời một số cho cả chu vi lẫn diện tích.",
     "signal": "Không phân biệt đề hỏi C hay S; thiếu bước đếm chữ r.",
     "fix": "soi công thức đếm r: C một lần → gấp k; S hai lần → gấp k × k.",
-    "counterExample": "Hồ r 5 → 10: S từ 78,5 lên 314 — chia thử: 314 : 78,5 = 4, đâu phải 2!"
+    "counterExample": "Hồ r 5 → 10: S từ 78,5 lên 314 — chia thử: $314 : 78,5 = 4$, đâu phải 2!"
    }
   ],
   "vocabulary": [
@@ -293,7 +293,7 @@
   "problem": "Bán kính hình tròn gấp lên 2 lần. Hỏi chu vi gấp lên mấy lần? Diện tích gấp lên mấy lần?",
   "steps": [
    {
-    "show": "Bước 1 — Đếm r: C = r × 2 × 3,14 (MỘT chữ r); S = r × r × 3,14 (HAI chữ r).",
+    "show": "Bước 1 — Đếm r: C = r × $2  \\times  3,14$ (MỘT chữ r); S = r × r × 3,14 (HAI chữ r).",
     "askBefore": {
      "format": "mcq",
      "text": "Công thức S chứa mấy chữ r?",
@@ -309,7 +309,7 @@
     }
    },
    {
-    "show": "Bước 2 — C gấp 2 (một lần r); S gấp 2 × 2 = 4 (hai lần r)."
+    "show": "Bước 2 — C gấp 2 (một lần r); S gấp $2  \\times  2 = 4$ (hai lần r)."
    },
    {
     "show": "Bước 3 — Kiểm hồ 5 → 10: S 78,5 → 314 (×4 ✓); phần thêm 235,5 m².",
@@ -407,7 +407,7 @@
       "Cung = 94,2 : 4.",
       "Cộng HAI bán kính."
      ],
-     "solutionNarrative": "23,55 + 15 + 15 = 53,55 cm.",
+     "solutionNarrative": "$23,55 + 15 + 15 = 53,55$ cm.",
      "teaches": [
       "K4"
      ]
@@ -480,7 +480,7 @@
   "flashcards": [
    {
     "front": "r gấp k → C và S gấp mấy? Chu vi miếng pizza phần tư?",
-    "back": "ĐẾM CHỮ r: C = r×2×3,14 (1 chữ) → ×k; S = r×r×3,14 (2 chữ) → ×k×k (r ×2: C ×2, S ×4 — kiểm hồ 78,5 → 314). Hồ mở rộng: hiệu hai S = 235,5. Pizza d 30 cắt tư: vòng KÍN = cung 23,55 + HAI bán kính 15+15 = 53,55 cm."
+    "back": "ĐẾM CHỮ r: C = r×$2 \\times 3,14$ (1 chữ) → ×k; S = r×r×3,14 (2 chữ) → ×k×k (r ×2: C ×2, S ×4 — kiểm hồ 78,5 → 314). Hồ mở rộng: hiệu hai S = 235,5. Pizza d 30 cắt tư: vòng KÍN = cung 23,55 + HAI bán kính $15+15 = 53,55$ cm."
    }
   ],
   "schedule": [

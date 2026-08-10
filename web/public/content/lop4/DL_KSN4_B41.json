@@ -21,7 +21,7 @@
  "objective": {
   "id": "O1",
   "text": "Nhận diện hình khai triển của hình hộp chữ nhật: 6 mặt, từng đôi đối diện bằng nhau; tính tổng giấy cần dùng. Đếm số khối lập phương đơn vị xếp thành khối hộp: số khối một tầng × số tầng. Đếm khối n × n × n và khối bị khoét đơn giản bằng cách lát từng tầng.",
-  "kidText": "Nhà kho mô hình là hình hộp 4 × 3 × 2 gang tay. Trải phẳng ra thì cần bao nhiêu tấm bìa?",
+  "kidText": "Nhà kho mô hình là hình hộp $4  \\times  3  \\times  2$ gang tay. Trải phẳng ra thì cần bao nhiêu tấm bìa?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,19 +29,19 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — VẼ KHAI TRIỂN CHỮ THẬP: mặt đáy 4 × 3 nằm giữa; nắp 4 × 3 nối bên phải; trước - sau 4 × 2 nối trên - dưới; hai hông 3 × 2 nối trái - phải. Gấp theo nếp — hộp dựng đứng, không hở mặt nào! Quy tắc kiểm nhanh: đủ 6 mặt, và mặt đối diện KHÔNG được nằm cạnh nhau trên tờ trải."
+    "text": "Bước 1 — VẼ KHAI TRIỂN CHỮ THẬP: mặt đáy $4  \\times  3$ nằm giữa; nắp $4  \\times  3$ nối bên phải; trước - sau $4  \\times  2$ nối trên - dưới; hai hông $3  \\times  2$ nối trái - phải. Gấp theo nếp — hộp dựng đứng, không hở mặt nào! Quy tắc kiểm nhanh: đủ 6 mặt, và mặt đối diện KHÔNG được nằm cạnh nhau trên tờ trải."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — TÍNH BÌA THEO BA CẶP MẶT: cặp đáy - nắp: 4 × 3 = 12 (ô) mỗi mặt; cặp trước - sau: 4 × 2 = 8; cặp hai hông: 3 × 2 = 6. Tổng bìa: 2 × (12 + 8 + 6) = 2 × 26 = 52 (ô vuông). Nhân đôi MỘT LẦN ở cuối — đếm ba cặp gọn hơn đếm sáu mặt lẻ tẻ."
+    "text": "Bước 2 — TÍNH BÌA THEO BA CẶP MẶT: cặp đáy - nắp: $4  \\times  3 = 12$ (ô) mỗi mặt; cặp trước - sau: $4  \\times  2 = 8$; cặp hai hông: $3  \\times  2 = 6$. Tổng bìa: 2 × ($12 + 8 + 6$) = $2  \\times  26 = 52$ (ô vuông). Nhân đôi MỘT LẦN ở cuối — đếm ba cặp gọn hơn đếm sáu mặt lẻ tẻ."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — ĐẾM KHỐI THEO TẦNG: tháp bê tông xếp từ khối lập phương nhỏ, dạng khối hộp 4 × 3 × 2: mỗi tầng là một \"sàn\" 4 × 3 = 12 khối; chồng 2 tầng → 12 × 2 = 24 (khối). Khối vuông 3 × 3 × 3: mỗi tầng 9, ba tầng → 27 khối. Ba chiều chỉ là hai chiều... nhân số tầng!"
+    "text": "Bước 3 — ĐẾM KHỐI THEO TẦNG: tháp bê tông xếp từ khối lập phương nhỏ, dạng khối hộp $4  \\times  3  \\times  2$: mỗi tầng là một \"sàn\" $4  \\times  3 = 12$ khối; chồng 2 tầng → $12  \\times  2 = 24$ (khối). Khối vuông $3  \\times  3  \\times  3$: mỗi tầng 9, ba tầng → 27 khối. Ba chiều chỉ là hai chiều... nhân số tầng!"
    },
    {
     "id": "K4",
-    "text": "Bước 4 — KHỐI BỊ KHOÉT: MÁY CHỤP CẮT LỚP: khối 3 × 3 × 3 bị nhấc mất 1 khối ở góc trên: tầng dưới 9, tầng giữa 9, tầng trên chỉ còn 8 → 26 khối. Khoét kiểu gì cũng một chiêu: LÁT TỪNG TẦNG, tầng nào thiếu đếm đúng tầng ấy rồi cộng dồn — mắt không cần \"nhìn xuyên\", chỉ cần cắt lớp!"
+    "text": "Bước 4 — KHỐI BỊ KHOÉT: MÁY CHỤP CẮT LỚP: khối $3  \\times  3  \\times  3$ bị nhấc mất 1 khối ở góc trên: tầng dưới 9, tầng giữa 9, tầng trên chỉ còn 8 → 26 khối. Khoét kiểu gì cũng một chiêu: LÁT TỪNG TẦNG, tầng nào thiếu đếm đúng tầng ấy rồi cộng dồn — mắt không cần \"nhìn xuyên\", chỉ cần cắt lớp!"
    }
   ],
   "mantra": "Hộp chữ nhật: 6 mặt = 3 cặp đối diện bằng nhau; bìa = 2 × (tổng ba mặt khác nhau); trên hình khai triển, hai mặt đối diện không kề nhau. Đếm khối: một tầng × số tầng; khối bị khoét: lát từng tầng mà đếm — không gian 3D là các lớp 2D xếp chồng!",
@@ -49,9 +49,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Nhìn khối 3 × 3 × 3, Trí Long đếm ảnh chụp: \"Mặt trước 9 khối, mặt phải 9, mặt trên 9 — ba mặt nhìn thấy là 27, mà cả khối có 6 mặt, vậy tổng số khối là 27 × 2 = 54!\"",
+    "wrong": "Nhìn khối $3  \\times  3  \\times  3$, Trí Long đếm ảnh chụp: \"Mặt trước 9 khối, mặt phải 9, mặt trên 9 — ba mặt nhìn thấy là 27, mà cả khối có 6 mặt, vậy tổng số khối là $27  \\times  2 = 54$!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Khối ở chính giữa tâm khối lớn — nó thuộc \"mặt\" nào? Còn khối ở góc — nó bị đếm mấy lần khi cộng theo mặt? Đếm theo MẶT là đếm vỏ, còn khối là đặc ruột! Gợi ý 2: Dùng máy cắt lớp: mỗi tầng bao nhiêu khối, có mấy tầng? Đếm lại giúp Trí Long — và thử với hộp 2 × 2 × 2 bằng đồ thật (8 khối xúc xắc) để cậu ấy tâm phục."
+    "fix": "Gợi ý 1: Khối ở chính giữa tâm khối lớn — nó thuộc \"mặt\" nào? Còn khối ở góc — nó bị đếm mấy lần khi cộng theo mặt? Đếm theo MẶT là đếm vỏ, còn khối là đặc ruột! Gợi ý 2: Dùng máy cắt lớp: mỗi tầng bao nhiêu khối, có mấy tầng? Đếm lại giúp Trí Long — và thử với hộp $2  \\times  2  \\times  2$ bằng đồ thật (8 khối xúc xắc) để cậu ấy tâm phục."
    }
   ]
  },
@@ -60,12 +60,12 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Nhà kho mô hình là hình hộp chữ nhật 4 × 3 × 2 (đơn vị gang tay). Hỏi hình khai triển trông thế nào và cần tổng cộng bao nhiêu bìa?"
+    "narration": "Nhà kho mô hình là hình hộp chữ nhật $4  \\times  3  \\times  2$ (đơn vị gang tay). Hỏi hình khai triển trông thế nào và cần tổng cộng bao nhiêu bìa?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? nhà kho mô hình là hình hộp chữ nhật 4 × 3 × 2 (đơn vị gang tay).\nHỎI GÌ? hình khai triển trông thế nào và cần tổng cộng bao nhiêu bìa.\nĐẠI LƯỢNG & ĐƠN VỊ: ba kích thước (dài 4, rộng 3, cao 2) và diện tích bìa (ô vuông đơn vị).\nQUAN HỆ GIỮA CHÚNG: hộp có 6 mặt xếp thành 3 CẶP đối diện bằng nhau: đáy - nắp (4 × 3), trước - sau (4 × 2), hai bên hông (3 × 2) — trải phẳng ra chúng vẫn dính nhau thành hình chữ thập.\nCHỌN CÔNG CỤ: HÌNH KHAI TRIỂN chữ thập + phép đếm ô từng mặt.\nƯỚC LƯỢNG TRƯỚC: sáu mặt, mặt to nhất 12 ô → tổng bìa cỡ dăm chục ô vuông.",
+    "narration": "CHO GÌ? nhà kho mô hình là hình hộp chữ nhật $4  \\times  3  \\times  2$ (đơn vị gang tay).\nHỎI GÌ? hình khai triển trông thế nào và cần tổng cộng bao nhiêu bìa.\nĐẠI LƯỢNG & ĐƠN VỊ: ba kích thước (dài 4, rộng 3, cao 2) và diện tích bìa (ô vuông đơn vị).\nQUAN HỆ GIỮA CHÚNG: hộp có 6 mặt xếp thành 3 CẶP đối diện bằng nhau: đáy - nắp ($4  \\times  3$), trước - sau ($4  \\times  2$), hai bên hông ($3  \\times  2$) — trải phẳng ra chúng vẫn dính nhau thành hình chữ thập.\nCHỌN CÔNG CỤ: HÌNH KHAI TRIỂN chữ thập + phép đếm ô từng mặt.\nƯỚC LƯỢNG TRƯỚC: sáu mặt, mặt to nhất 12 ô → tổng bìa cỡ dăm chục ô vuông.",
     "teaches": [],
     "nhan": "NHỊP 1, DỊCH — từ chiếc hộp sang tờ bìa trải phẳng"
    },
@@ -104,14 +104,14 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: mô hình nhà kho gấp từ MỘT tờ bìa 52 ô đứng ngay ngắn trên bàn họp tổ dân phố, cạnh tháp 24 khối gỗ — bác tổ trưởng gật gù duyệt phương án, còn xin luôn tờ khai triển \"về gấp cho cháu ở nhà chơi\".\nSOI: soi ba lớp: đếm đủ 6 mặt trên tờ trải ✓; gấp thử không hở mặt nào ✓; đếm khối bằng hai đường (4 × 3 × 2 và cộng hai sàn 12 + 12) cùng ra 24 ✓.\nDÙNG NGOÀI ĐỜI: mở hộp sữa, hộp giày ra ngắm đường khai triển; đếm thùng hàng xếp kho, viên gạch xây tường — con mắt \"cắt lớp\" nhìn đâu cũng thấy các tầng 2D ngăn nắp.",
+    "narration": "LẮP: mô hình nhà kho gấp từ MỘT tờ bìa 52 ô đứng ngay ngắn trên bàn họp tổ dân phố, cạnh tháp 24 khối gỗ — bác tổ trưởng gật gù duyệt phương án, còn xin luôn tờ khai triển \"về gấp cho cháu ở nhà chơi\".\nSOI: soi ba lớp: đếm đủ 6 mặt trên tờ trải ✓; gấp thử không hở mặt nào ✓; đếm khối bằng hai đường ($4  \\times  3  \\times  2$ và cộng hai sàn $12 + 12$) cùng ra 24 ✓.\nDÙNG NGOÀI ĐỜI: mở hộp sữa, hộp giày ra ngắm đường khai triển; đếm thùng hàng xếp kho, viên gạch xây tường — con mắt \"cắt lớp\" nhìn đâu cũng thấy các tầng 2D ngăn nắp.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Nhìn khối 3 × 3 × 3, Trí Long đếm ảnh chụp: \"Mặt trước 9 khối, mặt phải 9, mặt trên 9 — ba mặt nhìn thấy là 27, mà cả khối có 6 mặt, vậy tổng số khối là 27 × 2 = 54!\"",
+    "narration": "Nhìn khối $3  \\times  3  \\times  3$, Trí Long đếm ảnh chụp: \"Mặt trước 9 khối, mặt phải 9, mặt trên 9 — ba mặt nhìn thấy là 27, mà cả khối có 6 mặt, vậy tổng số khối là $27  \\times  2 = 54$!\"",
     "teaches": []
    }
   ]
@@ -139,7 +139,7 @@
     "show": "Chiều cao 2 khối → khối hộp gồm 2 tầng chồng lên nhau"
    },
    {
-    "show": "Mỗi tầng là một \"sàn\" chữ nhật 4 × 3 khối."
+    "show": "Mỗi tầng là một \"sàn\" chữ nhật $4  \\times  3$ khối."
    },
    {
     "show": "Biến 3D thành \"2D × số tầng\" ngay ở mô hình."
@@ -148,13 +148,13 @@
     "show": "Bài giải"
    },
    {
-    "show": "Số khối lập phương ở mỗi tầng là: 4 × 3 = 12 (khối)"
+    "show": "Số khối lập phương ở mỗi tầng là: $4  \\times  3 = 12$ (khối)"
    },
    {
     "show": "Khối hộp có 2 tầng nên tổng số khối lập phương nhỏ là"
    },
    {
-    "show": "12 × 2 = 24 (khối)"
+    "show": "$12  \\times  2 = 24$ (khối)"
    },
    {
     "show": "Hai phép nhân tách bạch: trong tầng, rồi nhân số tầng."
@@ -166,7 +166,7 @@
     "show": "Đáp số kèm đơn vị \"khối\"."
    },
    {
-    "show": "Thử lại: đếm theo cột đứng: 4 × 3 = 12 cột, mỗi cột 2 khối: 12 × 2 = 24 ✓"
+    "show": "Thử lại: đếm theo cột đứng: $4  \\times  3 = 12$ cột, mỗi cột 2 khối: $12  \\times  2 = 24$ ✓"
    },
    {
     "show": "Đổi hướng cắt lớp (cột thay tầng) — hai hướng một đáp số."
@@ -204,15 +204,15 @@
      "answerKey": {
       "value": 24
      },
-     "solutionNarrative": "12 × 2 = 24 khối."
+     "solutionNarrative": "$12  \\times  2 = 24$ khối."
     },
     {
      "id": "C3",
-     "text": "Khối lập phương 2 × 2 × 2 gồm bao nhiêu khối nhỏ?",
+     "text": "Khối lập phương $2  \\times  2  \\times  2$ gồm bao nhiêu khối nhỏ?",
      "answerKey": {
       "value": 8
      },
-     "solutionNarrative": "Mỗi tầng 2 × 2 = 4; hai tầng → 8 khối."
+     "solutionNarrative": "Mỗi tầng $2  \\times  2 = 4$; hai tầng → 8 khối."
     }
    ],
    "standard": [
@@ -222,19 +222,19 @@
      "answerKey": {
       "value": 24
      },
-     "solutionNarrative": "Mỗi tầng 4 × 3 = 12; hai tầng → 24 khối."
+     "solutionNarrative": "Mỗi tầng $4  \\times  3 = 12$; hai tầng → 24 khối."
     },
     {
      "id": "C5",
-     "text": "Khối lập phương 3 × 3 × 3 gồm bao nhiêu khối nhỏ? Đếm theo tầng.",
+     "text": "Khối lập phương $3  \\times  3  \\times  3$ gồm bao nhiêu khối nhỏ? Đếm theo tầng.",
      "answerKey": {
       "value": 27
      },
-     "solutionNarrative": "Mỗi tầng 3 × 3 = 9; ba tầng → 27 khối."
+     "solutionNarrative": "Mỗi tầng $3  \\times  3 = 9$; ba tầng → 27 khối."
     },
     {
      "id": "C6",
-     "text": "Hộp bìa 4 × 3 × 2 (đơn vị ô): kể tên ba cặp mặt đối diện kèm kích thước từng mặt, rồi tính tổng số ô bìa cần dùng.",
+     "text": "Hộp bìa $4  \\times  3  \\times  2$ (đơn vị ô): kể tên ba cặp mặt đối diện kèm kích thước từng mặt, rồi tính tổng số ô bìa cần dùng.",
      "answerKey": {
       "parts": [
        {
@@ -255,29 +255,29 @@
        }
       ]
      },
-     "solutionNarrative": "Đáy - nắp 4 × 3 = 12; trước - sau 4 × 2 = 8; hai hông 3 × 2 = 6 → tổng bìa 2 × (12 + 8 + 6) = 52 ô."
+     "solutionNarrative": "Đáy - nắp $4  \\times  3 = 12$; trước - sau $4  \\times  2 = 8$; hai hông $3  \\times  2 = 6$ → tổng bìa 2 × ($12 + 8 + 6$) = 52 ô."
     },
     {
      "id": "C7",
-     "text": "Khối 3 × 3 × 3 bị nhấc mất 1 khối nhỏ ở một góc trên cùng. Hỏi còn lại bao nhiêu khối nhỏ? Đếm theo từng tầng.",
+     "text": "Khối $3  \\times  3  \\times  3$ bị nhấc mất 1 khối nhỏ ở một góc trên cùng. Hỏi còn lại bao nhiêu khối nhỏ? Đếm theo từng tầng.",
      "answerKey": {
       "value": 26
      },
-     "solutionNarrative": "Tầng dưới 9 + tầng giữa 9 + tầng trên 8 = 26 khối."
+     "solutionNarrative": "Tầng dưới 9 + tầng giữa 9 + tầng trên $8 = 26$ khối."
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Tháp ba tầng xếp từ khối nhỏ: tầng dưới là sàn 4 × 4, tầng giữa 3 × 3, tầng trên 2 × 2. Hỏi tháp gồm bao nhiêu khối nhỏ?",
+     "text": "Tháp ba tầng xếp từ khối nhỏ: tầng dưới là sàn $4  \\times  4$, tầng giữa $3  \\times  3$, tầng trên $2  \\times  2$. Hỏi tháp gồm bao nhiêu khối nhỏ?",
      "answerKey": {
       "value": 29
      },
-     "solutionNarrative": "4 × 4 + 3 × 3 + 2 × 2 = 16 + 9 + 4 = 29 khối."
+     "solutionNarrative": "$4  \\times  4 + 3  \\times  3 + 2  \\times  2 = 16 + 9 + 4 = 29$ khối."
     },
     {
      "id": "C9",
-     "text": "Khối 3 × 3 × 3 bị khoét một đường hầm thẳng xuyên từ chính giữa mặt trước ra chính giữa mặt sau (mất trọn hàng 3 khối ở giữa). Hỏi còn bao nhiêu khối nhỏ? Lát từng tầng: tầng nào mất, mất mấy khối?",
+     "text": "Khối $3  \\times  3  \\times  3$ bị khoét một đường hầm thẳng xuyên từ chính giữa mặt trước ra chính giữa mặt sau (mất trọn hàng 3 khối ở giữa). Hỏi còn bao nhiêu khối nhỏ? Lát từng tầng: tầng nào mất, mất mấy khối?",
      "answerKey": {
       "parts": [
        {
@@ -286,7 +286,7 @@
        }
       ]
      },
-     "solutionNarrative": "Hầm xuyên giữa lấy mất hàng 3 khối chính giữa — nằm trọn ở TẦNG GIỮA: tầng dưới 9, tầng giữa 9 − 3 = 6, tầng trên 9 → còn 9 + 6 + 9 = 24 khối (= 27 − 3 ✓)."
+     "solutionNarrative": "Hầm xuyên giữa lấy mất hàng 3 khối chính giữa — nằm trọn ở TẦNG GIỮA: tầng dưới 9, tầng giữa $9 - 3 = 6$, tầng trên 9 → còn $9 + 6 + 9 = 24$ khối (= $27 - 3$ ✓)."
     }
    ]
   }
@@ -305,7 +305,7 @@
    },
    {
     "id": "Q2",
-    "text": "Khối lập phương 3 × 3 × 3 gồm 9 khối nhỏ.",
+    "text": "Khối lập phương $3  \\times  3  \\times  3$ gồm 9 khối nhỏ.",
     "format": "tf",
     "answerKey": {
      "value": false
@@ -328,7 +328,7 @@
    },
    {
     "id": "Q4",
-    "text": "Khối 2 × 2 × 2 gồm:",
+    "text": "Khối $2  \\times  2  \\times  2$ gồm:",
     "format": "mcq",
     "choices": [
      "A. 8 khối",
@@ -342,7 +342,7 @@
    },
    {
     "id": "Q5",
-    "text": "Khối hộp 4 × 3 × 2: mặt đáy (sàn một tầng) gồm:",
+    "text": "Khối hộp $4  \\times  3  \\times  2$: mặt đáy (sàn một tầng) gồm:",
     "format": "mcq",
     "choices": [
      "A. 12 khối",
@@ -352,14 +352,14 @@
     "answerKey": {
      "choice": "A. 12 khối"
     },
-    "solutionNarrative": "4 × 3 = 12 khối."
+    "solutionNarrative": "$4  \\times  3 = 12$ khối."
    }
   ]
  },
  "parentNote": {
   "onComplete": "Bóc một hộp bánh, hộp sữa dọc theo mép dán rồi trải phẳng — hình khai triển thật nằm ngay trong thùng rác tái chế, sinh động hơn mọi hình vẽ.",
-  "homeActivity": "Xếp khối bằng đồ thật (rubik con, xúc xắc, khối gỗ): giao con xếp 2 × 2 × 2, 3 × 3 × 2 rồi tự đếm hai kiểu (theo tầng, theo cột) cho khớp nhau.",
-  "watchFor": "NÊN: chơi \"tháp\": bố mẹ ra đề tầng (4 × 4, 3 × 3, 2 × 2), con tính trước tổng khối rồi xếp kiểm chứng. KHÔNG NÊN: gọi tên thể tích, cm³ hay công thức V = dài × rộng × cao — lớp 5 sẽ đặt tên cho điều con đang đếm hôm nay."
+  "homeActivity": "Xếp khối bằng đồ thật (rubik con, xúc xắc, khối gỗ): giao con xếp $2  \\times  2  \\times  2$, $3  \\times  3  \\times  2$ rồi tự đếm hai kiểu (theo tầng, theo cột) cho khớp nhau.",
+  "watchFor": "NÊN: chơi \"tháp\": bố mẹ ra đề tầng ($4  \\times  4$, $3  \\times  3$, $2  \\times  2$), con tính trước tổng khối rồi xếp kiểm chứng. KHÔNG NÊN: gọi tên thể tích, cm³ hay công thức V = dài × rộng × cao — lớp 5 sẽ đặt tên cho điều con đang đếm hôm nay."
  },
  "figureSpec": [
   {

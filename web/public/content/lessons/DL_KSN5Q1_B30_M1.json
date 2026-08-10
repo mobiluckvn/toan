@@ -43,7 +43,7 @@
    },
    {
     "id": "K2",
-    "text": "Quy trình giải theo thời điểm: giải TẠI MỐC CÓ TỈ (còn 80, tỉ 3 : 1 → 4 phần → còn 60 và 20) → rồi CỘNG TRẢ phần đã bán để về lúc đầu (60 + 12 = 72; 20 + 8 = 28)."
+    "text": "Quy trình giải theo thời điểm: giải TẠI MỐC CÓ TỈ (còn 80, tỉ $3 : 1$ → 4 phần → còn 60 và 20) → rồi CỘNG TRẢ phần đã bán để về lúc đầu ($60 + 12 = 72$; $20 + 8 = 28$)."
    },
    {
     "id": "K3",
@@ -84,10 +84,10 @@
     "counterExample": "Đáp 60 và 20 mà đề cho bán 12 và 8 để làm cảnh à? Dữ kiện thừa là còi báo!"
    },
    {
-    "wrong": "Dán tỉ 3 : 1 thẳng cho lúc đầu: 4 phần = 100 (tổng đầu) → 75 và 25.",
+    "wrong": "Dán tỉ $3 : 1$ thẳng cho lúc đầu: 4 phần = 100 (tổng đầu) → 75 và 25.",
     "signal": "Tổng dùng để chia phần là tổng LÚC ĐẦU trong khi tỉ thuộc mốc sau.",
     "fix": "tỉ là ảnh chụp có ngày giờ: đọc dấu ngày trên ảnh trước khi dán.",
-    "counterExample": "75 − 12 = 63; 25 − 8 = 17: 63 có gấp 3 lần 17 đâu — ảnh dán sai mốc lộ ngay!"
+    "counterExample": "$75 - 12 = 63$; $25 - 8 = 17$: 63 có gấp 3 lần 17 đâu — ảnh dán sai mốc lộ ngay!"
    }
   ],
   "vocabulary": [
@@ -104,7 +104,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "Máy B29: tổng 80, tỉ 3 : 1 → giá một phần = ?",
+    "text": "Máy B29: tổng 80, tỉ $3 : 1$ → giá một phần = ?",
     "answerKey": {
      "value": 20
     }
@@ -313,10 +313,10 @@
   "problem": "Hai kho gạo: sau khi bán 12 tấn ở kho 1 và 8 tấn ở kho 2 thì còn tổng 80 tấn, lúc đó kho 1 gấp 3 kho 2. Hỏi lúc đầu mỗi kho có bao nhiêu tấn?",
   "steps": [
    {
-    "show": "Bước 1 — Ba câu hỏi: tỉ 3 : 1 của mốc SAU BÁN; tổng mốc ấy 80; đề hỏi LÚC ĐẦU.",
+    "show": "Bước 1 — Ba câu hỏi: tỉ $3 : 1$ của mốc SAU BÁN; tổng mốc ấy 80; đề hỏi LÚC ĐẦU.",
     "askBefore": {
      "format": "mcq",
-     "text": "Tỉ 3 : 1 thuộc mốc nào?",
+     "text": "Tỉ $3 : 1$ thuộc mốc nào?",
      "choices": [
       "sau khi bán",
       "lúc đầu",
@@ -332,7 +332,7 @@
     "show": "Bước 2 — Giải tại mốc có tỉ: 4 phần = 80 → phần 20 → còn 60 và 20."
    },
    {
-    "show": "Bước 3 — Cộng trả: kho 1 = 60 + 12 = 72 tấn; kho 2 = 20 + 8 = 28 tấn. Thử: 72 − 12 = 60 = 3 × 20 ✓.",
+    "show": "Bước 3 — Cộng trả: kho $1 = 60 + 12 = 72$ tấn; kho $2 = 20 + 8 = 28$ tấn. Thử: $72 - 12 = 60 = 3  \\times  20$ ✓.",
     "askAfter": {
      "format": "mb",
      "text": "Rót thêm 4 & 6 → tổng 50, gấp 4 → lúc đầu mỗi thùng?",
@@ -470,7 +470,7 @@
       "Mốc có tỉ: 5 phần = 50.",
       "Thêm thì TRỪ để lùi mốc."
      ],
-     "solutionNarrative": "Hiện 40 & 10 → đầu 36 & 4 (thử 40 = 4 × 10 ✓).",
+     "solutionNarrative": "Hiện 40 & 10 → đầu 36 & 4 (thử $40 = 4  \\times  10$ ✓).",
      "teaches": [
       "K3"
      ]

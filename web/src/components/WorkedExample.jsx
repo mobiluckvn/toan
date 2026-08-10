@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import Chu from './Chu.jsx';
 import { buildWorkedSteps } from '../lib/flow.js';
 import AnswerInput from './AnswerInput.jsx';
 import Figure from './Figure.jsx';
@@ -32,7 +33,7 @@ export default function WorkedExample({ we, figure, onNext, onRecord }) {
       <div className="card">
         <div className="kicker">CÙNG LÀM TỪNG BƯỚC · {(we.title || '').toUpperCase()}</div>
         <div className="rounded-xl bg-soft px-4 py-3.5 text-[16px] font-semibold leading-relaxed">
-          {we.problem}
+          <Chu t={we.problem} />
         </div>
         <Figure fig={figure} />
 
@@ -41,7 +42,7 @@ export default function WorkedExample({ we, figure, onNext, onRecord }) {
           return hien.map((s, i) => (
             <div key={i} ref={i === hien.length - 1 ? moiRef : null}
                  className="mt-2.5 flex gap-2.5 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
-              <span className="font-bold text-teal-dark">▸</span><span>{s.text}</span>
+              <span className="font-bold text-teal-dark">▸</span><span><Chu t={s.text} /></span>
             </div>
           ));
         })()}
@@ -54,7 +55,7 @@ export default function WorkedExample({ we, figure, onNext, onRecord }) {
 
         {!done && cur?.kind === 'ask' && (
           <div ref={moiRef} className="mt-4 border-t border-line pt-3.5">
-            <p className="text-[16px] font-semibold leading-snug">❓ {cur.item.text}</p>
+            <p className="text-[16px] font-semibold leading-snug">❓ <Chu t={cur.item.text} /></p>
             {/* Câu xen giữa ví dụ cũng là con làm bài thật — 345 câu trên toàn bộ
                 168 bài, trước đây không ghi lên máy chủ dòng nào. */}
             <AnswerInput

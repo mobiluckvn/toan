@@ -42,7 +42,7 @@
    },
    {
     "id": "K2",
-    "text": "Tìm số hạng bị quên: số hạng = mức lệch : 9 (1 chữ số thập phân) hoặc : 99 (2 chữ số) — chia cho 9 - 99, không chia 10 - 100."
+    "text": "Tìm số hạng bị quên: số hạng = mức lệch : 9 (1 chữ số thập phân) hoặc : 99 (2 chữ số) — chia cho $9 - 99$, không chia $10 - 100$."
    },
    {
     "id": "K3",
@@ -78,13 +78,13 @@
   "misconceptions": [
    {
     "wrong": "\"Số hạng gấp 10 lần thì tổng lệch 10 lần số ấy\" — chia mức lệch cho 10.",
-    "signal": "76,5 : 10 = 7,65 (sai).",
+    "signal": "$76,5 : 10 = 7,65$ (sai).",
     "fix": "viết phép trừ: lệch = 10 lần − 1 lần = 9 LẦN. Chia 9.",
-    "counterExample": "Thử 7,65: 76,5 − 7,65 = 68,85 ≠ 76,5."
+    "counterExample": "Thử 7,65: $76,5 - 7,65 = 68,85$ ≠ 76,5."
    },
    {
     "wrong": "Không đếm phẩy — vụ 2 chữ số thập phân vẫn chia 9.",
-    "signal": "123,75 : 9 = 13,75 rồi thử không khớp.",
+    "signal": "$123,75 : 9 = 13,75$ rồi thử không khớp.",
     "fix": "Đếm phẩy trước (nghi thức B2.M2): 2 chữ số → gấp 100 → lệch 99 lần → chia 99.",
     "counterExample": "13,75 bỏ phẩy thành 1375 — phình 1361,25 ≠ 123,75."
    }
@@ -300,7 +300,7 @@
   "problem": "Khi cộng một số với 3,57, do quên dấu phẩy nên một bạn đã cộng với 357 và được 500. Tìm tổng đúng.",
   "steps": [
    {
-    "show": "Bước 1 — Đo phần phình: 357 − 3,57 = 353,43 (số hạng bị phình đúng bấy nhiêu).",
+    "show": "Bước 1 — Đo phần phình: $357 - 3,57 = 353,43$ (số hạng bị phình đúng bấy nhiêu).",
     "askBefore": {
      "format": "mcq",
      "text": "Tổng nhầm to hơn tổng đúng bao nhiêu?",
@@ -316,13 +316,13 @@
     }
    },
    {
-    "show": "Bước 2 — Tổng đúng = tổng nhầm − phần phình = 500 − 353,43 = 146,57."
+    "show": "Bước 2 — Tổng đúng = tổng nhầm − phần phình = $500 - 353,43 = 146,57$."
    },
    {
-    "show": "Bước 3 — Thử: 146,57 = số kia + 3,57 → số kia = 143; 143 + 357 = 500 ✓. Đáp số: 146,57.",
+    "show": "Bước 3 — Thử: 146,57 = số kia + 3,57 → số kia = 143; $143 + 357 = 500$ ✓. Đáp số: 146,57.",
     "askAfter": {
      "format": "num",
-     "text": "Kiểm nhanh: 143 + 357 = ?",
+     "text": "Kiểm nhanh: $143 + 357$ = ?",
      "answerKey": {
       "value": 500
      },
@@ -351,7 +351,7 @@
       "Phần tăng = 9 lần số cũ.",
       "38,7 : 9."
      ],
-     "solutionNarrative": "Số cũ = 38,7 : 9 = 4,3.",
+     "solutionNarrative": "Số cũ = $38,7 : 9 = 4,3$.",
      "teaches": [
       "K1",
       "K2"
@@ -378,7 +378,7 @@
       "Tổng lệch mấy lần số hạng?",
       "76,5 : 9."
      ],
-     "solutionNarrative": "76,5 : 9 = 8,5. Thử: 85 − 8,5 = 76,5 ✓.",
+     "solutionNarrative": "$76,5 : 9 = 8,5$. Thử: $85 - 8,5 = 76,5$ ✓.",
      "teaches": [
       "K1",
       "K2"
@@ -403,7 +403,7 @@
       "Phần phình = 357 − 3,57.",
       "Tổng đúng = 500 − phần phình."
      ],
-     "solutionNarrative": "Phình = 353,43 → tổng đúng = 500 − 353,43 = 146,57.",
+     "solutionNarrative": "Phình = 353,43 → tổng đúng = $500 - 353,43 = 146,57$.",
      "teaches": [
       "K3",
       "K4"
@@ -423,7 +423,7 @@
       "Tự tính mức lệch trước.",
       "Lệch = 123,75; hai chữ số TP → chia 99."
      ],
-     "solutionNarrative": "Lệch = 173,75 − 50 = 123,75 = 99 lần số hạng → 123,75 : 99 = 1,25.",
+     "solutionNarrative": "Lệch = $173,75 - 50 = 123,75 = 99$ lần số hạng → $123,75 : 99 = 1,25$.",
      "teaches": [
       "K2",
       "K3"

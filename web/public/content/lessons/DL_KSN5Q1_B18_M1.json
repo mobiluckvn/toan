@@ -29,7 +29,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con phân biệt rạch ròi: NHÂN / CHIA cả tử và mẫu cùng một số — giá trị GIỮ NGUYÊN; CỘNG / TRỪ cùng một số vào cả hai — giá trị THAY ĐỔI (phản chứng bỏ túi 1/2 + 1 = 2/3), nhưng để lại hai MỎ NEO quý: HIỆU không đổi khi cộng/trừ cả hai, TỔNG không đổi khi chuyển qua lại.",
+  "text": "Con phân biệt rạch ròi: NHÂN / CHIA cả tử và mẫu cùng một số — giá trị GIỮ NGUYÊN; CỘNG / TRỪ cùng một số vào cả hai — giá trị THAY ĐỔI (phản chứng bỏ túi $\\frac{1}{2}$ + 1 = $\\frac{2}{3}$), nhưng để lại hai MỎ NEO quý: HIỆU không đổi khi cộng/trừ cả hai, TỔNG không đổi khi chuyển qua lại.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (cộng đều không giữ giá)",
   "kidText": "Nhân chia cả tử và mẫu thì phân số giữ nguyên giá trị. Cộng trừ thì đổi — nhưng để lại hai mỏ neo quý: hiệu và tổng."
  },
@@ -37,11 +37,11 @@
   "statements": [
    {
     "id": "K1",
-    "text": "NHÂN hoặc CHIA cả tử và mẫu cho cùng một số (khác 0): giá trị phân số GIỮ NGUYÊN — đó chính là rút gọn / quy đồng (42/49 = 6/7 khi chia cả hai cho 7)."
+    "text": "NHÂN hoặc CHIA cả tử và mẫu cho cùng một số (khác 0): giá trị phân số GIỮ NGUYÊN — đó chính là rút gọn / quy đồng ($\\frac{42}{49}$ = 6/7 khi chia cả hai cho 7)."
    },
    {
     "id": "K2",
-    "text": "CỘNG hoặc TRỪ cùng một số vào cả tử và mẫu: giá trị THAY ĐỔI. Phản chứng bỏ túi: 1/2 thêm 1 cả hai thành 2/3 ≠ 1/2."
+    "text": "CỘNG hoặc TRỪ cùng một số vào cả tử và mẫu: giá trị THAY ĐỔI. Phản chứng bỏ túi: 1/2 thêm 1 cả hai thành $\\frac{2}{3}$ ≠ 1/2."
    },
    {
     "id": "K3",
@@ -74,8 +74,8 @@
    {
     "wrong": "\"Cộng công bằng cả hai bên thì tỉ lệ giữ nguyên chứ!\" — coi cộng đều như nhân đều.",
     "signal": "Khẳng định giá trị không đổi sau khi cộng cùng số.",
-    "fix": "phản chứng bỏ túi 3 giây: 1/2 thêm 1 cả hai = 2/3 ≠ 1/2; chỉ NHÂN / CHIA mới giữ giá.",
-    "counterExample": "1/2 = 0,5 còn 2/3 khoảng 0,67 — bè đã trôi rõ ràng."
+    "fix": "phản chứng bỏ túi 3 giây: 1/2 thêm 1 cả hai = $\\frac{2}{3}$ ≠ $\\frac{1}{2}$; chỉ NHÂN / CHIA mới giữ giá.",
+    "counterExample": "$\\frac{1}{2}$ = 0,5 còn 2/3 khoảng 0,67 — bè đã trôi rõ ràng."
    }
   ],
   "vocabulary": [
@@ -92,7 +92,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "42 : 7 = ?",
+    "text": "$42 : 7$ = ?",
     "answerKey": {
      "value": 6
     }
@@ -128,7 +128,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Phản chứng ba giây: 1/2 thêm 1 cả hai thành 2/3 — mà 0,5 đâu có bằng 0,67: bè TRÔI rồi! Vì sao? Nhân / chia cả hai là ĐÓNG LẠI KIỆN — hàng nguyên đó, chỉ đổi cỡ: 42/49 chia cả hai cho 7 vẫn là 6/7 đúng giá. Còn cộng là ĐỔ THÊM HÀNG THẬT vào từng thùng — giá trị đổi ngay. Chỉ nhân chia mới giữ giá!",
+    "narration": "Phản chứng ba giây: 1/2 thêm 1 cả hai thành $\\frac{2}{3}$ — mà 0,5 đâu có bằng 0,67: bè TRÔI rồi! Vì sao? Nhân / chia cả hai là ĐÓNG LẠI KIỆN — hàng nguyên đó, chỉ đổi cỡ: 42/49 chia cả hai cho 7 vẫn là 6/7 đúng giá. Còn cộng là ĐỔ THÊM HÀNG THẬT vào từng thùng — giá trị đổi ngay. Chỉ nhân chia mới giữ giá!",
     "display": {
      "type": "raft_interactive",
      "spec": {
@@ -148,7 +148,7 @@
     "estSeconds": 15,
     "item": {
      "format": "mcq",
-     "text": "Rút gọn 42/49:",
+     "text": "Rút gọn $\\frac{42}{49}$:",
      "choices": [
       "6/7",
       "7/6",
@@ -172,7 +172,7 @@
     "teaches": [
      "K3"
     ],
-    "narration": "Bè trôi — nhưng nhìn kỹ: vẫn còn NEO! Đổ thêm 8 kiện đều hai thùng: 34/41 thành 42/49 — đo khoảng chênh: 41 trừ 34 là BẢY, 49 trừ 42 vẫn BẢY: HIỆU đứng im! Còn bốc 5 kiện từ thùng tử sang thùng mẫu: 41/58 thành 36/63 — đếm cả bè: 99 và vẫn 99: TỔNG đứng im! Hai mỏ neo này là chỗ bám của hai bài toán lớn hai tiết tới.",
+    "narration": "Bè trôi — nhưng nhìn kỹ: vẫn còn NEO! Đổ thêm 8 kiện đều hai thùng: 34/41 thành $\\frac{42}{49}$ — đo khoảng chênh: 41 trừ 34 là BẢY, 49 trừ 42 vẫn BẢY: HIỆU đứng im! Còn bốc 5 kiện từ thùng tử sang thùng mẫu: 41/58 thành $\\frac{36}{63}$ — đếm cả bè: 99 và vẫn 99: TỔNG đứng im! Hai mỏ neo này là chỗ bám của hai bài toán lớn hai tiết tới.",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -279,10 +279,10 @@
  },
  "workedExample": {
   "title": "Bè trôi — neo ở lại",
-  "problem": "(a) Rút gọn 42/49. (b) Cộng 1 vào cả tử và mẫu của 1/2 — giá trị có giữ nguyên không?",
+  "problem": "(a) Rút gọn 42/49. (b) Cộng 1 vào cả tử và mẫu của $\\frac{1}{2}$ — giá trị có giữ nguyên không?",
   "steps": [
    {
-    "show": "Bước 1 — Câu (a): chia cả hai cho 7 → 6/7 (nhân chia giữ giá).",
+    "show": "Bước 1 — Câu (a): chia cả hai cho 7 → $\\frac{6}{7}$ (nhân chia giữ giá).",
     "askBefore": {
      "format": "mcq",
      "text": "Phép nào giữ nguyên giá trị phân số?",
@@ -298,7 +298,7 @@
     }
    },
    {
-    "show": "Bước 2 — Câu (b): 1/2 → 2/3; mà 0,5 ≠ 0,67 → giá trị ĐÃ ĐỔI."
+    "show": "Bước 2 — Câu (b): $\\frac{1}{2}$ → $\\frac{2}{3}$; mà 0,5 ≠ 0,67 → giá trị ĐÃ ĐỔI."
    },
    {
     "show": "Bước 3 — Nhưng neo còn: hiệu của 1/2 là 1, của 2/3 vẫn là 1 — hiệu không đổi!",
@@ -338,7 +338,7 @@
       "Cả hai chia hết cho số nào?",
       "Chia cả tử và mẫu cho 7."
      ],
-     "solutionNarrative": "42/49 = 6/7 (chia cả hai cho 7).",
+     "solutionNarrative": "$\\frac{42}{49}$ = $\\frac{6}{7}$ (chia cả hai cho 7).",
      "teaches": [
       "K1"
      ],
@@ -407,7 +407,7 @@
     {
      "id": "P4",
      "format": "tf",
-     "text": "(Đúng/Sai?) 3/5 cộng 2 vào cả tử và mẫu được 5/7, và 5/7 = 3/5.",
+     "text": "(Đúng/Sai?) 3/5 cộng 2 vào cả tử và mẫu được 5/7, và $\\frac{5}{7}$ = 3/5.",
      "answerKey": {
       "value": false,
       "note": "5/7 ≠ 3/5 (0,71 ≠ 0,6) — cộng đều làm trôi giá; chỉ hiệu 2 là giữ nguyên."
@@ -493,7 +493,7 @@
   "flashcards": [
    {
     "front": "Phép nào giữ giá trị phân số? Cộng/trừ đều để lại gì?",
-    "back": "NHÂN / CHIA cả hai cùng số: giữ giá (rút gọn, quy đồng). CỘNG / TRỪ cùng số cả hai: TRÔI giá (1/2 + 1 = 2/3!) nhưng HIỆU không đổi; CHUYỂN qua lại: TỔNG không đổi. NHÂN CHIA GIỮ GIÁ — CỘNG TRỪ TRÔI GIÁ, CÒN NEO!"
+    "back": "NHÂN / CHIA cả hai cùng số: giữ giá (rút gọn, quy đồng). CỘNG / TRỪ cùng số cả hai: TRÔI giá ($\\frac{1}{2}$ + 1 = $\\frac{2}{3}$!) nhưng HIỆU không đổi; CHUYỂN qua lại: TỔNG không đổi. NHÂN CHIA GIỮ GIÁ — CỘNG TRỪ TRÔI GIÁ, CÒN NEO!"
    }
   ],
   "schedule": [
@@ -505,7 +505,7 @@
  "parentNote": {
   "onComplete": "Hôm nay con phân biệt nhân-chia-giữ-giá với cộng-trừ-trôi-giá, và phát hiện hai mỏ neo hiệu / tổng. Con đạt {score}/3, {trapResult} câu bẫy cộng-đều.",
   "homeActivity": "Phản chứng bằng bánh: cắt bánh 1/2, rồi 'thêm 1 lát vào cả phần lấy lẫn tổng lát' — con thấy 2/3 nhiều hơn 1/2 rõ ràng.",
-  "watchFor": "Nếu con tin 'cộng công bằng giữ tỉ lệ' — bấm máy 1/2 = 0,5 vs 2/3 khoảng 0,67 (S2) cùng con."
+  "watchFor": "Nếu con tin 'cộng công bằng giữ tỉ lệ' — bấm máy $\\frac{1}{2}$ = 0,5 vs 2/3 khoảng 0,67 (S2) cùng con."
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B18.M1",

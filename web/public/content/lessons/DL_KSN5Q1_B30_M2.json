@@ -37,15 +37,15 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Chuỗi tỉ móc xích: \"B gấp đôi A, C gấp đôi B\" — chọn A (số bé nhất) làm thước: A = 1 phần → B = 2 phần → C gấp đôi B = 2 × 2 = 4 phần (KHÔNG phải 2!)."
+    "text": "Chuỗi tỉ móc xích: \"B gấp đôi A, C gấp đôi B\" — chọn A (số bé nhất) làm thước: A = 1 phần → B = 2 phần → C gấp đôi B = $2  \\times  2 = 4$ phần (KHÔNG phải 2!)."
    },
    {
     "id": "K2",
-    "text": "Cộng ĐỦ phần theo một thước: 1 + 2 + 4 = 7 phần = 70 → phần 10 → ba số 10; 20; 40. Thử từng mắt xích: 20 = 2 × 10 ✓; 40 = 2 × 20 ✓."
+    "text": "Cộng ĐỦ phần theo một thước: $1 + 2 + 4 = 7$ phần = 70 → phần 10 → ba số 10; 20; 40. Thử từng mắt xích: $20 = 2  \\times  10$ ✓; $40 = 2  \\times  20$ ✓."
    },
    {
     "id": "K3",
-    "text": "Tỉ ba ngôi cho sẵn 1 : 2 : 3 là chuỗi đã quy sẵn thước: cộng 6 phần, chia, nhân. Mắt xích kiểu \"số thứ ba bằng TỔNG hai số kia\" thì dịch ra phần: C = 1 + 2 = 3 phần → cả chuỗi 6 phần."
+    "text": "Tỉ ba ngôi cho sẵn $1 : 2 : 3$ là chuỗi đã quy sẵn thước: cộng 6 phần, chia, nhân. Mắt xích kiểu \"số thứ ba bằng TỔNG hai số kia\" thì dịch ra phần: C = $1 + 2 = 3$ phần → cả chuỗi 6 phần."
    }
   ],
   "mechanism": "Hình ảnh brand: BA ĐỒNG TIỀN MỘT TỶ GIÁ. Chuỗi \"B gấp đôi A, C gấp đôi B\" — Trí Long đếm phần kiểu một-hai-hai: cộng ra 5 phần?! Nhầm tiền tệ rồi: con số \"gấp đôi\" của C đo bằng đồng B, còn phần đang cộng đo bằng đồng A! Nghi thức quy đổi TIỀN TỆ CHUNG trước khi cộng: lấy A — số bé nhất — làm thước: A một phần; B gấp đôi A — hai phần; C gấp đôi B — mà B đã hai phần: C bốn phần! Cộng đủ: một, hai, bốn — BẢY phần bằng bảy mươi: phần mười — ba số 10, 20, 40. Thử từng mắt xích: 20 gấp đôi 10, 40 gấp đôi 20 — chuỗi khớp ròn rã!",
@@ -64,7 +64,7 @@
    },
    {
     "case": "tỉ ba ngôi (ca chia bi)",
-    "problem": "Ba bạn chia 60 viên bi theo tỉ 1 : 2 : 3. Hỏi mỗi bạn được bao nhiêu viên?",
+    "problem": "Ba bạn chia 60 viên bi theo tỉ $1 : 2 : 3$. Hỏi mỗi bạn được bao nhiêu viên?",
     "solution": "6 phần = 60 → phần 10 → 10; 20; 30 viên.",
     "why": "Ca LT7 — chuỗi đã quy sẵn thước."
    }
@@ -72,10 +72,10 @@
   "numberRange": "Lớp 5: 3 số; tổng ≤ 200.",
   "misconceptions": [
    {
-    "wrong": "Cộng phần không quy đổi: \"gấp đôi\" của C đếm là 2 → 1 + 2 + 2 = 5 phần.",
+    "wrong": "Cộng phần không quy đổi: \"gấp đôi\" của C đếm là 2 → $1 + 2 + 2 = 5$ phần.",
     "signal": "C bằng B trong đáp dù đề nói C gấp đôi B.",
     "fix": "quy đổi tiền tệ chung trước khi cộng: C gấp đôi B mà B đang 2 phần → C = 4 phần.",
-    "counterExample": "70 : 5 = 14 → 14; 28; 28 — C có gấp đôi B đâu: mắt xích cuối đứt!"
+    "counterExample": "$70 : 5 = 14$ → 14; 28; 28 — C có gấp đôi B đâu: mắt xích cuối đứt!"
    }
   ],
   "vocabulary": [
@@ -113,7 +113,7 @@
     "narration": "Ba số có tổng 70. Số thứ hai gấp đôi số thứ nhất, số thứ ba gấp đôi số thứ hai. Tìm ba số.",
     "display": {
      "type": "story_panel",
-     "caption": "1 + 2 + 2 = 5 phần??"
+     "caption": "$1 + 2 + 2 = 5$ phần??"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -162,7 +162,7 @@
     "estSeconds": 15,
     "item": {
      "format": "mcq",
-     "text": "Chuỗi 1 : 2 : 4 có tổng số phần:",
+     "text": "Chuỗi $1 : 2 : 4$ có tổng số phần:",
      "choices": [
       "7",
       "5",
@@ -296,7 +296,7 @@
   "problem": "Ba số có tổng 70. Số thứ hai gấp đôi số thứ nhất, số thứ ba gấp đôi số thứ hai. Tìm ba số.",
   "steps": [
    {
-    "show": "Bước 1 — Thước = số thứ nhất: A = 1; B = 2; C = 2 × 2 = 4 phần.",
+    "show": "Bước 1 — Thước = số thứ nhất: A = 1; B = 2; C = $2  \\times  2 = 4$ phần.",
     "askBefore": {
      "format": "mcq",
      "text": "C gấp đôi B (B = 2 phần) → C =",
@@ -312,13 +312,13 @@
     }
    },
    {
-    "show": "Bước 2 — Cộng đủ: 1 + 2 + 4 = 7 phần = 70 → phần 10."
+    "show": "Bước 2 — Cộng đủ: $1 + 2 + 4 = 7$ phần = 70 → phần 10."
    },
    {
-    "show": "Bước 3 — Ba số: 10; 20; 40. Thử mắt xích: 20 = 2 × 10 ✓; 40 = 2 × 20 ✓.",
+    "show": "Bước 3 — Ba số: 10; 20; 40. Thử mắt xích: $20 = 2  \\times  10$ ✓; $40 = 2  \\times  20$ ✓.",
     "askAfter": {
      "format": "mb",
-     "text": "Chia 60 viên bi theo tỉ 1 : 2 : 3 → mỗi bạn?",
+     "text": "Chia 60 viên bi theo tỉ $1 : 2 : 3$ → mỗi bạn?",
      "answerKey": {
       "parts": [
        {
@@ -390,7 +390,7 @@
      "id": "P2",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B30.LT7",
-     "text": "Ba bạn chia 60 viên bi theo tỉ 1 : 2 : 3. Hỏi mỗi bạn được bao nhiêu viên?",
+     "text": "Ba bạn chia 60 viên bi theo tỉ $1 : 2 : 3$. Hỏi mỗi bạn được bao nhiêu viên?",
      "answerKey": {
       "parts": [
        {
@@ -443,7 +443,7 @@
       "C = 1 + 2 = 3 phần.",
       "6 phần = 96."
      ],
-     "solutionNarrative": "Phần 16 → 16; 32; 48 (48 = 16 + 32 ✓).",
+     "solutionNarrative": "Phần 16 → 16; 32; 48 ($48 = 16 + 32$ ✓).",
      "teaches": [
       "K3"
      ]
@@ -473,7 +473,7 @@
     "id": "A1",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B30.QZ4",
-    "text": "Chuỗi 1 : 2 : 4 có tổng số phần:",
+    "text": "Chuỗi $1 : 2 : 4$ có tổng số phần:",
     "choices": [
      "7",
      "5",
@@ -522,7 +522,7 @@
   "flashcards": [
    {
     "front": "Chuỗi tỉ ba số — cộng phần thế nào?",
-    "back": "QUY VỀ MỘT THƯỚC (số bé nhất) trước: 'C gấp đôi B' mà B = 2 phần → C = 4 (không phải 2!) → 1+2+4 = 7 phần = 70 → 10; 20; 40. Mắt xích chữ dịch ra phần (C = tổng hai số kia = 3 phần). Thử từng mắt xích."
+    "back": "QUY VỀ MỘT THƯỚC (số bé nhất) trước: 'C gấp đôi B' mà B = 2 phần → C = 4 (không phải 2!) → $1+2+4 = 7$ phần = 70 → 10; 20; 40. Mắt xích chữ dịch ra phần (C = tổng hai số kia = 3 phần). Thử từng mắt xích."
    }
   ],
   "schedule": [

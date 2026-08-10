@@ -1,5 +1,5 @@
 {
- "title": "Hai họ tích (1 − 1/n) và (1 + 1/n): soi dấu trước — sập chuyền sau",
+ "title": "Hai họ tích ($1 - 1$/n) và ($1 + 1$/n): soi dấu trước — sập chuyền sau",
  "grade": 5,
  "durationMinutes": 9,
  "skills": {
@@ -31,7 +31,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con chinh phục hai họ tích nổi tiếng: họ dấu TRỪ (1 − 1/2)…(1 − 1/n) = 1/n và họ dấu CỘNG (1 + 1/2)…(1 + 1/n) = (n + 1)/2 — SOI DẤU trước khi sập chuyền, và TIN kết quả nhỏ vì nhân số bé hơn 1 thì tích teo dần.",
+  "text": "Con chinh phục hai họ tích nổi tiếng: họ dấu TRỪ (1 − $\\frac{1}{2}$)…($1 - 1$/n) = 1/n và họ dấu CỘNG (1 + $\\frac{1}{2}$)…($1 + 1$/n) = (n + 1)/2 — SOI DẤU trước khi sập chuyền, và TIN kết quả nhỏ vì nhân số bé hơn 1 thì tích teo dần.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
   "kidText": "Con tính được tích dài toàn những ngoặc dạng 1 trừ một phân số — soi dấu trước đã. Nhân toàn số bé hơn 1 thì kết quả teo dần, đừng ngờ."
  },
@@ -39,38 +39,38 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Quy mỗi ngoặc về MỘT phân số trước: (1 − 1/n) = (n − 1)/n; (1 + 1/n) = (n + 1)/n — rồi mới xếp dây chuyền."
+    "text": "Quy mỗi ngoặc về MỘT phân số trước: ($1 - 1$/n) = (n − 1)/n; ($1 + 1$/n) = (n + 1)/n — rồi mới xếp dây chuyền."
    },
    {
     "id": "K2",
-    "text": "Họ dấu TRỪ: (1 − 1/2)(1 − 1/3)…(1 − 1/n) = 1/2 × 2/3 × … × (n−1)/n — dây chuyền liền: còn 1/n. Kết quả NHỎ kinh ngạc nhưng đúng."
+    "text": "Họ dấu TRỪ: (1 − $\\frac{1}{2}$)(1 − $\\frac{1}{3}$)…($1 - 1$/n) = $\\frac{1}{2}$ × $\\frac{2}{3}$ × … × (n−1)/n — dây chuyền liền: còn 1/n. Kết quả NHỎ kinh ngạc nhưng đúng."
    },
    {
     "id": "K3",
-    "text": "Họ dấu CỘNG: (1 + 1/2)…(1 + 1/n) = 3/2 × 4/3 × … × (n+1)/n — kẻ sống sót ĐỔI VAI: mẫu đầu (2) và tử cuối (n + 1): đáp (n + 1)/2."
+    "text": "Họ dấu CỘNG: (1 + $\\frac{1}{2}$)…($1 + 1$/n) = $\\frac{3}{2}$ × $\\frac{4}{3}$ × … × (n+1)/n — kẻ sống sót ĐỔI VAI: mẫu đầu (2) và tử cuối (n + 1): đáp (n + 1)/2."
    },
    {
     "id": "K4",
-    "text": "TIN kết quả nhỏ bằng lý lẽ: mỗi thừa số (1 − 1/n) đều BÉ HƠN 1 — mỗi lần nhân tích lại teo đi một chút; nhân nhiều thừa số bé hơn 1 thì nhỏ là chuyện đương nhiên, không cần hoảng loạn tính tay lại."
+    "text": "TIN kết quả nhỏ bằng lý lẽ: mỗi thừa số ($1 - 1$/n) đều BÉ HƠN 1 — mỗi lần nhân tích lại teo đi một chút; nhân nhiều thừa số bé hơn 1 thì nhỏ là chuyện đương nhiên, không cần hoảng loạn tính tay lại."
    }
   ],
   "mechanism": "Hình ảnh brand: HAI ĐOÀN TÀU NGƯỢC CHIỀU cùng một nhà ga. Đoàn DẤU TRỪ: mỗi toa (1 − 1/n) hóa thành (n−1)/n — toa 1/2, 2/3, 3/4… móc nối răng khớp răng, sập chuyền chỉ còn TỬ ĐẦU 1 và MẪU CUỐI n: đáp 1/n — đoàn tàu CO LẠI vì mỗi toa đều bé hơn 1, nhân một lần là bị 'cắn' bớt một miếng. Đoàn DẤU CỘNG: toa (1 + 1/n) thành (n+1)/n — 3/2, 4/3, 5/4… vẫn sập chuyền nhưng kẻ sống sót ĐỔI VAI: mẫu đầu 2 và tử cuối n + 1 — đoàn tàu NỞ RA. Cáo Đề chỉ cần tráo MỘT DẤU là hai đoàn đổi hướng hoàn toàn: nghi thức nhà ga — SOI DẤU trước, sập chuyền sau!",
   "canonicalExamples": [
    {
     "case": "họ trừ (ca lõi)",
-    "problem": "Tính: (1 − 1/2) × (1 − 1/3) × … × (1 − 1/10).",
+    "problem": "Tính: (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{10}$).",
     "solution": "Quy từng ngoặc: 1/2 × 2/3 × … × 9/10. Sập chuyền: còn 1/10.",
     "why": "đề A câu 9."
    },
    {
     "case": "họ cộng (ca đổi vai)",
-    "problem": "Tính: (1 + 1/2) × (1 + 1/3) × … × (1 + 1/9).",
+    "problem": "Tính: (1 + $\\frac{1}{2}$) × (1 + $\\frac{1}{3}$) × … × (1 + $\\frac{1}{9}$).",
     "solution": "Quy: 3/2 × 4/3 × … × 10/9. Sập: mẫu đầu 2 và tử cuối 10 sống sót → 10/2 = 5.",
     "why": "Ca đinh bẫy CĐ-15.2 — đề A câu 10: một dấu đổi, kết cục đổi."
    },
    {
     "case": "tin kết quả nhỏ (ca sư phụ 2026)",
-    "problem": "Tính B = (1 − 1/2) × (1 − 1/3) × … × (1 − 1/2026) và giải thích MỘT câu vì sao nhỏ thế.",
+    "problem": "Tính B = (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{2026}$) và giải thích MỘT câu vì sao nhỏ thế.",
     "solution": "B = 1/2026. Vì mọi thừa số đều bé hơn 1 nên mỗi lần nhân tích teo đi một chút — 2025 cú \"cắn\" liên tiếp chỉ chừa đúng một phần 2026.",
     "why": "Ca bẫy CĐ-15.3 — niềm tin đặt vào lý lẽ, không hoảng."
    }
@@ -78,16 +78,16 @@
   "numberRange": "Lớp 5: n đến 2026; so sánh không-tính-hết với 1/50.",
   "misconceptions": [
    {
-    "wrong": "Bị tráo dấu mà không hay: làm (1 + 1/2)…(1 + 1/9) y hệt họ trừ, đáp 1/9.",
+    "wrong": "Bị tráo dấu mà không hay: làm (1 + $\\frac{1}{2}$)…(1 + $\\frac{1}{9}$) y hệt họ trừ, đáp 1/9.",
     "signal": "Đáp họ cộng lại nhỏ hơn 1 (tích các số > 1 phải LỚN hơn 1!).",
     "fix": "nghi thức soi dấu: dấu cộng → toa (n+1)/n nở ra, sống sót đổi vai → (n + 1)/2.",
-    "counterExample": "(1 + 1/2)(1 + 1/3) = 3/2 × 4/3 = 2 > 1 — họ cộng luôn phình, không teo."
+    "counterExample": "(1 + $\\frac{1}{2}$)(1 + $\\frac{1}{3}$) = $\\frac{3}{2}$ × $\\frac{4}{3}$ = $2 > 1$ — họ cộng luôn phình, không teo."
    },
    {
-    "wrong": "Ra đáp 1/10 (hay 1/2026) thì hoảng: \"chín thừa số nhân nhau mà bé thế?!\" rồi bỏ đáp đúng, quay về nhân tay.",
+    "wrong": "Ra đáp $\\frac{1}{10}$ (hay $\\frac{1}{2026}$) thì hoảng: \"chín thừa số nhân nhau mà bé thế?!\" rồi bỏ đáp đúng, quay về nhân tay.",
     "signal": "Xóa đáp đúng, mất giờ nhân thủ công.",
     "fix": "lý lẽ chiếc kéo: nhân số bé hơn 1 là bị cắt bớt; càng nhiều thừa số càng teo — nhỏ là dấu hiệu ĐÚNG.",
-    "counterExample": "1/2 × 2/3 = 1/3 < 1/2: mới hai thừa số đã teo rồi."
+    "counterExample": "$\\frac{1}{2}$ × $\\frac{2}{3}$ = $\\frac{1}{3}$ < $\\frac{1}{2}$: mới hai thừa số đã teo rồi."
    }
   ],
   "vocabulary": [
@@ -104,7 +104,7 @@
    {
     "id": "E1",
     "format": "mcq",
-    "text": "1 − 1/4 = ? (quy về một phân số)",
+    "text": "1 − $\\frac{1}{4}$ = ? (quy về một phân số)",
     "choices": [
      "3/4",
      "1/4",
@@ -127,10 +127,10 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Tính: (1 − 1/2) × (1 − 1/3) × … × (1 − 1/10).",
+    "narration": "Tính: (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{10}$).",
     "display": {
      "type": "story_panel",
-     "caption": "đổi mỗi cái dấu… vẫn 1/9?"
+     "caption": "đổi mỗi cái dấu… vẫn $\\frac{1}{9}$?"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -146,7 +146,7 @@
      "K2",
      "K3"
     ],
-    "narration": "Soi dấu, quy từng toa! Đoàn TRỪ: mỗi toa (1 − 1/n) thành (n−1)/n — nửa, hai phần ba, ba phần tư… móc răng khớp răng, sập chuyền: còn MỘT PHẦN CHÍN — đoàn co lại. Đoàn CỘNG: toa thành (n+1)/n — ba phần hai, bốn phần ba… vẫn sập, nhưng sống sót ĐỔI VAI: mẫu đầu 2 và tử cuối 10 — đáp MƯỜI PHẦN HAI bằng NĂM: đoàn nở ra! Một dấu đổi — một trời khác.",
+    "narration": "Soi dấu, quy từng toa! Đoàn TRỪ: mỗi toa ($1 - 1$/n) thành (n−1)/n — nửa, hai phần ba, ba phần tư… móc răng khớp răng, sập chuyền: còn MỘT PHẦN CHÍN — đoàn co lại. Đoàn CỘNG: toa thành (n+1)/n — ba phần hai, bốn phần ba… vẫn sập, nhưng sống sót ĐỔI VAI: mẫu đầu 2 và tử cuối 10 — đáp MƯỜI PHẦN HAI bằng NĂM: đoàn nở ra! Một dấu đổi — một trời khác.",
     "display": {
      "type": "two_trains_interactive",
      "spec": {
@@ -181,7 +181,7 @@
     "estSeconds": 16,
     "item": {
      "format": "mcq",
-     "text": "(1 − 1/2) × (1 − 1/3) × … × (1 − 1/10) bằng:",
+     "text": "(1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{10}$) bằng:",
      "choices": [
       "1/10",
       "9/10",
@@ -312,13 +312,13 @@
  },
  "workedExample": {
   "title": "Hai chuyến tàu một nhà ga",
-  "problem": "Tính: (a) (1 − 1/2) × … × (1 − 1/10); (b) (1 + 1/2) × … × (1 + 1/9).",
+  "problem": "Tính: (a) (1 − $\\frac{1}{2}$) × … × (1 − $\\frac{1}{10}$); (b) (1 + $\\frac{1}{2}$) × … × (1 + $\\frac{1}{9}$).",
   "steps": [
    {
     "show": "Bước 1 — SOI DẤU: câu (a) họ trừ, câu (b) họ cộng — hai đường ray khác nhau!",
     "askBefore": {
      "format": "mcq",
-     "text": "(1 + 1/3) quy về:",
+     "text": "(1 + $\\frac{1}{3}$) quy về:",
      "choices": [
       "4/3",
       "2/3",
@@ -331,13 +331,13 @@
     }
    },
    {
-    "show": "Bước 2 — Câu (a): 1/2 × 2/3 × … × 9/10 → sập: 1/10 (teo — đúng luật!)."
+    "show": "Bước 2 — Câu (a): $\\frac{1}{2}$ × $\\frac{2}{3}$ × … × $\\frac{9}{10}$ → sập: $\\frac{1}{10}$ (teo — đúng luật!)."
    },
    {
-    "show": "Bước 3 — Câu (b): 3/2 × 4/3 × … × 10/9 → sống sót đổi vai: 10/2 = 5.",
+    "show": "Bước 3 — Câu (b): $\\frac{3}{2}$ × $\\frac{4}{3}$ × … × $\\frac{10}{9}$ → sống sót đổi vai: $\\frac{10}{2}$ = 5.",
     "askAfter": {
      "format": "num",
-     "text": "(1 + 1/2) × … × (1 + 1/19) = 20/2 = ?",
+     "text": "(1 + $\\frac{1}{2}$) × … × (1 + $\\frac{1}{19}$) = $\\frac{20}{2}$ = ?",
      "answerKey": {
       "value": 10
      },
@@ -358,7 +358,7 @@
      "id": "P1",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B15.LT2",
-     "text": "Tính: (1 − 1/2) × (1 − 1/3).",
+     "text": "Tính: (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$).",
      "answerKey": {
       "parts": [
        {
@@ -371,7 +371,7 @@
       "Quy từng ngoặc: 1/2 × 2/3.",
       "Rút chéo số 2."
      ],
-     "solutionNarrative": "1/2 × 2/3 = 1/3.",
+     "solutionNarrative": "$\\frac{1}{2}$ × $\\frac{2}{3}$ = 1/3.",
      "teaches": [
       "K1",
       "K2"
@@ -388,7 +388,7 @@
      "id": "P2",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B15.LT3",
-     "text": "Tính: (1 + 1/2) × (1 + 1/3).",
+     "text": "Tính: (1 + $\\frac{1}{2}$) × (1 + $\\frac{1}{3}$).",
      "answerKey": {
       "value": 2
      },
@@ -396,7 +396,7 @@
       "Quy: 3/2 × 4/3.",
       "Rút chéo số 3: 4/2."
      ],
-     "solutionNarrative": "3/2 × 4/3 = 4/2 = 2.",
+     "solutionNarrative": "$\\frac{3}{2}$ × $\\frac{4}{3}$ = $\\frac{4}{2}$ = 2.",
      "teaches": [
       "K1",
       "K3"
@@ -408,7 +408,7 @@
      "id": "P3",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B15.LT4",
-     "text": "Tính: (1 − 1/2) × (1 − 1/3) × (1 − 1/4) × … × (1 − 1/10).",
+     "text": "Tính: (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × (1 − $\\frac{1}{4}$) × … × (1 − $\\frac{1}{10}$).",
      "answerKey": {
       "parts": [
        {
@@ -430,7 +430,7 @@
      "id": "P4",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B15.LT5",
-     "text": "Tính: (1 + 1/2) × (1 + 1/3) × (1 + 1/4) × … × (1 + 1/9).",
+     "text": "Tính: (1 + $\\frac{1}{2}$) × (1 + $\\frac{1}{3}$) × (1 + $\\frac{1}{4}$) × … × (1 + $\\frac{1}{9}$).",
      "answerKey": {
       "value": 5
      },
@@ -438,7 +438,7 @@
       "Toa 3/2 × 4/3 × … × 10/9.",
       "Sống sót đổi vai: 10/2."
      ],
-     "solutionNarrative": "10/2 = 5 — đoàn cộng nở ra.",
+     "solutionNarrative": "$\\frac{10}{2}$ = 5 — đoàn cộng nở ra.",
      "teaches": [
       "K3"
      ]
@@ -449,7 +449,7 @@
      "id": "P5",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B15.LT7",
-     "text": "Không tính hết, so sánh A = (1 − 1/2) × (1 − 1/3) × … × (1 − 1/100) với 1/50.",
+     "text": "Không tính hết, so sánh A = (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{100}$) với 1/50.",
      "answerKey": {
       "parts": [
        {
@@ -471,7 +471,7 @@
       "Họ trừ đến 1/100 → A = ?",
       "Mẫu lớn hơn thì phân số bé hơn."
      ],
-     "solutionNarrative": "A = 1/100 < 1/50.",
+     "solutionNarrative": "A = $\\frac{1}{100}$ < 1/50.",
      "teaches": [
       "K2",
       "K4"
@@ -481,7 +481,7 @@
      "id": "P6",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B15.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Tính B = (1 − 1/2) × (1 − 1/3) × … × (1 − 1/2026) — và giải thích bằng MỘT câu vì sao nhân những 2025 thừa số mà kết quả lại nhỏ đến thế.\"",
+     "text": "Sư phụ Trí Dũng đố: \"Tính B = (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{2026}$) — và giải thích bằng MỘT câu vì sao nhân những 2025 thừa số mà kết quả lại nhỏ đến thế.\"",
      "answerKey": {
       "parts": [
        {
@@ -503,7 +503,7 @@
       "Sập chuyền họ trừ.",
       "Nhân số bé hơn 1 thì tích thế nào?"
      ],
-     "solutionNarrative": "B = 1/2026 — tin bằng lý lẽ chiếc kéo.",
+     "solutionNarrative": "B = $\\frac{1}{2026}$ — tin bằng lý lẽ chiếc kéo.",
      "teaches": [
       "K2",
       "K4"
@@ -534,7 +534,7 @@
     "id": "A1",
     "format": "tf",
     "sourceItem": "ITEM:KSN5Q1.B15.QZ2",
-    "text": "(Đúng/Sai?) (1 + 1/2) × (1 + 1/3) × … × (1 + 1/9) = 1/9.",
+    "text": "(Đúng/Sai?) (1 + $\\frac{1}{2}$) × (1 + $\\frac{1}{3}$) × … × (1 + $\\frac{1}{9}$) = 1/9.",
     "answerKey": {
      "value": false
     },
@@ -565,7 +565,7 @@
     "id": "A3",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B15.QZ3",
-    "text": "(1 − 1/2) × (1 − 1/3) × … × (1 − 1/10) bằng:",
+    "text": "(1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{10}$) bằng:",
     "choices": [
      "1/10",
      "9/10",
@@ -584,7 +584,7 @@
   "flashcards": [
    {
     "front": "Hai họ tích (1 ∓ 1/n) — công thức và cách phân biệt?",
-    "back": "SOI DẤU trước: họ TRỪ → 1/2 × 2/3 × … = 1/n (teo); họ CỘNG → 3/2 × 4/3 × … = (n + 1)/2 (nở, sống sót đổi vai). Tin kết quả nhỏ: nhân số bé hơn 1 thì tích teo dần — nhỏ không có gì lạ."
+    "back": "SOI DẤU trước: họ TRỪ → $\\frac{1}{2}$ × $\\frac{2}{3}$ × … = 1/n (teo); họ CỘNG → $\\frac{3}{2}$ × $\\frac{4}{3}$ × … = (n + 1)/2 (nở, sống sót đổi vai). Tin kết quả nhỏ: nhân số bé hơn 1 thì tích teo dần — nhỏ không có gì lạ."
    }
   ],
   "schedule": [
@@ -595,7 +595,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con chinh phục hai họ tích nổi tiếng: họ trừ ra 1/n, họ cộng ra (n+1)/2 — và học tin kết quả nhỏ bằng lý lẽ. Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Đố tráo dấu: viết (1 − 1/2)(1 − 1/3) rồi lén đổi thành dấu cộng — con phải phát hiện và nói 'kết cục đổi hẳn: 1/3 thành 2' là đạt.",
+  "homeActivity": "Đố tráo dấu: viết (1 − $\\frac{1}{2}$)(1 − $\\frac{1}{3}$) rồi lén đổi thành dấu cộng — con phải phát hiện và nói 'kết cục đổi hẳn: 1/3 thành 2' là đạt.",
   "watchFor": "Nếu con hoảng vì đáp quá nhỏ và đòi nhân tay lại — nhắc lý lẽ chiếc kéo (S3): nhân số bé hơn 1 thì teo là đúng."
  },
  "$schema": "digital-lesson/v2-micro",

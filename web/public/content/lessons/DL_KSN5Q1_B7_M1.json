@@ -72,10 +72,10 @@
   "numberRange": "Lớp 5: dãy trong phạm vi 1–1000, khoảng cách 1–10.",
   "misconceptions": [
    {
-    "wrong": "Chia xong khoanh luôn đáp số: (99 − 3) : 3 = 32.",
+    "wrong": "Chia xong khoanh luôn đáp số: ($99 - 3$) : $3 = 32$.",
     "signal": "Đáp số hụt đúng 1 so với đáp án.",
     "fix": "nhớ hình bốn viên sỏi: chia ra KHOẢNG, cộng 1 mới ra CỌC.",
-    "counterExample": "Dãy 3; 6; 9 tí hon: (9 − 3) : 3 = 2 mà rõ ràng có 3 số."
+    "counterExample": "Dãy 3; 6; 9 tí hon: ($9 - 3$) : $3 = 2$ mà rõ ràng có 3 số."
    }
   ],
   "vocabulary": [
@@ -90,7 +90,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "Từ 3 đến 99, hiệu 99 − 3 bằng bao nhiêu?",
+    "text": "Từ 3 đến 99, hiệu $99 - 3$ bằng bao nhiêu?",
     "answerKey": {
      "value": 96
     }
@@ -111,7 +111,7 @@
     "narration": "Dãy 3; 6; 9; …; 99 có bao nhiêu số hạng?",
     "display": {
      "type": "story_panel",
-     "caption": "(99−3):3 = 32… thiếu 1 cọc!"
+     "caption": "(99−3):$3 = 32$… thiếu 1 cọc!"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -170,7 +170,7 @@
     "teaches": [
      "K3"
     ],
-    "narration": "Nghi thức ba nhịp cho mọi dãy cách đều: nhịp một — tính hiệu cuối trừ đầu. Nhịp hai — chia cho khoảng cách. Nhịp ba — CỘNG MỘT. Áp cho số chẵn từ 1 đến 50: dãy 2; 4; …; 50 → (50 − 2) : 2 + 1 = 25.",
+    "narration": "Nghi thức ba nhịp cho mọi dãy cách đều: nhịp một — tính hiệu cuối trừ đầu. Nhịp hai — chia cho khoảng cách. Nhịp ba — CỘNG MỘT. Áp cho số chẵn từ 1 đến 50: dãy 2; 4; …; 50 → ($50 - 2$) : $2 + 1 = 25$.",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -280,7 +280,7 @@
   "problem": "Dãy 3; 6; 9; …; 99 có bao nhiêu số hạng?",
   "steps": [
    {
-    "show": "Bước 1 — Hiệu: 99 − 3 = 96.",
+    "show": "Bước 1 — Hiệu: $99 - 3 = 96$.",
     "askBefore": {
      "format": "num",
      "text": "Khoảng cách giữa hai số liền nhau của dãy là?",
@@ -291,10 +291,10 @@
     }
    },
    {
-    "show": "Bước 2 — Chia khoảng: 96 : 3 = 32 KHOẢNG."
+    "show": "Bước 2 — Chia khoảng: $96 : 3 = 32$ KHOẢNG."
    },
    {
-    "show": "Bước 3 — Cộng 1 ra cọc: 32 + 1 = 33 số hạng. (Kiểm tí hon: dãy 3; 6; 9 → (9−3):3+1 = 3 ✓)",
+    "show": "Bước 3 — Cộng 1 ra cọc: $32 + 1 = 33$ số hạng. (Kiểm tí hon: dãy 3; 6; 9 → (9−3):$3+1 = 3$ ✓)",
     "askAfter": {
      "format": "num",
      "text": "Dãy 5; 10; 15; …; 100 có bao nhiêu số hạng?",
@@ -326,7 +326,7 @@
       "Ba nhịp: hiệu — chia — cộng 1.",
       "(99 − 3) : 3 + 1."
      ],
-     "solutionNarrative": "(99 − 3) : 3 + 1 = 33 số hạng.",
+     "solutionNarrative": "($99 - 3$) : $3 + 1 = 33$ số hạng.",
      "teaches": [
       "K1",
       "K3"
@@ -354,7 +354,7 @@
       "Tự dựng dãy: 2; 4; …; 50.",
       "(50 − 2) : 2 + 1."
      ],
-     "solutionNarrative": "(50 − 2) : 2 + 1 = 25 số chẵn.",
+     "solutionNarrative": "($50 - 2$) : $2 + 1 = 25$ số chẵn.",
      "teaches": [
       "K1",
       "K3"
@@ -381,7 +381,7 @@
     {
      "id": "P4",
      "format": "tf",
-     "text": "(Đúng/Sai?) Dãy 10; 20; …; 100 có (100 − 10) : 10 = 9 số hạng.",
+     "text": "(Đúng/Sai?) Dãy 10; 20; …; 100 có ($100 - 10$) : $10 = 9$ số hạng.",
      "answerKey": {
       "value": false,
       "note": "9 mới là số KHOẢNG; số hạng = 9 + 1 = 10."

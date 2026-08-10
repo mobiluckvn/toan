@@ -52,19 +52,19 @@
   "canonicalExamples": [
    {
     "case": "phép chia mẫu (ca nền)",
-    "problem": "Tính 47 : 5. Số dư lớn nhất có thể khi chia một số cho 5 là bao nhiêu?",
+    "problem": "Tính $47 : 5$. Số dư lớn nhất có thể khi chia một số cho 5 là bao nhiêu?",
     "solution": "47 : 5 = 9 dư 2 (9 túi đầy, 2 viên lẻ). Dư lớn nhất khi chia cho 5 là 4 = 5 − 1.",
     "why": "từ sách."
    },
    {
     "case": "phép chia sẽ tái dùng (ca nối bài sau)",
-    "problem": "Tính 100 : 9 (thương và số dư).",
+    "problem": "Tính $100 : 9$ (thương và số dư).",
     "solution": "100 : 9 = 11 dư 1 (thử: 9 × 11 + 1 = 100 ✓).",
     "why": "Chính phép chia này là hiện trường của bài Vá cho tròn kế tiếp."
    },
    {
     "case": "bắt nghiệm ma (ca phản chứng)",
-    "problem": "Bạn Bống viết: 43 : 5 = 7 dư 8. Đúng hay sai?",
+    "problem": "Bạn Bống viết: $43 : 5 = 7$ dư 8. Đúng hay sai?",
     "solution": "SAI — dư 8 lớn hơn hoặc bằng 5 phạm luật: 8 viên lẻ đóng thêm được 1 túi nữa → 43 : 5 = 8 dư 3.",
     "why": "Luyện phản xạ soi luật nền trước khi soi phép nhân."
    }
@@ -75,7 +75,7 @@
     "wrong": "\"Chia cho 5 thì dư lớn nhất là 5\" — nghe xuôi tai vì trùng số chia.",
     "signal": "Trả lời dư max = số chia.",
     "fix": "hỏi ngược: 5 viên lẻ có đóng thêm túi được không? Được! → thương nhảy bậc, dư về 0.",
-    "counterExample": "\"25 : 5 = 4 dư 5\"? Không — 25 : 5 = 5 dư 0."
+    "counterExample": "\"$25 : 5 = 4$ dư 5\"? Không — $25 : 5 = 5$ dư 0."
    }
   ],
   "vocabulary": [
@@ -91,7 +91,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "Tính nhẩm: 9 × 11 = ?",
+    "text": "Tính nhẩm: $9  \\times  11$ = ?",
     "answerKey": {
      "value": 99
     }
@@ -109,7 +109,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Tính 47 : 5. Số dư lớn nhất có thể khi chia một số cho 5 là bao nhiêu?",
+    "narration": "Tính $47 : 5$. Số dư lớn nhất có thể khi chia một số cho 5 là bao nhiêu?",
     "display": {
      "type": "story_panel",
      "caption": "chia 5 — dư max = 5??"
@@ -276,10 +276,10 @@
  },
  "workedExample": {
   "title": "Đóng túi 47 viên kẹo",
-  "problem": "Tính 47 : 5 và cho biết số dư lớn nhất có thể có khi chia một số cho 5.",
+  "problem": "Tính $47 : 5$ và cho biết số dư lớn nhất có thể có khi chia một số cho 5.",
   "steps": [
    {
-    "show": "Bước 1 — Đóng túi: 5 × 9 = 45 < 47 < 50 → 9 túi đầy.",
+    "show": "Bước 1 — Đóng túi: $5  \\times  9 = 45 < 47 < 50$ → 9 túi đầy.",
     "askBefore": {
      "format": "num",
      "text": "9 túi chứa bao nhiêu viên?",
@@ -290,7 +290,7 @@
     }
    },
    {
-    "show": "Bước 2 — Viên lẻ: 47 − 45 = 2 → 47 : 5 = 9 dư 2."
+    "show": "Bước 2 — Viên lẻ: $47 - 45 = 2$ → $47 : 5 = 9$ dư 2."
    },
    {
     "show": "Bước 3 — Dư max: viên lẻ đủ 5 sẽ tự thành túi → dư chỉ 0–4; lớn nhất là 4.",
@@ -317,7 +317,7 @@
      "id": "P1",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B10.LT1",
-     "text": "Tính 47 : 5. Số dư lớn nhất có thể có khi chia một số cho 5 là bao nhiêu?",
+     "text": "Tính $47 : 5$. Số dư lớn nhất có thể có khi chia một số cho 5 là bao nhiêu?",
      "answerKey": {
       "parts": [
        {
@@ -334,7 +334,7 @@
       "Đóng túi 5 viên.",
       "Dư max = số chia − 1."
      ],
-     "solutionNarrative": "47 : 5 = 9 dư 2; dư lớn nhất là 4.",
+     "solutionNarrative": "$47 : 5 = 9$ dư 2; dư lớn nhất là 4.",
      "teaches": [
       "K1",
       "K2"
@@ -351,7 +351,7 @@
      "id": "P2",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B10.LT2",
-     "text": "Tính 100 : 9 (thương và số dư).",
+     "text": "Tính $100 : 9$ (thương và số dư).",
      "answerKey": {
       "parts": [
        {
@@ -368,7 +368,7 @@
       "9 × 11 = 99.",
       "Thử lại: 9 × thương + dư = 100."
      ],
-     "solutionNarrative": "100 : 9 = 11 dư 1.",
+     "solutionNarrative": "$100 : 9 = 11$ dư 1.",
      "teaches": [
       "K1"
      ]
@@ -378,7 +378,7 @@
     {
      "id": "P3",
      "format": "tf",
-     "text": "(Đúng/Sai?) 43 : 5 = 7 dư 8.",
+     "text": "(Đúng/Sai?) $43 : 5 = 7$ dư 8.",
      "answerKey": {
       "value": false,
       "note": "Dư 8 ≥ 5 phạm luật — đáp đúng: 8 dư 3."
@@ -457,7 +457,7 @@
    {
     "id": "A3",
     "format": "mb",
-    "text": "Tính 58 : 6 (thương và dư).",
+    "text": "Tính $58 : 6$ (thương và dư).",
     "answerKey": {
      "parts": [
       {

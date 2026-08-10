@@ -38,7 +38,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bài chặn kiểu n/12 (mẫu chứa n đứng im): kéo hai bờ về CÙNG MẪU 12: 1/3 < n/12 < 3/4 → 4/12 < n/12 < 9/12 → 4 < n < 9."
+    "text": "Bài chặn kiểu n/12 (mẫu chứa n đứng im): kéo hai bờ về CÙNG MẪU 12: $\\frac{1}{3}$ < n/12 < $\\frac{3}{4}$ → $\\frac{4}{12}$ < n/12 < $\\frac{9}{12}$ → 4 < n < 9."
    },
    {
     "id": "K2",
@@ -46,7 +46,7 @@
    },
    {
     "id": "K3",
-    "text": "Bài chặn kiểu 8/n (tử chứa n đứng im): kéo hai bờ về CÙNG TỬ 8: 1/2 = 8/16; 2/3 = 8/12 → 8/16 < 8/n < 8/12. Trên sân cùng tử, phân số và MẪU chạy NGƯỢC chiều: viết riêng một dòng 12 < n < 16 → n là 13, 14 hoặc 15."
+    "text": "Bài chặn kiểu 8/n (tử chứa n đứng im): kéo hai bờ về CÙNG TỬ 8: $\\frac{1}{2}$ = $\\frac{8}{16}$; $\\frac{2}{3}$ = $\\frac{8}{12}$ → $\\frac{8}{16}$ < 8/n < 8/12. Trên sân cùng tử, phân số và MẪU chạy NGƯỢC chiều: viết riêng một dòng 12 < n < 16 → n là 13, 14 hoặc 15."
    },
    {
     "id": "K4",
@@ -57,7 +57,7 @@
   "canonicalExamples": [
    {
     "case": "sân cùng mẫu (ca bẫy bờ)",
-    "problem": "Tìm tất cả các số tự nhiên n sao cho: 1/3 < n/12 < 3/4.",
+    "problem": "Tìm tất cả các số tự nhiên n sao cho: $\\frac{1}{3}$ < n/$12 < 3$/4.",
     "solution": "Chung sân mẫu 12: 4/12 < n/12 < 9/12 → 4 < n < 9. Bờ đứng ngoài: n là 5, 6, 7 hoặc 8 — bốn số.",
     "why": "Ca đề A câu 9 — trap lấy nhầm cả hai bờ."
    },
@@ -79,14 +79,14 @@
    {
     "wrong": "Lấy nhầm cả hai bờ: 4 < n < 9 mà đáp {4; 5; …; 9}.",
     "signal": "Đáp chứa giá trị biên.",
-    "fix": "dấu < không có gạch ngang: bờ để tựa mắt, không để đứng vào; thử biên n = 4: 4/12 = 1/3 không LỚN HƠN 1/3 — loại.",
-    "counterExample": "n = 9: 9/12 = 3/4, đề đòi BÉ hơn 3/4 — trượt."
+    "fix": "dấu < không có gạch ngang: bờ để tựa mắt, không để đứng vào; thử biên n = 4: $\\frac{4}{12}$ = 1/3 không LỚN HƠN $\\frac{1}{3}$ — loại.",
+    "counterExample": "n = 9: $\\frac{9}{12}$ = 3/4, đề đòi BÉ hơn $\\frac{3}{4}$ — trượt."
    },
    {
-    "wrong": "Sân cùng tử mà chặn xuôi: từ 8/16 < 8/n < 8/12 chép luôn 16 < n < 12 (vô nghĩa) hoặc kết luận n giữa 16 và… hoang mang.",
+    "wrong": "Sân cùng tử mà chặn xuôi: từ $\\frac{8}{16}$ < 8/n < 8/12 chép luôn 16 < n < 12 (vô nghĩa) hoặc kết luận n giữa 16 và… hoang mang.",
     "signal": "Bất đẳng thức mẫu viết xuôi theo thứ tự phân số.",
     "fix": "khắc: sân cùng tử bảng tỉ số NGƯỢC — phân số to thì mẫu bé; viết điều kiện mẫu RIÊNG MỘT DÒNG: 12 < n < 16.",
-    "counterExample": "8/13 với 8/15: mẫu 13 bé hơn mà phân số lớn hơn — bảng ngược sờ sờ."
+    "counterExample": "8/13 với $\\frac{8}{15}$: mẫu 13 bé hơn mà phân số lớn hơn — bảng ngược sờ sờ."
    }
   ],
   "vocabulary": [
@@ -103,7 +103,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "1/3 = ?/12 — điền tử.",
+    "text": "$\\frac{1}{3}$ = ?/12 — điền tử.",
     "answerKey": {
      "value": 4
     }
@@ -121,7 +121,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Tìm tất cả các số tự nhiên n sao cho: 1/3 < n/12 < 3/4.",
+    "narration": "Tìm tất cả các số tự nhiên n sao cho: $\\frac{1}{3}$ < n/$12 < 3$/4.",
     "display": {
      "type": "story_panel",
      "caption": "{4,…,9} — sáu cầu thủ??"
@@ -139,7 +139,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Soi dấu: bé hơn NGHIÊM — không có gạch ngang! Bờ 4/12 chính là 1/3: n bằng 4 thì n/12 BẰNG bờ chứ đâu LỚN HƠN — loại! n bằng 9 chạm bờ 3/4 — loại nốt! Bờ để tựa mắt, không để đứng vào: sân chỉ còn NĂM, SÁU, BẢY, TÁM — bốn cầu thủ hợp lệ.",
+    "narration": "Soi dấu: bé hơn NGHIÊM — không có gạch ngang! Bờ 4/12 chính là $\\frac{1}{3}$: n bằng 4 thì n/12 BẰNG bờ chứ đâu LỚN HƠN — loại! n bằng 9 chạm bờ $\\frac{3}{4}$ — loại nốt! Bờ để tựa mắt, không để đứng vào: sân chỉ còn NĂM, SÁU, BẢY, TÁM — bốn cầu thủ hợp lệ.",
     "display": {
      "type": "fence_field_interactive",
      "spec": {
@@ -176,7 +176,7 @@
     "estSeconds": 16,
     "item": {
      "format": "mcq",
-     "text": "4/12 < n/12 < 9/12 thì n gồm:",
+     "text": "$\\frac{4}{12}$ < n/$12 < 9$/12 thì n gồm:",
      "choices": [
       "5; 6; 7; 8",
       "4; 5; …; 9",
@@ -201,7 +201,7 @@
      "K3",
      "K4"
     ],
-    "narration": "Sân đặc biệt: 8/n giữa 1/2 và 2/3 — kéo về CÙNG TỬ 8: bờ 8/16 và 8/12. Trí Long chép xuôi \"16 bé hơn n bé hơn 12\"… vô nghĩa! Sân cùng tử bảng tỉ số NGƯỢC: phân số to thì mẫu BÉ — viết riêng một dòng: mười hai bé hơn n bé hơn mười sáu: n là 13, 14, 15! Thử mép: 8/13 chưa chạm 2/3, 8/15 vẫn hơn 1/2 — chuẩn. Bài cụm sư phụ cũng vậy: chặn cụm (n + 3) từ 9 đến 13 rồi lùi về n từ 6 đến 10.",
+    "narration": "Sân đặc biệt: 8/n giữa 1/2 và $\\frac{2}{3}$ — kéo về CÙNG TỬ 8: bờ 8/16 và 8/12. Trí Long chép xuôi \"16 bé hơn n bé hơn 12\"… vô nghĩa! Sân cùng tử bảng tỉ số NGƯỢC: phân số to thì mẫu BÉ — viết riêng một dòng: mười hai bé hơn n bé hơn mười sáu: n là 13, 14, 15! Thử mép: 8/13 chưa chạm 2/3, 8/15 vẫn hơn $\\frac{1}{2}$ — chuẩn. Bài cụm sư phụ cũng vậy: chặn cụm (n + 3) từ 9 đến 13 rồi lùi về n từ 6 đến 10.",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -308,10 +308,10 @@
  },
  "workedExample": {
   "title": "Hai sân một trận",
-  "problem": "(a) Tìm mọi n: 1/3 < n/12 < 3/4. (b) Tìm mọi n: 8/n lớn hơn 1/2 và bé hơn 2/3.",
+  "problem": "(a) Tìm mọi n: $\\frac{1}{3}$ < n/$12 < 3$/4. (b) Tìm mọi n: 8/n lớn hơn 1/2 và bé hơn 2/3.",
   "steps": [
    {
-    "show": "Bước 1 — Câu (a): chung sân mẫu 12: 4/12 < n/12 < 9/12 → 4 < n < 9 → {5; 6; 7; 8} (bờ loại!).",
+    "show": "Bước 1 — Câu (a): chung sân mẫu 12: $\\frac{4}{12}$ < n/12 < $\\frac{9}{12}$ → 4 < n < 9 → {5; 6; 7; 8} (bờ loại!).",
     "askBefore": {
      "format": "mcq",
      "text": "n = 4 có được lấy không?",
@@ -327,7 +327,7 @@
     }
    },
    {
-    "show": "Bước 2 — Câu (b): chung sân tử 8: 8/16 < 8/n < 8/12."
+    "show": "Bước 2 — Câu (b): chung sân tử 8: $\\frac{8}{16}$ < 8/n < 8/12."
    },
    {
     "show": "Bước 3 — Mẫu chạy ngược, viết riêng: 12 < n < 16 → {13; 14; 15}. Thử mép ✓.",
@@ -359,7 +359,7 @@
      "id": "P1",
      "format": "lst",
      "sourceItem": "ITEM:KSN5Q1.B19.LT6",
-     "text": "Tìm tất cả các số tự nhiên n sao cho: 1/3 < n/12 < 3/4.",
+     "text": "Tìm tất cả các số tự nhiên n sao cho: $\\frac{1}{3}$ < n/$12 < 3$/4.",
      "answerKey": {
       "values": [
        5,
@@ -433,7 +433,7 @@
       "Chặn cụm: 2 × (n + 3) > 17 và 5 × (n + 3) < 68.",
       "Cụm từ 9 đến 13 → lùi 3."
      ],
-     "solutionNarrative": "(n + 3) là 9, … hoặc 13 → n là 6, 7, 8, 9 hoặc 10 (thử mép 9/17 và 13/17 ✓).",
+     "solutionNarrative": "(n + 3) là 9, … hoặc 13 → n là 6, 7, 8, 9 hoặc 10 (thử mép 9/17 và $\\frac{13}{17}$ ✓).",
      "teaches": [
       "K4"
      ]
@@ -463,7 +463,7 @@
     "id": "A1",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B19.QZ4",
-    "text": "4/12 < n/12 < 9/12 thì n gồm:",
+    "text": "$\\frac{4}{12}$ < n/$12 < 9$/12 thì n gồm:",
     "choices": [
      "5; 6; 7; 8",
      "4; 5; …; 9",
@@ -498,7 +498,7 @@
    {
     "id": "A3",
     "format": "lst",
-    "text": "Tìm mọi n: 1/4 < n/8 < 3/4.",
+    "text": "Tìm mọi n: $\\frac{1}{4}$ < n/$8 < 3$/4.",
     "answerKey": {
      "values": [
       3,
@@ -519,7 +519,7 @@
   "flashcards": [
    {
     "front": "Bài chặn hai bờ — hai luật sinh tử?",
-    "back": "(1) Dấu < nghiêm: HAI BỜ ĐỨNG NGOÀI (4 < n < 9 → {5;6;7;8}). (2) SÂN CÙNG TỬ: phân số và mẫu chạy NGƯỢC — viết điều kiện mẫu riêng một dòng (8/16 < 8/n < 8/12 → 12 < n < 16 → {13;14;15}). Chốt bằng THỬ MÉP."
+    "back": "(1) Dấu < nghiêm: HAI BỜ ĐỨNG NGOÀI (4 < n < 9 → {5;6;7;8}). (2) SÂN CÙNG TỬ: phân số và mẫu chạy NGƯỢC — viết điều kiện mẫu riêng một dòng ($\\frac{8}{16}$ < 8/n < $\\frac{8}{12}$ → 12 < n < 16 → {13;14;15}). Chốt bằng THỬ MÉP."
    }
   ],
   "schedule": [

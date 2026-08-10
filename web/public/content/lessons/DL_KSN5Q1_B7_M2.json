@@ -75,7 +75,7 @@
     "wrong": "Áp công thức thẳng với mép đoạn dù mép không chia hết (đầu = 10 cho bài chia hết cho 3).",
     "signal": "Phép chia có dư ngay trong công thức.",
     "fix": "dò đầu–cuối thật trước: 10, 11 trượt, 12 mới là biển ĐẦU.",
-    "counterExample": "(100 − 10) : 3 không chia hết — dấu hiệu đang rào nhầm mép."
+    "counterExample": "($100 - 10$) : 3 không chia hết — dấu hiệu đang rào nhầm mép."
    },
    {
     "wrong": "Coi 'giữa 10 và 100' vẫn gồm 10 và 100.",
@@ -132,7 +132,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Trạm dò làm việc: đề TỪ — mép 10 và 100 được dự tuyển: 10 chia hết cho 5 ✓ cắm biển ĐẦU; 100 chia hết cho 5 ✓ cắm biển CUỐI → (100 − 10) : 5 + 1 = 19. Đề GIỮA — đuổi cả 10 lẫn 100 trước: dò vào trong gặp 15 và 95 → (95 − 15) : 5 + 1 = 17. Con kéo biển vào đúng chỗ cho từng đề.",
+    "narration": "Trạm dò làm việc: đề TỪ — mép 10 và 100 được dự tuyển: 10 chia hết cho 5 ✓ cắm biển ĐẦU; 100 chia hết cho 5 ✓ cắm biển CUỐI → ($100 - 10$) : $5 + 1 = 19$. Đề GIỮA — đuổi cả 10 lẫn 100 trước: dò vào trong gặp 15 và 95 → ($95 - 15$) : $5 + 1 = 17$. Con kéo biển vào đúng chỗ cho từng đề.",
     "display": {
      "type": "range_scan_interactive",
      "spec": {
@@ -317,7 +317,7 @@
     "show": "Bước 2 — Dò biển ĐẦU THẬT: 10 ✗, 11 ✗, 12 ✓. Biển CUỐI THẬT: 100 ✗, 99 ✓."
    },
    {
-    "show": "Bước 3 — Công thức: (99 − 12) : 3 + 1 = 30 số.",
+    "show": "Bước 3 — Công thức: ($99 - 12$) : $3 + 1 = 30$ số.",
     "askAfter": {
      "format": "num",
      "text": "Còn 'GIỮA 10 và 100' số ⋮ 3 thì sao? (đầu–cuối thật vẫn 12 và 99)",
@@ -378,7 +378,7 @@
       "Dò đầu thật từng đoạn.",
       "Đoạn 10–100: đầu thật 12."
      ],
-     "solutionNarrative": "1–100: (99−3):3+1 = 33. 10–100: đầu thật 12 → (99−12):3+1 = 30.",
+     "solutionNarrative": "1–100: (99−3):$3+1 = 33$. 10–100: đầu thật 12 → (99−12):$3+1 = 30$.",
      "teaches": [
       "K1"
      ],
@@ -420,7 +420,7 @@
       "Khoanh chữ từ/giữa.",
       "GIỮA: dãy 15; …; 95."
      ],
-     "solutionNarrative": "TỪ: (100−10):5+1 = 19. GIỮA: 15…95 → 17. Khác nhau vì hai đầu mút chia hết cho 5 bị đuổi.",
+     "solutionNarrative": "TỪ: (100−10):$5+1 = 19$. GIỮA: 15…95 → 17. Khác nhau vì hai đầu mút chia hết cho 5 bị đuổi.",
      "teaches": [
       "K2",
       "K3"

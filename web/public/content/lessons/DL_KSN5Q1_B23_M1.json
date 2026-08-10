@@ -31,7 +31,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con tính được TBC MỚI khi có thành viên đến / rời bằng BA NHỊP: tổng cũ (TBC × n) → tổng mới (cộng / trừ phần mang) → chia số người MỚI — tuyệt đối không cân một người ngang cả nhóm kiểu (25 + 40) : 2, và luôn đếm lại quân số sau mỗi biến động.",
+  "text": "Con tính được TBC MỚI khi có thành viên đến / rời bằng BA NHỊP: tổng cũ (TBC × n) → tổng mới (cộng / trừ phần mang) → chia số người MỚI — tuyệt đối không cân một người ngang cả nhóm kiểu ($25 + 40$) : 2, và luôn đếm lại quân số sau mỗi biến động.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
   "kidText": "Có bạn đến hoặc rời nhóm: con đi qua cây cầu tổng — tính tổng cũ, sửa tổng, rồi chia cho số người MỚI."
  },
@@ -78,16 +78,16 @@
   "numberRange": "Lớp 5: nhóm 2–6 người; tổng ≤ 300.",
   "misconceptions": [
    {
-    "wrong": "Cân người mới ngang cả nhóm: (25 + 40) : 2 = 32,5.",
+    "wrong": "Cân người mới ngang cả nhóm: ($25 + 40$) : $2 = 32,5$.",
     "signal": "Phép chia cho 2 xuất hiện khi nhóm đâu có 2 người.",
-    "fix": "25 đại diện BỐN bạn, 40 là MỘT bạn: khác vai — muốn gộp phải qua cầu tổng (100 + 40) : 5.",
+    "fix": "25 đại diện BỐN bạn, 40 là MỘT bạn: khác vai — muốn gộp phải qua cầu tổng ($100 + 40$) : 5.",
     "counterExample": "Thử 32,5: tổng phải là 162,5 — mà rổ thật chỉ có 140 viên!"
    },
    {
     "wrong": "Chia nhầm quân số: tổng mới 140 chia cho 4 (quên đếm Su Bống), hoặc bạn rời rồi vẫn chia cho 5.",
     "signal": "Mẫu số của phép chia không khớp số người hiện diện.",
     "fix": "nghi thức ngoảnh ra cánh cửa: 'giờ nhóm mấy người?' — đếm xong mới chia.",
-    "counterExample": "140 : 4 = 35 → thử ngược 35 × 5 = 175 ≠ 140 — lệch ngay."
+    "counterExample": "$140 : 4 = 35$ → thử ngược $35  \\times  5 = 175$ ≠ 140 — lệch ngay."
    }
   ],
   "vocabulary": [
@@ -125,7 +125,7 @@
     "narration": "Nhóm 4 bạn có tổng 100 viên kẹo; một bạn mang 40 viên vào nhóm. Tính TBC mới của cả 5 bạn.",
     "display": {
      "type": "story_panel",
-     "caption": "(25 + 40) : 2??"
+     "caption": "($25 + 40$) : 2??"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -298,10 +298,10 @@
   "problem": "Nhóm 4 bạn có TBC 25 viên. Su Bống mang 40 viên vào nhóm. Tính TBC mới của cả 5 bạn.",
   "steps": [
    {
-    "show": "Bước 1 — Tổng cũ: 25 × 4 = 100 viên.",
+    "show": "Bước 1 — Tổng cũ: $25  \\times  4 = 100$ viên.",
     "askBefore": {
      "format": "mcq",
-     "text": "Vì sao không lấy (25 + 40) : 2?",
+     "text": "Vì sao không lấy ($25 + 40$) : 2?",
      "choices": [
       "25 đại diện 4 bạn, 40 là 1 bạn — khác vai",
       "Vì 2 số lẻ",
@@ -314,10 +314,10 @@
     }
    },
    {
-    "show": "Bước 2 — Tổng mới: 100 + 40 = 140; đếm quân số: 5 người."
+    "show": "Bước 2 — Tổng mới: $100 + 40 = 140$; đếm quân số: 5 người."
    },
    {
-    "show": "Bước 3 — TBC mới = 140 : 5 = 28 viên.",
+    "show": "Bước 3 — TBC mới = $140 : 5 = 28$ viên.",
     "askAfter": {
      "format": "num",
      "text": "Bạn cầm 40 viên rời nhóm 5 người ấy — TBC còn lại = ?",
@@ -349,7 +349,7 @@
       "Cầu ngược Bài 21.",
       "25 × 4."
      ],
-     "solutionNarrative": "25 × 4 = 100 viên.",
+     "solutionNarrative": "$25  \\times  4 = 100$ viên.",
      "teaches": [
       "K1"
      ]
@@ -366,7 +366,7 @@
       "Tổng mới 140.",
       "Đếm quân số: 5."
      ],
-     "solutionNarrative": "(100 + 40) : 5 = 28.",
+     "solutionNarrative": "($100 + 40$) : $5 = 28$.",
      "teaches": [
       "K1",
       "K2",
@@ -392,7 +392,7 @@
       "Tổng mới 210.",
       "Chia 6 ngày."
      ],
-     "solutionNarrative": "(155 + 55) : 6 = 35 chiếc.",
+     "solutionNarrative": "($155 + 55$) : $6 = 35$ chiếc.",
      "teaches": [
       "K1",
       "K4"
@@ -410,7 +410,7 @@
       "Tổng 140 trừ phần mang đi.",
       "Đếm lại: còn 4 người."
      ],
-     "solutionNarrative": "(140 − 40) : 4 = 25 — người trên mốc rời, cân tụt.",
+     "solutionNarrative": "($140 - 40$) : $4 = 25$ — người trên mốc rời, cân tụt.",
      "teaches": [
       "K3",
       "K4"
@@ -430,7 +430,7 @@
       "140 − 40 + 20.",
       "Quân số vẫn 5!"
      ],
-     "solutionNarrative": "120 : 5 = 24 (tụt 4 nấc = hụt 20 : 5).",
+     "solutionNarrative": "$120 : 5 = 24$ (tụt 4 nấc = hụt $20 : 5$).",
      "teaches": [
       "K3",
       "K4"
@@ -461,7 +461,7 @@
     "id": "A1",
     "format": "tf",
     "sourceItem": "ITEM:KSN5Q1.B23.QZ1",
-    "text": "(Đúng/Sai?) Thêm bạn mang 40 viên vào nhóm TBC 25 thì TBC mới là (25 + 40) : 2.",
+    "text": "(Đúng/Sai?) Thêm bạn mang 40 viên vào nhóm TBC 25 thì TBC mới là ($25 + 40$) : 2.",
     "answerKey": {
      "value": false
     },
@@ -534,7 +534,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con học ba nhịp thêm/rời thành viên: qua cầu tổng và đếm lại quân số. Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Chơi rổ kẹo thật: 4 hộp TBC 25, thêm hộp 40 — con đổ chung, đếm hộp, chia lại và so với phép (25 + 40) : 2 để thấy vô lý.",
+  "homeActivity": "Chơi rổ kẹo thật: 4 hộp TBC 25, thêm hộp 40 — con đổ chung, đếm hộp, chia lại và so với phép ($25 + 40$) : 2 để thấy vô lý.",
   "watchFor": "Nếu con chia nhầm quân số — dựng nghi thức ngoảnh-ra-cánh-cửa: hỏi 'giờ nhóm mấy người?' trước mọi phép chia."
  },
  "$schema": "digital-lesson/v2-micro",

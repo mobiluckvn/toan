@@ -87,14 +87,14 @@
    {
     "wrong": "Xóa chữ số 4 thì số giảm đi 4 (345 → giảm 4).",
     "signal": "Trả lời mức giảm bằng đúng chữ số bị xóa.",
-    "fix": "xóa giữa làm các chữ số phía trước TỤT HÀNG — tách cấu tạo hai khúc, tính hiệu: 345 − 35 = 310.",
-    "counterExample": "345 xóa 4 còn 35; 345 − 35 = 310 ≠ 4."
+    "fix": "xóa giữa làm các chữ số phía trước TỤT HÀNG — tách cấu tạo hai khúc, tính hiệu: $345 - 35 = 310$.",
+    "counterExample": "345 xóa 4 còn 35; $345 - 35 = 310$ ≠ 4."
    },
    {
     "wrong": "Thêm bên trái cũng làm cả số gấp 10 như thêm bên phải.",
     "signal": "58 thêm 3 trái → trả lời 580 hoặc 'gấp 10'.",
     "fix": "thêm trái không ai dọn nhà — số chỉ tăng đúng c × 10ⁿ (58 → 358, tăng 300).",
-    "counterExample": "358 : 58 không phải 10 lần."
+    "counterExample": "$358 : 58$ không phải 10 lần."
    }
   ],
   "vocabulary": [
@@ -111,7 +111,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "Số 345 tách theo hàng: 300 + 40 + mấy?",
+    "text": "Số 345 tách theo hàng: $300 + 40$ + mấy?",
     "answerKey": {
      "value": 5
     }
@@ -327,7 +327,7 @@
   "problem": "Xóa chữ số 4 khỏi số 345. Hỏi số giảm đi bao nhiêu đơn vị?",
   "steps": [
    {
-    "show": "Bước 1 — Tách phố theo cấu tạo: 345 = 300 + 40 + 5.",
+    "show": "Bước 1 — Tách phố theo cấu tạo: $345 = 300 + 40 + 5$.",
     "askBefore": {
      "format": "mcq",
      "text": "Xóa chữ số 4 (hàng chục) thì chữ số 3 sẽ thế nào?",
@@ -346,7 +346,7 @@
     "show": "Bước 2 — Ráp lại hai khúc còn lại: chữ số 3 tụt xuống chục, chữ số 5 giữ đơn vị → số mới 35."
    },
    {
-    "show": "Bước 3 — Mức giảm = 345 − 35 = 310. Đáp số: giảm 310 đơn vị (không phải 4!).",
+    "show": "Bước 3 — Mức giảm = $345 - 35 = 310$. Đáp số: giảm 310 đơn vị (không phải 4!).",
     "askAfter": {
      "format": "num",
      "text": "Kiểm nhanh chiều thêm: 35 thêm chữ số 4 vào GIỮA (hàng chục) lại thành số nào?",
@@ -403,7 +403,7 @@
       "Thêm trái: ai dọn nhà, ai đứng yên?",
       "Chữ số 3 chiếm hàng trăm → tăng 3 × 100."
      ],
-     "solutionNarrative": "358 − 58 = 300 (thêm 3 vào hàng trăm).",
+     "solutionNarrative": "$358 - 58 = 300$ (thêm 3 vào hàng trăm).",
      "teaches": [
       "K2"
      ],
@@ -430,7 +430,7 @@
       "Số mới = 47 × 10 + 2.",
       "472 − 47 = ? So với 9 × 47 + 2."
      ],
-     "solutionNarrative": "472 − 47 = 425; đối chiếu: 9 × 47 + 2 = 425 ✓.",
+     "solutionNarrative": "$472 - 47 = 425$; đối chiếu: $9  \\times  47 + 2 = 425$ ✓.",
      "teaches": [
       "K1"
      ],
@@ -591,7 +591,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con học 4 ca thêm – xóa chữ số bằng hình ảnh khu phố chuyển nhà. Con đạt {score}/3, {trapResult} câu bẫy xóa-giữa.",
-  "homeActivity": "Đố con: 'Xóa chữ số 5 khỏi 254 thì số giảm bao nhiêu?' — con tách phố và trả lời 254 − 24 = 230 là đạt.",
+  "homeActivity": "Đố con: 'Xóa chữ số 5 khỏi 254 thì số giảm bao nhiêu?' — con tách phố và trả lời $254 - 24 = 230$ là đạt.",
   "watchFor": "Nếu con nói 'xóa 5 thì giảm 5' — mở lại màn rút căn nhà (S2) cùng con."
  },
  "$schema": "digital-lesson/v2-micro",

@@ -20,7 +20,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Tính được tổng 1 + 2 + ... + 10 bằng cách ghép cặp ĐẦU với CUỐI. Giải thích được vì sao mọi cặp đều bằng nhau. Áp dụng cầu vồng ghép cặp cho các dãy cách đều khác.",
+  "text": "Tính được tổng $1 + 2$ + ... + 10 bằng cách ghép cặp ĐẦU với CUỐI. Giải thích được vì sao mọi cặp đều bằng nhau. Áp dụng cầu vồng ghép cặp cho các dãy cách đều khác.",
   "kidText": "Ngày xưa có cậu bé Gauss cộng một dãy dài trong nháy mắt. Con muốn biết cậu ấy làm thế nào không?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
@@ -29,7 +29,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1. Đừng cộng từ trái sang! Hãy bắc cầu nối số ĐẦU với số CUỐI: 1 + 10 = 11. Rồi cặp kế tiếp: 2 + 9 = 11. Rồi 3 + 8 = 11... Ơ kìa — cặp nào cũng bằng 11!"
+    "text": "Bước 1. Đừng cộng từ trái sang! Hãy bắc cầu nối số ĐẦU với số CUỐI: $1 + 10 = 11$. Rồi cặp kế tiếp: $2 + 9 = 11$. Rồi $3 + 8 = 11$... Ơ kìa — cặp nào cũng bằng 11!"
    },
    {
     "id": "K2",
@@ -37,7 +37,7 @@
    },
    {
     "id": "K3",
-    "text": "Bước 3. Mười số bắt thành 5 cặp, mỗi cặp 11. Tổng = 11 + 11 + 11 + 11 + 11. Tính nhanh bằng tuyệt chiêu Bài 12: năm số 11 = năm số 10 và năm số 1 = 50 + 5 = 55."
+    "text": "Bước 3. Mười số bắt thành 5 cặp, mỗi cặp 11. Tổng = $11 + 11 + 11 + 11 + 11$. Tính nhanh bằng tuyệt chiêu Bài 12: năm số 11 = năm số 10 và năm số $1 = 50 + 5 = 55$."
    }
   ],
   "mantra": "Dãy cách đều thì ĐẦU + CUỐI = như nhau ở mọi cặp. Đếm số cặp (nhớ để ý bạn đứng giữa lẻ loi nếu dãy có số lượng lẻ!), rồi cộng dồn là xong.",
@@ -45,7 +45,7 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem tính 1 + 2 + ... + 9: \"Ghép cặp nào: 1+9, 2+8, 3+7, 4+6 — bốn cặp 10, vậy tổng là 40!\"",
+    "wrong": "Su Kem tính $1 + 2$ + ... + 9: \"Ghép cặp nào: $1+9$, $2+8$, $3+7$, $4+6$ — bốn cặp 10, vậy tổng là 40!\"",
     "signal": "Bé làm theo cách Su Kem vừa nói.",
     "fix": "Gợi ý 1: Dãy 1 đến 9 có mấy số — chẵn hay lẻ số lượng? Ghép 4 cặp thì mới dùng hết 8 số... Gợi ý 2: Có một bạn số đứng chính giữa dãy không được ghép với ai. Bạn ấy là ai, và tổng đúng phải là bao nhiêu?"
    }
@@ -56,7 +56,7 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Trí Long kể: \"Ngày xưa ở nước Đức có cậu bé tên Gauss. Tính nhanh tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8."
+    "narration": "Trí Long kể: \"Ngày xưa ở nước Đức có cậu bé tên Gauss. Tính nhanh tổng $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8$."
    },
    {
     "id": "S2",
@@ -85,23 +85,23 @@
    {
     "id": "S5",
     "kind": "trap",
-    "narration": "Su Kem tính 1 + 2 + ... + 9: \"Ghép cặp nào: 1+9, 2+8, 3+7, 4+6 — bốn cặp 10, vậy tổng là 40!\"",
+    "narration": "Su Kem tính $1 + 2$ + ... + 9: \"Ghép cặp nào: $1+9$, $2+8$, $3+7$, $4+6$ — bốn cặp 10, vậy tổng là 40!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính nhanh tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8.",
+  "problem": "Tính nhanh tổng $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8$.",
   "steps": [
    {
     "show": "Bài giải:"
    },
    {
-    "show": "Ghép cặp đầu - cuối: (1 + 8) + (2 + 7) + (3 + 6) + (4 + 5)"
+    "show": "Ghép cặp đầu - cuối: ($1 + 8$) + ($2 + 7$) + ($3 + 6$) + ($4 + 5$)"
    },
    {
-    "show": "= 9 + 9 + 9 + 9"
+    "show": "= $9 + 9 + 9 + 9$"
    },
    {
     "show": "= 36"
@@ -119,7 +119,7 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tính các cặp: 1 + 10; 2 + 9; 3 + 8; 4 + 7; 5 + 6. Con nhận xét gì?",
+     "text": "Tính các cặp: $1 + 10$; $2 + 9$; $3 + 8$; $4 + 7$; $5 + 6$. Con nhận xét gì?",
      "answerKey": {
       "parts": [
        {
@@ -140,17 +140,17 @@
     },
     {
      "id": "C3",
-     "text": "Tính nhanh: 1 + 2 + 3 + 4 + 5 + 6. (Ghép 3 cặp nhé.)",
+     "text": "Tính nhanh: $1 + 2 + 3 + 4 + 5 + 6$. (Ghép 3 cặp nhé.)",
      "answerKey": {
       "value": 21
      },
-     "solutionNarrative": "(1 + 6) + (2 + 5) + (3 + 4) = 7 × 3 lần = 7 + 7 + 7 = 21"
+     "solutionNarrative": "($1 + 6$) + ($2 + 5$) + ($3 + 4$) = $7  \\times  3$ lần = $7 + 7 + 7 = 21$"
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Tính nhanh: 1 + 2 + 3 + ... + 10.",
+     "text": "Tính nhanh: $1 + 2 + 3$ + ... + 10.",
      "answerKey": {
       "value": 55
      },
@@ -158,37 +158,37 @@
     },
     {
      "id": "C5",
-     "text": "Tính nhanh: 3 + 4 + 5 + 6 + 7 + 8. (Dãy không bắt đầu từ 1 vẫn bắc cầu vồng được!)",
+     "text": "Tính nhanh: $3 + 4 + 5 + 6 + 7 + 8$. (Dãy không bắt đầu từ 1 vẫn bắc cầu vồng được!)",
      "answerKey": {
       "value": 33
      },
-     "solutionNarrative": "(3 + 8) + (4 + 7) + (5 + 6) = 11 + 11 + 11 = 33"
+     "solutionNarrative": "($3 + 8$) + ($4 + 7$) + ($5 + 6$) = $11 + 11 + 11 = 33$"
     },
     {
      "id": "C6",
-     "text": "Tính nhanh: 2 + 4 + 6 + 8 + 10. (Dãy nhảy cóc 2 — cầu vồng vẫn hoạt động, và có một bạn đứng giữa đấy!)",
+     "text": "Tính nhanh: $2 + 4 + 6 + 8 + 10$. (Dãy nhảy cóc 2 — cầu vồng vẫn hoạt động, và có một bạn đứng giữa đấy!)",
      "answerKey": {
       "value": 30
      },
-     "solutionNarrative": "(2 + 10) + (4 + 8) + 6 = 12 + 12 + 6 = 30 (bạn 6 đứng giữa)"
+     "solutionNarrative": "($2 + 10$) + ($4 + 8$) + $6 = 12 + 12 + 6 = 30$ (bạn 6 đứng giữa)"
     }
    ],
    "challenge": [
     {
      "id": "C7",
-     "text": "Tính nhanh: 1 + 2 + 3 + ... + 9. (Bài của Su Kem — lần này con làm chuẩn giúp cậu ấy!)",
+     "text": "Tính nhanh: $1 + 2 + 3$ + ... + 9. (Bài của Su Kem — lần này con làm chuẩn giúp cậu ấy!)",
      "answerKey": {
       "value": 45
      },
-     "solutionNarrative": "(1 + 9) + (2 + 8) + (3 + 7) + (4 + 6) + 5 = 10 × 4 cặp + 5 = 45 — Su Kem quên đúng bạn số 5!"
+     "solutionNarrative": "($1 + 9$) + ($2 + 8$) + ($3 + 7$) + ($4 + 6$) + $5 = 10  \\times  4$ cặp + $5 = 45$ — Su Kem quên đúng bạn số 5!"
     },
     {
      "id": "C8",
-     "text": "Thử thách Gauss thật sự: 2 + 4 + 6 + ... + 18 + 20. (Mười số chẵn đầu tiên — ghép cặp đầu cuối xem mỗi cặp bằng bao nhiêu, có mấy cặp?)",
+     "text": "Thử thách Gauss thật sự: $2 + 4 + 6$ + ... + $18 + 20$. (Mười số chẵn đầu tiên — ghép cặp đầu cuối xem mỗi cặp bằng bao nhiêu, có mấy cặp?)",
      "answerKey": {
       "value": 110
      },
-     "solutionNarrative": "(2 + 20) + (4 + 18) + (6 + 16) + (8 + 14) + (10 + 12) = 22 + 22 + 22 + 22 + 22 = 110 — con vừa làm bài của Gauss phiên bản số chẵn đấy!"
+     "solutionNarrative": "($2 + 20$) + ($4 + 18$) + ($6 + 16$) + ($8 + 14$) + ($10 + 12$) = $22 + 22 + 22 + 22 + 22 = 110$ — con vừa làm bài của Gauss phiên bản số chẵn đấy!"
     }
    ]
   }
@@ -216,7 +216,7 @@
    },
    {
     "id": "Q3",
-    "text": "1 + 2 + ... + 10 = ?",
+    "text": "$1 + 2$ + ... + 10 = ?",
     "format": "mcq",
     "choices": [
      "A. 50",

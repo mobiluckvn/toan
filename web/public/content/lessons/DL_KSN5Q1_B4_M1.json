@@ -30,7 +30,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con dịch dấu phẩy sang phải / trái 1 – 3 hàng thành thạo (× hoặc : cho 10, 100, 1000), kể cả khi hết chữ số phải ĐỆM 0 (3,5 : 100 = 0,035).",
+  "text": "Con dịch dấu phẩy sang phải / trái 1 – 3 hàng thành thạo (× hoặc : cho 10, 100, 1000), kể cả khi hết chữ số phải ĐỆM 0 ($3,5 : 100 = 0,035$).",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (ca đệm 0)",
   "kidText": "Con dịch dấu phẩy sang phải hay sang trái để nhân chia cho 10, 100, 1000 — hết chữ số thì đệm thêm số 0."
  },
@@ -38,11 +38,11 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Nhân với 10 / 100 / 1000: dấu phẩy đi THANG MÁY sang PHẢI 1 / 2 / 3 bậc; hết chữ số thì thêm 0 vào đuôi (3,5 × 100 = 350)."
+    "text": "Nhân với $\\frac{10}{100}$ / 1000: dấu phẩy đi THANG MÁY sang PHẢI $\\frac{1}{2}$ / 3 bậc; hết chữ số thì thêm 0 vào đuôi ($3,5  \\times  100 = 350$)."
    },
    {
     "id": "K2",
-    "text": "Chia cho 10 / 100 / 1000: dấu phẩy sang TRÁI 1 / 2 / 3 bậc; thiếu bậc phải ĐỆM 0 vào trước (3,5 : 100 = 0,035)."
+    "text": "Chia cho $\\frac{10}{100}$ / 1000: dấu phẩy sang TRÁI $\\frac{1}{2}$ / 3 bậc; thiếu bậc phải ĐỆM 0 vào trước ($3,5 : 100 = 0,035$)."
    },
    {
     "id": "K3",
@@ -53,19 +53,19 @@
   "canonicalExamples": [
    {
     "case": "dịch phải (ca thường)",
-    "problem": "Tính 3,45 × 10 và 3,45 × 100.",
+    "problem": "Tính $3,45  \\times  10$ và $3,45  \\times  100$.",
     "solution": "× 10: phẩy sang phải 1 bậc → 34,5. × 100: sang phải 2 bậc → 345.",
     "why": "Cặp chuẩn K1 lấy từ sách."
    },
    {
     "case": "dịch trái (ca thường)",
-    "problem": "Tính 62,7 : 10 và 62,7 : 100.",
+    "problem": "Tính $62,7 : 10$ và $62,7 : 100$.",
     "solution": ": 10: phẩy sang trái 1 bậc → 6,27. : 100: sang trái 2 bậc → 0,627.",
     "why": "Cặp chuẩn K2."
    },
    {
     "case": "đệm 0 (ca bẫy)",
-    "problem": "Tính 3,5 : 100.",
+    "problem": "Tính $3,5 : 100$.",
     "solution": "Cần sang trái 2 bậc mà 3,5 chỉ có 1 chữ số phần nguyên: đi 1 bậc được 0,35, bậc thứ hai phải ĐỆM 0 → 0,035. Tuyệt đối không dừng ở 0,35!",
     "why": "Nguồn bẫy CĐ-4.1 — thiếu bậc quên số 0 đệm."
    }
@@ -73,10 +73,10 @@
   "numberRange": "Lớp 5: nhân chia với 10, 100, 1000; kết quả tối đa 3 chữ số thập phân.",
   "misconceptions": [
    {
-    "wrong": "Dịch được một bậc thì hết chữ số, bèn dừng lại (3,5 : 100 = 0,35).",
+    "wrong": "Dịch được một bậc thì hết chữ số, bèn dừng lại ($3,5 : 100 = 0,35$).",
     "signal": "Kết quả đúng 10 lần đáp số.",
-    "fix": "đếm bậc trước; thiếu bậc thì ĐỆM 0 cho đủ — 3,5 : 100 = 0,035.",
-    "counterExample": "Thử ngược: 0,35 × 100 = 35 ≠ 3,5."
+    "fix": "đếm bậc trước; thiếu bậc thì ĐỆM 0 cho đủ — $3,5 : 100 = 0,035$.",
+    "counterExample": "Thử ngược: $0,35  \\times  100 = 35$ ≠ 3,5."
    }
   ],
   "vocabulary": [
@@ -110,10 +110,10 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "Tính 3,45 × 10 và 3,45 × 100.",
+    "narration": "Tính $3,45  \\times  10$ và $3,45  \\times  100$.",
     "display": {
      "type": "story_panel",
-     "caption": "3,5 : 100 = 0,35??"
+     "caption": "$3,5 : 100 = 0,35$??"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -151,7 +151,7 @@
     "estSeconds": 16,
     "item": {
      "format": "num",
-     "text": "62,7 : 100 = ?",
+     "text": "$62,7 : 100$ = ?",
      "answerKey": {
       "value": "0,627"
      },
@@ -278,7 +278,7 @@
  },
  "workedExample": {
   "title": "Chuyến thang hai bậc của 3,5",
-  "problem": "Tính 3,5 : 100.",
+  "problem": "Tính $3,5 : 100$.",
   "steps": [
    {
     "show": "Bước 1 — ĐẾM BẬC: chia 100 = 10² → phẩy phải sang TRÁI đủ 2 bậc.",
@@ -295,10 +295,10 @@
     "show": "Bước 2 — Bậc 1: 3,5 → 0,35. Bậc 2: hết chữ số → ĐỆM 0 → 0,035."
    },
    {
-    "show": "Bước 3 — Thử ngược: 0,035 × 100 = 3,5 ✓. Đáp số: 0,035.",
+    "show": "Bước 3 — Thử ngược: $0,035  \\times  100 = 3,5$ ✓. Đáp số: 0,035.",
     "askAfter": {
      "format": "num",
-     "text": "Vậy 4,8 : 100 = ?",
+     "text": "Vậy $4,8 : 100$ = ?",
      "answerKey": {
       "value": "0,048"
      },
@@ -319,7 +319,7 @@
      "id": "P1",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B4.LT1",
-     "text": "Tính: 3,45 × 10 và 3,45 × 100.",
+     "text": "Tính: $3,45  \\times  10$ và $3,45  \\times  100$.",
      "answerKey": {
       "parts": [
        {
@@ -352,7 +352,7 @@
      "id": "P2",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B4.LT2",
-     "text": "Tính: 62,7 : 10 và 62,7 : 100.",
+     "text": "Tính: $62,7 : 10$ và $62,7 : 100$.",
      "answerKey": {
       "parts": [
        {
@@ -387,7 +387,7 @@
      "id": "P3",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B4.LT3",
-     "text": "Tính: 3,5 : 100.",
+     "text": "Tính: $3,5 : 100$.",
      "answerKey": {
       "value": "0,035"
      },
@@ -414,7 +414,7 @@
     {
      "id": "P4",
      "format": "num",
-     "text": "Tính: 7,2 : 1000.",
+     "text": "Tính: $7,2 : 1000$.",
      "answerKey": {
       "value": "0,0072"
      },
@@ -430,7 +430,7 @@
     {
      "id": "P5",
      "format": "tf",
-     "text": "(Đúng/Sai?) 3,5 : 100 = 0,35 vì 'dịch được một bậc thì hết chữ số nên dừng'.",
+     "text": "(Đúng/Sai?) $3,5 : 100 = 0,35$ vì 'dịch được một bậc thì hết chữ số nên dừng'.",
      "answerKey": {
       "value": false,
       "note": "Phải đi đủ 2 bậc, đệm 0: 0,035. Thử ngược: 0,35 × 100 = 35 ≠ 3,5."
@@ -469,7 +469,7 @@
     "id": "A1",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B4.QZ3",
-    "text": "3,5 : 100 bằng:",
+    "text": "$3,5 : 100$ bằng:",
     "choices": [
      "0,035",
      "0,35",
@@ -499,7 +499,7 @@
    {
     "id": "A3",
     "format": "num",
-    "text": "0,48 × 1000 = ?",
+    "text": "$0,48  \\times  1000$ = ?",
     "answerKey": {
      "value": 480
     },

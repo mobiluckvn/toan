@@ -29,7 +29,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con giải được dạng \"số lớn là số bé viết thêm chữ số 0 bên phải\": thêm 0 = GẤP 10 (không phải cộng 10!) → tỉ số 1 : 10 — cho TỔNG chia 11 phần, cho HIỆU chia 9 phần — nối thẳng món nợ dọn-nhà-thập-phân của Chương 1.",
+  "text": "Con giải được dạng \"số lớn là số bé viết thêm chữ số 0 bên phải\": thêm 0 = GẤP 10 (không phải cộng 10!) → tỉ số $1 : 10$ — cho TỔNG chia 11 phần, cho HIỆU chia 9 phần — nối thẳng món nợ dọn-nhà-thập-phân của Chương 1.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (thêm 0 là gấp 10)",
   "kidText": "Viết thêm số 0 vào bên phải là GẤP 10 lần chứ không phải cộng 10. Con chia tổng ra 11 phần, chia hiệu ra 9 phần."
  },
@@ -41,7 +41,7 @@
    },
    {
     "id": "K2",
-    "text": "\"Số lớn là số bé thêm 0\" → tỉ số bé : lớn = 1 : 10. Cho TỔNG: tổng gồm 1 + 10 = 11 phần → phần = tổng : 11. Cho HIỆU: hiệu gồm 10 − 1 = 9 phần → phần = hiệu : 9."
+    "text": "\"Số lớn là số bé thêm 0\" → tỉ số bé : lớn = $1 : 10$. Cho TỔNG: tổng gồm $1 + 10 = 11$ phần → phần = tổng : 11. Cho HIỆU: hiệu gồm $10 - 1 = 9$ phần → phần = hiệu : 9."
    },
    {
     "id": "K3",
@@ -73,9 +73,9 @@
   "misconceptions": [
    {
     "wrong": "Dịch \"thêm 0\" thành \"cộng 10\" (hoặc cộng 0) rồi dựng sơ đồ sai; hoặc nhớ nhầm tổng chia 10.",
-    "signal": "Sơ đồ hai phần hơn kém 10 đơn vị; hoặc phép 132 : 10 lẻ.",
-    "fix": "dọn nhà: thêm 0 là GẤP 10; tổng 11 phần (1 + 10), hiệu 9 phần (10 − 1); thử bằng cách viết thêm 0 kiểm.",
-    "counterExample": "132 : 10 = 13,2 — phần lẻ phi lý; còn cặp 61 và 71 (hơn 10): 61 thêm 0 là 610 ≠ 71!"
+    "signal": "Sơ đồ hai phần hơn kém 10 đơn vị; hoặc phép $132 : 10$ lẻ.",
+    "fix": "dọn nhà: thêm 0 là GẤP 10; tổng 11 phần ($1 + 10$), hiệu 9 phần ($10 - 1$); thử bằng cách viết thêm 0 kiểm.",
+    "counterExample": "$132 : 10 = 13,2$ — phần lẻ phi lý; còn cặp 61 và 71 (hơn 10): 61 thêm 0 là 610 ≠ 71!"
    }
   ],
   "vocabulary": [
@@ -91,7 +91,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "12 × 10 = ?",
+    "text": "$12  \\times  10$ = ?",
     "answerKey": {
      "value": 120
     }
@@ -133,7 +133,7 @@
      "spec": {
       "num": 12,
       "shifted": 120,
-      "wrong": "12 + 10 = 22 ✗",
+      "wrong": "$12 + 10 = 22$ ✗",
       "ratio": "1 : 10"
      }
     },
@@ -286,7 +286,7 @@
   "problem": "(a) Tổng hai số là 132, số lớn là số bé thêm chữ số 0 bên phải — tìm hai số. (b) Cùng dạng nhưng hiệu là 108.",
   "steps": [
    {
-    "show": "Bước 1 — Thêm 0 = gấp 10 → tỉ 1 : 10 (băng 1 ô và 10 ô).",
+    "show": "Bước 1 — Thêm 0 = gấp 10 → tỉ $1 : 10$ (băng 1 ô và 10 ô).",
     "askBefore": {
      "format": "mcq",
      "text": "Thêm chữ số 0 bên phải làm số:",
@@ -302,10 +302,10 @@
     }
    },
    {
-    "show": "Bước 2 — Câu (a): tổng 11 ô → phần = 132 : 11 = 12 → hai số 12 và 120 (thử ✓)."
+    "show": "Bước 2 — Câu (a): tổng 11 ô → phần = $132 : 11 = 12$ → hai số 12 và 120 (thử ✓)."
    },
    {
-    "show": "Bước 3 — Câu (b): hiệu 9 ô → phần = 108 : 9 = 12 → vẫn 12 và 120 (120 − 12 = 108 ✓).",
+    "show": "Bước 3 — Câu (b): hiệu 9 ô → phần = $108 : 9 = 12$ → vẫn 12 và 120 ($120 - 12 = 108$ ✓).",
     "askAfter": {
      "format": "mb",
      "text": "Tổng 88, cùng dạng — hai số?",
@@ -379,7 +379,7 @@
       "Tỉ 1 : 10 → tổng 11 phần.",
       "132 : 11."
      ],
-     "solutionNarrative": "Phần 12 → 12 và 120 (thử: 12 + 120 = 132 ✓).",
+     "solutionNarrative": "Phần 12 → 12 và 120 (thử: $12 + 120 = 132$ ✓).",
      "teaches": [
       "K2"
      ],
@@ -412,7 +412,7 @@
       "Hiệu = 10 − 1 = 9 phần.",
       "108 : 9."
      ],
-     "solutionNarrative": "Phần 12 → 12 và 120 (thử: 120 − 12 = 108 ✓).",
+     "solutionNarrative": "Phần 12 → 12 và 120 (thử: $120 - 12 = 108$ ✓).",
      "teaches": [
       "K2",
       "K3"
@@ -501,7 +501,7 @@
   "flashcards": [
    {
     "front": "\"Số lớn = số bé thêm chữ số 0\" — tỉ số? Tổng/hiệu chia mấy?",
-    "back": "Thêm 0 = GẤP 10 (dọn nhà sang trái — không phải cộng 10!) → tỉ 1 : 10. TỔNG : 11 phần (132 : 11 = 12 → 12 & 120); HIỆU : 9 phần (108 : 9 = 12). Thử bằng cách viết thêm 0 kiểm."
+    "back": "Thêm 0 = GẤP 10 (dọn nhà sang trái — không phải cộng 10!) → tỉ $1 : 10$. TỔNG : 11 phần ($132 : 11 = 12$ → 12 & 120); HIỆU : 9 phần ($108 : 9 = 12$). Thử bằng cách viết thêm 0 kiểm."
    }
   ],
   "schedule": [

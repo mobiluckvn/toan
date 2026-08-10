@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Tự khám phá và kiểm chứng bí mật tách hiệu: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1. Tính tổng dãy sai phân kiểu 1/(1×2) + 1/(2×3) + 1/(3×4) bằng hiệu ứng domino (chỉ còn hai đầu). Tính tích kiểu 1/2 × 2/3 × 3/4 × 4/5 bằng rút gọn chéo (chỉ còn tử đầu và mẫu cuối).",
-  "kidText": "Dãy phân số một phần 1×2, một phần 2×3, rồi một phần 3×4. Cộng cả dãy dài như thế thì ra bao nhiêu?",
+  "text": "Tự khám phá và kiểm chứng bí mật tách hiệu: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1. Tính tổng dãy sai phân kiểu $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$ bằng hiệu ứng domino (chỉ còn hai đầu). Tính tích kiểu $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ × 4/5 bằng rút gọn chéo (chỉ còn tử đầu và mẫu cuối).",
+  "kidText": "Dãy phân số một phần $1 \\times 2$, một phần $2 \\times 3$, rồi một phần $3 \\times 4$. Cộng cả dãy dài như thế thì ra bao nhiêu?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,19 +29,19 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − 1/2 = 1/2 — mà 1/(1×2) cũng bằng 1/2! Tính tiếp 1/2 − 1/3 = 3/6 − 2/6 = 1/6 — đúng bằng 1/(2×3)! Và 1/3 − 1/4 = 4/12 − 3/12 = 1/12 = 1/(3×4). Bí mật lộ diện: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1 (vì hiệu trên mẫu chung là b − a = 1)."
+    "text": "Bước 1 — TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng bằng $\\frac{1}{2}$! Tính tiếp $\\frac{1}{2}$ − $\\frac{1}{3}$ = $\\frac{3}{6}$ − $\\frac{2}{6}$ = $\\frac{1}{6}$ — đúng bằng $\\frac{1}{2 \\times 3}$! Và $\\frac{1}{3}$ − $\\frac{1}{4}$ = $\\frac{4}{12}$ − $\\frac{3}{12}$ = $\\frac{1}{12}$ = $\\frac{1}{3 \\times 4}$. Bí mật lộ diện: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1 (vì hiệu trên mẫu chung là b − a = 1)."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — CÚ CHẠM DOMINO: thay cả dãy bằng các hiệu: (1 − 1/2) + (1/2 − 1/3) + (1/3 − 1/4). Nhìn kỹ: −1/2 gặp +1/2 tự hủy; −1/3 gặp +1/3 tự hủy — cả khúc giữa đổ rạp! Chỉ còn hai đầu: 1 − 1/4 = 3/4. Dãy dài gấp mười cũng thế: sống sót chỉ có SỐ ĐẦU và SỐ CUỐI."
+    "text": "Bước 2 — CÚ CHẠM DOMINO: thay cả dãy bằng các hiệu: (1 − $\\frac{1}{2}$) + ($\\frac{1}{2}$ − $\\frac{1}{3}$) + ($\\frac{1}{3}$ − $\\frac{1}{4}$). Nhìn kỹ: −1/2 gặp +1/2 tự hủy; −1/3 gặp +1/3 tự hủy — cả khúc giữa đổ rạp! Chỉ còn hai đầu: 1 − $\\frac{1}{4}$ = 3/4. Dãy dài gấp mười cũng thế: sống sót chỉ có SỐ ĐẦU và SỐ CUỐI."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — MÀN HAI: TÍCH RÚT GỌN CHÉO: tính 1/2 × 2/3 × 3/4 × 4/5: tử của mỗi phân số đúng bằng mẫu của phân số đứng trước! Nhân các tử với nhau, nhân các mẫu với nhau: các cặp 2, 3, 4 xuất hiện cả trên lẫn dưới — gạch chéo từng đôi. Còn lại tử đầu 1 và mẫu cuối 5: tích bằng 1/5."
+    "text": "Bước 3 — MÀN HAI: TÍCH RÚT GỌN CHÉO: tính $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$: tử của mỗi phân số đúng bằng mẫu của phân số đứng trước! Nhân các tử với nhau, nhân các mẫu với nhau: các cặp 2, 3, 4 xuất hiện cả trên lẫn dưới — gạch chéo từng đôi. Còn lại tử đầu 1 và mẫu cuối 5: tích bằng 1/5."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — DỰ ĐOÁN KHÔNG CẦN TÍNH: kéo dài tổng đến 1/(4×5)? Hai đầu là 1 và 1/5 → tổng 1 − 1/5 = 4/5. Kéo dài tích đến 9/10? Tử đầu 1, mẫu cuối 10 → tích 1/10. Sức mạnh của cấu trúc: đọc được luật domino là ĐOÁN trước đáp số của dãy dài tùy ý — điều mà tính trâu bò không bao giờ làm nổi."
+    "text": "Bước 4 — DỰ ĐOÁN KHÔNG CẦN TÍNH: kéo dài tổng đến $\\frac{1}{4 \\times 5}$? Hai đầu là 1 và $\\frac{1}{5}$ → tổng 1 − $\\frac{1}{5}$ = 4/5. Kéo dài tích đến $\\frac{9}{10}$? Tử đầu 1, mẫu cuối 10 → tích 1/10. Sức mạnh của cấu trúc: đọc được luật domino là ĐOÁN trước đáp số của dãy dài tùy ý — điều mà tính trâu bò không bao giờ làm nổi."
    }
   ],
   "mantra": "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước. Tổng mẫu-là-tích-liền-nhau: tách mỗi số thành hiệu 1/a − 1/b, cả dãy chỉ còn HAI ĐẦU. Tích tử-sau-bằng-mẫu-trước: gạch chéo, chỉ còn TỬ ĐẦU và MẪU CUỐI. Kiểm bí mật tách hiệu bằng một phép trừ trước khi tin!",
@@ -49,9 +49,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Học xong tách hiệu, Trí Long hăng máu: \"1/(1×2) + 1/(2×3) hả? Cộng tử với tử, mẫu với mẫu: (1+1)/(2+6) = 2/8 = 1/4. Nhanh chưa!\"",
+    "wrong": "Học xong tách hiệu, Trí Long hăng máu: \"$\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ hả? Cộng tử với tử, mẫu với mẫu: ($1+1$)/($2+6$) = $\\frac{2}{8}$ = 1/4. Nhanh chưa!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Thử \"luật\" của Trí Long với cặp dễ nhất: 1/2 + 1/2 theo kiểu ấy ra 2/4 = 1/2 — nửa bánh cộng nửa bánh mà vẫn chỉ... nửa bánh thôi sao? Gợi ý 2: Phân số chỉ cộng được khi CÙNG CỠ LÁT (cùng mẫu) — luật thép Bài 33! Tính lại 1/2 + 1/6 bằng quy đồng, rồi bằng tách hiệu, cho Trí Long thấy hai đường chân chính đều ra 2/3."
+    "fix": "Gợi ý 1: Thử \"luật\" của Trí Long với cặp dễ nhất: $\\frac{1}{2}$ + 1/2 theo kiểu ấy ra $\\frac{2}{4}$ = $\\frac{1}{2}$ — nửa bánh cộng nửa bánh mà vẫn chỉ... nửa bánh thôi sao? Gợi ý 2: Phân số chỉ cộng được khi CÙNG CỠ LÁT (cùng mẫu) — luật thép Bài 33! Tính lại $\\frac{1}{2}$ + 1/6 bằng quy đồng, rồi bằng tách hiệu, cho Trí Long thấy hai đường chân chính đều ra 2/3."
    }
   ]
  },
@@ -60,12 +60,12 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Dãy phân số 1/(1×2) ; 1/(2×3) ; 1/(3×4) — mẫu là tích hai số liền nhau. Hỏi tổng của cả dãy?"
+    "narration": "Dãy phân số $\\frac{1}{1 \\times 2}$ ; $\\frac{1}{2 \\times 3}$ ; $\\frac{1}{3 \\times 4}$ — mẫu là tích hai số liền nhau. Hỏi tổng của cả dãy?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? dãy phân số 1/(1×2) ; 1/(2×3) ; 1/(3×4) — mẫu là tích hai số liền nhau.\nHỎI GÌ? tổng của cả dãy.\nĐẠI LƯỢNG & ĐƠN VỊ: các phân số (không đơn vị) — điểm lạ: mẫu nào cũng là TÍCH HAI SỐ LIỀN NHAU.\nQUAN HỆ GIỮA CHÚNG: nếu mỗi phân số tách được thành một HIỆU hai phân số đơn giản, thì khi cộng, đuôi của mảnh trước sẽ khớp đầu của mảnh sau mà tự hủy.\nCHỌN CÔNG CỤ: BÍ MẬT TÁCH HIỆU (tự kiểm chứng!) + hiệu ứng domino.\nƯỚC LƯỢNG TRƯỚC: cả dãy chưa đầy một chiếc bánh — tổng chắc dưới 1, cỡ ba phần tư.",
+    "narration": "CHO GÌ? dãy phân số $\\frac{1}{1 \\times 2}$ ; $\\frac{1}{2 \\times 3}$ ; $\\frac{1}{3 \\times 4}$ — mẫu là tích hai số liền nhau.\nHỎI GÌ? tổng của cả dãy.\nĐẠI LƯỢNG & ĐƠN VỊ: các phân số (không đơn vị) — điểm lạ: mẫu nào cũng là TÍCH HAI SỐ LIỀN NHAU.\nQUAN HỆ GIỮA CHÚNG: nếu mỗi phân số tách được thành một HIỆU hai phân số đơn giản, thì khi cộng, đuôi của mảnh trước sẽ khớp đầu của mảnh sau mà tự hủy.\nCHỌN CÔNG CỤ: BÍ MẬT TÁCH HIỆU (tự kiểm chứng!) + hiệu ứng domino.\nƯỚC LƯỢNG TRƯỚC: cả dãy chưa đầy một chiếc bánh — tổng chắc dưới 1, cỡ ba phần tư.",
     "teaches": [],
     "nhan": "NHỊP 1, DỊCH — nhìn ra cấu trúc tự hủy của dãy"
    },
@@ -104,21 +104,21 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: Su Kem công bố trước quầy: \"Tổng dãy nhãn là 3/4 — thưa quý khách, chưa đầy một chiếc bánh!\" Chị Ngọc Anh phục sát đất, thưởng nóng hai chiếc bánh nóng hổi; Trí Long vừa nhai vừa lẩm bẩm học thuộc bí mật tách hiệu.\nSOI: soi bằng đường trâu bò trên dãy ngắn: 1/2 + 1/6 + 1/12 = 6/12 + 2/12 + 1/12 = 9/12 = 3/4 ✓ — lối tắt và đường cày cho cùng đáp số, lối tắt được cấp phép!\nDÙNG NGOÀI ĐỜI: trong toán lớn, vô số tổng - tích dài được \"thuần hóa\" đúng kiểu này; con vừa chạm vào tư duy đẹp nhất của nghề toán: thay sức kéo bằng cấu trúc.",
+    "narration": "LẮP: Su Kem công bố trước quầy: \"Tổng dãy nhãn là $\\frac{3}{4}$ — thưa quý khách, chưa đầy một chiếc bánh!\" Chị Ngọc Anh phục sát đất, thưởng nóng hai chiếc bánh nóng hổi; Trí Long vừa nhai vừa lẩm bẩm học thuộc bí mật tách hiệu.\nSOI: soi bằng đường trâu bò trên dãy ngắn: $\\frac{1}{2}$ + $\\frac{1}{6}$ + $\\frac{1}{12}$ = $\\frac{6}{12}$ + $\\frac{2}{12}$ + $\\frac{1}{12}$ = $\\frac{9}{12}$ = $\\frac{3}{4}$ ✓ — lối tắt và đường cày cho cùng đáp số, lối tắt được cấp phép!\nDÙNG NGOÀI ĐỜI: trong toán lớn, vô số tổng - tích dài được \"thuần hóa\" đúng kiểu này; con vừa chạm vào tư duy đẹp nhất của nghề toán: thay sức kéo bằng cấu trúc.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Học xong tách hiệu, Trí Long hăng máu: \"1/(1×2) + 1/(2×3) hả? Cộng tử với tử, mẫu với mẫu: (1+1)/(2+6) = 2/8 = 1/4. Nhanh chưa!\"",
+    "narration": "Học xong tách hiệu, Trí Long hăng máu: \"$\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ hả? Cộng tử với tử, mẫu với mẫu: ($1+1$)/($2+6$) = $\\frac{2}{8}$ = 1/4. Nhanh chưa!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính: 1/(1×2) + 1/(2×3) + 1/(3×4).",
+  "problem": "Tính: $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$.",
   "steps": [
    {
     "show": "Tóm tắt"
@@ -133,10 +133,10 @@
     "show": "Mô hình (tách hiệu)"
    },
    {
-    "show": "1/(1×2) = 1 − 1/2 ; 1/(2×3) = 1/2 − 1/3 ; 1/(3×4) = 1/3 − 1/4"
+    "show": "$\\frac{1}{1 \\times 2}$ = 1 − $\\frac{1}{2}$ ; $\\frac{1}{2 \\times 3}$ = $\\frac{1}{2}$ − $\\frac{1}{3}$ ; $\\frac{1}{3 \\times 4}$ = $\\frac{1}{3}$ − $\\frac{1}{4}$"
    },
    {
-    "show": "(kiểm: 1/2 − 1/3 = 3/6 − 2/6 = 1/6 ✓)"
+    "show": "(kiểm: $\\frac{1}{2}$ − $\\frac{1}{3}$ = $\\frac{3}{6}$ − $\\frac{2}{6}$ = $\\frac{1}{6}$ ✓)"
    },
    {
     "show": "Tách kèm MỘT phép kiểm — không dùng bí mật chưa kiểm chứng."
@@ -145,13 +145,13 @@
     "show": "Bài giải"
    },
    {
-    "show": "Tổng = (1 − 1/2) + (1/2 − 1/3) + (1/3 − 1/4)"
+    "show": "Tổng = (1 − $\\frac{1}{2}$) + ($\\frac{1}{2}$ − $\\frac{1}{3}$) + ($\\frac{1}{3}$ − $\\frac{1}{4}$)"
    },
    {
-    "show": "Các phân số 1/2 ; 1/3 xuất hiện một lần trừ, một lần cộng nên triệt tiêu nhau."
+    "show": "Các phân số $\\frac{1}{2}$ ; 1/3 xuất hiện một lần trừ, một lần cộng nên triệt tiêu nhau."
    },
    {
-    "show": "Tổng = 1 − 1/4 = 3/4"
+    "show": "Tổng = 1 − $\\frac{1}{4}$ = $\\frac{3}{4}$"
    },
    {
     "show": "Câu \"triệt tiêu nhau\" nêu căn cứ của cú sập domino."
@@ -163,7 +163,7 @@
     "show": "Đáp số gọn một phân số."
    },
    {
-    "show": "Thử lại: 1/2 + 1/6 + 1/12 = 6/12 + 2/12 + 1/12 = 9/12 = 3/4 ✓"
+    "show": "Thử lại: $\\frac{1}{2}$ + $\\frac{1}{6}$ + $\\frac{1}{12}$ = $\\frac{6}{12}$ + $\\frac{2}{12}$ + $\\frac{1}{12}$ = $\\frac{9}{12}$ = $\\frac{3}{4}$ ✓"
    },
    {
     "show": "Đường quy đồng kiểm chứng lối domino."
@@ -175,7 +175,7 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tính 1/2 − 1/3. So sánh kết quả với 1/(2×3) và nêu nhận xét.",
+     "text": "Tính $\\frac{1}{2}$ − 1/3. So sánh kết quả với $\\frac{1}{2 \\times 3}$ và nêu nhận xét.",
      "answerKey": {
       "parts": [
        {
@@ -189,11 +189,11 @@
        }
       ]
      },
-     "solutionNarrative": "1/2 − 1/3 = 3/6 − 2/6 = 1/6 — đúng bằng 1/(2×3): hiệu hai phân số \"liền kề\" chính là phân số mẫu-tích!"
+     "solutionNarrative": "$\\frac{1}{2}$ − $\\frac{1}{3}$ = $\\frac{3}{6}$ − $\\frac{2}{6}$ = $\\frac{1}{6}$ — đúng bằng $\\frac{1}{2 \\times 3}$: hiệu hai phân số \"liền kề\" chính là phân số mẫu-tích!"
     },
     {
      "id": "C2",
-     "text": "Kiểm chứng: 1/(1×2) có bằng 1 − 1/2 không?",
+     "text": "Kiểm chứng: $\\frac{1}{1 \\times 2}$ có bằng $1 - 1$/2 không?",
      "answerKey": {
       "parts": [
        {
@@ -206,11 +206,11 @@
        }
       ]
      },
-     "solutionNarrative": "Có — 1 − 1/2 = 1/2 = 1/(1×2) ✓."
+     "solutionNarrative": "Có — 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ = $\\frac{1}{1 \\times 2}$ ✓."
     },
     {
      "id": "C3",
-     "text": "Kiểm chứng: 1/(3×4) có bằng 1/3 − 1/4 không?",
+     "text": "Kiểm chứng: $\\frac{1}{3 \\times 4}$ có bằng $\\frac{1}{3}$ − 1/4 không?",
      "answerKey": {
       "parts": [
        {
@@ -223,13 +223,13 @@
        }
       ]
      },
-     "solutionNarrative": "Có — 1/3 − 1/4 = 4/12 − 3/12 = 1/12 = 1/(3×4) ✓."
+     "solutionNarrative": "Có — $\\frac{1}{3}$ − $\\frac{1}{4}$ = $\\frac{4}{12}$ − $\\frac{3}{12}$ = $\\frac{1}{12}$ = $\\frac{1}{3 \\times 4}$ ✓."
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Tính: 1/(1×2) + 1/(2×3).",
+     "text": "Tính: $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$.",
      "answerKey": {
       "parts": [
        {
@@ -243,11 +243,11 @@
        }
       ]
      },
-     "solutionNarrative": "(1 − 1/2) + (1/2 − 1/3) = 1 − 1/3 = 2/3."
+     "solutionNarrative": "(1 − $\\frac{1}{2}$) + ($\\frac{1}{2}$ − $\\frac{1}{3}$) = 1 − $\\frac{1}{3}$ = 2/3."
     },
     {
      "id": "C5",
-     "text": "Tính: 1/(1×2) + 1/(2×3) + 1/(3×4).",
+     "text": "Tính: $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$.",
      "answerKey": {
       "parts": [
        {
@@ -261,11 +261,11 @@
        }
       ]
      },
-     "solutionNarrative": "Domino sập, còn hai đầu: 1 − 1/4 = 3/4."
+     "solutionNarrative": "Domino sập, còn hai đầu: 1 − $\\frac{1}{4}$ = 3/4."
     },
     {
      "id": "C6",
-     "text": "Tính 1/2 × 2/3, rồi lấy kết quả nhân tiếp với 3/4. Con nhận ra quy luật gì?",
+     "text": "Tính $\\frac{1}{2}$ × 2/3, rồi lấy kết quả nhân tiếp với 3/4. Con nhận ra quy luật gì?",
      "answerKey": {
       "parts": [
        {
@@ -288,11 +288,11 @@
        }
       ]
      },
-     "solutionNarrative": "1/2 × 2/3 = 1/3; nhân tiếp 3/4 được 1/4 — mỗi lần nhân thêm, kết quả là 1 trên mẫu cuối cùng!"
+     "solutionNarrative": "$\\frac{1}{2}$ × $\\frac{2}{3}$ = $\\frac{1}{3}$; nhân tiếp 3/4 được $\\frac{1}{4}$ — mỗi lần nhân thêm, kết quả là 1 trên mẫu cuối cùng!"
     },
     {
      "id": "C7",
-     "text": "Tính: 1/2 × 2/3 × 3/4 × 4/5.",
+     "text": "Tính: $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ × 4/5.",
      "answerKey": {
       "parts": [
        {
@@ -312,7 +312,7 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Tính: 1/(1×2) + 1/(2×3) + 1/(3×4) + 1/(4×5) — rồi ĐOÁN ngay tổng nếu kéo dài đến 1/(9×10).",
+     "text": "Tính: $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$ + $\\frac{1}{4 \\times 5}$ — rồi ĐOÁN ngay tổng nếu kéo dài đến $\\frac{1}{9 \\times 10}$.",
      "answerKey": {
       "parts": [
        {
@@ -335,11 +335,11 @@
        }
       ]
      },
-     "solutionNarrative": "1 − 1/5 = 4/5; kéo đến 1/(9×10): hai đầu là 1 và 1/10 → tổng 1 − 1/10 = 9/10."
+     "solutionNarrative": "1 − $\\frac{1}{5}$ = $\\frac{4}{5}$; kéo đến $\\frac{1}{9 \\times 10}$: hai đầu là 1 và $\\frac{1}{10}$ → tổng 1 − $\\frac{1}{10}$ = 9/10."
     },
     {
      "id": "C9",
-     "text": "Tính 2/3 × 3/4 × 4/5 × 5/6 — rồi đoán tích nếu kéo dài đến 9/10. Hai con số sống sót là ai?",
+     "text": "Tính $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$ × $\\frac{5}{6}$ — rồi đoán tích nếu kéo dài đến 9/10. Hai con số sống sót là ai?",
      "answerKey": {
       "parts": [
        {
@@ -362,7 +362,7 @@
        }
       ]
      },
-     "solutionNarrative": "Rút chéo 3, 4, 5 → còn 2/6 = 1/3; kéo đến 9/10: sống sót tử đầu 2 và mẫu cuối 10 → tích 2/10 = 1/5."
+     "solutionNarrative": "Rút chéo 3, 4, 5 → còn $\\frac{2}{6}$ = $\\frac{1}{3}$; kéo đến $\\frac{9}{10}$: sống sót tử đầu 2 và mẫu cuối 10 → tích $\\frac{2}{10}$ = 1/5."
     }
    ]
   }
@@ -372,7 +372,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "1/(2×3) = 1/2 − 1/3.",
+    "text": "$\\frac{1}{2 \\times 3}$ = $\\frac{1}{2}$ − 1/3.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -381,7 +381,7 @@
    },
    {
     "id": "Q2",
-    "text": "1/(1×2) + 1/(2×3) = 2/8 (cộng tử với tử, mẫu với mẫu).",
+    "text": "$\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ = $\\frac{2}{8}$ (cộng tử với tử, mẫu với mẫu).",
     "format": "tf",
     "answerKey": {
      "value": false
@@ -390,7 +390,7 @@
    },
    {
     "id": "Q3",
-    "text": "1/2 × 2/3 bằng:",
+    "text": "$\\frac{1}{2}$ × 2/3 bằng:",
     "format": "mcq",
     "choices": [
      "A. 1/3",
@@ -400,11 +400,11 @@
     "answerKey": {
      "choice": "A. 1/3"
     },
-    "solutionNarrative": "1/3)."
+    "solutionNarrative": "$\\frac{1}{3}$)."
    },
    {
     "id": "Q4",
-    "text": "1 − 1/5 bằng:",
+    "text": "$1 - 1$/5 bằng:",
     "format": "mcq",
     "choices": [
      "A. 4/5",
@@ -414,11 +414,11 @@
     "answerKey": {
      "choice": "A. 4/5"
     },
-    "solutionNarrative": "4/5)."
+    "solutionNarrative": "$\\frac{4}{5}$)."
    },
    {
     "id": "Q5",
-    "text": "1/(4×5) bằng:",
+    "text": "$\\frac{1}{4 \\times 5}$ bằng:",
     "format": "mcq",
     "choices": [
      "A. 1/4 − 1/5",
@@ -428,14 +428,14 @@
     "answerKey": {
      "choice": "A. 1/4 − 1/5"
     },
-    "solutionNarrative": "1/(4×5) = 1/4 − 1/5."
+    "solutionNarrative": "$\\frac{1}{4 \\times 5}$ = $\\frac{1}{4}$ − 1/5."
    }
   ]
  },
  "parentNote": {
   "onComplete": "Dựng domino thật (thẻ bài, hộp sữa) dán nhãn các phân số của dãy — cú đẩy đổ hàng loạt là hình ảnh khắc sâu nhất về \"tự hủy dây chuyền\".",
   "homeActivity": "Đặt lệ \"bí mật phải kiểm chứng\": trước khi dùng 1/(a×b) = 1/a − 1/b, con phải tự tay kiểm MỘT trường hợp bằng quy đồng — thói quen của nhà toán học thật.",
-  "watchFor": "NÊN: cho con đoán-trước-tính-sau với dãy kéo dài (đến 1/(9×10)) rồi thưởng khi đoán trúng. KHÔNG NÊN: dãy mẫu cách nhau 2 kiểu 1/(1×3) + 1/(3×5) — phiên bản \"nhân hệ số\" hẹn lớp 5."
+  "watchFor": "NÊN: cho con đoán-trước-tính-sau với dãy kéo dài (đến $\\frac{1}{9 \\times 10}$) rồi thưởng khi đoán trúng. KHÔNG NÊN: dãy mẫu cách nhau 2 kiểu $\\frac{1}{1 \\times 3}$ + $\\frac{1}{3 \\times 5}$ — phiên bản \"nhân hệ số\" hẹn lớp 5."
  },
  "figureSpec": [
   {

@@ -38,7 +38,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Ghế SỐ BỊ CHIA — X : a = q dư r: đọc thành câu chuyện \"X gồm q nhóm a VÀ còn r lẻ\": X = a × q + r (X : 4 = 5 dư 3 → X = 4 × 5 + 3 = 23)."
+    "text": "Ghế SỐ BỊ CHIA — X : a = q dư r: đọc thành câu chuyện \"X gồm q nhóm a VÀ còn r lẻ\": X = a × q + r (X : $4 = 5$ dư 3 → X = $4  \\times  5 + 3 = 23$)."
    },
    {
     "id": "K2",
@@ -50,14 +50,14 @@
    },
    {
     "id": "K4",
-    "text": "Nghi thức THỬ LẠI bằng phép chia xuôi: 23 : 4 = 5 dư 3 ✓; 39 : 5 = 7 dư 4 ✓ — chốt án mọi bài chia có dư."
+    "text": "Nghi thức THỬ LẠI bằng phép chia xuôi: $23 : 4 = 5$ dư 3 ✓; $39 : 5 = 7$ dư 4 ✓ — chốt án mọi bài chia có dư."
    }
   ],
   "mechanism": "Hình ảnh brand: HAI GHẾ TRONG PHIÊN CHIA KẸO (nối thẳng xưởng túi kẹo Bài 10). Ghế SỐ BỊ CHIA hỏi \"cả rổ bao nhiêu viên?\": 5 túi 4 viên VÀ CÒN 3 viên lẻ — nhân túi rồi CỘNG viên lẻ: 23. Bỏ rơi 3 viên lẻ là thiếu kẹo! Ghế SỐ CHIA khó hơn: 39 viên chia mỗi túi X viên được 7 túi dư 4 — muốn biết cỡ túi phải NHẶT 4 viên lẻ RA TRƯỚC (39 − 4 = 35 mới là phần đóng túi tròn), chia 7 túi: X = 5; và nhịp ba — KIỂM: túi 5 viên mà lẻ tận 4 viên, chưa đủ túi mới — hợp luật nền! Chia thẳng 39 : 7 khi kẹo lẻ còn trộn trong rổ là ra túi méo.",
   "canonicalExamples": [
    {
     "case": "ghế số bị chia (ca bẫy 1)",
-    "problem": "Tìm X: X : 4 = 5 (dư 3).",
+    "problem": "Tìm X: X : $4 = 5$ (dư 3).",
     "solution": "X = 4 × 5 + 3 = 23. Thử: 23 : 4 = 5 dư 3 ✓. (Bỏ dư: 20 — thử 20 : 4 = 5 dư 0 ✗.)",
     "why": "Ca đinh bẫy CĐ-16.2 — đề A câu 13."
    },
@@ -77,16 +77,16 @@
   "numberRange": "Lớp 5: số bị chia ≤ 100; số chia 2–9.",
   "misconceptions": [
    {
-    "wrong": "X : 4 = 5 dư 3 → X = 4 × 5 = 20 (bỏ rơi số dư).",
+    "wrong": "X : $4 = 5$ dư 3 → X = $4  \\times  5 = 20$ (bỏ rơi số dư).",
     "signal": "Thử lại ra dư 0 thay vì dư 3.",
     "fix": "đọc thành câu chuyện: \"5 nhóm 4 VÀ CÒN 3 lẻ\"; thương thì nhân — dư thì cộng.",
-    "counterExample": "20 : 4 = 5 dư 0 ≠ dư 3 — thiếu đúng 3 viên kẹo lẻ."
+    "counterExample": "$20 : 4 = 5$ dư 0 ≠ dư 3 — thiếu đúng 3 viên kẹo lẻ."
    },
    {
-    "wrong": "39 : X = 7 dư 4 → chia thẳng X = 39 : 7 \"cho nhanh\" (không trừ dư, không kiểm).",
-    "signal": "X không phải số tự nhiên (39 : 7 lẻ), hoặc quên kiểm X > dư.",
-    "fix": "ba nhịp: TRỪ dư (35) — CHIA thương (5) — KIỂM 5 > 4; kẹo lẻ phải nhặt ra trước khi đo cỡ túi.",
-    "counterExample": "39 : 7 = 5,57… — túi méo ngay từ nhịp một."
+    "wrong": "39 : X = 7 dư 4 → chia thẳng X = $39 : 7$ \"cho nhanh\" (không trừ dư, không kiểm).",
+    "signal": "X không phải số tự nhiên ($39 : 7$ lẻ), hoặc quên kiểm X > dư.",
+    "fix": "ba nhịp: TRỪ dư (35) — CHIA thương (5) — KIỂM $5 > 4$; kẹo lẻ phải nhặt ra trước khi đo cỡ túi.",
+    "counterExample": "$39 : 7 = 5,57$… — túi méo ngay từ nhịp một."
    }
   ],
   "vocabulary": [
@@ -121,10 +121,10 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Tìm X: X : 4 = 5 (dư 3).",
+    "narration": "Tìm X: X : $4 = 5$ (dư 3).",
     "display": {
      "type": "story_panel",
-     "caption": "X = 20? · X = 39 : 7?"
+     "caption": "X = 20? · X = $39 : 7$?"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -148,7 +148,7 @@
       "loose": 3,
       "calc": "4 × 5 + 3 = 23",
       "check": "23 : 4 = 5 dư 3 ✓",
-      "wrong": "20 : 4 = 5 dư 0 ✗"
+      "wrong": "$20 : 4 = 5$ dư 0 ✗"
      }
     },
     "interaction": {
@@ -165,7 +165,7 @@
     "estSeconds": 16,
     "item": {
      "format": "num",
-     "text": "Tìm X: X : 6 = 7 (dư 2).",
+     "text": "Tìm X: X : $6 = 7$ (dư 2).",
      "answerKey": {
       "value": 44
      },
@@ -185,7 +185,7 @@
      "K2",
      "K3"
     ],
-    "narration": "Ghế SỐ CHIA — vụ khó: 39 viên, chia túi cỡ X được 7 túi dư 4. BA NHỊP của tòa: nhịp một — NHẶT KẸO LẺ RA: 39 trừ 4 bằng 35, đây mới là phần đóng túi tròn! Nhịp hai — CHIA THƯƠNG: 35 chia 7 bằng NĂM: túi 5 viên. Nhịp ba — KIỂM luật nền: 5 lớn hơn 4 — dư chưa đủ túi mới, hợp lệ! Thử: 39 chia 5 đúng 7 dư 4. Chia thẳng 39 : 7 khi kẹo lẻ còn trộn trong rổ? Ra năm phẩy năm bảy — túi méo, tòa bác!",
+    "narration": "Ghế SỐ CHIA — vụ khó: 39 viên, chia túi cỡ X được 7 túi dư 4. BA NHỊP của tòa: nhịp một — NHẶT KẸO LẺ RA: 39 trừ 4 bằng 35, đây mới là phần đóng túi tròn! Nhịp hai — CHIA THƯƠNG: 35 chia 7 bằng NĂM: túi 5 viên. Nhịp ba — KIỂM luật nền: 5 lớn hơn 4 — dư chưa đủ túi mới, hợp lệ! Thử: 39 chia 5 đúng 7 dư 4. Chia thẳng $39 : 7$ khi kẹo lẻ còn trộn trong rổ? Ra năm phẩy năm bảy — túi méo, tòa bác!",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -292,10 +292,10 @@
  },
  "workedExample": {
   "title": "Hai vụ án chia kẹo",
-  "problem": "Tìm X: (a) X : 4 = 5 (dư 3); (b) 39 : X = 7 (dư 4).",
+  "problem": "Tìm X: (a) X : $4 = 5$ (dư 3); (b) 39 : X = 7 (dư 4).",
   "steps": [
    {
-    "show": "Bước 1 — Vụ (a), ghế số bị chia: X = 4 × 5 + 3 = 23. Thử: 23 : 4 = 5 dư 3 ✓.",
+    "show": "Bước 1 — Vụ (a), ghế số bị chia: X = $4  \\times  5 + 3 = 23$. Thử: $23 : 4 = 5$ dư 3 ✓.",
     "askBefore": {
      "format": "mcq",
      "text": "Vì sao phải cộng 3?",
@@ -311,10 +311,10 @@
     }
    },
    {
-    "show": "Bước 2 — Vụ (b), nhịp 1: trừ dư 39 − 4 = 35; nhịp 2: 35 : 7 = 5 → X = 5.",
+    "show": "Bước 2 — Vụ (b), nhịp 1: trừ dư $39 - 4 = 35$; nhịp 2: $35 : 7 = 5$ → X = 5.",
     "askBefore": {
      "format": "num",
-     "text": "Nhịp 1: 39 − 4 = ?",
+     "text": "Nhịp 1: $39 - 4$ = ?",
      "answerKey": {
       "value": 35
      },
@@ -322,7 +322,7 @@
     }
    },
    {
-    "show": "Bước 3 — Nhịp 3: kiểm 5 > 4 ✓. Thử: 39 : 5 = 7 dư 4 ✓ — chốt án.",
+    "show": "Bước 3 — Nhịp 3: kiểm $5 > 4$ ✓. Thử: $39 : 5 = 7$ dư 4 ✓ — chốt án.",
     "askAfter": {
      "format": "tf",
      "text": "(Đúng/Sai?) Nếu tính ra X = 3 cho vụ (b) thì vẫn hợp lệ.",
@@ -347,7 +347,7 @@
      "id": "P1",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B16.LT7",
-     "text": "Tìm X: X : 4 = 5 (dư 3).",
+     "text": "Tìm X: X : $4 = 5$ (dư 3).",
      "answerKey": {
       "value": 23
      },
@@ -355,7 +355,7 @@
       "5 nhóm 4 VÀ còn 3 lẻ.",
       "4 × 5 + 3; thử lại!"
      ],
-     "solutionNarrative": "X = 4 × 5 + 3 = 23 (thử: 23 : 4 = 5 dư 3 ✓).",
+     "solutionNarrative": "X = $4  \\times  5 + 3 = 23$ (thử: $23 : 4 = 5$ dư 3 ✓).",
      "teaches": [
       "K1",
       "K4"
@@ -380,7 +380,7 @@
       "Nhịp 1: nhặt kẹo lẻ — 39 − 4.",
       "35 : 7 rồi kiểm X > 4."
      ],
-     "solutionNarrative": "(39 − 4) : 7 = 5; kiểm 5 > 4 ✓; thử 39 : 5 = 7 dư 4 ✓.",
+     "solutionNarrative": "($39 - 4$) : $7 = 5$; kiểm $5 > 4$ ✓; thử $39 : 5 = 7$ dư 4 ✓.",
      "teaches": [
       "K2",
       "K4"
@@ -409,7 +409,7 @@
       "a) Dư max khi chia 5 = 4 (Bài 10).",
       "b) X × 3 hơn X đúng X × 2 = 8."
      ],
-     "solutionNarrative": "a) 5 × 8 + 4 = 44. b) X × 2 = 8 → X = 4 (thử: 12 = 4 + 8 ✓).",
+     "solutionNarrative": "a) $5  \\times  8 + 4 = 44$. b) X × $2 = 8$ → X = 4 (thử: $12 = 4 + 8$ ✓).",
      "teaches": [
       "K1",
       "K2"
@@ -440,7 +440,7 @@
     "id": "A1",
     "format": "tf",
     "sourceItem": "ITEM:KSN5Q1.B16.QZ2",
-    "text": "(Đúng/Sai?) Từ X : 4 = 5 dư 3 suy ra X = 4 × 5 + 3.",
+    "text": "(Đúng/Sai?) Từ X : $4 = 5$ dư 3 suy ra X = $4  \\times  5 + 3$.",
     "answerKey": {
      "value": true
     },

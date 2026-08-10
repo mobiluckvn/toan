@@ -30,7 +30,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con dùng thạo HAI LUẬT NGƯỢC CHIỀU: cùng MẪU — tử lớn thì lớn; cùng TỬ — mẫu lớn thì BÉ (chia càng nhiều phần, lát càng mỏng); và so số thập phân theo TỪNG HÀNG từ trái sang — không đếm độ dài đuôi (0,9 > 0,85).",
+  "text": "Con dùng thạo HAI LUẬT NGƯỢC CHIỀU: cùng MẪU — tử lớn thì lớn; cùng TỬ — mẫu lớn thì BÉ (chia càng nhiều phần, lát càng mỏng); và so số thập phân theo TỪNG HÀNG từ trái sang — không đếm độ dài đuôi ($0,9 > 0,85$).",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
   "kidText": "Cùng mẫu thì tử lớn là lớn. Cùng tử thì mẫu lớn lại BÉ, vì chia càng nhiều phần lát càng mỏng. So thập phân thì so từng hàng từ trái."
  },
@@ -38,15 +38,15 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Cùng MẪU (bánh cắt cùng cỡ lát): tử lớn hơn — lấy nhiều lát hơn — thì LỚN hơn: 3/7 < 5/7."
+    "text": "Cùng MẪU (bánh cắt cùng cỡ lát): tử lớn hơn — lấy nhiều lát hơn — thì LỚN hơn: $\\frac{3}{7}$ < 5/7."
    },
    {
     "id": "K2",
-    "text": "Cùng TỬ (lấy cùng số lát): mẫu lớn hơn — bánh bị chia thành nhiều phần hơn, lát MỎNG hơn — thì BÉ hơn: 2/5 > 2/7. Hai luật NGƯỢC CHIỀU nhau — soi chữ \"cùng\" trước khi phán."
+    "text": "Cùng TỬ (lấy cùng số lát): mẫu lớn hơn — bánh bị chia thành nhiều phần hơn, lát MỎNG hơn — thì BÉ hơn: $\\frac{2}{5}$ > 2/7. Hai luật NGƯỢC CHIỀU nhau — soi chữ \"cùng\" trước khi phán."
    },
    {
     "id": "K3",
-    "text": "Số thập phân so TỪNG HÀNG từ trái sang: phần nguyên trước, rồi phần mười, phần trăm… Hàng nào phân thắng bại thì dừng: 0,9 > 0,85 vì hàng phần mười 9 > 8 — tuyệt đối không so \"85 với 9\" theo độ dài đuôi."
+    "text": "Số thập phân so TỪNG HÀNG từ trái sang: phần nguyên trước, rồi phần mười, phần trăm… Hàng nào phân thắng bại thì dừng: $0,9 > 0,85$ vì hàng phần mười $9 > 8$ — tuyệt đối không so \"85 với 9\" theo độ dài đuôi."
    }
   ],
   "mechanism": "Hình ảnh brand: TIỆM BÁNH HAI QUẦY. Quầy CÙNG MẪU: hai chiếc bánh cắt cùng cỡ lát bảy phần — ai cầm 5 lát thắng ai cầm 3 lát: tử lớn thì lớn, dễ! Quầy CÙNG TỬ mới hiểm: hai bạn cùng lấy 2 lát, nhưng bánh của bạn A chia 5 phần còn bánh bạn B chia 7 phần — lát bánh chia-7 MỎNG hơn hẳn: mẫu càng lớn, lát càng mỏng, phân số càng BÉ! Còn cuộc thi thập phân là ĐẤU TỪNG HÀNG như đấu cờ người: hàng phần mười đấu trước — 0,9 tung quân 9, 0,85 tung quân 8 — 9 thắng 8, TRẬN KẾT THÚC, mấy quân phía sau khỏi ra sân. Kẻ đếm độ dài đuôi \"85 to hơn 9\" là thua từ vòng gửi xe.",
@@ -75,14 +75,14 @@
    {
     "wrong": "So 0,9 với 0,85 kiểu \"85 to hơn 9 nên 0,85 lớn hơn\" — đếm độ dài đuôi.",
     "signal": "Kết luận số có đuôi dài hơn là lớn hơn.",
-    "fix": "đấu từng hàng từ trái: viết thẳng cột 0,90 và 0,85; hàng phần mười 9 > 8 — xong trận.",
-    "counterExample": "0,9 = 0,90 — chín mươi phần trăm so tám lăm phần trăm: 90 > 85 rõ ràng!"
+    "fix": "đấu từng hàng từ trái: viết thẳng cột 0,90 và 0,85; hàng phần mười $9 > 8$ — xong trận.",
+    "counterExample": "$0,9 = 0,90$ — chín mươi phần trăm so tám lăm phần trăm: $90 > 85$ rõ ràng!"
    },
    {
-    "wrong": "Cùng tử mà áp luật cùng mẫu: \"7 to hơn 5 nên 2/7 > 2/5\".",
+    "wrong": "Cùng tử mà áp luật cùng mẫu: \"7 to hơn 5 nên $\\frac{2}{7}$ > $\\frac{2}{5}$\".",
     "signal": "Phán mẫu lớn thì thắng khi tử bằng nhau.",
     "fix": "dựng chiếc bánh: cùng lấy 2 lát, bánh chia 7 lát mỏng hơn; chia càng nhiều phần — lát càng mỏng.",
-    "counterExample": "Nửa bánh (1/2) so một phần trăm bánh (1/100): mẫu 100 to đùng mà bé tí!"
+    "counterExample": "Nửa bánh ($\\frac{1}{2}$) so một phần trăm bánh ($\\frac{1}{100}$): mẫu 100 to đùng mà bé tí!"
    }
   ],
   "vocabulary": [
@@ -309,10 +309,10 @@
  },
  "workedExample": {
   "title": "Hai quầy một bàn cờ",
-  "problem": "So sánh: (a) 2/5 và 2/7; (b) 0,9 và 0,85.",
+  "problem": "So sánh: (a) 2/5 và $\\frac{2}{7}$; (b) 0,9 và 0,85.",
   "steps": [
    {
-    "show": "Bước 1 — Câu (a): soi chữ CÙNG: cùng TỬ 2 → luật lát mỏng: mẫu 7 lớn hơn → 2/7 BÉ hơn → 2/5 > 2/7.",
+    "show": "Bước 1 — Câu (a): soi chữ CÙNG: cùng TỬ 2 → luật lát mỏng: mẫu 7 lớn hơn → 2/7 BÉ hơn → $\\frac{2}{5}$ > 2/7.",
     "askBefore": {
      "format": "mcq",
      "text": "Cùng tử thì mẫu lớn hơn sẽ:",
@@ -328,10 +328,10 @@
     }
    },
    {
-    "show": "Bước 2 — Câu (b): viết thẳng cột 0,90 và 0,85; đấu hàng phần mười: 9 > 8."
+    "show": "Bước 2 — Câu (b): viết thẳng cột 0,90 và 0,85; đấu hàng phần mười: $9 > 8$."
    },
    {
-    "show": "Bước 3 — Kết luận: 0,9 > 0,85 — trận kết thúc ngay hàng đầu tiên phân thắng bại.",
+    "show": "Bước 3 — Kết luận: $0,9 > 0,85$ — trận kết thúc ngay hàng đầu tiên phân thắng bại.",
     "askAfter": {
      "format": "mcq",
      "text": "So sánh: 0,7 và 0,68.",
@@ -373,7 +373,7 @@
       "Cùng mẫu — cùng cỡ lát.",
       "3 lát so 5 lát."
      ],
-     "solutionNarrative": "Cùng mẫu: tử bé hơn thì bé hơn — 3/7 < 5/7.",
+     "solutionNarrative": "Cùng mẫu: tử bé hơn thì bé hơn — $\\frac{3}{7}$ < 5/7.",
      "teaches": [
       "K1"
      ],
@@ -404,7 +404,7 @@
       "Cùng TỬ — soi luật nào?",
       "Bánh chia 7: lát mỏng hơn."
      ],
-     "solutionNarrative": "Cùng tử, mẫu lớn hơn thì bé hơn: 2/5 > 2/7.",
+     "solutionNarrative": "Cùng tử, mẫu lớn hơn thì bé hơn: $\\frac{2}{5}$ > 2/7.",
      "teaches": [
       "K2"
      ],
@@ -431,7 +431,7 @@
       "Đấu hàng phần mười trước.",
       "0,9 = 0,90."
      ],
-     "solutionNarrative": "Hàng phần mười 9 > 8 → 0,9 > 0,85.",
+     "solutionNarrative": "Hàng phần mười $9 > 8$ → $0,9 > 0,85$.",
      "teaches": [
       "K3"
      ]
@@ -454,7 +454,7 @@
       "Đuôi dài không có nghĩa!",
       "Hàng phần mười: 1 so 2."
      ],
-     "solutionNarrative": "Hàng phần mười 1 < 2 → 0,123 < 0,2 — đuôi ba chữ số vẫn thua.",
+     "solutionNarrative": "Hàng phần mười $1 < 2$ → $0,123 < 0,2$ — đuôi ba chữ số vẫn thua.",
      "teaches": [
       "K3"
      ]
@@ -497,7 +497,7 @@
     "id": "A2",
     "format": "tf",
     "sourceItem": "ITEM:KSN5Q1.B17.QZ2",
-    "text": "(Đúng/Sai?) 0,9 > 0,85.",
+    "text": "(Đúng/Sai?) $0,9 > 0,85$.",
     "answerKey": {
      "value": true
     },
@@ -528,7 +528,7 @@
   "flashcards": [
    {
     "front": "Hai luật cùng mẫu / cùng tử? So thập phân theo gì?",
-    "back": "Cùng MẪU: tử lớn → lớn. Cùng TỬ: mẫu lớn → BÉ (chia càng nhiều phần — lát càng mỏng). Thập phân: so TỪNG HÀNG từ trái (0,9 > 0,85 vì 9 > 8 hàng phần mười) — không đếm độ dài đuôi!"
+    "back": "Cùng MẪU: tử lớn → lớn. Cùng TỬ: mẫu lớn → BÉ (chia càng nhiều phần — lát càng mỏng). Thập phân: so TỪNG HÀNG từ trái ($0,9 > 0,85$ vì $9 > 8$ hàng phần mười) — không đếm độ dài đuôi!"
    }
   ],
   "schedule": [
@@ -540,7 +540,7 @@
  "parentNote": {
   "onComplete": "Hôm nay con học hai luật so sánh ngược chiều (cùng mẫu / cùng tử) và so thập phân từng hàng. Con đạt {score}/3, {trapResult} câu bẫy.",
   "homeActivity": "Cắt hai quả cam: một quả 4 múi, một quả 8 múi — cho con cầm mỗi tay một múi và tự nói 'chia càng nhiều phần, lát càng mỏng'.",
-  "watchFor": "Nếu con so 0,9 với 0,85 kiểu đếm đuôi — viết thẳng cột 0,90 / 0,85 (S3) cùng con."
+  "watchFor": "Nếu con so 0,9 với 0,85 kiểu đếm đuôi — viết thẳng cột $\\frac{0,90}{0,85}$ (S3) cùng con."
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B17.M1",

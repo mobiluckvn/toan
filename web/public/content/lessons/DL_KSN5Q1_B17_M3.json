@@ -27,7 +27,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con so sánh và xếp thứ tự được dãy TRỘN hỗn số, phân số, số thập phân bằng chiến lược MỘT ĐỒNG PHỤC: đổi tất cả về cùng một dạng (thường là số thập phân) rồi so từng hàng — và thuộc các phép đổi tủ: 1/2 = 0,5; 1/4 = 0,25; 3/4 = 0,75; 4/5 = 0,8; 7/8 = 0,875.",
+  "text": "Con so sánh và xếp thứ tự được dãy TRỘN hỗn số, phân số, số thập phân bằng chiến lược MỘT ĐỒNG PHỤC: đổi tất cả về cùng một dạng (thường là số thập phân) rồi so từng hàng — và thuộc các phép đổi tủ: $\\frac{1}{2}$ = 0,5; $\\frac{1}{4}$ = 0,25; $\\frac{3}{4}$ = 0,75; $\\frac{4}{5}$ = 0,8; $\\frac{7}{8}$ = 0,875.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (xếp đúng dãy 4 số)",
   "kidText": "Dãy trộn hỗn số, phân số và thập phân? Con cho tất cả mặc một đồng phục rồi mới xếp, xong trả lại áo gốc."
  },
@@ -39,7 +39,7 @@
    },
    {
     "id": "K2",
-    "text": "Phép đổi tủ cần thuộc: 1/2 = 0,5 · 1/4 = 0,25 · 3/4 = 0,75 · 1/5 = 0,2 · 4/5 = 0,8 · 7/8 = 0,875 · 1/8 = 0,125; hỗn số: 1 3/4 = 1 + 0,75 = 1,75."
+    "text": "Phép đổi tủ cần thuộc: $\\frac{1}{2}$ = 0,5 · $\\frac{1}{4}$ = 0,25 · $\\frac{3}{4}$ = 0,75 · $\\frac{1}{5}$ = 0,2 · $\\frac{4}{5}$ = 0,8 · $\\frac{7}{8}$ = 0,875 · $\\frac{1}{8}$ = 0,125; hỗn số: 1 $\\frac{3}{4}$ = $1 + 0,75 = 1,75$."
    },
    {
     "id": "K3",
@@ -50,13 +50,13 @@
   "canonicalExamples": [
    {
     "case": "hỗn số đấu thập phân (ca đôi)",
-    "problem": "So sánh: 1 3/4 (một và ba phần tư) với 1,8.",
+    "problem": "So sánh: 1 $\\frac{3}{4}$ (một và ba phần tư) với 1,8.",
     "solution": "Thay đồng phục: 1 3/4 = 1,75. So từng hàng: 1,75 < 1,8 (hàng phần mười 7 < 8).",
     "why": "Ca LT5 — hỗn số về thập phân qua phép đổi tủ 3/4 = 0,75."
    },
    {
     "case": "dãy bốn số trộn (ca lõi)",
-    "problem": "Xếp theo thứ tự từ bé đến lớn: 0,85; 7/8; 4/5; 0,9.",
+    "problem": "Xếp theo thứ tự từ bé đến lớn: 0,85; $\\frac{7}{8}$; $\\frac{4}{5}$; 0,9.",
     "solution": "Đồng phục thập phân: 4/5 = 0,8; 7/8 = 0,875. Xếp: 0,8 < 0,85 < 0,875 < 0,9 → 4/5 < 0,85 < 7/8 < 0,9.",
     "why": "Ca đề A câu 3 — chiến lược một đồng phục trọn vẹn."
    }
@@ -67,7 +67,7 @@
     "wrong": "So chéo dạng khi chưa đổi (đọ 7/8 với 0,85 bằng cảm giác), hoặc đổi xong quên trả về dạng gốc trong đáp.",
     "signal": "Bài làm không có bước đổi đồng phục; đáp ghi 0,875 thay vì 7/8.",
     "fix": "nghi thức hai nhịp: thay đồng phục hết → xếp → mặc lại áo gốc khi ghi đáp.",
-    "counterExample": "Cảm giác nói 7/8 'bé vì có phần tám' — nhưng 0,875 > 0,85!"
+    "counterExample": "Cảm giác nói $\\frac{7}{8}$ 'bé vì có phần tám' — nhưng $0,875 > 0,85$!"
    }
   ],
   "vocabulary": [
@@ -83,7 +83,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "3/4 = 0,?5 — điền chữ số phần mười.",
+    "text": "$\\frac{3}{4}$ = 0,?5 — điền chữ số phần mười.",
     "answerKey": {
      "value": 7
     }
@@ -101,10 +101,10 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 18,
-    "narration": "So sánh: 1 3/4 (một và ba phần tư) với 1,8.",
+    "narration": "So sánh: 1 $\\frac{3}{4}$ (một và ba phần tư) với 1,8.",
     "display": {
      "type": "story_panel",
-     "caption": "xếp 0,85 · 7/8 · 4/5 · 0,9?"
+     "caption": "xếp 0,85 · $\\frac{7}{8}$ · $\\frac{4}{5}$ · 0,9?"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -285,10 +285,10 @@
  },
  "workedExample": {
   "title": "Lễ diễu hành bốn đội",
-  "problem": "Xếp theo thứ tự từ bé đến lớn: 0,85; 7/8; 4/5; 0,9.",
+  "problem": "Xếp theo thứ tự từ bé đến lớn: 0,85; $\\frac{7}{8}$; $\\frac{4}{5}$; 0,9.",
   "steps": [
    {
-    "show": "Bước 1 — Thay đồng phục thập phân: 4/5 = 0,8; 7/8 = 0,875 (0,85 và 0,9 giữ nguyên).",
+    "show": "Bước 1 — Thay đồng phục thập phân: $\\frac{4}{5}$ = 0,8; $\\frac{7}{8}$ = 0,875 (0,85 và 0,9 giữ nguyên).",
     "askBefore": {
      "format": "mcq",
      "text": "4/5 đổi thành:",
@@ -304,10 +304,10 @@
     }
    },
    {
-    "show": "Bước 2 — Xếp từng hàng: 0,8 < 0,85 < 0,875 < 0,9."
+    "show": "Bước 2 — Xếp từng hàng: $0,8 < 0,85 < 0,875 < 0,9$."
    },
    {
-    "show": "Bước 3 — Mặc lại áo gốc: 4/5 < 0,85 < 7/8 < 0,9.",
+    "show": "Bước 3 — Mặc lại áo gốc: $\\frac{4}{5}$ < 0,85 < $\\frac{7}{8}$ < 0,9.",
     "askAfter": {
      "format": "mcq",
      "text": "1 3/4 so với 1,8:",
@@ -336,7 +336,7 @@
      "id": "P1",
      "format": "mcq",
      "sourceItem": "ITEM:KSN5Q1.B17.LT5",
-     "text": "So sánh: 1 3/4 (một và ba phần tư) với 1,8.",
+     "text": "So sánh: 1 $\\frac{3}{4}$ (một và ba phần tư) với 1,8.",
      "choices": [
       "1 3/4 < 1,8",
       "1 3/4 > 1,8",
@@ -349,7 +349,7 @@
       "Đổi hỗn số về thập phân: 3/4 = ?",
       "1,75 so 1,8 từng hàng."
      ],
-     "solutionNarrative": "1 3/4 = 1,75 < 1,8.",
+     "solutionNarrative": "1 $\\frac{3}{4}$ = $1,75 < 1,8$.",
      "teaches": [
       "K1",
       "K2"
@@ -368,7 +368,7 @@
      "id": "P2",
      "format": "lst",
      "sourceItem": "ITEM:KSN5Q1.B17.LT7",
-     "text": "Xếp theo thứ tự từ bé đến lớn: 0,85; 7/8; 4/5; 0,9.",
+     "text": "Xếp theo thứ tự từ bé đến lớn: 0,85; $\\frac{7}{8}$; $\\frac{4}{5}$; 0,9.",
      "answerKey": {
       "values": [
        "4/5",
@@ -383,7 +383,7 @@
       "Thay đồng phục thập phân hết.",
       "4/5 = 0,8; 7/8 = 0,875."
      ],
-     "solutionNarrative": "0,8 < 0,85 < 0,875 < 0,9 → 4/5 < 0,85 < 7/8 < 0,9.",
+     "solutionNarrative": "$0,8 < 0,85 < 0,875 < 0,9$ → $\\frac{4}{5}$ < 0,85 < $\\frac{7}{8}$ < 0,9.",
      "teaches": [
       "K1",
       "K2",
@@ -395,7 +395,7 @@
     {
      "id": "P3",
      "format": "lst",
-     "text": "Xếp từ bé đến lớn: 1/2; 0,45; 3/4; 0,7.",
+     "text": "Xếp từ bé đến lớn: $\\frac{1}{2}$; 0,45; $\\frac{3}{4}$; 0,7.",
      "answerKey": {
       "values": [
        "0,45",
@@ -410,7 +410,7 @@
       "1/2 = 0,5; 3/4 = 0,75.",
       "Xếp rồi mặc lại áo gốc."
      ],
-     "solutionNarrative": "0,45 < 0,5 < 0,7 < 0,75 → 0,45 < 1/2 < 0,7 < 3/4.",
+     "solutionNarrative": "$0,45 < 0,5 < 0,7 < 0,75$ → 0,45 < $\\frac{1}{2}$ < $0,7 < 3$/4.",
      "teaches": [
       "K1",
       "K2",
@@ -441,7 +441,7 @@
    {
     "id": "A1",
     "format": "lst",
-    "text": "Xếp từ bé đến lớn: 0,85; 7/8; 4/5; 0,9.",
+    "text": "Xếp từ bé đến lớn: 0,85; $\\frac{7}{8}$; $\\frac{4}{5}$; 0,9.",
     "answerKey": {
      "values": [
       "4/5",
@@ -497,7 +497,7 @@
   "flashcards": [
    {
     "front": "Xếp dãy trộn hỗn số – phân số – thập phân thế nào? Tủ đồ quen?",
-    "back": "THAY MỘT ĐỒNG PHỤC (thường thập phân) → xếp từng hàng → mặc lại áo gốc. Tủ: 1/2=0,5 · 1/4=0,25 · 3/4=0,75 · 1/5=0,2 · 4/5=0,8 · 7/8=0,875 · 1/8=0,125; hỗn số cộng phần nguyên (1¾ = 1,75)."
+    "back": "THAY MỘT ĐỒNG PHỤC (thường thập phân) → xếp từng hàng → mặc lại áo gốc. Tủ: $\\frac{1}{2}$=0,5 · $\\frac{1}{4}$=0,25 · $\\frac{3}{4}$=0,75 · $\\frac{1}{5}$=0,2 · $\\frac{4}{5}$=0,8 · $\\frac{7}{8}$=0,875 · $\\frac{1}{8}$=0,125; hỗn số cộng phần nguyên (1¾ = 1,75)."
    }
   ],
   "schedule": [
@@ -508,7 +508,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con học chiến lược một-đồng-phục: đổi cả dãy trộn về thập phân, xếp từng hàng, trả về dạng gốc. Con đạt {score}/3.",
-  "homeActivity": "Đố tủ đồ nhanh khi đi đường: '3/4 là bao nhiêu? 7/8?' — con bật 0,75 và 0,875 trong 3 giây là đạt.",
+  "homeActivity": "Đố tủ đồ nhanh khi đi đường: '3/4 là bao nhiêu? $\\frac{7}{8}$?' — con bật 0,75 và 0,875 trong 3 giây là đạt.",
   "watchFor": "Nếu con so chéo dạng bằng cảm giác — yêu cầu bước thay đồng phục ra giấy trước (S2)."
  },
  "$schema": "digital-lesson/v2-micro",

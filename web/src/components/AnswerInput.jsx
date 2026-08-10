@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Chu from './Chu.jsx';
 import { checkAnswer, inputCount, answerBrief, answerFields, answerMode } from '../lib/flow.js';
 import AnswerFields, { PickRow } from './AnswerFields.jsx';
 
@@ -62,7 +63,7 @@ export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra
           </>
         ) : (
           <div className="rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
-            <b>Lời giải mẫu:</b> {res.expected || item.solutionNarrative}
+            <b>Lời giải mẫu:</b> <Chu t={res.expected || item.solutionNarrative} />
             {autoAdvance && <p className="mt-1.5 text-[13px] text-mute">Con so với cách làm của mình nhé.</p>}
           </div>
         )}
@@ -82,7 +83,7 @@ export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra
           res.mode === 'selfcheck' ? 'border-teal bg-teal-pale'
             : res.ok ? 'border-teal bg-teal-pale text-teal-dark' : 'border-alert bg-alert-pale text-alert'}`}>
           {res.mode === 'selfcheck' ? <><b>Lời giải mẫu:</b> {res.expected}</>
-            : res.ok ? <>🎉 Đúng rồi! {item.solutionNarrative || ''}</>
+            : res.ok ? <>🎉 Đúng rồi! <Chu t={item.solutionNarrative || ''} /></>
             : <>Chưa đúng — con chọn/sửa lại rồi bấm {submitLabel} lần nữa nhé.</>}
         </div>
       )}

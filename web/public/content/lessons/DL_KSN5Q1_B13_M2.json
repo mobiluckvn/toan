@@ -31,7 +31,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con xử được SỐ GẦN TRÒN: a × 99 = a × 100 − a (trừ MỘT LẦN CHÍNH NÓ, không trừ 99); cộng kiểu mượn – trả với sổ nợ (4,98 + 3,97 = 9 − 0,05); và ghép cặp phần thập phân bù nhau cho tròn chục.",
+  "text": "Con xử được SỐ GẦN TRÒN: a × 99 = a × 100 − a (trừ MỘT LẦN CHÍNH NÓ, không trừ 99); cộng kiểu mượn – trả với sổ nợ ($4,98 + 3,97 = 9 - 0,05$); và ghép cặp phần thập phân bù nhau cho tròn chục.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
   "kidText": "Nhân với 99 thì lấy nhân 100 rồi trừ đi một lần chính nó. Cộng số gần tròn thì mượn cho tròn, nhớ trả cho đủ."
  },
@@ -39,38 +39,38 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Nhân số gần tròn: a × 99 = a × 100 − a (vì 99 = 100 − 1: một trăm lần a bớt đi MỘT lần a); a × 101 = a × 100 + a."
+    "text": "Nhân số gần tròn: a × 99 = a × 100 − a (vì $99 = 100 - 1$: một trăm lần a bớt đi MỘT lần a); a × 101 = a × 100 + a."
    },
    {
     "id": "K2",
-    "text": "Cộng số gần tròn kiểu MƯỢN – TRẢ: làm tròn lên để cộng nhanh, nhưng lập SỔ NỢ ngay khi mượn — cuối bài trả đủ: 4,98 + 3,97 = (5 + 4) − (0,02 + 0,03) = 9 − 0,05."
+    "text": "Cộng số gần tròn kiểu MƯỢN – TRẢ: làm tròn lên để cộng nhanh, nhưng lập SỔ NỢ ngay khi mượn — cuối bài trả đủ: $4,98 + 3,97$ = ($5 + 4$) − ($0,02 + 0,03$) = $9 - 0,05$."
    },
    {
     "id": "K3",
-    "text": "Ghép cặp phần thập phân BÙ NHAU: soi các đuôi cộng nhau tròn (0,7 + 0,3; 0,8 + 0,2) để ghép từng cặp tròn chục rồi cộng dồn."
+    "text": "Ghép cặp phần thập phân BÙ NHAU: soi các đuôi cộng nhau tròn ($0,7 + 0,3$; $0,8 + 0,2$) để ghép từng cặp tròn chục rồi cộng dồn."
    },
    {
     "id": "K4",
-    "text": "Viết RÕ phép tách một dòng trước khi tính (99 = 100 − 1; mượn 0,02 ghi nợ 0,02) — dòng tách là dây bảo hiểm chống trừ nhầm, quên trả."
+    "text": "Viết RÕ phép tách một dòng trước khi tính ($99 = 100 - 1$; mượn 0,02 ghi nợ 0,02) — dòng tách là dây bảo hiểm chống trừ nhầm, quên trả."
    }
   ],
   "mechanism": "Hình ảnh brand: CỬA HÀNG TẠP HÓA LÀM TRÒN. Món 99 nghìn? Cứ đưa tờ 100 — chủ quán thối lại đúng MỘT nghìn: mua 99 lần món a chính là 100 lần a rồi nhận lại MỘT LẦN a (không phải nhận lại 99!). Còn cộng 4,98 với 3,97: con MƯỢN cho tròn — mượn 0,02 thành 5, mượn 0,03 thành 4 — nhưng chủ nợ Su Kem ghi SỔ NỢ từng khoản: cộng xong 9 phải TRẢ đủ 0,05. Mượn mà quên trả là Cáo Đề cười khà: 9 với 8,95 khác nhau đấy!",
   "canonicalExamples": [
    {
     "case": "nhân 99 (ca bẫy 1)",
-    "problem": "Tính bằng cách thuận tiện: 4,3 × 99.",
+    "problem": "Tính bằng cách thuận tiện: $4,3  \\times  99$.",
     "solution": "Tách 99 = 100 − 1: 4,3 × 99 = 4,3 × 100 − 4,3 × 1 = 430 − 4,3 = 425,7. (Trừ một lần 4,3 — không trừ 99!)",
     "why": "Ca đinh bẫy CĐ-13.2, đề A câu 2."
    },
    {
     "case": "mượn – trả (ca bẫy 2)",
-    "problem": "Tính bằng cách thuận tiện: 4,98 + 3,97.",
+    "problem": "Tính bằng cách thuận tiện: $4,98 + 3,97$.",
     "solution": "Mượn: 4,98 → 5 (nợ 0,02); 3,97 → 4 (nợ 0,03). Cộng: 5 + 4 = 9; trả nợ: 9 − 0,05 = 8,95.",
     "why": "Ca đinh bẫy CĐ-13.3, đề A câu 4."
    },
    {
     "case": "cặp bù nhau (ca ghép tròn)",
-    "problem": "Tính: 1,7 + 2,8 + 8,3 + 7,2.",
+    "problem": "Tính: $1,7 + 2,8 + 8,3 + 7,2$.",
     "solution": "Soi đuôi bù: 0,7 + 0,3 và 0,8 + 0,2 → (1,7 + 8,3) + (2,8 + 7,2) = 10 + 10 = 20.",
     "why": "ghép cặp tròn chục."
    }
@@ -78,16 +78,16 @@
   "numberRange": "Lớp 5: nhân 99 / 101; số thập phân 2 chữ số phần thập phân; tổng đến 500.",
   "misconceptions": [
    {
-    "wrong": "4,3 × 99 = 430 − 99 = 331 (tách được 100 rồi hào phóng trừ luôn 99).",
+    "wrong": "$4,3  \\times  99 = 430 - 99 = 331$ (tách được 100 rồi hào phóng trừ luôn 99).",
     "signal": "Số bị trừ là 99 thay vì chính thừa số a.",
-    "fix": "viết rõ dòng tách: 99 = 100 − 1, nên trừ MỘT LẦN a: 430 − 4,3.",
-    "counterExample": "Thử lùi: 425,7 : 99 khoảng 4,3 ✓ còn 331 : 99 khoảng 3,3 — lệch hẳn."
+    "fix": "viết rõ dòng tách: $99 = 100 - 1$, nên trừ MỘT LẦN a: $430 - 4,3$.",
+    "counterExample": "Thử lùi: $425,7 : 99$ khoảng 4,3 ✓ còn $331 : 99$ khoảng 3,3 — lệch hẳn."
    },
    {
-    "wrong": "Mượn mà quên trả: 4,98 + 3,97 khoảng \"5 + 4 = 9, xong!\".",
+    "wrong": "Mượn mà quên trả: $4,98 + 3,97$ khoảng \"$5 + 4 = 9$, xong!\".",
     "signal": "Đáp tròn trịa đúng bằng tổng hai số làm tròn.",
-    "fix": "lập sổ nợ ngay khi mượn: nợ 0,02 + 0,03 = 0,05; đáp 9 − 0,05 = 8,95.",
-    "counterExample": "Cộng cột dọc kiểm: 4,98 + 3,97 = 8,95 ≠ 9."
+    "fix": "lập sổ nợ ngay khi mượn: nợ $0,02 + 0,03 = 0,05$; đáp $9 - 0,05 = 8,95$.",
+    "counterExample": "Cộng cột dọc kiểm: $4,98 + 3,97 = 8,95$ ≠ 9."
    }
   ],
   "vocabulary": [
@@ -104,7 +104,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "4,3 × 100 = ?",
+    "text": "$4,3  \\times  100$ = ?",
     "answerKey": {
      "value": 430
     }
@@ -122,10 +122,10 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Tính bằng cách thuận tiện: 4,3 × 99.",
+    "narration": "Tính bằng cách thuận tiện: $4,3  \\times  99$.",
     "display": {
      "type": "story_panel",
-     "caption": "430 − 99??"
+     "caption": "$430 - 99$??"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -164,7 +164,7 @@
     "estSeconds": 16,
     "item": {
      "format": "num",
-     "text": "Tính thuận tiện: 6,2 × 101 = ? (101 = 100 + 1)",
+     "text": "Tính thuận tiện: $6,2  \\times  101$ = ? ($101 = 100 + 1$)",
      "answerKey": {
       "value": 626.2
      },
@@ -184,7 +184,7 @@
      "K2",
      "K3"
     ],
-    "narration": "Quầy cộng nhanh: 4,98 cộng 3,97. Mượn cho tròn — 4,98 mượn 0,02 thành 5; 3,97 mượn 0,03 thành 4 — nhưng Su Kem mở SỔ NỢ ghi từng khoản! Cộng: 9. Trả nợ: 0,02 cộng 0,03 là 0,05 — đáp 8,95. Mượn quên trả là thành 9 — sai ngay! Còn dãy 1,7 + 2,8 + 8,3 + 7,2: soi đuôi bù nhau — bảy với ba, tám với hai — ghép hai cặp tròn: 10 cộng 10 bằng 20!",
+    "narration": "Quầy cộng nhanh: 4,98 cộng 3,97. Mượn cho tròn — 4,98 mượn 0,02 thành 5; 3,97 mượn 0,03 thành 4 — nhưng Su Kem mở SỔ NỢ ghi từng khoản! Cộng: 9. Trả nợ: 0,02 cộng 0,03 là 0,05 — đáp 8,95. Mượn quên trả là thành 9 — sai ngay! Còn dãy $1,7 + 2,8 + 8,3 + 7,2$: soi đuôi bù nhau — bảy với ba, tám với hai — ghép hai cặp tròn: 10 cộng 10 bằng 20!",
     "display": {
      "type": "debt_ledger_interactive",
      "spec": {
@@ -301,10 +301,10 @@
  },
  "workedExample": {
   "title": "Phiên chợ hai quầy",
-  "problem": "Tính bằng cách thuận tiện: (a) 4,3 × 99; (b) 4,98 + 3,97.",
+  "problem": "Tính bằng cách thuận tiện: (a) $4,3  \\times  99$; (b) $4,98 + 3,97$.",
   "steps": [
    {
-    "show": "Bước 1 — Quầy nhân: dòng tách 99 = 100 − 1 → 4,3 × 99 = 4,3 × 100 − 4,3.",
+    "show": "Bước 1 — Quầy nhân: dòng tách $99 = 100 - 1$ → $4,3  \\times  99 = 4,3  \\times  100 - 4,3$.",
     "askBefore": {
      "format": "mcq",
      "text": "Trừ đi bao nhiêu?",
@@ -320,10 +320,10 @@
     }
    },
    {
-    "show": "Bước 2 — Tính: 430 − 4,3 = 425,7."
+    "show": "Bước 2 — Tính: $430 - 4,3 = 425,7$."
    },
    {
-    "show": "Bước 3 — Quầy cộng: mượn 0,02 và 0,03 (sổ nợ 0,05): 5 + 4 = 9 → 9 − 0,05 = 8,95.",
+    "show": "Bước 3 — Quầy cộng: mượn 0,02 và 0,03 (sổ nợ 0,05): $5 + 4 = 9$ → $9 - 0,05 = 8,95$.",
     "askAfter": {
      "format": "num",
      "text": "Sổ nợ tổng cộng bao nhiêu? (phần trăm)",
@@ -347,7 +347,7 @@
      "id": "P1",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B13.LT4",
-     "text": "Tính bằng cách thuận tiện: 4,3 × 99.",
+     "text": "Tính bằng cách thuận tiện: $4,3  \\times  99$.",
      "answerKey": {
       "value": 425.7
      },
@@ -355,7 +355,7 @@
       "99 = 100 − 1.",
       "430 trừ MỘT lần 4,3."
      ],
-     "solutionNarrative": "4,3 × 100 − 4,3 = 425,7.",
+     "solutionNarrative": "$4,3  \\times  100 - 4,3 = 425,7$.",
      "teaches": [
       "K1",
       "K4"
@@ -372,7 +372,7 @@
      "id": "P2",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B13.LT5",
-     "text": "Tính bằng cách thuận tiện: 4,98 + 3,97.",
+     "text": "Tính bằng cách thuận tiện: $4,98 + 3,97$.",
      "answerKey": {
       "value": 8.95
      },
@@ -380,7 +380,7 @@
       "Mượn 0,02 và 0,03 — ghi sổ nợ!",
       "9 − 0,05."
      ],
-     "solutionNarrative": "(5 + 4) − (0,02 + 0,03) = 8,95.",
+     "solutionNarrative": "($5 + 4$) − ($0,02 + 0,03$) = 8,95.",
      "teaches": [
       "K2",
       "K4"
@@ -392,7 +392,7 @@
      "id": "P3",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B13.LT6",
-     "text": "Tính bằng cách thuận tiện: 1,7 + 2,8 + 8,3 + 7,2.",
+     "text": "Tính bằng cách thuận tiện: $1,7 + 2,8 + 8,3 + 7,2$.",
      "answerKey": {
       "value": 20
      },
@@ -400,7 +400,7 @@
       "Soi đuôi bù nhau: 0,7 + 0,3; 0,8 + 0,2.",
       "(1,7 + 8,3) + (2,8 + 7,2)."
      ],
-     "solutionNarrative": "10 + 10 = 20 — ghép cặp tròn chục.",
+     "solutionNarrative": "$10 + 10 = 20$ — ghép cặp tròn chục.",
      "teaches": [
       "K3"
      ]
@@ -410,7 +410,7 @@
     {
      "id": "P4",
      "format": "tf",
-     "text": "(Đúng/Sai?) 7,6 × 101 = 760 + 101 = 861.",
+     "text": "(Đúng/Sai?) $7,6  \\times  101 = 760 + 101 = 861$.",
      "answerKey": {
       "value": false,
       "note": "Cộng MỘT lần 7,6: 760 + 7,6 = 767,6."
@@ -448,7 +448,7 @@
     "id": "A1",
     "format": "tf",
     "sourceItem": "ITEM:KSN5Q1.B13.QZ2",
-    "text": "(Đúng/Sai?) a × 99 = a × 100 − 99.",
+    "text": "(Đúng/Sai?) a × 99 = a × $100 - 99$.",
     "answerKey": {
      "value": false
     },
@@ -461,7 +461,7 @@
     "id": "A2",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B13.QZ5",
-    "text": "4,98 + 3,97 = 9 − ?",
+    "text": "$4,98 + 3,97 = 9$ − ?",
     "choices": [
      "0,05",
      "0,02",
@@ -478,7 +478,7 @@
    {
     "id": "A3",
     "format": "num",
-    "text": "Tính thuận tiện: 2,5 × 99 = ?",
+    "text": "Tính thuận tiện: $2,5  \\times  99$ = ?",
     "answerKey": {
      "value": 247.5
     },
@@ -492,7 +492,7 @@
   "flashcards": [
    {
     "front": "Nhân 99 / 101 tách sao? Cộng số gần tròn theo luật gì?",
-    "back": "a × 99 = a × 100 − a (trừ MỘT lần chính nó); a × 101 = a × 100 + a. Cộng: MƯỢN cho tròn — ghi SỔ NỢ — TRẢ đủ cuối bài (4,98 + 3,97 = 9 − 0,05 = 8,95). Đuôi bù nhau thì ghép cặp tròn."
+    "back": "a × 99 = a × 100 − a (trừ MỘT lần chính nó); a × 101 = a × 100 + a. Cộng: MƯỢN cho tròn — ghi SỔ NỢ — TRẢ đủ cuối bài ($4,98 + 3,97 = 9 - 0,05 = 8,95$). Đuôi bù nhau thì ghép cặp tròn."
    }
   ],
   "schedule": [
@@ -503,7 +503,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con học nhân 99 kiểu tờ-100-thối-một và cộng mượn – trả với sổ nợ. Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Đi chợ thật: món 99 nghìn đưa tờ 100 — hỏi con 'mua 5 món kiểu này hết bao nhiêu?' (5 × 100 − 5 = 495 nghìn) là đạt.",
+  "homeActivity": "Đi chợ thật: món 99 nghìn đưa tờ 100 — hỏi con 'mua 5 món kiểu này hết bao nhiêu?' ($5  \\times  100 - 5 = 495$ nghìn) là đạt.",
   "watchFor": "Nếu con trừ 99 thay vì trừ một lần thừa số — diễn lại cảnh thối tiền (S2); nếu quên trả nợ — mở sổ nợ (S3) cùng con."
  },
  "$schema": "digital-lesson/v2-micro",
