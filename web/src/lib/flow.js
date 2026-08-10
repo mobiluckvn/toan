@@ -748,7 +748,7 @@ export function buildWorkedSteps(we) {
   const out = [];
   (we?.steps || []).forEach((st, idx) => {
     if (st.askBefore) out.push({ kind: 'ask', at: 'before', stepIndex: idx, item: st.askBefore });
-    out.push({ kind: 'show', stepIndex: idx, text: st.show });
+    out.push({ kind: 'show', stepIndex: idx, text: st.show, phan: st.phan || 'giai' });
     if (st.askAfter) out.push({ kind: 'ask', at: 'after', stepIndex: idx, item: st.askAfter });
   });
   return out;

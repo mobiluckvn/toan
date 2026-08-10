@@ -96,12 +96,12 @@ export default function PracticeItem({ item: base, level, figure, figureGiai, on
         )}
 
         {hs.show.map((h, i) => (
-          <div key={i} className="step0-box text-[14.5px]">💡 {h}</div>
+          <div key={i} className="step0-box text-[14.5px]">💡 <Chu t={h} /></div>
         ))}
 
         {hs.reveal && !res?.ok && (
           <div className="mt-2 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
-            <b>Đáp án:</b> {res?.expected}
+            <b>Đáp án:</b> <Chu t={res?.expected} />
             {item.solutionNarrative && <div className="mt-1"><Chu t={item.solutionNarrative} /></div>}
             <Figure fig={figureGiai} />
           </div>

@@ -121,67 +121,80 @@
   "problem": "Ba bạn An, Bình, Cường có tất cả 100 viên bi. An hơn Bình 5 viên, Bình hơn Cường 10 viên. Hỏi mỗi bạn có bao nhiêu viên bi?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Tổng ba bạn: 100 viên",
+    "phan": "tomtat"
    },
    {
-    "show": "Tổng ba bạn: 100 viên"
+    "show": "An hơn Bình 5 viên; Bình hơn Cường 10 viên. Tìm số bi mỗi bạn.",
+    "phan": "tomtat"
    },
    {
-    "show": "An hơn Bình 5 viên; Bình hơn Cường 10 viên. Tìm số bi mỗi bạn."
+    "show": "Hai hiệu xếp thành \"bậc thang\": An trên Bình, Bình trên Cường.",
+    "phan": "tomtat"
    },
    {
-    "show": "Hai hiệu xếp thành \"bậc thang\": An trên Bình, Bình trên Cường."
+    "show": "Sơ đồ (quy về người bé nhất)",
+    "phan": "tomtat"
    },
    {
-    "show": "Sơ đồ (quy về người bé nhất)"
+    "show": "Cường: |———————|",
+    "phan": "tomtat"
    },
    {
-    "show": "Cường: |———————|"
+    "show": "Bình: |———————|—10—|",
+    "phan": "tomtat"
    },
    {
-    "show": "Bình: |———————|—10—|"
+    "show": "An: |———————|—10—|—5—|",
+    "phan": "tomtat"
    },
    {
-    "show": "An: |———————|—10—|—5—|"
+    "show": "An hơn Cường: $10 + 5 = 15$ — cộng dồn bậc thang, chỗ dễ nhầm nhất.",
+    "phan": "tomtat"
    },
    {
-    "show": "An hơn Cường: $10 + 5 = 15$ — cộng dồn bậc thang, chỗ dễ nhầm nhất."
+    "show": "An hơn Cường số viên bi là: $10 + 5 = 15$ (viên)",
+    "phan": "giai"
    },
    {
-    "show": "Bài giải"
+    "show": "Nếu cắt phần hơn của An và Bình thì ba bạn đều bằng Cường, khi đó tổng còn",
+    "phan": "giai"
    },
    {
-    "show": "An hơn Cường số viên bi là: $10 + 5 = 15$ (viên)"
+    "show": "$100 - 15 - 10 = 75$ (viên)",
+    "phan": "giai"
    },
    {
-    "show": "Nếu cắt phần hơn của An và Bình thì ba bạn đều bằng Cường, khi đó tổng còn"
+    "show": "Số bi của Cường là: $75 : 3 = 25$ (viên)",
+    "phan": "giai"
    },
    {
-    "show": "$100 - 15 - 10 = 75$ (viên)"
+    "show": "Số bi của Bình là: $25 + 10 = 35$ (viên)",
+    "phan": "giai"
    },
    {
-    "show": "Số bi của Cường là: $75 : 3 = 25$ (viên)"
+    "show": "Số bi của An là: $35 + 5 = 40$ (viên)",
+    "phan": "giai"
    },
    {
-    "show": "Số bi của Bình là: $25 + 10 = 35$ (viên)"
+    "show": "Câu \"nếu cắt phần hơn... đều bằng Cường\" là căn cứ của phép chia 3.",
+    "phan": "giai"
    },
    {
-    "show": "Số bi của An là: $35 + 5 = 40$ (viên)"
+    "show": "Đáp số: An 40 viên ; Bình 35 viên ; Cường 25 viên.",
+    "phan": "dapso"
    },
    {
-    "show": "Câu \"nếu cắt phần hơn... đều bằng Cường\" là căn cứ của phép chia 3."
+    "show": "Đáp số đủ ba bạn.",
+    "phan": "ghichu"
    },
    {
-    "show": "Đáp số: An 40 viên ; Bình 35 viên ; Cường 25 viên."
+    "show": "Thử lại: $40 + 35 + 25 = 100$ ✓ ; $40 - 35 = 5$ ✓ ; $35 - 25 = 10$ ✓",
+    "phan": "thulai"
    },
    {
-    "show": "Đáp số đủ ba bạn."
-   },
-   {
-    "show": "Thử lại: $40 + 35 + 25 = 100$ ✓ ; $40 - 35 = 5$ ✓ ; $35 - 25 = 10$ ✓"
-   },
-   {
-    "show": "Ba dữ kiện của đề — soi đủ cả ba, không bỏ sót manh mối nào."
+    "show": "Ba dữ kiện của đề — soi đủ cả ba, không bỏ sót manh mối nào.",
+    "phan": "thulai"
    }
   ]
  },

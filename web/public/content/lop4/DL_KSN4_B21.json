@@ -121,58 +121,68 @@
   "problem": "Hai kệ sách có tất cả 120 cuốn. Nếu chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ có số sách bằng nhau. Hỏi lúc đầu mỗi kệ có bao nhiêu cuốn sách?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Tổng: 120 cuốn",
+    "phan": "tomtat"
    },
    {
-    "show": "Tổng: 120 cuốn"
+    "show": "Chuyển 5 cuốn A → B thì bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
+    "phan": "tomtat"
    },
    {
-    "show": "Chuyển 5 cuốn A → B thì bằng nhau. Tìm số sách mỗi kệ lúc đầu."
+    "show": "Chép nguyên chi tiết \"chuyển... thì bằng\" — chìa khóa của bài.",
+    "phan": "tomtat"
    },
    {
-    "show": "Chép nguyên chi tiết \"chuyển... thì bằng\" — chìa khóa của bài."
+    "show": "Mô hình (hiệu ẩn sau cú chuyển)",
+    "phan": "tomtat"
    },
    {
-    "show": "Mô hình (hiệu ẩn sau cú chuyển)"
+    "show": "Chuyển 5 cuốn: kệ A bớt 5, kệ B thêm 5.",
+    "phan": "tomtat"
    },
    {
-    "show": "Chuyển 5 cuốn: kệ A bớt 5, kệ B thêm 5."
+    "show": "Hai kệ bằng nhau → lúc đầu kệ A hơn kệ B: $5  \\times  2 = 10$ (cuốn).",
+    "phan": "tomtat"
    },
    {
-    "show": "Hai kệ bằng nhau → lúc đầu kệ A hơn kệ B: $5  \\times  2 = 10$ (cuốn)."
+    "show": "Suy ra hiệu thật 10 NGAY ở phần mô hình — trái tim của bài.",
+    "phan": "tomtat"
    },
    {
-    "show": "Suy ra hiệu thật 10 NGAY ở phần mô hình — trái tim của bài."
+    "show": "Vì chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ bằng nhau",
+    "phan": "giai"
    },
    {
-    "show": "Bài giải"
+    "show": "Nên lúc đầu kệ A hơn kệ B: $5  \\times  2 = 10$ (cuốn)",
+    "phan": "giai"
    },
    {
-    "show": "Vì chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ bằng nhau"
+    "show": "Số sách kệ A lúc đầu là: ($120 + 10$) : $2 = 65$ (cuốn)",
+    "phan": "giai"
    },
    {
-    "show": "Nên lúc đầu kệ A hơn kệ B: $5  \\times  2 = 10$ (cuốn)"
+    "show": "Số sách kệ B lúc đầu là: $120 - 65 = 55$ (cuốn)",
+    "phan": "giai"
    },
    {
-    "show": "Số sách kệ A lúc đầu là: ($120 + 10$) : $2 = 65$ (cuốn)"
+    "show": "Câu \"vì... nên\" nêu căn cứ của phép nhân đôi — không được viết $5  \\times  2$ khơi khơi.",
+    "phan": "giai"
    },
    {
-    "show": "Số sách kệ B lúc đầu là: $120 - 65 = 55$ (cuốn)"
+    "show": "Đáp số: kệ A 65 cuốn ; kệ B 55 cuốn.",
+    "phan": "dapso"
    },
    {
-    "show": "Câu \"vì... nên\" nêu căn cứ của phép nhân đôi — không được viết $5  \\times  2$ khơi khơi."
+    "show": "Đáp số đủ hai kệ.",
+    "phan": "ghichu"
    },
    {
-    "show": "Đáp số: kệ A 65 cuốn ; kệ B 55 cuốn."
+    "show": "Thử lại: $65 - 5 = 60$ ; $55 + 5 = 60$ — hai kệ bằng nhau đúng như đề ✓",
+    "phan": "thulai"
    },
    {
-    "show": "Đáp số đủ hai kệ."
-   },
-   {
-    "show": "Thử lại: $65 - 5 = 60$ ; $55 + 5 = 60$ — hai kệ bằng nhau đúng như đề ✓"
-   },
-   {
-    "show": "Thử theo KỊCH BẢN của đề — diễn lại cú chuyển trên đáp số."
+    "show": "Thử theo KỊCH BẢN của đề — diễn lại cú chuyển trên đáp số.",
+    "phan": "thulai"
    }
   ]
  },

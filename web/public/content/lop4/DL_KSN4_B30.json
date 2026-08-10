@@ -121,61 +121,72 @@
   "problem": "Vừa gà vừa chó có tất cả 36 con và 100 cái chân. Hỏi có bao nhiêu con gà, bao nhiêu con chó?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Gà + chó: 36 con; tổng số chân: 100 cái.",
+    "phan": "tomtat"
    },
    {
-    "show": "Gà + chó: 36 con; tổng số chân: 100 cái."
+    "show": "Gà 2 chân, chó 4 chân. Tìm số con mỗi loại.",
+    "phan": "tomtat"
    },
    {
-    "show": "Gà 2 chân, chó 4 chân. Tìm số con mỗi loại."
+    "show": "Ghi rõ \"mệnh giá chân\" từng loại — dữ liệu then chốt.",
+    "phan": "tomtat"
    },
    {
-    "show": "Ghi rõ \"mệnh giá chân\" từng loại — dữ liệu then chốt."
+    "show": "Mô hình (giả thiết tạm)",
+    "phan": "tomtat"
    },
    {
-    "show": "Mô hình (giả thiết tạm)"
+    "show": "Giả sử cả 36 con đều là gà → tính được số chân \"tạm\".",
+    "phan": "tomtat"
    },
    {
-    "show": "Giả sử cả 36 con đều là gà → tính được số chân \"tạm\"."
+    "show": "Phần thiếu so với 100 là do các con chó bị tính hụt chân.",
+    "phan": "tomtat"
    },
    {
-    "show": "Phần thiếu so với 100 là do các con chó bị tính hụt chân."
+    "show": "Nêu rõ cái \"tạm\" và lý do phần lệch — linh hồn phương pháp.",
+    "phan": "tomtat"
    },
    {
-    "show": "Nêu rõ cái \"tạm\" và lý do phần lệch — linh hồn phương pháp."
+    "show": "Giả sử cả 36 con đều là gà, khi đó tổng số chân là: $36  \\times  2 = 72$ (cái)",
+    "phan": "giai"
    },
    {
-    "show": "Bài giải"
+    "show": "Số chân bị thiếu so với thực tế là: $100 - 72 = 28$ (cái)",
+    "phan": "giai"
    },
    {
-    "show": "Giả sử cả 36 con đều là gà, khi đó tổng số chân là: $36  \\times  2 = 72$ (cái)"
+    "show": "Mỗi con chó bị tính thiếu số chân là: $4 - 2 = 2$ (cái)",
+    "phan": "giai"
    },
    {
-    "show": "Số chân bị thiếu so với thực tế là: $100 - 72 = 28$ (cái)"
+    "show": "Số con chó là: $28 : 2 = 14$ (con)",
+    "phan": "giai"
    },
    {
-    "show": "Mỗi con chó bị tính thiếu số chân là: $4 - 2 = 2$ (cái)"
+    "show": "Số con gà là: $36 - 14 = 22$ (con)",
+    "phan": "giai"
    },
    {
-    "show": "Số con chó là: $28 : 2 = 14$ (con)"
+    "show": "Dòng \"mỗi con chó bị tính thiếu 2 cái\" giải thích phép chia — không được bỏ.",
+    "phan": "giai"
    },
    {
-    "show": "Số con gà là: $36 - 14 = 22$ (con)"
+    "show": "Đáp số: 22 con gà ; 14 con chó.",
+    "phan": "dapso"
    },
    {
-    "show": "Dòng \"mỗi con chó bị tính thiếu 2 cái\" giải thích phép chia — không được bỏ."
+    "show": "Đáp số đủ hai loại.",
+    "phan": "ghichu"
    },
    {
-    "show": "Đáp số: 22 con gà ; 14 con chó."
+    "show": "Thử lại: $22 + 14 = 36$ ✓ ; $22  \\times  2 + 14  \\times  4 = 44 + 56 = 100$ ✓",
+    "phan": "thulai"
    },
    {
-    "show": "Đáp số đủ hai loại."
-   },
-   {
-    "show": "Thử lại: $22 + 14 = 36$ ✓ ; $22  \\times  2 + 14  \\times  4 = 44 + 56 = 100$ ✓"
-   },
-   {
-    "show": "\"Đếm chân\" trên đáp số — khớp cả số con lẫn số chân."
+    "show": "\"Đếm chân\" trên đáp số — khớp cả số con lẫn số chân.",
+    "phan": "thulai"
    }
   ]
  },

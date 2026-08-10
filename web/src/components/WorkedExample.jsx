@@ -5,6 +5,22 @@ import AnswerInput from './AnswerInput.jsx';
 import Figure from './Figure.jsx';
 
 /** Ví dụ dẫn dắt: đi từng nhịp, có câu hỏi xen giữa — con làm cùng chứ không ngồi xem */
+/* Năm phần của một bài trình bày chuẩn. Màu đi theo VAI TRÒ: tóm tắt và phân
+   tích là chỗ NGHĨ (nền xám nhạt), bài giải là chỗ VIẾT (nền xanh), đáp số là
+   chỗ CHỐT (nền vàng) — bé liếc màu là biết đang ở khúc nào. */
+const TEN = {
+  tomtat: 'TÓM TẮT', phantich: 'PHÂN TÍCH', giai: 'BÀI GIẢI',
+  thulai: 'THỬ LẠI', dapso: 'ĐÁP SỐ', ghichu: 'NÓI THÊM',
+};
+const KIEU = {
+  tomtat:   { hop: 'border-line bg-soft', nhan: 'text-mute' },
+  phantich: { hop: 'border-line bg-soft', nhan: 'text-mute' },
+  giai:     { hop: 'border-teal bg-teal-pale', nhan: 'text-teal-dark' },
+  thulai:   { hop: 'border-line bg-white', nhan: 'text-mute' },
+  dapso:    { hop: 'border-gold bg-gold-pale', nhan: 'text-gold-dark' },
+  ghichu:   { hop: 'border-line bg-white', nhan: 'text-mute' },
+};
+
 export default function WorkedExample({ we, figure, onNext, onRecord }) {
   const seq = useMemo(() => buildWorkedSteps(we), [we]);
   const [k, setK] = useState(0);          // đã mở tới bước con thứ mấy
@@ -37,12 +53,33 @@ export default function WorkedExample({ we, figure, onNext, onRecord }) {
         </div>
         <Figure fig={figure} />
 
+        {/* Gom theo PHẦN rồi in tiêu đề — đúng thứ tự cô giáo dạy trình bày vào
+            vở: tóm tắt → phân tích → bài giải → thử lại → đáp số. Trước đây 1634
+            dòng bước chạy thành một cột chữ dài, bé không phân biệt được đâu là
+            suy nghĩ, đâu là bài làm. Tiêu đề chỉ hiện khi phần ấy ĐÃ có dòng nào
+            lộ ra, nếu không thì nó tiết lộ trước là sắp có phần "Đáp số". */}
         {(() => {
           const hien = shown.filter((s) => s.kind === 'show');
-          return hien.map((s, i) => (
-            <div key={i} ref={i === hien.length - 1 ? moiRef : null}
-                 className="mt-2.5 flex gap-2.5 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
-              <span className="font-bold text-teal-dark">▸</span><span><Chu t={s.text} /></span>
+          const cuoi = hien[hien.length - 1];
+          const nhom = [];
+          for (const s of hien) {
+            const p = s.phan || 'giai';
+            if (!nhom.length || nhom[nhom.length - 1].phan !== p) nhom.push({ phan: p, ds: [] });
+            nhom[nhom.length - 1].ds.push(s);
+          }
+          return nhom.map((g, gi) => (
+            <div key={gi} className="mt-3.5 first:mt-2.5">
+              <div className={`kicker ${KIEU[g.phan]?.nhan || 'text-mute'}`}>
+                {TEN[g.phan] || 'BÀI GIẢI'}
+              </div>
+              {g.ds.map((s, i) => (
+                <div key={i} ref={s === cuoi ? moiRef : null}
+                     className={`mt-1.5 flex gap-2.5 rounded-xl border-[1.5px] px-3.5 py-3 text-[15px] ${
+                       KIEU[g.phan]?.hop || KIEU.giai.hop}`}>
+                  <span className={`font-bold ${KIEU[g.phan]?.nhan || 'text-teal-dark'}`}>▸</span>
+                  <span><Chu t={s.text} /></span>
+                </div>
+              ))}
             </div>
           ));
         })()}

@@ -121,61 +121,72 @@
   "problem": "Để đánh số trang một cuốn sổ dày 250 trang, cần dùng tất cả bao nhiêu chữ số?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Sổ 250 trang, đánh số từ 1. Hỏi tổng số chữ số.",
+    "phan": "tomtat"
    },
    {
-    "show": "Sổ 250 trang, đánh số từ 1. Hỏi tổng số chữ số."
+    "show": "Đề ngắn nhưng vẫn tóm tắt — thói quen không bỏ.",
+    "phan": "tomtat"
    },
    {
-    "show": "Đề ngắn nhưng vẫn tóm tắt — thói quen không bỏ."
+    "show": "Mô hình (chia nhóm)",
+    "phan": "tomtat"
    },
    {
-    "show": "Mô hình (chia nhóm)"
+    "show": "Nhóm 1: trang 1 - 9 (số có 1 chữ số)",
+    "phan": "tomtat"
    },
    {
-    "show": "Nhóm 1: trang 1 - 9 (số có 1 chữ số)"
+    "show": "Nhóm 2: trang 10 - 99 (số có 2 chữ số)",
+    "phan": "tomtat"
    },
    {
-    "show": "Nhóm 2: trang 10 - 99 (số có 2 chữ số)"
+    "show": "Nhóm 3: trang 100 - 250 (số có 3 chữ số)",
+    "phan": "tomtat"
    },
    {
-    "show": "Nhóm 3: trang 100 - 250 (số có 3 chữ số)"
+    "show": "Chia nhóm theo ĐỘ DÀI số — trái tim của mô hình đếm chữ số.",
+    "phan": "tomtat"
    },
    {
-    "show": "Chia nhóm theo ĐỘ DÀI số — trái tim của mô hình đếm chữ số."
+    "show": "Từ trang 1 đến trang 9 có 9 trang, dùng: $9  \\times  1 = 9$ (chữ số)",
+    "phan": "giai"
    },
    {
-    "show": "Bài giải"
+    "show": "Từ trang 10 đến trang 99 có 90 trang, dùng: $90  \\times  2 = 180$ (chữ số)",
+    "phan": "giai"
    },
    {
-    "show": "Từ trang 1 đến trang 9 có 9 trang, dùng: $9  \\times  1 = 9$ (chữ số)"
+    "show": "Từ trang 100 đến trang 250 có: ($250 - 100$) + $1 = 151$ (trang)",
+    "phan": "giai"
    },
    {
-    "show": "Từ trang 10 đến trang 99 có 90 trang, dùng: $90  \\times  2 = 180$ (chữ số)"
+    "show": "Nhóm này dùng: $151  \\times  3 = 453$ (chữ số)",
+    "phan": "giai"
    },
    {
-    "show": "Từ trang 100 đến trang 250 có: ($250 - 100$) + $1 = 151$ (trang)"
+    "show": "Tổng số chữ số cần dùng là: $9 + 180 + 453 = 642$ (chữ số)",
+    "phan": "giai"
    },
    {
-    "show": "Nhóm này dùng: $151  \\times  3 = 453$ (chữ số)"
+    "show": "Mỗi nhóm hai dòng: đếm trang rồi nhân khẩu phần; dòng đếm 151 trang dùng đúng công thức +1.",
+    "phan": "giai"
    },
    {
-    "show": "Tổng số chữ số cần dùng là: $9 + 180 + 453 = 642$ (chữ số)"
+    "show": "Đáp số: 642 chữ số.",
+    "phan": "dapso"
    },
    {
-    "show": "Mỗi nhóm hai dòng: đếm trang rồi nhân khẩu phần; dòng đếm 151 trang dùng đúng công thức +1."
+    "show": "Đáp số kèm đơn vị \"chữ số\".",
+    "phan": "ghichu"
    },
    {
-    "show": "Đáp số: 642 chữ số."
+    "show": "Thử lại: $642 - 9 - 180 = 453$ ; $453 : 3 = 151$ trang → trang cuối $99 + 151 = 250$ ✓",
+    "phan": "thulai"
    },
    {
-    "show": "Đáp số kèm đơn vị \"chữ số\"."
-   },
-   {
-    "show": "Thử lại: $642 - 9 - 180 = 453$ ; $453 : 3 = 151$ trang → trang cuối $99 + 151 = 250$ ✓"
-   },
-   {
-    "show": "Soi bằng đường NGƯỢC (trừ dần) — xuôi ngược gặp nhau là chuẩn."
+    "show": "Soi bằng đường NGƯỢC (trừ dần) — xuôi ngược gặp nhau là chuẩn.",
+    "phan": "thulai"
    }
   ]
  },

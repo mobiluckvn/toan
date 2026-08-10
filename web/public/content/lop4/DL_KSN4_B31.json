@@ -121,61 +121,72 @@
   "problem": "Mua 3 bút và 2 vở hết 22 nghìn đồng. Mua 3 bút và 5 vở (cùng loại) hết 37 nghìn đồng. Tính giá tiền một chiếc bút, một quyển vở.",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Lần 1: 3 bút + 2 vở = 22 nghìn.",
+    "phan": "tomtat"
    },
    {
-    "show": "Lần 1: 3 bút + 2 vở = 22 nghìn."
+    "show": "Lần 2: 3 bút + 5 vở = 37 nghìn. Tìm giá mỗi món.",
+    "phan": "tomtat"
    },
    {
-    "show": "Lần 2: 3 bút + 5 vở = 37 nghìn. Tìm giá mỗi món."
+    "show": "Chép hai dữ kiện thẳng cột — phần chung \"3 bút\" lộ ra ngay.",
+    "phan": "tomtat"
    },
    {
-    "show": "Chép hai dữ kiện thẳng cột — phần chung \"3 bút\" lộ ra ngay."
+    "show": "Mô hình (phép khử)",
+    "phan": "tomtat"
    },
    {
-    "show": "Mô hình (phép khử)"
+    "show": "Hai lần mua chỉ khác nhau ở số vở",
+    "phan": "tomtat"
    },
    {
-    "show": "Hai lần mua chỉ khác nhau ở số vở"
+    "show": "→ phần tiền chênh là tiền của số vở chênh.",
+    "phan": "tomtat"
    },
    {
-    "show": "→ phần tiền chênh là tiền của số vở chênh."
+    "show": "Một câu nêu căn cứ của phép trừ hai hóa đơn.",
+    "phan": "tomtat"
    },
    {
-    "show": "Một câu nêu căn cứ của phép trừ hai hóa đơn."
+    "show": "Lần 2 mua nhiều hơn lần 1 số vở là: $5 - 2 = 3$ (quyển)",
+    "phan": "giai"
    },
    {
-    "show": "Bài giải"
+    "show": "Số tiền lần 2 nhiều hơn lần 1 là: $37 - 22 = 15$ (nghìn đồng)",
+    "phan": "giai"
    },
    {
-    "show": "Lần 2 mua nhiều hơn lần 1 số vở là: $5 - 2 = 3$ (quyển)"
+    "show": "Giá một quyển vở là: $15 : 3 = 5$ (nghìn đồng)",
+    "phan": "giai"
    },
    {
-    "show": "Số tiền lần 2 nhiều hơn lần 1 là: $37 - 22 = 15$ (nghìn đồng)"
+    "show": "Tiền mua 2 quyển vở lần 1 là: $5  \\times  2 = 10$ (nghìn đồng)",
+    "phan": "giai"
    },
    {
-    "show": "Giá một quyển vở là: $15 : 3 = 5$ (nghìn đồng)"
+    "show": "Giá một chiếc bút là: ($22 - 10$) : $3 = 4$ (nghìn đồng)",
+    "phan": "giai"
    },
    {
-    "show": "Tiền mua 2 quyển vở lần 1 là: $5  \\times  2 = 10$ (nghìn đồng)"
+    "show": "Khử xong tìm vở — rồi THAY ngược vào hóa đơn 1 để tìm bút.",
+    "phan": "giai"
    },
    {
-    "show": "Giá một chiếc bút là: ($22 - 10$) : $3 = 4$ (nghìn đồng)"
+    "show": "Đáp số: bút 4 nghìn đồng ; vở 5 nghìn đồng.",
+    "phan": "dapso"
    },
    {
-    "show": "Khử xong tìm vở — rồi THAY ngược vào hóa đơn 1 để tìm bút."
+    "show": "Đáp số đủ hai món, kèm đơn vị.",
+    "phan": "ghichu"
    },
    {
-    "show": "Đáp số: bút 4 nghìn đồng ; vở 5 nghìn đồng."
+    "show": "Thử lại: $3  \\times  4 + 2  \\times  5 = 22$ ✓ ; $3  \\times  4 + 5  \\times  5 = 37$ ✓",
+    "phan": "thulai"
    },
    {
-    "show": "Đáp số đủ hai món, kèm đơn vị."
-   },
-   {
-    "show": "Thử lại: $3  \\times  4 + 2  \\times  5 = 22$ ✓ ; $3  \\times  4 + 5  \\times  5 = 37$ ✓"
-   },
-   {
-    "show": "Thử trên CẢ HAI hóa đơn — mỗi tờ một con dấu."
+    "show": "Thử trên CẢ HAI hóa đơn — mỗi tờ một con dấu.",
+    "phan": "thulai"
    }
   ]
  },

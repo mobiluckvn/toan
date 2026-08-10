@@ -121,61 +121,72 @@
   "problem": "Từ ba tấm thẻ số 0 ; 2 ; 5, hãy lập tất cả các số có ba chữ số khác nhau chia hết cho 5.",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Thẻ: 0, 2, 5 — mỗi thẻ dùng một lần.",
+    "phan": "tomtat"
    },
    {
-    "show": "Thẻ: 0, 2, 5 — mỗi thẻ dùng một lần."
+    "show": "Lập các số có 3 chữ số chia hết cho 5.",
+    "phan": "tomtat"
    },
    {
-    "show": "Lập các số có 3 chữ số chia hết cho 5."
+    "show": "Ghi rõ \"mỗi thẻ dùng một lần\" — điều kiện KHÔNG LẶP của đề.",
+    "phan": "tomtat"
    },
    {
-    "show": "Ghi rõ \"mỗi thẻ dùng một lần\" — điều kiện KHÔNG LẶP của đề."
+    "show": "Mô hình (chốt đuôi trước)",
+    "phan": "tomtat"
    },
    {
-    "show": "Mô hình (chốt đuôi trước)"
+    "show": "Số chia hết cho 5 → chữ số tận cùng là 0 hoặc 5.",
+    "phan": "tomtat"
    },
    {
-    "show": "Số chia hết cho 5 → chữ số tận cùng là 0 hoặc 5."
+    "show": "Xét hai trường hợp theo đuôi.",
+    "phan": "tomtat"
    },
    {
-    "show": "Xét hai trường hợp theo đuôi."
+    "show": "Dấu hiệu chia hết biến bài lập số thành hai nhánh gọn gàng.",
+    "phan": "tomtat"
    },
    {
-    "show": "Dấu hiệu chia hết biến bài lập số thành hai nhánh gọn gàng."
+    "show": "Trường hợp đuôi là 0: hai thẻ 2 và 5 xếp vào hai vị trí đầu",
+    "phan": "giai"
    },
    {
-    "show": "Bài giải"
+    "show": "Được các số: 250 ; 520.",
+    "phan": "giai"
    },
    {
-    "show": "Trường hợp đuôi là 0: hai thẻ 2 và 5 xếp vào hai vị trí đầu"
+    "show": "Trường hợp đuôi là 5: còn thẻ 0 và 2; chữ số 0 không được đứng đầu",
+    "phan": "giai"
    },
    {
-    "show": "Được các số: 250 ; 520."
+    "show": "Nên chỉ được số: 205.",
+    "phan": "giai"
    },
    {
-    "show": "Trường hợp đuôi là 5: còn thẻ 0 và 2; chữ số 0 không được đứng đầu"
+    "show": "Vậy lập được ba số: 205 ; 250 ; 520.",
+    "phan": "giai"
    },
    {
-    "show": "Nên chỉ được số: 205."
+    "show": "Câu \"chữ số 0 không được đứng đầu\" là chốt lập luận — thiếu nó sẽ đếm thừa số 025.",
+    "phan": "giai"
    },
    {
-    "show": "Vậy lập được ba số: 205 ; 250 ; 520."
+    "show": "Đáp số: 205 ; 250 ; 520.",
+    "phan": "dapso"
    },
    {
-    "show": "Câu \"chữ số 0 không được đứng đầu\" là chốt lập luận — thiếu nó sẽ đếm thừa số 025."
+    "show": "Liệt kê đáp số cách nhau dấu chấm phẩy.",
+    "phan": "ghichu"
    },
    {
-    "show": "Đáp số: 205 ; 250 ; 520."
+    "show": "Thử lại: $205 : 5 = 41$ ✓ ; $250 : 5 = 50$ ✓ ; $520 : 5 = 104$ ✓",
+    "phan": "thulai"
    },
    {
-    "show": "Liệt kê đáp số cách nhau dấu chấm phẩy."
-   },
-   {
-    "show": "Thử lại: $205 : 5 = 41$ ✓ ; $250 : 5 = 50$ ✓ ; $520 : 5 = 104$ ✓"
-   },
-   {
-    "show": "Thử ĐỦ cả ba số — bài liệt kê phải soi từng phần tử."
+    "show": "Thử ĐỦ cả ba số — bài liệt kê phải soi từng phần tử.",
+    "phan": "thulai"
    }
   ]
  },

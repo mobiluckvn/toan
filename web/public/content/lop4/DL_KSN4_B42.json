@@ -121,52 +121,60 @@
   "problem": "Một ô tô đi đều, trong 3 giờ được 120 km. Hỏi với mức chạy đó, ô tô đi quãng đường 200 km hết bao nhiêu giờ?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "3 giờ: 120 km.",
+    "phan": "tomtat"
    },
    {
-    "show": "3 giờ: 120 km."
+    "show": "200 km: ? giờ.",
+    "phan": "tomtat"
    },
    {
-    "show": "200 km: ? giờ."
+    "show": "Tóm tắt hai dòng đối nhau — dạng rút về đơn vị hiện nguyên hình.",
+    "phan": "tomtat"
    },
    {
-    "show": "Tóm tắt hai dòng đối nhau — dạng rút về đơn vị hiện nguyên hình."
+    "show": "Mô hình (rút về đơn vị)",
+    "phan": "tomtat"
    },
    {
-    "show": "Mô hình (rút về đơn vị)"
+    "show": "Xe chạy đều → 3 giờ là 3 khúc đường bằng nhau.",
+    "phan": "tomtat"
    },
    {
-    "show": "Xe chạy đều → 3 giờ là 3 khúc đường bằng nhau."
+    "show": "Tìm quãng đường MỘT giờ trước, rồi đếm số khúc trong 200 km.",
+    "phan": "tomtat"
    },
    {
-    "show": "Tìm quãng đường MỘT giờ trước, rồi đếm số khúc trong 200 km."
+    "show": "Nêu rõ căn cứ \"chạy đều\" — điều kiện cho phép chia đều.",
+    "phan": "tomtat"
    },
    {
-    "show": "Nêu rõ căn cứ \"chạy đều\" — điều kiện cho phép chia đều."
+    "show": "Trong một giờ ô tô đi được: $120 : 3 = 40$ (km)",
+    "phan": "giai"
    },
    {
-    "show": "Bài giải"
+    "show": "Thời gian ô tô đi quãng đường 200 km là: $200 : 40 = 5$ (giờ)",
+    "phan": "giai"
    },
    {
-    "show": "Trong một giờ ô tô đi được: $120 : 3 = 40$ (km)"
+    "show": "Hai phép chia — chia lấy nhịp, rồi chia đếm khúc.",
+    "phan": "giai"
    },
    {
-    "show": "Thời gian ô tô đi quãng đường 200 km là: $200 : 40 = 5$ (giờ)"
+    "show": "Đáp số: 5 giờ.",
+    "phan": "dapso"
    },
    {
-    "show": "Hai phép chia — chia lấy nhịp, rồi chia đếm khúc."
+    "show": "Đáp số kèm đơn vị giờ.",
+    "phan": "ghichu"
    },
    {
-    "show": "Đáp số: 5 giờ."
+    "show": "Thử lại: $40  \\times  5 = 200$ (km) ✓",
+    "phan": "thulai"
    },
    {
-    "show": "Đáp số kèm đơn vị giờ."
-   },
-   {
-    "show": "Thử lại: $40  \\times  5 = 200$ (km) ✓"
-   },
-   {
-    "show": "Chạy xuôi bằng phép nhân — phải về đúng 200 km của đề."
+    "show": "Chạy xuôi bằng phép nhân — phải về đúng 200 km của đề.",
+    "phan": "thulai"
    }
   ]
  },

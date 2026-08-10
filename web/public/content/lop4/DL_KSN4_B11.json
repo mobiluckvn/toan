@@ -121,64 +121,76 @@
   "problem": "Một chồng ghế có từ 30 đến 50 chiếc. Nếu xếp hàng 4 thì thừa 3 chiếc, xếp hàng 5 thì thừa 4 chiếc. Hỏi chồng ghế có bao nhiêu chiếc?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Số ghế: từ 30 đến 50",
+    "phan": "tomtat"
    },
    {
-    "show": "Số ghế: từ 30 đến 50"
+    "show": "Chia 4 dư 3; chia 5 dư 4. Tìm số ghế.",
+    "phan": "tomtat"
    },
    {
-    "show": "Chia 4 dư 3; chia 5 dư 4. Tìm số ghế."
+    "show": "Dịch \"thừa\" thành \"dư\" — ngôn ngữ chia có dư chuẩn.",
+    "phan": "tomtat"
    },
    {
-    "show": "Dịch \"thừa\" thành \"dư\" — ngôn ngữ chia có dư chuẩn."
+    "show": "Mô hình (thiếu 1 là tròn)",
+    "phan": "tomtat"
    },
    {
-    "show": "Mô hình (thiếu 1 là tròn)"
+    "show": "Chia 4 dư 3 → thêm 1 thì chia hết cho 4.",
+    "phan": "tomtat"
    },
    {
-    "show": "Chia 4 dư 3 → thêm 1 thì chia hết cho 4."
+    "show": "Chia 5 dư 4 → thêm 1 thì chia hết cho 5.",
+    "phan": "tomtat"
    },
    {
-    "show": "Chia 5 dư 4 → thêm 1 thì chia hết cho 5."
+    "show": "Vậy (số ghế + 1) chia hết cho cả 4 và 5.",
+    "phan": "tomtat"
    },
    {
-    "show": "Vậy (số ghế + 1) chia hết cho cả 4 và 5."
+    "show": "Cả hai điều kiện dồn về MỘT số mới đẹp — trái tim của mô hình.",
+    "phan": "tomtat"
    },
    {
-    "show": "Cả hai điều kiện dồn về MỘT số mới đẹp — trái tim của mô hình."
+    "show": "Nếu có thêm 1 chiếc ghế thì số ghế chia hết cho cả 4 và 5",
+    "phan": "giai"
    },
    {
-    "show": "Bài giải"
+    "show": "Nên số ghế thêm 1 chia hết cho 20.",
+    "phan": "giai"
    },
    {
-    "show": "Nếu có thêm 1 chiếc ghế thì số ghế chia hết cho cả 4 và 5"
+    "show": "Vì số ghế từ 30 đến 50 nên số ghế thêm 1 từ 31 đến 51.",
+    "phan": "giai"
    },
    {
-    "show": "Nên số ghế thêm 1 chia hết cho 20."
+    "show": "Trong khoảng đó chỉ có 40 chia hết cho 20.",
+    "phan": "giai"
    },
    {
-    "show": "Vì số ghế từ 30 đến 50 nên số ghế thêm 1 từ 31 đến 51."
+    "show": "Vậy số ghế là: $40 - 1 = 39$ (chiếc)",
+    "phan": "giai"
    },
    {
-    "show": "Trong khoảng đó chỉ có 40 chia hết cho 20."
+    "show": "Dòng chặn khoảng \"31 đến 51\" bảo đảm đáp số DUY NHẤT.",
+    "phan": "giai"
    },
    {
-    "show": "Vậy số ghế là: $40 - 1 = 39$ (chiếc)"
+    "show": "Đáp số: 39 chiếc ghế.",
+    "phan": "dapso"
    },
    {
-    "show": "Dòng chặn khoảng \"31 đến 51\" bảo đảm đáp số DUY NHẤT."
+    "show": "Đáp số kèm đơn vị.",
+    "phan": "ghichu"
    },
    {
-    "show": "Đáp số: 39 chiếc ghế."
+    "show": "Thử lại: $39 : 4 = 9$ (dư 3) ✓ ; $39 : 5 = 7$ (dư 4) ✓",
+    "phan": "thulai"
    },
    {
-    "show": "Đáp số kèm đơn vị."
-   },
-   {
-    "show": "Thử lại: $39 : 4 = 9$ (dư 3) ✓ ; $39 : 5 = 7$ (dư 4) ✓"
-   },
-   {
-    "show": "Soi ĐỦ hai manh mối của đề — thiếu một là chưa xong."
+    "show": "Soi ĐỦ hai manh mối của đề — thiếu một là chưa xong.",
+    "phan": "thulai"
    }
   ]
  },

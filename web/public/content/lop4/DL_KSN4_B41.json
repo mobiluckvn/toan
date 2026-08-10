@@ -121,55 +121,64 @@
   "problem": "Một khối hộp chữ nhật được xếp từ các khối lập phương nhỏ, có chiều dài 4 khối, chiều rộng 3 khối, chiều cao 2 khối. Hỏi khối hộp gồm bao nhiêu khối lập phương nhỏ?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Khối hộp: dài 4, rộng 3, cao 2 (khối).",
+    "phan": "tomtat"
    },
    {
-    "show": "Khối hộp: dài 4, rộng 3, cao 2 (khối)."
+    "show": "Tìm tổng số khối lập phương nhỏ.",
+    "phan": "tomtat"
    },
    {
-    "show": "Tìm tổng số khối lập phương nhỏ."
+    "show": "Ba con số — ba chiều của khối hộp.",
+    "phan": "tomtat"
    },
    {
-    "show": "Ba con số — ba chiều của khối hộp."
+    "show": "Mô hình (lát tầng)",
+    "phan": "tomtat"
    },
    {
-    "show": "Mô hình (lát tầng)"
+    "show": "Chiều cao 2 khối → khối hộp gồm 2 tầng chồng lên nhau",
+    "phan": "tomtat"
    },
    {
-    "show": "Chiều cao 2 khối → khối hộp gồm 2 tầng chồng lên nhau"
+    "show": "Mỗi tầng là một \"sàn\" chữ nhật $4  \\times  3$ khối.",
+    "phan": "tomtat"
    },
    {
-    "show": "Mỗi tầng là một \"sàn\" chữ nhật $4  \\times  3$ khối."
+    "show": "Biến 3D thành \"2D × số tầng\" ngay ở mô hình.",
+    "phan": "tomtat"
    },
    {
-    "show": "Biến 3D thành \"2D × số tầng\" ngay ở mô hình."
+    "show": "Số khối lập phương ở mỗi tầng là: $4  \\times  3 = 12$ (khối)",
+    "phan": "giai"
    },
    {
-    "show": "Bài giải"
+    "show": "Khối hộp có 2 tầng nên tổng số khối lập phương nhỏ là",
+    "phan": "giai"
    },
    {
-    "show": "Số khối lập phương ở mỗi tầng là: $4  \\times  3 = 12$ (khối)"
+    "show": "$12  \\times  2 = 24$ (khối)",
+    "phan": "giai"
    },
    {
-    "show": "Khối hộp có 2 tầng nên tổng số khối lập phương nhỏ là"
+    "show": "Hai phép nhân tách bạch: trong tầng, rồi nhân số tầng.",
+    "phan": "giai"
    },
    {
-    "show": "$12  \\times  2 = 24$ (khối)"
+    "show": "Đáp số: 24 khối lập phương nhỏ.",
+    "phan": "dapso"
    },
    {
-    "show": "Hai phép nhân tách bạch: trong tầng, rồi nhân số tầng."
+    "show": "Đáp số kèm đơn vị \"khối\".",
+    "phan": "ghichu"
    },
    {
-    "show": "Đáp số: 24 khối lập phương nhỏ."
+    "show": "Thử lại: đếm theo cột đứng: $4  \\times  3 = 12$ cột, mỗi cột 2 khối: $12  \\times  2 = 24$ ✓",
+    "phan": "thulai"
    },
    {
-    "show": "Đáp số kèm đơn vị \"khối\"."
-   },
-   {
-    "show": "Thử lại: đếm theo cột đứng: $4  \\times  3 = 12$ cột, mỗi cột 2 khối: $12  \\times  2 = 24$ ✓"
-   },
-   {
-    "show": "Đổi hướng cắt lớp (cột thay tầng) — hai hướng một đáp số."
+    "show": "Đổi hướng cắt lớp (cột thay tầng) — hai hướng một đáp số.",
+    "phan": "thulai"
    }
   ]
  },

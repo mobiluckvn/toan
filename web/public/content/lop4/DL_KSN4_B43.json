@@ -121,52 +121,60 @@
   "problem": "Xe thứ nhất ở trước xe thứ hai 30 km và mỗi giờ đi được 30 km. Xe thứ hai đuổi theo cùng chiều, mỗi giờ đi được 40 km. Hỏi sau bao lâu xe thứ hai đuổi kịp xe thứ nhất?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Khoảng cách đầu: 30 km",
+    "phan": "tomtat"
    },
    {
-    "show": "Khoảng cách đầu: 30 km"
+    "show": "Mỗi giờ: xe trước đi 30 km, xe sau đi 40 km (cùng chiều). Tìm thời gian đuổi kịp.",
+    "phan": "tomtat"
    },
    {
-    "show": "Mỗi giờ: xe trước đi 30 km, xe sau đi 40 km (cùng chiều). Tìm thời gian đuổi kịp."
+    "show": "Ba dữ kiện: khoảng cách đầu + hai nhịp chân.",
+    "phan": "tomtat"
    },
    {
-    "show": "Ba dữ kiện: khoảng cách đầu + hai nhịp chân."
+    "show": "Mô hình (bảng theo giờ)",
+    "phan": "tomtat"
    },
    {
-    "show": "Mô hình (bảng theo giờ)"
+    "show": "Mỗi giờ khoảng cách khép: $40 - 30 = 10$ (km).",
+    "phan": "tomtat"
    },
    {
-    "show": "Mỗi giờ khoảng cách khép: $40 - 30 = 10$ (km)."
+    "show": "Bảng: 30 → 20 → 10 → 0 (km).",
+    "phan": "tomtat"
    },
    {
-    "show": "Bảng: 30 → 20 → 10 → 0 (km)."
+    "show": "Bảng nhỏ ba mũi tên — thấy tận mắt khoảng cách co đều.",
+    "phan": "tomtat"
    },
    {
-    "show": "Bảng nhỏ ba mũi tên — thấy tận mắt khoảng cách co đều."
+    "show": "Mỗi giờ xe thứ hai đến gần xe thứ nhất thêm: $40 - 30 = 10$ (km)",
+    "phan": "giai"
    },
    {
-    "show": "Bài giải"
+    "show": "Thời gian để xe thứ hai đuổi kịp xe thứ nhất là: $30 : 10 = 3$ (giờ)",
+    "phan": "giai"
    },
    {
-    "show": "Mỗi giờ xe thứ hai đến gần xe thứ nhất thêm: $40 - 30 = 10$ (km)"
+    "show": "Hai dòng: phần khép mỗi giờ, rồi chia khoảng cách ban đầu.",
+    "phan": "giai"
    },
    {
-    "show": "Thời gian để xe thứ hai đuổi kịp xe thứ nhất là: $30 : 10 = 3$ (giờ)"
+    "show": "Đáp số: 3 giờ.",
+    "phan": "dapso"
    },
    {
-    "show": "Hai dòng: phần khép mỗi giờ, rồi chia khoảng cách ban đầu."
+    "show": "Đáp số kèm đơn vị giờ.",
+    "phan": "ghichu"
    },
    {
-    "show": "Đáp số: 3 giờ."
+    "show": "Thử lại: xe sau đi $40  \\times  3 = 120$ km ; xe trước đi $30  \\times  3 + 30 = 120$ km — cùng một điểm ✓",
+    "phan": "thulai"
    },
    {
-    "show": "Đáp số kèm đơn vị giờ."
-   },
-   {
-    "show": "Thử lại: xe sau đi $40  \\times  3 = 120$ km ; xe trước đi $30  \\times  3 + 30 = 120$ km — cùng một điểm ✓"
-   },
-   {
-    "show": "Kiểm hai cột quãng đường — lúc kịp phải đứng chung một chỗ."
+    "show": "Kiểm hai cột quãng đường — lúc kịp phải đứng chung một chỗ.",
+    "phan": "thulai"
    }
   ]
  },

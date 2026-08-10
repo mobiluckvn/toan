@@ -121,58 +121,68 @@
   "problem": "Bốn bạn góp quỹ, trung bình mỗi bạn 10 nghìn đồng. Một bạn thứ năm vào nhóm và muốn mức trung bình của cả năm bạn là 11 nghìn đồng. Hỏi bạn thứ năm phải góp bao nhiêu nghìn đồng?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "4 bạn: TBC 10 nghìn; thêm bạn thứ 5",
+    "phan": "tomtat"
    },
    {
-    "show": "4 bạn: TBC 10 nghìn; thêm bạn thứ 5"
+    "show": "Muốn TBC 5 bạn: 11 nghìn. Tìm phần góp của bạn thứ 5.",
+    "phan": "tomtat"
    },
    {
-    "show": "Muốn TBC 5 bạn: 11 nghìn. Tìm phần góp của bạn thứ 5."
+    "show": "Ghi rõ TBC \"của mấy người\" ở mỗi thời điểm — chỗ hay nhầm nhất.",
+    "phan": "tomtat"
    },
    {
-    "show": "Ghi rõ TBC \"của mấy người\" ở mỗi thời điểm — chỗ hay nhầm nhất."
+    "show": "Mô hình (bảng trước - sau)",
+    "phan": "tomtat"
    },
    {
-    "show": "Mô hình (bảng trước - sau)"
+    "show": "Trước: 4 bạn — TBC 10 → tổng $10  \\times  4$.",
+    "phan": "tomtat"
    },
    {
-    "show": "Trước: 4 bạn — TBC 10 → tổng $10  \\times  4$."
+    "show": "Sau: 5 bạn — TBC 11 → tổng $11  \\times  5$.",
+    "phan": "tomtat"
    },
    {
-    "show": "Sau: 5 bạn — TBC 11 → tổng $11  \\times  5$."
+    "show": "Phần góp bạn mới = tổng sau − tổng trước.",
+    "phan": "tomtat"
    },
    {
-    "show": "Phần góp bạn mới = tổng sau − tổng trước."
+    "show": "Hai cột trước - sau, mỗi cột một cây cầu TỔNG — mô hình gọn mà đủ.",
+    "phan": "tomtat"
    },
    {
-    "show": "Hai cột trước - sau, mỗi cột một cây cầu TỔNG — mô hình gọn mà đủ."
+    "show": "Tổng số tiền bốn bạn đã góp là: $10  \\times  4 = 40$ (nghìn đồng)",
+    "phan": "giai"
    },
    {
-    "show": "Bài giải"
+    "show": "Tổng số tiền cả năm bạn cần có là: $11  \\times  5 = 55$ (nghìn đồng)",
+    "phan": "giai"
    },
    {
-    "show": "Tổng số tiền bốn bạn đã góp là: $10  \\times  4 = 40$ (nghìn đồng)"
+    "show": "Bạn thứ năm phải góp: $55 - 40 = 15$ (nghìn đồng)",
+    "phan": "giai"
    },
    {
-    "show": "Tổng số tiền cả năm bạn cần có là: $11  \\times  5 = 55$ (nghìn đồng)"
+    "show": "Ba dòng ba phép tính — dòng nào cũng có câu lời giải nêu rõ \"của mấy bạn\".",
+    "phan": "giai"
    },
    {
-    "show": "Bạn thứ năm phải góp: $55 - 40 = 15$ (nghìn đồng)"
+    "show": "Đáp số: 15 nghìn đồng.",
+    "phan": "dapso"
    },
    {
-    "show": "Ba dòng ba phép tính — dòng nào cũng có câu lời giải nêu rõ \"của mấy bạn\"."
+    "show": "Đáp số kèm đơn vị.",
+    "phan": "ghichu"
    },
    {
-    "show": "Đáp số: 15 nghìn đồng."
+    "show": "Thử lại: ($40 + 15$) : $5 = 55 : 5 = 11$ ✓ ; và soi đường gánh: $11 + 1  \\times  4 = 15$ ✓",
+    "phan": "thulai"
    },
    {
-    "show": "Đáp số kèm đơn vị."
-   },
-   {
-    "show": "Thử lại: ($40 + 15$) : $5 = 55 : 5 = 11$ ✓ ; và soi đường gánh: $11 + 1  \\times  4 = 15$ ✓"
-   },
-   {
-    "show": "Soi bằng cả hai con đường — bài TBC nào cũng cho phép soi kép."
+    "show": "Soi bằng cả hai con đường — bài TBC nào cũng cho phép soi kép.",
+    "phan": "thulai"
    }
   ]
  },
