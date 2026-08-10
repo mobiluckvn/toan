@@ -1,0 +1,7 @@
+{
+  "_doc": "SỬA TAY bản đồ chủ đề — đè lên mọi thứ tools/dung_chu_de.py suy ra. Khoá là mã dạng bài ('PT:I.3.1'), giá trị {themBac: {'<lớp>': ['<id bài>', ...]}}. Chỉ THÊM bậc, không xoá — muốn bỏ một bậc thì sửa nguồn (km_v1_38.json hoặc skills.primary của micro), vì bỏ ở đây là giấu lỗi chứ không chữa lỗi.",
+
+  "_da_soat": "Đợt đầu KHÔNG có dòng sửa tay nào. Ba phép đối chiếu đều sạch: (1) ma trận Excel khớp km_v1_38 264/264 trường hợp; (2) khai của bản đồ khớp `dangGoc` do người soạn ghi tay 105/111 bài lớp 2-3-4; (3) 9 micro lớp 5 khai số hiệu không có trong ma trận đã được vá bằng khai ở mức bài, và ba chỗ ấy đã đọc lại nhan đề micro để xác nhận.",
+
+  "_vi_sao_trong": "Hai luật đã THỬ RỒI PHẢI BỎ, ghi lại để đừng dựng lại: (a) lấy `duongLui` canCu='sach' làm bậc thang — 30/78 bậc rơi vào bài dạy chủ đề khác, vì đường lùi nói 'bài này dựng trên bài kia' chứ không nói 'cùng chủ đề'; (b) lớp 5 lấy khai ở mức BÀI khi micro không khai — kéo cả ba micro chữ số tận cùng của bài 11 vào thang dãy số."
+}
