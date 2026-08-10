@@ -12,8 +12,16 @@ export { PickRow };
  * con GÕ GÌ, mất bao lâu RIÊNG câu này, thử lần thứ mấy. Không có mấy trường ấy
  * thì cô chỉ biết "sai", không biết sai ra sao — mà hai con sai hai kiểu khác nhau
  * thì cần hai cách giúp khác nhau.
+ *
+ * `chotMotLan` — nếp của KỲ SÁT HẠCH: chấm đúng MỘT lần, không sửa lại. Ở phần
+ * luyện tập thì sai rồi thử lại là đúng việc cần làm (mục đích là học được), nhưng
+ * ở kỳ sát hạch thì màn hình hiện lời giải ngay khi sai — cho sửa lại nghĩa là bé
+ * chép đáp án vừa đọc vào ô và được tính đúng, tức lại về đúng chỗ không đo được
+ * gì. Bật cờ này thì khoá ô sau lần bấm đầu và NHƯỜNG phần báo kết quả cho màn gọi
+ * (màn ấy còn phải in lời giải và tên bẫy — hai hộp cùng nói một điều là thừa).
  */
-export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra', autoAdvance }) {
+export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra', autoAdvance,
+                                      chotMotLan = false }) {
   const n = inputCount(item);
   const [vals, setVals] = useState(Array(Math.max(n, 1)).fill(''));
   const [res, setRes] = useState(null);
@@ -25,7 +33,8 @@ export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra
   /* Đúng/Sai và trắc nghiệm nay cũng là một ô trong AnswerFields, nên không còn
      nhánh riêng ở đây — một khối ô trả lời dùng chung cho mọi màn hình. */
   const submit = () => {
-    if (res?.ok) return;                   // đúng rồi thì thôi, còn sai thì thử lại thoải mái
+    if (chotMotLan ? !!res : res?.ok) return;  // sát hạch: chấm một lần. Luyện tập:
+                                               // đúng rồi thì thôi, sai thì thử lại thoải mái
     const dap = n <= 1 ? vals[0] : vals;
     const r = checkAnswer(item, dap);
     const lan = tries + 1;
@@ -61,13 +70,14 @@ export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra
     );
   }
 
+  const xong = chotMotLan ? !!res : !!res?.ok;
   return (
     <div className="mt-3">
-      <AnswerFields item={item} vals={vals} disabled={!!res?.ok}
+      <AnswerFields item={item} vals={vals} disabled={xong}
                     onChange={setVals} onEnter={submit} />
-      {!res?.ok && <button className="btn-go mt-3" onClick={submit}>{submitLabel}</button>}
+      {!xong && <button className="btn-go mt-3" onClick={submit}>{submitLabel}</button>}
 
-      {res && (
+      {res && !chotMotLan && (
         <div className={`mt-3 rounded-xl border-[1.5px] px-3.5 py-3 text-[15px] ${
           res.mode === 'selfcheck' ? 'border-teal bg-teal-pale'
             : res.ok ? 'border-teal bg-teal-pale text-teal-dark' : 'border-alert bg-alert-pale text-alert'}`}>

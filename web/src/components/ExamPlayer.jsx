@@ -16,6 +16,12 @@ import AnswerInput from './AnswerInput.jsx';
  * Nay: câu nào có `answerKey` thì `AnswerInput` lo cả việc nhập lẫn việc chấm, và
  * kết quả tự ghi vào `marks`. Câu nào KHÔNG có (đọc số thành chữ — mỗi bé đọc một
  * cách) thì vẫn giữ hai nút tự chấm. Bảng tự soi ở cuối không đổi.
+ *
+ * CHẤM MỘT LẦN (`chotMotLan`). Sai thì màn này hiện lời giải ngay — mà ô nhập vốn
+ * cho sửa lại rồi bấm lại, nên bé chỉ việc chép đáp án vừa đọc vào ô là được tính
+ * đúng. Thế là vòng về đúng chỗ hổng cũ, chỉ khác cái vỏ. Kỳ sát hạch khoá ô sau
+ * lần bấm đầu; muốn thử lại thì có ĐỀ B ở màn kết — đề KHÁC, chứ không phải làm lại
+ * đúng những câu vừa nhìn thấy đáp án.
  */
 export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
                                     chuongTrinh = 'lop5' }) {
@@ -138,18 +144,29 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
             phán mình đúng hay sai. `key` theo mã câu để sang câu mới thì ô nhập
             reset; thiếu nó là câu sau thừa hưởng đáp án câu trước. */}
         {q.answerKey && (
-          <AnswerInput key={q.id} item={q} submitLabel="Kiểm tra"
+          <AnswerInput key={q.id} item={q} submitLabel="Kiểm tra" chotMotLan
                        onResolve={(r) => {
                          setRes(r);
-                         setMarks((m) => ({ ...m, [q.qno]: !!r.ok }));
+                         /* Ghi điểm LẦN BẤM ĐẦU và chỉ lần ấy. `chotMotLan` đã
+                            khoá ô rồi, nhưng điểm là thứ quyết định bé qua chương
+                            hay không nên chốt thêm một lần nữa ở đây. */
+                         setMarks((m) => (q.qno in m ? m : { ...m, [q.qno]: !!r.ok }));
                        }} />
         )}
 
+        {/* Hộp báo kết quả DUY NHẤT của màn này — `chotMotLan` đã tắt hộp riêng
+            của ô nhập, vì hai hộp cùng nói một điều là thừa và hộp kia còn mời bé
+            "sửa lại rồi bấm lần nữa", đúng việc kỳ sát hạch không cho phép. */}
         {q.answerKey && res && (
           <div className={`mt-3 rounded-xl border-[1.5px] px-3.5 py-3 text-[15px] ${
             res.ok ? 'border-teal bg-teal-pale text-teal-dark'
                    : 'border-alert bg-alert-pale text-alert'}`}>
-            {res.ok ? <>🎉 Chuẩn!</> : <><b>Chưa đúng.</b> Lời giải: {q.answer}</>}
+            {res.ok
+              ? <><b>🎉 Đúng rồi!</b> {q.solutionNarrative || ''}</>
+              : <><b>Chưa đúng.</b> Lời giải: {q.answer}</>}
+            {!res.ok && q.hasTrap && q.trapName && (
+              <div className="mt-2 text-[13.5px]"><b>Bẫy:</b> {q.trapName}</div>
+            )}
           </div>
         )}
 
