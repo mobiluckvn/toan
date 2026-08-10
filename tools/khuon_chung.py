@@ -20,7 +20,17 @@ Bảng khớp mục:
 KHÔNG bịa dữ liệu cho những trường lớp 5 có mà sách lớp 2 không có (videoSpec,
 entryCheck, spacedReview…): thà thiếu còn hơn hiện ra một màn rỗng cho bé đọc.
 """
+import json
+import os
 import re
+
+# LỜI CHÀO MỞ BÀI viết tay — xem `data/loi_chao.json`. Nạp một lần lúc nạp mô-đun:
+# ba bộ dựng (lớp 2 · 3 · 4) đều gọi vào đây, nên đọc lại từng bài là thừa.
+_GOC = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+_LC = os.path.join(_GOC, 'data', 'loi_chao.json')
+LOI_CHAO = {k: v for k, v in
+            (json.load(open(_LC, encoding='utf-8')) if os.path.exists(_LC) else {}).items()
+            if not k.startswith('_')}
 
 # Mục nào của lớp 2 rơi vào chỗ nào trong khuôn hình của lớp 5
 NOI_DUNG_HINH = {
@@ -312,7 +322,13 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
         'dangGoc': bai.get('dangGoc', ''),
         'skills': {'bktUnit': f"CHUONG:{bai['chuong']}@G{grade}", 'primary': []},
         'series': {'order': so, 'prev': truoc, 'next': sau},
-        'objective': {'id': 'O1', 'text': muc_tieu, 'kidText': muc_tieu,
+        # `kidText` là dòng ĐẦU TIÊN bé đọc khi mở bài. Trước đây nó là bản sao y
+        # nguyên của `text` — tức mục tiêu giáo án: 30/33 bài lớp 2, 32/34 lớp 3 và
+        # 44/44 lớp 4 dài quá 170 chữ, từ ba câu trở lên, lại nói sẵn cách làm. Bé
+        # đọc là muốn bỏ. Nay lấy lời chào viết tay ở `data/loi_chao.json`; bài nào
+        # chưa có thì vẫn rơi về mục tiêu, và cổng `loi_chao.test.mjs` bắt ngay.
+        'objective': {'id': 'O1', 'text': muc_tieu,
+                      'kidText': LOI_CHAO.get(bai['id']) or muc_tieu,
                       'passRule': 'đúng ≥ 4/5 câu tự kiểm'},
         'knowledgeCore': {
             'statements': statements,
