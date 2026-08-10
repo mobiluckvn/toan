@@ -31,63 +31,61 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
   const [checked, setChecked] = useState(null);
 
   switch (step.type) {
-    /* ══ MỞ BÀI ══ */
-    case 'intro':
-      /* ── VÌ SAO MÀN NÀY KHÔNG CÒN IN CÂU CHỐT ──
-         Trước đây ngay dưới đây là một hộp vàng chữ to in nguyên `knowledgeCore.mantra`
-         — tức TOÀN BỘ cách làm của bài. Bé chưa thấy đề bài nào đã được đọc đáp. Hỏng
-         hai đường: mất hết lý do phải nghĩ, mà câu chốt lúc ấy cũng vô nghĩa vì bé chưa
-         có gì để gắn nó vào. `buildFlow` vốn đã có RIÊNG một bước `mantra` đặt SAU khi
-         giảng xong và sau câu tự kiểm — đúng chỗ của nó. Nên hộp ở đây chỉ là bản sao
-         đặt nhầm chỗ, bỏ đi là hết lộ bài mà không mất gì.
+    /* ══ MỞ BÀI — MỘT MÀN, VÀ VIỆC CỦA NÓ LÀ NÊU VẤN ĐỀ ══
+       Trước đây đây là HAI màn, và cả hai đều nói trước cách làm:
+         · màn 1 in `knowledgeCore.mantra` bằng chữ to — toàn bộ cách làm;
+         · rồi in `objective.kidText`, mà với lớp 5 dòng ấy cũng là một câu luật:
+           "Số dư luôn bé hơn số chia, nên dư lớn nhất bằng số chia trừ 1."
+         · màn 2 mới hỏi: "Số dư lớn nhất khi chia cho 5 là bao nhiêu?"
+       Bé đọc đáp trước khi đọc đề, và phải bấm hai lần mới tới được bài toán.
 
-         Thay vào là câu MỜI, nói bé sắp làm gì chứ không nói trước kết quả. */
+       Nay: nêu vấn đề ở đây, giải quyết ở phần giảng. Mục tiêu giáo án chỉ hiện
+       khi nó THẬT SỰ là lời mời viết tay (`objective.laLoiChao`) — quyển chưa có
+       lời chào thì dòng ấy là câu trả lời, để ở đây là lộ bài. */
+    case 'intro': {
+      const de = step.screen?.narration;
+      const loiChao = lesson.objective?.laLoiChao ? lesson.objective.kidText : null;
       return (<>
         <div className="card">
           <div className="kicker">MICRO · KHOẢNG {lesson.durationMinutes} PHÚT</div>
           <h2 className="mb-2.5 text-[19px] font-bold leading-snug text-navy">{lesson.title}</h2>
-          {/* Con đọc bản ngắn. Bản gốc viết cho người lớn — dài 60 chữ, nhiều ngoặc
-              lồng nhau — nên gấp lại phía dưới cho bố mẹ và thầy cô xem khi cần. */}
-          <p className="text-[16.5px] leading-relaxed">
-            {lesson.objective?.kidText || lesson.objective?.text}
-          </p>
-          {lesson.objective?.kidText && lesson.objective?.text && (
-            <details className="mt-2">
+          {loiChao && <p className="text-[16.5px] leading-relaxed">{loiChao}</p>}
+
+          {/* ĐỀ BÀI — thứ đáng đọc nhất màn này, nên cho nó một khung riêng. */}
+          {de && (
+            <div className={`rounded-2xl border-[1.5px] border-line bg-soft px-4 py-3.5 ${loiChao ? 'mt-3' : ''}`}>
+              <div className="kicker mb-1">BÀI TOÁN</div>
+              <p className="text-[16.5px] font-semibold leading-relaxed text-navy">{de}</p>
+            </div>
+          )}
+          <Figure fig={step.figure} />
+
+          {/* Bản đầy đủ của mục tiêu gấp lại cho bố mẹ — con không phải đọc. */}
+          {lesson.objective?.text && (
+            <details className="mt-2.5">
               <summary className="cursor-pointer text-[12.5px] font-semibold text-mute">
-                Mục tiêu đầy đủ (dành cho bố mẹ)
+                Bài này học gì (dành cho bố mẹ)
               </summary>
               <p className="mt-1.5 text-[14px] leading-relaxed text-mute">{lesson.objective.text}</p>
             </details>
           )}
-          <Figure fig={step.figure} />
-          <div className="step0-box text-[15px]">
-            Đường đi của bài: <b>Giảng nguyên tắc → Xem bài mẫu → Tự luyện → Sát hạch lấy huy hiệu</b>
-          </div>
         </div>
         <div className="rounded-2xl bg-gradient-to-br from-gold to-[#fcd88a] px-4 py-4 text-center text-[17px] font-extrabold leading-snug text-gold-dark">
-          Mình bắt đầu bằng một bài toán nhé — con thử nghĩ trước,
-          rồi mình cùng tìm cách làm.
+          {de ? 'Con thử nghĩ trước xem làm thế nào, rồi mình cùng gỡ nhé.'
+              : 'Mình bắt đầu nhé — con thử nghĩ trước, rồi mình cùng tìm cách làm.'}
         </div>
-        <Foot label="Xem bài toán ▶" onClick={onNext} />
+        <Foot label={de ? 'Nghe cô giảng ▶' : 'Xem bài toán ▶'} onClick={onNext} />
       </>);
+    }
 
+    /* Màn ĐỀ BÀI riêng — chỉ có ở quyển đã viết lời chào, để lời chào được một
+       nhịp mời vào rồi mới tới đề. */
     case 'hook':
       return (<>
         <div className="card">
-          {/* Nhãn cũ là "TÌNH HUỐNG" hồi màn mở còn kể chuyện. Nay nó nêu thẳng
-              đề bài nên gọi đúng tên — bé đọc nhãn là biết phải làm gì. */}
           <div className="kicker">BÀI TOÁN</div>
           <p className="text-[16.5px] leading-relaxed">{step.screen?.narration}</p>
           <Figure fig={step.figure} />
-          {/* Lời nhắc phụ của màn mở. Trước đây câu này viết "…con thử đoán xem
-              BẠN ẤY sai ở đâu nhé", vì cạnh nó từng có bong bóng lời thoại một bạn
-              nói câu sai. Bong bóng ấy nay đã dọn về màn chỗ-hay-nhầm, nên "bạn ấy"
-              trỏ vào người không còn trên màn — bé đọc không hiểu đang nói về ai. */}
-          {step.screen?.display?.caption && (
-            <div className="warn-box text-[15px]">
-              <b>Thử đoán xem:</b> {step.screen.display.caption}
-            </div>
-          )}
         </div>
         <Foot label="Nghe cô giảng ▶" onClick={onNext} />
       </>);

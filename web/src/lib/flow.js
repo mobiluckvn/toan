@@ -639,10 +639,35 @@ export function buildFlow(lesson) {
   const steps = [];
   const K = lesson.knowledgeCore || {};
 
-  steps.push({ type: 'intro', phase: 'intro', figure: figFor(lesson, 'mantra') });
+  /* MỘT màn mở bài, và việc của nó là NÊU VẤN ĐỀ.
+     Trước đây là hai màn: `intro` (tên bài + mục tiêu + đường đi + hộp vàng) rồi
+     `hook` (đề bài + hình). Với lớp 5 thì màn đầu nói sẵn CÁCH LÀM còn màn sau mới
+     hỏi — bé đọc đáp trước khi đọc đề:
 
+       LỜI CHÀO: "Số dư luôn bé hơn số chia, nên dư lớn nhất bằng số chia trừ 1."
+       ĐỀ BÀI  : "Số dư lớn nhất có thể khi chia một số cho 5 là bao nhiêu?"
+
+     Nay gộp làm một: nêu vấn đề ở đây, giải quyết ở phần giảng. Hình của màn mở
+     đi cùng đề bài chứ không phải hình `mantra` — hình câu chốt thuộc về màn chốt. */
   const hook = (lesson.lecture?.screens || []).find((s) => s.kind === 'hook');
-  if (hook) steps.push({ type: 'hook', phase: 'intro', screen: hook, figure: figFor(lesson, 'hook') });
+  /* Có LỜI CHÀO viết tay thì mở bài đi HAI nhịp: lời chào mời vào, rồi tới đề bài.
+     Chưa có lời chào (lớp 5) thì gộp làm MỘT nhịp và nhịp ấy chính là đề bài.
+
+     Đã thử gộp cho tất cả và phải bỏ: lời chào của lớp 2·3·4 vốn được viết để NÊU
+     luôn tình huống, nên đứng cạnh đề bài trên cùng một màn là nói hai lần cùng
+     một chuyện — "Xe buýt đi 3 giờ được 120 km…" xuất hiện hai lần liền nhau.
+
+     CHỈ hình của màn mở, KHÔNG lùi về hình `mantra`: lớp 5 đã dọn hình lời thoại
+     sang ô `trap` nên `hook` rỗng, mà nhánh lùi thì kéo thẻ "NGUYÊN TẮC CẦN NHỚ" —
+     nguyên văn cách làm — lên đúng màn vừa dọn cho sạch. */
+  const coLoiChao = !!lesson.objective?.laLoiChao;
+  steps.push({ type: 'intro', phase: 'intro',
+               screen: coLoiChao ? null : hook,
+               figure: coLoiChao ? null : figFor(lesson, 'hook') });
+  if (coLoiChao && hook) {
+    steps.push({ type: 'hook', phase: 'intro', screen: hook,
+                 figure: figFor(lesson, 'hook') });
+  }
 
   buildTeachSteps(lesson).forEach((s) => steps.push(s));
 

@@ -327,8 +327,14 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
         # 44/44 lớp 4 dài quá 170 chữ, từ ba câu trở lên, lại nói sẵn cách làm. Bé
         # đọc là muốn bỏ. Nay lấy lời chào viết tay ở `data/loi_chao.json`; bài nào
         # chưa có thì vẫn rơi về mục tiêu, và cổng `loi_chao.test.mjs` bắt ngay.
+        # `laLoiChao` nói rõ dòng này LÀ lời mời viết tay, không phải mục tiêu giáo
+        # án bị dùng tạm. Giao diện chỉ in nó ở màn mở khi cờ này bật — quyển nào
+        # chưa có lời chào thì đừng in mục tiêu ra chỗ ấy, vì mục tiêu là câu TRẢ
+        # LỜI cho bài toán sắp hỏi. Cờ tường minh, không suy từ nhịp đọc: nhịp đọc
+        # và chuyện đã viết lời chào hay chưa là hai việc rời nhau.
         'objective': {'id': 'O1', 'text': muc_tieu,
                       'kidText': LOI_CHAO.get(bai['id']) or muc_tieu,
+                      'laLoiChao': bai['id'] in LOI_CHAO,
                       'passRule': 'đúng ≥ 4/5 câu tự kiểm'},
         'knowledgeCore': {
             'statements': statements,
