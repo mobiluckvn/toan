@@ -24,6 +24,10 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
   const [marks, setMarks] = useState({});     // qno → true/false
   const [shown, setShown] = useState(false);   // chỉ dùng cho câu KHÔNG có answerKey
   const [res, setRes] = useState(null);        // kết quả máy chấm câu đang làm
+  /* Sách cho mỗi kỳ HAI lô đề: chưa đạt thì ôn theo bảng tự soi rồi làm ĐỀ B.
+     Trước đây `deB` nằm trong dữ liệu mà màn này không hề hiện tới — cả ba quyển
+     đọc chậm đều có đủ đề B kèm đáp án mà bé không bao giờ thấy. */
+  const [deB, setDeB] = useState(false);
 
   useEffect(() => {
     /* Mọi chương trình cùng một màn sát hạch, chỉ khác tệp nội dung. Tiền tố tệp
@@ -37,16 +41,26 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
   if (!doc) return <div className="p-6 text-mute">Đang mở kỳ sát hạch…</div>;
   if (doc.error) return <div className="p-6 text-alert">Không nạp được kỳ sát hạch chương {chapter}.</div>;
 
-  const qs = doc.examA || [];
+  const qs = (deB ? doc.deB : doc.examA) || [];
   const done = i >= qs.length;
   const right = Object.values(marks).filter(Boolean).length;
   /* Ngưỡng đạt lấy TỪ DỮ LIỆU: sách lớp 2 mỗi chương một ngưỡng (8/12, 8/10,
      6/8 vụ án). Ghim cứng 12 là chấm sai cho cả 11 kỳ của lớp 2. */
-  const need = doc.need || 12;
+  /* Ngưỡng đạt trong dữ liệu tính theo ĐỀ CHÍNH. Đề B thường ít câu hơn (lớp 2:
+     12 câu đề chính, 8 câu đề B), nên bê nguyên ngưỡng sang là đòi bé đúng gần
+     như tuyệt đối. Co ngưỡng theo đúng tỉ lệ của lô đang làm. */
+  const needGoc = doc.need || 12;
+  const soGoc = (doc.examA || []).length || 1;
+  const need = deB
+    ? Math.max(1, Math.round(needGoc * qs.length / soGoc))
+    : needGoc;
 
   if (done) {
     const pass = right >= need;
-    const wrong = qs.filter((q) => marks[q.qno] === false);
+    /* Bảng tự soi chỉ dựng được cho câu CÓ mối nối về bài. Đề B không mang
+       `diagnosesMicro` (sách chỉ lập bảng tự soi cho đề chính), nên lọc ra —
+       nút trỏ vào `undefined` thì bấm xong chẳng mở được gì. */
+    const wrong = qs.filter((q) => marks[q.qno] === false && q.diagnosesMicro);
     return (
       <div className="mx-auto max-w-[740px] px-3.5 pb-28 pt-4">
         <div className="card text-center">
@@ -76,7 +90,19 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
         <footer className="fixed inset-x-0 bottom-0 border-t border-line bg-white/95 px-3.5 py-2.5"
                 style={{ paddingBottom: 'calc(.625rem + env(safe-area-inset-bottom))' }}>
           <div className="mx-auto flex max-w-[740px] gap-2.5">
-            <button className="btn-ghost" onClick={() => { setI(0); setMarks({}); setShown(false); }}>Làm lại</button>
+            <button className="btn-ghost"
+                    onClick={() => { setI(0); setMarks({}); setShown(false); setRes(null); }}>
+              Làm lại
+            </button>
+            {/* Chưa đạt mà kỳ này có đề B thì mời làm lô thứ hai — đúng nếp sách:
+                ôn theo bảng tự soi ở trên rồi thử lại bằng đề khác, chứ không phải
+                làm lại đúng những câu vừa nhìn thấy đáp án. */}
+            {!pass && !deB && (doc.deB || []).length > 0 && (
+              <button className="btn-go"
+                      onClick={() => { setDeB(true); setI(0); setMarks({}); setShown(false); setRes(null); }}>
+                Làm ĐỀ B ▶
+              </button>
+            )}
             <button className="btn-gold" onClick={() => onDone({ pass, right, total: qs.length })}>
               Về trang chính
             </button>
@@ -91,7 +117,9 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
     <div className="mx-auto max-w-[740px] px-3.5 pb-28 pt-4">
       <header className="mb-3 flex items-center gap-2.5">
         <button className="text-[13px] text-mute" onClick={onExit}>← Thoát</button>
-        <b className="flex-1 text-center text-[14px] text-navy">{doc.name}</b>
+        <b className="flex-1 text-center text-[14px] text-navy">
+          {doc.name}{deB ? ' · ĐỀ B' : ''}
+        </b>
         <span className="text-[12px] tabular-nums text-mute">{i + 1}/{qs.length}</span>
       </header>
 

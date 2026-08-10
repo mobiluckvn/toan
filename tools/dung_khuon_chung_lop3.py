@@ -78,6 +78,14 @@ def dung_on_tap(ten_bai):
                 {'id': hid, 'file': h['file'], 'caption': h['caption'],
                  'sha256_16': h['sha256_16']})
 
+    o_nhap = {}
+    duong_o = os.path.join(GOC_KHO, 'data', 'lop3_ontap_o.json')
+    if os.path.exists(duong_o):
+        o_nhap = json.load(open(duong_o, encoding='utf-8'))
+    else:
+        print('  ⚠ chưa có data/lop3_ontap_o.json — kỳ sát hạch về TỰ CHẤM hết. '
+              'Chạy `python3 tools/tach_ontap.py lop3` trước.')
+
     ra, thieu_noi = [], 0
     for ma, d in sorted(khoi.items(), key=lambda kv: (kv[1]['loai'] != 'onTap', kv[1]['so'])):
         ai = d['loai'] == 'ai'
@@ -96,6 +104,9 @@ def dung_on_tap(ten_bai):
                 'id': f"REVITEM:KSN3.C{ch}.A{c['so']}", 'qno': c['so'],
                 'star': c.get('mucDo', 1), 'text': c['text'],
                 'answer': d['dapAn'].get(c['id'], ''),
+                'solutionNarrative': d['dapAn'].get(c['id'], ''),
+                **({'answerKey': o_nhap[f"{ma}#{c['id']}"]}
+                   if o_nhap.get(f"{ma}#{c['id']}") else {}),
                 'diagnosesMicro': ve[0] if ve else None,
                 # đủ danh sách, vì một câu chốt thường ghép ý của hai bài
                 'veBai': [{'id': x, 'ten': ten_bai.get(x, '')} for x in ve],
@@ -113,7 +124,11 @@ def dung_on_tap(ten_bai):
                         else f"Làm hết {d['tong']} câu.",
             'examA': cau,
             'deB': [{'id': c['id'], 'qno': c['so'], 'text': c['text'],
-                     'answer': d['dapAnB'].get(c['id'], '')} for c in d['cauDeB']],
+                     'answer': d['dapAnB'].get(c['id'], ''),
+                     'solutionNarrative': d['dapAnB'].get(c['id'], ''),
+                     **({'answerKey': o_nhap[f"{ma}#{c['id']}"]}
+                        if o_nhap.get(f"{ma}#{c['id']}") else {})}
+                    for c in d['cauDeB']],
             'selfCheck': 'Sai câu nào, bấm vào câu đó để mở lại đúng bài cần ôn.',
             'canCu': d['canCu'],
             'hinh': hinh_ky.get(f'C{ch}', []),

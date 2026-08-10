@@ -17,7 +17,8 @@ import json, os, re, sys
 
 GOC_KHO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(GOC_KHO, 'tools'))
-from khuon_chung import sang_khuon_chung                    # noqa: E402
+from khuon_chung import sang_khuon_chung
+from tach_ontap import cau_de_b                    # noqa: E402
 
 NGUON = os.path.join(GOC_KHO, 'data', 'lop2')
 NGUON_ON = os.path.join(GOC_KHO, 'data', 'lop2_ontap.json')
@@ -50,6 +51,14 @@ def dung_on_tap(bai_cua_chuong, ten_bai):
             hinh_ky.setdefault(h['onTap'], []).append(
                 {'id': hid, 'file': h['file'], 'caption': h['caption'],
                  'sha256_16': h['sha256_16']})
+    o_nhap = {}
+    duong_o = os.path.join(GOC_KHO, 'data', 'lop2_ontap_o.json')
+    if os.path.exists(duong_o):
+        o_nhap = json.load(open(duong_o, encoding='utf-8'))
+    else:
+        print('  ⚠ chưa có data/lop2_ontap_o.json — kỳ sát hạch về TỰ CHẤM hết. '
+              'Chạy `python3 tools/tach_ontap.py lop2` trước.')
+
     ra, chua_soi = [], 0
 
     for ma, d in sorted(de.items(), key=lambda kv: (kv[0][0], int(kv[0][1:]))):
@@ -64,9 +73,12 @@ def dung_on_tap(bai_cua_chuong, ten_bai):
             else:
                 mic = mac_dinh                    # ải không có bảng tự soi
                 chua_soi += 0 if ai else 1
+            khoa = o_nhap.get(f"{ma}#C{c['so']}")
             cau.append({'id': f"REVITEM:KSN2.C{ch}.A{c['so']}", 'qno': c['so'],
                         'star': c.get('muc', 1), 'text': c['text'],
                         'answer': d['dapAn'].get(f"C{c['so']}", ''),
+                        'solutionNarrative': d['dapAn'].get(f"C{c['so']}", ''),
+                        **({'answerKey': khoa} if khoa else {}),
                         'diagnosesMicro': mic,
                         # Tên bài viết đủ chữ: bé lớp 2 không biết "micro" là gì,
                         # mà đây đúng là dòng bé đọc khi làm sai và cần ôn lại.
@@ -80,7 +92,16 @@ def dung_on_tap(bai_cua_chuong, ten_bai):
             'gioiThieu': d['gioiThieu'],
             'need': d['can'], 'passRule': d.get('ketLuan', f"Đạt {d['can']}/{d['tong']} câu là qua."),
             'examA': cau,
-            'deB': d['deB'], 'dapAnB': d['dapAnB'],
+            # Đề B của lớp 2 nhồi bốn câu vào MỘT dòng ("B1. … B2. … B3. …") nên
+            # trước đây nó là một khối chữ không chấm được, và `ExamPlayer` cũng
+            # chưa hề hiện tới. Nay cắt theo `B<số>.` thành từng câu thật, mỗi câu
+            # một ô nhập — đáp án thì sách đã tách sẵn theo B1, B2… từ lâu.
+            'deB': [{'id': c['id'], 'qno': int(c['id'][1:]), 'text': c['text'],
+                     'answer': d['dapAnB'].get(c['id'], ''),
+                     'solutionNarrative': d['dapAnB'].get(c['id'], ''),
+                     **({'answerKey': o_nhap[f"{ma}#{c['id']}"]}
+                        if o_nhap.get(f"{ma}#{c['id']}") else {})}
+                    for c in cau_de_b(d)],
             'selfCheck': 'Sai câu nào, bấm vào câu đó để mở lại đúng bài cần ôn.',
             'hinh': hinh_ky.get(f'C{ch}', []),
         }

@@ -6,7 +6,11 @@ Nguồn: `docs/KSN4_SACH_HOAN_CHINH_Ky_Su_Nhi_Lop4.docx` · 44 bài · 11 chươ
 
 > **XONG TRỌN — lớp 4 đã hiện trên kệ sách và đã deploy.** 44 bài · 92 hình ·
 > **392/396 câu luyện tập** và **234/236 câu kỳ sát hạch** chấm máy · đường lùi hai
-> chiều đã nối. Cổng nghiệm thu: **24 tệp kiểm · 779 PASS · 0 FAIL**.
+> chiều đã nối. Cổng nghiệm thu: **24 tệp kiểm · 781 PASS · 0 FAIL**.
+>
+> Đợt sau đó dọn nốt món nợ mà chính lớp 4 lộ ra: **kỳ sát hạch của lớp 2 (191/198)
+> và lớp 3 (198/198) nay cũng chấm máy**, và **đề B** — dựng sẵn từ lâu mà chưa có
+> lối vào — nay mở ra khi bé thi trượt.
 
 ---
 
@@ -232,11 +236,25 @@ cũ ấy còn đang mồ côi, không ai import. Nay gộp làm một: giữ tê
 
 ## Việc còn lại
 
-### 1 · Kỳ sát hạch của LỚP 2 và LỚP 3 vẫn chấm tay
+### ✔ (đã xong) Kỳ sát hạch của LỚP 2 và LỚP 3
 
-138 câu (lớp 2) và 198 câu (lớp 3) — cổng in dòng ⏸ mỗi lần chạy. Cách làm y hệt
-lớp 4: viết `tach_ontap_lop2.py` / `_lop3.py` dùng lại luật sẵn có, rồi nối vào bộ
-dựng. `ExamPlayer` **đã sẵn sàng** — nó tự chấm máy khi câu có `answerKey`.
+Xong ở đợt này bằng **MỘT** tệp cho cả hai quyển — `tools/tach_ontap.py`, không chép
+ra `_lop2.py` / `_lop3.py` như đã tính. Hai quyển chỉ khác nhau ở hình dạng tệp nguồn
+(lớp 2 để các khối ở tầng gốc, lớp 3 gói trong `khoi`), còn luật tách thì dùng chung
+với lớp 4 — sửa một chỗ là cả ba cùng được.
+
+Chốt: **lớp 3 198/198 (100%)** · **lớp 2 191/198 (96%)** · 206 câu viết tay vào
+`data/lop?_ontap_tay.json`, mỗi giá trị đều được tự soát là có mặt nguyên văn trong
+đề hoặc lời giải của sách.
+
+Đợt này bắt được **bẫy 11 sống dậy trong khoá đáp án tự suy**: 16 câu sách cho HAI
+đáp ngăn bằng dấu `;` ("460; gấp 10 lần") mà máy chỉ dựng một ô — vì luật `r_mot_dap`
+canh số dấu `?`, còn đề viết theo lối sai khiến ("Đọc số… Viết số…") thì **không có
+dấu hỏi nào**. Nay có chốt chặn: gặp `;` mà cả hai vế đều có chữ số thì trả về soát tay.
+
+Cũng phát hiện `deB` **là dữ liệu chết** ở mọi quyển — dựng đủ 11 đề B mỗi quyển mà
+giao diện không có lối nào mở. Nay thi trượt thì hiện nút **Làm ĐỀ B ▶**, và `need`
+được co theo số câu của đề B chứ không bê nguyên ngưỡng của đề A.
 
 ### 2 · Nhiệt kế của LỚP 3 vẫn là ảnh
 
