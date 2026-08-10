@@ -33,6 +33,15 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
   switch (step.type) {
     /* ══ MỞ BÀI ══ */
     case 'intro':
+      /* ── VÌ SAO MÀN NÀY KHÔNG CÒN IN CÂU CHỐT ──
+         Trước đây ngay dưới đây là một hộp vàng chữ to in nguyên `knowledgeCore.mantra`
+         — tức TOÀN BỘ cách làm của bài. Bé chưa thấy đề bài nào đã được đọc đáp. Hỏng
+         hai đường: mất hết lý do phải nghĩ, mà câu chốt lúc ấy cũng vô nghĩa vì bé chưa
+         có gì để gắn nó vào. `buildFlow` vốn đã có RIÊNG một bước `mantra` đặt SAU khi
+         giảng xong và sau câu tự kiểm — đúng chỗ của nó. Nên hộp ở đây chỉ là bản sao
+         đặt nhầm chỗ, bỏ đi là hết lộ bài mà không mất gì.
+
+         Thay vào là câu MỜI, nói bé sắp làm gì chứ không nói trước kết quả. */
       return (<>
         <div className="card">
           <div className="kicker">MICRO · KHOẢNG {lesson.durationMinutes} PHÚT</div>
@@ -55,10 +64,11 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
             Đường đi của bài: <b>Giảng nguyên tắc → Xem bài mẫu → Tự luyện → Sát hạch lấy huy hiệu</b>
           </div>
         </div>
-        <div className="rounded-2xl bg-gradient-to-br from-gold to-[#fcd88a] px-4 py-5 text-center text-[19px] font-extrabold leading-snug text-gold-dark">
-          🔑 {K.mantra}
+        <div className="rounded-2xl bg-gradient-to-br from-gold to-[#fcd88a] px-4 py-4 text-center text-[17px] font-extrabold leading-snug text-gold-dark">
+          Mình bắt đầu bằng một bài toán nhé — con thử nghĩ trước,
+          rồi mình cùng tìm cách làm.
         </div>
-        <Foot label="Bắt đầu ▶" onClick={onNext} />
+        <Foot label="Xem bài toán ▶" onClick={onNext} />
       </>);
 
     case 'hook':

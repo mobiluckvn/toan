@@ -224,25 +224,45 @@ if (existsSync(APP)) {
      mục ② (tình huống mở), nên màn mở hiện "tổng hai chữ số bằng 12" bên trên một
      cái bảng hàng - lớp ghi 24 358. Hai đề đá nhau ngay dòng đầu bé đọc, mà dữ liệu
      thì hợp lệ hoàn toàn — chỉ nhìn màn hình thật mới thấy.
-     Máy khẳng định được: con số trong lời dẫn phải có mặt ở hình. Lời dẫn không có
-     số thì không có gì để đá nhau.
-     So với NỘI DUNG VẼ RA (`params` của bản mô tả), không so với `caption`: lời chú
-     chỉ là một dòng tả ngắn, nên so với nó thì năm bài bị đỏ OAN — hình bài 42 có
-     sẵn con số 200 ngay trong bảng mà lời chú không nhắc tới. Phép kiểm chặt hơn
-     thứ nó định canh là phép kiểm phải bỏ (chuẩn mục 8). */
-  const soCua = (s) => new Set((String(s).match(/\d[\d\s]*\d|\d/g) || [])
-    .map((x) => x.replace(/\s/g, '')));
-  const moTaTheoBai = {};
+
+     ── BẢN ĐẦU CANH BẰNG CON SỐ, VÀ ĐÃ PHẢI BỎ ──
+     Bản đầu đòi "mọi số trong lời dẫn phải có mặt trong hình". Nó đúng ở thời lời
+     dẫn chỉ mang mỗi câu HỎI GÌ (gần như không có số). Từ khi lời dẫn mang đủ đề
+     bài thì mệnh đề ấy hỏng cả hai đầu:
+
+       · bắt OAN — bài 4 có "tiền thiếu 45 nghìn" trong lời mà hình không vẽ, VÌ 45
+         chính là ĐÁP ÁN. Đòi hình phải có nó là đòi hình lộ đáp;
+       · bắt HỤT — thử tái tạo đúng bẫy 32 ở bài 1 thì nó KHÔNG bắt được, vì hình
+         bài ấy chứa các chữ số rời (2·4·3·5·8) chứ không có chuỗi "24358".
+
+     Nay canh bằng CHỮ: lời dẫn và tiêu đề hình phải chung ít nhất một từ có nghĩa.
+     Hai bài toán khác nhau thì không chung từ nào — mệnh đề này bắt được bẫy 32 tái
+     tạo, và bắt thêm ba bài còn sót thật (tuổi hai anh em / hình vẽ ba bạn với 100
+     viên bi · phân số 3/4 - 5/8 / hình hỏi 7/8 - 9/10 · khung mái tam giác / hình
+     cắt chữ nhật theo đường chéo). */
+  const DUNG = new Set(['và', 'của', 'có', 'là', 'một', 'hai', 'ba', 'thì', 'cho',
+    'với', 'các', 'những', 'này', 'ấy', 'bao', 'nhiêu', 'mấy', 'nào', 'thế', 'ra',
+    'đi', 'được', 'bằng', 'trong', 'từ', 'đến', 'sau', 'trước', 'khi', 'mỗi', 'số',
+    'hỏi', 'tìm', 'đúng', 'nếu', 'hơn', 'kém', 'còn', 'chỉ', 'đã', 'sẽ', 'vào',
+    'trên', 'dưới', 'lại', 'như', 'mà', 'nó', 'gì', 'không']);
+  const tuCua = (s) => new Set(
+    (String(s).normalize('NFC').toLowerCase().match(/[0-9a-zà-ỹ]+/g) || [])
+      .filter((w) => w.length > 1 && !DUNG.has(w)));
+  const tdTheoBai = {};
   for (const m of moTa) {
-    if (m.muc === 'chuyenMoBai') moTaTheoBai[m.bai] = JSON.stringify(m.params);
+    if (m.muc === 'chuyenMoBai') tdTheoBai[m.bai] = m.params?.title || '';
   }
   const daNhau = [];
   for (const d of app) {
     const h = (d.lecture.screens || []).find((s) => s.kind === 'hook');
-    if (!h || !moTaTheoBai[d.id]) continue;
-    const cua_hinh = soCua(`${moTaTheoBai[d.id]} ${d.title}`);
-    const la = [...soCua(h.narration)].filter((n) => n.length > 1 && !cua_hinh.has(n));
-    if (la.length) daNhau.push(`${d.id}: lời dẫn có ${la.join(', ')} mà hình không có`);
+    if (!h || !tdTheoBai[d.id]) continue;
+    const tHinh = tuCua(tdTheoBai[d.id]);
+    if (!tHinh.size) continue;
+    const tLoi = tuCua(h.narration);
+    if (![...tHinh].some((w) => tLoi.has(w))) {
+      daNhau.push(`${d.id}: hình đề "${tdTheoBai[d.id].slice(0, 60)}" — lời dẫn `
+        + `"${h.narration.slice(0, 60)}" không chung chữ nào`);
+    }
   }
   t('lời dẫn màn mở và hình màn mở kể CÙNG một bài toán', daNhau.length === 0);
   in5(daNhau);

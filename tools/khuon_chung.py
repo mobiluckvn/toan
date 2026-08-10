@@ -45,6 +45,40 @@ R_BUOC = re.compile(r'^(?:' + '|'.join(TEN_BUOC) + r')\s*\d+\s*[.—–-]'
                     r'|^(?:MẸO|LUẬT)[^:]*:')
 
 
+def _hoa_dau(s):
+    """Viết hoa chữ cái đầu, giữ nguyên phần còn lại.
+
+    `str.capitalize()` thì hạ chữ hoa ở phần sau xuống thường — mà đề bài đầy tên
+    riêng và đơn vị viết hoa (Trí Long, TỔNG, km/h), nên phải chừa chúng ra.
+    """
+    s = (s or '').lstrip()
+    return s[:1].upper() + s[1:] if s else s
+
+
+# Động từ mở đầu một câu SAI KHIẾN. "Hỏi tìm X" hay "Hỏi đọc số ấy" không phải
+# tiếng Việt — câu sai khiến đứng một mình đã đủ nghĩa, chỉ câu HỎI mới cần chữ
+# "Hỏi" dẫn vào. Danh sách lấy từ chính 44 dòng `HỎI GÌ?` của sách lớp 4.
+_SAI_KHIEN = ('đọc', 'viết', 'tìm', 'tính', 'lập', 'nêu', 'so sánh', 'xếp', 'đếm',
+              'vẽ', 'kiểm chứng', 'chứng minh', 'giải thích', 'chọn', 'điền',
+              'tách', 'ghép', 'phân tích', 'sắp xếp', 'dựng', 'đổi', 'gọi tên',
+              'chỉ ra', 'liệt kê', 'hoàn thành')
+
+
+def _thanh_cau_hoi(hoi):
+    """Dòng `HỎI GÌ?` → một câu đứng được một mình.
+
+    Câu HỎI thì thêm chữ "Hỏi" dẫn vào và đóng bằng dấu hỏi; câu SAI KHIẾN thì để
+    nguyên và đóng bằng dấu chấm. Cắt dấu câu cũ trước khi đóng, nếu không dòng
+    nào sẵn dấu hỏi sẽ thành "??".
+    """
+    h = re.sub(r'\s*[.?!…]+\s*$', '', (hoi or '').strip())
+    if not h:
+        return ''
+    if h.lower().startswith(_SAI_KHIEN):
+        return f'{_hoa_dau(h)}.'
+    return f'Hỏi {h}?'
+
+
 def _dong(bai, ten):
     return list((bai['muc'].get(ten) or {}).get('dong') or [])
 
@@ -107,14 +141,32 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
         # nên lấy đề của ⑥ là lời và hình kể hai bộ số đá nhau ngay dòng đầu bé đọc —
         # đúng bẫy 32, và tôi đã nhìn thấy nó trên màn hình thật trước khi chữa.
         #
-        # Mục ③ có sẵn dòng `HỎI GÌ?` do chính người soạn viết, đủ 44/44 bài, và nó
-        # nói đúng câu hỏi của tình huống mở. Quyển nào không có mục ấy thì rơi về
-        # nếp cũ, nên lớp 2 và lớp 3 không đổi một chữ.
-        hoi_gi = next((re.sub(r'^HỎI GÌ\?\s*', '', d) for d in _dong(bai, 'dichMoHinh')
-                       if d.startswith('HỎI GÌ?')), '')
-        de_bai = hoi_gi or re.sub(
-            r'^Đề bài\s*[:.]\s*', '',
-            next((d for d in _dong(bai, 'viDuMau') if d.startswith('Đề bài')), ''))
+        # Mục ③ có sẵn hai dòng `CHO GÌ?` và `HỎI GÌ?` do chính người soạn viết, đủ
+        # 44/44 bài, và cả hai nói về ĐÚNG bài toán của tình huống mở. Quyển nào
+        # không có mục ấy thì rơi về nếp cũ, nên lớp 2 và lớp 3 không đổi một chữ.
+        #
+        # ⚠ BẢN ĐẦU CHỈ LẤY `HỎI GÌ?` — VÀ ĐÓ LÀ MỘT MẨU CÂU CỤT.
+        # "sau bao nhiêu giờ xe buýt đuổi kịp xe đồ." Đọc lên không biết xe nào,
+        # cách nhau bao xa, đi nhanh chậm ra sao — 38/44 bài lớp 4 mở ra là một
+        # mẩu như thế, viết thường ngay chữ đầu. Dữ kiện nằm hết ở `CHO GÌ?` mà
+        # dòng ấy bị bỏ. Nay ghép cả hai thành một đề đọc được:
+        #
+        #     Xe đồ ở trước 30 km, mỗi giờ đi 30 km; xe buýt mỗi giờ đi 40 km,
+        #     đuổi theo cùng chiều. Hỏi sau bao nhiêu giờ xe buýt đuổi kịp xe đồ?
+        #
+        # Vẫn không dựng câu mới (chuẩn mục 6 luật 1) — chỉ nối hai dòng người soạn
+        # đã viết, viết hoa chữ đầu và đổi dấu chấm cuối thành dấu hỏi.
+        def _muc3(nhan):
+            return next((re.sub(rf'^{nhan}\?\s*', '', d) for d in _dong(bai, 'dichMoHinh')
+                         if d.startswith(f'{nhan}?')), '')
+
+        cho_gi, hoi_gi = _muc3('CHO GÌ'), _muc3('HỎI GÌ')
+        if cho_gi and hoi_gi:
+            de_bai = f'{_hoa_dau(cho_gi)} {_thanh_cau_hoi(hoi_gi)}'
+        else:
+            de_bai = hoi_gi or re.sub(
+                r'^Đề bài\s*[:.]\s*', '',
+                next((d for d in _dong(bai, 'viDuMau') if d.startswith('Đề bài')), ''))
         cau_dau = re.split(r'(?<=[.!?])\s+', ' '.join(mo))[0]
         # Câu dẫn CHỈ giữ khi không có con số nào: chuyện mở bài hay kể một bộ số
         # khác với bộ số của đề ("ba tấm thẻ 2, 5, 8" rồi đề lại cho 4, 0, 9) — ghép
