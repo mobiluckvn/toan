@@ -630,7 +630,14 @@ def cau_truc_so(p, out):
             x = x0 + W * i
             vien, nen, chu = MAU.get(ph.get('mau', 'teal'), MAU['teal'])
             ax.add_patch(Rectangle((x, y0), W, CAO, fc=nen, ec=NAVY, lw=2.2, zorder=4))
-            _txt(ax, x + W / 2, y0 + CAO - 5.0, ph.get('ten', ''), fs=FS['body'], c=NAVY, w='bold', z=6)
+            # Tên phòng phải CO THEO BỀ NGANG PHÒNG. Lớp 2 có ba phòng nên phòng
+            # rộng 26 và "ĐƠN VỊ" thừa chỗ; lớp 4 xây bảy phòng (tới lớp TRIỆU) thì
+            # phòng chỉ còn 12,5 mà nhãn vẫn là "TRĂM NGHÌN" — hai nhãn cạnh nhau
+            # đè lên nhau thành "TRĂM NGHÌNCHỤC NGHÌN", đọc không ra chữ gì. Đây là
+            # bẫy 15 và 38 gộp lại. `txt_fit` chỉ thu nhỏ KHI CẦN nên hình ba phòng
+            # của lớp 2 và bốn phòng của lớp 3 giữ nguyên từng nét.
+            txt_fit(ax, x + W / 2, y0 + CAO - 5.0, ph.get('ten', ''), W - 3.5,
+                    FS['body'], NAVY, z=6)
             _txt(ax, x + W / 2, y0 + CAO - 13.0, str(ph.get('so', '')), fs=FS['big'] + 4, c=chu, w='bold', z=6)
             _txt(ax, x + W / 2, y0 + 4.0, ph.get('duoi', ''), fs=FS['tiny'], c=MUTE, w='normal', z=6)
         if p.get('note'):

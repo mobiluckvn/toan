@@ -1,0 +1,350 @@
+{
+ "id": "DL:KSN4.B38",
+ "quyen": "lop4",
+ "so": 38,
+ "ten": "CHU VI - DIỆN TÍCH: VIÊN GẠCH MỘT MÉT VUÔNG",
+ "chuong": 10,
+ "tenChuong": "KIẾN TRÚC SƯ MÉT VUÔNG",
+ "dangGoc": "HH 1.1 mức Lớp 4 — Diện tích với m², ha, đổi đơn vị · bài ngược 2 bước · kết hợp nửa chu vi với Tổng - Hiệu / Tổng - Tỉ",
+ "hatMam": "Bài 15 và Bài 20 con đã thạo chu vi — độ dài đường VIỀN quanh hình. Hôm nay đo thứ khác hẳn: phần LÒNG bên trong, gọi là DIỆN TÍCH, đếm bằng viên gạch 1 m². Và tin vui cho cựu quan tòa - nghệ nhân chia phần: các bài diện tích khó nhất chỉ là Tổng - Hiệu, Tổng - Tỉ quen thuộc... mặc áo bản vẽ!",
+ "ganDuoi": {
+  "ve": [
+   "DL:KSN3.B27",
+   "DL:KSN3.B30"
+  ],
+  "ten": [
+   "CHU VI CÓ CÔNG THỨC",
+   "DIỆN TÍCH — TẤM THẢM Ô VUÔNG"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3
+ },
+ "muc": {
+  "mucTieu": {
+   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
+   "dong": [
+    "Tính diện tích hình chữ nhật bằng công thức S = dài × rộng, hiểu nó là phép ĐẾM Ô 1 m²; phân biệt rạch ròi chu vi (m) và diện tích (m²).",
+    "Đổi đơn vị lớn: 1 ha = 10 000 m² và giải bài ngược hai bước (có S và một cạnh, tìm cạnh kia rồi tìm chu vi).",
+    "Giải bài kết hợp: từ chu vi lấy nửa chu vi làm TỔNG, ghép với hiệu hoặc tỉ để tìm hai cạnh, rồi mới tính diện tích."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "chuyenMoBai": {
+   "ten": "CHUYỆN MỞ BÀI — Hạng mục số 1: đo sân lớn",
+   "dong": [
+    "Hạng mục đầu tiên của hồ sơ: sân chơi chính. Hai kỹ sư kéo thước dây đo được sân dài 30 m, rộng 20 m. Trí Long ghi ngay vào hồ sơ: \"Diện tích sân: 30 cộng 20 nhân 2 bằng 100 mét vuông!\" Su Kem nhìn qua, gạch nhẹ: \"100 là số đo VIỀN sân — cuộn lưới rào ấy, nhớ Bài 20 không? Còn kinh phí lát gạch phải đếm phần LÒNG sân cơ. Vẽ lưới ô một mét ra là thấy hai con số này khác nhau một trời một vực.\""
+   ],
+   "hinh": [
+    {
+     "id": "L4H_B38_MO",
+     "sauDong": 0,
+     "file": "figures/L4H_B38_MO.png",
+     "caption": "Sân chữ nhật, mới biết chu vi và phần hơn.",
+     "sha256_16": "f377ee4513528eb4"
+    }
+   ],
+   "nhip": ""
+  },
+  "dichMoHinh": {
+   "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
+   "dong": [
+    "CHO GÌ? sân hình chữ nhật dài 30 m, rộng 20 m.",
+    "HỎI GÌ? diện tích sân (để khai kinh phí lát gạch) và chu vi sân (để khai hàng rào).",
+    "ĐẠI LƯỢNG & ĐƠN VỊ: độ dài (m) cho viền — nhưng phần lòng cần đơn vị MỚI: ô vuông cạnh 1 m, gọi là 1 m².",
+    "QUAN HỆ GIỮA CHÚNG: phủ kín sân bằng lưới ô 1 m²: mỗi hàng đặt được 30 ô, xếp được 20 hàng — tổng số ô là phép nhân 30 × 20.",
+    "CHỌN CÔNG CỤ: LƯỚI Ô VUÔNG + hai công thức tách bạch: S = dài × rộng (m²); chu vi = (dài + rộng) × 2 (m).",
+    "ƯỚC LƯỢNG TRƯỚC: sân 30 × 20 to gấp nhiều lần lớp học (~50 m²) → S phải cỡ vài trăm mét vuông."
+   ],
+   "hinh": [],
+   "nhip": "NHỊP 1 · DỊCH — từ sân chơi sang lưới ô một mét vuông"
+  },
+  "khamPha": {
+   "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
+   "dong": [
+    "Bước 1 — ĐẾM GẠCH BẰNG PHÉP NHÂN: mỗi hàng 30 viên gạch 1 m², có 20 hàng → S = 30 × 20 = 600 (m²). Còn viền: chu vi = (30 + 20) × 2 = 100 (m). Hai câu hỏi, hai đơn vị, hai công thức — ghi hồ sơ nhầm cột là kinh phí sai bét!",
+    "Bước 2 — ĐƠN VỊ KHỔNG LỒ: HÉC-TA: đất đai rộng người ta đo bằng ha: 1 ha = một ô vuông cạnh 100 m = 100 × 100 = 10 000 m². Công viên 2 ha = 20 000 m² — sân chơi 600 m² của khu phố chỉ là mảnh nhỏ trong đó. Đổi xuôi nhân 10 000, đổi ngược chia 10 000.",
+    "Bước 3 — BÀI NGƯỢC HAI BƯỚC: hồ sơ cũ ghi: \"sân phụ có diện tích 600 m², chiều dài 30 m\" — rộng bao nhiêu, rào hết bao nhiêu mét? Bước một: rộng = S : dài = 600 : 30 = 20 (m). Bước hai: chu vi = (30 + 20) × 2 = 100 (m). Công thức S = dài × rộng chạy lùi y như bài tìm thừa số của Bài 6.",
+    "Bước 4 — BẮT TAY CHƯƠNG 6 - 7: đề gộp: \"sân chu vi 100 m, dài hơn rộng 10 m — tính diện tích.\" Lột áo chu vi (Bài 20!): nửa chu vi = 50 = dài + rộng; Tổng - Hiệu: dài = (50 + 10) : 2 = 30, rộng = 20 → S = 600 m². Gặp tỉ cũng vậy: nửa chu vi 50, dài : rộng = 3 : 2 → một phần 10 → 30 và 20. Khẩu quyết: TÌM ĐỦ HAI CẠNH TRƯỚC — NHÂN DIỆN TÍCH SAU.",
+    "MẸO THÁM TỬ: Chu vi đo VIỀN (m), diện tích đo LÒNG (m²) — hai thế giới, đừng lẫn! S hình chữ nhật = dài × rộng; 1 ha = 10 000 m². Bài ngược: cạnh thiếu = S : cạnh biết. Bài gộp chu vi + hiệu (tỉ): nửa chu vi là TỔNG, giải Tổng - Hiệu hay Tổng - Tỉ ra hai cạnh rồi mới nhân."
+   ],
+   "hinh": [
+    {
+     "id": "L4H_B38_G2",
+     "sauDong": 1,
+     "file": "figures/L4H_B38_G2.png",
+     "caption": "Lưới ô vuông đếm được từng mét vuông.",
+     "sha256_16": "5f67110151aed141"
+    }
+   ],
+   "nhip": "NHỊP 2 · GIẢI"
+  },
+  "lapSoi": {
+   "ten": "LẮP VỀ CUỘC SỐNG & SOI",
+   "dong": [
+    "LẮP: trang một của hồ sơ: \"Sân chính: lát gạch 600 m² — hàng rào 100 m.\" Bác tổ trưởng đối chiếu báo giá: mỗi mét vuông gạch một đơn giá, mỗi mét rào một đơn giá — hai con số tách bạch, phòng tài chính duyệt cái rẹt!",
+    "SOI: soi hai lớp: đơn vị đúng cột (m² cho gạch, m cho rào) ✓; và ước lượng \"vài trăm mét vuông, to hơn chục lớp học\" khớp con số 600 ✓.",
+    "DÙNG NGOÀI ĐỜI: tính gạch lát phòng, cỏ trải sân bóng, sơn tường nhà — mọi hóa đơn \"phủ kín bề mặt\" trong đời đều tính bằng viên gạch một mét vuông của hôm nay."
+   ],
+   "hinh": [],
+   "nhip": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+  },
+  "viDuMau": {
+   "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
+   "dong": [
+    "Đề bài: Một sân chơi hình chữ nhật có chu vi 100 m, chiều dài hơn chiều rộng 10 m. Tính diện tích sân chơi đó.",
+    "Tóm tắt:",
+    "Chu vi: 100 m; dài hơn rộng: 10 m.",
+    "Tìm diện tích sân.",
+    "Đề hỏi diện tích nhưng cho chu vi — sẽ phải đi vòng qua hai cạnh.",
+    "Mô hình (hai chặng):",
+    "Chặng 1: nửa chu vi = tổng hai cạnh → Tổng - Hiệu tìm dài, rộng.",
+    "Chặng 2: có đủ hai cạnh → S = dài × rộng.",
+    "Vạch lộ trình hai chặng ngay từ mô hình — không nhảy cóc.",
+    "Bài giải:",
+    "Nửa chu vi sân là: 100 : 2 = 50 (m)",
+    "Nửa chu vi chính là tổng của chiều dài và chiều rộng.",
+    "Chiều dài sân là: (50 + 10) : 2 = 30 (m)",
+    "Chiều rộng sân là: 30 − 10 = 20 (m)",
+    "Diện tích sân là: 30 × 20 = 600 (m²)",
+    "Năm dòng nối liền Bài 19 - 20 với công thức diện tích mới.",
+    "Đáp số: 600 m².",
+    "Đáp số kèm đơn vị m² — không phải m!",
+    "Thử lại: (30 + 20) × 2 = 100 ✓ ; 30 − 20 = 10 ✓",
+    "Thử ngược về hai dữ kiện gốc của đề: chu vi và hiệu."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "suKemNham": {
+   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "dong": [
+    "Khai hồ sơ mảnh đất 1 ha, Trí Long viết: \"1 ha = 1 000 m² — thì 'ha' nghe ngắn hơn 'nghìn' có tí, chắc là một nghìn!\"",
+    "Gợi ý 1: 1 ha là ô vuông cạnh bao nhiêu mét? Lấy cạnh nhân cạnh xem ra bao nhiêu viên gạch 1 m²?",
+    "Gợi ý 2: 100 × 100 tính cẩn thận bằng luật đếm chữ số 0 của Bài 4 — rồi sửa hồ sơ giúp Trí Long. Khai thiếu một chữ số 0 là kinh phí hụt... mười lần đấy!"
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "luyenTap": {
+   "ten": "LUYỆN TẬP 3 MỨC SAO",
+   "dong": [],
+   "hinh": [],
+   "nhip": ""
+  },
+  "quiz": {
+   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
+   "dong": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "gocBoMe": {
+   "ten": "GÓC BỐ MẸ",
+   "dong": [
+    "Vẽ phấn một ô 1 m × 1 m ra sân (hay ghép 4 tờ báo) cho con NGỒI VÀO trong một mét vuông — trải nghiệm cơ thể ấy chống lẫn lộn m với m² tốt hơn trăm lần nhắc miệng.",
+    "Đo phòng ngủ của chính con: dài, rộng, rồi tính diện tích và \"khai hồ sơ\" xem lát kín sàn cần bao nhiêu viên gạch 1 m² — bài tập thật, số thật, động lực thật.",
+    "NÊN: mỗi đáp số bắt kèm đơn vị và câu \"con số này đo viền hay đo lòng?\". KHÔNG NÊN: hình chữ L ghép nhiều mảnh hay đơn vị dm², cm² trộn lẫn — phức hợp xin hẹn bài sau và lớp 5."
+   ],
+   "hinh": [],
+   "nhip": ""
+  }
+ },
+ "cau": [
+  {
+   "id": "C1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tính diện tích hình chữ nhật có chiều dài 8 m, chiều rộng 5 m.",
+   "loiChua": "S = 8 × 5 = 40 m².",
+   "tuLuan": true
+  },
+  {
+   "id": "C2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Đổi: 3 ha = ? m².",
+   "loiChua": "3 ha = 3 × 10 000 = 30 000 m².",
+   "tuLuan": true
+  },
+  {
+   "id": "C3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tính chu vi hình chữ nhật có chiều dài 30 m, chiều rộng 20 m.",
+   "loiChua": "chu vi = (30 + 20) × 2 = 100 m.",
+   "tuLuan": true
+  },
+  {
+   "id": "C4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Sân chơi hình chữ nhật dài 30 m, rộng 20 m. Tính diện tích và chu vi sân.",
+   "loiChua": "S = 30 × 20 = 600 m²; chu vi = 100 m — hai đơn vị, hai cột hồ sơ!",
+   "tuLuan": true
+  },
+  {
+   "id": "C5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Một sân hình chữ nhật có diện tích 600 m², chiều dài 30 m. Tính chiều rộng và chu vi sân.",
+   "loiChua": "rộng = 600 : 30 = 20 m; chu vi = (30 + 20) × 2 = 100 m.",
+   "tuLuan": true
+  },
+  {
+   "id": "C6",
+   "maSach": "C6",
+   "so": 6,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Sân hình chữ nhật có chu vi 100 m, chiều dài hơn chiều rộng 10 m. Tính diện tích sân.",
+   "loiChua": "nửa chu vi 50; dài = (50 + 10) : 2 = 30 m; rộng = 20 m → S = 600 m².",
+   "tuLuan": true
+  },
+  {
+   "id": "C7",
+   "maSach": "C7",
+   "so": 7,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Sân hình chữ nhật có nửa chu vi 50 m, chiều dài và chiều rộng theo tỉ số 3 : 2. Tính diện tích sân.",
+   "loiChua": "một phần 50 : 5 = 10 → dài 30 m, rộng 20 m → S = 600 m².",
+   "tuLuan": true
+  },
+  {
+   "id": "C8",
+   "maSach": "C8",
+   "so": 8,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Thửa ruộng hình chữ nhật có diện tích 1 ha và chiều rộng 50 m. Tính chiều dài và chu vi thửa ruộng. (Nhớ đổi ha ra m² trước!)",
+   "loiChua": "1 ha = 10 000 m² → dài = 10 000 : 50 = 200 m; chu vi = (200 + 50) × 2 = 500 m.",
+   "tuLuan": true
+  },
+  {
+   "id": "C9",
+   "maSach": "C9",
+   "so": 9,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Anh Trí Dũng đố: \"Một hình chữ nhật có chu vi 100 m và diện tích 600 m². Tìm chiều dài và chiều rộng — gợi ý: tổng hai cạnh là 50, hãy thử các cặp có tổng 50 một cách CÓ HỆ THỐNG xem cặp nào nhân ra 600.\"",
+   "loiChua": "tổng hai cạnh 100 : 2 = 50. Thử có hệ thống các cặp tổng 50: 40 × 10 = 400; 35 × 15 = 525; 30 × 20 = 600 ✓ → dài 30 m, rộng 20 m. (Càng gần vuông tích càng lớn — nên dò từ giữa dò ra là nhanh nhất!)",
+   "tuLuan": true
+  },
+  {
+   "id": "Q1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "Diện tích hình chữ nhật bằng chiều dài nhân chiều rộng.",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": true
+   },
+   "loiChua": "Đáp án: ĐÚNG",
+   "solutionNarrative": ""
+  },
+  {
+   "id": "Q2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "1 ha = 1 000 m².",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": false
+   },
+   "loiChua": "1 ha = 10 000 m² (ô vuông cạnh 100 m).",
+   "solutionNarrative": "1 ha = 10 000 m² (ô vuông cạnh 100 m)."
+  },
+  {
+   "id": "Q3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Diện tích hình chữ nhật 7 m × 6 m là:",
+   "choices": [
+    "A. 42 m²",
+    "B. 26 m²",
+    "C. 13 m²"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 42 m²"
+   },
+   "loiChua": "42 m²).",
+   "solutionNarrative": "42 m²)."
+  },
+  {
+   "id": "Q4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "2 ha bằng:",
+   "choices": [
+    "A. 20 000 m²",
+    "B. 2 000 m²",
+    "C. 200 m²"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 20 000 m²"
+   },
+   "loiChua": "20 000 m²).",
+   "solutionNarrative": "20 000 m²)."
+  },
+  {
+   "id": "Q5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Hình chữ nhật có diện tích 24 m², chiều dài 6 m. Chiều rộng là:",
+   "choices": [
+    "A. 4 m",
+    "B. 18 m",
+    "C. 30 m"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 4 m"
+   },
+   "loiChua": "24 : 6 = 4 m.",
+   "solutionNarrative": "24 : 6 = 4 m."
+  }
+ ]
+}

@@ -1,0 +1,344 @@
+{
+ "id": "DL:KSN4.B34",
+ "quyen": "lop4",
+ "so": 34,
+ "ten": "TÌM PHÂN SỐ CỦA MỘT SỐ",
+ "chuong": 9,
+ "tenChuong": "ĐẦU BẾP PHÂN SỐ",
+ "dangGoc": "PS 4.1 + PS 4.2 mức Lớp 4 — Tìm 3/4 của một số · tìm số biết 2/5 của nó · đổi đơn vị gốc (A = 4/5 của B)",
+ "hatMam": "Câu thần chú \"giá trị MỘT PHẦN\" của Chương 7 hôm nay khoác áo mới: phân số 3/4 chính là lời dặn \"chia 4 phần, lấy 3 phần\". Bài xuôi, bài ngược, và cả trò ảo thuật ĐỔI GỐC (\"A bằng 4/5 của B thì B bằng mấy phần của A?\") — tất cả đều xoay quanh một chiếc chìa: tìm ra một phần đáng giá bao nhiêu.",
+ "ganDuoi": {
+  "ve": [
+   "DL:KSN3.B09"
+  ],
+  "ten": [
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3
+ },
+ "muc": {
+  "mucTieu": {
+   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
+   "dong": [
+    "Tìm phân số của một số theo hai nhịp: chia cho MẪU (ra một phần), nhân với TỬ.",
+    "Giải bài ngược: biết 2/5 của một số bằng 12, tìm số ấy (chia cho tử, nhân với mẫu).",
+    "Chơi thạo trò đổi gốc: A bằng 4/5 của B thì B bằng 5/4 của A — cùng bức tranh, đổi chỗ đứng ngắm."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "chuyenMoBai": {
+   "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 34: mẻ bánh quy sô-cô-la",
+   "dong": [
+    "Chị Ngọc Anh ra lò mẻ 24 chiếc bánh quy thơm phức: \"Theo đơn đặt, 3/4 số bánh này phải phủ sô-cô-la, phần còn lại rắc hạnh nhân. Em đếm giúp chị mỗi loại mấy chiếc — nhúng nhầm là khách trả hàng đó!\" Trí Long lẩm nhẩm: \"3/4 của 24... lấy 24 chia 3? Hay nhân 4 chia 3?...\" Su Kem xếp 24 chiếc bánh thành bốn cụm đều nhau: \"Đừng đoán trong đầu — MẪU số bảo chia mấy cụm thì cứ chia ra bàn đã, rồi TỬ số bảo lấy mấy cụm.\""
+   ],
+   "hinh": [
+    {
+     "id": "L4H_B34_MO",
+     "sauDong": 0,
+     "file": "figures/L4H_B34_MO.png",
+     "caption": "Thanh chia 5 phần, hai phần đã biết là 12 chiếc.",
+     "sha256_16": "d0e86a600a6c25b9"
+    }
+   ],
+   "nhip": ""
+  },
+  "dichMoHinh": {
+   "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
+   "dong": [
+    "CHO GÌ? mẻ 24 chiếc bánh; 3/4 số bánh phủ sô-cô-la, còn lại rắc hạnh nhân.",
+    "HỎI GÌ? số bánh mỗi loại.",
+    "ĐẠI LƯỢNG & ĐƠN VỊ: số bánh (chiếc) — phân số 3/4 ở đây là \"3/4 CỦA 24\", không phải ba phần tư chiếc bánh!",
+    "QUAN HỆ GIỮA CHÚNG: chữ \"của\" dịch thành lời dặn: MẪU 4 → chia 24 thành 4 cụm đều; TỬ 3 → lấy 3 cụm.",
+    "CHỌN CÔNG CỤ: SƠ ĐỒ CỤM: bốn cụm bánh, tô đậm ba cụm; giá trị một cụm là chìa khóa.",
+    "ƯỚC LƯỢNG TRƯỚC: 3/4 là gần hết mẻ → sô-cô-la phải ngoài dăm chục phần trăm — cỡ 18 chiếc."
+   ],
+   "hinh": [],
+   "nhip": "NHỊP 1 · DỊCH — đọc phân số thành lời dặn chia - lấy"
+  },
+  "khamPha": {
+   "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
+   "dong": [
+    "Bước 1 — BÀI XUÔI: TÌM 3/4 CỦA 24: chia theo mẫu: 24 : 4 = 6 (chiếc mỗi cụm); lấy theo tử: 6 × 3 = 18 (chiếc phủ sô-cô-la); còn lại 24 − 18 = 6 chiếc rắc hạnh nhân — đúng một cụm, chính là 1/4 của mẻ. Công thức gọn: tìm a/b của N = N : b × a.",
+    "Bước 2 — BÀI NGƯỢC: BIẾT MỘT PHẦN CỦA SỐ, TÌM CẢ SỐ: \"2/5 số bánh trong hộp là 12 chiếc — hộp có bao nhiêu?\" 12 chiếc ứng với 2 cụm → một cụm: 12 : 2 = 6; cả hộp 5 cụm: 6 × 5 = 30 (chiếc). Ngược với bài xuôi: chia cho TỬ trước, nhân với MẪU sau — nhưng trái tim vẫn là giá trị một cụm!",
+    "Bước 3 — TRÒ ĐỔI GỐC: \"khay A bằng 4/5 khay B\" — vẽ: A chiếm 4 ô, B chiếm 5 ô (ô cùng cỡ). Giờ đứng từ phía A nhìn lại: B chiếm 5 ô khi A chiếm 4 ô → B bằng 5/4 của A! Cùng một bức tranh, chỉ đổi xem AI làm gốc so sánh — phân số lộn ngược tử mẫu.",
+    "Bước 4 — CHẠY SỐ TRÒ ĐỔI GỐC: A = 4/5 của B và A = 20 chiếc → một ô: 20 : 4 = 5 → B = 5 × 5 = 25 (chiếc). Kiểm chiều kia: 5/4 của 20 = 20 : 4 × 5 = 25 ✓. Hai chiều cùng đáp số — trò đổi gốc không có gì ma thuật, chỉ là chọn lại \"chiếc bánh chuẩn\" để đo.",
+    "MẸO THÁM TỬ: Tìm a/b CỦA N: chia N cho mẫu b, nhân với tử a. Bài ngược (biết a/b của số bằng M): chia M cho tử a ra một cụm, nhân với mẫu b ra cả số. Đổi gốc: A = a/b của B ⟺ B = b/a của A. Mọi ngả đường vẫn về một câu hỏi: MỘT CỤM đáng giá bao nhiêu?"
+   ],
+   "hinh": [
+    {
+     "id": "L4H_B34_G1",
+     "sauDong": 0,
+     "file": "figures/L4H_B34_G1.png",
+     "caption": "Chia cho tử số ra một phần, nhân mẫu số ra cả hộp.",
+     "sha256_16": "926b91a68d0c9f8a"
+    }
+   ],
+   "nhip": "NHỊP 2 · GIẢI"
+  },
+  "lapSoi": {
+   "ten": "LẮP VỀ CUỘC SỐNG & SOI",
+   "dong": [
+    "LẮP: phiếu bếp gửi chị Ngọc Anh: \"Mẻ 24: nhúng sô-cô-la 18 chiếc — rắc hạnh nhân 6 chiếc.\" Chị xếp hai khay đúng phiếu, khách đến nhận hàng đếm khớp từng chiếc, còn khen \"tiệm làm ăn chuẩn chỉ\"!",
+    "SOI: soi kép: 18 + 6 = 24 ✓ và 18 : 24 — cứ 3 cụm sô-cô-la trên 4 cụm cả mẻ, đúng 3/4 ✓; kèm ước lượng \"ngoài nửa mẻ khá nhiều\" trúng.",
+    "DÙNG NGOÀI ĐỜI: \"giảm giá còn 3/4\", \"uống 2/3 cốc nước\", \"đi được 4/5 quãng đường\" — người lớn nói phân số cả ngày, và giờ con quy được tất cả ra con số cụ thể."
+   ],
+   "hinh": [],
+   "nhip": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+  },
+  "viDuMau": {
+   "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
+   "dong": [
+    "Đề bài: Biết 2/5 số bánh trong hộp là 12 chiếc. Hỏi trong hộp có bao nhiêu chiếc bánh?",
+    "Tóm tắt:",
+    "2/5 số bánh = 12 chiếc. Tìm số bánh cả hộp.",
+    "Bài NGƯỢC — cho giá trị của một phân số, hỏi cả số.",
+    "Sơ đồ (5 cụm bánh):",
+    "[—][—][—][—][—] — hộp gồm 5 cụm đều nhau",
+    "hai cụm đầu (2/5) ứng với 12 chiếc.",
+    "Sơ đồ cụm chỉ rõ 12 chiếc \"đậu\" vào mấy ô.",
+    "Bài giải:",
+    "Vì 2/5 số bánh là 12 chiếc nên 1/5 số bánh là: 12 : 2 = 6 (chiếc)",
+    "Số bánh trong hộp là: 6 × 5 = 30 (chiếc)",
+    "Hai dòng — chia cho tử ra một cụm, nhân với mẫu ra cả hộp.",
+    "Đáp số: 30 chiếc bánh.",
+    "Đáp số kèm đơn vị.",
+    "Thử lại: 2/5 của 30 = 30 : 5 × 2 = 12 ✓",
+    "Lắp đáp số vào bài xuôi — phải trả về đúng con số 12 của đề."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "suKemNham": {
+   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "dong": [
+    "Bài \"2/5 số bánh là 12 chiếc, hỏi cả hộp\", Trí Long áp ngay công thức bài xuôi: \"Tìm 2/5 của 12 chứ gì: 12 : 5 × 2 = 4,8... ơ lẻ! Bánh gì mà tám phần mười chiếc?!\"",
+    "Gợi ý 1: Đọc kỹ đề: 12 chiếc là CẢ HỘP hay là GIÁ TRỊ CỦA 2/5 hộp? Bài này xuôi hay ngược?",
+    "Gợi ý 2: Đáp số lẻ 4,8 lại là chuông SOI reo: nhầm chiều rồi! Vẽ sơ đồ 5 cụm, đặt 12 vào đúng hai cụm đầu rồi giải chiều ngược giúp Trí Long — và dặn: gặp chữ \"của nó bằng\", hộp số đứng sau dấu bằng là MẢNH, không phải cả tấm."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "luyenTap": {
+   "ten": "LUYỆN TẬP 3 MỨC SAO",
+   "dong": [],
+   "hinh": [],
+   "nhip": ""
+  },
+  "quiz": {
+   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
+   "dong": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "gocBoMe": {
+   "ten": "GÓC BỐ MẸ",
+   "dong": [
+    "Giao \"quyền chia đồ\" cho con: \"lấy 2/3 chỗ nho này ra đĩa\", \"rót 3/4 cốc sữa\" — mỗi mệnh lệnh phân số được thực thi bằng tay là một bài tập sống.",
+    "Phân biệt xuôi - ngược bằng câu hỏi: \"con số đề cho là CẢ TẤM hay MỘT MẢNH?\" — đặt đúng con số vào sơ đồ cụm là hết nhầm chiều.",
+    "NÊN: kiểm mọi bài ngược bằng phép lắp xuôi. KHÔNG NÊN: chuỗi hai phân số nối nhau (\"lấy 2/3 của 3/4 số bánh\") — phép nhân phân số chồng tầng hẹn lớp 5."
+   ],
+   "hinh": [],
+   "nhip": ""
+  }
+ },
+ "cau": [
+  {
+   "id": "C1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tìm 1/2 của 24.",
+   "loiChua": "24 : 2 = 12.",
+   "tuLuan": true
+  },
+  {
+   "id": "C2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tìm 1/4 của 24.",
+   "loiChua": "24 : 4 = 6.",
+   "tuLuan": true
+  },
+  {
+   "id": "C3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tìm 3/4 của 24.",
+   "loiChua": "24 : 4 × 3 = 18.",
+   "tuLuan": true
+  },
+  {
+   "id": "C4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tìm 2/3 của 36.",
+   "loiChua": "36 : 3 × 2 = 24.",
+   "tuLuan": true
+  },
+  {
+   "id": "C5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Biết 2/5 của một số bằng 12. Tìm số đó.",
+   "loiChua": "một cụm 12 : 2 = 6 → số đó là 6 × 5 = 30.",
+   "tuLuan": true
+  },
+  {
+   "id": "C6",
+   "maSach": "C6",
+   "so": 6,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Biết 3/8 số kẹo trong hộp là 15 viên. Hỏi hộp có bao nhiêu viên kẹo?",
+   "loiChua": "một cụm 15 : 3 = 5 → cả hộp 5 × 8 = 40 viên.",
+   "tuLuan": true
+  },
+  {
+   "id": "C7",
+   "maSach": "C7",
+   "so": 7,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Lớp 4A có 36 học sinh, trong đó 5/9 là học sinh nữ. Tính số bạn nữ, số bạn nam.",
+   "loiChua": "nữ = 36 : 9 × 5 = 20 bạn; nam = 36 − 20 = 16 bạn.",
+   "tuLuan": true
+  },
+  {
+   "id": "C8",
+   "maSach": "C8",
+   "so": 8,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Số bánh khay A bằng 4/5 số bánh khay B. Biết khay A có 20 chiếc. Hỏi khay B có bao nhiêu chiếc — và khay B bằng mấy phần của khay A?",
+   "loiChua": "một ô 20 : 4 = 5 → khay B = 5 × 5 = 25 chiếc; khay B bằng 5/4 của khay A (đổi gốc: lộn ngược tử mẫu).",
+   "tuLuan": true
+  },
+  {
+   "id": "C9",
+   "maSach": "C9",
+   "so": 9,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Anh Trí Dũng đố: \"Su Bống đã đọc 3/7 cuốn truyện, tức là đọc được 21 trang. Hỏi cuốn truyện dày bao nhiêu trang, và em còn phải đọc bao nhiêu trang nữa?\"",
+   "loiChua": "một cụm 21 : 3 = 7 → cuốn truyện 7 × 7 = 49 trang; còn phải đọc 49 − 21 = 28 trang (đúng 4/7 cuốn).",
+   "tuLuan": true
+  },
+  {
+   "id": "Q1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "Muốn tìm 3/4 của một số, ta chia số đó cho 4 rồi nhân với 3.",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": true
+   },
+   "loiChua": "Đáp án: ĐÚNG",
+   "solutionNarrative": ""
+  },
+  {
+   "id": "Q2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "1/2 của 30 bằng 60.",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": false
+   },
+   "loiChua": "1/2 của 30 là 15.",
+   "solutionNarrative": "1/2 của 30 là 15."
+  },
+  {
+   "id": "Q3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "2/3 của 18 bằng:",
+   "choices": [
+    "A. 12",
+    "B. 6",
+    "C. 9"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 12"
+   },
+   "loiChua": "18 : 3 × 2 = 12.",
+   "solutionNarrative": "18 : 3 × 2 = 12."
+  },
+  {
+   "id": "Q4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "1/5 của một số bằng 7. Số đó là:",
+   "choices": [
+    "A. 35",
+    "B. 12",
+    "C. 7"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 35"
+   },
+   "loiChua": "7 × 5 = 35.",
+   "solutionNarrative": "7 × 5 = 35."
+  },
+  {
+   "id": "Q5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "3/5 của 40 bằng:",
+   "choices": [
+    "A. 24",
+    "B. 15",
+    "C. 8"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 24"
+   },
+   "loiChua": "40 : 5 × 3 = 24.",
+   "solutionNarrative": "40 : 5 × 3 = 24."
+  }
+ ]
+}

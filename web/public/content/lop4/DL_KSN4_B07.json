@@ -1,0 +1,395 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B07",
+ "grade": 4,
+ "quyen": "lop4",
+ "title": "Bài 7 · ĐẾM SỐ & CÔNG TRÌNH ĐÁNH SỐ THƯ VIỆN",
+ "durationMinutes": 10,
+ "so": 7,
+ "chuong": 2,
+ "tenChuong": "CỖ MÁY BỐN PHÉP TÍNH",
+ "dangGoc": "SỐ 4.1 + SỐ 4.3 mức Lớp 4 — Công thức đếm khoảng bất kỳ · đếm chia hết · đếm chữ số trang sách & bài ngược",
+ "skills": {
+  "bktUnit": "CHUONG:2@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 7,
+  "prev": "DL:KSN4.B06",
+  "next": "DL:KSN4.B08"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Dùng chắc công thức: số số hạng = (cuối − đầu) : khoảng cách + 1 với khoảng cách bất kỳ. Đếm các số chia hết cho 2, 5, 3, 9... trong một khoảng bằng cách tìm số đầu - số cuối của dãy. Đếm chữ số khi đánh số trang (chia nhóm 1-9, 10-99, 100-...); giải bài NGƯỢC: biết tổng chữ số, tìm số trang.",
+  "kidText": "Dùng chắc công thức: số số hạng = (cuối − đầu) : khoảng cách + 1 với khoảng cách bất kỳ. Đếm các số chia hết cho 2, 5, 3, 9... trong một khoảng bằng cách tìm số đầu - số cuối của dãy. Đếm chữ số khi đánh số trang (chia nhóm 1-9, 10-99, 100-...); giải bài NGƯỢC: biết tổng chữ số, tìm số trang.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — CÔNG THỨC ĐẾM VỚI KHOẢNG BẤT KỲ: kệ mã 8, 12, 16, ..., 96 (cách đều 4): số nhãn = (96 − 8) : 4 + 1 = 23. Vì sao \"+ 1\"? Đếm số BƯỚC NHẢY được 22, nhưng nhãn ĐẦU TIÊN chưa nhảy đã đứng đó — cộng nó vào! Quên +1 là căn bệnh kinh niên, thuốc đặc trị: thử với dãy bé xíu 8, 12, 16 (3 nhãn, công thức (16−8):4+1 = 3 ✓)."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — ĐẾM SỐ CHIA HẾT TRONG KHOẢNG: từ 1 đến 200 có bao nhiêu số chia hết cho 5? Dãy 5, 10, ..., 200 → (200 − 5) : 5 + 1 = 40. Khoảng lệch đầu: từ 20 đến 150 chia hết cho 4 → số đầu 20, số cuối 148 → (148 − 20) : 4 + 1 = 33. Mẹo: tự tìm \"người đầu hàng\" và \"người cuối hàng\" của dãy trước, công thức lo phần còn lại."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — ĐẠI DỰ ÁN ĐẾM CHỮ SỐ: chia trang sổ theo nhóm: trang 1-9: 9 trang × 1 = 9 chữ số; trang 10-99: 90 trang × 2 = 180; trang 100-250: (250 − 100) + 1 = 151 trang × 3 = 453. Tổng: 9 + 180 + 453 = 642 miếng decal. Ba phép nhân thay cho 250 lần đếm!"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — BÀI NGƯỢC (trừ dần theo nhóm): một cuốn sách dùng hết 552 chữ số — dày bao nhiêu trang? Trừ dần: nhóm 1 chữ số \"ăn\" 9, còn 552 − 9 = 543; nhóm 2 chữ số \"ăn\" 180, còn 543 − 180 = 363; số trang 3 chữ số: 363 : 3 = 121 trang → trang cuối là 99 + 121 = 220. Đi xuôi bằng nhân, đi ngược bằng trừ dần rồi chia."
+   }
+  ],
+  "mantra": "Đếm số: tìm ĐẦU - CUỐI - KHOẢNG rồi áp (cuối − đầu) : khoảng + 1 — và đừng bao giờ quên \"+ 1\". Đếm chữ số: chia nhóm theo độ dài số 1-9 | 10-99 | 100-999, mỗi nhóm một phép nhân. Bài ngược: bóc từng nhóm bằng phép trừ, nhóm cuối chia đều.",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trí Long báo giá vèo: \"Kệ mã từ 8 đến 96 cách nhau 4 thì lấy (96 − 8) : 4 = 22 nhãn! Còn sổ 250 trang thì 250 trang nhân 3 chữ số bằng 750 miếng — mua dư cho chắc!\"",
+    "signal": "Bé làm theo cách Trí Long vừa nói.",
+    "fix": "Gợi ý 1: Kiểm phép đếm nhãn bằng dãy tí hon 8, 12, 16 — đếm tay được mấy nhãn, công thức của Trí Long cho mấy? Thiếu ai trong hàng? Gợi ý 2: Có phải trang nào cũng \"ăn\" 3 miếng decal không? Trang số 7 cần mấy miếng? Lỗi của Trí Long là dùng MỘT khẩu phần cho mọi nhóm — tính lại theo ba nhóm và cho biết bác báo giá thừa bao nhiêu miếng (750 − 642 = ?)."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "tổng số miếng decal cần đặt in — không thừa, không thiếu."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "CHO GÌ? sổ kho đánh số trang từ 1 đến 250; mỗi chữ số cần một miếng decal.\nHỎI GÌ? tổng số miếng decal cần đặt in — không thừa, không thiếu.\nĐẠI LƯỢNG & ĐƠN VỊ: trang (trang) và chữ số (miếng decal) — chú ý: MỘT trang có thể \"ăn\" 1, 2 hoặc 3 miếng!\nQUAN HỆ GIỮA CHÚNG: số trang quyết định số chữ số: trang 1-9 mỗi trang 1 chữ số, trang 10-99 mỗi trang 2, trang 100-250 mỗi trang 3 — cùng nhóm thì cùng \"khẩu phần\".\nCHỌN CÔNG CỤ: BẢNG CHIA NHÓM theo độ dài số + công thức đếm số hạng cho từng nhóm.\nƯỚC LƯỢNG TRƯỚC: nhóm 3 chữ số đông nhất (hơn 150 trang × 3) — tổng phải hơn 450, cỡ sáu trăm miếng.",
+    "teaches": [],
+    "nhan": "NHỊP 1 · DỊCH — từ cuốn sổ 250 trang sang các nhóm số"
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S7",
+    "kind": "explain",
+    "narration": "LẮP: báo giá gửi cô thủ thư: \"Sổ kho 250 trang cần đúng 642 miếng decal chữ số; kệ mã 8-96 cách 4 cần 23 nhãn. Cô đặt in 642 + dự phòng 5% là đẹp.\" Con số chính xác giúp trường không lãng phí một đồng nào.\nSOI: soi ước lượng: đoán \"cỡ sáu trăm\" — ra 642, khớp cỡ. Soi công thức bằng dãy nhỏ: sách 12 trang đếm tay được 15 chữ số, công thức cho 9 + 3 × 2 = 15 ✓ — công cụ đã kiểm định trước khi dùng cho hàng thật.\nDÙNG NGOÀI ĐỜI: mọi dự án in ấn, đặt vật tư theo dãy (biển số nhà, vé số thứ tự, huy hiệu giải chạy) đều cần phép đếm này — sai một nhóm là lệch cả đơn đặt hàng.",
+    "teaches": [],
+    "nhan": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   },
+   {
+    "id": "S8",
+    "kind": "trap",
+    "narration": "Trí Long báo giá vèo: \"Kệ mã từ 8 đến 96 cách nhau 4 thì lấy (96 − 8) : 4 = 22 nhãn! Còn sổ 250 trang thì 250 trang nhân 3 chữ số bằng 750 miếng — mua dư cho chắc!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Để đánh số trang một cuốn sổ dày 250 trang, cần dùng tất cả bao nhiêu chữ số?",
+  "steps": [
+   {
+    "show": "Tóm tắt:"
+   },
+   {
+    "show": "Sổ 250 trang, đánh số từ 1. Hỏi tổng số chữ số."
+   },
+   {
+    "show": "Đề ngắn nhưng vẫn tóm tắt — thói quen không bỏ."
+   },
+   {
+    "show": "Mô hình (chia nhóm):"
+   },
+   {
+    "show": "Nhóm 1: trang 1 - 9 (số có 1 chữ số)"
+   },
+   {
+    "show": "Nhóm 2: trang 10 - 99 (số có 2 chữ số)"
+   },
+   {
+    "show": "Nhóm 3: trang 100 - 250 (số có 3 chữ số)"
+   },
+   {
+    "show": "Chia nhóm theo ĐỘ DÀI số — trái tim của mô hình đếm chữ số."
+   },
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Từ trang 1 đến trang 9 có 9 trang, dùng: 9 × 1 = 9 (chữ số)"
+   },
+   {
+    "show": "Từ trang 10 đến trang 99 có 90 trang, dùng: 90 × 2 = 180 (chữ số)"
+   },
+   {
+    "show": "Từ trang 100 đến trang 250 có: (250 − 100) + 1 = 151 (trang)"
+   },
+   {
+    "show": "Nhóm này dùng: 151 × 3 = 453 (chữ số)"
+   },
+   {
+    "show": "Tổng số chữ số cần dùng là: 9 + 180 + 453 = 642 (chữ số)"
+   },
+   {
+    "show": "Mỗi nhóm hai dòng: đếm trang rồi nhân khẩu phần; dòng đếm 151 trang dùng đúng công thức +1."
+   },
+   {
+    "show": "Đáp số: 642 chữ số."
+   },
+   {
+    "show": "Đáp số kèm đơn vị \"chữ số\"."
+   },
+   {
+    "show": "Thử lại: 642 − 9 − 180 = 453 ; 453 : 3 = 151 trang → trang cuối 99 + 151 = 250 ✓"
+   },
+   {
+    "show": "Soi bằng đường NGƯỢC (trừ dần) — xuôi ngược gặp nhau là chuẩn."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Từ 1 đến 60 có bao nhiêu số tự nhiên?",
+     "answerKey": {
+      "value": 60
+     },
+     "solutionNarrative": "60 số (từ 1 đến 60)."
+    },
+    {
+     "id": "C2",
+     "text": "Dãy 5, 10, 15, ..., 100 có bao nhiêu số hạng?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số số hạng",
+        "value": 20
+       }
+      ]
+     },
+     "solutionNarrative": "(100 − 5) : 5 + 1 = 20 số hạng."
+    },
+    {
+     "id": "C3",
+     "text": "Đánh số trang từ 1 đến 9 dùng bao nhiêu chữ số? Từ 10 đến 99 dùng bao nhiêu chữ số?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "từ 1 đến 9 dùng mấy chữ số",
+        "value": 9
+       },
+       {
+        "label": "từ 10 đến 99 dùng mấy chữ số",
+        "value": 180
+       }
+      ]
+     },
+     "solutionNarrative": "từ 1-9: 9 chữ số; từ 10-99: 90 × 2 = 180 chữ số."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Dãy 12, 16, 20, ..., 96 (cách đều 4) có bao nhiêu số hạng?",
+     "answerKey": {
+      "value": 22
+     },
+     "solutionNarrative": "(96 − 12) : 4 + 1 = 21 + 1 = 22 số hạng."
+    },
+    {
+     "id": "C5",
+     "text": "Từ 1 đến 200 có bao nhiêu số chia hết cho 5?",
+     "answerKey": {
+      "value": 40
+     },
+     "solutionNarrative": "dãy 5, 10, ..., 200 → (200 − 5) : 5 + 1 = 40 số."
+    },
+    {
+     "id": "C6",
+     "text": "Một cuốn truyện dày 120 trang. Đánh số trang cuốn truyện cần bao nhiêu chữ số?",
+     "answerKey": {
+      "value": 252
+     },
+     "solutionNarrative": "9 + 180 + (120 − 100 + 1) × 3 = 9 + 180 + 63 = 252 chữ số."
+    },
+    {
+     "id": "C7",
+     "text": "Bạn Su Bống đọc từ trang 5 đến hết trang 75. Bạn ấy đã đọc bao nhiêu trang sách?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số trang đã đọc",
+        "value": 71
+       }
+      ]
+     },
+     "solutionNarrative": "(75 − 5) + 1 = 71 trang — đọc \"từ trang 5 đến hết trang 75\" thì trang 5 cũng tính!"
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Đánh số trang một cuốn sách phải dùng hết 552 chữ số. Hỏi cuốn sách dày bao nhiêu trang? (Trừ dần theo nhóm như Su Kem!)",
+     "answerKey": {
+      "value": 220
+     },
+     "solutionNarrative": "trừ dần theo nhóm: 552 − 9 = 543; 543 − 180 = 363; 363 : 3 = 121 trang ba chữ số → sách dày 99 + 121 = 220 trang. Thử: 9 + 180 + 121 × 3 = 552 ✓."
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đố: \"Thư viện dán mã từ 1 đến 1 200 cho các đầu sách. Cần tất cả bao nhiêu chữ số decal?\" (Cẩn thận: có tận BỐN nhóm!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số chữ số decal",
+        "value": 3693
+       }
+      ]
+     },
+     "solutionNarrative": "bốn nhóm: 1-9: 9; 10-99: 180; 100-999: 900 × 3 = 2 700; 1000-1200: 201 × 4 = 804. Tổng: 9 + 180 + 2 700 + 804 = 3 693 chữ số."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Số số hạng của dãy cách đều = (số cuối − số đầu) : khoảng cách + 1.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Từ 1 đến 100 có 99 số tự nhiên.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "có đúng 100 số."
+   },
+   {
+    "id": "Q3",
+    "text": "Từ 1 đến 300 có bao nhiêu số chia hết cho 5?",
+    "format": "mcq",
+    "choices": [
+     "A. 60",
+     "B. 59",
+     "C. 61"
+    ],
+    "answerKey": {
+     "choice": "A. 60"
+    },
+    "solutionNarrative": "300 : 5 = 60."
+   },
+   {
+    "id": "Q4",
+    "text": "Đánh số trang từ 10 đến 99 cần số chữ số là:",
+    "format": "mcq",
+    "choices": [
+     "A. 180",
+     "B. 90",
+     "C. 178"
+    ],
+    "answerKey": {
+     "choice": "A. 180"
+    },
+    "solutionNarrative": "180)."
+   },
+   {
+    "id": "Q5",
+    "text": "Dãy 30, 36, 42, ..., 90 (cách đều 6) có:",
+    "format": "mcq",
+    "choices": [
+     "A. 11 số",
+     "B. 10 số",
+     "C. 12 số"
+    ],
+    "answerKey": {
+     "choice": "A. 11 số"
+    },
+    "solutionNarrative": "(90 − 30) : 6 + 1 = 11 số."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Săn dãy số quanh nhà: số nhà chẵn trên phố, bậc cầu thang, cột đèn — cho con dự đoán bằng công thức rồi đếm kiểm chứng. Sai \"+1\" một lần ngoài phố nhớ hơn mười lần trên giấy.",
+  "homeActivity": "Bài đếm chữ số: yêu cầu con vẽ BẢNG ba nhóm trước khi tính — có bảng là có điểm mô hình, kể cả khi nhân chưa chuẩn.",
+  "watchFor": "NÊN: giao \"dự án\" nhỏ có thật (đánh số album ảnh, dán nhãn hộp đồ chơi). KHÔNG NÊN: bài đếm chữ số xuất hiện bao nhiêu lần (đếm chữ số 7 từ 1 đến 1000) — dạng ấy ma trận xếp lớp 5."
+ },
+ "figureSpec": [
+  {
+   "id": "L4H_B07_MO",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L4H_B07_MO.png",
+   "caption": "Ba nhóm trang, mỗi nhóm số chữ số khác nhau.",
+   "sha256_16": "d18d57f0d1096100",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B07_G1",
+   "usedIn": [
+    "screen:S3"
+   ],
+   "file": "figures/L4H_B07_G1.png",
+   "caption": "Đếm mốc trên tia số, không đếm khoảng.",
+   "sha256_16": "28dac3c68ee35471",
+   "mucGoc": "khamPha"
+  }
+ ],
+ "hatMam": "Lớp 3, ở Bài 4 và Bài 10-11, con đã đếm số bằng công thức \"(cuối − đầu) : khoảng + 1\" với các dãy quen. Năm nay công thức ấy ra công trường thật: dãy khoảng cách BẤT KỲ, đếm số chia hết trong một khoảng, và siêu dự án đếm CHỮ SỐ — tính trước cần bao nhiêu decal để đánh số cả một thư viện.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B04",
+   "DL:KSN3.B10",
+   "DL:KSN3.B11"
+  ],
+  "ten": [
+   "ĐẾM SỐ & ĐẾM TRANG NÂNG CẤP",
+   "TOA TÀU THỨ n Ở ĐÂU?",
+   "GA NÀY TÀU CÓ DỪNG KHÔNG?"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ }
+}

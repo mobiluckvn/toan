@@ -1,0 +1,370 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B16",
+ "grade": 4,
+ "quyen": "lop4",
+ "title": "Bài 16 · TRUNG BÌNH CỘNG & BÀI TOÁN NGƯỢC",
+ "durationMinutes": 10,
+ "so": 16,
+ "chuong": 5,
+ "tenChuong": "SAN CHO ĐỀU — TRUNG BÌNH CỘNG",
+ "dangGoc": "LV 1.1 mức Lớp 4 — Tính TBC nhiều số · tìm một số khi biết TBC và các số còn lại",
+ "skills": {
+  "bktUnit": "CHUONG:5@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 16,
+  "prev": "DL:KSN4.B15",
+  "next": "DL:KSN4.B17"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Hiểu TBC theo nghĩa SAN CHO ĐỀU và tính được TBC của nhiều số: TBC = tổng : số số hạng. Thuộc cây cầu ngược: Tổng = TBC × số số hạng — chìa khóa của mọi bài toán ngược. Tìm một số chưa biết khi biết TBC của cả nhóm và các số còn lại.",
+  "kidText": "Hiểu TBC theo nghĩa SAN CHO ĐỀU và tính được TBC của nhiều số: TBC = tổng : số số hạng. Thuộc cây cầu ngược: Tổng = TBC × số số hạng — chìa khóa của mọi bài toán ngược. Tìm một số chưa biết khi biết TBC của cả nhóm và các số còn lại.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — SAN BẰNG TAY TRÊN BẢNG CHIẾN THUẬT: cột 5 nhường 2 viên: mỗi cột 2 nhận 1 viên → ba cột cùng cao 3. Tổng vẫn 9 viên — san chỉ chuyển chỗ, không sinh không mất. Mức đều 3 chính là TRUNG BÌNH CỘNG của 2 ; 5 ; 2."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — TỪ SAN TAY ĐẾN CÔNG THỨC: san tay lâu, kỹ sư đi đường tắt: gộp cả rổ rồi chia đều — TBC = (2 + 5 + 2) : 3 = 9 : 3 = 3 (bàn). Tổng quát: TBC = TỔNG các số : SỐ các số hạng. Hai bước tính quen thuộc của lớp 3: tổng trước, chia sau."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — CÂY CẦU NGƯỢC: từ công thức xuôi suy ra cầu ngược: TỔNG = TBC × số số hạng. Biết TBC của 4 số là 25 → tổng bốn số là 25 × 4 = 100, dù chưa biết từng số! Cây cầu này là lối vào của MỌI bài toán ngược về trung bình cộng."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — BÀI NGƯỢC TRẬN THỨ TƯ: đội muốn sau 4 trận đạt trung bình 3 bàn mỗi trận. Trận 4 cần ghi mấy bàn? Qua cầu: tổng cần có = 3 × 4 = 12 (bàn); ba trận đầu đã ghi 9 → trận 4 phải ghi 12 − 9 = 3 (bàn). Quy trình ngược chuẩn: tổng cần − tổng đã có = phần còn thiếu."
+   }
+  ],
+  "mantra": "TBC = tổng : số số hạng — nghĩa đời là \"san cho đều\". Gặp bài NGƯỢC: đừng loay hoay với từng số, hãy qua cây cầu TỔNG = TBC × số số hạng trước, rồi lấy tổng trừ những gì đã biết. Mẹo soi nhanh: TBC luôn nằm giữa số bé nhất và số lớn nhất — lọt ra ngoài là sai chắc!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Thống kê đội bạn ghi 1, 2 và 9 bàn, Trí Long tính vèo: \"Trung bình là (1 + 2 + 9) : 2 = 6 bàn — chia 2 vì phép cộng có 2 dấu cộng!\"",
+    "signal": "Bé làm theo cách Trí Long vừa nói.",
+    "fix": "Gợi ý 1: San cho đều là chia cho SỐ TRẬN hay số... dấu cộng? Đội bạn đá mấy trận? Gợi ý 2: Dùng mẹo soi nhanh để vạch lỗi kiểu khác: nếu trung bình là 6 thì nó phải nằm giữa số bé nhất và lớn nhất — mà 6 so với bộ 1, 2, 9 có \"ở giữa\" hợp lý không khi hai trận tận 1 và 2 bàn? Tính lại giúp Trí Long cho chuẩn."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "một con số duy nhất nói lên sức ghi bàn \"mỗi trận\" của đội — công bằng, không thiên vị trận nào."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "CHO GÌ? ba trận đấu ghi lần lượt 2 ; 5 ; 2 bàn.\nHỎI GÌ? một con số duy nhất nói lên sức ghi bàn \"mỗi trận\" của đội — công bằng, không thiên vị trận nào.\nĐẠI LƯỢNG & ĐƠN VỊ: bàn thắng (bàn) theo trận — con số cần tìm cũng mang đơn vị \"bàn mỗi trận\".\nQUAN HỆ GIỮA CHÚNG: nếu san bàn thắng cho ba trận ĐỀU NHAU mà tổng không đổi, thì mức đều ấy đại diện cho cả ba trận.\nCHỌN CÔNG CỤ: MÔ HÌNH SAN CHO ĐỀU: gộp hết vào một rổ (tính tổng) rồi chia đều cho số trận.\nƯỚC LƯỢNG TRƯỚC: mức san nằm giữa 2 và 5 — chắc cỡ 3 bàn.",
+    "teaches": [],
+    "nhan": "NHỊP 1 · DỊCH — từ sổ tỉ số sang phép san cho đều"
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S7",
+    "kind": "explain",
+    "narration": "LẮP: báo cáo dán bảng tin đội: \"Sức ghi bàn: trung bình 3 bàn mỗi trận. Muốn giữ phong độ ấy, trận tới cần ghi 3 bàn.\" Đội lớp bên trung bình 2 bàn — đội mình trên cơ, nói bằng số liệu đàng hoàng chứ không cãi nhau!\nSOI: soi hai lớp: 3 nằm giữa 2 và 5 ✓; và thử lại tổng: 2 + 5 + 2 + 3 = 12 = 3 × 4 ✓ — nếu trận 4 ghi đúng 3 bàn thì trung bình bốn trận tròn 3 như kế hoạch.\nDÙNG NGOÀI ĐỜI: điểm trung bình học kỳ, mức chi tiêu trung bình mỗi ngày của mẹ, quãng đường trung bình xe chạy mỗi giờ — cả thế giới người lớn nói chuyện bằng \"mức san cho đều\" này.",
+    "teaches": [],
+    "nhan": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   },
+   {
+    "id": "S8",
+    "kind": "trap",
+    "narration": "Thống kê đội bạn ghi 1, 2 và 9 bàn, Trí Long tính vèo: \"Trung bình là (1 + 2 + 9) : 2 = 6 bàn — chia 2 vì phép cộng có 2 dấu cộng!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Ba trận đầu, đội bóng ghi được 2 bàn, 5 bàn và 2 bàn. Hỏi trận thứ tư đội phải ghi bao nhiêu bàn để trung bình mỗi trận trong cả bốn trận ghi được 3 bàn?",
+  "steps": [
+   {
+    "show": "Tóm tắt:"
+   },
+   {
+    "show": "Ba trận: 2 ; 5 ; 2 bàn."
+   },
+   {
+    "show": "Cần: TBC của 4 trận là 3 bàn. Tìm số bàn trận 4."
+   },
+   {
+    "show": "Tách rõ \"đã có\" và \"muốn có\" — hai nửa của bài ngược."
+   },
+   {
+    "show": "Mô hình (qua cây cầu TỔNG):"
+   },
+   {
+    "show": "TBC 4 trận là 3 → tổng 4 trận = 3 × 4."
+   },
+   {
+    "show": "Trận 4 = tổng cần có − tổng 3 trận đầu."
+   },
+   {
+    "show": "Cây cầu Tổng = TBC × số số hạng viết ngay ở phần mô hình."
+   },
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Tổng số bàn cần có sau bốn trận là: 3 × 4 = 12 (bàn)"
+   },
+   {
+    "show": "Ba trận đầu đội đã ghi: 2 + 5 + 2 = 9 (bàn)"
+   },
+   {
+    "show": "Trận thứ tư đội phải ghi: 12 − 9 = 3 (bàn)"
+   },
+   {
+    "show": "Ba dòng — ba phép tính, mỗi dòng một câu lời giải trọn vẹn."
+   },
+   {
+    "show": "Đáp số: 3 bàn."
+   },
+   {
+    "show": "Đáp số kèm đơn vị."
+   },
+   {
+    "show": "Thử lại: (2 + 5 + 2 + 3) : 4 = 12 : 4 = 3 ✓"
+   },
+   {
+    "show": "Lắp đáp số vào tính lại TBC — đúng 3 bàn mỗi trận như đề muốn."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tìm trung bình cộng của 12 và 18.",
+     "answerKey": {
+      "value": 15
+     },
+     "solutionNarrative": "(12 + 18) : 2 = 15."
+    },
+    {
+     "id": "C2",
+     "text": "Tìm trung bình cộng của 2 ; 5 ; 2.",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "(2 + 5 + 2) : 3 = 9 : 3 = 3."
+    },
+    {
+     "id": "C3",
+     "text": "Tìm trung bình cộng của 10 ; 20 ; 30 ; 40.",
+     "answerKey": {
+      "value": 25
+     },
+     "solutionNarrative": "(10 + 20 + 30 + 40) : 4 = 100 : 4 = 25."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Trung bình cộng của bốn số là 25. Tổng của bốn số đó bằng bao nhiêu?",
+     "answerKey": {
+      "value": 100
+     },
+     "solutionNarrative": "qua cây cầu: 25 × 4 = 100."
+    },
+    {
+     "id": "C5",
+     "text": "Ba bao gạo nặng 42 kg ; 45 kg ; 48 kg. Hỏi trung bình mỗi bao nặng bao nhiêu ki-lô-gam?",
+     "answerKey": {
+      "value": 45
+     },
+     "solutionNarrative": "(42 + 45 + 48) : 3 = 135 : 3 = 45 (kg)."
+    },
+    {
+     "id": "C6",
+     "text": "Trung bình cộng của hai số là 36. Một số bằng 40, tìm số còn lại.",
+     "answerKey": {
+      "value": 32
+     },
+     "solutionNarrative": "tổng hai số = 36 × 2 = 72 → số còn lại = 72 − 40 = 32."
+    },
+    {
+     "id": "C7",
+     "text": "Ba trận đầu đội ghi 2 ; 5 ; 2 bàn. Trận thứ tư phải ghi mấy bàn để trung bình mỗi trận trong bốn trận là 3 bàn?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "tổng cần = 3 × 4 = 12; đã có 9 → trận 4 ghi 12 − 9 = 3 (bàn). Thử: 12 : 4 = 3 ✓."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Trung bình cộng của ba số là 20. Số thứ nhất là 15, số thứ hai là 19. Tìm số thứ ba.",
+     "answerKey": {
+      "value": 26
+     },
+     "solutionNarrative": "tổng ba số = 20 × 3 = 60 → số thứ ba = 60 − 15 − 19 = 26."
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đố: \"Tính trung bình cộng của các số 1 ; 2 ; 3 ; ... ; 9 — rồi nhìn kỹ đáp số: nó đứng ở vị trí nào trong dãy? Thử tiếp với dãy 1 đến 5 và rút ra một mẹo tính TBC của dãy cách đều!\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "trung bình cộng của 1 đến 9",
+        "value": 5
+       },
+       {
+        "label": "trung bình cộng của 1 đến 5",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "tổng 1 + 2 + ... + 9 = 45 (Gauss) → TBC = 45 : 9 = 5 — đúng SỐ Ở GIỮA dãy! Với 1 đến 5: TBC = 15 : 5 = 3 — lại số giữa. Mẹo: TBC của dãy cách đều = (đầu + cuối) : 2."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Trung bình cộng bằng tổng các số chia cho số các số hạng.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Trung bình cộng của 10 và 20 là 30.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "(10 + 20) : 2 = 15."
+   },
+   {
+    "id": "Q3",
+    "text": "Trung bình cộng của 6 ; 8 ; 10 là:",
+    "format": "mcq",
+    "choices": [
+     "A. 8",
+     "B. 9",
+     "C. 24"
+    ],
+    "answerKey": {
+     "choice": "A. 8"
+    },
+    "solutionNarrative": "24 : 3 = 8."
+   },
+   {
+    "id": "Q4",
+    "text": "Năm số có trung bình cộng là 12. Tổng của chúng là:",
+    "format": "mcq",
+    "choices": [
+     "A. 60",
+     "B. 17",
+     "C. 55"
+    ],
+    "answerKey": {
+     "choice": "A. 60"
+    },
+    "solutionNarrative": "12 × 5 = 60."
+   },
+   {
+    "id": "Q5",
+    "text": "Trung bình cộng của hai số là 25, một số là 30. Số kia là:",
+    "format": "mcq",
+    "choices": [
+     "A. 20",
+     "B. 25",
+     "C. 35"
+    ],
+    "answerKey": {
+     "choice": "A. 20"
+    },
+    "solutionNarrative": "50 − 30 = 20."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con \"san cho đều\" bằng đồ thật trước khi bấm phép chia: kẹo chia ba đĩa lệch nhau, nước rót ba cốc — bàn tay san xong, công thức tự dễ hiểu.",
+  "homeActivity": "Nuôi phản xạ soi nhanh: mỗi lần con tính TBC, hỏi lại \"kết quả có nằm giữa số bé nhất và lớn nhất không?\" — chiếc lưới bắt lỗi rẻ nhất thế giới.",
+  "watchFor": "NÊN: rủ con tính TBC số liệu thật của nhà mình (số trang đọc mỗi tối, tiền điện ba tháng). KHÔNG NÊN: đưa bài TBC ra kết quả lẻ (có dư) — số thập phân hẹn lớp 5, chọn số liệu chia hết cho đẹp."
+ },
+ "figureSpec": [
+  {
+   "id": "L4H_B16_MO",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L4H_B16_MO.png",
+   "caption": "Ba cột cao thấp khác nhau, vạch san đều cắt ngang.",
+   "sha256_16": "6b4c1b30ecd10bc4",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B16_G1",
+   "usedIn": [
+    "screen:S3"
+   ],
+   "file": "figures/L4H_B16_G1.png",
+   "caption": "Phần vượt của trận 2 bù đúng phần hụt của hai trận kia.",
+   "sha256_16": "95852f407d4c7b64",
+   "mucGoc": "khamPha"
+  }
+ ],
+ "hatMam": "Lớp 3, ở Bài 17, con đã quen bài toán HAI BƯỚC TÍNH: tìm số ở giữa rồi mới trả lời câu hỏi cuối. Trung bình cộng chính là một bài hai bước kinh điển: bước 1 tính TỔNG, bước 2 chia đều. Và cây cầu \"Tổng = TBC × số số hạng\" sẽ theo con qua mọi bài ngược của chương này — nhớ mặt nó ngay từ hôm nay!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B17"
+  ],
+  "ten": [
+   "BÀI TOÁN HAI BƯỚC TÍNH"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ }
+}

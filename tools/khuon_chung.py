@@ -85,14 +85,36 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
     # MỖI BƯỚC MỘT MÀN. Bé 7-8 tuổi đọc chậm, dồn cả 4 bước vào một màn là bé nản
     # ngay từ màn đầu. Đây là chỗ hiện thực "nhịp đọc lớp 2" — làm bằng DỮ LIỆU chứ
     # không phải bằng một phòng học riêng.
+    #
+    # Lớp 4 có thêm HAI mục giảng mà lớp 2 và lớp 3 không có: ③ dựng mô hình (nhịp
+    # DỊCH) đứng TRƯỚC các bước, và ⑤ lắp - soi đứng SAU. Chúng chèn thêm màn nên
+    # số thứ tự màn của các bước bị đẩy đi — mà hình phần giảng lại neo theo đúng số
+    # ấy ('screen:S3'). Nên tính MỘT chỗ lệch dùng chung cho cả hai nơi; quyển nào
+    # không có hai mục này thì lệch bằng 0 và mọi số giữ nguyên như cũ.
     screens = []
     mo = _dong(bai, 'chuyenMoBai')
+    dich, lap = _dong(bai, 'dichMoHinh'), _dong(bai, 'lapSoi')
+    lech = (1 if mo else 0) + (1 if dich else 0)
     if mo:
         # MÀN MỞ NGẮN VÀ NÊU THẲNG BÀI TOÁN. Cả đoạn `chuyenMoBai` dài trung bình
         # 297 chữ — bé bảy tuổi đọc hết chừng ấy vẫn chưa biết bài hỏi gì. Nay giữ
         # ĐÚNG MỘT câu dẫn (câu đầu, để còn có không khí) rồi vào ngay đề bài.
-        de_bai = re.sub(r'^Đề bài\s*[:.]\s*', '',
-                        next((d for d in _dong(bai, 'viDuMau') if d.startswith('Đề bài')), ''))
+        # Câu đề lấy từ trường đã soạn sẵn, đừng viết mới (chuẩn mục 6 luật 1).
+        #
+        # ⚠ Với lớp 4 phải lấy từ mục ③ chứ KHÔNG lấy từ ⑥. Hai mục nói về HAI BÀI
+        # TOÁN KHÁC NHAU: ② kể tình huống mở (đọc số 24 358 trên bảng tin) còn ⑥ là
+        # bài mẫu trình bày vở (tìm số có tổng chữ số bằng 12). Hình màn mở vẽ theo ②,
+        # nên lấy đề của ⑥ là lời và hình kể hai bộ số đá nhau ngay dòng đầu bé đọc —
+        # đúng bẫy 32, và tôi đã nhìn thấy nó trên màn hình thật trước khi chữa.
+        #
+        # Mục ③ có sẵn dòng `HỎI GÌ?` do chính người soạn viết, đủ 44/44 bài, và nó
+        # nói đúng câu hỏi của tình huống mở. Quyển nào không có mục ấy thì rơi về
+        # nếp cũ, nên lớp 2 và lớp 3 không đổi một chữ.
+        hoi_gi = next((re.sub(r'^HỎI GÌ\?\s*', '', d) for d in _dong(bai, 'dichMoHinh')
+                       if d.startswith('HỎI GÌ?')), '')
+        de_bai = hoi_gi or re.sub(
+            r'^Đề bài\s*[:.]\s*', '',
+            next((d for d in _dong(bai, 'viDuMau') if d.startswith('Đề bài')), ''))
         cau_dau = re.split(r'(?<=[.!?])\s+', ' '.join(mo))[0]
         # Câu dẫn CHỈ giữ khi không có con số nào: chuyện mở bài hay kể một bộ số
         # khác với bộ số của đề ("ba tấm thẻ 2, 5, 8" rồi đề lại cho 4, 0, 9) — ghép
@@ -104,13 +126,33 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
         else:
             loi = ' '.join(mo)
         screens.append({'id': 'S1', 'kind': 'hook', 'narration': loi})
+    if dich:
+        # Nhịp DỊCH: CHO GÌ · HỎI GÌ · ĐẠI LƯỢNG · CHỌN CÔNG CỤ · ƯỚC LƯỢNG TRƯỚC.
+        # Không mang nguyên tắc nào nên `teaches` rỗng — flow.js vẫn giữ màn lại vì
+        # nó có lời giảng, và StepView lấy `nhan` làm nhãn thay cho "NGUYÊN TẮC".
+        # Nối bằng XUỐNG DÒNG chứ đừng bằng dấu cách: sáu dòng có nhãn (CHO GÌ ·
+        # HỎI GÌ · ĐẠI LƯỢNG · QUAN HỆ · CHỌN CÔNG CỤ · ƯỚC LƯỢNG) dồn thành một
+        # đoạn liền là bức tường chữ — đúng thứ nhịp đọc chậm sinh ra để tránh.
+        # Quyển cũ không có mục này nên chuỗi của chúng không hề có '\n'.
+        screens.append({'id': f'S{len(screens) + 1}', 'kind': 'explain',
+                        'narration': '\n'.join(dich), 'teaches': [],
+                        'nhan': (bai['muc'].get('dichMoHinh') or {}).get('nhip', '')})
     for i, st in enumerate(statements, 1):
-        screens.append({'id': f'S{i + 1}', 'kind': 'explain', 'narration': '',
+        screens.append({'id': f'S{i + lech}', 'kind': 'explain', 'narration': '',
                         'teaches': [st['id']]})
+    if lap:
+        screens.append({'id': f'S{len(screens) + 1}', 'kind': 'explain',
+                        'narration': '\n'.join(lap), 'teaches': [],
+                        'nhan': (bai['muc'].get('lapSoi') or {}).get('nhip', '')})
     if khac:
-        # lời dặn thêm (không phải "Bước n") gắn vào màn cuối của phần giảng
+        # lời dặn thêm (không phải "Bước n") gắn vào màn cuối của phần giảng.
+        # NỐI chứ đừng ĐÈ: màn cuối của lớp 2 và lớp 3 luôn rỗng lời nên hai cách
+        # cho kết quả y hệt, nhưng ở lớp 4 màn cuối là nhịp LẮP - SOI đã có lời —
+        # đè lên là mất trắng cả mục ⑤ mà chẳng có gì báo.
         if screens and screens[-1]['kind'] == 'explain':
-            screens[-1]['narration'] = ' '.join(khac)
+            cu = screens[-1]['narration']
+            screens[-1]['narration'] = f"{cu} {' '.join(khac)}".strip() if cu \
+                else ' '.join(khac)
         else:
             screens.append({'id': f'S{len(screens) + 1}', 'kind': 'explain',
                             'narration': ' '.join(khac), 'teaches': []})
@@ -121,9 +163,14 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
     if nham:
         screens.append({'id': f'S{len(screens) + 1}', 'kind': 'trap',
                         'narration': nham[0], 'teaches': []})
+        # Tên nhân vật nói sai lấy từ TIÊU ĐỀ MỤC, đừng ghim cứng "Su Kem": sách lớp
+        # 3 và lớp 4 đều đặt mục ấy là "TRÍ LONG ƠI, NHẦM RỒI!" nên dòng dấu hiệu
+        # đang gọi nhầm tên bạn — bé đọc thấy một tên chẳng liên quan tới câu vừa đọc.
+        ten_muc = (bai['muc'].get('suKemNham') or {}).get('ten', '')
+        ai = re.split(r'\s+ƠI|,', ten_muc)[0].strip().title() or 'Su Kem'
         misconceptions.append({
             'wrong': nham[0],
-            'signal': 'Bé làm theo cách Su Kem vừa nói.',
+            'signal': f'Bé làm theo cách {ai} vừa nói.',
             'fix': ' '.join(nham[1:]) or 'Con thử làm lại theo đúng các bước ở trên nhé.',
         })
 
@@ -136,7 +183,7 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
     for k, d in enumerate(kham):
         if R_BUOC.match(d) and not d.startswith(('MẸO', 'LUẬT')):
             dem += 1
-            man_cua_buoc[k] = f'S{dem + (1 if mo else 0)}'
+            man_cua_buoc[k] = f'S{dem + lech}'
 
     fig, n = [], 0
     for ten_muc, cho in NOI_DUNG_HINH.items():
@@ -234,11 +281,20 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
     # trường rỗng thì giao diện phải đoán "chưa làm" hay "đã xét và không có".
     if bai.get('hatMam'):
         ra['hatMam'] = bai['hatMam']            # lời nối ngược, hiện ở màn kết bài
-    gan = bai.get('ganLop2') or {}
+    # `ganLop2` là tên CŨ, có từ hồi chỉ lớp 3 mới lùi được. Nay lớp 4 lùi về lớp 3
+    # và lớp 5 lùi về lớp 4, nên tên chung là `ganDuoi` — vẫn nhận tên cũ để bản gốc
+    # lớp 3 đã ghi ra đĩa không phải dựng lại.
+    gan = bai.get('ganDuoi') or bai.get('ganLop2') or {}
     if gan.get('ve'):
         # nút "Học lại bài lớp <n−1>". Danh sách rỗng thì KHÔNG ghi trường, nên chỗ
         # hiện nút chỉ cần hỏi "có trường không", khỏi phải biết luật `canCu`.
+        #
+        # Nhãn phải suy từ ĐÍCH chứ đừng ghim chữ "lớp 2": lớp 4 trỏ về lớp 3 mà nút
+        # vẫn mời "Học lại bài lớp 2" thì bé bấm vào một lớp chẳng liên quan — đúng
+        # kiểu mất niềm tin vào chính cái nút ấy mà chuẩn mục 4 cảnh báo.
+        lop_duoi = gan.get('lopDuoi') or (grade - 1)
         ra['duongLui'] = {'ve': gan['ve'], 'ten': gan.get('ten', []),
                           'canCu': gan.get('canCu', ''),
-                          'nhan': 'Học lại bài lớp 2'}
+                          'lopDuoi': lop_duoi,
+                          'nhan': f'Học lại bài lớp {lop_duoi}'}
     return ra

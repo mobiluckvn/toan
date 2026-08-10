@@ -1,0 +1,433 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B21",
+ "grade": 4,
+ "quyen": "lop4",
+ "title": "Bài 21 · HIỆU TRỐN Ở ĐÂU?",
+ "durationMinutes": 10,
+ "so": 21,
+ "chuong": 6,
+ "tenChuong": "CÁN CÂN TỔNG - HIỆU",
+ "dangGoc": "LV 2.3 mức Lớp 4 — Hiệu ẩn: số liền nhau, chẵn - lẻ liền nhau, \"bớt k thì bằng\", \"chuyển k thì hiệu đổi 2k\"",
+ "skills": {
+  "bktUnit": "CHUONG:6@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 21,
+  "prev": "DL:KSN4.B20",
+  "next": "DL:KSN4.B22"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Đọc ra hiệu ẩn: hai số liền nhau (hiệu 1), hai số chẵn hoặc hai số lẻ liền nhau (hiệu 2), \"bớt A đi k thì bằng B\" (hiệu k). Nắm chắc cú lừa: \"chuyển k từ A sang B thì bằng nhau\" nghĩa là A hơn B những 2 × k. Giải trọn bài Tổng - Hiệu có hiệu ẩn và thử lại theo đúng kịch bản của đề.",
+  "kidText": "Đọc ra hiệu ẩn: hai số liền nhau (hiệu 1), hai số chẵn hoặc hai số lẻ liền nhau (hiệu 2), \"bớt A đi k thì bằng B\" (hiệu k). Nắm chắc cú lừa: \"chuyển k từ A sang B thì bằng nhau\" nghĩa là A hơn B những 2 × k. Giải trọn bài Tổng - Hiệu có hiệu ẩn và thử lại theo đúng kịch bản của đề.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — THÍ NGHIỆM HAI CHỒNG VỞ: chồng 8 và chồng 6 (hơn nhau 2): chuyển 1 cuốn từ chồng cao sang chồng thấp → 7 và 7: BẰNG NHAU! Chuyển 1 mà san được khoảng cách 2 — vì chồng cao tụt 1 ĐỒNG THỜI chồng thấp dâng 1. Kết luận nóng hổi: \"chuyển k thì bằng\" ⟺ hiệu ban đầu = 2 × k."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — TUYÊN ÁN VỤ HAI KỆ: chuyển 5 thì bằng → kệ A hơn kệ B: 5 × 2 = 10 (cuốn). Tổng 120, hiệu 10: kệ A = (120 + 10) : 2 = 65; kệ B = 120 − 65 = 55 (cuốn). Thử theo đúng kịch bản đề: A đưa 5 → 60; B nhận 5 → 60 — bằng nhau ✓. Trí Long mà lấy hiệu 5 sẽ ra 62,5 cuốn — sách gì mà nửa cuốn!"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — SỔ TAY NHỮNG HIỆU ẨN HIỀN LÀNH HƠN: hai số tự nhiên LIỀN NHAU: hiệu 1 (tổng 45 → hai số 22 và 23). Hai số CHẴN liền nhau hoặc hai số LẺ liền nhau: hiệu 2 (tổng 46, chẵn liền nhau → 22 và 24). \"Bớt giỏ A đi 4 quả thì bằng giỏ B\": chỉ MỘT bên thay đổi → hiệu đúng bằng 4 — đừng nhân đôi nhầm chỗ!"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — PHÂN BIỆT HAI CÚ SỐ NGOẠN MỤC: \"BỚT k thì bằng\" — một bên nhúc nhích → hiệu = k. \"CHUYỂN k thì bằng\" — hai bên cùng nhúc nhích → hiệu = 2k. Câu thần chú của xưởng: đếm xem MẤY BÊN thay đổi — một bên giữ nguyên k, hai bên nhân đôi lên!"
+   }
+  ],
+  "mantra": "Sổ tay hiệu ẩn: liền nhau → 1; chẵn (lẻ) liền nhau → 2; \"bớt k thì bằng\" → k; \"chuyển k thì bằng\" → 2k. Trước khi áp công thức, tự hỏi: hiệu này mấy bên cùng thay đổi? Và luôn thử lại theo ĐÚNG kịch bản đề — chuyển thử, bớt thử trên đáp số của mình.",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trí Long vẫn cay vụ hai kệ, gặp bài mới liền gỡ gạc: \"Hai giỏ cam tổng 40 quả; BỚT giỏ A đi 4 quả thì bằng giỏ B. Lần này tớ không dại nữa — hiệu là 4 × 2 = 8! Giỏ A bằng (40 + 8) : 2 = 24!\"",
+    "signal": "Bé làm theo cách Trí Long vừa nói.",
+    "fix": "Gợi ý 1: Câu thần chú đếm bên: trong đề này, mấy giỏ thay đổi số cam — giỏ A bớt 4, còn giỏ B có được thêm quả nào không? Gợi ý 2: Chỉ một bên thay đổi thì hiệu bằng bao nhiêu? Giải lại rồi thử theo kịch bản: lấy đáp số giỏ A trừ 4 xem có ra đúng giỏ B không — và nhắn Trí Long: thuộc lòng mà không đếm bên thì công thức nào cũng thành bẫy!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "lúc đầu mỗi kệ có bao nhiêu cuốn."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "CHO GÌ? hai kệ tổng 120 cuốn; chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ bằng nhau.\nHỎI GÌ? lúc đầu mỗi kệ có bao nhiêu cuốn.\nĐẠI LƯỢNG & ĐƠN VỊ: số sách (cuốn) — chú ý phân biệt số sách TRƯỚC và SAU cú chuyển.\nQUAN HỆ GIỮA CHÚNG: khi chuyển 5 cuốn: kệ A MẤT 5 và kệ B ĐƯỢC 5 — khoảng cách giữa hai kệ khép lại từ CẢ HAI phía, mỗi phía 5.\nCHỌN CÔNG CỤ: THÍ NGHIỆM + suy luận \"khép hai phía\": hiệu thật = 5 × 2 = 10; rồi sơ đồ Tổng - Hiệu chuẩn.\nƯỚC LƯỢNG TRƯỚC: tổng 120, hiệu cỡ chục → hai kệ quanh 60: kệ A hơn 60 chút, kệ B kém 60 chút.",
+    "teaches": [],
+    "nhan": "NHỊP 1 · DỊCH — từ cú chuyển sách sang hiệu thật"
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S7",
+    "kind": "explain",
+    "narration": "LẮP: biên bản kiểm kê gửi cô: \"Kệ A: 65 cuốn — kệ B: 55 cuốn (tổng 120 ✓). Cô muốn hai kệ đều nhau thì cứ giữ nguyên như hôm cô đã chuyển 5 cuốn: mỗi kệ tròn 60.\" Cô dán nhãn 60 - 60 lên hai kệ, thư viện gọn gàng như mới.\nSOI: soi kịch bản: 65 − 5 = 60 và 55 + 5 = 60 — đúng từng bước đề mô tả; soi kép Bài 19: 65 + 55 = 120 ✓, 65 − 55 = 10 ✓. Ba lớp khóa cùng khớp.\nDÙNG NGOÀI ĐỜI: chia bài tú lơ khơ, san dữ liệu giữa hai máy, chuyển tiền giữa hai ví — quy tắc \"chuyển k đổi 2k\" chạy khắp đời sống, và giờ con là người hiếm hoi không bị nó đánh lừa.",
+    "teaches": [],
+    "nhan": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   },
+   {
+    "id": "S8",
+    "kind": "trap",
+    "narration": "Trí Long vẫn cay vụ hai kệ, gặp bài mới liền gỡ gạc: \"Hai giỏ cam tổng 40 quả; BỚT giỏ A đi 4 quả thì bằng giỏ B. Lần này tớ không dại nữa — hiệu là 4 × 2 = 8! Giỏ A bằng (40 + 8) : 2 = 24!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Hai kệ sách có tất cả 120 cuốn. Nếu chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ có số sách bằng nhau. Hỏi lúc đầu mỗi kệ có bao nhiêu cuốn sách?",
+  "steps": [
+   {
+    "show": "Tóm tắt:"
+   },
+   {
+    "show": "Tổng: 120 cuốn;"
+   },
+   {
+    "show": "chuyển 5 cuốn A → B thì bằng nhau. Tìm số sách mỗi kệ lúc đầu."
+   },
+   {
+    "show": "Chép nguyên chi tiết \"chuyển... thì bằng\" — chìa khóa của bài."
+   },
+   {
+    "show": "Mô hình (hiệu ẩn sau cú chuyển):"
+   },
+   {
+    "show": "Chuyển 5 cuốn: kệ A bớt 5, kệ B thêm 5."
+   },
+   {
+    "show": "Hai kệ bằng nhau → lúc đầu kệ A hơn kệ B: 5 × 2 = 10 (cuốn)."
+   },
+   {
+    "show": "Suy ra hiệu thật 10 NGAY ở phần mô hình — trái tim của bài."
+   },
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Vì chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ bằng nhau"
+   },
+   {
+    "show": "nên lúc đầu kệ A hơn kệ B: 5 × 2 = 10 (cuốn)"
+   },
+   {
+    "show": "Số sách kệ A lúc đầu là: (120 + 10) : 2 = 65 (cuốn)"
+   },
+   {
+    "show": "Số sách kệ B lúc đầu là: 120 − 65 = 55 (cuốn)"
+   },
+   {
+    "show": "Câu \"vì... nên\" nêu căn cứ của phép nhân đôi — không được viết 5 × 2 khơi khơi."
+   },
+   {
+    "show": "Đáp số: kệ A 65 cuốn ; kệ B 55 cuốn."
+   },
+   {
+    "show": "Đáp số đủ hai kệ."
+   },
+   {
+    "show": "Thử lại: 65 − 5 = 60 ; 55 + 5 = 60 — hai kệ bằng nhau đúng như đề ✓"
+   },
+   {
+    "show": "Thử theo KỊCH BẢN của đề — diễn lại cú chuyển trên đáp số."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Hai số tự nhiên liền nhau hơn kém nhau bao nhiêu? Hai số chẵn liền nhau hơn kém nhau bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hai số tự nhiên liền nhau hơn kém nhau",
+        "value": 1
+       },
+       {
+        "label": "hai số chẵn liền nhau hơn kém nhau",
+        "value": 2
+       }
+      ]
+     },
+     "solutionNarrative": "hai số liền nhau hơn kém 1; hai số chẵn liền nhau hơn kém 2."
+    },
+    {
+     "id": "C2",
+     "text": "Bớt giỏ A đi 4 quả cam thì số cam hai giỏ bằng nhau. Hỏi giỏ A hơn giỏ B bao nhiêu quả?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "chỉ MỘT bên thay đổi → giỏ A hơn giỏ B đúng 4 quả."
+    },
+    {
+     "id": "C3",
+     "text": "Chuyển 3 viên bi từ hộp A sang hộp B thì hai hộp bằng nhau. Hỏi hộp A hơn hộp B bao nhiêu viên?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "hai bên cùng thay đổi → hộp A hơn hộp B: 3 × 2 = 6 viên."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tìm hai số tự nhiên liền nhau có tổng bằng 45.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số bé",
+        "value": 22
+       },
+       {
+        "label": "số lớn",
+        "value": 23
+       }
+      ]
+     },
+     "solutionNarrative": "hiệu 1 → số bé = (45 − 1) : 2 = 22; hai số là 22 và 23."
+    },
+    {
+     "id": "C5",
+     "text": "Tìm hai số chẵn liền nhau có tổng bằng 46.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số bé",
+        "value": 22
+       },
+       {
+        "label": "số lớn",
+        "value": 24
+       }
+      ]
+     },
+     "solutionNarrative": "hiệu 2 → số bé = (46 − 2) : 2 = 22; hai số là 22 và 24."
+    },
+    {
+     "id": "C6",
+     "text": "Hai kệ sách có tất cả 120 cuốn. Chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ bằng nhau. Hỏi lúc đầu mỗi kệ có bao nhiêu cuốn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "kệ A lúc đầu",
+        "value": 65
+       },
+       {
+        "label": "kệ B lúc đầu",
+        "value": 55
+       }
+      ]
+     },
+     "solutionNarrative": "hiệu = 5 × 2 = 10 → kệ A = (120 + 10) : 2 = 65; kệ B = 55 (cuốn). Thử kịch bản: 65 − 5 = 60 = 55 + 5 ✓."
+    },
+    {
+     "id": "C7",
+     "text": "Hai bạn có tất cả 42 viên kẹo. Nếu bạn An cho bạn Bình 4 viên thì hai bạn có số kẹo bằng nhau. Hỏi lúc đầu mỗi bạn có bao nhiêu viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "an",
+        "value": 25
+       },
+       {
+        "label": "bình",
+        "value": 17
+       }
+      ]
+     },
+     "solutionNarrative": "hiệu = 4 × 2 = 8 → An = (42 + 8) : 2 = 25; Bình = 17 (viên). Thử: 25 − 4 = 21 = 17 + 4 ✓."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tìm ba số tự nhiên liên tiếp có tổng bằng 72. (Mách nhỏ: số ở giữa chính là trung bình cộng của ba số — Bài 16 tái xuất!)",
+     "answerKey": {
+      "ordered": true,
+      "values": [
+       23,
+       24,
+       25
+      ]
+     },
+     "solutionNarrative": "số giữa = TBC = 72 : 3 = 24 → ba số là 23 ; 24 ; 25. Thử: 23 + 24 + 25 = 72 ✓."
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đố: \"Tìm hai số LẺ liền nhau có tổng bằng 100. Rồi trả lời thêm: có tồn tại hai số CHẴN liền nhau có tổng bằng 100 không? Vì sao?\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lẻ bé",
+        "value": 49
+       },
+       {
+        "label": "số lẻ lớn",
+        "value": 51
+       },
+       {
+        "label": "có hai số chẵn liền nhau tổng 100 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "hiệu 2 → số bé = (100 − 2) : 2 = 49 → hai số lẻ 49 và 51. Hai số CHẴN liền nhau tổng 100 thì KHÔNG tồn tại: công thức cho số bé 49 — mà 49 lẻ, trái điều kiện \"số chẵn\"!"
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Chuyển k đơn vị từ số lớn sang số bé thì hiệu hai số giảm đi 2 × k.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Hai số lẻ liền nhau hơn kém nhau 1 đơn vị.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "hai số lẻ liền nhau hơn kém 2."
+   },
+   {
+    "id": "Q3",
+    "text": "Chuyển 4 viên bi từ A sang B thì hai hộp bằng nhau. A hơn B:",
+    "format": "mcq",
+    "choices": [
+     "A. 8 viên",
+     "B. 4 viên",
+     "C. 2 viên"
+    ],
+    "answerKey": {
+     "choice": "A. 8 viên"
+    },
+    "solutionNarrative": "4 × 2 = 8 viên."
+   },
+   {
+    "id": "Q4",
+    "text": "Hai số tự nhiên liền nhau có tổng 61. Số bé là:",
+    "format": "mcq",
+    "choices": [
+     "A. 30",
+     "B. 31",
+     "C. 29"
+    ],
+    "answerKey": {
+     "choice": "A. 30"
+    },
+    "solutionNarrative": "(61 − 1) : 2 = 30."
+   },
+   {
+    "id": "Q5",
+    "text": "Hai số chẵn liền nhau có tổng 30 là:",
+    "format": "mcq",
+    "choices": [
+     "A. 14 và 16",
+     "B. 15 và 15",
+     "C. 13 và 17"
+    ],
+    "answerKey": {
+     "choice": "A. 14 và 16"
+    },
+    "solutionNarrative": "14 và 16."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Thí nghiệm hai chồng vở (8 và 6, chuyển 1 thì bằng) là khoảnh khắc \"à ra thế\" đắt giá nhất chương — làm thật với con, để chính tay con chuyển và chính mắt con thấy khoảng cách khép từ hai phía.",
+  "homeActivity": "Luyện \"đếm bên\" thành phản xạ: đọc chi tiết thêm - bớt - chuyển của bất kỳ đề nào, hỏi con \"mấy bên thay đổi?\" trước khi cho phép đặt phép tính.",
+  "watchFor": "NÊN: yêu cầu thử lại THEO KỊCH BẢN (diễn lại cú chuyển trên đáp số) thay vì chỉ cộng trừ kiểm tra. KHÔNG NÊN: bài chuyển nhiều lần liên tiếp hay chuyển qua lại hai chiều — mê cung ấy hẹn lớp 5."
+ },
+ "figureSpec": [
+  {
+   "id": "L4H_B21_MO",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L4H_B21_MO.png",
+   "caption": "Hai kệ chưa bằng nhau, chưa biết hiệu là bao nhiêu.",
+   "sha256_16": "0282bd00a245706a",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B21_G1",
+   "usedIn": [
+    "screen:S3"
+   ],
+   "file": "figures/L4H_B21_G1.png",
+   "caption": "Chuyển k đơn vị làm hiệu đổi 2k — cú lừa danh tiếng nhất.",
+   "sha256_16": "1831bb2d66960f4b",
+   "mucGoc": "khamPha"
+  }
+ ],
+ "hatMam": "Bài 20 con luyện dò TỔNG. Hôm nay đến lượt kẻ trốn còn tinh quái hơn: HIỆU. Nó nấp trong các chữ tưởng vô hại — \"hai số liền nhau\", \"hai số chẵn liên tiếp\", và cú lừa danh tiếng nhất: \"CHUYỂN k đơn vị từ bên này sang bên kia thì bằng nhau\". Nghe qua tưởng hiệu bằng k — nhưng thí nghiệm kệ sách sẽ cho con câu trả lời khiến cả Trí Long ngã ngửa.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B19",
+   "DL:KSN3.B18"
+  ],
+  "ten": [
+   "THÊM BỚT ĐỂ BẰNG NHAU",
+   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ }
+}

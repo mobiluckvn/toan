@@ -1,0 +1,346 @@
+{
+ "id": "DL:KSN4.B08",
+ "quyen": "lop4",
+ "so": 8,
+ "ten": "ĐẾM KIỂU NGƯỢC ĐỜI — PHẦN BÙ & NHÂN THEO HÀNG",
+ "chuong": 2,
+ "tenChuong": "CỖ MÁY BỐN PHÉP TÍNH",
+ "dangGoc": "SỐ 4.2 mức Lớp 4 — Quy tắc nhân theo hàng · đếm bằng phần bù",
+ "hatMam": "Lớp 3, ở Bài 8, con đếm số chứa (hoặc không chứa) một chữ số bằng liệt kê chăm chỉ. Năm nay có hai vũ khí khiến việc liệt kê... thất nghiệp: QUY TẮC NHÂN (đếm cách chọn từng hàng rồi nhân dồn) và PHẦN BÙ (khó đếm cái CÓ thì đếm cái KHÔNG rồi lấy tất cả trừ đi).",
+ "ganDuoi": {
+  "ve": [
+   "DL:KSN3.B04"
+  ],
+  "ten": [
+   "ĐẾM SỐ & ĐẾM TRANG NÂNG CẤP"
+  ],
+  "canCu": "sachSua",
+  "lopDuoi": 3
+ },
+ "muc": {
+  "mucTieu": {
+   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
+   "dong": [
+    "Đếm số lượng số theo quy tắc nhân: mỗi hàng đếm số cách chọn, rồi nhân các cách với nhau.",
+    "Giải thích vì sao có 900 số có ba chữ số (9 × 10 × 10) — khớp với phép đếm của Bài 7.",
+    "Dùng phần bù để đếm \"số CÓ chứa chữ số 0\": lấy tất cả trừ số KHÔNG chứa."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "chuyenMoBai": {
+   "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 8: mật khẩu chiếc két của bác Hòa",
+   "dong": [
+    "Kiểm kho xong, bác Hòa khoe chiếc két sắt mới có khóa 3 vòng số: \"Bác định đặt mật khẩu 3 chữ số, kiêng số 0 cho may. Mà bác lo: kiểu này liệu có ít mật khẩu quá, kẻ gian mò vài chục lần là trúng?\" Trí Long xắn tay: \"Để cháu liệt kê hết ra đếm — 111, 112, 113...\" Su Kem kéo áo bạn: \"Cậu định viết đến sáng mai à? Có cách đếm KHÔNG CẦN viết ra bất cứ số nào.\""
+   ],
+   "hinh": [
+    {
+     "id": "L4H_B08_MO",
+     "sauDong": 0,
+     "file": "figures/L4H_B08_MO.png",
+     "caption": "Ba vòng số, mỗi vòng chọn được mấy chữ số.",
+     "sha256_16": "6092efc02cf99bf5"
+    }
+   ],
+   "nhip": ""
+  },
+  "dichMoHinh": {
+   "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
+   "dong": [
+    "CHO GÌ? mật khẩu gồm 3 chữ số, mỗi chữ số lấy từ 1 đến 9 (kiêng số 0).",
+    "HỎI GÌ? có tất cả bao nhiêu mật khẩu như vậy — đủ an toàn không?",
+    "ĐẠI LƯỢNG & ĐƠN VỊ: số mật khẩu (cách) — không phải giá trị con số, mà là SỐ CÁCH CHỌN.",
+    "QUAN HỆ GIỮA CHÚNG: ba vòng số ĐỘC LẬP nhau: vòng 1 chọn gì không cản vòng 2, vòng 3 — mỗi tổ hợp ba vòng cho đúng một mật khẩu.",
+    "CHỌN CÔNG CỤ: QUY TẮC NHÂN: đếm số cách chọn TỪNG vòng, rồi nhân dồn ba con số ấy.",
+    "ƯỚC LƯỢNG TRƯỚC: mỗi vòng gần chục cách, ba vòng nhân nhau — chắc cỡ bảy, tám trăm mật khẩu."
+   ],
+   "hinh": [],
+   "nhip": "NHỊP 1 · DỊCH — từ chiếc khóa 3 vòng sang ba lần chọn"
+  },
+  "khamPha": {
+   "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
+   "dong": [
+    "Bước 1 — QUY TẮC NHÂN THEO HÀNG: vòng 1: 9 cách (1-9); vòng 2: 9 cách; vòng 3: 9 cách. Mỗi cách của vòng 1 ghép được với đủ 9 cách của vòng 2, rồi mỗi cặp lại ghép đủ 9 cách của vòng 3 → tổng: 9 × 9 × 9 = 729 mật khẩu. Không viết ra số nào mà đếm được tất cả!",
+    "Bước 2 — KIỂM CHỨNG BẰNG NGƯỜI QUEN: đếm mọi số có 3 chữ số (không kiêng gì): hàng trăm 9 cách (1-9, vì không đứng đầu bằng 0), hàng chục 10 cách, hàng đơn vị 10 cách → 9 × 10 × 10 = 900. Bài 7 từng đếm dãy 100...999 được 900 số — hai con đường, một đáp số: quy tắc nhân đã qua kiểm định!",
+    "Bước 3 — PHẦN BÙ, PHÉP ĐẾM NGƯỢC ĐỜI: \"có bao nhiêu số 3 chữ số CÓ chứa chữ số 0?\" — đếm thẳng thì rối vì số 0 có thể ở chục, ở đơn vị, ở cả hai. Đếm ngược: KHÔNG chứa 0 là 9 × 9 × 9 = 729 → CÓ chứa 0 = 900 − 729 = 171. Khẩu quyết: khó đếm cái CÓ, hãy đếm cái KHÔNG rồi trừ.",
+    "Bước 4 — THÊM ĐIỀU KIỆN VÀO TỪNG HÀNG: mật khẩu không chứa 0 VÀ là số chẵn? Chỉ hàng đơn vị bị siết: phải thuộc {2, 4, 6, 8} — 4 cách. Kết quả: 9 × 9 × 4 = 324. Điều kiện rơi vào hàng nào, sửa số cách của ĐÚNG hàng ấy.",
+    "MẸO THÁM TỬ: Đếm số kiểu kỹ sư: kẻ một ô cho mỗi hàng, điền số cách chọn của hàng ấy (nhớ: hàng đầu không được là 0), rồi nhân dồn. Gặp chữ \"CÓ chứa\": nghĩ ngay phần bù. Gặp thêm điều kiện chẵn - lẻ: siết đúng hàng đơn vị. Và luôn kiểm chứng công cụ bằng một trường hợp đã biết đáp số!"
+   ],
+   "hinh": [
+    {
+     "id": "L4H_B08_G1",
+     "sauDong": 0,
+     "file": "figures/L4H_B08_G1.png",
+     "caption": "Khó đếm cái CÓ thì đếm cái KHÔNG rồi lấy tất cả trừ đi.",
+     "sha256_16": "9745fdadb2f7ed5c"
+    }
+   ],
+   "nhip": "NHỊP 2 · GIẢI"
+  },
+  "lapSoi": {
+   "ten": "LẮP VỀ CUỘC SỐNG & SOI",
+   "dong": [
+    "LẮP: tư vấn gửi bác Hòa: \"Kiêng số 0, bác vẫn còn 729 mật khẩu — kẻ gian mò trúng khó hơn trúng thưởng. Nhưng nếu bỏ kiêng, bác có 900 lựa chọn; còn muốn thật kín, đừng đặt mật khẩu là năm sinh!\" — lời khuyên bảo mật đầu tiên của các kỹ sư nhí.",
+    "SOI: soi bằng phép cộng phần: số CÓ chứa 0 (171) + số KHÔNG chứa 0 (729) = 900 ✓ — hai mảnh ghép khít thành tổng thể, không hụt không thừa.",
+    "DÙNG NGOÀI ĐỜI: quy tắc nhân đếm được mọi thứ quanh con: cách phối áo - quần - giày, cách chọn món ba bữa, số biển số xe một tỉnh — thế giới của các CÁCH CHỌN mở ra từ hôm nay."
+   ],
+   "hinh": [],
+   "nhip": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+  },
+  "viDuMau": {
+   "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
+   "dong": [
+    "Đề bài: Có bao nhiêu số có ba chữ số mà cả ba chữ số đều khác 0?",
+    "Tóm tắt:",
+    "Số có 3 chữ số; mỗi chữ số đều khác 0. Đếm số lượng.",
+    "Nhận diện: bài đếm SỐ CÁCH, không phải tính giá trị.",
+    "Mô hình (quy tắc nhân):",
+    "Hàng trăm: chọn 1 trong 1-9 → 9 cách",
+    "Hàng chục: chọn 1 trong 1-9 → 9 cách",
+    "Hàng đơn vị: chọn 1 trong 1-9 → 9 cách",
+    "Mỗi hàng một dòng — \"bảng ba ô\" là sơ đồ của bài đếm.",
+    "Bài giải:",
+    "Mỗi chữ số có 9 cách chọn (các chữ số từ 1 đến 9).",
+    "Ba hàng chọn độc lập với nhau nên số các số cần đếm là:",
+    "9 × 9 × 9 = 729 (số)",
+    "Chữ \"độc lập\" là căn cứ cho phép NHÂN — thiếu nó phép nhân thành vô căn cứ.",
+    "Đáp số: 729 số.",
+    "Đáp số kèm đơn vị \"số\".",
+    "Thử lại: tất cả số 3 chữ số là 900; số có chứa 0 là 900 − 729 = 171 — cộng lại đủ 900 ✓",
+    "Soi bằng phần bù: hai mảnh phải ghép khít lại thành tổng."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "suKemNham": {
+   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "dong": [
+    "Được hỏi \"có bao nhiêu số ba chữ số?\", Trí Long tính ngay: \"Ba hàng, hàng nào cũng 10 chữ số 0-9, vậy là 10 × 10 × 10 = 1000 số!\"",
+    "Gợi ý 1: Viết thử một \"số\" mà hàng trăm bằng 0 — chẳng hạn 047. Nó có thật là số có BA chữ số không, hay chỉ là số 47 đội mũ?",
+    "Gợi ý 2: Hàng nào bị cấm chữ số 0? Sửa số cách của đúng hàng ấy rồi tính lại — và đối chiếu với phép đếm dãy 100 đến 999 của Bài 7 để phân xử: 1000 hay 900 mới đúng?"
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "luyenTap": {
+   "ten": "LUYỆN TẬP 3 MỨC SAO",
+   "dong": [],
+   "hinh": [],
+   "nhip": ""
+  },
+  "quiz": {
+   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
+   "dong": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "gocBoMe": {
+   "ten": "GÓC BỐ MẸ",
+   "dong": [
+    "Trò \"phối đồ\": 3 áo, 2 quần, 2 đôi giày — con đoán số cách phối bằng quy tắc nhân (12) rồi... xếp thật ra giường kiểm chứng. Quy tắc nhân sống động hơn mọi lời giảng.",
+    "Khi con dùng phần bù, hỏi lại: \"vì sao không đếm thẳng?\" — con nói được \"vì cái CÓ nhiều trường hợp, cái KHÔNG chỉ một kiểu\" là đã nắm hồn phương pháp.",
+    "NÊN: cho con tự kiểm \"hai mảnh ghép khít\" (CÓ + KHÔNG = tất cả) ở mọi bài phần bù. KHÔNG NÊN: đưa bài nhiều điều kiện kết hợp (chẵn + các chữ số khác nhau) — tổ hợp ấy hẹn lớp 5."
+   ],
+   "hinh": [],
+   "nhip": ""
+  }
+ },
+ "cau": [
+  {
+   "id": "C1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Dùng quy tắc nhân, đếm xem có bao nhiêu số có hai chữ số.",
+   "loiChua": "hàng chục 9 cách (1-9), hàng đơn vị 10 cách → 9 × 10 = 90 số.",
+   "tuLuan": true
+  },
+  {
+   "id": "C2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Có bao nhiêu số có hai chữ số mà cả hai chữ số đều khác 0?",
+   "loiChua": "9 × 9 = 81 số.",
+   "tuLuan": true
+  },
+  {
+   "id": "C3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Từ hai kết quả trên, suy ra có bao nhiêu số có hai chữ số CÓ chứa chữ số 0. Liệt kê để kiểm chứng.",
+   "loiChua": "90 − 81 = 9 số; liệt kê: 10, 20, 30, 40, 50, 60, 70, 80, 90 — đúng 9 số ✓.",
+   "tuLuan": true
+  },
+  {
+   "id": "C4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Dùng quy tắc nhân chứng tỏ rằng có đúng 900 số có ba chữ số.",
+   "loiChua": "hàng trăm 9 cách (không được 0), hàng chục 10, hàng đơn vị 10 → 9 × 10 × 10 = 900 số.",
+   "tuLuan": true
+  },
+  {
+   "id": "C5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Bác Hòa đặt mật khẩu 3 chữ số đều khác 0. Bác có bao nhiêu lựa chọn?",
+   "loiChua": "9 × 9 × 9 = 729 lựa chọn.",
+   "tuLuan": true
+  },
+  {
+   "id": "C6",
+   "maSach": "C6",
+   "so": 6,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Có bao nhiêu số có ba chữ số CÓ chứa ít nhất một chữ số 0?",
+   "loiChua": "phần bù: 900 − 729 = 171 số.",
+   "tuLuan": true
+  },
+  {
+   "id": "C7",
+   "maSach": "C7",
+   "so": 7,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Có bao nhiêu số có hai chữ số mà cả hai chữ số đều là chữ số chẵn? (Chú ý: hàng chục không được bằng 0!)",
+   "loiChua": "hàng chục chọn trong 2, 4, 6, 8 (4 cách — số 0 không được đứng đầu!), hàng đơn vị chọn trong 0, 2, 4, 6, 8 (5 cách) → 4 × 5 = 20 số.",
+   "tuLuan": true
+  },
+  {
+   "id": "C8",
+   "maSach": "C8",
+   "so": 8,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Có bao nhiêu số có ba chữ số mà cả ba chữ số đều là chữ số lẻ?",
+   "loiChua": "mỗi hàng chọn trong 1, 3, 5, 7, 9 → 5 × 5 × 5 = 125 số.",
+   "tuLuan": true
+  },
+  {
+   "id": "C9",
+   "maSach": "C9",
+   "so": 9,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Anh Trí Dũng đố: \"Có bao nhiêu số có ba chữ số chứa ĐÚNG MỘT chữ số 0?\" (Gợi ý: chữ số 0 ấy đứng được ở những hàng nào? Đếm từng trường hợp rồi cộng — và kiểm chứng bằng kết quả Câu 6!)",
+   "loiChua": "chữ số 0 không đứng được hàng trăm. Trường hợp 0 ở hàng chục (đơn vị khác 0): 9 × 1 × 9 = 81; trường hợp 0 ở hàng đơn vị (chục khác 0): 9 × 9 × 1 = 81 → đúng một chữ số 0: 81 + 81 = 162 số. Kiểm chứng: có chứa 0 (171) = đúng một 0 (162) + hai chữ số 0 (100, 200, ..., 900: 9 số) ✓.",
+   "tuLuan": true
+  },
+  {
+   "id": "Q1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "Có tất cả 900 số có ba chữ số.",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": true
+   },
+   "loiChua": "Đáp án: ĐÚNG",
+   "solutionNarrative": ""
+  },
+  {
+   "id": "Q2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "Có 90 số có hai chữ số mà cả hai chữ số đều khác 0.",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": false
+   },
+   "loiChua": "9 × 9 = 81 số.",
+   "solutionNarrative": "9 × 9 = 81 số."
+  },
+  {
+   "id": "Q3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Số các số có hai chữ số là:",
+   "choices": [
+    "A. 90",
+    "B. 99",
+    "C. 89"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 90"
+   },
+   "loiChua": "90).",
+   "solutionNarrative": "90)."
+  },
+  {
+   "id": "Q4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Số các số có ba chữ số toàn chữ số lẻ là:",
+   "choices": [
+    "A. 125",
+    "B. 100",
+    "C. 729"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 125"
+   },
+   "loiChua": "125).",
+   "solutionNarrative": "125)."
+  },
+  {
+   "id": "Q5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Số các số có ba chữ số CÓ chứa chữ số 0 là:",
+   "choices": [
+    "A. 171",
+    "B. 271",
+    "C. 900"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 171"
+   },
+   "loiChua": "171).",
+   "solutionNarrative": "171)."
+  }
+ ]
+}

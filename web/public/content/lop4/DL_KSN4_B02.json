@@ -1,0 +1,411 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B02",
+ "grade": 4,
+ "quyen": "lop4",
+ "title": "Bài 2 · THÊM CHỮ SỐ — BA CÁNH CỬA",
+ "durationMinutes": 10,
+ "so": 2,
+ "chuong": 1,
+ "tenChuong": "ĐẠI CÔNG TRƯỜNG LỚP TRIỆU",
+ "dangGoc": "SỐ 1.2 mức Lớp 4 — Thêm phải · thêm trái · xen giữa, giải bằng sơ đồ 10 phần",
+ "skills": {
+  "bktUnit": "CHUONG:1@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 2,
+  "prev": "DL:KSN4.B01",
+  "next": "DL:KSN4.B03"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nắm chắc: thêm chữ số c bên phải số A thì số mới = A × 10 + c; phần tăng thêm = 9 × A + c. Thêm chữ số k bên trái số có hai chữ số: số tăng thêm k trăm; xen chữ số vào giữa: tách số mà tính. Giải bài NGƯỢC \"biết phần tăng thêm, tìm số cũ\" bằng sơ đồ 10 phần.",
+  "kidText": "Nắm chắc: thêm chữ số c bên phải số A thì số mới = A × 10 + c; phần tăng thêm = 9 × A + c. Thêm chữ số k bên trái số có hai chữ số: số tăng thêm k trăm; xen chữ số vào giữa: tách số mà tính. Giải bài NGƯỢC \"biết phần tăng thêm, tìm số cũ\" bằng sơ đồ 10 phần.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — CÁNH CỬA PHẢI & SƠ ĐỒ 10 PHẦN: số cũ = 1 phần, số mới = 10 phần → phần TĂNG THÊM = 9 phần, tức 9 lần số cũ. Kiểm chứng tem: 35 000 − 3 500 = 31 500 = 9 × 3 500 ✓. Bài ngược lợi hại: biết tăng thêm 216 → số cũ = 216 : 9 = 24."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — THÊM CHỮ SỐ c KHÁC 0 BÊN PHẢI: thêm 5 vào bên phải số A: số mới = A × 10 + 5 → tăng thêm = 9 × A + 5. Bài ngược: tăng thêm 320 → 9 × A = 320 − 5 = 315 → A = 35. Trên sơ đồ: 9 phần cộng thêm một mẩu nhỏ dài đúng bằng c."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — CÁNH CỬA TRÁI: thêm chữ số k bên trái số có HAI chữ số là đặt k vào hàng trăm: số tăng thêm k × 100 — không hơn không kém. Thêm 4 bên trái 75 được 475: tăng đúng 400. Cửa trái hiền nhất nhà!"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — CÁNH CỬA XEN GIỮA: xen 0 vào giữa số ab: chữ số a bị đẩy lên hàng trăm (nặng gấp 10 chỗ cũ), còn b đứng yên → số tăng thêm 90 × a. Xen 0 giữa 84 được 804: tăng 804 − 84 = 720 = 90 × 8 ✓. Cánh cửa này chỉ động đến MỘT chữ số — tách số ra là thấy liền."
+   }
+  ],
+  "mantra": "Ba cánh cửa, ba dấu vết: cửa PHẢI để lại \"9 phần + c\"; cửa TRÁI để lại \"k trăm tròn trịa\"; cửa GIỮA để lại \"90 × chữ số bị đẩy\". Gặp bài ngược: vẽ sơ đồ 10 phần trước, chia sau. Và luôn thử lại bằng cách... viết thêm chữ số thật vào số vừa tìm!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trí Long trấn an bác Hòa: \"Bác ơi thêm chữ số 0 tức là thêm... 0 đồng — giá vẫn thế, khách hàng nhìn nhầm đấy ạ!\"",
+    "signal": "Bé làm theo cách Trí Long vừa nói.",
+    "fix": "Gợi ý 1: Đặt hai tem giá 3 500 và 35 000 cạnh nhau: chữ số 3 ở tem cũ đứng hàng nghìn, sang tem mới nó đứng hàng nào? \"Chỗ đứng\" đổi thì \"sức nặng\" của nó đổi bao nhiêu lần? Gợi ý 2: Lỗi của Trí Long là lỗi DỊCH: cậu ấy dịch \"thêm chữ số 0\" thành phép cộng \"+ 0\". Hãy dịch lại cho đúng bằng sơ đồ 10 phần — rồi tính giúp bác Hòa xem 40 gói mì dán tem lỗi sẽ bị khách đòi lại tổng cộng bao nhiêu tiền!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "giá bị đội lên bao nhiêu, và vì sao chỉ một chữ số 0 lại \"phá\" dữ vậy; tổng quát: thêm 0 bên phải thì số thay đổi theo quy luật nào?"
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "CHO GÌ? giá đúng 3 500 đồng; máy in thêm chữ số 0 vào bên phải thành 35 000 đồng.\nHỎI GÌ? giá bị đội lên bao nhiêu, và vì sao chỉ một chữ số 0 lại \"phá\" dữ vậy; tổng quát: thêm 0 bên phải thì số thay đổi theo quy luật nào?\nĐẠI LƯỢNG & ĐƠN VỊ: giá tiền (đồng); \"phần đội lên\" cũng là tiền (đồng).\nQUAN HỆ GIỮA CHÚNG: viết thêm 0 bên phải là dồn mọi chữ số sang trái một hàng — mỗi chữ số nặng gấp 10 lần: số mới = 10 × số cũ.\nCHỌN CÔNG CỤ: SƠ ĐỒ ĐOẠN THẲNG: số cũ vẽ 1 phần, số mới vẽ 10 phần bằng nhau — nhìn thấy ngay phần chênh lệch.\nƯỚC LƯỢNG TRƯỚC: giá mới trông \"dài hơn hẳn một chữ số\" — chắc phải gấp cỡ chục lần, tức đội lên khoảng vài chục nghìn.",
+    "teaches": [],
+    "nhan": "NHỊP 1 · DỊCH — từ chiếc tem giá sang sơ đồ đoạn thẳng"
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S7",
+    "kind": "explain",
+    "narration": "LẮP: báo cáo gửi bác Hòa: \"Máy in thêm số 0 làm mỗi gói mì bị đội giá 31 500 đồng — gấp 9 lần giá thật. Bác cần thu hồi ngay xấp tem lỗi!\" Con số 9 lần chính là chữ ký nhận dạng của cánh cửa phải.\nSOI: soi ước lượng ban đầu: đoán \"vài chục nghìn\" — kết quả 31 500 đồng, khớp. Nếu ra 315 đồng hay 315 000 đồng thì lệch hẳn cỡ số: kiểm tra lại xem chia 9 có nhầm hàng không.\nDÙNG NGOÀI ĐỜI: từ nay nhìn hóa đơn hay tin nhắn chuyển khoản, con hiểu vì sao người lớn đếm số chữ số 0 kỹ đến thế — mỗi con 0 là một lần \"nhân mười\" tài sản!",
+    "teaches": [],
+    "nhan": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   },
+   {
+    "id": "S8",
+    "kind": "trap",
+    "narration": "Trí Long trấn an bác Hòa: \"Bác ơi thêm chữ số 0 tức là thêm... 0 đồng — giá vẫn thế, khách hàng nhìn nhầm đấy ạ!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Khi viết thêm chữ số 0 vào bên phải một số tự nhiên, ta được số mới hơn số cũ 216 đơn vị. Tìm số cũ.",
+  "steps": [
+   {
+    "show": "Tóm tắt:"
+   },
+   {
+    "show": "Thêm 0 bên phải → số mới hơn số cũ 216."
+   },
+   {
+    "show": "Tìm số cũ."
+   },
+   {
+    "show": "Ghi lại đúng hành động của đề: \"thêm 0 bên phải\" là dữ kiện vàng."
+   },
+   {
+    "show": "Sơ đồ:"
+   },
+   {
+    "show": "Số cũ: |—1 phần—|"
+   },
+   {
+    "show": "Số mới: |—1—|—2—|—3—|—4—|—5—|—6—|—7—|—8—|—9—|—10—|"
+   },
+   {
+    "show": "Phần hơn (9 phần) ứng với 216 đơn vị."
+   },
+   {
+    "show": "Sơ đồ 10 phần là MÔ HÌNH của bài — vẽ bằng thước, các phần bằng nhau."
+   },
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Viết thêm chữ số 0 vào bên phải một số, ta được số mới gấp 10 lần số cũ."
+   },
+   {
+    "show": "Số mới hơn số cũ số phần là: 10 − 1 = 9 (phần)"
+   },
+   {
+    "show": "Số cũ là: 216 : 9 = 24"
+   },
+   {
+    "show": "Dòng đầu nêu CĂN CỨ (quy luật ×10) rồi mới đến phép tính — thứ tự chuẩn của một bài giải."
+   },
+   {
+    "show": "Đáp số: 24."
+   },
+   {
+    "show": "Đáp số một dòng riêng."
+   },
+   {
+    "show": "Thử lại: thêm 0 vào 24 được 240 ; 240 − 24 = 216 ✓"
+   },
+   {
+    "show": "Nhịp SOI: làm lại đúng hành động của đề với đáp số vừa tìm."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Viết thêm chữ số 0 vào bên phải số 48. Số mới là bao nhiêu và hơn số cũ bao nhiêu đơn vị?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số mới",
+        "value": 480
+       },
+       {
+        "label": "hơn số cũ",
+        "value": 432
+       }
+      ]
+     },
+     "solutionNarrative": "được 480; hơn số cũ 480 − 48 = 432 (đúng bằng 9 × 48)."
+    },
+    {
+     "id": "C2",
+     "text": "Viết thêm chữ số 2 vào bên trái số 75. Số mới là bao nhiêu và hơn số cũ bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số mới",
+        "value": 275
+       },
+       {
+        "label": "hơn số cũ",
+        "value": 200
+       }
+      ]
+     },
+     "solutionNarrative": "được 275; hơn số cũ 200 (chữ số 2 đứng vào hàng trăm)."
+    },
+    {
+     "id": "C3",
+     "text": "Viết thêm chữ số 0 vào bên phải một số thì số mới gấp mấy lần số cũ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lần",
+        "value": 10
+       }
+      ]
+     },
+     "solutionNarrative": "gấp 10 lần."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Viết thêm chữ số 0 vào bên phải một số, được số mới hơn số cũ 216 đơn vị. Tìm số cũ.",
+     "answerKey": {
+      "value": 24
+     },
+     "solutionNarrative": "phần hơn là 9 phần → số cũ = 216 : 9 = 24. Thử lại: 240 − 24 = 216 ✓."
+    },
+    {
+     "id": "C5",
+     "text": "Viết thêm chữ số 5 vào bên phải một số, được số mới hơn số cũ 320 đơn vị. Tìm số cũ.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số cũ",
+        "value": 35
+       }
+      ]
+     },
+     "solutionNarrative": "9 lần số cũ = 320 − 5 = 315 → số cũ = 315 : 9 = 35. Thử lại: 355 − 35 = 320 ✓."
+    },
+    {
+     "id": "C6",
+     "text": "Viết thêm chữ số 4 vào bên trái một số có hai chữ số thì số đó tăng thêm bao nhiêu đơn vị? Vì sao?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số tăng thêm",
+        "value": 400
+       }
+      ]
+     },
+     "solutionNarrative": "tăng thêm 400 đơn vị — vì chữ số 4 được đặt vào hàng trăm, giá trị 4 × 100."
+    },
+    {
+     "id": "C7",
+     "text": "Viết thêm chữ số 0 xen giữa hai chữ số của số 84. Số mới hơn số cũ bao nhiêu? Đối chiếu với công thức 90 × a.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số mới",
+        "value": 804
+       },
+       {
+        "label": "hơn số cũ",
+        "value": 720
+       }
+      ]
+     },
+     "solutionNarrative": "được 804; hơn 804 − 84 = 720 = 90 × 8 ✓ (chữ số 8 bị đẩy từ hàng chục lên hàng trăm)."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Viết thêm chữ số 0 xen giữa hai chữ số của một số có hai chữ số, được số mới hơn số cũ 450 đơn vị. Biết tổng hai chữ số của số cũ bằng 8, tìm số cũ.",
+     "answerKey": {
+      "value": 53
+     },
+     "solutionNarrative": "90 × a = 450 → a = 5; tổng hai chữ số bằng 8 → b = 3 → số cũ là 53. Thử lại: 503 − 53 = 450 ✓."
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đố: \"Tìm số có hai chữ số ab sao cho khi xen chữ số 0 vào giữa, ta được số mới gấp đúng 7 lần số cũ.\" (Gợi ý: số mới = a trăm + b; thử từng giá trị của a với điều kiện gấp 7.)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số cần tìm",
+        "value": 15
+       }
+      ]
+     },
+     "solutionNarrative": "thử a = 1: số mới 10b? — làm theo gợi ý: a0b = 7 × ab; với a = 1: 100 + b = 7 × (10 + b) → 100 + b = 70 + 7 × b → 30 = 6 × b → b = 5 → số 15 (105 = 7 × 15 ✓). Các a lớn hơn không cho chữ số b hợp lệ — đáp số: 15."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Thêm chữ số 0 vào bên phải một số là gấp số đó lên 10 lần.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Thêm chữ số 3 vào bên trái số có hai chữ số là cộng thêm 3 đơn vị.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "cộng thêm 300 (vào hàng trăm), không phải 3."
+   },
+   {
+    "id": "Q3",
+    "text": "Thêm 0 bên phải, phần tăng thêm bằng mấy lần số cũ?",
+    "format": "mcq",
+    "choices": [
+     "A. 9 lần",
+     "B. 10 lần",
+     "C. 11 lần"
+    ],
+    "answerKey": {
+     "choice": "A. 9 lần"
+    },
+    "solutionNarrative": "9 lần)."
+   },
+   {
+    "id": "Q4",
+    "text": "Thêm 0 bên phải làm số tăng 189 đơn vị. Số cũ là:",
+    "format": "mcq",
+    "choices": [
+     "A. 21",
+     "B. 27",
+     "C. 19"
+    ],
+    "answerKey": {
+     "choice": "A. 21"
+    },
+    "solutionNarrative": "189 : 9 = 21."
+   },
+   {
+    "id": "Q5",
+    "text": "Xen 0 vào giữa số 36 được số:",
+    "format": "mcq",
+    "choices": [
+     "A. 306",
+     "B. 360",
+     "C. 630"
+    ],
+    "answerKey": {
+     "choice": "A. 306"
+    },
+    "solutionNarrative": "306)."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Trò chơi \"máy in dở chứng\" với máy tính bỏ túi: con bấm một số, bố mẹ hô \"thêm 0 bên phải!\" — con đoán kết quả trước rồi bấm × 10 kiểm chứng. Sức mạnh của vị trí chữ số ngấm qua trò chơi.",
+  "homeActivity": "Khi con giải bài ngược, yêu cầu vẽ sơ đồ 10 phần TRƯỚC khi đặt phép chia — sơ đồ đúng thì phép tính gần như không thể sai.",
+  "watchFor": "NÊN: kể chuyện thật về ghi thừa/thiếu số 0 (chuyển khoản, ghi sổ) để con thấy độ \"đắt\" của bài học. KHÔNG NÊN: sa vào xen chữ số vào số có 3-4 chữ số với nhiều ẩn — mức ấy của lớp 5."
+ },
+ "figureSpec": [
+  {
+   "id": "L4H_B02_MO",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L4H_B02_MO.png",
+   "caption": "Giá đúng một phần, giá trên tem mười phần.",
+   "sha256_16": "8248cf6662614afe",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B02_G1",
+   "usedIn": [
+    "screen:S3"
+   ],
+   "file": "figures/L4H_B02_G1.png",
+   "caption": "Số mới 10 phần, phần hơn là 9 phần.",
+   "sha256_16": "610f67e57958ff21",
+   "mucGoc": "khamPha"
+  }
+ ],
+ "hatMam": "Lớp 3, ở Bài 2, con biết: thêm chữ số 0 bên phải là gấp số lên 10 lần, thêm chữ số bên trái số có hai chữ số là cộng thêm mấy trăm. Năm nay đủ bộ BA cánh cửa — thêm phải, thêm trái, và cánh cửa mới tinh: XEN GIỮA. Vũ khí mở cửa: sơ đồ 10 phần.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B02"
+  ],
+  "ten": [
+   "THÊM CHỮ SỐ BÊN TRÁI — BÊN PHẢI"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ }
+}

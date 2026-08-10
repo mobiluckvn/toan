@@ -184,6 +184,9 @@ export default function App() {
   if (view.page === 'lesson')
     return (
       <LessonPlayer
+        /* Cùng lý do như nhánh đọc chậm: đổi bài mà giữ nguyên component thì số thứ
+           tự màn KHÔNG reset, bấm đường lùi là rơi thẳng vào màn kết của bài đích. */
+        key={view.microId}
         microId={view.microId}
         resumeAt={view.fromStart ? 0 : (resumeSpot(progress, view.microId)?.step || 0)}
         onMoveStep={(id, step, total) => setProgress((p) => saveSpot(p, id, step, total))}
@@ -191,6 +194,13 @@ export default function App() {
         onEvents={(s) => pushAttempts({ learnerId, ...s }).catch(() => {})}
         onExit={() => setView({ page: 'home' })}
         onFinish={(grade, lesson, session) => finishMicro(view.microId, grade, lesson, session)}
+        /* Đường LÙI của lớp 5 về lớp 4. Trước đây nhánh này KHÔNG nhận `onMoBai`,
+           mà FinaleCard lại ẩn hộp đường lùi khi thiếu nó — nên dù dữ liệu có khai
+           `duongLui` thì màn kết bài lớp 5 vẫn không hiện gì. Đích là quyển đọc
+           chậm nên phải hỏi lại nhịp đọc của CHÍNH nó, đừng ghim cứng ở đây. */
+        onMoBai={(id) => setView(baiDocCham(id)
+          ? { page: 'baiDocCham', baiId: id, fromStart: true }
+          : { page: 'lesson', microId: id, fromStart: true })}
       />
     );
 

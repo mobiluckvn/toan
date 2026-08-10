@@ -1,0 +1,349 @@
+/**
+ * LỚP 4 — cổng nghiệm thu riêng của quyển.
+ * chạy: node test/lop4.test.mjs  (hoặc `npm test`, nó quét cả thư mục)
+ *
+ * Soi loại lỗi HỎNG MÀ KHÔNG BÁO — lỗi làm app vỡ thì tự thấy, không cần kiểm.
+ * Danh sách theo chuẩn mục 8, cộng bốn phép riêng của quyển này:
+ *
+ *   · bẫy 5/6 — ôn tập và ĐÁP ÁN CHI TIẾT của cả chương rơi vào mục ⑩ của bài cuối.
+ *     Đã dính thật trong đợt này: 11 bài, 121-155 dòng rác mỗi bài, lộ nguyên đáp án
+ *     cho người lớn đọc, mà mọi phép ĐẾM CÂU vẫn đúng nên không có gì kêu.
+ *   · đường lùi HAI TẦNG — lớp 4 → lớp 3 và lớp 5 → lớp 4. Trỏ sai còn tệ hơn không
+ *     trỏ: bé bấm vào rồi lạc sang một bài chẳng liên quan.
+ *   · `Bài n` TRẦN trong HẠT MẦM là bài LỚP 4, không phải lớp 3 — mẫu bắt mọi `Bài n`
+ *     cho ra 18 dòng trỏ ngược vào chính lớp 4 và một dòng trỏ ra ngoài phạm vi.
+ *   · hình màn mở phải là bản ĐỀ — không chứa dấu vết đáp án (chuẩn mục 6 luật 3).
+ */
+import { readFileSync, readdirSync, existsSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { join } from 'node:path';
+
+const G = new URL('../../', import.meta.url).pathname;
+let pass = 0, fail = 0;
+const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
+const in5 = (xs) => xs.slice(0, 5).forEach((x) => console.log('     ', x));
+const doc = (p) => JSON.parse(readFileSync(p, 'utf8'));
+
+const GOC = join(G, 'data/lop4');
+const APP = join(G, 'web/public/content/lop4');
+const teps = readdirSync(GOC).filter((f) => /^DL_KSN4_B\d+\.json$/.test(f));
+const bais = teps.map((f) => doc(join(GOC, f))).sort((a, b) => a.so - b.so);
+
+/* ══ 1 · đủ số bài · đủ mục · số câu khớp ══ */
+t(`đủ 44 bài (${bais.length})`, bais.length === 44);
+t('số thứ tự bài liền mạch 1..44',
+  bais.every((b, i) => b.so === i + 1));
+t('đủ 11 chương', new Set(bais.map((b) => b.chuong)).size === 11);
+
+const MUC = ['mucTieu', 'chuyenMoBai', 'dichMoHinh', 'khamPha', 'lapSoi',
+  'viDuMau', 'suKemNham', 'luyenTap', 'quiz', 'gocBoMe'];
+const thieuMuc = [];
+for (const b of bais) {
+  for (const m of MUC) if (!b.muc[m]) thieuMuc.push(`bài ${b.so} thiếu mục ${m}`);
+}
+t('bài nào cũng đủ 10 mục ①…⑩', thieuMuc.length === 0);
+in5(thieuMuc);
+
+const lechCau = bais.filter((b) => {
+  const lt = b.cau.filter((c) => c.phan === 'luyenTap').length;
+  const qz = b.cau.filter((c) => c.phan === 'quiz').length;
+  return lt !== 9 || qz !== 5;
+});
+t('bài nào cũng đúng 9 luyện tập + 5 quiz', lechCau.length === 0);
+in5(lechCau.map((b) => `bài ${b.so}`));
+
+const tongCau = bais.reduce((s, b) => s + b.cau.length, 0);
+t(`đủ 616 câu (${tongCau})`, tongCau === 616);
+
+/* ══ 2 · KHÔNG lẫn phần khác vào bài — bẫy 5 và 6 ══ */
+const RAC = /^(ĐÁP ÁN|ÔN TẬP \d+|✦\s+(BẢNG TỰ SOI|ĐỀ B)|B\d+\s+ĐÁP ÁN|Ô\d+B?\s+ĐÁP ÁN)/;
+const ban = [];
+for (const b of bais) {
+  for (const [ten, m] of Object.entries(b.muc)) {
+    for (const d of m.dong || []) {
+      if (RAC.test(d)) ban.push(`bài ${b.so} · ${ten}: ${d.slice(0, 50)}`);
+    }
+  }
+}
+t('không mục nào lẫn ôn tập hay đáp án chi tiết', ban.length === 0);
+in5(ban);
+
+const gbmDai = bais.filter((b) => (b.muc.gocBoMe.dong || []).length > 8);
+t('Góc bố mẹ không phình ra (≤ 8 dòng)', gbmDai.length === 0);
+in5(gbmDai.map((b) => `bài ${b.so}: ${b.muc.gocBoMe.dong.length} dòng`));
+
+/* ══ 3 · lời chữa và đáp án ══ */
+const khongLoi = [];
+for (const b of bais) {
+  for (const c of b.cau) {
+    if (!c.loiChua && !c.answerKey) khongLoi.push(`${b.id}#${c.id}`);
+  }
+}
+t('mọi câu đều có lời chữa của sách', khongLoi.length === 0);
+in5(khongLoi);
+
+const quizChua = [];
+for (const b of bais) {
+  for (const c of b.cau.filter((x) => x.phan === 'quiz')) {
+    if (!c.answerKey) quizChua.push(`${b.id}#${c.id}`);
+  }
+}
+t('cả 220 câu quiz đều chấm máy được', quizChua.length === 0);
+in5(quizChua);
+
+/* trắc nghiệm: đáp án phải NẰM TRONG danh sách phương án — lệch một chữ là bé bấm
+   đúng mà máy báo sai, và bé thì tin máy chứ không tin mình */
+const lacChon = [];
+for (const b of bais) {
+  for (const c of b.cau) {
+    const k = c.answerKey;
+    if (k && k.choice && !(c.choices || []).includes(k.choice)) {
+      lacChon.push(`${b.id}#${c.id}: "${k.choice}"`);
+    }
+  }
+}
+t('đáp án trắc nghiệm luôn nằm trong danh sách phương án', lacChon.length === 0);
+in5(lacChon);
+
+/* ══ 4 · hình ══ */
+const soTay = doc(join(G, 'data/lop4_hinh_manifest.json'));
+const HINH = join(G, 'web/public/content/figures');
+const thieuAnh = [], lechSha = [];
+for (const [id, h] of Object.entries(soTay)) {
+  const p = join(HINH, `${id}.png`);
+  if (!existsSync(p)) { thieuAnh.push(id); continue; }
+  const sha = createHash('sha256').update(readFileSync(p)).digest('hex').slice(0, 16);
+  // Sửa params mà quên vẽ lại thì dữ liệu nói một đằng, ảnh hiện một nẻo, và CẢ HAI
+  // đều hợp lệ nên không có gì báo (bẫy 20).
+  if (sha !== h.sha256_16) lechSha.push(`${id}: ${sha} ≠ ${h.sha256_16}`);
+}
+t(`mọi hình trong sổ tay đều có ảnh thật (${Object.keys(soTay).length})`,
+  thieuAnh.length === 0);
+in5(thieuAnh);
+t('mã băm ảnh khớp sổ tay', lechSha.length === 0);
+in5(lechSha);
+
+/* hình đã vẽ = đã gắn — bắt được hình rơi mất HAI LẦN ở các quyển trước */
+const daGan = new Set();
+for (const b of bais) {
+  for (const m of Object.values(b.muc)) {
+    for (const h of m.hinh || []) daGan.add(h.id);
+  }
+}
+const roi = Object.keys(soTay).filter((id) => !daGan.has(id) && !soTay[id].hoan);
+t(`hình đã vẽ đều đã gắn vào bài (${daGan.size})`, roi.length === 0);
+in5(roi);
+
+/* mọi bài phải có hình MÀN MỞ — bài nào cũng mở bằng một tình huống có hình */
+const khongMo = bais.filter((b) => !(b.muc.chuyenMoBai.hinh || []).length);
+t('44/44 bài có hình màn mở', khongMo.length === 0);
+in5(khongMo.map((b) => `bài ${b.so}`));
+
+/* hình màn mở là bản ĐỀ: không mang dấu vết đáp án (chuẩn mục 6 luật 3) */
+const moTa = doc(join(G, 'data/lop4_hinh.json'));
+const loMo = [];
+for (const h of moTa.filter((x) => x.muc === 'chuyenMoBai')) {
+  const p = h.params || {};
+  if (p.note) loMo.push(`${h.id}: có dòng chốt "${String(p.note).slice(0, 40)}"`);
+  if (p.hienTich) loMo.push(`${h.id}: hienTich bật`);
+  if (p.tenGoc) loMo.push(`${h.id}: ghi sẵn tên góc "${p.tenGoc}"`);
+  if (/=/.test(p.title || '')) loMo.push(`${h.id}: tiêu đề có dấu '='`);
+}
+t('hình màn mở KHÔNG chứa dấu vết đáp án', loMo.length === 0);
+in5(loMo);
+
+/* tiêu đề hình không quá 120 chữ — trên ngưỡng ấy nó là một đoạn văn đè lên đầu hình */
+const tdDai = moTa.filter((h) => (h.params.title || '').length > 120);
+t('tiêu đề hình ≤ 120 chữ', tdDai.length === 0);
+in5(tdDai.map((h) => `${h.id}: ${h.params.title.length} chữ`));
+
+/* ══ 5 · bản dựng cho app ══ */
+if (existsSync(APP)) {
+  const app = readdirSync(APP).filter((f) => /^DL_KSN4_B\d+\.json$/.test(f))
+    .map((f) => doc(join(APP, f))).sort((a, b) => a.so - b.so);
+  t(`bản cho app đủ 44 bài (${app.length})`, app.length === 44);
+
+  /* prev/next khớp thứ tự */
+  const lechNoi = [];
+  app.forEach((d, i) => {
+    const truoc = i ? app[i - 1].id : null;
+    const sau = i + 1 < app.length ? app[i + 1].id : null;
+    if (d.series.prev !== truoc || d.series.next !== sau) lechNoi.push(d.id);
+  });
+  t('prev/next khớp thứ tự bài', lechNoi.length === 0);
+  in5(lechNoi);
+
+  /* mỗi bài phải dạy ít nhất một nguyên tắc — chặng giảng rỗng là hỏng CÂM:
+     bài vẫn dựng, phòng học vẫn mở, chỉ là không dạy gì */
+  const rong = app.filter((d) => !(d.knowledgeCore.statements || []).length);
+  t('bài nào cũng có nguyên tắc để dạy', rong.length === 0);
+  in5(rong.map((d) => d.id));
+
+  /* mọi nguyên tắc đều có màn nhận nó */
+  const mocoi = [];
+  for (const d of app) {
+    const nhan = new Set((d.lecture.screens || []).flatMap((s) => s.teaches || []));
+    for (const s of d.knowledgeCore.statements) {
+      if (!nhan.has(s.id)) mocoi.push(`${d.id} · ${s.id}`);
+    }
+  }
+  t('mọi nguyên tắc đều có màn giảng nhận', mocoi.length === 0);
+  in5(mocoi);
+
+  /* hình neo vào màn CÓ THẬT — 'screen:S9' trỏ vào màn không tồn tại thì hình biến
+     mất lặng lẽ, mà bài vẫn chạy */
+  const neoLac = [];
+  for (const d of app) {
+    const man = new Set((d.lecture.screens || []).map((s) => s.id));
+    const cau = new Set([...Object.values(d.practice.pools).flat(),
+      ...d.assessment.items].map((c) => c.id));
+    for (const f of d.figureSpec || []) {
+      for (const u of f.usedIn || []) {
+        if (u.startsWith('screen:') && !man.has(u.slice(7))) {
+          neoLac.push(`${d.id} · ${f.id} → ${u}`);
+        }
+        if (u.startsWith('item:') && !cau.has(u.slice(5).split(':')[0])) {
+          neoLac.push(`${d.id} · ${f.id} → ${u}`);
+        }
+      }
+    }
+  }
+  t('hình neo vào màn / câu CÓ THẬT', neoLac.length === 0);
+  in5(neoLac);
+
+  /* màn mở: lời dẫn ngắn, và KHÔNG kể một bộ số khác với đề (bẫy 32) */
+  const moDai = app.filter((d) => {
+    const h = (d.lecture.screens || []).find((s) => s.kind === 'hook');
+    return h && (h.narration || '').length > 320;
+  });
+  t('lời dẫn màn mở không quá dài', moDai.length === 0);
+  in5(moDai.map((d) => `${d.id}: ${d.lecture.screens[0].narration.length} chữ`));
+
+  /* ── bẫy 32 · lời dẫn và hình màn mở phải kể CÙNG MỘT bài toán ──
+     Đã dính thật: lời dẫn lấy đề của mục ⑥ (bài mẫu trình bày vở) còn hình vẽ theo
+     mục ② (tình huống mở), nên màn mở hiện "tổng hai chữ số bằng 12" bên trên một
+     cái bảng hàng - lớp ghi 24 358. Hai đề đá nhau ngay dòng đầu bé đọc, mà dữ liệu
+     thì hợp lệ hoàn toàn — chỉ nhìn màn hình thật mới thấy.
+     Máy khẳng định được: con số trong lời dẫn phải có mặt ở hình. Lời dẫn không có
+     số thì không có gì để đá nhau.
+     So với NỘI DUNG VẼ RA (`params` của bản mô tả), không so với `caption`: lời chú
+     chỉ là một dòng tả ngắn, nên so với nó thì năm bài bị đỏ OAN — hình bài 42 có
+     sẵn con số 200 ngay trong bảng mà lời chú không nhắc tới. Phép kiểm chặt hơn
+     thứ nó định canh là phép kiểm phải bỏ (chuẩn mục 8). */
+  const soCua = (s) => new Set((String(s).match(/\d[\d\s]*\d|\d/g) || [])
+    .map((x) => x.replace(/\s/g, '')));
+  const moTaTheoBai = {};
+  for (const m of moTa) {
+    if (m.muc === 'chuyenMoBai') moTaTheoBai[m.bai] = JSON.stringify(m.params);
+  }
+  const daNhau = [];
+  for (const d of app) {
+    const h = (d.lecture.screens || []).find((s) => s.kind === 'hook');
+    if (!h || !moTaTheoBai[d.id]) continue;
+    const cua_hinh = soCua(`${moTaTheoBai[d.id]} ${d.title}`);
+    const la = [...soCua(h.narration)].filter((n) => n.length > 1 && !cua_hinh.has(n));
+    if (la.length) daNhau.push(`${d.id}: lời dẫn có ${la.join(', ')} mà hình không có`);
+  }
+  t('lời dẫn màn mở và hình màn mở kể CÙNG một bài toán', daNhau.length === 0);
+  in5(daNhau);
+
+  /* nhãn đường lùi phải nói đúng LỚP đích */
+  const nhanSai = app.filter((d) => d.duongLui
+    && d.duongLui.nhan !== 'Học lại bài lớp 3');
+  t('nút đường lùi mời đúng "Học lại bài lớp 3"', nhanSai.length === 0);
+  in5(nhanSai.map((d) => `${d.id}: ${d.duongLui.nhan}`));
+}
+
+/* ══ 6 · kỳ sát hạch ══ */
+const on = doc(join(G, 'data/lop4_ontap.json')).ky;
+t(`đủ 11 kỳ ôn tập (${on.length})`, on.length === 11);
+t('mọi kỳ có ngưỡng đạt lấy từ sách',
+  on.every((k) => k.need >= 1 && k.tong === k.examA.length));
+
+const maBai = new Set(bais.map((b) => b.id));
+const soiLac = [], soiThieu = [];
+for (const k of on) {
+  for (const q of k.examA) {
+    if (!(q.veCau || []).length) soiThieu.push(`${k.id} câu ${q.qno}`);
+    for (const v of q.veCau || []) if (!maBai.has(v)) soiLac.push(`${k.id} → ${v}`);
+  }
+}
+t('MỌI câu ôn tập đều có mối nối về bài', soiThieu.length === 0);
+in5(soiThieu);
+t('Bảng tự soi trỏ vào bài CÓ THẬT', soiLac.length === 0);
+in5(soiLac);
+
+const trongDap = [];
+for (const k of on) {
+  for (const q of [...k.examA, ...k.deB]) {
+    if (!q.answer) trongDap.push(`${k.id} câu ${q.qno}`);
+  }
+}
+t('mọi câu ôn tập và đề B đều có đáp án', trongDap.length === 0);
+in5(trongDap);
+
+/* ══ 7 · đường lùi lớp 4 → lớp 3 ══ */
+const gan3 = doc(join(G, 'data/lop4_gan_lop3.json')).gan;
+const coL3 = new Set(readdirSync(join(G, 'data/lop3'))
+  .filter((f) => f.startsWith('DL_KSN3_B'))
+  .map((f) => f.replace('.json', '').replace('DL_KSN3_', 'DL:KSN3.')));
+t(`đủ 44 dòng đường lùi (${Object.keys(gan3).length})`,
+  Object.keys(gan3).length === 44);
+
+const lac3 = [];
+for (const [ma, v] of Object.entries(gan3)) {
+  for (const ve of v.ve || []) if (!coL3.has(ve)) lac3.push(`${ma} → ${ve}`);
+}
+t(`mọi đích đến là bài lớp 3 CÓ THẬT (${coL3.size} bài)`, lac3.length === 0);
+in5(lac3);
+
+const CAN_CU = new Set(['sach', 'sachSua', 'chuDe', 'khong']);
+const canLa = Object.entries(gan3).filter(([, v]) => !CAN_CU.has(v.canCu));
+t('căn cứ nằm trong bốn giá trị đã khai', canLa.length === 0);
+in5(canLa.map(([m, v]) => `${m}: ${v.canCu}`));
+
+/* dòng `khong` phải RỖNG đích, dòng khác phải CÓ đích — bỏ trống thì không phân
+   biệt được "chưa xét" với "đã xét và kết luận là không có" */
+const lechCan = Object.entries(gan3).filter(([, v]) =>
+  (v.canCu === 'khong') !== ((v.ve || []).length === 0));
+t('căn cứ khớp với danh sách đích', lechCan.length === 0);
+in5(lechCan.map(([m]) => m));
+
+/* mọi dòng phải ghi LÝ DO — bảng không có lý do thì phiên sau không soát lại được */
+const khongViSao = Object.entries(gan3).filter(([, v]) => !v.viSao);
+t('mọi dòng đường lùi đều ghi lý do', khongViSao.length === 0);
+in5(khongViSao.map(([m]) => m));
+
+/* ══ 8 · đường lùi lớp 5 → lớp 4 ══ */
+const gan4 = doc(join(G, 'data/lop5_gan_lop4.json')).gan;
+t(`đủ 168 micro lớp 5 có đường lùi (${Object.keys(gan4).length})`,
+  Object.keys(gan4).length === 168);
+
+const lac4 = [];
+for (const [ma, v] of Object.entries(gan4)) {
+  for (const ve of v.ve || []) if (!maBai.has(ve)) lac4.push(`${ma} → ${ve}`);
+}
+t('mọi đích đến là bài lớp 4 CÓ THẬT', lac4.length === 0);
+in5(lac4);
+
+/* trường `duongLui` phải NẰM TRONG tệp bài lớp 5, và ở CẢ HAI nơi — với Quyển 1
+   lớp 5 thì data/lessons và public/content/lessons phải giống hệt nhau */
+for (const noi of ['data/lessons', 'web/public/content/lessons']) {
+  const d = doc(join(G, noi, 'DL_KSN5Q1_B41_M1.json'));
+  t(`${noi} đã gắn đường lùi`,
+    !!d.duongLui && d.duongLui.nhan === 'Học lại bài lớp 4');
+}
+
+/* ══ 9 · tiền tố mã bài không trùng, không là tiền tố của nhau ══ */
+const TIEN_TO = ['DL:KSN2.', 'DL:KSN3.', 'DL:KSN4.', 'DL:KSN5Q1.', 'DR:KSN5Q2.'];
+const dungNhau = [];
+for (const a of TIEN_TO) {
+  for (const b of TIEN_TO) {
+    if (a !== b && b.startsWith(a)) dungNhau.push(`${a} là tiền tố của ${b}`);
+  }
+}
+t('tiền tố mã bài không trùng / không lồng nhau', dungNhau.length === 0);
+in5(dungNhau);
+
+console.log(`\n${pass} PASS · ${fail} FAIL`);
+process.exit(fail ? 1 : 0);

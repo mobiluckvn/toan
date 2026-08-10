@@ -82,7 +82,15 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
     case 'teach':
       return (<>
         <div className="card">
-          <div className="kicker">NGUYÊN TẮC</div>
+          {/* Màn giảng KHÔNG mang nguyên tắc nào thì đừng gọi nó là "NGUYÊN TẮC":
+              sách lớp 4 có hai màn kiểu ấy mỗi bài (nhịp DỊCH dựng mô hình, nhịp
+              LẮP - SOI lắp kết quả về đời thật). Quyển nào không khai `nhan` thì
+              giữ nguyên nhãn cũ, nên lớp 2 · lớp 3 · lớp 5 không đổi một chữ. */}
+          <div className="kicker">
+            {step.screen?.nhan
+              || (step.statements.length ? 'NGUYÊN TẮC'
+                : step.screen?.kind === 'trap' ? 'CHỖ HAY NHẦM' : 'CÙNG XEM')}
+          </div>
           {step.statements.map((st) => (
             <div key={st.id} className="rule-box text-[15.5px]">
               <span className="mr-2 rounded bg-navy px-1.5 py-0.5 align-[2px] text-[11px] font-extrabold text-white">
@@ -92,8 +100,18 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
             </div>
           ))}
           <Figure fig={step.figure} />
-          {step.screen?.narration && (
-            <p className="text-[16px] leading-relaxed">{step.screen.narration}</p>
+          {/* `whitespace-pre-line` để mục ③ và ⑤ của lớp 4 giữ được từng dòng có
+              nhãn (CHO GÌ · HỎI GÌ · …). Quyển khác không có ký tự xuống dòng trong
+              lời giảng nên hiện y như cũ. */}
+          {/* Màn BẪY có lời dẫn TRÙNG NGUYÊN VĂN với ô "SAI" ngay dưới — cùng lấy từ
+              câu nói sai của nhân vật. In hai lần thì bé đọc lại y hệt một đoạn, mà
+              đoạn ấy lại là câu SAI: nhắc hai lần thứ mình muốn bé quên. Bỏ bản trên,
+              giữ ô SAI vì nó có kèm dấu hiệu và lời gỡ. */}
+          {step.screen?.narration
+            && step.screen.narration !== step.misconception?.wrong && (
+            <p className="whitespace-pre-line text-[16px] leading-relaxed">
+              {step.screen.narration}
+            </p>
           )}
           {step.misconception && (
             <div className="warn-box text-[15px]">

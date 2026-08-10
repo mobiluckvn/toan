@@ -1,0 +1,402 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B03",
+ "grade": 4,
+ "quyen": "lop4",
+ "title": "Bài 3 · XÓA CHỮ SỐ & THANG MÁY ×10",
+ "durationMinutes": 10,
+ "so": 3,
+ "chuong": 1,
+ "tenChuong": "ĐẠI CÔNG TRƯỜNG LỚP TRIỆU",
+ "dangGoc": "SỐ 1.3 + SỐ 2.1 mức Lớp 4 — Xóa tận cùng, xóa hàng cao nhất; gấp - giảm 10, 100, 1000 lần",
+ "skills": {
+  "bktUnit": "CHUONG:1@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 3,
+  "prev": "DL:KSN4.B02",
+  "next": "DL:KSN4.B04"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Gấp - giảm một số 10, 100, 1000 lần bằng cách thêm - bớt chữ số 0 (thang máy hàng). Giải bài xóa chữ số TẬN CÙNG bằng mô hình: số cũ = 10 × số mới + chữ số bị xóa. Giải bài xóa chữ số HÀNG CAO NHẤT: số giảm đúng bằng giá trị chữ số ấy.",
+  "kidText": "Gấp - giảm một số 10, 100, 1000 lần bằng cách thêm - bớt chữ số 0 (thang máy hàng). Giải bài xóa chữ số TẬN CÙNG bằng mô hình: số cũ = 10 × số mới + chữ số bị xóa. Giải bài xóa chữ số HÀNG CAO NHẤT: số giảm đúng bằng giá trị chữ số ấy.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — THANG MÁY ×10: nhân 10, 100, 1000 = thêm 1, 2, 3 chữ số 0; chia 10, 100, 1000 (với số tròn) = bớt đi từng ấy chữ số 0. 47 → 470 → 4 700 → 47 000: cùng một \"gia đình số\", chỉ khác tầng đứng."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — HỒ SƠ VỤ SỔ QUỸ: số ghi sai = 350 000 : 10 = 35 000; phần hụt = 350 000 − 35 000 = 315 000 ✓ — khớp từng đồng với khoản lệch của mẹ! Nhận dạng nhanh: phần hụt luôn bằng 9 LẦN số đã ghi sai (315 000 = 9 × 35 000)."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — XÓA CHỮ SỐ TẬN CÙNG (tổng quát): xóa chữ số c tận cùng của số A được số mới B thì A = B × 10 + c. Bài mẫu: xóa chữ số tận cùng của một số có ba chữ số, được số mới kém số cũ 273 đơn vị → 9 × B + c = 273; vì c bé hơn 10 nên B = 30 và c = 273 − 270 = 3 → số cũ 303. (Sơ đồ 10 phần + một mẩu dư c — quen mặt từ Bài 2!)"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — XÓA CHỮ SỐ HÀNG CAO NHẤT: cắt tầng thượng: số giảm đúng bằng GIÁ TRỊ chữ số ấy. Xóa chữ số hàng trăm của 725 còn 25: giảm đúng 700. Bài ngược: xóa hàng trăm làm số giảm 600 → chữ số hàng trăm là 6, gọn không cần nghĩ thêm."
+   }
+  ],
+  "mantra": "Thêm 0 là đi thang máy LÊN, xóa 0 là đi XUỐNG — mỗi tầng ×10 hoặc :10. Xóa tận cùng: dựng đẳng thức \"cũ = 10 × mới + c\" rồi tách 9 phần + dư. Xóa hàng cao nhất: chỉ việc hỏi \"tầng thượng ấy nặng bao nhiêu?\". Ghi thiếu 0: phần hụt = 9 lần số đã ghi — chữ ký quen của họ nhà số 9!",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Trí Long vỗ sổ quỹ: \"Ghi thiếu một chữ số 0 thì chỉ thiếu 0 đồng thôi — quỹ hụt 315 000 chắc chắn do... ai đó mua kem!\"",
+    "signal": "Bé làm theo cách Trí Long vừa nói.",
+    "fix": "Gợi ý 1: Lại lỗi DỊCH quen thuộc — \"thiếu chữ số 0\" bị dịch thành \"trừ 0\". Đặt số đúng và số ghi sai vào bảng hàng: chữ số 3 và chữ số 5 đã tụt xuống tầng nào? Gợi ý 2: Lấy số đúng chia 10 xem có ra đúng số ghi sai không, rồi tính phần chênh — con số ấy có trùng khoản hụt 315 000 của mẹ không? Ai nợ Su Bống một que kem nào?"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "kiểm chứng: ghi thiếu một số 0 có gây ra đúng khoản hụt 315 000 đồng không; tổng quát quy luật thiếu - thừa chữ số 0."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "CHO GÌ? khoản tiền đúng 350 000 đồng; sổ ghi 35 000 đồng (thiếu một chữ số 0 tận cùng); quỹ hụt 315 000 đồng.\nHỎI GÌ? kiểm chứng: ghi thiếu một số 0 có gây ra đúng khoản hụt 315 000 đồng không; tổng quát quy luật thiếu - thừa chữ số 0.\nĐẠI LƯỢNG & ĐƠN VỊ: tiền (đồng); chú ý \"số ghi sai\" và \"số đúng\" là hai đại lượng cần đặt cạnh nhau.\nQUAN HỆ GIỮA CHÚNG: thiếu một chữ số 0 tận cùng nghĩa là số ghi sai = số đúng : 10 — mọi chữ số tụt xuống một tầng.\nCHỌN CÔNG CỤ: BẢNG HAI CỘT \"đúng / sai\" + sơ đồ 10 phần (số đúng 10 phần, số ghi sai 1 phần).\nƯỚC LƯỢNG TRƯỚC: phần hụt chắc chắn gần bằng cả khoản tiền — cỡ ba trăm nghìn.",
+    "teaches": [],
+    "nhan": "NHỊP 1 · DỊCH — từ dòng sổ sai sang phép chia 10"
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S7",
+    "kind": "explain",
+    "narration": "LẮP: báo cáo gửi mẹ: \"Quỹ không mất đồng nào — dòng 350 000 bị ghi thiếu một chữ số 0 thành 35 000, tạo khoản lệch ảo đúng 315 000 đồng. Mẹ chỉ cần sửa lại dòng đó là sổ khớp.\" Tiền tìm lại được bằng... một chữ số!\nSOI: soi chéo: 315 000 có đúng bằng 9 lần 35 000 không — 9 × 35 000 = 315 000 ✓; và cộng lại toàn sổ sau khi sửa: khớp. Hai phép soi độc lập, kết luận mới chắc.\nDÙNG NGOÀI ĐỜI: bài học tài chính gia đình thật: trước khi nghi mất tiền, hãy nghi... một chữ số 0. Kiểm số chữ số là thao tác đầu tiên của mọi kế toán.",
+    "teaches": [],
+    "nhan": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   },
+   {
+    "id": "S8",
+    "kind": "trap",
+    "narration": "Trí Long vỗ sổ quỹ: \"Ghi thiếu một chữ số 0 thì chỉ thiếu 0 đồng thôi — quỹ hụt 315 000 chắc chắn do... ai đó mua kem!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Khi xóa chữ số tận cùng của một số có ba chữ số, ta được số mới kém số cũ 273 đơn vị. Tìm số cũ.",
+  "steps": [
+   {
+    "show": "Tóm tắt:"
+   },
+   {
+    "show": "Xóa chữ số tận cùng → số mới kém số cũ 273."
+   },
+   {
+    "show": "Tìm số cũ."
+   },
+   {
+    "show": "Hành động \"xóa tận cùng\" là dữ kiện vàng — ghi lại nguyên văn."
+   },
+   {
+    "show": "Mô hình:"
+   },
+   {
+    "show": "Gọi số mới là B, chữ số bị xóa là c (c bé hơn 10)."
+   },
+   {
+    "show": "Số cũ = B × 10 + c → phần hơn = B × 9 + c = 273."
+   },
+   {
+    "show": "Dựng đẳng thức từ cấu tạo số — đây là \"sơ đồ\" viết bằng chữ."
+   },
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Xóa chữ số tận cùng tức là số cũ gồm 10 lần số mới và thêm chữ số bị xóa."
+   },
+   {
+    "show": "Vậy 9 lần số mới cộng chữ số bị xóa bằng 273."
+   },
+   {
+    "show": "Vì chữ số bị xóa bé hơn 10 nên 9 lần số mới là 270, số mới là: 270 : 9 = 30"
+   },
+   {
+    "show": "Chữ số bị xóa là: 273 − 270 = 3"
+   },
+   {
+    "show": "Số cũ là 303."
+   },
+   {
+    "show": "Lập luận \"vì c bé hơn 10\" là chốt chặn — thiếu dòng này bài mất điểm lập luận."
+   },
+   {
+    "show": "Đáp số: 303."
+   },
+   {
+    "show": "Đáp số một dòng riêng."
+   },
+   {
+    "show": "Thử lại: xóa chữ số 3 tận cùng của 303 được 30 ; 303 − 30 = 273 ✓"
+   },
+   {
+    "show": "Nhịp SOI: diễn lại hành động của đề với 303."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính nhẩm: 47 × 10 ; 4 700 : 100.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "47 × 10",
+        "value": "470"
+       },
+       {
+        "label": "4 700 : 100",
+        "value": "47"
+       }
+      ]
+     },
+     "solutionNarrative": "470 ; 47."
+    },
+    {
+     "id": "C2",
+     "text": "Xóa chữ số 0 tận cùng của số 380 ta được số nào? Số đó giảm đi mấy lần?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lần",
+        "value": 10
+       }
+      ]
+     },
+     "solutionNarrative": "được 38; giảm đi 10 lần (không phải 10 đơn vị!)."
+    },
+    {
+     "id": "C3",
+     "text": "Tính nhẩm: 25 × 1000 ; 601 000 : 1000.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "25 × 1000",
+        "value": "25 000"
+       },
+       {
+        "label": "601 000 : 1000",
+        "value": "601"
+       }
+      ]
+     },
+     "solutionNarrative": "25 000 ; 601."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Xóa chữ số 0 tận cùng của một số, được số mới. Tổng của số cũ và số mới bằng 176. Tìm hai số đó.",
+     "answerKey": {
+      "value": 160
+     },
+     "solutionNarrative": "số cũ = 10 lần số mới → tổng = 11 lần số mới = 176 → số mới = 16, số cũ = 160."
+    },
+    {
+     "id": "C5",
+     "text": "Xóa chữ số tận cùng của một số có ba chữ số, được số mới kém số cũ 273 đơn vị. Tìm số cũ và chữ số bị xóa.",
+     "answerKey": {
+      "value": 303
+     },
+     "solutionNarrative": "9 lần số mới + chữ số bị xóa = 273; vì chữ số bé hơn 10 nên số mới = 270 : 9 = 30, chữ số bị xóa = 3 → số cũ 303. Thử lại: 303 − 30 = 273 ✓."
+    },
+    {
+     "id": "C6",
+     "text": "Thủ quỹ ghi khoản tiền 350 000 đồng thiếu mất một chữ số 0 tận cùng. Số ghi sai kém số đúng bao nhiêu đồng?",
+     "answerKey": {
+      "value": 315000
+     },
+     "solutionNarrative": "số ghi sai = 350 000 : 10 = 35 000 → kém số đúng 350 000 − 35 000 = 315 000 đồng."
+    },
+    {
+     "id": "C7",
+     "text": "Xóa chữ số hàng trăm của một số có ba chữ số thì số đó giảm đi 600 đơn vị. Tìm chữ số hàng trăm.",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "giảm 600 = giá trị chữ số hàng trăm → chữ số hàng trăm là 6."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tìm tất cả các số có ba chữ số sao cho khi xóa chữ số hàng trăm, ta được số mới bằng một phần năm số cũ. (Gợi ý: số cũ = giá trị hàng trăm + số mới; thay \"số cũ = 5 lần số mới\" vào rồi thử từng chữ số hàng trăm.)",
+     "answerKey": {
+      "ordered": false,
+      "values": [
+       125,
+       250,
+       375
+      ]
+     },
+     "solutionNarrative": "số cũ = a × 100 + số mới và số cũ = 5 × số mới → a × 100 = 4 × số mới → số mới = 25 × a. Số mới có hai chữ số nên a = 1, 2, 3 → các số: 125, 250, 375. (Thử: 125 = 5 × 25 ✓.)"
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đố: \"Khi cộng một dãy số, một bạn viết nhầm số hạng 50 thành 5. Hỏi tổng bị bé đi bao nhiêu — và tổng quát: viết nhầm số tròn chục thành số bỏ chữ số 0 thì tổng bé đi mấy lần số đã viết?\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lần",
+        "value": 10
+       }
+      ]
+     },
+     "solutionNarrative": "tổng bé đi 50 − 5 = 45; tổng quát: bé đi 9 lần số đã viết sai (vì số đúng gấp 10 lần số viết)."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Nhân một số với 100 là viết thêm hai chữ số 0 vào bên phải số đó.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Xóa chữ số 0 tận cùng của một số tròn chục là bớt số đó đi 10 đơn vị.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "giảm 10 LẦN, không phải bớt 10 đơn vị."
+   },
+   {
+    "id": "Q3",
+    "text": "38 000 : 100 bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 380",
+     "B. 38",
+     "C. 3 800"
+    ],
+    "answerKey": {
+     "choice": "A. 380"
+    },
+    "solutionNarrative": "380)."
+   },
+   {
+    "id": "Q4",
+    "text": "Xóa 0 tận cùng, tổng số cũ và số mới là 132. Hai số đó là:",
+    "format": "mcq",
+    "choices": [
+     "A. 12 và 120",
+     "B. 22 và 110",
+     "C. 32 và 100"
+    ],
+    "answerKey": {
+     "choice": "A. 12 và 120"
+    },
+    "solutionNarrative": "132 : 11 = 12 → hai số 12 và 120."
+   },
+   {
+    "id": "Q5",
+    "text": "Ghi 4 500 thiếu chữ số 0 tận cùng thành 450 thì số ghi kém số đúng:",
+    "format": "mcq",
+    "choices": [
+     "A. 4 050",
+     "B. 450",
+     "C. 4 500"
+    ],
+    "answerKey": {
+     "choice": "A. 4 050"
+    },
+    "solutionNarrative": "4 500 − 450 = 4 050."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con làm \"kiểm toán viên\" thật: đưa vài dòng chi tiêu có MỘT dòng cài lỗi thiếu/thừa số 0, nhờ con truy — cảm giác tìm ra \"thủ phạm một chữ số\" đáng giá hơn mười bài tập khô.",
+  "homeActivity": "Nhấn mạnh câu thần chú \"phần lệch = 9 lần số ghi sai\" nhưng yêu cầu con giải thích được vì sao (sơ đồ 10 phần) — thuộc mà không hiểu là mầm quên.",
+  "watchFor": "NÊN: chơi thang máy ×10 với công-tơ điện, đồng hồ nước. KHÔNG NÊN: đưa bài xóa chữ số Ở GIỮA số — kịch bản ấy ma trận xếp cho lớp 5."
+ },
+ "figureSpec": [
+  {
+   "id": "L4H_B03_MO",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L4H_B03_MO.png",
+   "caption": "Ghi thiếu một chữ số 0 tận cùng thì sổ hụt bao nhiêu.",
+   "sha256_16": "967887e0b4285eb0",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B03_G1",
+   "usedIn": [
+    "screen:S3"
+   ],
+   "file": "figures/L4H_B03_G1.png",
+   "caption": "Thang máy ×10 chạy hai chiều.",
+   "sha256_16": "59dadc47ae310faf",
+   "mucGoc": "khamPha"
+  }
+ ],
+ "hatMam": "Bài 2 con vừa THÊM chữ số — bài này chơi chiều ngược: XÓA đi. Xóa tận cùng là bấm thang máy đi xuống (chia 10 kèm \"làm tròn\" phần dư); xóa hàng cao nhất là cắt hẳn tầng thượng. Và một tai nạn đời thường kinh điển: GHI THIẾU một chữ số 0 — thủ phạm khiến sổ quỹ nhà mình lệch cả trăm nghìn!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B02",
+   "DL:KSN3.B08"
+  ],
+  "ten": [
+   "THÊM CHỮ SỐ BÊN TRÁI — BÊN PHẢI",
+   "GẤP LÊN — GIẢM ĐI NHIỀU LẦN"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ }
+}

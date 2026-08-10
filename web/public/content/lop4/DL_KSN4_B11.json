@@ -1,0 +1,483 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B11",
+ "grade": 4,
+ "quyen": "lop4",
+ "title": "Bài 11 · PHÉP CHIA CÓ DƯ — XẾP HÀNG THỪA THIẾU",
+ "durationMinutes": 10,
+ "so": 11,
+ "chuong": 3,
+ "tenChuong": "MẬT MÃ CHIA HẾT",
+ "dangGoc": "SỐ 6.3 mức Lớp 4 — Tìm số theo điều kiện chia có dư · tính chất chia hết của tổng - hiệu · bài xếp hàng thừa thiếu",
+ "skills": {
+  "bktUnit": "CHUONG:3@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 11,
+  "prev": "DL:KSN4.B10",
+  "next": "DL:KSN4.B12"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tìm các số thỏa một điều kiện chia có dư trong một khoảng cho trước. Dùng tính chất: hai số cùng chia hết cho m thì tổng và hiệu cũng chia hết cho m; chỉ một số chia hết thì tổng - hiệu KHÔNG chia hết. Giải bài xếp hàng thừa - thiếu bằng bí kíp \"thiếu 1 là tròn\" (cộng thêm cho chẵn rồi truy ngược).",
+  "kidText": "Tìm các số thỏa một điều kiện chia có dư trong một khoảng cho trước. Dùng tính chất: hai số cùng chia hết cho m thì tổng và hiệu cũng chia hết cho m; chỉ một số chia hết thì tổng - hiệu KHÔNG chia hết. Giải bài xếp hàng thừa - thiếu bằng bí kíp \"thiếu 1 là tròn\" (cộng thêm cho chẵn rồi truy ngược).",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — TRUY SỐ THEO MỘT MANH MỐI DƯ: các số chia 5 dư 2 trong khoảng 30 - 50: bắt đầu từ 32 (= 5 × 6 + 2) rồi cứ cộng 5: 32, 37, 42, 47. Một manh mối cho cả một họ số cách đều — muốn khoanh một số duy nhất phải có thêm manh mối thứ hai."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — BÍ KÍP \"THIẾU 1 LÀ TRÒN\": số ghế chia 4 thừa 3 → mượn thêm 1 chiếc là tròn hàng 4; chia 5 thừa 4 → mượn 1 chiếc cũng tròn hàng 5. Vậy (số ghế + 1) chia hết cho cả 4 và 5 — mà số chia hết cho cả 4 và 5 thì chia hết cho 20. Trong khoảng 31 - 51, bội của 20 chỉ có 40 → số ghế = 40 − 1 = 39."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — LUẬT TỔNG - HIỆU CỦA HỌ CHIA HẾT: cả 45 và 30 đều chia hết cho 5 → tổng 75 và hiệu 15 cũng chia hết cho 5, khỏi cần cộng trừ để biết. Nhưng 52 + 35 thì sao? 35 \"trong đội\" của 5 còn 52 thì không — một kẻ phá đội hình khiến tổng lập tức trượt (52 + 35 = 87, chia 5 dư 2 — đúng bằng số dư của 52!)."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — HỌ HÀNG CỦA BÍ KÍP: một số chia 9 dư 5: bớt 5 thì chia hết cho 9 (bỏ phần thừa); mà THÊM 4 cũng chia hết cho 9 (bù cho tròn — vì 5 + 4 = 9)! Phần thừa và phần thiếu là hai mặt của một đồng xu: dư r khi chia m nghĩa là thiếu (m − r) nữa thì tròn."
+   }
+  ],
+  "mantra": "Gặp bài xếp hàng: dịch \"thừa r\" thành \"thiếu m − r\". Nếu mọi cách xếp cùng thiếu MỘT lượng như nhau — cộng lượng ấy vào, số mới chia hết cho tất cả các cỡ hàng. Luật tổng - hiệu: cả đội cùng chia hết thì tổng - hiệu chia hết; một kẻ lệch nhịp là cả tổng lệch theo.",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Nghe \"hàng 4 thừa 3, hàng 5 thừa 4\", Trí Long cộng luôn: \"Thừa 3 với thừa 4 là thừa 7! Lấy số chia hết cho 20 rồi cộng 7: kho có 40 + 7 = 47 ghế!\"",
+    "signal": "Bé làm theo cách Trí Long vừa nói.",
+    "fix": "Gợi ý 1: Hai phần thừa xảy ra ở HAI lần xếp khác nhau — có cộng chúng với nhau được không? Thử ngay: 47 : 4 dư mấy, có đúng \"thừa 3\" như bác kể? Gợi ý 2: Lỗi nằm ở nhịp DỊCH: mỗi manh mối phải dịch riêng thành một điều kiện chia. Hãy dịch lại cả hai theo kiểu \"thiếu mấy thì tròn\" — con sẽ thấy chúng cùng chỉ về một khoảng trống, và tìm đúng con số 39 giúp Trí Long."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "tìm đúng số ghế trong kho."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "CHO GÌ? số ghế trong khoảng 30 - 50; xếp hàng 4 thừa 3; xếp hàng 5 thừa 4.\nHỎI GÌ? tìm đúng số ghế trong kho.\nĐẠI LƯỢNG & ĐƠN VỊ: số ghế (chiếc) — một con số duy nhất phải thỏa CẢ HAI manh mối.\nQUAN HỆ GIỮA CHÚNG: thừa 3 khi chia 4 nghĩa là thiếu 1 nữa thì tròn hàng 4; thừa 4 khi chia 5 cũng là thiếu 1 nữa thì tròn hàng 5 — cùng một khoảng trống \"1 chiếc\"!\nCHỌN CÔNG CỤ: BÍ KÍP THIẾU 1: cộng tưởng tượng 1 ghế → số mới chia hết cho cả 4 và 5, tức chia hết cho 20.\nƯỚC LƯỢNG TRƯỚC: trong khoảng 30-50, số chia hết cho 20 chỉ có 40 — số ghế chắc là 39.",
+    "teaches": [],
+    "nhan": "NHỊP 1 · DỊCH — từ hai lần xếp ghế sang điều kiện chia"
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S7",
+    "kind": "explain",
+    "narration": "LẮP: biên bản gửi bác bảo vệ: \"Kho có đúng 39 chiếc ghế.\" Kèm mẹo kiểm kê nhanh cho lần sau: xếp chồng 10 chiếc một — đếm chồng nhanh hơn đếm chiếc!\nSOI: soi cả hai manh mối: 39 : 4 = 9 dư 3 ✓; 39 : 5 = 7 dư 4 ✓; và 39 nằm gọn trong khoảng \"ba bốn chục\" bác nhớ mang máng. Ba lớp khóa đều khớp — chốt hồ sơ.\nDÙNG NGOÀI ĐỜI: kiểm đếm đồ theo nhiều cách xếp (hộp bút, vỉ trứng, khay bánh) rồi truy ngược tổng số — đây chính là cách người lớn kiểm kho khi... lỡ quên đếm từ đầu!",
+    "teaches": [],
+    "nhan": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   },
+   {
+    "id": "S8",
+    "kind": "trap",
+    "narration": "Nghe \"hàng 4 thừa 3, hàng 5 thừa 4\", Trí Long cộng luôn: \"Thừa 3 với thừa 4 là thừa 7! Lấy số chia hết cho 20 rồi cộng 7: kho có 40 + 7 = 47 ghế!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một chồng ghế có từ 30 đến 50 chiếc. Nếu xếp hàng 4 thì thừa 3 chiếc, xếp hàng 5 thì thừa 4 chiếc. Hỏi chồng ghế có bao nhiêu chiếc?",
+  "steps": [
+   {
+    "show": "Tóm tắt:"
+   },
+   {
+    "show": "Số ghế: từ 30 đến 50;"
+   },
+   {
+    "show": "chia 4 dư 3; chia 5 dư 4. Tìm số ghế."
+   },
+   {
+    "show": "Dịch \"thừa\" thành \"dư\" — ngôn ngữ chia có dư chuẩn."
+   },
+   {
+    "show": "Mô hình (thiếu 1 là tròn):"
+   },
+   {
+    "show": "Chia 4 dư 3 → thêm 1 thì chia hết cho 4."
+   },
+   {
+    "show": "Chia 5 dư 4 → thêm 1 thì chia hết cho 5."
+   },
+   {
+    "show": "Vậy (số ghế + 1) chia hết cho cả 4 và 5."
+   },
+   {
+    "show": "Cả hai điều kiện dồn về MỘT số mới đẹp — trái tim của mô hình."
+   },
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Nếu có thêm 1 chiếc ghế thì số ghế chia hết cho cả 4 và 5,"
+   },
+   {
+    "show": "nên số ghế thêm 1 chia hết cho 20."
+   },
+   {
+    "show": "Vì số ghế từ 30 đến 50 nên số ghế thêm 1 từ 31 đến 51."
+   },
+   {
+    "show": "Trong khoảng đó chỉ có 40 chia hết cho 20."
+   },
+   {
+    "show": "Vậy số ghế là: 40 − 1 = 39 (chiếc)"
+   },
+   {
+    "show": "Dòng chặn khoảng \"31 đến 51\" bảo đảm đáp số DUY NHẤT."
+   },
+   {
+    "show": "Đáp số: 39 chiếc ghế."
+   },
+   {
+    "show": "Đáp số kèm đơn vị."
+   },
+   {
+    "show": "Thử lại: 39 : 4 = 9 (dư 3) ✓ ; 39 : 5 = 7 (dư 4) ✓"
+   },
+   {
+    "show": "Soi ĐỦ hai manh mối của đề — thiếu một là chưa xong."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính rồi nêu số dư: 47 : 5 ; 38 : 4.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "47 : 5",
+        "options": [
+         "9 dư 2",
+         "9 dư 3",
+         "10 dư 2"
+        ],
+        "value": "9 dư 2"
+       },
+       {
+        "label": "38 : 4",
+        "options": [
+         "9 dư 2",
+         "9 dư 3",
+         "10 dư 2"
+        ],
+        "value": "9 dư 2"
+       }
+      ]
+     },
+     "solutionNarrative": "47 : 5 = 9 (dư 2) ; 38 : 4 = 9 (dư 2)."
+    },
+    {
+     "id": "C2",
+     "text": "Liệt kê các số chia 5 dư 2 trong khoảng từ 30 đến 50.",
+     "answerKey": {
+      "ordered": true,
+      "values": [
+       32,
+       37,
+       42,
+       47
+      ]
+     },
+     "solutionNarrative": "32, 37, 42, 47."
+    },
+    {
+     "id": "C3",
+     "text": "Không tính tổng, cho biết 45 + 30 có chia hết cho 5 không? Vì sao?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "45 + 30 có chia hết cho 5 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "có — cả 45 và 30 đều chia hết cho 5 nên tổng chia hết cho 5 (75 = 5 × 15)."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Không tính tổng, cho biết 52 + 35 có chia hết cho 5 không? Nếu không, tổng ấy chia 5 dư mấy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "52 + 35 có chia hết cho 5 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       },
+       {
+        "label": "tổng chia 5 dư mấy",
+        "value": 2
+       }
+      ]
+     },
+     "solutionNarrative": "không — 35 chia hết cho 5 nhưng 52 chia 5 dư 2 → tổng chia 5 dư 2 (87 = 5 × 17 + 2)."
+    },
+    {
+     "id": "C5",
+     "text": "Tìm số LỚN NHẤT có hai chữ số mà chia 4 dư 3.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lớn nhất",
+        "value": 99
+       }
+      ]
+     },
+     "solutionNarrative": "99 — vì 99 = 4 × 24 + 3; các số chia 4 dư 3 là 3, 7, ..., 99."
+    },
+    {
+     "id": "C6",
+     "text": "Một số chia 9 dư 5. Hỏi: a) bớt số đó 5 đơn vị thì có chia hết cho 9 không? b) THÊM 4 đơn vị thì sao? Vì sao thú vị vậy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "a) bớt 5 đơn vị có chia hết cho 9 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "b) thêm 4 đơn vị có chia hết cho 9 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "a) có — bớt đúng phần dư thì tròn; b) CŨNG chia hết — vì dư 5 tức thiếu 9 − 5 = 4 là tròn; phần thừa và phần thiếu là hai mặt của một đồng xu!"
+    },
+    {
+     "id": "C7",
+     "text": "Chồng ghế từ 30 đến 50 chiếc, xếp hàng 4 thừa 3, xếp hàng 5 thừa 4. Tìm số ghế.",
+     "answerKey": {
+      "value": 39
+     },
+     "solutionNarrative": "(số ghế + 1) chia hết cho cả 4 và 5 → chia hết cho 20; trong khoảng 31 - 51 chỉ có 40 → số ghế = 39. Thử: 39 : 4 = 9 dư 3 ✓; 39 : 5 = 7 dư 4 ✓."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Một rổ trứng xếp vỉ 3 quả thừa 2, vỉ 4 quả thừa 3, vỉ 5 quả thừa 4. Hỏi rổ có ÍT NHẤT bao nhiêu quả trứng? (Cả ba cách xếp cùng thiếu mấy quả là tròn?)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số quả trứng ít nhất",
+        "value": 59
+       }
+      ]
+     },
+     "solutionNarrative": "cả ba cách xếp cùng thiếu 1 quả → (số trứng + 1) chia hết cho 3, 4 và 5 → chia hết cho 60; ít nhất là 60 → rổ có ít nhất 59 quả. Thử: 59 : 3 dư 2 ✓; 59 : 4 dư 3 ✓; 59 : 5 dư 4 ✓."
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đố: \"Chứng tỏ rằng tổng của ba số tự nhiên liên tiếp luôn chia hết cho 3. Thế tổng của BỐN số tự nhiên liên tiếp có luôn chia hết cho 4 không — thử với 1 + 2 + 3 + 4 xem sao?\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng ba số liên tiếp có luôn chia hết cho 3 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "tổng bốn số liên tiếp có luôn chia hết cho 4 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "n + (n + 1) + (n + 2) = n × 3 + 3 = 3 × (n + 1) → luôn chia hết cho 3. Bốn số liên tiếp thì KHÔNG: 1 + 2 + 3 + 4 = 10 không chia hết cho 4 — một phản ví dụ đủ bác bỏ."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Hai số cùng chia hết cho 7 thì tổng của chúng chia hết cho 7.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Tổng 40 + 13 chia hết cho 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "13 không chia hết cho 5 nên tổng chia 5 dư 3."
+   },
+   {
+    "id": "Q3",
+    "text": "Số dư LỚN NHẤT có thể có khi chia cho 5 là:",
+    "format": "mcq",
+    "choices": [
+     "A. 4",
+     "B. 5",
+     "C. 6"
+    ],
+    "answerKey": {
+     "choice": "A. 4"
+    },
+    "solutionNarrative": "4)."
+   },
+   {
+    "id": "Q4",
+    "text": "Số ghế chia 4 thừa 3 và chia 5 thừa 4 — cộng thêm mấy chiếc thì tròn cả hai kiểu xếp?",
+    "format": "mcq",
+    "choices": [
+     "A. 1",
+     "B. 2",
+     "C. 3"
+    ],
+    "answerKey": {
+     "choice": "A. 1"
+    },
+    "solutionNarrative": "thêm 1)."
+   },
+   {
+    "id": "Q5",
+    "text": "58 : 9 bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 6 dư 4",
+     "B. 6 dư 5",
+     "C. 7 dư 1"
+    ],
+    "answerKey": {
+     "choice": "A. 6 dư 4"
+    },
+    "solutionNarrative": "9 × 6 + 4 = 58."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Bí kíp \"thiếu 1 là tròn\" đáng một trò chơi thật: đưa nắm kẹo (39 viên chẳng hạn), cho con xếp hàng 4 rồi hàng 5, quan sát phần thừa — rồi hỏi \"thêm mấy viên thì cả hai kiểu đều đẹp?\". Trực giác đến trước, công thức đến sau.",
+  "homeActivity": "Luật tổng - hiệu nên luyện kiểu \"phán trước - tính sau\": con phán 63 + 28 có chia hết cho 7 không rồi mới kiểm — phán có lý do là đạt, phán mò là chưa.",
+  "watchFor": "NÊN: khen câu dịch \"thừa 3 tức thiếu 1\" — đó là bước mô hình hóa đắt nhất bài. KHÔNG NÊN: sang bài dư KHÁC nhau ở các cách xếp (hàng 3 dư 1, hàng 5 dư 2) — dạng đồng dư ấy hẹn lớp 5."
+ },
+ "figureSpec": [
+  {
+   "id": "L4H_B11_MO",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L4H_B11_MO.png",
+   "caption": "Chia thành hàng 4, còn thừa 3 cái ngoài hàng.",
+   "sha256_16": "b8a9bf88555954d8",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B11_G2",
+   "usedIn": [
+    "screen:S4"
+   ],
+   "file": "figures/L4H_B11_G2.png",
+   "caption": "Hai manh mối dư cùng lúc — đổi sang phần thiếu là hết rối.",
+   "sha256_16": "3d3dfed0fcbf73e4",
+   "mucGoc": "khamPha"
+  },
+  {
+   "id": "L4H_B11_C8",
+   "usedIn": [
+    "item:C8"
+   ],
+   "file": "figures/L4H_B11_C8.png",
+   "caption": "Ba cách xếp và phần thừa của từng cách.",
+   "sha256_16": "456ce52bf262ce68",
+   "mucGoc": "luyenTap"
+  },
+  {
+   "id": "L4H_B11_C8_G",
+   "usedIn": [
+    "item:C8:giai"
+   ],
+   "file": "figures/L4H_B11_C8_G.png",
+   "caption": "Cả ba cách đều THIẾU ĐÚNG 1 — chỗ ba manh mối gặp nhau.",
+   "sha256_16": "cc7d90daaa969a7b",
+   "mucGoc": "luyenTap"
+  }
+ ],
+ "hatMam": "Lớp 3, ở Bài 6-7, phép chia có dư đã \"chính danh\" và con biết truy tìm số chia a dư b. Năm nay phép chia có dư lên trình thám tử: hai manh mối dư cùng lúc (\"hàng 4 thừa 3, hàng 5 thừa 4\"), cùng một bí kíp lật ngược thế cờ: nhìn phần THIẾU thay vì phần thừa. Kèm theo là bộ luật mới về tổng và hiệu của các số chia hết.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B06",
+   "DL:KSN3.B07"
+  ],
+  "ten": [
+   "PHÉP CHIA CÓ DƯ CHÍNH DANH",
+   "TRUY TÌM SỐ CHIA a DƯ b"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ }
+}

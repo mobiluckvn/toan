@@ -1,0 +1,339 @@
+{
+ "id": "DL:KSN4.B35",
+ "quyen": "lop4",
+ "so": 35,
+ "ten": "DÃY BÁNH DOMINO — TÁCH HIỆU & RÚT GỌN CHÉO",
+ "chuong": 9,
+ "tenChuong": "ĐẦU BẾP PHÂN SỐ",
+ "dangGoc": "PS 2.1 + PS 2.2 mức Lớp 4 — Tổng sai phân 1/(1×2) + 1/(2×3) + ... · tích rút gọn chéo 1/2 × 2/3 × ...",
+ "hatMam": "Chương 4 con từng gặp những dãy số có quy luật. Hôm nay dãy số... hóa phân số — và mang theo hai màn ảo thuật đẹp nhất của toán tiểu học: TỔNG dài dằng dặc tự sập như dây domino chỉ còn trơ hai đầu, và TÍCH lê thê tự gạch chéo chỉ sót tử đầu - mẫu cuối. Bí quyết chung: đừng tính trâu bò — hãy tìm chỗ TỰ HỦY.",
+ "ganDuoi": {
+  "ve": [
+   "DL:KSN3.B12",
+   "DL:KSN3.B09"
+  ],
+  "ten": [
+   "FIBONACCI & QUY LUẬT HAI TẦNG",
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3
+ },
+ "muc": {
+  "mucTieu": {
+   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
+   "dong": [
+    "Tự khám phá và kiểm chứng bí mật tách hiệu: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1.",
+    "Tính tổng dãy sai phân kiểu 1/(1×2) + 1/(2×3) + 1/(3×4) bằng hiệu ứng domino (chỉ còn hai đầu).",
+    "Tính tích kiểu 1/2 × 2/3 × 3/4 × 4/5 bằng rút gọn chéo (chỉ còn tử đầu và mẫu cuối)."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "chuyenMoBai": {
+   "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 35: dãy bánh xếp domino",
+   "dong": [
+    "Trang trí tiệm, chị Ngọc Anh xếp một hàng bánh quy dựng đứng kiểu domino, mỗi chiếc dán nhãn một phân số: 1/(1×2), 1/(2×3), 1/(3×4)... \"Đố ban kỹ thuật: cộng hết dãy nhãn này được bao nhiêu? Ai tính nhanh nhất được thử bánh trước!\" Trí Long lao vào quy đồng: \"Mẫu chung của 2, 6, 12 là... 12! Rồi cộng tử...\" — mồ hôi mồ kê. Su Kem chỉ khẽ đẩy chiếc bánh đầu tiên: cả dãy đổ rạp cái rào. \"Có những dãy sinh ra để... tự sập. Việc của mình chỉ là tìm cú chạm đầu tiên.\""
+   ],
+   "hinh": [
+    {
+     "id": "L4H_B35_MO",
+     "sauDong": 0,
+     "file": "figures/L4H_B35_MO.png",
+     "caption": "Dãy phân số mẫu số là tích hai số liền nhau.",
+     "sha256_16": "f33b464d3700a437"
+    }
+   ],
+   "nhip": ""
+  },
+  "dichMoHinh": {
+   "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
+   "dong": [
+    "CHO GÌ? dãy phân số 1/(1×2) ; 1/(2×3) ; 1/(3×4) — mẫu là tích hai số liền nhau.",
+    "HỎI GÌ? tổng của cả dãy.",
+    "ĐẠI LƯỢNG & ĐƠN VỊ: các phân số (không đơn vị) — điểm lạ: mẫu nào cũng là TÍCH HAI SỐ LIỀN NHAU.",
+    "QUAN HỆ GIỮA CHÚNG: nếu mỗi phân số tách được thành một HIỆU hai phân số đơn giản, thì khi cộng, đuôi của mảnh trước sẽ khớp đầu của mảnh sau mà tự hủy.",
+    "CHỌN CÔNG CỤ: BÍ MẬT TÁCH HIỆU (tự kiểm chứng!) + hiệu ứng domino.",
+    "ƯỚC LƯỢNG TRƯỚC: cả dãy chưa đầy một chiếc bánh — tổng chắc dưới 1, cỡ ba phần tư."
+   ],
+   "hinh": [],
+   "nhip": "NHỊP 1 · DỊCH — nhìn ra cấu trúc tự hủy của dãy"
+  },
+  "khamPha": {
+   "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
+   "dong": [
+    "Bước 1 — TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − 1/2 = 1/2 — mà 1/(1×2) cũng bằng 1/2! Tính tiếp 1/2 − 1/3 = 3/6 − 2/6 = 1/6 — đúng bằng 1/(2×3)! Và 1/3 − 1/4 = 4/12 − 3/12 = 1/12 = 1/(3×4). Bí mật lộ diện: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1 (vì hiệu trên mẫu chung là b − a = 1).",
+    "Bước 2 — CÚ CHẠM DOMINO: thay cả dãy bằng các hiệu: (1 − 1/2) + (1/2 − 1/3) + (1/3 − 1/4). Nhìn kỹ: −1/2 gặp +1/2 tự hủy; −1/3 gặp +1/3 tự hủy — cả khúc giữa đổ rạp! Chỉ còn hai đầu: 1 − 1/4 = 3/4. Dãy dài gấp mười cũng thế: sống sót chỉ có SỐ ĐẦU và SỐ CUỐI.",
+    "Bước 3 — MÀN HAI: TÍCH RÚT GỌN CHÉO: tính 1/2 × 2/3 × 3/4 × 4/5: tử của mỗi phân số đúng bằng mẫu của phân số đứng trước! Nhân các tử với nhau, nhân các mẫu với nhau: các cặp 2, 3, 4 xuất hiện cả trên lẫn dưới — gạch chéo từng đôi. Còn lại tử đầu 1 và mẫu cuối 5: tích bằng 1/5.",
+    "Bước 4 — DỰ ĐOÁN KHÔNG CẦN TÍNH: kéo dài tổng đến 1/(4×5)? Hai đầu là 1 và 1/5 → tổng 1 − 1/5 = 4/5. Kéo dài tích đến 9/10? Tử đầu 1, mẫu cuối 10 → tích 1/10. Sức mạnh của cấu trúc: đọc được luật domino là ĐOÁN trước đáp số của dãy dài tùy ý — điều mà tính trâu bò không bao giờ làm nổi.",
+    "MẸO THÁM TỬ: Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước. Tổng mẫu-là-tích-liền-nhau: tách mỗi số thành hiệu 1/a − 1/b, cả dãy chỉ còn HAI ĐẦU. Tích tử-sau-bằng-mẫu-trước: gạch chéo, chỉ còn TỬ ĐẦU và MẪU CUỐI. Kiểm bí mật tách hiệu bằng một phép trừ trước khi tin!"
+   ],
+   "hinh": [],
+   "nhip": "NHỊP 2 · GIẢI"
+  },
+  "lapSoi": {
+   "ten": "LẮP VỀ CUỘC SỐNG & SOI",
+   "dong": [
+    "LẮP: Su Kem công bố trước quầy: \"Tổng dãy nhãn là 3/4 — thưa quý khách, chưa đầy một chiếc bánh!\" Chị Ngọc Anh phục sát đất, thưởng nóng hai chiếc bánh nóng hổi; Trí Long vừa nhai vừa lẩm bẩm học thuộc bí mật tách hiệu.",
+    "SOI: soi bằng đường trâu bò trên dãy ngắn: 1/2 + 1/6 + 1/12 = 6/12 + 2/12 + 1/12 = 9/12 = 3/4 ✓ — lối tắt và đường cày cho cùng đáp số, lối tắt được cấp phép!",
+    "DÙNG NGOÀI ĐỜI: trong toán lớn, vô số tổng - tích dài được \"thuần hóa\" đúng kiểu này; con vừa chạm vào tư duy đẹp nhất của nghề toán: thay sức kéo bằng cấu trúc."
+   ],
+   "hinh": [],
+   "nhip": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+  },
+  "viDuMau": {
+   "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
+   "dong": [
+    "Đề bài: Tính: 1/(1×2) + 1/(2×3) + 1/(3×4).",
+    "Tóm tắt:",
+    "Tính tổng ba phân số có mẫu là tích hai số liền nhau.",
+    "Gọi tên đặc điểm của mẫu — nhận diện dạng ngay từ tóm tắt.",
+    "Mô hình (tách hiệu):",
+    "1/(1×2) = 1 − 1/2 ; 1/(2×3) = 1/2 − 1/3 ; 1/(3×4) = 1/3 − 1/4",
+    "(kiểm: 1/2 − 1/3 = 3/6 − 2/6 = 1/6 ✓)",
+    "Tách kèm MỘT phép kiểm — không dùng bí mật chưa kiểm chứng.",
+    "Bài giải:",
+    "Tổng = (1 − 1/2) + (1/2 − 1/3) + (1/3 − 1/4)",
+    "Các phân số 1/2 ; 1/3 xuất hiện một lần trừ, một lần cộng nên triệt tiêu nhau.",
+    "Tổng = 1 − 1/4 = 3/4",
+    "Câu \"triệt tiêu nhau\" nêu căn cứ của cú sập domino.",
+    "Đáp số: 3/4.",
+    "Đáp số gọn một phân số.",
+    "Thử lại: 1/2 + 1/6 + 1/12 = 6/12 + 2/12 + 1/12 = 9/12 = 3/4 ✓",
+    "Đường quy đồng kiểm chứng lối domino."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "suKemNham": {
+   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "dong": [
+    "Học xong tách hiệu, Trí Long hăng máu: \"1/(1×2) + 1/(2×3) hả? Cộng tử với tử, mẫu với mẫu: (1+1)/(2+6) = 2/8 = 1/4. Nhanh chưa!\"",
+    "Gợi ý 1: Thử \"luật\" của Trí Long với cặp dễ nhất: 1/2 + 1/2 theo kiểu ấy ra 2/4 = 1/2 — nửa bánh cộng nửa bánh mà vẫn chỉ... nửa bánh thôi sao?",
+    "Gợi ý 2: Phân số chỉ cộng được khi CÙNG CỠ LÁT (cùng mẫu) — luật thép Bài 33! Tính lại 1/2 + 1/6 bằng quy đồng, rồi bằng tách hiệu, cho Trí Long thấy hai đường chân chính đều ra 2/3."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "luyenTap": {
+   "ten": "LUYỆN TẬP 3 MỨC SAO",
+   "dong": [],
+   "hinh": [],
+   "nhip": ""
+  },
+  "quiz": {
+   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
+   "dong": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "gocBoMe": {
+   "ten": "GÓC BỐ MẸ",
+   "dong": [
+    "Dựng domino thật (thẻ bài, hộp sữa) dán nhãn các phân số của dãy — cú đẩy đổ hàng loạt là hình ảnh khắc sâu nhất về \"tự hủy dây chuyền\".",
+    "Đặt lệ \"bí mật phải kiểm chứng\": trước khi dùng 1/(a×b) = 1/a − 1/b, con phải tự tay kiểm MỘT trường hợp bằng quy đồng — thói quen của nhà toán học thật.",
+    "NÊN: cho con đoán-trước-tính-sau với dãy kéo dài (đến 1/(9×10)) rồi thưởng khi đoán trúng. KHÔNG NÊN: dãy mẫu cách nhau 2 kiểu 1/(1×3) + 1/(3×5) — phiên bản \"nhân hệ số\" hẹn lớp 5."
+   ],
+   "hinh": [],
+   "nhip": ""
+  }
+ },
+ "cau": [
+  {
+   "id": "C1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tính 1/2 − 1/3. So sánh kết quả với 1/(2×3) và nêu nhận xét.",
+   "loiChua": "1/2 − 1/3 = 3/6 − 2/6 = 1/6 — đúng bằng 1/(2×3): hiệu hai phân số \"liền kề\" chính là phân số mẫu-tích!",
+   "tuLuan": true
+  },
+  {
+   "id": "C2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Kiểm chứng: 1/(1×2) có bằng 1 − 1/2 không?",
+   "loiChua": "có — 1 − 1/2 = 1/2 = 1/(1×2) ✓.",
+   "tuLuan": true
+  },
+  {
+   "id": "C3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Kiểm chứng: 1/(3×4) có bằng 1/3 − 1/4 không?",
+   "loiChua": "có — 1/3 − 1/4 = 4/12 − 3/12 = 1/12 = 1/(3×4) ✓.",
+   "tuLuan": true
+  },
+  {
+   "id": "C4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tính: 1/(1×2) + 1/(2×3).",
+   "loiChua": "(1 − 1/2) + (1/2 − 1/3) = 1 − 1/3 = 2/3.",
+   "tuLuan": true
+  },
+  {
+   "id": "C5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tính: 1/(1×2) + 1/(2×3) + 1/(3×4).",
+   "loiChua": "domino sập, còn hai đầu: 1 − 1/4 = 3/4.",
+   "tuLuan": true
+  },
+  {
+   "id": "C6",
+   "maSach": "C6",
+   "so": 6,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tính 1/2 × 2/3, rồi lấy kết quả nhân tiếp với 3/4. Con nhận ra quy luật gì?",
+   "loiChua": "1/2 × 2/3 = 1/3; nhân tiếp 3/4 được 1/4 — mỗi lần nhân thêm, kết quả là 1 trên mẫu cuối cùng!",
+   "tuLuan": true
+  },
+  {
+   "id": "C7",
+   "maSach": "C7",
+   "so": 7,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tính: 1/2 × 2/3 × 3/4 × 4/5.",
+   "loiChua": "rút chéo 2, 3, 4 → còn 1/5.",
+   "tuLuan": true
+  },
+  {
+   "id": "C8",
+   "maSach": "C8",
+   "so": 8,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tính: 1/(1×2) + 1/(2×3) + 1/(3×4) + 1/(4×5) — rồi ĐOÁN ngay tổng nếu kéo dài đến 1/(9×10).",
+   "loiChua": "1 − 1/5 = 4/5; kéo đến 1/(9×10): hai đầu là 1 và 1/10 → tổng 1 − 1/10 = 9/10.",
+   "tuLuan": true
+  },
+  {
+   "id": "C9",
+   "maSach": "C9",
+   "so": 9,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Anh Trí Dũng đố: \"Tính 2/3 × 3/4 × 4/5 × 5/6 — rồi đoán tích nếu kéo dài đến 9/10. Hai con số sống sót là ai?\"",
+   "loiChua": "rút chéo 3, 4, 5 → còn 2/6 = 1/3; kéo đến 9/10: sống sót tử đầu 2 và mẫu cuối 10 → tích 2/10 = 1/5.",
+   "tuLuan": true
+  },
+  {
+   "id": "Q1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "1/(2×3) = 1/2 − 1/3.",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": true
+   },
+   "loiChua": "Đáp án: ĐÚNG",
+   "solutionNarrative": ""
+  },
+  {
+   "id": "Q2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "1/(1×2) + 1/(2×3) = 2/8 (cộng tử với tử, mẫu với mẫu).",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": false
+   },
+   "loiChua": "không được cộng tử với tử, mẫu với mẫu; kết quả đúng là 2/3.",
+   "solutionNarrative": "không được cộng tử với tử, mẫu với mẫu; kết quả đúng là 2/3."
+  },
+  {
+   "id": "Q3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "1/2 × 2/3 bằng:",
+   "choices": [
+    "A. 1/3",
+    "B. 2/5",
+    "C. 1/6"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 1/3"
+   },
+   "loiChua": "1/3).",
+   "solutionNarrative": "1/3)."
+  },
+  {
+   "id": "Q4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "1 − 1/5 bằng:",
+   "choices": [
+    "A. 4/5",
+    "B. 1/5",
+    "C. 5/4"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 4/5"
+   },
+   "loiChua": "4/5).",
+   "solutionNarrative": "4/5)."
+  },
+  {
+   "id": "Q5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "1/(4×5) bằng:",
+   "choices": [
+    "A. 1/4 − 1/5",
+    "B. 1/4 + 1/5",
+    "C. 1/4 × 1/5? — chọn cách tách ĐÚNG để cộng dãy"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 1/4 − 1/5"
+   },
+   "loiChua": "1/(4×5) = 1/4 − 1/5.",
+   "solutionNarrative": "1/(4×5) = 1/4 − 1/5."
+  }
+ ]
+}

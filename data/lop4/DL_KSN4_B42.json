@@ -1,0 +1,345 @@
+{
+ "id": "DL:KSN4.B42",
+ "quyen": "lop4",
+ "so": 42,
+ "ten": "NHỊP CHÂN MỘT GIỜ: QUÃNG ĐƯỜNG VÀ THỜI GIAN",
+ "chuong": 11,
+ "tenChuong": "HOA TIÊU CÂY SỐ",
+ "dangGoc": "CĐ 1.1 mức Lớp 4 — Rút về đơn vị với quãng đường - thời gian (\"3 giờ đi 120 km, hỏi 5 giờ...\")",
+ "hatMam": "Bài 9 con từng rút về đơn vị với giá tiền: biết 3 gói bao nhiêu, tìm giá MỘT gói rồi nhân lên mấy gói cũng được. Hôm nay đúng chiêu ấy chạy trên... bánh xe: biết xe đi 3 giờ được bao nhiêu cây số, tìm quãng đường MỘT GIỜ — \"nhịp chân\" của chiếc xe — rồi mọi câu hỏi xa gần, lâu mau đều trả lời được. (Lên lớp 5, nhịp chân này sẽ được đặt tên riêng rất oách — nhưng đó là chuyện sang năm!)",
+ "ganDuoi": {
+  "ve": [
+   "DL:KSN3.B21"
+  ],
+  "ten": [
+   "RÚT VỀ ĐƠN VỊ"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3
+ },
+ "muc": {
+  "mucTieu": {
+   "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
+   "dong": [
+    "Rút về đơn vị: từ \"đi t giờ được S km\" tìm quãng đường đi trong MỘT giờ.",
+    "Chạy được ba chiều: có nhịp chân thì tính quãng đường (nhân), tính thời gian (chia), và suy ra giờ đến nơi.",
+    "So sánh hai xe nhanh - chậm bằng cách quy cả hai về CÙNG một giờ."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "chuyenMoBai": {
+   "ten": "CHUYỆN MỞ BÀI — Nhiệm vụ số 1: hồ sơ chiếc xe buýt",
+   "dong": [
+    "Bác tài xế xe buýt đưa hoa tiêu dữ liệu chạy thử: \"Hôm qua bác chạy đúng tuyến này 3 giờ liền, đồng hồ cây số nhích thêm 120 km.\" Cô chủ nhiệm hỏi luôn: \"Vậy điểm dã ngoại cách trường 200 km, xe bác đi hết mấy tiếng hả các hoa tiêu?\" Trí Long lúng túng: \"Đề cho 3 giờ với 120 km, mà hỏi về 200 km... hai chuyện chẳng ăn nhập gì nhau!\" Su Kem gõ nhịp tay xuống bàn ba cái đều tăm tắp: \"Ăn nhập ở chỗ này: chiếc xe nào cũng đi theo NHỊP. Hỏi xem một giờ nó bước được bao xa — rồi 200 km hay 2 000 km cũng tính tuốt.\""
+   ],
+   "hinh": [
+    {
+     "id": "L4H_B42_MO",
+     "sauDong": 0,
+     "file": "figures/L4H_B42_MO.png",
+     "caption": "Bảng thời gian - quãng đường, dòng \"một giờ\" còn trống.",
+     "sha256_16": "c5055c9c719c6bee"
+    }
+   ],
+   "nhip": ""
+  },
+  "dichMoHinh": {
+   "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
+   "dong": [
+    "CHO GÌ? xe buýt đi 3 giờ được 120 km; điểm dã ngoại cách trường 200 km.",
+    "HỎI GÌ? xe đi 200 km hết mấy giờ (và một giờ xe đi được bao nhiêu km).",
+    "ĐẠI LƯỢNG & ĐƠN VỊ: quãng đường (km) và thời gian (giờ) — hai đại lượng ràng nhau qua \"mỗi giờ đi được bao nhiêu\".",
+    "QUAN HỆ GIỮA CHÚNG: coi xe chạy ĐỀU: 3 giờ là 3 khúc đường bằng nhau gộp thành 120 km → một khúc (một giờ) là phép chia; có khúc chuẩn rồi thì quãng nào cũng đo được bằng cách đếm khúc.",
+    "CHỌN CÔNG CỤ: RÚT VỀ ĐƠN VỊ (Bài 9 phiên bản cây số): tìm nhịp chân một giờ trước, nhân - chia sau.",
+    "ƯỚC LƯỢNG TRƯỚC: một giờ cỡ bốn chục km → 200 km chắc tốn nhỉnh hơn 3 giờ — quãng 5 giờ."
+   ],
+   "hinh": [],
+   "nhip": "NHỊP 1 · DỊCH — từ dữ liệu chạy thử sang nhịp chân một giờ"
+  },
+  "khamPha": {
+   "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
+   "dong": [
+    "Bước 1 — RÚT VỀ ĐƠN VỊ: TÌM NHỊP CHÂN: xe chạy đều, nên 3 giờ = 3 khúc đường bằng nhau: mỗi giờ xe đi 120 : 3 = 40 (km). Con số 40 km ấy là \"nhịp chân một giờ\" — tấm căn cước của chiếc xe, chìa khóa của MỌI câu hỏi phía sau.",
+    "Bước 2 — CHIỀU XUÔI: HỎI QUÃNG ĐƯỜNG: \"5 giờ xe đi được bao nhiêu?\" — đếm 5 khúc: 40 × 5 = 200 (km). Vừa khéo bằng khoảng cách tới điểm dã ngoại! Nhịp chân × số giờ = quãng đường.",
+    "Bước 3 — CHIỀU NGƯỢC: HỎI THỜI GIAN VÀ GIỜ ĐẾN: \"đi 200 km hết mấy giờ?\" — đếm xem 200 km chứa mấy khúc 40: 200 : 40 = 5 (giờ). Chốt lộ trình: xuất phát 7 giờ sáng thì 7 + 5 = 12 giờ trưa có mặt — kịp bữa trưa dã ngoại! Quãng đường : nhịp chân = số giờ.",
+    "Bước 4 — SO HAI XE: PHẢI CÙNG MỘT GIỜ: xe chở đồ khoe: \"tôi đi 2 giờ được 90 km — hơn đứt 120 km của anh buýt... à nhầm, kém à?\" So 120 với 90 là so hai quãng KHÁC số giờ — vô nghĩa! Quy cả hai về một giờ: buýt 40 km, xe đồ 90 : 2 = 45 km → xe đồ nhanh hơn. Luật thép: muốn so nhanh chậm, bắt cả hai đứng chung vạch MỘT GIỜ.",
+    "MẸO THÁM TỬ: Bài quãng đường - thời gian: RÚT VỀ ĐƠN VỊ trước — nhịp chân một giờ = quãng đường : số giờ. Rồi ba chiều: quãng đường = nhịp × giờ; số giờ = quãng đường : nhịp; giờ đến = giờ xuất phát + số giờ đi. So hai xe: quy về CÙNG một giờ rồi mới so — cấm so hai quãng khác số giờ!"
+   ],
+   "hinh": [
+    {
+     "id": "L4H_B42_G1",
+     "sauDong": 0,
+     "file": "figures/L4H_B42_G1.png",
+     "caption": "Rút về một giờ rồi nhân lên.",
+     "sha256_16": "ac714671f1aad0d0"
+    }
+   ],
+   "nhip": "NHỊP 2 · GIẢI"
+  },
+  "lapSoi": {
+   "ten": "LẮP VỀ CUỘC SỐNG & SOI",
+   "dong": [
+    "LẮP: tờ lộ trình dán lên bảng lớp: \"Xe buýt: mỗi giờ 40 km. Trường → điểm dã ngoại 200 km: đi 5 giờ. XUẤT PHÁT 7:00 — ĐẾN NƠI 12:00, kịp bữa trưa.\" Cô chủ nhiệm ký duyệt ngay, cả lớp vỗ tay rào rào.",
+    "SOI: soi kép: 40 × 5 = 200 khớp bản đồ ✓; và ước lượng \"hơn 3 giờ một quãng\" khớp 5 giờ ✓; cả chiều xuôi (nhân) lẫn chiều ngược (chia) gặp nhau tại 200 km.",
+    "DÙNG NGOÀI ĐỜI: đọc biển \"Hà Nội 60 km\" mà nhẩm được còn bao lâu tới nơi, tính giờ ra bến đón người thân — nhịp chân một giờ là chiếc la bàn thời gian con mang theo mỗi chuyến đi."
+   ],
+   "hinh": [],
+   "nhip": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+  },
+  "viDuMau": {
+   "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
+   "dong": [
+    "Đề bài: Một ô tô đi đều, trong 3 giờ được 120 km. Hỏi với mức chạy đó, ô tô đi quãng đường 200 km hết bao nhiêu giờ?",
+    "Tóm tắt:",
+    "3 giờ: 120 km.",
+    "200 km: ? giờ.",
+    "Tóm tắt hai dòng đối nhau — dạng rút về đơn vị hiện nguyên hình.",
+    "Mô hình (rút về đơn vị):",
+    "Xe chạy đều → 3 giờ là 3 khúc đường bằng nhau.",
+    "Tìm quãng đường MỘT giờ trước, rồi đếm số khúc trong 200 km.",
+    "Nêu rõ căn cứ \"chạy đều\" — điều kiện cho phép chia đều.",
+    "Bài giải:",
+    "Trong một giờ ô tô đi được: 120 : 3 = 40 (km)",
+    "Thời gian ô tô đi quãng đường 200 km là: 200 : 40 = 5 (giờ)",
+    "Hai phép chia — chia lấy nhịp, rồi chia đếm khúc.",
+    "Đáp số: 5 giờ.",
+    "Đáp số kèm đơn vị giờ.",
+    "Thử lại: 40 × 5 = 200 (km) ✓",
+    "Chạy xuôi bằng phép nhân — phải về đúng 200 km của đề."
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "suKemNham": {
+   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "dong": [
+    "So xe buýt (3 giờ — 120 km) với xe chở đồ (2 giờ — 90 km), Trí Long phán: \"120 lớn hơn 90 sờ sờ — xe buýt nhanh hơn, khỏi bàn!\"",
+    "Gợi ý 1: Hai con số 120 và 90 được đo trong số giờ BẰNG NHAU chưa? Một bạn chạy 3 phút và một bạn chạy 2 phút, đem so tổng quãng đường có công bằng không?",
+    "Gợi ý 2: Kéo cả hai xe về chung vạch MỘT GIỜ (chia mỗi xe cho số giờ của nó) rồi mới so giúp Trí Long — và ngẫm xem: nếu xe đồ cũng chạy đủ 3 giờ thì nó đi được bao nhiêu, hơn hay kém 120?"
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "luyenTap": {
+   "ten": "LUYỆN TẬP 3 MỨC SAO",
+   "dong": [],
+   "hinh": [],
+   "nhip": ""
+  },
+  "quiz": {
+   "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
+   "dong": [
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
+   ],
+   "hinh": [],
+   "nhip": ""
+  },
+  "gocBoMe": {
+   "ten": "GÓC BỐ MẸ",
+   "dong": [
+    "Biến mỗi chuyến xe của gia đình thành đề toán sống: nhìn biển cây số và đồng hồ, đố con \"còn bao xa, chừng bao lâu nữa tới?\" — con tự rút nhịp chân của xe nhà mình.",
+    "Luật \"chung vạch một giờ\" đáng dán lên tủ lạnh: mọi phép so nhanh - chậm phải quy về cùng một giờ trước; con thuộc luật này là tránh được cả lô bẫy so sánh sau này.",
+    "NÊN: cứ gọi mộc mạc \"quãng đường một giờ\" hay \"nhịp chân\". KHÔNG NÊN: dạy trước chữ \"vận tốc\", đơn vị km/giờ hay công thức v = s : t — lớp 5 sẽ đặt tên; giờ gọi tên sớm chỉ thêm gánh thuật ngữ."
+   ],
+   "hinh": [],
+   "nhip": ""
+  }
+ },
+ "cau": [
+  {
+   "id": "C1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Một xe máy đi đều, 2 giờ được 80 km. Hỏi mỗi giờ xe đi được bao nhiêu ki-lô-mét?",
+   "loiChua": "80 : 2 = 40 km.",
+   "tuLuan": true
+  },
+  {
+   "id": "C2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Mỗi giờ ô tô đi được 40 km. Hỏi 3 giờ ô tô đi được bao nhiêu ki-lô-mét?",
+   "loiChua": "40 × 3 = 120 km.",
+   "tuLuan": true
+  },
+  {
+   "id": "C3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Mỗi giờ ô tô đi được 40 km. Hỏi đi quãng đường 200 km hết mấy giờ?",
+   "loiChua": "200 : 40 = 5 giờ.",
+   "tuLuan": true
+  },
+  {
+   "id": "C4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Ô tô đi đều, 3 giờ được 120 km. Hỏi 5 giờ ô tô đi được bao nhiêu ki-lô-mét?",
+   "loiChua": "một giờ đi 40 km → 5 giờ đi 40 × 5 = 200 km.",
+   "tuLuan": true
+  },
+  {
+   "id": "C5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Tàu hỏa đi đều, 4 giờ được 160 km. Hỏi 7 giờ tàu đi được bao nhiêu ki-lô-mét?",
+   "loiChua": "một giờ 160 : 4 = 40 km → 7 giờ đi 280 km.",
+   "tuLuan": true
+  },
+  {
+   "id": "C6",
+   "maSach": "C6",
+   "so": 6,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Ô tô đi đều, 3 giờ được 120 km. Điểm dã ngoại cách trường 200 km. Hỏi xe đi hết mấy giờ, và nếu xuất phát lúc 7 giờ sáng thì đến nơi lúc mấy giờ?",
+   "loiChua": "một giờ 40 km → 200 : 40 = 5 giờ; xuất phát 7 giờ → đến nơi 7 + 5 = 12 giờ trưa.",
+   "tuLuan": true
+  },
+  {
+   "id": "C7",
+   "maSach": "C7",
+   "so": 7,
+   "muc": 2,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Xe A đi 3 giờ được 120 km; xe B đi 2 giờ được 90 km. Hỏi xe nào đi nhanh hơn? Vì sao?",
+   "loiChua": "xe A mỗi giờ 120 : 3 = 40 km; xe B mỗi giờ 90 : 2 = 45 km → xe B nhanh hơn (so trên CÙNG một giờ, không so 120 với 90!).",
+   "tuLuan": true
+  },
+  {
+   "id": "C8",
+   "maSach": "C8",
+   "so": 8,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Người đi bộ trong 2 giờ được 8 km; người đi xe đạp mỗi giờ được 12 km. Nếu cả hai cùng đi trong 3 giờ thì ai đi xa hơn và xa hơn bao nhiêu ki-lô-mét?",
+   "loiChua": "người đi bộ mỗi giờ 8 : 2 = 4 km → 3 giờ đi 12 km; người xe đạp 3 giờ đi 36 km → xe đạp xa hơn 36 − 12 = 24 km.",
+   "tuLuan": true
+  },
+  {
+   "id": "C9",
+   "maSach": "C9",
+   "so": 9,
+   "muc": 3,
+   "phan": "luyenTap",
+   "ghiChu": "",
+   "text": "Anh Trí Dũng đố: \"Xe khách chạy 3 giờ đầu được 120 km, rồi chạy tiếp 2 giờ được 100 km. Hỏi cả chặng 5 giờ xe đi được bao nhiêu ki-lô-mét — và TRUNG BÌNH mỗi giờ đi được bao nhiêu? (Cây cầu Bài 16 bắc sang tận đây!)\"",
+   "loiChua": "cả chặng 120 + 100 = 220 km trong 5 giờ → trung bình mỗi giờ 220 : 5 = 44 km (cầu TBC Bài 16: tổng : số phần!).",
+   "tuLuan": true
+  },
+  {
+   "id": "Q1",
+   "maSach": "C1",
+   "so": 1,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "Rút về đơn vị ở bài chuyển động là tìm quãng đường đi được trong MỘT giờ.",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": true
+   },
+   "loiChua": "Đáp án: ĐÚNG",
+   "solutionNarrative": ""
+  },
+  {
+   "id": "Q2",
+   "maSach": "C2",
+   "so": 2,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "Đúng/Sai?",
+   "text": "Xe đi đều 2 giờ được 80 km thì 4 giờ đi được 120 km.",
+   "format": "tf",
+   "tuLuan": false,
+   "answerKey": {
+    "value": false
+   },
+   "loiChua": "mỗi giờ 40 km, 4 giờ đi 160 km.",
+   "solutionNarrative": "mỗi giờ 40 km, 4 giờ đi 160 km."
+  },
+  {
+   "id": "Q3",
+   "maSach": "C3",
+   "so": 3,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Mỗi giờ đi 50 km thì 4 giờ đi được:",
+   "choices": [
+    "A. 200 km",
+    "B. 54 km",
+    "C. 150 km"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 200 km"
+   },
+   "loiChua": "200 km).",
+   "solutionNarrative": "200 km)."
+  },
+  {
+   "id": "Q4",
+   "maSach": "C4",
+   "so": 4,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Đi đều 3 giờ được 150 km thì mỗi giờ đi:",
+   "choices": [
+    "A. 50 km",
+    "B. 147 km",
+    "C. 450 km"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 50 km"
+   },
+   "loiChua": "50 km).",
+   "solutionNarrative": "50 km)."
+  },
+  {
+   "id": "Q5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Mỗi giờ đi 40 km, quãng đường 120 km đi hết:",
+   "choices": [
+    "A. 3 giờ",
+    "B. 4 giờ",
+    "C. 80 giờ"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. 3 giờ"
+   },
+   "loiChua": "3 giờ).",
+   "solutionNarrative": "3 giờ)."
+  }
+ ]
+}

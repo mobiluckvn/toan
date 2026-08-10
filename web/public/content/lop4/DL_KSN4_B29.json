@@ -1,0 +1,381 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B29",
+ "grade": 4,
+ "quyen": "lop4",
+ "title": "Bài 29 · TÍNH NGƯỢC TỪ CUỐI — ĐẢO CHIỀU BĂNG CHUYỀN",
+ "durationMinutes": 10,
+ "so": 29,
+ "chuong": 8,
+ "tenChuong": "NHỮNG BÀI TOÁN CÓ CỐT TRUYỆN",
+ "dangGoc": "LV 8.1 mức Lớp 4 — Tính ngược nhiều bước với 4 phép tính · làm quen \"cho đi một nửa rồi...\"",
+ "skills": {
+  "bktUnit": "CHUONG:8@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 29,
+  "prev": "DL:KSN4.B28",
+  "next": "DL:KSN4.B30"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Vẽ sơ đồ băng chuyền xuôi cho bài nhiều bước, rồi đảo chiều với các cặp phép nghịch: + ↔ − và × ↔ :. Tính ngược chuỗi 4 phép tính; thử lại bằng chuyến đi xuôi trên đáp số. Xử lý trạm đặc biệt \"cho đi MỘT NỬA\": đi ngược bằng phép nhân đôi.",
+  "kidText": "Vẽ sơ đồ băng chuyền xuôi cho bài nhiều bước, rồi đảo chiều với các cặp phép nghịch: + ↔ − và × ↔ :. Tính ngược chuỗi 4 phép tính; thử lại bằng chuyến đi xuôi trên đáp số. Xử lý trạm đặc biệt \"cho đi MỘT NỬA\": đi ngược bằng phép nhân đôi.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — VẼ BĂNG CHUYỀN XUÔI: ? → [cho đi 1/2] → [được thêm 2] → 12. Vẽ xuôi TRƯỚC dù chưa tính được gì — sơ đồ xuôi là tấm bản đồ, thiếu nó đi ngược sẽ lạc trạm."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — ĐẢO CHIỀU TỪNG TRẠM: từ 12 đi lùi: ngược trạm \"thêm 2\" là BỚT 2: 12 − 2 = 10 (viên) — đây là số bi ngay sau khi cho Na, tức NỬA còn lại. Ngược trạm \"cho đi một nửa\" là NHÂN ĐÔI: 10 × 2 = 20 (viên). Su Bống mang đi 20 viên bi!"
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — CHUỖI DÀI 4 PHÉP CŨNG MỘT CHIÊU: \"nghĩ một số, nhân 3, trừ 4, chia 2, cộng 5 được 15\" — đi lùi bốn trạm: 15 − 5 = 10; 10 × 2 = 20; 20 + 4 = 24; 24 : 3 = 8. Số ban đầu là 8. Bảng cặp nghịch dán trước mặt: + ↔ −, × ↔ : — và đi lùi phải đúng THỨ TỰ NGƯỢC (trạm cuối lùi trước!)."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — NGHI THỨC THỬ XUÔI: lấy đáp số đi lại chuyến XUÔI: 8 × 3 = 24; 24 − 4 = 20; 20 : 2 = 10; 10 + 5 = 15 ✓. Với túi bi: 20 cho đi một nửa còn 10, thêm 2 thành 12 ✓. Bài tính ngược nào cũng tặng kèm một chuyến du lịch khứ hồi miễn phí — đừng bỏ phí vé về!"
+   }
+  ],
+  "mantra": "Thấy đề kể hành trình dài mà chỉ cho con số CUỐI: vẽ băng chuyền xuôi → đảo chiều, mỗi trạm một phép nghịch (+ ↔ −, × ↔ :, cho đi một nửa ↔ nhân đôi) → đi lùi đúng thứ tự ngược → thử bằng chuyến xuôi. Bốn nhịp gọn gàng, không trạm nào thoát.",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Giải bài \"nghĩ một số, nhân 3, trừ 4 được 20\", Trí Long đi lùi hăng hái: \"Ngược lại là: 20 chia 3 trước cho đúng thứ tự đề... 20 : 3 lẻ nhỉ? Chắc tại đề!\"",
+    "signal": "Bé làm theo cách Trí Long vừa nói.",
+    "fix": "Gợi ý 1: Đi lùi thì trạm nào phải lùi TRƯỚC — trạm \"nhân 3\" đứng đầu hành trình hay trạm \"trừ 4\" đứng cuối? Tưởng tượng đi ngược một dãy phòng: cửa nào mở trước? Gợi ý 2: Đảo đúng thứ tự (ngược trạm cuối trước): 20 + 4 rồi mới chia 3 — tính lại và thử xuôi giúp Trí Long. Tặng cậu ấy khẩu quyết: \"vào sau thì ra trước, như xếp đồ vào ba lô!\""
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Su Bống mếu máo về nhà: \"Sáng nay em mang bi đi chơi. số bi Su Bống mang đi lúc đầu."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "CHO GÌ? hành trình túi bi: cho đi một nửa → được thêm 2 viên → còn 12 viên.\nHỎI GÌ? số bi Su Bống mang đi lúc đầu.\nĐẠI LƯỢNG & ĐƠN VỊ: số bi (viên) — đề cho con số CUỐI, giấu con số ĐẦU: dấu hiệu vàng của bài tính ngược.\nQUAN HỆ GIỮA CHÚNG: mỗi sự kiện là một TRẠM biến hình trên băng chuyền; đi ngược thì mỗi trạm làm phép NGHỊCH: thêm 2 ↔ bớt 2; cho đi một nửa ↔ nhân đôi.\nCHỌN CÔNG CỤ: SƠ ĐỒ BĂNG CHUYỀN: vẽ mũi tên xuôi trước, rồi đảo chiều toàn bộ.\nƯỚC LƯỢNG TRƯỚC: còn 12 sau khi đã cho đi một nửa → số đầu phải cỡ đôi mươi.",
+    "teaches": [],
+    "nhan": "NHỊP 1 · DỊCH — từ câu chuyện sang băng chuyền hai chiều"
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S7",
+    "kind": "explain",
+    "narration": "LẮP: Su Kem công bố: \"Sáng nay em mang đi 20 viên — cho Na 10, anh lớp 5 tặng 2, còn 12: khớp từng viên!\" Su Bống nhảy cẫng: hóa ra em không mất viên nào, chỉ... mất trí nhớ tạm thời.\nSOI: soi bằng chuyến xuôi 20 → 10 → 12 ✓ và bằng ước lượng \"cỡ đôi mươi\" ✓. Hai con dấu, hồ sơ túi bi khép lại.\nDÙNG NGOÀI ĐỜI: truy lại tiền tiêu trong ngày (\"còn 5 nghìn, trước đó mua gì?\"), lần lại điểm xuất phát của trò chơi — kỹ năng \"tua ngược cuộn phim\" dùng cả đời, nhất là lúc... tìm đồ để quên!",
+    "teaches": [],
+    "nhan": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   },
+   {
+    "id": "S8",
+    "kind": "trap",
+    "narration": "Giải bài \"nghĩ một số, nhân 3, trừ 4 được 20\", Trí Long đi lùi hăng hái: \"Ngược lại là: 20 chia 3 trước cho đúng thứ tự đề... 20 : 3 lẻ nhỉ? Chắc tại đề!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Su Bống mang một số viên bi đi chơi. Em cho bạn một nửa số bi, sau đó được cho thêm 2 viên thì còn lại 12 viên. Hỏi lúc đầu Su Bống mang đi bao nhiêu viên bi?",
+  "steps": [
+   {
+    "show": "Tóm tắt:"
+   },
+   {
+    "show": "Hành trình: cho đi 1/2 → thêm 2 viên → còn 12 viên."
+   },
+   {
+    "show": "Tìm số bi lúc đầu."
+   },
+   {
+    "show": "Tóm tắt bằng chuỗi mũi tên — chính là băng chuyền xuôi."
+   },
+   {
+    "show": "Mô hình (đảo chiều băng chuyền):"
+   },
+   {
+    "show": "Xuôi: ? → cho 1/2 → thêm 2 → 12"
+   },
+   {
+    "show": "Ngược: 12 → bớt 2 → nhân đôi → ?"
+   },
+   {
+    "show": "Viết cả hai chiều — mỗi trạm xuôi có đúng một trạm nghịch."
+   },
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Trước khi được cho thêm 2 viên, Su Bống có: 12 − 2 = 10 (viên)"
+   },
+   {
+    "show": "10 viên này là một nửa số bi lúc đầu, nên lúc đầu Su Bống có:"
+   },
+   {
+    "show": "10 × 2 = 20 (viên)"
+   },
+   {
+    "show": "Câu \"10 viên này là một nửa số bi lúc đầu\" là căn cứ của phép nhân đôi."
+   },
+   {
+    "show": "Đáp số: 20 viên bi."
+   },
+   {
+    "show": "Đáp số kèm đơn vị."
+   },
+   {
+    "show": "Thử lại (đi xuôi): 20 : 2 = 10 ; 10 + 2 = 12 ✓"
+   },
+   {
+    "show": "Chuyến khứ hồi: đáp số phải chở ta về đúng con số 12 của đề."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Nghĩ một số, cộng 7 thì được 15. Tìm số đã nghĩ.",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "15 − 7 = 8."
+    },
+    {
+     "id": "C2",
+     "text": "Nghĩ một số, nhân 3 rồi trừ 4 thì được 20. Tìm số đã nghĩ.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số đã nghĩ",
+        "value": 8
+       }
+      ]
+     },
+     "solutionNarrative": "ngược: 20 + 4 = 24; 24 : 3 = 8."
+    },
+    {
+     "id": "C3",
+     "text": "Nghĩ một số, chia 2 rồi cộng 5 thì được 9. Vẽ băng chuyền hai chiều rồi tìm số đã nghĩ.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số đã nghĩ",
+        "value": 8
+       }
+      ]
+     },
+     "solutionNarrative": "ngược: 9 − 5 = 4; 4 × 2 = 8."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Nghĩ một số, nhân 3, trừ 4, chia 2 rồi cộng 5 thì được 15. Tìm số đã nghĩ.",
+     "answerKey": {
+      "value": 15
+     },
+     "solutionNarrative": "15 − 5 = 10; 10 × 2 = 20; 20 + 4 = 24; 24 : 3 = 8. Thử xuôi: 8 → 24 → 20 → 10 → 15 ✓."
+    },
+    {
+     "id": "C5",
+     "text": "Mẹ đi chợ tiêu hết một nửa số tiền mang theo, sau đó tiêu thêm 10 nghìn đồng thì còn lại 30 nghìn đồng. Hỏi mẹ mang theo bao nhiêu tiền?",
+     "answerKey": {
+      "value": 80
+     },
+     "solutionNarrative": "trước lần tiêu 10 nghìn: 30 + 10 = 40; đó là nửa còn lại → mang theo 40 × 2 = 80 nghìn đồng."
+    },
+    {
+     "id": "C6",
+     "text": "Su Bống cho bạn một nửa số bi rồi được cho thêm 2 viên thì còn 12 viên. Hỏi lúc đầu em có bao nhiêu viên bi?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số bi lúc đầu",
+        "value": 20
+       }
+      ]
+     },
+     "solutionNarrative": "12 − 2 = 10; 10 × 2 = 20 viên."
+    },
+    {
+     "id": "C7",
+     "text": "An có một số nhãn vở. An cho Bình 5 chiếc, rồi cho Cúc MỘT NỬA số còn lại thì An còn 9 chiếc. Hỏi lúc đầu An có bao nhiêu nhãn vở?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "trước khi cho Cúc: 9 × 2 = 18 (vì 9 là nửa còn lại); trước khi cho Bình: 18 + 5 = 23 nhãn vở. Thử xuôi: 23 → 18 → 9 ✓."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Số kẹo của Su Bống sau khi mẹ mua thêm đúng bằng số đang có (tức gấp đôi lên), rồi em ăn 6 cái thì còn lại đúng bằng số kẹo ban đầu. Hỏi ban đầu em có mấy cái kẹo?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "gấp đôi rồi ăn 6 thì về đúng số cũ → phần \"gấp thêm\" đúng bằng 6 cái đã ăn → ban đầu có 6 cái kẹo. Thử: 6 → 12 → ăn 6 → 6 ✓."
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đố: \"Qua mỗi nhịp của cây cầu thần, số tiền trong túi được GẤP ĐÔI, nhưng qua xong mỗi nhịp phải trả phí 8 nghìn đồng. Một người qua 3 nhịp thì vừa hết sạch tiền. Hỏi lúc đầu người ấy có bao nhiêu tiền? (Đi ngược từ con số 0!)\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số tiền lúc đầu, tính bằng nghìn đồng",
+        "value": 7
+       }
+      ]
+     },
+     "solutionNarrative": "đi ngược từ 0: trước phí nhịp 3: 0 + 8 = 8 → trước gấp đôi: 8 : 2 = 4; trước nhịp 2: (4 + 8) : 2 = 6; trước nhịp 1: (6 + 8) : 2 = 7 → lúc đầu 7 nghìn đồng. Thử xuôi: 7 → 14 − 8 = 6 → 12 − 8 = 4 → 8 − 8 = 0 ✓."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Tính ngược từ cuối là đi từ kết quả cuối cùng, mỗi bước làm phép tính ngược lại.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Phép ngược của \"nhân 3\" là \"trừ 3\".",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "ngược của nhân 3 là CHIA 3."
+   },
+   {
+    "id": "Q3",
+    "text": "Nghĩ một số, nhân 2 rồi cộng 3 được 19. Số đã nghĩ là:",
+    "format": "mcq",
+    "choices": [
+     "A. 8",
+     "B. 11",
+     "C. 16"
+    ],
+    "answerKey": {
+     "choice": "A. 8"
+    },
+    "solutionNarrative": "(19 − 3) : 2 = 8."
+   },
+   {
+    "id": "Q4",
+    "text": "Nghĩ một số, trừ 5 rồi chia 2 được 6. Số đã nghĩ là:",
+    "format": "mcq",
+    "choices": [
+     "A. 17",
+     "B. 7",
+     "C. 22"
+    ],
+    "answerKey": {
+     "choice": "A. 17"
+    },
+    "solutionNarrative": "6 × 2 + 5 = 17."
+   },
+   {
+    "id": "Q5",
+    "text": "Cho đi một nửa số bi thì còn 7 viên. Lúc đầu có:",
+    "format": "mcq",
+    "choices": [
+     "A. 14 viên",
+     "B. 9 viên",
+     "C. 21 viên"
+    ],
+    "answerKey": {
+     "choice": "A. 14 viên"
+    },
+    "solutionNarrative": "7 × 2 = 14 viên."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Trò \"ảo thuật đọc ý nghĩ\": con nghĩ một số, làm theo chuỗi phép bố mẹ đọc, nói kết quả cuối — bố mẹ \"đoán\" trúng số đầu bằng tính ngược. Rồi ĐỔI VAI: con làm ảo thuật gia, tự thiết kế chuỗi phép — thiết kế được là hiểu tận gốc.",
+  "homeActivity": "Khẩu quyết \"vào sau ra trước\" (như xếp ba lô) chữa dứt điểm lỗi đảo sai thứ tự — nhắc mỗi khi con vẽ chiều ngược.",
+  "watchFor": "NÊN: bắt buộc chuyến thử XUÔI ở mọi bài. KHÔNG NÊN: chuỗi có \"cho đi một nửa\" lồng hai ba tầng (\"cho 1/2, rồi lại cho 1/3 chỗ còn lại...\") — đa tầng phân số hẹn lớp 5."
+ },
+ "figureSpec": [
+  {
+   "id": "L4H_B29_MO",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L4H_B29_MO.png",
+   "caption": "Băng chuyền chạy xuôi, chỉ biết con số ở cuối.",
+   "sha256_16": "6ac80cf71abf9d40",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B29_G1",
+   "usedIn": [
+    "screen:S3"
+   ],
+   "file": "figures/L4H_B29_G1.png",
+   "caption": "Đi ngược băng chuyền, mỗi trạm đảo phép tính.",
+   "sha256_16": "bd69a8eb3d4433cd",
+   "mucGoc": "khamPha"
+  }
+ ],
+ "hatMam": "Bài 6 con đã \"bóc ngoặc như bóc hành\" để tìm X — đi lùi từng lớp một. Hôm nay kỹ thuật ấy thành phương pháp mang tên riêng: TÍNH NGƯỢC TỪ CUỐI. Đề kể một hành trình biến hình dài (nhân, trừ, chia, cộng, cho đi một nửa...) và chỉ tiết lộ con số CUỐI CÙNG — thám tử sẽ đi ngược băng chuyền, mỗi trạm làm phép NGHỊCH, lần về tận điểm xuất phát.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B22"
+  ],
+  "ten": [
+   "ĐI LÙI NHIỀU TRẠM"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ }
+}

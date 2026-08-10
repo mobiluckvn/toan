@@ -1,0 +1,382 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B05",
+ "grade": 4,
+ "quyen": "lop4",
+ "title": "Bài 5 · TÍNH NHANH CẤP KỸ SƯ",
+ "durationMinutes": 10,
+ "so": 5,
+ "chuong": 2,
+ "tenChuong": "CỖ MÁY BỐN PHÉP TÍNH",
+ "dangGoc": "SỐ 7.1 mức Lớp 4 — Đặt thừa số chung · nhẩm ×11, ×25 · thừa số 0 ẩn · so sánh không cần tính",
+ "skills": {
+  "bktUnit": "CHUONG:2@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 5,
+  "prev": "DL:KSN4.B04",
+  "next": "DL:KSN4.B06"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Dùng thành thạo luật gộp kệ: a × b + a × c = a × (b + c) và chiều ngược a × b − a × c = a × (b − c). Nhẩm nhân với 25 (bắt cặp với 4 thành 100) và với 11 (nhân 10 rồi cộng chính nó). Phát hiện thừa số 0 ẩn trong tích dài; so sánh hai biểu thức mà không cần tính hết.",
+  "kidText": "Dùng thành thạo luật gộp kệ: a × b + a × c = a × (b + c) và chiều ngược a × b − a × c = a × (b − c). Nhẩm nhân với 25 (bắt cặp với 4 thành 100) và với 11 (nhân 10 rồi cộng chính nó). Phát hiện thừa số 0 ẩn trong tích dài; so sánh hai biểu thức mà không cần tính hết.",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — LUẬT GỘP KỆ: 4 × 38 + 4 × 62 = 4 × (38 + 62) = 4 × 100 = 400. Vì sao gộp được? Vì mỗi hộp — bất kể gà hay tôm — đều đáng giá 4 nghìn: đếm chung số hộp trước, nhân giá sau. Chiều ngược cũng lợi hại: 9 × 57 − 9 × 47 = 9 × (57 − 47) = 90."
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — TUYỆT KỸ ×25: số 25 luôn \"khao khát\" bắt cặp với 4 để thành 100: 25 × 36 = 25 × 4 × 9 = 100 × 9 = 900. Không có sẵn số 4? Tự tạo: 48 × 25 = 48 × 100 : 4 = 4 800 : 4 = 1 200 — nhân 100 trước, trả nợ chia 4 sau."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — TUYỆT KỸ ×11: nhân 11 = nhân 10 rồi cộng chính nó: 35 × 11 = 350 + 35 = 385. Mẹo hai đầu: viết 3 và 5 ra hai đầu, nhét tổng 3 + 5 = 8 vào giữa → 385. (Tổng vượt 9 thì nhớ 1 sang trái: 57 × 11 = 5 [12] 7 → 627.)"
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — CON MẮT KỸ SƯ: thừa số 0 ẩn: trong tích dài (13 − 78 : 6) × 231 × 8, soi thấy 78 : 6 = 13 → ngoặc bằng 0 → CẢ TÍCH bằng 0, khỏi nhân gì hết! So sánh không cần tính: 52 × 25 và 51 × 25 + 20 — tách 52 × 25 = 51 × 25 + 25, mà 25 lớn hơn 20 → vế trái lớn hơn. Nhìn cấu trúc, không nhìn con số!"
+   }
+  ],
+  "mantra": "Trước khi đặt bút tính, kỹ sư soi 3 giây: có thừa số CHUNG không (gộp kệ)? có cặp 25-4, 125-8 không (tròn trăm, tròn nghìn)? có thừa số 0 ẩn không (khỏi tính)? Ba câu hỏi ấy tiết kiệm cả buổi kiểm kho.",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Kiểm đến kệ nước ngọt, Trí Long gặp 8 × 45 + 8 × 55 liền hô: \"Có thừa số chung 8! Vậy bằng 8 × 45 × 55 — gộp là NHÂN hết vào nhau chứ gì!\"",
+    "signal": "Bé làm theo cách Trí Long vừa nói.",
+    "fix": "Gợi ý 1: Luật gộp kệ nói gì — gộp SỐ HỘP hai kệ (cộng) rồi mới nhân giá, hay nhân luôn hai số hộp với nhau? Hai kệ 45 hộp và 55 hộp gộp lại được bao nhiêu hộp? Gợi ý 2: Ước lượng để vạch lỗi: 8 × 45 + 8 × 55 chỉ cỡ vài trăm, còn 8 × 45 × 55 vọt lên hàng chục nghìn — riêng cỡ số đã tố cáo phép \"gộp\" sai. Viết lại cho đúng và tính nhẩm kết quả giúp Trí Long!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Sáng thứ Bảy, cả xưởng có mặt ở siêu thị mini. tổng tiền hàng cả hai kệ — tính nhanh nhất có thể, không bấm máy."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "CHO GÌ? kệ mì gà 38 hộp và kệ mì tôm 62 hộp; mọi hộp cùng giá 4 nghìn đồng.\nHỎI GÌ? tổng tiền hàng cả hai kệ — tính nhanh nhất có thể, không bấm máy.\nĐẠI LƯỢNG & ĐƠN VỊ: số hộp (hộp) và đơn giá (nghìn đồng); kết quả là tiền (nghìn đồng).\nQUAN HỆ GIỮA CHÚNG: hai kệ CÙNG đơn giá — tổng tiền = 4 × 38 + 4 × 62, có \"thừa số chung\" 4 xuất hiện ở cả hai tích.\nCHỌN CÔNG CỤ: LUẬT GỘP KỆ: a × b + a × c = a × (b + c) — dồn hai kệ thành một kệ 100 hộp.\nƯỚC LƯỢNG TRƯỚC: 38 + 62 nhìn qua đã thấy tròn 100 → đáp số chắc chắn là 4 trăm nghìn tròn trịa.",
+    "teaches": [],
+    "nhan": "NHỊP 1 · DỊCH — từ hai kệ hàng sang một phép nhân"
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S7",
+    "kind": "explain",
+    "narration": "LẮP: báo cáo kiểm kho dòng 1: \"Hai kệ mì: 100 hộp × 4 nghìn = 400 nghìn đồng.\" Bác Hòa đối chiếu sổ nhập hàng: khớp! Phép gộp kệ không chỉ nhanh — nó còn cho con số 100 hộp để bác kiểm đếm thực tế.\nSOI: soi bằng đường vòng: Trí Long tính rời 152 + 248 = 400 ✓ — hai con đường một đáp số, hồ sơ chắc chắn. Ước lượng ban đầu \"4 trăm tròn\" cũng khớp.\nDÙNG NGOÀI ĐỜI: đi chợ cùng mẹ: 3 món cùng giá, cửa hàng đồng giá, chia tiền nhóm — luật gộp kệ dùng mỗi tuần. Và mẹo ×11, ×25 là \"ảo thuật\" khoe được ngay bữa cơm tối nay!",
+    "teaches": [],
+    "nhan": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   },
+   {
+    "id": "S8",
+    "kind": "trap",
+    "narration": "Kiểm đến kệ nước ngọt, Trí Long gặp 8 × 45 + 8 × 55 liền hô: \"Có thừa số chung 8! Vậy bằng 8 × 45 × 55 — gộp là NHÂN hết vào nhau chứ gì!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tính bằng cách thuận tiện nhất: 4 × 38 + 4 × 62.",
+  "steps": [
+   {
+    "show": "Nhận xét:"
+   },
+   {
+    "show": "Hai tích có thừa số chung là 4."
+   },
+   {
+    "show": "Dòng nhận xét cho thấy con CHỌN cách làm, không tính bừa."
+   },
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "4 × 38 + 4 × 62"
+   },
+   {
+    "show": "= 4 × (38 + 62)"
+   },
+   {
+    "show": "= 4 × 100"
+   },
+   {
+    "show": "= 400"
+   },
+   {
+    "show": "Mỗi dòng MỘT phép biến đổi, dấu \"=\" thẳng cột — bài tính thuận tiện chấm cả cách trình bày."
+   },
+   {
+    "show": "Đáp số: 400."
+   },
+   {
+    "show": "Đáp số một dòng riêng."
+   },
+   {
+    "show": "Thử lại: 4 × 38 = 152 ; 4 × 62 = 248 ; 152 + 248 = 400 ✓"
+   },
+   {
+    "show": "Soi bằng con đường \"tính rời\" — hai đường một đích mới yên tâm."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính nhẩm: 25 × 4 ; 125 × 8.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "25 × 4",
+        "value": 100
+       },
+       {
+        "label": "125 × 8",
+        "value": 1000
+       }
+      ]
+     },
+     "solutionNarrative": "25 × 4 = 100 ; 125 × 8 = 1 000 — hai cặp \"tròn\" phải thuộc nằm lòng."
+    },
+    {
+     "id": "C2",
+     "text": "Tính bằng cách thuận tiện: 7 × 36 + 7 × 64.",
+     "answerKey": {
+      "value": 700
+     },
+     "solutionNarrative": "7 × 36 + 7 × 64 = 7 × (36 + 64) = 7 × 100 = 700."
+    },
+    {
+     "id": "C3",
+     "text": "Nhẩm theo tuyệt kỹ ×11: 24 × 11.",
+     "answerKey": {
+      "value": 264
+     },
+     "solutionNarrative": "24 × 11 = 240 + 24 = 264 (mẹo hai đầu: 2 [2+4] 4 → 264)."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tính nhẩm bằng cách bắt cặp 25 với 4: 25 × 28.",
+     "answerKey": {
+      "value": 700
+     },
+     "solutionNarrative": "25 × 28 = 25 × 4 × 7 = 100 × 7 = 700."
+    },
+    {
+     "id": "C5",
+     "text": "Tính 36 × 25 bằng đường \"nhân 100 rồi chia 4\".",
+     "answerKey": {
+      "value": 900
+     },
+     "solutionNarrative": "36 × 25 = 36 × 100 : 4 = 3 600 : 4 = 900."
+    },
+    {
+     "id": "C6",
+     "text": "Tính bằng cách thuận tiện: 9 × 57 − 9 × 47.",
+     "answerKey": {
+      "value": 90
+     },
+     "solutionNarrative": "9 × 57 − 9 × 47 = 9 × (57 − 47) = 9 × 10 = 90."
+    },
+    {
+     "id": "C7",
+     "text": "Không tính hết, hãy so sánh: 52 × 25 và 51 × 25 + 20.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "so sánh 52 × 25 với 51 × 25 + 20",
+        "options": [
+         "<",
+         ">",
+         "="
+        ],
+        "value": ">"
+       }
+      ]
+     },
+     "solutionNarrative": "52 × 25 = 51 × 25 + 25; vì 25 > 20 nên 52 × 25 > 51 × 25 + 20 — không cần tính hết."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tính nhanh: (13 − 78 : 6) × 231 × 8. (Soi kỹ trước khi nhân!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "giá trị của tích",
+        "value": 0
+       }
+      ]
+     },
+     "solutionNarrative": "78 : 6 = 13 → (13 − 13) = 0 → cả tích bằng 0. Ai lao vào nhân 231 × 8 là... thua kỹ sư!"
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đố: \"Giải thích vì sao mẹo hai đầu của phép ×11 lại đúng, rồi nhẩm 57 × 11 và 68 × 11 — cẩn thận số nhớ!\"",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "57 × 11",
+        "value": 627
+       },
+       {
+        "label": "68 × 11",
+        "value": 748
+       }
+      ]
+     },
+     "solutionNarrative": "nhân 11 = nhân 10 rồi cộng chính nó nên hai chữ số dồn ra hai đầu, tổng của chúng rơi vào giữa. 57 × 11 = 570 + 57 = 627 (5 [12] 7 → nhớ 1: 627); 68 × 11 = 680 + 68 = 748."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "a × b + a × c = a × (b + c).",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "luật gộp kệ."
+   },
+   {
+    "id": "Q2",
+    "text": "Một tích có thừa số bằng 0 thì tích bằng thừa số còn lại.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "tích có thừa số 0 thì bằng 0."
+   },
+   {
+    "id": "Q3",
+    "text": "8 × 25 bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 200",
+     "B. 400",
+     "C. 800"
+    ],
+    "answerKey": {
+     "choice": "A. 200"
+    },
+    "solutionNarrative": "200)."
+   },
+   {
+    "id": "Q4",
+    "text": "6 × 45 + 6 × 55 bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 600",
+     "B. 660",
+     "C. 610"
+    ],
+    "answerKey": {
+     "choice": "A. 600"
+    },
+    "solutionNarrative": "6 × (45 + 55) = 600."
+   },
+   {
+    "id": "Q5",
+    "text": "34 × 11 bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 374",
+     "B. 344",
+     "C. 3 411"
+    ],
+    "answerKey": {
+     "choice": "A. 374"
+    },
+    "solutionNarrative": "340 + 34 = 374."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Thi \"người và máy\": bố mẹ dùng máy tính, con dùng tuyệt kỹ — với đề kiểu 4 × 38 + 4 × 62 hay 25 × 36, con nhẩm xong trước máy là chuyện thật. Chiến thắng ấy nuôi tình yêu tính nhanh hơn mọi lời khen.",
+  "homeActivity": "Khi con tính thuận tiện, hãy hỏi \"vì sao gộp được?\" — câu trả lời chuẩn phải nhắc đến THỪA SỐ CHUNG (cùng đơn giá), không phải \"vì cô dạy thế\".",
+  "watchFor": "NÊN: cho con soát hóa đơn siêu thị thật có các món đồng giá. KHÔNG NÊN: luyện nhẩm ×11 với số ba chữ số hay các cặp 75-125 lắt léo — để dành lớp 5."
+ },
+ "figureSpec": [
+  {
+   "id": "L4H_B05_MO",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L4H_B05_MO.png",
+   "caption": "Hai kệ khác số hộp nhưng CÙNG giá một hộp.",
+   "sha256_16": "8a805576d7b25ccd",
+   "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B05_G1",
+   "usedIn": [
+    "screen:S3"
+   ],
+   "file": "figures/L4H_B05_G1.png",
+   "caption": "Hai cách cùng ra 400, nhưng gộp trước thì nhẩm được.",
+   "sha256_16": "533784c93761cba1",
+   "mucGoc": "khamPha"
+  }
+ ],
+ "hatMam": "Lớp 3, ở Bài 16, con đã ghép cặp tròn trăm và biết \"một số nhân một tổng\". Năm nay các tuyệt kỹ ấy được rèn thành dao sắc của thủ kho: đặt thừa số chung a × b + a × c, nhẩm nhân 11 và 25 không cần nháp, và cả con mắt tinh nhận ra... phép tính KHÔNG CẦN TÍNH.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B16"
+  ],
+  "ten": [
+   "TÍNH THUẬN TIỆN CẤP CHIẾN BINH"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ }
+}

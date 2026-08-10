@@ -1,0 +1,427 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B26",
+ "grade": 4,
+ "quyen": "lop4",
+ "title": "Bài 26 · BA SỐ MỘT SƠ ĐỒ & MẮT XÍCH NỐI TỈ",
+ "durationMinutes": 10,
+ "so": 26,
+ "chuong": 7,
+ "tenChuong": "CHIA PHẦN THEO TỈ",
+ "dangGoc": "LV 3.4 + LV 5.1 mức Lớp 4 — Chia một số cho ba phần theo tỉ · nối hai tỉ số qua mắt xích chung",
+ "skills": {
+  "bktUnit": "CHUONG:7@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 26,
+  "prev": "DL:KSN4.B25",
+  "next": "DL:KSN4.B27"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Chia một số thành ba phần theo tỉ a : b : c bằng sơ đồ ba hàng — quy trình 4 bước nguyên vẹn. Nối hai tỉ số qua mắt xích chung: A : B = 1 : 2 và B : C = 2 : 3 → A : B : C = 1 : 2 : 3. Xử mắt xích lệch bằng cách quy mắt xích về cùng một số phần (nhân cả hai vế của mỗi tỉ).",
+  "kidText": "Chia một số thành ba phần theo tỉ a : b : c bằng sơ đồ ba hàng — quy trình 4 bước nguyên vẹn. Nối hai tỉ số qua mắt xích chung: A : B = 1 : 2 và B : C = 2 : 3 → A : B : C = 1 : 2 : 3. Xử mắt xích lệch bằng cách quy mắt xích về cùng một số phần (nhân cả hai vế của mỗi tỉ).",
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Bước 1 — BA HÀNG, MỘT QUY TRÌNH: tỉ út : hai : cả = 1 : 2 : 3 → tổng số phần 1 + 2 + 3 = 6; một phần = 90 : 6 = 15 (nghìn); út = 15, anh hai = 30, anh cả = 45. Thử: 15 + 30 + 45 = 90 ✓; 30 = 15 × 2 ✓; 45 = 15 × 3 ✓. Thêm nhân vật chỉ thêm hàng sơ đồ — trái tim \"một phần\" vẫn là một!"
+   },
+   {
+    "id": "K2",
+    "text": "Bước 2 — KHI ĐỀ CHO HAI TỈ RỜI NHAU: đề kiểu mới: \"A : B = 1 : 2 và B : C = 2 : 3, tổng 90\". Hai tỉ số như hai bánh răng — B là mắt xích chung, và cả hai vế đều ghi B = 2 phần: khớp răng luôn! Nối liền: A : B : C = 1 : 2 : 3 → về đúng bài ống heo: 15, 30, 45."
+   },
+   {
+    "id": "K3",
+    "text": "Bước 3 — MẮT XÍCH LỆCH — QUY VỀ CÙNG SỐ PHẦN: \"A : B = 1 : 2 và B : C = 3 : 4\" — rắc rối: vế trái bảo B = 2 phần, vế phải bảo B = 3 phần! Quy B về 6 (số cả 2 và 3 cùng chia hết): nhân đôi vế đầu 1 : 2 → 3 : 6? Khoan — nhân cả hai số với 3: 1 : 2 = 3 : 6; nhân vế sau với 2: 3 : 4 = 6 : 8. Giờ B = 6 ở cả hai → A : B : C = 3 : 6 : 8."
+   },
+   {
+    "id": "K4",
+    "text": "Bước 4 — CHẠY NỐT VÍ DỤ MẮT XÍCH LỆCH: với tổng 85 và A : B : C = 3 : 6 : 8: tổng phần 17; một phần 85 : 17 = 5 → A = 15, B = 30, C = 40. Soi cả hai tỉ gốc: A : B = 15 : 30 = 1 : 2 ✓; B : C = 30 : 40 = 3 : 4 ✓. Mắt xích khớp răng, cỗ máy chạy êm."
+   }
+  ],
+  "mantra": "Ba số theo tỉ a : b : c: sơ đồ ba hàng, tổng số phần a + b + c, vẫn quy trình 4 bước. Hai tỉ rời nhau: tìm MẮT XÍCH CHUNG (đại lượng xuất hiện ở cả hai tỉ), quy nó về cùng số phần rồi nối thành chuỗi a : b : c. Nhớ luật vàng: nhân CẢ HAI số của một tỉ với cùng một số thì tỉ không đổi.",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Gặp đề \"A : B = 1 : 2 ; B : C = 3 : 4, tổng ba số là 85\", Trí Long nối luôn: \"Dễ! Xếp thẳng hàng: A : B : C = 1 : 2 : 4... à nhầm, 1 : 3 : 4? Hay 1 : 2 : 3 : 4 nhỉ?! Sao lắm số thế!\"",
+    "signal": "Bé làm theo cách Trí Long vừa nói.",
+    "fix": "Gợi ý 1: Nhìn mắt xích B: tỉ thứ nhất bảo B chiếm 2 phần, tỉ thứ hai bảo B chiếm 3 phần — hai \"chiếc răng\" chưa khớp thì đã nối được chưa? Gợi ý 2: Quy B về cùng một số phần (số nào vừa chia hết cho 2 vừa chia hết cho 3?), nhân cả hai vế của từng tỉ cho tương xứng, rồi nối lại và giải trọn bài 85 giúp Trí Long — nhớ soi ngược cả hai tỉ gốc!"
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "số tiền mỗi người đã góp."
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "CHO GÌ? tổng ba ống heo: 90 nghìn đồng; anh hai gấp đôi út; anh cả gấp ba út.\nHỎI GÌ? số tiền mỗi người đã góp.\nĐẠI LƯỢNG & ĐƠN VỊ: tiền (nghìn đồng) — cả hai phép \"gấp\" đều so với CÙNG một người: cậu út.\nQUAN HỆ GIỮA CHÚNG: lấy phần út làm ô chuẩn: út 1 ô, anh hai 2 ô, anh cả 3 ô — sáu ô đều nhau gộp thành 90.\nCHỌN CÔNG CỤ: SƠ ĐỒ BA HÀNG theo tỉ 1 : 2 : 3 + quy trình 4 bước (tổng số phần nay là 1 + 2 + 3).\nƯỚC LƯỢNG TRƯỚC: sáu phần chia 90 → mỗi phần mười lăm — út cỡ mười lăm, anh cả gần năm chục.",
+    "teaches": [],
+    "nhan": "NHỊP 1 · DỊCH — từ ba ống heo sang ba hàng phần"
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S7",
+    "kind": "explain",
+    "narration": "LẮP: sổ vàng gian hàng từ thiện ghi rành mạch: \"Cậu út 15 nghìn — anh hai 30 nghìn — anh cả 45 nghìn.\" Mẹ ba cậu cảm ơn rối rít; ba anh em thì hớn hở vì ai góp bao nhiêu được ghi công bấy nhiêu — công bằng nhờ toán!\nSOI: soi trọn bộ: tổng 90 ✓, gấp đôi ✓, gấp ba ✓ — ba dữ kiện ba con dấu; và ước lượng \"một phần mười lăm\" trúng phóc.\nDÙNG NGOÀI ĐỜI: chia tiền nhóm ba người theo công sức, pha ba màu sơn theo công thức, chia đất ba luống rau — sơ đồ ba hàng theo con ra khỏi trang vở từ hôm nay.",
+    "teaches": [],
+    "nhan": "NHỊP 3 · LẮP + NHỊP 4 · SOI"
+   },
+   {
+    "id": "S8",
+    "kind": "trap",
+    "narration": "Gặp đề \"A : B = 1 : 2 ; B : C = 3 : 4, tổng ba số là 85\", Trí Long nối luôn: \"Dễ! Xếp thẳng hàng: A : B : C = 1 : 2 : 4... à nhầm, 1 : 3 : 4? Hay 1 : 2 : 3 : 4 nhỉ?! Sao lắm số thế!\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Ba anh em góp được tất cả 90 nghìn đồng. Người anh thứ hai góp gấp đôi em út, người anh cả góp gấp ba em út. Hỏi mỗi người góp bao nhiêu nghìn đồng?",
+  "steps": [
+   {
+    "show": "Tóm tắt:"
+   },
+   {
+    "show": "Tổng: 90 nghìn đồng;"
+   },
+   {
+    "show": "anh hai gấp đôi út; anh cả gấp ba út. Tìm phần mỗi người."
+   },
+   {
+    "show": "Cả hai phép gấp cùng so với ÚT — út sẽ là ô chuẩn của sơ đồ."
+   },
+   {
+    "show": "Sơ đồ:"
+   },
+   {
+    "show": "Út: [—]"
+   },
+   {
+    "show": "Anh hai: [—][—]"
+   },
+   {
+    "show": "Anh cả: [—][—][—]"
+   },
+   {
+    "show": "(ngoặc ôm cả ba hàng: 90 nghìn đồng)"
+   },
+   {
+    "show": "Tỉ 1 : 2 : 3 hiện nguyên hình trên ba hàng ô đều nhau."
+   },
+   {
+    "show": "Bài giải:"
+   },
+   {
+    "show": "Tổng số phần bằng nhau là: 1 + 2 + 3 = 6 (phần)"
+   },
+   {
+    "show": "Giá trị một phần là: 90 : 6 = 15 (nghìn đồng)"
+   },
+   {
+    "show": "Em út góp: 15 × 1 = 15 (nghìn đồng)"
+   },
+   {
+    "show": "Anh thứ hai góp: 15 × 2 = 30 (nghìn đồng)"
+   },
+   {
+    "show": "Anh cả góp: 15 × 3 = 45 (nghìn đồng)"
+   },
+   {
+    "show": "Quy trình 4 bước nguyên vẹn — chỉ nhân lên cho đủ BA người."
+   },
+   {
+    "show": "Đáp số: út 15 ; anh hai 30 ; anh cả 45 (nghìn đồng)."
+   },
+   {
+    "show": "Đáp số đủ ba người."
+   },
+   {
+    "show": "Thử lại: 15 + 30 + 45 = 90 ✓ ; 30 = 15 × 2 ✓ ; 45 = 15 × 3 ✓"
+   },
+   {
+    "show": "Ba dữ kiện — soi đủ ba, không sót manh mối."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Chia 60 thành ba phần theo tỉ số 1 : 2 : 3.",
+     "answerKey": {
+      "ordered": true,
+      "values": [
+       10,
+       20,
+       30
+      ]
+     },
+     "solutionNarrative": "tổng phần 6; một phần 10 → ba phần là 10 ; 20 ; 30."
+    },
+    {
+     "id": "C2",
+     "text": "Chia theo tỉ 2 : 3 : 4 thì tổng số phần bằng nhau là bao nhiêu?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "2 + 3 + 4 = 9 (phần)."
+    },
+    {
+     "id": "C3",
+     "text": "Chia 45 quyển vở cho ba lớp theo tỉ số 2 : 3 : 4.",
+     "answerKey": {
+      "ordered": true,
+      "values": [
+       10,
+       15,
+       20
+      ]
+     },
+     "solutionNarrative": "một phần 45 : 9 = 5 → ba lớp nhận 10 ; 15 ; 20 quyển."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Ba ống heo có tổng 90 nghìn đồng; ống B gấp đôi ống A, ống C gấp ba ống A. Tính số tiền mỗi ống.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ống A",
+        "value": 15
+       },
+       {
+        "label": "ống B",
+        "value": 30
+       },
+       {
+        "label": "ống C",
+        "value": 45
+       }
+      ]
+     },
+     "solutionNarrative": "tỉ 1 : 2 : 3; một phần 90 : 6 = 15 → A 15; B 30; C 45 (nghìn đồng)."
+    },
+    {
+     "id": "C5",
+     "text": "Sợi dây 72 m cắt thành ba đoạn theo tỉ số 1 : 2 : 5. Tính độ dài mỗi đoạn.",
+     "answerKey": {
+      "ordered": true,
+      "values": [
+       9,
+       18,
+       45
+      ]
+     },
+     "solutionNarrative": "tổng phần 8; một phần 72 : 8 = 9 → ba đoạn 9 m ; 18 m ; 45 m."
+    },
+    {
+     "id": "C6",
+     "text": "Ba số có tổng bằng 90, biết A : B = 1 : 2 và B : C = 2 : 3. Tìm ba số. (Mắt xích B đã khớp răng sẵn!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số A",
+        "value": 15
+       },
+       {
+        "label": "số B",
+        "value": 30
+       },
+       {
+        "label": "số C",
+        "value": 45
+       }
+      ]
+     },
+     "solutionNarrative": "mắt xích B = 2 khớp sẵn → A : B : C = 1 : 2 : 3 → 15 ; 30 ; 45."
+    },
+    {
+     "id": "C7",
+     "text": "Ba bạn góp 120 nghìn đồng làm quà từ thiện theo tỉ số 2 : 3 : 5. Tính phần góp mỗi bạn.",
+     "answerKey": {
+      "ordered": true,
+      "values": [
+       24,
+       36,
+       60
+      ]
+     },
+     "solutionNarrative": "tổng phần 10; một phần 120 : 10 = 12 → ba bạn góp 24 ; 36 ; 60 (nghìn đồng)."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Ba số có tổng bằng 85, biết A : B = 1 : 2 và B : C = 3 : 4. Tìm ba số. (Mắt xích lệch — quy B về cùng số phần trước!)",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số A",
+        "value": 15
+       },
+       {
+        "label": "số B",
+        "value": 30
+       },
+       {
+        "label": "số C",
+        "value": 40
+       }
+      ]
+     },
+     "solutionNarrative": "quy B về 6: 1 : 2 = 3 : 6 và 3 : 4 = 6 : 8 → A : B : C = 3 : 6 : 8; tổng phần 17; một phần 85 : 17 = 5 → A 15; B 30; C 40. Soi: 15 : 30 = 1 : 2 ✓; 30 : 40 = 3 : 4 ✓."
+    },
+    {
+     "id": "C9",
+     "text": "Anh Trí Dũng đố: \"Chia 84 nghìn đồng cho ba bạn: bạn thứ hai được gấp đôi bạn thứ nhất, bạn thứ ba được ĐÚNG BẰNG TỔNG hai bạn kia. Hỏi mỗi bạn nhận bao nhiêu? (Bạn thứ ba chiếm mấy phần — đếm cho khéo!)\"",
+     "answerKey": {
+      "ordered": true,
+      "values": [
+       14,
+       28,
+       42
+      ]
+     },
+     "solutionNarrative": "bạn ba = tổng hai bạn kia = 1 + 2 = 3 phần → tỉ 1 : 2 : 3; một phần 84 : 6 = 14 → ba bạn nhận 14 ; 28 ; 42 (nghìn đồng). Thử: 42 = 14 + 28 ✓."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Chia theo tỉ 1 : 2 : 3 thì tổng số phần bằng nhau là 6.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "Chia 60 theo tỉ 1 : 2 : 3 thì phần lớn nhất bằng 20.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "phần lớn nhất là 30 (một phần 10 × 3)."
+   },
+   {
+    "id": "Q3",
+    "text": "Chia 30 theo tỉ 1 : 2 : 3, phần bé nhất là:",
+    "format": "mcq",
+    "choices": [
+     "A. 5",
+     "B. 10",
+     "C. 15"
+    ],
+    "answerKey": {
+     "choice": "A. 5"
+    },
+    "solutionNarrative": "một phần 30 : 6 = 5."
+   },
+   {
+    "id": "Q4",
+    "text": "Tỉ 2 : 3 : 5 có tổng số phần là:",
+    "format": "mcq",
+    "choices": [
+     "A. 10",
+     "B. 8",
+     "C. 7"
+    ],
+    "answerKey": {
+     "choice": "A. 10"
+    },
+    "solutionNarrative": "10)."
+   },
+   {
+    "id": "Q5",
+    "text": "Chia 48 theo tỉ 1 : 2 : 5, phần lớn nhất là:",
+    "format": "mcq",
+    "choices": [
+     "A. 30",
+     "B. 24",
+     "C. 20"
+    ],
+    "answerKey": {
+     "choice": "A. 30"
+    },
+    "solutionNarrative": "một phần 48 : 8 = 6, phần lớn 30."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chia đồ thật cho BA người (kẹo, nho, quân cờ) theo tỉ con tự chọn — ba hàng sơ đồ xếp bằng đồ thật trên bàn trước, phép tính theo sau.",
+  "homeActivity": "Với bài nối tỉ, hình ảnh \"hai bánh răng khớp qua mắt xích chung\" đáng vẽ ra giấy: hỏi con \"răng B bên trái mấy chiếc, bên phải mấy chiếc — khớp chưa?\"",
+  "watchFor": "NÊN: khen phép soi NGƯỢC về hai tỉ gốc sau khi nối — đó là thói quen của kỹ sư thật. KHÔNG NÊN: chuỗi ba tỉ bốn số (A:B, B:C, C:D) — dây chuyền dài ấy hẹn lớp 5, lớp 4 dừng ở một mắt xích."
+ },
+ "figureSpec": [
+  {
+   "id": "L4H_B26_MO",
+   "usedIn": [
+    "hook"
+   ],
+   "file": "figures/L4H_B26_MO.png",
+   "caption": "Ba hàng trên cùng một sơ đồ phần.",
+   "sha256_16": "ffc189fdc21022d6",
+   "mucGoc": "chuyenMoBai"
+  }
+ ],
+ "hatMam": "Bài 22 con từng xử ba số bằng cách \"quy về người bé nhất\". Hôm nay ba số quay lại trong thế giới tỉ số — và tin vui: sơ đồ phần cân được ba hàng ngon ơ, quy trình 4 bước không đổi một li. Món mới duy nhất: khi đề cho HAI tỉ số rời nhau (A so với B, B so với C), con sẽ học cách NỐI chúng thành một chuỗi qua mắt xích chung.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B18"
+  ],
+  "ten": [
+   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ }
+}
