@@ -29,8 +29,8 @@ function tienDo(progress, ct) {
   return { xong, dangLam, tong, phanTram: Math.round((xong / tong) * 100), gio };
 }
 
-export default function KeSach({ dangKy, progress, onMoChuongTrinh, onSoPhuHuynh,
-                                account = {} }) {
+export default function KeSach({ dangKy, progress, onMoChuongTrinh, onMoChuDe,
+                                onSoPhuHuynh, account = {} }) {
   const dk = dangKy || {};
   const ds = Object.values(dk.chuongTrinh || {}).map((ct) => ({ ct, td: tienDo(progress, ct) }));
   /* Quyển động vào gần đây nhất lên đầu — mở app ra là bấm học tiếp được ngay,
@@ -91,6 +91,28 @@ export default function KeSach({ dangKy, progress, onMoChuongTrinh, onSoPhuHuynh
               Học tiếp ▶
             </button>
           </div>
+        </div>
+      )}
+
+      {/* HỌC THEO CHỦ ĐỀ — trục thứ hai, cắt ngang mọi quyển.
+          Kệ sách trả lời "con đang học dở quyển nào"; chỗ này trả lời "con muốn
+          luyện thứ gì". Cùng một chủ đề nằm rải ở bốn quyển với bốn tên chương khác
+          nhau, nên đi theo quyển thì không có cách nào tìm ra. */}
+      {onMoChuDe && (
+        <div className="px-3.5 pt-3">
+          <button onClick={onMoChuDe}
+                  className="flex w-full items-center gap-3 rounded-2xl border-[1.5px] border-teal bg-teal-pale px-4 py-3.5 text-left">
+            <span className="text-[24px] leading-none">🗺️</span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-[16px] font-bold leading-snug text-navy">
+                Học theo chủ đề
+              </span>
+              <span className="block text-[12.5px] text-mute">
+                Chọn chủ đề rồi học xuyên các lớp — kém thì lùi về lớp dưới cùng chủ đề
+              </span>
+            </span>
+            <span className="text-[14px] text-mute">▶</span>
+          </button>
         </div>
       )}
 

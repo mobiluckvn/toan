@@ -16,6 +16,7 @@ import {
 } from './lib/firebase.js';
 import { reassignQueue } from './lib/sync.js';
 import KeSach from './components/KeSach.jsx';
+import ChuDe from './components/ChuDe.jsx';
 import HomeLop2 from './components/HomeLop2.jsx';
 import MuaGiai from './components/MuaGiai.jsx';
 import TraiHuanLuyen from './components/TraiHuanLuyen.jsx';
@@ -95,13 +96,17 @@ export default function App() {
 
   const learnerId = progress.learnerId || 'local';
 
-  const finishMicro = useCallback((microId, grade, lesson, session = {}) => {
+  const finishMicro = useCallback((microId, grade, lesson, session = {}, veLai = null) => {
     setProgress((p) => recordMicro(p, microId, grade));
     submitSession({
       learnerId, sessionId: session.sessionId, microId,
       bktUnit: session.bktUnit, events: session.events || [],
       tomTat: session.tomTat || session.events || [], grade,
     }).catch(() => {});                       // mất mạng: đã nằm trong hàng đợi, lần sau gửi
+    /* Có chỗ để quay về thì về đó, ĐỪNG đi tiếp bài kế trong quyển. Con vào bài này
+       từ màn chủ đề (hoặc từ vòng luyện chủ đề) nên bài kế của quyển là chuyện khác
+       hẳn — đẩy con sang đó là làm mất mạch chủ đề đang theo. */
+    if (veLai) { setView(veLai); return; }
     const { next } = neighborIds(microId, lesson);
     if (!next || !grade.pass) { setView({ page: 'home' }); return; }
     // Hai nhịp đọc cùng LessonPlayer nhưng khác tên màn, nên phải hỏi bài thuộc
@@ -180,29 +185,46 @@ export default function App() {
     );
   }
 
-  /* ── Phòng học ── */
-  if (view.page === 'lesson')
+  /* ── Phòng học — MỘT khối cho cả hai nhịp đọc ──
+     Trước đây có hai khối gần như trùng nhau: `lesson` (lớp 5) ở đây, `baiDocCham`
+     (lớp 2·3·4) nằm bên trong nhánh `nhipDocCham(chuongTrinh)` phía dưới. Nhánh ấy
+     đứng SAU `!chuongTrinh`, nên mở một bài lớp 3 từ màn chủ đề — nơi không có
+     quyển nào đang mở — là rơi thẳng về kệ sách. Gộp lại thì mở bài từ đâu cũng
+     vào đúng phòng học, và sửa khoảng cách một chỗ không còn làm lệch chỗ kia.
+
+     Hai tên màn vẫn giữ: `neighborIds`, `duongLui` và sổ tiến trình đều đã quen
+     hỏi `baiDocCham(id)` để biết bài thuộc nhịp nào. */
+  if (view.page === 'lesson' || view.page === 'baiDocCham') {
+    const baiId = view.microId || view.baiId;
     return (
       <LessonPlayer
-        /* Cùng lý do như nhánh đọc chậm: đổi bài mà giữ nguyên component thì số thứ
-           tự màn KHÔNG reset, bấm đường lùi là rơi thẳng vào màn kết của bài đích. */
-        key={view.microId}
-        microId={view.microId}
-        resumeAt={view.fromStart ? 0 : (resumeSpot(progress, view.microId)?.step || 0)}
+        /* `key` BẮT BUỘC: đổi bài mà không đổi key thì React giữ nguyên component
+           cũ, nên số thứ tự màn ở trong nó KHÔNG reset — bấm "Học lại bài lớp 2"
+           từ màn kết bài lớp 3 là rơi thẳng vào màn kết bài lớp 2 (24/24, điểm
+           0/0), coi như chưa học đã xong. `resumeAt` chỉ là giá trị KHỞI TẠO nên
+           không cứu được. */
+        key={baiId}
+        microId={baiId}
+        resumeAt={view.fromStart ? 0 : (resumeSpot(progress, baiId)?.step || 0)}
         onMoveStep={(id, step, total) => setProgress((p) => saveSpot(p, id, step, total))}
         /* Gửi dần trong lúc con học — bỏ dở giữa chừng vẫn giữ được bài đã làm */
         onEvents={(s) => pushAttempts({ learnerId, ...s }).catch(() => {})}
-        onExit={() => setView({ page: 'home' })}
-        onFinish={(grade, lesson, session) => finishMicro(view.microId, grade, lesson, session)}
-        /* Đường LÙI của lớp 5 về lớp 4. Trước đây nhánh này KHÔNG nhận `onMoBai`,
-           mà FinaleCard lại ẩn hộp đường lùi khi thiếu nó — nên dù dữ liệu có khai
-           `duongLui` thì màn kết bài lớp 5 vẫn không hiện gì. Đích là quyển đọc
-           chậm nên phải hỏi lại nhịp đọc của CHÍNH nó, đừng ghim cứng ở đây. */
-        onMoBai={(id) => setView(baiDocCham(id)
-          ? { page: 'baiDocCham', baiId: id, fromStart: true }
-          : { page: 'lesson', microId: id, fromStart: true })}
+        onExit={() => setView(view.veLai || { page: 'home' })}
+        onFinish={(grade, lesson, session) => finishMicro(baiId, grade, lesson, session,
+                                                         view.veLai)}
+        /* Đường LÙI về quyển dưới. Đích thuộc quyển khác nên phải hỏi lại nhịp đọc
+           của CHÍNH nó, đừng ghim cứng ở đây. `fromStart`: đi lùi là để luyện lại
+           gốc, nên vào từ đầu bài — thả con vào giữa chỗ học dở của năm ngoái thì
+           mất hẳn nghĩa "học lại". Giữ nguyên `veLai` để chuỗi lùi bao nhiêu nấc
+           thì vẫn còn đường về chỗ xuất phát. */
+        onMoBai={(id) => setView({
+          ...(baiDocCham(id) ? { page: 'baiDocCham', baiId: id }
+                             : { page: 'lesson', microId: id }),
+          fromStart: true, ...(view.veLai ? { veLai: view.veLai } : {}),
+        })}
       />
     );
+  }
 
   if (view.page === 'report')
     return (
@@ -234,6 +256,24 @@ export default function App() {
       />
     );
 
+  /* ══ HỌC THEO CHỦ ĐỀ — trục thứ hai, cắt ngang mọi quyển ══
+     Đặt TRƯỚC nhánh kệ sách vì nó không thuộc quyển nào: chọn chủ đề rồi mở bài
+     của bất kỳ lớp nào. Mở bài thì để `chuongTrinh` nguyên như cũ (đúng nếp đường
+     lùi ở màn kết), và ghi `veLai` để học xong còn tìm được đường về đây. */
+  if (view.page === 'chuDe')
+    return (
+      <ChuDe
+        progress={progress}
+        viTri={view.viTri}
+        onThoat={() => setView({ page: 'home' })}
+        onMoBai={(id, viTri) => setView({
+          ...(baiDocCham(id) ? { page: 'baiDocCham', baiId: id }
+                             : { page: 'lesson', microId: id }),
+          fromStart: true, veLai: { page: 'chuDe', viTri },
+        })}
+      />
+    );
+
   /* ══ KỆ SÁCH — trang chính ══ */
   if (!chuongTrinh)
     return (
@@ -241,6 +281,7 @@ export default function App() {
         dangKy={dangKy}
         progress={progress}
         onMoChuongTrinh={chonChuongTrinh}
+        onMoChuDe={() => setView({ page: 'chuDe' })}
         onSoPhuHuynh={() => setView({ page: 'report' })}
         account={{ signedIn: !!auth, onSignOut: signOut }}
       />
@@ -253,31 +294,6 @@ export default function App() {
      Hỏi CỜ trong sổ đăng ký chứ không so tên quyển: thêm lớp 3 mà vẫn so 'lop2' thì
      bé lớp 3 rơi vào phòng học lớp 5 — chữ nhỏ, dồn nhiều khối một màn. */
   if (nhipDocCham(chuongTrinh)) {
-    if (view.page === 'baiDocCham')
-      return (
-        <LessonPlayer
-          /* `key` BẮT BUỘC: đổi bài mà không đổi key thì React giữ nguyên component
-             cũ, nên số thứ tự màn ở trong nó KHÔNG reset — bấm "Học lại bài lớp 2"
-             từ màn kết bài lớp 3 là rơi thẳng vào màn kết bài lớp 2 (24/24, điểm
-             0/0), coi như chưa học đã xong. `resumeAt` chỉ là giá trị KHỞI TẠO nên
-             không cứu được. */
-          key={view.baiId}
-          microId={view.baiId}
-          resumeAt={view.fromStart ? 0 : (resumeSpot(progress, view.baiId)?.step || 0)}
-          onMoveStep={(id, step, total) => setProgress((p) => saveSpot(p, id, step, total))}
-          onEvents={(s) => pushAttempts({ learnerId, ...s }).catch(() => {})}
-          onExit={() => setView({ page: 'home' })}
-          onFinish={(grade, lesson, session) => finishMicro(view.baiId, grade, lesson, session)}
-          /* Đường LÙI về quyển dưới: bài lớp 3 mở thẳng bài lớp 2 cùng chủ đề. Đích
-             thuộc quyển khác nên phải hỏi lại nhịp đọc của CHÍNH nó — lớp 2 cũng đọc
-             chậm nên vẫn cùng phòng học, nhưng đừng ghim cứng điều đó ở đây. */
-          onMoBai={(id) => setView(baiDocCham(id)
-            /* fromStart: đây là đi LÙI để luyện lại gốc, nên vào từ đầu bài — thả
-               con vào giữa chỗ học dở của năm ngoái thì mất hẳn nghĩa "học lại". */
-            ? { page: 'baiDocCham', baiId: id, fromStart: true }
-            : { page: 'lesson', microId: id })}
-        />
-      );
     return (
       <HomeLop2
         progress={progress}
