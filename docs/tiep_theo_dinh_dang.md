@@ -106,20 +106,18 @@ trước in thành một khối chữ sáu dòng dính nhau; nay mỗi mục m�
 
 ---
 
-## Việc còn lại
+## Ba việc tồn của đợt trước — ĐÃ XONG (2026-08-11)
 
-### ✔ (2026-08-11) Ba việc của đợt trước ĐÃ XONG
-
-**① Soát định dạng toàn bộ** — soi bằng máy cả năm quyển, tìm ra bốn chỗ hổng:
+### ① Soát định dạng toàn bộ — soi bằng máy cả năm quyển, tìm ra bốn chỗ hổng:
 Mùa giải chưa hề được định dạng (tệp mang tiền tố `DR_`, bộ chuyển chỉ lọc `DL_`);
 chuỗi đã có `$` thì bị bỏ qua CẢ chuỗi nên nửa còn lại mắc kẹt; luật phân số chặn
 nhầm dấu phẩy và chữ đứng sau; thiếu 11 trường chữ. Nay chạy tới khi ĐỨNG YÊN.
 
-**② Vẽ lại hình** — hoá ra chỉ **9 hình**, không phải 368 (sổ cũ đếm nhầm tổng số
+### ② Vẽ lại hình — hoá ra chỉ **9 hình**, không phải 368 (sổ cũ đếm nhầm tổng số
 hình). Matplotlib vẽ mathtext sẵn. Phải sửa thêm `fit_fs` (đếm nguyên văn nên nhãn
 có công thức bị thu bé tí) và nhãn dưới hình bánh (bộ vẽ tự ghép `{tu}/{mau}`).
 
-**③ 984 gợi ý** — gắn được 955/984 câu, suy từ lời GIẢNG của chính bài. Cổng mới
+### ③ 984 gợi ý — gắn được 955/984 câu, suy từ lời GIẢNG của chính bài. Cổng mới
 rồi bắt ngược lại **21 gợi ý của lớp 5 do người soạn viết nói thẳng đáp án**, đã
 viết lại cả 21.
 
