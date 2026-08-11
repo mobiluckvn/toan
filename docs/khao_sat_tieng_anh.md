@@ -2,6 +2,11 @@
 
 Ghi 2026-08-11, TRƯỚC khi bắt tay. Đọc tệp này đầu tiên ở phiên làm Tiếng Anh.
 
+> 📍 **ĐÃ CÓ BẢN ĐỒ TRI THỨC** (bác gửi 11-08-2026): `data/ban_do_tieng_anh.json` —
+> 3 989 node · 7 602 cạnh · lớp 1-12 · bộ Global Success. Khảo sát riêng ở
+> **`docs/khao_sat_ban_do_tieng_anh.md`**, đọc kèm tệp này. Bản đồ trả lời câu
+> "dạy CÁI GÌ"; tệp này trả lời câu "mã nguồn hiện có chịu được tới đâu".
+
 Mục đích: nói rõ **cái gì dùng lại được nguyên**, **cái gì tưởng dùng lại được mà sẽ
 chấm sai**, và **cái gì chưa hề có**. Ba nhóm ấy quyết định khối lượng việc, chứ không
 phải số bài trong sách.
