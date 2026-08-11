@@ -17,7 +17,7 @@ import {
 } from '../functions/src/bangxephang.js';
 import {
   xepLai, danhSachHien, khoangCachTren, soKe, loiSoKe, locLop, dsLop, BANG, huyChuong,
-} from '../src/lib/xephang.js';
+} from '../src/chung/lib/xephang.js';
 
 let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
@@ -209,7 +209,7 @@ t('ranh giới ngày tính theo giờ Việt Nam',
    ở màn đầu tiên — mà con số ấy đi thẳng vào bảng xếp hạng lẫn vào bậc xuất phát của
    vòng luyện chủ đề. */
 {
-  const { LOP_HOC, LOP_MAC_DINH, lopHopLe } = await import('../src/lib/content.js');
+  const { LOP_HOC, LOP_MAC_DINH, lopHopLe } = await import('../src/mon/toan/lib/noiDung.js');
   t('khai được từ lớp 2 đến lớp 12',
     LOP_HOC.join() === '2,3,4,5,6,7,8,9,10,11,12');
   t('lớp mặc định nằm trong danh sách', LOP_HOC.includes(LOP_MAC_DINH));
@@ -220,7 +220,7 @@ t('ranh giới ngày tính theo giờ Việt Nam',
 
   /* Bậc xuất phát của vòng luyện chủ đề: anh lớp 9 phải vào bậc CAO NHẤT đang có
      (lớp 5), không rơi về bậc thấp hay ra null. */
-  const { bacBatDau } = await import('../src/lib/progress.js');
+  const { bacBatDau } = await import('../src/mon/toan/lib/progress.js');
   const thang = [{ lop: 2 }, { lop: 3 }, { lop: 4 }, { lop: 5 }];
   t('lớp trên tiểu học vào bậc cao nhất đang có', bacBatDau(thang, 9) === 5);
   t('lớp 3 vào đúng bậc lớp 3', bacBatDau(thang, 3) === 3);

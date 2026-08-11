@@ -27,7 +27,7 @@ import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   checkAnswer, answerFields, answerMode, inputCount, normText,
-} from '../src/lib/flow.js';
+} from '../src/mon/toan/lib/flow.js';
 
 const D = new URL('../public/content/quyen2/', import.meta.url).pathname;
 const GOC = new URL('../../data/', import.meta.url).pathname;

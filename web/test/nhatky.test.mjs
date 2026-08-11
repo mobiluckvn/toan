@@ -14,7 +14,7 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import { buildAttempts, goiDapAn, attemptId, CHU_TOI_DA,
-         enqueue, readQueue, PHIEN_BAN_BAN_GHI } from '../src/lib/sync.js';
+         enqueue, readQueue, PHIEN_BAN_BAN_GHI } from '../src/mon/toan/lib/sync.js';
 
 const D = new URL('../public/content/lessons/', import.meta.url).pathname;
 const lessons = readdirSync(D).filter((f) => f.endsWith('.json'))

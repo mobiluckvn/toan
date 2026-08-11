@@ -7,7 +7,7 @@
 import { readFileSync } from 'node:fs';
 
 // LoginScreen.jsx là JSX nên node không nạp thẳng được — bóc riêng hàm niceError ra chạy.
-const src = readFileSync(new URL('../src/components/LoginScreen.jsx', import.meta.url), 'utf8');
+const src = readFileSync(new URL('../src/chung/components/LoginScreen.jsx', import.meta.url), 'utf8');
 const body = src.slice(src.indexOf('export function niceError'), src.indexOf('\n}\n', src.indexOf('export function niceError')) + 2);
 const niceError = new Function(`${body.replace('export function', 'function')}; return niceError;`)();
 

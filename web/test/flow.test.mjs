@@ -9,7 +9,7 @@ import {
   parseRange, isArithmeticRule, evalRule, canGenerate, makeVariant,
   inputPlaceholder, choicesFromText, splitAside, parseCompare, buildTeachSteps,
   answerFields, answerBrief, answerCore, isNumberList, gradableParts,
-} from '../src/lib/flow.js';
+} from '../src/mon/toan/lib/flow.js';
 
 const DIR = 'public/content/lessons';
 const ids = [];

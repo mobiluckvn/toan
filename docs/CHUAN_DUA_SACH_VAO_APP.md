@@ -334,7 +334,7 @@ Nhãn của màn là **"BÀI TOÁN"** (`StepView.jsx`, nhánh `hook`), không ph
 
 ## 7 · Chuẩn đáp án — chấm máy đúng chỗ chấm được
 
-### Các dạng khoá (bộ chấm `web/src/lib/flow.js` hiểu sẵn)
+### Các dạng khoá (bộ chấm `web/src/mon/toan/lib/flow.js` hiểu sẵn)
 
 ```jsonc
 { "value": 72 }                                     // một đáp số

@@ -17,7 +17,7 @@
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
-const G = new URL('../src/components/', import.meta.url).pathname;
+const G = new URL('../src/', import.meta.url).pathname;
 let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
 

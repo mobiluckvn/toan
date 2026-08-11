@@ -13,7 +13,7 @@
  */
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { dongDau, figureSrc, CONTENT, NOI_DUNG_V } from '../src/lib/content.js';
+import { dongDau, figureSrc, CONTENT, NOI_DUNG_V } from '../src/mon/toan/lib/noiDung.js';
 /* Băm bằng ĐÚNG hàm vite.config.js dùng, không chép lại — chép lại thì sửa một
    bên mà bên kia vẫn xanh. */
 import { bamNoiDung } from '../tools/noidung_version.mjs';

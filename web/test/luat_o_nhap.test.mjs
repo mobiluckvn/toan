@@ -41,7 +41,7 @@
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { normText, splitAside, answerCore } from '../src/lib/flow.js';
+import { normText, splitAside, answerCore } from '../src/mon/toan/lib/flow.js';
 
 const G = new URL('../public/content/', import.meta.url).pathname;
 let pass = 0, fail = 0;

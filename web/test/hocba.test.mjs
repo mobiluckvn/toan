@@ -13,12 +13,12 @@ import { readFileSync } from 'node:fs';
 import {
   emptyProgress, recordMicro, recordChapter, saveSpot, setMode, ghiLuyenChuDe,
   gopTienDo, ketQuaChuong,
-} from '../src/lib/progress.js';
+} from '../src/mon/toan/lib/progress.js';
 import {
   hocBaQuyen, baiDeXuatChuong, thongKeChuong, trangThaiBai, baiCanCoGang,
   hocBaChuDe, tinhTrangDang, trinhDo,
-} from '../src/lib/hocba.js';
-import { allMicroIds, ghiNhoChuong, datSoDangKy } from '../src/lib/content.js';
+} from '../src/mon/toan/lib/hocba.js';
+import { allMicroIds, ghiNhoChuong, datSoDangKy } from '../src/mon/toan/lib/noiDung.js';
 
 const D = new URL('../public/content/', import.meta.url).pathname;
 const doc = (p) => JSON.parse(readFileSync(D + p, 'utf8'));

@@ -17,7 +17,7 @@
  */
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { answerFields, checkAnswer } from '../src/lib/flow.js';
+import { answerFields, checkAnswer } from '../src/mon/toan/lib/flow.js';
 
 const D = new URL('../public/content/lessons/', import.meta.url).pathname;
 const lessons = readdirSync(D).filter((f) => f.endsWith('.json'))

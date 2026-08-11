@@ -13,7 +13,7 @@
  */
 import { readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
-import { checkAnswer, answerFields } from '../src/lib/flow.js';
+import { checkAnswer, answerFields } from '../src/mon/toan/lib/flow.js';
 
 const D = new URL('../public/content/quyen2/', import.meta.url).pathname;
 const tep = readdirSync(D).filter((f) => f.startsWith('DR_') && f.endsWith('.json'));

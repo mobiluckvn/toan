@@ -3,8 +3,8 @@ import {
   emptyProgress, recordMicro, recordChapter, isMicroUnlocked, isChapterExamUnlocked,
   nextToStudy, chapterStats, overallStats, microState, loadProgress, saveProgress,
   saveSpot, resumeSpot, clearSpot, modeOf, setMode, MODES,
-} from '../src/lib/progress.js';
-import { allMicroIds, chapterOf } from '../src/lib/content.js';
+} from '../src/mon/toan/lib/progress.js';
+import { allMicroIds, chapterOf } from '../src/mon/toan/lib/noiDung.js';
 
 let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
@@ -132,7 +132,7 @@ t('nhưng bài đã ĐẠT vẫn còn nguyên', overallStats(M3, list).done === 
    Bài vốn chỉ đi một chiều — lỡ bấm Tiếp là mất phần vừa đọc. Nay lùi được, và
    bấm thẳng vào đốt đã học được. Nhưng bấm vượt lên phần chưa học thì phải chặn:
    nhảy thẳng tới sát hạch là bỏ qua cả mạch giảng bài lẫn cổng mustPass. */
-import { bamDuocDot } from '../src/lib/flow.js';
+import { bamDuocDot } from '../src/mon/toan/lib/flow.js';
 
 t('bấm được đốt ĐÃ HỌC để xem lại', bamDuocDot(2, 5, 5) === true);
 t('bấm được đốt ngay trước đó', bamDuocDot(4, 5, 5) === true);
@@ -155,7 +155,7 @@ t('ở phần đầu thì không có đốt nào để lùi', bamDuocDot(0, 0, 0
  */
 import {
   nguongDat, bacBatDau, buocSau, ghiLuyenChuDe, bacDaVung,
-} from '../src/lib/progress.js';
+} from '../src/mon/toan/lib/progress.js';
 
 const THANG4 = [{ lop: 2 }, { lop: 3 }, { lop: 4 }, { lop: 5 }];
 const THANG_TREN = [{ lop: 4 }, { lop: 5 }];        // chủ đề chỉ có ở lớp trên

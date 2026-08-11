@@ -25,8 +25,13 @@ chờ đồng bộ. Nối Firebase sau (xem `docs/DEPLOY.md`) là toàn bộ l�
 
 ```
 web/                  Ứng dụng học (React + Vite + Tailwind)
-  src/lib/            LÕI có test: flow · progress · sync · adaptive · content · firebase
-  src/components/     16 component: phòng học · đăng nhập OTP · sổ học · bảng giáo viên
+  src/chung/          TẦNG VỎ — dùng chung cho MỌI môn, không môn nào được sửa
+    lib/              nenTang (Firebase) · taiKhoan (đăng nhập, hồ sơ) · soQuyen (sổ đăng ký)
+    components/       kệ sách · bảng xếp hạng · sổ bố mẹ · bảng cô giáo · đăng nhập
+  src/mon/toan/       MÔN TOÁN — khép kín, không tệp nào của môn khác đụng vào
+    lib/              flow · progress · hocba · adaptive · dau · noiDung · duLieu · sync
+    components/       phòng học · màn chủ đề · Mùa giải · trang chính của quyển
+  src/mon/tienganh/   MÔN TIẾNG ANH — khung riêng, chưa có nội dung
   public/content/     168 bài học · 672 hình · 14 kỳ sát hạch · chỉ mục  (deploy thẳng lên CDN)
   functions/          Cloud Functions: đăng nhập OTP · BKT · ôn tập · sổ học & bảng cô đêm
   test/               339 phép kiểm (node thuần, không cần trình duyệt)

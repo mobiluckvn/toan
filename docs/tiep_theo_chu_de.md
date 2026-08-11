@@ -124,7 +124,7 @@ ghi rõ nó dạy **cả** "6.1 dấu hiệu chia hết" **lẫn** "3.1 lập s�
 
 ## Vòng luyện: máy trạng thái lùi / tiến
 
-Ở `web/src/lib/progress.js`, viết thành hàm THUẦN (không nhét trong component) để
+Ở `web/src/mon/toan/lib/progress.js`, viết thành hàm THUẦN (không nhét trong component) để
 phép kiểm chạy được mọi ngả:
 
 ```

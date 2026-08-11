@@ -18,27 +18,46 @@
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 
-const G = new URL('../src/components/', import.meta.url).pathname;
+const G = new URL('../src/', import.meta.url).pathname;
 const APP = readFileSync(new URL('../src/App.jsx', import.meta.url).pathname, 'utf8');
-const doc = (f) => readFileSync(join(G, f), 'utf8');
+
+/* Giao diện nay nằm hai cây: `chung/components` (tầng vỏ) và `mon/<môn>/components`.
+   Quét đệ quy rồi tra theo TÊN TỆP — phép kiểm này quan tâm màn nào có mặt và nó
+   viết gì, không quan tâm nó ngồi ở thư mục nào. */
+function quet(thuMuc, ra = {}) {
+  for (const x of readdirSync(thuMuc, { withFileTypes: true })) {
+    const p = join(thuMuc, x.name);
+    if (x.isDirectory()) quet(p, ra);
+    else if (x.name.endsWith('.jsx')) ra[x.name] = p;
+  }
+  return ra;
+}
+const DUONG = quet(G);
+const doc = (f) => readFileSync(DUONG[f] || join(G, f), 'utf8');
 /* Bỏ chú thích trước khi soi: mọi thứ dưới đây được phép NHẮC TỚI trong lời ghi —
    cái cấm là dùng chúng để dựng màn hình. Soi cả chú thích thì phép kiểm báo oan,
    mà phép kiểm báo oan là phép kiểm bị bỏ qua. */
 const boGhi = (s) => s.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
 const APP_MA = boGhi(APP);
+const MT = boGhi(doc('ManToan.jsx'));
 
 let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
 
 /* ══ 1 · MỘT TRANG CHÍNH CHO CẢ BỐN QUYỂN ══ */
-const ds = readdirSync(G).filter((f) => f.endsWith('.jsx'));
+const ds = Object.keys(DUONG);
 t('có HomeQuyen.jsx — trang chính dùng chung', ds.includes('HomeQuyen.jsx'));
 for (const cu of ['Home.jsx', 'HomeLop2.jsx']) {
   t(`không còn ${cu} (đã gộp vào HomeQuyen)`, !ds.includes(cu));
 }
 t('App không còn rẽ đôi theo nhịp đọc để chọn trang chính',
   !/nhipDocCham\(chuongTrinh\)/.test(APP_MA));
-t('App dựng trang chính bằng HomeQuyen', /<HomeQuyen/.test(APP_MA));
+/* Từ khi tách hai môn, VỎ không dựng trang chính nữa — nó giao cho môn. Trang chính
+   của quyển do `mon/toan/components/ManToan.jsx` dựng. Đây là điều đáng canh hơn:
+   vỏ mà dựng thẳng HomeQuyen thì "tách" chỉ là tách thư mục. */
+t('vỏ giao màn cho môn, không tự dựng trang chính',
+  /<Man\b/.test(APP_MA) && !/<HomeQuyen/.test(APP_MA));
+t('môn Toán dựng trang chính bằng HomeQuyen', /<HomeQuyen/.test(MT));
 
 const HQ = doc('HomeQuyen.jsx');
 const HQ_MA = boGhi(HQ);
@@ -72,15 +91,16 @@ const GOC = {
   'MuaGiai.jsx': /onVeKeSach/,
 };
 for (const [f, re] of Object.entries(GOC)) {
-  t(`${f} nhận cửa về kệ sách`, existsSync(join(G, f)) && re.test(doc(f)));
+  t(`${f} nhận cửa về kệ sách`, !!DUONG[f] && re.test(doc(f)));
 }
 /* App phải THẬT SỰ truyền cửa ấy xuống — nhận mà không ai truyền thì nút biến mất
    trong im lặng, đúng kiểu hỏng chỉ lộ khi mở mắt xem. */
+t('vỏ chuyền cửa về kệ sách xuống môn', APP_MA.includes('veKeSach={veKeSach}'));
 for (const p of ['onVeKeSach={veKeSach}', 'onVeNha={veKeSach}']) {
-  t(`App truyền ${p}`, APP_MA.includes(p));
+  t(`ManToan truyền ${p}`, MT.includes(p));
 }
-t('App truyền cửa về kệ sách cho Mùa giải',
-  /<MuaGiai[\s\S]{0,600}?onVeKeSach=\{veKeSach\}/.test(APP_MA));
+t('ManToan truyền cửa về kệ sách cho Mùa giải',
+  /<MuaGiai[\s\S]{0,600}?onVeKeSach=\{veKeSach\}/.test(MT));
 
 /* Màn chủ đề: cả ba tầng phải cùng một đầu trang, không tầng nào tự vẽ lấy. */
 const CD = doc('ChuDe.jsx');
@@ -89,18 +109,20 @@ t('ChuDe dùng ThanhTren', /<ThanhTren/.test(CD));
 
 /* ══ 3 · SỔ BỐ MẸ VÀ BẢNG CÔ GIÁO NHÌN ĐƯỢC CẢ BỐN QUYỂN ══ */
 const PR = doc('ParentReport.jsx');
-t('sổ bố mẹ nạp chỉ mục MỌI quyển học',
-  /dsChuongTrinhSapXep\(\)[\s\S]{0,120}loai === 'hoc'/.test(PR));
+/* Sổ bố mẹ nay HỎI MÔN thay vì tự đếm — đó là điều làm nó vẽ được môn thứ hai mà
+   không phải viết lại. Canh đúng chỗ ấy, đừng canh cách nó tự tính. */
+t('sổ bố mẹ hỏi học bạ của môn', /\bm\?\.hocBa\(/.test(PR));
 t('sổ bố mẹ có trục theo lớp và trục theo chủ đề',
-  /hocBaQuyen/.test(PR) && /hocBaChuDe/.test(PR));
+  /'lop'/.test(PR) && /'chude'/.test(PR));
 t('sổ bố mẹ không còn chia cứng cho 12', !/b\.done \/ 12/.test(PR));
 t('sổ bố mẹ không còn dựng 14 ô chương', !/length:\s*14/.test(PR));
 
 const HS = doc('HocSinhChiTiet.jsx');
 t('bảng cô giáo có màn học bạ từng em', ds.includes('HocSinhChiTiet.jsx'));
 t('học bạ từng em: theo lớp · theo chủ đề · nhật ký',
-  /hocBaQuyen/.test(HS) && /hocBaChuDe/.test(HS) && /nhatKy/.test(HS));
-t('học bạ từng em đọc cả tiến độ bài lẫn học bạ trên máy chủ', /tienDoTuMay/.test(HS));
+  /'lop'/.test(HS) && /'chude'/.test(HS) && /nhatKy/.test(HS));
+t('học bạ từng em hỏi môn, không tự đọc dữ liệu Toán',
+  /hocBaCuaEm/.test(HS) && /nhatKyCuaEm/.test(HS) && !HS.includes('mon/toan'));
 
 /* ══ 4 · KỆ SÁCH XẾP THEO thuTu ══ */
 const KS = doc('KeSach.jsx');

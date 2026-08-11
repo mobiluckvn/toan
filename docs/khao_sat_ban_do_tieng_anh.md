@@ -123,7 +123,7 @@ Thư mục `data/tienganh/` và `web/public/content/tienganh/` là mới hoàn t
 
 ### ⚠ Bốn chỗ NGUY HIỂM
 
-**(1) `web/src/lib/flow.js` — bộ chấm dùng chung cho 1 612 câu Toán.**
+**(1) `web/src/mon/toan/lib/flow.js` — bộ chấm dùng chung cho 1 612 câu Toán.**
 Sửa `checkAnswer` để nó hiểu tiếng Anh là đụng thẳng vào chỗ chấm bài của cả bốn quyển
 Toán đang chạy thật. **Phải TÁCH `chamTiengAnh()` riêng**, `flow.js` chỉ rẽ nhánh theo
 môn. Và phải có phép kiểm khẳng định *"kết quả chấm của Toán không đổi một câu nào"* —

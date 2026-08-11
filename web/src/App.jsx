@@ -1,32 +1,32 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import HomeQuyen from './components/HomeQuyen.jsx';
-import LessonPlayer from './components/LessonPlayer.jsx';
-import ExamPlayer from './components/ExamPlayer.jsx';
-import ParentReport from './components/ParentReport.jsx';
-import LoginScreen from './components/LoginScreen.jsx';
-import ProfileSetup from './components/ProfileSetup.jsx';
-import TeacherBoard from './components/TeacherBoard.jsx';
-import {
-  loadProgress, saveProgress, recordMicro, recordChapter, saveSpot, resumeSpot, setMode,
-  ghiLuyenChuDe, gopTienDo, khoaChuong,
-} from './lib/progress.js';
-import { neighborIds, napSoDangKy, soDangKy, baiDocCham } from './lib/content.js';
-import {
-  submitSession, pushAttempts, syncPending, hasFirebase, watchAuth, myRole, myProfile, saveProfile, refreshMyReport,
-  myReport, logout, luuMucHocBa, tienDoTuMay,
-} from './lib/firebase.js';
-import { reassignQueue } from './lib/sync.js';
-import KeSach from './components/KeSach.jsx';
-import ChuDe from './components/ChuDe.jsx';
-import LuyenChuDe from './components/LuyenChuDe.jsx';
-import MuaGiai from './components/MuaGiai.jsx';
-import TraiHuanLuyen from './components/TraiHuanLuyen.jsx';
-import HoSoBay from './components/HoSoBay.jsx';
-import TheChienThuat from './components/TheChienThuat.jsx';
-import DauLoader from './components/DauLoader.jsx';
-import BangXepHang from './components/BangXepHang.jsx';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import LoginScreen from './chung/components/LoginScreen.jsx';
+import ProfileSetup from './chung/components/ProfileSetup.jsx';
+import TeacherBoard from './chung/components/TeacherBoard.jsx';
+import KeSach from './chung/components/KeSach.jsx';
+import BangXepHang from './chung/components/BangXepHang.jsx';
+import ParentReport from './chung/components/ParentReport.jsx';
+import { napSoDangKy, soDangKy } from './chung/lib/soQuyen.js';
+import { hasFirebase } from './chung/lib/nenTang.js';
+import { watchAuth, myRole, myProfile, saveProfile, logout } from './chung/lib/taiKhoan.js';
+import { MON, monCua } from './soMon.js';
 
 const SKIP_KEY = 'ttd5.skipLogin.v1';
+
+/**
+ * VỎ APP — đăng nhập, hồ sơ, kệ sách, và bốn màn nhìn nhiều môn một lượt.
+ *
+ * ── VỎ KHÔNG BIẾT GÌ VỀ RUỘT TỪNG MÔN ──
+ * Tệp này không import một dòng nào từ `mon/toan/**` hay `mon/tienganh/**`; nó chỉ
+ * biết `src/soMon.js` và giao ước ghi ở đó. Mỗi môn nộp một component `Man` rồi tự lo
+ * mọi đường đi bên trong.
+ *
+ * Nhờ vậy: thêm môn thứ hai không sửa một dòng nào ở đây, và sửa môn này không thể
+ * làm sai môn kia. Cổng `ranh_gioi.test.mjs` biến điều đó thành hàng rào máy gác chứ
+ * không phải một lời hứa.
+ *
+ * `tienDo` của mỗi môn thì vỏ GIỮ (để kệ sách và sổ bố mẹ cùng vẽ lại khi con học
+ * xong một bài) nhưng KHÔNG BAO GIỜ soi vào bên trong — với vỏ nó là một khối đục.
+ */
 
 /**
  * CHẠY LOCAL THÌ KHÔNG HỎI ĐĂNG NHẬP.
@@ -38,7 +38,6 @@ const SKIP_KEY = 'ttd5.skipLogin.v1';
 const LOCAL_KHONG_DANG_NHAP = !!import.meta.env?.DEV;
 
 export default function App() {
-  const [progress, setProgress] = useState(() => loadProgress());
   const [view, setView] = useState({ page: 'home' });
 
   /* ── Đăng nhập ──
@@ -46,133 +45,90 @@ export default function App() {
   const [auth, setAuth] = useState(hasFirebase && !LOCAL_KHONG_DANG_NHAP ? undefined : null);
   const [role, setRole] = useState(null);
   const [profile, setProfile] = useState(null);
-  const [cloudReport, setCloudReport] = useState(null);
-  /* Quyển con đang mở. KHÔNG nhớ qua các lần mở app: kệ sách là trang chính, mở
-     app ra con thấy mình học dở những gì rồi tự chọn — thay vì bị đưa thẳng vào
-     một quyển và phải "đổi lớp" mới sang được quyển khác. */
-  const [chuongTrinh, setChuongTrinh] = useState(null);
-  const veKeSach = useCallback(() => { setChuongTrinh(null); setView({ page: 'home' }); }, []);
   const [skipped, setSkipped] = useState(() => {
     try { return localStorage.getItem(SKIP_KEY) === '1'; } catch { return false; }
   });
 
-  useEffect(() => { saveProgress(progress); }, [progress]);
+  /* Sổ tiến độ của TỪNG MÔN, khoá theo mã môn. Vỏ giữ để mọi màn cùng vẽ lại; hình
+     dạng bên trong là chuyện riêng của môn. */
+  const [tienDo, setTienDo] = useState(
+    () => Object.fromEntries(MON.map((m) => [m.ma, m.napTienDo()])));
+  const datTienDoCua = useCallback((ma) => (f) => setTienDo((t) => ({
+    ...t, [ma]: typeof f === 'function' ? f(t[ma]) : f,
+  })), []);
+  useEffect(() => { for (const m of MON) m.luuTienDo(tienDo[m.ma]); }, [tienDo]);
 
-  /* Sổ đăng ký chương trình — nơi duy nhất khai các lớp và môn.
-     Giữ trong state chứ không chỉ gọi rồi thôi: nạp xong phải VẼ LẠI kệ sách, nếu
-     không kệ sách chỉ thấy bản mặc định tối thiểu (thiếu biểu tượng, thiếu mục
-     "sắp có") mà chẳng có gì báo là đang thiếu. */
+  /* Quyển con đang mở. KHÔNG nhớ qua các lần mở app: kệ sách là trang chính, mở
+     app ra con thấy mình học dở những gì rồi tự chọn — thay vì bị đưa thẳng vào
+     một quyển và phải "đổi lớp" mới sang được quyển khác. */
+  const [quyen, setQuyen] = useState(null);
+  /* Môn đang mở. Thường suy ra từ quyển, nhưng CỬA PHỤ (vd "Học theo chủ đề") vào
+     được môn mà không qua quyển nào — nên phải giữ riêng. */
+  const [monMa, setMonMa] = useState(null);
+  const veKeSach = useCallback(() => {
+    setQuyen(null); setMonMa(null); setView({ page: 'home' });
+  }, []);
+
+  /* Sổ đăng ký quyển — nơi duy nhất khai các lớp và môn. Giữ trong state chứ không
+     chỉ gọi rồi thôi: nạp xong phải VẼ LẠI kệ sách, nếu không kệ sách chỉ thấy bản
+     mặc định tối thiểu mà chẳng có gì báo là đang thiếu. */
   const [dangKy, setDangKy] = useState(() => soDangKy());
-  /* Chương trình `loai: 'giai'` không phải chuỗi bài học tuần tự mà là mùa giải —
-     mở thẳng vào bảng đấu, không đi qua màn Home của một lớp. */
-  const chonChuongTrinh = useCallback((ma) => {
-    if (dangKy?.chuongTrinh?.[ma]?.loai === 'giai') {
-      setChuongTrinh('lop5'); setView({ page: 'muagiai' });
-      return;
-    }
-    setChuongTrinh(ma); setView({ page: 'home' });
-  }, [dangKy]);
   useEffect(() => { napSoDangKy().then(setDangKy); }, []);
+
+  /** Môn đang mở — suy từ sổ đăng ký, không đoán theo tên quyển. */
+  const mon = useMemo(() => {
+    if (monMa) return monCua(monMa);
+    return quyen ? monCua(dangKy?.chuongTrinh?.[quyen]?.mon) : null;
+  }, [monMa, quyen, dangKy]);
+
+  const chonQuyen = useCallback((ma) => {
+    /* Chương trình `loai: 'giai'` không phải chuỗi bài học tuần tự mà là mùa giải —
+       mở thẳng vào bảng đấu, không đi qua trang chính của một quyển. */
+    const ct = dangKy?.chuongTrinh?.[ma];
+    if (ct?.loai === 'giai') { setQuyen(ct.choQuyen || ma); setView({ page: 'muagiai' }); return; }
+    setQuyen(ma); setMonMa(ct?.mon || null); setView({ page: 'home' });
+  }, [dangKy]);
+
+  /** Cửa phụ: vào thẳng một màn của môn, không qua quyển nào. */
+  const moCuaPhu = useCallback((ma, trang) => {
+    setMonMa(ma); setQuyen(null); setView({ page: trang });
+  }, []);
 
   useEffect(() => {
     if (!hasFirebase || LOCAL_KHONG_DANG_NHAP) return undefined;
     return watchAuth(async (user) => {
       setAuth(user || null);
-      if (!user) { setRole(null); setProfile(null); setCloudReport(null); return; }
+      if (!user) { setRole(null); setProfile(null); return; }
       const r = await myRole(user).catch(() => 'learner');
       setRole(r);
-      if (r === 'learner') {
-        // Bài học lúc chưa đăng nhập mang mã tạm 'local' — sang tên rồi mới đẩy được,
-        // nếu không luật bảo mật từ chối trong im lặng và công học của con bay sạch.
-        reassignQueue(user.uid);
-        setProgress((p) => ({ ...p, learnerId: user.uid }));
-        syncPending().catch(() => {});
-        /* KÉO SỔ VỀ. Trước đây app chỉ đẩy lên, không bao giờ kéo về: con học ở máy
-           tính bảng rồi mở máy của bố mẹ là thấy quyển trắng tinh — dữ liệu vẫn còn
-           nguyên trên máy chủ, chỉ là màn hình không hỏi. Gộp chứ không đè: hai máy
-           có thể đang học dở hai bài khác nhau, mất bên nào cũng là mất thật. */
-        tienDoTuMay(user.uid)
-          .then((may) => setProgress((p) => gopTienDo(p, may)))
-          .catch(() => {});
-        myProfile(user.uid).then(setProfile).catch(() => setProfile(null));
-        myReport(user.uid).then(setCloudReport).catch(() => {});
+      if (r !== 'learner') return;
+      myProfile(user.uid).then(setProfile).catch(() => setProfile(null));
+      /* KÉO SỔ VỀ cho TỪNG MÔN. Con học ở máy tính bảng rồi mở máy của bố mẹ mà thấy
+         trắng tinh thì tưởng mất bài — dữ liệu vẫn còn nguyên, chỉ là màn hình không
+         hỏi. Gộp chứ không đè: hai máy có thể đang học dở hai bài khác nhau. */
+      for (const m of MON) {
+        m.napTuMay(user.uid)
+          .then((may) => datTienDoCua(m.ma)((p) => m.gopTienDo({ ...p, learnerId: user.uid }, may)))
+          .catch(() => datTienDoCua(m.ma)((p) => ({ ...p, learnerId: user.uid })));
       }
     });
-  }, []);
+  }, [datTienDoCua]);
 
-  // học không đăng nhập: vẫn xếp hàng đợi, gửi khi có tài khoản
-  useEffect(() => { if (!hasFirebase) syncPending().catch(() => {}); }, []);
-
-  const learnerId = progress.learnerId || 'local';
-
-  const finishMicro = useCallback((microId, grade, lesson, session = {}, veLai = null) => {
-    setProgress((p) => recordMicro(p, microId, grade));
-    submitSession({
-      learnerId, sessionId: session.sessionId, microId,
-      bktUnit: session.bktUnit, events: session.events || [],
-      tomTat: session.tomTat || session.events || [], grade,
-    }).catch(() => {});                       // mất mạng: đã nằm trong hàng đợi, lần sau gửi
-    /* Có chỗ để quay về thì về đó, ĐỪNG đi tiếp bài kế trong quyển. Con vào bài này
-       từ màn chủ đề (hoặc từ vòng luyện chủ đề) nên bài kế của quyển là chuyện khác
-       hẳn — đẩy con sang đó là làm mất mạch chủ đề đang theo. */
-    if (veLai) { setView(veLai); return; }
-    const { next } = neighborIds(microId, lesson);
-    if (!next || !grade.pass) { setView({ page: 'home' }); return; }
-    // Hai nhịp đọc cùng LessonPlayer nhưng khác tên màn, nên phải hỏi bài thuộc
-    // quyển nào — nếu không, học xong bài lớp 2 là nhảy sang bài lớp 5.
-    setView(baiDocCham(next)
-      ? { page: 'baiDocCham', baiId: next }
-      : { page: 'lesson', microId: next });
-  }, [learnerId]);
-
-  /* ── GHI HỌC BẠ: vừa vào sổ tại máy, vừa đẩy lên máy chủ ──
-     Ba thứ dưới đây (kỳ sát hạch chương · bậc chủ đề · vòng đấu) trước nay chỉ nằm
-     ở localStorage. Đổi máy là mất, và cô giáo thì không bao giờ thấy được con vững
-     chủ đề nào — chỉ thấy con xong bài nào, một câu hỏi khác hẳn. */
-  const ghiChuong = useCallback((ma, chuong, grade) => {
-    const sau = recordChapter(progress, ma, chuong, grade);
-    setProgress(sau);
-    const k = khoaChuong(ma, chuong);
-    luuMucHocBa(learnerId, 'chuong', k, { giaTri: sau.chapters[k] }).catch(() => {});
-  }, [progress, learnerId]);
-
-  const ghiChuDe = useCallback((maDang, lop, kq) => {
-    const sau = ghiLuyenChuDe(progress, maDang, lop, kq);
-    setProgress(sau);
-    luuMucHocBa(learnerId, 'chuDe', maDang, { giaTri: sau.chuDe[maDang] }).catch(() => {});
-  }, [progress, learnerId]);
-
-  /**
-   * Lưu kết quả một vòng đấu Quyển 2.
-   *
-   * Ghi vào tiến độ tại máy để mở khoá vòng sau, ĐỒNG THỜI đẩy nhật ký lên máy chủ
-   * bằng đúng đường của Quyển 1 — cô giáo xem một bảng thấy cả hai quyển, không
-   * phải hai hệ thống rời. Mỗi câu một dòng, kèm con trả lời gì và bẫy nào đã sập.
-   */
-  const luuVongDau = useCallback((kq) => {
-    const vong = {
-      dat: !!kq.dat, diemBarem: kq.diemBarem,
-      soBaySap: (kq.microCanOn || []).length, at: new Date().toISOString(),
-    };
-    setProgress((p) => ({ ...p, dau: { ...(p.dau || {}), [kq.khoiId]: vong } }));
-    luuMucHocBa(learnerId, 'dau', kq.khoiId, { giaTri: vong }).catch(() => {});
-    const events = Object.entries(kq.ketQua || {}).map(([itemId, r]) => ({
-      phase: 'assess', itemId,
-      ok: r.ok ?? r.tuChamDung ?? false,
-      answer: r.answer, mode: r.ok === undefined ? 'tuluan' : 'so',
-      khiNao: Date.now(),
-    }));
-    pushAttempts({
-      learnerId, sessionId: `dau_${kq.khoiId}`, microId: kq.khoiId,
-      bktUnit: null, events,
-    }).catch(() => {});
-  }, [learnerId]);
+  const learnerId = tienDo[MON[0].ma]?.learnerId || 'local';
 
   const signOut = async () => {
     await logout().catch(() => {});
     try { localStorage.removeItem(SKIP_KEY); } catch { /* chế độ riêng tư */ }
     setSkipped(false);
     setView({ page: 'home' });
+  };
+
+  const account = {
+    signedIn: !!auth,
+    name: profile?.displayName || auth?.email || '',
+    onSignIn: () => { try { localStorage.removeItem(SKIP_KEY); } catch { /* bỏ qua */ } setSkipped(false); },
+    onSignOut: signOut,
+    available: hasFirebase && !LOCAL_KHONG_DANG_NHAP,
   };
 
   /* ── Các màn trước khi vào học ── */
@@ -194,7 +150,7 @@ export default function App() {
 
   // Giáo viên và quản trị không vào phòng học — họ chỉ xem kết quả
   if (auth && (role === 'teacher' || role === 'admin')) {
-    return <TeacherBoard onExit={signOut} />;
+    return <TeacherBoard mon={MON} onExit={signOut} />;
   }
 
   // Lần đầu đăng nhập: hỏi tên con rồi cho vào ngay.
@@ -210,168 +166,26 @@ export default function App() {
     );
   }
 
-  /* ── Phòng học — MỘT khối cho cả hai nhịp đọc ──
-     Trước đây có hai khối gần như trùng nhau: `lesson` (lớp 5) ở đây, `baiDocCham`
-     (lớp 2·3·4) nằm bên trong nhánh `nhipDocCham(chuongTrinh)` phía dưới. Nhánh ấy
-     đứng SAU `!chuongTrinh`, nên mở một bài lớp 3 từ màn chủ đề — nơi không có
-     quyển nào đang mở — là rơi thẳng về kệ sách. Gộp lại thì mở bài từ đâu cũng
-     vào đúng phòng học, và sửa khoảng cách một chỗ không còn làm lệch chỗ kia.
-
-     Hai tên màn vẫn giữ: `neighborIds`, `duongLui` và sổ tiến trình đều đã quen
-     hỏi `baiDocCham(id)` để biết bài thuộc nhịp nào. */
-  if (view.page === 'lesson' || view.page === 'baiDocCham') {
-    const baiId = view.microId || view.baiId;
-    return (
-      <LessonPlayer
-        /* `key` BẮT BUỘC: đổi bài mà không đổi key thì React giữ nguyên component
-           cũ, nên số thứ tự màn ở trong nó KHÔNG reset — bấm "Học lại bài lớp 2"
-           từ màn kết bài lớp 3 là rơi thẳng vào màn kết bài lớp 2 (24/24, điểm
-           0/0), coi như chưa học đã xong. `resumeAt` chỉ là giá trị KHỞI TẠO nên
-           không cứu được. */
-        key={baiId}
-        microId={baiId}
-        resumeAt={view.fromStart ? 0 : (resumeSpot(progress, baiId)?.step || 0)}
-        onMoveStep={(id, step, total) => setProgress((p) => saveSpot(p, id, step, total))}
-        /* Gửi dần trong lúc con học — bỏ dở giữa chừng vẫn giữ được bài đã làm */
-        onEvents={(s) => pushAttempts({ learnerId, ...s }).catch(() => {})}
-        onExit={() => setView(view.veLai || { page: 'home' })}
-        onFinish={(grade, lesson, session) => finishMicro(baiId, grade, lesson, session,
-                                                         view.veLai)}
-        /* Đường LÙI về quyển dưới. Đích thuộc quyển khác nên phải hỏi lại nhịp đọc
-           của CHÍNH nó, đừng ghim cứng ở đây. `fromStart`: đi lùi là để luyện lại
-           gốc, nên vào từ đầu bài — thả con vào giữa chỗ học dở của năm ngoái thì
-           mất hẳn nghĩa "học lại". Giữ nguyên `veLai` để chuỗi lùi bao nhiêu nấc
-           thì vẫn còn đường về chỗ xuất phát. */
-        onMoBai={(id) => setView({
-          ...(baiDocCham(id) ? { page: 'baiDocCham', baiId: id }
-                             : { page: 'lesson', microId: id }),
-          fromStart: true, ...(view.veLai ? { veLai: view.veLai } : {}),
-        })}
-      />
-    );
-  }
-
+  /* ══ SỔ BỐ MẸ ══ — nhìn MỌI môn một lượt, mỗi môn một tab */
   if (view.page === 'report')
     return (
       <ParentReport
-        progress={progress}
-        chuongTrinh={chuongTrinh}
-        cloudReport={cloudReport}
-        onRefresh={hasFirebase && learnerId !== 'local'
-          ? async () => {
-              await refreshMyReport(learnerId, 7);
-              setCloudReport(await myReport(learnerId));
-            }
-          : null}
-        onExit={() => setView({ page: 'home' })}
-        onOpenMicro={(id) => setView(baiDocCham(id)
-          ? { page: 'baiDocCham', baiId: id } : { page: 'lesson', microId: id })}
-      />
-    );
-
-  if (view.page === 'exam')
-    return (
-      <ExamPlayer
-        chapter={view.chapter}
-        chuongTrinh={chuongTrinh || 'lop5'}
-        onExit={() => setView({ page: 'home' })}
-        onOpenMicro={(id) => setView(baiDocCham(id)
-          ? { page: 'baiDocCham', baiId: id } : { page: 'lesson', microId: id })}
-        /* Ghi kết quả kèm MÃ QUYỂN. Sổ cũ khoá bằng số chương trần, nên con thi
-           chương 3 của lớp 2 là huy hiệu chương 3 của lớp 5 cũng sáng theo. */
-        onDone={(g) => { ghiChuong(chuongTrinh || 'lop5', view.chapter, g); setView({ page: 'home' }); }}
-      />
-    );
-
-  /* ══ HỌC THEO CHỦ ĐỀ — trục thứ hai, cắt ngang mọi quyển ══
-     Đặt TRƯỚC nhánh kệ sách vì nó không thuộc quyển nào: chọn chủ đề rồi mở bài
-     của bất kỳ lớp nào. Mở bài thì để `chuongTrinh` nguyên như cũ (đúng nếp đường
-     lùi ở màn kết), và ghi `veLai` để học xong còn tìm được đường về đây. */
-  if (view.page === 'chuDe')
-    return (
-      <ChuDe
-        progress={progress}
-        viTri={view.viTri}
-        /* Bậc xuất phát lấy theo lớp con khai lúc lập hồ sơ. Chưa khai thì lấy 5 —
-           quyển đầy đủ nhất — và vòng luyện tự lùi nếu con chưa với tới. */
-        lopCon={profile?.grade || 5}
-        onThoat={() => setView({ page: 'home' })}
-        /* Đường về NHÀ, khác với "← Quay lại" (lùi một tầng). Đi sâu ba tầng rồi
-           thì không phải bấm ba lần mới ra được kệ sách. */
+        mon={MON}
+        tienDo={tienDo}
+        learnerId={learnerId}
+        onExit={() => setView(view.veLai || { page: 'home' })}
         onVeNha={veKeSach}
-        onMoBai={(id, viTri) => setView({
-          ...(baiDocCham(id) ? { page: 'baiDocCham', baiId: id }
-                             : { page: 'lesson', microId: id }),
-          fromStart: true, veLai: { page: 'chuDe', viTri },
-        })}
-        /* Không chuyền `view.viTri` sang: lúc này con đã đi sâu bằng state bên
-           trong ChuDe nên trường ấy đã cũ. Mã dạng bài là đủ — ChuDe suy ra mảng
-           từ chính nó. */
-        onLuyen={(maDang, lop) => setView({ page: 'luyenChuDe', maDang, lop })}
-        /* Đấu thử ở Mùa giải: khối đấu KHÔNG phải một bậc của thang (tệp `DR_` chạy
-           bằng bộ chơi khác), nên đi thẳng sang màn đấu chứ không qua LessonPlayer. */
-        onMoDau={(khoiId, viTri) => setView({
-          page: 'dau', khoiId, veLai: { page: 'chuDe', viTri },
-        })}
       />
     );
-
-  /* ══ LUYỆN MỘT CHỦ ĐỀ — tự lùi khi kém, tự tiến khi đạt ══
-     Lùi thì mở BÀI HỌC của bậc dưới (con thiếu phần giảng, không phải thiếu bài
-     tập), và `veLai` đưa con thẳng về vòng luyện CỦA BẬC ẤY — học xong là đo lại
-     ngay, không phải tự tìm đường quay lại. */
-  if (view.page === 'luyenChuDe')
-    return (
-      <LuyenChuDe
-        key={`${view.maDang}@${view.lop}`}
-        maDang={view.maDang}
-        lop={view.lop}
-        progress={progress}
-        onXongLuot={ghiChuDe}
-        onDoiBac={(lop) => setView({ ...view, lop })}
-        onThoat={() => setView({ page: 'chuDe', viTri: { maDang: view.maDang } })}
-        onVeNha={veKeSach}
-        onMoBai={(id, lopDich) => setView({
-          ...(baiDocCham(id) ? { page: 'baiDocCham', baiId: id }
-                             : { page: 'lesson', microId: id }),
-          fromStart: true,
-          veLai: { page: 'luyenChuDe', maDang: view.maDang, lop: lopDich },
-        })}
-      />
-    );
-
-  /* ══ SÂN ĐẤU MÙA GIẢI ══
-     Phải đứng TRƯỚC nhánh kệ sách, và đây là chỗ dễ sai nhất của tệp này.
-
-     Vào sân đấu có HAI lối: kệ Mùa giải (lúc ấy `chuongTrinh` là lop5q2), và màn
-     chủ đề — "đấu thử ở Mùa giải" — nơi KHÔNG có quyển nào đang mở. Đặt nhánh này
-     sau `if (!chuongTrinh)` thì lối thứ hai bị kệ sách chặn ngang: bé bấm vào khối
-     đấu và bị ném về trang chính, không một tiếng báo.
-
-     Đúng cái bẫy đã dính một lần với bài lớp 3 mở từ màn chủ đề (khối `baiDocCham`
-     nằm sau `!chuongTrinh`). Cùng một hình dạng, cùng một triệu chứng.
-
-     Đường VỀ cũng không cố định là Mùa giải nữa: `veLai` đưa bé trở lại đúng chỗ đã
-     bấm, để vào từ chủ đề thì thoát ra vẫn còn mạch chủ đề đang theo. */
-  if (view.page === 'dau') {
-    const raKhoiDau = view.veLai || { page: 'muagiai' };
-    return (
-      <DauLoader
-        khoiId={view.khoiId}
-        onExit={() => setView(raKhoiDau)}
-        onMoMicro={(id) => setView({ page: 'lesson', microId: id })}
-        onXong={(kq) => { luuVongDau(kq); setView(raKhoiDau); }}
-      />
-    );
-  }
 
   /* ══ BẢNG XẾP HẠNG ══
-     Đặt TRƯỚC nhánh kệ sách, cùng lý do với màn chủ đề và sân đấu: bảng không thuộc
-     quyển nào, mà vào được từ CẢ HAI nơi (kệ sách và trang quyển). Đứng sau
-     `!chuongTrinh` là bấm từ kệ sách sẽ bị nuốt mất — đúng cái bẫy đã dính hai lần. */
+     Đặt TRƯỚC nhánh kệ sách: bảng không thuộc quyển nào mà vào được từ CẢ HAI nơi
+     (kệ sách và trang quyển). Đứng sau `!quyen` là bấm từ kệ sách sẽ bị nuốt mất —
+     đúng cái bẫy đã dính hai lần. */
   if (view.page === 'xephang')
     return (
       <BangXepHang
+        mon={MON}
         maCon={learnerId}
         hoSo={profile}
         onExit={() => setView(view.veLai || { page: 'home' })}
@@ -383,72 +197,38 @@ export default function App() {
     );
 
   /* ══ KỆ SÁCH — trang chính ══ */
-  if (!chuongTrinh)
+  if (!mon?.Man || (!quyen && view.page === 'home'))
     return (
       <KeSach
         dangKy={dangKy}
-        progress={progress}
-        onMoChuongTrinh={chonChuongTrinh}
-        onMoChuDe={() => setView({ page: 'chuDe' })}
+        mon={MON}
+        tienDo={tienDo}
+        onMoQuyen={chonQuyen}
+        onMoCuaPhu={moCuaPhu}
         onMoXepHang={() => setView({ page: 'xephang' })}
         onSoPhuHuynh={() => setView({ page: 'report' })}
-        account={{ signedIn: !!auth, onSignOut: signOut }}
+        account={account}
       />
     );
 
-  /* ══ QUYỂN 2 · MÙA GIẢI ══ */
-  if (view.page === 'muagiai')
-    return (
-      <MuaGiai
-        progress={progress}
-        onMo={(id) => setView({ page: 'dau', khoiId: id })}
-        onTrai={() => setView({ page: 'trai' })}
-        onHoSo={() => setView({ page: 'hosobay' })}
-        onThe={() => setView({ page: 'the' })}
-        onExit={() => setView({ page: 'home' })}
-        onVeKeSach={veKeSach}
-      />
-    );
-
-  if (view.page === 'trai')
-    return <TraiHuanLuyen onExit={() => setView({ page: 'muagiai' })} />;
-
-  if (view.page === 'hosobay')
-    return <HoSoBay onExit={() => setView({ page: 'muagiai' })}
-                    onMoMicro={(id) => setView({ page: 'lesson', microId: id })} />;
-
-  if (view.page === 'the')
-    return <TheChienThuat onExit={() => setView({ page: 'muagiai' })} />;
-
-  /* ══ TRANG CHÍNH CỦA MỘT QUYỂN — MỘT màn cho cả bốn quyển ══
-     Trước đây rẽ đôi ở đây: `nhipDocCham(chuongTrinh)` thì vào HomeLop2, còn lại vào
-     Home. Hai tệp, hai trải nghiệm, và mọi việc sửa đều phải làm hai lần (hoặc quên
-     một lần). Nay `HomeQuyen` đọc khác biệt từ sổ đăng ký — nhịp đọc CHẬM vẫn giữ,
-     nhưng nó là chuyện của PHÒNG HỌC (LessonPlayer), không phải của trang chính. */
+  /* ══ GIAO CHO MÔN ══
+     Từ đây trở đi vỏ không biết gì nữa: môn tự dựng mọi màn của mình. */
+  const Man = mon.Man;
   return (
-    <HomeQuyen
-      progress={progress}
-      chuongTrinh={chuongTrinh}
-      account={{
-        signedIn: !!auth,
-        name: profile?.displayName || auth?.email || '',
-        onSignIn: () => { try { localStorage.removeItem(SKIP_KEY); } catch { /* bỏ qua */ } setSkipped(false); },
-        onSignOut: signOut,
-        available: hasFirebase && !LOCAL_KHONG_DANG_NHAP,
-      }}
-      /* Mở bài thì hỏi lại nhịp đọc của CHÍNH bài ấy, đừng suy từ quyển đang mở —
-         hai tên màn phục vụ hai bộ khung khác nhau trong LessonPlayer. */
-      onMoBai={(id, opts) => setView({
-        ...(baiDocCham(id) ? { page: 'baiDocCham', baiId: id }
-                           : { page: 'lesson', microId: id }),
-        fromStart: !!opts?.fromStart,
-      })}
-      onSetMode={(m) => setProgress((p) => setMode(p, m))}
-      onMoOnTap={(c) => setView({ page: 'exam', chapter: c })}
-      onSoPhuHuynh={() => setView({ page: 'report' })}
-      onMoMuaGiai={() => setView({ page: 'muagiai' })}
+    <Man
+      tienDo={tienDo[mon.ma]}
+      datTienDo={datTienDoCua(mon.ma)}
+      quyen={quyen}
+      learnerId={learnerId}
+      /* Bậc xuất phát lấy theo lớp con khai lúc lập hồ sơ. Chưa khai thì lấy 5 —
+         quyển đầy đủ nhất — và vòng luyện tự lùi nếu con chưa với tới. */
+      lopCon={profile?.grade || 5}
+      account={account}
+      view={view}
+      setView={setView}
+      veKeSach={veKeSach}
+      onSoPhuHuynh={() => setView({ page: 'report', veLai: { page: 'home' } })}
       onMoXepHang={() => setView({ page: 'xephang', veLai: { page: 'home' } })}
-      onVeKeSach={veKeSach}
     />
   );
 }

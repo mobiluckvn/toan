@@ -3,7 +3,7 @@ import {
   buildTeacherBoard, topTraps, stuckLearners, learnerRows, boardHeadline, stampOf,
   maSach, minutesOf,
 } from '../functions/src/teacherboard.js';
-import { buildAttempts, isCloudLearner } from '../src/lib/sync.js';
+import { buildAttempts, isCloudLearner } from '../src/mon/toan/lib/sync.js';
 
 let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };

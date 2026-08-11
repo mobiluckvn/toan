@@ -2,9 +2,9 @@
 import fs from 'fs';
 import {
   startLevel, nextLevel, pickMicro, pendingExam, planSession, weakestUnits, keyOf, masteryOfMicro,
-} from '../src/lib/adaptive.js';
-import { emptyProgress, recordMicro, recordChapter } from '../src/lib/progress.js';
-import { allMicroIds, chapterOf } from '../src/lib/content.js';
+} from '../src/mon/toan/lib/adaptive.js';
+import { emptyProgress, recordMicro, recordChapter } from '../src/mon/toan/lib/progress.js';
+import { allMicroIds, chapterOf } from '../src/mon/toan/lib/noiDung.js';
 import {
   minutesStudied, topTraps, stuckItems, buildParentReport, reportHeadline, inRange,
 } from '../functions/src/report.js';

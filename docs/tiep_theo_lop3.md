@@ -366,7 +366,7 @@ giữ thứ tự) · `divmod` cho chia có dư (`"3 dư 1"` — giữ CẢ thư�
 
 Gõ `2000 + 400 + 30 + 5` mà sách ghi `2 000 + 400 + 30 + 5` thì **bị báo sai** — bé
 làm ĐÚNG vẫn trượt, ở mọi câu tách số theo hàng. Khoảng trắng giữa hai chữ số là dấu
-phân nghìn kiểu Việt, không mang nghĩa. Đã nới trong `web/src/lib/flow.js` (hàm
+phân nghìn kiểu Việt, không mang nghĩa. Đã nới trong `web/src/mon/toan/lib/flow.js` (hàm
 `boPhanNghin`), chỉ bỏ khi khoảng trắng kẹp GIỮA hai chữ số nên không gộp nhầm hai
 số. Nới này **có lợi cho cả lớp 2 và lớp 5**.
 

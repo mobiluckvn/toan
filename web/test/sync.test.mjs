@@ -2,7 +2,7 @@
 import {
   buildAttempts, buildProgressDoc, attemptId, enqueue, readQueue, writeQueue,
   flushQueue, newSessionId, COLLECTIONS, reassignQueue, isCloudLearner,
-} from '../src/lib/sync.js';
+} from '../src/mon/toan/lib/sync.js';
 
 let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };

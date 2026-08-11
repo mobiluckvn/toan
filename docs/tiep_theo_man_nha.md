@@ -16,7 +16,7 @@ sổ bố mẹ, bảng cô giáo, hay bất cứ chỗ nào đếm "con học t�
 
 ---
 
-## MỘT PHÉP ĐẾM CHO BỐN MÀN HÌNH — `web/src/lib/hocba.js`
+## MỘT PHÉP ĐẾM CHO BỐN MÀN HÌNH — `web/src/mon/toan/lib/hocba.js`
 
 Đây là thứ đáng giá nhất của đợt này. Trước đây bốn màn tự đếm lấy, mỗi màn một luật:
 

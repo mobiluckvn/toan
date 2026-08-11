@@ -8,7 +8,7 @@
 import {
   BAREM, diemBarem, diemDapSo, datChua, keDonOn, tuyenAn,
   conLai, hetGio, docGio, chamKep, moKhoa, chuongDaXong,
-} from '../src/lib/dau.js';
+} from '../src/mon/toan/lib/dau.js';
 import { readFileSync } from 'node:fs';
 
 let pass = 0, fail = 0;

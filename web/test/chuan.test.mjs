@@ -41,7 +41,7 @@ t(`số câu suy máy khớp (${Object.keys(dapan).length - Object.keys(tay).len
   so(/soát tay từng câu\) \| (\d+) \/ 281 \|/) === Object.keys(dapan).length - Object.keys(tay).length);
 
 /* Các dạng khoá đáp án chuẩn liệt kê phải là dạng bộ chấm THẬT SỰ hiểu. */
-const flow = readFileSync(join(G, 'web/src/lib/flow.js'), 'utf8');
+const flow = readFileSync(join(G, 'web/src/mon/toan/lib/flow.js'), 'utf8');
 for (const k of ['key.values', 'key.accept', 'key.parts', 'key.choice'])
   t(`bộ chấm hiểu ${k}`, flow.includes(k));
 

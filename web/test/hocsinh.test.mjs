@@ -9,7 +9,7 @@ import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import {
   buildFlow, answerFields, answerBrief, answerMode, checkAnswer, hintState, CACH_TRA_LOI,
-} from '../src/lib/flow.js';
+} from '../src/mon/toan/lib/flow.js';
 
 const R = new URL('../public/content/', import.meta.url).pathname;
 const les = readdirSync(R + 'lessons').filter((f) => f.endsWith('.json'))
