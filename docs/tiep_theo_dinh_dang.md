@@ -1,20 +1,16 @@
 # Điểm dừng — ĐỊNH DẠNG NỘI DUNG (markdown + LaTeX)
 
-Cập nhật 2026-08-11 (lượt hai). Đọc tệp này TRƯỚC khi động vào lời văn hay cách trình bày bài.
+Cập nhật 2026-08-11 (lượt ba). Đọc tệp này TRƯỚC khi động vào lời văn hay cách trình bày bài.
 
-> **ĐANG CHẠY trên ky-su-nhi.web.app.** Cổng: 29 tệp kiểm · 836 PASS · 0 FAIL.
-> Ba việc tồn của đợt trước ĐÃ XONG (2026-08-11). Việc còn lại nay khác — xem cuối tệp.
+> **Cổng: 30 tệp kiểm · 861 PASS · 0 FAIL.** Ba việc tồn của lượt hai ĐÃ XONG.
+> Đã đi thật trên bản dựng — và bắt được một lỗi chỉ lộ khi mở mắt xem (xem cuối tệp).
+> **Chưa deploy.**
 
 ---
 
 ## MAI VÀO VIỆC TỪ ĐÂU
 
-Làm theo đúng thứ tự này, vì việc trước có thể lộ thêm việc cho việc sau:
-
-1. **Viết gợi ý RIÊNG cho từng câu** — hiện mọi câu trong một bài dùng chung hai
-   gợi ý; cổng canh sẵn rồi.
-2. **Nới luật cho công thức có chữ cái** — đếm chỗ bọc nhầm trước khi nới.
-3. **Rút gọn 109 tên bài lớp 5.**
+**Không còn việc tồn nào chắn đường.** Hai việc chờ bác quyết, xem cuối tệp.
 
 ---
 
@@ -27,171 +23,186 @@ Làm theo đúng thứ tự này, vì việc trước có thể lộ thêm việ
 ② hình lớp2 python3 tools/ve_hinh_lop2.py            → vẽ PNG
             python3 tools/gan_hinh_lop2.py           → gắn vào bài (rồi dựng lại lớp 2)
 ③ mở bài L5 python3 tools/mo_bai_lop5.py             → nêu đề bài, bỏ đoạn thoại nói hai lần
-④ định dạng python3 tools/dinh_dang.py               → markdown + LaTeX
-⑤ bài mẫu   python3 tools/bai_mau.py                 → cắt phần Tóm tắt/Giải/Đáp số
-⑥ gợi ý     python3 tools/goi_y.py                   → hai tầng gợi ý cho lớp 2·3·4
-⑦ cổng      cd web && npm test && npm run build
+④ tên bài   python3 tools/ten_bai_lop5.py            → tên ngắn, tên gốc dời sang titleDay
+⑤ định dạng python3 tools/dinh_dang.py               → markdown + LaTeX
+⑥ bài mẫu   python3 tools/bai_mau.py                 → cắt phần Tóm tắt/Giải/Đáp số
+⑦ gợi ý     python3 tools/goi_y.py                   → nạp data/goi_y_tay.json
+⑧ chủ đề    python3 tools/dung_chu_de.py             → bản đồ (chép TÊN BÀI, nên chạy SAU ④)
+⑨ cổng      cd web && npm test && npm run build
 ```
 
-⚠ **④ và ⑤ sửa thẳng bản DỰNG** (`web/public/content`), mà bộ dựng ① thì ghi đè
-trọn tệp từ bản gốc. **Chạy ① sau ④⑤ là mất sạch định dạng — dữ liệu vẫn hợp lệ và
-KHÔNG CÓ GÌ BÁO.** Đúng cái bẫy đã dính với việc gắn hình ở Quyển 2.
+⚠ **⑤ và ⑥ sửa thẳng bản DỰNG** (`web/public/content`), mà bộ dựng ① thì ghi đè
+trọn tệp từ bản gốc. **Chạy ① sau ⑤⑥ là mất sạch định dạng — dữ liệu vẫn hợp lệ và
+KHÔNG CÓ GÌ BÁO.**
 
-③ thì KHÔNG dính bẫy ấy: lớp 5 không có bộ dựng khuôn chung, và `mo_bai_lop5.py`
-ghi **cả `data/lessons/` lẫn `web/public/content/lessons/`** — chạy lại lúc nào
-cũng được.
+③ và ④ KHÔNG dính bẫy ấy: lớp 5 không có bộ dựng khuôn chung, và cả hai đều ghi
+**cả bản gốc lẫn bản dựng**.
 
 ---
 
-## Đã làm ở đợt này
+## Lượt ba đã làm gì
 
-### 1 · MÀN MỞ BÀI — nêu vấn đề, KHÔNG nói trước cách làm
+### 1 · GỢI Ý RIÊNG CHO TỪNG CÂU — 984/984 câu, VIẾT TAY
 
-Chỗ này chưa sổ nào ghi, mà nó là **cơ chế**, không phải một lần sửa nội dung.
+Nguồn gốc: **`data/goi_y_tay.json`**. Sửa ở đó rồi chạy `tools/goi_y.py`.
 
-**Lớp 2·3·4 — `data/loi_chao.json`, 111 lời chào viết tay** (33 + 34 + 44 = đủ mọi
-bài). Bộ dựng `khuon_chung.py` nạp tệp này lúc nạp mô-đun và đặt vào
-`objective.kidText`, kèm cờ **`objective.laLoiChao`**. Bài nào thiếu thì rơi về
-mục tiêu giáo án và cổng `web/test/loi_chao.test.mjs` bắt ngay.
-
-Tệp giữ luôn ba khoá tài liệu `_doc` · `_luat` · `_vi_sao` — **đọc `_luat` trước
-khi viết thêm lời chào cho quyển mới.** Tóm tắt: một tình huống, tối đa hai câu,
-không nói cách làm, không chữ nghề, kết bằng câu hỏi hoặc lời rủ.
-
-Vì sao phải làm: mở bài trước đây in nguyên mục tiêu giáo án — **30/33 bài lớp 2,
-32/34 lớp 3 và 44/44 lớp 4 dài quá 170 chữ**, lại nói sẵn cách làm. `kidText` chỉ
-là bản sao y của `text` chứ chưa từng có bản viết cho trẻ.
-
-**Cờ `laLoiChao` điều khiển `flow.js:663`** — quyển CÓ lời chào thì màn mở là lời
-chào, còn `hook` đẩy sang màn sau; quyển KHÔNG có (lớp 5, Mùa giải) thì màn mở
-vẫn là `hook` như cũ. Bản đầu tôi gộp intro+hook cho **mọi** quyển, thành ra lớp 4
-nêu cùng một đề bài hai lần liền.
-
-**Lớp 5 — `tools/mo_bai_lop5.py`.** Bệnh khác hẳn: màn mở nói **cùng một đoạn
-thoại hai lần** — một lần bằng lời (trung bình 208 chữ), một lần nữa bằng hình
-`character_speech` chép lại đúng hai câu ấy (155 chữ). Bé đọc 363 chữ mà vẫn chưa
-thấy đề bài. Nay lời mở là **một câu nêu bài toán** lấy từ
-`knowledgeCore.canonicalExamples[0].problem`; hình mở chỉ giữ **câu SAI** (cái bẫy),
-bỏ câu phản bác vì nó thuộc màn giảng ngay sau. Bài hình học thì màn mở phải là
-**hình vẽ thật**, và chính hình ấy đi tiếp vào phần giải (`usedIn` mang cả hai
-chặng) để bé nhìn một hình từ đầu đến cuối.
-
-Cũng ở đợt này: bỏ ô "NGUYÊN TẮC CẦN NHỚ" khỏi màn mở — bác nói đúng, *mở bài mà
-đã có kiến thức cần nhớ thì còn gì để đọc*. Câu chốt nay có màn riêng đặt SAU khi
-giảng xong. Chỗ ẩn: `figFor(lesson,'mantra')` có đường lui kéo đúng tấm thẻ ấy trở
-lại màn vừa dọn — đã bỏ đường lui đó.
-
-### 2 · Bộ hiển thị markdown + LaTeX
-
-`web/src/lib/chuviet.js` (bộ đọc) + `web/src/components/Chu.jsx` (bộ vẽ).
-Dùng `<Chu t="…" />` cho một đoạn, `<Chu t="…" khoi />` cho nhiều đoạn.
-
-**Vì sao không dùng KaTeX.** Đã đếm cả bốn quyển trước khi chọn:
+Trước: mọi câu trong một bài dùng chung hai dòng suy từ câu chốt và bước giảng đầu.
+Nay mỗi câu một cặp riêng, theo đúng chuẩn gợi ý người soạn đã viết cho lớp 5:
 
 ```
-phân số a/b 5097 · tỉ số a : b 3193 · dấu × 5263 · phần trăm 1726
-m² cm² 488 · phân số lồng 183 · lũy thừa 25 · hỗn số 17 · CĂN: 0
+tầng 1  GỌI TÊN CẤU TRÚC        "Ba phòng, đọc từ trái sang: trăm — chục — đơn vị."
+tầng 2  NƯỚC ĐI ĐẦU, dừng trước kết quả   "Chữ số đứng đầu đang ở phòng nào?"
 ```
 
-Toàn số học tiểu học. KaTeX nặng ~270 KB kèm bộ phông riêng — vô lý cho một app
-trẻ con mở bằng điện thoại. **Dữ liệu vẫn là LaTeX chuẩn**, nên hôm nào cần công
-thức nặng hơn thì thay bộ vẽ mà không phải sửa một chữ nội dung.
+**MÁY KHÔNG SUY ĐƯỢC THỨ NÀY — đã cân nhắc rồi bỏ.** Định cắt tầng 2 từ
+`solutionNarrative` của từng câu, nhưng **274/984 câu có lời giải KHÔNG chứa dấu `=`
+nào**, vì lời giải của chúng CHÍNH LÀ đáp án (`"814"` · `"362; 509; 740"` ·
+`"gấp 10 lần"`). Cắt máy kiểu gì cũng ra đáp án hoặc ra một mẩu vô nghĩa.
 
-Nhận: `**đậm**` · `*nghiêng*` · `` `mã` `` · gạch đầu dòng · danh sách đánh số ·
-`### tiêu đề`; LaTeX `\frac{}{}` `\times` `\div` `^{}` `_{}` `\%` `\text{}`.
-Lệnh lạ thì **giữ nguyên văn**, không nuốt — thà bé thấy `\sqrt` còn hơn thấy
-chỗ trống.
+Cổng bắt ba chỗ lộ đáp lúc viết (`"11"`, `"có"`, `"không"`) và **sáu chỗ hai câu
+cùng bài dùng chung một dòng** — phép kiểm mới `gợi ý tầng 1 riêng theo từng câu`
+dựng riêng để canh việc tụt về bậc cũ.
 
-### 3 · Bộ chuyển `tools/dinh_dang.py` — 7123 chỗ
+### 2 · NỚI LUẬT ĐỊNH DẠNG CHO CÔNG THỨC CÓ CHỮ CÁI — 114 chỗ
 
-**Nguyên tắc: thà bỏ sót còn hơn bọc nhầm.** Bọc nhầm một mẩu lời văn vào `$…$`
-là bé thấy một cục chữ đơn cách giữa câu — xấu hơn lúc chưa sửa.
-
-Ba lỗi tự gây, bắt được bằng cách **đếm chỗ ngờ** (không phải bằng cổng):
-
-| lỗi | biểu hiện |
-|---|---|
-| loại trừ dấu phẩy cuối biểu thức | `9 - 4 = 5,` lùi còn `$9 - 4$` rồi bỏ `= 5` nằm trần |
-| `-` và `:` không phân biệt khoảng với phép tính | `lớp 4-5`, `trang 1 - 9`, `Chương 6 - 7` bị bọc thành phép trừ |
-| **`re.X` bỏ hết dấu cách trong mẫu** | `(?<!trang )` lặng lẽ thành `(?<!trang)` — chặn hoá ra không chặn gì |
-
-Luật hiện tại: `-` và `:` chỉ là phép tính khi **có dấu cách hai bên**; cụm một
-dấu đứng sau chữ chỉ thứ tự (`lớp`, `trang`, `Bài`…) thì coi là **khoảng**.
-
-### 4 · Bài mẫu trình bày như vào vở — `tools/bai_mau.py`
-
-**Cắt khúc, không viết mới.** Sách vốn đã có đủ mục, chúng chỉ nằm lẫn trong một
-dãy phẳng 1634 dòng. Chỉ gắn nhãn `phan` rồi để giao diện gom:
+`1/(a × b) = 1/a − 1/b` nay được bọc. **Đếm trước khi nới** đúng như sổ dặn: cả năm
+quyển có **991 cụm `X/Y` mang chữ**, mà đứng đầu bảng là
 
 ```
-261 TÓM TẮT · 540 PHÂN TÍCH · 415 BÀI GIẢI · 102 THỬ LẠI · 109 ĐÁP SỐ · 57 NÓI THÊM
-150 dòng chỉ-là-tiêu-đề đã bỏ    ·    279/279 bài chia được
+Đúng/Sai 230 · km/h 224 · m/s 115 · thêm/bớt 15 · phần/giờ 15
+vòng/giờ 15 · m/giây 14 · 1/năm 5 · 2/g 2 (gam) · Sxq/Stp 2
 ```
 
-Màu theo **vai trò**: chỗ NGHĨ nền xám, chỗ VIẾT nền xanh, chỗ CHỐT nền vàng.
+Nên luật chỉ nhận **mười chữ cái THƯỜNG, ĐƠN LẺ**: `a b c d k m n p q t` — đúng tập
+sách thật sự dùng làm ẩn. Ba chữ bị gạt có chủ ý: `s` và `h` là ĐƠN VỊ (m/s, km/h),
+`x` sách dùng làm DẤU NHÂN (`1/(1x2)`), `g` là gam. Chữ HOA cũng gạt (`N/A`,
+`TỔNG/HIỆU`, `Sxq/Stp`).
 
-**ĐÁP SỐ là MỘT dòng chốt.** Bản đầu để nó "dính" nên mọi dòng sau `Đáp số: 108
-đơn vị.` đều rơi vào mục ấy — đáp số dài ba dòng kèm cả lời bàn. Nay dòng sau
-đáp số vào mục NÓI THÊM.
+In ra soi bằng mắt cả 114 chỗ trước khi ghi: **0 chỗ bọc nhầm.** Mấy dạng ngờ ngợ
+(`(n−1)/n`, `(n+1)/2`, `1/(n(n+1))` nhân ngầm) cố tình bỏ sót — thà bỏ sót còn hơn.
 
-### 5 · Nối `<Chu>` vào mọi màn
+Cổng mới `dinh_dang.test.mjs` canh **chiều ngược**: không cụm lời văn nào bị bọc
+thành phân số. Nó cũng canh lệnh LaTeX dán liền chữ sau (`\timesb` → bộ vẽ in
+nguyên văn ra màn) — cái bẫy suýt dính khi nới luật.
 
-Đề bài · lời giảng · nguyên tắc · bài mẫu · câu luyện tập · lời giải · gợi ý ·
-dòng "Đáp án:" · kỳ sát hạch · vòng luyện chủ đề.
+### 3 · TÊN BÀI LỚP 5 — 109 tên, dài nhất 105 → 60 chữ
 
-Một chỗ trượt và **chỉ lộ khi mở mắt xem**: màn giảng dùng `step.screen.narration`
-(không có `?.`) nên phép thay hàng loạt trượt, và bé thấy nguyên văn
-`$\frac{1}{1 \times 2}$` trên màn hình.
+Nguồn gốc: **`data/ten_bai_lop5.json`** → `tools/ten_bai_lop5.py`.
 
-Phần PHÂN TÍCH (CHO GÌ · HỎI GÌ · ĐẠI LƯỢNG · QUAN HỆ · CHỌN CÔNG CỤ · ƯỚC LƯỢNG)
-trước in thành một khối chữ sáu dòng dính nhau; nay mỗi mục một khung có nhãn.
+Cái dở nặng hơn độ dài là **tên đã đọc trước cách làm** — "Vòng bốn 2·3·7·8: chia
+số thừa số cho 4 — đọc dư như máy định vị". Bé chưa mở bài đã biết nước đi, đúng
+bệnh của màn mở bài đã chữa một lần.
+
+**Không vứt chữ nào**: tên gốc dời sang `titleDay`, hiện ở ô GỬI BỐ MẸ của màn kết —
+bố mẹ đọc sau khi con đã tự làm xong.
+
+Tên nằm **BA nơi** (`data/lessons`, bản dựng, `index_micro.json`); sót một nơi là hai
+màn hiện hai tên khác nhau cho cùng một bài. Cổng `ten_bai.test.mjs` canh cả ba, và
+canh cả việc chạy lại công cụ chồng tên ngắn lên chính nó làm mất tên gốc.
+
+⚠ Cổng phải **trải phẳng LaTeX trước khi đo**: bản dựng đã qua `dinh_dang.py` nên
+tên ở đó là `$\frac{1}{n}$` — đếm chuỗi thô thì một cái tên 47 chữ hoá ra "84 chữ".
+
+### 4 · MÙA GIẢI VÀO MÀN CHỦ ĐỀ — TRỤC RIÊNG, KHÔNG VÀO THANG
+
+14 khối đấu mời được ở 74/82 dạng bài (`dang[].muaGiai` trong `chu_de.json`).
+
+Sổ cũ ghi lý do bỏ ra là "nối qua HAI chặng". Đúng, nhưng lý do **thật sự** phải giữ
+nó ngoài `thang` nặng hơn: **`thang[].bai` phải là bài HỌC ĐƯỢC.** Vòng luyện chủ đề
+gọi `loadLesson` rồi rút câu từ `practice.pools`; tệp Mùa giải mang tiền tố `DR_`, có
+`man`/`cau` chứ không có `practice.pools`, và chạy bằng bộ chơi khác hẳn.
+
+Nhét khối đấu vào thang là vòng luyện nạp về mảng câu RỖNG — **dữ liệu vẫn hợp lệ,
+cổng vẫn xanh, mà bé bấm vào thì gặp màn trắng.** Cổng `chu_de.test.mjs` nay canh
+đích danh: không mã `DR:` nào được lọt vào thang.
+
+### 5 · BẢNG CÔ GIÁO LỌC THEO DẠNG BÀI
+
+`chu_de.json` mang thêm bảng tra ngược **`baiDang`** (277 bài → mã dạng). Mỗi lượt trả
+lời gửi lên máy chủ nay đóng thêm dấu **`dangBai`** bên cạnh `bktUnit`.
+
+Hai trục trả lời hai câu khác nhau: `bktUnit` nói *con mắc ở micro nào*; `dangBai` nói
+*cả lớp đang yếu MẢNG kiến thức nào* — nhìn theo bài thì không bao giờ thấy. Nhìn theo
+bài, cô thấy "em sai bài 9, bài 23, bài 31"; nhìn theo dạng, cô thấy cả ba đều là
+"dấu hiệu chia hết".
+
+Ô lọc chỉ liệt những dạng THẬT SỰ có trong sổ của em ấy, và dòng cũ chưa có dấu vẫn
+lọc được (suy từ `microId` qua bản đồ) — không phải chờ con học lại mới có dữ liệu.
+Luật Firestore dùng `hasAll` nên trường mới lọt được, **không phải đẩy rules**.
 
 ---
 
-## Ba việc tồn của đợt trước — ĐÃ XONG (2026-08-11)
+## HAI CHỖ SỔ CŨ GHI SAI — đã soát lại và sửa
 
-### ① Soát định dạng toàn bộ — soi bằng máy cả năm quyển, tìm ra bốn chỗ hổng:
-Mùa giải chưa hề được định dạng (tệp mang tiền tố `DR_`, bộ chuyển chỉ lọc `DL_`);
-chuỗi đã có `$` thì bị bỏ qua CẢ chuỗi nên nửa còn lại mắc kẹt; luật phân số chặn
-nhầm dấu phẩy và chữ đứng sau; thiếu 11 trường chữ. Nay chạy tới khi ĐỨNG YÊN.
+### (a) "Nhiệt kế lớp 3 vẫn là ảnh" — KHÔNG CÓ NỢ NÀY
 
-### ② Vẽ lại hình — hoá ra chỉ **9 hình**, không phải 368 (sổ cũ đếm nhầm tổng số
-hình). Matplotlib vẽ mathtext sẵn. Phải sửa thêm `fit_fs` (đếm nguyên văn nên nhãn
-có công thức bị thu bé tí) và nhãn dưới hình bánh (bộ vẽ tự ghép `{tu}/{mau}`).
+`docs/tiep_theo_lop4.md` mục 2 ghi lớp 3 còn `image3.png` dùng 34 lần. Soát:
+`image3.png` **không hề còn** trong `web/public/content` lẫn `web/dist`, không tệp
+hình nào tên như thế, và không hình nào của lớp 3 gắn vào màn sát hạch. Lớp 3 đã dùng
+`NhietKeHieuBai.jsx` như lớp 2·4 ngay từ đợt bóc tách — chính
+`docs/phan_loai_hinh_lop3.md` dòng 12 ghi rõ "→ thành phần giao diện, không vẽ".
 
-### ③ 984 gợi ý — gắn được 955/984 câu, suy từ lời GIẢNG của chính bài. Cổng mới
-rồi bắt ngược lại **21 gợi ý của lớp 5 do người soạn viết nói thẳng đáp án**, đã
-viết lại cả 21.
+### (b) "Năm dạng bài chưa quyển nào dạy" — SÁCH CÓ DẠY ĐỦ CẢ NĂM
 
-Hai cổng mới: `goi_y.test.mjs` và `chu_vao_man.test.mjs` (đọc MÃ NGUỒN tìm chỗ in
-thẳng trường có LaTeX — nó bắt ngay 13 chỗ bỏ sót, gồm lời chào màn mở bài và cả
-màn Mùa giải chưa từng nối).
+Sổ cũ kết luận là lỗ hổng chương trình, cần soạn nội dung mới. **Sai.** Đọc mục tiêu
+và câu chốt của từng micro thì khớp từng chữ với lời tả dạng bài trong ma trận:
+
+```
+IV.5.3 Bể nước                ← B52.M2 "BỂ LÀ CÁI VỎ — NƯỚC MỚI LÀ HIỆN TRẠNG"
+V.1.2  Vận tốc trung bình     ← B53.M3 "Vtb = tổng S : tổng T, KHÔNG phải 45"
+V.3.2  Đường vòng khép kín    ← B55.M1 "khoảng cách cần gặm là cả MỘT VÒNG"
+                              ← B56.M3 "hai kim đồng hồ là bài ĐUỔI KỊP trên đường vòng"
+V.5.1  Tàu qua vật đứng yên   ← B56.M1 "qua mốc là ĐIỂM — quãng = đúng THÂN TÀU"
+V.5.2  Tàu và vật chuyển động ← B56.M2 "MỐC BIẾT CHẠY — ngược chiều chia TỔNG"
+```
+
+**Gốc rễ:** chương 55 và 56 khai `skills.primary` theo số hiệu CHƯƠNG chứ không theo
+số hiệu DẠNG — cả sáu micro đánh `CASE:V.3.1#1..3` và `CASE:V.4.1#1..3`, tức lấy dạng
+đầu tiên của chương rồi đánh số thứ tự micro phía sau. Cả mảng V lệch một nấc.
+
+**Vì sao không sửa thẳng `skills.primary`:** trường ấy đẻ ra luôn `bktUnit`, mà
+`bktUnit` đã nằm trong nhật ký đã gửi lên máy chủ và trong sổ mức thạo. Đổi nó là mọi
+bản ghi cũ mồ côi — mất lịch sử học của con để đổi lấy một nhãn phân loại. Vá bằng
+`data/chu_de_tay.json` (`themBac`), đúng chỗ tệp ấy dựng ra để xử.
+
+Bản đồ nay **0 dạng thủng**, 321 mối nối bài (trước 315).
 
 ---
 
-## Việc còn lại
+## LỖI CHỈ LỘ KHI MỞ MẮT XEM — lại một lần nữa
 
-### 1 · GỢI Ý MỚI THEO BÀI, CHƯA THEO CÂU
+Cổng 861 PASS, build sạch. Đi thật một vòng thì: **bấm khối đấu từ màn chủ đề là bé
+bị ném về kệ sách**, không một tiếng báo.
 
-Mọi câu trong cùng một bài đang dùng chung hai gợi ý (lấy từ câu chốt và bước
-giảng đầu). Lớp 5 thì mỗi câu một gợi ý riêng do người soạn viết — đó là bậc trên.
-Viết riêng cho 984 câu vẫn là việc còn để lại; cổng `goi_y.test.mjs` đã sẵn sàng
-canh cho việc ấy (không được nói ra đáp án · không quá 160 chữ · không cắt giữa
-công thức).
+Vì trong `App.jsx`, nhánh `if (!chuongTrinh) return <KeSach/>` nằm **CHẮN GIỮA** màn
+chủ đề và màn đấu. Vào từ chủ đề thì không có quyển nào đang mở, nên kệ sách nuốt mất
+`view.page === 'dau'` trước khi tới nơi.
 
-29 câu hiện KHÔNG có gợi ý nào, vì cả hai tầng đều chứa nguyên văn đáp án của
-chính câu ấy nên bị bỏ.
+**Đúng cái bẫy đã dính một lần rồi** — vụ mở bài lớp 3 từ màn chủ đề (khối `baiDocCham`
+nằm sau `!chuongTrinh`). Cùng một hình dạng, cùng một triệu chứng. Nay nhánh `dau` đã
+dời lên TRƯỚC kệ sách, kèm lời ghi tại chỗ.
 
-### 2 · CÔNG THỨC CÓ CHỮ CÁI
+**Bài học giữ lại: mọi màn vào được từ MÀN CHỦ ĐỀ đều phải đứng trước `!chuongTrinh`.**
+Màn chủ đề không thuộc quyển nào — đó là cả điểm mạnh lẫn cái bẫy của nó.
 
-`1/(a × b) = 1/a - 1/b` chưa được bọc, vì luật đòi hai đầu là SỐ. Nới được, nhưng
-phải đếm lại chỗ bọc nhầm trước — "km/h", "N/A", "và/hoặc" đều có dạng `chữ/chữ`.
+Đã đi thật, gồm cả một lượt cố tình làm sai:
+1. kệ sách → chủ đề → mảng V → dạng 5.1 (từng là "chưa có bài", nay có bậc lớp 5);
+2. bấm "đấu thử ở Mùa giải" → mở đúng vòng đấu V14, luật 15 câu · 12 bẫy;
+3. bấm Thoát → về **đúng** màn chủ đề 5.1, không rơi vào kệ Mùa giải;
+4. lớp 2 bài 1 → luyện tập → sai lần 1 hiện gợi ý tầng 1, sai lần 2 hiện thêm tầng 2;
+5. sang câu kế → gợi ý **khác hẳn** ("Mở từng cửa phòng rồi cộng lại");
+6. lớp 3 bài 9 màn giảng → `1/k` vẽ thành phân số xếp dọc, không lộ mã LaTeX.
 
-### 3 · TÊN BÀI LỚP 5
+---
 
-109/168 tên dài quá 60 chữ và bản thân cái tên đã là cách làm ("Vòng bốn 2·3·7·8:
-chia số thừa số cho 4 — đọc dư như máy định vị"). Đổi thì đổi cả danh sách chương,
-màn chủ đề và sổ phụ huynh.
+## Hai việc CHỜ BÁC QUYẾT
+
+| # | việc | vì sao phải hỏi |
+|---|---|---|
+| 1 | Bỏ chip mã `K1 · K2 · K3` ở màn nguyên tắc | sửa là đụng cả bốn quyển đang chạy thật |
+| 2 | Deploy `functions` và `firestore rules` | mấy phiên nay không đụng tới chúng nên chưa đẩy; muốn đẩy phải soát trước |
+
+Riêng **hosting** thì đẩy được ngay: `cd web && npx firebase deploy --only hosting`.
 
 ---
 

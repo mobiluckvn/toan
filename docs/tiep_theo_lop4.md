@@ -21,7 +21,7 @@ Nguồn: `docs/KSN4_SACH_HOAN_CHINH_Ky_Su_Nhi_Lop4.docx` · 44 bài · 11 chươ
 | # | việc | trạng thái |
 |---|---|---|
 | 1 | **Deploy lớp 4** | `cd web && npx firebase deploy --only hosting`. Chỉ đẩy hosting — functions và rules cả phiên không đụng tới |
-| 2 | Nhiệt kế cho LỚP 3 | `image3.png` của lớp 3 (dùng 34 lần) vẫn là PNG; thành phần `NhietKe.jsx` đã dùng chung được, chỉ cần bỏ ảnh cũ |
+| 2 | ~~Nhiệt kế cho LỚP 3~~ | **GHI NHẦM — không có nợ này.** Soát 11-08-2026: xem mục 2 bên dưới |
 | 3 | Bỏ chip mã `K1 · K2 · K3` ở màn nguyên tắc | **chờ bác quyết** — sửa là đụng cả bốn quyển đang chạy |
 
 Chạy lại trọn dây chuyền:
@@ -267,10 +267,15 @@ Cùng lúc gộp hai hộp báo kết quả làm một: ô nhập in một hộp
 nữa ngay dưới, hai hộp nói cùng một điều — và hộp trên còn mời "con chọn/sửa lại rồi
 bấm Kiểm tra lần nữa nhé".
 
-### 2 · Nhiệt kế của LỚP 3 vẫn là ảnh
+### 2 · ~~Nhiệt kế của LỚP 3 vẫn là ảnh~~ — MỤC NÀY GHI NHẦM
 
-`NhietKeHieuBai.jsx` nhận `tong` nên dùng chung cho mọi quyển; lớp 4 đã bỏ hẳn ảnh
-gốc. Lớp 3 vẫn còn `image3.png` (dùng 34 lần) — món nợ cũ, nay đã có sẵn thành phần thay.
+**Soát lại 11-08-2026: không có món nợ nào.** `image3.png` KHÔNG hề còn trong
+`web/public/content` lẫn `web/dist`, không tệp hình nào mang tên ấy, và không hình nào
+của lớp 3 gắn vào màn sát hạch. Lớp 3 đã dùng `NhietKeHieuBai.jsx` như lớp 2 và lớp 4
+ngay từ đợt bóc tách — chính `docs/phan_loai_hinh_lop3.md` dòng 12 ghi rõ nhiệt kế
+"→ thành phần giao diện, không vẽ".
+
+Giữ mục này lại thay vì xoá, để người sau khỏi đi soát lại một lần nữa.
 
 ### 3 · Bốn câu CỐ Ý để tự chấm
 

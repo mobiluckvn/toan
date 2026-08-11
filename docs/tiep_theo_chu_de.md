@@ -5,21 +5,16 @@ Cập nhật 2026-08-10. Đọc tệp này TRƯỚC khi động vào bản đồ
 Nguồn ma trận: `docs/Ma_tran_kien_thuc_Toan5_HSG_Cap4.xlsx` — **đối chiếu ra thì nó
 chính là `data/km_v1_38.json` đã có sẵn trong kho.**
 
-> **XONG TRỌN — cả ba giai đoạn.** Bản đồ chủ đề · màn xem theo chủ đề · vòng luyện
-> tự lùi tự tiến. Cổng nghiệm thu: **26 tệp kiểm · 821 PASS · 0 FAIL**. Chưa deploy.
+> **XONG TRỌN.** Bản đồ chủ đề · màn xem theo chủ đề · vòng luyện tự lùi tự tiến ·
+> Mùa giải · bảng cô giáo lọc theo dạng. Cổng: **30 tệp kiểm · 861 PASS · 0 FAIL**.
+> Chưa deploy. Ba việc tồn của đợt đầu ĐÃ XONG (11-08-2026) — xem cuối tệp.
 
 ---
 
 ## MAI VÀO VIỆC TỪ ĐÂU
 
-**Không còn việc tồn nào chắn đường.** Ba hướng, xếp theo giá trị:
-
-1. **Bù 5 dạng bài chưa quyển nào dạy** (xem cuối tệp) — ma trận đòi mà chương trình
-   thủng, và nay màn chủ đề hiện thẳng ra "chưa có bài".
-2. **Đưa Mùa giải (`lop5q2`) vào thang.** Nó nối vào chủ đề qua HAI chặng
-   (`bay[].micro` → micro lớp 5 → dạng bài) nên đợt này cố ý bỏ ra.
-3. **Cho bảng cô giáo soi theo chủ đề** — `sync.js` đã stamp `bktUnit` mỗi lượt trả
-   lời; thêm `dangBai` là bảng lọc được theo dạng bài. Chưa làm ở đợt này.
+**Không còn việc tồn nào chắn đường** — ba hướng của đợt đầu đã làm xong cả ba
+(11-08-2026). Đọc `docs/tiep_theo_dinh_dang.md` để biết hiện đang đứng ở đâu.
 
 ---
 
@@ -27,6 +22,7 @@ chính là `data/km_v1_38.json` đã có sẵn trong kho.**
 
 | bước | lệnh | ra cái gì |
 |---|---|---|
+| 0 | `python3 tools/ten_bai_lop5.py` | tên bài lớp 5 — chạy TRƯỚC, vì bản đồ chép tên bài |
 | 1 | `python3 tools/ma_tran.py` | bảng đối chiếu Excel ↔ bản đồ. Chỉ ĐỌC, không ghi |
 | 2 | `python3 tools/dung_chu_de.py` | `data/chu_de.json` **và** `web/public/content/chu_de.json` |
 | 3 | `node web/test/chu_de.test.mjs` | cổng riêng cho bản đồ (16 phép kiểm) |
@@ -36,7 +32,7 @@ chính là `data/km_v1_38.json` đã có sẵn trong kho.**
 dùng để soi bằng mắt (82 dòng, đọc một lượt hết chừng năm phút).
 
 Sửa tay thì sửa `data/chu_de_tay.json`, **không sửa `chu_de.json`** — tệp ấy dựng lại
-là mất. Đợt đầu KHÔNG có dòng sửa tay nào.
+là mất. Đợt đầu không có dòng sửa tay nào; đợt hai có **5 dòng**, xem cuối tệp.
 
 ---
 
@@ -188,27 +184,47 @@ Trọn vòng, gồm **một lượt cố tình làm sai**:
 
 ## Việc còn lại
 
-### 1 · Năm dạng bài ma trận có mà CHƯA QUYỂN NÀO DẠY
+### 1 · ~~Năm dạng bài chưa quyển nào dạy~~ — SÁCH CÓ DẠY ĐỦ CẢ NĂM
+
+**Kết luận cũ SAI, đã sửa 11-08-2026.** Đợt đầu ghi đây là lỗ hổng chương trình, cần
+soạn nội dung mới. Đọc mục tiêu và câu chốt của từng micro thì nội dung khớp từng chữ
+với lời tả dạng bài trong ma trận:
 
 ```
-PT:IV.5.3  5.3. Bài toán Bể nước
-PT:V.1.2   1.2. Vận tốc trung bình
-PT:V.3.2   3.2. Chuyển động trên đường vòng (khép kín)
-PT:V.5.1   5.1. Tàu qua vật đứng yên
-PT:V.5.2   5.2. Tàu và vật chuyển động
+IV.5.3 Bể nước                ← B52.M2 "BỂ LÀ CÁI VỎ — NƯỚC MỚI LÀ HIỆN TRẠNG"
+V.1.2  Vận tốc trung bình     ← B53.M3 "Vtb = tổng S : tổng T, KHÔNG phải 45"
+V.3.2  Đường vòng khép kín    ← B55.M1 · B56.M3 (hai kim đồng hồ)
+V.5.1  Tàu qua vật đứng yên   ← B56.M1 "qua mốc là ĐIỂM — quãng = đúng THÂN TÀU"
+V.5.2  Tàu và vật chuyển động ← B56.M2 "MỐC BIẾT CHẠY — ngược chiều chia TỔNG"
 ```
 
-Không phải lỗi bộ dựng — là lỗ hổng chương trình. Cổng in ra mỗi lần chạy, và màn
-chủ đề hiện "chưa có bài" chứ không giấu đi: giấu thì ma trận trông như phủ kín.
+**Gốc rễ:** chương 55 và 56 khai `skills.primary` theo số hiệu CHƯƠNG chứ không theo
+số hiệu DẠNG — cả sáu micro đánh `CASE:V.3.1#1..3` và `CASE:V.4.1#1..3`, tức lấy dạng
+đầu tiên của chương rồi đánh số thứ tự micro phía sau. Cả mảng V lệch một nấc.
+
+Vá bằng `data/chu_de_tay.json` chứ không sửa `skills.primary`, vì trường ấy đẻ ra luôn
+`bktUnit` — thứ đã nằm trong nhật ký đã gửi lên máy chủ. Lý do đầy đủ ghi trong chính
+tệp ấy. Bản đồ nay **0 dạng thủng · 321 mối nối bài**.
+
+**Bài học giữ lại: "ma trận có mà sách không có" gần như luôn là SAI KHAI, không phải
+thủng chương trình. Đọc mục tiêu micro trước khi kết luận.**
 
 ### 2 · Mười sáu dạng chỉ có MỘT bậc
 
 Phần lớn là dạng riêng lớp 5 (pha chế dung dịch, hạt tươi - hạt khô, kim đồng hồ).
 Vẫn hiện trong danh sách, nhưng luyện kém thì chạm sàn ngay ở lớp 5.
 
-### 3 · Mùa giải chưa vào thang
+### 3 · ~~Mùa giải chưa vào thang~~ — XONG, mà đi TRỤC RIÊNG
 
-Xem mục "MAI VÀO VIỆC TỪ ĐÂU" ở trên.
+14 khối đấu mời được ở 74/82 dạng, qua `dang[].muaGiai` — **không** phải một bậc của
+`thang`. Lý do nặng hơn chuyện "hai chặng": `thang[].bai` phải là bài HỌC ĐƯỢC, vì
+vòng luyện gọi `loadLesson` rồi rút câu từ `practice.pools`; tệp Mùa giải là `DR_`,
+có `man`/`cau` và chạy bằng `DauPlayer.jsx`. Nhét vào thang là vòng luyện nạp về mảng
+câu RỖNG — cổng vẫn xanh mà bé bấm vào thì gặp màn trắng. Cổng nay canh đích danh.
+
+⚠ Và đã dính thật một lỗi anh em của nó: nhánh `!chuongTrinh` trong `App.jsx` chắn
+giữa màn chủ đề và màn đấu, nên bấm khối đấu từ chủ đề là rơi về kệ sách. **Mọi màn
+vào được từ màn chủ đề đều phải đứng TRƯỚC `!chuongTrinh`.**
 
 ---
 
