@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
+import { LOP_HOC, LOP_MAC_DINH } from '../lib/content.js';
 
 /**
  * LẦN ĐẦU ĐĂNG NHẬP — hỏi đúng hai thứ rồi cho vào học ngay.
  * Không hỏi gì thêm: mỗi ô hỏi thừa là một cơ hội để bố mẹ bỏ dở giữa chừng.
+ *
+ * Danh sách lớp lấy từ `LOP_HOC` (lớp 2 → 12), KHÔNG phải từ danh sách sách đang có.
+ * Bản đầu chỉ cho chọn 4·5·6 — anh chị lớp 8 phải khai sai ngay ở màn đầu tiên, mà
+ * con số ấy đi thẳng vào bảng xếp hạng lẫn vào bậc xuất phát của vòng luyện chủ đề.
  */
 export default function ProfileSetup({ email, onSave, onSkip }) {
   const [name, setName] = useState('');
-  const [grade, setGrade] = useState(5);
+  const [grade, setGrade] = useState(LOP_MAC_DINH);
   const [busy, setBusy] = useState(false);
 
   const save = async () => {
@@ -34,15 +39,28 @@ export default function ProfileSetup({ email, onSave, onSkip }) {
 
         <div className="field mt-2.5">
           <span className="field-head">Con đang học lớp</span>
-          <div className="flex flex-wrap gap-2">
-            {[4, 5, 6].map((g) => (
+          {/* Lưới đều thay vì hàng cuộn: mười một nút xếp hai hàng cân nhau, bấm được
+              bằng ngón tay, và nhìn một cái là thấy hết — không có nút nào nấp ngoài
+              mép màn hình. Nhãn "Lớp" đã nằm ở dòng trên nên nút chỉ cần con số. */}
+          <div className="grid grid-cols-6 gap-1.5">
+            {LOP_HOC.map((g) => (
               <button key={g} type="button" onClick={() => setGrade(g)}
-                className={`rounded-full border-[1.5px] px-4 py-1.5 text-[14.5px] font-bold ${
+                aria-label={`Lớp ${g}`} aria-pressed={grade === g}
+                className={`rounded-xl border-[1.5px] py-2 text-[15px] font-bold ${
                   grade === g ? 'border-navy bg-navy text-white' : 'border-line bg-white text-navy'}`}>
-                Lớp {g}
+                {g}
               </button>
             ))}
           </div>
+          {/* Nói thẳng là chưa có sách cho lớp trên — khai đúng lớp vẫn có ích (bảng
+              xếp hạng và bậc luyện chủ đề dùng tới), nhưng đừng để anh chị lớp 8 chọn
+              xong rồi đi tìm sách lớp 8 mà không thấy. */}
+          {grade > 5 && (
+            <p className="mt-2 rounded-xl bg-gold-pale px-3 py-2 text-[12.5px] leading-relaxed text-gold-dark">
+              Sách cho lớp {grade} đang được biên soạn. Trong lúc chờ, con học được cả
+              bốn quyển Toán Tư Duy lớp 2 – 5 và luyện theo chủ đề để chắc lại nền.
+            </p>
+          )}
         </div>
 
         <button className="btn-go mt-4" disabled={!name.trim() || busy} onClick={save}>

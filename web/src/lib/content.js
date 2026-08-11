@@ -47,6 +47,25 @@ export const soDangKy = () => SO_DK;
 export const dsChuongTrinh = () => Object.values(SO_DK.chuongTrinh || {});
 
 /**
+ * CÁC LỚP CON CÓ THỂ ĐANG HỌC — lớp 2 đến lớp 12.
+ *
+ * KHÔNG phải danh sách quyển sách đang có. Hai thứ khác nhau: app mới có sách Toán
+ * lớp 2·3·4·5, nhưng anh chị lớp 6-12 vẫn dùng app (ôn lại nền, hoặc chờ sách của
+ * mình). Hỏi "con học lớp mấy" mà chỉ cho chọn 4·5·6 thì anh lớp 8 phải khai sai
+ * ngay ở màn đầu tiên — và con số sai ấy đi thẳng vào bảng xếp hạng ("Bạn nhỏ lớp
+ * 5") lẫn vào bậc xuất phát của vòng luyện chủ đề.
+ *
+ * Để ở đây vì `content.js` là nơi giữ sổ đăng ký; sửa một chỗ, mọi màn theo.
+ */
+export const LOP_HOC = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+/** Lớp mặc định khi con chưa khai — lấy quyển đầy đủ nhất đang có. */
+export const LOP_MAC_DINH = 5;
+
+/** Giữ lớp trong khoảng có thật. Luật Firestore không soi trường này. */
+export const lopHopLe = (g) => (LOP_HOC.includes(Number(g)) ? Number(g) : LOP_MAC_DINH);
+
+/**
  * Các quyển theo ĐÚNG THỨ TỰ HIỆN LÊN KỆ SÁCH: lớp 2 → 3 → 4 → 5 → tổng ôn lớp 5.
  *
  * Thứ tự khai trong tệp KHÔNG dùng được: sổ vốn khai theo thứ tự làm xong quyển

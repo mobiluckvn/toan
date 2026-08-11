@@ -20,7 +20,7 @@ import {
   COLLECTIONS, buildAttempts, buildProgressDoc, enqueue, flushQueue, newSessionId,
   isCloudLearner, normalizeEmail, maHocBa,
 } from './sync.js';
-import { napBanDoDang, dangCuaBai } from './content.js';
+import { napBanDoDang, dangCuaBai, lopHopLe } from './content.js';
 
 /** Điền từ Firebase Console → Project settings. Đặt trong .env.local, không commit. */
 const cfg = {
@@ -91,8 +91,11 @@ export async function myProfile(uid) {
 
 export async function saveProfile(uid, { displayName, grade }) {
   if (!db) return;
+  /* Chặn lớp lạ ngay tại đây: luật Firestore cho chính chủ sửa hồ sơ và KHÔNG soi
+     trường `grade`, nên một con số bậy ghi được thẳng lên — rồi hiện ra bảng xếp
+     hạng thành "Bạn nhỏ lớp 99" cho cả trường đọc. */
   await setDoc(doc(db, COLLECTIONS.users, uid),
-    { displayName, grade, profileComplete: true }, { merge: true });
+    { displayName, grade: lopHopLe(grade), profileComplete: true }, { merge: true });
 }
 
 /**

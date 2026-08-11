@@ -3,7 +3,7 @@ import ThanhTren from './ThanhTren.jsx';
 import ChanTrang from './ChanTrang.jsx';
 import { bangXepHang, lamMoiBangXepHang, luuBietDanh, luuDuoiKip } from '../lib/firebase.js';
 import {
-  BANG, bangCua, DS_LOP, locLop, danhSachHien, khoangCachTren, soKe, loiSoKe, huyChuong,
+  BANG, bangCua, dsLop, locLop, danhSachHien, khoangCachTren, soKe, loiSoKe, huyChuong,
 } from '../lib/xephang.js';
 
 /**
@@ -251,7 +251,7 @@ export default function BangXepHang({ maCon, hoSo, onExit, onVeNha, onLuuHoSo })
         {/* Lọc theo lớp. "Cả nhà" đứng đầu và là mặc định — cả điểm của bảng này là
             để bé lớp 2 nhìn thấy bé lớp 3, không phải để nhốt mỗi bé trong lớp mình. */}
         <div className="mt-2 flex flex-wrap gap-1.5">
-          {DS_LOP.map((l) => (
+          {dsLop(bang.rows).map((l) => (
             <button key={l.ma} onClick={() => setLop(l.ma)}
               className={`rounded-full px-2.5 py-1 text-[12px] font-bold ${
                 lop === l.ma ? 'bg-navy text-white' : 'bg-soft text-navy'}`}>

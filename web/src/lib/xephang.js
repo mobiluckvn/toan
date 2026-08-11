@@ -111,10 +111,21 @@ export function loiSoKe(sk, nhan) {
 /** Huy chương cho ba hạng đầu; từ hạng 4 trở đi hiện số. */
 export const huyChuong = (hang) => ({ 1: '🥇', 2: '🥈', 3: '🥉' }[hang] || null);
 
-export const DS_LOP = [
-  { ma: 0, ten: 'Cả nhà' },
-  { ma: 2, ten: 'Lớp 2' }, { ma: 3, ten: 'Lớp 3' },
-  { ma: 4, ten: 'Lớp 4' }, { ma: 5, ten: 'Lớp 5' },
-];
+/**
+ * Bộ lọc lớp — suy TỪ CHÍNH DỮ LIỆU của bảng, không ghim cứng 2·3·4·5.
+ *
+ * Hai lý do. Một: hồ sơ nay cho khai lớp 2 → 12, nên nếu ghim 2-5 thì anh lớp 8 có
+ * mặt trên bảng mà không có ô lọc nào chứa mình. Hai: ghim đủ mười một lớp thì màn
+ * hình đầy chip rỗng — trường nào cũng chỉ có vài lớp thật.
+ *
+ * Chỉ hiện lớp CÓ NGƯỜI, và chỉ hiện bộ lọc khi có từ hai lớp trở lên: một lớp thì
+ * cái nút "Cả nhà" chẳng lọc gì, chỉ tổ chiếm chỗ.
+ */
+export function dsLop(rows = []) {
+  const co = [...new Set(rows.map((r) => Number(r.lop)).filter(Number.isFinite))]
+    .sort((a, b) => a - b);
+  if (co.length < 2) return [];
+  return [{ ma: 0, ten: 'Cả nhà' }, ...co.map((l) => ({ ma: l, ten: `Lớp ${l}` }))];
+}
 
 export const locLop = (rows, lop) => (lop ? rows.filter((r) => r.lop === lop) : rows);

@@ -16,7 +16,7 @@ import {
   SAO, TRAN_SAO_NGAY, ngayVN, saoTrongKhoang, chuoiNgay, tenHien, xepHang, buildBangXepHang,
 } from '../functions/src/bangxephang.js';
 import {
-  xepLai, danhSachHien, khoangCachTren, soKe, loiSoKe, locLop, BANG, huyChuong,
+  xepLai, danhSachHien, khoangCachTren, soKe, loiSoKe, locLop, dsLop, BANG, huyChuong,
 } from '../src/lib/xephang.js';
 
 let pass = 0, fail = 0;
@@ -191,6 +191,39 @@ t('ranh giới ngày tính theo giờ Việt Nam',
   const l3 = xepLai(locLop(rows, 3), 'saoTuan');
   t('bảng của một lớp đánh số lại TỪ 1, không giữ hạng toàn trường',
     l3[0].hang === 1 && l3[0].ma === 'b');
+
+  /* Bộ lọc suy TỪ DỮ LIỆU, không ghim 2·3·4·5: hồ sơ nay cho khai lớp 2 → 12, nên
+     ghim cứng là anh lớp 8 có mặt trên bảng mà không ô lọc nào chứa mình. */
+  t('bộ lọc chỉ hiện lớp CÓ NGƯỜI, xếp tăng dần',
+    dsLop(rows).map((l) => l.ma).join() === '0,3,5');
+  t('lớp trên tiểu học cũng có ô lọc của mình',
+    dsLop([...rows, { ma: 'x', ten: 'X', lop: 8, saoTuan: 1 }]).some((l) => l.ma === 8));
+  /* Một lớp thì nút "Cả nhà" chẳng lọc gì — đừng vẽ ra chiếm chỗ. */
+  t('chỉ một lớp thì không vẽ bộ lọc',
+    dsLop([{ ma: 'a', ten: 'A', lop: 3 }, { ma: 'b', ten: 'B', lop: 3 }]).length === 0);
+  t('bảng rỗng thì không vẽ bộ lọc', dsLop([]).length === 0);
+}
+
+/* ═══════════ K · LỚP CON KHAI ĐƯỢC: 2 → 12 ═══════════
+   Bản đầu của màn hồ sơ chỉ cho chọn 4·5·6, nên anh chị lớp 7-12 phải khai sai ngay
+   ở màn đầu tiên — mà con số ấy đi thẳng vào bảng xếp hạng lẫn vào bậc xuất phát của
+   vòng luyện chủ đề. */
+{
+  const { LOP_HOC, LOP_MAC_DINH, lopHopLe } = await import('../src/lib/content.js');
+  t('khai được từ lớp 2 đến lớp 12',
+    LOP_HOC.join() === '2,3,4,5,6,7,8,9,10,11,12');
+  t('lớp mặc định nằm trong danh sách', LOP_HOC.includes(LOP_MAC_DINH));
+  t('lớp lạ bị chặn, lùi về mặc định',
+    lopHopLe(99) === LOP_MAC_DINH && lopHopLe(0) === LOP_MAC_DINH
+    && lopHopLe(null) === LOP_MAC_DINH && lopHopLe('bậy') === LOP_MAC_DINH);
+  t('lớp hợp lệ giữ nguyên, nhận cả chuỗi số', lopHopLe(8) === 8 && lopHopLe('11') === 11);
+
+  /* Bậc xuất phát của vòng luyện chủ đề: anh lớp 9 phải vào bậc CAO NHẤT đang có
+     (lớp 5), không rơi về bậc thấp hay ra null. */
+  const { bacBatDau } = await import('../src/lib/progress.js');
+  const thang = [{ lop: 2 }, { lop: 3 }, { lop: 4 }, { lop: 5 }];
+  t('lớp trên tiểu học vào bậc cao nhất đang có', bacBatDau(thang, 9) === 5);
+  t('lớp 3 vào đúng bậc lớp 3', bacBatDau(thang, 3) === 3);
 }
 
 /* ═══════════ H · BA BẢNG, VÀ HUY CHƯƠNG ═══════════ */
