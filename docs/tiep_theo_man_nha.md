@@ -6,8 +6,13 @@ sổ bố mẹ, bảng cô giáo, hay bất cứ chỗ nào đếm "con học t�
 > Cổng: **32 tệp kiểm · 1005 PASS · 0 FAIL** (trước đợt này: 30 tệp · 861 PASS).
 > Đã đi thật trên bản dựng, 0 lỗi trong bảng điều khiển.
 >
-> ⚠ **CHƯA DEPLOY.** Và lần này khác mọi lần: đợt này **bắt buộc phải đẩy cả
-> `firestore rules`**, không chỉ `hosting` — xem mục "Hai việc phải đẩy" ở cuối.
+> ✅ **ĐÃ DEPLOY ĐỦ BA PHẦN** lúc 11-08-2026: `firestore rules` + `hosting` (1470 tệp)
+> + `functions` (8 hàm cập nhật). Đây là lần đầu đẩy rules và functions sau nhiều đợt
+> chỉ đẩy hosting — bắt buộc, vì thư mục `hocBa/{uid}/muc` là mới và luật mặc định là CẤM.
+>
+> Đã đi thật trên **https://ky-su-nhi.web.app** sau khi đẩy: kệ sách xếp đúng lớp 2→3→4→5
+> →Mùa giải · trang lớp 4 chỉ đúng bài đang dở (Bài 22, bước 3) · sổ bố mẹ cả hai trục ·
+> Mùa giải có hai lối ra · màn chủ đề tầng 2 có ⌂ Kệ sách.
 
 ---
 
@@ -146,13 +151,13 @@ nhau thì cả hai đều phải còn.
 
 ---
 
-## HAI VIỆC PHẢI ĐẨY — khác mọi lần trước
+## BA VIỆC ĐÃ ĐẨY — khác mọi lần trước
 
 | # | việc | vì sao |
 |---|---|---|
-| 1 | `hosting` | như thường lệ |
-| 2 | **`firestore rules`** | **BẮT BUỘC.** Thư mục `hocBa/{uid}/muc` là mới; luật mặc định là CẤM, nên không đẩy rules thì mọi lượt ghi kỳ sát hạch · bậc chủ đề · vòng đấu đều bị từ chối **trong im lặng** — sổ tại máy vẫn đúng nên không ai thấy gì |
-| 3 | `functions` (nên) | `learnerRows` nay tính thêm `minutes` và `theoSach`. Không đẩy thì bảng cô giáo vẫn chạy, chỉ là cột "phút" và "trình độ" để trống — giao diện đã lo sẵn trường hợp thiếu, không hiện "0 phút" |
+| 1 | `hosting` ✅ | như thường lệ |
+| 2 | **`firestore rules`** ✅ | **BẮT BUỘC.** Thư mục `hocBa/{uid}/muc` là mới; luật mặc định là CẤM, nên không đẩy rules thì mọi lượt ghi kỳ sát hạch · bậc chủ đề · vòng đấu đều bị từ chối **trong im lặng** — sổ tại máy vẫn đúng nên không ai thấy gì |
+| 3 | `functions` ✅ | `learnerRows` nay tính thêm `minutes` và `theoSach`. Không đẩy thì bảng cô giáo vẫn chạy, chỉ là cột "phút" và "trình độ" để trống — giao diện đã lo sẵn trường hợp thiếu, không hiện "0 phút" |
 
 ```
 cd web && npx firebase deploy --only hosting,firestore:rules
@@ -163,8 +168,7 @@ cd web && npx firebase deploy --only functions      # nếu đẩy cả hàm n�
 
 ## MAI VÀO VIỆC TỪ ĐÂU
 
-1. **Đẩy rules + hosting** (mục trên) — không đẩy thì phần "lưu dữ liệu chi tiết" chưa
-   thật sự chạy.
+1. ~~Đẩy rules + hosting~~ — **XONG.** Cả ba phần đã lên mạng.
 2. Ba hướng cũ vẫn còn nguyên trong `docs/tiep_theo_dinh_dang.md`: gợi ý cho Mùa giải
    (0/314 câu), 21 dạng chỉ một bậc, 6 micro nằm ở hai dạng.
 3. `progress/{uid}/micros` không lưu `attempts`, nên bảng cô giáo đọc về luôn thấy
