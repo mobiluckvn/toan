@@ -54,7 +54,14 @@ export function saveSpot(progress, microId, step, total) {
   if (prev.step === step) return progress;
   return {
     ...progress,
-    micros: { ...progress.micros, [microId]: { ...prev, step, steps: total } },
+    /* Đóng dấu `at` NGAY khi con đi thêm một bước, đừng đợi tới lúc xong bài. Kệ sách
+       và sổ bố mẹ đều xếp "quyển động vào gần nhất" theo mốc này — không có dấu thì
+       quyển con đang học dở luôn thua quyển con học xong từ tháng trước, và thẻ HỌC
+       TIẾP chỉ tay sang quyển cũ. */
+    micros: {
+      ...progress.micros,
+      [microId]: { ...prev, step, steps: total, at: new Date().toISOString() },
+    },
   };
 }
 

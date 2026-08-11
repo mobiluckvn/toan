@@ -14,3 +14,14 @@ export const NHAN_MUC_CHUONG = {
 export const NHAN_TINH_TRANG = {
   vung: 'đã vững', dangHoc: 'đang học', canCoGang: 'cần cố gắng', chuaHoc: 'chưa học',
 };
+
+/**
+ * Năm trạng thái của MỘT BÀI — cũng là ngôn ngữ chung.
+ *
+ * Việc CHẤM ra trạng thái nào là của môn (mỗi môn một luật mở khoá riêng); còn chữ
+ * hiện lên màn thì nằm ở đây, để bảng cô giáo in được mà không phải với sang ruột môn.
+ */
+export const NHAN_TRANG_THAI_BAI = {
+  dat: 'con đã đạt', dangDo: 'đang học dở', chuaDat: 'chưa qua câu bẫy',
+  mo: 'học được ngay', khoa: 'chưa mở',
+};

@@ -6,7 +6,8 @@ import KeSach from './chung/components/KeSach.jsx';
 import BangXepHang from './chung/components/BangXepHang.jsx';
 import ParentReport from './chung/components/ParentReport.jsx';
 import { napSoDangKy, soDangKy } from './chung/lib/soQuyen.js';
-import { hasFirebase } from './chung/lib/nenTang.js';
+import { hasFirebase, dungGiaLap } from './chung/lib/nenTang.js';
+import { gopTienDoMon } from './chung/lib/soTienDo.js';
 import { watchAuth, myRole, myProfile, saveProfile, logout } from './chung/lib/taiKhoan.js';
 import { MON, monCua } from './soMon.js';
 
@@ -34,8 +35,16 @@ const SKIP_KEY = 'ttd5.skipLogin.v1';
  * import.meta.env.DEV do Vite đặt: true khi `npm run dev`, false khi `npm run build`.
  * Nghĩa là cờ này KHÔNG THỂ lọt sang bản đưa lên mạng — không phải nhớ tắt bằng tay,
  * cũng không phụ thuộc vào một biến môi trường ai đó có thể quên xoá.
+ *
+ * NGOẠI TRỪ khi chạy trên bộ giả lập. Cờ này tiện, nhưng nó tiện đến mức che mất
+ * hẳn màn đăng nhập: chạy `npm run dev` thì KHÔNG CÁCH NÀO đi thử được đăng nhập ·
+ * hồ sơ lần đầu · bảng xếp hạng · bảng cô giáo — bốn màn ấy chưa từng được soi bằng
+ * mắt, chỉ vì cửa vào chúng không bao giờ mở ra ở local.
+ *
+ * Bật giả lập là nói rõ "tôi đang đi thử phần tài khoản", nên trả màn đăng nhập lại.
+ * Dữ liệu vẫn nằm trọn trong máy — xem `chung/lib/nenTang.js`.
  */
-const LOCAL_KHONG_DANG_NHAP = !!import.meta.env?.DEV;
+const LOCAL_KHONG_DANG_NHAP = !!import.meta.env?.DEV && !dungGiaLap;
 
 export default function App() {
   const [view, setView] = useState({ page: 'home' });
@@ -53,9 +62,10 @@ export default function App() {
      dạng bên trong là chuyện riêng của môn. */
   const [tienDo, setTienDo] = useState(
     () => Object.fromEntries(MON.map((m) => [m.ma, m.napTienDo()])));
-  const datTienDoCua = useCallback((ma) => (f) => setTienDo((t) => ({
-    ...t, [ma]: typeof f === 'function' ? f(t[ma]) : f,
-  })), []);
+  /* `gopTienDoMon` giữ nguyên khối cũ khi môn báo "không có gì đổi" — đọc lời giải
+     thích ở `chung/lib/soTienDo.js` trước khi định viết gọn lại thành một dòng. */
+  const datTienDoCua = useCallback(
+    (ma) => (f) => setTienDo((t) => gopTienDoMon(t, ma, f)), []);
   useEffect(() => { for (const m of MON) m.luuTienDo(tienDo[m.ma]); }, [tienDo]);
 
   /* Quyển con đang mở. KHÔNG nhớ qua các lần mở app: kệ sách là trang chính, mở
@@ -107,6 +117,10 @@ export default function App() {
          trắng tinh thì tưởng mất bài — dữ liệu vẫn còn nguyên, chỉ là màn hình không
          hỏi. Gộp chứ không đè: hai máy có thể đang học dở hai bài khác nhau. */
       for (const m of MON) {
+        /* SANG TÊN trước, kéo sổ sau — và phải xong trước khi con kịp học câu tiếp.
+           Bài con làm lúc chưa đăng nhập mang mã tạm; để nguyên là luật bảo mật từ
+           chối cả lô ghi, im lặng, vĩnh viễn. Xem `dangNhapXong` ở cửa của môn. */
+        try { m.dangNhapXong?.(user.uid); } catch { /* môn không cần dọn thì thôi */ }
         m.napTuMay(user.uid)
           .then((may) => datTienDoCua(m.ma)((p) => m.gopTienDo({ ...p, learnerId: user.uid }, may)))
           .catch(() => datTienDoCua(m.ma)((p) => ({ ...p, learnerId: user.uid })));

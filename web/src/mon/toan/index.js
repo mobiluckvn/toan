@@ -10,6 +10,7 @@
  */
 import ManToan from './components/ManToan.jsx';
 import { loadProgress, saveProgress, gopTienDo } from './lib/progress.js';
+import { reassignQueue } from './lib/sync.js';
 import { chuongTrinhCua, napChiMuc, dsChuongTrinhSapXep, napBanDoDang, CONTENT, dongDau }
   from './lib/noiDung.js';
 import { hocBaQuyen, hocBaChuDe, baiCanCoGang, trinhDo } from './lib/hocba.js';
@@ -22,6 +23,16 @@ import {
 /** Các quyển của môn này, theo đúng thứ tự trên kệ. */
 const quyenCuaToan = () => dsChuongTrinhSapXep().filter((c) => c.mon === 'toan');
 const quyenHoc = () => quyenCuaToan().filter((c) => c.loai === 'hoc');
+
+/**
+ * Mốc con động vào một bài, tính bằng mili giây; 0 nghĩa là chưa có dấu.
+ *
+ * Đừng viết `Date.parse(m.at || 0)`: bài chưa có dấu thì `0` bị ép thành chuỗi "0"
+ * và đọc ra NĂM 2000 — một con số thật, khác 0, nên `|| 0` phía sau không cứu được.
+ * Bài chưa có dấu hoá ra lại xếp trên bài có dấu thật của năm 1999 trở về trước, và
+ * quan trọng hơn: nó KHÔNG còn là đáy như người viết tưởng.
+ */
+const mocCua = (m) => (m?.at ? Date.parse(m.at) || 0 : 0);
 
 /**
  * Tiến độ một quyển — cho kệ sách vẽ vạch.
@@ -38,7 +49,7 @@ function tienDoQuyen(tienDo, ct) {
     dangLam: cua.length,
     tong,
     phanTram: Math.round((xong / tong) * 100),
-    gio: cua.reduce((s, [, m]) => Math.max(s, Date.parse(m.at || 0) || 0), 0),
+    gio: cua.reduce((s, [, m]) => Math.max(s, mocCua(m)), 0),
   };
 }
 
@@ -61,7 +72,7 @@ async function hocBa(tienDo) {
      sách thì không có quyển nào đang mở để mà hỏi. */
   const gio = {};
   for (const [id, m] of Object.entries(tienDo?.micros || {})) {
-    const t = Date.parse(m.at || 0) || 0;
+    const t = mocCua(m);
     for (const cm of chiMuc) {
       if (cm.bai.some((b) => b.id === id)) gio[cm.ma] = Math.max(gio[cm.ma] || 0, t);
     }
@@ -94,6 +105,22 @@ export default {
   luuTienDo: saveProgress,
   gopTienDo,
   napTuMay: tienDoTuMay,
+
+  /**
+   * VỪA ĐĂNG NHẬP XONG — môn tự dọn phần của mình trước khi kéo sổ về.
+   *
+   * Với Toán, việc phải làm là SANG TÊN HÀNG ĐỢI. Con học thử trước khi đăng nhập
+   * (app mời đúng như thế: "Để sau — cho con học thử trước", kèm lời hứa "Đăng nhập
+   * lúc nào thì toàn bộ kết quả được đẩy lên, không mất gì"), mọi bản ghi khi ấy mang
+   * mã tạm 'local'. Đăng nhập rồi mà không sang tên thì luật bảo mật từ chối
+   * `isMine('local')` — và vì cả hàng đợi đi chung MỘT lô ghi, một bản ghi 'local'
+   * kẹt lại là **cả lô hỏng, mãi mãi**: bài học sau khi đăng nhập cũng không lên nổi.
+   * Từ chối thì im lặng, màn hình vẫn vui vẻ. Đúng lời hứa bị vỡ, mà không ai biết.
+   *
+   * Vỏ không được với vào ruột môn (xem `test/ranh_gioi.test.mjs`), nên việc này phải
+   * đi qua giao ước chứ không gọi thẳng `reassignQueue`.
+   */
+  dangNhapXong: (uid) => reassignQueue(uid),
 
   /**
    * CỬA PHỤ trên kệ sách — lối vào của môn KHÔNG đi qua một quyển nào.

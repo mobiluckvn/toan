@@ -384,6 +384,18 @@ const hoaChu = (s) => String(s).charAt(0).toUpperCase() + String(s).slice(1) + '
  * nhưng chạy thật mà quên đặt là không ai đăng nhập được. Log có ghi rõ cảnh báo.
  */
 async function sendMail(to, { subject, text }) {
+  /* CHẠY TRÊN BỘ GIẢ LẬP THÌ TUYỆT ĐỐI KHÔNG GỬI MAIL.
+     Bộ giả lập vẫn với tay lên Secret Manager THẬT lấy được SMTP_USER/SMTP_PASS (máy
+     nào đã `firebase login` là lấy được), nên nhánh "chưa đặt SMTP" bên dưới không hề
+     chạy — mỗi lần bấm "Gửi mã cho tôi" ở local là một lá thư thật rời hộp thư mình,
+     gửi tới địa chỉ mình gõ đại để đi thử. Đặt `functions/.secret.local` cũng không
+     cứu được: bộ giả lập vẫn hỏi Secret Manager trước.
+     FUNCTIONS_EMULATOR do chính bộ giả lập đặt, chạy thật không bao giờ có — nên
+     nhánh này không thể lọt lên máy chủ. */
+  if (process.env.FUNCTIONS_EMULATOR === 'true') {
+    console.warn(`[OTP] BỘ GIẢ LẬP — không gửi mail. Mã cho ${to}: ${subject}`);
+    return;
+  }
   const user = SMTP_USER.value();
   const pass = SMTP_PASS.value();
   if (!user || !pass) {

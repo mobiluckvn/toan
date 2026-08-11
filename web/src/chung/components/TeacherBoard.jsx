@@ -104,8 +104,24 @@ export default function TeacherBoard({ mon = [], onExit }) {
             Bảng chưa được dựng lần nào. Máy chủ tổng hợp lúc <b>21h15 mỗi đêm</b> — cô quay
             lại sau đó nhé.
           </p>
+          {/* Nút dựng phải có Ở ĐÂY, không chỉ ở bảng đã dựng.
+              Trước đây nó chỉ nằm trong nhánh bảng-đã-có, còn màn này bảo cô vào
+              Firebase Console — đúng cái vòng gà và trứng: cô mới nhận lớp, bảng chưa
+              dựng lần nào, tức là đúng lúc cần nút nhất thì không có nút. Mà cô giáo
+              thì không có tài khoản Firebase Console. */}
+          <button
+            className="btn-go mt-3"
+            disabled={dangMoi}
+            onClick={async () => {
+              setDangMoi(true);
+              try { await monChinh.lamMoiBangCoGiao(7); setBoard(await monChinh.bangCoGiao() || { empty: true }); }
+              catch (e) { setErr(String(e?.message || e)); }
+              finally { setDangMoi(false); }
+            }}>
+            {dangMoi ? 'đang dựng…' : '↻ Dựng bảng ngay'}
+          </button>
           <p className="mt-2 text-[13px] text-mute">
-            Muốn có ngay thì chạy tay hàm <code>nightlyTeacherBoard</code> trong Firebase Console.
+            Bảng tổng hợp mỗi đêm; nút trên dựng lại ngay bằng số liệu 7 ngày gần nhất.
           </p>
         </div>
       </Wrap>

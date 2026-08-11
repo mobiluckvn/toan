@@ -36,10 +36,10 @@ export function trangThaiBai(progress, id, { list = [], khoaBai = false } = {}) 
   return 'mo';
 }
 
-export const NHAN_TRANG_THAI = {
-  dat: 'con đã đạt', dangDo: 'đang học dở', chuaDat: 'chưa qua câu bẫy',
-  mo: 'học được ngay', khoa: 'chưa mở',
-};
+/* Chữ hiện lên màn nằm ở tầng CHUNG (`chung/lib/nhanHocBa.js`) — sổ bố mẹ và bảng cô
+   giáo cùng in, mà hai màn ấy không được với sang ruột môn. Giữ lại tên cũ ở đây cho
+   các màn của Toán khỏi phải sửa. */
+export { NHAN_TRANG_THAI_BAI as NHAN_TRANG_THAI } from '../../../chung/lib/nhanHocBa.js';
 
 /* ═══════════ TẦNG 2 · MỘT CHƯƠNG ═══════════ */
 
@@ -113,6 +113,13 @@ export function hocBaQuyen(chiMuc, progress, { khoaBai = false } = {}) {
     const tk = thongKeChuong(progress, c, ma);
     return {
       ...c,
+      /* Chấm sẵn trạng thái TỪNG BÀI ngay tại đây. Bảng cô giáo vẽ từng ô bài một,
+         mà nó nằm ở tầng chung nên không được gọi `trangThaiBai` của Toán — trước
+         đây nó gọi thẳng, và cả tab "Theo lớp" của cô vỡ trắng với mọi học sinh.
+         Môn chấm, tầng chung chỉ việc in. */
+      bai: (c.bai || []).map((b) => ({
+        ...b, trangThai: trangThaiBai(progress, b.id, { list, khoaBai }),
+      })),
       tk,
       muc: MUC_CHUONG(tk),
       deXuat: baiDeXuatChuong(progress, c, { list, khoaBai }),

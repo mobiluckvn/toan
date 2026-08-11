@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Chu from './Chu.jsx';
-import { NHAN_MUC_CHUONG, NHAN_TINH_TRANG } from '../lib/nhanHocBa.js';
+import { NHAN_MUC_CHUONG, NHAN_TINH_TRANG, NHAN_TRANG_THAI_BAI } from '../lib/nhanHocBa.js';
 import { minutesStudied } from '../../../functions/src/report.js';
 
 /**
@@ -164,7 +164,6 @@ export default function HocSinhChiTiet({ em, mon = [] }) {
       {/* ══════════ THEO LỚP · CHƯƠNG · BÀI ══════════ */}
       {tab === 'lop' && dsHocBa.map((h) => {
         const bung = moQuyen === h.ma;
-        const list = h.chiMuc.bai.map((b) => b.id);
         return (
           <section key={h.ma} className="card">
             <button className="flex w-full items-center gap-2.5 text-left"
@@ -202,11 +201,14 @@ export default function HocSinhChiTiet({ em, mon = [] }) {
                 </div>
                 {/* Từng bài một — cô nhìn ra em tắc ở đúng bài nào của chương nào */}
                 <div className="mt-1.5 flex flex-wrap gap-1">
-                  {c.bai.map((b) => {
-                    const s = trangThaiBai(tienDo, b.id, { list, khoaBai: h.chiMuc.khoaBai });
+                  {(c.bai || []).map((b) => {
+                    /* Trạng thái do MÔN chấm sẵn trong học bạ — tầng này chỉ in ra.
+                       Trước đây nó gọi thẳng `trangThaiBai` của Toán, một hàm chưa
+                       hề được import, nên cả tab này vỡ trắng. */
+                    const s = b.trangThai || 'mo';
                     return (
                       <span key={b.id}
-                            title={`Bài ${b.so}${b.micro > 1 ? `.${b.micro}` : ''} · ${b.ten} — ${NHAN_TRANG_THAI[s]}`}
+                            title={`Bài ${b.so}${b.micro > 1 ? `.${b.micro}` : ''} · ${b.ten} — ${NHAN_TRANG_THAI_BAI[s]}`}
                             className={`flex h-6 min-w-[26px] items-center justify-center rounded px-1 text-[10.5px] font-extrabold text-white ${CHAM_BAI[s]}`}>
                         {b.so}{b.micro > 1 ? `.${b.micro}` : ''}
                       </span>
@@ -226,8 +228,11 @@ export default function HocSinhChiTiet({ em, mon = [] }) {
       )}
 
       {/* ══════════ THEO CHỦ ĐỀ · DẠNG BÀI ══════════ */}
-      {tab === 'chude' && !banDo && <p className="card text-mute">Không nạp được bản đồ chủ đề.</p>}
-      {tab === 'chude' && banDo && cd && (
+      {/* Học bạ của môn chỉ nộp `chuDe` khi nạp được bản đồ dạng bài, nên chính `cd`
+          đã trả lời câu hỏi "có bản đồ không". Trước đây chỗ này hỏi một biến `banDo`
+          chưa hề khai ở đâu — tab vỡ trắng ngay khi cô bấm vào. */}
+      {tab === 'chude' && !cd && <p className="card text-mute">Không nạp được bản đồ chủ đề.</p>}
+      {tab === 'chude' && cd && (
         <>
           <div className="card">
             <div className="kicker">EM ĐANG ĐỨNG Ở ĐÂU TRÊN {cd.tong} DẠNG BÀI</div>
