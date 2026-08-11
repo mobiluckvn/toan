@@ -1,6 +1,7 @@
 /** Kiểm bảng giáo viên — chạy: node test/teacherboard.test.mjs */
 import {
   buildTeacherBoard, topTraps, stuckLearners, learnerRows, boardHeadline, stampOf,
+  maSach, minutesOf,
 } from '../functions/src/teacherboard.js';
 import { buildAttempts, isCloudLearner } from '../src/lib/sync.js';
 
@@ -132,6 +133,48 @@ t('làm sai hết thì mới là 0%',
   buildTeacherBoard({ roster: ros2, now: NOW,
     attempts: [{ learnerId: 'u1', sessionId: 'd', microId: 'DR:KSN5Q2.V01', correct: false, ts: NOW }],
   }).q2CorrectRate === 0);
+
+/* ── 8 · TRÌNH ĐỘ VÀ THỜI GIAN HỌC CỦA TỪNG EM ──
+   "Em ấy đạt 47 bài" không nói lên trình độ: 47 bài lớp 2 và 47 bài lớp 5 là hai
+   chuyện khác hẳn. Và "3 buổi" cũng vậy — ngồi 12 phút hay 70 phút cần hai cách
+   nhắc khác nhau. */
+t('mã sách suy được từ mã bài',
+  maSach('DL:KSN5Q1.B1.M1') === 'KSN5Q1' && maSach('DL:KSN2.B01') === 'KSN2'
+  && maSach('DR:KSN5Q2.V01') === 'KSN5Q2');
+t('mã sách suy được cả từ mã tài liệu (bản ghi cũ thiếu microId)',
+  maSach('DL_KSN4_B03') === 'KSN4');
+t('mã lạ thì nói không biết, đừng đoán bừa', maSach('') === '?' && maSach(null) === '?');
+
+const tienDo = {
+  u1: {
+    'DL:KSN2.B01': { pass: true, microId: 'DL:KSN2.B01' },
+    'DL:KSN2.B02': { pass: true, microId: 'DL:KSN2.B02' },
+    'DL:KSN4.B01': { pass: true, microId: 'DL:KSN4.B01' },
+    'DL:KSN4.B02': { pass: false, microId: 'DL:KSN4.B02' },   // chưa đạt thì không đếm
+  },
+};
+const rTd = learnerRows([], [{ uid: 'u1', displayName: 'A' }], tienDo)[0];
+t('bài đạt tách theo từng sách',
+  rTd.theoSach.KSN2 === 2 && rTd.theoSach.KSN4 === 1 && rTd.microsPassed === 3);
+t('bài chưa đạt không lọt vào bảng theo sách', rTd.theoSach.KSN4 !== 2);
+
+/* Số phút: cộng khoảng cách giữa các lượt, nghỉ quá 5 phút thì cắt. */
+const P = 60000;
+t('cộng đúng khoảng cách trong một mạch',
+  minutesOf([{ v: 2, ts: 0 }, { v: 2, ts: 2 * P }, { v: 2, ts: 5 * P }]) === 5);
+t('nghỉ quá 5 phút thì không tính vào giờ học',
+  minutesOf([{ v: 2, ts: 0 }, { v: 2, ts: 2 * P }, { v: 2, ts: 60 * P }]) === 2);
+/* Dòng ghi bằng luật cũ dùng chung một mốc cho cả loạt — tính ra 0, mà hiện "0 phút"
+   thì cô đọc thành "em không học". Loại hẳn chúng ra. */
+t('bỏ qua dòng ghi bằng luật cũ',
+  minutesOf([{ ts: 0 }, { ts: 2 * P }, { v: 2, ts: 3 * P }, { v: 2, ts: 4 * P }]) === 1);
+t('một lượt lẻ thì chưa đo được', minutesOf([{ v: 2, ts: 0 }]) === 0);
+
+const rPhut = learnerRows(
+  [att('u1', 'DL:KSN2.B01', { ts: 0 }), att('u1', 'DL:KSN2.B01', { ts: 3 * P })]
+    .map((a) => ({ ...a, v: 2 })),
+  [{ uid: 'u1', displayName: 'A' }], {})[0];
+t('dòng từng em mang theo số phút', rPhut.minutes === 3);
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);

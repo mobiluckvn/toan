@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { CONTENT, dongDau, chapterOf } from '../lib/content.js';
 import { moKhoa, chuongDaXong } from '../lib/dau.js';
 import ChanTrang from './ChanTrang.jsx';
+import ThanhTren from './ThanhTren.jsx';
 
 /**
  * MÙA GIẢI (Quyển 2) — trang chọn vòng đấu.
@@ -14,7 +15,7 @@ import ChanTrang from './ChanTrang.jsx';
  */
 const NHAN = { vong: 'VÒNG ĐẤU', detron: 'ĐỀ TRỘN', thithu: 'KỲ THI THỬ' };
 
-export default function MuaGiai({ progress, onMo, onExit, onTrai, onHoSo, onThe }) {
+export default function MuaGiai({ progress, onMo, onExit, onTrai, onHoSo, onThe, onVeKeSach }) {
   const [idx, setIdx] = useState(null);
   const [loi, setLoi] = useState(null);
 
@@ -39,19 +40,16 @@ export default function MuaGiai({ progress, onMo, onExit, onTrai, onHoSo, onThe 
 
   return (
     <div className="mx-auto min-h-[100dvh] max-w-[740px] pb-10">
-      <header className="bg-navy px-4 py-3.5 text-white">
-        <div className="flex items-start gap-2">
-          <button onClick={onExit} className="mt-0.5 rounded-full border border-white/40 px-2 py-0.5 text-[11px] font-bold">
-            ⌂ Về trang chính
-          </button>
-        </div>
-        <div className="mt-2 text-[11px] font-extrabold tracking-widest text-gold">QUYỂN 2 · LUYỆN THI</div>
-        <h1 className="mt-0.5 text-[20px] font-bold">Mùa giải Vô địch</h1>
-        <p className="mt-1 text-[13.5px] leading-relaxed opacity-90">
-          14 vòng đấu · 4 đề trộn · 3 kỳ thi thử. Mỗi vòng có đồng hồ, chấm theo barem
-          và một phiên tòa xử 12 cái bẫy của Cáo Đề.
-        </p>
-      </header>
+      {/* Hai lối ra khác nhau, và trước đây chỉ có một: "⌂ Về trang chính" đưa bé về
+          trang lớp 5 chứ không về kệ sách, nên vào Mùa giải thẳng từ kệ sách là mắc kẹt
+          một tầng. Nay tách rõ: ← Lớp 5 (quyển mẹ) và ⌂ Kệ sách (nhà). */}
+      <ThanhTren
+        nhan="QUYỂN 2 · LUYỆN THI"
+        tieuDe="Mùa giải Vô địch"
+        phuDe="14 vòng đấu · 4 đề trộn · 3 kỳ thi thử. Mỗi vòng có đồng hồ, chấm theo barem và một phiên tòa xử 12 cái bẫy của Cáo Đề."
+        onQuayLai={onExit} nhanQuayLai="← Toán lớp 5"
+        onVeNha={onVeKeSach}
+      />
 
       <div className="px-3.5 pt-3.5">
         <div className="rounded-xl bg-gold-pale px-3.5 py-2.5 text-[13.5px] leading-relaxed text-gold-dark">

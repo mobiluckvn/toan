@@ -1,12 +1,32 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import Chu from './Chu.jsx';
-import { teacherBoard, learnerAttempts, logout, refreshTeacherBoard } from '../lib/firebase.js';
-import { napBanDoDang, dangCuaBai, tenDang } from '../lib/content.js';
-
-/** Tên chặng cho cô đọc, thay vì mã tiếng Anh */
-const CHANG = { practice: 'luyện tập', assess: 'sát hạch', check: 'chốt nhanh', worked: 'theo ví dụ' };
+import { teacherBoard, logout, refreshTeacherBoard } from '../lib/firebase.js';
+import {
+  napBanDoDang, napChiMuc, dsChuongTrinhSapXep, maKy, CONTENT, dongDau,
+} from '../lib/content.js';
+import HocSinhChiTiet from './HocSinhChiTiet.jsx';
 
 const short = (id) => String(id || '').replace('DL:KSN5Q1.', '');
+
+/**
+ * TRÌNH ĐỘ HIỆN TẠI của một dòng — quyển CAO NHẤT em đã có bài đạt.
+ *
+ * Hàm nền đếm bài đạt theo MÃ SÁCH (`KSN2`, `KSN5Q1`) vì nó chạy trên máy chủ, không
+ * có sổ đăng ký. Ở đây dịch ngược bằng chính `maKy()` của sổ — thêm quyển mới thì
+ * không phải sửa cả hai đầu.
+ *
+ * Bảng dựng bằng bản cũ của hàm nền không có `theoSach`; trả về null để dòng ấy để
+ * trống, đừng đoán bừa.
+ */
+function trinhDoCua(r) {
+  if (!r?.theoSach) return null;
+  const ds = dsChuongTrinhSapXep()
+    .filter((c) => c.loai === 'hoc' && r.theoSach[maKy(c.ma)] > 0)
+    .sort((a, b) => (b.lop || 0) - (a.lop || 0));
+  const cao = ds[0];
+  if (!cao) return null;
+  return `${cao.ten} · ${r.theoSach[maKy(cao.ma)]} bài đạt`
+    + (ds.length > 1 ? ` (+${ds.length - 1} quyển khác)` : '');
+}
 const when = (ms) => {
   if (!ms) return 'chưa học';
   const d = Math.floor((Date.now() - ms) / 86400000);
@@ -24,22 +44,35 @@ const Stat = ({ label, value, tone = '' }) => (
 /**
  * BẢNG GIÁO VIÊN — đọc MỘT document do Cloud Function dựng mỗi đêm 21h15,
  * không quét hàng chục nghìn dòng nhật ký lúc cô mở app.
- * Bấm vào một em thì mới tải nhật ký từng câu của riêng em đó.
+ *
+ * Bấm vào một em thì mới tải học bạ của riêng em đó (xem `HocSinhChiTiet.jsx`):
+ * tiến độ từng bài, kỳ sát hạch từng chương, bậc chủ đề đã vững, và nhật ký từng
+ * câu. Tải theo yêu cầu chứ không dựng sẵn cho cả trường — một lớp 40 em thì dựng
+ * sẵn là 40 lần quét, mà cô mỗi lần chỉ mở một em.
  */
 export default function TeacherBoard({ onExit }) {
   const [board, setBoard] = useState(null);
   const [err, setErr] = useState('');
   const [pick, setPick] = useState(null);           // {uid, displayName}
-  const [rows, setRows] = useState(null);
   const [q, setQ] = useState('');
   const [dangMoi, setDangMoi] = useState(false);
-  /* Lọc nhật ký theo DẠNG BÀI của ma trận. Rỗng = xem tất cả. */
-  const [locDang, setLocDang] = useState('');
   const [coBanDo, setCoBanDo] = useState(false);
+  const [chiMuc, setChiMuc] = useState(null);
+  const [banDo, setBanDo] = useState(null);
 
-  /* Bản đồ chủ đề nạp một lần cho cả màn: dùng để đọc tên dạng bài, và để suy dạng
-     cho những dòng nhật ký ghi TRƯỚC khi máy chủ bắt đầu đóng dấu `dangBai`. */
+  /* Bản đồ chủ đề nạp một lần cho cả màn: dùng để đọc tên dạng bài, để suy dạng cho
+     những dòng nhật ký ghi TRƯỚC khi máy chủ bắt đầu đóng dấu `dangBai`, và để dựng
+     học bạ theo chủ đề. Chỉ mục bốn quyển cũng nạp một lần — đổi em không nạp lại. */
   useEffect(() => { napBanDoDang().then(() => setCoBanDo(true)).catch(() => {}); }, []);
+  useEffect(() => {
+    let song = true;
+    Promise.all(dsChuongTrinhSapXep().filter((c) => c.loai === 'hoc').map((c) => napChiMuc(c.ma)))
+      .then((ds) => song && setChiMuc(ds)).catch(() => song && setChiMuc([]));
+    fetch(dongDau(`${CONTENT}/chu_de.json`))
+      .then((r) => (r.ok ? r.json() : null))
+      .then((b) => song && setBanDo(b)).catch(() => song && setBanDo(null));
+    return () => { song = false; };
+  }, []);
 
   useEffect(() => {
     let alive = true;
@@ -49,17 +82,6 @@ export default function TeacherBoard({ onExit }) {
     return () => { alive = false; };
   }, []);
 
-  useEffect(() => {
-    if (!pick) { setRows(null); return undefined; }
-    let alive = true;
-    setRows('loading');
-    setLocDang('');                       // đổi em thì bỏ lọc cũ, kẻo tưởng em mới chưa học gì
-    learnerAttempts(pick.uid, 200)
-      .then((r) => alive && setRows(r))
-      .catch(() => alive && setRows([]));
-    return () => { alive = false; };
-  }, [pick]);
-
   const filtered = useMemo(() => {
     const list = board?.rows || [];
     const k = q.trim().toLowerCase();
@@ -67,100 +89,16 @@ export default function TeacherBoard({ onExit }) {
     return list.filter((r) => `${r.displayName} ${r.email}`.toLowerCase().includes(k));
   }, [board, q]);
 
-  /* ── DẠNG BÀI CỦA MỘT LƯỢT TRẢ LỜI ──
-     Ưu tiên dấu `dangBai` do máy đóng lúc gửi; dòng cũ chưa có dấu thì suy từ
-     `microId` qua bản đồ. Nhờ vậy sổ đã ghi từ trước vẫn lọc được, không phải chờ
-     con học lại mới có dữ liệu. */
-  const dangCua = (a) => (a.dangBai?.length ? a.dangBai : dangCuaBai(a.microId));
-
-  /* Chỉ liệt những dạng THẬT SỰ có trong sổ của em này — thả 82 dạng vào ô chọn thì
-     cô phải cuộn qua toàn dạng em chưa từng học. */
-  const dsDang = useMemo(() => {
-    if (!Array.isArray(rows)) return [];
-    const d = new Map();
-    for (const a of rows) for (const m of dangCua(a)) d.set(m, (d.get(m) || 0) + 1);
-    return [...d.entries()].sort((x, y) => y[1] - x[1]);
-  }, [rows, coBanDo]);
-
-  const nhatKy = useMemo(() => {
-    if (!Array.isArray(rows)) return rows;
-    if (!locDang) return rows;
-    return rows.filter((a) => dangCua(a).includes(locDang));
-  }, [rows, locDang, coBanDo]);
-
   if (err) return <Wrap onExit={onExit}><p className="card text-alert">{err}</p></Wrap>;
   if (!board) return <Wrap onExit={onExit}><p className="card text-mute">Đang mở bảng…</p></Wrap>;
 
-  /* ── Nhật ký từng câu của MỘT em ── */
+  /* ── Học bạ đầy đủ của MỘT em ── */
   if (pick) {
     return (
       <Wrap onExit={() => setPick(null)} title={pick.displayName || 'Học sinh'} back="← Về bảng">
-        {rows === 'loading' && <p className="card text-mute">Đang mở nhật ký…</p>}
-        {Array.isArray(rows) && rows.length === 0 && (
-          <p className="card text-mute">Em này chưa có lượt trả lời nào được ghi.</p>
-        )}
-        {Array.isArray(rows) && rows.length > 0 && (
-          <div className="card">
-            <div className="kicker">
-              NHẬT KÝ TỪNG CÂU · {locDang ? `${nhatKy.length}/${rows.length}` : rows.length} LƯỢT GẦN NHẤT
-            </div>
-
-            {/* LỌC THEO DẠNG BÀI — trục thứ hai bên cạnh "bài nào".
-                Nhìn theo bài, cô thấy "em sai bài 9, bài 23, bài 31"; nhìn theo dạng,
-                cô thấy cả ba đều là "dấu hiệu chia hết" và biết phải giảng lại cái gì. */}
-            {dsDang.length > 1 && (
-              <div className="mb-2 flex flex-wrap items-center gap-2">
-                <label className="text-[11.5px] font-extrabold tracking-widest text-mute"
-                       htmlFor="loc-dang">DẠNG BÀI</label>
-                <select id="loc-dang" value={locDang} onChange={(e) => setLocDang(e.target.value)}
-                        className="min-w-0 flex-1 rounded-xl border-[1.5px] border-line px-2.5 py-1.5 text-[13px]">
-                  <option value="">Tất cả ({rows.length} lượt)</option>
-                  {dsDang.map(([ma, n]) => (
-                    <option key={ma} value={ma}>{tenDang(ma)} — {n} lượt</option>
-                  ))}
-                </select>
-                {locDang && (
-                  <button className="pill bg-soft text-navy" onClick={() => setLocDang('')}>
-                    bỏ lọc ✕
-                  </button>
-                )}
-              </div>
-            )}
-            {locDang && nhatKy.length === 0 && (
-              <p className="py-3 text-center text-[13.5px] text-mute">
-                Không có lượt nào thuộc dạng này.
-              </p>
-            )}
-
-            <div className="max-h-[70vh] overflow-y-auto">
-              {nhatKy.map((a, i) => (
-                <div key={i} className="border-b border-line py-2 text-[13px] last:border-0">
-                  <div className="flex items-center gap-2">
-                    <span className={`h-2 w-2 flex-none rounded-full ${a.correct ? 'bg-teal' : 'bg-alert'}`} />
-                    <span className="w-[76px] flex-none font-mono text-[11.5px] text-mute">{short(a.microId)}</span>
-                    <span className="w-[42px] flex-none font-mono text-[11.5px] text-mute">{a.itemId}</span>
-                    <span className="flex-1">
-                      {a.correct ? 'đúng' : 'sai'}
-                      {a.tries > 1 && <span className="text-mute"> · lần {a.tries}</span>}
-                      {a.hintsUsed > 0 && <span className="text-mute"> · xem {a.hintsUsed} gợi ý</span>}
-                      {a.ms > 0 && <span className="text-mute"> · {Math.round(a.ms / 1000)}s</span>}
-                      {a.phase && <span className="text-mute"> · {CHANG[a.phase] || a.phase}</span>}
-                    </span>
-                    {a.revealed && <span className="pill flex-none bg-[#F2F6FA] text-mute">đã xem đáp án</span>}
-                    {a.mustPass && <span className="pill flex-none bg-alert-pale text-alert">BẪY</span>}
-                  </div>
-                  {/* Con GÕ GÌ — thứ cô cần nhất để đoán con hiểu lệch chỗ nào.
-                      Chỉ hiện khi con SAI: lúc đúng thì đáp án đã biết rồi. */}
-                  {!a.correct && a.answer && (
-                    <div className="mt-1 pl-4 text-[12.5px] leading-snug">
-                      <span className="text-alert">con trả lời: <b><Chu t={a.answer} /></b></span>
-                      {a.expected && <span className="text-mute"> · đáp án: <Chu t={a.expected} /></span>}
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
+        {!chiMuc && <p className="card text-mute">Đang mở chỉ mục sách…</p>}
+        {chiMuc && (
+          <HocSinhChiTiet key={pick.uid} em={pick} chiMuc={chiMuc} banDo={banDo} coBanDo={coBanDo} />
         )}
       </Wrap>
     );
@@ -262,10 +200,19 @@ export default function TeacherBoard({ onExit }) {
             className="flex w-full items-center gap-2.5 border-b border-line py-2.5 text-left last:border-0 hover:bg-[#F0F5F9]">
             <span className="min-w-0 flex-1">
               <b className="block truncate text-[14px] text-navy">{r.displayName || r.email || r.uid}</b>
-              <span className="text-[11.5px] text-mute">
+              <span className="block text-[11.5px] text-mute">
                 {r.answered > 0
-                  ? `${r.sessions} buổi · ${r.answered} câu · đúng ${r.correctRate}%`
+                  ? `${r.sessions} buổi`
+                    /* Số phút do bản mới của hàm nền tính. Bảng dựng bằng bản cũ thì
+                       không có trường này — bỏ hẳn dòng, đừng hiện "0 phút". */
+                    + (r.minutes != null ? ` · ${r.minutes} phút` : '')
+                    + ` · ${r.answered} câu · đúng ${r.correctRate}%`
                   : 'tuần này chưa vào học'}
+              </span>
+              {/* TRÌNH ĐỘ: quyển cao nhất em đã có bài đạt. "47 bài đạt" một mình
+                  không nói lên gì — 47 bài lớp 2 khác hẳn 47 bài lớp 5. */}
+              <span className="block text-[11.5px] font-semibold text-navy-light">
+                {trinhDoCua(r) || '—'}
               </span>
             </span>
             <span className="text-right">

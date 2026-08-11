@@ -15,6 +15,11 @@ Cập nhật 2026-08-11 (lượt ba). Đọc tệp này TRƯỚC khi động và
 
 ## MAI VÀO VIỆC TỪ ĐÂU
 
+> ⚠ **ĐÃ CÓ ĐỢT MỚI SAU TỆP NÀY** — xem `docs/tiep_theo_man_nha.md` (màn nhà · học bạ ·
+> sổ bố mẹ · bảng cô giáo, 11-08-2026 lượt bốn). Đợt ấy **bắt buộc phải đẩy
+> `firestore rules`**, không chỉ hosting. Việc số 2 dưới đây vì thế không còn là "chờ
+> bác quyết" nữa mà đã thành việc phải làm.
+
 **Không còn việc tồn nào chắn đường.** Đã soát lại toàn kho, còn năm hướng —
 xếp theo giá trị. Hai việc đầu **chờ bác quyết**, cháu không tự làm.
 

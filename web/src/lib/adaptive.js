@@ -8,7 +8,7 @@
  *   3. Trong micro: chọn mức luyện theo mức thạo hiện có
  */
 import { allMicroIds, chapterOf } from './content.js';
-import { isMicroUnlocked, isChapterExamUnlocked } from './progress.js';
+import { isMicroUnlocked, isChapterExamUnlocked, ketQuaChuong } from './progress.js';
 
 export const MASTERY_THRESHOLD = 0.85;
 export const MAX_REVIEW_PER_SESSION = 3;
@@ -50,10 +50,17 @@ export function pickMicro({ progress, mastery = {}, index = {}, list = allMicroI
   return null;
 }
 
-/** Kỳ sát hạch chương đang mở mà chưa đạt — ưu tiên hơn học bài mới của chương sau */
-export function pendingExam({ progress, list = allMicroIds() }) {
-  for (let c = 1; c <= 14; c++) {
-    if (isChapterExamUnlocked(progress, c, list) && !progress.chapters?.[c]?.pass) return c;
+/**
+ * Kỳ sát hạch chương đang mở mà chưa đạt — ưu tiên hơn học bài mới của chương sau.
+ *
+ * Số chương suy TỪ DANH SÁCH BÀI, không ghim 14: lớp 4 có 11 chương, lớp 2·3 có 8.
+ * Và kết quả tra qua `ketQuaChuong` vì sổ khoá theo `<quyển>.<chương>` — hỏi thẳng
+ * `chapters[c]` là huy hiệu chương 3 của lớp 5 trả lời thay cho lớp 2.
+ */
+export function pendingExam({ progress, list = allMicroIds(), ma = 'lop5' }) {
+  const chuong = [...new Set(list.map(chapterOf))].sort((a, b) => a - b);
+  for (const c of chuong) {
+    if (isChapterExamUnlocked(progress, c, list) && !ketQuaChuong(progress, ma, c)?.pass) return c;
   }
   return null;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { chuongTrinhCua } from '../lib/content.js';
+import { chuongTrinhCua, dsChuongTrinhSapXep } from '../lib/content.js';
 import ChanTrang from './ChanTrang.jsx';
 import DongDanhSach from './DongDanhSach.jsx';
 
@@ -32,7 +32,16 @@ function tienDo(progress, ct) {
 export default function KeSach({ dangKy, progress, onMoChuongTrinh, onMoChuDe,
                                 onSoPhuHuynh, account = {} }) {
   const dk = dangKy || {};
-  const ds = Object.values(dk.chuongTrinh || {}).map((ct) => ({ ct, td: tienDo(progress, ct) }));
+  /* XẾP THEO `thuTu`, không theo thứ tự khai trong tệp. Sổ vốn khai theo thứ tự làm
+     xong quyển (lop2, lop5, lop5q2, lop3, lop4), nên kệ sách hiện lớp 5 và Mùa giải
+     chen vào giữa lớp 2 và lớp 3 — bố mẹ nhìn vào không đọc ra được đường đi.
+     Đúng thứ tự trải nghiệm: lớp 2 → 3 → 4 → 5 → tổng ôn lớp 5. */
+  const dsCt = dk.chuongTrinh
+    ? Object.values(dk.chuongTrinh).slice()
+        .sort((a, b) => (a.thuTu ?? 99) - (b.thuTu ?? 99)
+                        || String(a.ma).localeCompare(String(b.ma)))
+    : dsChuongTrinhSapXep();
+  const ds = dsCt.map((ct) => ({ ct, td: tienDo(progress, ct) }));
   /* Quyển động vào gần đây nhất lên đầu — mở app ra là bấm học tiếp được ngay,
      không phải đi tìm. Chưa học gì thì không hiện thẻ này. */
   const dangHoc = ds.filter((x) => x.td.dangLam > 0).sort((a, b) => b.td.gio - a.td.gio);

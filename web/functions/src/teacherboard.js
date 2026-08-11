@@ -65,17 +65,46 @@ export function stuckLearners(attempts, progress = {}, { minTries = 3, n = 20 } 
  */
 export const laQuyen2 = (a) => String(a?.microId || '').startsWith('DR:KSN5Q2');
 
+/**
+ * Mã SÁCH của một bài, suy từ chính mã bài: `DL:KSN5Q1.B1.M1` → `KSN5Q1`.
+ *
+ * Đọc từ mã chứ không tra sổ đăng ký: hàm nền chạy trên máy chủ, không có sổ ấy, mà
+ * chép sổ sang đây là hai bản dễ lệch nhau. Màn hình dịch ngược `KSN2` → "lớp 2"
+ * bằng `maKy()` của sổ đăng ký, nên thêm quyển mới không phải đụng vào đây.
+ */
+/* Nhận cả hai cách viết: mã bài `DL:KSN5Q1.B1.M1` và mã tài liệu `DL_KSN5Q1_B1_M1`
+   (tài liệu cũ thiếu trường `microId` thì chỉ còn mã tài liệu để mà suy). */
+export const maSach = (id) => (String(id || '').match(/^[A-Z]+[:_]([A-Za-z0-9]+)[._]/) || [])[1] || '?';
+
+/**
+ * SỐ PHÚT HỌC của một em — cùng công thức với sổ phụ huynh: cộng khoảng cách giữa
+ * các lượt, ngắt quãng quá `gapMs` thì coi như đã nghỉ.
+ *
+ * Chỉ tính dòng ghi từ bản v ≥ 2: dòng cũ dùng chung một mốc `ts` cho cả loạt nên
+ * cộng ra 0, mà hiện "0 phút" thì cô đọc thành "em không học".
+ */
+export function minutesOf(attempts, gapMs = 5 * 60 * 1000) {
+  const ts = attempts.filter((a) => (a?.v ?? 1) >= 2).map((a) => a.ts).sort((x, y) => x - y);
+  let total = 0;
+  for (let i = 1; i < ts.length; i++) {
+    const d = ts[i] - ts[i - 1];
+    if (d > 0 && d <= gapMs) total += d;
+  }
+  return Math.round(total / 60000);
+}
+
 export function learnerRows(attempts, roster = [], progress = {}) {
   const rows = new Map(roster.map((r) => [r.uid, {
     uid: r.uid, displayName: r.displayName || '', email: r.email || '',
     sessions: new Set(), answered: 0, correct: 0, lastAt: null,
-    q2Answered: 0, q2Correct: 0, q2Vong: new Set(),
+    q2Answered: 0, q2Correct: 0, q2Vong: new Set(), luot: [],
   }]));
   for (const a of attempts) {
     const row = rows.get(a.learnerId);
     if (!row) continue;                       // tài khoản đã xoá — không dựng dòng ma
     row.sessions.add(a.sessionId);
     row.answered++;
+    row.luot.push(a);
     if (a.correct) row.correct++;
     if (laQuyen2(a)) {
       row.q2Answered++;
@@ -85,20 +114,34 @@ export function learnerRows(attempts, roster = [], progress = {}) {
     const t = stampOf(a);
     if (row.lastAt === null || t > row.lastAt) row.lastAt = t;
   }
-  return [...rows.values()].map((r) => ({
-    uid: r.uid,
-    displayName: r.displayName,
-    email: r.email,
-    sessions: r.sessions.size,
-    answered: r.answered,
-    correctRate: r.answered ? Math.round((r.correct / r.answered) * 100) : null,
-    microsPassed: Object.values(progress[r.uid] || {}).filter((m) => m.pass).length,
-    /* Cột riêng cho Quyển 2 — luyện thi có đồng hồ, khác hẳn học bài */
-    q2Answered: r.q2Answered,
-    q2CorrectRate: r.q2Answered ? Math.round((r.q2Correct / r.q2Answered) * 100) : null,
-    q2Vong: r.q2Vong.size,
-    lastAt: r.lastAt,
-  })).sort((x, y) => x.displayName.localeCompare(y.displayName, 'vi'));
+  return [...rows.values()].map((r) => {
+    /* BÀI ĐẠT TÁCH THEO SÁCH — "em ấy đạt 47 bài" không nói lên trình độ, vì 47 bài
+       lớp 2 và 47 bài lớp 5 là hai chuyện khác hẳn. Cô cần biết em đang ở quyển nào. */
+    const theoSach = {};
+    for (const [id, m] of Object.entries(progress[r.uid] || {})) {
+      if (!m?.pass) continue;
+      const s = maSach(m.microId || id);
+      theoSach[s] = (theoSach[s] || 0) + 1;
+    }
+    return {
+      uid: r.uid,
+      displayName: r.displayName,
+      email: r.email,
+      sessions: r.sessions.size,
+      answered: r.answered,
+      correctRate: r.answered ? Math.round((r.correct / r.answered) * 100) : null,
+      microsPassed: Object.values(progress[r.uid] || {}).filter((m) => m.pass).length,
+      theoSach,
+      /* Thời gian học thật, không phải số buổi: hai em cùng "3 buổi" mà một em ngồi
+         12 phút, em kia 70 phút thì cần hai cách nhắc khác nhau. */
+      minutes: minutesOf(r.luot),
+      /* Cột riêng cho Quyển 2 — luyện thi có đồng hồ, khác hẳn học bài */
+      q2Answered: r.q2Answered,
+      q2CorrectRate: r.q2Answered ? Math.round((r.q2Correct / r.q2Answered) * 100) : null,
+      q2Vong: r.q2Vong.size,
+      lastAt: r.lastAt,
+    };
+  }).sort((x, y) => x.displayName.localeCompare(y.displayName, 'vi'));
 }
 
 /**

@@ -40,7 +40,7 @@ t('đủ 12/12 → mở kỳ sát hạch', isChapterExamUnlocked(R, 1, list));
 
 const st = chapterStats(R, 1, list);
 t('thống kê chương: 12/12 = 100%', st.done === 12 && st.percent === 100);
-R = recordChapter(R, 1, { pass: true, right: 13, total: 15 });
+R = recordChapter(R, 'lop5', 1, { pass: true, right: 13, total: 15 });
 t('ghi huy hiệu chương', chapterStats(R, 1, list).examPassed === true);
 t('tổng huy hiệu = 1', overallStats(R, list).badges === 1);
 t('tiến độ tổng 12/168', overallStats(R, list).done === 12);

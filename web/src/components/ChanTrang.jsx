@@ -23,9 +23,12 @@ export default function ChanTrang() {
         <div className="flex items-center gap-2.5">
           <img src="/icon/icon-192.png" alt="" width="34" height="34"
                className="rounded-lg" />
+          {/* Tên bộ sách, KHÔNG phải tên một quyển. Bản cũ ghi cứng "Toán Tư Duy lớp 5
+              · Quyển 1 · 168 bài", mà chân trang này hiện ở CUỐI MỌI MÀN — nên bé lớp 3
+              cuộn hết trang của mình xuống là gặp lời giới thiệu quyển của lớp 5. */}
           <div>
-            <div className="text-[13.5px] font-bold text-navy">Kỹ Sư Nhí · Toán Tư Duy lớp 5</div>
-            <div className="text-[11.5px] text-mute">Quyển 1 · 168 bài · 14 kỳ sát hạch</div>
+            <div className="text-[13.5px] font-bold text-navy">Kỹ Sư Nhí · Toán Tư Duy</div>
+            <div className="text-[11.5px] text-mute">Lớp 2 · 3 · 4 · 5 và Mùa giải Vô địch</div>
           </div>
         </div>
 

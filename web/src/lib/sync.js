@@ -20,7 +20,24 @@ export const COLLECTIONS = {
   reviewQueue: (uid) => `reviewQueue/${uid}/cards`,
   report: 'report',               // sổ học của từng người, Function dựng mỗi đêm
   teacherBoard: 'teacherBoard',   // bảng toàn hệ thống cho giáo viên
+  /**
+   * HỌC BẠ — mọi thứ KHÔNG phải "đã học xong bài nào".
+   *
+   * `progress/{uid}/micros` chỉ ghi từng bài. Ba thứ còn lại của sổ tiến độ —
+   * kỳ sát hạch chương, bậc chủ đề đã vững, vòng đấu Mùa giải — trước nay nằm
+   * NGUYÊN Ở MÁY, không bao giờ lên mạng. Nghĩa là bố mẹ mở sổ ở máy khác thì
+   * mất sạch, và cô giáo thì không bao giờ thấy được con vững chủ đề nào.
+   *
+   * Để riêng chứ không nhét chung vào `micros`: hàm `onMicroDone` chạy trên MỌI
+   * tài liệu của thư mục ấy và đọc thẳng `after.microId` — thả một bản ghi khác
+   * hình dạng vào là hàm đêm ném lỗi, còn `microsPassed` thì đếm phồng lên.
+   */
+  hocBa: (uid) => `hocBa/${uid}/muc`,
 };
+
+/** Mã tài liệu học bạ — Firestore cấm '/' trong mã, mà mã dạng bài thì có dấu chấm. */
+export const maHocBa = (loai, khoa) =>
+  `${loai}_${String(khoa).replace(/[^A-Za-z0-9]+/g, '_')}`;
 
 // ROLES · normalizeEmail · buildUserDoc dùng chung từ functions/src/user.js
 export { ROLES, normalizeEmail, buildUserDoc } from '../../functions/src/user.js';

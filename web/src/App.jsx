@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import Home from './components/Home.jsx';
+import HomeQuyen from './components/HomeQuyen.jsx';
 import LessonPlayer from './components/LessonPlayer.jsx';
 import ExamPlayer from './components/ExamPlayer.jsx';
 import ParentReport from './components/ParentReport.jsx';
@@ -8,18 +8,17 @@ import ProfileSetup from './components/ProfileSetup.jsx';
 import TeacherBoard from './components/TeacherBoard.jsx';
 import {
   loadProgress, saveProgress, recordMicro, recordChapter, saveSpot, resumeSpot, setMode,
-  ghiLuyenChuDe,
+  ghiLuyenChuDe, gopTienDo, khoaChuong,
 } from './lib/progress.js';
-import { neighborIds, napSoDangKy, soDangKy, nhipDocCham, baiDocCham } from './lib/content.js';
+import { neighborIds, napSoDangKy, soDangKy, baiDocCham } from './lib/content.js';
 import {
   submitSession, pushAttempts, syncPending, hasFirebase, watchAuth, myRole, myProfile, saveProfile, refreshMyReport,
-  myReport, logout,
+  myReport, logout, luuMucHocBa, tienDoTuMay,
 } from './lib/firebase.js';
 import { reassignQueue } from './lib/sync.js';
 import KeSach from './components/KeSach.jsx';
 import ChuDe from './components/ChuDe.jsx';
 import LuyenChuDe from './components/LuyenChuDe.jsx';
-import HomeLop2 from './components/HomeLop2.jsx';
 import MuaGiai from './components/MuaGiai.jsx';
 import TraiHuanLuyen from './components/TraiHuanLuyen.jsx';
 import HoSoBay from './components/HoSoBay.jsx';
@@ -87,6 +86,13 @@ export default function App() {
         reassignQueue(user.uid);
         setProgress((p) => ({ ...p, learnerId: user.uid }));
         syncPending().catch(() => {});
+        /* KÉO SỔ VỀ. Trước đây app chỉ đẩy lên, không bao giờ kéo về: con học ở máy
+           tính bảng rồi mở máy của bố mẹ là thấy quyển trắng tinh — dữ liệu vẫn còn
+           nguyên trên máy chủ, chỉ là màn hình không hỏi. Gộp chứ không đè: hai máy
+           có thể đang học dở hai bài khác nhau, mất bên nào cũng là mất thật. */
+        tienDoTuMay(user.uid)
+          .then((may) => setProgress((p) => gopTienDo(p, may)))
+          .catch(() => {});
         myProfile(user.uid).then(setProfile).catch(() => setProfile(null));
         myReport(user.uid).then(setCloudReport).catch(() => {});
       }
@@ -118,6 +124,23 @@ export default function App() {
       : { page: 'lesson', microId: next });
   }, [learnerId]);
 
+  /* ── GHI HỌC BẠ: vừa vào sổ tại máy, vừa đẩy lên máy chủ ──
+     Ba thứ dưới đây (kỳ sát hạch chương · bậc chủ đề · vòng đấu) trước nay chỉ nằm
+     ở localStorage. Đổi máy là mất, và cô giáo thì không bao giờ thấy được con vững
+     chủ đề nào — chỉ thấy con xong bài nào, một câu hỏi khác hẳn. */
+  const ghiChuong = useCallback((ma, chuong, grade) => {
+    const sau = recordChapter(progress, ma, chuong, grade);
+    setProgress(sau);
+    const k = khoaChuong(ma, chuong);
+    luuMucHocBa(learnerId, 'chuong', k, { giaTri: sau.chapters[k] }).catch(() => {});
+  }, [progress, learnerId]);
+
+  const ghiChuDe = useCallback((maDang, lop, kq) => {
+    const sau = ghiLuyenChuDe(progress, maDang, lop, kq);
+    setProgress(sau);
+    luuMucHocBa(learnerId, 'chuDe', maDang, { giaTri: sau.chuDe[maDang] }).catch(() => {});
+  }, [progress, learnerId]);
+
   /**
    * Lưu kết quả một vòng đấu Quyển 2.
    *
@@ -126,13 +149,12 @@ export default function App() {
    * phải hai hệ thống rời. Mỗi câu một dòng, kèm con trả lời gì và bẫy nào đã sập.
    */
   const luuVongDau = useCallback((kq) => {
-    setProgress((p) => ({
-      ...p,
-      dau: { ...(p.dau || {}), [kq.khoiId]: {
-        dat: !!kq.dat, diemBarem: kq.diemBarem,
-        soBaySap: (kq.microCanOn || []).length, at: new Date().toISOString(),
-      } },
-    }));
+    const vong = {
+      dat: !!kq.dat, diemBarem: kq.diemBarem,
+      soBaySap: (kq.microCanOn || []).length, at: new Date().toISOString(),
+    };
+    setProgress((p) => ({ ...p, dau: { ...(p.dau || {}), [kq.khoiId]: vong } }));
+    luuMucHocBa(learnerId, 'dau', kq.khoiId, { giaTri: vong }).catch(() => {});
     const events = Object.entries(kq.ketQua || {}).map(([itemId, r]) => ({
       phase: 'assess', itemId,
       ok: r.ok ?? r.tuChamDung ?? false,
@@ -232,7 +254,7 @@ export default function App() {
     return (
       <ParentReport
         progress={progress}
-        chuongTrinh={chuongTrinh || 'lop5'}
+        chuongTrinh={chuongTrinh}
         cloudReport={cloudReport}
         onRefresh={hasFirebase && learnerId !== 'local'
           ? async () => {
@@ -254,7 +276,9 @@ export default function App() {
         onExit={() => setView({ page: 'home' })}
         onOpenMicro={(id) => setView(baiDocCham(id)
           ? { page: 'baiDocCham', baiId: id } : { page: 'lesson', microId: id })}
-        onDone={(g) => { setProgress((p) => recordChapter(p, view.chapter, g)); setView({ page: 'home' }); }}
+        /* Ghi kết quả kèm MÃ QUYỂN. Sổ cũ khoá bằng số chương trần, nên con thi
+           chương 3 của lớp 2 là huy hiệu chương 3 của lớp 5 cũng sáng theo. */
+        onDone={(g) => { ghiChuong(chuongTrinh || 'lop5', view.chapter, g); setView({ page: 'home' }); }}
       />
     );
 
@@ -271,6 +295,9 @@ export default function App() {
            quyển đầy đủ nhất — và vòng luyện tự lùi nếu con chưa với tới. */
         lopCon={profile?.grade || 5}
         onThoat={() => setView({ page: 'home' })}
+        /* Đường về NHÀ, khác với "← Quay lại" (lùi một tầng). Đi sâu ba tầng rồi
+           thì không phải bấm ba lần mới ra được kệ sách. */
+        onVeNha={veKeSach}
         onMoBai={(id, viTri) => setView({
           ...(baiDocCham(id) ? { page: 'baiDocCham', baiId: id }
                              : { page: 'lesson', microId: id }),
@@ -299,10 +326,10 @@ export default function App() {
         maDang={view.maDang}
         lop={view.lop}
         progress={progress}
-        onXongLuot={(maDang, lop, kq) =>
-          setProgress((p) => ghiLuyenChuDe(p, maDang, lop, kq))}
+        onXongLuot={ghiChuDe}
         onDoiBac={(lop) => setView({ ...view, lop })}
         onThoat={() => setView({ page: 'chuDe', viTri: { maDang: view.maDang } })}
+        onVeNha={veKeSach}
         onMoBai={(id, lopDich) => setView({
           ...(baiDocCham(id) ? { page: 'baiDocCham', baiId: id }
                              : { page: 'lesson', microId: id }),
@@ -350,25 +377,6 @@ export default function App() {
       />
     );
 
-  /* ══ QUYỂN ĐỌC CHẬM (lớp 2, lớp 3) ══
-     Cùng LessonPlayer với lớp 5 — dữ liệu đã đưa về chung một khuôn, nên bé cũng có
-     nhật ký học, nhớ chỗ học dở, sổ phụ huynh và bảng cô giáo.
-
-     Hỏi CỜ trong sổ đăng ký chứ không so tên quyển: thêm lớp 3 mà vẫn so 'lop2' thì
-     bé lớp 3 rơi vào phòng học lớp 5 — chữ nhỏ, dồn nhiều khối một màn. */
-  if (nhipDocCham(chuongTrinh)) {
-    return (
-      <HomeLop2
-        progress={progress}
-        chuongTrinh={chuongTrinh}
-        onMoBai={(id) => setView({ page: 'baiDocCham', baiId: id })}
-        onMoOnTap={(ch) => setView({ page: 'exam', chapter: ch })}
-        onSoPhuHuynh={() => setView({ page: 'report' })}
-        onDoiChuongTrinh={veKeSach}
-      />
-    );
-  }
-
   /* ══ QUYỂN 2 · MÙA GIẢI ══ */
   if (view.page === 'muagiai')
     return (
@@ -379,6 +387,7 @@ export default function App() {
         onHoSo={() => setView({ page: 'hosobay' })}
         onThe={() => setView({ page: 'the' })}
         onExit={() => setView({ page: 'home' })}
+        onVeKeSach={veKeSach}
       />
     );
 
@@ -392,9 +401,15 @@ export default function App() {
   if (view.page === 'the')
     return <TheChienThuat onExit={() => setView({ page: 'muagiai' })} />;
 
+  /* ══ TRANG CHÍNH CỦA MỘT QUYỂN — MỘT màn cho cả bốn quyển ══
+     Trước đây rẽ đôi ở đây: `nhipDocCham(chuongTrinh)` thì vào HomeLop2, còn lại vào
+     Home. Hai tệp, hai trải nghiệm, và mọi việc sửa đều phải làm hai lần (hoặc quên
+     một lần). Nay `HomeQuyen` đọc khác biệt từ sổ đăng ký — nhịp đọc CHẬM vẫn giữ,
+     nhưng nó là chuyện của PHÒNG HỌC (LessonPlayer), không phải của trang chính. */
   return (
-    <Home
+    <HomeQuyen
       progress={progress}
+      chuongTrinh={chuongTrinh}
       account={{
         signedIn: !!auth,
         name: profile?.displayName || auth?.email || '',
@@ -402,12 +417,18 @@ export default function App() {
         onSignOut: signOut,
         available: hasFirebase && !LOCAL_KHONG_DANG_NHAP,
       }}
-      onOpenMicro={(id, opts) => setView({ page: 'lesson', microId: id, fromStart: !!opts?.fromStart })}
+      /* Mở bài thì hỏi lại nhịp đọc của CHÍNH bài ấy, đừng suy từ quyển đang mở —
+         hai tên màn phục vụ hai bộ khung khác nhau trong LessonPlayer. */
+      onMoBai={(id, opts) => setView({
+        ...(baiDocCham(id) ? { page: 'baiDocCham', baiId: id }
+                           : { page: 'lesson', microId: id }),
+        fromStart: !!opts?.fromStart,
+      })}
       onSetMode={(m) => setProgress((p) => setMode(p, m))}
-      onOpenExam={(c) => setView({ page: 'exam', chapter: c })}
-      onOpenReport={() => setView({ page: 'report' })}
-      onOpenMuaGiai={() => setView({ page: 'muagiai' })}
-      onDoiChuongTrinh={veKeSach}
+      onMoOnTap={(c) => setView({ page: 'exam', chapter: c })}
+      onSoPhuHuynh={() => setView({ page: 'report' })}
+      onMoMuaGiai={() => setView({ page: 'muagiai' })}
+      onVeKeSach={veKeSach}
     />
   );
 }

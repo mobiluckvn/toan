@@ -37,7 +37,7 @@ function cauCua(bai) {
 }
 
 export default function LuyenChuDe({ maDang, lop, progress, onXongLuot, onMoBai,
-                                    onThoat, onDoiBac }) {
+                                    onThoat, onDoiBac, onVeNha }) {
   const [bd, setBd] = useState(null);
   const [cau, setCau] = useState(null);
   const [i, setI] = useState(0);
@@ -87,6 +87,11 @@ export default function LuyenChuDe({ maDang, lop, progress, onXongLuot, onMoBai,
   const DauTrang = (
     <header className="mb-3 flex items-center gap-2.5">
       <button className="text-[13px] text-mute" onClick={onThoat}>← Thoát</button>
+      {/* Cửa về NHÀ cũng phải có ở đây: vòng luyện vào được từ màn chủ đề, mà màn chủ
+          đề không thuộc quyển nào — thoát ra chỉ lùi được một tầng. */}
+      {onVeNha && (
+        <button className="text-[13px] text-mute" onClick={onVeNha}>⌂</button>
+      )}
       <b className="flex-1 text-center text-[13.5px] leading-snug text-navy">
         {d.ten}
         <span className="ml-1.5 rounded bg-navy px-1.5 py-0.5 text-[11px] text-white">

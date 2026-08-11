@@ -80,6 +80,22 @@ service cloud.firestore {
                    && request.resource.data.score is number;
     }
 
+    /* ── HỌC BẠ — kỳ sát hạch chương, bậc chủ đề đã vững, vòng đấu Mùa giải ──
+
+       Ba thứ này trước nay chỉ nằm ở localStorage: đổi máy là mất, và cô giáo
+       không bao giờ thấy được con vững CHỦ ĐỀ nào (chỉ thấy con xong BÀI nào).
+
+       Để riêng chứ không nhét vào progress/{uid}/micros: hàm nền `onMicroDone`
+       chạy trên mọi tài liệu của thư mục ấy và đọc thẳng `after.microId`.
+
+       `loai` bắt buộc và phải nằm trong ba giá trị đã biết — chốt chặn để máy con
+       không dựng ra một hình dạng thứ tư mà sổ phụ huynh không đọc được. */
+    match /hocBa/{userId}/muc/{mucId} {
+      allow read:  if canRead(userId);
+      allow write: if isMine(userId)
+                   && request.resource.data.loai in ['chuong', 'chuDe', 'dau'];
+    }
+
     /* ── Hàng đợi ôn tập: việc riêng của từng bạn, cô không cần ── */
     match /reviewQueue/{userId}/cards/{cardId} {
       allow read:  if isMine(userId) || isAdmin();

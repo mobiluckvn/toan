@@ -48,7 +48,7 @@ t('bài đã đạt và còn nhớ → đi tiếp bài mới', remembered.microI
 let Q = emptyProgress();
 list.filter((id) => chapterOf(id) === 1).forEach((id) => { Q = recordMicro(Q, id, PASS); });
 t('học hết chương 1 → kỳ sát hạch chờ', pendingExam({ progress: Q, list }) === 1);
-Q = recordChapter(Q, 1, { pass: true, right: 13, total: 15 });
+Q = recordChapter(Q, 'lop5', 1, { pass: true, right: 13, total: 15 });
 t('thi đạt rồi → không còn chờ', pendingExam({ progress: Q, list }) === null);
 
 /* ── kế hoạch phiên: THẺ ÔN ĐI TRƯỚC ── */

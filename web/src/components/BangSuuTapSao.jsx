@@ -45,8 +45,10 @@ export default function BangSuuTapSao({ idx, xong }) {
       </div>
 
       <p className="mt-2.5 text-center text-[13.5px] font-bold text-teal-dark">
+        {/* Đếm sao theo SỐ CHƯƠNG THẬT. Bản cũ ghi cứng "Đủ 8 sao" — đúng với lớp 2·3,
+            nhưng lớp 4 có 11 chương và lớp 5 có 14, nên câu khen hiện ra sai số. */}
         {duoc === ds.length
-          ? 'Đủ 8 sao — con là nhà vô địch Vương quốc Số! 🏆'
+          ? `Đủ ${ds.length} sao — con là nhà vô địch! 🏆`
           : `Con đã có ${duoc} trên ${ds.length} ngôi sao`}
       </p>
     </section>

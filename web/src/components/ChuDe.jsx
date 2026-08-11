@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { CONTENT, dongDau, chuongTrinhCua } from '../lib/content.js';
+import { CONTENT, dongDau, chuongTrinhCua, chuongTrinh as traCt } from '../lib/content.js';
 import { bacBatDau, bacDaVung } from '../lib/progress.js';
 import DongDanhSach from './DongDanhSach.jsx';
 import ChanTrang from './ChanTrang.jsx';
+import ThanhTren from './ThanhTren.jsx';
 
 /**
  * HỌC THEO CHỦ ĐỀ — trục thứ hai của app.
@@ -61,8 +62,8 @@ function HuyHieuLop({ thang, progress }) {
   );
 }
 
-export default function ChuDe({ progress, onMoBai, onLuyen, onMoDau, onThoat, viTri = {},
-                                lopCon = 5 }) {
+export default function ChuDe({ progress, onMoBai, onLuyen, onMoDau, onThoat, onVeNha,
+                                viTri = {}, lopCon = 5 }) {
   const [bd, setBd] = useState(null);
   /* Khởi tạo từ `viTri`: con học xong một bài (hoặc xong một vòng luyện) rồi quay
      về đây thì phải về ĐÚNG cái thang vừa đứng, chứ không phải về đầu màn rồi bấm
@@ -92,20 +93,11 @@ export default function ChuDe({ progress, onMoBai, onLuyen, onMoDau, onThoat, vi
   const dangCua = (maCd) => (bd.chuDe[maCd]?.dang || [])
     .filter((k) => bd.dang[k]).map((k) => [k, bd.dang[k]]);
 
+  /* Hai lối ra, luôn ở đúng một chỗ: lùi MỘT tầng, và ⌂ về thẳng kệ sách. Bản cũ chỉ
+     có "← Quay lại" nên đi sâu ba tầng thì phải bấm ba lần mới ra được trang chính. */
   const DauTrang = ({ tieuDe, phuDe, quayLai }) => (
-    <header className="bg-navy px-4 py-4 text-white">
-      <div className="flex items-start gap-2">
-        <button onClick={quayLai} className="mt-0.5 text-[13px] opacity-90">← Quay lại</button>
-        <div className="min-w-0 flex-1 text-center">
-          <div className="text-[11px] font-extrabold tracking-widest text-gold">
-            HỌC THEO CHỦ ĐỀ
-          </div>
-          <h1 className="mt-1 text-[19px] font-bold leading-snug">{tieuDe}</h1>
-          {phuDe && <p className="mt-0.5 text-[12.5px] opacity-90">{phuDe}</p>}
-        </div>
-        <span className="w-[62px]" />
-      </div>
-    </header>
+    <ThanhTren nhan="HỌC THEO CHỦ ĐỀ" tieuDe={tieuDe} phuDe={phuDe} giua
+               onQuayLai={quayLai} onVeNha={onVeNha} />
   );
 
   /* ── TẦNG 3 · THANG của một dạng bài ────────────────────────────────────── */
@@ -196,7 +188,9 @@ export default function ChuDe({ progress, onMoBai, onLuyen, onMoDau, onThoat, vi
                       key={id}
                       bieuTuong={progress?.micros?.[id]?.pass ? '✅' : '📘'}
                       tieuDe={b.ten[k] || id}
-                      phuDe={chuongTrinhCua(id) === 'lop5' ? 'Toán Tư Duy lớp 5' : null}
+                      /* Tên quyển đọc từ sổ đăng ký. Bản cũ so `=== 'lop5'` rồi gõ
+                         tay tên quyển, nên ba quyển kia không hiện được mình ở đâu. */
+                      phuDe={traCt(chuongTrinhCua(id)).ten}
                       onClick={() => onMoBai(id, oDau())}
                     />
                   ))}
@@ -291,21 +285,12 @@ export default function ChuDe({ progress, onMoBai, onLuyen, onMoDau, onThoat, vi
 
   return (
     <div className="mx-auto min-h-[100dvh] max-w-[740px] pb-10">
-      <header className="bg-navy px-4 py-4 text-white">
-        <div className="flex items-start gap-2">
-          <button onClick={onThoat} className="mt-0.5 text-[13px] opacity-90">← Kệ sách</button>
-          <div className="min-w-0 flex-1 text-center">
-            <div className="text-[11px] font-extrabold tracking-widest text-gold">
-              MOBILUCK · KỸ SƯ NHÍ
-            </div>
-            <h1 className="mt-1 text-[21px] font-bold leading-snug">Học theo chủ đề</h1>
-            <p className="mt-0.5 text-[12.5px] opacity-90">
-              Chọn chủ đề rồi học xuyên các lớp — kém thì lùi xuống lớp dưới cùng chủ đề.
-            </p>
-          </div>
-          <span className="w-[62px]" />
-        </div>
-      </header>
+      <ThanhTren
+        nhan="MOBILUCK · KỸ SƯ NHÍ" giua
+        tieuDe="Học theo chủ đề"
+        phuDe="Chọn chủ đề rồi học xuyên các lớp — kém thì lùi xuống lớp dưới cùng chủ đề."
+        onVeNha={onVeNha || onThoat}
+      />
 
       <div className="px-3.5 pt-3.5">
         <section className="card">

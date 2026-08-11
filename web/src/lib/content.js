@@ -45,13 +45,40 @@ let SO_DK = {
 
 export const soDangKy = () => SO_DK;
 export const dsChuongTrinh = () => Object.values(SO_DK.chuongTrinh || {});
+
+/**
+ * Các quyển theo ĐÚNG THỨ TỰ HIỆN LÊN KỆ SÁCH: lớp 2 → 3 → 4 → 5 → tổng ôn lớp 5.
+ *
+ * Thứ tự khai trong tệp KHÔNG dùng được: sổ vốn khai theo thứ tự làm xong quyển
+ * (lop2, lop5, lop5q2, lop3, lop4), nên kệ sách hiện lớp 5 nằm giữa lớp 2 và lớp 3.
+ * Chèn quyển mới vào giữa thì chỉ sửa `thuTu`, không phải chép lại cả sổ.
+ *
+ * Quyển chưa khai `thuTu` xuống cuối chứ không lên đầu — quyển mới thêm mà quên khai
+ * thì nó nằm sau các quyển đã xếp, không đội lên trên đầu kệ.
+ */
+export const dsChuongTrinhSapXep = () => dsChuongTrinh()
+  .slice()
+  .sort((a, b) => (a.thuTu ?? 99) - (b.thuTu ?? 99)
+                  || String(a.ma).localeCompare(String(b.ma)));
 export const chuongTrinh = (ma) => (SO_DK.chuongTrinh || {})[ma] || SO_DK.chuongTrinh.lop5;
 export const cachDoc = (id) => chuongTrinh(chuongTrinhCua(id)).doc || {};
+
+/**
+ * Đặt sổ đăng ký từ một đối tượng đã có sẵn.
+ *
+ * Bộ kiểm chạy bằng node thì không fetch được, mà bản mặc định ở trên chỉ có lớp 2 và
+ * lớp 5 — nên `chuongTrinhCua('DL:KSN3.B01')` lùi về 'lop5' và mọi phép đếm theo quyển
+ * lệch trong im lặng. Có cửa này thì phép kiểm nạp thẳng tệp thật, đo đúng cái đang chạy.
+ */
+export function datSoDangKy(json) {
+  if (json?.chuongTrinh) SO_DK = { ...SO_DK, ...json };
+  return SO_DK;
+}
 
 export async function napSoDangKy() {
   try {
     const r = await fetch(dongDau(`${CONTENT}/chuong_trinh.json`));
-    if (r.ok) SO_DK = { ...SO_DK, ...(await r.json()) };
+    if (r.ok) datSoDangKy(await r.json());
   } catch { /* mất mạng: dùng bản mặc định, không chặn bé học */ }
   return SO_DK;
 }
@@ -176,10 +203,130 @@ export function neighborIds(microId, lesson) {
   return { prev, next };
 }
 
-/** Chương của một bài. Lớp 5 suy ra bằng công thức, lớp 2 tra bảng đã ghi nhớ. */
+/** Chương của một bài. Lớp 5 suy ra bằng công thức, quyển khác tra bảng đã ghi nhớ. */
 export const chapterOf = (microId) => {
   if (chuongCua.has(microId)) return chuongCua.get(microId);
-  if (chuongTrinhCua(microId) === 'lop2') return 1;   // chưa nạp chỉ mục
+  /* Chưa nạp chỉ mục của quyển ấy. Hỏi CỜ nhịp đọc chứ không so 'lop2': bản cũ so
+     tên nên bài lớp 3·4 rơi vào công thức của lớp 5 và nhận chương 9, 10, 11 — số
+     chương không tồn tại, chương trống trơn mà chẳng có gì báo. */
+  if (chuongTrinhCua(microId) !== 'lop5') return 1;
   const b = Number(String(microId).split('.B')[1]?.split('.M')[0]);
   return Number.isFinite(b) ? Math.ceil(b / 4) : 1;
 };
+
+/* ═════════════ CHỈ MỤC CHUẨN HOÁ CỦA MỘT QUYỂN ═════════════
+ *
+ * Bốn quyển vốn khai chỉ mục theo hai hình dạng khác nhau:
+ *   · lớp 2·3·4  `<thuMuc>/index.json` — MẢNG, mỗi bài một mục, có sẵn `chuong`,
+ *                `tenChuong`, `soCau`;
+ *   · lớp 5      `index_micro.json` — ĐỐI TƯỢNG khoá theo mã bài, không có chương,
+ *                không có tên chương (tên chương gõ cứng trong JSX).
+ *
+ * Nên trang chính của lớp 5 và của lớp 2 là hai tệp khác hẳn nhau, và bốn quyển cho
+ * bốn trải nghiệm khác nhau. Hàm này đưa cả bốn về MỘT hình dạng, để một màn hình
+ * dùng chung được — khác biệt còn lại (khoá bài, Mùa giải, ba ải) đọc từ sổ đăng ký.
+ *
+ * Trả về: { ma, bai: [...], chuong: [{so, ten, bai:[...]}], onTap: [...], ai: [...] }
+ */
+const chiMucCache = new Map();
+
+const soBaiCua = (id) => {
+  const m = String(id).match(/\.B(\d+)/);
+  return m ? Number(m[1]) : 0;
+};
+
+async function napJson(url, mac) {
+  try {
+    const r = await fetch(dongDau(url));
+    return r.ok ? await r.json() : mac;
+  } catch { return mac; }
+}
+
+export async function napChiMuc(ma) {
+  if (chiMucCache.has(ma)) return chiMucCache.get(ma);
+  const doi = (async () => {
+    const ct = chuongTrinh(ma);
+    const thuMuc = ct.thuMuc || 'lessons';
+    let bai = [];
+
+    if (ma === 'lop5') {
+      /* Lớp 5 đánh chương bằng công thức (4 bài × 3 micro = 1 chương), tên chương
+         khai trong sổ đăng ký. Thứ tự học lấy từ `allMicroIds` chứ không từ thứ tự
+         khoá của tệp — tệp JSON không hứa giữ thứ tự nào cả. */
+      const idx = await napJson(`${CONTENT}/index_micro.json`, {});
+      const tenCh = Object.fromEntries((ct.chuong || []).map((c) => [c.so, c.ten]));
+      bai = allMicroIds('lop5').map((id) => {
+        const m = idx[id.replace(/[:.]/g, '_')] || {};
+        const ch = chapterOf(id);
+        return {
+          id,
+          so: soBaiCua(id),
+          micro: Number(String(id).split('.M')[1]) || 1,
+          ten: m.title || id.replace('DL:KSN5Q1.', ''),
+          title: m.title || id,
+          chuong: ch,
+          tenChuong: tenCh[ch] || `Chương ${ch}`,
+          durationMinutes: m.durationMinutes || null,
+          bktUnit: m.bktUnit || null,
+          objective: m.objective || '',
+        };
+      });
+    } else {
+      const ds = await napJson(`${CONTENT}/${thuMuc}/index.json`, []);
+      ghiNhoChuong(ds);
+      bai = (ds || []).map((b) => ({
+        id: b.id,
+        so: b.so,
+        micro: 1,
+        ten: b.ten || b.title || b.id,
+        title: b.title || b.ten || b.id,
+        chuong: b.chuong,
+        tenChuong: b.tenChuong || `Chương ${b.chuong}`,
+        durationMinutes: b.durationMinutes || null,
+        bktUnit: b.bktUnit || null,
+        objective: b.objective || '',
+        soCau: b.soCau,
+        soQuiz: b.soQuiz,
+      }));
+    }
+
+    /* Danh mục kỳ ôn tập. Quy ước `<thuMuc>/ontap.json`, nhưng lớp 5 khai riêng qua
+       `tepOnTap`: thuMuc của nó là `lessons`, mà thư mục ấy chỉ được chứa BÀI HỌC —
+       bốn phép kiểm quét nó bằng `*.json` rồi đọc thẳng `j.id`. */
+    const onTapAll = await napJson(
+      `${CONTENT}/${ct.tepOnTap || `${thuMuc}/ontap.json`}`, []);
+
+    /* Chương dựng TỪ BÀI THẬT, không từ `soChuong` khai trong sổ: khai lệch một số
+       thì màn hình vẽ ra một chương rỗng, bấm vào không có gì — mà cổng vẫn xanh. */
+    const theoChuong = new Map();
+    for (const b of bai) {
+      if (!theoChuong.has(b.chuong)) {
+        theoChuong.set(b.chuong, { so: b.chuong, ten: b.tenChuong, bai: [] });
+      }
+      theoChuong.get(b.chuong).bai.push(b);
+    }
+    const chuong = [...theoChuong.values()].sort((x, y) => x.so - y.so);
+    for (const c of chuong) {
+      c.onTap = (onTapAll || []).filter((o) => o.loai !== 'ai' && o.chapter === c.so);
+    }
+
+    const kq = {
+      ma,
+      ten: ct.ten,
+      /* Mang theo CỜ CHÍNH SÁCH của quyển, để nơi dùng không phải so tên: `ma === 'lop5'`
+         rải khắp các màn là thêm quyển thứ năm phải đi sửa từng chỗ, mà quên một chỗ
+         thì hỏng câm — đúng cái bẫy sổ tay đã ghi. */
+      khoaBai: !!ct.khoaBai,
+      bai,
+      chuong,
+      onTap: (onTapAll || []).filter((o) => o.loai !== 'ai'),
+      /* Ba cửa ải cuối sách chỉ lớp 2·3 có — trộn đủ 8 chương, đánh số chương 9·10·11
+         nên KHÔNG được lẫn vào danh sách chương thật. */
+      ai: (onTapAll || []).filter((o) => o.loai === 'ai').sort((x, y) => x.so - y.so),
+    };
+    chiMucCache.set(ma, kq);
+    return kq;
+  })();
+  chiMucCache.set(ma, doi);
+  return doi;
+}

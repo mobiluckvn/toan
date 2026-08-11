@@ -2,7 +2,7 @@
  * TIẾN ĐỘ HỌC — lưu tại máy (localStorage) ở giai đoạn B.
  * Giai đoạn C sẽ đồng bộ lên Firestore nhưng GIỮ NGUYÊN hình dạng dữ liệu này.
  */
-import { allMicroIds, chapterOf } from './content.js';
+import { allMicroIds, chapterOf, chuongTrinhCua } from './content.js';
 
 const KEY = 'ttd5.progress.v1';
 
@@ -71,14 +71,48 @@ export function clearSpot(progress, microId) {
   return { ...progress, micros: { ...progress.micros, [microId]: rest } };
 }
 
-export function recordChapter(progress, chapter, grade) {
-  const prev = progress.chapters[chapter] || {};
+/* ─────────── Kỳ sát hạch: MỘT KHOÁ CHO MỘT QUYỂN ───────────
+ *
+ * Sổ cũ khoá bằng SỐ CHƯƠNG trần: `chapters[3]`. Bốn quyển đều đánh chương từ 1, nên
+ * con thi chương 3 của lớp 2 là huy hiệu chương 3 của lớp 5 cũng sáng lên — và ngược
+ * lại, thi lại ở quyển kia là đè mất kết quả cũ. Không có gì báo, vì dữ liệu vẫn hợp lệ.
+ *
+ * Nay khoá là `lop3.5`. Khoá cũ vẫn đọc được, nhưng chỉ khi suy ra được nó thuộc
+ * quyển nào — xem `ketQuaChuong`.
+ */
+export const khoaChuong = (ma, so) => `${ma}.${so}`;
+
+/** Những quyển con đã từng động vào (có ít nhất một bài trong sổ). */
+export function quyenDaCham(progress) {
+  const s = new Set();
+  for (const id of Object.keys(progress?.micros || {})) s.add(chuongTrinhCua(id));
+  return s;
+}
+
+/** Kết quả kỳ sát hạch một chương của một quyển — null nếu chưa thi. */
+export function ketQuaChuong(progress, ma, so) {
+  const ch = progress?.chapters || {};
+  const moi = ch[khoaChuong(ma, so)];
+  if (moi) return moi;
+  const cu = ch[so] ?? ch[String(so)];
+  if (!cu) return null;
+  /* Bản ghi theo khoá cũ không nói nó thuộc quyển nào. Con mới học đúng MỘT quyển
+     thì chắc chắn là của quyển ấy; học từ hai quyển trở lên thì thà không hiện còn
+     hơn gắn huy hiệu của lớp 5 vào sổ lớp 2. */
+  const cham = quyenDaCham(progress);
+  return cham.size === 1 && cham.has(ma) ? cu : null;
+}
+
+export function recordChapter(progress, ma, chapter, grade) {
+  const k = khoaChuong(ma, chapter);
+  const prev = ketQuaChuong(progress, ma, chapter) || {};
   return {
     ...progress,
     chapters: {
       ...progress.chapters,
-      [chapter]: {
+      [k]: {
         done: true, pass: !!grade.pass,
+        chuongTrinh: ma, chuong: chapter,
         best: Math.max(prev.best || 0, grade.right || 0),
         total: grade.total || 0,
         attempts: (prev.attempts || 0) + 1,
@@ -136,21 +170,29 @@ export function nextToStudy(progress, list = allMicroIds()) {
 }
 
 /* ─────────── Thống kê hiển thị ─────────── */
-export function chapterStats(progress, chapter, list = allMicroIds()) {
+export function chapterStats(progress, chapter, list = allMicroIds(), ma = 'lop5') {
   const ms = list.filter((id) => chapterOf(id) === chapter);
   const done = ms.filter((id) => progress.micros[id]?.pass).length;
   return {
     total: ms.length, done,
-    percent: Math.round((done / ms.length) * 100),
+    percent: ms.length ? Math.round((done / ms.length) * 100) : 0,
     examUnlocked: isChapterExamUnlocked(progress, chapter, list),
-    examPassed: !!progress.chapters[chapter]?.pass,
+    examPassed: !!ketQuaChuong(progress, ma, chapter)?.pass,
   };
 }
 
-export function overallStats(progress, list = allMicroIds()) {
+export function overallStats(progress, list = allMicroIds(), ma = 'lop5') {
   const done = list.filter((id) => progress.micros[id]?.pass).length;
-  const badges = Object.values(progress.chapters).filter((c) => c.pass).length;
-  return { total: list.length, done, percent: Math.round((done / list.length) * 100), badges };
+  /* Huy hiệu đếm THEO QUYỂN, và số chương suy TỪ DANH SÁCH BÀI. Bản cũ đếm cả
+     `progress.chapters` nên trang lớp 2 khoe "9/14 huy hiệu" trong khi 8 cái là của
+     lớp 5 — vừa sai quyển vừa sai mẫu số. */
+  const chuong = [...new Set(list.map(chapterOf))];
+  const badges = chuong.filter((c) => ketQuaChuong(progress, ma, c)?.pass).length;
+  return {
+    total: list.length, done,
+    percent: list.length ? Math.round((done / list.length) * 100) : 0,
+    badges, soChuong: chuong.length,
+  };
 }
 
 /** Trạng thái hiển thị của một micro trong danh sách */
@@ -237,4 +279,57 @@ export function bacDaVung(progress, maDang) {
   const bac = progress.chuDe?.[maDang]?.bac || {};
   const dat = Object.entries(bac).filter(([, v]) => v.pass).map(([l]) => Number(l));
   return dat.length ? Math.max(...dat) : null;
+}
+
+/* ═══════════ GỘP SỔ MÁY NÀY VỚI SỔ TRÊN MẠNG ═══════════
+ *
+ * Trước đây đăng nhập xong app chỉ ĐẨY LÊN, không bao giờ KÉO VỀ. Con học ở máy tính
+ * bảng rồi mở máy tính của bố mẹ là thấy một quyển trắng tinh — công học vẫn còn
+ * nguyên trên máy chủ, nhưng màn hình không biết, nên bố mẹ tưởng mất.
+ *
+ * Gộp theo MỐC THỜI GIAN của từng mục, không lấy nguyên một bên: con học bài 3 ở máy
+ * bảng và bài 7 ở máy bàn thì cả hai đều phải còn. Mục nào không có mốc thì ưu tiên
+ * bản ĐÃ ĐẠT — thà giữ thừa một dấu đạt còn hơn xoá mất công học thật.
+ */
+const mocCua = (m) => Date.parse(m?.at || 0) || 0;
+
+function gopMuc(a, b) {
+  if (!a) return b;
+  if (!b) return a;
+  const ta = mocCua(a), tb = mocCua(b);
+  if (ta || tb) return tb > ta ? b : a;
+  return b.pass && !a.pass ? b : a;
+}
+
+function gopBang(a = {}, b = {}) {
+  const ra = { ...a };
+  for (const [k, v] of Object.entries(b)) ra[k] = gopMuc(a[k], v);
+  return ra;
+}
+
+/** Gộp sổ chủ đề: từng BẬC một, vì hai máy có thể luyện hai bậc khác nhau. */
+function gopChuDe(a = {}, b = {}) {
+  const ra = { ...a };
+  for (const [ma, v] of Object.entries(b)) {
+    const cu = a[ma];
+    if (!cu) { ra[ma] = v; continue; }
+    const bac = gopBang(cu.bac || {}, v.bac || {});
+    /* `dangO` lấy theo bậc động vào SAU CÙNG — không lấy bậc cao hơn, vì con lùi
+       xuống lớp dưới là có lý do, kéo ngược lên là xoá mất việc đang làm dở. */
+    const mocA = Math.max(0, ...Object.values(cu.bac || {}).map(mocCua));
+    const mocB = Math.max(0, ...Object.values(v.bac || {}).map(mocCua));
+    ra[ma] = { ...cu, ...v, bac, dangO: mocB >= mocA ? v.dangO ?? cu.dangO : cu.dangO };
+  }
+  return ra;
+}
+
+export function gopTienDo(a = {}, b = {}) {
+  if (!b || !Object.keys(b).length) return a;
+  return {
+    ...a,
+    micros: gopBang(a.micros, b.micros),
+    chapters: gopBang(a.chapters, b.chapters),
+    chuDe: gopChuDe(a.chuDe, b.chuDe),
+    dau: gopBang(a.dau, b.dau),
+  };
 }

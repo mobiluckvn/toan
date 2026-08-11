@@ -18,7 +18,7 @@ import {
 import { getFunctions, httpsCallable } from 'firebase/functions';
 import {
   COLLECTIONS, buildAttempts, buildProgressDoc, enqueue, flushQueue, newSessionId,
-  isCloudLearner, normalizeEmail,
+  isCloudLearner, normalizeEmail, maHocBa,
 } from './sync.js';
 import { napBanDoDang, dangCuaBai } from './content.js';
 
@@ -128,6 +128,70 @@ export async function teacherBoard() {
   if (!db) return null;
   const snap = await getDoc(doc(db, `${COLLECTIONS.teacherBoard}/global`));
   return snap.exists() ? snap.data() : null;
+}
+
+/* ═══════════ HỌC BẠ ĐẦY ĐỦ — đọc và ghi ═══════════
+ *
+ * Sổ tiến độ có bốn phần, mà trước nay chỉ MỘT phần lên được mạng:
+ *   micros   → progress/{uid}/micros     ✔ đã có
+ *   chapters → hocBa/{uid}/muc  (loai chuong)  ✘ chỉ nằm ở máy
+ *   chuDe    → hocBa/{uid}/muc  (loai chuDe)   ✘ chỉ nằm ở máy
+ *   dau      → hocBa/{uid}/muc  (loai dau)     ✘ chỉ nằm ở máy
+ *
+ * Ba phần thiếu là ba phần bố mẹ hỏi nhiều nhất: con qua kỳ sát hạch nào, vững chủ
+ * đề nào, đấu tới vòng mấy. Đổi máy là mất sạch, và cô giáo thì không bao giờ thấy.
+ */
+
+/** Ghi một mục học bạ. Mất mạng thì bỏ qua — sổ ở máy vẫn đúng, lần sau ghi lại. */
+export async function luuMucHocBa(uid, loai, khoa, du) {
+  if (!db || !isCloudLearner(uid)) return false;
+  await setDoc(doc(db, COLLECTIONS.hocBa(uid), maHocBa(loai, khoa)),
+    { ...du, loai, khoa: String(khoa), serverTs: serverTimestamp() }, { merge: true });
+  return true;
+}
+
+/**
+ * Đọc TOÀN BỘ học bạ của một tài khoản, trả về đúng hình dạng của sổ tiến độ tại
+ * máy — để `gopTienDo` gộp thẳng vào, không phải dịch qua lại ở nơi gọi.
+ */
+export async function docHocBa(uid) {
+  if (!db || !isCloudLearner(uid)) return {};
+  const snap = await getDocs(collection(db, COLLECTIONS.hocBa(uid)));
+  const chapters = {}, chuDe = {}, dau = {};
+  snap.forEach((d) => {
+    const v = d.data();
+    if (v.loai === 'chuong') chapters[v.khoa] = v.giaTri || {};
+    else if (v.loai === 'chuDe') chuDe[v.khoa] = v.giaTri || {};
+    else if (v.loai === 'dau') dau[v.khoa] = v.giaTri || {};
+  });
+  return { chapters, chuDe, dau };
+}
+
+/** Tiến độ từng bài trên máy chủ — khoá tài liệu là mã bài đã thay ':' '.' bằng '_' */
+export async function docTienDoMicro(uid) {
+  if (!db || !isCloudLearner(uid)) return {};
+  const snap = await getDocs(collection(db, COLLECTIONS.progress(uid)));
+  const micros = {};
+  snap.forEach((d) => {
+    const v = d.data();
+    if (!v.microId) return;
+    micros[v.microId] = {
+      done: true, pass: !!v.pass, mustPassOK: !!v.mustPassOK,
+      best: v.score || 0, total: v.total || 0,
+      attempts: v.attempts || 1,
+      at: typeof v.at === 'number' ? new Date(v.at).toISOString() : v.at || null,
+    };
+  });
+  return micros;
+}
+
+/** Sổ tiến độ đầy đủ của một tài khoản — dùng cho cả lúc đăng nhập lẫn bảng cô giáo. */
+export async function tienDoTuMay(uid) {
+  const [micros, hb] = await Promise.all([
+    docTienDoMicro(uid).catch(() => ({})),
+    docHocBa(uid).catch(() => ({})),
+  ]);
+  return { micros, chapters: {}, chuDe: {}, dau: {}, ...hb, micros };
 }
 
 /** Cô lần vào nhật ký từng câu của MỘT em */
