@@ -63,13 +63,16 @@ export async function myProfile(uid) {
   return snap.exists() ? snap.data() : null;
 }
 
-export async function saveProfile(uid, { displayName, grade }) {
+export async function saveProfile(uid, { displayName, grade, bietDanh }) {
   if (!db) return;
   /* Chặn lớp lạ ngay tại đây: luật Firestore cho chính chủ sửa hồ sơ và KHÔNG soi
      trường `grade`, nên một con số bậy ghi được thẳng lên — rồi hiện ra bảng xếp
      hạng thành "Bạn nhỏ lớp 99" cho cả trường đọc. */
-  await setDoc(doc(db, NGUOI_DUNG, uid),
-    { displayName, grade: lopHopLe(grade), profileComplete: true }, { merge: true });
+  const muc = { displayName, grade: lopHopLe(grade), profileComplete: true };
+  /* Biệt danh chỉ ghi khi màn gọi có nói tới. Màn chào lần đầu không hỏi biệt danh —
+     truyền thẳng `undefined` vào đây là XOÁ MẤT biệt danh con đã đặt từ trước. */
+  if (bietDanh !== undefined) muc.bietDanh = String(bietDanh).slice(0, 24);
+  await setDoc(doc(db, NGUOI_DUNG, uid), muc, { merge: true });
 }
 
 /**

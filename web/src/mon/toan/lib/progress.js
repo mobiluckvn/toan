@@ -4,20 +4,36 @@
  */
 import { allMicroIds, chapterOf } from './noiDung.js';
 import { chuongTrinhCua } from '../../../chung/lib/soQuyen.js';
+import { choDangDung, CHO_DAU } from '../../../chung/lib/nguoiDung.js';
 
-const KEY = 'ttd5.progress.v1';
+/**
+ * Khoá sổ tiến độ tại máy — RIÊNG CHO TỪNG BÉ.
+ *
+ * Máy tính bảng dùng chung cả nhà: anh lớp 5 và em lớp 2 mỗi bé một tài khoản, nhưng
+ * sổ tại máy trước đây dùng CHUNG một khoá. Em vừa đăng nhập là thấy ngay "đã học
+ * xong 2 trên 33 bài" của anh — hai sổ trộn vào nhau, và bé nào học sau thì đè lên
+ * bé học trước.
+ *
+ * Chỗ ĐẦU giữ nguyên khoá cũ `ttd5.progress.v1`: máy đang dùng từ trước bản này có
+ * cả sổ ở đó, đổi khoá là bé đang học mất sạch bài trong mắt mình.
+ */
+const KEY_GOC = 'ttd5.progress.v1';
+const khoa = () => {
+  const cho = choDangDung();
+  return cho === CHO_DAU ? KEY_GOC : `${KEY_GOC}.${cho}`;
+};
 
 export const emptyProgress = () => ({ micros: {}, chapters: {}, updatedAt: null });
 
 export function loadProgress(storage = globalThis.localStorage) {
   try {
-    const raw = storage?.getItem(KEY);
+    const raw = storage?.getItem(khoa());
     return raw ? { ...emptyProgress(), ...JSON.parse(raw) } : emptyProgress();
   } catch { return emptyProgress(); }
 }
 
 export function saveProgress(p, storage = globalThis.localStorage) {
-  try { storage?.setItem(KEY, JSON.stringify({ ...p, updatedAt: new Date().toISOString() })); }
+  try { storage?.setItem(khoa(), JSON.stringify({ ...p, updatedAt: new Date().toISOString() })); }
   catch { /* chế độ riêng tư — bỏ qua, học vẫn chạy */ }
   return p;
 }

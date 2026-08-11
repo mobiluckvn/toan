@@ -14,8 +14,12 @@ import {
   initializeFirestore, persistentLocalCache, persistentMultipleTabManager,
   connectFirestoreEmulator,
 } from 'firebase/firestore';
-import { getAuth, connectAuthEmulator } from 'firebase/auth';
+import {
+  initializeAuth, indexedDBLocalPersistence, browserLocalPersistence,
+  connectAuthEmulator,
+} from 'firebase/auth';
 import { getFunctions, connectFunctionsEmulator } from 'firebase/functions';
+import { choDangDung, CHO_DAU } from './nguoiDung.js';
 
 /** Điền từ Firebase Console → Project settings. Đặt trong .env.local, không commit. */
 const cfg = {
@@ -52,9 +56,19 @@ export const hasFirebase = !!cfg.projectId;
 export const dungGiaLap = !!import.meta.env?.DEV
   && import.meta.env?.VITE_FB_EMULATOR === '1';
 
+/**
+ * CHỖ đang mở — mỗi bé trong nhà một chỗ, xem `chung/lib/nguoiDung.js`.
+ * Đọc MỘT LẦN lúc khởi động: đổi chỗ là tải lại trang, nên trong suốt vòng đời một
+ * lần chạy, `db`/`auth`/`fns` luôn thuộc về đúng một bé và không đổi giữa chừng.
+ */
+export const choHienTai = choDangDung();
+
 let app = null, db = null, auth = null, fns = null;
 if (hasFirebase) {
-  app = initializeApp(cfg);
+  /* Tên thể hiện = tên chỗ. Firebase lưu phiên theo tên ấy
+     (`firebase:authUser:{apiKey}:{tênApp}`), nên hai bé không đá phiên của nhau.
+     Chỗ đầu giữ tên `[DEFAULT]` để máy đã đăng nhập từ trước bản này không bị đẩy ra. */
+  app = choHienTai === CHO_DAU ? initializeApp(cfg) : initializeApp(cfg, choHienTai);
   db = initializeFirestore(app, {
     /* Bộ nhớ đệm bền ĐỤNG bộ giả lập: nó giữ lại dữ liệu của lần chạy trước trong
        IndexedDB, nên tắt giả lập đi rồi mở lại là thấy dữ liệu ma. Chạy giả lập thì
@@ -63,7 +77,22 @@ if (hasFirebase) {
       localCache: persistentLocalCache({ tabManager: persistentMultipleTabManager() }),
     }),
   });
-  auth = getAuth(app);
+  /**
+   * GIỮ PHIÊN — khai TƯỜNG MINH, đừng để mặc định tự chọn.
+   *
+   * `getAuth()` tự dò: IndexedDB → localStorage → bộ nhớ tạm. Nghe thì có dự phòng,
+   * nhưng khi IndexedDB mở được rồi lại hỏng nửa chừng (Safari dọn kho, chế độ riêng
+   * tư, máy hết chỗ) thì nó đã chọn xong và rơi về BỘ NHỚ TẠM — đóng tab là mất
+   * phiên, mở lại phải nhập mã từ đầu. Bác gặp đúng hiện tượng ấy.
+   *
+   * Khai thành mảng thì Firebase thử lần lượt và tự lùi sang localStorage khi
+   * IndexedDB không dùng được — localStorage vẫn sống qua lần mở lại, nên con không
+   * bị đẩy ra. Không kèm `inMemoryPersistence`: thà báo lỗi đăng nhập còn hơn nhận
+   * con vào rồi lặng lẽ quên mất sau khi đóng tab.
+   */
+  auth = initializeAuth(app, {
+    persistence: [indexedDBLocalPersistence, browserLocalPersistence],
+  });
   fns = getFunctions(app, 'asia-southeast1');
 
   if (dungGiaLap) {

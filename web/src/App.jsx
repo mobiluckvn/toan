@@ -6,7 +6,12 @@ import KeSach from './chung/components/KeSach.jsx';
 import BangXepHang from './chung/components/BangXepHang.jsx';
 import ParentReport from './chung/components/ParentReport.jsx';
 import { napSoDangKy, soDangKy } from './chung/lib/soQuyen.js';
-import { hasFirebase, dungGiaLap } from './chung/lib/nenTang.js';
+import { hasFirebase, dungGiaLap, choHienTai } from './chung/lib/nenTang.js';
+import ChonNguoi from './chung/components/ChonNguoi.jsx';
+import HoSoCon from './chung/components/HoSoCon.jsx';
+import {
+  dsNguoi, ghiNguoi, xoaNguoi, doiCho, choTrong, dangThemBe,
+} from './chung/lib/nguoiDung.js';
 import { gopTienDoMon } from './chung/lib/soTienDo.js';
 import { watchAuth, myRole, myProfile, saveProfile, logout } from './chung/lib/taiKhoan.js';
 import { MON, monCua } from './soMon.js';
@@ -45,6 +50,14 @@ const SKIP_KEY = 'ttd5.skipLogin.v1';
  * Dữ liệu vẫn nằm trọn trong máy — xem `chung/lib/nenTang.js`.
  */
 const LOCAL_KHONG_DANG_NHAP = !!import.meta.env?.DEV && !dungGiaLap;
+
+/**
+ * Vừa bấm "Thêm bé khác" hay chưa? Đọc ở TẦNG MODULE, cố ý — `dangThemBe()` đọc xong
+ * là xoá dấu, mà `<React.StrictMode>` gọi hàm khởi tạo state HAI LẦN: lần đầu đọc
+ * được và xoá, lần hai đọc ra rỗng, thế là app lại hỏi "ai đang học" và nút "Thêm bé
+ * khác" quay về đúng màn vừa bấm. Module thì chỉ nạp một lần.
+ */
+const VUA_THEM_BE = dangThemBe();
 
 export default function App() {
   const [view, setView] = useState({ page: 'home' });
@@ -112,7 +125,15 @@ export default function App() {
       const r = await myRole(user).catch(() => 'learner');
       setRole(r);
       if (r !== 'learner') return;
-      myProfile(user.uid).then(setProfile).catch(() => setProfile(null));
+      myProfile(user.uid).then((h) => {
+        setProfile(h);
+        /* Ghi tên con vào SỔ CỦA MÁY để lần sau mở lên còn biết mà hỏi "ai đang học".
+           Ghi cả khi hồ sơ chưa có gì — ít nhất còn cái email để nhận ra nhau. */
+        ghiNguoi({
+          cho: choHienTai, uid: user.uid, email: user.email,
+          ten: h?.displayName || '', bietDanh: h?.bietDanh || '', lop: h?.grade || 0,
+        });
+      }).catch(() => setProfile(null));
       /* KÉO SỔ VỀ cho TỪNG MÔN. Con học ở máy tính bảng rồi mở máy của bố mẹ mà thấy
          trắng tinh thì tưởng mất bài — dữ liệu vẫn còn nguyên, chỉ là màn hình không
          hỏi. Gộp chứ không đè: hai máy có thể đang học dở hai bài khác nhau. */
@@ -132,22 +153,55 @@ export default function App() {
 
   const signOut = async () => {
     await logout().catch(() => {});
+    /* Bé thoát hẳn thì bỏ luôn tên khỏi sổ của máy — để nguyên thì màn "Ai đang học"
+       vẫn hiện tên ấy, bấm vào lại rơi ra màn nhập mã, trông như hỏng. */
+    xoaNguoi(choHienTai);
     try { localStorage.removeItem(SKIP_KEY); } catch { /* chế độ riêng tư */ }
     setSkipped(false);
     setView({ page: 'home' });
   };
 
+  /* ── Nhiều bé chung một máy ──
+     `dsNguoi()` là sổ của MÁY (localStorage), không phải state — nên đọc thẳng mỗi
+     lần vẽ. Nó chỉ đổi khi đăng nhập/thoát, mà hai việc ấy đều kéo theo vẽ lại. */
+  const dsBe = dsNguoi();
+  const beKhac = dsBe.filter((n) => n.cho !== choHienTai);
+  /* Chưa vào được chỗ này, mà máy còn nhớ bé khác → hỏi "ai đang học" thay vì đẩy
+     thẳng ra màn nhập mã. Bé kia vẫn còn phiên nên bấm tên là vào học ngay. */
+  const [hoiChonNguoi, setHoiChonNguoi] = useState(!VUA_THEM_BE);
+  const themNguoiMoi = () => doiCho(choTrong(), { moi: true });
+
   const account = {
     signedIn: !!auth,
     name: profile?.displayName || auth?.email || '',
+    lop: profile?.grade || 0,
+    email: auth?.email || '',
+    soNguoi: dsBe.length,
     onSignIn: () => { try { localStorage.removeItem(SKIP_KEY); } catch { /* bỏ qua */ } setSkipped(false); },
     onSignOut: signOut,
+    onHoSo: () => setView({ page: 'hoso' }),
     available: hasFirebase && !LOCAL_KHONG_DANG_NHAP,
   };
 
   /* ── Các màn trước khi vào học ── */
   if (auth === undefined) {
     return <div className="flex min-h-[100dvh] items-center justify-center text-mute">Đang mở…</div>;
+  }
+
+  /* AI ĐANG HỌC? — chỗ này chưa có ai vào, nhưng máy còn nhớ bé khác.
+     Đặt TRƯỚC màn đăng nhập: nhà có hai bé thì việc thường ngày là "chọn bé", không
+     phải "gõ email". Bé nào cũng còn phiên riêng nên bấm tên là vào thẳng. */
+  if (hasFirebase && !LOCAL_KHONG_DANG_NHAP && !auth && !skipped
+      && beKhac.length > 0 && hoiChonNguoi) {
+    return (
+      <ChonNguoi
+        onChon={(n) => doiCho(n.cho)}
+        /* Cấp một chỗ TRỐNG cho bé mới, đừng đăng nhập đè lên chỗ đang mở: chỗ ấy có
+           thể là của bé cũ vừa mất phiên, đè lên là bé cũ biến khỏi danh sách. */
+        onThemNguoi={themNguoiMoi}
+        onQuenNguoi={(n) => { xoaNguoi(n.cho); setHoiChonNguoi(dsNguoi().length > 0); }}
+      />
+    );
   }
 
   if (hasFirebase && !LOCAL_KHONG_DANG_NHAP && !auth && !skipped) {
@@ -174,11 +228,49 @@ export default function App() {
     return (
       <ProfileSetup
         email={auth.email}
-        onSave={async (d) => { await saveProfile(auth.uid, d); setProfile({ ...profile, ...d, profileComplete: true }); }}
+        onSave={async (d) => {
+          await saveProfile(auth.uid, d);
+          setProfile({ ...profile, ...d, profileComplete: true });
+          ghiNguoi({ cho: choHienTai, uid: auth.uid, email: auth.email,
+                     ten: d.displayName, lop: d.grade });
+        }}
         onSkip={() => setProfile({ ...profile, profileComplete: true })}
       />
     );
   }
+
+  /* ══ ĐỔI BÉ ══ — mở từ hồ sơ, khi đang đăng nhập sẵn */
+  if (view.page === 'chonnguoi')
+    return (
+      <ChonNguoi
+        onChon={(n) => (n.cho === choHienTai
+          ? setView({ page: 'home' })      // chọn lại chính mình thì chỉ việc quay ra
+          : doiCho(n.cho))}
+        onThemNguoi={themNguoiMoi}
+        onQuenNguoi={(n) => { xoaNguoi(n.cho); setView({ page: 'hoso' }); }}
+      />
+    );
+
+  /* ══ HỒ SƠ CỦA CON ══ — đang là ai, và sửa lại tên · lớp · biệt danh */
+  if (view.page === 'hoso' && auth)
+    return (
+      <HoSoCon
+        hoSo={profile}
+        email={auth.email}
+        onLuu={async (d) => {
+          await saveProfile(auth.uid, d);
+          setProfile((h) => ({ ...(h || {}), ...d, profileComplete: true }));
+          /* Sổ của máy phải đổi theo, nếu không màn "Ai đang học" còn gọi tên cũ. */
+          ghiNguoi({ cho: choHienTai, uid: auth.uid, email: auth.email,
+                     ten: d.displayName, bietDanh: d.bietDanh, lop: d.grade });
+        }}
+        /* KHÔNG logout ở đây: thoát ra là mất phiên của bé này, lần sau bé quay lại
+           phải nhập mã. Đổi bé chỉ là mở chỗ khác — phiên của cả hai đều còn nguyên. */
+        onDoiNguoi={() => setView({ page: 'chonnguoi' })}
+        onSignOut={signOut}
+        onExit={() => setView({ page: 'home' })}
+      />
+    );
 
   /* ══ SỔ BỐ MẸ ══ — nhìn MỌI môn một lượt, mỗi môn một tab */
   if (view.page === 'report')

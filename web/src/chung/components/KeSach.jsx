@@ -74,13 +74,29 @@ export default function KeSach({ dangKy, mon = [], tienDo = {}, onMoQuyen, onMoC
                     className="rounded-full bg-navy-light px-2.5 py-1 text-[11px] font-bold">
               📖 Sổ bố mẹ
             </button>
-            {account.signedIn && (
-              <button onClick={account.onSignOut} className="text-[10.5px] opacity-75 underline">
-                thoát
-              </button>
-            )}
           </div>
         </div>
+
+        {/* ĐANG LÀ AI — trước đây chỗ này chỉ có mỗi chữ "thoát" bé xíu, không hề nói
+            tên. Máy tính bảng dùng chung cả nhà thì câu hỏi đầu tiên của bố mẹ là
+            "đang mở tài khoản của đứa nào" — phải trả lời ngay trên đầu màn hình.
+            Bấm vào là mở hồ sơ: đổi tên, đổi lớp, đổi biệt danh, đổi bé. */}
+        {account.signedIn && (
+          <button onClick={account.onHoSo}
+                  className="mt-3 flex w-full items-center gap-2.5 rounded-xl bg-navy-light px-3 py-2 text-left">
+            <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white text-[13px] font-extrabold text-navy">
+              {(account.name || '?').trim().charAt(0).toUpperCase() || '?'}
+            </span>
+            <span className="min-w-0 flex-1">
+              <b className="block truncate text-[13px] leading-tight">{account.name}</b>
+              <span className="block text-[11px] leading-tight opacity-80">
+                {account.lop ? `Lớp ${account.lop}` : 'chưa chọn lớp'}
+                {account.soNguoi > 1 ? ` · ${account.soNguoi} bé trên máy này` : ''}
+              </span>
+            </span>
+            <span className="shrink-0 text-[11px] opacity-80">hồ sơ ▸</span>
+          </button>
+        )}
       </header>
 
       {/* Học tiếp quyển vừa học dở — chỗ bấm to nhất màn hình */}

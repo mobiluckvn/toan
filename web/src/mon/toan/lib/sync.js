@@ -5,6 +5,7 @@
  * Nguyên tắc: ghi NHẬT KÝ THÔ (mỗi lượt trả lời một dòng), không chỉ ghi điểm tổng —
  * sau này mới trả lời được "bẫy nào cả lớp hay sập nhất", "câu nào con làm lâu mà vẫn sai".
  */
+import { choDangDung, CHO_DAU } from '../../../chung/lib/nguoiDung.js';
 
 /**
  * MỘT TÀI KHOẢN = MỘT HỌC SINH.
@@ -154,14 +155,27 @@ export function buildProgressDoc({ microId, grade, events, sessionId, serverTs =
 }
 
 /* ─────────── Hàng đợi ngoại tuyến ─────────── */
-const QKEY = 'ttd5.queue.v1';
+/**
+ * Hàng đợi cũng phải RIÊNG TỪNG BÉ, cùng lý do với sổ tiến độ.
+ *
+ * Nguy hơn sổ tiến độ một bậc: `reassignQueue` sang tên CẢ hàng đợi cho tài khoản vừa
+ * đăng nhập. Dùng chung một hàng thì em đăng nhập là bài anh vừa làm bị gán sang tên
+ * em — nhật ký sai người, mà nhật ký thì BẤT BIẾN, ghi lên máy chủ rồi không sửa được.
+ *
+ * Chỗ đầu giữ khoá cũ để máy đang dùng không mất những bản ghi còn nằm chờ.
+ */
+const QKEY_GOC = 'ttd5.queue.v1';
+const qkey = () => {
+  const cho = choDangDung();
+  return cho === CHO_DAU ? QKEY_GOC : `${QKEY_GOC}.${cho}`;
+};
 
 export function readQueue(storage = globalThis.localStorage) {
-  try { return JSON.parse(storage?.getItem(QKEY) || '[]'); } catch { return []; }
+  try { return JSON.parse(storage?.getItem(qkey()) || '[]'); } catch { return []; }
 }
 
 export function writeQueue(items, storage = globalThis.localStorage) {
-  try { storage?.setItem(QKEY, JSON.stringify(items)); } catch { /* bỏ qua */ }
+  try { storage?.setItem(qkey(), JSON.stringify(items)); } catch { /* bỏ qua */ }
   return items;
 }
 
