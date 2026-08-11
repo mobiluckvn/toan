@@ -97,6 +97,28 @@ export default function KeSach({ dangKy, mon = [], tienDo = {}, onMoQuyen, onMoC
             <span className="shrink-0 text-[11px] opacity-80">hồ sơ ▸</span>
           </button>
         )}
+
+        {/* CHƯA ĐĂNG NHẬP — phải có đường quay lại, ngay trên trang chính.
+            Trước đây nút đăng nhập CHỈ nằm trong trang của một quyển. Bé bấm "Để sau
+            — cho con học thử trước" là rơi thẳng vào kệ sách, và từ đó không còn cửa
+            nào để đăng nhập: phải mở đại một quyển ra mới thấy. Bố mẹ ngồi tìm không
+            ra, tưởng app hỏng — mà bài con học thì vẫn nằm nguyên ở máy, không lên
+            mạng, đổi máy là mất. */}
+        {account.available && !account.signedIn && account.onSignIn && (
+          <button onClick={account.onSignIn}
+                  className="mt-3 flex w-full items-center gap-2.5 rounded-xl bg-gold-pale px-3 py-2 text-left">
+            <span className="text-[16px]">☁️</span>
+            <span className="min-w-0 flex-1">
+              <b className="block text-[12.5px] leading-tight text-gold-dark">
+                Bài đang lưu ở máy này thôi
+              </b>
+              <span className="block text-[11px] leading-tight text-gold-dark opacity-80">
+                Đăng nhập để lưu lên mạng — đổi máy vẫn còn, thầy cô theo dõi được.
+              </span>
+            </span>
+            <span className="shrink-0 text-[11.5px] font-bold text-gold-dark">Đăng nhập ▸</span>
+          </button>
+        )}
       </header>
 
       {/* Học tiếp quyển vừa học dở — chỗ bấm to nhất màn hình */}

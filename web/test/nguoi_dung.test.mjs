@@ -101,5 +101,23 @@ try {
     KHO.getItem('ttd5.progress.v1') !== null);
 } finally { globalThis.localStorage = cu; }
 
+/* ── 6 · TRANG CHÍNH PHẢI CÓ ĐỦ CỬA VÀO TÀI KHOẢN ──
+   Bác bắt được trên bản chạy thật: bé bấm "Để sau — cho con học thử trước" là rơi
+   thẳng vào kệ sách, và từ đó KHÔNG CÒN CỬA NÀO để đăng nhập — nút ấy chỉ nằm trong
+   trang của một quyển, phải mở đại một quyển ra mới thấy. Bố mẹ ngồi tìm không ra,
+   tưởng app hỏng, mà bài con học thì nằm nguyên ở máy, đổi máy là mất.
+
+   Kiểm tĩnh vì đây là lỗi VẮNG MẶT: không màn nào vỡ, không phép tính nào sai, chỉ là
+   một cái nút chưa bao giờ được đặt xuống. Chạy app lên mà không cố ý đi đúng đường
+   ấy thì không thấy. */
+const { readFileSync: doc2 } = await import('node:fs');
+const keSach = doc2(new URL('../src/chung/components/KeSach.jsx', import.meta.url).pathname, 'utf8');
+for (const [cua, viec] of [
+  ['onSignIn', 'đăng nhập khi đang học thử'],
+  ['onHoSo', 'mở hồ sơ (đổi tên · lớp · biệt danh · đổi bé)'],
+]) {
+  t(`kệ sách có cửa "${cua}" — ${viec}`, keSach.includes(`account.${cua}`));
+}
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
