@@ -61,7 +61,7 @@ function HuyHieuLop({ thang, progress }) {
   );
 }
 
-export default function ChuDe({ progress, onMoBai, onLuyen, onThoat, viTri = {},
+export default function ChuDe({ progress, onMoBai, onLuyen, onMoDau, onThoat, viTri = {},
                                 lopCon = 5 }) {
   const [bd, setBd] = useState(null);
   /* Khởi tạo từ `viTri`: con học xong một bài (hoặc xong một vòng luyện) rồi quay
@@ -204,6 +204,36 @@ export default function ChuDe({ progress, onMoBai, onLuyen, onThoat, viTri = {},
               );
             })}
           </section>
+
+          {/* ── ĐẤU THỬ Ở MÙA GIẢI — trục riêng, KHÔNG phải một bậc của thang ──
+
+              Mùa giải nối vào chủ đề qua HAI chặng: bẫy của khối đấu soi vào micro
+              lớp 5, micro ấy mới thuộc dạng bài. Nhưng nó đứng ngoài thang vì một
+              lẽ nặng hơn: `thang[].bai` phải là bài HỌC ĐƯỢC — vòng luyện gọi
+              `loadLesson` rồi rút câu từ `practice.pools`, mà tệp Mùa giải là `DR_`,
+              có `man`/`cau` và chạy bằng bộ chơi khác. Xếp khối đấu vào thang là bé
+              bấm vào gặp màn trắng, còn cổng thì vẫn xanh.
+
+              Nên đây là LỜI MỜI, đặt sau thang: học xong rồi thì ra sân đấu thử. */}
+          {onMoDau && (d.muaGiai || []).length > 0 && (
+            <section className="card mt-3.5">
+              <div className="kicker">
+                ĐẤU THỬ Ở MÙA GIẢI
+                <span className="ml-2 font-normal normal-case tracking-normal text-mute">
+                  chủ đề này có bẫy trong sân đấu
+                </span>
+              </div>
+              {d.muaGiai.map((x) => (
+                <DongDanhSach
+                  key={x.khoi}
+                  bieuTuong="🏆"
+                  tieuDe={x.ten}
+                  phuDe={`${x.soBay}/${x.tongBay} bẫy của khối này thuộc chủ đề trên`}
+                  onClick={() => onMoDau(x.khoi, oDau())}
+                />
+              ))}
+            </section>
+          )}
         </div>
         <ChanTrang />
       </div>

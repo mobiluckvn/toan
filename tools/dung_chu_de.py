@@ -134,6 +134,40 @@ def nap_bai(pt_that=None, teaches=None):
     return ten, micro5, sot, muc_tieu
 
 
+def nap_mua_giai():
+    """Khối đấu Mùa giải → những micro lớp 5 mà bẫy của nó soi vào.
+
+    Trả `{mã khối: {'ten':…, 'so':…, 'loai':…, 'micro': [micro lớp 5]}}`.
+
+    ── VÌ SAO MÙA GIẢI KHÔNG VÀO `thang` ──
+
+    Nó nối vào chủ đề qua HAI chặng (`bay[].micro` → micro lớp 5 → dạng bài), nên
+    đợt dựng thang đầu tiên cố ý bỏ ra. Nhưng lý do THẬT SỰ để giữ nó ngoài `thang`
+    lại là chuyện khác, và quan trọng hơn: **`thang[].bai` phải là bài HỌC ĐƯỢC.**
+    Vòng luyện chủ đề (`LuyenChuDe.jsx`) gọi `loadLesson(id)` rồi rút câu từ
+    `practice.pools`; tệp Mùa giải mang tiền tố `DR_`, có `man`/`cau` chứ không có
+    `practice.pools`, và chạy bằng một bộ chơi khác hẳn (`DauPlayer.jsx`).
+
+    Nhét khối đấu vào `thang` là vòng luyện nạp về mảng câu RỖNG — dữ liệu vẫn hợp
+    lệ, cổng vẫn xanh, mà bé bấm vào thì gặp màn trắng. Nên Mùa giải đi TRỤC RIÊNG
+    (`dang[].muaGiai`): màn chủ đề mời "đấu thử", còn thang thì không đụng tới.
+    """
+    ra = {}
+    d = os.path.join(GOC_KHO, 'web', 'public', 'content', 'quyen2')
+    if not os.path.isdir(d):
+        return ra
+    for f in sorted(os.listdir(d)):
+        if not f.startswith('DR_'):
+            continue
+        b = json.load(open(os.path.join(d, f), encoding='utf-8'))
+        ms = [x['micro'] for x in (b.get('bay') or []) if x.get('micro')]
+        if not ms:
+            continue
+        ra[b['id']] = {'ten': b.get('ten') or b['id'], 'so': b.get('so'),
+                       'loai': b.get('loai'), 'micro': ms}
+    return ra
+
+
 def nap_duong_lui():
     """{(id trên, lớp dưới): [id dưới]} — mối nối chính sách chỉ đích danh.
 
@@ -275,12 +309,56 @@ def dung():
                     key=lambda k: int(k[6:].split('.')[1]))
         mang[ma_m] = {'ten': n['name'], 'ma': n['area'], 'chuDe': ds}
 
+    # ── MÙA GIẢI: TRỤC RIÊNG, KHÔNG VÀO THANG ──
+    #
+    # Mỗi khối đấu soi vào một chùm micro lớp 5; micro nào thuộc dạng nào thì khối
+    # ấy được mời ở dạng ấy. Đếm luôn SỐ BẪY trúng dạng — khối 8 bẫy mà chỉ 1 bẫy
+    # dính dạng này thì mời cũng được, nhưng cô và bé cần biết để khỏi kỳ vọng nhầm.
+    mg = nap_mua_giai()
+    micro_dang = collections.defaultdict(set)
+    for ma_pt, d in dang.items():
+        for b in d['thang']:
+            if b['lop'] == 5:
+                for x in b['bai']:
+                    micro_dang[x].add(ma_pt)
+    for ma_pt in dang:
+        dang[ma_pt]['muaGiai'] = []
+    for khoi, n in sorted(mg.items()):
+        trung = collections.Counter()
+        for m in n['micro']:
+            for p in micro_dang.get(m, ()):
+                trung[p] += 1
+        for p, k in trung.items():
+            dang[p]['muaGiai'].append(
+                {'khoi': khoi, 'ten': n['ten'], 'so': n['so'], 'loai': n['loai'],
+                 'soBay': k, 'tongBay': len(n['micro'])})
+    for ma_pt in dang:
+        dang[ma_pt]['muaGiai'].sort(key=lambda x: (-x['soBay'], x['khoi']))
+
+    # ── BẢNG TRA NGƯỢC: bài → những dạng bài nó dạy ──
+    #
+    # Bảng `dang` đi theo chiều "dạng bài có những bài nào". Sổ của cô giáo cần
+    # chiều NGƯỢC LẠI — con vừa làm bài này, bài này thuộc dạng nào — mà quét 82
+    # dạng × thang mỗi lượt trả lời thì phí, nên dựng sẵn ở đây một lần.
+    #
+    # Một bài dạy được NHIỀU dạng (bài 9 lớp 4 dạy cả dấu hiệu chia hết lẫn lập số
+    # chẵn - lẻ), nên giá trị là MẢNG chứ không phải một mã.
+    bai_dang = {}
+    for ma_pt, d in dang.items():
+        for b in d['thang']:
+            for x in b['bai']:
+                bai_dang.setdefault(x, [])
+                if ma_pt not in bai_dang[x]:
+                    bai_dang[x].append(ma_pt)
+    bai_dang = {k: sorted(v) for k, v in sorted(bai_dang.items())}
+
     ra = {
         '_doc': ('Bản đồ chủ đề xuyên lớp — dựng bằng tools/dung_chu_de.py từ '
                  'data/km_v1_38.json + docs/Ma_tran_kien_thuc_Toan5_HSG_Cap4.xlsx. '
                  'KHÔNG sửa tay tệp này; sửa ở data/chu_de_tay.json rồi dựng lại.'),
         'nguon': 'km_v1_38 + Ma_tran_kien_thuc_Toan5_HSG_Cap4.xlsx',
         'mang': mang, 'chuDe': chu_de, 'dang': dang,
+        'baiDang': bai_dang,
     }
     return ra, canh_bao
 
@@ -310,6 +388,11 @@ def main(chi_soat=False, in_tung=False):
     print('  bậc theo lớp :', ' · '.join(f'lớp {l}: {n}' for l, n in sorted(theo_lop.items())))
     print('  căn cứ       :', ' · '.join(f'{k}: {v}' for k, v in theo_cc.most_common()))
     print(f'  trong đó {xn} bậc được CHÍNH SÁCH xác nhận là bài nền của bậc trên')
+
+    co_mg = [k for k, d in dang.items() if d.get('muaGiai')]
+    khoi = {x['khoi'] for d in dang.values() for x in d.get('muaGiai') or []}
+    print(f'  Mùa giải    : {len(khoi)} khối đấu mời được ở {len(co_mg)}/{len(dang)} dạng '
+          f'(trục riêng, KHÔNG vào thang)')
 
     # Lỗ hổng chương trình: ma trận đòi mà chưa quyển nào dạy. Không phải lỗi của
     # bộ dựng, nhưng phải in ra — im lặng thì bản đồ trông như phủ kín.

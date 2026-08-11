@@ -22,6 +22,18 @@ t('mỗi lượt trả lời một dòng', recs.length === 4);
 t('giữ đủ trường chẩn đoán', recs.every((r) => 'tries' in r && 'hintsUsed' in r && 'ms' in r && 'phase' in r));
 t('gắn bktUnit cho mọi bản ghi', recs.every((r) => r.bktUnit === 'CASE:IV.4.1#1@G5'));
 t('đánh dấu câu bẫy', recs.find((r) => r.itemId === 'A1').mustPass === true);
+
+/* 1b · DẠNG BÀI — trục thứ hai của sổ cô giáo, bên cạnh `bktUnit`.
+   `bktUnit` trả lời "con mắc ở micro nào"; `dangBai` trả lời "cả lớp yếu mảng kiến
+   thức nào" — nhìn theo bài thì không bao giờ thấy. Một bài dạy được nhiều dạng nên
+   trường này là MẢNG; không có dạng thì để `null` cho gọn sổ, đừng ghi mảng rỗng. */
+const cóDang = buildAttempts({ ...base, dangBai: ['PT:I.6.1', 'PT:I.6.4'] });
+t('đóng dấu dangBai lên mọi bản ghi',
+  cóDang.every((r) => Array.isArray(r.dangBai) && r.dangBai.length === 2));
+t('không có dạng thì dangBai là null', recs.every((r) => r.dangBai === null));
+t('một mã lẻ cũng gói thành mảng',
+  buildAttempts({ ...base, dangBai: 'PT:I.1.1' })[0].dangBai[0] === 'PT:I.1.1');
+t('mảng rỗng vẫn ra null', buildAttempts({ ...base, dangBai: [] })[0].dangBai === null);
 t('id ổn định (ghi lại không sinh trùng)',
   buildAttempts(base)[0].id === recs[0].id);
 t('id chứa đủ khoá', attemptId('L1', 'S1', 'DL:KSN5Q1.B49.M1', 'A1', 2) === 'L1_S1_B49.M1_A1_2');

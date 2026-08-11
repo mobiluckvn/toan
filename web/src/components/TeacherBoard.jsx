@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import Chu from './Chu.jsx';
 import { teacherBoard, learnerAttempts, logout, refreshTeacherBoard } from '../lib/firebase.js';
+import { napBanDoDang, dangCuaBai, tenDang } from '../lib/content.js';
 
 /** Tên chặng cho cô đọc, thay vì mã tiếng Anh */
 const CHANG = { practice: 'luyện tập', assess: 'sát hạch', check: 'chốt nhanh', worked: 'theo ví dụ' };
@@ -32,6 +33,13 @@ export default function TeacherBoard({ onExit }) {
   const [rows, setRows] = useState(null);
   const [q, setQ] = useState('');
   const [dangMoi, setDangMoi] = useState(false);
+  /* Lọc nhật ký theo DẠNG BÀI của ma trận. Rỗng = xem tất cả. */
+  const [locDang, setLocDang] = useState('');
+  const [coBanDo, setCoBanDo] = useState(false);
+
+  /* Bản đồ chủ đề nạp một lần cho cả màn: dùng để đọc tên dạng bài, và để suy dạng
+     cho những dòng nhật ký ghi TRƯỚC khi máy chủ bắt đầu đóng dấu `dangBai`. */
+  useEffect(() => { napBanDoDang().then(() => setCoBanDo(true)).catch(() => {}); }, []);
 
   useEffect(() => {
     let alive = true;
@@ -45,6 +53,7 @@ export default function TeacherBoard({ onExit }) {
     if (!pick) { setRows(null); return undefined; }
     let alive = true;
     setRows('loading');
+    setLocDang('');                       // đổi em thì bỏ lọc cũ, kẻo tưởng em mới chưa học gì
     learnerAttempts(pick.uid, 200)
       .then((r) => alive && setRows(r))
       .catch(() => alive && setRows([]));
@@ -57,6 +66,27 @@ export default function TeacherBoard({ onExit }) {
     if (!k) return list;
     return list.filter((r) => `${r.displayName} ${r.email}`.toLowerCase().includes(k));
   }, [board, q]);
+
+  /* ── DẠNG BÀI CỦA MỘT LƯỢT TRẢ LỜI ──
+     Ưu tiên dấu `dangBai` do máy đóng lúc gửi; dòng cũ chưa có dấu thì suy từ
+     `microId` qua bản đồ. Nhờ vậy sổ đã ghi từ trước vẫn lọc được, không phải chờ
+     con học lại mới có dữ liệu. */
+  const dangCua = (a) => (a.dangBai?.length ? a.dangBai : dangCuaBai(a.microId));
+
+  /* Chỉ liệt những dạng THẬT SỰ có trong sổ của em này — thả 82 dạng vào ô chọn thì
+     cô phải cuộn qua toàn dạng em chưa từng học. */
+  const dsDang = useMemo(() => {
+    if (!Array.isArray(rows)) return [];
+    const d = new Map();
+    for (const a of rows) for (const m of dangCua(a)) d.set(m, (d.get(m) || 0) + 1);
+    return [...d.entries()].sort((x, y) => y[1] - x[1]);
+  }, [rows, coBanDo]);
+
+  const nhatKy = useMemo(() => {
+    if (!Array.isArray(rows)) return rows;
+    if (!locDang) return rows;
+    return rows.filter((a) => dangCua(a).includes(locDang));
+  }, [rows, locDang, coBanDo]);
 
   if (err) return <Wrap onExit={onExit}><p className="card text-alert">{err}</p></Wrap>;
   if (!board) return <Wrap onExit={onExit}><p className="card text-mute">Đang mở bảng…</p></Wrap>;
@@ -71,9 +101,39 @@ export default function TeacherBoard({ onExit }) {
         )}
         {Array.isArray(rows) && rows.length > 0 && (
           <div className="card">
-            <div className="kicker">NHẬT KÝ TỪNG CÂU · {rows.length} LƯỢT GẦN NHẤT</div>
+            <div className="kicker">
+              NHẬT KÝ TỪNG CÂU · {locDang ? `${nhatKy.length}/${rows.length}` : rows.length} LƯỢT GẦN NHẤT
+            </div>
+
+            {/* LỌC THEO DẠNG BÀI — trục thứ hai bên cạnh "bài nào".
+                Nhìn theo bài, cô thấy "em sai bài 9, bài 23, bài 31"; nhìn theo dạng,
+                cô thấy cả ba đều là "dấu hiệu chia hết" và biết phải giảng lại cái gì. */}
+            {dsDang.length > 1 && (
+              <div className="mb-2 flex flex-wrap items-center gap-2">
+                <label className="text-[11.5px] font-extrabold tracking-widest text-mute"
+                       htmlFor="loc-dang">DẠNG BÀI</label>
+                <select id="loc-dang" value={locDang} onChange={(e) => setLocDang(e.target.value)}
+                        className="min-w-0 flex-1 rounded-xl border-[1.5px] border-line px-2.5 py-1.5 text-[13px]">
+                  <option value="">Tất cả ({rows.length} lượt)</option>
+                  {dsDang.map(([ma, n]) => (
+                    <option key={ma} value={ma}>{tenDang(ma)} — {n} lượt</option>
+                  ))}
+                </select>
+                {locDang && (
+                  <button className="pill bg-soft text-navy" onClick={() => setLocDang('')}>
+                    bỏ lọc ✕
+                  </button>
+                )}
+              </div>
+            )}
+            {locDang && nhatKy.length === 0 && (
+              <p className="py-3 text-center text-[13.5px] text-mute">
+                Không có lượt nào thuộc dạng này.
+              </p>
+            )}
+
             <div className="max-h-[70vh] overflow-y-auto">
-              {rows.map((a, i) => (
+              {nhatKy.map((a, i) => (
                 <div key={i} className="border-b border-line py-2 text-[13px] last:border-0">
                   <div className="flex items-center gap-2">
                     <span className={`h-2 w-2 flex-none rounded-full ${a.correct ? 'bg-teal' : 'bg-alert'}`} />

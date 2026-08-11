@@ -74,15 +74,22 @@ export function goiDapAn(v) {
  *   · ms      thời gian làm RIÊNG câu ấy, không phải tính từ lúc mở bài
  */
 export function buildAttempts({
-  learnerId, sessionId, microId, bktUnit, events,
+  learnerId, sessionId, microId, bktUnit, dangBai, events,
   serverTs = null, now = Date.now,
 }) {
   if (!learnerId || !sessionId || !microId) throw new Error('thiếu learnerId/sessionId/microId');
   const ts = now();
+  /* Dạng bài của ma trận — MẢNG, vì một bài dạy được nhiều dạng (bài 9 lớp 4 dạy cả
+     "dấu hiệu chia hết" lẫn "lập số chẵn - lẻ"). Rỗng thì ghi null cho gọn sổ. */
+  const dang = (Array.isArray(dangBai) ? dangBai : dangBai ? [dangBai] : []).filter(Boolean);
   return events.map((e, i) => ({
     id: attemptId(learnerId, sessionId, microId, e.itemId, i),
     learnerId, sessionId, microId,
     bktUnit: e.bktUnit || bktUnit || null,
+    /* `bktUnit` nói con mắc ở MICRO nào; `dangBai` nói bài ấy thuộc DẠNG nào của ma
+       trận. Hai trục khác nhau: cô giáo cần trục sau mới thấy cả lớp đang yếu mảng
+       kiến thức nào, thay vì một danh sách bài rời rạc. */
+    dangBai: dang.length ? dang : null,
     itemId: e.itemId,
     phase: e.phase,
     correct: !!e.ok,

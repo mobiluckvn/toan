@@ -85,6 +85,51 @@ t(`≥ 60 dạng bài có từ 2 bậc trở lên (${nhieuBac.length})`, nhieuBa
 t('dạng bài nào cũng có tên', Object.values(dang).every((d) => (d.ten || '').trim()));
 t('chủ đề nào cũng có tên', Object.values(chuDe).every((c) => (c.ten || '').trim()));
 
+/* ── MÙA GIẢI ĐI TRỤC RIÊNG, KHÔNG LẪN VÀO THANG ──
+   `thang[].bai` phải là bài HỌC ĐƯỢC: vòng luyện gọi `loadLesson` rồi rút câu từ
+   `practice.pools`. Tệp Mùa giải mang tiền tố `DR_`, có `man`/`cau` chứ không có
+   `practice.pools`, và chạy bằng `DauPlayer.jsx`. Lọt một mã `DR:` vào thang là bé
+   bấm vào gặp màn trắng — mà dữ liệu vẫn hợp lệ nên KHÔNG phép kiểm nào khác báo. */
+const trongThang = bacs.flatMap((b) => b.bai).filter((x) => String(x).startsWith('DR:'));
+t(`không mã Mùa giải nào lọt vào thang (${trongThang.length})`, trongThang.length === 0);
+
+const mgs = Object.values(dang).flatMap((d) => d.muaGiai || []);
+t('có trục Mùa giải', mgs.length > 0);
+t('khối đấu nào cũng mang mã DR:', mgs.every((x) => String(x.khoi).startsWith('DR:')));
+t('khối đấu nào cũng nói rõ mấy bẫy trúng chủ đề',
+  mgs.every((x) => x.soBay >= 1 && x.soBay <= x.tongBay));
+t('mỗi dạng không mời trùng một khối hai lần',
+  Object.values(dang).every((d) => {
+    const ds = (d.muaGiai || []).map((x) => x.khoi);
+    return new Set(ds).size === ds.length;
+  }));
+
+/* ── BẢNG TRA NGƯỢC `baiDang` ──
+   Sổ cô giáo đóng dấu dạng bài lên từng lượt trả lời bằng bảng này. Nó phải KHỚP
+   HAI CHIỀU với bảng `dang`: thiếu một chiều là có bài lọt sổ mà không ai hay. */
+const baiDang = bd.baiDang || {};
+t('có bảng tra ngược baiDang', Object.keys(baiDang).length > 250);
+
+const xuoi = new Map();                       // bài → dạng, dựng lại từ bảng `dang`
+for (const [ma, d] of Object.entries(dang)) {
+  for (const b of d.thang || []) for (const x of b.bai) {
+    if (!xuoi.has(x)) xuoi.set(x, new Set());
+    xuoi.get(x).add(ma);
+  }
+}
+const lech = [];
+for (const [b, ds] of xuoi) {
+  const co = new Set(baiDang[b] || []);
+  for (const m of ds) if (!co.has(m)) lech.push(`${b} thiếu ${m}`);
+}
+for (const [b, ds] of Object.entries(baiDang)) {
+  for (const m of ds) if (!xuoi.get(b)?.has(m)) lech.push(`${b} thừa ${m}`);
+}
+t(`baiDang khớp hai chiều với bảng dạng (lệch: ${lech.length})`, lech.length === 0);
+lech.slice(0, 5).forEach((x) => console.log('     ', x));
+t('mã dạng trong baiDang đều có thật',
+  Object.values(baiDang).every((ds) => ds.every((m) => dang[m])));
+
 const trong = Object.entries(dang).filter(([, d]) => !(d.thang || []).length);
 const tongBai = bacs.reduce((s, b) => s + b.bai.length, 0);
 const theoLop = {};

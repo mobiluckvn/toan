@@ -3,5 +3,40 @@
 
   "_da_soat": "Đợt đầu KHÔNG có dòng sửa tay nào. Ba phép đối chiếu đều sạch: (1) ma trận Excel khớp km_v1_38 264/264 trường hợp; (2) khai của bản đồ khớp `dangGoc` do người soạn ghi tay 105/111 bài lớp 2-3-4; (3) 9 micro lớp 5 khai số hiệu không có trong ma trận đã được vá bằng khai ở mức bài, và ba chỗ ấy đã đọc lại nhan đề micro để xác nhận.",
 
-  "_vi_sao_trong": "Hai luật đã THỬ RỒI PHẢI BỎ, ghi lại để đừng dựng lại: (a) lấy `duongLui` canCu='sach' làm bậc thang — 30/78 bậc rơi vào bài dạy chủ đề khác, vì đường lùi nói 'bài này dựng trên bài kia' chứ không nói 'cùng chủ đề'; (b) lớp 5 lấy khai ở mức BÀI khi micro không khai — kéo cả ba micro chữ số tận cùng của bài 11 vào thang dãy số."
+  "_vi_sao_trong": "Hai luật đã THỬ RỒI PHẢI BỎ, ghi lại để đừng dựng lại: (a) lấy `duongLui` canCu='sach' làm bậc thang — 30/78 bậc rơi vào bài dạy chủ đề khác, vì đường lùi nói 'bài này dựng trên bài kia' chứ không nói 'cùng chủ đề'; (b) lớp 5 lấy khai ở mức BÀI khi micro không khai — kéo cả ba micro chữ số tận cùng của bài 11 vào thang dãy số.",
+
+  "_dot_hai_nam_dang_tuong_thung": [
+    "NĂM DẠNG BÀI TỪNG BỊ GHI LÀ 'CHƯA QUYỂN NÀO DẠY' — SOÁT LẠI THÌ SÁCH CÓ DẠY ĐỦ CẢ NĂM.",
+    "",
+    "Sổ cũ (docs/tiep_theo_chu_de.md) kết luận đây là lỗ hổng chương trình, cần soạn nội",
+    "dung mới. Sai. Đọc mục tiêu và câu chốt của từng micro thì thấy nội dung khớp từng",
+    "chữ với lời tả dạng bài trong ma trận:",
+    "",
+    "  IV.5.3 Bể nước                 ← B52.M2 'chốt: BỂ LÀ CÁI VỎ — NƯỚC MỚI LÀ HIỆN TRẠNG'",
+    "  V.1.2  Vận tốc trung bình      ← B53.M3 'Vtb = tổng S : tổng T, KHÔNG phải 45'",
+    "  V.3.2  Đường vòng khép kín     ← B55.M1 'khoảng cách cần gặm là cả MỘT VÒNG'",
+    "                                 ← B56.M3 'hai kim đồng hồ là bài ĐUỔI KỊP trên đường vòng'",
+    "  V.5.1  Tàu qua vật đứng yên    ← B56.M1 'qua mốc là ĐIỂM — quãng = đúng THÂN TÀU'",
+    "  V.5.2  Tàu và vật chuyển động  ← B56.M2 'MỐC BIẾT CHẠY — ngược chiều chia TỔNG'",
+    "",
+    "GỐC RỄ: chương 55 và 56 khai `skills.primary` theo số hiệu CHƯƠNG chứ không theo số",
+    "hiệu DẠNG BÀI — cả sáu micro đánh 'CASE:V.3.1#1..3' và 'CASE:V.4.1#1..3', tức lấy",
+    "dạng đầu tiên của chương rồi đánh số thứ tự micro phía sau. Vì thế cả mảng V lệch",
+    "đúng một nấc, và năm dạng cuối rơi ra ngoài bản đồ.",
+    "",
+    "VÌ SAO KHÔNG SỬA THẲNG `skills.primary`: trường ấy đẻ ra luôn `bktUnit`, mà `bktUnit`",
+    "đã nằm trong nhật ký trả lời đã gửi lên máy chủ và trong sổ mức thạo. Đổi nó là mọi",
+    "bản ghi cũ mồ côi — mất lịch sử học của con để đổi lấy một nhãn phân loại. Không đáng.",
+    "Tệp sửa tay này chính là chỗ dựng ra để xử đúng ca ấy.",
+    "",
+    "Lưu ý còn lại: vì luật ở đây chỉ THÊM chứ không XOÁ, sáu micro trên hiện ra ở CẢ dạng",
+    "khai lẫn dạng thật. Trên màn chủ đề đó là bài xuất hiện ở hai thang — chấp nhận được",
+    "và thà thế còn hơn giấu; muốn dứt điểm thì phải sửa nguồn km_v1_38.json."
+  ],
+
+  "PT:IV.5.3": { "themBac": { "5": ["DL:KSN5Q1.B52.M2"] } },
+  "PT:V.1.2":  { "themBac": { "5": ["DL:KSN5Q1.B53.M3"] } },
+  "PT:V.3.2":  { "themBac": { "5": ["DL:KSN5Q1.B55.M1", "DL:KSN5Q1.B56.M3"] } },
+  "PT:V.5.1":  { "themBac": { "5": ["DL:KSN5Q1.B56.M1"] } },
+  "PT:V.5.2":  { "themBac": { "5": ["DL:KSN5Q1.B56.M2"] } }
 }

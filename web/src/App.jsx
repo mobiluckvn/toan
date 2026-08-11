@@ -280,6 +280,11 @@ export default function App() {
            trong ChuDe nên trường ấy đã cũ. Mã dạng bài là đủ — ChuDe suy ra mảng
            từ chính nó. */
         onLuyen={(maDang, lop) => setView({ page: 'luyenChuDe', maDang, lop })}
+        /* Đấu thử ở Mùa giải: khối đấu KHÔNG phải một bậc của thang (tệp `DR_` chạy
+           bằng bộ chơi khác), nên đi thẳng sang màn đấu chứ không qua LessonPlayer. */
+        onMoDau={(khoiId, viTri) => setView({
+          page: 'dau', khoiId, veLai: { page: 'chuDe', viTri },
+        })}
       />
     );
 
@@ -306,6 +311,31 @@ export default function App() {
         })}
       />
     );
+
+  /* ══ SÂN ĐẤU MÙA GIẢI ══
+     Phải đứng TRƯỚC nhánh kệ sách, và đây là chỗ dễ sai nhất của tệp này.
+
+     Vào sân đấu có HAI lối: kệ Mùa giải (lúc ấy `chuongTrinh` là lop5q2), và màn
+     chủ đề — "đấu thử ở Mùa giải" — nơi KHÔNG có quyển nào đang mở. Đặt nhánh này
+     sau `if (!chuongTrinh)` thì lối thứ hai bị kệ sách chặn ngang: bé bấm vào khối
+     đấu và bị ném về trang chính, không một tiếng báo.
+
+     Đúng cái bẫy đã dính một lần với bài lớp 3 mở từ màn chủ đề (khối `baiDocCham`
+     nằm sau `!chuongTrinh`). Cùng một hình dạng, cùng một triệu chứng.
+
+     Đường VỀ cũng không cố định là Mùa giải nữa: `veLai` đưa bé trở lại đúng chỗ đã
+     bấm, để vào từ chủ đề thì thoát ra vẫn còn mạch chủ đề đang theo. */
+  if (view.page === 'dau') {
+    const raKhoiDau = view.veLai || { page: 'muagiai' };
+    return (
+      <DauLoader
+        khoiId={view.khoiId}
+        onExit={() => setView(raKhoiDau)}
+        onMoMicro={(id) => setView({ page: 'lesson', microId: id })}
+        onXong={(kq) => { luuVongDau(kq); setView(raKhoiDau); }}
+      />
+    );
+  }
 
   /* ══ KỆ SÁCH — trang chính ══ */
   if (!chuongTrinh)
@@ -361,16 +391,6 @@ export default function App() {
 
   if (view.page === 'the')
     return <TheChienThuat onExit={() => setView({ page: 'muagiai' })} />;
-
-  if (view.page === 'dau')
-    return (
-      <DauLoader
-        khoiId={view.khoiId}
-        onExit={() => setView({ page: 'muagiai' })}
-        onMoMicro={(id) => setView({ page: 'lesson', microId: id })}
-        onXong={(kq) => { luuVongDau(kq); setView({ page: 'muagiai' }); }}
-      />
-    );
 
   return (
     <Home

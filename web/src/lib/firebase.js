@@ -20,6 +20,7 @@ import {
   COLLECTIONS, buildAttempts, buildProgressDoc, enqueue, flushQueue, newSessionId,
   isCloudLearner, normalizeEmail,
 } from './sync.js';
+import { napBanDoDang, dangCuaBai } from './content.js';
 
 /** Điền từ Firebase Console → Project settings. Đặt trong .env.local, không commit. */
 const cfg = {
@@ -162,7 +163,10 @@ async function writeRecords(records) {
  */
 export async function pushAttempts({ learnerId, sessionId, microId, bktUnit, events }) {
   if (!events?.length) return { sent: 0, left: 0 };
-  const recs = buildAttempts({ learnerId, sessionId, microId, bktUnit, events });
+  await napBanDoDang().catch(() => {});
+  const recs = buildAttempts({
+    learnerId, sessionId, microId, bktUnit, events, dangBai: dangCuaBai(microId),
+  });
   enqueue(recs);
   if (!isCloudLearner(learnerId) || !hasFirebase) return { sent: 0, left: recs.length, offlineOnly: true };
   return flushQueue(writeRecords);
@@ -175,7 +179,10 @@ export async function pushAttempts({ learnerId, sessionId, microId, bktUnit, eve
 export async function submitSession({ learnerId, sessionId, microId, bktUnit, events, tomTat, grade }) {
   // serverTs để null trong hàng đợi: dấu máy chủ chỉ đóng được lúc GỬI THẬT, không
   // đóng trước rồi cất vào localStorage được.
-  const recs = buildAttempts({ learnerId, sessionId, microId, bktUnit, events });
+  await napBanDoDang().catch(() => {});
+  const recs = buildAttempts({
+    learnerId, sessionId, microId, bktUnit, events, dangBai: dangCuaBai(microId),
+  });
   enqueue(recs);
   if (!isCloudLearner(learnerId)) return { sent: 0, left: recs.length, offlineOnly: true };
   if (db && learnerId) {

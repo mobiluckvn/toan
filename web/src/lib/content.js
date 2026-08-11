@@ -110,6 +110,45 @@ export async function loadLesson(microId) {
   return data;
 }
 
+/* ─────────── BÀI NÀY THUỘC DẠNG BÀI NÀO ───────────
+ *
+ * `chu_de.json` mang sẵn bảng tra ngược `baiDang` (tools/dung_chu_de.py dựng), nên
+ * ở đây chỉ nạp một lần rồi tra bằng khoá.
+ *
+ * Dùng để đóng dấu `dangBai` lên từng lượt trả lời gửi về máy chủ: cô giáo lọc sổ
+ * theo DẠNG BÀI của ma trận, chứ không chỉ theo từng bài rời. `bktUnit` đã có sẵn
+ * trả lời câu "con mắc ở micro nào"; `dangBai` trả lời câu khác hẳn — "cả lớp đang
+ * yếu MẢNG kiến thức nào", câu mà nhìn theo bài thì không bao giờ thấy.
+ *
+ * Nạp HỎNG thì trả về mảng rỗng chứ không ném lỗi: thiếu một nhãn phân loại không
+ * đáng để mất trắng nhật ký học của con.
+ */
+let BAN_DO_DANG = null;
+let TEN_DANG = null;
+let dangDoi = null;
+
+export async function napBanDoDang() {
+  if (BAN_DO_DANG) return BAN_DO_DANG;
+  if (!dangDoi) {
+    dangDoi = fetch(dongDau(`${CONTENT}/chu_de.json`))
+      .then((r) => (r.ok ? r.json() : null))
+      .then((b) => {
+        BAN_DO_DANG = (b && b.baiDang) || {};
+        TEN_DANG = Object.fromEntries(
+          Object.entries((b && b.dang) || {}).map(([k, v]) => [k, v.ten]));
+        return BAN_DO_DANG;
+      })
+      .catch(() => { BAN_DO_DANG = {}; TEN_DANG = {}; return BAN_DO_DANG; });
+  }
+  return dangDoi;
+}
+
+/** Mã dạng bài của một micro — mảng rỗng khi bản đồ chưa nạp hoặc bài chưa vào thang. */
+export const dangCuaBai = (microId) => (BAN_DO_DANG || {})[microId] || [];
+
+/** Tên đọc được của một mã dạng bài; chưa nạp bản đồ thì trả lại chính cái mã. */
+export const tenDang = (ma) => (TEN_DANG || {})[ma] || ma;
+
 /**
  * figureSpec lưu "figures/KSN5Q1_B49_M1_F1.png" → URL đầy đủ.
  * Mỗi hình đã có mã kiểm riêng, dùng luôn làm dấu phiên bản: vẽ lại MỘT hình thì
