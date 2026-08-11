@@ -41,7 +41,7 @@
    },
    {
     "id": "K2",
-    "text": "CÚ SẬP DOMINO: viết cả dãy thành các hiệu — các cặp giữa (−1/2 rồi +$\\frac{1}{2}$; −1/3 rồi +$\\frac{1}{3}$…) tự triệt tiêu nhau — chỉ còn MẢNH ĐẦU trừ MẢNH CUỐI."
+    "text": "CÚ SẬP DOMINO: viết cả dãy thành các hiệu — các cặp giữa (−$\\frac{1}{2}$ rồi +$\\frac{1}{2}$; −$\\frac{1}{3}$ rồi +$\\frac{1}{3}$…) tự triệt tiêu nhau — chỉ còn MẢNH ĐẦU trừ MẢNH CUỐI."
    },
    {
     "id": "K3",
@@ -53,19 +53,19 @@
    {
     "case": "ba quân đầu tiên (ca lõi)",
     "problem": "Tính: $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$.",
-    "solution": "Tách: (1 − 1/2) + (1/2 − 1/3) + (1/3 − 1/4). Sập: −1/2 gặp +1/2, −1/3 gặp +1/3 — triệt sạch. Còn 1 − 1/4 = 3/4.",
+    "solution": "Tách: (1 − $\\frac{1}{2}$) + ($\\frac{1}{2}$ − $\\frac{1}{3}$) + ($\\frac{1}{3}$ − $\\frac{1}{4}$). Sập: −$\\frac{1}{2}$ gặp +$\\frac{1}{2}$, −$\\frac{1}{3}$ gặp +$\\frac{1}{3}$ — triệt sạch. Còn 1 − $\\frac{1}{4}$ = $\\frac{3}{4}$.",
     "why": "dãy ngắn thấy rõ từng cặp triệt tiêu."
    },
    {
     "case": "cả hàng chín quân (ca dài hơi)",
     "problem": "Tính: $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + … + $\\frac{1}{9 \\times 10}$.",
-    "solution": "Sập cả hàng: chỉ còn 1 − 1/10. DỌN: = 10/10 − 1/10 = 9/10 (tối giản ✓).",
+    "solution": "Sập cả hàng: chỉ còn 1 − $\\frac{1}{10}$. DỌN: = $\\frac{10}{10}$ − $\\frac{1}{10}$ = $\\frac{9}{10}$ (tối giản ✓).",
     "why": "Ca đề A câu 5 — sức mạnh domino với dãy dài."
    },
    {
     "case": "kiểm một quân (ca lòng tin)",
-    "problem": "Kiểm tra bằng quy đồng rằng $\\frac{1}{2 \\times 3}$ = $\\frac{1}{2}$ − 1/3.",
-    "solution": "1/2 − 1/3 = 3/6 − 2/6 = 1/6 = 1/(2×3) ✓ — quân domino hai mặt là thật, không phải ảo thuật.",
+    "problem": "Kiểm tra bằng quy đồng rằng $\\frac{1}{2 \\times 3}$ = $\\frac{1}{2}$ − $\\frac{1}{3}$.",
+    "solution": "$\\frac{1}{2}$ − $\\frac{1}{3}$ = $\\frac{3}{6}$ − $\\frac{2}{6}$ = $\\frac{1}{6}$ = $\\frac{1}{2 \\times 3}$ ✓ — quân domino hai mặt là thật, không phải ảo thuật.",
     "why": "Dựng niềm tin trước khi đẩy cả hàng."
    }
   ],
@@ -75,7 +75,7 @@
     "wrong": "Sập domino ngon lành ra $1 - 1$/10 rồi… để nguyên thế nộp bài (hoặc quên tối giản $\\frac{2}{10}$).",
     "signal": "Đáp số còn dạng hiệu, hoặc phân số chưa tối giản.",
     "fix": "nghi thức hai bước: tính gọn ($\\frac{9}{10}$) rồi soi tối giản; 'sập' mới xong nửa việc.",
-    "counterExample": "Đáp '1 − $\\frac{1}{10}$' và '$\\frac{9}{10}$' cùng giá trị nhưng chỉ 9/10 được chấm trọn điểm."
+    "counterExample": "Đáp '1 − $\\frac{1}{10}$' và '$\\frac{9}{10}$' cùng giá trị nhưng chỉ $\\frac{9}{10}$ được chấm trọn điểm."
    }
   ],
   "vocabulary": [
@@ -128,7 +128,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Mỗi quân là phân số HAI MẶT: $\\frac{1}{2 \\times 3}$ mở ra thành 1/2 trừ $\\frac{1}{3}$ — con kiểm bằng quy đồng: ba phần sáu trừ hai phần sáu đúng bằng một phần sáu! Xếp cả dãy: trừ 1/2 áp sát cộng 1/2, trừ 1/3 áp sát cộng $\\frac{1}{3}$… Búng quân đầu — RẦM — các cặp giữa triệt tiêu sạch, chỉ trơ lại số 1 ở đầu hàng và trừ 1/10 ở cuối hàng!",
+    "narration": "Mỗi quân là phân số HAI MẶT: $\\frac{1}{2 \\times 3}$ mở ra thành $\\frac{1}{2}$ trừ $\\frac{1}{3}$ — con kiểm bằng quy đồng: ba phần sáu trừ hai phần sáu đúng bằng một phần sáu! Xếp cả dãy: trừ $\\frac{1}{2}$ áp sát cộng $\\frac{1}{2}$, trừ $\\frac{1}{3}$ áp sát cộng $\\frac{1}{3}$… Búng quân đầu — RẦM — các cặp giữa triệt tiêu sạch, chỉ trơ lại số 1 ở đầu hàng và trừ $\\frac{1}{10}$ ở cuối hàng!",
     "display": {
      "type": "domino_chain_interactive",
      "spec": {
@@ -179,7 +179,7 @@
     "teaches": [
      "K3"
     ],
-    "narration": "Trí Long hớn hở nộp bài: \"1 trừ $\\frac{1}{10}$!\" Cáo Đề lập biên bản ngay: hiện trường chưa dọn! Nghề domino có nghi thức hai bước: TÍNH GỌN — mười phần mười trừ một phần mười bằng CHÍN PHẦN MƯỜI; rồi SOI TỐI GIẢN — 9/10 hết rút được: giờ mới ký tên nộp bài. Gặp 2/10 mà nộp luôn cũng dính biên bản: phải dọn về $\\frac{1}{5}$!",
+    "narration": "Trí Long hớn hở nộp bài: \"1 trừ $\\frac{1}{10}$!\" Cáo Đề lập biên bản ngay: hiện trường chưa dọn! Nghề domino có nghi thức hai bước: TÍNH GỌN — mười phần mười trừ một phần mười bằng CHÍN PHẦN MƯỜI; rồi SOI TỐI GIẢN — $\\frac{9}{10}$ hết rút được: giờ mới ký tên nộp bài. Gặp $\\frac{2}{10}$ mà nộp luôn cũng dính biên bản: phải dọn về $\\frac{1}{5}$!",
     "display": {
      "type": "counter_example",
      "cases": [
@@ -242,7 +242,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Sư phụ viết dãy dài ngoằng: một phần một nhân hai, cộng một phần hai nhân ba, cộng mãi tới một phần chín nhân mười — cộng hết trong sáu mươi giây! Trí Long quy đồng chín phân số, tay run run… Su Kem xếp chín quân domino lên bàn và búng nhẹ quân đầu.",
-    "screenText": "1/(1×2) + … + 1/(9×10) — 60 giây?!",
+    "screenText": "$\\frac{1}{1 \\times 2}$ + … + $\\frac{1}{9 \\times 10}$ — 60 giây?!",
     "visual": "Bảng đề dài; Trí Long ngập giấy nháp quy đồng; Su Kem xếp hàng domino in phân số, ngón tay chạm quân đầu.",
     "assets": [],
     "duration": 20
@@ -253,7 +253,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Mỗi quân là phân số HAI MẶT: một phần hai-nhân-ba mở ra thành một phần hai TRỪ một phần ba — kiểm quy đồng: ba phần sáu trừ hai phần sáu đúng bằng một phần sáu! Xếp cả dãy: trừ một phần hai áp sát cộng một phần hai… Búng quân đầu — RẦM — các cặp giữa triệt tiêu sạch, chỉ trơ lại số MỘT đầu hàng và trừ MỘT PHẦN MƯỜI cuối hàng!",
-    "screenText": "1/(n(n+1)) = 1/n − 1/(n+1) → còn 1 − 1/10",
+    "screenText": "1/(n(n+1)) = 1/n − 1/(n+1) → còn 1 − $\\frac{1}{10}$",
     "visual": "Quân domino lật hai mặt +1/2 · −1/3; hàng domino đổ dây chuyền, các cặp giữa tan thành khói; hai mảnh '1' và '−1/10' đứng trơ phát sáng teal #1FCBAB.",
     "assets": [],
     "duration": 27
@@ -264,7 +264,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Trí Long hớn hở nộp: một trừ một phần mười! Cáo Đề lập biên bản: hiện trường chưa dọn! Nghi thức hai bước: TÍNH GỌN — mười phần mười trừ một phần mười bằng CHÍN PHẦN MƯỜI; rồi SOI TỐI GIẢN — hết rút được mới ký tên nộp bài. Gặp hai phần mười mà nộp luôn cũng dính biên bản: dọn về MỘT PHẦN NĂM!",
-    "screenText": "1 − 1/10 → 9/10 ✓ (tối giản rồi mới nộp!)",
+    "screenText": "1 − $\\frac{1}{10}$ → $\\frac{9}{10}$ ✓ (tối giản rồi mới nộp!)",
     "visual": "Cáo Đề đội mũ thanh tra cầm biên bản đỏ #C0392B; chổi quét hiện trường gom '1 − 1/10' thành thẻ '9/10' đóng mộc xanh.",
     "assets": [],
     "duration": 24
@@ -285,7 +285,7 @@
     "templateHint": "cta_practice",
     "transitionOut": "kết",
     "voiceover": "Hàng domino của con: một phần một-nhân-hai cộng một phần hai-nhân-ba cộng một phần ba-nhân-bốn — búng, sập, và DỌN nhé! Vào bài luyện ngay!",
-    "screenText": "1/(1×2) + 1/(2×3) + 1/(3×4) = ?",
+    "screenText": "$\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$ = ?",
     "visual": "Ba quân domino chờ búng; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
     "linkItem": "P1",
     "assets": [],
@@ -315,7 +315,7 @@
     "phan": "phantich"
    },
    {
-    "show": "Bước 2 — Sập: −1/2 với +1/2 triệt tiêu; −1/3 với +1/3 triệt tiêu → còn $1 - 1$/4.",
+    "show": "Bước 2 — Sập: −$\\frac{1}{2}$ với +$\\frac{1}{2}$ triệt tiêu; −$\\frac{1}{3}$ với +$\\frac{1}{3}$ triệt tiêu → còn $1 - 1$/4.",
     "phan": "phantich"
    },
    {
@@ -380,7 +380,7 @@
       "Mở từng quân hai mặt.",
       "Cặp giữa triệt tiêu; nhớ DỌN."
      ],
-     "solutionNarrative": "(1 − $\\frac{1}{2}$) + ($\\frac{1}{2}$ − $\\frac{1}{3}$) + ($\\frac{1}{3}$ − $\\frac{1}{4}$) = 1 − $\\frac{1}{4}$ = 3/4.",
+     "solutionNarrative": "(1 − $\\frac{1}{2}$) + ($\\frac{1}{2}$ − $\\frac{1}{3}$) + ($\\frac{1}{3}$ − $\\frac{1}{4}$) = 1 − $\\frac{1}{4}$ = $\\frac{3}{4}$.",
      "teaches": [
       "K1",
       "K2",
@@ -422,7 +422,7 @@
       "Búng cả hàng chín quân.",
       "Dọn: 10/10 − 1/10."
      ],
-     "solutionNarrative": "Sập domino: 1 − $\\frac{1}{10}$ = 9/10.",
+     "solutionNarrative": "Sập domino: 1 − $\\frac{1}{10}$ = $\\frac{9}{10}$.",
      "teaches": [
       "K2",
       "K3"
@@ -436,7 +436,7 @@
      "text": "(Đúng/Sai?) Dãy $\\frac{1}{1 \\times 2}$ + … + $\\frac{1}{4 \\times 5}$ có kết quả cuối cùng là $1 - 1$/5.",
      "answerKey": {
       "value": false,
-      "note": "Đó mới là hiện trường sau cú sập — phải DỌN: 4/5 mới là đáp số."
+      "note": "Đó mới là hiện trường sau cú sập — phải DỌN: $\\frac{4}{5}$ mới là đáp số."
      },
      "hints": [
       "Sập xong còn việc gì?",
@@ -498,7 +498,7 @@
     "id": "A2",
     "format": "tf",
     "sourceItem": "ITEM:KSN5Q1.B14.QZ1",
-    "text": "(Đúng/Sai?) $\\frac{1}{5 \\times 6}$ = $\\frac{1}{5}$ − 1/6.",
+    "text": "(Đúng/Sai?) $\\frac{1}{5 \\times 6}$ = $\\frac{1}{5}$ − $\\frac{1}{6}$.",
     "answerKey": {
      "value": true
     },

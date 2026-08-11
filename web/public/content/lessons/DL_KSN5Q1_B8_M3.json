@@ -58,20 +58,20 @@
    {
     "case": "vùng hai, dư 0 (ca nền)",
     "problem": "Trong dãy 123456789101112…, chữ số thứ 15 là chữ số nào, thuộc số nào?",
-    "solution": "15 − 9 = 6 bước vào vùng hai; 6 : 2 = 3 dư 0 → đi trọn 3 số sau số 9 (10, 11, 12) — cửa dư 0: chữ số CUỐI của số 12 → chữ số 2, thuộc số 12.",
+    "solution": "$15 - 9 = 6$ bước vào vùng hai; $6 : 2 = 3$ dư 0 → đi trọn 3 số sau số 9 (10, 11, 12) — cửa dư 0: chữ số CUỐI của số 12 → chữ số 2, thuộc số 12.",
     "why": "Ca nền vùng hai với cửa dư 0."
    },
    {
     "case": "vùng ba, dư 2 (ca chuẩn)",
     "problem": "Chữ số thứ 200 là chữ số nào, thuộc số nào?",
-    "solution": "200 − 189 = 11; 11 : 3 = 3 dư 2 → đi trọn 3 số (100, 101, 102), bước 2 chữ số vào số kế 103 — cửa dư r: chữ số thứ 2 của 103 → chữ số 0, thuộc số 103.",
+    "solution": "$200 - 189 = 11$; $11 : 3 = 3$ dư 2 → đi trọn 3 số (100, 101, 102), bước 2 chữ số vào số kế 103 — cửa dư r: chữ số thứ 2 của 103 → chữ số 0, thuộc số 103.",
     "why": "Ca đinh của bẫy CĐ-8.3."
    },
    {
     "case": "trùm cuối 2026 (ca sư phụ)",
     "problem": "Chữ số thứ 2026 là chữ số nào, thuộc số nào?",
-    "solution": "2026 − 189 = 1837; 1837 : 3 = 612 dư 1 → đi trọn 612 số (100 → 711), bước 1 chữ số vào số 712 → chữ số 7, thuộc số 712.",
-    "why": "Số to kiểm sức — kỹ thuật y hệt, tra K4: 99 + 612 = 711."
+    "solution": "$2026 - 189 = 1837$; $1837 : 3 = 612$ dư 1 → đi trọn 612 số (100 → 711), bước 1 chữ số vào số 712 → chữ số 7, thuộc số 712.",
+    "why": "Số to kiểm sức — kỹ thuật y hệt, tra K4: $99 + 612 = 711$."
    }
   ],
   "numberRange": "Lớp 5: n đến 3000 (vùng ba); phép chia cho 2 hoặc 3 có dư.",
@@ -269,7 +269,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Máy chạy ba bước cho vị trí hai trăm. Trừ mốc: hai trăm trừ một tám chín còn mười một. Chia cỡ thẻ: mười một chia ba bằng ba DƯ HAI — đi trọn ba số, bước hai nhịp vào số kế. Mở cửa dư: chữ số thứ HAI của số một trăm linh ba — chữ số KHÔNG!",
-    "screenText": "200 − 189 = 11 · 11 : 3 = 3 dư 2 → 1[0]3",
+    "screenText": "$200 - 189 = 11$ · $11 : 3 = 3$ dư 2 → 1[0]3",
     "visual": "Máy định vị ba đèn bước; băng số '…100·101·102·103…' với kim đỏ dừng đúng chữ số 0 của 103 được khoanh vàng.",
     "assets": [],
     "duration": 21
@@ -449,7 +449,7 @@
      },
      "hints": [
       "2026 − 189 = 1837; chia 3.",
-      "612 dư 1: đi trọn đến 99 + 612 = 711, bước 1 vào 712."
+      "Đi trọn các số 3 chữ số rồi bước tiếp — chữ số cần tìm nằm ở số nào?"
      ],
      "solutionNarrative": "$1837 : 3 = 612$ dư 1 → bước 1 vào số 712 → chữ số 7.",
      "teaches": [

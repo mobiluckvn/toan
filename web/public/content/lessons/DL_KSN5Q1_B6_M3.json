@@ -59,19 +59,19 @@
    {
     "case": "số chẵn — tách nhánh (ca lõi)",
     "problem": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau là số chẵn?",
-    "solution": "Đuôi chẵn là 0 hoặc 8 — hai nhánh KHÁC luật. Nhánh đuôi 0: toa trăm 3, toa chục 2 → 6. Nhánh đuôi 8: toa trăm là 3 hoặc 5 = 2 (cấm 0!), toa chục 2 → 4. Cộng: 6 + 4 = 10 số.",
+    "solution": "Đuôi chẵn là 0 hoặc 8 — hai nhánh KHÁC luật. Nhánh đuôi 0: toa trăm 3, toa chục 2 → 6. Nhánh đuôi 8: toa trăm là 3 hoặc $5 = 2$ (cấm 0!), toa chục 2 → 4. Cộng: $6 + 4 = 10$ số.",
     "why": "nguồn bẫy CĐ-6.2."
    },
    {
     "case": "chia hết 5 (ca song sinh)",
     "problem": "Từ {0; 3; 5; 8}, lập được bao nhiêu số có ba chữ số khác nhau chia hết cho 5?",
-    "solution": "Đuôi là 0 hoặc 5: nhánh đuôi 0 → 6; nhánh đuôi 5 → 2 × 2 = 4. Tổng 10 số.",
+    "solution": "Đuôi là 0 hoặc 5: nhánh đuôi 0 → 6; nhánh đuôi 5 → $2  \\times  2 = 4$. Tổng 10 số.",
     "why": "Cùng khuôn với ca chẵn — luyện chuyển giao."
    },
    {
     "case": "chia hết 3 — họ tổng (ca sư phụ)",
     "problem": "Từ các chữ số 0; 1; 2; 3; 4, lập được bao nhiêu số có ba chữ số khác nhau chia hết cho 3?",
-    "solution": "Bộ ba tổng chia hết cho 3: {0;1;2}, {0;2;4}, {1;2;3}, {2;3;4}. Bộ CHỨA 0: 2 × 2 × 1 = 4 số/bộ. Bộ KHÔNG chứa 0: 3 × 2 × 1 = 6 số/bộ. Tổng: 4 + 4 + 6 + 6 = 20 số.",
+    "solution": "Bộ ba tổng chia hết cho 3: {0;1;2}, {0;2;4}, {1;2;3}, {2;3;4}. Bộ CHỨA 0: $2  \\times  2  \\times  1 = 4$ số/bộ. Bộ KHÔNG chứa 0: $3  \\times  2  \\times  1 = 6$ số/bộ. Tổng: $4 + 4 + 6 + 6 = 20$ số.",
     "why": "họ tổng chọn bộ, đếm cách xếp từng bộ."
    }
   ],
@@ -264,7 +264,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Mời hành khách khó tính — toa ĐUÔI — lên trước. Nhánh một, đuôi lấy thẻ không: toa trăm ba cách, toa chục hai — SÁU số. Nhánh hai, đuôi lấy thẻ tám: toa trăm chỉ còn hai cách vì thẻ không vẫn bị cấm ghế lái — BỐN số. Khác luật thì cộng ở cửa ra: sáu cộng bốn bằng MƯỜI!",
-    "screenText": "đuôi 0: 3×2=6 · đuôi 8: 2×2=4 → 10",
+    "screenText": "đuôi 0: $3 \\times 2=6$ · đuôi 8: $2 \\times 2=4$ → 10",
     "visual": "Hai đường ray tách nhánh; mỗi nhánh hiện bộ đếm và tổng con; hai dòng tàu gộp ở cổng ra với '10' vàng #F9B233.",
     "assets": [],
     "duration": 22
@@ -275,7 +275,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Thứ tự vàng in trên vé: toa RÀNG BUỘC trước — toa ĐẦU cấm thẻ không — toa dễ tính sau. Còn chia hết BA thì tuyển bộ theo tổng: bốn bộ đạt chuẩn; bộ chứa thẻ không xếp được bốn cách, bộ sạch thẻ không xếp được sáu cách — cộng cả bốn bộ ra HAI MƯƠI số!",
-    "screenText": "RÀNG BUỘC → ĐẦU → DỄ · ⋮3: 4+4+6+6 = 20",
+    "screenText": "RÀNG BUỘC → ĐẦU → DỄ · ⋮3: $4+4+6+6 = 20$",
     "visual": "Chiếc vé tàu in ba dòng thứ tự; bảng bốn bộ thẻ với số cách từng bộ; tổng 20 bật vàng.",
     "assets": [],
     "duration": 21

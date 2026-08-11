@@ -30,7 +30,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con đưa cách làm đuổi-gặp lên ĐƯỜNG VÒNG: xuất phát MỘT ĐIỂM ngược chiều — khoảng cách cần gặm là cả MỘT VÒNG: t = 400 : ($3 + 2$) = 80 giây (không phải nửa vòng — hai quãng 240/160 khác nhau nhưng CỘNG tròn vòng); cùng chiều — người nhanh phải đi HƠN đúng một vòng: 400 : ($3 - 2$) = 400 giây; đếm số lần gặp = tổng thời gian : chu kỳ, LẤY PHẦN NGUYÊN ($600 : 80 = 7,5$ → 7 lần).",
+  "text": "Con đưa cách làm đuổi-gặp lên ĐƯỜNG VÒNG: xuất phát MỘT ĐIỂM ngược chiều — khoảng cách cần gặm là cả MỘT VÒNG: t = 400 : ($3 + 2$) = 80 giây (không phải nửa vòng — hai quãng $\\frac{240}{160}$ khác nhau nhưng CỘNG tròn vòng); cùng chiều — người nhanh phải đi HƠN đúng một vòng: 400 : ($3 - 2$) = 400 giây; đếm số lần gặp = tổng thời gian : chu kỳ, LẤY PHẦN NGUYÊN ($600 : 80 = 7,5$ → 7 lần).",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (ngược chiều = một vòng)",
   "kidText": "Trên đường vòng, ngược chiều thì phải gặm hết CẢ MỘT VÒNG; cùng chiều thì người nhanh phải đi hơn đúng một vòng."
  },
@@ -58,19 +58,19 @@
    {
     "case": "ngược chiều một vòng (ca lõi)",
     "problem": "Vòng chạy 400 m: hai bạn xuất phát cùng một điểm, chạy ngược chiều với vận tốc 3 m/s và 2 m/s. Hỏi sau bao lâu họ gặp nhau lần đầu?",
-    "solution": "Khoảng cách = một vòng: t = 400 : (3 + 2) = 80 giây.",
+    "solution": "Khoảng cách = một vòng: t = 400 : ($3 + 2$) = 80 giây.",
     "why": "Ca đề A câu 9 — trap khoảng-cách-bằng-không rình đây."
    },
    {
     "case": "kiểm hai phía trên vòng (ca tự chấm)",
     "problem": "Với bài trên: mỗi bạn chạy được bao nhiêu mét — điểm gặp có ở đúng nửa vòng không?",
-    "solution": "3 × 80 = 240 m; 2 × 80 = 160 m — không ở nửa vòng, nhưng 240 + 160 = 400 tròn vòng ✓.",
+    "solution": "$3  \\times  80 = 240$ m; $2  \\times  80 = 160$ m — không ở nửa vòng, nhưng $240 + 160 = 400$ tròn vòng ✓.",
     "why": "Ca LT4 — hai miếng khác cỡ cộng tròn bánh."
    },
    {
     "case": "cùng chiều dư một vòng (ca đuổi vòng)",
     "problem": "Hai bạn trên chạy CÙNG chiều từ một điểm. Hỏi sau bao lâu người nhanh bắt kịp người chậm (vỗ vai lần đầu)?",
-    "solution": "Người nhanh phải dư đúng một vòng: t = 400 : (3 − 2) = 400 giây.",
+    "solution": "Người nhanh phải dư đúng một vòng: t = 400 : ($3 - 2$) = 400 giây.",
     "why": "Ca đề A câu 10 — đuổi hiệu trên vòng."
    }
   ],
@@ -246,7 +246,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Nhìn chiếc bánh vòng: hai bạn quay lưng nhau chạy — muốn CHẠM MẶT phải gặm cho hết CẢ MỘT VÒNG từ hai phía! Khoảng cách trên vòng tròn là TRỌN MỘT VÒNG: bốn trăm chia ba-cộng-hai — TÁM MƯƠI giây! Điểm gặp có ở nửa vòng không? Người nhanh gặm hai trăm bốn mươi — người chậm một trăm sáu mươi: hai miếng KHÁC cỡ nhưng cộng tròn BỐN TRĂM: kiểm hai phía đóng mộc!",
-    "screenText": "khoảng cách = 1 vòng → 400 : 5 = 80 giây · 240 + 160 = 400 ✓",
+    "screenText": "khoảng cách = 1 vòng → $400 : 5 = 80$ giây · $240 + 160 = 400$ ✓",
     "visual": "Bánh vòng bị gặm từ hai phía hai màu teal-vàng, hai miếng khác cỡ 240-160 chạm nhau lệch nửa vòng; mộc xanh 400.",
     "assets": [],
     "duration": 27
@@ -257,7 +257,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "CÙNG chiều thì sao — kẻ nhanh đuổi mà mục tiêu cũng chạy vòng quanh: phải DƯ RA trọn một vòng mới vỗ vai được! Bốn trăm chia ba-trừ-hai — BỐN TRĂM giây! Vẫn thần chú cũ đuổi-hiệu-gặp-tổng — chỉ có khoảng cách đổi thành MỘT VÒNG! Chạy mười phút — gặp mấy lần? Sáu trăm giây chia chu kỳ tám mươi: bảy phẩy năm — lấy PHẦN NGUYÊN: BẢY lần, nửa chu kỳ dở dang chưa kịp chạm mặt!",
-    "screenText": "cùng chiều: 400 : (3−2) = 400 giây · 600 : 80 = 7,5 → 7 lần",
+    "screenText": "cùng chiều: 400 : (3−2) = 400 giây · $600 : 80 = 7,5$ → 7 lần",
     "visual": "Đường xoắn ốc người nhanh dư trọn một vòng rồi vỗ vai; băng đếm 7 lần gặp với nửa chu kỳ cuối mờ dở dang.",
     "assets": [],
     "duration": 29
@@ -278,7 +278,7 @@
     "templateHint": "cta_practice",
     "transitionOut": "kết",
     "voiceover": "Bánh vòng của con: vòng bốn trăm, ngược chiều ba và hai — gặm tròn vòng rồi kiểm hai miếng! Vào bài luyện ngay!",
-    "screenText": "400 : (3+2) = ? · 240 + 160 = ?",
+    "screenText": "400 : ($3+2$) = ? · $240 + 160$ = ?",
     "visual": "Bánh vòng chờ gặm; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
     "linkItem": "P1",
     "assets": [],
@@ -402,7 +402,7 @@
      },
      "hints": [
       "Dư đúng một vòng.",
-      "400 : (3 − 2)."
+      "Cả một vòng chia cho HIỆU hai vận tốc."
      ],
      "solutionNarrative": "400 giây.",
      "teaches": [

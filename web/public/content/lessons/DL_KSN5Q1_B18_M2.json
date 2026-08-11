@@ -46,7 +46,7 @@
    },
    {
     "id": "K3",
-    "text": "Vì sao tối giản trước: đích 8/14 chưa tối giản cho \"6 phần chênh\" ảo — bản thật 4/7 chỉ chênh 3 phần; đếm phần trên bản chưa tối giản là chia thước sai ngay từ vạch đầu."
+    "text": "Vì sao tối giản trước: đích $\\frac{8}{14}$ chưa tối giản cho \"6 phần chênh\" ảo — bản thật $\\frac{4}{7}$ chỉ chênh 3 phần; đếm phần trên bản chưa tối giản là chia thước sai ngay từ vạch đầu."
    },
    {
     "id": "K4",
@@ -57,20 +57,20 @@
   "canonicalExamples": [
    {
     "case": "cộng — chênh 1 phần (ca lõi)",
-    "problem": "Cho 34/41. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{6}{7}$?",
-    "solution": "Neo hiệu: 41 − 34 = 7. Đích 6/7 (tối giản ✓) chênh 7 − 6 = 1 phần → 1 phần = 7. Tử mới = 6 × 7 = 42 → n = 42 − 34 = 8. Thử: 42/49 = 6/7 ✓, hiệu 7 ✓.",
+    "problem": "Cho $\\frac{34}{41}$. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{6}{7}$?",
+    "solution": "Neo hiệu: $41 - 34 = 7$. Đích $\\frac{6}{7}$ (tối giản ✓) chênh $7 - 6 = 1$ phần → 1 phần = 7. Tử mới = $6  \\times  7 = 42$ → n = $42 - 34 = 8$. Thử: $\\frac{42}{49}$ = $\\frac{6}{7}$ ✓, hiệu 7 ✓.",
     "why": "Ca đề A câu 5 — chênh một phần, thước trọn."
    },
    {
     "case": "bớt — chênh 2 phần (ca đảo chiều)",
-    "problem": "Cho 47/61. Bớt ở cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{3}{5}$?",
-    "solution": "Hiệu 61 − 47 = 14. Đích 3/5 chênh 2 phần → phần = 7. Tử mới = 3 × 7 = 21 → n = 47 − 21 = 26. Thử: 21/35 = 3/5 ✓, hiệu 14 ✓.",
+    "problem": "Cho $\\frac{47}{61}$. Bớt ở cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{3}{5}$?",
+    "solution": "Hiệu $61 - 47 = 14$. Đích $\\frac{3}{5}$ chênh 2 phần → phần = 7. Tử mới = $3  \\times  7 = 21$ → n = $47 - 21 = 26$. Thử: $\\frac{21}{35}$ = $\\frac{3}{5}$ ✓, hiệu 14 ✓.",
     "why": "Bớt vẫn một cây thước — n tính bằng tử gốc trừ tử mới."
    },
    {
     "case": "sư phụ đích cần tối giản ngầm (ca ba nhịp)",
-    "problem": "Cho 5/8, cộng cùng n để được 7/10. Và bài sư phụ: 26/39 cộng cùng n để được 3/4.",
-    "solution": "5/8: hiệu 3; đích 7/10 chênh 3 → phần 1 → tử mới 7 → n = 2 (7/10 ✓). Sư phụ: hiệu 13; đích 3/4 chênh 1 → phần 13 → tử mới 39 → n = 13. Thử: 39/52 = 3/4 ✓.",
+    "problem": "Cho $\\frac{5}{8}$, cộng cùng n để được $\\frac{7}{10}$. Và bài sư phụ: $\\frac{26}{39}$ cộng cùng n để được $\\frac{3}{4}$.",
+    "solution": "$\\frac{5}{8}$: hiệu 3; đích $\\frac{7}{10}$ chênh 3 → phần 1 → tử mới 7 → n = 2 ($\\frac{7}{10}$ ✓). Sư phụ: hiệu 13; đích $\\frac{3}{4}$ chênh 1 → phần 13 → tử mới 39 → n = 13. Thử: $\\frac{39}{52}$ = $\\frac{3}{4}$ ✓.",
     "why": "LT7 + LT9 — thước chia nhiều phần và phần to 13."
    }
   ],
@@ -120,7 +120,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Cho 34/41. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{6}{7}$?",
+    "narration": "Cho $\\frac{34}{41}$. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{6}{7}$?",
     "display": {
      "type": "story_panel",
      "caption": "mò từng số… hay đo một nhát?"
@@ -138,7 +138,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Thước neo: hiệu 41 trừ 34 bằng BẢY — cộng bao nhiêu vào cả hai, sợi xích này vẫn 7. Nhìn đích $\\frac{6}{7}$: mẫu hơn tử đúng MỘT phần — vậy một phần đích ăn trọn 7 đơn vị! Tử mới bằng 6 phần: 42 — n bằng 42 trừ 34: TÁM. Thử hai tầng: 42/49 rút gọn đúng 6/7, hiệu vẫn 7 — đóng mộc!",
+    "narration": "Thước neo: hiệu 41 trừ 34 bằng BẢY — cộng bao nhiêu vào cả hai, sợi xích này vẫn 7. Nhìn đích $\\frac{6}{7}$: mẫu hơn tử đúng MỘT phần — vậy một phần đích ăn trọn 7 đơn vị! Tử mới bằng 6 phần: 42 — n bằng 42 trừ 34: TÁM. Thử hai tầng: $\\frac{42}{49}$ rút gọn đúng $\\frac{6}{7}$, hiệu vẫn 7 — đóng mộc!",
     "display": {
      "type": "anchor_ruler_interactive",
      "spec": {
@@ -165,7 +165,7 @@
     "estSeconds": 16,
     "item": {
      "format": "num",
-     "text": "Cho 5/8, cộng cùng n để được 7/10. n = ? (hiệu 3, đích chênh 3 phần)",
+     "text": "Cho $\\frac{5}{8}$, cộng cùng n để được $\\frac{7}{10}$. n = ? (hiệu 3, đích chênh 3 phần)",
      "answerKey": {
       "value": 2
      },
@@ -185,7 +185,7 @@
      "K3",
      "K4"
     ],
-    "narration": "Cáo Đề phát đề đích $\\frac{8}{14}$: Trí Long đếm luôn \"chênh 6 phần\"! Khoan — 8/14 là bản PHÓNG TO: tối giản về 4/7 mới là bản thật — chỉ chênh BA phần! Nghi thức ba nhịp khắc bảng: TỐI GIẢN trước — CHIA PHẦN sau — THỬ LẠI cuối. Chiều bớt cũng một thước: 47/61 về $\\frac{3}{5}$ — hiệu 14, chênh 2 phần, phần 7, tử mới 21, bớt n bằng 26 — thử 21/35 đúng $\\frac{3}{5}$!",
+    "narration": "Cáo Đề phát đề đích $\\frac{8}{14}$: Trí Long đếm luôn \"chênh 6 phần\"! Khoan — $\\frac{8}{14}$ là bản PHÓNG TO: tối giản về $\\frac{4}{7}$ mới là bản thật — chỉ chênh BA phần! Nghi thức ba nhịp khắc bảng: TỐI GIẢN trước — CHIA PHẦN sau — THỬ LẠI cuối. Chiều bớt cũng một thước: $\\frac{47}{61}$ về $\\frac{3}{5}$ — hiệu 14, chênh 2 phần, phần 7, tử mới 21, bớt n bằng 26 — thử $\\frac{21}{35}$ đúng $\\frac{3}{5}$!",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -239,7 +239,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Đề treo bảng: ba tư phần bốn mốt cộng cùng số nào vào cả hai để thành sáu phần bảy? Trí Long thử mò: cộng một… cộng hai… cộng ba… mồ hôi nhễ nhại. Su Kem cầm thước dây đo khoảng chênh hai thùng: BẢY đơn vị — và nó KHÔNG BAO GIỜ đổi đấy!",
-    "screenText": "34/41 + n cả hai = 6/7 — mò hay đo?",
+    "screenText": "$\\frac{34}{41}$ + n cả hai = $\\frac{6}{7}$ — mò hay đo?",
     "visual": "Bảng đề; Trí Long viết dãy phép thử gạch xóa; Su Kem căng thước dây giữa hai thùng bè, số '7' sáng vàng.",
     "assets": [],
     "duration": 20
@@ -250,7 +250,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Thước neo: hiệu bốn mốt trừ ba tư bằng BẢY — cộng bao nhiêu vào cả hai, sợi xích vẫn bảy. Nhìn đích sáu phần bảy: mẫu hơn tử đúng MỘT phần — một phần đích ăn trọn BẢY đơn vị! Tử mới bằng sáu phần: BỐN MƯƠI HAI — n bằng bốn hai trừ ba tư: TÁM. Thử: bốn hai phần bốn chín đúng sáu phần bảy, hiệu vẫn bảy — đóng mộc!",
-    "screenText": "hiệu 7 = 1 phần → tử mới 42 → n = 8 ✓",
+    "screenText": "hiệu $7 = 1$ phần → tử mới 42 → n = 8 ✓",
     "visual": "Sơ đồ phần: hai băng 6 phần và 7 phần, khoảng chênh 1 phần khớp sợi xích '7'; phép n = 42 − 34 = 8; mộc thử hai tầng.",
     "assets": [],
     "duration": 26
@@ -261,7 +261,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Cáo Đề phát đề đích tám phần mười bốn: Trí Long đếm luôn chênh SÁU phần! Khoan — đó là bản PHÓNG TO: tối giản về bốn phần bảy mới là bản thật — chỉ chênh BA phần! Ba nhịp khắc bảng: TỐI GIẢN trước — CHIA PHẦN sau — THỬ LẠI cuối. Chiều bớt cùng thước: bốn bảy phần sáu mốt về ba phần năm — phần bảy, bớt HAI SÁU!",
-    "screenText": "8/14 → 4/7: chênh 3! · bớt 26: 21/35 = 3/5 ✓",
+    "screenText": "$\\frac{8}{14}$ → $\\frac{4}{7}$: chênh 3! · bớt 26: $\\frac{21}{35}$ = $\\frac{3}{5}$ ✓",
     "visual": "Đích 8/14 co lại thành 4/7 dưới máy ép tối giản; số '6 phần' gạch đỏ thành '3 phần'; ca bớt chạy ba nhịp ba khung màu.",
     "assets": [],
     "duration": 26
@@ -282,7 +282,7 @@
     "templateHint": "cta_practice",
     "transitionOut": "kết",
     "voiceover": "Bài sư phụ chờ con: hai sáu phần ba chín cộng cùng số nào để thành ba phần tư? Nhớ đủ ba nhịp! Vào bài luyện ngay!",
-    "screenText": "26/39 + n = 3/4 → n?",
+    "screenText": "$\\frac{26}{39}$ + n = $\\frac{3}{4}$ → n?",
     "visual": "Đề sư phụ với thước dây cuộn chờ; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
     "linkItem": "P4",
     "assets": [],
@@ -292,13 +292,13 @@
  },
  "workedExample": {
   "title": "Đo một nhát thay trăm lần mò",
-  "problem": "Cho 34/41. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{6}{7}$?",
+  "problem": "Cho $\\frac{34}{41}$. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{6}{7}$?",
   "steps": [
    {
-    "show": "Bước 1 — Neo hiệu: $41 - 34 = 7$ (không đổi). Đích 6/7 đã tối giản ✓, chênh $7 - 6 = 1$ phần.",
+    "show": "Bước 1 — Neo hiệu: $41 - 34 = 7$ (không đổi). Đích $\\frac{6}{7}$ đã tối giản ✓, chênh $7 - 6 = 1$ phần.",
     "askBefore": {
      "format": "num",
-     "text": "Hiệu mẫu trừ tử của 34/41 là?",
+     "text": "Hiệu mẫu trừ tử của $\\frac{34}{41}$ là?",
      "answerKey": {
       "value": 7
      },
@@ -314,7 +314,7 @@
     "show": "Bước 3 — Thử hai tầng: $\\frac{42}{49}$ = $\\frac{6}{7}$ ✓ và hiệu $49 - 42 = 7$ ✓.",
     "askAfter": {
      "format": "num",
-     "text": "Cho 47/61 bớt cùng n để được $\\frac{3}{5}$ — n = ?",
+     "text": "Cho $\\frac{47}{61}$ bớt cùng n để được $\\frac{3}{5}$ — n = ?",
      "answerKey": {
       "value": 26
      },
@@ -336,7 +336,7 @@
      "id": "P1",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B18.LT4",
-     "text": "Cho phân số 34/41. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{6}{7}$?",
+     "text": "Cho phân số $\\frac{34}{41}$. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{6}{7}$?",
      "answerKey": {
       "value": 8
      },
@@ -361,7 +361,7 @@
      "id": "P2",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B18.LT5",
-     "text": "Cho phân số 47/61. Bớt ở cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{3}{5}$?",
+     "text": "Cho phân số $\\frac{47}{61}$. Bớt ở cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{3}{5}$?",
      "answerKey": {
       "value": 26
      },
@@ -378,7 +378,7 @@
      "id": "P3",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B18.LT7",
-     "text": "Cho phân số 5/8. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{7}{10}$?",
+     "text": "Cho phân số $\\frac{5}{8}$. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{7}{10}$?",
      "answerKey": {
       "value": 2
      },
@@ -397,13 +397,13 @@
      "id": "P4",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B18.LT9",
-     "text": "Sư phụ Trí Dũng đố: \"Cho phân số 26/39. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{3}{4}$?\"",
+     "text": "Sư phụ Trí Dũng đố: \"Cho phân số $\\frac{26}{39}$. Cộng thêm vào cả tử và mẫu cùng số tự nhiên nào để được phân số bằng $\\frac{3}{4}$?\"",
      "answerKey": {
       "value": 13
      },
      "hints": [
-      "Neo hiệu 13; đích 3/4 chênh 1 phần.",
-      "Tử mới = 3 × 13 = 39."
+      "Hiệu tử - mẫu không đổi khi cộng cùng một số vào cả hai.",
+      "Tử mới = 3 phần, mà mẫu mới = 4 phần."
      ],
      "solutionNarrative": "Phần 13 → tử mới 39 → n = 13 (thử $\\frac{39}{52}$ = $\\frac{3}{4}$ ✓).",
      "teaches": [
@@ -471,7 +471,7 @@
     "id": "A3",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B18.QZ5",
-    "text": "34/41 cộng 8 vào cả hai cho phân số:",
+    "text": "$\\frac{34}{41}$ cộng 8 vào cả hai cho phân số:",
     "choices": [
      "42/49",
      "42/48",
@@ -501,8 +501,8 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con giải bài neo hiệu bằng cây thước ba nhịp: tối giản — chia phần — thử lại. Con đạt {score}/3, {trapResult} câu bẫy đích-chưa-tối-giản.",
-  "homeActivity": "Đố đo nhanh: 'từ 5/8 muốn thành 7/10, cộng mấy?' — con đo hiệu 3, chia 3 phần, trả lời 2 kèm phép thử là đạt.",
-  "watchFor": "Nếu con đếm phần trên đích chưa tối giản — đưa ví dụ 8/14 vs $\\frac{4}{7}$ (S3) cùng con."
+  "homeActivity": "Đố đo nhanh: 'từ $\\frac{5}{8}$ muốn thành $\\frac{7}{10}$, cộng mấy?' — con đo hiệu 3, chia 3 phần, trả lời 2 kèm phép thử là đạt.",
+  "watchFor": "Nếu con đếm phần trên đích chưa tối giản — đưa ví dụ $\\frac{8}{14}$ vs $\\frac{4}{7}$ (S3) cùng con."
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B18.M2",

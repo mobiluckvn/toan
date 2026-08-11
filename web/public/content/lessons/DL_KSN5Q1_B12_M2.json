@@ -54,19 +54,19 @@
    {
     "case": "Gauss huyền thoại (ca nền)",
     "problem": "Tính tổng: $1 + 2 + 3$ + … + 100.",
-    "solution": "100 số hạng → 50 cặp, mỗi cặp (1 + 100) = 101 → tổng = 101 × 100 : 2 = 5050.",
+    "solution": "100 số hạng → 50 cặp, mỗi cặp ($1 + 100$) = 101 → tổng = $101  \\times  100 : 2 = 5050$.",
     "why": "Ca nền của mọi tổng ghép cặp."
    },
    {
     "case": "dãy nhảy 3 (ca bẫy)",
     "problem": "Tính tổng: $3 + 6 + 9$ + … + 99.",
-    "solution": "Số số hạng: (99 − 3) : 3 + 1 = 33. Tổng = (3 + 99) × 33 : 2 = 102 × 33 : 2 = 51 × 33 = 1683. (Quên \": 2\" sẽ ra 3366 — phình gấp đôi!)",
+    "solution": "Số số hạng: ($99 - 3$) : $3 + 1 = 33$. Tổng = ($3 + 99$) × $33 : 2 = 102  \\times  33 : 2 = 51  \\times  33 = 1683$. (Quên \": 2\" sẽ ra 3366 — phình gấp đôi!)",
     "why": "Ca đinh của bẫy CĐ-12.1, đề A câu 13."
    },
    {
     "case": "bài ngược (ca máy lùi)",
     "problem": "Tổng $1 + 2$ + … + n = 210. Tìm n.",
-    "solution": "(1 + n) × n : 2 = 210 → n × (n + 1) = 420 = 20 × 21 → n = 20.",
+    "solution": "(1 + n) × n : $2 = 210$ → n × (n + 1) = $420 = 20  \\times  21$ → n = 20.",
     "why": "tách tích hai số liên tiếp."
    }
   ],
@@ -239,7 +239,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Lễ bắt tay: bạn một bắt tay bạn một trăm — tổng một linh một; bạn hai với chín chín — lại một linh một! Mỗi cái bắt tay ngốn HAI bạn: một trăm bạn chỉ có NĂM MƯƠI cặp — tổng bằng một linh một nhân năm mươi: năm nghìn không trăm năm mươi! Thiếu chia hai là mỗi bạn bị đếm hai lần — tổng phình gấp đôi!",
-    "screenText": "50 cặp × 101 = 5050 · quên :2 → phình đôi!",
+    "screenText": "50 cặp × $101 = 5050$ · quên :2 → phình đôi!",
     "visual": "Hàng số 1…100 cong thành vòng cung; các cầu bắt tay nối 1-100, 2-99 với nhãn '101'; bộ đếm cặp dừng ở 50.",
     "assets": [],
     "duration": 25
@@ -250,7 +250,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Máy lùi cho bài ngược: tổng một tới n bằng hai trăm mười — tìm n? Chạy ngược: n nhân n cộng một bằng hai lần tổng — bốn trăm hai mươi. Tìm hai số SÁT VÁCH nhân ra bốn trăm hai mươi: hai mươi nhân hai mốt — trúng! n bằng HAI MƯƠI!",
-    "screenText": "n × (n + 1) = 420 = 20 × 21 → n = 20",
+    "screenText": "n × (n + 1) = $420 = 20  \\times  21$ → n = 20",
     "visual": "Cỗ máy chạy lùi nhả ba dòng phép; cặp '20·21' ghép khít như hai viên gạch sát vách, đáp đóng khung vàng.",
     "assets": [],
     "duration": 19
@@ -271,7 +271,7 @@
     "templateHint": "cta_practice",
     "transitionOut": "kết",
     "voiceover": "Thử tài Gauss nhí: tính tổng ba cộng sáu cộng chín tới chín chín — nhớ chia đôi nhé! Vào bài luyện ngay!",
-    "screenText": "3 + 6 + … + 99 = ?",
+    "screenText": "$3 + 6$ + … + 99 = ?",
     "visual": "Dãy 3·6·9·… chờ bắt cặp; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
     "linkItem": "P2",
     "assets": [],
@@ -385,7 +385,7 @@
      },
      "hints": [
       "(10 − 0,5) : 0,5 + 1.",
-      "(0,5 + 10) × 20 : 2."
+      "(đầu + cuối) × số số hạng : 2 — số số hạng lấy ở vế trên."
      ],
      "solutionNarrative": "20 số hạng; tổng = $10,5  \\times  20 : 2 = 105$.",
      "teaches": [
@@ -404,7 +404,7 @@
      },
      "hints": [
       "n × (n + 1) = 2 × 210.",
-      "420 = 20 × 21."
+      "Tìm hai số tự nhiên liên tiếp có tích bằng 420."
      ],
      "solutionNarrative": "n × (n + 1) = $420 = 20  \\times  21$ → n = 20.",
      "teaches": [

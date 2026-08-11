@@ -59,26 +59,26 @@
    {
     "case": "họ trừ (ca lõi)",
     "problem": "Tính: (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{10}$).",
-    "solution": "Quy từng ngoặc: 1/2 × 2/3 × … × 9/10. Sập chuyền: còn 1/10.",
+    "solution": "Quy từng ngoặc: $\\frac{1}{2}$ × $\\frac{2}{3}$ × … × $\\frac{9}{10}$. Sập chuyền: còn $\\frac{1}{10}$.",
     "why": "đề A câu 9."
    },
    {
     "case": "họ cộng (ca đổi vai)",
     "problem": "Tính: (1 + $\\frac{1}{2}$) × (1 + $\\frac{1}{3}$) × … × (1 + $\\frac{1}{9}$).",
-    "solution": "Quy: 3/2 × 4/3 × … × 10/9. Sập: mẫu đầu 2 và tử cuối 10 sống sót → 10/2 = 5.",
+    "solution": "Quy: $\\frac{3}{2}$ × $\\frac{4}{3}$ × … × $\\frac{10}{9}$. Sập: mẫu đầu 2 và tử cuối 10 sống sót → $\\frac{10}{2}$ = 5.",
     "why": "Ca đinh bẫy CĐ-15.2 — đề A câu 10: một dấu đổi, kết cục đổi."
    },
    {
     "case": "tin kết quả nhỏ (ca sư phụ 2026)",
     "problem": "Tính B = (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{2026}$) và giải thích MỘT câu vì sao nhỏ thế.",
-    "solution": "B = 1/2026. Vì mọi thừa số đều bé hơn 1 nên mỗi lần nhân tích teo đi một chút — 2025 cú \"cắn\" liên tiếp chỉ chừa đúng một phần 2026.",
+    "solution": "B = $\\frac{1}{2026}$. Vì mọi thừa số đều bé hơn 1 nên mỗi lần nhân tích teo đi một chút — 2025 cú \"cắn\" liên tiếp chỉ chừa đúng một phần 2026.",
     "why": "Ca bẫy CĐ-15.3 — niềm tin đặt vào lý lẽ, không hoảng."
    }
   ],
   "numberRange": "Lớp 5: n đến 2026; so sánh không-tính-hết với 1/50.",
   "misconceptions": [
    {
-    "wrong": "Bị tráo dấu mà không hay: làm (1 + $\\frac{1}{2}$)…(1 + $\\frac{1}{9}$) y hệt họ trừ, đáp 1/9.",
+    "wrong": "Bị tráo dấu mà không hay: làm (1 + $\\frac{1}{2}$)…(1 + $\\frac{1}{9}$) y hệt họ trừ, đáp $\\frac{1}{9}$.",
     "signal": "Đáp họ cộng lại nhỏ hơn 1 (tích các số > 1 phải LỚN hơn 1!).",
     "fix": "nghi thức soi dấu: dấu cộng → toa (n+1)/n nở ra, sống sót đổi vai → (n + 1)/2.",
     "counterExample": "(1 + $\\frac{1}{2}$)(1 + $\\frac{1}{3}$) = $\\frac{3}{2}$ × $\\frac{4}{3}$ = $2 > 1$ — họ cộng luôn phình, không teo."
@@ -205,7 +205,7 @@
     "teaches": [
      "K4"
     ],
-    "narration": "Đáp 1/10 vừa hiện, Trí Long hoảng: \"chín thừa số nhân nhau mà bé thế — chắc sai, tính tay lại!\" Su Kem giữ tay bạn: nhìn lý lẽ đã! Mỗi thừa số họ trừ đều BÉ HƠN 1 — nhân một lần là tích bị cắn bớt một miếng: nửa nhân hai phần ba đã teo còn một phần ba rồi. Chín thừa số — chín cú cắn: nhỏ là dấu hiệu ĐÚNG! Bài sư phụ 2026 thừa số cũng vậy: đáp một phần hai nghìn không trăm hai sáu — tin bằng lý lẽ, không tin bằng nhân tay!",
+    "narration": "Đáp $\\frac{1}{10}$ vừa hiện, Trí Long hoảng: \"chín thừa số nhân nhau mà bé thế — chắc sai, tính tay lại!\" Su Kem giữ tay bạn: nhìn lý lẽ đã! Mỗi thừa số họ trừ đều BÉ HƠN 1 — nhân một lần là tích bị cắn bớt một miếng: nửa nhân hai phần ba đã teo còn một phần ba rồi. Chín thừa số — chín cú cắn: nhỏ là dấu hiệu ĐÚNG! Bài sư phụ 2026 thừa số cũng vậy: đáp một phần hai nghìn không trăm hai sáu — tin bằng lý lẽ, không tin bằng nhân tay!",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -259,7 +259,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Nhà ga đề thi: một trừ một phần hai, nhân tới một trừ một phần chín. Trí Long sập chuyền: một phần chín! Cáo Đề tráo đề chớp nhoáng thành dấu CỘNG: chắc cũng một phần chín nhỉ? Su Kem: khoan! Nhân toàn số LỚN hơn một mà ra bé hơn một á?",
-    "screenText": "đổi mỗi cái dấu… vẫn 1/9?",
+    "screenText": "đổi mỗi cái dấu… vẫn $\\frac{1}{9}$?",
     "visual": "Nhà ga hai đường ray; Cáo Đề tráo tấm biển − thành +; Su Kem giơ tay chặn, dấu hỏi đỏ #C0392B.",
     "assets": [],
     "duration": 19
@@ -270,7 +270,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Soi dấu, quy từng toa! Đoàn TRỪ: toa hóa nửa, hai phần ba, ba phần tư… sập chuyền: còn MỘT PHẦN CHÍN — đoàn co lại. Đoàn CỘNG: toa hóa ba phần hai, bốn phần ba… sống sót ĐỔI VAI: mẫu đầu hai và tử cuối mười — đáp NĂM: đoàn nở ra! Một dấu đổi — một trời khác!",
-    "screenText": "TRỪ → 1/9 (co) · CỘNG → 10/2 = 5 (nở)",
+    "screenText": "TRỪ → $\\frac{1}{9}$ (co) · CỘNG → $\\frac{10}{2}$ = 5 (nở)",
     "visual": "Hai đoàn tàu song song: đoàn navy co ngắn dần còn thẻ '1/9'; đoàn teal dài phình ra với thẻ '5'; các khớp toa rút chéo lấp lánh.",
     "assets": [],
     "duration": 22
@@ -281,7 +281,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Đáp một phần mười vừa hiện, Trí Long hoảng: chín thừa số nhân nhau mà bé thế — chắc sai! Su Kem giữ tay: nhìn lý lẽ đã! Mỗi thừa số họ trừ đều BÉ HƠN MỘT — nhân một lần là bị cắn bớt một miếng: nửa nhân hai phần ba đã teo còn một phần ba rồi. Chín cú cắn: nhỏ là dấu hiệu ĐÚNG! Đáp bài sư phụ: một phần hai nghìn không trăm hai sáu — tin bằng lý lẽ!",
-    "screenText": "mỗi thừa số < 1 → mỗi lần nhân: TEO · 1/2026 ✓",
+    "screenText": "mỗi thừa số < 1 → mỗi lần nhân: TEO · $\\frac{1}{2026}$ ✓",
     "visual": "Chiếc kéo cắt tích nhỏ dần theo từng thừa số; bàn tay Su Kem giữ cục tẩy của Trí Long; đáp 1/2026 đóng mộc 'TIN BẰNG LÝ LẼ'.",
     "assets": [],
     "duration": 30
@@ -302,7 +302,7 @@
     "templateHint": "cta_practice",
     "transitionOut": "kết",
     "voiceover": "Chuyến tàu của con: một cộng một phần hai, nhân tới một cộng một phần chín — đoàn này co hay nở, đáp bao nhiêu? Vào bài luyện ngay!",
-    "screenText": "(1 + 1/2) × … × (1 + 1/9) = ?",
+    "screenText": "(1 + $\\frac{1}{2}$) × … × (1 + $\\frac{1}{9}$) = ?",
     "visual": "Đoàn tàu dấu cộng chờ khởi hành; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
     "linkItem": "P3",
     "assets": [],
@@ -374,7 +374,7 @@
       "Quy từng ngoặc: 1/2 × 2/3.",
       "Rút chéo số 2."
      ],
-     "solutionNarrative": "$\\frac{1}{2}$ × $\\frac{2}{3}$ = 1/3.",
+     "solutionNarrative": "$\\frac{1}{2}$ × $\\frac{2}{3}$ = $\\frac{1}{3}$.",
      "teaches": [
       "K1",
       "K2"
@@ -424,7 +424,7 @@
       "Dây 1/2 × 2/3 × … × 9/10.",
       "Tử đầu 1, mẫu cuối 10."
      ],
-     "solutionNarrative": "Sập chuyền họ trừ: 1/10.",
+     "solutionNarrative": "Sập chuyền họ trừ: $\\frac{1}{10}$.",
      "teaches": [
       "K2"
      ]
@@ -452,7 +452,7 @@
      "id": "P5",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B15.LT7",
-     "text": "Không tính hết, so sánh A = (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{100}$) với 1/50.",
+     "text": "Không tính hết, so sánh A = (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{100}$) với $\\frac{1}{50}$.",
      "answerKey": {
       "parts": [
        {
@@ -471,10 +471,10 @@
       ]
      },
      "hints": [
-      "Họ trừ đến 1/100 → A = ?",
+      "Dãy trừ chạy tới mẫu lớn nhất — A rút gọn còn đúng một phân số.",
       "Mẫu lớn hơn thì phân số bé hơn."
      ],
-     "solutionNarrative": "A = $\\frac{1}{100}$ < 1/50.",
+     "solutionNarrative": "A = $\\frac{1}{100}$ < $\\frac{1}{50}$.",
      "teaches": [
       "K2",
       "K4"
@@ -537,7 +537,7 @@
     "id": "A1",
     "format": "tf",
     "sourceItem": "ITEM:KSN5Q1.B15.QZ2",
-    "text": "(Đúng/Sai?) (1 + $\\frac{1}{2}$) × (1 + $\\frac{1}{3}$) × … × (1 + $\\frac{1}{9}$) = 1/9.",
+    "text": "(Đúng/Sai?) (1 + $\\frac{1}{2}$) × (1 + $\\frac{1}{3}$) × … × (1 + $\\frac{1}{9}$) = $\\frac{1}{9}$.",
     "answerKey": {
      "value": false
     },
@@ -598,7 +598,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con chinh phục hai họ tích nổi tiếng: họ trừ ra 1/n, họ cộng ra (n+1)/2 — và học tin kết quả nhỏ bằng lý lẽ. Con đạt {score}/3, {trapResult} câu bẫy.",
-  "homeActivity": "Đố tráo dấu: viết (1 − $\\frac{1}{2}$)(1 − $\\frac{1}{3}$) rồi lén đổi thành dấu cộng — con phải phát hiện và nói 'kết cục đổi hẳn: 1/3 thành 2' là đạt.",
+  "homeActivity": "Đố tráo dấu: viết (1 − $\\frac{1}{2}$)(1 − $\\frac{1}{3}$) rồi lén đổi thành dấu cộng — con phải phát hiện và nói 'kết cục đổi hẳn: $\\frac{1}{3}$ thành 2' là đạt.",
   "watchFor": "Nếu con hoảng vì đáp quá nhỏ và đòi nhân tay lại — nhắc lý lẽ chiếc kéo (S3): nhân số bé hơn 1 thì teo là đúng."
  },
  "$schema": "digital-lesson/v2-micro",

@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import Chu from './Chu.jsx';
 import { overallStats } from '../lib/progress.js';
 import { allMicroIds, chapterOf, chuongTrinhCua } from '../lib/content.js';
 import { weakestUnits } from '../lib/adaptive.js';
@@ -129,7 +130,7 @@ export default function ParentReport({ progress, cloudReport, onExit, onOpenMicr
           <div className="card">
             <div className="kicker">GỢI Ý CHO BỐ MẸ</div>
             {r.suggestion && <p className="text-[15px]"><b>Chơi cùng con:</b> {r.suggestion}</p>}
-            {r.watchFor && <p className="mt-2 text-[15px]"><b>Để ý:</b> {r.watchFor}</p>}
+            {r.watchFor && <p className="mt-2 text-[15px]"><b>Để ý:</b> <Chu t={r.watchFor} /></p>}
           </div>
         )}
 

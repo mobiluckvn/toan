@@ -1,4 +1,5 @@
 import React from 'react';
+import Chu from './Chu.jsx';
 import { gradeMicro } from '../lib/flow.js';
 import NhietKeHieuBai from './NhietKeHieuBai.jsx';
 
@@ -50,7 +51,7 @@ export default function FinaleCard({ lesson, log, onRetry, onJumpTeach, onFinish
         {flash && (
           <div className="mt-4 rounded-2xl bg-navy px-4 py-3.5 text-left text-[14.5px] leading-relaxed text-white">
             <b className="text-gold">Thẻ ôn (hiện lại sau 1 ngày):</b>
-            <div className="mt-1">{flash.back}</div>
+            <div className="mt-1"><Chu t={flash.back} /></div>
           </div>
         )}
 
@@ -60,7 +61,7 @@ export default function FinaleCard({ lesson, log, onRetry, onJumpTeach, onFinish
         {lesson.hatMam && (
           <div className="mt-4 rounded-2xl bg-teal-pale px-4 py-3.5 text-left text-[14.5px] leading-relaxed">
             <b className="text-teal-dark">🌱 Hạt mầm năm ngoái</b>
-            <p className="mt-1 text-navy">{lesson.hatMam}</p>
+            <p className="mt-1 text-navy"><Chu t={lesson.hatMam} /></p>
           </div>
         )}
 
@@ -86,9 +87,9 @@ export default function FinaleCard({ lesson, log, onRetry, onJumpTeach, onFinish
 
         <div className="mt-3 rounded-2xl border-[1.5px] border-dashed border-line bg-[#F7FAFD] p-3.5 text-left text-[14.5px]">
           <h4 className="mb-1.5 text-[11.5px] font-extrabold tracking-widest text-mute">GỬI BỐ MẸ</h4>
-          <p>{fill(pn.onComplete)}</p>
-          {pn.homeActivity && <p className="mt-1.5"><b>Chơi cùng con:</b> {pn.homeActivity}</p>}
-          {pn.watchFor && <p className="mt-1.5"><b>Để ý:</b> {pn.watchFor}</p>}
+          <p><Chu t={fill(pn.onComplete)} /></p>
+          {pn.homeActivity && <p className="mt-1.5"><b>Chơi cùng con:</b> <Chu t={pn.homeActivity} /></p>}
+          {pn.watchFor && <p className="mt-1.5"><b>Để ý:</b> <Chu t={pn.watchFor} /></p>}
         </div>
       </div>
 

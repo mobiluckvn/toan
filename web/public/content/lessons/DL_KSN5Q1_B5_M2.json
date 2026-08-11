@@ -58,7 +58,7 @@
    {
     "case": "chia hết 5 — hai nhánh (ca lõi)",
     "problem": "Từ các thẻ 0; 3; 5; 8, lập số LỚN NHẤT có bốn chữ số khác nhau chia hết cho 5.",
-    "solution": "Đuôi là 0 hoặc 5 — hai nhánh. Nhánh đuôi 0: phần đầu {3;5;8} xếp giảm → 8530. Nhánh đuôi 5: phần đầu {0;3;8} → 830 → số 8305. So: 8530 > 8305 nên đáp số 8530.",
+    "solution": "Đuôi là 0 hoặc 5 — hai nhánh. Nhánh đuôi 0: phần đầu {3;5;8} xếp giảm → 8530. Nhánh đuôi 5: phần đầu {0;3;8} → 830 → số 8305. So: $8530 > 8305$ nên đáp số 8530.",
     "why": "phải đi đủ hai nhánh."
    },
    {
@@ -70,7 +70,7 @@
    {
     "case": "nhỏ nhất chia hết 5 — nhánh có số 0 (ca sư phụ)",
     "problem": "Từ các thẻ 0; 2; 5; 7; 9, lập số NHỎ NHẤT có bốn chữ số khác nhau chia hết cho 5.",
-    "solution": "Nhánh đuôi 0: chọn 3 thẻ bé {2;5;7} xếp tăng → 2570. Nhánh đuôi 5: phần đầu {0;2;7} — thẻ 2 dẫn đội, 0 chen sau → 2075. So: 2075 < 2570 nên 2075. Nhánh thứ hai mới là quán quân — chốt vội nhánh một là thua!",
+    "solution": "Nhánh đuôi 0: chọn 3 thẻ bé {2;5;7} xếp tăng → 2570. Nhánh đuôi 5: phần đầu {0;2;7} — thẻ 2 dẫn đội, 0 chen sau → 2075. So: $2075 < 2570$ nên 2075. Nhánh thứ hai mới là quán quân — chốt vội nhánh một là thua!",
     "why": "Ca đinh của bẫy CĐ-5.3."
    }
   ],
@@ -272,7 +272,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Gặp chia hết chín thì gia tộc TỔNG chỉ huy từ vòng tuyển quân: năm thẻ một, hai, ba, năm, tám tổng mười chín — thử bỏ từng thẻ: bỏ MỘT còn mười tám, chia hết chín — đạt! Bộ tuyển: hai, ba, năm, tám. Giờ mới xếp: nhỏ nhất hai nghìn ba trăm năm mươi tám — và xếp kiểu gì cũng chia hết chín!",
-    "screenText": "19 − 1 = 18 ⋮ 9 → bộ {2;3;5;8} → 2358",
+    "screenText": "$19 - 1 = 18$ ⋮ 9 → bộ {2;3;5;8} → 2358",
     "visual": "Vòng tuyển quân: 5 thẻ xếp hàng, thẻ 1 bị loại nhẹ nhàng; tổng '18 ✓'; bốn thẻ còn lại xếp thành 2358.",
     "assets": [],
     "duration": 24
@@ -370,7 +370,7 @@
      },
      "hints": [
       "Đuôi là 0 hoặc 5 — hai nhánh.",
-      "Nhánh đuôi 0: 8530; nhánh đuôi 5: 8305; so."
+      "Mỗi nhánh lập một số lớn nhất rồi so hai số ấy với nhau."
      ],
      "solutionNarrative": "Nhánh đuôi 0: 8530; nhánh đuôi 5: 8305 → lớn nhất 8530.",
      "teaches": [
@@ -537,7 +537,7 @@
  "spacedReview": {
   "flashcards": [
    {
-    "front": "Lập số chia hết cho 2/5 và cho $\\frac{9}{3}$ — chiến lược khác nhau thế nào?",
+    "front": "Lập số chia hết cho $\\frac{2}{5}$ và cho $\\frac{9}{3}$ — chiến lược khác nhau thế nào?",
     "back": "2, 5 (họ TẬN CÙNG): chốt đuôi trước, MỞ ĐỦ NHÁNH, tính trọn từng nhánh rồi so. 9, 3 (họ TỔNG): tuyển BỘ THẺ theo tổng trước (thử bỏ từng thẻ), xếp sau — tổng chuẩn thì xếp gì cũng chia hết."
    }
   ],

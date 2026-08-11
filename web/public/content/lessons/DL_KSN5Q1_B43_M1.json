@@ -29,9 +29,9 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con giải chuỗi TÍNH NGƯỢC nhiều tầng bằng lưu đồ hai chiều: xuôi dòng ghi từng tầng \"dùng m/n chỗ còn lại\", rồi gỡ NGƯỢC từ số cuối — mỗi tầng nhân với NGHỊCH ĐẢO PHẦN CÒN n/(n − m) (dùng $\\frac{1}{3}$ → còn $\\frac{2}{3}$ → nhân 3/2, tuyệt đối không nhân 3!); kiểm nhanh bằng tích các phần còn.",
+  "text": "Con giải chuỗi TÍNH NGƯỢC nhiều tầng bằng lưu đồ hai chiều: xuôi dòng ghi từng tầng \"dùng m/n chỗ còn lại\", rồi gỡ NGƯỢC từ số cuối — mỗi tầng nhân với NGHỊCH ĐẢO PHẦN CÒN n/(n − m) (dùng $\\frac{1}{3}$ → còn $\\frac{2}{3}$ → nhân $\\frac{3}{2}$, tuyệt đối không nhân 3!); kiểm nhanh bằng tích các phần còn.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (hệ số từ phần CÒN)",
-  "kidText": "Bài tính ngược nhiều tầng: con gỡ từ số cuối đi lên. Dùng 1/3 thì còn 2/3, nên tầng ấy phải nhân 3/2 chứ không nhân 3."
+  "kidText": "Bài tính ngược nhiều tầng: con gỡ từ số cuối đi lên. Dùng $\\frac{1}{3}$ thì còn $\\frac{2}{3}$, nên tầng ấy phải nhân $\\frac{3}{2}$ chứ không nhân 3."
  },
  "knowledgeCore": {
   "statements": [
@@ -41,37 +41,37 @@
    },
    {
     "id": "K2",
-    "text": "Con số đang cầm là PHẦN CÒN: tầng \"dùng 1/3 chỗ còn lại\" → còn $\\frac{2}{3}$ → đi ngược nhân $\\frac{3}{2}$ (nhân 3 là lấy nhầm hệ số từ phần DÙNG — gấp đôi oan!); \"dùng $\\frac{1}{2}$\" → còn $\\frac{1}{2}$ → nhân 2; \"dùng $\\frac{1}{4}$\" → còn $\\frac{3}{4}$ → nhân 4/3."
+    "text": "Con số đang cầm là PHẦN CÒN: tầng \"dùng $\\frac{1}{3}$ chỗ còn lại\" → còn $\\frac{2}{3}$ → đi ngược nhân $\\frac{3}{2}$ (nhân 3 là lấy nhầm hệ số từ phần DÙNG — gấp đôi oan!); \"dùng $\\frac{1}{2}$\" → còn $\\frac{1}{2}$ → nhân 2; \"dùng $\\frac{1}{4}$\" → còn $\\frac{3}{4}$ → nhân $\\frac{4}{3}$."
    },
    {
     "id": "K3",
-    "text": "Chuỗi ba tầng gỡ đúng thứ tự ngược: còn 9 viên sau dùng $\\frac{1}{2}$ → 1/3 còn lại → 1/4 còn lại: 9 × $\\frac{4}{3}$ = 12 → × $\\frac{3}{2}$ = 18 → × $2 = 36$ viên; kiểm nhanh bằng TÍCH PHẦN CÒN: $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ = $\\frac{1}{4}$ → $9 = 1$/4 tổng → 36 ✓."
+    "text": "Chuỗi ba tầng gỡ đúng thứ tự ngược: còn 9 viên sau dùng $\\frac{1}{2}$ → $\\frac{1}{3}$ còn lại → $\\frac{1}{4}$ còn lại: 9 × $\\frac{4}{3}$ = 12 → × $\\frac{3}{2}$ = 18 → × $2 = 36$ viên; kiểm nhanh bằng TÍCH PHẦN CÒN: $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ = $\\frac{1}{4}$ → $9 = 1$/4 tổng → 36 ✓."
    }
   ],
   "mechanism": "Hình ảnh brand: LƯU ĐỒ HAI CHIỀU — ĐI XUÔI GHI, ĐI NGƯỢC NHÂN. Túi kẹo bị dùng 1/2, rồi 1/3 chỗ còn lại, rồi 1/4 chỗ còn lại — cuối cùng còn CHÍN viên. Tìm túi lúc đầu? Trí Long gỡ ngược hùng hổ: \"dùng 1/4 thì nhân 4, dùng 1/3 nhân 3, dùng 1/2 nhân 2: 9 × 4 × 3 × 2 = 216 viên!\" — túi kẹo nào chứa nổi! Nhìn lại tay mình: sau tầng \"dùng 1/4\", con số 9 đang cầm là PHẦN CÒN — ba phần tư! Hệ số ngược phải là nghịch đảo phần CÒN: chín nhân BỐN PHẦN BA bằng mười hai. Tầng \"dùng 1/3\": còn hai phần ba — nhân BA PHẦN HAI: mười tám. Tầng \"dùng 1/2\": còn một nửa — nhân HAI: BA MƯƠI SÁU viên! Kiểm nhanh bằng tích phần còn: 1/2 nhân 2/3 nhân 3/4 — rút gọn đẹp như xếp domino — bằng MỘT PHẦN TƯ: chín viên đúng là một phần tư của ba sáu. Con số đang cầm là phần còn — nghịch đảo phần còn!",
   "canonicalExamples": [
    {
     "case": "một tầng (ca nền)",
-    "problem": "Su Bống dùng 1/2 số kẹo thì còn lại 12 viên. Hỏi lúc đầu có bao nhiêu viên?",
-    "solution": "12 chính là 1/2 còn lại → lúc đầu 12 × 2 = 24 viên.",
+    "problem": "Su Bống dùng $\\frac{1}{2}$ số kẹo thì còn lại 12 viên. Hỏi lúc đầu có bao nhiêu viên?",
+    "solution": "12 chính là $\\frac{1}{2}$ còn lại → lúc đầu $12  \\times  2 = 24$ viên.",
     "why": "Ca LT1 — tầng đơn khởi động."
    },
    {
     "case": "đọc hệ số ngược (ca luật)",
-    "problem": "Một tầng ghi \"dùng 1/3 chỗ còn lại\". Hỏi khi đi ngược qua tầng này ta phải nhân với bao nhiêu — vì sao không phải nhân 3?",
-    "solution": "Nhân 3/2 — vì sau tầng ấy CÒN 2/3, con số đang cầm là phần còn; nhân 3 là lấy nhầm hệ số từ phần dùng.",
+    "problem": "Một tầng ghi \"dùng $\\frac{1}{3}$ chỗ còn lại\". Hỏi khi đi ngược qua tầng này ta phải nhân với bao nhiêu — vì sao không phải nhân 3?",
+    "solution": "Nhân $\\frac{3}{2}$ — vì sau tầng ấy CÒN $\\frac{2}{3}$, con số đang cầm là phần còn; nhân 3 là lấy nhầm hệ số từ phần dùng.",
     "why": "Ca LT2 — trap của bài phát biểu thành luật."
    },
    {
     "case": "hai tầng (ca đề A)",
-    "problem": "Cáo Đề ăn 1/2 túi kẹo, rồi cho bạn 1/3 chỗ còn lại thì còn 8 viên. Hỏi lúc đầu túi có bao nhiêu viên?",
-    "solution": "Ngược: trước khi cho (còn 2/3): 8 × 3/2 = 12; trước khi ăn: 12 × 2 = 24 viên. Thử xuôi: 24 → 12 → 8 ✓.",
+    "problem": "Cáo Đề ăn $\\frac{1}{2}$ túi kẹo, rồi cho bạn $\\frac{1}{3}$ chỗ còn lại thì còn 8 viên. Hỏi lúc đầu túi có bao nhiêu viên?",
+    "solution": "Ngược: trước khi cho (còn $\\frac{2}{3}$): 8 × $\\frac{3}{2}$ = 12; trước khi ăn: $12  \\times  2 = 24$ viên. Thử xuôi: 24 → 12 → 8 ✓.",
     "why": "Ca đề A câu 8 — hai tầng hai hệ số."
    },
    {
     "case": "ba tầng + kiểm tích (ca sư phụ)",
-    "problem": "Một túi kẹo bị dùng 1/2, rồi 1/3 chỗ còn lại, rồi 1/4 chỗ còn lại — cuối cùng còn 9 viên. Tìm số kẹo lúc đầu.",
-    "solution": "9 × 4/3 = 12 → × 3/2 = 18 → × 2 = 36 viên. Kiểm: 1/2 × 2/3 × 3/4 = 1/4 → 9 = 1/4 × 36 ✓.",
+    "problem": "Một túi kẹo bị dùng $\\frac{1}{2}$, rồi $\\frac{1}{3}$ chỗ còn lại, rồi $\\frac{1}{4}$ chỗ còn lại — cuối cùng còn 9 viên. Tìm số kẹo lúc đầu.",
+    "solution": "9 × $\\frac{4}{3}$ = 12 → × $\\frac{3}{2}$ = 18 → × $2 = 36$ viên. Kiểm: $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ = $\\frac{1}{4}$ → 9 = $\\frac{1}{4}$ × 36 ✓.",
     "why": "Ca đề A câu 9 — chuỗi hệ số từ phần còn."
    }
   ],
@@ -98,7 +98,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "Dùng 1/2 còn 12 viên → lúc đầu ? viên",
+    "text": "Dùng $\\frac{1}{2}$ còn 12 viên → lúc đầu ? viên",
     "answerKey": {
      "value": 24
     }
@@ -116,7 +116,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Su Bống dùng 1/2 số kẹo thì còn lại 12 viên. Hỏi lúc đầu có bao nhiêu viên?",
+    "narration": "Su Bống dùng $\\frac{1}{2}$ số kẹo thì còn lại 12 viên. Hỏi lúc đầu có bao nhiêu viên?",
     "display": {
      "type": "story_panel",
      "caption": "$9  \\times  4  \\times  3  \\times  2 = 216$ viên??"
@@ -160,7 +160,7 @@
     "estSeconds": 15,
     "item": {
      "format": "tf",
-     "text": "(Đúng/Sai?) Đi ngược tầng \"dùng 1/4 chỗ còn lại\" là nhân với 4/3.",
+     "text": "(Đúng/Sai?) Đi ngược tầng \"dùng $\\frac{1}{4}$ chỗ còn lại\" là nhân với $\\frac{4}{3}$.",
      "answerKey": {
       "value": true
      },
@@ -233,7 +233,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Túi kẹo bị dùng một phần hai, rồi một phần ba chỗ còn lại, rồi một phần tư chỗ còn lại — còn chín viên. Trí Long gỡ ngược hùng hổ: nhân bốn, nhân ba, nhân hai: hai trăm mười sáu viên! Su Kem cười: túi kẹo nào chứa nổi! Con số chín con đang cầm là phần DÙNG hay phần CÒN?",
-    "screenText": "9 × 4 × 3 × 2 = 216 viên??",
+    "screenText": "$9  \\times  4  \\times  3  \\times  2 = 216$ viên??",
     "visual": "Túi kẹo nhỏ xíu cạnh phép nhân phình thành núi kẹo 216; Su Kem chỉ vào số 9 trên tay Trí Long; dấu hỏi đỏ #C0392B.",
     "assets": [],
     "duration": 22
@@ -244,7 +244,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Nhìn tay mình: sau tầng dùng MỘT PHẦN TƯ, con số chín đang cầm là PHẦN CÒN — ba phần tư! Hệ số ngược là NGHỊCH ĐẢO phần còn: chín nhân BỐN PHẦN BA bằng mười hai! Tầng dùng một phần ba: còn hai phần ba — nhân BA PHẦN HAI: mười tám! Tầng dùng một phần hai: còn một nửa — nhân HAI: BA MƯƠI SÁU viên!",
-    "screenText": "9 ×4/3→ 12 ×3/2→ 18 ×2→ 36 (hệ số từ phần CÒN)",
+    "screenText": "9 ×$\\frac{4}{3}$→ 12 ×$\\frac{3}{2}$→ $18  \\times 2$→ 36 (hệ số từ phần CÒN)",
     "visual": "Lưu đồ ba bậc đi ngược với ba hệ số 4/3, 3/2, 2 khắc trên mũi tên; nhãn phần-còn tô teal dưới mỗi bậc; 216 gạch đỏ.",
     "assets": [],
     "duration": 24
@@ -255,7 +255,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Kiểm nhanh bằng TÍCH PHẦN CÒN: một phần hai nhân hai phần ba nhân ba phần tư — tử mẫu rút nhau đẹp như xếp domino — bằng MỘT PHẦN TƯ: chín viên đúng là một phần tư của ba mươi sáu! Cáo Đề cùng máy: tám nhân ba phần hai bằng mười hai, nhân hai — HAI MƯƠI TƯ viên; thử xuôi khớp!",
-    "screenText": "1/2 × 2/3 × 3/4 = 1/4 → 9 = 1/4 × 36 ✓ · Cáo Đề: 8 → 12 → 24",
+    "screenText": "$\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ = $\\frac{1}{4}$ → 9 = $\\frac{1}{4}$ × 36 ✓ · Cáo Đề: 8 → 12 → 24",
     "visual": "Chuỗi phân số rút gọn kiểu domino đổ về 1/4; ca hai tầng chạy song song với mộc thử xuôi xanh.",
     "assets": [],
     "duration": 23
@@ -276,7 +276,7 @@
     "templateHint": "cta_practice",
     "transitionOut": "kết",
     "voiceover": "Lưu đồ của con: còn tám viên sau hai tầng — gỡ ngược bằng hệ số từ phần còn, rồi thử xuôi! Vào bài luyện ngay!",
-    "screenText": "8 ×3/2→ ? ×2→ ? (thử xuôi!)",
+    "screenText": "8 ×$\\frac{3}{2}$→ ? ×2→ ? (thử xuôi!)",
     "visual": "Lưu đồ hai bậc chờ gỡ; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
     "linkItem": "P3",
     "assets": [],
@@ -286,13 +286,13 @@
  },
  "workedExample": {
   "title": "Gỡ ba tầng bằng phần còn",
-  "problem": "Một túi kẹo bị dùng 1/2, rồi 1/3 chỗ còn lại, rồi 1/4 chỗ còn lại — cuối cùng còn 9 viên. Tìm số kẹo lúc đầu.",
+  "problem": "Một túi kẹo bị dùng $\\frac{1}{2}$, rồi $\\frac{1}{3}$ chỗ còn lại, rồi $\\frac{1}{4}$ chỗ còn lại — cuối cùng còn 9 viên. Tìm số kẹo lúc đầu.",
   "steps": [
    {
     "show": "Bước 1 — Tầng cuối \"dùng $\\frac{1}{4}$\" → còn $\\frac{3}{4}$: 9 × $\\frac{4}{3}$ = 12.",
     "askBefore": {
      "format": "mcq",
-     "text": "Hệ số ngược của tầng \"dùng 1/4 còn lại\" là:",
+     "text": "Hệ số ngược của tầng \"dùng $\\frac{1}{4}$ còn lại\" là:",
      "choices": [
       "4/3",
       "4",
@@ -335,7 +335,7 @@
      "id": "P1",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B43.LT1",
-     "text": "Su Bống dùng 1/2 số kẹo thì còn lại 12 viên. Hỏi lúc đầu có bao nhiêu viên?",
+     "text": "Su Bống dùng $\\frac{1}{2}$ số kẹo thì còn lại 12 viên. Hỏi lúc đầu có bao nhiêu viên?",
      "answerKey": {
       "value": 24
      },
@@ -352,7 +352,7 @@
      "id": "P2",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B43.LT2",
-     "text": "Một tầng ghi \"dùng 1/3 chỗ còn lại\". Hỏi khi đi ngược qua tầng này ta phải nhân với bao nhiêu — vì sao không phải nhân 3?",
+     "text": "Một tầng ghi \"dùng $\\frac{1}{3}$ chỗ còn lại\". Hỏi khi đi ngược qua tầng này ta phải nhân với bao nhiêu — vì sao không phải nhân 3?",
      "answerKey": {
       "parts": [
        {
@@ -374,7 +374,7 @@
       "Dùng 1/3 thì còn mấy?",
       "Nghịch đảo phần còn."
      ],
-     "solutionNarrative": "× 3/2.",
+     "solutionNarrative": "× $\\frac{3}{2}$.",
      "teaches": [
       "K2"
      ]
@@ -385,7 +385,7 @@
      "id": "P3",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B43.LT4",
-     "text": "Cáo Đề ăn 1/2 túi kẹo, rồi cho bạn 1/3 chỗ còn lại thì còn 8 viên. Hỏi lúc đầu túi có bao nhiêu viên?",
+     "text": "Cáo Đề ăn $\\frac{1}{2}$ túi kẹo, rồi cho bạn $\\frac{1}{3}$ chỗ còn lại thì còn 8 viên. Hỏi lúc đầu túi có bao nhiêu viên?",
      "answerKey": {
       "value": 24
      },
@@ -410,7 +410,7 @@
      "id": "P4",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B43.LT5",
-     "text": "Một túi kẹo bị dùng 1/2, rồi 1/3 chỗ còn lại, rồi 1/4 chỗ còn lại — cuối cùng còn 9 viên. Tìm số kẹo lúc đầu (kèm kiểm bằng tích phần còn).",
+     "text": "Một túi kẹo bị dùng $\\frac{1}{2}$, rồi $\\frac{1}{3}$ chỗ còn lại, rồi $\\frac{1}{4}$ chỗ còn lại — cuối cùng còn 9 viên. Tìm số kẹo lúc đầu (kèm kiểm bằng tích phần còn).",
      "answerKey": {
       "parts": [
        {
@@ -457,7 +457,7 @@
     "id": "A1",
     "format": "tf",
     "sourceItem": "ITEM:KSN5Q1.B43.QZ2",
-    "text": "(Đúng/Sai?) Đi ngược tầng \"dùng 1/4 chỗ còn lại\" là nhân với 4/3.",
+    "text": "(Đúng/Sai?) Đi ngược tầng \"dùng $\\frac{1}{4}$ chỗ còn lại\" là nhân với $\\frac{4}{3}$.",
     "answerKey": {
      "value": true
     },
@@ -470,7 +470,7 @@
     "id": "A2",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B43.QZ5",
-    "text": "Chuỗi dùng $\\frac{1}{2}$ → 1/3 còn lại → 1/4 còn lại thì cuối cùng còn:",
+    "text": "Chuỗi dùng $\\frac{1}{2}$ → $\\frac{1}{3}$ còn lại → $\\frac{1}{4}$ còn lại thì cuối cùng còn:",
     "choices": [
      "1/4 tổng",
      "1/12 tổng",

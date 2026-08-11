@@ -1,5 +1,5 @@
 import React from 'react';
-import { tachToan, docToan, docKhoi, docNhanManh } from '../lib/chuviet.js';
+import { tachToan, docToan, docKhoi, docNhanManh, tuDep } from '../lib/chuviet.js';
 
 /**
  * CHỮ — vẽ một chuỗi markdown + LaTeX. Dùng ở MỌI chỗ có lời văn của bài.
@@ -41,7 +41,7 @@ function renderPhang(ds) {
 function Dong({ t }) {
   return (
     <>
-      {tachToan(t).map((m, i) => (m.loai === 'toan'
+      {tachToan(tuDep(t)).map((m, i) => (m.loai === 'toan'
         ? <Toan key={i} bt={m.t} />
         : (
           <React.Fragment key={i}>

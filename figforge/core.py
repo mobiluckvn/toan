@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 """FigForge · lõi style dùng chung cho 12 nguyên mẫu hình — MOBILUCK brand."""
+import re
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -56,9 +57,28 @@ def _txt(ax, x, y, s, fs=FS['body'], c=INK, w='normal', ha='center', va='center'
 # ── FIT-CHECK (Đ3.4): tự thu cỡ chữ cho vừa bề ngang cho phép ──
 CHAR_W = 0.128          # bề ngang trung bình 1 ký tự / 1 pt cỡ chữ (đo thực nghiệm, có biên an toàn)
 
+# Công thức LaTeX (`$\frac{3}{4}$`) dài 13 ký tự mà vẽ ra chỉ rộng bằng chừng ba
+# ký tự thường. Đếm nguyên văn thì mọi nhãn có phân số bị thu bé tí một cách vô cớ,
+# nên đo trên bản đã RÚT GỌN công thức về bề ngang thật của nó.
+_R_TOAN = re.compile(r'\$([^$]*)\$')
+
+
+def _be_ngang_that(s):
+    """Chuỗi dùng để ĐẾM ký tự khi canh cỡ chữ — công thức rút về bề ngang thật."""
+    def gon(m):
+        bt = m.group(1)
+        # phân số: rộng bằng vế dài hơn, cộng một chút cho gạch ngang
+        ps = re.match(r'\s*\\d?frac\{([^{}]*)\}\{([^{}]*)\}\s*$', bt)
+        if ps:
+            return 'x' * (max(len(ps.group(1)), len(ps.group(2))) + 1)
+        # còn lại: bỏ dấu gạch chéo của lệnh, mỗi lệnh coi như một ký tự
+        return re.sub(r'\\[a-zA-Z]+', 'x', bt)
+    return _R_TOAN.sub(gon, str(s))
+
+
 def fit_fs(text, max_w, fs=FS['mid'], floor=FS['tiny']):
     """Trả cỡ chữ lớn nhất (<= fs) để text vừa max_w đơn vị canvas."""
-    longest = max((len(l) for l in str(text).split('\n')), default=0)
+    longest = max((len(l) for l in _be_ngang_that(text).split('\n')), default=0)
     while fs > floor and longest * CHAR_W * fs > max_w:
         fs -= 0.5
     return fs

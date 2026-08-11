@@ -119,6 +119,24 @@ export function docToan(bt) {
   return ra2;
 }
 
+/* ── 2b · LÀM ĐẸP PHÂN SỐ TRẦN, CHỈ LÚC VẼ ──────────────────────────────────
+   `answerKey.value`, `choices`, `options`, `label` là DỮ LIỆU MÁY CHẤM: bộ chấm
+   so khớp nguyên văn, nên bọc `$…$` vào đó là hỏng chấm điểm của mọi câu trắc
+   nghiệm và mọi ô nhập. Nhưng chúng lại là thứ BÉ NHÌN THẤY — nút chọn in
+   "3/4" nằm cạnh dòng văn đã có phân số xếp dọc, hai kiểu trên một màn.
+
+   Nên dữ liệu giữ nguyên từng byte, còn ở đây — LÚC VẼ — đổi `a/b` trần thành
+   phân số. Chỉ làm khi chuỗi CHƯA có `$` nào (tác giả chưa tự viết LaTeX).
+
+   Chừa tỉ số điểm ("4/5 câu"): xếp dọc thì nó thành phân số, không còn là điểm. */
+const R_PS_TRAN = /(?<![\d/$])(\d+)\s*\/\s*(\d+)(?![\d/])(?!\s*(câu|bài|điểm|ô)\b)/g;
+
+export function tuDep(s) {
+  const t = String(s ?? '');
+  if (t.includes('$')) return t;
+  return t.replace(R_PS_TRAN, (_, a, b) => `$\\frac{${a}}{${b}}$`);
+}
+
 /* ── 3 · ĐỌC MARKDOWN THEO DÒNG ─────────────────────────────────────────────
    Chỉ những thứ nội dung thật sự dùng. Cố ý KHÔNG nhận bảng, trích dẫn, liên
    kết: chưa dòng nào cần, mà nhận thừa thì mỗi thứ là một chỗ vẽ sai. */

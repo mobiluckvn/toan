@@ -58,19 +58,19 @@
    {
     "case": "hoặc — trừ giao (ca lõi)",
     "problem": "Từ 1 đến 30 có bao nhiêu số chia hết cho 2 hoặc chia hết cho 3?",
-    "solution": "chia hết cho 2: 15 số. chia hết cho 3: 10 số. Giao ( chia hết cho 6): 5 số. Đáp: 15 + 10 − 5 = 20 số.",
+    "solution": "chia hết cho 2: 15 số. chia hết cho 3: 10 số. Giao ( chia hết cho 6): 5 số. Đáp: $15 + 10 - 5 = 20$ số.",
     "why": "nguồn bẫy CĐ-7.3 (25 sai)."
    },
    {
     "case": "phần bù (ca đếm ngược)",
     "problem": "Từ 1 đến 100 có bao nhiêu số KHÔNG chia hết cho 3?",
-    "solution": "Cả đoạn: 100 số; chia hết cho 3: 33 số → không chia hết cho 3: 100 − 33 = 67 số.",
+    "solution": "Cả đoạn: 100 số; chia hết cho 3: 33 số → không chia hết cho 3: $100 - 33 = 67$ số.",
     "why": ""
    },
    {
     "case": "a nhưng không b (ca kết hợp)",
     "problem": "Từ 1 đến 200 có bao nhiêu số chia hết cho 2 nhưng KHÔNG chia hết cho 5?",
-    "solution": "chia hết cho 2: 100 số. chia hết cho cả 2 và 5 (tức chia hết cho 10): 20 số → 100 − 20 = 80 số.",
+    "solution": "chia hết cho 2: 100 số. chia hết cho cả 2 và 5 (tức chia hết cho 10): 20 số → $100 - 20 = 80$ số.",
     "why": "trừ đúng nhóm giao, không trừ nhóm chia hết cho 5."
    }
   ],
@@ -240,7 +240,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Lễ điểm danh: từ một đến ba mươi, ai chia hết cho hai HOẶC cho ba bước lên! Trí Long cộng gọn: mười lăm bạn đội chẵn, mười bạn đội ba — hai mươi lăm! Nhưng Su Kem đếm đầu người trên sân… chỉ có HAI MƯƠI. Năm bạn nào biến mất?",
-    "screenText": "15 + 10 = 25… sân chỉ 20?",
+    "screenText": "$15 + 10 = 25$… sân chỉ 20?",
     "visual": "Sân trường với hai hàng học sinh số; bảng đếm '25' gạch đỏ, máy đếm của Su Kem hiện '20'.",
     "assets": [],
     "duration": 19
@@ -251,7 +251,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Vẽ hai vòng tròn giao nhau: vòng CHẴN mười lăm bạn, vòng BA mười bạn. Các số sáu, mười hai, mười tám, hai tư, ba mươi đứng ngay phần GIAO — mỗi bạn bị đếm HAI lần! Trả lại một lần đếm: mười lăm cộng mười trừ năm bằng HAI MƯƠI!",
-    "screenText": "15 + 10 − 5 = 20",
+    "screenText": "$15 + 10 - 5 = 20$",
     "visual": "Biểu đồ Venn hai vòng #0B4EA8/#1FCBAB; năm số bay vào phần giao phát sáng vàng; phép tính bật to.",
     "assets": [],
     "duration": 18
@@ -262,7 +262,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Hai đòn nối tiếp. KHÔNG chia hết cho ba từ một đến một trăm? Khỏi đếm từng người — lấy cả sân trừ đội ba: một trăm trừ ba ba bằng sáu mươi bảy. Chia hết hai nhưng KHÔNG chia hết năm từ một đến hai trăm? Chỉ trừ nhóm đứng hai hàng — đội mười: một trăm trừ hai mươi bằng TÁM MƯƠI!",
-    "screenText": "phần bù: 100−33=67 · ⋮2 không ⋮5: 100−20=80",
+    "screenText": "phần bù: 100−$33=67$ · ⋮2 không ⋮5: 100−$20=80$",
     "visual": "Hai khung phép; khung hai có chú thích 'trừ ⋮10, KHÔNG trừ 40' với nhóm ⋮5 lẻ gạch chéo.",
     "assets": [],
     "duration": 23
@@ -405,7 +405,7 @@
       "value": 30
      },
      "hints": [
-      "Cả sân: 90. Đội ' chia hết cho 2 hoặc chia hết cho 3': 45 + 30 − 15 = 60.",
+      "Cả sân 90 số. Đếm đội \"chia hết cho 2 HOẶC cho 3\" bằng sơ đồ Ven.",
       "Phần bù: 90 − 60."
      ],
      "solutionNarrative": "90 − ($45 + 30 - 15$) = $90 - 60 = 30$ số.",

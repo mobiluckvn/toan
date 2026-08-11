@@ -29,7 +29,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con tính được dãy NỬA DẦN $\\frac{1}{2}$ + $\\frac{1}{4}$ + … + 1/2ⁿ bằng hình chiếc bánh: tổng = 1 − MẢNH CUỐI CÙNG (đến 1/64 thì tổng là $\\frac{63}{64}$) — và hiểu vì sao cộng bao nhiêu số hạng đi nữa tổng vẫn GẦN 1 mà không bao giờ LÀ 1.",
+  "text": "Con tính được dãy NỬA DẦN $\\frac{1}{2}$ + $\\frac{1}{4}$ + … + $\\frac{1}{2}$ⁿ bằng hình chiếc bánh: tổng = 1 − MẢNH CUỐI CÙNG (đến $\\frac{1}{64}$ thì tổng là $\\frac{63}{64}$) — và hiểu vì sao cộng bao nhiêu số hạng đi nữa tổng vẫn GẦN 1 mà không bao giờ LÀ 1.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (63/64, không phải 1)",
   "kidText": "Cộng $\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$… con thấy tổng luôn bằng 1 trừ mảnh cuối — gần 1 mãi mà không bao giờ bằng 1."
  },
@@ -37,7 +37,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Dãy nửa dần: $\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$ + … + 1/2ⁿ = $1 - 1$/2ⁿ (một trừ MẢNH CUỐI). Đến $\\frac{1}{8}$: $\\frac{7}{8}$; đến $\\frac{1}{64}$: 63/64."
+    "text": "Dãy nửa dần: $\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$ + … + $\\frac{1}{2}$ⁿ = $1 - 1$/2ⁿ (một trừ MẢNH CUỐI). Đến $\\frac{1}{8}$: $\\frac{7}{8}$; đến $\\frac{1}{64}$: $\\frac{63}{64}$."
    },
    {
     "id": "K2",
@@ -52,20 +52,20 @@
   "canonicalExamples": [
    {
     "case": "ba bữa đầu (ca lõi)",
-    "problem": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + 1/8.",
-    "solution": "Phần trống sau bữa ba = mảnh vừa ăn = 1/8 → tổng = 1 − 1/8 = 7/8.",
+    "problem": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$.",
+    "solution": "Phần trống sau bữa ba = mảnh vừa ăn = $\\frac{1}{8}$ → tổng = 1 − $\\frac{1}{8}$ = $\\frac{7}{8}$.",
     "why": "vẽ bánh kiểm được ngay."
    },
    {
     "case": "đến 1/64 (ca bẫy)",
-    "problem": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$ + $\\frac{1}{16}$ + $\\frac{1}{32}$ + 1/64.",
-    "solution": "Tổng = 1 − 1/64 = 63/64 — KHÔNG phải 1: góc trống 1/64 vẫn còn.",
+    "problem": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$ + $\\frac{1}{16}$ + $\\frac{1}{32}$ + $\\frac{1}{64}$.",
+    "solution": "Tổng = 1 − $\\frac{1}{64}$ = $\\frac{63}{64}$ — KHÔNG phải 1: góc trống $\\frac{1}{64}$ vẫn còn.",
     "why": "Ca đinh bẫy CĐ-14.3 — đề A câu 8."
    },
    {
     "case": "hỏi ngược (ca hiểu sâu)",
     "problem": "Cộng dãy nửa dần đến mảnh nào thì tổng bằng $\\frac{255}{256}$?",
-    "solution": "255/256 = 1 − 1/256 → mảnh cuối là 1/256.",
+    "solution": "$\\frac{255}{256}$ = 1 − $\\frac{1}{256}$ → mảnh cuối là $\\frac{1}{256}$.",
     "why": "Chạy máy ngược — khắc công thức 1 − mảnh cuối."
    }
   ],
@@ -75,7 +75,7 @@
     "wrong": "\"Cộng mãi thì thành 1\" — dãy dài quá nên làm tròn tổng thành 1.",
     "signal": "Đáp là 1 (hoặc 'xấp xỉ 1' khi đề hỏi giá trị đúng).",
     "fix": "chỉ vào phần trống: nó bằng đúng mảnh cuối, chưa bao giờ bằng 0; tổng = 1 − mảnh cuối.",
-    "counterExample": "Đến $\\frac{1}{64}$: $\\frac{63}{64}$ ≠ 1 — thiếu đúng một góc bánh 1/64."
+    "counterExample": "Đến $\\frac{1}{64}$: $\\frac{63}{64}$ ≠ 1 — thiếu đúng một góc bánh $\\frac{1}{64}$."
    }
   ],
   "vocabulary": [
@@ -91,7 +91,7 @@
    {
     "id": "E1",
     "format": "num",
-    "text": "Một nửa của 1/32 là 1/mấy?",
+    "text": "Một nửa của $\\frac{1}{32}$ là 1/mấy?",
     "answerKey": {
      "value": 64
     }
@@ -109,7 +109,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + 1/8.",
+    "narration": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$.",
     "display": {
      "type": "story_panel",
      "caption": "ăn mãi… hết bánh chưa?"
@@ -127,7 +127,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Con cắt bánh theo từng bữa: ăn $\\frac{1}{2}$ — còn trống 1/2. Ăn thêm $\\frac{1}{4}$ — còn trống 1/4. Ăn $\\frac{1}{8}$ — còn trống $\\frac{1}{8}$! Quy luật hiện ra: phần CÒN TRỐNG luôn bằng đúng mảnh VỪA ĂN. Vậy phần đã ăn bằng cả bánh trừ mảnh cuối: ba bữa đầu là 1 trừ $\\frac{1}{8}$ — BẢY PHẦN TÁM.",
+    "narration": "Con cắt bánh theo từng bữa: ăn $\\frac{1}{2}$ — còn trống $\\frac{1}{2}$. Ăn thêm $\\frac{1}{4}$ — còn trống $\\frac{1}{4}$. Ăn $\\frac{1}{8}$ — còn trống $\\frac{1}{8}$! Quy luật hiện ra: phần CÒN TRỐNG luôn bằng đúng mảnh VỪA ĂN. Vậy phần đã ăn bằng cả bánh trừ mảnh cuối: ba bữa đầu là 1 trừ $\\frac{1}{8}$ — BẢY PHẦN TÁM.",
     "display": {
      "type": "cake_slice_interactive",
      "spec": {
@@ -159,7 +159,7 @@
     "estSeconds": 16,
     "item": {
      "format": "mcq",
-     "text": "$\\frac{1}{2}$ + $\\frac{1}{4}$ + … + 1/64 bằng:",
+     "text": "$\\frac{1}{2}$ + $\\frac{1}{4}$ + … + $\\frac{1}{64}$ bằng:",
      "choices": [
       "63/64",
       "1",
@@ -184,7 +184,7 @@
     "teaches": [
      "K3"
     ],
-    "narration": "Vạch mặt lời thủ thỉ của Cáo Đề: mỗi bữa con chỉ ăn ĐÚNG MỘT NỬA phần còn lại — nên phần trống teo đi một nửa chứ không bao giờ về không! Cộng đến $\\frac{1}{64}$: tổng 63/64. Cộng đến $\\frac{1}{256}$: tổng 255/256. Gần 1 tùy thích — nhưng chiếc bánh không nói dối: mảnh trống vẫn đó.",
+    "narration": "Vạch mặt lời thủ thỉ của Cáo Đề: mỗi bữa con chỉ ăn ĐÚNG MỘT NỬA phần còn lại — nên phần trống teo đi một nửa chứ không bao giờ về không! Cộng đến $\\frac{1}{64}$: tổng $\\frac{63}{64}$. Cộng đến $\\frac{1}{256}$: tổng $\\frac{255}{256}$. Gần 1 tùy thích — nhưng chiếc bánh không nói dối: mảnh trống vẫn đó.",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -260,7 +260,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Vạch mặt lời thủ thỉ: mỗi bữa chỉ ăn ĐÚNG MỘT NỬA phần còn lại — phần trống teo đi một nửa chứ không bao giờ về không! Đến một phần sáu tư: tổng SÁU BA phần sáu tư. Đến một phần hai trăm năm sáu: tổng hai trăm năm lăm phần hai trăm năm sáu. Gần một tùy thích — chiếc bánh không nói dối: mảnh trống vẫn đó!",
-    "screenText": "63/64 · 255/256 · … gần 1 — KHÔNG là 1!",
+    "screenText": "$\\frac{63}{64}$ · $\\frac{255}{256}$ · … gần 1 — KHÔNG là 1!",
     "visual": "Kính lúp zoom góc trống ngày càng nhỏ nhưng không biến mất; bảng '= 1' của Cáo Đề gạch chéo đỏ #C0392B.",
     "assets": [],
     "duration": 25
@@ -281,7 +281,7 @@
     "templateHint": "cta_practice",
     "transitionOut": "kết",
     "voiceover": "Phần bánh của con: một phần hai cộng một phần tư cộng một phần tám — tổng bao nhiêu? Vào bài luyện ngay!",
-    "screenText": "1/2 + 1/4 + 1/8 = ?",
+    "screenText": "$\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$ = ?",
     "visual": "Bánh ba lát chờ tính; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
     "linkItem": "P1",
     "assets": [],
@@ -291,13 +291,13 @@
  },
  "workedExample": {
   "title": "Ba bữa bánh của Su Kem",
-  "problem": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + 1/8. Rồi cả dãy đến 1/64.",
+  "problem": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$. Rồi cả dãy đến $\\frac{1}{64}$.",
   "steps": [
    {
-    "show": "Bước 1 — Sau mỗi bữa, phần trống = mảnh vừa ăn: trống $\\frac{1}{2}$ → $\\frac{1}{4}$ → 1/8.",
+    "show": "Bước 1 — Sau mỗi bữa, phần trống = mảnh vừa ăn: trống $\\frac{1}{2}$ → $\\frac{1}{4}$ → $\\frac{1}{8}$.",
     "askBefore": {
      "format": "num",
-     "text": "Sau bữa 1/8, phần trống là 1/mấy?",
+     "text": "Sau bữa $\\frac{1}{8}$, phần trống là 1/mấy?",
      "answerKey": {
       "value": 8
      },
@@ -306,14 +306,14 @@
     "phan": "phantich"
    },
    {
-    "show": "Bước 2 — Ba bữa: tổng = 1 − $\\frac{1}{8}$ = 7/8.",
+    "show": "Bước 2 — Ba bữa: tổng = 1 − $\\frac{1}{8}$ = $\\frac{7}{8}$.",
     "phan": "phantich"
    },
    {
     "show": "Bước 3 — Đến $\\frac{1}{64}$: tổng = 1 − $\\frac{1}{64}$ = $\\frac{63}{64}$ (không phải 1!).",
     "askAfter": {
      "format": "num",
-     "text": "Cộng đến 1/128 thì tổng là ?/128",
+     "text": "Cộng đến $\\frac{1}{128}$ thì tổng là ?/128",
      "answerKey": {
       "value": 127
      },
@@ -335,7 +335,7 @@
      "id": "P1",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B14.LT3",
-     "text": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + 1/8.",
+     "text": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$.",
      "answerKey": {
       "parts": [
        {
@@ -367,7 +367,7 @@
      "id": "P2",
      "format": "mb",
      "sourceItem": "ITEM:KSN5Q1.B14.LT7",
-     "text": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$ + $\\frac{1}{16}$ + $\\frac{1}{32}$ + 1/64.",
+     "text": "Tính: $\\frac{1}{2}$ + $\\frac{1}{4}$ + $\\frac{1}{8}$ + $\\frac{1}{16}$ + $\\frac{1}{32}$ + $\\frac{1}{64}$.",
      "answerKey": {
       "parts": [
        {
@@ -380,7 +380,7 @@
       "Mảnh cuối là 1/64.",
       "1 − mảnh cuối."
      ],
-     "solutionNarrative": "1 − $\\frac{1}{64}$ = 63/64.",
+     "solutionNarrative": "1 − $\\frac{1}{64}$ = $\\frac{63}{64}$.",
      "teaches": [
       "K1",
       "K3"
@@ -428,7 +428,7 @@
     "id": "A1",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B14.QZ5",
-    "text": "$\\frac{1}{2}$ + $\\frac{1}{4}$ + … + 1/64 bằng:",
+    "text": "$\\frac{1}{2}$ + $\\frac{1}{4}$ + … + $\\frac{1}{64}$ bằng:",
     "choices": [
      "63/64",
      "1",
@@ -470,8 +470,8 @@
  "spacedReview": {
   "flashcards": [
    {
-    "front": "Dãy nửa dần $\\frac{1}{2}$ + $\\frac{1}{4}$ + … + 1/2ⁿ tính sao? Có bao giờ bằng 1?",
-    "back": "Tổng = 1 − MẢNH CUỐI (phần trống = mảnh vừa ăn): đến 1/64 là 63/64. Không bao giờ bằng 1 — mỗi bữa chỉ ăn nửa phần còn lại, góc trống teo dần nhưng còn mãi. GẦN 1 MÀ KHÔNG LÀ 1!"
+    "front": "Dãy nửa dần $\\frac{1}{2}$ + $\\frac{1}{4}$ + … + $\\frac{1}{2}$ⁿ tính sao? Có bao giờ bằng 1?",
+    "back": "Tổng = 1 − MẢNH CUỐI (phần trống = mảnh vừa ăn): đến $\\frac{1}{64}$ là $\\frac{63}{64}$. Không bao giờ bằng 1 — mỗi bữa chỉ ăn nửa phần còn lại, góc trống teo dần nhưng còn mãi. GẦN 1 MÀ KHÔNG LÀ 1!"
    }
   ],
   "schedule": [
@@ -482,7 +482,7 @@
  },
  "parentNote": {
   "onComplete": "Hôm nay con học dãy nửa dần bằng chiếc bánh: tổng = 1 − mảnh cuối, và hiểu vì sao không bao giờ tròn 1. Con đạt {score}/3, {trapResult} câu bẫy cộng-mãi-thành-1.",
-  "homeActivity": "Cắt bánh/quả cam thật: ăn nửa, rồi nửa phần còn lại, ba lần — hỏi con 'đã ăn mấy phần, còn trống mấy phần?' (7/8 và $\\frac{1}{8}$).",
+  "homeActivity": "Cắt bánh/quả cam thật: ăn nửa, rồi nửa phần còn lại, ba lần — hỏi con 'đã ăn mấy phần, còn trống mấy phần?' ($\\frac{7}{8}$ và $\\frac{1}{8}$).",
   "watchFor": "Nếu con làm tròn tổng thành 1 — chỉ vào góc trống trên đĩa (S3) và hỏi 'nó bằng 0 chưa?'."
  },
  "$schema": "digital-lesson/v2-micro",

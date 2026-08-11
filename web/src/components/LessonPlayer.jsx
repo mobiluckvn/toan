@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import Chu from './Chu.jsx';
 import { buildFlow, PHASES } from '../lib/flow.js';
 import { loadLesson, figureSrc, chapterOf, cachDoc } from '../lib/content.js';
 import { gradeMicro } from '../lib/flow.js';
@@ -117,7 +118,7 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
           {microId.replace(/^DL:(KSN5Q1|KSN2)\./, '')}
         </span>
         <h1 className="flex-1 text-[13px] font-semibold leading-tight line-clamp-2">
-          {lesson.title}
+          <Chu t={lesson.title} />
         </h1>
         <span className="text-[11px] tabular-nums opacity-85">{i + 1}/{flow.length}</span>
       </header>

@@ -54,25 +54,25 @@
    {
     "case": "gà chó nhỏ (ca nền)",
     "problem": "Vừa gà vừa chó có 10 con, 28 chân. Tìm số gà, số chó.",
-    "solution": "Giả cả 10 là gà: 20 chân, thiếu 8 → chó = 8 : 2 = 4; gà 6. Thử: 12 + 16 = 28 ✓.",
+    "solution": "Giả cả 10 là gà: 20 chân, thiếu 8 → chó = $8 : 2 = 4$; gà 6. Thử: $12 + 16 = 28$ ✓.",
     "why": "Ca LT3 — ba nhịp giả-đo-chia."
    },
    {
     "case": "gà chó đề A (ca lõi)",
     "problem": "Vừa gà vừa chó có 36 con và 100 cái chân. Tìm số mỗi loại.",
-    "solution": "Giả cả 36 là gà: 72 chân, thiếu 28 → chó = 28 : 2 = 14; gà 22. Thử: 44 + 56 = 100 ✓.",
+    "solution": "Giả cả 36 là gà: 72 chân, thiếu 28 → chó = $28 : 2 = 14$; gà 22. Thử: $44 + 56 = 100$ ✓.",
     "why": "Ca đề A câu 10."
    },
    {
     "case": "thừa – thiếu (ca trục kho)",
     "problem": "Cô chia cam: mỗi bạn 3 quả thì thừa 8 quả; mỗi bạn 5 quả thì thiếu 4 quả. Hỏi có mấy bạn và mấy quả cam?",
-    "solution": "Tổng chênh = 8 + 4 = 12 (thừa CỘNG thiếu!); mỗi bạn chênh 2 → 6 bạn; cam = 3 × 6 + 8 = 26 quả.",
-    "why": "Ca đề A câu 11 — trap 8 − 4 rình đây."
+    "solution": "Tổng chênh = $8 + 4 = 12$ (thừa CỘNG thiếu!); mỗi bạn chênh 2 → 6 bạn; cam = $3  \\times  6 + 8 = 26$ quả.",
+    "why": "Ca đề A câu 11 — trap $8 - 4$ rình đây."
    },
    {
     "case": "bắn bia thưởng phạt (ca sư phụ)",
     "problem": "Cuộc thi bắn bia 20 phát: mỗi phát trúng được cộng 5 điểm, mỗi phát trượt bị trừ 2 điểm. Cáo Đề được 65 điểm. Hỏi Cáo Đề trượt mấy phát?",
-    "solution": "Giả trúng cả 20: 100 điểm, hụt 35; mỗi phát trượt đổi mất 5 + 2 = 7 điểm → trượt = 35 : 7 = 5 phát. Thử: 15 × 5 − 5 × 2 = 65 ✓.",
+    "solution": "Giả trúng cả 20: 100 điểm, hụt 35; mỗi phát trượt đổi mất $5 + 2 = 7$ điểm → trượt = $35 : 7 = 5$ phát. Thử: $15  \\times  5 - 5  \\times  2 = 65$ ✓.",
     "why": "Ca LT9 — mất thưởng LẪN chịu phạt."
    }
   ],
@@ -237,7 +237,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Chia cam: mỗi bạn ba quả thì THỪA tám; mỗi bạn năm quả thì THIẾU bốn. Trí Long trừ vèo: chênh là tám trừ bốn bằng bốn! Su Kem dựng trục: một kịch bản nằm DƯỚI kho, một kịch bản VỌT TRÊN kho — đo khoảng cách mà lại đem trừ à?",
-    "screenText": "tổng chênh = 8 − 4??",
+    "screenText": "tổng chênh = $8 - 4$??",
     "visual": "Kho cam giữa trục dọc; hai kịch bản một dưới một trên kho; phép trừ 8−4 treo lệch; dấu hỏi đỏ #C0392B.",
     "assets": [],
     "duration": 19
@@ -248,7 +248,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Trục kho cam: kịch bản mỗi-bạn-BA dừng DƯỚI kho tám quả — kịch bản mỗi-bạn-NĂM vọt TRÊN kho bốn quả! Khoảng cách đo từ đáy lên đỉnh: tám CỘNG bốn bằng MƯỜI HAI — thừa một phía, thiếu một phía! Mỗi bạn chênh HAI quả: SÁU bạn! Cam bằng ba nhân sáu cộng tám — HAI MƯƠI SÁU quả.",
-    "screenText": "dưới 8 + trên 4 = 12 · chênh 2/bạn → 6 bạn · cam 26 ✓",
+    "screenText": "dưới 8 + trên $4 = 12$ · chênh 2/bạn → 6 bạn · cam 26 ✓",
     "visual": "Trục dọc với vạch kho; hai cột kịch bản chạm đáy 8 và vượt đỉnh 4; thước đo nối đáy-đỉnh dài 12 vàng.",
     "assets": [],
     "duration": 21
@@ -259,7 +259,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Sân khấu giả vờ cho gà chó: ba sáu con một trăm chân — GIẢ cả ba sáu là GÀ: bảy hai chân, THIẾU hai tám! Mỗi lần đổi một gà thành chó sân khấu thêm ĐÚNG HAI chân: chó bằng MƯỜI BỐN, gà hai hai! Bắn bia: hai mươi phát, sáu lăm điểm — giả trúng CẢ: một trăm, hụt ba lăm. Mỗi phát trượt mất thưởng NĂM lẫn chịu phạt HAI: bảy điểm! Trượt bằng NĂM phát!",
-    "screenText": "giả toàn gà 72 → thiếu 28 → chó 14 · bia: 35 : (5+2) = 5 phát",
+    "screenText": "giả toàn gà 72 → thiếu 28 → chó 14 · bia: 35 : ($5+2$) = 5 phát",
     "visual": "Sân khấu 36 con gà giấy, vài con lột mặt nạ thành chó thêm chân; bảng điểm bia 100 tụt về 65 với bậc 7 điểm mỗi phát trượt.",
     "assets": [],
     "duration": 28

@@ -30,7 +30,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con phá được bài \"quên dấu phẩy khi cộng\": tổng bị lệch đúng 9 lần (1 chữ số thập phân) hoặc 99 lần (2 chữ số) số hạng bị quên — tìm số hạng bằng phép chia cho 9 / 99, và tìm tổng đúng khi biết số hạng.",
+  "text": "Con phá được bài \"quên dấu phẩy khi cộng\": tổng bị lệch đúng 9 lần (1 chữ số thập phân) hoặc 99 lần (2 chữ số) số hạng bị quên — tìm số hạng bằng phép chia cho $\\frac{9}{99}$, và tìm tổng đúng khi biết số hạng.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (9 lần, không phải 10)",
   "kidText": "Có người quên dấu phẩy lúc cộng. Con tìm ra số bị quên, vì tổng lệch đúng 9 lần hoặc 99 lần số đó."
  },
@@ -58,19 +58,19 @@
    {
     "case": "tìm số hạng, 1 chữ số TP (ca chuẩn)",
     "problem": "Khi cộng hai số, một bạn quên dấu phẩy của số hạng có một chữ số ở phần thập phân nên tổng tăng thêm 76,5 đơn vị. Tìm số hạng đó.",
-    "solution": "Tổng tăng = 9 lần số hạng → số hạng = 76,5 : 9 = 8,5. Thử: 85 − 8,5 = 76,5 ✓.",
+    "solution": "Tổng tăng = 9 lần số hạng → số hạng = $76,5 : 9 = 8,5$. Thử: $85 - 8,5 = 76,5$ ✓.",
     "why": ""
    },
    {
     "case": "biết số hạng, tìm tổng đúng (ca dữ kiện ngược)",
     "problem": "Khi cộng một số với 3,57, do quên dấu phẩy nên một bạn đã cộng với 357 và được 500. Tìm tổng đúng.",
-    "solution": "Phần phình = 357 − 3,57 = 353,43 → tổng đúng = 500 − 353,43 = 146,57.",
+    "solution": "Phần phình = $357 - 3,57 = 353,43$ → tổng đúng = $500 - 353,43 = 146,57$.",
     "why": "không cần chia 99, chỉ trừ phần phình."
    },
    {
     "case": "2 chữ số TP (ca sư phụ)",
     "problem": "Quên dấu phẩy của số hạng có HAI chữ số thập phân nên tổng tăng từ 50 lên 173,75. Tìm số hạng đó.",
-    "solution": "Mức lệch = 173,75 − 50 = 123,75 = 99 lần số hạng → số hạng = 123,75 : 99 = 1,25.",
+    "solution": "Mức lệch = $173,75 - 50 = 123,75 = 99$ lần số hạng → số hạng = $123,75 : 99 = 1,25$.",
     "why": "nhánh 99 + K3 tự tính mức lệch."
    }
   ],
@@ -438,7 +438,7 @@
      "text": "(Đúng/Sai?) Quên dấu phẩy của số hạng 6,4 thì tổng tăng thêm 64 đơn vị.",
      "answerKey": {
       "value": false,
-      "note": "Tăng 64 − 6,4 = 57,6 (9 lần của 6,4), không phải 64."
+      "note": "Tăng $64 - 6,4 = 57,6$ (9 lần của 6,4), không phải 64."
      },
      "hints": [
       "Phần phình = số nhầm − số thật.",

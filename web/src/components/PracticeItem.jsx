@@ -89,7 +89,7 @@ export default function PracticeItem({ item: base, level, figure, figureGiai, on
           <div className={`mt-3 rounded-xl border-[1.5px] px-3.5 py-3 text-[15px] ${
             res.ok || res.mode === 'selfcheck'
               ? 'border-teal bg-teal-pale text-teal-dark' : 'border-alert bg-alert-pale text-alert'}`}>
-            {res.mode === 'selfcheck' ? <><b>Lời giải mẫu:</b> {res.expected}</>
+            {res.mode === 'selfcheck' ? <><b>Lời giải mẫu:</b> <Chu t={res.expected} /></>
               : res.ok ? <>🎉 Chuẩn! <Chu t={item.solutionNarrative || ''} /></>
               : <>Chưa đúng — con sửa lại rồi bấm Kiểm tra lần nữa nhé. Thử bao nhiêu lần cũng được.</>}
           </div>

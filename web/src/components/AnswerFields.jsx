@@ -1,4 +1,5 @@
 import React from 'react';
+import Chu from './Chu.jsx';
 import { answerFields, answerBrief } from '../lib/flow.js';
 
 /**
@@ -20,7 +21,7 @@ export function PickRow({ options, value, disabled, onPick }) {
                 value === o ? 'border-navy bg-navy font-bold text-white' : 'border-line bg-white text-navy'}`
             : `rounded-full border-[1.5px] px-3.5 py-1.5 text-[14.5px] font-bold ${
                 value === o ? 'border-navy bg-navy text-white' : 'border-line bg-white text-navy'}`}>
-          {o}
+          <Chu t={o} />
         </button>
       ))}
     </div>
@@ -49,7 +50,7 @@ export default function AnswerFields({ item, vals, disabled, onChange, onEnter }
           <div key={f.index} className="field">
             <div className="field-head">
               {f.letter && <span className="field-letter">{f.letter}</span>}
-              <label htmlFor={`ans-${f.index}`}>{f.label}</label>
+              <label htmlFor={`ans-${f.index}`}><Chu t={f.label} /></label>
               {f.unit && <span className="field-unit">đơn vị: {f.unit}</span>}
             </div>
             {f.kind === 'pick' ? (

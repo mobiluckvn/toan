@@ -57,19 +57,19 @@
    {
     "case": "mốc vàng 189 (ca nền)",
     "problem": "Đánh số trang từ 1 đến 99 cần dùng bao nhiêu chữ số?",
-    "solution": "Khu 1: 9 × 1 = 9. Khu 2: 90 × 2 = 180. Tổng: 9 + 180 = 189 chữ số.",
+    "solution": "Khu 1: $9  \\times  1 = 9$. Khu 2: $90  \\times  2 = 180$. Tổng: $9 + 180 = 189$ chữ số.",
     "why": "Mốc vàng thứ hai — nền của mọi bài đánh trang."
    },
    {
     "case": "sách 256 trang (ca chuẩn)",
     "problem": "Đánh số trang một cuốn sách dày 256 trang cần dùng bao nhiêu chữ số?",
-    "solution": "Hai khu đầu: 189. Khu 3: từ trang 100 đến 256 có 256 − 99 = 157 trang × 3 = 471. Tổng: 189 + 471 = 660 chữ số.",
+    "solution": "Hai khu đầu: 189. Khu 3: từ trang 100 đến 256 có $256 - 99 = 157$ trang × $3 = 471$. Tổng: $189 + 471 = 660$ chữ số.",
     "why": "sẽ đảo ngược ở bài sau."
    },
    {
     "case": "sách 120 trang (ca vùng ba mỏng)",
     "problem": "Sách dày 120 trang cần bao nhiêu chữ số?",
-    "solution": "189 + (120 − 99) × 3 = 189 + 21 × 3 = 189 + 63 = 252 chữ số.",
+    "solution": "189 + ($120 - 99$) × $3 = 189 + 21  \\times  3 = 189 + 63 = 252$ chữ số.",
     "why": "Số trang vùng 3 nhỏ — luyện phép đếm đoạn 100→120 là 21 trang."
    }
   ],
@@ -268,7 +268,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Đi qua ba khu kệ. Khu một — trang một đến chín: chín thẻ một chữ số. Khu hai — trang mười đến chín chín: chín mươi trang nhân hai — một trăm tám mươi thẻ. Cộng hai khu: MỘT TRĂM TÁM CHÍN — mốc vàng, khắc vào tim! Khu ba — từ trang một trăm: mỗi trang ba thẻ.",
-    "screenText": "9 + 180 = 189 (MỐC VÀNG) · khu 3: ×3",
+    "screenText": "$9 + 180 = 189$ (MỐC VÀNG) · khu 3: ×3",
     "visual": "Ba khu kệ nối nhau, mỗi khu hiện phép nhân; hai mốc '9' và '189' đóng khung vàng #F9B233 lấp lánh.",
     "assets": [],
     "duration": 22
@@ -279,7 +279,7 @@
     "derivedFromScreen": "C1",
     "transitionOut": "cắt thẳng",
     "voiceover": "Cuốn hai trăm năm sáu trang: khu ba chạy từ trang một trăm đến hai trăm năm sáu — đếm đoạn: một trăm năm mươi bảy trang, nhân ba được bốn trăm bảy mốt thẻ. Cộng mốc vàng: một tám chín cộng bốn bảy mốt bằng SÁU TRĂM SÁU MƯƠI chữ số!",
-    "screenText": "157 × 3 = 471 · 189 + 471 = 660",
+    "screenText": "$157  \\times  3 = 471$ · $189 + 471 = 660$",
     "visual": "Phép đếm đoạn '256 − 99 = 157' rồi hai phép nối tiếp; kết quả 660 đóng mộc xanh.",
     "assets": [],
     "duration": 19
@@ -436,7 +436,7 @@
      "text": "(Đúng/Sai?) Đánh trang từ 1 đến 100 dùng $9 + 90  \\times  2 + 1  \\times  2 = 191$ chữ số.",
      "answerKey": {
       "value": false,
-      "note": "Trang 100 dùng BA chữ số: 189 + 3 = 192."
+      "note": "Trang 100 dùng BA chữ số: $189 + 3 = 192$."
      },
      "hints": [
       "Trang 100 thuộc khu nào?",

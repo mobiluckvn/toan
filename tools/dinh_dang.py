@@ -41,15 +41,19 @@ Ba luật, theo thứ tự chạy:
 import json, os, re, sys, collections
 
 GOC_KHO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-NOI = [('lop2', 'lop2'), ('lop3', 'lop3'), ('lop4', 'lop4'), ('lop5', 'lessons')]
+NOI = [('lop2', 'lop2'), ('lop3', 'lop3'), ('lop4', 'lop4'), ('lop5', 'lessons'),
+       ('lop5q2', 'quyen2')]      # Mùa giải: lượt đầu bỏ sót cả quyển
 
 # Trường nào là LỜI VĂN cho bé đọc. Cố ý KHÔNG đụng `id`, `file`, `answerKey`,
 # `sha256_16`… — bọc `$` vào một mã kiểm là hỏng cả bộ kiểm tra hình.
 TRUONG_CHU = {
     'text', 'narration', 'solutionNarrative', 'problem', 'show', 'kidText',
-    'mantra', 'wrong', 'fix', 'signal', 'counterExample', 'hint', 'title',
-    'caption', 'onComplete', 'homeActivity', 'watchFor', 'objective', 'back',
-    'front', 'ten', 'moTa', 'de', 'loiChua', 'ghiChu',
+    'mantra', 'wrong', 'fix', 'signal', 'counterExample', 'hint', 'hints',
+    'title', 'caption', 'onComplete', 'homeActivity', 'watchFor', 'objective',
+    'back', 'front', 'ten', 'moTa', 'de', 'loiChua', 'ghiChu',
+    # Lượt đầu bỏ sót — đều là chữ BÉ ĐỌC trên màn hình:
+    'screenText', 'solution', 'why', 'note', 'prompt', 'voiceover',
+    'vocabulary', 'thanChu', 'dauHieu', 'say', 'lines',
 }
 # …trừ mấy chỗ `title` là NHÃN HÌNH, đã canh cỡ chữ theo bề ngang ảnh; chèn
 # LaTeX vào đó là vỡ bố cục hình đã vẽ.
@@ -57,11 +61,36 @@ BO_QUA_DUONG = ('figureSpec', 'hinh', 'figures')
 
 SO = r'\d+(?:[.,]\d+)?'
 
+
+def tach_doan(s):
+    """Cắt chuỗi thành các mẩu ('chu', …) và ('toan', …) theo cặp dấu `$`."""
+    ra, i = [], 0
+    while i < len(s):
+        mo = s.find('$', i)
+        if mo < 0:
+            ra.append(('chu', s[i:]))
+            break
+        if mo > i:
+            ra.append(('chu', s[i:mo]))
+        dong = s.find('$', mo + 1)
+        if dong < 0:
+            ra.append(('chu', s[mo:]))
+            break
+        ra.append(('toan', s[mo + 1:dong]))
+        i = dong + 1
+    return [x for x in ra if x[1] != '']
+
 # ── 1 · PHÂN SỐ ──────────────────────────────────────────────────────────────
 # `1/(1×2)` — mẫu là một tích trong ngoặc
 R_PS_NGOAC = re.compile(rf'(?<![\w/]) ({SO}) \s*/\s* \(\s*({SO})\s*[×x]\s*({SO})\s*\)', re.X)
 # `3/4` — hai đầu đều là số, và KHÔNG dính chữ hai bên (loại km/h, 12/3/2024)
-R_PS = re.compile(rf'(?<![\w/.,]) ({SO}) \s*/\s* ({SO}) (?![\w/.,]|\s*[a-zA-Zà-ỹ])', re.X)
+# Chặn hai đầu bằng CHỮ SỐ và dấu `/`, KHÔNG chặn bằng dấu câu hay chữ cái.
+# Bản đầu chặn cả `,` `.` và chữ đứng sau, nên bỏ sót hàng loạt phân số thật:
+#   "1/2, 1/3, 1/4"     dấu phẩy chặn
+#   "1/4 của một số"    chữ "của" chặn
+# Mà hai thứ ấy vốn không cần chặn: R_PS đòi SỐ ở CẢ HAI bên nên "km/h" không thể
+# khớp, còn ngày tháng "12/3/2024" thì bị chặn bởi dấu `/` đứng sau.
+R_PS = re.compile(rf'(?<![\d/]) ({SO}) \s*/\s* ({SO}) (?![\d/])', re.X)
 
 # ── 2 · BIỂU THỨC ────────────────────────────────────────────────────────────
 # Chuỗi số - phép tính liền mạch: "30 : 5 = 6", "12 + 18 = 30", "2 : 3".
@@ -116,9 +145,26 @@ def _bt_latex(bt):
 
 
 def dinh_dang(s):
-    """Một chuỗi lời văn → markdown + LaTeX. Trả (chuỗi mới, số chỗ đã đổi)."""
-    if not isinstance(s, str) or '$' in s:      # đã định dạng rồi thì thôi
+    """Một chuỗi lời văn → markdown + LaTeX. Trả (chuỗi mới, số chỗ đã đổi).
+
+    Chuỗi đã có `$…$` thì CHỪA đúng những đoạn ấy ra rồi làm phần còn lại, chứ
+    không bỏ qua cả chuỗi. Bản đầu bỏ qua cả chuỗi, nên câu nào lượt trước bọc
+    được một nửa thì nửa kia mắc kẹt vĩnh viễn:
+
+        "1/2 của $12 = 6$; 1/3 của $12 = 4$"   ← ba phân số không bao giờ được bọc
+    """
+    if not isinstance(s, str):
         return s, 0
+    if '$' in s:
+        manh, tong = [], 0
+        for m in tach_doan(s):
+            if m[0] == 'toan':
+                manh.append(f'${m[1]}$')
+            else:
+                moi, k = dinh_dang(m[1])
+                manh.append(moi)
+                tong += k
+        return ''.join(manh), tong
     n = 0
 
     def ps_ngoac(m):
@@ -179,7 +225,10 @@ def main(chi_soat=False):
     for quyen, thu_muc in NOI:
         d = os.path.join(GOC_KHO, 'web', 'public', 'content', thu_muc)
         for f in sorted(os.listdir(d)):
-            if not f.startswith('DL_'):
+            # Quyển 2 (Mùa giải) đặt tên tệp bằng `DR_` chứ không `DL_` — lượt đầu
+            # chỉ lọc `DL_` nên bỏ sót TRỌN cả quyển mà bảng tổng không hề báo,
+            # vì bảng chỉ đếm những gì nó đọc được.
+            if not f.startswith(('DL_', 'DR_')):
                 continue
             duong = os.path.join(d, f)
             goc = open(duong, encoding='utf-8').read()

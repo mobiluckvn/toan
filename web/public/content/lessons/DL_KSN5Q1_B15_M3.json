@@ -39,7 +39,7 @@
    },
    {
     "id": "K2",
-    "text": "Sau khi rút từng tầng, thường lộ ra CỤM CHUNG giống hệt nhau ở cả tử lẫn mẫu — rút NGUYÊN CỤM như rút một thừa số: (2 × cụm)/(6 × cụm) = 2/6."
+    "text": "Sau khi rút từng tầng, thường lộ ra CỤM CHUNG giống hệt nhau ở cả tử lẫn mẫu — rút NGUYÊN CỤM như rút một thừa số: (2 × cụm)/(6 × cụm) = $\\frac{2}{6}$."
    },
    {
     "id": "K3",
@@ -51,13 +51,13 @@
    {
     "case": "trùm cuối chương (ca lõi)",
     "problem": "Tính: ($1 \\times 2 + 2 \\times 4 + 3 \\times 6$) / ($2 \\times 3 + 4 \\times 6 + 6 \\times 9$).",
-    "solution": "Tử: 1×2 = 2×(1×1); 2×4 = 2×(2×2); 3×6 = 2×(3×3) → 2 × (1 + 4 + 9) = 28. Mẫu: 2×3 = 6×1; 4×6 = 6×4; 6×9 = 6×9 → 6 × (1 + 4 + 9) = 84. Rút nguyên cụm (1 + 4 + 9): còn 2/6 = 1/3.",
+    "solution": "Tử: $1 \\times 2 = 2$×($1 \\times 1$); $2 \\times 4 = 2$×($2 \\times 2$); $3 \\times 6 = 2$×($3 \\times 3$) → 2 × ($1 + 4 + 9$) = 28. Mẫu: $2 \\times 3 = 6 \\times 1$; $4 \\times 6 = 6 \\times 4$; $6 \\times 9 = 6 \\times 9$ → 6 × ($1 + 4 + 9$) = 84. Rút nguyên cụm ($1 + 4 + 9$): còn $\\frac{2}{6}$ = $\\frac{1}{3}$.",
     "why": "Ca LT8 — đề A câu 15 TRÙM CUỐI của chương."
    },
    {
     "case": "kiểm không rút ẩu (ca đối chiếu)",
     "problem": "($1 + 2 + 3$)/($2 + 4 + 7$) có rút 'nguyên cụm' được không?",
-    "solution": "Mẫu = 2×1 + 2×2 + 7?? — số hạng cuối 7 ≠ 2×3: KHÔNG cùng bộ lõi → không rút được, phải tính thẳng: 6/13.",
+    "solution": "Mẫu = $2 \\times 1 + 2 \\times 2 + 7$?? — số hạng cuối 7 ≠ $2 \\times 3$: KHÔNG cùng bộ lõi → không rút được, phải tính thẳng: $\\frac{6}{13}$.",
     "why": "Luật K3 — cụm phải giống hệt TỪNG số hạng."
    }
   ],
@@ -167,7 +167,7 @@
     "teaches": [
      "K3"
     ],
-    "narration": "Luật an toàn hai điều. MỘT: cụm phải giống hệt TỪNG số hạng — ($1 + 2 + 3$) với ($2 + 4 + 7$): số hạng cuối 7 không phải 2 nhân 3 — khác bộ lõi, cấm rút, tính thẳng 6/13. HAI: trong tổng chưa gom cụm thì cấm gạch lẻ: ($1 + 2$)/($2 + 2$) mà gạch số 2 ra $\\frac{1}{2}$ — trong khi đáp thật là $\\frac{3}{4}$! Gom từng tầng xong mới được nhấc.",
+    "narration": "Luật an toàn hai điều. MỘT: cụm phải giống hệt TỪNG số hạng — ($1 + 2 + 3$) với ($2 + 4 + 7$): số hạng cuối 7 không phải 2 nhân 3 — khác bộ lõi, cấm rút, tính thẳng $\\frac{6}{13}$. HAI: trong tổng chưa gom cụm thì cấm gạch lẻ: ($1 + 2$)/($2 + 2$) mà gạch số 2 ra $\\frac{1}{2}$ — trong khi đáp thật là $\\frac{3}{4}$! Gom từng tầng xong mới được nhấc.",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -221,7 +221,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Trùm cuối xuất hiện: một-nhân-hai cộng hai-nhân-bốn cộng ba-nhân-sáu, trên hai-nhân-ba cộng bốn-nhân-sáu cộng sáu-nhân-chín. Trí Long định gạch chéo số hai trên với số hai dưới… Su Kem chặn bút: trong TỔNG chưa gom cụm — cấm gạch! Nhìn hai khay bánh đã!",
-    "screenText": "(1×2+2×4+3×6)/(2×3+4×6+6×9) — gạch được không?",
+    "screenText": "($1 \\times 2+2 \\times 4+3 \\times 6$)/($2 \\times 3+4 \\times 6+6 \\times 9$) — gạch được không?",
     "visual": "Đề trùm cuối trên cuộn giấy; bút chì Trí Long bị bàn tay Su Kem chặn; biển 'CẤM GẠCH' đỏ #C0392B.",
     "assets": [],
     "duration": 16
@@ -232,7 +232,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Khay trên: một nhân hai là HAI lần một-nhân-một; hai nhân bốn là HAI lần hai-nhân-hai; ba nhân sáu là HAI lần ba-nhân-ba — cả khay bằng HAI nhân bộ lõi một cộng bốn cộng chín! Khay dưới: mỗi chiếc gấp SÁU bộ lõi ấy. Hai khay chung MỘT bộ lõi — nhấc nguyên bộ ra: còn hai trên sáu — MỘT PHẦN BA!",
-    "screenText": "2 × (1+4+9) / 6 × (1+4+9) → 2/6 = 1/3",
+    "screenText": "2 × ($1+4+9$) / 6 × ($1+4+9$) → $\\frac{2}{6}$ = $\\frac{1}{3}$",
     "visual": "Hai khay bánh xếp tầng; từng chiếc bánh tách lớp lộ nhân đôi/nhân sáu bộ lõi; bàn tay nhấc nguyên khối lõi vàng ra khỏi cả hai khay; đáp 1/3.",
     "assets": [],
     "duration": 23
@@ -243,7 +243,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Luật an toàn hai điều. MỘT: cụm phải giống hệt TỪNG số hạng — số hạng lệch một chiếc là khác bộ lõi, cấm rút. HAI: trong tổng chưa gom, cấm gạch lẻ: một cộng hai trên hai cộng hai mà gạch số hai ra một phần hai — trong khi đáp thật là BA PHẦN TƯ! Gom từng tầng xong mới được nhấc!",
-    "screenText": "(1+2)/(2+2): gạch 2 → 1/2 ✗ · thật: 3/4 ✓",
+    "screenText": "($1+2$)/($2+2$): gạch 2 → $\\frac{1}{2}$ ✗ · thật: $\\frac{3}{4}$ ✓",
     "visual": "Phản ví dụ đóng khung: phép gạch ẩu bị dấu ✗ đỏ; phép tính thẳng 3/4 mộc xanh; hai điều luật treo bảng.",
     "assets": [],
     "duration": 23
@@ -293,7 +293,7 @@
     "phan": "phantich"
    },
    {
-    "show": "Bước 3 — Nhấc nguyên cụm ($1 + 4 + 9$): còn $\\frac{2}{6}$ = 1/3. (Kiểm tay: $\\frac{28}{84}$ = $\\frac{1}{3}$ ✓.)",
+    "show": "Bước 3 — Nhấc nguyên cụm ($1 + 4 + 9$): còn $\\frac{2}{6}$ = $\\frac{1}{3}$. (Kiểm tay: $\\frac{28}{84}$ = $\\frac{1}{3}$ ✓.)",
     "askAfter": {
      "format": "mcq",
      "text": "Vì sao không cần tính cụm bằng bao nhiêu?",
@@ -344,7 +344,7 @@
       "Mỗi tích khay trên gấp đôi 1×1, 2×2, 3×3.",
       "Nhấc nguyên cụm (1 + 4 + 9)."
      ],
-     "solutionNarrative": "2 × cụm / 6 × cụm = $\\frac{2}{6}$ = 1/3.",
+     "solutionNarrative": "2 × cụm / 6 × cụm = $\\frac{2}{6}$ = $\\frac{1}{3}$.",
      "teaches": [
       "K1",
       "K2",
@@ -392,10 +392,10 @@
     {
      "id": "P3",
      "format": "tf",
-     "text": "(Đúng/Sai?) ($1 + 2$)/($2 + 2$): gạch số 2 ở tử với số 2 ở mẫu, còn 1/2.",
+     "text": "(Đúng/Sai?) ($1 + 2$)/($2 + 2$): gạch số 2 ở tử với số 2 ở mẫu, còn $\\frac{1}{2}$.",
      "answerKey": {
       "value": false,
-      "note": "Trong tổng chưa gom cụm — cấm gạch: đáp thật 3/4."
+      "note": "Trong tổng chưa gom cụm — cấm gạch: đáp thật $\\frac{3}{4}$."
      },
      "hints": [
       "Tính thẳng hai tầng.",
@@ -477,7 +477,7 @@
   "flashcards": [
    {
     "front": "Biểu thức tử – mẫu dài (tổng nhiều tích) xử sao?",
-    "back": "Gom TỪNG TẦNG về (hệ số × cụm); hai cụm GIỐNG HỆT → rút NGUYÊN CỤM: 2×($1+4+9$) / 6×($1+4+9$) = $\\frac{2}{6}$ = 1/3. Trong tổng chưa gom — CẤM GẠCH (($1+2$)/($2+2$) = 3/4, không phải $\\frac{1}{2}$!)."
+    "back": "Gom TỪNG TẦNG về (hệ số × cụm); hai cụm GIỐNG HỆT → rút NGUYÊN CỤM: 2×($1+4+9$) / 6×($1+4+9$) = $\\frac{2}{6}$ = $\\frac{1}{3}$. Trong tổng chưa gom — CẤM GẠCH (($1+2$)/($2+2$) = $\\frac{3}{4}$, không phải $\\frac{1}{2}$!)."
    }
   ],
   "schedule": [

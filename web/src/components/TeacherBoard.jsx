@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
+import Chu from './Chu.jsx';
 import { teacherBoard, learnerAttempts, logout, refreshTeacherBoard } from '../lib/firebase.js';
 
 /** Tên chặng cho cô đọc, thay vì mã tiếng Anh */
@@ -92,8 +93,8 @@ export default function TeacherBoard({ onExit }) {
                       Chỉ hiện khi con SAI: lúc đúng thì đáp án đã biết rồi. */}
                   {!a.correct && a.answer && (
                     <div className="mt-1 pl-4 text-[12.5px] leading-snug">
-                      <span className="text-alert">con trả lời: <b>{a.answer}</b></span>
-                      {a.expected && <span className="text-mute"> · đáp án: {a.expected}</span>}
+                      <span className="text-alert">con trả lời: <b><Chu t={a.answer} /></b></span>
+                      {a.expected && <span className="text-mute"> · đáp án: <Chu t={a.expected} /></span>}
                     </div>
                   )}
                 </div>

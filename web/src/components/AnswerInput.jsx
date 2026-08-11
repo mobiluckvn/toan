@@ -82,7 +82,7 @@ export default function AnswerInput({ item, onResolve, submitLabel = 'Kiểm tra
         <div className={`mt-3 rounded-xl border-[1.5px] px-3.5 py-3 text-[15px] ${
           res.mode === 'selfcheck' ? 'border-teal bg-teal-pale'
             : res.ok ? 'border-teal bg-teal-pale text-teal-dark' : 'border-alert bg-alert-pale text-alert'}`}>
-          {res.mode === 'selfcheck' ? <><b>Lời giải mẫu:</b> {res.expected}</>
+          {res.mode === 'selfcheck' ? <><b>Lời giải mẫu:</b> <Chu t={res.expected} /></>
             : res.ok ? <>🎉 Đúng rồi! <Chu t={item.solutionNarrative || ''} /></>
             : <>Chưa đúng — con chọn/sửa lại rồi bấm {submitLabel} lần nữa nhé.</>}
         </div>

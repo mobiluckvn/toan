@@ -53,13 +53,13 @@
    {
     "case": "hai vòng (ca nền)",
     "problem": "Lớp 40 bạn: 25 bạn thích toán, 20 bạn thích văn, trong đó 10 bạn thích cả hai môn. Hỏi mấy bạn không thích môn nào?",
-    "solution": "Ít nhất một môn = 25 + 20 − 10 = 35 → không môn nào: 40 − 35 = 5 bạn.",
+    "solution": "Ít nhất một môn = $25 + 20 - 10 = 35$ → không môn nào: $40 - 35 = 5$ bạn.",
     "why": "Ca đề A câu 13 — giao đếm hai lần phải trừ."
    },
    {
     "case": "ba vòng trùm (ca lõi)",
     "problem": "Lớp 30 bạn: 15 học bơi, 12 học cờ, 10 học vẽ; 5 bạn bơi-cờ, 4 bạn bơi-vẽ, 3 bạn cờ-vẽ; 2 bạn học cả ba. Hỏi mấy bạn không học môn nào?",
-    "solution": "15 + 12 + 10 − 5 − 4 − 3 + 2 = 27 (cộng trả giao ba!) → 30 − 27 = 3 bạn.",
+    "solution": "$15 + 12 + 10 - 5 - 4 - 3 + 2 = 27$ (cộng trả giao ba!) → $30 - 27 = 3$ bạn.",
     "why": "Ca đề A câu 15 TRÙM — trap quên-cộng-trả rình đây."
    }
   ],
@@ -218,7 +218,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Lớp ba mươi bạn: bơi mười lăm, cờ mười hai, vẽ mười; giao đôi năm, bốn, ba; và HAI bạn học cả ba. Trí Long cộng trừ một mạch: hai mươi lăm! Su Kem chỉ hai bạn đứng giữa ba vòng dây: hai bạn chăm nhất lớp — trong phép tính của con, họ được đếm mấy lần?",
-    "screenText": "cộng 3 trừ 3 = 2 bạn biến mất?!",
+    "screenText": "cộng 3 trừ $3 = 2$ bạn biến mất?!",
     "visual": "Sân chơi ba vòng dây màu chồng nhau; hai nhân vật đứng vùng giữa mờ dần như tàng hình; dấu hỏi đỏ #C0392B.",
     "assets": [],
     "duration": 21
@@ -229,7 +229,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Soi số phận hai bạn giữa ba vòng: khi cộng ba tập — được đếm BA lần; khi trừ ba giao đôi — bị trừ BA lần: cộng ba trừ ba bằng KHÔNG — hai bạn học chăm nhất bị xóa sổ! Công lý Ven: CỘNG TRẢ giao ba đúng MỘT lần: hai lăm cộng hai bằng HAI MƯƠI BẢY bạn học ít nhất một môn! Không môn nào: ba mươi trừ hai bảy — BA bạn!",
-    "screenText": "giao ba: +3 −3 = 0 → +2 trả → 27 trong vòng · ngoài: 30 − 27 = 3",
+    "screenText": "giao ba: +3 −$3 = 0$ → +2 trả → 27 trong vòng · ngoài: $30 - 27 = 3$",
     "visual": "Vùng giữa ba vòng với bộ đếm +3 rồi −3 về 0; bàn tay vàng đặt trả +2; bảng tổng 27 và 3 bạn ngoài sân mộc xanh.",
     "assets": [],
     "duration": 28
@@ -240,7 +240,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Ven hai vòng đơn giản hơn một nhịp: lớp bốn mươi — toán hai lăm, văn hai mươi, cả hai môn MƯỜI. Nhóm giao bị đếm HAI lần khi cộng — trừ đúng một lần: hai lăm cộng hai mươi trừ mười bằng BA MƯƠI LĂM bạn! Ngoài mọi vòng: bốn mươi trừ ba lăm — NĂM bạn không thích môn nào.",
-    "screenText": "2 vòng: 25+20−10 = 35 → ngoài 5 · 3 vòng: −3 giao đôi +giao ba",
+    "screenText": "2 vòng: $25+20$−$10 = 35$ → ngoài 5 · 3 vòng: −3 giao đôi +giao ba",
     "visual": "Hai vòng dây với nhóm giao tô đậm bị trừ một lần; bảng đối chiếu nhịp hai-vòng vs ba-vòng cạnh nhau.",
     "assets": [],
     "duration": 22
@@ -376,7 +376,7 @@
      "text": "(Đúng/Sai?) Ba vòng: $15+12+10$−5−4−$3 = 25$ là số bạn học ít nhất một môn.",
      "answerKey": {
       "value": false,
-      "note": "Quên CỘNG TRẢ giao ba: nhóm giữa +3 −3 = 0 — hai bạn học cả ba bị xóa sổ; đúng là 25 + 2 = 27."
+      "note": "Quên CỘNG TRẢ giao ba: nhóm giữa +3 −$3 = 0$ — hai bạn học cả ba bị xóa sổ; đúng là $25 + 2 = 27$."
      },
      "hints": [
       "Nhóm giữa được đếm mấy lần?",

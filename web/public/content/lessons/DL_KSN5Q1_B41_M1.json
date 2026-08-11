@@ -31,7 +31,7 @@
   "id": "O1",
   "text": "Con dịch được \"làm xong trong t ngày\" thành NĂNG SUẤT 1/t công việc mỗi ngày (cả công việc = 1) và chạy đủ ba chiều chuẩn: tính thời gian chung (CỘNG năng suất rồi lấy 1 chia), biết chung tìm riêng (TRỪ năng suất) — khắc cốt: chỉ NĂNG SUẤT biết cộng, ngày tháng thì không; đáp chung phải BÉ hơn thời gian riêng ngắn nhất.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (cấm cộng / chia đôi thời gian)",
-  "kidText": "Làm xong trong 6 ngày nghĩa là mỗi ngày làm 1/6 công việc. Chỉ sức người biết cộng, còn ngày tháng thì không."
+  "kidText": "Làm xong trong 6 ngày nghĩa là mỗi ngày làm $\\frac{1}{6}$ công việc. Chỉ sức người biết cộng, còn ngày tháng thì không."
  },
  "knowledgeCore": {
   "statements": [
@@ -57,25 +57,25 @@
    {
     "case": "dịch năng suất (ca nền)",
     "problem": "Bác Ba đào giếng một mình 6 ngày thì xong. Hỏi mỗi ngày bác đào được bao nhiêu phần của giếng?",
-    "solution": "1 : 6 = 1/6 giếng mỗi ngày.",
+    "solution": "$1 : 6$ = $\\frac{1}{6}$ giếng mỗi ngày.",
     "why": "Ca LT1 — bước dịch mở mọi bài."
    },
    {
     "case": "thời gian chung (ca lõi)",
     "problem": "Bác Ba đào một mình 6 ngày xong, chú Tư 12 ngày xong. Hỏi hai người cùng đào thì mấy ngày xong?",
-    "solution": "1/6 + 1/12 = 1/4 → 1 : 1/4 = 4 ngày. Phản chứng đáp 9 ngày: hai người mà lâu hơn một mình bác Ba — vô lý!",
+    "solution": "$\\frac{1}{6}$ + $\\frac{1}{12}$ = $\\frac{1}{4}$ → 1 : $\\frac{1}{4}$ = 4 ngày. Phản chứng đáp 9 ngày: hai người mà lâu hơn một mình bác Ba — vô lý!",
     "why": "Ca đề A câu 1 — trap cộng-ngày rình đây."
    },
    {
     "case": "chung tìm riêng (ca ngược)",
     "problem": "Hai người cùng làm xong một công việc trong 4 ngày. Nếu người thứ nhất làm một mình thì mất 6 ngày. Hỏi người thứ hai làm một mình mất mấy ngày?",
-    "solution": "Năng suất người hai = 1/4 − 1/6 = 1/12 → 12 ngày.",
+    "solution": "Năng suất người hai = $\\frac{1}{4}$ − $\\frac{1}{6}$ = $\\frac{1}{12}$ → 12 ngày.",
     "why": "Ca đề A câu 3 — trừ năng suất."
    },
    {
     "case": "ba người (ca sư phụ)",
     "problem": "Bác Ba 6 ngày, chú Tư 12 ngày, cô Năm 4 ngày. Cả ba cùng đào thì mấy ngày xong?",
-    "solution": "1/6 + 1/12 + 1/4 = 2/12 + 1/12 + 3/12 = 6/12 = 1/2 → 2 ngày.",
+    "solution": "$\\frac{1}{6}$ + $\\frac{1}{12}$ + $\\frac{1}{4}$ = $\\frac{2}{12}$ + $\\frac{1}{12}$ + $\\frac{3}{12}$ = $\\frac{6}{12}$ = $\\frac{1}{2}$ → 2 ngày.",
     "why": "Ca LT9 — máy cộng chạy mọi quân số."
    }
   ],
@@ -163,7 +163,7 @@
     "estSeconds": 15,
     "item": {
      "format": "mcq",
-     "text": "Năng suất chung của cặp 1/6 và 1/12 là:",
+     "text": "Năng suất chung của cặp $\\frac{1}{6}$ và $\\frac{1}{12}$ là:",
      "choices": [
       "1/4",
       "1/9",
@@ -242,7 +242,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Giếng làng: bác Ba đào một mình sáu ngày xong, chú Tư mười hai ngày. Cùng đào thì mấy ngày? Trí Long tính vèo: sáu cộng mười hai chia hai — chín ngày! Su Kem tròn mắt: hai người xúm vào mà LÂU hơn bác Ba làm một mình á?!",
-    "screenText": "(6 + 12) : 2 = 9 ngày??",
+    "screenText": "($6 + 12$) : $2 = 9$ ngày??",
     "visual": "Giếng làng với hai nhân vật cầm xẻng; bảng tính (6+12):2 treo lệch; lịch 9 ngày dài hơn lịch 6 ngày, dấu hỏi đỏ #C0392B.",
     "assets": [],
     "duration": 18
@@ -253,7 +253,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "NGÀY THÁNG không biết cộng — thứ cộng được là NĂNG SUẤT! Cả giếng bằng MỘT: mỗi ngày bác Ba đào MỘT PHẦN SÁU giếng, chú Tư MỘT PHẦN MƯỜI HAI. Hai người mỗi ngày: hai phần mười hai cộng một phần mười hai bằng BA PHẦN MƯỜI HAI: một phần tư giếng! Thời gian bằng một chia một phần tư — BỐN ngày! Chuông soi: bốn BÉ hơn sáu — thêm người phải nhanh hơn, chuẩn!",
-    "screenText": "giếng = 1 · 1/6 + 1/12 = 1/4 mỗi ngày → 4 ngày (< 6 ✓)",
+    "screenText": "giếng = 1 · $\\frac{1}{6}$ + $\\frac{1}{12}$ = $\\frac{1}{4}$ mỗi ngày → 4 ngày (< 6 ✓)",
     "visual": "Ống giếng chia 12 vạch; mỗi ngày hai lát đào 2/12 và 1/12 ghép thành 3/12 tô teal; chuông soi 4 < 6 điểm xanh.",
     "assets": [],
     "duration": 28
@@ -264,7 +264,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Chiều ngược cùng máy: hai người chung BỐN ngày xong; bác Ba riêng SÁU ngày — chú Tư mỗi ngày đào một phần tư TRỪ một phần sáu bằng MỘT PHẦN MƯỜI HAI: chú Tư riêng MƯỜI HAI ngày! Ba người cứ cộng tiếp: sáu phần mười hai — NỬA giếng mỗi ngày: HAI ngày xong! Khẩu quyết: cả công việc bằng một — năng suất một-chia-thời-gian — chỉ năng suất biết cộng!",
-    "screenText": "riêng: 1/4 − 1/6 = 1/12 → 12 ngày · ba người: 1/2 → 2 ngày",
+    "screenText": "riêng: $\\frac{1}{4}$ − $\\frac{1}{6}$ = $\\frac{1}{12}$ → 12 ngày · ba người: $\\frac{1}{2}$ → 2 ngày",
     "visual": "Máy trừ năng suất nhả 1/12; ca ba người với ba lát đào chồng thành nửa giếng; khẩu quyết ba dòng đóng khung vàng.",
     "assets": [],
     "duration": 26
@@ -285,7 +285,7 @@
     "templateHint": "cta_practice",
     "transitionOut": "kết",
     "voiceover": "Giếng của con: bác Ba sáu ngày, chú Tư mười hai ngày — cộng năng suất tính ngày chung, rồi rung chuông soi! Vào bài luyện ngay!",
-    "screenText": "1/6 + 1/12 → ? ngày (soi < 6!)",
+    "screenText": "$\\frac{1}{6}$ + $\\frac{1}{12}$ → ? ngày (soi < 6!)",
     "visual": "Giếng chờ đào; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
     "linkItem": "P2",
     "assets": [],
@@ -362,7 +362,7 @@
       "Cả giếng = 1.",
       "1 : 6."
      ],
-     "solutionNarrative": "1/6 giếng mỗi ngày.",
+     "solutionNarrative": "$\\frac{1}{6}$ giếng mỗi ngày.",
      "teaches": [
       "K1"
      ]
@@ -388,7 +388,7 @@
       "Cộng năng suất 1/6 + 1/12.",
       "1 : 1/4."
      ],
-     "solutionNarrative": "1/4 mỗi ngày → 4 ngày (< 6 ✓).",
+     "solutionNarrative": "$\\frac{1}{4}$ mỗi ngày → 4 ngày (< 6 ✓).",
      "teaches": [
       "K2",
       "K4"
@@ -520,7 +520,7 @@
     "id": "A2",
     "format": "mcq",
     "sourceItem": "ITEM:KSN5Q1.B41.QZ3",
-    "text": "Năng suất chung của cặp 1/6 và 1/12 là:",
+    "text": "Năng suất chung của cặp $\\frac{1}{6}$ và $\\frac{1}{12}$ là:",
     "choices": [
      "1/4",
      "1/9",
@@ -537,7 +537,7 @@
     "id": "A3",
     "format": "tf",
     "sourceItem": "ITEM:KSN5Q1.B41.QZ1",
-    "text": "(Đúng/Sai?) Làm xong trong 6 ngày nghĩa là mỗi ngày làm được 1/6 công việc.",
+    "text": "(Đúng/Sai?) Làm xong trong 6 ngày nghĩa là mỗi ngày làm được $\\frac{1}{6}$ công việc.",
     "answerKey": {
      "value": true
     },

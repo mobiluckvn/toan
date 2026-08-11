@@ -91,7 +91,10 @@ def phan_so_lat(p, out):
                                    fc=c if k < tu else 'white',
                                    ec=NAVY, lw=1.6, zorder=4))
         if p.get('so', True):
-            _txt(ax, cx, yc - r - 4.6, f'{tu}/{mau_so}', fs=FS['big'], c=NAVY,
+            # Phân số xếp DỌC như trong vở, không phải "3/4" nằm ngang: matplotlib
+            # vẽ được mathtext sẵn, mà cả lời văn trong app nay cũng đã xếp dọc —
+            # để hai kiểu trên cùng một màn thì bé thấy chúng là hai thứ khác nhau.
+            _txt(ax, cx, yc - r - 4.6, rf'$\frac{{{tu}}}{{{mau_so}}}$', fs=FS['big'], c=NAVY,
                  w='bold', z=6)
         if b.get('ten'):
             txt_fit(ax, cx, yc - r - 9.2, b['ten'], o_rong - 2, FS['small'],

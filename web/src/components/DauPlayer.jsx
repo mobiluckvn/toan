@@ -1,4 +1,5 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
+import Chu from './Chu.jsx';
 import {
   BAREM, diemBarem, datChua, keDonOn, tuyenAn, conLai, docGio, chamKep,
 } from '../lib/dau.js';
@@ -119,7 +120,7 @@ export default function DauPlayer({ khoi, onExit, onXong, onMoMicro }) {
           <div className="kicker">
             CÂU {c.so}/{cau.length}{c.de ? ` · ĐỀ ${c.de}` : ''} · {'★'.repeat(c.muc || 1)}
           </div>
-          <p className="text-[17px] font-semibold leading-snug">{c.text}</p>
+          <p className="text-[17px] font-semibold leading-snug"><Chu t={c.text} /></p>
           {c.answerKey ? (
             <AnswerFields item={c} vals={vals[c.id] || Array(Math.max(f.length, 1)).fill('')}
                           disabled={false} onChange={(v) => setVals({ ...vals, [c.id]: v })} />
@@ -169,7 +170,7 @@ export default function DauPlayer({ khoi, onExit, onXong, onMoMicro }) {
         {cau.map((q) => (
           <div key={q.id} className="card">
             <div className="kicker">CÂU {q.so}{q.de ? ` · ĐỀ ${q.de}` : ''}</div>
-            <p className="text-[15.5px] font-semibold leading-snug">{q.text}</p>
+            <p className="text-[15.5px] font-semibold leading-snug"><Chu t={q.text} /></p>
             {q.answerKey && (
               <p className={`mt-1.5 text-[14px] ${ketQua[q.id]?.ok ? 'text-teal-dark' : 'text-alert'}`}>
                 Con trả lời: <b>{String(ketQua[q.id]?.answer ?? '(bỏ trống)')}</b>

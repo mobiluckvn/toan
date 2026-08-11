@@ -57,19 +57,19 @@
    {
     "case": "bộ có thẻ 0 (ca lõi)",
     "problem": "Từ các chữ số 0; 3; 5; 8 (được lặp lại), lập được bao nhiêu số có ba chữ số?",
-    "solution": "Toa trăm: 3 cách (bỏ 0). Toa chục: 4. Toa đơn vị: 4. Tổng: 3 × 4 × 4 = 48 số.",
+    "solution": "Toa trăm: 3 cách (bỏ 0). Toa chục: 4. Toa đơn vị: 4. Tổng: $3  \\times  4  \\times  4 = 48$ số.",
     "why": "nguồn bẫy CĐ-6.1 (đáp sai 64)."
    },
    {
     "case": "bộ không có 0 (ca đối chứng)",
     "problem": "Từ các chữ số 1; 2; 3; 4 (được lặp), lập được bao nhiêu số có ba chữ số? So với bộ có thẻ 0.",
-    "solution": "Không có thẻ 0 → toa đầu đủ 4 cách: 4 × 4 × 4 = 64 số. Chênh 16 so với bộ {0;3;5;8} — đúng bằng số 'đoàn tàu ma' bắt đầu bằng 0 bị loại.",
+    "solution": "Không có thẻ 0 → toa đầu đủ 4 cách: $4  \\times  4  \\times  4 = 64$ số. Chênh 16 so với bộ {0;3;5;8} — đúng bằng số 'đoàn tàu ma' bắt đầu bằng 0 bị loại.",
     "why": "Đối chứng K3 — hiểu vì sao lúc trừ lúc không."
    },
    {
     "case": "hai toa (ca thu nhỏ)",
     "problem": "Từ {0; 3; 5; 8}, lập được bao nhiêu số có HAI chữ số (được lặp)?",
-    "solution": "Toa chục: 3 (bỏ 0) × toa đơn vị: 4 = 12 số.",
+    "solution": "Toa chục: 3 (bỏ 0) × toa đơn vị: $4 = 12$ số.",
     "why": "Thu nhỏ để tự nhân — khuôn cho generator."
    }
   ],
@@ -257,7 +257,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Nhà máy tàu hỏa nhận đơn: từ bốn thẻ không, ba, năm, tám — lắp được bao nhiêu đoàn tàu ba toa? Trí Long bấm máy vèo: bốn nhân bốn nhân bốn — sáu mươi tư đoàn! Su Kem chỉ vào toa đầu: ai đang lái đoàn tàu số KHÔNG ba tám kia?!",
-    "screenText": "4 × 4 × 4 = 64??",
+    "screenText": "$4  \\times  4  \\times  4 = 64$??",
     "visual": "Nhà máy với băng chuyền; đoàn tàu '0-3-8' chạy ra, toa đầu gắn thẻ 0 đeo kính đen không bằng lái; Su Kem chỉ tay, còi đỏ #C0392B.",
     "assets": [],
     "duration": 19
@@ -268,7 +268,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Vào xưởng lắp ráp. Toa TRĂM là toa lái — gắn thẻ không vào, máy từ chối cái rụp: thẻ không không có bằng lái! Toa trăm chỉ còn BA lựa chọn; toa chục và toa đơn vị vẫn đủ BỐN. Kéo cần nhân dọc dây chuyền: ba nhân bốn nhân bốn — BỐN MƯƠI TÁM đoàn tàu!",
-    "screenText": "3 × 4 × 4 = 48",
+    "screenText": "$3  \\times  4  \\times  4 = 48$",
     "visual": "Ba khung toa với bộ đếm '3·4·4' lần lượt sáng #1FCBAB; thẻ 0 bị bật khỏi toa đầu kèm biển cấm; cần gạt kéo xuống, kết quả 48 bật vàng #F9B233.",
     "assets": [],
     "duration": 21

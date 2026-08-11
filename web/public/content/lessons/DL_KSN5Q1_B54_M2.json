@@ -57,19 +57,19 @@
    {
     "case": "đuổi cùng điểm khác giờ (ca ảnh)",
     "problem": "Lúc 7 giờ, người thứ nhất rời A với 10 km/h. Lúc 8 giờ 30 phút, người thứ hai rời A đuổi theo với 16 km/h. Hỏi sau bao lâu đuổi kịp?",
-    "solution": "Ảnh lúc 8:30: người thứ nhất đã đi 10 × 1,5 = 15 km; t = 15 : (16 − 10) = 2,5 giờ.",
+    "solution": "Ảnh lúc 8:30: người thứ nhất đã đi $10  \\times  1,5 = 15$ km; t = 15 : ($16 - 10$) = 2,5 giờ.",
     "why": "Ca LT5 — ảnh mới rồi mới chia hiệu."
    },
    {
     "case": "ngược chiều khác giờ (ca đề A)",
     "problem": "Quãng AB dài 46 km. Lúc 7 giờ, xe thứ nhất rời A về B với 10 km/h; lúc 8 giờ, xe thứ hai rời B về A với 8 km/h. Hỏi hai xe gặp nhau lúc mấy giờ?",
-    "solution": "Lúc 8 giờ, xe thứ nhất đã đi 10 km → còn 46 − 10 = 36 km; t = 36 : 18 = 2 giờ → gặp lúc 10 giờ.",
+    "solution": "Lúc 8 giờ, xe thứ nhất đã đi 10 km → còn $46 - 10 = 36$ km; t = $36 : 18 = 2$ giờ → gặp lúc 10 giờ.",
     "why": "Ca LT6 — trừ trước chia sau, chốt mốc thật."
    },
    {
     "case": "xe máy - ô tô (ca sư phụ)",
     "problem": "Lúc 7 giờ, xe máy rời A với 40 km/h. Lúc 7 giờ 30, ô tô rời A đuổi theo với 60 km/h. Hỏi ô tô đuổi kịp lúc mấy giờ và cách A bao nhiêu km?",
-    "solution": "Ảnh 7:30: xe máy đã đi 40 × 0,5 = 20 km; t = 20 : (60 − 40) = 1 giờ → kịp lúc 8 giờ 30, cách A 60 km.",
+    "solution": "Ảnh 7:30: xe máy đã đi $40  \\times  0,5 = 20$ km; t = 20 : ($60 - 40$) = 1 giờ → kịp lúc 8 giờ 30, cách A 60 km.",
     "why": "Ca LT9 — ảnh + mốc + vị trí trọn gói."
    }
   ],
@@ -243,7 +243,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Nghi thức chụp ảnh — họ hàng bể-nước-tám-mươi-phần-trăm: dòng đầu tiên luôn là tấm ảnh MỚI, chụp đúng lúc người sau lên đường! Tám giờ — xe thứ nhất đã đi mười nhân một: MƯỜI cây! Khoảng cách THẬT bằng bốn sáu trừ mười — BA MƯƠI SÁU! Giờ mới chia tổng: ba sáu chia mười tám — HAI giờ: gặp lúc tám cộng hai — MƯỜI giờ, mốc đồng hồ thật!",
-    "screenText": "ảnh 8:00: đã đi 10 → thật 46 − 10 = 36 → 36 : 18 = 2 giờ → gặp 10:00",
+    "screenText": "ảnh 8:00: đã đi 10 → thật $46 - 10 = 36$ → $36 : 18 = 2$ giờ → gặp 10:00",
     "visual": "Tấm ảnh polaroid mới chụp 8:00 với khoảng cách thật 36 sáng đèn; phép chia chạy sau khi ảnh in xong; đồng hồ chốt 10 giờ.",
     "assets": [],
     "duration": 26
@@ -254,7 +254,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Đuổi cùng điểm cùng nghi thức: bảy giờ đi trước mười cây giờ — tám rưỡi đuổi mười sáu: ảnh — MƯỜI LĂM cây! Chia hiệu sáu: HAI GIỜ RƯỠI đuổi kịp! Ca sư phụ: xe máy bảy giờ đi bốn mươi — ô tô bảy rưỡi đuổi sáu mươi: ảnh hai mươi cây; chia hiệu hai mươi: MỘT giờ — kịp TÁM GIỜ BA MƯƠI, cách A SÁU MƯƠI cây!",
-    "screenText": "ảnh 15 → 15:6 = 2,5 giờ · sư phụ: 20:20 = 1 giờ → 8:30, cách A 60 km",
+    "screenText": "ảnh 15 → 15:$6 = 2,5$ giờ · sư phụ: 20:$20 = 1$ giờ → 8:30, cách A 60 km",
     "visual": "Hai bài chạy song song cùng nghi thức ảnh-trước-chia-sau; ô tô bắt kịp xe máy tại km 60 với đồng hồ 8:30.",
     "assets": [],
     "duration": 25
@@ -275,7 +275,7 @@
     "templateHint": "cta_practice",
     "transitionOut": "kết",
     "voiceover": "Máy ảnh của con: bảy giờ đi trước, tám rưỡi mới đuổi — chụp ảnh mười lăm cây rồi chia hiệu! Vào bài luyện ngay!",
-    "screenText": "ảnh: 10 × 1,5 = ? → : 6 = ?",
+    "screenText": "ảnh: $10  \\times  1,5$ = ? → : 6 = ?",
     "visual": "Máy ảnh chờ bấm trên vạch đường; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
     "linkItem": "P1",
     "assets": [],
@@ -373,7 +373,7 @@
      },
      "hints": [
       "Ảnh 8:00: trừ 10 km.",
-      "36 : 18 rồi cộng mốc."
+      "Lấy khoảng cách thật chia cho tổng hai vận tốc, rồi cộng mốc giờ."
      ],
      "solutionNarrative": "2 giờ sau 8:00 → 10 giờ.",
      "teaches": [

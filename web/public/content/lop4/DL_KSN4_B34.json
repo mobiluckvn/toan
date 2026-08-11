@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Tìm phân số của một số theo hai nhịp: chia cho MẪU (ra một phần), nhân với TỬ. Giải bài ngược: biết 2/5 của một số bằng 12, tìm số ấy (chia cho tử, nhân với mẫu). Chơi thạo trò đổi gốc: A bằng 4/5 của B thì B bằng 5/4 của A — cùng bức tranh, đổi chỗ đứng ngắm.",
-  "kidText": "Mẻ 24 chiếc bánh, 3/4 số bánh phủ sô-cô-la. Con đoán mỗi loại bao nhiêu chiếc nhé!",
+  "text": "Tìm phân số của một số theo hai nhịp: chia cho MẪU (ra một phần), nhân với TỬ. Giải bài ngược: biết $\\frac{2}{5}$ của một số bằng 12, tìm số ấy (chia cho tử, nhân với mẫu). Chơi thạo trò đổi gốc: A bằng $\\frac{4}{5}$ của B thì B bằng $\\frac{5}{4}$ của A — cùng bức tranh, đổi chỗ đứng ngắm.",
+  "kidText": "Mẻ 24 chiếc bánh, $\\frac{3}{4}$ số bánh phủ sô-cô-la. Con đoán mỗi loại bao nhiêu chiếc nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,19 +29,19 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — BÀI XUÔI: TÌM 3/4 CỦA 24: chia theo mẫu: $24 : 4 = 6$ (chiếc mỗi cụm); lấy theo tử: $6  \\times  3 = 18$ (chiếc phủ sô-cô-la); còn lại $24 - 18 = 6$ chiếc rắc hạnh nhân — đúng một cụm, chính là 1/4 của mẻ. Công thức gọn: tìm a/b của N = N : b × a."
+    "text": "Bước 1 — BÀI XUÔI: TÌM $\\frac{3}{4}$ CỦA 24: chia theo mẫu: $24 : 4 = 6$ (chiếc mỗi cụm); lấy theo tử: $6  \\times  3 = 18$ (chiếc phủ sô-cô-la); còn lại $24 - 18 = 6$ chiếc rắc hạnh nhân — đúng một cụm, chính là $\\frac{1}{4}$ của mẻ. Công thức gọn: tìm a/b của N = N : b × a."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — BÀI NGƯỢC: BIẾT MỘT PHẦN CỦA SỐ, TÌM CẢ SỐ: \"2/5 số bánh trong hộp là 12 chiếc — hộp có bao nhiêu?\" 12 chiếc ứng với 2 cụm → một cụm: $12 : 2 = 6$; cả hộp 5 cụm: $6  \\times  5 = 30$ (chiếc). Ngược với bài xuôi: chia cho TỬ trước, nhân với MẪU sau — nhưng trái tim vẫn là giá trị một cụm!"
+    "text": "Bước 2 — BÀI NGƯỢC: BIẾT MỘT PHẦN CỦA SỐ, TÌM CẢ SỐ: \"$\\frac{2}{5}$ số bánh trong hộp là 12 chiếc — hộp có bao nhiêu?\" 12 chiếc ứng với 2 cụm → một cụm: $12 : 2 = 6$; cả hộp 5 cụm: $6  \\times  5 = 30$ (chiếc). Ngược với bài xuôi: chia cho TỬ trước, nhân với MẪU sau — nhưng trái tim vẫn là giá trị một cụm!"
    },
    {
     "id": "K3",
-    "text": "Bước 3 — TRÒ ĐỔI GỐC: \"khay A bằng 4/5 khay B\" — vẽ: A chiếm 4 ô, B chiếm 5 ô (ô cùng cỡ). Giờ đứng từ phía A nhìn lại: B chiếm 5 ô khi A chiếm 4 ô → B bằng 5/4 của A! Cùng một bức tranh, chỉ đổi xem AI làm gốc so sánh — phân số lộn ngược tử mẫu."
+    "text": "Bước 3 — TRÒ ĐỔI GỐC: \"khay A bằng $\\frac{4}{5}$ khay B\" — vẽ: A chiếm 4 ô, B chiếm 5 ô (ô cùng cỡ). Giờ đứng từ phía A nhìn lại: B chiếm 5 ô khi A chiếm 4 ô → B bằng $\\frac{5}{4}$ của A! Cùng một bức tranh, chỉ đổi xem AI làm gốc so sánh — phân số lộn ngược tử mẫu."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — CHẠY SỐ TRÒ ĐỔI GỐC: A = 4/5 của B và A = 20 chiếc → một ô: $20 : 4 = 5$ → B = $5  \\times  5 = 25$ (chiếc). Kiểm chiều kia: 5/4 của $20 = 20 : 4  \\times  5 = 25$ ✓. Hai chiều cùng đáp số — trò đổi gốc không có gì ma thuật, chỉ là chọn lại \"chiếc bánh chuẩn\" để đo."
+    "text": "Bước 4 — CHẠY SỐ TRÒ ĐỔI GỐC: A = $\\frac{4}{5}$ của B và A = 20 chiếc → một ô: $20 : 4 = 5$ → B = $5  \\times  5 = 25$ (chiếc). Kiểm chiều kia: $\\frac{5}{4}$ của $20 = 20 : 4  \\times  5 = 25$ ✓. Hai chiều cùng đáp số — trò đổi gốc không có gì ma thuật, chỉ là chọn lại \"chiếc bánh chuẩn\" để đo."
    }
   ],
   "mantra": "Tìm a/b CỦA N: chia N cho mẫu b, nhân với tử a. Bài ngược (biết a/b của số bằng M): chia M cho tử a ra một cụm, nhân với mẫu b ra cả số. Đổi gốc: A = a/b của B ⟺ B = b/a của A. Mọi ngả đường vẫn về một câu hỏi: MỘT CỤM đáng giá bao nhiêu?",
@@ -49,9 +49,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Bài \"2/5 số bánh là 12 chiếc, hỏi cả hộp\", Trí Long áp ngay công thức bài xuôi: \"Tìm 2/5 của 12 chứ gì: $12 : 5  \\times  2 = 4,8$... ơ lẻ! Bánh gì mà tám phần mười chiếc?!\"",
+    "wrong": "Bài \"$\\frac{2}{5}$ số bánh là 12 chiếc, hỏi cả hộp\", Trí Long áp ngay công thức bài xuôi: \"Tìm $\\frac{2}{5}$ của 12 chứ gì: $12 : 5  \\times  2 = 4,8$... ơ lẻ! Bánh gì mà tám phần mười chiếc?!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Đọc kỹ đề: 12 chiếc là CẢ HỘP hay là GIÁ TRỊ CỦA 2/5 hộp? Bài này xuôi hay ngược? Gợi ý 2: Đáp số lẻ 4,8 lại là chuông SOI reo: nhầm chiều rồi! Vẽ sơ đồ 5 cụm, đặt 12 vào đúng hai cụm đầu rồi giải chiều ngược giúp Trí Long — và dặn: gặp chữ \"của nó bằng\", hộp số đứng sau dấu bằng là MẢNH, không phải cả tấm."
+    "fix": "Gợi ý 1: Đọc kỹ đề: 12 chiếc là CẢ HỘP hay là GIÁ TRỊ CỦA $\\frac{2}{5}$ hộp? Bài này xuôi hay ngược? Gợi ý 2: Đáp số lẻ 4,8 lại là chuông SOI reo: nhầm chiều rồi! Vẽ sơ đồ 5 cụm, đặt 12 vào đúng hai cụm đầu rồi giải chiều ngược giúp Trí Long — và dặn: gặp chữ \"của nó bằng\", hộp số đứng sau dấu bằng là MẢNH, không phải cả tấm."
    }
   ]
  },
@@ -60,12 +60,12 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Mẻ 24 chiếc bánh; 3/4 số bánh phủ sô-cô-la, còn lại rắc hạnh nhân. Hỏi số bánh mỗi loại?"
+    "narration": "Mẻ 24 chiếc bánh; $\\frac{3}{4}$ số bánh phủ sô-cô-la, còn lại rắc hạnh nhân. Hỏi số bánh mỗi loại?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? mẻ 24 chiếc bánh; 3/4 số bánh phủ sô-cô-la, còn lại rắc hạnh nhân.\nHỎI GÌ? số bánh mỗi loại.\nĐẠI LƯỢNG & ĐƠN VỊ: số bánh (chiếc) — phân số 3/4 ở đây là \"3/4 CỦA 24\", không phải ba phần tư chiếc bánh!\nQUAN HỆ GIỮA CHÚNG: chữ \"của\" dịch thành lời dặn: MẪU 4 → chia 24 thành 4 cụm đều; TỬ 3 → lấy 3 cụm.\nCHỌN CÔNG CỤ: SƠ ĐỒ CỤM: bốn cụm bánh, tô đậm ba cụm; giá trị một cụm là chìa khóa.\nƯỚC LƯỢNG TRƯỚC: 3/4 là gần hết mẻ → sô-cô-la phải ngoài dăm chục phần trăm — cỡ 18 chiếc.",
+    "narration": "CHO GÌ? mẻ 24 chiếc bánh; $\\frac{3}{4}$ số bánh phủ sô-cô-la, còn lại rắc hạnh nhân.\nHỎI GÌ? số bánh mỗi loại.\nĐẠI LƯỢNG & ĐƠN VỊ: số bánh (chiếc) — phân số $\\frac{3}{4}$ ở đây là \"$\\frac{3}{4}$ CỦA 24\", không phải ba phần tư chiếc bánh!\nQUAN HỆ GIỮA CHÚNG: chữ \"của\" dịch thành lời dặn: MẪU 4 → chia 24 thành 4 cụm đều; TỬ 3 → lấy 3 cụm.\nCHỌN CÔNG CỤ: SƠ ĐỒ CỤM: bốn cụm bánh, tô đậm ba cụm; giá trị một cụm là chìa khóa.\nƯỚC LƯỢNG TRƯỚC: $\\frac{3}{4}$ là gần hết mẻ → sô-cô-la phải ngoài dăm chục phần trăm — cỡ 18 chiếc.",
     "teaches": [],
     "nhan": "NHỊP 1, DỊCH — đọc phân số thành lời dặn chia - lấy"
    },
@@ -104,24 +104,24 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: phiếu bếp gửi chị Ngọc Anh: \"Mẻ 24: nhúng sô-cô-la 18 chiếc — rắc hạnh nhân 6 chiếc.\" Chị xếp hai khay đúng phiếu, khách đến nhận hàng đếm khớp từng chiếc, còn khen \"tiệm làm ăn chuẩn chỉ\"!\nSOI: soi kép: $18 + 6 = 24$ ✓ và $18 : 24$ — cứ 3 cụm sô-cô-la trên 4 cụm cả mẻ, đúng $\\frac{3}{4}$ ✓; kèm ước lượng \"ngoài nửa mẻ khá nhiều\" trúng.\nDÙNG NGOÀI ĐỜI: \"giảm giá còn $\\frac{3}{4}$\", \"uống 2/3 cốc nước\", \"đi được 4/5 quãng đường\" — người lớn nói phân số cả ngày, và giờ con quy được tất cả ra con số cụ thể.",
+    "narration": "LẮP: phiếu bếp gửi chị Ngọc Anh: \"Mẻ 24: nhúng sô-cô-la 18 chiếc — rắc hạnh nhân 6 chiếc.\" Chị xếp hai khay đúng phiếu, khách đến nhận hàng đếm khớp từng chiếc, còn khen \"tiệm làm ăn chuẩn chỉ\"!\nSOI: soi kép: $18 + 6 = 24$ ✓ và $18 : 24$ — cứ 3 cụm sô-cô-la trên 4 cụm cả mẻ, đúng $\\frac{3}{4}$ ✓; kèm ước lượng \"ngoài nửa mẻ khá nhiều\" trúng.\nDÙNG NGOÀI ĐỜI: \"giảm giá còn $\\frac{3}{4}$\", \"uống $\\frac{2}{3}$ cốc nước\", \"đi được $\\frac{4}{5}$ quãng đường\" — người lớn nói phân số cả ngày, và giờ con quy được tất cả ra con số cụ thể.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Bài \"2/5 số bánh là 12 chiếc, hỏi cả hộp\", Trí Long áp ngay công thức bài xuôi: \"Tìm 2/5 của 12 chứ gì: $12 : 5  \\times  2 = 4,8$... ơ lẻ! Bánh gì mà tám phần mười chiếc?!\"",
+    "narration": "Bài \"$\\frac{2}{5}$ số bánh là 12 chiếc, hỏi cả hộp\", Trí Long áp ngay công thức bài xuôi: \"Tìm $\\frac{2}{5}$ của 12 chứ gì: $12 : 5  \\times  2 = 4,8$... ơ lẻ! Bánh gì mà tám phần mười chiếc?!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Biết 2/5 số bánh trong hộp là 12 chiếc. Hỏi trong hộp có bao nhiêu chiếc bánh?",
+  "problem": "Biết $\\frac{2}{5}$ số bánh trong hộp là 12 chiếc. Hỏi trong hộp có bao nhiêu chiếc bánh?",
   "steps": [
    {
-    "show": "2/5 số bánh = 12 chiếc. Tìm số bánh cả hộp.",
+    "show": "$\\frac{2}{5}$ số bánh = 12 chiếc. Tìm số bánh cả hộp.",
     "phan": "tomtat"
    },
    {
@@ -145,7 +145,7 @@
     "phan": "tomtat"
    },
    {
-    "show": "Vì 2/5 số bánh là 12 chiếc nên 1/5 số bánh là: $12 : 2 = 6$ (chiếc)",
+    "show": "Vì $\\frac{2}{5}$ số bánh là 12 chiếc nên $\\frac{1}{5}$ số bánh là: $12 : 2 = 6$ (chiếc)",
     "phan": "giai"
    },
    {
@@ -165,7 +165,7 @@
     "phan": "ghichu"
    },
    {
-    "show": "Thử lại: 2/5 của $30 = 30 : 5  \\times  2 = 12$ ✓",
+    "show": "Thử lại: $\\frac{2}{5}$ của $30 = 30 : 5  \\times  2 = 12$ ✓",
     "phan": "thulai"
    },
    {
@@ -179,57 +179,79 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tìm 1/2 của 24.",
+     "text": "Tìm $\\frac{1}{2}$ của 24.",
      "answerKey": {
       "value": 12
      },
-     "solutionNarrative": "$24 : 2 = 12$."
+     "solutionNarrative": "$24 : 2 = 12$.",
+     "hints": [
+      "Tìm a/b CỦA N: chia N cho mẫu b, nhân với tử a.",
+      "BÀI XUÔI: TÌM $\\frac{3}{4}$ CỦA 24: chia theo mẫu: $24 : 4 = 6$ (chiếc mỗi cụm);"
+     ]
     },
     {
      "id": "C2",
-     "text": "Tìm 1/4 của 24.",
+     "text": "Tìm $\\frac{1}{4}$ của 24.",
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "$24 : 4 = 6$."
+     "solutionNarrative": "$24 : 4 = 6$.",
+     "hints": [
+      "Tìm a/b CỦA N: chia N cho mẫu b, nhân với tử a."
+     ]
     },
     {
      "id": "C3",
-     "text": "Tìm 3/4 của 24.",
+     "text": "Tìm $\\frac{3}{4}$ của 24.",
      "answerKey": {
       "value": 18
      },
-     "solutionNarrative": "$24 : 4  \\times  3 = 18$."
+     "solutionNarrative": "$24 : 4  \\times  3 = 18$.",
+     "hints": [
+      "Tìm a/b CỦA N: chia N cho mẫu b, nhân với tử a.",
+      "BÀI XUÔI: TÌM $\\frac{3}{4}$ CỦA 24: chia theo mẫu: $24 : 4 = 6$ (chiếc mỗi cụm);"
+     ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Tìm 2/3 của 36.",
+     "text": "Tìm $\\frac{2}{3}$ của 36.",
      "answerKey": {
       "value": 24
      },
-     "solutionNarrative": "$36 : 3  \\times  2 = 24$."
+     "solutionNarrative": "$36 : 3  \\times  2 = 24$.",
+     "hints": [
+      "Tìm a/b CỦA N: chia N cho mẫu b, nhân với tử a."
+     ]
     },
     {
      "id": "C5",
-     "text": "Biết 2/5 của một số bằng 12. Tìm số đó.",
+     "text": "Biết $\\frac{2}{5}$ của một số bằng 12. Tìm số đó.",
      "answerKey": {
       "value": 30
      },
-     "solutionNarrative": "Một cụm $12 : 2 = 6$ → số đó là $6  \\times  5 = 30$."
+     "solutionNarrative": "Một cụm $12 : 2 = 6$ → số đó là $6  \\times  5 = 30$.",
+     "hints": [
+      "Tìm a/b CỦA N: chia N cho mẫu b, nhân với tử a.",
+      "BÀI XUÔI: TÌM $\\frac{3}{4}$ CỦA 24: chia theo mẫu: $24 : 4 = 6$ (chiếc mỗi cụm);"
+     ]
     },
     {
      "id": "C6",
-     "text": "Biết 3/8 số kẹo trong hộp là 15 viên. Hỏi hộp có bao nhiêu viên kẹo?",
+     "text": "Biết $\\frac{3}{8}$ số kẹo trong hộp là 15 viên. Hỏi hộp có bao nhiêu viên kẹo?",
      "answerKey": {
       "value": 40
      },
-     "solutionNarrative": "Một cụm $15 : 3 = 5$ → cả hộp $5  \\times  8 = 40$ viên."
+     "solutionNarrative": "Một cụm $15 : 3 = 5$ → cả hộp $5  \\times  8 = 40$ viên.",
+     "hints": [
+      "Tìm a/b CỦA N: chia N cho mẫu b, nhân với tử a.",
+      "BÀI XUÔI: TÌM $\\frac{3}{4}$ CỦA 24: chia theo mẫu: $24 : 4 = 6$ (chiếc mỗi cụm);"
+     ]
     },
     {
      "id": "C7",
-     "text": "Lớp 4A có 36 học sinh, trong đó 5/9 là học sinh nữ. Tính số bạn nữ, số bạn nam.",
+     "text": "Lớp 4A có 36 học sinh, trong đó $\\frac{5}{9}$ là học sinh nữ. Tính số bạn nữ, số bạn nam.",
      "answerKey": {
       "parts": [
        {
@@ -242,13 +264,17 @@
        }
       ]
      },
-     "solutionNarrative": "Nữ = $36 : 9  \\times  5 = 20$ bạn; nam = $36 - 20 = 16$ bạn."
+     "solutionNarrative": "Nữ = $36 : 9  \\times  5 = 20$ bạn; nam = $36 - 20 = 16$ bạn.",
+     "hints": [
+      "Tìm a/b CỦA N: chia N cho mẫu b, nhân với tử a.",
+      "BÀI XUÔI: TÌM $\\frac{3}{4}$ CỦA 24: chia theo mẫu: $24 : 4 = 6$ (chiếc mỗi cụm);"
+     ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Số bánh khay A bằng 4/5 số bánh khay B. Biết khay A có 20 chiếc. Hỏi khay B có bao nhiêu chiếc — và khay B bằng mấy phần của khay A?",
+     "text": "Số bánh khay A bằng $\\frac{4}{5}$ số bánh khay B. Biết khay A có 20 chiếc. Hỏi khay B có bao nhiêu chiếc — và khay B bằng mấy phần của khay A?",
      "answerKey": {
       "parts": [
        {
@@ -266,11 +292,15 @@
        }
       ]
      },
-     "solutionNarrative": "Một ô $20 : 4 = 5$ → khay B = $5  \\times  5 = 25$ chiếc; khay B bằng 5/4 của khay A (đổi gốc: lộn ngược tử mẫu)."
+     "solutionNarrative": "Một ô $20 : 4 = 5$ → khay B = $5  \\times  5 = 25$ chiếc; khay B bằng $\\frac{5}{4}$ của khay A (đổi gốc: lộn ngược tử mẫu).",
+     "hints": [
+      "Tìm a/b CỦA N: chia N cho mẫu b, nhân với tử a.",
+      "BÀI XUÔI: TÌM $\\frac{3}{4}$ CỦA 24: chia theo mẫu: $24 : 4 = 6$ (chiếc mỗi cụm);"
+     ]
     },
     {
      "id": "C9",
-     "text": "Su Bống đã đọc 3/7 cuốn truyện, tức là đọc được 21 trang. Hỏi cuốn truyện dày bao nhiêu trang, và em còn phải đọc bao nhiêu trang nữa?",
+     "text": "Su Bống đã đọc $\\frac{3}{7}$ cuốn truyện, tức là đọc được 21 trang. Hỏi cuốn truyện dày bao nhiêu trang, và em còn phải đọc bao nhiêu trang nữa?",
      "answerKey": {
       "parts": [
        {
@@ -283,7 +313,11 @@
        }
       ]
      },
-     "solutionNarrative": "Một cụm $21 : 3 = 7$ → cuốn truyện $7  \\times  7 = 49$ trang; còn phải đọc $49 - 21 = 28$ trang (đúng 4/7 cuốn)."
+     "solutionNarrative": "Một cụm $21 : 3 = 7$ → cuốn truyện $7  \\times  7 = 49$ trang; còn phải đọc $49 - 21 = 28$ trang (đúng $\\frac{4}{7}$ cuốn).",
+     "hints": [
+      "Tìm a/b CỦA N: chia N cho mẫu b, nhân với tử a.",
+      "BÀI XUÔI: TÌM $\\frac{3}{4}$ CỦA 24: chia theo mẫu: $24 : 4 = 6$ (chiếc mỗi cụm);"
+     ]
     }
    ]
   }
@@ -293,7 +327,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Muốn tìm 3/4 của một số, ta chia số đó cho 4 rồi nhân với 3.",
+    "text": "Muốn tìm $\\frac{3}{4}$ của một số, ta chia số đó cho 4 rồi nhân với 3.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -302,16 +336,16 @@
    },
    {
     "id": "Q2",
-    "text": "1/2 của 30 bằng 60.",
+    "text": "$\\frac{1}{2}$ của 30 bằng 60.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "1/2 của 30 là 15."
+    "solutionNarrative": "$\\frac{1}{2}$ của 30 là 15."
    },
    {
     "id": "Q3",
-    "text": "2/3 của 18 bằng:",
+    "text": "$\\frac{2}{3}$ của 18 bằng:",
     "format": "mcq",
     "choices": [
      "A. 12",
@@ -325,7 +359,7 @@
    },
    {
     "id": "Q4",
-    "text": "1/5 của một số bằng 7. Số đó là:",
+    "text": "$\\frac{1}{5}$ của một số bằng 7. Số đó là:",
     "format": "mcq",
     "choices": [
      "A. 35",
@@ -339,7 +373,7 @@
    },
    {
     "id": "Q5",
-    "text": "3/5 của 40 bằng:",
+    "text": "$\\frac{3}{5}$ của 40 bằng:",
     "format": "mcq",
     "choices": [
      "A. 24",
@@ -354,9 +388,9 @@
   ]
  },
  "parentNote": {
-  "onComplete": "Giao \"quyền chia đồ\" cho con: \"lấy 2/3 chỗ nho này ra đĩa\", \"rót 3/4 cốc sữa\" — mỗi mệnh lệnh phân số được thực thi bằng tay là một bài tập sống.",
+  "onComplete": "Giao \"quyền chia đồ\" cho con: \"lấy $\\frac{2}{3}$ chỗ nho này ra đĩa\", \"rót $\\frac{3}{4}$ cốc sữa\" — mỗi mệnh lệnh phân số được thực thi bằng tay là một bài tập sống.",
   "homeActivity": "Phân biệt xuôi - ngược bằng câu hỏi: \"con số đề cho là CẢ TẤM hay MỘT MẢNH?\" — đặt đúng con số vào sơ đồ cụm là hết nhầm chiều.",
-  "watchFor": "NÊN: kiểm mọi bài ngược bằng phép lắp xuôi. KHÔNG NÊN: chuỗi hai phân số nối nhau (\"lấy 2/3 của 3/4 số bánh\") — phép nhân phân số chồng tầng hẹn lớp 5."
+  "watchFor": "NÊN: kiểm mọi bài ngược bằng phép lắp xuôi. KHÔNG NÊN: chuỗi hai phân số nối nhau (\"lấy $\\frac{2}{3}$ của $\\frac{3}{4}$ số bánh\") — phép nhân phân số chồng tầng hẹn lớp 5."
  },
  "figureSpec": [
   {
@@ -366,7 +400,7 @@
    ],
    "file": "figures/L4H_B34_MO.png",
    "caption": "Thanh chia 5 phần, hai phần đã biết là 12 chiếc.",
-   "sha256_16": "d0e86a600a6c25b9",
+   "sha256_16": "492a8894e6e2af17",
    "mucGoc": "chuyenMoBai"
   },
   {

@@ -22,8 +22,8 @@ export default function SampleCard({ example, index, total, figure, onNext }) {
           </p>
         ) : (
           <div className="mt-3 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15.5px]">
-            <b>Lời giải:</b> {ex.solution}
-            {ex.why && <span className="mt-1.5 block text-[13px] text-mute">📌 {ex.why}</span>}
+            <b>Lời giải:</b> <Chu t={ex.solution} />
+            {ex.why && <span className="mt-1.5 block text-[13px] text-mute">📌 <Chu t={ex.why} /></span>}
           </div>
         )}
       </div>

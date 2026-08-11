@@ -57,19 +57,19 @@
    {
     "case": "đèn thứ 14 (ca lõi)",
     "problem": "Dàn đèn lặp theo bộ ba màu xanh - đỏ - vàng. Hỏi bóng đèn thứ 14 màu gì?",
-    "solution": "14 : 3 = 4 dư 2 → phần tử thứ HAI của bộ: màu ĐỎ.",
+    "solution": "$14 : 3 = 4$ dư 2 → phần tử thứ HAI của bộ: màu ĐỎ.",
     "why": ""
    },
    {
     "case": "dư 0 (ca bẫy)",
     "problem": "Dãy lặp 2; 0; 2; 6; 2; 0; 2; 6; … — phần tử thứ 100 của dãy là số nào?",
-    "solution": "Chu kỳ 4; 100 : 4 = 25 dư 0 → phần tử CUỐI chu kỳ: số 6.",
+    "solution": "Chu kỳ 4; $100 : 4 = 25$ dư 0 → phần tử CUỐI chu kỳ: số 6.",
     "why": "Ca đinh của bẫy CĐ-12.3 — đề A câu 14."
    },
    {
     "case": "tổng có đuôi lẻ (ca sư phụ)",
     "problem": "Tính tổng của 2026 phần tử đầu tiên của dãy lặp 1; 2; 3; 1; 2; 3; …",
-    "solution": "2026 : 3 = 675 dư 1 → 675 chu kỳ trọn (mỗi chu kỳ tổng 1 + 2 + 3 = 6) + đuôi lẻ MỘT phần tử (số 1 — phần tử đầu). Tổng = 675 × 6 + 1 = 4050 + 1 = 4051.",
+    "solution": "$2026 : 3 = 675$ dư 1 → 675 chu kỳ trọn (mỗi chu kỳ tổng $1 + 2 + 3 = 6$) + đuôi lẻ MỘT phần tử (số 1 — phần tử đầu). Tổng = $675  \\times  6 + 1 = 4050 + 1 = 4051$.",
     "why": "Ca trùm cuối LT9, đề A câu 15 — cái đuôi lẻ quyết định."
    }
   ],
@@ -251,7 +251,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Lễ hội giăng dàn đèn lặp bộ bốn: hai — không — hai — sáu, rồi lại hai — không — hai — sáu… Cáo Đề đố: bóng thứ MỘT TRĂM ghi số mấy? Trí Long: một trăm chia bốn dư không — đẹp! Quay về đầu bộ: số hai! Su Kem lặng lẽ đếm tay bộ đầu tiên…",
-    "screenText": "2·0·2·6 lặp — thứ 100 = 2??",
+    "screenText": "2·0·2·6 lặp — thứ $100 = 2$??",
     "visual": "Dàn đèn lễ hội đêm với các bóng ghi số; Cáo Đề treo ngược trên dây đèn; Su Kem chỉ bóng thứ tư.",
     "assets": [],
     "duration": 21
@@ -262,7 +262,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Đếm tay bộ đầu: bóng một số hai, bóng hai số không, bóng ba số hai, bóng BỐN — số SÁU! Bốn chia bốn dư không mà phần tử là số CUỐI bộ! Máy định vị nói y hệt hai lần trước: dư không là vừa khép trọn chu kỳ. Bóng thứ một trăm: hai lăm bộ trọn — dừng phần tử cuối: số SÁU!",
-    "screenText": "100 : 4 = 25 dư 0 → CUỐI bộ: 6",
+    "screenText": "$100 : 4 = 25$ dư 0 → CUỐI bộ: 6",
     "visual": "Bốn bóng đầu phóng to với bóng '6' viền vàng; máy định vị (đã dán hai tem 'B8' 'B11') thêm tem 'B12'; kim chỉ cuối bộ.",
     "assets": [],
     "duration": 23
@@ -273,7 +273,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Trùm cuối: tổng hai nghìn không trăm hai sáu phần tử đầu của dãy một, hai, ba lặp mãi. Đếm tiền theo XẤP: chia ba được sáu trăm bảy lăm xấp trọn — mỗi xấp tổng SÁU — và cái đuôi lẻ MỘT tờ: số một. Sáu trăm bảy lăm nhân sáu cộng một: BỐN NGHÌN KHÔNG TRĂM NĂM MƯƠI MỐT! Bỏ quên tờ lẻ là hụt ngay!",
-    "screenText": "675 × 6 + 1 = 4051 (đừng quên đuôi lẻ!)",
+    "screenText": "$675  \\times  6 + 1 = 4051$ (đừng quên đuôi lẻ!)",
     "visual": "Các xấp tiền xếp chồng nhãn '6'; một tờ lẻ '1' nằm riêng phát sáng đỏ rồi được cộng vào; tổng 4051 đóng mộc 'TRÙM CUỐI ✓'.",
     "assets": [],
     "duration": 24
@@ -433,7 +433,7 @@
      "text": "(Đúng/Sai?) Tổng 100 phần tử đầu của dãy 2; 0; 2; 6 lặp là $25  \\times  10 = 250$, khỏi cộng gì thêm.",
      "answerKey": {
       "value": true,
-      "note": "100 : 4 dư 0 — đuôi RỖNG: 25 chu kỳ × (2+0+2+6) = 250 ✓; nghi thức vẫn ghi '+ 0'."
+      "note": "$100 : 4$ dư 0 — đuôi RỖNG: 25 chu kỳ × ($2+0+2+6$) = 250 ✓; nghi thức vẫn ghi '+ 0'."
      },
      "hints": [
       "Dư 0 thì đuôi có mấy phần tử?",

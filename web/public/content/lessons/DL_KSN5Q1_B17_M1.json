@@ -38,11 +38,11 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Cùng MẪU (bánh cắt cùng cỡ lát): tử lớn hơn — lấy nhiều lát hơn — thì LỚN hơn: $\\frac{3}{7}$ < 5/7."
+    "text": "Cùng MẪU (bánh cắt cùng cỡ lát): tử lớn hơn — lấy nhiều lát hơn — thì LỚN hơn: $\\frac{3}{7}$ < $\\frac{5}{7}$."
    },
    {
     "id": "K2",
-    "text": "Cùng TỬ (lấy cùng số lát): mẫu lớn hơn — bánh bị chia thành nhiều phần hơn, lát MỎNG hơn — thì BÉ hơn: $\\frac{2}{5}$ > 2/7. Hai luật NGƯỢC CHIỀU nhau — soi chữ \"cùng\" trước khi phán."
+    "text": "Cùng TỬ (lấy cùng số lát): mẫu lớn hơn — bánh bị chia thành nhiều phần hơn, lát MỎNG hơn — thì BÉ hơn: $\\frac{2}{5}$ > $\\frac{2}{7}$. Hai luật NGƯỢC CHIỀU nhau — soi chữ \"cùng\" trước khi phán."
    },
    {
     "id": "K3",
@@ -53,20 +53,20 @@
   "canonicalExamples": [
    {
     "case": "cùng mẫu (ca thuận)",
-    "problem": "So sánh: 3/7 và 5/7.",
-    "solution": "Cùng mẫu 7 — cùng cỡ lát: 3 lát < 5 lát → 3/7 < 5/7.",
+    "problem": "So sánh: $\\frac{3}{7}$ và $\\frac{5}{7}$.",
+    "solution": "Cùng mẫu 7 — cùng cỡ lát: 3 lát < 5 lát → $\\frac{3}{7}$ < $\\frac{5}{7}$.",
     "why": "luật thuận làm nền."
    },
    {
     "case": "cùng tử (ca ngược chiều)",
-    "problem": "So sánh: 2/5 và 2/7.",
-    "solution": "Cùng tử 2 — cùng số lát nhưng bánh chia 7 lát mỏng hơn bánh chia 5: 2/5 > 2/7.",
+    "problem": "So sánh: $\\frac{2}{5}$ và $\\frac{2}{7}$.",
+    "solution": "Cùng tử 2 — cùng số lát nhưng bánh chia 7 lát mỏng hơn bánh chia 5: $\\frac{2}{5}$ > $\\frac{2}{7}$.",
     "why": "Ca đinh bẫy CĐ-17.2 — chiều đảo so với luật cùng mẫu."
    },
    {
     "case": "thập phân từng hàng (ca bẫy)",
     "problem": "So sánh: 0,9 và 0,85.",
-    "solution": "Hàng phần mười: 9 > 8 — trận kết thúc: 0,9 > 0,85. (Đuôi \"85\" dài hơn \"9\" không có nghĩa gì!)",
+    "solution": "Hàng phần mười: $9 > 8$ — trận kết thúc: $0,9 > 0,85$. (Đuôi \"85\" dài hơn \"9\" không có nghĩa gì!)",
     "why": "Ca đinh bẫy CĐ-17.1 — đề A câu 2."
    }
   ],
@@ -122,10 +122,10 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "So sánh: 3/7 và 5/7.",
+    "narration": "So sánh: $\\frac{3}{7}$ và $\\frac{5}{7}$.",
     "display": {
      "type": "story_panel",
-     "caption": "2/7 thắng? · 0,85 thắng?"
+     "caption": "$\\frac{2}{7}$ thắng? · 0,85 thắng?"
     },
     "interaction": {
      "type": "tap_to_continue",
@@ -140,7 +140,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Quầy cùng mẫu: hai bánh cùng cắt 7 lát — 5 lát thắng 3 lát, tử lớn thì lớn. Quầy cùng tử: cả hai cùng lấy HAI lát, nhưng bánh chia 5 với bánh chia 7 — con đặt hai lát cạnh nhau xem: lát chia-7 mỏng dính! Mẫu càng lớn, lát càng mỏng: 2/5 LỚN hơn 2/7. Hai luật ngược chiều — soi chữ CÙNG trước khi phán!",
+    "narration": "Quầy cùng mẫu: hai bánh cùng cắt 7 lát — 5 lát thắng 3 lát, tử lớn thì lớn. Quầy cùng tử: cả hai cùng lấy HAI lát, nhưng bánh chia 5 với bánh chia 7 — con đặt hai lát cạnh nhau xem: lát chia-7 mỏng dính! Mẫu càng lớn, lát càng mỏng: $\\frac{2}{5}$ LỚN hơn $\\frac{2}{7}$. Hai luật ngược chiều — soi chữ CÙNG trước khi phán!",
     "display": {
      "type": "cake_compare_interactive",
      "spec": {
@@ -169,7 +169,7 @@
     "estSeconds": 15,
     "item": {
      "format": "mcq",
-     "text": "So sánh: 3/7 và 5/7.",
+     "text": "So sánh: $\\frac{3}{7}$ và $\\frac{5}{7}$.",
      "choices": [
       "3/7 < 5/7",
       "3/7 > 5/7",
@@ -256,7 +256,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Tiệm bánh mở đề kép. Đề một: hai phần năm với hai phần bảy — Trí Long phán liền: bảy to hơn năm, thắng! Đề hai: không phẩy chín với không phẩy tám lăm — tám lăm to hơn chín, cũng thắng! Su Kem bưng ra hai chiếc bánh và một bàn cờ…",
-    "screenText": "2/7 thắng? · 0,85 thắng?",
+    "screenText": "$\\frac{2}{7}$ thắng? · 0,85 thắng?",
     "visual": "Tiệm bánh với hai đề treo bảng; Trí Long hai tay hai bảng phán; Su Kem bê khay bánh và bàn cờ, dấu hỏi đỏ #C0392B.",
     "assets": [],
     "duration": 19
@@ -278,7 +278,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Bàn cờ thập phân: không phẩy chín đấu không phẩy tám lăm — ĐẤU TỪNG HÀNG từ trái! Viết thẳng cột: không phẩy chín mươi và không phẩy tám lăm. Hàng phần mười ra quân trước: chín đấu tám — chín thắng, TRẬN KẾT THÚC! Còn phép đếm đuôi? Đổi về phần trăm mà xem: chín mươi so tám lăm — thua từ vòng gửi xe!",
-    "screenText": "0,90 vs 0,85 — hàng phần mười: 9 > 8 → xong trận!",
+    "screenText": "0,90 vs 0,85 — hàng phần mười: $9 > 8$ → xong trận!",
     "visual": "Bàn cờ với hai hàng quân số thẳng cột; quân 9 hạ quân 8 ở cột phần mười, các quân sau mờ đi; bảng '85 > 9' gạch chéo đỏ.",
     "assets": [],
     "duration": 24
@@ -299,7 +299,7 @@
     "templateHint": "cta_practice",
     "transitionOut": "kết",
     "voiceover": "Ba đề tiệm bánh chờ con: ba phần bảy với năm phần bảy; hai phần năm với hai phần bảy; không phẩy chín với không phẩy tám lăm! Vào bài luyện ngay!",
-    "screenText": "3/7 ? 5/7 · 2/5 ? 2/7 · 0,9 ? 0,85",
+    "screenText": "$\\frac{3}{7}$ ? $\\frac{5}{7}$ · $\\frac{2}{5}$ ? $\\frac{2}{7}$ · 0,9 ? 0,85",
     "visual": "Ba tấm đề xếp quầy; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
     "linkItem": "P1",
     "assets": [],
@@ -309,10 +309,10 @@
  },
  "workedExample": {
   "title": "Hai quầy một bàn cờ",
-  "problem": "So sánh: (a) 2/5 và $\\frac{2}{7}$; (b) 0,9 và 0,85.",
+  "problem": "So sánh: (a) $\\frac{2}{5}$ và $\\frac{2}{7}$; (b) 0,9 và 0,85.",
   "steps": [
    {
-    "show": "Bước 1 — Câu (a): soi chữ CÙNG: cùng TỬ 2 → luật lát mỏng: mẫu 7 lớn hơn → 2/7 BÉ hơn → $\\frac{2}{5}$ > 2/7.",
+    "show": "Bước 1 — Câu (a): soi chữ CÙNG: cùng TỬ 2 → luật lát mỏng: mẫu 7 lớn hơn → $\\frac{2}{7}$ BÉ hơn → $\\frac{2}{5}$ > $\\frac{2}{7}$.",
     "askBefore": {
      "format": "mcq",
      "text": "Cùng tử thì mẫu lớn hơn sẽ:",
@@ -363,7 +363,7 @@
      "id": "P1",
      "format": "mcq",
      "sourceItem": "ITEM:KSN5Q1.B17.LT1",
-     "text": "So sánh: 3/7 và 5/7.",
+     "text": "So sánh: $\\frac{3}{7}$ và $\\frac{5}{7}$.",
      "choices": [
       "3/7 < 5/7",
       "3/7 > 5/7",
@@ -376,7 +376,7 @@
       "Cùng mẫu — cùng cỡ lát.",
       "3 lát so 5 lát."
      ],
-     "solutionNarrative": "Cùng mẫu: tử bé hơn thì bé hơn — $\\frac{3}{7}$ < 5/7.",
+     "solutionNarrative": "Cùng mẫu: tử bé hơn thì bé hơn — $\\frac{3}{7}$ < $\\frac{5}{7}$.",
      "teaches": [
       "K1"
      ],
@@ -394,7 +394,7 @@
      "id": "P2",
      "format": "mcq",
      "sourceItem": "ITEM:KSN5Q1.B17.LT2",
-     "text": "So sánh: 2/5 và 2/7.",
+     "text": "So sánh: $\\frac{2}{5}$ và $\\frac{2}{7}$.",
      "choices": [
       "2/5 > 2/7",
       "2/5 < 2/7",
@@ -407,7 +407,7 @@
       "Cùng TỬ — soi luật nào?",
       "Bánh chia 7: lát mỏng hơn."
      ],
-     "solutionNarrative": "Cùng tử, mẫu lớn hơn thì bé hơn: $\\frac{2}{5}$ > 2/7.",
+     "solutionNarrative": "Cùng tử, mẫu lớn hơn thì bé hơn: $\\frac{2}{5}$ > $\\frac{2}{7}$.",
      "teaches": [
       "K2"
      ],
@@ -512,7 +512,7 @@
    {
     "id": "A3",
     "format": "mcq",
-    "text": "So sánh: 4/9 và 7/9.",
+    "text": "So sánh: $\\frac{4}{9}$ và $\\frac{7}{9}$.",
     "choices": [
      "4/9 < 7/9",
      "4/9 > 7/9",

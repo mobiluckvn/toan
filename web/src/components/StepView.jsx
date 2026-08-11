@@ -79,14 +79,14 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
       return (<>
         <div className="card">
           <div className="kicker">MICRO · KHOẢNG {lesson.durationMinutes} PHÚT</div>
-          <h2 className="mb-2.5 text-[19px] font-bold leading-snug text-navy">{lesson.title}</h2>
-          {loiChao && <p className="text-[16.5px] leading-relaxed">{loiChao}</p>}
+          <h2 className="mb-2.5 text-[19px] font-bold leading-snug text-navy"><Chu t={lesson.title} /></h2>
+          {loiChao && <Chu t={loiChao} className="block text-[16.5px] leading-relaxed" />}
 
           {/* ĐỀ BÀI — thứ đáng đọc nhất màn này, nên cho nó một khung riêng. */}
           {de && (
             <div className={`rounded-2xl border-[1.5px] border-line bg-soft px-4 py-3.5 ${loiChao ? 'mt-3' : ''}`}>
               <div className="kicker mb-1">BÀI TOÁN</div>
-              <p className="text-[16.5px] font-semibold leading-relaxed text-navy">{de}</p>
+              <p className="text-[16.5px] font-semibold leading-relaxed text-navy"><Chu t={de} /></p>
             </div>
           )}
           <Figure fig={step.figure} />
@@ -97,7 +97,7 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
               <summary className="cursor-pointer text-[12.5px] font-semibold text-mute">
                 Bài này học gì (dành cho bố mẹ)
               </summary>
-              <p className="mt-1.5 text-[14px] leading-relaxed text-mute">{lesson.objective.text}</p>
+              <p className="mt-1.5 text-[14px] leading-relaxed text-mute"><Chu t={lesson.objective.text} /></p>
             </details>
           )}
         </div>
@@ -161,13 +161,13 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
                   đọc xong biết ngay đó là bẫy. Trước kia nó nằm ở màn mở bài, tức
                   hiện trước khi bé học gì và không có gì đính chính. */}
               <Figure fig={step.figureBay} />
-              <div><b className="text-alert">SAI:</b> {step.misconception.wrong}</div>
-              <div className="mt-1 text-[13.5px] text-mute">Dấu hiệu: {step.misconception.signal}</div>
+              <div><b className="text-alert">SAI:</b> <Chu t={step.misconception.wrong} /></div>
+              <div className="mt-1 text-[13.5px] text-mute">Dấu hiệu: <Chu t={step.misconception.signal} /></div>
               <div className="mt-2 rounded-lg bg-teal-pale px-3 py-2">
-                <b>GỠ:</b> {step.misconception.fix}
+                <b>GỠ:</b> <Chu t={step.misconception.fix} />
               </div>
               {step.misconception.counterExample && (
-                <p className="mt-2 text-[14.5px]">{step.misconception.counterExample}</p>
+                <p className="mt-2 text-[14.5px]"><Chu t={step.misconception.counterExample} /></p>
               )}
             </div>
           )}

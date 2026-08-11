@@ -173,7 +173,7 @@ export default function ExamPlayer({ chapter, onDone, onOpenMicro, onExit,
 
         {!q.answerKey && shown && (
           <div className="mt-3 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
-            <b>Lời giải:</b> {q.answer}
+            <b>Lời giải:</b> <Chu t={q.answer} />
             {q.hasTrap && q.trapName && (
               <div className="mt-2 text-[13.5px] text-alert"><b>Bẫy:</b> {q.trapName}</div>
             )}

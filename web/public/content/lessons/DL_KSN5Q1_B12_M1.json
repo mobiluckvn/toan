@@ -53,19 +53,19 @@
    {
     "case": "số hạng thứ n (ca lõi)",
     "problem": "Dãy 2; 5; 8; 11; … — tìm số hạng thứ 10 của dãy.",
-    "solution": "Khoảng cách 3. Số hạng thứ 10 = 2 + (10 − 1) × 3 = 2 + 27 = 29.",
-    "why": "nơi bẫy CĐ-12.2 rình (2 + 10 × 3 = 32 sai)."
+    "solution": "Khoảng cách 3. Số hạng thứ $10 = 2$ + ($10 - 1$) × $3 = 2 + 27 = 29$.",
+    "why": "nơi bẫy CĐ-12.2 rình ($2 + 10  \\times  3 = 32$ sai)."
    },
    {
     "case": "TBC bập bênh (ca khỏi-cộng)",
     "problem": "Tính trung bình cộng của dãy 3; 6; 9; …; 99 mà không cộng cả dãy.",
-    "solution": "TBC dãy cách đều = (đầu + cuối) : 2 = (3 + 99) : 2 = 51.",
+    "solution": "TBC dãy cách đều = (đầu + cuối) : 2 = ($3 + 99$) : $2 = 51$.",
     "why": "sẽ thành linh kiện của tổng ghép cặp bài sau."
    },
    {
     "case": "kiểm tí hon (ca phản chứng)",
     "problem": "Dãy 2; 5; 8 — số hạng thứ 3 theo công thức là mấy? Nhân đủ 3 bước thì sao?",
-    "solution": "Đúng: 2 + 2 × 3 = 8 ✓. Nhân đủ 3 bước: 2 + 9 = 11 — lố sang số hạng thứ TƯ!",
+    "solution": "Đúng: $2 + 2  \\times  3 = 8$ ✓. Nhân đủ 3 bước: $2 + 9 = 11$ — lố sang số hạng thứ TƯ!",
     "why": "Dãy nhỏ tự soi được — khắc luật cọc xuất phát."
    }
   ],
@@ -227,7 +227,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Đường chạy cắm cọc: hai — năm — tám — mười một… Sư phụ hỏi: cọc thứ MƯỜI ghi số mấy? Trí Long tính vèo: hai cộng mười nhân ba bằng ba mươi hai! Su Kem đứng ở cọc đầu, chưa nhúc nhích: khoan — mình đang đứng ở cọc số một, đã nhảy phát nào đâu?",
-    "screenText": "thứ 10 = 2 + 10 × 3??",
+    "screenText": "thứ $10 = 2 + 10  \\times  3$??",
     "visual": "Đường chạy với cọc số 2·5·8·11; Su Kem đứng yên ở cọc đầu, chân chưa rời vạch; Trí Long cầm bảng '32' dấu hỏi đỏ #C0392B.",
     "assets": [],
     "duration": 20
@@ -238,7 +238,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Đứng ở cọc số một — số hai — và ĐẾM BƯỚC khi nhảy: tới cọc hai là một bước, cọc ba là hai bước… tới cọc thứ mười là CHÍN bước! Mỗi bước ba mét: hai cộng chín nhân ba bằng HAI MƯƠI CHÍN. Kiểm dãy tí hon hai, năm, tám: thứ ba bằng tám — nhân đủ ba bước ra mười một là lố sang cọc thứ tư!",
-    "screenText": "thứ 10 → 9 bước · 2 + 9 × 3 = 29",
+    "screenText": "thứ 10 → 9 bước · $2 + 9  \\times  3 = 29$",
     "visual": "Hoạt cảnh nhảy cọc với bộ đếm bước 1…9 hiện dần; phép tính 2+9×3=29 bật vàng #F9B233; góc màn dãy tí hon kiểm chứng.",
     "assets": [],
     "duration": 25
@@ -249,7 +249,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Tuyệt chiêu thứ hai: trung bình cộng của dãy ba, sáu tới chín chín — khỏi cộng cả dãy! Dãy cách đều như chiếc bập bênh cân xứng: ba với chín chín cân nhau, sáu với chín sáu cân nhau — tâm bập bênh ở ba cộng chín chín chia hai bằng NĂM MƯƠI MỐT!",
-    "screenText": "TBC = (3 + 99) : 2 = 51",
+    "screenText": "TBC = ($3 + 99$) : $2 = 51$",
     "visual": "Bập bênh với các cặp số cân hai bên; tâm bập bênh sáng '51'; công thức đóng khung.",
     "assets": [],
     "duration": 20
@@ -389,7 +389,7 @@
      "text": "(Đúng/Sai?) Số hạng thứ 4 của dãy 10; 20; 30; … là $10 + 4  \\times  10 = 50$.",
      "answerKey": {
       "value": false,
-      "note": "Nhảy 3 bước thôi: 10 + 3 × 10 = 40 — đếm tay: 10, 20, 30, 40 ✓."
+      "note": "Nhảy 3 bước thôi: $10 + 3  \\times  10 = 40$ — đếm tay: 10, 20, 30, 40 ✓."
      },
      "hints": [
       "Cọc xuất phát tính bước không?",

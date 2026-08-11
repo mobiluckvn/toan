@@ -52,20 +52,20 @@
   "canonicalExamples": [
    {
     "case": "chuyển xuống (ca lõi)",
-    "problem": "Cho 41/58. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng $\\frac{4}{7}$?",
-    "solution": "Neo tổng: 41 + 58 = 99. Đích 4/7: tổng phần 11 → phần = 9. Tử mới = 4 × 9 = 36 → chuyển 41 − 36 = 5. Thử: 36/63 = 4/7 ✓, tổng 99 ✓.",
+    "problem": "Cho $\\frac{41}{58}$. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng $\\frac{4}{7}$?",
+    "solution": "Neo tổng: $41 + 58 = 99$. Đích $\\frac{4}{7}$: tổng phần 11 → phần = 9. Tử mới = $4  \\times  9 = 36$ → chuyển $41 - 36 = 5$. Thử: $\\frac{36}{63}$ = $\\frac{4}{7}$ ✓, tổng 99 ✓.",
     "why": "Ca đề A câu 6 — trap câu tráo neo."
    },
    {
     "case": "chuyển lên (ca đảo chiều)",
-    "problem": "Cho 13/47. Chuyển từ MẪU số lên TỬ số bao nhiêu đơn vị để được phân số bằng $\\frac{7}{13}$?",
-    "solution": "Tổng 13 + 47 = 60. Đích 7/13: tổng phần 20 → phần = 3. Tử mới = 21 → chuyển lên 21 − 13 = 8. Thử: 21/39 = 7/13 ✓, tổng 60 ✓.",
+    "problem": "Cho $\\frac{13}{47}$. Chuyển từ MẪU số lên TỬ số bao nhiêu đơn vị để được phân số bằng $\\frac{7}{13}$?",
+    "solution": "Tổng $13 + 47 = 60$. Đích $\\frac{7}{13}$: tổng phần 20 → phần = 3. Tử mới = 21 → chuyển lên $21 - 13 = 8$. Thử: $\\frac{21}{39}$ = $\\frac{7}{13}$ ✓, tổng 60 ✓.",
     "why": "Ca LT8 — chiều ngược, tổng phần 20."
    },
    {
     "case": "đối chiếu hai tờ lệnh (ca phản xạ)",
-    "problem": "Hai đề: (i) \"cộng n vào cả tử và mẫu của 34/41 để được $\\frac{6}{7}$\"; (ii) \"chuyển k từ tử xuống mẫu của 41/58 để được $\\frac{4}{7}$\" — mỗi đề neo nào?",
-    "solution": "(i) động từ CỘNG CẢ HAI → neo HIỆU (chia 7 − 6). (ii) động từ CHUYỂN → neo TỔNG (chia 4 + 7). Gạch chân động từ là chọn đúng thước.",
+    "problem": "Hai đề: (i) \"cộng n vào cả tử và mẫu của $\\frac{34}{41}$ để được $\\frac{6}{7}$\"; (ii) \"chuyển k từ tử xuống mẫu của $\\frac{41}{58}$ để được $\\frac{4}{7}$\" — mỗi đề neo nào?",
+    "solution": "(i) động từ CỘNG CẢ HAI → neo HIỆU (chia $7 - 6$). (ii) động từ CHUYỂN → neo TỔNG (chia $4 + 7$). Gạch chân động từ là chọn đúng thước.",
     "why": "đặt hai bài cạnh nhau để khắc phản xạ."
    }
   ],
@@ -110,7 +110,7 @@
     "id": "S1",
     "kind": "hook",
     "estSeconds": 20,
-    "narration": "Cho 41/58. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng $\\frac{4}{7}$?",
+    "narration": "Cho $\\frac{41}{58}$. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng $\\frac{4}{7}$?",
     "display": {
      "type": "story_panel",
      "caption": "hai tờ lệnh — một thước??"
@@ -128,7 +128,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Lệnh CHUYỂN là việc của cần cẩu: chỉ dời kiện giữa hai thùng — cả bè 41 cộng 58 vẫn CHÍN CHÍN kiện: TỔNG là sợi neo! Đích 4/7 gồm 4 cộng 7 bằng MƯỜI MỘT phần cả bè — một phần bằng 99 chia 11: CHÍN kiện. Thùng tử mới cần 4 phần: ba mươi sáu — cẩu chuyển 41 trừ 36 bằng NĂM kiện xuống. Thử: 36/63 đúng 4/7, tổng vẫn 99!",
+    "narration": "Lệnh CHUYỂN là việc của cần cẩu: chỉ dời kiện giữa hai thùng — cả bè 41 cộng 58 vẫn CHÍN CHÍN kiện: TỔNG là sợi neo! Đích $\\frac{4}{7}$ gồm 4 cộng 7 bằng MƯỜI MỘT phần cả bè — một phần bằng 99 chia 11: CHÍN kiện. Thùng tử mới cần 4 phần: ba mươi sáu — cẩu chuyển 41 trừ 36 bằng NĂM kiện xuống. Thử: $\\frac{36}{63}$ đúng $\\frac{4}{7}$, tổng vẫn 99!",
     "display": {
      "type": "crane_interactive",
      "spec": {
@@ -180,7 +180,7 @@
     "teaches": [
      "K3"
     ],
-    "narration": "Vạch mặt trò tráo lệnh: nếu bài chuyển-99-kiện mà bám thước HIỆU — chia 99 cho 7 trừ 4 bằng 3 — ra phần 33, tử mới 132 kiện: to hơn cả bè, vô lý lộ liễu! Phản xạ khắc bảng: gạch chân ĐỘNG TỪ trước khi chọn thước — CỘNG CẢ HAI là bơm hàng từ ngoài: neo hiệu; CHUYỂN QUA LẠI là việc của cẩu: neo tổng. Chiều lên cũng vậy: 13/47 lên $\\frac{7}{13}$ — tổng 60, hai mươi phần, phần 3, chuyển lên TÁM kiện!",
+    "narration": "Vạch mặt trò tráo lệnh: nếu bài chuyển-99-kiện mà bám thước HIỆU — chia 99 cho 7 trừ 4 bằng 3 — ra phần 33, tử mới 132 kiện: to hơn cả bè, vô lý lộ liễu! Phản xạ khắc bảng: gạch chân ĐỘNG TỪ trước khi chọn thước — CỘNG CẢ HAI là bơm hàng từ ngoài: neo hiệu; CHUYỂN QUA LẠI là việc của cẩu: neo tổng. Chiều lên cũng vậy: $\\frac{13}{47}$ lên $\\frac{7}{13}$ — tổng 60, hai mươi phần, phần 3, chuyển lên TÁM kiện!",
     "display": {
      "type": "counter_example",
      "cases": [
@@ -254,7 +254,7 @@
     "derivedFromScreen": "S2",
     "transitionOut": "cắt thẳng",
     "voiceover": "Lệnh CHUYỂN là việc của cần cẩu: chỉ dời kiện giữa hai thùng — cả bè bốn mốt cộng năm tám vẫn CHÍN CHÍN kiện: TỔNG là sợi neo! Đích bốn phần bảy gồm MƯỜI MỘT phần cả bè — một phần bằng chín kiện. Thùng tử mới cần bốn phần: ba mươi sáu — cẩu chuyển NĂM kiện xuống. Thử: ba sáu phần sáu ba đúng bốn phần bảy, tổng vẫn chín chín!",
-    "screenText": "tổng 99 : 11 phần = 9 → tử mới 36 → chuyển 5 ✓",
+    "screenText": "tổng $99 : 11$ phần = 9 → tử mới 36 → chuyển 5 ✓",
     "visual": "Cần cẩu bốc 5 kiện từ thùng tử sang thùng mẫu; bảng đếm cả bè '99' đứng im; sơ đồ 11 phần với 4 phần tô teal #1FCBAB.",
     "assets": [],
     "duration": 26
@@ -265,7 +265,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Vạch mặt trò tráo lệnh: bài chuyển mà bám thước HIỆU — chia chín chín cho ba — ra phần ba ba, tử mới một trăm ba hai kiện: TO HƠN CẢ BÈ, vô lý lộ liễu! Gạch chân động từ trước khi chọn thước: CỘNG CẢ HAI — neo hiệu; CHUYỂN QUA LẠI — neo tổng. Chiều lên: mười ba phần bốn bảy — tổng sáu mươi, hai mươi phần, chuyển lên TÁM kiện!",
-    "screenText": "99 : 3 → tử 132 > cả bè ✗ · đúng: 99 : 11 ✓",
+    "screenText": "$99 : 3$ → tử 132 > cả bè ✗ · đúng: $99 : 11$ ✓",
     "visual": "Phép sai với thùng tử phình to vượt bè gạch đỏ #C0392B; phép đúng mộc xanh; ca chiều lên chạy nhanh góc màn với đáp 8.",
     "assets": [],
     "duration": 27
@@ -286,7 +286,7 @@
     "templateHint": "cta_practice",
     "transitionOut": "kết",
     "voiceover": "Ca cẩu của con: mười ba phần bốn bảy — chuyển từ mẫu lên tử mấy đơn vị để thành bảy phần mười ba? Vào bài luyện ngay!",
-    "screenText": "13/47 → 7/13: chuyển lên ?",
+    "screenText": "$\\frac{13}{47}$ → $\\frac{7}{13}$: chuyển lên ?",
     "visual": "Cần cẩu chờ lệnh với thùng mẫu đầy; nút 'VÀO BÀI LUYỆN' #1FCBAB.",
     "linkItem": "P2",
     "assets": [],
@@ -296,7 +296,7 @@
  },
  "workedExample": {
   "title": "Cần cẩu năm kiện",
-  "problem": "Cho 41/58. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng $\\frac{4}{7}$?",
+  "problem": "Cho $\\frac{41}{58}$. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng $\\frac{4}{7}$?",
   "steps": [
    {
     "show": "Bước 1 — Gạch chân động từ: CHUYỂN → neo TỔNG: $41 + 58 = 99$.",
@@ -345,7 +345,7 @@
      "id": "P1",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B18.LT6",
-     "text": "Cho phân số 41/58. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng $\\frac{4}{7}$?",
+     "text": "Cho phân số $\\frac{41}{58}$. Chuyển từ tử số xuống mẫu số bao nhiêu đơn vị để được phân số bằng $\\frac{4}{7}$?",
      "answerKey": {
       "value": 5
      },
@@ -370,7 +370,7 @@
      "id": "P2",
      "format": "num",
      "sourceItem": "ITEM:KSN5Q1.B18.LT8",
-     "text": "Cho phân số 13/47. Chuyển từ MẪU số lên TỬ số bao nhiêu đơn vị để được phân số bằng $\\frac{7}{13}$?",
+     "text": "Cho phân số $\\frac{13}{47}$. Chuyển từ MẪU số lên TỬ số bao nhiêu đơn vị để được phân số bằng $\\frac{7}{13}$?",
      "answerKey": {
       "value": 8
      },
@@ -388,7 +388,7 @@
     {
      "id": "P3",
      "format": "mb",
-     "text": "Hai đề của Cáo Đề: (i) \"cộng n vào cả tử và mẫu của 34/41 để được $\\frac{6}{7}$\"; (ii) \"chuyển k từ tử xuống mẫu của 41/58 để được $\\frac{4}{7}$\". Gạch chân động từ và gọi tên neo mỗi đề (chưa cần giải).",
+     "text": "Hai đề của Cáo Đề: (i) \"cộng n vào cả tử và mẫu của $\\frac{34}{41}$ để được $\\frac{6}{7}$\"; (ii) \"chuyển k từ tử xuống mẫu của $\\frac{41}{58}$ để được $\\frac{4}{7}$\". Gạch chân động từ và gọi tên neo mỗi đề (chưa cần giải).",
      "answerKey": {
       "parts": [
        {
