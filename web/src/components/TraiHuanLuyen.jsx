@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Chu from './Chu.jsx';
 import { CONTENT, dongDau } from '../lib/content.js';
 
 /**
@@ -55,7 +56,7 @@ export default function TraiHuanLuyen({ onExit }) {
       <div className="px-3.5 pt-3.5">
         <div className="card">
           <div className="kicker">BÀI KỸ NĂNG {b.ma}</div>
-          <h2 className="text-[19px] font-bold leading-snug text-navy">{b.ten}</h2>
+          <h2 className="text-[19px] font-bold leading-snug text-navy"><Chu t={b.ten} /></h2>
           {b.phuDe && <p className="mt-1 text-[14px] text-mute">{b.phuDe}</p>}
         </div>
 

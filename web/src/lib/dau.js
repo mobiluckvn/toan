@@ -126,12 +126,29 @@ export function moKhoa(khoi, chuongDaXong = new Set()) {
   return chuongDaXong.has(can);
 }
 
-/** Các chương Quyển 1 con đã học xong (mọi micro trong chương đều đạt) */
-export function chuongDaXong(progressMicros = {}, chuongCua) {
+/**
+ * Các chương QUYỂN 1 con đã học xong (mọi micro trong chương đều đạt).
+ *
+ * ⚠ PHẢI LỌC LẤY BÀI CỦA QUYỂN 1. Sổ `progress.micros` là sổ CHUNG của cả bốn quyển —
+ * đó là chủ ý, để sổ phụ huynh và bảng cô giáo nhìn được một mối. Nhưng ở đây thì
+ * `chuongCua` là hàm chia chương của Quyển 1: đưa mã bài lớp 2·3·4 vào, nó trả về
+ * chương 1 cho tất cả. Chỉ cần con học dở MỘT bài lớp 3 là chương 1 của Quyển 1 bị
+ * coi là chưa xong, và VÒNG ĐẤU 1 KHOÁ CỨNG dù con đã học hết 12 micro của nó.
+ *
+ * Đã dính thật: bé học lớp 4 rồi quay sang lớp 5, xong chương 1, mà Mùa giải vẫn báo
+ * "Mở khi con học xong chương 1" — không kèm dòng "còn N bài nữa", nên nhìn như app
+ * hỏng chứ không như một điều kiện chưa đạt.
+ */
+export function chuongDaXong(progressMicros = {}, chuongCua, laQuyen1 = LA_QUYEN1) {
+  const cua = Object.keys(progressMicros).filter(laQuyen1);
   const xong = new Set();
   for (let c = 1; c <= 14; c++) {
-    const ms = Object.keys(progressMicros).filter((id) => chuongCua(id) === c);
+    const ms = cua.filter((id) => chuongCua(id) === c);
     if (ms.length && ms.every((id) => progressMicros[id]?.pass)) xong.add(c);
   }
   return xong;
 }
+
+/* Tiền tố mã bài Quyển 1. Để ngay cạnh `laQuyen2` ở trên — hai mặt của một luật, và
+   dau.js vốn là tệp RIÊNG của Mùa giải nên biết cả hai mã là đúng chỗ. */
+const LA_QUYEN1 = (id) => String(id).startsWith('DL:KSN5Q1.');

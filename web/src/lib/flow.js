@@ -146,9 +146,35 @@ export function matchList(key, input) {
  */
 /** Lõi đáp án chỉ gồm số và dấu ngăn cách, từ 2 số trở lên: "29, 38, 47, 56" */
 const NUM_ONLY = /^[\d\s.,;/·và+-]+$/;
+/**
+ * Bỏ dấu phân nghìn kiểu Việt: khoảng trắng NẰM GIỮA HAI CHỮ SỐ.
+ *
+ * Sách viết "2 000 + 400 + 30 + 5", con gõ "2000 + 400 + 30 + 5" — cùng một đáp án,
+ * mà so chuỗi thì lệch. Trước khi có phép nới này, bé lớp 3 gõ ĐÚNG vẫn bị báo sai
+ * ở mọi câu tách số theo hàng; chấm sai một câu là bé mất tin vào cả phần mềm.
+ *
+ * Chỉ bỏ khi khoảng trắng kẹp GIỮA hai chữ số. Hai số khác nhau trong tiếng Việt
+ * luôn có dấu ngăn (dấu ; dấu phẩy hay phép tính) chứ không bao giờ đứng cạnh nhau
+ * bằng mỗi khoảng trắng, nên phép nới này không gộp nhầm hai số thành một.
+ */
+const boPhanNghin = (s) => String(s ?? '').replace(/(\d)[\s ](?=\d)/g, '$1');
+
+/**
+ * Đáp án này có phải một DÃY SỐ không?
+ *
+ * ⚠ Phải bỏ DẤU PHÂN NGHÌN trước khi đếm. Tiếng Việt viết một nghìn lẻ năm mươi là
+ * "1 050" — khoảng trắng nằm giữa hai chữ số. Không bỏ thì nó đếm ra HAI số (1 và 50)
+ * và coi đáp án là một dãy, nên câu "tính tổng… = 1 050" nhận luôn cả "50 và 1", hay
+ * bất cứ chuỗi nào chứa đúng hai số ấy. Cổng quyen2.test.mjs bắt được 5 câu như thế.
+ *
+ * Dãy số thật thì luôn có dấu ngăn (`;` `,` hay chữ "và") chứ không bao giờ chỉ có
+ * mỗi khoảng trắng, nên phép bỏ này không gộp nhầm hai số thành một.
+ */
 export function isNumberList(v) {
   const core = answerCore(v);
-  return typeof core === 'string' && NUM_ONLY.test(normText(core)) && parseList(core).length >= 2;
+  if (typeof core !== 'string') return false;
+  const s = boPhanNghin(normText(core));
+  return NUM_ONLY.test(s) && parseList(s).length >= 2;
 }
 
 /**
@@ -175,19 +201,6 @@ export const gradableParts = (parts = []) => parts.filter((p) => isPickable(p) |
  *   3. đơn vị đo có gõ hay không cũng được      ("60 000 đồng" ↔ "60000" ↔ "60000 đ")
  * Vẫn BÁC khi phần chữ đi kèm đổi nghĩa: "2 năm nữa" không phải "2 năm trước".
  */
-/**
- * Bỏ dấu phân nghìn kiểu Việt: khoảng trắng NẰM GIỮA HAI CHỮ SỐ.
- *
- * Sách viết "2 000 + 400 + 30 + 5", con gõ "2000 + 400 + 30 + 5" — cùng một đáp án,
- * mà so chuỗi thì lệch. Trước khi có phép nới này, bé lớp 3 gõ ĐÚNG vẫn bị báo sai
- * ở mọi câu tách số theo hàng; chấm sai một câu là bé mất tin vào cả phần mềm.
- *
- * Chỉ bỏ khi khoảng trắng kẹp GIỮA hai chữ số. Hai số khác nhau trong tiếng Việt
- * luôn có dấu ngăn (dấu ; dấu phẩy hay phép tính) chứ không bao giờ đứng cạnh nhau
- * bằng mỗi khoảng trắng, nên phép nới này không gộp nhầm hai số thành một.
- */
-const boPhanNghin = (s) => String(s ?? '').replace(/(\d)[\s ](?=\d)/g, '$1');
-
 function matchAtom(expected, input) {
   const a = normText(expected), b = normText(input);
   if (a === b) return true;
@@ -383,12 +396,27 @@ export function unitOf(expected) {
  * Trước đây trả về "?" trơ trọi cho 458 câu — con nhìn vào không biết nên gõ số,
  * gõ chữ hay gõ phân số. Giờ luôn nói rõ dạng cần điền.
  */
+/**
+ * Ví dụ trong chữ mờ mà TRÙNG ĐÚNG đáp án thì bỏ ví dụ, chỉ giữ phần mô tả dạng.
+ *
+ * Ví dụ vốn cố định — "vd 3/4", "vd 3 : 4", "điền dạng: 2 giờ 24 phút" — nên bài nào
+ * có đáp số đúng bằng ví dụ ấy là con đọc được đáp án ngay trong ô còn trống. Nghe
+ * hi hữu, nhưng Quyển 2 dính THẬT ba câu: hai câu "2 giờ 24 phút" và một câu "3 : 4".
+ * Không có gì báo, vì dữ liệu hoàn toàn hợp lệ.
+ */
+const BO_VI_DU = (hint, tron, core) =>
+  (core && normText(hint).includes(normText(core)) ? tron : hint);
+
 export function inputPlaceholder(item, label, expected) {
   if (item?.answerKey?.values) return 'các số, cách nhau bằng dấu ;';
   if (item?.answerKey?.accept) return 'con viết lời giải của mình';
   const core = expected === undefined ? undefined : answerCore(expected);
   const cmp = core === undefined ? null : parseCompare(core);
-  if (cmp) return cmp.op === '=' ? 'vd: 0,5 = 50%' : 'vd: 3/4 > 2/5';
+  if (cmp) {
+    return cmp.op === '='
+      ? BO_VI_DU('vd: 0,5 = 50%', 'điền hai vế bằng nhau', core)
+      : BO_VI_DU('vd: 3/4 > 2/5', 'điền phép so sánh, có dấu < hoặc >', core);
+  }
   const nt = core === undefined ? null : numAndTail(core);
   if (nt) {
     const unit = unitOf(expected);
@@ -396,7 +424,7 @@ export function inputPlaceholder(item, label, expected) {
     return nt.tail ? 'điền số kèm chữ' : 'điền số';
   }
   const m = core === undefined ? null : mathKind(core);
-  if (m) return m.hint;
+  if (m) return BO_VI_DU(m.hint, m.tron, core);
   if (typeof core === 'string') return 'trả lời bằng chữ';
   return label ? `${label} = ?` : 'điền đáp án';
 }
@@ -485,19 +513,20 @@ export function answerFields(item) {
  * Trước đây gộp hết vào 'text' nên ô phân số cũng bị nhắc "trả lời bằng chữ",
  * mà con thì đang định gõ 3/4.
  */
+/* Cột thứ tư là lời NHẮC TRỐNG — dùng khi ví dụ trùng đúng đáp án của bài. */
 const DANG_TOAN = [
-  ['fraction', /^[+-]?\d+\s*\/\s*\d+$/,            'điền phân số, vd 3/4'],
-  ['ratio',    /^\d+\s*[:：]\s*\d+$/,               'điền tỉ số, vd 3 : 4'],
-  ['divmod',   /^\d+\s*dư\s*\d+$/,                  'điền dạng: 9 dư 2'],
-  ['time',     /^\d+\s*giờ(\s*\d+\s*phút)?$/,       'điền dạng: 2 giờ 24 phút'],
-  ['minutes',  /^\d+\s*phút$/,                      'điền số phút'],
-  ['numlist',  /^[\d\s.,;và]*\d[\d\s.,;và]*$/,      'các số, cách nhau bằng dấu ;'],
+  ['fraction', /^[+-]?\d+\s*\/\s*\d+$/,            'điền phân số, vd 3/4',       'điền phân số'],
+  ['ratio',    /^\d+\s*[:：]\s*\d+$/,               'điền tỉ số, vd 3 : 4',       'điền tỉ số, có dấu :'],
+  ['divmod',   /^\d+\s*dư\s*\d+$/,                  'điền dạng: 9 dư 2',          'điền thương và số dư'],
+  ['time',     /^\d+\s*giờ(\s*\d+\s*phút)?$/,       'điền dạng: 2 giờ 24 phút',   'điền số giờ và số phút'],
+  ['minutes',  /^\d+\s*phút$/,                      'điền số phút',               'điền số phút'],
+  ['numlist',  /^[\d\s.,;và]*\d[\d\s.,;và]*$/,      'các số, cách nhau bằng dấu ;', 'các số, cách nhau bằng dấu ;'],
 ];
 
 export function mathKind(core) {
   if (typeof core !== 'string') return null;
   const s = core.trim();
-  for (const [kind, re, hint] of DANG_TOAN) if (re.test(s)) return { kind, hint };
+  for (const [kind, re, hint, tron] of DANG_TOAN) if (re.test(s)) return { kind, hint, tron };
   return null;
 }
 

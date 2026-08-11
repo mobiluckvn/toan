@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { CONTENT, dongDau, chapterOf } from '../lib/content.js';
 import { moKhoa, chuongDaXong } from '../lib/dau.js';
+import Chu from './Chu.jsx';
 import ChanTrang from './ChanTrang.jsx';
 import ThanhTren from './ThanhTren.jsx';
 
@@ -32,8 +33,12 @@ export default function MuaGiai({ progress, onMo, onExit, onTrai, onHoSo, onThe,
   if (loi) return <div className="p-6 text-alert">Không mở được Mùa giải: {loi}</div>;
   if (!idx) return <div className="p-6 text-mute">Đang mở Mùa giải…</div>;
 
+  /* Chỉ đếm bài QUYỂN 1. Sổ `micros` là sổ chung của bốn quyển, mà `chapterOf` là
+     hàm chia chương của Quyển 1 — thả mã bài lớp 2·3·4 vào là chúng dồn hết về
+     chương 1, và dòng "còn N bài nữa" báo sai số. Cùng một cái bẫy với
+     `chuongDaXong`, chỉ khác chỗ ngồi. */
   const conThieu = (ch) => {
-    const ms = Object.keys(progress?.micros || {});
+    const ms = Object.keys(progress?.micros || {}).filter((id) => id.startsWith('DL:KSN5Q1.'));
     const cua = 12 - ms.filter((id) => chapterOf(id) === ch && progress.micros[id]?.pass).length;
     return Math.max(0, cua);
   };
@@ -86,7 +91,7 @@ export default function MuaGiai({ progress, onMo, onExit, onTrai, onHoSo, onThe,
                   {k.soCau} câu · {k.phut} phút · đạt {k.dat}/{k.thang}
                 </span>
               </div>
-              <h3 className="mt-1 text-[16.5px] font-bold leading-snug text-navy">{k.ten}</h3>
+              <h3 className="mt-1 text-[16.5px] font-bold leading-snug text-navy"><Chu t={k.ten} /></h3>
 
               {mo ? (
                 <button className="btn-go mt-2.5" onClick={() => onMo(k.id)}>

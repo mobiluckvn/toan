@@ -22,6 +22,12 @@ import Figure from './Figure.jsx';
 
 const MAN = ['Làm đề', 'Chữa đề', 'Phiên tòa', 'Nhật ký'];
 
+/** Con đã gõ gì — gọn lại thành một dòng đọc được, kể cả câu nhiều ô. */
+const goiTraLoi = (v) => {
+  const ds = (Array.isArray(v) ? v : [v]).map((x) => String(x ?? '').trim());
+  return ds.every((x) => !x) ? '(bỏ trống)' : ds.map((x) => x || '(trống)').join(' · ');
+};
+
 /** Sơ đồ chiến thuật của màn đang xem — sách chèn chúng đúng chỗ nào thì hiện chỗ ấy */
 const SoDo = ({ khoi, man }) => {
   const ds = (khoi.soDo || []).filter((s) => (s.man || 1) === man);
@@ -88,7 +94,7 @@ export default function DauPlayer({ khoi, onExit, onXong, onMoMicro }) {
       <Khung khoi={khoi} man={man} onExit={onExit}>
         <div className="card">
           <div className="kicker">LUẬT VÒNG ĐẤU</div>
-          <p className="text-[15.5px] leading-relaxed">{khoi.moTa}</p>
+          <p className="text-[15.5px] leading-relaxed"><Chu t={khoi.moTa} /></p>
           <div className="mt-3 grid gap-2 text-[14.5px]">
             <Dong nhan="Thời gian" giaTri={`${khoi.phut} phút, có đồng hồ`} />
             <Dong nhan="Thang điểm" giaTri={`${khoi.thang} điểm · đạt từ ${khoi.dat}`} />
@@ -173,12 +179,15 @@ export default function DauPlayer({ khoi, onExit, onXong, onMoMicro }) {
             <p className="text-[15.5px] font-semibold leading-snug"><Chu t={q.text} /></p>
             {q.answerKey && (
               <p className={`mt-1.5 text-[14px] ${ketQua[q.id]?.ok ? 'text-teal-dark' : 'text-alert'}`}>
-                Con trả lời: <b>{String(ketQua[q.id]?.answer ?? '(bỏ trống)')}</b>
+                {/* Câu nhiều ô thì `answer` là MẢNG. `String([...])` nối bằng dấu phẩy
+                    trần, nên hai ô rỗng ra đúng chữ "," — con đọc không hiểu là gì.
+                    Nối bằng dấu chấm giữa và nói thẳng ô nào bỏ trống. */}
+                Con trả lời: <b>{goiTraLoi(ketQua[q.id]?.answer)}</b>
                 {' · '}{ketQua[q.id]?.ok ? 'đúng ✓' : 'chưa đúng'}
               </p>
             )}
             <div className="mt-2 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3.5 py-3 text-[15px]">
-              <b>Lời chữa của sách:</b> {q.loiChua}
+              <b>Lời chữa của sách:</b> <Chu t={q.loiChua} />
             </div>
             {!q.answerKey && (
               <label className="mt-2 flex items-center gap-2 text-[14.5px] font-semibold">
@@ -228,8 +237,8 @@ export default function DauPlayer({ khoi, onExit, onXong, onMoMicro }) {
               <span className="rounded bg-navy px-1.5 py-0.5 text-[11px] font-extrabold text-white">{b.ma}</span>
               <span className="text-[12px] text-mute">câu {(b.cacCau || [b.cau]).join(' & ')}</span>
             </div>
-            <p className="mt-1 text-[15px] font-semibold">{b.ten}</p>
-            {b.thanChu && <p className="text-[13.5px] italic text-mute">“{b.thanChu}”</p>}
+            <p className="mt-1 text-[15px] font-semibold"><Chu t={b.ten} /></p>
+            {b.thanChu && <p className="text-[13.5px] italic text-mute">“<Chu t={b.thanChu} />”</p>}
             <div className="mt-2 flex gap-2">
               {[['sap', 'Con SẬP bẫy'], ['thoat', 'Con THOÁT']].map(([v, nhan]) => (
                 <button key={v} type="button"
@@ -288,7 +297,7 @@ export default function DauPlayer({ khoi, onExit, onXong, onMoMicro }) {
                 <button key={b.ma} onClick={() => onMoMicro?.(b.micro)}
                         className="mt-1.5 flex w-full items-center gap-2 rounded-xl border border-line px-3 py-2 text-left text-[13.5px] hover:bg-soft">
                   <span className="rounded bg-alert px-1.5 py-0.5 text-[11px] font-extrabold text-white">{b.ma}</span>
-                  <span className="flex-1">{b.ten}</span>
+                  <span className="flex-1"><Chu t={b.ten} /></span>
                   <span className="font-mono text-[11.5px] text-mute">
                     {b.micro.replace('DL:KSN5Q1.', '')} ▶
                   </span>

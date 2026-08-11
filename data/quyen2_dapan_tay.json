@@ -1,0 +1,483 @@
+{
+ "_doc": "ĐÁP ÁN VIẾT TAY CHO QUYỂN 2 — 212 câu mà bộ rút tự động không dám đoán.",
+ "_vi_sao": [
+  "tools/chuan_quyen2.py cố ý rút rất dè: lời chữa của sách là văn xuôi, chứa cả số",
+  "trung gian của phép tính, nên đoán bừa 'con số cuối cùng' là có câu con làm đúng mà",
+  "máy báo sai. Kết quả: 102/314 câu máy chấm, 212 câu để con tự chấm — mà tự chấm thì",
+  "sổ phụ huynh và bảng cô giáo KHÔNG ĐO ĐƯỢC GÌ ở quyển luyện thi.",
+  "Tệp này là lời giải: đọc TAY từng lời chữa rồi khai đáp án, đúng cách Quyển 1 vẫn làm",
+  "(data/lop*_dapan_tay.json). Máy không đoán — người khai, máy kiểm."
+ ],
+ "_luat": [
+  "1. ĐÁP SỐ LÀ SỐ  → answerKey.value (kèm đơn vị cho ô hiện đúng gợi ý; flow.js nhận",
+  "   cả khi con gõ số trần). Nhiều đáp số → answerKey.parts, mỗi ô một nhãn.",
+  "2. ĐÁP SỐ LÀ CHỮ → chuyển TRẮC NGHIỆM (format mcq + choices), vì bắt con gõ đúng",
+  "   từng chữ 'KHÔNG chắc đúng' là kiểm kỹ năng gõ chứ không kiểm toán.",
+  "3. MỒI NHỬ LẤY TỪ CHÍNH SÁCH — mỗi lời chữa đều có câu 'Mất điểm nếu…', đó đúng là",
+  "   cái bẫy Cáo Đề gài. Mồi bịa ra thì hoặc quá lộ, hoặc vô tình cũng đúng.",
+  "4. ĐÁP ÁN PHẢI CÓ MẶT TRONG LỜI CHỮA — cổng quyen2_dapan.test.mjs soi từng câu.",
+  "   Khai một con số sách không hề nói tới là bị chặn ngay, không đợi ai soi bằng mắt."
+ ],
+ "_khoa": "Khoá là <mã khối>#<mã câu>, ví dụ V01#C9 hay K03#AC7.",
+
+ "K01#C1": { "choices": ["4,50 và 4,500", "4,05 và 45", "4,50 ; 4,05 ; 4,500", "cả bốn số"],
+             "answerKey": { "choice": "4,50 và 4,500" } },
+ "K01#C3": { "answerKey": { "value": "7" } },
+ "K01#C5": { "answerKey": { "value": "0,85 < 0,9" } },
+ "K01#C7": { "choices": ["BÉ HƠN", "LỚN HƠN", "BẰNG 3/5"],
+             "answerKey": { "choice": "BÉ HƠN" } },
+ "K01#C8": { "answerKey": { "value": "407" } },
+ "K01#C9": { "answerKey": { "value": "4,1" } },
+ "K01#C10": { "answerKey": { "value": "1" } },
+ "K01#C12": { "answerKey": { "value": "4" } },
+ "K01#C14": { "answerKey": { "value": "9" } },
+ "K01#C15": { "answerKey": { "parts": [
+   { "label": "cách tách 12 = 6 × 2 có chắc đúng không", "value": "KHÔNG", "options": ["KHÔNG", "CÓ"] },
+   { "label": "một số phản chứng", "value": "18" },
+   { "label": "cách tách đúng", "value": "12 = 3 × 4", "options": ["12 = 3 × 4", "12 = 6 × 2", "12 = 2 × 6", "12 = 12 × 1"] }
+ ] } },
+ "K01#C16": { "answerKey": { "value": "9/8" } },
+ "K01#C17": { "answerKey": { "value": "4,2" } },
+ "K01#C18": { "answerKey": { "value": "3" } },
+ "K01#C19": { "answerKey": { "value": "1 050" } },
+ "K01#C20": { "answerKey": { "value": "2,75" } },
+
+ "K02#C2": { "answerKey": { "value": "5" } },
+ "K02#C5": { "answerKey": { "value": "4/9 < 4/7" } },
+ "K02#C7": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "34" }, { "label": "số lớn", "value": "50" } ] } },
+ "K02#C9": { "answerKey": { "value": "7,1" } },
+ "K02#C11": { "answerKey": { "value": "9" } },
+ "K02#C12": { "answerKey": { "value": "7" } },
+ "K02#C14": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "48" }, { "label": "số lớn", "value": "84" } ] } },
+ "K02#C15": { "answerKey": { "parts": [
+   { "label": "An lúc đầu (viên)", "value": "15" },
+   { "label": "Bình lúc đầu (viên)", "value": "60" } ] } },
+ "K02#C16": { "answerKey": { "value": "4 giờ 48 phút" } },
+ "K02#C17": { "answerKey": { "parts": [
+   { "label": "An lúc đầu (viên)", "value": "37" },
+   { "label": "Bình lúc đầu (viên)", "value": "23" } ] } },
+ "K02#C20": { "answerKey": { "parts": [
+   { "label": "tuổi con hiện nay", "value": "9" },
+   { "label": "tuổi mẹ hiện nay", "value": "33" } ] } },
+
+ "K03#AC1": { "answerKey": { "value": "3,75" } },
+ "K03#AC3": { "answerKey": { "value": "59" } },
+ "K03#AC4": { "answerKey": { "parts": [
+   { "label": "số bé ban đầu", "value": "33" },
+   { "label": "số lớn ban đầu", "value": "87" } ] } },
+ "K03#AC6": { "answerKey": { "parts": [
+   { "label": "cửa hàng lãi hay lỗ", "value": "LỖ", "options": ["LỖ", "LÃI", "hòa vốn"] },
+   { "label": "số tiền (đồng)", "value": "280 000" } ] } },
+ "K03#AC7": { "answerKey": { "value": "2 giờ 40 phút" } },
+ "K03#AC8": { "answerKey": { "value": "1 500" } },
+ "K03#AC9": { "answerKey": { "values": ["9", "25", "15", "15"] } },
+ "K03#AC10": { "answerKey": { "parts": [
+   { "label": "a) lượng nước trong bể (lít)", "value": "180" },
+   { "label": "b) mực nước dâng thêm (dm)", "value": "0,45" },
+   { "label": "b) nước có tràn không", "value": "KHÔNG tràn", "options": ["KHÔNG tràn", "CÓ tràn"] } ] } },
+ "K03#AC11": { "answerKey": { "parts": [
+   { "label": "đuổi kịp lúc mấy giờ", "value": "9 giờ 15 phút" },
+   { "label": "cách A (km)", "value": "81" } ] } },
+ "K03#AC12": { "answerKey": { "parts": [
+   { "label": "a) vòi thứ hai một mình (giờ)", "value": "15" },
+   { "label": "b) thời gian để bể đầy", "value": "4 giờ 30 phút" } ] } },
+ "K03#BC7": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "20" }, { "label": "số lớn", "value": "28" } ] } },
+ "K03#BC8": { "answerKey": { "value": "1" } },
+ "K03#BC9": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "66" }, { "label": "số lớn", "value": "88" } ] } },
+ "K03#BC10": { "answerKey": { "value": "2 giờ 24 phút" } },
+ "K03#BC11": { "answerKey": { "value": "19%" } },
+
+ "T01#C1": { "answerKey": { "value": "2 700" } },
+ "T01#C3": { "answerKey": { "value": "936" } },
+ "T01#C4": { "answerKey": { "parts": [
+   { "label": "a) 6,07 và 6,7", "value": "6,07 < 6,7", "options": ["6,07 < 6,7", "6,07 > 6,7", "6,07 = 6,7"] },
+   { "label": "b) 6,70 và 6,7", "value": "6,70 = 6,7", "options": ["6,70 = 6,7", "6,70 > 6,7", "6,70 < 6,7"] } ] } },
+ "T01#C5": { "answerKey": { "parts": [
+   { "label": "3 128 có chia hết cho 8 không", "value": "CÓ", "options": ["CÓ", "KHÔNG"] },
+   { "label": "dấu hiệu con đã dùng", "value": "xét ba chữ số cuối",
+     "options": ["xét ba chữ số cuối", "xét hai chữ số cuối", "xét tổng các chữ số", "xét chữ số tận cùng"] } ] } },
+ "T01#C7": { "answerKey": { "parts": [
+   { "label": "2 025 chia 7 dư mấy", "value": "2" },
+   { "label": "cần thêm ít nhất bao nhiêu đơn vị", "value": "5" } ] } },
+ "T01#C8": { "answerKey": { "value": "6,2" } },
+ "T01#C10": { "answerKey": { "parts": [
+   { "label": "a) chữ số tận cùng của B", "value": "1" },
+   { "label": "b) B có chia hết cho 2 không", "value": "KHÔNG", "options": ["KHÔNG", "CÓ"] } ] } },
+
+ "T02#C1": { "answerKey": { "value": "8,6" } },
+ "T02#C2": { "answerKey": { "value": "100 lần" } },
+ "T02#C4": { "answerKey": { "parts": [
+   { "label": "sân so sánh con dùng", "value": "cùng TỬ",
+     "options": ["cùng TỬ", "cùng MẪU", "phần bù", "quy đồng cả hai"] },
+   { "label": "kết quả so sánh", "value": "7/12 < 7/10", "options": ["7/12 < 7/10", "7/12 > 7/10", "7/12 = 7/10"] } ] } },
+ "T02#C8": { "answerKey": { "value": "252,5" } },
+ "T02#C9": { "answerKey": { "value": "5" } },
+ "T02#C10": { "answerKey": { "value": "4" } },
+
+ "T03#C5": { "choices": ["BÉ HƠN", "LỚN HƠN", "BẰNG NHAU"],
+             "answerKey": { "choice": "BÉ HƠN" } },
+ "T03#C6": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "14" }, { "label": "số lớn", "value": "56" } ] } },
+ "T03#C7": { "answerKey": { "parts": [
+   { "label": "2 456 có chia hết cho 8 không", "value": "CÓ", "options": ["CÓ", "KHÔNG"] },
+   { "label": "dấu hiệu con đã dùng", "value": "xét ba chữ số cuối",
+     "options": ["xét ba chữ số cuối", "xét hai chữ số cuối", "xét tổng các chữ số", "xét chữ số tận cùng"] } ] } },
+ "T03#C9": { "answerKey": { "value": "5,3" } },
+ "T03#C10": { "answerKey": { "parts": [
+   { "label": "An lúc đầu (viên)", "value": "16" },
+   { "label": "Bình lúc đầu (viên)", "value": "48" } ] } },
+
+ "T04#C1": { "answerKey": { "value": "50,24 cm²" } },
+ "T04#C2": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "38" }, { "label": "số lớn", "value": "52" } ] } },
+ "T04#C3": { "answerKey": { "value": "40%" } },
+ "T04#C4": { "answerKey": { "value": "6" } },
+ "T04#C6": { "answerKey": { "value": "5/6 < 6/7" } },
+ "T04#C7": { "answerKey": { "value": "6 giờ" } },
+ "T04#C9": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "40" }, { "label": "số lớn", "value": "56" } ] } },
+ "T04#C10": { "answerKey": { "parts": [
+   { "label": "a) lượng nước trong bể (lít)", "value": "90" },
+   { "label": "b) mực nước dâng thêm (dm)", "value": "0,2" } ] } },
+
+ "V01#C2": { "choices": ["3,50 → 3,5", "3,05 → 3,5", "cả hai phép", "không phép nào"],
+             "answerKey": { "choice": "3,50 → 3,5" } },
+ "V01#C4": { "answerKey": { "parts": [
+   { "label": "a) thêm 0 vào bên phải 7,2", "value": "KHÔNG đổi",
+     "options": ["KHÔNG đổi", "gấp 10 lần", "gấp 100 lần"] },
+   { "label": "b) thêm 0 vào bên phải 72", "value": "gấp 10 lần",
+     "options": ["KHÔNG đổi", "gấp 10 lần", "gấp 100 lần"] } ] } },
+ "V01#C6": { "answerKey": { "parts": [
+   { "label": "320 viết ngược được số nào", "value": "23" },
+   { "label": "vì sao loại số tận cùng bằng 0", "value": "số viết ngược không còn ba chữ số",
+     "options": ["số viết ngược không còn ba chữ số", "số viết ngược luôn bé hơn 297",
+                 "số viết ngược vẫn bằng chính nó"] } ] } },
+ "V01#C7": { "answerKey": { "parts": [
+   { "label": "giá trị chữ số 7 ở số nào lớn hơn", "value": "trong 7,23",
+     "options": ["trong 7,23", "trong 2,73", "bằng nhau"] },
+   { "label": "gấp bao nhiêu lần", "value": "10" } ] } },
+ "V01#C8": { "answerKey": { "value": "100 lần" } },
+ "V01#C9": { "answerKey": { "value": "3,1" } },
+ "V01#C10": { "answerKey": { "parts": [
+   { "label": "a) 649 có chia hết cho 9 không", "value": "KHÔNG", "options": ["KHÔNG", "CÓ"] },
+   { "label": "b) 649 có chia hết cho 11 không", "value": "CÓ", "options": ["CÓ", "KHÔNG"] },
+   { "label": "c) vì sao không dùng dấu hiệu của 9 cho 11",
+     "value": "9 xét TỔNG các chữ số, 11 xét HIỆU hai tổng xen kẽ",
+     "options": ["9 xét TỔNG các chữ số, 11 xét HIỆU hai tổng xen kẽ",
+                 "vì 11 lớn hơn 9", "vì 9 và 11 đều là số lẻ"] } ] } },
+ "V01#C12": { "choices": ["4,018 < 4,08 < 4,8 = 4,80", "4,08 < 4,018 < 4,8 = 4,80",
+                          "4,018 < 4,08 < 4,80 < 4,8", "4,8 < 4,80 < 4,018 < 4,08"],
+              "answerKey": { "choice": "4,018 < 4,08 < 4,8 = 4,80" } },
+ "V01#C13": { "answerKey": { "value": "32,6" } },
+ "V01#C14": { "answerKey": { "parts": [
+   { "label": "a) tổng các chữ số có thay đổi không", "value": "KHÔNG đổi",
+     "options": ["KHÔNG đổi", "CÓ đổi"] },
+   { "label": "b) 527 có còn chia hết cho 5 không", "value": "KHÔNG", "options": ["KHÔNG", "CÓ"] },
+   { "label": "c) họ dấu hiệu nào phải kiểm lại", "value": "họ chữ số tận cùng (2, 5, 10)",
+     "options": ["họ chữ số tận cùng (2, 5, 10)", "họ tổng các chữ số (3, 9)",
+                 "cả hai họ", "không họ nào"] } ] } },
+ "V01#C15": { "answerKey": { "value": "38,1" } },
+
+ "V02#C2": { "answerKey": { "value": "6" } },
+ "V02#C4": { "answerKey": { "parts": [
+   { "label": "a) từ trang 1 đến 9 (chữ số)", "value": "9" },
+   { "label": "b) từ trang 10 đến 99 (chữ số)", "value": "180" } ] } },
+ "V02#C5": { "answerKey": { "value": "6174" } },
+ "V02#C6": { "answerKey": { "parts": [
+   { "label": "a) các chữ số KHÁC NHAU", "value": "6" },
+   { "label": "b) các chữ số ĐƯỢC LẶP LẠI", "value": "27" } ] } },
+ "V02#C7": { "answerKey": { "parts": [
+   { "label": "a) TỪ 10 đến 100", "value": "19" },
+   { "label": "b) GIỮA 10 và 100", "value": "17" } ] } },
+ "V02#C11": { "answerKey": { "parts": [
+   { "label": "lập được bao nhiêu số", "value": "3" },
+   { "label": "kể ra các số đó", "value": "205; 250; 520" } ] } },
+ "V02#C14": { "answerKey": { "value": "5" } },
+
+ "V03#C1": { "answerKey": { "value": "4" } },
+ "V03#C2": { "answerKey": { "parts": [
+   { "label": "lập luận của bạn An", "value": "SAI", "options": ["SAI", "ĐÚNG"] },
+   { "label": "246 có chia hết cho 6 không", "value": "CÓ", "options": ["CÓ", "KHÔNG"] } ] } },
+ "V03#C4": { "answerKey": { "value": "5" } },
+ "V03#C5": { "answerKey": { "parts": [
+   { "label": "những số chia hết cho 4", "value": "5 620; 3 408" },
+   { "label": "dấu hiệu con đã dùng", "value": "xét hai chữ số cuối",
+     "options": ["xét hai chữ số cuối", "xét ba chữ số cuối", "xét tổng các chữ số", "xét chữ số tận cùng"] } ] } },
+ "V03#C6": { "answerKey": { "parts": [
+   { "label": "1 336 có chia hết cho 8 không", "value": "CÓ", "options": ["CÓ", "KHÔNG"] },
+   { "label": "bạn kia sai ở đâu", "value": "dùng dấu hiệu họ TỔNG chữ số cho số 8",
+     "options": ["dùng dấu hiệu họ TỔNG chữ số cho số 8", "cộng nhầm tổng các chữ số",
+                 "phải xét hai chữ số cuối chứ không phải ba"] } ] } },
+ "V03#C7": { "answerKey": { "parts": [
+   { "label": "thương", "value": "11" },
+   { "label": "số dư", "value": "1" },
+   { "label": "a) phải THÊM ít nhất", "value": "8" },
+   { "label": "b) phải BỚT ít nhất", "value": "1" } ] } },
+ "V03#C8": { "answerKey": { "value": "6" } },
+ "V03#C9": { "answerKey": { "value": "1 650" } },
+ "V03#C10": { "answerKey": { "parts": [
+   { "label": "cách tách 45 = 15 × 3 có chắc đúng không", "value": "KHÔNG", "options": ["KHÔNG", "CÓ"] },
+   { "label": "một số phản chứng", "value": "15" },
+   { "label": "cách tách hợp lý", "value": "45 = 5 × 9",
+     "options": ["45 = 5 × 9", "45 = 15 × 3", "45 = 3 × 15", "45 = 45 × 1"] } ] } },
+ "V03#C11": { "choices": ["tím", "đỏ", "vàng", "xanh"], "answerKey": { "choice": "tím" } },
+ "V03#C13": { "answerKey": { "parts": [
+   { "label": "số nhỏ nhất", "value": "7" },
+   { "label": "số tiếp theo", "value": "22" } ] } },
+ "V03#C14": { "answerKey": { "parts": [
+   { "label": "a) 2 116 có là số chính phương không", "value": "CÓ", "options": ["CÓ", "KHÔNG"] },
+   { "label": "b) 2 118 có là số chính phương không", "value": "KHÔNG", "options": ["KHÔNG", "CÓ"] } ] } },
+ "V03#C15": { "answerKey": { "parts": [
+   { "label": "a) chữ số tận cùng của A", "value": "3" },
+   { "label": "b) A có chia hết cho 5 không", "value": "KHÔNG", "options": ["KHÔNG", "CÓ"] } ] } },
+
+ "V04#C2": { "answerKey": { "value": "7,8" } },
+ "V04#C4": { "answerKey": { "value": "425,7" } },
+ "V04#C10": { "answerKey": { "value": "5" } },
+ "V04#C13": { "answerKey": { "parts": [
+   { "label": "A", "value": "1/10" },
+   { "label": "B", "value": "5,5" },
+   { "label": "so sánh A và B", "value": "A < B", "options": ["A < B", "A > B", "A = B"] } ] } },
+ "V04#C14": { "answerKey": { "value": "1/100" } },
+ "V04#C15": { "answerKey": { "value": "16,05" } },
+
+ "V05#C1": { "answerKey": { "value": "0,7 > 0,68" } },
+ "V05#C2": { "choices": ["BÉ HƠN", "LỚN HƠN", "BẰNG NHAU"], "answerKey": { "choice": "BÉ HƠN" } },
+ "V05#C3": { "answerKey": { "parts": [
+   { "label": "sân so sánh con dùng", "value": "cùng TỬ",
+     "options": ["cùng TỬ", "cùng MẪU", "phần bù", "quy đồng cả hai"] },
+   { "label": "kết quả so sánh", "value": "3/7 < 3/5", "options": ["3/7 < 3/5", "3/7 > 3/5", "3/7 = 3/5"] } ] } },
+ "V05#C4": { "answerKey": { "parts": [
+   { "label": "a) nhân cả tử và mẫu với 3 được", "value": "6/15" },
+   { "label": "a) có bằng 2/5 không", "value": "CÓ", "options": ["CÓ", "KHÔNG"] },
+   { "label": "b) cộng 3 vào cả tử và mẫu được", "value": "5/8" },
+   { "label": "b) có bằng 2/5 không", "value": "KHÔNG", "options": ["KHÔNG", "CÓ"] } ] } },
+ "V05#C5": { "answerKey": { "value": "2/3" } },
+ "V05#C6": { "answerKey": { "value": "5/3" } },
+ "V05#C7": { "answerKey": { "value": "7/8 < 8/9" } },
+ "V05#C8": { "answerKey": { "value": "5/12" } },
+ "V05#C9": { "answerKey": { "value": "2" } },
+ "V05#C10": { "answerKey": { "value": "4 : 3" } },
+ "V05#C11": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "24" }, { "label": "số lớn", "value": "40" } ] } },
+ "V05#C12": { "choices": ["2/3 < 3/4 < 5/6", "3/4 < 2/3 < 5/6", "5/6 < 3/4 < 2/3", "2/3 < 5/6 < 3/4"],
+              "answerKey": { "choice": "2/3 < 3/4 < 5/6" } },
+ "V05#C13": { "choices": ["5/7 và 5/8", "5/7 và 5/9", "5/6 và 5/9", "5/8 và 5/9"],
+              "answerKey": { "choice": "5/7 và 5/8" } },
+ "V05#C14": { "answerKey": { "value": "3,7" } },
+ "V05#C15": { "answerKey": { "parts": [
+   { "label": "An lúc đầu (viên)", "value": "44" },
+   { "label": "Bình lúc đầu (viên)", "value": "40" } ] } },
+
+ "V06#C3": { "answerKey": { "parts": [
+   { "label": "có phải bằng 35 không", "value": "KHÔNG", "options": ["KHÔNG", "CÓ"] },
+   { "label": "điểm trung bình cả hai nhóm", "value": "37" } ] } },
+ "V06#C4": { "answerKey": { "value": "28 kg" } },
+ "V06#C5": { "answerKey": { "value": "18" } },
+ "V06#C6": { "answerKey": { "parts": [
+   { "label": "a) TBC dãy 2 ; 4 ; … ; 20", "value": "11" },
+   { "label": "b) TBC dãy 1 ; 2 ; 3 ; 50", "value": "14" },
+   { "label": "dãy nào dùng được (đầu + cuối) : 2", "value": "dãy a",
+     "options": ["dãy a", "dãy b", "cả hai dãy", "không dãy nào"] } ] } },
+ "V06#C9": { "answerKey": { "value": "27 kg" } },
+ "V06#C10": { "answerKey": { "value": "48 kg" } },
+ "V06#C12": { "answerKey": { "value": "28" } },
+ "V06#C14": { "answerKey": { "parts": [
+   { "label": "a) TBC cả hai tổ (kg)", "value": "39" },
+   { "label": "b) người mới nặng (kg)", "value": "48" } ] } },
+ "V06#C15": { "answerKey": { "value": "39" } },
+
+ "V07#C1": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "18" }, { "label": "số lớn", "value": "30" } ] } },
+ "V07#C3": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "22" }, { "label": "số lớn", "value": "24" } ] } },
+ "V07#C4": { "answerKey": { "value": "28 tuổi" } },
+ "V07#C5": { "answerKey": { "value": "16" } },
+ "V07#C6": { "answerKey": { "value": "50 viên" } },
+ "V07#C7": { "answerKey": { "parts": [
+   { "label": "An lúc đầu (viên)", "value": "30" },
+   { "label": "Bình lúc đầu (viên)", "value": "20" } ] } },
+ "V07#C8": { "answerKey": { "parts": [
+   { "label": "tuổi con", "value": "12" }, { "label": "tuổi bố", "value": "36" } ] } },
+ "V07#C9": { "answerKey": { "parts": [
+   { "label": "hộp A (viên)", "value": "14" },
+   { "label": "hộp B (viên)", "value": "16" },
+   { "label": "hộp C (viên)", "value": "18" } ] } },
+ "V07#C10": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "26" }, { "label": "số lớn", "value": "34" } ] } },
+ "V07#C12": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "27" }, { "label": "số lớn", "value": "29" } ] } },
+ "V07#C13": { "answerKey": { "parts": [
+   { "label": "có tìm được hai số tự nhiên không", "value": "KHÔNG", "options": ["KHÔNG", "CÓ"] },
+   { "label": "vì sao", "value": "tổng 25 là số lẻ mà hiệu 4 là số chẵn",
+     "options": ["tổng 25 là số lẻ mà hiệu 4 là số chẵn", "tổng nhỏ hơn hiệu",
+                 "hiệu không chia hết cho 4"] } ] } },
+ "V07#C14": { "answerKey": { "parts": [
+   { "label": "An lúc đầu (viên)", "value": "44" },
+   { "label": "Bình lúc đầu (viên)", "value": "40" } ] } },
+
+ "V08#C1": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "18" }, { "label": "số lớn", "value": "54" } ] } },
+ "V08#C2": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "10" }, { "label": "số lớn", "value": "40" } ] } },
+ "V08#C3": { "answerKey": { "parts": [
+   { "label": "chiều rộng (m)", "value": "12" }, { "label": "chiều dài (m)", "value": "18" } ] } },
+ "V08#C4": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "36" }, { "label": "số lớn", "value": "60" } ] } },
+ "V08#C5": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "40" }, { "label": "số lớn", "value": "50" } ] } },
+ "V08#C6": { "answerKey": { "parts": [
+   { "label": "số thứ nhất", "value": "63" }, { "label": "số thứ hai", "value": "42" } ] } },
+ "V08#C7": { "answerKey": { "parts": [
+   { "label": "kho A lúc đầu (tấn)", "value": "92" },
+   { "label": "kho B lúc đầu (tấn)", "value": "88" } ] } },
+ "V08#C9": { "answerKey": { "value": "3 : 4" } },
+ "V08#C10": { "answerKey": { "parts": [
+   { "label": "số bé ban đầu", "value": "6" }, { "label": "số lớn", "value": "54" } ] } },
+ "V08#C11": { "answerKey": { "value": "54 viên" } },
+ "V08#C12": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "5" }, { "label": "số lớn", "value": "40" } ] } },
+ "V08#C13": { "answerKey": { "value": "3 lần" } },
+ "V08#C14": { "answerKey": { "parts": [
+   { "label": "An (viên)", "value": "12" }, { "label": "Bình (viên)", "value": "30" } ] } },
+ "V08#C15": { "answerKey": { "parts": [
+   { "label": "số bé ban đầu", "value": "57" },
+   { "label": "số lớn ban đầu", "value": "63" } ] } },
+
+ "V09#C2": { "answerKey": { "value": "12" } },
+ "V09#C5": { "answerKey": { "parts": [
+   { "label": "tuổi con", "value": "10" }, { "label": "tuổi bố", "value": "40" } ] } },
+ "V09#C6": { "answerKey": { "parts": [
+   { "label": "số bé", "value": "20" }, { "label": "số lớn", "value": "30" } ] } },
+ "V09#C7": { "answerKey": { "parts": [
+   { "label": "An lúc đầu (viên)", "value": "18" },
+   { "label": "Bình lúc đầu (viên)", "value": "36" } ] } },
+ "V09#C8": { "answerKey": { "parts": [
+   { "label": "tuổi con hiện nay", "value": "6" },
+   { "label": "tuổi mẹ hiện nay", "value": "18" } ] } },
+ "V09#C9": { "answerKey": { "parts": [
+   { "label": "số bé ban đầu", "value": "12" },
+   { "label": "số lớn ban đầu", "value": "20" } ] } },
+ "V09#C10": { "answerKey": { "parts": [
+   { "label": "tuổi con", "value": "7" },
+   { "label": "tuổi bố", "value": "21" },
+   { "label": "tuổi ông", "value": "63" } ] } },
+ "V09#C11": { "answerKey": { "parts": [
+   { "label": "An lúc đầu (viên)", "value": "24" },
+   { "label": "Bình lúc đầu (viên)", "value": "60" } ] } },
+ "V09#C12": { "answerKey": { "parts": [
+   { "label": "tuổi em", "value": "10" }, { "label": "tuổi chị", "value": "14" } ] } },
+ "V09#C13": { "answerKey": { "value": "46 tuổi" } },
+ "V09#C14": { "answerKey": { "parts": [
+   { "label": "An lúc đầu (viên)", "value": "18" },
+   { "label": "Bình lúc đầu (viên)", "value": "42" } ] } },
+ "V09#C15": { "answerKey": { "parts": [
+   { "label": "tuổi con hiện nay", "value": "8" },
+   { "label": "tuổi mẹ hiện nay", "value": "32" } ] } },
+
+ "V10#C1": { "answerKey": { "parts": [
+   { "label": "a) 3/4 dưới dạng tỉ số phần trăm", "value": "75%" },
+   { "label": "b) 25% của 80", "value": "20" } ] } },
+ "V10#C2": { "answerKey": { "value": "240 000 đồng" } },
+ "V10#C3": { "answerKey": { "parts": [
+   { "label": "a) A bằng bao nhiêu phần trăm B", "value": "80%" },
+   { "label": "b) B hơn A bao nhiêu phần trăm", "value": "25%" } ] } },
+ "V10#C4": { "answerKey": { "value": "20 g" } },
+ "V10#C7": { "answerKey": { "parts": [
+   { "label": "giá cuối tăng hay giảm", "value": "GIẢM", "options": ["GIẢM", "TĂNG", "không đổi"] },
+   { "label": "bao nhiêu phần trăm", "value": "1%" } ] } },
+ "V10#C8": { "answerKey": { "value": "28%" } },
+ "V10#C10": { "answerKey": { "parts": [
+   { "label": "cửa hàng lãi hay lỗ", "value": "LỖ", "options": ["LỖ", "LÃI", "hòa vốn"] },
+   { "label": "số tiền (đồng)", "value": "10 000" } ] } },
+ "V10#C14": { "answerKey": { "parts": [
+   { "label": "a) khối lượng dưa sau khi phơi (kg)", "value": "100" },
+   { "label": "b) vì sao khối lượng giảm mạnh", "value": "tỉ lệ khô tăng gấp đôi mà lượng khô không đổi",
+     "options": ["tỉ lệ khô tăng gấp đôi mà lượng khô không đổi",
+                 "vì nước bay hơi mất 1% khối lượng", "vì dưa co lại khi phơi nắng"] } ] } },
+ "V10#C15": { "answerKey": { "parts": [
+   { "label": "cửa hàng lãi hay lỗ", "value": "LỖ", "options": ["LỖ", "LÃI", "hòa vốn"] },
+   { "label": "số tiền (đồng)", "value": "300 000" } ] } },
+
+ "V11#C1": { "answerKey": { "value": "4 giờ" } },
+ "V11#C2": { "answerKey": { "value": "12 giờ" } },
+ "V11#C4": { "answerKey": { "value": "2 giờ 24 phút" } },
+ "V11#C6": { "answerKey": { "value": "3 viên" } },
+ "V11#C8": { "answerKey": { "parts": [
+   { "label": "số bạn", "value": "6" }, { "label": "số kẹo (cái)", "value": "38" } ] } },
+ "V11#C9": { "answerKey": { "parts": [
+   { "label": "giá một quyển vở (đồng)", "value": "6 000" },
+   { "label": "giá một cái bút (đồng)", "value": "9 000" } ] } },
+ "V11#C10": { "answerKey": { "value": "8 giờ" } },
+ "V11#C12": { "answerKey": { "value": "2 giờ" } },
+ "V11#C13": { "answerKey": { "value": "15 ngày" } },
+ "V11#C14": { "answerKey": { "value": "180 000 đồng" } },
+ "V11#C15": { "answerKey": { "parts": [
+   { "label": "a) chắc chắn có 2 viên CÙNG MÀU (viên)", "value": "4" },
+   { "label": "b) chắc chắn có 2 viên MÀU ĐỎ (viên)", "value": "9" } ] } },
+
+ "V12#C1": { "answerKey": { "value": "30 m²" } },
+ "V12#C2": { "answerKey": { "value": "12 cm" } },
+ "V12#C3": { "answerKey": { "value": "36 m²" } },
+ "V12#C4": { "answerKey": { "parts": [
+   { "label": "a) diện tích tam giác ABM (cm²)", "value": "12" },
+   { "label": "b) tỉ số S(ABM) : S(AMC)", "value": "1 : 2" } ] } },
+ "V12#C6": { "answerKey": { "parts": [
+   { "label": "diện tích (cm²)", "value": "30" },
+   { "label": "vì sao phải kéo dài đáy khi vẽ", "value": "chân đường cao rơi NGOÀI đoạn đáy",
+     "options": ["chân đường cao rơi NGOÀI đoạn đáy", "vì tam giác tù không có đường cao",
+                 "để đáy dài bằng đường cao"] } ] } },
+ "V12#C8": { "answerKey": { "value": "68 cm²" } },
+ "V12#C9": { "choices": ["vì S(ABD) = S(ABC), cùng trừ đi phần chung là tam giác AOB",
+                         "vì hai tam giác có chung đáy và chung chiều cao",
+                         "vì hai đường chéo cắt nhau tại trung điểm mỗi đường"],
+             "answerKey": { "choice": "vì S(ABD) = S(ABC), cùng trừ đi phần chung là tam giác AOB" } },
+ "V12#C12": { "answerKey": { "parts": [
+   { "label": "tổng hai đáy (m)", "value": "12" },
+   { "label": "vì sao không tách riêng từng đáy", "value": "đề không cho thêm quan hệ nào giữa hai đáy",
+     "options": ["đề không cho thêm quan hệ nào giữa hai đáy", "vì hai đáy luôn bằng nhau",
+                 "vì đề còn thiếu chiều cao"] } ] } },
+ "V12#C13": { "answerKey": { "value": "36 cm²" } },
+ "V12#C14": { "answerKey": { "value": "44%" } },
+ "V12#C15": { "answerKey": { "values": ["4", "16", "8", "8"] } },
+
+ "V13#C1": { "answerKey": { "parts": [
+   { "label": "chu vi miệng giếng (m)", "value": "3,14" },
+   { "label": "diện tích nắp gỗ (m²)", "value": "0,785" } ] } },
+ "V13#C2": { "answerKey": { "value": "84 dm²" } },
+ "V13#C3": { "answerKey": { "value": "50,24 cm²" } },
+ "V13#C7": { "answerKey": { "parts": [
+   { "label": "chu vi gấp lên mấy lần", "value": "2" },
+   { "label": "diện tích gấp lên mấy lần", "value": "4" } ] } },
+ "V13#C8": { "answerKey": { "value": "150 m²" } },
+ "V13#C9": { "answerKey": { "parts": [
+   { "label": "lượng nước (lít)", "value": "128" },
+   { "label": "mực nước cao (dm)", "value": "3,2" } ] } },
+ "V13#C10": { "answerKey": { "value": "2 000 vòng" } },
+ "V13#C11": { "answerKey": { "value": "5 cm" } },
+ "V13#C15": { "answerKey": { "parts": [
+   { "label": "số khối có 3 mặt sơn", "value": "8" },
+   { "label": "số khối có 2 mặt sơn", "value": "24" },
+   { "label": "số khối có 1 mặt sơn", "value": "24" },
+   { "label": "số khối có 0 mặt sơn", "value": "8" } ] } },
+
+ "V14#C2": { "answerKey": { "value": "2 giờ" } },
+ "V14#C3": { "answerKey": { "parts": [
+   { "label": "36 km/h = … m/giây", "value": "10" },
+   { "label": "54 km/h = … m/giây", "value": "15" } ] } },
+ "V14#C8": { "answerKey": { "parts": [
+   { "label": "đuổi kịp lúc mấy giờ", "value": "7 giờ 30 phút" },
+   { "label": "cách A (km)", "value": "15" } ] } },
+ "V14#C9": { "answerKey": { "parts": [
+   { "label": "thời gian gặp nhau (giây)", "value": "80" },
+   { "label": "bạn nhanh chạy được (m)", "value": "240" },
+   { "label": "bạn chậm chạy được (m)", "value": "160" } ] } },
+ "V14#C13": { "answerKey": { "value": "6 giờ" } },
+ "V14#C14": { "answerKey": { "parts": [
+   { "label": "sau bao lâu hai kim trùng nhau", "value": "12/11 giờ" },
+   { "label": "trong 12 giờ trùng nhau bao nhiêu lần", "value": "11" } ] } }
+}

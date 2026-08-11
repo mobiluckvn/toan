@@ -44,20 +44,49 @@ t(`câu nào cũng có lời chữa của sách (${thieuChua.length})`, thieuChu
 /* ── 4. MÁY CHẤM: làm đúng phải được công nhận, làm sai phải bị bác ──
    Đây là hàng rào đắt nhất của Quyển 1, giữ nguyên tinh thần. */
 const mayCham = moiCau.filter(([, c]) => c.answerKey);
+
+/**
+ * Đáp án ĐÚNG của một câu, ở đúng hình dạng bộ chấm chờ nhận.
+ *
+ * Bản đầu chỉ biết `answerKey.value`. Từ khi 212 câu tự luận được khai đáp án tay,
+ * Quyển 2 có thêm ba hình dạng của Quyển 1 — `parts` (nhiều ô), `values` (dãy số) và
+ * `choice` (trắc nghiệm). Đọc thẳng `.value` với chúng thì ra `undefined`, và phép
+ * kiểm báo hỏng 111 câu hoàn toàn lành.
+ */
+function dapDung(c) {
+  const key = c.answerKey || {};
+  if (c.format === 'mcq') return key.choice;
+  if (key.values) return key.values.join('; ');
+  if (key.parts) return key.parts.map((p) => String(p.value));
+  return String(key.value);
+}
+
 const khongNhan = [], nhanBua = [];
 for (const [k, c] of mayCham) {
-  const dung = String(c.answerKey.value);
+  const dung = dapDung(c);
   if (!checkAnswer(c, dung)?.ok) khongNhan.push(`${k.id} ${c.id} đợi "${dung}"`);
   /* Giá trị SAI THẬT. Thêm số 0 vào đuôi thập phân ("8,03" → "8,030000") là CÙNG
      một số — bộ kiểm tự bịa ra 8 ca "hỏng" không có thật. Cộng thêm 1 mới chắc sai. */
-  const n = Number(dung.replace(/\./g, '').replace(',', '.'));
-  const sai = Number.isFinite(n) ? String(n + 1) : `${dung}-sai`;
+  /* Câu trả lời SAI THẬT — khó bịa hơn tưởng, và bịa hụt thì phép kiểm xanh oan.
+     Dán "-sai" vào đuôi một DÃY SỐ không làm nó sai: bộ chấm chỉ nhặt các con số
+     trong chuỗi, nên "9; 25; 15; 15-sai" vẫn đúng y nguyên. Phải ĐỔI một con số. */
+  const doiSo = (s) => String(s).replace(/\d+/, (n) => String(Number(n) + 1));
+  const sai = Array.isArray(dung) ? dung.map(() => 'zzz')
+    : c.answerKey?.values ? doiSo(dung)
+      : (() => {
+          const n = Number(String(dung).replace(/\./g, '').replace(',', '.'));
+          return Number.isFinite(n) ? String(n + 1) : `${dung}-sai`;
+        })();
   if (checkAnswer(c, sai)?.ok) nhanBua.push(`${k.id} ${c.id}`);
 }
 t(`làm ĐÚNG được công nhận (${khongNhan.length}/${mayCham.length} hỏng)`, khongNhan.length === 0);
 if (khongNhan.length) console.log('    ', khongNhan.slice(0, 5).join(' · '));
 t(`làm SAI bị bác (${nhanBua.length})`, nhanBua.length === 0);
-const rong = moiCau.filter(([, c]) => c.answerKey && !String(c.answerKey.value ?? '').trim());
+if (nhanBua.length) console.log('    ', nhanBua.slice(0, 5).join(' · '));
+const rong = moiCau.filter(([, c]) => {
+  const d = dapDung(c);
+  return c.answerKey && (Array.isArray(d) ? d.some((x) => !String(x).trim()) : !String(d ?? '').trim());
+});
 t(`không đáp án nào rỗng (${rong.length})`, rong.length === 0);
 t('câu máy chấm nào cũng dựng được ô trả lời',
   mayCham.every(([, c]) => answerFields(c).length > 0));

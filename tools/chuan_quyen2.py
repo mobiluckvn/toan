@@ -22,6 +22,12 @@ NGUON = os.path.join(GOC_KHO, 'data', 'quyen2_tho.json')
 RA_DIR = os.path.join(GOC_KHO, 'web', 'public', 'content', 'quyen2')
 RA_DATA = os.path.join(GOC_KHO, 'data', 'quyen2')
 
+# Đáp án người đọc lời chữa rồi khai tay — 212 câu mà luật máy không dám đoán.
+# Xem tools/dapan_quyen2.py (bản vá nóng) và data/quyen2_dapan_tay.json.
+_TAY_TEP = os.path.join(GOC_KHO, 'data', 'quyen2_dapan_tay.json')
+TAY = {k: v for k, v in json.load(open(_TAY_TEP, encoding='utf-8')).items()
+       if not k.startswith('_')} if os.path.exists(_TAY_TEP) else {}
+
 # Vòng đấu n dùng chuyên đề của chương n Quyển 1 → mở khi xong chương ấy.
 # (14 vòng ↔ 14 chương; sách ghi rõ ở dòng "Chuyên đề: … (Chương k Quyển 1 …)")
 R_CHUONG_Q1 = re.compile(r'Chương\s+(\d+)\s+Quyển\s+1')
@@ -146,7 +152,16 @@ def dung_khoi(loai, k):
             'loiChua': c['dap'],
             'bay': bay_theo_cau.get(c['so'], []),
         }
-        if dap is not None:
+        # SỔ TAY ĐI TRƯỚC LUẬT MÁY. Người đã đọc lời chữa rồi khai đáp án thì cứ theo
+        # người; luật rút tự động chỉ lo phần còn lại. Không có nhánh này thì chạy lại
+        # bộ dựng là xoá sạch 212 đáp án viết tay — mà dữ liệu vẫn hợp lệ, không báo gì.
+        khoa = f"{ma}#{c['ma']}"
+        if khoa in TAY:
+            it['answerKey'] = TAY[khoa]['answerKey']
+            if TAY[khoa].get('choices'):
+                it['format'] = 'mcq'
+                it['choices'] = TAY[khoa]['choices']
+        elif dap is not None:
             it['answerKey'] = {'value': dap}
         else:
             it['tuLuan'] = True

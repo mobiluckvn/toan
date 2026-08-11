@@ -25,7 +25,11 @@ const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
 const TRUONG = ['text', 'narration', 'solutionNarrative', 'problem', 'show',
   'kidText', 'mantra', 'wrong', 'fix', 'signal', 'counterExample', 'hint',
   'title', 'caption', 'onComplete', 'homeActivity', 'watchFor', 'answer',
-  'solution', 'screenText', 'why', 'note', 'prompt', 'back', 'expected'];
+  'solution', 'screenText', 'why', 'note', 'prompt', 'back', 'expected',
+  /* Ba trường RIÊNG CỦA QUYỂN 2, lượt đầu bỏ sót cả ba. `loiChua` là chỗ đau nhất:
+     nó hiện ở MỌI câu của màn chữa đề, và từ khi cả 314 câu đều máy chấm thì bé
+     nào cũng đọc nó — mà nó in ra nguyên văn `$4,5 \\times 100 = 450$`. */
+  'loiChua', 'thanChu', 'moTa'];
 /* Cố ý KHÔNG canh `label`: ở AnswerFields nó là nhãn ô nhập (đã bọc <Chu>), còn ở
    StepView và mấy nút bấm thì `label` là TÊN NÚT — canh chung thì mọi cái nút đều
    bị báo, mà phép kiểm báo oan là phép kiểm bị bỏ qua. */

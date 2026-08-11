@@ -111,6 +111,13 @@ const tienDo = {};
 for (let b = 1; b <= 4; b++) for (const m of [1, 2, 3]) tienDo[`DL:KSN5Q1.B${b}.M${m}`] = { pass: true };
 t('học hết 12 micro của chương 1 → chương 1 xong',
   chuongDaXong(tienDo, chuongCua).has(1));
+/* Sổ tiến độ là sổ CHUNG của bốn quyển. Bài lớp 2·3·4 lọt vào đây thì `chuongCua`
+   (hàm chia chương của Quyển 1) trả về chương 1 cho tất cả — chỉ cần con học dở một
+   bài lớp 3 là VÒNG ĐẤU 1 khoá cứng dù đã học hết 12 micro của chương 1. Dính thật. */
+t('bài của quyển khác KHÔNG làm hỏng phép đếm chương Quyển 1',
+  chuongDaXong({ ...tienDo, 'DL:KSN4.B25': { pass: false }, 'DL:KSN3.B01': { pass: false } },
+               chuongCua).has(1));
+
 tienDo['DL:KSN5Q1.B4.M3'] = { pass: false };
 t('còn một micro chưa đạt thì chương CHƯA xong',
   !chuongDaXong(tienDo, chuongCua).has(1));
