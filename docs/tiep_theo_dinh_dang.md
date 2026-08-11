@@ -21,25 +21,67 @@ Làm theo đúng thứ tự này, vì việc trước có thể lộ thêm việ
 ## Dây chuyền — THỨ TỰ LÀ BẮT BUỘC
 
 ```
-① dựng      python3 tools/dung_khuon_chung.py        (lớp 2)
+① dựng      python3 tools/dung_khuon_chung.py        (lớp 2 — NẠP data/loi_chao.json)
             python3 tools/dung_khuon_chung_lop3.py
             python3 tools/dung_khuon_chung_lop4.py
-② gắn hình  python3 tools/gan_hinh_lop2.py           (rồi dựng lại lớp 2)
-③ định dạng python3 tools/dinh_dang.py               → markdown + LaTeX
-④ bài mẫu   python3 tools/bai_mau.py                 → cắt phần Tóm tắt/Giải/Đáp số
-⑤ gợi ý     python3 tools/goi_y.py                   → hai tầng gợi ý cho lớp 2·3·4
-⑥ cổng      cd web && npm test && npm run build
+② hình lớp2 python3 tools/ve_hinh_lop2.py            → vẽ PNG
+            python3 tools/gan_hinh_lop2.py           → gắn vào bài (rồi dựng lại lớp 2)
+③ mở bài L5 python3 tools/mo_bai_lop5.py             → nêu đề bài, bỏ đoạn thoại nói hai lần
+④ định dạng python3 tools/dinh_dang.py               → markdown + LaTeX
+⑤ bài mẫu   python3 tools/bai_mau.py                 → cắt phần Tóm tắt/Giải/Đáp số
+⑥ gợi ý     python3 tools/goi_y.py                   → hai tầng gợi ý cho lớp 2·3·4
+⑦ cổng      cd web && npm test && npm run build
 ```
 
-⚠ **③ và ④ sửa thẳng bản DỰNG** (`web/public/content`), mà bộ dựng ① thì ghi đè
-trọn tệp từ bản gốc. **Chạy ① sau ③④ là mất sạch định dạng — dữ liệu vẫn hợp lệ và
+⚠ **④ và ⑤ sửa thẳng bản DỰNG** (`web/public/content`), mà bộ dựng ① thì ghi đè
+trọn tệp từ bản gốc. **Chạy ① sau ④⑤ là mất sạch định dạng — dữ liệu vẫn hợp lệ và
 KHÔNG CÓ GÌ BÁO.** Đúng cái bẫy đã dính với việc gắn hình ở Quyển 2.
+
+③ thì KHÔNG dính bẫy ấy: lớp 5 không có bộ dựng khuôn chung, và `mo_bai_lop5.py`
+ghi **cả `data/lessons/` lẫn `web/public/content/lessons/`** — chạy lại lúc nào
+cũng được.
 
 ---
 
 ## Đã làm ở đợt này
 
-### 1 · Bộ hiển thị markdown + LaTeX
+### 1 · MÀN MỞ BÀI — nêu vấn đề, KHÔNG nói trước cách làm
+
+Chỗ này chưa sổ nào ghi, mà nó là **cơ chế**, không phải một lần sửa nội dung.
+
+**Lớp 2·3·4 — `data/loi_chao.json`, 111 lời chào viết tay** (33 + 34 + 44 = đủ mọi
+bài). Bộ dựng `khuon_chung.py` nạp tệp này lúc nạp mô-đun và đặt vào
+`objective.kidText`, kèm cờ **`objective.laLoiChao`**. Bài nào thiếu thì rơi về
+mục tiêu giáo án và cổng `web/test/loi_chao.test.mjs` bắt ngay.
+
+Tệp giữ luôn ba khoá tài liệu `_doc` · `_luat` · `_vi_sao` — **đọc `_luat` trước
+khi viết thêm lời chào cho quyển mới.** Tóm tắt: một tình huống, tối đa hai câu,
+không nói cách làm, không chữ nghề, kết bằng câu hỏi hoặc lời rủ.
+
+Vì sao phải làm: mở bài trước đây in nguyên mục tiêu giáo án — **30/33 bài lớp 2,
+32/34 lớp 3 và 44/44 lớp 4 dài quá 170 chữ**, lại nói sẵn cách làm. `kidText` chỉ
+là bản sao y của `text` chứ chưa từng có bản viết cho trẻ.
+
+**Cờ `laLoiChao` điều khiển `flow.js:663`** — quyển CÓ lời chào thì màn mở là lời
+chào, còn `hook` đẩy sang màn sau; quyển KHÔNG có (lớp 5, Mùa giải) thì màn mở
+vẫn là `hook` như cũ. Bản đầu tôi gộp intro+hook cho **mọi** quyển, thành ra lớp 4
+nêu cùng một đề bài hai lần liền.
+
+**Lớp 5 — `tools/mo_bai_lop5.py`.** Bệnh khác hẳn: màn mở nói **cùng một đoạn
+thoại hai lần** — một lần bằng lời (trung bình 208 chữ), một lần nữa bằng hình
+`character_speech` chép lại đúng hai câu ấy (155 chữ). Bé đọc 363 chữ mà vẫn chưa
+thấy đề bài. Nay lời mở là **một câu nêu bài toán** lấy từ
+`knowledgeCore.canonicalExamples[0].problem`; hình mở chỉ giữ **câu SAI** (cái bẫy),
+bỏ câu phản bác vì nó thuộc màn giảng ngay sau. Bài hình học thì màn mở phải là
+**hình vẽ thật**, và chính hình ấy đi tiếp vào phần giải (`usedIn` mang cả hai
+chặng) để bé nhìn một hình từ đầu đến cuối.
+
+Cũng ở đợt này: bỏ ô "NGUYÊN TẮC CẦN NHỚ" khỏi màn mở — bác nói đúng, *mở bài mà
+đã có kiến thức cần nhớ thì còn gì để đọc*. Câu chốt nay có màn riêng đặt SAU khi
+giảng xong. Chỗ ẩn: `figFor(lesson,'mantra')` có đường lui kéo đúng tấm thẻ ấy trở
+lại màn vừa dọn — đã bỏ đường lui đó.
+
+### 2 · Bộ hiển thị markdown + LaTeX
 
 `web/src/lib/chuviet.js` (bộ đọc) + `web/src/components/Chu.jsx` (bộ vẽ).
 Dùng `<Chu t="…" />` cho một đoạn, `<Chu t="…" khoi />` cho nhiều đoạn.
@@ -60,7 +102,7 @@ Nhận: `**đậm**` · `*nghiêng*` · `` `mã` `` · gạch đầu dòng · da
 Lệnh lạ thì **giữ nguyên văn**, không nuốt — thà bé thấy `\sqrt` còn hơn thấy
 chỗ trống.
 
-### 2 · Bộ chuyển `tools/dinh_dang.py` — 7123 chỗ
+### 3 · Bộ chuyển `tools/dinh_dang.py` — 7123 chỗ
 
 **Nguyên tắc: thà bỏ sót còn hơn bọc nhầm.** Bọc nhầm một mẩu lời văn vào `$…$`
 là bé thấy một cục chữ đơn cách giữa câu — xấu hơn lúc chưa sửa.
@@ -76,7 +118,7 @@ Ba lỗi tự gây, bắt được bằng cách **đếm chỗ ngờ** (không p
 Luật hiện tại: `-` và `:` chỉ là phép tính khi **có dấu cách hai bên**; cụm một
 dấu đứng sau chữ chỉ thứ tự (`lớp`, `trang`, `Bài`…) thì coi là **khoảng**.
 
-### 3 · Bài mẫu trình bày như vào vở — `tools/bai_mau.py`
+### 4 · Bài mẫu trình bày như vào vở — `tools/bai_mau.py`
 
 **Cắt khúc, không viết mới.** Sách vốn đã có đủ mục, chúng chỉ nằm lẫn trong một
 dãy phẳng 1634 dòng. Chỉ gắn nhãn `phan` rồi để giao diện gom:
@@ -92,7 +134,7 @@ Màu theo **vai trò**: chỗ NGHĨ nền xám, chỗ VIẾT nền xanh, chỗ C
 đơn vị.` đều rơi vào mục ấy — đáp số dài ba dòng kèm cả lời bàn. Nay dòng sau
 đáp số vào mục NÓI THÊM.
 
-### 4 · Nối `<Chu>` vào mọi màn
+### 5 · Nối `<Chu>` vào mọi màn
 
 Đề bài · lời giảng · nguyên tắc · bài mẫu · câu luyện tập · lời giải · gợi ý ·
 dòng "Đáp án:" · kỳ sát hạch · vòng luyện chủ đề.
