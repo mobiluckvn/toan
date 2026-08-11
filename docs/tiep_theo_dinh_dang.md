@@ -2,9 +2,14 @@
 
 Cập nhật 2026-08-11 (lượt ba). Đọc tệp này TRƯỚC khi động vào lời văn hay cách trình bày bài.
 
-> **Cổng: 30 tệp kiểm · 861 PASS · 0 FAIL.** Ba việc tồn của lượt hai ĐÃ XONG.
-> Đã đi thật trên bản dựng — và bắt được một lỗi chỉ lộ khi mở mắt xem (xem cuối tệp).
-> **Chưa deploy.**
+> **ĐANG CHẠY trên https://ky-su-nhi.web.app** — deploy 2026-08-11, bản `aa441d6`.
+> Cổng: **30 tệp kiểm · 861 PASS · 0 FAIL**. Ba việc tồn của lượt hai ĐÃ XONG.
+> Đã đi thật cả trên bản dựng lẫn bản đã lên mạng — và bắt được một lỗi chỉ lộ khi
+> mở mắt xem (xem cuối tệp).
+>
+> ⚠ **Chỉ đẩy `hosting`.** `functions` và `firestore rules` cả phiên không đụng tới nên
+> KHÔNG đẩy. Luật Firestore dùng `hasAll` nên trường mới `dangBai` lọt được mà không
+> phải sửa rules — nhưng muốn đẩy chúng thì vẫn phải soát trước.
 
 ---
 
@@ -202,7 +207,7 @@ Màn chủ đề không thuộc quyển nào — đó là cả điểm mạnh l�
 | 1 | Bỏ chip mã `K1 · K2 · K3` ở màn nguyên tắc | sửa là đụng cả bốn quyển đang chạy thật |
 | 2 | Deploy `functions` và `firestore rules` | mấy phiên nay không đụng tới chúng nên chưa đẩy; muốn đẩy phải soát trước |
 
-Riêng **hosting** thì đẩy được ngay: `cd web && npx firebase deploy --only hosting`.
+Hosting đã đẩy: `cd web && npx firebase deploy --only hosting` (1469 tệp, 230 tệp mới).
 
 ---
 

@@ -7,7 +7,8 @@ chính là `data/km_v1_38.json` đã có sẵn trong kho.**
 
 > **XONG TRỌN.** Bản đồ chủ đề · màn xem theo chủ đề · vòng luyện tự lùi tự tiến ·
 > Mùa giải · bảng cô giáo lọc theo dạng. Cổng: **30 tệp kiểm · 861 PASS · 0 FAIL**.
-> Chưa deploy. Ba việc tồn của đợt đầu ĐÃ XONG (11-08-2026) — xem cuối tệp.
+> **ĐANG CHẠY trên ky-su-nhi.web.app** (deploy 2026-08-11, bản `aa441d6`, chỉ hosting).
+> Ba việc tồn của đợt đầu ĐÃ XONG (11-08-2026) — xem cuối tệp.
 
 ---
 
