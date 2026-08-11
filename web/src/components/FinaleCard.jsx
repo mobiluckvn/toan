@@ -87,6 +87,14 @@ export default function FinaleCard({ lesson, log, onRetry, onJumpTeach, onFinish
 
         <div className="mt-3 rounded-2xl border-[1.5px] border-dashed border-line bg-[#F7FAFD] p-3.5 text-left text-[14.5px]">
           <h4 className="mb-1.5 text-[11.5px] font-extrabold tracking-widest text-mute">GỬI BỐ MẸ</h4>
+          {/* Tên đầy đủ của bài — dòng tóm tắt cách làm rất chặt, quý cho người lớn.
+              Tên hiện cho bé nay đã rút ngắn và cố ý KHÔNG đọc trước nước đi, nên chỗ
+              để dòng đầy đủ này là đây: bố mẹ đọc sau khi con đã tự làm xong. */}
+          {lesson.titleDay && lesson.titleDay !== lesson.title && (
+            <p className="mb-1.5 text-[13px] italic leading-snug text-mute">
+              <Chu t={lesson.titleDay} />
+            </p>
+          )}
           <p><Chu t={fill(pn.onComplete)} /></p>
           {pn.homeActivity && <p className="mt-1.5"><b>Chơi cùng con:</b> <Chu t={pn.homeActivity} /></p>}
           {pn.watchFor && <p className="mt-1.5"><b>Để ý:</b> <Chu t={pn.watchFor} /></p>}

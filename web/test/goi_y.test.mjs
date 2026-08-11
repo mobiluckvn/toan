@@ -95,6 +95,31 @@ const le = cau.flatMap((c) => (c.it.hints || [])
 t(`không gợi ý nào có dấu $ lẻ (${le.length})`, le.length === 0);
 in5(le);
 
+/* ── 5 · GỢI Ý PHẢI RIÊNG THEO CÂU, KHÔNG DÙNG CHUNG THEO BÀI ──
+   Bản đầu suy gợi ý từ câu chốt và bước giảng đầu, nên MỌI câu trong một bài
+   nhận y hệt hai dòng. Nay 984 câu lớp 2·3·4 đã có gợi ý viết tay riêng
+   (`data/goi_y_tay.json`). Phép kiểm này canh để đừng ai lặng lẽ tụt về bậc cũ:
+   trong cùng một bài, hai câu khác nhau không được mang cùng một dòng gợi ý.
+
+   Cố ý CHỈ canh tầng 1 — vài câu cùng bài có thể trùng nhau ở nước đi đầu
+   ("Nhân đôi bán kính"), mà đó là trùng hợp lành, không phải dùng chung. */
+const theoBai = {};
+for (const { q, bai, it } of cau) {
+  const h1 = (it.hints || [])[0];
+  if (!h1) continue;
+  theoBai[bai] ??= { q, m: new Map() };
+  const m = theoBai[bai].m;
+  m.set(h1, (m.get(h1) || 0) + 1);
+}
+const dungChung = [];
+for (const [bai, { q, m }] of Object.entries(theoBai)) {
+  for (const [h, n] of m) {
+    if (n > 1) dungChung.push(`${q} ${bai}: ${n} câu chung "${h.slice(0, 45)}…"`);
+  }
+}
+t(`gợi ý tầng 1 riêng theo từng câu (dùng chung: ${dungChung.length})`, dungChung.length === 0);
+in5(dungChung);
+
 const theoQ = {};
 for (const c of cau) {
   theoQ[c.q] ??= { tong: 0, co: 0 };

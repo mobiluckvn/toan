@@ -92,6 +92,37 @@ R_PS_NGOAC = re.compile(rf'(?<![\w/]) ({SO}) \s*/\s* \(\s*({SO})\s*[×x]\s*({SO}
 # khớp, còn ngày tháng "12/3/2024" thì bị chặn bởi dấu `/` đứng sau.
 R_PS = re.compile(rf'(?<![\d/]) ({SO}) \s*/\s* ({SO}) (?![\d/])', re.X)
 
+# ── 1b · PHÂN SỐ CÓ CHỮ CÁI ──────────────────────────────────────────────────
+# `1/(a × b) = 1/a - 1/b`, `a/b × b/c × c/d`, `1/(n × (n + 1))`.
+#
+# ⚠ Đã ĐẾM TRƯỚC KHI NỚI, vì `chữ/chữ` phần lớn KHÔNG phải phân số. Trong cả năm
+# quyển có 991 cụm `X/Y` mang chữ cái, mà đứng đầu bảng là:
+#
+#     Đúng/Sai 230 · km/h 224 · m/s 115 · thêm/bớt 15 · phần/giờ 15
+#     vòng/giờ 15 · m/giây 14 · 1/năm 5 · 2/g 2 (gam) · Sxq/Stp 2
+#
+# Nên luật KHÔNG nhận "một đầu có chữ" chung chung. Chỉ nhận đúng MƯỜI chữ cái
+# THƯỜNG, ĐƠN LẺ mà sách thật sự dùng làm ẩn — đếm ra thì chỉ có bấy nhiêu:
+#
+#     p/q 12 · m/n 12 · 1/n 11 · 8/n 11 · a/b 10 · n/12 7 · 1/k 5
+#     b/c 4 · c/d 4 · 1/a 4 · 1/b 4 · 1/t 3
+#
+# Ba chữ bị gạt có chủ ý: `s` và `h` là ĐƠN VỊ (m/s, km/h), còn `x` thì sách
+# dùng làm DẤU NHÂN (`1/(1x2)`) chứ không phải ẩn. `g` là gam. Chữ HOA cũng gạt,
+# vì nó chỉ xuất hiện ở lời văn (`N/A`, `TỔNG/HIỆU`, `Sxq/Stp`).
+BIEN = r'[abcdkmnpqt]'
+HANG = rf'(?:{SO}|{BIEN})'
+OP = r'\s*[+\-−×x]\s*'
+
+# Mẫu trong ngoặc, viết đích danh HAI dạng có thật thay vì một mẫu ngoặc chung:
+# mẫu chung phải cân ngoặc, mà cân sai thì `1/(2 + 3) - (4 + 5)` bị vơ cả cụm sau.
+R_PSB_LONG = re.compile(                                  # `1/(n × (n + 1))`
+    rf'(?<![\w/])({HANG})\s*/\s*\(\s*({HANG})({OP})\(\s*({HANG})({OP})({HANG})\s*\)\s*\)(?![\w/])')
+R_PSB_NGOAC = re.compile(                                 # `1/(a × b)`, `1/(n + 1)`
+    rf'(?<![\w/])({HANG})\s*/\s*\(\s*({HANG})({OP})({HANG})\s*\)(?![\w/])')
+# `a/b`, `1/n`, `n/12` — đòi ÍT NHẤT một đầu là chữ (hai đầu số thì R_PS lo rồi).
+R_PS_BIEN = re.compile(rf'(?<![\w/])({HANG})\s*/\s*({HANG})(?![\w/])')
+
 # ── 2 · BIỂU THỨC ────────────────────────────────────────────────────────────
 # Chuỗi số - phép tính liền mạch: "30 : 5 = 6", "12 + 18 = 30", "2 : 3".
 # Đòi ít nhất một phép tính và kết thúc bằng số → "Bài 3." hay "lớp 5" không dính.
@@ -138,6 +169,17 @@ R_DV = re.compile(r'(?<=\d)\s*(m|cm|dm|km|mm)\s*2\b')
 R_DV2 = re.compile(r'\b(m|cm|dm|km|mm)²')
 
 
+def _op(d):
+    """Dấu phép tính trong mẫu phân số → LaTeX, luôn có khoảng cách hai bên.
+
+    Phải tự đặt khoảng cách chứ không giữ nguyên văn: sách viết `1/(1×2)` không
+    dấu cách, mà `\\times` là một LỆNH — dán liền thành `\\timesb` là bộ vẽ đọc ra
+    lệnh lạ tên `\\timesb` rồi in nguyên văn ra màn hình.
+    """
+    c = d.strip()
+    return {'×': r' \times ', 'x': r' \times ', '−': ' - '}.get(c, f' {c} ')
+
+
 def _bt_latex(bt):
     """Một biểu thức thô → LaTeX: đổi dấu nhân, giữ nguyên phần còn lại."""
     return (bt.replace('×', r' \times ').replace(' x ', r' \times ')
@@ -177,6 +219,26 @@ def dinh_dang(s):
         n += 1
         return rf'$\frac{{{m.group(1)}}}{{{m.group(2)}}}$'
 
+    def psb_long(m):
+        nonlocal n
+        n += 1
+        trong = (f'{m.group(2)}{_op(m.group(3))}'
+                 f'({m.group(4)}{_op(m.group(5))}{m.group(6)})')
+        return rf'$\frac{{{m.group(1)}}}{{{trong}}}$'
+
+    def psb_ngoac(m):
+        nonlocal n
+        n += 1
+        return rf'$\frac{{{m.group(1)}}}{{{m.group(2)}{_op(m.group(3))}{m.group(4)}}}$'
+
+    def ps_bien(m):
+        # Hai đầu đều là SỐ thì để R_PS lo — luật này chỉ gánh phần có chữ.
+        if not re.search(r'[a-z]', m.group(1) + m.group(2)):
+            return m.group(0)
+        nonlocal n
+        n += 1
+        return rf'$\frac{{{m.group(1)}}}{{{m.group(2)}}}$'
+
     def bt(m):
         nonlocal n
         if la_khoang(m.string, m.start(), m.group(0)):
@@ -191,6 +253,11 @@ def dinh_dang(s):
 
     s = R_PS_NGOAC.sub(ps_ngoac, s)
     s = R_PS.sub(ps, s)
+    # Luật chữ cái chạy SAU luật số: dạng lồng trước dạng ngoặc, ngoặc trước trần,
+    # nếu không thì `1/(a × b)` bị `1/(a` cắt cụt ngay từ luật trần.
+    s = R_PSB_LONG.sub(psb_long, s)
+    s = R_PSB_NGOAC.sub(psb_ngoac, s)
+    s = R_PS_BIEN.sub(ps_bien, s)
     s = R_BT.sub(bt, s)
     s = R_DV.sub(dv, s)
     s = R_DV2.sub(lambda m: f'${m.group(1)}^2$', s)

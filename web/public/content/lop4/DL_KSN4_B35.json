@@ -20,7 +20,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Tự khám phá và kiểm chứng bí mật tách hiệu: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1. Tính tổng dãy sai phân kiểu $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$ bằng hiệu ứng domino (chỉ còn hai đầu). Tính tích kiểu $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$ bằng rút gọn chéo (chỉ còn tử đầu và mẫu cuối).",
+  "text": "Tự khám phá và kiểm chứng bí mật tách hiệu: $\\frac{1}{a \\times b}$ = $\\frac{1}{a}$ − $\\frac{1}{b}$ khi b hơn a đúng 1. Tính tổng dãy sai phân kiểu $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$ bằng hiệu ứng domino (chỉ còn hai đầu). Tính tích kiểu $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$ bằng rút gọn chéo (chỉ còn tử đầu và mẫu cuối).",
   "kidText": "Dãy phân số một phần $1 \\times 2$, một phần $2 \\times 3$, rồi một phần $3 \\times 4$. Cộng cả dãy dài như thế thì ra bao nhiêu?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
@@ -29,7 +29,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng bằng $\\frac{1}{2}$! Tính tiếp $\\frac{1}{2}$ − $\\frac{1}{3}$ = $\\frac{3}{6}$ − $\\frac{2}{6}$ = $\\frac{1}{6}$ — đúng bằng $\\frac{1}{2 \\times 3}$! Và $\\frac{1}{3}$ − $\\frac{1}{4}$ = $\\frac{4}{12}$ − $\\frac{3}{12}$ = $\\frac{1}{12}$ = $\\frac{1}{3 \\times 4}$. Bí mật lộ diện: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1 (vì hiệu trên mẫu chung là b − a = 1)."
+    "text": "Bước 1 — TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng bằng $\\frac{1}{2}$! Tính tiếp $\\frac{1}{2}$ − $\\frac{1}{3}$ = $\\frac{3}{6}$ − $\\frac{2}{6}$ = $\\frac{1}{6}$ — đúng bằng $\\frac{1}{2 \\times 3}$! Và $\\frac{1}{3}$ − $\\frac{1}{4}$ = $\\frac{4}{12}$ − $\\frac{3}{12}$ = $\\frac{1}{12}$ = $\\frac{1}{3 \\times 4}$. Bí mật lộ diện: $\\frac{1}{a \\times b}$ = $\\frac{1}{a}$ − $\\frac{1}{b}$ khi b hơn a đúng 1 (vì hiệu trên mẫu chung là b − a = 1)."
    },
    {
     "id": "K2",
@@ -44,7 +44,7 @@
     "text": "Bước 4 — DỰ ĐOÁN KHÔNG CẦN TÍNH: kéo dài tổng đến $\\frac{1}{4 \\times 5}$? Hai đầu là 1 và $\\frac{1}{5}$ → tổng 1 − $\\frac{1}{5}$ = $\\frac{4}{5}$. Kéo dài tích đến $\\frac{9}{10}$? Tử đầu 1, mẫu cuối 10 → tích $\\frac{1}{10}$. Sức mạnh của cấu trúc: đọc được luật domino là ĐOÁN trước đáp số của dãy dài tùy ý — điều mà tính trâu bò không bao giờ làm nổi."
    }
   ],
-  "mantra": "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước. Tổng mẫu-là-tích-liền-nhau: tách mỗi số thành hiệu 1/a − 1/b, cả dãy chỉ còn HAI ĐẦU. Tích tử-sau-bằng-mẫu-trước: gạch chéo, chỉ còn TỬ ĐẦU và MẪU CUỐI. Kiểm bí mật tách hiệu bằng một phép trừ trước khi tin!",
+  "mantra": "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước. Tổng mẫu-là-tích-liền-nhau: tách mỗi số thành hiệu $\\frac{1}{a}$ − $\\frac{1}{b}$, cả dãy chỉ còn HAI ĐẦU. Tích tử-sau-bằng-mẫu-trước: gạch chéo, chỉ còn TỬ ĐẦU và MẪU CUỐI. Kiểm bí mật tách hiệu bằng một phép trừ trước khi tin!",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
@@ -199,8 +199,8 @@
      },
      "solutionNarrative": "$\\frac{1}{2}$ − $\\frac{1}{3}$ = $\\frac{3}{6}$ − $\\frac{2}{6}$ = $\\frac{1}{6}$ — đúng bằng $\\frac{1}{2 \\times 3}$: hiệu hai phân số \"liền kề\" chính là phân số mẫu-tích!",
      "hints": [
-      "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước.",
-      "TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng…"
+      "Quy đồng rồi trừ.",
+      "Đem kết quả so với phân số mẫu-là-tích."
      ]
     },
     {
@@ -220,8 +220,8 @@
      },
      "solutionNarrative": "Có — 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ = $\\frac{1}{1 \\times 2}$ ✓.",
      "hints": [
-      "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước.",
-      "TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng…"
+      "Tính riêng hai vế rồi so.",
+      "Đây chính là viên domino đầu tiên."
      ]
     },
     {
@@ -241,8 +241,8 @@
      },
      "solutionNarrative": "Có — $\\frac{1}{3}$ − $\\frac{1}{4}$ = $\\frac{4}{12}$ − $\\frac{3}{12}$ = $\\frac{1}{12}$ = $\\frac{1}{3 \\times 4}$ ✓.",
      "hints": [
-      "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước.",
-      "TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng…"
+      "Quy đồng vế phải rồi trừ.",
+      "So với phân số mẫu-là-tích ở vế trái."
      ]
     }
    ],
@@ -265,8 +265,8 @@
      },
      "solutionNarrative": "(1 − $\\frac{1}{2}$) + ($\\frac{1}{2}$ − $\\frac{1}{3}$) = 1 − $\\frac{1}{3}$ = $\\frac{2}{3}$.",
      "hints": [
-      "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước.",
-      "TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng…"
+      "Tách mỗi số hạng thành một HIỆU.",
+      "Các khúc giữa triệt tiêu, chỉ còn hai đầu."
      ]
     },
     {
@@ -287,8 +287,8 @@
      },
      "solutionNarrative": "Domino sập, còn hai đầu: 1 − $\\frac{1}{4}$ = $\\frac{3}{4}$.",
      "hints": [
-      "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước.",
-      "TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng…"
+      "Domino sập — tách hết thành hiệu.",
+      "Chỉ còn số đầu tiên và số cuối cùng."
      ]
     },
     {
@@ -318,8 +318,8 @@
      },
      "solutionNarrative": "$\\frac{1}{2}$ × $\\frac{2}{3}$ = $\\frac{1}{3}$; nhân tiếp $\\frac{3}{4}$ được $\\frac{1}{4}$ — mỗi lần nhân thêm, kết quả là 1 trên mẫu cuối cùng!",
      "hints": [
-      "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước.",
-      "TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng…"
+      "Tử của phân số sau đúng bằng mẫu của phân số trước.",
+      "Rút gọn chéo rồi nhìn ra quy luật."
      ]
     },
     {
@@ -340,8 +340,8 @@
      },
      "solutionNarrative": "Rút chéo 2, 3, 4 → còn $\\frac{1}{5}$.",
      "hints": [
-      "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước.",
-      "TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng…"
+      "Rút gọn chéo cả dây chuyền.",
+      "Chỉ tử đầu và mẫu cuối sống sót."
      ]
     }
    ],
@@ -373,8 +373,8 @@
      },
      "solutionNarrative": "1 − $\\frac{1}{5}$ = $\\frac{4}{5}$; kéo đến $\\frac{1}{9 \\times 10}$: hai đầu là 1 và $\\frac{1}{10}$ → tổng 1 − $\\frac{1}{10}$ = $\\frac{9}{10}$.",
      "hints": [
-      "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước.",
-      "TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng…"
+      "Tách hiệu rồi lấy hai đầu.",
+      "Muốn đoán thì chỉ cần biết hai đầu là ai."
      ]
     },
     {
@@ -404,8 +404,8 @@
      },
      "solutionNarrative": "Rút chéo 3, 4, 5 → còn $\\frac{2}{6}$ = $\\frac{1}{3}$; kéo đến $\\frac{9}{10}$: sống sót tử đầu 2 và mẫu cuối 10 → tích $\\frac{2}{10}$ = $\\frac{1}{5}$.",
      "hints": [
-      "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước.",
-      "TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng…"
+      "Rút gọn chéo — ai sống sót?",
+      "Tử đầu và mẫu cuối, rồi rút gọn thêm lần nữa."
      ]
     }
    ]
@@ -478,7 +478,7 @@
  },
  "parentNote": {
   "onComplete": "Dựng domino thật (thẻ bài, hộp sữa) dán nhãn các phân số của dãy — cú đẩy đổ hàng loạt là hình ảnh khắc sâu nhất về \"tự hủy dây chuyền\".",
-  "homeActivity": "Đặt lệ \"bí mật phải kiểm chứng\": trước khi dùng 1/(a×b) = 1/a − 1/b, con phải tự tay kiểm MỘT trường hợp bằng quy đồng — thói quen của nhà toán học thật.",
+  "homeActivity": "Đặt lệ \"bí mật phải kiểm chứng\": trước khi dùng $\\frac{1}{a \\times b}$ = $\\frac{1}{a}$ − $\\frac{1}{b}$, con phải tự tay kiểm MỘT trường hợp bằng quy đồng — thói quen của nhà toán học thật.",
   "watchFor": "NÊN: cho con đoán-trước-tính-sau với dãy kéo dài (đến $\\frac{1}{9 \\times 10}$) rồi thưởng khi đoán trúng. KHÔNG NÊN: dãy mẫu cách nhau 2 kiểu $\\frac{1}{1 \\times 3}$ + $\\frac{1}{3 \\times 5}$ — phiên bản \"nhân hệ số\" hẹn lớp 5."
  },
  "figureSpec": [

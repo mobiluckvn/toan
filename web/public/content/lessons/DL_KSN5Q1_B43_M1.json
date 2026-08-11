@@ -1,5 +1,5 @@
 {
- "title": "Lưu đồ hai chiều: gỡ từ số cuối — hệ số ngược lấy từ phần CÒN (nhân n/(n−m))",
+ "title": "Lưu đồ hai chiều",
  "grade": 5,
  "durationMinutes": 9,
  "skills": {
@@ -29,7 +29,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con giải chuỗi TÍNH NGƯỢC nhiều tầng bằng lưu đồ hai chiều: xuôi dòng ghi từng tầng \"dùng m/n chỗ còn lại\", rồi gỡ NGƯỢC từ số cuối — mỗi tầng nhân với NGHỊCH ĐẢO PHẦN CÒN n/(n − m) (dùng $\\frac{1}{3}$ → còn $\\frac{2}{3}$ → nhân $\\frac{3}{2}$, tuyệt đối không nhân 3!); kiểm nhanh bằng tích các phần còn.",
+  "text": "Con giải chuỗi TÍNH NGƯỢC nhiều tầng bằng lưu đồ hai chiều: xuôi dòng ghi từng tầng \"dùng $\\frac{m}{n}$ chỗ còn lại\", rồi gỡ NGƯỢC từ số cuối — mỗi tầng nhân với NGHỊCH ĐẢO PHẦN CÒN $\\frac{n}{n - m}$ (dùng $\\frac{1}{3}$ → còn $\\frac{2}{3}$ → nhân $\\frac{3}{2}$, tuyệt đối không nhân 3!); kiểm nhanh bằng tích các phần còn.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 (hệ số từ phần CÒN)",
   "kidText": "Bài tính ngược nhiều tầng: con gỡ từ số cuối đi lên. Dùng $\\frac{1}{3}$ thì còn $\\frac{2}{3}$, nên tầng ấy phải nhân $\\frac{3}{2}$ chứ không nhân 3."
  },
@@ -37,7 +37,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Lưu đồ hai chiều: chiều XUÔI mỗi tầng \"dùng m/n chỗ còn lại\" nghĩa là nhân với phần còn (n − m)/n; chiều NGƯỢC gỡ từ số cuối — nhân với NGHỊCH ĐẢO phần còn: n/(n − m)."
+    "text": "Lưu đồ hai chiều: chiều XUÔI mỗi tầng \"dùng $\\frac{m}{n}$ chỗ còn lại\" nghĩa là nhân với phần còn (n − m)/n; chiều NGƯỢC gỡ từ số cuối — nhân với NGHỊCH ĐẢO phần còn: $\\frac{n}{n - m}$."
    },
    {
     "id": "K2",
@@ -499,8 +499,8 @@
  "spacedReview": {
   "flashcards": [
    {
-    "front": "Gỡ ngược tầng 'dùng m/n chỗ còn lại' — nhân gì?",
-    "back": "Con số đang cầm là PHẦN CÒN (n−m)/n → nhân NGHỊCH ĐẢO n/(n−m): dùng $\\frac{1}{3}$ → ×$\\frac{3}{2}$ (không phải ×3 — túi phình 216!). Chuỗi: 9 × $\\frac{4}{3}$ × $\\frac{3}{2}$ × $2 = 36$. Kiểm tích domino: $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ = $\\frac{1}{4}$ → $9 = 1$/4 tổng ✓."
+    "front": "Gỡ ngược tầng 'dùng $\\frac{m}{n}$ chỗ còn lại' — nhân gì?",
+    "back": "Con số đang cầm là PHẦN CÒN (n−m)/n → nhân NGHỊCH ĐẢO $\\frac{n}{n - m}$: dùng $\\frac{1}{3}$ → ×$\\frac{3}{2}$ (không phải ×3 — túi phình 216!). Chuỗi: 9 × $\\frac{4}{3}$ × $\\frac{3}{2}$ × $2 = 36$. Kiểm tích domino: $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ = $\\frac{1}{4}$ → $9 = 1$/4 tổng ✓."
    }
   ],
   "schedule": [
@@ -629,5 +629,6 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
- }
+ },
+ "titleDay": "Lưu đồ hai chiều: gỡ từ số cuối — hệ số ngược lấy từ phần CÒN (nhân $\\frac{n}{n - m}$)"
 }

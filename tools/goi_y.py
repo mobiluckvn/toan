@@ -33,18 +33,44 @@ Nguồn an toàn, lấy từ chính bài học:
 Cả hai đều là lời GIẢNG, không phải lời giải, nên không thể lộ đáp số của một câu
 cụ thể. Vẫn kiểm lại từng câu: gợi ý nào chứa nguyên văn đáp án của câu ấy thì bỏ.
 
-── ĐÂY LÀ GỢI Ý THEO BÀI, CHƯA PHẢI THEO CÂU ──
+── GỢI Ý VIẾT TAY, RIÊNG TỪNG CÂU: `data/goi_y_tay.json` ──
 
-Mọi câu trong cùng một bài dùng chung hai gợi ý. So với lớp 5 — nơi mỗi câu có
-gợi ý riêng do người soạn viết — thì đây là bậc thấp hơn. Nhưng so với KHÔNG CÓ GÌ
-thì hơn hẳn, và nó đúng: bé đang mắc ở bài nào thì được nhắc đúng cách làm của bài
-ấy. Viết gợi ý riêng cho từng câu vẫn là việc còn để lại.
+Bản đầu chỉ suy được gợi ý theo BÀI: mọi câu trong cùng một bài dùng chung hai
+dòng lấy từ câu chốt và bước giảng đầu. Đúng mà nhạt — bé mắc ở câu nào cũng chỉ
+nghe lại một lời nhắc chung chung.
+
+Nay mỗi câu có gợi ý riêng, VIẾT TAY, theo đúng chuẩn của lớp 5 (quyển duy nhất
+có sẵn gợi ý do người soạn viết). Đọc mấy dòng của lớp 5 mà rút ra khuôn:
+
+    tầng 1  GỌI TÊN CẤU TRÚC — "Dãy cách đều bước 3." · "Hiệu 4 khúc vs 2 khúc."
+    tầng 2  NƯỚC ĐI ĐẦU trên chính con số của câu ấy, DỪNG TRƯỚC KẾT QUẢ —
+            "(3 + 99) : 2." · "Con nhích 1 khúc = 6 năm."
+
+Rất ngắn (5–12 chữ), bám số của câu, và không bao giờ nói ra đáp số.
+
+⚠ MÁY KHÔNG SUY ĐƯỢC THỨ NÀY. Đã cân nhắc suy tầng 2 từ `solutionNarrative` của
+từng câu rồi bỏ: 274/984 câu có lời giải KHÔNG chứa dấu `=` nào, vì lời giải của
+chúng CHÍNH LÀ đáp án ("814" · "362; 509; 740" · "gấp 10 lần"). Cắt máy kiểu gì
+cũng ra đáp án hoặc ra một mẩu vô nghĩa.
+
+Sửa tay thì sửa `data/goi_y_tay.json`, KHÔNG sửa `web/public/content` — bộ dựng
+khuôn chung ghi đè trọn tệp. Câu nào tệp tay chưa có thì vẫn rơi về hai tầng suy
+theo bài như cũ, nên thêm dần từng bài được.
 """
 import json, os, re, sys, collections
 
 GOC_KHO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 NOI = [('lop2', 'lop2'), ('lop3', 'lop3'), ('lop4', 'lop4')]
 DAI_NHAT = 110          # gợi ý dài hơn ngần này thì bé đọc gợi ý còn lâu hơn làm bài
+TEP_TAY = os.path.join(GOC_KHO, 'data', 'goi_y_tay.json')
+
+
+def nap_tay():
+    """Gợi ý viết tay, khoá theo `mã bài` → `mã câu` → [tầng 1, tầng 2]."""
+    if not os.path.exists(TEP_TAY):
+        return {}
+    b = json.load(open(TEP_TAY, encoding='utf-8'))
+    return {k: v for k, v in b.items() if not k.startswith('_')}
 
 
 def _gon(s, dai=DAI_NHAT):
@@ -104,6 +130,7 @@ def goi_y_cua_bai(b):
 def main(chi_soat=False):
     d = collections.Counter()
     vd = []
+    tay = nap_tay()
     for quyen, thu_muc in NOI:
         thu = os.path.join(GOC_KHO, 'web', 'public', 'content', thu_muc)
         for f in sorted(os.listdir(thu)):
@@ -113,14 +140,32 @@ def main(chi_soat=False):
             b = json.load(open(duong, encoding='utf-8'))
             gy = goi_y_cua_bai(b)
             if not gy:
-                d[f'{quyen}·bài KHÔNG dựng được gợi ý'] += 1
-                continue
+                d[f'{quyen}·bài KHÔNG suy được gợi ý theo bài'] += 1
+            cua_bai = tay.get(b['id']) or {}
             doi = False
             for ds in ((b.get('practice') or {}).get('pools') or {}).values():
                 for it in ds:
                     d[f'{quyen}·câu'] += 1
+                    # Thứ tự ưu tiên: TAY → đã có sẵn → suy theo bài.
+                    #
+                    # Gợi ý tay phải ĐÈ LÊN thứ đã có trong bản dựng, chứ không
+                    # phải "chỉ điền chỗ trống": lượt trước công cụ này đã gắn gợi
+                    # ý suy theo bài vào gần hết 984 câu, nên nếu chỉ điền chỗ
+                    # trống thì tệp tay viết bao nhiêu cũng KHÔNG BAO GIỜ vào được
+                    # mà chẳng có gì báo.
+                    rieng = cua_bai.get(it.get('id'))
+                    if rieng:
+                        it['hints'] = list(rieng)
+                        d[f'{quyen}·gợi ý TAY'] += 1
+                        d['tổng dòng gợi ý'] += len(rieng)
+                        doi = True
+                        if len(vd) < 4:
+                            vd.append((b['id'], it.get('text', '')[:52], rieng))
+                        continue
                     if it.get('hints'):
                         d[f'{quyen}·đã có sẵn'] += 1
+                        continue
+                    if not gy:
                         continue
                     dap = _dap_an(it)
                     # Gợi ý nào chứa NGUYÊN VĂN đáp án của chính câu ấy thì bỏ.
@@ -129,7 +174,7 @@ def main(chi_soat=False):
                     d[f'{quyen}·bỏ vì lộ đáp'] += len(gy) - len(an)
                     if an:
                         it['hints'] = an
-                        d[f'{quyen}·gắn gợi ý'] += 1
+                        d[f'{quyen}·suy theo bài'] += 1
                         d['tổng dòng gợi ý'] += len(an)
                         doi = True
                         if len(vd) < 4:

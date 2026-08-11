@@ -38,7 +38,7 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bài chặn kiểu n/12 (mẫu chứa n đứng im): kéo hai bờ về CÙNG MẪU 12: $\\frac{1}{3}$ < n/12 < $\\frac{3}{4}$ → $\\frac{4}{12}$ < n/12 < $\\frac{9}{12}$ → 4 < n < 9."
+    "text": "Bài chặn kiểu $\\frac{n}{12}$ (mẫu chứa n đứng im): kéo hai bờ về CÙNG MẪU 12: $\\frac{1}{3}$ < $\\frac{n}{12}$ < $\\frac{3}{4}$ → $\\frac{4}{12}$ < $\\frac{n}{12}$ < $\\frac{9}{12}$ → 4 < n < 9."
    },
    {
     "id": "K2",
@@ -46,7 +46,7 @@
    },
    {
     "id": "K3",
-    "text": "Bài chặn kiểu 8/n (tử chứa n đứng im): kéo hai bờ về CÙNG TỬ 8: $\\frac{1}{2}$ = $\\frac{8}{16}$; $\\frac{2}{3}$ = $\\frac{8}{12}$ → $\\frac{8}{16}$ < 8/n < $\\frac{8}{12}$. Trên sân cùng tử, phân số và MẪU chạy NGƯỢC chiều: viết riêng một dòng 12 < n < 16 → n là 13, 14 hoặc 15."
+    "text": "Bài chặn kiểu $\\frac{8}{n}$ (tử chứa n đứng im): kéo hai bờ về CÙNG TỬ 8: $\\frac{1}{2}$ = $\\frac{8}{16}$; $\\frac{2}{3}$ = $\\frac{8}{12}$ → $\\frac{8}{16}$ < $\\frac{8}{n}$ < $\\frac{8}{12}$. Trên sân cùng tử, phân số và MẪU chạy NGƯỢC chiều: viết riêng một dòng 12 < n < 16 → n là 13, 14 hoặc 15."
    },
    {
     "id": "K4",
@@ -58,13 +58,13 @@
    {
     "case": "sân cùng mẫu (ca bẫy bờ)",
     "problem": "Tìm tất cả các số tự nhiên n sao cho: $\\frac{1}{3}$ < n/$12 < 3$/4.",
-    "solution": "Chung sân mẫu 12: $\\frac{4}{12}$ < n/12 < $\\frac{9}{12}$ → 4 < n < 9. Bờ đứng ngoài: n là 5, 6, 7 hoặc 8 — bốn số.",
+    "solution": "Chung sân mẫu 12: $\\frac{4}{12}$ < $\\frac{n}{12}$ < $\\frac{9}{12}$ → 4 < n < 9. Bờ đứng ngoài: n là 5, 6, 7 hoặc 8 — bốn số.",
     "why": "Ca đề A câu 9 — trap lấy nhầm cả hai bờ."
    },
    {
     "case": "sân cùng tử (ca chạy ngược)",
-    "problem": "Tìm tất cả các số tự nhiên n sao cho 8/n lớn hơn $\\frac{1}{2}$ và bé hơn $\\frac{2}{3}$.",
-    "solution": "Chung sân tử 8: $\\frac{1}{2}$ = $\\frac{8}{16}$; $\\frac{2}{3}$ = $\\frac{8}{12}$ → $\\frac{8}{16}$ < 8/n < $\\frac{8}{12}$. Mẫu chạy ngược: 12 < n < 16 → n là 13, 14 hoặc 15. Thử mép: $\\frac{8}{13}$ < $\\frac{2}{3}$ ✓; $\\frac{8}{15}$ > $\\frac{1}{2}$ ✓.",
+    "problem": "Tìm tất cả các số tự nhiên n sao cho $\\frac{8}{n}$ lớn hơn $\\frac{1}{2}$ và bé hơn $\\frac{2}{3}$.",
+    "solution": "Chung sân tử 8: $\\frac{1}{2}$ = $\\frac{8}{16}$; $\\frac{2}{3}$ = $\\frac{8}{12}$ → $\\frac{8}{16}$ < $\\frac{8}{n}$ < $\\frac{8}{12}$. Mẫu chạy ngược: 12 < n < 16 → n là 13, 14 hoặc 15. Thử mép: $\\frac{8}{13}$ < $\\frac{2}{3}$ ✓; $\\frac{8}{15}$ > $\\frac{1}{2}$ ✓.",
     "why": "Ca đề A câu 11 — trap chặn xuôi chiều."
    },
    {
@@ -83,7 +83,7 @@
     "counterExample": "n = 9: $\\frac{9}{12}$ = $\\frac{3}{4}$, đề đòi BÉ hơn $\\frac{3}{4}$ — trượt."
    },
    {
-    "wrong": "Sân cùng tử mà chặn xuôi: từ $\\frac{8}{16}$ < 8/n < $\\frac{8}{12}$ chép luôn 16 < n < 12 (vô nghĩa) hoặc kết luận n giữa 16 và… hoang mang.",
+    "wrong": "Sân cùng tử mà chặn xuôi: từ $\\frac{8}{16}$ < $\\frac{8}{n}$ < $\\frac{8}{12}$ chép luôn 16 < n < 12 (vô nghĩa) hoặc kết luận n giữa 16 và… hoang mang.",
     "signal": "Bất đẳng thức mẫu viết xuôi theo thứ tự phân số.",
     "fix": "khắc: sân cùng tử bảng tỉ số NGƯỢC — phân số to thì mẫu bé; viết điều kiện mẫu RIÊNG MỘT DÒNG: 12 < n < 16.",
     "counterExample": "$\\frac{8}{13}$ với $\\frac{8}{15}$: mẫu 13 bé hơn mà phân số lớn hơn — bảng ngược sờ sờ."
@@ -139,7 +139,7 @@
      "K1",
      "K2"
     ],
-    "narration": "Soi dấu: bé hơn NGHIÊM — không có gạch ngang! Bờ $\\frac{4}{12}$ chính là $\\frac{1}{3}$: n bằng 4 thì n/12 BẰNG bờ chứ đâu LỚN HƠN — loại! n bằng 9 chạm bờ $\\frac{3}{4}$ — loại nốt! Bờ để tựa mắt, không để đứng vào: sân chỉ còn NĂM, SÁU, BẢY, TÁM — bốn cầu thủ hợp lệ.",
+    "narration": "Soi dấu: bé hơn NGHIÊM — không có gạch ngang! Bờ $\\frac{4}{12}$ chính là $\\frac{1}{3}$: n bằng 4 thì $\\frac{n}{12}$ BẰNG bờ chứ đâu LỚN HƠN — loại! n bằng 9 chạm bờ $\\frac{3}{4}$ — loại nốt! Bờ để tựa mắt, không để đứng vào: sân chỉ còn NĂM, SÁU, BẢY, TÁM — bốn cầu thủ hợp lệ.",
     "display": {
      "type": "fence_field_interactive",
      "spec": {
@@ -201,7 +201,7 @@
      "K3",
      "K4"
     ],
-    "narration": "Sân đặc biệt: 8/n giữa $\\frac{1}{2}$ và $\\frac{2}{3}$ — kéo về CÙNG TỬ 8: bờ $\\frac{8}{16}$ và $\\frac{8}{12}$. Trí Long chép xuôi \"16 bé hơn n bé hơn 12\"… vô nghĩa! Sân cùng tử bảng tỉ số NGƯỢC: phân số to thì mẫu BÉ — viết riêng một dòng: mười hai bé hơn n bé hơn mười sáu: n là 13, 14, 15! Thử mép: $\\frac{8}{13}$ chưa chạm $\\frac{2}{3}$, $\\frac{8}{15}$ vẫn hơn $\\frac{1}{2}$ — chuẩn. Bài cụm sư phụ cũng vậy: chặn cụm (n + 3) từ 9 đến 13 rồi lùi về n từ 6 đến 10.",
+    "narration": "Sân đặc biệt: $\\frac{8}{n}$ giữa $\\frac{1}{2}$ và $\\frac{2}{3}$ — kéo về CÙNG TỬ 8: bờ $\\frac{8}{16}$ và $\\frac{8}{12}$. Trí Long chép xuôi \"16 bé hơn n bé hơn 12\"… vô nghĩa! Sân cùng tử bảng tỉ số NGƯỢC: phân số to thì mẫu BÉ — viết riêng một dòng: mười hai bé hơn n bé hơn mười sáu: n là 13, 14, 15! Thử mép: $\\frac{8}{13}$ chưa chạm $\\frac{2}{3}$, $\\frac{8}{15}$ vẫn hơn $\\frac{1}{2}$ — chuẩn. Bài cụm sư phụ cũng vậy: chặn cụm (n + 3) từ 9 đến 13 rồi lùi về n từ 6 đến 10.",
     "display": {
      "type": "step_by_step",
      "lines": [
@@ -255,7 +255,7 @@
     "derivedFromScreen": "S1",
     "transitionOut": "wipe trái",
     "voiceover": "Trận chặn mở màn: một phần ba bé hơn en phần mười hai bé hơn ba phần tư. Trí Long quy sân: bốn phần mười hai và chín phần mười hai — rồi hớn hở điểm danh bốn, năm, sáu, bảy, tám, chín — sáu cầu thủ! Trọng tài tuýt còi: hai bạn bốn và chín đang ĐỨNG TRÊN HÀNG RÀO kìa!",
-    "screenText": "$\\frac{1}{3}$ < n/12 < $\\frac{3}{4}$ → {4,…,9}??",
+    "screenText": "$\\frac{1}{3}$ < $\\frac{n}{12}$ < $\\frac{3}{4}$ → {4,…,9}??",
     "visual": "Sân bóng với hai hàng rào 4/12 · 9/12; hai cầu thủ số 4 và 9 vắt vẻo trên rào; còi trọng tài đỏ #C0392B.",
     "assets": [],
     "duration": 22
@@ -277,7 +277,7 @@
     "derivedFromScreen": "S3",
     "transitionOut": "cắt thẳng",
     "voiceover": "Sân đặc biệt: tám phần en — kéo về CÙNG TỬ tám: bờ tám phần mười sáu và tám phần mười hai. Trí Long chép xuôi mười sáu bé hơn en bé hơn mười hai… vô nghĩa! Sân cùng tử bảng tỉ số NGƯỢC: phân số to thì mẫu BÉ — viết riêng một dòng: mười hai bé hơn en bé hơn mười sáu: MƯỜI BA, MƯỜI BỐN, MƯỜI LĂM! Thử mép — chuẩn!",
-    "screenText": "$\\frac{8}{16}$ < 8/n < $\\frac{8}{12}$ → NGƯỢC: 12 < n < 16 → {13;14;15}",
+    "screenText": "$\\frac{8}{16}$ < $\\frac{8}{n}$ < $\\frac{8}{12}$ → NGƯỢC: 12 < n < 16 → {13;14;15}",
     "visual": "Bảng tỉ số điện tử hiển thị ngược chiều với mũi tên đảo; dòng '16 < n < 12' gạch đỏ; dòng riêng '12 < n < 16' đóng khung vàng.",
     "assets": [],
     "duration": 26
@@ -308,10 +308,10 @@
  },
  "workedExample": {
   "title": "Hai sân một trận",
-  "problem": "(a) Tìm mọi n: $\\frac{1}{3}$ < n/$12 < 3$/4. (b) Tìm mọi n: 8/n lớn hơn $\\frac{1}{2}$ và bé hơn $\\frac{2}{3}$.",
+  "problem": "(a) Tìm mọi n: $\\frac{1}{3}$ < n/$12 < 3$/4. (b) Tìm mọi n: $\\frac{8}{n}$ lớn hơn $\\frac{1}{2}$ và bé hơn $\\frac{2}{3}$.",
   "steps": [
    {
-    "show": "Bước 1 — Câu (a): chung sân mẫu 12: $\\frac{4}{12}$ < n/12 < $\\frac{9}{12}$ → 4 < n < 9 → {5; 6; 7; 8} (bờ loại!).",
+    "show": "Bước 1 — Câu (a): chung sân mẫu 12: $\\frac{4}{12}$ < $\\frac{n}{12}$ < $\\frac{9}{12}$ → 4 < n < 9 → {5; 6; 7; 8} (bờ loại!).",
     "askBefore": {
      "format": "mcq",
      "text": "n = 4 có được lấy không?",
@@ -328,7 +328,7 @@
     "phan": "phantich"
    },
    {
-    "show": "Bước 2 — Câu (b): chung sân tử 8: $\\frac{8}{16}$ < 8/n < $\\frac{8}{12}$.",
+    "show": "Bước 2 — Câu (b): chung sân tử 8: $\\frac{8}{16}$ < $\\frac{8}{n}$ < $\\frac{8}{12}$.",
     "phan": "phantich"
    },
    {
@@ -394,7 +394,7 @@
      "id": "P2",
      "format": "lst",
      "sourceItem": "ITEM:KSN5Q1.B19.LT8",
-     "text": "Tìm tất cả các số tự nhiên n sao cho 8/n lớn hơn $\\frac{1}{2}$ và bé hơn $\\frac{2}{3}$. (Cẩn thận: sân cùng tử — mẫu chạy ngược!)",
+     "text": "Tìm tất cả các số tự nhiên n sao cho $\\frac{8}{n}$ lớn hơn $\\frac{1}{2}$ và bé hơn $\\frac{2}{3}$. (Cẩn thận: sân cùng tử — mẫu chạy ngược!)",
      "answerKey": {
       "values": [
        13,
@@ -522,7 +522,7 @@
   "flashcards": [
    {
     "front": "Bài chặn hai bờ — hai luật sinh tử?",
-    "back": "(1) Dấu < nghiêm: HAI BỜ ĐỨNG NGOÀI (4 < n < 9 → {5;6;7;8}). (2) SÂN CÙNG TỬ: phân số và mẫu chạy NGƯỢC — viết điều kiện mẫu riêng một dòng ($\\frac{8}{16}$ < 8/n < $\\frac{8}{12}$ → 12 < n < 16 → {13;14;15}). Chốt bằng THỬ MÉP."
+    "back": "(1) Dấu < nghiêm: HAI BỜ ĐỨNG NGOÀI (4 < n < 9 → {5;6;7;8}). (2) SÂN CÙNG TỬ: phân số và mẫu chạy NGƯỢC — viết điều kiện mẫu riêng một dòng ($\\frac{8}{16}$ < $\\frac{8}{n}$ < $\\frac{8}{12}$ → 12 < n < 16 → {13;14;15}). Chốt bằng THỬ MÉP."
    }
   ],
   "schedule": [

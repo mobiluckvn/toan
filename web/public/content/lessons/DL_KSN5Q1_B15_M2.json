@@ -1,5 +1,5 @@
 {
- "title": "Hai họ tích ($1 - 1$/n) và ($1 + 1$/n): soi dấu trước — sập chuyền sau",
+ "title": "Hai họ tích: dấu trừ và dấu cộng",
  "grade": 5,
  "durationMinutes": 9,
  "skills": {
@@ -31,7 +31,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Con chinh phục hai họ tích nổi tiếng: họ dấu TRỪ (1 − $\\frac{1}{2}$)…($1 - 1$/n) = 1/n và họ dấu CỘNG (1 + $\\frac{1}{2}$)…($1 + 1$/n) = (n + 1)/2 — SOI DẤU trước khi sập chuyền, và TIN kết quả nhỏ vì nhân số bé hơn 1 thì tích teo dần.",
+  "text": "Con chinh phục hai họ tích nổi tiếng: họ dấu TRỪ (1 − $\\frac{1}{2}$)…($1 - 1$/n) = $\\frac{1}{n}$ và họ dấu CỘNG (1 + $\\frac{1}{2}$)…($1 + 1$/n) = (n + 1)/2 — SOI DẤU trước khi sập chuyền, và TIN kết quả nhỏ vì nhân số bé hơn 1 thì tích teo dần.",
   "passRule": "assessment đúng từ 2 trên 3 câu, bắt buộc đúng A1 và A2 (hai bẫy của bài)",
   "kidText": "Con tính được tích dài toàn những ngoặc dạng 1 trừ một phân số — soi dấu trước đã. Nhân toàn số bé hơn 1 thì kết quả teo dần, đừng ngờ."
  },
@@ -43,7 +43,7 @@
    },
    {
     "id": "K2",
-    "text": "Họ dấu TRỪ: (1 − $\\frac{1}{2}$)(1 − $\\frac{1}{3}$)…($1 - 1$/n) = $\\frac{1}{2}$ × $\\frac{2}{3}$ × … × (n−1)/n — dây chuyền liền: còn 1/n. Kết quả NHỎ kinh ngạc nhưng đúng."
+    "text": "Họ dấu TRỪ: (1 − $\\frac{1}{2}$)(1 − $\\frac{1}{3}$)…($1 - 1$/n) = $\\frac{1}{2}$ × $\\frac{2}{3}$ × … × (n−1)/n — dây chuyền liền: còn $\\frac{1}{n}$. Kết quả NHỎ kinh ngạc nhưng đúng."
    },
    {
     "id": "K3",
@@ -586,8 +586,8 @@
  "spacedReview": {
   "flashcards": [
    {
-    "front": "Hai họ tích (1 ∓ 1/n) — công thức và cách phân biệt?",
-    "back": "SOI DẤU trước: họ TRỪ → $\\frac{1}{2}$ × $\\frac{2}{3}$ × … = 1/n (teo); họ CỘNG → $\\frac{3}{2}$ × $\\frac{4}{3}$ × … = (n + 1)/2 (nở, sống sót đổi vai). Tin kết quả nhỏ: nhân số bé hơn 1 thì tích teo dần — nhỏ không có gì lạ."
+    "front": "Hai họ tích (1 ∓ $\\frac{1}{n}$) — công thức và cách phân biệt?",
+    "back": "SOI DẤU trước: họ TRỪ → $\\frac{1}{2}$ × $\\frac{2}{3}$ × … = $\\frac{1}{n}$ (teo); họ CỘNG → $\\frac{3}{2}$ × $\\frac{4}{3}$ × … = (n + 1)/2 (nở, sống sót đổi vai). Tin kết quả nhỏ: nhân số bé hơn 1 thì tích teo dần — nhỏ không có gì lạ."
    }
   ],
   "schedule": [
@@ -597,7 +597,7 @@
   ]
  },
  "parentNote": {
-  "onComplete": "Hôm nay con chinh phục hai họ tích nổi tiếng: họ trừ ra 1/n, họ cộng ra (n+1)/2 — và học tin kết quả nhỏ bằng lý lẽ. Con đạt {score}/3, {trapResult} câu bẫy.",
+  "onComplete": "Hôm nay con chinh phục hai họ tích nổi tiếng: họ trừ ra $\\frac{1}{n}$, họ cộng ra (n+1)/2 — và học tin kết quả nhỏ bằng lý lẽ. Con đạt {score}/3, {trapResult} câu bẫy.",
   "homeActivity": "Đố tráo dấu: viết (1 − $\\frac{1}{2}$)(1 − $\\frac{1}{3}$) rồi lén đổi thành dấu cộng — con phải phát hiện và nói 'kết cục đổi hẳn: $\\frac{1}{3}$ thành 2' là đạt.",
   "watchFor": "Nếu con hoảng vì đáp quá nhỏ và đòi nhân tay lại — nhắc lý lẽ chiếc kéo (S3): nhân số bé hơn 1 thì teo là đúng."
  },
@@ -717,5 +717,6 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
- }
+ },
+ "titleDay": "Hai họ tích ($1 - 1$/n) và ($1 + 1$/n): soi dấu trước — sập chuyền sau"
 }

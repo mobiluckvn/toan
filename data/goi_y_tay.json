@@ -1,0 +1,4170 @@
+{
+ "_doc": "GỢI Ý VIẾT TAY, RIÊNG TỪNG CÂU — nguồn gốc cho lớp 2·3·4.",
+ "_luat": [
+  "Tầng 1 GỌI TÊN CẤU TRÚC: câu này thuộc dạng nào, phải nhìn ra cái gì.",
+  "Tầng 2 chỉ NƯỚC ĐI ĐẦU trên chính con số của câu ấy, DỪNG TRƯỚC KẾT QUẢ.",
+  "Rất ngắn — 5 đến 12 chữ. Dài hơn đề bài thì bé đọc gợi ý còn lâu hơn tự làm.",
+  "KHÔNG BAO GIỜ nói ra đáp số, kể cả gián tiếp. Cổng goi_y.test.mjs canh việc này.",
+  "Không cắt giữa một công thức: dấu $ phải chẵn."
+ ],
+ "_vi_sao": "Máy không suy được gợi ý theo câu: 274/984 câu có lời giải KHÔNG chứa dấu = nào, vì lời giải của chúng CHÍNH LÀ đáp án ('814', '362; 509; 740'). Cắt máy kiểu gì cũng ra đáp án hoặc ra một mẩu vô nghĩa. Nên phải viết tay, theo chuẩn gợi ý người soạn đã viết cho lớp 5.",
+ "_cach_dung": "Sửa tệp NÀY, không sửa web/public/content — bộ dựng khuôn chung ghi đè trọn tệp. Chạy lại: python3 tools/goi_y.py",
+ "DL:KSN2.B01": {
+  "C1": [
+   "Ba phòng, đọc từ trái sang: trăm — chục — đơn vị.",
+   "Chữ số đứng đầu đang ở phòng nào?"
+  ],
+  "C2": [
+   "Mở từng cửa phòng rồi cộng lại.",
+   "Phòng nào trống thì không viết vào tổng."
+  ],
+  "C3": [
+   "Cùng một thẻ, khác phòng thì khác giá.",
+   "Hỏi thẻ 6 đang ở phòng nào đã."
+  ],
+  "C4": [
+   "Xếp đúng thứ tự phòng: trăm trước, đơn vị sau.",
+   "Đề đã đọc sẵn từng phòng cho con rồi."
+  ],
+  "C5": [
+   "Ngược của tách: dồn ba phòng lại thành một số.",
+   "Đề thiếu phòng nào thì phòng ấy điền số 0."
+  ],
+  "C6": [
+   "So phòng trăm trước, hòa mới so tiếp phòng chục.",
+   "Hai chữ số 9 ở cuối không cứu nổi phòng trăm thua."
+  ],
+  "C7": [
+   "Bé nhất thì phòng trăm phải nhỏ nhất mà vẫn khác 0.",
+   "Lớn nhất thì cả ba phòng đều chật kín."
+  ],
+  "C8": [
+   "Điền lần lượt từng phòng theo đúng lời đề.",
+   "Chữ số bé nhất có thể là chữ số nào?"
+  ],
+  "C9": [
+   "Nhìn tổng đề cho: mỗi phòng lộ ra một chữ số.",
+   "Anh em sinh ba là ba chữ số giống hệt nhau."
+  ]
+ },
+ "DL:KSN2.B02": {
+  "C1": [
+   "Thêm 0 là cả số dọn sang trái một phòng.",
+   "Chép lại số cũ rồi đặt số 0 vào cuối."
+  ],
+  "C2": [
+   "Xóa 0 tận cùng là dọn ngược về bên phải một phòng.",
+   "Chỉ được xóa số 0 ở cuối, không xóa số 0 ở giữa."
+  ],
+  "C3": [
+   "Mỗi hạt đơn vị lớn lên thành một thanh chục.",
+   "Dịch sang trái một phòng thì to lên gấp mấy?"
+  ],
+  "C4": [
+   "Một chục là một thanh mười hạt.",
+   "Đọc xuôi rồi đọc ngược, vẫn một ý ấy."
+  ],
+  "C5": [
+   "Đắt lên = giá viết nhầm trừ giá đúng.",
+   "Hai con số đề cho sẵn, chỉ việc đặt phép trừ."
+  ],
+  "C6": [
+   "Viết ra số mới trước đã, rồi mới trừ.",
+   "Hơn bao nhiêu = số mới trừ số cũ."
+  ],
+  "C7": [
+   "Đi ngược: xóa 0 còn 32 thì lúc đầu phải thêm 0 vào 32.",
+   "Có số cũ rồi mới trừ được phần hơn."
+  ],
+  "C8": [
+   "Vẽ số bé một phần thì số lớn mười phần.",
+   "Phần hơn là chín phần — mà đề cho phần hơn rồi."
+  ],
+  "C9": [
+   "Hỏi từng số: số 0 ấy nằm ở cuối hay ở giữa?",
+   "Số 0 nằm giữa đang giữ chỗ cho một phòng trống."
+  ],
+  "C10": [
+   "Vẫn dịch sang trái một phòng, nhưng phòng đơn vị không rỗng.",
+   "So số mới với đúng mười lần số cũ xem lệch mấy."
+  ]
+ },
+ "DL:KSN2.B03": {
+  "C1": [
+   "Đổi chỗ là hai thẻ đổi phòng cho nhau.",
+   "Thẻ 0 mà leo lên đứng đầu thì có còn là số hai chữ số?"
+  ],
+  "C2": [
+   "Thẻ to nằm ở phòng chục của số nào thì số ấy thắng.",
+   "So phòng chục trước, đừng nhìn phòng đơn vị."
+  ],
+  "C3": [
+   "Viết số mới ra đã rồi hãy so.",
+   "Chữ số nào đang leo lên phòng chục?"
+  ],
+  "C4": [
+   "Đổi chỗ xong mới đặt phép trừ.",
+   "Hơn bao nhiêu = số mới trừ số cũ."
+  ],
+  "C5": [
+   "Lần này thẻ to tụt xuống — số mới bé đi.",
+   "Kém bao nhiêu = số cũ trừ số mới."
+  ],
+  "C6": [
+   "Mỗi cặp lấy số lớn trừ số bé.",
+   "Ba hiệu ra rồi thì đem soi bảng nhân 9."
+  ],
+  "C7": [
+   "Đề mách sẵn: chữ số đơn vị hơn chữ số chục 3.",
+   "Thử số nhỏ nhất theo mẹo ấy rồi trừ để kiểm."
+  ],
+  "C8": [
+   "Đổi chỗ mà số đứng im thì hai thẻ phải thế nào?",
+   "Hai chữ số giống nhau, cộng lại bằng 8."
+  ]
+ },
+ "DL:KSN2.B04": {
+  "C1": [
+   "Lớn nhất thì thẻ to giành phòng bên trái.",
+   "Bé nhất thì làm ngược lại."
+  ],
+  "C2": [
+   "Xếp ba thẻ từ to xuống bé.",
+   "Thẻ to nhất vào phòng trăm trước đã."
+  ],
+  "C3": [
+   "Xếp ba thẻ từ bé lên to.",
+   "Không có thẻ 0 nên cứ xếp thẳng."
+  ],
+  "C4": [
+   "Thẻ 0 nhút nhát, không dám đứng đầu hàng.",
+   "Bé nhất: thẻ bé nhất KHÁC 0 đứng đầu, rồi mới tới thẻ 0."
+  ],
+  "C5": [
+   "Hai thẻ giống nhau thì chiến thuật không đổi.",
+   "Vẫn là to-xuống-bé và bé-lên-to."
+  ],
+  "C6": [
+   "Lập hai số trước, đặt phép trừ sau.",
+   "Không có thẻ 0 nên hai số lập thẳng."
+  ],
+  "C7": [
+   "Hỏi thẻ 9 đứng được ở mấy chỗ.",
+   "Hai thẻ 4 giống nhau nên đổi chỗ chúng không ra số mới."
+  ],
+  "C8": [
+   "Số lớn nhất vốn đã xếp từ to xuống bé — đọc ngay ra ba thẻ.",
+   "Có ba thẻ rồi thì đảo lại mà lấy số bé nhất."
+  ]
+ },
+ "DL:KSN2.B05": {
+  "C1": [
+   "Cộng hai chữ số của từng số, đừng cộng cả số.",
+   "Số có 0 ở cuối thì cộng thêm 0."
+  ],
+  "C2": [
+   "Cộng hai thẻ lại là ra tổng.",
+   "Đổi chỗ chỉ đổi phòng ở, hai thẻ vẫn là hai thẻ ấy."
+  ],
+  "C3": [
+   "Chọn hai chữ số cộng lại bằng 3 rồi ghép thành số.",
+   "Chữ số hàng chục không được là 0."
+  ],
+  "C4": [
+   "Đi tuần tra có thứ tự: cho hàng chục tăng dần từng nấc.",
+   "Dừng khi hàng đơn vị không còn chữ số nào điền được."
+  ],
+  "C5": [
+   "Chục chạy từ 1 lên, đơn vị tự tụt theo.",
+   "Mỗi nấc chục hỏi một câu: đơn vị phải là mấy?"
+  ],
+  "C6": [
+   "Vẫn tuần tra từ nấc chục bé nhất.",
+   "Chục chỉ đi được vài nấc là hết đường."
+  ],
+  "C7": [
+   "Liệt kê trường hợp tổng bằng 7 trước, đếm xem được mấy số.",
+   "Rồi so số đếm được với chính con số tổng."
+  ],
+  "C8": [
+   "Liệt kê hết số có tổng bằng 5 trước đã.",
+   "Rồi gạch số nào có chục không lớn hơn đơn vị."
+  ]
+ },
+ "DL:KSN2.B06": {
+  "C1": [
+   "Đếm cả ngôi nhà đầu tiên nữa.",
+   "Trừ nhau rồi thêm 1."
+  ],
+  "C2": [
+   "Phép trừ chỉ đếm bước nhảy, còn sót nhà đầu.",
+   "Lấy số cuối trừ số đầu rồi thêm 1."
+  ],
+  "C3": [
+   "Dãy nhảy cóc — mỗi bước thêm mấy?",
+   "Cứ cộng thêm 2 vào số đứng ngay trước."
+  ],
+  "C4": [
+   "Đây là bảng nhân 5 đang đi bộ.",
+   "Mỗi bước thêm 5."
+  ],
+  "C5": [
+   "Vẫn mẹo trừ rồi thêm 1.",
+   "Hai số đề cho đem trừ nhau trước đã."
+  ],
+  "C6": [
+   "Đếm trang cũng là đếm nhà.",
+   "Trang đầu tiên cũng phải tính một."
+  ],
+  "C7": [
+   "Nhảy cóc theo bảng nhân 2, đừng trừ thẳng.",
+   "Đếm xem đi hết mấy bước thì tới nơi."
+  ],
+  "C8": [
+   "Nhảy cóc theo bảng nhân 5.",
+   "Đếm số bước chân, mỗi bước một cột đèn."
+  ],
+  "C9": [
+   "Chia ra từng chục cho dễ đếm.",
+   "Một chục có mấy số lẻ? Ba chục thì sao?"
+  ],
+  "C10": [
+   "Đừng tin ngay — nhảy cóc đếm lại xem.",
+   "Cách chia đôi chỉ đúng khi dãy chẵn bắt đầu từ 2."
+  ]
+ },
+ "DL:KSN2.B07": {
+  "C1": [
+   "Cánh quân ĐUÔI: chữ số 5 đứng ở cuối.",
+   "Mỗi chục góp đúng một bạn đuôi 5."
+  ],
+  "C2": [
+   "Cánh quân PHỐ: chữ số 5 đứng trước.",
+   "Cả một phố liền nhau, chỉ đổi dần chữ số cuối."
+  ],
+  "C3": [
+   "Soi từng số, nhìn cả hai phòng.",
+   "Có một số chỉ chứa chữ số 3 và một chữ số 0."
+  ],
+  "C4": [
+   "Mỗi chục góp đúng một bạn đuôi 3.",
+   "Viết từ 3 rồi cứ cộng thêm một chục."
+  ],
+  "C5": [
+   "Cả phố liền nhau, từ số đầu phố tới số cuối phố.",
+   "Dùng lại mẹo trừ rồi thêm 1."
+  ],
+  "C6": [
+   "Cộng hai cánh quân: đuôi 3 và phố 30.",
+   "Có một bạn đứng ở cả hai cánh — bắt một lần thôi."
+  ],
+  "C7": [
+   "Vẫn hai cánh: đuôi 9 và phố 90.",
+   "Bạn đứng ở cả hai cánh lần này là ai?"
+  ],
+  "C8": [
+   "Đếm phần còn lại: lấy tất cả trừ đi phần có chứa.",
+   "Số đếm được ở câu ngay trước dùng lại được."
+  ],
+  "C9": [
+   "Tìm số có chữ số 5 ở cả hai phòng.",
+   "Chính bạn ấy bị đếm hai lần nên phải bớt đi một."
+  ]
+ },
+ "DL:KSN2.B08": {
+  "C1": [
+   "Hỏi viết trang ấy phải dán mấy tấm chữ số.",
+   "Trang một chữ số và trang hai chữ số là hai đoàn tàu khác nhau."
+  ],
+  "C2": [
+   "Đoàn tàu một toa: mỗi trang đúng một chữ số.",
+   "Đếm số trang là ra luôn số chữ số."
+  ],
+  "C3": [
+   "Đếm số trang trước đã, đừng vội tính chữ số.",
+   "Mỗi trang hai chữ số nên cộng chính nó thêm một lần."
+  ],
+  "C4": [
+   "Chia làm hai đoàn tàu: từ 1 đến 9, và từ 10 trở đi.",
+   "Đoàn hai toa có mấy trang? Trừ rồi thêm 1."
+  ],
+  "C5": [
+   "Vẫn hai đoàn tàu, đếm riêng từng đoàn rồi cộng.",
+   "Đoàn hai toa chạy từ trang 10 — trừ rồi thêm 1."
+  ],
+  "C6": [
+   "Hai đoàn tàu như cũ.",
+   "Đoàn hai toa bắt đầu từ trang 10, có mấy trang?"
+  ],
+  "C7": [
+   "Hai đoàn tàu, cẩn thận đoàn dài.",
+   "Từ trang 10 trở đi: trừ rồi thêm 1 mới ra số trang."
+  ],
+  "C8": [
+   "Bài ngược — dán hết đoàn một toa trước, xem còn dư mấy tấm.",
+   "Số tấm dư có đủ cho một trang hai chữ số không?"
+  ]
+ },
+ "DL:KSN2.B09": {
+  "C1": [
+   "Lấy toa sau trừ toa trước.",
+   "Thử thêm một cặp nữa xem nhịp có đều không."
+  ],
+  "C2": [
+   "Tìm nhịp rồi cứ cộng nhịp mà đi tiếp.",
+   "Đoàn tàu này chính là bảng nhân 3."
+  ],
+  "C3": [
+   "Toa sau trừ toa trước là ra nhịp.",
+   "Bảng nhân 4 đi tiếp hai bước nữa."
+  ],
+  "C4": [
+   "Toa mờ nằm giữa — tìm nhịp từ hai toa còn rõ đứng cạnh nhau.",
+   "Có nhịp rồi thì lùi một bước và tiến một bước."
+  ],
+  "C5": [
+   "Hai toa đầu còn rõ, lấy chúng mà tìm nhịp.",
+   "Điền chỗ mờ ở giữa trước, chỗ mờ cuối sau."
+  ],
+  "C6": [
+   "Nhảy cóc mà đếm, đừng chia thẳng.",
+   "Nghĩ tới bảng nhân 2 đi được mấy bước."
+  ],
+  "C7": [
+   "Viết dần từng toa ra giấy.",
+   "Toa xuất phát đã là một toa rồi — đếm cho đúng."
+  ],
+  "C8": [
+   "Đừng đoán theo bảng nhân — tàu này xuất phát từ ga 1.",
+   "Nhảy cóc thật đến khi vượt qua ga cần hỏi."
+  ],
+  "C9": [
+   "Nhớ bí mật tận cùng của bảng nhân 5.",
+   "Ga 52 tận cùng là chữ số nào?"
+  ]
+ },
+ "DL:KSN2.B10": {
+  "C1": [
+   "Mỗi số bằng số trước cộng chính nó.",
+   "Lấy số cuối cộng với chính nó."
+  ],
+  "C2": [
+   "Viết các bước nhảy ra giấy đã.",
+   "Bước sau dài hơn bước trước đúng 1."
+  ],
+  "C3": [
+   "Viết ba bước nhảy ra rồi so với nhau.",
+   "Nhịp không đều thì phải đổi sang chìa khóa khác."
+  ],
+  "C4": [
+   "Các bước nhảy là 1, 2, 3, 4 — dãy bậc thang.",
+   "Bước kế dài 5, bước sau nữa dài 6."
+  ],
+  "C5": [
+   "Bước nhảy không đều — thử chìa khóa gấp đôi.",
+   "Mỗi số cộng chính nó là ra số sau."
+  ],
+  "C6": [
+   "Viết bước nhảy của cả hai dãy ra rồi so.",
+   "Quy luật phải đúng với TẤT CẢ các số, không chỉ hai số cuối."
+  ],
+  "C7": [
+   "Bước nhảy đầu là 1 rồi 2 — bậc thang.",
+   "Bước kế dài 3; điền xong nhớ kiểm lại với số đứng sau."
+  ],
+  "C8": [
+   "Mỗi số bằng tổng hai số liền trước nó.",
+   "Cộng hai số cuối cùng đang có."
+  ],
+  "C9": [
+   "Chọn một chìa khóa con đã biết: nhịp đều, bậc thang hay gấp đôi.",
+   "Viết 5 số rồi tự kiểm quy luật có đúng với cả 5 số không."
+  ]
+ },
+ "DL:KSN2.B11": {
+  "C1": [
+   "Chỉ nhìn chữ số tận cùng thôi.",
+   "Tận cùng 0, 2, 4, 6, 8 là số chẵn."
+  ],
+  "C2": [
+   "Số to cỡ nào cũng chỉ soi cái đuôi.",
+   "Không cần chia thử một lần nào."
+  ],
+  "C3": [
+   "Hai số chẵn liền nhau cách nhau mấy?",
+   "Cứ cộng thêm 2, và đếm cả số đề đã cho."
+  ],
+  "C4": [
+   "Viết kết quả bảng nhân 2 ra rồi chỉ nhìn chữ số cuối.",
+   "Chúng có phải đều là chữ số chẵn không?"
+  ],
+  "C5": [
+   "Nhìn đuôi hai số hạng, chưa cần tính.",
+   "Hai viên lẻ loi gặp nhau thì bắt cặp thành chẵn."
+  ],
+  "C6": [
+   "Kết quả bảng nhân 5 chỉ có hai kiểu đuôi.",
+   "Đó là đuôi 0 và đuôi 5."
+  ],
+  "C7": [
+   "Đi từ số lớn nhất có hai chữ số, lùi dần tới số chẵn đầu tiên.",
+   "Rồi đi từ số bé nhất có ba chữ số, tiến tới số lẻ đầu tiên."
+  ],
+  "C8": [
+   "Chỉ cần đếm các số LẺ có trong tổng.",
+   "Chúng bắt cặp với nhau — có bạn nào bị ế cặp không?"
+  ],
+  "C9": [
+   "Thử vài phép tính đã rồi hãy tin.",
+   "Bảng 5 tận cùng 0 hoặc 5, mà bảng 2 thì toàn số chẵn."
+  ]
+ },
+ "DL:KSN2.B12": {
+  "C1": [
+   "Chỉ nhìn đuôi: hai đuôi cộng lại thành tròn chục.",
+   "Đuôi 7 thì tìm bạn đuôi mấy?"
+  ],
+  "C2": [
+   "Dòm đuôi tìm đôi bạn trước, đừng cộng từ trái sang.",
+   "Số nào cộng với 18 thì tròn chục?"
+  ],
+  "C3": [
+   "Đuôi 6 đi với đuôi 4.",
+   "Ghép cặp ấy trước, bạn còn lại cộng sau."
+  ],
+  "C4": [
+   "Bốn số này bắt được đúng hai cặp.",
+   "Đuôi 5 đi với đuôi 5; đuôi 7 đi với đuôi 3."
+  ],
+  "C5": [
+   "Dòm đuôi: 8 đi với 2, còn 6 đi với 4.",
+   "Kéo hai bạn của mỗi cặp về đứng cạnh nhau."
+  ],
+  "C6": [
+   "Có một bạn đã tròn chục sẵn — cứ để bạn ấy đứng chờ.",
+   "Đuôi 9 đi với đuôi 1; đuôi 4 đi với đuôi 6."
+  ],
+  "C7": [
+   "Hai khay cùng có 4 hàng — đẩy sát vào nhau.",
+   "Số hàng giữ nguyên, số viên mỗi hàng thì cộng lại."
+  ],
+  "C8": [
+   "Ghép đôi từ hai đầu vào giữa.",
+   "Có một bạn đứng giữa lẻ cặp — cộng riêng bạn ấy."
+  ],
+  "C9": [
+   "Ba khay cùng có 2 hàng — ghép cả ba.",
+   "Giữ nguyên số hàng, cộng số viên mỗi hàng lại."
+  ]
+ },
+ "DL:KSN2.B13": {
+  "C1": [
+   "Tính từng cặp rồi đặt cạnh nhau mà nhìn.",
+   "Cặp nào cũng ra cùng một số phải không?"
+  ],
+  "C2": [
+   "Mười số bắt tay từng đôi một.",
+   "Mỗi cặp lấy đi hai bạn."
+  ],
+  "C3": [
+   "Bắc cầu vồng nối số đầu với số cuối.",
+   "Sáu số thì được ba cặp, cặp nào cũng bằng nhau."
+  ],
+  "C4": [
+   "Năm cặp, cặp nào cũng chung một tổng.",
+   "Cộng dồn năm lần tổng ấy."
+  ],
+  "C5": [
+   "Không bắt đầu từ 1 vẫn bắc cầu vồng được.",
+   "Cặp đầu - cuối là 3 với 8."
+  ],
+  "C6": [
+   "Dãy nhảy cóc vẫn bắc cầu vồng được.",
+   "Số lượng lẻ nên có một bạn đứng giữa — cộng riêng."
+  ],
+  "C7": [
+   "Chín số: bốn cặp và một bạn đứng giữa.",
+   "Su Kem quên đúng bạn đứng giữa đấy."
+  ],
+  "C8": [
+   "Ghép cặp đầu - cuối như cũ.",
+   "Đếm xem mười số thì được mấy cặp."
+  ]
+ },
+ "DL:KSN2.B14": {
+  "C1": [
+   "Máy cộng thì chạy ngược bằng máy trừ.",
+   "Lấy kết quả trừ đi số đã cộng vào."
+  ],
+  "C2": [
+   "Máy trừ thì chạy ngược bằng máy cộng.",
+   "Lấy kết quả cộng lại số đã bị lấy đi."
+  ],
+  "C3": [
+   "Máy nhân có bạn ngược là máy chia.",
+   "Lấy kết quả chia cho số đã nhân."
+  ],
+  "C4": [
+   "Ca đặc biệt: số bí mật chính là phần bị lấy đi.",
+   "Từ số đầu lấy đi bao nhiêu thì còn lại số cuối?"
+  ],
+  "C5": [
+   "Máy chia chạy ngược bằng máy nhân.",
+   "Lấy kết quả nhân với số đã chia."
+  ],
+  "C6": [
+   "Ca đặc biệt: số bí mật lần này là số chia.",
+   "Thử lấy số đầu chia cho kết quả xem."
+  ],
+  "C7": [
+   "Viết đề thành ▢ + 8 rồi cho chạy ngược.",
+   "Tìm xong nhớ thử lại theo chiều xuôi."
+  ],
+  "C8": [
+   "Máy nào vào SAU thì gỡ TRƯỚC.",
+   "Chạy ngược máy nhân trước, rồi mới tới máy cộng."
+  ],
+  "C9": [
+   "Dò bảng cửu chương xem bảng nào chứa số ấy.",
+   "Tìm dòng mà số nhân và số bị nhân giống hệt nhau."
+  ]
+ },
+ "DL:KSN2.B15": {
+  "C1": [
+   "Lần theo bảng nhân 2 tìm trạm dừng gần nhất.",
+   "Dừng đúng khít thì thừa mấy viên?"
+  ],
+  "C2": [
+   "Trạm gần nhất trong bảng nhân 2 mà không vượt quá số kẹo.",
+   "Số thừa = số kẹo trừ đi trạm dừng."
+  ],
+  "C3": [
+   "Vẽ 4 vòng tròn rồi phát theo từng vòng.",
+   "Lần bảng nhân 4 tới trạm gần nhất không vượt quá."
+  ],
+  "C4": [
+   "Lần bảng nhân 4 tìm trạm dừng.",
+   "Soi luật vàng: số thừa phải bé hơn số bạn."
+  ],
+  "C5": [
+   "Lần bảng nhân 5 xem có trạm nào đúng khít không.",
+   "Đúng khít, không thừa viên nào thì gọi là gì?"
+  ],
+  "C6": [
+   "Lần bảng nhân 3 tới trạm gần nhất không vượt quá.",
+   "Số kẹo còn trong tay chính là số thừa."
+  ],
+  "C7": [
+   "Lần bảng nhân 5 tìm trạm dừng.",
+   "Soi luật vàng: số thừa có bé hơn số lọ không?"
+  ],
+  "C8": [
+   "Thừa đúng bằng số bạn thì còn phát thêm được một vòng nữa.",
+   "Vậy số thừa lớn nhất phải kém số bạn đúng 1."
+  ],
+  "C9": [
+   "Lần bảng nhân 4 trong khoảng đề cho.",
+   "Có thể có nhiều hơn một đáp án đấy."
+  ]
+ },
+ "DL:KSN2.B16": {
+  "C1": [
+   "Chia đều thành các phần bằng nhau là việc của phép chia.",
+   "Chữ MỖI đang hỏi về một phần."
+  ],
+  "C2": [
+   "Vẫn là bài chia đều.",
+   "Lấy tất cả chia cho số bạn."
+  ],
+  "C3": [
+   "Bài ngược: gộp các phần bằng nhau lại.",
+   "Gộp thì dùng phép nhân."
+  ],
+  "C4": [
+   "Đọc chậm và gạch chân: cho gì, hỏi gì?",
+   "Hỏi MỖI túi nên đây là phép chia."
+  ],
+  "C5": [
+   "Đề cho MỘT phần, lại hỏi TẤT CẢ.",
+   "Gộp các hàng bằng nhau lại — phép nhân."
+  ],
+  "C6": [
+   "Hai câu, cùng một khay hoa, khác số lọ.",
+   "Lọ càng nhiều thì mỗi lọ càng ít."
+  ],
+  "C7": [
+   "Hai bước — tìm tất cả bánh trước đã.",
+   "Có tổng rồi mới chia cho số bạn."
+  ],
+  "C8": [
+   "Đọc kỹ: đề cho MỖI phần, lại hỏi TẤT CẢ.",
+   "Đây là bài gộp chứ không phải bài chia."
+  ]
+ },
+ "DL:KSN2.B17": {
+  "C1": [
+   "Ai dài? Ai ngắn? Thò ra bao nhiêu?",
+   "Đoạn của Bình dài bằng An rồi thò thêm một mẩu."
+  ],
+  "C2": [
+   "Vẽ sơ đồ trước, phép tính tự hiện ra.",
+   "Đoạn của Cúc hụt vào so với đoạn của Mai."
+  ],
+  "C3": [
+   "Gà mơ đẻ nhiều hơn — đoạn của nó dài hơn.",
+   "Nối thêm phần đẻ nhiều hơn vào đoạn của gà mái."
+  ],
+  "C4": [
+   "Vẽ hai đoạn rồi mới chọn phép tính.",
+   "Đội 2 là đoạn ngắn hơn nên phải cắt bớt."
+  ],
+  "C5": [
+   "BẪY ĐẢO — chữ thấp hơn đứng cạnh Su Kem.",
+   "Vậy trên sơ đồ ai mới là đoạn dài hơn?"
+  ],
+  "C6": [
+   "Lại bẫy đảo — vẽ sơ đồ đi rồi hãy tính.",
+   "Bao nào là đoạn dài hơn trên sơ đồ?"
+  ],
+  "C7": [
+   "Vẽ BA đoạn thẳng, làm từng bước một.",
+   "Chưa biết phần của Bình thì chưa tính được Cúc."
+  ],
+  "C8": [
+   "Lấy một ví dụ cụ thể rồi thử thật xem.",
+   "Người cho thì bớt đi, người nhận thì thêm vào."
+  ]
+ },
+ "DL:KSN2.B18": {
+  "C1": [
+   "Liệt kê có thứ tự: cho phần lớn giảm dần từng nấc.",
+   "Mỗi bạn ít nhất một viên nên phải dừng đúng lúc."
+  ],
+  "C2": [
+   "Nhìn dòng nào có hai phần giống hệt nhau.",
+   "Chia đôi số kẹo là ra."
+  ],
+  "C3": [
+   "Kẻ bảng ba cột: phần A, phần B, và cột hơn nhau.",
+   "Dò cột hơn nhau tìm đúng số đề cho."
+  ],
+  "C4": [
+   "Liệt kê mọi cách tách trước đã, đừng đoán.",
+   "Dò cột hơn nhau, rồi thử lại CẢ HAI điều kiện."
+  ],
+  "C5": [
+   "Vẫn bảng ba cột như cũ.",
+   "Cột hơn nhau phải bằng đúng 3."
+  ],
+  "C6": [
+   "Bằng nhau nghĩa là hơn nhau mấy?",
+   "Dò dòng có cột hơn nhau bằng 0."
+  ],
+  "C7": [
+   "Cứ lập bảng rồi dò — đừng vội kết luận.",
+   "Nhìn cả cột hơn nhau: chúng chẵn hay lẻ?"
+  ],
+  "C8": [
+   "Hai điều kiện của đề có đổi gì không?",
+   "Ai chọn trước cũng không đổi được phần của mỗi người."
+  ]
+ },
+ "DL:KSN2.B19": {
+  "C1": [
+   "Thấy chữ gấp mấy lần thì nghĩ đến PHẦN.",
+   "An một khối, Bình mấy khối y hệt?"
+  ],
+  "C2": [
+   "Vẽ mèo một khối, chó ba khối bằng nhau.",
+   "Gộp các khối bằng nhau lại — phép nhân."
+  ],
+  "C3": [
+   "Em vẽ trước một khối làm chuẩn.",
+   "Chị vẽ mấy khối y hệt khối của em?"
+  ],
+  "C4": [
+   "Đếm xem cả hai chị em có tất cả mấy phần.",
+   "Lấy tổng chia cho số phần, ra một phần trước đã."
+  ],
+  "C5": [
+   "Gà một phần, vịt ba phần — cộng lại mấy phần?",
+   "Tổng chia số phần là ra giá trị một phần."
+  ],
+  "C6": [
+   "Xanh một phần, đỏ hai phần.",
+   "Tìm một phần trước, rồi mới trả về từng hộp."
+  ],
+  "C7": [
+   "Bốn phần cả thảy — tìm một phần trước.",
+   "Cho kẹo xong thì đếm lại, đừng tưởng phần gấp giữ nguyên."
+  ],
+  "C8": [
+   "Lấy bạn B làm một phần chuẩn.",
+   "Đếm cho đủ ba bạn: A mấy phần, B mấy, C mấy?"
+  ]
+ },
+ "DL:KSN2.B20": {
+  "C1": [
+   "Bài hơn - kém: ai dài, ai ngắn?",
+   "Anh là đoạn dài hơn nên phải nối thêm."
+  ],
+  "C2": [
+   "Em là đoạn ngắn hơn trên sơ đồ.",
+   "Cắt bớt phần kém ra khỏi tuổi chị."
+  ],
+  "C3": [
+   "Phần hơn = tuổi lớn trừ tuổi bé.",
+   "Hai số đề cho sẵn, chỉ việc đặt phép trừ."
+  ],
+  "C4": [
+   "Thời gian công bằng: ai cũng thêm đúng bấy nhiêu tuổi.",
+   "Cộng cho từng người rồi trừ lại xem phần hơn có đổi không."
+  ],
+  "C5": [
+   "Phần hơn là kho báu không bao giờ đổi.",
+   "Không cần biết tuổi từng người vẫn trả lời được."
+  ],
+  "C6": [
+   "Đi tới thì cộng, đi lùi thì trừ.",
+   "Câu đầu đi tới, câu sau đi lùi — coi chừng lẫn chiều."
+  ],
+  "C7": [
+   "Em thêm mấy tuổi thì anh cũng thêm bấy nhiêu.",
+   "Hoặc dùng luôn kho báu phần hơn không đổi."
+  ],
+  "C8": [
+   "Mỗi năm hai chị em cùng thêm đúng một tuổi.",
+   "Vậy khoảng cách ấy có bao giờ hụt đi được không?"
+  ]
+ },
+ "DL:KSN2.B21": {
+  "C1": [
+   "Biết MỖI phần, hỏi TẤT CẢ thì nhân.",
+   "Phần bằng nhau ấy lặp lại mấy lần?"
+  ],
+  "C2": [
+   "Vẫn là biết mỗi phần, hỏi tất cả.",
+   "Một tuần lễ có mấy ngày?"
+  ],
+  "C3": [
+   "Đổi áo thôi, bộ xương vẫn y nguyên.",
+   "Biết mỗi phần, hỏi tất cả thì nhân."
+  ],
+  "C4": [
+   "Cây số hay cái áo cũng chung một bộ xương.",
+   "Mỗi phần nhân với số phần."
+  ],
+  "C5": [
+   "BÀI NGƯỢC: biết TẤT CẢ, hỏi MỖI phần.",
+   "Tách đều tất cả cho số giờ — phép chia."
+  ],
+  "C6": [
+   "Bài ngược — đề hỏi MỖI giờ.",
+   "Chia tất cả cho số giờ."
+  ],
+  "C7": [
+   "Biết mỗi phần, hỏi tất cả.",
+   "Gộp bốn túi bằng nhau lại."
+  ],
+  "C8": [
+   "Hai bước — may được bao nhiêu cái đã.",
+   "Có tổng rồi mới bớt phần đem tặng."
+  ],
+  "C9": [
+   "Hai máy nói hai kiểu — đưa cả hai về MỖI GIỜ đã.",
+   "Máy B phải chia ra thì mới so được với máy A."
+  ]
+ },
+ "DL:KSN2.B22": {
+  "C1": [
+   "Đi lùi: đảo phép cộng thành phép trừ.",
+   "Lấy kết quả trừ đi số đã cộng vào."
+  ],
+  "C2": [
+   "Đi lùi: đảo phép nhân thành phép chia.",
+   "Lấy kết quả chia cho số đã nhân."
+  ],
+  "C3": [
+   "Đi lùi: đảo phép trừ thành phép cộng.",
+   "Trả lại phần đã bị lấy đi."
+  ],
+  "C4": [
+   "BA LÔ TRƯỚC, ÁO SAU — gỡ máy cuối cùng trước.",
+   "Máy trừ vào sau nên phải đảo nó đầu tiên."
+  ],
+  "C5": [
+   "Máy cộng đứng sau nên gỡ nó trước.",
+   "Gỡ xong máy cộng mới tới máy nhân."
+  ],
+  "C6": [
+   "Gỡ máy cộng trước, máy chia sau.",
+   "Đảo phép chia thành phép nhân."
+  ],
+  "C7": [
+   "Vẽ hành trình của ví tiền ra rồi mới đi lùi.",
+   "Việc xảy ra sau cùng thì gỡ đầu tiên."
+  ],
+  "C8": [
+   "Ba máy thì gỡ ngược từ máy cuối.",
+   "Ba lô, rồi áo khoác, rồi mới đến áo."
+  ],
+  "C9": [
+   "Vẽ hành trình cả ngày ra rồi đi lùi.",
+   "Buổi chiều xảy ra sau nên gỡ trước."
+  ]
+ },
+ "DL:KSN2.B23": {
+  "C1": [
+   "Vẽ ba cái đầu tròn rồi gắn chân vào.",
+   "Mỗi con gà hai chân, gộp lại."
+  ],
+  "C2": [
+   "Mỗi chú chó bốn chân.",
+   "Gộp hai phần bằng nhau."
+  ],
+  "C3": [
+   "Con nào cũng chỉ có một cái đầu.",
+   "Đếm đầu là đếm được con."
+  ],
+  "C4": [
+   "Con nào cũng có ít nhất hai chân.",
+   "Gắn tạm hai chân cho từng con rồi cộng."
+  ],
+  "C5": [
+   "Ba bước: vẽ đủ đầu, gắn tạm hai chân, rồi chia chân thừa.",
+   "Chân thừa chia thành từng cặp, mỗi cặp là một chú chó."
+  ],
+  "C6": [
+   "Gắn tạm hai chân cho cả sáu con đã.",
+   "Chân thừa còn mấy? Chia thành cặp xem được mấy chó."
+  ],
+  "C7": [
+   "Vịt như gà, thỏ như chó — vẫn ba bước cũ.",
+   "Gắn tạm hai chân cho năm con rồi đếm chân thừa."
+  ],
+  "C8": [
+   "Vẫn ba bước, chỉ đổi con số.",
+   "Chân thừa đem chia thành từng cặp."
+  ],
+  "C9": [
+   "Cứ gắn tạm hai chân rồi đếm chân thừa, xem có gắn nổi không.",
+   "Chân gà và chân chó đều là số chẵn — tổng phải thế nào?"
+  ]
+ },
+ "DL:KSN2.B24": {
+  "C1": [
+   "Ngón tay là CÂY, kẽ tay là KHOẢNG.",
+   "Khoảng luôn ít hơn cây đúng một."
+  ],
+  "C2": [
+   "Hỏi CHIỀU DÀI thì phải đi với KHOẢNG.",
+   "Bốn cây thì có mấy khoảng?"
+  ],
+  "C3": [
+   "Xòe bàn tay ra mà đếm.",
+   "Khoảng ít hơn cọc đúng một."
+  ],
+  "C4": [
+   "Bài ngược: tìm số KHOẢNG trước đã.",
+   "Có khoảng rồi thì cây nhiều hơn khoảng một."
+  ],
+  "C5": [
+   "Đèn là cây, đoạn dây giữa hai đèn là khoảng.",
+   "Sáu đèn thì có mấy khoảng?"
+  ],
+  "C6": [
+   "Bước chân giống CÂY hay giống KHOẢNG?",
+   "Mỗi bước là một lần vượt qua một khoảng."
+  ],
+  "C7": [
+   "Nhát cưa là KẼ, khúc gỗ là NGÓN.",
+   "Vẽ khúc gỗ ra rồi đánh dấu chỗ cưa."
+  ],
+  "C8": [
+   "Cắt một nhát được hai khúc — thử vẽ tiếp xem.",
+   "So với câu trước xem hai bài có chung quy luật gì."
+  ]
+ },
+ "DL:KSN2.B25": {
+  "C1": [
+   "Hơn - kém thì vẽ THANG.",
+   "Xếp từng bạn lên thang theo từng manh mối."
+  ],
+  "C2": [
+   "Vẽ thang rồi nhìn xem ai đứng giữa.",
+   "Cái thang nói hộ điều đề không nói thẳng."
+  ],
+  "C3": [
+   "Đổi chậm hơn thành nhanh hơn cho cùng chiều đã.",
+   "Cùng chiều rồi mới xếp lên thang."
+  ],
+  "C4": [
+   "Ai - cái gì thì kẻ BẢNG loại trừ.",
+   "Đánh dấu manh mối chắc nhất trước, rồi gạch cùng hàng cùng cột."
+  ],
+  "C5": [
+   "Kẻ bảng, bắt đầu từ manh mối chắc chắn.",
+   "Gạch hết ô cùng hàng cùng cột với ô đã đánh dấu."
+  ],
+  "C6": [
+   "Thử xếp thang chỉ bằng hai manh mối đầu.",
+   "Xếp xong rồi hỏi manh mối thứ ba có thêm được gì không."
+  ],
+  "C7": [
+   "Vẽ thang trước để tìm bạn thấp nhất.",
+   "Có bạn thấp nhất rồi mới kẻ bảng loại trừ."
+  ],
+  "C8": [
+   "Đề chặt là đề chỉ giải ra đúng một đáp án.",
+   "Tự giải thử đề của mình xem có ra hai cách không."
+  ]
+ },
+ "DL:KSN2.B26": {
+  "C1": [
+   "Đếm cạnh, đếm đỉnh — đó là danh thiếp của hình.",
+   "Số cạnh và số đỉnh của một hình thì bằng nhau."
+  ],
+  "C2": [
+   "Nhìn quanh nhà, tìm những mặt phẳng bốn cạnh.",
+   "Hình vuông thì bốn cạnh bằng nhau cả."
+  ],
+  "C3": [
+   "So số cạnh trước: hai hình này có khác nhau không?",
+   "Khác nhau ở chỗ cạnh nào bằng cạnh nào."
+  ],
+  "C4": [
+   "Kiến bò một vòng thì đi qua đủ các cạnh.",
+   "Cộng tất cả các cạnh lại, đừng sót cạnh nào."
+  ],
+  "C5": [
+   "Hình vuông có mấy cạnh, mỗi cạnh dài bao nhiêu?",
+   "Cộng đủ số cạnh ấy lại."
+  ],
+  "C6": [
+   "Chữ nhật có HAI cạnh dài và HAI cạnh ngắn.",
+   "Cộng đủ bốn cạnh, đừng cộng có hai."
+  ],
+  "C7": [
+   "Tính đường của mỗi chú kiến riêng đã rồi mới so.",
+   "Đừng đoán theo cạnh dài hơn — số cạnh cũng khác nhau."
+  ],
+  "C8": [
+   "Cứ vẽ bốn cạnh không đều tăm tắp.",
+   "Vẽ xong đếm lại cạnh và đỉnh để chứng minh."
+  ]
+ },
+ "DL:KSN2.B27": {
+  "C1": [
+   "Đánh số từng mảnh trước đã.",
+   "Đường chéo cắt hình vuông thành mấy mảnh?"
+  ],
+  "C2": [
+   "Đếm hình ĐƠN trước, hình GHÉP sau.",
+   "Đừng quên hình to ôm trọn cả hai mảnh."
+  ],
+  "C3": [
+   "Đánh số hai mảnh rồi đếm hình đơn.",
+   "Ghép hai mảnh lại thì thành hình gì?"
+  ],
+  "C4": [
+   "Đi tuần tự: đơn trước, ghép hai mảnh, rồi ghép cả ba.",
+   "Ghép hai mảnh thì chỉ ghép mảnh đứng CẠNH nhau."
+  ],
+  "C5": [
+   "Ghép hai, rồi ghép ba, rồi ghép cả bốn — đi từng nấc.",
+   "Chỉ ghép các ô đứng cạnh nhau."
+  ],
+  "C6": [
+   "Ghép hai ô cạnh nhau — nhớ cả chiều ngang lẫn chiều dọc.",
+   "Đếm ngang cho hết rồi mới quay sang đếm dọc."
+  ],
+  "C7": [
+   "Đếm bốn tam giác nhỏ trước đã.",
+   "Rồi ghép từng đôi mảnh: nửa trên, nửa dưới, nửa trái, nửa phải."
+  ],
+  "C8": [
+   "Nhớ lại hình nào ở câu trên đếm ra sáu.",
+   "Vẽ xong tự đếm lại, thiếu hay thừa thì chỉnh vạch chia."
+  ]
+ },
+ "DL:KSN2.B28": {
+  "C1": [
+   "Nhìn quanh nhà tìm mặt tròn, không góc không cạnh.",
+   "Mặt đồng hồ, đáy cốc… con kể tiếp xem."
+  ],
+  "C2": [
+   "Gấp đôi hai lần rồi mở ra, nhìn hai nếp gấp.",
+   "Chỗ hai nếp gấp gặp nhau chính là tâm."
+  ],
+  "C3": [
+   "Nan hoa là đoạn nối từ tâm ra viền.",
+   "Đo cả ba rồi so với nhau."
+  ],
+  "C4": [
+   "Trục xe đặt ở tâm — nan hoa lệch nhau thì trục thế nào?",
+   "Bánh vuông có nan hoa ra góc và ra cạnh bằng nhau không?"
+  ],
+  "C5": [
+   "Tìm tâm mặt số trước đã.",
+   "Từ tâm quay đi hướng nào nan hoa cũng bằng nhau."
+  ],
+  "C6": [
+   "Kiểm bằng nan hoa: đo từ giữa ra viền vài hướng.",
+   "Mặt nào có nan hoa dài ngắn khác nhau là tròn giả."
+  ],
+  "C7": [
+   "Làm thật rồi nối ba tâm lại bằng bút chì.",
+   "Ba đồng xu giống hệt nhau nên ba cạnh nối được sẽ thế nào?"
+  ],
+  "C8": [
+   "Sợi dây căng chính là cái nan hoa.",
+   "Dây có đổi độ dài khi con quay không?"
+  ]
+ },
+ "DL:KSN2.B29": {
+  "C1": [
+   "Khối thì cầm nắm được, có chỗ để đựng.",
+   "Lập phương thì mọi phía đều vuông vức như nhau."
+  ],
+  "C2": [
+   "In một mặt của nó ra giấy thì được hình gì?",
+   "Lập phương vuông vức mọi phía."
+  ],
+  "C3": [
+   "Đếm kiểu thám tử: trên - dưới, trước - sau, trái - phải.",
+   "Khối hộp nào cũng cùng một số mặt."
+  ],
+  "C4": [
+   "Bức ảnh chụp một mặt của khối là hình gì?",
+   "Hộp sữa nằm ngang thì mặt in ra dài hay vuông vức?"
+  ],
+  "C5": [
+   "Hỏi đã: quyển vở có cầm nắm được không?",
+   "Còn một TRANG vở thì sao — dẹt hay dày?"
+  ],
+  "C6": [
+   "Đặt một chiếc hộp lên bàn rồi nhìn thật.",
+   "Mặt úp xuống bàn có nhìn thấy được không?"
+  ],
+  "C7": [
+   "Ghép xong thì khối còn vuông vức mọi phía không?",
+   "Soi từng mặt: mặt nào vẫn vuông, mặt nào dài ra?"
+  ],
+  "C8": [
+   "Hai mặt đối nhau luôn cộng lại bằng 7.",
+   "Biết tổng và một mặt thì tìm mặt kia bằng phép trừ."
+  ]
+ },
+ "DL:KSN2.B30": {
+  "C1": [
+   "Đếm theo TẦNG, đừng đếm theo mắt nhìn.",
+   "Tầng dưới mấy khối, tầng trên mấy khối?"
+  ],
+  "C2": [
+   "Cộng hai tầng lại.",
+   "Luật ngồi: khối trên phải ngồi trên một khối dưới."
+  ],
+  "C3": [
+   "Khối tầng trên không biết bay.",
+   "Mỗi khối tầng trên cần một khối đỡ riêng."
+  ],
+  "C4": [
+   "Đếm cả bạn đang nấp ở hàng sau.",
+   "Tầng dưới đếm theo hàng, xong mới cộng tầng trên."
+  ],
+  "C5": [
+   "Đếm từng tầng từ dưới lên.",
+   "Cộng cả ba tầng lại."
+  ],
+  "C6": [
+   "Hàng sau bị che nhưng thám tử không bị lừa.",
+   "Đếm đủ hai hàng rồi mới cộng."
+  ],
+  "C7": [
+   "Cộng từng tầng — chính là dãy bậc thang của Bài 10.",
+   "Tháp bốn tầng thì thêm một tầng đáy rộng hơn nữa."
+  ],
+  "C8": [
+   "Đếm một tầng trước rồi nhân với số tầng.",
+   "Khối ở góc SAU tầng dưới bị che hết — vẫn phải đếm."
+  ]
+ },
+ "DL:KSN2.B31": {
+  "C1": [
+   "Gấp phải thật khít thì hai phần mới bằng nhau.",
+   "Gấp đôi một lần được nửa, gấp đôi hai lần được phần tư."
+  ],
+  "C2": [
+   "Nghe một nửa thì chia 2.",
+   "Chia thành hai phần bằng nhau."
+  ],
+  "C3": [
+   "Nghe một phần tư thì chia 4.",
+   "Chia thành bốn phần bằng nhau."
+  ],
+  "C4": [
+   "Cả chiếc bánh có mấy phần, bố ăn mấy phần?",
+   "Phần còn lại = tổng số phần trừ phần đã ăn."
+  ],
+  "C5": [
+   "Một chục trứng là bao nhiêu quả?",
+   "Rán xong thì phần còn lại đúng bằng phần kia."
+  ],
+  "C6": [
+   "Cùng MỘT chiếc bánh thì chia càng nhiều phần càng bé.",
+   "Nhưng hai chiếc bánh khác cỡ thì còn chắc chắn được không?"
+  ],
+  "C7": [
+   "Gấp giấy thật để tự chứng minh.",
+   "Gấp đôi hai lần rồi mở ra thấy mấy ô bằng nhau?"
+  ],
+  "C8": [
+   "Tính riêng từng bên đã rồi mới so.",
+   "Bên này chia 2, bên kia chia 4."
+  ]
+ },
+ "DL:KSN2.B32": {
+  "C1": [
+   "Sổ ông chủ ba dòng: VỐN → BÁN → LÃI.",
+   "Lãi = tiền bán trừ tiền vốn."
+  ],
+  "C2": [
+   "Đây là phía người MUA, không phải phía ông chủ.",
+   "Tiền thừa = tiền đưa trừ tiền món hàng."
+  ],
+  "C3": [
+   "Tiền nào phải tiêu trước khi bán được đồng nào?",
+   "Tiền nào chảy vào túi sau khi bán?"
+  ],
+  "C4": [
+   "Ghi đủ ba dòng: vốn, bán, rồi lãi.",
+   "Lãi = bán trừ vốn."
+  ],
+  "C5": [
+   "Tính tiền BÁN trước đã — để ý chữ mỗi cốc.",
+   "Có tiền bán rồi mới trừ vốn ra lãi."
+  ],
+  "C6": [
+   "Cộng tiền hai món trước đã.",
+   "Rồi so với tiền mẹ đưa, và trừ ra tiền thối."
+  ],
+  "C7": [
+   "So tiền bán với tiền vốn xem bên nào lớn hơn.",
+   "Bán về ít hơn tiền bỏ ra thì gọi là gì?"
+  ],
+  "C8": [
+   "Cộng tiền bán của cả hai ngày trước đã.",
+   "Vốn chỉ bỏ ra MỘT lần, đừng trừ hai lần."
+  ],
+  "C9": [
+   "Bài ngược: tiền bán cần thu = vốn cộng lãi.",
+   "Có số tiền cần thu rồi thì lần theo bảng nhân 4."
+  ]
+ },
+ "DL:KSN2.B33": {
+  "C1": [
+   "Hai kim khác nhau độ dài — kim nào đi chậm hơn?",
+   "Kim đi chậm rãi là kim đếm giờ."
+  ],
+  "C2": [
+   "Nhìn kim PHÚT trước: chỉ thẳng 12 là giờ đúng.",
+   "Rồi mới đọc xem kim giờ chỉ số nào."
+  ],
+  "C3": [
+   "Kim phút chỉ 6 nghĩa là đã đi được nửa vòng.",
+   "Đọc theo số kim giờ ĐÃ ĐI QUA, đừng đọc số nó sắp tới."
+  ],
+  "C4": [
+   "Mỗi giờ trôi qua thì kim giờ tiến thêm đúng một số.",
+   "Đi từng chặng một cho chắc."
+  ],
+  "C5": [
+   "Nửa giờ là kim phút đi được nửa vòng.",
+   "Hai lần nửa giờ thì gộp lại thành mấy?"
+  ],
+  "C6": [
+   "Giờ đúng thì kim phút chỉ thẳng 12.",
+   "Giờ rưỡi thì kim phút chỉ 6, kim giờ nằm giữa hai số."
+  ],
+  "C7": [
+   "Đọc giờ lúc cậu ấy đến sân trước đã.",
+   "Rồi so với giờ hẹn xem trước hay sau."
+  ],
+  "C8": [
+   "Quan sát đồng hồ thật, để mắt vào kim giờ.",
+   "Kim giờ nhích được đúng mấy số?"
+  ],
+  "C9": [
+   "Đi từng chặng: học xong là mấy giờ đã.",
+   "Rồi mới cộng thêm nửa giờ giải lao."
+  ]
+ },
+ "DL:KSN3.B01": {
+  "C1": [
+   "Cho từng chữ số về đúng tháp rồi đọc từ tháp cao xuống.",
+   "Tháp nào có chú 0 canh chỗ thì đọc là không trăm hoặc linh."
+  ],
+  "C2": [
+   "Nghe tới tháp nào thì viết chữ số vào tháp ấy.",
+   "Nghe không trăm linh là hai tháp giữa phải có chú 0 giữ chỗ."
+  ],
+  "C3": [
+   "Mở cửa từng tháp rồi cộng lại.",
+   "Tháp nào trống thì không viết vào tổng."
+  ],
+  "C4": [
+   "Mỗi số hạng cho biết một tháp.",
+   "Tháp nào đề không nhắc tới thì điền chú số 0."
+  ],
+  "C5": [
+   "Đừng nhìn mặt chữ số — nhìn nó đang đứng ở tháp nào.",
+   "Đếm xem sau nó còn mấy tháp nữa."
+  ],
+  "C6": [
+   "Cùng mặt nhưng khác tháp là khác giá.",
+   "Điểm danh từ tháp cao nhất xuống thấp nhất."
+  ],
+  "C7": [
+   "Lớn nhất thì tháp nào cũng chật kín.",
+   "Bé nhất thì tháp Nghìn phải nhỏ nhất mà vẫn khác 0."
+  ],
+  "C8": [
+   "Đơn vị một phần, nghìn hai phần — sơ đồ phần của lớp 2.",
+   "Hai tháp giữa là 0 nên tổng chỉ nằm ở hai tháp kia."
+  ],
+  "C9": [
+   "So từ tháp cao nhất xuống, gặp chỗ khác nhau là dừng.",
+   "Rồi đặt phép trừ để biết hơn nhau bao nhiêu."
+  ]
+ },
+ "DL:KSN3.B02": {
+  "C1": [
+   "CỬA PHẢI: cả nhà chuyển tầng.",
+   "Mỗi chữ số nhảy lên một tháp."
+  ],
+  "C2": [
+   "CỬA TRÁI: số cũ đứng yên, chỉ có hàng xóm mới dọn đến.",
+   "Viết thẻ mới vào trước, phần sau chép nguyên."
+  ],
+  "C3": [
+   "Cửa phải: nhảy tầng trước, rồi cộng thẻ mới.",
+   "Số cũ nhảy tầng thành số nào đã?"
+  ],
+  "C4": [
+   "Số cũ đứng yên nên phần hơn chỉ do hàng xóm mới.",
+   "Hàng xóm ấy dọn vào tháp nào?"
+  ],
+  "C5": [
+   "Chép nguyên số cũ, đặt thẻ mới lên phía trước.",
+   "Thêm vào trước một số ba chữ số thì hàng xóm chiếm tháp nào?"
+  ],
+  "C6": [
+   "Hỏi trước: số cũ có chuyển tầng hay đứng yên?",
+   "Chuyển tầng là một cửa, đứng yên là cửa bên kia."
+  ],
+  "C7": [
+   "Làm riêng từng cửa rồi đặt hai kết quả cạnh nhau mà so.",
+   "Cửa nào đẩy thẻ mới lên tháp cao hơn?"
+  ],
+  "C8": [
+   "Đi một cửa cho xong rồi mới đi cửa kia.",
+   "Có số mới rồi mới trừ số ban đầu."
+  ],
+  "C9": [
+   "Số cũ đứng yên — phần hơn chính là giá của hàng xóm.",
+   "Thêm vào trước một số hai chữ số thì hàng xóm chiếm tháp Trăm."
+  ]
+ },
+ "DL:KSN3.B03": {
+  "C1": [
+   "Thẻ to giành ghế bên trái.",
+   "Bé nhất thì làm ngược lại."
+  ],
+  "C2": [
+   "ĐƯỢC LẶP: thẻ tốt nhất dùng cho mọi ghế.",
+   "Không phải chia đôi hai thẻ nữa."
+  ],
+  "C3": [
+   "Chỉ nhìn cái đuôi.",
+   "Đuôi 4 và đuôi 7 khác nhau ở chỗ nào?"
+  ],
+  "C4": [
+   "Câu chẵn thì ĐUÔI ĐẶT VÉ TRƯỚC.",
+   "Có hai thẻ chẵn — thử cả hai rồi so."
+  ],
+  "C5": [
+   "Đuôi phải là thẻ lẻ — mà có hai ứng viên.",
+   "Giữ đuôi bằng thẻ lẻ NHỎ để thẻ to được lên đầu."
+  ],
+  "C6": [
+   "Đuôi đặt vé trước, rồi mới xếp phần đầu.",
+   "Cảnh giác: chú số 0 không được đứng đầu."
+  ],
+  "C7": [
+   "Ghế đầu không được là 0, nhưng các ghế sau thì sao?",
+   "Được lặp nên ghế sau đều lấy thẻ nhỏ nhất."
+  ],
+  "C8": [
+   "Bỏ một thẻ là cả một nghệ thuật — thử từng cách.",
+   "Đuôi chẵn có hai ứng viên; xem đuôi nào cho ghế giữa thẻ to hơn."
+  ],
+  "C9": [
+   "Liệt kê các bộ ba chữ số có tổng bằng 3 trước đã.",
+   "Mỗi bộ xếp thành số bé nhất rồi đem so cả loạt."
+  ]
+ },
+ "DL:KSN3.B04": {
+  "C1": [
+   "Đoàn tàu một toa và đoàn hai toa — đếm riêng từng đoàn.",
+   "Đoàn hai toa chạy từ 10 tới 99: trừ rồi thêm 1."
+  ],
+  "C2": [
+   "Mẹo hai đầu: trừ rồi thêm 1.",
+   "Hai số đề cho đem trừ nhau trước đã."
+  ],
+  "C3": [
+   "Liệt kê có thứ tự theo hàng chục.",
+   "Mỗi thẻ được đứng đầu đúng một lần."
+  ],
+  "C4": [
+   "Liệt kê theo hàng trăm: đầu 2, rồi đầu 5, rồi đầu 7.",
+   "Mỗi thẻ đứng đầu thì hai thẻ còn lại xếp được mấy cách?"
+  ],
+  "C5": [
+   "Vẫn liệt kê theo hàng trăm.",
+   "Nhóm đứng đầu bằng thẻ 0 có hợp lệ không?"
+  ],
+  "C6": [
+   "Chia hai đoàn tàu rồi mới nhân.",
+   "Đoàn hai toa chạy từ trang 10 — trừ rồi thêm 1."
+  ],
+  "C7": [
+   "Vẫn hai đoàn tàu như cũ.",
+   "Đoàn hai toa có mấy trang, mỗi trang mấy chữ số?"
+  ],
+  "C8": [
+   "BÀI NGƯỢC: trả nợ đoàn một toa trước đã.",
+   "Phần chữ số còn lại chia đôi ra số trang hai-chữ-số."
+  ],
+  "C9": [
+   "Liệt kê từ chữ số nhỏ nhất được phép đứng đầu.",
+   "Lấy số sau trừ số trước để tìm nhịp đoàn tàu."
+  ]
+ },
+ "DL:KSN3.B05": {
+  "C1": [
+   "Tách theo hàng: chục riêng, đơn vị riêng.",
+   "Nhân từng phần rồi gộp lại."
+  ],
+  "C2": [
+   "Viết thẳng hàng đơn vị rồi nhân từ đơn vị trước.",
+   "Hai phép này không phải nhớ sang hàng nào."
+  ],
+  "C3": [
+   "Ướm trước: 41 gần số tròn chục nào?",
+   "Ướm xong mới tính chính xác để đối chiếu."
+  ],
+  "C4": [
+   "Tách theo hàng rồi gộp — lần này có phần nhớ.",
+   "Nhân đơn vị ra số hai chữ số thì phải nhớ sang hàng chục."
+  ],
+  "C5": [
+   "Số ba chữ số vẫn luật cũ: tách trăm - chục - đơn vị.",
+   "Nhân từng tháp rồi cộng cả ba lại."
+  ],
+  "C6": [
+   "Biết mỗi phần, hỏi tất cả thì nhân.",
+   "Tách số cho dễ nhân rồi gộp."
+  ],
+  "C7": [
+   "Rung chuông ước lượng trước, đừng tính hẳn.",
+   "52 gần 50, mà 50 nhân 3 thì quanh quẩn bao nhiêu?"
+  ],
+  "C8": [
+   "25 là một phần tư của trăm — bốn phần tư ghép lại.",
+   "Còn 199 thì mượn thành 200 rồi trả lại phần mượn."
+  ],
+  "C9": [
+   "Xoay khay kẹo dọc thành ngang xem tích có đổi không.",
+   "Tách 6 thành 2 nhân 3 rồi gộp đôi mỗi khay."
+  ]
+ },
+ "DL:KSN3.B06": {
+  "C1": [
+   "Lần bảng nhân tìm bến gần nhất không vượt quá.",
+   "Phần còn lại sau bến chính là số dư."
+  ],
+  "C2": [
+   "Bốn nhân vật: số đem chia, số dùng để chia, kết quả, phần thừa.",
+   "Đọc theo đúng thứ tự chúng đứng trong phép tính."
+  ],
+  "C3": [
+   "Lần bảng nhân 3 tìm bến cho từng số.",
+   "Dừng đúng khít, không còn gì thừa thì gọi là chia hết."
+  ],
+  "C4": [
+   "Lần bảng nhân tìm bến trước đã.",
+   "Thử lại: thương nhân số chia rồi cộng phần thừa."
+  ],
+  "C5": [
+   "Chia có dư trước, rồi mới trả lời câu hỏi của đề.",
+   "Nhóm dư ra có bị bỏ lại bến không?"
+  ],
+  "C6": [
+   "Soi LUẬT VÀNG: phần thừa phải bé hơn số chia.",
+   "Thử khớp thôi chưa đủ — phải soi cả luật vàng."
+  ],
+  "C7": [
+   "Phần thừa phải bé hơn số chia.",
+   "Kể từ 0 lên tới số đứng ngay trước số chia."
+  ],
+  "C8": [
+   "Công thức vàng chạy chiều ngược.",
+   "Thương nhân số chia rồi cộng phần thừa."
+  ],
+  "C9": [
+   "Hai tầng — tìm phần thừa lớn nhất trước đã.",
+   "Có phần thừa rồi mới chạy công thức vàng ngược."
+  ]
+ },
+ "DL:KSN3.B07": {
+  "C1": [
+   "Soi từng số: cứ chia thử.",
+   "Lần bảng nhân 5 tìm bến cho từng số."
+  ],
+  "C2": [
+   "Ga xuất phát chính là số dư.",
+   "Rồi cứ cộng thêm nhịp bằng số chia."
+  ],
+  "C3": [
+   "Chia thử là biết ngay.",
+   "Lần bảng nhân 4 tìm bến gần nhất."
+  ],
+  "C4": [
+   "Cho tàu chạy: xuất phát ga 2, nhịp 5.",
+   "Chạy đủ tới hết khoảng, đừng sót ga nào."
+  ],
+  "C5": [
+   "Tàu nhịp 4, ga xuất phát là 3.",
+   "Chạy từ ga 3 lên cho tới khi vào khoảng đề cho."
+  ],
+  "C6": [
+   "Chế số theo đơn: số chia nhân thương rồi cộng phần thừa.",
+   "Chọn thương đủ lớn rồi thử lại."
+  ],
+  "C7": [
+   "Mỗi số phải chia thử với TỪNG đoàn.",
+   "Đừng suy bừa từ đoàn này sang đoàn kia."
+  ],
+  "C8": [
+   "Lấy danh sách câu trước rồi lọc tiếp.",
+   "Lọc vòng hai: chỉ giữ số có đuôi lẻ."
+  ],
+  "C9": [
+   "Liệt kê hai đoàn tàu rồi tìm ga chung.",
+   "Chạy từng đoàn trong khoảng đề cho rồi so hai danh sách."
+  ]
+ },
+ "DL:KSN3.B08": {
+  "C1": [
+   "Nghe chữ LẦN thì nghĩ ngay nhân - chia.",
+   "Gấp lên là xếp nguyên khối ấy ra mấy lần."
+  ],
+  "C2": [
+   "Giảm đi mấy lần là cắt thành bấy nhiêu phần bằng nhau.",
+   "Rồi chỉ lấy một phần — đó là phép chia."
+  ],
+  "C3": [
+   "Có chữ LẦN hay không có — đó là còi hiệu.",
+   "Không có chữ lần thì chỉ bỏ thêm mấy viên thôi."
+  ],
+  "C4": [
+   "Có chữ lần — xếp nguyên khối thùng một ra ba lần.",
+   "Vậy phải dùng phép nhân."
+  ],
+  "C5": [
+   "Giảm đi mấy lần thì chia cho bấy nhiêu.",
+   "Cắt cuộn dây thành bốn phần bằng nhau, lấy một phần."
+  ],
+  "C6": [
+   "Làm cả hai câu rồi đặt cạnh nhau mà so.",
+   "Câu nào có chữ LẦN thì mới đổi sang nhân - chia."
+  ],
+  "C7": [
+   "Hỏi gấp mấy lần thì lấy số lớn chia số bé.",
+   "Hỏi khối nhỏ xếp mấy lần thì đầy khối lớn."
+  ],
+  "C8": [
+   "Chạy từng máy một, đừng gộp vội.",
+   "Thử thêm với vài số khác để đoán ra máy tương đương."
+  ],
+  "C9": [
+   "Gấp mấy lần thì lấy số lớn chia số bé.",
+   "Sang năm cả hai cùng thêm một tuổi — tính lại từ đầu."
+  ]
+ },
+ "DL:KSN3.B09": {
+  "C1": [
+   "Số dưới cho biết phải chia thành mấy phần.",
+   "Chia thành hai phần bằng nhau rồi lấy một phần."
+  ],
+  "C2": [
+   "Một phần ba thì chia thành ba phần bằng nhau.",
+   "Lấy số đó chia cho 3."
+  ],
+  "C3": [
+   "Số nằm dưới chính là số phần phải chia.",
+   "Chia xong rồi lấy đúng một phần."
+  ],
+  "C4": [
+   "Cắt cuộn dây thành bốn phần bằng nhau.",
+   "Chia cho số nằm dưới rồi lấy một phần."
+  ],
+  "C5": [
+   "Tìm phần đã dùng trước đã.",
+   "Rồi lấy tổng trừ đi phần đã dùng."
+  ],
+  "C6": [
+   "Cùng một số mà chia làm nhiều phần hơn thì mỗi phần thế nào?",
+   "Tính riêng cả ba rồi xếp từ lớn xuống bé."
+  ],
+  "C7": [
+   "CHIỀU NGƯỢC: biết một phần, đi tìm cả số.",
+   "Cả hộp gồm bốn phần như thế — nhân lên."
+  ],
+  "C8": [
+   "Hai nhịp: tìm một phần ba trước đã.",
+   "Rồi lấy hai phần như thế."
+  ],
+  "C9": [
+   "Tính từng suất trước, phần của chị tính sau cùng.",
+   "Phần chị = tổng trừ đi hai suất kia."
+  ]
+ },
+ "DL:KSN3.B10": {
+  "C1": [
+   "Toa sau trừ toa trước là ra nhịp.",
+   "Toa là CÂY, bước nhảy là KHOẢNG — xòe tay đếm kẽ."
+  ],
+  "C2": [
+   "Tìm nhịp rồi cứ cộng nhịp mà đi tiếp.",
+   "Cộng nhịp ba lần liên tiếp."
+  ],
+  "C3": [
+   "Từ toa 1 tới toa 5 có mấy bước nhảy?",
+   "Số đầu cộng với nhịp nhân số bước."
+  ],
+  "C4": [
+   "Số bước nhảy ít hơn số toa đúng một.",
+   "Số đầu cộng với nhịp nhân số bước."
+  ],
+  "C5": [
+   "Tìm nhịp trước, rồi đếm số bước nhảy.",
+   "Đứng yên mà tính, đừng liệt kê hết cả dãy."
+  ],
+  "C6": [
+   "Dãy số đội lốt lời văn — hàng ghế chính là toa tàu.",
+   "Từ hàng 1 tới hàng 9 có mấy bước nhảy?"
+  ],
+  "C7": [
+   "BÀI NGƯỢC: trừ số đầu rồi chia cho nhịp.",
+   "Ra số bước nhảy rồi nhớ thêm 1."
+  ],
+  "C8": [
+   "Đếm số bước nhảy trước đã.",
+   "Số đầu cộng với nhịp nhân số bước."
+  ],
+  "C9": [
+   "Trừ số đầu rồi chia nhịp — soi xem có chia hết không.",
+   "Chia còn dư nghĩa là số ấy chẳng nằm ở toa nào cả."
+  ]
+ },
+ "DL:KSN3.B11": {
+  "C1": [
+   "Chia thử vài ga cho nhịp của dãy.",
+   "Cả dãy chung đúng một mã dư."
+  ],
+  "C2": [
+   "Tìm mã dư của dãy rồi mới soi từng số.",
+   "Chia số ấy cho nhịp, so phần dư với mã dư."
+  ],
+  "C3": [
+   "Chia thử: các ga này có chia hết cho nhịp không?",
+   "Kết quả bảng nhân 5 chỉ có hai kiểu đuôi."
+  ],
+  "C4": [
+   "Soi mã dư trước, khớp rồi mới tính vị trí.",
+   "Vị trí: trừ số đầu, chia nhịp, rồi thêm 1."
+  ],
+  "C5": [
+   "Chia số ấy cho nhịp rồi so phần dư với mã dư.",
+   "Lệch mã dư là loại ngay."
+  ],
+  "C6": [
+   "Cả hai đều chẵn — mà chẵn mới chỉ là điều kiện cần.",
+   "Muốn khẳng định thì phải soi mã dư."
+  ],
+  "C7": [
+   "Soi cả ba ga, đừng đoán.",
+   "Chia từng ga cho nhịp rồi so với mã dư."
+  ],
+  "C8": [
+   "Soi mã dư của dãy trước đã.",
+   "Khớp rồi thì trừ số đầu, chia nhịp, thêm 1."
+  ],
+  "C9": [
+   "Liệt kê hai danh sách rồi tìm ga chung.",
+   "Cho từng tàu chạy trong khoảng đề cho."
+  ]
+ },
+ "DL:KSN3.B12": {
+  "C1": [
+   "Phép thử 2: mỗi số bằng tổng hai toa liền trước.",
+   "Cộng hai số cuối cùng đang có."
+  ],
+  "C2": [
+   "Viết hiệu các số liền nhau ra một hàng riêng.",
+   "Nhìn hàng hiệu ấy xem có phải bậc thang không."
+  ],
+  "C3": [
+   "Hiệu không đều — soi xuống tầng dưới.",
+   "Bước sau dài hơn bước trước đúng 1."
+  ],
+  "C4": [
+   "Viết chuỗi hiệu ra đã.",
+   "Bước kế dài 5, bước sau nữa dài 6."
+  ],
+  "C5": [
+   "Phép thử 4: hai phép luân phiên nhau múa.",
+   "Soi từng cặp: nhân đôi rồi thêm một, thay phiên."
+  ],
+  "C6": [
+   "Kiểm luật cộng hai toa trước bằng cả dãy đã.",
+   "Khớp hết rồi thì cộng hai số cuối."
+  ],
+  "C7": [
+   "Viết chuỗi hiệu của cả ba dãy ra.",
+   "Hiệu bằng nhau tăm tắp thì xử được bằng Bài 10."
+  ],
+  "C8": [
+   "Cộng sáu số đầu lại trước đã.",
+   "Viết dãy dài thêm hai toa để lấy số hạng thứ tám."
+  ],
+  "C9": [
+   "Chọn tầng dưới đều tăm tắp trước, tầng trên dựng sau.",
+   "Nói được quy luật thành lời thì đề mới chặt."
+  ]
+ },
+ "DL:KSN3.B13": {
+  "C1": [
+   "Rà mắt tìm dấu nhân — khoanh nó lại như khoanh xe ưu tiên.",
+   "Nhân đi làn ưu tiên, cộng trừ xếp hàng sau."
+  ],
+  "C2": [
+   "Dấu chia cũng đi làn ưu tiên.",
+   "Tính phép chia xong mới tới cộng trừ."
+  ],
+  "C3": [
+   "Khoanh phép làn ưu tiên trước khi tính.",
+   "Mỗi dòng chỉ làm đúng một bước."
+  ],
+  "C4": [
+   "Tìm xe ưu tiên rồi cho nó đi trước.",
+   "Viết rõ từng nhịp, đừng nhảy cóc."
+  ],
+  "C5": [
+   "CÙNG LÀN thì trái trước phải sau.",
+   "Đừng vội tính nhân chỉ vì nhìn thấy dấu nhân."
+  ],
+  "C6": [
+   "Tự tính lại từng câu theo luật làn.",
+   "Rồi mới đối chiếu với kết quả đề đưa ra."
+  ],
+  "C7": [
+   "Viết thành biểu thức trước đã.",
+   "Phải bóc túi trước rồi mới cộng phần kẹo lẻ."
+  ],
+  "C8": [
+   "Tính riêng từng bên theo luật làn.",
+   "Có hai kết quả rồi mới điền dấu."
+  ],
+  "C9": [
+   "Ô nhân được tính trước — nó ăn thẻ nào thì lợi hơn?",
+   "Thử cả hai cách xếp rồi chọn cách khớp."
+  ]
+ },
+ "DL:KSN3.B14": {
+  "C1": [
+   "Mở lồng kính trước đã.",
+   "Tính trong ngoặc xong mới nhân."
+  ],
+  "C2": [
+   "Trong ngoặc luôn được đi trước.",
+   "Ra một số rồi mới đem chia."
+  ],
+  "C3": [
+   "Tính riêng hai bên rồi đặt cạnh nhau.",
+   "Cùng bộ số, mà chiếc lồng kính đổi hết thứ tự."
+  ],
+  "C4": [
+   "Ngoặc là vua — mở nó trước.",
+   "Trong ngoặc ra số nào rồi mới tính tiếp."
+  ],
+  "C5": [
+   "Tính riêng hai biểu thức đã.",
+   "Rồi lấy kết quả lớn trừ kết quả bé."
+  ],
+  "C6": [
+   "Bóc như bóc hành: mở lồng TRONG CÙNG trước.",
+   "Xong lớp trong mới tới lớp ngoài."
+  ],
+  "C7": [
+   "Phải bớt xong rồi mới chia — nên cần một cặp ngoặc.",
+   "Ba chục là bao nhiêu quả?"
+  ],
+  "C8": [
+   "Thử đặt ngoặc ở từng chỗ rồi tính lại.",
+   "Ngoặc ôm phép nào thì phép ấy được đi trước."
+  ],
+  "C9": [
+   "Viết một biểu thức không ngoặc rồi một biểu thức có ngoặc.",
+   "Đặt ngoặc ôm phép cộng để đổi thứ tự."
+  ]
+ },
+ "DL:KSN3.B15": {
+  "C1": [
+   "Một máy thôi — đảo phép là ra.",
+   "Cộng thì đi lùi bằng trừ, trừ thì đi lùi bằng cộng."
+  ],
+  "C2": [
+   "Nhân đi lùi bằng chia, chia đi lùi bằng nhân.",
+   "Vẫn một máy — đảo phép ngay."
+  ],
+  "C3": [
+   "Ca đặc biệt: X chính là phần bị lấy đi.",
+   "45 bớt đi bao nhiêu thì còn 18?"
+  ],
+  "C4": [
+   "Két hai máy — gỡ máy VÀO SAU trước.",
+   "Coi cụm X nhân 4 là một ô trống to."
+  ],
+  "C5": [
+   "Gỡ máy trừ trước, máy nhân sau.",
+   "Cụm X nhân 3 là ô trống to — tìm nó đã."
+  ],
+  "C6": [
+   "Gỡ máy cộng trước.",
+   "Còn lại là bài một máy chia quen thuộc."
+  ],
+  "C7": [
+   "Gỡ máy trừ trước đã.",
+   "Cụm X chia 5 ra số nào rồi mới đảo phép chia."
+  ],
+  "C8": [
+   "Cụm nằm trong ngoặc là một ô trống to.",
+   "Gỡ máy nhân trước rồi mới mở ngoặc."
+  ],
+  "C9": [
+   "Cụm X nhân 4 chính là thứ bị đem trừ.",
+   "100 trừ đi bao nhiêu thì còn 60?"
+  ]
+ },
+ "DL:KSN3.B16": {
+  "C1": [
+   "Rà đuôi số tìm cặp tròn chục trước.",
+   "Đuôi 8 tìm đuôi 2, đuôi 7 tìm đuôi 3."
+  ],
+  "C2": [
+   "Rà đuôi số: ai là bạn tri kỷ của ai?",
+   "Đuôi 7 đi với đuôi 3, đuôi 5 đi với đuôi 5."
+  ],
+  "C3": [
+   "Hai cụm cùng mặc một chiếc áo — gom ruột lại.",
+   "Giữ nguyên số hàng, cộng số viên trong ngoặc."
+  ],
+  "C4": [
+   "Cùng áo nhân 4 — gom ruột vào một ngoặc.",
+   "Tổng trong ngoặc tròn trịa lắm đấy."
+  ],
+  "C5": [
+   "Số lẻ loi đang mặc ÁO TÀNG HÌNH.",
+   "Mọi số đều nhân được với 1 mà không đổi."
+  ],
+  "C6": [
+   "Bắc cầu vồng nối đầu với cuối.",
+   "Hai mươi số thì được mấy cặp?"
+  ],
+  "C7": [
+   "Rà cặp tròn trăm trước khi động bút.",
+   "Đuôi 5 tìm đuôi 5, đuôi 8 tìm đuôi 2."
+  ],
+  "C8": [
+   "Số 4 lẻ loi đang mặc áo tàng hình.",
+   "Gom lại thì trong ngoặc tròn đến ngỡ ngàng."
+  ],
+  "C9": [
+   "Ghép hai thừa số cho tròn chục trước.",
+   "Số 5 tìm bạn nào thì thành tròn chục?"
+  ]
+ },
+ "DL:KSN3.B17": {
+  "C1": [
+   "Hỏi ngược từ đích: muốn tính cả hai thì cần biết gì?",
+   "Phần của Bình là trạm giữa đang bị giấu."
+  ],
+  "C2": [
+   "Đứng ở câu hỏi cuối mà hỏi ngược.",
+   "Số bạn nữ chính là trạm giữa."
+  ],
+  "C3": [
+   "Gạch một gạch dưới số liệu, hai gạch dưới câu hỏi cuối.",
+   "Trạm giữa là thứ cần biết mà đề chưa cho."
+  ],
+  "C4": [
+   "Trạm giữa là số cam đem biếu.",
+   "Có phần biếu rồi mới trừ khỏi tổng."
+  ],
+  "C5": [
+   "Trạm giữa là thùng thứ hai.",
+   "Tìm thùng hai xong mới cộng cả hai lại."
+  ],
+  "C6": [
+   "Bài này đi được hai đường, chọn đường nào cũng tới.",
+   "Hoặc cộng hai lần bán trước, hoặc trừ dần từng lần."
+  ],
+  "C7": [
+   "Câu hỏi phải cần một trạm giữa mới trả lời được.",
+   "Hỏi về cả hai anh em thì phải tính phần anh trước."
+  ],
+  "C8": [
+   "Ba chặng — làm lần lượt, đừng nhảy.",
+   "Chưa biết Su Kem thì chưa tính được chị."
+  ],
+  "C9": [
+   "Trạm giữa là tổng số bánh.",
+   "Gộp các hộp bằng nhau trước rồi mới chia đều."
+  ]
+ },
+ "DL:KSN3.B18": {
+  "C1": [
+   "Không có chữ LẦN — đi đường cộng trừ.",
+   "Vẽ sơ đồ đoạn: ai dài, thò ra bao nhiêu?"
+  ],
+  "C2": [
+   "Có chữ LẦN — vẽ sơ đồ ô vuông.",
+   "Sợi một một ô, sợi hai ba ô."
+  ],
+  "C3": [
+   "Đọc lại hai đề, tìm chữ LẦN.",
+   "Có chữ ấy thì vẽ ô vuông, không có thì vẽ vạch thẳng nối dài."
+  ],
+  "C4": [
+   "Hỏi gấp mấy lần thì lấy số lớn chia số bé.",
+   "Khối bé xếp mấy lần thì đầy khối lớn?"
+  ],
+  "C5": [
+   "Vẽ sơ đồ ô: bố mấy ô, con mấy ô?",
+   "Người ẩn ít ô thì dùng phép chia."
+  ],
+  "C6": [
+   "Soi từng câu xem có chữ LẦN không.",
+   "Cùng cặp số mà hai số phận — vẽ sơ đồ cho chắc."
+  ],
+  "C7": [
+   "Tuổi ông so với tuổi Bống — số nào lớn hơn?",
+   "Đặt phép chia ngay."
+  ],
+  "C8": [
+   "Vẽ sơ đồ ô: hộp lớn ba ô, hộp nhỏ một ô.",
+   "Chỗ hơn nhau là mấy ô, mà ứng với bao nhiêu viên?"
+  ],
+  "C9": [
+   "Hai chặng: một chặng gấp, một chặng hơn.",
+   "Chưa biết tuổi bố thì chưa tính được ông."
+  ]
+ },
+ "DL:KSN3.B19": {
+  "C1": [
+   "Thêm vào một bên thì thêm đúng bằng HIỆU.",
+   "Tìm hiệu hai hộp trước đã."
+  ],
+  "C2": [
+   "Bớt ở một bên cũng dùng đúng bằng hiệu.",
+   "Số bớt bằng đúng số thêm ở câu trước."
+  ],
+  "C3": [
+   "CHUYỂN thì khác: một bên hụt, một bên phình.",
+   "Mỗi lần chuyển thì hiệu giảm những hai."
+  ],
+  "C4": [
+   "Tìm hiệu trước rồi chia đôi.",
+   "Chuyển thì hiệu giảm gấp đôi số đem chuyển."
+  ],
+  "C5": [
+   "Cho tức là chuyển — hiệu giảm gấp đôi.",
+   "Tìm hiệu rồi chia đôi, xong nhớ thử lại."
+  ],
+  "C6": [
+   "Ba giỏ lệch đều — san về giỏ giữa.",
+   "Tổng chia 3 là ra người đứng giữa."
+  ],
+  "C7": [
+   "San đều về số đứng giữa.",
+   "Tổng chia 3 ra số giữa, rồi lùi một tiến một."
+  ],
+  "C8": [
+   "BÀI NGƯỢC: chuyển bao nhiêu thì hiệu giảm gấp đôi.",
+   "Nhân đôi số đã đem chuyển."
+  ],
+  "C9": [
+   "Hiệu phải giảm từ bao nhiêu xuống bao nhiêu?",
+   "Hiệu giảm bấy nhiêu thì chuyển bằng nửa số ấy."
+  ],
+  "C10": [
+   "Bốn giỏ lệch đều nhịp 2 — san hai đầu về giữa.",
+   "Tổng cặp giữa bằng tổng cặp ngoài — chia đôi tổng."
+  ]
+ },
+ "DL:KSN3.B20": {
+  "C1": [
+   "Hiệu tuổi đóng băng vĩnh viễn.",
+   "Lấy tuổi lớn trừ tuổi bé của từng cặp."
+  ],
+  "C2": [
+   "Mỗi người cùng thêm đúng ba tuổi.",
+   "Cộng thêm cho từng người một."
+  ],
+  "C3": [
+   "Tổng của HAI người thì mỗi năm tăng hai.",
+   "Tổng bây giờ cộng với số năm nhân số người."
+  ],
+  "C4": [
+   "Mỗi năm tổng tăng đúng bằng SỐ NGƯỜI.",
+   "Tổng cộng với số năm nhân số người."
+  ],
+  "C5": [
+   "Tính số năm phải trôi trước đã.",
+   "Số năm ấy chính là hiệu tuổi hai anh em."
+  ],
+  "C6": [
+   "Số năm trôi bằng đúng hiệu tuổi hai anh em.",
+   "Rồi cộng số năm ấy cho người kia."
+  ],
+  "C7": [
+   "Tìm hiệu tuổi bố con trước đã.",
+   "Hiệu ấy không đổi — cộng vào tuổi Su Kem lúc đó."
+  ],
+  "C8": [
+   "Hiệu tuổi đóng băng — tìm nó trước.",
+   "Gấp đôi nghĩa là chỗ hơn nhau đúng bằng tuổi em lúc đó."
+  ],
+  "C9": [
+   "Mỗi năm tổng của hai người tăng mấy?",
+   "Tính xem tổng cần tăng thêm bao nhiêu rồi chia."
+  ]
+ },
+ "DL:KSN3.B21": {
+  "C1": [
+   "Rút về MỘT trước đã.",
+   "Chia tiền cho số gói."
+  ],
+  "C2": [
+   "Có giá một gói rồi thì nhân lên.",
+   "Giá một gói nhân với số gói cần mua."
+  ],
+  "C3": [
+   "Ghé trạm MỘT trước, đừng đụng số nhiều vội.",
+   "Chia ra giá một chiếc rồi mới nhân."
+  ],
+  "C4": [
+   "CHIỀU NGƯỢC — nhưng vẫn ghé trạm MỘT trước.",
+   "Chiều này thì chia rồi lại chia."
+  ],
+  "C5": [
+   "Rút về MỘT phút trước.",
+   "Rồi nhân với số phút cần tính."
+  ],
+  "C6": [
+   "Rút về một hộp trước đã.",
+   "Rồi nhân với số hộp — dù ít hơn cũng vẫn nhân."
+  ],
+  "C7": [
+   "Rút về MỘT giờ.",
+   "Rồi nhân với số giờ."
+  ],
+  "C8": [
+   "So cả bịch thì không công bằng — so trạm MỘT.",
+   "Tính giá một hộp của từng tiệm rồi mới so."
+  ],
+  "C9": [
+   "Rút về một hộp trước.",
+   "Rồi nhân với số hộp mẹ mua."
+  ]
+ },
+ "DL:KSN3.B22": {
+  "C1": [
+   "Gỡ máy VÀO SAU trước — đó là máy cộng.",
+   "Đảo cả thứ tự lẫn dấu phép tính."
+  ],
+  "C2": [
+   "Máy trừ vào sau nên gỡ nó trước.",
+   "Trừ đảo thành cộng, chia đảo thành nhân."
+  ],
+  "C3": [
+   "Vẽ hàng xuôi trước rồi kẻ hàng lùi ngay bên dưới.",
+   "Hàng lùi phải ngược cả chiều mũi tên lẫn dấu phép."
+  ],
+  "C4": [
+   "Ba trạm — gỡ trạm cuối cùng trước.",
+   "Máy chia gỡ trước, rồi máy trừ, rồi mới máy nhân."
+  ],
+  "C5": [
+   "Gỡ ngược từ trạm cuối: máy trừ.",
+   "Rồi tới máy nhân, cuối cùng mới là máy cộng."
+  ],
+  "C6": [
+   "Gỡ sự việc xảy ra sau cùng trước.",
+   "Trả lại 3 viên đã cho thì được đúng nửa túi."
+  ],
+  "C7": [
+   "Gỡ lần bán sau trước đã.",
+   "Số vừa tìm được chính là một nửa — nhân đôi lên."
+  ],
+  "C8": [
+   "Gỡ sự kiện gần nhất trước.",
+   "Trả lại phần đọc ngày sau thì ra nửa cuốn."
+  ],
+  "C9": [
+   "Gỡ máy chia trước, rồi máy cộng, rồi máy nhân.",
+   "Gỡ xong nhớ chạy thử một chuyến xuôi."
+  ]
+ },
+ "DL:KSN3.B23": {
+  "C1": [
+   "GIẢ SỬ tất cả đều là loài ít chân.",
+   "Chân thừa ra chia cho phần chênh của mỗi cú đổi."
+  ],
+  "C2": [
+   "Giả vờ cả đàn là gà rồi đếm chân.",
+   "So với chân đếm thật, thừa ra bao nhiêu?"
+  ],
+  "C3": [
+   "Giả sử ngược lại: cả đàn đều là loài nhiều chân.",
+   "Lần này chân giả vờ sẽ THIẾU chứ không thừa."
+  ],
+  "C4": [
+   "Bốn nhịp: giả vờ, so thật, đổi dần, rồi chốt.",
+   "Mỗi cú đổi gà thành chó thì đàn thêm mấy chân?"
+  ],
+  "C5": [
+   "Giả sử toàn gà rồi đếm chân giả vờ.",
+   "Chân thừa chia cho phần chênh mỗi cú đổi."
+  ],
+  "C6": [
+   "Vẫn bốn nhịp, chỉ đổi con vật thành chiếc xe.",
+   "Phần chênh mỗi cú đổi lần này chỉ là một bánh."
+  ],
+  "C7": [
+   "Giả sử tất cả là loại ít chân trước.",
+   "Mỗi cú đổi thêm đúng một chân."
+  ],
+  "C8": [
+   "Đề không cho số đầu nên giả thiết tạm chưa dùng thẳng được.",
+   "Mở lại BẢNG DÒ của lớp 2 mà thử từng cặp."
+  ],
+  "C9": [
+   "Trọn bốn nhịp, rồi thử lại bằng cả hai cửa.",
+   "Thử cả số chân lẫn số đầu mới chắc."
+  ]
+ },
+ "DL:KSN3.B24": {
+  "C1": [
+   "Hỏi hai câu: đường thẳng hay vòng tròn? hai đầu có trồng không?",
+   "Đường thẳng đủ hai đầu thì cây nhiều hơn khoảng một."
+  ],
+  "C2": [
+   "Mất một đầu là mất một ngón tay.",
+   "Thiếu một đầu thì cây bằng đúng số khoảng."
+  ],
+  "C3": [
+   "Vòng tròn thì điểm cuối trùng điểm đầu.",
+   "Cây bằng đúng số khoảng, không cộng thêm."
+  ],
+  "C4": [
+   "Vòng tròn — cọc bằng đúng số khoảng.",
+   "Chia chu vi cho khoảng cách."
+  ],
+  "C5": [
+   "Tiếng chuông là CÂY, quãng lặng là KHOẢNG.",
+   "Đếm số khoảng trước rồi mới nhân."
+  ],
+  "C6": [
+   "Nhát cưa là khoảng, đoạn gỗ là cây.",
+   "Tìm số nhát trước rồi mới nhân thời gian."
+  ],
+  "C7": [
+   "Bài ngược, mà vẫn là thế trận vòng tròn.",
+   "Vòng tròn thì số khoảng bằng đúng số cây."
+  ],
+  "C8": [
+   "Đếm KHOẢNG, đừng đếm tiếng chuông.",
+   "Khoảng ít hơn tiếng chuông đúng một."
+  ],
+  "C9": [
+   "Đi lùi: tìm số nhát trước đã.",
+   "Nhát là khoảng, đoạn là cây — vẫn phải cộng thêm một."
+  ]
+ },
+ "DL:KSN3.B25": {
+  "C1": [
+   "Vẽ hai vòng rồi điền vùng GIỮA trước.",
+   "Hai cánh = số của từng môn trừ đi vùng giữa."
+  ],
+  "C2": [
+   "Cộng cả ba vùng nằm trong hai vòng.",
+   "Hoặc đường tắt: cộng thô rồi trừ phần bị đếm hai lần."
+  ],
+  "C3": [
+   "Vùng ngoài = cả nhóm trừ phần nằm trong hai vòng.",
+   "Dùng lại kết quả của câu ngay trước."
+  ],
+  "C4": [
+   "Cộng thô rồi trừ đi phần bị đếm hai lần.",
+   "Có phần trong hai vòng rồi mới tìm vùng ngoài."
+  ],
+  "C5": [
+   "Vẫn hai vòng: vòng anh trai và vòng chị gái.",
+   "Tìm phần có ít nhất một người trước đã."
+  ],
+  "C6": [
+   "Cộng thô rồi trừ đi phần mang cả hai thứ.",
+   "Rồi lấy cả nhóm trừ đi phần vừa tìm."
+  ],
+  "C7": [
+   "Bốn vùng: chỉ môn này, cả hai, chỉ môn kia, và vùng ngoài.",
+   "Cộng đủ bốn vùng thì phải bằng sĩ số cả lớp."
+  ],
+  "C8": [
+   "BÀI NGƯỢC: cộng thô lên xem có vỡ trần không.",
+   "Phần vỡ trần chính là phần bị đếm hai lần."
+  ],
+  "C9": [
+   "Hai nhịp: tìm số bạn thích ít nhất một loại trước.",
+   "Rồi lấy cộng thô trừ đi con số vừa tìm."
+  ]
+ },
+ "DL:KSN3.B26": {
+  "C1": [
+   "Gặp một vịt thì được nhấc ra, đặt hai gà vào thay.",
+   "Ba con vịt thì thay ba lần."
+  ],
+  "C2": [
+   "Hai loại lẫn lộn thì CHƯA ĐƯỢC CỘNG.",
+   "Thay hết về một loại rồi mới cộng."
+  ],
+  "C3": [
+   "Chiều ngược — gộp gà lại thành vịt.",
+   "Mấy con gà thì gộp được một con vịt?"
+  ],
+  "C4": [
+   "Quy hết về loại nhỏ trước đã.",
+   "Thay dưa thành cam rồi mới cộng phần cam sẵn có."
+  ],
+  "C5": [
+   "Đổi hết về bút chì rồi mới cộng.",
+   "Hai hộp thay được bao nhiêu bút chì?"
+  ],
+  "C6": [
+   "Quy về gà trước, cân sau.",
+   "Có tổng số gà rồi mới nhân với cân nặng mỗi con."
+  ],
+  "C7": [
+   "Chiều ngược: gộp túi nhỏ lại thành túi to.",
+   "Mấy túi nhỏ thì đầy một túi to?"
+  ],
+  "C8": [
+   "Thay con vịt trong cân thứ hai bằng gà.",
+   "Cân ấy biến thành mấy con gà cả thảy?"
+  ],
+  "C9": [
+   "Thế bắc cầu: đi hai nhịp, dưa sang xoài rồi xoài sang cam.",
+   "Thay dưa ra xoài trước đã."
+  ]
+ },
+ "DL:KSN3.B27": {
+  "C1": [
+   "Gom một cặp dài - rộng rồi nhân đôi.",
+   "Hai cặp cạnh sinh đôi nên chỉ cần cộng một cặp."
+  ],
+  "C2": [
+   "Bốn cạnh bằng chằn chặn.",
+   "Lấy cạnh nhân với số cạnh."
+  ],
+  "C3": [
+   "Cách một: cộng cả bốn cạnh như đường kiến bò.",
+   "Cách hai: gom một cặp rồi nhân đôi — so xem có trùng không."
+  ],
+  "C4": [
+   "Rào chạy quanh vườn chính là chu vi.",
+   "Gom một cặp dài - rộng rồi nhân đôi."
+  ],
+  "C5": [
+   "NGƯỢC: chia trả lại cho số cạnh.",
+   "Hình vuông có bốn cạnh bằng nhau."
+  ],
+  "C6": [
+   "Tìm NỬA VÒNG rào trước đã.",
+   "Nửa vòng bằng dài cộng rộng — trừ đi chiều dài là ra."
+  ],
+  "C7": [
+   "Lấy cạnh nhân bốn.",
+   "Con số 25 nhân 4 thì tròn trịa lắm."
+  ],
+  "C8": [
+   "Làm riêng từng hình, tuy cùng một vòng rào.",
+   "Hình vuông thì chia bốn; hình chữ nhật thì tìm nửa vòng."
+  ],
+  "C9": [
+   "Tìm nửa vòng trước, rồi vẽ sơ đồ ô.",
+   "Nửa vòng gồm mấy ô: rộng một ô, dài hai ô."
+  ]
+ },
+ "DL:KSN3.B28": {
+  "C1": [
+   "Tính chu vi cũ trước đã.",
+   "Chiều dài có mặt ở hai phía nên nới bao nhiêu thì chu vi tăng gấp đôi."
+  ],
+  "C2": [
+   "Đường tắt: không cần tính lại từ đầu.",
+   "Nới một chiều bao nhiêu thì chu vi tăng gấp đôi."
+  ],
+  "C3": [
+   "Bớt cũng bị nhân đôi y như thêm.",
+   "Chiều rộng cũng nằm ở hai phía."
+  ],
+  "C4": [
+   "Cạnh hình vuông có mặt ở mấy phía?",
+   "Nới cạnh bao nhiêu thì chu vi tăng bấy nhiêu lần."
+  ],
+  "C5": [
+   "Nới hai chiều thì cộng phần tăng của cả hai.",
+   "Mỗi chiều nới bao nhiêu thì chu vi tăng gấp đôi phần ấy."
+  ],
+  "C6": [
+   "Tính phần tăng của từng chiều rồi cộng vào chu vi cũ.",
+   "Chiều nào cũng bị nhân đôi."
+  ],
+  "C7": [
+   "BÀI NGƯỢC: chu vi tăng gấp đôi phần đem nới.",
+   "Chia đôi phần chu vi đã tăng."
+  ],
+  "C8": [
+   "Một bên thêm, một bên bớt cùng một lượng.",
+   "Tính lại chu vi rồi so với chu vi cũ."
+  ],
+  "C9": [
+   "Cạnh hình vuông có mặt ở bốn phía.",
+   "Giảm cạnh bao nhiêu thì chu vi giảm bấy nhiêu lần."
+  ]
+ },
+ "DL:KSN3.B29": {
+  "C1": [
+   "Đường kính ghép từ hai bán kính chụm đầu.",
+   "Nhân đôi độ mở compa."
+  ],
+  "C2": [
+   "Chiều ngược — chia đôi.",
+   "Đường kính vốn gồm hai bán kính."
+  ],
+  "C3": [
+   "Chân nhọn compa đứng ở tâm.",
+   "Độ mở compa chính là bán kính — đừng đổi độ mở giữa chừng."
+  ],
+  "C4": [
+   "Điểm giữa chia đoạn thành hai phần bằng nhau.",
+   "Chia đôi độ dài rồi đánh dấu."
+  ],
+  "C5": [
+   "Hỏi trước: đoạn ấy có ĐI QUA TÂM hay né tâm?",
+   "Tính xem đường kính của hình tròn này phải dài đúng bao nhiêu."
+  ],
+  "C6": [
+   "Trục xe đặt ngay ở tâm.",
+   "Từ tâm xuống mặt đất đúng bằng một bán kính."
+  ],
+  "C7": [
+   "Giữ nguyên chân compa, chỉ đổi độ mở.",
+   "Nhìn cái đĩa, cái bia phi tiêu xem giống gì."
+  ],
+  "C8": [
+   "Đi từ tâm ra: mép trong ở vạch nào, mép ngoài ở vạch nào?",
+   "Lấy bán kính lớn trừ bán kính bé."
+  ],
+  "C9": [
+   "Bí mật số một: mọi bán kính của một hình tròn đều bằng nhau.",
+   "Bánh vuông thì chỗ góc với chỗ cạnh có bằng nhau không?"
+  ]
+ },
+ "DL:KSN3.B30": {
+  "C1": [
+   "Lát gạch: mấy hàng, mỗi hàng mấy viên?",
+   "Đếm kiểu khay kẹo — dài nhân rộng."
+  ],
+  "C2": [
+   "Hình vuông là chữ nhật có dài bằng rộng.",
+   "Lấy cạnh nhân với chính nó."
+  ],
+  "C3": [
+   "Hỏi cho rõ: đề muốn VÒNG RÀO hay TẤM THẢM?",
+   "Rào thì gom cặp nhân đôi; thảm thì dài nhân rộng."
+  ],
+  "C4": [
+   "Ô gạch chuẩn giờ là ô một đề-xi-mét — luật chơi y nguyên.",
+   "Vẫn là dài nhân rộng."
+  ],
+  "C5": [
+   "NGƯỢC: chia trả lại.",
+   "Diện tích chia cho chiều dài."
+  ],
+  "C6": [
+   "Số nào nhân với chính nó thì ra diện tích ấy?",
+   "Dò trong bảng cửu chương."
+  ],
+  "C7": [
+   "Hai bước — tính diện tích nền trước.",
+   "Có diện tích rồi mới nhân số gạch mỗi mét vuông."
+  ],
+  "C8": [
+   "Tính diện tích riêng từng hình rồi mới so.",
+   "Cùng một vòng rào mà tấm thảm chưa chắc bằng nhau."
+  ],
+  "C9": [
+   "Ghép hai hình vuông cạnh-bằng-rộng lại mà xem.",
+   "Mỗi hình vuông ấy chiếm bao nhiêu diện tích?"
+  ]
+ },
+ "DL:KSN3.B31": {
+  "C1": [
+   "Vẽ bản đồ từng tầng, đừng đếm mặt nhìn thấy.",
+   "Đếm một tầng kiểu khay kẹo rồi cộng các tầng."
+  ],
+  "C2": [
+   "Mỗi tầng một khay.",
+   "Đếm một tầng rồi cộng dọc."
+  ],
+  "C3": [
+   "Mắt bị hình khối đánh lừa, bản đồ tầng thì không.",
+   "Hàng sau và tầng dưới có nhìn thấy được đâu."
+  ],
+  "C4": [
+   "Vẽ bản đồ hai tầng riêng ra.",
+   "Tầng bị khoét thì trừ đi phần đã nhấc."
+  ],
+  "C5": [
+   "Mỗi tầng một lưới, điền số rồi cộng dọc.",
+   "Tầng trên phải trừ đi phần bị khoét."
+  ],
+  "C6": [
+   "Đếm từng tầng rồi cộng lại.",
+   "Khối hộp đủ ba tầng thì có bao nhiêu — trừ đi phần đã có."
+  ],
+  "C7": [
+   "Tầng dưới nguyên vẹn, tầng trên bị hụt.",
+   "Đếm riêng từng tầng rồi cộng."
+  ],
+  "C8": [
+   "Mỗi tầng một khay vuông, thu nhỏ dần.",
+   "Đếm từng tầng rồi cộng cả ba."
+  ],
+  "C9": [
+   "Hai tầng bằng nhau — chia đôi tổng.",
+   "Phần khoét = số cũ trừ số còn lại."
+  ]
+ },
+ "DL:KSN3.B32": {
+  "C1": [
+   "Mỗi chặng giữa hai số dài 5 phút.",
+   "Lấy số kim phút chỉ nhân 5."
+  ],
+  "C2": [
+   "Đọc kim giờ theo số nó ĐÃ ĐI QUA.",
+   "Kim phút thì lấy số nó chỉ nhân 5."
+  ],
+  "C3": [
+   "Buổi chiều thì cộng thêm nửa vòng ngày.",
+   "Cộng 12 vào số giờ, phần phút giữ nguyên."
+  ],
+  "C4": [
+   "Quá nửa vòng thì mượn tên giờ sắp tới.",
+   "Lấy 60 trừ số phút ra phần còn thiếu."
+  ],
+  "C5": [
+   "Cộng thời lượng vào phần phút trước.",
+   "Phút chưa quá 60 nên chưa phải mượn sang giờ."
+  ],
+  "C6": [
+   "Cùng cột trên tờ lịch là cùng thứ.",
+   "Mỗi bước xuống một dòng là cách đúng 7 ngày."
+  ],
+  "C7": [
+   "Đổi cách đọc kém về cách đọc thường trước đã.",
+   "Rồi mới trừ hai mốc phút."
+  ],
+  "C8": [
+   "Tìm các ngày cùng thứ trước: 1, 8, 15…",
+   "Hoặc chia số ngày cách nhau cho 7 rồi đi tiếp phần dư."
+  ],
+  "C9": [
+   "Máy soi số dư của Bài 11 tái xuất.",
+   "Tuần tròn quay về chỗ cũ, chỉ phần dư mới đi tiếp."
+  ]
+ },
+ "DL:KSN3.B33": {
+  "C1": [
+   "Cầu nối vạn năng của cả hai là cùng một con số.",
+   "Hai gói đường 500 g chồng lên nhau là tròn một ki-lô-gam."
+  ],
+  "C2": [
+   "Đi lên thì nhân, đi xuống thì chia.",
+   "Dùng cầu nối ấy cho cả hai chiều."
+  ],
+  "C3": [
+   "Vật nhẹ hơn một ki-lô thì đo bằng đơn vị nhỏ.",
+   "Chất lỏng ít thì đong đơn vị nhỏ, nhiều thì dùng đơn vị lớn."
+  ],
+  "C4": [
+   "Quả cân ĐỐI DIỆN vật thì cộng vào nhau.",
+   "Cân thăng bằng nghĩa là hai đĩa nặng bằng nhau."
+  ],
+  "C5": [
+   "Nhìn kỹ: có quả cân giống hệt ở CẢ HAI đĩa.",
+   "Nhấc cả hai quả ấy ra, cân vẫn thăng bằng."
+  ],
+  "C6": [
+   "Cộng ba loại khô lại trước.",
+   "Gấp đôi thì nhân đôi TỪNG loại, chứ không chỉ nhân tổng."
+  ],
+  "C7": [
+   "Đổi một lít về mi-li-lít trước đã.",
+   "Rồi chia cho sức chứa mỗi ca."
+  ],
+  "C8": [
+   "Rót đều thì chia — tìm một cốc trước.",
+   "Có một cốc rồi mới nhân với số cốc đã uống."
+  ],
+  "C9": [
+   "Trò thay thế: đổi dưa ra cam trước.",
+   "Có cân nặng quả dưa rồi mới cộng thêm một quả cam."
+  ]
+ },
+ "DL:KSN3.B34": {
+  "C1": [
+   "Cùng một số tiền, nhiều bộ áo khác nhau.",
+   "Chia mệnh giá lớn cho mệnh giá nhỏ."
+  ],
+  "C2": [
+   "Nhẩm theo nghìn cho nhẹ đầu.",
+   "Cộng cả ba tờ lại."
+  ],
+  "C3": [
+   "Tiền trả lại = tiền khách đưa trừ tiền hàng.",
+   "Thử lại bằng phép cộng cho chắc."
+  ],
+  "C4": [
+   "Tính tiền ba cốc trước đã.",
+   "Rồi lấy tiền khách đưa trừ đi."
+  ],
+  "C5": [
+   "Chia mệnh giá lớn cho mệnh giá nhỏ.",
+   "Thử lại: nhân ngược lên xem có tròn không."
+  ],
+  "C6": [
+   "Ba dòng sổ vàng: VỐN, BÁN, rồi LÃI.",
+   "Lãi bằng tiền bán trừ tiền vốn."
+  ],
+  "C7": [
+   "Rút về MỘT cốc: vốn mỗi cốc là bao nhiêu?",
+   "Lãi mỗi cốc = giá bán trừ vốn mỗi cốc."
+  ],
+  "C8": [
+   "Cách một: tính tổng tiền bán rồi trừ vốn.",
+   "Cách hai: rút về một cốc, tính lãi mỗi cốc rồi nhân lên."
+  ],
+  "C9": [
+   "Cộng cả quỹ lại trước đã.",
+   "Còn thiếu bao nhiêu thì chia cho lãi mỗi cốc."
+  ]
+ },
+ "DL:KSN4.B01": {
+  "C1": [
+   "Chia lớp trước, đọc sau.",
+   "Mỗi lớp đọc như một số ba chữ số rồi gắn tên lớp vào."
+  ],
+  "C2": [
+   "Kẻ bảng hàng - lớp rồi rót từng chữ số vào cột.",
+   "Nghe không trăm hay linh là chỗ ấy phải có chữ số 0 giữ chỗ."
+  ],
+  "C3": [
+   "Mỗi số là một tòa nhà ghép từ các tầng giá trị.",
+   "Tầng nào trống thì không viết vào tổng."
+  ],
+  "C4": [
+   "Kẻ đủ các cột rồi đặt từng chữ số vào đúng cột.",
+   "Cột nào đề không nhắc tới thì điền chữ số 0."
+  ],
+  "C5": [
+   "Đừng đoán mò — LẬP BẢNG liệt kê.",
+   "Kê các cặp có tổng bằng 9 rồi thêm một cột hiệu."
+  ],
+  "C6": [
+   "Lập bảng các cặp có tổng bằng 12.",
+   "Thêm cột hiệu rồi dò dòng nào khớp."
+  ],
+  "C7": [
+   "Kê có thứ tự: cho hàng chục giảm dần từng nấc.",
+   "Rồi gạch dòng nào hàng chục không lớn hơn hàng đơn vị."
+  ],
+  "C8": [
+   "Gọi tổng hai chữ số sau là một phần, hàng trăm là hai phần.",
+   "Ba phần cộng lại đúng bằng tổng đề cho."
+  ],
+  "C9": [
+   "Lập bảng thử từng giá trị của tổng hai chữ số.",
+   "Nhân xong rồi kiểm lại tổng chữ số của kết quả."
+  ]
+ },
+ "DL:KSN4.B02": {
+  "C1": [
+   "Số cũ một phần, số mới mười phần.",
+   "Phần tăng thêm là chín phần."
+  ],
+  "C2": [
+   "Cửa TRÁI: chữ số mới đặt vào hàng trăm.",
+   "Số tăng thêm đúng bằng giá trị nó có ở hàng trăm."
+  ],
+  "C3": [
+   "Cả số đi thang máy lên một tầng.",
+   "Số cũ một phần, số mới mấy phần?"
+  ],
+  "C4": [
+   "Phần hơn chính là chín phần.",
+   "Chia phần hơn cho 9."
+  ],
+  "C5": [
+   "Số mới gồm chín phần cộng thêm chữ số vừa viết.",
+   "Bớt chữ số ấy ra trước rồi mới chia 9."
+  ],
+  "C6": [
+   "Chữ số mới đứng vào hàng trăm.",
+   "Số cũ vẫn đứng yên, không ai nhích tầng."
+  ],
+  "C7": [
+   "Xen vào giữa thì chữ số đầu bị đẩy lên một tầng.",
+   "Chữ số đứng cuối thì vẫn đứng yên."
+  ],
+  "C8": [
+   "Phần tăng chỉ do chữ số bị đẩy lên tầng.",
+   "Tìm chữ số ấy trước, rồi mới dùng điều kiện tổng."
+  ],
+  "C9": [
+   "Viết số mới thành hàng trăm cộng chữ số cuối.",
+   "Rồi thử từng giá trị của chữ số hàng chục."
+  ]
+ },
+ "DL:KSN4.B03": {
+  "C1": [
+   "Thang máy: nhân thì thêm chữ số 0, chia thì bớt chữ số 0.",
+   "Đếm xem thêm bớt mấy chữ số 0."
+  ],
+  "C2": [
+   "Cẩn thận: đề hỏi giảm mấy LẦN, không phải mấy đơn vị.",
+   "Đi xuống một tầng thang máy là chia cho bao nhiêu?"
+  ],
+  "C3": [
+   "Ba tầng thang máy thì thêm hoặc bớt ba chữ số 0.",
+   "Đếm cho đúng số chữ số 0."
+  ],
+  "C4": [
+   "Số cũ gấp mười lần số mới.",
+   "Vậy tổng của hai số gồm bao nhiêu phần?"
+  ],
+  "C5": [
+   "Dựng đẳng thức: số cũ = mười lần số mới cộng chữ số bị xóa.",
+   "Phần hiệu gồm chín lần số mới cộng chữ số bị xóa."
+  ],
+  "C6": [
+   "Số ghi sai bằng số đúng chia cho 10.",
+   "Tìm số ghi sai trước rồi mới trừ."
+  ],
+  "C7": [
+   "Cắt tầng thượng thì số giảm đúng bằng GIÁ TRỊ chữ số ấy.",
+   "Giá trị ấy đang nằm ở hàng trăm."
+  ],
+  "C8": [
+   "Số cũ = giá trị hàng trăm cộng số mới.",
+   "Thay số cũ bằng năm lần số mới rồi thử từng chữ số hàng trăm."
+  ],
+  "C9": [
+   "Số đúng gấp mười lần số viết nhầm.",
+   "Tổng hụt đi đúng bằng phần chênh giữa hai số ấy."
+  ]
+ },
+ "DL:KSN4.B04": {
+  "C1": [
+   "Hiệu mang họ SỐ 9.",
+   "Lấy hiệu hai chữ số rồi nhân 9."
+  ],
+  "C2": [
+   "Tổng mang họ SỐ 11.",
+   "Lấy tổng hai chữ số rồi nhân 11."
+  ],
+  "C3": [
+   "Đừng đặt tính — dùng định luật họ 9.",
+   "Hiệu hai chữ số nhân 9."
+  ],
+  "C4": [
+   "Chia hiệu cho 9 để lộ ra hiệu hai chữ số.",
+   "Rồi kê mọi cặp có hiệu ấy, hàng chục lớn hơn."
+  ],
+  "C5": [
+   "Tổng hai số đảo nhau mang họ SỐ MƯỜI MỘT.",
+   "Chạy chiều ngược: chia tổng cho con số của họ ấy."
+  ],
+  "C6": [
+   "Chia cho 9 ra hiệu hai chữ số trước.",
+   "Rồi kê mọi cặp — nhớ chữ số hàng chục không được là 0."
+  ],
+  "C7": [
+   "Lập bảng các cặp có tổng bằng 11.",
+   "Thêm cột hiệu rồi dò dòng khớp."
+  ],
+  "C8": [
+   "Chia hiệu cho 9 ra hiệu hai chữ số.",
+   "Có cả tổng lẫn hiệu hai chữ số rồi thì tra bảng."
+  ],
+  "C9": [
+   "Viết bằng cấu tạo số: chục nhân mười cộng đơn vị.",
+   "Trừ nhau rồi gom lại xem còn thừa số chung nào."
+  ]
+ },
+ "DL:KSN4.B05": {
+  "C1": [
+   "Hai cặp tròn này phải thuộc nằm lòng.",
+   "Chúng cho ra số tròn trăm và tròn nghìn."
+  ],
+  "C2": [
+   "GỘP KỆ: có thừa số chung thì gom vào một ngoặc.",
+   "Tổng trong ngoặc tròn trịa lắm."
+  ],
+  "C3": [
+   "Nhân 11 là nhân 10 rồi cộng chính nó.",
+   "Mẹo hai đầu: hai chữ số dạt ra hai bên, tổng nằm giữa."
+  ],
+  "C4": [
+   "Số 25 luôn khao khát bắt cặp với 4.",
+   "Tách thừa số kia ra để lộ số 4."
+  ],
+  "C5": [
+   "Nhân 100 trước cho dễ rồi trả lại.",
+   "Vì 25 chính là 100 chia 4."
+  ],
+  "C6": [
+   "Vẫn gộp kệ, chỉ khác là trong ngoặc thành phép trừ.",
+   "Gom thừa số chung ra ngoài."
+  ],
+  "C7": [
+   "Đừng tính hết — tách vế trái cho giống vế phải.",
+   "Hai vế chỉ khác nhau ở phần cộng thêm."
+  ],
+  "C8": [
+   "Soi kỹ trong ngoặc TRƯỚC khi nhân.",
+   "Một thừa số bằng 0 thì cả tích ra sao?"
+  ],
+  "C9": [
+   "Giải thích trước, rồi mới nhẩm hai phép.",
+   "Tổng hai chữ số quá 9 thì phải nhớ sang bên trái."
+  ]
+ },
+ "DL:KSN4.B06": {
+  "C1": [
+   "Một phép thôi — đảo phép là ra.",
+   "Cộng đảo thành trừ, nhân đảo thành chia."
+  ],
+  "C2": [
+   "Câu sau X là SỐ CHIA, không phải số bị chia.",
+   "Lấy số bị chia chia cho thương."
+  ],
+  "C3": [
+   "Đảo phép nhân thành phép chia.",
+   "Tìm xong lắp ngược vào đề mà thử."
+  ],
+  "C4": [
+   "Coi CẢ NGOẶC là một số bí ẩn.",
+   "Số gì chia 3 mà bằng 8?"
+  ],
+  "C5": [
+   "Bóc lớp ngoài trước: lớp nhân.",
+   "Coi cả ngoặc là một số bí ẩn đã."
+  ],
+  "C6": [
+   "X đứng một mình nghĩa là X nhân 1.",
+   "GOM X về một chỗ bằng thừa số chung."
+  ],
+  "C7": [
+   "Luật vàng: số bị chia = số chia nhân thương rồi cộng dư.",
+   "Dựng lại X từ công thức ấy."
+  ],
+  "C8": [
+   "Bóc từ NGOÀI vào, mỗi bước đúng một lớp.",
+   "Lớp ngoài cùng là phép chia."
+  ],
+  "C9": [
+   "Tách phần chia hết ra trước: bớt số dư khỏi số bị chia.",
+   "Tìm xong phải kiểm số dư có nhỏ hơn X không."
+  ]
+ },
+ "DL:KSN4.B07": {
+  "C1": [
+   "Trừ rồi cộng thêm 1.",
+   "Đếm cả số đầu tiên nữa."
+  ],
+  "C2": [
+   "Tìm ĐẦU, CUỐI, KHOẢNG rồi mới áp công thức.",
+   "Hiệu chia khoảng ra số bước — đừng quên cộng 1."
+  ],
+  "C3": [
+   "Chia nhóm theo độ dài của số.",
+   "Mỗi nhóm: số lượng nhân số chữ số của mỗi số."
+  ],
+  "C4": [
+   "Đầu, cuối, khoảng — rồi trừ, chia, cộng một.",
+   "Số bước nhảy ít hơn số hạng đúng một."
+  ],
+  "C5": [
+   "Viết dãy các bội: số đầu là gì, số cuối là gì?",
+   "Rồi áp công thức trừ, chia, cộng một."
+  ],
+  "C6": [
+   "Ba nhóm: một chữ số, hai chữ số, ba chữ số.",
+   "Nhóm ba chữ số bắt đầu từ trang 100 — trừ rồi cộng một."
+  ],
+  "C7": [
+   "Trang đầu tiên cũng phải tính.",
+   "Trừ hai mốc rồi cộng thêm một."
+  ],
+  "C8": [
+   "BÀI NGƯỢC: trừ dần theo từng nhóm.",
+   "Trả nợ nhóm một chữ số, rồi nhóm hai chữ số, phần còn lại chia 3."
+  ],
+  "C9": [
+   "Cẩn thận — có tận BỐN nhóm.",
+   "Nhóm bốn chữ số bắt đầu từ 1000, đếm bằng trừ rồi cộng một."
+  ]
+ },
+ "DL:KSN4.B08": {
+  "C1": [
+   "Kẻ một ô cho mỗi hàng rồi điền số cách chọn.",
+   "Hàng đầu không được là 0."
+  ],
+  "C2": [
+   "Giờ thì cả hai ô đều bị siết.",
+   "Nhân dồn số cách chọn của hai ô."
+  ],
+  "C3": [
+   "Gặp chữ CÓ chứa thì nghĩ ngay tới phần bù.",
+   "Lấy tất cả trừ đi phần không chứa."
+  ],
+  "C4": [
+   "Ba ô: trăm, chục, đơn vị.",
+   "Ô đầu chỉ có chín lựa chọn, hai ô sau đủ mười."
+  ],
+  "C5": [
+   "Ba ô, ô nào cũng bị siết như nhau.",
+   "Nhân dồn số cách chọn của cả ba ô."
+  ],
+  "C6": [
+   "Phần bù: lấy tất cả trừ đi phần không chứa.",
+   "Hai con số ấy vừa tính ở hai câu trên."
+  ],
+  "C7": [
+   "Kẻ hai ô rồi điền số cách chọn từng ô.",
+   "Ô hàng chục ít lựa chọn hơn vì số 0 không đứng đầu."
+  ],
+  "C8": [
+   "Chữ số lẻ thì có mấy lựa chọn?",
+   "Ba ô đều chọn trong cùng một bộ."
+  ],
+  "C9": [
+   "Chữ số 0 ấy đứng được ở những hàng nào?",
+   "Đếm riêng từng trường hợp rồi cộng lại."
+  ]
+ },
+ "DL:KSN4.B09": {
+  "C1": [
+   "Họ nhà ĐUÔI — chỉ nhìn chữ số cuối.",
+   "Đuôi chẵn thì chia hết cho 2; đuôi 0 hay 5 thì chia hết cho 5."
+  ],
+  "C2": [
+   "Đuôi phải vừa chẵn vừa thuộc nhóm của 5.",
+   "Chỉ có đúng một chữ số thỏa được cả hai."
+  ],
+  "C3": [
+   "Nhìn đuôi là biết, khỏi phải chia.",
+   "Đuôi ấy cách bội của 5 gần nhất bao nhiêu?"
+  ],
+  "C4": [
+   "CHỐT ĐUÔI TRƯỚC rồi mới xếp phần đầu.",
+   "Nhớ chữ số 0 không được đứng đầu."
+  ],
+  "C5": [
+   "Chốt đuôi trước: đuôi phải là chữ số chẵn.",
+   "Chọn đuôi nào để dành hai thẻ to nhất cho phía trước?"
+  ],
+  "C6": [
+   "Chỉ chữ số x quyết định, vì nó đứng ở đuôi.",
+   "Câu cuối là chỗ giao của hai điều kiện trên."
+  ],
+  "C7": [
+   "Chia thử xem đang dư mấy.",
+   "Thiếu bao nhiêu nữa thì đuôi mới thành 0 hoặc 5?"
+  ],
+  "C8": [
+   "Chốt đuôi trước — chỉ có một chữ số hợp lệ.",
+   "Ba thẻ còn lại xếp tự do vào ba chỗ đầu."
+  ],
+  "C9": [
+   "Đó chính là các số tròn chục có ba chữ số.",
+   "Viết dãy ra rồi trừ, chia, cộng một."
+  ]
+ },
+ "DL:KSN4.B10": {
+  "C1": [
+   "Họ TỔNG — cộng tất cả chữ số lại.",
+   "Rồi soi tổng ấy với số 3."
+  ],
+  "C2": [
+   "Vẫn cộng chữ số, nhưng lần này soi với số 9.",
+   "Chia hết cho 3 chưa chắc đã chia hết cho 9."
+  ],
+  "C3": [
+   "Cộng chữ số để biết có vừa khít không.",
+   "Vừa khít rồi mới đặt phép chia tìm số hộp."
+  ],
+  "C4": [
+   "Dựng tổng có chứa x trước đã.",
+   "Dò x từ 0 đến 9, giữ những giá trị làm tổng chia hết."
+  ],
+  "C5": [
+   "Cộng hai chữ số đã biết rồi thêm x vào.",
+   "Tổng ấy chạy trong khoảng nào, và bội nào của 9 nằm trong đó?"
+  ],
+  "C6": [
+   "Chọn BỘ THẺ có tổng chia hết cho 3 trước đã.",
+   "Mỗi bộ ba thẻ xếp được mấy số?"
+  ],
+  "C7": [
+   "Hai dấu hiệu này soi HAI chữ số tận cùng.",
+   "Cắt hai chữ số cuối ra mà xét riêng."
+  ],
+  "C8": [
+   "Dấu hiệu đuôi chốt y trước.",
+   "Có y rồi mới dựng tổng chữ số để tìm x."
+  ],
+  "C9": [
+   "Hàng 9 thì cộng chữ số lại mà soi.",
+   "Hàng 6 phải ghép HAI dấu hiệu: một của đuôi, một của tổng."
+  ]
+ },
+ "DL:KSN4.B11": {
+  "C1": [
+   "Lần bảng nhân tìm bến gần nhất.",
+   "Phần còn lại chính là số dư."
+  ],
+  "C2": [
+   "Tìm số đầu tiên trong khoảng rồi cứ cộng thêm 5.",
+   "Chúng lập thành một dãy cách đều."
+  ],
+  "C3": [
+   "Luật tổng - hiệu: xét từng số hạng riêng.",
+   "Cả hai cùng chia hết thì tổng ra sao?"
+  ],
+  "C4": [
+   "Xét từng số hạng: số nào chia hết, số nào còn dư?",
+   "Phần dư của tổng chính là phần dư còn sót lại."
+  ],
+  "C5": [
+   "Đi từ số lớn nhất có hai chữ số mà lùi dần.",
+   "Hoặc lấy bội lớn nhất trong khoảng rồi cộng phần dư."
+  ],
+  "C6": [
+   "Bớt đúng phần thừa thì tròn.",
+   "Dư 5 cũng có nghĩa là còn THIẾU mấy nữa là tròn?"
+  ],
+  "C7": [
+   "Dịch thừa thành THIẾU: cả hai cách cùng thiếu mấy?",
+   "Cộng phần thiếu vào thì số mới chia hết cho cả hai cỡ hàng."
+  ],
+  "C8": [
+   "Cả ba cách xếp cùng thiếu đúng một quả.",
+   "Cộng vào rồi tìm số chia hết cho cả ba cỡ vỉ."
+  ],
+  "C9": [
+   "Gọi số đứng giữa làm chuẩn rồi cộng ba số lại.",
+   "Với bốn số thì thử một ví dụ nhỏ — một phản ví dụ là đủ."
+  ]
+ },
+ "DL:KSN4.B12": {
+  "C1": [
+   "Đuôi chỉ nói chuyện với đuôi.",
+   "Nhân hai chữ số cuối rồi giữ lại một chữ số."
+  ],
+  "C2": [
+   "Chỉ nhân hai cái đuôi với nhau.",
+   "Kết quả ra hai chữ số thì chỉ giữ chữ số cuối."
+  ],
+  "C3": [
+   "Tìm CẶP ĐÔI VÀNG đang ẩn trong tích.",
+   "Một thừa số chẵn gặp một đuôi 5 thì sinh ra gì?"
+  ],
+  "C4": [
+   "Soi trước xem có cặp đôi vàng không.",
+   "Đã ra đuôi 0 rồi thì nhân thêm gì cũng vậy."
+  ],
+  "C5": [
+   "Toàn thừa số cứng đầu — lần theo dây chuyền.",
+   "Nhân từng bước, mỗi bước chỉ giữ lại chữ số cuối."
+  ],
+  "C6": [
+   "Soi cả dãy tìm thừa số chẵn gặp đuôi 5.",
+   "Thấy cặp ấy là hô ngay, khỏi nhân."
+  ],
+  "C7": [
+   "Nhân hai cái đuôi với nhau xem ra gì.",
+   "Trong tích ấy có cặp đôi vàng nào ẩn không?"
+  ],
+  "C8": [
+   "Dãy nào có thừa số chẵn để bắt cặp với 5?",
+   "Dãy toàn lẻ mà có mặt số 5 thì đuôi đứng im ở đâu?"
+  ],
+  "C9": [
+   "Lần dây chuyền đuôi rồi tìm vòng lặp.",
+   "Vòng lặp dài mấy nhịp? Mười thừa số dừng ở nhịp nào?"
+  ]
+ },
+ "DL:KSN4.B13": {
+  "C1": [
+   "Lấy số sau trừ số trước.",
+   "Rồi cộng khoảng ấy ba lần liên tiếp."
+  ],
+  "C2": [
+   "Số đầu cộng khoảng nhân số bước nhảy.",
+   "Số bước nhảy ít hơn thứ tự đúng một."
+  ],
+  "C3": [
+   "Cuối trừ đầu, chia khoảng, rồi cộng một.",
+   "Đừng quên cái cộng một ấy."
+  ],
+  "C4": [
+   "Tìm khoảng trước, rồi đếm số bước nhảy.",
+   "Số đầu cộng khoảng nhân số bước."
+  ],
+  "C5": [
+   "Ghép đầu với cuối — cặp nào cũng bằng nhau.",
+   "Đầu cộng cuối, nhân số số hạng, rồi chia đôi."
+  ],
+  "C6": [
+   "Đếm số số hạng trước đã.",
+   "Rồi mới áp công thức: đầu cộng cuối, nhân số hạng, chia đôi."
+  ],
+  "C7": [
+   "Trừ số đầu rồi chia cho khoảng — soi phần dư.",
+   "Chia hết thì thuộc dãy; thứ tự là thương cộng một."
+  ],
+  "C8": [
+   "Ghế đầu các hàng lập thành một dãy cách đều.",
+   "Có ghế đầu rồi thì ghế cuối cách nó mấy bước?"
+  ],
+  "C9": [
+   "Đếm số số hạng trước rồi mới áp công thức tổng.",
+   "Tính xong đem so với tích mà đề gợi ý."
+  ]
+ },
+ "DL:KSN4.B14": {
+  "C1": [
+   "Lấy số sau CHIA số trước xem có bằng nhau không.",
+   "Chia ra một số không đổi thì là dãy nhân."
+  ],
+  "C2": [
+   "Soi TẦNG DƯỚI: lấy số sau trừ số trước.",
+   "Tầng dưới tăng đều thì cứ nối tiếp mà cộng."
+  ],
+  "C3": [
+   "Nói về phần cộng thêm, chứ đừng kể từng số.",
+   "Phần cộng thêm ấy thay đổi thế nào qua từng bước?"
+  ],
+  "C4": [
+   "Chia thử: số sau gấp số trước mấy lần?",
+   "Nhân dồn cho tới số hạng cần tìm."
+  ],
+  "C5": [
+   "Soi tầng dưới: các bước nhảy là những số nào?",
+   "Bước nhảy tăng đều một đơn vị mỗi lần."
+  ],
+  "C6": [
+   "Từ số thứ nhất tới số thứ mười có mấy bước nhảy?",
+   "Cộng dồn các bước nhảy bằng Gauss rồi thêm vào số đầu."
+  ],
+  "C7": [
+   "Số tiền mỗi tuần lập thành một dãy cách đều.",
+   "Tổng cả heo = đầu cộng cuối, nhân số tuần, chia đôi."
+  ],
+  "C8": [
+   "Thử từng giá trị bằng công thức Gauss.",
+   "Soi cả tuần liền trước xem đã đủ chưa."
+  ],
+  "C9": [
+   "Thử luật cộng hai số liền trước.",
+   "Soi tầng dưới xem nó giống dãy nào."
+  ]
+ },
+ "DL:KSN4.B15": {
+  "C1": [
+   "Câu hỏi vàng: hai đầu có cây không, hay nối thành vòng?",
+   "Có cả hai đầu thì cây nhiều hơn khoảng một."
+  ],
+  "C2": [
+   "Mất một đầu là mất một cây.",
+   "Cây bằng đúng số khoảng."
+  ],
+  "C3": [
+   "Vòng kín — điểm cuối trùng điểm đầu.",
+   "Cây bằng đúng số khoảng."
+  ],
+  "C4": [
+   "Tính CHU VI trước, chia khoảng sau.",
+   "Quanh sân là vòng kín nên đèn bằng số khoảng."
+  ],
+  "C5": [
+   "Trồng cây trá hình: tiếng chuông là cây, quãng lặng là khoảng.",
+   "Đếm số khoảng trước rồi mới nhân."
+  ],
+  "C6": [
+   "BÀI NGƯỢC: từ cây tìm đường.",
+   "Có cả hai đầu nên khoảng ít hơn cây một."
+  ],
+  "C7": [
+   "Tầng là cây, quãng cầu thang là khoảng.",
+   "Từ tầng 1 lên tầng 4 có mấy quãng?"
+  ],
+  "C8": [
+   "Khoảng cách phải chia hết CẢ chiều dài lẫn chiều rộng.",
+   "Kê các số chia hết cả hai rồi lấy số lớn nhất."
+  ],
+  "C9": [
+   "Tìm thời gian MỘT khoảng trước đã.",
+   "Thứ chia đôi được là số tiếng, không phải số khoảng."
+  ]
+ },
+ "DL:KSN4.B16": {
+  "C1": [
+   "Gộp cả rổ lại rồi chia đều.",
+   "Tổng chia cho số số hạng."
+  ],
+  "C2": [
+   "San cho đều — tổng không đổi, chỉ chuyển chỗ.",
+   "Cộng cả ba rồi chia ba."
+  ],
+  "C3": [
+   "Tổng chia cho số số hạng.",
+   "Bốn số thì chia cho 4."
+  ],
+  "C4": [
+   "Cây cầu ngược: TỔNG = TBC nhân số số hạng.",
+   "Không cần biết từng số là gì."
+  ],
+  "C5": [
+   "Cộng cả ba bao rồi chia ba.",
+   "Đây là bài xuôi, chưa cần cầu ngược."
+  ],
+  "C6": [
+   "Qua cầu TỔNG trước đã.",
+   "Có tổng rồi thì trừ đi số đã biết."
+  ],
+  "C7": [
+   "Tính tổng CẦN CÓ sau bốn trận.",
+   "Rồi trừ đi số bàn ba trận đã ghi."
+  ],
+  "C8": [
+   "Qua cầu tổng: trung bình nhân ba.",
+   "Có tổng rồi thì trừ dần hai số đã biết."
+  ],
+  "C9": [
+   "Tính tổng bằng Gauss rồi chia số số hạng.",
+   "Nhìn kỹ đáp số: nó đứng ở đâu trong dãy?"
+  ]
+ },
+ "DL:KSN4.B17": {
+  "C1": [
+   "San cho đều — cộng cả ba rồi chia ba.",
+   "Tổng không đổi khi san."
+  ],
+  "C2": [
+   "Vẽ VẠCH trung bình rồi đánh dấu cột nhô.",
+   "Cao hơn vạch bao nhiêu thì cộng bấy nhiêu."
+  ],
+  "C3": [
+   "Cột hụt thì nằm dưới vạch.",
+   "Thấp hơn vạch bao nhiêu thì trừ bấy nhiêu."
+  ],
+  "C4": [
+   "Định luật cân bằng: tổng vượt bằng tổng hụt.",
+   "Bạn đứng đúng vạch thì không góp phần nào."
+  ],
+  "C5": [
+   "Tìm phần hụt bằng định luật cân bằng.",
+   "Rồi lấy vạch trừ đi phần hụt ấy."
+  ],
+  "C6": [
+   "Đánh dấu vượt - hụt của hai số đã biết.",
+   "Số thứ ba phải bù cho cân, rồi soi lại bằng đường tổng."
+  ],
+  "C7": [
+   "Hai người thì vạch nằm chính giữa.",
+   "Bên này vượt bao nhiêu thì bên kia hụt đúng bấy nhiêu."
+  ],
+  "C8": [
+   "Cộng phần vượt, cộng phần hụt, rồi cân lại.",
+   "Trận ba phải hụt đúng phần còn dư ra."
+  ],
+  "C9": [
+   "Phần vượt của Tí chính là phần hụt chung của ba bạn.",
+   "Chia đều phần ấy cho ba xem vạch của họ tụt bao nhiêu."
+  ]
+ },
+ "DL:KSN4.B18": {
+  "C1": [
+   "Qua cây cầu TỔNG.",
+   "Trung bình nhân với số người."
+  ],
+  "C2": [
+   "Quy hết về TỔNG, đừng cộng trừ hai mức trung bình.",
+   "Tổng mới chia cho số người mới."
+  ],
+  "C3": [
+   "Vẫn qua tổng rồi chia lại.",
+   "Góp đúng mức trung bình cũ thì vạch có nhúc nhích không?"
+  ],
+  "C4": [
+   "Tổng cũ cộng phần góp mới, rồi chia năm.",
+   "Góp dưới vạch cũ thì vạch phải tụt."
+  ],
+  "C5": [
+   "Tìm tổng cũ trước đã.",
+   "Cộng phần góp mới rồi chia cho số người mới."
+  ],
+  "C6": [
+   "Tính TỔNG CẦN CÓ của năm bạn.",
+   "Rồi trừ đi tổng cũ của bốn bạn."
+  ],
+  "C7": [
+   "Bạn mới vừa tự đứng ở vạch mới, vừa gánh giúp người cũ.",
+   "Mỗi bạn cũ cần leo lên bao nhiêu, mà có mấy bạn cũ?"
+  ],
+  "C8": [
+   "Tính tổng mới từ mức trung bình mới.",
+   "Rồi trừ đi tổng cũ."
+  ],
+  "C9": [
+   "Đường tổng: tính tổng cần có rồi trừ tổng cũ.",
+   "Đường gánh: tự đứng ở vạch mới, cộng phần kéo bốn tuần cũ lên."
+  ]
+ },
+ "DL:KSN4.B19": {
+  "C1": [
+   "Vẽ sơ đồ trước: hai phần bằng nhau, phần thừa tách riêng.",
+   "Chặt phần thừa đi thì tổng còn lại chia đôi."
+  ],
+  "C2": [
+   "Chặt thừa ra số bé, bù thiếu ra số lớn.",
+   "Tổng trừ hiệu rồi chia đôi."
+  ],
+  "C3": [
+   "Vẽ sơ đồ cho thẳng cột đã.",
+   "Chặt khúc thừa rồi chia đôi phần còn lại."
+  ],
+  "C4": [
+   "Chặt phần thừa của anh sang một bên.",
+   "Thử lại phải KÉP: cộng ra tổng, trừ ra hiệu."
+  ],
+  "C5": [
+   "Tổng trừ hiệu rồi chia đôi ra thùng bé.",
+   "Thùng lớn bằng thùng bé cộng phần hơn."
+  ],
+  "C6": [
+   "Chặt thừa: tổng trừ hiệu, rồi chia đôi.",
+   "Rồi cộng phần hơn để ra số lớn."
+  ],
+  "C7": [
+   "Tổng là sĩ số, hiệu là chỗ nam hơn nữ.",
+   "Chặt thừa ra số bé — mà số bé ở đây là bên nào?"
+  ],
+  "C8": [
+   "Tổng trừ hiệu rồi chia đôi ra tuổi con.",
+   "Tính xong nhớ soi xem đáp số có hợp đời không."
+  ],
+  "C9": [
+   "Cứ áp công thức xem chuyện gì xảy ra.",
+   "Tổng và hiệu hơn kém nhau hai lần số bé — nên phải cùng chẵn hoặc cùng lẻ."
+  ]
+ },
+ "DL:KSN4.B20": {
+  "C1": [
+   "Cây cầu: tổng bằng trung bình nhân số số hạng.",
+   "Hai số thì nhân đôi."
+  ],
+  "C2": [
+   "Chu vi gồm HAI cặp dài - rộng.",
+   "Chia đôi chu vi ra nửa vòng."
+  ],
+  "C3": [
+   "Lột áo chu vi ra tổng trước.",
+   "Có tổng và hiệu rồi thì chặt thừa chia đôi."
+  ],
+  "C4": [
+   "Lột áo trung bình cộng ra tổng.",
+   "Có tổng và hiệu rồi thì công thức quen thuộc."
+  ],
+  "C5": [
+   "Nửa chu vi chính là tổng dài và rộng.",
+   "Rồi chặt thừa chia đôi ra chiều rộng."
+  ],
+  "C6": [
+   "Nhân trung bình với số bao ra tổng.",
+   "Có tổng và hiệu rồi thì áp công thức."
+  ],
+  "C7": [
+   "Hiệu ấy xảy ra ở thời điểm NÀO?",
+   "Tính tổng tại đúng thời điểm ấy rồi mới ghép với hiệu."
+  ],
+  "C8": [
+   "Chi tiết thành hình vuông đang khai ra HIỆU.",
+   "Có hiệu rồi thì lột áo chu vi ra tổng."
+  ],
+  "C9": [
+   "Lột áo trung bình cộng ra tổng trước.",
+   "Rồi chặt thừa chia đôi."
+  ]
+ },
+ "DL:KSN4.B21": {
+  "C1": [
+   "Viết thử vài cặp ra rồi trừ.",
+   "Hai số chẵn đứng cạnh nhau thì cách nhau mấy?"
+  ],
+  "C2": [
+   "Hỏi trước: mấy bên cùng nhúc nhích?",
+   "Chỉ MỘT bên đổi thì hiệu đúng bằng phần bớt."
+  ],
+  "C3": [
+   "Chuyển thì HAI bên cùng nhúc nhích.",
+   "Bên cho hụt đi, bên nhận phình ra — hiệu đổi gấp đôi."
+  ],
+  "C4": [
+   "Hiệu ẩn của hai số liền nhau là bao nhiêu?",
+   "Có hiệu rồi thì chặt thừa chia đôi."
+  ],
+  "C5": [
+   "Hai số chẵn liền nhau cách nhau mấy?",
+   "Có hiệu rồi thì áp công thức tổng - hiệu."
+  ],
+  "C6": [
+   "Chuyển thì hiệu gấp đôi số đem chuyển.",
+   "Có tổng và hiệu rồi thì thử lại bằng chính kịch bản đề."
+  ],
+  "C7": [
+   "Cho tức là chuyển — hai bên cùng đổi.",
+   "Hiệu bằng gấp đôi số viên đã cho."
+  ],
+  "C8": [
+   "Số ở giữa chính là trung bình cộng của ba số.",
+   "Tìm số giữa rồi lùi một tiến một."
+  ],
+  "C9": [
+   "Hai số lẻ liền nhau cách nhau mấy?",
+   "Tính xong rồi soi lại: số bé tìm được ấy chẵn hay lẻ?"
+  ]
+ },
+ "DL:KSN4.B22": {
+  "C1": [
+   "Định luật thời gian: hai bên cùng thêm đều nhau.",
+   "Khoảng cách giữa hai số có nhúc nhích không?"
+  ],
+  "C2": [
+   "Mỗi bên thêm bấy nhiêu thì tổng thêm mấy lần bấy nhiêu?",
+   "Hai bên cùng thêm nên tổng tăng gấp đôi phần thêm."
+  ],
+  "C3": [
+   "Mỗi năm mỗi người thêm đúng một tuổi.",
+   "Tổng tăng gấp đôi số năm."
+  ],
+  "C4": [
+   "Hiệu tuổi là hằng số cả đời.",
+   "Cả hai cùng thêm đúng bấy nhiêu tuổi."
+  ],
+  "C5": [
+   "Kẻ bảng trước - sau rồi chọn mốc có đủ tổng và hiệu.",
+   "Hoặc lùi tổng về hiện tại rồi giải như bài quen."
+  ],
+  "C6": [
+   "Bỏ đều hai bên thì hiệu đứng im.",
+   "Tổng tăng gấp đôi phần bỏ thêm."
+  ],
+  "C7": [
+   "Bớt đều hai bên thì khoảng cách vẫn thế.",
+   "Còn tổng thì giảm gấp đôi phần bớt."
+  ],
+  "C8": [
+   "Vẽ ba đoạn, lấy bạn ít nhất làm chuẩn.",
+   "Cắt hết phần thừa của hai bạn kia rồi chia đều."
+  ],
+  "C9": [
+   "Vẽ ba đoạn, lấy số bé nhất làm chuẩn.",
+   "Số thứ ba hơn số thứ nhất bao nhiêu?"
+  ]
+ },
+ "DL:KSN4.B23": {
+  "C1": [
+   "Vẽ sơ đồ phần: các ô phải bằng nhau tăm tắp.",
+   "Đếm TỔNG SỐ PHẦN rồi mới chia."
+  ],
+  "C2": [
+   "Tổng số phần là bao nhiêu?",
+   "Chia tổng cho tổng số phần ra giá trị MỘT phần."
+  ],
+  "C3": [
+   "Vẽ sơ đồ rồi đếm số ô.",
+   "Một phần đáng bao nhiêu, rồi nhân lên từng bên."
+  ],
+  "C4": [
+   "Đừng chia cho con số trong tỉ — chia cho TỔNG SỐ PHẦN.",
+   "Tìm một phần rồi nhân lên từng loại."
+  ],
+  "C5": [
+   "Cộng hai số của tỉ ra tổng số phần.",
+   "Một phần trước, rồi mới nhân lên từng giỏ."
+  ],
+  "C6": [
+   "Sĩ số lớp chính là cái tổng cần đem chia.",
+   "Sĩ số chia tổng số phần ra một phần."
+  ],
+  "C7": [
+   "Bốn ô cộng năm ô là mấy ô?",
+   "Chia độ dài cho số ô ấy."
+  ],
+  "C8": [
+   "Tổng số phần trước, rồi mới tới một phần.",
+   "Thử lại KÉP: cộng ra tổng, và soi cả tỉ."
+  ],
+  "C9": [
+   "Giải riêng từng lần chia rồi mới so.",
+   "Đổi chỗ hai số trong tỉ thì hai phần ra sao?"
+  ]
+ },
+ "DL:KSN4.B24": {
+  "C1": [
+   "Tra từ điển tỉ ẩn.",
+   "Gấp rưỡi nghĩa là một rưỡi lần — viết thành hai số nguyên."
+  ],
+  "C2": [
+   "Dịch chữ gấp ba thành tỉ trước đã.",
+   "Rồi chạy quy trình bốn bước."
+  ],
+  "C3": [
+   "Gấp đôi dịch thành mấy ô với mấy ô?",
+   "Tổng số phần rồi mới tới một phần."
+  ],
+  "C4": [
+   "Gấp rưỡi là tỉ ẩn — dịch nó ra trước.",
+   "Có tỉ rồi thì chạy quy trình bốn bước."
+  ],
+  "C5": [
+   "TỔNG đang trốn trong chữ trung bình cộng.",
+   "Lột áo ra tổng rồi mới chia phần."
+  ],
+  "C6": [
+   "TỔNG đang trốn trong chữ chu vi.",
+   "Nửa chu vi mới là tổng dài và rộng."
+  ],
+  "C7": [
+   "Dịch chữ gấp bốn thành tỉ.",
+   "Tổng số phần rồi tới một phần."
+  ],
+  "C8": [
+   "Hai lớp cải trang — lột cả tổng lẫn tỉ.",
+   "Nửa chu vi ra tổng; chữ một nửa ra tỉ."
+  ],
+  "C9": [
+   "Số thứ nhất chiếm mấy ô khi số thứ hai chiếm mấy ô?",
+   "Có tỉ rồi thì chia tổng cho tổng số phần."
+  ]
+ },
+ "DL:KSN4.B25": {
+  "C1": [
+   "Chỉ khác Tổng - Tỉ đúng một chỗ: chia cho HIỆU SỐ PHẦN.",
+   "Phần lớn trừ phần bé ra hiệu số phần."
+  ],
+  "C2": [
+   "Chữ hơn báo đây là bài hiệu.",
+   "Hiệu số phần rồi mới tới một phần."
+  ],
+  "C3": [
+   "Ngoặc hiệu chỉ vào phần NHÔ RA, không ôm cả hai hàng.",
+   "Phần nhô ra gồm mấy ô?"
+  ],
+  "C4": [
+   "Vẽ sơ đồ, đặt ngoặc hiệu vào phần nhô ra.",
+   "Hiệu chia cho hiệu số phần ra một phần."
+  ],
+  "C5": [
+   "Hiệu tuổi dùng thẳng được vì nó bất biến.",
+   "Hiệu số phần là mấy ô?"
+  ],
+  "C6": [
+   "Hiệu số phần: bốn ô trừ một ô.",
+   "Chia hiệu cho số ô nhô ra."
+  ],
+  "C7": [
+   "Chữ nhiều hơn báo đây là bài hiệu.",
+   "Hiệu số phần, rồi một phần, rồi nhân lên."
+  ],
+  "C8": [
+   "Hiệu tuổi bất biến nên dùng ngay được.",
+   "Hiệu số phần là sáu ô trừ một ô."
+  ],
+  "C9": [
+   "Sổ tay hiệu ẩn: mấy bên cùng nhúc nhích?",
+   "Chỉ một bên đổi thì hiệu đúng bằng phần bớt."
+  ]
+ },
+ "DL:KSN4.B26": {
+  "C1": [
+   "Ba hàng, mà vẫn quy trình bốn bước.",
+   "Cộng cả ba số của tỉ ra tổng số phần."
+  ],
+  "C2": [
+   "Cộng cả ba số của tỉ lại.",
+   "Mỗi số trong tỉ là số ô của một hàng."
+  ],
+  "C3": [
+   "Tổng số phần trước, rồi tới một phần.",
+   "Có một phần rồi thì nhân lên cho từng lớp."
+  ],
+  "C4": [
+   "Lấy ống A làm một phần chuẩn.",
+   "Dịch cả ba về chung một tỉ ba số."
+  ],
+  "C5": [
+   "Cộng ba số của tỉ ra tổng số ô.",
+   "Chia độ dài cho số ô ấy."
+  ],
+  "C6": [
+   "Tìm MẮT XÍCH CHUNG — đại lượng có mặt ở cả hai tỉ.",
+   "Mắt xích ấy đã cùng số phần ở hai bên chưa?"
+  ],
+  "C7": [
+   "Tổng số phần rồi tới một phần.",
+   "Nhân lên cho từng bạn."
+  ],
+  "C8": [
+   "Mắt xích lệch: hai bên nói mắt xích ấy khác số phần.",
+   "Quy nó về cùng một số ô rồi mới nối ba hàng."
+  ],
+  "C9": [
+   "Lấy bạn thứ nhất làm một phần chuẩn.",
+   "Bạn thứ ba chiếm mấy phần — đếm cho khéo."
+  ]
+ },
+ "DL:KSN4.B27": {
+  "C1": [
+   "Lấy tuổi lớn trừ tuổi bé.",
+   "Hai mẹ con cùng thêm nên khoảng cách ra sao?"
+  ],
+  "C2": [
+   "Có TỔNG và TỈ — đây là bài Tổng - Tỉ.",
+   "Tổng số phần rồi tới một phần."
+  ],
+  "C3": [
+   "Có HIỆU và TỈ — đây là bài Hiệu - Tỉ.",
+   "Chia hiệu cho hiệu số phần."
+  ],
+  "C4": [
+   "Hỏi gấp mấy lần thì lấy số lớn chia số bé.",
+   "Đặt phép chia ngay."
+  ],
+  "C5": [
+   "TỈ TRÔI - HIỆU ĐỨNG IM: chốt hiệu trước.",
+   "Dựng Hiệu - Tỉ tại thời điểm ấy để tìm tuổi con lúc đó."
+  ],
+  "C6": [
+   "Chốt hiệu tuổi trước đã.",
+   "Tìm tuổi con lúc đó rồi trừ tuổi con bây giờ."
+  ],
+  "C7": [
+   "Đưa tổng về đúng mốc HIỆN NAY.",
+   "Mỗi năm tổng của hai người tăng hai."
+  ],
+  "C8": [
+   "Hiệu đứng im, nên chốt hiệu trước.",
+   "Tìm tuổi con khi đó rồi lùi từ tuổi con bây giờ."
+  ],
+  "C9": [
+   "Vẽ hiệu thành số ô ở mốc hiện nay.",
+   "Sang mốc sau hiệu vẫn từng ấy ô — con chiếm mấy ô?"
+  ]
+ },
+ "DL:KSN4.B28": {
+  "C1": [
+   "Chia tổng số phần cho năng suất.",
+   "Mỗi giờ được bấy nhiêu thì mấy giờ hết việc?"
+  ],
+  "C2": [
+   "Năng suất = tổng phần chia số giờ.",
+   "Đây là chiều ngược của câu trước."
+  ],
+  "C3": [
+   "Tổng phần chia cho năng suất chung.",
+   "Đừng cộng số giờ — chỉ cộng năng suất."
+  ],
+  "C4": [
+   "Chia việc thành số phần chia hết cho CẢ hai số giờ.",
+   "Tính năng suất từng người rồi CỘNG NĂNG SUẤT."
+  ],
+  "C5": [
+   "Chọn số phần chia hết cho cả hai số giờ.",
+   "Cộng năng suất rồi chia tổng phần."
+  ],
+  "C6": [
+   "Bể nước cũng như hàng rào — chia thành phần.",
+   "Cộng năng suất hai vòi rồi chia tổng phần."
+  ],
+  "C7": [
+   "Tính phần đã làm được trong hai giờ chung.",
+   "Phần còn lại chia cho năng suất của một người."
+  ],
+  "C8": [
+   "Hai giờ chung làm được bao nhiêu phần?",
+   "Phần còn lại chia cho năng suất của người ở lại."
+  ],
+  "C9": [
+   "Truy ngược: tính năng suất CHUNG trước.",
+   "Rồi trừ đi năng suất của người thứ nhất."
+  ]
+ },
+ "DL:KSN4.B29": {
+  "C1": [
+   "Vẽ băng chuyền xuôi trước, dù chưa tính được gì.",
+   "Đảo phép cộng thành phép trừ."
+  ],
+  "C2": [
+   "Đi lùi: trạm cuối cùng đảo trước.",
+   "Trừ đảo thành cộng, rồi nhân đảo thành chia."
+  ],
+  "C3": [
+   "Vẽ băng chuyền hai chiều rồi mới tính.",
+   "Gỡ trạm cộng trước, trạm chia sau."
+  ],
+  "C4": [
+   "Bốn trạm — đi lùi đúng thứ tự ngược.",
+   "Trạm cộng gỡ trước, rồi chia, rồi trừ, rồi nhân."
+  ],
+  "C5": [
+   "Gỡ việc xảy ra sau cùng trước.",
+   "Trả lại phần tiêu thêm thì được nửa số tiền mang theo."
+  ],
+  "C6": [
+   "Đi lùi: bỏ phần được cho thêm ra đã.",
+   "Con số ấy chính là NỬA số bi ban đầu."
+  ],
+  "C7": [
+   "Gỡ ngược: việc cho sau thì gỡ trước.",
+   "Con số còn lại là nửa của phần còn sau lần cho đầu."
+  ],
+  "C8": [
+   "Gấp đôi nghĩa là thêm đúng một phần bằng số cũ.",
+   "Phần thêm ấy bị ăn hết — vậy nó bằng bao nhiêu?"
+  ],
+  "C9": [
+   "Đi ngược từ con số 0.",
+   "Mỗi nhịp gỡ hai bước: cộng lại phí, rồi chia đôi."
+  ]
+ },
+ "DL:KSN4.B30": {
+  "C1": [
+   "Mỗi con gà có hai chân.",
+   "Nhân số con với số chân mỗi con."
+  ],
+  "C2": [
+   "GIẢ SỬ tất cả đều là gà rồi đếm chân.",
+   "Thiếu bao nhiêu chân? Mỗi chú chó bù thêm mấy?"
+  ],
+  "C3": [
+   "Thử phải kiểm CẢ HAI: số chân và số con.",
+   "Nhân từng loại với số chân của nó rồi cộng."
+  ],
+  "C4": [
+   "Giả sử toàn gà, đếm chân giả vờ trước.",
+   "Phần thiếu chia cho phần bù mỗi con."
+  ],
+  "C5": [
+   "Giả sử toàn xe đạp rồi đếm bánh.",
+   "Mỗi xe ba bánh bù thêm mấy bánh?"
+  ],
+  "C6": [
+   "Giả sử toàn vé rẻ rồi tính tiền thu.",
+   "Mỗi vé đắt bù thêm bao nhiêu nghìn?"
+  ],
+  "C7": [
+   "Giả sử đúng cả — được bao nhiêu điểm?",
+   "Mỗi câu sai làm mất bao nhiêu so với câu đúng?"
+  ],
+  "C8": [
+   "Ghép một chó với hai gà thành một BỘ.",
+   "Mỗi bộ như thế có mấy cái chân?"
+  ],
+  "C9": [
+   "Giả sử toàn thuyền nhỏ rồi đếm chỗ.",
+   "Mỗi thuyền to bù thêm mấy chỗ?"
+  ]
+ },
+ "DL:KSN4.B31": {
+  "C1": [
+   "Chia tiền cho số quyển.",
+   "Rút về một quyển."
+  ],
+  "C2": [
+   "Xếp hai hóa đơn thẳng cột rồi trừ.",
+   "Phần chung là số bút — nó tự triệt tiêu."
+  ],
+  "C3": [
+   "Thay giá vở vừa tìm vào một hóa đơn.",
+   "Trừ tiền vở ra thì còn lại tiền bút."
+  ],
+  "C4": [
+   "KHỬ trước: trừ hai hóa đơn để lộ giá món lẻ.",
+   "Rồi THAY ngược vào hóa đơn để tìm món kia."
+  ],
+  "C5": [
+   "Phần chung ở đây là số ki-lô cam.",
+   "Trừ hai hóa đơn để lộ giá táo trước."
+  ],
+  "C6": [
+   "Có tấm vé quy đổi — dùng phép THẾ.",
+   "Đổi hết sữa ra bánh rồi mới chia."
+  ],
+  "C7": [
+   "Chia đều cho 5 ra tiền một bút cộng một vở.",
+   "Có tổng và hiệu rồi thì Tổng - Hiệu ra tay."
+  ],
+  "C8": [
+   "Dùng tấm vé quy đổi để thế hết về một loại.",
+   "Bốn hộp sữa đổi được mấy gói bánh?"
+  ],
+  "C9": [
+   "Phần chung là số thước — khử nó đi.",
+   "Hiệu tiền chỉ do phần chênh gây ra."
+  ]
+ },
+ "DL:KSN4.B32": {
+  "C1": [
+   "Điền phần GIAO trước rồi mới tính hai cánh.",
+   "Chỉ thích một môn = số của môn ấy trừ phần giao."
+  ],
+  "C2": [
+   "Cộng thô rồi trừ đi phần bị cộng đúp.",
+   "Nhóm cả-hai bị đếm hai lần."
+  ],
+  "C3": [
+   "Đứng ngoài = sĩ số trừ phần ít-nhất-một.",
+   "Dùng lại kết quả của câu ngay trước."
+  ],
+  "C4": [
+   "Cộng thô lên xem vượt sĩ số bao nhiêu.",
+   "Phần vượt ấy chính là phần bị đếm hai lần."
+  ],
+  "C5": [
+   "Đếm số CHUỒNG: một năm có mấy tháng?",
+   "Thử tình huống xấu nhất: mỗi tháng xếp một bạn."
+  ],
+  "C6": [
+   "Màu là chuồng, viên bi là thỏ.",
+   "Xấu nhất: mỗi màu bốc đúng một viên rồi mới bốc tiếp."
+  ],
+  "C7": [
+   "Điền phần giao trước rồi tính hai cánh riêng.",
+   "Đúng một hoạt động là cộng hai cánh, chưa tính phần giao."
+  ],
+  "C8": [
+   "Thử tình huống xấu nhất: mỗi tháng chỉ ba bạn.",
+   "Xếp kiểu ấy thì được tối đa bao nhiêu bạn?"
+  ],
+  "C9": [
+   "Đề đảo chiều — xấu nhất là bốc mãi vẫn một màu.",
+   "Màu nào nhiều nhất, bốc hết màu ấy được mấy viên?"
+  ]
+ },
+ "DL:KSN4.B33": {
+  "C1": [
+   "Cùng mẫu thì chỉ nhìn tử.",
+   "Cùng cỡ lát, ai lấy nhiều lát hơn thì hơn."
+  ],
+  "C2": [
+   "Lối tắt CÙNG TỬ: mẫu bé thì thắng.",
+   "Bánh cắt ít lát thì mỗi lát to hơn."
+  ],
+  "C3": [
+   "Lối tắt SO VỚI 1: nhìn tử với mẫu.",
+   "Tử bé hơn mẫu thì chưa đầy một cái bánh."
+  ],
+  "C4": [
+   "Đường cái quan: quy về cùng cỡ lát.",
+   "Cắt mỗi lát tư làm đôi thì thành lát mấy?"
+  ],
+  "C5": [
+   "Chẳng cùng tử cũng chẳng cùng mẫu — quy đồng thôi.",
+   "Chọn mẫu chung là tích của hai mẫu."
+  ],
+  "C6": [
+   "Cặp suýt đầy — nhìn phần THIẾU.",
+   "Thiếu nhiều hơn thì bé hơn."
+  ],
+  "C7": [
+   "Cả hai đều vượt quá 1 — so phần VƯỢT.",
+   "Vượt nhiều hơn thì hơn."
+  ],
+  "C8": [
+   "Mượn cột mốc một nửa.",
+   "Nửa của mẫu là bao nhiêu, tử có vượt qua không?"
+  ],
+  "C9": [
+   "Cả ba đều suýt đầy — dùng phần bù.",
+   "Ba phần thiếu ấy cùng tử, so mẫu là xong."
+  ]
+ },
+ "DL:KSN4.B34": {
+  "C1": [
+   "Chia theo mẫu, nhân theo tử.",
+   "Mẫu là 2 nên chia đôi."
+  ],
+  "C2": [
+   "Chia cho mẫu rồi lấy đúng một cụm.",
+   "Mẫu là 4 nên chia bốn."
+  ],
+  "C3": [
+   "Chia cho mẫu ra một cụm, rồi nhân với tử.",
+   "Lấy ba cụm chứ không phải một."
+  ],
+  "C4": [
+   "Chia cho mẫu, rồi nhân với tử.",
+   "Một cụm bao nhiêu, và lấy mấy cụm?"
+  ],
+  "C5": [
+   "BÀI NGƯỢC: con số ấy ứng với mấy cụm?",
+   "Tìm một cụm rồi nhân với mẫu."
+  ],
+  "C6": [
+   "Bài ngược: chia cho tử ra một cụm.",
+   "Rồi nhân với mẫu ra cả hộp."
+  ],
+  "C7": [
+   "Bài xuôi: chia cho mẫu rồi nhân với tử.",
+   "Có phần nữ rồi thì lấy sĩ số trừ đi."
+  ],
+  "C8": [
+   "Vẽ ô: khay A chiếm mấy ô, khay B mấy ô?",
+   "Đổi gốc thì tử và mẫu lộn ngược cho nhau."
+  ],
+  "C9": [
+   "Hai mươi mốt trang ấy ứng với mấy cụm?",
+   "Nhân với mẫu ra cả cuốn, rồi trừ phần đã đọc."
+  ]
+ },
+ "DL:KSN4.B35": {
+  "C1": [
+   "Quy đồng rồi trừ.",
+   "Đem kết quả so với phân số mẫu-là-tích."
+  ],
+  "C2": [
+   "Tính riêng hai vế rồi so.",
+   "Đây chính là viên domino đầu tiên."
+  ],
+  "C3": [
+   "Quy đồng vế phải rồi trừ.",
+   "So với phân số mẫu-là-tích ở vế trái."
+  ],
+  "C4": [
+   "Tách mỗi số hạng thành một HIỆU.",
+   "Các khúc giữa triệt tiêu, chỉ còn hai đầu."
+  ],
+  "C5": [
+   "Domino sập — tách hết thành hiệu.",
+   "Chỉ còn số đầu tiên và số cuối cùng."
+  ],
+  "C6": [
+   "Tử của phân số sau đúng bằng mẫu của phân số trước.",
+   "Rút gọn chéo rồi nhìn ra quy luật."
+  ],
+  "C7": [
+   "Rút gọn chéo cả dây chuyền.",
+   "Chỉ tử đầu và mẫu cuối sống sót."
+  ],
+  "C8": [
+   "Tách hiệu rồi lấy hai đầu.",
+   "Muốn đoán thì chỉ cần biết hai đầu là ai."
+  ],
+  "C9": [
+   "Rút gọn chéo — ai sống sót?",
+   "Tử đầu và mẫu cuối, rồi rút gọn thêm lần nữa."
+  ]
+ },
+ "DL:KSN4.B36": {
+  "C1": [
+   "Thêm ĐỀU hai nơi thì cái gì đứng im?",
+   "Tính hiệu trước và sau rồi so."
+  ],
+  "C2": [
+   "CHUYỂN qua lại thì cái gì đứng im?",
+   "Tính tổng tử cộng mẫu trước và sau."
+  ],
+  "C3": [
+   "Nhân cả tử và mẫu với cùng một số.",
+   "Mẫu 3 muốn thành 15 thì nhân mấy?"
+  ],
+  "C4": [
+   "Thêm đều thì neo HIỆU mẫu trừ tử.",
+   "Viết phân số đích sao cho có đúng hiệu ấy."
+  ],
+  "C5": [
+   "Chốt bất biến: thêm đều thì hiệu giữ nguyên.",
+   "Nhân tử mẫu của phân số đích để hiệu khớp."
+  ],
+  "C6": [
+   "Chuyển qua lại thì neo TỔNG tử cộng mẫu.",
+   "Viết phân số đích sao cho có đúng tổng ấy."
+  ],
+  "C7": [
+   "Chuyển thì tổng đứng im.",
+   "Nhân tử mẫu của phân số đích để tổng khớp."
+  ],
+  "C8": [
+   "Bớt đều cũng giữ nguyên hiệu y như thêm đều.",
+   "Viết phân số đích với đúng hiệu ấy rồi so tử."
+  ],
+  "C9": [
+   "Chốt hiệu trước rồi viết phân số đích.",
+   "Muốn bằng 1 thì hiệu phải là bao nhiêu?"
+  ]
+ },
+ "DL:KSN4.B37": {
+  "C1": [
+   "Lấy VỐN làm thước: vốn năm ô, lãi một ô.",
+   "Giá bán là vốn cộng lãi."
+  ],
+  "C2": [
+   "Chia theo mẫu rồi nhân theo tử.",
+   "Chất khô là phần còn lại của bao."
+  ],
+  "C3": [
+   "Phân số này là CỦA khối lượng cả cốc.",
+   "Chia cho mẫu rồi lấy một cụm."
+  ],
+  "C4": [
+   "Vẽ ô theo đúng gốc — gốc ở đây là VỐN.",
+   "Giá bán gồm mấy ô cả thảy?"
+  ],
+  "C5": [
+   "Giá bán bằng vốn cộng lãi, tính theo ô.",
+   "Chia giá bán cho tổng số ô ra một ô."
+  ],
+  "C6": [
+   "Tính phần nước trước rồi trừ.",
+   "Hoặc nhìn thẳng: chất khô chiếm mấy phần?"
+  ],
+  "C7": [
+   "Thứ KHÔNG ĐỔI ở đây là lượng đường.",
+   "Khối lượng cả cốc bây giờ là bao nhiêu?"
+  ],
+  "C8": [
+   "Bài ngược: con số ấy ứng với mấy cụm?",
+   "Tìm một cụm rồi nhân với mẫu."
+  ],
+  "C9": [
+   "Câu đầu tính xuôi: tìm lãi rồi cộng vào vốn.",
+   "Câu sau: lãi thực bao nhiêu, rồi đem so với vốn."
+  ]
+ },
+ "DL:KSN4.B38": {
+  "C1": [
+   "Diện tích đo LÒNG: dài nhân rộng.",
+   "Đơn vị phải là mét vuông."
+  ],
+  "C2": [
+   "Một héc-ta là ô vuông cạnh một trăm mét.",
+   "Nhân số héc-ta với diện tích một héc-ta."
+  ],
+  "C3": [
+   "Chu vi đo VIỀN: gom một cặp rồi nhân đôi.",
+   "Đơn vị là mét, không phải mét vuông."
+  ],
+  "C4": [
+   "Hai thế giới — làm riêng từng cái.",
+   "Ghi đúng đơn vị cho từng cột hồ sơ."
+  ],
+  "C5": [
+   "BÀI NGƯỢC: cạnh thiếu bằng diện tích chia cạnh đã biết.",
+   "Có đủ hai cạnh rồi mới tính chu vi."
+  ],
+  "C6": [
+   "Lột áo chu vi ra nửa vòng đã.",
+   "Có tổng và hiệu thì ra hai cạnh, rồi mới nhân."
+  ],
+  "C7": [
+   "Nửa chu vi chính là tổng hai cạnh.",
+   "Tổng - Tỉ ra hai cạnh, rồi mới nhân."
+  ],
+  "C8": [
+   "Đổi héc-ta ra mét vuông trước đã.",
+   "Rồi chia cho cạnh đã biết."
+  ],
+  "C9": [
+   "Nửa chu vi cho tổng hai cạnh.",
+   "Thử CÓ HỆ THỐNG các cặp có tổng ấy, dò từ giữa dò ra."
+  ]
+ },
+ "DL:KSN4.B39": {
+  "C1": [
+   "Vẽ ngay DẢI ĐẤT mới.",
+   "Dải mới bằng phần thêm nhân với chiều kia."
+  ],
+  "C2": [
+   "Dải mới chạy dọc theo chiều còn lại.",
+   "Phần thêm nhân với chiều kia."
+  ],
+  "C3": [
+   "Tính chu vi riêng từng hình.",
+   "Đem hai kết quả đặt cạnh nhau mà nhìn."
+  ],
+  "C4": [
+   "Dải đất mới rộng bằng phần kéo thêm, dài bằng chiều kia.",
+   "Tính xong kiểm lại bằng cách tính cả sân mới."
+  ],
+  "C5": [
+   "Dải đất bị mất chạy dọc theo chiều dài.",
+   "Phần bớt nhân với chiều kia."
+  ],
+  "C6": [
+   "HAI chiều cùng đổi — cấm đoán bù trừ là hòa.",
+   "Tính hẳn diện tích mới rồi đem so với cũ."
+  ],
+  "C7": [
+   "Tính diện tích riêng từng mảnh.",
+   "Cùng chu vi, hình càng gần vuông thì lòng càng rộng."
+  ],
+  "C8": [
+   "BÀI NGƯỢC của dải đất.",
+   "Dải ấy có một cạnh là phần kéo thêm — cạnh kia là gì?"
+  ],
+  "C9": [
+   "Nửa chu vi cho tổng hai cạnh.",
+   "Liệt kê có hệ thống từ dẹt nhất tới vuông nhất."
+  ]
+ },
+ "DL:KSN4.B40": {
+  "C1": [
+   "Áp góc vuông của ê ke vào mà so.",
+   "Cạnh góc chui gọn trong ê ke hay xòe rộng hơn?"
+  ],
+  "C2": [
+   "Đường kính gồm hai bán kính chụm đầu.",
+   "Nhân đôi bán kính."
+  ],
+  "C3": [
+   "Chiều ngược — chia đôi.",
+   "Đường kính vốn gồm hai bán kính."
+  ],
+  "C4": [
+   "Áp một cạnh góc vuông của ê ke sát ĐÁY.",
+   "Trượt ê ke cho cạnh kia chạm đỉnh rồi kẻ theo."
+  ],
+  "C5": [
+   "Vẽ thử một tam giác có góc tù rồi ướm ê ke hai góc kia.",
+   "Một tam giác có nổi hai góc tù không?"
+  ],
+  "C6": [
+   "Luật vàng: cắt - ghép không đổi diện tích.",
+   "Tính diện tích cả hình rồi chia đôi."
+  ],
+  "C7": [
+   "Lấy hai tam giác giấy bằng nhau ra ghép thử.",
+   "Cắt ghép thì không thêm không bớt giấy."
+  ],
+  "C8": [
+   "Cạnh khung liên quan gì tới đường kính?",
+   "Có cạnh rồi thì nhân bốn ra chu vi."
+  ],
+  "C9": [
+   "Cắt ghép không đổi diện tích — tính diện tích trước.",
+   "Số nào nhân với chính nó thì ra diện tích ấy?"
+  ]
+ },
+ "DL:KSN4.B41": {
+  "C1": [
+   "Đếm kiểu thám tử: trên - dưới, trước - sau, trái - phải.",
+   "Chúng đi thành từng cặp."
+  ],
+  "C2": [
+   "Một tầng nhân với số tầng.",
+   "Cộng hai tầng lại cũng ra."
+  ],
+  "C3": [
+   "Đếm một tầng trước.",
+   "Rồi nhân với số tầng."
+  ],
+  "C4": [
+   "Một sàn có bao nhiêu khối?",
+   "Sàn nhân với số tầng."
+  ],
+  "C5": [
+   "Đếm theo tầng: mỗi sàn mấy khối?",
+   "Rồi nhân với số tầng."
+  ],
+  "C6": [
+   "Ba cặp mặt: đáy - nắp, trước - sau, hai hông.",
+   "Cộng ba mặt khác nhau rồi nhân đôi."
+  ],
+  "C7": [
+   "Đếm từng tầng như máy chụp cắt lớp.",
+   "Tầng nào bị hụt, hụt mấy khối?"
+  ],
+  "C8": [
+   "Mỗi tầng một sàn vuông, thu nhỏ dần.",
+   "Đếm từng sàn rồi cộng cả ba."
+  ],
+  "C9": [
+   "Lát từng tầng ra mà soi.",
+   "Tầng nào mất khối, mà mất mấy khối?"
+  ]
+ },
+ "DL:KSN4.B42": {
+  "C1": [
+   "RÚT VỀ ĐƠN VỊ: tìm nhịp chân một giờ.",
+   "Quãng đường chia cho số giờ."
+  ],
+  "C2": [
+   "Chiều xuôi: đếm xem mấy khúc đường.",
+   "Nhịp chân nhân với số giờ."
+  ],
+  "C3": [
+   "Chiều ngược: đề hỏi số giờ.",
+   "Quãng đường chứa mấy khúc nhịp chân?"
+  ],
+  "C4": [
+   "Rút về một giờ trước đã.",
+   "Rồi nhân với số giờ cần tính."
+  ],
+  "C5": [
+   "Tìm nhịp chân một giờ.",
+   "Rồi nhân với số giờ."
+  ],
+  "C6": [
+   "Rút về một giờ, rồi tìm số giờ phải đi.",
+   "Giờ đến bằng giờ xuất phát cộng số giờ đi."
+  ],
+  "C7": [
+   "So thế này chưa công bằng — phải đưa về CÙNG MỘT GIỜ.",
+   "Tính nhịp chân từng xe rồi mới so."
+  ],
+  "C8": [
+   "Đưa cả hai về nhịp chân một giờ đã.",
+   "Rồi nhân mỗi bên với số giờ và đem trừ."
+  ],
+  "C9": [
+   "Cộng cả hai chặng ra quãng đường tổng.",
+   "Trung bình mỗi giờ = tổng quãng chia tổng giờ."
+  ]
+ },
+ "DL:KSN4.B43": {
+  "C1": [
+   "Khoảng cách chia cho phần khép được mỗi giờ.",
+   "Mỗi giờ khép bấy nhiêu thì mấy giờ là hết?"
+  ],
+  "C2": [
+   "Quãng đường chia phần gần lại mỗi giờ.",
+   "Ngược chiều thì hai bên cùng lao vào nhau."
+  ],
+  "C3": [
+   "Mỗi giờ trừ đi phần khép được.",
+   "Ghi từng dòng cho tới khi về không."
+  ],
+  "C4": [
+   "Đuổi kịp: chia khoảng cách cho HIỆU hai nhịp chân.",
+   "Mỗi giờ khép lại được bao nhiêu?"
+  ],
+  "C5": [
+   "Tính hiệu hai nhịp chân trước đã.",
+   "Khoảng cách ban đầu chia cho hiệu ấy."
+  ],
+  "C6": [
+   "Ngược chiều: chia quãng đường cho TỔNG hai nhịp chân.",
+   "Mỗi giờ hai bạn gần nhau thêm bao nhiêu?"
+  ],
+  "C7": [
+   "Tổng hai nhịp chân rồi chia quãng đường.",
+   "Có số giờ rồi thì nhân với nhịp chân xe thứ nhất."
+  ],
+  "C8": [
+   "Tính theo xe buýt: nhịp chân nhân số giờ.",
+   "Tính theo xe kia: nhớ cộng cả phần trốn trước."
+  ],
+  "C9": [
+   "Tìm số giờ tới lúc gặp nhau trước đã.",
+   "Cộng hai quãng lại phải bằng cả quãng đường."
+  ]
+ },
+ "DL:KSN4.B44": {
+  "C1": [
+   "Mười hai con số chia vòng tròn thành các khấc đều nhau.",
+   "Ướm ê ke vào mà đếm xem góc vuông phủ mấy khấc."
+  ],
+  "C2": [
+   "Giờ đúng thì kim phút đứng ở số 12.",
+   "Đếm khấc từ số 12 tới kim giờ."
+  ],
+  "C3": [
+   "Đếm khấc từ số 12 xuống số 6.",
+   "Sáu khấc là nửa vòng — hai kim nằm thế nào?"
+  ],
+  "C4": [
+   "Góc lấy phía NGẮN — đếm ngược từ số 12.",
+   "Đếm được mấy khấc, rồi ướm ê ke để gọi tên."
+  ],
+  "C5": [
+   "Đếm khấc rồi so với ba khấc.",
+   "Ít hơn ba khấc thì bé hơn góc thước thợ."
+  ],
+  "C6": [
+   "Đếm khấc rồi so với ba và với sáu.",
+   "Quá ba khấc mà chưa tới sáu thì gọi là gì?"
+  ],
+  "C7": [
+   "Đếm khấc từ số 12 tới kim giờ.",
+   "Không khấc nào cả thì hai kim ra sao?"
+  ],
+  "C8": [
+   "Góc thước thợ cần đúng ba khấc.",
+   "Kim giờ đứng được ở mấy chỗ cách số 12 đúng ba khấc?"
+  ],
+  "C9": [
+   "Lúc 7 giờ thì phải đếm phía NGẮN.",
+   "Hai giờ ấy đối xứng nhau qua đường nối số 12 với số 6."
+  ]
+ }
+}

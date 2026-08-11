@@ -152,7 +152,8 @@
      },
      "solutionNarrative": "mỗi bạn 5 viên, thừa 0 — chia hết",
      "hints": [
-      "Cách chia công bằng nhất: chia theo VÒNG. Mỗi vòng phát cho mỗi bạn đúng 1 viên, tức mỗi vòng tốn 3 viên."
+      "Lần theo bảng nhân 2 tìm trạm dừng gần nhất.",
+      "Dừng đúng khít thì thừa mấy viên?"
      ]
     },
     {
@@ -170,7 +171,11 @@
        }
       ]
      },
-     "solutionNarrative": "mỗi bạn 5 viên, thừa 1"
+     "solutionNarrative": "mỗi bạn 5 viên, thừa 1",
+     "hints": [
+      "Trạm gần nhất trong bảng nhân 2 mà không vượt quá số kẹo.",
+      "Số thừa = số kẹo trừ đi trạm dừng."
+     ]
     },
     {
      "id": "C3",
@@ -187,7 +192,11 @@
        }
       ]
      },
-     "solutionNarrative": "$4  \\times  3 = 12$ → mỗi bạn 3 que, thừa 1"
+     "solutionNarrative": "$4  \\times  3 = 12$ → mỗi bạn 3 que, thừa 1",
+     "hints": [
+      "Vẽ 4 vòng tròn rồi phát theo từng vòng.",
+      "Lần bảng nhân 4 tới trạm gần nhất không vượt quá."
+     ]
     }
    ],
    "standard": [
@@ -208,7 +217,8 @@
      },
      "solutionNarrative": "$4  \\times  5 = 20$ → mỗi bạn 5 viên, thừa 2",
      "hints": [
-      "Cách chia công bằng nhất: chia theo VÒNG. Mỗi vòng phát cho mỗi bạn đúng 1 viên, tức mỗi vòng tốn 3 viên."
+      "Lần bảng nhân 4 tìm trạm dừng.",
+      "Soi luật vàng: số thừa phải bé hơn số bạn."
      ]
     },
     {
@@ -216,8 +226,8 @@
      "text": "Chia 30 quyển vở cho 5 bạn: mỗi bạn mấy quyển, thừa mấy quyển? Vì sao lần này \"đẹp\" thế?",
      "solutionNarrative": "$5  \\times  6 = 30$ → mỗi bạn 6 quyển, thừa 0 — \"đẹp\" vì 30 nằm ngay trong bảng nhân 5!",
      "hints": [
-      "Chia cho 3 bạn? Lần theo bảng nhân 3 tìm trạm dừng GẦN NHẤT mà không vượt quá: 17 → trạm 15 ($3 \\times 5$).",
-      "Cách chia công bằng nhất: chia theo VÒNG. Mỗi vòng phát cho mỗi bạn đúng 1 viên, tức mỗi vòng tốn 3 viên."
+      "Lần bảng nhân 5 xem có trạm nào đúng khít không.",
+      "Đúng khít, không thừa viên nào thì gọi là gì?"
      ]
     },
     {
@@ -237,8 +247,8 @@
      },
      "solutionNarrative": "$3  \\times  8 = 24$ → mỗi bạn 8 viên, thừa 2",
      "hints": [
-      "Chia cho 3 bạn? Lần theo bảng nhân 3 tìm trạm dừng GẦN NHẤT mà không vượt quá: 17 → trạm 15 ($3 \\times 5$).",
-      "Cách chia công bằng nhất: chia theo VÒNG. Mỗi vòng phát cho mỗi bạn đúng 1 viên, tức mỗi vòng tốn 3 viên."
+      "Lần bảng nhân 3 tới trạm gần nhất không vượt quá.",
+      "Số kẹo còn trong tay chính là số thừa."
      ]
     },
     {
@@ -256,7 +266,11 @@
        }
       ]
      },
-     "solutionNarrative": "$5  \\times  3 = 15$ → mỗi lọ 3 bông, thừa 4 bông (soi luật vàng: $4 < 5$ ✓)"
+     "solutionNarrative": "$5  \\times  3 = 15$ → mỗi lọ 3 bông, thừa 4 bông (soi luật vàng: $4 < 5$ ✓)",
+     "hints": [
+      "Lần bảng nhân 5 tìm trạm dừng.",
+      "Soi luật vàng: số thừa có bé hơn số lọ không?"
+     ]
     }
    ],
    "challenge": [
@@ -265,8 +279,8 @@
      "text": "Khi chia kẹo cho 4 bạn, số viên THỪA nhiều nhất có thể là mấy? Vì sao không thể thừa nhiều hơn thế? Cho một ví dụ số kẹo bị thừa đúng như vậy.",
      "solutionNarrative": "thừa nhiều nhất là 3 viên — vì thừa 4 viên là đủ phát thêm một vòng cho 4 bạn rồi! Ví dụ: 19 viên chia 4 bạn → mỗi bạn 4 viên, thừa 3",
      "hints": [
-      "Chia cho 3 bạn? Lần theo bảng nhân 3 tìm trạm dừng GẦN NHẤT mà không vượt quá: 17 → trạm 15 ($3 \\times 5$).",
-      "Cách chia công bằng nhất: chia theo VÒNG. Mỗi vòng phát cho mỗi bạn đúng 1 viên, tức mỗi vòng tốn 3 viên."
+      "Thừa đúng bằng số bạn thì còn phát thêm được một vòng nữa.",
+      "Vậy số thừa lớn nhất phải kém số bạn đúng 1."
      ]
     },
     {
@@ -281,8 +295,8 @@
      },
      "solutionNarrative": "lần theo bảng nhân 4 trong khoảng 20-25: chỉ có $4  \\times  5 = 20$ và $4  \\times  6 = 24$ → Su Kem có 20 hoặc 24 viên kẹo (hai đáp án đều đúng!)",
      "hints": [
-      "Chia cho 3 bạn? Lần theo bảng nhân 3 tìm trạm dừng GẦN NHẤT mà không vượt quá: 17 → trạm 15 ($3 \\times 5$).",
-      "Cách chia công bằng nhất: chia theo VÒNG. Mỗi vòng phát cho mỗi bạn đúng 1 viên, tức mỗi vòng tốn 3 viên."
+      "Lần bảng nhân 4 trong khoảng đề cho.",
+      "Có thể có nhiều hơn một đáp án đấy."
      ]
     }
    ]
