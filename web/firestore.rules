@@ -114,6 +114,20 @@ service cloud.firestore {
       allow write: if false;
     }
 
+    /* ── BẢNG XẾP HẠNG — tài liệu DUY NHẤT một bé đọc được về bé khác ──
+
+       Cả bộ luật này dựng trên một nguyên tắc: mỗi bé chỉ đọc dữ liệu của mình.
+       Chỗ này phá nguyên tắc ấy CÓ CHỦ Ý, để các con nhìn thấy nhau mà cố gắng.
+
+       Vì thế nó là chỗ cẩn thận nhất: Function dựng tài liệu và CHỈ đặt vào đó biệt
+       danh · lớp · sao. Không email, không số bài sai, không "em đang tắc ở bài nào".
+       `allow write: if false` là chốt chặn — máy con không bao giờ tự ghi được vào
+       bảng, nên không ai tự đặt điểm cho mình hay sửa tên bạn khác. */
+    match /bangXepHang/{doc} {
+      allow read:  if signedIn();
+      allow write: if false;
+    }
+
     /* ── Chỉ mục nội dung: ai đăng nhập cũng đọc, chỉ Admin SDK ghi ── */
     match /contentIndex/{microDoc} {
       allow read:  if signedIn();

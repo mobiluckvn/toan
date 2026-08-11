@@ -15,6 +15,7 @@ import { applyAttempt } from './src/bkt.js';
 import { buildReviewCards } from './src/schedule.js';
 import { buildParentReport } from './src/report.js';
 import { buildTeacherBoard } from './src/teacherboard.js';
+import { buildBangXepHang } from './src/bangxephang.js';
 import { makeCode, canSend, nextRecord, verify, otpEmail } from './src/otp.js';
 import { normalizeEmail, buildUserDoc } from './src/user.js';
 
@@ -138,40 +139,81 @@ export const refreshMyReport = onCall(
  * Dựng bảng giáo viên từ dữ liệu HIỆN TẠI và ghi vào teacherBoard/global.
  * Tách riêng vì có HAI nơi gọi: lịch chạy đêm, và nút "Cập nhật ngay" của cô giáo.
  */
-async function dungBangGiaoVien(soNgay = 7) {
+/**
+ * Đọc MỘT LẦN dữ liệu mà cả hai bảng cùng cần: danh sách em, nhật ký trong khoảng,
+ * tiến độ từng bài và học bạ (kỳ sát hạch · vòng đấu) của mỗi em.
+ *
+ * Gộp vì hai bảng dựng cách nhau vài giây trong cùng một lần chạy đêm — đọc hai lần
+ * là nhân đôi hoá đơn Firestore cho đúng một bộ dữ liệu.
+ */
+async function docDuLieuChung(soNgay = 7) {
   const since = Date.now() - soNgay * 86400000;
-  const index = await loadContentIndex();
 
   const roster = [];
   for await (const U of eachDoc(db.collection('users').where('role', '==', 'learner'))) {
     const d = U.data();
-    roster.push({ uid: U.id, displayName: d.displayName || '', email: d.email || '' });
+    roster.push({
+      uid: U.id, displayName: d.displayName || '', email: d.email || '',
+      // Ba trường dưới đây CHỈ bảng xếp hạng dùng; bảng cô giáo bỏ qua.
+      bietDanh: d.bietDanh || '', grade: d.grade || 5, profileComplete: !!d.profileComplete,
+    });
   }
 
   const attSnap = await db.collection('attempts').where('serverTs', '>=', new Date(since)).get();
   const attempts = attSnap.docs.map((d) => {
     const a = d.data();
-    // Firestore trả Timestamp; teacherboard.js làm việc với mili-giây
-    return { ...a, serverTs: a.serverTs?.toMillis ? a.serverTs.toMillis() : a.serverTs };
+    // Firestore trả Timestamp; hai bộ dựng bảng làm việc với mili-giây.
+    const sv = a.serverTs?.toMillis ? a.serverTs.toMillis() : a.serverTs;
+    /* Quy `ts` về mốc MÁY CHỦ: `ts` là giờ máy con, máy tính bảng đặt sai ngày là
+       chuỗi ngày học của bé nhảy loạn — mà chuỗi ngày là một trong ba bảng. */
+    return { ...a, serverTs: sv, ts: sv ?? a.ts };
   });
 
-  const progress = {};
+  const progress = {}, hocBa = {};
   for (const r of roster) {
-    const s = await db.collection(`progress/${r.uid}/micros`).get();
+    const [s, h] = await Promise.all([
+      db.collection(`progress/${r.uid}/micros`).get(),
+      db.collection(`hocBa/${r.uid}/muc`).get(),
+    ]);
     const m = {}; s.forEach((d) => { m[d.data().microId || d.id] = d.data(); });
     progress[r.uid] = m;
+    hocBa[r.uid] = h.docs.map((d) => d.data());
   }
+  return { roster, attempts, progress, hocBa, soNgay };
+}
 
-  const board = buildTeacherBoard({ roster, attempts, progress, index });
+async function dungBangGiaoVien(soNgay = 7, du = null) {
+  const index = await loadContentIndex();
+  const { roster, attempts, progress } = du || await docDuLieuChung(soNgay);
+  const board = buildTeacherBoard({ roster, attempts, progress, index, days: soNgay });
   await db.doc('teacherBoard/global').set(board, { merge: true });
   return board;
+}
+
+/**
+ * BẢNG XẾP HẠNG — tài liệu DUY NHẤT một bé đọc được về bé khác.
+ *
+ * Ghi ĐÈ chứ không merge: `rows` là một mảng, `merge: true` chỉ thay cả mảng chứ
+ * không trộn phần tử, nhưng những khoá cũ đã bỏ khỏi bảng thì merge sẽ giữ lại mãi.
+ * Bảng này phải là ảnh chụp sạch của HIỆN TẠI — một em đã xoá tài khoản mà tên vẫn
+ * treo trên bảng là chuyện không được phép xảy ra.
+ */
+async function dungBangXepHang(soNgay = 7, du = null) {
+  const { roster, attempts, progress, hocBa } = du || await docDuLieuChung(soNgay);
+  const bang = buildBangXepHang({ roster, attempts, progress, hocBa, days: soNgay });
+  await db.doc('bangXepHang/global').set(bang);
+  return bang;
 }
 
 export const nightlyTeacherBoard = onSchedule(
   { schedule: '15 21 * * *', timeZone: 'Asia/Ho_Chi_Minh', timeoutSeconds: 540, memory: '512MiB' },
   async () => {
-    const board = await dungBangGiaoVien();
+    // Một lần đọc, hai bảng — xem docDuLieuChung.
+    const du = await docDuLieuChung();
+    const board = await dungBangGiaoVien(du.soNgay, du);
+    const bang = await dungBangXepHang(du.soNgay, du);
     console.log(`bảng giáo viên: ${board.learners} học sinh · ${board.answered} lượt trả lời`);
+    console.log(`bảng xếp hạng: ${bang.soEmCoHoc}/${bang.soEm} em có sao tuần này`);
   },
 );
 
@@ -193,6 +235,31 @@ export const refreshTeacherBoard = onCall(
     const board = await dungBangGiaoVien(Number(req.data?.soNgay) || 7);
     return { ok: true, learners: board.learners, answered: board.answered,
              generatedAt: board.generatedAt };
+  },
+);
+
+/**
+ * "Cập nhật ngay" cho BẢNG XẾP HẠNG — bé nào bấm cũng được.
+ *
+ * Khác hai nút kia: bảng này DÀNH CHO BÉ, mà bé vừa học xong là muốn xem mình đã
+ * leo lên chưa. Bắt chờ tới 21h15 thì bảng mất hẳn tác dụng thúc.
+ *
+ * Chặn dội: bảng vừa dựng dưới `NGHI_GIAY` giây thì trả lại luôn bản cũ, không quét
+ * lại. Không có chốt này thì cả lớp cùng bấm là mỗi lượt bấm quét toàn bộ nhật ký
+ * của cả trường — vừa chậm vừa tốn, mà kết quả y hệt nhau.
+ */
+const NGHI_GIAY = 120;
+export const refreshBangXepHang = onCall(
+  { region: 'asia-southeast1', timeoutSeconds: 300, memory: '512MiB' },
+  async (req) => {
+    if (!req.auth?.uid) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
+    const cu = await db.doc('bangXepHang/global').get();
+    const moc = cu.exists ? cu.data().generatedAt : 0;
+    if (Date.now() - moc < NGHI_GIAY * 1000) {
+      return { ok: true, boQua: true, generatedAt: moc };
+    }
+    const bang = await dungBangXepHang(7);
+    return { ok: true, soEm: bang.soEm, generatedAt: bang.generatedAt };
   },
 );
 

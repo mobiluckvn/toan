@@ -123,6 +123,41 @@ export async function refreshTeacherBoard(soNgay = 7) {
   return data;
 }
 
+/* ═══════════ BẢNG XẾP HẠNG ═══════════ */
+
+/** Bảng xếp hạng — MỘT tài liệu, bé nào đăng nhập cũng đọc được. */
+export async function bangXepHang() {
+  if (!db) return null;
+  const snap = await getDoc(doc(db, 'bangXepHang/global'));
+  return snap.exists() ? snap.data() : null;
+}
+
+/** Dựng lại bảng ngay. Máy chủ tự chặn dội nếu vừa dựng xong dưới hai phút. */
+export async function lamMoiBangXepHang() {
+  if (!fns) throw new Error('chưa cấu hình Firebase');
+  const { data } = await httpsCallable(fns, 'refreshBangXepHang')({});
+  return data;
+}
+
+/**
+ * Biệt danh và bạn đang đuổi — hai thứ con tự đặt, nằm trong hồ sơ của chính con.
+ *
+ * Luật Firestore cho chính chủ sửa hồ sơ miễn là KHÔNG đụng `role`, `uid`, `email`,
+ * nên hai trường này ghi thẳng được, không cần Cloud Function.
+ */
+export async function luuBietDanh(uid, bietDanh) {
+  if (!db || !isCloudLearner(uid)) return false;
+  await setDoc(doc(db, COLLECTIONS.users, uid),
+    { bietDanh: String(bietDanh || '').trim().slice(0, 24) }, { merge: true });
+  return true;
+}
+
+export async function luuDuoiKip(uid, maBan) {
+  if (!db || !isCloudLearner(uid)) return false;
+  await setDoc(doc(db, COLLECTIONS.users, uid), { duoiKip: maBan || null }, { merge: true });
+  return true;
+}
+
 /** Bảng toàn hệ thống — chỉ giáo viên và admin đọc được */
 export async function teacherBoard() {
   if (!db) return null;

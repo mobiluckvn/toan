@@ -63,7 +63,7 @@ const loiKy = (o, lanTruoc) =>
 
 export default function HomeQuyen({
   progress, chuongTrinh, onMoBai, onMoOnTap, onSoPhuHuynh, onVeKeSach,
-  onMoMuaGiai, onSetMode, account = {},
+  onMoMuaGiai, onMoXepHang, onSetMode, account = {},
 }) {
   const ct = tra(chuongTrinh);
   const [chiMuc, setChiMuc] = useState(null);
@@ -106,6 +106,12 @@ export default function HomeQuyen({
         onVeNha={onVeKeSach}
         phai={(
           <>
+            {onMoXepHang && (
+              <button onClick={onMoXepHang}
+                      className="rounded-full bg-gold px-2.5 py-1 text-[11px] font-bold text-navy">
+                🏆 Xếp hạng
+              </button>
+            )}
             <button onClick={onSoPhuHuynh}
                     className="rounded-full bg-navy-light px-2.5 py-1 text-[11px] font-bold">
               📖 Sổ bố mẹ

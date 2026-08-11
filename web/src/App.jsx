@@ -24,6 +24,7 @@ import TraiHuanLuyen from './components/TraiHuanLuyen.jsx';
 import HoSoBay from './components/HoSoBay.jsx';
 import TheChienThuat from './components/TheChienThuat.jsx';
 import DauLoader from './components/DauLoader.jsx';
+import BangXepHang from './components/BangXepHang.jsx';
 
 const SKIP_KEY = 'ttd5.skipLogin.v1';
 
@@ -364,6 +365,23 @@ export default function App() {
     );
   }
 
+  /* ══ BẢNG XẾP HẠNG ══
+     Đặt TRƯỚC nhánh kệ sách, cùng lý do với màn chủ đề và sân đấu: bảng không thuộc
+     quyển nào, mà vào được từ CẢ HAI nơi (kệ sách và trang quyển). Đứng sau
+     `!chuongTrinh` là bấm từ kệ sách sẽ bị nuốt mất — đúng cái bẫy đã dính hai lần. */
+  if (view.page === 'xephang')
+    return (
+      <BangXepHang
+        maCon={learnerId}
+        hoSo={profile}
+        onExit={() => setView(view.veLai || { page: 'home' })}
+        onVeNha={veKeSach}
+        /* Con đổi biệt danh hay đổi bạn đang đuổi thì hồ sơ trong bộ nhớ phải đổi
+           theo — không thì thoát ra vào lại là thấy giá trị cũ, tưởng không lưu được. */
+        onLuuHoSo={(v) => setProfile((h) => ({ ...(h || {}), ...v }))}
+      />
+    );
+
   /* ══ KỆ SÁCH — trang chính ══ */
   if (!chuongTrinh)
     return (
@@ -372,6 +390,7 @@ export default function App() {
         progress={progress}
         onMoChuongTrinh={chonChuongTrinh}
         onMoChuDe={() => setView({ page: 'chuDe' })}
+        onMoXepHang={() => setView({ page: 'xephang' })}
         onSoPhuHuynh={() => setView({ page: 'report' })}
         account={{ signedIn: !!auth, onSignOut: signOut }}
       />
@@ -428,6 +447,7 @@ export default function App() {
       onMoOnTap={(c) => setView({ page: 'exam', chapter: c })}
       onSoPhuHuynh={() => setView({ page: 'report' })}
       onMoMuaGiai={() => setView({ page: 'muagiai' })}
+      onMoXepHang={() => setView({ page: 'xephang', veLai: { page: 'home' } })}
       onVeKeSach={veKeSach}
     />
   );

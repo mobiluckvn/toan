@@ -30,7 +30,7 @@ function tienDo(progress, ct) {
 }
 
 export default function KeSach({ dangKy, progress, onMoChuongTrinh, onMoChuDe,
-                                onSoPhuHuynh, account = {} }) {
+                                onMoXepHang, onSoPhuHuynh, account = {} }) {
   const dk = dangKy || {};
   /* XẾP THEO `thuTu`, không theo thứ tự khai trong tệp. Sổ vốn khai theo thứ tự làm
      xong quyển (lop2, lop5, lop5q2, lop3, lop4), nên kệ sách hiện lớp 5 và Mùa giải
@@ -118,6 +118,27 @@ export default function KeSach({ dangKy, progress, onMoChuongTrinh, onMoChuDe,
               </span>
               <span className="block text-[12.5px] text-mute">
                 Chọn chủ đề rồi học xuyên các lớp — kém thì lùi về lớp dưới cùng chủ đề
+              </span>
+            </span>
+            <span className="text-[14px] text-mute">▶</span>
+          </button>
+        </div>
+      )}
+
+      {/* BẢNG XẾP HẠNG — chỗ các con nhìn thấy nhau.
+          Đặt ngay dưới "Học theo chủ đề", TRÊN kệ sách: đây là thứ thúc bé mở app,
+          giấu dưới đáy trang thì bé không bao giờ cuộn tới. */}
+      {onMoXepHang && (
+        <div className="px-3.5 pt-3">
+          <button onClick={onMoXepHang}
+                  className="flex w-full items-center gap-3 rounded-2xl border-[1.5px] border-gold bg-gold-pale px-4 py-3.5 text-left">
+            <span className="text-[24px] leading-none">🏆</span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-[16px] font-bold leading-snug text-navy">
+                Bảng xếp hạng
+              </span>
+              <span className="block text-[12.5px] text-mute">
+                Xem các bạn học tới đâu — và còn bao xa nữa thì con đuổi kịp
               </span>
             </span>
             <span className="text-[14px] text-mute">▶</span>
