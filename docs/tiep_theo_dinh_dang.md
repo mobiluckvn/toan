@@ -15,7 +15,24 @@ Cập nhật 2026-08-11 (lượt ba). Đọc tệp này TRƯỚC khi động và
 
 ## MAI VÀO VIỆC TỪ ĐÂU
 
-**Không còn việc tồn nào chắn đường.** Hai việc chờ bác quyết, xem cuối tệp.
+**Không còn việc tồn nào chắn đường.** Đã soát lại toàn kho, còn năm hướng —
+xếp theo giá trị. Hai việc đầu **chờ bác quyết**, cháu không tự làm.
+
+| # | việc | trạng thái |
+|---|---|---|
+| 1 | **Bỏ chip mã `K1 · K2 · K3`** ở màn nguyên tắc | ⏸ CHỜ BÁC QUYẾT — sửa là đụng cả bốn quyển đang chạy thật |
+| 2 | **Deploy `functions` + `firestore rules`** | ⏸ CHỜ BÁC QUYẾT — cả phiên không đụng tới chúng, muốn đẩy phải soát trước |
+| 3 | **Gợi ý cho Mùa giải** — 0/314 câu | quyển đấu chưa có dòng gợi ý nào. Nhưng hỏi trước: đây là quyển THI, bấm đồng hồ và không cho xem đáp — gợi ý có đúng chỗ không, hay chỉ nên có ở màn CHỮA ĐỀ? |
+| 4 | **21 dạng bài chỉ có MỘT bậc** | luyện kém là chạm sàn ngay ở lớp 5, không lùi được. Phần lớn là dạng riêng lớp 5 (pha chế, hạt tươi - hạt khô, kim đồng hồ) nên có thể đúng là không có gốc lớp dưới — phải soi từng dạng mới biết |
+| 5 | **6 micro đang nằm ở HAI dạng** | tác dụng phụ của `chu_de_tay.json`: luật ở đó chỉ THÊM, không XOÁ. Muốn dứt điểm phải sửa `skills.primary` ở nguồn — mà đổi là `bktUnit` đổi theo, mọi bản ghi nhật ký cũ mồ côi. Cân nhắc kỹ |
+
+Sáu micro ở mục 5, để khỏi phải dò lại:
+
+```
+B52.M2  IV.5.2 + IV.5.3      B56.M1  V.4.1 + V.5.1
+B53.M3  V.1.1  + V.1.2       B56.M2  V.4.1 + V.5.2
+B55.M1  V.3.1  + V.3.2       B56.M3  V.3.2 + V.4.1
+```
 
 ---
 
