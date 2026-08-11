@@ -1,9 +1,9 @@
 # Điểm dừng — ĐỊNH DẠNG NỘI DUNG (markdown + LaTeX)
 
-Cập nhật 2026-08-11. Đọc tệp này TRƯỚC khi động vào lời văn hay cách trình bày bài.
+Cập nhật 2026-08-11 (lượt hai). Đọc tệp này TRƯỚC khi động vào lời văn hay cách trình bày bài.
 
-> **ĐANG CHẠY trên ky-su-nhi.web.app.** Cổng: 27 tệp kiểm · 830 PASS · 0 FAIL.
-> **CÒN BA VIỆC CHƯA LÀM** — xem "Việc còn lại" ở cuối. Đó là lý do có tệp này.
+> **ĐANG CHẠY trên ky-su-nhi.web.app.** Cổng: 29 tệp kiểm · 836 PASS · 0 FAIL.
+> Ba việc tồn của đợt trước ĐÃ XONG (2026-08-11). Việc còn lại nay khác — xem cuối tệp.
 
 ---
 
@@ -11,10 +11,10 @@ Cập nhật 2026-08-11. Đọc tệp này TRƯỚC khi động vào lời văn 
 
 Làm theo đúng thứ tự này, vì việc trước có thể lộ thêm việc cho việc sau:
 
-1. **Test end-to-end trọn vòng cả bốn quyển** — rẻ nhất, và mỗi lần đi thật lại
-   lòi ra lỗi mà cổng xanh không bắt được (đã đúng như thế bảy lần).
-2. **Vẽ lại 368 hình lớp 2·3·4** — chữ trong hình vẫn kiểu cũ (`1/(1×2)`).
-3. **Viết 984 gợi ý** cho câu luyện tập lớp 2·3·4.
+1. **Viết gợi ý RIÊNG cho từng câu** — hiện mọi câu trong một bài dùng chung hai
+   gợi ý; cổng canh sẵn rồi.
+2. **Nới luật cho công thức có chữ cái** — đếm chỗ bọc nhầm trước khi nới.
+3. **Rút gọn 109 tên bài lớp 5.**
 
 ---
 
@@ -27,7 +27,8 @@ Làm theo đúng thứ tự này, vì việc trước có thể lộ thêm việ
 ② gắn hình  python3 tools/gan_hinh_lop2.py           (rồi dựng lại lớp 2)
 ③ định dạng python3 tools/dinh_dang.py               → markdown + LaTeX
 ④ bài mẫu   python3 tools/bai_mau.py                 → cắt phần Tóm tắt/Giải/Đáp số
-⑤ cổng      cd web && npm test && npm run build
+⑤ gợi ý     python3 tools/goi_y.py                   → hai tầng gợi ý cho lớp 2·3·4
+⑥ cổng      cd web && npm test && npm run build
 ```
 
 ⚠ **③ và ④ sửa thẳng bản DỰNG** (`web/public/content`), mà bộ dựng ① thì ghi đè
@@ -107,56 +108,50 @@ trước in thành một khối chữ sáu dòng dính nhau; nay mỗi mục m�
 
 ## Việc còn lại
 
-### 1 · TEST END-TO-END TRỌN VÒNG — làm trước tiên
+### ✔ (2026-08-11) Ba việc của đợt trước ĐÃ XONG
 
-Bác đã dặn "test end to end lại tất cả các phần: Mở bài, bài giảng, bài mẫu,
-luyện tập, bài cuối rồi đến các gợi ý". Đợt này mới đi được:
+**① Soát định dạng toàn bộ** — soi bằng máy cả năm quyển, tìm ra bốn chỗ hổng:
+Mùa giải chưa hề được định dạng (tệp mang tiền tố `DR_`, bộ chuyển chỉ lọc `DL_`);
+chuỗi đã có `$` thì bị bỏ qua CẢ chuỗi nên nửa còn lại mắc kẹt; luật phân số chặn
+nhầm dấu phẩy và chữ đứng sau; thiếu 11 trường chữ. Nay chạy tới khi ĐỨNG YÊN.
 
-- lớp 3 bài 21: trọn vòng mở bài → giảng → bài mẫu → luyện tập ✔
-- lớp 4 bài 35 và 42: mở bài + giảng ✔
-- lớp 5 bài 1: mở bài + giảng + màn bẫy ✔
-- **CHƯA đi**: lớp 2 trọn vòng · màn kết (finale) · kỳ sát hạch sau khi đổi định
-  dạng · vòng luyện chủ đề · Mùa giải (Quyển 2 — **chưa hề được định dạng**).
+**② Vẽ lại hình** — hoá ra chỉ **9 hình**, không phải 368 (sổ cũ đếm nhầm tổng số
+hình). Matplotlib vẽ mathtext sẵn. Phải sửa thêm `fit_fs` (đếm nguyên văn nên nhãn
+có công thức bị thu bé tí) và nhãn dưới hình bánh (bộ vẽ tự ghép `{tu}/{mau}`).
 
-Nhớ nếp đã học: đi thật phải có **một lượt cố tình làm sai và cố tình phá**, chứ
-không chỉ lượt làm đúng.
+**③ 984 gợi ý** — gắn được 955/984 câu, suy từ lời GIẢNG của chính bài. Cổng mới
+rồi bắt ngược lại **21 gợi ý của lớp 5 do người soạn viết nói thẳng đáp án**, đã
+viết lại cả 21.
 
-### 2 · CHỮ TRONG HÌNH VẪN KIỂU CŨ
+Hai cổng mới: `goi_y.test.mjs` và `chu_vao_man.test.mjs` (đọc MÃ NGUỒN tìm chỗ in
+thẳng trường có LaTeX — nó bắt ngay 13 chỗ bỏ sót, gồm lời chào màn mở bài và cả
+màn Mùa giải chưa từng nối).
 
-368 hình của lớp 2·3·4 vẽ bằng matplotlib, chữ nằm sẵn trong PNG:
+---
 
-```
-hình bài 35 lớp 4 vẽ "1/(1×2)"   trong khi lời văn cạnh nó đã là phân số xếp dọc
-```
+## Việc còn lại
 
-Sửa được: `figforge/arch_l2.py` là nơi vẽ chữ, thêm một bộ đổi `a/b` → hai dòng
-có gạch ngang rồi vẽ lại toàn bộ (`ve_hinh_lop2.py`, `ve_hinh_lop4.py`). Nhớ chạy
-`gan_hinh_*` sau đó, và **dựng lại thì mất định dạng** (xem dây chuyền ở trên).
+### 1 · GỢI Ý MỚI THEO BÀI, CHƯA THEO CÂU
 
-### 3 · 984 CÂU LUYỆN TẬP KHÔNG CÓ GỢI Ý NÀO
+Mọi câu trong cùng một bài đang dùng chung hai gợi ý (lấy từ câu chốt và bước
+giảng đầu). Lớp 5 thì mỗi câu một gợi ý riêng do người soạn viết — đó là bậc trên.
+Viết riêng cho 984 câu vẫn là việc còn để lại; cổng `goi_y.test.mjs` đã sẵn sàng
+canh cho việc ấy (không được nói ra đáp án · không quá 160 chữ · không cắt giữa
+công thức).
 
-| quyển | câu luyện tập | có gợi ý |
-|---|---|---|
-| lớp 2 | 281 | **0** |
-| lớp 3 | 307 | **0** |
-| lớp 4 | 396 | **0** |
-| lớp 5 | 628 | 628 |
+29 câu hiện KHÔNG có gợi ý nào, vì cả hai tầng đều chứa nguyên văn đáp án của
+chính câu ấy nên bị bỏ.
 
-Giao diện đã có sẵn cơ chế **hai tầng gợi ý** (`hintState` trong `flow.js`): sai
-lần 1 hiện gợi ý 1, sai lần 2 hiện gợi ý 2, sai lần 3 mở đáp án. Chỉ là dữ liệu
-trống, nên bé lớp 2·3·4 sai mấy lần cũng không được giúp gì.
+### 2 · CÔNG THỨC CÓ CHỮ CÁI
 
-Đây là thiếu **nội dung**, không phải thiếu định dạng — phải viết tay, và nên
-viết theo nếp của lớp 5: gợi ý 1 nhắc **hướng đi**, gợi ý 2 chỉ **bước đầu tiên**,
-không cái nào nói ra đáp số.
+`1/(a × b) = 1/a - 1/b` chưa được bọc, vì luật đòi hai đầu là SỐ. Nới được, nhưng
+phải đếm lại chỗ bọc nhầm trước — "km/h", "N/A", "và/hoặc" đều có dạng `chữ/chữ`.
 
-### 4 · Hai chỗ nhỏ chưa đụng
+### 3 · TÊN BÀI LỚP 5
 
-- Công thức có **chữ cái** (`1/(a × b) = 1/a - 1/b`) chưa được bọc, vì luật đòi
-  hai đầu là số. Có thể nới, nhưng phải đếm lại chỗ bọc nhầm trước.
-- **109/168 tên bài lớp 5 dài quá 60 chữ** và bản thân cái tên đã là cách làm
-  ("Vòng bốn 2·3·7·8: chia số thừa số cho 4 — đọc dư như máy định vị"). Đổi thì
-  đổi cả danh sách chương và sổ phụ huynh.
+109/168 tên dài quá 60 chữ và bản thân cái tên đã là cách làm ("Vòng bốn 2·3·7·8:
+chia số thừa số cho 4 — đọc dư như máy định vị"). Đổi thì đổi cả danh sách chương,
+màn chủ đề và sổ phụ huynh.
 
 ---
 
