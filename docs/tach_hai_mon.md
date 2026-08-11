@@ -5,6 +5,10 @@ Ghi 2026-08-11. Đọc tệp này TRƯỚC khi thêm môn mới hay động vào
 > **Đợt 1 XONG**: frontend đã tách, cổng `ranh_gioi.test.mjs` gác ranh giới.
 > Cổng: **35 tệp · 1096 PASS · 0 FAIL**. Hành vi môn Toán KHÔNG đổi.
 > **Đợt 2 CHƯA LÀM**: tách backend thành ba codebase và tách collection dữ liệu.
+>
+> ⛔ **CHẮN ĐƯỜNG**: trước khi làm Đợt 2 (hay bất cứ việc gì khác), phải soát môn Toán
+> end-to-end trên local — xem `docs/soat_toan_end_to_end.md`. Đợt 1 CHƯA DEPLOY; bản
+> đang chạy trên ky-su-nhi.web.app vẫn là bản trước khi tách.
 
 ---
 
