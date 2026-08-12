@@ -53,10 +53,36 @@ export function ghiBai(p, id, kq) {
            bố mẹ. "Xong bài" thì bé nào cũng xong; "gõ lại được cả câu" thì không. */
         bac: Math.max(cu.bac || 0, kq.bac || 0),
         attempts: (cu.attempts || 0) + 1,
+        /* Làm hết bài rồi thì không còn "đang dở" nữa — xoá dấu chặng, nếu không
+           bài đã đạt vẫn đội nhãn "đang học dở" trên danh sách. */
+        chang: 0,
         at: new Date().toISOString(),
       },
     },
   };
+}
+
+/**
+ * Đánh dấu bé đang học DỞ tới chặng nào của một bài.
+ *
+ * Ba điều cố ý ở đây:
+ *
+ * 1. KHÔNG đụng `at`. `gopTienDo` so `at` để quyết định bản nào thắng khi hoà sổ
+ *    máy chủ; đổi `at` mỗi lần bé bấm sang chặng khác thì một buổi học dở trên máy
+ *    này sẽ đè lên KẾT QUẢ THẬT đã ghi từ máy khác.
+ *
+ * 2. KHÔNG ghi khi `chang <= 0`. Chỉ mở bài ra xem rồi thoát thì không tạo mục —
+ *    nếu không, mở lướt cả 16 bài là sổ đầy 16 mục "đang học dở" mà bé chưa học gì.
+ *
+ * 3. Chỉ giữ TẠI MÁY, không đẩy lên máy chủ. Đổi máy giữa chừng thì bé vào lại từ
+ *    đầu bài — mất mấy phút, không mất bài nào. Đẩy lên thì phải ghi máy chủ mỗi
+ *    lần bấm chặng, tốn mà chẳng đổi được gì.
+ */
+export function ghiChang(p, id, chang) {
+  if (!(chang > 0)) return p;
+  const cu = p.micros[id] || {};
+  if ((cu.chang || 0) >= chang) return p;
+  return { ...p, micros: { ...p.micros, [id]: { ...cu, chang } } };
 }
 
 /** Khoá chương PHẢI kèm mã quyển — khoá số trần làm huy hiệu lây giữa các quyển. */

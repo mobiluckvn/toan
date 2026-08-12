@@ -35,6 +35,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from kich_ban import cac_phan, soat  # noqa: E402
+import hinh_ve  # noqa: E402
 
 from PIL import Image, ImageDraw, ImageFont  # noqa: E402
 
@@ -114,11 +115,16 @@ def khung(c: dict) -> Image.Image:
         giua(d, 510, "Nghe ba từ này — chúng bắt đầu giống nhau", phong(40), INK)
 
     elif L == "tu":
-        if c.get("hinh"):
+        # Hai đường ra hình, cùng thứ tự ưu tiên với màn hình (`HinhVe.jsx`):
+        # hình vẽ tay trước, rồi mới tới emoji. Bản trước không có nhánh đầu nên
+        # bảy từ hiện một thẻ chữ trống — đúng cái mà bộ hình vẽ tay sinh ra để
+        # tránh. Nét vẽ đọc từ CHÍNH tệp màn hình đang đọc, xem `hinh_ve.py`.
+        if hinh_ve.dan(im, c.get("ve"), W // 2, 250, 280):
+            y = 440
+        elif c.get("hinh"):
             ve_emoji(im, c["hinh"], W // 2, 250, 260)
             y = 430
         else:
-            # Nợ hình vẽ tay → KHÔNG hiện hình gần đúng. Xem luật 4 ở kich_ban.py.
             the(d, W // 2 - 260, 140, 520, 210, nen=SOFT, vien=LINE)
             giua(d, 200, "🔤", phong(1))     # chỗ giữ, không vẽ emoji sai
             y = 400
@@ -148,7 +154,7 @@ def khung(c: dict) -> Image.Image:
             y += 92
 
     elif L == "ca_cau":
-        if c.get("hinh"):
+        if not hinh_ve.dan(im, c.get("ve"), W // 2, 220, 230) and c.get("hinh"):
             ve_emoji(im, c["hinh"], W // 2, 220, 210)
         the(d, 90, 370, W - 180, 150, nen="#FFFFFF", vien=NAVY, day=4)
         giua(d, 405, c["chuChinh"], phong(62), NAVY)

@@ -127,6 +127,19 @@ def _canh(loai, chu_chinh="", chu_phu="", hinh=None, loi=None, **k):
             "hinh": hinh, "am": am + them, "loiAm": [list(x) for x in loi], **k}
 
 
+def _hinh_cua_tu(h: dict):
+    """
+    Hai đường ra hình, theo đúng thứ tự ưu tiên của màn hình (`HinhVe.jsx`):
+    có `ve` thì dùng HÌNH VẼ TAY, không thì dùng emoji.
+
+    Trước đây hàm này trả None cho mọi từ có `ve`, vì Pillow không dựng nổi SVG —
+    nên bảy từ ấy trong video hiện một thẻ chữ thay cho hình, đúng cái mà cả bộ
+    hình vẽ tay sinh ra để tránh. Nay `hinh_ve.py` rasterize được, nên trả thẳng
+    khoá vẽ và khung dựng lo phần còn lại.
+    """
+    return {"ve": h.get("ve")} if h.get("ve") else {"hinh": h.get("hinh")}
+
+
 def _phan(bai: dict) -> dict:
     kc = bai["knowledgeCore"]
     tu = kc["vocabulary"]
@@ -135,9 +148,8 @@ def _phan(bai: dict) -> dict:
     ds = []
 
     def anh(t):
-        """Hình của một từ — None nếu đang nợ hình vẽ tay (emoji chỉ gần đúng)."""
-        h = hinh_cua.get(t["tu"]) or {}
-        return None if h.get("ve") else h.get("hinh")
+        """Hình của một từ: emoji, hoặc khoá hình vẽ tay. Xem `_hinh_cua_tu`."""
+        return _hinh_cua_tu(hinh_cua.get(t["tu"]) or {})
 
     # ══ VIDEO 1 · TỪ ══
     # ── 1 · BÌA ──────────────────────────────────────────────────────────
@@ -157,7 +169,7 @@ def _phan(bai: dict) -> dict:
 
     # ── 3 · TỪ MỚI — mỗi từ MỘT cảnh ────────────────────────────────────
     for t in tu:
-        ds.append(_canh("tu", t["tu"], f"{t['nghia']}  {t['ipa']}", hinh=anh(t),
+        ds.append(_canh("tu", t["tu"], f"{t['nghia']}  {t['ipa']}", **anh(t),
                         # tiếng Anh trước (bé nghe từ), rồi tiếng Việt (bé hiểu nghĩa)
                         loi=[], am2=[ma_am("tu", t["tu"]), ma_am("nghia", t["nghia"])]))
 
@@ -205,7 +217,7 @@ def _mot_mau_cau(bai, mc, tu, anh) -> list[dict]:
         if khung and c.startswith(khung))) or [mc["cau"]]
     for c in cung_khung[:3]:
         ds.append(_canh("ca_cau", c, "Con nghe rồi nhắc lại nhé",
-                        hinh=next((anh(t) for t in tu if t["tu"] in c), None),
+                        **next((anh(t) for t in tu if t["tu"] in c), {}),
                         loi=[(c, "en")], lapLai=2))
 
     # ── TẬP NÓI: ba lần, chậm dần lên bình thường, có lặng để bé nói ──

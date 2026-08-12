@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import NutNghe from './NutNghe.jsx';
 import HinhVe from './HinhVe.jsx';
 import { chamTiengAnh } from '../lib/cham.js';
+import { duocBoQua, HIEN_GOI_Y } from '../lib/dandat.js';
 
 /**
  * MỘT CÂU HỎI TIẾNG ANH — bốn bậc, bốn cách trả lời.
@@ -19,6 +20,14 @@ import { chamTiengAnh } from '../lib/cham.js';
  *    thì bé tưởng mình sai chứ không nghĩ là tại nút.
  * 2. Sai KHÔNG mất lượt. Bé được thử lại ngay, và lần thứ hai thì hiện gợi ý. Đây
  *    là lớp 1: nản một lần là nghỉ luôn.
+ *
+ * ── BỎ QUA ĐƯỢC, NHƯNG PHẢI ĐỂ LẠI DẤU ──
+ * Thử quá số lần tối thiểu mà vẫn sai thì hiện đáp án và cho đi tiếp — bắt làm
+ * tới khi đúng thì có câu bé không bao giờ ra khỏi được, mà kẹt một câu là nghỉ
+ * cả buổi. Nhưng lúc ấy phải báo `boQua: true` lên trên: chỗ gọi gom những câu ấy
+ * lại và mời bé làm lại một lượt cuối mức. Bản trước không có cờ này, nên bỏ qua
+ * xong là câu ấy MẤT HẲN — bé đi hết mức mà nửa số câu chưa từng làm được, và
+ * không con số nào trên màn nói ra điều đó.
  */
 export default function CauHoi({ cau, onXong }) {
   /* Chỗ gọi PHẢI truyền `key={cau.id}` để component dựng lại mỗi câu — xem chú
@@ -52,7 +61,10 @@ export default function CauHoi({ cau, onXong }) {
         <GoChu dap={dap} datDap={datDap} khoa={!!kq?.ok} onNop={() => nop(dap)} />
       )}
 
-      {kq && <Chua kq={kq} cau={cau} lan={lan} onThuLai={thuLai} onTiep={() => onXong({ dung: kq.ok, lan })} />}
+      {kq && (
+        <Chua kq={kq} cau={cau} lan={lan} onThuLai={thuLai}
+              onTiep={() => onXong({ dung: kq.ok, lan, boQua: !kq.ok })} />
+      )}
     </div>
   );
 }
@@ -250,7 +262,8 @@ function Chua({ kq, cau, lan, onThuLai, onTiep }) {
   }
   /* Sai lần đầu: chỉ bảo thử lại. Sai lần hai: mới đưa gợi ý. Đưa gợi ý ngay từ
      lần đầu thì bé không kịp tự nghĩ, mà giấu mãi thì bé nản. */
-  const goi = lan >= 2 ? (cau.hints || [])[Math.min(lan - 2, (cau.hints || []).length - 1)] : null;
+  const goi = lan >= HIEN_GOI_Y
+    ? (cau.hints || [])[Math.min(lan - HIEN_GOI_Y, (cau.hints || []).length - 1)] : null;
   return (
     <div className="flex flex-col gap-2 rounded-xl2 bg-gold-pale p-4">
       <div className="flex flex-wrap items-center gap-3">
@@ -263,13 +276,15 @@ function Chua({ kq, cau, lan, onThuLai, onTiep }) {
         </button>
       </div>
       {goi && <p className="text-sm text-gold-dark">💡 {goi}</p>}
-      {lan >= 3 && (
+      {duocBoQua(lan) && (
         <div className="flex flex-wrap items-center gap-3 border-t border-gold pt-2">
           <p className="flex-1 text-gold-dark">Đáp án: <b>{kq.expected}</b></p>
+          {/* Nhãn nói THẲNG là câu này sẽ quay lại. Ghi trơn "Bỏ qua câu này" thì
+              bé hiểu là xong hẳn, rồi cuối mức thấy nó hiện ra lại là hụt hẫng. */}
           <button type="button" onClick={onTiep}
             className="rounded-xl2 border-2 border-gold-dark px-4 py-1.5 text-sm
               font-semibold text-gold-dark focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
-            Bỏ qua câu này
+            Để câu này lại sau →
           </button>
         </div>
       )}

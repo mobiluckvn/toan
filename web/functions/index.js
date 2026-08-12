@@ -169,15 +169,27 @@ async function docDuLieuChung(soNgay = 7) {
     return { ...a, serverTs: sv, ts: sv ?? a.ts };
   });
 
+  /* ── ĐỌC CẢ HAI MÔN ──
+     Mỗi môn một collection riêng (`progress` cho Toán, `progressTA` cho Tiếng
+     Anh) — tách khoá là chủ ý, xem `mon/tienganh/lib/progress.js`. Nhưng BẢNG
+     XẾP HẠNG thì đếm cả chặng đường của bé, không phải chặng đường một môn: em
+     học chăm môn Tiếng Anh mà bảng báo 0 sao thì bảng nói sai về em ấy.
+
+     Gộp vào MỘT map an toàn vì mã bài hai môn không bao giờ trùng (`DL:KSN2.*`
+     với `DL:TA1.*`). Chỗ nào cần tách môn thì lọc theo tiền tố — nhưng ở đây
+     không cần tách, và cũng không được tách. */
   const progress = {}, hocBa = {};
   for (const r of roster) {
-    const [s, h] = await Promise.all([
+    const [s, sTA, h, hTA] = await Promise.all([
       db.collection(`progress/${r.uid}/micros`).get(),
+      db.collection(`progressTA/${r.uid}/micros`).get(),
       db.collection(`hocBa/${r.uid}/muc`).get(),
+      db.collection(`hocBaTA/${r.uid}/muc`).get(),
     ]);
-    const m = {}; s.forEach((d) => { m[d.data().microId || d.id] = d.data(); });
+    const m = {};
+    for (const snap of [s, sTA]) snap.forEach((d) => { m[d.data().microId || d.id] = d.data(); });
     progress[r.uid] = m;
-    hocBa[r.uid] = h.docs.map((d) => d.data());
+    hocBa[r.uid] = [...h.docs, ...hTA.docs].map((d) => d.data());
   }
   return { roster, attempts, progress, hocBa, soNgay };
 }

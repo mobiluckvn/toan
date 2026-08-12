@@ -18,12 +18,17 @@ import { CONTENT, dongDau } from '../../../chung/lib/soQuyen.js';
  *    tua rời: bé 6 tuổi kéo trúng thanh tua là nhảy mất đoạn, rồi tưởng máy hỏng.
  *    Vẫn giữ `controls` để dừng tạm được.
  *
- * 4. XEM XONG MỚI MỞ nút đi tiếp. Không khoá cứng — bé xem lần hai vẫn qua được
- *    ngay — nhưng lần đầu thì phải xem hết, nếu không video chỉ là thứ trang trí.
+ * 4. XEM XONG MỚI MỞ nút đi tiếp. Chặng gọi tới quyết định điều đó; ở đây chỉ
+ *    báo ra `onXongLan1`. Không khoá cứng — bé xem lần hai vẫn qua được ngay.
+ *
+ * 5. TỆP HỎNG THÌ PHẢI KÊU LÊN. `onLoi` bắn ra ngoài để chặng mở khoá nút đi
+ *    tiếp: mạng rớt hay tệp thiếu là lỗi của máy, mà bé thì ngồi chịu trận trước
+ *    một ô đen và một nút xám không giải thích gì.
  */
-export default function Video({ tep, ten, phu, onXongLan1, children }) {
+export default function Video({ tep, ten, phu, onXongLan1, onLoi, children }) {
   const [daXong, datDaXong] = useState(false);
   const [dangChay, datDangChay] = useState(false);
+  const [hong, datHong] = useState(false);
   const v = useRef(null);
 
   if (!tep) return null;
@@ -44,8 +49,16 @@ export default function Video({ tep, ten, phu, onXongLan1, children }) {
           onPlay={() => datDangChay(true)}
           onPause={() => datDangChay(false)}
           onEnded={() => { datDangChay(false); if (!daXong) { datDaXong(true); onXongLan1?.(); } }}
+          onError={() => { if (!hong) { datHong(true); onLoi?.(); } }}
         />
       </div>
+
+      {hong && (
+        <p className="rounded-xl2 bg-gold-pale p-3 text-gold-dark">
+          Video chưa tải được — chắc mạng đang yếu. Con cứ bấm 🔈 nghe từng từ,
+          rồi học tiếp bình thường nhé.
+        </p>
+      )}
 
       <div className="flex flex-wrap items-center gap-3">
         <button

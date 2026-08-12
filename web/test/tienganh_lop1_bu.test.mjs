@@ -186,13 +186,19 @@ in5(themKhuyet);
    thiếu hình thì hai chỗ ấy hiện dấu hỏi — bé không làm được, mà dữ liệu vẫn hợp lệ.
 
    Bảy từ dùng emoji GẦN ĐÚNG (gate 🚧 là biển công trường, top 🪀 là yo-yo…) đã được
-   vẽ tay bằng SVG. Phép kiểm này canh hai chiều: mọi khoá `ve` phải có hình thật
-   trong `HinhVe.jsx`, và mọi hình trong `HinhVe.jsx` phải có từ dùng tới — hình
-   thừa nằm im là dấu hiệu ai đó đổi tên từ mà quên. */
+   vẽ tay bằng SVG. Phép kiểm này canh hai chiều: mọi khoá `ve` phải có hình thật,
+   và mọi hình phải có từ dùng tới — hình thừa nằm im là dấu hiệu ai đó đổi tên từ
+   mà quên.
+
+   Bản đầu dò bộ hình bằng cách ĐỌC CHỮ trong `HinhVe.jsx` (tìm `const BO = {`).
+   Nét vẽ nay dọn sang `lib/hinh_ve.json` để video dùng chung một nguồn, và phép
+   dò theo chữ ấy lập tức trả rỗng — cổng kêu "7 chưa có hình" trong khi cả bảy
+   hình vẫn nguyên. Nên hỏi thẳng DỮ LIỆU, đừng đọc mã nguồn: chỗ nào đọc được
+   dữ liệu thì đừng dò bằng biểu thức chính quy. */
 const veTay = bu.hinh._ve_tay;
-const nguonHinhVe = readFileSync(join(R, 'web/src/mon/tienganh/components/HinhVe.jsx'), 'utf8');
-const coTrongBo = (k) => new RegExp(`\\b${k}:\\s*\\w+`).test(
-  nguonHinhVe.slice(nguonHinhVe.indexOf('const BO = {')));
+const boHinh = JSON.parse(
+  readFileSync(join(R, 'web/src/mon/tienganh/lib/hinh_ve.json'), 'utf8')).hinh;
+const coTrongBo = (k) => Object.hasOwn(boHinh, k);
 
 const thieuHinh = Object.values(bu.tu)
   .filter((x) => !bu.hinh[x.word] && !veTay[x.word])
@@ -202,14 +208,12 @@ in5(thieuHinh);
 
 const veHong = Object.entries(veTay).filter(([k]) => !k.startsWith('_'))
   .filter(([, v]) => !v.ve || !coTrongBo(v.ve))
-  .map(([k, v]) => `${k}: khoá "${v.ve}" không có trong HinhVe.jsx`);
+  .map(([k, v]) => `${k}: khoá "${v.ve}" không có trong lib/hinh_ve.json`);
 t(`bảy từ nợ đều đã có hình vẽ tay (${veHong.length} chưa)`, veHong.length === 0);
 in5(veHong);
 
 const dungVe = new Set(Object.values(veTay).map((v) => v.ve).filter(Boolean));
-const boHinh = (nguonHinhVe.match(/const BO = \{([^}]*)\}/) || [, ''])[1]
-  .split(',').map((x) => x.split(':')[0].trim()).filter(Boolean);
-const veThua = boHinh.filter((k) => !dungVe.has(k));
+const veThua = Object.keys(boHinh).filter((k) => !dungVe.has(k));
 t(`không hình vẽ nào nằm im không ai dùng (${veThua.length} thừa)`, veThua.length === 0);
 in5(veThua);
 

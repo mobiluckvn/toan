@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import NutNghe, { NutNgheDoan } from './NutNghe.jsx';
+import NutNghe from './NutNghe.jsx';
 import CauHoi from './CauHoi.jsx';
+import CauNgheNhin from './CauNgheNhin.jsx';
 import HinhVe from './HinhVe.jsx';
 import NutNoi from './NutNoi.jsx';
 import HoiThoai from './HoiThoai.jsx';
@@ -8,13 +9,14 @@ import Video from './Video.jsx';
 import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
 import { napBai, napSoAm, hangXom } from '../lib/noiDung.js';
 import { maCua } from './NutNghe.jsx';
+import { changCua, NHAN_CHANG, trangThaiChang, THU_TOI_THIEU } from '../lib/dandat.js';
 
 const maCauAm = (c) => maCua(c, 'en');
 
 /**
  * MỘT BÀI TIẾNG ANH — năm chặng, đúng nhịp bốn quyển Toán đang dùng.
  *
- *   MỞ BÀI → GIẢNG → BÀI MẪU → LUYỆN TẬP (3 mức sao) → SÁT HẠCH
+ *   TỪ MỚI → MẪU CÂU → LUYỆN TẬP (3 mức sao) → NÓI CHUYỆN → SÁT HẠCH
  *
  * Khác Toán ở chỗ nào thì khác vì lý do cụ thể, không phải vì thích khác:
  *
@@ -22,23 +24,48 @@ const maCauAm = (c) => maCua(c, 'en');
  *  · Chặng nào cũng có NÚT NGHE. Bé chưa đọc được tiếng Việt, nên chữ trên màn
  *    hình là để nhìn cho quen mặt, còn nội dung thì vào bằng tai.
  *  · Không có thanh đếm ngược, không có điểm trừ. Sai thì thử lại.
+ *
+ * ── ĐI LẦN LƯỢT, VÀ QUAY LẠI ĐƯỢC ──
+ * Bản trước giữ đúng MỘT con số: đang ở chặng nào. Nút trên thanh khoá theo
+ * `i > tai`. Hai chỗ hỏng vì thế:
+ *
+ *   · nút "Tiếp" không đòi hỏi gì — bé bấm liền năm cái là ra thẳng sát hạch,
+ *     chưa xem một giây video nào;
+ *   · quay lại chặng 1 nghe lại từ mới thì chặng 2·3·4 KHOÁ LẠI HẾT, muốn về chỗ
+ *     cũ phải làm lại cả bài. Ôn lại là việc tốt, mà app lại phạt.
+ *
+ * Nên nay có HAI con số: đang đứng ở đâu (`tai`) và đã đi xa nhất tới đâu (`xa`).
+ * `xa` chỉ nhích lên khi chặng ấy LÀM XONG THẬT, và không bao giờ tụt xuống. Luật
+ * ở `lib/dandat.js` để cổng chạy bằng node soi được.
  */
-export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, tenBe = 'Bo' }) {
+export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang, tenBe = 'Bo' }) {
   const [bai, datBai] = useState(null);
   const [loi, datLoi] = useState(null);
-  const [chang, datChang] = useState(0);
+  const [tai, datTai] = useState(0);
+  const [xa, datXa] = useState(0);
 
   useEffect(() => {
     let song = true;
-    datBai(null); datLoi(null); datChang(0);
+    datBai(null); datLoi(null); datTai(0); datXa(0);
     (async () => {
       try {
         await napSoAm();
         const d = await napBai(id);
-        if (song) datBai(d);
+        if (!song) return;
+        datBai(d);
+        /* Vào lại đúng chỗ bỏ dở. Kẹp trong khoảng hợp lệ: sổ cũ có thể ghi số
+           chặng của bản bài CŨ (bài từng có 6 chặng), mà nhảy ra ngoài mảng thì
+           màn trắng. */
+        const nho = Math.max(0, Math.min(tienDo?.micros?.[id]?.chang || 0, changCua(d).length - 1));
+        datTai(nho); datXa(nho);
       } catch (e) { if (song) datLoi(e.message); }
     })();
     return () => { song = false; };
+    /* CỐ Ý không nghe `tienDo`: chỉ đọc chặng đã nhớ MỘT LẦN lúc mở bài. Nghe cả
+       `tienDo` thì mỗi lần ghi chặng lại chạy lại effect này, `datBai(null)` xoá
+       màn, nạp lại bài — thành vòng lặp không đáy. Đã dính đúng kiểu này một lần
+       ở sổ tiến độ, ghi trong docs/tiep_theo_tienganh_lop1.md. */
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   if (loi) {
@@ -50,39 +77,35 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, tenBe = 
   }
   if (!bai) return <Khung onThoat={onThoat} ten="Đang mở bài…"><p className="text-mute">…</p></Khung>;
 
-  /* ── NĂM CHẶNG, VIDEO DẪN ĐƯỜNG ──
-     Bản trước có sáu chặng, trong đó Mở bài · Giảng · Bài mẫu đều là CHỮ — mà đếm
-     thật thì một bài bắt bé nhìn 2 029 ký tự tiếng Việt. Bé lớp 1 chưa đọc sõi
-     tiếng Việt, nên với bé đó chỉ là những mảng xám choán chỗ.
-     Nay ba chặng ấy gộp lại thành hai màn XEM: video đã làm đúng việc của chúng —
-     nghe tiếng, nhìn hình. Chữ giải thích lui vào Góc bố mẹ, gập lại sẵn.
+  const CHANG = changCua(bai);
+  const tenChang = CHANG.map((k) => NHAN_CHANG[k]);
 
-     NÓI CHUYỆN vẫn đứng SAU luyện tập: bé phải ráp được câu bằng tay và gõ được
-     rồi mới nói ra miệng được. */
-  const coHoiThoai = !!bai.knowledgeCore?.hoiThoai;
-  const CHANG = ['Từ mới', 'Mẫu câu', 'Luyện tập',
-    ...(coHoiThoai ? ['Nói chuyện'] : []), 'Sát hạch'];
-  const buoc = (n) => datChang(Math.max(0, Math.min(CHANG.length - 1, n)));
+  /* Đi TỚI: chỉ gọi từ trong chặng, khi chặng ấy đã làm xong thật. */
+  const xong = () => {
+    const n = Math.min(tai + 1, CHANG.length - 1);
+    datTai(n);
+    if (n > xa) { datXa(n); onChang?.(n); }
+  };
+  /* Nhảy trên thanh: chỉ tới chặng ĐÃ MỞ, và KHÔNG hạ `xa` xuống. */
+  const nhay = (i) => { if (i <= xa) datTai(i); };
 
+  const k = CHANG[tai];
   return (
     <Khung onThoat={onThoat} ten={bai.title}>
-      <ThanhChang ten={CHANG} tai={chang} onChon={buoc} />
+      <ThanhChang ten={tenChang} tai={tai} xa={xa} onChon={nhay} />
 
-      {chang === 0 && <ManTu bai={bai} onTiep={() => buoc(1)} onNoi={onNoi} />}
-      {chang === 1 && <ManCau bai={bai} onTiep={() => buoc(2)} />}
-      {chang === 2 && <LuyenTap bai={bai} onTiep={() => buoc(3)} />}
-      {coHoiThoai && chang === 3 && (
+      {k === 'tu' && <ManTu bai={bai} onTiep={xong} onNoi={onNoi} />}
+      {k === 'cau' && <ManCau bai={bai} onTiep={xong} />}
+      {k === 'luyen' && <LuyenTap bai={bai} onTiep={xong} />}
+      {k === 'noi' && (
         <HoiThoai
           hoiThoai={bai.knowledgeCore.hoiThoai}
           tenBe={tenBe}
-          onXong={(k) => { onNoi?.('hoiThoai', k); buoc(4); }}
+          onXong={(kq) => { onNoi?.('hoiThoai', kq); xong(); }}
         />
       )}
-      {chang === CHANG.length - 1 && (
-        <SatHach
-          bai={bai}
-          onXong={(kq) => onXongBai(kq, hangXom(id).sau)}
-        />
+      {k === 'sat' && (
+        <SatHach bai={bai} onXong={(kq) => onXongBai(kq, hangXom(id).sau)} />
       )}
     </Khung>
   );
@@ -106,36 +129,63 @@ function Khung({ ten, children, onThoat }) {
   );
 }
 
-function ThanhChang({ ten, tai, onChon }) {
+/**
+ * THANH CHẶNG — vừa là chỗ bé biết mình đang ở đâu, vừa là chỗ QUAY LẠI LÀM LẠI.
+ *
+ * Chặng đã đi qua thì bấm vào được, và bấm vào KHÔNG mất chặng sau: bé nghe lại
+ * từ mới xong bấm thẳng về sát hạch, không phải làm lại cả bài. Chặng chưa tới
+ * thì khoá, và khoá có nói vì sao.
+ */
+function ThanhChang({ ten, tai, xa, onChon }) {
   return (
-    <ol className="flex flex-wrap gap-1.5">
-      {ten.map((x, i) => (
-        <li key={x}>
-          <button
-            type="button"
-            /* Đi LÙI được, đi TỚI thì không: bé quay lại nghe giảng lần nữa là
-               chuyện tốt, còn nhảy thẳng tới sát hạch thì bỏ mất bài. */
-            disabled={i > tai}
-            onClick={() => onChon(i)}
-            className={`rounded-full px-3 py-1 text-xs font-semibold transition
-              disabled:cursor-not-allowed disabled:opacity-45
-              focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
-              ${i === tai ? 'bg-navy text-white' : 'bg-soft text-mute hover:bg-line'}`}
-          >
-            {i + 1}. {x}
-          </button>
-        </li>
-      ))}
-    </ol>
+    <div className="flex flex-col gap-2">
+      <ol className="flex flex-wrap gap-1.5">
+        {ten.map((x, i) => {
+          const tt = trangThaiChang(i, tai, xa);
+          return (
+            <li key={x}>
+              <button
+                type="button"
+                disabled={tt === 'khoa'}
+                onClick={() => onChon(i)}
+                title={tt === 'khoa' ? 'Con làm xong phần trước thì phần này mở ra'
+                     : tt === 'xong' ? 'Bấm để làm lại phần này' : undefined}
+                className={`rounded-full px-3 py-1 text-xs font-semibold transition
+                  disabled:cursor-not-allowed disabled:opacity-45
+                  focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
+                  ${tt === 'dang' ? 'bg-navy text-white'
+                    : tt === 'xong' ? 'bg-teal-pale text-teal-dark hover:bg-teal hover:text-white'
+                    : 'bg-soft text-mute'}`}
+              >
+                {tt === 'xong' ? '✓ ' : tt === 'khoa' ? '🔒 ' : `${i + 1}. `}{x}
+              </button>
+            </li>
+          );
+        })}
+      </ol>
+      {/* Bé quay lại ôn rồi thì phải có đường về chỗ đang học, không bắt bấm mò. */}
+      {tai < xa && (
+        <button type="button" onClick={() => onChon(xa)}
+          className="self-start text-sm font-semibold text-navy underline
+            focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          → Về chỗ con đang học ({ten[xa]})
+        </button>
+      )}
+    </div>
   );
 }
 
-const NutTiep = ({ onClick, chu = 'Tiếp tục' }) => (
-  <button type="button" onClick={onClick}
-    className="self-start rounded-xl2 bg-navy px-6 py-3 text-lg font-semibold text-white
-      focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
-    {chu} →
-  </button>
+const NutTiep = ({ onClick, chu = 'Tiếp tục', tat = false, viSao }) => (
+  <div className="flex flex-col gap-1">
+    <button type="button" onClick={onClick} disabled={tat}
+      className="self-start rounded-xl2 bg-navy px-6 py-3 text-lg font-semibold text-white
+        disabled:bg-line disabled:text-mute
+        focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+      {chu} →
+    </button>
+    {/* Nút xám mà không nói vì sao thì bé tưởng máy hỏng. Luôn kèm một dòng. */}
+    {tat && viSao && <p className="text-sm text-mute">{viSao}</p>}
+  </div>
 );
 
 /* ─────────── chặng 1 · TỪ MỚI ─────────── */
@@ -144,29 +194,48 @@ const NutTiep = ({ onClick, chu = 'Tiếp tục' }) => (
  * Video từ mới (~30 giây) → thẻ từ có nghe và nói.
  * Không một dòng giải thích nào trên bề mặt: video đã nói hết, và bé không đọc
  * được chữ. Lời giảng nằm trong Góc bố mẹ, gập sẵn.
+ *
+ * ── MỞ NÚT ĐI TIẾP KHI NÀO ──
+ * Xem hết video, HOẶC nghe đủ từng từ một. Hai đường vì chúng là hai cách học
+ * thật, không phải một đường chính và một lối lách: video giảng, còn bấm nghe
+ * từng từ cũng là nghe đủ chừng ấy từ. Video hỏng thì mở ngay và nói rõ — không
+ * để bé kẹt vì tệp không tải được.
  */
 function ManTu({ bai, onTiep, onNoi }) {
   const [daXem, datDaXem] = useState(false);
+  const [videoHong, datVideoHong] = useState(false);
+  const [daNghe, datDaNghe] = useState(() => new Set());
   const K = bai.knowledgeCore.statements || [];
+  const dsTu = bai.knowledgeCore.vocabulary || [];
+  const ngheDu = dsTu.length > 0 && dsTu.every((v) => daNghe.has(v.tu));
+  const moKhoa = daXem || ngheDu || videoHong || !bai.video?.tu;
+
   return (
     <section className="flex flex-col gap-4">
       <Video
         tep={bai.video?.tu}
         ten="Xem từ mới"
-        phu={`${bai.knowledgeCore.vocabulary.length} từ · khoảng nửa phút`}
+        phu={`${dsTu.length} từ · khoảng nửa phút`}
         onXongLan1={() => datDaXem(true)}
+        onLoi={() => datVideoHong(true)}
       />
 
-      <TuVung bai={bai} onNoi={onNoi} />
+      <TuVung bai={bai} onNoi={onNoi}
+              onNghe={(t) => datDaNghe((s) => (s.has(t) ? s : new Set(s).add(t)))} />
 
       <GocBoMe ten="Góc bố mẹ · bài này dạy gì">
         <MucBoMe nhan="Mục tiêu">{bai.objective.text}</MucBoMe>
-        {K.map((k) => <MucBoMe key={k.id} nhan={k.id}>{k.text}</MucBoMe>)}
+        {K.map((x) => <MucBoMe key={x.id} nhan={x.id}>{x.text}</MucBoMe>)}
         <MucBoMe nhan="Cùng con ở nhà">{bai.parentNote?.homeActivity}</MucBoMe>
         <MucBoMe nhan="Nên và không nên">{bai.parentNote?.watchFor}</MucBoMe>
       </GocBoMe>
 
-      <NutTiep onClick={onTiep} chu={daXem ? 'Sang mẫu câu' : 'Xem xong rồi, đi tiếp'} />
+      <NutTiep
+        onClick={onTiep}
+        tat={!moKhoa}
+        chu="Sang mẫu câu"
+        viSao={`Con xem hết video, hoặc bấm 🔈 nghe đủ ${dsTu.length} từ, rồi đi tiếp nhé.`}
+      />
     </section>
   );
 }
@@ -179,7 +248,7 @@ function ManTu({ bai, onTiep, onNoi }) {
  * tự nói. Không có ô giải thích nào — nghĩa tiếng Việt đã nằm ngay dưới từ, còn
  * lời giảng thì video vừa nói xong.
  */
-function TuVung({ bai, onNoi }) {
+function TuVung({ bai, onNoi, onNghe }) {
   /* Các từ KHÁC của bài — để bộ chấm bắt được việc bé đọc "dog" thành "duck".
      Hai từ ấy cùng một unit, nhầm sang nhau mà vẫn điểm cao thì bài nói vô nghĩa. */
   const cungBai = bai.knowledgeCore.vocabulary.map((x) => x.tu);
@@ -198,7 +267,7 @@ function TuVung({ bai, onNoi }) {
               <p className="font-mono text-xs text-mute">{v.ipa}</p>
               <p className="text-ink">{v.nghia}</p>
             </div>
-            <NutNghe ma={v.am} nhan={`Nghe từ ${v.tu}`} />
+            <NutNghe ma={v.am} nhan={`Nghe từ ${v.tu}`} onPhat={() => onNghe?.(v.tu)} />
             <button type="button" onClick={() => datNoiTu(noiTu === v.tu ? null : v.tu)}
               aria-label={`Nói từ ${v.tu}`}
               className={`h-11 w-11 flex-none rounded-full border-2 text-xl transition
@@ -232,14 +301,22 @@ function TuVung({ bai, onNoi }) {
 /**
  * Mỗi mẫu câu MỘT video, và bài hỏi–đáp thì hai video rời (câu hỏi trước, câu trả
  * lời sau). Bé chọn xem cái nào — nhưng mặc định mở cái đầu, để bé không phải chọn.
+ *
+ * Đi tiếp được khi XEM HẾT MỌI video mẫu câu của bài. Bài có hai mẫu mà chỉ xem
+ * một rồi qua thì đúng nửa bài bị bỏ — mà đó là nửa bé sẽ gặp lại ngay ở luyện
+ * tập và sát hạch.
  */
 function ManCau({ bai, onTiep }) {
   const ds = bai.video?.cau || [];
   const [i, datI] = useState(0);
+  const [daXem, datDaXem] = useState(() => new Set());
+  const [hong, datHong] = useState(false);
   const mcDs = bai.knowledgeCore.mauCauDs || [];
   const mc = mcDs[i] || bai.knowledgeCore.mauCau;
   const bay = bai.knowledgeCore.misconceptions?.[0];
   const NHAN = { hoi: 'Câu hỏi', dap: 'Câu trả lời', cau: 'Mẫu câu' };
+  const conThieu = ds.filter((v) => !daXem.has(v.tep)).length;
+  const moKhoa = hong || ds.length === 0 || conThieu === 0;
 
   return (
     <section className="flex flex-col gap-4">
@@ -249,15 +326,18 @@ function ManCau({ bai, onTiep }) {
             <button key={v.tep} type="button" onClick={() => datI(k)}
               className={`rounded-xl2 px-4 py-2.5 font-semibold transition
                 focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
-                ${k === i ? 'bg-navy text-white' : 'bg-soft text-navy hover:bg-line'}`}>
-              {NHAN[v.vai] || 'Mẫu câu'} · {v.cau}
+                ${k === i ? 'bg-navy text-white'
+                  : daXem.has(v.tep) ? 'bg-teal-pale text-teal-dark hover:bg-line'
+                  : 'bg-soft text-navy hover:bg-line'}`}>
+              {daXem.has(v.tep) ? '✓ ' : ''}{NHAN[v.vai] || 'Mẫu câu'} · {v.cau}
             </button>
           ))}
         </div>
       )}
 
-      <Video key={ds[i]?.tep} tep={ds[i]?.tep} ten="Xem mẫu câu"
-             phu={ds[i]?.cau} />
+      <Video key={ds[i]?.tep} tep={ds[i]?.tep} ten="Xem mẫu câu" phu={ds[i]?.cau}
+             onXongLan1={() => datDaXem((s) => new Set(s).add(ds[i]?.tep))}
+             onLoi={() => datHong(true)} />
 
       {mc && <NutNoi cau={mc.cau} loai="cau" maAm={maCauAm(mc.cau)}
                      nhan={`Nói cả câu “${mc.cau}”`} />}
@@ -287,12 +367,15 @@ function ManCau({ bai, onTiep }) {
         )}
       </GocBoMe>
 
-      <NutTiep onClick={onTiep} chu="Vào luyện tập" />
+      <NutTiep onClick={onTiep} chu="Vào luyện tập" tat={!moKhoa}
+               viSao={conThieu === 1
+                 ? 'Còn một mẫu câu nữa con chưa xem.'
+                 : `Còn ${conThieu} mẫu câu nữa con chưa xem.`} />
     </section>
   );
 }
 
-/* ─────────── chặng 4 · luyện tập ─────────── */
+/* ─────────── chặng 3 · luyện tập ─────────── */
 
 const MUC = [
   { khoa: 'warmup', sao: '★', ten: 'Nghe và hiểu' },
@@ -300,27 +383,107 @@ const MUC = [
   { khoa: 'challenge', sao: '★★★', ten: 'Gõ lại' },
 ];
 
+/**
+ * BA MỨC, ĐI LẦN LƯỢT — và mỗi mức làm hết mới sang mức sau.
+ *
+ * ── CÂU BỎ QUA KHÔNG ĐƯỢC BIẾN MẤT ──
+ * Bé sai 2 lần thì được bỏ qua một câu (`duocBoQua` ở lib/dandat.js) — bắt làm
+ * tới khi đúng thì có câu bé không bao giờ ra khỏi được. Nhưng bản trước bỏ qua
+ * xong là câu ấy mất hẳn: bé đi hết mức mà nửa số câu chưa từng làm được, và
+ * không chỗ nào ghi lại.
+ *
+ * Nay câu bỏ qua được GOM LẠI, và hết mức thì mời bé làm đúng chừng ấy câu một
+ * lượt nữa. Chỉ MỘT lượt: hai lượt rồi vẫn tắc thì cái bé cần là người lớn ngồi
+ * cạnh, không phải vòng lặp thứ ba.
+ */
 function LuyenTap({ bai, onTiep }) {
   const [m, datM] = useState(0);
+  const [xaM, datXaM] = useState(0);          // mức xa nhất đã mở
   const [i, datI] = useState(0);
   const [dem, datDem] = useState({ dung: 0, tong: 0 });
-  const pool = bai.practice.pools[MUC[m].khoa] || [];
+  const [no, datNo] = useState([]);           // câu bé bỏ qua trong mức này
+  const [lamLai, datLamLai] = useState(null); // đang làm lại đúng những câu ấy
+  const [moiLamLai, datMoiLamLai] = useState(false);
+
+  const goc = bai.practice.pools[MUC[m].khoa] || [];
+  const pool = lamLai || goc;
   const cau = pool[i];
+
+  const sangMuc = (k) => {
+    datM(k); datI(0); datNo([]); datLamLai(null); datMoiLamLai(false);
+    if (k > xaM) datXaM(k);
+  };
 
   const xong = (kq) => {
     datDem((d) => ({ dung: d.dung + (kq.dung ? 1 : 0), tong: d.tong + 1 }));
+    if (kq.boQua) datNo((n) => (n.includes(cau.id) ? n : [...n, cau.id]));
+
     if (i + 1 < pool.length) { datI(i + 1); return; }
-    if (m + 1 < MUC.length) { datM(m + 1); datI(0); return; }
+    /* Hết lượt. Còn câu nợ mà chưa làm lại lượt nào thì mời làm lại. */
+    if (!lamLai && no.length + (kq.boQua ? 1 : 0) > 0) { datMoiLamLai(true); return; }
+    if (m + 1 < MUC.length) { sangMuc(m + 1); return; }
     onTiep();
   };
 
-  if (!cau) return <NutTiep onClick={onTiep} chu="Vào sát hạch" />;
+  if (!cau && !moiLamLai) return <NutTiep onClick={onTiep} chu="Vào sát hạch" />;
+
+  if (moiLamLai) {
+    const ds = goc.filter((c) => no.includes(c.id));
+    return (
+      <section className="flex flex-col items-start gap-4">
+        <div className="w-full rounded-xl2 bg-gold-pale p-6">
+          <p className="text-4xl" aria-hidden="true">💪</p>
+          <p className="mt-2 text-2xl font-bold text-ink">
+            Còn {ds.length} câu con chưa làm được
+          </p>
+          <p className="text-gold-dark">
+            Con vừa nghe và xem thêm rồi đấy. Làm lại đúng {ds.length} câu này thôi nhé.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          <button type="button"
+            onClick={() => { datLamLai(ds); datI(0); datMoiLamLai(false); }}
+            className="rounded-xl2 bg-navy px-6 py-3 text-lg font-semibold text-white
+              focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+            Làm lại {ds.length} câu →
+          </button>
+          <button type="button"
+            onClick={() => { if (m + 1 < MUC.length) sangMuc(m + 1); else onTiep(); }}
+            className="rounded-xl2 border-2 border-line px-5 py-3 font-semibold text-mute
+              hover:border-navy hover:text-navy
+              focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+            Để sau
+          </button>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section className="flex flex-col gap-4">
+      {/* Thanh MỨC — cùng luật với thanh chặng: mức đã qua bấm vào làm lại được. */}
+      <ol className="flex flex-wrap gap-1.5">
+        {MUC.map((x, k) => (
+          <li key={x.khoa}>
+            <button type="button" disabled={k > xaM} onClick={() => sangMuc(k)}
+              title={k > xaM ? 'Con làm xong mức trước thì mức này mở ra'
+                   : k < m ? 'Bấm để làm lại mức này' : undefined}
+              className={`rounded-full px-3 py-1 text-xs font-semibold transition
+                disabled:cursor-not-allowed disabled:opacity-45
+                focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
+                ${k === m ? 'bg-gold text-gold-dark'
+                  : k < m ? 'bg-teal-pale text-teal-dark hover:bg-teal hover:text-white'
+                  : 'bg-soft text-mute'}`}>
+              {k < m ? '✓ ' : k > xaM ? '🔒 ' : ''}{x.sao} {x.ten}
+            </button>
+          </li>
+        ))}
+      </ol>
+
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="text-lg font-bold text-gold-dark">
           <span className="text-gold">{MUC[m].sao}</span> {MUC[m].ten}
+          {lamLai && <span className="ml-2 text-sm font-normal text-mute">· làm lại</span>}
         </p>
         <p className="text-sm text-mute">Câu {i + 1}/{pool.length} · đúng {dem.dung}/{dem.tong}</p>
       </div>
@@ -336,7 +499,7 @@ function LuyenTap({ bai, onTiep }) {
   );
 }
 
-/* ─────────── chặng 5 · sát hạch ─────────── */
+/* ─────────── chặng cuối · sát hạch ─────────── */
 
 function SatHach({ bai, onXong }) {
   const ds = bai.assessment.items;
@@ -355,7 +518,9 @@ function SatHach({ bai, onXong }) {
             {dung}/{ds.length} câu đúng
           </p>
           <p className={dat ? 'text-teal-dark' : 'text-gold-dark'}>
-            {dat ? 'Con qua bài rồi. Giỏi lắm!' : `Cần ${can} câu đúng. Con nghe lại phần giảng rồi thử lần nữa nhé.`}
+            {dat ? 'Con qua bài rồi. Giỏi lắm!'
+                 : `Cần ${can} câu đúng. Con nghe lại phần giảng rồi thử lần nữa nhé — `
+                   + `làm ${THU_TOI_THIEU} lần thì bài sau cũng mở ra.`}
           </p>
         </div>
         <NutTiep onClick={() => onXong({ pass: dat, dung, tong: ds.length, bac: 4 })}
@@ -365,8 +530,8 @@ function SatHach({ bai, onXong }) {
   }
 
   const q = ds[i];
-  const tra = (v) => {
-    if (v === q.answerKey.value) datDung((n) => n + 1);
+  const tra = (dung) => {
+    if (dung) datDung((n) => n + 1);
     if (i + 1 < ds.length) datI(i + 1); else datHet(true);
   };
 
@@ -374,31 +539,9 @@ function SatHach({ bai, onXong }) {
     <section className="flex flex-col gap-4">
       <p className="text-sm text-mute">Câu {i + 1}/{ds.length}</p>
       <div className="rounded-xl2 border-2 border-line bg-white p-5">
-        {/* NGHE và NHÌN, không phải đọc. Câu hỏi là: nghe từ tiếng Anh, nhìn hình,
-            hình ấy có đúng là từ vừa nghe không. Bản trước ra câu chữ tiếng Việt
-            nên 80 câu sát hạch của cả quyển đều là câu bé KHÔNG làm được — nó chỉ
-            đoán, mà đúng/sai thì đoán trúng một nửa. */}
-        {q.nhinNghe ? (
-          <div className="flex flex-col items-center gap-3">
-            <NutNghe ma={q.am} to nhan="Nghe lại" tuDong key={q.id} />
-            <span className="text-7xl leading-none sm:text-8xl">
-              <HinhVe ve={q.anhVe} hinh={q.anh} ten="hình" />
-            </span>
-            <p className="text-lg text-mute">Hình này có đúng không?</p>
-          </div>
-        ) : (
-          <p className="text-xl text-ink">{q.text}</p>
-        )}
-        <div className="mt-4 flex gap-3">
-          {[true, false].map((v) => (
-            <button key={String(v)} type="button" onClick={() => tra(v)}
-              className="flex-1 rounded-xl2 border-2 border-line bg-white px-4 py-4 text-lg
-                font-semibold text-ink hover:border-navy
-                focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
-              {v ? '✓ ĐÚNG' : '✗ SAI'}
-            </button>
-          ))}
-        </div>
+        {/* Nghe và nhìn, không phải đọc — xem `CauNgheNhin.jsx`. Kỳ ôn tập chương
+            dùng chung đúng component này, để một câu hỏi không có hai cách chấm. */}
+        <CauNgheNhin key={q.id} cau={q} onXong={(r) => tra(r.dung)} />
       </div>
     </section>
   );

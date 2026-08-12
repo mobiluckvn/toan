@@ -262,6 +262,22 @@ t('ba hạng đầu có huy chương, hạng 4 hiện số',
       .rows.every((r) => r.cauTuan === 0));
   t('bảng là dữ liệu thuần, đem lưu Firestore được',
     typeof JSON.parse(JSON.stringify(chuaHoc)).generatedAt === 'number');
+
+  /* ── ĐẾM CẢ HAI MÔN ──
+     Sao của bài Tiếng Anh phải tính y như sao của bài Toán: `saoTong` cộng theo
+     số bài ĐẠT, không hỏi bài ấy thuộc môn nào. Chỗ từng hỏng không nằm ở đây mà
+     ở chỗ ĐỌC — `docDuLieuChung` chỉ đọc collection của Toán, nên môn kia có học
+     bao nhiêu bảng cũng báo 0. Nên kiểm cả hai: phép cộng, và chỗ đọc. */
+  const caHai = buildBangXepHang({
+    roster: [em('u1')], now: NOW,
+    progress: { u1: { 'DL:KSN2.B01': { pass: true }, 'DL:TA1.B01': { pass: true } } },
+  });
+  t('bài Tiếng Anh cũng ra sao như bài Toán',
+    caHai.rows[0].saoTong === 2 * SAO.baiDat);
+
+  const nen = readFileSync(new URL('../functions/index.js', import.meta.url), 'utf8');
+  t('chỗ đọc dữ liệu có lấy sổ tiến độ Tiếng Anh', nen.includes('progressTA/${r.uid}/micros'));
+  t('chỗ đọc dữ liệu có lấy học bạ Tiếng Anh', nen.includes('hocBaTA/${r.uid}/muc'));
 }
 
 console.log(`\n   ${BANG.length} bảng · sao: câu ${SAO.cauDung} · bài ${SAO.baiDat}`

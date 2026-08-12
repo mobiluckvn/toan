@@ -23,10 +23,20 @@ import { duongAm } from '../lib/noiDung.js';
    biết về nhau, mà chúng không có cha chung nào gần. */
 let dangKeu = null;
 
-export default function NutNghe({ ma, nhan = 'Nghe', to = false, tuDong = false }) {
+/* `onPhat` báo ra ngoài mỗi lần clip chạy. Chặng TỪ MỚI dùng nó để biết bé đã
+   nghe đủ các từ chưa — đó là đường đi tiếp thứ hai khi video không tải được. */
+export default function NutNghe({ ma, nhan = 'Nghe', to = false, tuDong = false, onPhat }) {
   const [keu, datKeu] = useState(false);
   const tk = useRef(null);
   const duong = duongAm(ma);
+
+  /* `onPhat` giữ trong REF chứ không đưa vào deps của `phat`. Chỗ gọi truyền hàm
+     mũi tên viết thẳng, nên mỗi lần vẽ lại là một hàm MỚI — đưa vào deps thì
+     `phat` đổi danh tính, `useEffect` bên dưới chạy lại, và phần dọn dẹp của nó
+     `pause()` ngay clip đang kêu. Mà `onPhat` lại đổi state ở cha → vẽ lại →
+     tắt tiếng. Bấm nghe ra đúng một tiếng "tách" rồi im. */
+  const bao = useRef(onPhat);
+  bao.current = onPhat;
 
   const phat = useCallback(() => {
     if (!duong) return;
@@ -40,6 +50,7 @@ export default function NutNghe({ ma, nhan = 'Nghe', to = false, tuDong = false 
     dangKeu = tk.current;
     tk.current.currentTime = 0;
     datKeu(true);
+    bao.current?.();
     /* Trình duyệt có thể CHẶN phát tự động khi bé chưa chạm màn hình lần nào.
        Nuốt lỗi ấy: nút vẫn còn đó để bé tự bấm. */
     tk.current.play().catch(() => datKeu(false));

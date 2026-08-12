@@ -5,17 +5,43 @@ Ghi 12-08-2026. Đọc tệp này TRƯỚC khi làm tiếp môn Tiếng Anh.
 Quyển đầu tiên của môn thứ hai đã **chạy được thật**: bé đăng nhập, học trọn một
 bài, tiến độ lên máy chủ, xoá sổ tại máy rồi tải lại vẫn còn. Chưa deploy.
 
+> ⚠️ **VIỆC ĐẦU TIÊN NGÀY MAI: ĐI THỬ END-TO-END.** Đợt 12-08 chiều đổi rất nhiều
+> thứ về đường đi (khoá bài · khoá chặng · kỳ ôn tập) và **chưa chạy thử lần nào
+> trên bộ giả lập** — mới có 49 cổng xanh và bản dựng xanh. Mà đúng loại thay đổi
+> này là loại cổng KHÔNG bắt được: sáu lỗi câm của đợt trước đều chỉ lộ khi mở bản
+> chạy thật. Danh sách phải thử ở mục 2(i).
+
 ---
 
 ## 1 · ĐANG CÓ GÌ
 
 ```
 16 unit · 4 chương · 395 câu luyện tập · 80 câu sát hạch
-531 clip âm (Kokoro Anh-Anh + Kokoro-Vietnamese)
+4 kỳ ôn tập chương · 10 câu/kỳ, dựng từ chính câu của bốn unit
+552 clip âm (Kokoro Anh-Anh + Kokoro-Vietnamese)
 37 video mp4 · 34 phút
-60 hình: 53 emoji + 7 vẽ tay SVG
-45 tệp cổng · 0 FAIL
+60 hình: 53 emoji + 7 vẽ tay SVG — nay hiện được CẢ trong video
+49 tệp cổng · 0 FAIL
 ```
+
+### Đi lần lượt — luật ở `lib/dandat.js`
+
+Bác bắt được lỗ này 12-08: *"con có thể bỏ qua nhiều bài mà không làm ấy"*. Nó
+không nằm ở một dòng nào — nó là chỗ KHÔNG CÓ luật nào. Nay một luật dùng cho cả
+ba tầng:
+
+```
+ĐI TIẾP ĐƯỢC KHI: đã ĐẠT — hoặc đã THỬ THẬT ít nhất 2 lần.
+
+tầng 1  bài trong quyển   khoaBai=true · bài trước đạt (hoặc thử 2 lần) thì mở
+tầng 2  chặng trong bài   hai con số: `tai` đang ở đâu · `xa` đã đi xa nhất tới đâu
+tầng 3  câu trong mức     sai 1 → thử lại · sai 2 → gợi ý · sai 3 → đáp án + để sau
+```
+
+Vế "thử 2 lần" mới là vế quan trọng: khoá cứng theo "phải đạt" thì bé tắc ở unit 7
+là tắc vĩnh viễn. Nhưng đi vòng KHÔNG được ghi là đạt — bài ấy đội nhãn *"làm lại
+nhé"*, và **kỳ ôn tập chương không mở bằng cửa ấy**: muốn huy hiệu thì phải quay
+lại trả nợ.
 
 ### Dây chuyền, theo thứ tự chạy
 
@@ -37,6 +63,7 @@ web/public/content/tienganh/{audio,video}/
 ```bash
 python3 tools/chuan_tienganh.py --lop 1
 python3 tools/sinh_bai_tienganh.py --lop 1 --tat-ca
+python3 tools/sinh_ontap_tienganh.py          # 4 kỳ ôn tập, dựng từ câu của bài
 # gom lời còn thiếu → sinh âm → nhập vào sổ (xem tools/tts/README.md)
 tools/tts/.venv/bin/python tools/video/dung_video.py --tat-ca
 cd web && npm test
@@ -65,18 +92,20 @@ Bác đã bắt được hai chỗ gộp mà cháu không thấy: cặp hỏi–
 * **U16 `_dap`** `I can see six.` — dùng khung `I can see` mà U14 mới là bài dạy nó,
   hai bài không nối với nhau
 
-### (d) Bảy hình còn nợ
-`gate` · `head` · `hair` · `top` · `lake` · `run` · `wash` đang dùng SVG vẽ tay trên
-màn hình, nhưng **video thì hiện thẻ chữ, không hiện hình** — vì Pillow không dựng
-được SVG. Muốn video có hình thì phải vẽ lại bằng Pillow hoặc thêm bộ chuyển SVG.
+### (d) ~~Bảy hình còn nợ~~ — XONG 12-08
+Nét vẽ dọn từ JSX sang **`lib/hinh_ve.json`**, màn hình và video cùng đọc MỘT tệp
+ấy (`tools/video/hinh_ve.py` rasterize bằng `cairosvg`). Không vẽ lại bằng Pillow:
+vẽ lại là thành hai bản của cùng cái cổng, và hai bản thì sớm muộn cũng lệch — mà
+lệch kiểu ấy không cổng nào bắt được. 6 video đã dựng lại.
 
-### (e) Kỳ ôn tập chương — `hocBaTA` đang rỗng
-`ta1/ontap.json` đã khai 4 kỳ, `luuMucHocBa()` đã có, **chưa ai gọi** vì màn kỳ ôn
-tập chưa dựng.
+### (e) ~~Kỳ ôn tập chương~~ — XONG 12-08
+`tools/sinh_ontap_tienganh.py` dựng 4 kỳ × 10 câu **từ chính câu của bốn unit**
+trong chương — âm và hình đều có sẵn, không phải chạy lại TTS. Màn `OnTap.jsx`
+gọi `ghiChuong` + `luuMucHocBa`. ⚠ Chưa xác nhận `hocBaTA` có tài liệu thật.
 
-### (f) Bảng xếp hạng · bảng cô giáo
-Hàm nền chỉ đếm sao của Toán, nên môn này trả `null`. Muốn mở thì sửa
-`functions/src/bangxephang.js` biết đếm cả Tiếng Anh.
+### (f) ~~Bảng xếp hạng~~ — XONG 12-08
+`docDuLieuChung` nay đọc cả `progressTA` và `hocBaTA`. Phép cộng sao vốn đã không
+hỏi môn nào — chỗ hỏng nằm ở chỗ ĐỌC, không ở chỗ tính.
 
 ### (g) ~~Phần NÓI có chấm~~ — XONG 12-08
 `lib/chamnoi.js` (57 phép kiểm) + `lib/nghenoi.js` (Web Speech). Nói từ · nói câu ·
@@ -86,6 +115,28 @@ thì chỉ sửa `nghenoi.js`.
 ### (h) Chưa thử được bằng MICRO THẬT
 Toàn bộ 57 phép kiểm chấm trên chữ giả lập những gì STT trả về. Đường
 micro → Web Speech → bộ chấm chỉ người thật thử mới biết.
+
+### (i) ⚠ ĐỢT ĐI LẦN LƯỢT CHƯA ĐI THỬ — làm trước mọi việc khác
+
+Cổng xanh và bản dựng xanh **không chứng minh được gì** về mấy thứ dưới đây; chúng
+là thay đổi về ĐƯỜNG ĐI, mà đường đi thì phải đi mới biết:
+
+| phải thử | dấu hiệu hỏng sẽ trông như thế nào |
+|---|---|
+| trang chính: unit 2–16 có khoá thật không | hiện 🔒 · bấm không vào · dòng "Chưa tới lượt bài này" |
+| thẻ **Học tiếp** chỉ đúng bài | chỉ nhầm bài đã đạt, hoặc mất hẳn khi sổ trắng |
+| chặng **Từ mới**: nút Tiếp có xám không | xám tới khi xem hết video **hoặc** bấm 🔈 đủ mọi từ |
+| bấm 🔈 xong tiếng có bị TẮT NGAY không | `onPhat` đổi state cha → vẽ lại; đã kẹp bằng `ref`, nhưng phải nghe tận tai |
+| video hỏng → nút Tiếp có mở ra không | tắt mạng rồi vào; phải hiện dòng vàng và cho đi tiếp |
+| chặng **Mẫu câu**: bài 2 mẫu có đòi xem cả hai không | "Còn 1 mẫu câu nữa con chưa xem" |
+| quay lại chặng 1 → chặng sau CÒN mở không | đây là chỗ bản cũ hỏng; phải thấy dòng "→ Về chỗ con đang học" |
+| sai 3 lần → "Để câu này lại sau" → cuối mức có mời làm lại không | màn 💪 "Còn N câu con chưa làm được" |
+| thẻ kỳ ôn tập: khoá khi còn nợ, mở khi đủ 4 bài | "Còn N bài nữa trong chương này là mở" |
+| làm xong kỳ ôn tập → **`hocBaTA` có tài liệu chưa** | đây là món nợ lâu nhất; phải nhìn tận mắt trên bộ giả lập |
+| vào lại bài đang dở có về đúng chặng cũ không | `ghiChang` chỉ ghi tại máy |
+
+Bộ giả lập: xem `docs/di_thu_gia_lap.md`. **Nhớ ba chỗ đọc nhầm dấu hiệu** ghi ở
+cuối tệp ấy — `curl 200` không có nghĩa là tệp có thật.
 
 ---
 
@@ -105,6 +156,8 @@ Tất cả đều **cổng xanh mà vẫn sai**. Mỗi cái nay có phép kiểm
 | 8 | `CauHoi` không có `key` | trắng màn hình giữa bài, chỗ nối ★ sang ★★ |
 | 9 | lời giải thích "chỗ dễ nhầm" ghim cứng một ví dụ | 10/16 bài câu "sai" trùng hệt câu đúng |
 | 10 | gom clip ở một script, kịch bản dùng ở chỗ khác | đổi câu là lệch; nay kịch bản tự khai chữ (`loiAm`) |
+| 11 | cổng dò bộ hình bằng cách ĐỌC CHỮ trong `HinhVe.jsx` | dọn nét vẽ sang JSON là cổng kêu "7 từ chưa có hình" trong khi cả bảy vẫn nguyên — chỗ nào đọc được DỮ LIỆU thì đừng dò bằng biểu thức chính quy |
+| 12 | đưa `onPhat` vào deps của `useCallback` trong `NutNghe` | mỗi lần vẽ lại là một hàm mới → `useEffect` chạy lại → phần dọn dẹp `pause()` ngay clip đang kêu. Bấm nghe ra một tiếng "tách" rồi im. Giữ trong `ref` |
 
 **Ba lần đọc nhầm dấu hiệu** (ghi ở `docs/di_thu_gia_lap.md`): `curl 200` không có
 nghĩa là tệp có thật · đọc Firestore quên token bị từ chối rồi hiện thành "0 tài
@@ -131,3 +184,4 @@ liệu" · bộ đếm lỗi bằng 0 có thể là "chưa từng chạy" chứ 
 * `docs/di_thu_gia_lap.md` — bật bộ giả lập, thử luật thật
 * `tools/tts/README.md` — dây chuyền âm, ba điều dễ vấp
 * `docs/tach_hai_mon.md` — kiến trúc ba vùng
+* `web/src/mon/tienganh/lib/dandat.js` — luật đi lần lượt, đọc phần đầu tệp là đủ
