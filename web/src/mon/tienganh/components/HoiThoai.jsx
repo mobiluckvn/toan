@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from 'react';
 import NutNghe, { maCua } from './NutNghe.jsx';
 import NutNoi from './NutNoi.jsx';
 import { datNoi } from '../lib/chamnoi.js';
+import { ngheDuoc } from '../lib/nghenoi.js';
 
 /**
  * HỘI THOẠI THEO KỊCH BẢN — việc cuối của chuỗi nghe → hiểu → ráp câu → gõ → nói.
@@ -21,6 +22,14 @@ import { datNoi } from '../lib/chamnoi.js';
  * 2. Lượt của bé có nút NGHE MẪU — nhưng để BÊN CẠNH, không tự phát: đây là lúc
  *    kiểm xem bé tự nhớ được không, nghe mẫu là quyền của bé chứ không phải mặc định.
  * 3. Điểm cả đoạn là TRUNG BÌNH các lượt bé nói. Một lượt hụt không xoá cả đoạn.
+ *
+ * ── LUÔN PHẢI CÓ ĐƯỜNG ĐI TIẾP ──
+ * Bản đầu chỉ mở nút "đi tiếp" SAU khi chấm xong một lượt. Nghĩa là máy không có
+ * micro, hoặc bé đang ngồi trong lớp không tiện nói, thì kẹt cứng ở chặng này và
+ * KHÔNG BAO GIỜ tới được phần sát hạch. Đi thử end-to-end mới lộ ra.
+ *
+ * Nói là phần đáng giá nhất, nhưng không được là cửa ải chặn đường. Nên mỗi lượt
+ * đều có "Để sau", và máy không nghe được thì cả chặng bỏ qua được bằng một nút.
  */
 export default function HoiThoai({ hoiThoai, tenBe = 'Bo', onXong }) {
   const luot = useMemo(
@@ -36,6 +45,26 @@ export default function HoiThoai({ hoiThoai, tenBe = 'Bo', onXong }) {
   useEffect(() => { cuon.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }, [tai]);
 
   if (!luot.length) return null;
+
+  /* Máy không nghe được thì đừng bắt bé đứng nhìn: nói rõ vì sao, rồi cho đi tiếp. */
+  if (!ngheDuoc()) {
+    return (
+      <section className="flex flex-col items-start gap-4">
+        <div className="rounded-xl2 border-2 border-line bg-soft p-5">
+          <p className="text-lg font-semibold text-ink">Máy này chưa nghe được</p>
+          <p className="mt-1 text-mute">
+            Phần nói chuyện cần trình duyệt Chrome và có mạng. Con học tiếp phần sau
+            bình thường nhé — lúc nào mở bằng Chrome thì quay lại làm phần này.
+          </p>
+        </div>
+        <button type="button" onClick={() => onXong?.({ diem: 0, boQua: true })}
+          className="rounded-xl2 bg-navy px-6 py-3 text-lg font-semibold text-white
+            focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          Đi tiếp →
+        </button>
+      </section>
+    );
+  }
 
   const luotBe = luot.filter((l) => l.ai === 'be');
   const daCham = luotBe.filter((l) => diem[l.i] != null);
@@ -70,6 +99,14 @@ export default function HoiThoai({ hoiThoai, tenBe = 'Bo', onXong }) {
           </li>
         ))}
       </ol>
+
+      {!xongHet && (
+        <button type="button" onClick={() => onXong?.({ diem: trungBinh, boQua: true })}
+          className="self-start text-sm font-semibold text-mute underline
+            hover:text-navy focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          Để sau, con làm phần tiếp theo trước
+        </button>
+      )}
 
       {xongHet && (
         <KetDoan diem={trungBinh} so={daCham.length} tong={luotBe.length}
@@ -126,6 +163,16 @@ function LuotBe({ l, diem, onXong, onTiep, dangLam }) {
       {/* `maAm` để bé bấm NGHE MẪU nếu cần — nhưng không tự phát, xem luật 2 ở đầu tệp. */}
       <NutNoi cau={l.chu} loai="cau" maAm={maCua(l.chu, 'en')}
               nhan="Đến lượt con nói" onXong={onXong} />
+      {/* "Để sau" LUÔN có, kể cả khi chưa chấm được lượt này — xem đầu tệp. */}
+      <div className="flex flex-wrap items-center gap-3">
+      {diem == null && (
+        <button type="button" onClick={onTiep}
+          className="rounded-xl2 border-2 border-line px-4 py-2 text-sm font-semibold
+            text-mute hover:border-navy hover:text-navy
+            focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          Để sau, bỏ qua lượt này →
+        </button>
+      )}
       {diem != null && (
         <button type="button" onClick={onTiep}
           className="self-start rounded-xl2 bg-navy px-5 py-2.5 font-semibold text-white
@@ -133,6 +180,7 @@ function LuotBe({ l, diem, onXong, onTiep, dangLam }) {
           {datNoi(diem) ? 'Tốt rồi, đi tiếp →' : 'Đi tiếp (làm lại sau cũng được) →'}
         </button>
       )}
+      </div>
     </div>
   );
 }

@@ -46,10 +46,10 @@ cd web && npm test
 
 ## 2 · VIỆC TIẾP THEO, THEO THỨ TỰ CHẶN ĐƯỜNG
 
-### (a) Nối video vào app — chưa làm, chặn nhiều nhất
-37 tệp nằm ở `web/public/content/tienganh/video/`, **màn bài học chưa có chỗ phát**.
-Đề nghị: `_tu` mở đầu chặng Giảng · `_cau*` / `_hoi` · `_dap` đặt ngay trước phần
-mẫu câu. Bài nhiều mẫu thì hiện nhiều nút.
+### (a) ~~Nối video vào app~~ — XONG 12-08
+Sáu chặng gộp còn năm, video dẫn đường. Chữ trên màn từ **2 029 xuống 310 ký tự**;
+mọi giải thích lui vào **Góc bố mẹ**, gập sẵn. Sát hạch dựng lại thành nghe–nhìn,
+không còn chữ nào phải đọc. Phần NÓI (từ · câu · hội thoại) đã có.
 
 ### (b) Deploy luật Firestore — bé chưa dùng thật được
 ```bash
@@ -78,8 +78,14 @@ tập chưa dựng.
 Hàm nền chỉ đếm sao của Toán, nên môn này trả `null`. Muốn mở thì sửa
 `functions/src/bangxephang.js` biết đếm cả Tiếng Anh.
 
-### (g) Phần NÓI có chấm
-Đợt 1 chỉ nghe–nhại (video đã có phần nói theo 3 lần). Chấm phát âm là dự án riêng.
+### (g) ~~Phần NÓI có chấm~~ — XONG 12-08
+`lib/chamnoi.js` (57 phép kiểm) + `lib/nghenoi.js` (Web Speech). Nói từ · nói câu ·
+hội thoại 16 kịch bản. ⚠ Chrome gửi tiếng bé lên máy chủ Google — đổi sang Whisper
+thì chỉ sửa `nghenoi.js`.
+
+### (h) Chưa thử được bằng MICRO THẬT
+Toàn bộ 57 phép kiểm chấm trên chữ giả lập những gì STT trả về. Đường
+micro → Web Speech → bộ chấm chỉ người thật thử mới biết.
 
 ---
 

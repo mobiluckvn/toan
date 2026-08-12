@@ -48,6 +48,7 @@ TIEN_TO = {1: "DL:TA1.", 2: "DL:TA2.", 3: "DL:TA3."}
 # Gõ được thì gõ; dài hơn ngần này thì bậc 4 chuyển sang GHÉP THẺ CHỮ CÁI.
 # Bé 6 tuổi gõ ~10 ký tự/phút — từ 10 ký tự là bỏ cuộc chứ không phải làm sai.
 GO_TOI_DA = 5
+DAN_DIEN = "Nhìn hình rồi chọn từ điền vào chỗ trống."
 THE_TOI_DA = 5          # trùng THE_TOI_DA của mon/tienganh/lib/cham.js
 
 
@@ -257,6 +258,9 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
             "id": f"C{n + i}",
             "bac": 2,
             "text": f"“{t['nghia']}” tiếng Anh là gì?",
+            # Clip NGHĨA (tiếng Việt) — bé nghe nghĩa rồi chọn từ. KHÔNG dùng clip
+            # tiếng Anh ở đây: phát từ lên là cho không đáp án.
+            "am": am_id("nghia", t["nghia"]),
             "format": "chon",
             "choices": tron(t["tu"], moi_nhu(t, tu)),
             "answerKey": {"choice": t["tu"]},
@@ -288,6 +292,10 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
             "bac": 3,
             "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  "
                     + c["cau"].replace(t["tu"], "___", 1),
+            # Lời dẫn TIẾNG VIỆT dùng chung cho mọi câu điền — bé chưa đọc được
+            # thì không có tiếng là không biết phải làm gì. Vẫn KHÔNG đọc câu
+            # tiếng Anh: manh mối phải là HÌNH, đọc lên là thành bài nghe.
+            "am": am_id("loi", DAN_DIEN),
             # CỐ Ý KHÔNG có `am` cả câu. Phát cả câu lên thì bé chỉ việc nghe rồi
             # bấm — thành bài NGHE lặp lại của bậc 1, không còn kiểm cấu trúc nữa.
             # Manh mối ở đây là HÌNH; chỗ trống là chỗ bé phải tự nối hình với từ.
@@ -470,46 +478,62 @@ def cho_de_nham(cau: str, tu: list[dict]) -> dict | None:
     # Không luật nào khớp → KHÔNG dựng khối. Thà thiếu còn hơn dạy sai.
     return None
 
-def sat_hach(u: dict, cau: list) -> list:
-    """Năm câu đúng/sai.
+def sat_hach(u: dict, cau: list, hinh_cua: dict) -> list:
+    """Năm câu ĐÚNG/SAI — nghe và nhìn, KHÔNG cần đọc.
 
-    ĐÁP ÁN PHẢI XEN KẼ. Bản đầu xếp ba câu ĐÚNG rồi hai câu SAI, và thế là bé qua
-    được kỳ sát hạch bằng cách đoán theo NHỊP chứ không cần biết nghĩa từ nào —
-    kỳ sát hạch mà đoán được thì sổ bố mẹ và bảng cô giáo đang báo một con số rỗng.
+    ── VÌ SAO DỰNG LẠI ──
+    Bản trước ra câu chữ: “ball” nghĩa là “quả bóng”. Bé lớp 1 chưa đọc sõi tiếng
+    Việt nên 80 câu sát hạch của cả quyển đều là câu bé KHÔNG LÀM ĐƯỢC — nó chỉ
+    đoán, và đúng/sai thì đoán trúng 50%. Con số trong sổ bố mẹ thành con số rỗng.
+
+    Nay mỗi câu là: NGHE một từ tiếng Anh, NHÌN một hình, rồi bảo hình ấy có đúng
+    là từ vừa nghe không. Không một chữ nào phải đọc, mà vẫn kiểm đúng thứ cần
+    kiểm — bé có nối được ÂM với NGHĨA hay không.
+
+    Dùng lại clip và hình đã có, không sinh thêm gì.
+
+    ── ĐÁP ÁN VẪN XEN KẼ ──
+    Ba câu đúng liền nhau là bé qua bằng cách đoán theo nhịp.
     """
     tu = [t for t in u["tu"] if t.get("nghia")]
     if len(tu) < 2:
         return []
-    dung, sai = [], []
+    anh = lambda t: (hinh_cua.get(t["tu"]) or {})
 
-    for t in tu[:3]:
-        dung.append((f"“{t['tu']}” nghĩa là “{t['nghia']}”.", "Đáp án: ĐÚNG"))
-    # Ghép chéo: từ thứ i với nghĩa của từ kế tiếp. Mồi sai kiểu này buộc bé phải
-    # nhớ ĐÚNG cặp, không đoán được bằng "nghe quen quen".
-    for i, t in enumerate(tu[:2]):
+    dung, sai = [], []
+    for i, t in enumerate(tu):
+        h = anh(t)
+        dung.append(({"am": am_id("tu", t["tu"]), "anh": h.get("hinh"),
+                      "anhVe": h.get("ve"), "text": ""},
+                     True, f"ĐÚNG — {t['tu']} là {t['nghia']}."))
         khac = tu[(i + 1) % len(tu)]
-        sai.append((f"“{t['tu']}” nghĩa là “{khac['nghia']}”.",
-                    f"SAI — “{t['tu']}” nghĩa là “{t['nghia']}”."))
+        hk = anh(khac)
+        sai.append(({"am": am_id("tu", t["tu"]), "anh": hk.get("hinh"),
+                     "anhVe": hk.get("ve"), "text": ""},
+                    False, f"SAI — đó là {khac['tu']}. {t['tu']} là {t['nghia']}."))
+
+    # Câu cuối dùng CẢ CÂU, nếu bài có: kiểm bé nghe được nguyên câu chứ không chỉ từ.
     if cau:
         c = cau[0]
-        sai.append((f"Câu “{c['cau'].replace(' a ', ' ', 1)}” viết đúng chưa?",
-                    f"SAI — thiếu chữ “a”. Phải là “{c['cau']}”."))
-        dung.append((f"Câu “{c['cau']}” viết đúng chưa?", "Đáp án: ĐÚNG"))
+        t0 = c["tu"]
+        h = anh(t0)
+        dung.append(({"am": am_id("cau", c["cau"]), "anh": h.get("hinh"),
+                      "anhVe": h.get("ve"), "text": ""},
+                     True, f"ĐÚNG — {c['cau']}"))
 
-    # xen kẽ Đ · S · Đ · S · Đ
-    ra, i = [], 0
+    ra, k = [], 0
     while len(ra) < 5 and (dung or sai):
-        kho, gt = (dung, True) if i % 2 == 0 else (sai, False)
+        kho, gt = (dung, True) if k % 2 == 0 else (sai, False)
         if not kho:
             kho, gt = (sai, False) if gt else (dung, True)
         if not kho:
             break
-        text, loi = kho.pop(0)
-        ra.append({"id": f"Q{len(ra) + 1}", "text": text, "format": "tf",
-                   "answerKey": {"value": gt}, "solutionNarrative": loi})
-        i += 1
+        than, _, loi = kho.pop(0)
+        ra.append({"id": f"Q{len(ra) + 1}", **than, "format": "tf",
+                   "nhinNghe": True, "answerKey": {"value": gt},
+                   "solutionNarrative": loi})
+        k += 1
     return ra
-
 
 def _ten_video(u: dict, ma_bai: str) -> dict:
     """Tên tệp video, suy theo ĐÚNG luật `dung_video.py` đặt tên."""
@@ -545,6 +569,7 @@ def _tach_mau(m: dict) -> list[dict]:
 def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
               them: dict, sua_slot: dict, chuong: dict) -> dict:
     ph = u.get("phonics") or {}
+    hinh_cua = {t["tu"]: {"hinh": t.get("hinh"), "ve": t.get("hinh_ve")} for t in u["tu"]}
     tu = [t for t in u["tu"] if t.get("nghia")]
     warmup, standard, challenge, cau = cau_hoi(u, lop, them, sua_slot)
     chu = (ph.get("chu") or "?")
@@ -695,7 +720,7 @@ def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
         },
         "practice": {"pools": {"warmup": warmup, "standard": standard,
                                "challenge": challenge}},
-        "assessment": {"passRule": "≥ 4/5", "items": sat_hach(u, cau)},
+        "assessment": {"passRule": "≥ 4/5", "items": sat_hach(u, cau, hinh_cua)},
         "parentNote": {
             # CHỈ dùng mẫu câu bài này đã dạy. Bản đầu bảo bố mẹ hỏi "What's this?"
             # — mẫu câu ấy tận lớp 2 mới học, bé lớp 1 nghe xong đứng im, và bố mẹ

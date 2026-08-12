@@ -374,7 +374,21 @@ function SatHach({ bai, onXong }) {
     <section className="flex flex-col gap-4">
       <p className="text-sm text-mute">Câu {i + 1}/{ds.length}</p>
       <div className="rounded-xl2 border-2 border-line bg-white p-5">
-        <p className="text-xl text-ink">{q.text}</p>
+        {/* NGHE và NHÌN, không phải đọc. Câu hỏi là: nghe từ tiếng Anh, nhìn hình,
+            hình ấy có đúng là từ vừa nghe không. Bản trước ra câu chữ tiếng Việt
+            nên 80 câu sát hạch của cả quyển đều là câu bé KHÔNG làm được — nó chỉ
+            đoán, mà đúng/sai thì đoán trúng một nửa. */}
+        {q.nhinNghe ? (
+          <div className="flex flex-col items-center gap-3">
+            <NutNghe ma={q.am} to nhan="Nghe lại" tuDong key={q.id} />
+            <span className="text-7xl leading-none sm:text-8xl">
+              <HinhVe ve={q.anhVe} hinh={q.anh} ten="hình" />
+            </span>
+            <p className="text-lg text-mute">Hình này có đúng không?</p>
+          </div>
+        ) : (
+          <p className="text-xl text-ink">{q.text}</p>
+        )}
         <div className="mt-4 flex gap-3">
           {[true, false].map((v) => (
             <button key={String(v)} type="button" onClick={() => tra(v)}
