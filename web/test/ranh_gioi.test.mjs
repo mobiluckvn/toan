@@ -158,6 +158,43 @@ for (const m of monCo) {
 t(`tienDoQuyen của mọi môn trả đúng số bài (${hopLe.length} chỗ lệch)`, hopLe.length === 0);
 in5(hopLe);
 
+/* ══ 5C · KHÔNG THẺ JSX NÀO MỒ CÔI ══
+   `npm run build` XANH kể cả khi một component không tồn tại: esbuild không soi
+   phạm vi biến, nó cho rằng `<TuVung/>` có thể là một biến toàn cục nào đó. Lỗi
+   chỉ nổ lúc CHẠY, và nổ theo kiểu tệ nhất — React ném giữa lúc dựng cây, `#root`
+   rỗng trơn, cả app trắng màn hình.
+
+   Đã dính thật: sửa lại màn bài học bằng regex, phép cắt lấn sang hàm `TuVung`
+   nằm lọt giữa hai mốc. Bản dựng xanh, cổng xanh, chỉ có app là không mở nổi.
+
+   Nên soi tĩnh: mọi thẻ JSX viết HOA phải hoặc được import, hoặc được khai ngay
+   trong tệp ấy. */
+const moCoi = [];
+for (const p of TEP) {
+  if (!/\.jsx$/.test(p)) continue;
+  const src = readFileSync(p, 'utf8');
+  /* Tên khai trong tệp: import, function, const/let, và tham số destructure. */
+  const coSan = new Set(['React', 'Fragment']);
+  /* Đọc CẢ MỆNH ĐỀ import rồi mới tách tên — `import A, { B, C as D } from '…'`
+     có cả mặc định lẫn tên trong một dòng. Bản đầu dùng hai biểu thức rời nên bỏ
+     sót đúng dạng ấy và báo oan `<MucBoMe>`; phép kiểm báo oan thì lần sau người
+     ta tắt nó đi. */
+  for (const m of src.matchAll(/import\s+([^;]*?)\s+from\s+['"]/g)) {
+    for (const x of m[1].replace(/[{}]/g, ',').split(',')) {
+      const ten = x.split(/\s+as\s+/).pop().trim();
+      if (/^[A-Za-z_$][\w$]*$/.test(ten)) coSan.add(ten);
+    }
+  }
+  for (const re of [/function\s+([A-Z]\w*)/g, /(?:const|let|var)\s+([A-Z]\w*)/g]) {
+    for (const m of src.matchAll(re)) coSan.add(m[1]);
+  }
+  for (const m of src.matchAll(/<([A-Z]\w*)[\s/>]/g)) {
+    if (!coSan.has(m[1])) moCoi.push(`${tuongDoi(p)}: dùng <${m[1]}> mà không khai`);
+  }
+}
+t(`không thẻ JSX nào mồ côi (${moCoi.length} chỗ)`, moCoi.length === 0);
+in5(moCoi);
+
 /* ══ 6 · SỔ MÔN LÀ NƠI DUY NHẤT BIẾT CÓ NHỮNG MÔN NÀO ══
    Nó nằm ở tầng VỎ (`src/soMon.js`), KHÔNG ở `chung/` — vì `chung/` phải mù hẳn về
    môn, mà sổ thì buộc phải gọi tên từng môn. Đặt nhầm chỗ là luật 2 mất hiệu lực. */

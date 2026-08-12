@@ -511,6 +511,19 @@ def sat_hach(u: dict, cau: list) -> list:
     return ra
 
 
+def _ten_video(u: dict, ma_bai: str) -> dict:
+    """Tên tệp video, suy theo ĐÚNG luật `dung_video.py` đặt tên."""
+    tep = ma_bai.replace("DL:", "DL_").replace(".", "_")
+    ds = [x for m in u["mau_cau"] for x in _tach_mau(m)]
+    vais = [x.get("vai", "cau") for x in ds]
+    ra, dem = [], {}
+    for x, v in zip(ds, vais):
+        dem[v] = dem.get(v, 0) + 1
+        ten = v if vais.count(v) == 1 else f"{v}{dem[v]}"
+        ra.append({"vai": v, "cau": x["cau"], "tep": f"{tep}_{ten}.mp4"})
+    return {"tu": f"{tep}_tu.mp4", "cau": ra}
+
+
 def _tach_mau(m: dict) -> list[dict]:
     """Một mẫu câu → một hoặc hai mục (hỏi / đáp)."""
     def goi(d, nhan, cau_goc):
@@ -701,6 +714,10 @@ def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
         # chỉ dựng sơ đồ toán, không vẽ được con vịt (xem lop1_bu.json mục `hinh`).
         # Đợt 1 hình là EMOJI, nên nó đi thẳng cùng từ chứ không phải một tệp PNG
         # rời — không có gì để render, không có manifest để lệch.
+        # Video của bài — app hỏi chỗ này chứ KHÔNG tự đoán tên tệp. Đoán tên là
+        # chỗ lệch câm: bài hai mẫu câu ra `_cau1/_cau2`, bài hỏi–đáp ra `_hoi/_dap`,
+        # bài một mẫu ra `_cau`. Bộ sinh biết chắc, giao diện thì không.
+        "video": _ten_video(u, ma_bai),
         "hinhTu": [{"tu": t["tu"], "hinh": t.get("hinh"), "ve": t.get("hinh_ve"),
                     "no": True if t.get("hinh_no") else None} for t in tu],
     }
