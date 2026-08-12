@@ -1,0 +1,977 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:TA1.B13",
+ "grade": 1,
+ "quyen": "ta1",
+ "mon": "tienganh",
+ "title": "Unit 13 · Ở căng tin trường",
+ "durationMinutes": 10,
+ "so": 13,
+ "chuong": 4,
+ "tenChuong": "Bạn bè và trò chơi",
+ "dangGoc": "Nn /n/ · food",
+ "skills": {
+  "bktUnit": "UNIT:13@TA1",
+  "primary": []
+ },
+ "series": {
+  "order": 13,
+  "prev": "DL:TA1.B12",
+  "next": "DL:TA1.B14"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tả việc đang ăn món gì",
+  "kidText": "Học chữ Nn, 3 từ mới, và một mẫu câu. Xong bài con nghe hiểu, nói theo và gõ lại được.",
+  "passRule": "đúng ≥ 4/5 câu sát hạch"
+ },
+ "knowledgeCore": {
+  "statements": [
+   {
+    "id": "K1",
+    "text": "Hôm nay chúng mình học chữ Nn. Chữ Nn đọc là /n/.",
+    "doanAm": [
+     [
+      "Hôm nay chúng mình học một chữ cái mới. Con nhìn lên bảng nhé.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K2",
+    "text": "Nghe ba từ này: bananas · noodles · nuts. Con có nghe thấy chúng bắt đầu giống nhau không? Đó chính là âm /n/ của chữ Nn.",
+    "doanAm": [
+     [
+      "Nghe ba từ này.",
+      "vi"
+     ],
+     [
+      "bananas",
+      "en"
+     ],
+     [
+      "noodles",
+      "en"
+     ],
+     [
+      "nuts",
+      "en"
+     ],
+     [
+      "Con có nghe thấy ba từ này bắt đầu giống nhau không? Đó chính là âm của chữ hôm nay.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K3",
+    "text": "Từ mới của bài: bananas /bəˈnɑːnəz/ = những quả chuối · noodles /ˈnuːdlz/ = mì · nuts /nʌts/ = các loại hạt",
+    "doanAm": [
+     [
+      "Từ mới của bài.",
+      "vi"
+     ],
+     [
+      "bananas",
+      "en"
+     ],
+     [
+      "những quả chuối",
+      "vi"
+     ],
+     [
+      "noodles",
+      "en"
+     ],
+     [
+      "mì",
+      "vi"
+     ],
+     [
+      "nuts",
+      "en"
+     ],
+     [
+      "các loại hạt",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K4",
+    "text": "Câu hôm nay dùng để: Tả món một bạn GÁI đang ăn. Ví dụ: Giờ ăn ở căng tin, con nhìn quanh xem các bạn ăn gì.",
+    "doanAm": [
+     [
+      "Câu hôm nay dùng để tả món một bạn gái đang ăn. Giờ ăn ở căng tin, con nhìn quanh xem các bạn ăn gì.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "K5",
+    "text": "Mẫu câu: She's having + [Food]. — ví dụ: She's having noodles.",
+    "doanAm": [
+     [
+      "Con nghe mẫu câu rồi nhắc lại nhé.",
+      "vi"
+     ],
+     [
+      "She's having noodles.",
+      "en"
+     ]
+    ]
+   }
+  ],
+  "mantra": "Nghe — hiểu — xếp — gõ. Bốn bước, cùng 3 từ ấy thôi.",
+  "vocabulary": [
+   {
+    "tu": "bananas",
+    "ipa": "/bəˈnɑːnəz/",
+    "nghia": "những quả chuối",
+    "am": "tu_bananas",
+    "amO": "giua"
+   },
+   {
+    "tu": "noodles",
+    "ipa": "/ˈnuːdlz/",
+    "nghia": "mì",
+    "am": "tu_noodles",
+    "amO": "dau"
+   },
+   {
+    "tu": "nuts",
+    "ipa": "/nʌts/",
+    "nghia": "các loại hạt",
+    "am": "tu_nuts",
+    "amO": "dau"
+   }
+  ],
+  "canonicalExamples": [
+   "She's having noodles.",
+   "She's having bananas.",
+   "She's having nuts.",
+   "He's having nuts.",
+   "He's having bananas.",
+   "He's having noodles."
+  ],
+  "mauCauDs": [
+   {
+    "cau": "She's having noodles.",
+    "congThuc": "She's having + [Food].",
+    "dungDe": "Tả món một bạn GÁI đang ăn.",
+    "tinhHuong": "Giờ ăn ở căng tin, con nhìn quanh xem các bạn ăn gì.",
+    "phan": [
+     {
+      "chu": "She's having",
+      "lam_gi": "“bạn ấy đang ăn”"
+     },
+     {
+      "chu": "noodles",
+      "lam_gi": "món đang ăn",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   },
+   {
+    "cau": "He's having nuts.",
+    "congThuc": "He's having + [Food].",
+    "dungDe": "Tả món một bạn TRAI đang ăn.",
+    "tinhHuong": "Cũng giờ ăn ấy, nhưng là bạn trai.",
+    "phan": [
+     {
+      "chu": "He's having",
+      "lam_gi": "“bạn ấy đang ăn”"
+     },
+     {
+      "chu": "nuts",
+      "lam_gi": "món đang ăn",
+      "thay": true
+     }
+    ],
+    "khacVoi": null,
+    "vai": "cau",
+    "capVoi": null
+   }
+  ],
+  "mauCau": {
+   "cau": "She's having noodles.",
+   "congThuc": "She's having + [Food].",
+   "dungDe": "Tả món một bạn GÁI đang ăn.",
+   "tinhHuong": "Giờ ăn ở căng tin, con nhìn quanh xem các bạn ăn gì.",
+   "phan": [
+    {
+     "chu": "She's having",
+     "lam_gi": "“bạn ấy đang ăn”"
+    },
+    {
+     "chu": "noodles",
+     "lam_gi": "món đang ăn",
+     "thay": true
+    }
+   ],
+   "khacVoi": null
+  },
+  "misconceptions": [
+   {
+    "wrong": "She having noodles.",
+    "right": "She's having noodles.",
+    "why": "Câu này bắt buộc phải có “is”, viết rút thành “'s”. Tiếng Việt bỏ được chỗ ấy, tiếng Anh thì không: “She having noodles.” là câu chưa đủ."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "hook",
+    "narration": "Cảnh hôm nay: Ở căng tin trường.",
+    "doanAm": [
+     [
+      "Cảnh hôm nay: Ở căng tin trường.",
+      "vi"
+     ]
+    ]
+   },
+   {
+    "id": "S2",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K1"
+    ]
+   },
+   {
+    "id": "S3",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K2"
+    ]
+   },
+   {
+    "id": "S4",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K3"
+    ]
+   },
+   {
+    "id": "S5",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K4"
+    ]
+   },
+   {
+    "id": "S6",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S7",
+    "kind": "trap",
+    "teaches": [],
+    "narration": "Nghe câu này: She having noodles. — câu này có một chỗ chưa đúng. Con nghe lại rồi tìm xem sai ở đâu nhé.",
+    "doanAm": [
+     [
+      "Nghe câu này.",
+      "vi"
+     ],
+     [
+      "She having noodles.",
+      "en"
+     ],
+     [
+      "Câu vừa rồi có một chỗ chưa đúng. Con nghe lại câu đúng nhé.",
+      "vi"
+     ],
+     [
+      "She's having noodles.",
+      "en"
+     ]
+    ]
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "She's having noodles.",
+  "steps": [
+   {
+    "show": "Nghe cả câu: She's having noodles.",
+    "phan": "giai"
+   },
+   {
+    "show": "Tách ra từng thẻ: She's | having | noodles.",
+    "phan": "giai"
+   },
+   {
+    "show": "Chữ cuối là “noodles” — mì. Đổi chữ ấy là được câu mới.",
+    "phan": "giai"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "bac": 1,
+     "text": "Nghe rồi bấm vào hình đúng.",
+     "am": "tu_bananas",
+     "anhChon": true,
+     "format": "chon",
+     "choices": [
+      "bananas",
+      "noodles",
+      "nuts"
+     ],
+     "hinhNut": {
+      "bananas": "🍌",
+      "noodles": "🍜",
+      "nuts": "🥜"
+     },
+     "veNut": {
+      "bananas": null,
+      "noodles": null,
+      "nuts": null
+     },
+     "answerKey": {
+      "choice": "bananas"
+     },
+     "solutionNarrative": "bananas — những quả chuối",
+     "hints": [
+      "Nghe lại xem từ này bắt đầu bằng âm nào.",
+      "Từ này nghĩa là “những quả chuối”."
+     ]
+    },
+    {
+     "id": "C2",
+     "bac": 1,
+     "text": "Nghe rồi bấm vào hình đúng.",
+     "am": "tu_noodles",
+     "anhChon": true,
+     "format": "chon",
+     "choices": [
+      "noodles",
+      "bananas",
+      "nuts"
+     ],
+     "hinhNut": {
+      "noodles": "🍜",
+      "bananas": "🍌",
+      "nuts": "🥜"
+     },
+     "veNut": {
+      "noodles": null,
+      "bananas": null,
+      "nuts": null
+     },
+     "answerKey": {
+      "choice": "noodles"
+     },
+     "solutionNarrative": "noodles — mì",
+     "hints": [
+      "Nghe lại xem từ này bắt đầu bằng âm nào.",
+      "Từ này nghĩa là “mì”."
+     ]
+    },
+    {
+     "id": "C3",
+     "bac": 1,
+     "text": "Nghe rồi bấm vào hình đúng.",
+     "am": "tu_nuts",
+     "anhChon": true,
+     "format": "chon",
+     "choices": [
+      "nuts",
+      "bananas",
+      "noodles"
+     ],
+     "hinhNut": {
+      "nuts": "🥜",
+      "bananas": "🍌",
+      "noodles": "🍜"
+     },
+     "veNut": {
+      "nuts": null,
+      "bananas": null,
+      "noodles": null
+     },
+     "answerKey": {
+      "choice": "nuts"
+     },
+     "solutionNarrative": "nuts — các loại hạt",
+     "hints": [
+      "Nghe lại xem từ này bắt đầu bằng âm nào.",
+      "Từ này nghĩa là “các loại hạt”."
+     ]
+    },
+    {
+     "id": "C4",
+     "bac": 2,
+     "text": "“bananas” nghĩa là gì?",
+     "am": "tu_bananas",
+     "format": "chon",
+     "choices": [
+      "mì",
+      "các loại hạt",
+      "những quả chuối"
+     ],
+     "answerKey": {
+      "choice": "những quả chuối"
+     },
+     "solutionNarrative": "bananas /bəˈnɑːnəz/ — những quả chuối",
+     "hints": [
+      "Nghe lại từ rồi nghĩ xem con nhìn thấy nó ở đâu."
+     ]
+    },
+    {
+     "id": "C5",
+     "bac": 2,
+     "text": "“noodles” nghĩa là gì?",
+     "am": "tu_noodles",
+     "format": "chon",
+     "choices": [
+      "những quả chuối",
+      "mì",
+      "các loại hạt"
+     ],
+     "answerKey": {
+      "choice": "mì"
+     },
+     "solutionNarrative": "noodles /ˈnuːdlz/ — mì",
+     "hints": [
+      "Nghe lại từ rồi nghĩ xem con nhìn thấy nó ở đâu."
+     ]
+    },
+    {
+     "id": "C6",
+     "bac": 2,
+     "text": "“nuts” nghĩa là gì?",
+     "am": "tu_nuts",
+     "format": "chon",
+     "choices": [
+      "những quả chuối",
+      "mì",
+      "các loại hạt"
+     ],
+     "answerKey": {
+      "choice": "các loại hạt"
+     },
+     "solutionNarrative": "nuts /nʌts/ — các loại hạt",
+     "hints": [
+      "Nghe lại từ rồi nghĩ xem con nhìn thấy nó ở đâu."
+     ]
+    },
+    {
+     "id": "C7",
+     "bac": 2,
+     "text": "“những quả chuối” tiếng Anh là gì?",
+     "format": "chon",
+     "choices": [
+      "bananas",
+      "noodles",
+      "nuts"
+     ],
+     "answerKey": {
+      "choice": "bananas"
+     },
+     "solutionNarrative": "những quả chuối — bananas /bəˈnɑːnəz/",
+     "hints": [
+      "Cả bốn từ đều bắt đầu giống nhau — nghe kỹ phần GIỮA của từ."
+     ]
+    },
+    {
+     "id": "C8",
+     "bac": 2,
+     "text": "“mì” tiếng Anh là gì?",
+     "format": "chon",
+     "choices": [
+      "noodles",
+      "bananas",
+      "nuts"
+     ],
+     "answerKey": {
+      "choice": "noodles"
+     },
+     "solutionNarrative": "mì — noodles /ˈnuːdlz/",
+     "hints": [
+      "Cả bốn từ đều bắt đầu giống nhau — nghe kỹ phần GIỮA của từ."
+     ]
+    },
+    {
+     "id": "C9",
+     "bac": 2,
+     "text": "“các loại hạt” tiếng Anh là gì?",
+     "format": "chon",
+     "choices": [
+      "nuts",
+      "bananas",
+      "noodles"
+     ],
+     "answerKey": {
+      "choice": "nuts"
+     },
+     "solutionNarrative": "các loại hạt — nuts /nʌts/",
+     "hints": [
+      "Cả bốn từ đều bắt đầu giống nhau — nghe kỹ phần GIỮA của từ."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "S1",
+     "bac": 3,
+     "text": "Xếp các thẻ thành câu đúng.",
+     "am": "cau_she_s_having_noodles",
+     "the": [
+      "She's",
+      "having",
+      "noodles."
+     ],
+     "answerKey": {
+      "the": [
+       "She's",
+       "having",
+       "noodles."
+      ]
+     },
+     "solutionNarrative": "She's having noodles.",
+     "hints": [
+      "Câu tiếng Anh bắt đầu bằng chữ viết hoa.",
+      "Thẻ có dấu chấm là thẻ cuối cùng."
+     ]
+    },
+    {
+     "id": "S2",
+     "bac": 3,
+     "text": "Xếp các thẻ thành câu đúng.",
+     "am": "cau_she_s_having_bananas",
+     "the": [
+      "She's",
+      "having",
+      "bananas."
+     ],
+     "answerKey": {
+      "the": [
+       "She's",
+       "having",
+       "bananas."
+      ]
+     },
+     "solutionNarrative": "She's having bananas.",
+     "hints": [
+      "Câu tiếng Anh bắt đầu bằng chữ viết hoa.",
+      "Thẻ có dấu chấm là thẻ cuối cùng."
+     ]
+    },
+    {
+     "id": "S3",
+     "bac": 3,
+     "text": "Xếp các thẻ thành câu đúng.",
+     "am": "cau_she_s_having_nuts",
+     "the": [
+      "She's",
+      "having",
+      "nuts."
+     ],
+     "answerKey": {
+      "the": [
+       "She's",
+       "having",
+       "nuts."
+      ]
+     },
+     "solutionNarrative": "She's having nuts.",
+     "hints": [
+      "Câu tiếng Anh bắt đầu bằng chữ viết hoa.",
+      "Thẻ có dấu chấm là thẻ cuối cùng."
+     ]
+    },
+    {
+     "id": "S4",
+     "bac": 3,
+     "text": "Xếp các thẻ thành câu đúng.",
+     "am": "cau_he_s_having_nuts",
+     "the": [
+      "He's",
+      "having",
+      "nuts."
+     ],
+     "answerKey": {
+      "the": [
+       "He's",
+       "having",
+       "nuts."
+      ]
+     },
+     "solutionNarrative": "He's having nuts.",
+     "hints": [
+      "Câu tiếng Anh bắt đầu bằng chữ viết hoa.",
+      "Thẻ có dấu chấm là thẻ cuối cùng."
+     ]
+    },
+    {
+     "id": "S5",
+     "bac": 3,
+     "text": "Xếp các thẻ thành câu đúng.",
+     "am": "cau_he_s_having_bananas",
+     "the": [
+      "He's",
+      "having",
+      "bananas."
+     ],
+     "answerKey": {
+      "the": [
+       "He's",
+       "having",
+       "bananas."
+      ]
+     },
+     "solutionNarrative": "He's having bananas.",
+     "hints": [
+      "Câu tiếng Anh bắt đầu bằng chữ viết hoa.",
+      "Thẻ có dấu chấm là thẻ cuối cùng."
+     ]
+    },
+    {
+     "id": "S6",
+     "bac": 3,
+     "text": "Xếp các thẻ thành câu đúng.",
+     "am": "cau_he_s_having_noodles",
+     "the": [
+      "He's",
+      "having",
+      "noodles."
+     ],
+     "answerKey": {
+      "the": [
+       "He's",
+       "having",
+       "noodles."
+      ]
+     },
+     "solutionNarrative": "He's having noodles.",
+     "hints": [
+      "Câu tiếng Anh bắt đầu bằng chữ viết hoa.",
+      "Thẻ có dấu chấm là thẻ cuối cùng."
+     ]
+    },
+    {
+     "id": "S7",
+     "bac": 3,
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  She's having ___.",
+     "anh": "🍜",
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "noodles",
+      "bananas",
+      "nuts"
+     ],
+     "answerKey": {
+      "choice": "noodles"
+     },
+     "solutionNarrative": "She's having noodles.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    },
+    {
+     "id": "S8",
+     "bac": 3,
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  She's having ___.",
+     "anh": "🍌",
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "bananas",
+      "noodles",
+      "nuts"
+     ],
+     "answerKey": {
+      "choice": "bananas"
+     },
+     "solutionNarrative": "She's having bananas.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    },
+    {
+     "id": "S9",
+     "bac": 3,
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  She's having ___.",
+     "anh": "🥜",
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "nuts",
+      "bananas",
+      "noodles"
+     ],
+     "answerKey": {
+      "choice": "nuts"
+     },
+     "solutionNarrative": "She's having nuts.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    },
+    {
+     "id": "S10",
+     "bac": 3,
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  He's having ___.",
+     "anh": "🥜",
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "nuts",
+      "bananas",
+      "noodles"
+     ],
+     "answerKey": {
+      "choice": "nuts"
+     },
+     "solutionNarrative": "He's having nuts.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    },
+    {
+     "id": "S11",
+     "bac": 3,
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  He's having ___.",
+     "anh": "🍌",
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "bananas",
+      "noodles",
+      "nuts"
+     ],
+     "answerKey": {
+      "choice": "bananas"
+     },
+     "solutionNarrative": "He's having bananas.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    },
+    {
+     "id": "S12",
+     "bac": 3,
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  He's having ___.",
+     "anh": "🍜",
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "noodles",
+      "bananas",
+      "nuts"
+     ],
+     "answerKey": {
+      "choice": "noodles"
+     },
+     "solutionNarrative": "He's having noodles.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "T1",
+     "bac": 4,
+     "text": "Ghép các chữ cái thành từ. (những quả chuối)",
+     "am": "tu_bananas",
+     "the": [
+      "b",
+      "a",
+      "n",
+      "a",
+      "n",
+      "a",
+      "s"
+     ],
+     "answerKey": {
+      "the": [
+       "b",
+       "a",
+       "n",
+       "a",
+       "n",
+       "a",
+       "s"
+      ]
+     },
+     "solutionNarrative": "bananas /bəˈnɑːnəz/ — những quả chuối",
+     "hints": [
+      "Từ này dài 7 chữ cái."
+     ]
+    },
+    {
+     "id": "T2",
+     "bac": 4,
+     "text": "Ghép các chữ cái thành từ. (mì)",
+     "am": "tu_noodles",
+     "the": [
+      "n",
+      "o",
+      "o",
+      "d",
+      "l",
+      "e",
+      "s"
+     ],
+     "answerKey": {
+      "the": [
+       "n",
+       "o",
+       "o",
+       "d",
+       "l",
+       "e",
+       "s"
+      ]
+     },
+     "solutionNarrative": "noodles /ˈnuːdlz/ — mì",
+     "hints": [
+      "Từ này dài 7 chữ cái."
+     ]
+    },
+    {
+     "id": "T3",
+     "bac": 4,
+     "text": "Nghe rồi gõ lại từ này. (các loại hạt)",
+     "am": "tu_nuts",
+     "answerKey": {
+      "value": "nuts"
+     },
+     "solutionNarrative": "nuts /nʌts/ — các loại hạt",
+     "hints": [
+      "Từ này có 4 chữ cái.",
+      "Bắt đầu bằng chữ “n”."
+     ]
+    },
+    {
+     "id": "T4",
+     "bac": 4,
+     "text": "Nghe rồi gõ lại cả câu.",
+     "am": "cau_she_s_having_noodles",
+     "answerKey": {
+      "value": "She's having noodles."
+     },
+     "solutionNarrative": "She's having noodles.",
+     "hints": [
+      "Nhớ viết hoa chữ đầu câu và chấm ở cuối.",
+      "Gõ thiếu chữ “a” là câu sai — tiếng Anh bắt buộc phải có."
+     ]
+    },
+    {
+     "id": "T5",
+     "bac": 4,
+     "text": "Nghe rồi gõ lại cả câu.",
+     "am": "cau_she_s_having_bananas",
+     "answerKey": {
+      "value": "She's having bananas."
+     },
+     "solutionNarrative": "She's having bananas.",
+     "hints": [
+      "Nhớ viết hoa chữ đầu câu và chấm ở cuối.",
+      "Gõ thiếu chữ “a” là câu sai — tiếng Anh bắt buộc phải có."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "“bananas” nghĩa là “những quả chuối”.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q2",
+    "text": "“bananas” nghĩa là “mì”.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — “bananas” nghĩa là “những quả chuối”."
+   },
+   {
+    "id": "Q3",
+    "text": "“noodles” nghĩa là “mì”.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   },
+   {
+    "id": "Q4",
+    "text": "“noodles” nghĩa là “các loại hạt”.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — “noodles” nghĩa là “mì”."
+   },
+   {
+    "id": "Q5",
+    "text": "“nuts” nghĩa là “các loại hạt”.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG"
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chỉ vào đồ trong nhà rồi nói mẫu câu bài này: “She's having noodles.” — cho con nhắc lại. Đổi chữ cuối để thành đồ khác.",
+  "homeActivity": "Tìm trong nhà những thứ bắt đầu bằng âm /n/. Không cần đúng hết, quan trọng là con nghe ra âm ấy.",
+  "watchFor": "NÊN: cho con NGHE trước rồi mới nhìn chữ. KHÔNG NÊN: bắt con đánh vần theo kiểu tiếng Việt — tiếng Anh viết một đằng đọc một nẻo, đánh vần sẽ hại."
+ },
+ "hinhTu": [
+  {
+   "tu": "bananas",
+   "hinh": "🍌",
+   "ve": null,
+   "no": null
+  },
+  {
+   "tu": "noodles",
+   "hinh": "🍜",
+   "ve": null,
+   "no": null
+  },
+  {
+   "tu": "nuts",
+   "hinh": "🥜",
+   "ve": null,
+   "no": null
+  }
+ ]
+}

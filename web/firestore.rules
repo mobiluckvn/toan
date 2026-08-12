@@ -96,6 +96,44 @@ service cloud.firestore {
                    && request.resource.data.loai in ['chuong', 'chuDe', 'dau'];
     }
 
+    /* ══ MÔN TIẾNG ANH — collection RIÊNG ══
+
+       Không dùng chung `progress/{uid}/micros` với Toán, và lý do không phải là sợ
+       trùng mã bài. Lý do thật: hàm nền chạy trên MỌI tài liệu của thư mục ấy rồi
+       tính mức thạo theo ma trận của Toán. Đổ bài tiếng Anh vào đó là hàm nền âm
+       thầm tính sai cho cả hai môn.
+
+       ⚠ Hai khối dưới đây phải được DEPLOY thì máy con mới ghi được. Chưa deploy
+       thì `match /{document=**}` ở cuối tệp chặn, và Firestore từ chối TRONG IM
+       LẶNG với lệnh ghi không chờ kết quả: bé học xong, máy báo xong, máy chủ
+       trống. Đã dính một lần khi làm học bạ.
+
+           firebase deploy --only firestore:rules                              */
+
+    match /progressTA/{userId}/micros/{microId} {
+      allow read: if canRead(userId);
+      /* Cùng hai chốt kiểu dữ liệu như `progress` của Toán: thiếu hoặc sai kiểu
+         một trong hai trường này là bị từ chối. Giữ giống nhau để người sửa một
+         bên không phải đoán bên kia.
+
+         XOÁ CŨNG BỊ CHẶN, và đó là điều ĐÚNG — nhưng ban đầu là ngẫu nhiên: lệnh
+         xoá không mang `request.resource.data` nên hai điều kiện trên tự nhiên
+         sai. Thử trên bộ giả lập mới lộ ra. Ghi lại thành chủ ý: bài đã học là
+         bằng chứng học tập, không ai xoá được — kể cả chính chủ. Muốn cho xoá thì
+         phải viết `allow delete` riêng, chứ đừng nới hai dòng trên. */
+      allow write: if isMine(userId)
+                   && request.resource.data.pass is bool
+                   && request.resource.data.score is number;
+    }
+
+    match /hocBaTA/{userId}/muc/{mucId} {
+      allow read:  if canRead(userId);
+      /* Tiếng Anh hiện chỉ có kỳ ôn tập chương. Danh sách hẹp là cố ý — máy con
+         không dựng được một hình dạng thứ hai mà sổ phụ huynh không đọc nổi. */
+      allow write: if isMine(userId)
+                   && request.resource.data.loai in ['chuong'];
+    }
+
     /* ── Hàng đợi ôn tập: việc riêng của từng bạn, cô không cần ── */
     match /reviewQueue/{userId}/cards/{cardId} {
       allow read:  if isMine(userId) || isAdmin();

@@ -1,6 +1,13 @@
 node_modules/
 dist/
 .env.local
+
+# Môi trường Python của dây chuyền TTS (Kokoro) — ~1 GB, cài lại bằng
+# tools/tts/cai_dat.sh chứ không commit. Xem tools/tts/README.md.
+tools/tts/.venv/
+tools/tts/model/
+tools/tts/Kokoro-Vietnamese/
+tools/tts/ra/
 .firebase/
 __pycache__/
 *.pyc

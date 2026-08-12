@@ -14,12 +14,19 @@
  *   ten         tên đọc được
  *   bieuTuong   biểu tượng hiện trên kệ sách
  *   dangCo      false thì môn chưa hiện ra (đang biên soạn)
- *   Man         component vẽ MỌI màn của môn; vỏ chỉ dựng nó rồi tránh ra
+ *   Man         component vẽ MỌI màn của môn; vỏ chỉ dựng nó rồi tránh ra.
+ *               Nhận `quyen` là MÃ CHUỖI ('ta1'), KHÔNG phải mục chương trình —
+ *               `App.jsx` gọi `setQuyen(ma)`. Dùng thẳng như một object thì màn
+ *               chính của quyển hiện rỗng mà không cổng nào báo.
  *
  *   napTienDo()              → sổ tiến độ của môn (đọc tại máy). Vỏ giữ trong state
  *                              để mọi màn cùng vẽ lại, nhưng KHÔNG BAO GIỜ soi vào
  *                              bên trong — với vỏ nó chỉ là một khối đục.
- *   tienDoQuyen(tienDo, ma)  → {xong, tong, phanTram, gio}  cho kệ sách
+ *   tienDoQuyen(tienDo, ct)  → {xong, tong, phanTram, gio}  cho kệ sách
+ *                              `ct` là CẢ MỤC chương trình (có `ma`, `soBai`, `bai`),
+ *                              không phải mã. Dòng này trước ghi là `ma`, và môn
+ *                              Tiếng Anh làm theo lời ghi nên kệ sách hiện "0 unit"
+ *                              cho quyển 16 bài. Cổng chỉ soi TÊN hàm nên không bắt được.
  *   hocBa(tienDo)            → Promise<HocBaMon>            cho sổ bố mẹ
  *   hocBaCuaEm(uid)          → Promise<HocBaMon>            cho bảng cô giáo
  *   bangXepHang()            → Promise<doc|null>            cho bảng xếp hạng

@@ -1,54 +1,61 @@
 /**
- * CỬA CỦA MÔN TIẾNG ANH — khung rỗng, chưa có nội dung.
+ * CỬA CỦA MÔN TIẾNG ANH — nơi DUY NHẤT tầng vỏ được nhìn vào.
  *
- * Dựng sẵn để hai việc thành sự thật ngay từ bây giờ, chứ không phải một lời hứa:
+ * Mọi thứ khác trong `mon/tienganh/**` là ruột: vỏ app và bốn màn tổng (kệ sách ·
+ * bảng xếp hạng · sổ bố mẹ · bảng cô giáo) không được import thẳng vào đó, cổng
+ * `ranh_gioi.test.mjs` chặn. Giao ước đầy đủ ghi ở `src/soMon.js`.
  *
- *   1. cổng `ranh_gioi.test.mjs` có hai môn để mà so, nên nó chặn được đường đi tắt
- *      giữa hai môn NGAY LÚC NÀY — không đợi tới khi có nội dung mới dựng hàng rào,
- *      lúc ấy thì đã có sẵn vài đường tắt để mà tranh cãi;
- *   2. giao ước ở `src/soMon.js` được một môn thứ hai kiểm chứng. Một giao ước chỉ
- *      có đúng một bên thực hiện thì chưa phải giao ước, mới là mô tả cách bên ấy làm.
+ * ── QUYỂN ĐẦU TIÊN: TIẾNG ANH LỚP 1 ──
+ * 16 unit · 395 câu luyện tập · 80 câu sát hạch · 333 clip âm.
+ * Sinh từ `data/ban_do_tieng_anh.json` + `data/tienganh/lop1_bu.json` bằng
+ * `tools/chuan_tienganh.py` → `tools/sinh_bai_tienganh.py`. ĐỪNG sửa tay tệp bài
+ * trong `public/content/ta1/` — chạy lại bộ sinh, nếu không lần dựng sau mất hết.
  *
- * `dangCo: false` nên môn này KHÔNG hiện ra cho bé. Kệ sách vẫn chỉ có Toán.
- *
- * ── VIỆC CÒN LẠI, THEO THỨ TỰ ──
- * Đọc `docs/khao_sat_ban_do_tieng_anh.md` và `docs/khao_sat_tieng_anh.md` trước.
- *   · bản đồ tri thức đã có: `data/ban_do_tieng_anh.json` (3 989 node, lớp 1-12)
- *   · nên bắt đầu từ LỚP 4 và 5 — hai lớp duy nhất đủ 100% nghĩa Việt và 100% IPA
- *   · phải quyết ÂM THANH trước khi bóc tách, vì nó đổi hình dạng dữ liệu
- *   · bộ chấm riêng (`lib/cham.js`), KHÔNG đụng `mon/toan/lib/flow.js`
- *   · collection riêng (`attemptsTA` · `progressTA` · `hocBaTA`), KHÔNG dùng chung
+ * ── BỐN CHỖ CỐ Ý KHÔNG DÙNG CHUNG VỚI TOÁN ──
+ *   1. `lib/cham.js`      bộ chấm riêng. `flow.js` bỏ chấm đáp án dài quá 26 ký tự,
+ *                         mà câu dài nhất của lớp 1 là 46 — bê nguyên là bé mất ô nhập.
+ *   2. `lib/progress.js`  khoá sổ riêng `ttd5.tienganh.v1`, tách theo chỗ.
+ *   3. bktUnit            `UNIT:n@TA1` — kèm mã quyển, không thì huy hiệu lây quyển.
+ *   4. không figureSpec   hình là emoji đi thẳng cùng từ; figforge chỉ dựng sơ đồ toán.
  */
+import ManTiengAnh from './components/ManTiengAnh.jsx';
+import { napTienDo, luuTienDo, gopTienDo, soRong } from './lib/progress.js';
+import { quyenHoc, tienDoQuyen, hocBaTu } from './lib/hocba.js';
+import { tienDoTuMay, bangXepHang as xepHangTA } from './lib/duLieu.js';
+
 export default {
   ma: 'tienganh',
   ten: 'Tiếng Anh',
   bieuTuong: '🔤',
 
-  /** Chưa mở cho bé. Đổi thành `true` khi có quyển đầu tiên. */
-  dangCo: false,
+  dangCo: true,
+  Man: ManTiengAnh,
 
-  /** Chưa có màn nào. Vỏ không dựng tới vì `dangCo` là false. */
-  Man: null,
+  napTienDo,
+  luuTienDo,
+  gopTienDo,
+  /* Đọc sổ trên máy chủ rồi để `gopTienDo` trộn với sổ tại máy — bản nào MỚI HƠN
+     thắng, từng bài một. Hỏng mạng hay chưa deploy luật thì trả rỗng: bé vẫn học
+     bằng sổ tại máy, đó mới là nguồn chính. */
+  napTuMay: async (uid) => ({ ...soRong(), ...(await tienDoTuMay(uid)) }),
 
-  /* ── Giao ước: trả về rỗng nhưng ĐÚNG HÌNH DẠNG ──
-     Trả `null` hay `undefined` thì bốn màn tổng phải rải `?.` khắp nơi để đỡ; trả
-     đúng khuôn rỗng thì chúng vẽ ra "chưa có gì" một cách tự nhiên. */
-  napTienDo: () => ({ micros: {} }),
-  luuTienDo: () => {},
-  gopTienDo: (a) => a,
-  napTuMay: async () => ({ micros: {} }),
-
-  dsQuyen: () => [],
-  tienDoQuyen: () => ({ xong: 0, dangLam: 0, tong: 0, phanTram: 0, gio: 0 }),
-  hocBa: async () => ({ quyen: [], chuDe: null, trinhDo: null }),
+  dsQuyen: quyenHoc,
+  tienDoQuyen,
+  hocBa: async (tienDo) => hocBaTu(tienDo),
   hocBaCuaEm: async () => ({ quyen: [], chuDe: null, trinhDo: null }),
-  bangXepHang: async () => null,
+
+  /* Bảng xếp hạng dùng CHUNG tài liệu `bangXepHang/global` với Toán — thêm bảng
+     thứ hai là mở thêm một lối rò dữ liệu bé. Nhưng hàm nền hiện chỉ đếm sao của
+     Toán, nên hàm dưới trả null cho tới khi nó biết tính cả tiếng Anh. Bảng cô
+     giáo cũng vậy. */
+  bangXepHang: xepHangTA,
   lamMoiBangXepHang: async () => ({ boQua: true }),
   soMayChu: async () => null,
   lamMoiSoMayChu: async () => {},
   bangCoGiao: async () => null,
   lamMoiBangCoGiao: async () => {},
   nhatKyCuaEm: async () => [],
+
   napBanDoDang: async () => ({}),
   tenDang: (ma) => ma,
   dangCuaBai: () => [],

@@ -116,6 +116,48 @@ for (const m of monCo) {
   t(`${m} khai đủ giao ước (thiếu: ${thieu.join() || 'không'})`, thieu.length === 0);
 }
 
+/* ══ 5B · GIAO ƯỚC PHẢI GỌI THỬ ĐƯỢC, KHÔNG CHỈ CÓ TÊN ══
+   Phép kiểm 5 ở trên soi TÊN hàm bằng regex. Nó xanh kể cả khi hàm nhận sai kiểu
+   tham số — và chuyện ấy xảy ra thật: giao ước ở `src/soMon.js` ghi
+   `tienDoQuyen(tienDo, ma)` trong khi `KeSach.jsx` truyền CẢ MỤC chương trình.
+   Môn Tiếng Anh làm theo lời ghi, và kệ sách hiện "0 unit" cho quyển 16 bài —
+   cổng xanh, bản dựng xanh, chỉ có con số trên màn hình là sai.
+
+   Nên gọi THẬT hai hàm mà kệ sách phụ thuộc, bằng đúng thứ kệ sách truyền vào. */
+const dangKy = JSON.parse(readFileSync(
+  new URL('../public/content/chuong_trinh.json', import.meta.url), 'utf8'));
+/* `index.js` của môn nào cũng import component `.jsx`, mà node không nạp được —
+   nên phép tính thuần PHẢI nằm ở `lib/hocba.js`. Đòi hỏi ấy chính là điều đáng
+   canh: hàm nào node không với tới được thì không phép kiểm nào soi nổi. */
+const hopLe = [];
+for (const m of monCo) {
+  const cua = join(SRC, 'mon', m, 'lib/hocba.js');
+  t(`${m}: phép đếm tiến độ nằm ở lib/hocba.js (node gọi được)`, existsSync(cua));
+  if (!existsSync(cua)) continue;
+  const lib = await import(cua);
+  t(`${m}: lib/hocba.js xuất tienDoQuyen`, typeof lib.tienDoQuyen === 'function');
+  if (typeof lib.tienDoQuyen !== 'function') continue;
+  const cts = Object.values(dangKy.chuongTrinh || {}).filter((c) => c.mon === m);
+  if (!cts.length) continue;                        // môn chưa có quyển nào trong sổ
+  for (const ct of cts) {
+    let td;
+    try { td = lib.tienDoQuyen({ micros: {}, chapters: {} }, ct); }
+    catch (e) { hopLe.push(`${m}/${ct.ma}: tienDoQuyen ném ${e.message.slice(0, 50)}`); continue; }
+    if (!Number.isFinite(td?.tong)) hopLe.push(`${m}/${ct.ma}: tong không phải số (${td?.tong})`);
+    /* Con số PHẢI khớp danh sách bài trong sổ. Trả 0 cho quyển có bài là dấu hiệu
+       hàm đọc nhầm tham số — đúng lỗi đã xảy ra. */
+    else if ((ct.bai || []).length && td.tong !== (ct.bai || []).length) {
+      hopLe.push(`${m}/${ct.ma}: tong=${td.tong} mà sổ khai ${(ct.bai || []).length} bài`);
+    }
+    if (td && td.tong === 0 && (ct.bai || []).length) {
+      hopLe.push(`${m}/${ct.ma}: tong=0 cho quyển có bài — dấu hiệu đọc nhầm tham số`);
+    }
+    if (!Number.isFinite(td?.phanTram)) hopLe.push(`${m}/${ct.ma}: phanTram không phải số`);
+  }
+}
+t(`tienDoQuyen của mọi môn trả đúng số bài (${hopLe.length} chỗ lệch)`, hopLe.length === 0);
+in5(hopLe);
+
 /* ══ 6 · SỔ MÔN LÀ NƠI DUY NHẤT BIẾT CÓ NHỮNG MÔN NÀO ══
    Nó nằm ở tầng VỎ (`src/soMon.js`), KHÔNG ở `chung/` — vì `chung/` phải mù hẳn về
    môn, mà sổ thì buộc phải gọi tên từng môn. Đặt nhầm chỗ là luật 2 mất hiệu lực. */

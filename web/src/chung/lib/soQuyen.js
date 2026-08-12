@@ -54,17 +54,26 @@ export const soDangKy = () => SO_DK;
 export const dsChuongTrinh = () => Object.values(SO_DK.chuongTrinh || {});
 
 /**
- * CÁC LỚP CON CÓ THỂ ĐANG HỌC — lớp 2 đến lớp 12.
+ * CÁC LỚP CON CÓ THỂ ĐANG HỌC — lớp 1 đến lớp 12.
  *
  * KHÔNG phải danh sách quyển sách đang có. Hai thứ khác nhau: app mới có sách Toán
- * lớp 2·3·4·5, nhưng anh chị lớp 6-12 vẫn dùng app (ôn lại nền, hoặc chờ sách của
- * mình). Hỏi "con học lớp mấy" mà chỉ cho chọn 4·5·6 thì anh lớp 8 phải khai sai
- * ngay ở màn đầu tiên — và con số sai ấy đi thẳng vào bảng xếp hạng ("Bạn nhỏ lớp
- * 5") lẫn vào bậc xuất phát của vòng luyện chủ đề.
+ * lớp 2·3·4·5 và Tiếng Anh lớp 1, nhưng anh chị lớp 6-12 vẫn dùng app (ôn lại nền,
+ * hoặc chờ sách của mình). Hỏi "con học lớp mấy" mà chỉ cho chọn 4·5·6 thì anh lớp 8
+ * phải khai sai ngay ở màn đầu tiên — và con số sai ấy đi thẳng vào bảng xếp hạng
+ * ("Bạn nhỏ lớp 5") lẫn vào bậc xuất phát của vòng luyện chủ đề.
  *
- * Để ở đây vì `content.js` là nơi giữ sổ đăng ký; sửa một chỗ, mọi màn theo.
+ * ── VÌ SAO THÊM LỚP 1 ──
+ * Danh sách này mở đầu từ lớp 2 suốt từ đầu, vì quyển nhỏ nhất khi ấy là Toán lớp 2.
+ * Nay có Tiếng Anh lớp 1, và bé 6 tuổi là bạn NHỎ NHẤT của app — mà lập hồ sơ lại
+ * không khai được đúng lớp mình. Bé phải khai lớp 2, rồi con số sai ấy đi vào bảng
+ * xếp hạng và vào bậc xuất phát.
+ *
+ * Đây đúng loại "ghim cứng theo quyển đang có" mà chính lời chú thích trên đã cảnh
+ * báo — và vẫn dính, vì lúc viết thì lớp 2 là biên dưới thật.
+ *
+ * Để ở đây vì đây là nơi giữ sổ đăng ký; sửa một chỗ, mọi màn theo.
  */
-export const LOP_HOC = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+export const LOP_HOC = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
 
 /** Lớp mặc định khi con chưa khai — lấy quyển đầy đủ nhất đang có. */
 export const LOP_MAC_DINH = 5;

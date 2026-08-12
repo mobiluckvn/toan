@@ -13,7 +13,7 @@ import { loadProgress, saveProgress, gopTienDo } from './lib/progress.js';
 import { reassignQueue } from './lib/sync.js';
 import { chuongTrinhCua, napChiMuc, dsChuongTrinhSapXep, napBanDoDang, CONTENT, dongDau }
   from './lib/noiDung.js';
-import { hocBaQuyen, hocBaChuDe, baiCanCoGang, trinhDo } from './lib/hocba.js';
+import { hocBaQuyen, hocBaChuDe, baiCanCoGang, trinhDo, tienDoQuyen } from './lib/hocba.js';
 import { tenDang, dangCuaBai } from './lib/noiDung.js';
 import {
   tienDoTuMay, myReport, refreshMyReport, bangXepHangToan, lamMoiBangXepHang,
@@ -39,19 +39,6 @@ const mocCua = (m) => (m?.at ? Date.parse(m.at) || 0 : 0);
  * Kệ sách KHÔNG được tự đếm: nó không biết mã bài của Toán trông thế nào, và nếu nó
  * biết thì thêm môn thứ hai là phải viết thêm một nhánh `if` ở đó.
  */
-function tienDoQuyen(tienDo, ct) {
-  const micros = tienDo?.micros || {};
-  const cua = Object.entries(micros).filter(([id]) => chuongTrinhCua(id) === ct.ma);
-  const xong = cua.filter(([, m]) => m.pass).length;
-  const tong = ct.soBai || cua.length || 1;
-  return {
-    xong,
-    dangLam: cua.length,
-    tong,
-    phanTram: Math.round((xong / tong) * 100),
-    gio: cua.reduce((s, [, m]) => Math.max(s, mocCua(m)), 0),
-  };
-}
 
 /**
  * HỌC BẠ CỦA MÔN — hình dạng CỐ ĐỊNH mà sổ bố mẹ và bảng cô giáo cùng vẽ.

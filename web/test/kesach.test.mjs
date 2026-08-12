@@ -8,12 +8,14 @@
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
+import { LOP_HOC } from '../src/chung/lib/soQuyen.js';
 
 const D = new URL('../public/content/', import.meta.url).pathname;
 const dk = JSON.parse(readFileSync(join(D, 'chuong_trinh.json'), 'utf8'));
 
 let pass = 0, fail = 0;
 const t = (n, c) => { c ? pass++ : (fail++, console.log('  ✗', n)); };
+const in5 = (xs) => xs.slice(0, 5).forEach((x) => console.log('     ', x));
 
 const ct = Object.values(dk.chuongTrinh || {});
 t(`có chương trình (${ct.length})`, ct.length >= 2);
@@ -55,8 +57,31 @@ const xep = ct.slice().sort((a, b) => a.thuTu - b.thuTu);
 t('xếp xong thì lớp tăng dần', xep.every((c, i) => i === 0 || c.lop >= xep[i - 1].lop));
 t('quyển ôn thi đứng SAU quyển học cùng lớp',
   xep.every((c, i) => c.loai !== 'giai' || xep.slice(0, i).some((x) => x.lop === c.lop && x.loai === 'hoc')));
-t('đúng thứ tự lớp 2 → 3 → 4 → 5 → tổng ôn lớp 5',
-  xep.map((c) => c.ma).join(' ') === 'lop2 lop3 lop4 lop5 lop5q2');
+/* Thứ tự trên kệ phải SUY RA ĐƯỢC, không phải một danh sách tên gõ cứng.
+   Bản đầu so với đúng chuỗi 'lop2 lop3 lop4 lop5 lop5q2', nên quyển Tiếng Anh lớp 1
+   vừa khai vào sổ là cổng đỏ — dù nó xếp hoàn toàn đúng chỗ (lớp 1 đứng trước lớp 2).
+   Đây đúng loại "ghim cứng tên quyển" mà kho này đã dính nhiều lần.
+
+   Luật thật: xếp theo LỚP tăng dần, và trong cùng một lớp thì quyển HỌC đứng trước
+   quyển ÔN THI. `thuTu` phải khớp đúng thứ tự ấy. */
+const khoa = (c) => [c.lop, c.loai === 'giai' ? 1 : 0];
+const nen = ct.slice().sort((a, b) => khoa(a)[0] - khoa(b)[0] || khoa(a)[1] - khoa(b)[1]);
+t(`thuTu khớp thứ tự lớp rồi tới quyển ôn thi (${xep.map((c) => c.ma).join(' → ')})`,
+  xep.map((c) => c.ma).join(' ') === nen.map((c) => c.ma).join(' '));
+
+/* ── LỚP CON KHAI ĐƯỢC PHẢI PHỦ MỌI QUYỂN ĐANG CÓ ──
+   `LOP_HOC` mở đầu từ lớp 2 suốt từ đầu, vì quyển nhỏ nhất khi ấy là Toán lớp 2.
+   Thêm Tiếng Anh lớp 1 thì bé 6 tuổi — bạn NHỎ NHẤT của app — lập hồ sơ mà không
+   khai được đúng lớp mình: phải khai lớp 2, rồi con số sai ấy đi thẳng vào bảng
+   xếp hạng và vào bậc xuất phát của vòng luyện.
+
+   Không cổng nào bắt được, vì màn hình vẫn vẽ ra bình thường. Nên soi ở đây: có
+   sách cho lớp nào thì bé lớp ấy phải khai được. */
+const lopThieu = [...new Set(ct.map((c) => c.lop))]
+  .filter((l) => Number.isFinite(l) && !LOP_HOC.includes(l));
+t(`mọi lớp có sách đều khai được trong hồ sơ (${lopThieu.length} lớp thiếu)`,
+  lopThieu.length === 0);
+in5(lopThieu.map((l) => `lớp ${l} có sách mà LOP_HOC không có`));
 
 /* ── CỜ CHÍNH SÁCH mà trang chính dùng chung hỏi tới ──
    Trang chính của bốn quyển nay là MỘT tệp, khác biệt đọc từ mấy cờ này. Thiếu cờ

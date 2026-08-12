@@ -38,10 +38,30 @@
  * 5. ĐO ĐƯỢC VIỆC HỌC.
  *    Quyển đọc chậm phải chấm máy ≥ 85% câu luyện tập. Dưới ngưỡng ấy thì bé làm
  *    xong không ai biết đúng sai — sổ phụ huynh và bảng cô giáo trống.
+ *
+ * ══ LUẬT ÁP THEO MÔN — đọc kỹ trước khi sửa ══
+ *
+ * Năm luật trên rút ra từ môn TOÁN và đúng cho môn Toán. Môn Tiếng Anh vào sổ thì
+ * hai luật quay ra chống lại chính việc đang dạy:
+ *
+ *   · luật 1 cấm ô gõ chữ — mà GÕ LẠI ĐƯỢC TỪ chính là bậc 4 của bài tiếng Anh;
+ *   · luật 2 so mồi nhử bằng GIÁ TRỊ SỐ — tiếng Anh không có giá trị số để so.
+ *
+ * Nên tệp này hỏi `ct.mon` trước, rồi mới chọn luật. Cách sai — và rất dễ mắc khi
+ * vội — là TẮT luật cho tất cả: làm thế thì mất luôn hàng rào đã cứu lớp 3 và lớp 4
+ * bên Toán. Mỗi luật bị thay đều phải có luật KHÁC thay chỗ, không được để trống:
+ *
+ *   luật 1 → 1A: ô gõ của tiếng Anh phải gõ được bằng bàn phím thường (chữ Latin
+ *                không dấu) và không dài quá câu dài nhất của quyển;
+ *   luật 2 → 2A: mồi nhử không được TRÙNG đáp án sau khi chuẩn hoá (hoa/thường,
+ *                dấu nháy cong, dấu chấm cuối) — đúng ba chỗ bé không phân biệt nổi.
+ *
+ * Luật 3, 4, 5 áp cho MỌI môn, không đổi.
  */
 import { readFileSync, readdirSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { normText, splitAside, answerCore } from '../src/mon/toan/lib/flow.js';
+import { chuanTA } from '../src/mon/tienganh/lib/cham.js';
 
 const G = new URL('../public/content/', import.meta.url).pathname;
 let pass = 0, fail = 0;
@@ -110,18 +130,56 @@ for (const [ma, ct] of Object.entries(dk)) {
     : [];
   const cauLuyen = bais.flatMap((b) => Object.values(b.practice?.pools || {}).flat());
   const cauKy = ky.flatMap((k) => [...(k.examA || []), ...(k.deB || [])]);
+  /* KHỐI QUIZ CỦA TỪNG BÀI — chỗ mù thứ hai của tệp này.
+     "Kỳ sát hạch" ở trên chỉ là các đề chung trong `reviews/DCR_*`. Còn mỗi bài
+     lại có khối `assessment` riêng, và nó KHÔNG hề nằm trong tầm soi của bất cứ
+     luật nào: 1 148 câu của bốn quyển Toán cộng 80 câu của Tiếng Anh.
+     Đếm riêng chứ không gộp vào `cauKy`: hai thứ khác nhau, và gộp thì ngưỡng 85%
+     của luật 5 nói dối — nợ đã biết của lớp 5 (210 câu đề chung chưa có ô nhập)
+     sẽ bị pha loãng, hoặc ngược lại kéo tụt quyển vừa làm tốt phần quiz. */
+  const cauQuiz = bais.flatMap((b) => b.assessment?.items || []);
   /* Bốn luật CHẤT LƯỢNG (nhãn, mồi nhử, đáp án trong nút, cấm ô gõ chữ) soi CẢ HAI
      phần — ô nhập của kỳ sát hạch cũng là ô nhập. Còn luật 5 (ngưỡng phủ) thì tách
      riêng, xem cuối tệp. */
-  const cau = [...cauLuyen, ...cauKy];
+  const cau = [...cauLuyen, ...cauKy, ...cauQuiz];
   const cham = cau.filter((x) => x.answerKey);
   const chamLuyen = cauLuyen.filter((x) => x.answerKey);
   const chamKy = cauKy.filter((x) => x.answerKey);
+  const chamQuiz = cauQuiz.filter((x) => x.answerKey);
   /* Cờ nhịp đọc chậm nằm trong sổ, không đoán theo tên quyển — thêm lớp 4 chỉ cần
      khai cờ, khỏi sửa tệp này. */
   const docCham = !!(ct.doc || {}).moiManMotMuc;
+  /* MÔN cũng lấy TỪ SỔ. Xem khối "LUẬT ÁP THEO MÔN" ở đầu tệp trước khi đổi. */
+  const mon = ct.mon || 'toan';
 
-  const o = (x) => x.answerKey.parts || [{ value: x.answerKey.value, label: '' }];
+  /**
+   * Các Ô của một câu, quy về MỘT hình dạng `{label, value, options}`.
+   *
+   * Dữ liệu khai nút bằng HAI cách khác nhau, và bản đầu của tệp này chỉ biết một:
+   *
+   *   · nhiều ô  → `answerKey.parts[].options`      ← chỉ cách này được soi
+   *   · một ô    → `choices` + `answerKey.choice`   ← 244 câu, KHÔNG được soi
+   *
+   * Nghĩa là luật 2 (mồi nhử) và luật 3 (đáp án phải nằm trong nút) chưa từng chạy
+   * cho 244 câu ấy — gồm cả câu trắc nghiệm của bốn quyển Toán. Cổng vẫn xanh suốt,
+   * vì nó đếm 0 ô cần soi rồi kết luận "không có lỗi nào".
+   *
+   * Đây đúng là kiểu hỏng tệ nhất của một cổng: không báo sai, chỉ lặng lẽ không
+   * kiểm gì.
+   */
+  const o = (x) => {
+    if (x.answerKey.parts) return x.answerKey.parts;
+    if (Array.isArray(x.choices) && x.choices.length) {
+      return [{ label: '', value: x.answerKey.choice, options: x.choices }];
+    }
+    /* Câu ĐÚNG/SAI là HAI NÚT, không phải ô gõ. Không khai ra thì luật 1 thấy
+       `value: true` → chuỗi "true" → "không phải số" → báo là ô gõ chữ, và cả ba
+       quyển đọc chậm đỏ oan ngay khi khối quiz được đưa vào tầm soi. */
+    if (x.format === 'tf' && typeof x.answerKey.value === 'boolean') {
+      return [{ label: '', value: x.answerKey.value ? 'ĐÚNG' : 'SAI', options: ['ĐÚNG', 'SAI'] }];
+    }
+    return [{ value: x.answerKey.value, label: '' }];
+  };
 
   /* ── luật 3 ── */
   const ngoaiNut = [];
@@ -136,11 +194,27 @@ for (const [ma, ct] of Object.entries(dk)) {
   t(`${ma} · đáp án bấm chọn nằm trong danh sách nút`, ngoaiNut.length === 0);
   in5(ngoaiNut);
 
-  /* ── luật 2 ── */
+  /* ── luật 2 (Toán) · luật 2A (Tiếng Anh) ── */
   const moiHong = [];
   for (const x of cham) {
     for (const p of o(x)) {
       if (!p.options) continue;
+
+      if (mon === 'tienganh') {
+        /* Dạng "mồi vô tình cũng đúng" của tiếng Anh KHÔNG phải chuyện giá trị số,
+           mà là hai nút chỉ khác nhau ở ba chỗ bé không phân biệt nổi: chữ hoa,
+           dấu nháy cong ’ ↔ thẳng ', và dấu chấm cuối. Bé bấm nút nào cũng phải
+           được điểm, mà bộ chấm chỉ nhận đúng một — nên bé bấm ĐÚNG mà máy báo SAI. */
+        const dung = chuanTA(p.value);
+        for (const c of p.options) {
+          if (String(c) === String(p.value)) continue;
+          if (chuanTA(c) === dung) {
+            moiHong.push(`${x.id} [${p.label}]: mồi "${c}" trùng đáp án "${p.value}"`);
+          }
+        }
+        continue;
+      }
+
       /* Chỉ soi khi đáp án là MỘT CON SỐ TRẦN. Đáp án là biểu thức thì câu hỏi
          đang hỏi DẠNG VIẾT, mà dạng thì không so bằng giá trị được. */
       if (!laSo(p.value)) continue;
@@ -172,25 +246,52 @@ for (const [ma, ct] of Object.entries(dk)) {
   t(`${ma} · ô nào cũng có nhãn và nhãn không đưa sẵn đáp án`, nhanHong.length === 0);
   in5(nhanHong);
 
-  if (!docCham) {
+  if (mon === 'tienganh') {
+    /* ── luật 1A · Ô GÕ CỦA TIẾNG ANH ──
+       Luật 1 gốc cấm ô gõ chữ. Ở đây gõ chữ CHÍNH LÀ bài, nên không cấm được — mà
+       bỏ trống thì mất hàng rào. Thay bằng hai điều kiện, mỗi điều kiện chặn một
+       lỗi đã thấy trước khi nó xảy ra:
+
+         (a) chỉ chữ Latin KHÔNG DẤU và dấu câu tiếng Anh. Chặn việc lỡ đưa đáp án
+             tiếng Việt có dấu vào ô gõ ("quả bóng") — bé 6 tuổi không gõ nổi, và
+             đó cũng không phải thứ bài này kiểm;
+         (b) không dài quá câu dài nhất của quyển. Bé 6 tuổi gõ ~10 ký tự/phút; một
+             ô 60 ký tự là bỏ cuộc chứ không phải làm sai. */
+    const DAI_NHAT = 46;   // "How many windows can you see? - I can see six."
+    const goHong = [];
+    for (const x of cham) {
+      for (const p of o(x)) {
+        const v = String(p.value ?? '').trim();
+        if (!v || p.options) continue;
+        if (!/^[A-Za-z0-9 '\-.,?!]+$/.test(v)) {
+          goHong.push(`${x.id} [${p.label || ''}] → "${v}" có ký tự gõ không được`);
+        } else if (v.length > DAI_NHAT) {
+          goHong.push(`${x.id} [${p.label || ''}] → dài ${v.length} ký tự (quá ${DAI_NHAT})`);
+        }
+      }
+    }
+    t(`${ma} · ô gõ tiếng Anh gõ được bằng bàn phím thường và không quá dài`,
+      goHong.length === 0);
+    in5(goHong);
+  } else if (!docCham) {
     console.log(`   ${ma}: ${bais.length} bài · luyện ${chamLuyen.length}/${cauLuyen.length}`
     + ` · sát hạch ${chamKy.length}/${cauKy.length} chấm máy`
       + ' · nhịp đọc nhanh nên KHÔNG áp luật "cấm ô gõ chữ"');
     continue;
-  }
-
-  /* ── luật 1 · chỉ quyển ĐỌC CHẬM ── */
-  const goChu = [];
-  for (const x of cham) {
-    if (x.answerKey.values) continue;
-    for (const p of o(x)) {
-      const v = String(p.value ?? '').trim();
-      if (!v || p.options) continue;
-      if (!laSo(v)) goChu.push(`${x.id} [${p.label || ''}] → ${v}`);
+  } else {
+    /* ── luật 1 · chỉ quyển ĐỌC CHẬM của môn TOÁN ── */
+    const goChu = [];
+    for (const x of cham) {
+      if (x.answerKey.values) continue;
+      for (const p of o(x)) {
+        const v = String(p.value ?? '').trim();
+        if (!v || p.options) continue;
+        if (!laSo(v)) goChu.push(`${x.id} [${p.label || ''}] → ${v}`);
+      }
     }
+    t(`${ma} · mọi ô là điền SỐ hoặc BẤM CHỌN (quyển đọc chậm)`, goChu.length === 0);
+    in5(goChu);
   }
-  t(`${ma} · mọi ô là điền SỐ hoặc BẤM CHỌN (quyển đọc chậm)`, goChu.length === 0);
-  in5(goChu);
 
   /* ── luật 5 · ngưỡng phủ, đo RIÊNG hai phần ──
      Gộp chung thì con số nói dối theo cả hai chiều: quyển làm tốt phần luyện tập mà
@@ -200,6 +301,10 @@ for (const [ma, ct] of Object.entries(dk)) {
      hai quyển đang chạy. Quyển nào ĐÃ khai ô nhập cho kỳ sát hạch thì bị soi ngay. */
   t(`${ma} · chấm máy ≥ 85% câu luyện tập (${chamLuyen.length}/${cauLuyen.length})`,
     cauLuyen.length === 0 || chamLuyen.length >= cauLuyen.length * 0.85);
+  if (cauQuiz.length) {
+    t(`${ma} · chấm máy ≥ 85% câu quiz cuối bài (${chamQuiz.length}/${cauQuiz.length})`,
+      chamQuiz.length >= cauQuiz.length * 0.85);
+  }
   if (chamKy.length) {
     t(`${ma} · chấm máy ≥ 85% câu kỳ sát hạch (${chamKy.length}/${cauKy.length})`,
       chamKy.length >= cauKy.length * 0.85);
@@ -211,8 +316,8 @@ for (const [ma, ct] of Object.entries(dk)) {
   const soO = cham.reduce((a, x) => a + (x.answerKey.parts?.length || 1), 0);
   const nut = cham.reduce((a, x) => a + o(x).filter((p) => p.options).length, 0);
   console.log(`   ${ma}: ${bais.length} bài · luyện ${chamLuyen.length}/${cauLuyen.length}`
-    + ` · sát hạch ${chamKy.length}/${cauKy.length} chấm máy`
-    + ` · ${soO} ô (${nut} bấm chọn) · đọc chậm`);
+    + ` · sát hạch ${chamKy.length}/${cauKy.length} · quiz ${chamQuiz.length}/${cauQuiz.length} chấm máy`
+    + ` · ${soO} ô (${nut} bấm chọn) · ${mon}${docCham ? ' · đọc chậm' : ''}`);
 }
 
 t(`soi được ít nhất hai quyển (${soQuyen})`, soQuyen >= 2);

@@ -13,6 +13,7 @@
  * fetch, không React, không Firebase — nên phép kiểm chạy được bằng node trên mọi ngả,
  * kể cả hai ngả bìa hay rơi vào hư không: quyển chưa học bài nào, và quyển đã xong hết.
  */
+import { chuongTrinhCua } from '../../../chung/lib/soQuyen.js';
 import {
   isMicroUnlocked, resumeSpot, ketQuaChuong, nguongDat, bacDaVung,
 } from './progress.js';
@@ -294,3 +295,34 @@ export function trinhDo(dsHocBa, progress, { gioCua = () => 0 } = {}) {
 }
 
 export { nguongDat };
+
+/* ─────────── kệ sách ───────────
+   Chuyển từ `index.js` sang đây, KHÔNG đổi một dòng logic nào. Lý do: `index.js`
+   import component `.jsx`, mà `node` không nạp được `.jsx` — nên mọi phép kiểm chạy
+   bằng node đều KHÔNG với tới được hàm này. Nó nằm ở đây thì cổng
+   `ranh_gioi.test.mjs` gọi thử được thật.
+
+   Vì sao phải gọi thử: giao ước ở `src/soMon.js` từng ghi tham số là `ma` trong khi
+   `KeSach.jsx` truyền cả MỤC chương trình. Môn Tiếng Anh làm theo lời ghi, và kệ
+   sách hiện "0 unit" cho quyển 16 bài — cổng chỉ soi TÊN hàm nên xanh suốt. */
+
+/** Mốc con động vào một bài, tính bằng mili giây; 0 nghĩa là chưa có dấu. */
+const mocBai = (m) => (m?.at ? Date.parse(m.at) || 0 : 0);
+
+/**
+ * Tiến độ một quyển — cho kệ sách vẽ vạch.
+ * `ct` là CẢ MỤC chương trình (có `ma`, `soBai`), không phải mã.
+ */
+export function tienDoQuyen(tienDo, ct) {
+  const micros = tienDo?.micros || {};
+  const cua = Object.entries(micros).filter(([id]) => chuongTrinhCua(id) === ct.ma);
+  const xong = cua.filter(([, m]) => m.pass).length;
+  const tong = ct.soBai || cua.length || 1;
+  return {
+    xong,
+    dangLam: cua.length,
+    tong,
+    phanTram: Math.round((xong / tong) * 100),
+    gio: cua.reduce((s, [, m]) => Math.max(s, mocBai(m)), 0),
+  };
+}

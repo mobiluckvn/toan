@@ -12,6 +12,7 @@
  *   B · CÔNG BẰNG VÀ THÚC ĐƯỢC — bé lớp 2 phải có cửa thắng bé lớp 5; cày điểm phải
  *      bị chặn; bé ngoài Top 20 vẫn phải thấy mình và thấy khoảng cách tới người trên.
  */
+import { readFileSync } from 'node:fs';
 import {
   SAO, TRAN_SAO_NGAY, ngayVN, saoTrongKhoang, chuoiNgay, tenHien, xepHang, buildBangXepHang,
 } from '../functions/src/bangxephang.js';
@@ -204,14 +205,30 @@ t('ranh giới ngày tính theo giờ Việt Nam',
   t('bảng rỗng thì không vẽ bộ lọc', dsLop([]).length === 0);
 }
 
-/* ═══════════ K · LỚP CON KHAI ĐƯỢC: 2 → 12 ═══════════
+/* ═══════════ K · LỚP CON KHAI ĐƯỢC ═══════════
    Bản đầu của màn hồ sơ chỉ cho chọn 4·5·6, nên anh chị lớp 7-12 phải khai sai ngay
    ở màn đầu tiên — mà con số ấy đi thẳng vào bảng xếp hạng lẫn vào bậc xuất phát của
-   vòng luyện chủ đề. */
+   vòng luyện chủ đề.
+
+   Phép kiểm này TỪNG so với đúng chuỗi '2,3,...,12', và thế là thêm Tiếng Anh lớp 1
+   — mở danh sách xuống lớp 1 cho bé 6 tuổi khai đúng lớp mình — là cổng đỏ dù việc
+   làm hoàn toàn đúng. Cùng loại "ghim cứng theo hiện trạng" với chuỗi thứ tự kệ
+   sách. Nên soi LUẬT chứ không soi danh sách: liền mạch, không trùng, tới hết 12,
+   và phủ mọi lớp đang có sách. */
 {
   const { LOP_HOC, LOP_MAC_DINH, lopHopLe } = await import('../src/mon/toan/lib/noiDung.js');
-  t('khai được từ lớp 2 đến lớp 12',
-    LOP_HOC.join() === '2,3,4,5,6,7,8,9,10,11,12');
+  t(`lớp khai được liền mạch tới 12 (${LOP_HOC[0]} → ${LOP_HOC[LOP_HOC.length - 1]})`,
+    LOP_HOC.every((g, i) => i === 0 || g === LOP_HOC[i - 1] + 1)
+    && LOP_HOC[LOP_HOC.length - 1] === 12);
+  {
+    const dkFile = new URL('../public/content/chuong_trinh.json', import.meta.url).pathname;
+    const lopCoSach = [...new Set(Object.values(
+      JSON.parse(readFileSync(dkFile, 'utf8')).chuongTrinh || {},
+    ).map((c) => c.lop).filter(Number.isFinite))];
+    const thieu = lopCoSach.filter((g) => !LOP_HOC.includes(g));
+    t(`phủ mọi lớp đang có sách (${lopCoSach.sort((a, b) => a - b).join('·')})`,
+      thieu.length === 0);
+  }
   t('lớp mặc định nằm trong danh sách', LOP_HOC.includes(LOP_MAC_DINH));
   t('lớp lạ bị chặn, lùi về mặc định',
     lopHopLe(99) === LOP_MAC_DINH && lopHopLe(0) === LOP_MAC_DINH
