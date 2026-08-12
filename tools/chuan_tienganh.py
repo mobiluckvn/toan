@@ -239,6 +239,8 @@ def chuan(lop: int, bu: dict) -> dict:
             "trang": u.get("page"),
             "nang_luc": ub.get("nang_luc") or u.get("competences") or [],
             "nang_luc_en": u.get("competences") or [],
+            # Kịch bản đối đáp — bản đồ không có, soạn tay ở lopN_bu.json.
+            "kich_ban_noi": (bu.get("kich_ban_noi") or {}).get(u["id"]),
             "phonics": pho,
             "tu": ds,
             "mau_cau": mau_cau_cua_unit(u, nut, canh, nguoc, day_mau_cau),

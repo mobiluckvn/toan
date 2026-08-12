@@ -664,6 +664,9 @@ def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
                 "khacVoi": u["mau_cau"][0].get("khac_voi"),
             } if u["mau_cau"] else None),
             "misconceptions": [nham] if nham else [],
+            # Hội thoại: việc CUỐI của chuỗi nghe → hiểu → ráp câu → gõ → nói.
+            # Bé phải nghe người kia nói gì rồi mới biết mình đáp gì.
+            "hoiThoai": u.get("kich_ban_noi"),
         },
         "lecture": {"screens": man},
         "workedExample": {

@@ -2,7 +2,12 @@ import React, { useEffect, useMemo, useState } from 'react';
 import NutNghe, { NutNgheDoan } from './NutNghe.jsx';
 import CauHoi from './CauHoi.jsx';
 import HinhVe from './HinhVe.jsx';
+import NutNoi from './NutNoi.jsx';
+import HoiThoai from './HoiThoai.jsx';
 import { napBai, napSoAm, hangXom } from '../lib/noiDung.js';
+import { maCua } from './NutNghe.jsx';
+
+const maCauAm = (c) => maCua(c, 'en');
 
 /**
  * MỘT BÀI TIẾNG ANH — năm chặng, đúng nhịp bốn quyển Toán đang dùng.
@@ -16,7 +21,7 @@ import { napBai, napSoAm, hangXom } from '../lib/noiDung.js';
  *    hình là để nhìn cho quen mặt, còn nội dung thì vào bằng tai.
  *  · Không có thanh đếm ngược, không có điểm trừ. Sai thì thử lại.
  */
-export default function BaiHoc({ id, tienDo, onXongBai, onThoat }) {
+export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, tenBe = 'Bo' }) {
   const [bai, datBai] = useState(null);
   const [loi, datLoi] = useState(null);
   const [chang, datChang] = useState(0);
@@ -43,7 +48,12 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat }) {
   }
   if (!bai) return <Khung onThoat={onThoat} ten="Đang mở bài…"><p className="text-mute">…</p></Khung>;
 
-  const CHANG = ['Mở bài', 'Giảng', 'Bài mẫu', 'Luyện tập', 'Sát hạch'];
+  /* NÓI CHUYỆN đứng SAU luyện tập và TRƯỚC sát hạch, và đó là chủ ý: bé phải ráp
+     được câu bằng tay (bậc 3) và gõ được (bậc 4) rồi mới nói ra miệng được. Đặt
+     trước luyện tập là bắt bé nói thứ nó chưa ráp nổi. */
+  const coHoiThoai = !!bai.knowledgeCore?.hoiThoai;
+  const CHANG = ['Mở bài', 'Giảng', 'Bài mẫu', 'Luyện tập',
+    ...(coHoiThoai ? ['Nói chuyện'] : []), 'Sát hạch'];
   const buoc = (n) => datChang(Math.max(0, Math.min(CHANG.length - 1, n)));
 
   return (
@@ -51,10 +61,17 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat }) {
       <ThanhChang ten={CHANG} tai={chang} onChon={buoc} />
 
       {chang === 0 && <MoBai bai={bai} onTiep={() => buoc(1)} />}
-      {chang === 1 && <Giang bai={bai} onTiep={() => buoc(2)} />}
+      {chang === 1 && <Giang bai={bai} onTiep={() => buoc(2)} onNoi={onNoi} />}
       {chang === 2 && <BaiMau bai={bai} onTiep={() => buoc(3)} />}
       {chang === 3 && <LuyenTap bai={bai} onTiep={() => buoc(4)} />}
-      {chang === 4 && (
+      {coHoiThoai && chang === 4 && (
+        <HoiThoai
+          hoiThoai={bai.knowledgeCore.hoiThoai}
+          tenBe={tenBe}
+          onXong={(k) => { onNoi?.('hoiThoai', k); buoc(5); }}
+        />
+      )}
+      {chang === CHANG.length - 1 && (
         <SatHach
           bai={bai}
           onXong={(kq) => onXongBai(kq, hangXom(id).sau)}
@@ -135,7 +152,7 @@ function MoBai({ bai, onTiep }) {
 
 /* ─────────── chặng 2 · giảng ─────────── */
 
-function Giang({ bai, onTiep }) {
+function Giang({ bai, onTiep, onNoi }) {
   const K = Object.fromEntries(bai.knowledgeCore.statements.map((s) => [s.id, s]));
   const man = bai.lecture.screens.filter((m) => m.kind === 'explain');
   const bay = bai.knowledgeCore.misconceptions?.[0];
@@ -146,7 +163,7 @@ function Giang({ bai, onTiep }) {
   if (het) {
     return (
       <section className="flex flex-col gap-4">
-        <TuVung bai={bai} />
+        <TuVung bai={bai} onNoi={onNoi} />
         <MauCau mc={bai.knowledgeCore.mauCau} />
         {bay && <ChoDeNham bay={bay} man={traps} />}
         <NutTiep onClick={onTiep} />
@@ -169,8 +186,13 @@ function Giang({ bai, onTiep }) {
   );
 }
 
-function TuVung({ bai }) {
+function TuVung({ bai, onNoi }) {
+  /* Các từ KHÁC của bài — để bộ chấm bắt được việc bé đọc "dog" thành "duck".
+     Hai từ ấy cùng một unit, nhầm sang nhau mà vẫn điểm cao thì bài nói vô nghĩa. */
+  const cungBai = bai.knowledgeCore.vocabulary.map((x) => x.tu);
+  const [noiTu, datNoiTu] = useState(null);
   return (
+    <div className="flex flex-col gap-3">
     <div className="grid gap-3 sm:grid-cols-2">
       {bai.knowledgeCore.vocabulary.map((v) => (
         <div key={v.tu} className="flex items-center gap-3 rounded-xl2 border-2 border-line bg-white p-3">
@@ -183,8 +205,30 @@ function TuVung({ bai }) {
             <p className="text-ink">{v.nghia}</p>
           </div>
           <NutNghe ma={v.am} nhan={`Nghe từ ${v.tu}`} />
+          <button type="button" onClick={() => datNoiTu(noiTu === v.tu ? null : v.tu)}
+            aria-label={`Nói từ ${v.tu}`}
+            className={`h-11 w-11 flex-none rounded-full border-2 text-xl transition
+              focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
+              ${noiTu === v.tu ? 'border-teal bg-teal text-white'
+                : 'border-teal bg-white text-teal-dark hover:bg-teal-pale'}`}>
+            <span aria-hidden="true">🎤</span>
+          </button>
         </div>
       ))}
+    </div>
+    {/* Mỗi lúc chỉ MỘT ô nói mở ra: hai micro cùng bật thì máy nghe lẫn, và bé
+        cũng không biết đang được hỏi từ nào. */}
+    {noiTu && (
+      <NutNoi
+        key={noiTu}
+        cau={noiTu}
+        loai="tu"
+        maAm={bai.knowledgeCore.vocabulary.find((x) => x.tu === noiTu)?.am}
+        doiThu={cungBai}
+        nhan={`Nói từ “${noiTu}”`}
+        onXong={(k) => onNoi?.(noiTu, k)}
+      />
+    )}
     </div>
   );
 }
@@ -236,6 +280,13 @@ function MauCau({ mc }) {
           chỗ con thay được — đổi chữ ở đó là ra câu mới.
         </p>
       )}
+
+      {/* Nói cả câu — bậc cao hơn nói từ, nên đặt SAU phần tách mẩu: bé phải thấy
+          câu gồm những gì rồi mới nói được nó. */}
+      <div className="mt-4">
+        <NutNoi cau={mc.cau} loai="cau" maAm={maCauAm(mc.cau)}
+                nhan={`Nói cả câu “${mc.cau}”`} />
+      </div>
 
       {mc.khacVoi && (
         <div className="mt-4 rounded-xl2 border-l-4 border-teal bg-teal-pale p-3">

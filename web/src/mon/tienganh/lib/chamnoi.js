@@ -1,0 +1,266 @@
+/**
+ * CHẤM BÀI NÓI — so lời bé đọc với câu mẫu, cho điểm trên thang 10.
+ *
+ * JS thuần, không đụng micro, không đụng React: mọi phép chấm ở đây kiểm được bằng
+ * `node` mà không cần trình duyệt. Phần nghe nằm ở `nghenoi.js`.
+ *
+ * ── VÌ SAO KHÔNG SO CHUỖI THÔ ──
+ * Máy nhận dạng tiếng nói (STT) trả về chữ đã qua tay nó: viết tắt bung ra
+ * ("I'm" → "I am"), số thành chữ số ("six" → "6"), thêm dấu câu, thêm "um". Bé đọc
+ * ĐÚNG mà so chuỗi thô thì trượt. Nên phải TIỀN XỬ LÝ cả hai vế về một dạng trước
+ * khi so — đó là chỗ quyết định độ chính xác, không phải công thức chấm.
+ *
+ * ── VÀ VÌ SAO KHÔNG NỚI PHÁT ÂM QUÁ TAY ──
+ * Cám dỗ lớn nhất là chấm thật rộng cho bé vui. Nhưng `dog` và `duck` là HAI TỪ
+ * CÙNG MỘT UNIT: bé đọc nhầm sang từ kia mà vẫn 10 điểm thì bài nói thành vô nghĩa.
+ * Nên bộ chấm nhận thêm danh sách TỪ ĐANG CẠNH TRANH (các từ khác của unit), và nếu
+ * lời bé giống một từ khác hơn giống từ đích thì hạ điểm — kèm lời nói rõ bé vừa
+ * đọc thành từ nào. Đó là phản hồi có ích, không phải lời chê.
+ */
+
+/* ─────────────────────────── TIỀN XỬ LÝ ─────────────────────────── */
+
+/** Viết tắt → dạng đầy đủ. STT hay trả dạng đầy đủ, câu mẫu thì viết tắt. */
+const VIET_TAT = [
+  [/\bi'm\b/g, 'i am'], [/\bhe's\b/g, 'he is'], [/\bshe's\b/g, 'she is'],
+  [/\bit's\b/g, 'it is'], [/\bthat's\b/g, 'that is'], [/\bthere's\b/g, 'there is'],
+  [/\bwhat's\b/g, 'what is'], [/\bwe're\b/g, 'we are'], [/\bthey're\b/g, 'they are'],
+  [/\byou're\b/g, 'you are'], [/\bcan't\b/g, 'cannot'], [/\bdon't\b/g, 'do not'],
+  [/\bisn't\b/g, 'is not'], [/\blet's\b/g, 'let us'],
+];
+
+/** Chữ số → chữ. STT trả "6" cho "six", "2" cho "two". */
+const SO_CHU = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
+  'eight', 'nine', 'ten'];
+
+/** Tiếng đệm khi bé ngập ngừng — bỏ đi, không tính là sai. */
+const DEM = new Set(['um', 'uh', 'erm', 'hmm', 'ah', 'oh', 'er', 'eh', 'mm']);
+
+/**
+ * Đưa một câu về dạng so được. Cả câu mẫu lẫn lời bé đều đi qua đây.
+ *
+ * Thứ tự CÓ NGHĨA: bung viết tắt TRƯỚC khi bỏ dấu nháy, nếu không "I'm" thành
+ * "im" và không còn khớp "i am" nữa.
+ */
+export function chuanHoa(s) {
+  let t = String(s ?? '').normalize('NFC').toLowerCase();
+  for (const [re, thay] of VIET_TAT) t = t.replace(re, thay);
+  t = t.replace(/[’‘`´]/g, "'");
+  for (const [re, thay] of VIET_TAT) t = t.replace(re, thay);   // sau khi gộp nháy
+  t = t.replace(/(\d+)/g, (m) => (Number(m) <= 10 ? SO_CHU[Number(m)] : m));
+  t = t.replace(/[^a-z0-9\s]/g, ' ');
+  return t.split(/\s+/).filter((w) => w && !DEM.has(w)).join(' ');
+}
+
+export const tach = (s) => chuanHoa(s).split(' ').filter(Boolean);
+
+/* Từ CHỨC NĂNG — nghe khó, và sai một chữ ở đây không phải là chưa thuộc bài.
+   Bé nói "This is dog" thay vì "This is a dog" thì vẫn đáng 8 điểm: nó nói được
+   cái nó định nói. Thiếu DANH TỪ mới là chưa thuộc. */
+const CHUC_NANG = new Set(['a', 'an', 'the', 'is', 'am', 'are', 'to', 'at', 'of',
+  'my', 'your', 'his', 'her', 'i', 'you', 'he', 'she', 'it', 'we', 'they',
+  'this', 'that', 'there', 'can', 'do', 'does', 'and', 'not', 'us']);
+
+/* ─────────────────────────── ĐỘ GIỐNG ─────────────────────────── */
+
+/** Khoảng cách sửa (Levenshtein). Dùng cho cả ký tự lẫn mảng từ. */
+export function khoangCach(a, b) {
+  const m = a.length, n = b.length;
+  if (!m) return n;
+  if (!n) return m;
+  let truoc = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i += 1) {
+    const nay = [i];
+    for (let j = 1; j <= n; j += 1) {
+      nay[j] = Math.min(
+        truoc[j] + 1, nay[j - 1] + 1,
+        truoc[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1),
+      );
+    }
+    truoc = nay;
+  }
+  return truoc[n];
+}
+
+/** 0..1 — 1 là giống hệt. */
+export function giongNhau(a, b) {
+  const x = String(a), y = String(b);
+  if (!x && !y) return 1;
+  const d = khoangCach([...x], [...y]);
+  return 1 - d / Math.max(x.length, y.length, 1);
+}
+
+/**
+ * Dãy con chung dài nhất, theo TỪ — đo bé có giữ đúng THỨ TỰ không.
+ * Thứ tự từ chính là ngữ pháp; nói đủ từ mà đảo lộn thì chưa phải nói được câu.
+ */
+function dayChung(a, b) {
+  const m = a.length, n = b.length;
+  const B = Array.from({ length: m + 1 }, () => new Array(n + 1).fill(0));
+  for (let i = 1; i <= m; i += 1) {
+    for (let j = 1; j <= n; j += 1) {
+      B[i][j] = a[i - 1] === b[j - 1]
+        ? B[i - 1][j - 1] + 1
+        : Math.max(B[i - 1][j], B[i][j - 1]);
+    }
+  }
+  return B[m][n];
+}
+
+/* ─────────────────────────── CHẤM ─────────────────────────── */
+
+const BAC = (d) => (d >= 9 ? 'xuatSac' : d >= 7 ? 'tot' : d >= 5 ? 'kha' : d >= 3 ? 'gan' : 'chuaRo');
+
+/** Làm tròn về thang 10, không bao giờ âm, không bao giờ quá 10. */
+const thang10 = (x) => Math.max(0, Math.min(10, Math.round(x * 10)));
+
+/**
+ * Chấm MỘT TỪ.
+ *
+ * @param dich   từ cần đọc, vd "dog"
+ * @param nghe   lời STT nghe được, vd "the dog" hoặc "duck"
+ * @param doiThu các từ khác CÙNG UNIT — để bắt việc bé đọc nhầm sang từ bên cạnh
+ */
+export function chamTu(dich, nghe, { doiThu = [] } = {}) {
+  const d = chuanHoa(dich);
+  const tuNghe = tach(nghe);
+  if (!tuNghe.length) return ket(0, 'khongNghe', { dich: d });
+
+  /* Bé hay nói cả cụm ("it's a dog", "the dog"). Lấy từ khớp NHẤT trong câu bé nói
+     chứ không so cả cụm — nói thừa không phải là nói sai. */
+  let tot = 0, tuTot = tuNghe[0];
+  for (const w of tuNghe) {
+    const g = giongNhau(d, w);
+    if (g > tot) { tot = g; tuTot = w; }
+  }
+  /* Cả cụm cũng thử, phòng từ ghép như "teddy bear". */
+  const gCum = giongNhau(d, tuNghe.join(' '));
+  if (gCum > tot) { tot = gCum; tuTot = tuNghe.join(' '); }
+
+  /* ĐỌC NHẦM SANG TỪ BÊN CẠNH — chỗ tuyệt đối không được nới.
+     `dog` và `duck` cùng một unit; nghe thành từ kia mà vẫn điểm cao thì bài nói
+     mất hết ý nghĩa. So với TỪNG đối thủ, ai giống hơn thì bé đã đọc ra từ ấy. */
+  let nhamThanh = null, gNham = 0;
+  for (const x of doiThu) {
+    const c = chuanHoa(x);
+    if (c === d) continue;
+    const g = Math.max(...tuNghe.map((w) => giongNhau(c, w)), giongNhau(c, tuNghe.join(' ')));
+    if (g > gNham) { gNham = g; nhamThanh = c; }
+  }
+  if (nhamThanh && gNham > tot + 0.05) {
+    /* Trần 3 điểm: bé CÓ nói, và nói rõ tới mức máy nhận ra một từ đã học — đáng
+       ghi nhận, nhưng không phải từ đang hỏi. */
+    return ket(Math.min(3, thang10(tot)), 'nhamTu',
+      { dich: d, nghe: tuTot, nhamThanh, doGiong: tot });
+  }
+
+  return ket(thang10(tot), null, { dich: d, nghe: tuTot, doGiong: tot });
+}
+
+/**
+ * Chấm MỘT CÂU.
+ *
+ * Ba phần, cộng lại thành 10:
+ *   6 điểm  TỪ NỘI DUNG — danh từ, động từ, màu… Thiếu chúng là chưa nói được ý.
+ *   2 điểm  THỨ TỰ      — đủ từ mà đảo lộn thì chưa phải một câu.
+ *   2 điểm  TỪ CHỨC NĂNG — "a", "is", "the". Nghe khó nhất, nên nhẹ điểm nhất,
+ *                          nhưng KHÔNG bỏ hẳn: chính chúng là chỗ bài đang dạy.
+ */
+export function chamCau(dich, nghe) {
+  const D = tach(dich);
+  const N = tach(nghe);
+  if (!N.length) return ket(0, 'khongNghe', { dich: D.join(' ') });
+  if (!D.length) return ket(0, null, { dich: '' });
+
+  const khop = (w, ds) => ds.some((x) => giongNhau(w, x) >= 0.8);
+  const noiDung = D.filter((w) => !CHUC_NANG.has(w));
+  const chucNang = D.filter((w) => CHUC_NANG.has(w));
+
+  const dNoiDung = noiDung.length ? noiDung.filter((w) => khop(w, N)).length / noiDung.length : 1;
+  const dChucNang = chucNang.length ? chucNang.filter((w) => khop(w, N)).length / chucNang.length : 1;
+  const dThuTu = dayChung(D, N) / D.length;
+
+  /* Nói THỪA nhiều thì trừ nhẹ — bé lan man chứ không sai. Trừ nặng là phạt oan
+     đứa nói cả câu dẫn ("I think this is a dog"). */
+  const thua = Math.max(0, N.length - D.length);
+  const phatThua = Math.min(0.1, thua * 0.02);
+
+  const diem = thang10(0.6 * dNoiDung + 0.2 * dThuTu + 0.2 * dChucNang - phatThua);
+  const thieu = noiDung.filter((w) => !khop(w, N));
+  return ket(diem, thieu.length ? 'thieuTu' : null, {
+    dich: D.join(' '), nghe: N.join(' '), thieu,
+    thieuChucNang: chucNang.filter((w) => !khop(w, N)),
+  });
+}
+
+function ket(diem, ly, them) {
+  return { diem, bac: BAC(diem), lyDo: ly, ...them };
+}
+
+/* ─────────────────────────── KHÍCH LỆ ─────────────────────────── */
+
+/**
+ * Lời cô nói sau khi chấm.
+ *
+ * Ba luật, rút từ chỗ bé 6 tuổi dễ bỏ cuộc nhất:
+ *   1. NÓI CÁI ĐÚNG TRƯỚC. Kể cả khi sai, bé vẫn vừa làm được một việc: mở miệng
+ *      nói tiếng Anh. Câu đầu tiên không bao giờ là lời chê.
+ *   2. NÓI RÕ PHẢI SỬA GÌ, bằng một việc cụ thể — "đọc chậm lại chữ cuối", không
+ *      phải "phát âm chưa chuẩn".
+ *   3. SO VỚI CHÍNH BÉ LẦN TRƯỚC, không so với ai khác. Hơn lần trước là thắng.
+ */
+export function loiKhen(kq, lanTruoc = null) {
+  const { diem, bac, lyDo } = kq;
+  const hon = lanTruoc != null && diem > lanTruoc;
+
+  if (lyDo === 'khongNghe') {
+    return { sao: 0, chinh: 'Cô chưa nghe thấy gì.',
+             them: 'Con bấm nút rồi nói to hơn một chút nhé.' };
+  }
+  if (lyDo === 'nhamTu') {
+    return { sao: 1, chinh: `Con nói rõ lắm — nhưng đó là chữ “${kq.nhamThanh}”.`,
+             them: `Lần này mình đọc “${kq.dich}” nhé. Nghe lại rồi thử tiếp.` };
+  }
+
+  const sao = diem >= 9 ? 3 : diem >= 7 ? 2 : diem >= 5 ? 1 : 0;
+  const chinh = {
+    xuatSac: 'Chuẩn luôn! Con đọc đúng rồi.',
+    tot: 'Gần đúng hẳn rồi, cô nghe rõ lắm.',
+    kha: 'Cô nghe ra rồi đấy.',
+    gan: 'Con nói được rồi — mình sửa một chút thôi.',
+    chuaRo: 'Cô nghe chưa rõ lắm.',
+  }[bac];
+
+  let them;
+  if (kq.thieu?.length) them = `Lần sau nhớ nói cả chữ “${kq.thieu[0]}” nhé.`;
+  else if (kq.thieuChucNang?.length) them = `Còn thiếu chữ nhỏ “${kq.thieuChucNang[0]}”.`;
+  else if (diem >= 9) them = 'Con nói lại một lần nữa cho quen miệng nhé.';
+  else them = 'Con nghe lại rồi đọc chậm hơn một chút nhé.';
+
+  return { sao, chinh: hon ? `Hơn lần trước rồi! ${chinh}` : chinh, them };
+}
+
+/**
+ * Chấm trên NHIỀU phương án máy nghe được, lấy phương án tốt nhất cho bé.
+ *
+ * Web Speech API trả về tới ba phương án. Với giọng trẻ con nói tiếng nước ngoài,
+ * phương án đúng RẤT HAY không đứng đầu — máy đoán theo xác suất của người bản ngữ.
+ * Chỉ đọc phương án đầu là phạt oan bé một cách có hệ thống.
+ *
+ * Lấy phương án tốt nhất KHÔNG phải là nới tay: bé chỉ được điểm cho cái bé thật sự
+ * nói ra, chỉ là mình không bắt bé chịu thay cho lần đoán trượt của máy.
+ */
+export function chamTot(cham, dich, phuongAn, opt) {
+  const ds = (Array.isArray(phuongAn) ? phuongAn : [phuongAn]).filter((x) => x != null);
+  if (!ds.length) return cham(dich, '', opt);
+  let tot = null;
+  for (const x of ds) {
+    const k = cham(dich, x, opt);
+    if (!tot || k.diem > tot.diem) tot = k;
+  }
+  return { ...tot, soPhuongAn: ds.length };
+}
+
+/** Đạt hay chưa — ngưỡng thấp có chủ ý, vì đây là lần ĐẦU bé nói tiếng Anh. */
+export const DAT = 6;
+export const datNoi = (diem) => diem >= DAT;

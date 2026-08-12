@@ -13,7 +13,7 @@ import { luuBai } from '../lib/duLieu.js';
  * thêm môn thứ hai không phải sửa một dòng nào của vỏ.
  */
 export default function ManTiengAnh({
-  tienDo, datTienDo, quyen, learnerId, view, setView, veKeSach,
+  tienDo, datTienDo, quyen, learnerId, hoSo, view, setView, veKeSach,
 }) {
   /* `quyen` vỏ truyền xuống là MÃ CHUỖI ('ta1'), không phải mục chương trình —
      `App.jsx` gọi `setQuyen(ma)`. Dùng thẳng thì `ct.bai` là undefined, danh sách
@@ -57,6 +57,9 @@ export default function ManTiengAnh({
         tienDo={tienDo}
         onThoat={() => setView({ page: 'home' })}
         onXongBai={(kq, sau) => xongBai(view.baiId, kq, sau)}
+        /* Biệt danh của chính bé đi vào đoạn hội thoại — bé nghe tên mình trong
+           một câu tiếng Anh. Đó là chỗ bài này khác mọi bài luyện phát âm khác. */
+        tenBe={(hoSo?.displayName || '').trim().split(/\s+/).pop() || 'Bo'}
       />
     );
   }
