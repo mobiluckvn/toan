@@ -416,3 +416,56 @@ export function cauThayThe(viec, tenBe = 'con') {
     : mau.cau;
   return { en, vi: `Cùng một mẫu câu, nay thay bằng “${dien}”. Con nói lại nhé.` };
 }
+
+/* ─────────── tách một dòng lẫn hai thứ tiếng ─────────── */
+
+/**
+ * TÁCH LỜI GIẢI THÍCH THEO THỨ TIẾNG.
+ *
+ * Bác bắt 13-08: "phần giải thích khi có từ tiếng Anh phát bằng tiếng Việt rất
+ * không okay." Đúng, và tệ ở chỗ kho này đã chốt luật ấy từ hồi làm dây chuyền âm
+ * — "mỗi dòng chỉ MỘT thứ tiếng" — rồi chính chỗ này vi phạm:
+ *
+ *     Con nói lại từ "ball" nhé, nghĩa là quả bóng.
+ *        → đọc cả dòng bằng vi-VN, và "ball" phát ra thành tiếng Việt
+ *
+ * Bé đang tập nhại mà nghe từ tiếng Anh đọc giọng Việt thì học sai đúng chỗ mình
+ * đang dạy. Cấm mô hình nhắc lại từ tiếng Anh cũng không xong: nhắc lại là việc
+ * TỐT ("con nói lại từ ball nhé"), chỉ có đọc sai giọng mới hỏng.
+ *
+ * ── VÌ SAO KHÔNG ĐOÁN NGÔN NGỮ ──
+ * Không cần bộ đoán tiếng nào cả: mình BIẾT TRƯỚC bé đang học những từ nào. Chỉ
+ * tách đúng những chuỗi nằm trong vốn từ và câu mẫu của bài — phép xác định, chạy
+ * được bằng `node`, và không bao giờ nhận nhầm một chữ tiếng Việt thành tiếng Anh.
+ *
+ * Tên bé (Bo, Minh An…) CỐ Ý không tách: đó là tên Việt, đọc giọng Việt mới đúng.
+ */
+export function tachTheoTieng(chu, von) {
+  const s = String(chu || '');
+  if (!s.trim() || !von) return [];
+
+  const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)].map((t) => t.tu);
+  const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)].map((c) => c.cau);
+  /* Câu TRƯỚC từ, và trong mỗi nhóm thì dài trước: "I like milk." phải khớp trọn
+     câu, đừng để nó bị xé thành "milk" rời rồi đọc lệch nhịp. */
+  const moc = [...cau, ...tu, ...LOI_LOP_HOC].filter(Boolean)
+    .sort((a, b) => b.length - a.length);
+  if (!moc.length) return [{ chu: s, tieng: 'vi' }];
+
+  const thoat = (x) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  /* Ranh giới từ hai đầu — nếu không, "can" khớp cả trong "cần", và "book" khớp
+     trong "bookmark". Dấu câu cuối câu mẫu đã nằm trong chính chuỗi mốc. */
+  const re = new RegExp(`(?<![\\p{L}])(${moc.map(thoat).join('|')})(?![\\p{L}])`, 'giu');
+
+  const ra = [];
+  let i = 0;
+  for (const m of s.matchAll(re)) {
+    if (m.index > i) ra.push({ chu: s.slice(i, m.index), tieng: 'vi' });
+    ra.push({ chu: m[0], tieng: 'en' });
+    i = m.index + m[0].length;
+  }
+  if (i < s.length) ra.push({ chu: s.slice(i), tieng: 'vi' });
+
+  /* Bỏ mẩu chỉ còn dấu câu hoặc khoảng trắng — đọc lên nghe như bị nấc. */
+  return ra.filter((x) => /[\p{L}\p{N}]/u.test(x.chu)).map((x) => ({ ...x, chu: x.chu.trim() }));
+}

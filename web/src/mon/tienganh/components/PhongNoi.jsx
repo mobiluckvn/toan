@@ -1,10 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import HinhVe from './HinhVe.jsx';
 import { hinhCuaTu, napBai, maBaiTruoc } from '../lib/noiDung.js';
-import { vonTu, tuTrongCau, UNIT_CU_TOI_DA } from '../lib/phongnoi.js';
+import { vonTu, tuTrongCau, tachTheoTieng, UNIT_CU_TOI_DA } from '../lib/phongnoi.js';
 import { hoiCoGiao, luuBuoi } from '../lib/goiPhongNoi.js';
 import { auth } from '../../../chung/lib/nenTang.js';
-import { docCapDoi, doc as docLen, docDuoc, coGiong, thoiDoc } from '../lib/doclen.js';
+import { doc as docLen, docDoan, docDuoc, coGiong, thoiDoc } from '../lib/doclen.js';
 import { batDauNghe, ngheDuoc, loiDocDuoc, xinMicroChiTiet, MICRO, TIENG } from '../lib/nghenoi.js';
 import { chamTot, chamCau, datNoi, loiKhen } from '../lib/chamnoi.js';
 
@@ -85,7 +85,13 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
       luuBuoi(auth?.currentUser?.uid, {
         maBuoi: maBuoi.current, quyen: 'ta1', baiId: bai?.id, tenBai: bai?.title, lichSu: sau,
       });
-      docCapDoi({ en: tra.en, vi: tra.vi });
+      /* Câu tiếng Anh đọc nguyên khối giọng en-GB; lời giải thích thì TÁCH theo
+         thứ tiếng — trong đó thường có lẫn chính từ bé đang học. */
+      (async () => {
+        thoiDoc();
+        if (tra.en) await docLen(tra.en, 'en-GB', { nhanh: 0.9 });
+        await docDoan(tachTheoTieng(tra.vi, von));
+      })();
     } catch (e) {
       /* Nói đúng chỗ hỏng. "Có lỗi xảy ra" là câu vô dụng nhất — bố mẹ không biết
          phải sửa gì, mà mấy lỗi ở đây thì mỗi lỗi một cách chữa hẳn. */
@@ -249,7 +255,7 @@ function LuotCo({ luot, bai, von }) {
       {luot.vi && (
         <div className="flex items-center gap-2">
           <p className="flex-1 text-ink">{luot.vi}</p>
-          <button type="button" onClick={() => docLen(luot.vi, 'vi-VN')}
+          <button type="button" onClick={() => docDoan(tachTheoTieng(luot.vi, von))}
             aria-label={`Nghe lại lời tiếng Việt: ${luot.vi}`}
             className="h-9 w-9 flex-none rounded-full border-2 border-line text-sm text-mute
               hover:border-navy hover:text-navy

@@ -94,3 +94,23 @@ export async function docCapDoi({ en, vi, nhanhEn = 0.9 } = {}) {
   if (en) await doc(en, 'en-GB', { nhanh: nhanhEn });
   if (vi) await doc(vi, 'vi-VN');
 }
+
+/**
+ * ĐỌC MỘT CHUỖI ĐOẠN, MỖI ĐOẠN MỘT THỨ TIẾNG.
+ *
+ * Lời giải thích của cô hay lẫn từ tiếng Anh vào câu tiếng Việt ("Con nói lại từ
+ * ball nhé"). Đọc cả dòng bằng vi-VN thì "ball" phát ra thành tiếng Việt — bé đang
+ * tập nhại sẽ học sai đúng chỗ mình đang dạy.
+ *
+ * Cùng một cách kho này đã làm cho nội dung tĩnh (`NutNgheDoan` trong NutNghe.jsx):
+ * mỗi đoạn một thứ tiếng, nối lại lúc phát. Khác ở chỗ kia có clip sẵn, ở đây máy
+ * tự đọc — nhưng luật thì y nguyên.
+ */
+export async function docDoan(ds = [], { nhanhEn = 0.9 } = {}) {
+  for (const d of ds) {
+    if (!d?.chu) continue;
+    const en = d.tieng === 'en';
+    // eslint-disable-next-line no-await-in-loop
+    await doc(d.chu, en ? 'en-GB' : 'vi-VN', { nhanh: en ? nhanhEn : 1 });
+  }
+}

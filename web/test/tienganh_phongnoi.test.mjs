@@ -18,7 +18,7 @@ import {
   UNIT_CU_TOI_DA, LUOT_GUI_TOI_DA, CHU_TOI_DA,
   vonCuaBai, vonTu, moiTuDuocDung, moiCauDuocDung,
   loiDan, catNguCanh, goiGui, docTraLoi, tuTrongCau, LOI_LOP_HOC,
-  viecTiepTheo, cauHopLe, cauThayThe, loaiOTrong,
+  viecTiepTheo, cauHopLe, cauThayThe, loaiOTrong, tachTheoTieng,
 } from '../src/mon/tienganh/lib/phongnoi.js';
 
 const bai = (id, tu, cau, hinh = []) => ({
@@ -336,4 +336,65 @@ test('chọn từ ÍT được nhắc nhất, không phải từ đầu bảng',
   const ls = [{ vai: 'may', en: 'ball' }, { vai: 'may', en: 'ball' }, { vai: 'may', en: 'bike' }];
   const v = viecTiepTheo({ von, lichSu: ls });
   assert.equal(v.tu.tu, 'book', 'book chưa được nhắc lần nào');
+});
+
+/* ═══════════ TÁCH LỜI GIẢI THÍCH THEO THỨ TIẾNG ═══════════ */
+
+const vonB01 = () => vonTu({ baiNay: B01, baiCu: [], daDat: false });
+
+test('từ tiếng Anh trong lời Việt được tách ra để đọc giọng Anh', () => {
+  /* Bác bắt 13-08: "phần giải thích khi có từ tiếng Anh phát bằng tiếng Việt rất
+     không okay". Bé đang tập nhại mà nghe `ball` đọc giọng Việt thì học sai đúng
+     chỗ mình đang dạy — mà kho này đã chốt "mỗi dòng chỉ MỘT thứ tiếng" từ lâu. */
+  const ds = tachTheoTieng('Con nói lại từ "ball" nhé, nghĩa là quả bóng.', vonB01());
+  assert.deepEqual(ds.map((x) => x.tieng), ['vi', 'en', 'vi']);
+  assert.equal(ds[1].chu, 'ball');
+});
+
+test('cả câu mẫu giữ nguyên KHỐI, không bị xé lẻ', () => {
+  /* Xé "Hi, I'm Bill." thành mấy mẩu rồi đọc rời thì mất nhịp câu — mà nhịp mới là
+     thứ bé đang tập. Nên khớp câu TRƯỚC, khớp từ SAU. */
+  const ds = tachTheoTieng("Cô vừa nói: Hi, I'm Bill. Bây giờ con lặp lại.", vonB01());
+  assert.equal(ds.filter((x) => x.tieng === 'en').length, 1);
+  assert.equal(ds.find((x) => x.tieng === 'en').chu, "Hi, I'm Bill.");
+});
+
+test('KHÔNG nhận nhầm chữ tiếng Việt thành từ tiếng Anh', () => {
+  /* Chỗ này mà sai thì lời giải thích tiếng Việt bị đọc lắp bắp giọng Anh giữa
+     chừng — nghe còn tệ hơn cái lỗi đang sửa. */
+  const von = vonTu({ baiNay: bai('Bx', ['can', 'hat', 'bag'], []), baiCu: [], daDat: false });
+  for (const c of ['Con cần cố gắng nhé.', 'Cái bàn có hạt dưa.', 'Bé mang bao gạo.']) {
+    const ds = tachTheoTieng(c, von);
+    assert.equal(ds.filter((x) => x.tieng === 'en').length, 0, `nhận nhầm trong: ${c}`);
+  }
+});
+
+test('tên bé KHÔNG bị tách — tên Việt thì đọc giọng Việt', () => {
+  const ds = tachTheoTieng('Tạm biệt Bo, con nói lại nhé.', vonB01());
+  assert.equal(ds.filter((x) => x.tieng === 'en').length, 0);
+});
+
+test('không mọc ra mẩu chỉ có dấu câu', () => {
+  /* Mẩu rỗng hoặc chỉ còn dấu chấm thì bộ đọc phát ra một tiếng nấc giữa câu. */
+  const ds = tachTheoTieng('ball. bike!', vonB01());
+  assert.ok(ds.every((x) => /[\p{L}\p{N}]/u.test(x.chu)), 'còn mẩu rỗng');
+  assert.deepEqual(ds.map((x) => x.chu), ['ball', 'bike']);
+});
+
+test('câu thuần Việt trả về đúng MỘT đoạn', () => {
+  const ds = tachTheoTieng('Con làm tốt lắm, cố lên nhé!', vonB01());
+  assert.equal(ds.length, 1);
+  assert.equal(ds[0].tieng, 'vi');
+});
+
+test('câu rỗng không làm vỡ gì', () => {
+  assert.deepEqual(tachTheoTieng('', vonB01()), []);
+  assert.deepEqual(tachTheoTieng('abc', null), []);
+});
+
+test('màn phòng nói KHÔNG đọc lời Việt bằng một giọng duy nhất nữa', () => {
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /docDoan\(tachTheoTieng\(/, 'lời Việt phải đi qua phép tách');
+  assert.doesNotMatch(pn, /docLen\([^)]*\.vi[^)]*'vi-VN'/, 'không được đọc thẳng cả dòng vi');
 });
