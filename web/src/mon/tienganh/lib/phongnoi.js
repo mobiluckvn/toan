@@ -570,6 +570,7 @@ export function loiKet(buoi) {
   if (buoi.trangThai === 'xongGioi') {
     return {
       bieuTuong: '🎉',
+      en: 'Well done! Goodbye!',
       tieuDe: 'Con nói được rồi!',
       chu: `Con nói đúng ${buoi.datLien} câu liền. Hôm nay thế là giỏi lắm — mai mình nói tiếp nhé.`,
     };
@@ -577,11 +578,36 @@ export function loiKet(buoi) {
   if (buoi.trangThai === 'hetGio') {
     return {
       bieuTuong: '⏰',
+      en: 'Good job! Goodbye!',
       tieuDe: 'Hết giờ nói chuyện rồi',
       chu: `Con đã nói ${buoi.soLuotBe} lượt, đúng ${buoi.soDat} lượt. Nghỉ mắt một lát rồi mai mình nói tiếp nhé.`,
     };
   }
   return null;
+}
+
+/**
+ * CÂU KẾT CŨNG PHẢI NGHE ĐƯỢC — bác dặn 14-08.
+ *
+ * Cả buổi bé nghe từng câu một, tới lúc chia tay thì màn hình đưa ra một khối chữ
+ * im lặng. Bé lớp 1 chưa đọc chữ: với bé thì phòng học vừa tắt tiếng giữa chừng.
+ * Mà lời chia tay lại đúng là thứ ĐÁNG học nhất — ngày nào cũng dùng.
+ *
+ * ── VÌ SAO CHỈ ĐƯỢC DÙNG LỜI LỚP HỌC ──
+ * Câu này do MÁY CON viết, không qua mô hình, nên không có gì chặn nó dùng từ lạ.
+ * "See you tomorrow." nghe rất tự nhiên — và có ba từ bé chưa từng gặp. Câu cuối
+ * cùng của buổi mà bé không nhại nổi thì buổi học kết thúc bằng một thất bại.
+ *
+ * Nên bó vào đúng `LOI_LOP_HOC`, và có cổng đếm từng chữ. Muốn thêm câu chia tay
+ * mới thì thêm vào `LOI_LOP_HOC` trước — chỗ ấy mô hình cũng dùng, nên hai bên
+ * không bao giờ lệch nhau.
+ */
+const chuCai = (s) => String(s || '').toLowerCase().split(/[^a-z']+/).filter(Boolean);
+
+export function tuLoiKetHopLe(en) {
+  const cho = new Set(LOI_LOP_HOC.flatMap(chuCai));
+  const tu = chuCai(en);
+  return tu.length > 0 && tu.every((t) => cho.has(t));
 }
 
 /* ─────────── hồ sơ của chính bé ─────────── */

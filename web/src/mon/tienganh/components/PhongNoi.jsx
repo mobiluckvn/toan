@@ -85,11 +85,21 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
      đồng hồ 20 phút tự tới nơi. Bản đầu viết `Date.now() + nhip * 0`: chạy đúng,
      nhưng nhân 0 thì ai đọc cũng tưởng lỗi rồi xoá đi, và xoá là đồng hồ chết. */
   const [, datNhip] = useState(0);
-  const dauDs = useRef(null);
+  /* Bé đang nói lại ô nào — để đúng nút ấy đổi mặt, chứ không phải cả danh sách. */
+  const [laiO, datLaiO] = useState(null);
+  /* Đếm số buổi trong một lần mở phòng. Chỉ để bắt effect chào chạy lại sau khi bé
+     bấm "nói lại từ đầu" — xem `noiLaiTuDau`. */
+  const [lanBuoi, datLanBuoi] = useState(0);
+  const cuoiDs = useRef(null);
   const phien = useRef(null);
   const daChao = useRef(false);
+  const daDocKet = useRef(false);
 
-  const cauCoVuaNoi = [...lichSu].reverse().find((x) => x.vai === 'may')?.en || '';
+  /* `findLast` chứ không `[...lichSu].reverse().find(...)`: cùng kết quả, nhưng
+     không phải chép cả mảng, và quan trọng hơn — nói thẳng ý "câu CUỐI của cô".
+     Bản cũ có chữ `.reverse()` nằm ngay cạnh chỗ bày danh sách, mà chiều bày thì
+     vừa đổi hai lần; để lẫn vào đấy là sớm muộn có người sửa nhầm. */
+  const cauCoVuaNoi = lichSu.findLast((x) => x.vai === 'may')?.en || '';
   const buoi = tinhBuoi({ lichSu, batDau: batDau.current, bayGio: Date.now() });
   const ket = loiKet(buoi);
   const hoiThich = cauHoiSoThich(von);
@@ -98,10 +108,47 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
   /* Nhịp 30 giây chỉ để VẼ LẠI, không đụng gì tới dữ liệu — hết 20 phút mà màn
      hình không tự biết thì bé cứ nói tiếp, rồi đúng lượt sau mới bị cắt ngang. */
   useEffect(() => { const id = setInterval(() => datNhip((n) => n + 1), 30000); return () => clearInterval(id); }, []);
-  /* Có lượt mới thì đưa ĐẦU danh sách vào tầm mắt — tin mới nằm trên cùng. Bản
-     trước cuộn xuống đáy, nay làm thế là chạy ngược hướng và bé mất dấu câu vừa
-     nói. */
-  useEffect(() => { dauDs.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }, [lichSu, dangHoi]);
+  /**
+   * CÓ LƯỢT MỚI THÌ TỰ CUỘN XUỐNG — bác chốt 14-08.
+   *
+   * Đã đi qua hai chiều và chiều nào cũng có chỗ hỏng, nên ghi lại cả hai kẻo mai
+   * kia lại lật:
+   *
+   *   · MỚI Ở DƯỚI (bản đầu) — đúng lối trò chuyện ai cũng quen, nhưng KHÔNG tự
+   *     cuộn: bé nói xong, cô trả lời ở dưới màn hình, bé ngồi nhìn câu cũ.
+   *   · MỚI Ở TRÊN (bản 13-08) — chữa được chuyện phải cuộn, nhưng đọc ngược đời:
+   *     bé muốn xem lại buổi học thì phải đọc từ dưới lên.
+   *
+   * Nay giữ chiều tự nhiên VÀ tự cuộn — cái thiếu của bản đầu chỉ là mấy dòng này,
+   * chứ không phải chiều bày. Neo đặt sau NÚT MICRO chứ không sau danh sách: cuộn
+   * tới đó là bé thấy cùng lúc câu cô vừa nói và cái nút phải bấm tiếp.
+   *
+   * ⚠ Xoá dòng này thì không có gì đỏ cả — chỉ là bé không bao giờ thấy cô trả
+   * lời. Có cổng canh, đừng dọn đi.
+   */
+  useEffect(() => {
+    cuoiDs.current?.scrollIntoView({ block: 'end', behavior: 'smooth' });
+  }, [lichSu, dangHoi, buoi.trangThai]);
+
+  /**
+   * ĐỌC LUÔN CÂU KẾT — bác dặn 14-08: "câu kết thúc cũng nên chuyển sang Voice".
+   *
+   * Cả buổi mọi thứ đều có tiếng, tới lúc chia tay thì màn hình im bặt. Với bé chưa
+   * đọc chữ thì đó là phòng học tắt tiếng giữa chừng.
+   *
+   * Chốt bằng `ref` chứ không bằng deps: `ket` là object dựng lại mỗi lần vẽ, mà
+   * nhịp 30 giây thì cứ 30 giây vẽ một lần — để nó vào deps là cứ nửa phút cô lại
+   * chào tạm biệt một lần.
+   */
+  useEffect(() => {
+    if (!ket || daDocKet.current) return;
+    daDocKet.current = true;
+    (async () => {
+      thoiDoc();
+      if (ket.en) await docLen(ket.en, 'en-GB', { nhanh: 0.9 });
+      await docDoan(tachTheoTieng(ket.chu, von));
+    })();
+  }, [ket, von]);
 
   /* Gửi một lượt lên cô giáo. `themVaoLichSu` nhận lịch sử ĐÃ có lượt của bé —
      đọc state ngay tại đây thì lượt vừa thêm chưa kịp vào, và cô trả lời câu cũ. */
@@ -145,13 +192,23 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
     if (daChao.current || !bai || !kbXong) return;
     daChao.current = true;
     guiLuot([{ vai: 'be', chu: 'Chào cô, con muốn tập nói.' }]);
-  }, [bai, kbXong, guiLuot]);
+  }, [bai, kbXong, guiLuot, lanBuoi]);
 
-  const noi = useCallback(async () => {
-    if (dangNghe) { phien.current?.dung(); return; }
+  /**
+   * GHI ÂM MỘT LẦN — chỉ lo cái micro, không biết gì về cuộc trò chuyện.
+   *
+   * Tách ra vì nay có HAI chỗ cần nghe bé nói: lượt mới (`noi`) và nói lại một câu
+   * cũ (`noiLai`). Chép đôi cái đoạn xin quyền · bật máy · bắt lỗi này là sớm muộn
+   * hai bản lệch nhau, mà lệch ở đây thì hoặc bé kẹt, hoặc máy nghe lại chính nó.
+   *
+   * Trả `null` khi không nghe được, và ĐÃ báo lỗi ra màn hình rồi — bên gọi chỉ cần
+   * dừng lại, không phải đoán vì sao.
+   */
+  const ghiAm = useCallback(async () => {
+    if (dangNghe) { phien.current?.dung(); return null; }
     datLoi(null); datTam('');
     const cho = await xinMicroChiTiet();
-    if (cho !== MICRO.duoc) { datMicHong(true); datLoi(loiDocDuoc(cho)); return; }
+    if (cho !== MICRO.duoc) { datMicHong(true); datLoi(loiDocDuoc(cho)); return null; }
     thoiDoc();                       // đang đọc mà bật micro thì máy nghe lại chính nó
     datDangNghe(true);
     const p = batDauNghe({ onTam: datTam, tieng: TIENG });
@@ -159,23 +216,95 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
     try {
       const { chu, phuongAn } = await p.xong;
       const noiGi = (chu || '').trim();
-      if (!noiGi) { datLoi('Cô chưa nghe thấy gì. Con nói to hơn một chút nhé.'); return; }
-      /* Chấm khi bé đang NHẠI LẠI câu cô vừa nói. Bé nói câu khác thì không chấm —
-         chấm một câu bé tự nghĩ ra theo mẫu của câu khác là chấm sai. */
-      const kq = cauCoVuaNoi ? chamTot(chamCau, cauCoVuaNoi, phuongAn?.length ? phuongAn : [noiGi]) : null;
-      const sau = [...lichSu, { vai: 'be', chu: noiGi, diem: kq?.diem ?? null }];
-      datLichSu(sau);
-      /* Lượt này vừa KẾT THÚC buổi thì đừng hỏi cô nữa: bé đã xong, mà gọi thêm
-         một lượt là hoặc cô nói chen vào sau lời khen, hoặc mạng trục trặc và bé
-         thấy dòng lỗi đỏ ngay dưới câu "con giỏi lắm". Đã thấy thật lúc đi thử. */
-      const sauKhiNoi = tinhBuoi({ lichSu: sau, batDau: batDau.current, bayGio: Date.now() });
-      if (sauKhiNoi.trangThai !== 'dang') { datLoi(null); return; }
-      guiLuot(sau);
+      if (!noiGi) { datLoi('Cô chưa nghe thấy gì. Con nói to hơn một chút nhé.'); return null; }
+      return { noiGi, phuongAn };
     } catch (e) {
       datMicHong(true);
       datLoi(e?.message || loiDocDuoc(e?.ma));
+      return null;
     } finally { datDangNghe(false); phien.current = null; }
-  }, [dangNghe, lichSu, cauCoVuaNoi, guiLuot]);
+  }, [dangNghe]);
+
+  const noi = useCallback(async () => {
+    const r = await ghiAm();
+    if (!r) return;
+    /* Chấm khi bé đang NHẠI LẠI câu cô vừa nói. Bé nói câu khác thì không chấm —
+       chấm một câu bé tự nghĩ ra theo mẫu của câu khác là chấm sai. */
+    const kq = cauCoVuaNoi
+      ? chamTot(chamCau, cauCoVuaNoi, r.phuongAn?.length ? r.phuongAn : [r.noiGi]) : null;
+    /* GIỮ LẠI CÂU MẪU ngay trong lượt của bé. Không giữ thì nút "nói lại" sau này
+       chẳng biết đang chấm theo câu nào — lúc bé bấm thì cô đã nói sang câu khác
+       rồi, và chấm theo câu mới là chấm sai một câu bé không hề định nói. */
+    const sau = [...lichSu,
+      { vai: 'be', chu: r.noiGi, diem: kq?.diem ?? null, mau: cauCoVuaNoi || null }];
+    datLichSu(sau);
+    /* Lượt này vừa KẾT THÚC buổi thì đừng hỏi cô nữa: bé đã xong, mà gọi thêm
+       một lượt là hoặc cô nói chen vào sau lời khen, hoặc mạng trục trặc và bé
+       thấy dòng lỗi đỏ ngay dưới câu "con giỏi lắm". Đã thấy thật lúc đi thử. */
+    const sauKhiNoi = tinhBuoi({ lichSu: sau, batDau: batDau.current, bayGio: Date.now() });
+    if (sauKhiNoi.trangThai !== 'dang') { datLoi(null); return; }
+    guiLuot(sau);
+  }, [ghiAm, lichSu, cauCoVuaNoi, guiLuot]);
+
+  /**
+   * NÓI LẠI MỘT CÂU — bác dặn 14-08.
+   *
+   * Trước nay bé nói một lần rồi thôi: được 4 điểm thì cô cứ thế nói sang câu khác,
+   * và cái câu bé chưa nói được nằm lại đó vĩnh viễn. Nhưng phát âm thì không ai
+   * sửa được trong một lần — nghe lại, thử lại, nghe lại mới là cách học nói.
+   *
+   * ── VÌ SAO SỬA TẠI CHỖ, KHÔNG THÊM LƯỢT MỚI ──
+   * Thêm lượt thì cuộc trò chuyện phình ra toàn câu hỏng của chính bé, và cô sẽ
+   * trả lời từng lần thử — bé chỉ muốn đọc lại cho tròn tiếng chứ không muốn nói
+   * chuyện. Nên nói lại KHÔNG gọi cô: chỉ chấm lại đúng ô ấy.
+   *
+   * ── GIỮ LẦN TỐT NHẤT, VÀ GIỮ CẢ CÂU CỦA LẦN ẤY ──
+   * Giữ điểm cao mà hiện chữ của lần mới nhất thì thẻ nói dối: "con nói X, 9 điểm"
+   * trong khi 9 điểm là của lần trước. Hai thứ phải đi cùng nhau.
+   */
+  const noiLai = useCallback(async (chiSo) => {
+    const cu = lichSu[chiSo];
+    if (!cu?.mau) return;
+    datLaiO(chiSo);
+    const r = await ghiAm();
+    datLaiO(null);
+    if (!r) return;
+    const kq = chamTot(chamCau, cu.mau, r.phuongAn?.length ? r.phuongAn : [r.noiGi]);
+    const hon = (kq?.diem ?? 0) > (cu.diem ?? -1);
+    const sau = lichSu.map((x, i) => (i !== chiSo ? x : {
+      ...x,
+      chu: hon ? r.noiGi : x.chu,
+      diem: hon ? kq.diem : x.diem,
+      soLan: (x.soLan || 1) + 1,
+    }));
+    datLichSu(sau);
+    luuBuoi(auth?.currentUser?.uid, {
+      maBuoi: maBuoi.current, quyen: 'ta1', baiId: bai?.id, tenBai: bai?.title, lichSu: sau,
+    });
+  }, [ghiAm, lichSu, bai]);
+
+  /**
+   * NÓI CHUYỆN LẠI TỪ ĐẦU — vì màn kết là ngõ cụt.
+   *
+   * Xong buổi thì nút micro biến mất (đúng), nhưng bé lớp 1 thích thì muốn chơi
+   * lại ngay chứ không đợi mai. Không có nút này thì bé phải thoát ra rồi vào lại
+   * — mà bé 6 tuổi không nghĩ ra chuyện đó.
+   *
+   * Mã buổi dựng LẠI, để buổi mới không ghi đè lên buổi vừa xong trên máy chủ.
+   */
+  const noiLaiTuDau = useCallback(() => {
+    thoiDoc();
+    phien.current?.huy();
+    datLichSu([]); datLoi(null); datTam(''); datMicHong(false);
+    batDau.current = Date.now();
+    maBuoi.current = `${String(bai?.id).replace(/[:.]/g, '_')}__${Date.now()}`;
+    daChao.current = false;
+    daDocKet.current = false;
+    /* Cờ `daChao` là ref nên đổi nó KHÔNG làm effect chào chạy lại. Phải có một
+       con số trong deps thì React mới ngó tới — thiếu dòng này là bấm nút xong
+       màn hình trắng trơn, không ai chào cả. */
+    datLanBuoi((n) => n + 1);
+  }, [bai?.id]);
 
   const dsTu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
 
@@ -255,38 +384,91 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
         </div>
       )}
 
-      {/* MÀN KẾT — bé phải thấy vạch đích. Một việc không có chỗ kết thì bé không
-          bao giờ thấy mình LÀM ĐƯỢC, mà đó mới là thứ giữ bé quay lại. */}
-      {ket && (
-        <div className={`rounded-xl2 p-5 ${buoi.trangThai === 'xongGioi' ? 'bg-teal-pale' : 'bg-gold-pale'}`}>
-          <p className="text-4xl" aria-hidden="true">{ket.bieuTuong}</p>
-          <p className="mt-1 text-2xl font-bold text-ink">{ket.tieuDe}</p>
-          <p className="mt-0.5 text-ink">{ket.chu}</p>
-        </div>
-      )}
-
       {buoi.haDoKho && buoi.trangThai === 'dang' && (
         <p className="rounded-xl2 bg-gold-pale p-3 text-sm text-gold-dark">
           Mình tập lại từng từ một cho dễ nhé — xong rồi mới ghép thành câu.
         </p>
       )}
 
+      {/* CUỘC TRÒ CHUYỆN — CŨ Ở TRÊN, MỚI Ở DƯỚI.
+          Đánh số theo chỉ số THẬT trong `lichSu` rồi mới lọc, chứ không lọc trước:
+          nút "nói lại" sửa đúng một ô trong mảng gốc, mà lọc trước thì số thứ tự
+          xê dịch một nấc và bé bấm ô này lại sửa ô khác.
+          Lượt đầu là câu chào mình tự gửi hộ bé để cô mở lời — không phải bé nói,
+          nên không bày ra. */}
+      <ol className="flex flex-col gap-3">
+        {lichSu
+          .map((x, i) => ({ x, i }))
+          .filter(({ x, i }) => !(i === 0 && x.vai === 'be'))
+          .map(({ x, i }) => (
+            <li key={i}>
+              {x.vai === 'may'
+                ? <LuotCo luot={x} bai={bai} von={von} />
+                : (
+                  <LuotBe luot={x} dangNghe={laiO === i && dangNghe}
+                    onNoiLai={x.mau && buoi.trangThai === 'dang' && ngheDuoc() && !micHong
+                      ? () => noiLai(i) : null} />
+                )}
+            </li>
+          ))}
+        {dangHoi && <li className="text-sm text-mute">Cô đang nghĩ…</li>}
+      </ol>
+
+      {/* MÀN KẾT — bé phải thấy vạch đích. Một việc không có chỗ kết thì bé không
+          bao giờ thấy mình LÀM ĐƯỢC, mà đó mới là thứ giữ bé quay lại.
+          Nay nằm CUỐI cuộc trò chuyện vì nó là thứ mới nhất, và có tiếng: câu
+          tiếng Anh đọc giọng en-GB, lời tiếng Việt giọng vi-VN. */}
+      {ket && (
+        <div className={`rounded-xl2 p-5 ${buoi.trangThai === 'xongGioi' ? 'bg-teal-pale' : 'bg-gold-pale'}`}>
+          <p className="text-4xl" aria-hidden="true">{ket.bieuTuong}</p>
+          <p className="mt-1 text-2xl font-bold text-ink">{ket.tieuDe}</p>
+          {ket.en && (
+            <div className="mt-2 flex flex-wrap items-center gap-3">
+              <p className="flex-1 font-serif text-2xl text-navy">{ket.en}</p>
+              <button type="button" onClick={() => docLen(ket.en, 'en-GB', { nhanh: 0.9 })}
+                aria-label={`Nghe lại: ${ket.en}`}
+                className="h-12 w-12 flex-none rounded-full border-2 border-teal bg-white text-2xl
+                  text-teal-dark hover:bg-teal hover:text-white
+                  focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+                <span aria-hidden="true">🔈</span>
+              </button>
+            </div>
+          )}
+          <div className="mt-1 flex items-center gap-2">
+            <p className="flex-1 text-ink">{ket.chu}</p>
+            <button type="button" onClick={() => docDoan(tachTheoTieng(ket.chu, von))}
+              aria-label={`Nghe lại lời tiếng Việt: ${ket.chu}`}
+              className="h-9 w-9 flex-none rounded-full border-2 border-line text-sm text-mute
+                hover:border-navy hover:text-navy
+                focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+              <span aria-hidden="true">🔈</span>
+            </button>
+          </div>
+          {/* Xong buổi thì nút micro biến mất — không có đường này thì bé phải
+              thoát ra vào lại mới nói tiếp được, mà bé 6 tuổi không nghĩ ra. */}
+          <button type="button" onClick={noiLaiTuDau}
+            className="mt-3 rounded-xl2 border-2 border-navy bg-white px-5 py-3 text-lg
+              font-semibold text-navy transition hover:brightness-95
+              focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+            <span aria-hidden="true">🔁</span> Mình nói chuyện lại nhé
+          </button>
+        </div>
+      )}
+
       {loi && <p className="rounded-xl2 bg-gold-pale p-3 text-gold-dark">{loi}</p>}
 
-      {/* MỘT NÚT DUY NHẤT, và nay nó đứng TRÊN cuộc trò chuyện.
-          Bác đổi 13-08: tin mới nhất lên trên, tin cũ xuống dưới. Nếu để nút ở
-          cuối như bản trước thì mỗi lượt nói xong danh sách lại dài thêm, và bé
-          phải cuộn qua cả buổi học mới tìm lại được cái nút. Nay nút đứng yên một
-          chỗ, câu cô vừa nói nằm ngay bên dưới — bé thấy cả hai cùng lúc, không
-          phải cuộn lần nào. */}
+      {/* MỘT NÚT DUY NHẤT, đứng DƯỚI cuộc trò chuyện — đúng chỗ bé vừa đọc tới.
+          Bản 13-08 đưa nút lên trên vì danh sách bày ngược; nay danh sách xuôi
+          chiều và màn hình tự cuộn nên nút về lại chỗ tự nhiên của nó. Nó nằm sau
+          câu cô vừa nói, nên cuộn tới neo là bé thấy CẢ HAI cùng lúc. */}
       {buoi.trangThai !== 'dang' ? null : ngheDuoc() && !micHong ? (
-        <button type="button" onClick={noi} disabled={dangHoi}
+        <button type="button" onClick={noi} disabled={dangHoi || laiO != null}
           className={`flex items-center justify-center gap-3 rounded-xl2 px-6 py-6 text-2xl
             font-semibold transition disabled:opacity-60
             focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
-            ${dangNghe ? 'bg-alert text-white' : 'bg-teal text-teal-dark hover:brightness-105'}`}>
-          <span aria-hidden="true">{dangNghe ? '⏹️' : '🎤'}</span>
-          {dangNghe ? 'Đang nghe con…' : 'Đến lượt con'}
+            ${dangNghe && laiO == null ? 'bg-alert text-white' : 'bg-teal text-teal-dark hover:brightness-105'}`}>
+          <span aria-hidden="true">{dangNghe && laiO == null ? '⏹️' : '🎤'}</span>
+          {dangNghe && laiO == null ? 'Đang nghe con…' : 'Đến lượt con'}
         </button>
       ) : (
         <p className="rounded-xl2 border-2 border-line bg-soft p-4 text-mute">
@@ -301,27 +483,9 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
         </p>
       )}
 
-      {/* CUỘC TRÒ CHUYỆN — MỚI NHẤT LÊN TRÊN.
-          Lượt đầu tiên là câu chào mình tự gửi hộ bé để cô mở lời, không phải bé
-          nói; lọc đi trước rồi mới đảo, chứ đảo trước thì nó rơi xuống cuối và
-          `i === 0` không còn trỏ đúng nó nữa. */}
-      <ol className="flex flex-col gap-3">
-        <li ref={dauDs} />
-        {dangHoi && (
-          <li className="text-sm text-mute">Cô đang nghĩ…</li>
-        )}
-        {lichSu
-          .filter((x, i) => !(i === 0 && x.vai === 'be'))
-          .map((x, i) => ({ x, i }))
-          .reverse()
-          .map(({ x, i }) => (
-            <li key={i}>
-              {x.vai === 'may'
-                ? <LuotCo luot={x} bai={bai} von={von} />
-                : <LuotBe luot={x} />}
-            </li>
-          ))}
-      </ol>
+      {/* NEO CUỘN — đặt SAU nút micro, không phải sau danh sách. Cuộn tới đây là
+          câu cô vừa nói và cái nút phải bấm cùng nằm trong tầm mắt. */}
+      <div ref={cuoiDs} aria-hidden="true" />
     </section>
   );
 }
@@ -374,17 +538,34 @@ function LuotCo({ luot, bai, von }) {
 
 /* ─────────── một lượt của bé ─────────── */
 
-function LuotBe({ luot }) {
+function LuotBe({ luot, onNoiLai = null, dangNghe = false }) {
   const dat = luot.diem != null && datNoi(luot.diem);
   return (
     <div className={`ml-8 flex flex-wrap items-center gap-3 rounded-xl2 p-3
       ${luot.diem == null ? 'bg-soft' : dat ? 'bg-teal-pale' : 'bg-gold-pale'}`}>
       <span className="text-xl" aria-hidden="true">🧒</span>
       <p className="flex-1 font-mono text-ink">“{luot.chu}”</p>
+      {/* Đã thử mấy lần — bé thấy công mình bỏ ra, và bố mẹ thấy con có chịu sửa
+          không. Chỉ hiện từ lần thứ hai: "1 lần" thì chẳng nói lên điều gì. */}
+      {luot.soLan > 1 && (
+        <span className="text-xs text-mute">{luot.soLan} lần</span>
+      )}
       {luot.diem != null && (
         <span className="text-lg" aria-label={`${loiKhen({ diem: luot.diem }).sao} sao`}>
           {'⭐'.repeat(loiKhen({ diem: luot.diem }).sao)}
         </span>
+      )}
+      {/* NÓI LẠI CÂU NÀY. Hiện cả khi bé đã đạt: đạt 6 điểm rồi vẫn có quyền muốn
+          nói cho tròn tiếng hơn, và đó chính là lúc bé đang tự học. */}
+      {onNoiLai && (
+        <button type="button" onClick={onNoiLai} disabled={dangNghe}
+          aria-label={`Nói lại câu: ${luot.mau}`}
+          className={`flex-none rounded-full border-2 px-3 py-1.5 text-sm font-semibold
+            transition disabled:opacity-70
+            focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
+            ${dangNghe ? 'border-alert bg-alert text-white' : 'border-navy bg-white text-navy hover:bg-navy hover:text-white'}`}>
+          <span aria-hidden="true">{dangNghe ? '⏹️' : '🔁'}</span> {dangNghe ? 'Đang nghe…' : 'Nói lại'}
+        </button>
       )}
     </div>
   );

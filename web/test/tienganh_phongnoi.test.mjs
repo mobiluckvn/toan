@@ -19,7 +19,7 @@ import {
   vonCuaBai, vonTu, moiTuDuocDung, moiCauDuocDung,
   loiDan, catNguCanh, goiGui, docTraLoi, tuTrongCau, LOI_LOP_HOC,
   viecTiepTheo, cauHopLe, cauThayThe, loaiOTrong, tachTheoTieng,
-  tinhBuoi, loiKet, cauHoiSoThich, PHUT_TOI_DA, DAT_LIEN_DE_XONG,
+  tinhBuoi, loiKet, tuLoiKetHopLe, cauHoiSoThich, PHUT_TOI_DA, DAT_LIEN_DE_XONG,
   buocTiepTheo, dienBuoc, dongBuoc,
 } from '../src/mon/tienganh/lib/phongnoi.js';
 
@@ -403,29 +403,124 @@ test('màn phòng nói KHÔNG đọc lời Việt bằng một giọng duy nhấ
 
 /* ═══════════ THỨ TỰ TIN NHẮN ═══════════ */
 
-test('phòng nói bày tin MỚI NHẤT LÊN TRÊN', () => {
-  /* Bác đổi 13-08. Chiều này dễ bị lật ngược lại lúc nào không biết — ai đó dọn
-     mã, thấy `.reverse()` "thừa", bỏ đi là xong. Nên phải có cổng. */
+test('phòng nói bày tin MỚI Ở DƯỚI, và TỰ CUỘN xuống', () => {
+  /* Bác chốt 14-08, sau khi đi qua cả hai chiều:
+       · mới ở dưới, không tự cuộn (bản đầu) → bé ngồi nhìn câu cũ;
+       · mới ở trên (13-08)                  → chữa được cuộn, nhưng đọc ngược đời.
+     Nay chiều tự nhiên VÀ tự cuộn. Cặp này phải đi cùng nhau: bỏ chiều thì khó
+     đọc, bỏ cuộn thì bé không thấy cô trả lời — mà bỏ cuộn KHÔNG có gì đỏ cả. */
   const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
     .replace(/\/\*[\s\S]*?\*\//g, '');
-  assert.match(pn, /\.reverse\(\)/, 'danh sách lượt phải đảo lại');
-  assert.doesNotMatch(pn, /block:\s*'end'/, 'không được cuộn xuống đáy nữa — nay tin mới ở trên');
-  assert.match(pn, /dauDs/, 'phải cuộn tới ĐẦU danh sách khi có lượt mới');
+  assert.doesNotMatch(pn, /\.reverse\(\)/, 'danh sách KHÔNG đảo nữa — cũ trên, mới dưới');
+  assert.match(pn, /scrollIntoView\(\{[^}]*block:\s*'end'/,
+    'phải cuộn xuống ĐÁY khi có lượt mới, nếu không bé không thấy cô trả lời');
+  assert.match(pn, /cuoiDs/, 'phải có neo cuộn ở cuối');
 
-  /* Lọc câu chào mở màn TRƯỚC rồi mới đảo: đảo trước thì nó rơi xuống cuối và
-     `i === 0` không còn trỏ đúng nó. */
-  const iLoc = pn.indexOf('.filter(');
-  const iDao = pn.indexOf('.reverse()');
-  assert.ok(iLoc > 0 && iLoc < iDao, 'phải LỌC trước rồi mới ĐẢO');
+  /* Đánh số chỉ số THẬT rồi mới lọc: nút "nói lại" sửa đúng một ô trong `lichSu`,
+     mà lọc trước thì số thứ tự xê dịch và bé bấm ô này lại sửa ô khác. */
+  const iSo = pn.indexOf('.map((x, i) => ({ x, i }))');
+  const iLoc = pn.indexOf('.filter(({ x, i })');
+  assert.ok(iSo > 0 && iLoc > iSo, 'phải ĐÁNH SỐ trước rồi mới LỌC');
 });
 
-test('nút nói đứng TRÊN cuộc trò chuyện', () => {
-  /* Để nút ở cuối thì mỗi lượt danh sách dài thêm, và bé phải cuộn qua cả buổi
-     học mới tìm lại được cái nút. */
+test('neo cuộn đứng SAU nút nói — bé thấy câu mới và cái nút cùng lúc', () => {
+  /* Neo đặt ngay sau danh sách thì cuộn xong cái nút vẫn nằm dưới mép màn hình,
+     và bé không biết phải bấm gì tiếp. */
   const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
     .replace(/\/\*[\s\S]*?\*\//g, '');
-  assert.ok(pn.indexOf('Đến lượt con') < pn.indexOf('<ol'),
-    'nút nói phải nằm trước danh sách lượt');
+  assert.ok(pn.indexOf('<ol') < pn.indexOf('Đến lượt con'),
+    'danh sách lượt phải nằm trước nút nói');
+  assert.ok(pn.indexOf('Đến lượt con') < pn.indexOf('ref={cuoiDs}'),
+    'neo cuộn phải nằm SAU nút nói');
+});
+
+/* ═══════════ CÂU KẾT CÓ TIẾNG · NÓI LẠI ═══════════ */
+
+test('câu kết có câu tiếng Anh để bé NGHE và học', () => {
+  /* Bác dặn 14-08: "câu kết thúc thì cũng nên chuyển sang Voice". Cả buổi mọi thứ
+     đều có tiếng, tới lúc chia tay thì im bặt — với bé chưa đọc chữ thì đó là
+     phòng học tắt tiếng giữa chừng. */
+  for (const tt of [
+    tinhBuoi({ lichSu: [9, 8, 9].map((d) => ({ vai: 'be', diem: d })), batDau: 0, bayGio: 60000 }),
+    tinhBuoi({ lichSu: [{ vai: 'be', diem: 3 }], batDau: 0, bayGio: PHUT_TOI_DA * 60000 }),
+  ]) {
+    const k = loiKet(tt);
+    assert.ok(k, 'phải có màn kết');
+    assert.ok(k.en && k.en.trim(), 'màn kết phải có câu tiếng Anh');
+  }
+});
+
+test('câu kết CHỈ dùng lời lớp học — không được bịa từ lạ vào phút cuối', () => {
+  /* Câu này máy con tự viết, KHÔNG qua mô hình, nên không có gì chặn nó dùng từ
+     lạ. "See you tomorrow." nghe rất tự nhiên và có ba từ bé chưa từng gặp — câu
+     cuối cùng của buổi mà bé không nhại nổi thì buổi học kết thúc bằng thất bại. */
+  for (const tt of [
+    tinhBuoi({ lichSu: [9, 8, 9].map((d) => ({ vai: 'be', diem: d })), batDau: 0, bayGio: 60000 }),
+    tinhBuoi({ lichSu: [{ vai: 'be', diem: 3 }], batDau: 0, bayGio: PHUT_TOI_DA * 60000 }),
+  ]) {
+    assert.ok(tuLoiKetHopLe(loiKet(tt).en),
+      `câu kết "${loiKet(tt).en}" có từ ngoài LOI_LOP_HOC`);
+  }
+  assert.ok(!tuLoiKetHopLe('See you tomorrow.'), 'phép kiểm phải BẮT được từ lạ');
+  assert.ok(!tuLoiKetHopLe(''), 'rỗng không phải là hợp lệ');
+});
+
+test('màn hình ĐỌC câu kết, và đọc mỗi thứ tiếng một giọng', () => {
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /docLen\(ket\.en, 'en-GB'/, 'câu tiếng Anh của màn kết phải đọc giọng en-GB');
+  assert.match(pn, /docDoan\(tachTheoTieng\(ket\.chu/, 'lời Việt của màn kết phải đi qua phép tách');
+  /* Chốt bằng ref chứ không bằng deps: `ket` dựng lại mỗi lần vẽ, mà nhịp 30 giây
+     thì cứ nửa phút vẽ một lần — để nó vào deps là cứ 30 giây cô chào tạm biệt. */
+  assert.match(pn, /daDocKet\.current/, 'phải có chốt đọc MỘT LẦN, không đọc lại mỗi nhịp');
+});
+
+test('nói lại: lượt của bé phải GIỮ câu mẫu đã chấm theo', () => {
+  /* Lúc bé bấm "nói lại" thì cô đã nói sang câu khác rồi. Không giữ câu mẫu ngay
+     trong lượt thì phép chấm lấy câu MỚI NHẤT — chấm một câu bé không hề định
+     nói, và bé càng sửa càng thấp điểm mà không hiểu vì sao. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /mau:\s*cauCoVuaNoi/, 'lượt của bé phải ghi lại câu mẫu');
+  assert.match(pn, /chamTot\(chamCau,\s*cu\.mau/, 'nói lại phải chấm theo câu mẫu CỦA CHÍNH lượt ấy');
+  assert.doesNotMatch(pn, /chamTot\(chamCau,\s*cauCoVuaNoi,[^)]*\)\s*;?\s*const hon/,
+    'nói lại KHÔNG được chấm theo câu mới nhất');
+});
+
+test('nói lại KHÔNG gọi cô, chỉ sửa tại chỗ', () => {
+  /* Thêm lượt mới thì cuộc trò chuyện phình ra toàn câu hỏng của chính bé, và cô
+     trả lời từng lần thử — bé chỉ muốn đọc lại cho tròn tiếng. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  const than = pn.slice(pn.indexOf('const noiLai = useCallback'), pn.indexOf('const noiLaiTuDau'));
+  assert.ok(than.length > 100, 'không tìm thấy thân hàm noiLai');
+  assert.doesNotMatch(than, /guiLuot\(/, 'nói lại không được gọi cô giáo');
+  assert.match(than, /lichSu\.map\(\(x, i\) => \(i !== chiSo/, 'phải sửa ĐÚNG một ô, không thêm lượt');
+  assert.match(than, /luuBuoi\(/, 'sửa xong phải lưu lại buổi, nếu không đổi máy là mất');
+});
+
+test('nói lại giữ LẦN TỐT NHẤT, và giữ cả câu của lần ấy', () => {
+  /* Giữ điểm cao mà hiện chữ của lần mới nhất thì thẻ nói dối: "con nói X, 9 điểm"
+     trong khi 9 điểm là của lần trước. Hai thứ phải đi cùng nhau. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /chu:\s*hon \? r\.noiGi : x\.chu/, 'câu phải đi theo lần tốt nhất');
+  assert.match(pn, /diem:\s*hon \? kq\.diem : x\.diem/, 'điểm phải là lần tốt nhất');
+  assert.doesNotMatch(pn, /Math\.max\(x\.diem/, 'không được lấy max điểm rời khỏi câu');
+});
+
+test('có đường NÓI LẠI TỪ ĐẦU — màn kết không phải ngõ cụt', () => {
+  /* Xong buổi thì nút micro biến mất (đúng), nhưng không có đường quay lại thì bé
+     phải thoát ra vào lại — mà bé 6 tuổi không nghĩ ra chuyện đó. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  const than = pn.slice(pn.indexOf('const noiLaiTuDau'), pn.indexOf('const dsTu'));
+  assert.match(than, /maBuoi\.current = /, 'buổi mới phải có mã mới, không ghi đè buổi vừa xong');
+  assert.match(than, /daChao\.current = false/, 'phải cho cô chào lại');
+  /* `daChao` là ref nên đổi nó KHÔNG làm effect chào chạy lại — thiếu con số này
+     trong deps là bấm nút xong màn hình trắng trơn, không ai chào cả. */
+  assert.match(than, /datLanBuoi\(/, 'phải có con số trong deps để effect chào chạy lại');
+  assert.match(pn, /\[bai, kbXong, guiLuot, lanBuoi\]/, 'effect chào phải ngó tới lanBuoi');
 });
 
 test('lặp Y HỆT lượt trước là KHÔNG hợp lệ, dù câu ấy đúng', () => {
