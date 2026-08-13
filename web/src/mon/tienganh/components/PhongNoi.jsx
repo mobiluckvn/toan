@@ -5,7 +5,7 @@ import { vonTu, tuTrongCau, UNIT_CU_TOI_DA } from '../lib/phongnoi.js';
 import { hoiCoGiao, luuBuoi } from '../lib/goiPhongNoi.js';
 import { auth } from '../../../chung/lib/nenTang.js';
 import { docCapDoi, doc as docLen, docDuoc, coGiong, thoiDoc } from '../lib/doclen.js';
-import { batDauNghe, ngheDuoc, loiDocDuoc, xinMicro, TIENG } from '../lib/nghenoi.js';
+import { batDauNghe, ngheDuoc, loiDocDuoc, xinMicroChiTiet, MICRO, TIENG } from '../lib/nghenoi.js';
 import { chamTot, chamCau, datNoi, loiKhen } from '../lib/chamnoi.js';
 
 /**
@@ -107,7 +107,8 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
   const noi = useCallback(async () => {
     if (dangNghe) { phien.current?.dung(); return; }
     datLoi(null); datTam('');
-    if (!(await xinMicro())) { datMicHong(true); datLoi(loiDocDuoc('not-allowed')); return; }
+    const cho = await xinMicroChiTiet();
+    if (cho !== MICRO.duoc) { datMicHong(true); datLoi(loiDocDuoc(cho)); return; }
     thoiDoc();                       // đang đọc mà bật micro thì máy nghe lại chính nó
     datDangNghe(true);
     const p = batDauNghe({ onTam: datTam, tieng: TIENG });

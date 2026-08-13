@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import NutNghe from './NutNghe.jsx';
-import { batDauNghe, ngheDuoc, loiDocDuoc, xinMicro } from '../lib/nghenoi.js';
+import { batDauNghe, ngheDuoc, loiDocDuoc, xinMicroChiTiet, MICRO } from '../lib/nghenoi.js';
 import { chamTu, chamCau, chamTot, loiKhen, datNoi } from '../lib/chamnoi.js';
 
 /**
@@ -49,9 +49,10 @@ export default function NutNoi({
     datLoi(null); datKq(null); datKhen(null); datTam('');
 
     /* Xin micro TRƯỚC. Hộp thoại quyền bật ra giữa lúc bé đang nói là hỏng cả lượt. */
-    if (!(await xinMicro())) {
-      datLoi(loiDocDuoc('not-allowed'));
-      onHong?.('not-allowed');
+    const cho = await xinMicroChiTiet();
+    if (cho !== MICRO.duoc) {
+      datLoi(loiDocDuoc(cho));
+      onHong?.(cho);
       return;
     }
 

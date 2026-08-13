@@ -218,3 +218,50 @@ test('hình của từ chỉ có MỘT nguồn', () => {
       `${p} phải gọi hinhCuaTu(), không được tự đọc bai.hinhTu`);
   }
 });
+
+/* ═══════════ MICRO TREO — không được để bé kẹt ═══════════ */
+
+test('xin micro có ĐỒNG HỒ CHẶN, không treo im lặng', async () => {
+  /* Bắt được khi đi thử bản production 13-08: `getUserMedia` TREO — không trả lời
+     mà cũng không từ chối, đo được 8 giây không hồi âm. Bản trước chỉ bắt trường
+     hợp TỪ CHỐI, nên bé bấm "Đến lượt con" là KHÔNG CÓ GÌ xảy ra: không báo lỗi,
+     không hiện "Đang nghe". Mà từ 13-08 việc NÓI là bắt buộc mới qua được chặng
+     Từ mới — nên bé trên máy như thế kẹt luôn trong unit, không một dòng giải
+     thích. Bé kẹt vì cái micro, chứ không vì sức học. */
+  const cu = Object.getOwnPropertyDescriptor(globalThis, 'navigator');
+  const dat = (v) => Object.defineProperty(globalThis, 'navigator', { value: v, configurable: true });
+  dat({ mediaDevices: { getUserMedia: () => new Promise(() => {}) } });
+  try {
+    const { xinMicroChiTiet, MICRO, loiDocDuoc } = await import('../src/mon/tienganh/lib/nghenoi.js');
+    const t0 = Date.now();
+    const kq = await xinMicroChiTiet({ hanGio: 300 });
+    assert.equal(kq, MICRO.khongTraLoi, 'treo thì phải cắt, không đợi mãi');
+    assert.ok(Date.now() - t0 < 2000, 'phải cắt đúng hạn, không treo theo');
+    assert.match(loiDocDuoc(kq), /micro/i, 'và phải có lời nói rõ cho bé');
+  } finally { if (cu) Object.defineProperty(globalThis, 'navigator', cu); }
+});
+
+test('micro bị TỪ CHỐI vẫn phân biệt được với micro TREO', async () => {
+  /* Hai chuyện khác hẳn nhau: từ chối thì bố mẹ bật lại được, treo thì không.
+     Gộp làm một câu là bố mẹ đi bật quyền cho một cái máy chẳng có micro. */
+  const cu = Object.getOwnPropertyDescriptor(globalThis, 'navigator');
+  const dat = (v) => Object.defineProperty(globalThis, 'navigator', { value: v, configurable: true });
+  const { xinMicroChiTiet, MICRO } = await import('../src/mon/tienganh/lib/nghenoi.js');
+  try {
+    dat({ mediaDevices: { getUserMedia: () => Promise.reject(new Error('x')) } });
+    assert.equal(await xinMicroChiTiet({ hanGio: 300 }), MICRO.tuChoi);
+    dat({});
+    assert.equal(await xinMicroChiTiet({ hanGio: 300 }), MICRO.khongCo);
+  } finally { if (cu) Object.defineProperty(globalThis, 'navigator', cu); }
+});
+
+test('cả hai chỗ xin micro đều dùng bản CÓ ĐỒNG HỒ', () => {
+  const bo = (p) => readFileSync(new URL(p, import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
+  for (const p of ['../src/mon/tienganh/components/NutNoi.jsx',
+                   '../src/mon/tienganh/components/PhongNoi.jsx']) {
+    const s = bo(p);
+    assert.match(s, /xinMicroChiTiet\(\)/, `${p} phải dùng bản có đồng hồ chặn`);
+    assert.doesNotMatch(s, /await xinMicro\(\)/, `${p} không được dùng bản trần`);
+  }
+});

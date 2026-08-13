@@ -46,6 +46,9 @@ const LOI_NOI = {
   'audio-capture': 'Máy không tìm thấy micro.',
   network: 'Cần có mạng thì cô mới nghe được.',
   'khong-ho-tro': 'Máy này chưa nghe được. Con vẫn học các phần khác bình thường nhé.',
+  'khong-tra-loi': 'Máy không trả lời khi con xin dùng micro. Con cứ học tiếp, phần nói để lúc khác nhé.',
+  'tu-choi': 'Máy chưa cho phép dùng micro. Bố mẹ bật giúp con nhé.',
+  'khong-co': 'Máy này không có micro. Con vẫn học các phần khác bình thường nhé.',
   'qua-lau': 'Cô đợi hơi lâu rồi. Con thử nói lại nhé.',
 };
 
@@ -122,11 +125,40 @@ export function batDauNghe({ onTam = () => {}, tieng = TIENG } = {}) {
  * Hỏi quyền ngay giữa lúc bé đang nói là hỏng cả lượt: hộp thoại che màn hình, bé
  * mất đà, và lần thử ấy không tính. Hỏi trước một lần thì cả buổi học trôi.
  */
-export async function xinMicro() {
-  if (!navigator.mediaDevices?.getUserMedia) return false;
+export const MICRO = {
+  duoc: 'duoc', khongCo: 'khong-co', tuChoi: 'tu-choi', khongTraLoi: 'khong-tra-loi',
+};
+
+/**
+ * ⚠ PHẢI CÓ ĐỒNG HỒ CHẶN — `getUserMedia` TREO ĐƯỢC.
+ *
+ * Bản đầu chỉ bắt trường hợp TỪ CHỐI (`catch`). Nhưng có máy `getUserMedia` không
+ * trả lời mà cũng không từ chối: lời hứa treo vĩnh viễn. Đã gặp thật khi đi thử
+ * bản production — đo được 8 giây không hồi âm.
+ *
+ * Hậu quả nặng hơn nó trông: bé bấm "Đến lượt con" thì KHÔNG CÓ GÌ xảy ra — không
+ * báo lỗi, không hiện "Đang nghe", nút vẫn nguyên. Mà từ 13-08 việc NÓI là bắt
+ * buộc mới qua được chặng Từ mới, nên bé trên máy như thế kẹt luôn trong unit và
+ * không có một dòng nào giải thích. Đúng cái mà cả luật đi lần lượt sinh ra để
+ * tránh, chỉ khác là lần này bé kẹt vì cái micro chứ không vì sức học.
+ *
+ * Thà cắt sớm rồi nói "máy không nghe được" còn hơn treo im lặng.
+ */
+const HAN_XIN_MICRO = 6000;
+
+export async function xinMicroChiTiet({ hanGio = HAN_XIN_MICRO } = {}) {
+  if (!navigator.mediaDevices?.getUserMedia) return MICRO.khongCo;
+  let dongHo;
   try {
-    const s = await navigator.mediaDevices.getUserMedia({ audio: true });
-    s.getTracks().forEach((x) => x.stop());     // xin xong thì trả lại ngay
-    return true;
-  } catch { return false; }
+    const kq = await Promise.race([
+      navigator.mediaDevices.getUserMedia({ audio: true })
+        .then((s) => { s.getTracks().forEach((x) => x.stop()); return MICRO.duoc; },
+              () => MICRO.tuChoi),
+      new Promise((r) => { dongHo = setTimeout(() => r(MICRO.khongTraLoi), hanGio); }),
+    ]);
+    return kq;
+  } catch { return MICRO.tuChoi; } finally { clearTimeout(dongHo); }
 }
+
+/** Giữ nguyên giao ước boolean cho chỗ chỉ cần biết được hay không. */
+export const xinMicro = async (o) => (await xinMicroChiTiet(o)) === MICRO.duoc;

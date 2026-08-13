@@ -83,6 +83,27 @@ export function soiGoi(du) {
  * `temperature` thấp có chủ ý: đây là lớp học, không phải chỗ sáng tác. Máy càng
  * bay bổng thì càng dễ chèn từ ngoài vốn của bé.
  */
+/**
+ * ⚠ `gpt-oss-120b` LÀ MÔ HÌNH CÓ SUY NGHĨ — hai nút vặn dưới đây là bắt buộc.
+ *
+ * Đã hỏng thật trên bản production 13-08, và hỏng theo kiểu khó lần nhất: sáng đi
+ * thử trên bộ giả lập thì chạy, chiều bác bấm trên bản thật thì lỗi. Khác nhau ở
+ * chỗ lời dặn — bản thử là câu gõ tay ngắn, bản thật là `loiDan()` đầy đủ.
+ *
+ * Mô hình tiêu token cho phần `reasoning` TRƯỚC khi viết `content`. Lời dặn dài
+ * hơn thì nó nghĩ lâu hơn, và với `max_tokens: 300` nó tiêu hết sạch vào phần
+ * nghĩ: `finish_reason: "length"`, `content` RỖNG. Kèm `response_format` nghiêm
+ * ngặt thì Groq đem chuỗi rỗng ấy đi soi JSON và trả 400 `json_validate_failed`.
+ *
+ *   reasoning_effort: 'low'  thắt phần nghĩ lại
+ *   max_tokens: 800          và vẫn chừa dư, phòng khi nó nghĩ dài
+ *
+ * Hai lớp cho cùng một chỗ hỏng là cố ý: chỉ nới token thì lời dặn dài thêm một
+ * đoạn nữa là hỏng lại, mà lần sau chẳng ai nhớ vì sao.
+ */
+export const NGHI_NGAN = 'low';
+export const TOKEN_TRA_LOI = 800;
+
 export async function hoiMay(du, taoClient) {
   const messages = soiGoi(du);
   const client = taoClient();
@@ -90,10 +111,20 @@ export async function hoiMay(du, taoClient) {
     model: MO_HINH,
     messages,
     temperature: 0.4,
-    max_tokens: 300,
+    max_tokens: TOKEN_TRA_LOI,
+    reasoning_effort: NGHI_NGAN,
     response_format: { type: 'json_object' },
   });
-  const chu = kq?.choices?.[0]?.message?.content || '';
+  const chon = kq?.choices?.[0];
+  const chu = chon?.message?.content || '';
+
+  /* Rỗng thì NÓI RA, đừng trả về chuỗi rỗng. Máy con nhận chuỗi rỗng sẽ vẽ một
+     bong bóng trắng và bé ngồi nhìn — không ai biết hỏng ở đâu. Đây đúng là hình
+     dạng của lỗi vừa gặp, nên phải có chốt riêng. */
+  if (!chu.trim()) {
+    throw new LoiGoi('tra-loi-rong',
+      `Cô giáo máy không trả lời được (finish_reason: ${chon?.finish_reason || 'không rõ'}).`);
+  }
   /* Trả về CHỮ TRẦN. Việc bóc JSON là của client (`lib/phongnoi.js` có cổng canh),
      để đúng một chỗ biết hình dạng câu trả lời. */
   return { chu, moHinh: MO_HINH };

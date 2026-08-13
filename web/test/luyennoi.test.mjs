@@ -14,7 +14,7 @@
 import { readFileSync } from 'node:fs';
 import {
   MO_HINH, TOI_DA_LUOT, TOI_DA_CHU_MOT_LUOT, TOI_DA_CHU_CA_GOI,
-  soiGoi, hoiMay, LoiGoi,
+  NGHI_NGAN, TOKEN_TRA_LOI, soiGoi, hoiMay, LoiGoi,
 } from '../functions/src/luyennoi.js';
 
 let pass = 0, fail = 0;
@@ -69,13 +69,24 @@ console.log('\n── gọi Groq ──');
   t('trả về CHỮ TRẦN, không tự bóc JSON', kq.chu === '{"en":"Hi.","vi":"Chào con."}');
   t('khai đúng mô hình lên Groq', daGoi.model === MO_HINH);
   t('nhiệt độ thấp — đây là lớp học, không phải chỗ sáng tác', daGoi.temperature <= 0.5);
-  t('có chặn độ dài câu trả lời', daGoi.max_tokens > 0 && daGoi.max_tokens <= 600);
+  /* ⚠ HAI NÚT VẶN CHO MÔ HÌNH CÓ SUY NGHĨ. Đã hỏng thật trên bản production:
+     `gpt-oss-120b` tiêu hết 300 token vào phần `reasoning`, `content` rỗng,
+     `finish_reason: length`, và Groq trả 400 json_validate_failed. Gỡ một trong
+     hai nút là lời dặn dài thêm một đoạn nữa sẽ hỏng lại y hệt. */
+  t('thắt phần suy nghĩ lại', daGoi.reasoning_effort === NGHI_NGAN);
+  t('và vẫn chừa dư token cho câu trả lời',
+    daGoi.max_tokens === TOKEN_TRA_LOI && TOKEN_TRA_LOI >= 600);
   t('đòi Groq trả JSON', daGoi.response_format?.type === 'json_object');
 }
 {
-  const gia = () => ({ chat: { completions: { create: async () => ({ choices: [] }) } } });
-  const kq = await hoiMay({ messages: loi(2) }, gia);
-  t('Groq trả rỗng thì vẫn ra chuỗi, không vỡ', kq.chu === '');
+  /* Câu trả lời RỖNG phải NÓI RA, đừng đưa chuỗi rỗng xuống máy con — bé sẽ ngồi
+     nhìn một bong bóng trắng và không ai biết hỏng ở đâu. Đây đúng hình dạng của
+     lỗi vừa gặp trên bản thật. */
+  const rong = (fr) => () => ({ chat: { completions: { create: async () => ({ choices: [{ finish_reason: fr, message: { content: '' } }] }) } } });
+  let batDuoc = null;
+  try { await hoiMay({ messages: loi(2) }, rong('length')); } catch (e) { batDuoc = e; }
+  t('Groq trả RỖNG thì ném lỗi nói rõ', batDuoc instanceof LoiGoi && batDuoc.ma === 'tra-loi-rong');
+  t('và nói kèm finish_reason để còn lần ra', /length/.test(batDuoc?.message || ''));
 }
 
 console.log('\n── máy chủ KHÔNG lưu gì ──');
