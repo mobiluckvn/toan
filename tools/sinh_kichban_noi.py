@@ -59,6 +59,21 @@ def o_trong(cong_thuc):
     return 'ten' if re.search(r'name|tên', m.group(1), re.I) else 'tu'
 
 
+def ten_trong_vi_du(cong_thuc, cau):
+    """Giá trị mà chính SÁCH điền vào ô trống — `Hi, I'm + [Name].` + `Hi, I'm Bill.`
+    thì ra "Bill".
+
+    Dùng làm giá trị dự phòng khi bé chưa khai tên. Bịa sẵn một cái tên ("Bo") thì
+    bé nào không khai tên cũng bị gọi bằng tên người khác; lấy tên trong sách thì
+    ít nhất bé đang nhại đúng nhân vật của bài.
+    """
+    khung = re.sub(r'\s*\+\s*', ' ', cong_thuc or '')
+    mau = re.escape(khung).replace(r'\[', '[').replace(r'\]', ']')
+    mau = re.sub(r'\[[^\]]+\]', '(.+?)', mau)
+    m = re.fullmatch(mau, cau or '')
+    return m.group(1) if m else None
+
+
 def dien(cong_thuc, gia_tri):
     """Điền một giá trị vào ô trống, bỏ dấu `+` nối của công thức."""
     return re.sub(r'\[[^\]]+\]', gia_tri, re.sub(r'\s*\+\s*', ' ', cong_thuc))
@@ -103,7 +118,8 @@ def kich_ban_cua(bai):
         loai = o_trong(ct)
         if loai == 'ten':
             buoc.append({'loai': 'thay', 'khung': ct, 'o': 'ten',
-                         'en': dien(ct, '{ten}'), 'mac_dinh': 'Bo',
+                         'en': dien(ct, '{ten}'),
+                         'mac_dinh': ten_trong_vi_du(ct, m['cau']) or 'Bill',
                          'vi': 'Cùng mẫu câu ấy, nhưng nói về chính con.'})
         elif tu:
             buoc.append({'loai': 'thay', 'khung': ct, 'o': 'tu',

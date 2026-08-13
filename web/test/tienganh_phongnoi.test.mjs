@@ -713,3 +713,46 @@ test('ĐỢI kịch bản rồi mới chào', () => {
   assert.match(pn, /\.finally\(\(\) => \{ if \(song\) datKbXong\(true\)/,
     'nạp HỎNG cũng phải đặt cờ, nếu không bé đứng chờ một tệp không bao giờ về');
 });
+
+/* ═══════════ TÊN THẬT CỦA BÉ ═══════════ */
+
+test('vỏ app TRUYỀN hồ sơ con xuống môn', () => {
+  /* Bác bắt 13-08: "bạn đang fix tên của học sinh là Bo nhỉ?" — đúng, nhưng không
+     phải vì ghim cứng. `ManTiengAnh` có đọc `hoSo?.displayName`, chỉ là `App.jsx`
+     dựng màn của môn mà KHÔNG truyền `hoSo` xuống. Nên `displayName` luôn rỗng, và
+     cái tên dự phòng hoá ra là tên DUY NHẤT: mọi bé đều bị gọi là "Bo".
+
+     Không cổng nào bắt được vì cả hai phía đều "đúng" khi nhìn riêng — chỉ hỏng ở
+     chỗ nối. Đã thử tận tay: đổi tên thành "Nguyễn Minh An", màn hồ sơ hiện đúng,
+     mà cô vẫn chào "Bo". */
+  const app = readFileSync(new URL('../src/App.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  const than = app.slice(app.indexOf('const Man = mon.Man'));
+  assert.match(than, /hoSo=\{profile\}/, 'màn của môn phải nhận hồ sơ con');
+
+  const man = readFileSync(new URL('../src/mon/tienganh/components/ManTiengAnh.jsx', import.meta.url), 'utf8');
+  assert.match(man, /hoSo\?\.displayName/, 'và môn phải đọc tên thật từ đó');
+});
+
+test('tên dự phòng lấy TỪ SÁCH, không bịa tên lạ', () => {
+  /* Bé chưa khai tên mà bị gọi bằng một cái tên bịa sẵn thì đó là tên người khác.
+     Lấy tên trong chính câu ví dụ của bài thì ít nhất bé đang nhại đúng nhân vật. */
+  const kb = JSON.parse(readFileSync(
+    new URL('../public/content/ta1/kichban_noi.json', import.meta.url), 'utf8'));
+  for (const k of kb) {
+    for (const b of k.buoc) {
+      if (b.o !== 'ten') continue;
+      assert.ok(b.mac_dinh, `${k.bai}: ô tên thiếu giá trị dự phòng`);
+      assert.notEqual(b.mac_dinh, 'Bo', `${k.bai}: vẫn bịa tên "Bo"`);
+      /* Phải là cái tên CHÍNH SÁCH dùng — tìm thấy trong một câu ví dụ của bài. */
+      const coTrongSach = k.buoc.some((x) => x.loai === 'mau' && x.en?.includes(b.mac_dinh));
+      assert.ok(coTrongSach, `${k.bai}: "${b.mac_dinh}" không có trong câu ví dụ nào của bài`);
+    }
+  }
+});
+
+test('có tên thật thì DÙNG tên thật, không dùng dự phòng', () => {
+  const b = { loai: 'thay', o: 'ten', en: "Hi, I'm {ten}.", mac_dinh: 'Bill' };
+  assert.equal(dienBuoc(b, { tenBe: 'An' }), "Hi, I'm An.");
+  assert.equal(dienBuoc(b, { tenBe: '' }), "Hi, I'm Bill.", 'chưa khai tên thì dùng tên trong sách');
+});

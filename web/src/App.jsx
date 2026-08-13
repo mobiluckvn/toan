@@ -326,6 +326,11 @@ export default function App() {
       datTienDo={datTienDoCua(mon.ma)}
       quyen={quyen}
       learnerId={learnerId}
+      /* HỒ SƠ CON — môn cần TÊN THẬT để gọi bé trong bài nói và trong hội thoại.
+         Thiếu dòng này thì `hoSo` luôn rỗng, và cái tên dự phòng viết trong màn
+         hình hoá ra là tên DUY NHẤT: mọi bé đều bị gọi là "Bo". Đã dính thật —
+         bác đổi tên thành "Nguyễn Minh An" mà cô vẫn chào "Bo". */
+      hoSo={profile}
       /* Bậc xuất phát lấy theo lớp con khai lúc lập hồ sơ. Chưa khai thì lấy 5 —
          quyển đầy đủ nhất — và vòng luyện tự lùi nếu con chưa với tới. */
       lopCon={profile?.grade || 5}
