@@ -148,3 +148,16 @@ export function maBaiTruoc(id, n = 3) {
   if (i <= 0) return [];
   return ds.slice(Math.max(0, i - n), i);
 }
+
+/** Kịch bản phòng luyện nói của cả quyển — sinh bằng `tools/sinh_kichban_noi.py`. */
+let khoKichBan = null;
+export async function napKichBanNoi(ma = 'ta1') {
+  if (khoKichBan) return khoKichBan;
+  const ct = chuongTrinh(ma);
+  const url = dongDau(`${CONTENT}/${ct.thuMuc || ma}/kichban_noi.json`);
+  const r = await fetch(url);
+  if (!r.ok) throw new Error(`Không mở được kịch bản luyện nói (${r.status})`);
+  khoKichBan = await r.json();
+  return khoKichBan;
+}
+export const kichBanCua = (ds, id) => (ds || []).find((k) => k.bai === id) || null;

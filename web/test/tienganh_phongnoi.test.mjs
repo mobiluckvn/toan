@@ -20,6 +20,7 @@ import {
   loiDan, catNguCanh, goiGui, docTraLoi, tuTrongCau, LOI_LOP_HOC,
   viecTiepTheo, cauHopLe, cauThayThe, loaiOTrong, tachTheoTieng,
   tinhBuoi, loiKet, cauHoiSoThich, PHUT_TOI_DA, DAT_LIEN_DE_XONG,
+  buocTiepTheo, dienBuoc, dongBuoc,
 } from '../src/mon/tienganh/lib/phongnoi.js';
 
 const bai = (id, tu, cau, hinh = []) => ({
@@ -594,4 +595,121 @@ test('đồng hồ 20 phút KHÔNG được vô hiệu khi ai đó dọn mã', (
   assert.match(pn, /setInterval\(/, 'phải có nhịp vẽ lại, nếu không đồng hồ đứng');
   assert.doesNotMatch(pn, /nhip \* 0/, 'phép nhân 0 là mã chết, dễ bị xoá nhầm');
   assert.match(pn, /phutConLai/, 'còn bao lâu phải HIỆN RA, tính rồi mà không dùng thì tính làm gì');
+});
+
+/* ═══════════ KỊCH BẢN VIẾT SẴN CHO TỪNG BÀI ═══════════ */
+
+const KB = JSON.parse(readFileSync(
+  new URL('../public/content/ta1/kichban_noi.json', import.meta.url), 'utf8'));
+
+test('mỗi bài có đúng một kịch bản, không thiếu bài nào', () => {
+  assert.equal(KB.length, 16);
+  assert.equal(new Set(KB.map((k) => k.bai)).size, 16, 'mã bài không được trùng');
+});
+
+test('kịch bản nào cũng mở bằng CHÀO và đóng bằng KẾT', () => {
+  for (const k of KB) {
+    assert.equal(k.buoc[0].loai, 'chao', `${k.bai} không mở bằng lời chào`);
+    assert.equal(k.buoc.at(-1).loai, 'ket', `${k.bai} không có chỗ kết`);
+  }
+});
+
+test('MỌI câu trong kịch bản đều hợp lệ với chính bài của nó', () => {
+  /* Đây là phép kiểm đáng giá nhất của cả tệp kịch bản. Sinh sai một câu thì bé
+     nghe câu sai suốt buổi, mà nhìn tệp JSON thì không ai thấy. */
+  const bai = (id) => JSON.parse(readFileSync(new URL(
+    `../public/content/ta1/${id.replace('DL:', 'DL_').replace(/\./g, '_')}.json`,
+    import.meta.url), 'utf8'));
+  for (const k of KB) {
+    const von = vonTu({ baiNay: bai(k.bai), baiCu: [], daDat: false });
+    for (const b of k.buoc) {
+      if (!b.en) continue;
+      const en = dienBuoc(b, { tenBe: 'Bo', thich: k.tu[0] });
+      assert.ok(cauHopLe(en, { von, tenBe: 'Bo' }),
+        `${k.bai} · bước "${b.loai}" sinh ra câu KHÔNG hợp lệ: "${en}"`);
+    }
+  }
+});
+
+test('ô của TÊN không bao giờ bị điền đồ vật', () => {
+  /* "Bye, book." — mô hình đã sinh ra thật khi được thả tự do. Kịch bản không được
+     phép mắc lại lỗi ấy, và đây là chỗ soi. */
+  for (const k of KB) {
+    for (const b of k.buoc) {
+      if (b.loai !== 'thay' || b.o !== 'ten') continue;
+      assert.match(b.en, /\{ten\}/, `${k.bai}: ô tên phải điền {ten}, không phải từ vựng`);
+    }
+  }
+});
+
+test('bước tiến theo số lượt ĐẠT, chưa đạt thì đứng yên để thử lại', () => {
+  /* Tiến theo số lượt đã NÓI thì bé nói sai cũng bị đẩy sang bài mới — đúng cái
+     làm bé hụt hơi rồi bỏ. */
+  const k = KB[0];
+  const hoSo = { tenBe: 'Bo', thich: 'ball' };
+  const sai = [{ vai: 'may', en: 'x' }, { vai: 'be', diem: 2 },
+               { vai: 'may', en: 'x' }, { vai: 'be', diem: 1 }];
+  const a = buocTiepTheo({ kichBan: k, lichSu: sai, hoSo });
+  const b = buocTiepTheo({ kichBan: k, lichSu: [...sai, { vai: 'may', en: 'x' }, { vai: 'be', diem: 1 }], hoSo });
+  assert.deepEqual(a, b, 'chưa đạt thì phải đứng yên ở bước ấy');
+});
+
+test('bước MỘT LẦN làm xong trước, không bị nhảy cóc', () => {
+  /* Bản đầu trộn bước một-lần vào cùng phép đếm với bước luyện, nên bước "hỏi sở
+     thích" bị nhảy cóc — bé chưa kịp chọn gì thì đã sang luyện từ, và cả phần
+     "nói về chính bé" thành vô dụng. */
+  const k = KB[0];
+  assert.equal(buocTiepTheo({ kichBan: k, lichSu: [], hoSo: {} }).loai, 'chao');
+  const sauChao = [{ vai: 'may', en: 'Hello!' }, { vai: 'be', diem: 9 }];
+  assert.equal(buocTiepTheo({ kichBan: k, lichSu: sauChao, hoSo: {} }).loai, 'hoiThich');
+  assert.equal(
+    buocTiepTheo({ kichBan: k, lichSu: sauChao, hoSo: { thich: 'ball' } }).loai, 'tu',
+    'chọn rồi thì thôi hỏi lại');
+});
+
+test('đuối thì lùi hẳn về bước TỪ', () => {
+  const k = KB[0];
+  const ls = [{ vai: 'may', en: 'x' }, { vai: 'be', diem: 9 }];
+  for (let n = 0; n < 6; n += 1) {
+    const b = buocTiepTheo({ kichBan: k, lichSu: [...ls, ...Array(n).fill({ vai: 'be', diem: 9 })],
+                             hoSo: { thich: 'ball' }, haDoKho: true });
+    assert.equal(b.loai, 'tu');
+  }
+});
+
+test('hết kịch bản thì QUAY VÒNG, không đứng lại', () => {
+  /* Buổi kết là việc của `tinhBuoi` (đạt đủ, hoặc hết giờ), không phải của việc
+     hết bước. Hết bước mà dừng thì bé đang hăng lại bị đuổi ra. */
+  const k = KB[0];
+  const dat = (n) => Array.from({ length: n }, () => ({ vai: 'be', diem: 9 }));
+  for (const n of [8, 12, 30]) {
+    assert.ok(buocTiepTheo({ kichBan: k, lichSu: [{ vai: 'may', en: 'x' }, ...dat(n)],
+                             hoSo: { thich: 'ball' } }), `hết bước ở lượt ${n}`);
+  }
+});
+
+test('lời dặn khi CÓ kịch bản: ép chép nguyên văn, không cho diễn giải', () => {
+  const b = { loai: 'mau', en: "Hi, I'm Bill." };
+  const s = dongBuoc(b, { tenBe: 'Bo' });
+  assert.match(s, /MUST be exactly: "Hi, I'm Bill\."/);
+  assert.match(s, /Do not rephrase/i);
+  assert.match(s, /Vietnamese line/i, 'việc còn lại của mô hình là lời tiếng Việt');
+});
+
+test('chỗ gọi ÉP câu về đúng kịch bản khi mô hình chệch', () => {
+  const g = readFileSync(new URL('../src/mon/tienganh/lib/goiPhongNoi.js', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(g, /buocTiepTheo\(/, 'phải hỏi kịch bản');
+  assert.match(g, /tra\.en !== dung/, 'chệch kịch bản thì phải ép về đúng câu');
+});
+
+test('ĐỢI kịch bản rồi mới chào', () => {
+  /* Kịch bản nạp không đồng bộ. Chào ngay thì lượt ĐẦU TIÊN — lượt định ra cả buổi
+     — rơi về lối cũ, cô nói thẳng "ball" thay vì "Hello!". Nhìn màn hình mới thấy,
+     cổng cũ không bắt được vì cả hai lối đều "chạy đúng". */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /!kbXong\) return;/, 'chưa nạp xong kịch bản thì chưa chào');
+  assert.match(pn, /\.finally\(\(\) => \{ if \(song\) datKbXong\(true\)/,
+    'nạp HỎNG cũng phải đặt cờ, nếu không bé đứng chờ một tệp không bao giờ về');
 });

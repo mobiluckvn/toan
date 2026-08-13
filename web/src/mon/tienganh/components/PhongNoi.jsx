@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import HinhVe from './HinhVe.jsx';
-import { hinhCuaTu, napBai, maBaiTruoc } from '../lib/noiDung.js';
+import { hinhCuaTu, napBai, maBaiTruoc, napKichBanNoi, kichBanCua } from '../lib/noiDung.js';
 import {
   vonTu, tuTrongCau, tachTheoTieng, UNIT_CU_TOI_DA,
   tinhBuoi, loiKet, cauHoiSoThich, PHUT_TOI_DA,
@@ -47,6 +47,18 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
     return () => { song = false; };
   }, [bai?.id, daDat]);
 
+  /* Kịch bản của CHÍNH bài này. Không nạp được thì phòng vẫn chạy bằng cách cũ —
+     bé không được đứng chờ chỉ vì một tệp không tải về. */
+  useEffect(() => {
+    let song = true;
+    datKbXong(false);
+    napKichBanNoi()
+      .then((ds) => { if (song) datKichBan(kichBanCua(ds, bai?.id)); })
+      .catch(() => {})
+      .finally(() => { if (song) datKbXong(true); });
+    return () => { song = false; };
+  }, [bai?.id]);
+
   const datCu = useCallback((id) => !!tienDo?.micros?.[id]?.pass, [tienDo]);
   const von = React.useMemo(
     () => vonTu({ baiNay: bai, baiCu, daDat, datCu }),
@@ -66,6 +78,8 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
   const [loi, datLoi] = useState(null);
   const [micHong, datMicHong] = useState(false);
   const [thich, datThich] = useState(null);
+  const [kichBan, datKichBan] = useState(null);
+  const [kbXong, datKbXong] = useState(false);   // đã nạp xong HOẶC đã bỏ cuộc
   const batDau = useRef(Date.now());
   /* `nhip` KHÔNG mang giá trị nào — nó chỉ để bắt màn hình vẽ lại mỗi 30 giây, để
      đồng hồ 20 phút tự tới nơi. Bản đầu viết `Date.now() + nhip * 0`: chạy đúng,
@@ -95,7 +109,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
     datLoi(null); datDangHoi(true);
     try {
       const tra = await hoiCoGiao({ von, lichSu: ds, tenBe, lop,
-        haDoKho: buoi.haDoKho, hoSo: { thich } });
+        haDoKho: buoi.haDoKho, hoSo: { thich }, kichBan });
       const luot = { vai: 'may', chu: tra.en || tra.vi, en: tra.en, vi: tra.vi };
       const sau = [...ds, luot];
       datLichSu(sau);
@@ -120,14 +134,18 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
           ? 'Con đăng nhập rồi mới vào phòng này được nhé.'
           : 'Cô giáo máy chưa trả lời được. Con thử lại nhé.');
     } finally { datDangHoi(false); }
-  }, [von, tenBe, lop, bai, buoi.haDoKho, thich]);
+  }, [von, tenBe, lop, bai, buoi.haDoKho, thich, kichBan]);
 
   /* Cô chào trước. Bé 6 tuổi mở ra thấy màn trắng thì không biết làm gì cả. */
   useEffect(() => {
-    if (daChao.current || !bai) return;
+    /* ĐỢI KỊCH BẢN rồi mới chào. Bản đầu chào ngay, mà kịch bản nạp không đồng bộ
+       nên lượt ĐẦU TIÊN — lượt định ra cả buổi — rơi về lối cũ: cô nói thẳng
+       "ball" thay vì "Hello!". Nhìn màn hình mới thấy. Nạp hỏng cũng đặt cờ này,
+       để bé không phải đứng chờ một tệp không bao giờ về. */
+    if (daChao.current || !bai || !kbXong) return;
     daChao.current = true;
     guiLuot([{ vai: 'be', chu: 'Chào cô, con muốn tập nói.' }]);
-  }, [bai, guiLuot]);
+  }, [bai, kbXong, guiLuot]);
 
   const noi = useCallback(async () => {
     if (dangNghe) { phien.current?.dung(); return; }

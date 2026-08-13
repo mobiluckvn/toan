@@ -29,8 +29,21 @@ export const MO_HINH = 'openai/gpt-oss-120b';
 /* Ba chốt cửa. Rộng rãi so với một buổi nói chuyện thật của bé, nhưng đủ chặn
    một gói bất thường. */
 export const TOI_DA_LUOT = 24;
+/**
+ * Hai mức trần khác nhau, và khác nhau là CÓ LÝ.
+ *
+ * Lượt của BÉ do bé nói ra — bé 6 tuổi không nói nổi 2000 ký tự, nên dài hơn thế
+ * là bất thường và đáng chặn. LỜI DẶN thì do chính app sinh: nó liệt kê vốn từ,
+ * mẫu câu, lời lớp học và việc của lượt này, nên dài là chuyện thường.
+ *
+ * Gộp hai thứ vào một mức trần đã hỏng thật: thêm phần "việc của lượt này" vào lời
+ * dặn là nó dài 2077 ký tự, vượt trần 2000, và bị CHÍNH CHỐT CỦA MÌNH chặn ngay
+ * tại cửa — 2ms, chưa kịp ra tới Groq. Trên màn hình bé chỉ thấy "cô chưa trả lời
+ * được", không ai đoán được vì sao.
+ */
 export const TOI_DA_CHU_MOT_LUOT = 2000;
-export const TOI_DA_CHU_CA_GOI = 12000;
+export const TOI_DA_CHU_LOI_DAN = 8000;
+export const TOI_DA_CHU_CA_GOI = 20000;
 
 export class LoiGoi extends Error {
   constructor(ma, loi) { super(loi); this.ma = ma; }
@@ -59,8 +72,9 @@ export function soiGoi(du) {
     }
     const content = String(m?.content ?? '');
     if (!content.trim()) throw new LoiGoi('loi-rong', `Lượt ${i + 1} rỗng.`);
-    if (content.length > TOI_DA_CHU_MOT_LUOT) {
-      throw new LoiGoi('luot-qua-dai', `Lượt ${i + 1} dài quá ${TOI_DA_CHU_MOT_LUOT} ký tự.`);
+    const tran = role === 'system' ? TOI_DA_CHU_LOI_DAN : TOI_DA_CHU_MOT_LUOT;
+    if (content.length > tran) {
+      throw new LoiGoi('luot-qua-dai', `Lượt ${i + 1} dài quá ${tran} ký tự.`);
     }
     tong += content.length;
     return { role, content };

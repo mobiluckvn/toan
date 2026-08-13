@@ -12,6 +12,7 @@ import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { fns, db, hasFirebase } from '../../../chung/lib/nenTang.js';
 import {
   loiDan, goiGui, docTraLoi, viecTiepTheo, cauHopLe, cauThayThe,
+  buocTiepTheo, dienBuoc, dongBuoc,
 } from './phongnoi.js';
 
 /** Collection riêng của Tiếng Anh — hậu tố TA để không bao giờ lẫn với Toán. */
@@ -23,7 +24,9 @@ export const KHO_PHONG_NOI = (uid) => `phongNoiTA/${uid}/buoi`;
  * @return {{en, vi, thoJSON}} — đã bóc sẵn để màn hình đọc hai thứ tiếng riêng.
  * @throws lỗi có `.code` của Firebase để màn hình nói đúng chỗ hỏng.
  */
-export async function hoiCoGiao({ von, lichSu, tenBe, lop, haDoKho = false, hoSo = null }) {
+export async function hoiCoGiao({
+  von, lichSu, tenBe, lop, haDoKho = false, hoSo = null, kichBan = null,
+}) {
   if (!hasFirebase || !fns) {
     const e = new Error('Máy chưa nối được lên mạng.');
     e.code = 'functions/unavailable';
@@ -32,11 +35,14 @@ export async function hoiCoGiao({ von, lichSu, tenBe, lop, haDoKho = false, hoSo
   /* Việc của lượt này do MÁY CON quyết rồi ghép vào lời dặn — xem `viecTiepTheo`.
      Lời dặn dựng lại mỗi lượt (chứ không giữ nguyên từ đầu buổi) chính là chỗ cắm
      được việc mới vào. */
-  const viec = viecTiepTheo({ von, lichSu, haDoKho, hoSo });
-  const messages = [
-    { role: 'system', content: loiDan({ von, tenBe, lop, viec, hoSo }) },
-    ...goiGui(lichSu),
-  ];
+  /* CÓ KỊCH BẢN thì câu tiếng Anh lấy thẳng từ đó, mô hình chỉ viết lời tiếng Việt.
+     Không có (bài chưa sinh kịch bản) thì rơi về cách cũ — máy con tự chọn việc. */
+  const buoc = kichBan ? buocTiepTheo({ kichBan, lichSu, hoSo, haDoKho }) : null;
+  const viec = buoc ? null : viecTiepTheo({ von, lichSu, haDoKho, hoSo });
+  const dan = buoc
+    ? `${loiDan({ von, tenBe, lop, viec: null, hoSo })}\n${dongBuoc(buoc, { tenBe, thich: hoSo?.thich })}`
+    : loiDan({ von, tenBe, lop, viec, hoSo });
+  const messages = [{ role: 'system', content: dan }, ...goiGui(lichSu)];
   const { data } = await httpsCallable(fns, 'luyenNoi')({ messages });
   const tra = docTraLoi(data?.chu);
 
@@ -45,6 +51,18 @@ export async function hoiCoGiao({ von, lichSu, tenBe, lop, haDoKho = false, hoSo
      thì một câu sai là dạy sai. Không hợp lệ thì thay bằng câu máy con tự dựng —
      luôn đúng, vì nó ghép từ chính dữ liệu bài. */
   const cauTruoc = [...lichSu].reverse().find((x) => x.vai === 'may')?.en || '';
+
+  /* CÓ KỊCH BẢN: câu đúng đã biết trước, nên không cần đoán — sai thì ép về đúng
+     câu ấy. Đây là chỗ chữ "đảm bảo hơn" của bác thành thật: mô hình có chệch thì
+     bé vẫn nghe đúng câu của bài. */
+  if (buoc) {
+    const dung = dienBuoc(buoc, { tenBe, thich: hoSo?.thich });
+    if (dung && tra.en !== dung) {
+      return { ...tra, en: dung, vi: tra.vi || buoc.vi || '', daThay: true };
+    }
+    return tra;
+  }
+
   if (!cauHopLe(tra.en, { von, tenBe, cauTruoc })) {
     const thay = cauThayThe(viec, tenBe, cauTruoc);
     /* Thay thì thay CẢ CẶP. Giữ lời tiếng Việt cũ là để nó tả một câu đã bị bỏ —

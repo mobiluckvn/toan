@@ -14,7 +14,7 @@
 import { readFileSync } from 'node:fs';
 import {
   MO_HINH, TOI_DA_LUOT, TOI_DA_CHU_MOT_LUOT, TOI_DA_CHU_CA_GOI,
-  NGHI_NGAN, TOKEN_TRA_LOI, soiGoi, hoiMay, LoiGoi,
+  NGHI_NGAN, TOKEN_TRA_LOI, TOI_DA_CHU_LOI_DAN, soiGoi, hoiMay, LoiGoi,
 } from '../functions/src/luyennoi.js';
 
 let pass = 0, fail = 0;
@@ -46,9 +46,12 @@ t('một lượt quá dài bị chặn',
 
 /* Mười lượt NGẮN vẫn có thể là một gói khổng lồ — chốt từng lượt không đủ. */
 {
-  const moiLuot = Math.floor(TOI_DA_CHU_CA_GOI / 10) + 50;
+  /* Từng lượt phải NẰM TRONG trần của nó, nhưng cộng lại thì vượt trần cả gói —
+     nếu không, phép kiểm này lại đo nhầm sang chốt "một lượt quá dài". */
+  const moiLuot = TOI_DA_CHU_MOT_LUOT - 100;
+  const soLuot = Math.ceil(TOI_DA_CHU_CA_GOI / moiLuot) + 1;
   t('cả gói quá dài bị chặn dù từng lượt đều hợp lệ',
-    nem(() => soiGoi({ messages: loi(12, 'x'.repeat(moiLuot)) }), 'goi-qua-dai'));
+    nem(() => soiGoi({ messages: loi(soLuot, 'x'.repeat(moiLuot)) }), 'goi-qua-dai'));
 }
 
 /* Lời dặn nằm giữa gói thì mấy lượt trước nó không chịu luật nào — đúng chỗ vốn từ
@@ -121,3 +124,41 @@ console.log('\n── máy chủ KHÔNG lưu gì ──');
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
+
+console.log('\n── lời dặn THẬT có qua được cửa của chính mình không ──');
+{
+  /* Phép kiểm đáng giá nhất của tệp này: nối hai đầu lại. Chốt cửa nằm ở
+     `functions/`, lời dặn nằm ở `src/mon/tienganh/` — hai tệp chẳng bao giờ gặp
+     nhau, nên không cổng nào thấy khi một bên phình ra quá bên kia.
+
+     Đã hỏng thật: thêm phần "việc của lượt này" vào lời dặn là nó dài 2077 ký tự,
+     vượt trần 2000, và bị CHÍNH chốt của mình chặn ở cửa — 2ms, chưa ra tới Groq.
+     Bé chỉ thấy "cô chưa trả lời được", không ai đoán được vì sao. */
+  const { vonTu, loiDan, dongBuoc, buocTiepTheo } =
+    await import('../src/mon/tienganh/lib/phongnoi.js');
+  const D = new URL('../public/content/ta1/', import.meta.url).pathname;
+  const kb = JSON.parse(readFileSync(D + 'kichban_noi.json', 'utf8'));
+
+  let dai = 0, xau = null;
+  for (const k of kb) {
+    const bai = JSON.parse(readFileSync(
+      D + k.bai.replace('DL:', 'DL_').replace(/\./g, '_') + '.json', 'utf8'));
+    const von = vonTu({ baiNay: bai, baiCu: [], daDat: false });
+    for (const n of [0, 1, 2, 3, 4, 5]) {
+      const ls = Array.from({ length: n }, () => ({ vai: 'be', diem: 9 }));
+      const buoc = buocTiepTheo({ kichBan: k, lichSu: ls, hoSo: { thich: k.tu[0] } });
+      const dan = `${loiDan({ von, tenBe: 'Nguyễn Minh An', lop: 1, hoSo: { thich: k.tu[0] } })}\n${dongBuoc(buoc, { tenBe: 'Nguyễn Minh An', thich: k.tu[0] })}`;
+      if (dan.length > dai) { dai = dan.length; xau = k.bai; }
+      try {
+        soiGoi({ messages: [{ role: 'system', content: dan }, { role: 'user', content: 'Chào cô' }] });
+      } catch (e) {
+        t(`${k.bai} bước ${n}: lời dặn qua cửa`, false);
+        console.log('     ', e.message);
+      }
+    }
+  }
+  t(`mọi lời dặn của 16 bài đều qua cửa (dài nhất ${dai} ký tự · ${xau})`, dai <= TOI_DA_CHU_LOI_DAN);
+  /* Còn dư bao nhiêu — để lần sau thêm luật vào lời dặn thì biết mình còn chỗ. */
+  t(`còn dư ít nhất 25% chỗ (${Math.round((1 - dai / TOI_DA_CHU_LOI_DAN) * 100)}%)`,
+    dai <= TOI_DA_CHU_LOI_DAN * 0.75);
+}

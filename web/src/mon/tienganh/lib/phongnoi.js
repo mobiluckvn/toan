@@ -627,3 +627,79 @@ function dongHoSo(hoSo, tenBe) {
   }
   return d.length ? `ABOUT THE CHILD: ${d.join(' ')}` : '';
 }
+
+/* ─────────── kịch bản viết sẵn cho từng bài ─────────── */
+
+/**
+ * ĐI THEO KỊCH BẢN CỦA CHÍNH BÀI ẤY.
+ *
+ * Bác chốt 13-08: "viết sẵn kịch bản theo từng bài học để AI theo bài nào thì
+ * dùng kịch bản đó sẽ đảm bảo hơn."
+ *
+ * Có bằng chứng cho chữ "đảm bảo hơn". Trong một buổi đi thử, mô hình đã hai lần
+ * KHÔNG theo lời dặn dù lời dặn viết rất rõ: sinh ra "Bye, bike." (nhét đồ vật vào
+ * ô của tên người), và nói y một câu hai lượt liền ngay sau khi được dặn đừng lặp.
+ *
+ * Dặn dò là thứ mô hình CÓ THỂ theo. Kịch bản là thứ nó KHÔNG CẦN theo — câu tiếng
+ * Anh đã nằm sẵn trong `ta1/kichban_noi.json`, nó chỉ còn viết lời tiếng Việt và
+ * phản ứng với cái bé vừa nói. Rút đúng cái quyền hay hỏng ra khỏi tay nó.
+ *
+ * ── BƯỚC TIẾN THEO SỐ LƯỢT BÉ ĐẠT, KHÔNG THEO SỐ LƯỢT ĐÃ NÓI ──
+ * Bé chưa đạt thì đứng yên ở bước ấy để được thử lại. Tiến theo số lượt đã nói thì
+ * bé nói sai cũng bị đẩy sang bài mới — đúng cái làm bé hụt hơi rồi bỏ.
+ */
+const BUOC_LUYEN = new Set(['tu', 'mau', 'thay']);
+
+/** Điền {ten} và {thich} vào câu của bước. Thiếu thì dùng `mac_dinh` đã ghi sẵn. */
+export function dienBuoc(buoc, { tenBe = '', thich = '' } = {}) {
+  if (!buoc?.en) return '';
+  return buoc.en
+    .replace(/\{ten\}/g, tenBe || buoc.mac_dinh || 'con')
+    .replace(/\{thich\}/g, thich || buoc.mac_dinh || '');
+}
+
+export function buocTiepTheo({
+  kichBan, lichSu = [], hoSo = null, haDoKho = false, datNguong = 6,
+} = {}) {
+  const ds = kichBan?.buoc || [];
+  if (!ds.length) return null;
+
+  const soDat = lichSu.filter((x) => x.vai === 'be' && x.diem >= datNguong).length;
+  const daChao = lichSu.some((x) => x.vai === 'may');
+
+  /* Lọc những bước KHÔNG còn phải làm nữa: chào rồi thì thôi chào, bé chọn sở
+     thích rồi thì thôi hỏi lại. Đuối thì lùi hẳn về các bước TỪ. */
+  const conLai = ds.filter((b) => {
+    if (b.loai === 'ket') return false;
+    if (b.loai === 'chao') return !daChao;
+    if (b.loai === 'hoiThich') return !hoSo?.thich;
+    return haDoKho ? b.loai === 'tu' : BUOC_LUYEN.has(b.loai);
+  });
+  if (!conLai.length) return null;
+
+  /* Bước MỘT LẦN (chào · hỏi sở thích) làm cho xong trước, và KHÔNG đếm chung với
+     bước luyện: chào không phải một lần "đạt". Bản đầu trộn hai loại vào cùng phép
+     đếm nên bước hỏi sở thích bị nhảy cóc — bé chưa kịp chọn gì thì đã sang luyện
+     từ, và cả phần "nói về chính bé" thành vô dụng. */
+  const motLan = conLai.filter((b) => !BUOC_LUYEN.has(b.loai));
+  if (motLan.length) return motLan[0];
+
+  /* Hết kịch bản thì QUAY VÒNG phần luyện, đừng dừng: buổi kết là việc của
+     `tinhBuoi` (đạt đủ, hoặc hết giờ), không phải của việc hết bước. */
+  const luyen = conLai.filter((b) => BUOC_LUYEN.has(b.loai));
+  if (!luyen.length) return null;
+  return luyen[soDat % luyen.length];
+}
+
+/** Lời dặn cho lượt này khi ĐÃ CÓ kịch bản — câu tiếng Anh không để mô hình nghĩ. */
+export function dongBuoc(buoc, hoSo) {
+  if (!buoc) return '';
+  if (buoc.loai === 'ket' || buoc.loai === 'hoiThich') return '';
+  const en = dienBuoc(buoc, hoSo);
+  return [
+    `THIS TURN: your English sentence MUST be exactly: "${en}"`,
+    '  Copy it character for character. Do not rephrase, extend, or substitute.',
+    '  Your only job is the Vietnamese line: react to what the child just said',
+    '  (praise a good try, gently fix a wrong one), then point at this sentence.',
+  ].join('\n');
+}
