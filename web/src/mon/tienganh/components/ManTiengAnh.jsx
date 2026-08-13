@@ -162,9 +162,10 @@ function NhaQuyen({ ct, bais, kyOn = [], tienDo, onMoBai, onMoOnTap, onVeKeSach 
         </div>
       </div>
 
-      {/* MỘT VIỆC PHẢI LÀM, to và đứng trên cùng. Bé chưa đọc được 16 tên bài để
-          tự chọn; danh sách bên dưới là để bố mẹ nhìn và để bé quay lại bài cũ,
-          còn đường đi thì app phải chỉ. */}
+      {/* MỘT VIỆC ĐƯỢC GỢI Ý, to và đứng trên cùng — nhưng KHÔNG còn là việc duy
+          nhất. Bé chưa đọc được 16 tên bài để tự chọn, nên app vẫn phải chỉ đường;
+          còn bố mẹ muốn nhắm thẳng vào unit đang học trên lớp thì bấm dưới danh
+          sách. Hai lối, và lối gợi ý đứng trước vì bé mở app ra là bấm được ngay. */}
       {baiNen && (
         <button type="button" onClick={() => onMoBai(baiNen.id)}
           className="flex items-center gap-4 rounded-xl2 bg-navy p-5 text-left text-white
@@ -178,6 +179,16 @@ function NhaQuyen({ ct, bais, kyOn = [], tienDo, onMoBai, onMoOnTap, onVeKeSach 
           </span>
           <span className="flex-none rounded-xl2 bg-white px-4 py-2 font-bold text-navy">Học</span>
         </button>
+      )}
+
+      {/* Quyển KHÔNG khoá bài thì phải nói ra, nếu không cái thẻ xanh to ở trên
+          trông y hệt "chỉ được học bài này". Dòng cho bố mẹ đọc — bé thì thấy 16
+          unit không cái nào đeo ổ khoá, đó mới là tín hiệu bé hiểu được. */}
+      {!khoaBai && (
+        <p className="rounded-xl2 bg-teal-pale px-4 py-2.5 text-sm text-teal-dark">
+          Con bấm vào unit nào cũng học được — không phải theo thứ tự. Muốn theo
+          đúng chương trình thì cứ bấm thẻ xanh ở trên.
+        </p>
       )}
 
       {chuong.map((c) => (

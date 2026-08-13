@@ -115,9 +115,15 @@ export default {
    * "Học theo chủ đề" cắt ngang cả bốn quyển Toán, nên nó không thuộc quyển nào và
    * không có chỗ nào khác để đứng. Trước đây kệ sách gọi thẳng màn ấy — nghĩa là tầng
    * chung biết tên một màn của Toán. Nay môn tự khai, kệ sách chỉ vẽ ra cái nút.
+   *
+   * `nhom` phải khai, và phải TRÙNG CHỮ với `nhom` của các quyển nó cắt ngang (khai
+   * ở `chuong_trinh.json`). Cửa này chỉ đi xuyên bốn quyển Toán CẤP 1 — mai kia có
+   * Toán cấp 2 thì nó không được đứng chung nhóm ấy. Sai một chữ là cửa rơi ra
+   * thành một nhóm riêng chỉ có mình nó, mà không có gì báo.
    */
   cuaPhu: [{
     trang: 'chuDe',
+    nhom: 'Toán cấp 1',
     ten: 'Học theo chủ đề',
     mo: 'Chọn chủ đề rồi học xuyên các lớp — kém thì lùi về lớp dưới cùng chủ đề',
     bieuTuong: '🗺️',

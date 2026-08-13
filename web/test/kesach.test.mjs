@@ -8,7 +8,7 @@
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
-import { LOP_HOC } from '../src/chung/lib/soQuyen.js';
+import { LOP_HOC, gomNhomKeSach } from '../src/chung/lib/soQuyen.js';
 
 const D = new URL('../public/content/', import.meta.url).pathname;
 const dk = JSON.parse(readFileSync(join(D, 'chuong_trinh.json'), 'utf8'));
@@ -127,6 +127,79 @@ t('lớp 5 khai đủ tên chương',
 
 t('mục sắp có nào cũng có môn và tên',
   (dk.sapCo || []).every((s) => dk.mon[s.mon] && s.nhom && s.ten));
+
+/* ── NHÓM TRÊN KỆ SÁCH ──
+   Kệ sách gom quyển theo `nhom` chứ không theo mã môn: bốn quyển lớp 2·3·4·5 là
+   "Toán cấp 1", mai kia có cấp 2 thì tách ra mà không phải sửa giao diện. */
+t('quyển nào cũng khai nhóm trên kệ',
+  ct.every((c) => typeof c.nhom === 'string' && c.nhom.length > 2));
+
+/* Cửa phụ ("Học theo chủ đề") khai `nhom` trong tệp index.js của từng môn, còn
+   quyển khai trong sổ này. HAI NƠI, và phải TRÙNG TỪNG CHỮ — lệch một chữ thì cửa
+   rơi ra thành một nhóm riêng chỉ có mình nó, giao diện vẫn vẽ đẹp, không có gì
+   báo. Đây đúng loại hỏng câm nên phải có cổng. */
+{
+  const nhomCuaQuyen = new Set(ct.map((c) => c.nhom));
+  const src = readFileSync(new URL('../src/mon/toan/index.js', import.meta.url), 'utf8');
+  const khai = [...src.matchAll(/nhom:\s*'([^']+)'/g)].map((m) => m[1]);
+  t('cửa phụ của Toán có khai nhóm', khai.length > 0);
+  t('nhóm của cửa phụ trùng với nhóm của quyển',
+    khai.every((n) => nhomCuaQuyen.has(n)));
+  if (!khai.every((n) => nhomCuaQuyen.has(n))) {
+    in5(khai.filter((n) => !nhomCuaQuyen.has(n)).map((n) => `cửa phụ khai "${n}" — không quyển nào thuộc nhóm này`));
+  }
+}
+
+/* Quyển đã lên kệ rồi mà mục "sắp có" vẫn ghi môn ấy đang biên soạn thì hai chỗ
+   trên cùng MỘT màn nói ngược nhau. Đã dính thật: Tiếng Anh lớp 1 chạy được từ
+   12-08 mà mục sắp có vẫn ghi "Đang biên soạn". */
+t('môn đã có quyển thì mục sắp có không được ghi "Đang biên soạn"',
+  (dk.sapCo || []).every((s) => !(ct.some((c) => c.mon === s.mon) && /đang biên soạn/i.test(s.ten))));
+
+/* ── PHÉP GOM NHÓM ──
+   Luật ở `gomNhomKeSach`, không ở JSX, nên soi được bằng node. Dựng sổ giả để thử
+   đúng cái luật chứ không phụ thuộc nội dung thật. */
+{
+  const q = (ma, mon, nhom, dangLam = 0, gio = 0) =>
+    ({ ct: { ma, mon, nhom }, td: { dangLam, gio, xong: 0, tong: 10 } });
+  const tenMon = (m) => ({ toan: 'Toán', tienganh: 'Tiếng Anh' }[m] || m);
+
+  const nh = gomNhomKeSach(
+    [q('lop2', 'toan', 'Toán cấp 1'), q('lop3', 'toan', 'Toán cấp 1', 1, 500),
+     q('ta1', 'tienganh', 'Tiếng Anh', 1, 900)],
+    [{ ma: 'toan', cuaPhu: [{ trang: 'chuDe', nhom: 'Toán cấp 1', ten: 'Học theo chủ đề' }] }],
+    tenMon,
+  );
+  t('gom đúng số nhóm', nh.length === 2);
+  const toan = nh.find((x) => x.ten === 'Toán cấp 1');
+  const ta = nh.find((x) => x.ten === 'Tiếng Anh');
+  t('cửa phụ nằm TRONG nhóm của nó', toan.cua.length === 1 && ta.cua.length === 0);
+
+  /* Đây là chỗ bản trước hỏng: MỘT thẻ học tiếp cho cả app, nên bé học dở cả hai
+     môn thì một môn biến mất khỏi chỗ dễ thấy nhất. */
+  t('MỖI nhóm có chỗ học tiếp riêng',
+    toan.tiep?.ct.ma === 'lop3' && ta.tiep?.ct.ma === 'ta1');
+  /* Quyển đang học VẪN nằm trong danh sách. Bản đầu lấy nó ra cho khỏi lặp, nhưng
+     thế là nhóm Tiếng Anh (một quyển) không còn danh sách lớp nào — mà "chọn bài
+     theo nhu cầu" thì phải nhìn thấy đủ các lớp mới chọn được. */
+  t('danh sách nhóm liệt kê ĐỦ mọi quyển, kể cả quyển đang học tiếp',
+    toan.sach.length === 2 && toan.sach.some((x) => x.ct.ma === 'lop3')
+    && ta.sach.length === 1);
+
+  /* Chưa học gì thì không có thẻ học tiếp — thẻ trống chỉ tổ làm bé tưởng đang dở. */
+  const sach = gomNhomKeSach([q('lop2', 'toan', 'Toán cấp 1')], [], tenMon);
+  t('sổ trắng thì nhóm không mọc thẻ học tiếp',
+    sach[0].tiep === null && sach[0].sach.length === 1);
+
+  /* Quyển quên khai `nhom` phải rơi về tên môn, đừng rơi vào nhóm "undefined". */
+  const thieu = gomNhomKeSach([q('lopX', 'toan', undefined)], [], tenMon);
+  t('quyển quên khai nhóm rơi về tên môn', thieu[0].ten === 'Toán');
+
+  /* Nhiều quyển cùng dở thì chọn quyển ĐỘNG VÀO GẦN NHẤT, không phải quyển đầu. */
+  const hai = gomNhomKeSach(
+    [q('lop2', 'toan', 'Toán cấp 1', 1, 100), q('lop4', 'toan', 'Toán cấp 1', 1, 900)], [], tenMon);
+  t('học tiếp chỉ vào quyển động vào gần nhất', hai[0].tiep.ct.ma === 'lop4');
+}
 t('đề ôn thi nào cũng khai trạng thái',
   (dk.luyenThi || []).every((s) => s.ma && s.ten && s.trangThai));
 

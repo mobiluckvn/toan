@@ -19,9 +19,19 @@ import { chamTu, chamCau, chamTot, loiKhen, datNoi } from '../lib/chamnoi.js';
  *
  * 4. MÁY KHÔNG NGHE ĐƯỢC THÌ NÓI RA. Không ẩn nút đi im lặng — bé và bố mẹ phải
  *    biết là do máy, không phải do bé.
+ *
+ * ── `onHong` — VÌ SAO PHẢI BÁO LÊN TRÊN ──
+ * Bản trước nuốt trọn mọi trục trặc micro vào trong ô này: hiện một dòng vàng rồi
+ * thôi. Màn hình cha không có cách nào biết, nên khi việc NÓI trở thành điều kiện
+ * đi tiếp thì bé có máy không micro sẽ kẹt vĩnh viễn — không ai bảo được rằng lỗi
+ * ở máy chứ không ở bé. Nên mọi trục trặc THUỘC VỀ MÁY đều gọi `onHong(mã)`.
+ *
+ * `no-speech` KHÔNG gọi `onHong`: máy vẫn tốt, bé chỉ chưa nói. Lẫn hai thứ này
+ * là bé im lặng ba lần rồi được đi tiếp — mở toang đúng cái cổng vừa dựng.
  */
 export default function NutNoi({
-  cau, loai = 'tu', maAm, doiThu = [], onXong, nhan = 'Nói theo',
+  cau, loai = 'tu', maAm, doiThu = [], onXong, onHong, onNghe, noiBat = false,
+  nhan = 'Nói theo',
 }) {
   const [trangThai, datTrangThai] = useState('cho');   // cho · dangNghe · dangCham
   const [tam, datTam] = useState('');
@@ -41,6 +51,7 @@ export default function NutNoi({
     /* Xin micro TRƯỚC. Hộp thoại quyền bật ra giữa lúc bé đang nói là hỏng cả lượt. */
     if (!(await xinMicro())) {
       datLoi(loiDocDuoc('not-allowed'));
+      onHong?.('not-allowed');
       return;
     }
 
@@ -60,14 +71,22 @@ export default function NutNoi({
       datSoLan((n) => n + 1);
       /* Giữ ĐIỂM CAO NHẤT, không phải điểm lần cuối — xem luật 3. */
       if (truoc == null || k.diem > truoc) datCaoNhat(k.diem);
-      onXong?.({ ...k, caoNhat: Math.max(truoc ?? 0, k.diem), lan: soLan + 1 });
+      /* `daNoi` chỉ tính khi máy NGHE RA CHỮ. Bé bấm nút rồi ngồi im thì `chu`
+         rỗng — đó là chưa nói, không phải đã nói. Thiếu chốt này thì bấm ba cái
+         trong im lặng là qua được chặng. */
+      onXong?.({ ...k, caoNhat: Math.max(truoc ?? 0, k.diem), lan: soLan + 1, coTieng: !!ds.join('').trim() });
     } catch (e) {
       datLoi(e?.message || loiDocDuoc(e?.ma));
+      onHong?.(e?.ma || 'khong-ro');
     } finally {
       datTrangThai('cho');
       phien.current = null;
     }
-  }, [cau, loai, doiThu, trangThai, caoNhat, soLan, onXong]);
+  }, [cau, loai, doiThu, trangThai, caoNhat, soLan, onXong, onHong]);
+
+  /* Trình duyệt không có Web Speech: báo lên NGAY lúc vẽ, đừng đợi bé bấm — nút
+     bấm còn không có thì bé chẳng bao giờ chạm tới đường báo lỗi kia. */
+  useEffect(() => { if (!ngheDuoc()) onHong?.('khong-ho-tro'); }, [onHong]);
 
   if (!ngheDuoc()) {
     return (
@@ -93,22 +112,30 @@ export default function NutNoi({
         )}
       </div>
 
-      <p className="font-serif text-2xl text-navy">{cau}</p>
+      {/* Ở dáng nổi bật thì chữ to đã nằm ngay trên hình rồi — nhắc lại lần nữa
+          là thừa, mà chỗ ấy phải dành cho nút nói. */}
+      {!noiBat && <p className="font-serif text-2xl text-navy">{cau}</p>}
 
-      <div className="flex flex-wrap items-center gap-3">
+      <div className={`flex flex-wrap items-center gap-3 ${noiBat ? 'flex-col items-stretch' : ''}`}>
         {/* Nghe mẫu luôn đứng cạnh — luật 1. */}
-        {maAm && <NutNghe ma={maAm} to nhan="Nghe mẫu" />}
+        {maAm && (
+          <NutNghe ma={maAm} to nhan="Nghe cô đọc" onPhat={onNghe}
+                   chuBen={noiBat ? 'Nghe cô đọc' : null} />
+        )}
         <button
           type="button"
           onClick={noi}
           disabled={trangThai === 'dangCham'}
-          className={`inline-flex items-center gap-2 rounded-xl2 px-6 py-4 text-lg
+          className={`inline-flex items-center justify-center gap-2 rounded-xl2
             font-semibold transition disabled:opacity-60
             focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
+            ${noiBat ? 'px-6 py-6 text-2xl' : 'px-6 py-4 text-lg'}
             ${dangNghe ? 'bg-alert text-white' : 'bg-teal text-teal-dark hover:brightness-105'}`}
         >
           <span aria-hidden="true">{dangNghe ? '⏹️' : '🎤'}</span>
-          {dangNghe ? 'Đang nghe con…' : trangThai === 'dangCham' ? 'Đang chấm…' : 'Bấm rồi nói'}
+          {dangNghe ? 'Đang nghe con…'
+            : trangThai === 'dangCham' ? 'Đang chấm…'
+              : noiBat ? 'Đến lượt con' : 'Bấm rồi nói'}
         </button>
         {soLan > 0 && !dangNghe && (
           <span className="text-sm text-mute">đã thử {soLan} lần</span>

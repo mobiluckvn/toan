@@ -25,7 +25,9 @@ let dangKeu = null;
 
 /* `onPhat` báo ra ngoài mỗi lần clip chạy. Chặng TỪ MỚI dùng nó để biết bé đã
    nghe đủ các từ chưa — đó là đường đi tiếp thứ hai khi video không tải được. */
-export default function NutNghe({ ma, nhan = 'Nghe', to = false, tuDong = false, onPhat }) {
+export default function NutNghe({
+  ma, nhan = 'Nghe', to = false, tuDong = false, chuBen = null, onPhat,
+}) {
   const [keu, datKeu] = useState(false);
   const tk = useRef(null);
   const duong = duongAm(ma);
@@ -63,17 +65,23 @@ export default function NutNghe({ ma, nhan = 'Nghe', to = false, tuDong = false,
 
   if (!duong) return null;
 
-  const co = to ? 'h-16 w-16 text-3xl' : 'h-11 w-11 text-xl';
+  /* `chuBen` biến nút tròn thành nút dài có chữ. Dùng ở chỗ nút nghe đứng một
+     mình giữa màn: một vòng tròn trống trơn không nói được nó làm gì, mà bé thì
+     chưa đọc chữ — nhưng bố mẹ ngồi cạnh thì đọc được, và họ là người hướng dẫn
+     trong mấy buổi đầu. Vẫn MỘT nút bấm, không phải chữ rời nằm ngoài. */
+  const co = to ? 'h-16 text-3xl' : 'h-11 text-xl';
+  const dang = chuBen ? `${co} gap-3 rounded-xl2 px-5` : `${co} ${to ? 'w-16' : 'w-11'} rounded-full`;
   return (
     <button
       type="button"
       onClick={phat}
       aria-label={nhan}
-      className={`${co} inline-flex flex-none items-center justify-center rounded-full
+      className={`${dang} inline-flex flex-none items-center justify-center
         border-2 transition focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
         ${keu ? 'border-teal bg-teal text-white' : 'border-teal bg-teal-pale text-teal-dark hover:bg-teal hover:text-white'}`}
     >
       <span aria-hidden="true">{keu ? '🔊' : '🔈'}</span>
+      {chuBen && <span className="text-lg font-semibold">{chuBen}</span>}
     </button>
   );
 }

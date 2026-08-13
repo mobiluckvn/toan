@@ -95,6 +95,52 @@ export const dsChuongTrinhSapXep = () => dsChuongTrinh()
   .slice()
   .sort((a, b) => (a.thuTu ?? 99) - (b.thuTu ?? 99)
                   || String(a.ma).localeCompare(String(b.ma)));
+/**
+ * GOM KỆ SÁCH THÀNH NHÓM — luật để riêng khỏi giao diện, để cổng chạy được bằng node.
+ *
+ * Ba việc, và cả ba đều từng hoặc sắp hỏng câm nếu để trong JSX:
+ *
+ * 1. GOM THEO `nhom`, KHÔNG theo mã môn. Bốn quyển lớp 2·3·4·5 là "Toán cấp 1";
+ *    gom theo môn thì tiêu đề chỉ có thể là "TOÁN", và mai kia thêm Toán cấp 2 là
+ *    chín quyển đổ chung một đống. Quyển không khai `nhom` rơi về tên môn như cũ.
+ *
+ * 2. CỬA PHỤ ("Học theo chủ đề") đứng TRONG nhóm nó cắt ngang. Tên nhóm của cửa
+ *    khai ở tệp index.js của môn, còn của quyển khai ở sổ đăng ký — HAI NƠI, phải
+ *    trùng từng chữ. Lệch một chữ thì cửa rơi ra thành nhóm riêng chỉ có mình nó,
+ *    giao diện vẫn vẽ đẹp. Cổng `kesach.test.mjs` canh chỗ này.
+ *
+ * 3. MỖI NHÓM MỘT CHỖ "HỌC TIẾP". Bản trước có đúng một thẻ cho cả app: bé đang
+ *    học dở cả Toán lẫn Tiếng Anh thì một trong hai biến mất khỏi chỗ dễ thấy nhất.
+ *
+ *    Quyển ấy VẪN NẰM trong danh sách bên dưới. Bản đầu lấy nó ra cho khỏi lặp,
+ *    nhưng thế là nhóm Tiếng Anh (mới có một quyển) không còn danh sách lớp nào cả
+ *    — mà "chọn bài theo nhu cầu" thì phải NHÌN THẤY đủ các lớp mới chọn được.
+ *    Thẻ vàng là LỐI TẮT, danh sách là KỆ SÁCH; bỏ kệ đi để giữ lối tắt là hỏng
+ *    đúng cái quan trọng hơn.
+ *
+ * @param ds    [{ ct, td }] đã xếp theo `thuTu`
+ * @param mon   danh sách hồ sơ môn (mỗi môn có `ma` và `cuaPhu`)
+ * @param tenMon (ma) => tên môn, để quyển không khai `nhom` có chỗ rơi về
+ */
+export function gomNhomKeSach(ds = [], mon = [], tenMon = (m) => m, bieuTuongMon = () => '📘') {
+  const theoNhom = new Map();
+  const lay = (ten, maMon) => {
+    if (!theoNhom.has(ten)) {
+      theoNhom.set(ten, { ten, bieuTuong: bieuTuongMon(maMon), sach: [], cua: [] });
+    }
+    return theoNhom.get(ten);
+  };
+  for (const x of ds) lay(x.ct.nhom || tenMon(x.ct.mon), x.ct.mon).sach.push(x);
+  for (const m of mon) {
+    for (const c of m.cuaPhu || []) lay(c.nhom || tenMon(m.ma), m.ma).cua.push({ m, c });
+  }
+  return [...theoNhom.values()].map((nh) => {
+    const dangHoc = nh.sach.filter((x) => x.td?.dangLam > 0)
+      .sort((a, b) => (b.td.gio || 0) - (a.td.gio || 0));
+    return { ...nh, tiep: dangHoc[0] || null };
+  });
+}
+
 export const chuongTrinh = (ma) => (SO_DK.chuongTrinh || {})[ma] || SO_DK.chuongTrinh.lop5;
 export const cachDoc = (id) => chuongTrinh(chuongTrinhCua(id)).doc || {};
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import NutNghe, { maCua } from './NutNghe.jsx';
 import NutNoi from './NutNoi.jsx';
+import ThanhCau from './ThanhCau.jsx';
 import { datNoi } from '../lib/chamnoi.js';
 import { ngheDuoc } from '../lib/nghenoi.js';
 
@@ -79,6 +80,20 @@ export default function HoiThoai({ hoiThoai, tenBe = 'Bo', onXong }) {
         <p className="mt-1 text-2xl font-bold text-navy">{hoiThoai.ten}</p>
         <p className="mt-2 rounded-xl2 bg-soft p-3 text-ink">🖼️ {hoiThoai.canh}</p>
       </div>
+
+      {/* Bé phải biết còn mấy LƯỢT của mình nữa. Không có chỗ nào nói thì mỗi lượt
+          đều có thể là lượt cuối, và một đoạn hội thoại 8 lượt hoá ra dài vô tận
+          với bé 6 tuổi. Chỉ đếm lượt CỦA BÉ — lượt của máy bé không phải làm gì. */}
+      {luotBe.length > 1 && (
+        <div className="rounded-xl2 border-2 border-line bg-white p-3">
+          <ThanhCau
+            tong={luotBe.length}
+            tt={luotBe.map((l) => (diem[l.i] == null ? undefined : (datNoi(diem[l.i]) ? 'dung' : 'no')))}
+            tai={luotBe.findIndex((l) => l.i === tai)}
+            nhan="Những lượt con phải nói"
+          />
+        </div>
+      )}
 
       <ol className="flex flex-col gap-3">
         {luot.slice(0, tai + 1).map((l) => (

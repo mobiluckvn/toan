@@ -1,5 +1,6 @@
-import React, { useEffect, useMemo, useState } from 'react';
-import NutNghe from './NutNghe.jsx';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import ThanhViec from './ThanhViec.jsx';
+import ThanhCau from './ThanhCau.jsx';
 import CauHoi from './CauHoi.jsx';
 import CauNgheNhin from './CauNgheNhin.jsx';
 import HinhVe from './HinhVe.jsx';
@@ -9,7 +10,11 @@ import Video from './Video.jsx';
 import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
 import { napBai, napSoAm, hangXom } from '../lib/noiDung.js';
 import { maCua } from './NutNghe.jsx';
-import { changCua, NHAN_CHANG, trangThaiChang, THU_TOI_THIEU } from '../lib/dandat.js';
+import {
+  changCua, NHAN_CHANG, trangThaiChang, THU_TOI_THIEU, viecChangTu, viecChangCau,
+  noiDuoc,
+} from '../lib/dandat.js';
+import { DAT as DAT_NOI } from '../lib/chamnoi.js';
 
 const maCauAm = (c) => maCua(c, 'en');
 
@@ -205,23 +210,79 @@ function ManTu({ bai, onTiep, onNoi }) {
   const [daXem, datDaXem] = useState(false);
   const [videoHong, datVideoHong] = useState(false);
   const [daNghe, datDaNghe] = useState(() => new Set());
+  const [soNoi, datSoNoi] = useState(() => ({}));
+  const [micHong, datMicHong] = useState(false);
+  const [iTu, datITu] = useState(0);
   const K = bai.knowledgeCore.statements || [];
   const dsTu = bai.knowledgeCore.vocabulary || [];
-  const ngheDu = dsTu.length > 0 && dsTu.every((v) => daNghe.has(v.tu));
-  const moKhoa = daXem || ngheDu || videoHong || !bai.video?.tu;
+  const oVideo = useRef(null);
+
+  /* Gắn hình vào từ TRƯỚC khi đưa cho thanh việc — cùng nguồn với thẻ từ. */
+  const dsTuCoHinh = useMemo(
+    () => dsTu.map((v) => ({ ...v, ...hinhCuaTu(bai, v.tu) })),
+    [bai, dsTu],
+  );
+
+  const { viec, mo, conThieu, vuongMicro } = viecChangTu({
+    dsTu: dsTuCoHinh, coVideo: !!bai.video?.tu, daXem, videoHong,
+    daNghe: [...daNghe], soNoi, micHong, datNoi: DAT_NOI,
+  });
+
+  /* Bấm một ô trên thanh: ô TỪ thì chuyển hẳn sang từ ấy (màn chỉ hiện một từ
+     một lúc), ô VIDEO thì cuộn lên video. Biết mình thiếu gì mà không tới được
+     chỗ ấy thì thanh mới đi nửa đường. */
+  const toiViec = useCallback((x) => {
+    if (x.loai === 'video') {
+      const dich = oVideo.current;
+      if (!dich) return;
+      dich.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      dich.classList.add('ring-4', 'ring-gold');
+      setTimeout(() => dich.classList.remove('ring-4', 'ring-gold'), 1400);
+      return;
+    }
+    const i = dsTuCoHinh.findIndex((v) => v.tu === x.ma);
+    if (i >= 0) datITu(i);
+  }, [dsTuCoHinh]);
+
+  /* `lan` chỉ cộng khi máy NGHE RA CHỮ. Bé bấm nút rồi ngồi im thì không tính —
+     nếu tính thì bấm hai cái trong im lặng là "đã thử thật 2 lần" và qua luôn. */
+  const ghiNoi = useCallback((tu, kq) => {
+    if (kq?.coTieng) {
+      datSoNoi((s) => {
+        const cu = s[tu] || { caoNhat: null, lan: 0 };
+        return {
+          ...s,
+          [tu]: {
+            caoNhat: Math.max(cu.caoNhat ?? 0, kq.diem ?? 0),
+            lan: cu.lan + 1,
+          },
+        };
+      });
+    }
+    onNoi?.(tu, kq);
+  }, [onNoi]);
 
   return (
     <section className="flex flex-col gap-4">
-      <Video
-        tep={bai.video?.tu}
-        ten="Xem từ mới"
-        phu={`${dsTu.length} từ · khoảng nửa phút`}
-        onXongLan1={() => datDaXem(true)}
-        onLoi={() => datVideoHong(true)}
-      />
+      <ThanhViec viec={viec} conThieu={conThieu} mo={mo} dangO={dsTuCoHinh[iTu]?.tu}
+                 vuongMicro={vuongMicro} onChon={toiViec} />
 
-      <TuVung bai={bai} onNoi={onNoi}
-              onNghe={(t) => datDaNghe((s) => (s.has(t) ? s : new Set(s).add(t)))} />
+      <div ref={oVideo} className="rounded-xl2 transition">
+        <Video
+          tep={bai.video?.tu}
+          ten="Xem từ mới"
+          phu={`${dsTu.length} từ · khoảng nửa phút`}
+          onXongLan1={() => datDaXem(true)}
+          onLoi={() => datVideoHong(true)}
+        />
+      </div>
+
+      <LuyenTu
+        bai={bai} ds={dsTuCoHinh} i={iTu} onDoi={datITu}
+        soNoi={soNoi} micHong={micHong}
+        onNoi={ghiNoi} onMicHong={() => datMicHong(true)}
+        onNghe={(t) => datDaNghe((s) => (s.has(t) ? s : new Set(s).add(t)))}
+      />
 
       <GocBoMe ten="Góc bố mẹ · bài này dạy gì">
         <MucBoMe nhan="Mục tiêu">{bai.objective.text}</MucBoMe>
@@ -232,65 +293,115 @@ function ManTu({ bai, onTiep, onNoi }) {
 
       <NutTiep
         onClick={onTiep}
-        tat={!moKhoa}
+        tat={!mo}
         chu="Sang mẫu câu"
-        viSao={`Con xem hết video, hoặc bấm 🔈 nghe đủ ${dsTu.length} từ, rồi đi tiếp nhé.`}
+        viSao="Con làm nốt mấy ô còn trắng ở trên rồi đi tiếp nhé."
       />
     </section>
   );
 }
 
+/**
+ * Hình của một từ. Hình KHÔNG nằm trong `vocabulary` mà ở `bai.hinhTu` — thẻ từ
+ * và thanh việc phải cùng hỏi ĐÚNG hàm này.
+ *
+ * Đã dính thật: thanh việc tự đọc `v.ve`/`v.hinh` từ `vocabulary`, không có nên
+ * cả bốn ô vẽ ra dấu ❔ trong khi thẻ từ ngay dưới vẫn đủ 🍗🍟🐟🥛. Cùng một vật
+ * mà hai chỗ hỏi hai nguồn thì sớm muộn cũng lệch — xem [[mot-nguon-cho-hai-ben-ve]].
+ */
+const hinhCuaTu = (bai, tu) => (bai.hinhTu || []).find((h) => h.tu === tu) || {};
+
 
 /**
- * THẺ TỪ — bé nhìn hình, nghe từ, rồi tự nói lại.
+ * LUYỆN TỪNG TỪ — MỘT từ một lượt, và việc chính là NÓI.
  *
- * Ba việc trên một thẻ và chỉ ba việc: HÌNH để biết nghĩa, 🔈 để nghe mẫu, 🎤 để
- * tự nói. Không có ô giải thích nào — nghĩa tiếng Việt đã nằm ngay dưới từ, còn
- * lời giảng thì video vừa nói xong.
+ * ── VÌ SAO BỎ LƯỚI BỐN THẺ ──
+ * Bản trước bày cả bốn từ cùng lúc, mỗi thẻ hai nút tròn 🔈 và 🎤 to bằng nhau.
+ * Ba điều hỏng cùng lúc:
+ *
+ *   · hai nút bằng nhau thì trông như hai việc ngang hàng, trong khi video vừa
+ *     dạy âm xong rồi — tới đây NÓI mới là đích, nghe chỉ là để lấy mẫu;
+ *   · bấm 🎤 thì ô chấm điểm bung ra ở DƯỚI CẢ LƯỚI, cách xa cái thẻ bé vừa bấm.
+ *     Bé 6 tuổi không nối được hai thứ ấy với nhau;
+ *   · muốn nói một từ phải bấm ba lần: 🎤 → tìm ô ở dưới → "Bấm rồi nói".
+ *
+ * Nay màn chỉ còn MỘT từ: hình to, và nút nói là thứ to nhất màn. Bé không phải
+ * chọn gì, không lạc đi đâu, chấm điểm hiện ngay tại chỗ. Phần nhìn bao quát đã
+ * có thanh VIỆC CỦA CON ở trên lo — bấm ô nào trên thanh là nhảy tới từ ấy.
+ *
+ * ── VẪN GIỮ: MỖI LÚC CHỈ MỘT MICRO ──
+ * Hai micro cùng bật thì máy nghe lẫn, và bé cũng không biết đang được hỏi từ
+ * nào. Màn một từ một lượt làm điều ấy thành hiển nhiên, không phải canh nữa.
  */
-function TuVung({ bai, onNoi, onNghe }) {
+function LuyenTu({ bai, ds, i, onDoi, soNoi, micHong, onNoi, onNghe, onMicHong }) {
   /* Các từ KHÁC của bài — để bộ chấm bắt được việc bé đọc "dog" thành "duck".
      Hai từ ấy cùng một unit, nhầm sang nhau mà vẫn điểm cao thì bài nói vô nghĩa. */
-  const cungBai = bai.knowledgeCore.vocabulary.map((x) => x.tu);
-  const [noiTu, datNoiTu] = useState(null);
+  const cungBai = useMemo(() => ds.map((x) => x.tu), [ds]);
+  const v = ds[i];
+  if (!v) return null;
+
+  const muc = noiDuoc(soNoi[v.tu], DAT_NOI);
+  const conTu = ds.findIndex((x, k) => k > i && noiDuoc(soNoi[x.tu], DAT_NOI) === 'chua');
+  const tuSau = conTu >= 0 ? conTu : (i + 1 < ds.length ? i + 1 : -1);
+
   return (
-    <div className="flex flex-col gap-3">
-      <div className="grid gap-3 sm:grid-cols-2">
-        {bai.knowledgeCore.vocabulary.map((v) => (
-          <div key={v.tu}
-               className="flex items-center gap-3 rounded-xl2 border-2 border-line bg-white p-3">
-            <span className="text-4xl leading-none">
-              <HinhVe ten={v.tu} {...((bai.hinhTu || []).find((h) => h.tu === v.tu) || {})} />
-            </span>
-            <div className="min-w-0 flex-1">
-              <p className="text-lg font-bold text-navy">{v.tu}</p>
-              <p className="font-mono text-xs text-mute">{v.ipa}</p>
-              <p className="text-ink">{v.nghia}</p>
-            </div>
-            <NutNghe ma={v.am} nhan={`Nghe từ ${v.tu}`} onPhat={() => onNghe?.(v.tu)} />
-            <button type="button" onClick={() => datNoiTu(noiTu === v.tu ? null : v.tu)}
-              aria-label={`Nói từ ${v.tu}`}
-              className={`h-11 w-11 flex-none rounded-full border-2 text-xl transition
-                focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
-                ${noiTu === v.tu ? 'border-teal bg-teal text-white'
-                  : 'border-teal bg-white text-teal-dark hover:bg-teal-pale'}`}>
-              <span aria-hidden="true">🎤</span>
-            </button>
-          </div>
-        ))}
+    <div className="flex flex-col gap-3 rounded-xl2 border-2 border-line bg-white p-4">
+      <div className="flex items-center justify-between">
+        <p className="text-sm font-semibold uppercase tracking-wide text-mute">
+          Từ {i + 1} / {ds.length}
+        </p>
+        {muc !== 'chua' && (
+          <span className={`rounded-full px-3 py-1 text-sm font-bold
+            ${muc === 'dat' ? 'bg-teal-pale text-teal-dark' : 'bg-gold-pale text-gold-dark'}`}>
+            {muc === 'dat' ? '⭐ Con nói được rồi' : '✓ Con đã thử thật'}
+          </span>
+        )}
       </div>
-      {/* Mỗi lúc chỉ MỘT ô nói mở ra: hai micro cùng bật thì máy nghe lẫn, và bé
-          cũng không biết đang được hỏi từ nào. */}
-      {noiTu && (
-        <NutNoi
-          key={noiTu}
-          cau={noiTu}
-          loai="tu"
-          maAm={bai.knowledgeCore.vocabulary.find((x) => x.tu === noiTu)?.am}
-          doiThu={cungBai}
-          nhan={`Nói từ “${noiTu}”`}
-          onXong={(k) => onNoi?.(noiTu, k)}
-        />
+
+      {/* Hình to hẳn: đây là thứ bé nhìn vào để nhớ nghĩa lúc đang cố nói. */}
+      <div className="flex flex-col items-center gap-1 py-2">
+        <span className="text-7xl leading-none"><HinhVe ten={v.tu} {...hinhCuaTu(bai, v.tu)} /></span>
+        <p className="text-3xl font-bold text-navy">{v.tu}</p>
+        <p className="font-mono text-sm text-mute">{v.ipa}</p>
+        <p className="text-lg text-ink">{v.nghia}</p>
+      </div>
+
+      {/* `key` theo từ: đổi từ thì ô nói dựng lại từ đầu, không mang điểm của từ
+          trước sang từ sau. */}
+      <NutNoi
+        key={v.tu}
+        cau={v.tu}
+        loai="tu"
+        maAm={v.am}
+        doiThu={cungBai}
+        noiBat
+        nhan="Nghe cô đọc, rồi con nói lại"
+        onNghe={() => onNghe?.(v.tu)}
+        onXong={(k) => onNoi?.(v.tu, k)}
+        onHong={onMicHong}
+      />
+
+      {/* Đi lại giữa các từ. Nút "từ sau" nhảy tới từ CHƯA NÓI gần nhất, để bé
+          không phải tự dò xem còn thiếu từ nào. */}
+      <div className="flex items-center justify-between gap-2">
+        <button type="button" onClick={() => onDoi(i - 1)} disabled={i === 0}
+          className="rounded-xl2 px-4 py-2 font-semibold text-navy disabled:text-line
+            focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          ← Từ trước
+        </button>
+        <button type="button" onClick={() => onDoi(tuSau)} disabled={tuSau < 0}
+          className="rounded-xl2 bg-navy px-5 py-2 font-semibold text-white
+            disabled:bg-line disabled:text-mute
+            focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+          Từ sau →
+        </button>
+      </div>
+
+      {micHong && (
+        <p className="rounded-xl2 bg-gold-pale p-2 text-sm text-gold-dark">
+          Máy chưa nghe được nên phần nói để lúc khác — con cứ bấm 🔈 nghe rồi
+          đọc theo, xong bấm “Từ sau” nhé.
+        </p>
       )}
     </div>
   );
@@ -311,36 +422,80 @@ function ManCau({ bai, onTiep }) {
   const [i, datI] = useState(0);
   const [daXem, datDaXem] = useState(() => new Set());
   const [hong, datHong] = useState(false);
+  const [soNoi, datSoNoi] = useState(() => ({}));
+  const [micHong, datMicHong] = useState(false);
   const mcDs = bai.knowledgeCore.mauCauDs || [];
   const mc = mcDs[i] || bai.knowledgeCore.mauCau;
   const bay = bai.knowledgeCore.misconceptions?.[0];
   const NHAN = { hoi: 'Câu hỏi', dap: 'Câu trả lời', cau: 'Mẫu câu' };
-  const conThieu = ds.filter((v) => !daXem.has(v.tep)).length;
-  const moKhoa = hong || ds.length === 0 || conThieu === 0;
+
+  const dsCau = useMemo(
+    () => ds.map((v) => ({ ...v, nhanVai: NHAN[v.vai] || 'Mẫu câu' })),
+    [ds],
+  );
+  const { viec, mo, conThieu, vuongMicro } = viecChangCau({
+    dsCau, daXem: [...daXem], videoHong: hong, soNoi, micHong, datNoi: DAT_NOI,
+  });
+
+  const ghiNoi = useCallback((cau, kq) => {
+    if (!kq?.coTieng) return;
+    datSoNoi((s) => {
+      const cu = s[cau] || { caoNhat: null, lan: 0 };
+      return { ...s, [cau]: { caoNhat: Math.max(cu.caoNhat ?? 0, kq.diem ?? 0), lan: cu.lan + 1 } };
+    });
+  }, []);
+
+  const cauNay = ds[i]?.cau;
+  const chuaXong = ds.findIndex((v, k) => k > i
+    && !(daXem.has(v.tep) && noiDuoc(soNoi[v.cau], DAT_NOI) !== 'chua'));
+  const mauSau = chuaXong >= 0 ? chuaXong : (i + 1 < ds.length ? i + 1 : -1);
 
   return (
     <section className="flex flex-col gap-4">
+      <ThanhViec viec={viec} conThieu={conThieu} mo={mo} dangO={ds[i]?.tep}
+                 vuongMicro={vuongMicro}
+                 onChon={(x) => { const k = ds.findIndex((v) => v.tep === x.ma); if (k >= 0) datI(k); }} />
+
       {ds.length > 1 && (
-        <div className="flex flex-wrap gap-2">
-          {ds.map((v, k) => (
-            <button key={v.tep} type="button" onClick={() => datI(k)}
-              className={`rounded-xl2 px-4 py-2.5 font-semibold transition
-                focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
-                ${k === i ? 'bg-navy text-white'
-                  : daXem.has(v.tep) ? 'bg-teal-pale text-teal-dark hover:bg-line'
-                  : 'bg-soft text-navy hover:bg-line'}`}>
-              {daXem.has(v.tep) ? '✓ ' : ''}{NHAN[v.vai] || 'Mẫu câu'} · {v.cau}
-            </button>
-          ))}
-        </div>
+        <p className="text-sm font-semibold uppercase tracking-wide text-mute">
+          {NHAN[ds[i]?.vai] || 'Mẫu câu'} {i + 1} / {ds.length}
+        </p>
       )}
 
       <Video key={ds[i]?.tep} tep={ds[i]?.tep} ten="Xem mẫu câu" phu={ds[i]?.cau}
              onXongLan1={() => datDaXem((s) => new Set(s).add(ds[i]?.tep))}
              onLoi={() => datHong(true)} />
 
-      {mc && <NutNoi cau={mc.cau} loai="cau" maAm={maCauAm(mc.cau)}
-                     nhan={`Nói cả câu “${mc.cau}”`} />}
+      {/* Nói CẢ CÂU là việc khó nhất chặng này, nên nút nói dùng dáng nổi bật y
+          như chặng Từ mới — `key` theo câu để đổi mẫu là ô nói dựng lại từ đầu. */}
+      {cauNay && (
+        <NutNoi
+          key={cauNay}
+          cau={cauNay}
+          loai="cau"
+          maAm={maCauAm(cauNay)}
+          noiBat
+          nhan="Nghe cô đọc, rồi con nói cả câu"
+          onXong={(k) => ghiNoi(cauNay, k)}
+          onHong={() => datMicHong(true)}
+        />
+      )}
+
+      {ds.length > 1 && (
+        <div className="flex items-center justify-between gap-2">
+          <button type="button" onClick={() => datI(i - 1)} disabled={i === 0}
+            className="rounded-xl2 px-4 py-2 font-semibold text-navy disabled:text-line
+              focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+            ← Mẫu trước
+          </button>
+          <button type="button" onClick={() => datI(mauSau)} disabled={mauSau < 0}
+            className="rounded-xl2 bg-navy px-5 py-2 font-semibold text-white
+              disabled:bg-line disabled:text-mute
+              focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+            Mẫu sau →
+          </button>
+        </div>
+      )}
 
       <GocBoMe ten="Góc bố mẹ · mẫu câu này dùng để làm gì">
         {mc && <MucBoMe nhan="Dùng để">{mc.dungDe}</MucBoMe>}
@@ -367,10 +522,8 @@ function ManCau({ bai, onTiep }) {
         )}
       </GocBoMe>
 
-      <NutTiep onClick={onTiep} chu="Vào luyện tập" tat={!moKhoa}
-               viSao={conThieu === 1
-                 ? 'Còn một mẫu câu nữa con chưa xem.'
-                 : `Còn ${conThieu} mẫu câu nữa con chưa xem.`} />
+      <NutTiep onClick={onTiep} chu="Vào luyện tập" tat={!mo}
+               viSao="Con làm nốt mấy ô còn trắng ở trên rồi đi tiếp nhé." />
     </section>
   );
 }
@@ -405,17 +558,20 @@ function LuyenTap({ bai, onTiep }) {
   const [lamLai, datLamLai] = useState(null); // đang làm lại đúng những câu ấy
   const [moiLamLai, datMoiLamLai] = useState(false);
 
+  const [ttCau, datTtCau] = useState([]);     // trạng thái từng chấm của mức này
+
   const goc = bai.practice.pools[MUC[m].khoa] || [];
   const pool = lamLai || goc;
   const cau = pool[i];
 
   const sangMuc = (k) => {
-    datM(k); datI(0); datNo([]); datLamLai(null); datMoiLamLai(false);
+    datM(k); datI(0); datNo([]); datLamLai(null); datMoiLamLai(false); datTtCau([]);
     if (k > xaM) datXaM(k);
   };
 
   const xong = (kq) => {
     datDem((d) => ({ dung: d.dung + (kq.dung ? 1 : 0), tong: d.tong + 1 }));
+    datTtCau((t) => { const s = [...t]; s[i] = kq.boQua ? 'no' : (kq.dung ? 'dung' : 'sai'); return s; });
     if (kq.boQua) datNo((n) => (n.includes(cau.id) ? n : [...n, cau.id]));
 
     if (i + 1 < pool.length) { datI(i + 1); return; }
@@ -442,7 +598,7 @@ function LuyenTap({ bai, onTiep }) {
         </div>
         <div className="flex flex-wrap gap-3">
           <button type="button"
-            onClick={() => { datLamLai(ds); datI(0); datMoiLamLai(false); }}
+            onClick={() => { datLamLai(ds); datI(0); datMoiLamLai(false); datTtCau([]); }}
             className="rounded-xl2 bg-navy px-6 py-3 text-lg font-semibold text-white
               focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
             Làm lại {ds.length} câu →
@@ -461,32 +617,44 @@ function LuyenTap({ bai, onTiep }) {
 
   return (
     <section className="flex flex-col gap-4">
-      {/* Thanh MỨC — cùng luật với thanh chặng: mức đã qua bấm vào làm lại được. */}
-      <ol className="flex flex-wrap gap-1.5">
-        {MUC.map((x, k) => (
-          <li key={x.khoa}>
-            <button type="button" disabled={k > xaM} onClick={() => sangMuc(k)}
-              title={k > xaM ? 'Con làm xong mức trước thì mức này mở ra'
-                   : k < m ? 'Bấm để làm lại mức này' : undefined}
-              className={`rounded-full px-3 py-1 text-xs font-semibold transition
-                disabled:cursor-not-allowed disabled:opacity-45
-                focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
-                ${k === m ? 'bg-gold text-gold-dark'
-                  : k < m ? 'bg-teal-pale text-teal-dark hover:bg-teal hover:text-white'
-                  : 'bg-soft text-mute'}`}>
-              {k < m ? '✓ ' : k > xaM ? '🔒 ' : ''}{x.sao} {x.ten}
-            </button>
-          </li>
-        ))}
-      </ol>
+      {/* VIỆC CỦA CON của chặng luyện tập: ba ô MỨC to ở trên, rồi dãy chấm cho
+          từng câu của mức đang làm. Cùng ý với thanh ở chặng Từ mới — bé liếc một
+          cái là biết đang ở đâu và còn bao nhiêu, không phải đọc "Câu 4/9". */}
+      <section aria-label="Việc của con trong phần này"
+        className="flex flex-col gap-2 rounded-xl2 border-2 border-line bg-white p-3">
+        <div className="flex flex-wrap items-baseline gap-x-3">
+          <h3 className="text-sm font-bold uppercase tracking-wide text-navy">Việc của con</h3>
+          {lamLai && <p className="text-sm text-gold-dark">Đang làm lại mấy câu còn nợ.</p>}
+        </div>
 
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <p className="text-lg font-bold text-gold-dark">
-          <span className="text-gold">{MUC[m].sao}</span> {MUC[m].ten}
-          {lamLai && <span className="ml-2 text-sm font-normal text-mute">· làm lại</span>}
-        </p>
-        <p className="text-sm text-mute">Câu {i + 1}/{pool.length} · đúng {dem.dung}/{dem.tong}</p>
-      </div>
+        <ol className="flex flex-wrap gap-2">
+          {MUC.map((x, k) => {
+            const khoa = k > xaM;
+            return (
+              <li key={x.khoa}>
+                <button type="button" disabled={khoa} onClick={() => sangMuc(k)}
+                  aria-current={k === m ? 'true' : undefined}
+                  aria-label={`${x.ten} — ${khoa ? 'chưa tới lượt' : k < m ? 'đã làm qua, bấm để làm lại' : 'con đang ở đây'}`}
+                  className={`flex w-[5.5rem] flex-col items-center gap-0.5 rounded-xl2 border-2 p-2
+                    transition disabled:cursor-not-allowed
+                    focus:outline-none focus-visible:ring-4 focus-visible:ring-gold
+                    ${k === m ? 'border-gold bg-gold-pale ring-4 ring-navy'
+                      : k < m ? 'border-teal bg-teal-pale hover:brightness-95'
+                        : 'border-dashed border-line bg-soft'}`}>
+                  <span aria-hidden="true" className={`text-xl leading-none ${khoa ? 'opacity-50' : ''}`}>
+                    {khoa ? '🔒' : k < m ? '✅' : x.sao}
+                  </span>
+                  <span className={`text-[0.7rem] font-semibold leading-tight
+                    ${khoa ? 'text-mute' : 'text-ink'}`}>{x.ten}</span>
+                </button>
+              </li>
+            );
+          })}
+        </ol>
+
+        <ThanhCau tong={pool.length} tt={ttCau} tai={i}
+                  nhan={`Các câu của mức ${MUC[m].ten}`} />
+      </section>
       <div className="rounded-xl2 border-2 border-line bg-white p-5">
         {/* `key` là BẮT BUỘC, không phải để React bớt cảnh báo. Không có nó thì
             component giữ nguyên state khi đổi câu, và lúc chuyển từ câu BẤM CHỌN
@@ -506,6 +674,7 @@ function SatHach({ bai, onXong }) {
   const [i, datI] = useState(0);
   const [dung, datDung] = useState(0);
   const [het, datHet] = useState(false);
+  const [ttCau, datTtCau] = useState([]);
   const can = useMemo(() => Math.ceil(ds.length * 0.8), [ds.length]);
 
   if (het) {
@@ -530,14 +699,21 @@ function SatHach({ bai, onXong }) {
   }
 
   const q = ds[i];
-  const tra = (dung) => {
-    if (dung) datDung((n) => n + 1);
+  const tra = (kqDung) => {
+    if (kqDung) datDung((n) => n + 1);
+    datTtCau((t) => { const s = [...t]; s[i] = kqDung ? 'dung' : 'sai'; return s; });
     if (i + 1 < ds.length) datI(i + 1); else datHet(true);
   };
 
   return (
     <section className="flex flex-col gap-4">
-      <p className="text-sm text-mute">Câu {i + 1}/{ds.length}</p>
+      {/* Dãy chấm thay cho dòng "Câu 1/5". Bé sát hạch mà không biết còn mấy câu
+          thì mỗi câu đều có thể là câu cuối — dài vô tận với bé 6 tuổi. */}
+      {ds.length > 1 && (
+        <div className="rounded-xl2 border-2 border-line bg-white p-3">
+          <ThanhCau tong={ds.length} tt={ttCau} tai={i} nhan="Các câu của bài sát hạch" />
+        </div>
+      )}
       <div className="rounded-xl2 border-2 border-line bg-white p-5">
         {/* Nghe và nhìn, không phải đọc — xem `CauNgheNhin.jsx`. Kỳ ôn tập chương
             dùng chung đúng component này, để một câu hỏi không có hai cách chấm. */}

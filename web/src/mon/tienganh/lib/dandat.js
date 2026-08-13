@@ -132,6 +132,174 @@ export function trangThaiChang(i, tai, xa) {
   return i <= xa ? 'xong' : 'khoa';
 }
 
+/* ═══════════ TẦNG 2b · VIỆC PHẢI LÀM TRONG CHẶNG TỪ MỚI ═══════════ */
+
+/**
+ * VIỆC CỦA CON — danh sách việc của chặng Từ mới, để vẽ thành thanh trạng thái.
+ *
+ * ── VÌ SAO CÓ PHẦN NÀY ──
+ * Bản trước mở nút đi tiếp đúng luật, nhưng nói điều kiện ấy bằng MỘT DÒNG CHỮ:
+ * "Con xem hết video, hoặc bấm 🔈 nghe đủ 3 từ, rồi đi tiếp nhé." Bé lớp 1 chưa
+ * đọc được dòng ấy. Nên thực tế bé thấy một nút xám không rõ vì sao, và cách duy
+ * nhất để biết là bấm thử khắp nơi. Cả quyển dựng trên nguyên tắc "không bắt bé
+ * đọc chữ" mà đúng chỗ chỉ đường lại quay về chữ.
+ *
+ * Nên: mỗi việc là MỘT Ô CÓ HÌNH. Bé liếc một cái là thấy ô nào còn trắng.
+ *
+ * ── BA TRẠNG THÁI, VÀ VÌ SAO KHÔNG PHẢI HAI ──
+ *   chua  chưa đụng tới       ○
+ *   dang  làm được một nửa    ◔   (mới nghe, hoặc mới nói)
+ *   xong  nghe rồi, nói rồi   ◕
+ *
+ * Hai trạng thái (xong/chưa) thì bé nghe xong một từ mà ô vẫn trắng — công vừa bỏ
+ * ra không để lại dấu gì, và đó đúng là lúc bé bỏ cuộc. Ô phải nhúc nhích ngay
+ * lần bấm đầu.
+ *
+ * ── VÌ SAO VIỆC NÓI KHOÁ ĐƯỜNG ĐI, MÀ MICRO HỎNG THÌ MỞ ──
+ * Nghe rồi đi tiếp thì phần nói thành thứ trang trí — bé không bao giờ mở miệng,
+ * mà nói mới là chỗ khó nhất của học tiếng. Nên nói PHẢI làm.
+ *
+ * Nhưng micro là thứ hỏng được vì lý do chẳng liên quan gì tới bé: máy không có
+ * micro, trình duyệt chưa được cho phép, hoặc mất mạng (Web Speech cần mạng). Bé
+ * mà kẹt vì mấy thứ ấy thì đúng vào cái bẫy `THU_TOI_THIEU` sinh ra để tránh —
+ * xem đầu tệp. Nên `micHong` mở đường NGAY, và màn hình phải nói rõ là do máy.
+ *
+ * ⚠ Đường "tự mở" này là loại đã nuốt sáu lỗi câm của đợt trước: nó chỉ chạy khi
+ * có sự cố, nên đi thử tay gần như không bao giờ chạm tới. Phải có phép kiểm.
+ */
+export const TT_VIEC = { chua: 'chua', dang: 'dang', xong: 'xong' };
+
+/**
+ * NÓI ĐƯỢC MỘT TỪ CHƯA — lại đúng một luật ấy, lần thứ tư.
+ *
+ *     ĐÃ NÓI ĐƯỢC KHI: đã ĐẠT — hoặc đã THỬ THẬT ít nhất 2 lần.
+ *
+ *   dat   đạt ngưỡng phát âm            → ⭐
+ *   thu   thử thật đủ số lần, chưa đạt  → ✓   (vẫn đi tiếp được)
+ *   chua  chưa đủ                       → ○
+ *
+ * ── VÌ SAO KHÔNG ĐÒI PHẢI ĐẠT ──
+ * Bé ngọng, bé nói giọng miền, micro rẻ tiền — cả ba đều có thể không bao giờ
+ * chạm ngưỡng. Khoá cứng theo "phải đạt" thì bé tắc là tắc vĩnh viễn, và cái nó
+ * học được không phải tiếng Anh. Xem đầu tệp.
+ *
+ * ── VÌ SAO KHÔNG NHẬN "CÓ MỞ MIỆNG LÀ XONG" ──
+ * Bé nhìn 🍟 mà đọc "chicken" cũng được tính thì dấu ✓ trên thanh không còn nghĩa
+ * là "con nói được từ này" — nó chỉ còn nghĩa là "con có phát ra tiếng". Nên
+ * `lan` chỉ đếm những lần MÁY NGHE RA CHỮ; im lặng không cộng (xem `coTieng` ở
+ * `NutNoi`). Hai chốt ấy phải đi cùng nhau, gỡ một cái là cái kia thành vô nghĩa.
+ */
+export function noiDuoc({ caoNhat = null, lan = 0 } = {}, dat = 6) {
+  if (caoNhat != null && caoNhat >= dat) return 'dat';
+  return lan >= THU_TOI_THIEU ? 'thu' : 'chua';
+}
+
+/**
+ * @param  {object} t  đã làm được những gì
+ * @param  {object} t.soNoi  sổ nói: `{ [từ]: { caoNhat, lan } }` — xem `noiDuoc`
+ * @return {{viec: Array, mo: boolean, conThieu: number, vuongMicro: boolean}}
+ *
+ * `viec[0]` là ô video nếu bài có video từ mới; sau đó mỗi từ một ô.
+ */
+export function viecChangTu({
+  dsTu = [], coVideo = false, daXem = false, videoHong = false,
+  daNghe = [], soNoi = {}, micHong = false, datNoi = 6,
+} = {}) {
+  const nghe = new Set(daNghe);
+  const mucNoi = (tu) => noiDuoc(soNoi[tu], datNoi);
+  const noi = new Set(dsTu.map((v) => v.tu).filter((tu) => mucNoi(tu) !== 'chua'));
+  const viec = [];
+
+  if (coVideo) {
+    viec.push({
+      ma: '__video', loai: 'video', nhan: 'Xem từ mới', bieuTuong: '🎬',
+      /* Video hỏng KHÔNG phải là "xong" — bé chưa xem gì cả. Nhưng cũng không
+         được để "chưa", vì thế là bắt bé làm một việc bất khả. Ô riêng: `hong`. */
+      tt: videoHong ? 'hong' : (daXem ? TT_VIEC.xong : TT_VIEC.chua),
+      viecCon: [],
+    });
+  }
+
+  for (const v of dsTu) {
+    const n = nghe.has(v.tu);
+    const mn = mucNoi(v.tu);
+    const o = mn !== 'chua' || micHong;
+    viec.push({
+      ma: v.tu, loai: 'tu', nhan: v.tu, nghia: v.nghia, ve: v.ve, hinh: v.hinh,
+      daNghe: n, daNoi: mn !== 'chua', mucNoi: mn,
+      boQuaNoi: micHong && mn === 'chua',
+      tt: (n && o) ? TT_VIEC.xong : ((n || o) ? TT_VIEC.dang : TT_VIEC.chua),
+      viecCon: [
+        { ma: 'nghe', chu: '🔈', ten: 'nghe', xong: n },
+        { ma: 'noi', chu: '🎤', ten: 'nói', xong: mn !== 'chua', sao: mn === 'dat',
+          boQua: micHong && mn === 'chua' },
+      ],
+    });
+  }
+
+  /* Xem hết video HOẶC nghe đủ từng từ — hai đường, cả hai đều là nghe đủ chừng
+     ấy từ. Bài không có video thì vế ấy tự đúng, không phải chờ gì. */
+  const ngheDu = dsTu.length > 0 && dsTu.every((v) => nghe.has(v.tu));
+  const xemXong = !coVideo || daXem || videoHong;
+  const noiDu = dsTu.length === 0 || dsTu.every((v) => mucNoi(v.tu) !== 'chua');
+
+  return {
+    viec,
+    mo: (xemXong || ngheDu) && (noiDu || micHong),
+    conThieu: viec.filter((x) => x.tt !== TT_VIEC.xong && x.tt !== 'hong').length,
+    vuongMicro: micHong && !noiDu,
+  };
+}
+
+/**
+ * VIỆC CỦA CON trong chặng MẪU CÂU — cùng khuôn với chặng Từ mới.
+ *
+ * Mỗi mẫu câu MỘT ô, hai việc trong ô: xem video 🎬 và nói cả câu 🎤. Bài hỏi–đáp
+ * có hai mẫu rời (câu hỏi trước, câu trả lời sau) nên thành hai ô.
+ *
+ * ── VÌ SAO NÓI CŨNG KHOÁ Ở ĐÂY ──
+ * Nói được từng TỪ rời không phải là nói được tiếng Anh. Cả câu mới là chỗ bé
+ * phải ghép nhịp, và đó là việc khó nhất của chặng này. Bản trước chỉ đòi xem hết
+ * video, nên `NutNoi` ở đây thành thứ trang trí y hệt chuyện đã xảy ra ở chặng
+ * Từ mới. Cùng một cái bẫy, đừng để lại lần thứ hai.
+ *
+ * Vẫn giữ đủ hai đường lui: video hỏng thì ô ấy thành `hong` và không chặn, micro
+ * hỏng thì tha việc nói (nhưng KHÔNG tha việc xem).
+ */
+export function viecChangCau({
+  dsCau = [], daXem = [], videoHong = false, soNoi = {}, micHong = false, datNoi = 6,
+} = {}) {
+  const xem = new Set(daXem);
+  const mucNoi = (cau) => noiDuoc(soNoi[cau], datNoi);
+
+  const viec = dsCau.map((c) => {
+    const x = videoHong || xem.has(c.tep);
+    const mn = mucNoi(c.cau);
+    const o = mn !== 'chua' || micHong;
+    return {
+      ma: c.tep || c.cau, loai: 'cau', nhan: c.cau, nghia: c.nhanVai, bieuTuong: '💬',
+      daXem: x, daNoi: mn !== 'chua', mucNoi: mn,
+      boQuaNoi: micHong && mn === 'chua',
+      tt: (x && o) ? TT_VIEC.xong : ((x || o) ? TT_VIEC.dang : TT_VIEC.chua),
+      viecCon: [
+        { ma: 'xem', chu: '🎬', ten: 'xem', xong: x, boQua: videoHong && !xem.has(c.tep) },
+        { ma: 'noi', chu: '🎤', ten: 'nói', xong: mn !== 'chua', sao: mn === 'dat',
+          boQua: micHong && mn === 'chua' },
+      ],
+    };
+  });
+
+  const xemDu = dsCau.length === 0 || videoHong || dsCau.every((c) => xem.has(c.tep));
+  const noiDu = dsCau.length === 0 || dsCau.every((c) => mucNoi(c.cau) !== 'chua');
+
+  return {
+    viec,
+    mo: xemDu && (noiDu || micHong),
+    conThieu: viec.filter((x) => x.tt !== TT_VIEC.xong).length,
+    vuongMicro: micHong && !noiDu,
+  };
+}
+
 /* ═══════════ TẦNG 3 · MỘT CÂU ═══════════ */
 
 /**

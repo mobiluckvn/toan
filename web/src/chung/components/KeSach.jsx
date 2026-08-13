@@ -1,5 +1,5 @@
 import React from 'react';
-import { dsChuongTrinhSapXep } from '../lib/soQuyen.js';
+import { dsChuongTrinhSapXep, gomNhomKeSach } from '../lib/soQuyen.js';
 import ChanTrang from './ChanTrang.jsx';
 import DongDanhSach from './DongDanhSach.jsx';
 
@@ -49,12 +49,11 @@ export default function KeSach({ dangKy, mon = [], tienDo = {}, onMoQuyen, onMoC
   const ds = dsCt.map((ct) => ({ ct, td: doTien(ct) }));
   /* Quyển động vào gần đây nhất lên đầu — mở app ra là bấm học tiếp được ngay,
      không phải đi tìm. Chưa học gì thì không hiện thẻ này. */
-  const dangHoc = ds.filter((x) => x.td.dangLam > 0).sort((a, b) => b.td.gio - a.td.gio);
-  const ganNhat = dangHoc[0] || null;
-  const theoMon = {};
-  for (const x of ds) (theoMon[x.ct.mon] ??= []).push(x);
-
   const monCua = (ma) => (dk.mon || {})[ma] || { ten: ma, bieuTuong: '📘' };
+
+  /* Luật gom nhóm nằm ở `soQuyen.js` để cổng chạy được bằng node — đọc phần đầu
+     hàm ấy là đủ hiểu ba việc nó lo. Ở đây chỉ vẽ. */
+  const dsNhom = gomNhomKeSach(ds, mon, (ma) => monCua(ma).ten, (ma) => monCua(ma).bieuTuong);
 
   return (
     <div className="mx-auto min-h-[100dvh] max-w-[740px] pb-10">
@@ -121,50 +120,9 @@ export default function KeSach({ dangKy, mon = [], tienDo = {}, onMoQuyen, onMoC
         )}
       </header>
 
-      {/* Học tiếp quyển vừa học dở — chỗ bấm to nhất màn hình */}
-      {ganNhat && (
-        <div className="px-3.5 pt-3.5">
-          <div className="rounded-2xl bg-gold-pale px-4 py-3.5">
-            <div className="text-[11px] font-extrabold tracking-widest text-gold-dark">
-              HỌC TIẾP
-            </div>
-            <h2 className="mt-1 flex items-center gap-2 text-[18px] font-bold leading-snug text-navy">
-              <span className="text-[22px] leading-none">{ganNhat.ct.bieuTuong}</span>
-              {ganNhat.ct.ten}
-            </h2>
-            {/* Mới mở bài mà chưa đạt bài nào thì đừng khoe "xong 0 bài" — nghe như
-                con chưa làm gì, trong khi con vừa ngồi học xong. */}
-            <p className="mt-0.5 text-[13px] text-mute">
-              {ganNhat.td.xong > 0
-                ? `Con đã học xong ${ganNhat.td.xong} trên ${ganNhat.td.tong} bài`
-                : 'Con đang học dở quyển này'}
-            </p>
-            <button className="btn-gold mt-2.5" onClick={() => onMoQuyen(ganNhat.ct.ma)}>
-              Học tiếp ▶
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* CỬA PHỤ của từng môn — lối vào không đi qua quyển nào (vd "Học theo chủ đề").
-          Kệ sách KHÔNG biết đó là màn gì; môn khai ở `index.js`, đây chỉ vẽ cái nút. */}
-      {mon.flatMap((m) => (m.cuaPhu || []).map((c) => (
-        <div key={`${m.ma}:${c.trang}`} className="px-3.5 pt-3">
-          <button onClick={() => onMoCuaPhu?.(m.ma, c.trang)}
-                  className="flex w-full items-center gap-3 rounded-2xl border-[1.5px] border-teal bg-teal-pale px-4 py-3.5 text-left">
-            <span className="text-[24px] leading-none">{c.bieuTuong}</span>
-            <span className="min-w-0 flex-1">
-              <span className="block text-[16px] font-bold leading-snug text-navy">{c.ten}</span>
-              <span className="block text-[12.5px] text-mute">{c.mo}</span>
-            </span>
-            <span className="text-[14px] text-mute">▶</span>
-          </button>
-        </div>
-      )))}
-
       {/* BẢNG XẾP HẠNG — chỗ các con nhìn thấy nhau.
-          Đặt ngay dưới "Học theo chủ đề", TRÊN kệ sách: đây là thứ thúc bé mở app,
-          giấu dưới đáy trang thì bé không bao giờ cuộn tới. */}
+          Đứng TRÊN kệ sách: đây là thứ thúc bé mở app, giấu dưới đáy trang thì bé
+          không bao giờ cuộn tới. Nó cắt ngang MỌI môn nên không thuộc nhóm nào. */}
       {onMoXepHang && (
         <div className="px-3.5 pt-3">
           <button onClick={onMoXepHang}
@@ -183,13 +141,35 @@ export default function KeSach({ dangKy, mon = [], tienDo = {}, onMoQuyen, onMoC
         </div>
       )}
 
-      {Object.entries(theoMon).map(([ma, xs]) => {
-        const m = monCua(ma);
-        return (
-          <div key={ma} className="px-3.5 pt-3">
+      {dsNhom.map((nh) => (
+          <div key={nh.ten} className="px-3.5 pt-3">
             <section className="card">
-              <div className="kicker">{m.bieuTuong} {m.ten.toUpperCase()}</div>
-              {xs.map(({ ct, td }) => (
+              <div className="kicker">{nh.bieuTuong} {nh.ten.toUpperCase()}</div>
+
+              {/* Chỗ bấm to nhất của nhóm — đứng ngay dưới tên nhóm. */}
+              {nh.tiep && (
+                <div className="mt-1.5 rounded-xl bg-gold-pale px-3.5 py-3">
+                  <div className="text-[11px] font-extrabold tracking-widest text-gold-dark">
+                    HỌC TIẾP
+                  </div>
+                  <h2 className="mt-0.5 flex items-center gap-2 text-[17px] font-bold leading-snug text-navy">
+                    <span className="text-[22px] leading-none">{nh.tiep.ct.bieuTuong}</span>
+                    {nh.tiep.ct.ten}
+                  </h2>
+                  {/* Mới mở bài mà chưa đạt bài nào thì đừng khoe "xong 0 bài" — nghe
+                      như con chưa làm gì, trong khi con vừa ngồi học xong. */}
+                  <p className="mt-0.5 text-[13px] text-mute">
+                    {nh.tiep.td.xong > 0
+                      ? `Con đã học xong ${nh.tiep.td.xong} trên ${nh.tiep.td.tong} ${nh.tiep.ct.donVi || 'bài'}`
+                      : 'Con đang học dở quyển này'}
+                  </p>
+                  <button className="btn-gold mt-2.5" onClick={() => onMoQuyen(nh.tiep.ct.ma)}>
+                    Học tiếp ▶
+                  </button>
+                </div>
+              )}
+
+              {nh.sach.map(({ ct, td }) => (
                 <button key={ct.ma} onClick={() => onMoQuyen(ct.ma)}
                         className="mt-1.5 flex w-full items-center gap-2.5 rounded-xl border border-line px-3 py-2.5 text-left hover:bg-soft">
                   <span className="text-[22px] leading-none">{ct.bieuTuong}</span>
@@ -217,10 +197,24 @@ export default function KeSach({ dangKy, mon = [], tienDo = {}, onMoQuyen, onMoC
                   <span className="text-[14px] text-mute">▶</span>
                 </button>
               ))}
+
+              {/* Lối học khác của CHÍNH mấy quyển ở trên. Đứng sau danh sách sách —
+                  kệ sách thì sách phải đứng trước — nhưng giữ viền xanh riêng để
+                  không bị đọc nhầm thành quyển thứ năm. */}
+              {nh.cua.map(({ m, c }) => (
+                <button key={`${m.ma}:${c.trang}`} onClick={() => onMoCuaPhu?.(m.ma, c.trang)}
+                        className="mt-1.5 flex w-full items-center gap-2.5 rounded-xl border-[1.5px] border-teal bg-teal-pale px-3 py-2.5 text-left hover:brightness-95">
+                  <span className="text-[22px] leading-none">{c.bieuTuong}</span>
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-[15px] font-bold leading-snug text-navy">{c.ten}</span>
+                    <span className="block text-[12px] text-mute">{c.mo}</span>
+                  </span>
+                  <span className="text-[14px] text-mute">▶</span>
+                </button>
+              ))}
             </section>
           </div>
-        );
-      })}
+      ))}
 
       {/* Sắp có — cho con và bố mẹ thấy đường đi phía trước. Không bấm được,
           và nói THẲNG là chưa có, để không ai bấm mãi rồi tưởng app hỏng. */}
