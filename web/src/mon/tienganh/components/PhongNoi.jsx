@@ -1,7 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import HinhVe from './HinhVe.jsx';
 import { hinhCuaTu, napBai, maBaiTruoc } from '../lib/noiDung.js';
-import { vonTu, tuTrongCau, tachTheoTieng, UNIT_CU_TOI_DA } from '../lib/phongnoi.js';
+import {
+  vonTu, tuTrongCau, tachTheoTieng, UNIT_CU_TOI_DA,
+  tinhBuoi, loiKet, cauHoiSoThich, PHUT_TOI_DA,
+} from '../lib/phongnoi.js';
 import { hoiCoGiao, luuBuoi } from '../lib/goiPhongNoi.js';
 import { auth } from '../../../chung/lib/nenTang.js';
 import { doc as docLen, docDoan, docDuoc, coGiong, thoiDoc } from '../lib/doclen.js';
@@ -62,13 +65,22 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
   const [tam, datTam] = useState('');
   const [loi, datLoi] = useState(null);
   const [micHong, datMicHong] = useState(false);
+  const [thich, datThich] = useState(null);
+  const batDau = useRef(Date.now());
+  const [nhip, datNhip] = useState(0);      // để đồng hồ hết giờ tự nhắc lại
   const dauDs = useRef(null);
   const phien = useRef(null);
   const daChao = useRef(false);
 
   const cauCoVuaNoi = [...lichSu].reverse().find((x) => x.vai === 'may')?.en || '';
+  const buoi = tinhBuoi({ lichSu, batDau: batDau.current, bayGio: Date.now() + nhip * 0 });
+  const ket = loiKet(buoi);
+  const hoiThich = cauHoiSoThich(von);
 
   useEffect(() => () => { phien.current?.huy(); thoiDoc(); }, []);
+  /* Nhịp 30 giây chỉ để VẼ LẠI, không đụng gì tới dữ liệu — hết 20 phút mà màn
+     hình không tự biết thì bé cứ nói tiếp, rồi đúng lượt sau mới bị cắt ngang. */
+  useEffect(() => { const id = setInterval(() => datNhip((n) => n + 1), 30000); return () => clearInterval(id); }, []);
   /* Có lượt mới thì đưa ĐẦU danh sách vào tầm mắt — tin mới nằm trên cùng. Bản
      trước cuộn xuống đáy, nay làm thế là chạy ngược hướng và bé mất dấu câu vừa
      nói. */
@@ -79,7 +91,8 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
   const guiLuot = useCallback(async (ds) => {
     datLoi(null); datDangHoi(true);
     try {
-      const tra = await hoiCoGiao({ von, lichSu: ds, tenBe, lop });
+      const tra = await hoiCoGiao({ von, lichSu: ds, tenBe, lop,
+        haDoKho: buoi.haDoKho, hoSo: { thich } });
       const luot = { vai: 'may', chu: tra.en || tra.vi, en: tra.en, vi: tra.vi };
       const sau = [...ds, luot];
       datLichSu(sau);
@@ -104,7 +117,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
           ? 'Con đăng nhập rồi mới vào phòng này được nhé.'
           : 'Cô giáo máy chưa trả lời được. Con thử lại nhé.');
     } finally { datDangHoi(false); }
-  }, [von, tenBe, lop, bai]);
+  }, [von, tenBe, lop, bai, buoi.haDoKho, thich]);
 
   /* Cô chào trước. Bé 6 tuổi mở ra thấy màn trắng thì không biết làm gì cả. */
   useEffect(() => {
@@ -131,6 +144,11 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
       const kq = cauCoVuaNoi ? chamTot(chamCau, cauCoVuaNoi, phuongAn?.length ? phuongAn : [noiGi]) : null;
       const sau = [...lichSu, { vai: 'be', chu: noiGi, diem: kq?.diem ?? null }];
       datLichSu(sau);
+      /* Lượt này vừa KẾT THÚC buổi thì đừng hỏi cô nữa: bé đã xong, mà gọi thêm
+         một lượt là hoặc cô nói chen vào sau lời khen, hoặc mạng trục trặc và bé
+         thấy dòng lỗi đỏ ngay dưới câu "con giỏi lắm". Đã thấy thật lúc đi thử. */
+      const sauKhiNoi = tinhBuoi({ lichSu: sau, batDau: batDau.current, bayGio: Date.now() });
+      if (sauKhiNoi.trangThai !== 'dang') { datLoi(null); return; }
       guiLuot(sau);
     } catch (e) {
       datMicHong(true);
@@ -182,6 +200,48 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
         </p>
       )}
 
+      {/* HỎI BÉ THÍCH GÌ — hỏi MỘT LẦN, bằng hình, trước khi vào nói chuyện.
+          Bé bấm vào hình chứ không gõ và không nói tự do: bé 6 tuổi không gõ được,
+          mà nói tự do thì bộ nhận dạng nghe ra gì cũng được. Câu trả lời rơi đúng
+          vào vốn từ của bài nên không có từ lạ nào lọt vào phòng, và KHÔNG có
+          thông tin riêng tư nào mới rời khỏi máy — chỉ là một từ trong sách. */}
+      {!thich && hoiThich && buoi.trangThai === 'dang' && (
+        <div className="rounded-xl2 border-2 border-gold bg-gold-pale p-4">
+          <p className="text-lg font-bold text-navy">{hoiThich.hoi}</p>
+          <p className="text-sm text-gold-dark">Con chọn một cái, rồi mình sẽ tập nói về nó.</p>
+          <ul className="mt-2 flex flex-wrap gap-2">
+            {hoiThich.chon.map((t) => (
+              <li key={t.tu}>
+                <button type="button" onClick={() => datThich(t.tu)}
+                  aria-label={`Con thích ${t.nghia} (${t.tu})`}
+                  className="flex w-[5rem] flex-col items-center gap-0.5 rounded-xl2 border-2
+                    border-line bg-white p-2 transition hover:brightness-95
+                    focus:outline-none focus-visible:ring-4 focus-visible:ring-gold">
+                  <span className="text-4xl leading-none"><HinhVe ten={t.tu} {...hinhCuaTu(bai, t.tu)} /></span>
+                  <span className="text-[0.7rem] font-semibold text-ink">{t.nghia}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* MÀN KẾT — bé phải thấy vạch đích. Một việc không có chỗ kết thì bé không
+          bao giờ thấy mình LÀM ĐƯỢC, mà đó mới là thứ giữ bé quay lại. */}
+      {ket && (
+        <div className={`rounded-xl2 p-5 ${buoi.trangThai === 'xongGioi' ? 'bg-teal-pale' : 'bg-gold-pale'}`}>
+          <p className="text-4xl" aria-hidden="true">{ket.bieuTuong}</p>
+          <p className="mt-1 text-2xl font-bold text-ink">{ket.tieuDe}</p>
+          <p className="mt-0.5 text-ink">{ket.chu}</p>
+        </div>
+      )}
+
+      {buoi.haDoKho && buoi.trangThai === 'dang' && (
+        <p className="rounded-xl2 bg-gold-pale p-3 text-sm text-gold-dark">
+          Mình tập lại từng từ một cho dễ nhé — xong rồi mới ghép thành câu.
+        </p>
+      )}
+
       {loi && <p className="rounded-xl2 bg-gold-pale p-3 text-gold-dark">{loi}</p>}
 
       {/* MỘT NÚT DUY NHẤT, và nay nó đứng TRÊN cuộc trò chuyện.
@@ -190,7 +250,7 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
           phải cuộn qua cả buổi học mới tìm lại được cái nút. Nay nút đứng yên một
           chỗ, câu cô vừa nói nằm ngay bên dưới — bé thấy cả hai cùng lúc, không
           phải cuộn lần nào. */}
-      {ngheDuoc() && !micHong ? (
+      {buoi.trangThai !== 'dang' ? null : ngheDuoc() && !micHong ? (
         <button type="button" onClick={noi} disabled={dangHoi}
           className={`flex items-center justify-center gap-3 rounded-xl2 px-6 py-6 text-2xl
             font-semibold transition disabled:opacity-60

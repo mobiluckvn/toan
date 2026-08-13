@@ -152,7 +152,7 @@ export const KIEU_VIEC = {
  * Cố tình không dùng ngẫu nhiên: chạy hai lần ra hai kiểu thì không cổng nào canh
  * được, mà đây đúng là chỗ vừa hỏng.
  */
-export function viecTiepTheo({ von, lichSu = [] } = {}) {
+export function viecTiepTheo({ von, lichSu = [], haDoKho = false, hoSo = null } = {}) {
   const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
   const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
   if (!tu.length) return null;
@@ -170,11 +170,22 @@ export function viecTiepTheo({ von, lichSu = [] } = {}) {
 
   /* Xoay vòng ba kiểu việc theo SỐ LƯỢT, để không lượt nào giống lượt trước. Có
      mẫu câu thì mới xoay tới hai kiểu câu; bài chưa có mẫu thì chỉ luyện từ. */
-  const vong = cau.length ? [KIEU_VIEC.tu, KIEU_VIEC.mau, KIEU_VIEC.thay] : [KIEU_VIEC.tu];
+  /* Bé đang đuối thì lùi về việc dễ nhất: chỉ nói TỪ. Không đuổi bé ra khỏi phòng
+     — xem `tinhBuoi`. */
+  const vong = (haDoKho || !cau.length)
+    ? [KIEU_VIEC.tu]
+    : [KIEU_VIEC.tu, KIEU_VIEC.mau, KIEU_VIEC.thay];
   const kieu = vong[cuaCo.length % vong.length];
   const mau = cau.length ? cau[cuaCo.length % cau.length] : null;
 
-  return { tu: dich, kieu, mau, daNhac: dem.get(dich.tu) };
+  /* Ô trống của công thức ưu tiên điền THỨ BÉ THÍCH, nếu bé đã chọn và từ ấy nằm
+     trong vốn từ. "I like fish." khi bé thật sự thích cá thì bé nói ra một câu về
+     CHÍNH MÌNH — khác hẳn nhại một câu về sữa của người khác. */
+  const thich = hoSo?.thich && tu.find((t) => t.tu === hoSo.thich);
+  return {
+    tu: (kieu === KIEU_VIEC.thay && thich) ? thich : dich,
+    kieu, mau, daNhac: dem.get(dich.tu), theoSoThich: !!(kieu === KIEU_VIEC.thay && thich),
+  };
 }
 
 /**
@@ -217,7 +228,7 @@ function dongViec(v, tenBe) {
   return '';
 }
 
-export function loiDan({ von, tenBe = 'bạn nhỏ', lop = 1, viec = null }) {
+export function loiDan({ von, tenBe = 'bạn nhỏ', lop = 1, viec = null, hoSo = null }) {
   const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
   const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
   const bangTu = tu.map((t) => `${t.tu} (${t.nghia})`).join(', ');
@@ -255,6 +266,7 @@ export function loiDan({ von, tenBe = 'bạn nhỏ', lop = 1, viec = null }) {
     '   still do this turn\'s task in English — praise is not a turn of its own.',
     '',
     dongViec(viec, tenBe),
+    dongHoSo(hoSo, tenBe),
     '',
     'Reply as JSON only: {"en": "<the English sentence>", "vi": "<the Vietnamese line>"}',
   ].filter((x) => x !== null).join('\n');
@@ -488,4 +500,130 @@ export function tachTheoTieng(chu, von) {
 
   /* Bỏ mẩu chỉ còn dấu câu hoặc khoảng trắng — đọc lên nghe như bị nấc. */
   return ra.filter((x) => /[\p{L}\p{N}]/u.test(x.chu)).map((x) => ({ ...x, chu: x.chu.trim() }));
+}
+
+/* ─────────── một buổi có mở có kết ─────────── */
+
+/**
+ * BUỔI LUYỆN NÓI PHẢI CÓ CHỖ KẾT.
+ *
+ * Bác dặn 13-08: cô phải chủ động kết thúc khi bé đã nắm bài (khen rồi dừng), hạ
+ * độ khó khi bé đuối, và mỗi phiên tối đa 20 phút.
+ *
+ * Bản trước không có chỗ kết nào: cô hỏi mãi, bé trả lời mãi. Với bé 6 tuổi thì
+ * một việc không có vạch đích là một việc không bao giờ thấy mình làm được — mà
+ * "thấy mình làm được" mới là thứ giữ bé quay lại.
+ *
+ * Ba đường kết, và cả ba đều do MÁY CON quyết chứ không hỏi mô hình:
+ *
+ *   xongGioi   bé đạt liên tiếp đủ số lượt   → khen thật, rồi dừng
+ *   hetGio     quá 20 phút                    → dừng tử tế, hẹn lần sau
+ *   haDoKho    bé đuối liên tiếp              → KHÔNG dừng, mà hạ xuống chỉ luyện TỪ
+ *
+ * `haDoKho` cố ý không phải một đường KẾT: bé đang đuối mà bị đuổi ra khỏi phòng
+ * thì thông điệp bé nhận được là "con dốt quá". Hạ độ khó rồi cho làm tiếp mới
+ * đúng — cùng tinh thần với luật "thử thật 2 lần" ở `dandat.js`.
+ */
+export const PHUT_TOI_DA = 20;
+export const DAT_LIEN_DE_XONG = 3;
+export const KEM_LIEN_DE_HA = 3;
+
+/**
+ * @param lichSu  các lượt, lượt của bé có `diem` (null nếu không chấm được)
+ * @param batDau  mốc thời gian mở phòng (ms)
+ * @param bayGio  ms — tiêm vào để cổng chạy được mà không phụ thuộc đồng hồ thật
+ */
+export function tinhBuoi({ lichSu = [], batDau = null, bayGio = null, datNguong = 6 } = {}) {
+  const cuaBe = lichSu.filter((x) => x.vai === 'be' && x.diem != null);
+  /* `batDau == null` mới là "chưa bấm giờ". Viết `batDau ? … : 0` thì mốc 0 — một
+     con số hợp lệ — bị coi là chưa bắt đầu, và đồng hồ không bao giờ chạy. Cùng họ
+     với lỗi `Date.parse(0)` ra năm 2000 đã ghi trong sổ. */
+  const coGio = batDau != null && bayGio != null;
+  const phut = coGio ? Math.max(0, (bayGio - batDau) / 60000) : 0;
+
+  /* Đếm chuỗi ĐUÔI: chỉ tính mấy lượt gần đây nhất, không tính cả buổi. Bé vào
+     phòng lúc còn lóng ngóng rồi khá dần lên là chuyện thường — lấy cả buổi ra
+     tính thì mãi mãi không đạt. */
+  let datLien = 0;
+  let kemLien = 0;
+  for (let i = cuaBe.length - 1; i >= 0; i -= 1) {
+    if (cuaBe[i].diem >= datNguong) { if (kemLien) break; datLien += 1; } else { if (datLien) break; kemLien += 1; }
+  }
+
+  const hetGio = phut >= PHUT_TOI_DA;
+  const xongGioi = datLien >= DAT_LIEN_DE_XONG;
+  return {
+    trangThai: xongGioi ? 'xongGioi' : hetGio ? 'hetGio' : 'dang',
+    haDoKho: !xongGioi && kemLien >= KEM_LIEN_DE_HA,
+    datLien,
+    kemLien,
+    phut,
+    phutConLai: Math.max(0, PHUT_TOI_DA - phut),
+    soLuotBe: cuaBe.length,
+    soDat: cuaBe.filter((x) => x.diem >= datNguong).length,
+  };
+}
+
+/** Lời kết — nói thẳng bé làm được gì, không phải một câu khen chung chung. */
+export function loiKet(buoi) {
+  if (!buoi) return null;
+  if (buoi.trangThai === 'xongGioi') {
+    return {
+      bieuTuong: '🎉',
+      tieuDe: 'Con nói được rồi!',
+      chu: `Con nói đúng ${buoi.datLien} câu liền. Hôm nay thế là giỏi lắm — mai mình nói tiếp nhé.`,
+    };
+  }
+  if (buoi.trangThai === 'hetGio') {
+    return {
+      bieuTuong: '⏰',
+      tieuDe: 'Hết giờ nói chuyện rồi',
+      chu: `Con đã nói ${buoi.soLuotBe} lượt, đúng ${buoi.soDat} lượt. Nghỉ mắt một lát rồi mai mình nói tiếp nhé.`,
+    };
+  }
+  return null;
+}
+
+/* ─────────── hồ sơ của chính bé ─────────── */
+
+/**
+ * DÙNG THÔNG TIN CỦA CHÍNH BÉ, KHÔNG PHẢI CÂU TĨNH.
+ *
+ * Bác dặn 13-08: "cần có kịch bản hỏi thông tin cá nhân của học sinh để khi nói
+ * chuyện sẽ dùng thông tin ấy để luyện, thay vì các thông tin tĩnh."
+ *
+ * Bé nói "I like milk." trong khi bé ghét sữa thì đó là nhại một câu của người
+ * khác. Nói "I like fish." vì bé thật sự thích cá thì bé đang NÓI VỀ MÌNH — cùng
+ * một mẫu câu, nhưng một bên là học vẹt còn một bên là dùng tiếng Anh.
+ *
+ * ── HỎI THẾ NÀO, VÀ VÌ SAO KHÔNG ĐỂ MÔ HÌNH HỎI ──
+ * Chính APP hỏi, bằng tiếng Việt, và bé trả lời bằng cách BẤM VÀO HÌNH — không gõ,
+ * không nói tự do. Ba lý do:
+ *
+ *   · bé 6 tuổi không gõ được, mà nói tự do thì bộ nhận dạng nghe ra gì cũng được;
+ *   · câu trả lời rơi đúng vào vốn từ của bài, nên không rò từ lạ vào phòng;
+ *   · KHÔNG có thông tin riêng tư nào mới rời khỏi máy — chỉ là một từ trong sách,
+ *     đúng thứ bé vừa học. Tên và lớp thì app đã có sẵn từ hồ sơ.
+ *
+ * Cố ý KHÔNG hỏi tuổi, trường, nhà ở đâu, hay bất cứ thứ gì nhận dạng được bé.
+ */
+export function cauHoiSoThich(von) {
+  const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
+  if (tu.length < 2) return null;
+  return {
+    hoi: 'Con thích cái nào nhất?',
+    chon: tu,
+  };
+}
+
+/** Lời dặn thêm về bé — chỉ những gì app đã có, không hỏi thêm gì. */
+function dongHoSo(hoSo, tenBe) {
+  if (!hoSo) return '';
+  const d = [];
+  if (tenBe) d.push(`The child's name is ${tenBe} — use it in [Name] slots.`);
+  if (hoSo.thich) {
+    d.push(`The child told you they like "${hoSo.thich}".`
+      + ' Prefer that word when a pattern needs a thing — it makes the sentence about them.');
+  }
+  return d.length ? `ABOUT THE CHILD: ${d.join(' ')}` : '';
 }

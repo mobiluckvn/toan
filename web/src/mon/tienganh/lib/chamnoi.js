@@ -29,6 +29,25 @@ const VIET_TAT = [
   [/\bisn't\b/g, 'is not'], [/\blet's\b/g, 'let us'],
 ];
 
+/**
+ * DẠNG VIẾT TẮT KHÔNG CÓ DẤU NHÁY — bộ nhận dạng hay trả về như thế.
+ *
+ * Đã đo được: mẫu `"Hi, I'm Bill."` mà bé nói đúng y hệt, Web Speech trả về
+ * `"hi im bill"` (không nháy) thì chỉ được 7/10. Bé nói ĐÚNG mà bị trừ điểm vì
+ * cái máy gõ thiếu một dấu nháy — đó là chấm sai, không phải chấm chặt.
+ *
+ * Áp SAU khi đã bung dạng có nháy, và chỉ áp cho những chuỗi không thể là từ khác:
+ * `im` `dont` `cant` `isnt` `lets` `thats` `theres` `whats` `youre` `theyre` `were`
+ * — `were` CỐ Ý không có, vì nó là một từ thật ("they were here").
+ */
+const VIET_TAT_KHONG_NHAY = [
+  [/\bim\b/g, 'i am'], [/\bhes\b/g, 'he is'], [/\bshes\b/g, 'she is'],
+  [/\bits\b/g, 'it is'], [/\bthats\b/g, 'that is'], [/\btheres\b/g, 'there is'],
+  [/\bwhats\b/g, 'what is'], [/\btheyre\b/g, 'they are'],
+  [/\byoure\b/g, 'you are'], [/\bcant\b/g, 'cannot'], [/\bdont\b/g, 'do not'],
+  [/\bisnt\b/g, 'is not'], [/\blets\b/g, 'let us'],
+];
+
 /** Chữ số → chữ. STT trả "6" cho "six", "2" cho "two". */
 const SO_CHU = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven',
   'eight', 'nine', 'ten'];
@@ -49,6 +68,9 @@ export function chuanHoa(s) {
   for (const [re, thay] of VIET_TAT) t = t.replace(re, thay);   // sau khi gộp nháy
   t = t.replace(/(\d+)/g, (m) => (Number(m) <= 10 ? SO_CHU[Number(m)] : m));
   t = t.replace(/[^a-z0-9\s]/g, ' ');
+  /* Sau khi dấu nháy đã bị bóc: bắt nốt dạng viết tắt KHÔNG nháy mà bộ nhận dạng
+     hay trả về. Phải đứng SAU bước bóc dấu, nếu không "i'm" chưa kịp thành "im". */
+  for (const [re, thay] of VIET_TAT_KHONG_NHAY) t = t.replace(re, thay);
   return t.split(/\s+/).filter((w) => w && !DEM.has(w)).join(' ');
 }
 

@@ -19,6 +19,7 @@ import {
   vonCuaBai, vonTu, moiTuDuocDung, moiCauDuocDung,
   loiDan, catNguCanh, goiGui, docTraLoi, tuTrongCau, LOI_LOP_HOC,
   viecTiepTheo, cauHopLe, cauThayThe, loaiOTrong, tachTheoTieng,
+  tinhBuoi, loiKet, cauHoiSoThich, PHUT_TOI_DA, DAT_LIEN_DE_XONG,
 } from '../src/mon/tienganh/lib/phongnoi.js';
 
 const bai = (id, tu, cau, hinh = []) => ({
@@ -466,4 +467,120 @@ test('mọi lượt đều có đường lui khác câu trước', () => {
     const b = cauThayThe(v, 'Bo', a.en);
     assert.notEqual(b.en, a.en, `lượt ${n} không tìm được câu khác`);
   }
+});
+
+/* ═══════════ MỘT BUỔI CÓ MỞ CÓ KẾT ═══════════ */
+
+const be = (...d) => d.map((x) => ({ vai: 'be', diem: x }));
+
+test('đạt liên tiếp đủ số lượt thì cô KHEN rồi dừng', () => {
+  const b = tinhBuoi({ lichSu: be(2, 8, 9, 7) });
+  assert.equal(b.trangThai, 'xongGioi');
+  assert.equal(b.datLien, DAT_LIEN_DE_XONG);
+  assert.match(loiKet(b).chu, /3 câu liền/, 'lời khen phải nói THẲNG bé làm được gì');
+});
+
+test('chỉ đếm chuỗi ĐUÔI, không đếm cả buổi', () => {
+  /* Bé vào phòng lúc còn lóng ngóng rồi khá dần lên là chuyện thường. Lấy cả buổi
+     ra tính thì mãi mãi không đạt, mà bé thì đang nói đúng liên tục. */
+  assert.equal(tinhBuoi({ lichSu: be(1, 1, 1, 9, 8, 7) }).trangThai, 'xongGioi');
+  /* Ngược lại: đạt xong rồi tụt thì KHÔNG được tính là đã xong. */
+  assert.equal(tinhBuoi({ lichSu: be(9, 9, 9, 2) }).trangThai, 'dang');
+});
+
+test('quá 20 phút thì dừng tử tế', () => {
+  const b = tinhBuoi({ lichSu: be(3), batDau: 0, bayGio: (PHUT_TOI_DA + 1) * 60000 });
+  assert.equal(b.trangThai, 'hetGio');
+  assert.match(loiKet(b).chu, /nghỉ mắt/i);
+});
+
+test('MỐC GIỜ BẰNG 0 vẫn là mốc hợp lệ', () => {
+  /* Viết `batDau ? … : 0` thì số 0 — một mốc hoàn toàn hợp lệ — bị coi là "chưa
+     bấm giờ", và đồng hồ không bao giờ chạy. Cùng họ với lỗi `Date.parse(0)` ra
+     năm 2000 đã ghi trong sổ. Phép thử của chính mình bắt được lúc dựng. */
+  assert.equal(tinhBuoi({ lichSu: be(3), batDau: 0, bayGio: 25 * 60000 }).trangThai, 'hetGio');
+  assert.equal(tinhBuoi({ lichSu: be(3) }).trangThai, 'dang', 'chưa bấm giờ thì đừng đếm');
+});
+
+test('chưa tới 20 phút thì chưa dừng', () => {
+  assert.equal(tinhBuoi({ lichSu: be(3), batDau: 0, bayGio: (PHUT_TOI_DA - 1) * 60000 }).trangThai, 'dang');
+});
+
+test('bé đuối thì HẠ ĐỘ KHÓ, KHÔNG đuổi ra khỏi phòng', () => {
+  /* Bé đang đuối mà bị dừng buổi thì thông điệp nhận được là "con dốt quá". Cùng
+     tinh thần với luật "thử thật 2 lần" ở dandat.js. */
+  const b = tinhBuoi({ lichSu: be(9, 2, 1, 3) });
+  assert.equal(b.haDoKho, true);
+  assert.equal(b.trangThai, 'dang', 'vẫn ở lại phòng');
+  assert.equal(loiKet(b), null, 'không có màn kết');
+});
+
+test('hạ độ khó thì chỉ còn luyện TỪ', () => {
+  const von = vonB01();
+  for (let n = 0; n < 5; n += 1) {
+    const ls = Array.from({ length: n }, () => ({ vai: 'may', en: 'x' }));
+    assert.equal(viecTiepTheo({ von, lichSu: ls, haDoKho: true }).kieu, 'tu');
+  }
+});
+
+/* ═══════════ THÔNG TIN CỦA CHÍNH BÉ ═══════════ */
+
+test('hỏi sở thích bằng HÌNH, và chỉ trong vốn từ của bài', () => {
+  /* Bé 6 tuổi không gõ được, mà nói tự do thì bộ nhận dạng nghe ra gì cũng được.
+     Chọn trong vốn từ thì không có từ lạ nào lọt vào phòng, và KHÔNG có thông tin
+     riêng tư nào mới rời khỏi máy — chỉ là một từ trong sách. */
+  const von = vonTu({ baiNay: B05, baiCu: [], daDat: false });
+  const h = cauHoiSoThich(von);
+  assert.ok(h.hoi.length > 5);
+  assert.deepEqual(h.chon.map((t) => t.tu), ['chicken', 'chips', 'fish', 'milk']);
+  /* Bài chỉ có một từ thì không hỏi — chọn giữa một cái không phải là chọn. */
+  assert.equal(cauHoiSoThich(vonTu({ baiNay: bai('B0', ['x'], []), baiCu: [], daDat: false })), null);
+});
+
+test('bé chọn rồi thì câu luyện dùng ĐÚNG thứ bé thích', () => {
+  const von = vonTu({ baiNay: B05, baiCu: [], daDat: false });
+  const ls = [{ vai: 'may', en: 'a' }, { vai: 'may', en: 'b' }];   // lượt "thay"
+  assert.equal(viecTiepTheo({ von, lichSu: ls }).theoSoThich, false);
+  const v = viecTiepTheo({ von, lichSu: ls, hoSo: { thich: 'fish' } });
+  assert.equal(v.tu.tu, 'fish');
+  assert.equal(v.theoSoThich, true);
+});
+
+test('sở thích ngoài vốn từ thì BỎ QUA, không nhét vào câu', () => {
+  const von = vonTu({ baiNay: B05, baiCu: [], daDat: false });
+  const ls = [{ vai: 'may', en: 'a' }, { vai: 'may', en: 'b' }];
+  const v = viecTiepTheo({ von, lichSu: ls, hoSo: { thich: 'pizza' } });
+  assert.notEqual(v.tu.tu, 'pizza');
+  assert.ok(moiTuDuocDung(von).includes(v.tu.tu));
+});
+
+test('lời dặn KHÔNG hỏi thêm thông tin nhận dạng được bé', () => {
+  /* Cố ý không hỏi tuổi, trường, nhà ở đâu. App chỉ dùng thứ nó đã có (tên, lớp)
+     và một từ bé vừa chọn trong sách. */
+  const s = loiDan({ von: vonB01(), tenBe: 'Bo', hoSo: { thich: 'ball' } });
+  for (const cam of [/how old/i, /where do you live/i, /your school/i, /phone/i, /address/i]) {
+    assert.doesNotMatch(s, cam, `lời dặn không được hỏi: ${cam}`);
+  }
+  assert.match(s, /they like "ball"/);
+});
+
+test('màn phòng nói CÓ chỗ kết và CÓ chỗ hỏi sở thích', () => {
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /tinhBuoi\(/, 'phải tính trạng thái buổi');
+  assert.match(pn, /cauHoiSoThich\(/, 'phải có chỗ hỏi bé thích gì');
+  assert.match(pn, /buoi\.trangThai !== 'dang' \? null/, 'buổi kết rồi thì ẩn nút nói');
+  assert.match(pn, /haDoKho/, 'phải truyền cờ hạ độ khó xuống');
+});
+
+test('buổi vừa kết thì KHÔNG hỏi cô thêm lượt nữa', () => {
+  /* Đã thấy thật lúc đi thử: bé nói đúng lượt thứ ba, màn khen hiện lên, và ngay
+     dưới lời khen là dòng "Cô giáo máy chưa trả lời được" — vì lượt ấy vẫn gọi
+     lên cô. Bé vừa được khen xong lại thấy báo lỗi. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /sauKhiNoi\.trangThai !== 'dang'/, 'phải tính lại trạng thái SAU lượt vừa nói');
+  const iChan = pn.indexOf("sauKhiNoi.trangThai !== 'dang'");
+  const iGoi = pn.indexOf('guiLuot(sau)');
+  assert.ok(iChan > 0 && iChan < iGoi, 'phải chặn TRƯỚC khi gọi cô');
 });

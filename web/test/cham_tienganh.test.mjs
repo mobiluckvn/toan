@@ -28,6 +28,9 @@ import { checkAnswer } from '../src/mon/toan/lib/flow.js';
 import {
   chuanTA, chamO, chamNut, chamThe, chamTiengAnh, catThe, xepDuoc, THE_TOI_DA,
 } from '../src/mon/tienganh/lib/cham.js';
+/* Bộ chấm NÓI nằm ở tệp khác (`chamnoi.js`) — chấm tiếng thì khác chấm chữ. Nhưng
+   soi chung một chỗ, vì với bé thì "chấm sai" là một chuyện, không phải hai. */
+import { chamCau, chamTu, chuanHoa } from '../src/mon/tienganh/lib/chamnoi.js';
 
 const G = new URL('../public/content/', import.meta.url).pathname;
 let pass = 0, fail = 0;
@@ -189,6 +192,38 @@ if (MOC.tong === 0) {
   for (const k of Object.keys(MOC)) {
     t(`Toán không đổi · ${k} = ${MOC[k]} (đo được ${nay[k]})`, nay[k] === MOC[k]);
   }
+}
+
+console.log('\n── viết tắt KHÔNG có dấu nháy ──');
+{
+  /* Bác dặn 13-08: chấm phải bỏ khoảng trắng thừa và không phân biệt hoa thường
+     thì độ chính xác mới đảm bảo. Đo lại thì ba việc ấy đã có sẵn — nhưng lộ ra
+     một chỗ SAI THẬT: bộ nhận dạng hay trả về dạng viết tắt KHÔNG có dấu nháy.
+
+         mẫu "Hi, I'm Bill."  ·  bé nói đúng y hệt  ·  máy nghe ra "hi im bill"
+         → chỉ 7/10
+
+     Bé nói đúng mà bị trừ điểm vì cái máy gõ thiếu một dấu nháy. Đó là chấm SAI,
+     không phải chấm chặt. */
+  const cap = [
+    ["Hi, I'm Bill.", 'hi im bill'],
+    ["Hi, I'm Bill.", 'HI   IM   BILL'],
+    ["I don't like fish.", 'i dont like fish'],
+    ["It's a cat.", 'its a cat'],
+    ["Let's go.", 'lets go'],
+  ];
+  for (const [dich, nghe] of cap) {
+    const d = chamCau(dich, nghe).diem;
+    t(`"${dich}" vs "${nghe}" → ${d}/10`, d === 10);
+  }
+  /* Hoa thường và khoảng trắng thừa — bác nhắc riêng, nên soi riêng. */
+  t('viết hoa không ảnh hưởng', chamTu('ball', '  BALL  ').diem === 10);
+  t('dấu câu không ảnh hưởng', chamTu('chips', 'Chips!').diem === 10);
+  t('khoảng trắng thừa không ảnh hưởng', chamCau('I like milk.', '  I   LIKE   MILK ').diem === 10);
+
+  /* KHÔNG được nhận nhầm: `were` là một từ thật, đừng bung thành "we are". */
+  t('"were" giữ nguyên, không bung thành "we are"',
+    chuanHoa('they were here') === 'they were here');
 }
 
 console.log(`\n${pass} PASS · ${fail} FAIL`);

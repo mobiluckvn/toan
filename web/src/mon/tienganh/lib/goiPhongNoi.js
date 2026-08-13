@@ -23,7 +23,7 @@ export const KHO_PHONG_NOI = (uid) => `phongNoiTA/${uid}/buoi`;
  * @return {{en, vi, thoJSON}} — đã bóc sẵn để màn hình đọc hai thứ tiếng riêng.
  * @throws lỗi có `.code` của Firebase để màn hình nói đúng chỗ hỏng.
  */
-export async function hoiCoGiao({ von, lichSu, tenBe, lop }) {
+export async function hoiCoGiao({ von, lichSu, tenBe, lop, haDoKho = false, hoSo = null }) {
   if (!hasFirebase || !fns) {
     const e = new Error('Máy chưa nối được lên mạng.');
     e.code = 'functions/unavailable';
@@ -32,9 +32,9 @@ export async function hoiCoGiao({ von, lichSu, tenBe, lop }) {
   /* Việc của lượt này do MÁY CON quyết rồi ghép vào lời dặn — xem `viecTiepTheo`.
      Lời dặn dựng lại mỗi lượt (chứ không giữ nguyên từ đầu buổi) chính là chỗ cắm
      được việc mới vào. */
-  const viec = viecTiepTheo({ von, lichSu });
+  const viec = viecTiepTheo({ von, lichSu, haDoKho, hoSo });
   const messages = [
-    { role: 'system', content: loiDan({ von, tenBe, lop, viec }) },
+    { role: 'system', content: loiDan({ von, tenBe, lop, viec, hoSo }) },
     ...goiGui(lichSu),
   ];
   const { data } = await httpsCallable(fns, 'luyenNoi')({ messages });
