@@ -76,6 +76,27 @@ export function chuanHoa(s) {
 
 export const tach = (s) => chuanHoa(s).split(' ').filter(Boolean);
 
+/**
+ * BỎ HẲN DẤU CÁCH ĐỂ SO — bác dặn 13-08, và đo ra lỗi thật.
+ *
+ * Bộ nhận dạng tách chỗ cách theo ý nó, không theo sách:
+ *
+ *     mẫu "teddy bear"  ·  máy nghe ra "teddybear"   → 9/10
+ *     mẫu "goodbye"     ·  máy nghe ra "good bye"    → 9/10
+ *
+ * Bé nói đúng y hệt, chỉ khác chỗ cách — mà chỗ cách thì bé có nói ra đâu. Trừ
+ * điểm ở đây là chấm cái máy gõ, không phải chấm bé.
+ *
+ * CHỈ dùng làm phép so BẰNG NHAU, không thay cho phép chấm từng từ: bỏ hết dấu
+ * cách rồi đo độ giống thì "I like milk" và "Ilovemilk" hoá ra rất giống nhau, mà
+ * chúng khác hẳn.
+ */
+export const bopCach = (s) => chuanHoa(s).replace(/ /g, '');
+export const trungKhiBoCach = (a, b) => {
+  const x = bopCach(a);
+  return !!x && x === bopCach(b);
+};
+
 /* Từ CHỨC NĂNG — nghe khó, và sai một chữ ở đây không phải là chưa thuộc bài.
    Bé nói "This is dog" thay vì "This is a dog" thì vẫn đáng 8 điểm: nó nói được
    cái nó định nói. Thiếu DANH TỪ mới là chưa thuộc. */
@@ -144,6 +165,10 @@ const thang10 = (x) => Math.max(0, Math.min(10, Math.round(x * 10)));
  * @param doiThu các từ khác CÙNG UNIT — để bắt việc bé đọc nhầm sang từ bên cạnh
  */
 export function chamTu(dich, nghe, { doiThu = [] } = {}) {
+  /* Chỉ khác chỗ cách thì coi như nói đúng — xem `bopCach`. */
+  if (trungKhiBoCach(dich, nghe)) {
+    return { diem: 10, dung: true, nghe: String(nghe ?? '').trim(), giong: 1, boCach: true };
+  }
   const d = chuanHoa(dich);
   const tuNghe = tach(nghe);
   if (!tuNghe.length) return ket(0, 'khongNghe', { dich: d });
@@ -189,6 +214,9 @@ export function chamTu(dich, nghe, { doiThu = [] } = {}) {
  *                          nhưng KHÔNG bỏ hẳn: chính chúng là chỗ bài đang dạy.
  */
 export function chamCau(dich, nghe) {
+  if (trungKhiBoCach(dich, nghe)) {
+    return { diem: 10, dung: true, nghe: String(nghe ?? '').trim(), giong: 1, boCach: true };
+  }
   const D = tach(dich);
   const N = tach(nghe);
   if (!N.length) return ket(0, 'khongNghe', { dich: D.join(' ') });

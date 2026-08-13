@@ -221,6 +221,15 @@ console.log('\n── viết tắt KHÔNG có dấu nháy ──');
   t('dấu câu không ảnh hưởng', chamTu('chips', 'Chips!').diem === 10);
   t('khoảng trắng thừa không ảnh hưởng', chamCau('I like milk.', '  I   LIKE   MILK ').diem === 10);
 
+  /* BỎ HẲN DẤU CÁCH khi so — bác dặn riêng, và đo ra lỗi thật: bộ nhận dạng tách
+     chỗ cách theo ý nó chứ không theo sách. Bé nói đúng y hệt, chỉ khác chỗ cách,
+     mà chỗ cách thì bé có nói ra đâu. */
+  t('"teddy bear" vs "teddybear" → 10', chamTu('teddy bear', 'teddybear').diem === 10);
+  t('"goodbye" vs "good bye" → 10', chamTu('goodbye', 'good bye').diem === 10);
+  t('câu: "I like milk." vs "ilikemilk" → 10', chamCau('I like milk.', 'ilikemilk').diem === 10);
+  /* Nhưng KHÔNG được nới thành "bỏ cách rồi đo độ giống": câu khác vẫn phải khác. */
+  t('câu KHÁC vẫn bị trừ điểm', chamCau('I like milk.', 'I like fish.').diem < 8);
+
   /* KHÔNG được nhận nhầm: `were` là một từ thật, đừng bung thành "we are". */
   t('"were" giữ nguyên, không bung thành "we are"',
     chuanHoa('they were here') === 'they were here');

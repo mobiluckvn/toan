@@ -584,3 +584,14 @@ test('buổi vừa kết thì KHÔNG hỏi cô thêm lượt nữa', () => {
   const iGoi = pn.indexOf('guiLuot(sau)');
   assert.ok(iChan > 0 && iChan < iGoi, 'phải chặn TRƯỚC khi gọi cô');
 });
+
+test('đồng hồ 20 phút KHÔNG được vô hiệu khi ai đó dọn mã', () => {
+  /* Bản đầu viết `Date.now() + nhip * 0` — chạy đúng, nhưng nhân 0 thì ai đọc cũng
+     tưởng thừa rồi xoá, mà xoá `nhip` là màn hình không vẽ lại nữa và đồng hồ chết
+     im lặng: bé nói mãi quá 20 phút mà không có gì cắt. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /setInterval\(/, 'phải có nhịp vẽ lại, nếu không đồng hồ đứng');
+  assert.doesNotMatch(pn, /nhip \* 0/, 'phép nhân 0 là mã chết, dễ bị xoá nhầm');
+  assert.match(pn, /phutConLai/, 'còn bao lâu phải HIỆN RA, tính rồi mà không dùng thì tính làm gì');
+});

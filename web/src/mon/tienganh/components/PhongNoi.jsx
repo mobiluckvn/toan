@@ -67,13 +67,16 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
   const [micHong, datMicHong] = useState(false);
   const [thich, datThich] = useState(null);
   const batDau = useRef(Date.now());
-  const [nhip, datNhip] = useState(0);      // để đồng hồ hết giờ tự nhắc lại
+  /* `nhip` KHÔNG mang giá trị nào — nó chỉ để bắt màn hình vẽ lại mỗi 30 giây, để
+     đồng hồ 20 phút tự tới nơi. Bản đầu viết `Date.now() + nhip * 0`: chạy đúng,
+     nhưng nhân 0 thì ai đọc cũng tưởng lỗi rồi xoá đi, và xoá là đồng hồ chết. */
+  const [, datNhip] = useState(0);
   const dauDs = useRef(null);
   const phien = useRef(null);
   const daChao = useRef(false);
 
   const cauCoVuaNoi = [...lichSu].reverse().find((x) => x.vai === 'may')?.en || '';
-  const buoi = tinhBuoi({ lichSu, batDau: batDau.current, bayGio: Date.now() + nhip * 0 });
+  const buoi = tinhBuoi({ lichSu, batDau: batDau.current, bayGio: Date.now() });
   const ket = loiKet(buoi);
   const hoiThich = cauHoiSoThich(von);
 
@@ -165,6 +168,14 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
       <div className="rounded-xl2 border-2 border-line bg-white p-3">
         <div className="flex flex-wrap items-baseline gap-x-3">
           <h3 className="text-sm font-bold uppercase tracking-wide text-navy">Con nói về</h3>
+          {/* Còn bao lâu — cho bố mẹ, và để hết giờ không cắt ngang đột ngột. Chỉ
+              hiện khi sắp hết: đếm ngược suốt buổi chỉ làm bé nhìn đồng hồ thay vì
+              nhìn bài. */}
+          {buoi.trangThai === 'dang' && buoi.phutConLai <= 5 && (
+            <span className="rounded-full bg-gold-pale px-2 py-0.5 text-xs font-bold text-gold-dark">
+              còn {Math.ceil(buoi.phutConLai)} phút
+            </span>
+          )}
           <p className="text-sm text-mute">
             {von.moRong
               ? `${dsTu.length} từ — có cả từ mấy bài trước con đã học`
