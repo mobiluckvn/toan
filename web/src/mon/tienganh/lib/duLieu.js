@@ -113,7 +113,11 @@ async function docHocBa(uid) {
   const chapters = {};
   snap.forEach((d) => {
     const v = d.data();
-    if (v.loai === 'chuong' && v.khoa) chapters[v.khoa] = v.giaTri || v;
+    /* `|| {}` chứ KHÔNG `|| v`. Bản cũ đỡ lấy cả tài liệu khi thiếu `giaTri`, và
+       cái đỡ ấy chính là thứ che mất chuyện bên ghi đang gửi sai hình dạng: đọc ra
+       vẫn có gì đó, chỉ là thiếu `best` — thẻ huy hiệu hiện "undefined/undefined".
+       Nay chỉ nhận đúng một hình dạng, giống hệt Toán (`toan/lib/duLieu.js`). */
+    if (v.loai === 'chuong' && v.khoa) chapters[v.khoa] = v.giaTri || {};
   });
   return chapters;
 }

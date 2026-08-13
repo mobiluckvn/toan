@@ -74,14 +74,36 @@ export default function ManTiengAnh({
    * mà sổ bố mẹ và bảng cô giáo cùng đọc. Ghi máy chủ KHÔNG chờ: mất mạng thì bé
    * vẫn thấy huy hiệu, và `LOI_GHI` trong duLieu.js đếm chứ không nuốt im.
    */
+  /**
+   * ⚠ BA CHỖ PHẢI KHỚP NHAU, VÀ TỪNG LỆCH CẢ BA.
+   *
+   * Bản đầu ghi `loai: 'ontap'` với các trường trải thẳng ra ngoài. Nhìn riêng thì
+   * hợp lý — đây đúng là kỳ ôn tập. Nhưng:
+   *
+   *   · `firestore.rules` chỉ cho `loai in ['chuong']` → máy chủ TỪ CHỐI;
+   *   · từ chối là IM LẶNG, vì lệnh ghi không chờ kết quả (`LOI_GHI` đếm, không kêu);
+   *   · `docHocBa` cũng chỉ nhặt `loai === 'chuong'`, nên dù có lọt cũng không ai đọc;
+   *   · và nó đọc `v.giaTri`, trong khi bên này trải phẳng — hình dạng thứ ba.
+   *
+   * Hậu quả trên bản thật: bé làm xong kỳ ôn tập, huy hiệu hiện lên ngay (sổ tại
+   * máy), nhưng máy chủ trống trơn. Đổi máy là mất, và sổ bố mẹ không bao giờ thấy.
+   *
+   * Cổng cũ không bắt được vì nó TỰ DỰNG gói `{loai:'chuong'}` rồi mang đi thử —
+   * thử đúng cái luật cho phép, chứ không phải cái màn hình gửi đi. Nay
+   * `test/hocba_khop_luat.test.mjs` đọc chính dòng dưới đây và đối chiếu với
+   * `firestore.rules`.
+   *
+   * Ghi ĐÚNG cái sổ tại máy đang giữ (`giaTri`), không dựng hình dạng thứ hai: thẻ
+   * huy hiệu đọc `xong.best`, mà bản cũ gửi `dung` — hoà sổ về là mất điểm cao nhất.
+   */
   const xongOnTap = useCallback((ky, kq) => {
-    datTienDo((p) => ghiChuong(p, ct.ma, ky.chapter, { dat: kq.dat, dung: kq.dung, tong: kq.tong }));
-    luuMucHocBa(learnerId, 'ontap', khoaChuong(ct.ma, ky.chapter), {
-      quyen: ct.ma, chuong: ky.chapter, ten: ky.name,
-      dat: kq.dat, dung: kq.dung, tong: kq.tong, can: ky.need,
-    });
+    const sau = ghiChuong(tienDo, ct.ma, ky.chapter,
+      { dat: kq.dat, dung: kq.dung, tong: kq.tong });
+    datTienDo(sau);
+    const k = khoaChuong(ct.ma, ky.chapter);
+    luuMucHocBa(learnerId, 'chuong', k, { giaTri: sau.chapters[k] });
     setView({ page: 'home' });
-  }, [datTienDo, setView, learnerId, ct.ma]);
+  }, [tienDo, datTienDo, setView, learnerId, ct.ma]);
 
   if (view.page === 'ontap' && view.kyId) {
     const ky = kyOn.find((k) => k.id === view.kyId);

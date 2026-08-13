@@ -56,6 +56,9 @@ const V = {
   s: (v) => ({ stringValue: String(v) }),
   b: (v) => ({ booleanValue: !!v }),
   n: (v) => ({ integerValue: String(v) }),
+  /* Học bạ bọc số liệu trong một trường con `giaTri` — REST của Firestore đòi khai
+     lồng đúng hình dạng này, không nhận object thường. */
+  m: (o) => ({ mapValue: { fields: o } }),
 };
 
 async function ghi(uid, duong, fields, nhuAi = uid, role) {
@@ -108,13 +111,37 @@ m = await doc(`progressTA/${BE_A}/micros/DL_TA1_B04`, 'co_giao', 'teacher');
 t('cô giáo ĐỌC ĐƯỢC sổ của học sinh', m === 200, `HTTP ${m}`);
 
 console.log('\n── hocBaTA ──');
-const mucHopLe = { loai: V.s('chuong'), khoa: V.s('ta1:C1'), at: V.s('2026-08-12') };
+/* ⚠ Gói này phải là gói MÀN HÌNH THẬT GỬI, không phải gói cổng tự nghĩ ra.
+   Bản cũ tự viết `loai:'chuong'` trong khi `ManTiengAnh.jsx` gửi `'ontap'` — cổng
+   thử đúng cái luật cho phép, chứ không phải cái app gửi đi, nên nó xanh suốt
+   trong lúc mọi kỳ ôn tập Tiếng Anh bị máy chủ từ chối trong im lặng.
+   Nay hình dạng dưới đây khớp `luuMucHocBa(learnerId, 'chuong', k, {giaTri})`, và
+   `hocba_khop_luat.test.mjs` canh cho hai bên không lệch lại. */
+const mucHopLe = {
+  loai: V.s('chuong'), khoa: V.s('ta1:C1'), at: V.s('2026-08-12'),
+  giaTri: V.m({ dat: V.b(true), best: V.n(9), tong: V.n(10), at: V.s('2026-08-12') }),
+};
 m = await ghi(BE_A, `hocBaTA/${BE_A}/muc/chuong__ta1_C1`, mucHopLe);
 t('chính chủ ghi được mục học bạ', m === 200, `HTTP ${m}`);
 m = await ghi(BE_A, `hocBaTA/${BE_A}/muc/loai_la`, { loai: V.s('dau'), khoa: V.s('x') });
 t('loại ngoài danh sách thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
 m = await ghi(BE_A, `hocBaTA/${BE_B}/muc/chuong__ta1_C1`, mucHopLe, BE_A);
 t('bé A KHÔNG ghi được học bạ bé B', m === 403, `HTTP ${m}`);
+
+/* ── VÒNG KHỨ HỒI: ghi lên rồi ĐỌC LẠI ──
+   Ghi được 200 chưa chứng minh gì cả — bản cũ cũng "ghi được" một hình dạng mà
+   `docHocBa` không nhặt nổi, nên máy chủ có tài liệu mà bé vẫn mất huy hiệu. Đọc
+   lại và soi đúng cái thẻ huy hiệu cần (`best`, `tong`) mới là bằng chứng. */
+{
+  const r = await fetch(`${goc}/hocBaTA/${BE_A}/muc/chuong__ta1_C1`, {
+    headers: { Authorization: `Bearer ${token(BE_A)}` },
+  });
+  const d = r.ok ? await r.json() : null;
+  const gt = d?.fields?.giaTri?.mapValue?.fields;
+  t('đọc lại thấy đúng loai mà bên đọc lọc', d?.fields?.loai?.stringValue === 'chuong');
+  t('đọc lại thấy giaTri có best — thẻ huy hiệu dùng đúng trường này',
+    gt?.best?.integerValue === '9', JSON.stringify(gt || null));
+}
 
 console.log('\n── bằng chứng học tập không xoá được ──');
 {

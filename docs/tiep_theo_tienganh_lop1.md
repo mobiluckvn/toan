@@ -339,7 +339,19 @@ lệch kiểu ấy không cổng nào bắt được. 6 video đã dựng lại.
 ### (e) ~~Kỳ ôn tập chương~~ — XONG 12-08
 `tools/sinh_ontap_tienganh.py` dựng 4 kỳ × 10 câu **từ chính câu của bốn unit**
 trong chương — âm và hình đều có sẵn, không phải chạy lại TTS. Màn `OnTap.jsx`
-gọi `ghiChuong` + `luuMucHocBa`. ⚠ Chưa xác nhận `hocBaTA` có tài liệu thật.
+gọi `ghiChuong` + `luuMucHocBa`.
+
+⚠ **Đã hỏng suốt từ 12-08 tới 14-08, và hỏng trong im lặng.** Màn hình gửi
+`loai:'ontap'` với các trường trải phẳng; `firestore.rules` chỉ cho `['chuong']` và
+`docHocBa` chỉ nhặt `v.giaTri`. Ba hình dạng, không cái nào khớp cái nào. Lệnh ghi
+không chờ kết quả nên máy chủ từ chối mà chẳng ai hay: bé thấy huy hiệu (sổ tại
+máy), đổi máy là mất sạch, sổ bố mẹ không bao giờ thấy.
+
+Cổng `luat_firestore` không bắt được vì nó **tự dựng gói** `{loai:'chuong'}` mang
+đi thử — thử đúng cái luật CHO PHÉP, chứ không phải cái app GỬI ĐI. Nay:
+`test/hocba_khop_luat.test.mjs` đọc chính dòng gọi trong `.jsx` rồi đối chiếu với
+`firestore.rules` (cả hai môn), và `luat_firestore` ghi xong thì **đọc lại** để soi
+đúng trường `giaTri.best` mà thẻ huy hiệu dùng.
 
 ### (f) ~~Bảng xếp hạng~~ — XONG 12-08
 `docDuLieuChung` nay đọc cả `progressTA` và `hocBaTA`. Phép cộng sao vốn đã không
@@ -370,7 +382,7 @@ là thay đổi về ĐƯỜNG ĐI, mà đường đi thì phải đi mới bi�
 | quay lại chặng 1 → chặng sau CÒN mở không | đây là chỗ bản cũ hỏng; phải thấy dòng "→ Về chỗ con đang học" |
 | sai 3 lần → "Để câu này lại sau" → cuối mức có mời làm lại không | màn 💪 "Còn N câu con chưa làm được" |
 | thẻ kỳ ôn tập: khoá khi còn nợ, mở khi đủ 4 bài | "Còn N bài nữa trong chương này là mở" |
-| làm xong kỳ ôn tập → **`hocBaTA` có tài liệu chưa** | đây là món nợ lâu nhất; phải nhìn tận mắt trên bộ giả lập |
+| ~~làm xong kỳ ôn tập → `hocBaTA` có tài liệu chưa~~ | XONG 14-08 — xem (e); vòng khứ hồi có cổng canh, nhưng vẫn nên nhìn tận mắt một lần trên bản thật |
 | vào lại bài đang dở có về đúng chặng cũ không | `ghiChang` chỉ ghi tại máy |
 
 Bộ giả lập: xem `docs/di_thu_gia_lap.md`. **Nhớ ba chỗ đọc nhầm dấu hiệu** ghi ở
