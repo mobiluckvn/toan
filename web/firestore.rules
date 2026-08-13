@@ -134,6 +134,24 @@ service cloud.firestore {
                    && request.resource.data.loai in ['chuong'];
     }
 
+    /* ── PHÒNG LUYỆN NÓI: buổi nói chuyện của bé với cô giáo máy ──
+       Máy chủ KHÔNG lưu gì (bác chốt) — chính máy con đẩy buổi lên đây. Nên luật
+       phải cho chính chủ GHI, chứ không như `report` chỉ Function mới được ghi.
+
+       ⚠ Đây là TIẾNG NÓI của trẻ con, thứ riêng tư nhất trong cả kho. `canRead`
+       cho cả giáo viên đọc — đúng với kết quả học, nhưng một buổi trò chuyện thì
+       khác hẳn. Nên ở đây chỉ CHÍNH CHỦ và admin, cô giáo KHÔNG đọc được. Muốn đổi
+       thì phải là quyết định có người chịu trách nhiệm, đừng nới cho tiện. */
+    match /phongNoiTA/{userId}/buoi/{buoiId} {
+      allow read:  if isMine(userId) || isAdmin();
+      /* Hai chốt kiểu dữ liệu, cùng lối với `progressTA`: thiếu hoặc sai kiểu là
+         từ chối. `soLuot` là số, `luot` là danh sách — sai hình dạng thì sổ bố mẹ
+         mở ra vỡ, mà lúc ấy chẳng còn gì để lần. */
+      allow write: if isMine(userId)
+                   && request.resource.data.soLuot is int
+                   && request.resource.data.luot is list;
+    }
+
     /* ── Hàng đợi ôn tập: việc riêng của từng bạn, cô không cần ── */
     match /reviewQueue/{userId}/cards/{cardId} {
       allow read:  if isMine(userId) || isAdmin();

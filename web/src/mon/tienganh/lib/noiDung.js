@@ -119,3 +119,32 @@ export function hangXom(id) {
   const i = ds.indexOf(id);
   return { truoc: i > 0 ? ds[i - 1] : null, sau: i >= 0 && i < ds.length - 1 ? ds[i + 1] : null };
 }
+
+/**
+ * HÌNH CỦA MỘT TỪ.
+ *
+ * Hình KHÔNG nằm trong `knowledgeCore.vocabulary` mà ở `bai.hinhTu` — hai chỗ khác
+ * nhau, và đó chính là chỗ đã dính lỗi thật: thanh VIỆC CỦA CON tự đọc `v.ve`/`v.hinh`
+ * từ `vocabulary`, không có nên cả bốn ô vẽ ra dấu ❔ trong khi thẻ từ ngay dưới vẫn
+ * đủ 🍗🍟🐟🥛. Cổng xanh, bản dựng xanh, chỉ mở ra nhìn mới thấy.
+ *
+ * Nên hàm này là NGUỒN DUY NHẤT. Ba chỗ vẽ hình từ — thẻ từ, thanh việc, và phòng
+ * luyện nói — đều phải hỏi nó. Chỗ nào tự đọc lại `bai.hinhTu` là chỗ ấy sẽ lệch,
+ * mà lệch kiểu không cổng nào bắt được. Xem [[mot-nguon-cho-hai-ben-ve]].
+ */
+export const hinhCuaTu = (bai, tu) => (bai?.hinhTu || []).find((h) => h.tu === tu) || {};
+
+/**
+ * Mã của tối đa `n` bài ĐỨNG TRƯỚC bài này, theo đúng thứ tự học.
+ *
+ * Phòng luyện nói cần chúng để mở rộng vốn từ khi bé đã đạt unit. Hỏi sổ đăng ký
+ * chứ không suy từ mã bài: mã có tăng dần thật, nhưng suy từ chuỗi là ghim cứng
+ * cách đánh số của quyển này vào chỗ chẳng liên quan gì.
+ */
+export function maBaiTruoc(id, n = 3) {
+  const ct = quyenCua(id);
+  const ds = ct?.bai || [];
+  const i = ds.indexOf(id);
+  if (i <= 0) return [];
+  return ds.slice(Math.max(0, i - n), i);
+}

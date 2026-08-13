@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import ThanhViec from './ThanhViec.jsx';
 import ThanhCau from './ThanhCau.jsx';
+import PhongNoi from './PhongNoi.jsx';
 import CauHoi from './CauHoi.jsx';
 import CauNgheNhin from './CauNgheNhin.jsx';
 import HinhVe from './HinhVe.jsx';
@@ -8,11 +9,11 @@ import NutNoi from './NutNoi.jsx';
 import HoiThoai from './HoiThoai.jsx';
 import Video from './Video.jsx';
 import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
-import { napBai, napSoAm, hangXom } from '../lib/noiDung.js';
+import { napBai, napSoAm, hangXom, hinhCuaTu } from '../lib/noiDung.js';
 import { maCua } from './NutNghe.jsx';
 import {
   changCua, NHAN_CHANG, trangThaiChang, THU_TOI_THIEU, viecChangTu, viecChangCau,
-  noiDuoc,
+  noiDuoc, CHANG_KHONG_KHOA,
 } from '../lib/dandat.js';
 import { DAT as DAT_NOI } from '../lib/chamnoi.js';
 
@@ -92,12 +93,13 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
     if (n > xa) { datXa(n); onChang?.(n); }
   };
   /* Nhảy trên thanh: chỉ tới chặng ĐÃ MỞ, và KHÔNG hạ `xa` xuống. */
-  const nhay = (i) => { if (i <= xa) datTai(i); };
+  /* Chặng KHÔNG KHOÁ nhảy tới lúc nào cũng được — xem CHANG_KHONG_KHOA. */
+  const nhay = (i) => { if (i <= xa || CHANG_KHONG_KHOA.has(CHANG[i])) datTai(i); };
 
   const k = CHANG[tai];
   return (
     <Khung onThoat={onThoat} ten={bai.title}>
-      <ThanhChang ten={tenChang} tai={tai} xa={xa} onChon={nhay} />
+      <ThanhChang ten={tenChang} ds={CHANG} tai={tai} xa={xa} onChon={nhay} />
 
       {k === 'tu' && <ManTu bai={bai} onTiep={xong} onNoi={onNoi} />}
       {k === 'cau' && <ManCau bai={bai} onTiep={xong} />}
@@ -111,6 +113,9 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
       )}
       {k === 'sat' && (
         <SatHach bai={bai} onXong={(kq) => onXongBai(kq, hangXom(id).sau)} />
+      )}
+      {k === 'phong' && (
+        <PhongNoi bai={bai} tienDo={tienDo} tenBe={tenBe} />
       )}
     </Khung>
   );
@@ -141,12 +146,12 @@ function Khung({ ten, children, onThoat }) {
  * từ mới xong bấm thẳng về sát hạch, không phải làm lại cả bài. Chặng chưa tới
  * thì khoá, và khoá có nói vì sao.
  */
-function ThanhChang({ ten, tai, xa, onChon }) {
+function ThanhChang({ ten, ds = [], tai, xa, onChon }) {
   return (
     <div className="flex flex-col gap-2">
       <ol className="flex flex-wrap gap-1.5">
         {ten.map((x, i) => {
-          const tt = trangThaiChang(i, tai, xa);
+          const tt = trangThaiChang(i, tai, xa, ds);
           return (
             <li key={x}>
               <button
@@ -162,7 +167,7 @@ function ThanhChang({ ten, tai, xa, onChon }) {
                     : tt === 'xong' ? 'bg-teal-pale text-teal-dark hover:bg-teal hover:text-white'
                     : 'bg-soft text-mute'}`}
               >
-                {tt === 'xong' ? '✓ ' : tt === 'khoa' ? '🔒 ' : `${i + 1}. `}{x}
+                {tt === 'xong' ? '✓ ' : tt === 'khoa' ? '🔒 ' : tt === 'mo' ? '' : `${i + 1}. `}{x}
               </button>
             </li>
           );
@@ -301,15 +306,8 @@ function ManTu({ bai, onTiep, onNoi }) {
   );
 }
 
-/**
- * Hình của một từ. Hình KHÔNG nằm trong `vocabulary` mà ở `bai.hinhTu` — thẻ từ
- * và thanh việc phải cùng hỏi ĐÚNG hàm này.
- *
- * Đã dính thật: thanh việc tự đọc `v.ve`/`v.hinh` từ `vocabulary`, không có nên
- * cả bốn ô vẽ ra dấu ❔ trong khi thẻ từ ngay dưới vẫn đủ 🍗🍟🐟🥛. Cùng một vật
- * mà hai chỗ hỏi hai nguồn thì sớm muộn cũng lệch — xem [[mot-nguon-cho-hai-ben-ve]].
- */
-const hinhCuaTu = (bai, tu) => (bai.hinhTu || []).find((h) => h.tu === tu) || {};
+/* `hinhCuaTu` nay ở `lib/noiDung.js` — phòng luyện nói cũng vẽ hình từ, và ba chỗ
+   vẽ cùng một vật thì phải hỏi cùng một nguồn. Đọc phần chú ở hàm ấy. */
 
 
 /**

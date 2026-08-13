@@ -106,12 +106,21 @@ export const baiConNo = (tienDo, ds = [], opt = {}) =>
  */
 export const NHAN_CHANG = {
   tu: 'Từ mới', cau: 'Mẫu câu', luyen: 'Luyện tập',
-  noi: 'Nói chuyện', sat: 'Sát hạch',
+  noi: 'Nói chuyện', sat: 'Sát hạch', phong: 'Phòng luyện nói',
 };
+
+/**
+ * PHÒNG LUYỆN NÓI đứng CUỐI và KHÔNG khoá.
+ *
+ * Nó không phải cửa ải phải qua — nó là chỗ bé quay lại tập nói bao nhiêu lần cũng
+ * được, và vốn từ tự rộng ra khi bé đạt unit. Bắt bé qua sát hạch mới được vào thì
+ * đúng những bé cần tập nói nhất lại là những bé không vào được.
+ */
+export const CHANG_KHONG_KHOA = new Set(['phong']);
 
 export function changCua(bai) {
   const coNoi = !!bai?.knowledgeCore?.hoiThoai?.luot?.length;
-  return ['tu', 'cau', 'luyen', ...(coNoi ? ['noi'] : []), 'sat'];
+  return ['tu', 'cau', 'luyen', ...(coNoi ? ['noi'] : []), 'sat', 'phong'];
 }
 
 /**
@@ -127,9 +136,11 @@ export function changCua(bai) {
  * bài. Quay lại ôn là việc TỐT, mà app lại phạt. Nên phải có HAI con số: đang
  * đứng ở đâu (`tai`), và đã đi xa nhất tới đâu (`xa`).
  */
-export function trangThaiChang(i, tai, xa) {
+export function trangThaiChang(i, tai, xa, ds = []) {
   if (i === tai) return 'dang';
-  return i <= xa ? 'xong' : 'khoa';
+  if (i <= xa) return 'xong';
+  /* Chặng khai KHÔNG KHOÁ thì mở sẵn, dù bé chưa đi tới. Không phải cửa ải. */
+  return CHANG_KHONG_KHOA.has(ds[i]) ? 'mo' : 'khoa';
 }
 
 /* ═══════════ TẦNG 2b · VIỆC PHẢI LÀM TRONG CHẶNG TỪ MỚI ═══════════ */

@@ -15,7 +15,14 @@ firebase-debug.log
 dat-bi-mat.sh
 .DS_Store
 
-# bí mật của bộ giả lập — không bao giờ commit
+# bí mật của bộ giả lập — không bao giờ commit.
+# Che theo MẪU chứ không theo từng tên tệp: thêm một bí mật mới mà quên khai ở đây
+# thì nó lọt vào git, và khoá đã lên git thì coi như đã lộ — có xoá commit cũng
+# phải đi thu hồi khoá. Tệp mẫu `.secret.local.mau` thì KHÔNG chứa khoá, vẫn commit.
 web/functions/.secret.local
+web/functions/.env
+web/functions/.env.*
+!web/functions/.secret.local.mau
+.env
 firestore-debug.log
 ui-debug.log

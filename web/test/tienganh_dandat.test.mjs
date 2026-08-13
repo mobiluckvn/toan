@@ -18,7 +18,7 @@ import { readFileSync } from 'node:fs';
 import {
   THU_TOI_THIEU, HIEN_GOI_Y, daThuDu, moBai, trangThaiBai, baiNenHoc, baiConNo,
   changCua, trangThaiChang, duocBoQua, conNoTrongMuc, viecChangTu, viecChangCau,
-  noiDuoc,
+  noiDuoc, NHAN_CHANG, CHANG_KHONG_KHOA,
 } from '../src/mon/tienganh/lib/dandat.js';
 
 const DS = ['B01', 'B02', 'B03'];
@@ -93,12 +93,24 @@ test('tắt cờ khoaBai thì không bài nào bị khoá', () => {
 test('chuỗi chặng hỏi CHÍNH BÀI, không cắm số cứng', () => {
   const coNoi = { knowledgeCore: { hoiThoai: { luot: [{ ai: 'be' }] } } };
   const khong = { knowledgeCore: {} };
-  assert.deepEqual(changCua(coNoi), ['tu', 'cau', 'luyen', 'noi', 'sat']);
-  assert.deepEqual(changCua(khong), ['tu', 'cau', 'luyen', 'sat']);
+  assert.deepEqual(changCua(coNoi), ['tu', 'cau', 'luyen', 'noi', 'sat', 'phong']);
+  assert.deepEqual(changCua(khong), ['tu', 'cau', 'luyen', 'sat', 'phong']);
   /* Kịch bản khai rỗng cũng phải tính là KHÔNG có, nếu không chặng nói chuyện mở
      ra một màn trắng và bé kẹt ở đó. */
   assert.deepEqual(changCua({ knowledgeCore: { hoiThoai: { luot: [] } } }),
-                   ['tu', 'cau', 'luyen', 'sat']);
+                   ['tu', 'cau', 'luyen', 'sat', 'phong']);
+  /* Chặng nào cũng phải có nhãn, nếu không thanh chặng hiện một nút trống. */
+  for (const k of changCua(coNoi)) assert.ok(NHAN_CHANG[k], `chặng "${k}" chưa có nhãn`);
+});
+
+test('PHÒNG LUYỆN NÓI mở sẵn, không phải cửa ải', () => {
+  /* Bắt bé qua sát hạch mới được vào thì đúng những bé cần tập nói nhất lại là
+     những bé không vào được. */
+  const ds = changCua({ knowledgeCore: {} });          // tu · cau · luyen · sat · phong
+  const iPhong = ds.indexOf('phong');
+  assert.equal(trangThaiChang(iPhong, 0, 0, ds), 'mo', 'phòng nói phải mở từ đầu');
+  assert.equal(trangThaiChang(ds.indexOf('sat'), 0, 0, ds), 'khoa', 'sát hạch thì vẫn khoá');
+  assert.ok(CHANG_KHONG_KHOA.has('phong'));
 });
 
 test('QUAY LẠI chặng cũ không làm mất chặng sau', () => {
@@ -344,19 +356,17 @@ test('im lặng ba lần KHÔNG được tính là đã nói', () => {
   assert.match(nn, /onHong\?\.\(/, 'trục trặc thuộc về MÁY phải báo lên trên');
 });
 
-test('thanh việc và thẻ từ lấy hình từ CÙNG MỘT nguồn', () => {
+test('thẻ từ và thanh việc hỏi hình qua HÀM CHUNG', () => {
   /* Đã dính thật lúc dựng: thanh việc tự đọc `v.ve`/`v.hinh` từ `vocabulary` —
      hai trường ấy không tồn tại ở đó, hình nằm ở `bai.hinhTu`. Kết quả: cả bốn ô
-     vẽ ra dấu ❔ trong khi thẻ từ ngay dưới vẫn đủ hình. Cổng xanh, bản dựng
-     xanh, chỉ có nhìn mới thấy. Nên: đúng MỘT chỗ trong tệp được đụng `hinhTu`. */
+     vẽ ra dấu ❔ trong khi thẻ từ ngay dưới vẫn đủ hình. Cổng xanh, bản dựng xanh,
+     chỉ có nhìn mới thấy.
+
+     Nay có BA chỗ vẽ hình từ (thẻ từ · thanh việc · phòng luyện nói), nên nguồn
+     dọn hẳn sang `lib/noiDung.js`. Phép đếm "đúng một chỗ được đụng `bai.hinhTu`"
+     chuyển sang `tienganh_phongnoi.test.mjs` vì nó phải soi cả ba tệp; ở đây chỉ
+     còn canh hai chỗ gọi trong chính tệp này. */
   const bh = readFileSync(new URL('../src/mon/tienganh/components/BaiHoc.jsx', import.meta.url), 'utf8');
-  /* Bỏ chú thích TRƯỚC khi đếm. Bản đầu của chính phép kiểm này đếm cả chữ
-     `bai.hinhTu` nằm trong lời giải thích ngay bên trên hàm, nên nó kêu "2 chỗ
-     đọc thẳng" trong khi mã chỉ có một. Cổng dò bằng biểu thức chính quy thì
-     phải nhìn MÃ, đừng nhìn văn xuôi — bẫy #11 lần thứ hai. */
-  const ma = bh.replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/.*$/gm, '');
-  const soLanDocThang = (ma.match(/bai\.hinhTu/g) || []).length;
-  assert.equal(soLanDocThang, 1, 'chỉ `hinhCuaTu` được đọc `bai.hinhTu`, mọi chỗ khác gọi nó');
   assert.match(bh, /hinhCuaTu\(bai, v\.tu\)/, 'thẻ từ phải hỏi qua hàm chung');
   assert.match(bh, /\.\.\.hinhCuaTu\(bai, v\.tu\)\s*\}\)\)/, 'thanh việc cũng phải hỏi qua hàm chung');
 });

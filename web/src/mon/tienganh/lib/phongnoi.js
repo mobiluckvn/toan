@@ -1,0 +1,242 @@
+/**
+ * PHÒNG LUYỆN NÓI — luật vốn từ và ngữ cảnh, để riêng khỏi giao diện và khỏi mạng.
+ *
+ * Màn hình là một cuộc trò chuyện: máy nói một câu tiếng Anh kèm một lời giải thích
+ * tiếng Việt, bé nghe rồi nói lại. Khác chặng "Nói chuyện" ở chỗ chặng ấy đi theo
+ * kịch bản viết sẵn, còn ở đây câu do máy sinh — nên bé hỏi lại được, nói sai thì
+ * được nói lại theo cách khác, và không bao giờ hết câu.
+ *
+ * ── VÌ SAO PHẢI BÓ VỐN TỪ, VÀ BÓ THEO UNIT ──
+ * Bác chốt 13-08: phòng này nằm TRONG từng unit, nên nó phải xoay quanh đúng từ và
+ * cấu trúc của unit ấy. Thả cho máy dùng từ tự do thì nó nói "Do you like chips?"
+ * với bé vừa xong unit 1 — bé không hiểu, và cái bé học được không phải tiếng Anh
+ * mà là "mình kém". Đúng cái bẫy mà luật đi lần lượt sinh ra để tránh.
+ *
+ * Nhưng bó CỨNG vào một unit thì bé xong unit rồi vẫn chỉ được nói mãi bốn từ, mà
+ * quên từ cũ mới là chuyện hay xảy ra nhất với bé lớp 1. Nên hai chế độ:
+ *
+ *   chưa đạt unit → CHỈ từ và cấu trúc của chính unit ấy
+ *   đạt rồi      → cộng thêm từ và cấu trúc của các unit bé ĐÃ ĐẠT trước đó
+ *
+ * Vế sau là phần thưởng nhìn thấy được: học xong thì phòng nói rộng ra.
+ *
+ * ── VÌ SAO TỆP NÀY KHÔNG BIẾT GÌ VỀ MẠNG ──
+ * Toàn bộ ở đây là hàm thuần: nhận dữ liệu bài + sổ tiến độ, trả về vốn từ và lời
+ * dặn cho máy. Không `fetch`, không Firebase. Nhờ thế cổng chạy được bằng `node`
+ * và soi được đúng cái dễ sai nhất — vốn từ bị nới ra lúc nào không biết.
+ */
+
+/** Nhiều nhất bao nhiêu unit CŨ được trộn vào. Đủ để ôn, không đủ để loãng. */
+export const UNIT_CU_TOI_DA = 3;
+
+/**
+ * Bao nhiêu lượt gần nhất được gửi lên máy chủ.
+ *
+ * Ngữ cảnh do CLIENT giữ (bác chốt: server không lưu gì), nên chính client phải cắt.
+ * Không cắt thì buổi nói chuyện dài dần, mỗi lượt gửi lại toàn bộ lịch sử — tiền và
+ * độ trễ tăng theo bình phương số lượt, mà bé thì chẳng thấy gì khác.
+ */
+export const LUOT_GUI_TOI_DA = 12;
+
+/** Chặn câu quá dài trước khi gửi. Bé 6 tuổi không gõ, nên dài bất thường là hỏng. */
+export const CHU_TOI_DA = 300;
+
+/* ─────────── vốn từ ─────────── */
+
+const goiTu = (v) => ({ tu: v.tu, nghia: v.nghia, ipa: v.ipa });
+const goiCau = (m) => ({ cau: m.cau, congThuc: m.congThuc, dungDe: m.dungDe });
+
+/** Rút phần dạy được của MỘT bài: từ mới và mẫu câu. */
+export function vonCuaBai(bai) {
+  const k = bai?.knowledgeCore || {};
+  const cau = k.mauCauDs?.length ? k.mauCauDs : (k.mauCau ? [k.mauCau] : []);
+  return {
+    id: bai?.id || null,
+    ten: bai?.title || '',
+    tu: (k.vocabulary || []).map(goiTu),
+    cau: cau.map(goiCau),
+  };
+}
+
+/**
+ * Vốn từ cho một buổi luyện nói.
+ *
+ * @param baiNay   dữ liệu bài của unit đang mở
+ * @param baiCu    [bài] các unit ĐỨNG TRƯỚC unit này, theo đúng thứ tự học
+ * @param daDat    unit này bé đã đạt chưa
+ * @param datCu    (id) => bé đã đạt unit ấy chưa
+ */
+export function vonTu({ baiNay, baiCu = [], daDat = false, datCu = () => false } = {}) {
+  const loi = vonCuaBai(baiNay);
+  if (!daDat) return { loi, on: [], moRong: false };
+
+  /* Lấy các unit gần nhất TRƯỚC unit này mà bé đã đạt — gần thì còn nhớ, và cũng
+     là thứ bé vừa học xong nên trộn vào là ôn đúng lúc. */
+  const on = baiCu
+    .filter((b) => datCu(b?.id))
+    .slice(-UNIT_CU_TOI_DA)
+    .map(vonCuaBai);
+
+  return { loi, on, moRong: on.length > 0 };
+}
+
+/** Gộp thành một danh sách phẳng — chỗ nào cần "máy được dùng từ nào" thì hỏi đây. */
+export const moiTuDuocDung = (v) =>
+  [...v.loi.tu, ...v.on.flatMap((x) => x.tu)].map((t) => t.tu);
+
+export const moiCauDuocDung = (v) =>
+  [...v.loi.cau, ...v.on.flatMap((x) => x.cau)].map((c) => c.cau);
+
+/* ─────────── lời dặn cho máy ─────────── */
+
+/**
+ * Dựng lời dặn (system prompt). Viết bằng tiếng Anh vì mô hình theo lệnh tiếng Anh
+ * chắc tay hơn, nhưng NỘI DUNG bắt nó nói với bé bằng hai thứ tiếng.
+ *
+ * Bốn điều bắt buộc, và cả bốn đều có lý do đắt:
+ *
+ *  1. CHỈ dùng từ trong danh sách. Đây là cả lý do phòng này tồn tại.
+ *  2. Mỗi lượt đúng MỘT câu tiếng Anh ngắn. Bé 6 tuổi không nhại lại được hai câu.
+ *  3. Luôn kèm một lời tiếng Việt ngắn — bé chưa hiểu tiếng Anh thì cần người dịch,
+ *     mà bố mẹ không phải lúc nào cũng ngồi cạnh.
+ *  4. Trả về JSON, vì màn hình cần TÁCH câu tiếng Anh (để đọc giọng en-GB và để
+ *     chấm phát âm) khỏi lời tiếng Việt (đọc giọng vi-VN). Trộn hai thứ tiếng vào
+ *     một dòng là bộ đọc sai giọng — kho này đã chốt "mỗi dòng chỉ MỘT thứ tiếng".
+ */
+/**
+ * LỜI LỚP HỌC — nhúm câu cô được nói ngoài vốn từ của bài.
+ *
+ * Phát hiện khi gọi Groq thật lượt đầu tiên: bé chào "Chào cô", cô đáp "I like
+ * milk." Không phải máy sai — unit 5 chỉ có ĐÚNG MỘT mẫu câu, nên cô bị bó tới mức
+ * không có gì để chào lại. Cứ thế thì mọi lượt đều là "I like ...", và cái đó
+ * không phải trò chuyện.
+ *
+ * Nên mở đúng một khe hẹp: mấy câu nghi thức của lớp học. Chúng KHÔNG phải từ bé
+ * phải học thuộc — chúng là lời của CÔ, bé nghe mãi rồi hiểu qua ngữ cảnh, đúng như
+ * trong lớp thật. Danh sách CỐ ĐỊNH và ngắn, khai ở đây để nhìn thấy được và để
+ * cổng đếm; nới nó ra là quay lại đúng chỗ hỏng mà việc bó vốn từ sinh ra để tránh.
+ */
+export const LOI_LOP_HOC = [
+  'Hello!', 'Hi!', 'Goodbye!', 'Your turn.', 'Say it with me.',
+  'Listen.', 'Again, please.', 'Good job!', 'Well done!', 'Nice!',
+  'Almost!', 'Try again.', 'Yes!', 'No.',
+];
+
+export function loiDan({ von, tenBe = 'bạn nhỏ', lop = 1 }) {
+  const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
+  const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
+  const bangTu = tu.map((t) => `${t.tu} (${t.nghia})`).join(', ');
+  const bangCau = cau.map((c) => `"${c.cau}"${c.congThuc ? ` [${c.congThuc}]` : ''}`).join('; ');
+
+  return [
+    `You are a warm, patient English tutor for a ${lop === 1 ? 'six-year-old' : `grade ${lop}`} Vietnamese child named ${tenBe}.`,
+    '',
+    'HARD RULES — breaking any of these makes the lesson useless:',
+    `1. Use ONLY these English words: ${bangTu}.`,
+    '   Plus the bare function words needed to form the sentence patterns below.',
+    '   Never introduce an English word outside this list, not even an easy one.',
+    `2. Use ONLY these sentence patterns: ${bangCau}.`,
+    `   You may also use these fixed classroom phrases: ${LOI_LOP_HOC.join(' ')}`,
+    '   Those phrases are yours to say — they are not words the child must produce.',
+    '3. Say exactly ONE short English sentence per turn. Never two.',
+    '   Greet or praise with a classroom phrase; teach with a sentence pattern.',
+    '4. Always add ONE short Vietnamese line explaining what you just said and what',
+    '   the child should do. Write it for a six-year-old, not for an adult.',
+    '5. If the child says something off-topic, gently steer back to the words above.',
+    '   Never discuss anything other than practising these words.',
+    '',
+    'Reply as JSON only: {"en": "<the English sentence>", "vi": "<the Vietnamese line>"}',
+  ].join('\n');
+}
+
+/* ─────────── ngữ cảnh ─────────── */
+
+/**
+ * Cắt lịch sử trước khi gửi. Giữ lượt MỚI NHẤT, bỏ lượt cũ.
+ *
+ * Cắt ở client chứ không ở server, vì server không giữ gì cả — nó nhận sao gửi vậy.
+ * Nếu quên cắt thì không có gì báo: câu trả lời vẫn đúng, chỉ có hoá đơn dài ra.
+ */
+export function catNguCanh(ds = [], toiDa = LUOT_GUI_TOI_DA) {
+  const sach = ds.filter((x) => x && (x.vai === 'may' || x.vai === 'be') && x.chu);
+  return sach.slice(-toiDa);
+}
+
+/** Dạng gửi lên máy chủ — chỉ vai và chữ, không kèm điểm hay dấu thời gian. */
+export const goiGui = (ds) => catNguCanh(ds).map((x) => ({
+  role: x.vai === 'may' ? 'assistant' : 'user',
+  content: String(x.chu).slice(0, CHU_TOI_DA),
+}));
+
+/* ─────────── hình cho từ đang nói tới ─────────── */
+
+/**
+ * Máy vừa nói câu này thì màn hình phải vẽ HÌNH của những từ trong đó.
+ *
+ * Bác dặn 13-08: "bổ sung thêm hình ảnh với các từ khi học về hình, lấy trong dữ
+ * liệu chúng ta". Đúng chỗ cần: bé lớp 1 chưa đọc được `chicken`, nhưng nhìn 🍗 là
+ * hiểu ngay. Không có hình thì phòng này quay về thành một khối chữ — mà cả quyển
+ * dựng trên nguyên tắc không bắt bé đọc chữ.
+ *
+ * So theo TỪNG TIẾNG, không phải `includes`: `includes('can')` sẽ khớp cả trong
+ * "I can see". Dấu câu bị bóc trước khi so, vì "chips." không bao giờ khớp "chips".
+ *
+ * ── MỘT CHỮ, HAI NGHĨA ──
+ * Nhưng so theo tiếng vẫn chưa đủ: `can` là CÙNG MỘT CHỮ cho "cái lon" (unit 3) và
+ * "có thể" (unit 14). Vẽ hình cái lon lúc máy nói "I can see" thì bé học ngược hẳn
+ * nghĩa — tệ hơn là không vẽ gì.
+ *
+ * Luật vị trí, nhỏ mà đủ: chỗ NGAY SAU một đại từ làm chủ ngữ là chỗ của ĐỘNG TỪ,
+ * không phải của danh từ. "I can see" → bỏ; "A can, please" → giữ. Không phải phép
+ * phân tích ngữ pháp, chỉ là một chốt chặn đúng chỗ hay va nhất ở vốn từ lớp 1.
+ *
+ * Hình lấy qua `hinhCuaTu` ở `lib/noiDung.js` — cùng nguồn với thẻ từ và thanh
+ * việc. Đừng đọc lại `bai.hinhTu` ở đây.
+ */
+const CHU_NGU = new Set(['i', 'you', 'we', 'they', 'he', 'she', 'it']);
+
+export function tuTrongCau(cau, von) {
+  const tieng = String(cau || '').toLowerCase().split(/[^a-z']+/).filter(Boolean);
+  const co = new Set(tieng);
+  const sauChuNgu = new Set(
+    tieng.filter((_, i) => i > 0 && CHU_NGU.has(tieng[i - 1])),
+  );
+  const moi = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
+  const thay = [];
+  for (const t of moi) {
+    if (thay.some((x) => x.tu === t.tu)) continue;
+    /* Từ nhiều tiếng ("ice cream") thì đòi có ĐỦ các tiếng của nó. */
+    const phan = t.tu.toLowerCase().split(/\s+/).filter(Boolean);
+    if (!phan.length || !phan.every((p) => co.has(p))) continue;
+    /* Từ một tiếng mà đứng ngay sau chủ ngữ thì đang làm động từ — đừng vẽ. */
+    if (phan.length === 1 && sauChuNgu.has(phan[0])) continue;
+    thay.push(t);
+  }
+  return thay;
+}
+
+/**
+ * Đọc câu trả lời của máy. Mô hình được dặn trả JSON, nhưng KHÔNG được tin là nó
+ * luôn làm đúng — trả về chữ trần thì vẫn phải dùng được, đừng để màn trắng.
+ */
+export function docTraLoi(chu) {
+  const s = String(chu || '').trim();
+  const json = s.match(/\{[\s\S]*\}/);
+  if (json) {
+    try {
+      const o = JSON.parse(json[0]);
+      if (o && (o.en || o.vi)) {
+        return { en: String(o.en || '').trim(), vi: String(o.vi || '').trim(), thoJSON: false };
+      }
+    } catch { /* rơi xuống dưới */ }
+  }
+  /* Không phải JSON: đoán dòng nào là tiếng Anh bằng dấu tiếng Việt. Đoán sai thì
+     bé nghe sai giọng một câu — vẫn hơn là không hiện gì. */
+  const dong = s.split('\n').map((x) => x.trim()).filter(Boolean);
+  const coDauViet = (x) => /[àáảãạăâèéẻẽẹêìíỉĩịòóỏõọôơùúủũụưỳýỷỹỵđ]/i.test(x);
+  return {
+    en: dong.find((x) => !coDauViet(x)) || '',
+    vi: dong.find(coDauViet) || '',
+    thoJSON: true,
+  };
+}

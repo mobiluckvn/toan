@@ -18,6 +18,7 @@ import { buildTeacherBoard } from './src/teacherboard.js';
 import { buildBangXepHang } from './src/bangxephang.js';
 import { makeCode, canSend, nextRecord, verify, otpEmail } from './src/otp.js';
 import { normalizeEmail, buildUserDoc } from './src/user.js';
+import { hoiMay, LoiGoi } from './src/luyennoi.js';
 
 setGlobalOptions({ region: 'asia-southeast1', maxInstances: 10 });
 initializeApp();
@@ -432,3 +433,47 @@ async function sendMail(to, { subject, text }) {
 /* ADMIN không dùng OTP: tạo thẳng trong Firebase Console (Authentication → Add user,
    email + mật khẩu), rồi đặt users/{uid}.role = 'admin' và custom claim role=admin.
    Xem docs/DEPLOY.md bước 7c. */
+
+/* ═══════════════ PHÒNG LUYỆN NÓI ═══════════════ */
+
+/**
+ * Khoá Groq. Đặt bằng: firebase functions:secrets:set GROQ_API_KEY
+ *
+ * Chưa đặt thì hàm này ném lỗi NÓI RÕ chứ không im lặng trả rỗng — máy chủ im lặng
+ * là chỗ mất nhiều thời gian nhất khi lần lỗi (xem `duLieu.js` của Tiếng Anh).
+ */
+const GROQ_API_KEY = defineSecret('GROQ_API_KEY');
+
+/**
+ * Chuyển lời của bé lên Groq, đem câu trả lời về. KHÔNG ghi gì xuống Firestore.
+ *
+ * Ngữ cảnh do client giữ và client tự đẩy lên `phongNoiTA` — bác chốt như thế, và
+ * nó cũng là cách giữ tiếng nói của bé ở ít chỗ nhất.
+ */
+export const luyenNoi = onCall(
+  { secrets: [GROQ_API_KEY], region: 'asia-southeast1' },
+  async (req) => {
+    if (!req.auth) throw new HttpsError('unauthenticated', 'Cần đăng nhập.');
+    const khoa = GROQ_API_KEY.value();
+    if (!khoa) {
+      throw new HttpsError('failed-precondition',
+        'Máy chủ chưa có khoá Groq. Đặt bằng: firebase functions:secrets:set GROQ_API_KEY');
+    }
+    try {
+      const { Groq } = await import('groq-sdk');
+      return await hoiMay(req.data, () => new Groq({ apiKey: khoa }));
+    } catch (e) {
+      if (e instanceof LoiGoi) throw new HttpsError('invalid-argument', e.message);
+      /* KHOÁ SAI khác hẳn GROQ HỎNG, và phải nói ra được: khoá sai thì người lớn
+         phải đi sửa, còn Groq hỏng thì chờ một lúc là xong. Gộp cả hai vào một câu
+         "thử lại nhé" là bé cứ bấm mãi trong khi lỗi nằm ở chỗ chẳng ai xem.
+         Vẫn KHÔNG ném nguyên văn lỗi nhà cung cấp xuống máy con — trong đó có thể
+         có mẩu khoá hoặc đường dẫn nội bộ. */
+      if (e?.status === 401 || e?.status === 403) {
+        throw new HttpsError('permission-denied',
+          'Khoá Groq không dùng được. Người lớn kiểm tra lại GROQ_API_KEY giúp con nhé.');
+      }
+      throw new HttpsError('unavailable', 'Chưa gọi được cô giáo máy. Con thử lại nhé.');
+    }
+  },
+);

@@ -128,6 +128,25 @@ console.log('\n── bằng chứng học tập không xoá được ──');
   t('chính chủ KHÔNG xoá được bài đã học', r.status === 403, `HTTP ${r.status}`);
 }
 
+console.log('\n── phòng luyện nói ──');
+{
+  /* Đây là TIẾNG NÓI của trẻ con — thứ riêng tư nhất trong cả kho. Máy chủ không
+     lưu gì (bác chốt), nên chính máy con đẩy buổi lên đây; luật phải cho chính chủ
+     GHI, mà chỉ chính chủ thôi. Cô giáo KHÔNG đọc được: `canRead` cho cô đọc kết
+     quả học là đúng, nhưng một buổi trò chuyện thì khác hẳn. */
+  const buoi = { soLuot: V.n(2), luot: { arrayValue: { values: [] } } };
+  m = await ghi(BE_A, `phongNoiTA/${BE_A}/buoi/b1`, buoi);
+  t('chính chủ ghi được buổi luyện nói', m === 200, `HTTP ${m}`);
+  m = await ghi(BE_A, `phongNoiTA/${BE_B}/buoi/b1`, buoi, BE_A);
+  t('bé A KHÔNG ghi được vào phòng nói của bé B', m === 403, `HTTP ${m}`);
+  m = await doc(`phongNoiTA/${BE_B}/buoi/b1`, BE_A);
+  t('bé A KHÔNG đọc được buổi nói chuyện của bé B', m === 403, `HTTP ${m}`);
+  m = await ghi(BE_A, `phongNoiTA/${BE_A}/buoi/sai`, {
+    soLuot: V.s('nhieu'), luot: { arrayValue: { values: [] } },
+  });
+  t('sai kiểu dữ liệu thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+}
+
 console.log('\n── chốt chặn chung ──');
 m = await ghi(BE_A, `linhTinhTA/${BE_A}/x/y`, { a: V.s('b') });
 t('collection chưa khai luật thì BỊ CHẶN', m === 403, `HTTP ${m}`);
