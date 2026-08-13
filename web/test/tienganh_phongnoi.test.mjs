@@ -398,3 +398,72 @@ test('màn phòng nói KHÔNG đọc lời Việt bằng một giọng duy nhấ
   assert.match(pn, /docDoan\(tachTheoTieng\(/, 'lời Việt phải đi qua phép tách');
   assert.doesNotMatch(pn, /docLen\([^)]*\.vi[^)]*'vi-VN'/, 'không được đọc thẳng cả dòng vi');
 });
+
+/* ═══════════ THỨ TỰ TIN NHẮN ═══════════ */
+
+test('phòng nói bày tin MỚI NHẤT LÊN TRÊN', () => {
+  /* Bác đổi 13-08. Chiều này dễ bị lật ngược lại lúc nào không biết — ai đó dọn
+     mã, thấy `.reverse()` "thừa", bỏ đi là xong. Nên phải có cổng. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(pn, /\.reverse\(\)/, 'danh sách lượt phải đảo lại');
+  assert.doesNotMatch(pn, /block:\s*'end'/, 'không được cuộn xuống đáy nữa — nay tin mới ở trên');
+  assert.match(pn, /dauDs/, 'phải cuộn tới ĐẦU danh sách khi có lượt mới');
+
+  /* Lọc câu chào mở màn TRƯỚC rồi mới đảo: đảo trước thì nó rơi xuống cuối và
+     `i === 0` không còn trỏ đúng nó. */
+  const iLoc = pn.indexOf('.filter(');
+  const iDao = pn.indexOf('.reverse()');
+  assert.ok(iLoc > 0 && iLoc < iDao, 'phải LỌC trước rồi mới ĐẢO');
+});
+
+test('nút nói đứng TRÊN cuộc trò chuyện', () => {
+  /* Để nút ở cuối thì mỗi lượt danh sách dài thêm, và bé phải cuộn qua cả buổi
+     học mới tìm lại được cái nút. */
+  const pn = readFileSync(new URL('../src/mon/tienganh/components/PhongNoi.jsx', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.ok(pn.indexOf('Đến lượt con') < pn.indexOf('<ol'),
+    'nút nói phải nằm trước danh sách lượt');
+});
+
+test('lặp Y HỆT lượt trước là KHÔNG hợp lệ, dù câu ấy đúng', () => {
+  /* Đây chính là cái bác bắt: "nó cứ nói đi nói lại". Nhìn tận mắt trên bản chạy
+     thấy hai lượt liền cùng ra "Hi, I'm Bo." — câu đúng ngữ pháp, đúng vốn từ,
+     nhưng lặp thì vẫn hỏng. Đúng ngữ pháp KHÔNG đủ để là câu dùng được. */
+  const von = vonB01();
+  assert.ok(cauHopLe("Hi, I'm Bo.", { von, tenBe: 'Bo' }), 'tự nó thì hợp lệ');
+  assert.ok(!cauHopLe("Hi, I'm Bo.", { von, tenBe: 'Bo', cauTruoc: "Hi, I'm Bo." }),
+    'nhưng lặp lượt trước thì không');
+  assert.ok(!cauHopLe('ball', { von, tenBe: 'Bo', cauTruoc: 'ball.' }),
+    'so sau khi bỏ dấu câu — "ball" và "ball." là một');
+  assert.ok(cauHopLe('bike', { von, tenBe: 'Bo', cauTruoc: 'ball' }), 'khác thì qua');
+});
+
+test('chỗ gọi CÓ truyền câu lượt trước vào phép soi', () => {
+  const g = readFileSync(new URL('../src/mon/tienganh/lib/goiPhongNoi.js', import.meta.url), 'utf8')
+    .replace(/\/\*[\s\S]*?\*\//g, '');
+  assert.match(g, /cauTruoc/, 'không truyền thì luật chống lặp thành vô nghĩa');
+});
+
+test('câu thay thế KHÔNG được trùng câu lượt trước', () => {
+  /* Chặn lặp mà cái dùng để thay lại chính là câu vừa chặn thì bằng không. Đã thấy
+     thật trên bản chạy: chặn "Hi, I'm Bo." xong thay bằng đúng "Hi, I'm Bo." */
+  const von = vonB01();
+  const ls = Array.from({ length: 2 }, () => ({ vai: 'may', en: 'x' }));
+  const v = viecTiepTheo({ von, lichSu: ls });
+  const thang = cauThayThe(v, 'Bo');
+  const khac = cauThayThe(v, 'Bo', thang.en);
+  assert.notEqual(khac.en, thang.en, 'phải đổi sang phương án khác');
+  assert.ok(cauHopLe(khac.en, { von, tenBe: 'Bo' }), 'và phương án ấy vẫn phải hợp lệ');
+});
+
+test('mọi lượt đều có đường lui khác câu trước', () => {
+  const von = vonB01();
+  for (let n = 0; n < 9; n += 1) {
+    const ls = Array.from({ length: n }, () => ({ vai: 'may', en: 'x' }));
+    const v = viecTiepTheo({ von, lichSu: ls });
+    const a = cauThayThe(v, 'Bo');
+    const b = cauThayThe(v, 'Bo', a.en);
+    assert.notEqual(b.en, a.en, `lượt ${n} không tìm được câu khác`);
+  }
+});

@@ -62,14 +62,17 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
   const [tam, datTam] = useState('');
   const [loi, datLoi] = useState(null);
   const [micHong, datMicHong] = useState(false);
-  const cuoi = useRef(null);
+  const dauDs = useRef(null);
   const phien = useRef(null);
   const daChao = useRef(false);
 
   const cauCoVuaNoi = [...lichSu].reverse().find((x) => x.vai === 'may')?.en || '';
 
   useEffect(() => () => { phien.current?.huy(); thoiDoc(); }, []);
-  useEffect(() => { cuoi.current?.scrollIntoView({ block: 'end', behavior: 'smooth' }); }, [lichSu, dangHoi]);
+  /* Có lượt mới thì đưa ĐẦU danh sách vào tầm mắt — tin mới nằm trên cùng. Bản
+     trước cuộn xuống đáy, nay làm thế là chạy ngược hướng và bé mất dấu câu vừa
+     nói. */
+  useEffect(() => { dauDs.current?.scrollIntoView({ block: 'nearest', behavior: 'smooth' }); }, [lichSu, dangHoi]);
 
   /* Gửi một lượt lên cô giáo. `themVaoLichSu` nhận lịch sử ĐÃ có lượt của bé —
      đọc state ngay tại đây thì lượt vừa thêm chưa kịp vào, và cô trả lời câu cũ. */
@@ -179,24 +182,14 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
         </p>
       )}
 
-      {/* CUỘC TRÒ CHUYỆN */}
-      <ol className="flex flex-col gap-3">
-        {lichSu.filter((x, i) => !(i === 0 && x.vai === 'be')).map((x, i) => (
-          <li key={i}>
-            {x.vai === 'may'
-              ? <LuotCo luot={x} bai={bai} von={von} />
-              : <LuotBe luot={x} />}
-          </li>
-        ))}
-        {dangHoi && (
-          <li className="text-sm text-mute">Cô đang nghĩ…</li>
-        )}
-        <li ref={cuoi} />
-      </ol>
-
       {loi && <p className="rounded-xl2 bg-gold-pale p-3 text-gold-dark">{loi}</p>}
 
-      {/* MỘT NÚT DUY NHẤT. To nhất màn, và luôn ở cuối để bé không phải đi tìm. */}
+      {/* MỘT NÚT DUY NHẤT, và nay nó đứng TRÊN cuộc trò chuyện.
+          Bác đổi 13-08: tin mới nhất lên trên, tin cũ xuống dưới. Nếu để nút ở
+          cuối như bản trước thì mỗi lượt nói xong danh sách lại dài thêm, và bé
+          phải cuộn qua cả buổi học mới tìm lại được cái nút. Nay nút đứng yên một
+          chỗ, câu cô vừa nói nằm ngay bên dưới — bé thấy cả hai cùng lúc, không
+          phải cuộn lần nào. */}
       {ngheDuoc() && !micHong ? (
         <button type="button" onClick={noi} disabled={dangHoi}
           className={`flex items-center justify-center gap-3 rounded-xl2 px-6 py-6 text-2xl
@@ -218,6 +211,28 @@ export default function PhongNoi({ bai, tienDo, tenBe = 'con', lop = 1 }) {
           {tam ? `“${tam}”` : 'Con nói to và rõ nhé…'}
         </p>
       )}
+
+      {/* CUỘC TRÒ CHUYỆN — MỚI NHẤT LÊN TRÊN.
+          Lượt đầu tiên là câu chào mình tự gửi hộ bé để cô mở lời, không phải bé
+          nói; lọc đi trước rồi mới đảo, chứ đảo trước thì nó rơi xuống cuối và
+          `i === 0` không còn trỏ đúng nó nữa. */}
+      <ol className="flex flex-col gap-3">
+        <li ref={dauDs} />
+        {dangHoi && (
+          <li className="text-sm text-mute">Cô đang nghĩ…</li>
+        )}
+        {lichSu
+          .filter((x, i) => !(i === 0 && x.vai === 'be'))
+          .map((x, i) => ({ x, i }))
+          .reverse()
+          .map(({ x, i }) => (
+            <li key={i}>
+              {x.vai === 'may'
+                ? <LuotCo luot={x} bai={bai} von={von} />
+                : <LuotBe luot={x} />}
+            </li>
+          ))}
+      </ol>
     </section>
   );
 }

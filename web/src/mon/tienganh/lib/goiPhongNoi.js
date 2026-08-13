@@ -44,8 +44,9 @@ export async function hoiCoGiao({ von, lichSu, tenBe, lop }) {
      là chỗ của tên người, mô hình vẫn sinh ra "Bye, bike." Bé 6 tuổi đang tập nhại
      thì một câu sai là dạy sai. Không hợp lệ thì thay bằng câu máy con tự dựng —
      luôn đúng, vì nó ghép từ chính dữ liệu bài. */
-  if (!cauHopLe(tra.en, { von, tenBe })) {
-    const thay = cauThayThe(viec, tenBe);
+  const cauTruoc = [...lichSu].reverse().find((x) => x.vai === 'may')?.en || '';
+  if (!cauHopLe(tra.en, { von, tenBe, cauTruoc })) {
+    const thay = cauThayThe(viec, tenBe, cauTruoc);
     /* Thay thì thay CẢ CẶP. Giữ lời tiếng Việt cũ là để nó tả một câu đã bị bỏ —
        đã thấy thật: cô nói "Hi, I'm Bill." mà lời Việt vẫn là "Chào tạm biệt bike".
        Bé nghe hai thứ ngược nhau còn rối hơn là nghe câu sai. */

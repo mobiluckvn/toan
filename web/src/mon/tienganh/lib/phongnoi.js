@@ -199,7 +199,10 @@ function dongViec(v, tenBe) {
     return `THIS TURN: say just the word "${tu.tu}" (means "${tu.nghia}") for the child to repeat.`;
   }
   if (kieu === KIEU_VIEC.mau && mau) {
-    return `THIS TURN: say the sentence "${mau.cau}" for the child to repeat.`;
+    /* ĐÚNG NGUYÊN VĂN. Để nó tự thay tên ở lượt này thì lượt `mau` và lượt `thay`
+       ra cùng một câu — đã thấy thật: hai lượt liền đều "Hi, I'm Bo." */
+    return `THIS TURN: say exactly this sentence, word for word: "${mau.cau}"`
+      + ' — do not substitute anything.';
   }
   if (kieu === KIEU_VIEC.thay && mau) {
     const khung = mau.congThuc || mau.cau;
@@ -370,9 +373,12 @@ export function docTraLoi(chu) {
  */
 const gonCau = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9' ]/g, '').replace(/\s+/g, ' ').trim();
 
-export function cauHopLe(en, { von, tenBe = '' } = {}) {
+export function cauHopLe(en, { von, tenBe = '', cauTruoc = '' } = {}) {
   const c = gonCau(en);
   if (!c) return false;
+  /* Lặp Y HỆT lượt trước thì dù đúng ngữ pháp vẫn hỏng — đó chính là cái bác bắt:
+     "nó cứ nói đi nói lại". Đã thấy thật hai lượt liền cùng ra "Hi, I'm Bo." */
+  if (cauTruoc && gonCau(cauTruoc) === c) return false;
 
   const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
   const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
@@ -400,21 +406,35 @@ export function cauHopLe(en, { von, tenBe = '' } = {}) {
  * Câu dựng sẵn cho việc của lượt này — dùng khi câu của cô không qua được phép soi.
  * Luôn đúng, vì nó ghép từ chính dữ liệu bài chứ không sinh ra từ đâu cả.
  */
-export function cauThayThe(viec, tenBe = 'con') {
+export function cauThayThe(viec, tenBe = 'con', cauTruoc = '') {
   if (!viec) return null;
   const { tu, kieu, mau } = viec;
+
+  const dienVao = (m, d) => (m.congThuc
+    ? m.congThuc.replace(/\s*\+\s*/g, ' ').replace(/\[[^\]]+\]/, d)
+    : m.cau);
+
+  /* Xếp sẵn mấy phương án, rồi lấy phương án ĐẦU TIÊN khác câu lượt trước.
+     Bản đầu chỉ dựng đúng một câu — mà nếu chính nó trùng câu trước thì luật chống
+     lặp thành vô nghĩa: chặn lặp xong lại thay bằng đúng câu vừa chặn. Đã thấy
+     thật trên bản chạy: hai lượt liền cùng ra "Hi, I'm Bo." */
+  const chon = [];
   if (kieu === KIEU_VIEC.tu || !mau) {
-    return { en: tu.tu, vi: `Con nghe rồi nói lại từ “${tu.tu}” nhé — nghĩa là ${tu.nghia}.` };
+    chon.push({ en: tu.tu, vi: `Con nghe rồi nói lại từ “${tu.tu}” nhé — nghĩa là ${tu.nghia}.` });
+  } else if (kieu === KIEU_VIEC.mau) {
+    chon.push({ en: mau.cau, vi: 'Con nghe rồi nói lại cả câu này nhé.' });
+  } else {
+    const loai = loaiOTrong(mau.congThuc);
+    const dien = loai === 'ten' ? tenBe : tu.tu;
+    chon.push({ en: dienVao(mau, dien), vi: `Cùng một mẫu câu, nay thay bằng “${dien}”. Con nói lại nhé.` });
   }
-  if (kieu === KIEU_VIEC.mau) {
-    return { en: mau.cau, vi: `Con nghe rồi nói lại cả câu này nhé.` };
-  }
-  const loai = loaiOTrong(mau.congThuc);
-  const dien = loai === 'ten' ? tenBe : tu.tu;
-  const en = mau.congThuc
-    ? mau.congThuc.replace(/\s*\+\s*/g, ' ').replace(/\[[^\]]+\]/, dien)
-    : mau.cau;
-  return { en, vi: `Cùng một mẫu câu, nay thay bằng “${dien}”. Con nói lại nhé.` };
+  /* Đường lui luôn có: chính TỪ mục tiêu, và câu ví dụ. Một trong hai bao giờ cũng
+     khác câu lượt trước, vì một cái là từ rời còn một cái là cả câu. */
+  chon.push({ en: tu.tu, vi: `Con nghe rồi nói lại từ “${tu.tu}” nhé — nghĩa là ${tu.nghia}.` });
+  if (mau) chon.push({ en: mau.cau, vi: 'Con nghe rồi nói lại cả câu này nhé.' });
+
+  const gon = (x) => String(x || '').toLowerCase().replace(/[^a-z0-9' ]/g, '').trim();
+  return chon.find((c) => gon(c.en) !== gon(cauTruoc)) || chon[0];
 }
 
 /* ─────────── tách một dòng lẫn hai thứ tiếng ─────────── */
