@@ -10,7 +10,9 @@
 import { httpsCallable } from 'firebase/functions';
 import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { fns, db, hasFirebase } from '../../../chung/lib/nenTang.js';
-import { loiDan, goiGui, docTraLoi } from './phongnoi.js';
+import {
+  loiDan, goiGui, docTraLoi, viecTiepTheo, cauHopLe, cauThayThe,
+} from './phongnoi.js';
 
 /** Collection riêng của Tiếng Anh — hậu tố TA để không bao giờ lẫn với Toán. */
 export const KHO_PHONG_NOI = (uid) => `phongNoiTA/${uid}/buoi`;
@@ -27,12 +29,29 @@ export async function hoiCoGiao({ von, lichSu, tenBe, lop }) {
     e.code = 'functions/unavailable';
     throw e;
   }
+  /* Việc của lượt này do MÁY CON quyết rồi ghép vào lời dặn — xem `viecTiepTheo`.
+     Lời dặn dựng lại mỗi lượt (chứ không giữ nguyên từ đầu buổi) chính là chỗ cắm
+     được việc mới vào. */
+  const viec = viecTiepTheo({ von, lichSu });
   const messages = [
-    { role: 'system', content: loiDan({ von, tenBe, lop }) },
+    { role: 'system', content: loiDan({ von, tenBe, lop, viec }) },
     ...goiGui(lichSu),
   ];
   const { data } = await httpsCallable(fns, 'luyenNoi')({ messages });
-  return docTraLoi(data?.chu);
+  const tra = docTraLoi(data?.chu);
+
+  /* SOI LẠI CÂU TIẾNG ANH. Dặn dò không đủ: đã bảo rõ ô trống của `Bye, + [Name].`
+     là chỗ của tên người, mô hình vẫn sinh ra "Bye, bike." Bé 6 tuổi đang tập nhại
+     thì một câu sai là dạy sai. Không hợp lệ thì thay bằng câu máy con tự dựng —
+     luôn đúng, vì nó ghép từ chính dữ liệu bài. */
+  if (!cauHopLe(tra.en, { von, tenBe })) {
+    const thay = cauThayThe(viec, tenBe);
+    /* Thay thì thay CẢ CẶP. Giữ lời tiếng Việt cũ là để nó tả một câu đã bị bỏ —
+       đã thấy thật: cô nói "Hi, I'm Bill." mà lời Việt vẫn là "Chào tạm biệt bike".
+       Bé nghe hai thứ ngược nhau còn rối hơn là nghe câu sai. */
+    if (thay) return { ...tra, en: thay.en, vi: thay.vi, daThay: true };
+  }
+  return tra;
 }
 
 /**

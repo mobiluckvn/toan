@@ -18,6 +18,7 @@ import {
   UNIT_CU_TOI_DA, LUOT_GUI_TOI_DA, CHU_TOI_DA,
   vonCuaBai, vonTu, moiTuDuocDung, moiCauDuocDung,
   loiDan, catNguCanh, goiGui, docTraLoi, tuTrongCau, LOI_LOP_HOC,
+  viecTiepTheo, cauHopLe, cauThayThe, loaiOTrong,
 } from '../src/mon/tienganh/lib/phongnoi.js';
 
 const bai = (id, tu, cau, hinh = []) => ({
@@ -26,15 +27,21 @@ const bai = (id, tu, cau, hinh = []) => ({
   hinhTu: hinh,
   knowledgeCore: {
     vocabulary: tu.map((t) => ({ tu: t, nghia: `nghĩa ${t}`, ipa: `/${t}/` })),
-    mauCauDs: cau.map((c) => ({ cau: c, congThuc: c, dungDe: 'để nói' })),
+    /* Mẫu câu thật LUÔN có công thức với ô trống (`Hi, I'm + [Name].`), và loại ô
+       trống là thứ quyết định điền được gì vào. Fixture bản đầu để công thức trùng
+       luôn câu ví dụ — không có ô trống nào — nên nó thử một thứ không tồn tại
+       trong dữ liệu thật. Dữ liệu giả phải giống dữ liệu thật ở đúng chỗ đang canh. */
+    mauCauDs: cau.map((c) => (Array.isArray(c)
+      ? { cau: c[0], congThuc: c[1], dungDe: 'để nói' }
+      : { cau: c, congThuc: c, dungDe: 'để nói' })),
   },
 });
 
-const B01 = bai('B01', ['ball', 'bike', 'book'], ["Hi, I'm Bill."]);
+const B01 = bai('B01', ['ball', 'bike', 'book'], [["Hi, I'm Bill.", "Hi, I'm + [Name]."]]);
 const B02 = bai('B02', ['cake', 'car', 'cat'], ['This is a cat.']);
 const B03 = bai('B03', ['apple', 'bag'], ['I have a bag.']);
 const B04 = bai('B04', ['desk', 'dog'], ['A dog.']);
-const B05 = bai('B05', ['chicken', 'chips', 'fish', 'milk'], ['I like milk.']);
+const B05 = bai('B05', ['chicken', 'chips', 'fish', 'milk'], [['I like milk.', 'I like + [Noun].']]);
 
 /* ═══════════ VỐN TỪ ═══════════ */
 
@@ -264,4 +271,69 @@ test('cả hai chỗ xin micro đều dùng bản CÓ ĐỒNG HỒ', () => {
     assert.match(s, /xinMicroChiTiet\(\)/, `${p} phải dùng bản có đồng hồ chặn`);
     assert.doesNotMatch(s, /await xinMicro\(\)/, `${p} không được dùng bản trần`);
   }
+});
+
+/* ═══════════ SOI LẠI CÂU CÔ NÓI ═══════════ */
+
+test('câu hợp lệ: từ vựng · lời lớp học · câu ví dụ · công thức đã điền', () => {
+  const von = vonTu({ baiNay: B01, baiCu: [], daDat: false });
+  const ok = (s) => cauHopLe(s, { von, tenBe: 'Bo' });
+  assert.ok(ok('ball'), 'một từ trong vốn từ');
+  assert.ok(ok('Good job!'), 'lời lớp học');
+  assert.ok(ok("Hi, I'm Bill."), 'câu ví dụ của bài');
+  assert.ok(ok("Hi, I'm Bo."), 'công thức điền TÊN bé');
+});
+
+test('câu KHÔNG hợp lệ bị chặn — kể cả khi nghe rất xuôi tai', () => {
+  const von = vonTu({ baiNay: B01, baiCu: [], daDat: false });
+  const ok = (s) => cauHopLe(s, { von, tenBe: 'Bo' });
+  /* Đã sinh ra thật khi thử với Groq, dù lời dặn đã nói rõ ô trống là chỗ của TÊN.
+     Với bé 6 tuổi đang tập nhại thì đây là dạy sai, và bé sẽ nhớ. */
+  assert.ok(!ok('Bye, book.'), 'nhét đồ vật vào ô của tên người');
+  assert.ok(!ok('Bye, bike.'), 'y hệt, và đây là câu Groq đã sinh ra thật');
+  assert.ok(!ok('Do you like chips?'), 'từ ngoài vốn của bé');
+  assert.ok(!ok('I have a ball.'), 'mẫu câu bài này chưa dạy');
+  assert.ok(!ok(''), 'câu rỗng');
+});
+
+test('ô trống biết mình thuộc loại nào', () => {
+  assert.equal(loaiOTrong("Hi, I'm + [Name]."), 'ten');
+  assert.equal(loaiOTrong('I like + [Noun].'), 'tu');
+  assert.equal(loaiOTrong('không có ô trống'), null);
+});
+
+test('câu thay thế LUÔN hợp lệ — đó là cả lý do nó tồn tại', () => {
+  const von = vonTu({ baiNay: B01, baiCu: [], daDat: false });
+  for (let n = 0; n < 9; n += 1) {
+    const ls = Array.from({ length: n }, () => ({ vai: 'may', en: 'x' }));
+    const v = viecTiepTheo({ von, lichSu: ls });
+    const t = cauThayThe(v, 'Bo');
+    assert.ok(t && t.en && t.vi, `lượt ${n} không dựng được câu thay thế`);
+    assert.ok(cauHopLe(t.en, { von, tenBe: 'Bo' }),
+      `lượt ${n}: câu thay thế "${t.en}" lại KHÔNG hợp lệ`);
+  }
+});
+
+test('việc xoay vòng — không lượt nào giống lượt trước', () => {
+  /* Bác bắt: "nó cứ nói đi nói lại hello với mấy câu nhàm chán". Dựng lại thì cô
+     nói đúng một câu sáu lượt liền. Nay việc do máy con chọn, nên đếm được. */
+  const von = vonTu({ baiNay: B01, baiCu: [], daDat: false });
+  const ds = [];
+  const ls = [];
+  for (let n = 0; n < 6; n += 1) {
+    const v = viecTiepTheo({ von, lichSu: ls });
+    ds.push(`${v.kieu}:${v.tu.tu}`);
+    ls.push({ vai: 'may', en: cauThayThe(v, 'Bo').en });
+  }
+  for (let i = 1; i < ds.length; i += 1) {
+    assert.notEqual(ds[i], ds[i - 1], `lượt ${i} lặp y hệt lượt trước: ${ds[i]}`);
+  }
+  assert.ok(new Set(ds).size >= 4, `mới có ${new Set(ds).size} kiểu việc khác nhau trong 6 lượt`);
+});
+
+test('chọn từ ÍT được nhắc nhất, không phải từ đầu bảng', () => {
+  const von = vonTu({ baiNay: B01, baiCu: [], daDat: false });
+  const ls = [{ vai: 'may', en: 'ball' }, { vai: 'may', en: 'ball' }, { vai: 'may', en: 'bike' }];
+  const v = viecTiepTheo({ von, lichSu: ls });
+  assert.equal(v.tu.tu, 'book', 'book chưa được nhắc lần nào');
 });

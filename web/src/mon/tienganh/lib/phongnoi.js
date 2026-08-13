@@ -122,31 +122,139 @@ export const LOI_LOP_HOC = [
   'Almost!', 'Try again.', 'Yes!', 'No.',
 ];
 
-export function loiDan({ von, tenBe = 'bạn nhỏ', lop = 1 }) {
+/* ─────────── việc của từng lượt ─────────── */
+
+/**
+ * VIỆC CỦA LƯỢT NÀY — do MÁY CON quyết, không phó mặc cho mô hình.
+ *
+ * Bác bắt 13-08: "nó cứ nói đi nói lại hello với mấy câu nhàm chán". Dựng lại thì
+ * còn tệ hơn: sáu lượt liền cô nói đúng một câu `Hi, I'm Bill.`
+ *
+ * Lỗi ở LỜI DẶN, không ở mô hình. Bản trước viết "chỉ được dùng những MẪU CÂU
+ * sau" rồi đưa đúng một câu ví dụ. Unit 1 có một mẫu — nên nó không còn gì khác
+ * để nói, và nó đang tuân lệnh răm rắp. Thả cho mô hình "tự nói cho phong phú"
+ * cũng không xong: hoặc nó lặp, hoặc nó bịa ra từ ngoài vốn của bé.
+ *
+ * Nên đảo lại: máy con CHỌN SẴN từ mục tiêu và kiểu việc cho từng lượt, mô hình
+ * chỉ lo diễn đạt. Biến "cho phong phú" — thứ không kiểm được — thành một phép
+ * đếm chạy được bằng `node` và soi được bằng cổng.
+ */
+export const KIEU_VIEC = {
+  tu: 'tu',        // cô nói một TỪ, bé nhắc lại
+  mau: 'mau',      // cô nói CẢ CÂU theo công thức, bé nhắc lại
+  thay: 'thay',    // cô thay từ khác vào công thức — chỗ bé thấy mẫu câu "sống"
+  khen: 'khen',    // bé vừa nói đúng: khen rồi sang việc mới
+};
+
+/**
+ * Đếm xem từ nào bé đã được luyện trong buổi này, rồi chọn từ ÍT gặp nhất.
+ *
+ * Cố tình không dùng ngẫu nhiên: chạy hai lần ra hai kiểu thì không cổng nào canh
+ * được, mà đây đúng là chỗ vừa hỏng.
+ */
+export function viecTiepTheo({ von, lichSu = [] } = {}) {
+  const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
+  const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
+  if (!tu.length) return null;
+
+  const cuaCo = lichSu.filter((x) => x.vai === 'may');
+  const dem = new Map(tu.map((t) => [t.tu, 0]));
+  for (const l of cuaCo) {
+    for (const t of tu) {
+      if (new RegExp(`\\b${t.tu}\\b`, 'i').test(l.en || '')) dem.set(t.tu, dem.get(t.tu) + 1);
+    }
+  }
+  /* Từ ít được nhắc nhất; hoà thì lấy từ đứng trước trong bài — cùng thứ tự bé đã
+     học ở chặng Từ mới, nên nghe quen tai. */
+  const dich = tu.reduce((a, b) => (dem.get(b.tu) < dem.get(a.tu) ? b : a), tu[0]);
+
+  /* Xoay vòng ba kiểu việc theo SỐ LƯỢT, để không lượt nào giống lượt trước. Có
+     mẫu câu thì mới xoay tới hai kiểu câu; bài chưa có mẫu thì chỉ luyện từ. */
+  const vong = cau.length ? [KIEU_VIEC.tu, KIEU_VIEC.mau, KIEU_VIEC.thay] : [KIEU_VIEC.tu];
+  const kieu = vong[cuaCo.length % vong.length];
+  const mau = cau.length ? cau[cuaCo.length % cau.length] : null;
+
+  return { tu: dich, kieu, mau, daNhac: dem.get(dich.tu) };
+}
+
+/**
+ * Ô TRỐNG CỦA CÔNG THỨC nhận loại gì.
+ *
+ * Đã hỏng thật khi thử với Groq: công thức `Bye, + [Name].` mà lời dặn bảo "nhét
+ * một từ được phép vào ô trống", nên mô hình sinh ra **"Bye, book."** — vô nghĩa,
+ * và tệ hơn là dạy bé một câu sai. Ô trống có LOẠI: chỗ của tên người thì phải là
+ * tên người, chỗ của danh từ mới nhận từ vựng của bài.
+ */
+export function loaiOTrong(congThuc) {
+  const m = String(congThuc || '').match(/\[([^\]]+)\]/);
+  if (!m) return null;
+  return /name|tên/i.test(m[1]) ? 'ten' : 'tu';
+}
+
+/** Lời dặn riêng cho lượt này, ghép vào cuối lời dặn chung. */
+function dongViec(v, tenBe) {
+  if (!v) return '';
+  const { tu, kieu, mau } = v;
+  if (kieu === KIEU_VIEC.tu) {
+    return `THIS TURN: say just the word "${tu.tu}" (means "${tu.nghia}") for the child to repeat.`;
+  }
+  if (kieu === KIEU_VIEC.mau && mau) {
+    return `THIS TURN: say the sentence "${mau.cau}" for the child to repeat.`;
+  }
+  if (kieu === KIEU_VIEC.thay && mau) {
+    const khung = mau.congThuc || mau.cau;
+    const loai = loaiOTrong(mau.congThuc);
+    /* Ô tên người thì CHỈ nhận tên. Nhét `book` vào là ra "Bye, book." */
+    const dien = loai === 'ten'
+      ? `put the child's name ${tenBe} in the slot (a NAME goes there — never a thing)`
+      : `put the word "${tu.tu}" in the slot`;
+    return `THIS TURN: take the pattern ${khung} and ${dien}.`
+      + ' Do not repeat the example sentence word for word.';
+  }
+  return '';
+}
+
+export function loiDan({ von, tenBe = 'bạn nhỏ', lop = 1, viec = null }) {
   const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
   const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
   const bangTu = tu.map((t) => `${t.tu} (${t.nghia})`).join(', ');
   const bangCau = cau.map((c) => `"${c.cau}"${c.congThuc ? ` [${c.congThuc}]` : ''}`).join('; ');
+
+  /* Câu ví dụ ĐI KÈM công thức, và công thức mới là thứ đáng học: mẫu câu là cái
+     KHUNG bé thay từ vào, không phải một câu để đọc thuộc. Bản trước chỉ liệt kê
+     câu ví dụ, nên mô hình nói đúng câu ấy sáu lượt liền — nó không sai, nó không
+     có gì khác để nói. */
+  const bangKhung = cau
+    .map((c) => `${c.congThuc || c.cau} (ví dụ: "${c.cau}")`)
+    .join('; ');
 
   return [
     `You are a warm, patient English tutor for a ${lop === 1 ? 'six-year-old' : `grade ${lop}`} Vietnamese child named ${tenBe}.`,
     '',
     'HARD RULES — breaking any of these makes the lesson useless:',
     `1. Use ONLY these English words: ${bangTu}.`,
-    '   Plus the bare function words needed to form the sentence patterns below.',
+    '   Plus the bare function words needed to fill the patterns below.',
     '   Never introduce an English word outside this list, not even an easy one.',
-    `2. Use ONLY these sentence patterns: ${bangCau}.`,
+    `2. Sentence patterns you may build: ${bangKhung || bangCau}.`,
+    '   A pattern is a FRAME: put the allowed words (or the child\'s name) in the slot.',
+    '   The example is one filling of it, not the only thing you may say.',
     `   You may also use these fixed classroom phrases: ${LOI_LOP_HOC.join(' ')}`,
     '   Those phrases are yours to say — they are not words the child must produce.',
     '3. Say exactly ONE short English sentence per turn. Never two.',
-    '   Greet or praise with a classroom phrase; teach with a sentence pattern.',
-    '4. Always add ONE short Vietnamese line explaining what you just said and what',
+    '4. NEVER say the same English sentence you said in your previous turn.',
+    '   Vary the word in the slot. Repeating yourself is the worst thing you can do here.',
+    '5. Do not greet more than once in a conversation. Greet only on your first turn.',
+    '6. Always add ONE short Vietnamese line explaining what you just said and what',
     '   the child should do. Write it for a six-year-old, not for an adult.',
-    '5. If the child says something off-topic, gently steer back to the words above.',
+    '7. If the child says something off-topic, gently steer back to the words above.',
     '   Never discuss anything other than practising these words.',
+    '8. If the child repeated correctly, put the praise in the VIETNAMESE line and',
+    '   still do this turn\'s task in English — praise is not a turn of its own.',
+    '',
+    dongViec(viec, tenBe),
     '',
     'Reply as JSON only: {"en": "<the English sentence>", "vi": "<the Vietnamese line>"}',
-  ].join('\n');
+  ].filter((x) => x !== null).join('\n');
 }
 
 /* ─────────── ngữ cảnh ─────────── */
@@ -239,4 +347,72 @@ export function docTraLoi(chu) {
     vi: dong.find(coDauViet) || '',
     thoJSON: true,
   };
+}
+
+/* ─────────── soi lại câu cô nói ─────────── */
+
+/**
+ * CÂU CÔ NÓI CÓ DÙNG ĐƯỢC KHÔNG.
+ *
+ * Dặn dò là chưa đủ. Thử thật với Groq: đã bảo rõ ô trống của `Bye, + [Name].` là
+ * chỗ của TÊN NGƯỜI, nó vẫn sinh ra **"Bye, bike."** Với người lớn thì đó là một
+ * câu buồn cười; với bé 6 tuổi đang tập nhại thì đó là dạy sai, và bé sẽ nhớ.
+ *
+ * Nên đảo từ TIN sang SOI: máy con tự kiểm câu cô nói, không hợp lệ thì thay bằng
+ * câu do chính máy con dựng. Mô hình vẫn có ích ở chỗ nó hiểu bé vừa nói gì và
+ * viết được lời tiếng Việt; nhưng câu tiếng Anh — thứ bé sẽ nhại — thì không thả.
+ *
+ * Hợp lệ khi câu ấy là MỘT trong:
+ *   · một từ trong vốn từ                     ("ball")
+ *   · một câu nghi thức của lớp               ("Good job!")
+ *   · một câu ví dụ của bài                   ("Hi, I'm Bill.")
+ *   · một công thức đã điền đúng LOẠI ô trống ("Hi, I'm Bo." · "I like fish.")
+ */
+const gonCau = (s) => String(s || '').toLowerCase().replace(/[^a-z0-9' ]/g, '').replace(/\s+/g, ' ').trim();
+
+export function cauHopLe(en, { von, tenBe = '' } = {}) {
+  const c = gonCau(en);
+  if (!c) return false;
+
+  const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
+  const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
+
+  if (tu.some((t) => gonCau(t.tu) === c)) return true;
+  if (LOI_LOP_HOC.some((x) => gonCau(x) === c)) return true;
+  if (cau.some((x) => gonCau(x.cau) === c)) return true;
+
+  /* Công thức đã điền: dựng mọi cách điền HỢP LỆ rồi so. Số cách rất nhỏ (số mẫu
+     câu × số từ), nên cứ dựng hết còn hơn đoán bằng biểu thức chính quy. */
+  for (const x of cau) {
+    if (!x.congThuc) continue;
+    const loai = loaiOTrong(x.congThuc);
+    const dienDuoc = loai === 'ten' ? [tenBe, 'Bill', 'Mai'] : tu.map((t) => t.tu);
+    for (const d of dienDuoc) {
+      if (!d) continue;
+      const thu = x.congThuc.replace(/\s*\+\s*/g, ' ').replace(/\[[^\]]+\]/, d);
+      if (gonCau(thu) === c) return true;
+    }
+  }
+  return false;
+}
+
+/**
+ * Câu dựng sẵn cho việc của lượt này — dùng khi câu của cô không qua được phép soi.
+ * Luôn đúng, vì nó ghép từ chính dữ liệu bài chứ không sinh ra từ đâu cả.
+ */
+export function cauThayThe(viec, tenBe = 'con') {
+  if (!viec) return null;
+  const { tu, kieu, mau } = viec;
+  if (kieu === KIEU_VIEC.tu || !mau) {
+    return { en: tu.tu, vi: `Con nghe rồi nói lại từ “${tu.tu}” nhé — nghĩa là ${tu.nghia}.` };
+  }
+  if (kieu === KIEU_VIEC.mau) {
+    return { en: mau.cau, vi: `Con nghe rồi nói lại cả câu này nhé.` };
+  }
+  const loai = loaiOTrong(mau.congThuc);
+  const dien = loai === 'ten' ? tenBe : tu.tu;
+  const en = mau.congThuc
+    ? mau.congThuc.replace(/\s*\+\s*/g, ' ').replace(/\[[^\]]+\]/, dien)
+    : mau.cau;
+  return { en, vi: `Cùng một mẫu câu, nay thay bằng “${dien}”. Con nói lại nhé.` };
 }
