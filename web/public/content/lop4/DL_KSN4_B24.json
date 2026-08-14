@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B24",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 24 · KHI ĐỀ KHÔNG CHO SẴN TỔNG HOẶC TỈ SỐ",
+ "title": "Bài 24 · BÀI TOÁN TỔNG - HIỆU",
  "durationMinutes": 10,
  "so": 24,
- "chuong": 7,
- "tenChuong": "TỔNG - TỈ VÀ HIỆU - TỈ",
- "dangGoc": "LV 3.2 + LV 3.3 mức Lớp 4 — Tỉ ẩn trong lời văn (\"gấp rưỡi\") · tổng ẩn qua TBC, chu vi",
+ "chuong": 6,
+ "tenChuong": "TỔNG - HIỆU",
+ "dangGoc": "LV 2.1 mức Lớp 4 — Số lớn = (Tổng + Hiệu) : 2 · Số bé = (Tổng − Hiệu) : 2 · luyện vẽ sơ đồ chuẩn",
  "skills": {
-  "bktUnit": "CHUONG:7@G4",
+  "bktUnit": "CHUONG:6@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Dịch thành thạo tỉ ẩn: gấp đôi = $2 : 1$, gấp ba = $3 : 1$, gấp rưỡi = $3 : 2$, bằng một nửa = $1 : 2$, \"bằng $\\frac{2}{3}$ của\" = $2 : 3$. Dò tổng ẩn quen thuộc: tổng = TBC × 2; tổng = nửa chu vi — rồi đưa bài về Tổng - Tỉ chuẩn. Giải trọn bài hai lớp cải trang (vừa giấu tổng vừa giấu tỉ) theo đúng quy trình 4 bước.",
-  "kidText": "Khay 40 chiếc bánh, số bánh nướng gấp rưỡi bánh dẻo. \"Gấp rưỡi\" là bao nhiêu phần nhỉ?",
+  "text": "Vẽ chuẩn sơ đồ hai đoạn thẳng: hai phần bằng nhau thẳng cột, phần thừa tách riêng, ghi đủ tổng - hiệu. Tự rút ra và dùng chắc cặp công thức: Số bé = (Tổng − Hiệu) : 2 ; Số lớn = (Tổng + Hiệu) : 2. Thử lại kiểu kép: cộng hai đáp số ra đúng tổng, trừ ra đúng hiệu.",
+  "kidText": "Hai anh em được 500 nghìn tiền lì xì, anh nhiều hơn em 60 nghìn. Mỗi người bao nhiêu nhỉ?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — TRA TỪ ĐIỂN TỈ ẨN: gấp đôi = $2 : 1$; gấp ba = $3 : 1$; bằng một nửa = $1 : 2$; \"số A bằng $\\frac{2}{3}$ số B\" = A : B = $2 : 3$; và ngôi sao hôm nay: GẤP RƯỠI = $3 : 2$ (ba nửa so với hai nửa). Dịch xong tỉ, bài lạ hóa bài quen."
+    "text": "Bước 1 — VẼ SƠ ĐỒ CHUẨN MỰC: kẻ đoạn \"Em\" trước; kẻ đoạn \"Anh\" ngay dưới, phần đầu DÀI ĐÚNG BẰNG đoạn em (thẳng cột!), rồi nối thêm khúc thừa ghi 60; ngoặc nhọn bên phải ôm cả hai đoạn, ghi 500. Sơ đồ đẹp là sơ đồ mà người chưa đọc đề nhìn vào vẫn hiểu bài toán."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — KHAY BÁNH VỀ QUY TRÌNH 4 BƯỚC: nướng : dẻo = $3 : 2$, tổng 40 chiếc → tổng số phần $3 + 2 = 5$; một phần $40 : 5 = 8$ (chiếc); nướng = $8  \\times  3 = 24$; dẻo = $8  \\times  2 = 16$. Thử: $24 + 16 = 40$ ✓ và 24 đúng bằng 16 cộng nửa của 16 — gấp rưỡi chuẩn ✓."
+    "text": "Bước 2 — NƯỚC CỜ \"CHẶT PHẦN THỪA\": chặt khúc 60 của anh vứt tạm sang bên: hai đoạn còn lại BẰNG NHAU, tổng của chúng là 500 − 60 = 440 — tức HAI lần phần em. Vậy em = 440 : 2 = 220; anh = 220 + 60 = 280 (nghìn đồng)."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — TỔNG CẢI TRANG THÀNH \"TRUNG BÌNH CỘNG\": \"TBC của hai số là 30, tỉ số $2 : 3$\" — máy dò tổng Bài 20 kêu tít tít: tổng = $30  \\times  2 = 60$! Chia 60 theo $2 : 3$: một phần $60 : 5 = 12$ → hai số là 24 và 36."
+    "text": "Bước 3 — NƯỚC CỜ NGƯỢC \"BÙ PHẦN THIẾU\": thay vì chặt của anh, BÙ cho em một khúc 60: hai đoạn bằng nhau ở cỡ lớn, tổng mới 500 + 60 = 560 = hai lần phần anh → anh = 560 : 2 = 280 — khớp nước cờ 1! Hai nước cờ, một phán quyết."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — TỔNG CẢI TRANG THÀNH \"CHU VI\": \"sân hình chữ nhật chu vi 40 m, dài : rộng = $3 : 2$\" → tổng = nửa chu vi = 20 (m); một phần $20 : 5 = 4$ → dài 12 m, rộng 8 m. Đề hai lớp cải trang cũng chỉ tốn thêm MỘT dòng lột áo — phần lõi vẫn là quy trình 4 bước."
+    "text": "Bước 4 — CẶP CÔNG THỨC MỌC TỪ SƠ ĐỒ: gọi tên hai nước cờ bằng chữ: Số bé = (Tổng − Hiệu) : 2 ; Số lớn = (Tổng + Hiệu) : 2. Mẹo nhớ : chỉ cần thuộc MỘT công thức — số còn lại lấy tổng trừ ra là xong; và tránh xa cạm bẫy \"chia đôi tổng rồi cộng nguyên hiệu\" của Trí Long!"
    }
   ],
-  "mantra": "Đọc đề chia theo tỉ, tự hỏi hai câu: TỈ đứng sẵn hay đang cải trang trong chữ (tra từ điển: gấp đôi, gấp rưỡi, một nửa, \"bằng $\\frac{2}{3}$\")? TỔNG đứng sẵn hay đang trốn (TBC × 2, chu vi : 2)? Lột hết áo rồi — quy trình 4 bước cân tất.",
+  "mantra": "Bài Tổng - Hiệu chuẩn: vẽ sơ đồ TRƯỚC (hai phần bằng nhau thẳng cột, phần thừa tách riêng), công thức SAU. Chặt thừa → ra số bé; bù thiếu → ra số lớn. Thử lại phải KÉP: cộng ra tổng VÀ trừ ra hiệu — thiếu một phép là chưa xong án.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Gặp đề \"chu vi mảnh vườn 40 m, chiều dài gấp rưỡi chiều rộng\", Trí Long hăng hái: \"Gấp rưỡi là $3 : 2$, tớ thuộc rồi! Tổng 40, tổng phần 5, một phần 8 — dài 24 m, rộng 16 m!\"",
+    "wrong": "Trí Long công bố bản án riêng: \"500 chia đôi là 250 — phần em. Anh hơn 60 thì lấy 250 + 60 = 310. Vậy anh 310, em 250!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Trí Long dịch tỉ chuẩn rồi — nhưng con số 40 của đề là TỔNG hai cạnh hay CHU VI? Bài 20 từng có đúng cú trượt này đấy! Gợi ý 2: Soi nhanh đáp số của cậu ấy: dài 24, rộng 16 thì chu vi bằng ($24 + 16$) × $2 = 80$ m — gấp đôi đề cho! Lột áo chu vi rồi chia lại giúp Trí Long: đề hai lớp cải trang phải lột ĐỦ hai lớp."
+    "fix": "Gợi ý 1: Đem \"bản án\" của Trí Long ra thử kép: 310 + 250 bằng bao nhiêu — còn đúng tổng 500 của đề không? Gợi ý 2: Nhìn sơ đồ: 250 là \"một nửa của tổng\" — nhưng tổng ấy đang GÁNH CẢ khúc thừa 60 của anh, đâu phải hai phần em nguyên chất! Phải chặt khúc thừa TRƯỚC rồi mới chia đôi. Sửa lại trình tự và xử lại vụ án giúp Trí Long."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Khay 40 chiếc bánh; số bánh nướng gấp rưỡi số bánh dẻo. Hỏi số bánh nướng và số bánh dẻo?"
+    "narration": "Tổng tiền lì xì hai anh em: 500 nghìn đồng; anh nhiều hơn em: 60 nghìn đồng. Hỏi số tiền của riêng anh và của riêng em?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? khay 40 chiếc bánh; số bánh nướng gấp rưỡi số bánh dẻo.\nHỎI GÌ? số bánh nướng và số bánh dẻo.\nĐẠI LƯỢNG & ĐƠN VỊ: số bánh (chiếc) — \"gấp rưỡi\" là quan hệ TỈ, không phải một con số cộng trừ được.\nQUAN HỆ GIỮA CHÚNG: gấp rưỡi = một lần rưỡi = 3 nửa so với 2 nửa → nướng : dẻo = $3 : 2$ — lấy \"nửa chiếc phần\" làm ô sơ đồ là mọi ô lại đều tăm tắp.\nCHỌN CÔNG CỤ: TỪ ĐIỂN TỈ ẨN dịch lời văn thành tỉ số + quy trình 4 bước của Bài 23.\nƯỚC LƯỢNG TRƯỚC: tổng 5 phần, mỗi phần 8 chiếc → nướng cỡ hơn hai chục, dẻo ít hơn.",
+    "narration": "CHO GÌ? tổng tiền lì xì hai anh em: 500 nghìn đồng; anh nhiều hơn em: 60 nghìn đồng.\nHỎI GÌ? số tiền của riêng anh và của riêng em.\nĐẠI LƯỢNG & ĐƠN VỊ: tiền (nghìn đồng) — hai đại lượng cùng loại, so sánh được, cộng được.\nQUAN HỆ GIỮA CHÚNG: phần anh = phần em + 60: hai đoạn thẳng chung một \"khúc bằng nhau\", anh dôi thêm khúc 60.\nCHỌN CÔNG CỤ: SƠ ĐỒ HAI ĐOẠN THẲNG: đoạn em một phần; đoạn anh bằng đoạn em nối thêm khúc thừa 60; ngoặc tổng 500 ôm cả hai.\nƯỚC LƯỢNG TRƯỚC: mỗi người quanh mức 250; anh nhỉnh hơn — cỡ 280, em cỡ 220.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — lột lớp cải trang của tỉ số"
+    "nhan": "NHỊP 1, DỊCH — từ hai phong bao sang hai đoạn thẳng"
    },
    {
     "id": "S3",
@@ -104,89 +104,75 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: bảng giá gửi chị Ngọc Anh: \"Khay 40 chiếc: 24 bánh nướng - 16 bánh dẻo.\" Chị in luôn hai tấm biển xinh xắn cắm lên khay — khách nhìn số lượng, chọn bánh nhanh, quầy không ùn tắc!\nSOI: soi kép: $24 + 16 = 40$ ✓; $24 : 16 = 3 : 2$ — đúng \"gấp rưỡi\" ✓; và mẹo đời: bánh nướng bán chạy hơn nên làm nhiều hơn — đáp số hợp cả toán lẫn... khẩu vị khách.\nDÙNG NGOÀI ĐỜI: \"gấp rưỡi\", \"bằng một nửa\", \"hai phần ba\" đầy rẫy trong lời người lớn — báo giá, công thức nấu ăn, tin tức. Từ nay tai con nghe chữ, đầu con hiện tỉ số.",
+    "narration": "LẮP: bản án của tòa: \"Anh đang giữ 280 nghìn, em giữ 220 nghìn.\" Bố gật gù rồi ra phán quyết phần mình: anh trích 30 nghìn khao em trà sữa — thế là hai bên đều tâm phục, khẩu phục, no bụng!\nSOI: soi kép: 280 + 220 = 500 ✓ và 280 − 220 = 60 ✓; đáp số cũng nằm gọn trong vùng ước lượng \"quanh 250, anh nhỉnh hơn\". Hồ sơ khép lại không kẽ hở.\nDÙNG NGOÀI ĐỜI: chia tiền chung, chia kẹo, chia thời gian chơi game giữa hai anh em — mọi cuộc \"phân xử\" biết tổng và biết phần chênh đều xử được bằng đúng sơ đồ này.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Gặp đề \"chu vi mảnh vườn 40 m, chiều dài gấp rưỡi chiều rộng\", Trí Long hăng hái: \"Gấp rưỡi là $3 : 2$, tớ thuộc rồi! Tổng 40, tổng phần 5, một phần 8 — dài 24 m, rộng 16 m!\"",
+    "narration": "Trí Long công bố bản án riêng: \"500 chia đôi là 250 — phần em. Anh hơn 60 thì lấy 250 + 60 = 310. Vậy anh 310, em 250!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Một khay có 40 chiếc bánh gồm bánh nướng và bánh dẻo, số bánh nướng gấp rưỡi số bánh dẻo. Tính số bánh mỗi loại.",
+  "problem": "Hai anh em có tất cả 500 nghìn đồng tiền lì xì, anh có nhiều hơn em 60 nghìn đồng. Hỏi mỗi người có bao nhiêu nghìn đồng?",
   "steps": [
    {
-    "show": "Tổng: 40 chiếc; bánh nướng gấp rưỡi bánh dẻo.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Tìm số bánh mỗi loại.",
-    "phan": "tomtat"
+    "show": "Tổng: 500 nghìn đồng; anh hơn em: 60 nghìn đồng."
    },
    {
-    "show": "Chép nguyên chữ \"gấp rưỡi\" — chờ dịch ở phần mô hình.",
-    "phan": "tomtat"
+    "show": "Tìm số tiền mỗi người."
    },
    {
-    "show": "Mô hình (tra từ điển tỉ ẩn)",
-    "phan": "tomtat"
+    "show": "Nhặt đúng hai dữ kiện vàng: TỔNG và HIỆU."
    },
    {
-    "show": "Gấp rưỡi = một lần rưỡi = 3 nửa so với 2 nửa",
-    "phan": "tomtat"
+    "show": "Sơ đồ"
    },
    {
-    "show": "→ nướng : dẻo = $3 : 2$. Bài trở về Tổng - Tỉ chuẩn.",
-    "phan": "tomtat"
+    "show": "Em: |———————|"
    },
    {
-    "show": "Dòng dịch tỉ là điểm ăn tiền — thiếu nó sơ đồ không vẽ nổi.",
-    "phan": "tomtat"
+    "show": "Anh: |———————|—60—|"
    },
    {
-    "show": "Vì số bánh nướng gấp rưỡi số bánh dẻo nên tỉ số nướng : dẻo = $3 : 2$.",
-    "phan": "giai"
+    "show": "(ngoặc ôm cả hai đoạn: 500)"
    },
    {
-    "show": "Tổng số phần bằng nhau là: $3 + 2 = 5$ (phần)",
-    "phan": "giai"
+    "show": "Hai phần bằng nhau phải thẳng cột — vẽ bằng thước kẻ."
    },
    {
-    "show": "Giá trị một phần là: $40 : 5 = 8$ (chiếc)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Số bánh nướng là: $8  \\times  3 = 24$ (chiếc)",
-    "phan": "giai"
+    "show": "Hai lần số tiền của em là: 500 − 60 = 440 (nghìn đồng)"
    },
    {
-    "show": "Số bánh dẻo là: $8  \\times  2 = 16$ (chiếc)",
-    "phan": "giai"
+    "show": "Số tiền của em là: 440 : 2 = 220 (nghìn đồng)"
    },
    {
-    "show": "Câu \"vì... nên tỉ số $3 : 2$\" nêu căn cứ dịch — rồi bốn bước nối đuôi.",
-    "phan": "giai"
+    "show": "Số tiền của anh là: 220 + 60 = 280 (nghìn đồng)"
    },
    {
-    "show": "Đáp số: 24 bánh nướng ; 16 bánh dẻo.",
-    "phan": "dapso"
+    "show": "Dòng \"hai lần số tiền của em\" chính là nước cờ chặt phần thừa — nói rõ ra trong lời giải."
    },
    {
-    "show": "Đáp số đủ hai loại.",
-    "phan": "ghichu"
+    "show": "Đáp số: anh 280 nghìn đồng ; em 220 nghìn đồng."
    },
    {
-    "show": "Thử lại: $24 + 16 = 40$ ✓ ; nửa của 16 là 8, mà $16 + 8 = 24$ — đúng gấp rưỡi ✓",
-    "phan": "thulai"
+    "show": "Đáp số đủ cả hai người, kèm đơn vị."
    },
    {
-    "show": "Thử \"gấp rưỡi\" theo đúng nghĩa của nó — một lần cộng thêm một nửa.",
-    "phan": "thulai"
+    "show": "Thử lại: 280 + 220 = 500 ✓ ; 280 − 220 = 60 ✓"
+   },
+   {
+    "show": "Thử KÉP: khớp tổng và khớp hiệu mới được đóng hồ sơ."
    }
   ]
  },
@@ -195,68 +181,7 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Dịch sang tỉ số: a) gấp ba; b) gấp rưỡi; c) bằng một nửa.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "a) gấp ba",
-        "options": [
-         "3 : 1",
-         "1 : 3",
-         "3 : 2"
-        ],
-        "value": "3 : 1"
-       },
-       {
-        "label": "b) gấp rưỡi",
-        "options": [
-         "3 : 2",
-         "2 : 3",
-         "1 : 2"
-        ],
-        "value": "3 : 2"
-       },
-       {
-        "label": "c) bằng một nửa",
-        "options": [
-         "1 : 2",
-         "2 : 1",
-         "1 : 3"
-        ],
-        "value": "1 : 2"
-       }
-      ]
-     },
-     "solutionNarrative": "A) gấp ba = $3 : 1$; b) gấp rưỡi = $3 : 2$; c) bằng một nửa = $1 : 2$.",
-     "hints": [
-      "Tra từ điển tỉ ẩn.",
-      "Gấp rưỡi nghĩa là một rưỡi lần — viết thành hai số nguyên."
-     ]
-    },
-    {
-     "id": "C2",
-     "text": "Tìm hai số có tổng bằng 40, biết số lớn gấp 3 lần số bé.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "số bé",
-        "value": 10
-       },
-       {
-        "label": "số lớn",
-        "value": 30
-       }
-      ]
-     },
-     "solutionNarrative": "Tỉ $3 : 1$, tổng phần 4; một phần 10 → hai số là 10 và 30.",
-     "hints": [
-      "Dịch chữ gấp ba thành tỉ trước đã.",
-      "Rồi chạy quy trình bốn bước."
-     ]
-    },
-    {
-     "id": "C3",
-     "text": "Tìm hai số có tổng bằng 30, biết số lớn gấp đôi số bé.",
+     "text": "Tìm hai số có tổng bằng 30 và hiệu bằng 10.",
      "answerKey": {
       "parts": [
        {
@@ -269,140 +194,182 @@
        }
       ]
      },
-     "solutionNarrative": "Tỉ $2 : 1$, tổng phần 3; một phần 10 → hai số là 10 và 20.",
+     "solutionNarrative": "Số bé = (30 − 10) : 2 = 10; số lớn = 10 + 10 = 20.",
      "hints": [
-      "Gấp đôi dịch thành mấy ô với mấy ô?",
-      "Tổng số phần rồi mới tới một phần."
+      "Vẽ sơ đồ trước: hai phần bằng nhau, phần thừa tách riêng.",
+      "Chặt phần thừa đi thì tổng còn lại chia đôi."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tìm hai số có tổng bằng 100 và hiệu bằng 20.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số bé",
+        "value": 40
+       },
+       {
+        "label": "số lớn",
+        "value": 60
+       }
+      ]
+     },
+     "solutionNarrative": "Số bé = (100 − 20) : 2 = 40; số lớn = 60.",
+     "hints": [
+      "Chặt thừa ra số bé, bù thiếu ra số lớn.",
+      "Tổng trừ hiệu rồi chia đôi."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vẽ sơ đồ rồi tìm hai số có tổng bằng 24 và hiệu bằng 6.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số bé",
+        "value": 9
+       },
+       {
+        "label": "số lớn",
+        "value": 15
+       }
+      ]
+     },
+     "solutionNarrative": "Số bé = (24 − 6) : 2 = 9; số lớn = 15. (Sơ đồ: hai phần bằng nhau + khúc thừa 6.)",
+     "hints": [
+      "Vẽ sơ đồ cho thẳng cột đã.",
+      "Chặt khúc thừa rồi chia đôi phần còn lại."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Khay 40 chiếc bánh, số bánh nướng gấp rưỡi số bánh dẻo. Tính số bánh mỗi loại.",
+     "text": "Hai anh em có tổng cộng 500 nghìn đồng tiền lì xì, anh hơn em 60 nghìn đồng. Tính số tiền mỗi người.",
      "answerKey": {
       "parts": [
        {
-        "label": "bánh nướng",
-        "value": 24
+        "label": "em",
+        "value": 220
        },
        {
-        "label": "bánh dẻo",
-        "value": 16
+        "label": "anh",
+        "value": 280
        }
       ]
      },
-     "solutionNarrative": "Gấp rưỡi = $3 : 2$; một phần $40 : 5 = 8$ → nướng 24 chiếc; dẻo 16 chiếc.",
+     "solutionNarrative": "Em = (500 − 60) : 2 = 220; anh = 280 (nghìn đồng). Thử: 280 + 220 = 500 ✓; hiệu 60 ✓.",
      "hints": [
-      "Gấp rưỡi là tỉ ẩn — dịch nó ra trước.",
-      "Có tỉ rồi thì chạy quy trình bốn bước."
+      "Chặt phần thừa của anh sang một bên.",
+      "Thử lại phải KÉP: cộng ra tổng, trừ ra hiệu."
      ]
     },
     {
      "id": "C5",
-     "text": "Trung bình cộng của hai số là 30, tỉ số của chúng là $2 : 3$. Tìm hai số đó.",
+     "text": "Hai thùng dầu chứa tất cả 96 lít, thùng thứ nhất chứa nhiều hơn thùng thứ hai 12 lít. Hỏi mỗi thùng chứa bao nhiêu lít?",
      "answerKey": {
       "parts": [
        {
-        "label": "số bé",
-        "value": 24
+        "label": "thùng hai",
+        "value": 42
        },
        {
-        "label": "số lớn",
-        "value": 36
+        "label": "thùng một",
+        "value": 54
        }
       ]
      },
-     "solutionNarrative": "Tổng = $30  \\times  2 = 60$; một phần $60 : 5 = 12$ → hai số là 24 và 36.",
+     "solutionNarrative": "Thùng hai = (96 − 12) : 2 = 42; thùng một = 54 (lít).",
      "hints": [
-      "TỔNG đang trốn trong chữ trung bình cộng.",
-      "Lột áo ra tổng rồi mới chia phần."
+      "Tổng trừ hiệu rồi chia đôi ra thùng bé.",
+      "Thùng lớn bằng thùng bé cộng phần hơn."
      ]
     },
     {
      "id": "C6",
-     "text": "Mảnh vườn hình chữ nhật có chu vi 40 m, chiều dài và chiều rộng theo tỉ số $3 : 2$. Tính chiều dài, chiều rộng.",
+     "text": "Tổng hai số là 145, hiệu hai số là 27. Tìm hai số đó.",
      "answerKey": {
       "parts": [
        {
-        "label": "chiều dài, tính bằng mét",
-        "value": 12
+        "label": "số bé",
+        "value": 59
        },
        {
-        "label": "chiều rộng, tính bằng mét",
-        "value": 8
+        "label": "số lớn",
+        "value": 86
        }
       ]
      },
-     "solutionNarrative": "Tổng = nửa chu vi = 20 m; một phần 4 → dài 12 m; rộng 8 m. Thử: ($12 + 8$) × $2 = 40$ ✓.",
+     "solutionNarrative": "Số bé = (145 − 27) : 2 = 59; số lớn = 86.",
      "hints": [
-      "TỔNG đang trốn trong chữ chu vi.",
-      "Nửa chu vi mới là tổng dài và rộng."
+      "Chặt thừa: tổng trừ hiệu, rồi chia đôi.",
+      "Rồi cộng phần hơn để ra số lớn."
      ]
     },
     {
      "id": "C7",
-     "text": "Tổng số tuổi của hai mẹ con là 40, tuổi mẹ gấp 4 lần tuổi con. Tính tuổi mỗi người.",
+     "text": "Lớp 4A có 38 học sinh, số bạn nam nhiều hơn số bạn nữ 4 bạn. Hỏi lớp có bao nhiêu bạn nam, bao nhiêu bạn nữ?",
      "answerKey": {
       "parts": [
        {
-        "label": "tuổi con",
-        "value": 8
+        "label": "nữ",
+        "value": 17
        },
        {
-        "label": "tuổi mẹ",
-        "value": 32
+        "label": "nam",
+        "value": 21
        }
       ]
      },
-     "solutionNarrative": "Tỉ mẹ : con = $4 : 1$, tổng phần 5; một phần $40 : 5 = 8$ → con 8 tuổi; mẹ 32 tuổi.",
+     "solutionNarrative": "Nữ = (38 − 4) : 2 = 17; nam = 21 (bạn).",
      "hints": [
-      "Dịch chữ gấp bốn thành tỉ.",
-      "Tổng số phần rồi tới một phần."
+      "Tổng là sĩ số, hiệu là chỗ nam hơn nữ.",
+      "Chặt thừa ra số bé — mà số bé ở đây là bên nào?"
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Sân bóng mini hình chữ nhật có chu vi 60 m, chiều rộng bằng một nửa chiều dài. Tính chiều dài và chiều rộng. (Hai lớp cải trang — lột đủ cả hai!)",
+     "text": "Tuổi bố và tuổi con cộng lại bằng 46, bố hơn con 28 tuổi. Tính tuổi mỗi người — và soi xem đáp số có \"hợp đời\" không.",
      "answerKey": {
       "parts": [
        {
-        "label": "chiều dài, tính bằng mét",
-        "value": 20
+        "label": "tuổi con",
+        "value": 9
        },
        {
-        "label": "chiều rộng, tính bằng mét",
-        "value": 10
+        "label": "tuổi bố",
+        "value": 37
        }
       ]
      },
-     "solutionNarrative": "Lột hai lớp: tổng = $60 : 2 = 30$; tỉ rộng : dài = $1 : 2$ → một phần $30 : 3 = 10$ → rộng 10 m; dài 20 m. Thử: ($20 + 10$) × $2 = 60$ ✓; $10 = 20 : 2$ ✓.",
+     "solutionNarrative": "Con = (46 − 28) : 2 = 9; bố = 37 (tuổi). Soi đời: bố 37 sinh con lúc 28 tuổi — hợp lý ✓.",
      "hints": [
-      "Hai lớp cải trang — lột cả tổng lẫn tỉ.",
-      "Nửa chu vi ra tổng; chữ một nửa ra tỉ."
+      "Tổng trừ hiệu rồi chia đôi ra tuổi con.",
+      "Tính xong nhớ soi xem đáp số có hợp đời không."
      ]
     },
     {
      "id": "C9",
-     "text": "Số thứ nhất bằng $\\frac{2}{3}$ số thứ hai, tổng hai số bằng 45. Tìm hai số — và giải thích vì sao 'bằng $\\frac{2}{3}$ của' lại dịch thành tỉ số $2 : 3$.",
+     "text": "Có tồn tại hai số tự nhiên có tổng bằng 25 và hiệu bằng 8 không? Cứ thử công thức xem chuyện gì xảy ra — rồi ngẫm: tổng và hiệu của hai số tự nhiên bất kỳ luôn CÙNG chẵn hoặc CÙNG lẻ, vì sao?",
      "answerKey": {
       "parts": [
        {
-        "label": "số bé",
-        "value": 18
-       },
-       {
-        "label": "số lớn",
-        "value": 27
+        "label": "có tồn tại hai số như thế không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
        }
       ]
      },
-     "solutionNarrative": "\"bằng $\\frac{2}{3}$ của\" nghĩa là số thứ nhất chiếm 2 phần khi số thứ hai chiếm 3 phần → tỉ $2 : 3$; một phần $45 : 5 = 9$ → hai số là 18 và 27.",
+     "solutionNarrative": "KHÔNG tồn tại — công thức cho (25 − 8) : 2 = 8,5 không phải số tự nhiên. Lý do sâu: tổng và hiệu của hai số tự nhiên luôn CÙNG chẵn hoặc cùng lẻ (chúng hơn kém nhau 2 lần số bé — một số chẵn), mà 25 lẻ còn 8 chẵn → vô lý.",
      "hints": [
-      "Số thứ nhất chiếm mấy ô khi số thứ hai chiếm mấy ô?",
-      "Có tỉ rồi thì chia tổng cho tổng số phần."
+      "Cứ áp công thức xem chuyện gì xảy ra.",
+      "Tổng và hiệu hơn kém nhau hai lần số bé — nên phải cùng chẵn hoặc cùng lẻ."
      ]
     }
    ]
@@ -413,7 +380,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "\"Gấp rưỡi\" nghĩa là tỉ số $3 : 2$.",
+    "text": "Số lớn = (Tổng + Hiệu) : 2.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -422,61 +389,61 @@
    },
    {
     "id": "Q2",
-    "text": "\"Bằng một nửa\" nghĩa là tỉ số $2 : 1$.",
+    "text": "Hai số có tổng 40 và hiệu 10 thì số bé bằng 25.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Bằng một nửa là tỉ $1 : 2$."
+    "solutionNarrative": "Số bé = (40 − 10) : 2 = 15."
    },
    {
     "id": "Q3",
-    "text": "Tổng 24, số lớn gấp 3 số bé. Số bé là:",
+    "text": "Tổng 50, hiệu 10 — số lớn là:",
     "format": "mcq",
     "choices": [
-     "A. 6",
-     "B. 8",
-     "C. 18"
+     "A. 30",
+     "B. 25",
+     "C. 20"
     ],
     "answerKey": {
-     "choice": "A. 6"
+     "choice": "A. 30"
     },
-    "solutionNarrative": "$24 : 4 = 6$."
+    "solutionNarrative": "30)."
    },
    {
     "id": "Q4",
-    "text": "TBC hai số là 15, tỉ số $1 : 2$. Số lớn là:",
+    "text": "Tổng 70, hiệu 30 — số bé là:",
     "format": "mcq",
     "choices": [
      "A. 20",
-     "B. 10",
-     "C. 15"
+     "B. 25",
+     "C. 50"
     ],
     "answerKey": {
      "choice": "A. 20"
     },
-    "solutionNarrative": "Tổng 30, một phần 10, số lớn 20."
+    "solutionNarrative": "20)."
    },
    {
     "id": "Q5",
-    "text": "Chu vi 36 m, dài : rộng = $2 : 1$. Chiều rộng là:",
+    "text": "Nam và nữ cộng lại 30 bạn, nam hơn nữ 2 bạn. Số bạn nam là:",
     "format": "mcq",
     "choices": [
-     "A. 6 m",
-     "B. 12 m",
-     "C. 9 m"
+     "A. 16",
+     "B. 14",
+     "C. 15"
     ],
     "answerKey": {
-     "choice": "A. 6 m"
+     "choice": "A. 16"
     },
-    "solutionNarrative": "Nửa chu vi 18, một phần 6, rộng 6 m."
+    "solutionNarrative": "Nam = (30 + 2) : 2 = 16."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Chơi \"phiên dịch viên\": bố mẹ nói một câu đời thường có tỉ ẩn (\"bố cao gấp rưỡi con\", \"tiền điện tháng này bằng $\\frac{2}{3}$ tháng trước\"), con hô ngay tỉ số. Mỗi bữa cơm ba câu là đủ thuộc từ điển.",
-  "homeActivity": "Bài hai lớp cải trang nên chấm theo hai gạch đầu dòng: đã lột áo TỔNG chưa? đã dịch TỈ chưa? — thiếu gạch nào bổ sung gạch ấy, không cần làm lại từ đầu.",
-  "watchFor": "NÊN: cho con tự sáng tác đề cải trang đố lại bố mẹ — ai ra đề tinh vi hơn người đó hiểu sâu hơn. KHÔNG NÊN: tỉ kiểu phần trăm (\"bằng 75% của\") — phần trăm hẹn lớp 5, giờ dừng ở các phân số quen $\\frac{1}{2}$, $\\frac{2}{3}$."
+  "onComplete": "Chấm sơ đồ trước khi chấm phép tính: hai phần bằng nhau có thẳng cột không, khúc thừa có tách riêng và ghi số không — sơ đồ chuẩn thì phép tính gần như tự đúng.",
+  "homeActivity": "Thử lại kép (cộng ra tổng, trừ ra hiệu) nên thành \"thủ tục tòa án\" bắt buộc: bản án thiếu một trong hai con dấu là chưa có hiệu lực!",
+  "watchFor": "NÊN: lấy tình huống chia thật trong nhà (tiền, kẹo, phút chơi game) làm đề. KHÔNG NÊN: vội sang bài giấu tổng - giấu hiệu — hai bài sau sẽ mở từng cánh cửa ấy, hôm nay cứ luyện dạng chuẩn cho chắc tay sơ đồ."
  },
  "figureSpec": [
   {
@@ -485,22 +452,30 @@
     "hook"
    ],
    "file": "figures/L4H_B24_MO.png",
-   "caption": "\"Gấp rưỡi\" đã được dịch thành 3 phần so với 2 phần.",
-   "sha256_16": "0f9b19903610ee9d",
+   "caption": "Hai thanh, thanh anh dài hơn đúng phần 60 nghìn.",
+   "sha256_16": "04bd1f24b941a5a3",
    "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B24_G2",
+   "usedIn": [
+    "screen:S4"
+   ],
+   "file": "figures/L4H_B24_G2.png",
+   "caption": "Bớt phần hơn rồi chia đôi ra số bé.",
+   "sha256_16": "e74c22c3c75fd81d",
+   "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Bài 23 đề khai sẵn cả tổng lẫn tỉ. Nhưng con còn lạ gì trò trốn tìm — Chương 6 tổng từng trốn trong chu vi và trung bình cộng, giờ đến lượt TỈ SỐ cải trang vào lời văn: \"gấp đôi\", \"gấp rưỡi\", \"bằng một nửa\". Hôm nay con lắp thêm cuốn TỪ ĐIỂN TỈ ẨN cạnh chiếc máy dò tổng cũ — đủ bộ đồ nghề lột mọi lớp cải trang.",
+ "hatMam": "Lớp 3, ở Bài 19, con đã chơi trò \"thêm bớt để bằng nhau\" với hai giỏ cam. Hôm nay trò chơi ấy lên chức thành DẠNG TOÁN trái tim của lớp 4: biết TỔNG và HIỆU của hai số, tìm từng số. Cặp công thức nổi tiếng sẽ xuất hiện — nhưng theo luật , nó phải MỌC từ sơ đồ chứ không rơi từ trên trời xuống.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B18",
-   "DL:KSN3.B09"
+   "DL:KSN3.B19"
   ],
   "ten": [
-   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
-   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+   "THÊM BỚT ĐỂ BẰNG NHAU"
   ],
-  "canCu": "chuDe",
+  "canCu": "sach",
   "lopDuoi": 3,
   "nhan": "Học lại bài lớp 3"
  }

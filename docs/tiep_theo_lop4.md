@@ -122,7 +122,7 @@ hơn" chứ không thấy sai. Nay reset theo từng chương, và chốt "mỗi
 ### 4 · Hình màn mở của CHÍNH TÔI chứa đáp án
 
 Cổng nghiệm thu bắt hai hình: `L4H_B09_MO` có dòng chốt *"Nhìn CHỮ SỐ TẬN CÙNG là
-biết chia hết cho 2"* — đó là cả bài học, in sẵn ngay màn mở. `L4H_B15_MO` để số đo
+biết chia hết cho 2"* — đó là cả bài học, in sẵn ngay màn mở. `L4H_B20_MO` để số đo
 sân ở dòng chốt thay vì tiêu đề. Nay phép kiểm soi mọi hình `chuyenMoBai`: cấm
 `note`, cấm `hienTich`, cấm `tenGoc`, cấm dấu `=` trong tiêu đề.
 

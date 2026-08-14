@@ -399,11 +399,11 @@ CO_Y = {
     'DL:KSN4.B01#C1': 'đọc số thành CHỮ — "một triệu bảy trăm bốn mươi lăm nghìn" và '
                       '"…bốn mươi năm nghìn" đều là cách đọc bé được dạy, ép một '
                       'cách viết là chấm oan',
-    'DL:KSN4.B14#C3': 'nêu quy luật bằng MỘT CÂU VĂN — mỗi bé diễn đạt một kiểu, mà '
+    'DL:KSN4.B19#C3': 'nêu quy luật bằng MỘT CÂU VĂN — mỗi bé diễn đạt một kiểu, mà '
                       'chính đề đang rèn việc NÓI được quy luật thành lời',
-    'DL:KSN4.B18#C7': 'hỏi từng số hạng "gánh" cho ai — đáp là lời giải thích, không '
+    'DL:KSN4.B23#C7': 'hỏi từng số hạng "gánh" cho ai — đáp là lời giải thích, không '
                       'có con số nào để tách ra làm ô',
-    'DL:KSN4.B40#C4': 'việc làm bằng tay: vẽ tam giác rồi dùng ê ke hạ đường cao',
+    'DL:KSN4.B45#C4': 'việc làm bằng tay: vẽ tam giác rồi dùng ê ke hạ đường cao',
 }
 
 

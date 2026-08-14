@@ -5,6 +5,7 @@
 import { allMicroIds, chapterOf } from './noiDung.js';
 import { chuongTrinhCua } from '../../../chung/lib/soQuyen.js';
 import { choDangDung, CHO_DAU } from '../../../chung/lib/nguoiDung.js';
+import { chuyenSo } from './donSoLop4.js';
 
 /**
  * Khoá sổ tiến độ tại máy — RIÊNG CHO TỪNG BÉ.
@@ -28,7 +29,14 @@ export const emptyProgress = () => ({ micros: {}, chapters: {}, updatedAt: null 
 export function loadProgress(storage = globalThis.localStorage) {
   try {
     const raw = storage?.getItem(khoa());
-    return raw ? { ...emptyProgress(), ...JSON.parse(raw) } : emptyProgress();
+    if (!raw) return emptyProgress();
+    /* ⚠ CHUYỂN SỐ BÀI LỚP 4 ngay tại cửa nạp, trước khi bất kỳ ai đọc sổ.
+       Cụm dãy số tách năm bài 14-08 nên B13 cũ lùi thành B18 và 31 bài dồn theo.
+       Sổ của bé thì khoá theo MÃ BÀI — không chuyển thì huy hiệu gắn nhầm bài mà
+       không có gì báo. Đặt ở đây vì đây là chỗ DUY NHẤT sổ tại máy đi vào app;
+       chuyển ở chỗ khác là sót đường nào đó. `chuyenSo` tự có cờ chống chạy hai
+       lần — chạy lần hai là dời thêm 5 chỗ và bé mất sạch tiến độ lớp 4. */
+    return chuyenSo({ ...emptyProgress(), ...JSON.parse(raw) });
   } catch { return emptyProgress(); }
 }
 

@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B28",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 28 · BÀI TOÁN LÀM CHUNG CÔNG VIỆC",
+ "title": "Bài 28 · BÀI TOÁN TỔNG - TỈ",
  "durationMinutes": 10,
  "so": 28,
- "chuong": 8,
- "tenChuong": "BÀI TOÁN CÓ LỜI VĂN",
- "dangGoc": "LV 7.1 + LV 7.2 mức Lớp 4 — Làm chung cơ bản (chia việc thành phần) · làm chung rồi một người nghỉ",
+ "chuong": 7,
+ "tenChuong": "TỔNG - TỈ VÀ HIỆU - TỈ",
+ "dangGoc": "LV 3.1 mức Lớp 4 — Tìm hai số biết tổng và tỉ số · quy trình 4 bước · sơ đồ phần chuẩn mực",
  "skills": {
-  "bktUnit": "CHUONG:8@G4",
+  "bktUnit": "CHUONG:7@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Chia công việc thành số phần đều \"đẹp\" (chia hết cho mọi số giờ trong đề) và tính NĂNG SUẤT: số phần mỗi người làm trong một giờ. Giải bài làm chung cơ bản: cộng năng suất, lấy tổng phần chia năng suất chung. Giải bài làm chung rồi MỘT NGƯỜI NGHỈ: đếm phần đã làm, phần còn lại và ai gánh nốt.",
-  "kidText": "Bác Tâm sơn xong hàng rào trong 4 giờ, chú Hòa cần 12 giờ. Hai người cùng làm thì mấy giờ xong?",
+  "text": "Vẽ sơ đồ phần chuẩn: mỗi bên đúng số ô của tỉ số, các ô bằng nhau tăm tắp. Thuộc quy trình 4 bước: sơ đồ phần → tổng số phần → giá trị một phần → nhân lên từng bên. Thử lại kép kiểu mới: cộng ra đúng tổng VÀ chia ra đúng tỉ số.",
+  "kidText": "Bình nước cam 30 lít, pha 2 phần cốt cam với 3 phần nước lọc. Đong mỗi thứ bao nhiêu lít nhỉ?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — CHẾ ĐƠN VỊ \"PHẦN VIỆC\": coi hàng rào gồm 12 tấm ván bằng nhau — chọn 12 vì nó chia hết cho cả 4 lẫn 12, mọi phép chia sau này đều tròn. Bác Tâm: $12 : 4 = 3$ (tấm mỗi giờ); chú Hòa: $12 : 12 = 1$ (tấm mỗi giờ). Con số \"mỗi giờ làm mấy phần\" gọi là NĂNG SUẤT."
+    "text": "Bước 1 — VẼ SƠ ĐỒ PHẦN CHUẨN: kẻ hàng \"Cốt cam\" gồm 2 ô, hàng \"Nước lọc\" gồm 3 ô — NĂM ô phải bằng nhau tăm tắp (vẽ bằng thước!), ngoặc ôm cả hai hàng ghi tổng 30 lít. Sơ đồ phần là \"bản vẽ kỹ thuật\" của mọi bài chia theo tỉ."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — CỘNG NĂNG SUẤT, KHÔNG CỘNG SỐ GIỜ: làm chung, mỗi giờ hai người sơn được $3 + 1 = 4$ (tấm) → cả 12 tấm hết $12 : 4 = 3$ (giờ). Kịp trước lễ khai mạc! Còn phép \"$4 + 12 = 16$ giờ\" của Trí Long cộng nhầm thứ không cộng được — thời gian của hai người đâu có xếp chồng lên nhau."
+    "text": "Bước 2 — TỔNG SỐ PHẦN: cả bình gồm 2 + 3 = 5 (phần). Đây chính là chỗ Trí Long trượt chân: cậu ấy chia cho 2 (số chữ số của tỉ?) thay vì chia cho TỔNG SỐ PHẦN."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — KỊCH BẢN NGƯỜI NGHỈ GIỮA CHỪNG: hai người làm chung 2 giờ thì bác Tâm có việc phải về. Đã sơn: $4  \\times  2 = 8$ (tấm); còn lại $12 - 8 = 4$ (tấm); chú Hòa một mình mỗi giờ 1 tấm → cần thêm $4 : 1 = 4$ (giờ). Bài \"nghỉ giữa chừng\" chỉ là bài đếm phần: đã làm - còn lại - ai gánh nốt."
+    "text": "Bước 3 — GIÁ TRỊ MỘT PHẦN — TRÁI TIM CỦA BÀI: một phần chứa: 30 : 5 = 6 (lít). Tìm được \"một phần đáng giá bao nhiêu\" là nắm được chìa khóa — mọi con số còn lại chỉ là phép nhân."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — HỌ HÀNG VÒI NƯỚC: bể bơm đầy bằng vòi một trong 6 giờ, vòi hai trong 3 giờ — chung mấy giờ đầy? Chia bể 6 phần: vòi một 1 phần/giờ, vòi hai 2 phần/giờ → chung 3 phần/giờ → $6 : 3 = 2$ (giờ). Vòi nước, gặt lúa, chép trang sách... khác vỏ, cùng ruột."
+    "text": "Bước 4 — NHÂN LÊN TỪNG BÊN & THỬ KÉP: cốt cam: 6 × 2 = 12 (lít); nước lọc: 6 × 3 = 18 (lít). Thử kép kiểu mới: 12 + 18 = 30 ✓ (khớp tổng) và 12 : 18 — cứ 12 lít cốt đi với 18 lít lọc, tức mỗi 2 lít cốt đi với 3 lít lọc ✓ (khớp tỉ). Hai con dấu đóng đủ, bình nước đúng vị gia truyền!"
    }
   ],
-  "mantra": "Bài làm chung ba bước: ① chia việc thành số phần chia hết cho mọi số giờ của đề; ② tính năng suất từng người (phần mỗi giờ); ③ CỘNG NĂNG SUẤT rồi lấy tổng phần chia cho năng suất chung. Có người nghỉ giữa chừng: đếm phần đã làm, phần còn lại. Khẩu quyết: cộng được năng suất — không cộng được số giờ!",
+  "mantra": "Bài Tổng - Tỉ: quy trình 4 bước — ① sơ đồ phần (ô đều nhau!), ② tổng số phần, ③ MỘT PHẦN = tổng : tổng số phần, ④ nhân lên từng bên. Khẩu quyết chống trượt: đừng bao giờ chia cho con số trong tỉ — hãy chia cho TỔNG SỐ PHẦN.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Rút kinh nghiệm vụ \"16 giờ\", Trí Long gặp bài vòi nước (vòi một 6 giờ đầy bể, vòi hai 3 giờ) liền đổi chiêu: \"Không cộng nữa — lấy trung bình! ($6 + 3$) : $2 = 4,5$ giờ. Chuẩn chưa?\"",
+    "wrong": "Sang quầy chè, Trí Long nhận đề mới: \"Chia 20 viên trân châu vào hai cốc theo tỉ 1 : 3.\" Cậu tính vèo: \"Tỉ 1 : 3 hả? Lấy 20 : 3 ≈ 7 viên cho cốc bé, còn 13 viên cốc lớn — xong!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Soi bằng lẽ thường: riêng vòi hai đã chỉ cần 3 giờ — mở thêm vòi một mà lại LÂU thành 4,5 giờ thì vòi một đang... hút nước ra à? Gợi ý 2: Trung bình cộng san đều THỜI GIAN — nhưng thứ hai vòi góp chung là NƯỚC MỖI GIỜ. Chia bể thành 6 phần, tính năng suất từng vòi rồi giải chuẩn giúp Trí Long (đáp số tròn trịa: 2 giờ)."
+    "fix": "Gợi ý 1: Cả hai cốc gộp lại gồm mấy PHẦN bằng nhau — 3 phần hay 1 + 3 phần? Trí Long đã chia 20 cho con số nào? Gợi ý 2: Đáp số 7 và 13 thử tỉ xem: 13 có gấp 3 lần 7 không? Chia lại theo đúng quy trình 4 bước giúp Trí Long — và nhắc cậu ấy khẩu quyết \"chia cho TỔNG SỐ PHẦN, không chia cho con số trong tỉ\"."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Sân đình cần sơn lại hàng rào trước lễ tổng kết. Bác Tâm sơn một mình 4 giờ xong; chú Hòa một mình 12 giờ xong; hai người làm chung. Hỏi làm chung thì mấy giờ sơn xong hàng rào?"
+    "narration": "Bình nước cam 30 lít; pha theo tỉ lệ 2 phần nước cốt cam : 3 phần nước lọc. Hỏi số lít nước cốt cam và số lít nước lọc cần đong?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? bác Tâm sơn một mình 4 giờ xong; chú Hòa một mình 12 giờ xong; hai người làm chung.\nHỎI GÌ? làm chung thì mấy giờ sơn xong hàng rào.\nĐẠI LƯỢNG & ĐƠN VỊ: thời gian (giờ) và lượng việc — lượng việc chưa có đơn vị: phải TỰ chế đơn vị \"phần việc\"!\nQUAN HỆ GIỮA CHÚNG: chia hàng rào thành 12 phần đều (12 chia hết cho cả 4 và 12) → mỗi người làm được một số phần MỖI GIỜ — thứ cộng được với nhau chính là số phần mỗi giờ ấy.\nCHỌN CÔNG CỤ: MÔ HÌNH PHẦN VIỆC + NĂNG SUẤT: phần mỗi giờ của từng người → cộng lại → chia ngược.\nƯỚC LƯỢNG TRƯỚC: bác Tâm một mình đã chỉ mất 4 giờ — có thêm chú Hòa phải NHANH hơn 4 giờ: đoán cỡ 3 giờ.",
+    "narration": "CHO GÌ? bình nước cam 30 lít; pha theo tỉ lệ 2 phần nước cốt cam : 3 phần nước lọc.\nHỎI GÌ? số lít nước cốt cam và số lít nước lọc cần đong.\nĐẠI LƯỢNG & ĐƠN VỊ: thể tích (lít) — \"phần\" chưa phải lít: phải tìm xem một phần chứa mấy lít!\nQUAN HỆ GIỮA CHÚNG: cốt cam chiếm 2 ô phần, nước lọc chiếm 3 ô phần, năm ô ĐỀU NHAU và gộp lại đầy bình 30 lít.\nCHỌN CÔNG CỤ: SƠ ĐỒ PHẦN + quy trình 4 bước: tổng số phần → một phần → nhân lên.\nƯỚC LƯỢNG TRƯỚC: cả bình 5 phần, mỗi phần cỡ 6 lít → cốt khoảng chục lít, lọc nhiều hơn chút.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ hàng rào sang các tấm ván phần việc"
+    "nhan": "NHỊP 1, DỊCH — từ công thức gia truyền sang sơ đồ phần"
    },
    {
     "id": "S3",
@@ -104,89 +104,78 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: báo cáo gửi bác tổ trưởng: \"Hai người cùng sơn: đúng 3 giờ xong — bắt đầu 8 giờ sáng, 11 giờ khô ráo, thừa giờ ăn trưa trước lễ!\" Bác tổ trưởng phát lệnh khởi công, hàng rào kịp mới tinh đón lễ tổng kết.\nSOI: soi hai lớp: 3 giờ NHANH hơn người nhanh nhất (4 giờ) ✓ hợp lẽ \"thêm tay thêm việc\"; và đếm phần: 3 giờ × 4 tấm = 12 tấm — vừa khít hàng rào ✓.\nDÙNG NGOÀI ĐỜI: nhà mình dọn nhà đón Tết, cả lớp gấp hạc giấy, hai vòi cùng bơm bể cá — mọi cuộc \"chung tay\" đều tính trước được giờ về đích bằng ba bước hôm nay.",
+    "narration": "LẮP: phiếu pha chế gửi cô hàng nước: \"Bình 30 lít: đong 12 lít nước cốt cam + 18 lít nước lọc.\" Hội chợ khai mạc, quầy nước cam đắt hàng nhất phố — khách khen \"vị chuẩn không cần chỉnh\"!\nSOI: soi ba lớp: tổng 12 + 18 = 30 ✓; tỉ 12 : 18 rút gọn thành 2 : 3 ✓; và ước lượng \"cốt khoảng chục lít\" khớp con số 12. Phiếu pha chế đóng dấu xuất .\nDÙNG NGOÀI ĐỜI: pha sữa cho em bé, trộn màu vẽ, nêm nước chấm \"một chua hai ngọt\" — cả thế giới bếp núc chạy bằng tỉ lệ, và con vừa có chiếc ca chia vạch trong đầu.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Rút kinh nghiệm vụ \"16 giờ\", Trí Long gặp bài vòi nước (vòi một 6 giờ đầy bể, vòi hai 3 giờ) liền đổi chiêu: \"Không cộng nữa — lấy trung bình! ($6 + 3$) : $2 = 4,5$ giờ. Chuẩn chưa?\"",
+    "narration": "Sang quầy chè, Trí Long nhận đề mới: \"Chia 20 viên trân châu vào hai cốc theo tỉ 1 : 3.\" Cậu tính vèo: \"Tỉ 1 : 3 hả? Lấy 20 : 3 ≈ 7 viên cho cốc bé, còn 13 viên cốc lớn — xong!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Bác Tâm sơn xong hàng rào một mình trong 4 giờ, chú Hòa sơn một mình trong 12 giờ. Hỏi hai người cùng sơn thì sau mấy giờ xong hàng rào?",
+  "problem": "Một bình chứa 30 lít nước cam pha theo tỉ lệ: cứ 2 phần nước cốt cam thì có 3 phần nước lọc. Hỏi trong bình có bao nhiêu lít nước cốt cam, bao nhiêu lít nước lọc?",
   "steps": [
    {
-    "show": "Bác Tâm: 4 giờ; chú Hòa: 12 giờ (mỗi người làm một mình).",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Tìm thời gian hai người làm chung.",
-    "phan": "tomtat"
+    "show": "Tổng: 30 lít; tỉ số cốt cam : nước lọc = 2 : 3."
    },
    {
-    "show": "Ghi rõ \"một mình\" — số giờ riêng của từng người.",
-    "phan": "tomtat"
+    "show": "Tìm số lít mỗi loại."
    },
    {
-    "show": "Mô hình (chia việc thành phần)",
-    "phan": "tomtat"
+    "show": "Dịch \"cứ 2 phần... thì 3 phần\" thành tỉ số 2 : 3 ngay ở tóm tắt."
    },
    {
-    "show": "Coi hàng rào gồm 12 phần bằng nhau",
-    "phan": "tomtat"
+    "show": "Sơ đồ"
    },
    {
-    "show": "(vì 12 chia hết cho cả 4 và 12).",
-    "phan": "tomtat"
+    "show": "Cốt cam: [—][—]"
    },
    {
-    "show": "Câu chọn số phần kèm LÝ DO — dấu hiệu của thứ thiệt.",
-    "phan": "tomtat"
+    "show": "Nước lọc: [—][—][—]"
    },
    {
-    "show": "Coi hàng rào gồm 12 phần bằng nhau.",
-    "phan": "giai"
+    "show": "(5 ô bằng nhau; ngoặc ôm cả hai hàng: 30 lít)"
    },
    {
-    "show": "Mỗi giờ bác Tâm sơn được: $12 : 4 = 3$ (phần)",
-    "phan": "giai"
+    "show": "Mỗi ô một phần — ô phải ĐỀU nhau, đó là linh hồn sơ đồ."
    },
    {
-    "show": "Mỗi giờ chú Hòa sơn được: $12 : 12 = 1$ (phần)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Mỗi giờ cả hai người sơn được: $3 + 1 = 4$ (phần)",
-    "phan": "giai"
+    "show": "Tổng số phần bằng nhau là: 2 + 3 = 5 (phần)"
    },
    {
-    "show": "Thời gian hai người cùng sơn xong hàng rào là: $12 : 4 = 3$ (giờ)",
-    "phan": "giai"
+    "show": "Giá trị một phần là: 30 : 5 = 6 (lít)"
    },
    {
-    "show": "Cộng ở dòng NĂNG SUẤT — tuyệt đối không cộng 4 giờ với 12 giờ.",
-    "phan": "giai"
+    "show": "Số lít nước cốt cam là: 6 × 2 = 12 (lít)"
    },
    {
-    "show": "Đáp số: 3 giờ.",
-    "phan": "dapso"
+    "show": "Số lít nước lọc là: 6 × 3 = 18 (lít)"
    },
    {
-    "show": "Đáp số kèm đơn vị.",
-    "phan": "ghichu"
+    "show": "Bốn dòng đúng bốn bước của quy trình — nhìn bài biết ngay người có nghề."
    },
    {
-    "show": "Thử lại: 3 giờ × 4 phần = 12 phần — đúng cả hàng rào ✓ ; 3 giờ < 4 giờ ✓",
-    "phan": "thulai"
+    "show": "Đáp số: 12 lít nước cốt cam ; 18 lít nước lọc."
    },
    {
-    "show": "Soi kép: đếm đủ phần VÀ nhanh hơn người nhanh nhất.",
-    "phan": "thulai"
+    "show": "Đáp số đủ hai loại, kèm đơn vị."
+   },
+   {
+    "show": "Thử lại: 12 + 18 = 30 ✓ ; 12 : 2 = 18 : 3 = 6 — đúng tỉ 2 : 3 ✓"
+   },
+   {
+    "show": "Thử kép: khớp tổng VÀ khớp tỉ — thiếu một là chưa đúng vị."
    }
   ]
  },
@@ -195,124 +184,191 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Hàng rào gồm 12 phần bằng nhau. Mỗi giờ An sơn được 3 phần. Hỏi An sơn một mình mấy giờ thì xong?",
+     "text": "Chia 20 viên kẹo cho hai bạn theo tỉ số 1 : 3. Hỏi mỗi bạn được bao nhiêu viên?",
      "answerKey": {
-      "value": 4
+      "parts": [
+       {
+        "label": "bạn được ít hơn",
+        "value": 5
+       },
+       {
+        "label": "bạn được nhiều hơn",
+        "value": 15
+       }
+      ]
      },
-     "solutionNarrative": "$12 : 3 = 4$ giờ.",
+     "solutionNarrative": "Tổng phần 4; một phần 20 : 4 = 5 → hai bạn được 5 viên và 15 viên.",
      "hints": [
-      "Chia tổng số phần cho năng suất.",
-      "Mỗi giờ được bấy nhiêu thì mấy giờ hết việc?"
+      "Vẽ sơ đồ phần: các ô phải bằng nhau tăm tắp.",
+      "Đếm TỔNG SỐ PHẦN rồi mới chia."
      ]
     },
     {
      "id": "C2",
-     "text": "Bác Tâm sơn xong hàng rào (12 phần) một mình trong 4 giờ. Hỏi mỗi giờ bác sơn được mấy phần?",
+     "text": "Tìm hai số có tổng bằng 30 và tỉ số bằng 2 : 3.",
      "answerKey": {
       "parts": [
        {
-        "label": "mấy phần mỗi giờ",
-        "value": 3
+        "label": "số bé",
+        "value": 12
+       },
+       {
+        "label": "số lớn",
+        "value": 18
        }
       ]
      },
-     "solutionNarrative": "$12 : 4 = 3$ phần mỗi giờ.",
+     "solutionNarrative": "Tổng phần 5; một phần 6 → hai số là 12 và 18.",
      "hints": [
-      "Năng suất = tổng phần chia số giờ.",
-      "Đây là chiều ngược của câu trước."
+      "Tổng số phần là bao nhiêu?",
+      "Chia tổng cho tổng số phần ra giá trị MỘT phần."
      ]
     },
     {
      "id": "C3",
-     "text": "Hai người chung sức mỗi giờ sơn được 4 phần. Hàng rào 12 phần thì mấy giờ xong?",
+     "text": "Vẽ sơ đồ phần rồi chia 24 quyển vở cho hai lớp theo tỉ số 1 : 2.",
      "answerKey": {
-      "value": 3
+      "parts": [
+       {
+        "label": "lớp nhận ít hơn",
+        "value": 8
+       },
+       {
+        "label": "lớp nhận nhiều hơn",
+        "value": 16
+       }
+      ]
      },
-     "solutionNarrative": "$12 : 4 = 3$ giờ.",
+     "solutionNarrative": "Tổng phần 3; một phần 24 : 3 = 8 → hai lớp nhận 8 và 16 quyển.",
      "hints": [
-      "Tổng phần chia cho năng suất chung.",
-      "Đừng cộng số giờ — chỉ cộng năng suất."
+      "Vẽ sơ đồ rồi đếm số ô.",
+      "Một phần đáng bao nhiêu, rồi nhân lên từng bên."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Bác Tâm sơn một mình 4 giờ xong, chú Hòa một mình 12 giờ xong. Hai người cùng sơn thì mấy giờ xong?",
+     "text": "Bình nước cam 30 lít pha theo tỉ lệ cốt cam : nước lọc = 2 : 3. Tính số lít mỗi loại.",
      "answerKey": {
-      "value": 3
+      "parts": [
+       {
+        "label": "cốt cam",
+        "value": 12
+       },
+       {
+        "label": "nước lọc",
+        "value": 18
+       }
+      ]
      },
-     "solutionNarrative": "Bác Tâm 3 phần/giờ, chú Hòa 1 phần/giờ → chung 4 phần/giờ → $12 : 4 = 3$ giờ.",
+     "solutionNarrative": "Một phần 30 : 5 = 6 → cốt cam 12 lít; nước lọc 18 lít. Thử: 12 + 18 = 30 ✓; 12 : 18 = 2 : 3 ✓.",
      "hints": [
-      "Chia việc thành số phần chia hết cho CẢ hai số giờ.",
-      "Tính năng suất từng người rồi CỘNG NĂNG SUẤT."
+      "Đừng chia cho con số trong tỉ — chia cho TỔNG SỐ PHẦN.",
+      "Tìm một phần rồi nhân lên từng loại."
      ]
     },
     {
      "id": "C5",
-     "text": "An chép xong tập tài liệu một mình trong 6 giờ, Bình một mình trong 12 giờ. Hai bạn cùng chép thì mấy giờ xong?",
+     "text": "Hai giỏ có tất cả 35 quả cam, số cam giỏ thứ nhất và giỏ thứ hai theo tỉ số 3 : 4. Hỏi mỗi giỏ có bao nhiêu quả?",
      "answerKey": {
-      "value": 4
+      "parts": [
+       {
+        "label": "giỏ thứ nhất",
+        "value": 15
+       },
+       {
+        "label": "giỏ thứ hai",
+        "value": 20
+       }
+      ]
      },
-     "solutionNarrative": "Chia việc 12 phần: An 2 phần/giờ, Bình 1 phần/giờ → chung 3 → $12 : 3 = 4$ giờ.",
+     "solutionNarrative": "Tổng phần 7; một phần 35 : 7 = 5 → giỏ một 15 quả; giỏ hai 20 quả.",
      "hints": [
-      "Chọn số phần chia hết cho cả hai số giờ.",
-      "Cộng năng suất rồi chia tổng phần."
+      "Cộng hai số của tỉ ra tổng số phần.",
+      "Một phần trước, rồi mới nhân lên từng giỏ."
      ]
     },
     {
      "id": "C6",
-     "text": "Vòi thứ nhất chảy một mình 6 giờ thì đầy bể, vòi thứ hai chảy một mình 3 giờ thì đầy bể. Cả hai vòi cùng chảy thì mấy giờ đầy bể?",
+     "text": "Lớp 4A có 36 học sinh, số bạn nam và số bạn nữ theo tỉ số 5 : 4. Tính số bạn nam, số bạn nữ.",
      "answerKey": {
       "parts": [
        {
-        "label": "số giờ",
-        "value": 2
+        "label": "số bạn nam",
+        "value": 20
+       },
+       {
+        "label": "số bạn nữ",
+        "value": 16
        }
       ]
      },
-     "solutionNarrative": "Chia bể 6 phần: vòi một 1 phần/giờ, vòi hai 2 phần/giờ → chung 3 → $6 : 3 = 2$ giờ.",
+     "solutionNarrative": "Tổng phần 9; một phần 36 : 9 = 4 → nam 20 bạn; nữ 16 bạn.",
      "hints": [
-      "Bể nước cũng như hàng rào — chia thành phần.",
-      "Cộng năng suất hai vòi rồi chia tổng phần."
+      "Sĩ số lớp chính là cái tổng cần đem chia.",
+      "Sĩ số chia tổng số phần ra một phần."
      ]
     },
     {
      "id": "C7",
-     "text": "Bác Tâm và chú Hòa (như Câu 4) cùng sơn được 2 giờ thì bác Tâm phải về. Hỏi chú Hòa phải sơn thêm mấy giờ nữa mới xong?",
+     "text": "Sợi dây dài 45 m được cắt thành hai đoạn theo tỉ số 4 : 5. Tính độ dài mỗi đoạn.",
      "answerKey": {
-      "value": 4
+      "parts": [
+       {
+        "label": "đoạn ngắn, tính bằng mét",
+        "value": 20
+       },
+       {
+        "label": "đoạn dài, tính bằng mét",
+        "value": 25
+       }
+      ]
      },
-     "solutionNarrative": "2 giờ chung sơn $4  \\times  2 = 8$ phần; còn 4 phần; chú Hòa 1 phần/giờ → thêm 4 giờ.",
+     "solutionNarrative": "Tổng phần 9; một phần 45 : 9 = 5 → hai đoạn dài 20 m và 25 m.",
      "hints": [
-      "Tính phần đã làm được trong hai giờ chung.",
-      "Phần còn lại chia cho năng suất của một người."
+      "Bốn ô cộng năm ô là mấy ô?",
+      "Chia độ dài cho số ô ấy."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "An làm một mình 6 giờ xong, Bình một mình 12 giờ xong. Hai bạn làm chung 2 giờ thì An nghỉ. Hỏi Bình làm nốt một mình trong mấy giờ?",
+     "text": "Tìm hai số có tổng bằng 56 và tỉ số bằng 3 : 5 — nhớ thử lại kép trước khi chốt!",
      "answerKey": {
-      "value": 6
+      "parts": [
+       {
+        "label": "số bé",
+        "value": 21
+       },
+       {
+        "label": "số lớn",
+        "value": 35
+       }
+      ]
      },
-     "solutionNarrative": "Chung mỗi giờ $2 + 1 = 3$ phần; 2 giờ được 6 phần; còn 6 phần; Bình 1 phần/giờ → 6 giờ nữa.",
+     "solutionNarrative": "Tổng phần 8; một phần 56 : 8 = 7 → hai số là 21 và 35. Thử: 21 + 35 = 56 ✓; 21 : 35 = 3 : 5 ✓.",
      "hints": [
-      "Hai giờ chung làm được bao nhiêu phần?",
-      "Phần còn lại chia cho năng suất của người ở lại."
+      "Tổng số phần trước, rồi mới tới một phần.",
+      "Thử lại KÉP: cộng ra tổng, và soi cả tỉ."
      ]
     },
     {
      "id": "C9",
-     "text": "Hai người cùng làm thì 3 giờ xong một công việc. Nếu làm một mình, người thứ nhất cần 4 giờ. Hỏi người thứ hai làm một mình thì cần mấy giờ? (Chia việc thành 12 phần rồi truy ngược năng suất!)",
+     "text": "Chia 100 nghìn đồng cho An và Bình theo tỉ số 2 : 3. Nếu đổi lại chia theo tỉ số 3 : 2 thì phần của Bình thay đổi bao nhiêu? Con nhận ra điều gì khi hai số trong tỉ đổi chỗ?",
      "answerKey": {
-      "value": 12
+      "parts": [
+       {
+        "label": "phần của Bình thay đổi bao nhiêu nghìn",
+        "value": 20
+       }
+      ]
      },
-     "solutionNarrative": "Chia việc 12 phần: chung 3 giờ xong → năng suất chung $12 : 3 = 4$ phần/giờ; người một $12 : 4 = 3$ phần/giờ → người hai $4 - 3 = 1$ phần/giờ → một mình cần $12 : 1 = 12$ giờ.",
+     "solutionNarrative": "Tỉ 2 : 3 → An 40, Bình 60; đổi tỉ 3 : 2 → An 60, Bình 40. Bình thay đổi: mất 20 nghìn. Nhận xét: đổi chỗ hai số trong tỉ thì hai phần HOÁN ĐỔI cho nhau — thứ tự trong tỉ số quan trọng lắm!",
      "hints": [
-      "Truy ngược: tính năng suất CHUNG trước.",
-      "Rồi trừ đi năng suất của người thứ nhất."
+      "Giải riêng từng lần chia rồi mới so.",
+      "Đổi chỗ hai số trong tỉ thì hai phần ra sao?"
      ]
     }
    ]
@@ -323,7 +379,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Muốn tính bài làm chung, ta chia công việc thành các phần bằng nhau rồi cộng năng suất mỗi giờ.",
+    "text": "Chia một số theo tỉ 2 : 3 thì tổng số phần bằng nhau là 5.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -332,61 +388,61 @@
    },
    {
     "id": "Q2",
-    "text": "An làm một mình 4 giờ, Bình một mình 4 giờ, vậy hai bạn làm chung hết 8 giờ.",
+    "text": "Chia 30 theo tỉ 1 : 2 thì phần bé bằng 15.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Chung nhanh gấp đôi: 2 giờ."
+    "solutionNarrative": "Một phần 30 : 3 = 10, phần bé là 10."
    },
    {
     "id": "Q3",
-    "text": "An mỗi giờ làm 3 phần, Bình mỗi giờ 1 phần. Chung mỗi giờ được:",
+    "text": "Chia 40 theo tỉ 3 : 5 thì giá trị một phần là:",
     "format": "mcq",
     "choices": [
-     "A. 4 phần",
-     "B. 3 phần",
-     "C. 2 phần"
+     "A. 5",
+     "B. 8",
+     "C. 10"
     ],
     "answerKey": {
-     "choice": "A. 4 phần"
+     "choice": "A. 5"
     },
-    "solutionNarrative": "4 phần)."
+    "solutionNarrative": "40 : (3 + 5) = 5."
    },
    {
     "id": "Q4",
-    "text": "Bể 6 phần, hai vòi chung mỗi giờ chảy 3 phần. Thời gian đầy bể:",
+    "text": "Chia 24 theo tỉ 1 : 3 thì phần lớn bằng:",
     "format": "mcq",
     "choices": [
-     "A. 2 giờ",
-     "B. 3 giờ",
-     "C. 6 giờ"
+     "A. 18",
+     "B. 6",
+     "C. 16"
     ],
     "answerKey": {
-     "choice": "A. 2 giờ"
+     "choice": "A. 18"
     },
-    "solutionNarrative": "2 giờ)."
+    "solutionNarrative": "Một phần 6, phần lớn 18."
    },
    {
     "id": "Q5",
-    "text": "Làm chung bao giờ cũng ... người nhanh nhất làm một mình:",
+    "text": "Chia 36 theo tỉ 4 : 5 thì phần bé bằng:",
     "format": "mcq",
     "choices": [
-     "A. nhanh hơn",
-     "B. chậm hơn",
-     "C. bằng đúng"
+     "A. 16",
+     "B. 20",
+     "C. 18"
     ],
     "answerKey": {
-     "choice": "A. nhanh hơn"
+     "choice": "A. 16"
     },
-    "solutionNarrative": "Nhanh hơn (thêm tay thêm việc)."
+    "solutionNarrative": "Một phần 4, phần bé 16."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Thí nghiệm gấp quần áo: đếm giờ (phút) con gấp một mình cả rổ, bố mẹ gấp một mình, rồi cả hai cùng gấp — số liệu thật sẽ minh oan cho \"cộng năng suất\" thuyết phục hơn mọi bài giảng.",
-  "homeActivity": "Câu soi \"chung phải nhanh hơn người nhanh nhất\" nên thành phản xạ — mọi đáp số vi phạm nó đều sai không cần chấm tiếp.",
-  "watchFor": "NÊN: chọn số giờ \"đẹp\" (ước của 12, 24) để phần việc luôn tròn. KHÔNG NÊN: đề ra kết quả giờ lẻ hay ba người làm chung ba tốc độ — phiên bản phân số đầy đủ hẹn lớp 5."
+  "onComplete": "Pha nước cam (hoặc sữa, nước chanh) THẬT theo tỉ lệ với con — dùng cốc nhỏ làm \"một phần\". Vị giác kiểm định đáp số: pha sai tỉ là nhận ra ngay, vui hơn mọi lời chấm bài.",
+  "homeActivity": "Chấm sơ đồ trước phép tính: các ô phần có ĐỀU nhau không? Ô lệch nhau là hiểu chưa tới — sửa hình trước, sửa số sau.",
+  "watchFor": "NÊN: hỏi thêm \"một phần đáng giá bao nhiêu?\" ở mọi bài — đó là câu hỏi trái tim. KHÔNG NÊN: đưa tỉ số có số lớn (7 : 9) hay tỉ ba số vội — Bài 26 mới mở cửa ba số, cứ để chân sơ đồ vững đã."
  },
  "figureSpec": [
   {
@@ -395,18 +451,30 @@
     "hook"
    ],
    "file": "figures/L4H_B28_MO.png",
-   "caption": "Chia hàng rào thành phần đều — mỗi giờ mỗi người làm được mấy phần.",
-   "sha256_16": "5c6a51a5e0e65dac",
+   "caption": "Hai phần và ba phần, mỗi ô là một phần bằng nhau.",
+   "sha256_16": "3148c42d9c4407b4",
    "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B28_G2",
+   "usedIn": [
+    "screen:S4"
+   ],
+   "file": "figures/L4H_B28_G2.png",
+   "caption": "Chia tổng cho TỔNG SỐ PHẦN ra giá trị một phần.",
+   "sha256_16": "ffafbf6f8e37dd15",
+   "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Từ Chương 7, con đã tin vào sức mạnh của chữ PHẦN: chia thứ khó đo thành các phần bằng nhau là mọi phép tính trở nên hiền lành. Hôm nay chữ phần lập công lớn nhất: đo cả... CÔNG VIỆC! Sơn hàng rào, chép bài, bơm nước vào bể — việc gì cũng chia thành phần đều được, và từ đó trả lời câu hỏi hóc búa: hai người làm CHUNG thì bao lâu xong?",
+ "hatMam": "Chương 6 con xử các cặp số HƠN KÉM nhau một khoản (hiệu). Chương này hai số chơi kiểu khác: GẤP nhau theo phần — \"cứ 2 phần này thì 3 phần kia\". Công cụ mới là SƠ ĐỒ PHẦN: mỗi ô một phần bằng nhau, và cả bài toán quy về đúng một câu hỏi: MỘT PHẦN đáng giá bao nhiêu?",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B21"
+   "DL:KSN3.B18",
+   "DL:KSN3.B09"
   ],
   "ten": [
-   "RÚT VỀ ĐƠN VỊ"
+   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

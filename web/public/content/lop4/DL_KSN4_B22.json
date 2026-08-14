@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B22",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 22 · KHI CẢ TỔNG VÀ HIỆU CÙNG THAY ĐỔI",
+ "title": "Bài 22 · HƠN KÉM MỨC TRUNG BÌNH BAO NHIÊU?",
  "durationMinutes": 10,
  "so": 22,
- "chuong": 6,
- "tenChuong": "TỔNG - HIỆU",
- "dangGoc": "LV 2.4 + LV 2.5 mức Lớp 4 — Cùng thêm t vào cả hai số (bài toán tuổi) · ba số biết tổng và hai hiệu",
+ "chuong": 5,
+ "tenChuong": "TRUNG BÌNH CỘNG",
+ "dangGoc": "LV 1.2 mức Lớp 4 — \"Một số lớn hơn TBC của cả nhóm k đơn vị\" · sơ đồ san bằng với 3 số",
  "skills": {
-  "bktUnit": "CHUONG:6@G4",
+  "bktUnit": "CHUONG:5@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Nắm định luật thời gian: cùng thêm t vào cả hai số thì HIỆU không đổi, TỔNG tăng 2 × t. Giải bài toán tuổi hai thời điểm bằng bảng TRƯỚC - SAU (kể cả bài ngược: biết tổng ở tương lai, tìm tuổi hiện tại). Giải bài ba số biết tổng và hai hiệu bằng sơ đồ ba đoạn: cắt phần thừa, quy cả ba về người bé nhất.",
-  "kidText": "Tổng tuổi hai anh em nay là 24, anh hơn em 4 tuổi. Lá thư mở khi tổng tuổi bằng 30 — còn mấy năm nữa?",
+  "text": "Hiểu \"cao hơn / thấp hơn mức trung bình k đơn vị\" trên sơ đồ san bằng (cột nhô - cột hụt). Dùng định luật cân bằng: tổng phần vượt = tổng phần hụt quanh mức trung bình. Giải bài ba số kiểu \"biết TBC và độ vượt - hụt của vài số, tìm số còn lại\" bằng cả hai đường: qua tổng và qua vượt - hụt.",
+  "kidText": "Ba bạn cao trung bình 130 cm; An hơn mức ấy 4 cm, Bình kém 2 cm, còn Cường mất số đo. Cường cao bao nhiêu?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — ĐỊNH LUẬT THỜI GIAN: sau t năm, anh thêm t tuổi VÀ em thêm t tuổi → tổng thêm t × 2; hiệu = (anh + t) − (em + t) = anh − em: KHÔNG ĐỔI. Hiệu tuổi là \"hằng số cả đời\" — anh hơn em 4 tuổi thì 50 năm nữa vẫn hơn đúng 4!"
+    "text": "Bước 1 — THÍ NGHIỆM BA CỐC NƯỚC: rót 100 ml, 130 ml, 160 ml vào ba cốc giống nhau rồi san cho đều: mực chung 130 ml. Nhìn kỹ trước khi san: cốc 160 VƯỢT mực chung 30, cốc 100 HỤT 30, cốc 130 đứng im — phần vượt rót đi đâu? Rót đúng vào phần hụt: 30 = 30. Nước không bay hơi giọt nào!"
    },
    {
     "id": "K2",
-    "text": "Bước 2 — GIẢI HIỆN TẠI VÀ TÌM NGÀY MỞ THƯ: năm nay: tổng 24, hiệu 4 → anh = ($24 + 4$) : $2 = 14$; em = 10 (tuổi). Ngày mở thư: tổng cần tăng $30 - 24 = 6$, mỗi năm tổng tăng 2 → $6 : 2 = 3$ năm nữa. Khi ấy anh 17, em 13: $17 + 13 = 30$ ✓."
+    "text": "Bước 2 — ĐỊNH LUẬT CÂN BẰNG: tổng phần vượt = tổng phần hụt (quanh mức trung bình). Vì sao? San cho đều chỉ CHUYỂN từ chỗ thừa sang chỗ thiếu, tổng không đổi — nên thừa bao nhiêu phải lấp vừa khít bấy nhiêu."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — BÀI NGƯỢC THỜI GIAN: đề hay hỏi ngược: \"SAU 3 năm nữa, tổng tuổi hai anh em là 30, anh hơn em 4 tuổi. Tính tuổi mỗi người HIỆN NAY.\" Đường 1: lùi tổng về hiện tại: $30 - 3  \\times  2 = 24$ → giải như bước 2. Đường 2: giải luôn ở tương lai (anh 17, em 13) rồi mỗi người lùi 3 tuổi → 14 và 10. Hai đường một đáp số — hiệu 4 dùng được ở CẢ hai thời điểm vì nó bất biến!"
+    "text": "Bước 3 — GIẢI PHIẾU ĐO BẰNG HAI CON ĐƯỜNG: đường vượt - hụt: An vượt 4; Bình hụt 2 → còn thiếu 4 − 2 = 2 phần hụt → Cường hụt 2 → Cường cao 130 − 2 = 128 (cm). Đường qua tổng (để soi): tổng ba bạn = 130 × 3 = 390; An = 134, Bình = 128 → Cường = 390 − 134 − 128 = 128 ✓. Hai đường một đáp số!"
    },
    {
     "id": "K4",
-    "text": "Bước 4 — MÀN BẾ MẠC: BA SỐ, MỘT SƠ ĐỒ: ba bạn có 100 viên bi; A hơn B 5 viên, B hơn C 10 viên. Vẽ ba đoạn: C ngắn nhất; B = C nối thêm 10; A = C nối thêm $10 + 5 = 15$. CẮT hết phần thừa: $100 - 10 - 15 = 75$ = ba lần phần C → C = 25; B = 35; A = 40. Bí quyết ba số: quy tất cả về NGƯỜI BÉ NHẤT."
+    "text": "Bước 4 — CẶP MẮT VƯỢT - HỤT LỢI HẠI CỠ NÀO: câu đố nhanh: hai bạn, A cao hơn mức trung bình CỦA HAI BẠN 5 cm — hỏi A cao hơn B bao nhiêu? Với hai người, A vượt 5 thì B phải hụt đúng 5 → A hơn B những 5 + 5 = 10 cm. Không cần biết ai cao bao nhiêu — cặp mắt vượt - hụt nhìn xuyên qua cả những bài thiếu số liệu!"
    }
   ],
-  "mantra": "Định luật thời gian: cùng thêm t → hiệu ĐỨNG IM, tổng tăng 2 × t (cùng bớt t: tổng giảm 2 × t, hiệu vẫn im). Bài tuổi: kẻ bảng trước - sau, chọn thời điểm có đủ tổng - hiệu mà giải. Bài ba số: sơ đồ ba đoạn, cắt phần thừa, quy về người bé nhất — rồi chia 3.",
+  "mantra": "Gặp chữ \"hơn / kém mức trung bình\": vẽ ngay VẠCH trung bình rồi đánh dấu cột nhô - cột hụt. Định luật cân bằng: tổng vượt = tổng hụt. Giải xong một đường, soi bằng đường kia (qua cây cầu TỔNG của Bài 16) — luôn có hai con đường về đích.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Làm bài \"nay tổng tuổi hai chị em 20, chị hơn em 2 tuổi; hỏi 5 năm nữa tổng tuổi và hiệu tuổi là bao nhiêu\", Trí Long tính: \"Tổng thì $20 + 5 = 25$, hiệu thì $2 + 5 = 7$ — thêm 5 năm cứ cộng 5 đều cho đẹp!\"",
+    "wrong": "Đọc đề \"An cao hơn mức trung bình của ba bạn 4 cm\", Trí Long gật gù: \"Tức là An cao hơn MỖI bạn kia 4 cm chứ gì — vậy Bình và Cường đều cao 130 cm!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Sau 5 năm, có MẤY người cùng thêm 5 tuổi? Tổng gánh phần thêm của mấy người — cộng 5 hay cộng $5  \\times  2$? Gợi ý 2: Còn hiệu: chị thêm 5, em cũng thêm 5 — khoảng cách giữa hai chị em có nhích được tí nào không? Tính lại cả hai ô của bảng trước - sau giúp Trí Long, và tặng cậu ấy câu câu cần nhớ: \"tuổi ai cũng chạy, khoảng cách đứng im.\""
+    "fix": "Gợi ý 1: \"Mức trung bình\" là một VẠCH chung, đâu phải chiều cao của từng bạn! Nếu Bình và Cường đều cao đúng 130 thì cùng An 134, trung bình ba bạn còn là 130 nữa không — tính thử xem? Gợi ý 2: Lỗi nằm ở nhịp DỊCH: \"hơn mức trung bình\" bị dịch thành \"hơn từng người\". Vẽ vạch 130 và ba cột theo đúng đề (An +4, Bình −2), rồi dùng định luật cân bằng tìm Cường giúp Trí Long."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Năm nay: tổng tuổi hai anh em 24, anh hơn em 4 tuổi; lá thư mở khi tổng tuổi bằng 30. Hỏi tuổi mỗi người năm nay, và mấy năm nữa thì được mở thư?"
+    "narration": "Ba bạn có chiều cao trung bình 130 cm; An cao hơn mức trung bình 4 cm; Bình thấp hơn mức trung bình 2 cm; số đo của Cường bị mất. Hỏi chiều cao của Cường (và của cả An, Bình để điền lại phiếu)?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? năm nay: tổng tuổi hai anh em 24, anh hơn em 4 tuổi; lá thư mở khi tổng tuổi bằng 30.\nHỎI GÌ? tuổi mỗi người năm nay, và mấy năm nữa thì được mở thư.\nĐẠI LƯỢNG & ĐƠN VỊ: tuổi (tuổi), thời gian (năm) — mỗi năm trôi, MỖI người thêm đúng 1 tuổi.\nQUAN HỆ GIỮA CHÚNG: sau t năm: cả hai cùng thêm t → tổng thêm t × 2, còn hiệu thì hai bên thêm đều nhau nên đứng im vĩnh viễn.\nCHỌN CÔNG CỤ: BẢNG TRƯỚC - SAU hai cột (tổng, hiệu) + sơ đồ Tổng - Hiệu ở thời điểm cần tính.\nƯỚC LƯỢNG TRƯỚC: tổng cần tăng từ 24 lên 30, mỗi năm tăng 2 → chừng 3 năm nữa mở thư.",
+    "narration": "CHO GÌ? ba bạn có chiều cao trung bình 130 cm; An cao hơn mức trung bình 4 cm; Bình thấp hơn mức trung bình 2 cm; số đo của Cường bị mất.\nHỎI GÌ? chiều cao của Cường (và của cả An, Bình để điền lại phiếu).\nĐẠI LƯỢNG & ĐƠN VỊ: chiều cao (cm) — mọi so sánh đều so với VẠCH trung bình 130 cm, không so trực tiếp bạn với bạn.\nQUAN HỆ GIỮA CHÚNG: quanh vạch trung bình, phần nhô lên của người này phải được bù bằng phần hụt xuống của người khác — tổng vượt bằng tổng hụt.\nCHỌN CÔNG CỤ: SƠ ĐỒ SAN BẰNG: kẻ vạch 130, vẽ cột An nhô 4, cột Bình hụt 2 — nhìn ngay phần Cường phải gánh.\nƯỚC LƯỢNG TRƯỚC: An nhô 4 mà Bình mới hụt 2 → Cường phải hụt nốt 2 → Cường cỡ 128 cm.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ dòng thời gian sang bảng trước - sau"
+    "nhan": "NHỊP 1, DỊCH — từ phiếu đo nhòe sang sơ đồ vượt - hụt"
    },
    {
     "id": "S3",
@@ -104,97 +104,78 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: thông báo dán tủ lạnh: \"Anh 14 tuổi — em 10 tuổi. Lá thư của bố sẽ mở sau ĐÚNG 3 năm nữa, vào sinh nhật chung của cả nhà!\" Mẹ khoanh đỏ tờ lịch năm ấy; bố nheo mắt: \"Ai dạy chúng nó giỏi thế nhỉ?\"\nSOI: soi kép hai thời điểm: nay $14 + 10 = 24$ ✓, $14 - 10 = 4$ ✓; ba năm nữa $17 + 13 = 30$ ✓, $17 - 13 = 4$ ✓ — hiệu đứng im như định luật đã hứa.\nDÙNG NGOÀI ĐỜI: mọi bài \"sau x năm tuổi mẹ gấp...\", mọi kế hoạch góp đều hai heo đất — bảng trước - sau và định luật hiệu bất biến là la bàn của con; sang Chương 8, bài toán tuổi nâng cao sẽ gọi tên định luật này lần nữa!",
+    "narration": "LẮP: phiếu đo phục dựng gửi cô phụ trách: \"An 134 cm — Bình 128 cm — Cường 128 cm. Cô cứ đặt áo, không cần gọi ba em đo lại!\" Một tờ phiếu nhòe được cứu bằng một định luật.\nSOI: soi kép: 134 + 128 + 128 = 390 = 130 × 3 ✓; và bảng vượt - hụt: +4 ; −2 ; −2 — cộng lại tròn 0, cân như chiếc cân đĩa. Hai phép soi độc lập cùng gật đầu.\nDÙNG NGOÀI ĐỜI: nghe bản tin \"lượng mưa tháng này cao hơn trung bình nhiều năm\", \"điểm em vượt trung bình lớp\" — từ nay con hiểu chính xác các câu ấy đang so với VẠCH nào.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Làm bài \"nay tổng tuổi hai chị em 20, chị hơn em 2 tuổi; hỏi 5 năm nữa tổng tuổi và hiệu tuổi là bao nhiêu\", Trí Long tính: \"Tổng thì $20 + 5 = 25$, hiệu thì $2 + 5 = 7$ — thêm 5 năm cứ cộng 5 đều cho đẹp!\"",
+    "narration": "Đọc đề \"An cao hơn mức trung bình của ba bạn 4 cm\", Trí Long gật gù: \"Tức là An cao hơn MỖI bạn kia 4 cm chứ gì — vậy Bình và Cường đều cao 130 cm!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Ba bạn An, Bình, Cường có tất cả 100 viên bi. An hơn Bình 5 viên, Bình hơn Cường 10 viên. Hỏi mỗi bạn có bao nhiêu viên bi?",
+  "problem": "Chiều cao trung bình của ba bạn An, Bình, Cường là 130 cm. An cao hơn mức trung bình 4 cm, Bình thấp hơn mức trung bình 2 cm. Tính chiều cao của Cường.",
   "steps": [
    {
-    "show": "Tổng ba bạn: 100 viên",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "An hơn Bình 5 viên; Bình hơn Cường 10 viên. Tìm số bi mỗi bạn.",
-    "phan": "tomtat"
+    "show": "TBC ba bạn: 130 cm; An: hơn TBC 4 cm"
    },
    {
-    "show": "Hai hiệu xếp thành \"bậc thang\": An trên Bình, Bình trên Cường.",
-    "phan": "tomtat"
+    "show": "Bình: kém TBC 2 cm. Tìm chiều cao Cường."
    },
    {
-    "show": "Sơ đồ (quy về người bé nhất)",
-    "phan": "tomtat"
+    "show": "Ghi độ vượt - hụt kèm dấu \"hơn / kém\" — dữ kiện vàng của bài."
    },
    {
-    "show": "Cường: |———————|",
-    "phan": "tomtat"
+    "show": "Sơ đồ (vạch san bằng)"
    },
    {
-    "show": "Bình: |———————|—10—|",
-    "phan": "tomtat"
+    "show": "Vạch trung bình: 130 cm"
    },
    {
-    "show": "An: |———————|—10—|—5—|",
-    "phan": "tomtat"
+    "show": "An: nhô 4 | Bình: hụt 2 | Cường: hụt ?"
    },
    {
-    "show": "An hơn Cường: $10 + 5 = 15$ — cộng dồn bậc thang, chỗ dễ nhầm nhất.",
-    "phan": "tomtat"
+    "show": "Sơ đồ chỉ cần một vạch và ba cột — đơn giản mà lộ hết bài toán."
    },
    {
-    "show": "An hơn Cường số viên bi là: $10 + 5 = 15$ (viên)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Nếu cắt phần hơn của An và Bình thì ba bạn đều bằng Cường, khi đó tổng còn",
-    "phan": "giai"
+    "show": "Chiều cao của An là: 130 + 4 = 134 (cm)"
    },
    {
-    "show": "$100 - 15 - 10 = 75$ (viên)",
-    "phan": "giai"
+    "show": "Chiều cao của Bình là: 130 − 2 = 128 (cm)"
    },
    {
-    "show": "Số bi của Cường là: $75 : 3 = 25$ (viên)",
-    "phan": "giai"
+    "show": "Vì tổng phần vượt bằng tổng phần hụt nên Cường thấp hơn mức trung bình"
    },
    {
-    "show": "Số bi của Bình là: $25 + 10 = 35$ (viên)",
-    "phan": "giai"
+    "show": "4 − 2 = 2 (cm)"
    },
    {
-    "show": "Số bi của An là: $35 + 5 = 40$ (viên)",
-    "phan": "giai"
+    "show": "Chiều cao của Cường là: 130 − 2 = 128 (cm)"
    },
    {
-    "show": "Câu \"nếu cắt phần hơn... đều bằng Cường\" là căn cứ của phép chia 3.",
-    "phan": "giai"
+    "show": "Câu \"vì tổng phần vượt bằng tổng phần hụt\" là căn cứ — thiếu nó phép trừ 4 − 2 thành vô lý."
    },
    {
-    "show": "Đáp số: An 40 viên ; Bình 35 viên ; Cường 25 viên.",
-    "phan": "dapso"
+    "show": "Đáp số: 128 cm."
    },
    {
-    "show": "Đáp số đủ ba bạn.",
-    "phan": "ghichu"
+    "show": "Đáp số kèm đơn vị."
    },
    {
-    "show": "Thử lại: $40 + 35 + 25 = 100$ ✓ ; $40 - 35 = 5$ ✓ ; $35 - 25 = 10$ ✓",
-    "phan": "thulai"
+    "show": "Thử lại: (134 + 128 + 128) : 3 = 390 : 3 = 130 ✓"
    },
    {
-    "show": "Ba dữ kiện của đề — soi đủ cả ba, không bỏ sót manh mối nào.",
-    "phan": "thulai"
+    "show": "Soi bằng đường qua tổng — hai con đường phải gặp nhau."
    }
   ]
  },
@@ -203,168 +184,129 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Hai số có hiệu bằng 7. Cùng thêm 5 vào mỗi số thì hiệu mới bằng bao nhiêu?",
+     "text": "Ba cốc nước có 100 ml ; 130 ml ; 160 ml. San cho đều thì mỗi cốc có bao nhiêu mi-li-lít?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "hiệu mới",
-        "value": 7
-       }
-      ]
+      "value": 130
      },
-     "solutionNarrative": "Hiệu vẫn là 7 — hai bên thêm đều nhau, khoảng cách đứng im.",
+     "solutionNarrative": "(100 + 130 + 160) : 3 = 390 : 3 = 130 (ml).",
      "hints": [
-      "Định luật thời gian: hai bên cùng thêm đều nhau.",
-      "Khoảng cách giữa hai số có nhúc nhích không?"
+      "San cho đều — cộng cả ba rồi chia ba.",
+      "Tổng không đổi khi san."
      ]
     },
     {
      "id": "C2",
-     "text": "Hai số có tổng bằng 40. Cùng thêm 5 vào mỗi số thì tổng mới bằng bao nhiêu?",
+     "text": "Chiều cao trung bình của ba bạn là 130 cm. Nam cao hơn mức trung bình 4 cm. Nam cao bao nhiêu xăng-ti-mét?",
      "answerKey": {
-      "value": 50
+      "value": 134
      },
-     "solutionNarrative": "Tổng mới = $40 + 5  \\times  2 = 50$.",
+     "solutionNarrative": "130 + 4 = 134 (cm).",
      "hints": [
-      "Mỗi bên thêm bấy nhiêu thì tổng thêm mấy lần bấy nhiêu?",
-      "Hai bên cùng thêm nên tổng tăng gấp đôi phần thêm."
+      "Vẽ VẠCH trung bình rồi đánh dấu cột nhô.",
+      "Cao hơn vạch bao nhiêu thì cộng bấy nhiêu."
      ]
     },
     {
      "id": "C3",
-     "text": "Năm nay tổng tuổi hai anh em là 24. Hỏi 3 năm nữa tổng tuổi hai anh em là bao nhiêu?",
+     "text": "Vẫn nhóm trên, Hoa thấp hơn mức trung bình 2 cm. Hoa cao bao nhiêu?",
      "answerKey": {
-      "value": 30
+      "value": 128
      },
-     "solutionNarrative": "Tổng mới = $24 + 3  \\times  2 = 30$ (mỗi người thêm 3 tuổi).",
+     "solutionNarrative": "130 − 2 = 128 (cm).",
      "hints": [
-      "Mỗi năm mỗi người thêm đúng một tuổi.",
-      "Tổng tăng gấp đôi số năm."
+      "Cột hụt thì nằm dưới vạch.",
+      "Thấp hơn vạch bao nhiêu thì trừ bấy nhiêu."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Năm nay anh hơn em 4 tuổi. Hỏi 10 năm nữa anh hơn em bao nhiêu tuổi? Vì sao?",
+     "text": "Trong một nhóm ba bạn, bạn A góp hơn mức trung bình 3 nghìn đồng, bạn B góp đúng mức trung bình. Hỏi bạn C góp hơn hay kém mức trung bình, và hơn kém bao nhiêu?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "10 năm nữa anh hơn em mấy tuổi",
-        "value": 4
-       }
-      ]
+      "value": 3
      },
-     "solutionNarrative": "Vẫn hơn 4 tuổi — hiệu tuổi là hằng số cả đời, vì mỗi năm cả hai cùng thêm đúng 1 tuổi.",
+     "solutionNarrative": "A vượt 3, B đứng đúng vạch → C phải HỤT 3 nghìn (tổng vượt = tổng hụt).",
      "hints": [
-      "Hiệu tuổi là hằng số cả đời.",
-      "Cả hai cùng thêm đúng bấy nhiêu tuổi."
+      "Định luật cân bằng: tổng vượt bằng tổng hụt.",
+      "Bạn đứng đúng vạch thì không góp phần nào."
      ]
     },
     {
      "id": "C5",
-     "text": "Sau 3 năm nữa, tổng tuổi hai anh em là 30, và anh vẫn hơn em 4 tuổi. Tính tuổi mỗi người HIỆN NAY.",
+     "text": "Ba bạn góp quỹ, trung bình mỗi bạn 12 nghìn đồng. A góp hơn mức trung bình 3 nghìn, B góp đúng mức trung bình. Hỏi C góp bao nhiêu nghìn đồng?",
      "answerKey": {
       "parts": [
        {
-        "label": "tuổi anh hiện nay",
-        "value": 14
-       },
-       {
-        "label": "tuổi em hiện nay",
-        "value": 10
+        "label": "C góp bao nhiêu nghìn đồng",
+        "value": 9
        }
       ]
      },
-     "solutionNarrative": "Lùi tổng về hiện tại: $30 - 3  \\times  2 = 24$ → anh = ($24 + 4$) : $2 = 14$ tuổi; em = 10 tuổi. Soi đường 2: ở tương lai anh 17, em 13 → lùi 3 năm: 14 và 10 ✓.",
+     "solutionNarrative": "C góp 12 − 3 = 9 (nghìn đồng). Soi qua tổng: 15 + 12 + 9 = 36 = 12 × 3 ✓.",
      "hints": [
-      "Kẻ bảng trước - sau rồi chọn mốc có đủ tổng và hiệu.",
-      "Hoặc lùi tổng về hiện tại rồi giải như bài quen."
+      "Tìm phần hụt bằng định luật cân bằng.",
+      "Rồi lấy vạch trừ đi phần hụt ấy."
      ]
     },
     {
      "id": "C6",
-     "text": "Hai heo đất chứa tổng cộng 80 nghìn đồng. Tháng này mỗi heo được bỏ thêm 20 nghìn đồng. Hỏi tổng mới là bao nhiêu, và hiệu giữa hai heo có thay đổi không?",
+     "text": "Trung bình cộng của ba số là 20. Số thứ nhất là 24, số thứ hai là 18. Tìm số thứ ba bằng đường vượt - hụt, rồi soi lại bằng đường qua tổng.",
      "answerKey": {
-      "value": 120
+      "parts": [
+       {
+        "label": "số thứ ba",
+        "value": 18
+       }
+      ]
      },
-     "solutionNarrative": "Tổng mới = $80 + 20  \\times  2 = 120$ (nghìn đồng); hiệu KHÔNG đổi — hai heo được bỏ đều nhau.",
+     "solutionNarrative": "Đường vượt - hụt: số 1 vượt 4, số 2 hụt 2 → số 3 hụt 4 − 2 = 2 → bằng 20 − 2 = 18. Soi qua tổng: 60 − 24 − 18 = 18 ✓.",
      "hints": [
-      "Bỏ đều hai bên thì hiệu đứng im.",
-      "Tổng tăng gấp đôi phần bỏ thêm."
+      "Đánh dấu vượt - hụt của hai số đã biết.",
+      "Số thứ ba phải bù cho cân, rồi soi lại bằng đường tổng."
      ]
     },
     {
      "id": "C7",
-     "text": "Hai số có hiệu bằng 6. Cùng BỚT mỗi số đi 4 đơn vị. Hỏi hiệu mới bằng bao nhiêu, và tổng thay đổi thế nào?",
+     "text": "Hai bạn A và B: A cao hơn mức trung bình của HAI bạn 5 cm. Hỏi A cao hơn B bao nhiêu xăng-ti-mét?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "hiệu mới",
-        "value": 6
-       },
-       {
-        "label": "tổng giảm đi",
-        "value": 8
-       }
-      ]
+      "value": 10
      },
-     "solutionNarrative": "Hiệu vẫn 6; tổng giảm $4  \\times  2 = 8$ đơn vị.",
+     "solutionNarrative": "A vượt vạch chung 5 → B hụt đúng 5 → A hơn B: 5 + 5 = 10 (cm).",
      "hints": [
-      "Bớt đều hai bên thì khoảng cách vẫn thế.",
-      "Còn tổng thì giảm gấp đôi phần bớt."
+      "Hai người thì vạch nằm chính giữa.",
+      "Bên này vượt bao nhiêu thì bên kia hụt đúng bấy nhiêu."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Ba bạn có tất cả 100 viên bi. An hơn Bình 5 viên, Bình hơn Cường 10 viên. Hỏi mỗi bạn có bao nhiêu viên bi?",
+     "text": "Đội bóng đá ba trận, trung bình mỗi trận 3 bàn. Trận 1 ghi nhiều hơn mức trung bình 2 bàn, trận 2 ghi ít hơn mức trung bình 1 bàn. Hỏi trận 3 ghi mấy bàn?",
      "answerKey": {
       "parts": [
        {
-        "label": "Cường",
-        "value": 25
-       },
-       {
-        "label": "Bình",
-        "value": 35
-       },
-       {
-        "label": "An",
-        "value": 40
+        "label": "số bàn trận 3",
+        "value": 2
        }
       ]
      },
-     "solutionNarrative": "An hơn Cường $10 + 5 = 15$ → cắt phần thừa: $100 - 15 - 10 = 75$ → Cường = 25; Bình = 35; An = 40 (viên). Thử đủ ba dữ kiện: tổng 100 ✓, hiệu 5 ✓, hiệu 10 ✓.",
+     "solutionNarrative": "Trận 1 vượt 2, trận 2 hụt 1 → trận 3 hụt 2 − 1 = 1 → ghi 3 − 1 = 2 (bàn). Thử: 5 + 2 + 2 = 9 = 3 × 3 ✓.",
      "hints": [
-      "Vẽ ba đoạn, lấy bạn ít nhất làm chuẩn.",
-      "Cắt hết phần thừa của hai bạn kia rồi chia đều."
+      "Cộng phần vượt, cộng phần hụt, rồi cân lại.",
+      "Trận ba phải hụt đúng phần còn dư ra."
      ]
     },
     {
      "id": "C9",
-     "text": "Ba số có tổng bằng 84; số thứ hai hơn số thứ nhất 4 đơn vị, số thứ ba hơn số thứ hai 4 đơn vị. Tìm ba số — rồi nhận xét: số ở giữa có quan hệ gì với trung bình cộng của ba số?",
+     "text": "Nhóm bốn bạn góp quỹ. Tí góp hơn mức trung bình CỦA CẢ NHÓM 6 nghìn đồng. Hỏi Tí góp hơn mức trung bình của BA BẠN CÒN LẠI bao nhiêu? (Gợi ý: phần vượt 6 nghìn của Tí là phần hụt chung của ba bạn — chia đều cho ba xem vạch của họ tụt xuống bao nhiêu.)",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số thứ nhất",
-        "value": 24
-       },
-       {
-        "label": "số thứ hai",
-        "value": 28
-       },
-       {
-        "label": "số thứ ba",
-        "value": 32
-       }
-      ]
+      "value": 8
      },
-     "solutionNarrative": "Số ba hơn số một 8 → cắt thừa: $84 - 4 - 8 = 72$ → số một = 24; số hai = 28; số ba = 32. Nhận xét: số giữa $28 = 84 : 3$ = trung bình cộng — ba số cách đều thì số giữa luôn là TBC!",
+     "solutionNarrative": "Phần vượt 6 nghìn của Tí là phần hụt chung của ba bạn → vạch của ba bạn thấp hơn vạch nhóm: 6 : 3 = 2 (nghìn) → Tí hơn mức trung bình của ba bạn còn lại: 6 + 2 = 8 (nghìn đồng).",
      "hints": [
-      "Vẽ ba đoạn, lấy số bé nhất làm chuẩn.",
-      "Số thứ ba hơn số thứ nhất bao nhiêu?"
+      "Phần vượt của Tí chính là phần hụt chung của ba bạn.",
+      "Chia đều phần ấy cho ba xem vạch của họ tụt bao nhiêu."
      ]
     }
    ]
@@ -375,7 +317,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Cùng thêm một số như nhau vào cả hai số thì hiệu của chúng không đổi.",
+    "text": "Quanh mức trung bình, tổng phần vượt bằng tổng phần hụt.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -384,61 +326,61 @@
    },
    {
     "id": "Q2",
-    "text": "Cùng thêm t vào cả hai số thì tổng tăng thêm t.",
+    "text": "Trong một nhóm, nếu một bạn cao hơn mức trung bình thì mọi bạn còn lại đều thấp hơn mức trung bình.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Tổng tăng 2 × t (hai số cùng thêm)."
+    "solutionNarrative": "Chỉ cần TỔNG phần hụt cân với phần vượt; vẫn có bạn đứng đúng vạch hoặc cùng vượt (miễn có chỗ hụt bù đủ)."
    },
    {
     "id": "Q3",
-    "text": "Tổng hai số là 50; cùng thêm 6 vào mỗi số thì tổng mới là:",
+    "text": "TBC của ba số là 15; hai số là 15 và 12. Số thứ ba là:",
     "format": "mcq",
     "choices": [
-     "A. 62",
-     "B. 56",
-     "C. 60"
+     "A. 18",
+     "B. 15",
+     "C. 12"
     ],
     "answerKey": {
-     "choice": "A. 62"
+     "choice": "A. 18"
     },
-    "solutionNarrative": "$50 + 12 = 62$."
+    "solutionNarrative": "45 − 27 = 18."
    },
    {
     "id": "Q4",
-    "text": "Năm nay chị hơn em 3 tuổi. 5 năm nữa chị hơn em:",
+    "text": "A cao hơn mức trung bình của hai bạn A, B là 4 cm. A cao hơn B:",
     "format": "mcq",
     "choices": [
-     "A. 3 tuổi",
-     "B. 8 tuổi",
-     "C. 13 tuổi"
+     "A. 8 cm",
+     "B. 4 cm",
+     "C. 2 cm"
     ],
     "answerKey": {
-     "choice": "A. 3 tuổi"
+     "choice": "A. 8 cm"
     },
-    "solutionNarrative": "Hiệu tuổi không đổi: 3 tuổi."
+    "solutionNarrative": "A vượt 4, B hụt 4 → hơn nhau 8 cm."
    },
    {
     "id": "Q5",
-    "text": "Ba số: A hơn B 2, B hơn C 3. Vậy A hơn C:",
+    "text": "Ba cốc 90 ; 120 ; 150 ml san cho đều, mỗi cốc có:",
     "format": "mcq",
     "choices": [
-     "A. 5",
-     "B. 1",
-     "C. 6"
+     "A. 120 ml",
+     "B. 130 ml",
+     "C. 110 ml"
     ],
     "answerKey": {
-     "choice": "A. 5"
+     "choice": "A. 120 ml"
     },
-    "solutionNarrative": "$2 + 3 = 5$."
+    "solutionNarrative": "360 : 3 = 120 ml."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Bài toán tuổi hay nhất là tuổi NHÀ MÌNH: \"mấy năm nữa tổng tuổi hai con bằng tuổi bố?\" — con tự lập bảng trước - sau với số liệu thật, định luật hiệu bất biến tự khắc sâu.",
-  "homeActivity": "Với bài ba số, chấm SƠ ĐỒ trước: ba đoạn có quy về người bé nhất không, phần thừa của người lớn nhất có cộng dồn đủ bậc thang không ($10 + 5$, không phải chỉ 5).",
-  "watchFor": "NÊN: gieo câu hỏi mở \"hiệu tuổi có bao giờ thay đổi không?\" cho con tự bảo vệ quan điểm. KHÔNG NÊN: bài tuổi kiểu \"gấp mấy lần nhau sau x năm\" — dạng nhân tỉ số ấy thuộc Chương 8, đừng đốt cháy giai đoạn."
+  "onComplete": "Thí nghiệm ba cốc nước là \"bài giảng\" hay nhất của bài này — làm thật một lần trên bàn ăn, nhớ hỏi trước khi san: \"cốc nào sẽ cho, cốc nào sẽ nhận, cho bao nhiêu?\"",
+  "homeActivity": "Câu 7 (A hơn TBC hai người 5 thì hơn B những 10) đáng nhâm nhi cùng con: nhiều người lớn cũng trả lời sai! Ai giải thích được bằng vượt - hụt, người đó thật sự hiểu trung bình.",
+  "watchFor": "NÊN: rèn thói quen soi bằng \"bảng vượt - hụt cộng lại bằng 0\". KHÔNG NÊN: đưa bài nhóm 5-6 số với nhiều tầng hơn - kém đan xen — mức ấy của lớp 5, lớp 4 dừng ở nhóm 3 số có sơ đồ."
  },
  "figureSpec": [
   {
@@ -447,18 +389,20 @@
     "hook"
    ],
    "file": "figures/L4H_B22_MO.png",
-   "caption": "Ba đoạn thẳng, quy về bạn ít bi nhất.",
-   "sha256_16": "c56d925b23d9e377",
+   "caption": "Ba cột quanh vạch trung bình, phần vượt và phần hụt.",
+   "sha256_16": "d1b376722c67ef96",
    "mucGoc": "chuyenMoBai"
   }
  ],
- "hatMam": "Bài 20 - 21 dạy con dò tổng, dò hiệu ở MỘT thời điểm. Trận cuối của chương chơi lớn: thời gian trôi! Khi cả hai số CÙNG lớn lên (tuổi tác, heo đất góp đều), tổng và hiệu bên nào biến, bên nào lì? Và màn bế mạc: bài BA số — sơ đồ ba đoạn thẳng đầu tiên trong đời của con.",
+ "hatMam": "Bài 16 con đã có công thức và cây cầu TỔNG. Bài này thêm một cặp mắt mới: nhìn mỗi số theo độ VƯỢT hay HỤT so với vạch trung bình. Cặp mắt ấy mở ra định luật đẹp nhất chương — tổng phần vượt luôn bằng tổng phần hụt — và giúp con giải nhiều bài mà... khỏi cần tính tổng!",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B20"
+   "DL:KSN3.B18",
+   "DL:KSN3.B19"
   ],
   "ten": [
-   "TOÁN TUỔI HAI GIA ĐÌNH"
+   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
+   "THÊM BỚT ĐỂ BẰNG NHAU"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

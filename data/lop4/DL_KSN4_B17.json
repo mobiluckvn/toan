@@ -1,47 +1,47 @@
 {
  "id": "DL:KSN4.B17",
- "quyen": "lop4",
+ "quyen": "KSN4",
  "so": 17,
- "ten": "HƠN KÉM MỨC TRUNG BÌNH BAO NHIÊU?",
- "chuong": 5,
- "tenChuong": "TRUNG BÌNH CỘNG",
- "dangGoc": "LV 1.2 mức Lớp 4 — \"Một số lớn hơn TBC của cả nhóm k đơn vị\" · sơ đồ san bằng với 3 số",
- "hatMam": "Bài 16 con đã có công thức và cây cầu TỔNG. Bài này thêm một cặp mắt mới: nhìn mỗi số theo độ VƯỢT hay HỤT so với vạch trung bình. Cặp mắt ấy mở ra định luật đẹp nhất chương — tổng phần vượt luôn bằng tổng phần hụt — và giúp con giải nhiều bài mà... khỏi cần tính tổng!",
+ "ten": "SỐ NÀY CÓ THUỘC DÃY KHÔNG — VÀ ĐỨNG THỨ MẤY",
+ "chuong": 4,
+ "tenChuong": "DÃY SỐ",
+ "dangGoc": "Dạng gốc: SỐ 5.1e mức Lớp 4 — Kiểm tra thuộc dãy bằng phép chia hết, và tìm vị trí.",
+ "hatMam": "Lớp 3, ở Bài 11, con đã soi \"ga này tàu có dừng không\" bằng phép chia dư. Hôm nay việc ấy trở lại với đúng tên gọi của nó: cho một số bất kỳ, hỏi nó có nằm trong dãy không — và nếu có thì nó đứng ở chỗ thứ mấy.",
  "ganDuoi": {
   "ve": [
-   "DL:KSN3.B18",
-   "DL:KSN3.B19"
+   "DL:KSN3.B11"
   ],
   "ten": [
-   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
-   "THÊM BỚT ĐỂ BẰNG NHAU"
+   "GA NÀY TÀU CÓ DỪNG KHÔNG?"
   ],
-  "canCu": "chuDe",
+  "canCu": "sach",
   "lopDuoi": 3
  },
  "muc": {
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Hiểu \"cao hơn / thấp hơn mức trung bình k đơn vị\" trên sơ đồ san bằng (cột nhô - cột hụt).",
-    "Dùng định luật cân bằng: tổng phần vượt = tổng phần hụt quanh mức trung bình.",
-    "Giải bài ba số kiểu \"biết TBC và độ vượt - hụt của vài số, tìm số còn lại\" bằng cả hai đường: qua tổng và qua vượt - hụt."
+    "Kiểm tra được một số có thuộc dãy cách đều hay không, bằng phép chia hết.",
+    "Nếu số ấy thuộc dãy thì tìm được nó đứng ở vị trí thứ mấy.",
+    "Biết rằng còn phải xét số ấy có nằm trong khoảng từ số đầu đến số cuối không."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 17: đo áo đấu cho hàng công",
+   "ten": "CHUYỆN MỞ BÀI — Tấm vé số 113",
    "dong": [
-    "Cô phụ trách đặt may áo đấu, cần chiều cao ba bạn hàng công. Phiếu đo ghi lạ lùng: \"Chiều cao trung bình của ba em: 130 cm. Em An cao HƠN mức trung bình 4 cm. Em Bình THẤP hơn mức trung bình 2 cm. Còn dòng của em Cường... bị nhòe nước mưa!\" Trí Long kêu trời: \"Mất số liệu rồi, phải đo lại thôi!\" Su Kem ngắm tờ phiếu: \"Không cần đo lại. Vạch trung bình như mặt nước — An nhô lên 4 phân thì phải có chỗ hụt xuống bù lại. Cường đang giấu mình dưới mặt nước đấy.\""
+    "Rạp phim mini của cô Hạnh mỗi hàng đúng 8 ghế, đánh số liền từ 1. Vậy ghế ĐẦU của các hàng lần lượt là 1 ; 9 ; 17 ; 25 ; ...",
+    "Một khách cầm vé số 113 hỏi: \"Ghế của tôi có phải ghế đầu hàng không cô? Tôi muốn ngồi sát lối đi.\"",
+    "Cô Hạnh không thể viết cả dãy ra để dò. Cô cần một cách soi nhanh."
    ],
    "hinh": [
     {
      "id": "L4H_B17_MO",
      "sauDong": 0,
      "file": "figures/L4H_B17_MO.png",
-     "caption": "Ba cột quanh vạch trung bình, phần vượt và phần hụt.",
-     "sha256_16": "d1b376722c67ef96"
+     "caption": "Trừ số đầu trước đã, rồi mới chia cho khoảng cách.",
+     "sha256_16": "b7b70b408a97db75"
     }
    ],
    "nhip": ""
@@ -49,24 +49,26 @@
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
    "dong": [
-    "CHO GÌ? ba bạn có chiều cao trung bình 130 cm; An cao hơn mức trung bình 4 cm; Bình thấp hơn mức trung bình 2 cm; số đo của Cường bị mất.",
-    "HỎI GÌ? chiều cao của Cường (và của cả An, Bình để điền lại phiếu).",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: chiều cao (cm) — mọi so sánh đều so với VẠCH trung bình 130 cm, không so trực tiếp bạn với bạn.",
-    "QUAN HỆ GIỮA CHÚNG: quanh vạch trung bình, phần nhô lên của người này phải được bù bằng phần hụt xuống của người khác — tổng vượt bằng tổng hụt.",
-    "CHỌN CÔNG CỤ: SƠ ĐỒ SAN BẰNG: kẻ vạch 130, vẽ cột An nhô 4, cột Bình hụt 2 — nhìn ngay phần Cường phải gánh.",
-    "ƯỚC LƯỢNG TRƯỚC: An nhô 4 mà Bình mới hụt 2 → Cường phải hụt nốt 2 → Cường cỡ 128 cm."
+    "CHO GÌ? dãy ghế đầu hàng: 1 ; 9 ; 17 ; 25 ; ... — cách đều, số đầu 1, khoảng cách 8.",
+    "HỎI GÌ? số 113 có thuộc dãy không; nếu thuộc thì đứng thứ mấy.",
+    "ĐẠI LƯỢNG & ĐƠN VỊ: số ghế (chiếc) và số thứ tự hàng — hai loại số khác nhau, đúng như con đã phân biệt ở Bài 13.",
+    "QUAN HỆ GIỮA CHÚNG: mọi số hạng của dãy đều bằng số đầu cộng một số nguyên lần khoảng cách.",
+    "CHỌN CÔNG CỤ: phép CHIA HẾT — dấu hiệu chia hết của Chương 3 quay lại gác cổng cho bài này.",
+    "ƯỚC LƯỢNG TRƯỚC: 113 gần 112 = 8 × 14, nên khả năng cao là thuộc dãy."
    ],
    "hinh": [],
-   "nhip": "NHỊP 1, DỊCH — từ phiếu đo nhòe sang sơ đồ vượt - hụt"
+   "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
    "dong": [
-    "Bước 1 — THÍ NGHIỆM BA CỐC NƯỚC: rót 100 ml, 130 ml, 160 ml vào ba cốc giống nhau rồi san cho đều: mực chung 130 ml. Nhìn kỹ trước khi san: cốc 160 VƯỢT mực chung 30, cốc 100 HỤT 30, cốc 130 đứng im — phần vượt rót đi đâu? Rót đúng vào phần hụt: 30 = 30. Nước không bay hơi giọt nào!",
-    "Bước 2 — ĐỊNH LUẬT CÂN BẰNG: tổng phần vượt = tổng phần hụt (quanh mức trung bình). Vì sao? San cho đều chỉ CHUYỂN từ chỗ thừa sang chỗ thiếu, tổng không đổi — nên thừa bao nhiêu phải lấp vừa khít bấy nhiêu.",
-    "Bước 3 — GIẢI PHIẾU ĐO BẰNG HAI CON ĐƯỜNG: đường vượt - hụt: An vượt 4; Bình hụt 2 → còn thiếu 4 − 2 = 2 phần hụt → Cường hụt 2 → Cường cao 130 − 2 = 128 (cm). Đường qua tổng (để soi): tổng ba bạn = 130 × 3 = 390; An = 134, Bình = 128 → Cường = 390 − 134 − 128 = 128 ✓. Hai đường một đáp số!",
-    "Bước 4 — CẶP MẮT VƯỢT - HỤT LỢI HẠI CỠ NÀO: câu đố nhanh: hai bạn, A cao hơn mức trung bình CỦA HAI BẠN 5 cm — hỏi A cao hơn B bao nhiêu? Với hai người, A vượt 5 thì B phải hụt đúng 5 → A hơn B những 5 + 5 = 10 cm. Không cần biết ai cao bao nhiêu — cặp mắt vượt - hụt nhìn xuyên qua cả những bài thiếu số liệu!",
-    "MẸO NGƯỜI GIẢI: Gặp chữ \"hơn / kém mức trung bình\": vẽ ngay VẠCH trung bình rồi đánh dấu cột nhô - cột hụt. Định luật cân bằng: tổng vượt = tổng hụt. Giải xong một đường, soi bằng đường kia (qua cây cầu TỔNG của Bài 16) — luôn có hai con đường về đích."
+    "Bước 1 — MỌI SỐ HẠNG ĐỀU CÁCH SỐ ĐẦU MỘT SỐ NGUYÊN LẦN KHOẢNG CÁCH. Nhìn dãy 1 ; 9 ; 17 ; 25: lấy từng số trừ số đầu được 0 ; 8 ; 16 ; 24 — toàn bộ đều chia hết cho 8. Đó là dấu vân tay của dãy.",
+    "Bước 2 — CÁCH SOI. Muốn biết số x có thuộc dãy không, lấy (x − số đầu) rồi chia cho khoảng cách. CHIA HẾT thì x thuộc dãy; CÒN DƯ thì không.",
+    "Bước 3 — SOI VÉ 113. (113 − 1) : 8 = 112 : 8 = 14, chia hết → số 113 THUỘC dãy. Vậy đúng là một ghế đầu hàng.",
+    "Bước 4 — NÓ ĐỨNG THỨ MẤY. Phép chia vừa rồi cho ra 14 — đó là SỐ BƯỚC NHẢY từ số đầu tới nó. Mà chỗ thì nhiều hơn bước đúng 1 (Bài 15 đã nói), nên vị trí = 14 + 1 = 15. Vé 113 là ghế đầu của hàng 15!",
+    "Bước 5 — KHI CÒN DƯ THÌ SAO. Vé 100: (100 − 1) : 8 = 99 : 8 = 12 dư 3 → KHÔNG thuộc dãy ghế-đầu-hàng. Khách này không được ngồi sát lối đi.",
+    "Bước 6 — MỘT CHỐT NỮA DỄ QUÊN. Chia hết CHƯA ĐỦ. Số ấy còn phải nằm TRONG khoảng từ số đầu đến số cuối. Dãy 1 ; 9 ; 17 ; ... ; 57 (rạp chỉ có 8 hàng) thì số 113 tuy chia hết nhưng đã vượt quá số cuối — nó KHÔNG thuộc dãy ấy.",
+    "MẸO NGƯỜI GIẢI: soi ba việc theo thứ tự — (1) trừ số đầu; (2) chia cho khoảng cách, xem hết hay dư; (3) nếu hết thì cộng 1 ra vị trí, rồi kiểm xem có vượt quá số cuối không."
    ],
    "hinh": [],
    "nhip": "NHỊP 2, GIẢI"
@@ -74,9 +76,9 @@
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
    "dong": [
-    "LẮP: phiếu đo phục dựng gửi cô phụ trách: \"An 134 cm — Bình 128 cm — Cường 128 cm. Cô cứ đặt áo, không cần gọi ba em đo lại!\" Một tờ phiếu nhòe được cứu bằng một định luật.",
-    "SOI: soi kép: 134 + 128 + 128 = 390 = 130 × 3 ✓; và bảng vượt - hụt: +4 ; −2 ; −2 — cộng lại tròn 0, cân như chiếc cân đĩa. Hai phép soi độc lập cùng gật đầu.",
-    "DÙNG NGOÀI ĐỜI: nghe bản tin \"lượng mưa tháng này cao hơn trung bình nhiều năm\", \"điểm em vượt trung bình lớp\" — từ nay con hiểu chính xác các câu ấy đang so với VẠCH nào."
+    "LẮP: cô Hạnh dán ở quầy vé một dòng: \"Ghế đầu hàng là các số chia 8 dư 1. Muốn biết hàng mấy: lấy (số ghế − 1) : 8 rồi cộng 1.\"",
+    "SOI: soi chéo bằng công thức Bài 14 — số hạng thứ 15 = 1 + 8 × (15 − 1) = 1 + 112 = 113 ✓. Hai con đường một đáp số.",
+    "DÙNG NGOÀI ĐỜI: xem ngày 25 có phải Chủ nhật không khi biết Chủ nhật đầu tháng là ngày 4; xem số nhà 87 có nằm bên dãy lẻ không; xem chuyến xe buýt chạy cách nhau 15 phút có chuyến nào đúng 8 giờ 45 không."
    ],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
@@ -84,26 +86,17 @@
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Chiều cao trung bình của ba bạn An, Bình, Cường là 130 cm. An cao hơn mức trung bình 4 cm, Bình thấp hơn mức trung bình 2 cm. Tính chiều cao của Cường.",
+    "Đề bài: Số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không? Nếu thuộc thì đứng thứ mấy? Còn số 100 thì sao?",
     "Tóm tắt",
-    "TBC ba bạn: 130 cm; An: hơn TBC 4 cm",
-    "Bình: kém TBC 2 cm. Tìm chiều cao Cường.",
-    "Ghi độ vượt - hụt kèm dấu \"hơn / kém\" — dữ kiện vàng của bài.",
-    "Sơ đồ (vạch san bằng)",
-    "Vạch trung bình: 130 cm",
-    "An: nhô 4 | Bình: hụt 2 | Cường: hụt ?",
-    "Sơ đồ chỉ cần một vạch và ba cột — đơn giản mà lộ hết bài toán.",
-    "Bài giải",
-    "Chiều cao của An là: 130 + 4 = 134 (cm)",
-    "Chiều cao của Bình là: 130 − 2 = 128 (cm)",
-    "Vì tổng phần vượt bằng tổng phần hụt nên Cường thấp hơn mức trung bình",
-    "4 − 2 = 2 (cm)",
-    "Chiều cao của Cường là: 130 − 2 = 128 (cm)",
-    "Câu \"vì tổng phần vượt bằng tổng phần hụt\" là căn cứ — thiếu nó phép trừ 4 − 2 thành vô lý.",
-    "Đáp số: 128 cm.",
-    "Đáp số kèm đơn vị.",
-    "Thử lại: (134 + 128 + 128) : 3 = 390 : 3 = 130 ✓",
-    "Soi bằng đường qua tổng — hai con đường phải gặp nhau."
+    "Dãy cách đều, số đầu 3, khoảng cách 4.",
+    "Kiểm khoảng cách: 7 − 3 = 4 ; 11 − 7 = 4 ✓.",
+    "Soi số 79",
+    "79 − 3 = 76 ; 76 : 4 = 19, chia hết → số 79 THUỘC dãy.",
+    "Vị trí = 19 + 1 = 20.",
+    "Soi lại bằng công thức Bài 14: 3 + 4 × (20 − 1) = 3 + 76 = 79 ✓.",
+    "Soi số 100",
+    "100 − 3 = 97 ; 97 : 4 = 24 dư 1 → còn dư, nên số 100 KHÔNG thuộc dãy.",
+    "Đáp số: 79 thuộc dãy và đứng thứ 20; 100 không thuộc dãy."
    ],
    "hinh": [],
    "nhip": ""
@@ -111,9 +104,10 @@
   "suKemNham": {
    "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
    "dong": [
-    "Đọc đề \"An cao hơn mức trung bình của ba bạn 4 cm\", Trí Long gật gù: \"Tức là An cao hơn MỖI bạn kia 4 cm chứ gì — vậy Bình và Cường đều cao 130 cm!\"",
-    "Gợi ý 1: \"Mức trung bình\" là một VẠCH chung, đâu phải chiều cao của từng bạn! Nếu Bình và Cường đều cao đúng 130 thì cùng An 134, trung bình ba bạn còn là 130 nữa không — tính thử xem?",
-    "Gợi ý 2: Lỗi nằm ở nhịp DỊCH: \"hơn mức trung bình\" bị dịch thành \"hơn từng người\". Vẽ vạch 130 và ba cột theo đúng đề (An +4, Bình −2), rồi dùng định luật cân bằng tìm Cường giúp Trí Long."
+    "Cô hỏi số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không, Trí Long soi: \"79 chia 4 được 19 dư 3, còn dư nên không thuộc dãy ạ!\"",
+    "Gợi ý 1: Con thử cách của Trí Long với chính số 3 — số hạng ĐẦU của dãy: 3 chia 4 dư 3. Vậy theo cách ấy thì số 3 cũng không thuộc dãy à?",
+    "Gợi ý 2: Trước khi chia, con phải TRỪ số đầu đi đã. Dãy này bắt đầu từ 3 chứ không phải từ 0.",
+    "Chữa: lấy (79 − 3) : 4 = 19, chia hết → số 79 THUỘC dãy, đứng thứ 20."
    ],
    "hinh": [],
    "nhip": ""
@@ -135,9 +129,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Thí nghiệm ba cốc nước là \"bài giảng\" hay nhất của bài này — làm thật một lần trên bàn ăn, nhớ hỏi trước khi san: \"cốc nào sẽ cho, cốc nào sẽ nhận, cho bao nhiêu?\"",
-    "Câu 7 (A hơn TBC hai người 5 thì hơn B những 10) đáng nhâm nhi cùng con: nhiều người lớn cũng trả lời sai! Ai giải thích được bằng vượt - hụt, người đó thật sự hiểu trung bình.",
-    "NÊN: rèn thói quen soi bằng \"bảng vượt - hụt cộng lại bằng 0\". KHÔNG NÊN: đưa bài nhóm 5-6 số với nhiều tầng hơn - kém đan xen — mức ấy của lớp 5, lớp 4 dừng ở nhóm 3 số có sơ đồ."
+    "Mở tờ lịch, chỉ vào một Chủ nhật rồi hỏi con: \"Ngày 25 có phải Chủ nhật không?\" — cho con soi bằng phép trừ rồi chia 7.",
+    "Nhắc con một câu duy nhất khi làm dạng này: TRỪ SỐ ĐẦU TRƯỚC ĐÃ. Quên bước ấy là sai cả bài, và đó đúng là lỗi Trí Long mắc."
    ],
    "hinh": [],
    "nhip": ""
@@ -151,8 +144,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Ba cốc nước có 100 ml ; 130 ml ; 160 ml. San cho đều thì mỗi cốc có bao nhiêu mi-li-lít?",
-   "loiChua": "(100 + 130 + 160) : 3 = 390 : 3 = 130 (ml).",
+   "text": "Dãy 3 ; 7 ; 11 ; ... có số đầu và khoảng cách bằng mấy? Muốn soi một số có thuộc dãy không, việc đầu tiên phải làm là gì?",
+   "loiChua": "Số đầu 3, khoảng cách 4. Việc đầu tiên: lấy số cần soi TRỪ số đầu.",
    "tuLuan": true
   },
   {
@@ -162,8 +155,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Chiều cao trung bình của ba bạn là 130 cm. Nam cao hơn mức trung bình 4 cm. Nam cao bao nhiêu xăng-ti-mét?",
-   "loiChua": "130 + 4 = 134 (cm).",
+   "text": "Số 23 có thuộc dãy 3 ; 7 ; 11 ; ... không?",
+   "loiChua": "(23 − 3) : 4 = 5, chia hết → số 23 THUỘC dãy.",
    "tuLuan": true
   },
   {
@@ -173,8 +166,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Vẫn nhóm trên, Hoa thấp hơn mức trung bình 2 cm. Hoa cao bao nhiêu?",
-   "loiChua": "130 − 2 = 128 (cm).",
+   "text": "Số 30 có thuộc dãy 2 ; 6 ; 10 ; ... không?",
+   "loiChua": "(30 − 2) : 4 = 7, chia hết → số 30 THUỘC dãy.",
    "tuLuan": true
   },
   {
@@ -184,8 +177,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Trong một nhóm ba bạn, bạn A góp hơn mức trung bình 3 nghìn đồng, bạn B góp đúng mức trung bình. Hỏi bạn C góp hơn hay kém mức trung bình, và hơn kém bao nhiêu?",
-   "loiChua": "A vượt 3, B đứng đúng vạch → C phải HỤT 3 nghìn (tổng vượt = tổng hụt).",
+   "text": "Số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không? Nếu thuộc thì đứng thứ mấy?",
+   "loiChua": "(79 − 3) : 4 = 19 chia hết → thuộc dãy, đứng thứ 19 + 1 = 20.",
    "tuLuan": true
   },
   {
@@ -195,8 +188,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Ba bạn góp quỹ, trung bình mỗi bạn 12 nghìn đồng. A góp hơn mức trung bình 3 nghìn, B góp đúng mức trung bình. Hỏi C góp bao nhiêu nghìn đồng?",
-   "loiChua": "C góp 12 − 3 = 9 (nghìn đồng). Soi qua tổng: 15 + 12 + 9 = 36 = 12 × 3 ✓.",
+   "text": "Số 100 có thuộc dãy 3 ; 7 ; 11 ; ... không?",
+   "loiChua": "(100 − 3) : 4 = 97 : 4 = 24 dư 1 → còn dư, nên KHÔNG thuộc dãy.",
    "tuLuan": true
   },
   {
@@ -206,8 +199,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Trung bình cộng của ba số là 20. Số thứ nhất là 24, số thứ hai là 18. Tìm số thứ ba bằng đường vượt - hụt, rồi soi lại bằng đường qua tổng.",
-   "loiChua": "Đường vượt - hụt: số 1 vượt 4, số 2 hụt 2 → số 3 hụt 4 − 2 = 2 → bằng 20 − 2 = 18. Soi qua tổng: 60 − 24 − 18 = 18 ✓.",
+   "text": "Số 113 có thuộc dãy 1 ; 9 ; 17 ; ... không? Nếu thuộc thì đứng thứ mấy?",
+   "loiChua": "(113 − 1) : 8 = 14 chia hết → thuộc dãy, đứng thứ 15.",
    "tuLuan": true
   },
   {
@@ -217,8 +210,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hai bạn A và B: A cao hơn mức trung bình của HAI bạn 5 cm. Hỏi A cao hơn B bao nhiêu xăng-ti-mét?",
-   "loiChua": "A vượt vạch chung 5 → B hụt đúng 5 → A hơn B: 5 + 5 = 10 (cm).",
+   "text": "Số 52 có thuộc dãy 7 ; 12 ; 17 ; ... không? Nếu thuộc thì đứng thứ mấy?",
+   "loiChua": "(52 − 7) : 5 = 9 chia hết → thuộc dãy, đứng thứ 10.",
    "tuLuan": true
   },
   {
@@ -228,8 +221,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Đội bóng đá ba trận, trung bình mỗi trận 3 bàn. Trận 1 ghi nhiều hơn mức trung bình 2 bàn, trận 2 ghi ít hơn mức trung bình 1 bàn. Hỏi trận 3 ghi mấy bàn?",
-   "loiChua": "Trận 1 vượt 2, trận 2 hụt 1 → trận 3 hụt 2 − 1 = 1 → ghi 3 − 1 = 2 (bàn). Thử: 5 + 2 + 2 = 9 = 3 × 3 ✓.",
+   "text": "Dãy 1 ; 9 ; 17 ; ... ; 57. Hỏi số 113 có thuộc dãy này không? Chú ý đọc kỹ số CUỐI của dãy.",
+   "loiChua": "(113 − 1) : 8 = 14 chia hết, nhưng 113 đã VƯỢT QUÁ số cuối 57, nên số 113 KHÔNG thuộc dãy này. Chia hết thôi chưa đủ.",
    "tuLuan": true
   },
   {
@@ -239,8 +232,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Nhóm bốn bạn góp quỹ. Tí góp hơn mức trung bình CỦA CẢ NHÓM 6 nghìn đồng. Hỏi Tí góp hơn mức trung bình của BA BẠN CÒN LẠI bao nhiêu? (Gợi ý: phần vượt 6 nghìn của Tí là phần hụt chung của ba bạn — chia đều cho ba xem vạch của họ tụt xuống bao nhiêu.)",
-   "loiChua": "Phần vượt 6 nghìn của Tí là phần hụt chung của ba bạn → vạch của ba bạn thấp hơn vạch nhóm: 6 : 3 = 2 (nghìn) → Tí hơn mức trung bình của ba bạn còn lại: 6 + 2 = 8 (nghìn đồng).",
+   "text": "Cho dãy 4 ; 9 ; 14 ; ... ; 99. Số 64 có thuộc dãy không, đứng thứ mấy? Hãy soi lại kết quả bằng công thức số hạng thứ n.",
+   "loiChua": "(64 − 4) : 5 = 12 chia hết, và 64 nằm giữa 4 và 99 → thuộc dãy, đứng thứ 13. Soi lại: 4 + 5 × (13 − 1) = 4 + 60 = 64 ✓.",
    "tuLuan": true
   },
   {
@@ -250,14 +243,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Quanh mức trung bình, tổng phần vượt bằng tổng phần hụt.",
+   "text": "Muốn soi một số có thuộc dãy không, phải lấy số ấy TRỪ số đầu rồi mới chia cho khoảng cách.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
    "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "solutionNarrative": "Đáp án: ĐÚNG"
   },
   {
    "id": "Q2",
@@ -266,14 +259,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Trong một nhóm, nếu một bạn cao hơn mức trung bình thì mọi bạn còn lại đều thấp hơn mức trung bình.",
+   "text": "Cứ chia hết cho khoảng cách là số ấy chắc chắn thuộc dãy.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": false
    },
-   "loiChua": "Chỉ cần TỔNG phần hụt cân với phần vượt; vẫn có bạn đứng đúng vạch hoặc cùng vượt (miễn có chỗ hụt bù đủ).",
-   "solutionNarrative": "Chỉ cần TỔNG phần hụt cân với phần vượt; vẫn có bạn đứng đúng vạch hoặc cùng vượt (miễn có chỗ hụt bù đủ)."
+   "loiChua": "SAI — còn phải kiểm số ấy có nằm trong khoảng từ số đầu đến số cuối không.",
+   "solutionNarrative": "SAI — còn phải kiểm số ấy có nằm trong khoảng từ số đầu đến số cuối không."
   },
   {
    "id": "Q3",
@@ -282,19 +275,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "TBC của ba số là 15; hai số là 15 và 12. Số thứ ba là:",
+   "text": "Số 52 với dãy 7 ; 12 ; 17 ; ...:",
    "choices": [
-    "A. 18",
-    "B. 15",
-    "C. 12"
+    "A. thuộc dãy, đứng thứ 10",
+    "B. không thuộc dãy",
+    "C. thuộc dãy, đứng thứ 9"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 18"
+    "choice": "A. thuộc dãy, đứng thứ 10"
    },
-   "loiChua": "45 − 27 = 18.",
-   "solutionNarrative": "45 − 27 = 18."
+   "loiChua": "(52 − 7) : 5 = 9 chia hết → vị trí 9 + 1 = 10.",
+   "solutionNarrative": "(52 − 7) : 5 = 9 chia hết → vị trí 9 + 1 = 10."
   },
   {
    "id": "Q4",
@@ -303,19 +296,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "A cao hơn mức trung bình của hai bạn A, B là 4 cm. A cao hơn B:",
+   "text": "Phép chia (x − số đầu) : khoảng cách nếu CÒN DƯ thì nghĩa là:",
    "choices": [
-    "A. 8 cm",
-    "B. 4 cm",
-    "C. 2 cm"
+    "A. x không thuộc dãy",
+    "B. x thuộc dãy",
+    "C. x là số hạng cuối"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 8 cm"
+    "choice": "A. x không thuộc dãy"
    },
-   "loiChua": "A vượt 4, B hụt 4 → hơn nhau 8 cm.",
-   "solutionNarrative": "A vượt 4, B hụt 4 → hơn nhau 8 cm."
+   "loiChua": "Còn dư nghĩa là x rơi vào giữa hai số hạng.",
+   "solutionNarrative": "Còn dư nghĩa là x rơi vào giữa hai số hạng."
   },
   {
    "id": "Q5",
@@ -324,19 +317,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Ba cốc 90 ; 120 ; 150 ml san cho đều, mỗi cốc có:",
+   "text": "Số 113 với dãy 1 ; 9 ; 17 ; ... đứng ở vị trí thứ:",
    "choices": [
-    "A. 120 ml",
-    "B. 130 ml",
-    "C. 110 ml"
+    "A. 15",
+    "B. 14",
+    "C. 16"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 120 ml"
+    "choice": "A. 15"
    },
-   "loiChua": "360 : 3 = 120 ml.",
-   "solutionNarrative": "360 : 3 = 120 ml."
+   "loiChua": "(113 − 1) : 8 = 14 bước nhảy, nên vị trí là 14 + 1 = 15.",
+   "solutionNarrative": "(113 − 1) : 8 = 14 bước nhảy, nên vị trí là 14 + 1 = 15."
   }
  ]
 }

@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B29",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 29 · TÍNH NGƯỢC TỪ CUỐI",
+ "title": "Bài 29 · KHI ĐỀ KHÔNG CHO SẴN TỔNG HOẶC TỈ SỐ",
  "durationMinutes": 10,
  "so": 29,
- "chuong": 8,
- "tenChuong": "BÀI TOÁN CÓ LỜI VĂN",
- "dangGoc": "LV 8.1 mức Lớp 4 — Tính ngược nhiều bước với 4 phép tính · làm quen \"cho đi một nửa rồi...\"",
+ "chuong": 7,
+ "tenChuong": "TỔNG - TỈ VÀ HIỆU - TỈ",
+ "dangGoc": "LV 3.2 + LV 3.3 mức Lớp 4 — Tỉ ẩn trong lời văn (\"gấp rưỡi\") · tổng ẩn qua TBC, chu vi",
  "skills": {
-  "bktUnit": "CHUONG:8@G4",
+  "bktUnit": "CHUONG:7@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Vẽ sơ đồ băng chuyền xuôi cho bài nhiều bước, rồi đảo chiều với các cặp phép nghịch: + ↔ − và × ↔ :. Tính ngược chuỗi 4 phép tính; thử lại bằng chuyến đi xuôi trên đáp số. Xử lý trạm đặc biệt \"cho đi MỘT NỬA\": đi ngược bằng phép nhân đôi.",
-  "kidText": "Túi bi: cho đi một nửa, được thêm 2 viên, còn lại 12 viên. Lúc đầu Su Bống mang đi mấy viên?",
+  "text": "Dịch thành thạo tỉ ẩn: gấp đôi = 2 : 1, gấp ba = 3 : 1, gấp rưỡi = 3 : 2, bằng một nửa = 1 : 2, \"bằng 2/3 của\" = 2 : 3. Dò tổng ẩn quen thuộc: tổng = TBC × 2; tổng = nửa chu vi — rồi đưa bài về Tổng - Tỉ chuẩn. Giải trọn bài hai lớp cải trang (vừa giấu tổng vừa giấu tỉ) theo đúng quy trình 4 bước.",
+  "kidText": "Khay 40 chiếc bánh, số bánh nướng gấp rưỡi bánh dẻo. \"Gấp rưỡi\" là bao nhiêu phần nhỉ?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — VẼ BĂNG CHUYỀN XUÔI: ? → [cho đi $\\frac{1}{2}$] → [được thêm 2] → 12. Vẽ xuôi TRƯỚC dù chưa tính được gì — sơ đồ xuôi là tấm bản đồ, thiếu nó đi ngược sẽ lạc trạm."
+    "text": "Bước 1 — TRA TỪ ĐIỂN TỈ ẨN: gấp đôi = 2 : 1; gấp ba = 3 : 1; bằng một nửa = 1 : 2; \"số A bằng 2/3 số B\" = A : B = 2 : 3; và ngôi sao hôm nay: GẤP RƯỠI = 3 : 2 (ba nửa so với hai nửa). Dịch xong tỉ, bài lạ hóa bài quen."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — ĐẢO CHIỀU TỪNG TRẠM: từ 12 đi lùi: ngược trạm \"thêm 2\" là BỚT 2: $12 - 2 = 10$ (viên) — đây là số bi ngay sau khi cho Na, tức NỬA còn lại. Ngược trạm \"cho đi một nửa\" là NHÂN ĐÔI: $10  \\times  2 = 20$ (viên). Su Bống mang đi 20 viên bi!"
+    "text": "Bước 2 — KHAY BÁNH VỀ QUY TRÌNH 4 BƯỚC: nướng : dẻo = 3 : 2, tổng 40 chiếc → tổng số phần 3 + 2 = 5; một phần 40 : 5 = 8 (chiếc); nướng = 8 × 3 = 24; dẻo = 8 × 2 = 16. Thử: 24 + 16 = 40 ✓ và 24 đúng bằng 16 cộng nửa của 16 — gấp rưỡi chuẩn ✓."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — CHUỖI DÀI 4 PHÉP CŨNG MỘT CHIÊU: \"nghĩ một số, nhân 3, trừ 4, chia 2, cộng 5 được 15\" — đi lùi bốn trạm: $15 - 5 = 10$; $10  \\times  2 = 20$; $20 + 4 = 24$; $24 : 3 = 8$. Số ban đầu là 8. Bảng cặp nghịch dán trước mặt: + ↔ −, × ↔ : — và đi lùi phải đúng THỨ TỰ NGƯỢC (trạm cuối lùi trước!)."
+    "text": "Bước 3 — TỔNG CẢI TRANG THÀNH \"TRUNG BÌNH CỘNG\": \"TBC của hai số là 30, tỉ số 2 : 3\" — máy dò tổng Bài 20 kêu tít tít: tổng = 30 × 2 = 60! Chia 60 theo 2 : 3: một phần 60 : 5 = 12 → hai số là 24 và 36."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — NGHI THỨC THỬ XUÔI: lấy đáp số đi lại chuyến XUÔI: $8  \\times  3 = 24$; $24 - 4 = 20$; $20 : 2 = 10$; $10 + 5 = 15$ ✓. Với túi bi: 20 cho đi một nửa còn 10, thêm 2 thành 12 ✓. Bài tính ngược nào cũng tặng kèm một chuyến du lịch khứ hồi miễn phí — đừng bỏ phí vé về!"
+    "text": "Bước 4 — TỔNG CẢI TRANG THÀNH \"CHU VI\": \"sân hình chữ nhật chu vi 40 m, dài : rộng = 3 : 2\" → tổng = nửa chu vi = 20 (m); một phần 20 : 5 = 4 → dài 12 m, rộng 8 m. Đề hai lớp cải trang cũng chỉ tốn thêm MỘT dòng lột áo — phần lõi vẫn là quy trình 4 bước."
    }
   ],
-  "mantra": "Thấy đề kể hành trình dài mà chỉ cho con số CUỐI: vẽ băng chuyền xuôi → đảo chiều, mỗi trạm một phép nghịch (+ ↔ −, × ↔ :, cho đi một nửa ↔ nhân đôi) → đi lùi đúng thứ tự ngược → thử bằng chuyến xuôi. Bốn nhịp gọn gàng, không trạm nào thoát.",
+  "mantra": "Đọc đề chia theo tỉ, tự hỏi hai câu: TỈ đứng sẵn hay đang cải trang trong chữ (tra từ điển: gấp đôi, gấp rưỡi, một nửa, \"bằng 2/3\")? TỔNG đứng sẵn hay đang trốn (TBC × 2, chu vi : 2)? Lột hết áo rồi — quy trình 4 bước cân tất.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Giải bài \"nghĩ một số, nhân 3, trừ 4 được 20\", Trí Long đi lùi hăng hái: \"Ngược lại là: 20 chia 3 trước cho đúng thứ tự đề... $20 : 3$ lẻ nhỉ? Chắc tại đề!\"",
+    "wrong": "Gặp đề \"chu vi mảnh vườn 40 m, chiều dài gấp rưỡi chiều rộng\", Trí Long hăng hái: \"Gấp rưỡi là 3 : 2, tớ thuộc rồi! Tổng 40, tổng phần 5, một phần 8 — dài 24 m, rộng 16 m!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Đi lùi thì trạm nào phải lùi TRƯỚC — trạm \"nhân 3\" đứng đầu hành trình hay trạm \"trừ 4\" đứng cuối? Tưởng tượng đi ngược một dãy phòng: cửa nào mở trước? Gợi ý 2: Đảo đúng thứ tự (ngược trạm cuối trước): $20 + 4$ rồi mới chia 3 — tính lại và thử xuôi giúp Trí Long. Tặng cậu ấy khẩu quyết: \"vào sau thì ra trước, như xếp đồ vào ba lô!\""
+    "fix": "Gợi ý 1: Trí Long dịch tỉ chuẩn rồi — nhưng con số 40 của đề là TỔNG hai cạnh hay CHU VI? Bài 20 từng có đúng cú trượt này đấy! Gợi ý 2: Soi nhanh đáp số của cậu ấy: dài 24, rộng 16 thì chu vi bằng (24 + 16) × 2 = 80 m — gấp đôi đề cho! Lột áo chu vi rồi chia lại giúp Trí Long: đề hai lớp cải trang phải lột ĐỦ hai lớp."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Su Bống mếu máo về nhà: \"Sáng nay em mang bi đi chơi. Hành trình túi bi: cho đi một nửa → được thêm 2 viên → còn 12 viên. Hỏi số bi Su Bống mang đi lúc đầu?"
+    "narration": "Khay 40 chiếc bánh; số bánh nướng gấp rưỡi số bánh dẻo. Hỏi số bánh nướng và số bánh dẻo?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? hành trình túi bi: cho đi một nửa → được thêm 2 viên → còn 12 viên.\nHỎI GÌ? số bi Su Bống mang đi lúc đầu.\nĐẠI LƯỢNG & ĐƠN VỊ: số bi (viên) — đề cho con số CUỐI, giấu con số ĐẦU: dấu hiệu vàng của bài tính ngược.\nQUAN HỆ GIỮA CHÚNG: mỗi sự kiện là một TRẠM biến hình trên băng chuyền; đi ngược thì mỗi trạm làm phép NGHỊCH: thêm 2 ↔ bớt 2; cho đi một nửa ↔ nhân đôi.\nCHỌN CÔNG CỤ: SƠ ĐỒ BĂNG CHUYỀN: vẽ mũi tên xuôi trước, rồi đảo chiều toàn bộ.\nƯỚC LƯỢNG TRƯỚC: còn 12 sau khi đã cho đi một nửa → số đầu phải cỡ đôi mươi.",
+    "narration": "CHO GÌ? khay 40 chiếc bánh; số bánh nướng gấp rưỡi số bánh dẻo.\nHỎI GÌ? số bánh nướng và số bánh dẻo.\nĐẠI LƯỢNG & ĐƠN VỊ: số bánh (chiếc) — \"gấp rưỡi\" là quan hệ TỈ, không phải một con số cộng trừ được.\nQUAN HỆ GIỮA CHÚNG: gấp rưỡi = một lần rưỡi = 3 nửa so với 2 nửa → nướng : dẻo = 3 : 2 — lấy \"nửa chiếc phần\" làm ô sơ đồ là mọi ô lại đều tăm tắp.\nCHỌN CÔNG CỤ: TỪ ĐIỂN TỈ ẨN dịch lời văn thành tỉ số + quy trình 4 bước của Bài 23.\nƯỚC LƯỢNG TRƯỚC: tổng 5 phần, mỗi phần 8 chiếc → nướng cỡ hơn hai chục, dẻo ít hơn.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ câu chuyện sang băng chuyền hai chiều"
+    "nhan": "NHỊP 1, DỊCH — lột lớp cải trang của tỉ số"
    },
    {
     "id": "S3",
@@ -104,81 +104,78 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: Su Kem công bố: \"Sáng nay em mang đi 20 viên — cho Na 10, anh lớp 5 tặng 2, còn 12: khớp từng viên!\" Su Bống nhảy cẫng: hóa ra em không mất viên nào, chỉ... mất trí nhớ tạm thời.\nSOI: soi bằng chuyến xuôi 20 → 10 → 12 ✓ và bằng ước lượng \"cỡ đôi mươi\" ✓. Hai con dấu, hồ sơ túi bi khép lại.\nDÙNG NGOÀI ĐỜI: truy lại tiền tiêu trong ngày (\"còn 5 nghìn, trước đó mua gì?\"), lần lại điểm xuất phát của trò chơi — kỹ năng \"tua ngược cuộn phim\" dùng cả đời, nhất là lúc... tìm đồ để quên!",
+    "narration": "LẮP: bảng giá gửi chị Ngọc Anh: \"Khay 40 chiếc: 24 bánh nướng - 16 bánh dẻo.\" Chị in luôn hai tấm biển xinh xắn cắm lên khay — khách nhìn số lượng, chọn bánh nhanh, quầy không ùn tắc!\nSOI: soi kép: 24 + 16 = 40 ✓; 24 : 16 = 3 : 2 — đúng \"gấp rưỡi\" ✓; và mẹo đời: bánh nướng bán chạy hơn nên làm nhiều hơn — đáp số hợp cả toán lẫn... khẩu vị khách.\nDÙNG NGOÀI ĐỜI: \"gấp rưỡi\", \"bằng một nửa\", \"hai phần ba\" đầy rẫy trong lời người lớn — báo giá, công thức nấu ăn, tin tức. Từ nay tai con nghe chữ, đầu con hiện tỉ số.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Giải bài \"nghĩ một số, nhân 3, trừ 4 được 20\", Trí Long đi lùi hăng hái: \"Ngược lại là: 20 chia 3 trước cho đúng thứ tự đề... $20 : 3$ lẻ nhỉ? Chắc tại đề!\"",
+    "narration": "Gặp đề \"chu vi mảnh vườn 40 m, chiều dài gấp rưỡi chiều rộng\", Trí Long hăng hái: \"Gấp rưỡi là 3 : 2, tớ thuộc rồi! Tổng 40, tổng phần 5, một phần 8 — dài 24 m, rộng 16 m!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Su Bống mang một số viên bi đi chơi. Em cho bạn một nửa số bi, sau đó được cho thêm 2 viên thì còn lại 12 viên. Hỏi lúc đầu Su Bống mang đi bao nhiêu viên bi?",
+  "problem": "Một khay có 40 chiếc bánh gồm bánh nướng và bánh dẻo, số bánh nướng gấp rưỡi số bánh dẻo. Tính số bánh mỗi loại.",
   "steps": [
    {
-    "show": "Hành trình: cho đi $\\frac{1}{2}$ → thêm 2 viên → còn 12 viên.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Tìm số bi lúc đầu.",
-    "phan": "tomtat"
+    "show": "Tổng: 40 chiếc; bánh nướng gấp rưỡi bánh dẻo."
    },
    {
-    "show": "Tóm tắt bằng chuỗi mũi tên — chính là băng chuyền xuôi.",
-    "phan": "tomtat"
+    "show": "Tìm số bánh mỗi loại."
    },
    {
-    "show": "Mô hình (đảo chiều băng chuyền)",
-    "phan": "tomtat"
+    "show": "Chép nguyên chữ \"gấp rưỡi\" — chờ dịch ở phần mô hình."
    },
    {
-    "show": "Xuôi: ? → cho $\\frac{1}{2}$ → thêm 2 → 12",
-    "phan": "tomtat"
+    "show": "Mô hình (tra từ điển tỉ ẩn)"
    },
    {
-    "show": "Ngược: 12 → bớt 2 → nhân đôi → ?",
-    "phan": "tomtat"
+    "show": "Gấp rưỡi = một lần rưỡi = 3 nửa so với 2 nửa"
    },
    {
-    "show": "Viết cả hai chiều — mỗi trạm xuôi có đúng một trạm nghịch.",
-    "phan": "tomtat"
+    "show": "→ nướng : dẻo = 3 : 2. Bài trở về Tổng - Tỉ chuẩn."
    },
    {
-    "show": "Trước khi được cho thêm 2 viên, Su Bống có: $12 - 2 = 10$ (viên)",
-    "phan": "giai"
+    "show": "Dòng dịch tỉ là điểm ăn tiền — thiếu nó sơ đồ không vẽ nổi."
    },
    {
-    "show": "10 viên này là một nửa số bi lúc đầu, nên lúc đầu Su Bống có",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "$10  \\times  2 = 20$ (viên)",
-    "phan": "giai"
+    "show": "Vì số bánh nướng gấp rưỡi số bánh dẻo nên tỉ số nướng : dẻo = 3 : 2."
    },
    {
-    "show": "Câu \"10 viên này là một nửa số bi lúc đầu\" là căn cứ của phép nhân đôi.",
-    "phan": "giai"
+    "show": "Tổng số phần bằng nhau là: 3 + 2 = 5 (phần)"
    },
    {
-    "show": "Đáp số: 20 viên bi.",
-    "phan": "dapso"
+    "show": "Giá trị một phần là: 40 : 5 = 8 (chiếc)"
    },
    {
-    "show": "Đáp số kèm đơn vị.",
-    "phan": "ghichu"
+    "show": "Số bánh nướng là: 8 × 3 = 24 (chiếc)"
    },
    {
-    "show": "Thử lại (đi xuôi): $20 : 2 = 10$ ; $10 + 2 = 12$ ✓",
-    "phan": "ghichu"
+    "show": "Số bánh dẻo là: 8 × 2 = 16 (chiếc)"
    },
    {
-    "show": "Chuyến khứ hồi: đáp số phải chở ta về đúng con số 12 của đề.",
-    "phan": "ghichu"
+    "show": "Câu \"vì... nên tỉ số 3 : 2\" nêu căn cứ dịch — rồi bốn bước nối đuôi."
+   },
+   {
+    "show": "Đáp số: 24 bánh nướng ; 16 bánh dẻo."
+   },
+   {
+    "show": "Đáp số đủ hai loại."
+   },
+   {
+    "show": "Thử lại: 24 + 16 = 40 ✓ ; nửa của 16 là 8, mà 16 + 8 = 24 — đúng gấp rưỡi ✓"
+   },
+   {
+    "show": "Thử \"gấp rưỡi\" theo đúng nghĩa của nó — một lần cộng thêm một nửa."
    }
   ]
  },
@@ -187,134 +184,214 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Nghĩ một số, cộng 7 thì được 15. Tìm số đã nghĩ.",
+     "text": "Dịch sang tỉ số: a) gấp ba; b) gấp rưỡi; c) bằng một nửa.",
      "answerKey": {
-      "value": 8
+      "parts": [
+       {
+        "label": "a) gấp ba",
+        "options": [
+         "3 : 1",
+         "1 : 3",
+         "3 : 2"
+        ],
+        "value": "3 : 1"
+       },
+       {
+        "label": "b) gấp rưỡi",
+        "options": [
+         "3 : 2",
+         "2 : 3",
+         "1 : 2"
+        ],
+        "value": "3 : 2"
+       },
+       {
+        "label": "c) bằng một nửa",
+        "options": [
+         "1 : 2",
+         "2 : 1",
+         "1 : 3"
+        ],
+        "value": "1 : 2"
+       }
+      ]
      },
-     "solutionNarrative": "$15 - 7 = 8$.",
+     "solutionNarrative": "A) gấp ba = 3 : 1; b) gấp rưỡi = 3 : 2; c) bằng một nửa = 1 : 2.",
      "hints": [
-      "Vẽ băng chuyền xuôi trước, dù chưa tính được gì.",
-      "Đảo phép cộng thành phép trừ."
+      "Tra từ điển tỉ ẩn.",
+      "Gấp rưỡi nghĩa là một rưỡi lần — viết thành hai số nguyên."
      ]
     },
     {
      "id": "C2",
-     "text": "Nghĩ một số, nhân 3 rồi trừ 4 thì được 20. Tìm số đã nghĩ.",
+     "text": "Tìm hai số có tổng bằng 40, biết số lớn gấp 3 lần số bé.",
      "answerKey": {
       "parts": [
        {
-        "label": "số đã nghĩ",
-        "value": 8
+        "label": "số bé",
+        "value": 10
+       },
+       {
+        "label": "số lớn",
+        "value": 30
        }
       ]
      },
-     "solutionNarrative": "Ngược: $20 + 4 = 24$; $24 : 3 = 8$.",
+     "solutionNarrative": "Tỉ 3 : 1, tổng phần 4; một phần 10 → hai số là 10 và 30.",
      "hints": [
-      "Đi lùi: trạm cuối cùng đảo trước.",
-      "Trừ đảo thành cộng, rồi nhân đảo thành chia."
+      "Dịch chữ gấp ba thành tỉ trước đã.",
+      "Rồi chạy quy trình bốn bước."
      ]
     },
     {
      "id": "C3",
-     "text": "Nghĩ một số, chia 2 rồi cộng 5 thì được 9. Vẽ băng chuyền hai chiều rồi tìm số đã nghĩ.",
+     "text": "Tìm hai số có tổng bằng 30, biết số lớn gấp đôi số bé.",
      "answerKey": {
       "parts": [
        {
-        "label": "số đã nghĩ",
-        "value": 8
+        "label": "số bé",
+        "value": 10
+       },
+       {
+        "label": "số lớn",
+        "value": 20
        }
       ]
      },
-     "solutionNarrative": "Ngược: $9 - 5 = 4$; $4  \\times  2 = 8$.",
+     "solutionNarrative": "Tỉ 2 : 1, tổng phần 3; một phần 10 → hai số là 10 và 20.",
      "hints": [
-      "Vẽ băng chuyền hai chiều rồi mới tính.",
-      "Gỡ trạm cộng trước, trạm chia sau."
+      "Gấp đôi dịch thành mấy ô với mấy ô?",
+      "Tổng số phần rồi mới tới một phần."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Nghĩ một số, nhân 3, trừ 4, chia 2 rồi cộng 5 thì được 15. Tìm số đã nghĩ.",
+     "text": "Khay 40 chiếc bánh, số bánh nướng gấp rưỡi số bánh dẻo. Tính số bánh mỗi loại.",
      "answerKey": {
-      "value": 15
+      "parts": [
+       {
+        "label": "bánh nướng",
+        "value": 24
+       },
+       {
+        "label": "bánh dẻo",
+        "value": 16
+       }
+      ]
      },
-     "solutionNarrative": "$15 - 5 = 10$; $10  \\times  2 = 20$; $20 + 4 = 24$; $24 : 3 = 8$. Thử xuôi: 8 → 24 → 20 → 10 → 15 ✓.",
+     "solutionNarrative": "Gấp rưỡi = 3 : 2; một phần 40 : 5 = 8 → nướng 24 chiếc; dẻo 16 chiếc.",
      "hints": [
-      "Bốn trạm — đi lùi đúng thứ tự ngược.",
-      "Trạm cộng gỡ trước, rồi chia, rồi trừ, rồi nhân."
+      "Gấp rưỡi là tỉ ẩn — dịch nó ra trước.",
+      "Có tỉ rồi thì chạy quy trình bốn bước."
      ]
     },
     {
      "id": "C5",
-     "text": "Mẹ đi chợ tiêu hết một nửa số tiền mang theo, sau đó tiêu thêm 10 nghìn đồng thì còn lại 30 nghìn đồng. Hỏi mẹ mang theo bao nhiêu tiền?",
+     "text": "Trung bình cộng của hai số là 30, tỉ số của chúng là 2 : 3. Tìm hai số đó.",
      "answerKey": {
-      "value": 80
+      "parts": [
+       {
+        "label": "số bé",
+        "value": 24
+       },
+       {
+        "label": "số lớn",
+        "value": 36
+       }
+      ]
      },
-     "solutionNarrative": "Trước lần tiêu 10 nghìn: $30 + 10 = 40$; đó là nửa còn lại → mang theo $40  \\times  2 = 80$ nghìn đồng.",
+     "solutionNarrative": "Tổng = 30 × 2 = 60; một phần 60 : 5 = 12 → hai số là 24 và 36.",
      "hints": [
-      "Gỡ việc xảy ra sau cùng trước.",
-      "Trả lại phần tiêu thêm thì được nửa số tiền mang theo."
+      "TỔNG đang trốn trong chữ trung bình cộng.",
+      "Lột áo ra tổng rồi mới chia phần."
      ]
     },
     {
      "id": "C6",
-     "text": "Su Bống cho bạn một nửa số bi rồi được cho thêm 2 viên thì còn 12 viên. Hỏi lúc đầu em có bao nhiêu viên bi?",
+     "text": "Mảnh vườn hình chữ nhật có chu vi 40 m, chiều dài và chiều rộng theo tỉ số 3 : 2. Tính chiều dài, chiều rộng.",
      "answerKey": {
       "parts": [
        {
-        "label": "số bi lúc đầu",
-        "value": 20
+        "label": "chiều dài, tính bằng mét",
+        "value": 12
+       },
+       {
+        "label": "chiều rộng, tính bằng mét",
+        "value": 8
        }
       ]
      },
-     "solutionNarrative": "$12 - 2 = 10$; $10  \\times  2 = 20$ viên.",
+     "solutionNarrative": "Tổng = nửa chu vi = 20 m; một phần 4 → dài 12 m; rộng 8 m. Thử: (12 + 8) × 2 = 40 ✓.",
      "hints": [
-      "Đi lùi: bỏ phần được cho thêm ra đã.",
-      "Con số ấy chính là NỬA số bi ban đầu."
+      "TỔNG đang trốn trong chữ chu vi.",
+      "Nửa chu vi mới là tổng dài và rộng."
      ]
     },
     {
      "id": "C7",
-     "text": "An có một số nhãn vở. An cho Bình 5 chiếc, rồi cho Cúc MỘT NỬA số còn lại thì An còn 9 chiếc. Hỏi lúc đầu An có bao nhiêu nhãn vở?",
+     "text": "Tổng số tuổi của hai mẹ con là 40, tuổi mẹ gấp 4 lần tuổi con. Tính tuổi mỗi người.",
      "answerKey": {
-      "value": 9
+      "parts": [
+       {
+        "label": "tuổi con",
+        "value": 8
+       },
+       {
+        "label": "tuổi mẹ",
+        "value": 32
+       }
+      ]
      },
-     "solutionNarrative": "Trước khi cho Cúc: $9  \\times  2 = 18$ (vì 9 là nửa còn lại); trước khi cho Bình: $18 + 5 = 23$ nhãn vở. Thử xuôi: 23 → 18 → 9 ✓.",
+     "solutionNarrative": "Tỉ mẹ : con = 4 : 1, tổng phần 5; một phần 40 : 5 = 8 → con 8 tuổi; mẹ 32 tuổi.",
      "hints": [
-      "Gỡ ngược: việc cho sau thì gỡ trước.",
-      "Con số còn lại là nửa của phần còn sau lần cho đầu."
+      "Dịch chữ gấp bốn thành tỉ.",
+      "Tổng số phần rồi tới một phần."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Số kẹo của Su Bống sau khi mẹ mua thêm đúng bằng số đang có (tức gấp đôi lên), rồi em ăn 6 cái thì còn lại đúng bằng số kẹo ban đầu. Hỏi ban đầu em có mấy cái kẹo?",
+     "text": "Sân bóng mini hình chữ nhật có chu vi 60 m, chiều rộng bằng một nửa chiều dài. Tính chiều dài và chiều rộng. (Hai lớp cải trang — lột đủ cả hai!)",
      "answerKey": {
-      "value": 6
+      "parts": [
+       {
+        "label": "chiều dài, tính bằng mét",
+        "value": 20
+       },
+       {
+        "label": "chiều rộng, tính bằng mét",
+        "value": 10
+       }
+      ]
      },
-     "solutionNarrative": "Gấp đôi rồi ăn 6 thì về đúng số cũ → phần \"gấp thêm\" đúng bằng 6 cái đã ăn → ban đầu có 6 cái kẹo. Thử: 6 → 12 → ăn 6 → 6 ✓.",
+     "solutionNarrative": "Lột hai lớp: tổng = 60 : 2 = 30; tỉ rộng : dài = 1 : 2 → một phần 30 : 3 = 10 → rộng 10 m; dài 20 m. Thử: (20 + 10) × 2 = 60 ✓; 10 = 20 : 2 ✓.",
      "hints": [
-      "Gấp đôi nghĩa là thêm đúng một phần bằng số cũ.",
-      "Phần thêm ấy bị ăn hết — vậy nó bằng bao nhiêu?"
+      "Hai lớp cải trang — lột cả tổng lẫn tỉ.",
+      "Nửa chu vi ra tổng; chữ một nửa ra tỉ."
      ]
     },
     {
      "id": "C9",
-     "text": "Qua mỗi nhịp của cây cầu thần, số tiền trong túi được GẤP ĐÔI, nhưng qua xong mỗi nhịp phải trả phí 8 nghìn đồng. Một người qua 3 nhịp thì vừa hết sạch tiền. Hỏi lúc đầu người ấy có bao nhiêu tiền? (Đi ngược từ con số 0!)",
+     "text": "Số thứ nhất bằng 2/3 số thứ hai, tổng hai số bằng 45. Tìm hai số — và giải thích vì sao 'bằng 2/3 của' lại dịch thành tỉ số 2 : 3.",
      "answerKey": {
       "parts": [
        {
-        "label": "số tiền lúc đầu, tính bằng nghìn đồng",
-        "value": 7
+        "label": "số bé",
+        "value": 18
+       },
+       {
+        "label": "số lớn",
+        "value": 27
        }
       ]
      },
-     "solutionNarrative": "Đi ngược từ 0: trước phí nhịp 3: $0 + 8 = 8$ → trước gấp đôi: $8 : 2 = 4$; trước nhịp 2: ($4 + 8$) : $2 = 6$; trước nhịp 1: ($6 + 8$) : $2 = 7$ → lúc đầu 7 nghìn đồng. Thử xuôi: 7 → $14 - 8 = 6$ → $12 - 8 = 4$ → $8 - 8 = 0$ ✓.",
+     "solutionNarrative": "\"bằng 2/3 của\" nghĩa là số thứ nhất chiếm 2 phần khi số thứ hai chiếm 3 phần → tỉ 2 : 3; một phần 45 : 5 = 9 → hai số là 18 và 27.",
      "hints": [
-      "Đi ngược từ con số 0.",
-      "Mỗi nhịp gỡ hai bước: cộng lại phí, rồi chia đôi."
+      "Số thứ nhất chiếm mấy ô khi số thứ hai chiếm mấy ô?",
+      "Có tỉ rồi thì chia tổng cho tổng số phần."
      ]
     }
    ]
@@ -325,7 +402,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Tính ngược từ cuối là đi từ kết quả cuối cùng, mỗi bước làm phép tính ngược lại.",
+    "text": "\"Gấp rưỡi\" nghĩa là tỉ số 3 : 2.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -334,61 +411,61 @@
    },
    {
     "id": "Q2",
-    "text": "Phép ngược của \"nhân 3\" là \"trừ 3\".",
+    "text": "\"Bằng một nửa\" nghĩa là tỉ số 2 : 1.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Ngược của nhân 3 là CHIA 3."
+    "solutionNarrative": "Bằng một nửa là tỉ 1 : 2."
    },
    {
     "id": "Q3",
-    "text": "Nghĩ một số, nhân 2 rồi cộng 3 được 19. Số đã nghĩ là:",
+    "text": "Tổng 24, số lớn gấp 3 số bé. Số bé là:",
     "format": "mcq",
     "choices": [
-     "A. 8",
-     "B. 11",
-     "C. 16"
+     "A. 6",
+     "B. 8",
+     "C. 18"
     ],
     "answerKey": {
-     "choice": "A. 8"
+     "choice": "A. 6"
     },
-    "solutionNarrative": "($19 - 3$) : $2 = 8$."
+    "solutionNarrative": "24 : 4 = 6."
    },
    {
     "id": "Q4",
-    "text": "Nghĩ một số, trừ 5 rồi chia 2 được 6. Số đã nghĩ là:",
+    "text": "TBC hai số là 15, tỉ số 1 : 2. Số lớn là:",
     "format": "mcq",
     "choices": [
-     "A. 17",
-     "B. 7",
-     "C. 22"
+     "A. 20",
+     "B. 10",
+     "C. 15"
     ],
     "answerKey": {
-     "choice": "A. 17"
+     "choice": "A. 20"
     },
-    "solutionNarrative": "$6  \\times  2 + 5 = 17$."
+    "solutionNarrative": "Tổng 30, một phần 10, số lớn 20."
    },
    {
     "id": "Q5",
-    "text": "Cho đi một nửa số bi thì còn 7 viên. Lúc đầu có:",
+    "text": "Chu vi 36 m, dài : rộng = 2 : 1. Chiều rộng là:",
     "format": "mcq",
     "choices": [
-     "A. 14 viên",
-     "B. 9 viên",
-     "C. 21 viên"
+     "A. 6 m",
+     "B. 12 m",
+     "C. 9 m"
     ],
     "answerKey": {
-     "choice": "A. 14 viên"
+     "choice": "A. 6 m"
     },
-    "solutionNarrative": "$7  \\times  2 = 14$ viên."
+    "solutionNarrative": "Nửa chu vi 18, một phần 6, rộng 6 m."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Trò \"ảo thuật đọc ý nghĩ\": con nghĩ một số, làm theo chuỗi phép bố mẹ đọc, nói kết quả cuối — bố mẹ \"đoán\" trúng số đầu bằng tính ngược. Rồi ĐỔI VAI: con làm ảo thuật gia, tự thiết kế chuỗi phép — thiết kế được là hiểu tận gốc.",
-  "homeActivity": "Khẩu quyết \"vào sau ra trước\" (như xếp ba lô) chữa dứt điểm lỗi đảo sai thứ tự — nhắc mỗi khi con vẽ chiều ngược.",
-  "watchFor": "NÊN: bắt buộc chuyến thử XUÔI ở mọi bài. KHÔNG NÊN: chuỗi có \"cho đi một nửa\" lồng hai ba tầng (\"cho $\\frac{1}{2}$, rồi lại cho $\\frac{1}{3}$ chỗ còn lại...\") — đa tầng phân số hẹn lớp 5."
+  "onComplete": "Chơi \"phiên dịch viên\": bố mẹ nói một câu đời thường có tỉ ẩn (\"bố cao gấp rưỡi con\", \"tiền điện tháng này bằng 2/3 tháng trước\"), con hô ngay tỉ số. Mỗi bữa cơm ba câu là đủ thuộc từ điển.",
+  "homeActivity": "Bài hai lớp cải trang nên chấm theo hai gạch đầu dòng: đã lột áo TỔNG chưa? đã dịch TỈ chưa? — thiếu gạch nào bổ sung gạch ấy, không cần làm lại từ đầu.",
+  "watchFor": "NÊN: cho con tự sáng tác đề cải trang đố lại bố mẹ — ai ra đề tinh vi hơn người đó hiểu sâu hơn. KHÔNG NÊN: tỉ kiểu phần trăm (\"bằng 75% của\") — phần trăm hẹn lớp 5, giờ dừng ở các phân số quen 1/2, 2/3."
  },
  "figureSpec": [
   {
@@ -397,28 +474,20 @@
     "hook"
    ],
    "file": "figures/L4H_B29_MO.png",
-   "caption": "Băng chuyền chạy xuôi, chỉ biết con số ở cuối.",
-   "sha256_16": "726909bd85c09476",
+   "caption": "\"Gấp rưỡi\" đã được dịch thành 3 phần so với 2 phần.",
+   "sha256_16": "0f9b19903610ee9d",
    "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L4H_B29_G1",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L4H_B29_G1.png",
-   "caption": "Đi ngược băng chuyền, mỗi trạm đảo phép tính.",
-   "sha256_16": "bd69a8eb3d4433cd",
-   "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Bài 6 con đã \"bóc ngoặc như bóc hành\" để tìm X — đi lùi từng lớp một. Hôm nay kỹ thuật ấy thành phương pháp mang tên riêng: TÍNH NGƯỢC TỪ CUỐI. Đề kể một hành trình biến hình dài (nhân, trừ, chia, cộng, cho đi một nửa...) và chỉ tiết lộ con số CUỐI CÙNG — sẽ đi ngược băng chuyền, mỗi trạm làm phép NGHỊCH, lần về tận điểm xuất phát.",
+ "hatMam": "Bài 23 đề khai sẵn cả tổng lẫn tỉ. Nhưng con còn lạ gì trò trốn tìm — Chương 6 tổng từng trốn trong chu vi và trung bình cộng, giờ đến lượt TỈ SỐ cải trang vào lời văn: \"gấp đôi\", \"gấp rưỡi\", \"bằng một nửa\". Hôm nay con lắp thêm cuốn TỪ ĐIỂN TỈ ẨN cạnh chiếc máy dò tổng cũ — đủ bộ đồ nghề lột mọi lớp cải trang.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B22"
+   "DL:KSN3.B18",
+   "DL:KSN3.B09"
   ],
   "ten": [
-   "ĐI LÙI NHIỀU TRẠM"
+   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

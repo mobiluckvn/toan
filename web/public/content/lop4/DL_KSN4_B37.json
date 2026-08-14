@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B37",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 37 · PHÂN SỐ TRONG BÀI TOÁN LÃI, BAY HƠI, PHA TRỘN",
+ "title": "Bài 37 · SƠ ĐỒ VEN VÀ NGUYÊN LÝ CHUỒNG THỎ",
  "durationMinutes": 10,
  "so": 37,
- "chuong": 9,
- "tenChuong": "PHÂN SỐ",
- "dangGoc": "PS 5.1 + PS 6.1 + PS 7.1 mức Lớp 4 — Lãi là phân số của vốn · nước chiếm 4/5 khối lượng · thêm nước thì phân số đổi",
+ "chuong": 8,
+ "tenChuong": "BÀI TOÁN CÓ LỜI VĂN",
+ "dangGoc": "LV 8.4 mức Lớp 4 — Ven hai tập hợp (A + B − cả hai) · Dirichlet phát biểu đơn giản",
  "skills": {
-  "bktUnit": "CHUONG:9@G4",
+  "bktUnit": "CHUONG:8@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Giải bài lãi - vốn: lãi là một phân số CỦA VỐN; tìm vốn khi biết giá bán (giá bán = vốn + lãi). Giải bài \"nước chiếm $\\frac{4}{5}$ khối lượng\": tách phần nước và phần CHẤT KHÔ. Khám phá bài nước đường: thêm nước thì lượng đường KHÔNG đổi nhưng phân số của đường trong tổng GIẢM đi.",
-  "kidText": "Khay bánh bán 36 nghìn, lãi bằng một phần năm tiền vốn. Vốn là bao nhiêu nhỉ?",
+  "text": "Vẽ sơ đồ Ven hai vòng và dùng công thức: số thích ít nhất một = A + B − cả hai. Tính số bạn \"chỉ thích một môn\" và số bạn \"không thích môn nào\" từ sơ đồ Ven. Dùng nguyên lý chuồng thỏ (Dirichlet) với mẹo \"tình huống xấu nhất\" để khẳng định chắc chắn các điều kiểu \"có ít nhất 2 bạn sinh cùng tháng\".",
+  "kidText": "Lớp 38 bạn: 25 bạn đá bóng, 18 bạn cờ vua, 8 bạn ghi tên cả hai. Bao nhiêu bạn chẳng vào câu lạc bộ nào?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — SỔ KÉT: LẤY VỐN LÀM THƯỚC: lãi = $\\frac{1}{5}$ vốn → vẽ vốn 5 ô, lãi 1 ô cùng cỡ. Giá bán = vốn + lãi = 6 ô = 36 nghìn → một ô: $36 : 6 = 6$ (nghìn) → vốn = $6  \\times  5 = 30$; lãi = 6 (nghìn). Thử: $30 + 6 = 36$ ✓ và 6 đúng là $\\frac{1}{5}$ của 30 ✓. Còn phép \"$\\frac{1}{5}$ của 36\" của Trí Long ra 7,2 — lệch vì đo nhầm thước!"
+    "text": "Bước 1 — VẼ HAI VÒNG GIAO NHAU: vòng \"bóng đá\" và vòng \"cờ vua\" cài vào nhau; viết 8 vào phần giao trước tiên. Phần \"chỉ đá\": 25 − 8 = 17; phần \"chỉ cờ\": 18 − 8 = 10. Ba ngăn của sơ đồ đã đầy số: 17 - 8 - 10."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — KHO HẠT: TÁCH NƯỚC VÀ CHẤT KHÔ: bao hạt cà phê tươi 20 kg, nước chiếm $\\frac{4}{5}$ khối lượng: nước = $20 : 5  \\times  4 = 16$ (kg) → chất khô = $20 - 16 = 4$ (kg). Chất khô chính là $\\frac{1}{5}$ còn lại — phần \"thật\" của bao hạt, thứ sẽ ở lại khi nước bay hơi dần."
+    "text": "Bước 2 — CÔNG THỨC ÍT NHẤT MỘT: ít nhất một môn = 25 + 18 − 8 = 35 (bạn) — trừ 8 vì nhóm cả-hai bị cộng đúp. Kiểm bằng ba ngăn: 17 + 8 + 10 = 35 ✓. Không tham gia gì: 38 − 35 = 3 (bạn) — ba bạn ấy không tàng hình, chỉ đứng ngoài hai vòng tròn thôi!"
    },
    {
     "id": "K3",
-    "text": "Bước 3 — CỐC NƯỚC ĐƯỜNG: THÊM NƯỚC THÌ ĐIỀU GÌ ĐỔI? cốc nước đường 200 g, đường bằng $\\frac{1}{10}$ khối lượng → đường 20 g, nước 180 g. Rót thêm 100 g nước: khối lượng thành 300 g nhưng ĐƯỜNG VẪN LÀ 20 g (đâu ai bỏ thêm đường!). Phân số của đường bây giờ: $\\frac{20}{300}$ = $\\frac{1}{15}$ — NHỎ đi so với $\\frac{1}{10}$ → cốc nước NHẠT hơn. Phân số thay đổi dù lượng đường đứng im!"
+    "text": "Bước 3 — NGUYÊN LÝ CHUỒNG THỎ: câu đố cô chủ nhiệm tặng thêm: \"không cần xem sổ, cô dám chắc trong 13 bạn tổ Một có 2 bạn sinh cùng tháng — vì sao?\" Một năm chỉ có 12 tháng — như 12 chiếc chuồng; nhét 13 chú thỏ vào 12 chuồng thì DỨT KHOÁT có chuồng chứa từ 2 thỏ. Chắc chắn 100% mà chưa cần hỏi ai sinh tháng nào!"
    },
    {
     "id": "K4",
-    "text": "Bước 4 — MẸO VÀNG XUYÊN BA BÀI: mỗi câu chuyện có một thứ KHÔNG ĐỔI để bám: bài lãi — cái thước là VỐN; bài bay hơi — CHẤT KHÔ ở nguyên; bài pha loãng — LƯỢNG ĐƯỜNG ở nguyên. Tìm ra \"mỏ neo\" rồi mới đụng đến phân số — đúng tinh thần Bài 36: bất biến trước, biến hình sau."
+    "text": "Bước 4 — MẸO TÌNH HUỐNG XẤU NHẤT: muốn thấy vì sao \"chắc chắn\", hãy thử tình huống XẤU NHẤT cho kết luận: cố xếp mỗi tháng một bạn — xếp được tối đa 12 bạn; bạn thứ 13 buộc phải chen vào tháng đã có người. Bài bi cùng chiêu: túi có bi 4 màu, muốn CHẮC có 2 viên cùng màu phải lấy 4 + 1 = 5 viên (xấu nhất là 4 viên đầu mỗi viên một màu)."
    }
   ],
-  "mantra": "Đọc đề phân số ứng dụng, hỏi hai câu: ① phân số này \"CỦA\" ai (vốn? khối lượng cả cốc?) — vẽ ô phần theo đúng gốc ấy; ② thứ gì KHÔNG ĐỔI trong câu chuyện (chất khô, lượng đường, vốn nhập) — bám vào nó mà lần. Giá bán = vốn + lãi: cộng Ô, đừng cộng bừa phân số!",
+  "mantra": "Ven hai vòng: điền phần GIAO trước, rồi ít nhất một = A + B − cả hai; đứng ngoài = tổng − ít nhất một. Chuồng thỏ: đếm số \"chuồng\", đếm số \"thỏ\" — thỏ nhiều hơn chuồng là chắc chắn có chuồng ghép đôi; muốn biết cần lấy mấy để \"chắc chắn\", hãy dựng tình huống xấu nhất rồi cộng 1.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Bài nước đường: \"cốc 200 g có đường bằng $\\frac{1}{10}$ khối lượng; rót thêm 100 g nước thì đường bằng mấy phần khối lượng mới?\" Trí Long tính: \"Khối lượng mới 300 g; đường vẫn là $\\frac{1}{10}$ chứ sao — có ai đụng vào đường đâu: $300 : 10 = 30$ g đường!\"",
+    "wrong": "Cô hỏi thêm: \"túi cô có bi ba màu xanh - đỏ - vàng, lấy mấy viên thì CHẮC CHẮN có hai viên cùng màu?\" Trí Long đáp gọn: \"Hai viên ạ! Lấy 2 viên là có cặp rồi còn gì.\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Ai không đụng vào đường thì cái KHÔNG đổi là LƯỢNG đường (bao nhiêu gam) hay PHÂN SỐ của đường? Cốc lúc đầu có mấy gam đường — sau khi thêm nước, số gam ấy tự tăng lên 30 được không? Gợi ý 2: Neo vào 20 g đường bất biến, chia cho khối lượng MỚI 300 g rồi rút gọn giúp Trí Long — và cùng cậu ấy nếm thử kết luận: thêm nước thì cốc ngọt hơn hay nhạt đi?"
+    "fix": "Gợi ý 1: Lấy 2 viên mà một xanh một đỏ thì có \"cặp cùng màu\" chưa? Chữ CHẮC CHẮN đòi hỏi đúng trong cả tình huống ĐEN ĐỦI nhất cơ! Gợi ý 2: Tình huống xấu nhất là bốc mãi vẫn chưa trùng màu — kéo dài được tối đa mấy viên khi túi có 3 màu? Cộng thêm 1 viên \"định mệnh\" và trả lời chuẩn giúp Trí Long — rồi thử phát biểu theo kiểu thỏ và chuồng!"
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Giá bán khay bánh: 36 nghìn đồng; lãi bằng $\\frac{1}{5}$ tiền VỐN. Hỏi tiền vốn và tiền lãi?"
+    "narration": "Lớp 38 bạn; 25 bạn đăng ký bóng đá; 18 bạn đăng ký cờ vua; 8 bạn ghi tên cả hai. Hỏi bao nhiêu bạn tham gia ít nhất một câu lạc bộ, và bao nhiêu bạn không tham gia câu lạc bộ nào?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? giá bán khay bánh: 36 nghìn đồng; lãi bằng $\\frac{1}{5}$ tiền VỐN.\nHỎI GÌ? tiền vốn và tiền lãi.\nĐẠI LƯỢNG & ĐƠN VỊ: tiền (nghìn đồng) — phân số $\\frac{1}{5}$ đo theo VỐN, tuyệt đối không phải theo giá bán!\nQUAN HỆ GIỮA CHÚNG: lấy vốn làm thước: vốn 5 ô thì lãi 1 ô; giá bán = vốn + lãi = 6 ô — cả 6 ô ấy đúng bằng 36 nghìn.\nCHỌN CÔNG CỤ: SƠ ĐỒ Ô PHẦN của Chương 7 (gốc là VỐN) + chìa \"giá trị một ô\".\nƯỚC LƯỢNG TRƯỚC: sáu ô ăn 36 → mỗi ô 6 nghìn → vốn cỡ ba chục.",
+    "narration": "CHO GÌ? lớp 38 bạn; 25 bạn đăng ký bóng đá; 18 bạn đăng ký cờ vua; 8 bạn ghi tên cả hai.\nHỎI GÌ? bao nhiêu bạn tham gia ít nhất một câu lạc bộ, và bao nhiêu bạn không tham gia câu lạc bộ nào.\nĐẠI LƯỢNG & ĐƠN VỊ: số bạn (bạn) — mỗi bạn chỉ được đếm MỘT lần dù ghi tên mấy tờ!\nQUAN HỆ GIỮA CHÚNG: nhóm \"cả hai\" nằm ở phần hai vòng tròn GIAO NHAU — cộng 25 + 18 là đếm nhóm ấy hai lần, phải trừ đi một lần.\nCHỌN CÔNG CỤ: SƠ ĐỒ VEN hai vòng + công thức: ít nhất một = A + B − cả hai.\nƯỚC LƯỢNG TRƯỚC: ít nhất một cỡ 43 − 8 = 35 → chừng vài ba bạn đứng ngoài cả hai vòng.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — hỏi cho ra: phân số này \"của\" ai?"
+    "nhan": "NHỊP 1, DỊCH — từ hai tờ danh sách sang hai vòng tròn"
    },
    {
     "id": "S3",
@@ -104,93 +104,75 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: sổ két chốt gọn: \"Khay bánh: vốn 30 — lãi 6 — bán 36 (nghìn đồng). Mai nhập hàng cứ mức vốn 30 mà đàm phán!\" Chị Ngọc Anh dán tờ ghi lên két, khen ban kỹ thuật \"đáng đồng lương bằng... bánh\".\nSOI: soi ba lớp: $30 + 6 = 36$ ✓; $6 = 30 : 5$ ✓; và phản chứng: nếu theo Trí Long lãi 7,2 thì vốn 28,8 — mà 7,2 có bằng $\\frac{1}{5}$ của 28,8 không? $28,8 : 5 = 5,76$ ≠ 7,2 — tự mâu thuẫn, loại!\nDÙNG NGOÀI ĐỜI: đọc bảng \"lãi suất\", nhãn \"cà phê nguyên chất 96%\", vị cốc nước cam pha loãng — ba bài hôm nay là ba lăng kính con sẽ dùng cả đời khi nhìn tiền nong và đồ ăn thức uống.",
+    "narration": "LẮP: báo cáo gửi cô chủ nhiệm: \"35 bạn tham gia ít nhất một câu lạc bộ (17 chỉ đá - 8 cả hai - 10 chỉ cờ); 3 bạn chưa tham gia gì — cô mời ba bạn ấy vào đội cổ vũ là lớp phủ kín 100%!\" Cô cười: \"Vừa đếm chuẩn vừa hiến kế — đúng là người giải.\"\nSOI: soi hai đường: công thức 25 + 18 − 8 = 35 và cộng ba ngăn 17 + 8 + 10 = 35 — hai lối một đáp số; cộng nốt 3 bạn ngoài vòng: 35 + 3 = 38 khớp sĩ số ✓.\nDÙNG NGOÀI ĐỜI: thống kê ai học vẽ - ai học đàn, ai thích phở - ai thích bún; và mẹo chuồng thỏ giúp con \"nói chắc như đinh\" trong các trò đố vui — sức mạnh của suy luận thuần túy!",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Bài nước đường: \"cốc 200 g có đường bằng $\\frac{1}{10}$ khối lượng; rót thêm 100 g nước thì đường bằng mấy phần khối lượng mới?\" Trí Long tính: \"Khối lượng mới 300 g; đường vẫn là $\\frac{1}{10}$ chứ sao — có ai đụng vào đường đâu: $300 : 10 = 30$ g đường!\"",
+    "narration": "Cô hỏi thêm: \"túi cô có bi ba màu xanh - đỏ - vàng, lấy mấy viên thì CHẮC CHẮN có hai viên cùng màu?\" Trí Long đáp gọn: \"Hai viên ạ! Lấy 2 viên là có cặp rồi còn gì.\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Một cửa hàng bán khay bánh được 36 nghìn đồng, tính ra lãi bằng $\\frac{1}{5}$ tiền vốn. Tính tiền vốn và tiền lãi.",
+  "problem": "Lớp 4A có 38 học sinh, trong đó 25 bạn thích bóng đá, 18 bạn thích cờ vua, 8 bạn thích cả hai môn. Hỏi lớp có bao nhiêu bạn không thích môn nào trong hai môn trên?",
   "steps": [
    {
-    "show": "Giá bán: 36 nghìn; lãi = $\\frac{1}{5}$ VỐN.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Tìm vốn và lãi.",
-    "phan": "tomtat"
+    "show": "Lớp: 38 bạn; thích đá: 25; thích cờ: 18; cả hai: 8."
    },
    {
-    "show": "Viết hoa chữ VỐN — gốc của phân số, chỗ sống còn của bài.",
-    "phan": "tomtat"
+    "show": "Tìm số bạn không thích môn nào."
    },
    {
-    "show": "Sơ đồ (lấy vốn làm thước)",
-    "phan": "tomtat"
+    "show": "Bốn con số — chú ý nhất con số \"cả hai\"."
    },
    {
-    "show": "Vốn: [—][—][—][—][—]",
-    "phan": "tomtat"
+    "show": "Sơ đồ Ven"
    },
    {
-    "show": "Lãi: [—]",
-    "phan": "tomtat"
+    "show": "( chỉ đá: 17 ( cả hai: 8 ) chỉ cờ: 10 )"
    },
    {
-    "show": "Giá bán = vốn + lãi = 6 ô = 36 nghìn.",
-    "phan": "tomtat"
+    "show": "Bên ngoài hai vòng: ? bạn"
    },
    {
-    "show": "Lãi 1 ô đứng cạnh vốn 5 ô — giá bán ôm trọn 6 ô.",
-    "phan": "tomtat"
+    "show": "Điền phần giao 8 trước, hai phần \"chỉ\" tính bằng phép trừ."
    },
    {
-    "show": "Vì lãi bằng $\\frac{1}{5}$ vốn nên nếu vốn gồm 5 phần thì lãi gồm 1 phần.",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Giá bán gồm: $5 + 1 = 6$ (phần)",
-    "phan": "giai"
+    "show": "Số bạn thích ít nhất một trong hai môn là"
    },
    {
-    "show": "Giá trị một phần là: $36 : 6 = 6$ (nghìn đồng)",
-    "phan": "giai"
+    "show": "25 + 18 − 8 = 35 (bạn)"
    },
    {
-    "show": "Tiền vốn là: $6  \\times  5 = 30$ (nghìn đồng)",
-    "phan": "giai"
+    "show": "(trừ 8 vì các bạn thích cả hai môn bị đếm hai lần)"
    },
    {
-    "show": "Tiền lãi là: $36 - 30 = 6$ (nghìn đồng)",
-    "phan": "giai"
+    "show": "Số bạn không thích môn nào là: 38 − 35 = 3 (bạn)"
    },
    {
-    "show": "Quy trình 4 bước của Chương 7 tái xuất — gốc phần là VỐN.",
-    "phan": "giai"
+    "show": "Dòng trong ngoặc giải thích phép trừ 8 — linh hồn công thức Ven."
    },
    {
-    "show": "Đáp số: vốn 30 nghìn đồng ; lãi 6 nghìn đồng.",
-    "phan": "dapso"
+    "show": "Đáp số: 3 bạn."
    },
    {
-    "show": "Đáp số đủ hai khoản.",
-    "phan": "ghichu"
+    "show": "Đáp số kèm đơn vị."
    },
    {
-    "show": "Thử lại: $30 + 6 = 36$ ✓ ; $30 : 5 = 6$ — lãi đúng bằng $\\frac{1}{5}$ vốn ✓",
-    "phan": "thulai"
+    "show": "Thử lại: 17 + 8 + 10 + 3 = 38 — đủ sĩ số cả lớp ✓"
    },
    {
-    "show": "Thử kép: khớp giá bán VÀ khớp phân số lãi.",
-    "phan": "thulai"
+    "show": "Cộng đủ BỐN ngăn (kể cả ngoài vòng) phải ra sĩ số."
    }
   ]
  },
@@ -199,188 +181,129 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tiền vốn là 30 nghìn đồng, lãi bằng $\\frac{1}{5}$ vốn. Tính tiền lãi và giá bán.",
+     "text": "Lớp có 25 bạn thích bóng đá, trong đó 8 bạn thích cả bóng đá lẫn cờ vua. Hỏi bao nhiêu bạn CHỈ thích bóng đá?",
      "answerKey": {
       "parts": [
        {
-        "label": "tiền lãi, tính bằng nghìn đồng",
-        "value": 6
-       },
-       {
-        "label": "giá bán, tính bằng nghìn đồng",
-        "value": 36
+        "label": "số bạn chỉ thích bóng đá",
+        "value": 17
        }
       ]
      },
-     "solutionNarrative": "Lãi $30 : 5 = 6$ nghìn; giá bán $30 + 6 = 36$ nghìn.",
+     "solutionNarrative": "25 − 8 = 17 bạn chỉ thích bóng đá.",
      "hints": [
-      "Lấy VỐN làm thước: vốn năm ô, lãi một ô.",
-      "Giá bán là vốn cộng lãi."
+      "Điền phần GIAO trước rồi mới tính hai cánh.",
+      "Chỉ thích một môn = số của môn ấy trừ phần giao."
      ]
     },
     {
      "id": "C2",
-     "text": "Bao hạt tươi nặng 20 kg, nước chiếm $\\frac{4}{5}$ khối lượng. Tính khối lượng nước và khối lượng chất khô.",
+     "text": "Với 25 bạn thích đá, 18 bạn thích cờ, 8 bạn thích cả hai — bao nhiêu bạn thích ít nhất một môn?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "khối lượng nước, tính bằng ki-lô-gam",
-        "value": 16
-       },
-       {
-        "label": "khối lượng chất khô, tính bằng ki-lô-gam",
-        "value": 4
-       }
-      ]
+      "value": 35
      },
-     "solutionNarrative": "Nước $20 : 5  \\times  4 = 16$ kg; chất khô $20 - 16 = 4$ kg.",
+     "solutionNarrative": "25 + 18 − 8 = 35 bạn.",
      "hints": [
-      "Chia theo mẫu rồi nhân theo tử.",
-      "Chất khô là phần còn lại của bao."
+      "Cộng thô rồi trừ đi phần bị cộng đúp.",
+      "Nhóm cả-hai bị đếm hai lần."
      ]
     },
     {
      "id": "C3",
-     "text": "Cốc nước đường nặng 200 g, đường bằng $\\frac{1}{10}$ khối lượng. Tính số gam đường.",
+     "text": "Lớp có 38 bạn. Dùng kết quả Câu 2, tính số bạn không thích môn nào.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số gam đường",
-        "value": 20
-       }
-      ]
+      "value": 3
      },
-     "solutionNarrative": "$200 : 10 = 20$ g đường.",
+     "solutionNarrative": "38 − 35 = 3 bạn.",
      "hints": [
-      "Phân số này là CỦA khối lượng cả cốc.",
-      "Chia cho mẫu rồi lấy một cụm."
+      "Đứng ngoài = sĩ số trừ phần ít-nhất-một.",
+      "Dùng lại kết quả của câu ngay trước."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Bán khay bánh được 36 nghìn đồng, lãi bằng $\\frac{1}{5}$ tiền vốn. Tính tiền vốn.",
+     "text": "Lớp 4B có 30 bạn, ai cũng thích ít nhất một trong hai môn: 20 bạn thích toán, 15 bạn thích văn. Hỏi bao nhiêu bạn thích CẢ HAI môn?",
      "answerKey": {
-      "value": 30
+      "value": 5
      },
-     "solutionNarrative": "Giá bán = 6 phần = 36 → một phần 6 → vốn 30 nghìn đồng.",
+     "solutionNarrative": "Ai cũng thích ít nhất một môn → 30 = 20 + 15 − cả hai → cả hai = 35 − 30 = 5 bạn.",
      "hints": [
-      "Vẽ ô theo đúng gốc — gốc ở đây là VỐN.",
-      "Giá bán gồm mấy ô cả thảy?"
+      "Cộng thô lên xem vượt sĩ số bao nhiêu.",
+      "Phần vượt ấy chính là phần bị đếm hai lần."
      ]
     },
     {
      "id": "C5",
-     "text": "Bán một món hàng được 48 nghìn đồng, lãi bằng $\\frac{1}{5}$ tiền vốn. Tính tiền vốn và tiền lãi.",
+     "text": "Vì sao trong 13 bạn bất kỳ luôn có ít nhất 2 bạn sinh cùng tháng? Trình bày theo kiểu thỏ và chuồng.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "tiền vốn, tính bằng nghìn đồng",
-        "value": 40
-       },
-       {
-        "label": "tiền lãi, tính bằng nghìn đồng",
-        "value": 8
-       }
-      ]
+      "value": 2
      },
-     "solutionNarrative": "Một phần $48 : 6 = 8$ → vốn 40 nghìn; lãi 8 nghìn.",
+     "solutionNarrative": "12 tháng là 12 \"chuồng\", 13 bạn là 13 \"thỏ\" — xấu nhất mỗi tháng một bạn cũng chỉ xếp được 12; bạn thứ 13 buộc rơi vào tháng đã có người → chắc chắn có 2 bạn cùng tháng.",
      "hints": [
-      "Giá bán bằng vốn cộng lãi, tính theo ô.",
-      "Chia giá bán cho tổng số ô ra một ô."
+      "Đếm số CHUỒNG: một năm có mấy tháng?",
+      "Thử tình huống xấu nhất: mỗi tháng xếp một bạn."
      ]
     },
     {
      "id": "C6",
-     "text": "Bao hạt tươi 30 kg có nước chiếm $\\frac{4}{5}$ khối lượng. Tính khối lượng chất khô.",
+     "text": "Túi đựng bi gồm 4 màu. Phải lấy ra ít nhất mấy viên để chắc chắn có 2 viên cùng màu?",
      "answerKey": {
-      "value": 6
+      "parts": [
+       {
+        "label": "phải lấy ít nhất mấy viên",
+        "value": 5
+       }
+      ]
      },
-     "solutionNarrative": "Nước 24 kg → chất khô $30 - 24 = 6$ kg.",
+     "solutionNarrative": "Xấu nhất 4 viên đầu mỗi viên một màu → lấy 4 + 1 = 5 viên là chắc chắn có 2 viên cùng màu.",
      "hints": [
-      "Tính phần nước trước rồi trừ.",
-      "Hoặc nhìn thẳng: chất khô chiếm mấy phần?"
+      "Màu là chuồng, viên bi là thỏ.",
+      "Xấu nhất: mỗi màu bốc đúng một viên rồi mới bốc tiếp."
      ]
     },
     {
      "id": "C7",
-     "text": "Cốc nước đường 200 g có đường bằng $\\frac{1}{10}$ khối lượng. Rót thêm 100 g nước. Hỏi bây giờ đường bằng mấy phần khối lượng cả cốc? Cốc ngọt hơn hay nhạt đi?",
+     "text": "Khối 4 có 40 bạn: 25 bạn tham gia văn nghệ, 20 bạn tham gia thể thao, 10 bạn tham gia cả hai. Hỏi bao nhiêu bạn chỉ tham gia ĐÚNG MỘT hoạt động, và bao nhiêu bạn không tham gia gì?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "đường bằng mấy phần khối lượng",
-        "options": [
-         "1/15",
-         "1/10",
-         "1/5"
-        ],
-        "value": "1/15"
-       },
-       {
-        "label": "cốc ngọt hơn hay nhạt đi",
-        "options": [
-         "nhạt đi",
-         "ngọt hơn",
-         "không đổi"
-        ],
-        "value": "nhạt đi"
-       }
-      ]
+      "value": 5
      },
-     "solutionNarrative": "Đường vẫn 20 g; khối lượng mới 300 g → đường bằng $\\frac{20}{300}$ = $\\frac{1}{15}$ khối lượng — nhỏ hơn $\\frac{1}{10}$ → cốc NHẠT đi.",
+     "solutionNarrative": "Chỉ văn nghệ 25 − 10 = 15; chỉ thể thao 20 − 10 = 10 → đúng một hoạt động: 15 + 10 = 25 bạn; ít nhất một: 35 → không tham gia: 40 − 35 = 5 bạn.",
      "hints": [
-      "Thứ KHÔNG ĐỔI ở đây là lượng đường.",
-      "Khối lượng cả cốc bây giờ là bao nhiêu?"
+      "Điền phần giao trước rồi tính hai cánh riêng.",
+      "Đúng một hoạt động là cộng hai cánh, chưa tính phần giao."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Sau khi phơi, phần chất khô của mẻ hạt là 5 kg và người ta biết lúc còn tươi, chất khô chỉ chiếm $\\frac{1}{5}$ khối lượng. Hỏi mẻ hạt lúc tươi nặng bao nhiêu ki-lô-gam, trong đó bao nhiêu là nước?",
+     "text": "Lớp có 38 bạn. Chứng tỏ rằng có ít nhất 4 bạn sinh cùng một tháng. (Xấu nhất: mỗi tháng chỉ có 3 bạn thì cả lớp được tối đa mấy bạn?)",
      "answerKey": {
-      "parts": [
-       {
-        "label": "mẻ hạt lúc tươi, tính bằng ki-lô-gam",
-        "value": 25
-       },
-       {
-        "label": "khối lượng nước, tính bằng ki-lô-gam",
-        "value": 20
-       }
-      ]
+      "value": 4
      },
-     "solutionNarrative": "Chất khô 5 kg là $\\frac{1}{5}$ khối lượng tươi → một phần 5 kg → tươi $5  \\times  5 = 25$ kg; nước $25 - 5 = 20$ kg.",
+     "solutionNarrative": "Xấu nhất mỗi tháng chỉ 3 bạn → tối đa 12 × 3 = 36 bạn; lớp có 38 > 36 → phải có tháng chứa ít nhất 4 bạn.",
      "hints": [
-      "Bài ngược: con số ấy ứng với mấy cụm?",
-      "Tìm một cụm rồi nhân với mẫu."
+      "Thử tình huống xấu nhất: mỗi tháng chỉ ba bạn.",
+      "Xếp kiểu ấy thì được tối đa bao nhiêu bạn?"
      ]
     },
     {
      "id": "C9",
-     "text": "Nhập món hàng vốn 50 nghìn đồng, muốn lãi bằng $\\frac{1}{5}$ vốn thì phải bán giá bao nhiêu? Còn nếu chỉ bán được 55 nghìn thì lãi thực tế bằng mấy phần của vốn?",
+     "text": "Túi có 6 bi đỏ, 5 bi xanh, 4 bi vàng. Nhắm mắt lấy ít nhất mấy viên để chắc chắn có 2 viên KHÁC màu nhau? (Đề đảo chiều đấy — tình huống xấu nhất giờ là bốc mãi vẫn... một màu!)",
      "answerKey": {
       "parts": [
        {
-        "label": "giá bán để lãi bằng 1/5 vốn, tính bằng nghìn đồng",
-        "value": 60
-       },
-       {
-        "label": "lãi thực bằng mấy phần vốn",
-        "options": [
-         "1/10",
-         "1/5",
-         "1/11"
-        ],
-        "value": "1/10"
+        "label": "phải lấy ít nhất mấy viên",
+        "value": 7
        }
       ]
      },
-     "solutionNarrative": "Lãi mong muốn $50 : 5 = 10$ → giá bán 60 nghìn. Nếu bán 55: lãi thực 5 nghìn = $\\frac{5}{50}$ = $\\frac{1}{10}$ vốn — chỉ được nửa mức mong muốn.",
+     "solutionNarrative": "Xấu nhất là bốc mãi MỘT màu: nhiều nhất 6 viên (toàn đỏ) → lấy 6 + 1 = 7 viên là chắc chắn có 2 viên khác màu.",
      "hints": [
-      "Câu đầu tính xuôi: tìm lãi rồi cộng vào vốn.",
-      "Câu sau: lãi thực bao nhiêu, rồi đem so với vốn."
+      "Đề đảo chiều — xấu nhất là bốc mãi vẫn một màu.",
+      "Màu nào nhiều nhất, bốc hết màu ấy được mấy viên?"
      ]
     }
    ]
@@ -391,7 +314,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Giá bán bằng tiền vốn cộng tiền lãi.",
+    "text": "Số bạn thích ít nhất một môn bằng A + B trừ đi số bạn thích cả hai.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -400,61 +323,61 @@
    },
    {
     "id": "Q2",
-    "text": "Lãi bằng $\\frac{1}{5}$ vốn và vốn là 20 nghìn thì lãi là 5 nghìn.",
+    "text": "13 bạn vẫn có thể mỗi bạn sinh một tháng khác nhau.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Lãi $20 : 5 = 4$ nghìn."
+    "solutionNarrative": "Chỉ có 12 tháng, 13 bạn ắt có 2 bạn trùng."
    },
    {
     "id": "Q3",
-    "text": "Nước chiếm $\\frac{4}{5}$ của bao hạt 10 kg. Khối lượng nước là:",
+    "text": "20 thích toán, 15 thích văn, 5 thích cả hai. Số thích ít nhất một môn:",
     "format": "mcq",
     "choices": [
-     "A. 8 kg",
-     "B. 2 kg",
-     "C. 5 kg"
+     "A. 30",
+     "B. 35",
+     "C. 40"
     ],
     "answerKey": {
-     "choice": "A. 8 kg"
+     "choice": "A. 30"
     },
-    "solutionNarrative": "$10 : 5  \\times  4 = 8$ kg."
+    "solutionNarrative": "20 + 15 − 5 = 30."
    },
    {
     "id": "Q4",
-    "text": "Giá bán 24 nghìn, lãi bằng $\\frac{1}{5}$ vốn. Tiền vốn là:",
+    "text": "Bi 3 màu — lấy chắc chắn có 2 viên cùng màu cần:",
     "format": "mcq",
     "choices": [
-     "A. 20 nghìn",
-     "B. 19 nghìn",
-     "C. 18 nghìn"
+     "A. 4 viên",
+     "B. 3 viên",
+     "C. 6 viên"
     ],
     "answerKey": {
-     "choice": "A. 20 nghìn"
+     "choice": "A. 4 viên"
     },
-    "solutionNarrative": "$24 : 6  \\times  5 = 20$ nghìn."
+    "solutionNarrative": "3 + 1 = 4 viên."
    },
    {
     "id": "Q5",
-    "text": "Thêm nước vào cốc nước đường thì phần đường so với cả cốc sẽ:",
+    "text": "25 thích đá, 8 thích cả hai. Số CHỈ thích đá là:",
     "format": "mcq",
     "choices": [
-     "A. giảm đi",
-     "B. tăng lên",
-     "C. không đổi"
+     "A. 17",
+     "B. 25",
+     "C. 33"
     ],
     "answerKey": {
-     "choice": "A. giảm đi"
+     "choice": "A. 17"
     },
-    "solutionNarrative": "Lượng đường đứng im mà cả cốc nặng thêm → phần đường giảm."
+    "solutionNarrative": "25 − 8 = 17."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Thí nghiệm nếm được: pha cốc nước đường theo đúng số liệu bài học, rồi thêm nước và nếm trước - sau. Vị giác xác nhận \"phân số giảm\" thuyết phục hơn mọi phép chia.",
-  "homeActivity": "Chơi \"tiệm tạp hóa\": con nhập hàng (vốn), tự định giá theo luật lãi $\\frac{1}{5}$ vốn, bố mẹ làm khách trả giá — sổ két nhỏ dạy cả toán lẫn nếp nghĩ tài chính.",
-  "watchFor": "NÊN: luôn bắt đầu bằng câu \"phân số này CỦA ai?\". KHÔNG NÊN: bài lãi tính theo GIÁ BÁN hay pha trộn hai dung dịch — hai biến thể ấy (PS 5.2, 7.2) ngoài ma trận lớp 4, hẹn lớp sau."
+  "onComplete": "Vẽ Ven của chính gia đình: vòng \"thích phở\" - vòng \"thích bún\", cả nhà tự đứng vào ngăn của mình (kể cả ngăn \"ngoài cả hai vòng\"!) — sơ đồ sống động hơn mọi hình trong sách.",
+  "homeActivity": "Với chuồng thỏ, luôn hỏi cặp câu: \"chuồng là gì, thỏ là gì?\" — gọi tên đúng hai vai là bài nào cũng sáng.",
+  "watchFor": "NÊN: chơi trò \"dám chắc\": con phát biểu một điều chắc chắn 100% về nhóm bạn (không cần hỏi ai) rồi giải thích bằng chuồng thỏ. KHÔNG NÊN: Ven ba vòng tròn — bảy ngăn của nó hẹn lớp 5."
  },
  "figureSpec": [
   {
@@ -463,18 +386,38 @@
     "hook"
    ],
    "file": "figures/L4H_B37_MO.png",
-   "caption": "Vốn 5 phần, lãi 1 phần — tiền bán là 6 phần.",
-   "sha256_16": "6bcbd4583d9b0bfe",
+   "caption": "Hai vòng giao nhau, phần giữa là bạn thích cả hai môn.",
+   "sha256_16": "efa0de09128cbcd7",
    "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B37_C1",
+   "usedIn": [
+    "item:C1"
+   ],
+   "file": "figures/L4H_B37_C1.png",
+   "caption": "Hai vòng giao nhau; phần CHỈ thích một môn còn để dấu hỏi.",
+   "sha256_16": "504f5d3b25592bc1",
+   "mucGoc": "luyenTap"
+  },
+  {
+   "id": "L4H_B37_C1_G",
+   "usedIn": [
+    "item:C1:giai"
+   ],
+   "file": "figures/L4H_B37_C1_G.png",
+   "caption": "Điền vùng giữa trước, hai cánh sau.",
+   "sha256_16": "60a61b98b818e8d7",
+   "mucGoc": "luyenTap"
   }
  ],
- "hatMam": "Trận chung kết của chương: phân số ra đời thật — vào két tiền, vào kho hạt, vào cốc nước đường của tiệm bánh. Ba bài toán, một mẹo vàng chung: mọi phân số đều là \"của\" MỘT AI ĐÓ (của vốn, của khối lượng), và trong mỗi câu chuyện luôn có một thứ KHÔNG ĐỔI để bám vào — y như định luật bất biến con vừa học ở Bài 36.",
+ "hatMam": "Bài 8 con học phần bù — đếm cái KHÔNG để suy ra cái CÓ. Dụng cụ thứ sáu, cũng là món tráng miệng của chương: hai vòng tròn VEN đếm những bạn \"chân trong hai nhóm\", và NGUYÊN LÝ CHUỒNG THỎ — thứ toán kỳ lạ cho phép nói CHẮC CHẮN 100% về điều mình... chưa hề nhìn thấy.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B09"
+   "DL:KSN3.B25"
   ],
   "ten": [
-   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+   "SƠ ĐỒ VEN HAI VÒNG"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

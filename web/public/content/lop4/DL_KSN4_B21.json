@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B21",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 21 · KHI ĐỀ KHÔNG CHO SẴN HIỆU",
+ "title": "Bài 21 · TRUNG BÌNH CỘNG VÀ BÀI TOÁN NGƯỢC",
  "durationMinutes": 10,
  "so": 21,
- "chuong": 6,
- "tenChuong": "TỔNG - HIỆU",
- "dangGoc": "LV 2.3 mức Lớp 4 — Hiệu ẩn: số liền nhau, chẵn - lẻ liền nhau, \"bớt k thì bằng\", \"chuyển k thì hiệu đổi 2k\"",
+ "chuong": 5,
+ "tenChuong": "TRUNG BÌNH CỘNG",
+ "dangGoc": "LV 1.1 mức Lớp 4 — Tính TBC nhiều số · tìm một số khi biết TBC và các số còn lại",
  "skills": {
-  "bktUnit": "CHUONG:6@G4",
+  "bktUnit": "CHUONG:5@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Đọc ra hiệu ẩn: hai số liền nhau (hiệu 1), hai số chẵn hoặc hai số lẻ liền nhau (hiệu 2), \"bớt A đi k thì bằng B\" (hiệu k). Nắm chắc cú lừa: \"chuyển k từ A sang B thì bằng nhau\" nghĩa là A hơn B những 2 × k. Giải trọn bài Tổng - Hiệu có hiệu ẩn và thử lại theo đúng kịch bản của đề.",
-  "kidText": "Hai kệ có 120 cuốn; chuyển 5 cuốn từ kệ A sang kệ B thì bằng nhau. Vậy chúng hơn kém nhau bao nhiêu?",
+  "text": "Hiểu TBC theo nghĩa SAN CHO ĐỀU và tính được TBC của nhiều số: TBC = tổng : số số hạng. Thuộc cây cầu ngược: Tổng = TBC × số số hạng — chìa khóa của mọi bài toán ngược. Tìm một số chưa biết khi biết TBC của cả nhóm và các số còn lại.",
+  "kidText": "Ba trận ghi 2, 5 và 2 bàn. Một con số duy nhất nói lên sức ghi bàn mỗi trận — con tìm ra không?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — THÍ NGHIỆM HAI CHỒNG VỞ: chồng 8 và chồng 6 (hơn nhau 2): chuyển 1 cuốn từ chồng cao sang chồng thấp → 7 và 7: BẰNG NHAU! Chuyển 1 mà san được khoảng cách 2 — vì chồng cao tụt 1 ĐỒNG THỜI chồng thấp dâng 1. Kết luận nóng hổi: \"chuyển k thì bằng\" ⟺ hiệu ban đầu = 2 × k."
+    "text": "Bước 1 — SAN BẰNG TAY TRÊN BẢNG CHIẾN THUẬT: cột 5 nhường 2 viên: mỗi cột 2 nhận 1 viên → ba cột cùng cao 3. Tổng vẫn 9 viên — san chỉ chuyển chỗ, không sinh không mất. Mức đều 3 chính là TRUNG BÌNH CỘNG của 2 ; 5 ; 2."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — TUYÊN ÁN VỤ HAI KỆ: chuyển 5 thì bằng → kệ A hơn kệ B: $5  \\times  2 = 10$ (cuốn). Tổng 120, hiệu 10: kệ A = ($120 + 10$) : $2 = 65$; kệ B = $120 - 65 = 55$ (cuốn). Thử theo đúng kịch bản đề: A đưa 5 → 60; B nhận 5 → 60 — bằng nhau ✓. Trí Long mà lấy hiệu 5 sẽ ra 62,5 cuốn — sách gì mà nửa cuốn!"
+    "text": "Bước 2 — TỪ SAN TAY ĐẾN CÔNG THỨC: san tay lâu, đi đường tắt: gộp cả rổ rồi chia đều — TBC = (2 + 5 + 2) : 3 = 9 : 3 = 3 (bàn). Tổng quát: TBC = TỔNG các số : SỐ các số hạng. Hai bước tính quen thuộc của lớp 3: tổng trước, chia sau."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — SỔ TAY NHỮNG HIỆU ẨN HIỀN LÀNH HƠN: hai số tự nhiên LIỀN NHAU: hiệu 1 (tổng 45 → hai số 22 và 23). Hai số CHẴN liền nhau hoặc hai số LẺ liền nhau: hiệu 2 (tổng 46, chẵn liền nhau → 22 và 24). \"Bớt giỏ A đi 4 quả thì bằng giỏ B\": chỉ MỘT bên thay đổi → hiệu đúng bằng 4 — đừng nhân đôi nhầm chỗ!"
+    "text": "Bước 3 — CÂY CẦU NGƯỢC: từ công thức xuôi suy ra cầu ngược: TỔNG = TBC × số số hạng. Biết TBC của 4 số là 25 → tổng bốn số là 25 × 4 = 100, dù chưa biết từng số! Cây cầu này là lối vào của MỌI bài toán ngược về trung bình cộng."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — PHÂN BIỆT HAI CÚ SỐ NGOẠN MỤC: \"BỚT k thì bằng\" — một bên nhúc nhích → hiệu = k. \"CHUYỂN k thì bằng\" — hai bên cùng nhúc nhích → hiệu = 2k. Câu câu cần nhớ : đếm xem MẤY BÊN thay đổi — một bên giữ nguyên k, hai bên nhân đôi lên!"
+    "text": "Bước 4 — BÀI NGƯỢC TRẬN THỨ TƯ: đội muốn sau 4 trận đạt trung bình 3 bàn mỗi trận. Trận 4 cần ghi mấy bàn? Qua cầu: tổng cần có = 3 × 4 = 12 (bàn); ba trận đầu đã ghi 9 → trận 4 phải ghi 12 − 9 = 3 (bàn). Quy trình ngược chuẩn: tổng cần − tổng đã có = phần còn thiếu."
    }
   ],
-  "mantra": "Sổ tay hiệu ẩn: liền nhau → 1; chẵn (lẻ) liền nhau → 2; \"bớt k thì bằng\" → k; \"chuyển k thì bằng\" → 2k. Trước khi áp công thức, tự hỏi: hiệu này mấy bên cùng thay đổi? Và luôn thử lại theo ĐÚNG kịch bản đề — chuyển thử, bớt thử trên đáp số của mình.",
+  "mantra": "TBC = tổng : số số hạng — nghĩa đời là \"san cho đều\". Gặp bài NGƯỢC: đừng loay hoay với từng số, hãy qua cây cầu TỔNG = TBC × số số hạng trước, rồi lấy tổng trừ những gì đã biết. Mẹo soi nhanh: TBC luôn nằm giữa số bé nhất và số lớn nhất — lọt ra ngoài là sai chắc!",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Trí Long vẫn cay vụ hai kệ, gặp bài mới liền gỡ gạc: \"Hai giỏ cam tổng 40 quả; BỚT giỏ A đi 4 quả thì bằng giỏ B. Lần này tớ không dại nữa — hiệu là $4  \\times  2 = 8$! Giỏ A bằng ($40 + 8$) : $2 = 24$!\"",
+    "wrong": "Thống kê đội bạn ghi 1, 2 và 9 bàn, Trí Long tính vèo: \"Trung bình là (1 + 2 + 9) : 2 = 6 bàn — chia 2 vì phép cộng có 2 dấu cộng!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Câu câu cần nhớ đếm bên: trong đề này, mấy giỏ thay đổi số cam — giỏ A bớt 4, còn giỏ B có được thêm quả nào không? Gợi ý 2: Chỉ một bên thay đổi thì hiệu bằng bao nhiêu? Giải lại rồi thử theo kịch bản: lấy đáp số giỏ A trừ 4 xem có ra đúng giỏ B không — và nhắn Trí Long: thuộc lòng mà không đếm bên thì công thức nào cũng thành bẫy!"
+    "fix": "Gợi ý 1: San cho đều là chia cho SỐ TRẬN hay số... dấu cộng? Đội bạn đá mấy trận? Gợi ý 2: Dùng mẹo soi nhanh để vạch lỗi kiểu khác: nếu trung bình là 6 thì nó phải nằm giữa số bé nhất và lớn nhất — mà 6 so với bộ 1, 2, 9 có \"ở giữa\" hợp lý không khi hai trận tận 1 và 2 bàn? Tính lại giúp Trí Long cho chuẩn."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Hai kệ tổng 120 cuốn; chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ bằng nhau. Hỏi lúc đầu mỗi kệ có bao nhiêu cuốn?"
+    "narration": "Ba trận đấu ghi lần lượt 2 ; 5 ; 2 bàn. Hỏi một con số duy nhất nói lên sức ghi bàn \"mỗi trận\" của đội — công bằng, không thiên vị trận nào?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? hai kệ tổng 120 cuốn; chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ bằng nhau.\nHỎI GÌ? lúc đầu mỗi kệ có bao nhiêu cuốn.\nĐẠI LƯỢNG & ĐƠN VỊ: số sách (cuốn) — chú ý phân biệt số sách TRƯỚC và SAU cú chuyển.\nQUAN HỆ GIỮA CHÚNG: khi chuyển 5 cuốn: kệ A MẤT 5 và kệ B ĐƯỢC 5 — khoảng cách giữa hai kệ khép lại từ CẢ HAI phía, mỗi phía 5.\nCHỌN CÔNG CỤ: THÍ NGHIỆM + suy luận \"khép hai phía\": hiệu thật = $5  \\times  2 = 10$; rồi sơ đồ Tổng - Hiệu chuẩn.\nƯỚC LƯỢNG TRƯỚC: tổng 120, hiệu cỡ chục → hai kệ quanh 60: kệ A hơn 60 chút, kệ B kém 60 chút.",
+    "narration": "CHO GÌ? ba trận đấu ghi lần lượt 2 ; 5 ; 2 bàn.\nHỎI GÌ? một con số duy nhất nói lên sức ghi bàn \"mỗi trận\" của đội — công bằng, không thiên vị trận nào.\nĐẠI LƯỢNG & ĐƠN VỊ: bàn thắng (bàn) theo trận — con số cần tìm cũng mang đơn vị \"bàn mỗi trận\".\nQUAN HỆ GIỮA CHÚNG: nếu san bàn thắng cho ba trận ĐỀU NHAU mà tổng không đổi, thì mức đều ấy đại diện cho cả ba trận.\nCHỌN CÔNG CỤ: MÔ HÌNH SAN CHO ĐỀU: gộp hết vào một rổ (tính tổng) rồi chia đều cho số trận.\nƯỚC LƯỢNG TRƯỚC: mức san nằm giữa 2 và 5 — chắc cỡ 3 bàn.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ cú chuyển sách sang hiệu thật"
+    "nhan": "NHỊP 1, DỊCH — từ sổ tỉ số sang phép san cho đều"
    },
    {
     "id": "S3",
@@ -104,85 +104,72 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: biên bản kiểm kê gửi cô: \"Kệ A: 65 cuốn — kệ B: 55 cuốn (tổng 120 ✓). Cô muốn hai kệ đều nhau thì cứ giữ nguyên như hôm cô đã chuyển 5 cuốn: mỗi kệ tròn 60.\" Cô dán nhãn $60 - 60$ lên hai kệ, thư viện gọn gàng như mới.\nSOI: soi kịch bản: $65 - 5 = 60$ và $55 + 5 = 60$ — đúng từng bước đề mô tả; soi kép Bài 19: $65 + 55 = 120$ ✓, $65 - 55 = 10$ ✓. Ba lớp khóa cùng khớp.\nDÙNG NGOÀI ĐỜI: chia bài tú lơ khơ, san dữ liệu giữa hai máy, chuyển tiền giữa hai ví — quy tắc \"chuyển k đổi 2k\" chạy khắp đời sống, và giờ con là người hiếm hoi không bị nó đánh lừa.",
+    "narration": "LẮP: báo cáo dán bảng tin đội: \"Sức ghi bàn: trung bình 3 bàn mỗi trận. Muốn giữ phong độ ấy, trận tới cần ghi 3 bàn.\" Đội lớp bên trung bình 2 bàn — đội mình trên cơ, nói bằng số liệu đàng hoàng chứ không cãi nhau!\nSOI: soi hai lớp: 3 nằm giữa 2 và 5 ✓; và thử lại tổng: 2 + 5 + 2 + 3 = 12 = 3 × 4 ✓ — nếu trận 4 ghi đúng 3 bàn thì trung bình bốn trận tròn 3 như kế hoạch.\nDÙNG NGOÀI ĐỜI: điểm trung bình học kỳ, mức chi tiêu trung bình mỗi ngày của mẹ, quãng đường trung bình xe chạy mỗi giờ — cả thế giới người lớn nói chuyện bằng \"mức san cho đều\" này.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Trí Long vẫn cay vụ hai kệ, gặp bài mới liền gỡ gạc: \"Hai giỏ cam tổng 40 quả; BỚT giỏ A đi 4 quả thì bằng giỏ B. Lần này tớ không dại nữa — hiệu là $4  \\times  2 = 8$! Giỏ A bằng ($40 + 8$) : $2 = 24$!\"",
+    "narration": "Thống kê đội bạn ghi 1, 2 và 9 bàn, Trí Long tính vèo: \"Trung bình là (1 + 2 + 9) : 2 = 6 bàn — chia 2 vì phép cộng có 2 dấu cộng!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Hai kệ sách có tất cả 120 cuốn. Nếu chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ có số sách bằng nhau. Hỏi lúc đầu mỗi kệ có bao nhiêu cuốn sách?",
+  "problem": "Ba trận đầu, đội bóng ghi được 2 bàn, 5 bàn và 2 bàn. Hỏi trận thứ tư đội phải ghi bao nhiêu bàn để trung bình mỗi trận trong cả bốn trận ghi được 3 bàn?",
   "steps": [
    {
-    "show": "Tổng: 120 cuốn",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Chuyển 5 cuốn A → B thì bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
-    "phan": "tomtat"
+    "show": "Ba trận: 2 ; 5 ; 2 bàn."
    },
    {
-    "show": "Chép nguyên chi tiết \"chuyển... thì bằng\" — chìa khóa của bài.",
-    "phan": "tomtat"
+    "show": "Cần: TBC của 4 trận là 3 bàn. Tìm số bàn trận 4."
    },
    {
-    "show": "Mô hình (hiệu ẩn sau cú chuyển)",
-    "phan": "tomtat"
+    "show": "Tách rõ \"đã có\" và \"muốn có\" — hai nửa của bài ngược."
    },
    {
-    "show": "Chuyển 5 cuốn: kệ A bớt 5, kệ B thêm 5.",
-    "phan": "tomtat"
+    "show": "Mô hình (qua cây cầu TỔNG)"
    },
    {
-    "show": "Hai kệ bằng nhau → lúc đầu kệ A hơn kệ B: $5  \\times  2 = 10$ (cuốn).",
-    "phan": "tomtat"
+    "show": "TBC 4 trận là 3 → tổng 4 trận = 3 × 4."
    },
    {
-    "show": "Suy ra hiệu thật 10 NGAY ở phần mô hình — trái tim của bài.",
-    "phan": "tomtat"
+    "show": "Trận 4 = tổng cần có − tổng 3 trận đầu."
    },
    {
-    "show": "Vì chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ bằng nhau",
-    "phan": "giai"
+    "show": "Cây cầu Tổng = TBC × số số hạng viết ngay ở phần mô hình."
    },
    {
-    "show": "Nên lúc đầu kệ A hơn kệ B: $5  \\times  2 = 10$ (cuốn)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Số sách kệ A lúc đầu là: ($120 + 10$) : $2 = 65$ (cuốn)",
-    "phan": "giai"
+    "show": "Tổng số bàn cần có sau bốn trận là: 3 × 4 = 12 (bàn)"
    },
    {
-    "show": "Số sách kệ B lúc đầu là: $120 - 65 = 55$ (cuốn)",
-    "phan": "giai"
+    "show": "Ba trận đầu đội đã ghi: 2 + 5 + 2 = 9 (bàn)"
    },
    {
-    "show": "Câu \"vì... nên\" nêu căn cứ của phép nhân đôi — không được viết $5  \\times  2$ khơi khơi.",
-    "phan": "giai"
+    "show": "Trận thứ tư đội phải ghi: 12 − 9 = 3 (bàn)"
    },
    {
-    "show": "Đáp số: kệ A 65 cuốn ; kệ B 55 cuốn.",
-    "phan": "dapso"
+    "show": "Ba dòng — ba phép tính, mỗi dòng một câu lời giải trọn vẹn."
    },
    {
-    "show": "Đáp số đủ hai kệ.",
-    "phan": "ghichu"
+    "show": "Đáp số: 3 bàn."
    },
    {
-    "show": "Thử lại: $65 - 5 = 60$ ; $55 + 5 = 60$ — hai kệ bằng nhau đúng như đề ✓",
-    "phan": "thulai"
+    "show": "Đáp số kèm đơn vị."
    },
    {
-    "show": "Thử theo KỊCH BẢN của đề — diễn lại cú chuyển trên đáp số.",
-    "phan": "thulai"
+    "show": "Thử lại: (2 + 5 + 2 + 3) : 4 = 12 : 4 = 3 ✓"
+   },
+   {
+    "show": "Lắp đáp số vào tính lại TBC — đúng 3 bàn mỗi trận như đề muốn."
    }
   ]
  },
@@ -191,181 +178,123 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Hai số tự nhiên liền nhau hơn kém nhau bao nhiêu? Hai số chẵn liền nhau hơn kém nhau bao nhiêu?",
+     "text": "Tìm trung bình cộng của 12 và 18.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "hai số tự nhiên liền nhau hơn kém nhau",
-        "value": 1
-       },
-       {
-        "label": "hai số chẵn liền nhau hơn kém nhau",
-        "value": 2
-       }
-      ]
+      "value": 15
      },
-     "solutionNarrative": "Hai số liền nhau hơn kém 1; hai số chẵn liền nhau hơn kém 2.",
+     "solutionNarrative": "(12 + 18) : 2 = 15.",
      "hints": [
-      "Viết thử vài cặp ra rồi trừ.",
-      "Hai số chẵn đứng cạnh nhau thì cách nhau mấy?"
+      "Gộp cả rổ lại rồi chia đều.",
+      "Tổng chia cho số số hạng."
      ]
     },
     {
      "id": "C2",
-     "text": "Bớt giỏ A đi 4 quả cam thì số cam hai giỏ bằng nhau. Hỏi giỏ A hơn giỏ B bao nhiêu quả?",
+     "text": "Tìm trung bình cộng của 2 ; 5 ; 2.",
      "answerKey": {
-      "value": 4
+      "value": 3
      },
-     "solutionNarrative": "Chỉ MỘT bên thay đổi → giỏ A hơn giỏ B đúng 4 quả.",
+     "solutionNarrative": "(2 + 5 + 2) : 3 = 9 : 3 = 3.",
      "hints": [
-      "Hỏi trước: mấy bên cùng nhúc nhích?",
-      "Chỉ MỘT bên đổi thì hiệu đúng bằng phần bớt."
+      "San cho đều — tổng không đổi, chỉ chuyển chỗ.",
+      "Cộng cả ba rồi chia ba."
      ]
     },
     {
      "id": "C3",
-     "text": "Chuyển 3 viên bi từ hộp A sang hộp B thì hai hộp bằng nhau. Hỏi hộp A hơn hộp B bao nhiêu viên?",
+     "text": "Tìm trung bình cộng của 10 ; 20 ; 30 ; 40.",
      "answerKey": {
-      "value": 6
+      "value": 25
      },
-     "solutionNarrative": "Hai bên cùng thay đổi → hộp A hơn hộp B: $3  \\times  2 = 6$ viên.",
+     "solutionNarrative": "(10 + 20 + 30 + 40) : 4 = 100 : 4 = 25.",
      "hints": [
-      "Chuyển thì HAI bên cùng nhúc nhích.",
-      "Bên cho hụt đi, bên nhận phình ra — hiệu đổi gấp đôi."
+      "Tổng chia cho số số hạng.",
+      "Bốn số thì chia cho 4."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Tìm hai số tự nhiên liền nhau có tổng bằng 45.",
+     "text": "Trung bình cộng của bốn số là 25. Tổng của bốn số đó bằng bao nhiêu?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số bé",
-        "value": 22
-       },
-       {
-        "label": "số lớn",
-        "value": 23
-       }
-      ]
+      "value": 100
      },
-     "solutionNarrative": "Hiệu 1 → số bé = ($45 - 1$) : $2 = 22$; hai số là 22 và 23.",
+     "solutionNarrative": "Qua cây cầu: 25 × 4 = 100.",
      "hints": [
-      "Hiệu ẩn của hai số liền nhau là bao nhiêu?",
-      "Có hiệu rồi thì chặt thừa chia đôi."
+      "Cây cầu ngược: TỔNG = TBC nhân số số hạng.",
+      "Không cần biết từng số là gì."
      ]
     },
     {
      "id": "C5",
-     "text": "Tìm hai số chẵn liền nhau có tổng bằng 46.",
+     "text": "Ba bao gạo nặng 42 kg ; 45 kg ; 48 kg. Hỏi trung bình mỗi bao nặng bao nhiêu ki-lô-gam?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số bé",
-        "value": 22
-       },
-       {
-        "label": "số lớn",
-        "value": 24
-       }
-      ]
+      "value": 45
      },
-     "solutionNarrative": "Hiệu 2 → số bé = ($46 - 2$) : $2 = 22$; hai số là 22 và 24.",
+     "solutionNarrative": "(42 + 45 + 48) : 3 = 135 : 3 = 45 (kg).",
      "hints": [
-      "Hai số chẵn liền nhau cách nhau mấy?",
-      "Có hiệu rồi thì áp công thức tổng - hiệu."
+      "Cộng cả ba bao rồi chia ba.",
+      "Đây là bài xuôi, chưa cần cầu ngược."
      ]
     },
     {
      "id": "C6",
-     "text": "Hai kệ sách có tất cả 120 cuốn. Chuyển 5 cuốn từ kệ A sang kệ B thì hai kệ bằng nhau. Hỏi lúc đầu mỗi kệ có bao nhiêu cuốn?",
+     "text": "Trung bình cộng của hai số là 36. Một số bằng 40, tìm số còn lại.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "kệ A lúc đầu",
-        "value": 65
-       },
-       {
-        "label": "kệ B lúc đầu",
-        "value": 55
-       }
-      ]
+      "value": 32
      },
-     "solutionNarrative": "Hiệu = $5  \\times  2 = 10$ → kệ A = ($120 + 10$) : $2 = 65$; kệ B = 55 (cuốn). Thử kịch bản: $65 - 5 = 60 = 55 + 5$ ✓.",
+     "solutionNarrative": "Tổng hai số = 36 × 2 = 72 → số còn lại = 72 − 40 = 32.",
      "hints": [
-      "Chuyển thì hiệu gấp đôi số đem chuyển.",
-      "Có tổng và hiệu rồi thì thử lại bằng chính kịch bản đề."
+      "Qua cầu TỔNG trước đã.",
+      "Có tổng rồi thì trừ đi số đã biết."
      ]
     },
     {
      "id": "C7",
-     "text": "Hai bạn có tất cả 42 viên kẹo. Nếu bạn An cho bạn Bình 4 viên thì hai bạn có số kẹo bằng nhau. Hỏi lúc đầu mỗi bạn có bao nhiêu viên?",
+     "text": "Ba trận đầu đội ghi 2 ; 5 ; 2 bàn. Trận thứ tư phải ghi mấy bàn để trung bình mỗi trận trong bốn trận là 3 bàn?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "an",
-        "value": 25
-       },
-       {
-        "label": "bình",
-        "value": 17
-       }
-      ]
+      "value": 3
      },
-     "solutionNarrative": "Hiệu = $4  \\times  2 = 8$ → An = ($42 + 8$) : $2 = 25$; Bình = 17 (viên). Thử: $25 - 4 = 21 = 17 + 4$ ✓.",
+     "solutionNarrative": "Tổng cần = 3 × 4 = 12; đã có 9 → trận 4 ghi 12 − 9 = 3 (bàn). Thử: 12 : 4 = 3 ✓.",
      "hints": [
-      "Cho tức là chuyển — hai bên cùng đổi.",
-      "Hiệu bằng gấp đôi số viên đã cho."
+      "Tính tổng CẦN CÓ sau bốn trận.",
+      "Rồi trừ đi số bàn ba trận đã ghi."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Tìm ba số tự nhiên liên tiếp có tổng bằng 72. (Mách nhỏ: số ở giữa chính là trung bình cộng của ba số — Bài 16 tái xuất!)",
+     "text": "Trung bình cộng của ba số là 20. Số thứ nhất là 15, số thứ hai là 19. Tìm số thứ ba.",
      "answerKey": {
-      "ordered": true,
-      "values": [
-       23,
-       24,
-       25
-      ]
+      "value": 26
      },
-     "solutionNarrative": "Số giữa = TBC = $72 : 3 = 24$ → ba số là 23 ; 24 ; 25. Thử: $23 + 24 + 25 = 72$ ✓.",
+     "solutionNarrative": "Tổng ba số = 20 × 3 = 60 → số thứ ba = 60 − 15 − 19 = 26.",
      "hints": [
-      "Số ở giữa chính là trung bình cộng của ba số.",
-      "Tìm số giữa rồi lùi một tiến một."
+      "Qua cầu tổng: trung bình nhân ba.",
+      "Có tổng rồi thì trừ dần hai số đã biết."
      ]
     },
     {
      "id": "C9",
-     "text": "Tìm hai số LẺ liền nhau có tổng bằng 100. Rồi trả lời thêm: có tồn tại hai số CHẴN liền nhau có tổng bằng 100 không? Vì sao?",
+     "text": "Tính trung bình cộng của các số 1 ; 2 ; 3 ; ... ; 9 — rồi nhìn kỹ đáp số: nó đứng ở vị trí nào trong dãy? Thử tiếp với dãy 1 đến 5 và rút ra một mẹo tính TBC của dãy cách đều!",
      "answerKey": {
       "parts": [
        {
-        "label": "số lẻ bé",
-        "value": 49
+        "label": "trung bình cộng của 1 đến 9",
+        "value": 5
        },
        {
-        "label": "số lẻ lớn",
-        "value": 51
-       },
-       {
-        "label": "có hai số chẵn liền nhau tổng 100 không",
-        "options": [
-         "có",
-         "không"
-        ],
-        "value": "không"
+        "label": "trung bình cộng của 1 đến 5",
+        "value": 3
        }
       ]
      },
-     "solutionNarrative": "Hiệu 2 → số bé = ($100 - 2$) : $2 = 49$ → hai số lẻ 49 và 51. Hai số CHẴN liền nhau tổng 100 thì KHÔNG tồn tại: công thức cho số bé 49 — mà 49 lẻ, trái điều kiện \"số chẵn\"!",
+     "solutionNarrative": "Tổng 1 + 2 + ... + 9 = 45 (Gauss) → TBC = 45 : 9 = 5 — đúng SỐ Ở GIỮA dãy! Với 1 đến 5: TBC = 15 : 5 = 3 — lại số giữa. Mẹo: TBC của dãy cách đều = (đầu + cuối) : 2.",
      "hints": [
-      "Hai số lẻ liền nhau cách nhau mấy?",
-      "Tính xong rồi soi lại: số bé tìm được ấy chẵn hay lẻ?"
+      "Tính tổng bằng Gauss rồi chia số số hạng.",
+      "Nhìn kỹ đáp số: nó đứng ở đâu trong dãy?"
      ]
     }
    ]
@@ -376,7 +305,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Chuyển k đơn vị từ số lớn sang số bé thì hiệu hai số giảm đi 2 × k.",
+    "text": "Trung bình cộng bằng tổng các số chia cho số các số hạng.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -385,61 +314,61 @@
    },
    {
     "id": "Q2",
-    "text": "Hai số lẻ liền nhau hơn kém nhau 1 đơn vị.",
+    "text": "Trung bình cộng của 10 và 20 là 30.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Hai số lẻ liền nhau hơn kém 2."
+    "solutionNarrative": "(10 + 20) : 2 = 15."
    },
    {
     "id": "Q3",
-    "text": "Chuyển 4 viên bi từ A sang B thì hai hộp bằng nhau. A hơn B:",
+    "text": "Trung bình cộng của 6 ; 8 ; 10 là:",
     "format": "mcq",
     "choices": [
-     "A. 8 viên",
-     "B. 4 viên",
-     "C. 2 viên"
+     "A. 8",
+     "B. 9",
+     "C. 24"
     ],
     "answerKey": {
-     "choice": "A. 8 viên"
+     "choice": "A. 8"
     },
-    "solutionNarrative": "$4  \\times  2 = 8$ viên."
+    "solutionNarrative": "24 : 3 = 8."
    },
    {
     "id": "Q4",
-    "text": "Hai số tự nhiên liền nhau có tổng 61. Số bé là:",
+    "text": "Năm số có trung bình cộng là 12. Tổng của chúng là:",
     "format": "mcq",
     "choices": [
-     "A. 30",
-     "B. 31",
-     "C. 29"
+     "A. 60",
+     "B. 17",
+     "C. 55"
     ],
     "answerKey": {
-     "choice": "A. 30"
+     "choice": "A. 60"
     },
-    "solutionNarrative": "($61 - 1$) : $2 = 30$."
+    "solutionNarrative": "12 × 5 = 60."
    },
    {
     "id": "Q5",
-    "text": "Hai số chẵn liền nhau có tổng 30 là:",
+    "text": "Trung bình cộng của hai số là 25, một số là 30. Số kia là:",
     "format": "mcq",
     "choices": [
-     "A. 14 và 16",
-     "B. 15 và 15",
-     "C. 13 và 17"
+     "A. 20",
+     "B. 25",
+     "C. 35"
     ],
     "answerKey": {
-     "choice": "A. 14 và 16"
+     "choice": "A. 20"
     },
-    "solutionNarrative": "14 và 16."
+    "solutionNarrative": "50 − 30 = 20."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Thí nghiệm hai chồng vở (8 và 6, chuyển 1 thì bằng) là khoảnh khắc \"à ra thế\" đắt giá nhất chương — làm thật với con, để chính tay con chuyển và chính mắt con thấy khoảng cách khép từ hai phía.",
-  "homeActivity": "Luyện \"đếm bên\" thành phản xạ: đọc chi tiết thêm - bớt - chuyển của bất kỳ đề nào, hỏi con \"mấy bên thay đổi?\" trước khi cho phép đặt phép tính.",
-  "watchFor": "NÊN: yêu cầu thử lại THEO KỊCH BẢN (diễn lại cú chuyển trên đáp số) thay vì chỉ cộng trừ kiểm tra. KHÔNG NÊN: bài chuyển nhiều lần liên tiếp hay chuyển qua lại hai chiều — mê cung ấy hẹn lớp 5."
+  "onComplete": "Cho con \"san cho đều\" bằng đồ thật trước khi bấm phép chia: kẹo chia ba đĩa lệch nhau, nước rót ba cốc — bàn tay san xong, công thức tự dễ hiểu.",
+  "homeActivity": "Nuôi phản xạ soi nhanh: mỗi lần con tính TBC, hỏi lại \"kết quả có nằm giữa số bé nhất và lớn nhất không?\" — chiếc lưới bắt lỗi rẻ nhất thế giới.",
+  "watchFor": "NÊN: rủ con tính TBC số liệu thật của nhà mình (số trang đọc mỗi tối, tiền điện ba tháng). KHÔNG NÊN: đưa bài TBC ra kết quả lẻ (có dư) — số thập phân hẹn lớp 5, chọn số liệu chia hết cho đẹp."
  },
  "figureSpec": [
   {
@@ -448,8 +377,8 @@
     "hook"
    ],
    "file": "figures/L4H_B21_MO.png",
-   "caption": "Hai kệ chưa bằng nhau, chưa biết hiệu là bao nhiêu.",
-   "sha256_16": "0282bd00a245706a",
+   "caption": "Ba cột cao thấp khác nhau, vạch san đều cắt ngang.",
+   "sha256_16": "6b4c1b30ecd10bc4",
    "mucGoc": "chuyenMoBai"
   },
   {
@@ -458,22 +387,20 @@
     "screen:S3"
    ],
    "file": "figures/L4H_B21_G1.png",
-   "caption": "Chuyển k đơn vị làm hiệu đổi 2k — cú lừa danh tiếng nhất.",
-   "sha256_16": "1831bb2d66960f4b",
+   "caption": "Phần vượt của trận 2 bù đúng phần hụt của hai trận kia.",
+   "sha256_16": "95852f407d4c7b64",
    "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Bài 20 con luyện dò TỔNG. Hôm nay đến lượt kẻ trốn còn tinh quái hơn: HIỆU. Nó nấp trong các chữ tưởng vô hại — \"hai số liền nhau\", \"hai số chẵn liên tiếp\", và cú lừa danh tiếng nhất: \"CHUYỂN k đơn vị từ bên này sang bên kia thì bằng nhau\". Nghe qua tưởng hiệu bằng k — nhưng thí nghiệm kệ sách sẽ cho con câu trả lời khiến cả Trí Long ngã ngửa.",
+ "hatMam": "Lớp 3, ở Bài 17, con đã quen bài toán HAI BƯỚC TÍNH: tìm số ở giữa rồi mới trả lời câu hỏi cuối. Trung bình cộng chính là một bài hai bước kinh điển: bước 1 tính TỔNG, bước 2 chia đều. Và cây cầu \"Tổng = TBC × số số hạng\" sẽ theo con qua mọi bài ngược của chương này — nhớ mặt nó ngay từ hôm nay!",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B19",
-   "DL:KSN3.B18"
+   "DL:KSN3.B17"
   ],
   "ten": [
-   "THÊM BỚT ĐỂ BẰNG NHAU",
-   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?"
+   "BÀI TOÁN HAI BƯỚC TÍNH"
   ],
-  "canCu": "chuDe",
+  "canCu": "sach",
   "lopDuoi": 3,
   "nhan": "Học lại bài lớp 3"
  }

@@ -3,12 +3,12 @@
  "id": "DL:KSN4.B32",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 32 · SƠ ĐỒ VEN VÀ NGUYÊN LÝ CHUỒNG THỎ",
+ "title": "Bài 32 · BÀI TOÁN VỀ TUỔI",
  "durationMinutes": 10,
  "so": 32,
  "chuong": 8,
  "tenChuong": "BÀI TOÁN CÓ LỜI VĂN",
- "dangGoc": "LV 8.4 mức Lớp 4 — Ven hai tập hợp (A + B − cả hai) · Dirichlet phát biểu đơn giản",
+ "dangGoc": "LV 6.1 + LV 6.2 mức Lớp 4 — Một mốc: đưa về Tổng - Hiệu - Tỉ · hai mốc: chìa khóa \"hiệu tuổi không đổi\"",
  "skills": {
   "bktUnit": "CHUONG:8@G4",
   "primary": []
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Vẽ sơ đồ Ven hai vòng và dùng công thức: số thích ít nhất một = A + B − cả hai. Tính số bạn \"chỉ thích một môn\" và số bạn \"không thích môn nào\" từ sơ đồ Ven. Dùng nguyên lý chuồng thỏ (Dirichlet) với mẹo \"tình huống xấu nhất\" để khẳng định chắc chắn các điều kiểu \"có ít nhất 2 bạn sinh cùng tháng\".",
-  "kidText": "Lớp 38 bạn: 25 bạn đá bóng, 18 bạn cờ vua, 8 bạn ghi tên cả hai. Bao nhiêu bạn chẳng vào câu lạc bộ nào?",
+  "text": "Giải bài tuổi MỘT mốc bằng cách nhận diện: đó chỉ là Tổng - Tỉ hay Hiệu - Tỉ mặc áo tuổi. Giải bài tuổi HAI mốc theo ba bước: chốt hiệu → dựng Hiệu - Tỉ tại thời điểm đề hỏi → so với hiện nay ra số năm. Hiểu vì sao tỉ số \"gấp mấy lần\" thay đổi theo thời gian dù hiệu không đổi.",
+  "kidText": "Nay mẹ 36 tuổi, Su Kem 12 tuổi. Có một năm xưa mẹ gấp 5 lần tuổi con — cách đây bao lâu nhỉ?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — VẼ HAI VÒNG GIAO NHAU: vòng \"bóng đá\" và vòng \"cờ vua\" cài vào nhau; viết 8 vào phần giao trước tiên. Phần \"chỉ đá\": $25 - 8 = 17$; phần \"chỉ cờ\": $18 - 8 = 10$. Ba ngăn của sơ đồ đã đầy số: $17 - 8 - 10$."
+    "text": "Bước 1 — ÔN NHANH BÀI TUỔI MỘT MỐC: \"tổng tuổi hai mẹ con 40, mẹ gấp 4 lần con\" → Tổng - Tỉ: một phần 40 : 5 = 8 → con 8, mẹ 32. \"Mẹ hơn con 28 tuổi, gấp 5 lần con\" → Hiệu - Tỉ: một phần 28 : 4 = 7 → con 7, mẹ 35. Một mốc chỉ là Chương 6 - 7 đội mũ \"tuổi\" — không có gì mới!"
    },
    {
     "id": "K2",
-    "text": "Bước 2 — CÔNG THỨC ÍT NHẤT MỘT: ít nhất một môn = $25 + 18 - 8 = 35$ (bạn) — trừ 8 vì nhóm cả-hai bị cộng đúp. Kiểm bằng ba ngăn: $17 + 8 + 10 = 35$ ✓. Không tham gia gì: $38 - 35 = 3$ (bạn) — ba bạn ấy không tàng hình, chỉ đứng ngoài hai vòng tròn thôi!"
+    "text": "Bước 2 — DỰNG BẢNG BA MỐC ĐỂ THẤY TỈ TRÔI: mẹ 36 - con 12: hiện nay gấp 3; thử 12 năm nữa: 48 và 24 — chỉ còn gấp 2; lùi 6 năm trước: 30 và 6 — những gấp 5! Ở hàng nào hiệu cũng đúng 24. Kết luận: TỈ TRÔI, HIỆU ĐỨNG IM — muốn bắt bài tuổi hai mốc, hãy neo vào hiệu."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — NGUYÊN LÝ CHUỒNG THỎ: câu đố cô chủ nhiệm tặng thêm: \"không cần xem sổ, cô dám chắc trong 13 bạn tổ Một có 2 bạn sinh cùng tháng — vì sao?\" Một năm chỉ có 12 tháng — như 12 chiếc chuồng; nhét 13 chú thỏ vào 12 chuồng thì DỨT KHOÁT có chuồng chứa từ 2 thỏ. Chắc chắn 100% mà chưa cần hỏi ai sinh tháng nào!"
+    "text": "Bước 3 — GIẢI VỤ LƯU BÚT: tại năm viết: mẹ gấp 5 lần con, hiệu vẫn 24 → hiệu số phần 5 − 1 = 4 → tuổi con năm ấy: 24 : 4 = 6 (tuổi); mẹ năm ấy: 30. So với hiện nay: 12 − 6 = 6 → dòng lưu bút viết cách đây 6 năm. Thử: 30 = 6 × 5 ✓ và 30 − 6 = 24 ✓."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — MẸO TÌNH HUỐNG XẤU NHẤT: muốn thấy vì sao \"chắc chắn\", hãy thử tình huống XẤU NHẤT cho kết luận: cố xếp mỗi tháng một bạn — xếp được tối đa 12 bạn; bạn thứ 13 buộc phải chen vào tháng đã có người. Bài bi cùng chiêu: túi có bi 4 màu, muốn CHẮC có 2 viên cùng màu phải lấy $4 + 1 = 5$ viên (xấu nhất là 4 viên đầu mỗi viên một màu)."
+    "text": "Bước 4 — CHIỀU TƯƠNG LAI CŨNG MỘT CHIÊU: \"mấy năm nữa mẹ gấp ĐÔI Su Kem?\" — hiệu 24, tỉ 2 : 1 → hiệu số phần 1 → tuổi con lúc đó = 24 : 1 = 24 → còn 24 − 12 = 12 năm nữa. Quá khứ hay tương lai, ba bước không đổi: chốt hiệu → Hiệu - Tỉ tại mốc hỏi → so với hiện nay."
    }
   ],
-  "mantra": "Ven hai vòng: điền phần GIAO trước, rồi ít nhất một = A + B − cả hai; đứng ngoài = tổng − ít nhất một. Chuồng thỏ: đếm số \"chuồng\", đếm số \"thỏ\" — thỏ nhiều hơn chuồng là chắc chắn có chuồng ghép đôi; muốn biết cần lấy mấy để \"chắc chắn\", hãy dựng tình huống xấu nhất rồi cộng 1.",
+  "mantra": "Bài tuổi một mốc: nhận diện Tổng - Tỉ / Hiệu - Tỉ rồi giải như Chương 7. Bài tuổi hai mốc: nhớ khẩu quyết \"TỈ TRÔI - HIỆU ĐỨNG IM\" và ba bước: ① chốt hiệu, ② dựng Hiệu - Tỉ tại thời điểm đề hỏi, ③ so tuổi mốc ấy với hiện nay để ra số năm. Đừng bao giờ dùng tỉ của mốc này cho mốc kia!",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Cô hỏi thêm: \"túi cô có bi ba màu xanh - đỏ - vàng, lấy mấy viên thì CHẮC CHẮN có hai viên cùng màu?\" Trí Long đáp gọn: \"Hai viên ạ! Lấy 2 viên là có cặp rồi còn gì.\"",
+    "wrong": "Giải bài \"nay bố 40, con 10; mấy năm nữa bố gấp 3 lần con?\", Trí Long phán: \"Nay bố gấp 4, muốn gấp 3 tức giảm 1 lần gấp — mỗi năm chắc giảm đều, mà 40 : 10 = 4... thôi cứ lấy đại 40 − 30 = 10 năm nữa!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Lấy 2 viên mà một xanh một đỏ thì có \"cặp cùng màu\" chưa? Chữ CHẮC CHẮN đòi hỏi đúng trong cả tình huống ĐEN ĐỦI nhất cơ! Gợi ý 2: Tình huống xấu nhất là bốc mãi vẫn chưa trùng màu — kéo dài được tối đa mấy viên khi túi có 3 màu? Cộng thêm 1 viên \"định mệnh\" và trả lời chuẩn giúp Trí Long — rồi thử phát biểu theo kiểu thỏ và chuồng!"
+    "fix": "Gợi ý 1: Thử đáp số 10 năm: bố 50, con 20 — bố gấp mấy lần con, có phải 3 không? Đoán \"đại\" đã bị chính phép thử tố cáo. Gợi ý 2: Con số nào của hai bố con KHÔNG bao giờ đổi — 40 : 10 hay 40 − 10? Neo vào nó, dựng Hiệu - Tỉ với tỉ 3 : 1 rồi tìm số năm chuẩn giúp Trí Long (đáp số đẹp lắm: bố 45, con 15!)."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Lớp 38 bạn; 25 bạn đăng ký bóng đá; 18 bạn đăng ký cờ vua; 8 bạn ghi tên cả hai. Hỏi bao nhiêu bạn tham gia ít nhất một câu lạc bộ, và bao nhiêu bạn không tham gia câu lạc bộ nào?"
+    "narration": "Hiện nay mẹ 36 tuổi, Su Kem 12 tuổi; có một năm trong quá khứ tuổi mẹ gấp 5 lần tuổi con. Hỏi dòng lưu bút được viết cách đây mấy năm?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? lớp 38 bạn; 25 bạn đăng ký bóng đá; 18 bạn đăng ký cờ vua; 8 bạn ghi tên cả hai.\nHỎI GÌ? bao nhiêu bạn tham gia ít nhất một câu lạc bộ, và bao nhiêu bạn không tham gia câu lạc bộ nào.\nĐẠI LƯỢNG & ĐƠN VỊ: số bạn (bạn) — mỗi bạn chỉ được đếm MỘT lần dù ghi tên mấy tờ!\nQUAN HỆ GIỮA CHÚNG: nhóm \"cả hai\" nằm ở phần hai vòng tròn GIAO NHAU — cộng $25 + 18$ là đếm nhóm ấy hai lần, phải trừ đi một lần.\nCHỌN CÔNG CỤ: SƠ ĐỒ VEN hai vòng + công thức: ít nhất một = A + B − cả hai.\nƯỚC LƯỢNG TRƯỚC: ít nhất một cỡ $43 - 8 = 35$ → chừng vài ba bạn đứng ngoài cả hai vòng.",
+    "narration": "CHO GÌ? hiện nay mẹ 36 tuổi, Su Kem 12 tuổi; có một năm trong quá khứ tuổi mẹ gấp 5 lần tuổi con.\nHỎI GÌ? dòng lưu bút được viết cách đây mấy năm.\nĐẠI LƯỢNG & ĐƠN VỊ: tuổi (tuổi) và khoảng thời gian (năm) — hai mốc: \"hiện nay\" và \"năm viết lưu bút\".\nQUAN HỆ GIỮA CHÚNG: mỗi năm cả hai mẹ con cùng thêm 1 tuổi → hiệu tuổi mẹ − con = 36 − 12 = 24 KHÔNG đổi ở mọi mốc; còn tỉ \"gấp mấy lần\" thì trôi (nay gấp 3, xưa gấp 5).\nCHỌN CÔNG CỤ: MỎ NEO HIỆU + sơ đồ Hiệu - Tỉ dựng tại mốc quá khứ (hiệu 24, tỉ 5 : 1).\nƯỚC LƯỢNG TRƯỚC: gấp 5 xảy ra khi con còn bé — chắc hồi Su Kem dăm sáu tuổi, tức khoảng 6 - 7 năm trước.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ hai tờ danh sách sang hai vòng tròn"
+    "nhan": "NHỊP 1, DỊCH — từ trang lưu bút sang hai mốc thời gian"
    },
    {
     "id": "S3",
@@ -104,85 +104,78 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: báo cáo gửi cô chủ nhiệm: \"35 bạn tham gia ít nhất một câu lạc bộ (17 chỉ đá - 8 cả hai - 10 chỉ cờ); 3 bạn chưa tham gia gì — cô mời ba bạn ấy vào đội cổ vũ là lớp phủ kín 100%!\" Cô cười: \"Vừa đếm chuẩn vừa hiến kế — đúng là người giải.\"\nSOI: soi hai đường: công thức $25 + 18 - 8 = 35$ và cộng ba ngăn $17 + 8 + 10 = 35$ — hai lối một đáp số; cộng nốt 3 bạn ngoài vòng: $35 + 3 = 38$ khớp sĩ số ✓.\nDÙNG NGOÀI ĐỜI: thống kê ai học vẽ - ai học đàn, ai thích phở - ai thích bún; và mẹo chuồng thỏ giúp con \"nói chắc như đinh\" trong các trò đố vui — sức mạnh của suy luận thuần túy!",
+    "narration": "LẮP: Su Kem viết vào trang bên cạnh dòng của mẹ: \"Con giải mã: mẹ viết dòng này 6 năm trước, khi con 6 tuổi và mẹ 30. Còn 12 năm nữa, lúc con 24, mẹ sẽ chỉ gấp đôi con thôi!\" Buổi tối mẹ đọc được, ôm Su Kem cười mãi.\nSOI: soi bằng bảng ba mốc: (30 ; 6) hiệu 24 gấp 5 ✓ — (36 ; 12) hiệu 24 gấp 3 ✓ — (48 ; 24) hiệu 24 gấp 2 ✓. Mỏ neo giữ chặt cả ba thời điểm.\nDÙNG NGOÀI ĐỜI: mọi câu đố tuổi trong gia đình (\"bao giờ tuổi bố gấp đôi tổng tuổi hai con?\") giờ đều nằm trong tầm dụng cụ số 1 — và con hiểu vì sao ông bà hay nói \"càng lớn càng sát tuổi nhau\".",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Cô hỏi thêm: \"túi cô có bi ba màu xanh - đỏ - vàng, lấy mấy viên thì CHẮC CHẮN có hai viên cùng màu?\" Trí Long đáp gọn: \"Hai viên ạ! Lấy 2 viên là có cặp rồi còn gì.\"",
+    "narration": "Giải bài \"nay bố 40, con 10; mấy năm nữa bố gấp 3 lần con?\", Trí Long phán: \"Nay bố gấp 4, muốn gấp 3 tức giảm 1 lần gấp — mỗi năm chắc giảm đều, mà 40 : 10 = 4... thôi cứ lấy đại 40 − 30 = 10 năm nữa!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Lớp 4A có 38 học sinh, trong đó 25 bạn thích bóng đá, 18 bạn thích cờ vua, 8 bạn thích cả hai môn. Hỏi lớp có bao nhiêu bạn không thích môn nào trong hai môn trên?",
+  "problem": "Hiện nay mẹ 36 tuổi, con 12 tuổi. Hỏi trước đây mấy năm tuổi mẹ gấp 5 lần tuổi con?",
   "steps": [
    {
-    "show": "Lớp: 38 bạn; thích đá: 25; thích cờ: 18; cả hai: 8.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Tìm số bạn không thích môn nào.",
-    "phan": "tomtat"
+    "show": "Nay: mẹ 36, con 12."
    },
    {
-    "show": "Bốn con số — chú ý nhất con số \"cả hai\".",
-    "phan": "tomtat"
+    "show": "Tìm: trước đây mấy năm thì mẹ gấp 5 lần con."
    },
    {
-    "show": "Sơ đồ Ven",
-    "phan": "tomtat"
+    "show": "Hai mốc thời gian — đánh dấu rõ mốc \"nay\" và mốc \"hỏi\"."
    },
    {
-    "show": "( chỉ đá: 17 ( cả hai: 8 ) chỉ cờ: 10 )",
-    "phan": "tomtat"
+    "show": "Mô hình (neo vào hiệu)"
    },
    {
-    "show": "Bên ngoài hai vòng: ? bạn",
-    "phan": "tomtat"
+    "show": "Hiệu tuổi: 36 − 12 = 24 — không đổi ở mọi thời điểm."
    },
    {
-    "show": "Điền phần giao 8 trước, hai phần \"chỉ\" tính bằng phép trừ.",
-    "phan": "tomtat"
+    "show": "Tại năm cần tìm: mẹ gấp 5 lần con → Hiệu - Tỉ với hiệu 24, tỉ 5 : 1."
    },
    {
-    "show": "Số bạn thích ít nhất một trong hai môn là",
-    "phan": "giai"
+    "show": "Câu \"không đổi ở mọi thời điểm\" là căn cứ cho phép dùng hiệu 24 ở quá khứ."
    },
    {
-    "show": "$25 + 18 - 8 = 35$ (bạn)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "(trừ 8 vì các bạn thích cả hai môn bị đếm hai lần)",
-    "phan": "giai"
+    "show": "Hiệu số tuổi của hai mẹ con là: 36 − 12 = 24 (tuổi)"
    },
    {
-    "show": "Số bạn không thích môn nào là: $38 - 35 = 3$ (bạn)",
-    "phan": "giai"
+    "show": "Vì mỗi năm cả hai mẹ con cùng thêm 1 tuổi nên hiệu này không thay đổi."
    },
    {
-    "show": "Dòng trong ngoặc giải thích phép trừ 8 — linh hồn công thức Ven.",
-    "phan": "giai"
+    "show": "Khi mẹ gấp 5 lần con, hiệu số phần bằng nhau là: 5 − 1 = 4 (phần)"
    },
    {
-    "show": "Đáp số: 3 bạn.",
-    "phan": "dapso"
+    "show": "Tuổi con khi đó là: 24 : 4 = 6 (tuổi)"
    },
    {
-    "show": "Đáp số kèm đơn vị.",
-    "phan": "ghichu"
+    "show": "Thời gian từ đó đến nay là: 12 − 6 = 6 (năm)"
    },
    {
-    "show": "Thử lại: $17 + 8 + 10 + 3 = 38$ — đủ sĩ số cả lớp ✓",
-    "phan": "thulai"
+    "show": "Năm dòng — đủ ba bước: chốt hiệu, Hiệu - Tỉ tại mốc hỏi, so với hiện nay."
    },
    {
-    "show": "Cộng đủ BỐN ngăn (kể cả ngoài vòng) phải ra sĩ số.",
-    "phan": "thulai"
+    "show": "Đáp số: trước đây 6 năm."
+   },
+   {
+    "show": "Đáp số trả lời đúng câu hỏi \"mấy năm\"."
+   },
+   {
+    "show": "Thử lại: 6 năm trước mẹ 30, con 6 ; 30 = 6 × 5 ✓ ; 30 − 6 = 24 ✓"
+   },
+   {
+    "show": "Thử tại đúng mốc quá khứ — khớp cả tỉ lẫn hiệu."
    }
   ]
  },
@@ -191,129 +184,174 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Lớp có 25 bạn thích bóng đá, trong đó 8 bạn thích cả bóng đá lẫn cờ vua. Hỏi bao nhiêu bạn CHỈ thích bóng đá?",
+     "text": "Hiện nay con 8 tuổi, mẹ 32 tuổi. Tính hiệu số tuổi hai mẹ con. Hỏi 10 năm nữa hiệu ấy bằng bao nhiêu?",
      "answerKey": {
       "parts": [
        {
-        "label": "số bạn chỉ thích bóng đá",
-        "value": 17
+        "label": "hiệu số tuổi hiện nay",
+        "value": 24
+       },
+       {
+        "label": "hiệu sau 10 năm",
+        "value": 24
        }
       ]
      },
-     "solutionNarrative": "$25 - 8 = 17$ bạn chỉ thích bóng đá.",
+     "solutionNarrative": "Hiệu 32 − 8 = 24 tuổi; 10 năm nữa hiệu VẪN là 24 (hai mẹ con cùng thêm 10).",
      "hints": [
-      "Điền phần GIAO trước rồi mới tính hai cánh.",
-      "Chỉ thích một môn = số của môn ấy trừ phần giao."
+      "Lấy tuổi lớn trừ tuổi bé.",
+      "Hai mẹ con cùng thêm nên khoảng cách ra sao?"
      ]
     },
     {
      "id": "C2",
-     "text": "Với 25 bạn thích đá, 18 bạn thích cờ, 8 bạn thích cả hai — bao nhiêu bạn thích ít nhất một môn?",
+     "text": "Tổng số tuổi hai mẹ con là 40, tuổi mẹ gấp 4 lần tuổi con. Tính tuổi mỗi người.",
      "answerKey": {
-      "value": 35
+      "parts": [
+       {
+        "label": "tuổi con",
+        "value": 8
+       },
+       {
+        "label": "tuổi mẹ",
+        "value": 32
+       }
+      ]
      },
-     "solutionNarrative": "$25 + 18 - 8 = 35$ bạn.",
+     "solutionNarrative": "Tổng - Tỉ: một phần 40 : 5 = 8 → con 8 tuổi, mẹ 32 tuổi.",
      "hints": [
-      "Cộng thô rồi trừ đi phần bị cộng đúp.",
-      "Nhóm cả-hai bị đếm hai lần."
+      "Có TỔNG và TỈ — đây là bài Tổng - Tỉ.",
+      "Tổng số phần rồi tới một phần."
      ]
     },
     {
      "id": "C3",
-     "text": "Lớp có 38 bạn. Dùng kết quả Câu 2, tính số bạn không thích môn nào.",
+     "text": "Mẹ hơn con 28 tuổi và tuổi mẹ gấp 5 lần tuổi con. Tính tuổi mỗi người.",
      "answerKey": {
-      "value": 3
+      "parts": [
+       {
+        "label": "tuổi con",
+        "value": 7
+       },
+       {
+        "label": "tuổi mẹ",
+        "value": 35
+       }
+      ]
      },
-     "solutionNarrative": "$38 - 35 = 3$ bạn.",
+     "solutionNarrative": "Hiệu - Tỉ: hiệu phần 4; một phần 28 : 4 = 7 → con 7 tuổi, mẹ 35 tuổi.",
      "hints": [
-      "Đứng ngoài = sĩ số trừ phần ít-nhất-một.",
-      "Dùng lại kết quả của câu ngay trước."
+      "Có HIỆU và TỈ — đây là bài Hiệu - Tỉ.",
+      "Chia hiệu cho hiệu số phần."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Lớp 4B có 30 bạn, ai cũng thích ít nhất một trong hai môn: 20 bạn thích toán, 15 bạn thích văn. Hỏi bao nhiêu bạn thích CẢ HAI môn?",
+     "text": "Hiện nay mẹ 36 tuổi, con 12 tuổi. Hiện nay tuổi mẹ gấp mấy lần tuổi con?",
      "answerKey": {
-      "value": 5
+      "parts": [
+       {
+        "label": "số lần",
+        "value": 3
+       }
+      ]
      },
-     "solutionNarrative": "Ai cũng thích ít nhất một môn → $30 = 20 + 15$ − cả hai → cả hai = $35 - 30 = 5$ bạn.",
+     "solutionNarrative": "36 : 12 = 3 — hiện nay mẹ gấp 3 lần con.",
      "hints": [
-      "Cộng thô lên xem vượt sĩ số bao nhiêu.",
-      "Phần vượt ấy chính là phần bị đếm hai lần."
+      "Hỏi gấp mấy lần thì lấy số lớn chia số bé.",
+      "Đặt phép chia ngay."
      ]
     },
     {
      "id": "C5",
-     "text": "Vì sao trong 13 bạn bất kỳ luôn có ít nhất 2 bạn sinh cùng tháng? Trình bày theo kiểu thỏ và chuồng.",
+     "text": "Hiện nay mẹ 36 tuổi, con 12 tuổi. Hỏi mấy năm nữa tuổi mẹ gấp ĐÔI tuổi con?",
      "answerKey": {
-      "value": 2
+      "parts": [
+       {
+        "label": "mấy năm nữa",
+        "value": 12
+       }
+      ]
      },
-     "solutionNarrative": "12 tháng là 12 \"chuồng\", 13 bạn là 13 \"thỏ\" — xấu nhất mỗi tháng một bạn cũng chỉ xếp được 12; bạn thứ 13 buộc rơi vào tháng đã có người → chắc chắn có 2 bạn cùng tháng.",
+     "solutionNarrative": "Hiệu 24; gấp đôi → hiệu phần 1 → con lúc đó 24 tuổi → còn 24 − 12 = 12 năm nữa. Thử: mẹ 48 = 24 × 2 ✓.",
      "hints": [
-      "Đếm số CHUỒNG: một năm có mấy tháng?",
-      "Thử tình huống xấu nhất: mỗi tháng xếp một bạn."
+      "TỈ TRÔI - HIỆU ĐỨNG IM: chốt hiệu trước.",
+      "Dựng Hiệu - Tỉ tại thời điểm ấy để tìm tuổi con lúc đó."
      ]
     },
     {
      "id": "C6",
-     "text": "Túi đựng bi gồm 4 màu. Phải lấy ra ít nhất mấy viên để chắc chắn có 2 viên cùng màu?",
+     "text": "Hiện nay bố 40 tuổi, con 10 tuổi. Hỏi mấy năm nữa tuổi bố gấp 3 lần tuổi con?",
      "answerKey": {
       "parts": [
        {
-        "label": "phải lấy ít nhất mấy viên",
+        "label": "mấy năm nữa",
         "value": 5
        }
       ]
      },
-     "solutionNarrative": "Xấu nhất 4 viên đầu mỗi viên một màu → lấy $4 + 1 = 5$ viên là chắc chắn có 2 viên cùng màu.",
+     "solutionNarrative": "Hiệu 30; gấp 3 → hiệu phần 2 → con lúc đó 30 : 2 = 15 → còn 15 − 10 = 5 năm nữa. Thử: bố 45 = 15 × 3 ✓.",
      "hints": [
-      "Màu là chuồng, viên bi là thỏ.",
-      "Xấu nhất: mỗi màu bốc đúng một viên rồi mới bốc tiếp."
+      "Chốt hiệu tuổi trước đã.",
+      "Tìm tuổi con lúc đó rồi trừ tuổi con bây giờ."
      ]
     },
     {
      "id": "C7",
-     "text": "Khối 4 có 40 bạn: 25 bạn tham gia văn nghệ, 20 bạn tham gia thể thao, 10 bạn tham gia cả hai. Hỏi bao nhiêu bạn chỉ tham gia ĐÚNG MỘT hoạt động, và bao nhiêu bạn không tham gia gì?",
+     "text": "Trước đây 3 năm, tổng số tuổi hai anh em là 20. Hiện nay anh hơn em 2 tuổi. Tính tuổi mỗi người hiện nay.",
      "answerKey": {
-      "value": 5
+      "parts": [
+       {
+        "label": "tuổi anh hiện nay",
+        "value": 14
+       },
+       {
+        "label": "tuổi em hiện nay",
+        "value": 12
+       }
+      ]
      },
-     "solutionNarrative": "Chỉ văn nghệ $25 - 10 = 15$; chỉ thể thao $20 - 10 = 10$ → đúng một hoạt động: $15 + 10 = 25$ bạn; ít nhất một: 35 → không tham gia: $40 - 35 = 5$ bạn.",
+     "solutionNarrative": "Tổng nay = 20 + 3 × 2 = 26; hiệu 2 → anh (26 + 2) : 2 = 14 tuổi; em 12 tuổi.",
      "hints": [
-      "Điền phần giao trước rồi tính hai cánh riêng.",
-      "Đúng một hoạt động là cộng hai cánh, chưa tính phần giao."
+      "Đưa tổng về đúng mốc HIỆN NAY.",
+      "Mỗi năm tổng của hai người tăng hai."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Lớp có 38 bạn. Chứng tỏ rằng có ít nhất 4 bạn sinh cùng một tháng. (Xấu nhất: mỗi tháng chỉ có 3 bạn thì cả lớp được tối đa mấy bạn?)",
+     "text": "Hiện nay mẹ 36 tuổi, con 12 tuổi. Hỏi TRƯỚC ĐÂY mấy năm tuổi mẹ gấp 5 lần tuổi con?",
      "answerKey": {
-      "value": 4
+      "value": 6
      },
-     "solutionNarrative": "Xấu nhất mỗi tháng chỉ 3 bạn → tối đa $12  \\times  3 = 36$ bạn; lớp có $38 > 36$ → phải có tháng chứa ít nhất 4 bạn.",
+     "solutionNarrative": "Hiệu 24; gấp 5 → hiệu phần 4 → con khi đó 24 : 4 = 6 → trước đây 12 − 6 = 6 năm. Thử: mẹ 30 = 6 × 5 ✓.",
      "hints": [
-      "Thử tình huống xấu nhất: mỗi tháng chỉ ba bạn.",
-      "Xếp kiểu ấy thì được tối đa bao nhiêu bạn?"
+      "Hiệu đứng im, nên chốt hiệu trước.",
+      "Tìm tuổi con khi đó rồi lùi từ tuổi con bây giờ."
      ]
     },
     {
      "id": "C9",
-     "text": "Túi có 6 bi đỏ, 5 bi xanh, 4 bi vàng. Nhắm mắt lấy ít nhất mấy viên để chắc chắn có 2 viên KHÁC màu nhau? (Đề đảo chiều đấy — tình huống xấu nhất giờ là bốc mãi vẫn... một màu!)",
+     "text": "Hiện nay tuổi bố gấp 7 lần tuổi con. Mười năm nữa tuổi bố gấp 3 lần tuổi con. Tính tuổi hai bố con hiện nay. (Gợi ý: vẽ hiệu thành 6 phần ở mốc nay — sang mốc sau, hiệu vẫn thế nhưng chỉ còn bằng 2 lần tuổi con mới...)",
      "answerKey": {
       "parts": [
        {
-        "label": "phải lấy ít nhất mấy viên",
-        "value": 7
+        "label": "tuổi con hiện nay",
+        "value": 5
+       },
+       {
+        "label": "tuổi bố hiện nay",
+        "value": 35
        }
       ]
      },
-     "solutionNarrative": "Xấu nhất là bốc mãi MỘT màu: nhiều nhất 6 viên (toàn đỏ) → lấy $6 + 1 = 7$ viên là chắc chắn có 2 viên khác màu.",
+     "solutionNarrative": "Vẽ hiệu = 6 phần (nay con 1 phần, bố 7 phần). Mười năm nữa hiệu vẫn 6 phần nhưng bằng 2 lần tuổi con mới → con mới = 3 phần. Con tăng từ 1 phần lên 3 phần, tức 2 phần = 10 tuổi → 1 phần = 5. Con 5 tuổi, bố 35 tuổi. Thử: 10 năm nữa 15 và 45 = ×3 ✓.",
      "hints": [
-      "Đề đảo chiều — xấu nhất là bốc mãi vẫn một màu.",
-      "Màu nào nhiều nhất, bốc hết màu ấy được mấy viên?"
+      "Vẽ hiệu thành số ô ở mốc hiện nay.",
+      "Sang mốc sau hiệu vẫn từng ấy ô — con chiếm mấy ô?"
      ]
     }
    ]
@@ -324,7 +362,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Số bạn thích ít nhất một môn bằng A + B trừ đi số bạn thích cả hai.",
+    "text": "Hiệu số tuổi của hai người không thay đổi theo thời gian.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -333,61 +371,61 @@
    },
    {
     "id": "Q2",
-    "text": "13 bạn vẫn có thể mỗi bạn sinh một tháng khác nhau.",
+    "text": "Nếu nay mẹ gấp 3 lần con thì 5 năm nữa mẹ vẫn gấp 3 lần con.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Chỉ có 12 tháng, 13 bạn ắt có 2 bạn trùng."
+    "solutionNarrative": "Tỉ số trôi theo thời gian, chỉ hiệu đứng im."
    },
    {
     "id": "Q3",
-    "text": "20 thích toán, 15 thích văn, 5 thích cả hai. Số thích ít nhất một môn:",
+    "text": "Tổng tuổi hai mẹ con là 36, mẹ gấp 5 lần con. Tuổi con là:",
     "format": "mcq",
     "choices": [
-     "A. 30",
-     "B. 35",
-     "C. 40"
+     "A. 6",
+     "B. 5",
+     "C. 7"
     ],
     "answerKey": {
-     "choice": "A. 30"
+     "choice": "A. 6"
     },
-    "solutionNarrative": "$20 + 15 - 5 = 30$."
+    "solutionNarrative": "Một phần 36 : 6 = 6."
    },
    {
     "id": "Q4",
-    "text": "Bi 3 màu — lấy chắc chắn có 2 viên cùng màu cần:",
+    "text": "Bố hơn con 24 tuổi và gấp 4 lần con. Tuổi con là:",
     "format": "mcq",
     "choices": [
-     "A. 4 viên",
-     "B. 3 viên",
-     "C. 6 viên"
+     "A. 8",
+     "B. 6",
+     "C. 32"
     ],
     "answerKey": {
-     "choice": "A. 4 viên"
+     "choice": "A. 8"
     },
-    "solutionNarrative": "$3 + 1 = 4$ viên."
+    "solutionNarrative": "Một phần 24 : 3 = 8."
    },
    {
     "id": "Q5",
-    "text": "25 thích đá, 8 thích cả hai. Số CHỈ thích đá là:",
+    "text": "Nay mẹ 30, con 6. Mấy năm nữa mẹ gấp 3 lần con?",
     "format": "mcq",
     "choices": [
-     "A. 17",
-     "B. 25",
-     "C. 33"
+     "A. 6 năm",
+     "B. 3 năm",
+     "C. 12 năm"
     ],
     "answerKey": {
-     "choice": "A. 17"
+     "choice": "A. 6 năm"
     },
-    "solutionNarrative": "$25 - 8 = 17$."
+    "solutionNarrative": "Hiệu 24, gấp 3 → con 12 → 6 năm nữa."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Vẽ Ven của chính gia đình: vòng \"thích phở\" - vòng \"thích bún\", cả nhà tự đứng vào ngăn của mình (kể cả ngăn \"ngoài cả hai vòng\"!) — sơ đồ sống động hơn mọi hình trong sách.",
-  "homeActivity": "Với chuồng thỏ, luôn hỏi cặp câu: \"chuồng là gì, thỏ là gì?\" — gọi tên đúng hai vai là bài nào cũng sáng.",
-  "watchFor": "NÊN: chơi trò \"dám chắc\": con phát biểu một điều chắc chắn 100% về nhóm bạn (không cần hỏi ai) rồi giải thích bằng chuồng thỏ. KHÔNG NÊN: Ven ba vòng tròn — bảy ngăn của nó hẹn lớp 5."
+  "onComplete": "Kho đề quý nhất là tuổi NHÀ MÌNH: \"bao giờ bố gấp đôi con?\", \"mẹ từng gấp 10 lần con năm nào?\" — con tự lập bảng ba mốc với số thật, khái niệm \"tỉ trôi\" tự thấm.",
+  "homeActivity": "Bắt buộc phép thử TẠI ĐÚNG MỐC: đáp số \"6 năm trước\" phải kèm dòng kiểm \"khi đó mẹ 30, con 6, gấp 5 ✓\" — thử ở mốc nay là thử nhầm cửa.",
+  "watchFor": "NÊN: hỏi con câu triết lý nhỏ \"vì sao càng lớn hai mẹ con càng 'sát tuổi' nhau?\" — trả lời được là hiểu tỉ trôi. KHÔNG NÊN: bài tuổi ba người hay tổng tuổi thay đổi phức tạp — mức ấy của lớp 5."
  },
  "figureSpec": [
   {
@@ -396,38 +434,28 @@
     "hook"
    ],
    "file": "figures/L4H_B32_MO.png",
-   "caption": "Hai vòng giao nhau, phần giữa là bạn thích cả hai môn.",
-   "sha256_16": "efa0de09128cbcd7",
+   "caption": "Tuổi hiện nay — hiệu 24 năm sẽ không bao giờ đổi.",
+   "sha256_16": "ab16e2bde82f63c9",
    "mucGoc": "chuyenMoBai"
   },
   {
-   "id": "L4H_B32_C1",
+   "id": "L4H_B32_G1",
    "usedIn": [
-    "item:C1"
+    "screen:S3"
    ],
-   "file": "figures/L4H_B32_C1.png",
-   "caption": "Hai vòng giao nhau; phần CHỈ thích một môn còn để dấu hỏi.",
-   "sha256_16": "504f5d3b25592bc1",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L4H_B32_C1_G",
-   "usedIn": [
-    "item:C1:giai"
-   ],
-   "file": "figures/L4H_B32_C1_G.png",
-   "caption": "Điền vùng giữa trước, hai cánh sau.",
-   "sha256_16": "60a61b98b818e8d7",
-   "mucGoc": "luyenTap"
+   "file": "figures/L4H_B32_G1.png",
+   "caption": "Tỉ số trôi theo năm tháng, hiệu thì đứng im.",
+   "sha256_16": "184fa06b36113b52",
+   "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Bài 8 con học phần bù — đếm cái KHÔNG để suy ra cái CÓ. Dụng cụ thứ sáu, cũng là món tráng miệng của chương: hai vòng tròn VEN đếm những bạn \"chân trong hai nhóm\", và NGUYÊN LÝ CHUỒNG THỎ — thứ toán kỳ lạ cho phép nói CHẮC CHẮN 100% về điều mình... chưa hề nhìn thấy.",
+ "hatMam": "Bài 22 trao con định luật \"hiệu tuổi bất biến\"; Bài 25 con đã giải tuổi một thời điểm bằng Hiệu - Tỉ. Hôm nay ghép hai mảnh thành dụng cụ số một: bài tuổi HAI MỐC thời gian — nơi tỉ số \"gấp mấy lần\" cứ trôi dần theo năm tháng, còn hiệu thì đứng im như mỏ neo. Câu hỏi Trí Long đặt cuối Chương 7 hôm nay có lời đáp!",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B25"
+   "DL:KSN3.B20"
   ],
   "ten": [
-   "SƠ ĐỒ VEN HAI VÒNG"
+   "TOÁN TUỔI HAI GIA ĐÌNH"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

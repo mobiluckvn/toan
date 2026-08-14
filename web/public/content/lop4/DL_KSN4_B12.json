@@ -20,7 +20,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Tìm chữ số tận cùng của một tích mà không cần tính cả tích (chỉ nhân các chữ số tận cùng). Nhận ra cặp $2  \\times  5$ (hoặc thừa số tròn chục) ẩn trong tích → tích tận cùng bằng 0. Trả lời nhanh \"tích này có chia hết cho 2, cho 5, cho 10 không\" nhờ chữ số tận cùng dự đoán được.",
+  "text": "Tìm chữ số tận cùng của một tích mà không cần tính cả tích (chỉ nhân các chữ số tận cùng). Nhận ra cặp 2 × 5 (hoặc thừa số tròn chục) ẩn trong tích → tích tận cùng bằng 0. Trả lời nhanh \"tích này có chia hết cho 2, cho 5, cho 10 không\" nhờ chữ số tận cùng dự đoán được.",
   "kidText": "Bảng điện tử sắp hiện tích của các số từ 1 đến 9. Con đoán chữ số cuối cùng trước khi nó hiện nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — VÌ SAO ĐUÔI CHỈ NÓI CHUYỆN VỚI ĐUÔI: $13  \\times  27$: tách $13 = 10 + 3$ và $27 = 20 + 7$ — mọi phần chứa \"chục\" nhân ra đều tròn chục, không đụng đến hàng đơn vị; chỉ còn $3  \\times  7 = 21$ quyết định đuôi. Vậy $13  \\times  27$ tận cùng bằng 1 (thử: 351 ✓). Quy tắc vàng: đuôi của tích = đuôi của tích các đuôi."
+    "text": "Bước 1 — VÌ SAO ĐUÔI CHỈ NÓI CHUYỆN VỚI ĐUÔI: 13 × 27: tách 13 = 10 + 3 và 27 = 20 + 7 — mọi phần chứa \"chục\" nhân ra đều tròn chục, không đụng đến hàng đơn vị; chỉ còn 3 × 7 = 21 quyết định đuôi. Vậy 13 × 27 tận cùng bằng 1 (thử: 351 ✓). Quy tắc vàng: đuôi của tích = đuôi của tích các đuôi."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — CẶP ĐÔI VÀNG $2  \\times  5$: hễ trong tích có một thừa số chẵn gặp một thừa số có đuôi 5 (hoặc có sẵn thừa số tròn chục) → sinh ra tích con tận cùng 0 — mà số nào nhân với số đuôi 0 cũng ra đuôi 0. Ví dụ $4  \\times  35$: trong 4 có sẵn thừa số 2, gặp 35 → đuôi 0 (140 ✓). Dàn đèn $1  \\times  2$ × ... × 9 chứa cả bóng 2 lẫn bóng 5 → tận cùng 0, chú thợ điện thua cuộc trong một nốt nhạc!"
+    "text": "Bước 2 — CẶP ĐÔI VÀNG 2 × 5: hễ trong tích có một thừa số chẵn gặp một thừa số có đuôi 5 (hoặc có sẵn thừa số tròn chục) → sinh ra tích con tận cùng 0 — mà số nào nhân với số đuôi 0 cũng ra đuôi 0. Ví dụ 4 × 35: trong 4 có sẵn thừa số 2, gặp 35 → đuôi 0 (140 ✓). Dàn đèn 1 × 2 × ... × 9 chứa cả bóng 2 lẫn bóng 5 → tận cùng 0, chú thợ điện thua cuộc trong một nốt nhạc!"
    },
    {
     "id": "K3",
-    "text": "Bước 3 — DÂY CHUYỀN TẬN CÙNG: tích toàn thừa số \"cứng đầu\" thì lần theo dây chuyền: $7  \\times  7  \\times  7$ → đuôi: $7  \\times  7 = 49$ ra đuôi 9; $9  \\times  7 = 63$ ra đuôi 3 → tận cùng 3 (343 ✓). Mỗi bước chỉ nhân HAI chữ số — nhẹ tênh dù tích to đùng."
+    "text": "Bước 3 — DÂY CHUYỀN TẬN CÙNG: tích toàn thừa số \"cứng đầu\" thì lần theo dây chuyền: 7 × 7 × 7 → đuôi: 7 × 7 = 49 ra đuôi 9; 9 × 7 = 63 ra đuôi 3 → tận cùng 3 (343 ✓). Mỗi bước chỉ nhân HAI chữ số — nhẹ tênh dù tích to đùng."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — CHỮ KÝ THỨ HAI CỦA SỐ 5: tích toàn thừa số LẺ mà có mặt số 5 thì sao? $1  \\times  3  \\times  5  \\times  7  \\times  9$: đuôi lần lượt 3 → 5 → 5 → 5: một khi đuôi 5 gặp số lẻ, nó giữ đuôi 5 mãi. Hai chữ ký của số 5: gặp chẵn ra 0, sống giữa toàn lẻ thì ra 5."
+    "text": "Bước 4 — CHỮ KÝ THỨ HAI CỦA SỐ 5: tích toàn thừa số LẺ mà có mặt số 5 thì sao? 1 × 3 × 5 × 7 × 9: đuôi lần lượt 3 → 5 → 5 → 5: một khi đuôi 5 gặp số lẻ, nó giữ đuôi 5 mãi. Hai chữ ký của số 5: gặp chẵn ra 0, sống giữa toàn lẻ thì ra 5."
    }
   ],
-  "mantra": "Đoán đuôi của tích: chỉ nhân các ĐUÔI với nhau, mỗi bước giữ lại một chữ số. Soi trước cặp $2  \\times  5$ hay thừa số tròn chục — thấy là hô \"đuôi 0\" khỏi nhân. Tích toàn số lẻ có mặt 5 → đuôi 5. Và nhớ: biết đuôi là biết ngay tích có chia hết cho 2, 5, 10 hay không!",
+  "mantra": "Đoán đuôi của tích: chỉ nhân các ĐUÔI với nhau, mỗi bước giữ lại một chữ số. Soi trước cặp 2 × 5 hay thừa số tròn chục — thấy là hô \"đuôi 0\" khỏi nhân. Tích toàn số lẻ có mặt 5 → đuôi 5. Và nhớ: biết đuôi là biết ngay tích có chia hết cho 2, 5, 10 hay không!",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Chú thợ điện đố tiếp tận cùng của $15  \\times  8$. Trí Long đáp tắp lự: \"Tích có số 15 đuôi 5 — mà số 5 thì lì lắm, nhân gì cũng giữ đuôi 5. Tận cùng bằng 5 ạ!\"",
+    "wrong": "Chú thợ điện đố tiếp tận cùng của 15 × 8. Trí Long đáp tắp lự: \"Tích có số 15 đuôi 5 — mà số 5 thì lì lắm, nhân gì cũng giữ đuôi 5. Tận cùng bằng 5 ạ!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: \"Chữ ký đuôi 5\" chỉ đúng khi số đuôi 5 gặp toàn bạn LẺ. Thừa số 8 là chẵn hay lẻ? Gợi ý 2: Nhân thật $15  \\times  8$ xem tận cùng bằng mấy — rồi phát biểu lại cho chuẩn hai chữ ký của số 5: gặp thừa số chẵn thì đuôi mấy, sống giữa toàn số lẻ thì đuôi mấy? Ra thêm cho Trí Long hai ví dụ mỗi loại để cậu ấy nhớ đời."
+    "fix": "Gợi ý 1: \"Chữ ký đuôi 5\" chỉ đúng khi số đuôi 5 gặp toàn bạn LẺ. Thừa số 8 là chẵn hay lẻ? Gợi ý 2: Nhân thật 15 × 8 xem tận cùng bằng mấy — rồi phát biểu lại cho chuẩn hai chữ ký của số 5: gặp thừa số chẵn thì đuôi mấy, sống giữa toàn số lẻ thì đuôi mấy? Ra thêm cho Trí Long hai ví dụ mỗi loại để cậu ấy nhớ đời."
    }
   ]
  },
@@ -60,12 +60,12 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Tích $1  \\times  2  \\times  3  \\times  4  \\times  5  \\times  6  \\times  7  \\times  8  \\times  9$ sẽ hiện trên bảng điện tử. Hỏi chữ số tận cùng của tích — đoán TRƯỚC khi bảng hiện?"
+    "narration": "Tích 1 × 2 × 3 × 4 × 5 × 6 × 7 × 8 × 9 sẽ hiện trên bảng điện tử. Hỏi chữ số tận cùng của tích — đoán TRƯỚC khi bảng hiện?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? tích $1  \\times  2  \\times  3  \\times  4  \\times  5  \\times  6  \\times  7  \\times  8  \\times  9$ sẽ hiện trên bảng điện tử.\nHỎI GÌ? chữ số tận cùng của tích — đoán TRƯỚC khi bảng hiện.\nĐẠI LƯỢNG & ĐƠN VỊ: chỉ cần MỘT chữ số (hàng đơn vị của tích) — không cần cả con số khổng lồ.\nQUAN HỆ GIỮA CHÚNG: khi nhân hai số, hàng đơn vị của tích chỉ do hàng đơn vị hai thừa số quyết định — nên có thể \"đi tắt\" bằng dãy tận cùng.\nCHỌN CÔNG CỤ: SOI CẶP ĐẶC BIỆT: trong dãy thừa số có 2 và 5 — cặp đôi cho tích 10, đuôi 0.\nƯỚC LƯỢNG TRƯỚC: đã thấy $2  \\times  5 = 10$ trong dãy — cả tích ắt tận cùng 0.",
+    "narration": "CHO GÌ? tích 1 × 2 × 3 × 4 × 5 × 6 × 7 × 8 × 9 sẽ hiện trên bảng điện tử.\nHỎI GÌ? chữ số tận cùng của tích — đoán TRƯỚC khi bảng hiện.\nĐẠI LƯỢNG & ĐƠN VỊ: chỉ cần MỘT chữ số (hàng đơn vị của tích) — không cần cả con số khổng lồ.\nQUAN HỆ GIỮA CHÚNG: khi nhân hai số, hàng đơn vị của tích chỉ do hàng đơn vị hai thừa số quyết định — nên có thể \"đi tắt\" bằng dãy tận cùng.\nCHỌN CÔNG CỤ: SOI CẶP ĐẶC BIỆT: trong dãy thừa số có 2 và 5 — cặp đôi cho tích 10, đuôi 0.\nƯỚC LƯỢNG TRƯỚC: đã thấy 2 × 5 = 10 trong dãy — cả tích ắt tận cùng 0.",
     "teaches": [],
     "nhan": "NHỊP 1, DỊCH — từ dàn đèn sang các chữ số tận cùng"
    },
@@ -104,77 +104,69 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: đúng 8 giờ tối, bảng điện tử hiện con số 362 880 — tận cùng 0 y như dự đoán từ chiều! Chú thợ điện trao chiếc đèn ông sao kèm lời phục: \"Đoán trước máy tính — các cháu đúng là người giải.\"\nSOI: soi lại đường suy luận: cặp $2  \\times  5$ nằm trong dãy → tích chia hết cho 10 → đuôi 0; kiểm chéo trên con số thật 362 880: chia hết cho 10 ✓. Suy luận và thực tế bắt tay nhau.\nDÙNG NGOÀI ĐỜI: dự đoán trước khi máy tính trả lời — đó là thói quen của thật: nếu máy hiện số đuôi khác 0, con biết ngay AI đó bấm nhầm, dù chưa cần tính lại!",
+    "narration": "LẮP: đúng 8 giờ tối, bảng điện tử hiện con số 362 880 — tận cùng 0 y như dự đoán từ chiều! Chú thợ điện trao chiếc đèn ông sao kèm lời phục: \"Đoán trước máy tính — các cháu đúng là người giải.\"\nSOI: soi lại đường suy luận: cặp 2 × 5 nằm trong dãy → tích chia hết cho 10 → đuôi 0; kiểm chéo trên con số thật 362 880: chia hết cho 10 ✓. Suy luận và thực tế bắt tay nhau.\nDÙNG NGOÀI ĐỜI: dự đoán trước khi máy tính trả lời — đó là thói quen của thật: nếu máy hiện số đuôi khác 0, con biết ngay AI đó bấm nhầm, dù chưa cần tính lại!",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Chú thợ điện đố tiếp tận cùng của $15  \\times  8$. Trí Long đáp tắp lự: \"Tích có số 15 đuôi 5 — mà số 5 thì lì lắm, nhân gì cũng giữ đuôi 5. Tận cùng bằng 5 ạ!\"",
+    "narration": "Chú thợ điện đố tiếp tận cùng của 15 × 8. Trí Long đáp tắp lự: \"Tích có số 15 đuôi 5 — mà số 5 thì lì lắm, nhân gì cũng giữ đuôi 5. Tận cùng bằng 5 ạ!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Không tính cả tích, hãy tìm chữ số tận cùng của tích $21  \\times  22  \\times  23  \\times  24  \\times  25$.",
+  "problem": "Không tính cả tích, hãy tìm chữ số tận cùng của tích 21 × 22 × 23 × 24 × 25.",
   "steps": [
    {
-    "show": "Tìm chữ số tận cùng của $21  \\times  22  \\times  23  \\times  24  \\times  25$ (không tính cả tích).",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "\"Không tính cả tích\" — đề cấm đường vòng, phải dùng dấu hiệu.",
-    "phan": "tomtat"
+    "show": "Tìm chữ số tận cùng của 21 × 22 × 23 × 24 × 25 (không tính cả tích)."
    },
    {
-    "show": "Mô hình (soi cặp $2  \\times  5$)",
-    "phan": "tomtat"
+    "show": "\"Không tính cả tích\" — đề cấm đường vòng, phải dùng dấu hiệu."
    },
    {
-    "show": "Thừa số 24 là số chẵn (chứa thừa số 2)",
-    "phan": "tomtat"
+    "show": "Mô hình (soi cặp 2 × 5)"
    },
    {
-    "show": "Thừa số 25 có tận cùng 5.",
-    "phan": "tomtat"
+    "show": "Thừa số 24 là số chẵn (chứa thừa số 2)"
    },
    {
-    "show": "Chưa vội nhân dây chuyền — soi cặp đặc biệt trước, có khi trúng lớn.",
-    "phan": "tomtat"
+    "show": "Thừa số 25 có tận cùng 5."
    },
    {
-    "show": "Trong tích có $24  \\times  25 = 600$ là số có tận cùng bằng 0.",
-    "phan": "giai"
+    "show": "Chưa vội nhân dây chuyền — soi cặp đặc biệt trước, có khi trúng lớn."
    },
    {
-    "show": "Một tích có thừa số tận cùng bằng 0 thì cả tích tận cùng bằng 0.",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Vậy tích $21  \\times  22  \\times  23  \\times  24  \\times  25$ có chữ số tận cùng là 0.",
-    "phan": "giai"
+    "show": "Trong tích có 24 × 25 = 600 là số có tận cùng bằng 0."
    },
    {
-    "show": "Chỉ cần tính MỘT tích con $24  \\times  25$ làm bằng chứng — gọn và chặt.",
-    "phan": "giai"
+    "show": "Một tích có thừa số tận cùng bằng 0 thì cả tích tận cùng bằng 0."
    },
    {
-    "show": "Đáp số: chữ số tận cùng là 0.",
-    "phan": "dapso"
+    "show": "Vậy tích 21 × 22 × 23 × 24 × 25 có chữ số tận cùng là 0."
    },
    {
-    "show": "Đáp số đúng câu hỏi — một chữ số.",
-    "phan": "ghichu"
+    "show": "Chỉ cần tính MỘT tích con 24 × 25 làm bằng chứng — gọn và chặt."
    },
    {
-    "show": "Thử lại: tích chứa $24  \\times  25 = 600$ chia hết cho 10 → tận cùng 0 ✓",
-    "phan": "thulai"
+    "show": "Đáp số: chữ số tận cùng là 0."
    },
    {
-    "show": "Soi bằng ngôn ngữ chia hết — hai cách nói, một sự thật.",
-    "phan": "thulai"
+    "show": "Đáp số đúng câu hỏi — một chữ số."
+   },
+   {
+    "show": "Thử lại: tích chứa 24 × 25 = 600 chia hết cho 10 → tận cùng 0 ✓"
+   },
+   {
+    "show": "Soi bằng ngôn ngữ chia hết — hai cách nói, một sự thật."
    }
   ]
  },
@@ -183,11 +175,11 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Không tính cả tích, tìm chữ số tận cùng của $13  \\times  27$.",
+     "text": "Không tính cả tích, tìm chữ số tận cùng của 13 × 27.",
      "answerKey": {
       "value": 1
      },
-     "solutionNarrative": "$3  \\times  7 = 21$ → tận cùng 1 ($13  \\times  27 = 351$ ✓).",
+     "solutionNarrative": "3 × 7 = 21 → tận cùng 1 (13 × 27 = 351 ✓).",
      "hints": [
       "Đuôi chỉ nói chuyện với đuôi.",
       "Nhân hai chữ số cuối rồi giữ lại một chữ số."
@@ -195,11 +187,11 @@
     },
     {
      "id": "C2",
-     "text": "Không tính cả tích, tìm chữ số tận cùng của $24  \\times  16$.",
+     "text": "Không tính cả tích, tìm chữ số tận cùng của 24 × 16.",
      "answerKey": {
       "value": 4
      },
-     "solutionNarrative": "$4  \\times  6 = 24$ → tận cùng 4 ($24  \\times  16 = 384$ ✓).",
+     "solutionNarrative": "4 × 6 = 24 → tận cùng 4 (24 × 16 = 384 ✓).",
      "hints": [
       "Chỉ nhân hai cái đuôi với nhau.",
       "Kết quả ra hai chữ số thì chỉ giữ chữ số cuối."
@@ -207,7 +199,7 @@
     },
     {
      "id": "C3",
-     "text": "Vì sao $4  \\times  35$ có tận cùng bằng 0? Chỉ ra \"cặp đôi vàng\" trong tích.",
+     "text": "Vì sao 4 × 35 có tận cùng bằng 0? Chỉ ra \"cặp đôi vàng\" trong tích.",
      "answerKey": {
       "parts": [
        {
@@ -221,7 +213,7 @@
        }
       ]
      },
-     "solutionNarrative": "$4 = 2  \\times  2$ chứa thừa số 2, gặp 35 có đuôi 5 → cặp $2  \\times  5$ cho đuôi 0 ($4  \\times  35 = 140$ ✓).",
+     "solutionNarrative": "4 = 2 × 2 chứa thừa số 2, gặp 35 có đuôi 5 → cặp 2 × 5 cho đuôi 0 (4 × 35 = 140 ✓).",
      "hints": [
       "Tìm CẶP ĐÔI VÀNG đang ẩn trong tích.",
       "Một thừa số chẵn gặp một đuôi 5 thì sinh ra gì?"
@@ -231,7 +223,7 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Tìm chữ số tận cùng của tích $12  \\times  15  \\times  3$.",
+     "text": "Tìm chữ số tận cùng của tích 12 × 15 × 3.",
      "answerKey": {
       "parts": [
        {
@@ -240,7 +232,7 @@
        }
       ]
      },
-     "solutionNarrative": "12 chẵn gặp 15 đuôi 5 → đuôi 0; nhân tiếp 3 vẫn đuôi 0 ($12  \\times  15  \\times  3 = 540$ ✓).",
+     "solutionNarrative": "12 chẵn gặp 15 đuôi 5 → đuôi 0; nhân tiếp 3 vẫn đuôi 0 (12 × 15 × 3 = 540 ✓).",
      "hints": [
       "Soi trước xem có cặp đôi vàng không.",
       "Đã ra đuôi 0 rồi thì nhân thêm gì cũng vậy."
@@ -248,7 +240,7 @@
     },
     {
      "id": "C5",
-     "text": "Tìm chữ số tận cùng của $7  \\times  7  \\times  7$ bằng dây chuyền tận cùng.",
+     "text": "Tìm chữ số tận cùng của 7 × 7 × 7 bằng dây chuyền tận cùng.",
      "answerKey": {
       "parts": [
        {
@@ -257,7 +249,7 @@
        }
       ]
      },
-     "solutionNarrative": "Dây chuyền: $7  \\times  7 = 49$ → đuôi 9; $9  \\times  7 = 63$ → đuôi 3. Tận cùng 3 (343 ✓).",
+     "solutionNarrative": "Dây chuyền: 7 × 7 = 49 → đuôi 9; 9 × 7 = 63 → đuôi 3. Tận cùng 3 (343 ✓).",
      "hints": [
       "Toàn thừa số cứng đầu — lần theo dây chuyền.",
       "Nhân từng bước, mỗi bước chỉ giữ lại chữ số cuối."
@@ -265,11 +257,11 @@
     },
     {
      "id": "C6",
-     "text": "Không tính, tìm chữ số tận cùng của $21  \\times  22  \\times  23  \\times  24  \\times  25$.",
+     "text": "Không tính, tìm chữ số tận cùng của 21 × 22 × 23 × 24 × 25.",
      "answerKey": {
       "value": 0
      },
-     "solutionNarrative": "Có $24  \\times  25 = 600$ tận cùng 0 → cả tích tận cùng 0.",
+     "solutionNarrative": "Có 24 × 25 = 600 tận cùng 0 → cả tích tận cùng 0.",
      "hints": [
       "Soi cả dãy tìm thừa số chẵn gặp đuôi 5.",
       "Thấy cặp ấy là hô ngay, khỏi nhân."
@@ -277,7 +269,7 @@
     },
     {
      "id": "C7",
-     "text": "Không tính, giải thích vì sao tích $36  \\times  45$ có tận cùng bằng 0.",
+     "text": "Không tính, giải thích vì sao tích 36 × 45 có tận cùng bằng 0.",
      "answerKey": {
       "parts": [
        {
@@ -286,7 +278,7 @@
        }
       ]
      },
-     "solutionNarrative": "$6  \\times  5 = 30$ tận cùng 0 → $36  \\times  45$ tận cùng 0 (= 1 620 ✓).",
+     "solutionNarrative": "6 × 5 = 30 tận cùng 0 → 36 × 45 tận cùng 0 (= 1 620 ✓).",
      "hints": [
       "Nhân hai cái đuôi với nhau xem ra gì.",
       "Trong tích ấy có cặp đôi vàng nào ẩn không?"
@@ -296,7 +288,7 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Tìm chữ số tận cùng của: a) $1  \\times  2  \\times  3$ × ... × 9; b) $1  \\times  3  \\times  5  \\times  7  \\times  9$. Vì sao hai đáp số khác nhau?",
+     "text": "Tìm chữ số tận cùng của: a) 1 × 2 × 3 × ... × 9; b) 1 × 3 × 5 × 7 × 9. Vì sao hai đáp số khác nhau?",
      "answerKey": {
       "parts": [
        {
@@ -309,7 +301,7 @@
        }
       ]
      },
-     "solutionNarrative": "A) dãy chứa $2  \\times  5$ → tận cùng 0 (tích bằng 362 880); b) toàn thừa số lẻ có mặt 5: đuôi chạy 3 → 5 → 5 → 5 → tận cùng 5 (tích bằng 945). Khác nhau vì dãy a có thừa số chẵn \"bắt cặp\" với 5, dãy b thì không.",
+     "solutionNarrative": "A) dãy chứa 2 × 5 → tận cùng 0 (tích bằng 362 880); b) toàn thừa số lẻ có mặt 5: đuôi chạy 3 → 5 → 5 → 5 → tận cùng 5 (tích bằng 945). Khác nhau vì dãy a có thừa số chẵn \"bắt cặp\" với 5, dãy b thì không.",
      "hints": [
       "Dãy nào có thừa số chẵn để bắt cặp với 5?",
       "Dãy toàn lẻ mà có mặt số 5 thì đuôi đứng im ở đâu?"
@@ -317,11 +309,11 @@
     },
     {
      "id": "C9",
-     "text": "Tích của MƯỜI thừa số 2 (tức $2  \\times  2$ × ... × 2, mười lần) tận cùng bằng mấy? Lần theo dây chuyền 2 → 4 → 8 → 6 → 2 → ... và tìm quy luật vòng lặp!",
+     "text": "Tích của MƯỜI thừa số 2 (tức 2 × 2 × ... × 2, mười lần) tận cùng bằng mấy? Lần theo dây chuyền 2 → 4 → 8 → 6 → 2 → ... và tìm quy luật vòng lặp!",
      "answerKey": {
       "value": 4
      },
-     "solutionNarrative": "Dây chuyền đuôi của các lũy thừa 2: 2, 4, 8, 6, 2, 4, 8, 6, ... — vòng lặp 4 nhịp. Mười thừa số: đếm $10 = 4 + 4 + 2$ → dừng ở nhịp thứ hai của vòng: tận cùng 4 ($2  \\times  2$ × ... × 2 mười lần = 1 024 ✓).",
+     "solutionNarrative": "Dây chuyền đuôi của các lũy thừa 2: 2, 4, 8, 6, 2, 4, 8, 6, ... — vòng lặp 4 nhịp. Mười thừa số: đếm 10 = 4 + 4 + 2 → dừng ở nhịp thứ hai của vòng: tận cùng 4 (2 × 2 × ... × 2 mười lần = 1 024 ✓).",
      "hints": [
       "Lần dây chuyền đuôi rồi tìm vòng lặp.",
       "Vòng lặp dài mấy nhịp? Mười thừa số dừng ở nhịp nào?"
@@ -344,16 +336,16 @@
    },
    {
     "id": "Q2",
-    "text": "Tích chứa cặp $2  \\times  5$ thì tận cùng bằng 5.",
+    "text": "Tích chứa cặp 2 × 5 thì tận cùng bằng 5.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Cặp $2  \\times  5$ cho tận cùng 0."
+    "solutionNarrative": "Cặp 2 × 5 cho tận cùng 0."
    },
    {
     "id": "Q3",
-    "text": "$13  \\times  24$ có chữ số tận cùng là:",
+    "text": "13 × 24 có chữ số tận cùng là:",
     "format": "mcq",
     "choices": [
      "A. 2",
@@ -363,11 +355,11 @@
     "answerKey": {
      "choice": "A. 2"
     },
-    "solutionNarrative": "$3  \\times  4 = 12$ → đuôi 2."
+    "solutionNarrative": "3 × 4 = 12 → đuôi 2."
    },
    {
     "id": "Q4",
-    "text": "$15  \\times  8$ có chữ số tận cùng là:",
+    "text": "15 × 8 có chữ số tận cùng là:",
     "format": "mcq",
     "choices": [
      "A. 0",
@@ -381,7 +373,7 @@
    },
    {
     "id": "Q5",
-    "text": "$1  \\times  2  \\times  3  \\times  4  \\times  5$ có chữ số tận cùng là:",
+    "text": "1 × 2 × 3 × 4 × 5 có chữ số tận cùng là:",
     "format": "mcq",
     "choices": [
      "A. 0",
@@ -391,7 +383,7 @@
     "answerKey": {
      "choice": "A. 0"
     },
-    "solutionNarrative": "Chứa $2  \\times  5$ → đuôi 0 (120)."
+    "solutionNarrative": "Chứa 2 × 5 → đuôi 0 (120)."
    }
   ]
  },

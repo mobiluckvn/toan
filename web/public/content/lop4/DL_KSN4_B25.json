@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B25",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 25 · BÀI TOÁN HIỆU - TỈ",
+ "title": "Bài 25 · KHI ĐỀ KHÔNG CHO SẴN TỔNG",
  "durationMinutes": 10,
  "so": 25,
- "chuong": 7,
- "tenChuong": "TỔNG - TỈ VÀ HIỆU - TỈ",
- "dangGoc": "LV 4.1 + LV 4.2 mức Lớp 4 — Tìm hai số biết hiệu và tỉ số · hiệu ẩn (tuổi bất biến, \"bớt thì bằng\")",
+ "chuong": 6,
+ "tenChuong": "TỔNG - HIỆU",
+ "dangGoc": "LV 2.2 mức Lớp 4 — Tổng ẩn qua chu vi, qua trung bình cộng · tổng thay đổi khi thêm - bớt vào một số",
  "skills": {
-  "bktUnit": "CHUONG:7@G4",
+  "bktUnit": "CHUONG:6@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Giải bài Hiệu - Tỉ: hiệu số phần = phần lớn − phần bé; một phần = hiệu : hiệu số phần. Phân biệt chớp nhoáng: đề cho TỔNG → chia tổng số phần; đề cho HIỆU → chia hiệu số phần. Xử lý hiệu ẩn quen mặt: hiệu tuổi bất biến theo thời gian; \"bớt số lớn đi k thì bằng nhau\" → hiệu = k.",
-  "kidText": "Truyện gấp 3 lần thơ, mà ngăn truyện nhiều hơn ngăn thơ 24 cuốn. Lần này đề không cho tổng đâu nhé!",
+  "text": "Lột áo \"chu vi\": tổng của dài và rộng = nửa chu vi = chu vi : 2. Lột áo \"trung bình cộng\": tổng hai số = TBC × 2. Xử ca \"tổng thay đổi\": khi thêm / bớt một lượng vào MỘT số, biết phân biệt tổng cũ - tổng mới và hiệu tại đúng thời điểm.",
+  "kidText": "Cuộn lưới 18 m rào vừa khít quanh vườn, dài hơn rộng 3 m. Đề chẳng nói tổng — con tìm ra không?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — SƠ ĐỒ VỚI NGOẶC HIỆU: hàng \"Truyện\" 3 ô, hàng \"Thơ\" 1 ô — bốn ô đều nhau; nhưng lần này ngoặc KHÔNG ôm cả hai hàng: mũi tên chỉ vào phần truyện NHÔ RA so với thơ, ghi 24 cuốn. Vị trí chiếc ngoặc nói cho ta biết đề cho tổng hay cho hiệu."
+    "text": "Bước 1 — LỘT ÁO \"CHU VI\": lưới rào vừa khít → chu vi vườn = 18 m → dài + rộng = 18 : 2 = 9 (m). Tổng đã lộ diện! Ghép với hiệu 3: rộng = (9 − 3) : 2 = 3 (m); dài = 3 + 3 = 6 (m). Bài hình mà lời giải là Tổng - Hiệu — hai vương quốc bắt tay."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — HIỆU SỐ PHẦN VÀ MỘT PHẦN: phần nhô ra gồm $3 - 1 = 2$ (phần) — và 2 phần ấy chứa 24 cuốn → một phần = $24 : 2 = 12$ (cuốn). Thơ = $12  \\times  1 = 12$; truyện = $12  \\times  3 = 36$ (cuốn). Thử kép kiểu Hiệu - Tỉ: $36 - 12 = 24$ ✓ và $36 = 12  \\times  3$ ✓."
+    "text": "Bước 2 — LỘT ÁO \"TRUNG BÌNH CỘNG\": \"TBC của hai bao gạo là 45 kg, bao một nặng hơn bao hai 6 kg\" — cây cầu Bài 16: tổng = 45 × 2 = 90 (kg) → bao một = (90 + 6) : 2 = 48; bao hai = 42. Nghe chữ \"trung bình cộng\" là tay nhân 2 lấy tổng ngay."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — HIỆU ẨN KIỂU TUỔI (bắt tay Bài 22): \"bố hơn con 27 tuổi, tuổi bố gấp 4 lần tuổi con\" — hiệu 27 dùng thẳng vì hiệu tuổi bất biến! Hiệu số phần $4 - 1 = 3$ → một phần $27 : 3 = 9$ → con 9 tuổi, bố 36 tuổi. Định luật Chương 6 và sơ đồ Chương 7 bắt tay nhau ngọt lịm."
+    "text": "Bước 3 — CA KHÓ: TỔNG THAY ĐỔI GIỮA CHỪNG: hai thùng nước tổng 100 lít; ĐỔ THÊM 20 lít vào thùng một thì thùng một hơn thùng hai 30 lít. Cẩn thận: hiệu 30 xảy ra SAU khi đổ — lúc đó tổng đã thành 100 + 20 = 120! Giải ở thời điểm sau: thùng một (mới) = (120 + 30) : 2 = 75 → thùng một cũ = 75 − 20 = 55; thùng hai = 100 − 55 = 45. Luật vàng: tổng và hiệu phải chụp CÙNG MỘT khoảnh khắc."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — HIỆU ẨN KIỂU \"BỚT THÌ BẰNG\" (bắt tay Bài 21): \"hai số có tỉ $5 : 2$; bớt số lớn đi 9 thì hai số bằng nhau\" — chỉ MỘT bên thay đổi → hiệu = 9 (sổ tay Bài 21!). Hiệu số phần $5 - 2 = 3$ → một phần $9 : 3 = 3$ → hai số là 6 và 15. Thử theo kịch bản: $15 - 9 = 6$ ✓."
+    "text": "Bước 4 — QUY TRÌNH MÁY DÒ: đọc đề xong chưa thấy tổng, hỏi ba câu: có chữ CHU VI không (→ chia 2)? có chữ TRUNG BÌNH CỘNG không (→ nhân số số hạng)? có thêm / bớt giữa chừng không (→ dựng bảng thời điểm, tính tổng MỚI)? Dò ra tổng, phần còn lại là Bài 19 quen thuộc."
    }
   ],
-  "mantra": "Hiệu - Tỉ chỉ khác Tổng - Tỉ đúng MỘT chỗ: chia cho HIỆU SỐ PHẦN (phần lớn − phần bé). Đọc đề gạch chân ngay: chữ \"tất cả / tổng cộng\" → tổng; chữ \"hơn / kém / nhiều hơn\" → hiệu. Hiệu ẩn cứ tra sổ tay Chương 6: tuổi thì bất biến, \"bớt k thì bằng\" thì hiệu bằng k.",
+  "mantra": "Tổng hay trốn trong ba chiếc áo: CHU VI (tổng = chu vi : 2), TRUNG BÌNH CỘNG (tổng = TBC × số số hạng), và THÊM - BỚT giữa chừng (tính tổng tại đúng thời điểm có hiệu). Lột áo xong mới áp cặp công thức — đừng bắt công thức làm việc khi tổng còn mặc áo!",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Trí Long giải bài \"gà mái gấp 5 lần gà trống và nhiều hơn 32 con\": \"Tỉ $5 : 1$, tổng phần 6, một phần bằng $32 : 6$... ơ lại lẻ! Chắc đề sai tiếp rồi!\"",
+    "wrong": "Đọc đề \"chu vi 18 m, dài hơn rộng 3 m\", Trí Long áp công thức tắp lự: \"Tổng 18, hiệu 3 — rộng bằng (18 − 3) : 2 = 7,5 mét... Ơ sao lẻ thế nhỉ, chắc đề in sai!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Con số 32 của đề đứng cạnh chữ gì — \"tất cả\" hay \"nhiều hơn\"? Nó là tổng đàn gà hay phần mái ĐÔNG HƠN trống? Gợi ý 2: Kết quả lẻ lại một lần nữa là chuông báo của nhịp SOI — đề không sai, người giải rẽ nhầm nhánh! Chia lại theo nhánh Hiệu - Tỉ (hiệu số phần 5 − 1) và thử kép giúp Trí Long — rồi cùng cậu ấy đặt câu câu cần nhớ phân nhánh dán lên bàn học."
+    "fix": "Gợi ý 1: Con số 18 của đề là TỔNG hai cạnh hay là CHU VI — hai thứ ấy hơn kém nhau mấy lần? Gợi ý 2: Kết quả lẻ 7,5 chính là chuông báo động của nhịp SOI: đề không sai, người giải mặc nguyên áo cho tổng! Lột áo chu vi rồi tính lại giúp Trí Long — và dặn cậu ấy: gặp đáp số kỳ cục, đừng vội đổ cho đề."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Số truyện gấp 3 lần số thơ; ngăn truyện nhiều hơn ngăn thơ 24 cuốn. Hỏi số cuốn mỗi ngăn?"
+    "narration": "Cuộn lưới 18 m rào VỪA KHÍT quanh vườn hình chữ nhật; chiều dài hơn chiều rộng 3 m. Hỏi chiều dài và chiều rộng của vườn?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? số truyện gấp 3 lần số thơ; ngăn truyện nhiều hơn ngăn thơ 24 cuốn.\nHỎI GÌ? số cuốn mỗi ngăn.\nĐẠI LƯỢNG & ĐƠN VỊ: số sách (cuốn) — con số 24 là phần CHÊNH LỆCH giữa hai ngăn, không phải cả tủ!\nQUAN HỆ GIỮA CHÚNG: truyện 3 phần, thơ 1 phần → phần chênh lệch giữa hai bên là $3 - 1 = 2$ phần, và 2 phần ấy chứa đúng 24 cuốn.\nCHỌN CÔNG CỤ: SƠ ĐỒ PHẦN với ngoặc HIỆU: mũi tên nối chỗ hai hàng lệch nhau, ghi 24; một phần = hiệu : hiệu số phần.\nƯỚC LƯỢNG TRƯỚC: một phần cỡ chục cuốn → thơ hơn chục, truyện vài chục.",
+    "narration": "CHO GÌ? cuộn lưới 18 m rào VỪA KHÍT quanh vườn hình chữ nhật; chiều dài hơn chiều rộng 3 m.\nHỎI GÌ? chiều dài và chiều rộng của vườn.\nĐẠI LƯỢNG & ĐƠN VỊ: độ dài (m) — lưới rào quanh vườn nghĩa là lưới dài đúng bằng CHU VI.\nQUAN HỆ GIỮA CHÚNG: chu vi = (dài + rộng) × 2, nên dài + rộng = chu vi : 2 — chiếc áo \"18 m lưới\" đang che giấu TỔNG = 9!\nCHỌN CÔNG CỤ: MÁY DÒ TỔNG (lột áo chu vi) + sơ đồ Tổng - Hiệu chuẩn của Bài 19.\nƯỚC LƯỢNG TRƯỚC: tổng 9, hiệu 3 → hai cạnh quanh 4-5 m: dài cỡ 6, rộng cỡ 3.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — nhận diện đề cho HIỆU, không cho tổng"
+    "nhan": "NHỊP 1, DỊCH — lột áo khoác của tổng"
    },
    {
     "id": "S3",
@@ -104,85 +104,75 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: biên bản gửi cô thủ thư: \"Ngăn truyện 36 cuốn - ngăn thơ 12 cuốn.\" Cô kiểm đếm thật: khớp từng cuốn! Cô thưởng quyền mượn truyện mới về đầu tiên — phần thưởng đúng chất mọt sách.\nSOI: soi kép: $36 - 12 = 24$ ✓; $36 : 12 = 3$ ✓; và soi cả \"vị trí ngoặc\": nếu coi 24 là tổng sẽ ra thơ 6, truyện 18 — nhưng $18 - 6 = 12$ ≠ 24, trật đề ngay. Đọc sai một chữ, lệch cả bài!\nDÙNG NGOÀI ĐỜI: so sánh giá hai món hàng (\"đắt hơn 24 nghìn, gấp 3 lần\"), so tuổi ông cháu, so chiều cao hai cây — đời sống đầy các cặp \"hơn kém + gấp nhau\", nay con xử gọn.",
+    "narration": "LẮP: báo cáo gửi mẹ: \"Vườn nhà mình dài 6 m, rộng 3 m — cuộn lưới 18 m rào khít không hở phân nào.\" Mẹ đánh dấu luôn bốn góc bằng bốn que tre theo đúng số đo .\nSOI: soi ba lớp: (6 + 3) × 2 = 18 khớp cuộn lưới ✓; 6 − 3 = 3 khớp lời ông thợ ✓; và ướm thật: ban công nhà dài hơn 6 m một chút — vườn 6 × 3 đặt vừa. Toán và thước dây cùng gật đầu.\nDÙNG NGOÀI ĐỜI: đọc \"chu vi\", \"trung bình\", \"sau khi thêm bớt\" ở bất kỳ đề nào — kể cả hóa đơn, bản vẽ nhà — con đều biết tổng thật đang nấp sau lớp áo nào.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Trí Long giải bài \"gà mái gấp 5 lần gà trống và nhiều hơn 32 con\": \"Tỉ $5 : 1$, tổng phần 6, một phần bằng $32 : 6$... ơ lại lẻ! Chắc đề sai tiếp rồi!\"",
+    "narration": "Đọc đề \"chu vi 18 m, dài hơn rộng 3 m\", Trí Long áp công thức tắp lự: \"Tổng 18, hiệu 3 — rộng bằng (18 − 3) : 2 = 7,5 mét... Ơ sao lẻ thế nhỉ, chắc đề in sai!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tủ sách có ngăn truyện và ngăn thơ. Số truyện gấp 3 lần số thơ và nhiều hơn số thơ 24 cuốn. Tính số sách mỗi ngăn.",
+  "problem": "Một mảnh vườn hình chữ nhật có chu vi 18 m, chiều dài hơn chiều rộng 3 m. Tính chiều dài và chiều rộng của mảnh vườn.",
   "steps": [
    {
-    "show": "Truyện gấp 3 lần thơ; truyện hơn thơ 24 cuốn.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Tìm số sách mỗi ngăn.",
-    "phan": "tomtat"
+    "show": "Chu vi: 18 m; dài hơn rộng: 3 m."
    },
    {
-    "show": "Gạch chân chữ \"hơn\" — đề cho HIỆU, không cho tổng.",
-    "phan": "tomtat"
+    "show": "Tìm chiều dài, chiều rộng."
    },
    {
-    "show": "Truyện: [—][—][—]",
-    "phan": "phantich"
+    "show": "Đề chỉ đưa CHU VI — chưa vội coi 18 là tổng!"
    },
    {
-    "show": "Thơ: [—]",
-    "phan": "phantich"
+    "show": "Mô hình (lột áo chu vi)"
    },
    {
-    "show": "(mũi tên vào 2 ô truyện nhô ra: 24 cuốn)",
-    "phan": "phantich"
+    "show": "Nửa chu vi = dài + rộng → TỔNG lộ diện."
    },
    {
-    "show": "Ngoặc hiệu chỉ vào PHẦN NHÔ RA — khác hẳn ngoặc tổng ôm cả hai hàng.",
-    "phan": "phantich"
+    "show": "Có tổng, có hiệu 3 → sơ đồ Tổng - Hiệu chuẩn."
    },
    {
-    "show": "Hiệu số phần bằng nhau là: $3 - 1 = 2$ (phần)",
-    "phan": "giai"
+    "show": "Một dòng \"lột áo\" biến bài hình thành bài Tổng - Hiệu."
    },
    {
-    "show": "Giá trị một phần là: $24 : 2 = 12$ (cuốn)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Số thơ là: $12  \\times  1 = 12$ (cuốn)",
-    "phan": "giai"
+    "show": "Nửa chu vi mảnh vườn là: 18 : 2 = 9 (m)"
    },
    {
-    "show": "Số truyện là: $12  \\times  3 = 36$ (cuốn)",
-    "phan": "giai"
+    "show": "Nửa chu vi chính là tổng của chiều dài và chiều rộng."
    },
    {
-    "show": "Bốn bước quen thuộc — chỉ dòng đầu đổi \"tổng\" thành \"hiệu\".",
-    "phan": "giai"
+    "show": "Chiều rộng mảnh vườn là: (9 − 3) : 2 = 3 (m)"
    },
    {
-    "show": "Đáp số: truyện 36 cuốn ; thơ 12 cuốn.",
-    "phan": "dapso"
+    "show": "Chiều dài mảnh vườn là: 3 + 3 = 6 (m)"
    },
    {
-    "show": "Đáp số đủ hai ngăn.",
-    "phan": "ghichu"
+    "show": "Dòng thứ hai nêu CĂN CỨ vì sao 9 là tổng — mắt xích hay bị bỏ quên."
    },
    {
-    "show": "Thử lại: $36 - 12 = 24$ ✓ ; $36 : 12 = 3$ ✓",
-    "phan": "thulai"
+    "show": "Đáp số: chiều dài 6 m ; chiều rộng 3 m."
    },
    {
-    "show": "Thử kép Hiệu - Tỉ: khớp hiệu VÀ khớp tỉ.",
-    "phan": "thulai"
+    "show": "Đáp số đủ hai chiều, kèm đơn vị."
+   },
+   {
+    "show": "Thử lại: (6 + 3) × 2 = 18 ✓ ; 6 − 3 = 3 ✓"
+   },
+   {
+    "show": "Thử bằng chính chiếc áo của đề: chu vi và hiệu đều khớp."
    }
   ]
  },
@@ -191,195 +181,177 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tìm hai số có hiệu bằng 10 và tỉ số bằng $3 : 1$.",
+     "text": "Trung bình cộng của hai số là 25. Tổng của hai số đó bằng bao nhiêu?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số bé",
-        "value": 5
-       },
-       {
-        "label": "số lớn",
-        "value": 15
-       }
-      ]
+      "value": 50
      },
-     "solutionNarrative": "Hiệu phần $3 - 1 = 2$; một phần $10 : 2 = 5$ → hai số là 5 và 15.",
+     "solutionNarrative": "Tổng = 25 × 2 = 50.",
      "hints": [
-      "Chỉ khác Tổng - Tỉ đúng một chỗ: chia cho HIỆU SỐ PHẦN.",
-      "Phần lớn trừ phần bé ra hiệu số phần."
+      "Cây cầu: tổng bằng trung bình nhân số số hạng.",
+      "Hai số thì nhân đôi."
      ]
     },
     {
      "id": "C2",
-     "text": "Tìm hai số biết số lớn gấp 3 lần số bé và hơn số bé 24 đơn vị.",
+     "text": "Hình chữ nhật có chu vi 18 m. Tổng của chiều dài và chiều rộng bằng bao nhiêu mét?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số bé",
-        "value": 12
-       },
-       {
-        "label": "số lớn",
-        "value": 36
-       }
-      ]
+      "value": 9
      },
-     "solutionNarrative": "Hiệu phần 2; một phần $24 : 2 = 12$ → hai số là 12 và 36.",
+     "solutionNarrative": "Nửa chu vi = 18 : 2 = 9 (m).",
      "hints": [
-      "Chữ hơn báo đây là bài hiệu.",
-      "Hiệu số phần rồi mới tới một phần."
+      "Chu vi gồm HAI cặp dài - rộng.",
+      "Chia đôi chu vi ra nửa vòng."
      ]
     },
     {
      "id": "C3",
-     "text": "Vẽ sơ đồ (nhớ đặt đúng chỗ ngoặc hiệu!) rồi tìm hai số có hiệu bằng 8, tỉ số $3 : 1$.",
+     "text": "Hình chữ nhật có chu vi 18 m, chiều dài hơn chiều rộng 3 m. Tính chiều dài và chiều rộng.",
      "answerKey": {
       "parts": [
        {
-        "label": "số bé",
-        "value": 4
+        "label": "rộng",
+        "value": 3
        },
        {
-        "label": "số lớn",
-        "value": 12
+        "label": "dài",
+        "value": 6
        }
       ]
      },
-     "solutionNarrative": "Hiệu phần 2; một phần 4 → hai số là 4 và 12 (ngoặc hiệu chỉ vào 2 ô nhô ra).",
+     "solutionNarrative": "Tổng 9, hiệu 3 → rộng = (9 − 3) : 2 = 3 m; dài = 6 m. Thử: (6 + 3) × 2 = 18 ✓.",
      "hints": [
-      "Ngoặc hiệu chỉ vào phần NHÔ RA, không ôm cả hai hàng.",
-      "Phần nhô ra gồm mấy ô?"
+      "Lột áo chu vi ra tổng trước.",
+      "Có tổng và hiệu rồi thì chặt thừa chia đôi."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Ngăn truyện gấp 3 lần ngăn thơ và nhiều hơn ngăn thơ 24 cuốn. Tính số sách mỗi ngăn.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "ngăn thơ",
-        "value": 12
-       },
-       {
-        "label": "ngăn truyện",
-        "value": 36
-       }
-      ]
-     },
-     "solutionNarrative": "Một phần $24 : 2 = 12$ → thơ 12 cuốn; truyện 36 cuốn. Thử: $36 - 12 = 24$ ✓; $36 : 12 = 3$ ✓.",
-     "hints": [
-      "Vẽ sơ đồ, đặt ngoặc hiệu vào phần nhô ra.",
-      "Hiệu chia cho hiệu số phần ra một phần."
-     ]
-    },
-    {
-     "id": "C5",
-     "text": "Tuổi bố gấp 4 lần tuổi con và bố hơn con 27 tuổi. Tính tuổi mỗi người.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "tuổi con",
-        "value": 9
-       },
-       {
-        "label": "tuổi bố",
-        "value": 36
-       }
-      ]
-     },
-     "solutionNarrative": "Hiệu phần $4 - 1 = 3$; một phần $27 : 3 = 9$ → con 9 tuổi; bố 36 tuổi.",
-     "hints": [
-      "Hiệu tuổi dùng thẳng được vì nó bất biến.",
-      "Hiệu số phần là mấy ô?"
-     ]
-    },
-    {
-     "id": "C6",
-     "text": "Tìm hai số có hiệu bằng 15 và tỉ số bằng $4 : 1$.",
+     "text": "Trung bình cộng của hai số là 25, hiệu của chúng là 6. Tìm hai số đó.",
      "answerKey": {
       "parts": [
        {
         "label": "số bé",
-        "value": 5
+        "value": 22
        },
        {
         "label": "số lớn",
-        "value": 20
+        "value": 28
        }
       ]
      },
-     "solutionNarrative": "Hiệu phần 3; một phần $15 : 3 = 5$ → hai số là 5 và 20.",
+     "solutionNarrative": "Tổng = 50 → số bé = (50 − 6) : 2 = 22; số lớn = 28.",
      "hints": [
-      "Hiệu số phần: bốn ô trừ một ô.",
-      "Chia hiệu cho số ô nhô ra."
+      "Lột áo trung bình cộng ra tổng.",
+      "Có tổng và hiệu rồi thì công thức quen thuộc."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Mảnh sân hình chữ nhật có chu vi 40 m, chiều dài hơn chiều rộng 4 m. Tính chiều dài và chiều rộng.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chiều dài",
+        "value": 8
+       },
+       {
+        "label": "chiều rộng",
+        "value": 12
+       }
+      ]
+     },
+     "solutionNarrative": "Nửa chu vi 20 → rộng = (20 − 4) : 2 = 8 m; dài = 12 m.",
+     "hints": [
+      "Nửa chu vi chính là tổng dài và rộng.",
+      "Rồi chặt thừa chia đôi ra chiều rộng."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Hai bao gạo có khối lượng trung bình là 45 kg, bao thứ nhất nặng hơn bao thứ hai 6 kg. Hỏi mỗi bao nặng bao nhiêu ki-lô-gam?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bao thứ nhất",
+        "value": 48
+       },
+       {
+        "label": "bao thứ hai",
+        "value": 42
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng = 45 × 2 = 90 → bao hai = (90 − 6) : 2 = 42 kg; bao một = 48 kg.",
+     "hints": [
+      "Nhân trung bình với số bao ra tổng.",
+      "Có tổng và hiệu rồi thì áp công thức."
      ]
     },
     {
      "id": "C7",
-     "text": "Đàn gà có số gà mái gấp 5 lần số gà trống, và mái nhiều hơn trống 32 con. Tính số gà mỗi loại.",
+     "text": "Hai thùng chứa tổng cộng 100 lít nước. Sau khi đổ thêm 20 lít vào thùng thứ nhất thì thùng thứ nhất hơn thùng thứ hai 30 lít. Hỏi lúc đầu mỗi thùng chứa bao nhiêu lít? (Cẩn thận: hiệu 30 xảy ra ở thời điểm nào?)",
      "answerKey": {
       "parts": [
        {
-        "label": "gà trống",
-        "value": 8
+        "label": "thùng thứ nhất lúc đầu",
+        "value": 55
        },
        {
-        "label": "gà mái",
-        "value": 40
+        "label": "thùng thứ hai lúc đầu",
+        "value": 45
        }
       ]
      },
-     "solutionNarrative": "Hiệu phần $5 - 1 = 4$; một phần $32 : 4 = 8$ → trống 8 con; mái 40 con.",
+     "solutionNarrative": "Hiệu 30 xảy ra SAU khi đổ → tổng lúc đó = 100 + 20 = 120 → thùng một (sau) = (120 + 30) : 2 = 75 → thùng một lúc đầu = 75 − 20 = 55 lít; thùng hai = 100 − 55 = 45 lít. Thử: 55 + 20 = 75; 75 − 45 = 30 ✓.",
      "hints": [
-      "Chữ nhiều hơn báo đây là bài hiệu.",
-      "Hiệu số phần, rồi một phần, rồi nhân lên."
+      "Hiệu ấy xảy ra ở thời điểm NÀO?",
+      "Tính tổng tại đúng thời điểm ấy rồi mới ghép với hiệu."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Mẹ hơn con 25 tuổi. Hiện nay tuổi mẹ gấp 6 lần tuổi con. Tính tuổi hai mẹ con hiện nay. (Vì sao hiệu 25 dùng được ngay không cần nghĩ ngợi?)",
+     "text": "Hình chữ nhật có chu vi 36 m. Nếu tăng chiều rộng thêm 2 m thì mảnh đất trở thành hình vuông. Tính chiều dài và chiều rộng ban đầu. (Chi tiết \"thành hình vuông\" đang khai ra điều gì?)",
      "answerKey": {
       "parts": [
        {
-        "label": "tuổi con",
-        "value": 5
+        "label": "rộng",
+        "value": 8
        },
        {
-        "label": "tuổi mẹ",
-        "value": 30
+        "label": "dài",
+        "value": 10
        }
       ]
      },
-     "solutionNarrative": "Hiệu tuổi 25 bất biến (định luật Bài 22!) → hiệu phần $6 - 1 = 5$; một phần $25 : 5 = 5$ → con 5 tuổi; mẹ 30 tuổi. Thử: $30 = 5  \\times  6$ ✓; $30 - 5 = 25$ ✓.",
+     "solutionNarrative": "\"tăng rộng 2 m thành hình vuông\" khai ra: dài hơn rộng 2 m; nửa chu vi = 36 : 2 = 18 → rộng = (18 − 2) : 2 = 8 m; dài = 10 m. Thử: 8 + 2 = 10 = dài ✓.",
      "hints": [
-      "Hiệu tuổi bất biến nên dùng ngay được.",
-      "Hiệu số phần là sáu ô trừ một ô."
+      "Chi tiết thành hình vuông đang khai ra HIỆU.",
+      "Có hiệu rồi thì lột áo chu vi ra tổng."
      ]
     },
     {
      "id": "C9",
-     "text": "Hai số có tỉ số $5 : 2$. Nếu bớt số lớn đi 9 đơn vị thì hai số bằng nhau. Tìm hai số — sổ tay hiệu ẩn của Bài 21 sẽ mách con hiệu thật là bao nhiêu!",
+     "text": "Trung bình cộng của hai số là 36, hiệu của chúng là 8. Tìm hai số — và trả lời: câu 'tổng hai số luôn bằng trung bình cộng nhân 2' đúng với MỌI cặp số hay chỉ đôi khi? Vì sao?",
      "answerKey": {
       "parts": [
        {
         "label": "số bé",
-        "value": 6
+        "value": 32
        },
        {
         "label": "số lớn",
-        "value": 15
+        "value": 40
        }
       ]
      },
-     "solutionNarrative": "\"bớt số lớn 9 thì bằng\" — một bên thay đổi → hiệu = 9 (sổ tay Bài 21); hiệu phần 3; một phần 3 → hai số là 6 và 15. Thử: $15 - 9 = 6$ ✓.",
+     "solutionNarrative": "Tổng = 36 × 2 = 72 → số bé = (72 − 8) : 2 = 32; số lớn = 40. Câu \"tổng = TBC × 2\" đúng với MỌI cặp số — vì đó chính là chiều ngược của định nghĩa TBC hai số.",
      "hints": [
-      "Sổ tay hiệu ẩn: mấy bên cùng nhúc nhích?",
-      "Chỉ một bên đổi thì hiệu đúng bằng phần bớt."
+      "Lột áo trung bình cộng ra tổng trước.",
+      "Rồi chặt thừa chia đôi."
      ]
     }
    ]
@@ -390,7 +362,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Với tỉ số $3 : 1$, hiệu số phần bằng nhau là 2.",
+    "text": "Nửa chu vi hình chữ nhật bằng chiều dài cộng chiều rộng.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -399,61 +371,61 @@
    },
    {
     "id": "Q2",
-    "text": "Số lớn gấp 4 lần số bé và hơn số bé 12 thì số bé bằng 3.",
+    "text": "Tổng của hai số bằng trung bình cộng của chúng chia cho 2.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Một phần $12 : 3 = 4$, số bé là 4."
+    "solutionNarrative": "Tổng = TBC × 2."
    },
    {
     "id": "Q3",
-    "text": "Số lớn gấp 3 số bé và hơn số bé 12. Số bé là:",
+    "text": "Chu vi 24 m thì nửa chu vi là:",
     "format": "mcq",
     "choices": [
-     "A. 6",
-     "B. 4",
-     "C. 12"
+     "A. 12 m",
+     "B. 6 m",
+     "C. 48 m"
     ],
     "answerKey": {
-     "choice": "A. 6"
+     "choice": "A. 12 m"
     },
-    "solutionNarrative": "$12 : 2 = 6$."
+    "solutionNarrative": "12 m)."
    },
    {
     "id": "Q4",
-    "text": "Số lớn gấp 5 số bé và hơn số bé 20. Số lớn là:",
+    "text": "Trung bình cộng của hai số là 15. Tổng của chúng là:",
     "format": "mcq",
     "choices": [
-     "A. 25",
-     "B. 20",
-     "C. 5"
+     "A. 30",
+     "B. 15",
+     "C. 7"
     ],
     "answerKey": {
-     "choice": "A. 25"
+     "choice": "A. 30"
     },
-    "solutionNarrative": "Một phần $20 : 4 = 5$, số lớn 25."
+    "solutionNarrative": "30)."
    },
    {
     "id": "Q5",
-    "text": "Bố gấp 4 lần con và hơn con 30 tuổi. Tuổi con là:",
+    "text": "Chu vi 28 m, dài hơn rộng 2 m. Chiều rộng là:",
     "format": "mcq",
     "choices": [
-     "A. 10",
-     "B. 40",
-     "C. 15"
+     "A. 6 m",
+     "B. 8 m",
+     "C. 5 m"
     ],
     "answerKey": {
-     "choice": "A. 10"
+     "choice": "A. 6 m"
     },
-    "solutionNarrative": "Một phần $30 : 3 = 10$, con 10 tuổi."
+    "solutionNarrative": "Nửa chu vi 14 → rộng (14 − 2) : 2 = 6 m."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Trò \"tổng hay hiệu?\": đọc nhanh mười đề trộn lẫn hai dạng, con chỉ hô \"TỔNG!\" hoặc \"HIỆU!\" kèm lý do một câu — phân nhánh đúng là 80% bài toán.",
-  "homeActivity": "Bài tuổi gấp nhau là dịp ôn định luật \"hiệu tuổi bất biến\" của Chương 6 — hỏi con: \"vì sao hiệu 25 tuổi dùng được cho MỌI thời điểm?\"",
-  "watchFor": "NÊN: cho con giải cùng một cặp số theo cả đề tổng lẫn đề hiệu để thấy hai anh em một nhà. KHÔNG NÊN: bài tuổi hai thời điểm với tỉ thay đổi (\"3 năm nữa mẹ gấp 4 lần con\") — dạng chuyển thời gian ấy thuộc Chương 8."
+  "onComplete": "Trò \"tổng đang mặc áo gì?\": đọc to một đề Tổng - Hiệu bất kỳ, con chỉ cần hô đúng chiếc áo (chu vi / trung bình / thêm-bớt) và cách lột — chưa cần giải. Nhận diện nhanh là nửa thành công.",
+  "homeActivity": "Với ca \"thêm bớt giữa chừng\", cho con kẻ bảng hai cột thời điểm TRƯỚC - SAU và tự trả lời \"hiệu của đề chụp ở cột nào?\" — thói quen chụp đúng khoảnh khắc cứu vô số bài sau này.",
+  "watchFor": "NÊN: khai thác đồ thật (cuộn dây, khung ảnh) để \"nửa chu vi\" thành sờ nắm được. KHÔNG NÊN: ca hiệu thay đổi phức tạp (chuyển qua lại nhiều lần) — Bài 21 mới mở khóa \"chuyển k đổi 2k\", và các biến thể chồng tầng hẹn lớp 5."
  },
  "figureSpec": [
   {
@@ -462,8 +434,8 @@
     "hook"
    ],
    "file": "figures/L4H_B25_MO.png",
-   "caption": "Ba phần so một phần — phần chênh là chìa khóa.",
-   "sha256_16": "d6ccf73e07e224b0",
+   "caption": "Mảnh vườn chữ nhật, chỉ biết chu vi và phần hơn.",
+   "sha256_16": "0883cd82f5264450",
    "mucGoc": "chuyenMoBai"
   },
   {
@@ -472,20 +444,20 @@
     "screen:S3"
    ],
    "file": "figures/L4H_B25_G1.png",
-   "caption": "Tổng - tỉ chia cho TỔNG số phần, hiệu - tỉ chia cho HIỆU số phần.",
-   "sha256_16": "da4bfbd2a0fd022b",
+   "caption": "Hai chỗ tổng hay nấp: chu vi và trung bình cộng.",
+   "sha256_16": "9d28e2cdbd96c820",
    "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Bài 23 - 24, chiếc ngoặc ôm sơ đồ luôn ghi TỔNG. Hôm nay đề đổi chiêu: cho biết hai bên HƠN KÉM nhau bao nhiêu — tức là cho HIỆU. May thay, sơ đồ phần vẫn dùng nguyên, chỉ đổi đúng một bước: thay vì chia cho tổng số phần, ta chia cho HIỆU SỐ PHẦN. Và những chiêu giấu hiệu của Chương 6 (tuổi bất biến, \"bớt thì bằng\") sẽ tái xuất đúng hẹn.",
+ "hatMam": "Bài 19 êm đẹp vì đề khai sẵn cả tổng lẫn hiệu. Nhưng đề thi ít khi tử tế vậy: chúng giấu TỔNG vào những chiếc áo khoác — \"chu vi\", \"trung bình cộng\", \"sau khi mua thêm...\". May sao con đã có sẵn chìa: nửa chu vi = dài + rộng (Bài 15 từng tính chu vi!) và cây cầu Tổng = TBC × số số hạng (Bài 16). Hôm nay lắp chúng thành MÁY DÒ TỔNG.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B18",
-   "DL:KSN3.B09"
+   "DL:KSN3.B27",
+   "DL:KSN3.B17"
   ],
   "ten": [
-   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
-   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+   "CHU VI CÓ CÔNG THỨC",
+   "BÀI TOÁN HAI BƯỚC TÍNH"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

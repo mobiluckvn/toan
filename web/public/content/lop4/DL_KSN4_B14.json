@@ -2,13 +2,13 @@
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN4.B14",
  "grade": 4,
- "quyen": "lop4",
- "title": "Bài 14 · DÃY SỐ HAI TẦNG VÀ DÃY NHÂN",
+ "quyen": "KSN4",
+ "title": "Bài 14 · SỐ HẠNG THỨ n — ĐẾM BƯỚC NHẢY, KHÔNG ĐẾM CHỖ",
  "durationMinutes": 10,
  "so": 14,
  "chuong": 4,
  "tenChuong": "DÃY SỐ",
- "dangGoc": "SỐ 5.2 mức Lớp 4 — Số hạng thứ n xa hơn của dãy tầng 2 · dãy nhân k lần · giải thích quy luật bằng lời",
+ "dangGoc": "Dạng gốc: SỐ 5.1b mức Lớp 4 — Công thức số hạng thứ n = số đầu + khoảng cách × (n − 1).",
  "skills": {
   "bktUnit": "CHUONG:4@G4",
   "primary": []
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Nhận diện và viết tiếp dãy HAI TẦNG (phần cộng thêm tăng dần) và dãy NHÂN k lần. Tìm số hạng thứ n xa hơn của dãy hai tầng bằng cách cộng dồn các hiệu (gọi Gauss trợ chiến). Phát biểu quy luật của một dãy bằng MỘT câu văn rõ ràng.",
-  "kidText": "Bỏ heo tuần 1 được 1 nghìn, tuần sau nhiều hơn tuần trước 1 nghìn. Đến tuần nào thì đủ 120 nghìn?",
+  "text": "Hiểu vì sao đi từ vị trí 1 đến vị trí n chỉ có n − 1 bước nhảy, không phải n. Dùng được công thức: số hạng thứ n = số đầu + khoảng cách × (n − 1). Tìm số hạng ở vị trí xa mà không phải viết cả dãy.",
+  "kidText": "Bậc thang đầu cao 15 xăng-ti-mét, mỗi bậc lại cao thêm 15. Bác bảo vệ hỏi bậc thứ 20 cao bao nhiêu — con leo thử hay tính thử nhỉ?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,33 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — SOI TẦNG DƯỚI: dãy 1, 3, 6, 10, 15: lấy số sau trừ số trước được tầng dưới: 2, 3, 4, 5 — một dãy cách đều tăng dần! Hai số tiếp của tầng trên: $15 + 6 = 21$ và $21 + 7 = 28$. LỜI QUY LUẬT (luật bắt buộc): \"Mỗi số bằng số liền trước cộng thêm một số; phần cộng thêm tăng dần 2, 3, 4, ...\""
+    "text": "Bước 1 — ĐẾM BƯỚC NHẢY, KHÔNG ĐẾM CHỖ. Đây là chỗ tinh tế nhất của cả bài, và cũng là chỗ hầu hết bạn sai. Từ bậc 1 lên bậc 4 thì leo mấy lần? Vẽ ra mà đếm: 1 → 2 (một lần) → 3 (hai lần) → 4 (BA lần). Bốn bậc nhưng chỉ BA lần leo. Số bước nhảy luôn ÍT HƠN số chỗ đúng 1."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — SỐ HẠNG Ở XA — GỌI GAUSS TRỢ CHIẾN: tổng trong heo sau tuần n = $1 + 2$ + ... + n. Sau tuần 10: ($1 + 10$) × $10 : 2 = 55$ nghìn — không cần viết đủ mười tuần! Dãy 1, 2, 4, 7, 11 cũng vậy: số thứ $10 = 1$ + ($1 + 2$ + ... + 9) = $1 + 45 = 46$. Bí quyết: số hạng xa = số đầu + TỔNG các bước nhảy."
+    "text": "Bước 2 — VÌ SAO ÍT HƠN 1. Vì bậc thứ nhất con ĐÃ ĐỨNG SẴN ở đó rồi, không phải leo lần nào để tới nó. Chỉ từ bậc 2 trở đi mới cần leo. Cũng như hàng rào: 5 cây cột thì chỉ có 4 khoảng ở giữa."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — HỌ HÀNG BÊN NỘI: DÃY NHÂN: dãy 3, 6, 12, 24, ...: lấy số sau CHIA số trước: đều bằng 2 → dãy nhân 2, hai số tiếp là 48, 96. Lời quy luật: \"Mỗi số bằng số liền trước nhân với 2.\" Nhận diện nhanh: bước nhảy phình rất nhanh → thử phép CHIA trước khi thử phép trừ."
+    "text": "Bước 3 — GHÉP THÀNH CÔNG THỨC. Muốn tới vị trí n thì nhảy n − 1 bước, mỗi bước cộng thêm đúng một KHOẢNG CÁCH. Vậy: số hạng thứ n = số đầu + khoảng cách × (n − 1)."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — VỀ ĐÍCH MŨ BẢO HIỂM: cần 120 nghìn: tìm n để $1 + 2$ + ... + n = 120. Thử bằng Gauss: n = 15 → ($1 + 15$) × $15 : 2 = 120$ — vừa khít tuần 15! (Soi hàng xóm: n = 14 cho 105, chưa đủ.) Chiến dịch heo đất có ngày về đích chính xác."
+    "text": "Bước 4 — GIẢI BÀI BẬC THANG. Số đầu 15, khoảng cách 15, n = 20 → bậc thứ 20 cao 15 + 15 × (20 − 1) = 15 + 15 × 19 = 15 + 285 = 300 (cm), tức là 3 mét. Khớp với ước lượng \"ba trăm mấy\" ✓."
+   },
+   {
+    "id": "K5",
+    "text": "Bước 5 — THỬ NGƯỢC CHO CHẮC. Thay n = 1 vào công thức: 15 + 15 × (1 − 1) = 15 + 0 = 15 ✓ — đúng bằng số hạng đầu. Một công thức tốt phải đúng ngay ở chỗ dễ nhất; thử n = 1 là cách soi nhanh nhất xem mình có nhớ nhầm dấu trừ không."
    }
   ],
-  "mantra": "Gặp dãy lạ: soi TẦNG DƯỚI trước — trừ nhau ra dãy đẹp là dãy hai tầng; chia nhau ra số không đổi là dãy nhân. Số hạng ở xa của dãy hai tầng = số đầu + tổng các bước nhảy (Gauss lo khoản tổng). Và luật : quy luật nào cũng phải NÓI ĐƯỢC THÀNH MỘT CÂU.",
+  "mantra": "viết công thức ra lề rồi khoanh tròn chữ (n − 1). Mỗi lần thay số, tính (n − 1) TRƯỚC, xong mới nhân.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Gặp dãy 3, 6, 12, 24, Trí Long phán: \"Hiệu là 3, 6, 12 — tăng dần nè! Đây là dãy hai tầng, số tiếp theo cộng thêm 24: bằng 48... à không, cộng thêm bao nhiêu ta?!\"",
+    "wrong": "Cô hỏi số hạng thứ 20 của dãy 3 ; 7 ; 11 ; ..., Trí Long bấm máy: \"Khoảng cách 4, vị trí 20, vậy lấy 3 + 4 × 20 = 83 ạ!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Tầng dưới 3, 6, 12 của Trí Long có phải dãy cách đều \"tăng dần ĐỀU\" không — hay chính nó cũng đang nhân đôi? Khi tầng dưới rối như tầng trên, hãy nghi ngờ mình chọn nhầm phép soi. Gợi ý 2: Thử phép CHIA: $6 : 3$, $12 : 6$, $24 : 12$ — con thấy gì? Gọi đúng tên dãy, nêu lời quy luật chuẩn và tìm hai số tiếp theo giúp Trí Long. (Kết quả 48 của cậu ấy đúng hay chỉ... ăn may?)"
+    "fix": "Gợi ý 1: Con thử công thức của Trí Long với vị trí thứ NHẤT xem: 3 + 4 × 1 = 7. Nhưng số hạng thứ nhất rõ ràng là 3 mà? Gợi ý 2: Từ chỗ thứ nhất đến chỗ thứ 20, con nhảy 20 bước hay 19 bước? Vẽ bốn chỗ ra mà đếm thử. Chữa: phải nhân với (20 − 1) = 19, không nhân với 20. Số hạng thứ 20 = 3 + 4 × 19 = 79. Nhớ: ĐẾM BƯỚC NHẢY, KHÔNG ĐẾM CHỖ."
    }
   ]
  },
@@ -60,14 +64,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Khoản bỏ heo: tuần 1 là 1 nghìn, mỗi tuần sau nhiều hơn tuần trước 1 nghìn; bảng TỔNG tiền: 1, 3, 6, 10, 15, ... Hỏi hai số tiếp theo của bảng tổng; tổng sau tuần thứ 10; và đến tuần nào đủ 120 nghìn mua mũ bảo hiểm?"
+    "narration": "Đài quan sát có một cầu thang dài. Bậc thứ nhất cao 15 cm; mỗi bậc thêm 15 cm → dãy độ cao: 15 ; 30 ; 45 ; ... Hỏi bậc thứ 20 cao bao nhiêu?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? khoản bỏ heo: tuần 1 là 1 nghìn, mỗi tuần sau nhiều hơn tuần trước 1 nghìn; bảng TỔNG tiền: 1, 3, 6, 10, 15, ...\nHỎI GÌ? hai số tiếp theo của bảng tổng; tổng sau tuần thứ 10; và đến tuần nào đủ 120 nghìn mua mũ bảo hiểm.\nĐẠI LƯỢNG & ĐƠN VỊ: tiền (nghìn đồng) theo tuần — phân biệt \"khoản bỏ MỖI tuần\" với \"TỔNG trong heo\".\nQUAN HỆ GIỮA CHÚNG: khoản bỏ các tuần là 1, 2, 3, 4, ... nên tổng trong heo tăng theo bước nhảy lớn dần — hiệu hai số liền nhau của bảng tổng chính là khoản bỏ tuần đó.\nCHỌN CÔNG CỤ: BẢNG HAI TẦNG: tầng trên ghi tổng, tầng dưới ghi các bước nhảy +2, +3, +4, ... — và công thức Gauss để cộng dồn.\nƯỚC LƯỢNG TRƯỚC: tổng sau tuần $10 = 1 + 2$ + ... + 10, cỡ dăm chục nghìn.",
+    "narration": "CHO GÌ? bậc thứ nhất cao 15 cm; mỗi bậc thêm 15 cm → dãy độ cao: 15 ; 30 ; 45 ; ...\nHỎI GÌ? bậc thứ 20 cao bao nhiêu.\nĐẠI LƯỢNG & ĐƠN VỊ: độ cao tính bằng xăng-ti-mét, còn số bậc là vị trí — đúng hai thứ con vừa phân biệt ở bài trước.\nQUAN HỆ GIỮA CHÚNG: dãy độ cao là dãy CÁCH ĐỀU, số đầu 15, khoảng cách 15.\nCHỌN CÔNG CỤ: công thức SỐ HẠNG THỨ n. Đây là công thức DUY NHẤT của bài này.\nƯỚC LƯỢNG TRƯỚC: 20 bậc, mỗi bậc 15 cm, chắc khoảng ba trăm mấy — nếu tính ra 4 000 cm thì biết ngay là sai.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ bảng heo đất sang hai tầng số"
+    "nhan": "NHỊP 1, DỊCH"
    },
    {
     "id": "S3",
@@ -104,85 +108,59 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: thông báo dán cạnh heo đất: \"Theo giao kèo, sau tuần 10 heo có 55 nghìn; mũ bảo hiểm 120 nghìn sẽ về tay đúng TUẦN 15.\" Su Bống đánh dấu ngày ấy lên tờ lịch — mục tiêu tài chính có hạn chót rõ ràng!\nSOI: soi bằng bảng thật: cộng tay 5 tuần đầu $1 + 2 + 3 + 4 + 5 = 15$ khớp ô thứ 5 của bảng ✓; và Gauss n = 15 cho đúng 120 trong khi n = 14 mới 105 — hạn chót tuần 15 là chuẩn, không sớm không muộn.\nDÙNG NGOÀI ĐỜI: mọi kế hoạch tiết kiệm \"tăng dần đều\" — tiền heo, số trang đọc sách, số vòng chạy bộ — đều là dãy hai tầng: con vừa học cách dự báo NGÀY VỀ ĐÍCH của chúng.",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S8",
+    "kind": "explain",
+    "narration": "LẮP: con dán lên chân cầu thang một tấm bảng nhỏ: \"Bậc thứ n cao 15 × (n − 1) + 15 cm\". Bác bảo vệ hỏi bậc nào cũng đáp được ngay, không cần leo thử.\nSOI: soi chéo bằng đường khác — 20 bậc, mỗi bậc 15 cm, nhưng bậc đầu tiên đã cao sẵn 15 cm và còn 19 lần leo nữa: 15 × 20 = 300 cm. Hai con đường cùng ra 300 ✓.\nDÙNG NGOÀI ĐỜI: tiền tiết kiệm mỗi tuần bỏ thêm một khoản bằng nhau, số ghế đầu mỗi hàng trong rạp, cột cây số trên quốc lộ — hỏi \"cái thứ n\" là dùng đúng công thức này.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
-    "id": "S8",
+    "id": "S9",
     "kind": "trap",
-    "narration": "Gặp dãy 3, 6, 12, 24, Trí Long phán: \"Hiệu là 3, 6, 12 — tăng dần nè! Đây là dãy hai tầng, số tiếp theo cộng thêm 24: bằng 48... à không, cộng thêm bao nhiêu ta?!\"",
+    "narration": "Cô hỏi số hạng thứ 20 của dãy 3 ; 7 ; 11 ; ..., Trí Long bấm máy: \"Khoảng cách 4, vị trí 20, vậy lấy 3 + 4 × 20 = 83 ạ!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Cho dãy số: 1 ; 2 ; 4 ; 7 ; 11 ; ... a) Nêu quy luật của dãy bằng lời. b) Tìm số hạng thứ 10 của dãy.",
+  "problem": "Tìm số hạng thứ 20 của dãy 3 ; 7 ; 11 ; 15 ; ...",
   "steps": [
    {
-    "show": "Dãy 1 ; 2 ; 4 ; 7 ; 11 ; ... — nêu quy luật và tìm số hạng thứ 10.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Bài dãy số vẫn cần tóm tắt — chép lại dãy cho chuẩn.",
-    "phan": "tomtat"
+    "show": "Dãy cách đều, số đầu 3, khoảng cách 4, cần tìm số hạng thứ 20."
    },
    {
-    "show": "Mô hình (soi tầng dưới)",
-    "phan": "tomtat"
+    "show": "Kiểm khoảng cách trước: 7 − 3 = 4 ; 11 − 7 = 4 ; 15 − 11 = 4 ✓."
    },
    {
-    "show": "Dãy: 1 2 4 7 11",
-    "phan": "tomtat"
+    "show": "Mô hình (đếm bước nhảy)"
    },
    {
-    "show": "Bước nhảy: +$1 +2 +3 +4$",
-    "phan": "tomtat"
+    "show": "Từ vị trí 1 đến vị trí 20 có 20 − 1 = 19 bước nhảy."
    },
    {
-    "show": "Bảng hai tầng là sơ đồ của bài — tầng dưới lộ quy luật.",
-    "phan": "tomtat"
+    "show": "Mỗi bước cộng thêm 4, nên tất cả cộng thêm 4 × 19 = 76."
    },
    {
-    "show": "A) Quy luật: mỗi số bằng số liền trước cộng thêm một số",
-    "phan": "giai"
+    "show": "Tính"
    },
    {
-    "show": "Phần cộng thêm tăng dần: 1 ; 2 ; 3 ; 4 ; ...",
-    "phan": "giai"
+    "show": "Số hạng thứ 20 = 3 + 4 × (20 − 1) = 3 + 4 × 19 = 3 + 76 = 79."
    },
    {
-    "show": "B) Từ số thứ nhất đến số thứ 10 có 9 bước nhảy: +1, +2, ..., +9.",
-    "phan": "giai"
+    "show": "Soi lại: thay n = 1 → 3 + 4 × 0 = 3 ✓ đúng số đầu."
    },
    {
-    "show": "Tổng các bước nhảy là: ($1 + 9$) × $9 : 2 = 45$",
-    "phan": "giai"
-   },
-   {
-    "show": "Số hạng thứ 10 là: $1 + 45 = 46$",
-    "phan": "giai"
-   },
-   {
-    "show": "Câu lời quy luật viết TRỌN MỘT CÂU; phần b gọi công thức Gauss thay cho việc viết cả dãy.",
-    "phan": "giai"
-   },
-   {
-    "show": "Đáp số: a) như trên ; b) 46.",
-    "phan": "dapso"
-   },
-   {
-    "show": "Đáp số cho đủ hai phần a, b.",
-    "phan": "ghichu"
-   },
-   {
-    "show": "Thử lại: viết tiếp dãy: 11, 16, 22, 29, 37, 46 — số thứ 10 đúng là 46 ✓",
-    "phan": "thulai"
-   },
-   {
-    "show": "Soi bằng đường \"đi bộ\" — công thức và tay bấm phải gặp nhau.",
-    "phan": "thulai"
+    "show": "Đáp số: số hạng thứ 20 là 79."
    }
   ]
  },
@@ -191,133 +169,132 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Viết hai số tiếp theo của dãy 3 ; 6 ; 12 ; 24 ; ... và nêu quy luật bằng lời.",
+     "text": "Dãy 5 ; 10 ; 15 ; ... có khoảng cách bằng mấy? Từ vị trí 1 đến vị trí 10 có bao nhiêu bước nhảy?",
      "answerKey": {
-      "ordered": true,
-      "values": [
-       48,
-       96
+      "parts": [
+       {
+        "label": "khoảng cách",
+        "value": 5
+       },
+       {
+        "label": "số bước nhảy",
+        "value": 9
+       }
       ]
      },
-     "solutionNarrative": "48, 96 — quy luật: mỗi số bằng số liền trước nhân với 2.",
+     "solutionNarrative": "Khoảng cách 5; từ vị trí 1 đến vị trí 10 có 10 − 1 = 9 bước nhảy.",
      "hints": [
-      "Lấy số sau CHIA số trước xem có bằng nhau không.",
-      "Chia ra một số không đổi thì là dãy nhân."
+      "Lấy số sau trừ số trước.",
+      "Số bước nhảy ít hơn số chỗ đúng một."
      ]
     },
     {
      "id": "C2",
-     "text": "Viết hai số tiếp theo của dãy 1 ; 2 ; 4 ; 7 ; 11 ; ...",
+     "text": "Tìm số hạng thứ 10 của dãy 5 ; 10 ; 15 ; ...",
      "answerKey": {
-      "ordered": true,
-      "values": [
-       16,
-       22
-      ]
+      "value": 50
      },
-     "solutionNarrative": "16, 22 (bước nhảy tăng dần: +5 rồi +6).",
+     "solutionNarrative": "5 + 5 × (10 − 1) = 5 + 45 = 50.",
      "hints": [
-      "Soi TẦNG DƯỚI: lấy số sau trừ số trước.",
-      "Tầng dưới tăng đều thì cứ nối tiếp mà cộng."
+      "Số đầu cộng khoảng nhân số bước nhảy.",
+      "Từ chỗ 1 đến chỗ 10 có mấy bước?"
      ]
     },
     {
      "id": "C3",
-     "text": "Nêu quy luật của dãy ở Câu 2 bằng MỘT câu văn.",
-     "solutionNarrative": "\"Mỗi số bằng số liền trước cộng thêm một số; phần cộng thêm tăng dần 1, 2, 3, 4, ...\"",
+     "text": "Tìm số hạng thứ 8 của dãy 2 ; 6 ; 10 ; ...",
+     "answerKey": {
+      "value": 30
+     },
+     "solutionNarrative": "2 + 4 × (8 − 1) = 2 + 28 = 30.",
      "hints": [
-      "Nói về phần cộng thêm, chứ đừng kể từng số.",
-      "Phần cộng thêm ấy thay đổi thế nào qua từng bước?"
+      "Tìm khoảng cách trước.",
+      "Rồi đếm bước nhảy, đừng đếm chỗ."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Tìm số hạng thứ 5 của dãy 2 ; 6 ; 18 ; ...",
+     "text": "Tìm số hạng thứ 20 của dãy 3 ; 7 ; 11 ; ...",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số hạng thứ 5",
-        "value": 162
-       }
-      ]
+      "value": 79
      },
-     "solutionNarrative": "Dãy nhân 3: 2, 6, 18, 54, 162 → số hạng thứ 5 là 162.",
+     "solutionNarrative": "3 + 4 × (20 − 1) = 3 + 76 = 79.",
      "hints": [
-      "Chia thử: số sau gấp số trước mấy lần?",
-      "Nhân dồn cho tới số hạng cần tìm."
+      "Khoảng cách là 4.",
+      "Từ chỗ 1 tới chỗ 20 nhảy mấy lần?"
      ]
     },
     {
      "id": "C5",
-     "text": "Cho dãy 1 ; 3 ; 6 ; 10 ; ... Viết hai số tiếp theo và nêu quy luật bằng lời.",
+     "text": "Tìm số hạng thứ 15 của dãy 1 ; 9 ; 17 ; 25 ; ...",
      "answerKey": {
-      "ordered": true,
-      "values": [
-       15,
-       21
-      ]
+      "value": 113
      },
-     "solutionNarrative": "15, 21 — quy luật: mỗi số bằng số liền trước cộng thêm một số, phần cộng thêm tăng dần 2, 3, 4, 5, ...",
+     "solutionNarrative": "1 + 8 × (15 − 1) = 1 + 112 = 113.",
      "hints": [
-      "Soi tầng dưới: các bước nhảy là những số nào?",
-      "Bước nhảy tăng đều một đơn vị mỗi lần."
+      "Khoảng cách là 8.",
+      "Nhớ trừ một trước khi nhân."
      ]
     },
     {
      "id": "C6",
-     "text": "Tìm số hạng thứ 10 của dãy 1 ; 2 ; 4 ; 7 ; 11 ; ... (Cộng dồn các bước nhảy bằng Gauss!)",
+     "text": "Một dãy cách đều có số đầu 6, khoảng cách 7. Số hạng thứ 12 là số nào?",
      "answerKey": {
-      "value": 46
+      "value": 83
      },
-     "solutionNarrative": "Từ số thứ nhất đến số thứ 10 có 9 bước nhảy +1, +2, ..., +9; tổng bước nhảy = ($1 + 9$) × $9 : 2 = 45$ → số thứ $10 = 1 + 45 = 46$.",
+     "solutionNarrative": "6 + 7 × (12 − 1) = 6 + 77 = 83.",
      "hints": [
-      "Từ số thứ nhất tới số thứ mười có mấy bước nhảy?",
-      "Cộng dồn các bước nhảy bằng Gauss rồi thêm vào số đầu."
+      "Đề cho sẵn số đầu và khoảng cách rồi.",
+      "Chỉ còn đếm bước nhảy nữa thôi."
      ]
     },
     {
      "id": "C7",
-     "text": "Heo đất: tuần 1 bỏ 1 nghìn, mỗi tuần sau bỏ nhiều hơn tuần trước 1 nghìn. Hỏi sau tuần thứ 10, trong heo có bao nhiêu nghìn đồng?",
+     "text": "Bậc thứ nhất của cầu thang cao 15 cm, mỗi bậc cao thêm 15 cm. Bậc thứ 20 cao bao nhiêu xăng-ti-mét?",
      "answerKey": {
-      "value": 55
+      "value": 300
      },
-     "solutionNarrative": "Tổng trong heo = $1 + 2$ + ... + 10 = ($1 + 10$) × $10 : 2 = 55$ nghìn đồng.",
+     "solutionNarrative": "15 + 15 × (20 − 1) = 15 + 285 = 300 (cm).",
      "hints": [
-      "Số tiền mỗi tuần lập thành một dãy cách đều.",
-      "Tổng cả heo = đầu cộng cuối, nhân số tuần, chia đôi."
+      "Bậc thứ nhất đã cao sẵn 15 rồi.",
+      "Còn phải leo thêm mấy lần nữa?"
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Với giao kèo heo đất ở Câu 7, đến tuần thứ mấy trong heo có ĐÚNG 120 nghìn đồng để mua mũ bảo hiểm? (Thử n bằng công thức Gauss — và soi cả tuần liền trước!)",
+     "text": "Dãy 4 ; 11 ; 18 ; ... Tìm số hạng thứ 30, rồi thử lại công thức với n = 1 xem có ra đúng số đầu không.",
      "answerKey": {
-      "value": 15
+      "parts": [
+       {
+        "label": "số hạng thứ 30",
+        "value": 207
+       },
+       {
+        "label": "thử n = 1 ra",
+        "value": 4
+       }
+      ]
      },
-     "solutionNarrative": "Cần $1 + 2$ + ... + n = 120; thử n = 15: ($1 + 15$) × $15 : 2 = 120$ ✓ (n = 14 mới được 105, chưa đủ) → đúng tuần thứ 15.",
+     "solutionNarrative": "Số hạng thứ 30 = 4 + 7 × 29 = 4 + 203 = 207. Thử n = 1: 4 + 7 × 0 = 4 ✓ đúng bằng số đầu.",
      "hints": [
-      "Thử từng giá trị bằng công thức Gauss.",
-      "Soi cả tuần liền trước xem đã đủ chưa."
+      "Làm như mọi câu trên.",
+      "Rồi thay số 1 vào xem có ra đúng số đầu không."
      ]
     },
     {
      "id": "C9",
-     "text": "Dãy 1 ; 1 ; 2 ; 3 ; 5 ; 8 ; ... — viết ba số tiếp theo, nêu lời quy luật, rồi soi tầng dưới của nó: con nhận ra điều gì thú vị?",
+     "text": "Số hạng thứ 6 của một dãy cách đều là 32, khoảng cách của dãy là 5. Hỏi số hạng ĐẦU của dãy là số nào?",
      "answerKey": {
-      "ordered": true,
-      "values": [
-       13,
-       21,
-       34
-      ]
+      "value": 7
      },
-     "solutionNarrative": "13, 21, 34 — quy luật: mỗi số bằng TỔNG của hai số liền trước. Soi tầng dưới: 0, 1, 1, 2, 3, 5, ... — chính là dãy Fibonacci lặp lại! Dãy này \"tự sinh ra mình\" ở tầng dưới.",
+     "solutionNarrative": "Từ vị trí 1 đến vị trí 6 có 5 bước nhảy, cộng thêm 5 × 5 = 25. Vậy số đầu = 32 − 25 = 7.",
      "hints": [
-      "Thử luật cộng hai số liền trước.",
-      "Soi tầng dưới xem nó giống dãy nào."
+      "Đi ngược: từ chỗ 6 lùi về chỗ 1 là mấy bước?",
+      "Lùi bấy nhiêu bước thì bớt đi bao nhiêu?"
      ]
     }
    ]
@@ -328,70 +305,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Dãy 5 ; 10 ; 20 ; 40 là dãy nhân 2.",
+    "text": "Số hạng thứ n của dãy cách đều bằng số đầu + khoảng cách × (n − 1).",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "$10 : 5 = 20 : 10 = 40 : 20 = 2$."
+    "solutionNarrative": "Đáp án: ĐÚNG"
    },
    {
     "id": "Q2",
-    "text": "Dãy 1 ; 2 ; 4 ; 7 là dãy cách đều.",
+    "text": "Từ vị trí thứ nhất đến vị trí thứ 10 có 10 bước nhảy.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Bước nhảy 1, 2, 3 không đều."
+    "solutionNarrative": "SAI — chỉ có 9 bước nhảy, vì vị trí thứ nhất đã đứng sẵn ở đó."
    },
    {
     "id": "Q3",
-    "text": "Số tiếp theo của dãy 2 ; 4 ; 8 ; 16 là:",
+    "text": "Số hạng thứ 12 của dãy 2 ; 5 ; 8 ; ... là:",
     "format": "mcq",
     "choices": [
-     "A. 32",
-     "B. 24",
-     "C. 20"
+     "A. 35",
+     "B. 38",
+     "C. 32"
     ],
     "answerKey": {
-     "choice": "A. 32"
+     "choice": "A. 35"
     },
-    "solutionNarrative": "32)."
+    "solutionNarrative": "2 + 3 × (12 − 1) = 2 + 33 = 35."
    },
    {
     "id": "Q4",
-    "text": "Số tiếp theo của dãy 1 ; 4 ; 9 ; 16 là:",
+    "text": "Thay n = 1 vào công thức số hạng thứ n, kết quả phải bằng:",
     "format": "mcq",
     "choices": [
-     "A. 25",
-     "B. 20",
-     "C. 24"
+     "A. số đầu của dãy",
+     "B. khoảng cách",
+     "C. số 1"
     ],
     "answerKey": {
-     "choice": "A. 25"
+     "choice": "A. số đầu của dãy"
     },
-    "solutionNarrative": "Bước nhảy 3, 5, 7, tiếp là +9: $16 + 9 = 25$."
+    "solutionNarrative": "Vì (1 − 1) = 0 nên không cộng thêm bước nào — ra đúng số đầu."
    },
    {
     "id": "Q5",
-    "text": "Số hạng thứ 6 của dãy 3 ; 6 ; 12 ; 24 ; ... là:",
+    "text": "Dãy 1 ; 9 ; 17 ; 25 ; ... có số hạng thứ 15 là:",
     "format": "mcq",
     "choices": [
-     "A. 96",
-     "B. 72",
-     "C. 48"
+     "A. 113",
+     "B. 120",
+     "C. 105"
     ],
     "answerKey": {
-     "choice": "A. 96"
+     "choice": "A. 113"
     },
-    "solutionNarrative": "3, 6, 12, 24, 48, 96: số thứ 6 là 96."
+    "solutionNarrative": "1 + 8 × 14 = 1 + 112 = 113."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Lập một \"giao kèo heo đất\" thật với con theo đúng luật tăng dần — rồi mỗi tuần đối chiếu bảng dự báo với tiền thật trong heo. Toán dự báo trúng tiền thật là niềm tin không sách nào dạy nổi.",
-  "homeActivity": "Luật \"nói quy luật thành lời\" đáng được giữ nghiêm: con chỉ tay \"cộng 2, cộng 3...\" chưa tính là đạt — phải ra được MỘT CÂU trọn vẹn có chủ ngữ.",
-  "watchFor": "NÊN: cho con tự sáng tác dãy đố bố mẹ (kèm lời quy luật niêm phong trong phong bì). KHÔNG NÊN: yêu cầu công thức tổng quát dạng n × (n + 1) : 2 — lớp 4 cộng dồn bằng Gauss là đủ, chữ n để dành lớp trên."
+  "onComplete": "Đứng ở chân cầu thang nhà mình, cho con đo chiều cao một bậc rồi hỏi: \"Bậc thứ 8 cao bao nhiêu?\" — bắt con tính trước, rồi cùng đo lại để kiểm.",
+  "homeActivity": "Mẹo kiểm nhanh cho bố mẹ: bảo con thay n = 1 vào công thức con vừa viết. Ra đúng số đầu thì công thức đúng; ra số khác là con nhớ nhầm dấu trừ.",
+  "watchFor": ""
  },
  "figureSpec": [
   {
@@ -400,28 +377,18 @@
     "hook"
    ],
    "file": "figures/L4H_B14_MO.png",
-   "caption": "Hai tầng: tầng trên là tuần, tầng dưới là số tiền.",
-   "sha256_16": "6cf2eda0415b0b8a",
+   "caption": "Bậc thứ nhất đã đứng sẵn ở đó — không phải leo lần nào để tới nó.",
+   "sha256_16": "aafddec718b7dc57",
    "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L4H_B14_G1",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L4H_B14_G1.png",
-   "caption": "Dãy hai tầng: hiệu của dãy mới là dãy cách đều.",
-   "sha256_16": "dc52fbd5b440f513",
-   "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Lớp 3, ở Bài 12, con đã gặp Fibonacci và dãy \"hiệu tầng hai\" ở mức nhận diện. Năm nay đặt ra hai yêu cầu người giải: tìm số hạng thứ n Ở XA (không viết cả dãy — dùng Gauss của Bài 13!), và quan trọng không kém: NÓI ĐƯỢC quy luật thành lời văn cho người khác hiểu. Quy luật chưa nói được thành lời là quy luật chưa thuộc về mình.",
+ "hatMam": "Bài trước con đã gọi đúng tên: dãy số, số hạng, vị trí, giá trị, khoảng cách. Nhưng muốn biết số hạng thứ 50 thì viết cả dãy ra là hết vở. Hôm nay con học cách nhảy thẳng tới chỗ ấy — và chỗ tinh tế nhất của cả bài chỉ nằm ở một dấu trừ.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B12"
+   "DL:KSN3.B10"
   ],
   "ten": [
-   "FIBONACCI & QUY LUẬT HAI TẦNG"
+   "TOA TÀU THỨ n Ở ĐÂU?"
   ],
   "canCu": "sach",
   "lopDuoi": 3,

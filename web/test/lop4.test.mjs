@@ -30,8 +30,20 @@ const teps = readdirSync(GOC).filter((f) => /^DL_KSN4_B\d+\.json$/.test(f));
 const bais = teps.map((f) => doc(join(GOC, f))).sort((a, b) => a.so - b.so);
 
 /* ══ 1 · đủ số bài · đủ mục · số câu khớp ══ */
-t(`đủ 44 bài (${bais.length})`, bais.length === 44);
-t('số thứ tự bài liền mạch 1..44',
+/* ⚠ SỐ BÀI ĐỔI 44 → 49 NGÀY 14-08. Bác đọc Bài 13 cũ ("DÃY SỐ CÁCH ĐỀU") thấy khó
+   hiểu; soi ra thì một bài nhồi BỐN công thức, và không bài nào của cả quyển định
+   nghĩa một khái niệm nào (`vocabulary` rỗng ở 44/44). Cụm dãy số tách thành năm bài
+   — khái niệm · thứ n · đếm · tổng · thuộc dãy — nên B13 cũ lùi thành B18, và 31 bài
+   sau đó dồn theo. Xem `tools/day_so_lop4.py` và `tools/don_so_lop4.py`.
+
+   Ba con số dưới đây là ĐẾM, không phải luật — nới chúng khi thêm bài là đúng. Nhưng
+   phải nới CÙNG LÚC cả ba, và giữ nguyên phép "liền mạch": số bài rời rạc thì bé mở
+   quyển thấy nhảy cóc Bài 12 sang Bài 18, mà không có gì báo. */
+const SO_BAI = 49;
+const SO_CAU = SO_BAI * 14;      // mỗi bài đúng 9 luyện tập + 5 quiz
+
+t(`đủ ${SO_BAI} bài (${bais.length})`, bais.length === SO_BAI);
+t(`số thứ tự bài liền mạch 1..${SO_BAI}`,
   bais.every((b, i) => b.so === i + 1));
 t('đủ 11 chương', new Set(bais.map((b) => b.chuong)).size === 11);
 
@@ -53,7 +65,7 @@ t('bài nào cũng đúng 9 luyện tập + 5 quiz', lechCau.length === 0);
 in5(lechCau.map((b) => `bài ${b.so}`));
 
 const tongCau = bais.reduce((s, b) => s + b.cau.length, 0);
-t(`đủ 616 câu (${tongCau})`, tongCau === 616);
+t(`đủ ${SO_CAU} câu (${tongCau})`, tongCau === SO_CAU);
 
 /* ══ 2 · KHÔNG lẫn phần khác vào bài — bẫy 5 và 6 ══ */
 const RAC = /^(ĐÁP ÁN|ÔN TẬP \d+|✦\s+(BẢNG TỰ SOI|ĐỀ B)|B\d+\s+ĐÁP ÁN|Ô\d+B?\s+ĐÁP ÁN)/;
@@ -136,7 +148,7 @@ in5(roi);
 
 /* mọi bài phải có hình MÀN MỞ — bài nào cũng mở bằng một tình huống có hình */
 const khongMo = bais.filter((b) => !(b.muc.chuyenMoBai.hinh || []).length);
-t('44/44 bài có hình màn mở', khongMo.length === 0);
+t(`${SO_BAI}/${SO_BAI} bài có hình màn mở`, khongMo.length === 0);
 in5(khongMo.map((b) => `bài ${b.so}`));
 
 /* hình màn mở là bản ĐỀ: không mang dấu vết đáp án (chuẩn mục 6 luật 3) */
@@ -161,7 +173,7 @@ in5(tdDai.map((h) => `${h.id}: ${h.params.title.length} chữ`));
 if (existsSync(APP)) {
   const app = readdirSync(APP).filter((f) => /^DL_KSN4_B\d+\.json$/.test(f))
     .map((f) => doc(join(APP, f))).sort((a, b) => a.so - b.so);
-  t(`bản cho app đủ 44 bài (${app.length})`, app.length === 44);
+  t(`bản cho app đủ ${SO_BAI} bài (${app.length})`, app.length === SO_BAI);
 
   /* prev/next khớp thứ tự */
   const lechNoi = [];
@@ -363,8 +375,8 @@ const gan3 = doc(join(G, 'data/lop4_gan_lop3.json')).gan;
 const coL3 = new Set(readdirSync(join(G, 'data/lop3'))
   .filter((f) => f.startsWith('DL_KSN3_B'))
   .map((f) => f.replace('.json', '').replace('DL_KSN3_', 'DL:KSN3.')));
-t(`đủ 44 dòng đường lùi (${Object.keys(gan3).length})`,
-  Object.keys(gan3).length === 44);
+t(`đủ ${SO_BAI} dòng đường lùi (${Object.keys(gan3).length})`,
+  Object.keys(gan3).length === SO_BAI);
 
 const lac3 = [];
 for (const [ma, v] of Object.entries(gan3)) {

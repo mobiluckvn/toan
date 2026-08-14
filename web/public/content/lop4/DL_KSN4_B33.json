@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B33",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 33 · SO SÁNH HAI PHÂN SỐ",
+ "title": "Bài 33 · BÀI TOÁN LÀM CHUNG CÔNG VIỆC",
  "durationMinutes": 10,
  "so": 33,
- "chuong": 9,
- "tenChuong": "PHÂN SỐ",
- "dangGoc": "PS 1.1 + PS 1.2 mức Lớp 4 — Quy đồng mẫu, cùng tử, so với 1 · phần bù, phần hơn, phân số trung gian",
+ "chuong": 8,
+ "tenChuong": "BÀI TOÁN CÓ LỜI VĂN",
+ "dangGoc": "LV 7.1 + LV 7.2 mức Lớp 4 — Làm chung cơ bản (chia việc thành phần) · làm chung rồi một người nghỉ",
  "skills": {
-  "bktUnit": "CHUONG:9@G4",
+  "bktUnit": "CHUONG:8@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "So sánh hai phân số bằng quy đồng mẫu số; nhận diện nhanh trường hợp cùng tử (mẫu bé hơn thì phân số lớn hơn) và so với 1. Dùng lối tắt PHẦN BÙ cho các cặp \"suýt đầy\" như $\\frac{7}{8}$ và $\\frac{9}{10}$: ai thiếu ít hơn, người đó lớn hơn. Dùng phân số trung gian (cột mốc $\\frac{1}{2}$) để so các cặp \"xa lạ\" như $\\frac{3}{7}$ và $\\frac{5}{9}$.",
-  "kidText": "Hai chiếc bánh cùng cỡ: một bạn lấy $\\frac{3}{4}$ chiếc, một bạn lấy $\\frac{5}{8}$ chiếc. Phần ai nhiều hơn nhỉ?",
+  "text": "Chia công việc thành số phần đều \"đẹp\" (chia hết cho mọi số giờ trong đề) và tính NĂNG SUẤT: số phần mỗi người làm trong một giờ. Giải bài làm chung cơ bản: cộng năng suất, lấy tổng phần chia năng suất chung. Giải bài làm chung rồi MỘT NGƯỜI NGHỈ: đếm phần đã làm, phần còn lại và ai gánh nốt.",
+  "kidText": "Bác Tâm sơn xong hàng rào trong 4 giờ, chú Hòa cần 12 giờ. Hai người cùng làm thì mấy giờ xong?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — ĐƯỜNG CÁI QUAN: QUY ĐỒNG MẪU SỐ: cắt mỗi lát tư làm đôi: $\\frac{3}{4}$ = $\\frac{6}{8}$. Giờ hai bên cùng cỡ lát tám: $\\frac{6}{8}$ > $\\frac{5}{8}$ → bạn áo đỏ được nhiều hơn! Tổng quát: nhân cả tử và mẫu với cùng một số, phân số không đổi — đó là phép \"cắt nhỏ lát mà không thay phần bánh\". Ví dụ khác: $\\frac{2}{3}$ và $\\frac{3}{5}$ → $\\frac{10}{15}$ và $\\frac{9}{15}$ → $\\frac{2}{3}$ lớn hơn."
+    "text": "Bước 1 — CHẾ ĐƠN VỊ \"PHẦN VIỆC\": coi hàng rào gồm 12 tấm ván bằng nhau — chọn 12 vì nó chia hết cho cả 4 lẫn 12, mọi phép chia sau này đều tròn. Bác Tâm: 12 : 4 = 3 (tấm mỗi giờ); chú Hòa: 12 : 12 = 1 (tấm mỗi giờ). Con số \"mỗi giờ làm mấy phần\" gọi là NĂNG SUẤT."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — HAI LỐI TẮT DỄ: CÙNG TỬ & SO VỚI 1: cùng tử: $\\frac{3}{5}$ và $\\frac{3}{7}$ — cùng lấy 3 lát, bánh cắt 5 lát thì lát to hơn bánh cắt 7 lát → $\\frac{3}{5}$ > $\\frac{3}{7}$ (chia ít người, phần to!). So với 1: $\\frac{5}{4}$ có tử lớn hơn mẫu → hơn cả chiếc bánh → $\\frac{5}{4}$ > 1 > $\\frac{7}{8}$ — khỏi quy đồng."
+    "text": "Bước 2 — CỘNG NĂNG SUẤT, KHÔNG CỘNG SỐ GIỜ: làm chung, mỗi giờ hai người sơn được 3 + 1 = 4 (tấm) → cả 12 tấm hết 12 : 4 = 3 (giờ). Kịp trước lễ khai mạc! Còn phép \"4 + 12 = 16 giờ\" của Trí Long cộng nhầm thứ không cộng được — thời gian của hai người đâu có xếp chồng lên nhau."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — LỐI TẮT PHẦN BÙ CHO CẶP \"SUÝT ĐẦY\": $\\frac{7}{8}$ và $\\frac{9}{10}$ — quy đồng ra mẫu 40 hơi cực. Nhìn phần THIẾU: $\\frac{7}{8}$ thiếu $\\frac{1}{8}$ nữa mới đầy; $\\frac{9}{10}$ chỉ thiếu $\\frac{1}{10}$. Mà $\\frac{1}{8}$ > $\\frac{1}{10}$ (cùng tử!) → $\\frac{7}{8}$ thiếu NHIỀU hơn → $\\frac{7}{8}$ < $\\frac{9}{10}$. Anh em của nó là PHẦN HƠN cho cặp \"quá đầy\": $\\frac{5}{4}$ hơn 1 những $\\frac{1}{4}$, $\\frac{7}{6}$ chỉ hơn $\\frac{1}{6}$ → $\\frac{5}{4}$ > $\\frac{7}{6}$."
+    "text": "Bước 3 — KỊCH BẢN NGƯỜI NGHỈ GIỮA CHỪNG: hai người làm chung 2 giờ thì bác Tâm có việc phải về. Đã sơn: 4 × 2 = 8 (tấm); còn lại 12 − 8 = 4 (tấm); chú Hòa một mình mỗi giờ 1 tấm → cần thêm 4 : 1 = 4 (giờ). Bài \"nghỉ giữa chừng\" chỉ là bài đếm phần: đã làm - còn lại - ai gánh nốt."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — MƯỢN CỘT MỐC TRUNG GIAN: $\\frac{3}{7}$ và $\\frac{5}{9}$ — chẳng cùng gì cả! Mượn cột mốc $\\frac{1}{2}$: $\\frac{3}{7}$ < $\\frac{1}{2}$ (vì 3 lát chưa được nửa của 7 lát — nửa của $\\frac{7}{7}$ là 3 lát rưỡi); còn $\\frac{5}{9}$ > $\\frac{1}{2}$ (5 lát vượt nửa của 9 lát). Kẻ dưới mốc thua kẻ trên mốc: $\\frac{3}{7}$ < $\\frac{5}{9}$. Cột mốc hay dùng: $\\frac{1}{2}$ và 1."
+    "text": "Bước 4 — HỌ HÀNG VÒI NƯỚC: bể bơm đầy bằng vòi một trong 6 giờ, vòi hai trong 3 giờ — chung mấy giờ đầy? Chia bể 6 phần: vòi một 1 phần/giờ, vòi hai 2 phần/giờ → chung 3 phần/giờ → 6 : 3 = 2 (giờ). Vòi nước, gặt lúa, chép trang sách... khác vỏ, cùng ruột."
    }
   ],
-  "mantra": "So phân số: liếc nhanh bốn lối tắt trước — CÙNG TỬ (mẫu bé thắng), SO VỚI 1, PHẦN BÙ (cặp suýt đầy: thiếu ít thắng), TRUNG GIAN (mượn mốc $\\frac{1}{2}$). Không lối nào hợp thì về đường cái QUY ĐỒNG MẪU SỐ. Luật thép: chưa cùng cỡ lát, cấm đếm lát mà so!",
+  "mantra": "Bài làm chung ba bước: ① chia việc thành số phần chia hết cho mọi số giờ của đề; ② tính năng suất từng người (phần mỗi giờ); ③ CỘNG NĂNG SUẤT rồi lấy tổng phần chia cho năng suất chung. Có người nghỉ giữa chừng: đếm phần đã làm, phần còn lại. Khẩu quyết: cộng được năng suất — không cộng được số giờ!",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "So $\\frac{2}{3}$ với $\\frac{3}{5}$, Trí Long sáng kiến: \"Tử $2 < 3$, mẫu $3 < 5$ — bên kia toàn số to hơn, vậy $\\frac{2}{3}$ < $\\frac{3}{5}$ chắc luôn!\"",
+    "wrong": "Rút kinh nghiệm vụ \"16 giờ\", Trí Long gặp bài vòi nước (vòi một 6 giờ đầy bể, vòi hai 3 giờ) liền đổi chiêu: \"Không cộng nữa — lấy trung bình! (6 + 3) : 2 = 4,5 giờ. Chuẩn chưa?\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Soi thử bằng cặp dễ: $\\frac{1}{2}$ và $\\frac{2}{5}$ — tử $1 < 2$, mẫu $2 < 5$, theo \"luật\" của Trí Long thì $\\frac{1}{2}$ phải bé hơn. Mà nửa chiếc bánh với hai lát năm, bên nào nhiều hơn thật? Gợi ý 2: Phân số là MỘT giá trị, không phải hai con số rời để so từng tầng! Quy đồng $\\frac{2}{3}$ và $\\frac{3}{5}$ về mẫu 15 rồi phân xử chuẩn giúp Trí Long — và nhớ luật thép \"chưa cùng cỡ lát, cấm đếm lát\"."
+    "fix": "Gợi ý 1: Soi bằng lẽ thường: riêng vòi hai đã chỉ cần 3 giờ — mở thêm vòi một mà lại LÂU thành 4,5 giờ thì vòi một đang... hút nước ra à? Gợi ý 2: Trung bình cộng san đều THỜI GIAN — nhưng thứ hai vòi góp chung là NƯỚC MỖI GIỜ. Chia bể thành 6 phần, tính năng suất từng vòi rồi giải chuẩn giúp Trí Long (đáp số tròn trịa: 2 giờ)."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Hai chiếc bánh cùng cỡ: một bạn lấy $\\frac{3}{4}$ chiếc, một bạn lấy $\\frac{5}{8}$ chiếc. Hỏi phần bánh của ai nhiều hơn?"
+    "narration": "Sân đình cần sơn lại hàng rào trước lễ tổng kết. Bác Tâm sơn một mình 4 giờ xong; chú Hòa một mình 12 giờ xong; hai người làm chung. Hỏi làm chung thì mấy giờ sơn xong hàng rào?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? hai chiếc bánh cùng cỡ: một bạn lấy $\\frac{3}{4}$ chiếc, một bạn lấy $\\frac{5}{8}$ chiếc.\nHỎI GÌ? phần bánh của ai nhiều hơn.\nĐẠI LƯỢNG & ĐƠN VỊ: phần bánh (chiếc) — tử số đếm LÁT, nhưng lát của $\\frac{3}{4}$ và lát của $\\frac{5}{8}$ KHÁC CỠ nhau!\nQUAN HỆ GIỮA CHÚNG: muốn đếm lát mà so, phải đưa hai bên về cùng một cỡ lát — tức cùng MẪU SỐ; cắt mỗi lát tư thành hai được lát tám: $\\frac{3}{4}$ = $\\frac{6}{8}$.\nCHỌN CÔNG CỤ: QUY ĐỒNG MẪU SỐ + hộp bốn lối tắt cho các ca đặc biệt.\nƯỚC LƯỢNG TRƯỚC: ba lát tư là hơn nửa cái khá nhiều, năm lát tám chỉ nhỉnh hơn nửa — áo đỏ chắc thắng.",
+    "narration": "CHO GÌ? bác Tâm sơn một mình 4 giờ xong; chú Hòa một mình 12 giờ xong; hai người làm chung.\nHỎI GÌ? làm chung thì mấy giờ sơn xong hàng rào.\nĐẠI LƯỢNG & ĐƠN VỊ: thời gian (giờ) và lượng việc — lượng việc chưa có đơn vị: phải TỰ chế đơn vị \"phần việc\"!\nQUAN HỆ GIỮA CHÚNG: chia hàng rào thành 12 phần đều (12 chia hết cho cả 4 và 12) → mỗi người làm được một số phần MỖI GIỜ — thứ cộng được với nhau chính là số phần mỗi giờ ấy.\nCHỌN CÔNG CỤ: MÔ HÌNH PHẦN VIỆC + NĂNG SUẤT: phần mỗi giờ của từng người → cộng lại → chia ngược.\nƯỚC LƯỢNG TRƯỚC: bác Tâm một mình đã chỉ mất 4 giờ — có thêm chú Hòa phải NHANH hơn 4 giờ: đoán cỡ 3 giờ.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ hai khay bánh sang bài so phân số"
+    "nhan": "NHỊP 1, DỊCH — từ hàng rào sang các tấm ván phần việc"
    },
    {
     "id": "S3",
@@ -104,81 +104,78 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: phán quyết dán quầy bánh: \"$\\frac{3}{4}$ chiếc = 6 lát tám > 5 lát tám. Bạn áo đỏ nhiều hơn đúng MỘT lát tám!\" Chị Ngọc Anh tặng bạn áo xanh thêm một lát tám cho huề — hai khách nhí đập tay vui vẻ.\nSOI: soi hai đường: quy đồng $\\frac{6}{8}$ > $\\frac{5}{8}$ ✓ và phần bù: $\\frac{3}{4}$ thiếu $\\frac{1}{4}$ = $\\frac{2}{8}$, $\\frac{5}{8}$ thiếu $\\frac{3}{8}$ — thiếu ít hơn thắng ✓. Hai lối một phán quyết.\nDÙNG NGOÀI ĐỜI: nửa cốc với hai phần ba cốc, ba phần tư giờ với bốn phần năm giờ — bếp núc và thời gian biểu đầy các cặp phân số chờ con phân xử.",
+    "narration": "LẮP: báo cáo gửi bác tổ trưởng: \"Hai người cùng sơn: đúng 3 giờ xong — bắt đầu 8 giờ sáng, 11 giờ khô ráo, thừa giờ ăn trưa trước lễ!\" Bác tổ trưởng phát lệnh khởi công, hàng rào kịp mới tinh đón lễ tổng kết.\nSOI: soi hai lớp: 3 giờ NHANH hơn người nhanh nhất (4 giờ) ✓ hợp lẽ \"thêm tay thêm việc\"; và đếm phần: 3 giờ × 4 tấm = 12 tấm — vừa khít hàng rào ✓.\nDÙNG NGOÀI ĐỜI: nhà mình dọn nhà đón Tết, cả lớp gấp hạc giấy, hai vòi cùng bơm bể cá — mọi cuộc \"chung tay\" đều tính trước được giờ về đích bằng ba bước hôm nay.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "So $\\frac{2}{3}$ với $\\frac{3}{5}$, Trí Long sáng kiến: \"Tử $2 < 3$, mẫu $3 < 5$ — bên kia toàn số to hơn, vậy $\\frac{2}{3}$ < $\\frac{3}{5}$ chắc luôn!\"",
+    "narration": "Rút kinh nghiệm vụ \"16 giờ\", Trí Long gặp bài vòi nước (vòi một 6 giờ đầy bể, vòi hai 3 giờ) liền đổi chiêu: \"Không cộng nữa — lấy trung bình! (6 + 3) : 2 = 4,5 giờ. Chuẩn chưa?\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "So sánh hai phân số: $\\frac{7}{8}$ và $\\frac{9}{10}$.",
+  "problem": "Bác Tâm sơn xong hàng rào một mình trong 4 giờ, chú Hòa sơn một mình trong 12 giờ. Hỏi hai người cùng sơn thì sau mấy giờ xong hàng rào?",
   "steps": [
    {
-    "show": "So sánh $\\frac{7}{8}$ và $\\frac{9}{10}$.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Bài lệnh ngắn — tóm tắt một dòng là đủ.",
-    "phan": "tomtat"
+    "show": "Bác Tâm: 4 giờ; chú Hòa: 12 giờ (mỗi người làm một mình)."
    },
    {
-    "show": "Mô hình (chọn lối tắt)",
-    "phan": "tomtat"
+    "show": "Tìm thời gian hai người làm chung."
    },
    {
-    "show": "Cả hai đều \"suýt đầy 1\" → dùng PHẦN BÙ",
-    "phan": "tomtat"
+    "show": "Ghi rõ \"một mình\" — số giờ riêng của từng người."
    },
    {
-    "show": "So phần còn thiếu để đầy một đơn vị.",
-    "phan": "tomtat"
+    "show": "Mô hình (chia việc thành phần)"
    },
    {
-    "show": "Nêu tên lối tắt và lý do chọn — dấu ấn dân nhà nghề.",
-    "phan": "tomtat"
+    "show": "Coi hàng rào gồm 12 phần bằng nhau"
    },
    {
-    "show": "Ta có: 1 − $\\frac{7}{8}$ = $\\frac{1}{8}$ ; 1 − $\\frac{9}{10}$ = $\\frac{1}{10}$",
-    "phan": "giai"
+    "show": "(vì 12 chia hết cho cả 4 và 12)."
    },
    {
-    "show": "Vì $\\frac{1}{8}$ > $\\frac{1}{10}$ (hai phân số cùng tử, mẫu $8 < 10$)",
-    "phan": "giai"
+    "show": "Câu chọn số phần kèm LÝ DO — dấu hiệu của thứ thiệt."
    },
    {
-    "show": "Nên $\\frac{7}{8}$ còn thiếu nhiều hơn $\\frac{9}{10}$.",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Vậy $\\frac{7}{8}$ < $\\frac{9}{10}$.",
-    "phan": "giai"
+    "show": "Coi hàng rào gồm 12 phần bằng nhau."
    },
    {
-    "show": "Chuỗi lập luận ba mắt xích: tính phần bù → so phần bù → kết luận ngược chiều.",
-    "phan": "giai"
+    "show": "Mỗi giờ bác Tâm sơn được: 12 : 4 = 3 (phần)"
    },
    {
-    "show": "Đáp số: $\\frac{7}{8}$ < $\\frac{9}{10}$.",
-    "phan": "dapso"
+    "show": "Mỗi giờ chú Hòa sơn được: 12 : 12 = 1 (phần)"
    },
    {
-    "show": "Kết luận viết bằng đúng ký hiệu so sánh.",
-    "phan": "ghichu"
+    "show": "Mỗi giờ cả hai người sơn được: 3 + 1 = 4 (phần)"
    },
    {
-    "show": "Thử lại (quy đồng): $\\frac{7}{8}$ = $\\frac{35}{40}$ ; $\\frac{9}{10}$ = $\\frac{36}{40}$ ; $\\frac{35}{40}$ < $\\frac{36}{40}$ ✓",
-    "phan": "ghichu"
+    "show": "Thời gian hai người cùng sơn xong hàng rào là: 12 : 4 = 3 (giờ)"
    },
    {
-    "show": "Đường cái quan kiểm chứng lối tắt — hai lối phải gặp nhau.",
-    "phan": "ghichu"
+    "show": "Cộng ở dòng NĂNG SUẤT — tuyệt đối không cộng 4 giờ với 12 giờ."
+   },
+   {
+    "show": "Đáp số: 3 giờ."
+   },
+   {
+    "show": "Đáp số kèm đơn vị."
+   },
+   {
+    "show": "Thử lại: 3 giờ × 4 phần = 12 phần — đúng cả hàng rào ✓ ; 3 giờ < 4 giờ ✓"
+   },
+   {
+    "show": "Soi kép: đếm đủ phần VÀ nhanh hơn người nhanh nhất."
    }
   ]
  },
@@ -187,240 +184,124 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "So sánh $\\frac{3}{8}$ và $\\frac{5}{8}$.",
+     "text": "Hàng rào gồm 12 phần bằng nhau. Mỗi giờ An sơn được 3 phần. Hỏi An sơn một mình mấy giờ thì xong?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "so sánh 3/8 với 5/8",
-        "options": [
-         "<",
-         ">",
-         "="
-        ],
-        "value": "<"
-       }
-      ]
+      "value": 4
      },
-     "solutionNarrative": "Cùng mẫu 8: $\\frac{3}{8}$ < $\\frac{5}{8}$.",
+     "solutionNarrative": "12 : 3 = 4 giờ.",
      "hints": [
-      "Cùng mẫu thì chỉ nhìn tử.",
-      "Cùng cỡ lát, ai lấy nhiều lát hơn thì hơn."
+      "Chia tổng số phần cho năng suất.",
+      "Mỗi giờ được bấy nhiêu thì mấy giờ hết việc?"
      ]
     },
     {
      "id": "C2",
-     "text": "So sánh $\\frac{3}{4}$ và $\\frac{3}{5}$.",
+     "text": "Bác Tâm sơn xong hàng rào (12 phần) một mình trong 4 giờ. Hỏi mỗi giờ bác sơn được mấy phần?",
      "answerKey": {
       "parts": [
        {
-        "label": "so sánh 3/4 với 3/5",
-        "options": [
-         "<",
-         ">",
-         "="
-        ],
-        "value": ">"
+        "label": "mấy phần mỗi giờ",
+        "value": 3
        }
       ]
      },
-     "solutionNarrative": "Cùng tử 3: mẫu $4 < 5$ → $\\frac{3}{4}$ > $\\frac{3}{5}$.",
+     "solutionNarrative": "12 : 4 = 3 phần mỗi giờ.",
      "hints": [
-      "Lối tắt CÙNG TỬ: mẫu bé thì thắng.",
-      "Bánh cắt ít lát thì mỗi lát to hơn."
+      "Năng suất = tổng phần chia số giờ.",
+      "Đây là chiều ngược của câu trước."
      ]
     },
     {
      "id": "C3",
-     "text": "Trong các phân số $\\frac{7}{8}$ ; $\\frac{9}{8}$ ; $\\frac{8}{8}$ — phân số nào bé hơn 1, lớn hơn 1, bằng 1?",
+     "text": "Hai người chung sức mỗi giờ sơn được 4 phần. Hàng rào 12 phần thì mấy giờ xong?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "phân số bé hơn 1",
-        "options": [
-         "7/8",
-         "9/8",
-         "8/8"
-        ],
-        "value": "7/8"
-       },
-       {
-        "label": "phân số lớn hơn 1",
-        "options": [
-         "7/8",
-         "9/8",
-         "8/8"
-        ],
-        "value": "9/8"
-       },
-       {
-        "label": "phân số bằng 1",
-        "options": [
-         "7/8",
-         "9/8",
-         "8/8"
-        ],
-        "value": "8/8"
-       }
-      ]
+      "value": 3
      },
-     "solutionNarrative": "$\\frac{7}{8}$ < 1 (tử < mẫu); $\\frac{9}{8}$ > 1; $\\frac{8}{8}$ = 1.",
+     "solutionNarrative": "12 : 4 = 3 giờ.",
      "hints": [
-      "Lối tắt SO VỚI 1: nhìn tử với mẫu.",
-      "Tử bé hơn mẫu thì chưa đầy một cái bánh."
+      "Tổng phần chia cho năng suất chung.",
+      "Đừng cộng số giờ — chỉ cộng năng suất."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "So sánh $\\frac{3}{4}$ và $\\frac{5}{8}$ bằng quy đồng mẫu số.",
+     "text": "Bác Tâm sơn một mình 4 giờ xong, chú Hòa một mình 12 giờ xong. Hai người cùng sơn thì mấy giờ xong?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "so sánh 3/4 với 5/8",
-        "options": [
-         "<",
-         ">",
-         "="
-        ],
-        "value": ">"
-       }
-      ]
+      "value": 3
      },
-     "solutionNarrative": "$\\frac{3}{4}$ = $\\frac{6}{8}$ > $\\frac{5}{8}$ → $\\frac{3}{4}$ lớn hơn.",
+     "solutionNarrative": "Bác Tâm 3 phần/giờ, chú Hòa 1 phần/giờ → chung 4 phần/giờ → 12 : 4 = 3 giờ.",
      "hints": [
-      "Đường cái quan: quy về cùng cỡ lát.",
-      "Cắt mỗi lát tư làm đôi thì thành lát mấy?"
+      "Chia việc thành số phần chia hết cho CẢ hai số giờ.",
+      "Tính năng suất từng người rồi CỘNG NĂNG SUẤT."
      ]
     },
     {
      "id": "C5",
-     "text": "So sánh $\\frac{2}{3}$ và $\\frac{3}{5}$.",
+     "text": "An chép xong tập tài liệu một mình trong 6 giờ, Bình một mình trong 12 giờ. Hai bạn cùng chép thì mấy giờ xong?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "so sánh 2/3 với 3/5",
-        "options": [
-         "lớn hơn",
-         "bé hơn",
-         "bằng nhau"
-        ],
-        "value": "lớn hơn"
-       }
-      ]
+      "value": 4
      },
-     "solutionNarrative": "$\\frac{2}{3}$ = $\\frac{10}{15}$ ; $\\frac{3}{5}$ = $\\frac{9}{15}$ → $\\frac{2}{3}$ lớn hơn.",
+     "solutionNarrative": "Chia việc 12 phần: An 2 phần/giờ, Bình 1 phần/giờ → chung 3 → 12 : 3 = 4 giờ.",
      "hints": [
-      "Chẳng cùng tử cũng chẳng cùng mẫu — quy đồng thôi.",
-      "Chọn mẫu chung là tích của hai mẫu."
+      "Chọn số phần chia hết cho cả hai số giờ.",
+      "Cộng năng suất rồi chia tổng phần."
      ]
     },
     {
      "id": "C6",
-     "text": "So sánh $\\frac{7}{8}$ và $\\frac{9}{10}$ bằng phần bù.",
+     "text": "Vòi thứ nhất chảy một mình 6 giờ thì đầy bể, vòi thứ hai chảy một mình 3 giờ thì đầy bể. Cả hai vòi cùng chảy thì mấy giờ đầy bể?",
      "answerKey": {
       "parts": [
        {
-        "label": "so sánh 7/8 với 9/10",
-        "options": [
-         "<",
-         ">",
-         "="
-        ],
-        "value": "<"
+        "label": "số giờ",
+        "value": 2
        }
       ]
      },
-     "solutionNarrative": "Phần bù $\\frac{1}{8}$ > $\\frac{1}{10}$ → $\\frac{7}{8}$ thiếu nhiều hơn → $\\frac{7}{8}$ < $\\frac{9}{10}$.",
+     "solutionNarrative": "Chia bể 6 phần: vòi một 1 phần/giờ, vòi hai 2 phần/giờ → chung 3 → 6 : 3 = 2 giờ.",
      "hints": [
-      "Cặp suýt đầy — nhìn phần THIẾU.",
-      "Thiếu nhiều hơn thì bé hơn."
+      "Bể nước cũng như hàng rào — chia thành phần.",
+      "Cộng năng suất hai vòi rồi chia tổng phần."
      ]
     },
     {
      "id": "C7",
-     "text": "So sánh $\\frac{5}{4}$ và $\\frac{7}{6}$ bằng phần hơn (so phần vượt quá 1).",
+     "text": "Bác Tâm và chú Hòa (như Câu 4) cùng sơn được 2 giờ thì bác Tâm phải về. Hỏi chú Hòa phải sơn thêm mấy giờ nữa mới xong?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "so sánh 5/4 với 7/6",
-        "options": [
-         "<",
-         ">",
-         "="
-        ],
-        "value": ">"
-       }
-      ]
+      "value": 4
      },
-     "solutionNarrative": "Phần hơn $\\frac{1}{4}$ > $\\frac{1}{6}$ → $\\frac{5}{4}$ > $\\frac{7}{6}$.",
+     "solutionNarrative": "2 giờ chung sơn 4 × 2 = 8 phần; còn 4 phần; chú Hòa 1 phần/giờ → thêm 4 giờ.",
      "hints": [
-      "Cả hai đều vượt quá 1 — so phần VƯỢT.",
-      "Vượt nhiều hơn thì hơn."
+      "Tính phần đã làm được trong hai giờ chung.",
+      "Phần còn lại chia cho năng suất của một người."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "So sánh $\\frac{3}{7}$ và $\\frac{5}{9}$ bằng cách mượn cột mốc trung gian $\\frac{1}{2}$.",
+     "text": "An làm một mình 6 giờ xong, Bình một mình 12 giờ xong. Hai bạn làm chung 2 giờ thì An nghỉ. Hỏi Bình làm nốt một mình trong mấy giờ?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "so sánh 3/7 với 5/9",
-        "options": [
-         "<",
-         ">",
-         "="
-        ],
-        "value": "<"
-       }
-      ]
+      "value": 6
      },
-     "solutionNarrative": "$\\frac{3}{7}$ < $\\frac{1}{2}$ (nửa của 7 phần là 3 phần rưỡi, mà tử chỉ 3); $\\frac{5}{9}$ > $\\frac{1}{2}$ (nửa của 9 là 4 phần rưỡi, tử những 5) → $\\frac{3}{7}$ < $\\frac{5}{9}$.",
+     "solutionNarrative": "Chung mỗi giờ 2 + 1 = 3 phần; 2 giờ được 6 phần; còn 6 phần; Bình 1 phần/giờ → 6 giờ nữa.",
      "hints": [
-      "Mượn cột mốc một nửa.",
-      "Nửa của mẫu là bao nhiêu, tử có vượt qua không?"
+      "Hai giờ chung làm được bao nhiêu phần?",
+      "Phần còn lại chia cho năng suất của người ở lại."
      ]
     },
     {
      "id": "C9",
-     "text": "Xếp ba phân số $\\frac{7}{8}$ ; $\\frac{9}{10}$ ; $\\frac{5}{6}$ theo thứ tự từ bé đến lớn — chỉ dùng MỘT phép so phần bù cho cả ba!",
+     "text": "Hai người cùng làm thì 3 giờ xong một công việc. Nếu làm một mình, người thứ nhất cần 4 giờ. Hỏi người thứ hai làm một mình thì cần mấy giờ? (Chia việc thành 12 phần rồi truy ngược năng suất!)",
      "answerKey": {
-      "parts": [
-       {
-        "label": "phân số bé nhất",
-        "options": [
-         "5/6",
-         "7/8",
-         "9/10"
-        ],
-        "value": "5/6"
-       },
-       {
-        "label": "phân số ở giữa",
-        "options": [
-         "5/6",
-         "7/8",
-         "9/10"
-        ],
-        "value": "7/8"
-       },
-       {
-        "label": "phân số lớn nhất",
-        "options": [
-         "5/6",
-         "7/8",
-         "9/10"
-        ],
-        "value": "9/10"
-       }
-      ]
+      "value": 12
      },
-     "solutionNarrative": "Phần bù: $\\frac{5}{6}$ thiếu $\\frac{1}{6}$; $\\frac{7}{8}$ thiếu $\\frac{1}{8}$; $\\frac{9}{10}$ thiếu $\\frac{1}{10}$. Cùng tử: $\\frac{1}{6}$ > $\\frac{1}{8}$ > $\\frac{1}{10}$ → thiếu càng nhiều càng bé: $\\frac{5}{6}$ < $\\frac{7}{8}$ < $\\frac{9}{10}$.",
+     "solutionNarrative": "Chia việc 12 phần: chung 3 giờ xong → năng suất chung 12 : 3 = 4 phần/giờ; người một 12 : 4 = 3 phần/giờ → người hai 4 − 3 = 1 phần/giờ → một mình cần 12 : 1 = 12 giờ.",
      "hints": [
-      "Cả ba đều suýt đầy — dùng phần bù.",
-      "Ba phần thiếu ấy cùng tử, so mẫu là xong."
+      "Truy ngược: tính năng suất CHUNG trước.",
+      "Rồi trừ đi năng suất của người thứ nhất."
      ]
     }
    ]
@@ -431,7 +312,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Hai phân số cùng tử số, phân số nào có mẫu bé hơn thì lớn hơn.",
+    "text": "Muốn tính bài làm chung, ta chia công việc thành các phần bằng nhau rồi cộng năng suất mỗi giờ.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -440,61 +321,61 @@
    },
    {
     "id": "Q2",
-    "text": "Phân số $\\frac{5}{4}$ bé hơn 1.",
+    "text": "An làm một mình 4 giờ, Bình một mình 4 giờ, vậy hai bạn làm chung hết 8 giờ.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "$\\frac{5}{4}$ có tử lớn hơn mẫu nên lớn hơn 1."
+    "solutionNarrative": "Chung nhanh gấp đôi: 2 giờ."
    },
    {
     "id": "Q3",
-    "text": "So sánh $\\frac{1}{2}$ và $\\frac{2}{5}$:",
+    "text": "An mỗi giờ làm 3 phần, Bình mỗi giờ 1 phần. Chung mỗi giờ được:",
     "format": "mcq",
     "choices": [
-     "A. 1/2 lớn hơn",
-     "B. 2/5 lớn hơn",
-     "C. bằng nhau"
+     "A. 4 phần",
+     "B. 3 phần",
+     "C. 2 phần"
     ],
     "answerKey": {
-     "choice": "A. 1/2 lớn hơn"
+     "choice": "A. 4 phần"
     },
-    "solutionNarrative": "$\\frac{1}{2}$ = $\\frac{5}{10}$ > $\\frac{4}{10}$ = $\\frac{2}{5}$."
+    "solutionNarrative": "4 phần)."
    },
    {
     "id": "Q4",
-    "text": "So sánh $\\frac{4}{9}$ và $\\frac{4}{7}$:",
+    "text": "Bể 6 phần, hai vòi chung mỗi giờ chảy 3 phần. Thời gian đầy bể:",
     "format": "mcq",
     "choices": [
-     "A. 4/7 lớn hơn",
-     "B. 4/9 lớn hơn",
-     "C. bằng nhau"
+     "A. 2 giờ",
+     "B. 3 giờ",
+     "C. 6 giờ"
     ],
     "answerKey": {
-     "choice": "A. 4/7 lớn hơn"
+     "choice": "A. 2 giờ"
     },
-    "solutionNarrative": "Cùng tử, mẫu 7 bé hơn."
+    "solutionNarrative": "2 giờ)."
    },
    {
     "id": "Q5",
-    "text": "Phân số lớn nhất trong $\\frac{9}{10}$ ; $\\frac{7}{8}$ ; $\\frac{1}{2}$ là:",
+    "text": "Làm chung bao giờ cũng ... người nhanh nhất làm một mình:",
     "format": "mcq",
     "choices": [
-     "A. 9/10",
-     "B. 7/8",
-     "C. 1/2"
+     "A. nhanh hơn",
+     "B. chậm hơn",
+     "C. bằng đúng"
     ],
     "answerKey": {
-     "choice": "A. 9/10"
+     "choice": "A. nhanh hơn"
     },
-    "solutionNarrative": "Phần bù $\\frac{1}{10}$ nhỏ nhất."
+    "solutionNarrative": "Nhanh hơn (thêm tay thêm việc)."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Cắt bánh (hoặc gấp giấy) thật: một tờ gấp tư tô 3 ô, một tờ gấp tám tô 5 ô — chồng hai tờ lên nhau soi qua ánh sáng, mắt thấy ngay bên nào nhiều hơn trước khi tay tính.",
-  "homeActivity": "Luyện phản xạ \"chọn lối\": đọc một cặp phân số, con chỉ hô tên lối tắt sẽ dùng (cùng tử / so 1 / phần bù / trung gian / quy đồng) — chọn đúng lối là xong nửa bài.",
-  "watchFor": "NÊN: dùng các cặp phân số \"đẹp\" mẫu nhỏ như trong bài. KHÔNG NÊN: cặp mẫu to phải quy đồng lắt léo ($\\frac{13}{17}$ với $\\frac{15}{19}$) — kỹ thuật nhân chéo hẹn lớp trên."
+  "onComplete": "Thí nghiệm gấp quần áo: đếm giờ (phút) con gấp một mình cả rổ, bố mẹ gấp một mình, rồi cả hai cùng gấp — số liệu thật sẽ minh oan cho \"cộng năng suất\" thuyết phục hơn mọi bài giảng.",
+  "homeActivity": "Câu soi \"chung phải nhanh hơn người nhanh nhất\" nên thành phản xạ — mọi đáp số vi phạm nó đều sai không cần chấm tiếp.",
+  "watchFor": "NÊN: chọn số giờ \"đẹp\" (ước của 12, 24) để phần việc luôn tròn. KHÔNG NÊN: đề ra kết quả giờ lẻ hay ba người làm chung ba tốc độ — phiên bản phân số đầy đủ hẹn lớp 5."
  },
  "figureSpec": [
   {
@@ -503,48 +384,18 @@
     "hook"
    ],
    "file": "figures/L4H_B33_MO.png",
-   "caption": "Hai phân số trên hai cái bánh TO BẰNG NHAU.",
-   "sha256_16": "7d188747b62601b8",
+   "caption": "Chia hàng rào thành phần đều — mỗi giờ mỗi người làm được mấy phần.",
+   "sha256_16": "5c6a51a5e0e65dac",
    "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L4H_B33_G2",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L4H_B33_G2.png",
-   "caption": "So phần CÒN THIẾU của mỗi cái bánh.",
-   "sha256_16": "f09995a764eef20c",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L4H_B33_C9",
-   "usedIn": [
-    "item:C9"
-   ],
-   "file": "figures/L4H_B33_C9.png",
-   "caption": "Ba phân số trên ba cái bánh TO BẰNG NHAU.",
-   "sha256_16": "38404e861e923bf0",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L4H_B33_C9_G",
-   "usedIn": [
-    "item:C9:giai"
-   ],
-   "file": "figures/L4H_B33_C9_G.png",
-   "caption": "Chỉ MỘT phép so phần bù là xếp được cả ba.",
-   "sha256_16": "7c32a246c8e5f87a",
-   "mucGoc": "luyenTap"
   }
  ],
- "hatMam": "Ở trường con vừa làm quen phân số: tử số đếm số lát lấy đi, mẫu số đếm bánh cắt mấy lát. nâng cấp ngay kỹ năng sống còn của đầu bếp: SO SÁNH. Đường cái quan là quy đồng mẫu số; nhưng dân nhà nghề còn giắt lưng bốn lối tắt — cùng tử, so với 1, phần bù và phân số trung gian — nhanh gấp mấy lần đường cái!",
+ "hatMam": "Từ Chương 7, con đã tin vào sức mạnh của chữ PHẦN: chia thứ khó đo thành các phần bằng nhau là mọi phép tính trở nên hiền lành. Hôm nay chữ phần lập công lớn nhất: đo cả... CÔNG VIỆC! Sơn hàng rào, chép bài, bơm nước vào bể — việc gì cũng chia thành phần đều được, và từ đó trả lời câu hỏi hóc búa: hai người làm CHUNG thì bao lâu xong?",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B09"
+   "DL:KSN3.B21"
   ],
   "ten": [
-   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+   "RÚT VỀ ĐƠN VỊ"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

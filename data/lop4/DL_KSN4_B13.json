@@ -1,20 +1,18 @@
 {
  "id": "DL:KSN4.B13",
- "quyen": "lop4",
+ "quyen": "KSN4",
  "so": 13,
- "ten": "DÃY SỐ CÁCH ĐỀU",
+ "ten": "DÃY SỐ LÀ GÌ — CHỖ ĐỨNG VÀ SỐ ĐỨNG Ở ĐÓ",
  "chuong": 4,
  "tenChuong": "DÃY SỐ",
- "dangGoc": "SỐ 5.1 mức Lớp 4 — Đủ 4 bài: số hạng thứ n · số số hạng · tổng dãy (Gauss) · kiểm tra thuộc dãy",
- "hatMam": "Lớp 3, ở Bài 10-11, con đã biết \"toa tàu thứ n\" và kiểm tra \"ga này tàu có dừng không\" bằng chia dư. Chương 2 vừa rồi lại rèn công thức đếm số hạng. Hôm nay ba mảnh ấy ghép với mảnh cuối cùng — TÍNH TỔNG cả dãy theo kiểu thần đồng Gauss — thành BỘ TỨ hoàn hảo: một dãy số, bốn câu hỏi, câu nào cũng có công thức trả lời.",
+ "dangGoc": "Dạng gốc: SỐ 5.1a mức Lớp 4 — Khái niệm dãy số · số hạng · vị trí · giá trị · cách đều · khoảng cách. KHÔNG công thức.",
+ "hatMam": "Lớp 3, ở Bài 10, con đã đi trên \"đoàn tàu đếm thêm\" và tìm toa thứ n. Nhưng hôm ấy con làm theo hình vẽ. Hôm nay mình dừng lại gọi ĐÚNG TÊN từng thứ: cái gì là dãy, cái gì là số hạng, \"thứ mấy\" khác \"số mấy\" ở chỗ nào. Gọi đúng tên rồi thì bốn bài sau chỉ còn là bốn phép tính.",
  "ganDuoi": {
   "ve": [
-   "DL:KSN3.B10",
-   "DL:KSN3.B11"
+   "DL:KSN3.B10"
   ],
   "ten": [
-   "TOA TÀU THỨ n Ở ĐÂU?",
-   "GA NÀY TÀU CÓ DỪNG KHÔNG?"
+   "TOA TÀU THỨ n Ở ĐÂU?"
   ],
   "canCu": "sach",
   "lopDuoi": 3
@@ -23,25 +21,28 @@
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Tìm số hạng thứ n: bằng số đầu + khoảng cách × (n − 1).",
-    "Đếm số số hạng và TÍNH TỔNG dãy cách đều: tổng = (đầu + cuối) × số số hạng : 2.",
-    "Kiểm tra một số có thuộc dãy không, và nếu thuộc thì đứng thứ mấy."
+    "Gọi đúng tên bốn thứ: dãy số, số hạng, vị trí (thứ mấy) và giá trị (số mấy).",
+    "Nhìn một dãy và nói được: dãy này có CÁCH ĐỀU không, KHOẢNG CÁCH bằng bao nhiêu.",
+    "Trả lời được hai câu ngược nhau: \"chỗ thứ n là số nào\" và \"số x đứng thứ mấy\"."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 13: tấm vé số 113",
+   "ten": "CHUYỆN MỞ BÀI — Con phố nhà bạn Mai",
    "dong": [
-    "Cô chủ rạp phim mini mang đến sơ đồ ghế: \"Rạp cô mỗi hàng đúng 8 ghế, đánh số liền từ 1. Khách cầm vé cứ hỏi: ghế em ở hàng mấy? Hàng 15 bắt đầu từ ghế số bao nhiêu? Cả rạp 18 hàng thì bao nhiêu chỗ? Các lập giúp cô bộ công thức trả lời TỨC THÌ — khách đông, không kịp đếm đâu!\" Trí Long liếc sơ đồ: \"Ghế đầu các hàng là 1, 9, 17, 25... viết tiếp đến hàng 15 chắc cũng nhanh mà?\" Su Kem cười: \"Nhanh — nhưng cô cần TỨC THÌ. Nghĩa là cần công thức, không cần kiên nhẫn.\""
+    "Bạn Mai chỉ tay xuống dãy nhà bên trái: \"Nhà tớ là nhà thứ tư từ đầu phố.\"",
+    "Cậu bé giao báo gãi đầu: \"Nhà thứ tư… nhưng số nhà là bao nhiêu ạ? Tớ chỉ biết bấm chuông theo SỐ NHÀ thôi.\"",
+    "Mai đọc dãy số nhà bên ấy: 6 ; 11 ; 16 ; 21 ; 26 ; 31.",
+    "Vậy nhà THỨ TƯ mang số mấy? Và ngược lại, nhà số 26 là nhà THỨ MẤY?"
    ],
    "hinh": [
     {
      "id": "L4H_B13_MO",
      "sauDong": 0,
      "file": "figures/L4H_B13_MO.png",
-     "caption": "Ghế đầu mỗi hàng cách nhau đúng 8 — bốn hàng đầu làm mẫu.",
-     "sha256_16": "d92bb4995681369f"
+     "caption": "Hai hàng, một ngôi nhà: hàng trên là VỊ TRÍ, hàng dưới là GIÁ TRỊ.",
+     "sha256_16": "631ac5318713d7d5"
     }
    ],
    "nhip": ""
@@ -49,32 +50,33 @@
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
    "dong": [
-    "CHO GÌ? rạp mỗi hàng 8 ghế, đánh số liền từ 1; ghế đầu các hàng: 1, 9, 17, 25, ...",
-    "HỎI GÌ? ghế đầu của hàng 15 là số mấy; cả rạp 18 hàng có bao nhiêu ghế; vé số 113 thuộc hàng nào.",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: số ghế (chiếc) và số thứ tự hàng — hai loại số khác nhau, chớ lẫn!",
-    "QUAN HỆ GIỮA CHÚNG: ghế đầu mỗi hàng tạo thành DÃY CÁCH ĐỀU: bắt đầu từ 1, mỗi bước nhảy đúng 8 (vì mỗi hàng 8 ghế).",
-    "CHỌN CÔNG CỤ: BỘ TỨ CÔNG THỨC của dãy cách đều: thứ n, số số hạng, tổng, thuộc dãy.",
-    "ƯỚC LƯỢNG TRƯỚC: hàng 15 cách hàng 1 mười bốn bước nhảy — ghế đầu cỡ 1 + 14 × 8, tầm hơn trăm."
+    "CHO GÌ? dãy số nhà bên trái phố: 6 ; 11 ; 16 ; 21 ; 26 ; 31.",
+    "HỎI GÌ? nhà thứ tư mang số mấy; nhà số 26 đứng thứ mấy.",
+    "ĐẠI LƯỢNG & ĐƠN VỊ: hai loại số hoàn toàn khác nhau — VỊ TRÍ đếm bằng \"thứ nhất, thứ hai, thứ ba…\", còn GIÁ TRỊ là con số sơn trên cửa. Đây chính là chỗ cậu giao báo bị rối, và cũng là chỗ bé hay nhầm nhất.",
+    "QUAN HỆ GIỮA CHÚNG: mỗi vị trí ứng với đúng MỘT giá trị. Vị trí 1 ↔ số 6; vị trí 2 ↔ số 11; vị trí 3 ↔ số 16…",
+    "CHỌN CÔNG CỤ: bài này CHƯA cần công thức nào. Chỉ cần đọc dãy và đếm cho đúng chỗ. Công thức để dành bốn bài sau.",
+    "ƯỚC LƯỢNG TRƯỚC: số nhà cứ tăng dần, nhà thứ tư chắc chắn lớn hơn 16 và nhỏ hơn 26."
    ],
    "hinh": [],
-   "nhip": "NHỊP 1, DỊCH — từ sơ đồ ghế sang dãy cách đều"
+   "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
    "dong": [
-    "Bước 1 — CÔNG THỨC SỐ HẠNG THỨ n: từ hàng 1 đến hàng 15 có 15 − 1 = 14 bước nhảy, mỗi bước cộng 8 → ghế đầu hàng 15 = 1 + 8 × 14 = 113. Tổng quát: số hạng thứ n = số đầu + khoảng cách × (n − 1). Đếm BƯỚC NHẢY, không đếm toa — nên phải trừ 1!",
-    "Bước 2 — CÔNG THỨC VÀ NGƯỜI QUEN: số số hạng = (cuối − đầu) : khoảng + 1 — chính là công thức đếm nhãn của Bài 7, nay về chung một nhà. Dãy 5, 10, ..., 100 có (100 − 5) : 5 + 1 = 20 số hạng.",
-    "Bước 3 — CÔNG THỨC TỔNG DÃY — CÁCH GAUSS: tính 1 + 2 + ... + 50: ghép đầu với cuối: 1 + 50 = 51; 2 + 49 = 51... được 50 : 2 = 25 cặp, cặp nào cũng 51 → tổng = 51 × 25 = 1 275. Tổng quát: tổng = (đầu + cuối) × số số hạng : 2. Với dãy 5 + 10 + ... + 100: (5 + 100) × 20 : 2 = 1 050.",
-    "Bước 4 — CÔNG THỨC THUỘC DÃY & BÀI VÉ 113: vé 113 thuộc dãy ghế-đầu-hàng 1, 9, 17, ...? Soi: (113 − 1) : 8 = 14 chia hết → thuộc dãy, đứng thứ 14 + 1 = 15 → vé 113 là ghế ĐẦU của hàng 15! Còn vé 100: (100 − 1) : 8 = 99 : 8 dư 3 → không phải ghế đầu hàng; 100 = 8 × 12 + 4 → khách ngồi hàng 13, ghế thứ 4 trong hàng. Dấu hiệu chia hết của Chương 3 gác cổng cho công thức ④!",
-    "MẸO NGƯỜI GIẢI: Bộ tứ của dãy cách đều: ① thứ n = đầu + khoảng × (n − 1); ② số số hạng = (cuối − đầu) : khoảng + 1; ③ tổng = (đầu + cuối) × số số hạng : 2; ④ thuộc dãy khi (x − đầu) chia hết cho khoảng. Nhớ mẹo chống nhầm: công thức ① trừ 1 (đếm bước nhảy), công thức ② cộng 1 (đếm cả người đầu hàng)."
+    "Bước 1 — DÃY SỐ LÀ GÌ. Một DÃY SỐ là mấy con số viết nối nhau THEO MỘT THỨ TỰ đã định, ngăn nhau bằng dấu chấm phẩy: 6 ; 11 ; 16 ; 21 ; 26 ; 31. Mỗi con số trong dãy gọi là một SỐ HẠNG. Dãy trên có 6 số hạng. Thứ tự là phần quan trọng: đảo chỗ hai số là thành một dãy KHÁC.",
+    "Bước 2 — MỘT SỐ HẠNG CÓ HAI CON SỐ ĐI KÈM, và đây là chỗ dễ nhầm nhất của cả chương. VỊ TRÍ (còn gọi là SỐ THỨ TỰ) cho biết số hạng ấy đứng THỨ MẤY: thứ nhất, thứ hai, thứ ba… GIÁ TRỊ cho biết số hạng ấy LÀ SỐ NÀO. Nhà thứ tư có giá trị 21 — \"thứ tư\" và \"21\" cùng nói về một ngôi nhà, nhưng KHÔNG phải một con số. Hỏi \"thứ mấy\" thì đếm chỗ; hỏi \"số mấy\" thì đọc giá trị.",
+    "Bước 3 — CÁCH ĐỀU LÀ GÌ. Lấy mỗi số hạng TRỪ số hạng ĐỨNG NGAY TRƯỚC nó: 11 − 6 = 5 ; 16 − 11 = 5 ; 21 − 16 = 5 ; 26 − 21 = 5 ; 31 − 26 = 5. Năm hiệu đều bằng 5 — dãy này CÁCH ĐỀU, và con số 5 ấy gọi là KHOẢNG CÁCH của dãy. Khoảng cách là bước chân: từ nhà này sang nhà bên cạnh luôn bước đúng một bước 5 đơn vị.",
+    "Bước 4 — THỬ TAY HAI DÃY. Dãy 3 ; 6 ; 9 ; 12 : hiệu lần lượt 3 ; 3 ; 3 → CÁCH ĐỀU, khoảng cách 3. Dãy 1 ; 2 ; 4 ; 8 : hiệu lần lượt 1 ; 2 ; 4 → các hiệu KHÁC nhau, nên KHÔNG cách đều (dãy này có quy luật khác — mỗi số gấp đôi số trước — nhưng đó là chuyện của bài sau).",
+    "Bước 5 — DÃY GIẢM CŨNG CÁCH ĐỀU ĐƯỢC. 100 ; 95 ; 90 ; 85 có hiệu −5 mỗi bước, đều tăm tắp → vẫn là dãy cách đều, khoảng cách 5, chỉ khác là bước LÙI chứ không bước tới.",
+    "MẸO NGƯỜI GIẢI: gặp một dãy lạ, làm đúng ba việc theo thứ tự — (1) đếm xem có mấy số hạng; (2) trừ liên tiếp xem các hiệu có bằng nhau không; (3) nếu bằng nhau thì ghi ngay KHOẢNG CÁCH ra lề. Ba việc ấy xong là nhận diện xong."
    ],
    "hinh": [
     {
      "id": "L4H_B13_G1",
-     "sauDong": 0,
+     "sauDong": 1,
      "file": "figures/L4H_B13_G1.png",
-     "caption": "Dãy cách đều: số đầu, khoảng cách, số hạng, tổng.",
-     "sha256_16": "5e4a9209880e46ea"
+     "caption": "Bước chân từ số hạng này sang số hạng kế luôn dài bằng nhau.",
+     "sha256_16": "de7b7fa177ed5d2c"
     }
    ],
    "nhip": "NHỊP 2, GIẢI"
@@ -82,9 +84,9 @@
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
    "dong": [
-    "LẮP: bảng tra gửi cô chủ rạp: \"Ghế đầu hàng n = 8 × (n − 1) + 1. Hàng 15 mở màn bằng ghế 113; cả rạp 18 hàng × 8 = 144 chỗ; khách vé 113: mời vào hàng 15, ghế sát lối đi!\" Cô dán bảng ngay quầy vé — khách hỏi đâu đáp đó.",
-    "SOI: soi chéo: ghế cuối rạp = ghế đầu hàng 18 + 7 = (1 + 8 × 17) + 7 = 144 — khớp phép nhân 18 × 8 ✓. Hai con đường một đáp số, bảng tra đáng tin.",
-    "DÙNG NGOÀI ĐỜI: số nhà chẵn - lẻ trên phố, ngày các thứ Bảy trong tháng, số trang mở đầu mỗi chương sách — toàn dãy cách đều chờ con tra bằng bộ tứ!"
+    "LẮP: cậu giao báo dán vào ghi đông xe một mảnh giấy: \"Phố này số nhà bắt đầu từ 6, cách đều 5. Nhà thứ tư = số 21.\" Từ hôm ấy cậu bấm chuông không sai nhà nào nữa.",
+    "SOI: soi ngược lại cho chắc — nhà số 26 đứng thứ mấy? Đếm từ đầu: 6 (thứ 1) → 11 (thứ 2) → 16 (thứ 3) → 21 (thứ 4) → 26 (thứ 5) ✓. Hỏi xuôi ra 21, hỏi ngược ra thứ 5 — hai chiều đều thông thì mới thật là hiểu.",
+    "DÙNG NGOÀI ĐỜI: số nhà chẵn - lẻ trên phố, bậc thang đánh số, cột cây số bên đường, các ngày thứ Bảy trong tờ lịch — chỗ nào cũng có dãy cách đều, và chỗ nào cũng phân biệt \"thứ mấy\" với \"số mấy\"."
    ],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
@@ -92,22 +94,17 @@
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Tính tổng: 5 + 10 + 15 + ... + 100.",
+    "Đề bài: Cho dãy 7 ; 12 ; 17 ; 22 ; 27. Dãy này có cách đều không? Nếu có thì khoảng cách bằng bao nhiêu? Số hạng thứ 3 là số nào? Số 27 đứng thứ mấy?",
     "Tóm tắt",
-    "Tính tổng dãy cách đều 5, 10, 15, ..., 100 (khoảng cách 5).",
-    "Gọi tên \"dãy cách đều, khoảng cách 5\" — nhận diện xong nửa bài.",
-    "Mô hình (ghép cặp Gauss)",
-    "5 + 100 = 105 ; 10 + 95 = 105 ; ...",
-    "Cặp nào cũng có tổng bằng đầu + cuối.",
-    "Chỉ ra \"vì sao nhân rồi chia 2\" — công thức có gốc, không học vẹt.",
-    "Bài giải",
-    "Số số hạng của dãy là: (100 − 5) : 5 + 1 = 20 (số hạng)",
-    "Tổng của dãy là: (5 + 100) × 20 : 2 = 105 × 10 = 1 050",
-    "Hai công thức của bộ tứ nối nhau: đếm trước, tính tổng sau.",
-    "Đáp số: 1 050.",
-    "Đáp số một dòng riêng.",
-    "Thử lại: ước lượng 20 số, trung bình mỗi số hơn 50 → tổng hơn 1 000 ✓",
-    "Soi bằng ước lượng — tổng phải \"cùng cỡ\" với dự đoán."
+    "Dãy 5 số hạng: 7 ; 12 ; 17 ; 22 ; 27.",
+    "Viết dãy ra giấy, đánh số vị trí 1, 2, 3, 4, 5 ngay bên dưới từng số hạng.",
+    "Kiểm cách đều",
+    "12 − 7 = 5 ; 17 − 12 = 5 ; 22 − 17 = 5 ; 27 − 22 = 5.",
+    "Bốn hiệu bằng nhau → dãy CÁCH ĐỀU, khoảng cách 5.",
+    "Đọc hai chiều",
+    "Vị trí 3 → nhìn xuống hàng vị trí, thấy số 17. Số hạng thứ 3 là 17.",
+    "Số 27 → nhìn lên hàng vị trí, thấy số 5. Số 27 đứng thứ 5.",
+    "Đáp số: dãy cách đều, khoảng cách 5; số hạng thứ 3 là 17; số 27 đứng thứ 5."
    ],
    "hinh": [],
    "nhip": ""
@@ -115,9 +112,10 @@
   "suKemNham": {
    "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
    "dong": [
-    "Khách hỏi ghế đầu hàng 15, Trí Long bấm ngay: \"Mỗi hàng 8 ghế, hàng 15 thì lấy 8 × 15 = 120. Ghế đầu hàng 15 là ghế 120 ạ!\"",
-    "Gợi ý 1: Thử công thức của Trí Long với hàng 1 xem: 8 × 1 = 8 — nhưng ghế đầu hàng 1 rõ ràng là ghế số 1! Máy đã hỏng ngay từ ga đầu tiên.",
-    "Gợi ý 2: 8 × 15 = 120 thật ra là ghế nào của hàng 15 (đầu hay cuối)? Từ hàng 1 đến hàng 15 có mấy BƯỚC NHẢY? Sửa công thức cho Trí Long và tính lại ghế đầu hàng 15 — nhớ khẩu quyết \"đếm bước nhảy, trừ đi 1\"."
+    "Cô hỏi \"nhà thứ tư mang số mấy?\", Trí Long đáp ngay: \"Thứ tư thì là số 4 ạ!\"",
+    "Gợi ý 1: Con thử đọc lại dãy số nhà xem — 6 ; 11 ; 16 ; 21 ; 26 ; 31. Có số 4 nào trong đó không?",
+    "Gợi ý 2: \"Thứ tư\" là CHỖ ĐỨNG, còn \"số nhà\" là con số sơn trên cửa. Hai thứ khác nhau. Con chỉ tay vào chỗ thứ tư rồi đọc to số ở đó xem.",
+    "Chữa: nhà thứ tư là nhà mang số 21. Vị trí 4 ≠ giá trị 4."
    ],
    "hinh": [],
    "nhip": ""
@@ -139,9 +137,9 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Săn dãy cách đều quanh nhà: số nhà bên chẵn của phố, các ngày thứ Bảy trong tờ lịch, số trang đầu mỗi chương truyện — cho con \"tra bộ tứ\" rồi kiểm chứng thực địa.",
-    "Chuyện Gauss 10 tuổi ghép cặp tính 1 + 2 + ... + 100 trong một phút là món quà kể trước giờ ngủ — rồi thách con tính 1 + 2 + ... + 20 theo đúng kiểu ấy.",
-    "NÊN: bắt lỗi \"quên chia 2\" và \"nhầm trừ 1 - cộng 1\" bằng dãy tí hon 3 số hạng — kiểm được ngay bằng tay. KHÔNG NÊN: sang tổng dãy lệch kiểu 2 + 5 + 9 + 14 (không cách đều) — dãy ấy thuộc Bài 14 và các lớp trên."
+    "Đi bộ cùng con dọc một dãy nhà, đọc to số nhà rồi hỏi: \"Nhà mình là nhà thứ mấy tính từ đầu phố?\" — cho con tự đếm và tự nói ra hai con số khác nhau.",
+    "Mở tờ lịch tháng, khoanh tất cả các ngày Chủ nhật: 3 ; 10 ; 17 ; 24 ; 31. Hỏi con: dãy này cách đều không? Khoảng cách mấy? Chủ nhật thứ ba là ngày mấy?",
+    "Chưa cần công thức nào ở bài này. Con gọi đúng tên và chỉ đúng chỗ là đạt."
    ],
    "hinh": [],
    "nhip": ""
@@ -155,8 +153,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Dãy 4 ; 7 ; 10 ; ... có khoảng cách bằng mấy? Viết ba số hạng tiếp theo.",
-   "loiChua": "Khoảng cách 3; ba số tiếp theo: 13, 16, 19.",
+   "text": "Cho dãy 4 ; 8 ; 12 ; 16 ; 20. Dãy có mấy số hạng? Số hạng thứ 3 là số nào?",
+   "loiChua": "Dãy có 5 số hạng; số hạng thứ 3 là 12.",
    "tuLuan": true
   },
   {
@@ -166,8 +164,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm số hạng thứ 10 của dãy 5 ; 10 ; 15 ; ...",
-   "loiChua": "5 + 5 × (10 − 1) = 50.",
+   "text": "Vẫn dãy 4 ; 8 ; 12 ; 16 ; 20. Số 20 đứng ở vị trí thứ mấy?",
+   "loiChua": "Đếm từ đầu: 4 (1) ; 8 (2) ; 12 (3) ; 16 (4) ; 20 (5). Số 20 đứng thứ 5.",
    "tuLuan": true
   },
   {
@@ -177,8 +175,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng?",
-   "loiChua": "(100 − 2) : 2 + 1 = 50 số hạng.",
+   "text": "Cho dãy 7 ; 10 ; 13 ; 16. Dãy này có cách đều không? Khoảng cách bằng mấy?",
+   "loiChua": "Các hiệu: 10 − 7 = 3 ; 13 − 10 = 3 ; 16 − 13 = 3 — bằng nhau, nên dãy cách đều, khoảng cách 3.",
    "tuLuan": true
   },
   {
@@ -188,8 +186,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm số hạng thứ 20 của dãy 3 ; 7 ; 11 ; ...",
-   "loiChua": "3 + 4 × (20 − 1) = 3 + 76 = 79.",
+   "text": "Trong hai dãy sau, dãy nào CÁCH ĐỀU: dãy A là 2 ; 4 ; 6 ; 8 hay dãy B là 2 ; 4 ; 8 ; 16?",
+   "loiChua": "Dãy A: hiệu 2 ; 2 ; 2 — cách đều. Dãy B: hiệu 2 ; 4 ; 8 — không bằng nhau nên KHÔNG cách đều.",
    "tuLuan": true
   },
   {
@@ -199,8 +197,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính tổng: 1 + 2 + 3 + ... + 50.",
-   "loiChua": "(1 + 50) × 50 : 2 = 51 × 25 = 1 275.",
+   "text": "Cho dãy 100 ; 95 ; 90 ; 85 ; 80. Dãy này có cách đều không? Khoảng cách mấy?",
+   "loiChua": "Mỗi bước lùi đúng 5 đơn vị, đều tăm tắp → vẫn là dãy cách đều, khoảng cách 5.",
    "tuLuan": true
   },
   {
@@ -210,8 +208,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính tổng: 5 + 10 + 15 + ... + 100.",
-   "loiChua": "Số số hạng (100 − 5) : 5 + 1 = 20 → tổng = (5 + 100) × 20 : 2 = 1 050.",
+   "text": "Cho dãy cách đều 5 ; 10 ; 15 ; ... Hãy viết tiếp và cho biết số hạng thứ 6 là số nào.",
+   "loiChua": "Viết tiếp: 20 ; 25 ; 30. Số hạng thứ 6 là 30.",
    "tuLuan": true
   },
   {
@@ -221,8 +219,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không? Nếu thuộc, nó đứng thứ mấy? Số 100 thì sao?",
-   "loiChua": "(79 − 3) : 4 = 19 chia hết → 79 thuộc dãy, đứng thứ 19 + 1 = 20; (100 − 3) : 4 = 97 : 4 dư 1 → 100 không thuộc dãy.",
+   "text": "Bạn Mai nói: \"Trong dãy 6 ; 11 ; 16 ; 21 ; 26, số 16 đứng thứ 16.\" Bạn nói đúng hay sai? Vì sao?",
+   "loiChua": "SAI. Số 16 là GIÁ TRỊ, còn vị trí của nó là thứ 3. Vị trí và giá trị là hai con số khác nhau.",
    "tuLuan": true
   },
   {
@@ -232,8 +230,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Rạp phim mỗi hàng 8 ghế, đánh số liền từ 1. Hỏi ghế ĐẦU và ghế CUỐI của hàng 15 mang số bao nhiêu?",
-   "loiChua": "Ghế đầu hàng 15 = 1 + 8 × 14 = 113; ghế cuối = 113 + 7 = 120.",
+   "text": "Cho dãy 3 ; 7 ; 11 ; 15 ; 19 ; 23. Cho biết: khoảng cách của dãy; số hạng thứ 5; và số 11 đứng thứ mấy.",
+   "loiChua": "Khoảng cách 4; số hạng thứ 5 là 19; số 11 đứng thứ 3.",
    "tuLuan": true
   },
   {
@@ -243,8 +241,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính tổng 15 số lẻ đầu tiên: 1 + 3 + 5 + ... + 29 — rồi so kết quả với 15 × 15. Trùng hợp hay bí mật? Thử thêm với 5 số lẻ đầu tiên xem sao!",
-   "loiChua": "(1 + 29) × 15 : 2 = 225 = 15 × 15! Với 5 số lẻ đầu: 1 + 3 + 5 + 7 + 9 = 25 = 5 × 5. Bí mật đẹp: tổng n số lẻ đầu tiên luôn bằng n × n — xếp các số lẻ thành hình vuông mà xem!",
+   "text": "Một dãy cách đều bắt đầu bằng 2, khoảng cách 4. Hãy viết 5 số hạng đầu tiên của dãy, rồi cho biết số hạng thứ 5 là số nào.",
+   "loiChua": "Dãy: 2 ; 6 ; 10 ; 14 ; 18. Số hạng thứ 5 là 18.",
    "tuLuan": true
   },
   {
@@ -254,14 +252,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Số hạng thứ n của dãy cách đều bằng số đầu + khoảng cách × (n − 1).",
+   "text": "Mỗi con số trong một dãy số được gọi là một SỐ HẠNG.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
    "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "solutionNarrative": "Đáp án: ĐÚNG"
   },
   {
    "id": "Q2",
@@ -270,14 +268,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Tổng dãy cách đều bằng (đầu + cuối) × số số hạng.",
+   "text": "Trong dãy 6 ; 11 ; 16 ; 21, số 16 đứng ở vị trí thứ 16.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": false
    },
-   "loiChua": "Còn phải chia 2.",
-   "solutionNarrative": "Còn phải chia 2."
+   "loiChua": "SAI — số 16 là GIÁ TRỊ, còn vị trí của nó là thứ 3.",
+   "solutionNarrative": "SAI — số 16 là GIÁ TRỊ, còn vị trí của nó là thứ 3."
   },
   {
    "id": "Q3",
@@ -286,19 +284,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Số hạng thứ 12 của dãy 2 ; 5 ; 8 ; ... là:",
+   "text": "Dãy nào dưới đây là dãy CÁCH ĐỀU?",
    "choices": [
-    "A. 35",
-    "B. 38",
-    "C. 32"
+    "A. 1 ; 3 ; 5 ; 7",
+    "B. 1 ; 2 ; 4 ; 8",
+    "C. 1 ; 4 ; 9 ; 16"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 35"
+    "choice": "A. 1 ; 3 ; 5 ; 7"
    },
-   "loiChua": "2 + 3 × 11 = 35.",
-   "solutionNarrative": "2 + 3 × 11 = 35."
+   "loiChua": "Dãy A có các hiệu đều bằng 2.",
+   "solutionNarrative": "Dãy A có các hiệu đều bằng 2."
   },
   {
    "id": "Q4",
@@ -307,19 +305,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Tổng 1 + 2 + ... + 10 bằng:",
+   "text": "Dãy 9 ; 14 ; 19 ; 24 có khoảng cách bằng:",
    "choices": [
-    "A. 55",
-    "B. 50",
-    "C. 45"
+    "A. 5",
+    "B. 4",
+    "C. 9"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 55"
+    "choice": "A. 5"
    },
-   "loiChua": "(1 + 10) × 10 : 2 = 55.",
-   "solutionNarrative": "(1 + 10) × 10 : 2 = 55."
+   "loiChua": "14 − 9 = 5, và các hiệu sau cũng đều bằng 5.",
+   "solutionNarrative": "14 − 9 = 5, và các hiệu sau cũng đều bằng 5."
   },
   {
    "id": "Q5",
@@ -328,19 +326,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Số 52 với dãy 7 ; 12 ; 17 ; ...:",
+   "text": "Trong dãy 8 ; 12 ; 16 ; 20 ; 24, số hạng thứ 4 là:",
    "choices": [
-    "A. thuộc dãy, đứng thứ 10",
-    "B. không thuộc dãy",
-    "C. thuộc dãy, đứng thứ 9"
+    "A. 20",
+    "B. 4",
+    "C. 16"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. thuộc dãy, đứng thứ 10"
+    "choice": "A. 20"
    },
-   "loiChua": "(52 − 7) : 5 = 9 chia hết → thuộc dãy, thứ 10.",
-   "solutionNarrative": "(52 − 7) : 5 = 9 chia hết → thuộc dãy, thứ 10."
+   "loiChua": "Đếm chỗ: 8 (1) ; 12 (2) ; 16 (3) ; 20 (4).",
+   "solutionNarrative": "Đếm chỗ: 8 (1) ; 12 (2) ; 16 (3) ; 20 (4)."
   }
  ]
 }

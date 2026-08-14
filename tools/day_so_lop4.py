@@ -65,7 +65,10 @@ def muc(ten, dong, nhip='', hinh=None):
 def bai(so, ten, dang_goc, hat_mam, gan_duoi, m, cau):
     return {
         'id': f'DL:KSN4.B{so:02d}', 'quyen': 'KSN4', 'so': so,
-        'ten': f'Bài {so} · {ten}', 'chuong': CHUONG, 'tenChuong': TEN_CHUONG,
+        # `ten` ở BẢN GỐC là tên trần, KHÔNG có tiền tố "Bài n ·" —
+        # `khuon_chung` tự ghép tiền tố khi dựng bản cho app. Bản đầu của
+        # tệp này ghép sẵn, nên bản dựng sẽ ra "Bài 13 · Bài 13 · DÃY SỐ…".
+        'ten': ten, 'chuong': CHUONG, 'tenChuong': TEN_CHUONG,
         'dangGoc': dang_goc, 'hatMam': hat_mam, 'ganDuoi': gan_duoi,
         'muc': m, 'cau': cau,
     }
@@ -143,7 +146,7 @@ B13 = bai(
          'biết bấm chuông theo SỐ NHÀ thôi."',
          'Mai đọc dãy số nhà bên ấy: 6 ; 11 ; 16 ; 21 ; 26 ; 31.',
          'Vậy nhà THỨ TƯ mang số mấy? Và ngược lại, nhà số 26 là nhà THỨ MẤY?'],
-        ['Gọi đúng tên: DÃY SỐ · SỐ HẠNG · VỊ TRÍ (thứ mấy) · GIÁ TRỊ (số mấy).',
+        ['Gọi đúng tên bốn thứ: dãy số, số hạng, vị trí (thứ mấy) và giá trị (số mấy).',
          'Nhìn một dãy và nói được: dãy này có CÁCH ĐỀU không, KHOẢNG CÁCH bằng bao nhiêu.',
          'Trả lời được hai câu ngược nhau: "chỗ thứ n là số nào" và "số x đứng thứ mấy".'],
         ['CHO GÌ? dãy số nhà bên trái phố: 6 ; 11 ; 16 ; 21 ; 26 ; 31.',
@@ -726,6 +729,74 @@ B17 = bai(
 MOI = [B13, B14, B15, B16, B17]
 
 # ═══════════════════════════════════════════════════════════════════════════
+# HÌNH — mỗi bài một hình MÀN MỞ (cổng lớp 4 đòi bài nào cũng có) và một hình
+# KHÁM PHÁ cho bài khái niệm. Dùng lại đúng những `arch` quyển này đang có, không
+# dựng kiểu vẽ mới: kiểu mới là thêm một chỗ có thể hỏng mà chưa ai soi bao giờ.
+# ═══════════════════════════════════════════════════════════════════════════
+def _o(t, mau):
+    return {'t': str(t), 'mau': mau}
+
+
+HINH_MOI = [
+    # B13 — hai HÀNG chồng nhau là cách duy nhất cho bé THẤY "thứ mấy" khác "số
+    # mấy": cùng một cột, hàng trên là chỗ đứng, hàng dưới là con số ở chỗ ấy.
+    {'id': 'L4H_B13_MO', 'arch': 'day_o',
+     'params': {'title': 'NHÀ THỨ TƯ MANG SỐ MẤY? NHÀ SỐ 26 ĐỨNG THỨ MẤY?',
+                'hang': [{'nhan': 'đứng thứ', 'o': [_o(i, 'gold') for i in range(1, 7)]},
+                         {'nhan': 'số nhà',
+                          'o': [_o(n, 'teal') for n in (6, 11, 16, 21, 26, 31)]}]},
+     'caption': 'Hai hàng, một ngôi nhà: hàng trên là VỊ TRÍ, hàng dưới là GIÁ TRỊ.',
+     'bai': 'DL:KSN4.B13', 'muc': 'chuyenMoBai', 'goc': 'B13 ②'},
+    {'id': 'L4H_B13_G1', 'arch': 'tia_so',
+     'params': {'title': 'CÁCH ĐỀU LÀ GÌ — TRỪ LIÊN TIẾP XEM CÁC HIỆU CÓ BẰNG NHAU',
+                'moc': [{'so': 7, 'danh': True}, {'so': 12}, {'so': 17}, {'so': 22},
+                        {'so': 27}],
+                'nhan': '+5',
+                'note': 'Các hiệu đều bằng 5 → dãy cách đều, khoảng cách 5.'},
+     'caption': 'Bước chân từ số hạng này sang số hạng kế luôn dài bằng nhau.',
+     'bai': 'DL:KSN4.B13', 'muc': 'khamPha', 'neoBuoc': 2, 'goc': 'B13 ④ bước 3'},
+
+    # B14 — tia số cho THẤY bước nhảy. Bốn chỗ nhưng chỉ ba bước: đó là cả bài.
+    {'id': 'L4H_B14_MO', 'arch': 'tia_so',
+     'params': {'title': 'BỐN BẬC THANG NHƯNG CHỈ BA LẦN LEO — BẬC THỨ 20 CAO BAO NHIÊU?',
+                'moc': [{'so': 15, 'danh': True}, {'so': 30}, {'so': 45}, {'so': 60}],
+                # KHÔNG có `note`: hình màn mở là bản ĐỀ. Dòng chốt ở đây là
+                # cho không bé đáp án trước khi bé kịp nghĩ (chuẩn mục 6 luật 3) —
+                # cổng lớp 4 bắt được ngay.
+                'nhan': '+15'},
+     'caption': 'Bậc thứ nhất đã đứng sẵn ở đó — không phải leo lần nào để tới nó.',
+     'bai': 'DL:KSN4.B14', 'muc': 'chuyenMoBai', 'goc': 'B14 ②'},
+
+    # B15 — hàng rào là hình duy nhất nói được "cột nhiều hơn khoảng đúng một"
+    # mà không cần một chữ nào.
+    {'id': 'L4H_B15_MO', 'arch': 'hang_cay',
+     'params': {'title': 'HÀNG RÀO 40 M, CỨ 5 M MỘT CỘT, CẮM CẢ HAI ĐẦU — MẤY CÂY CỘT?',
+                'so_cay': 9, 'khoang': '5 m'},
+     'caption': '8 khoảng nhưng 9 cột — bác Tư hụt đúng một cây ở chỗ này.',
+     'bai': 'DL:KSN4.B15', 'muc': 'chuyenMoBai', 'goc': 'B15 ②'},
+
+    # B16 — xếp dãy xuôi trên, dãy ngược dưới; cột nào cộng lại cũng bằng nhau.
+    # Nhìn một cái là hiểu vì sao phải chia 2.
+    {'id': 'L4H_B16_MO', 'arch': 'day_o',
+     'params': {'title': 'CÁCH CỦA GAUSS — VIẾT DÃY HAI LẦN, LẦN SAU VIẾT NGƯỢC',
+                'hang': [{'nhan': 'xuôi', 'o': [_o(n, 'teal') for n in (1, 2, 3, 4, 5)]},
+                         {'nhan': 'ngược', 'o': [_o(n, 'gold') for n in (5, 4, 3, 2, 1)]},
+                         {'nhan': 'cộng cột', 'o': [_o(6, 'do') for _ in range(5)]}]},
+     'caption': 'Cột nào cũng bằng 6 — vì cộng hai lần nên cuối cùng phải chia đôi.',
+     'bai': 'DL:KSN4.B16', 'muc': 'chuyenMoBai', 'goc': 'B16 ②'},
+
+    # B17 — đánh dấu số cần soi ngay trên tia, để bé thấy nó rơi ĐÚNG mốc hay
+    # rơi vào giữa hai mốc.
+    {'id': 'L4H_B17_MO', 'arch': 'tia_so',
+     'params': {'title': 'VÉ SỐ 113 CÓ PHẢI GHẾ ĐẦU HÀNG KHÔNG?',
+                'moc': [{'so': 1, 'danh': True}, {'so': 9}, {'so': 17}, {'so': 25}],
+                'nhan': '+8'},
+     'caption': 'Trừ số đầu trước đã, rồi mới chia cho khoảng cách.',
+     'bai': 'DL:KSN4.B17', 'muc': 'chuyenMoBai', 'goc': 'B17 ②'},
+]
+
+
+# ═══════════════════════════════════════════════════════════════════════════
 # Ô NHẬP CHẤM MÁY — luật 1 của `luat_o_nhap`: quyển đọc chậm KHÔNG được có ô gõ
 # chữ, đáp án không phải số thì phải cho BẤM NÚT (`options`).
 # ═══════════════════════════════════════════════════════════════════════════
@@ -857,7 +928,7 @@ def main():
     for b in MOI:
         lt_ = sum(1 for c in b['cau'] if c['phan'] == 'luyenTap')
         qz = sum(1 for c in b['cau'] if c['phan'] == 'quiz')
-        print(f"  {b['id']}  {b['ten'][:52]:52} {lt_} luyện + {qz} quiz")
+        print(f"  {b['id']}  Bài {b['so']} · {b['ten'][:44]:44} {lt_} luyện + {qz} quiz")
         if not a.xem:
             (RA / f"DL_KSN4_B{b['so']:02d}.json").write_text(
                 json.dumps(b, ensure_ascii=False, indent=1) + '\n', 'utf8')
@@ -865,6 +936,14 @@ def main():
     if a.xem:
         print('\n(--xem: chưa ghi gì)')
         return
+
+    mt = GOC / 'data' / 'lop4_hinh.json'
+    ds = json.loads(mt.read_text('utf8'))
+    co = {m['id'] for m in ds}
+    them = [h for h in HINH_MOI if h['id'] not in co]
+    ds += them
+    mt.write_text(json.dumps(ds, ensure_ascii=False, indent=1) + '\n', 'utf8')
+    print(f'thêm {len(them)} mô tả hình vào {mt.relative_to(GOC)} (nay {len(ds)} hình)')
 
     o = json.loads(O_NHAP.read_text('utf8'))
     o.update(O_NHAP_MOI)

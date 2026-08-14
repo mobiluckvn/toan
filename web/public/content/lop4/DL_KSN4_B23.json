@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B23",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 23 · BÀI TOÁN TỔNG - TỈ",
+ "title": "Bài 23 · THÊM MỘT SỐ VÀO NHÓM, TRUNG BÌNH ĐỔI THẾ NÀO?",
  "durationMinutes": 10,
  "so": 23,
- "chuong": 7,
- "tenChuong": "TỔNG - TỈ VÀ HIỆU - TỈ",
- "dangGoc": "LV 3.1 mức Lớp 4 — Tìm hai số biết tổng và tỉ số · quy trình 4 bước · sơ đồ phần chuẩn mực",
+ "chuong": 5,
+ "tenChuong": "TRUNG BÌNH CỘNG",
+ "dangGoc": "LV 1.3 mức Lớp 4 — Thêm một phần tử làm TBC tăng / giảm · mức cơ bản số nhỏ, có sơ đồ hỗ trợ",
  "skills": {
-  "bktUnit": "CHUONG:7@G4",
+  "bktUnit": "CHUONG:5@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Vẽ sơ đồ phần chuẩn: mỗi bên đúng số ô của tỉ số, các ô bằng nhau tăm tắp. Thuộc quy trình 4 bước: sơ đồ phần → tổng số phần → giá trị một phần → nhân lên từng bên. Thử lại kép kiểu mới: cộng ra đúng tổng VÀ chia ra đúng tỉ số.",
-  "kidText": "Bình nước cam 30 lít, pha 2 phần cốt cam với 3 phần nước lọc. Đong mỗi thứ bao nhiêu lít nhỉ?",
+  "text": "Tính TBC mới khi nhóm thêm một người (bài thuận) — luôn đi qua cây cầu TỔNG. Tìm phần góp của người mới khi biết TBC mới (bài ngược) — bằng cả hai con đường: qua tổng và theo kiểu \"gánh giúp cả nhóm\". Hiểu ba kịch bản: người mới góp bằng / hơn / kém mức trung bình cũ thì vạch đứng im / dâng lên / tụt xuống.",
+  "kidText": "Bốn bạn góp trung bình 10 nghìn, sắp có bạn thứ năm vào nhóm. Bạn ấy góp bao nhiêu thì trung bình đổi thế nào?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — VẼ SƠ ĐỒ PHẦN CHUẨN: kẻ hàng \"Cốt cam\" gồm 2 ô, hàng \"Nước lọc\" gồm 3 ô — NĂM ô phải bằng nhau tăm tắp (vẽ bằng thước!), ngoặc ôm cả hai hàng ghi tổng 30 lít. Sơ đồ phần là \"bản vẽ kỹ thuật\" của mọi bài chia theo tỉ."
+    "text": "Bước 1 — BÀI THUẬN QUA CÂY CẦU TỔNG: tổng cũ = 10 × 4 = 40 (nghìn). Bạn mới góp 15 → tổng mới = 40 + 15 = 55; nhóm nay 5 người → TBC mới = 55 : 5 = 11 (nghìn). Đường đi ba trạm: tổng cũ → tổng mới → chia cho số người MỚI."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — TỔNG SỐ PHẦN: cả bình gồm $2 + 3 = 5$ (phần). Đây chính là chỗ Trí Long trượt chân: cậu ấy chia cho 2 (số chữ số của tỉ?) thay vì chia cho TỔNG SỐ PHẦN."
+    "text": "Bước 2 — VÌ SAO VẠCH DÂNG ĐÚNG 1: nhìn bằng cặp mắt Bài 17: bạn mới đứng NHÔ 5 nghìn trên vạch cũ (15 so với 10); phần nhô ấy san đều cho 5 người → mỗi người hưởng 5 : 5 = 1 → vạch dâng từ 10 lên 11. Ba kịch bản lộ diện: góp ĐÚNG 10 — vạch đứng im; góp HƠN — vạch dâng; góp KÉM — vạch tụt."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — GIÁ TRỊ MỘT PHẦN — TRÁI TIM CỦA BÀI: một phần chứa: $30 : 5 = 6$ (lít). Tìm được \"một phần đáng giá bao nhiêu\" là nắm được chìa khóa — mọi con số còn lại chỉ là phép nhân."
+    "text": "Bước 3 — BÀI NGƯỢC, ĐƯỜNG 1 QUA TỔNG: muốn TBC của 5 người là 11: tổng cần có = 11 × 5 = 55; nhóm cũ đã có 40 → bạn mới góp 55 − 40 = 15 (nghìn). Đúng quy trình bài ngược của Bài 16: tổng cần − tổng đã có."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — NHÂN LÊN TỪNG BÊN & THỬ KÉP: cốt cam: $6  \\times  2 = 12$ (lít); nước lọc: $6  \\times  3 = 18$ (lít). Thử kép kiểu mới: $12 + 18 = 30$ ✓ (khớp tổng) và $12 : 18$ — cứ 12 lít cốt đi với 18 lít lọc, tức mỗi 2 lít cốt đi với 3 lít lọc ✓ (khớp tỉ). Hai con dấu đóng đủ, bình nước đúng vị gia truyền!"
+    "text": "Bước 4 — BÀI NGƯỢC, ĐƯỜNG 2 \"GÁNH GIÚP CẢ NHÓM\": nghĩ kiểu người giải: bạn mới phải (1) tự góp đủ mức MỚI 11 nghìn cho phần mình, và (2) bù thêm 1 nghìn cho MỖI bạn cũ để nâng họ từ 10 lên 11: tổng góp = 11 + 1 × 4 = 15 (nghìn) — khớp đường 1! Công thức lời: người mới góp = mức mới + số người cũ × mức tăng."
    }
   ],
-  "mantra": "Bài Tổng - Tỉ: quy trình 4 bước — ① sơ đồ phần (ô đều nhau!), ② tổng số phần, ③ MỘT PHẦN = tổng : tổng số phần, ④ nhân lên từng bên. Khẩu quyết chống trượt: đừng bao giờ chia cho con số trong tỉ — hãy chia cho TỔNG SỐ PHẦN.",
+  "mantra": "Thêm người vào nhóm: đừng cộng trừ hai mức trung bình với nhau — hãy quy hết về TỔNG (bảng trước - sau). Bài ngược có hai đường: qua tổng (chắc chắn) và \"gánh giúp cả nhóm\" (nhanh, hiểu sâu) — làm một đường, soi bằng đường kia. Kim chỉ nam: người mới góp trên vạch cũ thì vạch dâng, dưới vạch cũ thì vạch tụt, đúng vạch cũ thì đứng im.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Sang quầy chè, Trí Long nhận đề mới: \"Chia 20 viên trân châu vào hai cốc theo tỉ $1 : 3$.\" Cậu tính vèo: \"Tỉ $1 : 3$ hả? Lấy $20 : 3$ ≈ 7 viên cho cốc bé, còn 13 viên cốc lớn — xong!\"",
+    "wrong": "Nghe \"TBC cũ 10, muốn TBC mới 11\", Trí Long phẩy tay: \"Trung bình tăng 1 thì bạn mới góp hơn mức cũ 1 nghìn — tức là góp 10 + 1 = 11 nghìn. Xong!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Cả hai cốc gộp lại gồm mấy PHẦN bằng nhau — 3 phần hay $1 + 3$ phần? Trí Long đã chia 20 cho con số nào? Gợi ý 2: Đáp số 7 và 13 thử tỉ xem: 13 có gấp 3 lần 7 không? Chia lại theo đúng quy trình 4 bước giúp Trí Long — và nhắc cậu ấy khẩu quyết \"chia cho TỔNG SỐ PHẦN, không chia cho con số trong tỉ\"."
+    "fix": "Gợi ý 1: Thử ngay đáp số của Trí Long: bạn mới góp 11 thì tổng là 40 + 11 = 51, chia 5 xem trung bình có lên nổi 11 không? Gợi ý 2: Bạn mới góp 11 chỉ đủ phần MÌNH đứng ở vạch mới — thế ai bù cho BỐN bạn cũ mỗi người 1 nghìn để leo từ 10 lên 11? Tính lại theo kiểu \"gánh giúp cả nhóm\" và chỉ cho Trí Long thấy khoản cậu ấy bỏ quên nằm ở đâu."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Bình nước cam 30 lít; pha theo tỉ lệ 2 phần nước cốt cam : 3 phần nước lọc. Hỏi số lít nước cốt cam và số lít nước lọc cần đong?"
+    "narration": "Nhóm 4 bạn, trung bình mỗi bạn góp 10 nghìn đồng; sắp thêm bạn thứ năm. Hỏi hai câu: (a) bạn mới góp 15 nghìn thì TBC mới bằng bao nhiêu; (b) muốn TBC mới bằng 11 nghìn thì bạn mới phải góp bao nhiêu?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? bình nước cam 30 lít; pha theo tỉ lệ 2 phần nước cốt cam : 3 phần nước lọc.\nHỎI GÌ? số lít nước cốt cam và số lít nước lọc cần đong.\nĐẠI LƯỢNG & ĐƠN VỊ: thể tích (lít) — \"phần\" chưa phải lít: phải tìm xem một phần chứa mấy lít!\nQUAN HỆ GIỮA CHÚNG: cốt cam chiếm 2 ô phần, nước lọc chiếm 3 ô phần, năm ô ĐỀU NHAU và gộp lại đầy bình 30 lít.\nCHỌN CÔNG CỤ: SƠ ĐỒ PHẦN + quy trình 4 bước: tổng số phần → một phần → nhân lên.\nƯỚC LƯỢNG TRƯỚC: cả bình 5 phần, mỗi phần cỡ 6 lít → cốt khoảng chục lít, lọc nhiều hơn chút.",
+    "narration": "CHO GÌ? nhóm 4 bạn, trung bình mỗi bạn góp 10 nghìn đồng; sắp thêm bạn thứ năm.\nHỎI GÌ? hai câu: (a) bạn mới góp 15 nghìn thì TBC mới bằng bao nhiêu; (b) muốn TBC mới bằng 11 nghìn thì bạn mới phải góp bao nhiêu.\nĐẠI LƯỢNG & ĐƠN VỊ: tiền (nghìn đồng), số người (bạn) — cả HAI cùng thay đổi khi thêm người, nên không so trực tiếp hai mức trung bình được.\nQUAN HỆ GIỮA CHÚNG: thứ duy nhất cộng dồn được là TỔNG: tổng mới = tổng cũ + phần góp của người mới; TBC mới = tổng mới : 5.\nCHỌN CÔNG CỤ: BẢNG TRƯỚC - SAU hai cột (tổng, số người, TBC) + cây cầu TỔNG = TBC × số người cho từng cột.\nƯỚC LƯỢNG TRƯỚC: bạn mới góp 15 — cao hơn mức cũ — vạch chắc chắn dâng lên, cỡ 11.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ công thức gia truyền sang sơ đồ phần"
+    "nhan": "NHỊP 1, DỊCH — từ hộp quỹ sang bảng trước - sau"
    },
    {
     "id": "S3",
@@ -104,85 +104,75 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: phiếu pha chế gửi cô hàng nước: \"Bình 30 lít: đong 12 lít nước cốt cam + 18 lít nước lọc.\" Hội chợ khai mạc, quầy nước cam đắt hàng nhất phố — khách khen \"vị chuẩn không cần chỉnh\"!\nSOI: soi ba lớp: tổng $12 + 18 = 30$ ✓; tỉ $12 : 18$ rút gọn thành $2 : 3$ ✓; và ước lượng \"cốt khoảng chục lít\" khớp con số 12. Phiếu pha chế đóng dấu xuất .\nDÙNG NGOÀI ĐỜI: pha sữa cho em bé, trộn màu vẽ, nêm nước chấm \"một chua hai ngọt\" — cả thế giới bếp núc chạy bằng tỉ lệ, và con vừa có chiếc ca chia vạch trong đầu.",
+    "narration": "LẮP: tin nhắn gửi nhóm quỹ: \"Chào mừng thành viên thứ năm! Nếu bạn góp 15 nghìn, mức trung bình cả nhóm thành 11 nghìn — còn nếu muốn giữ mức 10 như cũ, bạn chỉ cần góp đúng 10.\" Bạn mới chọn góp 15 cho vui — cả nhóm vỗ tay!\nSOI: soi kép: 55 : 5 = 11 ✓ (đường tổng) và 11 + 4 = 15 ✓ (đường gánh) — hai lối tính chụm về một con số; kèm kim chỉ nam: 15 > 10 nên vạch phải DÂNG, và nó dâng thật.\nDÙNG NGOÀI ĐỜI: điểm trung bình khi có thêm bài kiểm tra, mức ăn trung bình khi nhà có khách — đời sống liên tục \"thêm người vào nhóm\", và giờ con biết vạch sẽ nghiêng về phía nào trước cả khi tính.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Sang quầy chè, Trí Long nhận đề mới: \"Chia 20 viên trân châu vào hai cốc theo tỉ $1 : 3$.\" Cậu tính vèo: \"Tỉ $1 : 3$ hả? Lấy $20 : 3$ ≈ 7 viên cho cốc bé, còn 13 viên cốc lớn — xong!\"",
+    "narration": "Nghe \"TBC cũ 10, muốn TBC mới 11\", Trí Long phẩy tay: \"Trung bình tăng 1 thì bạn mới góp hơn mức cũ 1 nghìn — tức là góp 10 + 1 = 11 nghìn. Xong!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Một bình chứa 30 lít nước cam pha theo tỉ lệ: cứ 2 phần nước cốt cam thì có 3 phần nước lọc. Hỏi trong bình có bao nhiêu lít nước cốt cam, bao nhiêu lít nước lọc?",
+  "problem": "Bốn bạn góp quỹ, trung bình mỗi bạn 10 nghìn đồng. Một bạn thứ năm vào nhóm và muốn mức trung bình của cả năm bạn là 11 nghìn đồng. Hỏi bạn thứ năm phải góp bao nhiêu nghìn đồng?",
   "steps": [
    {
-    "show": "Tổng: 30 lít; tỉ số cốt cam : nước lọc = $2 : 3$.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Tìm số lít mỗi loại.",
-    "phan": "tomtat"
+    "show": "4 bạn: TBC 10 nghìn; thêm bạn thứ 5"
    },
    {
-    "show": "Dịch \"cứ 2 phần... thì 3 phần\" thành tỉ số $2 : 3$ ngay ở tóm tắt.",
-    "phan": "tomtat"
+    "show": "Muốn TBC 5 bạn: 11 nghìn. Tìm phần góp của bạn thứ 5."
    },
    {
-    "show": "Cốt cam: [—][—]",
-    "phan": "phantich"
+    "show": "Ghi rõ TBC \"của mấy người\" ở mỗi thời điểm — chỗ hay nhầm nhất."
    },
    {
-    "show": "Nước lọc: [—][—][—]",
-    "phan": "phantich"
+    "show": "Mô hình (bảng trước - sau)"
    },
    {
-    "show": "(5 ô bằng nhau; ngoặc ôm cả hai hàng: 30 lít)",
-    "phan": "phantich"
+    "show": "Trước: 4 bạn — TBC 10 → tổng 10 × 4."
    },
    {
-    "show": "Mỗi ô một phần — ô phải ĐỀU nhau, đó là linh hồn sơ đồ.",
-    "phan": "phantich"
+    "show": "Sau: 5 bạn — TBC 11 → tổng 11 × 5."
    },
    {
-    "show": "Tổng số phần bằng nhau là: $2 + 3 = 5$ (phần)",
-    "phan": "giai"
+    "show": "Phần góp bạn mới = tổng sau − tổng trước."
    },
    {
-    "show": "Giá trị một phần là: $30 : 5 = 6$ (lít)",
-    "phan": "giai"
+    "show": "Hai cột trước - sau, mỗi cột một cây cầu TỔNG — mô hình gọn mà đủ."
    },
    {
-    "show": "Số lít nước cốt cam là: $6  \\times  2 = 12$ (lít)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Số lít nước lọc là: $6  \\times  3 = 18$ (lít)",
-    "phan": "giai"
+    "show": "Tổng số tiền bốn bạn đã góp là: 10 × 4 = 40 (nghìn đồng)"
    },
    {
-    "show": "Bốn dòng đúng bốn bước của quy trình — nhìn bài biết ngay người có nghề.",
-    "phan": "giai"
+    "show": "Tổng số tiền cả năm bạn cần có là: 11 × 5 = 55 (nghìn đồng)"
    },
    {
-    "show": "Đáp số: 12 lít nước cốt cam ; 18 lít nước lọc.",
-    "phan": "dapso"
+    "show": "Bạn thứ năm phải góp: 55 − 40 = 15 (nghìn đồng)"
    },
    {
-    "show": "Đáp số đủ hai loại, kèm đơn vị.",
-    "phan": "ghichu"
+    "show": "Ba dòng ba phép tính — dòng nào cũng có câu lời giải nêu rõ \"của mấy bạn\"."
    },
    {
-    "show": "Thử lại: $12 + 18 = 30$ ✓ ; $12 : 2 = 18 : 3 = 6$ — đúng tỉ $2 : 3$ ✓",
-    "phan": "thulai"
+    "show": "Đáp số: 15 nghìn đồng."
    },
    {
-    "show": "Thử kép: khớp tổng VÀ khớp tỉ — thiếu một là chưa đúng vị.",
-    "phan": "thulai"
+    "show": "Đáp số kèm đơn vị."
+   },
+   {
+    "show": "Thử lại: (40 + 15) : 5 = 55 : 5 = 11 ✓ ; và soi đường gánh: 11 + 1 × 4 = 15 ✓"
+   },
+   {
+    "show": "Soi bằng cả hai con đường — bài TBC nào cũng cho phép soi kép."
    }
   ]
  },
@@ -191,191 +181,140 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Chia 20 viên kẹo cho hai bạn theo tỉ số $1 : 3$. Hỏi mỗi bạn được bao nhiêu viên?",
+     "text": "Bốn bạn góp quỹ, trung bình mỗi bạn 10 nghìn đồng. Tổng quỹ là bao nhiêu nghìn đồng?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "bạn được ít hơn",
-        "value": 5
-       },
-       {
-        "label": "bạn được nhiều hơn",
-        "value": 15
-       }
-      ]
+      "value": 40
      },
-     "solutionNarrative": "Tổng phần 4; một phần $20 : 4 = 5$ → hai bạn được 5 viên và 15 viên.",
+     "solutionNarrative": "10 × 4 = 40 (nghìn đồng).",
      "hints": [
-      "Vẽ sơ đồ phần: các ô phải bằng nhau tăm tắp.",
-      "Đếm TỔNG SỐ PHẦN rồi mới chia."
+      "Qua cây cầu TỔNG.",
+      "Trung bình nhân với số người."
      ]
     },
     {
      "id": "C2",
-     "text": "Tìm hai số có tổng bằng 30 và tỉ số bằng $2 : 3$.",
+     "text": "Thêm một bạn góp 15 nghìn đồng vào quỹ trên. Tổng mới và trung bình mới của năm bạn là bao nhiêu?",
      "answerKey": {
       "parts": [
        {
-        "label": "số bé",
-        "value": 12
+        "label": "tổng mới",
+        "value": 55
        },
        {
-        "label": "số lớn",
-        "value": 18
+        "label": "trung bình mới",
+        "value": 11
        }
       ]
      },
-     "solutionNarrative": "Tổng phần 5; một phần 6 → hai số là 12 và 18.",
+     "solutionNarrative": "Tổng mới 40 + 15 = 55; TBC mới = 55 : 5 = 11 (nghìn đồng).",
      "hints": [
-      "Tổng số phần là bao nhiêu?",
-      "Chia tổng cho tổng số phần ra giá trị MỘT phần."
+      "Quy hết về TỔNG, đừng cộng trừ hai mức trung bình.",
+      "Tổng mới chia cho số người mới."
      ]
     },
     {
      "id": "C3",
-     "text": "Vẽ sơ đồ phần rồi chia 24 quyển vở cho hai lớp theo tỉ số $1 : 2$.",
+     "text": "Nếu bạn mới góp đúng 10 nghìn đồng (bằng mức trung bình cũ) thì trung bình mới bằng bao nhiêu? Con rút ra điều gì?",
      "answerKey": {
       "parts": [
        {
-        "label": "lớp nhận ít hơn",
-        "value": 8
-       },
-       {
-        "label": "lớp nhận nhiều hơn",
-        "value": 16
+        "label": "trung bình mới",
+        "value": 10
        }
       ]
      },
-     "solutionNarrative": "Tổng phần 3; một phần $24 : 3 = 8$ → hai lớp nhận 8 và 16 quyển.",
+     "solutionNarrative": "(40 + 10) : 5 = 50 : 5 = 10 — không đổi! Người mới góp đúng mức trung bình cũ thì vạch đứng im.",
      "hints": [
-      "Vẽ sơ đồ rồi đếm số ô.",
-      "Một phần đáng bao nhiêu, rồi nhân lên từng bên."
+      "Vẫn qua tổng rồi chia lại.",
+      "Góp đúng mức trung bình cũ thì vạch có nhúc nhích không?"
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Bình nước cam 30 lít pha theo tỉ lệ cốt cam : nước lọc = $2 : 3$. Tính số lít mỗi loại.",
+     "text": "Bốn bạn có trung bình 10 nghìn đồng; bạn thứ năm chỉ góp 5 nghìn đồng. Trung bình mới của năm bạn là bao nhiêu?",
      "answerKey": {
       "parts": [
        {
-        "label": "cốt cam",
-        "value": 12
-       },
-       {
-        "label": "nước lọc",
-        "value": 18
+        "label": "trung bình mới",
+        "value": 9
        }
       ]
      },
-     "solutionNarrative": "Một phần $30 : 5 = 6$ → cốt cam 12 lít; nước lọc 18 lít. Thử: $12 + 18 = 30$ ✓; $12 : 18 = 2 : 3$ ✓.",
+     "solutionNarrative": "(40 + 5) : 5 = 45 : 5 = 9 (nghìn đồng) — góp dưới vạch cũ, vạch tụt 1.",
      "hints": [
-      "Đừng chia cho con số trong tỉ — chia cho TỔNG SỐ PHẦN.",
-      "Tìm một phần rồi nhân lên từng loại."
+      "Tổng cũ cộng phần góp mới, rồi chia năm.",
+      "Góp dưới vạch cũ thì vạch phải tụt."
      ]
     },
     {
      "id": "C5",
-     "text": "Hai giỏ có tất cả 35 quả cam, số cam giỏ thứ nhất và giỏ thứ hai theo tỉ số $3 : 4$. Hỏi mỗi giỏ có bao nhiêu quả?",
+     "text": "Ba bạn góp quỹ trung bình 12 nghìn đồng. Thêm một bạn góp 16 nghìn đồng. Trung bình mới của bốn bạn là bao nhiêu?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "giỏ thứ nhất",
-        "value": 15
-       },
-       {
-        "label": "giỏ thứ hai",
-        "value": 20
-       }
-      ]
+      "value": 13
      },
-     "solutionNarrative": "Tổng phần 7; một phần $35 : 7 = 5$ → giỏ một 15 quả; giỏ hai 20 quả.",
+     "solutionNarrative": "Tổng cũ 12 × 3 = 36; tổng mới 36 + 16 = 52 → TBC mới = 52 : 4 = 13 (nghìn đồng).",
      "hints": [
-      "Cộng hai số của tỉ ra tổng số phần.",
-      "Một phần trước, rồi mới nhân lên từng giỏ."
+      "Tìm tổng cũ trước đã.",
+      "Cộng phần góp mới rồi chia cho số người mới."
      ]
     },
     {
      "id": "C6",
-     "text": "Lớp 4A có 36 học sinh, số bạn nam và số bạn nữ theo tỉ số $5 : 4$. Tính số bạn nam, số bạn nữ.",
+     "text": "Bốn bạn trung bình 10 nghìn đồng. Muốn trung bình của năm bạn là 11 nghìn đồng thì bạn thứ năm phải góp bao nhiêu?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số bạn nam",
-        "value": 20
-       },
-       {
-        "label": "số bạn nữ",
-        "value": 16
-       }
-      ]
+      "value": 15
      },
-     "solutionNarrative": "Tổng phần 9; một phần $36 : 9 = 4$ → nam 20 bạn; nữ 16 bạn.",
+     "solutionNarrative": "Tổng cần 11 × 5 = 55; đã có 40 → bạn thứ năm góp 55 − 40 = 15 (nghìn đồng).",
      "hints": [
-      "Sĩ số lớp chính là cái tổng cần đem chia.",
-      "Sĩ số chia tổng số phần ra một phần."
+      "Tính TỔNG CẦN CÓ của năm bạn.",
+      "Rồi trừ đi tổng cũ của bốn bạn."
      ]
     },
     {
      "id": "C7",
-     "text": "Sợi dây dài 45 m được cắt thành hai đoạn theo tỉ số $4 : 5$. Tính độ dài mỗi đoạn.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "đoạn ngắn, tính bằng mét",
-        "value": 20
-       },
-       {
-        "label": "đoạn dài, tính bằng mét",
-        "value": 25
-       }
-      ]
-     },
-     "solutionNarrative": "Tổng phần 9; một phần $45 : 9 = 5$ → hai đoạn dài 20 m và 25 m.",
+     "text": "Giải thích vì sao ở Câu 6, phần góp của bạn mới bằng 11 + 1 × 4 — từng số hạng trong phép tính ấy \"gánh\" cho ai?",
+     "solutionNarrative": "Số 11 là phần bạn mới tự \"gánh\" cho chính mình ở mức mới; số 1 × 4 là khoản bù thêm 1 nghìn cho MỖI bạn cũ để cả bốn bạn leo từ vạch 10 lên vạch 11.",
      "hints": [
-      "Bốn ô cộng năm ô là mấy ô?",
-      "Chia độ dài cho số ô ấy."
+      "Bạn mới vừa tự đứng ở vạch mới, vừa gánh giúp người cũ.",
+      "Mỗi bạn cũ cần leo lên bao nhiêu, mà có mấy bạn cũ?"
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Tìm hai số có tổng bằng 56 và tỉ số bằng $3 : 5$ — nhớ thử lại kép trước khi chốt!",
+     "text": "Bốn bạn trung bình 10 nghìn đồng. Sau khi bạn thứ năm vào nhóm, trung bình cả nhóm chỉ còn 9 nghìn đồng. Hỏi bạn thứ năm đã góp bao nhiêu?",
      "answerKey": {
       "parts": [
        {
-        "label": "số bé",
-        "value": 21
-       },
-       {
-        "label": "số lớn",
-        "value": 35
+        "label": "bạn thứ năm góp bao nhiêu nghìn",
+        "value": 5
        }
       ]
      },
-     "solutionNarrative": "Tổng phần 8; một phần $56 : 8 = 7$ → hai số là 21 và 35. Thử: $21 + 35 = 56$ ✓; $21 : 35 = 3 : 5$ ✓.",
+     "solutionNarrative": "Tổng mới = 9 × 5 = 45 → bạn thứ năm góp 45 − 40 = 5 (nghìn đồng). Kim chỉ nam: 5 dưới vạch 10 nên vạch tụt — khớp đề.",
      "hints": [
-      "Tổng số phần trước, rồi mới tới một phần.",
-      "Thử lại KÉP: cộng ra tổng, và soi cả tỉ."
+      "Tính tổng mới từ mức trung bình mới.",
+      "Rồi trừ đi tổng cũ."
      ]
     },
     {
      "id": "C9",
-     "text": "Chia 100 nghìn đồng cho An và Bình theo tỉ số $2 : 3$. Nếu đổi lại chia theo tỉ số $3 : 2$ thì phần của Bình thay đổi bao nhiêu? Con nhận ra điều gì khi hai số trong tỉ đổi chỗ?",
+     "text": "Bốn tuần đầu, em bỏ heo trung bình mỗi tuần 7 nghìn đồng. Tuần thứ năm em phải bỏ bao nhiêu để trung bình cả năm tuần thành 8 nghìn? Giải bằng cả hai con đường — và nói xem vì sao phải bỏ nhiều đến thế!",
      "answerKey": {
       "parts": [
        {
-        "label": "phần của Bình thay đổi bao nhiêu nghìn",
-        "value": 20
+        "label": "tuần thứ năm phải bỏ bao nhiêu nghìn",
+        "value": 12
        }
       ]
      },
-     "solutionNarrative": "Tỉ $2 : 3$ → An 40, Bình 60; đổi tỉ $3 : 2$ → An 60, Bình 40. Bình thay đổi: mất 20 nghìn. Nhận xét: đổi chỗ hai số trong tỉ thì hai phần HOÁN ĐỔI cho nhau — thứ tự trong tỉ số quan trọng lắm!",
+     "solutionNarrative": "Đường tổng: cần 8 × 5 = 40; đã có 7 × 4 = 28 → tuần 5 bỏ 40 − 28 = 12 (nghìn). Đường gánh: 8 + 1 × 4 = 12 ✓. Phải bỏ nhiều vì vừa tự đứng ở vạch mới 8, vừa kéo bốn tuần cũ mỗi tuần lên thêm 1 nghìn.",
      "hints": [
-      "Giải riêng từng lần chia rồi mới so.",
-      "Đổi chỗ hai số trong tỉ thì hai phần ra sao?"
+      "Đường tổng: tính tổng cần có rồi trừ tổng cũ.",
+      "Đường gánh: tự đứng ở vạch mới, cộng phần kéo bốn tuần cũ lên."
      ]
     }
    ]
@@ -386,7 +325,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Chia một số theo tỉ $2 : 3$ thì tổng số phần bằng nhau là 5.",
+    "text": "Người mới góp đúng bằng mức trung bình cũ thì mức trung bình không đổi.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -395,61 +334,61 @@
    },
    {
     "id": "Q2",
-    "text": "Chia 30 theo tỉ $1 : 2$ thì phần bé bằng 15.",
+    "text": "Người mới góp nhiều hơn mức trung bình cũ thì mức trung bình giảm xuống.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Một phần $30 : 3 = 10$, phần bé là 10."
+    "solutionNarrative": "Góp nhiều hơn thì trung bình TĂNG."
    },
    {
     "id": "Q3",
-    "text": "Chia 40 theo tỉ $3 : 5$ thì giá trị một phần là:",
+    "text": "Bốn bạn trung bình 10 nghìn; thêm bạn góp 20 nghìn. Trung bình mới là:",
     "format": "mcq",
     "choices": [
-     "A. 5",
-     "B. 8",
-     "C. 10"
+     "A. 12 nghìn",
+     "B. 11 nghìn",
+     "C. 15 nghìn"
     ],
     "answerKey": {
-     "choice": "A. 5"
+     "choice": "A. 12 nghìn"
     },
-    "solutionNarrative": "40 : ($3 + 5$) = 5."
+    "solutionNarrative": "60 : 5 = 12 nghìn."
    },
    {
     "id": "Q4",
-    "text": "Chia 24 theo tỉ $1 : 3$ thì phần lớn bằng:",
+    "text": "Hai bạn trung bình 8 nghìn; thêm bạn góp 11 nghìn. Trung bình mới là:",
     "format": "mcq",
     "choices": [
-     "A. 18",
-     "B. 6",
-     "C. 16"
+     "A. 9 nghìn",
+     "B. 10 nghìn",
+     "C. 8 nghìn"
     ],
     "answerKey": {
-     "choice": "A. 18"
+     "choice": "A. 9 nghìn"
     },
-    "solutionNarrative": "Một phần 6, phần lớn 18."
+    "solutionNarrative": "27 : 3 = 9 nghìn."
    },
    {
     "id": "Q5",
-    "text": "Chia 36 theo tỉ $4 : 5$ thì phần bé bằng:",
+    "text": "Hai bạn góp trung bình 8 nghìn; muốn trung bình ba bạn là 10 nghìn thì bạn thứ ba góp:",
     "format": "mcq",
     "choices": [
-     "A. 16",
-     "B. 20",
-     "C. 18"
+     "A. 14 nghìn",
+     "B. 10 nghìn",
+     "C. 12 nghìn"
     ],
     "answerKey": {
-     "choice": "A. 16"
+     "choice": "A. 14 nghìn"
     },
-    "solutionNarrative": "Một phần 4, phần bé 16."
+    "solutionNarrative": "10 × 3 − 8 × 2 = 30 − 16 = 14 nghìn."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Pha nước cam (hoặc sữa, nước chanh) THẬT theo tỉ lệ với con — dùng cốc nhỏ làm \"một phần\". Vị giác kiểm định đáp số: pha sai tỉ là nhận ra ngay, vui hơn mọi lời chấm bài.",
-  "homeActivity": "Chấm sơ đồ trước phép tính: các ô phần có ĐỀU nhau không? Ô lệch nhau là hiểu chưa tới — sửa hình trước, sửa số sau.",
-  "watchFor": "NÊN: hỏi thêm \"một phần đáng giá bao nhiêu?\" ở mọi bài — đó là câu hỏi trái tim. KHÔNG NÊN: đưa tỉ số có số lớn ($7 : 9$) hay tỉ ba số vội — Bài 26 mới mở cửa ba số, cứ để chân sơ đồ vững đã."
+  "onComplete": "Trò \"vạch nước lung lay\" với các cốc nước: bốn cốc cùng mực, rót thêm cốc thứ năm cao hơn hẳn rồi san đều — con NHÌN thấy vạch chung dâng lên trước khi tính ra nó dâng bao nhiêu.",
+  "homeActivity": "Câu hỏi vàng mỗi lần gặp dạng này: \"người mới đứng TRÊN hay DƯỚI vạch cũ?\" — đoán chiều trước, tính số sau; đoán đúng chiều là hiểu bản chất.",
+  "watchFor": "NÊN: gắn với điểm số thật (\"bài kiểm tra tới được 10 thì trung bình của con nhích lên bao nhiêu?\") — động lực học tự nhiên nhất. KHÔNG NÊN: bài BỚT người khỏi nhóm hay thêm nhiều người cùng lúc — các biến thể ấy hẹn lớp 5."
  },
  "figureSpec": [
   {
@@ -458,30 +397,18 @@
     "hook"
    ],
    "file": "figures/L4H_B23_MO.png",
-   "caption": "Hai phần và ba phần, mỗi ô là một phần bằng nhau.",
-   "sha256_16": "3148c42d9c4407b4",
+   "caption": "Bốn bạn đã góp đều 10; cột bạn mới cao 15 — vạch trung bình sẽ nhích lên.",
+   "sha256_16": "7468eee56edaf8e6",
    "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L4H_B23_G2",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L4H_B23_G2.png",
-   "caption": "Chia tổng cho TỔNG SỐ PHẦN ra giá trị một phần.",
-   "sha256_16": "ffafbf6f8e37dd15",
-   "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Chương 6 con xử các cặp số HƠN KÉM nhau một khoản (hiệu). Chương này hai số chơi kiểu khác: GẤP nhau theo phần — \"cứ 2 phần này thì 3 phần kia\". Công cụ mới là SƠ ĐỒ PHẦN: mỗi ô một phần bằng nhau, và cả bài toán quy về đúng một câu hỏi: MỘT PHẦN đáng giá bao nhiêu?",
+ "hatMam": "Bài 16 cho con cây cầu TỔNG, Bài 17 cho cặp mắt vượt - hụt. Bài này thử thách cả hai: khi nhóm có THÊM một người, cả tổng lẫn số người cùng thay đổi — vạch trung bình sẽ lung lay. Lên hay xuống, và lung lay bao nhiêu? Hai công cụ của con thừa sức trả lời.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B18",
-   "DL:KSN3.B09"
+   "DL:KSN3.B17"
   ],
   "ten": [
-   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
-   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+   "BÀI TOÁN HAI BƯỚC TÍNH"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

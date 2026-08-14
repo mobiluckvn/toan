@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B35",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 35 · DÃY PHÂN SỐ — TÁCH HIỆU VÀ RÚT GỌN CHÉO",
+ "title": "Bài 35 · PHƯƠNG PHÁP GIẢ THIẾT TẠM",
  "durationMinutes": 10,
  "so": 35,
- "chuong": 9,
- "tenChuong": "PHÂN SỐ",
- "dangGoc": "PS 2.1 + PS 2.2 mức Lớp 4 — Tổng sai phân 1/(1×2) + 1/(2×3) + ... · tích rút gọn chéo 1/2 × 2/3 × ...",
+ "chuong": 8,
+ "tenChuong": "BÀI TOÁN CÓ LỜI VĂN",
+ "dangGoc": "LV 8.2 mức Lớp 4 — Phương pháp giả thiết tạm chuẩn: gà - chó · vé và tiền hàng hai mệnh giá",
  "skills": {
-  "bktUnit": "CHUONG:9@G4",
+  "bktUnit": "CHUONG:8@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Tự khám phá và kiểm chứng bí mật tách hiệu: $\\frac{1}{a \\times b}$ = $\\frac{1}{a}$ − $\\frac{1}{b}$ khi b hơn a đúng 1. Tính tổng dãy sai phân kiểu $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$ bằng hiệu ứng domino (chỉ còn hai đầu). Tính tích kiểu $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$ bằng rút gọn chéo (chỉ còn tử đầu và mẫu cuối).",
-  "kidText": "Dãy phân số một phần $1 \\times 2$, một phần $2 \\times 3$, rồi một phần $3 \\times 4$. Cộng cả dãy dài như thế thì ra bao nhiêu?",
+  "text": "Nắm ba bước giả thiết tạm: giả sử tất cả cùng một loại → so độ lệch với thực tế → chia độ lệch cho mức đổi một con. Giải chuẩn bài gà - chó đếm chân và bài vé (tiền hàng) hai mệnh giá. Luôn thử lại bằng cách \"đếm chân\" trên đáp số thật.",
+  "kidText": "Chuồng có 36 con gà và chó, đếm được 100 cái chân. Con đoán mỗi loài mấy con nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ — mà $\\frac{1}{1 \\times 2}$ cũng bằng $\\frac{1}{2}$! Tính tiếp $\\frac{1}{2}$ − $\\frac{1}{3}$ = $\\frac{3}{6}$ − $\\frac{2}{6}$ = $\\frac{1}{6}$ — đúng bằng $\\frac{1}{2 \\times 3}$! Và $\\frac{1}{3}$ − $\\frac{1}{4}$ = $\\frac{4}{12}$ − $\\frac{3}{12}$ = $\\frac{1}{12}$ = $\\frac{1}{3 \\times 4}$. Bí mật lộ diện: $\\frac{1}{a \\times b}$ = $\\frac{1}{a}$ − $\\frac{1}{b}$ khi b hơn a đúng 1 (vì hiệu trên mẫu chung là b − a = 1)."
+    "text": "Bước 1 — GIẢ SỬ CẢ 36 CON ĐỀU LÀ GÀ: thế giới giả có 36 × 2 = 72 (cái chân). Chọn giả sử \"toàn gà\" (loại ÍT chân) cho phép trừ thuận chiều — giả sử toàn chó cũng được, khi ấy sẽ THỪA chân thay vì thiếu."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — CÚ CHẠM DOMINO: thay cả dãy bằng các hiệu: (1 − $\\frac{1}{2}$) + ($\\frac{1}{2}$ − $\\frac{1}{3}$) + ($\\frac{1}{3}$ − $\\frac{1}{4}$). Nhìn kỹ: −$\\frac{1}{2}$ gặp +$\\frac{1}{2}$ tự hủy; −$\\frac{1}{3}$ gặp +$\\frac{1}{3}$ tự hủy — cả khúc giữa đổ rạp! Chỉ còn hai đầu: 1 − $\\frac{1}{4}$ = $\\frac{3}{4}$. Dãy dài gấp mười cũng thế: sống sót chỉ có SỐ ĐẦU và SỐ CUỐI."
+    "text": "Bước 2 — SO ĐỘ LỆCH VỚI THỰC TẾ: thực tế 100 chân — thế giới giả thiếu 100 − 72 = 28 (cái chân). Ai giấu chân? Chính các chú chó bị \"hô biến\" thành gà: mỗi chú bị tính hụt 4 − 2 = 2 (cái chân)."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — MÀN HAI: TÍCH RÚT GỌN CHÉO: tính $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$: tử của mỗi phân số đúng bằng mẫu của phân số đứng trước! Nhân các tử với nhau, nhân các mẫu với nhau: các cặp 2, 3, 4 xuất hiện cả trên lẫn dưới — gạch chéo từng đôi. Còn lại tử đầu 1 và mẫu cuối 5: tích bằng $\\frac{1}{5}$."
+    "text": "Bước 3 — CHIA ĐỘ LỆCH CHO MỨC ĐỔI: số chó = 28 : 2 = 14 (con) → số gà = 36 − 14 = 22 (con). Thử \"đếm chân\" trên đáp số: 14 × 4 + 22 × 2 = 56 + 44 = 100 ✓ và 14 + 22 = 36 ✓. Không cần đuổi bắt con nào!"
    },
    {
     "id": "K4",
-    "text": "Bước 4 — DỰ ĐOÁN KHÔNG CẦN TÍNH: kéo dài tổng đến $\\frac{1}{4 \\times 5}$? Hai đầu là 1 và $\\frac{1}{5}$ → tổng 1 − $\\frac{1}{5}$ = $\\frac{4}{5}$. Kéo dài tích đến $\\frac{9}{10}$? Tử đầu 1, mẫu cuối 10 → tích $\\frac{1}{10}$. Sức mạnh của cấu trúc: đọc được luật domino là ĐOÁN trước đáp số của dãy dài tùy ý — điều mà tính trâu bò không bao giờ làm nổi."
+    "text": "Bước 4 — CÙNG CHIÊU VỚI TẤM VÉ HAI GIÁ: quầy bán 30 vé gồm loại 2 nghìn và 5 nghìn, thu 99 nghìn. Giả sử cả 30 vé đều 2 nghìn: thu 60; thiếu 99 − 60 = 39; mỗi vé 5 nghìn bị \"hạ giá\" hụt 5 − 2 = 3 → vé 5 nghìn: 39 : 3 = 13; vé 2 nghìn: 17. Thử: 13 × 5 + 17 × 2 = 65 + 34 = 99 ✓. Gà chó hay vé xe — cùng một bộ ba bước!"
    }
   ],
-  "mantra": "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước. Tổng mẫu-là-tích-liền-nhau: tách mỗi số thành hiệu $\\frac{1}{a}$ − $\\frac{1}{b}$, cả dãy chỉ còn HAI ĐẦU. Tích tử-sau-bằng-mẫu-trước: gạch chéo, chỉ còn TỬ ĐẦU và MẪU CUỐI. Kiểm bí mật tách hiệu bằng một phép trừ trước khi tin!",
+  "mantra": "Giả thiết tạm ba bước: ① GIẢ SỬ tất cả cùng loại \"nhẹ\" nhất; ② SO độ lệch giữa thế giới giả và thực tế; ③ CHIA độ lệch cho mức chênh của MỘT lần đổi loại. Nhận diện đề: hai loại có \"mệnh giá\" khác nhau (chân, giá vé, chỗ ngồi) + biết tổng số lượng và tổng giá trị.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Học xong tách hiệu, Trí Long hăng máu: \"$\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ hả? Cộng tử với tử, mẫu với mẫu: ($1+1$)/($2+6$) = $\\frac{2}{8}$ = $\\frac{1}{4}$. Nhanh chưa!\"",
+    "wrong": "Bài \"10 con vừa gà vừa chó, 28 cái chân\", Trí Long làm gọn: \"Giả sử toàn gà: 20 chân, thiếu 8. Mỗi con chó có 4 chân, vậy số chó là 8 : 4 = 2 con, gà 8 con!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Thử \"luật\" của Trí Long với cặp dễ nhất: $\\frac{1}{2}$ + $\\frac{1}{2}$ theo kiểu ấy ra $\\frac{2}{4}$ = $\\frac{1}{2}$ — nửa bánh cộng nửa bánh mà vẫn chỉ... nửa bánh thôi sao? Gợi ý 2: Phân số chỉ cộng được khi CÙNG CỠ LÁT (cùng mẫu) — luật thép Bài 33! Tính lại $\\frac{1}{2}$ + $\\frac{1}{6}$ bằng quy đồng, rồi bằng tách hiệu, cho Trí Long thấy hai đường chân chính đều ra $\\frac{2}{3}$."
+    "fix": "Gợi ý 1: Thử đếm chân đáp số của Trí Long: 2 × 4 + 8 × 2 = 24 — có ra 28 không? Con dấu thử lại từ chối đóng! Gợi ý 2: Khi một chú chó bị giả làm gà, nó giấu đi MẤY cái chân — cả 4 cái hay chỉ phần CHÊNH 4 − 2? Chia lại độ lệch cho đúng \"mức chênh một lần đổi\" và đếm chân kiểm chứng giúp Trí Long."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Dãy phân số $\\frac{1}{1 \\times 2}$ ; $\\frac{1}{2 \\times 3}$ ; $\\frac{1}{3 \\times 4}$ — mẫu là tích hai số liền nhau. Hỏi tổng của cả dãy?"
+    "narration": "Gà và chó tổng cộng 36 con; đếm được 100 cái chân. Hỏi số gà, số chó trong chuồng?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? dãy phân số $\\frac{1}{1 \\times 2}$ ; $\\frac{1}{2 \\times 3}$ ; $\\frac{1}{3 \\times 4}$ — mẫu là tích hai số liền nhau.\nHỎI GÌ? tổng của cả dãy.\nĐẠI LƯỢNG & ĐƠN VỊ: các phân số (không đơn vị) — điểm lạ: mẫu nào cũng là TÍCH HAI SỐ LIỀN NHAU.\nQUAN HỆ GIỮA CHÚNG: nếu mỗi phân số tách được thành một HIỆU hai phân số đơn giản, thì khi cộng, đuôi của mảnh trước sẽ khớp đầu của mảnh sau mà tự hủy.\nCHỌN CÔNG CỤ: BÍ MẬT TÁCH HIỆU (tự kiểm chứng!) + hiệu ứng domino.\nƯỚC LƯỢNG TRƯỚC: cả dãy chưa đầy một chiếc bánh — tổng chắc dưới 1, cỡ ba phần tư.",
+    "narration": "CHO GÌ? gà và chó tổng cộng 36 con; đếm được 100 cái chân.\nHỎI GÌ? số gà, số chó trong chuồng.\nĐẠI LƯỢNG & ĐƠN VỊ: con (con) và chân (cái) — gà 2 chân, chó 4 chân: hai \"mệnh giá chân\" khác nhau.\nQUAN HỆ GIỮA CHÚNG: nếu cả chuồng toàn gà thì số chân tính được ngay (36 × 2); phần THIẾU so với 100 chỉ có thể do các chú chó — mỗi chó \"giấu\" đúng 2 chân khi bị coi là gà.\nCHỌN CÔNG CỤ: GIẢ THIẾT TẠM ba bước: giả sử → so lệch → chia mức đổi.\nƯỚC LƯỢNG TRƯỚC: thiếu gần ba chục chân, mỗi chó bù 2 → chó cỡ mười mấy con.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — nhìn ra cấu trúc tự hủy của dãy"
+    "nhan": "NHỊP 1, DỊCH — từ chuồng gà chó sang thế giới \"giả sử\""
    },
    {
     "id": "S3",
@@ -104,77 +104,78 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: Su Kem công bố trước quầy: \"Tổng dãy nhãn là $\\frac{3}{4}$ — thưa quý khách, chưa đầy một chiếc bánh!\" Chị Ngọc Anh phục sát đất, thưởng nóng hai chiếc bánh nóng hổi; Trí Long vừa nhai vừa lẩm bẩm học thuộc bí mật tách hiệu.\nSOI: soi bằng đường trâu bò trên dãy ngắn: $\\frac{1}{2}$ + $\\frac{1}{6}$ + $\\frac{1}{12}$ = $\\frac{6}{12}$ + $\\frac{2}{12}$ + $\\frac{1}{12}$ = $\\frac{9}{12}$ = $\\frac{3}{4}$ ✓ — lối tắt và đường cày cho cùng đáp số, lối tắt được cấp phép!\nDÙNG NGOÀI ĐỜI: trong toán lớn, vô số tổng - tích dài được \"thuần hóa\" đúng kiểu này; con vừa chạm vào tư duy đẹp nhất của nghề toán: thay sức kéo bằng cấu trúc.",
+    "narration": "LẮP: tin nhắn gửi bác Hòa: \"Chuồng nhà bác: 22 gà và 14 chó — cháu đếm bằng... trí tưởng tượng, không con nào phải chạy!\" Bác Hòa đối chiếu sổ mua giống: đúng phóc. Bác phục lăn: \"Toán gì mà như phép thuật!\"\nSOI: soi kép trên đáp số thật: đủ 36 con ✓, đủ 100 chân ✓; và ước lượng \"chó mười mấy con\" trúng. Phép thuật nào của cũng phải qua hai con dấu kiểm chứng.\nDÙNG NGOÀI ĐỜI: đếm xe đạp - xe ba bánh ở bãi gửi, kiểm vé hai hạng của buổi diễn, đối soát tiền hai mệnh giá trong két — giả thiết tạm là \"kính nhìn xuyên\" của mọi bài hai loại lẫn lộn.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Học xong tách hiệu, Trí Long hăng máu: \"$\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ hả? Cộng tử với tử, mẫu với mẫu: ($1+1$)/($2+6$) = $\\frac{2}{8}$ = $\\frac{1}{4}$. Nhanh chưa!\"",
+    "narration": "Bài \"10 con vừa gà vừa chó, 28 cái chân\", Trí Long làm gọn: \"Giả sử toàn gà: 20 chân, thiếu 8. Mỗi con chó có 4 chân, vậy số chó là 8 : 4 = 2 con, gà 8 con!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính: $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$.",
+  "problem": "Vừa gà vừa chó có tất cả 36 con và 100 cái chân. Hỏi có bao nhiêu con gà, bao nhiêu con chó?",
   "steps": [
    {
-    "show": "Tính tổng ba phân số có mẫu là tích hai số liền nhau.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Gọi tên đặc điểm của mẫu — nhận diện dạng ngay từ tóm tắt.",
-    "phan": "tomtat"
+    "show": "Gà + chó: 36 con; tổng số chân: 100 cái."
    },
    {
-    "show": "Mô hình (tách hiệu)",
-    "phan": "tomtat"
+    "show": "Gà 2 chân, chó 4 chân. Tìm số con mỗi loại."
    },
    {
-    "show": "$\\frac{1}{1 \\times 2}$ = 1 − $\\frac{1}{2}$ ; $\\frac{1}{2 \\times 3}$ = $\\frac{1}{2}$ − $\\frac{1}{3}$ ; $\\frac{1}{3 \\times 4}$ = $\\frac{1}{3}$ − $\\frac{1}{4}$",
-    "phan": "tomtat"
+    "show": "Ghi rõ \"mệnh giá chân\" từng loại — dữ liệu then chốt."
    },
    {
-    "show": "(kiểm: $\\frac{1}{2}$ − $\\frac{1}{3}$ = $\\frac{3}{6}$ − $\\frac{2}{6}$ = $\\frac{1}{6}$ ✓)",
-    "phan": "tomtat"
+    "show": "Mô hình (giả thiết tạm)"
    },
    {
-    "show": "Tách kèm MỘT phép kiểm — không dùng bí mật chưa kiểm chứng.",
-    "phan": "tomtat"
+    "show": "Giả sử cả 36 con đều là gà → tính được số chân \"tạm\"."
    },
    {
-    "show": "Tổng = (1 − $\\frac{1}{2}$) + ($\\frac{1}{2}$ − $\\frac{1}{3}$) + ($\\frac{1}{3}$ − $\\frac{1}{4}$)",
-    "phan": "giai"
+    "show": "Phần thiếu so với 100 là do các con chó bị tính hụt chân."
    },
    {
-    "show": "Các phân số $\\frac{1}{2}$ ; $\\frac{1}{3}$ xuất hiện một lần trừ, một lần cộng nên triệt tiêu nhau.",
-    "phan": "giai"
+    "show": "Nêu rõ cái \"tạm\" và lý do phần lệch — linh hồn phương pháp."
    },
    {
-    "show": "Tổng = 1 − $\\frac{1}{4}$ = $\\frac{3}{4}$",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Câu \"triệt tiêu nhau\" nêu căn cứ của cú sập domino.",
-    "phan": "giai"
+    "show": "Giả sử cả 36 con đều là gà, khi đó tổng số chân là: 36 × 2 = 72 (cái)"
    },
    {
-    "show": "Đáp số: $\\frac{3}{4}$.",
-    "phan": "dapso"
+    "show": "Số chân bị thiếu so với thực tế là: 100 − 72 = 28 (cái)"
    },
    {
-    "show": "Đáp số gọn một phân số.",
-    "phan": "ghichu"
+    "show": "Mỗi con chó bị tính thiếu số chân là: 4 − 2 = 2 (cái)"
    },
    {
-    "show": "Thử lại: $\\frac{1}{2}$ + $\\frac{1}{6}$ + $\\frac{1}{12}$ = $\\frac{6}{12}$ + $\\frac{2}{12}$ + $\\frac{1}{12}$ = $\\frac{9}{12}$ = $\\frac{3}{4}$ ✓",
-    "phan": "thulai"
+    "show": "Số con chó là: 28 : 2 = 14 (con)"
    },
    {
-    "show": "Đường quy đồng kiểm chứng lối domino.",
-    "phan": "thulai"
+    "show": "Số con gà là: 36 − 14 = 22 (con)"
+   },
+   {
+    "show": "Dòng \"mỗi con chó bị tính thiếu 2 cái\" giải thích phép chia — không được bỏ."
+   },
+   {
+    "show": "Đáp số: 22 con gà ; 14 con chó."
+   },
+   {
+    "show": "Đáp số đủ hai loại."
+   },
+   {
+    "show": "Thử lại: 22 + 14 = 36 ✓ ; 22 × 2 + 14 × 4 = 44 + 56 = 100 ✓"
+   },
+   {
+    "show": "\"Đếm chân\" trên đáp số — khớp cả số con lẫn số chân."
    }
   ]
  },
@@ -183,229 +184,187 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tính $\\frac{1}{2}$ − $\\frac{1}{3}$. So sánh kết quả với $\\frac{1}{2 \\times 3}$ và nêu nhận xét.",
+     "text": "Nếu cả 10 con vật đều là gà thì có tất cả bao nhiêu cái chân?",
      "answerKey": {
       "parts": [
        {
-        "label": "1/2 − 1/3",
-        "options": [
-         "1/6",
-         "1/5",
-         "1/12"
-        ],
-        "value": "1/6"
+        "label": "số chân",
+        "value": 20
        }
       ]
      },
-     "solutionNarrative": "$\\frac{1}{2}$ − $\\frac{1}{3}$ = $\\frac{3}{6}$ − $\\frac{2}{6}$ = $\\frac{1}{6}$ — đúng bằng $\\frac{1}{2 \\times 3}$: hiệu hai phân số \"liền kề\" chính là phân số mẫu-tích!",
+     "solutionNarrative": "10 × 2 = 20 cái chân.",
      "hints": [
-      "Quy đồng rồi trừ.",
-      "Đem kết quả so với phân số mẫu-là-tích."
+      "Mỗi con gà có hai chân.",
+      "Nhân số con với số chân mỗi con."
      ]
     },
     {
      "id": "C2",
-     "text": "Kiểm chứng: $\\frac{1}{1 \\times 2}$ có bằng 1 − $\\frac{1}{2}$ không?",
+     "text": "Vừa gà vừa chó có 10 con và 28 cái chân. Tính số con mỗi loại.",
      "answerKey": {
       "parts": [
        {
-        "label": "1/(1×2) có bằng 1 − 1/2 không",
-        "options": [
-         "có",
-         "không"
-        ],
-        "value": "có"
+        "label": "số chó",
+        "value": 4
+       },
+       {
+        "label": "số gà",
+        "value": 6
        }
       ]
      },
-     "solutionNarrative": "Có — 1 − $\\frac{1}{2}$ = $\\frac{1}{2}$ = $\\frac{1}{1 \\times 2}$ ✓.",
+     "solutionNarrative": "Giả sử toàn gà: 20 chân; thiếu 28 − 20 = 8; mỗi chó bù 2 → chó 8 : 2 = 4 con; gà 6 con.",
      "hints": [
-      "Tính riêng hai vế rồi so.",
-      "Đây chính là viên domino đầu tiên."
+      "GIẢ SỬ tất cả đều là gà rồi đếm chân.",
+      "Thiếu bao nhiêu chân? Mỗi chú chó bù thêm mấy?"
      ]
     },
     {
      "id": "C3",
-     "text": "Kiểm chứng: $\\frac{1}{3 \\times 4}$ có bằng $\\frac{1}{3}$ − $\\frac{1}{4}$ không?",
+     "text": "Thử lại đáp số Câu 2 bằng cách \"đếm chân\": viết phép kiểm chứng đầy đủ.",
      "answerKey": {
       "parts": [
        {
-        "label": "1/(3×4) có bằng 1/3 − 1/4 không",
-        "options": [
-         "có",
-         "không"
-        ],
-        "value": "có"
+        "label": "tổng số chân",
+        "value": 28
+       },
+       {
+        "label": "tổng số con",
+        "value": 10
        }
       ]
      },
-     "solutionNarrative": "Có — $\\frac{1}{3}$ − $\\frac{1}{4}$ = $\\frac{4}{12}$ − $\\frac{3}{12}$ = $\\frac{1}{12}$ = $\\frac{1}{3 \\times 4}$ ✓.",
+     "solutionNarrative": "4 × 4 + 6 × 2 = 16 + 12 = 28 ✓ và 4 + 6 = 10 ✓.",
      "hints": [
-      "Quy đồng vế phải rồi trừ.",
-      "So với phân số mẫu-là-tích ở vế trái."
+      "Thử phải kiểm CẢ HAI: số chân và số con.",
+      "Nhân từng loại với số chân của nó rồi cộng."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Tính: $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$.",
+     "text": "Vừa gà vừa chó có tất cả 36 con và 100 cái chân. Tính số con mỗi loại.",
      "answerKey": {
       "parts": [
        {
-        "label": "tổng",
-        "options": [
-         "2/3",
-         "1/3",
-         "3/4"
-        ],
-        "value": "2/3"
+        "label": "số chó",
+        "value": 14
+       },
+       {
+        "label": "số gà",
+        "value": 22
        }
       ]
      },
-     "solutionNarrative": "(1 − $\\frac{1}{2}$) + ($\\frac{1}{2}$ − $\\frac{1}{3}$) = 1 − $\\frac{1}{3}$ = $\\frac{2}{3}$.",
+     "solutionNarrative": "Giả sử toàn gà: 72 chân; thiếu 28; chó 28 : 2 = 14 con; gà 22 con. Thử: 56 + 44 = 100 ✓.",
      "hints": [
-      "Tách mỗi số hạng thành một HIỆU.",
-      "Các khúc giữa triệt tiêu, chỉ còn hai đầu."
+      "Giả sử toàn gà, đếm chân giả vờ trước.",
+      "Phần thiếu chia cho phần bù mỗi con."
      ]
     },
     {
      "id": "C5",
-     "text": "Tính: $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$.",
+     "text": "Bãi xe có 12 chiếc gồm xe đạp (2 bánh) và xe ba bánh, đếm được tất cả 29 bánh. Hỏi mỗi loại có mấy chiếc?",
      "answerKey": {
       "parts": [
        {
-        "label": "tổng",
-        "options": [
-         "3/4",
-         "2/3",
-         "4/5"
-        ],
-        "value": "3/4"
+        "label": "xe ba bánh",
+        "value": 5
+       },
+       {
+        "label": "xe đạp",
+        "value": 7
        }
       ]
      },
-     "solutionNarrative": "Domino sập, còn hai đầu: 1 − $\\frac{1}{4}$ = $\\frac{3}{4}$.",
+     "solutionNarrative": "Giả sử toàn xe đạp: 24 bánh; thiếu 29 − 24 = 5; mỗi xe ba bánh bù 1 → ba bánh 5 chiếc; xe đạp 7 chiếc. Thử: 15 + 14 = 29 ✓.",
      "hints": [
-      "Domino sập — tách hết thành hiệu.",
-      "Chỉ còn số đầu tiên và số cuối cùng."
+      "Giả sử toàn xe đạp rồi đếm bánh.",
+      "Mỗi xe ba bánh bù thêm mấy bánh?"
      ]
     },
     {
      "id": "C6",
-     "text": "Tính $\\frac{1}{2}$ × $\\frac{2}{3}$, rồi lấy kết quả nhân tiếp với $\\frac{3}{4}$. Con nhận ra quy luật gì?",
+     "text": "Quầy văn nghệ bán được 30 vé gồm loại 2 nghìn đồng và loại 5 nghìn đồng, thu tất cả 99 nghìn đồng. Hỏi mỗi loại bán được bao nhiêu vé?",
      "answerKey": {
       "parts": [
        {
-        "label": "1/2 × 2/3",
-        "options": [
-         "1/3",
-         "1/6",
-         "2/3"
-        ],
-        "value": "1/3"
+        "label": "vé loại 5 nghìn đồng",
+        "value": 13
        },
        {
-        "label": "nhân tiếp với 3/4",
-        "options": [
-         "1/4",
-         "3/8",
-         "1/2"
-        ],
-        "value": "1/4"
+        "label": "vé loại 2 nghìn đồng",
+        "value": 17
        }
       ]
      },
-     "solutionNarrative": "$\\frac{1}{2}$ × $\\frac{2}{3}$ = $\\frac{1}{3}$; nhân tiếp $\\frac{3}{4}$ được $\\frac{1}{4}$ — mỗi lần nhân thêm, kết quả là 1 trên mẫu cuối cùng!",
+     "solutionNarrative": "Giả sử toàn vé 2 nghìn: thu 60; thiếu 39; mỗi vé 5 nghìn bù 3 → vé 5 nghìn 13 chiếc; vé 2 nghìn 17 chiếc. Thử: 65 + 34 = 99 ✓.",
      "hints": [
-      "Tử của phân số sau đúng bằng mẫu của phân số trước.",
-      "Rút gọn chéo rồi nhìn ra quy luật."
+      "Giả sử toàn vé rẻ rồi tính tiền thu.",
+      "Mỗi vé đắt bù thêm bao nhiêu nghìn?"
      ]
     },
     {
      "id": "C7",
-     "text": "Tính: $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$.",
+     "text": "Cuộc thi có 25 câu hỏi: trả lời đúng được 4 điểm, trả lời sai bị TRỪ 1 điểm. Bạn An làm cả 25 câu và được 70 điểm. Hỏi An trả lời đúng mấy câu? (Mỗi câu sai làm mất bao nhiêu điểm so với câu đúng?)",
      "answerKey": {
       "parts": [
        {
-        "label": "tích",
-        "options": [
-         "1/5",
-         "1/4",
-         "2/5"
-        ],
-        "value": "1/5"
+        "label": "số câu trả lời đúng",
+        "value": 19
        }
       ]
      },
-     "solutionNarrative": "Rút chéo 2, 3, 4 → còn $\\frac{1}{5}$.",
+     "solutionNarrative": "Giả sử đúng cả 25 câu: 100 điểm; mỗi câu sai làm mất 4 + 1 = 5 điểm; thiếu 100 − 70 = 30 → sai 30 : 5 = 6 câu → đúng 19 câu. Thử: 19 × 4 − 6 = 70 ✓.",
      "hints": [
-      "Rút gọn chéo cả dây chuyền.",
-      "Chỉ tử đầu và mẫu cuối sống sót."
+      "Giả sử đúng cả — được bao nhiêu điểm?",
+      "Mỗi câu sai làm mất bao nhiêu so với câu đúng?"
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Tính: $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$ + $\\frac{1}{4 \\times 5}$ — rồi ĐOÁN ngay tổng nếu kéo dài đến $\\frac{1}{9 \\times 10}$.",
+     "text": "Trong chuồng, số gà gấp đôi số chó và tổng số chân là 80 cái. Tính số con mỗi loại. (Ghép mỗi chú chó với 2 chú gà thành một \"bộ\" — mỗi bộ có mấy cái chân?)",
      "answerKey": {
       "parts": [
        {
-        "label": "tổng đến 1/(4×5)",
-        "options": [
-         "4/5",
-         "3/4",
-         "5/6"
-        ],
-        "value": "4/5"
+        "label": "số chó",
+        "value": 10
        },
        {
-        "label": "tổng nếu kéo đến 1/(9×10)",
-        "options": [
-         "9/10",
-         "8/9",
-         "10/11"
-        ],
-        "value": "9/10"
+        "label": "số gà",
+        "value": 20
        }
       ]
      },
-     "solutionNarrative": "1 − $\\frac{1}{5}$ = $\\frac{4}{5}$; kéo đến $\\frac{1}{9 \\times 10}$: hai đầu là 1 và $\\frac{1}{10}$ → tổng 1 − $\\frac{1}{10}$ = $\\frac{9}{10}$.",
+     "solutionNarrative": "Ghép 1 chó + 2 gà thành một \"bộ\": mỗi bộ 4 + 2 + 2 = 8 chân → số bộ 80 : 8 = 10 → chó 10 con, gà 20 con. Thử: 40 + 40 = 80 ✓.",
      "hints": [
-      "Tách hiệu rồi lấy hai đầu.",
-      "Muốn đoán thì chỉ cần biết hai đầu là ai."
+      "Ghép một chó với hai gà thành một BỘ.",
+      "Mỗi bộ như thế có mấy cái chân?"
      ]
     },
     {
      "id": "C9",
-     "text": "Tính $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$ × $\\frac{5}{6}$ — rồi đoán tích nếu kéo dài đến $\\frac{9}{10}$. Hai con số sống sót là ai?",
+     "text": "Bến đò có 10 chiếc thuyền chở vừa khít 52 người; thuyền to chở 6 người, thuyền nhỏ chở 4 người. Hỏi mỗi loại mấy chiếc? Và trả lời: vì sao phương pháp này tên là GIẢ THIẾT TẠM — cái gì tạm, cái gì thật?",
      "answerKey": {
       "parts": [
        {
-        "label": "tích 2/3 × 3/4 × 4/5 × 5/6",
-        "options": [
-         "1/3",
-         "1/6",
-         "2/5"
-        ],
-        "value": "1/3"
+        "label": "thuyền to",
+        "value": 6
        },
        {
-        "label": "tích nếu kéo đến 9/10",
-        "options": [
-         "1/5",
-         "2/9",
-         "1/4"
-        ],
-        "value": "1/5"
+        "label": "thuyền nhỏ",
+        "value": 4
        }
       ]
      },
-     "solutionNarrative": "Rút chéo 3, 4, 5 → còn $\\frac{2}{6}$ = $\\frac{1}{3}$; kéo đến $\\frac{9}{10}$: sống sót tử đầu 2 và mẫu cuối 10 → tích $\\frac{2}{10}$ = $\\frac{1}{5}$.",
+     "solutionNarrative": "Giả sử toàn thuyền nhỏ: chở 40 người; thiếu 12; mỗi thuyền to bù 2 → to 6 chiếc, nhỏ 4 chiếc (36 + 16 = 52 ✓). Gọi là \"giả thiết TẠM\" vì điều giả sử (toàn một loại) biết chắc không thật — nó chỉ là bàn đạp tạm thời; còn độ lệch và đáp số cuối là THẬT.",
      "hints": [
-      "Rút gọn chéo — ai sống sót?",
-      "Tử đầu và mẫu cuối, rồi rút gọn thêm lần nữa."
+      "Giả sử toàn thuyền nhỏ rồi đếm chỗ.",
+      "Mỗi thuyền to bù thêm mấy chỗ?"
      ]
     }
    ]
@@ -416,7 +375,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "$\\frac{1}{2 \\times 3}$ = $\\frac{1}{2}$ − $\\frac{1}{3}$.",
+    "text": "Giả thiết tạm là giả sử tất cả cùng một loại rồi so độ lệch với thực tế.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -425,61 +384,61 @@
    },
    {
     "id": "Q2",
-    "text": "$\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ = $\\frac{2}{8}$ (cộng tử với tử, mẫu với mẫu).",
+    "text": "Với 36 con, nếu giả sử tất cả là gà thì có 100 cái chân.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Không được cộng tử với tử, mẫu với mẫu; kết quả đúng là $\\frac{2}{3}$."
+    "solutionNarrative": "Toàn gà chỉ có 72 chân."
    },
    {
     "id": "Q3",
-    "text": "$\\frac{1}{2}$ × $\\frac{2}{3}$ bằng:",
+    "text": "10 con gà - chó có 32 chân. Số chó là:",
     "format": "mcq",
     "choices": [
-     "A. 1/3",
-     "B. 2/5",
-     "C. 1/6"
+     "A. 6",
+     "B. 4",
+     "C. 8"
     ],
     "answerKey": {
-     "choice": "A. 1/3"
+     "choice": "A. 6"
     },
-    "solutionNarrative": "$\\frac{1}{3}$)."
+    "solutionNarrative": "Thiếu 12 : 2 = 6 con chó."
    },
    {
     "id": "Q4",
-    "text": "1 − $\\frac{1}{5}$ bằng:",
+    "text": "12 vé loại 2 nghìn và 5 nghìn thu 39 nghìn. Số vé 5 nghìn là:",
     "format": "mcq",
     "choices": [
-     "A. 4/5",
-     "B. 1/5",
-     "C. 5/4"
+     "A. 5",
+     "B. 7",
+     "C. 3"
     ],
     "answerKey": {
-     "choice": "A. 4/5"
+     "choice": "A. 5"
     },
-    "solutionNarrative": "$\\frac{4}{5}$)."
+    "solutionNarrative": "Thiếu 39 − 24 = 15; 15 : 3 = 5 vé."
    },
    {
     "id": "Q5",
-    "text": "$\\frac{1}{4 \\times 5}$ bằng:",
+    "text": "Mỗi lần đổi một gà thành một chó, số chân tăng thêm:",
     "format": "mcq",
     "choices": [
-     "A. 1/4 − 1/5",
-     "B. 1/4 + 1/5",
-     "C. 1/4 × 1/5? — chọn cách tách ĐÚNG để cộng dãy"
+     "A. 2 cái",
+     "B. 4 cái",
+     "C. 1 cái"
     ],
     "answerKey": {
-     "choice": "A. 1/4 − 1/5"
+     "choice": "A. 2 cái"
     },
-    "solutionNarrative": "$\\frac{1}{4 \\times 5}$ = $\\frac{1}{4}$ − $\\frac{1}{5}$."
+    "solutionNarrative": "4 − 2 = 2 cái."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Dựng domino thật (thẻ bài, hộp sữa) dán nhãn các phân số của dãy — cú đẩy đổ hàng loạt là hình ảnh khắc sâu nhất về \"tự hủy dây chuyền\".",
-  "homeActivity": "Đặt lệ \"bí mật phải kiểm chứng\": trước khi dùng $\\frac{1}{a \\times b}$ = $\\frac{1}{a}$ − $\\frac{1}{b}$, con phải tự tay kiểm MỘT trường hợp bằng quy đồng — thói quen của nhà toán học thật.",
-  "watchFor": "NÊN: cho con đoán-trước-tính-sau với dãy kéo dài (đến $\\frac{1}{9 \\times 10}$) rồi thưởng khi đoán trúng. KHÔNG NÊN: dãy mẫu cách nhau 2 kiểu $\\frac{1}{1 \\times 3}$ + $\\frac{1}{3 \\times 5}$ — phiên bản \"nhân hệ số\" hẹn lớp 5."
+  "onComplete": "Diễn kịch bằng đồ thật: nắp chai làm gà (cắm 2 tăm), cúc áo làm chó (4 tăm) — cho con \"hô biến\" cả đàn thành gà rồi đếm tăm thiếu. Nhìn thấy độ lệch bằng mắt, ba bước tự nhiên như hơi thở.",
+  "homeActivity": "Câu hỏi đắt nhất sau mỗi bài: \"cái gì TẠM, cái gì THẬT?\" — con phân biệt được thế giới giả sử và kết luận thật là nắm được linh hồn phương pháp.",
+  "watchFor": "NÊN: đổi vỏ bài liên tục (vé, thuyền, điểm thi thưởng - phạt) để con thấy cùng ruột. KHÔNG NÊN: bài ba loại vật cùng lúc (gà - chó - vịt) — ba ẩn số hẹn lớp 5."
  },
  "figureSpec": [
   {
@@ -488,20 +447,28 @@
     "hook"
    ],
    "file": "figures/L4H_B35_MO.png",
-   "caption": "Dãy phân số mẫu số là tích hai số liền nhau.",
-   "sha256_16": "f33b464d3700a437",
+   "caption": "Đếm đầu ra số con, đếm chân ra số chân.",
+   "sha256_16": "e5fc5aed456477b5",
    "mucGoc": "chuyenMoBai"
+  },
+  {
+   "id": "L4H_B35_G1",
+   "usedIn": [
+    "screen:S3"
+   ],
+   "file": "figures/L4H_B35_G1.png",
+   "caption": "Giả sử tất cả là gà rồi soi phần chân còn hụt.",
+   "sha256_16": "7fe850badbb46aa9",
+   "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Chương 4 con từng gặp những dãy số có quy luật. Hôm nay dãy số... hóa phân số — và mang theo hai màn ảo thuật đẹp nhất của toán tiểu học: TỔNG dài dằng dặc tự sập như dây domino chỉ còn trơ hai đầu, và TÍCH lê thê tự gạch chéo chỉ sót tử đầu - mẫu cuối. Bí quyết chung: đừng tính trâu bò — hãy tìm chỗ TỰ HỦY.",
+ "hatMam": "Người giải giỏi đôi khi phải... cố tình nghĩ sai! Phương pháp hôm nay nghe ngược đời: GIẢ SỬ một điều biết chắc không đúng (\"cả chuồng toàn gà\"), tính xem thế giới giả ấy lệch thực tế bao nhiêu, rồi từ độ lệch lần ra sự thật. Đây là một trong những cách nhẩm nhanh đẹp nhất của toán tiểu học — mang tên GIẢ THIẾT TẠM.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B12",
-   "DL:KSN3.B09"
+   "DL:KSN3.B23"
   ],
   "ten": [
-   "FIBONACCI & QUY LUẬT HAI TẦNG",
-   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+   "GÀ - CHÓ RỜI TRANG TRẠI"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

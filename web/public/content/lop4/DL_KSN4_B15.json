@@ -2,13 +2,13 @@
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN4.B15",
  "grade": 4,
- "quyen": "lop4",
- "title": "Bài 15 · BÀI TOÁN TRỒNG CÂY — BA TRƯỜNG HỢP",
+ "quyen": "KSN4",
+ "title": "Bài 15 · DÃY CÓ BAO NHIÊU SỐ HẠNG — VÌ SAO PHẢI CỘNG 1",
  "durationMinutes": 10,
  "so": 15,
  "chuong": 4,
  "tenChuong": "DÃY SỐ",
- "dangGoc": "LV 8.4 mức Lớp 4 (case trồng cây) — Ba thế trận kết hợp CHU VI · tiếng chuông, bậc thang trá hình",
+ "dangGoc": "Dạng gốc: SỐ 5.1c mức Lớp 4 — Công thức số số hạng = (cuối − đầu) : khoảng cách + 1.",
  "skills": {
   "bktUnit": "CHUONG:4@G4",
   "primary": []
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Chọn đúng thế trận trước khi chia: hai đầu (+1), một đầu (không cộng), vòng kín (cây = khoảng). Giải bài trồng cây - treo đèn quanh sân hình chữ nhật: tính CHU VI trước, chia khoảng sau. Nhận diện bài trồng cây trá hình: tiếng chuông, bậc thang, cột đèn — và cả bài NGƯỢC tìm độ dài.",
-  "kidText": "Treo đèn quanh sân 30 m × 20 m, đèn cách đèn 5 m. Mua bao nhiêu chiếc cho vừa đủ một vòng?",
+  "text": "Hiểu vì sao đếm số hạng thì phải CỘNG 1, trong khi tìm số hạng thứ n lại TRỪ 1. Dùng được công thức: số số hạng = (số cuối − số đầu) : khoảng cách + 1. Biết soi lại kết quả bằng cách đếm tay trên một dãy ngắn.",
+  "kidText": "Hàng rào dài 40 mét, cứ 5 mét một cột. Bác Tư mua 8 cây mà cắm xong vẫn thiếu mất một — con tìm giúp bác xem thiếu ở đâu nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,33 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — ÔN BA THẾ TRẬN TRÊN MỘT ĐOẠN 40 m: trồng cây mỗi 5 m trên đoạn 40 m: CẢ HAI ĐẦU → $40 : 5 + 1 = 9$ cây (8 khoảng, 9 cây); MỘT ĐẦU (đầu kia là cột cổng có sẵn) → 8 cây; nối đoạn thành VÒNG KÍN quanh hồ → cây cuối trùng cây đầu → 8 cây. Câu hỏi vàng trước khi chia: hai đầu có \"cây\" không, hay đường nối thành vòng?"
+    "text": "Bước 1 — CỘT VÀ KHOẢNG LÀ HAI THỨ KHÁC NHAU. Vẽ một hàng rào ngắn ra giấy: 3 cây cột thì có mấy khoảng ở giữa? Đếm mà xem — chỉ 2 khoảng. 4 cột thì 3 khoảng. Số KHOẢNG luôn ít hơn số CỘT đúng 1, vì hai đầu đều là cột."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — SÂN ĐÌNH: CHU VI TRƯỚC, CHIA KHOẢNG SAU: chu vi sân = ($30 + 20$) × $2 = 100$ (m). Vòng kín → số đèn = số khoảng = $100 : 5 = 20$ chiếc. Vì sao không \"+ 1\"? Đi hết vòng, chiếc đèn cuối cùng đứng ĐÚNG chỗ chiếc đầu tiên — cộng thêm là treo hai đèn một chỗ! Còn phép tính 28 của Trí Long đã đếm mỗi cây đèn góc... hai lần."
+    "text": "Bước 2 — PHÉP CHIA CHO RA SỐ KHOẢNG, KHÔNG PHẢI SỐ CỘT. Bác Tư lấy 40 : 5 = 8 — con số 8 ấy là số KHOẢNG, đúng chứ không sai. Bác chỉ quên mất rằng còn phải thêm một cây cột cho cái đầu hàng rào. Vậy số cột = 8 + 1 = 9 cây."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — TRỒNG CÂY TRÁ HÌNH: đồng hồ điểm 6 tiếng, hai tiếng liền nhau cách 2 giây — nghe hết mất bao lâu? Sáu tiếng chuông là 6 \"cây\", giữa chúng chỉ có $6 - 1 = 5$ \"khoảng\" → $5  \\times  2 = 10$ giây (không phải 12!). Cầu thang từ tầng 1 lên tầng 4: chỉ leo 3 quãng cầu thang — số tầng đông hơn số quãng đúng 1, y hệt cây với khoảng."
+    "text": "Bước 3 — GHÉP THÀNH CÔNG THỨC. Với một dãy cách đều: (số cuối − số đầu) cho ra \"cả quãng đường\", chia cho khoảng cách thì ra SỐ BƯỚC NHẢY, rồi cộng 1 để đếm cả số hạng đầu tiên. Vậy: số số hạng = (số cuối − số đầu) : khoảng cách + 1."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — BÀI NGƯỢC — TỪ CÂY TÌM ĐƯỜNG: hàng cây hai đầu có 13 cây, khoảng cách 5 m — đường dài bao nhiêu? Số khoảng = $13 - 1 = 12$ → đường dài $12  \\times  5 = 60$ m. Chiều xuôi trừ hay cộng 1 thì chiều ngược làm ngược lại — sơ đồ chấm cây - gạch khoảng vẽ ra là hết nhầm."
+    "text": "Bước 4 — GIẢI BÀI HÀNG RÀO. Dãy vị trí cột: 0 ; 5 ; 10 ; ... ; 40. Số cột = (40 − 0) : 5 + 1 = 8 + 1 = 9 cây ✓."
+   },
+   {
+    "id": "K5",
+    "text": "Bước 5 — VÌ SAO BÀI TRƯỚC TRỪ 1 MÀ BÀI NÀY CỘNG 1. Hai câu hỏi ngược nhau nên hai phép ngược nhau. Bài trước: biết SỐ CHỖ, tìm SỐ BƯỚC → bớt đi 1. Bài này: biết SỐ BƯỚC, tìm SỐ CHỖ → thêm vào 1. Nhớ một câu là đủ: CHỖ nhiều hơn BƯỚC đúng một."
    }
   ],
-  "mantra": "Ba thế trận, một câu hỏi vàng: \"hai đầu có cây không, hay nối thành vòng?\" Hai đầu: cây = khoảng + 1; một đầu hoặc vòng kín: cây = khoảng. Bài quanh sân: tính CHU VI trước. Bài trá hình (chuông, bậc thang, cột đèn): tìm xem cái gì đóng vai CÂY, cái gì đóng vai KHOẢNG — rồi mọi chuyện như cũ.",
+  "mantra": "tính xong luôn thử lại trên một dãy NGẮN mà đếm tay được. Dãy 2 ; 4 ; 6 ; 8 : công thức cho (8 − 2) : 2 + 1 = 4 ✓ — đếm tay cũng 4.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Trí Long bảo vệ phép tính của mình: \"Mỗi cạnh dài 30 m có $30 : 5 + 1 = 7$ đèn, cạnh 20 m có 5 đèn. Bốn cạnh: $7 + 5 + 7 + 5 = 24$ đèn — tớ tính lại cẩn thận rồi, lần này chuẩn!\"",
+    "wrong": "Cô hỏi dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng, Trí Long đáp: \"Lấy 100 : 2 = 50… à không, lấy (100 − 2) : 2 = 49 số hạng ạ!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Vẽ góc sân ra nháp: chiếc đèn ở góc thuộc cạnh dài hay cạnh ngắn — hay cả hai? Trong phép cộng $7 + 5 + 7 + 5$, mỗi chiếc đèn góc được đếm mấy lần? Gợi ý 2: Lấy 24 trừ số lần đếm trùng xem có ra 20 không — rồi chỉ cho Trí Long con đường không bao giờ vấp: coi cả vòng là MỘT đường khép kín, chia thẳng chu vi cho khoảng cách."
+    "fix": "Gợi ý 1: Con thử công thức của Trí Long trên dãy ngắn 2 ; 4 ; 6 ; 8 xem: (8 − 2) : 2 = 3. Nhưng đếm tay thì rõ ràng có 4 số hạng mà? Gợi ý 2: Phép chia ấy cho ra số BƯỚC NHẢY. Còn thiếu chính chỗ đứng đầu tiên — con đã đếm nó chưa? Chữa: phải cộng thêm 1. Số số hạng = (100 − 2) : 2 + 1 = 50."
    }
   ]
  },
@@ -60,14 +64,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Sân hình chữ nhật 30 m × 20 m; treo đèn quanh sân, khoảng cách đều 5 m. Hỏi cần mua đúng bao nhiêu chiếc đèn lồng?"
+    "narration": "Hàng rào dài 40 m, mỗi 5 m một cột, cắm cả hai đầu. Hỏi cần bao nhiêu cây cột?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? sân hình chữ nhật 30 m × 20 m; treo đèn quanh sân, khoảng cách đều 5 m.\nHỎI GÌ? cần mua đúng bao nhiêu chiếc đèn lồng.\nĐẠI LƯỢNG & ĐƠN VỊ: chiều dài (m), chu vi (m), số đèn (chiếc) — chú ý: đèn đếm bằng CHIẾC, khoảng đếm bằng ĐOẠN 5 m.\nQUAN HỆ GIỮA CHÚNG: đường treo đèn chạy QUANH sân — điểm xuất phát cũng là điểm kết thúc: một VÒNG KÍN, không có \"hai đầu\" nào cả.\nCHỌN CÔNG CỤ: THẾ TRẬN VÒNG KÍN: số đèn = số khoảng = chu vi : 5; cần tính chu vi hình chữ nhật trước.\nƯỚC LƯỢNG TRƯỚC: chu vi cỡ trăm mét, chia 5 → tầm hai chục đèn.",
+    "narration": "CHO GÌ? hàng rào dài 40 m, mỗi 5 m một cột, cắm cả hai đầu.\nHỎI GÌ? cần bao nhiêu cây cột.\nĐẠI LƯỢNG & ĐƠN VỊ: chiều dài tính bằng mét, còn cột đếm bằng cây — hai thứ khác nhau, chớ lẫn.\nQUAN HỆ GIỮA CHÚNG: vị trí các cột tạo thành dãy cách đều 0 ; 5 ; 10 ; ... ; 40, khoảng cách 5. Số cột chính là SỐ SỐ HẠNG của dãy ấy.\nCHỌN CÔNG CỤ: công thức ĐẾM SỐ SỐ HẠNG. Đây là công thức duy nhất của bài này.\nƯỚC LƯỢNG TRƯỚC: 8 khoảng thì cột phải nhiều hơn 8 một chút — bác Tư hụt đúng chỗ đó.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ bản vẽ sân đình sang thế trận vòng kín"
+    "nhan": "NHỊP 1, DỊCH"
    },
    {
     "id": "S3",
@@ -104,81 +108,62 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: báo giá gửi bác tổ trưởng: \"Sân $30  \\times  20$ m treo đèn mỗi 5 m cần đúng 20 chiếc — mua thêm 2 chiếc dự phòng bóng hỏng là 22.\" Quỹ khu phố không phí một đồng, bốn góc sân không hở một khoảng.\nSOI: soi bằng đếm tay trên bản vẽ: cạnh dài 30 m có 6 khoảng, cạnh ngắn 20 m có 4 khoảng → ($6 + 4$) × $2 = 20$ khoảng ✓ khớp $100 : 5$. Và phép của Trí Long (28) trừ đi 4 góc đếm trùng... cũng không ra 20 — càng rõ phải dùng thế trận vòng kín ngay từ đầu.\nDÙNG NGOÀI ĐỜI: treo đèn nháy quanh khung ảnh, đóng cọc rào vườn, cắm nến quanh bánh sinh nhật — thế trận vòng kín ở khắp nơi, và con là người duy nhất trong nhà biết vì sao không \"+ 1\"!",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S8",
+    "kind": "explain",
+    "narration": "LẮP: bác Tư mua thêm một cây cột nữa là vừa khít. Bác ghi vào sổ: \"Cắm cả hai đầu thì SỐ CỘT = SỐ KHOẢNG + 1.\"\nSOI: soi lại bằng cách đếm tay đoạn ngắn — hàng rào 10 m, mỗi 5 m một cột: cột ở 0, ở 5, ở 10 → 3 cây. Công thức: (10 − 0) : 5 + 1 = 2 + 1 = 3 ✓.\nDÙNG NGOÀI ĐỜI: trồng cây hai bên đường, treo đèn lồng dọc hành lang, đếm số trang từ trang 20 đến trang 80 — chỗ nào cũng phải nhớ cộng 1.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
-    "id": "S8",
+    "id": "S9",
     "kind": "trap",
-    "narration": "Trí Long bảo vệ phép tính của mình: \"Mỗi cạnh dài 30 m có $30 : 5 + 1 = 7$ đèn, cạnh 20 m có 5 đèn. Bốn cạnh: $7 + 5 + 7 + 5 = 24$ đèn — tớ tính lại cẩn thận rồi, lần này chuẩn!\"",
+    "narration": "Cô hỏi dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng, Trí Long đáp: \"Lấy 100 : 2 = 50… à không, lấy (100 − 2) : 2 = 49 số hạng ạ!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Sân đình hình chữ nhật có chiều dài 30 m, chiều rộng 20 m. Người ta treo đèn lồng quanh sân, cứ 5 m treo một chiếc. Hỏi cần bao nhiêu chiếc đèn lồng?",
+  "problem": "Dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng?",
   "steps": [
    {
-    "show": "Sân chữ nhật: dài 30 m, rộng 20 m",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Treo đèn QUANH sân, mỗi 5 m một chiếc. Tìm số đèn.",
-    "phan": "tomtat"
+    "show": "Dãy cách đều, số đầu 2, số cuối 100, khoảng cách 2."
    },
    {
-    "show": "Gạch chân chữ \"quanh\" khi đọc đề — nó quyết định thế trận.",
-    "phan": "tomtat"
+    "show": "Kiểm khoảng cách: 4 − 2 = 2 ; 6 − 4 = 2 ✓."
    },
    {
-    "show": "Mô hình (thế trận vòng kín)",
-    "phan": "tomtat"
+    "show": "Mô hình (bước nhảy rồi cộng chỗ đầu)"
    },
    {
-    "show": "Đường treo đèn khép kín quanh sân",
-    "phan": "tomtat"
+    "show": "Cả quãng: 100 − 2 = 98."
    },
    {
-    "show": "→ số đèn = số khoảng 5 m trên chu vi.",
-    "phan": "tomtat"
+    "show": "Số bước nhảy: 98 : 2 = 49."
    },
    {
-    "show": "Một câu định thế trận — không vẽ nổi sơ đồ thì viết rõ căn cứ.",
-    "phan": "tomtat"
+    "show": "Cộng thêm chính số hạng đầu: 49 + 1 = 50."
    },
    {
-    "show": "Chu vi sân đình là: ($30 + 20$) × $2 = 100$ (m)",
-    "phan": "giai"
+    "show": "Tính"
    },
    {
-    "show": "Vì đèn treo thành vòng khép kín nên số đèn bằng số khoảng.",
-    "phan": "giai"
+    "show": "Số số hạng = (100 − 2) : 2 + 1 = 49 + 1 = 50 số hạng."
    },
    {
-    "show": "Số đèn lồng cần dùng là: $100 : 5 = 20$ (chiếc)",
-    "phan": "giai"
+    "show": "Soi lại trên dãy ngắn cùng kiểu: 2 ; 4 ; 6 ; 8 → (8 − 2) : 2 + 1 = 4 ✓ đếm tay cũng 4."
    },
    {
-    "show": "Dòng \"vì... vòng khép kín\" là căn cứ cho việc KHÔNG cộng 1.",
-    "phan": "giai"
-   },
-   {
-    "show": "Đáp số: 20 chiếc đèn lồng.",
-    "phan": "dapso"
-   },
-   {
-    "show": "Đáp số kèm đơn vị.",
-    "phan": "ghichu"
-   },
-   {
-    "show": "Thử lại: cạnh 30 m có 6 khoảng, cạnh 20 m có 4 khoảng ; ($6 + 4$) × $2 = 20$ ✓",
-    "phan": "thulai"
-   },
-   {
-    "show": "Soi bằng cách đếm khoảng theo từng cạnh — đường vòng gặp đường thẳng.",
-    "phan": "thulai"
+    "show": "Đáp số: dãy có 50 số hạng."
    }
   ]
  },
@@ -187,143 +172,114 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Trồng cây trên đoạn đường 40 m, cứ 5 m một cây, trồng ở CẢ HAI đầu. Hỏi trồng được bao nhiêu cây?",
+     "text": "Một hàng rào có 5 cây cột cắm cách đều. Hỏi giữa các cột có bao nhiêu khoảng?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số cây",
-        "value": 9
-       }
-      ]
+      "value": 4
      },
-     "solutionNarrative": "$40 : 5 + 1 = 9$ cây (8 khoảng, trồng cả hai đầu).",
+     "solutionNarrative": "5 cột thì có 4 khoảng — số khoảng ít hơn số cột đúng 1.",
      "hints": [
-      "Câu hỏi vàng: hai đầu có cây không, hay nối thành vòng?",
-      "Có cả hai đầu thì cây nhiều hơn khoảng một."
+      "Vẽ năm cây cột ra giấy.",
+      "Rồi đếm số chỗ trống ở giữa chúng."
      ]
     },
     {
      "id": "C2",
-     "text": "Cũng đoạn đường 40 m, mỗi 5 m một cây nhưng chỉ trồng MỘT đầu (đầu kia là cổng). Hỏi cần bao nhiêu cây?",
+     "text": "Dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng?",
      "answerKey": {
-      "value": 8
+      "value": 50
      },
-     "solutionNarrative": "$40 : 5 = 8$ cây (một đầu là cổng, không trồng).",
+     "solutionNarrative": "(100 − 2) : 2 + 1 = 49 + 1 = 50 số hạng.",
      "hints": [
-      "Mất một đầu là mất một cây.",
-      "Cây bằng đúng số khoảng."
+      "Cuối trừ đầu, rồi chia cho khoảng cách.",
+      "Đừng quên còn chính số hạng đầu."
      ]
     },
     {
      "id": "C3",
-     "text": "Hồ tròn có chu vi 40 m, trồng cây quanh hồ mỗi 5 m một cây. Hỏi cần bao nhiêu cây?",
+     "text": "Dãy 5 ; 10 ; 15 ; ... ; 100 có bao nhiêu số hạng?",
      "answerKey": {
-      "value": 8
+      "value": 20
      },
-     "solutionNarrative": "Vòng kín: $40 : 5 = 8$ cây.",
+     "solutionNarrative": "(100 − 5) : 5 + 1 = 19 + 1 = 20 số hạng.",
      "hints": [
-      "Vòng kín — điểm cuối trùng điểm đầu.",
-      "Cây bằng đúng số khoảng."
+      "Khoảng cách là 5.",
+      "Chia xong nhớ cộng thêm một."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Sân đình 30 m × 20 m treo đèn quanh sân mỗi 5 m một chiếc. Cần bao nhiêu chiếc đèn?",
+     "text": "Dãy 3 ; 7 ; 11 ; ... ; 79 có bao nhiêu số hạng?",
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "Chu vi ($30 + 20$) × $2 = 100$ m → $100 : 5 = 20$ chiếc đèn.",
+     "solutionNarrative": "(79 − 3) : 4 + 1 = 19 + 1 = 20 số hạng.",
      "hints": [
-      "Tính CHU VI trước, chia khoảng sau.",
-      "Quanh sân là vòng kín nên đèn bằng số khoảng."
+      "Khoảng cách là 4.",
+      "Phép chia cho ra số bước, chưa phải số chỗ."
      ]
     },
     {
      "id": "C5",
-     "text": "Đồng hồ điểm 6 tiếng chuông, hai tiếng liền nhau cách nhau 2 giây. Nghe trọn hồi chuông mất bao nhiêu giây?",
+     "text": "Hàng rào thẳng dài 40 m, cứ 5 m cắm một cột, cắm cả hai đầu. Cần bao nhiêu cây cột?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số giây",
-        "value": 10
-       }
-      ]
+      "value": 9
      },
-     "solutionNarrative": "6 tiếng có $6 - 1 = 5$ khoảng → $5  \\times  2 = 10$ giây.",
+     "solutionNarrative": "(40 − 0) : 5 + 1 = 8 + 1 = 9 cây cột.",
      "hints": [
-      "Trồng cây trá hình: tiếng chuông là cây, quãng lặng là khoảng.",
-      "Đếm số khoảng trước rồi mới nhân."
+      "Cột đầu tiên cắm ở mốc 0 mét.",
+      "Số cột nhiều hơn số khoảng đúng một."
      ]
     },
     {
      "id": "C6",
-     "text": "Một hàng cây trồng ở cả hai đầu đường có 13 cây, hai cây liền nhau cách 5 m. Hỏi đoạn đường dài bao nhiêu mét?",
+     "text": "Từ trang 20 đến trang 80 của một quyển truyện có bao nhiêu trang?",
      "answerKey": {
-      "value": 60
+      "value": 61
      },
-     "solutionNarrative": "13 cây có $13 - 1 = 12$ khoảng → đường dài $12  \\times  5 = 60$ m.",
+     "solutionNarrative": "(80 − 20) : 1 + 1 = 60 + 1 = 61 trang. Nhớ tính cả trang 20.",
      "hints": [
-      "BÀI NGƯỢC: từ cây tìm đường.",
-      "Có cả hai đầu nên khoảng ít hơn cây một."
+      "Hai trang liền nhau cách nhau 1.",
+      "Nhớ tính cả trang đầu tiên."
      ]
     },
     {
      "id": "C7",
-     "text": "Su Bống leo cầu thang từ tầng 1 lên tầng 4, mỗi quãng cầu thang giữa hai tầng có 12 bậc. Em phải bước qua bao nhiêu bậc thang?",
+     "text": "Dãy 1 ; 9 ; 17 ; ... ; 113 có bao nhiêu số hạng?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số bậc thang",
-        "value": 36
-       }
-      ]
+      "value": 15
      },
-     "solutionNarrative": "Từ tầng 1 lên tầng 4 có $4 - 1 = 3$ quãng cầu thang → $3  \\times  12 = 36$ bậc.",
+     "solutionNarrative": "(113 − 1) : 8 + 1 = 14 + 1 = 15 số hạng.",
      "hints": [
-      "Tầng là cây, quãng cầu thang là khoảng.",
-      "Từ tầng 1 lên tầng 4 có mấy quãng?"
+      "Khoảng cách là 8.",
+      "Chia xong cộng một."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Vẫn sân 30 m × 20 m, bác tổ trưởng muốn đóng cọc rào quanh sân sao cho BỐN GÓC đều có cọc, các cọc cách đều nhau và khoảng cách là số mét tự nhiên LỚN NHẤT có thể. Hỏi khoảng cách ấy là bao nhiêu mét và cần bao nhiêu cọc? (Khoảng cách phải chia hết cả 30 lẫn 20!)",
+     "text": "Dãy 4 ; 9 ; 14 ; ... ; 99 có bao nhiêu số hạng? Hãy soi lại kết quả bằng cách đếm tay trên một dãy ngắn cùng kiểu.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "khoảng cách lớn nhất, tính bằng mét",
-        "value": 10
-       },
-       {
-        "label": "số cọc",
-        "value": 10
-       }
-      ]
+      "value": 20
      },
-     "solutionNarrative": "Khoảng cách phải chia hết cả 30 và 20; các số chia hết cả hai: 1, 2, 5, 10 → lớn nhất là 10 m; số cọc = chu vi : khoảng = $100 : 10 = 10$ cọc (bốn góc tự khớp vì 30 và 20 đều chia hết cho 10).",
+     "solutionNarrative": "(99 − 4) : 5 + 1 = 19 + 1 = 20 số hạng. Soi trên dãy ngắn 4 ; 9 ; 14 : (14 − 4) : 5 + 1 = 3 ✓ đếm tay cũng 3.",
      "hints": [
-      "Khoảng cách phải chia hết CẢ chiều dài lẫn chiều rộng.",
-      "Kê các số chia hết cả hai rồi lấy số lớn nhất."
+      "Làm như các câu trên.",
+      "Rồi thử lại trên ba số đầu mà đếm tay."
      ]
     },
     {
      "id": "C9",
-     "text": "Đồng hồ nhà bác điểm 12 tiếng lúc giữa trưa hết 22 giây. Hỏi lúc 6 giờ nó điểm 6 tiếng hết bao nhiêu giây — và vì sao KHÔNG phải là 11 giây?",
+     "text": "Một dãy cách đều có 25 số hạng, số đầu là 6, khoảng cách là 4. Hỏi số hạng CUỐI của dãy là số nào?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "điểm 6 tiếng hết mấy giây",
-        "value": 10
-       }
-      ]
+      "value": 102
      },
-     "solutionNarrative": "12 tiếng có 11 khoảng → mỗi khoảng $22 : 11 = 2$ giây; 6 tiếng chỉ có 5 khoảng → $5  \\times  2 = 10$ giây. Không phải 11 giây (một nửa của 22) — vì thứ chia đôi được là số TIẾNG chứ không phải số KHOẢNG: 6 tiếng không có \"5,5 khoảng\"!",
+     "solutionNarrative": "25 số hạng thì có 24 bước nhảy: 6 + 4 × 24 = 6 + 96 = 102.",
      "hints": [
-      "Tìm thời gian MỘT khoảng trước đã.",
-      "Thứ chia đôi được là số tiếng, không phải số khoảng."
+      "Đi ngược: 25 chỗ thì có mấy bước nhảy?",
+      "Từ số đầu cộng thêm bấy nhiêu bước."
      ]
     }
    ]
@@ -334,7 +290,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Trồng cây thành vòng khép kín thì số cây bằng số khoảng.",
+    "text": "Số số hạng của dãy cách đều bằng (số cuối − số đầu) : khoảng cách + 1.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -343,61 +299,61 @@
    },
    {
     "id": "Q2",
-    "text": "Trồng cây ở cả hai đầu đường thì số cây bằng số khoảng.",
+    "text": "Một hàng rào có 10 khoảng thì có 10 cây cột.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Hai đầu: cây = khoảng + 1."
+    "solutionNarrative": "SAI — cắm cả hai đầu thì có 11 cây cột."
    },
    {
     "id": "Q3",
-    "text": "Sân có chu vi 60 m, treo đèn quanh sân mỗi 5 m: cần số đèn là:",
+    "text": "Dãy 5 ; 10 ; 15 ; ... ; 100 có số số hạng là:",
     "format": "mcq",
     "choices": [
-     "A. 12",
-     "B. 13",
-     "C. 11"
+     "A. 20",
+     "B. 19",
+     "C. 21"
     ],
     "answerKey": {
-     "choice": "A. 12"
+     "choice": "A. 20"
     },
-    "solutionNarrative": "$60 : 5 = 12$."
+    "solutionNarrative": "(100 − 5) : 5 + 1 = 19 + 1 = 20."
    },
    {
     "id": "Q4",
-    "text": "Chuông điểm 4 tiếng, mỗi khoảng 3 giây — nghe hết mất:",
+    "text": "Phép chia (số cuối − số đầu) : khoảng cách cho ra:",
     "format": "mcq",
     "choices": [
-     "A. 9 giây",
-     "B. 12 giây",
-     "C. 6 giây"
+     "A. số bước nhảy",
+     "B. số số hạng",
+     "C. số hạng cuối"
     ],
     "answerKey": {
-     "choice": "A. 9 giây"
+     "choice": "A. số bước nhảy"
     },
-    "solutionNarrative": "3 khoảng × 3 giây = 9 giây."
+    "solutionNarrative": "Muốn ra số số hạng thì phải cộng thêm 1."
    },
    {
     "id": "Q5",
-    "text": "Đường 100 m trồng cây hai đầu mỗi 10 m: số cây là:",
+    "text": "Từ trang 20 đến trang 80 có số trang là:",
     "format": "mcq",
     "choices": [
-     "A. 11",
-     "B. 10",
-     "C. 9"
+     "A. 61",
+     "B. 60",
+     "C. 59"
     ],
     "answerKey": {
-     "choice": "A. 11"
+     "choice": "A. 61"
     },
-    "solutionNarrative": "$100 : 10 + 1 = 11$ cây."
+    "solutionNarrative": "(80 − 20) + 1 = 61, vì tính cả trang 20."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Thí nghiệm que tăm: xếp que quanh một tờ giấy chữ nhật rồi xếp thẳng hàng — cho con tự phát hiện vì sao vòng kín \"mất\" một cây so với hàng thẳng. Bàn tay hiểu trước, công thức theo sau.",
-  "homeActivity": "Với bài chuông đồng hồ, cho con vỗ tay 6 cái cách đều mà bố mẹ bấm giờ — số khoảng ít hơn số tiếng vỗ đúng 1 nghe rõ mồn một.",
-  "watchFor": "NÊN: giao dự án thật dịp Tết (đèn nháy quanh cửa sổ, cờ dây quanh ban công) kèm báo giá. KHÔNG NÊN: bài trồng xen kẽ hai loại cây hay đổi khoảng cách giữa chừng — biến thể ấy hẹn lớp 5."
+  "onComplete": "Cùng con đếm số bậc cầu thang trong nhà rồi đếm số \"lần bước\" từ dưới lên — cho con tự thấy hai con số lệch nhau đúng 1.",
+  "homeActivity": "Bài đố vui: từ trang 20 đến trang 80 của quyển truyện có bao nhiêu trang? (Đáp: 61 trang, không phải 60 — vì tính cả trang 20.)",
+  "watchFor": ""
  },
  "figureSpec": [
   {
@@ -406,68 +362,18 @@
     "hook"
    ],
    "file": "figures/L4H_B15_MO.png",
-   "caption": "Treo quanh một vòng khép kín — đếm cây và đếm khoảng.",
-   "sha256_16": "4b30db6368656502",
+   "caption": "8 khoảng nhưng 9 cột — bác Tư hụt đúng một cây ở chỗ này.",
+   "sha256_16": "81d9468ab573a5dc",
    "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L4H_B15_G1",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L4H_B15_G1.png",
-   "caption": "Đường thẳng trồng cả hai đầu — cây nhiều hơn khoảng 1.",
-   "sha256_16": "f7fbf61b73753d47",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L4H_B15_C7",
-   "usedIn": [
-    "item:C7"
-   ],
-   "file": "figures/L4H_B15_C7.png",
-   "caption": "Bốn tầng, mỗi quãng giữa hai tầng có 12 bậc.",
-   "sha256_16": "ab9bc40d36ac9ff9",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L4H_B15_C7_G",
-   "usedIn": [
-    "item:C7:giai"
-   ],
-   "file": "figures/L4H_B15_C7_G.png",
-   "caption": "Ba quãng cầu thang, không phải bốn — chỗ bé hay đếm thừa một.",
-   "sha256_16": "d465166b3123854b",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L4H_B15_C8",
-   "usedIn": [
-    "item:C8"
-   ],
-   "file": "figures/L4H_B15_C8.png",
-   "caption": "Sân 30 m × 20 m, bốn góc đã có cọc — chưa biết khoảng cách.",
-   "sha256_16": "da55c8afea784083",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L4H_B15_C8_G",
-   "usedIn": [
-    "item:C8:giai"
-   ],
-   "file": "figures/L4H_B15_C8_G.png",
-   "caption": "Vòng khép kín thì số cọc bằng số khoảng — khác hẳn hàng thẳng.",
-   "sha256_16": "be55614c844c68fd",
-   "mucGoc": "luyenTap"
   }
  ],
- "hatMam": "Lớp 3, ở Bài 24, con đã thuộc ba thế trận trồng cây: cả hai đầu (cây = khoảng + 1), một đầu (cây = khoảng) và vòng tròn quanh hồ (cây = khoảng). Năm nay thế trận lên sân khấu lớn: phải TỰ TÍNH CHU VI trước khi chia khoảng, và nhận diện hàng loạt bài \"trồng cây trá hình\" — tiếng chuông đồng hồ, bậc cầu thang, cột đèn ven đường.",
+ "hatMam": "Bài trước con đi XUÔI: biết vị trí, tìm giá trị. Hôm nay đi NGƯỢC: biết số đầu và số cuối, đếm xem cả dãy có bao nhiêu số hạng. Công thức lần này CỘNG 1, trong khi bài trước TRỪ 1 — hai dấu ngược nhau, và cả hai đều có lý do.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B24"
+   "DL:KSN3.B10"
   ],
   "ten": [
-   "TRỒNG CÂY BA THẾ TRẬN"
+   "TOA TÀU THỨ n Ở ĐÂU?"
   ],
   "canCu": "sach",
   "lopDuoi": 3,

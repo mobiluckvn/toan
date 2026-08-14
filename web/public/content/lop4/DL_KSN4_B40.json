@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B40",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 40 · GÓC, ĐƯỜNG CAO, CẮT GHÉP VÀ HÌNH TRÒN",
+ "title": "Bài 40 · DÃY PHÂN SỐ — TÁCH HIỆU VÀ RÚT GỌN CHÉO",
  "durationMinutes": 10,
  "so": 40,
- "chuong": 10,
- "tenChuong": "CHU VI, DIỆN TÍCH VÀ HÌNH KHỐI",
- "dangGoc": "HH 2.1 + HH 2.3 + HH 4.1 mức Lớp 4 — Góc nhọn - tù - vuông, vẽ đường cao · cắt - ghép giữ diện tích · bán kính - đường kính",
+ "chuong": 9,
+ "tenChuong": "PHÂN SỐ",
+ "dangGoc": "PS 2.1 + PS 2.2 mức Lớp 4 — Tổng sai phân 1/(1×2) + 1/(2×3) + ... · tích rút gọn chéo 1/2 × 2/3 × ...",
  "skills": {
-  "bktUnit": "CHUONG:10@G4",
+  "bktUnit": "CHUONG:9@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Phân biệt và kiểm tra bằng ê ke ba loại góc: nhọn (bé hơn góc vuông), vuông, tù (lớn hơn góc vuông). Vẽ đường cao của tam giác: từ đỉnh hạ đoạn VUÔNG GÓC xuống đáy — kể cả ca đường cao rơi ra ngoài đáy. Nắm luật vàng cắt - ghép: diện tích không sinh không mất; hiểu bán kính r và đường kính d = 2 × r của hình tròn.",
-  "kidText": "Khung mái là một tam giác, cần dựng cột chống từ đỉnh xuống nền. Dựng thế nào mới đúng nhỉ?",
+  "text": "Tự khám phá và kiểm chứng bí mật tách hiệu: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1. Tính tổng dãy sai phân kiểu 1/(1×2) + 1/(2×3) + 1/(3×4) bằng hiệu ứng domino (chỉ còn hai đầu). Tính tích kiểu 1/2 × 2/3 × 3/4 × 4/5 bằng rút gọn chéo (chỉ còn tử đầu và mẫu cuối).",
+  "kidText": "Dãy phân số một phần 1×2, một phần 2×3, rồi một phần 3×4. Cộng cả dãy dài như thế thì ra bao nhiêu?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — DÙNG Ê KE ĐO GÓC: áp góc vuông của ê ke trùng đỉnh: cạnh góc CHUI GỌN trong ê ke → góc NHỌN; trùng khít → góc VUÔNG; xòe RỘNG hơn → góc TÙ. Xử góc mái: xòe rộng hơn ê ke → góc tù. Một tam giác có góc tù thì hai góc còn lại buộc phải nhọn — ba góc chia nhau \"vốn\" cố định, một đứa phình thì hai đứa phải hóp!"
+    "text": "Bước 1 — TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − 1/2 = 1/2 — mà 1/(1×2) cũng bằng 1/2! Tính tiếp 1/2 − 1/3 = 3/6 − 2/6 = 1/6 — đúng bằng 1/(2×3)! Và 1/3 − 1/4 = 4/12 − 3/12 = 1/12 = 1/(3×4). Bí mật lộ diện: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1 (vì hiệu trên mẫu chung là b − a = 1)."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — HẠ ĐƯỜNG CAO BẰNG Ê KE: đặt một cạnh góc vuông của ê ke áp sát ĐÁY, trượt ê ke cho cạnh kia chạm ĐỈNH, kẻ theo — được đường cao, chân nó vuông góc với đáy (đánh dấu ô vuông nhỏ!). Cột chống của bác thợ chính là đường cao bằng thép. Ca đặc biệt: tam giác có góc tù, hạ đường cao từ đỉnh góc nhọn có thể rơi RA NGOÀI đáy — phải kéo dài đáy ra mà đón."
+    "text": "Bước 2 — CÚ CHẠM DOMINO: thay cả dãy bằng các hiệu: (1 − 1/2) + (1/2 − 1/3) + (1/3 − 1/4). Nhìn kỹ: −1/2 gặp +1/2 tự hủy; −1/3 gặp +1/3 tự hủy — cả khúc giữa đổ rạp! Chỉ còn hai đầu: 1 − 1/4 = 3/4. Dãy dài gấp mười cũng thế: sống sót chỉ có SỐ ĐẦU và SỐ CUỐI."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — LUẬT VÀNG CẮT - GHÉP: lấy hai tam giác giấy BẰNG NHAU, ghép cạnh: được một hình bình hành (khéo xoay được cả hình chữ nhật). Cắt ra ghép lại kiểu gì, tổng DIỆN TÍCH vẫn nguyên — giấy không sinh không mất! Ví dụ: cắt hình chữ nhật $8  \\times  6$ theo đường chéo được hai tam giác y hệt nhau → mỗi tam giác chiếm đúng nửa: $48 : 2 = 24$ (ô). Đây là hạt giống của mọi công thức diện tích lớp 5."
+    "text": "Bước 3 — MÀN HAI: TÍCH RÚT GỌN CHÉO: tính 1/2 × 2/3 × 3/4 × 4/5: tử của mỗi phân số đúng bằng mẫu của phân số đứng trước! Nhân các tử với nhau, nhân các mẫu với nhau: các cặp 2, 3, 4 xuất hiện cả trên lẫn dưới — gạch chéo từng đôi. Còn lại tử đầu 1 và mẫu cuối 5: tích bằng 1/5."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — HỒ SƠ BỒN HOA TRÒN: compa cắm TÂM, xoay một vòng: mọi điểm trên mép cách tâm đúng bằng độ mở compa — đó là BÁN KÍNH r. Đoạn xuyên qua tâm nối hai mép là ĐƯỜNG KÍNH d — dây dài nhất của hình tròn — và d = 2 × r. Bồn hoa r = 2 m → chỗ rộng nhất d = 4 m: muốn đóng khung gỗ vuông ôm khít bồn, cạnh khung phải đúng 4 m."
+    "text": "Bước 4 — DỰ ĐOÁN KHÔNG CẦN TÍNH: kéo dài tổng đến 1/(4×5)? Hai đầu là 1 và 1/5 → tổng 1 − 1/5 = 4/5. Kéo dài tích đến 9/10? Tử đầu 1, mẫu cuối 10 → tích 1/10. Sức mạnh của cấu trúc: đọc được luật domino là ĐOÁN trước đáp số của dãy dài tùy ý — điều mà tính trâu bò không bao giờ làm nổi."
    }
   ],
-  "mantra": "Ê ke là của góc: chui gọn — nhọn; trùng khít — vuông; xòe rộng — tù. Đường cao: từ đỉnh hạ VUÔNG GÓC xuống đáy (góc tù có thể rơi ngoài đáy). Luật vàng: cắt - ghép không đổi diện tích. Hình tròn: d = 2 × r — quên là nhầm gấp đôi mọi số đo!",
+  "mantra": "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước. Tổng mẫu-là-tích-liền-nhau: tách mỗi số thành hiệu 1/a − 1/b, cả dãy chỉ còn HAI ĐẦU. Tích tử-sau-bằng-mẫu-trước: gạch chéo, chỉ còn TỬ ĐẦU và MẪU CUỐI. Kiểm bí mật tách hiệu bằng một phép trừ trước khi tin!",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Đo bồn hoa, Trí Long căng dây từ mép này sang mép kia LỆCH khỏi tâm, được 3 m 8, rồi tuyên bố: \"Đường kính bồn là 3 m 8 — khung gỗ đóng cạnh 3 m 8 là ôm khít!\"",
+    "wrong": "Học xong tách hiệu, Trí Long hăng máu: \"1/(1×2) + 1/(2×3) hả? Cộng tử với tử, mẫu với mẫu: (1+1)/(2+6) = 2/8 = 1/4. Nhanh chưa!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Đường kính là dây NỐI HAI MÉP kiểu nào cũng được, hay bắt buộc phải xuyên qua đâu? Dây lệch tâm so với dây qua tâm, dây nào dài hơn? Gợi ý 2: Đo lại kiểu người giải: đã biết bán kính 2 m thì đường kính tính bằng phép nhân nào — và nếu đóng khung 3 m 8 thì bồn 4 m có chui lọt không? Sửa phiếu giúp Trí Long kẻo bác mộc cưa gỗ xong lại phải cưa lại!"
+    "fix": "Gợi ý 1: Thử \"luật\" của Trí Long với cặp dễ nhất: 1/2 + 1/2 theo kiểu ấy ra 2/4 = 1/2 — nửa bánh cộng nửa bánh mà vẫn chỉ... nửa bánh thôi sao? Gợi ý 2: Phân số chỉ cộng được khi CÙNG CỠ LÁT (cùng mẫu) — luật thép Bài 33! Tính lại 1/2 + 1/6 bằng quy đồng, rồi bằng tách hiệu, cho Trí Long thấy hai đường chân chính đều ra 2/3."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Khung mái là một tam giác; cần dựng cột chống từ đỉnh xuống nền; cần gọi tên góc ở đỉnh. Hỏi cột chống dựng thế nào cho chuẩn, và góc mái thuộc loại nào?"
+    "narration": "Dãy phân số 1/(1×2) ; 1/(2×3) ; 1/(3×4) — mẫu là tích hai số liền nhau. Hỏi tổng của cả dãy?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? khung mái là một tam giác; cần dựng cột chống từ đỉnh xuống nền; cần gọi tên góc ở đỉnh.\nHỎI GÌ? cột chống dựng thế nào cho chuẩn, và góc mái thuộc loại nào.\nĐẠI LƯỢNG & ĐƠN VỊ: góc (so với góc vuông của ê ke) và đoạn thẳng — chưa cần con số đo độ.\nQUAN HỆ GIỮA CHÚNG: cột chống chịu lực tốt nhất khi VUÔNG GÓC với nền — đoạn từ đỉnh hạ vuông góc xuống đáy có tên riêng: ĐƯỜNG CAO của tam giác.\nCHỌN CÔNG CỤ: Ê KE làm người giải: đo góc, kiểm vuông góc; thêm KÉO cắt - ghép và COMPA cho bồn hoa tròn.\nƯỚC LƯỢNG TRƯỚC: mái dốc thoai thoải → góc đỉnh trông bè ra, khả năng là góc tù.",
+    "narration": "CHO GÌ? dãy phân số 1/(1×2) ; 1/(2×3) ; 1/(3×4) — mẫu là tích hai số liền nhau.\nHỎI GÌ? tổng của cả dãy.\nĐẠI LƯỢNG & ĐƠN VỊ: các phân số (không đơn vị) — điểm lạ: mẫu nào cũng là TÍCH HAI SỐ LIỀN NHAU.\nQUAN HỆ GIỮA CHÚNG: nếu mỗi phân số tách được thành một HIỆU hai phân số đơn giản, thì khi cộng, đuôi của mảnh trước sẽ khớp đầu của mảnh sau mà tự hủy.\nCHỌN CÔNG CỤ: BÍ MẬT TÁCH HIỆU (tự kiểm chứng!) + hiệu ứng domino.\nƯỚC LƯỢNG TRƯỚC: cả dãy chưa đầy một chiếc bánh — tổng chắc dưới 1, cỡ ba phần tư.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ khung mái sang tam giác và đường cao"
+    "nhan": "NHỊP 1, DỊCH — nhìn ra cấu trúc tự hủy của dãy"
    },
    {
     "id": "S3",
@@ -104,81 +104,69 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: phiếu kỹ thuật gửi bác thợ hàn: \"Góc đỉnh mái: TÙ (đã kiểm ê ke). Cột chống: dựng theo đường cao — vuông góc với nền, chân cột đã đánh dấu.\" Bác hàn đúng vị trí, mái đứng vững chãi; khung gỗ 4 m × 4 m ôm bồn hoa tròn vừa khít.\nSOI: soi bằng dụng cụ thật: ê ke áp lại lần hai vẫn ra tù ✓; dây đo từ tâm ra mép bồn bốn hướng đều 2 m ✓ — số liệu nào cũng phải qua hai lần đo.\nDÙNG NGOÀI ĐỜI: treo tranh cho thẳng góc, kê tủ sát tường, gấp giấy cắt hoa — ê ke, kéo và compa từ nay là ba người bạn đồng hành của đôi tay khéo.",
+    "narration": "LẮP: Su Kem công bố trước quầy: \"Tổng dãy nhãn là 3/4 — thưa quý khách, chưa đầy một chiếc bánh!\" Chị Ngọc Anh phục sát đất, thưởng nóng hai chiếc bánh nóng hổi; Trí Long vừa nhai vừa lẩm bẩm học thuộc bí mật tách hiệu.\nSOI: soi bằng đường trâu bò trên dãy ngắn: 1/2 + 1/6 + 1/12 = 6/12 + 2/12 + 1/12 = 9/12 = 3/4 ✓ — lối tắt và đường cày cho cùng đáp số, lối tắt được cấp phép!\nDÙNG NGOÀI ĐỜI: trong toán lớn, vô số tổng - tích dài được \"thuần hóa\" đúng kiểu này; con vừa chạm vào tư duy đẹp nhất của nghề toán: thay sức kéo bằng cấu trúc.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Đo bồn hoa, Trí Long căng dây từ mép này sang mép kia LỆCH khỏi tâm, được 3 m 8, rồi tuyên bố: \"Đường kính bồn là 3 m 8 — khung gỗ đóng cạnh 3 m 8 là ôm khít!\"",
+    "narration": "Học xong tách hiệu, Trí Long hăng máu: \"1/(1×2) + 1/(2×3) hả? Cộng tử với tử, mẫu với mẫu: (1+1)/(2+6) = 2/8 = 1/4. Nhanh chưa!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Một hình chữ nhật có chiều dài 8 cm, chiều rộng 6 cm được cắt theo một đường chéo thành hai tam giác. Hỏi diện tích mỗi tam giác bằng bao nhiêu xăng-ti-mét vuông?",
+  "problem": "Tính: 1/(1×2) + 1/(2×3) + 1/(3×4).",
   "steps": [
    {
-    "show": "Hình chữ nhật 8 cm × 6 cm; cắt theo đường chéo.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Tìm diện tích mỗi tam giác.",
-    "phan": "tomtat"
+    "show": "Tính tổng ba phân số có mẫu là tích hai số liền nhau."
    },
    {
-    "show": "Chưa học công thức tam giác — nhưng có luật cắt - ghép!",
-    "phan": "tomtat"
+    "show": "Gọi tên đặc điểm của mẫu — nhận diện dạng ngay từ tóm tắt."
    },
    {
-    "show": "Mô hình (luật vàng cắt - ghép)",
-    "phan": "tomtat"
+    "show": "Mô hình (tách hiệu)"
    },
    {
-    "show": "Đường chéo chia hình chữ nhật thành hai tam giác bằng nhau.",
-    "phan": "tomtat"
+    "show": "1/(1×2) = 1 − 1/2 ; 1/(2×3) = 1/2 − 1/3 ; 1/(3×4) = 1/3 − 1/4"
    },
    {
-    "show": "Cắt không làm mất diện tích → mỗi tam giác chiếm đúng một nửa.",
-    "phan": "tomtat"
+    "show": "(kiểm: 1/2 − 1/3 = 3/6 − 2/6 = 1/6 ✓)"
    },
    {
-    "show": "Căn cứ kép: hai nửa bằng nhau + diện tích bảo toàn.",
-    "phan": "tomtat"
+    "show": "Tách kèm MỘT phép kiểm — không dùng bí mật chưa kiểm chứng."
    },
    {
-    "show": "Diện tích hình chữ nhật là: $8  \\times  6 = 48$ ($cm^2$)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Hai tam giác bằng nhau nên diện tích mỗi tam giác là",
-    "phan": "giai"
+    "show": "Tổng = (1 − 1/2) + (1/2 − 1/3) + (1/3 − 1/4)"
    },
    {
-    "show": "$48 : 2 = 24$ ($cm^2$)",
-    "phan": "giai"
+    "show": "Các phân số 1/2 ; 1/3 xuất hiện một lần trừ, một lần cộng nên triệt tiêu nhau."
    },
    {
-    "show": "Không cần công thức mới — chỉ cần hình cũ và phép chia đôi.",
-    "phan": "giai"
+    "show": "Tổng = 1 − 1/4 = 3/4"
    },
    {
-    "show": "Đáp số: 24 cm².",
-    "phan": "dapso"
+    "show": "Câu \"triệt tiêu nhau\" nêu căn cứ của cú sập domino."
    },
    {
-    "show": "Đáp số kèm đơn vị cm².",
-    "phan": "ghichu"
+    "show": "Đáp số: 3/4."
    },
    {
-    "show": "Thử lại: ghép hai tam giác khít lại thành hình chữ nhật cũ: $24 + 24 = 48$ ✓",
-    "phan": "thulai"
+    "show": "Đáp số gọn một phân số."
    },
    {
-    "show": "Ghép ngược — luật bảo toàn diện tích phải khớp hai chiều.",
-    "phan": "thulai"
+    "show": "Thử lại: 1/2 + 1/6 + 1/12 = 6/12 + 2/12 + 1/12 = 9/12 = 3/4 ✓"
+   },
+   {
+    "show": "Đường quy đồng kiểm chứng lối domino."
    }
   ]
  },
@@ -187,166 +175,229 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Góc nhọn, góc tù, góc vuông — góc nào bé hơn, góc nào lớn hơn góc vuông?",
+     "text": "Tính 1/2 − 1/3. So sánh kết quả với 1/(2×3) và nêu nhận xét.",
      "answerKey": {
       "parts": [
        {
-        "label": "góc bé hơn góc vuông",
+        "label": "1/2 − 1/3",
         "options": [
-         "góc nhọn",
-         "góc tù"
+         "1/6",
+         "1/5",
+         "1/12"
         ],
-        "value": "góc nhọn"
-       },
-       {
-        "label": "góc lớn hơn góc vuông",
-        "options": [
-         "góc nhọn",
-         "góc tù"
-        ],
-        "value": "góc tù"
+        "value": "1/6"
        }
       ]
      },
-     "solutionNarrative": "Góc nhọn bé hơn góc vuông; góc tù lớn hơn góc vuông.",
+     "solutionNarrative": "1/2 − 1/3 = 3/6 − 2/6 = 1/6 — đúng bằng 1/(2×3): hiệu hai phân số \"liền kề\" chính là phân số mẫu-tích!",
      "hints": [
-      "Áp góc vuông của ê ke vào mà so.",
-      "Cạnh góc chui gọn trong ê ke hay xòe rộng hơn?"
+      "Quy đồng rồi trừ.",
+      "Đem kết quả so với phân số mẫu-là-tích."
      ]
     },
     {
      "id": "C2",
-     "text": "Hình tròn có bán kính 3 cm. Tính đường kính.",
+     "text": "Kiểm chứng: 1/(1×2) có bằng 1 − 1/2 không?",
      "answerKey": {
-      "value": 6
+      "parts": [
+       {
+        "label": "1/(1×2) có bằng 1 − 1/2 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
      },
-     "solutionNarrative": "D = $2  \\times  3 = 6$ cm.",
+     "solutionNarrative": "Có — 1 − 1/2 = 1/2 = 1/(1×2) ✓.",
      "hints": [
-      "Đường kính gồm hai bán kính chụm đầu.",
-      "Nhân đôi bán kính."
+      "Tính riêng hai vế rồi so.",
+      "Đây chính là viên domino đầu tiên."
      ]
     },
     {
      "id": "C3",
-     "text": "Hình tròn có đường kính 10 cm. Tính bán kính.",
+     "text": "Kiểm chứng: 1/(3×4) có bằng 1/3 − 1/4 không?",
      "answerKey": {
-      "value": 5
+      "parts": [
+       {
+        "label": "1/(3×4) có bằng 1/3 − 1/4 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
      },
-     "solutionNarrative": "R = $10 : 2 = 5$ cm.",
+     "solutionNarrative": "Có — 1/3 − 1/4 = 4/12 − 3/12 = 1/12 = 1/(3×4) ✓.",
      "hints": [
-      "Chiều ngược — chia đôi.",
-      "Đường kính vốn gồm hai bán kính."
+      "Quy đồng vế phải rồi trừ.",
+      "So với phân số mẫu-là-tích ở vế trái."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Vẽ một tam giác có ba góc nhọn, rồi dùng ê ke hạ đường cao từ đỉnh trên cùng xuống đáy. Đánh dấu góc vuông ở chân đường cao.",
-     "solutionNarrative": "Đặt cạnh ê ke áp sát đáy, trượt cho cạnh kia chạm đỉnh, kẻ đoạn từ đỉnh vuông góc xuống đáy; đánh dấu ô vuông nhỏ ở chân đường cao.",
+     "text": "Tính: 1/(1×2) + 1/(2×3).",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng",
+        "options": [
+         "2/3",
+         "1/3",
+         "3/4"
+        ],
+        "value": "2/3"
+       }
+      ]
+     },
+     "solutionNarrative": "(1 − 1/2) + (1/2 − 1/3) = 1 − 1/3 = 2/3.",
      "hints": [
-      "Áp một cạnh góc vuông của ê ke sát ĐÁY.",
-      "Trượt ê ke cho cạnh kia chạm đỉnh rồi kẻ theo."
+      "Tách mỗi số hạng thành một HIỆU.",
+      "Các khúc giữa triệt tiêu, chỉ còn hai đầu."
      ]
     },
     {
      "id": "C5",
-     "text": "Một tam giác có một góc tù. Hỏi hai góc còn lại là góc gì? Vì sao?",
+     "text": "Tính: 1/(1×2) + 1/(2×3) + 1/(3×4).",
      "answerKey": {
       "parts": [
        {
-        "label": "hai góc còn lại là góc gì",
+        "label": "tổng",
         "options": [
-         "nhọn",
-         "tù",
-         "vuông"
+         "3/4",
+         "2/3",
+         "4/5"
         ],
-        "value": "nhọn"
+        "value": "3/4"
        }
       ]
      },
-     "solutionNarrative": "Hai góc còn lại đều NHỌN — tam giác chỉ chứa nổi một góc tù, vì ba góc chia nhau một \"vốn\" cố định.",
+     "solutionNarrative": "Domino sập, còn hai đầu: 1 − 1/4 = 3/4.",
      "hints": [
-      "Vẽ thử một tam giác có góc tù rồi ướm ê ke hai góc kia.",
-      "Một tam giác có nổi hai góc tù không?"
+      "Domino sập — tách hết thành hiệu.",
+      "Chỉ còn số đầu tiên và số cuối cùng."
      ]
     },
     {
      "id": "C6",
-     "text": "Hình chữ nhật 8 cm × 6 cm được cắt theo đường chéo thành hai tam giác. Tính diện tích mỗi tam giác.",
+     "text": "Tính 1/2 × 2/3, rồi lấy kết quả nhân tiếp với 3/4. Con nhận ra quy luật gì?",
      "answerKey": {
-      "value": 24
+      "parts": [
+       {
+        "label": "1/2 × 2/3",
+        "options": [
+         "1/3",
+         "1/6",
+         "2/3"
+        ],
+        "value": "1/3"
+       },
+       {
+        "label": "nhân tiếp với 3/4",
+        "options": [
+         "1/4",
+         "3/8",
+         "1/2"
+        ],
+        "value": "1/4"
+       }
+      ]
      },
-     "solutionNarrative": "S hình chữ nhật = 48 $cm^2$ → mỗi tam giác = $48 : 2 = 24 cm^2$ (hai nửa bằng nhau, cắt không mất diện tích).",
+     "solutionNarrative": "1/2 × 2/3 = 1/3; nhân tiếp 3/4 được 1/4 — mỗi lần nhân thêm, kết quả là 1 trên mẫu cuối cùng!",
      "hints": [
-      "Luật vàng: cắt - ghép không đổi diện tích.",
-      "Tính diện tích cả hình rồi chia đôi."
+      "Tử của phân số sau đúng bằng mẫu của phân số trước.",
+      "Rút gọn chéo rồi nhìn ra quy luật."
      ]
     },
     {
      "id": "C7",
-     "text": "Lấy hai tam giác bằng nhau ghép cạnh với nhau thì được hình gì? Diện tích hình ghép so với tổng diện tích hai tam giác thế nào?",
+     "text": "Tính: 1/2 × 2/3 × 3/4 × 4/5.",
      "answerKey": {
       "parts": [
        {
-        "label": "hình ghép được",
+        "label": "tích",
         "options": [
-         "hình bình hành",
-         "hình tam giác",
-         "hình thang"
+         "1/5",
+         "1/4",
+         "2/5"
         ],
-        "value": "hình bình hành"
-       },
-       {
-        "label": "diện tích hình ghép so với tổng hai tam giác",
-        "options": [
-         "đúng bằng",
-         "lớn hơn",
-         "bé hơn"
-        ],
-        "value": "đúng bằng"
+        "value": "1/5"
        }
       ]
      },
-     "solutionNarrative": "Ghép được hình bình hành (xoay khéo được hình chữ nhật); diện tích hình ghép ĐÚNG BẰNG tổng hai tam giác — luật vàng cắt - ghép.",
+     "solutionNarrative": "Rút chéo 2, 3, 4 → còn 1/5.",
      "hints": [
-      "Lấy hai tam giác giấy bằng nhau ra ghép thử.",
-      "Cắt ghép thì không thêm không bớt giấy."
+      "Rút gọn chéo cả dây chuyền.",
+      "Chỉ tử đầu và mẫu cuối sống sót."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Bồn hoa tròn có bán kính 2 m. Người ta đóng một khung gỗ hình vuông ôm khít bên ngoài bồn. Tính cạnh và chu vi của khung gỗ. (Cạnh khung liên quan gì đến đường kính?)",
+     "text": "Tính: 1/(1×2) + 1/(2×3) + 1/(3×4) + 1/(4×5) — rồi ĐOÁN ngay tổng nếu kéo dài đến 1/(9×10).",
      "answerKey": {
       "parts": [
        {
-        "label": "cạnh khung, tính bằng mét",
-        "value": 4
+        "label": "tổng đến 1/(4×5)",
+        "options": [
+         "4/5",
+         "3/4",
+         "5/6"
+        ],
+        "value": "4/5"
        },
        {
-        "label": "chu vi khung, tính bằng mét",
-        "value": 16
+        "label": "tổng nếu kéo đến 1/(9×10)",
+        "options": [
+         "9/10",
+         "8/9",
+         "10/11"
+        ],
+        "value": "9/10"
        }
       ]
      },
-     "solutionNarrative": "Cạnh khung = đường kính = $2  \\times  2 = 4$ m; chu vi khung = $4  \\times  4 = 16$ m.",
+     "solutionNarrative": "1 − 1/5 = 4/5; kéo đến 1/(9×10): hai đầu là 1 và 1/10 → tổng 1 − 1/10 = 9/10.",
      "hints": [
-      "Cạnh khung liên quan gì tới đường kính?",
-      "Có cạnh rồi thì nhân bốn ra chu vi."
+      "Tách hiệu rồi lấy hai đầu.",
+      "Muốn đoán thì chỉ cần biết hai đầu là ai."
      ]
     },
     {
      "id": "C9",
-     "text": "Một tấm bìa hình chữ nhật 12 cm × 3 cm. Không thêm không bớt bìa, cắt nó thành các mảnh rồi ghép lại thành một HÌNH VUÔNG. Hình vuông ấy có cạnh bao nhiêu — và vì sao con biết chắc trước cả khi cắt?",
+     "text": "Tính 2/3 × 3/4 × 4/5 × 5/6 — rồi đoán tích nếu kéo dài đến 9/10. Hai con số sống sót là ai?",
      "answerKey": {
-      "value": 6
+      "parts": [
+       {
+        "label": "tích 2/3 × 3/4 × 4/5 × 5/6",
+        "options": [
+         "1/3",
+         "1/6",
+         "2/5"
+        ],
+        "value": "1/3"
+       },
+       {
+        "label": "tích nếu kéo đến 9/10",
+        "options": [
+         "1/5",
+         "2/9",
+         "1/4"
+        ],
+        "value": "1/5"
+       }
+      ]
      },
-     "solutionNarrative": "Cắt - ghép không đổi diện tích → hình vuông phải có S = $12  \\times  3 = 36 cm^2$ → cạnh 6 cm (vì $6  \\times  6 = 36$). Biết trước khi cắt nhờ luật bảo toàn! (Gợi ý cắt: chia tấm bìa thành các mảnh bậc thang rồi trượt lên ghép.)",
+     "solutionNarrative": "Rút chéo 3, 4, 5 → còn 2/6 = 1/3; kéo đến 9/10: sống sót tử đầu 2 và mẫu cuối 10 → tích 2/10 = 1/5.",
      "hints": [
-      "Cắt ghép không đổi diện tích — tính diện tích trước.",
-      "Số nào nhân với chính nó thì ra diện tích ấy?"
+      "Rút gọn chéo — ai sống sót?",
+      "Tử đầu và mẫu cuối, rồi rút gọn thêm lần nữa."
      ]
     }
    ]
@@ -357,7 +408,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Góc tù lớn hơn góc vuông.",
+    "text": "1/(2×3) = 1/2 − 1/3.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -366,61 +417,61 @@
    },
    {
     "id": "Q2",
-    "text": "Đường kính bằng một nửa bán kính.",
+    "text": "1/(1×2) + 1/(2×3) = 2/8 (cộng tử với tử, mẫu với mẫu).",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Đường kính GẤP ĐÔI bán kính."
+    "solutionNarrative": "Không được cộng tử với tử, mẫu với mẫu; kết quả đúng là 2/3."
    },
    {
     "id": "Q3",
-    "text": "Bán kính 4 cm thì đường kính là:",
+    "text": "1/2 × 2/3 bằng:",
     "format": "mcq",
     "choices": [
-     "A. 8 cm",
-     "B. 2 cm",
-     "C. 16 cm"
+     "A. 1/3",
+     "B. 2/5",
+     "C. 1/6"
     ],
     "answerKey": {
-     "choice": "A. 8 cm"
+     "choice": "A. 1/3"
     },
-    "solutionNarrative": "8 cm)."
+    "solutionNarrative": "1/3)."
    },
    {
     "id": "Q4",
-    "text": "Cắt một hình ra rồi ghép lại thì diện tích:",
+    "text": "1 − 1/5 bằng:",
     "format": "mcq",
     "choices": [
-     "A. không đổi",
-     "B. tăng lên",
-     "C. giảm đi"
+     "A. 4/5",
+     "B. 1/5",
+     "C. 5/4"
     ],
     "answerKey": {
-     "choice": "A. không đổi"
+     "choice": "A. 4/5"
     },
-    "solutionNarrative": "Không đổi."
+    "solutionNarrative": "4/5)."
    },
    {
     "id": "Q5",
-    "text": "Đường cao của tam giác vuông góc với:",
+    "text": "1/(4×5) bằng:",
     "format": "mcq",
     "choices": [
-     "A. đáy",
-     "B. đỉnh",
-     "C. cạnh bên"
+     "A. 1/4 − 1/5",
+     "B. 1/4 + 1/5",
+     "C. 1/4 × 1/5? — chọn cách tách ĐÚNG để cộng dãy"
     ],
     "answerKey": {
-     "choice": "A. đáy"
+     "choice": "A. 1/4 − 1/5"
     },
-    "solutionNarrative": "Vuông góc với đáy."
+    "solutionNarrative": "1/(4×5) = 1/4 − 1/5."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "\"Săn góc\" quanh nhà: con cầm ê ke đi kiểm góc bàn, góc mở cửa, kim đồng hồ — mỗi góc phải tuyên án nhọn / vuông / tù kèm chứng cứ ê ke.",
-  "homeActivity": "Cắt - ghép bằng giấy màu thật: hai tam giác ghép hình bình hành, hình chữ nhật cắt chéo — đôi tay làm trước, công thức lớp 5 sau này chỉ việc \"gọi tên\" điều tay đã biết.",
-  "watchFor": "NÊN: luyện hạ đường cao trên đủ ba kiểu tam giác (nhọn, vuông, tù) để gặp ca \"rơi ngoài đáy\" không hoảng. KHÔNG NÊN: dạy trước công thức diện tích tam giác, hình tròn — nền trực quan chưa chắc mà đặt công thức là xây nhà trên cát."
+  "onComplete": "Dựng domino thật (thẻ bài, hộp sữa) dán nhãn các phân số của dãy — cú đẩy đổ hàng loạt là hình ảnh khắc sâu nhất về \"tự hủy dây chuyền\".",
+  "homeActivity": "Đặt lệ \"bí mật phải kiểm chứng\": trước khi dùng 1/(a×b) = 1/a − 1/b, con phải tự tay kiểm MỘT trường hợp bằng quy đồng — thói quen của nhà toán học thật.",
+  "watchFor": "NÊN: cho con đoán-trước-tính-sau với dãy kéo dài (đến 1/(9×10)) rồi thưởng khi đoán trúng. KHÔNG NÊN: dãy mẫu cách nhau 2 kiểu 1/(1×3) + 1/(3×5) — phiên bản \"nhân hệ số\" hẹn lớp 5."
  },
  "figureSpec": [
   {
@@ -429,28 +480,20 @@
     "hook"
    ],
    "file": "figures/L4H_B40_MO.png",
-   "caption": "Hình chữ nhật có số đo trên từng cạnh, chưa cắt.",
-   "sha256_16": "9134aed803982e4b",
+   "caption": "Dãy phân số mẫu số là tích hai số liền nhau.",
+   "sha256_16": "f33b464d3700a437",
    "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L4H_B40_G4",
-   "usedIn": [
-    "screen:S6"
-   ],
-   "file": "figures/L4H_B40_G4.png",
-   "caption": "Tâm, bán kính, đường kính của bồn hoa tròn.",
-   "sha256_16": "32e4894243407fd8",
-   "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Sân lớn xong, đến các hạng mục \"có dáng có hình\": mái che tam giác và bồn hoa tròn. Hôm nay chưa vội tính diện tích tam giác hay hình tròn — lớp 4 làm việc quan trọng hơn: RÈN DỤNG CỤ. Ê ke để đo góc và hạ đường cao, kéo để cắt - ghép hình, compa để hiểu bán kính - đường kính. Dụng cụ sắc hôm nay, công thức lớp 5 mai kia chỉ là chuyện nhỏ.",
+ "hatMam": "Chương 4 con từng gặp những dãy số có quy luật. Hôm nay dãy số... hóa phân số — và mang theo hai màn ảo thuật đẹp nhất của toán tiểu học: TỔNG dài dằng dặc tự sập như dây domino chỉ còn trơ hai đầu, và TÍCH lê thê tự gạch chéo chỉ sót tử đầu - mẫu cuối. Bí quyết chung: đừng tính trâu bò — hãy tìm chỗ TỰ HỦY.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B29"
+   "DL:KSN3.B12",
+   "DL:KSN3.B09"
   ],
   "ten": [
-   "GIẢI PHẪU HÌNH TRÒN"
+   "FIBONACCI & QUY LUẬT HAI TẦNG",
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

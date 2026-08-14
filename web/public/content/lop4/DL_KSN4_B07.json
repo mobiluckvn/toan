@@ -29,19 +29,19 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — CÔNG THỨC ĐẾM VỚI KHOẢNG BẤT KỲ: kệ mã 8, 12, 16, ..., 96 (cách đều 4): số nhãn = ($96 - 8$) : $4 + 1 = 23$. Vì sao \"+ 1\"? Đếm số BƯỚC NHẢY được 22, nhưng nhãn ĐẦU TIÊN chưa nhảy đã đứng đó — cộng nó vào! Quên +1 là căn bệnh kinh niên, thuốc đặc trị: thử với dãy bé xíu 8, 12, 16 (3 nhãn, công thức (16−8):$4+1 = 3$ ✓)."
+    "text": "Bước 1 — CÔNG THỨC ĐẾM VỚI KHOẢNG BẤT KỲ: kệ mã 8, 12, 16, ..., 96 (cách đều 4): số nhãn = (96 − 8) : 4 + 1 = 23. Vì sao \"+ 1\"? Đếm số BƯỚC NHẢY được 22, nhưng nhãn ĐẦU TIÊN chưa nhảy đã đứng đó — cộng nó vào! Quên +1 là căn bệnh kinh niên, thuốc đặc trị: thử với dãy bé xíu 8, 12, 16 (3 nhãn, công thức (16−8):4+1 = 3 ✓)."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — ĐẾM SỐ CHIA HẾT TRONG KHOẢNG: từ 1 đến 200 có bao nhiêu số chia hết cho 5? Dãy 5, 10, ..., 200 → ($200 - 5$) : $5 + 1 = 40$. Khoảng lệch đầu: từ 20 đến 150 chia hết cho 4 → số đầu 20, số cuối 148 → ($148 - 20$) : $4 + 1 = 33$. Mẹo: tự tìm \"người đầu hàng\" và \"người cuối hàng\" của dãy trước, công thức lo phần còn lại."
+    "text": "Bước 2 — ĐẾM SỐ CHIA HẾT TRONG KHOẢNG: từ 1 đến 200 có bao nhiêu số chia hết cho 5? Dãy 5, 10, ..., 200 → (200 − 5) : 5 + 1 = 40. Khoảng lệch đầu: từ 20 đến 150 chia hết cho 4 → số đầu 20, số cuối 148 → (148 − 20) : 4 + 1 = 33. Mẹo: tự tìm \"người đầu hàng\" và \"người cuối hàng\" của dãy trước, công thức lo phần còn lại."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — ĐẠI DỰ ÁN ĐẾM CHỮ SỐ: chia trang sổ theo nhóm: trang 1-9: 9 trang × $1 = 9$ chữ số; trang 10-99: 90 trang × $2 = 180$; trang 100-250: ($250 - 100$) + $1 = 151$ trang × $3 = 453$. Tổng: $9 + 180 + 453 = 642$ miếng decal. Ba phép nhân thay cho 250 lần đếm!"
+    "text": "Bước 3 — ĐẠI DỰ ÁN ĐẾM CHỮ SỐ: chia trang sổ theo nhóm: trang 1-9: 9 trang × 1 = 9 chữ số; trang 10-99: 90 trang × 2 = 180; trang 100-250: (250 − 100) + 1 = 151 trang × 3 = 453. Tổng: 9 + 180 + 453 = 642 miếng decal. Ba phép nhân thay cho 250 lần đếm!"
    },
    {
     "id": "K4",
-    "text": "Bước 4 — BÀI NGƯỢC (trừ dần theo nhóm): một cuốn sách dùng hết 552 chữ số — dày bao nhiêu trang? Trừ dần: nhóm 1 chữ số \"ăn\" 9, còn $552 - 9 = 543$; nhóm 2 chữ số \"ăn\" 180, còn $543 - 180 = 363$; số trang 3 chữ số: $363 : 3 = 121$ trang → trang cuối là $99 + 121 = 220$. Đi xuôi bằng nhân, đi ngược bằng trừ dần rồi chia."
+    "text": "Bước 4 — BÀI NGƯỢC (trừ dần theo nhóm): một cuốn sách dùng hết 552 chữ số — dày bao nhiêu trang? Trừ dần: nhóm 1 chữ số \"ăn\" 9, còn 552 − 9 = 543; nhóm 2 chữ số \"ăn\" 180, còn 543 − 180 = 363; số trang 3 chữ số: 363 : 3 = 121 trang → trang cuối là 99 + 121 = 220. Đi xuôi bằng nhân, đi ngược bằng trừ dần rồi chia."
    }
   ],
   "mantra": "Đếm số: tìm ĐẦU - CUỐI - KHOẢNG rồi áp (cuối − đầu) : khoảng + 1 — và đừng bao giờ quên \"+ 1\". Đếm chữ số: chia nhóm theo độ dài số 1-9 | 10-99 | 100-999, mỗi nhóm một phép nhân. Bài ngược: bóc từng nhóm bằng phép trừ, nhóm cuối chia đều.",
@@ -49,9 +49,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Trí Long báo giá vèo: \"Kệ mã từ 8 đến 96 cách nhau 4 thì lấy ($96 - 8$) : $4 = 22$ nhãn! Còn sổ 250 trang thì 250 trang nhân 3 chữ số bằng 750 miếng — mua dư cho chắc!\"",
+    "wrong": "Trí Long báo giá vèo: \"Kệ mã từ 8 đến 96 cách nhau 4 thì lấy (96 − 8) : 4 = 22 nhãn! Còn sổ 250 trang thì 250 trang nhân 3 chữ số bằng 750 miếng — mua dư cho chắc!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Kiểm phép đếm nhãn bằng dãy tí hon 8, 12, 16 — đếm tay được mấy nhãn, công thức của Trí Long cho mấy? Thiếu ai trong hàng? Gợi ý 2: Có phải trang nào cũng \"ăn\" 3 miếng decal không? Trang số 7 cần mấy miếng? Lỗi của Trí Long là dùng MỘT khẩu phần cho mọi nhóm — tính lại theo ba nhóm và cho biết bác báo giá thừa bao nhiêu miếng ($750 - 642$ = ?)."
+    "fix": "Gợi ý 1: Kiểm phép đếm nhãn bằng dãy tí hon 8, 12, 16 — đếm tay được mấy nhãn, công thức của Trí Long cho mấy? Thiếu ai trong hàng? Gợi ý 2: Có phải trang nào cũng \"ăn\" 3 miếng decal không? Trang số 7 cần mấy miếng? Lỗi của Trí Long là dùng MỘT khẩu phần cho mọi nhóm — tính lại theo ba nhóm và cho biết bác báo giá thừa bao nhiêu miếng (750 − 642 = ?)."
    }
   ]
  },
@@ -104,14 +104,14 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: báo giá gửi cô thủ thư: \"Sổ kho 250 trang cần đúng 642 miếng decal chữ số; kệ mã 8-96 cách 4 cần 23 nhãn. Cô đặt in 642 + dự phòng 5% là đẹp.\" Con số chính xác giúp trường không lãng phí một đồng nào.\nSOI: soi ước lượng: đoán \"cỡ sáu trăm\" — ra 642, khớp cỡ. Soi công thức bằng dãy nhỏ: sách 12 trang đếm tay được 15 chữ số, công thức cho $9 + 3  \\times  2 = 15$ ✓ — công cụ đã kiểm định trước khi dùng cho hàng thật.\nDÙNG NGOÀI ĐỜI: mọi dự án in ấn, đặt vật tư theo dãy (biển số nhà, vé số thứ tự, huy hiệu giải chạy) đều cần phép đếm này — sai một nhóm là lệch cả đơn đặt hàng.",
+    "narration": "LẮP: báo giá gửi cô thủ thư: \"Sổ kho 250 trang cần đúng 642 miếng decal chữ số; kệ mã 8-96 cách 4 cần 23 nhãn. Cô đặt in 642 + dự phòng 5% là đẹp.\" Con số chính xác giúp trường không lãng phí một đồng nào.\nSOI: soi ước lượng: đoán \"cỡ sáu trăm\" — ra 642, khớp cỡ. Soi công thức bằng dãy nhỏ: sách 12 trang đếm tay được 15 chữ số, công thức cho 9 + 3 × 2 = 15 ✓ — công cụ đã kiểm định trước khi dùng cho hàng thật.\nDÙNG NGOÀI ĐỜI: mọi dự án in ấn, đặt vật tư theo dãy (biển số nhà, vé số thứ tự, huy hiệu giải chạy) đều cần phép đếm này — sai một nhóm là lệch cả đơn đặt hàng.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Trí Long báo giá vèo: \"Kệ mã từ 8 đến 96 cách nhau 4 thì lấy ($96 - 8$) : $4 = 22$ nhãn! Còn sổ 250 trang thì 250 trang nhân 3 chữ số bằng 750 miếng — mua dư cho chắc!\"",
+    "narration": "Trí Long báo giá vèo: \"Kệ mã từ 8 đến 96 cách nhau 4 thì lấy (96 − 8) : 4 = 22 nhãn! Còn sổ 250 trang thì 250 trang nhân 3 chữ số bằng 750 miếng — mua dư cho chắc!\"",
     "teaches": []
    }
   ]
@@ -121,72 +121,61 @@
   "problem": "Để đánh số trang một cuốn sổ dày 250 trang, cần dùng tất cả bao nhiêu chữ số?",
   "steps": [
    {
-    "show": "Sổ 250 trang, đánh số từ 1. Hỏi tổng số chữ số.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Đề ngắn nhưng vẫn tóm tắt — thói quen không bỏ.",
-    "phan": "tomtat"
+    "show": "Sổ 250 trang, đánh số từ 1. Hỏi tổng số chữ số."
    },
    {
-    "show": "Mô hình (chia nhóm)",
-    "phan": "tomtat"
+    "show": "Đề ngắn nhưng vẫn tóm tắt — thói quen không bỏ."
    },
    {
-    "show": "Nhóm 1: trang 1 - 9 (số có 1 chữ số)",
-    "phan": "tomtat"
+    "show": "Mô hình (chia nhóm)"
    },
    {
-    "show": "Nhóm 2: trang 10 - 99 (số có 2 chữ số)",
-    "phan": "tomtat"
+    "show": "Nhóm 1: trang 1 - 9 (số có 1 chữ số)"
    },
    {
-    "show": "Nhóm 3: trang 100 - 250 (số có 3 chữ số)",
-    "phan": "tomtat"
+    "show": "Nhóm 2: trang 10 - 99 (số có 2 chữ số)"
    },
    {
-    "show": "Chia nhóm theo ĐỘ DÀI số — trái tim của mô hình đếm chữ số.",
-    "phan": "tomtat"
+    "show": "Nhóm 3: trang 100 - 250 (số có 3 chữ số)"
    },
    {
-    "show": "Từ trang 1 đến trang 9 có 9 trang, dùng: $9  \\times  1 = 9$ (chữ số)",
-    "phan": "giai"
+    "show": "Chia nhóm theo ĐỘ DÀI số — trái tim của mô hình đếm chữ số."
    },
    {
-    "show": "Từ trang 10 đến trang 99 có 90 trang, dùng: $90  \\times  2 = 180$ (chữ số)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Từ trang 100 đến trang 250 có: ($250 - 100$) + $1 = 151$ (trang)",
-    "phan": "giai"
+    "show": "Từ trang 1 đến trang 9 có 9 trang, dùng: 9 × 1 = 9 (chữ số)"
    },
    {
-    "show": "Nhóm này dùng: $151  \\times  3 = 453$ (chữ số)",
-    "phan": "giai"
+    "show": "Từ trang 10 đến trang 99 có 90 trang, dùng: 90 × 2 = 180 (chữ số)"
    },
    {
-    "show": "Tổng số chữ số cần dùng là: $9 + 180 + 453 = 642$ (chữ số)",
-    "phan": "giai"
+    "show": "Từ trang 100 đến trang 250 có: (250 − 100) + 1 = 151 (trang)"
    },
    {
-    "show": "Mỗi nhóm hai dòng: đếm trang rồi nhân khẩu phần; dòng đếm 151 trang dùng đúng công thức +1.",
-    "phan": "giai"
+    "show": "Nhóm này dùng: 151 × 3 = 453 (chữ số)"
    },
    {
-    "show": "Đáp số: 642 chữ số.",
-    "phan": "dapso"
+    "show": "Tổng số chữ số cần dùng là: 9 + 180 + 453 = 642 (chữ số)"
    },
    {
-    "show": "Đáp số kèm đơn vị \"chữ số\".",
-    "phan": "ghichu"
+    "show": "Mỗi nhóm hai dòng: đếm trang rồi nhân khẩu phần; dòng đếm 151 trang dùng đúng công thức +1."
    },
    {
-    "show": "Thử lại: $642 - 9 - 180 = 453$ ; $453 : 3 = 151$ trang → trang cuối $99 + 151 = 250$ ✓",
-    "phan": "thulai"
+    "show": "Đáp số: 642 chữ số."
    },
    {
-    "show": "Soi bằng đường NGƯỢC (trừ dần) — xuôi ngược gặp nhau là chuẩn.",
-    "phan": "thulai"
+    "show": "Đáp số kèm đơn vị \"chữ số\"."
+   },
+   {
+    "show": "Thử lại: 642 − 9 − 180 = 453 ; 453 : 3 = 151 trang → trang cuối 99 + 151 = 250 ✓"
+   },
+   {
+    "show": "Soi bằng đường NGƯỢC (trừ dần) — xuôi ngược gặp nhau là chuẩn."
    }
   ]
  },
@@ -216,7 +205,7 @@
        }
       ]
      },
-     "solutionNarrative": "($100 - 5$) : $5 + 1 = 20$ số hạng.",
+     "solutionNarrative": "(100 − 5) : 5 + 1 = 20 số hạng.",
      "hints": [
       "Tìm ĐẦU, CUỐI, KHOẢNG rồi mới áp công thức.",
       "Hiệu chia khoảng ra số bước — đừng quên cộng 1."
@@ -237,7 +226,7 @@
        }
       ]
      },
-     "solutionNarrative": "Từ 1-9: 9 chữ số; từ 10-99: $90  \\times  2 = 180$ chữ số.",
+     "solutionNarrative": "Từ 1-9: 9 chữ số; từ 10-99: 90 × 2 = 180 chữ số.",
      "hints": [
       "Chia nhóm theo độ dài của số.",
       "Mỗi nhóm: số lượng nhân số chữ số của mỗi số."
@@ -251,7 +240,7 @@
      "answerKey": {
       "value": 22
      },
-     "solutionNarrative": "($96 - 12$) : $4 + 1 = 21 + 1 = 22$ số hạng.",
+     "solutionNarrative": "(96 − 12) : 4 + 1 = 21 + 1 = 22 số hạng.",
      "hints": [
       "Đầu, cuối, khoảng — rồi trừ, chia, cộng một.",
       "Số bước nhảy ít hơn số hạng đúng một."
@@ -263,7 +252,7 @@
      "answerKey": {
       "value": 40
      },
-     "solutionNarrative": "Dãy 5, 10, ..., 200 → ($200 - 5$) : $5 + 1 = 40$ số.",
+     "solutionNarrative": "Dãy 5, 10, ..., 200 → (200 − 5) : 5 + 1 = 40 số.",
      "hints": [
       "Viết dãy các bội: số đầu là gì, số cuối là gì?",
       "Rồi áp công thức trừ, chia, cộng một."
@@ -275,7 +264,7 @@
      "answerKey": {
       "value": 252
      },
-     "solutionNarrative": "$9 + 180$ + ($120 - 100 + 1$) × $3 = 9 + 180 + 63 = 252$ chữ số.",
+     "solutionNarrative": "9 + 180 + (120 − 100 + 1) × 3 = 9 + 180 + 63 = 252 chữ số.",
      "hints": [
       "Ba nhóm: một chữ số, hai chữ số, ba chữ số.",
       "Nhóm ba chữ số bắt đầu từ trang 100 — trừ rồi cộng một."
@@ -292,7 +281,7 @@
        }
       ]
      },
-     "solutionNarrative": "($75 - 5$) + $1 = 71$ trang — đọc \"từ trang 5 đến hết trang 75\" thì trang 5 cũng tính!",
+     "solutionNarrative": "(75 − 5) + 1 = 71 trang — đọc \"từ trang 5 đến hết trang 75\" thì trang 5 cũng tính!",
      "hints": [
       "Trang đầu tiên cũng phải tính.",
       "Trừ hai mốc rồi cộng thêm một."
@@ -306,7 +295,7 @@
      "answerKey": {
       "value": 220
      },
-     "solutionNarrative": "Trừ dần theo nhóm: $552 - 9 = 543$; $543 - 180 = 363$; $363 : 3 = 121$ trang ba chữ số → sách dày $99 + 121 = 220$ trang. Thử: $9 + 180 + 121  \\times  3 = 552$ ✓.",
+     "solutionNarrative": "Trừ dần theo nhóm: 552 − 9 = 543; 543 − 180 = 363; 363 : 3 = 121 trang ba chữ số → sách dày 99 + 121 = 220 trang. Thử: 9 + 180 + 121 × 3 = 552 ✓.",
      "hints": [
       "BÀI NGƯỢC: trừ dần theo từng nhóm.",
       "Trả nợ nhóm một chữ số, rồi nhóm hai chữ số, phần còn lại chia 3."
@@ -323,7 +312,7 @@
        }
       ]
      },
-     "solutionNarrative": "Bốn nhóm: 1-9: 9; 10-99: 180; 100-999: $900  \\times  3 = 2$ 700; 1000-1200: $201  \\times  4 = 804$. Tổng: $9 + 180 + 2 700 + 804 = 3$ 693 chữ số.",
+     "solutionNarrative": "Bốn nhóm: 1-9: 9; 10-99: 180; 100-999: 900 × 3 = 2 700; 1000-1200: 201 × 4 = 804. Tổng: 9 + 180 + 2 700 + 804 = 3 693 chữ số.",
      "hints": [
       "Cẩn thận — có tận BỐN nhóm.",
       "Nhóm bốn chữ số bắt đầu từ 1000, đếm bằng trừ rồi cộng một."
@@ -365,7 +354,7 @@
     "answerKey": {
      "choice": "A. 60"
     },
-    "solutionNarrative": "$300 : 5 = 60$."
+    "solutionNarrative": "300 : 5 = 60."
    },
    {
     "id": "Q4",
@@ -393,7 +382,7 @@
     "answerKey": {
      "choice": "A. 11 số"
     },
-    "solutionNarrative": "($90 - 30$) : $6 + 1 = 11$ số."
+    "solutionNarrative": "(90 − 30) : 6 + 1 = 11 số."
    }
   ]
  },

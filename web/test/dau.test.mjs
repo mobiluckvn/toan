@@ -115,7 +115,7 @@ t('học hết 12 micro của chương 1 → chương 1 xong',
    (hàm chia chương của Quyển 1) trả về chương 1 cho tất cả — chỉ cần con học dở một
    bài lớp 3 là VÒNG ĐẤU 1 khoá cứng dù đã học hết 12 micro của chương 1. Dính thật. */
 t('bài của quyển khác KHÔNG làm hỏng phép đếm chương Quyển 1',
-  chuongDaXong({ ...tienDo, 'DL:KSN4.B25': { pass: false }, 'DL:KSN3.B01': { pass: false } },
+  chuongDaXong({ ...tienDo, 'DL:KSN4.B30': { pass: false }, 'DL:KSN3.B01': { pass: false } },
                chuongCua).has(1));
 
 tienDo['DL:KSN5Q1.B4.M3'] = { pass: false };

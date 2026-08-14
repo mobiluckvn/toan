@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B38",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 38 · CHU VI VÀ DIỆN TÍCH HÌNH CHỮ NHẬT",
+ "title": "Bài 38 · SO SÁNH HAI PHÂN SỐ",
  "durationMinutes": 10,
  "so": 38,
- "chuong": 10,
- "tenChuong": "CHU VI, DIỆN TÍCH VÀ HÌNH KHỐI",
- "dangGoc": "HH 1.1 mức Lớp 4 — Diện tích với m², ha, đổi đơn vị · bài ngược 2 bước · kết hợp nửa chu vi với Tổng - Hiệu / Tổng - Tỉ",
+ "chuong": 9,
+ "tenChuong": "PHÂN SỐ",
+ "dangGoc": "PS 1.1 + PS 1.2 mức Lớp 4 — Quy đồng mẫu, cùng tử, so với 1 · phần bù, phần hơn, phân số trung gian",
  "skills": {
-  "bktUnit": "CHUONG:10@G4",
+  "bktUnit": "CHUONG:9@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Tính diện tích hình chữ nhật bằng công thức S = dài × rộng, hiểu nó là phép ĐẾM Ô 1 m²; phân biệt rạch ròi chu vi (m) và diện tích (m²). Đổi đơn vị lớn: 1 ha = 10 000 m² và giải bài ngược hai bước (có S và một cạnh, tìm cạnh kia rồi tìm chu vi). Giải bài kết hợp: từ chu vi lấy nửa chu vi làm TỔNG, ghép với hiệu hoặc tỉ để tìm hai cạnh, rồi mới tính diện tích.",
-  "kidText": "Sân chơi dài 30 m, rộng 20 m. Khai kinh phí lát gạch và khai hàng rào cần hai con số khác nhau đấy!",
+  "text": "So sánh hai phân số bằng quy đồng mẫu số; nhận diện nhanh trường hợp cùng tử (mẫu bé hơn thì phân số lớn hơn) và so với 1. Dùng lối tắt PHẦN BÙ cho các cặp \"suýt đầy\" như 7/8 và 9/10: ai thiếu ít hơn, người đó lớn hơn. Dùng phân số trung gian (cột mốc 1/2) để so các cặp \"xa lạ\" như 3/7 và 5/9.",
+  "kidText": "Hai chiếc bánh cùng cỡ: một bạn lấy 3/4 chiếc, một bạn lấy 5/8 chiếc. Phần ai nhiều hơn nhỉ?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — ĐẾM GẠCH BẰNG PHÉP NHÂN: mỗi hàng 30 viên gạch 1 $m^2$, có 20 hàng → S = $30  \\times  20 = 600$ ($m^2$). Còn viền: chu vi = ($30 + 20$) × $2 = 100$ (m). Hai câu hỏi, hai đơn vị, hai công thức — ghi hồ sơ nhầm cột là kinh phí sai bét!"
+    "text": "Bước 1 — ĐƯỜNG CÁI QUAN: QUY ĐỒNG MẪU SỐ: cắt mỗi lát tư làm đôi: 3/4 = 6/8. Giờ hai bên cùng cỡ lát tám: 6/8 > 5/8 → bạn áo đỏ được nhiều hơn! Tổng quát: nhân cả tử và mẫu với cùng một số, phân số không đổi — đó là phép \"cắt nhỏ lát mà không thay phần bánh\". Ví dụ khác: 2/3 và 3/5 → 10/15 và 9/15 → 2/3 lớn hơn."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — ĐƠN VỊ KHỔNG LỒ: HÉC-TA: đất đai rộng người ta đo bằng ha: 1 ha = một ô vuông cạnh 100 m = $100  \\times  100 = 10$ 000 $m^2$. Công viên 2 ha = 20 000 $m^2$ — sân chơi 600 $m^2$ của khu phố chỉ là mảnh nhỏ trong đó. Đổi xuôi nhân 10 000, đổi ngược chia 10 000."
+    "text": "Bước 2 — HAI LỐI TẮT DỄ: CÙNG TỬ & SO VỚI 1: cùng tử: 3/5 và 3/7 — cùng lấy 3 lát, bánh cắt 5 lát thì lát to hơn bánh cắt 7 lát → 3/5 > 3/7 (chia ít người, phần to!). So với 1: 5/4 có tử lớn hơn mẫu → hơn cả chiếc bánh → 5/4 > 1 > 7/8 — khỏi quy đồng."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — BÀI NGƯỢC HAI BƯỚC: hồ sơ cũ ghi: \"sân phụ có diện tích 600 $m^2$, chiều dài 30 m\" — rộng bao nhiêu, rào hết bao nhiêu mét? Bước một: rộng = S : dài = $600 : 30 = 20$ (m). Bước hai: chu vi = ($30 + 20$) × $2 = 100$ (m). Công thức S = dài × rộng chạy lùi y như bài tìm thừa số của Bài 6."
+    "text": "Bước 3 — LỐI TẮT PHẦN BÙ CHO CẶP \"SUÝT ĐẦY\": 7/8 và 9/10 — quy đồng ra mẫu 40 hơi cực. Nhìn phần THIẾU: 7/8 thiếu 1/8 nữa mới đầy; 9/10 chỉ thiếu 1/10. Mà 1/8 > 1/10 (cùng tử!) → 7/8 thiếu NHIỀU hơn → 7/8 < 9/10. Anh em của nó là PHẦN HƠN cho cặp \"quá đầy\": 5/4 hơn 1 những 1/4, 7/6 chỉ hơn 1/6 → 5/4 > 7/6."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — BẮT TAY CHƯƠNG 6 - 7: đề gộp: \"sân chu vi 100 m, dài hơn rộng 10 m — tính diện tích.\" Lột áo chu vi (Bài 20!): nửa chu vi = 50 = dài + rộng; Tổng - Hiệu: dài = ($50 + 10$) : $2 = 30$, rộng = 20 → S = 600 $m^2$. Gặp tỉ cũng vậy: nửa chu vi 50, dài : rộng = $3 : 2$ → một phần 10 → 30 và 20. Khẩu quyết: TÌM ĐỦ HAI CẠNH TRƯỚC — NHÂN DIỆN TÍCH SAU."
+    "text": "Bước 4 — MƯỢN CỘT MỐC TRUNG GIAN: 3/7 và 5/9 — chẳng cùng gì cả! Mượn cột mốc 1/2: 3/7 < 1/2 (vì 3 lát chưa được nửa của 7 lát — nửa của 7/7 là 3 lát rưỡi); còn 5/9 > 1/2 (5 lát vượt nửa của 9 lát). Kẻ dưới mốc thua kẻ trên mốc: 3/7 < 5/9. Cột mốc hay dùng: 1/2 và 1."
    }
   ],
-  "mantra": "Chu vi đo VIỀN (m), diện tích đo LÒNG (m²) — hai thế giới, đừng lẫn! S hình chữ nhật = dài × rộng; 1 ha = 10 000 m². Bài ngược: cạnh thiếu = S : cạnh biết. Bài gộp chu vi + hiệu (tỉ): nửa chu vi là TỔNG, giải Tổng - Hiệu hay Tổng - Tỉ ra hai cạnh rồi mới nhân.",
+  "mantra": "So phân số: liếc nhanh bốn lối tắt trước — CÙNG TỬ (mẫu bé thắng), SO VỚI 1, PHẦN BÙ (cặp suýt đầy: thiếu ít thắng), TRUNG GIAN (mượn mốc 1/2). Không lối nào hợp thì về đường cái QUY ĐỒNG MẪU SỐ. Luật thép: chưa cùng cỡ lát, cấm đếm lát mà so!",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Khai hồ sơ mảnh đất 1 ha, Trí Long viết: \"1 ha = 1 000 m² — thì 'ha' nghe ngắn hơn 'nghìn' có tí, chắc là một nghìn!\"",
+    "wrong": "So 2/3 với 3/5, Trí Long sáng kiến: \"Tử 2 < 3, mẫu 3 < 5 — bên kia toàn số to hơn, vậy 2/3 < 3/5 chắc luôn!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: 1 ha là ô vuông cạnh bao nhiêu mét? Lấy cạnh nhân cạnh xem ra bao nhiêu viên gạch 1 $m^2$? Gợi ý 2: $100  \\times  100$ tính cẩn thận bằng luật đếm chữ số 0 của Bài 4 — rồi sửa hồ sơ giúp Trí Long. Khai thiếu một chữ số 0 là kinh phí hụt... mười lần đấy!"
+    "fix": "Gợi ý 1: Soi thử bằng cặp dễ: 1/2 và 2/5 — tử 1 < 2, mẫu 2 < 5, theo \"luật\" của Trí Long thì 1/2 phải bé hơn. Mà nửa chiếc bánh với hai lát năm, bên nào nhiều hơn thật? Gợi ý 2: Phân số là MỘT giá trị, không phải hai con số rời để so từng tầng! Quy đồng 2/3 và 3/5 về mẫu 15 rồi phân xử chuẩn giúp Trí Long — và nhớ luật thép \"chưa cùng cỡ lát, cấm đếm lát\"."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Hạng mục đầu tiên của hồ sơ: sân chơi chính. Sân hình chữ nhật dài 30 m, rộng 20 m. Hỏi diện tích sân (để khai kinh phí lát gạch) và chu vi sân (để khai hàng rào)?"
+    "narration": "Hai chiếc bánh cùng cỡ: một bạn lấy 3/4 chiếc, một bạn lấy 5/8 chiếc. Hỏi phần bánh của ai nhiều hơn?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? sân hình chữ nhật dài 30 m, rộng 20 m.\nHỎI GÌ? diện tích sân (để khai kinh phí lát gạch) và chu vi sân (để khai hàng rào).\nĐẠI LƯỢNG & ĐƠN VỊ: độ dài (m) cho viền — nhưng phần lòng cần đơn vị MỚI: ô vuông cạnh 1 m, gọi là 1 $m^2$.\nQUAN HỆ GIỮA CHÚNG: phủ kín sân bằng lưới ô 1 $m^2$: mỗi hàng đặt được 30 ô, xếp được 20 hàng — tổng số ô là phép nhân $30  \\times  20$.\nCHỌN CÔNG CỤ: LƯỚI Ô VUÔNG + hai công thức tách bạch: S = dài × rộng ($m^2$); chu vi = (dài + rộng) × 2 (m).\nƯỚC LƯỢNG TRƯỚC: sân $30  \\times  20$ to gấp nhiều lần lớp học (~50 $m^2$) → S phải cỡ vài trăm mét vuông.",
+    "narration": "CHO GÌ? hai chiếc bánh cùng cỡ: một bạn lấy 3/4 chiếc, một bạn lấy 5/8 chiếc.\nHỎI GÌ? phần bánh của ai nhiều hơn.\nĐẠI LƯỢNG & ĐƠN VỊ: phần bánh (chiếc) — tử số đếm LÁT, nhưng lát của 3/4 và lát của 5/8 KHÁC CỠ nhau!\nQUAN HỆ GIỮA CHÚNG: muốn đếm lát mà so, phải đưa hai bên về cùng một cỡ lát — tức cùng MẪU SỐ; cắt mỗi lát tư thành hai được lát tám: 3/4 = 6/8.\nCHỌN CÔNG CỤ: QUY ĐỒNG MẪU SỐ + hộp bốn lối tắt cho các ca đặc biệt.\nƯỚC LƯỢNG TRƯỚC: ba lát tư là hơn nửa cái khá nhiều, năm lát tám chỉ nhỉnh hơn nửa — áo đỏ chắc thắng.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ sân chơi sang lưới ô một mét vuông"
+    "nhan": "NHỊP 1, DỊCH — từ hai khay bánh sang bài so phân số"
    },
    {
     "id": "S3",
@@ -104,89 +104,72 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: trang một của hồ sơ: \"Sân chính: lát gạch 600 m² — hàng rào 100 m.\" Bác tổ trưởng đối chiếu báo giá: mỗi mét vuông gạch một đơn giá, mỗi mét rào một đơn giá — hai con số tách bạch, phòng tài chính duyệt cái rẹt!\nSOI: soi hai lớp: đơn vị đúng cột (m² cho gạch, m cho rào) ✓; và ước lượng \"vài trăm mét vuông, to hơn chục lớp học\" khớp con số 600 ✓.\nDÙNG NGOÀI ĐỜI: tính gạch lát phòng, cỏ trải sân bóng, sơn tường nhà — mọi hóa đơn \"phủ kín bề mặt\" trong đời đều tính bằng viên gạch một mét vuông của hôm nay.",
+    "narration": "LẮP: phán quyết dán quầy bánh: \"3/4 chiếc = 6 lát tám > 5 lát tám. Bạn áo đỏ nhiều hơn đúng MỘT lát tám!\" Chị Ngọc Anh tặng bạn áo xanh thêm một lát tám cho huề — hai khách nhí đập tay vui vẻ.\nSOI: soi hai đường: quy đồng 6/8 > 5/8 ✓ và phần bù: 3/4 thiếu 1/4 = 2/8, 5/8 thiếu 3/8 — thiếu ít hơn thắng ✓. Hai lối một phán quyết.\nDÙNG NGOÀI ĐỜI: nửa cốc với hai phần ba cốc, ba phần tư giờ với bốn phần năm giờ — bếp núc và thời gian biểu đầy các cặp phân số chờ con phân xử.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Khai hồ sơ mảnh đất 1 ha, Trí Long viết: \"1 ha = 1 000 m² — thì 'ha' nghe ngắn hơn 'nghìn' có tí, chắc là một nghìn!\"",
+    "narration": "So 2/3 với 3/5, Trí Long sáng kiến: \"Tử 2 < 3, mẫu 3 < 5 — bên kia toàn số to hơn, vậy 2/3 < 3/5 chắc luôn!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Một sân chơi hình chữ nhật có chu vi 100 m, chiều dài hơn chiều rộng 10 m. Tính diện tích sân chơi đó.",
+  "problem": "So sánh hai phân số: 7/8 và 9/10.",
   "steps": [
    {
-    "show": "Chu vi: 100 m; dài hơn rộng: 10 m.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Tìm diện tích sân.",
-    "phan": "tomtat"
+    "show": "So sánh 7/8 và 9/10."
    },
    {
-    "show": "Đề hỏi diện tích nhưng cho chu vi — sẽ phải đi vòng qua hai cạnh.",
-    "phan": "tomtat"
+    "show": "Bài lệnh ngắn — tóm tắt một dòng là đủ."
    },
    {
-    "show": "Mô hình (hai chặng)",
-    "phan": "tomtat"
+    "show": "Mô hình (chọn lối tắt)"
    },
    {
-    "show": "Chặng 1: nửa chu vi = tổng hai cạnh → Tổng - Hiệu tìm dài, rộng.",
-    "phan": "tomtat"
+    "show": "Cả hai đều \"suýt đầy 1\" → dùng PHẦN BÙ"
    },
    {
-    "show": "Chặng 2: có đủ hai cạnh → S = dài × rộng.",
-    "phan": "tomtat"
+    "show": "So phần còn thiếu để đầy một đơn vị."
    },
    {
-    "show": "Vạch lộ trình hai chặng ngay từ mô hình — không nhảy cóc.",
-    "phan": "tomtat"
+    "show": "Nêu tên lối tắt và lý do chọn — dấu ấn dân nhà nghề."
    },
    {
-    "show": "Nửa chu vi sân là: $100 : 2 = 50$ (m)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Nửa chu vi chính là tổng của chiều dài và chiều rộng.",
-    "phan": "giai"
+    "show": "Ta có: 1 − 7/8 = 1/8 ; 1 − 9/10 = 1/10"
    },
    {
-    "show": "Chiều dài sân là: ($50 + 10$) : $2 = 30$ (m)",
-    "phan": "giai"
+    "show": "Vì 1/8 > 1/10 (hai phân số cùng tử, mẫu 8 < 10)"
    },
    {
-    "show": "Chiều rộng sân là: $30 - 10 = 20$ (m)",
-    "phan": "giai"
+    "show": "Nên 7/8 còn thiếu nhiều hơn 9/10."
    },
    {
-    "show": "Diện tích sân là: $30  \\times  20 = 600$ ($m^2$)",
-    "phan": "giai"
+    "show": "Vậy 7/8 < 9/10."
    },
    {
-    "show": "Năm dòng nối liền Bài 19 - 20 với công thức diện tích mới.",
-    "phan": "giai"
+    "show": "Chuỗi lập luận ba mắt xích: tính phần bù → so phần bù → kết luận ngược chiều."
    },
    {
-    "show": "Đáp số: 600 m².",
-    "phan": "dapso"
+    "show": "Đáp số: 7/8 < 9/10."
    },
    {
-    "show": "Đáp số kèm đơn vị m² — không phải m!",
-    "phan": "ghichu"
+    "show": "Kết luận viết bằng đúng ký hiệu so sánh."
    },
    {
-    "show": "Thử lại: ($30 + 20$) × $2 = 100$ ✓ ; $30 - 20 = 10$ ✓",
-    "phan": "thulai"
+    "show": "Thử lại (quy đồng): 7/8 = 35/40 ; 9/10 = 36/40 ; 35/40 < 36/40 ✓"
    },
    {
-    "show": "Thử ngược về hai dữ kiện gốc của đề: chu vi và hiệu.",
-    "phan": "thulai"
+    "show": "Đường cái quan kiểm chứng lối tắt — hai lối phải gặp nhau."
    }
   ]
  },
@@ -195,150 +178,240 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tính diện tích hình chữ nhật có chiều dài 8 m, chiều rộng 5 m.",
+     "text": "So sánh 3/8 và 5/8.",
      "answerKey": {
-      "value": 40
+      "parts": [
+       {
+        "label": "so sánh 3/8 với 5/8",
+        "options": [
+         "<",
+         ">",
+         "="
+        ],
+        "value": "<"
+       }
+      ]
      },
-     "solutionNarrative": "S = $8  \\times  5 = 40 m^2$.",
+     "solutionNarrative": "Cùng mẫu 8: 3/8 < 5/8.",
      "hints": [
-      "Diện tích đo LÒNG: dài nhân rộng.",
-      "Đơn vị phải là mét vuông."
+      "Cùng mẫu thì chỉ nhìn tử.",
+      "Cùng cỡ lát, ai lấy nhiều lát hơn thì hơn."
      ]
     },
     {
      "id": "C2",
-     "text": "Đổi: 3 ha = ? m².",
+     "text": "So sánh 3/4 và 3/5.",
      "answerKey": {
-      "value": 30000
+      "parts": [
+       {
+        "label": "so sánh 3/4 với 3/5",
+        "options": [
+         "<",
+         ">",
+         "="
+        ],
+        "value": ">"
+       }
+      ]
      },
-     "solutionNarrative": "3 ha = $3  \\times  10 000 = 30$ 000 $m^2$.",
+     "solutionNarrative": "Cùng tử 3: mẫu 4 < 5 → 3/4 > 3/5.",
      "hints": [
-      "Một héc-ta là ô vuông cạnh một trăm mét.",
-      "Nhân số héc-ta với diện tích một héc-ta."
+      "Lối tắt CÙNG TỬ: mẫu bé thì thắng.",
+      "Bánh cắt ít lát thì mỗi lát to hơn."
      ]
     },
     {
      "id": "C3",
-     "text": "Tính chu vi hình chữ nhật có chiều dài 30 m, chiều rộng 20 m.",
+     "text": "Trong các phân số 7/8 ; 9/8 ; 8/8 — phân số nào bé hơn 1, lớn hơn 1, bằng 1?",
      "answerKey": {
-      "value": 100
+      "parts": [
+       {
+        "label": "phân số bé hơn 1",
+        "options": [
+         "7/8",
+         "9/8",
+         "8/8"
+        ],
+        "value": "7/8"
+       },
+       {
+        "label": "phân số lớn hơn 1",
+        "options": [
+         "7/8",
+         "9/8",
+         "8/8"
+        ],
+        "value": "9/8"
+       },
+       {
+        "label": "phân số bằng 1",
+        "options": [
+         "7/8",
+         "9/8",
+         "8/8"
+        ],
+        "value": "8/8"
+       }
+      ]
      },
-     "solutionNarrative": "Chu vi = ($30 + 20$) × $2 = 100$ m.",
+     "solutionNarrative": "7/8 < 1 (tử < mẫu); 9/8 > 1; 8/8 = 1.",
      "hints": [
-      "Chu vi đo VIỀN: gom một cặp rồi nhân đôi.",
-      "Đơn vị là mét, không phải mét vuông."
+      "Lối tắt SO VỚI 1: nhìn tử với mẫu.",
+      "Tử bé hơn mẫu thì chưa đầy một cái bánh."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Sân chơi hình chữ nhật dài 30 m, rộng 20 m. Tính diện tích và chu vi sân.",
+     "text": "So sánh 3/4 và 5/8 bằng quy đồng mẫu số.",
      "answerKey": {
       "parts": [
        {
-        "label": "diện tích, tính bằng mét vuông",
-        "value": 600
-       },
-       {
-        "label": "chu vi, tính bằng mét",
-        "value": 100
+        "label": "so sánh 3/4 với 5/8",
+        "options": [
+         "<",
+         ">",
+         "="
+        ],
+        "value": ">"
        }
       ]
      },
-     "solutionNarrative": "S = $30  \\times  20 = 600 m^2$; chu vi = 100 m — hai đơn vị, hai cột hồ sơ!",
+     "solutionNarrative": "3/4 = 6/8 > 5/8 → 3/4 lớn hơn.",
      "hints": [
-      "Hai thế giới — làm riêng từng cái.",
-      "Ghi đúng đơn vị cho từng cột hồ sơ."
+      "Đường cái quan: quy về cùng cỡ lát.",
+      "Cắt mỗi lát tư làm đôi thì thành lát mấy?"
      ]
     },
     {
      "id": "C5",
-     "text": "Một sân hình chữ nhật có diện tích 600 m², chiều dài 30 m. Tính chiều rộng và chu vi sân.",
+     "text": "So sánh 2/3 và 3/5.",
      "answerKey": {
       "parts": [
        {
-        "label": "chiều dài",
-        "value": 20
-       },
-       {
-        "label": "chiều rộng",
-        "value": 100
+        "label": "so sánh 2/3 với 3/5",
+        "options": [
+         "lớn hơn",
+         "bé hơn",
+         "bằng nhau"
+        ],
+        "value": "lớn hơn"
        }
       ]
      },
-     "solutionNarrative": "Rộng = $600 : 30 = 20$ m; chu vi = ($30 + 20$) × $2 = 100$ m.",
+     "solutionNarrative": "2/3 = 10/15 ; 3/5 = 9/15 → 2/3 lớn hơn.",
      "hints": [
-      "BÀI NGƯỢC: cạnh thiếu bằng diện tích chia cạnh đã biết.",
-      "Có đủ hai cạnh rồi mới tính chu vi."
+      "Chẳng cùng tử cũng chẳng cùng mẫu — quy đồng thôi.",
+      "Chọn mẫu chung là tích của hai mẫu."
      ]
     },
     {
      "id": "C6",
-     "text": "Sân hình chữ nhật có chu vi 100 m, chiều dài hơn chiều rộng 10 m. Tính diện tích sân.",
+     "text": "So sánh 7/8 và 9/10 bằng phần bù.",
      "answerKey": {
-      "value": 600
+      "parts": [
+       {
+        "label": "so sánh 7/8 với 9/10",
+        "options": [
+         "<",
+         ">",
+         "="
+        ],
+        "value": "<"
+       }
+      ]
      },
-     "solutionNarrative": "Nửa chu vi 50; dài = ($50 + 10$) : $2 = 30$ m; rộng = 20 m → S = 600 $m^2$.",
+     "solutionNarrative": "Phần bù 1/8 > 1/10 → 7/8 thiếu nhiều hơn → 7/8 < 9/10.",
      "hints": [
-      "Lột áo chu vi ra nửa vòng đã.",
-      "Có tổng và hiệu thì ra hai cạnh, rồi mới nhân."
+      "Cặp suýt đầy — nhìn phần THIẾU.",
+      "Thiếu nhiều hơn thì bé hơn."
      ]
     },
     {
      "id": "C7",
-     "text": "Sân hình chữ nhật có nửa chu vi 50 m, chiều dài và chiều rộng theo tỉ số $3 : 2$. Tính diện tích sân.",
+     "text": "So sánh 5/4 và 7/6 bằng phần hơn (so phần vượt quá 1).",
      "answerKey": {
-      "value": 600
+      "parts": [
+       {
+        "label": "so sánh 5/4 với 7/6",
+        "options": [
+         "<",
+         ">",
+         "="
+        ],
+        "value": ">"
+       }
+      ]
      },
-     "solutionNarrative": "Một phần $50 : 5 = 10$ → dài 30 m, rộng 20 m → S = 600 $m^2$.",
+     "solutionNarrative": "Phần hơn 1/4 > 1/6 → 5/4 > 7/6.",
      "hints": [
-      "Nửa chu vi chính là tổng hai cạnh.",
-      "Tổng - Tỉ ra hai cạnh, rồi mới nhân."
+      "Cả hai đều vượt quá 1 — so phần VƯỢT.",
+      "Vượt nhiều hơn thì hơn."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Thửa ruộng hình chữ nhật có diện tích 1 ha và chiều rộng 50 m. Tính chiều dài và chu vi thửa ruộng. (Nhớ đổi ha ra m² trước!)",
+     "text": "So sánh 3/7 và 5/9 bằng cách mượn cột mốc trung gian 1/2.",
      "answerKey": {
       "parts": [
        {
-        "label": "chiều dài",
-        "value": 200
-       },
-       {
-        "label": "chiều rộng",
-        "value": 500
+        "label": "so sánh 3/7 với 5/9",
+        "options": [
+         "<",
+         ">",
+         "="
+        ],
+        "value": "<"
        }
       ]
      },
-     "solutionNarrative": "1 ha = 10 000 $m^2$ → dài = 10 $000 : 50 = 200$ m; chu vi = ($200 + 50$) × $2 = 500$ m.",
+     "solutionNarrative": "3/7 < 1/2 (nửa của 7 phần là 3 phần rưỡi, mà tử chỉ 3); 5/9 > 1/2 (nửa của 9 là 4 phần rưỡi, tử những 5) → 3/7 < 5/9.",
      "hints": [
-      "Đổi héc-ta ra mét vuông trước đã.",
-      "Rồi chia cho cạnh đã biết."
+      "Mượn cột mốc một nửa.",
+      "Nửa của mẫu là bao nhiêu, tử có vượt qua không?"
      ]
     },
     {
      "id": "C9",
-     "text": "Một hình chữ nhật có chu vi 100 m và diện tích 600 m². Tìm chiều dài và chiều rộng — gợi ý: tổng hai cạnh là 50, hãy thử các cặp có tổng 50 một cách CÓ HỆ THỐNG xem cặp nào nhân ra 600.",
+     "text": "Xếp ba phân số 7/8 ; 9/10 ; 5/6 theo thứ tự từ bé đến lớn — chỉ dùng MỘT phép so phần bù cho cả ba!",
      "answerKey": {
       "parts": [
        {
-        "label": "chiều dài, tính bằng mét",
-        "value": 30
+        "label": "phân số bé nhất",
+        "options": [
+         "5/6",
+         "7/8",
+         "9/10"
+        ],
+        "value": "5/6"
        },
        {
-        "label": "chiều rộng, tính bằng mét",
-        "value": 20
+        "label": "phân số ở giữa",
+        "options": [
+         "5/6",
+         "7/8",
+         "9/10"
+        ],
+        "value": "7/8"
+       },
+       {
+        "label": "phân số lớn nhất",
+        "options": [
+         "5/6",
+         "7/8",
+         "9/10"
+        ],
+        "value": "9/10"
        }
       ]
      },
-     "solutionNarrative": "Tổng hai cạnh $100 : 2 = 50$. Thử có hệ thống các cặp tổng 50: $40  \\times  10 = 400$; $35  \\times  15 = 525$; $30  \\times  20 = 600$ ✓ → dài 30 m, rộng 20 m. (Càng gần vuông tích càng lớn — nên dò từ giữa dò ra là nhanh nhất!)",
+     "solutionNarrative": "Phần bù: 5/6 thiếu 1/6; 7/8 thiếu 1/8; 9/10 thiếu 1/10. Cùng tử: 1/6 > 1/8 > 1/10 → thiếu càng nhiều càng bé: 5/6 < 7/8 < 9/10.",
      "hints": [
-      "Nửa chu vi cho tổng hai cạnh.",
-      "Thử CÓ HỆ THỐNG các cặp có tổng ấy, dò từ giữa dò ra."
+      "Cả ba đều suýt đầy — dùng phần bù.",
+      "Ba phần thiếu ấy cùng tử, so mẫu là xong."
      ]
     }
    ]
@@ -349,7 +422,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Diện tích hình chữ nhật bằng chiều dài nhân chiều rộng.",
+    "text": "Hai phân số cùng tử số, phân số nào có mẫu bé hơn thì lớn hơn.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -358,61 +431,61 @@
    },
    {
     "id": "Q2",
-    "text": "1 ha = 1 000 m².",
+    "text": "Phân số 5/4 bé hơn 1.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "1 ha = 10 000 m² (ô vuông cạnh 100 m)."
+    "solutionNarrative": "5/4 có tử lớn hơn mẫu nên lớn hơn 1."
    },
    {
     "id": "Q3",
-    "text": "Diện tích hình chữ nhật 7 m × 6 m là:",
+    "text": "So sánh 1/2 và 2/5:",
     "format": "mcq",
     "choices": [
-     "A. 42 m²",
-     "B. 26 m²",
-     "C. 13 m²"
+     "A. 1/2 lớn hơn",
+     "B. 2/5 lớn hơn",
+     "C. bằng nhau"
     ],
     "answerKey": {
-     "choice": "A. 42 m²"
+     "choice": "A. 1/2 lớn hơn"
     },
-    "solutionNarrative": "42 m²)."
+    "solutionNarrative": "1/2 = 5/10 > 4/10 = 2/5."
    },
    {
     "id": "Q4",
-    "text": "2 ha bằng:",
+    "text": "So sánh 4/9 và 4/7:",
     "format": "mcq",
     "choices": [
-     "A. 20 000 m²",
-     "B. 2 000 m²",
-     "C. 200 m²"
+     "A. 4/7 lớn hơn",
+     "B. 4/9 lớn hơn",
+     "C. bằng nhau"
     ],
     "answerKey": {
-     "choice": "A. 20 000 m²"
+     "choice": "A. 4/7 lớn hơn"
     },
-    "solutionNarrative": "20 000 m²)."
+    "solutionNarrative": "Cùng tử, mẫu 7 bé hơn."
    },
    {
     "id": "Q5",
-    "text": "Hình chữ nhật có diện tích 24 m², chiều dài 6 m. Chiều rộng là:",
+    "text": "Phân số lớn nhất trong 9/10 ; 7/8 ; 1/2 là:",
     "format": "mcq",
     "choices": [
-     "A. 4 m",
-     "B. 18 m",
-     "C. 30 m"
+     "A. 9/10",
+     "B. 7/8",
+     "C. 1/2"
     ],
     "answerKey": {
-     "choice": "A. 4 m"
+     "choice": "A. 9/10"
     },
-    "solutionNarrative": "$24 : 6 = 4$ m."
+    "solutionNarrative": "Phần bù 1/10 nhỏ nhất."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Vẽ phấn một ô 1 m × 1 m ra sân (hay ghép 4 tờ báo) cho con NGỒI VÀO trong một mét vuông — trải nghiệm cơ thể ấy chống lẫn lộn m với m² tốt hơn trăm lần nhắc miệng.",
-  "homeActivity": "Đo phòng ngủ của chính con: dài, rộng, rồi tính diện tích và \"khai hồ sơ\" xem lát kín sàn cần bao nhiêu viên gạch 1 m² — bài tập thật, số thật, động lực thật.",
-  "watchFor": "NÊN: mỗi đáp số bắt kèm đơn vị và câu \"con số này đo viền hay đo lòng?\". KHÔNG NÊN: hình chữ L ghép nhiều mảnh hay đơn vị dm², cm² trộn lẫn — phức hợp xin hẹn bài sau và lớp 5."
+  "onComplete": "Cắt bánh (hoặc gấp giấy) thật: một tờ gấp tư tô 3 ô, một tờ gấp tám tô 5 ô — chồng hai tờ lên nhau soi qua ánh sáng, mắt thấy ngay bên nào nhiều hơn trước khi tay tính.",
+  "homeActivity": "Luyện phản xạ \"chọn lối\": đọc một cặp phân số, con chỉ hô tên lối tắt sẽ dùng (cùng tử / so 1 / phần bù / trung gian / quy đồng) — chọn đúng lối là xong nửa bài.",
+  "watchFor": "NÊN: dùng các cặp phân số \"đẹp\" mẫu nhỏ như trong bài. KHÔNG NÊN: cặp mẫu to phải quy đồng lắt léo (13/17 với 15/19) — kỹ thuật nhân chéo hẹn lớp trên."
  },
  "figureSpec": [
   {
@@ -421,8 +494,8 @@
     "hook"
    ],
    "file": "figures/L4H_B38_MO.png",
-   "caption": "Sân chữ nhật, mới biết chu vi và phần hơn.",
-   "sha256_16": "f377ee4513528eb4",
+   "caption": "Hai phân số trên hai cái bánh TO BẰNG NHAU.",
+   "sha256_16": "7d188747b62601b8",
    "mucGoc": "chuyenMoBai"
   },
   {
@@ -431,20 +504,38 @@
     "screen:S4"
    ],
    "file": "figures/L4H_B38_G2.png",
-   "caption": "Lưới ô vuông đếm được từng mét vuông.",
-   "sha256_16": "5f67110151aed141",
+   "caption": "So phần CÒN THIẾU của mỗi cái bánh.",
+   "sha256_16": "f09995a764eef20c",
    "mucGoc": "khamPha"
+  },
+  {
+   "id": "L4H_B38_C9",
+   "usedIn": [
+    "item:C9"
+   ],
+   "file": "figures/L4H_B38_C9.png",
+   "caption": "Ba phân số trên ba cái bánh TO BẰNG NHAU.",
+   "sha256_16": "38404e861e923bf0",
+   "mucGoc": "luyenTap"
+  },
+  {
+   "id": "L4H_B38_C9_G",
+   "usedIn": [
+    "item:C9:giai"
+   ],
+   "file": "figures/L4H_B38_C9_G.png",
+   "caption": "Chỉ MỘT phép so phần bù là xếp được cả ba.",
+   "sha256_16": "7c32a246c8e5f87a",
+   "mucGoc": "luyenTap"
   }
  ],
- "hatMam": "Bài 15 và Bài 20 con đã thạo chu vi — độ dài đường VIỀN quanh hình. Hôm nay đo thứ khác hẳn: phần LÒNG bên trong, gọi là DIỆN TÍCH, đếm bằng viên gạch 1 m². Và tin vui cho - chia phần: các bài diện tích khó nhất chỉ là Tổng - Hiệu, Tổng - Tỉ quen thuộc... mặc áo bản vẽ!",
+ "hatMam": "Ở trường con vừa làm quen phân số: tử số đếm số lát lấy đi, mẫu số đếm bánh cắt mấy lát. nâng cấp ngay kỹ năng sống còn của đầu bếp: SO SÁNH. Đường cái quan là quy đồng mẫu số; nhưng dân nhà nghề còn giắt lưng bốn lối tắt — cùng tử, so với 1, phần bù và phân số trung gian — nhanh gấp mấy lần đường cái!",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B27",
-   "DL:KSN3.B30"
+   "DL:KSN3.B09"
   ],
   "ten": [
-   "CHU VI CÓ CÔNG THỨC",
-   "DIỆN TÍCH — TẤM THẢM Ô VUÔNG"
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

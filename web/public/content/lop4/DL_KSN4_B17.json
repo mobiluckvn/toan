@@ -2,15 +2,15 @@
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN4.B17",
  "grade": 4,
- "quyen": "lop4",
- "title": "Bài 17 · HƠN KÉM MỨC TRUNG BÌNH BAO NHIÊU?",
+ "quyen": "KSN4",
+ "title": "Bài 17 · SỐ NÀY CÓ THUỘC DÃY KHÔNG — VÀ ĐỨNG THỨ MẤY",
  "durationMinutes": 10,
  "so": 17,
- "chuong": 5,
- "tenChuong": "TRUNG BÌNH CỘNG",
- "dangGoc": "LV 1.2 mức Lớp 4 — \"Một số lớn hơn TBC của cả nhóm k đơn vị\" · sơ đồ san bằng với 3 số",
+ "chuong": 4,
+ "tenChuong": "DÃY SỐ",
+ "dangGoc": "Dạng gốc: SỐ 5.1e mức Lớp 4 — Kiểm tra thuộc dãy bằng phép chia hết, và tìm vị trí.",
  "skills": {
-  "bktUnit": "CHUONG:5@G4",
+  "bktUnit": "CHUONG:4@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Hiểu \"cao hơn / thấp hơn mức trung bình k đơn vị\" trên sơ đồ san bằng (cột nhô - cột hụt). Dùng định luật cân bằng: tổng phần vượt = tổng phần hụt quanh mức trung bình. Giải bài ba số kiểu \"biết TBC và độ vượt - hụt của vài số, tìm số còn lại\" bằng cả hai đường: qua tổng và qua vượt - hụt.",
-  "kidText": "Ba bạn cao trung bình 130 cm; An hơn mức ấy 4 cm, Bình kém 2 cm, còn Cường mất số đo. Cường cao bao nhiêu?",
+  "text": "Kiểm tra được một số có thuộc dãy cách đều hay không, bằng phép chia hết. Nếu số ấy thuộc dãy thì tìm được nó đứng ở vị trí thứ mấy. Biết rằng còn phải xét số ấy có nằm trong khoảng từ số đầu đến số cuối không.",
+  "kidText": "Ghế đầu các hàng trong rạp mang số 1, 9, 17, 25… Khách cầm vé số 113 hỏi mình có được ngồi sát lối đi không — con soi giúp cô nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,37 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — THÍ NGHIỆM BA CỐC NƯỚC: rót 100 ml, 130 ml, 160 ml vào ba cốc giống nhau rồi san cho đều: mực chung 130 ml. Nhìn kỹ trước khi san: cốc 160 VƯỢT mực chung 30, cốc 100 HỤT 30, cốc 130 đứng im — phần vượt rót đi đâu? Rót đúng vào phần hụt: $30 = 30$. Nước không bay hơi giọt nào!"
+    "text": "Bước 1 — MỌI SỐ HẠNG ĐỀU CÁCH SỐ ĐẦU MỘT SỐ NGUYÊN LẦN KHOẢNG CÁCH. Nhìn dãy 1 ; 9 ; 17 ; 25: lấy từng số trừ số đầu được 0 ; 8 ; 16 ; 24 — toàn bộ đều chia hết cho 8. Đó là dấu vân tay của dãy."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — ĐỊNH LUẬT CÂN BẰNG: tổng phần vượt = tổng phần hụt (quanh mức trung bình). Vì sao? San cho đều chỉ CHUYỂN từ chỗ thừa sang chỗ thiếu, tổng không đổi — nên thừa bao nhiêu phải lấp vừa khít bấy nhiêu."
+    "text": "Bước 2 — CÁCH SOI. Muốn biết số x có thuộc dãy không, lấy (x − số đầu) rồi chia cho khoảng cách. CHIA HẾT thì x thuộc dãy; CÒN DƯ thì không."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — GIẢI PHIẾU ĐO BẰNG HAI CON ĐƯỜNG: đường vượt - hụt: An vượt 4; Bình hụt 2 → còn thiếu $4 - 2 = 2$ phần hụt → Cường hụt 2 → Cường cao $130 - 2 = 128$ (cm). Đường qua tổng (để soi): tổng ba bạn = $130  \\times  3 = 390$; An = 134, Bình = 128 → Cường = $390 - 134 - 128 = 128$ ✓. Hai đường một đáp số!"
+    "text": "Bước 3 — SOI VÉ 113. (113 − 1) : 8 = 112 : 8 = 14, chia hết → số 113 THUỘC dãy. Vậy đúng là một ghế đầu hàng."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — CẶP MẮT VƯỢT - HỤT LỢI HẠI CỠ NÀO: câu đố nhanh: hai bạn, A cao hơn mức trung bình CỦA HAI BẠN 5 cm — hỏi A cao hơn B bao nhiêu? Với hai người, A vượt 5 thì B phải hụt đúng 5 → A hơn B những $5 + 5 = 10$ cm. Không cần biết ai cao bao nhiêu — cặp mắt vượt - hụt nhìn xuyên qua cả những bài thiếu số liệu!"
+    "text": "Bước 4 — NÓ ĐỨNG THỨ MẤY. Phép chia vừa rồi cho ra 14 — đó là SỐ BƯỚC NHẢY từ số đầu tới nó. Mà chỗ thì nhiều hơn bước đúng 1 (Bài 15 đã nói), nên vị trí = 14 + 1 = 15. Vé 113 là ghế đầu của hàng 15!"
+   },
+   {
+    "id": "K5",
+    "text": "Bước 5 — KHI CÒN DƯ THÌ SAO. Vé 100: (100 − 1) : 8 = 99 : 8 = 12 dư 3 → KHÔNG thuộc dãy ghế-đầu-hàng. Khách này không được ngồi sát lối đi."
+   },
+   {
+    "id": "K6",
+    "text": "Bước 6 — MỘT CHỐT NỮA DỄ QUÊN. Chia hết CHƯA ĐỦ. Số ấy còn phải nằm TRONG khoảng từ số đầu đến số cuối. Dãy 1 ; 9 ; 17 ; ... ; 57 (rạp chỉ có 8 hàng) thì số 113 tuy chia hết nhưng đã vượt quá số cuối — nó KHÔNG thuộc dãy ấy."
    }
   ],
-  "mantra": "Gặp chữ \"hơn / kém mức trung bình\": vẽ ngay VẠCH trung bình rồi đánh dấu cột nhô - cột hụt. Định luật cân bằng: tổng vượt = tổng hụt. Giải xong một đường, soi bằng đường kia (qua cây cầu TỔNG của Bài 16) — luôn có hai con đường về đích.",
+  "mantra": "soi ba việc theo thứ tự — (1) trừ số đầu; (2) chia cho khoảng cách, xem hết hay dư; (3) nếu hết thì cộng 1 ra vị trí, rồi kiểm xem có vượt quá số cuối không.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Đọc đề \"An cao hơn mức trung bình của ba bạn 4 cm\", Trí Long gật gù: \"Tức là An cao hơn MỖI bạn kia 4 cm chứ gì — vậy Bình và Cường đều cao 130 cm!\"",
+    "wrong": "Cô hỏi số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không, Trí Long soi: \"79 chia 4 được 19 dư 3, còn dư nên không thuộc dãy ạ!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: \"Mức trung bình\" là một VẠCH chung, đâu phải chiều cao của từng bạn! Nếu Bình và Cường đều cao đúng 130 thì cùng An 134, trung bình ba bạn còn là 130 nữa không — tính thử xem? Gợi ý 2: Lỗi nằm ở nhịp DỊCH: \"hơn mức trung bình\" bị dịch thành \"hơn từng người\". Vẽ vạch 130 và ba cột theo đúng đề (An +4, Bình −2), rồi dùng định luật cân bằng tìm Cường giúp Trí Long."
+    "fix": "Gợi ý 1: Con thử cách của Trí Long với chính số 3 — số hạng ĐẦU của dãy: 3 chia 4 dư 3. Vậy theo cách ấy thì số 3 cũng không thuộc dãy à? Gợi ý 2: Trước khi chia, con phải TRỪ số đầu đi đã. Dãy này bắt đầu từ 3 chứ không phải từ 0. Chữa: lấy (79 − 3) : 4 = 19, chia hết → số 79 THUỘC dãy, đứng thứ 20."
    }
   ]
  },
@@ -60,14 +68,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Ba bạn có chiều cao trung bình 130 cm; An cao hơn mức trung bình 4 cm; Bình thấp hơn mức trung bình 2 cm; số đo của Cường bị mất. Hỏi chiều cao của Cường (và của cả An, Bình để điền lại phiếu)?"
+    "narration": "Dãy ghế đầu hàng: 1 ; 9 ; 17 ; 25 ; ... — cách đều, số đầu 1, khoảng cách 8. Hỏi số 113 có thuộc dãy không; nếu thuộc thì đứng thứ mấy?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? ba bạn có chiều cao trung bình 130 cm; An cao hơn mức trung bình 4 cm; Bình thấp hơn mức trung bình 2 cm; số đo của Cường bị mất.\nHỎI GÌ? chiều cao của Cường (và của cả An, Bình để điền lại phiếu).\nĐẠI LƯỢNG & ĐƠN VỊ: chiều cao (cm) — mọi so sánh đều so với VẠCH trung bình 130 cm, không so trực tiếp bạn với bạn.\nQUAN HỆ GIỮA CHÚNG: quanh vạch trung bình, phần nhô lên của người này phải được bù bằng phần hụt xuống của người khác — tổng vượt bằng tổng hụt.\nCHỌN CÔNG CỤ: SƠ ĐỒ SAN BẰNG: kẻ vạch 130, vẽ cột An nhô 4, cột Bình hụt 2 — nhìn ngay phần Cường phải gánh.\nƯỚC LƯỢNG TRƯỚC: An nhô 4 mà Bình mới hụt 2 → Cường phải hụt nốt 2 → Cường cỡ 128 cm.",
+    "narration": "CHO GÌ? dãy ghế đầu hàng: 1 ; 9 ; 17 ; 25 ; ... — cách đều, số đầu 1, khoảng cách 8.\nHỎI GÌ? số 113 có thuộc dãy không; nếu thuộc thì đứng thứ mấy.\nĐẠI LƯỢNG & ĐƠN VỊ: số ghế (chiếc) và số thứ tự hàng — hai loại số khác nhau, đúng như con đã phân biệt ở Bài 13.\nQUAN HỆ GIỮA CHÚNG: mọi số hạng của dãy đều bằng số đầu cộng một số nguyên lần khoảng cách.\nCHỌN CÔNG CỤ: phép CHIA HẾT — dấu hiệu chia hết của Chương 3 quay lại gác cổng cho bài này.\nƯỚC LƯỢNG TRƯỚC: 113 gần 112 = 8 × 14, nên khả năng cao là thuộc dãy.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ phiếu đo nhòe sang sơ đồ vượt - hụt"
+    "nhan": "NHỊP 1, DỊCH"
    },
    {
     "id": "S3",
@@ -104,89 +112,67 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: phiếu đo phục dựng gửi cô phụ trách: \"An 134 cm — Bình 128 cm — Cường 128 cm. Cô cứ đặt áo, không cần gọi ba em đo lại!\" Một tờ phiếu nhòe được cứu bằng một định luật.\nSOI: soi kép: $134 + 128 + 128 = 390 = 130  \\times  3$ ✓; và bảng vượt - hụt: +4 ; −2 ; −2 — cộng lại tròn 0, cân như chiếc cân đĩa. Hai phép soi độc lập cùng gật đầu.\nDÙNG NGOÀI ĐỜI: nghe bản tin \"lượng mưa tháng này cao hơn trung bình nhiều năm\", \"điểm em vượt trung bình lớp\" — từ nay con hiểu chính xác các câu ấy đang so với VẠCH nào.",
+    "narration": "",
+    "teaches": [
+     "K5"
+    ]
+   },
+   {
+    "id": "S8",
+    "kind": "explain",
+    "narration": "",
+    "teaches": [
+     "K6"
+    ]
+   },
+   {
+    "id": "S9",
+    "kind": "explain",
+    "narration": "LẮP: cô Hạnh dán ở quầy vé một dòng: \"Ghế đầu hàng là các số chia 8 dư 1. Muốn biết hàng mấy: lấy (số ghế − 1) : 8 rồi cộng 1.\"\nSOI: soi chéo bằng công thức Bài 14 — số hạng thứ 15 = 1 + 8 × (15 − 1) = 1 + 112 = 113 ✓. Hai con đường một đáp số.\nDÙNG NGOÀI ĐỜI: xem ngày 25 có phải Chủ nhật không khi biết Chủ nhật đầu tháng là ngày 4; xem số nhà 87 có nằm bên dãy lẻ không; xem chuyến xe buýt chạy cách nhau 15 phút có chuyến nào đúng 8 giờ 45 không.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
-    "id": "S8",
+    "id": "S10",
     "kind": "trap",
-    "narration": "Đọc đề \"An cao hơn mức trung bình của ba bạn 4 cm\", Trí Long gật gù: \"Tức là An cao hơn MỖI bạn kia 4 cm chứ gì — vậy Bình và Cường đều cao 130 cm!\"",
+    "narration": "Cô hỏi số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không, Trí Long soi: \"79 chia 4 được 19 dư 3, còn dư nên không thuộc dãy ạ!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Chiều cao trung bình của ba bạn An, Bình, Cường là 130 cm. An cao hơn mức trung bình 4 cm, Bình thấp hơn mức trung bình 2 cm. Tính chiều cao của Cường.",
+  "problem": "Số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không? Nếu thuộc thì đứng thứ mấy? Còn số 100 thì sao?",
   "steps": [
    {
-    "show": "TBC ba bạn: 130 cm; An: hơn TBC 4 cm",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Bình: kém TBC 2 cm. Tìm chiều cao Cường.",
-    "phan": "tomtat"
+    "show": "Dãy cách đều, số đầu 3, khoảng cách 4."
    },
    {
-    "show": "Ghi độ vượt - hụt kèm dấu \"hơn / kém\" — dữ kiện vàng của bài.",
-    "phan": "tomtat"
+    "show": "Kiểm khoảng cách: 7 − 3 = 4 ; 11 − 7 = 4 ✓."
    },
    {
-    "show": "Sơ đồ (vạch san bằng)",
-    "phan": "tomtat"
+    "show": "Soi số 79"
    },
    {
-    "show": "Vạch trung bình: 130 cm",
-    "phan": "tomtat"
+    "show": "79 − 3 = 76 ; 76 : 4 = 19, chia hết → số 79 THUỘC dãy."
    },
    {
-    "show": "An: nhô 4 | Bình: hụt 2 | Cường: hụt ?",
-    "phan": "tomtat"
+    "show": "Vị trí = 19 + 1 = 20."
    },
    {
-    "show": "Sơ đồ chỉ cần một vạch và ba cột — đơn giản mà lộ hết bài toán.",
-    "phan": "tomtat"
+    "show": "Soi lại bằng công thức Bài 14: 3 + 4 × (20 − 1) = 3 + 76 = 79 ✓."
    },
    {
-    "show": "Chiều cao của An là: $130 + 4 = 134$ (cm)",
-    "phan": "giai"
+    "show": "Soi số 100"
    },
    {
-    "show": "Chiều cao của Bình là: $130 - 2 = 128$ (cm)",
-    "phan": "giai"
+    "show": "100 − 3 = 97 ; 97 : 4 = 24 dư 1 → còn dư, nên số 100 KHÔNG thuộc dãy."
    },
    {
-    "show": "Vì tổng phần vượt bằng tổng phần hụt nên Cường thấp hơn mức trung bình",
-    "phan": "giai"
-   },
-   {
-    "show": "$4 - 2 = 2$ (cm)",
-    "phan": "giai"
-   },
-   {
-    "show": "Chiều cao của Cường là: $130 - 2 = 128$ (cm)",
-    "phan": "giai"
-   },
-   {
-    "show": "Câu \"vì tổng phần vượt bằng tổng phần hụt\" là căn cứ — thiếu nó phép trừ $4 - 2$ thành vô lý.",
-    "phan": "giai"
-   },
-   {
-    "show": "Đáp số: 128 cm.",
-    "phan": "dapso"
-   },
-   {
-    "show": "Đáp số kèm đơn vị.",
-    "phan": "ghichu"
-   },
-   {
-    "show": "Thử lại: ($134 + 128 + 128$) : $3 = 390 : 3 = 130$ ✓",
-    "phan": "thulai"
-   },
-   {
-    "show": "Soi bằng đường qua tổng — hai con đường phải gặp nhau.",
-    "phan": "thulai"
+    "show": "Đáp số: 79 thuộc dãy và đứng thứ 20; 100 không thuộc dãy."
    }
   ]
  },
@@ -195,129 +181,211 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Ba cốc nước có 100 ml ; 130 ml ; 160 ml. San cho đều thì mỗi cốc có bao nhiêu mi-li-lít?",
+     "text": "Dãy 3 ; 7 ; 11 ; ... có số đầu và khoảng cách bằng mấy? Muốn soi một số có thuộc dãy không, việc đầu tiên phải làm là gì?",
      "answerKey": {
-      "value": 130
+      "parts": [
+       {
+        "label": "số đầu",
+        "value": 3
+       },
+       {
+        "label": "khoảng cách",
+        "value": 4
+       }
+      ]
      },
-     "solutionNarrative": "($100 + 130 + 160$) : $3 = 390 : 3 = 130$ (ml).",
+     "solutionNarrative": "Số đầu 3, khoảng cách 4. Việc đầu tiên: lấy số cần soi TRỪ số đầu.",
      "hints": [
-      "San cho đều — cộng cả ba rồi chia ba.",
-      "Tổng không đổi khi san."
+      "Nhìn hai số đầu của dãy.",
+      "Và nhớ: trừ số đầu trước đã."
      ]
     },
     {
      "id": "C2",
-     "text": "Chiều cao trung bình của ba bạn là 130 cm. Nam cao hơn mức trung bình 4 cm. Nam cao bao nhiêu xăng-ti-mét?",
+     "text": "Số 23 có thuộc dãy 3 ; 7 ; 11 ; ... không?",
      "answerKey": {
-      "value": 134
+      "parts": [
+       {
+        "label": "số 23 có thuộc dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
      },
-     "solutionNarrative": "$130 + 4 = 134$ (cm).",
+     "solutionNarrative": "(23 − 3) : 4 = 5, chia hết → số 23 THUỘC dãy.",
      "hints": [
-      "Vẽ VẠCH trung bình rồi đánh dấu cột nhô.",
-      "Cao hơn vạch bao nhiêu thì cộng bấy nhiêu."
+      "Lấy 23 trừ số đầu.",
+      "Rồi chia cho khoảng cách xem hết hay dư."
      ]
     },
     {
      "id": "C3",
-     "text": "Vẫn nhóm trên, Hoa thấp hơn mức trung bình 2 cm. Hoa cao bao nhiêu?",
+     "text": "Số 30 có thuộc dãy 2 ; 6 ; 10 ; ... không?",
      "answerKey": {
-      "value": 128
+      "parts": [
+       {
+        "label": "số 30 có thuộc dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
      },
-     "solutionNarrative": "$130 - 2 = 128$ (cm).",
+     "solutionNarrative": "(30 − 2) : 4 = 7, chia hết → số 30 THUỘC dãy.",
      "hints": [
-      "Cột hụt thì nằm dưới vạch.",
-      "Thấp hơn vạch bao nhiêu thì trừ bấy nhiêu."
+      "Trừ số đầu trước.",
+      "Chia hết thì thuộc, còn dư thì không."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Trong một nhóm ba bạn, bạn A góp hơn mức trung bình 3 nghìn đồng, bạn B góp đúng mức trung bình. Hỏi bạn C góp hơn hay kém mức trung bình, và hơn kém bao nhiêu?",
+     "text": "Số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không? Nếu thuộc thì đứng thứ mấy?",
      "answerKey": {
-      "value": 3
+      "parts": [
+       {
+        "label": "số 79 có thuộc dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "đứng thứ",
+        "value": 20
+       }
+      ]
      },
-     "solutionNarrative": "A vượt 3, B đứng đúng vạch → C phải HỤT 3 nghìn (tổng vượt = tổng hụt).",
+     "solutionNarrative": "(79 − 3) : 4 = 19 chia hết → thuộc dãy, đứng thứ 19 + 1 = 20.",
      "hints": [
-      "Định luật cân bằng: tổng vượt bằng tổng hụt.",
-      "Bạn đứng đúng vạch thì không góp phần nào."
+      "Số 79 trừ số đầu được bao nhiêu?",
+      "Phép chia cho ra số bước, còn thiếu chỗ đầu tiên."
      ]
     },
     {
      "id": "C5",
-     "text": "Ba bạn góp quỹ, trung bình mỗi bạn 12 nghìn đồng. A góp hơn mức trung bình 3 nghìn, B góp đúng mức trung bình. Hỏi C góp bao nhiêu nghìn đồng?",
+     "text": "Số 100 có thuộc dãy 3 ; 7 ; 11 ; ... không?",
      "answerKey": {
       "parts": [
        {
-        "label": "C góp bao nhiêu nghìn đồng",
-        "value": 9
+        "label": "số 100 có thuộc dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
        }
       ]
      },
-     "solutionNarrative": "C góp $12 - 3 = 9$ (nghìn đồng). Soi qua tổng: $15 + 12 + 9 = 36 = 12  \\times  3$ ✓.",
+     "solutionNarrative": "(100 − 3) : 4 = 97 : 4 = 24 dư 1 → còn dư, nên KHÔNG thuộc dãy.",
      "hints": [
-      "Tìm phần hụt bằng định luật cân bằng.",
-      "Rồi lấy vạch trừ đi phần hụt ấy."
+      "Trừ số đầu rồi chia thử.",
+      "Còn dư nghĩa là rơi vào giữa hai số hạng."
      ]
     },
     {
      "id": "C6",
-     "text": "Trung bình cộng của ba số là 20. Số thứ nhất là 24, số thứ hai là 18. Tìm số thứ ba bằng đường vượt - hụt, rồi soi lại bằng đường qua tổng.",
+     "text": "Số 113 có thuộc dãy 1 ; 9 ; 17 ; ... không? Nếu thuộc thì đứng thứ mấy?",
      "answerKey": {
       "parts": [
        {
-        "label": "số thứ ba",
-        "value": 18
+        "label": "số 113 có thuộc dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "đứng thứ",
+        "value": 15
        }
       ]
      },
-     "solutionNarrative": "Đường vượt - hụt: số 1 vượt 4, số 2 hụt 2 → số 3 hụt $4 - 2 = 2$ → bằng $20 - 2 = 18$. Soi qua tổng: $60 - 24 - 18 = 18$ ✓.",
+     "solutionNarrative": "(113 − 1) : 8 = 14 chia hết → thuộc dãy, đứng thứ 15.",
      "hints": [
-      "Đánh dấu vượt - hụt của hai số đã biết.",
-      "Số thứ ba phải bù cho cân, rồi soi lại bằng đường tổng."
+      "Khoảng cách là 8.",
+      "Chia xong nhớ cộng một để ra chỗ đứng."
      ]
     },
     {
      "id": "C7",
-     "text": "Hai bạn A và B: A cao hơn mức trung bình của HAI bạn 5 cm. Hỏi A cao hơn B bao nhiêu xăng-ti-mét?",
+     "text": "Số 52 có thuộc dãy 7 ; 12 ; 17 ; ... không? Nếu thuộc thì đứng thứ mấy?",
      "answerKey": {
-      "value": 10
+      "parts": [
+       {
+        "label": "số 52 có thuộc dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "đứng thứ",
+        "value": 10
+       }
+      ]
      },
-     "solutionNarrative": "A vượt vạch chung 5 → B hụt đúng 5 → A hơn B: $5 + 5 = 10$ (cm).",
+     "solutionNarrative": "(52 − 7) : 5 = 9 chia hết → thuộc dãy, đứng thứ 10.",
      "hints": [
-      "Hai người thì vạch nằm chính giữa.",
-      "Bên này vượt bao nhiêu thì bên kia hụt đúng bấy nhiêu."
+      "Khoảng cách là 5.",
+      "Trừ số đầu trước đã."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Đội bóng đá ba trận, trung bình mỗi trận 3 bàn. Trận 1 ghi nhiều hơn mức trung bình 2 bàn, trận 2 ghi ít hơn mức trung bình 1 bàn. Hỏi trận 3 ghi mấy bàn?",
+     "text": "Dãy 1 ; 9 ; 17 ; ... ; 57. Hỏi số 113 có thuộc dãy này không? Chú ý đọc kỹ số CUỐI của dãy.",
      "answerKey": {
       "parts": [
        {
-        "label": "số bàn trận 3",
-        "value": 2
+        "label": "số 113 có thuộc dãy này không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
        }
       ]
      },
-     "solutionNarrative": "Trận 1 vượt 2, trận 2 hụt 1 → trận 3 hụt $2 - 1 = 1$ → ghi $3 - 1 = 2$ (bàn). Thử: $5 + 2 + 2 = 9 = 3  \\times  3$ ✓.",
+     "solutionNarrative": "(113 − 1) : 8 = 14 chia hết, nhưng 113 đã VƯỢT QUÁ số cuối 57, nên số 113 KHÔNG thuộc dãy này. Chia hết thôi chưa đủ.",
      "hints": [
-      "Cộng phần vượt, cộng phần hụt, rồi cân lại.",
-      "Trận ba phải hụt đúng phần còn dư ra."
+      "Chia thử xem có hết không.",
+      "Rồi đọc kỹ số cuối của dãy — dãy này dừng ở đâu?"
      ]
     },
     {
      "id": "C9",
-     "text": "Nhóm bốn bạn góp quỹ. Tí góp hơn mức trung bình CỦA CẢ NHÓM 6 nghìn đồng. Hỏi Tí góp hơn mức trung bình của BA BẠN CÒN LẠI bao nhiêu? (Gợi ý: phần vượt 6 nghìn của Tí là phần hụt chung của ba bạn — chia đều cho ba xem vạch của họ tụt xuống bao nhiêu.)",
+     "text": "Cho dãy 4 ; 9 ; 14 ; ... ; 99. Số 64 có thuộc dãy không, đứng thứ mấy? Hãy soi lại kết quả bằng công thức số hạng thứ n.",
      "answerKey": {
-      "value": 8
+      "parts": [
+       {
+        "label": "số 64 có thuộc dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "đứng thứ",
+        "value": 13
+       }
+      ]
      },
-     "solutionNarrative": "Phần vượt 6 nghìn của Tí là phần hụt chung của ba bạn → vạch của ba bạn thấp hơn vạch nhóm: $6 : 3 = 2$ (nghìn) → Tí hơn mức trung bình của ba bạn còn lại: $6 + 2 = 8$ (nghìn đồng).",
+     "solutionNarrative": "(64 − 4) : 5 = 12 chia hết, và 64 nằm giữa 4 và 99 → thuộc dãy, đứng thứ 13. Soi lại: 4 + 5 × (13 − 1) = 4 + 60 = 64 ✓.",
      "hints": [
-      "Phần vượt của Tí chính là phần hụt chung của ba bạn.",
-      "Chia đều phần ấy cho ba xem vạch của họ tụt bao nhiêu."
+      "Số 64 trừ số đầu rồi chia cho khoảng cách.",
+      "Kiểm cả hai điều: chia hết, và nằm trong dãy."
      ]
     }
    ]
@@ -328,7 +396,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Quanh mức trung bình, tổng phần vượt bằng tổng phần hụt.",
+    "text": "Muốn soi một số có thuộc dãy không, phải lấy số ấy TRỪ số đầu rồi mới chia cho khoảng cách.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -337,61 +405,61 @@
    },
    {
     "id": "Q2",
-    "text": "Trong một nhóm, nếu một bạn cao hơn mức trung bình thì mọi bạn còn lại đều thấp hơn mức trung bình.",
+    "text": "Cứ chia hết cho khoảng cách là số ấy chắc chắn thuộc dãy.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Chỉ cần TỔNG phần hụt cân với phần vượt; vẫn có bạn đứng đúng vạch hoặc cùng vượt (miễn có chỗ hụt bù đủ)."
+    "solutionNarrative": "SAI — còn phải kiểm số ấy có nằm trong khoảng từ số đầu đến số cuối không."
    },
    {
     "id": "Q3",
-    "text": "TBC của ba số là 15; hai số là 15 và 12. Số thứ ba là:",
+    "text": "Số 52 với dãy 7 ; 12 ; 17 ; ...:",
     "format": "mcq",
     "choices": [
-     "A. 18",
-     "B. 15",
-     "C. 12"
+     "A. thuộc dãy, đứng thứ 10",
+     "B. không thuộc dãy",
+     "C. thuộc dãy, đứng thứ 9"
     ],
     "answerKey": {
-     "choice": "A. 18"
+     "choice": "A. thuộc dãy, đứng thứ 10"
     },
-    "solutionNarrative": "$45 - 27 = 18$."
+    "solutionNarrative": "(52 − 7) : 5 = 9 chia hết → vị trí 9 + 1 = 10."
    },
    {
     "id": "Q4",
-    "text": "A cao hơn mức trung bình của hai bạn A, B là 4 cm. A cao hơn B:",
+    "text": "Phép chia (x − số đầu) : khoảng cách nếu CÒN DƯ thì nghĩa là:",
     "format": "mcq",
     "choices": [
-     "A. 8 cm",
-     "B. 4 cm",
-     "C. 2 cm"
+     "A. x không thuộc dãy",
+     "B. x thuộc dãy",
+     "C. x là số hạng cuối"
     ],
     "answerKey": {
-     "choice": "A. 8 cm"
+     "choice": "A. x không thuộc dãy"
     },
-    "solutionNarrative": "A vượt 4, B hụt 4 → hơn nhau 8 cm."
+    "solutionNarrative": "Còn dư nghĩa là x rơi vào giữa hai số hạng."
    },
    {
     "id": "Q5",
-    "text": "Ba cốc 90 ; 120 ; 150 ml san cho đều, mỗi cốc có:",
+    "text": "Số 113 với dãy 1 ; 9 ; 17 ; ... đứng ở vị trí thứ:",
     "format": "mcq",
     "choices": [
-     "A. 120 ml",
-     "B. 130 ml",
-     "C. 110 ml"
+     "A. 15",
+     "B. 14",
+     "C. 16"
     ],
     "answerKey": {
-     "choice": "A. 120 ml"
+     "choice": "A. 15"
     },
-    "solutionNarrative": "$360 : 3 = 120$ ml."
+    "solutionNarrative": "(113 − 1) : 8 = 14 bước nhảy, nên vị trí là 14 + 1 = 15."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Thí nghiệm ba cốc nước là \"bài giảng\" hay nhất của bài này — làm thật một lần trên bàn ăn, nhớ hỏi trước khi san: \"cốc nào sẽ cho, cốc nào sẽ nhận, cho bao nhiêu?\"",
-  "homeActivity": "Câu 7 (A hơn TBC hai người 5 thì hơn B những 10) đáng nhâm nhi cùng con: nhiều người lớn cũng trả lời sai! Ai giải thích được bằng vượt - hụt, người đó thật sự hiểu trung bình.",
-  "watchFor": "NÊN: rèn thói quen soi bằng \"bảng vượt - hụt cộng lại bằng 0\". KHÔNG NÊN: đưa bài nhóm 5-6 số với nhiều tầng hơn - kém đan xen — mức ấy của lớp 5, lớp 4 dừng ở nhóm 3 số có sơ đồ."
+  "onComplete": "Mở tờ lịch, chỉ vào một Chủ nhật rồi hỏi con: \"Ngày 25 có phải Chủ nhật không?\" — cho con soi bằng phép trừ rồi chia 7.",
+  "homeActivity": "Nhắc con một câu duy nhất khi làm dạng này: TRỪ SỐ ĐẦU TRƯỚC ĐÃ. Quên bước ấy là sai cả bài, và đó đúng là lỗi Trí Long mắc.",
+  "watchFor": ""
  },
  "figureSpec": [
   {
@@ -400,22 +468,20 @@
     "hook"
    ],
    "file": "figures/L4H_B17_MO.png",
-   "caption": "Ba cột quanh vạch trung bình, phần vượt và phần hụt.",
-   "sha256_16": "d1b376722c67ef96",
+   "caption": "Trừ số đầu trước đã, rồi mới chia cho khoảng cách.",
+   "sha256_16": "b7b70b408a97db75",
    "mucGoc": "chuyenMoBai"
   }
  ],
- "hatMam": "Bài 16 con đã có công thức và cây cầu TỔNG. Bài này thêm một cặp mắt mới: nhìn mỗi số theo độ VƯỢT hay HỤT so với vạch trung bình. Cặp mắt ấy mở ra định luật đẹp nhất chương — tổng phần vượt luôn bằng tổng phần hụt — và giúp con giải nhiều bài mà... khỏi cần tính tổng!",
+ "hatMam": "Lớp 3, ở Bài 11, con đã soi \"ga này tàu có dừng không\" bằng phép chia dư. Hôm nay việc ấy trở lại với đúng tên gọi của nó: cho một số bất kỳ, hỏi nó có nằm trong dãy không — và nếu có thì nó đứng ở chỗ thứ mấy.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B18",
-   "DL:KSN3.B19"
+   "DL:KSN3.B11"
   ],
   "ten": [
-   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
-   "THÊM BỚT ĐỂ BẰNG NHAU"
+   "GA NÀY TÀU CÓ DỪNG KHÔNG?"
   ],
-  "canCu": "chuDe",
+  "canCu": "sach",
   "lopDuoi": 3,
   "nhan": "Học lại bài lớp 3"
  }

@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B30",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 30 · PHƯƠNG PHÁP GIẢ THIẾT TẠM",
+ "title": "Bài 30 · BÀI TOÁN HIỆU - TỈ",
  "durationMinutes": 10,
  "so": 30,
- "chuong": 8,
- "tenChuong": "BÀI TOÁN CÓ LỜI VĂN",
- "dangGoc": "LV 8.2 mức Lớp 4 — Phương pháp giả thiết tạm chuẩn: gà - chó · vé và tiền hàng hai mệnh giá",
+ "chuong": 7,
+ "tenChuong": "TỔNG - TỈ VÀ HIỆU - TỈ",
+ "dangGoc": "LV 4.1 + LV 4.2 mức Lớp 4 — Tìm hai số biết hiệu và tỉ số · hiệu ẩn (tuổi bất biến, \"bớt thì bằng\")",
  "skills": {
-  "bktUnit": "CHUONG:8@G4",
+  "bktUnit": "CHUONG:7@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Nắm ba bước giả thiết tạm: giả sử tất cả cùng một loại → so độ lệch với thực tế → chia độ lệch cho mức đổi một con. Giải chuẩn bài gà - chó đếm chân và bài vé (tiền hàng) hai mệnh giá. Luôn thử lại bằng cách \"đếm chân\" trên đáp số thật.",
-  "kidText": "Chuồng có 36 con gà và chó, đếm được 100 cái chân. Con đoán mỗi loài mấy con nhé!",
+  "text": "Giải bài Hiệu - Tỉ: hiệu số phần = phần lớn − phần bé; một phần = hiệu : hiệu số phần. Phân biệt chớp nhoáng: đề cho TỔNG → chia tổng số phần; đề cho HIỆU → chia hiệu số phần. Xử lý hiệu ẩn quen mặt: hiệu tuổi bất biến theo thời gian; \"bớt số lớn đi k thì bằng nhau\" → hiệu = k.",
+  "kidText": "Truyện gấp 3 lần thơ, mà ngăn truyện nhiều hơn ngăn thơ 24 cuốn. Lần này đề không cho tổng đâu nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — GIẢ SỬ CẢ 36 CON ĐỀU LÀ GÀ: thế giới giả có $36  \\times  2 = 72$ (cái chân). Chọn giả sử \"toàn gà\" (loại ÍT chân) cho phép trừ thuận chiều — giả sử toàn chó cũng được, khi ấy sẽ THỪA chân thay vì thiếu."
+    "text": "Bước 1 — SƠ ĐỒ VỚI NGOẶC HIỆU: hàng \"Truyện\" 3 ô, hàng \"Thơ\" 1 ô — bốn ô đều nhau; nhưng lần này ngoặc KHÔNG ôm cả hai hàng: mũi tên chỉ vào phần truyện NHÔ RA so với thơ, ghi 24 cuốn. Vị trí chiếc ngoặc nói cho ta biết đề cho tổng hay cho hiệu."
    },
    {
     "id": "K2",
-    "text": "Bước 2 — SO ĐỘ LỆCH VỚI THỰC TẾ: thực tế 100 chân — thế giới giả thiếu $100 - 72 = 28$ (cái chân). Ai giấu chân? Chính các chú chó bị \"hô biến\" thành gà: mỗi chú bị tính hụt $4 - 2 = 2$ (cái chân)."
+    "text": "Bước 2 — HIỆU SỐ PHẦN VÀ MỘT PHẦN: phần nhô ra gồm 3 − 1 = 2 (phần) — và 2 phần ấy chứa 24 cuốn → một phần = 24 : 2 = 12 (cuốn). Thơ = 12 × 1 = 12; truyện = 12 × 3 = 36 (cuốn). Thử kép kiểu Hiệu - Tỉ: 36 − 12 = 24 ✓ và 36 = 12 × 3 ✓."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — CHIA ĐỘ LỆCH CHO MỨC ĐỔI: số chó = $28 : 2 = 14$ (con) → số gà = $36 - 14 = 22$ (con). Thử \"đếm chân\" trên đáp số: $14  \\times  4 + 22  \\times  2 = 56 + 44 = 100$ ✓ và $14 + 22 = 36$ ✓. Không cần đuổi bắt con nào!"
+    "text": "Bước 3 — HIỆU ẨN KIỂU TUỔI (bắt tay Bài 22): \"bố hơn con 27 tuổi, tuổi bố gấp 4 lần tuổi con\" — hiệu 27 dùng thẳng vì hiệu tuổi bất biến! Hiệu số phần 4 − 1 = 3 → một phần 27 : 3 = 9 → con 9 tuổi, bố 36 tuổi. Định luật Chương 6 và sơ đồ Chương 7 bắt tay nhau ngọt lịm."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — CÙNG CHIÊU VỚI TẤM VÉ HAI GIÁ: quầy bán 30 vé gồm loại 2 nghìn và 5 nghìn, thu 99 nghìn. Giả sử cả 30 vé đều 2 nghìn: thu 60; thiếu $99 - 60 = 39$; mỗi vé 5 nghìn bị \"hạ giá\" hụt $5 - 2 = 3$ → vé 5 nghìn: $39 : 3 = 13$; vé 2 nghìn: 17. Thử: $13  \\times  5 + 17  \\times  2 = 65 + 34 = 99$ ✓. Gà chó hay vé xe — cùng một bộ ba bước!"
+    "text": "Bước 4 — HIỆU ẨN KIỂU \"BỚT THÌ BẰNG\" (bắt tay Bài 21): \"hai số có tỉ 5 : 2; bớt số lớn đi 9 thì hai số bằng nhau\" — chỉ MỘT bên thay đổi → hiệu = 9 (sổ tay Bài 21!). Hiệu số phần 5 − 2 = 3 → một phần 9 : 3 = 3 → hai số là 6 và 15. Thử theo kịch bản: 15 − 9 = 6 ✓."
    }
   ],
-  "mantra": "Giả thiết tạm ba bước: ① GIẢ SỬ tất cả cùng loại \"nhẹ\" nhất; ② SO độ lệch giữa thế giới giả và thực tế; ③ CHIA độ lệch cho mức chênh của MỘT lần đổi loại. Nhận diện đề: hai loại có \"mệnh giá\" khác nhau (chân, giá vé, chỗ ngồi) + biết tổng số lượng và tổng giá trị.",
+  "mantra": "Hiệu - Tỉ chỉ khác Tổng - Tỉ đúng MỘT chỗ: chia cho HIỆU SỐ PHẦN (phần lớn − phần bé). Đọc đề gạch chân ngay: chữ \"tất cả / tổng cộng\" → tổng; chữ \"hơn / kém / nhiều hơn\" → hiệu. Hiệu ẩn cứ tra sổ tay Chương 6: tuổi thì bất biến, \"bớt k thì bằng\" thì hiệu bằng k.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Bài \"10 con vừa gà vừa chó, 28 cái chân\", Trí Long làm gọn: \"Giả sử toàn gà: 20 chân, thiếu 8. Mỗi con chó có 4 chân, vậy số chó là $8 : 4 = 2$ con, gà 8 con!\"",
+    "wrong": "Trí Long giải bài \"gà mái gấp 5 lần gà trống và nhiều hơn 32 con\": \"Tỉ 5 : 1, tổng phần 6, một phần bằng 32 : 6... ơ lại lẻ! Chắc đề sai tiếp rồi!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Thử đếm chân đáp số của Trí Long: $2  \\times  4 + 8  \\times  2 = 24$ — có ra 28 không? Con dấu thử lại từ chối đóng! Gợi ý 2: Khi một chú chó bị giả làm gà, nó giấu đi MẤY cái chân — cả 4 cái hay chỉ phần CHÊNH $4 - 2$? Chia lại độ lệch cho đúng \"mức chênh một lần đổi\" và đếm chân kiểm chứng giúp Trí Long."
+    "fix": "Gợi ý 1: Con số 32 của đề đứng cạnh chữ gì — \"tất cả\" hay \"nhiều hơn\"? Nó là tổng đàn gà hay phần mái ĐÔNG HƠN trống? Gợi ý 2: Kết quả lẻ lại một lần nữa là chuông báo của nhịp SOI — đề không sai, người giải rẽ nhầm nhánh! Chia lại theo nhánh Hiệu - Tỉ (hiệu số phần 5 − 1) và thử kép giúp Trí Long — rồi cùng cậu ấy đặt câu câu cần nhớ phân nhánh dán lên bàn học."
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Gà và chó tổng cộng 36 con; đếm được 100 cái chân. Hỏi số gà, số chó trong chuồng?"
+    "narration": "Số truyện gấp 3 lần số thơ; ngăn truyện nhiều hơn ngăn thơ 24 cuốn. Hỏi số cuốn mỗi ngăn?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? gà và chó tổng cộng 36 con; đếm được 100 cái chân.\nHỎI GÌ? số gà, số chó trong chuồng.\nĐẠI LƯỢNG & ĐƠN VỊ: con (con) và chân (cái) — gà 2 chân, chó 4 chân: hai \"mệnh giá chân\" khác nhau.\nQUAN HỆ GIỮA CHÚNG: nếu cả chuồng toàn gà thì số chân tính được ngay ($36  \\times  2$); phần THIẾU so với 100 chỉ có thể do các chú chó — mỗi chó \"giấu\" đúng 2 chân khi bị coi là gà.\nCHỌN CÔNG CỤ: GIẢ THIẾT TẠM ba bước: giả sử → so lệch → chia mức đổi.\nƯỚC LƯỢNG TRƯỚC: thiếu gần ba chục chân, mỗi chó bù 2 → chó cỡ mười mấy con.",
+    "narration": "CHO GÌ? số truyện gấp 3 lần số thơ; ngăn truyện nhiều hơn ngăn thơ 24 cuốn.\nHỎI GÌ? số cuốn mỗi ngăn.\nĐẠI LƯỢNG & ĐƠN VỊ: số sách (cuốn) — con số 24 là phần CHÊNH LỆCH giữa hai ngăn, không phải cả tủ!\nQUAN HỆ GIỮA CHÚNG: truyện 3 phần, thơ 1 phần → phần chênh lệch giữa hai bên là 3 − 1 = 2 phần, và 2 phần ấy chứa đúng 24 cuốn.\nCHỌN CÔNG CỤ: SƠ ĐỒ PHẦN với ngoặc HIỆU: mũi tên nối chỗ hai hàng lệch nhau, ghi 24; một phần = hiệu : hiệu số phần.\nƯỚC LƯỢNG TRƯỚC: một phần cỡ chục cuốn → thơ hơn chục, truyện vài chục.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ chuồng gà chó sang thế giới \"giả sử\""
+    "nhan": "NHỊP 1, DỊCH — nhận diện đề cho HIỆU, không cho tổng"
    },
    {
     "id": "S3",
@@ -104,89 +104,78 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: tin nhắn gửi bác Hòa: \"Chuồng nhà bác: 22 gà và 14 chó — cháu đếm bằng... trí tưởng tượng, không con nào phải chạy!\" Bác Hòa đối chiếu sổ mua giống: đúng phóc. Bác phục lăn: \"Toán gì mà như phép thuật!\"\nSOI: soi kép trên đáp số thật: đủ 36 con ✓, đủ 100 chân ✓; và ước lượng \"chó mười mấy con\" trúng. Phép thuật nào của cũng phải qua hai con dấu kiểm chứng.\nDÙNG NGOÀI ĐỜI: đếm xe đạp - xe ba bánh ở bãi gửi, kiểm vé hai hạng của buổi diễn, đối soát tiền hai mệnh giá trong két — giả thiết tạm là \"kính nhìn xuyên\" của mọi bài hai loại lẫn lộn.",
+    "narration": "LẮP: biên bản gửi cô thủ thư: \"Ngăn truyện 36 cuốn - ngăn thơ 12 cuốn.\" Cô kiểm đếm thật: khớp từng cuốn! Cô thưởng quyền mượn truyện mới về đầu tiên — phần thưởng đúng chất mọt sách.\nSOI: soi kép: 36 − 12 = 24 ✓; 36 : 12 = 3 ✓; và soi cả \"vị trí ngoặc\": nếu coi 24 là tổng sẽ ra thơ 6, truyện 18 — nhưng 18 − 6 = 12 ≠ 24, trật đề ngay. Đọc sai một chữ, lệch cả bài!\nDÙNG NGOÀI ĐỜI: so sánh giá hai món hàng (\"đắt hơn 24 nghìn, gấp 3 lần\"), so tuổi ông cháu, so chiều cao hai cây — đời sống đầy các cặp \"hơn kém + gấp nhau\", nay con xử gọn.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Bài \"10 con vừa gà vừa chó, 28 cái chân\", Trí Long làm gọn: \"Giả sử toàn gà: 20 chân, thiếu 8. Mỗi con chó có 4 chân, vậy số chó là $8 : 4 = 2$ con, gà 8 con!\"",
+    "narration": "Trí Long giải bài \"gà mái gấp 5 lần gà trống và nhiều hơn 32 con\": \"Tỉ 5 : 1, tổng phần 6, một phần bằng 32 : 6... ơ lại lẻ! Chắc đề sai tiếp rồi!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Vừa gà vừa chó có tất cả 36 con và 100 cái chân. Hỏi có bao nhiêu con gà, bao nhiêu con chó?",
+  "problem": "Tủ sách có ngăn truyện và ngăn thơ. Số truyện gấp 3 lần số thơ và nhiều hơn số thơ 24 cuốn. Tính số sách mỗi ngăn.",
   "steps": [
    {
-    "show": "Gà + chó: 36 con; tổng số chân: 100 cái.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Gà 2 chân, chó 4 chân. Tìm số con mỗi loại.",
-    "phan": "tomtat"
+    "show": "Truyện gấp 3 lần thơ; truyện hơn thơ 24 cuốn."
    },
    {
-    "show": "Ghi rõ \"mệnh giá chân\" từng loại — dữ liệu then chốt.",
-    "phan": "tomtat"
+    "show": "Tìm số sách mỗi ngăn."
    },
    {
-    "show": "Mô hình (giả thiết tạm)",
-    "phan": "tomtat"
+    "show": "Gạch chân chữ \"hơn\" — đề cho HIỆU, không cho tổng."
    },
    {
-    "show": "Giả sử cả 36 con đều là gà → tính được số chân \"tạm\".",
-    "phan": "tomtat"
+    "show": "Sơ đồ"
    },
    {
-    "show": "Phần thiếu so với 100 là do các con chó bị tính hụt chân.",
-    "phan": "tomtat"
+    "show": "Truyện: [—][—][—]"
    },
    {
-    "show": "Nêu rõ cái \"tạm\" và lý do phần lệch — linh hồn phương pháp.",
-    "phan": "tomtat"
+    "show": "Thơ: [—]"
    },
    {
-    "show": "Giả sử cả 36 con đều là gà, khi đó tổng số chân là: $36  \\times  2 = 72$ (cái)",
-    "phan": "giai"
+    "show": "(mũi tên vào 2 ô truyện nhô ra: 24 cuốn)"
    },
    {
-    "show": "Số chân bị thiếu so với thực tế là: $100 - 72 = 28$ (cái)",
-    "phan": "giai"
+    "show": "Ngoặc hiệu chỉ vào PHẦN NHÔ RA — khác hẳn ngoặc tổng ôm cả hai hàng."
    },
    {
-    "show": "Mỗi con chó bị tính thiếu số chân là: $4 - 2 = 2$ (cái)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Số con chó là: $28 : 2 = 14$ (con)",
-    "phan": "giai"
+    "show": "Hiệu số phần bằng nhau là: 3 − 1 = 2 (phần)"
    },
    {
-    "show": "Số con gà là: $36 - 14 = 22$ (con)",
-    "phan": "giai"
+    "show": "Giá trị một phần là: 24 : 2 = 12 (cuốn)"
    },
    {
-    "show": "Dòng \"mỗi con chó bị tính thiếu 2 cái\" giải thích phép chia — không được bỏ.",
-    "phan": "giai"
+    "show": "Số thơ là: 12 × 1 = 12 (cuốn)"
    },
    {
-    "show": "Đáp số: 22 con gà ; 14 con chó.",
-    "phan": "dapso"
+    "show": "Số truyện là: 12 × 3 = 36 (cuốn)"
    },
    {
-    "show": "Đáp số đủ hai loại.",
-    "phan": "ghichu"
+    "show": "Bốn bước quen thuộc — chỉ dòng đầu đổi \"tổng\" thành \"hiệu\"."
    },
    {
-    "show": "Thử lại: $22 + 14 = 36$ ✓ ; $22  \\times  2 + 14  \\times  4 = 44 + 56 = 100$ ✓",
-    "phan": "thulai"
+    "show": "Đáp số: truyện 36 cuốn ; thơ 12 cuốn."
    },
    {
-    "show": "\"Đếm chân\" trên đáp số — khớp cả số con lẫn số chân.",
-    "phan": "thulai"
+    "show": "Đáp số đủ hai ngăn."
+   },
+   {
+    "show": "Thử lại: 36 − 12 = 24 ✓ ; 36 : 12 = 3 ✓"
+   },
+   {
+    "show": "Thử kép Hiệu - Tỉ: khớp hiệu VÀ khớp tỉ."
    }
   ]
  },
@@ -195,187 +184,195 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Nếu cả 10 con vật đều là gà thì có tất cả bao nhiêu cái chân?",
+     "text": "Tìm hai số có hiệu bằng 10 và tỉ số bằng 3 : 1.",
      "answerKey": {
       "parts": [
        {
-        "label": "số chân",
-        "value": 20
+        "label": "số bé",
+        "value": 5
+       },
+       {
+        "label": "số lớn",
+        "value": 15
        }
       ]
      },
-     "solutionNarrative": "$10  \\times  2 = 20$ cái chân.",
+     "solutionNarrative": "Hiệu phần 3 − 1 = 2; một phần 10 : 2 = 5 → hai số là 5 và 15.",
      "hints": [
-      "Mỗi con gà có hai chân.",
-      "Nhân số con với số chân mỗi con."
+      "Chỉ khác Tổng - Tỉ đúng một chỗ: chia cho HIỆU SỐ PHẦN.",
+      "Phần lớn trừ phần bé ra hiệu số phần."
      ]
     },
     {
      "id": "C2",
-     "text": "Vừa gà vừa chó có 10 con và 28 cái chân. Tính số con mỗi loại.",
+     "text": "Tìm hai số biết số lớn gấp 3 lần số bé và hơn số bé 24 đơn vị.",
      "answerKey": {
       "parts": [
        {
-        "label": "số chó",
-        "value": 4
+        "label": "số bé",
+        "value": 12
        },
        {
-        "label": "số gà",
-        "value": 6
+        "label": "số lớn",
+        "value": 36
        }
       ]
      },
-     "solutionNarrative": "Giả sử toàn gà: 20 chân; thiếu $28 - 20 = 8$; mỗi chó bù 2 → chó $8 : 2 = 4$ con; gà 6 con.",
+     "solutionNarrative": "Hiệu phần 2; một phần 24 : 2 = 12 → hai số là 12 và 36.",
      "hints": [
-      "GIẢ SỬ tất cả đều là gà rồi đếm chân.",
-      "Thiếu bao nhiêu chân? Mỗi chú chó bù thêm mấy?"
+      "Chữ hơn báo đây là bài hiệu.",
+      "Hiệu số phần rồi mới tới một phần."
      ]
     },
     {
      "id": "C3",
-     "text": "Thử lại đáp số Câu 2 bằng cách \"đếm chân\": viết phép kiểm chứng đầy đủ.",
+     "text": "Vẽ sơ đồ (nhớ đặt đúng chỗ ngoặc hiệu!) rồi tìm hai số có hiệu bằng 8, tỉ số 3 : 1.",
      "answerKey": {
       "parts": [
        {
-        "label": "tổng số chân",
-        "value": 28
+        "label": "số bé",
+        "value": 4
        },
        {
-        "label": "tổng số con",
-        "value": 10
+        "label": "số lớn",
+        "value": 12
        }
       ]
      },
-     "solutionNarrative": "$4  \\times  4 + 6  \\times  2 = 16 + 12 = 28$ ✓ và $4 + 6 = 10$ ✓.",
+     "solutionNarrative": "Hiệu phần 2; một phần 4 → hai số là 4 và 12 (ngoặc hiệu chỉ vào 2 ô nhô ra).",
      "hints": [
-      "Thử phải kiểm CẢ HAI: số chân và số con.",
-      "Nhân từng loại với số chân của nó rồi cộng."
+      "Ngoặc hiệu chỉ vào phần NHÔ RA, không ôm cả hai hàng.",
+      "Phần nhô ra gồm mấy ô?"
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Vừa gà vừa chó có tất cả 36 con và 100 cái chân. Tính số con mỗi loại.",
+     "text": "Ngăn truyện gấp 3 lần ngăn thơ và nhiều hơn ngăn thơ 24 cuốn. Tính số sách mỗi ngăn.",
      "answerKey": {
       "parts": [
        {
-        "label": "số chó",
-        "value": 14
+        "label": "ngăn thơ",
+        "value": 12
        },
        {
-        "label": "số gà",
-        "value": 22
+        "label": "ngăn truyện",
+        "value": 36
        }
       ]
      },
-     "solutionNarrative": "Giả sử toàn gà: 72 chân; thiếu 28; chó $28 : 2 = 14$ con; gà 22 con. Thử: $56 + 44 = 100$ ✓.",
+     "solutionNarrative": "Một phần 24 : 2 = 12 → thơ 12 cuốn; truyện 36 cuốn. Thử: 36 − 12 = 24 ✓; 36 : 12 = 3 ✓.",
      "hints": [
-      "Giả sử toàn gà, đếm chân giả vờ trước.",
-      "Phần thiếu chia cho phần bù mỗi con."
+      "Vẽ sơ đồ, đặt ngoặc hiệu vào phần nhô ra.",
+      "Hiệu chia cho hiệu số phần ra một phần."
      ]
     },
     {
      "id": "C5",
-     "text": "Bãi xe có 12 chiếc gồm xe đạp (2 bánh) và xe ba bánh, đếm được tất cả 29 bánh. Hỏi mỗi loại có mấy chiếc?",
+     "text": "Tuổi bố gấp 4 lần tuổi con và bố hơn con 27 tuổi. Tính tuổi mỗi người.",
      "answerKey": {
       "parts": [
        {
-        "label": "xe ba bánh",
-        "value": 5
+        "label": "tuổi con",
+        "value": 9
        },
        {
-        "label": "xe đạp",
-        "value": 7
+        "label": "tuổi bố",
+        "value": 36
        }
       ]
      },
-     "solutionNarrative": "Giả sử toàn xe đạp: 24 bánh; thiếu $29 - 24 = 5$; mỗi xe ba bánh bù 1 → ba bánh 5 chiếc; xe đạp 7 chiếc. Thử: $15 + 14 = 29$ ✓.",
+     "solutionNarrative": "Hiệu phần 4 − 1 = 3; một phần 27 : 3 = 9 → con 9 tuổi; bố 36 tuổi.",
      "hints": [
-      "Giả sử toàn xe đạp rồi đếm bánh.",
-      "Mỗi xe ba bánh bù thêm mấy bánh?"
+      "Hiệu tuổi dùng thẳng được vì nó bất biến.",
+      "Hiệu số phần là mấy ô?"
      ]
     },
     {
      "id": "C6",
-     "text": "Quầy văn nghệ bán được 30 vé gồm loại 2 nghìn đồng và loại 5 nghìn đồng, thu tất cả 99 nghìn đồng. Hỏi mỗi loại bán được bao nhiêu vé?",
+     "text": "Tìm hai số có hiệu bằng 15 và tỉ số bằng 4 : 1.",
      "answerKey": {
       "parts": [
        {
-        "label": "vé loại 5 nghìn đồng",
-        "value": 13
+        "label": "số bé",
+        "value": 5
        },
        {
-        "label": "vé loại 2 nghìn đồng",
-        "value": 17
+        "label": "số lớn",
+        "value": 20
        }
       ]
      },
-     "solutionNarrative": "Giả sử toàn vé 2 nghìn: thu 60; thiếu 39; mỗi vé 5 nghìn bù 3 → vé 5 nghìn 13 chiếc; vé 2 nghìn 17 chiếc. Thử: $65 + 34 = 99$ ✓.",
+     "solutionNarrative": "Hiệu phần 3; một phần 15 : 3 = 5 → hai số là 5 và 20.",
      "hints": [
-      "Giả sử toàn vé rẻ rồi tính tiền thu.",
-      "Mỗi vé đắt bù thêm bao nhiêu nghìn?"
+      "Hiệu số phần: bốn ô trừ một ô.",
+      "Chia hiệu cho số ô nhô ra."
      ]
     },
     {
      "id": "C7",
-     "text": "Cuộc thi có 25 câu hỏi: trả lời đúng được 4 điểm, trả lời sai bị TRỪ 1 điểm. Bạn An làm cả 25 câu và được 70 điểm. Hỏi An trả lời đúng mấy câu? (Mỗi câu sai làm mất bao nhiêu điểm so với câu đúng?)",
+     "text": "Đàn gà có số gà mái gấp 5 lần số gà trống, và mái nhiều hơn trống 32 con. Tính số gà mỗi loại.",
      "answerKey": {
       "parts": [
        {
-        "label": "số câu trả lời đúng",
-        "value": 19
+        "label": "gà trống",
+        "value": 8
+       },
+       {
+        "label": "gà mái",
+        "value": 40
        }
       ]
      },
-     "solutionNarrative": "Giả sử đúng cả 25 câu: 100 điểm; mỗi câu sai làm mất $4 + 1 = 5$ điểm; thiếu $100 - 70 = 30$ → sai $30 : 5 = 6$ câu → đúng 19 câu. Thử: $19  \\times  4 - 6 = 70$ ✓.",
+     "solutionNarrative": "Hiệu phần 5 − 1 = 4; một phần 32 : 4 = 8 → trống 8 con; mái 40 con.",
      "hints": [
-      "Giả sử đúng cả — được bao nhiêu điểm?",
-      "Mỗi câu sai làm mất bao nhiêu so với câu đúng?"
+      "Chữ nhiều hơn báo đây là bài hiệu.",
+      "Hiệu số phần, rồi một phần, rồi nhân lên."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Trong chuồng, số gà gấp đôi số chó và tổng số chân là 80 cái. Tính số con mỗi loại. (Ghép mỗi chú chó với 2 chú gà thành một \"bộ\" — mỗi bộ có mấy cái chân?)",
+     "text": "Mẹ hơn con 25 tuổi. Hiện nay tuổi mẹ gấp 6 lần tuổi con. Tính tuổi hai mẹ con hiện nay. (Vì sao hiệu 25 dùng được ngay không cần nghĩ ngợi?)",
      "answerKey": {
       "parts": [
        {
-        "label": "số chó",
-        "value": 10
+        "label": "tuổi con",
+        "value": 5
        },
        {
-        "label": "số gà",
-        "value": 20
+        "label": "tuổi mẹ",
+        "value": 30
        }
       ]
      },
-     "solutionNarrative": "Ghép 1 chó + 2 gà thành một \"bộ\": mỗi bộ $4 + 2 + 2 = 8$ chân → số bộ $80 : 8 = 10$ → chó 10 con, gà 20 con. Thử: $40 + 40 = 80$ ✓.",
+     "solutionNarrative": "Hiệu tuổi 25 bất biến (định luật Bài 22!) → hiệu phần 6 − 1 = 5; một phần 25 : 5 = 5 → con 5 tuổi; mẹ 30 tuổi. Thử: 30 = 5 × 6 ✓; 30 − 5 = 25 ✓.",
      "hints": [
-      "Ghép một chó với hai gà thành một BỘ.",
-      "Mỗi bộ như thế có mấy cái chân?"
+      "Hiệu tuổi bất biến nên dùng ngay được.",
+      "Hiệu số phần là sáu ô trừ một ô."
      ]
     },
     {
      "id": "C9",
-     "text": "Bến đò có 10 chiếc thuyền chở vừa khít 52 người; thuyền to chở 6 người, thuyền nhỏ chở 4 người. Hỏi mỗi loại mấy chiếc? Và trả lời: vì sao phương pháp này tên là GIẢ THIẾT TẠM — cái gì tạm, cái gì thật?",
+     "text": "Hai số có tỉ số 5 : 2. Nếu bớt số lớn đi 9 đơn vị thì hai số bằng nhau. Tìm hai số — sổ tay hiệu ẩn của Bài 21 sẽ mách con hiệu thật là bao nhiêu!",
      "answerKey": {
       "parts": [
        {
-        "label": "thuyền to",
+        "label": "số bé",
         "value": 6
        },
        {
-        "label": "thuyền nhỏ",
-        "value": 4
+        "label": "số lớn",
+        "value": 15
        }
       ]
      },
-     "solutionNarrative": "Giả sử toàn thuyền nhỏ: chở 40 người; thiếu 12; mỗi thuyền to bù 2 → to 6 chiếc, nhỏ 4 chiếc ($36 + 16 = 52$ ✓). Gọi là \"giả thiết TẠM\" vì điều giả sử (toàn một loại) biết chắc không thật — nó chỉ là bàn đạp tạm thời; còn độ lệch và đáp số cuối là THẬT.",
+     "solutionNarrative": "\"bớt số lớn 9 thì bằng\" — một bên thay đổi → hiệu = 9 (sổ tay Bài 21); hiệu phần 3; một phần 3 → hai số là 6 và 15. Thử: 15 − 9 = 6 ✓.",
      "hints": [
-      "Giả sử toàn thuyền nhỏ rồi đếm chỗ.",
-      "Mỗi thuyền to bù thêm mấy chỗ?"
+      "Sổ tay hiệu ẩn: mấy bên cùng nhúc nhích?",
+      "Chỉ một bên đổi thì hiệu đúng bằng phần bớt."
      ]
     }
    ]
@@ -386,7 +383,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Giả thiết tạm là giả sử tất cả cùng một loại rồi so độ lệch với thực tế.",
+    "text": "Với tỉ số 3 : 1, hiệu số phần bằng nhau là 2.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -395,61 +392,61 @@
    },
    {
     "id": "Q2",
-    "text": "Với 36 con, nếu giả sử tất cả là gà thì có 100 cái chân.",
+    "text": "Số lớn gấp 4 lần số bé và hơn số bé 12 thì số bé bằng 3.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Toàn gà chỉ có 72 chân."
+    "solutionNarrative": "Một phần 12 : 3 = 4, số bé là 4."
    },
    {
     "id": "Q3",
-    "text": "10 con gà - chó có 32 chân. Số chó là:",
+    "text": "Số lớn gấp 3 số bé và hơn số bé 12. Số bé là:",
     "format": "mcq",
     "choices": [
      "A. 6",
      "B. 4",
-     "C. 8"
+     "C. 12"
     ],
     "answerKey": {
      "choice": "A. 6"
     },
-    "solutionNarrative": "Thiếu $12 : 2 = 6$ con chó."
+    "solutionNarrative": "12 : 2 = 6."
    },
    {
     "id": "Q4",
-    "text": "12 vé loại 2 nghìn và 5 nghìn thu 39 nghìn. Số vé 5 nghìn là:",
+    "text": "Số lớn gấp 5 số bé và hơn số bé 20. Số lớn là:",
     "format": "mcq",
     "choices": [
-     "A. 5",
-     "B. 7",
-     "C. 3"
+     "A. 25",
+     "B. 20",
+     "C. 5"
     ],
     "answerKey": {
-     "choice": "A. 5"
+     "choice": "A. 25"
     },
-    "solutionNarrative": "Thiếu $39 - 24 = 15$; $15 : 3 = 5$ vé."
+    "solutionNarrative": "Một phần 20 : 4 = 5, số lớn 25."
    },
    {
     "id": "Q5",
-    "text": "Mỗi lần đổi một gà thành một chó, số chân tăng thêm:",
+    "text": "Bố gấp 4 lần con và hơn con 30 tuổi. Tuổi con là:",
     "format": "mcq",
     "choices": [
-     "A. 2 cái",
-     "B. 4 cái",
-     "C. 1 cái"
+     "A. 10",
+     "B. 40",
+     "C. 15"
     ],
     "answerKey": {
-     "choice": "A. 2 cái"
+     "choice": "A. 10"
     },
-    "solutionNarrative": "$4 - 2 = 2$ cái."
+    "solutionNarrative": "Một phần 30 : 3 = 10, con 10 tuổi."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Diễn kịch bằng đồ thật: nắp chai làm gà (cắm 2 tăm), cúc áo làm chó (4 tăm) — cho con \"hô biến\" cả đàn thành gà rồi đếm tăm thiếu. Nhìn thấy độ lệch bằng mắt, ba bước tự nhiên như hơi thở.",
-  "homeActivity": "Câu hỏi đắt nhất sau mỗi bài: \"cái gì TẠM, cái gì THẬT?\" — con phân biệt được thế giới giả sử và kết luận thật là nắm được linh hồn phương pháp.",
-  "watchFor": "NÊN: đổi vỏ bài liên tục (vé, thuyền, điểm thi thưởng - phạt) để con thấy cùng ruột. KHÔNG NÊN: bài ba loại vật cùng lúc (gà - chó - vịt) — ba ẩn số hẹn lớp 5."
+  "onComplete": "Trò \"tổng hay hiệu?\": đọc nhanh mười đề trộn lẫn hai dạng, con chỉ hô \"TỔNG!\" hoặc \"HIỆU!\" kèm lý do một câu — phân nhánh đúng là 80% bài toán.",
+  "homeActivity": "Bài tuổi gấp nhau là dịp ôn định luật \"hiệu tuổi bất biến\" của Chương 6 — hỏi con: \"vì sao hiệu 25 tuổi dùng được cho MỌI thời điểm?\"",
+  "watchFor": "NÊN: cho con giải cùng một cặp số theo cả đề tổng lẫn đề hiệu để thấy hai anh em một nhà. KHÔNG NÊN: bài tuổi hai thời điểm với tỉ thay đổi (\"3 năm nữa mẹ gấp 4 lần con\") — dạng chuyển thời gian ấy thuộc Chương 8."
  },
  "figureSpec": [
   {
@@ -458,8 +455,8 @@
     "hook"
    ],
    "file": "figures/L4H_B30_MO.png",
-   "caption": "Đếm đầu ra số con, đếm chân ra số chân.",
-   "sha256_16": "e5fc5aed456477b5",
+   "caption": "Ba phần so một phần — phần chênh là chìa khóa.",
+   "sha256_16": "d6ccf73e07e224b0",
    "mucGoc": "chuyenMoBai"
   },
   {
@@ -468,18 +465,20 @@
     "screen:S3"
    ],
    "file": "figures/L4H_B30_G1.png",
-   "caption": "Giả sử tất cả là gà rồi soi phần chân còn hụt.",
-   "sha256_16": "7fe850badbb46aa9",
+   "caption": "Tổng - tỉ chia cho TỔNG số phần, hiệu - tỉ chia cho HIỆU số phần.",
+   "sha256_16": "da4bfbd2a0fd022b",
    "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Người giải giỏi đôi khi phải... cố tình nghĩ sai! Phương pháp hôm nay nghe ngược đời: GIẢ SỬ một điều biết chắc không đúng (\"cả chuồng toàn gà\"), tính xem thế giới giả ấy lệch thực tế bao nhiêu, rồi từ độ lệch lần ra sự thật. Đây là một trong những cách nhẩm nhanh đẹp nhất của toán tiểu học — mang tên GIẢ THIẾT TẠM.",
+ "hatMam": "Bài 23 - 24, chiếc ngoặc ôm sơ đồ luôn ghi TỔNG. Hôm nay đề đổi chiêu: cho biết hai bên HƠN KÉM nhau bao nhiêu — tức là cho HIỆU. May thay, sơ đồ phần vẫn dùng nguyên, chỉ đổi đúng một bước: thay vì chia cho tổng số phần, ta chia cho HIỆU SỐ PHẦN. Và những chiêu giấu hiệu của Chương 6 (tuổi bất biến, \"bớt thì bằng\") sẽ tái xuất đúng hẹn.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B23"
+   "DL:KSN3.B18",
+   "DL:KSN3.B09"
   ],
   "ten": [
-   "GÀ - CHÓ RỜI TRANG TRẠI"
+   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
   ],
   "canCu": "chuDe",
   "lopDuoi": 3,

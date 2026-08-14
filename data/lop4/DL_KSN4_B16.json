@@ -1,18 +1,18 @@
 {
  "id": "DL:KSN4.B16",
- "quyen": "lop4",
+ "quyen": "KSN4",
  "so": 16,
- "ten": "TRUNG BÌNH CỘNG VÀ BÀI TOÁN NGƯỢC",
- "chuong": 5,
- "tenChuong": "TRUNG BÌNH CỘNG",
- "dangGoc": "LV 1.1 mức Lớp 4 — Tính TBC nhiều số · tìm một số khi biết TBC và các số còn lại",
- "hatMam": "Lớp 3, ở Bài 17, con đã quen bài toán HAI BƯỚC TÍNH: tìm số ở giữa rồi mới trả lời câu hỏi cuối. Trung bình cộng chính là một bài hai bước kinh điển: bước 1 tính TỔNG, bước 2 chia đều. Và cây cầu \"Tổng = TBC × số số hạng\" sẽ theo con qua mọi bài ngược của chương này — nhớ mặt nó ngay từ hôm nay!",
+ "ten": "TỔNG DÃY CÁCH ĐỀU — CÁCH GHÉP CẶP CỦA GAUSS",
+ "chuong": 4,
+ "tenChuong": "DÃY SỐ",
+ "dangGoc": "Dạng gốc: SỐ 5.1d mức Lớp 4 — Công thức tổng = (số đầu + số cuối) × số số hạng : 2.",
+ "hatMam": "Con đã biết tìm số hạng thứ n (Bài 14) và đếm số số hạng (Bài 15). Hôm nay dùng cả hai để làm một việc trông rất nặng: cộng cả trăm số trong một dòng. Có một cậu bé 10 tuổi từng làm việc ấy trong vài giây — và cách của cậu ấy chỉ là ghép cặp.",
  "ganDuoi": {
   "ve": [
-   "DL:KSN3.B17"
+   "DL:KSN3.B10"
   ],
   "ten": [
-   "BÀI TOÁN HAI BƯỚC TÍNH"
+   "TOA TÀU THỨ n Ở ĐÂU?"
   ],
   "canCu": "sach",
   "lopDuoi": 3
@@ -21,25 +21,27 @@
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Hiểu TBC theo nghĩa SAN CHO ĐỀU và tính được TBC của nhiều số: TBC = tổng : số số hạng.",
-    "Thuộc cây cầu ngược: Tổng = TBC × số số hạng — chìa khóa của mọi bài toán ngược.",
-    "Tìm một số chưa biết khi biết TBC của cả nhóm và các số còn lại."
+    "Hiểu vì sao ghép số đầu với số cuối thì cặp nào cũng có tổng bằng nhau.",
+    "Dùng được công thức: tổng = (số đầu + số cuối) × số số hạng : 2.",
+    "Giải thích được vì sao công thức phải CHIA 2."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 16: ba trận đấu, một con số",
+   "ten": "CHUYỆN MỞ BÀI — Cậu bé Gauss và bài phạt của thầy giáo",
    "dong": [
-    "Đội trưởng đưa sổ tỉ số: trận 1 ghi 2 bàn, trận 2 bùng nổ 5 bàn, trận 3 lại 2 bàn. \"Ban thống kê cho một con số nói lên sức ghi bàn của đội — để so với đội lớp bên!\" Trí Long khăng khăng lấy số 5 \"cho oách\", Su Bống đòi lấy số 2 \"cho thật thà\". Su Kem xếp 9 viên nam châm lên bảng chiến thuật thành ba cột 2 - 5 - 2, rồi nhấc bớt của cột cao đắp sang cột thấp: ba cột bằng nhau ở mức 3. \"Con số công bằng của đội mình đây: TRUNG BÌNH mỗi trận 3 bàn.\""
+    "Chuyện kể hơn hai trăm năm trước: một thầy giáo muốn cả lớp ngồi yên, bèn ra bài \"cộng tất cả các số từ 1 đến 100\".",
+    "Cả lớp cắm cúi cộng. Riêng cậu bé Gauss đặt bút xuống sau vài giây và nói: \"Thưa thầy, 5 050 ạ.\"",
+    "Cậu không cộng nhanh hơn ai cả. Cậu chỉ nhìn ra một chuyện mà cả lớp không nhìn ra."
    ],
    "hinh": [
     {
      "id": "L4H_B16_MO",
      "sauDong": 0,
      "file": "figures/L4H_B16_MO.png",
-     "caption": "Ba cột cao thấp khác nhau, vạch san đều cắt ngang.",
-     "sha256_16": "6b4c1b30ecd10bc4"
+     "caption": "Cột nào cũng bằng 6 — vì cộng hai lần nên cuối cùng phải chia đôi.",
+     "sha256_16": "b56f1ce3eba6469f"
     }
    ],
    "nhip": ""
@@ -47,42 +49,35 @@
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
    "dong": [
-    "CHO GÌ? ba trận đấu ghi lần lượt 2 ; 5 ; 2 bàn.",
-    "HỎI GÌ? một con số duy nhất nói lên sức ghi bàn \"mỗi trận\" của đội — công bằng, không thiên vị trận nào.",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: bàn thắng (bàn) theo trận — con số cần tìm cũng mang đơn vị \"bàn mỗi trận\".",
-    "QUAN HỆ GIỮA CHÚNG: nếu san bàn thắng cho ba trận ĐỀU NHAU mà tổng không đổi, thì mức đều ấy đại diện cho cả ba trận.",
-    "CHỌN CÔNG CỤ: MÔ HÌNH SAN CHO ĐỀU: gộp hết vào một rổ (tính tổng) rồi chia đều cho số trận.",
-    "ƯỚC LƯỢNG TRƯỚC: mức san nằm giữa 2 và 5 — chắc cỡ 3 bàn."
+    "CHO GÌ? dãy 1 ; 2 ; 3 ; ... ; 100 — dãy cách đều, khoảng cách 1.",
+    "HỎI GÌ? tổng của cả dãy.",
+    "ĐẠI LƯỢNG & ĐƠN VỊ: ở đây chỉ có số thuần, không kèm đơn vị nào.",
+    "QUAN HỆ GIỮA CHÚNG: dãy cách đều nên đầu với cuối, số thứ hai với số áp chót… ghép lại đều cho cùng một tổng.",
+    "CHỌN CÔNG CỤ: công thức TỔNG DÃY CÁCH ĐỀU. Cần biết SỐ SỐ HẠNG trước, nên công thức của Bài 15 là bạn đồng hành.",
+    "ƯỚC LƯỢNG TRƯỚC: 100 số, số giữa quãng 50, nên tổng chắc quanh 5 000."
    ],
    "hinh": [],
-   "nhip": "NHỊP 1, DỊCH — từ sổ tỉ số sang phép san cho đều"
+   "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
    "dong": [
-    "Bước 1 — SAN BẰNG TAY TRÊN BẢNG CHIẾN THUẬT: cột 5 nhường 2 viên: mỗi cột 2 nhận 1 viên → ba cột cùng cao 3. Tổng vẫn 9 viên — san chỉ chuyển chỗ, không sinh không mất. Mức đều 3 chính là TRUNG BÌNH CỘNG của 2 ; 5 ; 2.",
-    "Bước 2 — TỪ SAN TAY ĐẾN CÔNG THỨC: san tay lâu, đi đường tắt: gộp cả rổ rồi chia đều — TBC = (2 + 5 + 2) : 3 = 9 : 3 = 3 (bàn). Tổng quát: TBC = TỔNG các số : SỐ các số hạng. Hai bước tính quen thuộc của lớp 3: tổng trước, chia sau.",
-    "Bước 3 — CÂY CẦU NGƯỢC: từ công thức xuôi suy ra cầu ngược: TỔNG = TBC × số số hạng. Biết TBC của 4 số là 25 → tổng bốn số là 25 × 4 = 100, dù chưa biết từng số! Cây cầu này là lối vào của MỌI bài toán ngược về trung bình cộng.",
-    "Bước 4 — BÀI NGƯỢC TRẬN THỨ TƯ: đội muốn sau 4 trận đạt trung bình 3 bàn mỗi trận. Trận 4 cần ghi mấy bàn? Qua cầu: tổng cần có = 3 × 4 = 12 (bàn); ba trận đầu đã ghi 9 → trận 4 phải ghi 12 − 9 = 3 (bàn). Quy trình ngược chuẩn: tổng cần − tổng đã có = phần còn thiếu.",
-    "MẸO NGƯỜI GIẢI: TBC = tổng : số số hạng — nghĩa đời là \"san cho đều\". Gặp bài NGƯỢC: đừng loay hoay với từng số, hãy qua cây cầu TỔNG = TBC × số số hạng trước, rồi lấy tổng trừ những gì đã biết. Mẹo soi nhanh: TBC luôn nằm giữa số bé nhất và số lớn nhất — lọt ra ngoài là sai chắc!"
+    "Bước 1 — GAUSS NHÌN RA GÌ. Cậu viết dãy hai lần, lần sau viết ngược: hàng trên 1 ; 2 ; 3 ; ... ; 100, hàng dưới 100 ; 99 ; 98 ; ... ; 1. Rồi cộng theo cột: 1 + 100 = 101 ; 2 + 99 = 101 ; 3 + 98 = 101 … cột nào cũng đúng 101!",
+    "Bước 2 — VÌ SAO CỘT NÀO CŨNG BẰNG NHAU. Vì mỗi bước sang phải thì hàng trên TĂNG một khoảng, còn hàng dưới GIẢM đúng một khoảng ấy. Tăng bao nhiêu thì giảm bấy nhiêu, nên tổng của cột không đổi. Điều này CHỈ đúng với dãy cách đều — dãy không cách đều thì mẹo này hỏng.",
+    "Bước 3 — VÌ SAO PHẢI CHIA 2. Có 100 cột, mỗi cột 101, nên tất cả bằng 101 × 100 = 10 100. Nhưng con vừa cộng dãy HAI LẦN (một lần xuôi, một lần ngược), nên phải chia đôi: 10 100 : 2 = 5 050. Đó chính là con số Gauss nói.",
+    "Bước 4 — GHÉP THÀNH CÔNG THỨC. Tổng = (số đầu + số cuối) × số số hạng : 2. Đọc thành lời cho dễ nhớ: \"đầu cộng cuối, nhân số số hạng, chia đôi\".",
+    "Bước 5 — DÙNG VỚI DÃY KHÁC. Tính 5 + 10 + 15 + ... + 100. Trước hết đếm số số hạng bằng công thức Bài 15: (100 − 5) : 5 + 1 = 20. Rồi tính tổng: (5 + 100) × 20 : 2 = 105 × 20 : 2 = 2 100 : 2 = 1 050.",
+    "MẸO NGƯỜI GIẢI: bao giờ cũng làm hai việc theo thứ tự — (1) ĐẾM số số hạng trước; (2) mới ghép đầu cộng cuối. Quên bước 1 là không có gì để nhân."
    ],
-   "hinh": [
-    {
-     "id": "L4H_B16_G1",
-     "sauDong": 0,
-     "file": "figures/L4H_B16_G1.png",
-     "caption": "Phần vượt của trận 2 bù đúng phần hụt của hai trận kia.",
-     "sha256_16": "95852f407d4c7b64"
-    }
-   ],
+   "hinh": [],
    "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
    "dong": [
-    "LẮP: báo cáo dán bảng tin đội: \"Sức ghi bàn: trung bình 3 bàn mỗi trận. Muốn giữ phong độ ấy, trận tới cần ghi 3 bàn.\" Đội lớp bên trung bình 2 bàn — đội mình trên cơ, nói bằng số liệu đàng hoàng chứ không cãi nhau!",
-    "SOI: soi hai lớp: 3 nằm giữa 2 và 5 ✓; và thử lại tổng: 2 + 5 + 2 + 3 = 12 = 3 × 4 ✓ — nếu trận 4 ghi đúng 3 bàn thì trung bình bốn trận tròn 3 như kế hoạch.",
-    "DÙNG NGOÀI ĐỜI: điểm trung bình học kỳ, mức chi tiêu trung bình mỗi ngày của mẹ, quãng đường trung bình xe chạy mỗi giờ — cả thế giới người lớn nói chuyện bằng \"mức san cho đều\" này."
+    "LẮP: từ hôm ấy cả lớp học được một mẹo: gặp dãy dài mà cách đều thì đừng cộng lần lượt, hãy ghép cặp. Việc nửa tiếng rút xuống nửa phút.",
+    "SOI: soi trên dãy ngắn đếm tay được — 1 + 2 + 3 + 4 = 10. Công thức: (1 + 4) × 4 : 2 = 5 × 4 : 2 = 10 ✓.",
+    "DÙNG NGOÀI ĐỜI: cộng tiền tiết kiệm tăng đều mỗi tuần, đếm tổng số ghế khi mỗi hàng thêm đúng một ghế, cộng số bậc thang của nhiều tầng."
    ],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
@@ -90,24 +85,19 @@
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Ba trận đầu, đội bóng ghi được 2 bàn, 5 bàn và 2 bàn. Hỏi trận thứ tư đội phải ghi bao nhiêu bàn để trung bình mỗi trận trong cả bốn trận ghi được 3 bàn?",
+    "Đề bài: Tính tổng 5 + 10 + 15 + ... + 100.",
     "Tóm tắt",
-    "Ba trận: 2 ; 5 ; 2 bàn.",
-    "Cần: TBC của 4 trận là 3 bàn. Tìm số bàn trận 4.",
-    "Tách rõ \"đã có\" và \"muốn có\" — hai nửa của bài ngược.",
-    "Mô hình (qua cây cầu TỔNG)",
-    "TBC 4 trận là 3 → tổng 4 trận = 3 × 4.",
-    "Trận 4 = tổng cần có − tổng 3 trận đầu.",
-    "Cây cầu Tổng = TBC × số số hạng viết ngay ở phần mô hình.",
-    "Bài giải",
-    "Tổng số bàn cần có sau bốn trận là: 3 × 4 = 12 (bàn)",
-    "Ba trận đầu đội đã ghi: 2 + 5 + 2 = 9 (bàn)",
-    "Trận thứ tư đội phải ghi: 12 − 9 = 3 (bàn)",
-    "Ba dòng — ba phép tính, mỗi dòng một câu lời giải trọn vẹn.",
-    "Đáp số: 3 bàn.",
-    "Đáp số kèm đơn vị.",
-    "Thử lại: (2 + 5 + 2 + 3) : 4 = 12 : 4 = 3 ✓",
-    "Lắp đáp số vào tính lại TBC — đúng 3 bàn mỗi trận như đề muốn."
+    "Dãy cách đều, số đầu 5, số cuối 100, khoảng cách 5.",
+    "Gọi tên \"dãy cách đều, khoảng cách 5\" — nhận diện xong nửa bài.",
+    "Bước 1 — đếm số số hạng (dùng công thức Bài 15)",
+    "(100 − 5) : 5 + 1 = 19 + 1 = 20 số hạng.",
+    "Bước 2 — ghép cặp Gauss",
+    "5 + 100 = 105 ; 10 + 95 = 105 ; 15 + 90 = 105 ...",
+    "Cặp nào cũng có tổng bằng đầu + cuối.",
+    "Tính",
+    "Tổng = (5 + 100) × 20 : 2 = 105 × 20 : 2 = 2 100 : 2 = 1 050.",
+    "Soi lại trên dãy ngắn cùng kiểu: 5 + 10 + 15 = 30, công thức cho (5 + 15) × 3 : 2 = 30 ✓.",
+    "Đáp số: tổng bằng 1 050."
    ],
    "hinh": [],
    "nhip": ""
@@ -115,9 +105,10 @@
   "suKemNham": {
    "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
    "dong": [
-    "Thống kê đội bạn ghi 1, 2 và 9 bàn, Trí Long tính vèo: \"Trung bình là (1 + 2 + 9) : 2 = 6 bàn — chia 2 vì phép cộng có 2 dấu cộng!\"",
-    "Gợi ý 1: San cho đều là chia cho SỐ TRẬN hay số... dấu cộng? Đội bạn đá mấy trận?",
-    "Gợi ý 2: Dùng mẹo soi nhanh để vạch lỗi kiểu khác: nếu trung bình là 6 thì nó phải nằm giữa số bé nhất và lớn nhất — mà 6 so với bộ 1, 2, 9 có \"ở giữa\" hợp lý không khi hai trận tận 1 và 2 bàn? Tính lại giúp Trí Long cho chuẩn."
+    "Cô cho tính 1 + 2 + 3 + ... + 10, Trí Long viết: \"(1 + 10) × 10 = 110 ạ!\"",
+    "Gợi ý 1: Con thử cộng tay dãy ngắn 1 + 2 + 3 + 4 xem được bao nhiêu? Rồi thử công thức của Trí Long: (1 + 4) × 4 = 20. Hai kết quả có khớp không?",
+    "Gợi ý 2: Khi ghép cặp, con đã viết dãy MẤY LẦN? Cộng hai lần thì phải làm gì với kết quả?",
+    "Chữa: còn thiếu phép chia 2. Tổng = (1 + 10) × 10 : 2 = 55."
    ],
    "hinh": [],
    "nhip": ""
@@ -139,9 +130,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Cho con \"san cho đều\" bằng đồ thật trước khi bấm phép chia: kẹo chia ba đĩa lệch nhau, nước rót ba cốc — bàn tay san xong, công thức tự dễ hiểu.",
-    "Nuôi phản xạ soi nhanh: mỗi lần con tính TBC, hỏi lại \"kết quả có nằm giữa số bé nhất và lớn nhất không?\" — chiếc lưới bắt lỗi rẻ nhất thế giới.",
-    "NÊN: rủ con tính TBC số liệu thật của nhà mình (số trang đọc mỗi tối, tiền điện ba tháng). KHÔNG NÊN: đưa bài TBC ra kết quả lẻ (có dư) — số thập phân hẹn lớp 5, chọn số liệu chia hết cho đẹp."
+    "Kể con nghe chuyện Gauss 10 tuổi — trẻ con rất thích chuyện một bạn nhỏ thắng cả lớp bằng cách NGHĨ chứ không phải bằng cách làm nhanh.",
+    "Bài đố vui: cộng tất cả các số lẻ từ 1 đến 19, rồi so với 10 × 10. Trùng nhau — vì sao lại thế? (Gợi ý: 10 số lẻ đầu tiên.)"
    ],
    "hinh": [],
    "nhip": ""
@@ -155,8 +145,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm trung bình cộng của 12 và 18.",
-   "loiChua": "(12 + 18) : 2 = 15.",
+   "text": "Tính tổng: 1 + 2 + 3 + 4 + 5 + 6. Hãy làm hai cách: cộng lần lượt, và ghép cặp đầu với cuối.",
+   "loiChua": "Cộng lần lượt: 21. Ghép cặp: (1 + 6) × 6 : 2 = 7 × 3 = 21 ✓ hai cách cùng một kết quả.",
    "tuLuan": true
   },
   {
@@ -166,8 +156,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm trung bình cộng của 2 ; 5 ; 2.",
-   "loiChua": "(2 + 5 + 2) : 3 = 9 : 3 = 3.",
+   "text": "Tính tổng: 1 + 2 + 3 + ... + 10.",
+   "loiChua": "(1 + 10) × 10 : 2 = 110 : 2 = 55.",
    "tuLuan": true
   },
   {
@@ -177,8 +167,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm trung bình cộng của 10 ; 20 ; 30 ; 40.",
-   "loiChua": "(10 + 20 + 30 + 40) : 4 = 100 : 4 = 25.",
+   "text": "Dãy 2 ; 4 ; 6 ; 8 ; 10 có 5 số hạng. Tính tổng của dãy.",
+   "loiChua": "(2 + 10) × 5 : 2 = 60 : 2 = 30.",
    "tuLuan": true
   },
   {
@@ -188,8 +178,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Trung bình cộng của bốn số là 25. Tổng của bốn số đó bằng bao nhiêu?",
-   "loiChua": "Qua cây cầu: 25 × 4 = 100.",
+   "text": "Tính tổng: 1 + 2 + 3 + ... + 50.",
+   "loiChua": "(1 + 50) × 50 : 2 = 51 × 25 = 1 275.",
    "tuLuan": true
   },
   {
@@ -199,8 +189,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Ba bao gạo nặng 42 kg ; 45 kg ; 48 kg. Hỏi trung bình mỗi bao nặng bao nhiêu ki-lô-gam?",
-   "loiChua": "(42 + 45 + 48) : 3 = 135 : 3 = 45 (kg).",
+   "text": "Tính tổng: 5 + 10 + 15 + ... + 100.",
+   "loiChua": "Số số hạng: (100 − 5) : 5 + 1 = 20. Tổng = (5 + 100) × 20 : 2 = 1 050.",
    "tuLuan": true
   },
   {
@@ -210,8 +200,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Trung bình cộng của hai số là 36. Một số bằng 40, tìm số còn lại.",
-   "loiChua": "Tổng hai số = 36 × 2 = 72 → số còn lại = 72 − 40 = 32.",
+   "text": "Tính tổng: 3 + 6 + 9 + ... + 30.",
+   "loiChua": "Số số hạng: (30 − 3) : 3 + 1 = 10. Tổng = (3 + 30) × 10 : 2 = 165.",
    "tuLuan": true
   },
   {
@@ -221,8 +211,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Ba trận đầu đội ghi 2 ; 5 ; 2 bàn. Trận thứ tư phải ghi mấy bàn để trung bình mỗi trận trong bốn trận là 3 bàn?",
-   "loiChua": "Tổng cần = 3 × 4 = 12; đã có 9 → trận 4 ghi 12 − 9 = 3 (bàn). Thử: 12 : 4 = 3 ✓.",
+   "text": "Tính tổng các số chẵn từ 2 đến 100.",
+   "loiChua": "Số số hạng: (100 − 2) : 2 + 1 = 50. Tổng = (2 + 100) × 50 : 2 = 2 550.",
    "tuLuan": true
   },
   {
@@ -232,8 +222,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Trung bình cộng của ba số là 20. Số thứ nhất là 15, số thứ hai là 19. Tìm số thứ ba.",
-   "loiChua": "Tổng ba số = 20 × 3 = 60 → số thứ ba = 60 − 15 − 19 = 26.",
+   "text": "Tính tổng 15 số lẻ đầu tiên: 1 + 3 + 5 + ... + 29. Rồi so kết quả với 15 × 15 và cho biết con thấy điều gì.",
+   "loiChua": "Tổng = (1 + 29) × 15 : 2 = 225. Mà 15 × 15 = 225 — trùng nhau! Tổng n số lẻ đầu tiên luôn bằng n × n.",
    "tuLuan": true
   },
   {
@@ -243,8 +233,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính trung bình cộng của các số 1 ; 2 ; 3 ; ... ; 9 — rồi nhìn kỹ đáp số: nó đứng ở vị trí nào trong dãy? Thử tiếp với dãy 1 đến 5 và rút ra một mẹo tính TBC của dãy cách đều!",
-   "loiChua": "Tổng 1 + 2 + ... + 9 = 45 (Gauss) → TBC = 45 : 9 = 5 — đúng SỐ Ở GIỮA dãy! Với 1 đến 5: TBC = 15 : 5 = 3 — lại số giữa. Mẹo: TBC của dãy cách đều = (đầu + cuối) : 2.",
+   "text": "Một dãy cách đều có số đầu 4, khoảng cách 6, gồm 12 số hạng. Tính tổng của dãy.",
+   "loiChua": "Số hạng cuối = 4 + 6 × 11 = 70. Tổng = (4 + 70) × 12 : 2 = 74 × 6 = 444.",
    "tuLuan": true
   },
   {
@@ -254,14 +244,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Trung bình cộng bằng tổng các số chia cho số các số hạng.",
+   "text": "Tổng dãy cách đều bằng (số đầu + số cuối) × số số hạng.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "value": true
+    "value": false
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "SAI — còn phải chia 2, vì khi ghép cặp ta đã cộng dãy hai lần.",
+   "solutionNarrative": "SAI — còn phải chia 2, vì khi ghép cặp ta đã cộng dãy hai lần."
   },
   {
    "id": "Q2",
@@ -270,14 +260,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Trung bình cộng của 10 và 20 là 30.",
+   "text": "Mẹo ghép cặp của Gauss chỉ dùng được cho dãy CÁCH ĐỀU.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "value": false
+    "value": true
    },
-   "loiChua": "(10 + 20) : 2 = 15.",
-   "solutionNarrative": "(10 + 20) : 2 = 15."
+   "loiChua": "ĐÚNG — dãy không cách đều thì các cặp không còn bằng nhau.",
+   "solutionNarrative": "ĐÚNG — dãy không cách đều thì các cặp không còn bằng nhau."
   },
   {
    "id": "Q3",
@@ -286,19 +276,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Trung bình cộng của 6 ; 8 ; 10 là:",
+   "text": "Tổng 1 + 2 + ... + 10 bằng:",
    "choices": [
-    "A. 8",
-    "B. 9",
-    "C. 24"
+    "A. 55",
+    "B. 50",
+    "C. 45"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 8"
+    "choice": "A. 55"
    },
-   "loiChua": "24 : 3 = 8.",
-   "solutionNarrative": "24 : 3 = 8."
+   "loiChua": "(1 + 10) × 10 : 2 = 55.",
+   "solutionNarrative": "(1 + 10) × 10 : 2 = 55."
   },
   {
    "id": "Q4",
@@ -307,19 +297,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Năm số có trung bình cộng là 12. Tổng của chúng là:",
+   "text": "Muốn tính tổng một dãy cách đều, việc phải làm TRƯỚC TIÊN là:",
    "choices": [
-    "A. 60",
-    "B. 17",
-    "C. 55"
+    "A. đếm số số hạng",
+    "B. cộng đầu với cuối",
+    "C. chia 2"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 60"
+    "choice": "A. đếm số số hạng"
    },
-   "loiChua": "12 × 5 = 60.",
-   "solutionNarrative": "12 × 5 = 60."
+   "loiChua": "Không biết số số hạng thì không có gì để nhân.",
+   "solutionNarrative": "Không biết số số hạng thì không có gì để nhân."
   },
   {
    "id": "Q5",
@@ -328,19 +318,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Trung bình cộng của hai số là 25, một số là 30. Số kia là:",
+   "text": "Tổng 2 + 4 + 6 + ... + 20 bằng:",
    "choices": [
-    "A. 20",
-    "B. 25",
-    "C. 35"
+    "A. 110",
+    "B. 100",
+    "C. 120"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 20"
+    "choice": "A. 110"
    },
-   "loiChua": "50 − 30 = 20.",
-   "solutionNarrative": "50 − 30 = 20."
+   "loiChua": "Có 10 số hạng; (2 + 20) × 10 : 2 = 110.",
+   "solutionNarrative": "Có 10 số hạng; (2 + 20) × 10 : 2 = 110."
   }
  ]
 }

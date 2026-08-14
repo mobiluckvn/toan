@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B43",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 43 · BÀI TOÁN ĐUỔI KỊP VÀ GẶP NHAU",
+ "title": "Bài 43 · CHU VI VÀ DIỆN TÍCH HÌNH CHỮ NHẬT",
  "durationMinutes": 10,
  "so": 43,
- "chuong": 11,
- "tenChuong": "QUÃNG ĐƯỜNG VÀ THỜI GIAN",
- "dangGoc": "CĐ 2.1 + CĐ 3.1 mức Lớp 4 — Đuổi kịp (khoảng cách khép bằng hiệu mỗi giờ) · gặp nhau (gần thêm bằng tổng mỗi giờ)",
+ "chuong": 10,
+ "tenChuong": "CHU VI, DIỆN TÍCH VÀ HÌNH KHỐI",
+ "dangGoc": "HH 1.1 mức Lớp 4 — Diện tích với m², ha, đổi đơn vị · bài ngược 2 bước · kết hợp nửa chu vi với Tổng - Hiệu / Tổng - Tỉ",
  "skills": {
-  "bktUnit": "CHUONG:11@G4",
+  "bktUnit": "CHUONG:10@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Lập bảng khoảng cách theo giờ cho kịch bản ĐUỔI KỊP: mỗi giờ khoảng cách giảm bằng HIỆU hai nhịp chân. Lập bảng cho kịch bản GẶP NHAU (đi ngược chiều): mỗi giờ hai bên gần nhau thêm bằng TỔNG hai nhịp chân. Kiểm chứng đáp số bằng \"hai cột quãng đường\": lúc kịp (gặp), quãng đường hai bên phải khớp nhau.",
-  "kidText": "Xe đồ đi trước 30 km và chạy chậm hơn, xe buýt đuổi theo phía sau. Bao lâu nữa thì hai xe gặp nhau?",
+  "text": "Tính diện tích hình chữ nhật bằng công thức S = dài × rộng, hiểu nó là phép ĐẾM Ô 1 m²; phân biệt rạch ròi chu vi (m) và diện tích (m²). Đổi đơn vị lớn: 1 ha = 10 000 m² và giải bài ngược hai bước (có S và một cạnh, tìm cạnh kia rồi tìm chu vi). Giải bài kết hợp: từ chu vi lấy nửa chu vi làm TỔNG, ghép với hiệu hoặc tỉ để tìm hai cạnh, rồi mới tính diện tích.",
+  "kidText": "Sân chơi dài 30 m, rộng 20 m. Khai kinh phí lát gạch và khai hàng rào cần hai con số khác nhau đấy!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — LẬP BẢNG ĐUỔI KỊP: xuất phát: cách 30 km. Sau 1 giờ: buýt đi 40, xe đồ đi 30 → khép 10 → còn 20 km. Sau 2 giờ: còn 10 km. Sau 3 giờ: còn 0 km — ĐUỔI KỊP! Bảng cho thấy quy luật: mỗi giờ khoảng cách giảm ĐỀU 10 km = hiệu hai nhịp chân, nên thời gian đuổi = $30 : 10 = 3$ (giờ)."
+    "text": "Bước 1 — ĐẾM GẠCH BẰNG PHÉP NHÂN: mỗi hàng 30 viên gạch 1 m², có 20 hàng → S = 30 × 20 = 600 (m²). Còn viền: chu vi = (30 + 20) × 2 = 100 (m). Hai câu hỏi, hai đơn vị, hai công thức — ghi hồ sơ nhầm cột là kinh phí sai bét!"
    },
    {
     "id": "K2",
-    "text": "Bước 2 — KIỂM BẰNG HAI CỘT QUÃNG ĐƯỜNG: lúc kịp, xe buýt đã đi $40  \\times  3 = 120$ (km); xe đồ đi $30  \\times  3 = 90$ (km) cộng 30 km trốn trước = 120 (km) — hai xe đứng ĐÚNG một điểm ✓. Phép kiểm này bắt được mọi bảng ghi nhầm, chuyên nghiệp không bao giờ bỏ."
+    "text": "Bước 2 — ĐƠN VỊ KHỔNG LỒ: HÉC-TA: đất đai rộng người ta đo bằng ha: 1 ha = một ô vuông cạnh 100 m = 100 × 100 = 10 000 m². Công viên 2 ha = 20 000 m² — sân chơi 600 m² của khu phố chỉ là mảnh nhỏ trong đó. Đổi xuôi nhân 10 000, đổi ngược chia 10 000."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — KỊCH BẢN GẶP NHAU — ĐI NGƯỢC CHIỀU: chiều về: xe buýt rời điểm dã ngoại, xe đón của phụ huynh rời trường, hai đầu quãng đường 180 km chạy VÀO nhau: buýt mỗi giờ 25 km (đường về đông), xe đón 35 km. Mỗi giờ hai xe gần nhau thêm $25 + 35 = 60$ (km) — cả hai cùng góp phần khép! Bảng: 180 → 120 → 60 → 0: gặp sau $180 : 60 = 3$ (giờ). Nơi gặp cách điểm dã ngoại: $25  \\times  3 = 75$ (km); kiểm: $75 + 35  \\times  3 = 75 + 105 = 180$ ✓."
+    "text": "Bước 3 — BÀI NGƯỢC HAI BƯỚC: hồ sơ cũ ghi: \"sân phụ có diện tích 600 m², chiều dài 30 m\" — rộng bao nhiêu, rào hết bao nhiêu mét? Bước một: rộng = S : dài = 600 : 30 = 20 (m). Bước hai: chu vi = (30 + 20) × 2 = 100 (m). Công thức S = dài × rộng chạy lùi y như bài tìm thừa số của Bài 6."
    },
    {
     "id": "K4",
-    "text": "Bước 4 — HAI KỊCH BẢN, MỘT CÁN CÂN: CÙNG chiều (đuổi): kẻ chạy trước \"gỡ lại\" phần mình → mỗi giờ khép bằng HIỆU. NGƯỢC chiều (gặp): cả hai cùng lao vào → mỗi giờ gần thêm bằng TỔNG. Tổng và Hiệu của Chương 6 tái xuất trên mặt đường! Chưa chắc tay? Cứ lập bảng theo giờ — bảng không bao giờ nói dối."
+    "text": "Bước 4 — BẮT TAY CHƯƠNG 6 - 7: đề gộp: \"sân chu vi 100 m, dài hơn rộng 10 m — tính diện tích.\" Lột áo chu vi (Bài 20!): nửa chu vi = 50 = dài + rộng; Tổng - Hiệu: dài = (50 + 10) : 2 = 30, rộng = 20 → S = 600 m². Gặp tỉ cũng vậy: nửa chu vi 50, dài : rộng = 3 : 2 → một phần 10 → 30 và 20. Khẩu quyết: TÌM ĐỦ HAI CẠNH TRƯỚC — NHÂN DIỆN TÍCH SAU."
    }
   ],
-  "mantra": "Đuổi kịp: thời gian = khoảng cách ban đầu : HIỆU hai nhịp chân. Gặp nhau (ngược chiều): thời gian = quãng đường : TỔNG hai nhịp chân. Luôn kiểm bằng hai cột quãng đường: lúc kịp (gặp), hai bên phải cùng đứng một điểm. Bối rối thì lập bảng theo giờ — nhìn khoảng cách co dần là hiểu.",
+  "mantra": "Chu vi đo VIỀN (m), diện tích đo LÒNG (m²) — hai thế giới, đừng lẫn! S hình chữ nhật = dài × rộng; 1 ha = 10 000 m². Bài ngược: cạnh thiếu = S : cạnh biết. Bài gộp chu vi + hiệu (tỉ): nửa chu vi là TỔNG, giải Tổng - Hiệu hay Tổng - Tỉ ra hai cạnh rồi mới nhân.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Bài chiều về (hai xe ngược chiều, mỗi giờ đi 25 km và 35 km, đường 180 km), Trí Long quen tay: \"Đuổi nhau thì lấy hiệu: $35 - 25 = 10$; thời gian gặp là $180 : 10 = 18$ giờ. Ối, đi từ trưa đến nửa đêm mới gặp?!\"",
+    "wrong": "Khai hồ sơ mảnh đất 1 ha, Trí Long viết: \"1 ha = 1 000 m² — thì 'ha' nghe ngắn hơn 'nghìn' có tí, chắc là một nghìn!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Hai xe này chạy CÙNG chiều đuổi nhau, hay từ hai đầu chạy VÀO nhau? Khi cả hai cùng lao về phía nhau, mỗi giờ khoảng cách co lại nhờ MỘT xe hay nhờ CẢ HAI? Gợi ý 2: Con số 18 giờ đã bấm chuông SOI inh ỏi (nửa đêm mới gặp — vô lý với chuyến về!). Lập bảng theo giờ với phần gần thêm là TỔNG hai nhịp chân, tính lại giúp Trí Long — và dặn cậu ấy: đọc chữ \"ngược chiều / về phía nhau\" trước khi chọn tổng hay hiệu."
+    "fix": "Gợi ý 1: 1 ha là ô vuông cạnh bao nhiêu mét? Lấy cạnh nhân cạnh xem ra bao nhiêu viên gạch 1 m²? Gợi ý 2: 100 × 100 tính cẩn thận bằng luật đếm chữ số 0 của Bài 4 — rồi sửa hồ sơ giúp Trí Long. Khai thiếu một chữ số 0 là kinh phí hụt... mười lần đấy!"
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Xe đồ ở trước 30 km, mỗi giờ đi 30 km; xe buýt mỗi giờ đi 40 km, đuổi theo cùng chiều. Hỏi sau bao nhiêu giờ xe buýt đuổi kịp xe đồ?"
+    "narration": "Hạng mục đầu tiên của hồ sơ: sân chơi chính. Sân hình chữ nhật dài 30 m, rộng 20 m. Hỏi diện tích sân (để khai kinh phí lát gạch) và chu vi sân (để khai hàng rào)?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? xe đồ ở trước 30 km, mỗi giờ đi 30 km; xe buýt mỗi giờ đi 40 km, đuổi theo cùng chiều.\nHỎI GÌ? sau bao nhiêu giờ xe buýt đuổi kịp xe đồ.\nĐẠI LƯỢNG & ĐƠN VỊ: khoảng cách (km) và thời gian (giờ) — theo dõi MỘT con số duy nhất: khoảng cách giữa hai xe.\nQUAN HỆ GIỮA CHÚNG: mỗi giờ: xe buýt tiến 40 km nhưng xe đồ cũng tiến 30 km → khoảng cách chỉ khép được phần CHÊNH: $40 - 30 = 10$ km mỗi giờ.\nCHỌN CÔNG CỤ: BẢNG THEO GIỜ: cột thời gian - cột khoảng cách, ghi đến khi về 0.\nƯỚC LƯỢNG TRƯỚC: khép 10 km mỗi giờ, đang cách 30 km → chừng dăm ba giờ là kịp.",
+    "narration": "CHO GÌ? sân hình chữ nhật dài 30 m, rộng 20 m.\nHỎI GÌ? diện tích sân (để khai kinh phí lát gạch) và chu vi sân (để khai hàng rào).\nĐẠI LƯỢNG & ĐƠN VỊ: độ dài (m) cho viền — nhưng phần lòng cần đơn vị MỚI: ô vuông cạnh 1 m, gọi là 1 m².\nQUAN HỆ GIỮA CHÚNG: phủ kín sân bằng lưới ô 1 m²: mỗi hàng đặt được 30 ô, xếp được 20 hàng — tổng số ô là phép nhân 30 × 20.\nCHỌN CÔNG CỤ: LƯỚI Ô VUÔNG + hai công thức tách bạch: S = dài × rộng (m²); chu vi = (dài + rộng) × 2 (m).\nƯỚC LƯỢNG TRƯỚC: sân 30 × 20 to gấp nhiều lần lớp học (~50 m²) → S phải cỡ vài trăm mét vuông.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ cuộc rượt đuổi sang bảng khoảng cách"
+    "nhan": "NHỊP 1, DỊCH — từ sân chơi sang lưới ô một mét vuông"
    },
    {
     "id": "S3",
@@ -104,77 +104,78 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: sổ báo cáo: \"Xe buýt đuổi kịp xe đồ sau ĐÚNG 3 giờ — tại cây số 120, vừa khéo là trạm nghỉ giữa đường: hai xe ăn trưa chung!\" Chiều về, hẹn xe đón của phụ huynh: \"Gặp nhau sau 3 giờ, tại cây số 75 tính từ điểm dã ngoại.\" Mọi việc khớp như lập trình.\nSOI: soi ba lớp: bảng co đều 30/20/10/0 ✓; hai cột quãng đường cùng ra 120 ✓; chiều về $75 + 105 = 180$ ✓. Ba con dấu, lộ trình đóng hồ sơ.\nDÙNG NGOÀI ĐỜI: anh đạp xe đuổi em đi bộ, hai bà cháu hẹn gặp giữa đường làng — mọi cuộc rượt đuổi và hò hẹn trên đời đều nằm gọn trong hai chữ TỔNG - HIỆU của nhịp chân.",
+    "narration": "LẮP: trang một của hồ sơ: \"Sân chính: lát gạch 600 m² — hàng rào 100 m.\" Bác tổ trưởng đối chiếu báo giá: mỗi mét vuông gạch một đơn giá, mỗi mét rào một đơn giá — hai con số tách bạch, phòng tài chính duyệt cái rẹt!\nSOI: soi hai lớp: đơn vị đúng cột (m² cho gạch, m cho rào) ✓; và ước lượng \"vài trăm mét vuông, to hơn chục lớp học\" khớp con số 600 ✓.\nDÙNG NGOÀI ĐỜI: tính gạch lát phòng, cỏ trải sân bóng, sơn tường nhà — mọi hóa đơn \"phủ kín bề mặt\" trong đời đều tính bằng viên gạch một mét vuông của hôm nay.",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Bài chiều về (hai xe ngược chiều, mỗi giờ đi 25 km và 35 km, đường 180 km), Trí Long quen tay: \"Đuổi nhau thì lấy hiệu: $35 - 25 = 10$; thời gian gặp là $180 : 10 = 18$ giờ. Ối, đi từ trưa đến nửa đêm mới gặp?!\"",
+    "narration": "Khai hồ sơ mảnh đất 1 ha, Trí Long viết: \"1 ha = 1 000 m² — thì 'ha' nghe ngắn hơn 'nghìn' có tí, chắc là một nghìn!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Xe thứ nhất ở trước xe thứ hai 30 km và mỗi giờ đi được 30 km. Xe thứ hai đuổi theo cùng chiều, mỗi giờ đi được 40 km. Hỏi sau bao lâu xe thứ hai đuổi kịp xe thứ nhất?",
+  "problem": "Một sân chơi hình chữ nhật có chu vi 100 m, chiều dài hơn chiều rộng 10 m. Tính diện tích sân chơi đó.",
   "steps": [
    {
-    "show": "Khoảng cách đầu: 30 km",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Mỗi giờ: xe trước đi 30 km, xe sau đi 40 km (cùng chiều). Tìm thời gian đuổi kịp.",
-    "phan": "tomtat"
+    "show": "Chu vi: 100 m; dài hơn rộng: 10 m."
    },
    {
-    "show": "Ba dữ kiện: khoảng cách đầu + hai nhịp chân.",
-    "phan": "tomtat"
+    "show": "Tìm diện tích sân."
    },
    {
-    "show": "Mô hình (bảng theo giờ)",
-    "phan": "tomtat"
+    "show": "Đề hỏi diện tích nhưng cho chu vi — sẽ phải đi vòng qua hai cạnh."
    },
    {
-    "show": "Mỗi giờ khoảng cách khép: $40 - 30 = 10$ (km).",
-    "phan": "tomtat"
+    "show": "Mô hình (hai chặng)"
    },
    {
-    "show": "Bảng: 30 → 20 → 10 → 0 (km).",
-    "phan": "tomtat"
+    "show": "Chặng 1: nửa chu vi = tổng hai cạnh → Tổng - Hiệu tìm dài, rộng."
    },
    {
-    "show": "Bảng nhỏ ba mũi tên — thấy tận mắt khoảng cách co đều.",
-    "phan": "tomtat"
+    "show": "Chặng 2: có đủ hai cạnh → S = dài × rộng."
    },
    {
-    "show": "Mỗi giờ xe thứ hai đến gần xe thứ nhất thêm: $40 - 30 = 10$ (km)",
-    "phan": "giai"
+    "show": "Vạch lộ trình hai chặng ngay từ mô hình — không nhảy cóc."
    },
    {
-    "show": "Thời gian để xe thứ hai đuổi kịp xe thứ nhất là: $30 : 10 = 3$ (giờ)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Hai dòng: phần khép mỗi giờ, rồi chia khoảng cách ban đầu.",
-    "phan": "giai"
+    "show": "Nửa chu vi sân là: 100 : 2 = 50 (m)"
    },
    {
-    "show": "Đáp số: 3 giờ.",
-    "phan": "dapso"
+    "show": "Nửa chu vi chính là tổng của chiều dài và chiều rộng."
    },
    {
-    "show": "Đáp số kèm đơn vị giờ.",
-    "phan": "ghichu"
+    "show": "Chiều dài sân là: (50 + 10) : 2 = 30 (m)"
    },
    {
-    "show": "Thử lại: xe sau đi $40  \\times  3 = 120$ km ; xe trước đi $30  \\times  3 + 30 = 120$ km — cùng một điểm ✓",
-    "phan": "thulai"
+    "show": "Chiều rộng sân là: 30 − 10 = 20 (m)"
    },
    {
-    "show": "Kiểm hai cột quãng đường — lúc kịp phải đứng chung một chỗ.",
-    "phan": "thulai"
+    "show": "Diện tích sân là: 30 × 20 = 600 (m²)"
+   },
+   {
+    "show": "Năm dòng nối liền Bài 19 - 20 với công thức diện tích mới."
+   },
+   {
+    "show": "Đáp số: 600 m²."
+   },
+   {
+    "show": "Đáp số kèm đơn vị m² — không phải m!"
+   },
+   {
+    "show": "Thử lại: (30 + 20) × 2 = 100 ✓ ; 30 − 20 = 10 ✓"
+   },
+   {
+    "show": "Thử ngược về hai dữ kiện gốc của đề: chu vi và hiệu."
    }
   ]
  },
@@ -183,154 +184,150 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Hai xe cách nhau 30 km, mỗi giờ khoảng cách khép lại 10 km. Hỏi sau mấy giờ xe sau đuổi kịp xe trước?",
+     "text": "Tính diện tích hình chữ nhật có chiều dài 8 m, chiều rộng 5 m.",
      "answerKey": {
-      "value": 3
+      "value": 40
      },
-     "solutionNarrative": "$30 : 10 = 3$ giờ.",
+     "solutionNarrative": "S = 8 × 5 = 40 m².",
      "hints": [
-      "Khoảng cách chia cho phần khép được mỗi giờ.",
-      "Mỗi giờ khép bấy nhiêu thì mấy giờ là hết?"
+      "Diện tích đo LÒNG: dài nhân rộng.",
+      "Đơn vị phải là mét vuông."
      ]
     },
     {
      "id": "C2",
-     "text": "Hai xe đi ngược chiều, mỗi giờ gần nhau thêm 60 km, lúc đầu cách nhau 180 km. Hỏi sau mấy giờ hai xe gặp nhau?",
+     "text": "Đổi: 3 ha = ? m².",
      "answerKey": {
-      "value": 3
+      "value": 30000
      },
-     "solutionNarrative": "$180 : 60 = 3$ giờ.",
+     "solutionNarrative": "3 ha = 3 × 10 000 = 30 000 m².",
      "hints": [
-      "Quãng đường chia phần gần lại mỗi giờ.",
-      "Ngược chiều thì hai bên cùng lao vào nhau."
+      "Một héc-ta là ô vuông cạnh một trăm mét.",
+      "Nhân số héc-ta với diện tích một héc-ta."
      ]
     },
     {
      "id": "C3",
-     "text": "Lập bảng khoảng cách theo giờ cho Câu 1 (từ 30 km về 0 km).",
+     "text": "Tính chu vi hình chữ nhật có chiều dài 30 m, chiều rộng 20 m.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "sau 1 giờ còn cách mấy ki-lô-mét",
-        "value": 20
-       },
-       {
-        "label": "sau 2 giờ còn cách mấy ki-lô-mét",
-        "value": 10
-       },
-       {
-        "label": "sau 3 giờ còn cách mấy ki-lô-mét",
-        "value": 0
-       }
-      ]
+      "value": 100
      },
-     "solutionNarrative": "Bảng: xuất phát 30 km → sau 1 giờ 20 km → sau 2 giờ 10 km → sau 3 giờ 0 km — đuổi kịp.",
+     "solutionNarrative": "Chu vi = (30 + 20) × 2 = 100 m.",
      "hints": [
-      "Mỗi giờ trừ đi phần khép được.",
-      "Ghi từng dòng cho tới khi về không."
+      "Chu vi đo VIỀN: gom một cặp rồi nhân đôi.",
+      "Đơn vị là mét, không phải mét vuông."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Xe đồ ở trước 30 km, mỗi giờ đi 30 km; xe buýt đuổi theo mỗi giờ đi 40 km. Hỏi sau mấy giờ đuổi kịp? Kiểm chứng bằng hai cột quãng đường.",
+     "text": "Sân chơi hình chữ nhật dài 30 m, rộng 20 m. Tính diện tích và chu vi sân.",
      "answerKey": {
       "parts": [
        {
-        "label": "sau mấy giờ đuổi kịp",
-        "value": 3
+        "label": "diện tích, tính bằng mét vuông",
+        "value": 600
+       },
+       {
+        "label": "chu vi, tính bằng mét",
+        "value": 100
        }
       ]
      },
-     "solutionNarrative": "Mỗi giờ khép $40 - 30 = 10$ km → $30 : 10 = 3$ giờ. Kiểm: buýt đi 120 km; xe đồ đi $90 + 30 = 120$ km — cùng một điểm ✓.",
+     "solutionNarrative": "S = 30 × 20 = 600 m²; chu vi = 100 m — hai đơn vị, hai cột hồ sơ!",
      "hints": [
-      "Đuổi kịp: chia khoảng cách cho HIỆU hai nhịp chân.",
-      "Mỗi giờ khép lại được bao nhiêu?"
+      "Hai thế giới — làm riêng từng cái.",
+      "Ghi đúng đơn vị cho từng cột hồ sơ."
      ]
     },
     {
      "id": "C5",
-     "text": "Su Bống đạp xe đi trước, được 6 km thì anh Trí Dũng đuổi theo. Mỗi giờ Trí Dũng đi 10 km, Su Bống đi 7 km. Hỏi sau mấy giờ anh đuổi kịp em?",
+     "text": "Một sân hình chữ nhật có diện tích 600 m², chiều dài 30 m. Tính chiều rộng và chu vi sân.",
      "answerKey": {
-      "value": 2
+      "parts": [
+       {
+        "label": "chiều dài",
+        "value": 20
+       },
+       {
+        "label": "chiều rộng",
+        "value": 100
+       }
+      ]
      },
-     "solutionNarrative": "Mỗi giờ khép $10 - 7 = 3$ km → $6 : 3 = 2$ giờ. Thử: anh đi 20 km; em đi $14 + 6 = 20$ km ✓.",
+     "solutionNarrative": "Rộng = 600 : 30 = 20 m; chu vi = (30 + 20) × 2 = 100 m.",
      "hints": [
-      "Tính hiệu hai nhịp chân trước đã.",
-      "Khoảng cách ban đầu chia cho hiệu ấy."
+      "BÀI NGƯỢC: cạnh thiếu bằng diện tích chia cạnh đã biết.",
+      "Có đủ hai cạnh rồi mới tính chu vi."
      ]
     },
     {
      "id": "C6",
-     "text": "Hai bạn ở hai đầu con đường 24 km đạp xe về phía nhau: một bạn mỗi giờ đi 7 km, bạn kia 5 km. Hỏi sau mấy giờ hai bạn gặp nhau?",
+     "text": "Sân hình chữ nhật có chu vi 100 m, chiều dài hơn chiều rộng 10 m. Tính diện tích sân.",
      "answerKey": {
-      "value": 2
+      "value": 600
      },
-     "solutionNarrative": "Mỗi giờ gần thêm $7 + 5 = 12$ km → $24 : 12 = 2$ giờ.",
+     "solutionNarrative": "Nửa chu vi 50; dài = (50 + 10) : 2 = 30 m; rộng = 20 m → S = 600 m².",
      "hints": [
-      "Ngược chiều: chia quãng đường cho TỔNG hai nhịp chân.",
-      "Mỗi giờ hai bạn gần nhau thêm bao nhiêu?"
+      "Lột áo chu vi ra nửa vòng đã.",
+      "Có tổng và hiệu thì ra hai cạnh, rồi mới nhân."
      ]
     },
     {
      "id": "C7",
-     "text": "Hai xe khởi hành cùng lúc từ hai bến cách nhau 180 km, đi về phía nhau; mỗi giờ một xe đi 25 km, xe kia 35 km. Hỏi sau mấy giờ gặp nhau, và nơi gặp cách bến của xe thứ nhất bao nhiêu ki-lô-mét?",
+     "text": "Sân hình chữ nhật có nửa chu vi 50 m, chiều dài và chiều rộng theo tỉ số 3 : 2. Tính diện tích sân.",
      "answerKey": {
-      "value": 3
+      "value": 600
      },
-     "solutionNarrative": "Mỗi giờ gần thêm $25 + 35 = 60$ km → $180 : 60 = 3$ giờ.",
+     "solutionNarrative": "Một phần 50 : 5 = 10 → dài 30 m, rộng 20 m → S = 600 m².",
      "hints": [
-      "Tổng hai nhịp chân rồi chia quãng đường.",
-      "Có số giờ rồi thì nhân với nhịp chân xe thứ nhất."
+      "Nửa chu vi chính là tổng hai cạnh.",
+      "Tổng - Tỉ ra hai cạnh, rồi mới nhân."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Với bài xe đồ - xe buýt (Câu 4): chỗ đuổi kịp cách điểm xuất phát của xe buýt bao nhiêu ki-lô-mét? Tính bằng HAI cách (theo xe buýt và theo xe đồ) rồi đối chiếu.",
+     "text": "Thửa ruộng hình chữ nhật có diện tích 1 ha và chiều rộng 50 m. Tính chiều dài và chu vi thửa ruộng. (Nhớ đổi ha ra m² trước!)",
      "answerKey": {
       "parts": [
        {
-        "label": "tính theo xe buýt, bằng ki-lô-mét",
-        "value": 120
+        "label": "chiều dài",
+        "value": 200
        },
        {
-        "label": "tính theo xe đồ, bằng ki-lô-mét",
-        "value": 120
+        "label": "chiều rộng",
+        "value": 500
        }
       ]
      },
-     "solutionNarrative": "Theo xe buýt: $40  \\times  3 = 120$ km; theo xe đồ: $30 + 30  \\times  3 = 120$ km — hai cách cùng ra 120 km ✓.",
+     "solutionNarrative": "1 ha = 10 000 m² → dài = 10 000 : 50 = 200 m; chu vi = (200 + 50) × 2 = 500 m.",
      "hints": [
-      "Tính theo xe buýt: nhịp chân nhân số giờ.",
-      "Tính theo xe kia: nhớ cộng cả phần trốn trước."
+      "Đổi héc-ta ra mét vuông trước đã.",
+      "Rồi chia cho cạnh đã biết."
      ]
     },
     {
      "id": "C9",
-     "text": "Hai xe khởi hành lúc 8 giờ sáng từ hai đầu quãng đường 180 km, đi về phía nhau với nhịp chân 25 km và 35 km mỗi giờ. Hỏi hai xe gặp nhau lúc mấy giờ, và đến lúc gặp mỗi xe đã đi được bao nhiêu ki-lô-mét? Cộng hai quãng ấy lại phải ra con số nào?",
+     "text": "Một hình chữ nhật có chu vi 100 m và diện tích 600 m². Tìm chiều dài và chiều rộng — gợi ý: tổng hai cạnh là 50, hãy thử các cặp có tổng 50 một cách CÓ HỆ THỐNG xem cặp nào nhân ra 600.",
      "answerKey": {
       "parts": [
        {
-        "label": "gặp nhau lúc mấy giờ",
-        "value": 11
+        "label": "chiều dài, tính bằng mét",
+        "value": 30
        },
        {
-        "label": "xe thứ nhất đi mấy ki-lô-mét",
-        "value": 75
-       },
-       {
-        "label": "xe thứ hai đi mấy ki-lô-mét",
-        "value": 105
+        "label": "chiều rộng, tính bằng mét",
+        "value": 20
        }
       ]
      },
-     "solutionNarrative": "Gặp sau 3 giờ → lúc $8 + 3 = 11$ giờ trưa; xe thứ nhất đi $25  \\times  3 = 75$ km, xe thứ hai đi $35  \\times  3 = 105$ km; cộng lại $75 + 105 = 180$ km — đúng cả quãng đường ✓.",
+     "solutionNarrative": "Tổng hai cạnh 100 : 2 = 50. Thử có hệ thống các cặp tổng 50: 40 × 10 = 400; 35 × 15 = 525; 30 × 20 = 600 ✓ → dài 30 m, rộng 20 m. (Càng gần vuông tích càng lớn — nên dò từ giữa dò ra là nhanh nhất!)",
      "hints": [
-      "Tìm số giờ tới lúc gặp nhau trước đã.",
-      "Cộng hai quãng lại phải bằng cả quãng đường."
+      "Nửa chu vi cho tổng hai cạnh.",
+      "Thử CÓ HỆ THỐNG các cặp có tổng ấy, dò từ giữa dò ra."
      ]
     }
    ]
@@ -341,7 +338,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Khi đuổi nhau cùng chiều, mỗi giờ khoảng cách giảm bằng HIỆU quãng đường một giờ của hai xe.",
+    "text": "Diện tích hình chữ nhật bằng chiều dài nhân chiều rộng.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -350,61 +347,61 @@
    },
    {
     "id": "Q2",
-    "text": "Khi đi ngược chiều về phía nhau, mỗi giờ hai xe gần nhau thêm bằng HIỆU quãng đường một giờ.",
+    "text": "1 ha = 1 000 m².",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Ngược chiều thì gần thêm bằng TỔNG."
+    "solutionNarrative": "1 ha = 10 000 m² (ô vuông cạnh 100 m)."
    },
    {
     "id": "Q3",
-    "text": "Mỗi giờ khép 10 km, đang cách 50 km. Thời gian đuổi kịp:",
+    "text": "Diện tích hình chữ nhật 7 m × 6 m là:",
     "format": "mcq",
     "choices": [
-     "A. 5 giờ",
-     "B. 10 giờ",
-     "C. 40 giờ"
+     "A. 42 m²",
+     "B. 26 m²",
+     "C. 13 m²"
     ],
     "answerKey": {
-     "choice": "A. 5 giờ"
+     "choice": "A. 42 m²"
     },
-    "solutionNarrative": "5 giờ)."
+    "solutionNarrative": "42 m²)."
    },
    {
     "id": "Q4",
-    "text": "Mỗi giờ gần thêm 60 km, đang cách 120 km. Thời gian gặp:",
+    "text": "2 ha bằng:",
     "format": "mcq",
     "choices": [
-     "A. 2 giờ",
-     "B. 60 giờ",
-     "C. 180 giờ"
+     "A. 20 000 m²",
+     "B. 2 000 m²",
+     "C. 200 m²"
     ],
     "answerKey": {
-     "choice": "A. 2 giờ"
+     "choice": "A. 20 000 m²"
     },
-    "solutionNarrative": "2 giờ)."
+    "solutionNarrative": "20 000 m²)."
    },
    {
     "id": "Q5",
-    "text": "Xe A mỗi giờ 45 km, xe B mỗi giờ 30 km, đi ngược chiều. Mỗi giờ gần thêm:",
+    "text": "Hình chữ nhật có diện tích 24 m², chiều dài 6 m. Chiều rộng là:",
     "format": "mcq",
     "choices": [
-     "A. 75 km",
-     "B. 15 km",
-     "C. 45 km"
+     "A. 4 m",
+     "B. 18 m",
+     "C. 30 m"
     ],
     "answerKey": {
-     "choice": "A. 75 km"
+     "choice": "A. 4 m"
     },
-    "solutionNarrative": "$45 + 30 = 75$ km."
+    "solutionNarrative": "24 : 6 = 4 m."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Diễn kịch rượt đuổi trong nhà: hai bố con bước theo nhịp đếm (bố 4 ô gạch mỗi nhịp, con 3 ô, con xuất phát trước 6 ô) — đếm nhịp đến lúc kịp rồi so với phép chia $6 : 1$.",
-  "homeActivity": "Bảng theo giờ là công cụ vàng của tuổi này: đừng vội ép công thức, cứ để con kẻ bảng vài chục lần — công thức sẽ tự \"mọc\" ra từ bảng như lời sách vẫn hứa.",
-  "watchFor": "NÊN: sau mỗi bài, hỏi \"kịch bản này chia cho TỔNG hay HIỆU — vì sao?\". KHÔNG NÊN: hai xe xuất phát lệch giờ, đường vòng quanh hồ hay xuôi ngược dòng nước — các kịch bản ấy ma trận hẹn lớp 5."
+  "onComplete": "Vẽ phấn một ô 1 m × 1 m ra sân (hay ghép 4 tờ báo) cho con NGỒI VÀO trong một mét vuông — trải nghiệm cơ thể ấy chống lẫn lộn m với m² tốt hơn trăm lần nhắc miệng.",
+  "homeActivity": "Đo phòng ngủ của chính con: dài, rộng, rồi tính diện tích và \"khai hồ sơ\" xem lát kín sàn cần bao nhiêu viên gạch 1 m² — bài tập thật, số thật, động lực thật.",
+  "watchFor": "NÊN: mỗi đáp số bắt kèm đơn vị và câu \"con số này đo viền hay đo lòng?\". KHÔNG NÊN: hình chữ L ghép nhiều mảnh hay đơn vị dm², cm² trộn lẫn — phức hợp xin hẹn bài sau và lớp 5."
  },
  "figureSpec": [
   {
@@ -413,20 +410,33 @@
     "hook"
    ],
    "file": "figures/L4H_B43_MO.png",
-   "caption": "Bảng theo giờ, cột khoảng cách còn trống.",
-   "sha256_16": "ff4032980e08a69a",
+   "caption": "Sân chữ nhật, mới biết chu vi và phần hơn.",
+   "sha256_16": "f377ee4513528eb4",
    "mucGoc": "chuyenMoBai"
   },
   {
-   "id": "L4H_B43_G1",
+   "id": "L4H_B43_G2",
    "usedIn": [
-    "screen:S3"
+    "screen:S4"
    ],
-   "file": "figures/L4H_B43_G1.png",
-   "caption": "Lập bảng theo giờ là thấy ngay lúc gặp nhau.",
-   "sha256_16": "2593cf23b7a79675",
+   "file": "figures/L4H_B43_G2.png",
+   "caption": "Lưới ô vuông đếm được từng mét vuông.",
+   "sha256_16": "5f67110151aed141",
    "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Chuyến dã ngoại có HAI xe — và hai xe là có kịch tính: xe nọ đuổi xe kia, xe nọ chạy về phía xe kia! Công cụ của lớp 4 là LẬP BẢNG THEO GIỜ: ghi khoảng cách sau từng giờ, nhìn nó co dần về 0. Và một khám phá đẹp: cùng chiều thì mỗi giờ khép bằng HIỆU hai nhịp chân, ngược chiều thì gần thêm bằng TỔNG — cán cân Chương 6 tái xuất ngay trên mặt đường!"
+ "hatMam": "Bài 15 và Bài 20 con đã thạo chu vi — độ dài đường VIỀN quanh hình. Hôm nay đo thứ khác hẳn: phần LÒNG bên trong, gọi là DIỆN TÍCH, đếm bằng viên gạch 1 m². Và tin vui cho - chia phần: các bài diện tích khó nhất chỉ là Tổng - Hiệu, Tổng - Tỉ quen thuộc... mặc áo bản vẽ!",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B27",
+   "DL:KSN3.B30"
+  ],
+  "ten": [
+   "CHU VI CÓ CÔNG THỨC",
+   "DIỆN TÍCH — TẤM THẢM Ô VUÔNG"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ }
 }

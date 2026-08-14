@@ -43,18 +43,18 @@ CAN_HINH = {
     'DL:KSN4.B11#C8': 'ba điều kiện dư cùng lúc (vỉ 3 thừa 2, vỉ 4 thừa 3, vỉ 5 thừa '
                       '4) — phải THẤY phần thừa của cả ba cách xếp mới hiểu vì sao '
                       '"thiếu 1" là chìa khóa',
-    'DL:KSN4.B15#C7': 'leo cầu thang từ tầng 1 lên tầng 4 — bé phải ĐẾM ĐƯỢC ba '
+    'DL:KSN4.B20#C7': 'leo cầu thang từ tầng 1 lên tầng 4 — bé phải ĐẾM ĐƯỢC ba '
                       'quãng cầu thang, đây đúng chỗ hay đếm thừa một',
-    'DL:KSN4.B15#C8': 'đóng cọc quanh sân sao cho BỐN GÓC đều có cọc — phải nhìn cả '
+    'DL:KSN4.B20#C8': 'đóng cọc quanh sân sao cho BỐN GÓC đều có cọc — phải nhìn cả '
                       'vòng khép kín mới thấy vì sao số cọc bằng số khoảng',
-    'DL:KSN4.B32#C1': 'Ven hai vòng: phần giao 8 bạn nằm trong cả hai vòng, không vẽ '
+    'DL:KSN4.B37#C1': 'Ven hai vòng: phần giao 8 bạn nằm trong cả hai vòng, không vẽ '
                       'thì bé trừ nhầm',
-    'DL:KSN4.B33#C9': 'xếp ba phân số bằng PHẦN BÙ — phải thấy ba cái bánh TO BẰNG '
+    'DL:KSN4.B38#C9': 'xếp ba phân số bằng PHẦN BÙ — phải thấy ba cái bánh TO BẰNG '
                       'NHAU với ba phần thiếu khác nhau',
-    'DL:KSN4.B41#C6': 'kể tên ba cặp mặt đối diện — phải trải phẳng mới đếm đủ sáu mặt',
-    'DL:KSN4.B41#C9': 'khối 3×3×3 khoét hầm giữa — phải lát TỪNG TẦNG mới thấy tầng '
+    'DL:KSN4.B46#C6': 'kể tên ba cặp mặt đối diện — phải trải phẳng mới đếm đủ sáu mặt',
+    'DL:KSN4.B46#C9': 'khối 3×3×3 khoét hầm giữa — phải lát TỪNG TẦNG mới thấy tầng '
                       'nào mất khối',
-    'DL:KSN4.B44#C8': 'liệt kê mọi giờ đúng cho góc vuông — phải đếm khấc trên mặt '
+    'DL:KSN4.B49#C8': 'liệt kê mọi giờ đúng cho góc vuông — phải đếm khấc trên mặt '
                       'đồng hồ mới thấy chỉ có 3 giờ và 9 giờ',
 }
 

@@ -3,14 +3,14 @@
  "id": "DL:KSN4.B27",
  "grade": 4,
  "quyen": "lop4",
- "title": "Bài 27 · BÀI TOÁN VỀ TUỔI",
+ "title": "Bài 27 · KHI CẢ TỔNG VÀ HIỆU CÙNG THAY ĐỔI",
  "durationMinutes": 10,
  "so": 27,
- "chuong": 8,
- "tenChuong": "BÀI TOÁN CÓ LỜI VĂN",
- "dangGoc": "LV 6.1 + LV 6.2 mức Lớp 4 — Một mốc: đưa về Tổng - Hiệu - Tỉ · hai mốc: chìa khóa \"hiệu tuổi không đổi\"",
+ "chuong": 6,
+ "tenChuong": "TỔNG - HIỆU",
+ "dangGoc": "LV 2.4 + LV 2.5 mức Lớp 4 — Cùng thêm t vào cả hai số (bài toán tuổi) · ba số biết tổng và hai hiệu",
  "skills": {
-  "bktUnit": "CHUONG:8@G4",
+  "bktUnit": "CHUONG:6@G4",
   "primary": []
  },
  "series": {
@@ -20,8 +20,8 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Giải bài tuổi MỘT mốc bằng cách nhận diện: đó chỉ là Tổng - Tỉ hay Hiệu - Tỉ mặc áo tuổi. Giải bài tuổi HAI mốc theo ba bước: chốt hiệu → dựng Hiệu - Tỉ tại thời điểm đề hỏi → so với hiện nay ra số năm. Hiểu vì sao tỉ số \"gấp mấy lần\" thay đổi theo thời gian dù hiệu không đổi.",
-  "kidText": "Nay mẹ 36 tuổi, Su Kem 12 tuổi. Có một năm xưa mẹ gấp 5 lần tuổi con — cách đây bao lâu nhỉ?",
+  "text": "Nắm định luật thời gian: cùng thêm t vào cả hai số thì HIỆU không đổi, TỔNG tăng 2 × t. Giải bài toán tuổi hai thời điểm bằng bảng TRƯỚC - SAU (kể cả bài ngược: biết tổng ở tương lai, tìm tuổi hiện tại). Giải bài ba số biết tổng và hai hiệu bằng sơ đồ ba đoạn: cắt phần thừa, quy cả ba về người bé nhất.",
+  "kidText": "Tổng tuổi hai anh em nay là 24, anh hơn em 4 tuổi. Lá thư mở khi tổng tuổi bằng 30 — còn mấy năm nữa?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
@@ -29,29 +29,29 @@
   "statements": [
    {
     "id": "K1",
-    "text": "Bước 1 — ÔN NHANH BÀI TUỔI MỘT MỐC: \"tổng tuổi hai mẹ con 40, mẹ gấp 4 lần con\" → Tổng - Tỉ: một phần $40 : 5 = 8$ → con 8, mẹ 32. \"Mẹ hơn con 28 tuổi, gấp 5 lần con\" → Hiệu - Tỉ: một phần $28 : 4 = 7$ → con 7, mẹ 35. Một mốc chỉ là Chương 6 - 7 đội mũ \"tuổi\" — không có gì mới!"
+    "text": "Bước 1 — ĐỊNH LUẬT THỜI GIAN: sau t năm, anh thêm t tuổi VÀ em thêm t tuổi → tổng thêm t × 2; hiệu = (anh + t) − (em + t) = anh − em: KHÔNG ĐỔI. Hiệu tuổi là \"hằng số cả đời\" — anh hơn em 4 tuổi thì 50 năm nữa vẫn hơn đúng 4!"
    },
    {
     "id": "K2",
-    "text": "Bước 2 — DỰNG BẢNG BA MỐC ĐỂ THẤY TỈ TRÔI: mẹ 36 - con 12: hiện nay gấp 3; thử 12 năm nữa: 48 và 24 — chỉ còn gấp 2; lùi 6 năm trước: 30 và 6 — những gấp 5! Ở hàng nào hiệu cũng đúng 24. Kết luận: TỈ TRÔI, HIỆU ĐỨNG IM — muốn bắt bài tuổi hai mốc, hãy neo vào hiệu."
+    "text": "Bước 2 — GIẢI HIỆN TẠI VÀ TÌM NGÀY MỞ THƯ: năm nay: tổng 24, hiệu 4 → anh = (24 + 4) : 2 = 14; em = 10 (tuổi). Ngày mở thư: tổng cần tăng 30 − 24 = 6, mỗi năm tổng tăng 2 → 6 : 2 = 3 năm nữa. Khi ấy anh 17, em 13: 17 + 13 = 30 ✓."
    },
    {
     "id": "K3",
-    "text": "Bước 3 — GIẢI VỤ LƯU BÚT: tại năm viết: mẹ gấp 5 lần con, hiệu vẫn 24 → hiệu số phần $5 - 1 = 4$ → tuổi con năm ấy: $24 : 4 = 6$ (tuổi); mẹ năm ấy: 30. So với hiện nay: $12 - 6 = 6$ → dòng lưu bút viết cách đây 6 năm. Thử: $30 = 6  \\times  5$ ✓ và $30 - 6 = 24$ ✓."
+    "text": "Bước 3 — BÀI NGƯỢC THỜI GIAN: đề hay hỏi ngược: \"SAU 3 năm nữa, tổng tuổi hai anh em là 30, anh hơn em 4 tuổi. Tính tuổi mỗi người HIỆN NAY.\" Đường 1: lùi tổng về hiện tại: 30 − 3 × 2 = 24 → giải như bước 2. Đường 2: giải luôn ở tương lai (anh 17, em 13) rồi mỗi người lùi 3 tuổi → 14 và 10. Hai đường một đáp số — hiệu 4 dùng được ở CẢ hai thời điểm vì nó bất biến!"
    },
    {
     "id": "K4",
-    "text": "Bước 4 — CHIỀU TƯƠNG LAI CŨNG MỘT CHIÊU: \"mấy năm nữa mẹ gấp ĐÔI Su Kem?\" — hiệu 24, tỉ $2 : 1$ → hiệu số phần 1 → tuổi con lúc đó = $24 : 1 = 24$ → còn $24 - 12 = 12$ năm nữa. Quá khứ hay tương lai, ba bước không đổi: chốt hiệu → Hiệu - Tỉ tại mốc hỏi → so với hiện nay."
+    "text": "Bước 4 — MÀN BẾ MẠC: BA SỐ, MỘT SƠ ĐỒ: ba bạn có 100 viên bi; A hơn B 5 viên, B hơn C 10 viên. Vẽ ba đoạn: C ngắn nhất; B = C nối thêm 10; A = C nối thêm 10 + 5 = 15. CẮT hết phần thừa: 100 − 10 − 15 = 75 = ba lần phần C → C = 25; B = 35; A = 40. Bí quyết ba số: quy tất cả về NGƯỜI BÉ NHẤT."
    }
   ],
-  "mantra": "Bài tuổi một mốc: nhận diện Tổng - Tỉ / Hiệu - Tỉ rồi giải như Chương 7. Bài tuổi hai mốc: nhớ khẩu quyết \"TỈ TRÔI - HIỆU ĐỨNG IM\" và ba bước: ① chốt hiệu, ② dựng Hiệu - Tỉ tại thời điểm đề hỏi, ③ so tuổi mốc ấy với hiện nay để ra số năm. Đừng bao giờ dùng tỉ của mốc này cho mốc kia!",
+  "mantra": "Định luật thời gian: cùng thêm t → hiệu ĐỨNG IM, tổng tăng 2 × t (cùng bớt t: tổng giảm 2 × t, hiệu vẫn im). Bài tuổi: kẻ bảng trước - sau, chọn thời điểm có đủ tổng - hiệu mà giải. Bài ba số: sơ đồ ba đoạn, cắt phần thừa, quy về người bé nhất — rồi chia 3.",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Giải bài \"nay bố 40, con 10; mấy năm nữa bố gấp 3 lần con?\", Trí Long phán: \"Nay bố gấp 4, muốn gấp 3 tức giảm 1 lần gấp — mỗi năm chắc giảm đều, mà $40 : 10 = 4$... thôi cứ lấy đại $40 - 30 = 10$ năm nữa!\"",
+    "wrong": "Làm bài \"nay tổng tuổi hai chị em 20, chị hơn em 2 tuổi; hỏi 5 năm nữa tổng tuổi và hiệu tuổi là bao nhiêu\", Trí Long tính: \"Tổng thì 20 + 5 = 25, hiệu thì 2 + 5 = 7 — thêm 5 năm cứ cộng 5 đều cho đẹp!\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Thử đáp số 10 năm: bố 50, con 20 — bố gấp mấy lần con, có phải 3 không? Đoán \"đại\" đã bị chính phép thử tố cáo. Gợi ý 2: Con số nào của hai bố con KHÔNG bao giờ đổi — $40 : 10$ hay $40 - 10$? Neo vào nó, dựng Hiệu - Tỉ với tỉ $3 : 1$ rồi tìm số năm chuẩn giúp Trí Long (đáp số đẹp lắm: bố 45, con 15!)."
+    "fix": "Gợi ý 1: Sau 5 năm, có MẤY người cùng thêm 5 tuổi? Tổng gánh phần thêm của mấy người — cộng 5 hay cộng 5 × 2? Gợi ý 2: Còn hiệu: chị thêm 5, em cũng thêm 5 — khoảng cách giữa hai chị em có nhích được tí nào không? Tính lại cả hai ô của bảng trước - sau giúp Trí Long, và tặng cậu ấy câu câu cần nhớ: \"tuổi ai cũng chạy, khoảng cách đứng im.\""
    }
   ]
  },
@@ -60,14 +60,14 @@
    {
     "id": "S1",
     "kind": "hook",
-    "narration": "Hiện nay mẹ 36 tuổi, Su Kem 12 tuổi; có một năm trong quá khứ tuổi mẹ gấp 5 lần tuổi con. Hỏi dòng lưu bút được viết cách đây mấy năm?"
+    "narration": "Năm nay: tổng tuổi hai anh em 24, anh hơn em 4 tuổi; lá thư mở khi tổng tuổi bằng 30. Hỏi tuổi mỗi người năm nay, và mấy năm nữa thì được mở thư?"
    },
    {
     "id": "S2",
     "kind": "explain",
-    "narration": "CHO GÌ? hiện nay mẹ 36 tuổi, Su Kem 12 tuổi; có một năm trong quá khứ tuổi mẹ gấp 5 lần tuổi con.\nHỎI GÌ? dòng lưu bút được viết cách đây mấy năm.\nĐẠI LƯỢNG & ĐƠN VỊ: tuổi (tuổi) và khoảng thời gian (năm) — hai mốc: \"hiện nay\" và \"năm viết lưu bút\".\nQUAN HỆ GIỮA CHÚNG: mỗi năm cả hai mẹ con cùng thêm 1 tuổi → hiệu tuổi mẹ − con = $36 - 12 = 24$ KHÔNG đổi ở mọi mốc; còn tỉ \"gấp mấy lần\" thì trôi (nay gấp 3, xưa gấp 5).\nCHỌN CÔNG CỤ: MỎ NEO HIỆU + sơ đồ Hiệu - Tỉ dựng tại mốc quá khứ (hiệu 24, tỉ $5 : 1$).\nƯỚC LƯỢNG TRƯỚC: gấp 5 xảy ra khi con còn bé — chắc hồi Su Kem dăm sáu tuổi, tức khoảng $6 - 7$ năm trước.",
+    "narration": "CHO GÌ? năm nay: tổng tuổi hai anh em 24, anh hơn em 4 tuổi; lá thư mở khi tổng tuổi bằng 30.\nHỎI GÌ? tuổi mỗi người năm nay, và mấy năm nữa thì được mở thư.\nĐẠI LƯỢNG & ĐƠN VỊ: tuổi (tuổi), thời gian (năm) — mỗi năm trôi, MỖI người thêm đúng 1 tuổi.\nQUAN HỆ GIỮA CHÚNG: sau t năm: cả hai cùng thêm t → tổng thêm t × 2, còn hiệu thì hai bên thêm đều nhau nên đứng im vĩnh viễn.\nCHỌN CÔNG CỤ: BẢNG TRƯỚC - SAU hai cột (tổng, hiệu) + sơ đồ Tổng - Hiệu ở thời điểm cần tính.\nƯỚC LƯỢNG TRƯỚC: tổng cần tăng từ 24 lên 30, mỗi năm tăng 2 → chừng 3 năm nữa mở thư.",
     "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ trang lưu bút sang hai mốc thời gian"
+    "nhan": "NHỊP 1, DỊCH — từ dòng thời gian sang bảng trước - sau"
    },
    {
     "id": "S3",
@@ -104,89 +104,84 @@
    {
     "id": "S7",
     "kind": "explain",
-    "narration": "LẮP: Su Kem viết vào trang bên cạnh dòng của mẹ: \"Con giải mã: mẹ viết dòng này 6 năm trước, khi con 6 tuổi và mẹ 30. Còn 12 năm nữa, lúc con 24, mẹ sẽ chỉ gấp đôi con thôi!\" Buổi tối mẹ đọc được, ôm Su Kem cười mãi.\nSOI: soi bằng bảng ba mốc: (30 ; 6) hiệu 24 gấp 5 ✓ — (36 ; 12) hiệu 24 gấp 3 ✓ — (48 ; 24) hiệu 24 gấp 2 ✓. Mỏ neo giữ chặt cả ba thời điểm.\nDÙNG NGOÀI ĐỜI: mọi câu đố tuổi trong gia đình (\"bao giờ tuổi bố gấp đôi tổng tuổi hai con?\") giờ đều nằm trong tầm dụng cụ số 1 — và con hiểu vì sao ông bà hay nói \"càng lớn càng sát tuổi nhau\".",
+    "narration": "LẮP: thông báo dán tủ lạnh: \"Anh 14 tuổi — em 10 tuổi. Lá thư của bố sẽ mở sau ĐÚNG 3 năm nữa, vào sinh nhật chung của cả nhà!\" Mẹ khoanh đỏ tờ lịch năm ấy; bố nheo mắt: \"Ai dạy chúng nó giỏi thế nhỉ?\"\nSOI: soi kép hai thời điểm: nay 14 + 10 = 24 ✓, 14 − 10 = 4 ✓; ba năm nữa 17 + 13 = 30 ✓, 17 − 13 = 4 ✓ — hiệu đứng im như định luật đã hứa.\nDÙNG NGOÀI ĐỜI: mọi bài \"sau x năm tuổi mẹ gấp...\", mọi kế hoạch góp đều hai heo đất — bảng trước - sau và định luật hiệu bất biến là la bàn của con; sang Chương 8, bài toán tuổi nâng cao sẽ gọi tên định luật này lần nữa!",
     "teaches": [],
     "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
    },
    {
     "id": "S8",
     "kind": "trap",
-    "narration": "Giải bài \"nay bố 40, con 10; mấy năm nữa bố gấp 3 lần con?\", Trí Long phán: \"Nay bố gấp 4, muốn gấp 3 tức giảm 1 lần gấp — mỗi năm chắc giảm đều, mà $40 : 10 = 4$... thôi cứ lấy đại $40 - 30 = 10$ năm nữa!\"",
+    "narration": "Làm bài \"nay tổng tuổi hai chị em 20, chị hơn em 2 tuổi; hỏi 5 năm nữa tổng tuổi và hiệu tuổi là bao nhiêu\", Trí Long tính: \"Tổng thì 20 + 5 = 25, hiệu thì 2 + 5 = 7 — thêm 5 năm cứ cộng 5 đều cho đẹp!\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Hiện nay mẹ 36 tuổi, con 12 tuổi. Hỏi trước đây mấy năm tuổi mẹ gấp 5 lần tuổi con?",
+  "problem": "Ba bạn An, Bình, Cường có tất cả 100 viên bi. An hơn Bình 5 viên, Bình hơn Cường 10 viên. Hỏi mỗi bạn có bao nhiêu viên bi?",
   "steps": [
    {
-    "show": "Nay: mẹ 36, con 12.",
-    "phan": "tomtat"
+    "show": "Tóm tắt"
    },
    {
-    "show": "Tìm: trước đây mấy năm thì mẹ gấp 5 lần con.",
-    "phan": "tomtat"
+    "show": "Tổng ba bạn: 100 viên"
    },
    {
-    "show": "Hai mốc thời gian — đánh dấu rõ mốc \"nay\" và mốc \"hỏi\".",
-    "phan": "tomtat"
+    "show": "An hơn Bình 5 viên; Bình hơn Cường 10 viên. Tìm số bi mỗi bạn."
    },
    {
-    "show": "Mô hình (neo vào hiệu)",
-    "phan": "tomtat"
+    "show": "Hai hiệu xếp thành \"bậc thang\": An trên Bình, Bình trên Cường."
    },
    {
-    "show": "Hiệu tuổi: $36 - 12 = 24$ — không đổi ở mọi thời điểm.",
-    "phan": "tomtat"
+    "show": "Sơ đồ (quy về người bé nhất)"
    },
    {
-    "show": "Tại năm cần tìm: mẹ gấp 5 lần con → Hiệu - Tỉ với hiệu 24, tỉ $5 : 1$.",
-    "phan": "tomtat"
+    "show": "Cường: |———————|"
    },
    {
-    "show": "Câu \"không đổi ở mọi thời điểm\" là căn cứ cho phép dùng hiệu 24 ở quá khứ.",
-    "phan": "tomtat"
+    "show": "Bình: |———————|—10—|"
    },
    {
-    "show": "Hiệu số tuổi của hai mẹ con là: $36 - 12 = 24$ (tuổi)",
-    "phan": "giai"
+    "show": "An: |———————|—10—|—5—|"
    },
    {
-    "show": "Vì mỗi năm cả hai mẹ con cùng thêm 1 tuổi nên hiệu này không thay đổi.",
-    "phan": "giai"
+    "show": "An hơn Cường: 10 + 5 = 15 — cộng dồn bậc thang, chỗ dễ nhầm nhất."
    },
    {
-    "show": "Khi mẹ gấp 5 lần con, hiệu số phần bằng nhau là: $5 - 1 = 4$ (phần)",
-    "phan": "giai"
+    "show": "Bài giải"
    },
    {
-    "show": "Tuổi con khi đó là: $24 : 4 = 6$ (tuổi)",
-    "phan": "giai"
+    "show": "An hơn Cường số viên bi là: 10 + 5 = 15 (viên)"
    },
    {
-    "show": "Thời gian từ đó đến nay là: $12 - 6 = 6$ (năm)",
-    "phan": "giai"
+    "show": "Nếu cắt phần hơn của An và Bình thì ba bạn đều bằng Cường, khi đó tổng còn"
    },
    {
-    "show": "Năm dòng — đủ ba bước: chốt hiệu, Hiệu - Tỉ tại mốc hỏi, so với hiện nay.",
-    "phan": "giai"
+    "show": "100 − 15 − 10 = 75 (viên)"
    },
    {
-    "show": "Đáp số: trước đây 6 năm.",
-    "phan": "dapso"
+    "show": "Số bi của Cường là: 75 : 3 = 25 (viên)"
    },
    {
-    "show": "Đáp số trả lời đúng câu hỏi \"mấy năm\".",
-    "phan": "ghichu"
+    "show": "Số bi của Bình là: 25 + 10 = 35 (viên)"
    },
    {
-    "show": "Thử lại: 6 năm trước mẹ 30, con 6 ; $30 = 6  \\times  5$ ✓ ; $30 - 6 = 24$ ✓",
-    "phan": "thulai"
+    "show": "Số bi của An là: 35 + 5 = 40 (viên)"
    },
    {
-    "show": "Thử tại đúng mốc quá khứ — khớp cả tỉ lẫn hiệu.",
-    "phan": "thulai"
+    "show": "Câu \"nếu cắt phần hơn... đều bằng Cường\" là căn cứ của phép chia 3."
+   },
+   {
+    "show": "Đáp số: An 40 viên ; Bình 35 viên ; Cường 25 viên."
+   },
+   {
+    "show": "Đáp số đủ ba bạn."
+   },
+   {
+    "show": "Thử lại: 40 + 35 + 25 = 100 ✓ ; 40 − 35 = 5 ✓ ; 35 − 25 = 10 ✓"
+   },
+   {
+    "show": "Ba dữ kiện của đề — soi đủ cả ba, không bỏ sót manh mối nào."
    }
   ]
  },
@@ -195,123 +190,67 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Hiện nay con 8 tuổi, mẹ 32 tuổi. Tính hiệu số tuổi hai mẹ con. Hỏi 10 năm nữa hiệu ấy bằng bao nhiêu?",
+     "text": "Hai số có hiệu bằng 7. Cùng thêm 5 vào mỗi số thì hiệu mới bằng bao nhiêu?",
      "answerKey": {
       "parts": [
        {
-        "label": "hiệu số tuổi hiện nay",
-        "value": 24
-       },
-       {
-        "label": "hiệu sau 10 năm",
-        "value": 24
+        "label": "hiệu mới",
+        "value": 7
        }
       ]
      },
-     "solutionNarrative": "Hiệu $32 - 8 = 24$ tuổi; 10 năm nữa hiệu VẪN là 24 (hai mẹ con cùng thêm 10).",
+     "solutionNarrative": "Hiệu vẫn là 7 — hai bên thêm đều nhau, khoảng cách đứng im.",
      "hints": [
-      "Lấy tuổi lớn trừ tuổi bé.",
-      "Hai mẹ con cùng thêm nên khoảng cách ra sao?"
+      "Định luật thời gian: hai bên cùng thêm đều nhau.",
+      "Khoảng cách giữa hai số có nhúc nhích không?"
      ]
     },
     {
      "id": "C2",
-     "text": "Tổng số tuổi hai mẹ con là 40, tuổi mẹ gấp 4 lần tuổi con. Tính tuổi mỗi người.",
+     "text": "Hai số có tổng bằng 40. Cùng thêm 5 vào mỗi số thì tổng mới bằng bao nhiêu?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "tuổi con",
-        "value": 8
-       },
-       {
-        "label": "tuổi mẹ",
-        "value": 32
-       }
-      ]
+      "value": 50
      },
-     "solutionNarrative": "Tổng - Tỉ: một phần $40 : 5 = 8$ → con 8 tuổi, mẹ 32 tuổi.",
+     "solutionNarrative": "Tổng mới = 40 + 5 × 2 = 50.",
      "hints": [
-      "Có TỔNG và TỈ — đây là bài Tổng - Tỉ.",
-      "Tổng số phần rồi tới một phần."
+      "Mỗi bên thêm bấy nhiêu thì tổng thêm mấy lần bấy nhiêu?",
+      "Hai bên cùng thêm nên tổng tăng gấp đôi phần thêm."
      ]
     },
     {
      "id": "C3",
-     "text": "Mẹ hơn con 28 tuổi và tuổi mẹ gấp 5 lần tuổi con. Tính tuổi mỗi người.",
+     "text": "Năm nay tổng tuổi hai anh em là 24. Hỏi 3 năm nữa tổng tuổi hai anh em là bao nhiêu?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "tuổi con",
-        "value": 7
-       },
-       {
-        "label": "tuổi mẹ",
-        "value": 35
-       }
-      ]
+      "value": 30
      },
-     "solutionNarrative": "Hiệu - Tỉ: hiệu phần 4; một phần $28 : 4 = 7$ → con 7 tuổi, mẹ 35 tuổi.",
+     "solutionNarrative": "Tổng mới = 24 + 3 × 2 = 30 (mỗi người thêm 3 tuổi).",
      "hints": [
-      "Có HIỆU và TỈ — đây là bài Hiệu - Tỉ.",
-      "Chia hiệu cho hiệu số phần."
+      "Mỗi năm mỗi người thêm đúng một tuổi.",
+      "Tổng tăng gấp đôi số năm."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Hiện nay mẹ 36 tuổi, con 12 tuổi. Hiện nay tuổi mẹ gấp mấy lần tuổi con?",
+     "text": "Năm nay anh hơn em 4 tuổi. Hỏi 10 năm nữa anh hơn em bao nhiêu tuổi? Vì sao?",
      "answerKey": {
       "parts": [
        {
-        "label": "số lần",
-        "value": 3
+        "label": "10 năm nữa anh hơn em mấy tuổi",
+        "value": 4
        }
       ]
      },
-     "solutionNarrative": "$36 : 12 = 3$ — hiện nay mẹ gấp 3 lần con.",
+     "solutionNarrative": "Vẫn hơn 4 tuổi — hiệu tuổi là hằng số cả đời, vì mỗi năm cả hai cùng thêm đúng 1 tuổi.",
      "hints": [
-      "Hỏi gấp mấy lần thì lấy số lớn chia số bé.",
-      "Đặt phép chia ngay."
+      "Hiệu tuổi là hằng số cả đời.",
+      "Cả hai cùng thêm đúng bấy nhiêu tuổi."
      ]
     },
     {
      "id": "C5",
-     "text": "Hiện nay mẹ 36 tuổi, con 12 tuổi. Hỏi mấy năm nữa tuổi mẹ gấp ĐÔI tuổi con?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "mấy năm nữa",
-        "value": 12
-       }
-      ]
-     },
-     "solutionNarrative": "Hiệu 24; gấp đôi → hiệu phần 1 → con lúc đó 24 tuổi → còn $24 - 12 = 12$ năm nữa. Thử: mẹ $48 = 24  \\times  2$ ✓.",
-     "hints": [
-      "TỈ TRÔI - HIỆU ĐỨNG IM: chốt hiệu trước.",
-      "Dựng Hiệu - Tỉ tại thời điểm ấy để tìm tuổi con lúc đó."
-     ]
-    },
-    {
-     "id": "C6",
-     "text": "Hiện nay bố 40 tuổi, con 10 tuổi. Hỏi mấy năm nữa tuổi bố gấp 3 lần tuổi con?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "mấy năm nữa",
-        "value": 5
-       }
-      ]
-     },
-     "solutionNarrative": "Hiệu 30; gấp 3 → hiệu phần 2 → con lúc đó $30 : 2 = 15$ → còn $15 - 10 = 5$ năm nữa. Thử: bố $45 = 15  \\times  3$ ✓.",
-     "hints": [
-      "Chốt hiệu tuổi trước đã.",
-      "Tìm tuổi con lúc đó rồi trừ tuổi con bây giờ."
-     ]
-    },
-    {
-     "id": "C7",
-     "text": "Trước đây 3 năm, tổng số tuổi hai anh em là 20. Hiện nay anh hơn em 2 tuổi. Tính tuổi mỗi người hiện nay.",
+     "text": "Sau 3 năm nữa, tổng tuổi hai anh em là 30, và anh vẫn hơn em 4 tuổi. Tính tuổi mỗi người HIỆN NAY.",
      "answerKey": {
       "parts": [
        {
@@ -320,49 +259,99 @@
        },
        {
         "label": "tuổi em hiện nay",
-        "value": 12
+        "value": 10
        }
       ]
      },
-     "solutionNarrative": "Tổng nay = $20 + 3  \\times  2 = 26$; hiệu 2 → anh ($26 + 2$) : $2 = 14$ tuổi; em 12 tuổi.",
+     "solutionNarrative": "Lùi tổng về hiện tại: 30 − 3 × 2 = 24 → anh = (24 + 4) : 2 = 14 tuổi; em = 10 tuổi. Soi đường 2: ở tương lai anh 17, em 13 → lùi 3 năm: 14 và 10 ✓.",
      "hints": [
-      "Đưa tổng về đúng mốc HIỆN NAY.",
-      "Mỗi năm tổng của hai người tăng hai."
+      "Kẻ bảng trước - sau rồi chọn mốc có đủ tổng và hiệu.",
+      "Hoặc lùi tổng về hiện tại rồi giải như bài quen."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Hai heo đất chứa tổng cộng 80 nghìn đồng. Tháng này mỗi heo được bỏ thêm 20 nghìn đồng. Hỏi tổng mới là bao nhiêu, và hiệu giữa hai heo có thay đổi không?",
+     "answerKey": {
+      "value": 120
+     },
+     "solutionNarrative": "Tổng mới = 80 + 20 × 2 = 120 (nghìn đồng); hiệu KHÔNG đổi — hai heo được bỏ đều nhau.",
+     "hints": [
+      "Bỏ đều hai bên thì hiệu đứng im.",
+      "Tổng tăng gấp đôi phần bỏ thêm."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Hai số có hiệu bằng 6. Cùng BỚT mỗi số đi 4 đơn vị. Hỏi hiệu mới bằng bao nhiêu, và tổng thay đổi thế nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hiệu mới",
+        "value": 6
+       },
+       {
+        "label": "tổng giảm đi",
+        "value": 8
+       }
+      ]
+     },
+     "solutionNarrative": "Hiệu vẫn 6; tổng giảm 4 × 2 = 8 đơn vị.",
+     "hints": [
+      "Bớt đều hai bên thì khoảng cách vẫn thế.",
+      "Còn tổng thì giảm gấp đôi phần bớt."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Hiện nay mẹ 36 tuổi, con 12 tuổi. Hỏi TRƯỚC ĐÂY mấy năm tuổi mẹ gấp 5 lần tuổi con?",
+     "text": "Ba bạn có tất cả 100 viên bi. An hơn Bình 5 viên, Bình hơn Cường 10 viên. Hỏi mỗi bạn có bao nhiêu viên bi?",
      "answerKey": {
-      "value": 6
+      "parts": [
+       {
+        "label": "Cường",
+        "value": 25
+       },
+       {
+        "label": "Bình",
+        "value": 35
+       },
+       {
+        "label": "An",
+        "value": 40
+       }
+      ]
      },
-     "solutionNarrative": "Hiệu 24; gấp 5 → hiệu phần 4 → con khi đó $24 : 4 = 6$ → trước đây $12 - 6 = 6$ năm. Thử: mẹ $30 = 6  \\times  5$ ✓.",
+     "solutionNarrative": "An hơn Cường 10 + 5 = 15 → cắt phần thừa: 100 − 15 − 10 = 75 → Cường = 25; Bình = 35; An = 40 (viên). Thử đủ ba dữ kiện: tổng 100 ✓, hiệu 5 ✓, hiệu 10 ✓.",
      "hints": [
-      "Hiệu đứng im, nên chốt hiệu trước.",
-      "Tìm tuổi con khi đó rồi lùi từ tuổi con bây giờ."
+      "Vẽ ba đoạn, lấy bạn ít nhất làm chuẩn.",
+      "Cắt hết phần thừa của hai bạn kia rồi chia đều."
      ]
     },
     {
      "id": "C9",
-     "text": "Hiện nay tuổi bố gấp 7 lần tuổi con. Mười năm nữa tuổi bố gấp 3 lần tuổi con. Tính tuổi hai bố con hiện nay. (Gợi ý: vẽ hiệu thành 6 phần ở mốc nay — sang mốc sau, hiệu vẫn thế nhưng chỉ còn bằng 2 lần tuổi con mới...)",
+     "text": "Ba số có tổng bằng 84; số thứ hai hơn số thứ nhất 4 đơn vị, số thứ ba hơn số thứ hai 4 đơn vị. Tìm ba số — rồi nhận xét: số ở giữa có quan hệ gì với trung bình cộng của ba số?",
      "answerKey": {
       "parts": [
        {
-        "label": "tuổi con hiện nay",
-        "value": 5
+        "label": "số thứ nhất",
+        "value": 24
        },
        {
-        "label": "tuổi bố hiện nay",
-        "value": 35
+        "label": "số thứ hai",
+        "value": 28
+       },
+       {
+        "label": "số thứ ba",
+        "value": 32
        }
       ]
      },
-     "solutionNarrative": "Vẽ hiệu = 6 phần (nay con 1 phần, bố 7 phần). Mười năm nữa hiệu vẫn 6 phần nhưng bằng 2 lần tuổi con mới → con mới = 3 phần. Con tăng từ 1 phần lên 3 phần, tức 2 phần = 10 tuổi → 1 phần = 5. Con 5 tuổi, bố 35 tuổi. Thử: 10 năm nữa 15 và 45 = ×3 ✓.",
+     "solutionNarrative": "Số ba hơn số một 8 → cắt thừa: 84 − 4 − 8 = 72 → số một = 24; số hai = 28; số ba = 32. Nhận xét: số giữa 28 = 84 : 3 = trung bình cộng — ba số cách đều thì số giữa luôn là TBC!",
      "hints": [
-      "Vẽ hiệu thành số ô ở mốc hiện nay.",
-      "Sang mốc sau hiệu vẫn từng ấy ô — con chiếm mấy ô?"
+      "Vẽ ba đoạn, lấy số bé nhất làm chuẩn.",
+      "Số thứ ba hơn số thứ nhất bao nhiêu?"
      ]
     }
    ]
@@ -373,7 +362,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Hiệu số tuổi của hai người không thay đổi theo thời gian.",
+    "text": "Cùng thêm một số như nhau vào cả hai số thì hiệu của chúng không đổi.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -382,61 +371,61 @@
    },
    {
     "id": "Q2",
-    "text": "Nếu nay mẹ gấp 3 lần con thì 5 năm nữa mẹ vẫn gấp 3 lần con.",
+    "text": "Cùng thêm t vào cả hai số thì tổng tăng thêm t.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Tỉ số trôi theo thời gian, chỉ hiệu đứng im."
+    "solutionNarrative": "Tổng tăng 2 × t (hai số cùng thêm)."
    },
    {
     "id": "Q3",
-    "text": "Tổng tuổi hai mẹ con là 36, mẹ gấp 5 lần con. Tuổi con là:",
+    "text": "Tổng hai số là 50; cùng thêm 6 vào mỗi số thì tổng mới là:",
     "format": "mcq",
     "choices": [
-     "A. 6",
-     "B. 5",
-     "C. 7"
+     "A. 62",
+     "B. 56",
+     "C. 60"
     ],
     "answerKey": {
-     "choice": "A. 6"
+     "choice": "A. 62"
     },
-    "solutionNarrative": "Một phần $36 : 6 = 6$."
+    "solutionNarrative": "50 + 12 = 62."
    },
    {
     "id": "Q4",
-    "text": "Bố hơn con 24 tuổi và gấp 4 lần con. Tuổi con là:",
+    "text": "Năm nay chị hơn em 3 tuổi. 5 năm nữa chị hơn em:",
     "format": "mcq",
     "choices": [
-     "A. 8",
-     "B. 6",
-     "C. 32"
+     "A. 3 tuổi",
+     "B. 8 tuổi",
+     "C. 13 tuổi"
     ],
     "answerKey": {
-     "choice": "A. 8"
+     "choice": "A. 3 tuổi"
     },
-    "solutionNarrative": "Một phần $24 : 3 = 8$."
+    "solutionNarrative": "Hiệu tuổi không đổi: 3 tuổi."
    },
    {
     "id": "Q5",
-    "text": "Nay mẹ 30, con 6. Mấy năm nữa mẹ gấp 3 lần con?",
+    "text": "Ba số: A hơn B 2, B hơn C 3. Vậy A hơn C:",
     "format": "mcq",
     "choices": [
-     "A. 6 năm",
-     "B. 3 năm",
-     "C. 12 năm"
+     "A. 5",
+     "B. 1",
+     "C. 6"
     ],
     "answerKey": {
-     "choice": "A. 6 năm"
+     "choice": "A. 5"
     },
-    "solutionNarrative": "Hiệu 24, gấp 3 → con 12 → 6 năm nữa."
+    "solutionNarrative": "2 + 3 = 5."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Kho đề quý nhất là tuổi NHÀ MÌNH: \"bao giờ bố gấp đôi con?\", \"mẹ từng gấp 10 lần con năm nào?\" — con tự lập bảng ba mốc với số thật, khái niệm \"tỉ trôi\" tự thấm.",
-  "homeActivity": "Bắt buộc phép thử TẠI ĐÚNG MỐC: đáp số \"6 năm trước\" phải kèm dòng kiểm \"khi đó mẹ 30, con 6, gấp 5 ✓\" — thử ở mốc nay là thử nhầm cửa.",
-  "watchFor": "NÊN: hỏi con câu triết lý nhỏ \"vì sao càng lớn hai mẹ con càng 'sát tuổi' nhau?\" — trả lời được là hiểu tỉ trôi. KHÔNG NÊN: bài tuổi ba người hay tổng tuổi thay đổi phức tạp — mức ấy của lớp 5."
+  "onComplete": "Bài toán tuổi hay nhất là tuổi NHÀ MÌNH: \"mấy năm nữa tổng tuổi hai con bằng tuổi bố?\" — con tự lập bảng trước - sau với số liệu thật, định luật hiệu bất biến tự khắc sâu.",
+  "homeActivity": "Với bài ba số, chấm SƠ ĐỒ trước: ba đoạn có quy về người bé nhất không, phần thừa của người lớn nhất có cộng dồn đủ bậc thang không (10 + 5, không phải chỉ 5).",
+  "watchFor": "NÊN: gieo câu hỏi mở \"hiệu tuổi có bao giờ thay đổi không?\" cho con tự bảo vệ quan điểm. KHÔNG NÊN: bài tuổi kiểu \"gấp mấy lần nhau sau x năm\" — dạng nhân tỉ số ấy thuộc Chương 8, đừng đốt cháy giai đoạn."
  },
  "figureSpec": [
   {
@@ -445,22 +434,12 @@
     "hook"
    ],
    "file": "figures/L4H_B27_MO.png",
-   "caption": "Tuổi hiện nay — hiệu 24 năm sẽ không bao giờ đổi.",
-   "sha256_16": "ab16e2bde82f63c9",
+   "caption": "Ba đoạn thẳng, quy về bạn ít bi nhất.",
+   "sha256_16": "c56d925b23d9e377",
    "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L4H_B27_G1",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L4H_B27_G1.png",
-   "caption": "Tỉ số trôi theo năm tháng, hiệu thì đứng im.",
-   "sha256_16": "184fa06b36113b52",
-   "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Bài 22 trao con định luật \"hiệu tuổi bất biến\"; Bài 25 con đã giải tuổi một thời điểm bằng Hiệu - Tỉ. Hôm nay ghép hai mảnh thành dụng cụ số một: bài tuổi HAI MỐC thời gian — nơi tỉ số \"gấp mấy lần\" cứ trôi dần theo năm tháng, còn hiệu thì đứng im như mỏ neo. Câu hỏi Trí Long đặt cuối Chương 7 hôm nay có lời đáp!",
+ "hatMam": "Bài 20 - 21 dạy con dò tổng, dò hiệu ở MỘT thời điểm. Trận cuối của chương chơi lớn: thời gian trôi! Khi cả hai số CÙNG lớn lên (tuổi tác, heo đất góp đều), tổng và hiệu bên nào biến, bên nào lì? Và màn bế mạc: bài BA số — sơ đồ ba đoạn thẳng đầu tiên trong đời của con.",
  "duongLui": {
   "ve": [
    "DL:KSN3.B20"

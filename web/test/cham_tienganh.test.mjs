@@ -179,7 +179,23 @@ function diemDanh() {
  * con số. `tuDoiChieu` là số câu bộ chấm bỏ qua cho bé tự so — con số này TĂNG là
  * dấu hiệu bé vừa mất ô nhập ở đâu đó.
  */
-const MOC = { tong: 2183, dungKhiDungDap: 2181, dungKhiSaiDap: 1, tuDoiChieu: 1 };
+/* ⚠ NIÊM PHONG LẠI 14-08 · 2183 → 2228. Đây KHÔNG phải đổi bộ chấm, mà là thêm câu:
+   cụm dãy số lớp 4 tách thành năm bài mới, mỗi bài 9 câu luyện tập = 45 câu.
+
+   Bằng chứng rằng bộ chấm không xê dịch, và đây mới là chỗ đáng đọc:
+     · tong          2183 → 2228   lệch đúng +45
+     · dungKhiDungDap 2181 → 2226   lệch đúng +45  (mọi câu MỚI đều chấm đúng, và
+                                    không câu CŨ nào rơi khỏi diện chấm đúng)
+     · dungKhiSaiDap     1 → 1      GIỮ NGUYÊN
+     · tuDoiChieu        1 → 1      GIỮ NGUYÊN
+
+   Hai con số cuối là thứ đáng canh nhất — chúng đếm những câu chấm BẤT THƯỜNG. Đổi
+   bộ chấm thì chúng động đậy ngay cả khi tổng không đổi. Chúng đứng yên nghĩa là
+   cách chấm y nguyên.
+
+   Đừng bao giờ sửa bốn con số này chỉ để "cho cổng xanh". Sửa thì phải kèm một đoạn
+   như đoạn này, nói rõ lệch bao nhiêu và VÌ SAO. */
+const MOC = { tong: 2228, dungKhiDungDap: 2226, dungKhiSaiDap: 1, tuDoiChieu: 1 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`
