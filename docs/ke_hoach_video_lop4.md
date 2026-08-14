@@ -164,6 +164,8 @@ python3 tools/goi_y.py                          # ⚠ SAU khi dựng
 tools/tts/.venv/bin/python tools/video/dung_video_toan.py --loi
 tools/tts/.venv/bin/python tools/tts/sinh_am.py --vao data/lop4_loi_video.json \
     --ra web/public/content/toan/audio --so web/public/content/toan/lop4_am.json
+#   ↑ nay BỎ QUA clip đã đúng — chỉ sinh câu mới. Đổi model hay giọng thì thêm
+#     `--lam-lai` để sinh lại tất.
 tools/tts/.venv/bin/python tools/video/dung_video_toan.py
 cd web && npm test && npm run build
 ```
@@ -566,3 +568,30 @@ kiểm — bỏ lặng thì lần sau ai quên bộ neo ở bài khác cũng kh�
 
 7 video · 76 clip tiếng mới · 98 câu hỏi · quyển từ **60 lên 63 bài**. Gỡ 6 hình cũ.
 Niêm phong 2332 → 2361 (+27 luyện tập, +2 câu ôn trước chưa có ô nhập).
+
+---
+
+## 16 · Sinh tiếng nay dùng lại clip đã đúng
+
+Suốt bốn đợt, mỗi lần thêm một chương là `sinh_am.py` **sinh lại từ đầu toàn bộ**.
+Tới chương 7 thì 500 clip mất **hai mươi phút**, trong đó hơn bốn trăm clip không đổi
+một chữ.
+
+Gốc rễ: sổ tra vẫn ghi `van_tay` của từng câu, và chú thích đầu sổ vẫn nói *"sửa chữ
+thì vân tay đổi, phải sinh lại clip ấy"* — nhưng **không ai đọc lại nó**. Vòng lặp gọi
+`ghi_mp3` cho mọi dòng. Chú thích mô tả một hành vi chưa bao giờ tồn tại.
+
+Đây đúng loại hỏng **không ai kêu**: clip vẫn đúng, video vẫn dựng, chỉ là phí hai
+mươi phút mỗi đợt.
+
+**Đo sau khi sửa:** 500 clip, không đổi gì → **0,17 giây**, và không nạp model.
+
+Bỏ qua CHỈ KHI mọi thứ ảnh hưởng tới tiếng đều trùng khít — chữ (qua vân tay), tiếng,
+giọng, tốc độ, model — **và** tệp mp3 còn nằm đó thật. Model chỉ nạp khi thật sự phải
+sinh, nên lần chạy không có gì mới thì không đụng tới một GB nào.
+
+Đã thử ngược năm ca: bỏ hẳn phép dùng lại · quên xét giọng · quên xét tốc độ · quên
+kiểm tệp còn không · bỏ cờ `--lam-lai`. Cả năm đều đỏ. Cổng ở `video_toan.test.mjs`.
+
+**Cửa thoát:** `--lam-lai` sinh lại tất, dùng khi đổi model hay đổi giọng — lúc ấy chữ
+không đổi nên vân tay không đổi, mà tiếng thì phải đổi.

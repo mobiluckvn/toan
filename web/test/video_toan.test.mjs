@@ -188,3 +188,35 @@ test('Video là component CHUNG — không chép bản thứ hai', () => {
   assert.doesNotMatch(s.replace(/\/\*[\s\S]*?\*\//g, ''), /content\}\/tienganh\/video/,
     'không được ghim cứng thư mục tienganh trong đường dẫn');
 });
+
+/* ═══════ SINH TIẾNG PHẢI DÙNG LẠI CLIP ĐÃ ĐÚNG ═══════
+ *
+ * Sổ tra clip vẫn ghi `van_tay` của từng câu, và chú thích đầu sổ vẫn nói "sửa chữ
+ * thì vân tay đổi, phải sinh lại clip ấy". Nhưng suốt bốn đợt KHÔNG AI ĐỌC LẠI nó —
+ * `sinh_am.py` gọi `ghi_mp3` cho mọi dòng. Nên mỗi lần thêm một chương là sinh lại
+ * từ đầu: tới chương 7 lớp 4 thì 500 clip mất hai mươi phút, trong đó hơn bốn trăm
+ * clip không đổi một chữ.
+ *
+ * Đây là loại hỏng KHÔNG ai kêu: clip vẫn đúng, video vẫn dựng, chỉ là phí hai mươi
+ * phút mỗi đợt. Nên phải có cổng canh, không thì nó lặng lẽ quay lại lúc nào không hay.
+ */
+test('sinh_am.py có đọc lại sổ cũ để bỏ qua clip đã đúng', () => {
+  const s = readFileSync(new URL('../../tools/tts/sinh_am.py', import.meta.url), 'utf8');
+  assert.match(s, /so_cu/, 'không thấy chỗ đọc lại sổ cũ');
+  assert.match(s, /def dung_lai/, 'không thấy phép quyết định dùng lại clip');
+  /* Bỏ qua phải xét ĐỦ mọi thứ ảnh hưởng tới tiếng — thiếu một cái là clip sai mà
+     vẫn được giữ, và đó tệ hơn nhiều so với việc chờ. */
+  for (const k of ['van_tay', 'tieng', 'giong', 'tocDo', 'model']) {
+    assert.ok(new RegExp(`c\\.get\\("${k}"\\)`).test(s),
+      `phép dùng lại không xét "${k}" — clip có thể sai mà vẫn được giữ`);
+  }
+  assert.match(s, /\(a\.ra \/ ten\)\.exists\(\)/,
+    'phải kiểm tệp mp3 CÒN nằm đó, không chỉ tin vào sổ');
+  /* Nạp model một GB rồi bỏ qua hết là phí đúng chỗ đắt nhất. */
+  /* Neo vào ĐÚNG câu in ra lúc nạp thật (`→ nạp model`), không neo vào chuỗi
+     "nạp model" trần — chuỗi ấy còn nằm trong một chú thích không liên quan phía
+     trên, và bản đầu của phép kiểm này đã bắt trúng chú thích đó. */
+  assert.ok(s.indexOf('if dung_lai(') < s.indexOf('→ nạp model'),
+    'phải quyết định bỏ qua TRƯỚC khi nạp model');
+  assert.match(s, /--lam-lai/, 'phải có cửa sinh lại tất, cho lúc đổi model hay giọng');
+});

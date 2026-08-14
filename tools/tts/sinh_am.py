@@ -160,6 +160,8 @@ def main() -> int:
     p.add_argument("--ra", type=Path, default=O / "ra", help="thư mục chứa mp3")
     p.add_argument("--so", type=Path, help="nơi ghi sổ tra")
     p.add_argument("--nghe-thu", action="store_true", help="sinh 10 clip mẫu")
+    p.add_argument("--lam-lai", action="store_true",
+                   help="sinh lại TẤT CẢ, kể cả clip đã đúng (dùng khi đổi model/giọng)")
     p.add_argument("--giong-en", default=GIONG_EN)
     p.add_argument("--giong-vi", default=GIONG_VI)
     a = p.parse_args()
@@ -181,20 +183,59 @@ def main() -> int:
         return 1
 
     a.ra.mkdir(parents=True, exist_ok=True)
+
+    # ══ DÙNG LẠI CLIP ĐÃ ĐÚNG ══
+    #
+    # Sổ tra vẫn ghi `van_tay` của từng câu, và chú thích đầu sổ vẫn nói "sửa chữ thì
+    # vân tay đổi, phải sinh lại clip ấy". Nhưng KHÔNG AI ĐỌC LẠI nó: vòng lặp gọi
+    # `ghi_mp3` cho mọi dòng. Nên mỗi lần thêm một chương là sinh lại từ đầu — tới
+    # chương 7 của lớp 4 thì 500 clip mất hai mươi phút, trong đó hơn bốn trăm clip
+    # không đổi một chữ.
+    #
+    # Nay so với sổ cũ trước khi sinh. Bỏ qua CHỈ KHI mọi thứ ảnh hưởng tới tiếng đều
+    # trùng khít: chữ (qua vân tay), tiếng, giọng, tốc độ, model — và tệp mp3 phải
+    # còn nằm đó thật. Thiếu một điều kiện là sinh lại, vì clip sai còn tệ hơn chờ.
+    so_cu = {}
+    if a.so and a.so.exists() and not a.lam_lai:
+        try:
+            for c in json.loads(a.so.read_text("utf8")).get("clip", []):
+                so_cu[c["id"]] = c
+        except (json.JSONDecodeError, KeyError):
+            so_cu = {}          # sổ hỏng thì coi như chưa có, sinh lại tất
+
+    def dung_lai(m, tieng, giong, td, ten):
+        """Clip cũ còn dùng được không."""
+        c = so_cu.get(m["id"])
+        return (c is not None
+                and c.get("van_tay") == bam(m["chu"])
+                and c.get("tieng") == tieng
+                and c.get("giong") == giong
+                and float(c.get("tocDo") or 1.0) == td
+                and c.get("model") == ("kokoro-82m" if tieng == "en" else "kokoro-vi")
+                and (a.ra / ten).exists())
+
     doc = {}
     so = []
+    dung, sinh = 0, 0
     for m in dong:
         tieng = m["tieng"]
-        if tieng not in doc:
-            print(f"→ nạp model {'Anh' if tieng == 'en' else 'Việt'}…", flush=True)
-            doc[tieng] = DocAnh(a.giong_en) if tieng == "en" else DocViet(a.giong_vi)
         giong = a.giong_en if tieng == "en" else a.giong_vi
         # TỐC ĐỘ: mô hình tự đọc chậm, KHÔNG kéo giãn tệp có sẵn. Kéo giãn bằng
         # `atempo` giữ được cao độ nhưng làm nhoè phụ âm — mà phụ âm mới là chỗ bé
         # cần nghe rõ khi tập nói theo.
         td = float(m.get("tocDo") or 1.0)
         ten = f"{m['id']}.mp3"
+        if dung_lai(m, tieng, giong, td, ten):
+            so.append(so_cu[m["id"]])
+            dung += 1
+            continue
+        # Model chỉ nạp khi THẬT SỰ phải sinh — nạp một GB để rồi bỏ qua hết là phí
+        # đúng chỗ đắt nhất.
+        if tieng not in doc:
+            print(f"→ nạp model {'Anh' if tieng == 'en' else 'Việt'}…", flush=True)
+            doc[tieng] = DocAnh(a.giong_en) if tieng == "en" else DocViet(a.giong_vi)
         ghi_mp3(doc[tieng](m["chu"], td), a.ra / ten)
+        sinh += 1
         so.append({"id": m["id"], "chu": m["chu"], "tieng": tieng, "tocDo": td,
                    "tep": ten, "model": "kokoro-82m" if tieng == "en" else "kokoro-vi",
                    "giong": giong, "van_tay": bam(m["chu"])})
@@ -207,7 +248,8 @@ def main() -> int:
              "mau_hz": MAU, "clip": so}, ensure_ascii=False, indent=1), "utf8")
         print(f"\n→ sổ tra: {a.so}")
 
-    print(f"\nXong {len(so)} clip → {a.ra}")
+    print(f"\nXong {len(so)} clip → {a.ra}"
+          + (f"   (sinh mới {sinh} · dùng lại {dung})" if dung else ""))
     return 0
 
 
