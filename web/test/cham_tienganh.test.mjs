@@ -231,7 +231,11 @@ function diemDanh() {
                                           cộng  +29  ·  2332 + 29 = 2361  ✓
    Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
    `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
-const MOC = { tong: 2361, dungKhiDungDap: 2359, dungKhiSaiDap: 1, tuDoiChieu: 1 };
+/* ⚠ 2361 → 2379. Chương 8 đợt một: ba bài đầu tách thành năm.
+       luyện tập  27 → 45 câu chấm máy  (+18)  ·  2361 + 18 = 2379  ✓
+   Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
+const MOC = { tong: 2379, dungKhiDungDap: 2377, dungKhiSaiDap: 1, tuDoiChieu: 1 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

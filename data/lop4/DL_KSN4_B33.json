@@ -1,12 +1,12 @@
 {
  "id": "DL:KSN4.B33",
- "quyen": "lop4",
+ "quyen": "KSN4",
  "so": 33,
- "ten": "BÀI TOÁN LÀM CHUNG CÔNG VIỆC",
+ "ten": "LÀM CHUNG CÔNG VIỆC — CHIA CÔNG VIỆC THÀNH PHẦN",
  "chuong": 8,
- "tenChuong": "BÀI TOÁN CÓ LỜI VĂN",
- "dangGoc": "LV 7.1 + LV 7.2 mức Lớp 4 — Làm chung cơ bản (chia việc thành phần) · làm chung rồi một người nghỉ",
- "hatMam": "Từ Chương 7, con đã tin vào sức mạnh của chữ PHẦN: chia thứ khó đo thành các phần bằng nhau là mọi phép tính trở nên hiền lành. Hôm nay chữ phần lập công lớn nhất: đo cả... CÔNG VIỆC! Sơn hàng rào, chép bài, bơm nước vào bể — việc gì cũng chia thành phần đều được, và từ đó trả lời câu hỏi hóc búa: hai người làm CHUNG thì bao lâu xong?",
+ "tenChuong": "BÀI TOÁN LỜI VĂN",
+ "dangGoc": "Dạng gốc: LV 7.1 mức Lớp 4 — Hai người làm chung, giải bằng cách chia công việc thành số phần chia hết cho cả hai thời gian. KHÔNG dùng phân số.",
+ "hatMam": "Hai người cùng làm một việc thì xong nhanh hơn — nhưng nhanh bao nhiêu? Hôm nay con học một cách rất gọn: chia công việc thành những phần bằng nhau, rồi đếm mỗi người làm được mấy phần trong một giờ.",
  "ganDuoi": {
   "ve": [
    "DL:KSN3.B21"
@@ -21,18 +21,16 @@
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Chia công việc thành số phần đều \"đẹp\" (chia hết cho mọi số giờ trong đề) và tính NĂNG SUẤT: số phần mỗi người làm trong một giờ.",
-    "Giải bài làm chung cơ bản: cộng năng suất, lấy tổng phần chia năng suất chung.",
-    "Giải bài làm chung rồi MỘT NGƯỜI NGHỈ: đếm phần đã làm, phần còn lại và ai gánh nốt."
+    "Chia công việc thành số phần chia hết cho cả hai thời gian.",
+    "Tính số phần mỗi người làm được trong một giờ.",
+    "Cộng lại để biết làm chung mất mấy giờ."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Vụ án số 2: hàng rào trước giờ khai mạc",
-   "dong": [
-    "Sân đình cần sơn lại hàng rào trước lễ tổng kết. Bác Tâm thợ sơn nói: \"Một mình bác làm 4 giờ là xong.\" Chú Hòa bảo vệ gãi đầu: \"Chú vụng hơn, một mình phải 12 giờ.\" Bác tổ trưởng sốt ruột: \"Thế HAI NGƯỜI CÙNG làm thì mấy giờ xong? Lễ khai mạc 3 giờ chiều rồi đấy!\" Trí Long nhẩm ngay: \"4 cộng 12 là 16 giờ ạ!\" — cả sân đình cười ồ. Su Kem đỡ lời: \"Hai người cùng làm mà LÂU HƠN một mình bác Tâm thì ai thèm rủ nhau làm chung nữa! Phải cộng thứ khác cơ.\""
-   ],
+   "ten": "CHUYỆN MỞ BÀI — ",
+   "dong": [],
    "hinh": [
     {
      "id": "L4H_B33_MO",
@@ -46,72 +44,47 @@
   },
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
-   "dong": [
-    "CHO GÌ? bác Tâm sơn một mình 4 giờ xong; chú Hòa một mình 12 giờ xong; hai người làm chung.",
-    "HỎI GÌ? làm chung thì mấy giờ sơn xong hàng rào.",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: thời gian (giờ) và lượng việc — lượng việc chưa có đơn vị: phải TỰ chế đơn vị \"phần việc\"!",
-    "QUAN HỆ GIỮA CHÚNG: chia hàng rào thành 12 phần đều (12 chia hết cho cả 4 và 12) → mỗi người làm được một số phần MỖI GIỜ — thứ cộng được với nhau chính là số phần mỗi giờ ấy.",
-    "CHỌN CÔNG CỤ: MÔ HÌNH PHẦN VIỆC + NĂNG SUẤT: phần mỗi giờ của từng người → cộng lại → chia ngược.",
-    "ƯỚC LƯỢNG TRƯỚC: bác Tâm một mình đã chỉ mất 4 giờ — có thêm chú Hòa phải NHANH hơn 4 giờ: đoán cỡ 3 giờ."
-   ],
+   "dong": [],
    "hinh": [],
-   "nhip": "NHỊP 1, DỊCH — từ hàng rào sang các tấm ván phần việc"
+   "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
-   "dong": [
-    "Bước 1 — CHẾ ĐƠN VỊ \"PHẦN VIỆC\": coi hàng rào gồm 12 tấm ván bằng nhau — chọn 12 vì nó chia hết cho cả 4 lẫn 12, mọi phép chia sau này đều tròn. Bác Tâm: 12 : 4 = 3 (tấm mỗi giờ); chú Hòa: 12 : 12 = 1 (tấm mỗi giờ). Con số \"mỗi giờ làm mấy phần\" gọi là NĂNG SUẤT.",
-    "Bước 2 — CỘNG NĂNG SUẤT, KHÔNG CỘNG SỐ GIỜ: làm chung, mỗi giờ hai người sơn được 3 + 1 = 4 (tấm) → cả 12 tấm hết 12 : 4 = 3 (giờ). Kịp trước lễ khai mạc! Còn phép \"4 + 12 = 16 giờ\" của Trí Long cộng nhầm thứ không cộng được — thời gian của hai người đâu có xếp chồng lên nhau.",
-    "Bước 3 — KỊCH BẢN NGƯỜI NGHỈ GIỮA CHỪNG: hai người làm chung 2 giờ thì bác Tâm có việc phải về. Đã sơn: 4 × 2 = 8 (tấm); còn lại 12 − 8 = 4 (tấm); chú Hòa một mình mỗi giờ 1 tấm → cần thêm 4 : 1 = 4 (giờ). Bài \"nghỉ giữa chừng\" chỉ là bài đếm phần: đã làm - còn lại - ai gánh nốt.",
-    "Bước 4 — HỌ HÀNG VÒI NƯỚC: bể bơm đầy bằng vòi một trong 6 giờ, vòi hai trong 3 giờ — chung mấy giờ đầy? Chia bể 6 phần: vòi một 1 phần/giờ, vòi hai 2 phần/giờ → chung 3 phần/giờ → 6 : 3 = 2 (giờ). Vòi nước, gặt lúa, chép trang sách... khác vỏ, cùng ruột.",
-    "MẸO NGƯỜI GIẢI: Bài làm chung ba bước: ① chia việc thành số phần chia hết cho mọi số giờ của đề; ② tính năng suất từng người (phần mỗi giờ); ③ CỘNG NĂNG SUẤT rồi lấy tổng phần chia cho năng suất chung. Có người nghỉ giữa chừng: đếm phần đã làm, phần còn lại. Khẩu quyết: cộng được năng suất — không cộng được số giờ!"
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
-   "dong": [
-    "LẮP: báo cáo gửi bác tổ trưởng: \"Hai người cùng sơn: đúng 3 giờ xong — bắt đầu 8 giờ sáng, 11 giờ khô ráo, thừa giờ ăn trưa trước lễ!\" Bác tổ trưởng phát lệnh khởi công, hàng rào kịp mới tinh đón lễ tổng kết.",
-    "SOI: soi hai lớp: 3 giờ NHANH hơn người nhanh nhất (4 giờ) ✓ hợp lẽ \"thêm tay thêm việc\"; và đếm phần: 3 giờ × 4 tấm = 12 tấm — vừa khít hàng rào ✓.",
-    "DÙNG NGOÀI ĐỜI: nhà mình dọn nhà đón Tết, cả lớp gấp hạc giấy, hai vòi cùng bơm bể cá — mọi cuộc \"chung tay\" đều tính trước được giờ về đích bằng ba bước hôm nay."
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Bác Tâm sơn xong hàng rào một mình trong 4 giờ, chú Hòa sơn một mình trong 12 giờ. Hỏi hai người cùng sơn thì sau mấy giờ xong hàng rào?",
-    "Tóm tắt",
-    "Bác Tâm: 4 giờ; chú Hòa: 12 giờ (mỗi người làm một mình).",
-    "Tìm thời gian hai người làm chung.",
-    "Ghi rõ \"một mình\" — số giờ riêng của từng người.",
-    "Mô hình (chia việc thành phần)",
-    "Coi hàng rào gồm 12 phần bằng nhau",
-    "(vì 12 chia hết cho cả 4 và 12).",
-    "Câu chọn số phần kèm LÝ DO — dấu hiệu của thứ thiệt.",
-    "Bài giải",
-    "Coi hàng rào gồm 12 phần bằng nhau.",
-    "Mỗi giờ bác Tâm sơn được: 12 : 4 = 3 (phần)",
-    "Mỗi giờ chú Hòa sơn được: 12 : 12 = 1 (phần)",
-    "Mỗi giờ cả hai người sơn được: 3 + 1 = 4 (phần)",
-    "Thời gian hai người cùng sơn xong hàng rào là: 12 : 4 = 3 (giờ)",
-    "Cộng ở dòng NĂNG SUẤT — tuyệt đối không cộng 4 giờ với 12 giờ.",
-    "Đáp số: 3 giờ.",
-    "Đáp số kèm đơn vị.",
-    "Thử lại: 3 giờ × 4 phần = 12 phần — đúng cả hàng rào ✓ ; 3 giờ < 4 giờ ✓",
-    "Soi kép: đếm đủ phần VÀ nhanh hơn người nhanh nhất."
+    "Đề bài: Anh làm một mình xong việc trong 6 giờ, em làm một mình xong việc ấy trong 12 giờ. Hỏi hai anh em làm chung thì mấy giờ xong?",
+    "Chia công việc thành phần",
+    "Chọn số phần chia hết cho cả 6 và 12. Số gọn nhất là 12 phần.",
+    "Mỗi người làm được mấy phần một giờ",
+    "Anh xong 12 phần trong 6 giờ, nên mỗi giờ anh làm 12 : 6 = 2 phần.",
+    "Em xong 12 phần trong 12 giờ, nên mỗi giờ em làm 12 : 12 = 1 phần.",
+    "Làm chung một giờ được mấy phần",
+    "Cộng lại: 2 + 1 = 3 phần mỗi giờ.",
+    "Chia ra thời gian",
+    "Cả việc là 12 phần, mỗi giờ làm 3 phần, nên xong sau 12 : 3 = 4 giờ.",
+    "Đáp số: hai anh em làm chung 4 giờ thì xong."
    ],
    "hinh": [],
    "nhip": ""
   },
   "suKemNham": {
-   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Rút kinh nghiệm vụ \"16 giờ\", Trí Long gặp bài vòi nước (vòi một 6 giờ đầy bể, vòi hai 3 giờ) liền đổi chiêu: \"Không cộng nữa — lấy trung bình! (6 + 3) : 2 = 4,5 giờ. Chuẩn chưa?\"",
-    "Gợi ý 1: Soi bằng lẽ thường: riêng vòi hai đã chỉ cần 3 giờ — mở thêm vòi một mà lại LÂU thành 4,5 giờ thì vòi một đang... hút nước ra à?",
-    "Gợi ý 2: Trung bình cộng san đều THỜI GIAN — nhưng thứ hai vòi góp chung là NƯỚC MỖI GIỜ. Chia bể thành 6 phần, tính năng suất từng vòi rồi giải chuẩn giúp Trí Long (đáp số tròn trịa: 2 giờ)."
+    "Có bạn cộng thẳng hai thời gian rồi chia đôi: 6 cộng 12 bằng 18, chia hai được 9 giờ.",
+    "Gợi ý 1: Anh làm một mình đã xong trong 6 giờ rồi. Có thêm em giúp mà lại lâu hơn thành 9 giờ à?",
+    "Gợi ý 2: Làm chung thì phải NHANH HƠN người nhanh nhất chứ.",
+    "Chữa: không cộng thời gian được. Phải đếm số PHẦN làm được mỗi giờ rồi mới cộng. Đáp số đúng là 4 giờ, nhanh hơn cả 6 giờ."
    ],
    "hinh": [],
    "nhip": ""
@@ -133,9 +106,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Thí nghiệm gấp quần áo: đếm giờ (phút) con gấp một mình cả rổ, bố mẹ gấp một mình, rồi cả hai cùng gấp — số liệu thật sẽ minh oan cho \"cộng năng suất\" thuyết phục hơn mọi bài giảng.",
-    "Câu soi \"chung phải nhanh hơn người nhanh nhất\" nên thành phản xạ — mọi đáp số vi phạm nó đều sai không cần chấm tiếp.",
-    "NÊN: chọn số giờ \"đẹp\" (ước của 12, 24) để phần việc luôn tròn. KHÔNG NÊN: đề ra kết quả giờ lẻ hay ba người làm chung ba tốc độ — phiên bản phân số đầy đủ hẹn lớp 5."
+    "Hỏi con một câu soi rất nhanh: \"Làm chung thì phải nhanh hơn hay chậm hơn người làm nhanh nhất?\" Nhanh hơn — nên đáp số lớn hơn 6 là chắc chắn sai.",
+    "Con hay cộng thẳng thời gian. Bố mẹ nhấn: cộng được là cộng SỐ PHẦN mỗi giờ, không phải cộng giờ."
    ],
    "hinh": [],
    "nhip": ""
@@ -149,8 +121,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hàng rào gồm 12 phần bằng nhau. Mỗi giờ An sơn được 3 phần. Hỏi An sơn một mình mấy giờ thì xong?",
-   "loiChua": "12 : 3 = 4 giờ.",
+   "text": "Anh xong việc trong 6 giờ, em xong trong 12 giờ — đúng bài trong video. Nên chia công việc thành mấy phần cho gọn?",
+   "loiChua": "12 phần — vì 12 chia hết cho cả 6 và 12.",
    "tuLuan": true
   },
   {
@@ -160,8 +132,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Bác Tâm sơn xong hàng rào (12 phần) một mình trong 4 giờ. Hỏi mỗi giờ bác sơn được mấy phần?",
-   "loiChua": "12 : 4 = 3 phần mỗi giờ.",
+   "text": "Vẫn bài trên. Mỗi giờ anh làm được mấy phần, em làm được mấy phần?",
+   "loiChua": "Anh: 12 : 6 = 2 phần. Em: 12 : 12 = 1 phần.",
    "tuLuan": true
   },
   {
@@ -171,8 +143,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hai người chung sức mỗi giờ sơn được 4 phần. Hàng rào 12 phần thì mấy giờ xong?",
-   "loiChua": "12 : 4 = 3 giờ.",
+   "text": "Vẫn bài trên. Làm chung thì mấy giờ xong?",
+   "loiChua": "Mỗi giờ chung làm 2 + 1 = 3 phần. Cả việc 12 phần nên 12 : 3 = 4 giờ.",
    "tuLuan": true
   },
   {
@@ -182,8 +154,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Bác Tâm sơn một mình 4 giờ xong, chú Hòa một mình 12 giờ xong. Hai người cùng sơn thì mấy giờ xong?",
-   "loiChua": "Bác Tâm 3 phần/giờ, chú Hòa 1 phần/giờ → chung 4 phần/giờ → 12 : 4 = 3 giờ.",
+   "text": "Bạn Bình cộng 6 với 12 rồi chia đôi, ra 9 giờ. Vì sao chắc chắn sai?",
+   "loiChua": "Anh làm một mình đã xong trong 6 giờ. Có thêm người giúp thì phải nhanh hơn 6 giờ, không thể thành 9 giờ.",
    "tuLuan": true
   },
   {
@@ -193,8 +165,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "An chép xong tập tài liệu một mình trong 6 giờ, Bình một mình trong 12 giờ. Hai bạn cùng chép thì mấy giờ xong?",
-   "loiChua": "Chia việc 12 phần: An 2 phần/giờ, Bình 1 phần/giờ → chung 3 → 12 : 3 = 4 giờ.",
+   "text": "Một vòi chảy đầy bể trong 4 giờ, vòi kia chảy đầy trong 12 giờ. Mở cả hai thì mấy giờ đầy bể?",
+   "loiChua": "Chia bể thành 12 phần. Vòi một: 12 : 4 = 3 phần mỗi giờ; vòi hai: 1 phần. Chung 4 phần mỗi giờ, nên 12 : 4 = 3 giờ.",
    "tuLuan": true
   },
   {
@@ -204,8 +176,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Vòi thứ nhất chảy một mình 6 giờ thì đầy bể, vòi thứ hai chảy một mình 3 giờ thì đầy bể. Cả hai vòi cùng chảy thì mấy giờ đầy bể?",
-   "loiChua": "Chia bể 6 phần: vòi một 1 phần/giờ, vòi hai 2 phần/giờ → chung 3 → 6 : 3 = 2 giờ.",
+   "text": "Vì sao ta chọn 12 phần mà không chọn 5 phần?",
+   "loiChua": "Vì 12 chia hết cho cả 6 và 12, nên số phần mỗi giờ ra số tròn. Chọn 5 thì chia không hết, tính ra số lẻ rất khó.",
    "tuLuan": true
   },
   {
@@ -215,8 +187,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Bác Tâm và chú Hòa (như Câu 4) cùng sơn được 2 giờ thì bác Tâm phải về. Hỏi chú Hòa phải sơn thêm mấy giờ nữa mới xong?",
-   "loiChua": "2 giờ chung sơn 4 × 2 = 8 phần; còn 4 phần; chú Hòa 1 phần/giờ → thêm 4 giờ.",
+   "text": "Hai người làm chung xong một việc trong 4 giờ. Người thứ nhất làm một mình xong trong 6 giờ. Mỗi giờ người thứ hai làm được mấy phần trong 12 phần?",
+   "loiChua": "Chung mỗi giờ 12 : 4 = 3 phần. Người thứ nhất 12 : 6 = 2 phần. Người thứ hai: 3 − 2 = 1 phần.",
    "tuLuan": true
   },
   {
@@ -226,8 +198,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "An làm một mình 6 giờ xong, Bình một mình 12 giờ xong. Hai bạn làm chung 2 giờ thì An nghỉ. Hỏi Bình làm nốt một mình trong mấy giờ?",
-   "loiChua": "Chung mỗi giờ 2 + 1 = 3 phần; 2 giờ được 6 phần; còn 6 phần; Bình 1 phần/giờ → 6 giờ nữa.",
+   "text": "Anh làm một mình xong trong 10 giờ, em xong trong 15 giờ. Làm chung mấy giờ xong?",
+   "loiChua": "Chia việc thành 30 phần. Anh 30 : 10 = 3 phần mỗi giờ, em 30 : 15 = 2 phần. Chung 5 phần mỗi giờ, nên 30 : 5 = 6 giờ.",
    "tuLuan": true
   },
   {
@@ -237,8 +209,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hai người cùng làm thì 3 giờ xong một công việc. Nếu làm một mình, người thứ nhất cần 4 giờ. Hỏi người thứ hai làm một mình thì cần mấy giờ? (Chia việc thành 12 phần rồi truy ngược năng suất!)",
-   "loiChua": "Chia việc 12 phần: chung 3 giờ xong → năng suất chung 12 : 3 = 4 phần/giờ; người một 12 : 4 = 3 phần/giờ → người hai 4 − 3 = 1 phần/giờ → một mình cần 12 : 1 = 12 giờ.",
+   "text": "Ba người cùng làm một việc: người thứ nhất xong trong 4 giờ, người thứ hai 6 giờ, người thứ ba 12 giờ. Cả ba làm chung mấy giờ xong?",
+   "loiChua": "Chia việc thành 12 phần. Mỗi giờ: 3 phần, 2 phần và 1 phần. Chung 6 phần mỗi giờ, nên 12 : 6 = 2 giờ.",
    "tuLuan": true
   },
   {
@@ -248,14 +220,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Muốn tính bài làm chung, ta chia công việc thành các phần bằng nhau rồi cộng năng suất mỗi giờ.",
+   "text": "Làm chung bao giờ cũng nhanh hơn người làm nhanh nhất.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "Đáp án: ĐÚNG.",
+   "solutionNarrative": "Đáp án: ĐÚNG."
   },
   {
    "id": "Q2",
@@ -264,14 +236,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "An làm một mình 4 giờ, Bình một mình 4 giờ, vậy hai bạn làm chung hết 8 giờ.",
+   "text": "Muốn tính thời gian làm chung, ta cộng hai thời gian rồi chia đôi.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": false
    },
-   "loiChua": "Chung nhanh gấp đôi: 2 giờ.",
-   "solutionNarrative": "Chung nhanh gấp đôi: 2 giờ."
+   "loiChua": "SAI — phải cộng số phần làm được mỗi giờ.",
+   "solutionNarrative": "SAI — phải cộng số phần làm được mỗi giờ."
   },
   {
    "id": "Q3",
@@ -280,19 +252,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "An mỗi giờ làm 3 phần, Bình mỗi giờ 1 phần. Chung mỗi giờ được:",
+   "text": "Anh xong trong 6 giờ, em xong trong 12 giờ. Chung mấy giờ xong?",
    "choices": [
-    "A. 4 phần",
-    "B. 3 phần",
-    "C. 2 phần"
+    "A. 4 giờ",
+    "B. 9 giờ",
+    "C. 18 giờ"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 4 phần"
+    "choice": "A. 4 giờ"
    },
-   "loiChua": "4 phần).",
-   "solutionNarrative": "4 phần)."
+   "loiChua": "Mỗi giờ chung 3 phần trong 12 phần.",
+   "solutionNarrative": "Mỗi giờ chung 3 phần trong 12 phần."
   },
   {
    "id": "Q4",
@@ -301,19 +273,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Bể 6 phần, hai vòi chung mỗi giờ chảy 3 phần. Thời gian đầy bể:",
+   "text": "Chia công việc thành mấy phần thì gọn nhất khi hai người xong trong 6 giờ và 12 giờ?",
    "choices": [
-    "A. 2 giờ",
-    "B. 3 giờ",
-    "C. 6 giờ"
+    "A. 12 phần",
+    "B. 6 phần",
+    "C. 18 phần"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 2 giờ"
+    "choice": "A. 12 phần"
    },
-   "loiChua": "2 giờ).",
-   "solutionNarrative": "2 giờ)."
+   "loiChua": "Chia hết cho cả 6 và 12.",
+   "solutionNarrative": "Chia hết cho cả 6 và 12."
   },
   {
    "id": "Q5",
@@ -322,19 +294,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Làm chung bao giờ cũng ... người nhanh nhất làm một mình:",
+   "text": "Hai người làm chung mà ra đáp số 9 giờ, trong khi một người làm riêng chỉ 6 giờ. Điều đó có nghĩa:",
    "choices": [
-    "A. nhanh hơn",
-    "B. chậm hơn",
-    "C. bằng đúng"
+    "A. bài làm sai",
+    "B. bài làm đúng",
+    "C. còn tuỳ"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. nhanh hơn"
+    "choice": "A. bài làm sai"
    },
-   "loiChua": "Nhanh hơn (thêm tay thêm việc).",
-   "solutionNarrative": "Nhanh hơn (thêm tay thêm việc)."
+   "loiChua": "Làm chung phải nhanh hơn.",
+   "solutionNarrative": "Làm chung phải nhanh hơn."
   }
  ]
 }

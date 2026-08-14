@@ -1700,6 +1700,206 @@ def kb_noi_ti(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# CHƯƠNG 8 · BÀI TOÁN LỜI VĂN — ĐỢT MỘT, NĂM KỊCH BẢN
+# ═══════════════════════════════════════════════════════════════════════════
+# Chương này KHÔNG có một bộ neo chung, vì mỗi bài là một phương pháp riêng. Neo theo
+# CẶP: hai bài tuổi dùng mẹ 30 con 6 (hiệu 24); hai bài làm chung dùng anh 6 giờ em
+# 12 giờ (việc chia 12 phần); bài tính ngược đứng riêng với số 10.
+
+
+def kb_tuoi_mot(b):
+    """① Tuổi một mốc — ý duy nhất: đây là bài CŨ mặc áo mới."""
+    return [
+        _c('bia', 'Bài toán tuổi ở một thời điểm', so_bai(b),
+           loi=['Hôm nay mình gặp bài toán tuổi, và có một tin vui.']),
+        _c('de_toan', 'Tổng số tuổi hai mẹ con là 36. Mẹ hơn con 24 tuổi.',
+           'Tính tuổi mỗi người.',
+           loi=['Tổng số tuổi hai mẹ con là ba mươi sáu. Mẹ hơn con hai mươi bốn tuổi.']),
+        _c('y_toan', 'Che chữ tuổi đi mà xem',
+           'Tổng hai số là 36, số này hơn số kia 24.', buoc=1, soBuoc=3,
+           loi=['Con thử che chữ tuổi đi rồi đọc lại.',
+                'Tổng hai số là ba mươi sáu, số này hơn số kia hai mươi bốn.']),
+        _c('y_toan', 'Đây là bài con đã giải rồi', 'Bài tổng - hiệu của chương trước.',
+           buoc=2, soBuoc=3,
+           loi=['Đây chính là bài tổng trừ hiệu con đã giải rất thạo ở chương trước.']),
+        _c('so_do_doan', 'Vẫn sơ đồ ấy', be=6, lon=30,
+           hienHieu=True, chuHieu='hiệu 24', chuTong='tổng 36',
+           nhanBe='Tuổi con', nhanLon='Tuổi mẹ',
+           loi=['Vẫn vẽ hai đoạn như cũ. Khúc dôi ra là hai mươi bốn, ngoặc ngoài là '
+                'ba mươi sáu.']),
+        _c('y_toan', 'Dùng công thức cũ', 'Mẹ = (36 + 24) : 2 = 30,  con = 6',
+           buoc=3, soBuoc=3,
+           loi=['Tuổi mẹ bằng ba mươi sáu cộng hai mươi bốn rồi chia đôi, được ba mươi.',
+                'Tuổi con là sáu. Cộng lại đúng ba mươi sáu, trừ nhau đúng hai mươi bốn.']),
+        _c('cong_thuc', 'Bài toán tuổi một mốc',
+           congThuc='che chữ "tuổi" đi  ⟶  là bài tổng - hiệu hoặc tổng - tỉ',
+           thay='(36 + 24) : 2 = 30',
+           loi=['Bài toán tuổi ở một thời điểm chính là bài cũ mặc áo mới.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='không có phép nào mới cả',
+           loi=['Con nhớ lại một lần nữa. Không có phép nào mới cả.',
+                'Thấy chữ tuổi thì đừng hoảng, cứ che nó đi rồi đọc lại đề.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_tuoi_hai(b):
+    """② Tuổi hai mốc — chìa khoá: hiệu tuổi không đổi."""
+    return [
+        _c('bia', 'Bài toán tuổi ở hai thời điểm', so_bai(b),
+           loi=['Hôm nay bài toán tuổi có hai thời điểm, và cần biết một điều.']),
+        _c('de_toan', 'Hiện nay mẹ 30 tuổi, con 6 tuổi.',
+           'Sau bao nhiêu năm nữa tuổi mẹ gấp 3 lần tuổi con?',
+           loi=['Hiện nay mẹ ba mươi tuổi, con sáu tuổi.',
+                'Hỏi sau bao nhiêu năm nữa thì tuổi mẹ gấp ba lần tuổi con.']),
+        _c('y_toan', 'Tìm cái KHÔNG đổi', 'Hiệu tuổi: 30 − 6 = 24', buoc=1, soBuoc=4,
+           loi=['Việc đầu tiên là tìm cái không đổi. Hiệu tuổi là hai mươi bốn.',
+                'Mỗi năm cả hai cùng thêm một tuổi nên hiệu này đứng yên mãi.']),
+        _c('so_do_doan', 'Lúc mẹ gấp 3 lần con', be=12, lon=36,
+           phanBe=1, phanLon=3, hienHieu=True, chuHieu='vẫn là 24',
+           nhanBe='Tuổi con', nhanLon='Tuổi mẹ',
+           loi=['Lúc ấy tuổi mẹ gấp ba lần tuổi con, nhưng hiệu vẫn là hai mươi bốn.']),
+        _c('y_toan', 'Đây là bài hiệu - tỉ', 'Phần chênh 2 phần, ứng với 24',
+           buoc=2, soBuoc=4,
+           loi=['Đây chính là bài hiệu trừ tỉ. Phần chênh là hai phần, ứng với hai '
+                'mươi bốn.']),
+        _c('y_toan', 'Tuổi lúc ấy', 'Một phần 12 · con 12 tuổi · mẹ 36 tuổi',
+           buoc=3, soBuoc=4,
+           loi=['Một phần là mười hai. Con mười hai tuổi, mẹ ba mươi sáu tuổi.']),
+        _c('y_toan', 'Sau bao nhiêu năm', 'Con từ 6 lên 12, vậy sau 6 năm',
+           buoc=4, soBuoc=4,
+           loi=['Con từ sáu tuổi lên mười hai tuổi, vậy sau sáu năm nữa.']),
+        _c('cong_thuc', 'Điều quan trọng nhất của bài toán tuổi',
+           congThuc='hiệu tuổi KHÔNG đổi — nó nối hai thời điểm',
+           thay='30 − 6 = 24, mãi mãi',
+           loi=['Hiệu tuổi không bao giờ đổi, và chính vì thế nó nối được hai thời điểm.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='tổng và tỉ số thì đổi · hiệu thì không',
+           loi=['Con nhớ lại một lần nữa. Tổng tuổi đổi, tỉ số tuổi đổi.',
+                'Chỉ hiệu tuổi là đứng yên. Gặp bài hai thời điểm thì tìm nó trước.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_lam_chung(b):
+    """③ Làm chung — chia việc thành phần, KHÔNG dùng phân số."""
+    return [
+        _c('bia', 'Làm chung công việc', so_bai(b),
+           loi=['Hôm nay hai người cùng làm một việc, xem mấy giờ thì xong.']),
+        _c('de_toan', 'Anh làm một mình xong trong 6 giờ, em xong trong 12 giờ.',
+           'Hai anh em làm chung thì mấy giờ xong?',
+           loi=['Anh làm một mình xong việc trong sáu giờ.',
+                'Em làm một mình xong việc ấy trong mười hai giờ.']),
+        _c('y_toan', 'Chia công việc thành phần',
+           'Chọn số chia hết cho cả 6 và 12 — lấy 12 phần.', buoc=1, soBuoc=4,
+           loi=['Mình chia công việc thành những phần bằng nhau.',
+                'Chọn số chia hết cho cả sáu và mười hai, gọn nhất là mười hai phần.']),
+        _c('y_toan', 'Mỗi giờ mỗi người làm mấy phần',
+           'Anh 12 : 6 = 2 phần · em 12 : 12 = 1 phần', buoc=2, soBuoc=4,
+           loi=['Anh xong mười hai phần trong sáu giờ, nên mỗi giờ anh làm hai phần.',
+                'Em xong mười hai phần trong mười hai giờ, nên mỗi giờ em làm một phần.']),
+        _c('y_toan', 'Làm chung một giờ được mấy phần', '2 + 1 = 3 phần',
+           buoc=3, soBuoc=4,
+           loi=['Làm chung thì mỗi giờ được ba phần.']),
+        _c('nhom_deu', 'Cả việc 12 phần, mỗi giờ 3 phần', tong=12, moiNhom=3,
+           chuPhu='12 chia 3 được 4 nhóm — tức 4 giờ.',
+           chuCuoi='Mỗi nhóm là một giờ làm chung.',
+           loi=['Cả việc mười hai phần, mỗi giờ làm ba phần.',
+                'Mười hai chia ba được bốn, vậy bốn giờ thì xong.']),
+        _c('y_toan', 'Soi lại cho chắc', 'Làm chung phải NHANH HƠN người nhanh nhất.',
+           buoc=4, soBuoc=4,
+           loi=['Soi lại cho chắc. Anh một mình đã xong trong sáu giờ.',
+                'Làm chung ra bốn giờ, nhanh hơn, nên hợp lý.']),
+        _c('cong_thuc', 'Cách làm bài làm chung',
+           congThuc='chia việc thành phần  ⟶  cộng số phần mỗi giờ',
+           thay='12 : 3 = 4 giờ',
+           loi=['Chia việc thành phần rồi cộng số phần mỗi giờ.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='KHÔNG cộng thời gian — chỉ cộng số phần',
+           loi=['Con nhớ lại một lần nữa. Không cộng thời gian được.',
+                'Chỉ cộng số phần làm được mỗi giờ. Và làm chung phải nhanh hơn.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_mot_nguoi_nghi(b):
+    """④ Làm chung rồi một người nghỉ — theo dõi số phần còn lại."""
+    return [
+        _c('bia', 'Làm chung rồi một người nghỉ', so_bai(b),
+           loi=['Hôm nay hai người làm chung một lúc rồi một người phải nghỉ.']),
+        _c('de_toan', 'Anh 6 giờ, em 12 giờ. Làm chung 2 giờ thì anh nghỉ.',
+           'Em làm nốt mất mấy giờ?',
+           loi=['Anh xong trong sáu giờ, em xong trong mười hai giờ.',
+                'Hai anh em làm chung hai giờ thì anh phải nghỉ, em làm nốt.']),
+        _c('y_toan', 'Vẫn chia việc thành 12 phần',
+           'Anh 2 phần · em 1 phần · chung 3 phần mỗi giờ', buoc=1, soBuoc=4,
+           loi=['Vẫn chia việc thành mười hai phần như bài trước.',
+                'Làm chung mỗi giờ được ba phần.']),
+        _c('nhom_deu', 'Hai giờ làm chung được 6 phần', tong=12, moiNhom=6,
+           chuPhu='3 phần mỗi giờ, hai giờ là 6 phần.',
+           chuCuoi='Nửa việc đã xong.',
+           loi=['Ba phần mỗi giờ, hai giờ là sáu phần. Nửa việc đã xong.']),
+        _c('y_toan', 'Còn lại mấy phần', '12 − 6 = 6 phần', buoc=2, soBuoc=4,
+           loi=['Cả việc mười hai phần, đã làm sáu phần, còn sáu phần.']),
+        _c('y_toan', 'Bây giờ còn mấy người làm', 'Chỉ còn em — 1 phần mỗi giờ.',
+           buoc=3, soBuoc=4,
+           loi=['Bây giờ anh đã nghỉ, chỉ còn em làm, mỗi giờ một phần.',
+                'Đây là chỗ hay quên nhất.']),
+        _c('y_toan', 'Em làm nốt mất mấy giờ', '6 : 1 = 6 giờ', buoc=4, soBuoc=4,
+           loi=['Còn sáu phần, mỗi giờ một phần, nên em mất sáu giờ nữa.']),
+        _c('cong_thuc', 'Cách làm bài một người nghỉ',
+           congThuc='số phần đã làm  ⟶  số phần còn lại  ⟶  chia cho người CÒN LẠI',
+           thay='(12 − 6) : 1 = 6 giờ',
+           loi=['Đếm số phần đã làm, rồi số phần còn lại, rồi chia cho người còn lại.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='bớt một người thì SỐ PHẦN MỖI GIỜ cũng đổi',
+           loi=['Con nhớ lại một lần nữa. Bớt một người thì số phần mỗi giờ cũng đổi.',
+                'Dùng lại con số cũ là vẫn tính như còn cả hai người.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_tinh_nguoc(b):
+    """⑤ Tính ngược — một ý duy nhất: đi lùi thì ĐỔI PHÉP."""
+    return [
+        _c('bia', 'Tính ngược từ cuối', so_bai(b),
+           loi=['Hôm nay đề chỉ cho biết kết quả cuối cùng, và hỏi số ban đầu.']),
+        _c('de_toan', 'Nghĩ một số, nhân 2, cộng 10, trừ 4 thì được 26.',
+           'Tìm số đã nghĩ.',
+           loi=['Nghĩ một số, nhân với hai, rồi cộng mười, rồi trừ bốn thì được hai '
+                'mươi sáu.']),
+        _c('y_toan', 'Đi xuôi thì chịu', 'Vì chưa biết bắt đầu từ số nào.',
+           buoc=1, soBuoc=4,
+           loi=['Đi xuôi thì chịu, vì chưa biết bắt đầu từ số nào.']),
+        _c('y_toan', 'Nên đi lùi từ số cuối', '26 + 4 = 30', buoc=2, soBuoc=4,
+           loi=['Nên mình đi lùi từ số cuối. Bước cuối là trừ bốn.',
+                'Đi lùi thì đổi thành cộng bốn, được ba mươi.']),
+        _c('y_toan', 'Lùi tiếp', '30 − 10 = 20', buoc=3, soBuoc=4,
+           loi=['Trước đó là cộng mười, đi lùi thì đổi thành trừ mười, được hai mươi.']),
+        _c('y_toan', 'Lùi nốt bước đầu', '20 : 2 = 10', buoc=4, soBuoc=4,
+           loi=['Đầu tiên là nhân hai, đi lùi thì đổi thành chia hai, được mười.']),
+        _c('y_toan', 'Thử lại bằng cách đi xuôi', '10 × 2 = 20 · + 10 = 30 · − 4 = 26',
+           buoc=4, soBuoc=4,
+           loi=['Thử lại. Mười nhân hai bằng hai mươi, cộng mười bằng ba mươi, trừ bốn '
+                'bằng hai mươi sáu. Đúng bằng đề cho.']),
+        _c('cong_thuc', 'Đi lùi thì ĐỔI PHÉP',
+           congThuc='cộng ⟷ trừ    ·    nhân ⟷ chia',
+           thay='26 + 4 = 30',
+           loi=['Đi lùi thì đổi phép. Cộng thành trừ, nhân thành chia.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='đi lùi thì làm NGƯỢC, từ bước CUỐI về bước đầu',
+           loi=['Con nhớ lại một lần nữa. Đi lùi thì làm từ bước cuối ngược về bước đầu.',
+                'Giữ nguyên phép là đi sai hướng, càng đi càng xa.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 # Khoá theo MÃ BÀI, không theo số bài. Từ 14-08 (lối C) số bài đếm từ vị trí trong
 # `thu_tu.json`, nên nó đổi mỗi khi chèn bài mới — khoá theo nó thì chèn chín bài
 # vào chương 3 là tám kịch bản này nhảy sang nhầm bài, mà vẫn dựng ra video hợp lệ.
@@ -1727,6 +1927,10 @@ BO = {
     'DL:KSN4.B30': kb_hieu_ti,   'DL:KSN4.B62': kb_giau_ti,
     'DL:KSN4.B29': kb_giau_tong_ti, 'DL:KSN4.B31': kb_ba_so_ti,
     'DL:KSN4.B63': kb_noi_ti,
+    # ── chương 8 · đợt một, năm bài đầu ──
+    'DL:KSN4.B32': kb_tuoi_mot,  'DL:KSN4.B64': kb_tuoi_hai,
+    'DL:KSN4.B33': kb_lam_chung, 'DL:KSN4.B65': kb_mot_nguoi_nghi,
+    'DL:KSN4.B34': kb_tinh_nguoc,
 }
 
 

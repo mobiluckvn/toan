@@ -1,0 +1,280 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B65",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 49 · LÀM CHUNG RỒI MỘT NGƯỜI NGHỈ — ĐẾM SỐ PHẦN CÒN LẠI",
+ "durationMinutes": 10,
+ "so": 49,
+ "chuong": 8,
+ "tenChuong": "BÀI TOÁN LỜI VĂN",
+ "dangGoc": "Dạng gốc: LV 7.2 mức Lớp 4 — Hai người làm chung một lúc rồi một người nghỉ; theo dõi số phần đã làm và số phần còn lại.",
+ "skills": {
+  "bktUnit": "CHUONG:8@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 49,
+  "prev": "DL:KSN4.B33",
+  "next": "DL:KSN4.B34"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tính số phần đã làm được trong khoảng thời gian làm chung. Tính số phần còn lại. Tính thời gian người còn lại làm nốt.",
+  "kidText": "Hai anh em làm chung được một lúc thì anh phải nghỉ. Con đoán xem em còn phải làm mấy giờ nữa?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn tính xong 6 phần còn lại rồi lấy 6 chia cho 3 phần mỗi giờ, ra 2 giờ.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Sau khi anh nghỉ thì còn mấy người làm? Gợi ý 2: Còn một mình em. Vậy mỗi giờ làm được mấy phần? Chữa: em một mình chỉ làm 1 phần mỗi giờ, nên phải chia cho 1, được 6 giờ. Lấy 3 phần là vẫn tính như còn cả hai người."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn tính xong 6 phần còn lại rồi lấy 6 chia cho 3 phần mỗi giờ, ra 2 giờ.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Anh làm một mình xong trong 6 giờ, em xong trong 12 giờ. Hai anh em làm chung 2 giờ thì anh phải nghỉ, em làm nốt. Hỏi em còn phải làm mấy giờ nữa?",
+  "steps": [
+   {
+    "show": "Vẫn chia việc thành 12 phần"
+   },
+   {
+    "show": "Mỗi giờ anh làm 2 phần, em làm 1 phần, chung được 3 phần."
+   },
+   {
+    "show": "Hai giờ làm chung được mấy phần"
+   },
+   {
+    "show": "Mỗi giờ 3 phần, hai giờ là 3 × 2 = 6 phần."
+   },
+   {
+    "show": "Còn lại mấy phần"
+   },
+   {
+    "show": "Cả việc 12 phần, đã làm 6 phần, còn 12 − 6 = 6 phần."
+   },
+   {
+    "show": "Em làm nốt mất mấy giờ"
+   },
+   {
+    "show": "Em làm 1 phần mỗi giờ, còn 6 phần nên mất 6 : 1 = 6 giờ."
+   },
+   {
+    "show": "Đáp số: em còn phải làm 6 giờ nữa."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Anh 6 giờ, em 12 giờ, chia việc thành 12 phần — đúng bài trong video. Làm chung mỗi giờ được mấy phần?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Anh 2 phần, em 1 phần, chung 2 + 1 = 3 phần mỗi giờ."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên. Làm chung 2 giờ thì được mấy phần?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "3 × 2 = 6 phần."
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn bài trên. Còn lại mấy phần?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "12 − 6 = 6 phần."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Vẫn bài trên. Em làm nốt một mình thì mất mấy giờ?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "Em làm 1 phần mỗi giờ, còn 6 phần nên mất 6 giờ."
+    },
+    {
+     "id": "C5",
+     "text": "Bạn Tú lấy 6 phần còn lại chia cho 3 phần mỗi giờ, ra 2 giờ. Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phải chia cho mấy phần mỗi giờ",
+        "value": 1
+       },
+       {
+        "label": "đáp số đúng mấy giờ",
+        "value": 6
+       }
+      ]
+     },
+     "solutionNarrative": "Anh đã nghỉ nên chỉ còn em làm, mỗi giờ 1 phần. Lấy 3 phần là vẫn tính như còn cả hai người. Đúng là 6 giờ."
+    },
+    {
+     "id": "C6",
+     "text": "Hai vòi cùng chảy vào bể: vòi một đầy bể trong 4 giờ, vòi hai trong 12 giờ. Mở cả hai trong 1 giờ rồi khoá vòi một. Vòi hai chảy nốt mất mấy giờ?",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "Chia bể 12 phần: vòi một 3 phần, vòi hai 1 phần, chung 4 phần. Một giờ được 4 phần, còn 12 − 4 = 8 phần. Vòi hai chảy 1 phần mỗi giờ nên mất 8 giờ."
+    },
+    {
+     "id": "C7",
+     "text": "Vì sao sau khi một người nghỉ thì phải tính lại số phần mỗi giờ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bớt một người thì tốc độ",
+        "options": [
+         "giảm",
+         "tăng",
+         "không đổi"
+        ],
+        "value": "giảm"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì số phần mỗi giờ là của những người ĐANG làm. Bớt một người thì tốc độ giảm, không dùng lại con số cũ được."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Anh xong trong 12 giờ, em xong trong 6 giờ. Làm chung 2 giờ rồi em nghỉ, anh làm nốt. Anh còn phải làm mấy giờ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "còn mấy phần",
+        "value": 6
+       },
+       {
+        "label": "anh làm thêm mấy giờ",
+        "value": 6
+       }
+      ]
+     },
+     "solutionNarrative": "Chia việc 12 phần: anh 1 phần, em 2 phần, chung 3 phần mỗi giờ. Hai giờ được 6 phần, còn 12 − 6 = 6 phần. Anh làm 1 phần mỗi giờ nên mất 6 giờ."
+    },
+    {
+     "id": "C9",
+     "text": "Anh xong trong 6 giờ, em xong trong 12 giờ. Làm chung 3 giờ rồi anh nghỉ. Em làm nốt mất mấy giờ?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Chung 3 phần mỗi giờ, 3 giờ được 9 phần. Còn 12 − 9 = 3 phần. Em làm 1 phần mỗi giờ nên mất 3 giờ."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Sau khi một người nghỉ, số phần làm được mỗi giờ phải tính lại.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Phần còn lại vẫn chia cho số phần của cả hai người.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — chỉ còn một người làm."
+   },
+   {
+    "id": "Q3",
+    "text": "Chung 3 phần mỗi giờ, làm 2 giờ thì được:",
+    "format": "mcq",
+    "choices": [
+     "A. 6 phần",
+     "B. 3 phần",
+     "C. 5 phần"
+    ],
+    "answerKey": {
+     "choice": "A. 6 phần"
+    },
+    "solutionNarrative": "3 × 2 = 6."
+   },
+   {
+    "id": "Q4",
+    "text": "Cả việc 12 phần, đã làm 6 phần thì còn:",
+    "format": "mcq",
+    "choices": [
+     "A. 6 phần",
+     "B. 18 phần",
+     "C. 2 phần"
+    ],
+    "answerKey": {
+     "choice": "A. 6 phần"
+    },
+    "solutionNarrative": "12 − 6 = 6."
+   },
+   {
+    "id": "Q5",
+    "text": "Còn 6 phần, em làm 1 phần mỗi giờ thì mất:",
+    "format": "mcq",
+    "choices": [
+     "A. 6 giờ",
+     "B. 2 giờ",
+     "C. 3 giờ"
+    ],
+    "answerKey": {
+     "choice": "A. 6 giờ"
+    },
+    "solutionNarrative": "6 : 1 = 6."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Bảo con vẽ 12 ô rồi tô dần: hai giờ đầu tô 6 ô, còn 6 ô để trống. Con nhìn thấy phần còn lại thì khó quên trừ.",
+  "homeActivity": "Chỗ sai duy nhất là quên rằng sau khi một người nghỉ thì tốc độ đổi. Bố mẹ hỏi: \"Bây giờ còn mấy người làm?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài trước con đã biết đếm số phần mỗi giờ. Hôm nay vẫn cách đếm ấy, chỉ thêm một việc: theo dõi xem đã làm được mấy phần rồi và còn lại mấy phần. Không có phép nào mới cả.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B21"
+  ],
+  "ten": [
+   "RÚT VỀ ĐƠN VỊ"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B65_giang.mp4"
+ }
+}

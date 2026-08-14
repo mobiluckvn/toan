@@ -595,3 +595,42 @@ kiểm tệp còn không · bỏ cờ `--lam-lai`. Cả năm đều đỏ. Cổn
 
 **Cửa thoát:** `--lam-lai` sinh lại tất, dùng khi đổi model hay đổi giọng — lúc ấy chữ
 không đổi nên vân tay không đổi, mà tiếng thì phải đổi.
+
+---
+
+## 17 · Đợt 6 · chương 8 — bài toán lời văn, NĂM BÀI ĐẦU
+
+Bác muốn xem khuôn trước rồi mới làm nốt, nên đợt này làm 5 trên 10 bài dự kiến.
+
+**Chương này khác hẳn năm chương trước, và phải nói rõ chỗ khác.** Chương 3 tới 7,
+sáu bảy bài là các mặt của MỘT ý — nên mỗi chương có một bài khái niệm gốc và một bộ
+neo chạy suốt. Chương 8 thì mỗi bài là **một phương pháp riêng**, không có khái niệm
+gốc chung, và **không bộ neo nào chở nổi cả chương**. Ép một bộ neo vào đây là gượng.
+
+Nên chương này **neo theo cặp**: hai bài tuổi dùng mẹ 30 con 6 (hiệu 24); hai bài làm
+chung dùng anh 6 giờ em 12 giờ (việc chia 12 phần); bài tính ngược đứng riêng.
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 46 | B32 | tuổi một mốc — **là bài cũ mặc áo mới**, che chữ "tuổi" đi thì thấy |
+| 47 | B64 *(mới)* | tuổi hai mốc — **hiệu tuổi không bao giờ đổi** |
+| 48 | B33 | làm chung — chia việc thành phần, KHÔNG dùng phân số |
+| 49 | B65 *(mới)* | làm chung rồi một người nghỉ — đếm số phần còn lại |
+| 50 | B34 | tính ngược — **đi lùi thì đổi phép** |
+
+Bài 46 là bài đáng giá nhất: nó dạy rằng **không có phép nào mới**. Chương này vốn
+làm bé sợ vì tưởng mỗi bài một phép thần; nói thẳng ra là bé nhẹ hẳn.
+
+Lớp 4 chưa học phân số nên bài làm chung **không** dùng lối "mỗi giờ làm được một
+phần mấy công việc". Lối của lớp 4 là chia việc thành số phần chia hết cho cả hai
+thời gian — vừa đúng sức bé, vừa nhìn thấy được trên hình `nhom_deu`.
+
+### Còn lại đợt hai
+
+Giả thiết tạm · khử · thế · sơ đồ Ven · nguyên lý chuồng thỏ. B35 B36 B37 tạm giữ
+nguyên bài chữ cũ, nên chương 8 hiện có 8 bài, sau sẽ thành 10.
+
+### Số đo
+
+5 video · **62 clip tiếng mới trong 2 phút 29** (trước khi sửa bộ sinh tiếng thì đợt
+này sẽ mất hơn hai mươi phút) · 70 câu hỏi · quyển từ **63 lên 65 bài**.

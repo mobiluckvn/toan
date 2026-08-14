@@ -1,0 +1,294 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B64",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 47 · BÀI TOÁN TUỔI Ở HAI THỜI ĐIỂM — HIỆU TUỔI KHÔNG BAO GIỜ ĐỔI",
+ "durationMinutes": 10,
+ "so": 47,
+ "chuong": 8,
+ "tenChuong": "BÀI TOÁN LỜI VĂN",
+ "dangGoc": "Dạng gốc: LV 6.2 mức Lớp 4 — Bài toán tuổi nối hai mốc thời gian bằng hiệu tuổi không đổi.",
+ "skills": {
+  "bktUnit": "CHUONG:8@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 47,
+  "prev": "DL:KSN4.B32",
+  "next": "DL:KSN4.B33"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Dùng hiệu tuổi không đổi để nối hai thời điểm. Tìm tuổi tại thời điểm sau bằng hiệu và tỉ số. Suy ra khoảng thời gian giữa hai mốc.",
+  "kidText": "Mẹ 30 tuổi, con 6 tuổi. Con đoán xem mười năm nữa mẹ hơn con mấy tuổi?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nghĩ sau vài năm thì hiệu tuổi cũng tăng theo, nên đi tìm hiệu mới.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Mỗi năm mẹ thêm mấy tuổi? Con thêm mấy tuổi? Gợi ý 2: Cả hai cùng thêm một tuổi, nên khoảng cách giữa hai người có đổi không? Chữa: không đổi. Hiệu tuổi là thứ DUY NHẤT đứng yên trong bài này, và chính vì đứng yên nên nó mới nối được hai thời điểm."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nghĩ sau vài năm thì hiệu tuổi cũng tăng theo, nên đi tìm hiệu mới.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Hiện nay mẹ 30 tuổi, con 6 tuổi. Hỏi sau bao nhiêu năm nữa thì tuổi mẹ gấp 3 lần tuổi con?",
+  "steps": [
+   {
+    "show": "Tìm cái KHÔNG đổi"
+   },
+   {
+    "show": "Hiệu tuổi hiện nay: 30 − 6 = 24 tuổi. Cả hai cùng lớn lên nên hiệu này không bao giờ đổi."
+   },
+   {
+    "show": "Sang thời điểm sau"
+   },
+   {
+    "show": "Lúc ấy tuổi mẹ gấp 3 lần tuổi con, tức tỉ số 1 trên 3. Nhưng hiệu vẫn là 24."
+   },
+   {
+    "show": "Đây là bài hiệu - tỉ đã học"
+   },
+   {
+    "show": "Phần chênh là 3 − 1 = 2 phần, ứng với 24 tuổi. Một phần là 24 : 2 = 12."
+   },
+   {
+    "show": "Tuổi lúc ấy"
+   },
+   {
+    "show": "Con 12 tuổi, mẹ 36 tuổi. Kiểm lại: 36 gấp 3 lần 12, và 36 − 12 = 24, đúng hiệu."
+   },
+   {
+    "show": "Sau bao nhiêu năm"
+   },
+   {
+    "show": "Con từ 6 tuổi lên 12 tuổi, vậy sau 6 năm nữa."
+   },
+   {
+    "show": "Đáp số: sau 6 năm nữa."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Hiện nay mẹ 30 tuổi, con 6 tuổi — đúng bài trong video. Hiệu tuổi hai mẹ con là bao nhiêu?",
+     "answerKey": {
+      "value": 24
+     },
+     "solutionNarrative": "30 − 6 = 24 tuổi."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên. Sau 10 năm nữa hiệu tuổi hai mẹ con là bao nhiêu?",
+     "answerKey": {
+      "value": 24
+     },
+     "solutionNarrative": "Vẫn 24 tuổi. Cả hai cùng thêm 10 tuổi nên hiệu không đổi."
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn bài trên. Khi tuổi mẹ gấp 3 lần tuổi con thì phần chênh là mấy phần?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Tỉ số 1 : 3, phần chênh là 3 − 1 = 2 phần."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Vẫn bài trên. Tính tuổi hai mẹ con lúc mẹ gấp 3 lần con.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tuổi con",
+        "value": 12
+       },
+       {
+        "label": "tuổi mẹ",
+        "value": 36
+       }
+      ]
+     },
+     "solutionNarrative": "Một phần là 24 : 2 = 12. Con 12 tuổi, mẹ 36 tuổi."
+    },
+    {
+     "id": "C5",
+     "text": "Vẫn bài trên. Vậy sau bao nhiêu năm nữa?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "Con từ 6 lên 12 tuổi, nên sau 6 năm nữa."
+    },
+    {
+     "id": "C6",
+     "text": "Bạn Lan đi tìm hiệu tuổi MỚI sau vài năm. Bạn nhầm ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hiệu tuổi có đổi không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Hiệu tuổi không bao giờ đổi, vì mỗi năm cả hai cùng thêm một tuổi. Không có hiệu mới nào cả."
+    },
+    {
+     "id": "C7",
+     "text": "Anh hơn em 8 tuổi. Khi tuổi anh gấp 3 lần tuổi em thì em bao nhiêu tuổi?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tuổi em",
+        "value": 4
+       },
+       {
+        "label": "tuổi anh",
+        "value": 12
+       }
+      ]
+     },
+     "solutionNarrative": "Phần chênh 2 phần ứng với 8 tuổi, một phần là 8 : 2 = 4. Em 4 tuổi, anh 12 tuổi."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Hiện nay bố 40 tuổi, con 10 tuổi. Hỏi sau bao nhiêu năm nữa tuổi bố gấp đôi tuổi con?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tuổi con lúc ấy",
+        "value": 30
+       },
+       {
+        "label": "sau mấy năm",
+        "value": 20
+       }
+      ]
+     },
+     "solutionNarrative": "Hiệu 30 tuổi không đổi. Lúc ấy tỉ số 1 : 2, phần chênh 1 phần ứng với 30. Con 30 tuổi, bố 60 tuổi. Con từ 10 lên 30, vậy sau 20 năm."
+    },
+    {
+     "id": "C9",
+     "text": "Cách đây 3 năm mẹ 27 tuổi, con 3 tuổi. Hỏi hiện nay tuổi mẹ gấp mấy lần tuổi con?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Hiện nay mẹ 30 tuổi, con 6 tuổi. 30 : 6 = 5, nên tuổi mẹ gấp 5 lần tuổi con."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Hiệu tuổi của hai người không bao giờ thay đổi.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG — mỗi năm cả hai cùng thêm một tuổi."
+   },
+   {
+    "id": "Q2",
+    "text": "Sau 10 năm thì hiệu tuổi hai mẹ con tăng thêm 10.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — hiệu tuổi đứng yên."
+   },
+   {
+    "id": "Q3",
+    "text": "Mẹ 30 tuổi, con 6 tuổi. Hiệu tuổi là:",
+    "format": "mcq",
+    "choices": [
+     "A. 24",
+     "B. 36",
+     "C. 5"
+    ],
+    "answerKey": {
+     "choice": "A. 24"
+    },
+    "solutionNarrative": "30 − 6 = 24."
+   },
+   {
+    "id": "Q4",
+    "text": "Khi tuổi mẹ gấp 3 lần tuổi con thì phần chênh là:",
+    "format": "mcq",
+    "choices": [
+     "A. 2 phần",
+     "B. 3 phần",
+     "C. 4 phần"
+    ],
+    "answerKey": {
+     "choice": "A. 2 phần"
+    },
+    "solutionNarrative": "3 − 1 = 2."
+   },
+   {
+    "id": "Q5",
+    "text": "Trong bài toán tuổi hai mốc, thứ đứng yên là:",
+    "format": "mcq",
+    "choices": [
+     "A. hiệu tuổi",
+     "B. tổng tuổi",
+     "C. tỉ số tuổi"
+    ],
+    "answerKey": {
+     "choice": "A. hiệu tuổi"
+    },
+    "solutionNarrative": "Tổng và tỉ số đều đổi theo thời gian."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hỏi con: \"Bố hơn con mấy tuổi? Hai mươi năm nữa bố hơn con mấy tuổi?\" Trả lời cùng một số là con đã nắm chìa khoá.",
+  "homeActivity": "Bài này khó ở chỗ nhận ra cái gì đứng yên. Bố mẹ hỏi giúp: \"Trong bài này, cái gì không đổi?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Ở chương tổng - hiệu con đã biết một điều: cùng thêm vào cả hai số thì hiệu không đổi. Hôm nay con dùng chính điều ấy — vì hiệu tuổi không bao giờ đổi, nó nối được hiện tại với tương lai.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B20"
+  ],
+  "ten": [
+   "TOÁN TUỔI HAI GIA ĐÌNH"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B64_giang.mp4"
+ }
+}
