@@ -35,6 +35,7 @@ from khuon_chung import sang_khuon_chung                    # noqa: E402
 from de_hieu_lop4 import sua                                # noqa: E402
 
 NGUON = os.path.join(GOC_KHO, 'data', 'lop4')
+THU_TU = os.path.join(NGUON, 'thu_tu.json')
 NGUON_ON = os.path.join(GOC_KHO, 'data', 'lop4_ontap.json')
 SO_TAY = os.path.join(GOC_KHO, 'data', 'lop4_hinh_manifest.json')
 DAP_AN_O = os.path.join(GOC_KHO, 'data', 'lop4_dapan_o.json')
@@ -158,10 +159,39 @@ def dung_on_tap(ten_bai):
 
 def main(khai=False):
     os.makedirs(RA, exist_ok=True)
-    teps = sorted(f for f in os.listdir(NGUON) if f.startswith('DL_KSN4_B'))
-    bais = [json.load(open(os.path.join(NGUON, t), encoding='utf-8')) for t in teps]
-    bais.sort(key=lambda b: b['so'])
-    ids = [b['id'] for b in bais]
+    # ══ THỨ TỰ HỌC LẤY TỪ LỜI KHAI, SỐ BÀI SUY TỪ VỊ TRÍ ══
+    #
+    # Bản cũ xếp bài bằng `sort(key=so)`, mà `so` lại phải khớp với con số trong mã
+    # bài. Hai thứ khoá chặt vào nhau, nên chèn một bài vào giữa là phải đổi mã của
+    # mọi bài phía sau — 353 tệp, 4 566 chỗ, và tiến độ đã lưu của từng bé phải dời
+    # theo. Làm một lần đã đủ đau; tách nhỏ cả quyển thì còn chín lần nữa.
+    #
+    # Bác chốt lối C: MÃ BÀI CHỈ CÒN LÀ CÁI TÊN, không bao giờ đổi. Thứ tự học khai
+    # thẳng ở `thu_tu.json`, và bài đứng thứ mấy thì mang số ấy. Chèn bài mới =
+    # thêm một dòng vào lời khai. Không dồn, không đổi tên, không dời tiến độ.
+    tt = json.load(open(THU_TU, encoding='utf-8'))['thuTu']
+    teps = [f for f in os.listdir(NGUON) if f.startswith('DL_KSN4_B')]
+    co_tep = {f[:-5].replace('DL_KSN4_', 'DL:KSN4.'): f for f in teps}
+
+    # Lời khai và tệp trên đĩa phải TRÙNG KHÍT. Thiếu một bên là hỏng câm: khai mà
+    # không có tệp thì màn hình hụt một bài giữa chương; có tệp mà không khai thì bài
+    # ấy dựng xong nằm đó, không lối nào vào. Cả hai đều không ai kêu.
+    thieu_tep = [i for i in tt if i not in co_tep]
+    thieu_khai = sorted(i for i in co_tep if i not in tt)
+    if thieu_tep or thieu_khai:
+        raise SystemExit(
+            f'thu_tu.json lệch với data/lop4/:\n'
+            f'  khai mà không có tệp: {thieu_tep or "—"}\n'
+            f'  có tệp mà không khai: {thieu_khai or "—"}')
+    if len(set(tt)) != len(tt):
+        raise SystemExit('thu_tu.json có mã bị khai hai lần')
+
+    bais = []
+    for vi_tri, ma in enumerate(tt, 1):
+        b = json.load(open(os.path.join(NGUON, co_tep[ma]), encoding='utf-8'))
+        b['so'] = vi_tri          # ⚠ ĐÈ: `so` trong tệp nguồn không còn là sự thật
+        bais.append(b)
+    ids = tt
 
     if os.path.exists(DAP_AN_O):
         dap_an = json.load(open(DAP_AN_O, encoding='utf-8'))

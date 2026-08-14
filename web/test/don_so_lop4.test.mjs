@@ -142,16 +142,19 @@ test('cửa nạp sổ CÓ gọi phép chuyển — không thì cả tệp này 
   assert.match(src, /return chuyenSo\(/, 'loadProgress phải trả về sổ ĐÃ chuyển');
 });
 
-test('dải dời khớp với công cụ dồn số bên tools', () => {
-  /* Hai nơi cùng khai một dải: `tools/don_so_lop4.py` dồn NỘI DUNG, tệp này dồn
-     TIẾN ĐỘ. Lệch nhau là bé và bài nói về hai bài khác nhau. */
-  const py = readFileSync(new URL('../../tools/don_so_lop4.py', import.meta.url), 'utf8');
-  const m = /DICH = (\d+)[\s\S]*?TU, DEN = (\d+), (\d+)/.exec(py);
-  assert.ok(m, 'không đọc được dải trong don_so_lop4.py');
-  /* So với đợt CUỐI — đó là đợt công cụ đang chuẩn bị chạy. Đợt cũ đã chạy xong,
-     không ai dồn lại nữa. */
-  const cuoi = DOT[DOT.length - 1];
-  assert.equal(Number(m[1]), cuoi.dich, 'số chỗ dời lệch nhau');
-  assert.equal(Number(m[2]), cuoi.tu, 'đầu dải lệch nhau');
-  assert.equal(Number(m[3]), cuoi.den, 'cuối dải lệch nhau');
+test('ĐÓNG BĂNG: không được thêm đợt dồn nào nữa', () => {
+  /* Bản cũ so dải ở đây với `tools/don_so_lop4.py`. Công cụ ấy đã bỏ: bác chốt lối
+     C, mã bài từ nay đứng yên mãi và số hiển thị đếm từ vị trí, nên KHÔNG CÒN đợt
+     dồn nào cần chạy nữa.
+
+     Phần chuyển dưới đây vẫn phải sống, vì bé nào chưa mở app từ trước đợt 1 thì sổ
+     trong máy vẫn mang mã cũ và vẫn cần dời một lần. Nhưng nó đông cứng tại đây.
+
+     Thêm một dòng vào DOT là dấu hiệu ai đó lại đi dồn số — việc mà lối C sinh ra để
+     khỏi phải làm. Đỏ ở đây rẻ hơn nhiều so với dời nhầm tiến độ của các bé. */
+  assert.equal(DOT.length, 1,
+    'DOT phải đứng nguyên một đợt. Cần chèn bài mới thì thêm dòng vào '
+    + 'data/lop4/thu_tu.json, đừng dồn số.');
+  assert.deepEqual(DOT[0], { tu: 13, den: 44, dich: 5 },
+    'đợt 1 đã chạy thật trên máy các bé — sửa dải này là sổ của bé lệch đi');
 });

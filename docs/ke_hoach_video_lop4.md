@@ -209,9 +209,56 @@ phép canh (không nhân vật trong bài có video · không nhân vật trong 
 
 ---
 
-## 10 · ⚠ VIỆC CÒN TREO — ĐỌC TRƯỚC KHI LÀM ĐỢT 2
+## 10 · Chèn bài mới — LỐI C, không còn dồn số
 
-### Câu hỏi bác chưa trả lời: dồn số kiểu nào
+**Bác chốt 14-08.** Trước đây mã bài mang sẵn con số (`DL:KSN4.B14` = bài 14), nên
+chèn một bài vào giữa là phải đổi mã của mọi bài phía sau, rồi **dời tiến độ đã lưu
+trong máy từng bé** cho khớp. Đợt đầu đo thật: 353 tệp, 4 566 chỗ đổi mã, 99 tệp đổi
+tên. Tách nhỏ cả quyển thì còn **chín đợt như thế nữa** — chín lần đụng vào dữ liệu
+thật của trẻ con, mỗi lần sai một nấc là huy hiệu trỏ nhầm bài mà chẳng có gì báo.
+
+Lối C cắt sợi dây: **mã bài từ nay chỉ là CÁI TÊN**, không bao giờ đổi. Số hiển thị
+đếm từ **vị trí trong mảng**, và thứ tự mảng khai thẳng ở `data/lop4/thu_tu.json`.
+
+### Thêm một bài — ba bước, hết
+
+```
+1. tools/day_so_lop4.py   →  data/lop4/DL_KSN4_B50.json   (mã TRỐNG kế tiếp)
+2. data/lop4/thu_tu.json  →  đặt "DL:KSN4.B50" vào ĐÚNG CHỖ trong mảng
+3. python3 tools/dung_khuon_chung_lop4.py --khai   (rồi gan_hinh · goi_y — §6)
+```
+
+Không đổi tên tệp nào. Không đổi mã bài nào. **Không dời tiến độ của bé.** Bài mới
+nằm giữa chương thì mọi bài sau nó tự lùi một số trên màn hình, còn dưới sổ thì mã
+vẫn nguyên nên tiến độ vẫn trỏ đúng bài cũ.
+
+### Hai luật phải nhớ
+
+**Mã đã dùng thì không cấp lại.** Xoá một bài thì bỏ mã khỏi `thu_tu.json`, nhưng
+đừng đưa mã ấy cho bài khác — bé đã học bài cũ vẫn đang giữ tiến độ mang đúng mã đó,
+cấp lại là bé bỗng "đã xong" một bài chưa từng thấy. Luôn lấy mã trống KẾ TIẾP.
+
+**Không thêm đợt dồn nào nữa.** `donSoLop4.js` vẫn phải sống, vì bé chưa mở app từ
+trước đợt 1 thì sổ trong máy vẫn mang mã cũ. Nhưng nó **đông cứng ở một đợt**, và
+`don_so_lop4.test.mjs` đỏ nếu ai thêm dòng thứ hai. Công cụ `tools/don_so_lop4.py` đã
+**bỏ hẳn** — để nó nằm đó là người sau sẽ chạy.
+
+### Cổng canh — `thu_tu_bai.test.mjs`, 16 phép
+
+Lời khai ⟷ tệp nguồn trùng khít · bản dựng giữ đúng thứ tự lời khai · trường `so` cũ
+khớp vị trí · không mã trùng · **không cấp lại mã đã xoá** · màn hình đếm chứ không
+đọc `so` · **không còn công cụ dồn số**. Bộ dựng cũng tự chặn, in ra thiếu bên nào.
+
+Đã thử ngược cả bảy: phá từng thứ một, cả bảy đều đỏ.
+
+**Bằng chứng đổi mà không hỏng:** dựng lại sau khi sửa, bản cho app ra **byte y hệt**
+bản cũ — 49 bài, không một chữ đổi.
+
+---
+
+## 11 · Lịch sử — vì sao có lối C
+
+### Câu hỏi đã trả lời: bác chọn lối C
 
 Tách nhỏ bài thì số bài đổi, nên mã bài đổi, nên **tiến độ đã lưu của các bé phải
 dời theo**. Đợt 1 đã dồn một lần: 353 tệp, 4 566 chỗ đổi mã, 99 tệp đổi tên. Nếu mọi
@@ -223,8 +270,7 @@ chương đều tách như bác muốn thì **còn 9 đợt dồn nữa** — ch
 | B | gom lại, dồn một lần ở cuối | số bài lộn xộn suốt lúc làm |
 | **C · cháu khuyên** | **mã bài đứng yên mãi, số hiển thị suy từ vị trí trong mảng** | sửa một lần, hết hẳn chuyện dồn |
 
-Lối C là chữa tận gốc: mã (`DL:KSN4.B14`) chỉ còn là cái tên, còn "Bài 19" là thứ
-màn hình tự đếm ra. Không còn đợt dồn nào nữa. **Chưa làm gì cả — chờ bác chọn.**
+**Bác chọn lối C, và đã làm xong — xem §10.**
 
 ### Chỗ đang đứng
 
@@ -233,7 +279,7 @@ màn hình tự đếm ra. Không còn đợt dồn nào nữa. **Chưa làm gì
   bao giờ chạy cho bé ấy — *tiến độ đứng yên trong khi bài đã dời*. 11 phép canh, có
   phép **hội tụ**: bé chưa dồn · bé mang cờ cũ · bé lưu số đợt — cả ba phải về cùng
   một chỗ.
-- **CHƯA dồn số đợt 2. CHƯA viết 9 bài chương 3.**
+- **Không dồn số đợt 2 nữa** — lối C bỏ hẳn việc ấy. **Còn lại: viết 9 bài chương 3.**
 
 ### ⚠ Quả mìn đã gỡ — đừng đặt lại
 

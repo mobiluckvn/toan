@@ -187,9 +187,18 @@ export async function napChiMuc(ma) {
     } else {
       const ds = await napJson(`${CONTENT}/${thuMuc}/index.json`, []);
       ghiNhoChuong(ds);
-      bai = (ds || []).map((b) => ({
+      /* ⚠ `so` ĐẾM TỪ VỊ TRÍ, không đọc `b.so`.
+         Bản cũ đọc trường `so` đã lưu, mà trường ấy phải khớp với con số nằm trong
+         mã bài — nên chèn một bài vào giữa là phải đổi mã của mọi bài phía sau, rồi
+         dời tiến độ đã lưu của từng bé cho khớp. Đổi số bài hoá ra là đụng vào dữ
+         liệu thật của trẻ con, và sai một nấc thì huy hiệu trỏ nhầm bài mà chẳng có
+         gì báo.
+         Bác chốt lối C: mã bài chỉ còn là CÁI TÊN. Bài đứng thứ mấy trong mảng thì
+         mang số ấy — một sự thật duy nhất, và nó tự đúng. Thứ tự mảng do
+         `data/lop<N>/thu_tu.json` khai ra, bộ dựng giữ nguyên khi ghi index.json. */
+      bai = (ds || []).map((b, i) => ({
         id: b.id,
-        so: b.so,
+        so: i + 1,
         micro: 1,
         ten: b.ten || b.title || b.id,
         title: b.title || b.ten || b.id,
