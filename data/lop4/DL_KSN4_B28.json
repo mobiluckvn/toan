@@ -1,12 +1,12 @@
 {
  "id": "DL:KSN4.B28",
- "quyen": "lop4",
+ "quyen": "KSN4",
  "so": 28,
- "ten": "BÀI TOÁN TỔNG - TỈ",
+ "ten": "BÀI TOÁN TỔNG - TỈ — CHIA TỔNG CHO SỐ PHẦN",
  "chuong": 7,
- "tenChuong": "TỔNG - TỈ VÀ HIỆU - TỈ",
- "dangGoc": "LV 3.1 mức Lớp 4 — Tìm hai số biết tổng và tỉ số · quy trình 4 bước · sơ đồ phần chuẩn mực",
- "hatMam": "Chương 6 con xử các cặp số HƠN KÉM nhau một khoản (hiệu). Chương này hai số chơi kiểu khác: GẤP nhau theo phần — \"cứ 2 phần này thì 3 phần kia\". Công cụ mới là SƠ ĐỒ PHẦN: mỗi ô một phần bằng nhau, và cả bài toán quy về đúng một câu hỏi: MỘT PHẦN đáng giá bao nhiêu?",
+ "tenChuong": "TỔNG - TỈ, HIỆU - TỈ",
+ "dangGoc": "Dạng gốc: LV 3.1 mức Lớp 4 — Tìm hai số biết tổng và tỉ số, dựa trên việc tổng gồm bao nhiêu phần bằng nhau.",
+ "hatMam": "Bài trước con đã vẽ được sơ đồ tỉ số. Hôm nay con thêm một thông tin nữa: cả hai gộp lại bằng bao nhiêu. Và con sẽ thấy cách làm hiện ra ngay trên hình — không phải nhớ quy trình nào cả.",
  "ganDuoi": {
   "ve": [
    "DL:KSN3.B18",
@@ -16,25 +16,23 @@
    "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
    "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
   ],
-  "canCu": "chuDe",
+  "canCu": "sach",
   "lopDuoi": 3
  },
  "muc": {
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Vẽ sơ đồ phần chuẩn: mỗi bên đúng số ô của tỉ số, các ô bằng nhau tăm tắp.",
-    "Thuộc quy trình 4 bước: sơ đồ phần → tổng số phần → giá trị một phần → nhân lên từng bên.",
-    "Thử lại kép kiểu mới: cộng ra đúng tổng VÀ chia ra đúng tỉ số."
+    "Tìm được giá trị một phần từ tổng và tổng số phần.",
+    "Từ một phần suy ra cả hai số.",
+    "Thử lại bằng cách cộng hai số."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 23: bình nước cam 30 lít",
-   "dong": [
-    "Cô hàng nước dặn kỹ: \"Vị gia truyền nhà cô là 2 phần cốt cam - 3 phần nước lọc, sai một li là khách nhận ra ngay! Bình của cô đúng 30 lít.\" Trí Long định múc đại: \"30 chia 2 là 15 lít cốt, còn lại nước lọc?\" Su Kem giữ chiếc muôi lại: \"Chia đôi là khi hai bên BẰNG nhau — đằng này bên 2 phần, bên 3 phần cơ mà! Đếm xem cả bình gồm mấy phần đã, rồi hẵng đong.\""
-   ],
+   "ten": "CHUYỆN MỞ BÀI — ",
+   "dong": [],
    "hinh": [
     {
      "id": "L4H_B28_MO",
@@ -48,26 +46,13 @@
   },
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
-   "dong": [
-    "CHO GÌ? bình nước cam 30 lít; pha theo tỉ lệ 2 phần nước cốt cam : 3 phần nước lọc.",
-    "HỎI GÌ? số lít nước cốt cam và số lít nước lọc cần đong.",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: thể tích (lít) — \"phần\" chưa phải lít: phải tìm xem một phần chứa mấy lít!",
-    "QUAN HỆ GIỮA CHÚNG: cốt cam chiếm 2 ô phần, nước lọc chiếm 3 ô phần, năm ô ĐỀU NHAU và gộp lại đầy bình 30 lít.",
-    "CHỌN CÔNG CỤ: SƠ ĐỒ PHẦN + quy trình 4 bước: tổng số phần → một phần → nhân lên.",
-    "ƯỚC LƯỢNG TRƯỚC: cả bình 5 phần, mỗi phần cỡ 6 lít → cốt khoảng chục lít, lọc nhiều hơn chút."
-   ],
+   "dong": [],
    "hinh": [],
-   "nhip": "NHỊP 1, DỊCH — từ công thức gia truyền sang sơ đồ phần"
+   "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
-   "dong": [
-    "Bước 1 — VẼ SƠ ĐỒ PHẦN CHUẨN: kẻ hàng \"Cốt cam\" gồm 2 ô, hàng \"Nước lọc\" gồm 3 ô — NĂM ô phải bằng nhau tăm tắp (vẽ bằng thước!), ngoặc ôm cả hai hàng ghi tổng 30 lít. Sơ đồ phần là \"bản vẽ kỹ thuật\" của mọi bài chia theo tỉ.",
-    "Bước 2 — TỔNG SỐ PHẦN: cả bình gồm 2 + 3 = 5 (phần). Đây chính là chỗ Trí Long trượt chân: cậu ấy chia cho 2 (số chữ số của tỉ?) thay vì chia cho TỔNG SỐ PHẦN.",
-    "Bước 3 — GIÁ TRỊ MỘT PHẦN — TRÁI TIM CỦA BÀI: một phần chứa: 30 : 5 = 6 (lít). Tìm được \"một phần đáng giá bao nhiêu\" là nắm được chìa khóa — mọi con số còn lại chỉ là phép nhân.",
-    "Bước 4 — NHÂN LÊN TỪNG BÊN & THỬ KÉP: cốt cam: 6 × 2 = 12 (lít); nước lọc: 6 × 3 = 18 (lít). Thử kép kiểu mới: 12 + 18 = 30 ✓ (khớp tổng) và 12 : 18 — cứ 12 lít cốt đi với 18 lít lọc, tức mỗi 2 lít cốt đi với 3 lít lọc ✓ (khớp tỉ). Hai con dấu đóng đủ, bình nước đúng vị gia truyền!",
-    "MẸO NGƯỜI GIẢI: Bài Tổng - Tỉ: quy trình 4 bước — ① sơ đồ phần (ô đều nhau!), ② tổng số phần, ③ MỘT PHẦN = tổng : tổng số phần, ④ nhân lên từng bên. Khẩu quyết chống trượt: đừng bao giờ chia cho con số trong tỉ — hãy chia cho TỔNG SỐ PHẦN."
-   ],
+   "dong": [],
    "hinh": [
     {
      "id": "L4H_B28_G2",
@@ -81,47 +66,36 @@
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
-   "dong": [
-    "LẮP: phiếu pha chế gửi cô hàng nước: \"Bình 30 lít: đong 12 lít nước cốt cam + 18 lít nước lọc.\" Hội chợ khai mạc, quầy nước cam đắt hàng nhất phố — khách khen \"vị chuẩn không cần chỉnh\"!",
-    "SOI: soi ba lớp: tổng 12 + 18 = 30 ✓; tỉ 12 : 18 rút gọn thành 2 : 3 ✓; và ước lượng \"cốt khoảng chục lít\" khớp con số 12. Phiếu pha chế đóng dấu xuất .",
-    "DÙNG NGOÀI ĐỜI: pha sữa cho em bé, trộn màu vẽ, nêm nước chấm \"một chua hai ngọt\" — cả thế giới bếp núc chạy bằng tỉ lệ, và con vừa có chiếc ca chia vạch trong đầu."
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Một bình chứa 30 lít nước cam pha theo tỉ lệ: cứ 2 phần nước cốt cam thì có 3 phần nước lọc. Hỏi trong bình có bao nhiêu lít nước cốt cam, bao nhiêu lít nước lọc?",
-    "Tóm tắt",
-    "Tổng: 30 lít; tỉ số cốt cam : nước lọc = 2 : 3.",
-    "Tìm số lít mỗi loại.",
-    "Dịch \"cứ 2 phần... thì 3 phần\" thành tỉ số 2 : 3 ngay ở tóm tắt.",
-    "Sơ đồ",
-    "Cốt cam: [—][—]",
-    "Nước lọc: [—][—][—]",
-    "(5 ô bằng nhau; ngoặc ôm cả hai hàng: 30 lít)",
-    "Mỗi ô một phần — ô phải ĐỀU nhau, đó là linh hồn sơ đồ.",
-    "Bài giải",
-    "Tổng số phần bằng nhau là: 2 + 3 = 5 (phần)",
-    "Giá trị một phần là: 30 : 5 = 6 (lít)",
-    "Số lít nước cốt cam là: 6 × 2 = 12 (lít)",
-    "Số lít nước lọc là: 6 × 3 = 18 (lít)",
-    "Bốn dòng đúng bốn bước của quy trình — nhìn bài biết ngay người có nghề.",
-    "Đáp số: 12 lít nước cốt cam ; 18 lít nước lọc.",
-    "Đáp số đủ hai loại, kèm đơn vị.",
-    "Thử lại: 12 + 18 = 30 ✓ ; 12 : 2 = 18 : 3 = 6 — đúng tỉ 2 : 3 ✓",
-    "Thử kép: khớp tổng VÀ khớp tỉ — thiếu một là chưa đúng vị."
+    "Đề bài: Hai số có tổng bằng 70 và tỉ số là 2 trên 5. Tìm hai số.",
+    "Vẽ sơ đồ",
+    "Đoạn ngắn 2 phần, đoạn dài 5 phần, các phần bằng nhau. Ngoặc ngoài ghi 70.",
+    "Đếm tổng số phần",
+    "2 + 5 = 7 phần. Cả 7 phần ấy gộp lại đúng bằng 70.",
+    "Tìm một phần",
+    "7 phần là 70, nên một phần là 70 : 7 = 10.",
+    "Suy ra hai số",
+    "Số bé có 2 phần: 2 × 10 = 20. Số lớn có 5 phần: 5 × 10 = 50.",
+    "Thử lại",
+    "20 + 50 = 70, đúng bằng tổng. Và 20 so với 50 đúng là 2 so với 5.",
+    "Đáp số: hai số là 20 và 50."
    ],
    "hinh": [],
    "nhip": ""
   },
   "suKemNham": {
-   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Sang quầy chè, Trí Long nhận đề mới: \"Chia 20 viên trân châu vào hai cốc theo tỉ 1 : 3.\" Cậu tính vèo: \"Tỉ 1 : 3 hả? Lấy 20 : 3 ≈ 7 viên cho cốc bé, còn 13 viên cốc lớn — xong!\"",
-    "Gợi ý 1: Cả hai cốc gộp lại gồm mấy PHẦN bằng nhau — 3 phần hay 1 + 3 phần? Trí Long đã chia 20 cho con số nào?",
-    "Gợi ý 2: Đáp số 7 và 13 thử tỉ xem: 13 có gấp 3 lần 7 không? Chia lại theo đúng quy trình 4 bước giúp Trí Long — và nhắc cậu ấy khẩu quyết \"chia cho TỔNG SỐ PHẦN, không chia cho con số trong tỉ\"."
+    "Có bạn lấy luôn 70 chia 2 rồi chia 5, ra 35 và 14.",
+    "Gợi ý 1: Con đếm trên sơ đồ xem cả thảy có mấy phần?",
+    "Gợi ý 2: Có 7 phần chứ không phải 2 hay 5. Vậy chia cho mấy?",
+    "Chữa: phải chia cho TỔNG SỐ PHẦN là 7, được một phần bằng 10. Rồi mới nhân lên: 2 phần là 20, 5 phần là 50."
    ],
    "hinh": [],
    "nhip": ""
@@ -143,9 +117,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Pha nước cam (hoặc sữa, nước chanh) THẬT theo tỉ lệ với con — dùng cốc nhỏ làm \"một phần\". Vị giác kiểm định đáp số: pha sai tỉ là nhận ra ngay, vui hơn mọi lời chấm bài.",
-    "Chấm sơ đồ trước phép tính: các ô phần có ĐỀU nhau không? Ô lệch nhau là hiểu chưa tới — sửa hình trước, sửa số sau.",
-    "NÊN: hỏi thêm \"một phần đáng giá bao nhiêu?\" ở mọi bài — đó là câu hỏi trái tim. KHÔNG NÊN: đưa tỉ số có số lớn (7 : 9) hay tỉ ba số vội — Bài 26 mới mở cửa ba số, cứ để chân sơ đồ vững đã."
+    "Bảo con chỉ tay đếm số phần trên sơ đồ trước khi tính. Đếm đúng 7 thì phần còn lại chỉ là một phép chia và hai phép nhân.",
+    "Chỗ sai duy nhất của bài này là chia nhầm số. Bố mẹ hỏi: \"Cả thảy mấy phần?\""
    ],
    "hinh": [],
    "nhip": ""
@@ -159,8 +132,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Chia 20 viên kẹo cho hai bạn theo tỉ số 1 : 3. Hỏi mỗi bạn được bao nhiêu viên?",
-   "loiChua": "Tổng phần 4; một phần 20 : 4 = 5 → hai bạn được 5 viên và 15 viên.",
+   "text": "Hai số có tổng 70 và tỉ số 2 : 5 — đúng bài trong video. Cả thảy có mấy phần?",
+   "loiChua": "2 + 5 = 7 phần.",
    "tuLuan": true
   },
   {
@@ -170,8 +143,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm hai số có tổng bằng 30 và tỉ số bằng 2 : 3.",
-   "loiChua": "Tổng phần 5; một phần 6 → hai số là 12 và 18.",
+   "text": "Vẫn bài trên. Một phần bằng bao nhiêu?",
+   "loiChua": "7 phần là 70, nên một phần = 70 : 7 = 10.",
    "tuLuan": true
   },
   {
@@ -181,8 +154,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Vẽ sơ đồ phần rồi chia 24 quyển vở cho hai lớp theo tỉ số 1 : 2.",
-   "loiChua": "Tổng phần 3; một phần 24 : 3 = 8 → hai lớp nhận 8 và 16 quyển.",
+   "text": "Vẫn bài trên. Tìm hai số.",
+   "loiChua": "Số bé = 2 × 10 = 20; số lớn = 5 × 10 = 50.",
    "tuLuan": true
   },
   {
@@ -192,8 +165,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Bình nước cam 30 lít pha theo tỉ lệ cốt cam : nước lọc = 2 : 3. Tính số lít mỗi loại.",
-   "loiChua": "Một phần 30 : 5 = 6 → cốt cam 12 lít; nước lọc 18 lít. Thử: 12 + 18 = 30 ✓; 12 : 18 = 2 : 3 ✓.",
+   "text": "Chia 20 viên kẹo cho hai bạn theo tỉ số 1 : 3. Mỗi bạn được mấy viên?",
+   "loiChua": "Cả thảy 1 + 3 = 4 phần. Một phần = 20 : 4 = 5. Bạn thứ nhất 5 viên, bạn thứ hai 15 viên.",
    "tuLuan": true
   },
   {
@@ -203,8 +176,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hai giỏ có tất cả 35 quả cam, số cam giỏ thứ nhất và giỏ thứ hai theo tỉ số 3 : 4. Hỏi mỗi giỏ có bao nhiêu quả?",
-   "loiChua": "Tổng phần 7; một phần 35 : 7 = 5 → giỏ một 15 quả; giỏ hai 20 quả.",
+   "text": "Bạn Lan lấy 70 chia 2 rồi chia 5. Bạn sai ở đâu? Kết quả đúng là gì?",
+   "loiChua": "Phải chia cho TỔNG SỐ PHẦN là 7, không chia riêng cho 2 hay 5. Đúng là một phần bằng 10, hai số là 20 và 50.",
    "tuLuan": true
   },
   {
@@ -214,8 +187,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Lớp 4A có 36 học sinh, số bạn nam và số bạn nữ theo tỉ số 5 : 4. Tính số bạn nam, số bạn nữ.",
-   "loiChua": "Tổng phần 9; một phần 36 : 9 = 4 → nam 20 bạn; nữ 16 bạn.",
+   "text": "Tìm hai số có tổng bằng 56 và tỉ số 3 : 5.",
+   "loiChua": "Cả thảy 8 phần. Một phần = 56 : 8 = 7. Số bé = 21; số lớn = 35.",
    "tuLuan": true
   },
   {
@@ -225,8 +198,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Sợi dây dài 45 m được cắt thành hai đoạn theo tỉ số 4 : 5. Tính độ dài mỗi đoạn.",
-   "loiChua": "Tổng phần 9; một phần 45 : 9 = 5 → hai đoạn dài 20 m và 25 m.",
+   "text": "Bình nước cam 30 lít pha theo tỉ lệ cốt cam trên nước lọc là 2 : 3. Mỗi thứ bao nhiêu lít?",
+   "loiChua": "Cả thảy 5 phần. Một phần = 30 : 5 = 6 lít. Cốt cam 12 lít, nước lọc 18 lít.",
    "tuLuan": true
   },
   {
@@ -236,8 +209,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm hai số có tổng bằng 56 và tỉ số bằng 3 : 5 — nhớ thử lại kép trước khi chốt!",
-   "loiChua": "Tổng phần 8; một phần 56 : 8 = 7 → hai số là 21 và 35. Thử: 21 + 35 = 56 ✓; 21 : 35 = 3 : 5 ✓.",
+   "text": "Hai lớp trồng được 45 cây, số cây lớp A bằng một nửa số cây lớp B. Mỗi lớp trồng bao nhiêu cây?",
+   "loiChua": "Tỉ số 1 : 2, cả thảy 3 phần. Một phần = 45 : 3 = 15. Lớp A 15 cây, lớp B 30 cây.",
    "tuLuan": true
   },
   {
@@ -247,8 +220,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Chia 100 nghìn đồng cho An và Bình theo tỉ số 2 : 3. Nếu đổi lại chia theo tỉ số 3 : 2 thì phần của Bình thay đổi bao nhiêu? Con nhận ra điều gì khi hai số trong tỉ đổi chỗ?",
-   "loiChua": "Tỉ 2 : 3 → An 40, Bình 60; đổi tỉ 3 : 2 → An 60, Bình 40. Bình thay đổi: mất 20 nghìn. Nhận xét: đổi chỗ hai số trong tỉ thì hai phần HOÁN ĐỔI cho nhau — thứ tự trong tỉ số quan trọng lắm!",
+   "text": "Tổng hai số là 84, số lớn gấp 6 lần số bé. Tìm hai số rồi thử lại.",
+   "loiChua": "Tỉ số 1 : 6, cả thảy 7 phần. Một phần = 12. Số bé 12, số lớn 72. Thử: 12 + 72 = 84 và 72 gấp 6 lần 12.",
    "tuLuan": true
   },
   {
@@ -258,14 +231,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Chia một số theo tỉ 2 : 3 thì tổng số phần bằng nhau là 5.",
+   "text": "Muốn tìm một phần, ta lấy tổng chia cho TỔNG SỐ PHẦN.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "Đáp án: ĐÚNG.",
+   "solutionNarrative": "Đáp án: ĐÚNG."
   },
   {
    "id": "Q2",
@@ -274,14 +247,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Chia 30 theo tỉ 1 : 2 thì phần bé bằng 15.",
+   "text": "Tổng 70, tỉ số 2 : 5 thì lấy 70 chia 2 được số bé.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": false
    },
-   "loiChua": "Một phần 30 : 3 = 10, phần bé là 10.",
-   "solutionNarrative": "Một phần 30 : 3 = 10, phần bé là 10."
+   "loiChua": "SAI — phải chia cho 7 phần, được một phần bằng 10, rồi nhân 2.",
+   "solutionNarrative": "SAI — phải chia cho 7 phần, được một phần bằng 10, rồi nhân 2."
   },
   {
    "id": "Q3",
@@ -290,19 +263,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Chia 40 theo tỉ 3 : 5 thì giá trị một phần là:",
+   "text": "Tổng 70, tỉ số 2 : 5. Một phần bằng:",
    "choices": [
-    "A. 5",
-    "B. 8",
-    "C. 10"
+    "A. 10",
+    "B. 35",
+    "C. 14"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 5"
+    "choice": "A. 10"
    },
-   "loiChua": "40 : (3 + 5) = 5.",
-   "solutionNarrative": "40 : (3 + 5) = 5."
+   "loiChua": "70 : 7 = 10.",
+   "solutionNarrative": "70 : 7 = 10."
   },
   {
    "id": "Q4",
@@ -311,19 +284,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Chia 24 theo tỉ 1 : 3 thì phần lớn bằng:",
+   "text": "Tổng 70, tỉ số 2 : 5. Số lớn bằng:",
    "choices": [
-    "A. 18",
-    "B. 6",
-    "C. 16"
+    "A. 50",
+    "B. 20",
+    "C. 35"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 18"
+    "choice": "A. 50"
    },
-   "loiChua": "Một phần 6, phần lớn 18.",
-   "solutionNarrative": "Một phần 6, phần lớn 18."
+   "loiChua": "5 phần × 10 = 50.",
+   "solutionNarrative": "5 phần × 10 = 50."
   },
   {
    "id": "Q5",
@@ -332,19 +305,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Chia 36 theo tỉ 4 : 5 thì phần bé bằng:",
+   "text": "Chia 20 viên kẹo theo tỉ số 1 : 3 thì bạn nhiều được:",
    "choices": [
-    "A. 16",
-    "B. 20",
-    "C. 18"
+    "A. 15 viên",
+    "B. 5 viên",
+    "C. 10 viên"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 16"
+    "choice": "A. 15 viên"
    },
-   "loiChua": "Một phần 4, phần bé 16.",
-   "solutionNarrative": "Một phần 4, phần bé 16."
+   "loiChua": "Một phần 5 viên, 3 phần là 15.",
+   "solutionNarrative": "Một phần 5 viên, 3 phần là 15."
   }
  ]
 }

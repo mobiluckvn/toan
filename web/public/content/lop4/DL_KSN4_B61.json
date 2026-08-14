@@ -1,0 +1,310 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B61",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 39 · TỈ SỐ LÀ GÌ — VẼ THÀNH NHỮNG PHẦN BẰNG NHAU",
+ "durationMinutes": 10,
+ "so": 39,
+ "chuong": 7,
+ "tenChuong": "TỔNG - TỈ, HIỆU - TỈ",
+ "dangGoc": "Dạng gốc: LV 3.0 mức Lớp 4 — Khái niệm tỉ số và cách đọc nó trên sơ đồ đoạn thẳng chia phần bằng nhau. KHÔNG công thức, KHÔNG bài toán.",
+ "skills": {
+  "bktUnit": "CHUONG:7@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 39,
+  "prev": "DL:KSN4.B60",
+  "next": "DL:KSN4.B28"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Đọc được tỉ số 2 trên 5 nghĩa là gì. Vẽ được sơ đồ chia phần bằng nhau cho một tỉ số. Đếm được tổng số phần và số phần chênh nhau.",
+  "kidText": "Cô chia đoạn ngắn thành 2 phần, đoạn dài thành 5 phần. Con đoán xem cả hai gộp lại mấy phần nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn vẽ đoạn ngắn 2 phần, đoạn dài 5 phần, nhưng vẽ các phần của đoạn dài nhỏ hơn cho vừa giấy.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con đo thử một phần của đoạn ngắn và một phần của đoạn dài xem. Gợi ý 2: Hai phần ấy phải rộng BẰNG NHAU thì sơ đồ mới đúng. Chữa: mọi phần phải bằng nhau. Vẽ phần to phần nhỏ thì sơ đồ nói sai tỉ số, và tính ra sẽ sai theo."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn vẽ đoạn ngắn 2 phần, đoạn dài 5 phần, nhưng vẽ các phần của đoạn dài nhỏ hơn cho vừa giấy.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Hai số có tỉ số là 2 trên 5. Hãy vẽ sơ đồ và cho biết cả hai gộp lại gồm mấy phần, chênh nhau mấy phần.",
+  "steps": [
+   {
+    "show": "Đọc tỉ số"
+   },
+   {
+    "show": "Tỉ số 2 trên 5 nghĩa là: số bé gồm 2 phần, số lớn gồm 5 phần, và mọi phần đều bằng nhau."
+   },
+   {
+    "show": "Vẽ ra"
+   },
+   {
+    "show": "Đoạn ngắn chia 2 phần, đoạn dài chia 5 phần. Các phần vẽ rộng bằng nhau — đây là điều quan trọng nhất."
+   },
+   {
+    "show": "Đếm tổng số phần"
+   },
+   {
+    "show": "2 + 5 = 7. Cả hai gộp lại gồm 7 phần bằng nhau."
+   },
+   {
+    "show": "Đếm số phần chênh"
+   },
+   {
+    "show": "5 − 2 = 3. Đoạn dài hơn đoạn ngắn 3 phần."
+   },
+   {
+    "show": "Đáp số: gộp lại 7 phần, chênh nhau 3 phần. Mọi phần đều bằng nhau."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tỉ số hai số là 2 : 5 — đúng tỉ số trong video. Số bé gồm mấy phần và số lớn gồm mấy phần?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số bé mấy phần",
+        "value": 2
+       },
+       {
+        "label": "số lớn mấy phần",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Số bé gồm 2 phần, số lớn gồm 5 phần, và mọi phần đều bằng nhau."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn tỉ số ấy. Cả hai gộp lại gồm mấy phần?",
+     "answerKey": {
+      "value": 7
+     },
+     "solutionNarrative": "2 + 5 = 7 phần."
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn tỉ số ấy. Đoạn dài hơn đoạn ngắn mấy phần?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "5 − 2 = 3 phần."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Hai số có tỉ số 3 : 4. Gộp lại gồm mấy phần, chênh nhau mấy phần?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "gộp lại",
+        "value": 7
+       },
+       {
+        "label": "chênh nhau",
+        "value": 1
+       }
+      ]
+     },
+     "solutionNarrative": "Gộp lại 3 + 4 = 7 phần; chênh nhau 4 − 3 = 1 phần."
+    },
+    {
+     "id": "C5",
+     "text": "Bạn Nam vẽ đoạn dài có các phần nhỏ hơn phần của đoạn ngắn cho vừa giấy. Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mọi phần phải thế nào",
+        "options": [
+         "bằng nhau",
+         "khác nhau"
+        ],
+        "value": "bằng nhau"
+       }
+      ]
+     },
+     "solutionNarrative": "Mọi phần trên sơ đồ tỉ số phải BẰNG NHAU. Vẽ to nhỏ khác nhau thì sơ đồ nói sai tỉ số."
+    },
+    {
+     "id": "C6",
+     "text": "Số lớn gấp 3 lần số bé. Viết tỉ số hai số và cho biết gộp lại mấy phần.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số bé mấy phần",
+        "value": 1
+       },
+       {
+        "label": "số lớn mấy phần",
+        "value": 3
+       },
+       {
+        "label": "gộp lại",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Tỉ số là 1 : 3 (số bé 1 phần, số lớn 3 phần). Gộp lại 1 + 3 = 4 phần."
+    },
+    {
+     "id": "C7",
+     "text": "Trên một sơ đồ, đoạn ngắn có 2 phần và đoạn dài có 5 phần. Nếu mỗi phần bằng 10 thì hai số là bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số bé",
+        "value": 20
+       },
+       {
+        "label": "số lớn",
+        "value": 50
+       }
+      ]
+     },
+     "solutionNarrative": "Số bé = 2 × 10 = 20; số lớn = 5 × 10 = 50."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Hai số có tỉ số 2 : 5 và cả hai gộp lại là 70. Mỗi phần bằng bao nhiêu?",
+     "answerKey": {
+      "value": 10
+     },
+     "solutionNarrative": "Gộp lại 7 phần, mà 7 phần là 70, nên mỗi phần bằng 70 : 7 = 10."
+    },
+    {
+     "id": "C9",
+     "text": "Số bé bằng một phần tư số lớn. Viết tỉ số, cho biết gộp lại mấy phần và chênh nhau mấy phần.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "gộp lại",
+        "value": 5
+       },
+       {
+        "label": "chênh nhau",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Tỉ số 1 : 4. Gộp lại 5 phần, chênh nhau 3 phần."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Trên sơ đồ tỉ số, mọi phần đều phải bằng nhau.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Tỉ số 2 : 5 nghĩa là số bé bằng 2 và số lớn bằng 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — nó nói số PHẦN, không nói giá trị. Mỗi phần có thể bằng bao nhiêu cũng được."
+   },
+   {
+    "id": "Q3",
+    "text": "Tỉ số 2 : 5 thì cả hai gộp lại gồm:",
+    "format": "mcq",
+    "choices": [
+     "A. 7 phần",
+     "B. 10 phần",
+     "C. 3 phần"
+    ],
+    "answerKey": {
+     "choice": "A. 7 phần"
+    },
+    "solutionNarrative": "2 + 5 = 7."
+   },
+   {
+    "id": "Q4",
+    "text": "Tỉ số 2 : 5 thì đoạn dài hơn đoạn ngắn:",
+    "format": "mcq",
+    "choices": [
+     "A. 3 phần",
+     "B. 7 phần",
+     "C. 2 phần"
+    ],
+    "answerKey": {
+     "choice": "A. 3 phần"
+    },
+    "solutionNarrative": "5 − 2 = 3."
+   },
+   {
+    "id": "Q5",
+    "text": "Số lớn gấp 3 lần số bé thì tỉ số hai số là:",
+    "format": "mcq",
+    "choices": [
+     "A. 1 : 3",
+     "B. 3 : 1",
+     "C. 1 : 4"
+    ],
+    "answerKey": {
+     "choice": "A. 1 : 3"
+    },
+    "solutionNarrative": "Số bé 1 phần, số lớn 3 phần."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Lấy que tính xếp thành hai hàng: hàng trên 2 que, hàng dưới 5 que. Đó chính là sơ đồ tỉ số 2 trên 5, và que nào cũng dài như nhau.",
+  "homeActivity": "Con hay vẽ phần to phần nhỏ cho vừa giấy. Bố mẹ hỏi một câu: \"Các phần có bằng nhau không?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Chương trước con đã vẽ được hai đoạn thẳng và biết khúc dôi ra là hiệu. Hôm nay vẫn hai đoạn ấy, nhưng con chia chúng thành những phần bằng nhau. Chia được rồi thì sáu bài sau con nhìn hình là ra cách làm.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B18"
+  ],
+  "ten": [
+   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B61_giang.mp4"
+ }
+}

@@ -346,6 +346,20 @@ def khung(c: dict) -> Image.Image:
         don_vi = rong_toi_da / max(lon, be, 1)
         y_be, y_lon, day_net = 210, 340, 9
 
+        def vach_phan(y, dai, so_phan, mau):
+            """Chia một đoạn thành `so_phan` phần bằng nhau bằng vạch đứng.
+
+            Đây là hình của chương tỉ số: nói "tỉ số hai trên năm" thì bé chưa hình
+            dung được gì, nhưng thấy đoạn ngắn chia hai phần và đoạn dài chia năm
+            phần — mà mọi phần đều bằng nhau — thì hiểu ngay. Và cũng nhìn ra luôn
+            tổng gồm bảy phần, hiệu gồm ba phần.
+            """
+            if not so_phan or so_phan < 2:
+                return
+            b = dai / so_phan
+            for i in range(1, so_phan):
+                d.line([x0 + i * b, y - 13, x0 + i * b, y + 13], fill=mau, width=7)
+
         def doan(y, dai, mau, nhan_trai, net=day_net, dut=False):
             x1 = x0 + dai
             if dut:                                   # đoạn thêm vào: vẽ nét đứt
@@ -363,6 +377,7 @@ def khung(c: dict) -> Image.Image:
 
         # ── đoạn ngắn ──
         x_be = doan(y_be, be * don_vi, TEAL_DARK, c.get("nhanBe", "Số bé"))
+        vach_phan(y_be, be * don_vi, c.get("phanBe"), "#FFFFFF")
         if c.get("themVaoBe"):
             # Thêm hiệu vào đoạn ngắn cho bằng đoạn dài — nét đứt vàng.
             x2 = x0 + lon * don_vi
@@ -378,6 +393,7 @@ def khung(c: dict) -> Image.Image:
 
         # ── đoạn dài, phần dôi ra tô vàng ──
         x_lon = doan(y_lon, lon * don_vi, TEAL_DARK, c.get("nhanLon", "Số lớn"))
+        vach_phan(y_lon, lon * don_vi, c.get("phanLon"), "#FFFFFF")
         if c.get("hienHieu") and lon > be:
             xa = x0 + be * don_vi
             mau_hieu = ALERT if c.get("botOLon") else GOLD

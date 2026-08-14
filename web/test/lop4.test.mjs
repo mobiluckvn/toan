@@ -39,7 +39,7 @@ const bais = teps.map((f) => doc(join(GOC, f))).sort((a, b) => a.so - b.so);
    Ba con số dưới đây là ĐẾM, không phải luật — nới chúng khi thêm bài là đúng. Nhưng
    phải nới CÙNG LÚC cả ba, và giữ nguyên phép "liền mạch": số bài rời rạc thì bé mở
    quyển thấy nhảy cóc Bài 12 sang Bài 18, mà không có gì báo. */
-const SO_BAI = 60;
+const SO_BAI = 63;
 const SO_CAU = SO_BAI * 14;      // mỗi bài đúng 9 luyện tập + 5 quiz
 
 t(`đủ ${SO_BAI} bài (${bais.length})`, bais.length === SO_BAI);
@@ -292,8 +292,8 @@ if (existsSync(APP)) {
     if (!tHinh.size) continue;
     const tLoi = tuCua(h.narration);
     if (![...tHinh].some((w) => tLoi.has(w))) {
-      daNhau.push(`${d.id}: hình đề "${tdTheoBai[d.id].slice(0, 60)}" — lời dẫn `
-        + `"${h.narration.slice(0, 60)}" không chung chữ nào`);
+      daNhau.push(`${d.id}: hình đề "${tdTheoBai[d.id].slice(0, 63)}" — lời dẫn `
+        + `"${h.narration.slice(0, 63)}" không chung chữ nào`);
     }
   }
   t('lời dẫn màn mở và hình màn mở kể CÙNG một bài toán', daNhau.length === 0);

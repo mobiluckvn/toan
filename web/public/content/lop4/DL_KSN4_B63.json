@@ -1,0 +1,357 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B63",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 45 · NỐI HAI TỈ SỐ — QUY VỀ CÙNG MỘT LOẠI PHẦN",
+ "durationMinutes": 10,
+ "so": 45,
+ "chuong": 7,
+ "tenChuong": "TỔNG - TỈ, HIỆU - TỈ",
+ "dangGoc": "Dạng gốc: LV 5.1 mức Lớp 4 — Nối hai tỉ số có chung một đại lượng, bằng cách quy số phần của đại lượng chung về cùng một con số.",
+ "skills": {
+  "bktUnit": "CHUONG:7@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 45,
+  "prev": "DL:KSN4.B31",
+  "next": "DL:KSN4.B32"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhận ra đại lượng chung của hai tỉ số. Quy số phần của đại lượng chung về cùng một con số. Nối thành một tỉ số ba số rồi làm như bài trước.",
+  "kidText": "Cô cho hai tỉ số, và bạn Bình có mặt ở cả hai. Con nối chúng lại giúp cô nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn ghép thẳng thành 2 trên 3 trên 5, lấy luôn số phần của hai tỉ số.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Trong tỉ số đầu Bình là mấy phần? Trong tỉ số sau Bình là mấy phần? Gợi ý 2: Một bên 3, một bên 6. Cùng một bạn Bình mà hai con số khác nhau thì ghép sao được. Chữa: phải quy Bình về cùng một con số trước. Nhân tỉ số đầu với 2 để Bình thành 6, rồi mới ghép thành 4 trên 6 trên 5."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn ghép thẳng thành 2 trên 3 trên 5, lấy luôn số phần của hai tỉ số.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Ba bạn có 90 viên bi. Bi của An so với bi của Bình là 2 trên 3. Bi của Bình so với bi của Cường là 6 trên 5. Tìm số bi mỗi bạn.",
+  "steps": [
+   {
+    "show": "Tìm mắt xích chung"
+   },
+   {
+    "show": "Bình có mặt ở cả hai tỉ số. Nhưng tỉ số đầu đếm Bình là 3 phần, tỉ số sau đếm Bình là 6 phần. Hai cách đếm khác nhau."
+   },
+   {
+    "show": "Quy về cùng một loại phần"
+   },
+   {
+    "show": "Nhân cả tỉ số đầu với 2 thì Bình thành 6 phần: An trên Bình là 4 trên 6."
+   },
+   {
+    "show": "Bây giờ nối được"
+   },
+   {
+    "show": "An 4 phần, Bình 6 phần, Cường 5 phần. Tỉ số ba bạn là 4 trên 6 trên 5."
+   },
+   {
+    "show": "Làm như bài trước"
+   },
+   {
+    "show": "Cả thảy 4 + 6 + 5 = 15 phần. Một phần là 90 : 15 = 6 viên."
+   },
+   {
+    "show": "Suy ra ba số"
+   },
+   {
+    "show": "An 24 viên, Bình 36 viên, Cường 30 viên. Thử lại: cộng đủ 90 viên."
+   },
+   {
+    "show": "Đáp số: An 24 viên, Bình 36 viên, Cường 30 viên."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Bi của An so với Bình là 2 : 3, bi của Bình so với Cường là 6 : 5 — đúng bài trong video. Bạn nào là mắt xích chung?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mắt xích chung là bạn",
+        "options": [
+         "Bình",
+         "An",
+         "Cường"
+        ],
+        "value": "Bình"
+       }
+      ]
+     },
+     "solutionNarrative": "Bình — bạn ấy có mặt ở cả hai tỉ số."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên. Trong hai tỉ số, Bình được đếm là mấy phần?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tỉ số đầu đếm Bình",
+        "value": 3
+       },
+       {
+        "label": "tỉ số sau đếm Bình",
+        "value": 6
+       }
+      ]
+     },
+     "solutionNarrative": "Tỉ số đầu đếm Bình 3 phần, tỉ số sau đếm Bình 6 phần — hai cách đếm khác nhau."
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn bài trên. Nhân tỉ số đầu với mấy thì Bình thành 6 phần?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Nhân với 2: tỉ số An trên Bình thành 4 : 6."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Vẫn bài trên. Viết tỉ số ba bạn và cho biết cả thảy mấy phần.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "An mấy phần",
+        "value": 4
+       },
+       {
+        "label": "Bình mấy phần",
+        "value": 6
+       },
+       {
+        "label": "cả thảy",
+        "value": 15
+       }
+      ]
+     },
+     "solutionNarrative": "Tỉ số 4 : 6 : 5, cả thảy 4 + 6 + 5 = 15 phần."
+    },
+    {
+     "id": "C5",
+     "text": "Vẫn bài trên, ba bạn có 90 viên. Tìm số bi mỗi bạn.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "An",
+        "value": 24
+       },
+       {
+        "label": "Bình",
+        "value": 36
+       },
+       {
+        "label": "Cường",
+        "value": 30
+       }
+      ]
+     },
+     "solutionNarrative": "Một phần = 90 : 15 = 6 viên. An 24 viên, Bình 36 viên, Cường 30 viên."
+    },
+    {
+     "id": "C6",
+     "text": "Bạn Minh ghép thẳng thành 2 : 3 : 5. Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Bình bị đếm hai con số khác nhau không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Bình bị đếm là 3 phần ở tỉ số đầu và 6 phần ở tỉ số sau. Cùng một bạn mà hai con số khác nhau thì chưa ghép được, phải quy về cùng một loại phần trước."
+    },
+    {
+     "id": "C7",
+     "text": "Tỉ số a trên b là 1 : 2, tỉ số b trên c là 4 : 5. Quy về rồi viết tỉ số ba số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "a mấy phần",
+        "value": 2
+       },
+       {
+        "label": "b mấy phần",
+        "value": 4
+       },
+       {
+        "label": "c mấy phần",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Quy b về 4: nhân tỉ số đầu với 2 được 2 : 4. Vậy tỉ số ba số là 2 : 4 : 5."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Ba bạn có 68 viên bi. An so với Bình là 1 : 2, Bình so với Cường là 3 : 4. Tìm số bi mỗi bạn.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cả thảy mấy phần",
+        "value": 17
+       },
+       {
+        "label": "An",
+        "value": 12
+       },
+       {
+        "label": "Bình",
+        "value": 24
+       },
+       {
+        "label": "Cường",
+        "value": 32
+       }
+      ]
+     },
+     "solutionNarrative": "Quy Bình về 6: tỉ số đầu thành 3 : 6, tỉ số sau thành 6 : 8. Ba bạn là 3 : 6 : 8, cả thảy 17 phần. Một phần = 68 : 17 = 4. An 12 viên, Bình 24 viên, Cường 32 viên."
+    },
+    {
+     "id": "C9",
+     "text": "Ba bạn có 100 viên bi. An so với Bình là 2 : 3, Bình so với Cường là 3 : 5. Tìm số bi mỗi bạn.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "An",
+        "value": 20
+       },
+       {
+        "label": "Bình",
+        "value": 30
+       },
+       {
+        "label": "Cường",
+        "value": 50
+       }
+      ]
+     },
+     "solutionNarrative": "Bình đã là 3 phần ở cả hai tỉ số nên nối thẳng: 2 : 3 : 5, cả thảy 10 phần. Một phần = 10. An 20 viên, Bình 30 viên, Cường 50 viên."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Muốn nối hai tỉ số, phải quy đại lượng chung về cùng một số phần.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Tỉ số 2 : 3 và 6 : 5 ghép thẳng được thành 2 : 3 : 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — Bình bị đếm 3 phần rồi 6 phần, phải quy về trước."
+   },
+   {
+    "id": "Q3",
+    "text": "Trong hai tỉ số An trên Bình là 2 : 3 và Bình trên Cường là 6 : 5, mắt xích chung là:",
+    "format": "mcq",
+    "choices": [
+     "A. Bình",
+     "B. An",
+     "C. Cường"
+    ],
+    "answerKey": {
+     "choice": "A. Bình"
+    },
+    "solutionNarrative": "Bình có ở cả hai."
+   },
+   {
+    "id": "Q4",
+    "text": "Nhân tỉ số 2 : 3 với 2 thì được:",
+    "format": "mcq",
+    "choices": [
+     "A. 4 : 6",
+     "B. 2 : 6",
+     "C. 4 : 3"
+    ],
+    "answerKey": {
+     "choice": "A. 4 : 6"
+    },
+    "solutionNarrative": "Nhân cả hai vế."
+   },
+   {
+    "id": "Q5",
+    "text": "Tỉ số ba bạn là 4 : 6 : 5 và cả thảy 90 viên. Một phần bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 6 viên",
+     "B. 15 viên",
+     "C. 10 viên"
+    ],
+    "answerKey": {
+     "choice": "A. 6 viên"
+    },
+    "solutionNarrative": "90 : 15 = 6."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Vẽ ba đoạn ra giấy rồi bảo con chỉ vào đoạn của Bình và hỏi: \"Đoạn này có mấy phần?\" Nếu hai tỉ số trả lời khác nhau thì chưa nối được.",
+  "homeActivity": "Đây là bài khó nhất chương. Con làm chậm cũng không sao, miễn nhận ra được mắt xích chung.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài cuối chương, và là bài khó nhất. Đề cho hai tỉ số, và có một thứ xuất hiện ở cả hai. Nhưng hai tỉ số ấy đếm nó bằng hai loại phần khác nhau — nên việc đầu tiên là làm cho chúng nói cùng một thứ tiếng.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B18",
+   "DL:KSN3.B09"
+  ],
+  "ten": [
+   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B63_giang.mp4"
+ }
+}

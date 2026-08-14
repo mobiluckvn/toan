@@ -1442,6 +1442,264 @@ def kb_ba_so(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# CHƯƠNG 7 · BẢY KỊCH BẢN — TỔNG - TỈ, HIỆU - TỈ
+# ═══════════════════════════════════════════════════════════════════════════
+# Bộ neo: hai số 20 và 50. Tổng 70 (đúng tổng chương 6, bé vừa quen), hiệu 30, tỉ số
+# 2 trên 5 — nên tổng gồm 7 phần, hiệu gồm 3 phần, mỗi phần 10.
+#
+# Nhờ thế bài tổng - tỉ và bài hiệu - tỉ dùng CHUNG MỘT BỨC TRANH, chỉ khác chỗ nhìn.
+# Đó là lý do hai bài đặt liền nhau, đúng cách chương 6 ghép số lớn với số bé.
+TI_BE, TI_LON = 2, 5
+SO_BE, SO_LON = 20, 50
+
+
+def kb_ti_la_gi(b):
+    """① Tỉ số là gì — bài KHÁI NIỆM, không một phép tính nào."""
+    return [
+        _c('bia', 'Tỉ số là gì', so_bai(b),
+           loi=['Hôm nay mình học cách đọc tỉ số trên sơ đồ.']),
+        _c('so_do_doan', 'Tỉ số 2 trên 5', be=SO_BE, lon=SO_LON,
+           phanBe=TI_BE, phanLon=TI_LON,
+           chuPhu='Số bé 2 phần, số lớn 5 phần.',
+           loi=['Tỉ số hai trên năm nghĩa là số bé gồm hai phần, số lớn gồm năm phần.']),
+        _c('y_toan', 'Điều quan trọng nhất', 'MỌI phần đều bằng nhau.',
+           buoc=1, soBuoc=3,
+           loi=['Điều quan trọng nhất là mọi phần đều bằng nhau.',
+                'Vẽ phần to phần nhỏ thì sơ đồ nói sai tỉ số.']),
+        _c('so_do_doan', 'Gộp lại thì được mấy phần', be=SO_BE, lon=SO_LON,
+           phanBe=TI_BE, phanLon=TI_LON, chuTong='cả thảy 7 phần',
+           chuPhu='2 + 5 = 7 phần.',
+           loi=['Gộp cả hai lại thì được bảy phần.']),
+        _c('y_toan', 'Còn chênh nhau mấy phần', '5 − 2 = 3 phần', buoc=2, soBuoc=3,
+           loi=['Còn đoạn dài hơn đoạn ngắn ba phần.']),
+        _c('y_toan', 'Tỉ số nói SỐ PHẦN, không nói giá trị',
+           'Mỗi phần bằng bao nhiêu cũng được.', buoc=3, soBuoc=3,
+           loi=['Tỉ số chỉ nói số phần, chưa nói mỗi phần bằng bao nhiêu.',
+                'Nếu mỗi phần bằng mười thì hai số là hai mươi và năm mươi.']),
+        _c('cong_thuc', 'Đọc một tỉ số',
+           congThuc='2 : 5  ⟶  số bé 2 phần · số lớn 5 phần · mọi phần bằng nhau',
+           thay='gộp 7 phần · chênh 3 phần',
+           loi=['Tỉ số hai trên năm cho ta ba điều. Số phần của mỗi số, và mọi phần bằng nhau.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='MỌI phần đều bằng nhau',
+           loi=['Con nhớ lại một lần nữa. Mọi phần trên sơ đồ đều phải bằng nhau.',
+                'Vẽ đúng được sơ đồ là con đã làm xong nửa bài.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_tong_ti(b):
+    """② Tổng - tỉ — chia TỔNG cho TỔNG SỐ PHẦN."""
+    return [
+        _c('bia', 'Bài toán tổng - tỉ', so_bai(b),
+           loi=['Hôm nay đề cho thêm tổng của hai số.']),
+        _c('so_do_doan', 'Tổng 70, tỉ số 2 trên 5', be=SO_BE, lon=SO_LON,
+           phanBe=TI_BE, phanLon=TI_LON, chuTong='tổng 70',
+           loi=['Hai số có tổng bảy mươi và tỉ số hai trên năm. Tìm hai số.']),
+        _c('y_toan', 'Đếm cả thảy mấy phần', '2 + 5 = 7 phần', buoc=1, soBuoc=3,
+           loi=['Đếm cả thảy có bảy phần. Bảy phần ấy gộp lại đúng bằng bảy mươi.']),
+        _c('y_toan', 'Tìm một phần', '70 : 7 = 10', buoc=2, soBuoc=3,
+           loi=['Bảy phần là bảy mươi, nên một phần là mười.']),
+        _c('so_do_doan', 'Mỗi phần bằng 10', be=SO_BE, lon=SO_LON,
+           phanBe=TI_BE, phanLon=TI_LON,
+           chuPhu='Số bé 2 phần là 20. Số lớn 5 phần là 50.',
+           loi=['Số bé có hai phần nên bằng hai mươi. Số lớn có năm phần nên bằng năm mươi.']),
+        _c('y_toan', 'Thử lại', '20 + 50 = 70', buoc=3, soBuoc=3,
+           loi=['Thử lại. Hai mươi cộng năm mươi bằng bảy mươi, đúng bằng tổng.']),
+        _c('cong_thuc', 'Bài toán tổng - tỉ',
+           congThuc='một phần = tổng : TỔNG SỐ PHẦN',
+           thay='70 : 7 = 10',
+           loi=['Một phần bằng tổng chia cho tổng số phần.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chia cho TỔNG SỐ PHẦN, không chia cho 2 hay 5',
+           loi=['Con nhớ lại một lần nữa. Chia cho tổng số phần, không chia riêng cho '
+                'số phần của một bên.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_hieu_ti(b):
+    """③ Hiệu - tỉ — CÙNG bức tranh, chỉ khác chỗ nhìn."""
+    return [
+        _c('bia', 'Bài toán hiệu - tỉ', so_bai(b),
+           loi=['Hôm nay đề không cho tổng nữa, mà cho hiệu.']),
+        _c('so_do_doan', 'Vẫn tỉ số 2 trên 5, nhưng cho HIỆU là 30',
+           be=SO_BE, lon=SO_LON, phanBe=TI_BE, phanLon=TI_LON,
+           hienHieu=True, chuHieu='hiệu 30',
+           loi=['Vẫn tỉ số hai trên năm. Nhưng lần này đề cho hiệu bằng ba mươi.']),
+        _c('y_toan', 'Nhìn phần chênh', '5 − 2 = 3 phần', buoc=1, soBuoc=3,
+           loi=['Đoạn dài hơn đoạn ngắn ba phần. Ba phần ấy chính là hiệu.']),
+        _c('y_toan', 'Tìm một phần', '30 : 3 = 10', buoc=2, soBuoc=3,
+           loi=['Ba phần là ba mươi, nên một phần là mười.']),
+        _c('so_do_doan', 'Vẫn ra hai số ấy', be=SO_BE, lon=SO_LON,
+           phanBe=TI_BE, phanLon=TI_LON, chuTong='tổng 70',
+           chuPhu='Số bé 20, số lớn 50 — đúng như bài hôm qua.',
+           loi=['Vẫn ra hai mươi và năm mươi, đúng như bài hôm qua.',
+                'Vì đó cùng một bức tranh, chỉ khác chỗ mình nhìn vào.']),
+        _c('y_toan', 'Có tổng thì khác, có hiệu thì khác',
+           'Tổng ứng với 7 phần. Hiệu ứng với 3 phần.', buoc=3, soBuoc=3,
+           loi=['Tổng ứng với cả bảy phần. Còn hiệu chỉ ứng với ba phần chênh nhau.']),
+        _c('cong_thuc', 'Bài toán hiệu - tỉ',
+           congThuc='một phần = hiệu : SỐ PHẦN CHÊNH',
+           thay='30 : 3 = 10',
+           loi=['Một phần bằng hiệu chia cho số phần chênh nhau.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='có tổng → chia tổng số phần · có hiệu → chia số phần chênh',
+           loi=['Con nhớ lại một lần nữa. Có tổng thì chia tổng số phần.',
+                'Có hiệu thì chia số phần chênh nhau. Chỉ khác đúng chỗ ấy.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_giau_ti(b):
+    """④ Tỉ số bị giấu — bài ĐỌC HIỂU."""
+    return [
+        _c('bia', 'Khi đề giấu tỉ số', so_bai(b),
+           loi=['Hôm nay đề không cho tỉ số bằng số, mà nói bằng lời.']),
+        _c('de_toan', 'Khay có 40 chiếc bánh, số bánh nướng gấp rưỡi số bánh dẻo.',
+           'Tính số bánh mỗi loại.',
+           loi=['Khay có bốn mươi chiếc bánh. Số bánh nướng gấp rưỡi số bánh dẻo.',
+                'Hỏi mỗi loại bao nhiêu chiếc.']),
+        _c('y_toan', 'Gấp rưỡi nghĩa là gì', 'Là gấp một lần rưỡi.',
+           buoc=1, soBuoc=3,
+           loi=['Gấp rưỡi nghĩa là gấp một lần rưỡi.',
+                'Chữ rưỡi ở đây là một nửa, không phải số năm.']),
+        _c('so_do_doan', 'Dịch ra thành hai phần trên ba phần', be=2, lon=3,
+           phanBe=2, phanLon=3, chuTong='tổng 40',
+           chuPhu='Bánh dẻo 2 phần, bánh nướng 3 phần.',
+           loi=['Nếu bánh dẻo là hai phần thì bánh nướng là ba phần.']),
+        _c('y_toan', 'Bây giờ làm như cũ', '40 : 5 = 8', buoc=2, soBuoc=3,
+           loi=['Cả thảy năm phần. Một phần là tám chiếc.']),
+        _c('y_toan', 'Suy ra hai số', 'Bánh dẻo 16, bánh nướng 24', buoc=3, soBuoc=3,
+           loi=['Bánh dẻo mười sáu chiếc, bánh nướng hai mươi tư chiếc.']),
+        _c('cong_thuc', 'Dịch câu chữ thành tỉ số',
+           congThuc='gấp rưỡi = 2 : 3   ·   gấp 3 lần = 1 : 3   ·   bằng hai phần ba = 2 : 3',
+           thay='gấp rưỡi  ⟶  2 : 3',
+           loi=['Việc đầu tiên là dịch câu chữ của đề thành hai con số.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='rưỡi = một nửa',
+           loi=['Con nhớ lại một lần nữa. Chữ rưỡi nghĩa là một nửa.',
+                'Gấp rưỡi là gấp một lần rưỡi, tức tỉ số hai trên ba.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_giau_tong_ti(b):
+    """⑤ Tổng hoặc hiệu bị giấu — dùng lại đúng kỹ năng chương 6."""
+    return [
+        _c('bia', 'Khi đề giấu tổng hoặc hiệu', so_bai(b),
+           loi=['Hôm nay đề giấu mất tổng, giống chương trước.']),
+        _c('de_toan', 'Trung bình cộng của hai số là 35, số bé bằng hai phần năm số lớn.',
+           'Tìm hai số.',
+           loi=['Trung bình cộng của hai số là ba mươi lăm.',
+                'Số bé bằng hai phần năm số lớn. Tìm hai số.']),
+        _c('y_toan', 'Đề cho gì và thiếu gì', 'Có tỉ số rồi, nhưng chưa có tổng.',
+           buoc=1, soBuoc=3,
+           loi=['Đề cho tỉ số rồi, nhưng chưa cho tổng.']),
+        _c('y_toan', 'Lôi tổng ra', '35 × 2 = 70', buoc=2, soBuoc=3,
+           loi=['Chương trước con đã học. Tổng bằng trung bình cộng nhân hai.',
+                'Ở đây được bảy mươi.']),
+        _c('so_do_doan', 'Có tổng rồi thì làm như cũ', be=SO_BE, lon=SO_LON,
+           phanBe=TI_BE, phanLon=TI_LON, chuTong='tổng 70',
+           chuPhu='Một phần 10, hai số là 20 và 50.',
+           loi=['Có tổng rồi thì làm như cũ. Một phần bằng mười.',
+                'Hai số là hai mươi và năm mươi.']),
+        _c('y_toan', 'Hiệu cũng bị giấu như thế',
+           '"Mẹ hơn con 30 tuổi" chính là hiệu.', buoc=3, soBuoc=3,
+           loi=['Hiệu cũng bị giấu theo cách tương tự.',
+                'Nói mẹ hơn con ba mươi tuổi thì đó chính là hiệu.']),
+        _c('cong_thuc', 'Thiếu gì thì lôi cái ấy ra trước',
+           congThuc='tổng = trung bình cộng × 2   ·   tổng = chu vi : 2',
+           thay='35 × 2 = 70',
+           loi=['Thiếu gì thì lôi cái ấy ra trước đã.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='đừng lấy trung bình cộng thay cho tổng',
+           loi=['Con nhớ lại một lần nữa. Đừng lấy trung bình cộng thay cho tổng.',
+                'Nó mới là số của một phần thôi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_ba_so_ti(b):
+    """⑥ Ba số theo tỉ — vẫn chia cho TỔNG SỐ PHẦN, chỉ nhiều đoạn hơn."""
+    return [
+        _c('bia', 'Ba số theo tỉ', so_bai(b),
+           loi=['Hôm nay có ba số chứ không phải hai.']),
+        _c('de_toan', 'Chia 90 quyển vở cho ba lớp theo tỉ số 2 : 3 : 4.',
+           'Mỗi lớp được bao nhiêu quyển?',
+           loi=['Chia chín mươi quyển vở cho ba lớp theo tỉ số hai, ba, bốn.']),
+        _c('so_do_doan', 'Hai đoạn đầu', be=20, lon=30, phanBe=2, phanLon=3,
+           nhanBe='Lớp một', nhanLon='Lớp hai',
+           loi=['Lớp một hai phần, lớp hai ba phần.']),
+        _c('so_do_doan', 'Thêm đoạn thứ ba', be=20, lon=40, phanBe=2, phanLon=4,
+           nhanBe='Lớp một', nhanLon='Lớp ba',
+           loi=['Lớp ba bốn phần. Mọi phần đều bằng nhau.']),
+        _c('y_toan', 'Đếm cả thảy mấy phần', '2 + 3 + 4 = 9 phần', buoc=1, soBuoc=3,
+           loi=['Đếm cả thảy có chín phần, chứ không phải ba.']),
+        _c('y_toan', 'Tìm một phần', '90 : 9 = 10 quyển', buoc=2, soBuoc=3,
+           loi=['Chín phần là chín mươi, nên một phần là mười quyển.']),
+        _c('y_toan', 'Suy ra ba số', '20 · 30 · 40 quyển', buoc=3, soBuoc=3,
+           loi=['Ba lớp được hai mươi, ba mươi và bốn mươi quyển.',
+                'Cộng lại đúng chín mươi.']),
+        _c('cong_thuc', 'Bài ba số theo tỉ',
+           congThuc='một phần = tổng : TỔNG SỐ PHẦN',
+           thay='90 : 9 = 10',
+           loi=['Vẫn là tổng chia cho tổng số phần, chỉ khác là nhiều đoạn hơn.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chia cho SỐ PHẦN, không chia cho số lớp',
+           loi=['Con nhớ lại một lần nữa. Chia cho số phần, không chia cho số lớp.',
+                'Ba lớp nhưng chín phần, vì mỗi lớp nhận số phần khác nhau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_noi_ti(b):
+    """⑦ Nối hai tỉ số — bài khó nhất chương, một ý duy nhất."""
+    return [
+        _c('bia', 'Nối hai tỉ số', so_bai(b),
+           loi=['Hôm nay đề cho hai tỉ số, và mình phải nối chúng lại.']),
+        _c('de_toan', 'Ba bạn có 90 viên bi. An so với Bình là 2 : 3, Bình so với Cường '
+                      'là 6 : 5.', 'Tìm số bi mỗi bạn.',
+           loi=['Ba bạn có chín mươi viên bi.',
+                'An so với Bình là hai trên ba. Bình so với Cường là sáu trên năm.']),
+        _c('y_toan', 'Tìm mắt xích chung', 'Bình có mặt ở CẢ HAI tỉ số.',
+           buoc=1, soBuoc=4,
+           loi=['Bình có mặt ở cả hai tỉ số. Bình là mắt xích chung.']),
+        _c('so_do_doan', 'Nhưng hai tỉ số đếm Bình khác nhau', be=3, lon=6,
+           phanBe=3, phanLon=6, nhanBe='Bình ở tỉ số đầu', nhanLon='Bình ở tỉ số sau',
+           chuPhu='Cùng một bạn Bình mà một bên 3 phần, một bên 6 phần.',
+           loi=['Nhưng tỉ số đầu đếm Bình là ba phần, tỉ số sau đếm Bình là sáu phần.',
+                'Cùng một bạn mà hai con số khác nhau thì chưa ghép được.']),
+        _c('y_toan', 'Quy về cùng một loại phần',
+           'Nhân tỉ số đầu với 2: An trên Bình thành 4 : 6', buoc=2, soBuoc=4,
+           loi=['Nhân cả tỉ số đầu với hai thì Bình thành sáu phần.',
+                'An trên Bình thành bốn trên sáu.']),
+        _c('y_toan', 'Bây giờ nối được', 'An 4 phần, Bình 6 phần, Cường 5 phần',
+           buoc=3, soBuoc=4,
+           loi=['Bây giờ nối được. An bốn phần, Bình sáu phần, Cường năm phần.']),
+        _c('y_toan', 'Làm như bài trước', '90 : 15 = 6 viên', buoc=4, soBuoc=4,
+           loi=['Cả thảy mười lăm phần. Một phần là sáu viên.',
+                'An hai mươi tư viên, Bình ba mươi sáu viên, Cường ba mươi viên.']),
+        _c('cong_thuc', 'Cách nối hai tỉ số',
+           congThuc='quy đại lượng chung về CÙNG một số phần, rồi mới ghép',
+           thay='2 : 3  nhân 2  ⟶  4 : 6',
+           loi=['Quy đại lượng chung về cùng một số phần, rồi mới ghép.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='nhân thì nhân CẢ HAI vế của tỉ số',
+           loi=['Con nhớ lại một lần nữa. Nhân thì phải nhân cả hai vế của tỉ số.',
+                'Nhân một vế thôi là tỉ số đổi hẳn, sai bài.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 # Khoá theo MÃ BÀI, không theo số bài. Từ 14-08 (lối C) số bài đếm từ vị trí trong
 # `thu_tu.json`, nên nó đổi mỗi khi chèn bài mới — khoá theo nó thì chèn chín bài
 # vào chương 3 là tám kịch bản này nhảy sang nhầm bài, mà vẫn dựng ra video hợp lệ.
@@ -1464,6 +1722,11 @@ BO = {
     'DL:KSN4.B59': kb_so_be,     'DL:KSN4.B25': kb_giau_tong,
     'DL:KSN4.B26': kb_giau_hieu, 'DL:KSN4.B27': kb_cung_them,
     'DL:KSN4.B60': kb_ba_so,
+    # ── chương 7 · bảy bài tỉ số ──
+    'DL:KSN4.B61': kb_ti_la_gi,  'DL:KSN4.B28': kb_tong_ti,
+    'DL:KSN4.B30': kb_hieu_ti,   'DL:KSN4.B62': kb_giau_ti,
+    'DL:KSN4.B29': kb_giau_tong_ti, 'DL:KSN4.B31': kb_ba_so_ti,
+    'DL:KSN4.B63': kb_noi_ti,
 }
 
 

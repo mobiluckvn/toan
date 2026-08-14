@@ -120,7 +120,7 @@ chương dùng chung ví dụ và chung cách nói.
 | ~~2~~ | ~~3 · Dấu hiệu chia hết~~ | **XONG 14-08** | 4 bài → **9 bài**, xem §12 |
 | ~~3~~ | ~~5 · Trung bình cộng~~ | **XONG 14-08** | 3 bài → **6 bài**, xem §13 |
 | ~~4~~ | ~~6 · Tổng - hiệu~~ | **XONG 14-08** | 4 bài → **7 bài**, xem §14 |
-| 5 | 7 · Tổng - tỉ, Hiệu - tỉ | B28–B31 | dùng lại kiểu cảnh của đợt 4 |
+| ~~5~~ | ~~7 · Tổng - tỉ, Hiệu - tỉ~~ | **XONG 14-08** | 4 bài → **7 bài**, xem §15 |
 | 6 | 1 · Số đến lớp triệu | B01–B04 | bài đầu quyển, bé mới vào |
 | 7 | 2 · Bốn phép tính | B05–B08 | |
 | 8 | 9 · Phân số | B38–B42 | cần kiểu cảnh vẽ phân số |
@@ -518,3 +518,51 @@ thức đều ra số chẵn, và trung bình cộng của chúng là 35 nên b�
 
 7 video · 88 clip tiếng mới · 98 câu hỏi · quyển từ **57 lên 60 bài**. Gỡ 7 hình cũ
 neo vào mở bài và bài giảng — chính video nay đã có sơ đồ, giữ lại là hình chết.
+
+---
+
+## 15 · Đợt 5 · chương 7 — tổng-tỉ và hiệu-tỉ, 4 bài thành 7
+
+Bốn bài cũ gói đôi hết: B29 gộp "tỉ số bị giấu" **với** "tổng bị giấu"; B30 gộp công
+thức **với** hiệu ẩn; B31 gộp bài ba số **với** bài nối hai tỉ số. Và vẫn thiếu bài
+gốc — **không bài nào nói tỉ số là gì**.
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 39 | B61 *(mới)* | **tỉ số là gì** — mọi phần đều bằng nhau, KHÔNG công thức |
+| 40 | B28 | tổng - tỉ — chia tổng cho **tổng số phần** |
+| 41 | B30 | hiệu - tỉ — chia hiệu cho **số phần chênh** |
+| 42 | B62 *(mới)* | đề giấu tỉ số — dịch "gấp rưỡi" thành hai con số |
+| 43 | B29 | đề giấu tổng hoặc hiệu — dùng lại kỹ năng chương 6 |
+| 44 | B31 | ba số theo tỉ |
+| 45 | B63 *(mới)* | nối hai tỉ số — quy về cùng một loại phần |
+
+### Bộ neo chọn được rất khéo — hai số 20 và 50
+
+```
+tổng 70   ← ĐÚNG tổng của chương 6, bé vừa quen
+hiệu 30
+tỉ số 2 : 5  →  tổng gồm 7 phần · hiệu gồm 3 phần · mỗi phần 10
+```
+
+Nhờ thế **bài tổng-tỉ và bài hiệu-tỉ dùng CHUNG MỘT BỨC TRANH**, chỉ khác chỗ nhìn:
+một bên nhìn cả bảy phần, một bên nhìn ba phần chênh. Hai bài đặt liền nhau, đúng cách
+chương 6 ghép số lớn với số bé — và bé rút ra một câu duy nhất: *có tổng thì chia tổng
+số phần, có hiệu thì chia số phần chênh.*
+
+### Cảnh cũ mở rộng, không dựng cảnh mới
+
+`so_do_doan` của chương 6 thêm hai tham số `phanBe`/`phanLon` — vạch đứng chia đoạn
+thành các phần bằng nhau. Không phải dựng cảnh thứ hai, và quan trọng hơn: bé thấy
+**cùng một loại hình** với chương trước, chỉ có thêm vạch chia.
+
+### Một miễn trừ được KHAI RA, không bỏ lặng
+
+Bài cuối (nối hai tỉ số) không dùng bộ neo, vì nối tỉ số cần **ba** đại lượng mà bộ
+neo là một cặp hai số. `soi()` khai miễn trừ ấy kèm lý do, thay vì lặng lẽ bỏ phép
+kiểm — bỏ lặng thì lần sau ai quên bộ neo ở bài khác cũng không ai hay.
+
+### Số đo
+
+7 video · 76 clip tiếng mới · 98 câu hỏi · quyển từ **60 lên 63 bài**. Gỡ 6 hình cũ.
+Niêm phong 2332 → 2361 (+27 luyện tập, +2 câu ôn trước chưa có ô nhập).
