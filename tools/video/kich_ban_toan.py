@@ -932,6 +932,236 @@ def kb_tan_cung(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# CHƯƠNG 5 · SÁU KỊCH BẢN — TRUNG BÌNH CỘNG
+# ═══════════════════════════════════════════════════════════════════════════
+# Bộ neo 4 · 6 · 8 chạy suốt sáu bài. Chọn nó vì mọi thứ của chương này nhìn thấy
+# được trên đúng bộ ba ấy: tổng 18 chia 3 ra chẵn 6; số giữa đúng bằng trung bình nên
+# san bằng chỉ là cột 8 nhường 2 cho cột 4; và phần nhô lên (2) đúng bằng phần hụt
+# xuống (2) — đó là trọn bài "hơn kém mức trung bình", khỏi phải chứng minh.
+TBC = [4, 6, 8]
+
+
+def kb_tbc_la_gi(b):
+    """① Trung bình cộng là gì — bài KHÁI NIỆM, và chỗ công thức sinh ra."""
+    return [
+        _c('bia', 'Trung bình cộng là gì', so_bai(b),
+           loi=['Hôm nay mình học xem trung bình cộng là gì.']),
+        _c('san_bang', 'Ba bạn có 4, 6 và 8 cái kẹo', so=TBC,
+           chuPhu='Ba bạn không bằng nhau.',
+           loi=['Ba bạn có bốn, sáu và tám cái kẹo. Ba bạn không bằng nhau.']),
+        _c('y_toan', 'Chia lại cho ba bạn bằng nhau', 'Mỗi bạn được mấy cái?',
+           buoc=1, soBuoc=4,
+           loi=['Bây giờ chia lại cho ba bạn bằng nhau. Mỗi bạn được mấy cái.']),
+        _c('san_bang', 'San cho bằng nhau', so=TBC, deu=True,
+           chuPhu='Cả ba bạn đều được 6 cái.',
+           loi=['San cho bằng nhau thì cả ba bạn đều được sáu cái.']),
+        _c('y_toan', 'San bằng là chuyển qua lại',
+           'Bạn có 8 nhường 2 cho bạn có 4. Bạn có 6 đứng yên.', buoc=2, soBuoc=4,
+           loi=['Bạn có tám cái nhường hai cái cho bạn có bốn cái.',
+                'Bạn có sáu cái đứng yên.']),
+        _c('y_toan', 'Còn một cách nữa', '4 + 6 + 8 = 18,  rồi  18 : 3 = 6',
+           buoc=3, soBuoc=4,
+           loi=['Còn một cách nữa. Gộp hết lại được mười tám cái.',
+                'Chia đều cho ba bạn được sáu cái.']),
+        _c('y_toan', 'Hai cách cho cùng một kết quả',
+           'Vì san bằng không làm đổi tổng.', buoc=4, soBuoc=4,
+           loi=['Hai cách đều ra sáu.',
+                'Vì san bằng chỉ là chuyển kẹo qua lại, tổng số kẹo không đổi.']),
+        _c('cong_thuc', 'Cách tìm trung bình cộng',
+           congThuc='trung bình cộng = tổng : số lượng',
+           thay='18 : 3 = 6',
+           loi=['Trung bình cộng bằng tổng chia cho số lượng.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='trung bình cộng = tổng : số lượng',
+           loi=['Con nhớ lại một lần nữa. Cộng hết lại rồi chia cho số phần.',
+                'Cộng xong mà quên chia thì đó mới là tổng, chưa phải trung bình cộng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_tim_tbc(b):
+    """② Tìm trung bình cộng — một việc duy nhất: ĐẾM ĐÚNG có mấy số."""
+    return [
+        _c('bia', 'Tìm trung bình cộng', so_bai(b),
+           loi=['Hôm nay mình dùng công thức cho thật thạo.']),
+        _c('de_toan', 'Đội ghi bàn trong 4 trận: 2 ; 5 ; 2 ; 3 bàn.',
+           'Trung bình mỗi trận đội ghi mấy bàn?',
+           loi=['Đội ghi bàn trong bốn trận. Hai, năm, hai và ba bàn.',
+                'Hỏi trung bình mỗi trận đội ghi mấy bàn.']),
+        _c('y_toan', 'Cộng hết lại', '2 + 5 + 2 + 3 = 12', buoc=1, soBuoc=4,
+           loi=['Cộng hết lại được mười hai bàn.']),
+        _c('y_toan', 'Bây giờ đếm xem có mấy số',
+           'Bốn trận thì có bốn số.', buoc=2, soBuoc=4,
+           loi=['Bây giờ đếm xem có mấy số. Bốn trận thì có bốn số.',
+                'Số hai xuất hiện hai lần thì vẫn đếm là hai số.']),
+        _c('y_toan', 'Chia đều', '12 : 4 = 3', buoc=3, soBuoc=4,
+           loi=['Chia đều được ba bàn.']),
+        _c('san_bang', 'Vẽ ra thì thấy mức trung bình', so=[2, 5, 2, 3], mucTB=True,
+           chuPhu='Mức trung bình là 3.',
+           loi=['Vẽ ra thì thấy mức trung bình là ba.']),
+        _c('y_toan', 'Soi lại cho chắc',
+           'Kết quả phải nằm giữa số bé nhất và số lớn nhất.', buoc=4, soBuoc=4,
+           loi=['Soi lại cho chắc. Số bé nhất là hai, số lớn nhất là năm.',
+                'Kết quả ba nằm giữa hai số ấy nên hợp lý.']),
+        _c('cong_thuc', 'Nhớ chia cho ĐÚNG số lượng',
+           congThuc='trung bình cộng = tổng : số lượng',
+           thay='12 : 4 = 3',
+           loi=['Trung bình cộng bằng tổng chia cho số lượng.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='số lặp lại vẫn đếm đủ số lần',
+           loi=['Con nhớ lại một lần nữa. Số lặp lại vẫn phải đếm đủ số lần.',
+                'Và kết quả luôn nằm giữa số bé nhất với số lớn nhất.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_tim_tong(b):
+    """③ Biết trung bình cộng, tìm tổng — công thức ngược, và VÌ SAO nó đúng."""
+    return [
+        _c('bia', 'Biết trung bình cộng, tìm tổng', so_bai(b),
+           loi=['Hôm nay mình đi chiều ngược lại.']),
+        _c('de_toan', 'Trung bình cộng của 4 số là 25.',
+           'Tổng của bốn số ấy bằng bao nhiêu?',
+           loi=['Trung bình cộng của bốn số là hai mươi lăm.',
+                'Hỏi tổng của bốn số ấy bằng bao nhiêu.']),
+        _c('y_toan', 'Nhớ lại chiều thuận', 'Tổng chia cho 4 thì được 25.',
+           buoc=1, soBuoc=3,
+           loi=['Nhớ lại chiều thuận. Tổng chia cho bốn thì được hai mươi lăm.']),
+        _c('y_toan', 'Đọc ngược phép chia',
+           'Chia cho 4 được 25 thì số ban đầu là 25 nhân 4.', buoc=2, soBuoc=3,
+           loi=['Đọc ngược lại. Chia cho bốn mà được hai mươi lăm.',
+                'Thì số ban đầu phải là hai mươi lăm nhân bốn.']),
+        _c('san_bang', 'Nghĩ theo cách san bằng cũng ra thế',
+           so=[25, 25, 25, 25],
+           chuPhu='Mỗi phần 25, có 4 phần, gộp lại là 100.',
+           loi=['Nghĩ theo cách san bằng cũng ra thế.',
+                'Mỗi phần có hai mươi lăm, có bốn phần, gộp lại là một trăm.']),
+        _c('y_toan', 'Tính ra', '25 × 4 = 100', buoc=3, soBuoc=3,
+           loi=['Hai mươi lăm nhân bốn bằng một trăm.']),
+        _c('cong_thuc', 'Cách tìm tổng',
+           congThuc='tổng = trung bình cộng × số lượng',
+           thay='25 × 4 = 100',
+           loi=['Tổng bằng trung bình cộng nhân với số lượng.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='tổng = trung bình cộng × số lượng',
+           loi=['Con nhớ lại một lần nữa. Trung bình cộng là số của MỘT phần.',
+                'Muốn ra số của tất cả các phần thì nhân với số lượng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_so_thieu(b):
+    """④ Tìm số còn thiếu — không công thức mới, chỉ nối hai bước đã biết."""
+    return [
+        _c('bia', 'Tìm số còn thiếu', so_bai(b),
+           loi=['Hôm nay mình tìm một con số bị giấu đi.']),
+        _c('de_toan', 'Trung bình cộng của hai số là 36, một số bằng 40.',
+           'Tìm số còn lại.',
+           loi=['Trung bình cộng của hai số là ba mươi sáu. Một số bằng bốn mươi.',
+                'Hỏi số còn lại bằng bao nhiêu.']),
+        _c('y_toan', 'Bước 1 — tìm tổng', '36 × 2 = 72', buoc=1, soBuoc=3,
+           loi=['Bước một. Trung bình cộng là ba mươi sáu, có hai số.',
+                'Nên tổng là ba mươi sáu nhân hai, bằng bảy mươi hai.']),
+        _c('y_toan', 'Bước 2 — trừ đi số đã biết', '72 − 40 = 32', buoc=2, soBuoc=3,
+           loi=['Bước hai. Lấy bảy mươi hai trừ bốn mươi, được ba mươi hai.']),
+        _c('san_bang', 'Hai số ấy san bằng thì đúng mức 36', so=[40, 32], mucTB=True,
+           chuPhu='Một số hơn 4, một số kém 4.',
+           loi=['Vẽ ra thì thấy một số hơn mức bốn, một số kém mức bốn.']),
+        _c('y_toan', 'Bước 3 — thử lại', '(40 + 32) : 2 = 36', buoc=3, soBuoc=3,
+           loi=['Bước ba, thử lại. Bốn mươi cộng ba mươi hai chia hai bằng ba mươi sáu.',
+                'Đúng bằng đề cho, nên bài làm đúng.']),
+        _c('cong_thuc', 'Hai bước, không có công thức mới',
+           congThuc='số còn thiếu = tổng − các số đã biết',
+           thay='72 − 40 = 32',
+           loi=['Số còn thiếu bằng tổng trừ đi các số đã biết.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='tìm TỔNG trước, rồi mới trừ',
+           loi=['Con nhớ lại một lần nữa. Phải tìm tổng trước, rồi mới trừ.',
+                'Trừ thẳng vào trung bình cộng là sai, vì nó mới là số của một phần.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_hon_kem(b):
+    """⑤ Hơn kém mức trung bình — phần nhô lên bằng đúng phần hụt xuống."""
+    return [
+        _c('bia', 'Hơn kém mức trung bình', so_bai(b),
+           loi=['Hôm nay mình xem mỗi số cách mức trung bình bao xa.']),
+        _c('san_bang', 'Ba số 4 ; 6 ; 8 có mức trung bình là 6', so=TBC, mucTB=True,
+           chuPhu='Vạch ngang là mức trung bình.',
+           loi=['Ba số bốn, sáu và tám có mức trung bình là sáu.',
+                'Vạch ngang chính là mức ấy.']),
+        _c('y_toan', 'Số 4 nằm dưới vạch', '6 − 4 = 2, nên số 4 kém mức 2 đơn vị',
+           buoc=1, soBuoc=4,
+           loi=['Số bốn nằm dưới vạch. Nó kém mức trung bình hai đơn vị.']),
+        _c('y_toan', 'Số 8 nhô lên trên vạch', '8 − 6 = 2, nên số 8 hơn mức 2 đơn vị',
+           buoc=2, soBuoc=4,
+           loi=['Số tám nhô lên trên vạch. Nó hơn mức trung bình hai đơn vị.']),
+        _c('y_toan', 'Số 6 đúng bằng mức',
+           'Không hơn cũng không kém.', buoc=3, soBuoc=4,
+           loi=['Số sáu đúng bằng mức, không hơn cũng không kém.']),
+        _c('y_toan', 'Phần nhô lên bằng đúng phần hụt xuống',
+           'Phần hơn là 2. Phần kém cũng là 2.', buoc=4, soBuoc=4,
+           loi=['Phần nhô lên là hai. Phần hụt xuống cũng là hai. Hai bên bằng nhau.']),
+        _c('san_bang', 'Vì san bằng là lấy phần nhô đắp vào chỗ hụt', so=TBC, deu=True,
+           chuPhu='Đắp xong vừa khít, không thừa không thiếu.',
+           loi=['Vì san bằng chính là lấy phần nhô đắp vào chỗ hụt.',
+                'Đắp xong vừa khít, nên hai phần phải bằng nhau ngay từ đầu.']),
+        _c('cong_thuc', 'Điều cần nhớ',
+           congThuc='tổng phần hơn = tổng phần kém',
+           thay='2 = 2',
+           loi=['Tổng phần hơn luôn bằng tổng phần kém.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hơn kém bao nhiêu = số đó − mức trung bình',
+           loi=['Con nhớ lại một lần nữa. Muốn biết hơn kém bao nhiêu thì lấy số đó '
+                'trừ mức trung bình.',
+                'Đừng lấy luôn con số ấy làm phần hơn.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_them_so(b):
+    """⑥ Thêm một số vào nhóm — chỗ quên nhiều nhất là SỐ LƯỢNG đã đổi."""
+    return [
+        _c('bia', 'Thêm một số vào nhóm', so_bai(b),
+           loi=['Hôm nay mình thêm một bạn vào nhóm rồi tính lại.']),
+        _c('san_bang', 'Ba bạn có trung bình 6 cái kẹo', so=[6, 6, 6],
+           chuPhu='Đã san đều, mỗi bạn 6 cái.',
+           loi=['Ba bạn có trung bình sáu cái kẹo. Đã san đều, mỗi bạn sáu cái.']),
+        _c('y_toan', 'Bước 1 — lấy tổng cũ', '6 × 3 = 18', buoc=1, soBuoc=4,
+           loi=['Bước một. Ba bạn, trung bình sáu, nên tổng cũ là mười tám cái.']),
+        _c('san_bang', 'Thêm một bạn có 10 cái', so=[6, 6, 6, 10], mucTB=True,
+           chuPhu='Bạn mới cao hơn mức cũ.',
+           loi=['Thêm một bạn nữa có mười cái. Bạn mới cao hơn mức cũ.']),
+        _c('y_toan', 'Bước 2 — cộng số mới', '18 + 10 = 28', buoc=2, soBuoc=4,
+           loi=['Bước hai. Tổng mới là mười tám cộng mười, bằng hai mươi tám.']),
+        _c('y_toan', 'Bước 3 — chia lại cho SỐ LƯỢNG MỚI', '28 : 4 = 7',
+           buoc=3, soBuoc=4,
+           loi=['Bước ba. Bây giờ có bốn bạn chứ không phải ba nữa.',
+                'Hai mươi tám chia bốn bằng bảy.']),
+        _c('y_toan', 'Đoán trước cho chắc',
+           'Bạn mới nhiều hơn mức cũ nên trung bình phải TĂNG.', buoc=4, soBuoc=4,
+           loi=['Đoán trước cho chắc. Bạn mới có nhiều hơn mức cũ.',
+                'Nên trung bình phải tăng. Kết quả bảy lớn hơn sáu, đúng như đoán.']),
+        _c('cong_thuc', 'Tính lại trung bình',
+           congThuc='trung bình mới = tổng mới : số lượng MỚI',
+           thay='28 : 4 = 7',
+           loi=['Trung bình mới bằng tổng mới chia cho số lượng mới.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='thêm người thì SỐ CHIA cũng đổi',
+           loi=['Con nhớ lại một lần nữa. Thêm người vào nhóm thì số để chia cũng đổi.',
+                'Quên đổi số lượng là chỗ hay sai nhất của bài này.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 # Khoá theo MÃ BÀI, không theo số bài. Từ 14-08 (lối C) số bài đếm từ vị trí trong
 # `thu_tu.json`, nên nó đổi mỗi khi chèn bài mới — khoá theo nó thì chèn chín bài
 # vào chương 3 là tám kịch bản này nhảy sang nhầm bài, mà vẫn dựng ra video hợp lệ.
@@ -945,6 +1175,10 @@ BO = {
     'DL:KSN4.B10': kb_chia_9, 'DL:KSN4.B53': kb_chia_3,
     'DL:KSN4.B11': kb_chia_du, 'DL:KSN4.B54': kb_thua_thieu,
     'DL:KSN4.B12': kb_tan_cung,
+    # ── chương 5 · sáu bài trung bình cộng ──
+    'DL:KSN4.B55': kb_tbc_la_gi, 'DL:KSN4.B21': kb_tim_tbc,
+    'DL:KSN4.B56': kb_tim_tong, 'DL:KSN4.B57': kb_so_thieu,
+    'DL:KSN4.B22': kb_hon_kem,  'DL:KSN4.B23': kb_them_so,
 }
 
 

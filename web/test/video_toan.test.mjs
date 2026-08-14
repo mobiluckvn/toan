@@ -18,7 +18,7 @@ const VIDEO = new URL('../public/content/toan/video/', import.meta.url);
 const AUDIO = new URL('../public/content/toan/audio/', import.meta.url);
 
 const tep = readdirSync(APP).filter((f) => /^DL_KSN4_B\d+\.json$/.test(f)).sort();
-assert.equal(tep.length, 54, `phải thấy 54 bài, đang thấy ${tep.length}`);
+assert.equal(tep.length, 57, `phải thấy 57 bài, đang thấy ${tep.length}`);
 const BAI = tep.map((f) => JSON.parse(readFileSync(new URL(f, APP), 'utf8')));
 const coVideo = BAI.filter((b) => b.video?.giang);
 

@@ -1,0 +1,305 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B57",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 29 · TÌM SỐ CÒN THIẾU — LẤY TỔNG RỒI TRỪ ĐI PHẦN ĐÃ BIẾT",
+ "durationMinutes": 10,
+ "so": 29,
+ "chuong": 5,
+ "tenChuong": "TRUNG BÌNH CỘNG",
+ "dangGoc": "Dạng gốc: LV 1.3 mức Lớp 4 — Tìm một số khi biết trung bình cộng và các số còn lại; hai bước, không công thức mới.",
+ "skills": {
+  "bktUnit": "CHUONG:5@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 29,
+  "prev": "DL:KSN4.B56",
+  "next": "DL:KSN4.B22"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tìm được một số khi biết trung bình cộng và các số còn lại. Đi đúng hai bước: tìm tổng trước, rồi trừ. Thử lại kết quả bằng cách tính lại trung bình cộng.",
+  "kidText": "Cô giấu đi một con số, chỉ cho con biết mức trung bình thôi. Con tìm ra nó được không?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn đọc đề rồi làm luôn: \"Số còn lại là 36 − 40, không trừ được nên đề sai.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: 36 là trung bình cộng, còn con đang trừ nó như thể nó là tổng. Gợi ý 2: Con tìm TỔNG trước đã. Trung bình 36, có hai số thì tổng bằng mấy? Chữa: tổng là 36 × 2 = 72, rồi mới lấy 72 − 40 = 32. Phải đi tổng trước, không trừ thẳng vào trung bình cộng được."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn đọc đề rồi làm luôn: \"Số còn lại là 36 − 40, không trừ được nên đề sai.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Trung bình cộng của hai số là 36, một số bằng 40. Tìm số còn lại.",
+  "steps": [
+   {
+    "show": "Bước 1 — tìm tổng"
+   },
+   {
+    "show": "Trung bình cộng là 36, có 2 số, nên tổng là 36 × 2 = 72."
+   },
+   {
+    "show": "Bước 2 — trừ đi số đã biết"
+   },
+   {
+    "show": "Số còn lại là 72 − 40 = 32."
+   },
+   {
+    "show": "Thử lại"
+   },
+   {
+    "show": "Tính trung bình cộng của 40 và 32: (40 + 32) : 2 = 72 : 2 = 36. Đúng bằng đề cho, nên bài làm đúng."
+   },
+   {
+    "show": "Đáp số: số còn lại là 32."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Trung bình cộng của hai số là 36 — đúng bài trong video. Tổng của hai số bằng bao nhiêu?",
+     "answerKey": {
+      "value": 72
+     },
+     "solutionNarrative": "36 × 2 = 72."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên, một số bằng 40. Số còn lại bằng bao nhiêu?",
+     "answerKey": {
+      "value": 32
+     },
+     "solutionNarrative": "72 − 40 = 32."
+    },
+    {
+     "id": "C3",
+     "text": "Trung bình cộng của hai số là 10, một số bằng 6. Tìm số còn lại.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng",
+        "value": 20
+       },
+       {
+        "label": "số còn lại",
+        "value": 14
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng là 10 × 2 = 20; số còn lại là 20 − 6 = 14."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Trung bình cộng của ba số là 6, hai số đầu là 4 và 6. Tìm số thứ ba.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng",
+        "value": 18
+       },
+       {
+        "label": "số thứ ba",
+        "value": 8
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng là 6 × 3 = 18; số thứ ba là 18 − 4 − 6 = 8."
+    },
+    {
+     "id": "C5",
+     "text": "Bạn An lấy thẳng 36 − 40 rồi bảo đề sai. Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng",
+        "value": 72
+       },
+       {
+        "label": "số còn lại",
+        "value": 32
+       }
+      ]
+     },
+     "solutionNarrative": "Bạn trừ thẳng vào trung bình cộng. Phải tìm TỔNG trước: 36 × 2 = 72, rồi mới 72 − 40 = 32."
+    },
+    {
+     "id": "C6",
+     "text": "Ba bài kiểm tra được trung bình 8 điểm; hai bài đầu được 7 và 8 điểm. Bài thứ ba được mấy điểm?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng ba bài",
+        "value": 24
+       },
+       {
+        "label": "điểm bài thứ ba",
+        "value": 9
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng ba bài: 8 × 3 = 24. Bài thứ ba: 24 − 7 − 8 = 9 điểm."
+    },
+    {
+     "id": "C7",
+     "text": "Sau khi tìm được số còn lại là 32, con thử lại thế nào để chắc chắn đúng?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "trung bình cộng tính lại",
+        "value": 36
+       }
+      ]
+     },
+     "solutionNarrative": "Tính lại trung bình cộng của hai số: (40 + 32) : 2 = 36 — đúng bằng đề cho."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Trung bình cộng của bốn số là 15; ba số đầu là 10, 14 và 20. Tìm số thứ tư và thử lại.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng",
+        "value": 60
+       },
+       {
+        "label": "số thứ tư",
+        "value": 16
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng: 15 × 4 = 60. Số thứ tư: 60 − 10 − 14 − 20 = 16. Thử lại: (10 + 14 + 20 + 16) : 4 = 60 : 4 = 15."
+    },
+    {
+     "id": "C9",
+     "text": "Bốn bạn cân nặng trung bình 30 kg. Ba bạn đầu nặng 28 kg, 29 kg và 31 kg. Bạn thứ tư nặng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng",
+        "value": 120
+       },
+       {
+        "label": "bạn thứ tư nặng",
+        "value": 32
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng: 30 × 4 = 120 kg. Bạn thứ tư: 120 − 28 − 29 − 31 = 32 kg."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Muốn tìm số còn thiếu, phải tìm tổng trước rồi mới trừ.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Trung bình cộng hai số là 36, một số là 40, vậy số kia là 36 − 40.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — phải lấy tổng 72 trừ 40, được 32."
+   },
+   {
+    "id": "Q3",
+    "text": "Trung bình cộng của hai số là 36, một số là 40. Số còn lại là:",
+    "format": "mcq",
+    "choices": [
+     "A. 32",
+     "B. 4",
+     "C. 76"
+    ],
+    "answerKey": {
+     "choice": "A. 32"
+    },
+    "solutionNarrative": "Tổng 72, trừ 40 được 32."
+   },
+   {
+    "id": "Q4",
+    "text": "Trung bình cộng của ba số là 6, hai số đầu là 4 và 6. Số thứ ba là:",
+    "format": "mcq",
+    "choices": [
+     "A. 8",
+     "B. 6",
+     "C. 18"
+    ],
+    "answerKey": {
+     "choice": "A. 8"
+    },
+    "solutionNarrative": "Tổng 18, trừ 4 và 6 được 8."
+   },
+   {
+    "id": "Q5",
+    "text": "Cách thử lại kết quả là:",
+    "format": "mcq",
+    "choices": [
+     "A. tính lại trung bình cộng xem có đúng đề cho không",
+     "B. cộng tất cả các số lại",
+     "C. không cần thử"
+    ],
+    "answerKey": {
+     "choice": "A. tính lại trung bình cộng xem có đúng đề cho không"
+    },
+    "solutionNarrative": "Ra đúng con số đề cho thì bài làm đúng."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con một bài kiểu này: \"Ba bài kiểm tra con được trung bình 8 điểm, hai bài đầu được 7 và 8. Bài thứ ba mấy điểm?\" Con sẽ phải đi đúng hai bước.",
+  "homeActivity": "Chỗ sai phổ biến nhất là trừ thẳng vào trung bình cộng. Bố mẹ hỏi một câu: \"Con tìm tổng chưa?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài trước con đã biết cách lấy tổng từ trung bình cộng. Hôm nay con dùng đúng nó để tìm một con số bị giấu đi. Không có công thức nào mới cả — chỉ là hai bước cũ nối lại: tìm tổng, rồi trừ đi những gì đã biết.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B17"
+  ],
+  "ten": [
+   "BÀI TOÁN HAI BƯỚC TÍNH"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B57_giang.mp4"
+ }
+}

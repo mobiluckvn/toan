@@ -325,6 +325,48 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuCuoi"):
             giua(d, y0 + h_nhom + 118, c["chuCuoi"], phong(34), INK, rong=W - 200)
 
+    elif L == "san_bang":
+        # ══ TRUNG BÌNH CỘNG, NHÌN THẤY ĐƯỢC ══
+        # Luật 9 của bác. "Trung bình cộng" nói bằng lời thì mãi vẫn là một phép chia
+        # khô khốc. Vẽ ra thành mấy cột cao thấp rồi SAN CHO BẰNG NHAU thì bé thấy
+        # ngay nó là cái gì: cột cao nhường cho cột thấp, cuối cùng ai cũng như ai.
+        #
+        # `so` là chiều cao từng cột. `deu=True` vẽ trạng thái ĐÃ SAN — tất cả bằng
+        # trung bình. `mucTB=True` kẻ một vạch ngang ở mức trung bình, để bé thấy
+        # phần nhô lên trên vạch đúng bằng phần hụt xuống dưới.
+        giua(d, 50, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        so = c.get("so", [])
+        n = len(so)
+        tb = sum(so) / n if n else 0
+        hien = [tb] * n if c.get("deu") else so
+        day, cao_toi_da = 500, 250          # đáy cột và chiều cao tối đa
+        don_vi = cao_toi_da / max(max(so), 1)
+        rong_cot, cach = 96, 46
+        tong = n * rong_cot + (n - 1) * cach
+        x0 = (W - tong) // 2
+        if c.get("mucTB"):
+            y_tb = day - tb * don_vi
+            # Nhãn nằm TRÊN vạch, ở đầu trái — bản đầu đặt nó ngay cuối vạch nên chữ
+            # chồng lên mấy nét đứt cuối, đọc rối đúng chỗ cần nhìn rõ nhất.
+            for x in range(x0 - 34, x0 + tong + 34, 18):   # vạch đứt
+                d.line([x, y_tb, x + 10, y_tb], fill=GOLD, width=4)
+            d.text((x0 - 34, y_tb - 40), "mức trung bình", font=phong(26),
+                   fill=GOLD_DARK)
+        for i, v in enumerate(hien):
+            x = x0 + i * (rong_cot + cach)
+            h = v * don_vi
+            the(d, x, day - h, rong_cot, max(h, 6), nen=TEAL_PALE, vien=TEAL, day=4, bo=12)
+            f, t = phong(38), str(int(v) if float(v).is_integer() else round(v, 1))
+            d.text((x + (rong_cot - d.textlength(t, font=f)) / 2, day - h - 46), t,
+                   font=f, fill=TEAL_DARK)
+            if c.get("deu"):                # nhắc lại số gốc dưới chân cột
+                g, t2 = phong(26), str(so[i])
+                d.text((x + (rong_cot - d.textlength(t2, font=g)) / 2, day + 12), t2,
+                       font=g, fill=MUTE)
+        if c.get("chuPhu"):
+            giua(d, day + (52 if c.get("deu") else 34), c["chuPhu"], phong(36), INK,
+                 rong=W - 160)
+
     elif L == "tach_so":
         # ══ MỘT SỐ, TÁCH RA TỪNG CHỮ SỐ ══
         # Bốn dấu hiệu chia hết đều chỉ nhìn vào MỘT PHẦN của con số: cho 2 và cho 5

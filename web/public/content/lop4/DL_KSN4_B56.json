@@ -1,0 +1,288 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B56",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 28 · BIẾT TRUNG BÌNH CỘNG, TÌM TỔNG — ĐỌC NGƯỢC PHÉP CHIA",
+ "durationMinutes": 10,
+ "so": 28,
+ "chuong": 5,
+ "tenChuong": "TRUNG BÌNH CỘNG",
+ "dangGoc": "Dạng gốc: LV 1.2 mức Lớp 4 — Từ trung bình cộng và số lượng suy ra tổng, dựa trên quan hệ ngược giữa nhân và chia.",
+ "skills": {
+  "bktUnit": "CHUONG:5@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 28,
+  "prev": "DL:KSN4.B21",
+  "next": "DL:KSN4.B57"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Viết được công thức tổng bằng trung bình cộng nhân số lượng. Giải thích được vì sao công thức ấy đúng, không phải học thuộc. Dùng được nó cho bài toán có lời văn.",
+  "kidText": "Cô chỉ nói mỗi phần được 25, mà cô vẫn biết cả nhóm có 100. Con xem cô làm thế nào nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn đọc \"trung bình cộng của 4 số là 25\" rồi trả lời luôn: \"Tổng là 25.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: 25 là số của MỘT phần hay của cả bốn phần? Gợi ý 2: Của một phần thôi. Vậy bốn phần thì bao nhiêu? Chữa: 25 là số mỗi phần sau khi đã san đều. Bốn phần thì tổng là 25 × 4 = 100."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn đọc \"trung bình cộng của 4 số là 25\" rồi trả lời luôn: \"Tổng là 25.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Trung bình cộng của 4 số là 25. Tổng của bốn số ấy bằng bao nhiêu?",
+  "steps": [
+   {
+    "show": "Nhớ lại chiều thuận"
+   },
+   {
+    "show": "Trung bình cộng bằng tổng chia cho số lượng. Ở đây: tổng chia 4 được 25."
+   },
+   {
+    "show": "Đọc ngược phép chia"
+   },
+   {
+    "show": "Nếu chia cho 4 được 25 thì số ban đầu phải là 25 nhân 4."
+   },
+   {
+    "show": "Nghĩ theo cách san bằng cũng ra thế"
+   },
+   {
+    "show": "Sau khi san đều, mỗi phần có 25. Có 4 phần, nên gộp lại là 25 × 4 = 100."
+   },
+   {
+    "show": "Tính ra"
+   },
+   {
+    "show": "25 × 4 = 100."
+   },
+   {
+    "show": "Đáp số: tổng của bốn số là 100."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Trung bình cộng của 4 số là 25 — đúng bài trong video. Tổng của bốn số bằng bao nhiêu?",
+     "answerKey": {
+      "value": 100
+     },
+     "solutionNarrative": "Tổng = trung bình cộng × số lượng = 25 × 4 = 100."
+    },
+    {
+     "id": "C2",
+     "text": "Trung bình cộng của 3 số là 6. Tổng của ba số bằng bao nhiêu?",
+     "answerKey": {
+      "value": 18
+     },
+     "solutionNarrative": "6 × 3 = 18."
+    },
+    {
+     "id": "C3",
+     "text": "Trung bình cộng của 5 số là 10. Tổng của năm số bằng bao nhiêu?",
+     "answerKey": {
+      "value": 50
+     },
+     "solutionNarrative": "10 × 5 = 50."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Trung bình mỗi ngày một cửa hàng bán 14 chiếc áo. Trong 5 ngày cửa hàng bán được bao nhiêu chiếc?",
+     "answerKey": {
+      "value": 70
+     },
+     "solutionNarrative": "14 × 5 = 70 chiếc."
+    },
+    {
+     "id": "C5",
+     "text": "Bạn Bình đọc \"trung bình cộng của 4 số là 25\" rồi nói tổng là 25. Bạn sai ở đâu? Tổng đúng là bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bạn Bình nói",
+        "options": [
+         "đúng",
+         "sai"
+        ],
+        "value": "sai"
+       },
+       {
+        "label": "tổng đúng",
+        "value": 100
+       }
+      ]
+     },
+     "solutionNarrative": "25 là số của MỘT phần sau khi san đều, không phải của cả bốn phần. Tổng đúng là 25 × 4 = 100."
+    },
+    {
+     "id": "C6",
+     "text": "Vì sao lấy trung bình cộng nhân với số lượng thì được tổng?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "trung bình cộng là số của mấy phần",
+        "value": 1
+       }
+      ]
+     },
+     "solutionNarrative": "Vì trung bình cộng là số mỗi phần nhận được sau khi san đều. Có bao nhiêu phần thì gộp lại đúng bấy nhiêu lần con số ấy — mà san bằng không làm đổi tổng."
+    },
+    {
+     "id": "C7",
+     "text": "Ba bạn có trung bình 6 cái kẹo. Cả ba bạn có tất cả mấy cái kẹo?",
+     "answerKey": {
+      "value": 18
+     },
+     "solutionNarrative": "6 × 3 = 18 cái."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Trung bình mỗi tuần bạn Mai đọc 3 quyển sách. Trong 4 tuần bạn đọc bao nhiêu quyển? Nếu tuần thứ năm bạn đọc 5 quyển thì bốn tuần đầu cộng tuần năm là bao nhiêu quyển?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bốn tuần đầu",
+        "value": 12
+       },
+       {
+        "label": "cả năm tuần",
+        "value": 17
+       }
+      ]
+     },
+     "solutionNarrative": "Bốn tuần đầu: 3 × 4 = 12 quyển. Cộng tuần thứ năm: 12 + 5 = 17 quyển."
+    },
+    {
+     "id": "C9",
+     "text": "Trung bình cộng của 6 số là 12. Nếu bớt đi một số bằng 12 thì tổng của năm số còn lại bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng sáu số",
+        "value": 72
+       },
+       {
+        "label": "tổng năm số còn lại",
+        "value": 60
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng sáu số: 12 × 6 = 72. Bớt đi 12 thì còn 72 − 12 = 60."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Tổng bằng trung bình cộng nhân với số lượng các số.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Nếu trung bình cộng của 4 số là 25 thì tổng của chúng là 25.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — 25 là số của một phần. Tổng là 25 × 4 = 100."
+   },
+   {
+    "id": "Q3",
+    "text": "Trung bình cộng của 3 số là 6. Tổng của chúng là:",
+    "format": "mcq",
+    "choices": [
+     "A. 18",
+     "B. 6",
+     "C. 9"
+    ],
+    "answerKey": {
+     "choice": "A. 18"
+    },
+    "solutionNarrative": "6 × 3 = 18."
+   },
+   {
+    "id": "Q4",
+    "text": "Muốn tìm tổng khi biết trung bình cộng, ta:",
+    "format": "mcq",
+    "choices": [
+     "A. nhân trung bình cộng với số lượng",
+     "B. chia trung bình cộng cho số lượng",
+     "C. cộng trung bình cộng với số lượng"
+    ],
+    "answerKey": {
+     "choice": "A. nhân trung bình cộng với số lượng"
+    },
+    "solutionNarrative": "Đó là phép chia đọc ngược lại."
+   },
+   {
+    "id": "Q5",
+    "text": "Trung bình mỗi ngày bán 14 chiếc áo, 5 ngày bán được:",
+    "format": "mcq",
+    "choices": [
+     "A. 70 chiếc",
+     "B. 19 chiếc",
+     "C. 14 chiếc"
+    ],
+    "answerKey": {
+     "choice": "A. 70 chiếc"
+    },
+    "solutionNarrative": "14 × 5 = 70."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hỏi con kiểu đời thường: \"Nhà mình bốn người, trung bình mỗi người uống 2 cốc nước một ngày, cả nhà uống mấy cốc?\" Con sẽ tự nhân lên.",
+  "homeActivity": "Nếu con lúng túng, nhắc lại một câu: trung bình cộng là số của MỘT phần, còn tổng là số của TẤT CẢ các phần.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Hai bài trước con đi một chiều: có các số, tìm trung bình cộng. Hôm nay con đi chiều ngược lại: biết trung bình cộng rồi, tìm tổng. Con sẽ thấy nó không phải công thức mới, mà chính là phép chia cũ đọc ngược lại.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B17"
+  ],
+  "ten": [
+   "BÀI TOÁN HAI BƯỚC TÍNH"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B56_giang.mp4"
+ }
+}

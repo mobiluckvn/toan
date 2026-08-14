@@ -118,7 +118,7 @@ chương dùng chung ví dụ và chung cách nói.
 |---|---|---|---|
 | 1 | 4 · Dãy số | B18 · B19 · B20 | **nối tiếp cụm vừa xong**, dùng lại đúng ví dụ 5·10·15·20·25 |
 | ~~2~~ | ~~3 · Dấu hiệu chia hết~~ | **XONG 14-08** | 4 bài → **9 bài**, xem §12 |
-| 3 | 5 · Trung bình cộng | B21–B23 | ba bài, một công thức, dễ ra khuôn |
+| ~~3~~ | ~~5 · Trung bình cộng~~ | **XONG 14-08** | 3 bài → **6 bài**, xem §13 |
 | 4 | 6 · Tổng - hiệu | B24–B27 | có sơ đồ đoạn thẳng — cần thêm một kiểu cảnh mới |
 | 5 | 7 · Tổng - tỉ, Hiệu - tỉ | B28–B31 | dùng lại kiểu cảnh của đợt 4 |
 | 6 | 1 · Số đến lớp triệu | B01–B04 | bài đầu quyển, bé mới vào |
@@ -414,3 +414,59 @@ tới nay. Đã nắn cả mười.
 
 Ba phép canh mới ở `thu_tu_bai.test.mjs`: mọi bài đều có ít nhất một câu ôn kiểm tới ·
 câu ôn chỉ trỏ về bài **cùng chương** · câu ôn nào cũng có ô nhập chấm máy.
+
+---
+
+## 13 · Đợt 3 · chương 5 — trung bình cộng, 3 bài thành 6
+
+Cùng lỗ thủng với hai chương trước: **không bài nào nói trung bình cộng LÀ GÌ**. Bài
+đầu vào thẳng "san bằng" rồi quay sang bài toán ngược ngay trong cùng một bài.
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 26 | B55 *(mới)* | **trung bình cộng là gì** — san bằng, và chỗ công thức sinh ra |
+| 27 | B21 | tìm trung bình cộng — **đếm đúng có mấy số** |
+| 28 | B56 *(mới)* | biết trung bình cộng tìm tổng — **đọc ngược phép chia** |
+| 29 | B57 *(mới)* | tìm số còn thiếu — hai bước, không công thức mới |
+| 30 | B22 | hơn kém mức trung bình — **phần nhô lên bằng phần hụt xuống** |
+| 31 | B23 | thêm một số vào nhóm — **nhớ đổi cả số lượng** |
+
+**Bộ neo `4 ; 6 ; 8`** chạy suốt sáu bài, chọn để mọi thứ của chương NHÌN THẤY được
+trên đúng bộ ba ấy: tổng 18 chia 3 ra chẵn 6; số giữa đúng bằng trung bình nên san
+bằng chỉ là cột 8 nhường 2 cho cột 4; và phần nhô lên (2) đúng bằng phần hụt xuống
+(2) — đó là trọn bài "hơn kém mức trung bình", khỏi phải chứng minh.
+
+### Kiểu cảnh mới — `san_bang`
+
+Vẽ mấy cột cao thấp, kẻ vạch mức trung bình, và vẽ được cả trạng thái **đã san**.
+Nó làm cho "trung bình cộng" thôi là một phép chia khô khốc: bé thấy cột cao nhường
+cho cột thấp, cuối cùng ai cũng như ai. Bài "hơn kém mức trung bình" thì chỉ cần kẻ
+vạch là xong phần chứng minh.
+
+### Danh sách việc cho MỘT chương — chép ra mà làm
+
+Đợt 2 sót đề ôn tập vì không có danh sách. Nay có:
+
+```
+1. tools/<ten>_lop4.py        6 bài · giữ `hinh` cũ trước khi ghi đè
+2. data/lop4/thu_tu.json      chèn mã mới vào ĐÚNG CHỖ (tool tự làm)
+3. kich_ban_toan.py           kịch bản video, khoá theo MÃ BÀI
+4. data/loi_chao.json         lời chào — mỗi bài một câu, tối đa hai câu
+5. data/lop4_gan_lop3.json    đường lùi về lớp 3
+6. data/lop4_ontap.json       đề ôn 10+10 câu, và `veCau` trỏ ĐÚNG bài
+7. data/lop4_ontap_o.json     20 ô nhập, khoá OT<ch>#C<n> và OT<ch>#B<n>
+8. lop4_hinh.json + manifest  GỠ hình neo vào mục nay đã rỗng, xoá cả tệp .png
+9. --loi → sinh_am → dựng video
+10. dung_khuon_chung → gan_hinh → goi_y      ⚠ ĐÚNG THỨ TỰ
+11. cổng: SO_BAI · số video · dấu niêm phong MOC
+12. npm test → build → NHÌN BẢN CHẠY THẬT → commit → deploy
+```
+
+**Bước 12 không bỏ được.** Đợt 2 xanh cả 57 tệp mà đề ôn vẫn hỏng — chỉ mở ra nhìn
+mới thấy.
+
+### Số đo
+
+6 video · 5,0 phút · 73 clip tiếng mới · 84 câu hỏi · quyển từ **54 lên 57 bài**.
+Niêm phong bộ chấm 2275 → 2303, lệch đúng bằng 54 − 26 = 28 câu luyện tập chấm máy
+được của chương (ba bài cũ có 26 vì một câu vốn để bé tự chấm).

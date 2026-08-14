@@ -1,0 +1,316 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B55",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 26 · TRUNG BÌNH CỘNG LÀ GÌ — SAN CHO BẰNG NHAU",
+ "durationMinutes": 10,
+ "so": 26,
+ "chuong": 5,
+ "tenChuong": "TRUNG BÌNH CỘNG",
+ "dangGoc": "Dạng gốc: LV 1.0 mức Lớp 4 — Khái niệm trung bình cộng qua phép san bằng, và vì sao san bằng cho ra cùng kết quả với lấy tổng chia đều.",
+ "skills": {
+  "bktUnit": "CHUONG:5@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 26,
+  "prev": "DL:KSN4.B20",
+  "next": "DL:KSN4.B21"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nói được trung bình cộng là con số khi đã san đều cho các phần. Giải thích được vì sao lấy tổng chia cho số lượng lại ra đúng con số ấy. Tính được trung bình cộng của hai hoặc ba số.",
+  "kidText": "Ba bạn có 4, 6 và 8 cái kẹo. Chia lại cho bằng nhau thì mỗi bạn được mấy cái hả con?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nhìn ba số 4, 6, 8 rồi nói: \"Trung bình cộng là 18, vì cộng lại được 18.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con thử xem: nếu mỗi bạn được 18 cái thì ba bạn cần bao nhiêu cái? Gợi ý 2: Cần tới 54 cái, mà cả ba bạn cộng lại chỉ có 18 cái thôi. Chữa: 18 mới là TỔNG. Muốn ra trung bình cộng thì còn phải chia cho số phần: 18 : 3 = 6."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nhìn ba số 4, 6, 8 rồi nói: \"Trung bình cộng là 18, vì cộng lại được 18.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Ba bạn có 4, 6 và 8 cái kẹo. Nếu chia lại cho ba bạn bằng nhau thì mỗi bạn được mấy cái?",
+  "steps": [
+   {
+    "show": "Cách 1 — san bằng tay"
+   },
+   {
+    "show": "Bạn có 8 cái nhường 2 cái cho bạn có 4 cái. Bạn có 6 cái đứng yên."
+   },
+   {
+    "show": "Xong thì cả ba bạn đều có 6 cái."
+   },
+   {
+    "show": "Cách 2 — gộp lại rồi chia đều"
+   },
+   {
+    "show": "Gộp hết: 4 + 6 + 8 = 18 cái."
+   },
+   {
+    "show": "Chia đều cho 3 bạn: 18 : 3 = 6 cái."
+   },
+   {
+    "show": "Hai cách cho cùng một kết quả"
+   },
+   {
+    "show": "Đều ra 6. Vì san bằng chỉ là chuyển kẹo qua lại, tổng số kẹo không đổi — nên gộp lại rồi chia đều cũng thế."
+   },
+   {
+    "show": "Đáp số: mỗi bạn được 6 cái. Số 6 gọi là trung bình cộng của 4, 6 và 8."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Ba bạn có 4, 6 và 8 cái kẹo — đúng bộ số trong video. Gộp lại thì được bao nhiêu cái?",
+     "answerKey": {
+      "value": 18
+     },
+     "solutionNarrative": "4 + 6 + 8 = 18 cái."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn 18 cái kẹo chia đều cho 3 bạn. Mỗi bạn được mấy cái?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "18 : 3 = 6 cái. Vậy trung bình cộng của 4, 6 và 8 là 6."
+    },
+    {
+     "id": "C3",
+     "text": "Tìm trung bình cộng của hai số 10 và 20.",
+     "answerKey": {
+      "value": 15
+     },
+     "solutionNarrative": "Tổng là 10 + 20 = 30, chia cho 2 số: 30 : 2 = 15."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tìm trung bình cộng của ba số 12, 15 và 18.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng",
+        "value": 45
+       },
+       {
+        "label": "trung bình cộng",
+        "value": 15
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng là 12 + 15 + 18 = 45, chia cho 3 số: 45 : 3 = 15."
+    },
+    {
+     "id": "C5",
+     "text": "Bạn Nam nói: \"Trung bình cộng của 4, 6 và 8 là 18.\" Bạn nói đúng hay sai? Số đúng là bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bạn Nam nói",
+        "options": [
+         "đúng",
+         "sai"
+        ],
+        "value": "sai"
+       },
+       {
+        "label": "số đúng",
+        "value": 6
+       }
+      ]
+     },
+     "solutionNarrative": "SAI. 18 mới là tổng, còn phải chia cho 3 phần nữa: 18 : 3 = 6."
+    },
+    {
+     "id": "C6",
+     "text": "Vì sao san bằng bằng tay và lấy tổng chia đều lại cho cùng một kết quả?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "san bằng có làm đổi tổng không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì san bằng chỉ là chuyển bớt từ phần nhiều sang phần ít, TỔNG không đổi. Tổng không đổi mà chia đều cho cùng số phần thì kết quả phải như nhau."
+    },
+    {
+     "id": "C7",
+     "text": "Ba bạn có 5, 5 và 5 cái kẹo. Trung bình cộng bằng bao nhiêu? Con có cần tính không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "trung bình cộng",
+        "value": 5
+       },
+       {
+        "label": "có cần tính không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Bằng 5. Ba phần đã bằng nhau sẵn nên không phải san gì, trung bình cộng chính là con số đó."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tìm trung bình cộng của bốn số 2, 4, 6 và 8.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng",
+        "value": 20
+       },
+       {
+        "label": "trung bình cộng",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng là 2 + 4 + 6 + 8 = 20, chia cho 4 số: 20 : 4 = 5."
+    },
+    {
+     "id": "C9",
+     "text": "Một bạn có 9 cái kẹo, một bạn có 3 cái. San cho bằng nhau thì mỗi bạn được mấy cái, và bạn nhiều phải nhường mấy cái?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi bạn được mấy cái",
+        "value": 6
+       },
+       {
+        "label": "bạn nhiều nhường mấy cái",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Trung bình cộng: (9 + 3) : 2 = 6 cái mỗi bạn. Bạn có 9 cái phải nhường 9 − 6 = 3 cái."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Trung bình cộng là con số mà mỗi phần nhận được khi đã san đều.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Trung bình cộng của 4, 6 và 8 là 18.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — 18 là tổng. Trung bình cộng là 18 : 3 = 6."
+   },
+   {
+    "id": "Q3",
+    "text": "Trung bình cộng của 4, 6 và 8 là:",
+    "format": "mcq",
+    "choices": [
+     "A. 6",
+     "B. 18",
+     "C. 8"
+    ],
+    "answerKey": {
+     "choice": "A. 6"
+    },
+    "solutionNarrative": "Tổng 18 chia cho 3 số được 6."
+   },
+   {
+    "id": "Q4",
+    "text": "Muốn tìm trung bình cộng, sau khi cộng hết các số lại ta phải:",
+    "format": "mcq",
+    "choices": [
+     "A. chia cho số lượng các số",
+     "B. nhân với số lượng các số",
+     "C. giữ nguyên"
+    ],
+    "answerKey": {
+     "choice": "A. chia cho số lượng các số"
+    },
+    "solutionNarrative": "Cộng rồi chia đều — đó là san bằng."
+   },
+   {
+    "id": "Q5",
+    "text": "Trung bình cộng của 10 và 20 là:",
+    "format": "mcq",
+    "choices": [
+     "A. 15",
+     "B. 30",
+     "C. 10"
+    ],
+    "answerKey": {
+     "choice": "A. 15"
+    },
+    "solutionNarrative": "(10 + 20) : 2 = 15."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Lấy ba nắm hạt không bằng nhau rồi bảo con san cho đều. Con làm xong hãy hỏi: \"Mỗi phần được mấy hạt?\" — đó chính là trung bình cộng.",
+  "homeActivity": "Con nhầm trung bình cộng với tổng là chuyện rất thường. Bố mẹ hỏi lại: \"Con vừa cộng xong, nhưng chia cho mấy phần rồi?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Lớp 3 con đã làm bài \"thêm bớt để bằng nhau\". Hôm nay con gọi đúng tên việc ấy: san cho bằng nhau thì mỗi phần được bao nhiêu, con số đó gọi là trung bình cộng. Hiểu nó là gì rồi thì năm bài sau chỉ còn là năm cách dùng.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B18",
+   "DL:KSN3.B19"
+  ],
+  "ten": [
+   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?",
+   "THÊM BỚT ĐỂ BẰNG NHAU"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B55_giang.mp4"
+ }
+}

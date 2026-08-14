@@ -214,7 +214,12 @@ function diemDanh() {
    lời đọc chứ không phải con số, nên theo luật ô nhập phải là nút bấm) — thêm đúng
    hai câu máy chấm được. `dungKhiDungDap` cũng +2, nghĩa là cả hai chấm đúng, và
    `dungKhiSaiDap`/`tuDoiChieu` vẫn đứng yên ở 1 và 1. */
-const MOC = { tong: 2275, dungKhiDungDap: 2273, dungKhiSaiDap: 1, tuDoiChieu: 1 };
+/* ⚠ 2275 → 2303. Chương 5 tách ba bài thành sáu. Đo lại chính ba mã cũ:
+       trước  26 câu luyện tập chấm máy được (một câu vốn để bé tự chấm)
+       sau    54 câu  ·  lệch +28  ·  2275 + 28 = 2303  ✓
+   Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
+const MOC = { tong: 2303, dungKhiDungDap: 2301, dungKhiSaiDap: 1, tuDoiChieu: 1 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`
