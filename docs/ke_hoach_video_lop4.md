@@ -391,3 +391,26 @@ nay rỗng — giữ lại là hình không bao giờ hiện.
 diff` trên `src/mon/toan/lib/` trống trơn; `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên
 ở 1 và 1 (hai con số này đếm câu chấm **bất thường**, nên đổi cách chấm là chúng động
 đậy ngay cả khi tổng khớp); 11 kỳ sát hạch vẫn 124 câu. Lệch đúng bằng 9×9 − 4×9 = 45.
+
+### Đề ôn tập cũng phải theo — bốn sổ, không phải một
+
+Tách bài xong mà quên đề ôn thì **57 tệp cổng vẫn xanh**, chỉ mở bản chạy thật mới
+thấy: đề đã là câu mới ("18 quả cam") mà ô nhập vẫn là ô cũ ("xếp hàng 2 vừa khít
+không"). Đề một đằng, ô một nẻo — xét riêng thì bên nào cũng hợp lệ.
+
+Một kỳ ôn tập nằm rải ở **bốn sổ**, sửa thiếu một là hỏng câm:
+
+| sổ | giữ gì |
+|---|---|
+| `data/lop4_ontap.json` | đề bài, đáp án chữ, và `veCau` — **mũi tên gửi bé về bài cần ôn** |
+| `data/lop4_ontap_o.json` | ô nhập chấm máy, khoá `OT<ch>#C<n>` và `OT<ch>#B<n>` |
+| `data/lop4_hinh.json` + manifest | hình của kỳ |
+| `khuon_chung.py` · `TEN_KY` | tên kỳ hiện trên màn (đè tên trong `lop4_ontap.json`) |
+
+**`veCau` là chỗ âm thầm nhất.** Đợt 1 tách cụm dãy số thành năm bài nhưng mười câu
+của kỳ ôn 4 vẫn trỏ về ba bài cũ — câu "tính tổng" gửi bé về bài dùng-cả-bốn-công-thức
+thay vì bài tổng-dãy-cách-đều. Bé làm sai được đưa nhầm bài để ôn lại, suốt từ đợt 1
+tới nay. Đã nắn cả mười.
+
+Ba phép canh mới ở `thu_tu_bai.test.mjs`: mọi bài đều có ít nhất một câu ôn kiểm tới ·
+câu ôn chỉ trỏ về bài **cùng chương** · câu ôn nào cũng có ô nhập chấm máy.

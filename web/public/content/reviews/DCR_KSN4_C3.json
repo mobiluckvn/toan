@@ -13,55 +13,54 @@
    "id": "REVITEM:KSN4.C3.A1",
    "qno": 1,
    "star": 1,
-   "text": "Đoàn 234 em xếp hàng 2 có vừa khít không? Xếp hàng 5 thì dư mấy em? (Chỉ nhìn đuôi số!)",
-   "answer": "Hàng 2 vừa khít (đuôi 4 chẵn, 117 cặp); hàng 5 dư 4 em.",
+   "text": "Có 18 quả cam chia đều vào các đĩa. Mỗi đĩa 6 quả thì có thừa không? Mỗi đĩa 4 quả thì thừa mấy quả?",
+   "answer": "Mỗi đĩa 6 quả: 18 : 6 = 3 đĩa, không thừa nên 18 chia hết cho 6. Mỗi đĩa 4 quả: 18 : 4 = 4 dư 2, thừa 2 quả.",
    "answerKey": {
     "parts": [
      {
-      "label": "xếp hàng 2",
+      "label": "mỗi đĩa 6 quả có thừa không",
       "options": [
-       "vừa khít",
-       "không vừa khít"
+       "có",
+       "không"
       ],
-      "value": "vừa khít"
+      "value": "không"
      },
      {
-      "label": "xếp hàng 5 dư mấy em",
-      "value": 4
+      "label": "mỗi đĩa 4 quả thừa mấy quả",
+      "value": 2
      }
     ]
    },
-   "solutionNarrative": "Hàng 2 vừa khít (đuôi 4 chẵn, 117 cặp); hàng 5 dư 4 em.",
-   "diagnosesMicro": "DL:KSN4.B09",
+   "solutionNarrative": "Mỗi đĩa 6 quả: 18 : 6 = 3 đĩa, không thừa nên 18 chia hết cho 6. Mỗi đĩa 4 quả: 18 : 4 = 4 dư 2, thừa 2 quả.",
+   "diagnosesMicro": "DL:KSN4.B50",
    "veBai": [
     {
-     "id": "DL:KSN4.B09",
-     "ten": "Bài 10 · DẤU HIỆU CHIA HẾT CHO 2 — VÌ SAO CHỈ NHÌN CHỮ SỐ CUỐI"
+     "id": "DL:KSN4.B50",
+     "ten": "Bài 9 · CHIA HẾT LÀ GÌ — VÀ PHẦN THỪA GỌI LÀ GÌ"
     }
    ],
-   "trapName": "Bài 10 · DẤU HIỆU CHIA HẾT CHO 2 — VÌ SAO CHỈ NHÌN CHỮ SỐ CUỐI",
+   "trapName": "Bài 9 · CHIA HẾT LÀ GÌ — VÀ PHẦN THỪA GỌI LÀ GÌ",
    "canCu": "sach"
   },
   {
    "id": "REVITEM:KSN4.C3.A2",
    "qno": 2,
    "star": 1,
-   "text": "Tìm chữ số x để số 47x chia hết cho 5.",
-   "answer": "X = 0 hoặc 5.",
+   "text": "Trong các số 132 ; 145 ; 208, số nào chia hết cho 2?",
+   "answer": "Nhìn chữ số cuối: 132 và 208 chia hết cho 2; 145 thì không (cuối là 5).",
    "answerKey": {
     "parts": [
      {
-      "label": "chữ số x",
-      "options": [
-       "0 hoặc 5",
-       "0",
-       "5"
-      ],
-      "value": "0 hoặc 5"
+      "label": "số thứ nhất",
+      "value": 132
+     },
+     {
+      "label": "số thứ hai",
+      "value": 208
      }
     ]
    },
-   "solutionNarrative": "X = 0 hoặc 5.",
+   "solutionNarrative": "Nhìn chữ số cuối: 132 và 208 chia hết cho 2; 145 thì không (cuối là 5).",
    "diagnosesMicro": "DL:KSN4.B09",
    "veBai": [
     {
@@ -76,45 +75,83 @@
    "id": "REVITEM:KSN4.C3.A3",
    "qno": 3,
    "star": 1,
-   "text": "Lô 348 chiếc bánh đóng hộp 3 chiếc có vừa khít không? Được bao nhiêu hộp?",
-   "answer": "Vừa khít — tổng chữ số 15 chia hết cho 3; được 348 : 3 = 116 hộp.",
+   "text": "Tìm chữ số điền vào ô trống để số 47 ô chia hết cho 5.",
+   "answer": "Chữ số cuối phải là 0 hoặc 5, nên điền 0 (được 470) hoặc 5 (được 475).",
    "answerKey": {
     "parts": [
      {
-      "label": "đóng hộp 3 có vừa khít không",
-      "options": [
-       "vừa khít",
-       "không vừa khít"
-      ],
-      "value": "vừa khít"
+      "label": "chữ số nhỏ nhất điền được",
+      "value": 0
      },
      {
-      "label": "số hộp",
-      "value": 116
+      "label": "chữ số còn lại điền được",
+      "value": 5
      }
     ]
    },
-   "solutionNarrative": "Vừa khít — tổng chữ số 15 chia hết cho 3; được 348 : 3 = 116 hộp.",
-   "diagnosesMicro": "DL:KSN4.B10",
+   "solutionNarrative": "Chữ số cuối phải là 0 hoặc 5, nên điền 0 (được 470) hoặc 5 (được 475).",
+   "diagnosesMicro": "DL:KSN4.B51",
    "veBai": [
     {
-     "id": "DL:KSN4.B10",
-     "ten": "Bài 13 · DẤU HIỆU CHIA HẾT CHO 9 — VÌ SAO LẠI CỘNG CÁC CHỮ SỐ"
+     "id": "DL:KSN4.B51",
+     "ten": "Bài 11 · DẤU HIỆU CHIA HẾT CHO 5 — CŨNG CHỈ NHÌN CHỮ SỐ CUỐI"
     }
    ],
-   "trapName": "Bài 13 · DẤU HIỆU CHIA HẾT CHO 9 — VÌ SAO LẠI CỘNG CÁC CHỮ SỐ",
+   "trapName": "Bài 11 · DẤU HIỆU CHIA HẾT CHO 5 — CŨNG CHỈ NHÌN CHỮ SỐ CUỐI",
    "canCu": "sach"
   },
   {
    "id": "REVITEM:KSN4.C3.A4",
    "qno": 4,
    "star": 1,
-   "text": "Tìm chữ số x để số 5x2 chia hết cho 9.",
-   "answer": "7 + x = 9 → x = 2 (số 522).",
+   "text": "Trong các số 130 ; 135 ; 142, số nào chia hết cho CẢ 2 và 5? Vì sao?",
+   "answer": "Chỉ 130 — vì nó tận cùng bằng 0, chữ số duy nhất vừa chẵn vừa thuộc nhóm 0 hoặc 5.",
    "answerKey": {
-    "value": 2
+    "parts": [
+     {
+      "label": "số chia hết cho cả 2 và 5",
+      "value": 130
+     },
+     {
+      "label": "vì tận cùng bằng",
+      "value": 0
+     }
+    ]
    },
-   "solutionNarrative": "7 + x = 9 → x = 2 (số 522).",
+   "solutionNarrative": "Chỉ 130 — vì nó tận cùng bằng 0, chữ số duy nhất vừa chẵn vừa thuộc nhóm 0 hoặc 5.",
+   "diagnosesMicro": "DL:KSN4.B52",
+   "veBai": [
+    {
+     "id": "DL:KSN4.B52",
+     "ten": "Bài 12 · CHIA HẾT CHO CẢ 2 VÀ CHO 5 — PHẦN CHUNG CỦA HAI DẤU HIỆU"
+    }
+   ],
+   "trapName": "Bài 12 · CHIA HẾT CHO CẢ 2 VÀ CHO 5 — PHẦN CHUNG CỦA HAI DẤU HIỆU",
+   "canCu": "sach"
+  },
+  {
+   "id": "REVITEM:KSN4.C3.A5",
+   "qno": 5,
+   "star": 1,
+   "text": "Số 270 có chia hết cho 9 không? Nêu cách con kiểm.",
+   "answer": "Cộng các chữ số: 2 + 7 + 0 = 9. Số 9 chia hết cho 9 nên 270 chia hết cho 9.",
+   "answerKey": {
+    "parts": [
+     {
+      "label": "tổng các chữ số",
+      "value": 9
+     },
+     {
+      "label": "có chia hết cho 9 không",
+      "options": [
+       "có",
+       "không"
+      ],
+      "value": "có"
+     }
+    ]
+   },
+   "solutionNarrative": "Cộng các chữ số: 2 + 7 + 0 = 9. Số 9 chia hết cho 9 nên 270 chia hết cho 9.",
    "diagnosesMicro": "DL:KSN4.B10",
    "veBai": [
     {
@@ -126,60 +163,19 @@
    "canCu": "sach"
   },
   {
-   "id": "REVITEM:KSN4.C3.A5",
-   "qno": 5,
-   "star": 1,
-   "text": "Từ ba tấm thẻ 0 ; 2 ; 5, lập tất cả các số có ba chữ số khác nhau chia hết cho 5.",
-   "answer": "205, 250, 520.",
-   "answerKey": {
-    "ordered": false,
-    "values": [
-     205,
-     250,
-     520
-    ]
-   },
-   "solutionNarrative": "205, 250, 520.",
-   "diagnosesMicro": "DL:KSN4.B09",
-   "veBai": [
-    {
-     "id": "DL:KSN4.B09",
-     "ten": "Bài 10 · DẤU HIỆU CHIA HẾT CHO 2 — VÌ SAO CHỈ NHÌN CHỮ SỐ CUỐI"
-    }
-   ],
-   "trapName": "Bài 10 · DẤU HIỆU CHIA HẾT CHO 2 — VÌ SAO CHỈ NHÌN CHỮ SỐ CUỐI",
-   "canCu": "sach"
-  },
-  {
    "id": "REVITEM:KSN4.C3.A6",
    "qno": 6,
    "star": 1,
-   "text": "Kho đèn ông sao có từ 30 đến 50 chiếc: xếp hàng 4 thừa 3 chiếc, xếp hàng 5 thừa 4 chiếc. Hỏi kho có bao nhiêu chiếc đèn?",
-   "answer": "(số đèn + 1) chia hết cho 20 → bằng 40 → kho có 39 chiếc. Thử: 39 : 4 dư 3 ✓; 39 : 5 dư 4 ✓.",
-   "answerKey": {
-    "value": 39
-   },
-   "solutionNarrative": "(số đèn + 1) chia hết cho 20 → bằng 40 → kho có 39 chiếc. Thử: 39 : 4 dư 3 ✓; 39 : 5 dư 4 ✓.",
-   "diagnosesMicro": "DL:KSN4.B11",
-   "veBai": [
-    {
-     "id": "DL:KSN4.B11",
-     "ten": "Bài 15 · PHÉP CHIA CÓ DƯ — VÌ SAO SỐ DƯ LUÔN NHỎ HƠN SỐ CHIA"
-    }
-   ],
-   "trapName": "Bài 15 · PHÉP CHIA CÓ DƯ — VÌ SAO SỐ DƯ LUÔN NHỎ HƠN SỐ CHIA",
-   "canCu": "sach"
-  },
-  {
-   "id": "REVITEM:KSN4.C3.A7",
-   "qno": 7,
-   "star": 1,
-   "text": "Không tính tổng, cho biết 45 + 72 có chia hết cho 9 không? Vì sao?",
-   "answer": "Có — 45 và 72 đều chia hết cho 9 (tổng chữ số 9) nên 45 + 72 = 117 chia hết cho 9.",
+   "text": "Số 348 chia hết cho 3 hay cho 9, hay cả hai? Giải thích.",
+   "answer": "3 + 4 + 8 = 15. Số 15 chia hết cho 3 nhưng không chia hết cho 9, nên 348 chỉ chia hết cho 3.",
    "answerKey": {
     "parts": [
      {
-      "label": "45 + 72 có chia hết cho 9 không",
+      "label": "tổng các chữ số",
+      "value": 15
+     },
+     {
+      "label": "chia hết cho 3 không",
       "options": [
        "có",
        "không"
@@ -187,12 +183,45 @@
       "value": "có"
      },
      {
-      "label": "tổng bằng bao nhiêu",
-      "value": 117
+      "label": "chia hết cho 9 không",
+      "options": [
+       "có",
+       "không"
+      ],
+      "value": "không"
      }
     ]
    },
-   "solutionNarrative": "Có — 45 và 72 đều chia hết cho 9 (tổng chữ số 9) nên 45 + 72 = 117 chia hết cho 9.",
+   "solutionNarrative": "3 + 4 + 8 = 15. Số 15 chia hết cho 3 nhưng không chia hết cho 9, nên 348 chỉ chia hết cho 3.",
+   "diagnosesMicro": "DL:KSN4.B53",
+   "veBai": [
+    {
+     "id": "DL:KSN4.B53",
+     "ten": "Bài 14 · DẤU HIỆU CHIA HẾT CHO 3 — VÀ KHÁC CHO 9 CHỖ NÀO"
+    }
+   ],
+   "trapName": "Bài 14 · DẤU HIỆU CHIA HẾT CHO 3 — VÀ KHÁC CHO 9 CHỖ NÀO",
+   "canCu": "sach"
+  },
+  {
+   "id": "REVITEM:KSN4.C3.A7",
+   "qno": 7,
+   "star": 1,
+   "text": "Bạn Hùng viết 23 : 5 = 3 (dư 8). Bạn sai ở đâu? Kết quả đúng là gì?",
+   "answer": "Số dư 8 lớn hơn số chia 5, nghĩa là còn xếp thêm được một nhóm nữa. Đúng phải là 23 : 5 = 4 (dư 3).",
+   "answerKey": {
+    "parts": [
+     {
+      "label": "thương đúng",
+      "value": 4
+     },
+     {
+      "label": "số dư đúng",
+      "value": 3
+     }
+    ]
+   },
+   "solutionNarrative": "Số dư 8 lớn hơn số chia 5, nghĩa là còn xếp thêm được một nhóm nữa. Đúng phải là 23 : 5 = 4 (dư 3).",
    "diagnosesMicro": "DL:KSN4.B11",
    "veBai": [
     {
@@ -207,12 +236,61 @@
    "id": "REVITEM:KSN4.C3.A8",
    "qno": 8,
    "star": 1,
-   "text": "Không tính cả tích, tìm chữ số tận cùng của 12 × 15 × 7.",
-   "answer": "12 chẵn gặp 15 đuôi 5 → cặp 2 × 5 → tận cùng 0 (12 × 15 × 7 = 1 260 ✓).",
+   "text": "Một phép chia có số chia là 5, thương là 7, số dư là 3. Tìm số bị chia.",
+   "answer": "Số bị chia = số chia × thương + số dư = 5 × 7 + 3 = 38.",
+   "answerKey": {
+    "value": 38
+   },
+   "solutionNarrative": "Số bị chia = số chia × thương + số dư = 5 × 7 + 3 = 38.",
+   "diagnosesMicro": "DL:KSN4.B11",
+   "veBai": [
+    {
+     "id": "DL:KSN4.B11",
+     "ten": "Bài 15 · PHÉP CHIA CÓ DƯ — VÌ SAO SỐ DƯ LUÔN NHỎ HƠN SỐ CHIA"
+    }
+   ],
+   "trapName": "Bài 15 · PHÉP CHIA CÓ DƯ — VÌ SAO SỐ DƯ LUÔN NHỎ HƠN SỐ CHIA",
+   "canCu": "sach"
+  },
+  {
+   "id": "REVITEM:KSN4.C3.A9",
+   "qno": 9,
+   "star": 1,
+   "text": "Lớp có 25 bạn, mỗi xe chở 6 bạn. Hỏi có mấy xe chở đầy 6 bạn, và cần ít nhất bao nhiêu xe để chở hết cả lớp?",
+   "answer": "25 : 6 = 4 dư 1. Có 4 xe chở đầy; muốn chở hết thì cần 5 xe, vì bạn thừa ra vẫn phải đi.",
+   "answerKey": {
+    "parts": [
+     {
+      "label": "mấy xe chở đầy",
+      "value": 4
+     },
+     {
+      "label": "cần ít nhất mấy xe",
+      "value": 5
+     }
+    ]
+   },
+   "solutionNarrative": "25 : 6 = 4 dư 1. Có 4 xe chở đầy; muốn chở hết thì cần 5 xe, vì bạn thừa ra vẫn phải đi.",
+   "diagnosesMicro": "DL:KSN4.B54",
+   "veBai": [
+    {
+     "id": "DL:KSN4.B54",
+     "ten": "Bài 16 · BÀI TOÁN THỪA - THIẾU — SỐ DƯ ĐÒI THÊM MỘT CHỖ NỮA"
+    }
+   ],
+   "trapName": "Bài 16 · BÀI TOÁN THỪA - THIẾU — SỐ DƯ ĐÒI THÊM MỘT CHỖ NỮA",
+   "canCu": "sach"
+  },
+  {
+   "id": "REVITEM:KSN4.C3.A10",
+   "qno": 10,
+   "star": 1,
+   "text": "Không tính cả tích, cho biết 12 × 15 × 7 có chữ số tận cùng là mấy.",
+   "answer": "Chỉ giữ chữ số cuối: 2 × 5 = 10 tận cùng 0; 0 × 7 = 0. Vậy tích tận cùng bằng 0.",
    "answerKey": {
     "value": 0
    },
-   "solutionNarrative": "12 chẵn gặp 15 đuôi 5 → cặp 2 × 5 → tận cùng 0 (12 × 15 × 7 = 1 260 ✓).",
+   "solutionNarrative": "Chỉ giữ chữ số cuối: 2 × 5 = 10 tận cùng 0; 0 × 7 = 0. Vậy tích tận cùng bằng 0.",
    "diagnosesMicro": "DL:KSN4.B12",
    "veBai": [
     {
@@ -222,86 +300,28 @@
    ],
    "trapName": "Bài 17 · CHỮ SỐ TẬN CÙNG CỦA MỘT TÍCH — CHỈ HAI CHỮ SỐ CUỐI QUYẾT ĐỊNH",
    "canCu": "sach"
-  },
-  {
-   "id": "REVITEM:KSN4.C3.A9",
-   "qno": 9,
-   "star": 1,
-   "text": "Trong hai số 316 và 425, số nào chia hết cho 4? Số nào chia hết cho 25?",
-   "answer": "316 chia hết cho 4 (16 ⋮ 4); 425 chia hết cho 25 (đuôi 25).",
-   "answerKey": {
-    "parts": [
-     {
-      "label": "số chia hết cho 4",
-      "value": 316
-     },
-     {
-      "label": "số chia hết cho 25",
-      "value": 425
-     }
-    ]
-   },
-   "solutionNarrative": "316 chia hết cho 4 (16 ⋮ 4); 425 chia hết cho 25 (đuôi 25).",
-   "diagnosesMicro": "DL:KSN4.B10",
-   "veBai": [
-    {
-     "id": "DL:KSN4.B10",
-     "ten": "Bài 13 · DẤU HIỆU CHIA HẾT CHO 9 — VÌ SAO LẠI CỘNG CÁC CHỮ SỐ"
-    }
-   ],
-   "trapName": "Bài 13 · DẤU HIỆU CHIA HẾT CHO 9 — VÌ SAO LẠI CỘNG CÁC CHỮ SỐ",
-   "canCu": "sach"
-  },
-  {
-   "id": "REVITEM:KSN4.C3.A10",
-   "qno": 10,
-   "star": 1,
-   "text": "Tìm các chữ số x và y để số 4x3y chia hết cho cả 2 ; 5 và 9.",
-   "answer": "Y = 0 (chia hết cả 2 và 5); 7 + x chia hết cho 9 → x = 2. Số cần tìm: 4 230.",
-   "answerKey": {
-    "parts": [
-     {
-      "label": "chữ số x",
-      "value": 2
-     },
-     {
-      "label": "chữ số y",
-      "value": 0
-     }
-    ]
-   },
-   "solutionNarrative": "Y = 0 (chia hết cả 2 và 5); 7 + x chia hết cho 9 → x = 2. Số cần tìm: 4 230.",
-   "diagnosesMicro": "DL:KSN4.B09",
-   "veBai": [
-    {
-     "id": "DL:KSN4.B09",
-     "ten": "Bài 10 · DẤU HIỆU CHIA HẾT CHO 2 — VÌ SAO CHỈ NHÌN CHỮ SỐ CUỐI"
-    },
-    {
-     "id": "DL:KSN4.B10",
-     "ten": "Bài 13 · DẤU HIỆU CHIA HẾT CHO 9 — VÌ SAO LẠI CỘNG CÁC CHỮ SỐ"
-    }
-   ],
-   "trapName": "Bài 10 · DẤU HIỆU CHIA HẾT CHO 2 — VÌ SAO CHỈ NHÌN CHỮ SỐ CUỐI",
-   "canCu": "sach"
   }
  ],
  "deB": [
   {
    "id": "B1",
    "qno": 1,
-   "text": "Trong các số 72 ; 85 ; 90: số nào chia hết cho 2? Số nào chia hết cho 5?",
-   "answer": "Chia hết cho 2: 72, 90; chia hết cho 5: 85, 90.",
-   "solutionNarrative": "Chia hết cho 2: 72, 90; chia hết cho 5: 85, 90.",
+   "text": "Có 20 cái kẹo chia đều cho các bạn. Mỗi bạn 5 cái thì có thừa không? Mỗi bạn 3 cái thì thừa mấy cái?",
+   "answer": "Mỗi bạn 5 cái: 20 : 5 = 4, không thừa. Mỗi bạn 3 cái: 20 : 3 = 6 dư 2, thừa 2 cái.",
+   "solutionNarrative": "Mỗi bạn 5 cái: 20 : 5 = 4, không thừa. Mỗi bạn 3 cái: 20 : 3 = 6 dư 2, thừa 2 cái.",
    "answerKey": {
     "parts": [
      {
-      "label": "số nào chia hết cho 2",
-      "value": "72, 90"
+      "label": "mỗi bạn 5 cái có thừa không",
+      "options": [
+       "có",
+       "không"
+      ],
+      "value": "không"
      },
      {
-      "label": "Số nào chia hết cho 5",
-      "value": "85, 90"
+      "label": "mỗi bạn 3 cái thừa mấy cái",
+      "value": 2
      }
     ]
    }
@@ -309,39 +329,37 @@
   {
    "id": "B2",
    "qno": 2,
-   "text": "Tìm các chữ số x để số 38x chia hết cho 2.",
-   "answer": "X = 0, 2, 4, 6, 8.",
-   "solutionNarrative": "X = 0, 2, 4, 6, 8.",
+   "text": "Trong các số 214 ; 307 ; 460, số nào chia hết cho 2?",
+   "answer": "214 và 460 (chữ số cuối là 4 và 0); 307 thì không.",
+   "solutionNarrative": "214 và 460 (chữ số cuối là 4 và 0); 307 thì không.",
    "answerKey": {
-    "ordered": false,
-    "values": [
-     0,
-     2,
-     4,
-     6,
-     8
+    "parts": [
+     {
+      "label": "số thứ nhất",
+      "value": 214
+     },
+     {
+      "label": "số thứ hai",
+      "value": 460
+     }
     ]
    }
   },
   {
    "id": "B3",
    "qno": 3,
-   "text": "Số 570 có chia hết cho 3 không? Vì sao?",
-   "answer": "Có — tổng chữ số 5 + 7 + 0 = 12 chia hết cho 3.",
-   "solutionNarrative": "Có — tổng chữ số 5 + 7 + 0 = 12 chia hết cho 3.",
+   "text": "Tìm chữ số điền vào ô trống để số 63 ô chia hết cho 5.",
+   "answer": "Điền 0 (được 630) hoặc 5 (được 635).",
+   "solutionNarrative": "Điền 0 (được 630) hoặc 5 (được 635).",
    "answerKey": {
     "parts": [
      {
-      "label": "570 có chia hết cho 3 không",
-      "options": [
-       "có",
-       "không"
-      ],
-      "value": "có"
+      "label": "chữ số nhỏ nhất điền được",
+      "value": 0
      },
      {
-      "label": "tổng các chữ số",
-      "value": 12
+      "label": "chữ số còn lại điền được",
+      "value": 5
      }
     ]
    }
@@ -349,42 +367,32 @@
   {
    "id": "B4",
    "qno": 4,
-   "text": "Tìm các chữ số x để số 27x chia hết cho 9.",
-   "answer": "9 + x chia hết cho 9 → x = 0 hoặc 9.",
-   "solutionNarrative": "9 + x chia hết cho 9 → x = 0 hoặc 9.",
+   "text": "Trong các số 240 ; 245 ; 252, số nào chia hết cho CẢ 2 và 5?",
+   "answer": "Chỉ 240 — nó tận cùng bằng 0.",
+   "solutionNarrative": "Chỉ 240 — nó tận cùng bằng 0.",
    "answerKey": {
-    "parts": [
-     {
-      "label": "chữ số x",
-      "options": [
-       "0 hoặc 9",
-       "0",
-       "9"
-      ],
-      "value": "0 hoặc 9"
-     }
-    ]
+    "value": 240
    }
   },
   {
    "id": "B5",
    "qno": 5,
-   "text": "Từ ba tấm thẻ 1 ; 2 ; 3 lập các số có ba chữ số khác nhau. Các số ấy có cùng chia hết cho 3 không? Vì sao?",
-   "answer": "Có — mọi số lập ra đều có tổng chữ số 1 + 2 + 3 = 6 chia hết cho 3 (cả 6 số: 123, 132, 213, 231, 312, 321).",
-   "solutionNarrative": "Có — mọi số lập ra đều có tổng chữ số 1 + 2 + 3 = 6 chia hết cho 3 (cả 6 số: 123, 132, 213, 231, 312, 321).",
+   "text": "Số 459 có chia hết cho 9 không? Nêu cách con kiểm.",
+   "answer": "4 + 5 + 9 = 18, mà 18 chia hết cho 9, nên 459 chia hết cho 9.",
+   "solutionNarrative": "4 + 5 + 9 = 18, mà 18 chia hết cho 9, nên 459 chia hết cho 9.",
    "answerKey": {
     "parts": [
      {
-      "label": "các số ấy có cùng chia hết cho 3 không",
+      "label": "tổng các chữ số",
+      "value": 18
+     },
+     {
+      "label": "có chia hết cho 9 không",
       "options": [
        "có",
        "không"
       ],
       "value": "có"
-     },
-     {
-      "label": "tổng ba chữ số",
-      "value": 6
      }
     ]
    }
@@ -392,54 +400,17 @@
   {
    "id": "B6",
    "qno": 6,
-   "text": "Liệt kê các số chia 5 dư 3 trong khoảng từ 20 đến 40.",
-   "answer": "23, 28, 33, 38.",
-   "solutionNarrative": "23, 28, 33, 38.",
-   "answerKey": {
-    "ordered": true,
-    "values": [
-     23,
-     28,
-     33,
-     38
-    ]
-   }
-  },
-  {
-   "id": "B7",
-   "qno": 7,
-   "text": "Một số từ 20 đến 40, chia 6 thì thừa 5. Liệt kê các số có thể.",
-   "answer": "Số + 1 chia hết cho 6 → 24, 30, 36 → các số: 23, 29, 35.",
-   "solutionNarrative": "Số + 1 chia hết cho 6 → 24, 30, 36 → các số: 23, 29, 35.",
-   "answerKey": {
-    "ordered": false,
-    "values": [
-     23,
-     29,
-     35
-    ]
-   }
-  },
-  {
-   "id": "B8",
-   "qno": 8,
-   "text": "Không tính, tìm chữ số tận cùng của 26 × 35.",
-   "answer": "6 gặp 5 → cặp 2 × 5 → tận cùng 0 (26 × 35 = 910 ✓).",
-   "solutionNarrative": "6 gặp 5 → cặp 2 × 5 → tận cùng 0 (26 × 35 = 910 ✓).",
-   "answerKey": {
-    "value": 0
-   }
-  },
-  {
-   "id": "B9",
-   "qno": 9,
-   "text": "Không tính hiệu, cho biết 63 − 27 có chia hết cho 9 không? Vì sao?",
-   "answer": "Có — 63 và 27 đều chia hết cho 9 nên hiệu 36 chia hết cho 9.",
-   "solutionNarrative": "Có — 63 và 27 đều chia hết cho 9 nên hiệu 36 chia hết cho 9.",
+   "text": "Số 123 chia hết cho 3 hay cho 9, hay cả hai?",
+   "answer": "1 + 2 + 3 = 6. Số 6 chia hết cho 3 nhưng không chia hết cho 9, nên 123 chỉ chia hết cho 3.",
+   "solutionNarrative": "1 + 2 + 3 = 6. Số 6 chia hết cho 3 nhưng không chia hết cho 9, nên 123 chỉ chia hết cho 3.",
    "answerKey": {
     "parts": [
      {
-      "label": "63 − 27 có chia hết cho 9 không",
+      "label": "tổng các chữ số",
+      "value": 6
+     },
+     {
+      "label": "chia hết cho 3 không",
       "options": [
        "có",
        "không"
@@ -447,8 +418,60 @@
       "value": "có"
      },
      {
-      "label": "hiệu bằng bao nhiêu",
-      "value": 36
+      "label": "chia hết cho 9 không",
+      "options": [
+       "có",
+       "không"
+      ],
+      "value": "không"
+     }
+    ]
+   }
+  },
+  {
+   "id": "B7",
+   "qno": 7,
+   "text": "Bạn Mai viết 29 : 6 = 3 (dư 11). Bạn sai ở đâu? Kết quả đúng là gì?",
+   "answer": "Số dư 11 lớn hơn số chia 6. Đúng phải là 29 : 6 = 4 (dư 5).",
+   "solutionNarrative": "Số dư 11 lớn hơn số chia 6. Đúng phải là 29 : 6 = 4 (dư 5).",
+   "answerKey": {
+    "parts": [
+     {
+      "label": "thương đúng",
+      "value": 4
+     },
+     {
+      "label": "số dư đúng",
+      "value": 5
+     }
+    ]
+   }
+  },
+  {
+   "id": "B8",
+   "qno": 8,
+   "text": "Một phép chia có số chia là 7, thương là 6, số dư là 4. Tìm số bị chia.",
+   "answer": "7 × 6 + 4 = 46.",
+   "solutionNarrative": "7 × 6 + 4 = 46.",
+   "answerKey": {
+    "value": 46
+   }
+  },
+  {
+   "id": "B9",
+   "qno": 9,
+   "text": "Có 30 quyển vở xếp vào thùng, mỗi thùng 7 quyển. Xếp được mấy thùng đầy, và cần ít nhất mấy thùng để xếp hết?",
+   "answer": "30 : 7 = 4 dư 2. Đầy 4 thùng; cần 5 thùng để xếp hết.",
+   "solutionNarrative": "30 : 7 = 4 dư 2. Đầy 4 thùng; cần 5 thùng để xếp hết.",
+   "answerKey": {
+    "parts": [
+     {
+      "label": "mấy thùng đầy",
+      "value": 4
+     },
+     {
+      "label": "cần ít nhất mấy thùng",
+      "value": 5
      }
     ]
    }
@@ -456,11 +479,11 @@
   {
    "id": "B10",
    "qno": 10,
-   "text": "Tìm chữ số tận cùng của 3 × 3 × 3 × 3.",
-   "answer": "Dây chuyền: 3 × 3 = 9; 9 × 3 = 27 đuôi 7; 7 × 3 = 21 đuôi 1 → tận cùng 1 (81 ✓).",
-   "solutionNarrative": "Dây chuyền: 3 × 3 = 9; 9 × 3 = 27 đuôi 7; 7 × 3 = 21 đuôi 1 → tận cùng 1 (81 ✓).",
+   "text": "Không tính cả tích, cho biết 13 × 14 × 5 có chữ số tận cùng là mấy.",
+   "answer": "3 × 4 = 12 tận cùng 2; 2 × 5 = 10 tận cùng 0. Vậy tích tận cùng bằng 0.",
+   "solutionNarrative": "3 × 4 = 12 tận cùng 2; 2 × 5 = 10 tận cùng 0. Vậy tích tận cùng bằng 0.",
    "answerKey": {
-    "value": 1
+    "value": 0
    }
   }
  ],

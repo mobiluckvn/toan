@@ -111,3 +111,50 @@ test('lớp 5 vẫn suy số bài từ mã — có chủ ý, không phải bỏ 
     path.join(GOC, 'web/src/mon/toan/lib/noiDung.js'), 'utf8');
   assert.ok(/soBaiCua/.test(s), 'hàm suy số của lớp 5 biến mất');
 });
+
+/* ═══════ ĐỀ ÔN TẬP PHẢI THEO KỊP KHI CHƯƠNG TÁCH BÀI ═══════
+ *
+ * Tách chương 3 từ 4 bài thành 9 xong thì đề ôn tập vẫn là đề cũ: ba bài mới không
+ * được kiểm câu nào, và ô nhập của câu 1 vẫn hỏi "xếp hàng 2 vừa khít không" trong
+ * khi đề đã đổi thành "18 quả cam chia mỗi đĩa 6 quả". Đề một đằng, ô một nẻo.
+ *
+ * 57 tệp cổng đều xanh lúc ấy. Không cổng nào bắt được, vì xét riêng thì đề hợp lệ
+ * và ô cũng hợp lệ — chỉ chỗ nối là sai. Chỉ mở bản chạy thật ra nhìn mới thấy.
+ *
+ * Hai phép dưới đây canh đúng chỗ nối ấy.
+ */
+{
+  const on = doc('data/lop4_ontap.json').ky;
+  const tt = doc('data/lop4/thu_tu.json').thuTu;
+  const app = doc('web/public/content/lop4/index.json');
+  const chuongCua = Object.fromEntries(app.map((b) => [b.id, b.chuong]));
+
+  test('lop4 · mọi bài đều được ít nhất một câu ôn tập kiểm tới', () => {
+    const daKiem = new Set(on.flatMap((k) => (k.examA || []).flatMap((c) => c.veCau || [])));
+    const sot = tt.filter((id) => !daKiem.has(id));
+    assert.deepEqual(sot, [],
+      'bài không có câu ôn nào — dấu hiệu chương vừa tách bài mà đề ôn chưa viết lại');
+  });
+
+  test('lop4 · câu ôn tập chỉ trỏ về bài CÙNG CHƯƠNG với kỳ ấy', () => {
+    const lac = [];
+    for (const k of on) {
+      for (const c of k.examA || []) {
+        for (const ve of c.veCau || []) {
+          if (chuongCua[ve] !== k.so) lac.push(`ÔN ${k.so} · câu ${c.qno} → ${ve} (chương ${chuongCua[ve]})`);
+        }
+      }
+    }
+    assert.deepEqual(lac, [], 'câu ôn trỏ sang chương khác');
+  });
+
+  test('lop4 · câu ôn tập nào cũng có ô nhập chấm máy', () => {
+    const o = doc('data/lop4_ontap_o.json');
+    const thieu = [];
+    for (const k of on) {
+      for (const c of k.examA || []) if (!o[`OT${k.so}#C${c.qno}`]) thieu.push(`OT${k.so}#C${c.qno}`);
+      for (const c of k.deB || []) if (!o[`OT${k.so}#B${c.qno}`]) thieu.push(`OT${k.so}#B${c.qno}`);
+    }
+    assert.deepEqual(thieu, [], 'câu ôn thiếu ô nhập — bé phải tự chấm');
+  });
+}

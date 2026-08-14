@@ -209,7 +209,12 @@ function diemDanh() {
        đáng tin: chúng đếm câu chấm BẤT THƯỜNG, nên đổi cách chấm là chúng động đậy
        ngay cả khi tổng vẫn khớp. Chúng đứng yên nghĩa là cách chấm y nguyên;
      · 11 kỳ sát hạch vẫn 124 câu và 112 câu đề B — phần sát hạch không xê dịch. */
-const MOC = { tong: 2273, dungKhiDungDap: 2271, dungKhiSaiDap: 1, tuDoiChieu: 1 };
+/* ⚠ 2273 → 2275, cùng ngày. Hai câu ĐỌC SỐ của kỳ ôn 1 trước nay KHÔNG có ô nhập
+   nên bé phải tự chấm, và cổng này cũng không đếm chúng. Nay cho bấm chọn (đáp án là
+   lời đọc chứ không phải con số, nên theo luật ô nhập phải là nút bấm) — thêm đúng
+   hai câu máy chấm được. `dungKhiDungDap` cũng +2, nghĩa là cả hai chấm đúng, và
+   `dungKhiSaiDap`/`tuDoiChieu` vẫn đứng yên ở 1 và 1. */
+const MOC = { tong: 2275, dungKhiDungDap: 2273, dungKhiSaiDap: 1, tuDoiChieu: 1 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`
