@@ -230,6 +230,22 @@ def khung(c: dict) -> Image.Image:
             y = 300
         giua(d, min(y, H - 130), c["chuChinh"], phong(36), INK, rong=W - 200)
 
+    elif L == "cong_thuc":
+        # CÔNG THỨC PHẢI HIỆN LÊN, KHÔNG CHỈ ĐỌC. Bác chốt 14-08: "các công thức cần
+        # phải show trên video thay vì chỉ đọc, không học sinh sẽ không nhớ được."
+        # Nghe một câu dài rồi trôi qua thì bé không giữ lại được gì; nhìn thấy nó
+        # đóng khung thì còn hình trong đầu.
+        #
+        # Ký hiệu (n, ×, −, :) CHỈ ở đây — trên màn hình. Lời đọc thì nói bằng chữ
+        # thuần Việt, vì máy đọc ký hiệu là đọc sai.
+        giua(d, 54, c.get("chuChinh", "Công thức cần nhớ"), phong(34), MUTE)
+        the(d, 60, 120, W - 120, 210, nen=GOLD_PALE, vien=GOLD, day=6)
+        giua(d, 175, c["congThuc"], phong(46), NAVY, rong=W - 190)
+        if c.get("thay"):
+            giua(d, 385, "Thay số vào thử", phong(30), MUTE)
+            the(d, 110, 430, W - 220, 120, nen="#FFFFFF", vien=TEAL, day=4)
+            giua(d, 462, c["thay"], phong(42), TEAL_DARK, rong=W - 260)
+
     elif L == "day_so":
         # MỘT DÃY SỐ VẼ RA THÀNH Ô — đây là hình quan trọng nhất của cả cụm, vì nó
         # cho bé THẤY hai thứ khác nhau nằm chồng lên nhau: hàng trên là THỨ TỰ

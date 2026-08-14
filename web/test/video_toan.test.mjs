@@ -103,6 +103,40 @@ test('lời đọc KHÔNG mang ký hiệu chỉ có nghĩa với mắt', () => {
   assert.deepEqual(xau, []);
 });
 
+test('lời đọc KHÔNG còn chữ cái đứng lẻ — máy sẽ đọc theo tiếng Anh', () => {
+  /* Bác bắt 14-08: "số n bạn đọc thành tiếng Anh". Chữ `n` trong "số hạng thứ n"
+     là KÝ HIỆU, không phải chữ tiếng Việt — Kokoro thấy nó đứng một mình thì đọc
+     theo tiếng Anh, và bé nghe ra một âm lạ giữa câu tiếng Việt.
+     Nay ký hiệu chỉ nằm trên MÀN HÌNH; lời đọc nói bằng chữ thuần Việt. */
+  const so = JSON.parse(readFileSync(new URL('../public/content/toan/lop4_am.json', import.meta.url), 'utf8'));
+  const xau = so.clip
+    .filter((c) => /(?<![\p{L}\d])[a-zA-Z](?![\p{L}\d])/u.test(c.chu || ''))
+    .map((c) => `${c.id}: "${c.chu.slice(0, 60)}"`);
+  assert.deepEqual(xau, [], `${xau.length} câu đọc còn chữ cái đứng lẻ`);
+});
+
+test('dấu NHÂN không được ăn vào chữ tiếng Việt', () => {
+  /* ⚠ Lỗi đã lên video thật. Phép đổi `x` thành "nhân" ban đầu áp cho MỌI chữ x,
+     nên "đếm mà xem" đọc thành "đếm mà nhân em", "chỗ xa" thành "chỗ nhân a".
+     Năm dòng như thế, và bé nghe ra câu vô nghĩa mà không ai kêu. */
+  const so = JSON.parse(readFileSync(new URL('../public/content/toan/lop4_am.json', import.meta.url), 'utf8'));
+  const xau = so.clip.filter((c) => /nhân\s+(em|a|é|ong|uống|ưa)\b/.test(c.chu || ''))
+    .map((c) => `${c.id}: "${c.chu.slice(0, 60)}"`);
+  assert.deepEqual(xau, [], `${xau.length} câu bị dấu nhân ăn vào chữ Việt`);
+});
+
+test('mỗi video CÓ màn công thức, và NHẮC LẠI trước lúc kết', () => {
+  /* Bác chốt 14-08: "các công thức cần phải show trên video thay vì chỉ đọc, không
+     học sinh sẽ không nhớ được" và "cuối video trước kết thúc cần nhấn lại công
+     thức". Nghe một câu dài rồi trôi qua thì bé không giữ được gì.
+
+     Canh ở đây chứ không chỉ ở bên Python: bên ấy chặn lúc DỰNG, bên này chặn cái
+     đã dựng ra. */
+  const so = JSON.parse(readFileSync(new URL('../public/content/toan/lop4_am.json', import.meta.url), 'utf8'));
+  const nho = so.clip.filter((c) => /Con nhớ lại một lần nữa/.test(c.chu || ''));
+  assert.ok(nho.length >= 5, `chỉ có ${nho.length}/5 bài nhắc lại công thức cuối video`);
+});
+
 test('màn MỞ BÀI có gọi Video, và trỏ đúng thư mục của Toán', () => {
   /* Dựng video xong mà quên gắn vào màn hình thì mọi phép trên vẫn xanh, còn bé
      thì không thấy video nào. Soi thẳng chỗ nối. */

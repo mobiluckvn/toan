@@ -97,9 +97,18 @@ def doc_duoc(s: str) -> str:
     được, rồi XOÁ SẠCH phần còn lại — và có cổng soi lại sau cùng.
     """
     s = str(s or '')
-    s = re.sub(r'\s*[×x]\s*', ' nhân ', s)
+    # ⚠ DẤU NHÂN CHỈ Ở GIỮA HAI SỐ. Bản đầu đổi MỌI chữ `x` thành "nhân", nên nó
+    # ăn luôn vào chữ tiếng Việt: "đếm mà xem" đọc thành "đếm mà nhân em", "chỗ xa"
+    # thành "chỗ nhân a". Năm dòng hỏng như thế đã lên video thật, và bé nghe ra
+    # một câu vô nghĩa. Ký hiệu `×` thì an toàn ở đâu cũng được — nó không phải
+    # chữ cái tiếng Việt.
+    s = re.sub(r'\s*×\s*', ' nhân ', s)
+    s = re.sub(r'(?<=\d)\s*x\s*(?=\d)', ' nhân ', s)
     s = re.sub(r'\s*÷\s*', ' chia ', s)
     s = re.sub(r'(\d)\s*:\s*(\d)', r'\1 chia \2', s)
+    # Chữ `n` trong "số hạng thứ n" là KÝ HIỆU, không phải chữ tiếng Việt. Để
+    # nguyên thì Kokoro đọc theo tiếng Anh. Đọc tên chữ cái theo tiếng Việt.
+    s = re.sub(r'(?<![\w])n(?![\w])', 'en-nờ', s)
     s = s.replace('−', ' trừ ').replace(' - ', ' trừ ')
     s = re.sub(r'\s*\+\s*', ' cộng ', s)
     s = re.sub(r'\s*=\s*', ' bằng ', s)
@@ -170,6 +179,14 @@ def kb_b13(b):
         _c('y_toan', 'Khoảng cách', 'Số 5 đó gọi là khoảng cách của dãy.',
            buoc=5, soBuoc=5,
            loi=['Số năm đó gọi là khoảng cách của dãy.']),
+        _c('cong_thuc', 'Cách tìm khoảng cách',
+           congThuc='khoảng cách = số sau − số trước',
+           thay='10 − 5 = 5',
+           loi=['Khoảng cách bằng số sau trừ số trước.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='khoảng cách = số sau − số trước',
+           loi=['Con nhớ lại một lần nữa. Khoảng cách bằng số sau trừ số trước.',
+                'Và thứ tự là chỗ đứng, còn giá trị là con số ở chỗ đó.']),
         _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
            loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
     ]
@@ -191,12 +208,19 @@ def kb_b14(b):
         _c('y_toan', 'Vì sao ít hơn một',
            'Chỗ thứ nhất đã có sẵn, không phải cộng lần nào.', buoc=2, soBuoc=4,
            loi=['Vì chỗ thứ nhất đã có sẵn rồi, không phải cộng lần nào.']),
-        _c('y_toan', 'Cách tìm số hạng thứ n',
-           'Số đầu cộng khoảng cách nhân với n trừ 1.', buoc=3, soBuoc=4,
-           loi=['Vậy số hạng thứ n bằng số đầu, cộng khoảng cách nhân với n trừ một.']),
-        _c('y_toan', 'Thử với chỗ thứ tư', '5 + 5 × 3 = 20', buoc=4, soBuoc=4,
-           loi=['Thử với chỗ thứ tư. Năm cộng năm nhân ba bằng hai mươi.',
-                'Nhìn lại dãy mà xem, số hạng thứ tư đúng là hai mươi.']),
+        _c('cong_thuc', 'Cách tìm số hạng ở chỗ bất kỳ',
+           congThuc='số hạng thứ n = số đầu + khoảng cách × (n − 1)',
+           thay='số hạng thứ 4 = 5 + 5 × 3 = 20',
+           loi=['Số hạng ở một chỗ bất kỳ bằng số đầu, cộng khoảng cách nhân với '
+                'số lần cộng thêm.',
+                'Thử với chỗ thứ tư. Năm cộng năm nhân ba bằng hai mươi.']),
+        _c('y_toan', 'Khớp với dãy', 'Số hạng thứ tư đúng là 20.', buoc=4, soBuoc=4,
+           loi=['Nhìn lại dãy mà xem, số hạng thứ tư đúng là hai mươi.']),
+        _c('cong_thuc', 'Con nhớ kỹ công thức này nhé',
+           congThuc='số hạng thứ n = số đầu + khoảng cách × (n − 1)',
+           loi=['Con nhớ lại một lần nữa. Số hạng ở chỗ bất kỳ bằng số đầu, cộng '
+                'khoảng cách nhân với số lần cộng thêm.',
+                'Số lần cộng thêm luôn ít hơn số chỗ đúng một.']),
         _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
            loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
     ]
@@ -220,9 +244,15 @@ def kb_b15(b):
         _c('day_so', 'Cộng thêm 1 cho chỗ đầu tiên', so=DAY, hienThuTu=True, chiSo=1,
            phu='4 + 1 = 5 số hạng.',
            loi=['Cộng thêm một cho chỗ đầu tiên. Bốn cộng một bằng năm số hạng.']),
-        _c('y_toan', 'Nhớ câu này', 'Số chỗ nhiều hơn số lần cộng đúng 1.',
-           buoc=4, soBuoc=4,
-           loi=['Con nhớ câu này. Số chỗ luôn nhiều hơn số lần cộng đúng một.']),
+        _c('cong_thuc', 'Cách đếm số số hạng',
+           congThuc='số số hạng = (số cuối − số đầu) : khoảng cách + 1',
+           thay='(25 − 5) : 5 + 1 = 5',
+           loi=['Số số hạng bằng số cuối trừ số đầu, chia cho khoảng cách, rồi cộng một.']),
+        _c('cong_thuc', 'Con nhớ kỹ công thức này nhé',
+           congThuc='số số hạng = (số cuối − số đầu) : khoảng cách + 1',
+           loi=['Con nhớ lại một lần nữa. Số cuối trừ số đầu, chia cho khoảng cách, '
+                'rồi cộng một.',
+                'Cộng một vì số chỗ luôn nhiều hơn số lần cộng đúng một.']),
         _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
            loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
     ]
@@ -244,12 +274,16 @@ def kb_b16(b):
         _c('y_toan', 'Vì sao cặp nào cũng bằng nhau',
            'Một bên tăng bao nhiêu, bên kia giảm bấy nhiêu.', buoc=3, soBuoc=4,
            loi=['Vì một bên tăng bao nhiêu thì bên kia giảm đúng bấy nhiêu.']),
-        _c('y_toan', 'Cách tính tổng',
-           'Số đầu cộng số cuối, nhân số số hạng, rồi chia đôi.', buoc=4, soBuoc=4,
+        _c('cong_thuc', 'Cách tính tổng',
+           congThuc='tổng = (số đầu + số cuối) × số số hạng : 2',
+           thay='(5 + 25) × 5 : 2 = 75',
            loi=['Lấy số đầu cộng số cuối, nhân với số số hạng, rồi chia đôi.',
-                'Chia đôi vì mình đã ghép mỗi số hai lần.']),
-        _c('y_toan', 'Thử với dãy trên', '30 × 5 : 2 = 75', buoc=4, soBuoc=4,
-           loi=['Thử với dãy trên. Ba mươi nhân năm chia hai bằng bảy mươi lăm.']),
+                'Ba mươi nhân năm chia hai bằng bảy mươi lăm.']),
+        _c('cong_thuc', 'Con nhớ kỹ công thức này nhé',
+           congThuc='tổng = (số đầu + số cuối) × số số hạng : 2',
+           loi=['Con nhớ lại một lần nữa. Số đầu cộng số cuối, nhân với số số hạng, '
+                'rồi chia đôi.',
+                'Chia đôi vì khi ghép cặp mình đã cộng mỗi số hai lần.']),
         _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
            loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
     ]
@@ -276,6 +310,16 @@ def kb_b17(b):
         _c('y_toan', 'Một chốt nữa dễ quên',
            'Số đó còn phải nằm trong dãy, không vượt số cuối.', buoc=4, soBuoc=4,
            loi=['Còn một điều dễ quên. Số đó phải nằm trong dãy, không được vượt quá số cuối.']),
+        _c('cong_thuc', 'Cách soi một số',
+           congThuc='(số cần soi − số đầu) : khoảng cách',
+           thay='(30 − 5) : 5 = 5  →  chỗ đứng = 5 + 1 = 6',
+           loi=['Lấy số cần soi trừ số đầu, rồi chia cho khoảng cách.',
+                'Chia hết thì thuộc dãy, và chỗ đứng bằng kết quả cộng một.']),
+        _c('cong_thuc', 'Con nhớ kỹ công thức này nhé',
+           congThuc='(số cần soi − số đầu) : khoảng cách',
+           loi=['Con nhớ lại một lần nữa. Trừ số đầu trước đã, rồi mới chia cho '
+                'khoảng cách.',
+                'Chia hết thì thuộc dãy. Còn dư thì không.']),
         _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
            loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
     ]
@@ -286,6 +330,16 @@ BO = {13: kb_b13, 14: kb_b14, 15: kb_b15, 16: kb_b16, 17: kb_b17}
 
 def soi(ds: list[dict], bai_id: str) -> list[str]:
     loi = []
+    # Bác chốt 14-08: công thức phải HIỆN LÊN, và phải NHẮC LẠI trước khi kết.
+    ct = [c for c in ds if c['loai'] == 'cong_thuc']
+    if not ct:
+        loi.append(f'{bai_id}: không có màn CÔNG THỨC nào')
+    elif ds[-2]['loai'] != 'cong_thuc':
+        loi.append(f'{bai_id}: màn ngay trước lúc kết phải là NHẮC LẠI công thức, '
+                   f'đang là "{ds[-2]["loai"]}"')
+    for c in ct:
+        if not c.get('congThuc'):
+            loi.append(f'{bai_id}: màn công thức thiếu chữ để hiện lên')
     for c in ds:
         for chu, _ in c['loiAm']:
             if TU_CAM.search(chu):
