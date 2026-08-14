@@ -12,7 +12,7 @@ import { doc, setDoc, serverTimestamp } from 'firebase/firestore';
 import { fns, db, hasFirebase } from '../../../chung/lib/nenTang.js';
 import {
   loiDan, goiGui, docTraLoi, viecTiepTheo, cauHopLe, cauThayThe,
-  buocTiepTheo, dienBuoc, dongBuoc,
+  buocTiepTheo, dienBuoc, dongBuoc, loiVietHopLe,
 } from './phongnoi.js';
 
 /** Collection riêng của Tiếng Anh — hậu tố TA để không bao giờ lẫn với Toán. */
@@ -57,10 +57,9 @@ export async function hoiCoGiao({
      bé vẫn nghe đúng câu của bài. */
   if (buoc) {
     const dung = dienBuoc(buoc, { tenBe, thich: hoSo?.thich });
-    if (dung && tra.en !== dung) {
-      return { ...tra, en: dung, vi: tra.vi || buoc.vi || '', daThay: true };
-    }
-    return tra;
+    const en = dung && tra.en !== dung ? dung : tra.en;
+    return { ...tra, en, vi: loiVietSach(tra.vi, { von, cauDich: en, lui: buoc.vi }),
+      daThay: en !== tra.en };
   }
 
   if (!cauHopLe(tra.en, { von, tenBe, cauTruoc })) {
@@ -70,8 +69,36 @@ export async function hoiCoGiao({
        Bé nghe hai thứ ngược nhau còn rối hơn là nghe câu sai. */
     if (thay) return { ...tra, en: thay.en, vi: thay.vi, daThay: true };
   }
-  return tra;
+  return { ...tra, vi: loiVietSach(tra.vi, { von, cauDich: tra.en }) };
 }
+
+/**
+ * Lời tiếng Việt đã soi. Hỏng thì LUI, chứ không sửa chữa nửa vời.
+ *
+ * Sửa tay một câu hỏng ("bạn" → "con") nghe thì tiện, nhưng câu ấy có thể hỏng cả
+ * ý chứ không chỉ hỏng một chữ — cô nhắc lại một từ bé chưa từng nói thì đổi đại
+ * từ không cứu được gì. Thà lui hẳn về lời viết sẵn của bước ấy: nó chung chung
+ * hơn, nhưng luôn đúng và luôn nói trúng chỗ khó của bài.
+ *
+ * Không có lời viết sẵn (bài chưa có kịch bản) thì dùng một câu mời tối giản —
+ * bé phải biết mình cần làm gì, dù cô có nói vụng.
+ */
+const LUI_CHUNG = 'Con nghe rồi nói lại nhé.';
+
+export function loiVietSach(vi, { von, cauDich = '', lui = '' } = {}) {
+  const kq = loiVietHopLe(vi, { von, cauDich });
+  if (kq.ok) return vi;
+  LOI_LOI_VIET.so += 1;
+  LOI_LOI_VIET.ganNhat = kq.vi;
+  return lui || LUI_CHUNG;
+}
+
+/**
+ * Đếm số lần phải lui. Không hiện ra màn hình — bé đang học thì không việc gì
+ * phải thấy — nhưng cũng KHÔNG nuốt im: lui nhiều nghĩa là lời dặn đang không ăn,
+ * và không có con số thì chẳng ai biết để mà sửa lời dặn.
+ */
+export const LOI_LOI_VIET = { so: 0, ganNhat: null };
 
 /**
  * Lưu buổi nói chuyện lên máy chủ — CLIENT làm, không phải server.

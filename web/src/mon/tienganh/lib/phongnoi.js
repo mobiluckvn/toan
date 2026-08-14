@@ -297,7 +297,9 @@ function dongViec(v, tenBe) {
   return '';
 }
 
-export function loiDan({ von, tenBe = 'bạn nhỏ', lop = 1, viec = null, hoSo = null }) {
+/* Mặc định là "con", KHÔNG phải "bạn nhỏ". Bản cũ để "bạn nhỏ" nên chính lời dặn
+   gieo chữ "bạn" vào rồi trách mô hình dùng nó — xem `XUNG_HO_CAM`. */
+export function loiDan({ von, tenBe = 'con', lop = 1, viec = null, hoSo = null }) {
   const tu = [...von.loi.tu, ...von.on.flatMap((x) => x.tu)];
   const cau = [...von.loi.cau, ...von.on.flatMap((x) => x.cau)];
   const bangTu = tu.map((t) => `${t.tu} (${t.nghia})`).join(', ');
@@ -333,6 +335,15 @@ export function loiDan({ von, tenBe = 'bạn nhỏ', lop = 1, viec = null, hoSo 
     '   Never discuss anything other than practising these words.',
     '8. If the child repeated correctly, put the praise in the VIETNAMESE line and',
     '   still do this turn\'s task in English — praise is not a turn of its own.',
+    /* Hai luật dưới đây bác chốt 14-08, và cả hai đều CÓ CHỐT SOI LẠI ở
+       `loiVietHopLe` — dặn dò một mình chưa bao giờ đủ trong phòng này. */
+    '9. Vietnamese pronouns are FIXED: call yourself "cô", call the child "con".',
+    `   Never "bạn", "em", "tớ", "cậu" — you are her teacher, not her classmate.`,
+    '   ("mình" meaning "we/us together" is fine: "hôm nay mình tập nói nhé".)',
+    '10. When you quote English inside the Vietnamese line, quote it EXACTLY as it',
+    '   appears above or as the child actually said it. Never reshape a word to fit',
+    '   your sentence. Quoting a word the child never said teaches her a wrong word,',
+    '   and it will be read aloud in the wrong voice.',
     '',
     dongViec(viec, tenBe),
     dongHoSo(hoSo, tenBe),
@@ -574,6 +585,98 @@ export function tachTheoTieng(chu, von) {
 
   /* Bỏ mẩu chỉ còn dấu câu hoặc khoảng trắng — đọc lên nghe như bị nấc. */
   return ra.filter((x) => /[\p{L}\p{N}]/u.test(x.chu)).map((x) => ({ ...x, chu: x.chu.trim() }));
+}
+
+/* ─────────── soi LỜI TIẾNG VIỆT ─────────── */
+
+/**
+ * XƯNG HÔ SAI LÀ ĐỔI CẢ QUAN HỆ.
+ *
+ * Bác bắt 14-08. Trên bản chạy mô hình viết "Bạn vừa nói câu hỏi…" — với người
+ * lớn thì chỉ là lệch giọng, nhưng đây là lớp học của bé sáu tuổi: cô giáo gọi
+ * học trò bằng "bạn" thì không còn là cô giáo nữa, và bé mất chỗ dựa. Cả app này
+ * xưng "cô" gọi "con" ở mọi màn — riêng phòng nói thì mô hình tự chọn.
+ *
+ * ⚠ Chính giá trị mặc định của `loiDan` từng là `'bạn nhỏ'`, tức là lời dặn TỰ
+ * GIEO chữ "bạn" vào rồi trách mô hình dùng nó.
+ *
+ * KHÔNG cấm "mình": "Hôm nay mình tập nói nhé" là "chúng ta", đúng và ấm.
+ */
+export const XUNG_HO_CAM = ['bạn', 'em', 'tớ', 'cậu'];
+
+/* Chữ chỉ có trong tiếng Việt — dùng để biết một mẩu trong ngoặc kép là lời Việt
+   hay là tiếng Anh. Không cần bộ đoán ngôn ngữ, chỉ cần dấu. */
+const CO_DAU_VIET = /[ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ]/i;
+
+const MOC_NGOAC = /[""“”]([^""“”]+)[""“”]|'([^']{2,})'/g;
+
+/**
+ * SOI LỜI TIẾNG VIỆT CỦA CÔ. Trả `{ ok, vi }` — `vi` là lý do khi hỏng.
+ *
+ * ── VÌ SAO PHẢI SOI, DÙ ĐÃ DẶN ──
+ * Câu tiếng Anh đã có chốt từ lâu (`cauHopLe`, và có kịch bản thì ép thẳng về câu
+ * đúng). Lời tiếng Việt thì chưa bị soi một lần nào — và đó đúng là chỗ hai lỗi
+ * bác vừa bắt sống được.
+ *
+ * ── HAI THỨ SOI ──
+ * 1. XƯNG HÔ — xem trên.
+ * 2. NHẮC LẠI SAI TỪ. Trên bản chạy: cô nhắc `"How many washes can you see?"` —
+ *    một câu bé chưa từng nói và không có trong sách. Hỏng kép: bé nghe nhầm mình
+ *    đã nói thế, VÀ mẩu ấy không nằm trong vốn nên `tachTheoTieng` không tách ra,
+ *    thành thử nó bị đọc bằng GIỌNG VIỆT — đúng cái luật "mỗi dòng một thứ tiếng"
+ *    mà bác đã bắt sửa hôm 13-08.
+ *
+ * Chỉ soi mẩu TRONG NGOẶC KÉP, vì đó là chỗ mô hình nhắc lại lời, và cũng là chỗ
+ * duy nhất tách được chắc chắn. Mẩu nào có dấu tiếng Việt thì bỏ qua — `"đỏ"` là
+ * lời Việt, không phải tiếng Anh.
+ *
+ * ── ĐÁNH ĐỔI, NÓI THẲNG ──
+ * Một chữ tiếng Việt KHÔNG DẤU nằm trong ngoặc (`"con"`) sẽ bị coi nhầm là tiếng
+ * Anh và câu bị trả về. Chấp nhận: hỏng theo hướng ấy chỉ mất một lời dẫn hay,
+ * còn hỏng theo hướng kia là bé học sai. Và đường lui luôn có — lời viết sẵn của
+ * chính bước ấy.
+ */
+export function loiVietHopLe(vi, { von, cauDich = '' } = {}) {
+  const s = String(vi || '');
+  if (!s.trim()) return { ok: false, vi: 'lời Việt rỗng' };
+
+  /* ⚠ "bạn" KHÔNG phải lúc nào cũng là đại từ gọi bé. Sách chú `girl` là "bạn
+     gái", `friend` là "bạn bè" — ở đó nó là DANH TỪ, và chặn nhầm là chặn luôn
+     lời giải nghĩa của chính sách. Cổng bắt được thật: Unit 7, từ "girl".
+     Nên trừ mấy dạng ghép ra. Danh sách ngắn và có cổng canh cả hai chiều. */
+  const xau = XUNG_HO_CAM.find((x) => new RegExp(
+    `(?<![\\p{L}])${x}(?![\\p{L}])${x === 'bạn' ? '(?!\\s+(gái|trai|nhỏ|ấy|bè|học))' : ''}`,
+    'iu').test(s));
+  if (xau) return { ok: false, vi: `gọi bé bằng "${xau}" — cô phải gọi "con"` };
+
+  if (!von) return { ok: true, vi: '' };
+  /**
+   * Soi theo TỪNG CHỮ, không đòi khớp trọn câu.
+   *
+   * Bản đầu đòi mẩu trong ngoặc phải là NGUYÊN một câu của sách, và cổng bắt được
+   * ngay chính lời viết tay của Unit 9: `mở đầu bằng "How many" nhé` — một MẨU
+   * của câu, mà trỏ vào mẩu mở đầu lại đúng là cách dạy hay nhất ở đó.
+   *
+   * Soi theo chữ thì vừa cho mẩu đi qua, vừa vẫn bắt được đúng chỗ hỏng thật:
+   * `"How many washes can you see?"` — how·many·can·you·see đều có trong bài,
+   * riêng "washes" thì không (bài dạy "wash", và "washes" là một chữ khác).
+   */
+  const cho = new Set([
+    ...[...von.loi.tu, ...von.on.flatMap((x) => x.tu)].map((t) => t.tu),
+    ...[...von.loi.cau, ...von.on.flatMap((x) => x.cau)].map((c) => c.cau),
+    ...(von.loi.cauSach || []), ...von.on.flatMap((x) => x.cauSach || []),
+    ...LOI_LOP_HOC, cauDich,
+  ].filter(Boolean).flatMap((x) => chuTrongCau(x)));
+
+  for (const m of s.matchAll(MOC_NGOAC)) {
+    const trong = (m[1] ?? m[2] ?? '').trim();
+    if (!trong || CO_DAU_VIET.test(trong)) continue;   // lời Việt, không phải tiếng Anh
+    const la = chuTrongCau(trong).find((w) => !cho.has(w));
+    if (la) {
+      return { ok: false, vi: `nhắc lại "${trong}" — chữ "${la}" không có trong bài` };
+    }
+  }
+  return { ok: true, vi: '' };
 }
 
 /* ─────────── một buổi có mở có kết ─────────── */

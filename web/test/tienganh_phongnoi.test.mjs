@@ -20,6 +20,7 @@ import {
   loiDan, catNguCanh, goiGui, docTraLoi, tuTrongCau, LOI_LOP_HOC,
   viecTiepTheo, cauHopLe, cauThayThe, loaiOTrong, tachTheoTieng,
   tinhBuoi, loiKet, tuLoiKetHopLe, cauHoiSoThich, PHUT_TOI_DA, DAT_LIEN_DE_XONG,
+  loiVietHopLe, XUNG_HO_CAM,
   buocTiepTheo, dienBuoc, dongBuoc, xenKe,
 } from '../src/mon/tienganh/lib/phongnoi.js';
 
@@ -794,6 +795,113 @@ test('vẫn hỏi sở thích ĐÚNG MỘT LẦN, ngay sau lời chào', () => {
     const sauChao = [{ vai: 'may', en: 'Hello!' }];
     assert.equal(buocTiepTheo({ kichBan: k, lichSu: sauChao, hoSo: {} }).loai, 'hoiThich',
       `${k.bai}: phải hỏi sở thích ngay sau lời chào`);
+  }
+});
+
+/* ═══════════ SOI LỜI TIẾNG VIỆT CỦA CÔ ═══════════ */
+
+const vonB09 = () => vonTu({
+  baiNay: JSON.parse(readFileSync(
+    new URL('../public/content/ta1/DL_TA1_B09.json', import.meta.url), 'utf8')),
+  baiCu: [], daDat: false,
+});
+
+test('cô phải gọi bé bằng "con" — bắt được cả HAI câu hỏng thật', () => {
+  /* Hai câu dưới đây LẤY NGUYÊN từ bản chạy 14-08, không phải bịa ra để thử. */
+  const von = vonB09();
+  const a = loiVietHopLe('Bạn vừa nói câu hỏi này rất tốt!', { von });
+  assert.ok(!a.ok, 'gọi bé bằng "bạn" phải bị bắt');
+  assert.match(a.vi, /bạn/, 'phải nói rõ hỏng ở chữ nào');
+  for (const x of ['em', 'tớ', 'cậu']) {
+    assert.ok(!loiVietHopLe(`Nào ${x} nói lại đi.`, { von }).ok, `"${x}" phải bị bắt`);
+  }
+  assert.ok(loiVietHopLe('Con nói lại nhé, cô nghe đây.', { von }).ok, 'lời đúng phải qua');
+});
+
+test('"bạn" làm DANH TỪ thì không bị chặn nhầm', () => {
+  /* Cổng bắt được thật: sách chú `girl` là "bạn gái", và bản đầu của phép soi
+     chặn luôn lời giải nghĩa của chính sách. "bạn" ở đó là danh từ, không phải
+     đại từ gọi bé — hai thứ khác hẳn nhau. */
+  const von = vonB09();
+  assert.ok(loiVietHopLe('Con nói lại từ này nhé — nghĩa là bạn gái.', { von }).ok);
+  assert.ok(loiVietHopLe('Con kể cho bạn ấy nghe nhé.', { von }).ok);
+  /* Nhưng nới cho danh từ KHÔNG được thành cửa cho đại từ lọt qua. */
+  assert.ok(!loiVietHopLe('Bạn nói lại đi.', { von }).ok);
+  assert.ok(!loiVietHopLe('Rất tốt, bạn giỏi lắm!', { von }).ok);
+});
+
+test('"mình" nghĩa là chúng ta — KHÔNG được cấm nhầm', () => {
+  /* Cấm cả "mình" thì chính lời chào của 16 kịch bản bị chặn, và cô mất luôn cách
+     nói ấm nhất: "hôm nay MÌNH tập nói nhé". */
+  assert.ok(loiVietHopLe('Chào con! Hôm nay mình tập nói nhé.', { von: vonB09() }).ok);
+});
+
+test('cô KHÔNG được nhắc lại một từ bé chưa từng nói', () => {
+  /* Trên bản chạy: cô nhắc `"How many washes can you see?"` — câu bé chưa nói và
+     không có trong sách. Hỏng kép: bé tưởng mình đã nói thế, VÀ mẩu ấy không nằm
+     trong vốn nên `tachTheoTieng` không tách ra → bị đọc bằng GIỌNG VIỆT. */
+  const von = vonB09();
+  const x = loiVietHopLe('Con vừa nói "How many washes can you see?" đúng không?', { von });
+  assert.ok(!x.ok, 'câu bịa phải bị bắt');
+  assert.match(x.vi, /washes/, 'phải chỉ ra đúng mẩu hỏng');
+
+  assert.ok(loiVietHopLe('Con nói lại từ "clocks" nhé.', { von }).ok, 'từ CÓ trong bài thì qua');
+  assert.ok(loiVietHopLe('Con nói "How many clocks?" nhé.', { von }).ok, 'câu CÓ trong bài thì qua');
+
+  /* MẨU của một câu cũng phải qua — trỏ vào chỗ mở đầu là cách dạy hay nhất, và
+     chính lời viết tay của Unit 9 làm thế. Cổng đã bắt được bản soi quá chặt. */
+  assert.ok(loiVietHopLe('Mở đầu bằng "How many" nhé.', { von }).ok, 'mẩu của câu phải qua');
+
+  /* Nhưng nới cho mẩu KHÔNG được thành cửa cho chữ lạ. "wash" có trong Unit 16,
+     "washes" là một chữ KHÁC — đúng chỗ mô hình đã trượt trên bản chạy. */
+  const v16 = vonTu({
+    baiNay: JSON.parse(readFileSync(
+      new URL('../public/content/ta1/DL_TA1_B16.json', import.meta.url), 'utf8')),
+    baiCu: [], daDat: false,
+  });
+  assert.ok(loiVietHopLe('Con nói lại "wash" nhé.', { von: v16 }).ok, '"wash" có trong bài');
+  const w = loiVietHopLe('Con vừa nói "How many washes can you see?" nhỉ.', { von: v16 });
+  assert.ok(!w.ok, '"washes" phải bị bắt dù mọi chữ khác đều có trong bài');
+  assert.match(w.vi, /washes/, 'phải chỉ đúng chữ hỏng');
+});
+
+test('mẩu trong ngoặc có DẤU tiếng Việt thì không bị soi như tiếng Anh', () => {
+  /* Chính lời viết tay của Unit 6 có `Mình nói "đỏ" rồi mới nói "bút"` — soi nhầm
+     mẩu ấy là chặn luôn lời dẫn tốt nhất của bài. */
+  assert.ok(loiVietHopLe('Mình nói "đỏ" rồi mới nói "bút chì" nhé.', { von: vonB09() }).ok);
+});
+
+test('câu ĐÍCH của lượt này luôn được nhắc lại', () => {
+  /* Cô phải chỉ vào câu bé sắp nói. Không cho nhắc thì lời dẫn hoá vô nghĩa. */
+  const von = vonB09();
+  assert.ok(loiVietHopLe('Con nói "I can see six." nhé.',
+    { von, cauDich: 'I can see six.' }).ok);
+  assert.ok(!loiVietHopLe('Con nói "I can see six." nhé.', { von }).ok,
+    'không phải câu đích, cũng không có trong bài thì phải bị bắt');
+});
+
+test('lời dặn CÓ dặn hai luật ấy, chứ không chỉ soi ngầm', () => {
+  /* Chỉ soi mà không dặn thì lượt nào cũng phải lui về lời viết sẵn — mất hết
+     phần cô phản ứng với cái bé vừa nói. Dặn và soi phải đi cùng nhau. */
+  const s = loiDan({ von: vonB09(), tenBe: 'An', lop: 1 });
+  assert.match(s, /call yourself "cô", call the child "con"/i);
+  assert.match(s, /quote it EXACTLY/i);
+  assert.ok(!/bạn nhỏ/.test(loiDan({ von: vonB09() })),
+    'lời dặn không được TỰ GIEO chữ "bạn" bằng giá trị mặc định');
+});
+
+test('ĐƯỜNG LUI phải sạch — mọi lời viết sẵn tự nó qua được phép soi', () => {
+  /* Lui về một lời cũng gọi bé bằng "bạn" thì chốt soi thành vô dụng: chặn được
+     câu hỏng của mô hình rồi thay bằng một câu hỏng khác. Cả 16 kịch bản, kể cả
+     ba bản viết tay. */
+  assert.ok(XUNG_HO_CAM.includes('bạn'), 'danh sách cấm phải có "bạn"');
+  for (const k of KB) {
+    const von = vonTu({ baiNay: baiCua(k.bai), baiCu: [], daDat: false });
+    for (const b of k.buoc) {
+      if (!b.vi) continue;
+      const kq = loiVietHopLe(b.vi, { von, cauDich: b.en || '' });
+      assert.ok(kq.ok, `${k.bai} · "${b.en}": lời viết sẵn tự nó hỏng — ${kq.vi}`);
+    }
   }
 });
 
