@@ -168,7 +168,42 @@ test('6 · câu ĐÚNG/SAI: đúng thì hình phải khớp, sai thì hình ph�
   assert.deepEqual(xau, [], `${xau.length} câu đúng/sai ghép hình lệch luật`);
 });
 
-test('7 · MỌI từ phải có trong bảng NGƯỜI ĐÃ SOÁT tận mắt', () => {
+test('7 · ĐỀ ÔN TẬP dùng đúng hình của bài, không giữ bản cũ', () => {
+  /* ⚠ Đã lọt thật trong chính đợt soát này. `ontap.json` là tệp SINH RA từ 16 bài,
+     nhưng nó không tự dựng lại khi bài đổi. Sửa xong bốn hình, chạy lại bộ sinh
+     bài, mở app thấy đúng — mà đề ôn tập vẫn giữ ⚽ cho `ball` và 🪑 cho `desk`.
+     Bé học "cái bàn" rồi đi thi lại gặp cái ghế: tệ hơn cả lúc chưa sửa, vì nay
+     hai chỗ trong cùng một quyển dạy hai nghĩa khác nhau.
+     Cổng cũ không bắt được vì nó chỉ soi `DL_TA1_B*.json`. */
+  const on = JSON.parse(readFileSync(new URL('ontap.json', TA1), 'utf8'));
+  const chuan = new Map();
+  for (const b of BAI) {
+    for (const h of b.hinhTu || []) chuan.set(h.tu, { hinh: h.hinh || null, ve: h.ve || null });
+  }
+  const xau = [];
+  const so = (tu, hinh, ve, o) => {
+    const c = chuan.get(tu);
+    if (!c) return;
+    if ((hinh || null) !== c.hinh || (ve || null) !== c.ve) {
+      xau.push(`${o} · "${tu}": đề dùng ${ve || hinh}, bài dùng ${c.ve || c.hinh}`);
+    }
+  };
+  for (const k of on) {
+    for (const c of k.cau || []) {
+      for (const tu of Object.keys(c.hinhNut || {})) {
+        so(tu, c.hinhNut[tu], (c.veNut || {})[tu], `kỳ ${k.so} · ${c.id}`);
+      }
+      /* Câu đúng/sai: chỉ soi câu ĐÁP ÚNG (ghép đúng). Câu ghép lệch là cố ý. */
+      const m = /^tu_(.+)$/.exec(c.am || '');
+      if (m && c.answerKey?.value === true) {
+        so(m[1].replace(/_/g, ' '), c.anh, c.anhVe, `kỳ ${k.so} · ${c.id}`);
+      }
+    }
+  }
+  assert.deepEqual(xau, [], `${xau.length} chỗ đề ôn tập lệch hình với bài học`);
+});
+
+test('8 · MỌI từ phải có trong bảng NGƯỜI ĐÃ SOÁT tận mắt', () => {
   /* Bốn phép trên đều là phép hình thức: chúng chứng minh được "có hình", "không
      trùng hình", nhưng KHÔNG chứng minh được "🪑 có phải cái bàn học không". Máy
      không nhìn tranh. Chỗ ấy chỉ người soát được, nên phải có một bảng ghi lại ai
