@@ -840,222 +840,6 @@
   "goc": "B12 ②"
  },
  {
-  "id": "L4H_B18_MO",
-  "arch": "tia_so",
-  "params": {
-   "title": "RẠP 18 HÀNG, MỖI HÀNG 8 GHẾ — GHẾ ĐẦU HÀNG 15 VÀ VÉ SỐ 113 Ở ĐÂU?",
-   "moc": [
-    {
-     "so": 1,
-     "danh": true
-    },
-    {
-     "so": 9
-    },
-    {
-     "so": 17
-    },
-    {
-     "so": 25
-    }
-   ],
-   "nhan": "+8"
-  },
-  "caption": "Ghế đầu mỗi hàng cách nhau đúng 8 — bốn hàng đầu làm mẫu.",
-  "bai": "DL:KSN4.B18",
-  "muc": "chuyenMoBai",
-  "goc": "B13 ②"
- },
- {
-  "id": "L4H_B18_G1",
-  "arch": "tia_so",
-  "params": {
-   "title": "BỘ TỨ CỦA DÃY CÁCH ĐỀU",
-   "moc": [
-    {
-     "so": 5,
-     "danh": true
-    },
-    {
-     "so": 10
-    },
-    {
-     "so": 15
-    },
-    {
-     "so": 20
-    }
-   ],
-   "nhan": "+5",
-   "note": "Số hạng thứ n = số đầu + khoảng cách × (n − 1)."
-  },
-  "caption": "Dãy cách đều: số đầu, khoảng cách, số hạng, tổng.",
-  "bai": "DL:KSN4.B18",
-  "muc": "khamPha",
-  "neoBuoc": 1,
-  "goc": "B13 ④ bước 1"
- },
- {
-  "id": "L4H_B19_MO",
-  "arch": "day_o",
-  "params": {
-   "title": "MỖI TUẦN BỎ HƠN TUẦN TRƯỚC 1 NGHÌN — TUẦN 10 ĐƯỢC MẤY, KHI NÀO ĐỦ 120 NGHÌN?",
-   "hang": [
-    {
-     "nhan": "tuần",
-     "o": [
-      {
-       "t": "1"
-      },
-      {
-       "t": "2"
-      },
-      {
-       "t": "3"
-      },
-      {
-       "t": "4"
-      },
-      {
-       "t": "5"
-      }
-     ]
-    },
-    {
-     "nhan": "bỏ heo",
-     "o": [
-      {
-       "t": "1",
-       "mau": "teal"
-      },
-      {
-       "t": "2",
-       "mau": "teal"
-      },
-      {
-       "t": "3",
-       "mau": "teal"
-      },
-      {
-       "t": "4",
-       "mau": "teal"
-      },
-      {
-       "t": "?",
-       "mau": "do"
-      }
-     ],
-     "cung": [
-      {
-       "tu": 0,
-       "den": 1,
-       "nhan": "+1"
-      },
-      {
-       "tu": 1,
-       "den": 2,
-       "nhan": "+1"
-      }
-     ]
-    }
-   ]
-  },
-  "caption": "Hai tầng: tầng trên là tuần, tầng dưới là số tiền.",
-  "bai": "DL:KSN4.B19",
-  "muc": "chuyenMoBai",
-  "goc": "B14 ②"
- },
- {
-  "id": "L4H_B19_G1",
-  "arch": "day_o",
-  "params": {
-   "title": "DÃY HAI TẦNG — nhìn HIỆU của hiệu",
-   "hang": [
-    {
-     "nhan": "dãy",
-     "o": [
-      {
-       "t": "1",
-       "mau": "teal"
-      },
-      {
-       "t": "2",
-       "mau": "teal"
-      },
-      {
-       "t": "4",
-       "mau": "teal"
-      },
-      {
-       "t": "7",
-       "mau": "teal"
-      },
-      {
-       "t": "11",
-       "mau": "teal"
-      }
-     ],
-     "cung": [
-      {
-       "tu": 0,
-       "den": 1,
-       "nhan": "+1"
-      },
-      {
-       "tu": 1,
-       "den": 2,
-       "nhan": "+2"
-      },
-      {
-       "tu": 2,
-       "den": 3,
-       "nhan": "+3"
-      },
-      {
-       "tu": 3,
-       "den": 4,
-       "nhan": "+4"
-      }
-     ]
-    }
-   ],
-   "note": "Tầng hiệu lại là một dãy cách đều: 1, 2, 3, 4…"
-  },
-  "caption": "Dãy hai tầng: hiệu của dãy mới là dãy cách đều.",
-  "bai": "DL:KSN4.B19",
-  "muc": "khamPha",
-  "neoBuoc": 1,
-  "goc": "B14 ④ bước 1"
- },
- {
-  "id": "L4H_B20_MO",
-  "arch": "hang_cay",
-  "params": {
-   "title": "SÂN 30 M × 20 M, TREO ĐÈN QUANH SÂN CỨ 5 MÉT MỘT CHIẾC",
-   "so_cay": 6,
-   "khoang": "5 m"
-  },
-  "caption": "Treo quanh một vòng khép kín — đếm cây và đếm khoảng.",
-  "bai": "DL:KSN4.B20",
-  "muc": "chuyenMoBai",
-  "goc": "B15 ②"
- },
- {
-  "id": "L4H_B20_G1",
-  "arch": "hang_cay",
-  "params": {
-   "title": "BA THẾ TRẬN TRỒNG CÂY",
-   "so_cay": 5,
-   "khoang": "5 m",
-   "note": "Đường thẳng trồng hai đầu: số cây = số khoảng + 1."
-  },
-  "caption": "Đường thẳng trồng cả hai đầu — cây nhiều hơn khoảng 1.",
-  "bai": "DL:KSN4.B20",
-  "muc": "khamPha",
-  "neoBuoc": 1,
-  "goc": "B15 ④ bước 1"
- },
- {
   "id": "L4H_B21_MO",
   "arch": "cot_san_bang",
   "params": {
@@ -2672,120 +2456,6 @@
   "goc": "B11 ⑧ C8"
  },
  {
-  "id": "L4H_B20_C7",
-  "arch": "tia_so",
-  "params": {
-   "title": "TỪ TẦNG 1 LÊN TẦNG 4 — ĐẾM QUÃNG CẦU THANG",
-   "moc": [
-    {
-     "so": 1,
-     "danh": true
-    },
-    {
-     "so": 2
-    },
-    {
-     "so": 3
-    },
-    {
-     "so": 4
-    }
-   ],
-   "nhan": "12 bậc"
-  },
-  "caption": "Bốn tầng, mỗi quãng giữa hai tầng có 12 bậc.",
-  "bai": "DL:KSN4.B20",
-  "muc": "luyenTap",
-  "neoCau": "C7",
-  "vaiTro": null,
-  "goc": "B15 ⑧ C7"
- },
- {
-  "id": "L4H_B20_C7_G",
-  "arch": "tia_so",
-  "params": {
-   "title": "BỐN TẦNG NHƯNG CHỈ BA QUÃNG",
-   "moc": [
-    {
-     "so": 1,
-     "danh": true
-    },
-    {
-     "so": 2
-    },
-    {
-     "so": 3
-    },
-    {
-     "so": 4
-    }
-   ],
-   "nhan": "12 bậc",
-   "note": "Số quãng = 4 − 1 = 3 nên phải bước 3 × 12 = 36 bậc. Đếm TẦNG ra 4, đếm QUÃNG mới ra 3."
-  },
-  "caption": "Ba quãng cầu thang, không phải bốn — chỗ bé hay đếm thừa một.",
-  "bai": "DL:KSN4.B20",
-  "muc": "luyenTap",
-  "neoCau": "C7",
-  "vaiTro": "giai",
-  "goc": "B15 ⑧ C7"
- },
- {
-  "id": "L4H_B20_C8",
-  "arch": "hinh_chu_vi",
-  "params": {
-   "title": "ĐÓNG CỌC QUANH SÂN, BỐN GÓC ĐỀU CÓ CỌC",
-   "hinh": [
-    {
-     "loai": "chunhat",
-     "canh": [
-      "30 m",
-      "20 m",
-      "30 m",
-      "20 m"
-     ],
-     "ten": "sân đình",
-     "mau": "teal",
-     "dinh": true
-    }
-   ]
-  },
-  "caption": "Sân 30 m × 20 m, bốn góc đã có cọc — chưa biết khoảng cách.",
-  "bai": "DL:KSN4.B20",
-  "muc": "luyenTap",
-  "neoCau": "C8",
-  "vaiTro": null,
-  "goc": "B15 ⑧ C8"
- },
- {
-  "id": "L4H_B20_C8_G",
-  "arch": "hinh_chu_vi",
-  "params": {
-   "title": "KHOẢNG CÁCH PHẢI CHIA HẾT CẢ 30 LẪN 20",
-   "hinh": [
-    {
-     "loai": "chunhat",
-     "canh": [
-      "30 m",
-      "20 m",
-      "30 m",
-      "20 m"
-     ],
-     "ten": "sân đình",
-     "mau": "teal",
-     "dinh": true
-    }
-   ],
-   "note": "Chia hết cả 30 và 20 có 1, 2, 5, 10 nên lớn nhất là 10 m. Vòng khép kín thì số cọc bằng số khoảng: 100 : 10 = 10 cọc."
-  },
-  "caption": "Vòng khép kín thì số cọc bằng số khoảng — khác hẳn hàng thẳng.",
-  "bai": "DL:KSN4.B20",
-  "muc": "luyenTap",
-  "neoCau": "C8",
-  "vaiTro": "giai",
-  "goc": "B15 ⑧ C8"
- },
- {
   "id": "L4H_B37_C1",
   "arch": "ven_hai_vong",
   "params": {
@@ -3082,158 +2752,117 @@
   "goc": "B13 ⑥"
  },
  {
-  "id": "L4H_B14_MO",
+  "id": "L4H_B20_C7",
   "arch": "tia_so",
   "params": {
-   "title": "BỐN BẬC THANG NHƯNG CHỈ BA LẦN LEO — BẬC THỨ 20 CAO BAO NHIÊU?",
-   "moc": [
-    {
-     "so": 15,
-     "danh": true
-    },
-    {
-     "so": 30
-    },
-    {
-     "so": 45
-    },
-    {
-     "so": 60
-    }
-   ],
-   "nhan": "+15"
-  },
-  "caption": "Bậc thứ nhất đã đứng sẵn ở đó — không phải leo lần nào để tới nó.",
-  "bai": "DL:KSN4.B14",
-  "muc": "chuyenMoBai",
-  "goc": "B14 ②"
- },
- {
-  "id": "L4H_B15_MO",
-  "arch": "hang_cay",
-  "params": {
-   "title": "HÀNG RÀO 40 M, CỨ 5 M MỘT CỘT, CẮM CẢ HAI ĐẦU — MẤY CÂY CỘT?",
-   "so_cay": 9,
-   "khoang": "5 m"
-  },
-  "caption": "8 khoảng nhưng 9 cột — bác Tư hụt đúng một cây ở chỗ này.",
-  "bai": "DL:KSN4.B15",
-  "muc": "chuyenMoBai",
-  "goc": "B15 ②"
- },
- {
-  "id": "L4H_B16_MO",
-  "arch": "day_o",
-  "params": {
-   "title": "CÁCH CỦA GAUSS — VIẾT DÃY HAI LẦN, LẦN SAU VIẾT NGƯỢC",
-   "hang": [
-    {
-     "nhan": "xuôi",
-     "o": [
-      {
-       "t": "1",
-       "mau": "teal"
-      },
-      {
-       "t": "2",
-       "mau": "teal"
-      },
-      {
-       "t": "3",
-       "mau": "teal"
-      },
-      {
-       "t": "4",
-       "mau": "teal"
-      },
-      {
-       "t": "5",
-       "mau": "teal"
-      }
-     ]
-    },
-    {
-     "nhan": "ngược",
-     "o": [
-      {
-       "t": "5",
-       "mau": "gold"
-      },
-      {
-       "t": "4",
-       "mau": "gold"
-      },
-      {
-       "t": "3",
-       "mau": "gold"
-      },
-      {
-       "t": "2",
-       "mau": "gold"
-      },
-      {
-       "t": "1",
-       "mau": "gold"
-      }
-     ]
-    },
-    {
-     "nhan": "cộng cột",
-     "o": [
-      {
-       "t": "6",
-       "mau": "do"
-      },
-      {
-       "t": "6",
-       "mau": "do"
-      },
-      {
-       "t": "6",
-       "mau": "do"
-      },
-      {
-       "t": "6",
-       "mau": "do"
-      },
-      {
-       "t": "6",
-       "mau": "do"
-      }
-     ]
-    }
-   ]
-  },
-  "caption": "Cột nào cũng bằng 6 — vì cộng hai lần nên cuối cùng phải chia đôi.",
-  "bai": "DL:KSN4.B16",
-  "muc": "chuyenMoBai",
-  "goc": "B16 ②"
- },
- {
-  "id": "L4H_B17_MO",
-  "arch": "tia_so",
-  "params": {
-   "title": "VÉ SỐ 113 CÓ PHẢI GHẾ ĐẦU HÀNG KHÔNG?",
+   "title": "TỪ TẦNG 1 LÊN TẦNG 4 — ĐẾM QUÃNG CẦU THANG",
    "moc": [
     {
      "so": 1,
      "danh": true
     },
     {
-     "so": 9
+     "so": 2
     },
     {
-     "so": 17
+     "so": 3
     },
     {
-     "so": 25
+     "so": 4
     }
    ],
-   "nhan": "+8"
+   "nhan": "12 bậc"
   },
-  "caption": "Trừ số đầu trước đã, rồi mới chia cho khoảng cách.",
-  "bai": "DL:KSN4.B17",
-  "muc": "chuyenMoBai",
-  "goc": "B17 ②"
+  "caption": "Bốn tầng, mỗi quãng giữa hai tầng có 12 bậc.",
+  "bai": "DL:KSN4.B20",
+  "muc": "luyenTap",
+  "neoCau": "C7",
+  "vaiTro": null,
+  "goc": "B15 ⑧ C7"
+ },
+ {
+  "id": "L4H_B20_C7_G",
+  "arch": "tia_so",
+  "params": {
+   "title": "BỐN TẦNG NHƯNG CHỈ BA QUÃNG",
+   "moc": [
+    {
+     "so": 1,
+     "danh": true
+    },
+    {
+     "so": 2
+    },
+    {
+     "so": 3
+    },
+    {
+     "so": 4
+    }
+   ],
+   "nhan": "12 bậc",
+   "note": "Số quãng = 4 − 1 = 3 nên phải bước 3 × 12 = 36 bậc. Đếm TẦNG ra 4, đếm QUÃNG mới ra 3."
+  },
+  "caption": "Ba quãng cầu thang, không phải bốn — chỗ bé hay đếm thừa một.",
+  "bai": "DL:KSN4.B20",
+  "muc": "luyenTap",
+  "neoCau": "C7",
+  "vaiTro": "giai",
+  "goc": "B15 ⑧ C7"
+ },
+ {
+  "id": "L4H_B20_C8",
+  "arch": "hinh_chu_vi",
+  "params": {
+   "title": "ĐÓNG CỌC QUANH SÂN, BỐN GÓC ĐỀU CÓ CỌC",
+   "hinh": [
+    {
+     "loai": "chunhat",
+     "canh": [
+      "30 m",
+      "20 m",
+      "30 m",
+      "20 m"
+     ],
+     "ten": "sân đình",
+     "mau": "teal",
+     "dinh": true
+    }
+   ]
+  },
+  "caption": "Sân 30 m × 20 m, bốn góc đã có cọc — chưa biết khoảng cách.",
+  "bai": "DL:KSN4.B20",
+  "muc": "luyenTap",
+  "neoCau": "C8",
+  "vaiTro": null,
+  "goc": "B15 ⑧ C8"
+ },
+ {
+  "id": "L4H_B20_C8_G",
+  "arch": "hinh_chu_vi",
+  "params": {
+   "title": "KHOẢNG CÁCH PHẢI CHIA HẾT CẢ 30 LẪN 20",
+   "hinh": [
+    {
+     "loai": "chunhat",
+     "canh": [
+      "30 m",
+      "20 m",
+      "30 m",
+      "20 m"
+     ],
+     "ten": "sân đình",
+     "mau": "teal",
+     "dinh": true
+    }
+   ],
+   "note": "Chia hết cả 30 và 20 có 1, 2, 5, 10 nên lớn nhất là 10 m. Vòng khép kín thì số cọc bằng số khoảng: 100 : 10 = 10 cọc."
+  },
+  "caption": "Vòng khép kín thì số cọc bằng số khoảng — khác hẳn hàng thẳng.",
+  "bai": "DL:KSN4.B20",
+  "muc": "luyenTap",
+  "neoCau": "C8",
+  "vaiTro": "giai",
+  "goc": "B15 ⑧ C8"
  }
 ]

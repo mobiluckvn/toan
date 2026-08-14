@@ -20,38 +20,21 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Nhận diện và viết tiếp dãy HAI TẦNG (phần cộng thêm tăng dần) và dãy NHÂN k lần. Tìm số hạng thứ n xa hơn của dãy hai tầng bằng cách cộng dồn các hiệu (gọi Gauss trợ chiến). Phát biểu quy luật của một dãy bằng MỘT câu văn rõ ràng.",
-  "kidText": "Bỏ heo tuần 1 được 1 nghìn, tuần sau nhiều hơn tuần trước 1 nghìn. Đến tuần nào thì đủ 120 nghìn?",
+  "text": "Nhận ra dãy không cách đều. Biết hai phép thử: trừ nhau và chia nhau. Viết tiếp được dãy hai tầng và dãy nhân.",
+  "kidText": "Dãy 1, 3, 6, 10, 15 có cách đều không? Con xem video rồi mình cùng soi nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — SOI TẦNG DƯỚI: dãy 1, 3, 6, 10, 15: lấy số sau trừ số trước được tầng dưới: 2, 3, 4, 5 — một dãy cách đều tăng dần! Hai số tiếp của tầng trên: 15 + 6 = 21 và 21 + 7 = 28. LỜI QUY LUẬT (luật bắt buộc): \"Mỗi số bằng số liền trước cộng thêm một số; phần cộng thêm tăng dần 2, 3, 4, ...\""
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — SỐ HẠNG Ở XA — GỌI GAUSS TRỢ CHIẾN: tổng trong heo sau tuần n = 1 + 2 + ... + n. Sau tuần 10: (1 + 10) × 10 : 2 = 55 nghìn — không cần viết đủ mười tuần! Dãy 1, 2, 4, 7, 11 cũng vậy: số thứ 10 = 1 + (1 + 2 + ... + 9) = 1 + 45 = 46. Bí quyết: số hạng xa = số đầu + TỔNG các bước nhảy."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — HỌ HÀNG BÊN NỘI: DÃY NHÂN: dãy 3, 6, 12, 24, ...: lấy số sau CHIA số trước: đều bằng 2 → dãy nhân 2, hai số tiếp là 48, 96. Lời quy luật: \"Mỗi số bằng số liền trước nhân với 2.\" Nhận diện nhanh: bước nhảy phình rất nhanh → thử phép CHIA trước khi thử phép trừ."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — VỀ ĐÍCH MŨ BẢO HIỂM: cần 120 nghìn: tìm n để 1 + 2 + ... + n = 120. Thử bằng Gauss: n = 15 → (1 + 15) × 15 : 2 = 120 — vừa khít tuần 15! (Soi hàng xóm: n = 14 cho 105, chưa đủ.) Chiến dịch heo đất có ngày về đích chính xác."
-   }
-  ],
-  "mantra": "Gặp dãy lạ: soi TẦNG DƯỚI trước — trừ nhau ra dãy đẹp là dãy hai tầng; chia nhau ra số không đổi là dãy nhân. Số hạng ở xa của dãy hai tầng = số đầu + tổng các bước nhảy (Gauss lo khoản tổng). Và luật : quy luật nào cũng phải NÓI ĐƯỢC THÀNH MỘT CÂU.",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Gặp dãy 3, 6, 12, 24, Trí Long phán: \"Hiệu là 3, 6, 12 — tăng dần nè! Đây là dãy hai tầng, số tiếp theo cộng thêm 24: bằng 48... à không, cộng thêm bao nhiêu ta?!\"",
-    "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Tầng dưới 3, 6, 12 của Trí Long có phải dãy cách đều \"tăng dần ĐỀU\" không — hay chính nó cũng đang nhân đôi? Khi tầng dưới rối như tầng trên, hãy nghi ngờ mình chọn nhầm phép soi. Gợi ý 2: Thử phép CHIA: 6 : 3, 12 : 6, 24 : 12 — con thấy gì? Gọi đúng tên dãy, nêu lời quy luật chuẩn và tìm hai số tiếp theo giúp Trí Long. (Kết quả 48 của cậu ấy đúng hay chỉ... ăn may?)"
+    "wrong": "Có bạn nhìn dãy 1 ; 3 ; 6 ; 10 ; 15 rồi nói: \"Dãy này cách đều, khoảng cách là 2.\" Bạn ấy chỉ trừ đúng một lần.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con trừ tiếp đi. 6 − 3 bằng mấy? 10 − 6 bằng mấy? Gợi ý 2: Muốn kết luận cách đều thì phải trừ HẾT các cặp liền nhau, và các hiệu phải bằng nhau tăm tắp. Chữa: các hiệu là 2 ; 3 ; 4 ; 5 — khác nhau, nên dãy không cách đều."
    }
   ]
  },
@@ -59,120 +42,45 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Khoản bỏ heo: tuần 1 là 1 nghìn, mỗi tuần sau nhiều hơn tuần trước 1 nghìn; bảng TỔNG tiền: 1, 3, 6, 10, 15, ... Hỏi hai số tiếp theo của bảng tổng; tổng sau tuần thứ 10; và đến tuần nào đủ 120 nghìn mua mũ bảo hiểm?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "CHO GÌ? khoản bỏ heo: tuần 1 là 1 nghìn, mỗi tuần sau nhiều hơn tuần trước 1 nghìn; bảng TỔNG tiền: 1, 3, 6, 10, 15, ...\nHỎI GÌ? hai số tiếp theo của bảng tổng; tổng sau tuần thứ 10; và đến tuần nào đủ 120 nghìn mua mũ bảo hiểm.\nĐẠI LƯỢNG & ĐƠN VỊ: tiền (nghìn đồng) theo tuần — phân biệt \"khoản bỏ MỖI tuần\" với \"TỔNG trong heo\".\nQUAN HỆ GIỮA CHÚNG: khoản bỏ các tuần là 1, 2, 3, 4, ... nên tổng trong heo tăng theo bước nhảy lớn dần — hiệu hai số liền nhau của bảng tổng chính là khoản bỏ tuần đó.\nCHỌN CÔNG CỤ: BẢNG HAI TẦNG: tầng trên ghi tổng, tầng dưới ghi các bước nhảy +2, +3, +4, ... — và công thức Gauss để cộng dồn.\nƯỚC LƯỢNG TRƯỚC: tổng sau tuần 10 = 1 + 2 + ... + 10, cỡ dăm chục nghìn.",
-    "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ bảng heo đất sang hai tầng số"
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S6",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S7",
-    "kind": "explain",
-    "narration": "LẮP: thông báo dán cạnh heo đất: \"Theo giao kèo, sau tuần 10 heo có 55 nghìn; mũ bảo hiểm 120 nghìn sẽ về tay đúng TUẦN 15.\" Su Bống đánh dấu ngày ấy lên tờ lịch — mục tiêu tài chính có hạn chót rõ ràng!\nSOI: soi bằng bảng thật: cộng tay 5 tuần đầu 1 + 2 + 3 + 4 + 5 = 15 khớp ô thứ 5 của bảng ✓; và Gauss n = 15 cho đúng 120 trong khi n = 14 mới 105 — hạn chót tuần 15 là chuẩn, không sớm không muộn.\nDÙNG NGOÀI ĐỜI: mọi kế hoạch tiết kiệm \"tăng dần đều\" — tiền heo, số trang đọc sách, số vòng chạy bộ — đều là dãy hai tầng: con vừa học cách dự báo NGÀY VỀ ĐÍCH của chúng.",
-    "teaches": [],
-    "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
-   },
-   {
-    "id": "S8",
     "kind": "trap",
-    "narration": "Gặp dãy 3, 6, 12, 24, Trí Long phán: \"Hiệu là 3, 6, 12 — tăng dần nè! Đây là dãy hai tầng, số tiếp theo cộng thêm 24: bằng 48... à không, cộng thêm bao nhiêu ta?!\"",
+    "narration": "Có bạn nhìn dãy 1 ; 3 ; 6 ; 10 ; 15 rồi nói: \"Dãy này cách đều, khoảng cách là 2.\" Bạn ấy chỉ trừ đúng một lần.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Cho dãy số: 1 ; 2 ; 4 ; 7 ; 11 ; ... a) Nêu quy luật của dãy bằng lời. b) Tìm số hạng thứ 10 của dãy.",
+  "problem": "Cho dãy 1 ; 3 ; 6 ; 10 ; 15. Dãy này có cách đều không? Hai số tiếp theo là số nào?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Thử trừ nhau"
    },
    {
-    "show": "Dãy 1 ; 2 ; 4 ; 7 ; 11 ; ... — nêu quy luật và tìm số hạng thứ 10."
+    "show": "3 − 1 = 2 ; 6 − 3 = 3 ; 10 − 6 = 4 ; 15 − 10 = 5."
    },
    {
-    "show": "Bài dãy số vẫn cần tóm tắt — chép lại dãy cho chuẩn."
+    "show": "Các hiệu là 2 ; 3 ; 4 ; 5 — không bằng nhau, nên dãy KHÔNG cách đều."
    },
    {
-    "show": "Mô hình (soi tầng dưới)"
+    "show": "Nhưng chính các hiệu lại cách đều"
    },
    {
-    "show": "Dãy: 1 2 4 7 11"
+    "show": "Dãy 2 ; 3 ; 4 ; 5 có khoảng cách 1."
    },
    {
-    "show": "Bước nhảy: +1 +2 +3 +4"
+    "show": "Dãy như thế gọi là dãy hai tầng."
    },
    {
-    "show": "Bảng hai tầng là sơ đồ của bài — tầng dưới lộ quy luật."
+    "show": "Viết tiếp"
    },
    {
-    "show": "Bài giải"
+    "show": "Hiệu tiếp theo là 6, nên số tiếp theo là 15 + 6 = 21."
    },
    {
-    "show": "A) Quy luật: mỗi số bằng số liền trước cộng thêm một số"
+    "show": "Hiệu sau nữa là 7, nên số sau nữa là 21 + 7 = 28."
    },
    {
-    "show": "Phần cộng thêm tăng dần: 1 ; 2 ; 3 ; 4 ; ..."
-   },
-   {
-    "show": "B) Từ số thứ nhất đến số thứ 10 có 9 bước nhảy: +1, +2, ..., +9."
-   },
-   {
-    "show": "Tổng các bước nhảy là: (1 + 9) × 9 : 2 = 45"
-   },
-   {
-    "show": "Số hạng thứ 10 là: 1 + 45 = 46"
-   },
-   {
-    "show": "Câu lời quy luật viết TRỌN MỘT CÂU; phần b gọi công thức Gauss thay cho việc viết cả dãy."
-   },
-   {
-    "show": "Đáp số: a) như trên ; b) 46."
-   },
-   {
-    "show": "Đáp số cho đủ hai phần a, b."
-   },
-   {
-    "show": "Thử lại: viết tiếp dãy: 11, 16, 22, 29, 37, 46 — số thứ 10 đúng là 46 ✓"
-   },
-   {
-    "show": "Soi bằng đường \"đi bộ\" — công thức và tay bấm phải gặp nhau."
+    "show": "Đáp số: dãy không cách đều; hai số tiếp theo là 21 và 28."
    }
   ]
  },
@@ -379,32 +287,11 @@
   ]
  },
  "parentNote": {
-  "onComplete": "Lập một \"giao kèo heo đất\" thật với con theo đúng luật tăng dần — rồi mỗi tuần đối chiếu bảng dự báo với tiền thật trong heo. Toán dự báo trúng tiền thật là niềm tin không sách nào dạy nổi.",
-  "homeActivity": "Luật \"nói quy luật thành lời\" đáng được giữ nghiêm: con chỉ tay \"cộng 2, cộng 3...\" chưa tính là đạt — phải ra được MỘT CÂU trọn vẹn có chủ ngữ.",
-  "watchFor": "NÊN: cho con tự sáng tác dãy đố bố mẹ (kèm lời quy luật niêm phong trong phong bì). KHÔNG NÊN: yêu cầu công thức tổng quát dạng n × (n + 1) : 2 — lớp 4 cộng dồn bằng Gauss là đủ, chữ n để dành lớp trên."
+  "onComplete": "Viết ra giấy vài dãy rồi cùng con làm hai phép thử: trừ nhau trước, không ra thì chia nhau.",
+  "homeActivity": "Dãy 1 ; 2 ; 4 ; 8 ; 16 là dãy nhân 2. Dãy 1 ; 4 ; 9 ; 16 là bình phương — trừ nhau ra 3 ; 5 ; 7, cũng là dãy hai tầng.",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L4H_B19_MO",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L4H_B19_MO.png",
-   "caption": "Hai tầng: tầng trên là tuần, tầng dưới là số tiền.",
-   "sha256_16": "6cf2eda0415b0b8a",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L4H_B19_G1",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L4H_B19_G1.png",
-   "caption": "Dãy hai tầng: hiệu của dãy mới là dãy cách đều.",
-   "sha256_16": "dc52fbd5b440f513",
-   "mucGoc": "khamPha"
-  }
- ],
+ "figureSpec": [],
  "hatMam": "Lớp 3, ở Bài 12, con đã gặp Fibonacci và dãy \"hiệu tầng hai\" ở mức nhận diện. Năm nay đặt ra hai yêu cầu người giải: tìm số hạng thứ n Ở XA (không viết cả dãy — dùng Gauss của Bài 13!), và quan trọng không kém: NÓI ĐƯỢC quy luật thành lời văn cho người khác hiểu. Quy luật chưa nói được thành lời là quy luật chưa thuộc về mình.",
  "duongLui": {
   "ve": [
@@ -416,5 +303,8 @@
   "canCu": "sach",
   "lopDuoi": 3,
   "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B19_giang.mp4"
  }
 }

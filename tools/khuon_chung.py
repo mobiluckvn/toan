@@ -225,14 +225,24 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
     if nham:
         screens.append({'id': f'S{len(screens) + 1}', 'kind': 'trap',
                         'narration': nham[0], 'teaches': []})
-        # Tên nhân vật nói sai lấy từ TIÊU ĐỀ MỤC, đừng ghim cứng "Su Kem": sách lớp
-        # 3 và lớp 4 đều đặt mục ấy là "TRÍ LONG ƠI, NHẦM RỒI!" nên dòng dấu hiệu
-        # đang gọi nhầm tên bạn — bé đọc thấy một tên chẳng liên quan tới câu vừa đọc.
+        # ── DÒNG DẤU HIỆU: CÓ NHÂN VẬT HAY KHÔNG ──
+        # Bác chốt 14-08: bỏ nhân vật. Bài đã sang khuôn video thì mục này viết theo
+        # lối "Có bạn làm thế này…", không tên ai — nên dòng dấu hiệu cũng phải nói
+        # trống. Bản cũ lấy tên từ TIÊU ĐỀ MỤC ("TRÍ LONG ƠI, NHẦM RỒI!"), nên dù
+        # đã dọn sạch tên trong lời văn, cái tên vẫn quay lại qua cửa này.
+        #
+        # 41 bài chưa chuyển vẫn giữ tên: đổi hết bây giờ thì lời văn của chúng
+        # ("…thử công thức của Trí Long xem") mất chỗ neo. Suy từ chính tiêu đề mục,
+        # nên bài nào dọn tên khỏi tiêu đề là dòng này tự trống theo.
         ten_muc = (bai['muc'].get('suKemNham') or {}).get('ten', '')
-        ai = re.split(r'\s+ƠI|,', ten_muc)[0].strip().title() or 'Su Kem'
+        ai = re.split(r'\s+ƠI|,', ten_muc)[0].strip().title()
+        if ai.upper() in ('CHỖ Hay Nhầm'.upper(), 'CHỖ HAY NHẦM', ''):
+            ai = ''
+        dau_hieu = f'Bé làm theo cách {ai} vừa nói.' if ai else \
+            'Bé làm theo cách sai vừa nêu ở trên.'
         misconceptions.append({
             'wrong': nham[0],
-            'signal': f'Bé làm theo cách {ai} vừa nói.',
+            'signal': dau_hieu,
             'fix': ' '.join(nham[1:]) or 'Con thử làm lại theo đúng các bước ở trên nhé.',
         })
 

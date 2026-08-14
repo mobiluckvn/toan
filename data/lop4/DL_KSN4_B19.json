@@ -21,104 +21,62 @@
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Nhận diện và viết tiếp dãy HAI TẦNG (phần cộng thêm tăng dần) và dãy NHÂN k lần.",
-    "Tìm số hạng thứ n xa hơn của dãy hai tầng bằng cách cộng dồn các hiệu (gọi Gauss trợ chiến).",
-    "Phát biểu quy luật của một dãy bằng MỘT câu văn rõ ràng."
+    "Nhận ra dãy không cách đều.",
+    "Biết hai phép thử: trừ nhau và chia nhau.",
+    "Viết tiếp được dãy hai tầng và dãy nhân."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
    "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 14: chú heo đất mua xe đạp",
-   "dong": [
-    "Hai anh em Su Kem mở chiến dịch \"mua đèn và mũ bảo hiểm cho xe đạp\": tuần 1 bỏ heo 1 nghìn, và giao kèo mỗi tuần sau bỏ NHIỀU HƠN tuần trước đúng 1 nghìn. Su Bống ghi bảng tổng tiền: 1, 3, 6, 10, 15... rồi tròn mắt: \"Ơ, dãy này nhảy mỗi lúc một xa — không đều như dãy ghế rạp phim!\" Trí Long gãi đầu: \"Dãy gì mà bước nhảy cũng... lớn lên theo?\" Su Kem gõ bút: \"Chào mừng đến với dãy HAI TẦNG — tầng trên là dãy số, tầng dưới là dãy các bước nhảy.\""
-   ],
-   "hinh": [
-    {
-     "id": "L4H_B19_MO",
-     "sauDong": 0,
-     "file": "figures/L4H_B19_MO.png",
-     "caption": "Hai tầng: tầng trên là tuần, tầng dưới là số tiền.",
-     "sha256_16": "6cf2eda0415b0b8a"
-    }
-   ],
+   "dong": [],
+   "hinh": [],
    "nhip": ""
   },
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
-   "dong": [
-    "CHO GÌ? khoản bỏ heo: tuần 1 là 1 nghìn, mỗi tuần sau nhiều hơn tuần trước 1 nghìn; bảng TỔNG tiền: 1, 3, 6, 10, 15, ...",
-    "HỎI GÌ? hai số tiếp theo của bảng tổng; tổng sau tuần thứ 10; và đến tuần nào đủ 120 nghìn mua mũ bảo hiểm.",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: tiền (nghìn đồng) theo tuần — phân biệt \"khoản bỏ MỖI tuần\" với \"TỔNG trong heo\".",
-    "QUAN HỆ GIỮA CHÚNG: khoản bỏ các tuần là 1, 2, 3, 4, ... nên tổng trong heo tăng theo bước nhảy lớn dần — hiệu hai số liền nhau của bảng tổng chính là khoản bỏ tuần đó.",
-    "CHỌN CÔNG CỤ: BẢNG HAI TẦNG: tầng trên ghi tổng, tầng dưới ghi các bước nhảy +2, +3, +4, ... — và công thức Gauss để cộng dồn.",
-    "ƯỚC LƯỢNG TRƯỚC: tổng sau tuần 10 = 1 + 2 + ... + 10, cỡ dăm chục nghìn."
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 1, DỊCH — từ bảng heo đất sang hai tầng số"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
-   "dong": [
-    "Bước 1 — SOI TẦNG DƯỚI: dãy 1, 3, 6, 10, 15: lấy số sau trừ số trước được tầng dưới: 2, 3, 4, 5 — một dãy cách đều tăng dần! Hai số tiếp của tầng trên: 15 + 6 = 21 và 21 + 7 = 28. LỜI QUY LUẬT (luật bắt buộc): \"Mỗi số bằng số liền trước cộng thêm một số; phần cộng thêm tăng dần 2, 3, 4, ...\"",
-    "Bước 2 — SỐ HẠNG Ở XA — GỌI GAUSS TRỢ CHIẾN: tổng trong heo sau tuần n = 1 + 2 + ... + n. Sau tuần 10: (1 + 10) × 10 : 2 = 55 nghìn — không cần viết đủ mười tuần! Dãy 1, 2, 4, 7, 11 cũng vậy: số thứ 10 = 1 + (1 + 2 + ... + 9) = 1 + 45 = 46. Bí quyết: số hạng xa = số đầu + TỔNG các bước nhảy.",
-    "Bước 3 — HỌ HÀNG BÊN NỘI: DÃY NHÂN: dãy 3, 6, 12, 24, ...: lấy số sau CHIA số trước: đều bằng 2 → dãy nhân 2, hai số tiếp là 48, 96. Lời quy luật: \"Mỗi số bằng số liền trước nhân với 2.\" Nhận diện nhanh: bước nhảy phình rất nhanh → thử phép CHIA trước khi thử phép trừ.",
-    "Bước 4 — VỀ ĐÍCH MŨ BẢO HIỂM: cần 120 nghìn: tìm n để 1 + 2 + ... + n = 120. Thử bằng Gauss: n = 15 → (1 + 15) × 15 : 2 = 120 — vừa khít tuần 15! (Soi hàng xóm: n = 14 cho 105, chưa đủ.) Chiến dịch heo đất có ngày về đích chính xác.",
-    "MẸO NGƯỜI GIẢI: Gặp dãy lạ: soi TẦNG DƯỚI trước — trừ nhau ra dãy đẹp là dãy hai tầng; chia nhau ra số không đổi là dãy nhân. Số hạng ở xa của dãy hai tầng = số đầu + tổng các bước nhảy (Gauss lo khoản tổng). Và luật : quy luật nào cũng phải NÓI ĐƯỢC THÀNH MỘT CÂU."
-   ],
-   "hinh": [
-    {
-     "id": "L4H_B19_G1",
-     "sauDong": 0,
-     "file": "figures/L4H_B19_G1.png",
-     "caption": "Dãy hai tầng: hiệu của dãy mới là dãy cách đều.",
-     "sha256_16": "dc52fbd5b440f513"
-    }
-   ],
+   "dong": [],
+   "hinh": [],
    "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
-   "dong": [
-    "LẮP: thông báo dán cạnh heo đất: \"Theo giao kèo, sau tuần 10 heo có 55 nghìn; mũ bảo hiểm 120 nghìn sẽ về tay đúng TUẦN 15.\" Su Bống đánh dấu ngày ấy lên tờ lịch — mục tiêu tài chính có hạn chót rõ ràng!",
-    "SOI: soi bằng bảng thật: cộng tay 5 tuần đầu 1 + 2 + 3 + 4 + 5 = 15 khớp ô thứ 5 của bảng ✓; và Gauss n = 15 cho đúng 120 trong khi n = 14 mới 105 — hạn chót tuần 15 là chuẩn, không sớm không muộn.",
-    "DÙNG NGOÀI ĐỜI: mọi kế hoạch tiết kiệm \"tăng dần đều\" — tiền heo, số trang đọc sách, số vòng chạy bộ — đều là dãy hai tầng: con vừa học cách dự báo NGÀY VỀ ĐÍCH của chúng."
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Cho dãy số: 1 ; 2 ; 4 ; 7 ; 11 ; ... a) Nêu quy luật của dãy bằng lời. b) Tìm số hạng thứ 10 của dãy.",
-    "Tóm tắt",
-    "Dãy 1 ; 2 ; 4 ; 7 ; 11 ; ... — nêu quy luật và tìm số hạng thứ 10.",
-    "Bài dãy số vẫn cần tóm tắt — chép lại dãy cho chuẩn.",
-    "Mô hình (soi tầng dưới)",
-    "Dãy: 1 2 4 7 11",
-    "Bước nhảy: +1 +2 +3 +4",
-    "Bảng hai tầng là sơ đồ của bài — tầng dưới lộ quy luật.",
-    "Bài giải",
-    "A) Quy luật: mỗi số bằng số liền trước cộng thêm một số",
-    "Phần cộng thêm tăng dần: 1 ; 2 ; 3 ; 4 ; ...",
-    "B) Từ số thứ nhất đến số thứ 10 có 9 bước nhảy: +1, +2, ..., +9.",
-    "Tổng các bước nhảy là: (1 + 9) × 9 : 2 = 45",
-    "Số hạng thứ 10 là: 1 + 45 = 46",
-    "Câu lời quy luật viết TRỌN MỘT CÂU; phần b gọi công thức Gauss thay cho việc viết cả dãy.",
-    "Đáp số: a) như trên ; b) 46.",
-    "Đáp số cho đủ hai phần a, b.",
-    "Thử lại: viết tiếp dãy: 11, 16, 22, 29, 37, 46 — số thứ 10 đúng là 46 ✓",
-    "Soi bằng đường \"đi bộ\" — công thức và tay bấm phải gặp nhau."
+    "Đề bài: Cho dãy 1 ; 3 ; 6 ; 10 ; 15. Dãy này có cách đều không? Hai số tiếp theo là số nào?",
+    "Thử trừ nhau",
+    "3 − 1 = 2 ; 6 − 3 = 3 ; 10 − 6 = 4 ; 15 − 10 = 5.",
+    "Các hiệu là 2 ; 3 ; 4 ; 5 — không bằng nhau, nên dãy KHÔNG cách đều.",
+    "Nhưng chính các hiệu lại cách đều",
+    "Dãy 2 ; 3 ; 4 ; 5 có khoảng cách 1.",
+    "Dãy như thế gọi là dãy hai tầng.",
+    "Viết tiếp",
+    "Hiệu tiếp theo là 6, nên số tiếp theo là 15 + 6 = 21.",
+    "Hiệu sau nữa là 7, nên số sau nữa là 21 + 7 = 28.",
+    "Đáp số: dãy không cách đều; hai số tiếp theo là 21 và 28."
    ],
    "hinh": [],
    "nhip": ""
   },
   "suKemNham": {
-   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Gặp dãy 3, 6, 12, 24, Trí Long phán: \"Hiệu là 3, 6, 12 — tăng dần nè! Đây là dãy hai tầng, số tiếp theo cộng thêm 24: bằng 48... à không, cộng thêm bao nhiêu ta?!\"",
-    "Gợi ý 1: Tầng dưới 3, 6, 12 của Trí Long có phải dãy cách đều \"tăng dần ĐỀU\" không — hay chính nó cũng đang nhân đôi? Khi tầng dưới rối như tầng trên, hãy nghi ngờ mình chọn nhầm phép soi.",
-    "Gợi ý 2: Thử phép CHIA: 6 : 3, 12 : 6, 24 : 12 — con thấy gì? Gọi đúng tên dãy, nêu lời quy luật chuẩn và tìm hai số tiếp theo giúp Trí Long. (Kết quả 48 của cậu ấy đúng hay chỉ... ăn may?)"
+    "Có bạn nhìn dãy 1 ; 3 ; 6 ; 10 ; 15 rồi nói: \"Dãy này cách đều, khoảng cách là 2.\" Bạn ấy chỉ trừ đúng một lần.",
+    "Gợi ý 1: Con trừ tiếp đi. 6 − 3 bằng mấy? 10 − 6 bằng mấy?",
+    "Gợi ý 2: Muốn kết luận cách đều thì phải trừ HẾT các cặp liền nhau, và các hiệu phải bằng nhau tăm tắp.",
+    "Chữa: các hiệu là 2 ; 3 ; 4 ; 5 — khác nhau, nên dãy không cách đều."
    ],
    "hinh": [],
    "nhip": ""
@@ -140,9 +98,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Lập một \"giao kèo heo đất\" thật với con theo đúng luật tăng dần — rồi mỗi tuần đối chiếu bảng dự báo với tiền thật trong heo. Toán dự báo trúng tiền thật là niềm tin không sách nào dạy nổi.",
-    "Luật \"nói quy luật thành lời\" đáng được giữ nghiêm: con chỉ tay \"cộng 2, cộng 3...\" chưa tính là đạt — phải ra được MỘT CÂU trọn vẹn có chủ ngữ.",
-    "NÊN: cho con tự sáng tác dãy đố bố mẹ (kèm lời quy luật niêm phong trong phong bì). KHÔNG NÊN: yêu cầu công thức tổng quát dạng n × (n + 1) : 2 — lớp 4 cộng dồn bằng Gauss là đủ, chữ n để dành lớp trên."
+    "Viết ra giấy vài dãy rồi cùng con làm hai phép thử: trừ nhau trước, không ra thì chia nhau.",
+    "Dãy 1 ; 2 ; 4 ; 8 ; 16 là dãy nhân 2. Dãy 1 ; 4 ; 9 ; 16 là bình phương — trừ nhau ra 3 ; 5 ; 7, cũng là dãy hai tầng."
    ],
    "hinh": [],
    "nhip": ""

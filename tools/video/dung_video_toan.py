@@ -42,7 +42,9 @@ SO_AM = GOC / 'web' / 'public' / 'content' / 'toan' / 'lop4_am.json'
 LOI_CAN = GOC / 'data' / 'lop4_loi_video.json'
 
 # Năm bài dãy số làm trước — bác duyệt khuôn rồi mới nhân ra cả quyển.
-BAI_MAC_DINH = [f'DL_KSN4_B{n:02d}' for n in range(13, 18)]
+# Đợt 1 xong thì nới dải này. Bài nào chưa có kịch bản thì `kich_ban()` ném
+# lỗi ngay, không dựng ra video rỗng.
+BAI_MAC_DINH = [f'DL_KSN4_B{n:02d}' for n in range(13, 21)]
 
 
 def ds_bai(a) -> list[str]:

@@ -137,6 +137,35 @@ test('mỗi video CÓ màn công thức, và NHẮC LẠI trước lúc kết', 
   assert.ok(nho.length >= 5, `chỉ có ${nho.length}/5 bài nhắc lại công thức cuối video`);
 });
 
+test('bài đã sang khuôn video thì KHÔNG còn nhân vật nào', () => {
+  /* Bác chốt 14-08: bỏ nhân vật, đồng bộ toàn quyển. Video không có nhân vật nào,
+     nên bài đi kèm video cũng không được có — bé xem clip nói thẳng rồi đọc bài
+     thấy "Trí Long bấm ngay…" là hai giọng khác nhau trong cùng một bài.
+
+     Chỉ soi bài ĐÃ có video. 41 bài còn lại vẫn khuôn cũ, và sẽ được dọn khi tới
+     lượt chuyển — canh cả chúng bây giờ thì cổng đỏ suốt, rồi người ta quen mắt. */
+  const NV = /(Trí Long|Su Kem|Trí Dũng)/i;
+  const xau = [];
+  for (const b of coVideo) {
+    const soi = (o, p = '') => {
+      if (typeof o === 'string') { if (NV.test(o)) xau.push(`${b.id} · ${p}`); }
+      else if (Array.isArray(o)) o.forEach((x) => soi(x, p));
+      else if (o && typeof o === 'object') {
+        for (const [k, v] of Object.entries(o)) soi(v, p || k);
+      }
+    };
+    soi(b.knowledgeCore); soi(b.lecture); soi(b.practice);
+    soi(b.assessment); soi(b.objective); soi(b.workedExample);
+  }
+  assert.deepEqual([...new Set(xau)], [], `${xau.length} chỗ còn nhân vật`);
+});
+
+test('lời đọc KHÔNG có nhân vật', () => {
+  const NV = /(Trí Long|Su Kem|Trí Dũng)/i;
+  const so = JSON.parse(readFileSync(new URL('../public/content/toan/lop4_am.json', import.meta.url), 'utf8'));
+  assert.deepEqual(so.clip.filter((c) => NV.test(c.chu || '')).map((c) => c.id), []);
+});
+
 test('màn MỞ BÀI có gọi Video, và trỏ đúng thư mục của Toán', () => {
   /* Dựng video xong mà quên gắn vào màn hình thì mọi phép trên vẫn xanh, còn bé
      thì không thấy video nào. Soi thẳng chỗ nối. */

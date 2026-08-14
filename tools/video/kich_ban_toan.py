@@ -325,7 +325,141 @@ def kb_b17(b):
     ]
 
 
-BO = {13: kb_b13, 14: kb_b14, 15: kb_b15, 16: kb_b16, 17: kb_b17}
+
+def kb_b18(b):
+    """B18 · dùng CẢ BỐN công thức trên một bài — bài chốt của chương.
+
+    Không dạy công thức mới. Việc của nó là cho bé thấy bốn công thức vừa học
+    ĐỨNG CẠNH NHAU trên cùng một bài toán, và biết chọn cái nào."""
+    return [
+        _c('bia', 'Dùng cả bốn công thức', 'Bài 18',
+           loi=['Hôm nay mình dùng cả bốn công thức đã học vào một bài.']),
+        _c('de_toan', 'Rạp phim mỗi hàng 8 ghế, đánh số liền từ 1. '
+                      'Ghế đầu các hàng là 1, 9, 17, 25.',
+           'Con nghe kỹ đề nhé.',
+           loi=['Rạp phim mỗi hàng tám ghế, đánh số liền từ một.',
+                'Ghế đầu các hàng là một, chín, mười bảy, hai mươi lăm.']),
+        _c('day_so', 'Ghế đầu các hàng', so=[1, 9, 17, 25], hienThuTu=True,
+           phu='Khoảng cách là 8.',
+           loi=['Đây là một dãy cách đều, khoảng cách tám.']),
+        _c('cong_thuc', 'Hỏi 1 — ghế đầu hàng 15 là số mấy',
+           congThuc='số hạng thứ n = số đầu + khoảng cách × (n − 1)',
+           thay='1 + 8 × 14 = 113',
+           loi=['Câu hỏi thứ nhất dùng công thức số hạng ở chỗ bất kỳ.',
+                'Một cộng tám nhân mười bốn bằng một trăm mười ba.']),
+        _c('cong_thuc', 'Hỏi 2 — rạp 18 hàng thì mấy hàng ghế đầu',
+           congThuc='số số hạng = (số cuối − số đầu) : khoảng cách + 1',
+           thay='có 18 hàng nên có 18 số hạng',
+           loi=['Câu hỏi thứ hai dùng công thức đếm số số hạng.']),
+        _c('cong_thuc', 'Hỏi 3 — cộng tất cả ghế đầu hàng',
+           congThuc='tổng = (số đầu + số cuối) × số số hạng : 2',
+           thay='(1 + 137) × 18 : 2 = 1242',
+           loi=['Câu hỏi thứ ba dùng công thức tính tổng.']),
+        _c('cong_thuc', 'Hỏi 4 — vé số 113 có phải ghế đầu hàng không',
+           congThuc='(số cần soi − số đầu) : khoảng cách',
+           thay='(113 − 1) : 8 = 14  →  chỗ đứng = 15',
+           loi=['Câu hỏi thứ tư dùng cách soi một số.',
+                'Chia hết nên vé một trăm mười ba đúng là ghế đầu, của hàng mười lăm.']),
+        _c('y_toan', 'Cách chọn công thức', 'Đọc kỹ câu hỏi rồi mới chọn.',
+           buoc=1, soBuoc=1,
+           loi=['Bốn công thức, mỗi công thức trả lời một loại câu hỏi.',
+                'Con đọc kỹ câu hỏi rồi mới chọn, đừng vội tính.']),
+        _c('cong_thuc', 'Con nhớ kỹ bốn công thức này nhé',
+           congThuc='thứ n · số số hạng · tổng · soi một số',
+           loi=['Con nhớ lại bốn công thức. Tìm số hạng ở chỗ bất kỳ, đếm số số hạng, '
+                'tính tổng, và soi xem một số có thuộc dãy không.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_b19(b):
+    """B19 · dãy KHÔNG cách đều: hai tầng và dãy nhân."""
+    return [
+        _c('bia', 'Dãy không cách đều', 'Bài 19',
+           loi=['Hôm nay mình gặp dãy không cách đều.']),
+        _c('day_so', 'Dãy này có cách đều không', so=[1, 3, 6, 10, 15],
+           loi=['Nhìn dãy một, ba, sáu, mười, mười lăm.',
+                'Lấy số sau trừ số trước xem có bằng nhau không.']),
+        _c('y_toan', 'Các hiệu KHÔNG bằng nhau', '2, 3, 4, 5 — mỗi lần một khác.',
+           buoc=1, soBuoc=4,
+           loi=['Các hiệu là hai, ba, bốn, năm. Không bằng nhau, nên dãy này không cách đều.']),
+        _c('day_so', 'Nhưng chính các hiệu lại cách đều', so=[2, 3, 4, 5],
+           phu='Đây gọi là dãy hai tầng.',
+           loi=['Nhưng chính các hiệu ấy lại là một dãy cách đều.',
+                'Dãy như thế gọi là dãy hai tầng.']),
+        _c('y_toan', 'Viết tiếp thế nào', 'Hiệu tiếp theo là 6, rồi 7.',
+           buoc=2, soBuoc=4,
+           loi=['Muốn viết tiếp, con tìm hiệu tiếp theo trước.',
+                'Hiệu tiếp là sáu, nên số tiếp là mười lăm cộng sáu bằng hai mươi mốt.']),
+        _c('day_so', 'Còn dãy này thì sao', so=[3, 6, 12, 24],
+           loi=['Còn dãy ba, sáu, mười hai, hai mươi tư thì sao.',
+                'Trừ nhau không ra dãy đẹp. Con thử chia xem.']),
+        _c('y_toan', 'Chia thì ra số không đổi', '6 : 3 = 2,  12 : 6 = 2,  24 : 12 = 2',
+           buoc=3, soBuoc=4,
+           loi=['Lấy số sau chia số trước, lần nào cũng bằng hai.',
+                'Dãy như thế gọi là dãy nhân.']),
+        _c('cong_thuc', 'Gặp dãy lạ thì soi hai việc',
+           congThuc='trừ nhau → dãy hai tầng     chia nhau → dãy nhân',
+           thay='1, 3, 6, 10 trừ nhau ra 2, 3, 4',
+           loi=['Gặp dãy lạ, con làm hai việc.',
+                'Trừ nhau mà ra dãy đẹp thì là dãy hai tầng. Chia nhau mà ra số không '
+                'đổi thì là dãy nhân.']),
+        _c('cong_thuc', 'Con nhớ kỹ hai phép thử này nhé',
+           congThuc='trừ nhau → dãy hai tầng     chia nhau → dãy nhân',
+           loi=['Con nhớ lại hai phép thử. Trừ nhau trước, không ra thì chia nhau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_b20(b):
+    """B20 · trồng cây: cây và khoảng, ba thế trận."""
+    return [
+        _c('bia', 'Trồng cây', 'Bài 20',
+           loi=['Hôm nay mình đếm cây và đếm khoảng.']),
+        _c('de_toan', 'Đoạn đường dài 40 mét, cứ 5 mét trồng một cây, '
+                      'trồng cả hai đầu. Cần bao nhiêu cây?',
+           'Con nghe kỹ đề nhé.',
+           loi=['Đoạn đường dài bốn mươi mét, cứ năm mét trồng một cây, trồng cả hai đầu.',
+                'Cần bao nhiêu cây.']),
+        _c('y_toan', 'Chia ra được số KHOẢNG', '40 : 5 = 8 khoảng.', buoc=1, soBuoc=3,
+           loi=['Bốn mươi chia năm bằng tám. Tám là số khoảng, chưa phải số cây.']),
+        _c('day_so', 'Đếm thử trên đoạn ngắn', so=[0, 5, 10, 15],
+           phu='4 cây nhưng chỉ 3 khoảng.',
+           loi=['Đếm thử trên đoạn ngắn. Bốn cây nhưng chỉ ba khoảng.',
+                'Số cây luôn nhiều hơn số khoảng đúng một.']),
+        _c('cong_thuc', 'Trồng cả hai đầu',
+           congThuc='số cây = số khoảng + 1',
+           thay='8 + 1 = 9 cây',
+           loi=['Trồng cả hai đầu thì số cây bằng số khoảng cộng một.',
+                'Tám cộng một bằng chín cây.']),
+        _c('y_toan', 'Nhưng có hai thế trận khác',
+           'Trồng một đầu, hoặc trồng vòng kín.', buoc=2, soBuoc=3,
+           loi=['Nhưng còn hai thế trận khác. Trồng một đầu thôi, hoặc trồng thành vòng kín.']),
+        _c('cong_thuc', 'Một đầu, hoặc vòng kín',
+           congThuc='số cây = số khoảng',
+           thay='vòng kín 100 mét, mỗi 5 mét: 20 cây',
+           loi=['Cả hai thế trận ấy thì số cây bằng đúng số khoảng.',
+                'Vòng kín thì cây cuối đứng sát cây đầu, nên không cộng thêm.']),
+        _c('y_toan', 'Câu hỏi phải trả lời trước tiên',
+           'Hai đầu có cây không, hay nối thành vòng?', buoc=3, soBuoc=3,
+           loi=['Trước khi tính, con trả lời một câu.',
+                'Hai đầu có cây không, hay nối thành vòng.']),
+        _c('cong_thuc', 'Con nhớ kỹ hai công thức này nhé',
+           # Ngăn bằng dấu phẩy chứ không khoảng trắng: `giua()` xuống dòng theo BỀ
+           # RỘNG, nên hai công thức cách nhau bằng khoảng trắng sẽ dính thành
+           # một dòng liền không đọc nổi.
+           congThuc='hai đầu: cây = khoảng + 1,  một đầu hoặc vòng: cây = khoảng',
+           loi=['Con nhớ lại. Trồng cả hai đầu thì cây bằng khoảng cộng một.',
+                'Trồng một đầu hoặc vòng kín thì cây bằng khoảng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+BO = {13: kb_b13, 14: kb_b14, 15: kb_b15, 16: kb_b16, 17: kb_b17,
+      18: kb_b18, 19: kb_b19, 20: kb_b20}
 
 
 def soi(ds: list[dict], bai_id: str) -> list[str]:

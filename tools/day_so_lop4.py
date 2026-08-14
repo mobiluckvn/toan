@@ -102,7 +102,9 @@ TEN_MUC = {
     'khamPha': 'KHÁM PHÁ CÙNG SU KEM — vào không gian toán',
     'lapSoi': 'LẮP VỀ CUỘC SỐNG & SOI',
     'viDuMau': 'LỜI GIẢI MẪU TRÌNH BÀY VỞ',
-    'suKemNham': 'TRÍ LONG ƠI, NHẦM RỒI!',
+    # Không tên ai — bác chốt bỏ nhân vật 14-08. `khuon_chung` suy dòng dấu hiệu
+    # từ chính tiêu đề này, nên đổi ở đây là dòng ấy tự trống theo.
+    'suKemNham': 'CHỖ HAY NHẦM',
     'luyenTap': 'LUYỆN TẬP 3 MỨC SAO',
     'quiz': 'QUIZ — CON HIỂU BÀI CHƯA?',
     'gocBoMe': 'GÓC BỐ MẸ',
