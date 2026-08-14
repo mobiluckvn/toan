@@ -66,6 +66,33 @@ test('KHÔNG ẩn dụ trong lời đọc — luật bác dặn', () => {
   assert.deepEqual(xau, [], `${xau.length} câu đọc còn ẩn dụ`);
 });
 
+test('lời đọc KHÔNG còn CHỮ SỐ — mọi con số đọc thành chữ', () => {
+  /* Bác dặn 14-08: "các thông tin cần chuyển thành chữ hết". Số viết có dấu cách
+     phân nhóm là chỗ hỏng rõ nhất: "1 275" đọc thành "một, hai trăm bảy mươi lăm".
+     Chữ HIỆN LÊN màn hình vẫn là số — bé nhìn số dễ hơn nhìn chữ — nhưng chữ ĐEM
+     ĐỌC thì phải thành lời. */
+  const so = JSON.parse(readFileSync(new URL('../public/content/toan/lop4_am.json', import.meta.url), 'utf8'));
+  const xau = so.clip.filter((c) => /\d/.test(c.chu || ''))
+    .map((c) => `${c.id}: "${c.chu.slice(0, 50)}"`);
+  assert.deepEqual(xau, [], `${xau.length} câu đọc còn chữ số`);
+});
+
+test('câu đọc NGẮN — không câu nào quá một hơi', () => {
+  /* Bản đầu có câu 300 chữ (đọc trọn chuyện mở bài của giáo án). Bác xem xong bảo
+     "mở bài quá nhiều". Nay trần 130 chữ, và bỏ hẳn phần chuyện dẫn. */
+  const so = JSON.parse(readFileSync(new URL('../public/content/toan/lop4_am.json', import.meta.url), 'utf8'));
+  const dai = so.clip.filter((c) => (c.chu || '').length > 130)
+    .map((c) => `${c.id}: ${c.chu.length} chữ`);
+  assert.deepEqual(dai, []);
+});
+
+test('video NGẮN — mỗi bài dưới hai phút', () => {
+  /* Video dài thì bé xem một lần rồi thôi, mà bài này cần xem lại. */
+  const co = readdirSync(VIDEO).filter((f) => f.endsWith('.mp4'));
+  const to = co.filter((f) => statSync(new URL(f, VIDEO)).size > 1_500_000);
+  assert.deepEqual(to, [], 'video quá lớn — nhiều khả năng dài quá hai phút');
+});
+
 test('lời đọc KHÔNG mang ký hiệu chỉ có nghĩa với mắt', () => {
   /* Dấu `;` ngăn số hạng đọc lên thành "chấm phẩy"; `×` `−` `=` phải thành lời.
      Bỏ bước này thì clip nghe như máy đánh vần ký hiệu. */

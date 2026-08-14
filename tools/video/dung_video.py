@@ -230,6 +230,41 @@ def khung(c: dict) -> Image.Image:
             y = 300
         giua(d, min(y, H - 130), c["chuChinh"], phong(36), INK, rong=W - 200)
 
+    elif L == "day_so":
+        # MỘT DÃY SỐ VẼ RA THÀNH Ô — đây là hình quan trọng nhất của cả cụm, vì nó
+        # cho bé THẤY hai thứ khác nhau nằm chồng lên nhau: hàng trên là THỨ TỰ
+        # (đứng thứ mấy), hàng dưới là GIÁ TRỊ (số nào). Bác dặn nói thẳng hai khái
+        # niệm ấy, nên phải có chỗ chỉ tay vào được.
+        giua(d, 56, c.get("chuChinh", ""), phong(40), NAVY, rong=W - 160)
+        so = c.get("so", [])
+        n = len(so)
+        rong_o, cach = 118, 16
+        tong = n * rong_o + (n - 1) * cach
+        x0 = (W - tong) // 2
+        chi = c.get("chiSo")            # ô đang được chỉ tay vào, 1-based
+        y_tt, y_gt = 190, 300
+        if c.get("hienThuTu"):
+            d.text((x0 - 130, y_tt + 22), "đứng thứ", font=phong(30), fill=MUTE)
+        d.text((x0 - 130, y_gt + 26), "số", font=phong(30), fill=MUTE)
+        for i, v in enumerate(so):
+            x = x0 + i * (rong_o + cach)
+            sang = chi is not None and (i + 1) == chi
+            if c.get("hienThuTu"):
+                the(d, x, y_tt, rong_o, 76, nen=GOLD if sang else GOLD_PALE,
+                    vien=GOLD, day=4 if sang else 3, bo=16)
+                f = phong(40)
+                t = str(i + 1)
+                d.text((x + (rong_o - d.textlength(t, font=f)) / 2, y_tt + 16), t,
+                       font=f, fill=GOLD_DARK)
+            the(d, x, y_gt, rong_o, 86, nen=TEAL_PALE if sang else "#FFFFFF",
+                vien=TEAL if sang else LINE, day=5 if sang else 3, bo=16)
+            f = phong(46)
+            t = str(v)
+            d.text((x + (rong_o - d.textlength(t, font=f)) / 2, y_gt + 18), t,
+                   font=f, fill=NAVY)
+        if c.get("chuPhu"):
+            giua(d, 440, c["chuPhu"], phong(38), INK, rong=W - 200)
+
     elif L == "y_toan":
         # MỘT Ý MỘT MÀN. Số thứ tự để bé biết đang ở bước mấy trên mấy.
         n, tong = c.get("buoc", 1), c.get("soBuoc", 1)
