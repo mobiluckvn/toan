@@ -1,0 +1,281 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B67",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 55 · NGUYÊN LÝ CHUỒNG THỎ — NHIỀU HƠN CHỖ THÌ PHẢI CÓ CHỖ CHỨA HAI",
+ "durationMinutes": 10,
+ "so": 55,
+ "chuong": 8,
+ "tenChuong": "BÀI TOÁN LỜI VĂN",
+ "dangGoc": "Dạng gốc: LV 8.4b mức Lớp 4 — Nguyên lý Dirichlet phát biểu đơn giản: nhiều đồ hơn số chỗ thì có chỗ chứa từ hai đồ trở lên.",
+ "skills": {
+  "bktUnit": "CHUONG:8@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 55,
+  "prev": "DL:KSN4.B37",
+  "next": "DL:KSN4.B38"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Phát biểu được nguyên lý: nhiều đồ hơn chỗ thì có chỗ chứa từ hai trở lên. Xác định đâu là \"đồ\" và đâu là \"chỗ\" trong một bài toán. Trả lời được câu hỏi kiểu \"chắc chắn có ít nhất mấy bạn\".",
+  "kidText": "Nhóm có 13 bạn mà một năm chỉ 12 tháng. Con nghĩ có chuyện gì chắc chắn xảy ra không?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nói: \"Không chắc đâu, biết đâu 13 bạn sinh 13 tháng khác nhau.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Một năm có mấy tháng? Gợi ý 2: Chỉ 12 tháng thôi. Làm gì có tháng thứ 13 để xếp bạn thứ 13. Chữa: chỉ có 12 tháng nên không thể có 13 tháng khác nhau. Bạn thứ 13 buộc phải trùng tháng với một bạn nào đó."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nói: \"Không chắc đâu, biết đâu 13 bạn sinh 13 tháng khác nhau.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một nhóm có 13 bạn. Chứng tỏ rằng chắc chắn có ít nhất 2 bạn sinh cùng một tháng.",
+  "steps": [
+   {
+    "show": "Đếm số CHỖ"
+   },
+   {
+    "show": "Một năm có 12 tháng. Vậy có 12 chỗ để xếp."
+   },
+   {
+    "show": "Đếm số ĐỒ"
+   },
+   {
+    "show": "Có 13 bạn, tức 13 đồ cần xếp vào 12 chỗ."
+   },
+   {
+    "show": "Thử xếp mỗi chỗ một bạn"
+   },
+   {
+    "show": "Xếp 12 bạn vào 12 tháng, mỗi tháng một bạn. Vẫn còn thừa 1 bạn."
+   },
+   {
+    "show": "Bạn thừa phải vào đâu"
+   },
+   {
+    "show": "Bạn ấy vẫn sinh vào một tháng nào đó, mà 12 tháng đều đã có người. Nên chắc chắn có một tháng chứa 2 bạn."
+   },
+   {
+    "show": "Điều hay của bài này"
+   },
+   {
+    "show": "Ta không biết đó là tháng nào, nhưng chắc chắn có. Đó là điều bài toán hỏi."
+   },
+   {
+    "show": "Đáp số: chắc chắn có ít nhất 2 bạn sinh cùng tháng."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Nhóm 13 bạn — đúng bài trong video. Một năm có bao nhiêu tháng, tức bao nhiêu chỗ để xếp?",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Một năm có 12 tháng, tức 12 chỗ."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên. Xếp mỗi tháng một bạn thì xếp được mấy bạn và còn thừa mấy bạn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "xếp được mấy bạn",
+        "value": 12
+       },
+       {
+        "label": "thừa mấy bạn",
+        "value": 1
+       }
+      ]
+     },
+     "solutionNarrative": "Xếp được 12 bạn, còn thừa 13 − 12 = 1 bạn."
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn bài trên. Bạn thừa ấy buộc phải trùng tháng với một bạn khác, vậy có ít nhất mấy bạn sinh cùng tháng?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Ít nhất 2 bạn."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Bạn An nói \"biết đâu 13 bạn sinh 13 tháng khác nhau\". Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "một năm có mấy tháng",
+        "value": 12
+       }
+      ]
+     },
+     "solutionNarrative": "Một năm chỉ có 12 tháng, làm gì có tháng thứ 13. Nên không thể có 13 tháng khác nhau."
+    },
+    {
+     "id": "C5",
+     "text": "Một hộp có bi xanh và bi đỏ. Lấy ra 3 viên bất kỳ. Chứng tỏ chắc chắn có ít nhất 2 viên cùng màu.",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Có 2 chỗ (hai màu) và 3 viên. Xếp mỗi màu một viên thì còn thừa 1 viên, viên ấy buộc phải trùng màu. Vậy ít nhất 2 viên cùng màu."
+    },
+    {
+     "id": "C6",
+     "text": "Trong một lớp có 8 bạn. Chứng tỏ chắc chắn có ít nhất 2 bạn sinh cùng một ngày trong tuần.",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Một tuần có 7 ngày, tức 7 chỗ, mà có 8 bạn. Thừa 1 bạn nên chắc chắn có 2 bạn trùng ngày."
+    },
+    {
+     "id": "C7",
+     "text": "Muốn chắc chắn có 2 bạn sinh cùng tháng thì nhóm phải có ít nhất bao nhiêu bạn?",
+     "answerKey": {
+      "value": 13
+     },
+     "solutionNarrative": "Ít nhất 13 bạn. Với 12 bạn thì có thể mỗi bạn một tháng khác nhau."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Một hộp có bi ba màu. Phải lấy ra ít nhất mấy viên để chắc chắn có 2 viên cùng màu?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Có 3 chỗ (ba màu). Lấy 3 viên thì có thể mỗi viên một màu. Lấy 4 viên thì chắc chắn có 2 viên cùng màu."
+    },
+    {
+     "id": "C9",
+     "text": "Một nhóm 25 bạn. Chứng tỏ chắc chắn có ít nhất 3 bạn sinh cùng một tháng.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi tháng nhiều nhất 2 bạn thì cả năm",
+        "value": 24
+       },
+       {
+        "label": "nên chắc chắn có tháng chứa từ mấy bạn",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Nếu mỗi tháng chỉ có nhiều nhất 2 bạn thì cả năm nhiều nhất 12 × 2 = 24 bạn. Mà nhóm có 25 bạn, nhiều hơn 24, nên chắc chắn có một tháng chứa từ 3 bạn trở lên."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Có 13 bạn thì chắc chắn có ít nhất 2 bạn sinh cùng tháng.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG — chỉ có 12 tháng."
+   },
+   {
+    "id": "Q2",
+    "text": "Bài này cho ta biết chính xác tháng nào có 2 bạn.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — ta chỉ biết chắc chắn CÓ, không biết là tháng nào."
+   },
+   {
+    "id": "Q3",
+    "text": "Một năm có 12 tháng. Muốn chắc chắn 2 bạn cùng tháng cần ít nhất:",
+    "format": "mcq",
+    "choices": [
+     "A. 13 bạn",
+     "B. 12 bạn",
+     "C. 24 bạn"
+    ],
+    "answerKey": {
+     "choice": "A. 13 bạn"
+    },
+    "solutionNarrative": "Với 12 bạn thì có thể mỗi bạn một tháng."
+   },
+   {
+    "id": "Q4",
+    "text": "Hộp có bi hai màu, lấy 3 viên thì:",
+    "format": "mcq",
+    "choices": [
+     "A. chắc chắn có 2 viên cùng màu",
+     "B. chắc chắn ba viên khác màu",
+     "C. không kết luận được"
+    ],
+    "answerKey": {
+     "choice": "A. chắc chắn có 2 viên cùng màu"
+    },
+    "solutionNarrative": "Chỉ có 2 màu mà lấy 3 viên."
+   },
+   {
+    "id": "Q5",
+    "text": "Nguyên lý này cho ta biết:",
+    "format": "mcq",
+    "choices": [
+     "A. điều đó chắc chắn xảy ra, nhưng không biết ở đâu",
+     "B. chính xác nơi điều đó xảy ra",
+     "C. xác suất điều đó xảy ra"
+    ],
+    "answerKey": {
+     "choice": "A. điều đó chắc chắn xảy ra, nhưng không biết ở đâu"
+    },
+    "solutionNarrative": "Đó là điều hay của nguyên lý này."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Lấy 13 hạt đậu và một khay 12 ô, bảo con xếp mỗi ô một hạt. Con sẽ thấy hạt cuối không còn ô trống nào.",
+  "homeActivity": "Bài này lạ vì không ra con số cụ thể. Bố mẹ nhấn: ta chứng minh điều đó PHẢI xảy ra, chứ không tìm xem xảy ra ở đâu.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài cuối chương, và là bài lạ nhất con từng gặp: nó không bắt con tính ra con số nào cả. Nó bắt con CHỨNG MINH rằng một điều chắc chắn phải xảy ra — dù con không biết cụ thể xảy ra ở đâu.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B25"
+  ],
+  "ten": [
+   "SƠ ĐỒ VEN HAI VÒNG"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B67_giang.mp4"
+ }
+}

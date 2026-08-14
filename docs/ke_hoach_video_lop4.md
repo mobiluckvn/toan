@@ -126,7 +126,7 @@ chương dùng chung ví dụ và chung cách nói.
 | 8 | 9 · Phân số | B38–B42 | cần kiểu cảnh vẽ phân số |
 | 9 | 10 · Hình học | B43–B46 | cần kiểu cảnh hình — nặng nhất |
 | 10 | 11 · Quãng đường | B47–B49 | |
-| 11 | 8 · Bài toán lời văn | B32–B37 | **để cuối**: sáu bài, mỗi bài một phương pháp riêng, khó ra khuôn chung |
+| ~~11~~ | ~~8 · Bài toán lời văn~~ | **XONG 14-08** | 6 bài → **10 bài**, xem §17 |
 
 **Đợt 1 nên làm ngay**: ba bài ấy đang nằm ngay sau cụm vừa duyệt, và bé học tới đó
 sẽ thấy hụt — bốn bài đầu chương có video, ba bài sau lại là tường chữ.
@@ -625,10 +625,29 @@ Lớp 4 chưa học phân số nên bài làm chung **không** dùng lối "mỗ
 phần mấy công việc". Lối của lớp 4 là chia việc thành số phần chia hết cho cả hai
 thời gian — vừa đúng sức bé, vừa nhìn thấy được trên hình `nhom_deu`.
 
-### Còn lại đợt hai
+### Đợt hai — đã làm nốt
 
-Giả thiết tạm · khử · thế · sơ đồ Ven · nguyên lý chuồng thỏ. B35 B36 B37 tạm giữ
-nguyên bài chữ cũ, nên chương 8 hiện có 8 bài, sau sẽ thành 10.
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 51 | B35 | giả thiết tạm — **đoán bừa rồi sửa dần** |
+| 52 | B36 | khử — hai lần mua có phần GIỐNG HỆT thì trừ đi |
+| 53 | B66 *(mới)* | thế — có câu QUY ĐỔI thì đổi hết về một loại |
+| 54 | B37 | sơ đồ Ven — **phần chồng nhau bị đếm hai lần** |
+| 55 | B67 *(mới)* | nguyên lý chuồng thỏ |
+
+Bài cũ gộp **khử với thế** làm một, và gộp **sơ đồ Ven với nguyên lý chuồng thỏ** —
+cặp sau chẳng liên quan gì nhau. Tách ra thì mỗi bài nói được điều nó cần nói: khử
+cần hai thứ giống hệt, thế cần một câu quy đổi; đó là hai kiểu đề khác nhau, và bài
+53 nói thẳng chỗ khác ấy.
+
+Bài 55 là bài lạ nhất cả quyển: **nó không tính ra con số nào**. Nó chứng minh rằng
+một điều PHẢI xảy ra, dù không biết xảy ra ở đâu. Đặt cuối chương là đúng chỗ.
+
+### Kiểu cảnh mới — `so_do_ven`
+
+Hai vòng tròn giao nhau, ba con số đặt đúng ba vùng. Ý của bài Ven **không nói bằng
+lời được**: phải nhìn thấy phần chồng thì mới hiểu vì sao nó bị đếm hai lần. Bài
+chuồng thỏ dùng lại `nhom_deu` — 12 chỗ kín, một đồ thừa tô đỏ.
 
 ### Số đo
 

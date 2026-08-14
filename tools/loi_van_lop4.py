@@ -48,6 +48,12 @@ LUI_DON_VI = {'ve': ['DL:KSN3.B21'], 'ten': ['RÚT VỀ ĐƠN VỊ'],
               'canCu': 'chuDe', 'lopDuoi': 3}
 LUI_LUI = {'ve': ['DL:KSN3.B22'], 'ten': ['ĐI LÙI NHIỀU TRẠM'],
            'canCu': 'chuDe', 'lopDuoi': 3}
+LUI_GA = {'ve': ['DL:KSN3.B23'], 'ten': ['GÀ - CHÓ RỜI TRANG TRẠI'],
+          'canCu': 'sach', 'lopDuoi': 3}
+LUI_THAY = {'ve': ['DL:KSN3.B26'], 'ten': ['TRÒ CHƠI THAY THẾ'],
+            'canCu': 'chuDe', 'lopDuoi': 3}
+LUI_VEN = {'ve': ['DL:KSN3.B25'], 'ten': ['SƠ ĐỒ VEN HAI VÒNG'],
+           'canCu': 'chuDe', 'lopDuoi': 3}
 
 
 def bai(so, ten, dang_goc, hat_mam, gan_duoi, m, cau):
@@ -479,8 +485,444 @@ B34 = bai(
 
 
 # ═══════════════════════════════════════════════════════════════════════════
-MOI = [B32, B64, B33, B65, B34]
-SAU = {'DL:KSN4.B64': 'DL:KSN4.B32', 'DL:KSN4.B65': 'DL:KSN4.B33'}   # chèn ngay sau ai
+# ⑥ B35 · GIẢ THIẾT TẠM  (mã cũ, viết lại)
+# ═══════════════════════════════════════════════════════════════════════════
+# Ý duy nhất: ĐOÁN BỪA một trường hợp cực đoan, xem lệch bao nhiêu, rồi đổi dần cho
+# khớp. Nghe lạ nhưng bé làm được ngay, vì mỗi lần đổi một con thì lệch đi đúng một
+# con số cố định.
+B35 = bai(
+    35, 'GIẢ THIẾT TẠM — ĐOÁN BỪA RỒI SỬA DẦN',
+    'Dạng gốc: LV 8.2 mức Lớp 4 — Phương pháp giả thiết tạm với bài gà - chó và bài '
+    'hai loại vé.',
+    'Có những bài chẳng biết bắt đầu từ đâu. Hôm nay con học một cách rất lạ mà rất '
+    'hiệu quả: cứ đoán bừa một trường hợp dễ tính nhất, xem nó lệch bao nhiêu, rồi '
+    'sửa dần cho khớp.',
+    LUI_GA,
+    video(
+        ['Giả thiết tạm rằng tất cả cùng một loại.',
+         'Tính phần lệch so với đề bài.',
+         'Biết đổi một con thì lệch thay đổi bao nhiêu, rồi chia ra.'],
+        ['Đề bài: Vừa gà vừa chó có 36 con, đếm được 100 cái chân. Tính số con mỗi loại.',
+         'Đoán bừa cho dễ',
+         'Giả sử tất cả 36 con đều là gà. Gà 2 chân nên có 36 × 2 = 72 chân.',
+         'Xem lệch bao nhiêu',
+         'Đề nói 100 chân, mà đoán ra 72 chân. Thiếu mất 100 − 72 = 28 chân.',
+         'Đổi một con thì lệch bao nhiêu',
+         'Đổi một con gà thành một con chó thì thêm 2 chân, vì chó 4 chân còn gà 2 chân.',
+         'Chia ra',
+         'Thiếu 28 chân, mỗi lần đổi được thêm 2 chân, nên phải đổi 28 : 2 = 14 con.',
+         'Đáp số',
+         'Có 14 con chó và 36 − 14 = 22 con gà. Thử lại: 14 × 4 = 56 chân chó, '
+         '22 × 2 = 44 chân gà, cộng lại đúng 100 chân.'],
+        ['Có bạn giả sử tất cả là gà, tính ra thiếu 28 chân, rồi trả lời luôn có 28 con chó.',
+         'Gợi ý 1: Đổi một con gà thành chó thì thêm mấy chân?',
+         'Gợi ý 2: Thêm 2 chân, chứ không phải 1. Vậy 28 chân thiếu ứng với mấy con?',
+         'Chữa: 28 : 2 = 14 con chó. Lấy thẳng 28 là quên chia cho phần lệch mỗi lần đổi.'],
+        ['Lấy que tính xếp thử: 36 con mà đều 2 chân thì được 72 que. Bảo con thêm que '
+         'cho đủ 100 — con sẽ tự thấy mỗi con phải thêm 2 que.',
+         'Chỗ sai duy nhất là quên chia. Bố mẹ hỏi: "Mỗi lần đổi một con thì lệch đi mấy?"'],
+    ),
+    [
+        lt(1, 1, 'Vừa gà vừa chó có 36 con, 100 chân — đúng bài trong video. Giả sử tất '
+                 'cả đều là gà thì có bao nhiêu chân?',
+           '36 × 2 = 72 chân.'),
+        lt(2, 1, 'Vẫn bài trên. So với đề, số chân đoán ra thiếu bao nhiêu?',
+           '100 − 72 = 28 chân.'),
+        lt(3, 1, 'Vẫn bài trên. Đổi một con gà thành chó thì thêm mấy chân?',
+           'Thêm 2 chân, vì chó 4 chân còn gà 2 chân.'),
+        lt(4, 2, 'Vẫn bài trên. Tính số con mỗi loại.',
+           'Số chó: 28 : 2 = 14 con. Số gà: 36 − 14 = 22 con.'),
+        lt(5, 2, 'Bạn Tú tính ra thiếu 28 chân rồi trả lời có 28 con chó. Bạn sai ở đâu?',
+           'Bạn quên chia cho phần lệch mỗi lần đổi. Mỗi con đổi được thêm 2 chân nên '
+           'số chó là 28 : 2 = 14 con.'),
+        lt(6, 2, 'Vừa gà vừa chó có 20 con, 56 chân. Tính số con mỗi loại.',
+           'Giả sử tất cả là gà: 20 × 2 = 40 chân, thiếu 56 − 40 = 16 chân. Số chó: '
+           '16 : 2 = 8 con. Số gà: 20 − 8 = 12 con.'),
+        lt(7, 2, 'Vì sao ta giả sử tất cả là GÀ mà không giả sử tất cả là CHÓ?',
+           'Giả sử nào cũng được, chỉ khác là thừa hay thiếu. Giả sử tất cả là gà thì '
+           'thiếu chân, giả sử tất cả là chó thì thừa chân — rồi vẫn chia cho 2.'),
+        lt(8, 3, 'Bán 30 vé gồm loại 2 nghìn và loại 5 nghìn đồng, thu được 99 nghìn '
+                 'đồng. Tính số vé mỗi loại.',
+           'Giả sử tất cả là vé 2 nghìn: 30 × 2 = 60 nghìn, thiếu 99 − 60 = 39 nghìn. '
+           'Mỗi vé đổi lên loại 5 nghìn thì thêm 3 nghìn. Số vé 5 nghìn: 39 : 3 = 13 vé. '
+           'Số vé 2 nghìn: 30 − 13 = 17 vé.'),
+        lt(9, 3, 'Vừa gà vừa chó có 36 con, 100 chân. Lần này con hãy giả sử tất cả là '
+                 'CHÓ rồi giải lại.',
+           'Giả sử tất cả là chó: 36 × 4 = 144 chân, THỪA 144 − 100 = 44 chân. Đổi một '
+           'con chó thành gà thì bớt 2 chân, nên số gà là 44 : 2 = 22 con, số chó là '
+           '36 − 22 = 14 con. Vẫn ra đúng kết quả cũ.'),
+        q_tf(1, 'Giả thiết tạm là đoán bừa một trường hợp dễ tính rồi sửa dần.', True,
+             'Đáp án: ĐÚNG.'),
+        q_tf(2, 'Thiếu 28 chân thì có đúng 28 con chó.', False,
+             'SAI — còn phải chia cho 2, vì mỗi lần đổi được thêm 2 chân.'),
+        q_mcq(3, 'Giả sử 36 con đều là gà thì có:',
+              ['A. 72 chân', 'B. 100 chân', 'C. 144 chân'], 'A. 72 chân', '36 × 2 = 72.'),
+        q_mcq(4, 'Đổi một con gà thành một con chó thì số chân:',
+              ['A. thêm 2', 'B. thêm 4', 'C. thêm 1'], 'A. thêm 2', '4 − 2 = 2.'),
+        q_mcq(5, '36 con, 100 chân thì số chó là:',
+              ['A. 14 con', 'B. 28 con', 'C. 22 con'], 'A. 14 con', '28 : 2 = 14.'),
+    ],
+)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ⑦ B36 · PHƯƠNG PHÁP KHỬ  (mã cũ, viết lại — chỉ còn KHỬ)
+# ═══════════════════════════════════════════════════════════════════════════
+# Bài cũ gộp khử VỚI thế. Nay tách. Ý của khử rất gọn và rất đẹp: hai lần mua có một
+# thứ GIỐNG HỆT nhau, nên trừ hai dữ kiện là thứ ấy biến mất.
+B36 = bai(
+    36, 'PHƯƠNG PHÁP KHỬ — TRỪ HAI LẦN MUA CHO MỘT THỨ BIẾN MẤT',
+    'Dạng gốc: LV 8.3a mức Lớp 4 — Khử một đại lượng bằng cách trừ hai dữ kiện có '
+    'phần giống nhau.',
+    'Có bài cho con hai lần mua, mỗi lần gồm hai thứ. Nhìn thì rối, nhưng nếu để ý sẽ '
+    'thấy một thứ xuất hiện y hệt ở cả hai lần. Trừ hai dòng cho nhau thì thứ ấy biến '
+    'mất, và bài chỉ còn một ẩn.',
+    LUI_THAY,
+    video(
+        ['Nhận ra phần giống hệt nhau ở hai dữ kiện.',
+         'Trừ hai dòng để khử phần ấy đi.',
+         'Tìm nốt thứ còn lại rồi quay về tìm thứ đã khử.'],
+        ['Đề bài: Mua 3 bút và 2 vở hết 22 nghìn đồng. Mua 3 bút và 5 vở hết 37 nghìn '
+         'đồng. Tính giá một bút và một vở.',
+         'Viết hai dòng cho thẳng hàng',
+         'Lần một: 3 bút và 2 vở hết 22 nghìn. Lần hai: 3 bút và 5 vở hết 37 nghìn.',
+         'Tìm phần giống hệt',
+         'Cả hai lần đều mua đúng 3 bút. Phần ấy giống hệt nhau.',
+         'Trừ hai dòng',
+         'Lấy dòng hai trừ dòng một thì 3 bút biến mất. Còn lại 5 − 2 = 3 vở, và tiền '
+         'là 37 − 22 = 15 nghìn.',
+         'Tìm giá một vở',
+         '3 vở hết 15 nghìn nên một vở là 15 : 3 = 5 nghìn đồng.',
+         'Quay về tìm giá bút',
+         'Lần một: 2 vở hết 2 × 5 = 10 nghìn. Vậy 3 bút hết 22 − 10 = 12 nghìn, một bút '
+         'là 12 : 3 = 4 nghìn đồng.',
+         'Đáp số: một bút 4 nghìn, một vở 5 nghìn đồng.'],
+        ['Có bạn trừ hai dòng nhưng chỉ trừ số vở mà quên trừ số tiền.',
+         'Gợi ý 1: Nếu con bớt đi mấy quyển vở thì số tiền có bớt theo không?',
+         'Gợi ý 2: Phải bớt theo chứ. Hai bên dấu bằng cùng bớt thì mới còn bằng nhau.',
+         'Chữa: trừ thì trừ CẢ HAI VẾ. Còn 3 vở và 15 nghìn, chứ không phải 3 vở và 37 '
+         'nghìn.'],
+        ['Viết hai dòng ra giấy cho thẳng cột rồi bảo con khoanh phần giống nhau. '
+         'Khoanh đúng thì phần còn lại rất nhanh.',
+         'Chỗ sai hay gặp là trừ một vế. Bố mẹ nhắc: hai bên dấu bằng cùng bớt như nhau.'],
+    ),
+    [
+        lt(1, 1, 'Mua 3 bút và 2 vở hết 22 nghìn; mua 3 bút và 5 vở hết 37 nghìn — đúng '
+                 'bài trong video. Phần nào giống hệt ở cả hai lần mua?',
+           'Cả hai lần đều mua đúng 3 bút.'),
+        lt(2, 1, 'Vẫn bài trên. Trừ hai dòng cho nhau thì còn lại mấy quyển vở và bao '
+                 'nhiêu tiền?',
+           'Còn 5 − 2 = 3 vở và 37 − 22 = 15 nghìn đồng.'),
+        lt(3, 1, 'Vẫn bài trên. Giá một quyển vở là bao nhiêu?',
+           '15 : 3 = 5 nghìn đồng.'),
+        lt(4, 2, 'Vẫn bài trên. Tính giá một cái bút.',
+           '2 vở hết 2 × 5 = 10 nghìn. Vậy 3 bút hết 22 − 10 = 12 nghìn, một bút là '
+           '12 : 3 = 4 nghìn đồng.'),
+        lt(5, 2, 'Bạn Minh trừ số vở mà quên trừ số tiền. Bạn sai ở đâu?',
+           'Trừ thì phải trừ CẢ HAI VẾ. Bớt vở thì tiền cũng bớt theo, nên còn 3 vở và '
+           '15 nghìn.'),
+        lt(6, 2, 'Mua 2 áo và 3 quần hết 62 nghìn; mua 2 áo và 5 quần hết 82 nghìn. '
+                 'Tính giá một quần.',
+           'Trừ hai dòng: còn 2 quần và 20 nghìn. Một quần là 20 : 2 = 10 nghìn đồng.'),
+        lt(7, 2, 'Vẫn bài trên. Tính giá một cái áo.',
+           '3 quần hết 3 × 10 = 30 nghìn. Vậy 2 áo hết 62 − 30 = 32 nghìn, một áo là '
+           '32 : 2 = 16 nghìn đồng.'),
+        lt(8, 3, 'Mua 4 bút và 3 vở hết 39 nghìn; mua 4 bút và 7 vở hết 59 nghìn. Tính '
+                 'giá mỗi thứ.',
+           'Trừ hai dòng: còn 4 vở và 20 nghìn, nên một vở là 5 nghìn. 3 vở hết 15 '
+           'nghìn, 4 bút hết 39 − 15 = 24 nghìn, một bút là 6 nghìn đồng.'),
+        lt(9, 3, 'Vì sao phương pháp khử chỉ dùng được khi hai lần mua có một thứ giống '
+                 'HỆT nhau?',
+           'Vì chỉ khi giống hệt thì trừ đi mới biến mất hoàn toàn. Nếu số lượng khác '
+           'nhau thì trừ xong vẫn còn lại một phần, không khử được.'),
+        q_tf(1, 'Khử là trừ hai dữ kiện để một thứ biến mất.', True, 'Đáp án: ĐÚNG.'),
+        q_tf(2, 'Khi trừ hai dòng, ta chỉ cần trừ số lượng, không trừ số tiền.', False,
+             'SAI — phải trừ cả hai vế.'),
+        q_mcq(3, '3 bút và 2 vở hết 22 nghìn; 3 bút và 5 vở hết 37 nghìn. Trừ hai dòng '
+                 'còn lại:',
+              ['A. 3 vở và 15 nghìn', 'B. 3 vở và 37 nghìn', 'C. 7 vở và 15 nghìn'],
+              'A. 3 vở và 15 nghìn', 'Trừ cả hai vế.'),
+        q_mcq(4, 'Giá một quyển vở là:',
+              ['A. 5 nghìn', 'B. 3 nghìn', 'C. 15 nghìn'], 'A. 5 nghìn', '15 : 3 = 5.'),
+        q_mcq(5, 'Phương pháp khử dùng được khi:',
+              ['A. hai lần mua có một thứ giống HỆT nhau',
+               'B. hai lần mua có tổng tiền bằng nhau',
+               'C. lúc nào cũng dùng được'],
+              'A. hai lần mua có một thứ giống HỆT nhau',
+              'Giống hệt thì trừ đi mới biến mất hoàn toàn.'),
+    ],
+)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ⑧ B66 · PHƯƠNG PHÁP THẾ
+# ═══════════════════════════════════════════════════════════════════════════
+# Tách khỏi B36. Khác khử ở chỗ: khử cần hai thứ GIỐNG HỆT, còn thế cần một câu QUY
+# ĐỔI ("2 cái này bằng 3 cái kia"). Dùng câu ấy đổi hết về một loại.
+B66 = bai(
+    66, 'PHƯƠNG PHÁP THẾ — ĐỔI HẾT VỀ MỘT LOẠI',
+    'Dạng gốc: LV 8.3b mức Lớp 4 — Thế một đại lượng bằng đại lượng kia nhờ quan hệ '
+    'quy đổi cho trước.',
+    'Bài trước con khử được vì hai lần mua có một thứ giống hệt. Nhưng có bài không '
+    'cho thế, mà cho một câu quy đổi kiểu "hai cái này bằng ba cái kia". Câu ấy cho '
+    'phép con đổi hết về một loại, và bài rối thành bài dễ.',
+    LUI_THAY,
+    video(
+        ['Đọc được câu quy đổi trong đề.',
+         'Đổi hết mọi thứ về cùng một loại.',
+         'Tìm ra giá một loại rồi quay về loại kia.'],
+        ['Đề bài: Biết 2 hộp sữa giá bằng 3 gói bánh. Mua 4 hộp sữa và 6 gói bánh hết '
+         '72 nghìn đồng. Tính giá mỗi thứ.',
+         'Đọc câu quy đổi',
+         'Đề nói 2 hộp sữa giá bằng 3 gói bánh. Đây là câu cho phép đổi qua đổi lại.',
+         'Đổi sữa thành bánh',
+         '4 hộp sữa gấp đôi 2 hộp sữa, nên nó bằng gấp đôi 3 gói bánh, tức 6 gói bánh.',
+         'Bây giờ tất cả là bánh',
+         'Cả lần mua thành 6 + 6 = 12 gói bánh, hết 72 nghìn đồng.',
+         'Tìm giá một gói bánh',
+         '72 : 12 = 6 nghìn đồng một gói bánh.',
+         'Quay về tìm giá sữa',
+         '2 hộp sữa bằng 3 gói bánh, tức 3 × 6 = 18 nghìn. Một hộp sữa là 18 : 2 = 9 '
+         'nghìn đồng.',
+         'Đáp số: một hộp sữa 9 nghìn, một gói bánh 6 nghìn đồng.'],
+        ['Có bạn thấy "2 hộp sữa bằng 3 gói bánh" rồi đổi 4 hộp sữa thành 3 gói bánh.',
+         'Gợi ý 1: 4 hộp sữa gấp mấy lần 2 hộp sữa?',
+         'Gợi ý 2: Gấp đôi. Vậy phải đổi thành gấp đôi 3 gói bánh chứ.',
+         'Chữa: 4 hộp sữa bằng 6 gói bánh. Đổi mà quên nhân lên thì mất một nửa số bánh.'],
+        ['Bảo con đọc to câu quy đổi rồi hỏi: "Gấp đôi bên này thì bên kia thế nào?" '
+         'Trả lời được là con nắm được cách thế.',
+         'Chỗ sai duy nhất là quên nhân lên khi đổi. Bố mẹ hỏi: "Gấp mấy lần?"'],
+    ),
+    [
+        lt(1, 1, '2 hộp sữa giá bằng 3 gói bánh — đúng đề trong video. Vậy 4 hộp sữa giá '
+                 'bằng mấy gói bánh?',
+           '4 hộp sữa gấp đôi 2 hộp sữa nên bằng gấp đôi 3 gói bánh, tức 6 gói bánh.'),
+        lt(2, 1, 'Mua 4 hộp sữa và 6 gói bánh hết 72 nghìn. Đổi hết về bánh thì được mấy '
+                 'gói bánh?',
+           '4 hộp sữa bằng 6 gói bánh, cộng 6 gói bánh sẵn có, tất cả 12 gói bánh.'),
+        lt(3, 1, 'Vẫn bài trên. Giá một gói bánh là bao nhiêu?',
+           '72 : 12 = 6 nghìn đồng.'),
+        lt(4, 2, 'Vẫn bài trên. Tính giá một hộp sữa.',
+           '2 hộp sữa bằng 3 gói bánh, tức 3 × 6 = 18 nghìn. Một hộp sữa là 18 : 2 = 9 '
+           'nghìn đồng.'),
+        lt(5, 2, 'Bạn Hoa đổi 4 hộp sữa thành 3 gói bánh. Bạn sai ở đâu?',
+           '4 hộp sữa gấp đôi 2 hộp sữa nên phải đổi thành gấp đôi 3 gói bánh, tức 6 '
+           'gói bánh. Quên nhân lên thì mất một nửa.'),
+        lt(6, 2, 'Biết 1 quyển vở giá bằng 2 cái bút. Mua 3 quyển vở và 4 cái bút hết 50 '
+                 'nghìn. Tính giá một cái bút.',
+           'Đổi vở thành bút: 3 vở bằng 6 bút. Tất cả 6 + 4 = 10 bút, hết 50 nghìn. Một '
+           'bút là 50 : 10 = 5 nghìn đồng.'),
+        lt(7, 2, 'Vẫn bài trên. Tính giá một quyển vở.',
+           '1 vở bằng 2 bút, tức 2 × 5 = 10 nghìn đồng.'),
+        lt(8, 3, 'Biết 3 cái ghế giá bằng 1 cái bàn. Mua 2 cái bàn và 3 cái ghế hết 180 '
+                 'nghìn. Tính giá mỗi thứ.',
+           'Đổi bàn thành ghế: 2 bàn bằng 6 ghế. Tất cả 6 + 3 = 9 ghế, hết 180 nghìn. '
+           'Một ghế là 180 : 9 = 20 nghìn. Một bàn là 3 × 20 = 60 nghìn đồng.'),
+        lt(9, 3, 'Phương pháp KHỬ và phương pháp THẾ khác nhau ở chỗ nào?',
+           'Khử cần hai lần mua có một thứ GIỐNG HỆT để trừ đi. Thế cần một câu QUY ĐỔI '
+           'để đưa hết về một loại. Hai cách dùng cho hai kiểu đề khác nhau.'),
+        q_tf(1, 'Phương pháp thế dùng câu quy đổi để đưa hết về một loại.', True,
+             'Đáp án: ĐÚNG.'),
+        q_tf(2, 'Biết 2 hộp sữa bằng 3 gói bánh thì 4 hộp sữa bằng 3 gói bánh.', False,
+             'SAI — gấp đôi bên này thì bên kia cũng gấp đôi, tức 6 gói bánh.'),
+        q_mcq(3, '2 hộp sữa bằng 3 gói bánh thì 4 hộp sữa bằng:',
+              ['A. 6 gói bánh', 'B. 3 gói bánh', 'C. 12 gói bánh'], 'A. 6 gói bánh',
+              'Gấp đôi cả hai bên.'),
+        q_mcq(4, '12 gói bánh hết 72 nghìn thì một gói bánh:',
+              ['A. 6 nghìn', 'B. 12 nghìn', 'C. 9 nghìn'], 'A. 6 nghìn', '72 : 12 = 6.'),
+        q_mcq(5, 'Phương pháp khử khác phương pháp thế ở chỗ:',
+              ['A. khử cần hai thứ giống hệt, thế cần câu quy đổi',
+               'B. khử dùng phép cộng, thế dùng phép trừ',
+               'C. hai phương pháp giống hệt nhau'],
+              'A. khử cần hai thứ giống hệt, thế cần câu quy đổi',
+              'Hai cách cho hai kiểu đề khác nhau.'),
+    ],
+)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ⑨ B37 · SƠ ĐỒ VEN  (mã cũ, viết lại — chỉ còn VEN)
+# ═══════════════════════════════════════════════════════════════════════════
+# Bài cũ gộp Ven VỚI nguyên lý chuồng thỏ — hai thứ chẳng liên quan gì nhau. Nay tách.
+# Ý của Ven chỉ có một, và nó KHÔNG nói bằng lời được: phần giao bị đếm hai lần.
+B37 = bai(
+    37, 'SƠ ĐỒ VEN — PHẦN CHỒNG NHAU BỊ ĐẾM HAI LẦN',
+    'Dạng gốc: LV 8.4a mức Lớp 4 — Sơ đồ Ven hai tập hợp, công thức A cộng B trừ phần '
+    'chung.',
+    'Có bài hỏi về hai nhóm mà một số bạn thuộc cả hai nhóm. Cộng thẳng hai nhóm lại '
+    'là sai — và hôm nay con sẽ NHÌN THẤY vì sao sai, chứ không phải nghe kể.',
+    LUI_VEN,
+    video(
+        ['Vẽ được hai vòng giao nhau cho hai nhóm.',
+         'Chỉ ra phần chồng nhau bị đếm hai lần.',
+         'Tính số bạn thuộc ít nhất một nhóm.'],
+        ['Đề bài: Lớp có 38 bạn. Có 25 bạn thích bóng đá, 18 bạn thích cờ vua, 8 bạn '
+         'thích cả hai môn. Hỏi có bao nhiêu bạn không thích môn nào?',
+         'Cộng thẳng thì sai',
+         '25 + 18 = 43, mà lớp chỉ có 38 bạn. Số bạn không thể nhiều hơn cả lớp.',
+         'Vì sao lại thừa',
+         'Vì 8 bạn thích cả hai môn đã bị đếm một lần ở nhóm bóng đá, rồi lại đếm thêm '
+         'một lần ở nhóm cờ vua.',
+         'Vẽ ra thì thấy ngay',
+         'Hai vòng chồng nhau. Phần chồng chính là 8 bạn ấy, và nó nằm trong cả hai vòng.',
+         'Trừ đi một lần',
+         'Số bạn thích ít nhất một môn là 25 + 18 − 8 = 35 bạn.',
+         'Tìm số bạn không thích môn nào',
+         'Cả lớp 38 bạn, có 35 bạn thích ít nhất một môn, nên 38 − 35 = 3 bạn không '
+         'thích môn nào.',
+         'Đáp số: 3 bạn không thích môn nào.'],
+        ['Có bạn cộng 25 với 18 được 43 rồi bảo lớp có 43 bạn thích ít nhất một môn.',
+         'Gợi ý 1: Lớp có bao nhiêu bạn tất cả?',
+         'Gợi ý 2: Chỉ 38 bạn. Sao số bạn thích lại nhiều hơn cả lớp được?',
+         'Chữa: vì 8 bạn thích cả hai đã bị đếm hai lần. Phải trừ đi một lần: '
+         '25 + 18 − 8 = 35 bạn.'],
+        ['Vẽ hai vòng tròn chồng nhau rồi bảo con chỉ vào chỗ chồng và hỏi: "Chỗ này '
+         'nằm trong mấy vòng?" Trả lời hai vòng là con hiểu vì sao phải trừ.',
+         'Chỗ sai duy nhất là quên trừ phần chung. Bố mẹ hỏi: "Có ai bị đếm hai lần không?"'],
+    ),
+    [
+        lt(1, 1, 'Lớp 38 bạn: 25 thích bóng đá, 18 thích cờ vua, 8 thích cả hai — đúng '
+                 'bài trong video. Cộng thẳng 25 với 18 được bao nhiêu?',
+           '25 + 18 = 43 bạn — nhiều hơn cả lớp, nên chắc chắn có chỗ sai.'),
+        lt(2, 1, 'Vẫn bài trên. Vì sao cộng thẳng lại thừa?',
+           'Vì 8 bạn thích cả hai môn bị đếm hai lần: một lần ở nhóm bóng đá, một lần ở '
+           'nhóm cờ vua.'),
+        lt(3, 1, 'Vẫn bài trên. Có bao nhiêu bạn thích ít nhất một môn?',
+           '25 + 18 − 8 = 35 bạn.'),
+        lt(4, 2, 'Vẫn bài trên. Có bao nhiêu bạn không thích môn nào?',
+           '38 − 35 = 3 bạn.'),
+        lt(5, 2, 'Bạn Nam cộng 25 với 18 rồi bảo có 43 bạn thích ít nhất một môn. Bạn '
+                 'sai ở đâu?',
+           'Lớp chỉ có 38 bạn nên không thể có 43 bạn thích. Bạn quên trừ 8 bạn bị đếm '
+           'hai lần.'),
+        lt(6, 2, 'Vẫn bài trên. Có bao nhiêu bạn CHỈ thích bóng đá?',
+           '25 − 8 = 17 bạn.'),
+        lt(7, 2, 'Lớp 40 bạn: 22 bạn học vẽ, 25 bạn học nhạc, 12 bạn học cả hai. Hỏi bao '
+                 'nhiêu bạn học ít nhất một môn?',
+           '22 + 25 − 12 = 35 bạn.'),
+        lt(8, 3, 'Vẫn bài trên. Bao nhiêu bạn không học môn nào, và bao nhiêu bạn CHỈ '
+                 'học nhạc?',
+           'Không học môn nào: 40 − 35 = 5 bạn. Chỉ học nhạc: 25 − 12 = 13 bạn.'),
+        lt(9, 3, 'Một nhóm 30 bạn: 20 bạn biết bơi, 15 bạn biết đi xe đạp, tất cả đều '
+                 'biết ít nhất một trong hai. Hỏi bao nhiêu bạn biết cả hai?',
+           'Nếu không ai bị đếm hai lần thì tổng là 20 + 15 = 35, mà chỉ có 30 bạn. '
+           'Phần thừa 35 − 30 = 5 chính là số bạn biết cả hai.'),
+        q_tf(1, 'Phần chồng nhau trên sơ đồ Ven bị đếm hai lần.', True, 'Đáp án: ĐÚNG.'),
+        q_tf(2, 'Muốn biết số bạn thích ít nhất một môn, ta cộng thẳng hai nhóm.', False,
+             'SAI — phải trừ đi phần chung một lần.'),
+        q_mcq(3, 'Lớp 38 bạn, 25 thích bóng đá, 18 thích cờ vua, 8 thích cả hai. Số bạn '
+                 'thích ít nhất một môn là:',
+              ['A. 35', 'B. 43', 'C. 38'], 'A. 35', '25 + 18 − 8 = 35.'),
+        q_mcq(4, 'Số bạn CHỈ thích bóng đá là:',
+              ['A. 17', 'B. 25', 'C. 8'], 'A. 17', '25 − 8 = 17.'),
+        q_mcq(5, 'Vì sao phải trừ phần chung đi một lần?',
+              ['A. Vì phần ấy đã bị đếm ở cả hai nhóm',
+               'B. Vì phần ấy không thuộc nhóm nào',
+               'C. Vì phần ấy luôn nhỏ nhất'],
+              'A. Vì phần ấy đã bị đếm ở cả hai nhóm', 'Đếm hai lần thì thừa một lần.'),
+    ],
+)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# ⑩ B67 · NGUYÊN LÝ CHUỒNG THỎ
+# ═══════════════════════════════════════════════════════════════════════════
+# Tách hẳn khỏi B37 — nó chẳng liên quan gì tới sơ đồ Ven. Đây là bài KẾT chương, và
+# là bài lạ nhất: nó không tính ra con số, nó CHỨNG MINH rằng một điều phải xảy ra.
+B67 = bai(
+    67, 'NGUYÊN LÝ CHUỒNG THỎ — NHIỀU HƠN CHỖ THÌ PHẢI CÓ CHỖ CHỨA HAI',
+    'Dạng gốc: LV 8.4b mức Lớp 4 — Nguyên lý Dirichlet phát biểu đơn giản: nhiều đồ '
+    'hơn số chỗ thì có chỗ chứa từ hai đồ trở lên.',
+    'Bài cuối chương, và là bài lạ nhất con từng gặp: nó không bắt con tính ra con số '
+    'nào cả. Nó bắt con CHỨNG MINH rằng một điều chắc chắn phải xảy ra — dù con không '
+    'biết cụ thể xảy ra ở đâu.',
+    LUI_VEN,
+    video(
+        ['Phát biểu được nguyên lý: nhiều đồ hơn chỗ thì có chỗ chứa từ hai trở lên.',
+         'Xác định đâu là "đồ" và đâu là "chỗ" trong một bài toán.',
+         'Trả lời được câu hỏi kiểu "chắc chắn có ít nhất mấy bạn".'],
+        ['Đề bài: Một nhóm có 13 bạn. Chứng tỏ rằng chắc chắn có ít nhất 2 bạn sinh cùng '
+         'một tháng.',
+         'Đếm số CHỖ',
+         'Một năm có 12 tháng. Vậy có 12 chỗ để xếp.',
+         'Đếm số ĐỒ',
+         'Có 13 bạn, tức 13 đồ cần xếp vào 12 chỗ.',
+         'Thử xếp mỗi chỗ một bạn',
+         'Xếp 12 bạn vào 12 tháng, mỗi tháng một bạn. Vẫn còn thừa 1 bạn.',
+         'Bạn thừa phải vào đâu',
+         'Bạn ấy vẫn sinh vào một tháng nào đó, mà 12 tháng đều đã có người. Nên chắc '
+         'chắn có một tháng chứa 2 bạn.',
+         'Điều hay của bài này',
+         'Ta không biết đó là tháng nào, nhưng chắc chắn có. Đó là điều bài toán hỏi.',
+         'Đáp số: chắc chắn có ít nhất 2 bạn sinh cùng tháng.'],
+        ['Có bạn nói: "Không chắc đâu, biết đâu 13 bạn sinh 13 tháng khác nhau."',
+         'Gợi ý 1: Một năm có mấy tháng?',
+         'Gợi ý 2: Chỉ 12 tháng thôi. Làm gì có tháng thứ 13 để xếp bạn thứ 13.',
+         'Chữa: chỉ có 12 tháng nên không thể có 13 tháng khác nhau. Bạn thứ 13 buộc '
+         'phải trùng tháng với một bạn nào đó.'],
+        ['Lấy 13 hạt đậu và một khay 12 ô, bảo con xếp mỗi ô một hạt. Con sẽ thấy hạt '
+         'cuối không còn ô trống nào.',
+         'Bài này lạ vì không ra con số cụ thể. Bố mẹ nhấn: ta chứng minh điều đó PHẢI '
+         'xảy ra, chứ không tìm xem xảy ra ở đâu.'],
+    ),
+    [
+        lt(1, 1, 'Nhóm 13 bạn — đúng bài trong video. Một năm có bao nhiêu tháng, tức '
+                 'bao nhiêu chỗ để xếp?',
+           'Một năm có 12 tháng, tức 12 chỗ.'),
+        lt(2, 1, 'Vẫn bài trên. Xếp mỗi tháng một bạn thì xếp được mấy bạn và còn thừa '
+                 'mấy bạn?',
+           'Xếp được 12 bạn, còn thừa 13 − 12 = 1 bạn.'),
+        lt(3, 1, 'Vẫn bài trên. Bạn thừa ấy buộc phải trùng tháng với một bạn khác, vậy '
+                 'có ít nhất mấy bạn sinh cùng tháng?',
+           'Ít nhất 2 bạn.'),
+        lt(4, 2, 'Bạn An nói "biết đâu 13 bạn sinh 13 tháng khác nhau". Bạn sai ở đâu?',
+           'Một năm chỉ có 12 tháng, làm gì có tháng thứ 13. Nên không thể có 13 tháng '
+           'khác nhau.'),
+        lt(5, 2, 'Một hộp có bi xanh và bi đỏ. Lấy ra 3 viên bất kỳ. Chứng tỏ chắc chắn '
+                 'có ít nhất 2 viên cùng màu.',
+           'Có 2 chỗ (hai màu) và 3 viên. Xếp mỗi màu một viên thì còn thừa 1 viên, viên '
+           'ấy buộc phải trùng màu. Vậy ít nhất 2 viên cùng màu.'),
+        lt(6, 2, 'Trong một lớp có 8 bạn. Chứng tỏ chắc chắn có ít nhất 2 bạn sinh cùng '
+                 'một ngày trong tuần.',
+           'Một tuần có 7 ngày, tức 7 chỗ, mà có 8 bạn. Thừa 1 bạn nên chắc chắn có 2 '
+           'bạn trùng ngày.'),
+        lt(7, 2, 'Muốn chắc chắn có 2 bạn sinh cùng tháng thì nhóm phải có ít nhất bao '
+                 'nhiêu bạn?',
+           'Ít nhất 13 bạn. Với 12 bạn thì có thể mỗi bạn một tháng khác nhau.'),
+        lt(8, 3, 'Một hộp có bi ba màu. Phải lấy ra ít nhất mấy viên để chắc chắn có 2 '
+                 'viên cùng màu?',
+           'Có 3 chỗ (ba màu). Lấy 3 viên thì có thể mỗi viên một màu. Lấy 4 viên thì '
+           'chắc chắn có 2 viên cùng màu.'),
+        lt(9, 3, 'Một nhóm 25 bạn. Chứng tỏ chắc chắn có ít nhất 3 bạn sinh cùng một '
+                 'tháng.',
+           'Nếu mỗi tháng chỉ có nhiều nhất 2 bạn thì cả năm nhiều nhất 12 × 2 = 24 bạn. '
+           'Mà nhóm có 25 bạn, nhiều hơn 24, nên chắc chắn có một tháng chứa từ 3 bạn '
+           'trở lên.'),
+        q_tf(1, 'Có 13 bạn thì chắc chắn có ít nhất 2 bạn sinh cùng tháng.', True,
+             'Đáp án: ĐÚNG — chỉ có 12 tháng.'),
+        q_tf(2, 'Bài này cho ta biết chính xác tháng nào có 2 bạn.', False,
+             'SAI — ta chỉ biết chắc chắn CÓ, không biết là tháng nào.'),
+        q_mcq(3, 'Một năm có 12 tháng. Muốn chắc chắn 2 bạn cùng tháng cần ít nhất:',
+              ['A. 13 bạn', 'B. 12 bạn', 'C. 24 bạn'], 'A. 13 bạn',
+              'Với 12 bạn thì có thể mỗi bạn một tháng.'),
+        q_mcq(4, 'Hộp có bi hai màu, lấy 3 viên thì:',
+              ['A. chắc chắn có 2 viên cùng màu', 'B. chắc chắn ba viên khác màu',
+               'C. không kết luận được'],
+              'A. chắc chắn có 2 viên cùng màu', 'Chỉ có 2 màu mà lấy 3 viên.'),
+        q_mcq(5, 'Nguyên lý này cho ta biết:',
+              ['A. điều đó chắc chắn xảy ra, nhưng không biết ở đâu',
+               'B. chính xác nơi điều đó xảy ra',
+               'C. xác suất điều đó xảy ra'],
+              'A. điều đó chắc chắn xảy ra, nhưng không biết ở đâu',
+              'Đó là điều hay của nguyên lý này.'),
+    ],
+)
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+MOI = [B32, B64, B33, B65, B34, B35, B36, B66, B37, B67]
+SAU = {'DL:KSN4.B64': 'DL:KSN4.B32', 'DL:KSN4.B65': 'DL:KSN4.B33',
+       'DL:KSN4.B66': 'DL:KSN4.B36', 'DL:KSN4.B67': 'DL:KSN4.B37'}   # chèn ngay sau ai
 
 O_NHAP_MOI = {
     'DL:KSN4.B32#C1': {'parts': [{'label': 'đề cho', 'options': ['tổng và hiệu',
@@ -552,13 +994,91 @@ O_NHAP_MOI = {
                                   'options': ['nhân', 'cộng', 'trừ'], 'value': 'nhân'}]},
     'DL:KSN4.B34#C8': {'value': 10},
     'DL:KSN4.B34#C9': {'value': 12},
+
+    # ── ⑥ B35 · giả thiết tạm ──
+    'DL:KSN4.B35#C1': {'value': 72},
+    'DL:KSN4.B35#C2': {'value': 28},
+    'DL:KSN4.B35#C3': {'value': 2},
+    'DL:KSN4.B35#C4': {'parts': [{'label': 'số chó', 'value': 14},
+                                 {'label': 'số gà', 'value': 22}]},
+    'DL:KSN4.B35#C5': {'parts': [{'label': 'phải chia cho', 'value': 2},
+                                 {'label': 'số chó đúng', 'value': 14}]},
+    'DL:KSN4.B35#C6': {'parts': [{'label': 'số chó', 'value': 8},
+                                 {'label': 'số gà', 'value': 12}]},
+    'DL:KSN4.B35#C7': {'parts': [{'label': 'giả sử toàn chó thì chân sẽ',
+                                  'options': ['thừa', 'thiếu'], 'value': 'thừa'}]},
+    'DL:KSN4.B35#C8': {'parts': [{'label': 'vé 5 nghìn', 'value': 13},
+                                 {'label': 'vé 2 nghìn', 'value': 17}]},
+    'DL:KSN4.B35#C9': {'parts': [{'label': 'số gà', 'value': 22},
+                                 {'label': 'số chó', 'value': 14}]},
+
+    # ── ⑦ B36 · khử ──
+    'DL:KSN4.B36#C1': {'value': 3},
+    'DL:KSN4.B36#C2': {'parts': [{'label': 'còn mấy vở', 'value': 3},
+                                 {'label': 'còn bao nhiêu nghìn', 'value': 15}]},
+    'DL:KSN4.B36#C3': {'value': 5},
+    'DL:KSN4.B36#C4': {'value': 4},
+    'DL:KSN4.B36#C5': {'parts': [{'label': 'phải trừ mấy vế', 'value': 2},
+                                 {'label': 'còn bao nhiêu nghìn', 'value': 15}]},
+    'DL:KSN4.B36#C6': {'value': 10},
+    'DL:KSN4.B36#C7': {'value': 16},
+    'DL:KSN4.B36#C8': {'parts': [{'label': 'một vở', 'value': 5},
+                                 {'label': 'một bút', 'value': 6}]},
+    'DL:KSN4.B36#C9': {'parts': [{'label': 'hai lần mua phải có một thứ',
+                                  'options': ['giống hệt', 'khác nhau'],
+                                  'value': 'giống hệt'}]},
+
+    # ── ⑧ B66 · thế ──
+    'DL:KSN4.B66#C1': {'value': 6},
+    'DL:KSN4.B66#C2': {'value': 12},
+    'DL:KSN4.B66#C3': {'value': 6},
+    'DL:KSN4.B66#C4': {'value': 9},
+    'DL:KSN4.B66#C5': {'parts': [{'label': '4 hộp sữa bằng mấy gói bánh', 'value': 6}]},
+    'DL:KSN4.B66#C6': {'value': 5},
+    'DL:KSN4.B66#C7': {'value': 10},
+    'DL:KSN4.B66#C8': {'parts': [{'label': 'một ghế', 'value': 20},
+                                 {'label': 'một bàn', 'value': 60}]},
+    'DL:KSN4.B66#C9': {'parts': [{'label': 'khử cần hai thứ',
+                                  'options': ['giống hệt', 'quy đổi'],
+                                  'value': 'giống hệt'},
+                                 {'label': 'thế cần câu',
+                                  'options': ['quy đổi', 'giống hệt'],
+                                  'value': 'quy đổi'}]},
+
+    # ── ⑨ B37 · sơ đồ Ven ──
+    'DL:KSN4.B37#C1': {'value': 43},
+    'DL:KSN4.B37#C2': {'parts': [{'label': 'số bạn bị đếm hai lần', 'value': 8}]},
+    'DL:KSN4.B37#C3': {'value': 35},
+    'DL:KSN4.B37#C4': {'value': 3},
+    'DL:KSN4.B37#C5': {'parts': [{'label': 'phải trừ đi mấy bạn', 'value': 8},
+                                 {'label': 'kết quả đúng', 'value': 35}]},
+    'DL:KSN4.B37#C6': {'value': 17},
+    'DL:KSN4.B37#C7': {'value': 35},
+    'DL:KSN4.B37#C8': {'parts': [{'label': 'không học môn nào', 'value': 5},
+                                 {'label': 'chỉ học nhạc', 'value': 13}]},
+    'DL:KSN4.B37#C9': {'value': 5},
+
+    # ── ⑩ B67 · nguyên lý chuồng thỏ ──
+    'DL:KSN4.B67#C1': {'value': 12},
+    'DL:KSN4.B67#C2': {'parts': [{'label': 'xếp được mấy bạn', 'value': 12},
+                                 {'label': 'thừa mấy bạn', 'value': 1}]},
+    'DL:KSN4.B67#C3': {'value': 2},
+    'DL:KSN4.B67#C4': {'parts': [{'label': 'một năm có mấy tháng', 'value': 12}]},
+    'DL:KSN4.B67#C5': {'value': 2},
+    'DL:KSN4.B67#C6': {'value': 2},
+    'DL:KSN4.B67#C7': {'value': 13},
+    'DL:KSN4.B67#C8': {'value': 4},
+    'DL:KSN4.B67#C9': {'parts': [{'label': 'mỗi tháng nhiều nhất 2 bạn thì cả năm',
+                                  'value': 24},
+                                 {'label': 'nên chắc chắn có tháng chứa từ mấy bạn',
+                                  'value': 3}]},
 }
 
 
 def soi():
     loi = soi_bai(MOI, O_NHAP_MOI)
-    cu = {'DL:KSN4.B32', 'DL:KSN4.B33', 'DL:KSN4.B34'}
-    moi_ = {'DL:KSN4.B64', 'DL:KSN4.B65'}
+    cu = {f'DL:KSN4.B{n}' for n in (32, 33, 34, 35, 36, 37)}
+    moi_ = {f'DL:KSN4.B{n}' for n in (64, 65, 66, 67)}
     co = {b['id'] for b in MOI}
     if co != cu | moi_:
         loi.append(f'mã bài không đúng dự kiến: thừa {co - (cu | moi_)}, '
@@ -566,7 +1086,10 @@ def soi():
     # Neo THEO CẶP — chương này không có một bộ neo chung, xem chú thích đầu tệp.
     CAP = [({'DL:KSN4.B32', 'DL:KSN4.B64'}, ('30 tuổi', 'mẹ 30', '24 tuổi')),
            ({'DL:KSN4.B33', 'DL:KSN4.B65'}, ('12 phần', '6 giờ')),
-           ({'DL:KSN4.B34'}, ('26', '10'))]
+           ({'DL:KSN4.B34'}, ('26', '10')),
+           ({'DL:KSN4.B35'}, ('36 con', '100')),
+           ({'DL:KSN4.B36', 'DL:KSN4.B66'}, ('bút', 'vở', 'hộp sữa', 'gói bánh')),
+           ({'DL:KSN4.B37', 'DL:KSN4.B67'}, ('38 bạn', '13 bạn', '12 tháng'))]
     for ma, neo in CAP:
         for b in MOI:
             if b['id'] in ma:

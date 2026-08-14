@@ -325,6 +325,36 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuCuoi"):
             giua(d, y0 + h_nhom + 118, c["chuCuoi"], phong(34), INK, rong=W - 200)
 
+    elif L == "so_do_ven":
+        # ══ SƠ ĐỒ VEN — HAI VÒNG GIAO NHAU ══
+        # Bài này chỉ có một ý, và ý ấy KHÔNG nói bằng lời được: phần giao bị đếm HAI
+        # LẦN nên phải trừ đi một lần. Vẽ hai vòng chồng nhau thì bé nhìn thấy ngay
+        # cái phần bị đếm đúp ấy nằm ở đâu.
+        giua(d, 46, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        r = 168
+        cx1, cx2, cy = W // 2 - 112, W // 2 + 112, 300
+        d.ellipse([cx1 - r, cy - r, cx1 + r, cy + r], outline=TEAL, width=6)
+        d.ellipse([cx2 - r, cy - r, cx2 + r, cy + r], outline=GOLD, width=6)
+        f = phong(34)
+        for x, nhan, mau in ((cx1 - r + 10, c.get("tenA", ""), TEAL_DARK),
+                             (cx2 + r - 10, c.get("tenB", ""), GOLD_DARK)):
+            if nhan:
+                w = d.textlength(nhan, font=f)
+                d.text((x - (w if x > W // 2 else 0), cy - r - 46), nhan, font=f, fill=mau)
+        # Ba con số: chỉ A, cả hai, chỉ B — đặt đúng ba vùng của hình.
+        g = phong(46)
+        for x, t, mau in ((cx1 - 96, c.get("chiA", ""), TEAL_DARK),
+                          (W // 2, c.get("caHai", ""), ALERT),
+                          (cx2 + 96, c.get("chiB", ""), GOLD_DARK)):
+            if t:
+                d.text((x - d.textlength(str(t), font=g) / 2, cy - 24), str(t),
+                       font=g, fill=mau)
+        if c.get("chuGiao"):
+            giua(d, cy + r + 18, c["chuGiao"], phong(30), ALERT, rong=W - 200)
+        if c.get("chuPhu"):
+            giua(d, cy + r + (72 if c.get("chuGiao") else 24), c["chuPhu"], phong(36),
+                 INK, rong=W - 180)
+
     elif L == "so_do_doan":
         # ══ SƠ ĐỒ ĐOẠN THẲNG ══
         # Bác dặn riêng: chương tổng - hiệu thì **vẽ kiểu đoạn thẳng**. Nên đây là

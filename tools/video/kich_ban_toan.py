@@ -1900,6 +1900,196 @@ def kb_tinh_nguoc(b):
     ]
 
 
+# ── chương 8 · đợt hai, năm bài cuối ──
+
+
+def kb_gia_thiet(b):
+    """⑥ Giả thiết tạm — đoán bừa rồi sửa dần."""
+    return [
+        _c('bia', 'Giả thiết tạm', so_bai(b),
+           loi=['Hôm nay mình học một cách rất lạ mà rất hiệu quả.']),
+        _c('de_toan', 'Vừa gà vừa chó có 36 con, đếm được 100 cái chân.',
+           'Tính số con mỗi loại.',
+           loi=['Vừa gà vừa chó có ba mươi sáu con, đếm được một trăm cái chân.']),
+        _c('y_toan', 'Đoán bừa cho dễ tính', 'Giả sử tất cả 36 con đều là gà.',
+           buoc=1, soBuoc=4,
+           loi=['Mình cứ đoán bừa. Giả sử tất cả ba mươi sáu con đều là gà.']),
+        _c('y_toan', 'Đếm chân theo giả thiết ấy', '36 × 2 = 72 chân',
+           buoc=2, soBuoc=4,
+           loi=['Gà hai chân, nên ba mươi sáu con có bảy mươi hai chân.']),
+        _c('y_toan', 'Xem lệch bao nhiêu', '100 − 72 = 28 chân còn thiếu',
+           buoc=3, soBuoc=4,
+           loi=['Đề nói một trăm chân, mà đoán ra bảy mươi hai. Thiếu hai mươi tám chân.']),
+        _c('nhom_deu', 'Đổi một con gà thành chó thì thêm 2 chân', tong=28, moiNhom=2,
+           chuPhu='28 chân thiếu, mỗi lần đổi thêm 2 chân.',
+           chuCuoi='Vậy phải đổi 14 con.',
+           loi=['Đổi một con gà thành chó thì thêm hai chân.',
+                'Thiếu hai mươi tám chân nên phải đổi mười bốn con.']),
+        _c('y_toan', 'Đáp số', '14 con chó và 22 con gà', buoc=4, soBuoc=4,
+           loi=['Có mười bốn con chó và hai mươi hai con gà.',
+                'Thử lại đúng một trăm chân.']),
+        _c('cong_thuc', 'Cách làm giả thiết tạm',
+           congThuc='số cần đổi = phần lệch : lệch mỗi lần đổi',
+           thay='28 : 2 = 14 con',
+           loi=['Số cần đổi bằng phần lệch chia cho phần lệch mỗi lần đổi.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='đừng quên CHIA cho phần lệch mỗi lần',
+           loi=['Con nhớ lại một lần nữa. Đừng quên chia cho phần lệch mỗi lần đổi.',
+                'Lấy thẳng hai mươi tám là tưởng mỗi lần đổi chỉ thêm một chân.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_khu(b):
+    """⑦ Khử — trừ hai lần mua cho một thứ biến mất."""
+    return [
+        _c('bia', 'Phương pháp khử', so_bai(b),
+           loi=['Hôm nay mình làm cho một thứ trong bài biến mất.']),
+        _c('de_toan', 'Mua 3 bút và 2 vở hết 22 nghìn. Mua 3 bút và 5 vở hết 37 nghìn.',
+           'Tính giá một bút và một vở.',
+           loi=['Mua ba bút và hai vở hết hai mươi hai nghìn đồng.',
+                'Mua ba bút và năm vở hết ba mươi bảy nghìn đồng.']),
+        _c('y_toan', 'Tìm phần giống HỆT nhau', 'Cả hai lần đều mua đúng 3 bút.',
+           buoc=1, soBuoc=4,
+           loi=['Nhìn kỹ thì cả hai lần đều mua đúng ba bút. Phần ấy giống hệt nhau.']),
+        _c('y_toan', 'Trừ hai dòng cho nhau', 'Ba bút biến mất.', buoc=2, soBuoc=4,
+           loi=['Lấy dòng dưới trừ dòng trên thì ba bút biến mất.']),
+        _c('y_toan', 'Còn lại gì', '5 − 2 = 3 vở  ·  37 − 22 = 15 nghìn',
+           buoc=3, soBuoc=4,
+           loi=['Còn lại ba vở, và tiền còn mười lăm nghìn.',
+                'Nhớ trừ cả hai vế, không chỉ trừ số vở.']),
+        _c('y_toan', 'Tìm giá một vở', '15 : 3 = 5 nghìn', buoc=4, soBuoc=4,
+           loi=['Ba vở hết mười lăm nghìn nên một vở là năm nghìn đồng.']),
+        _c('y_toan', 'Quay về tìm giá bút', '22 − 10 = 12,  rồi 12 : 3 = 4 nghìn',
+           buoc=4, soBuoc=4,
+           loi=['Hai vở hết mười nghìn, nên ba bút hết mười hai nghìn.',
+                'Một bút là bốn nghìn đồng.']),
+        _c('cong_thuc', 'Phương pháp khử',
+           congThuc='hai lần mua có phần GIỐNG HỆT  ⟶  trừ hai dòng',
+           thay='37 − 22 = 15 nghìn cho 3 vở',
+           loi=['Hai lần mua có phần giống hệt thì trừ hai dòng cho nhau.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='trừ thì trừ CẢ HAI VẾ',
+           loi=['Con nhớ lại một lần nữa. Trừ thì trừ cả hai vế.',
+                'Bớt vở thì tiền cũng bớt theo, không thì hai bên hết bằng nhau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_the(b):
+    """⑧ Thế — đổi hết về một loại nhờ câu quy đổi."""
+    return [
+        _c('bia', 'Phương pháp thế', so_bai(b),
+           loi=['Hôm nay mình đổi hết mọi thứ về cùng một loại.']),
+        _c('de_toan', 'Biết 2 hộp sữa giá bằng 3 gói bánh. Mua 4 hộp sữa và 6 gói bánh '
+                      'hết 72 nghìn.', 'Tính giá mỗi thứ.',
+           loi=['Biết hai hộp sữa giá bằng ba gói bánh.',
+                'Mua bốn hộp sữa và sáu gói bánh hết bảy mươi hai nghìn đồng.']),
+        _c('y_toan', 'Đây là câu quy đổi', '2 hộp sữa = 3 gói bánh', buoc=1, soBuoc=4,
+           loi=['Câu hai hộp sữa bằng ba gói bánh cho phép mình đổi qua đổi lại.']),
+        _c('y_toan', 'Đổi 4 hộp sữa thành bánh', 'Gấp đôi bên này thì gấp đôi bên kia.',
+           buoc=2, soBuoc=4,
+           loi=['Bốn hộp sữa gấp đôi hai hộp sữa, nên bằng gấp đôi ba gói bánh.',
+                'Tức là sáu gói bánh.']),
+        _c('y_toan', 'Bây giờ tất cả là bánh', '6 + 6 = 12 gói bánh hết 72 nghìn',
+           buoc=3, soBuoc=4,
+           loi=['Cả lần mua thành mười hai gói bánh, hết bảy mươi hai nghìn.']),
+        _c('y_toan', 'Tìm giá mỗi thứ', 'Bánh 6 nghìn · sữa 9 nghìn', buoc=4, soBuoc=4,
+           loi=['Một gói bánh là sáu nghìn đồng.',
+                'Hai hộp sữa bằng ba gói bánh, tức mười tám nghìn, nên một hộp sữa là '
+                'chín nghìn đồng.']),
+        _c('cong_thuc', 'Phương pháp thế',
+           congThuc='có câu QUY ĐỔI  ⟶  đổi hết về một loại',
+           thay='4 hộp sữa  ⟶  6 gói bánh',
+           loi=['Có câu quy đổi thì đổi hết về một loại rồi hãy tính.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='gấp mấy bên này thì gấp bấy bên kia',
+           loi=['Con nhớ lại một lần nữa. Gấp mấy lần bên này thì gấp bấy nhiêu bên kia.',
+                'Khử cần hai thứ giống hệt, còn thế cần một câu quy đổi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_ven(b):
+    """⑨ Sơ đồ Ven — phần chồng nhau bị đếm hai lần."""
+    return [
+        _c('bia', 'Sơ đồ Ven', so_bai(b),
+           loi=['Hôm nay mình vẽ hai vòng tròn chồng lên nhau.']),
+        _c('de_toan', 'Lớp 38 bạn: 25 thích bóng đá, 18 thích cờ vua, 8 thích cả hai.',
+           'Hỏi bao nhiêu bạn không thích môn nào?',
+           loi=['Lớp có ba mươi tám bạn. Hai mươi lăm bạn thích bóng đá.',
+                'Mười tám bạn thích cờ vua, và tám bạn thích cả hai môn.']),
+        _c('y_toan', 'Cộng thẳng thì sai', '25 + 18 = 43, mà lớp chỉ có 38 bạn.',
+           buoc=1, soBuoc=3,
+           loi=['Cộng thẳng được bốn mươi ba, mà lớp chỉ có ba mươi tám bạn.',
+                'Số bạn không thể nhiều hơn cả lớp.']),
+        _c('so_do_ven', 'Vẽ ra thì thấy ngay', tenA='Thích bóng đá', tenB='Thích cờ vua',
+           chiA=17, caHai=8, chiB=10,
+           chuGiao='8 bạn thích CẢ HAI nằm ở phần chồng nhau',
+           chuPhu='Phần ấy bị đếm hai lần.',
+           loi=['Vẽ hai vòng chồng nhau thì thấy ngay.',
+                'Tám bạn thích cả hai nằm ở phần chồng, nên bị đếm hai lần.']),
+        _c('y_toan', 'Trừ đi một lần', '25 + 18 − 8 = 35 bạn', buoc=2, soBuoc=3,
+           loi=['Trừ đi một lần thì được ba mươi lăm bạn thích ít nhất một môn.']),
+        _c('y_toan', 'Tìm số bạn không thích môn nào', '38 − 35 = 3 bạn',
+           buoc=3, soBuoc=3,
+           loi=['Cả lớp ba mươi tám bạn, nên có ba bạn không thích môn nào.']),
+        _c('cong_thuc', 'Sơ đồ Ven hai vòng',
+           congThuc='số thích ít nhất một môn = A + B − phần chung',
+           thay='25 + 18 − 8 = 35',
+           loi=['Số bạn thích ít nhất một môn bằng nhóm một cộng nhóm hai, trừ phần chung.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='phần chồng bị đếm HAI lần nên trừ đi MỘT lần',
+           loi=['Con nhớ lại một lần nữa. Phần chồng bị đếm hai lần nên trừ đi một lần.',
+                'Cộng thẳng mà ra nhiều hơn cả lớp là biết mình quên trừ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_chuong_tho(b):
+    """⑩ Nguyên lý chuồng thỏ — bài KẾT chương, không tính ra số nào cả."""
+    return [
+        _c('bia', 'Nguyên lý chuồng thỏ', so_bai(b),
+           loi=['Hôm nay là bài lạ nhất, vì nó không bắt con tính ra số nào cả.']),
+        _c('de_toan', 'Một nhóm có 13 bạn.',
+           'Chứng tỏ chắc chắn có ít nhất 2 bạn sinh cùng một tháng.',
+           loi=['Một nhóm có mười ba bạn.',
+                'Hãy chứng tỏ chắc chắn có ít nhất hai bạn sinh cùng một tháng.']),
+        _c('y_toan', 'Đếm số CHỖ', 'Một năm có 12 tháng, tức 12 chỗ.',
+           buoc=1, soBuoc=4,
+           loi=['Trước hết đếm số chỗ. Một năm có mười hai tháng, tức mười hai chỗ.']),
+        _c('y_toan', 'Đếm số ĐỒ cần xếp', 'Có 13 bạn.', buoc=2, soBuoc=4,
+           loi=['Rồi đếm số đồ cần xếp. Có mười ba bạn.']),
+        _c('nhom_deu', 'Xếp mỗi tháng một bạn', tong=13, moiNhom=12,
+           chuPhu='12 bạn vừa đủ 12 tháng, còn thừa 1 bạn.',
+           chuCuoi='Bạn thừa ấy phải vào một tháng đã có người.',
+           loi=['Xếp mười hai bạn vào mười hai tháng, mỗi tháng một bạn.',
+                'Vẫn còn thừa một bạn, mà không còn tháng trống nào.']),
+        _c('y_toan', 'Nên chắc chắn có tháng chứa 2 bạn',
+           'Ta không biết là tháng nào, nhưng chắc chắn có.', buoc=3, soBuoc=4,
+           loi=['Nên chắc chắn có một tháng chứa hai bạn.',
+                'Mình không biết đó là tháng nào, nhưng chắc chắn có.']),
+        _c('y_toan', 'Đó chính là điều bài toán hỏi',
+           'Bài này chứng minh điều đó PHẢI xảy ra.', buoc=4, soBuoc=4,
+           loi=['Đó chính là điều bài toán hỏi. Bài này chứng minh một điều phải xảy ra.']),
+        _c('cong_thuc', 'Nguyên lý chuồng thỏ',
+           congThuc='nhiều ĐỒ hơn số CHỖ  ⟶  có chỗ chứa từ 2 đồ trở lên',
+           thay='13 bạn · 12 tháng  ⟶  có tháng 2 bạn',
+           loi=['Nhiều đồ hơn số chỗ thì chắc chắn có chỗ chứa từ hai đồ trở lên.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='tìm đâu là ĐỒ, đâu là CHỖ',
+           loi=['Con nhớ lại một lần nữa. Gặp bài kiểu này thì tìm xem đâu là đồ, đâu '
+                'là chỗ.',
+                'Đồ nhiều hơn chỗ là kết luận được ngay.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 # Khoá theo MÃ BÀI, không theo số bài. Từ 14-08 (lối C) số bài đếm từ vị trí trong
 # `thu_tu.json`, nên nó đổi mỗi khi chèn bài mới — khoá theo nó thì chèn chín bài
 # vào chương 3 là tám kịch bản này nhảy sang nhầm bài, mà vẫn dựng ra video hợp lệ.
@@ -1931,6 +2121,10 @@ BO = {
     'DL:KSN4.B32': kb_tuoi_mot,  'DL:KSN4.B64': kb_tuoi_hai,
     'DL:KSN4.B33': kb_lam_chung, 'DL:KSN4.B65': kb_mot_nguoi_nghi,
     'DL:KSN4.B34': kb_tinh_nguoc,
+    # ── chương 8 · đợt hai ──
+    'DL:KSN4.B35': kb_gia_thiet, 'DL:KSN4.B36': kb_khu,
+    'DL:KSN4.B66': kb_the,       'DL:KSN4.B37': kb_ven,
+    'DL:KSN4.B67': kb_chuong_tho,
 }
 
 

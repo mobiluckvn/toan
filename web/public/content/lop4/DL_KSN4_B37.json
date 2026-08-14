@@ -2,56 +2,39 @@
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN4.B37",
  "grade": 4,
- "quyen": "lop4",
- "title": "Bài 53 · SƠ ĐỒ VEN VÀ NGUYÊN LÝ CHUỒNG THỎ",
+ "quyen": "KSN4",
+ "title": "Bài 54 · SƠ ĐỒ VEN — PHẦN CHỒNG NHAU BỊ ĐẾM HAI LẦN",
  "durationMinutes": 10,
- "so": 53,
+ "so": 54,
  "chuong": 8,
- "tenChuong": "BÀI TOÁN CÓ LỜI VĂN",
- "dangGoc": "LV 8.4 mức Lớp 4 — Ven hai tập hợp (A + B − cả hai) · Dirichlet phát biểu đơn giản",
+ "tenChuong": "BÀI TOÁN LỜI VĂN",
+ "dangGoc": "Dạng gốc: LV 8.4a mức Lớp 4 — Sơ đồ Ven hai tập hợp, công thức A cộng B trừ phần chung.",
  "skills": {
   "bktUnit": "CHUONG:8@G4",
   "primary": []
  },
  "series": {
-  "order": 53,
-  "prev": "DL:KSN4.B36",
-  "next": "DL:KSN4.B38"
+  "order": 54,
+  "prev": "DL:KSN4.B66",
+  "next": "DL:KSN4.B67"
  },
  "objective": {
   "id": "O1",
-  "text": "Vẽ sơ đồ Ven hai vòng và dùng công thức: số thích ít nhất một = A + B − cả hai. Tính số bạn \"chỉ thích một môn\" và số bạn \"không thích môn nào\" từ sơ đồ Ven. Dùng nguyên lý chuồng thỏ (Dirichlet) với mẹo \"tình huống xấu nhất\" để khẳng định chắc chắn các điều kiểu \"có ít nhất 2 bạn sinh cùng tháng\".",
-  "kidText": "Lớp 38 bạn: 25 bạn đá bóng, 18 bạn cờ vua, 8 bạn ghi tên cả hai. Bao nhiêu bạn chẳng vào câu lạc bộ nào?",
+  "text": "Vẽ được hai vòng giao nhau cho hai nhóm. Chỉ ra phần chồng nhau bị đếm hai lần. Tính số bạn thuộc ít nhất một nhóm.",
+  "kidText": "Lớp 38 bạn mà cộng lại thành 43 bạn thích. Con đoán xem sai ở đâu nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — VẼ HAI VÒNG GIAO NHAU: vòng \"bóng đá\" và vòng \"cờ vua\" cài vào nhau; viết 8 vào phần giao trước tiên. Phần \"chỉ đá\": 25 − 8 = 17; phần \"chỉ cờ\": 18 − 8 = 10. Ba ngăn của sơ đồ đã đầy số: 17 - 8 - 10."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — CÔNG THỨC ÍT NHẤT MỘT: ít nhất một môn = 25 + 18 − 8 = 35 (bạn) — trừ 8 vì nhóm cả-hai bị cộng đúp. Kiểm bằng ba ngăn: 17 + 8 + 10 = 35 ✓. Không tham gia gì: 38 − 35 = 3 (bạn) — ba bạn ấy không tàng hình, chỉ đứng ngoài hai vòng tròn thôi!"
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — NGUYÊN LÝ CHUỒNG THỎ: câu đố cô chủ nhiệm tặng thêm: \"không cần xem sổ, cô dám chắc trong 13 bạn tổ Một có 2 bạn sinh cùng tháng — vì sao?\" Một năm chỉ có 12 tháng — như 12 chiếc chuồng; nhét 13 chú thỏ vào 12 chuồng thì DỨT KHOÁT có chuồng chứa từ 2 thỏ. Chắc chắn 100% mà chưa cần hỏi ai sinh tháng nào!"
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — MẸO TÌNH HUỐNG XẤU NHẤT: muốn thấy vì sao \"chắc chắn\", hãy thử tình huống XẤU NHẤT cho kết luận: cố xếp mỗi tháng một bạn — xếp được tối đa 12 bạn; bạn thứ 13 buộc phải chen vào tháng đã có người. Bài bi cùng chiêu: túi có bi 4 màu, muốn CHẮC có 2 viên cùng màu phải lấy 4 + 1 = 5 viên (xấu nhất là 4 viên đầu mỗi viên một màu)."
-   }
-  ],
-  "mantra": "Ven hai vòng: điền phần GIAO trước, rồi ít nhất một = A + B − cả hai; đứng ngoài = tổng − ít nhất một. Chuồng thỏ: đếm số \"chuồng\", đếm số \"thỏ\" — thỏ nhiều hơn chuồng là chắc chắn có chuồng ghép đôi; muốn biết cần lấy mấy để \"chắc chắn\", hãy dựng tình huống xấu nhất rồi cộng 1.",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Cô hỏi thêm: \"túi cô có bi ba màu xanh - đỏ - vàng, lấy mấy viên thì CHẮC CHẮN có hai viên cùng màu?\" Trí Long đáp gọn: \"Hai viên ạ! Lấy 2 viên là có cặp rồi còn gì.\"",
-    "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Lấy 2 viên mà một xanh một đỏ thì có \"cặp cùng màu\" chưa? Chữ CHẮC CHẮN đòi hỏi đúng trong cả tình huống ĐEN ĐỦI nhất cơ! Gợi ý 2: Tình huống xấu nhất là bốc mãi vẫn chưa trùng màu — kéo dài được tối đa mấy viên khi túi có 3 màu? Cộng thêm 1 viên \"định mệnh\" và trả lời chuẩn giúp Trí Long — rồi thử phát biểu theo kiểu thỏ và chuồng!"
+    "wrong": "Có bạn cộng 25 với 18 được 43 rồi bảo lớp có 43 bạn thích ít nhất một môn.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Lớp có bao nhiêu bạn tất cả? Gợi ý 2: Chỉ 38 bạn. Sao số bạn thích lại nhiều hơn cả lớp được? Chữa: vì 8 bạn thích cả hai đã bị đếm hai lần. Phải trừ đi một lần: 25 + 18 − 8 = 35 bạn."
    }
   ]
  },
@@ -59,120 +42,48 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Lớp 38 bạn; 25 bạn đăng ký bóng đá; 18 bạn đăng ký cờ vua; 8 bạn ghi tên cả hai. Hỏi bao nhiêu bạn tham gia ít nhất một câu lạc bộ, và bao nhiêu bạn không tham gia câu lạc bộ nào?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "CHO GÌ? lớp 38 bạn; 25 bạn đăng ký bóng đá; 18 bạn đăng ký cờ vua; 8 bạn ghi tên cả hai.\nHỎI GÌ? bao nhiêu bạn tham gia ít nhất một câu lạc bộ, và bao nhiêu bạn không tham gia câu lạc bộ nào.\nĐẠI LƯỢNG & ĐƠN VỊ: số bạn (bạn) — mỗi bạn chỉ được đếm MỘT lần dù ghi tên mấy tờ!\nQUAN HỆ GIỮA CHÚNG: nhóm \"cả hai\" nằm ở phần hai vòng tròn GIAO NHAU — cộng 25 + 18 là đếm nhóm ấy hai lần, phải trừ đi một lần.\nCHỌN CÔNG CỤ: SƠ ĐỒ VEN hai vòng + công thức: ít nhất một = A + B − cả hai.\nƯỚC LƯỢNG TRƯỚC: ít nhất một cỡ 43 − 8 = 35 → chừng vài ba bạn đứng ngoài cả hai vòng.",
-    "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ hai tờ danh sách sang hai vòng tròn"
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S6",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S7",
-    "kind": "explain",
-    "narration": "LẮP: báo cáo gửi cô chủ nhiệm: \"35 bạn tham gia ít nhất một câu lạc bộ (17 chỉ đá - 8 cả hai - 10 chỉ cờ); 3 bạn chưa tham gia gì — cô mời ba bạn ấy vào đội cổ vũ là lớp phủ kín 100%!\" Cô cười: \"Vừa đếm chuẩn vừa hiến kế — đúng là người giải.\"\nSOI: soi hai đường: công thức 25 + 18 − 8 = 35 và cộng ba ngăn 17 + 8 + 10 = 35 — hai lối một đáp số; cộng nốt 3 bạn ngoài vòng: 35 + 3 = 38 khớp sĩ số ✓.\nDÙNG NGOÀI ĐỜI: thống kê ai học vẽ - ai học đàn, ai thích phở - ai thích bún; và mẹo chuồng thỏ giúp con \"nói chắc như đinh\" trong các trò đố vui — sức mạnh của suy luận thuần túy!",
-    "teaches": [],
-    "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
-   },
-   {
-    "id": "S8",
     "kind": "trap",
-    "narration": "Cô hỏi thêm: \"túi cô có bi ba màu xanh - đỏ - vàng, lấy mấy viên thì CHẮC CHẮN có hai viên cùng màu?\" Trí Long đáp gọn: \"Hai viên ạ! Lấy 2 viên là có cặp rồi còn gì.\"",
+    "narration": "Có bạn cộng 25 với 18 được 43 rồi bảo lớp có 43 bạn thích ít nhất một môn.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Lớp 4A có 38 học sinh, trong đó 25 bạn thích bóng đá, 18 bạn thích cờ vua, 8 bạn thích cả hai môn. Hỏi lớp có bao nhiêu bạn không thích môn nào trong hai môn trên?",
+  "problem": "Lớp có 38 bạn. Có 25 bạn thích bóng đá, 18 bạn thích cờ vua, 8 bạn thích cả hai môn. Hỏi có bao nhiêu bạn không thích môn nào?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Cộng thẳng thì sai"
    },
    {
-    "show": "Lớp: 38 bạn; thích đá: 25; thích cờ: 18; cả hai: 8."
+    "show": "25 + 18 = 43, mà lớp chỉ có 38 bạn. Số bạn không thể nhiều hơn cả lớp."
    },
    {
-    "show": "Tìm số bạn không thích môn nào."
+    "show": "Vì sao lại thừa"
    },
    {
-    "show": "Bốn con số — chú ý nhất con số \"cả hai\"."
+    "show": "Vì 8 bạn thích cả hai môn đã bị đếm một lần ở nhóm bóng đá, rồi lại đếm thêm một lần ở nhóm cờ vua."
    },
    {
-    "show": "Sơ đồ Ven"
+    "show": "Vẽ ra thì thấy ngay"
    },
    {
-    "show": "( chỉ đá: 17 ( cả hai: 8 ) chỉ cờ: 10 )"
+    "show": "Hai vòng chồng nhau. Phần chồng chính là 8 bạn ấy, và nó nằm trong cả hai vòng."
    },
    {
-    "show": "Bên ngoài hai vòng: ? bạn"
+    "show": "Trừ đi một lần"
    },
    {
-    "show": "Điền phần giao 8 trước, hai phần \"chỉ\" tính bằng phép trừ."
+    "show": "Số bạn thích ít nhất một môn là 25 + 18 − 8 = 35 bạn."
    },
    {
-    "show": "Bài giải"
+    "show": "Tìm số bạn không thích môn nào"
    },
    {
-    "show": "Số bạn thích ít nhất một trong hai môn là"
+    "show": "Cả lớp 38 bạn, có 35 bạn thích ít nhất một môn, nên 38 − 35 = 3 bạn không thích môn nào."
    },
    {
-    "show": "25 + 18 − 8 = 35 (bạn)"
-   },
-   {
-    "show": "(trừ 8 vì các bạn thích cả hai môn bị đếm hai lần)"
-   },
-   {
-    "show": "Số bạn không thích môn nào là: 38 − 35 = 3 (bạn)"
-   },
-   {
-    "show": "Dòng trong ngoặc giải thích phép trừ 8 — linh hồn công thức Ven."
-   },
-   {
-    "show": "Đáp số: 3 bạn."
-   },
-   {
-    "show": "Đáp số kèm đơn vị."
-   },
-   {
-    "show": "Thử lại: 17 + 8 + 10 + 3 = 38 — đủ sĩ số cả lớp ✓"
-   },
-   {
-    "show": "Cộng đủ BỐN ngăn (kể cả ngoài vòng) phải ra sĩ số."
+    "show": "Đáp số: 3 bạn không thích môn nào."
    }
   ]
  },
@@ -181,16 +92,11 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Lớp có 25 bạn thích bóng đá, trong đó 8 bạn thích cả bóng đá lẫn cờ vua. Hỏi bao nhiêu bạn CHỈ thích bóng đá?",
+     "text": "Lớp 38 bạn: 25 thích bóng đá, 18 thích cờ vua, 8 thích cả hai — đúng bài trong video. Cộng thẳng 25 với 18 được bao nhiêu?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số bạn chỉ thích bóng đá",
-        "value": 17
-       }
-      ]
+      "value": 43
      },
-     "solutionNarrative": "25 − 8 = 17 bạn chỉ thích bóng đá.",
+     "solutionNarrative": "25 + 18 = 43 bạn — nhiều hơn cả lớp, nên chắc chắn có chỗ sai.",
      "hints": [
       "Điền phần GIAO trước rồi mới tính hai cánh.",
       "Chỉ thích một môn = số của môn ấy trừ phần giao."
@@ -198,11 +104,16 @@
     },
     {
      "id": "C2",
-     "text": "Với 25 bạn thích đá, 18 bạn thích cờ, 8 bạn thích cả hai — bao nhiêu bạn thích ít nhất một môn?",
+     "text": "Vẫn bài trên. Vì sao cộng thẳng lại thừa?",
      "answerKey": {
-      "value": 35
+      "parts": [
+       {
+        "label": "số bạn bị đếm hai lần",
+        "value": 8
+       }
+      ]
      },
-     "solutionNarrative": "25 + 18 − 8 = 35 bạn.",
+     "solutionNarrative": "Vì 8 bạn thích cả hai môn bị đếm hai lần: một lần ở nhóm bóng đá, một lần ở nhóm cờ vua.",
      "hints": [
       "Cộng thô rồi trừ đi phần bị cộng đúp.",
       "Nhóm cả-hai bị đếm hai lần."
@@ -210,11 +121,11 @@
     },
     {
      "id": "C3",
-     "text": "Lớp có 38 bạn. Dùng kết quả Câu 2, tính số bạn không thích môn nào.",
+     "text": "Vẫn bài trên. Có bao nhiêu bạn thích ít nhất một môn?",
      "answerKey": {
-      "value": 3
+      "value": 35
      },
-     "solutionNarrative": "38 − 35 = 3 bạn.",
+     "solutionNarrative": "25 + 18 − 8 = 35 bạn.",
      "hints": [
       "Đứng ngoài = sĩ số trừ phần ít-nhất-một.",
       "Dùng lại kết quả của câu ngay trước."
@@ -224,11 +135,11 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Lớp 4B có 30 bạn, ai cũng thích ít nhất một trong hai môn: 20 bạn thích toán, 15 bạn thích văn. Hỏi bao nhiêu bạn thích CẢ HAI môn?",
+     "text": "Vẫn bài trên. Có bao nhiêu bạn không thích môn nào?",
      "answerKey": {
-      "value": 5
+      "value": 3
      },
-     "solutionNarrative": "Ai cũng thích ít nhất một môn → 30 = 20 + 15 − cả hai → cả hai = 35 − 30 = 5 bạn.",
+     "solutionNarrative": "38 − 35 = 3 bạn.",
      "hints": [
       "Cộng thô lên xem vượt sĩ số bao nhiêu.",
       "Phần vượt ấy chính là phần bị đếm hai lần."
@@ -236,11 +147,20 @@
     },
     {
      "id": "C5",
-     "text": "Vì sao trong 13 bạn bất kỳ luôn có ít nhất 2 bạn sinh cùng tháng? Trình bày theo kiểu thỏ và chuồng.",
+     "text": "Bạn Nam cộng 25 với 18 rồi bảo có 43 bạn thích ít nhất một môn. Bạn sai ở đâu?",
      "answerKey": {
-      "value": 2
+      "parts": [
+       {
+        "label": "phải trừ đi mấy bạn",
+        "value": 8
+       },
+       {
+        "label": "kết quả đúng",
+        "value": 35
+       }
+      ]
      },
-     "solutionNarrative": "12 tháng là 12 \"chuồng\", 13 bạn là 13 \"thỏ\" — xấu nhất mỗi tháng một bạn cũng chỉ xếp được 12; bạn thứ 13 buộc rơi vào tháng đã có người → chắc chắn có 2 bạn cùng tháng.",
+     "solutionNarrative": "Lớp chỉ có 38 bạn nên không thể có 43 bạn thích. Bạn quên trừ 8 bạn bị đếm hai lần.",
      "hints": [
       "Đếm số CHUỒNG: một năm có mấy tháng?",
       "Thử tình huống xấu nhất: mỗi tháng xếp một bạn."
@@ -248,16 +168,11 @@
     },
     {
      "id": "C6",
-     "text": "Túi đựng bi gồm 4 màu. Phải lấy ra ít nhất mấy viên để chắc chắn có 2 viên cùng màu?",
+     "text": "Vẫn bài trên. Có bao nhiêu bạn CHỈ thích bóng đá?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "phải lấy ít nhất mấy viên",
-        "value": 5
-       }
-      ]
+      "value": 17
      },
-     "solutionNarrative": "Xấu nhất 4 viên đầu mỗi viên một màu → lấy 4 + 1 = 5 viên là chắc chắn có 2 viên cùng màu.",
+     "solutionNarrative": "25 − 8 = 17 bạn.",
      "hints": [
       "Màu là chuồng, viên bi là thỏ.",
       "Xấu nhất: mỗi màu bốc đúng một viên rồi mới bốc tiếp."
@@ -265,11 +180,11 @@
     },
     {
      "id": "C7",
-     "text": "Khối 4 có 40 bạn: 25 bạn tham gia văn nghệ, 20 bạn tham gia thể thao, 10 bạn tham gia cả hai. Hỏi bao nhiêu bạn chỉ tham gia ĐÚNG MỘT hoạt động, và bao nhiêu bạn không tham gia gì?",
+     "text": "Lớp 40 bạn: 22 bạn học vẽ, 25 bạn học nhạc, 12 bạn học cả hai. Hỏi bao nhiêu bạn học ít nhất một môn?",
      "answerKey": {
-      "value": 5
+      "value": 35
      },
-     "solutionNarrative": "Chỉ văn nghệ 25 − 10 = 15; chỉ thể thao 20 − 10 = 10 → đúng một hoạt động: 15 + 10 = 25 bạn; ít nhất một: 35 → không tham gia: 40 − 35 = 5 bạn.",
+     "solutionNarrative": "22 + 25 − 12 = 35 bạn.",
      "hints": [
       "Điền phần giao trước rồi tính hai cánh riêng.",
       "Đúng một hoạt động là cộng hai cánh, chưa tính phần giao."
@@ -279,11 +194,20 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Lớp có 38 bạn. Chứng tỏ rằng có ít nhất 4 bạn sinh cùng một tháng. (Xấu nhất: mỗi tháng chỉ có 3 bạn thì cả lớp được tối đa mấy bạn?)",
+     "text": "Vẫn bài trên. Bao nhiêu bạn không học môn nào, và bao nhiêu bạn CHỈ học nhạc?",
      "answerKey": {
-      "value": 4
+      "parts": [
+       {
+        "label": "không học môn nào",
+        "value": 5
+       },
+       {
+        "label": "chỉ học nhạc",
+        "value": 13
+       }
+      ]
      },
-     "solutionNarrative": "Xấu nhất mỗi tháng chỉ 3 bạn → tối đa 12 × 3 = 36 bạn; lớp có 38 > 36 → phải có tháng chứa ít nhất 4 bạn.",
+     "solutionNarrative": "Không học môn nào: 40 − 35 = 5 bạn. Chỉ học nhạc: 25 − 12 = 13 bạn.",
      "hints": [
       "Thử tình huống xấu nhất: mỗi tháng chỉ ba bạn.",
       "Xếp kiểu ấy thì được tối đa bao nhiêu bạn?"
@@ -291,16 +215,11 @@
     },
     {
      "id": "C9",
-     "text": "Túi có 6 bi đỏ, 5 bi xanh, 4 bi vàng. Nhắm mắt lấy ít nhất mấy viên để chắc chắn có 2 viên KHÁC màu nhau? (Đề đảo chiều đấy — tình huống xấu nhất giờ là bốc mãi vẫn... một màu!)",
+     "text": "Một nhóm 30 bạn: 20 bạn biết bơi, 15 bạn biết đi xe đạp, tất cả đều biết ít nhất một trong hai. Hỏi bao nhiêu bạn biết cả hai?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "phải lấy ít nhất mấy viên",
-        "value": 7
-       }
-      ]
+      "value": 5
      },
-     "solutionNarrative": "Xấu nhất là bốc mãi MỘT màu: nhiều nhất 6 viên (toàn đỏ) → lấy 6 + 1 = 7 viên là chắc chắn có 2 viên khác màu.",
+     "solutionNarrative": "Nếu không ai bị đếm hai lần thì tổng là 20 + 15 = 35, mà chỉ có 30 bạn. Phần thừa 35 − 30 = 5 chính là số bạn biết cả hai.",
      "hints": [
       "Đề đảo chiều — xấu nhất là bốc mãi vẫn một màu.",
       "Màu nào nhiều nhất, bốc hết màu ấy được mấy viên?"
@@ -314,70 +233,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Số bạn thích ít nhất một môn bằng A + B trừ đi số bạn thích cả hai.",
+    "text": "Phần chồng nhau trên sơ đồ Ven bị đếm hai lần.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đáp án: ĐÚNG."
    },
    {
     "id": "Q2",
-    "text": "13 bạn vẫn có thể mỗi bạn sinh một tháng khác nhau.",
+    "text": "Muốn biết số bạn thích ít nhất một môn, ta cộng thẳng hai nhóm.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Chỉ có 12 tháng, 13 bạn ắt có 2 bạn trùng."
+    "solutionNarrative": "SAI — phải trừ đi phần chung một lần."
    },
    {
     "id": "Q3",
-    "text": "20 thích toán, 15 thích văn, 5 thích cả hai. Số thích ít nhất một môn:",
+    "text": "Lớp 38 bạn, 25 thích bóng đá, 18 thích cờ vua, 8 thích cả hai. Số bạn thích ít nhất một môn là:",
     "format": "mcq",
     "choices": [
-     "A. 30",
-     "B. 35",
-     "C. 40"
+     "A. 35",
+     "B. 43",
+     "C. 38"
     ],
     "answerKey": {
-     "choice": "A. 30"
+     "choice": "A. 35"
     },
-    "solutionNarrative": "20 + 15 − 5 = 30."
+    "solutionNarrative": "25 + 18 − 8 = 35."
    },
    {
     "id": "Q4",
-    "text": "Bi 3 màu — lấy chắc chắn có 2 viên cùng màu cần:",
-    "format": "mcq",
-    "choices": [
-     "A. 4 viên",
-     "B. 3 viên",
-     "C. 6 viên"
-    ],
-    "answerKey": {
-     "choice": "A. 4 viên"
-    },
-    "solutionNarrative": "3 + 1 = 4 viên."
-   },
-   {
-    "id": "Q5",
-    "text": "25 thích đá, 8 thích cả hai. Số CHỈ thích đá là:",
+    "text": "Số bạn CHỈ thích bóng đá là:",
     "format": "mcq",
     "choices": [
      "A. 17",
      "B. 25",
-     "C. 33"
+     "C. 8"
     ],
     "answerKey": {
      "choice": "A. 17"
     },
     "solutionNarrative": "25 − 8 = 17."
+   },
+   {
+    "id": "Q5",
+    "text": "Vì sao phải trừ phần chung đi một lần?",
+    "format": "mcq",
+    "choices": [
+     "A. Vì phần ấy đã bị đếm ở cả hai nhóm",
+     "B. Vì phần ấy không thuộc nhóm nào",
+     "C. Vì phần ấy luôn nhỏ nhất"
+    ],
+    "answerKey": {
+     "choice": "A. Vì phần ấy đã bị đếm ở cả hai nhóm"
+    },
+    "solutionNarrative": "Đếm hai lần thì thừa một lần."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Vẽ Ven của chính gia đình: vòng \"thích phở\" - vòng \"thích bún\", cả nhà tự đứng vào ngăn của mình (kể cả ngăn \"ngoài cả hai vòng\"!) — sơ đồ sống động hơn mọi hình trong sách.",
-  "homeActivity": "Với chuồng thỏ, luôn hỏi cặp câu: \"chuồng là gì, thỏ là gì?\" — gọi tên đúng hai vai là bài nào cũng sáng.",
-  "watchFor": "NÊN: chơi trò \"dám chắc\": con phát biểu một điều chắc chắn 100% về nhóm bạn (không cần hỏi ai) rồi giải thích bằng chuồng thỏ. KHÔNG NÊN: Ven ba vòng tròn — bảy ngăn của nó hẹn lớp 5."
+  "onComplete": "Vẽ hai vòng tròn chồng nhau rồi bảo con chỉ vào chỗ chồng và hỏi: \"Chỗ này nằm trong mấy vòng?\" Trả lời hai vòng là con hiểu vì sao phải trừ.",
+  "homeActivity": "Chỗ sai duy nhất là quên trừ phần chung. Bố mẹ hỏi: \"Có ai bị đếm hai lần không?\"",
+  "watchFor": ""
  },
  "figureSpec": [
   {
@@ -411,7 +330,7 @@
    "mucGoc": "luyenTap"
   }
  ],
- "hatMam": "Bài 8 con học phần bù — đếm cái KHÔNG để suy ra cái CÓ. Dụng cụ thứ sáu, cũng là món tráng miệng của chương: hai vòng tròn VEN đếm những bạn \"chân trong hai nhóm\", và NGUYÊN LÝ CHUỒNG THỎ — thứ toán kỳ lạ cho phép nói CHẮC CHẮN 100% về điều mình... chưa hề nhìn thấy.",
+ "hatMam": "Có bài hỏi về hai nhóm mà một số bạn thuộc cả hai nhóm. Cộng thẳng hai nhóm lại là sai — và hôm nay con sẽ NHÌN THẤY vì sao sai, chứ không phải nghe kể.",
  "duongLui": {
   "ve": [
    "DL:KSN3.B25"
@@ -422,5 +341,8 @@
   "canCu": "chuDe",
   "lopDuoi": 3,
   "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B37_giang.mp4"
  }
 }
