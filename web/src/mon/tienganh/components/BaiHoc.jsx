@@ -7,7 +7,7 @@ import CauNgheNhin from './CauNgheNhin.jsx';
 import HinhVe from './HinhVe.jsx';
 import NutNoi from './NutNoi.jsx';
 import HoiThoai from './HoiThoai.jsx';
-import Video from './Video.jsx';
+import Video from '../../../chung/components/Video.jsx';
 import GocBoMe, { MucBoMe } from './GocBoMe.jsx';
 import { napBai, napSoAm, hangXom, hinhCuaTu } from '../lib/noiDung.js';
 import { maCua } from './NutNghe.jsx';

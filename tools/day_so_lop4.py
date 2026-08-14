@@ -172,8 +172,8 @@ B13 = bai(
          'Bước 3 — CÁCH ĐỀU LÀ GÌ. Lấy mỗi số hạng TRỪ số hạng ĐỨNG NGAY TRƯỚC nó: '
          '11 − 6 = 5 ; 16 − 11 = 5 ; 21 − 16 = 5 ; 26 − 21 = 5 ; 31 − 26 = 5. Năm '
          'hiệu đều bằng 5 — dãy này CÁCH ĐỀU, và con số 5 ấy gọi là KHOẢNG CÁCH của '
-         'dãy. Khoảng cách là bước chân: từ nhà này sang nhà bên cạnh luôn bước đúng '
-         'một bước 5 đơn vị.',
+         'dãy. Nói cách khác: từ một nhà sang nhà ngay bên cạnh, số nhà luôn tăng '
+         'đúng 5 đơn vị.',
          'Bước 4 — THỬ TAY HAI DÃY. Dãy 3 ; 6 ; 9 ; 12 : hiệu lần lượt 3 ; 3 ; 3 → '
          'CÁCH ĐỀU, khoảng cách 3. Dãy 1 ; 2 ; 4 ; 8 : hiệu lần lượt 1 ; 2 ; 4 → các '
          'hiệu KHÁC nhau, nên KHÔNG cách đều (dãy này có quy luật khác — mỗi số gấp '
@@ -639,7 +639,8 @@ B17 = bai(
          'ƯỚC LƯỢNG TRƯỚC: 113 gần 112 = 8 × 14, nên khả năng cao là thuộc dãy.'],
         ['Bước 1 — MỌI SỐ HẠNG ĐỀU CÁCH SỐ ĐẦU MỘT SỐ NGUYÊN LẦN KHOẢNG CÁCH. Nhìn '
          'dãy 1 ; 9 ; 17 ; 25: lấy từng số trừ số đầu được 0 ; 8 ; 16 ; 24 — toàn bộ '
-         'đều chia hết cho 8. Đó là dấu vân tay của dãy.',
+         'đều chia hết cho 8. Mọi số hạng của dãy đều có tính chất này, còn số không '
+         'thuộc dãy thì không.',
          'Bước 2 — CÁCH SOI. Muốn biết số x có thuộc dãy không, lấy (x − số đầu) rồi '
          'chia cho khoảng cách. CHIA HẾT thì x thuộc dãy; CÒN DƯ thì không.',
          'Bước 3 — SOI VÉ 113. (113 − 1) : 8 = 112 : 8 = 14, chia hết → số 113 THUỘC '

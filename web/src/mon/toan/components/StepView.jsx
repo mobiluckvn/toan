@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Video from '../../../chung/components/Video.jsx';
 import Chu from '../../../chung/components/Chu.jsx';
 import Figure from './Figure.jsx';
 import SampleCard from './SampleCard.jsx';
@@ -77,6 +78,16 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
       const de = step.screen?.narration;
       const loiChao = lesson.objective?.laLoiChao ? lesson.objective.kidText : null;
       return (<>
+        {/* ══ VIDEO MỞ BÀI + BÀI GIẢNG ══
+            Bác chốt 14-08: hai phần ấy phải thành video, không ẩn dụ, để bé xem
+            lần đầu là hiểu. Đặt NGAY ĐẦU màn mở bài vì đó là thứ bé gặp trước
+            tiên; phần chữ bên dưới giữ nguyên cho bé đọc lại và cho bố mẹ soi.
+            Quyển nào chưa dựng video thì `lesson.video` rỗng và không hiện gì —
+            43 bài còn lại của lớp 4 vẫn chạy y như cũ. */}
+        {lesson.video?.giang && (
+          <Video tep={lesson.video.giang} thuMuc="toan"
+                 ten="Cô giảng bài này" phu="Xem xong con làm bài nhé" />
+        )}
         <div className="card">
           <div className="kicker">MICRO · KHOẢNG {lesson.durationMinutes} PHÚT</div>
           <h2 className="mb-2.5 text-[19px] font-bold leading-snug text-navy"><Chu t={lesson.title} /></h2>

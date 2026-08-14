@@ -43,6 +43,7 @@ DAP_AN_O = os.path.join(GOC_KHO, 'data', 'lop4_dapan_o.json')
 # là sổ phụ huynh và bảng cô giáo nhận đúng con số bé tự chấm cho mình.
 ON_TAP_O = os.path.join(GOC_KHO, 'data', 'lop4_ontap_o.json')
 RA = os.path.join(GOC_KHO, 'web', 'public', 'content', 'lop4')
+RA_VIDEO = os.path.join(GOC_KHO, 'web', 'public', 'content', 'toan', 'video')
 RA_ON = os.path.join(GOC_KHO, 'web', 'public', 'content', 'reviews')
 SO_DK = os.path.join(GOC_KHO, 'data', 'chuong_trinh.json')
 RA_DK = os.path.join(GOC_KHO, 'web', 'public', 'content', 'chuong_trinh.json')
@@ -179,7 +180,16 @@ def main(khai=False):
         if not d['knowledgeCore']['statements']:
             canh_bao.append(f"{d['id']}: không có nguyên tắc nào — mẫu tên bước "
                             f'trong khuon_chung.py bỏ sót cách đặt tên của bài này?')
-        ten = b['id'].replace('DL:', 'DL_').replace('.', '_') + '.json'
+        # ── VIDEO MỞ BÀI + BÀI GIẢNG ──
+        # Bác chốt 14-08. Khai bằng cách DÒ TỆP CÓ THẬT, không gõ tay danh sách:
+        # gõ tay thì khai một bài chưa dựng video là màn hình hiện ô đen, còn dựng
+        # xong mà quên khai thì video nằm đó không ai xem. Cả hai đều im lặng.
+        goc_ten = ten_tep = b['id'].replace('DL:', 'DL_').replace('.', '_')
+        tep_video = os.path.join(RA_VIDEO, f'{ten_tep}_giang.mp4')
+        if os.path.exists(tep_video):
+            d['video'] = {'giang': f'{ten_tep}_giang.mp4'}
+
+        ten = goc_ten + '.json'
         with open(os.path.join(RA, ten), 'w', encoding='utf-8') as f:
             json.dump(d, f, ensure_ascii=False, indent=1)
         idx.append({

@@ -104,9 +104,15 @@ def khung(c: dict) -> Image.Image:
     L = c["loai"]
 
     if L == "bia":
+        # Cỡ chữ theo ĐỘ DÀI tên bài, và dòng phụ đặt theo y THẬT mà tiêu đề kết
+        # thúc. Bản cũ ghim cứng y = 380 cho dòng phụ: tên ngắn của Tiếng Anh thì
+        # vừa, nhưng tên bài Toán dài xuống hai dòng là phủ đè lên nó.
+        n = len(c["chuChinh"])
+        co = 64 if n <= 26 else (52 if n <= 44 else 42)
         the(d, 90, 170, W - 180, 380, nen=NAVY, vien=NAVY)
-        giua(d, 250, c["chuChinh"], phong(64), "#FFFFFF")
-        giua(d, 380, c["chuPhu"], phong(38), "#BFD8F5")
+        y = giua(d, 235 if n <= 26 else 205, c["chuChinh"], phong(co), "#FFFFFF",
+                 rong=W - 260)
+        giua(d, max(y + 34, 380), c["chuPhu"], phong(36), "#BFD8F5")
 
     elif L == "chu_cai":
         giua(d, 70, "Chữ hôm nay", phong(34), MUTE)
@@ -193,6 +199,50 @@ def khung(c: dict) -> Image.Image:
         giua(d, 580, "🐢 → 🐇", phong(1))
         ve_emoji(im, "🐢" if c.get("tocDo", 1) < 0.75 else ("🐇" if c.get("tocDo", 1) >= 1 else "🚶"),
                  W // 2, 615, 74)
+
+    # ══ BA CẢNH CỦA MÔN TOÁN ══
+    # Bác chốt 14-08: mở bài và bài giảng của lớp 4 phải thành VIDEO, và KHÔNG DÙNG
+    # ẨN DỤ — bé xem lần đầu là hiểu. Nên ba cảnh dưới đây cố ý rất trơ: một hình,
+    # một câu, không nhân vật, không ví von. Chữ trên màn CHỈ để bám mắt; lời đọc
+    # mới là kênh chính, giống hệt cách video Tiếng Anh đang làm.
+    elif L == "de_toan":
+        # ĐỀ BÀI — chỉ đọc đề, KHÔNG hé cách làm. Đây là bản đề, không phải bài giải.
+        giua(d, 56, "Bài toán hôm nay", phong(32), MUTE)
+        the(d, 80, 130, W - 160, 330, nen="#FFFFFF", vien=NAVY, day=4)
+        giua(d, 175, c["chuChinh"], phong(40), INK, rong=W - 240)
+        if c.get("chuPhu"):
+            giua(d, 500, c["chuPhu"], phong(36), GOLD_DARK, rong=W - 220)
+
+    elif L == "hinh_toan":
+        # MỘT HÌNH, MỘT DÒNG. Hình lớp 4 đã vẽ sẵn ở `figures/` — video dùng ĐÚNG
+        # tệp màn hình đang dùng, không vẽ lại bản thứ hai (bài học của `hinh_ve`).
+        tep = c.get("tepHinh")
+        if tep and Path(tep).exists():
+            h = Image.open(tep).convert("RGB")
+            rong = W - 160
+            cao = int(h.height * rong / h.width)
+            cao_toi_da = 430
+            if cao > cao_toi_da:
+                rong = int(rong * cao_toi_da / cao); cao = cao_toi_da
+            im.paste(h.resize((rong, cao)), ((W - rong) // 2, 120))
+            y = 120 + cao + 30
+        else:
+            y = 300
+        giua(d, min(y, H - 130), c["chuChinh"], phong(36), INK, rong=W - 200)
+
+    elif L == "y_toan":
+        # MỘT Ý MỘT MÀN. Số thứ tự để bé biết đang ở bước mấy trên mấy.
+        n, tong = c.get("buoc", 1), c.get("soBuoc", 1)
+        giua(d, 52, f"Bước {n} trên {tong}", phong(32), MUTE)
+        the(d, 80, 120, W - 160, 400, nen=SOFT, vien=LINE)
+        giua(d, 160, c["chuChinh"], phong(46), NAVY, rong=W - 240)
+        if c.get("chuPhu"):
+            giua(d, 350, c["chuPhu"], phong(38), INK, rong=W - 240)
+        r, cach = 16, 54
+        x0 = W // 2 - cach * (tong - 1) // 2
+        for i in range(tong):
+            d.ellipse([x0 + i * cach - r, 580 - r, x0 + i * cach + r, 580 + r],
+                      fill=TEAL if i < n else "#FFFFFF", outline=TEAL, width=3)
 
     elif L == "ket":
         giua(d, 190, "🎉", phong(1))

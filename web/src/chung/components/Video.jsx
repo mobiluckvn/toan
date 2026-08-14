@@ -1,8 +1,13 @@
 import React, { useRef, useState } from 'react';
-import { CONTENT, dongDau } from '../../../chung/lib/soQuyen.js';
+import { CONTENT, dongDau } from '../lib/soQuyen.js';
 
 /**
- * XEM VIDEO BÀI HỌC — kênh chính để bé nhận nội dung.
+ * XEM VIDEO BÀI HỌC — kênh chính để bé nhận nội dung. DÙNG CHUNG hai môn.
+ *
+ * Chuyển từ `mon/tienganh/` sang vùng chung 14-08 khi bác chốt mở bài và bài
+ * giảng lớp 4 cũng phải thành video. Chép bản thứ hai cho Toán thì hai bản sớm
+ * muộn lệch — mà chỗ lệch ở đây là mấy luật đã tính riêng cho bé (không tự chạy,
+ * không cho tua, xem xong mới mở nút đi tiếp).
  *
  * Bé lớp 1 chưa đọc sõi tiếng Việt, nên mọi lời giảng bằng chữ trên màn hình thực
  * chất là chữ cho người lớn. Video thì bé nhận được: nghe tiếng, nhìn hình.
@@ -25,14 +30,17 @@ import { CONTENT, dongDau } from '../../../chung/lib/soQuyen.js';
  *    tiếp: mạng rớt hay tệp thiếu là lỗi của máy, mà bé thì ngồi chịu trận trước
  *    một ô đen và một nút xám không giải thích gì.
  */
-export default function Video({ tep, ten, phu, onXongLan1, onLoi, children }) {
+export default function Video({ tep, thuMuc = 'tienganh', ten, phu, onXongLan1, onLoi, children }) {
   const [daXong, datDaXong] = useState(false);
   const [dangChay, datDangChay] = useState(false);
   const [hong, datHong] = useState(false);
   const v = useRef(null);
 
   if (!tep) return null;
-  const duong = dongDau(`${CONTENT}/tienganh/video/${tep}`);
+  /* `thuMuc` chứ không ghim 'tienganh': component này nay ở vùng CHUNG và hai
+     môn cùng dùng. Ghim cứng thì môn Toán trỏ vào thư mục của Tiếng Anh, video
+     404, và bé chỉ thấy một ô đen — `onLoi` có kêu, nhưng chẳng ai hiểu vì sao. */
+  const duong = dongDau(`${CONTENT}/${thuMuc}/video/${tep}`);
 
   return (
     <section className="flex flex-col gap-3">
