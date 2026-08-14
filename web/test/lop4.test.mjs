@@ -39,7 +39,7 @@ const bais = teps.map((f) => doc(join(GOC, f))).sort((a, b) => a.so - b.so);
    Ba con số dưới đây là ĐẾM, không phải luật — nới chúng khi thêm bài là đúng. Nhưng
    phải nới CÙNG LÚC cả ba, và giữ nguyên phép "liền mạch": số bài rời rạc thì bé mở
    quyển thấy nhảy cóc Bài 12 sang Bài 18, mà không có gì báo. */
-const SO_BAI = 49;
+const SO_BAI = 54;
 const SO_CAU = SO_BAI * 14;      // mỗi bài đúng 9 luyện tập + 5 quiz
 
 t(`đủ ${SO_BAI} bài (${bais.length})`, bais.length === SO_BAI);
@@ -150,15 +150,20 @@ in5(roi);
 /* Bài nào VIDEO thay cả mở bài lẫn bài giảng thì không cần hình màn mở — chính
    video là màn mở. Giữ thêm một hình nữa là hình KHÔNG BAO GIỜ HIỆN, đúng nghĩa
    hình chết mà phép kiểm ngay trên vừa canh. Bác chốt 14-08. */
+/* ⚠ GHÉP BẰNG MÃ BÀI, KHÔNG BẰNG SỐ BÀI. Từ 14-08 (lối C) `so` trong BẢN GỐC chỉ
+   là số tạm lúc viết, còn `so` trong BẢN DỰNG đếm từ vị trí trong `thu_tu.json` —
+   hai bên cố ý khác nhau. Bản đầu của phép kiểm này ghép bằng `so`, nên chèn chín
+   bài vào chương 3 là nó ghép trượt toàn bộ và báo thiếu hình màn mở ở những bài
+   vốn có video. Mã bài là thứ DUY NHẤT hai bên chắc chắn gọi giống nhau. */
 const coVideo = new Set(readdirSync(APP)
   .filter((f) => /^DL_KSN4_B\d+\.json$/.test(f))
   .map((f) => doc(join(APP, f)))
   .filter((b) => b.video?.giang)
-  .map((b) => b.so));
-const khongMo = bais.filter((b) => !coVideo.has(b.so)
+  .map((b) => b.id));
+const khongMo = bais.filter((b) => !coVideo.has(b.id)
   && !(b.muc.chuyenMoBai.hinh || []).length);
 t(`${SO_BAI}/${SO_BAI} bài có hình màn mở`, khongMo.length === 0);
-in5(khongMo.map((b) => `bài ${b.so}`));
+in5(khongMo.map((b) => b.id));
 
 /* hình màn mở là bản ĐỀ: không mang dấu vết đáp án (chuẩn mục 6 luật 3) */
 const moTa = doc(join(G, 'data/lop4_hinh.json'));

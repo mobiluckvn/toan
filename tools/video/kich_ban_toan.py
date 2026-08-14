@@ -33,6 +33,25 @@ from pathlib import Path
 
 GOC = Path(__file__).resolve().parent.parent.parent
 NGUON = GOC / 'data' / 'lop4'
+THU_TU = NGUON / 'thu_tu.json'
+
+
+def so_bai(b: dict) -> str:
+    """Chữ "Bài n" hiện trên bìa video — ĐẾM TỪ VỊ TRÍ trong `thu_tu.json`.
+
+    Bản đầu gõ cứng "Bài 13" vào kịch bản. Rồi chương 3 chèn thêm chín bài, B13 lùi
+    xuống đứng thứ mười tám, và tám video vẫn đọc số cũ — bé xem "Bài 13" trong khi
+    màn hình bên ngoài ghi "Bài 18". Video vẫn dựng ra bình thường, không cổng nào
+    kêu, vì chuỗi chữ nào cũng hợp lệ. Đúng dòng họ lỗi ở chỗ nối.
+
+    Nay số ấy đếm ra từ đúng cái lời khai mà màn hình đang dùng, nên hai bên không
+    bao giờ lệch được nữa.
+    """
+    tt = json.loads(THU_TU.read_text('utf8'))['thuTu']
+    try:
+        return f'Bài {tt.index(b["id"]) + 1}'
+    except ValueError:
+        raise SystemExit(f'{b["id"]} không có trong thu_tu.json — chưa khai thứ tự?')
 
 # Vỏ nhân vật của quyển, cộng mấy ví von chính cháu từng viết. Cấm tuyệt đối.
 TU_CAM = re.compile(
@@ -144,7 +163,7 @@ DAY = [5, 10, 15, 20, 25]
 
 def kb_b13(b):
     return [
-        _c('bia', 'Dãy số là gì', 'Bài 13', loi=['Hôm nay mình học về dãy số.']),
+        _c('bia', 'Dãy số là gì', so_bai(b), loi=['Hôm nay mình học về dãy số.']),
         _c('day_so', 'Đây là một dãy số', so=DAY,
            loi=['Đây là một dãy số. Năm, mười, mười lăm, hai mươi, hai mươi lăm.']),
         _c('y_toan', 'Dãy số là gì', 'Là nhiều số viết nối nhau theo một thứ tự.',
@@ -194,7 +213,7 @@ def kb_b13(b):
 
 def kb_b14(b):
     return [
-        _c('bia', 'Số hạng thứ n', 'Bài 14', loi=['Hôm nay mình tìm số hạng ở chỗ xa.']),
+        _c('bia', 'Số hạng thứ n', so_bai(b), loi=['Hôm nay mình tìm số hạng ở chỗ xa.']),
         _c('day_so', 'Vẫn dãy này', so=DAY, hienThuTu=True,
            loi=['Vẫn dãy số cũ. Năm, mười, mười lăm, hai mươi, hai mươi lăm.']),
         _c('y_toan', 'Muốn tìm số hạng thứ 100 thì sao',
@@ -228,7 +247,7 @@ def kb_b14(b):
 
 def kb_b15(b):
     return [
-        _c('bia', 'Dãy có bao nhiêu số hạng', 'Bài 15',
+        _c('bia', 'Dãy có bao nhiêu số hạng', so_bai(b),
            loi=['Hôm nay mình đếm xem một dãy có bao nhiêu số hạng.']),
         _c('day_so', 'Dãy ngắn thì đếm tay được', so=DAY, hienThuTu=True,
            phu='Dãy này có 5 số hạng.',
@@ -260,7 +279,7 @@ def kb_b15(b):
 
 def kb_b16(b):
     return [
-        _c('bia', 'Tổng dãy cách đều', 'Bài 16',
+        _c('bia', 'Tổng dãy cách đều', so_bai(b),
            loi=['Hôm nay mình cộng tất cả các số trong một dãy.']),
         _c('day_so', 'Cộng cả dãy này', so=DAY,
            loi=['Cộng cả dãy này. Năm cộng mười cộng mười lăm cộng hai mươi cộng hai mươi lăm.']),
@@ -291,7 +310,7 @@ def kb_b16(b):
 
 def kb_b17(b):
     return [
-        _c('bia', 'Số này có thuộc dãy không', 'Bài 17',
+        _c('bia', 'Số này có thuộc dãy không', so_bai(b),
            loi=['Hôm nay mình xem một số có nằm trong dãy hay không.']),
         _c('day_so', 'Vẫn dãy này', so=DAY,
            phu='Số 30 có thuộc dãy này không?',
@@ -332,7 +351,7 @@ def kb_b18(b):
     Không dạy công thức mới. Việc của nó là cho bé thấy bốn công thức vừa học
     ĐỨNG CẠNH NHAU trên cùng một bài toán, và biết chọn cái nào."""
     return [
-        _c('bia', 'Dùng cả bốn công thức', 'Bài 18',
+        _c('bia', 'Dùng cả bốn công thức', so_bai(b),
            loi=['Hôm nay mình dùng cả bốn công thức đã học vào một bài.']),
         _c('de_toan', 'Rạp phim mỗi hàng 8 ghế, đánh số liền từ 1. '
                       'Ghế đầu các hàng là 1, 9, 17, 25.',
@@ -376,7 +395,7 @@ def kb_b18(b):
 def kb_b19(b):
     """B19 · dãy KHÔNG cách đều: hai tầng và dãy nhân."""
     return [
-        _c('bia', 'Dãy không cách đều', 'Bài 19',
+        _c('bia', 'Dãy không cách đều', so_bai(b),
            loi=['Hôm nay mình gặp dãy không cách đều.']),
         _c('day_so', 'Dãy này có cách đều không', so=[1, 3, 6, 10, 15],
            loi=['Nhìn dãy một, ba, sáu, mười, mười lăm.',
@@ -416,7 +435,7 @@ def kb_b19(b):
 def kb_b20(b):
     """B20 · trồng cây: cây và khoảng, ba thế trận."""
     return [
-        _c('bia', 'Trồng cây', 'Bài 20',
+        _c('bia', 'Trồng cây', so_bai(b),
            loi=['Hôm nay mình đếm cây và đếm khoảng.']),
         _c('de_toan', 'Đoạn đường dài 40 mét, cứ 5 mét trồng một cây, '
                       'trồng cả hai đầu. Cần bao nhiêu cây?',
@@ -458,8 +477,475 @@ def kb_b20(b):
     ]
 
 
-BO = {13: kb_b13, 14: kb_b14, 15: kb_b15, 16: kb_b16, 17: kb_b17,
-      18: kb_b18, 19: kb_b19, 20: kb_b20}
+# ═══════════════════════════════════════════════════════════════════════════
+# CHƯƠNG 3 · CHÍN KỊCH BẢN — DẤU HIỆU CHIA HẾT
+# ═══════════════════════════════════════════════════════════════════════════
+# Ba luật bác ra ở đợt 2 nằm cả ở đây:
+#   · mỗi video đúng MỘT vấn đề (bốn bài cũ gộp đôi ba việc, nay tách ra chín);
+#   · chỗ khó hiểu thì VẼ RA (cảnh `nhom_deu` cho chia hết, `tach_so` cho dấu hiệu);
+#   · mọi công thức phải GỌI TÊN TỪNG THÀNH PHẦN và nói VÌ SAO suy ra được.
+#
+# Luật thứ ba là chỗ chương này vốn hổng nặng nhất: bốn dấu hiệu chia hết trước nay
+# chỉ được nêu ra như quy tắc phải nhớ. Nay bài nào cũng có phần chứng minh, và cả
+# bốn dùng CHUNG MỘT LỐI NGHĨ — tách số ra phần chắc chắn chia hết và phần còn lại,
+# rồi chỉ xét phần còn lại. Lặp đúng lối ấy bốn lần là bé nhận ra nó.
+#
+# Số neo 270 chạy suốt bảy bài đầu: một mình nó thoả cả bốn dấu hiệu.
+KEO = 12                      # số kẹo của bài khái niệm
+
+
+def kb_chia_het(b):
+    """① Chia hết là gì — bài KHÁI NIỆM, không một dấu hiệu nào."""
+    return [
+        _c('bia', 'Chia hết là gì', so_bai(b),
+           loi=['Hôm nay mình học xem chia hết nghĩa là gì.']),
+        _c('nhom_deu', 'Có 12 viên kẹo, chia cho 3 bạn', tong=KEO, moiNhom=3,
+           chuCuoi='Không thừa viên nào.',
+           loi=['Có mười hai viên kẹo. Chia cho ba bạn.',
+                'Xếp thành từng nhóm ba viên, được bốn nhóm, không thừa viên nào.']),
+        _c('y_toan', 'Chia hết là chia xong không thừa gì',
+           'Nên 12 chia hết cho 3.', buoc=1, soBuoc=5,
+           loi=['Chia xong mà không thừa gì thì gọi là chia hết.',
+                'Vậy mười hai chia hết cho ba.']),
+        _c('nhom_deu', 'Bây giờ chia 13 viên cho 3 bạn', tong=13, moiNhom=3,
+           chuCuoi='Còn thừa 1 viên.',
+           loi=['Bây giờ có mười ba viên. Vẫn chia cho ba bạn.',
+                'Được bốn nhóm, nhưng còn thừa một viên.']),
+        _c('y_toan', 'Phần thừa lại gọi là số dư',
+           'Ở đây số dư bằng 1.', buoc=2, soBuoc=5,
+           loi=['Phần thừa lại gọi là số dư. Ở đây số dư bằng một.']),
+        _c('y_toan', 'Gọi tên bốn thứ trong phép chia',
+           '13 : 3 = 4 (dư 1)', buoc=3, soBuoc=5,
+           loi=['Mười ba là số bị chia. Ba là số chia.',
+                'Bốn là thương. Một là số dư.']),
+        _c('nhom_deu', 'Vẫn 12 viên, nhưng chia cho 5 bạn', tong=KEO, moiNhom=5,
+           chuCuoi='Thừa 2 viên, nên 12 không chia hết cho 5.',
+           loi=['Vẫn mười hai viên, nhưng chia cho năm bạn.',
+                'Được hai nhóm và thừa hai viên. Vậy mười hai không chia hết cho năm.']),
+        _c('y_toan', 'Cùng một số, chia số này thì hết, chia số kia thì không',
+           '12 chia hết cho 3, nhưng không chia hết cho 5.', buoc=4, soBuoc=5,
+           loi=['Cùng một số mười hai. Chia cho ba thì hết, chia cho năm thì không.',
+                'Nên lúc nào cũng phải hỏi rõ là chia hết cho số nào.']),
+        _c('y_toan', 'Vậy nhìn vào đâu để biết',
+           'Nhìn số dư. Số dư bằng 0 thì chia hết.', buoc=5, soBuoc=5,
+           loi=['Muốn biết có chia hết không thì nhìn số dư.']),
+        _c('cong_thuc', 'Điều cần nhớ',
+           congThuc='chia hết  ⟶  số dư = 0',
+           thay='12 : 3 = 4, dư 0',
+           loi=['Chia hết nghĩa là số dư bằng không.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chia hết  ⟶  số dư = 0',
+           loi=['Con nhớ lại một lần nữa. Chia hết là số dư bằng không.',
+                'Còn thừa dù chỉ một viên thì chưa gọi là chia hết.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_chia_2(b):
+    """② Dấu hiệu chia hết cho 2 — và VÌ SAO chỉ nhìn chữ số cuối."""
+    return [
+        _c('bia', 'Dấu hiệu chia hết cho 2', so_bai(b),
+           loi=['Hôm nay mình học cách nhìn một cái là biết số đó chia hết cho hai.']),
+        _c('tach_so', 'Xét số 24', so=24, sang=[2],
+           chuPhu='Chỉ cần nhìn chữ số cuối.',
+           loi=['Xét số hai mươi tư. Ta chỉ cần nhìn chữ số cuối cùng.']),
+        _c('y_toan', 'Vì sao lại thế', 'Mình tách số ra hai phần.',
+           buoc=1, soBuoc=5,
+           loi=['Vì sao lại chỉ nhìn một chữ số. Mình tách số ra hai phần thì rõ.']),
+        _c('tach_so', 'Tách 24 thành hai phần', so=24, sang=[1],
+           phep='24 = 20 + 4',
+           loi=['Hai mươi tư bằng hai mươi cộng bốn.']),
+        _c('y_toan', 'Phần tròn chục luôn chia hết cho 2',
+           '20 = 2 × 10, mà 10 = 2 × 5', buoc=2, soBuoc=5,
+           loi=['Hai mươi bằng hai nhân mười, mà mười bằng hai nhân năm.',
+                'Nên phần tròn chục lúc nào cũng chia hết cho hai.']),
+        _c('y_toan', 'Nên phần ấy không bao giờ làm thừa',
+           'Chỉ còn chữ số cuối quyết định.', buoc=3, soBuoc=5,
+           loi=['Phần tròn chục không bao giờ làm thừa.',
+                'Nên chỉ còn chữ số cuối quyết định.']),
+        _c('tach_so', 'Chữ số cuối của 24 là 4', so=24, sang=[2],
+           chuPhu='4 chia hết cho 2, nên 24 chia hết cho 2.',
+           loi=['Chữ số cuối là bốn. Bốn chia hết cho hai.',
+                'Vậy hai mươi tư chia hết cho hai.']),
+        _c('tach_so', 'Còn số 25 thì sao', so=25, sang=[2],
+           chuPhu='5 không chia hết cho 2, nên 25 không chia hết cho 2.',
+           loi=['Còn hai mươi lăm. Chữ số cuối là năm, không chia hết cho hai.',
+                'Vậy hai mươi lăm không chia hết cho hai.']),
+        _c('y_toan', 'Năm chữ số cuối được phép', '0, 2, 4, 6 và 8',
+           buoc=4, soBuoc=5,
+           loi=['Có năm chữ số cuối được phép, là không, hai, bốn, sáu và tám.']),
+        _c('tach_so', 'Thử với số 270', so=270, sang=[3],
+           chuPhu='Chữ số cuối là 0, nên 270 chia hết cho 2.',
+           loi=['Thử với hai trăm bảy mươi. Chữ số cuối là không.',
+                'Vậy hai trăm bảy mươi chia hết cho hai.']),
+        _c('y_toan', 'Số chia hết cho 2 còn gọi là số chẵn', '', buoc=5, soBuoc=5,
+           loi=['Số chia hết cho hai còn được gọi là số chẵn.']),
+        _c('cong_thuc', 'Dấu hiệu chia hết cho 2',
+           congThuc='chữ số tận cùng là 0, 2, 4, 6 hoặc 8',
+           thay='270 tận cùng 0  ⟶  chia hết',
+           loi=['Số chia hết cho hai là số có chữ số tận cùng là không, hai, bốn, '
+                'sáu hoặc tám.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chữ số tận cùng là 0, 2, 4, 6 hoặc 8',
+           loi=['Con nhớ lại một lần nữa. Chỉ nhìn chữ số cuối cùng.',
+                'Vì phần tròn chục đã chia hết cho hai sẵn rồi, không làm thừa.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_chia_5(b):
+    """③ Dấu hiệu chia hết cho 5 — cùng lối nghĩ, cố ý lặp lại."""
+    return [
+        _c('bia', 'Dấu hiệu chia hết cho 5', so_bai(b),
+           loi=['Hôm nay mình dùng lại đúng cách nghĩ hôm qua, nhưng với số năm.']),
+        _c('tach_so', 'Xét số 35', so=35, sang=[2],
+           chuPhu='Lại chỉ nhìn chữ số cuối.',
+           loi=['Xét số ba mươi lăm. Ta lại chỉ nhìn chữ số cuối.']),
+        _c('tach_so', 'Tách 35 thành hai phần', so=35, sang=[1],
+           phep='35 = 30 + 5',
+           loi=['Ba mươi lăm bằng ba mươi cộng năm.']),
+        _c('y_toan', 'Phần tròn chục cũng chia hết cho 5',
+           '30 = 3 × 10, mà 10 = 5 × 2', buoc=1, soBuoc=4,
+           loi=['Ba mươi bằng ba nhân mười, mà mười bằng năm nhân hai.',
+                'Nên phần tròn chục cũng chia hết cho năm.']),
+        _c('y_toan', 'Nên lại chỉ còn chữ số cuối quyết định',
+           'Đúng cách nghĩ của bài hôm qua.', buoc=2, soBuoc=4,
+           loi=['Nên lại chỉ còn chữ số cuối quyết định.',
+                'Đây đúng là cách nghĩ của bài hôm qua, dùng lại được.']),
+        _c('tach_so', 'Chữ số cuối của 35 là 5', so=35, sang=[2],
+           chuPhu='5 chia hết cho 5, nên 35 chia hết cho 5.',
+           loi=['Chữ số cuối là năm, mà năm chia hết cho năm.',
+                'Vậy ba mươi lăm chia hết cho năm.']),
+        _c('y_toan', 'Chỉ có hai chữ số cuối được phép', '0 và 5',
+           buoc=3, soBuoc=4,
+           loi=['Chỉ có hai chữ số cuối được phép, là không và năm.']),
+        _c('tach_so', 'Cẩn thận với số 52', so=52, sang=[2],
+           chuPhu='Có chữ số 5 nhưng không đứng cuối, nên 52 không chia hết cho 5.',
+           loi=['Cẩn thận với năm mươi hai. Trong số này có chữ số năm.',
+                'Nhưng nó không đứng cuối, nên năm mươi hai không chia hết cho năm.']),
+        _c('tach_so', 'Thử với số 270', so=270, sang=[3],
+           chuPhu='Chữ số cuối là 0, nên 270 chia hết cho 5.',
+           loi=['Thử với hai trăm bảy mươi. Chữ số cuối là không.',
+                'Vậy hai trăm bảy mươi cũng chia hết cho năm.']),
+        _c('y_toan', 'Số 270 chia hết cho cả hai số đã học',
+           'Chia hết cho 2, và chia hết cho 5.', buoc=4, soBuoc=4,
+           loi=['Hai trăm bảy mươi chia hết cho cả hai và cả năm.',
+                'Bài sau mình sẽ xem vì sao lại có số làm được cả hai.']),
+        _c('cong_thuc', 'Dấu hiệu chia hết cho 5',
+           congThuc='chữ số tận cùng là 0 hoặc 5',
+           thay='270 tận cùng 0  ⟶  chia hết',
+           loi=['Số chia hết cho năm là số có chữ số tận cùng là không hoặc năm.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chữ số tận cùng là 0 hoặc 5',
+           loi=['Con nhớ lại một lần nữa. Chỉ hai chữ số cuối được phép.',
+                'Có chữ số năm ở giữa số thì không tính đâu nhé.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_chia_2_5(b):
+    """④ Chia hết cho CẢ 2 và 5 — dạy cách nghĩ phần chung."""
+    return [
+        _c('bia', 'Chia hết cho cả 2 và cho 5', so_bai(b),
+           loi=['Hôm nay mình hỏi một câu mới. Số nào chia hết cho cả hai và cả năm.']),
+        _c('y_toan', 'Con đã có hai danh sách',
+           'Cho 2 thì tận cùng 0, 2, 4, 6, 8', buoc=1, soBuoc=4,
+           loi=['Con đã có hai danh sách rồi.',
+                'Chia hết cho hai thì tận cùng là không, hai, bốn, sáu hoặc tám.']),
+        _c('y_toan', 'Và danh sách thứ hai',
+           'Cho 5 thì tận cùng 0 hoặc 5', buoc=2, soBuoc=4,
+           loi=['Chia hết cho năm thì tận cùng là không hoặc năm.']),
+        _c('y_toan', 'Muốn thoả cả hai thì tìm phần chung',
+           'Chữ số nào có mặt ở CẢ HAI danh sách?', buoc=3, soBuoc=4,
+           loi=['Muốn thoả cả hai cùng lúc thì tìm chữ số có mặt ở cả hai danh sách.']),
+        _c('tach_so', 'Chỉ có đúng một chữ số', so=0, sang=[1],
+           chuPhu='Chỉ số 0 có mặt ở cả hai danh sách.',
+           loi=['Chỉ có đúng một chữ số, là số không.']),
+        _c('y_toan', 'Nên tận cùng phải bằng 0',
+           'Không còn chữ số nào khác làm được.', buoc=4, soBuoc=4,
+           loi=['Nên số chia hết cho cả hai và cả năm phải có tận cùng bằng không.']),
+        _c('tach_so', 'Xét số 270', so=270, sang=[3],
+           chuPhu='Tận cùng 0, nên chia hết cho cả 2 và 5.',
+           loi=['Xét hai trăm bảy mươi. Tận cùng là không.',
+                'Vậy nó chia hết cho cả hai và cả năm.']),
+        _c('tach_so', 'Xét số 275', so=275, sang=[3],
+           chuPhu='Tận cùng 5, chỉ chia hết cho 5.',
+           loi=['Xét hai trăm bảy mươi lăm. Tận cùng là năm.',
+                'Số năm là số lẻ, nên nó chỉ chia hết cho năm thôi.']),
+        _c('tach_so', 'Xét số 264', so=264, sang=[3],
+           chuPhu='Tận cùng 4, chỉ chia hết cho 2.',
+           loi=['Xét hai trăm sáu mươi tư. Tận cùng là bốn.',
+                'Nên nó chỉ chia hết cho hai thôi.']),
+        _c('cong_thuc', 'Chia hết cho cả 2 và cho 5',
+           congThuc='chữ số tận cùng = 0',
+           thay='270 tận cùng 0  ⟶  cả hai',
+           loi=['Số chia hết cho cả hai và cả năm là số có tận cùng bằng không.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chữ số tận cùng = 0',
+           loi=['Con nhớ lại một lần nữa. Phải thoả đủ cả hai điều kiện.',
+                'Thoả một cái thôi thì chưa được, và chỉ số không làm được cả hai.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_chia_9(b):
+    """⑤ Dấu hiệu chia hết cho 9 — bài KHÓ NHẤT chương, và phần vì sao là chính."""
+    return [
+        _c('bia', 'Dấu hiệu chia hết cho 9', so_bai(b),
+           loi=['Hôm nay mình học một dấu hiệu khác hẳn ba bài trước.']),
+        _c('tach_so', 'Với số 9 thì KHÔNG nhìn chữ số cuối', so=270, sang=[1, 2, 3],
+           chuPhu='Phải cộng TẤT CẢ các chữ số lại.',
+           loi=['Với số chín thì không nhìn chữ số cuối nữa.',
+                'Mà phải cộng tất cả các chữ số lại.']),
+        _c('y_toan', 'Nghe rất lạ', 'Nên mình xem vì sao lại thế.',
+           buoc=1, soBuoc=5,
+           loi=['Nghe rất lạ. Nên mình xem vì sao lại thế.']),
+        _c('tach_so', 'Viết 270 ra theo hàng', so=270, sang=[],
+           phep='270 = 2 × 100 + 7 × 10',
+           loi=['Hai trăm bảy mươi bằng hai nhân một trăm, cộng bảy nhân mười.']),
+        _c('y_toan', 'Bây giờ tách 100 và 10 ra',
+           '100 = 99 + 1   và   10 = 9 + 1', buoc=2, soBuoc=5,
+           loi=['Bây giờ tách ra. Một trăm bằng chín mươi chín cộng một.',
+                'Và mười bằng chín cộng một.']),
+        _c('y_toan', 'Thay vào thì được',
+           '270 = (2 × 99 + 7 × 9) + (2 + 7 + 0)', buoc=3, soBuoc=5,
+           loi=['Thay vào thì hai trăm bảy mươi tách được thành hai phần.']),
+        _c('y_toan', 'Phần đầu luôn chia hết cho 9',
+           'Vì 9 và 99 đều chia hết cho 9.', buoc=4, soBuoc=5,
+           loi=['Phần đầu luôn chia hết cho chín, vì chín và chín mươi chín đều chia '
+                'hết cho chín.']),
+        _c('y_toan', 'Nên chỉ phần sau quyết định',
+           'Phần sau đúng bằng TỔNG CÁC CHỮ SỐ.', buoc=5, soBuoc=5,
+           loi=['Nên chỉ phần sau quyết định. Mà phần sau đúng bằng tổng các chữ số.',
+                'Đó là lý do ta đi cộng các chữ số lại.']),
+        _c('tach_so', 'Cộng các chữ số của 270', so=270, sang=[1, 2, 3],
+           phep='2 + 7 + 0 = 9',
+           chuPhu='9 chia hết cho 9, nên 270 chia hết cho 9.',
+           loi=['Cộng lại được chín. Chín chia hết cho chín.',
+                'Vậy hai trăm bảy mươi chia hết cho chín.']),
+        _c('tach_so', 'Thử thêm số 72', so=72, sang=[1, 2],
+           phep='7 + 2 = 9',
+           chuPhu='Cũng chia hết cho 9.',
+           loi=['Thử thêm bảy mươi hai. Bảy cộng hai bằng chín.',
+                'Vậy bảy mươi hai cũng chia hết cho chín.']),
+        _c('cong_thuc', 'Dấu hiệu chia hết cho 9',
+           congThuc='tổng các chữ số chia hết cho 9',
+           thay='2 + 7 + 0 = 9  ⟶  chia hết',
+           loi=['Số chia hết cho chín là số có tổng các chữ số chia hết cho chín.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='tổng các chữ số chia hết cho 9',
+           loi=['Con nhớ lại một lần nữa. Cộng hết các chữ số lại rồi mới xét.',
+                'Ta cộng được vì mười hơn chín đúng một đơn vị, nên mỗi chục để lại '
+                'đúng một.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_chia_3(b):
+    """⑥ Dấu hiệu chia hết cho 3 — và quan hệ MỘT CHIỀU với 9."""
+    return [
+        _c('bia', 'Dấu hiệu chia hết cho 3', so_bai(b),
+           loi=['Hôm nay mình dùng lại cách nghĩ của bài chín, nhưng với số ba.']),
+        _c('tach_so', 'Cộng các chữ số của 270', so=270, sang=[1, 2, 3],
+           phep='2 + 7 + 0 = 9',
+           chuPhu='9 chia hết cho 3, nên 270 chia hết cho 3.',
+           loi=['Cộng các chữ số của hai trăm bảy mươi được chín.',
+                'Chín chia hết cho ba, nên hai trăm bảy mươi chia hết cho ba.']),
+        _c('y_toan', 'Vì sao lại cộng được như với số 9',
+           'Vì 9 và 99 cũng chia hết cho 3.', buoc=1, soBuoc=4,
+           loi=['Vì sao lại cộng được giống hệt bài trước.',
+                'Vì chín và chín mươi chín cũng chia hết cho ba.']),
+        _c('y_toan', 'Nên phần đầu vẫn không làm thừa',
+           'Chỉ tổng các chữ số quyết định.', buoc=2, soBuoc=4,
+           loi=['Nên phần đầu vẫn không làm thừa, và chỉ tổng các chữ số quyết định.']),
+        _c('tach_so', 'Bây giờ xét số 12', so=12, sang=[1, 2],
+           phep='1 + 2 = 3',
+           chuPhu='3 chia hết cho 3, nên 12 chia hết cho 3.',
+           loi=['Bây giờ xét mười hai. Một cộng hai bằng ba.',
+                'Ba chia hết cho ba, nên mười hai chia hết cho ba.']),
+        _c('y_toan', 'Nhưng 12 có chia hết cho 9 không',
+           'Tổng là 3, mà 3 KHÔNG chia hết cho 9.', buoc=3, soBuoc=4,
+           loi=['Nhưng mười hai có chia hết cho chín không.',
+                'Tổng là ba, mà ba không chia hết cho chín. Vậy là không.']),
+        _c('y_toan', 'Hai dấu hiệu không thay được cho nhau',
+           'Chia hết cho 9 thì chắc chắn chia hết cho 3.', buoc=4, soBuoc=4,
+           loi=['Hai dấu hiệu này không thay được cho nhau.',
+                'Chia hết cho chín thì chắc chắn chia hết cho ba, vì chín bằng ba '
+                'nhân ba.']),
+        _c('y_toan', 'Nhưng chiều ngược lại thì KHÔNG',
+           'Số 12 chia hết cho 3 mà không chia hết cho 9.', buoc=4, soBuoc=4,
+           loi=['Nhưng chiều ngược lại thì không đúng.',
+                'Mười hai chia hết cho ba mà không chia hết cho chín.']),
+        _c('cong_thuc', 'Dấu hiệu chia hết cho 3',
+           congThuc='tổng các chữ số chia hết cho 3',
+           thay='1 + 2 = 3  ⟶  12 chia hết cho 3',
+           loi=['Số chia hết cho ba là số có tổng các chữ số chia hết cho ba.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chia hết cho 9  ⟶  chia hết cho 3',
+           loi=['Con nhớ lại một lần nữa. Chia hết cho chín thì chắc chắn chia hết '
+                'cho ba.',
+                'Nhưng chia hết cho ba thì chưa chắc chia hết cho chín.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_chia_du(b):
+    """⑦ Phép chia có dư — công thức, và vì sao dư luôn nhỏ hơn số chia."""
+    return [
+        _c('bia', 'Phép chia có dư', so_bai(b),
+           loi=['Hôm nay mình viết cả phép chia thành một công thức.']),
+        _c('nhom_deu', 'Có 14 cái bánh, mỗi hộp 4 cái', tong=14, moiNhom=4,
+           chuCuoi='Được 3 hộp, thừa 2 cái.',
+           loi=['Có mười bốn cái bánh, xếp mỗi hộp bốn cái.',
+                'Được ba hộp và còn thừa hai cái.']),
+        _c('y_toan', 'Viết thành phép chia', '14 : 4 = 3 (dư 2)',
+           buoc=1, soBuoc=4,
+           loi=['Viết thành phép chia. Mười bốn chia bốn bằng ba, dư hai.']),
+        _c('y_toan', 'Gọi tên từng số',
+           '14 số bị chia · 4 số chia · 3 thương · 2 số dư', buoc=2, soBuoc=4,
+           loi=['Mười bốn là số bị chia. Bốn là số chia.',
+                'Ba là thương. Hai là số dư.']),
+        _c('y_toan', 'Ghép ngược lại thì được số ban đầu',
+           '4 × 3 + 2 = 14', buoc=3, soBuoc=4,
+           loi=['Ghép ngược lại. Bốn nhân ba cộng hai bằng mười bốn.',
+                'Đúng bằng số ban đầu, nên phép chia không sai.']),
+        _c('nhom_deu', 'Vì sao số dư phải nhỏ hơn số chia', tong=14, moiNhom=4,
+           chuCuoi='Thừa 2 mà mỗi hộp cần 4 — không đủ thêm hộp nào.',
+           loi=['Vì sao số dư phải nhỏ hơn số chia.',
+                'Thừa hai cái, mà mỗi hộp cần bốn, nên không đủ xếp thêm hộp nào.']),
+        _c('y_toan', 'Nếu phần thừa đủ một nhóm nữa',
+           'Thì mình đã xếp thêm được rồi.', buoc=4, soBuoc=4,
+           loi=['Nếu phần thừa mà đủ một nhóm nữa thì mình đã xếp thêm được rồi.',
+                'Nên chỗ thừa lại luôn ít hơn số chia.']),
+        _c('nhom_deu', 'Xếp sai thì trông thế này', tong=14, moiNhom=4,
+           chuPhu='Viết 14 : 4 = 2 (dư 6) là sai',
+           chuCuoi='Thừa 6 thì còn xếp thêm được một hộp nữa.',
+           loi=['Có bạn viết mười bốn chia bốn bằng hai, dư sáu.',
+                'Thừa sáu thì còn xếp thêm được một hộp nữa, nên viết thế là sai.']),
+        _c('cong_thuc', 'Công thức phép chia có dư',
+           congThuc='số bị chia = số chia × thương + số dư',
+           thay='4 × 3 + 2 = 14',
+           loi=['Số bị chia bằng số chia nhân thương, rồi cộng số dư.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='số dư < số chia',
+           loi=['Con nhớ lại một lần nữa. Số dư luôn nhỏ hơn số chia.',
+                'Vì đủ một nhóm nữa thì phải xếp vào nhóm, không được để thừa.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_thua_thieu(b):
+    """⑧ Bài toán thừa - thiếu — đọc số dư cho đúng câu hỏi."""
+    return [
+        _c('bia', 'Bài toán thừa và thiếu', so_bai(b),
+           loi=['Hôm nay mình học cách đọc số dư cho đúng với câu hỏi của đề.']),
+        _c('de_toan', 'Lớp có 25 bạn đi tham quan. Mỗi xe chở được 6 bạn.',
+           'Cần ít nhất bao nhiêu xe để chở hết cả lớp?',
+           loi=['Lớp có hai mươi lăm bạn đi tham quan. Mỗi xe chở được sáu bạn.',
+                'Hỏi cần ít nhất bao nhiêu xe để chở hết cả lớp.']),
+        _c('nhom_deu', 'Xếp thử 25 bạn vào các xe 6 chỗ', tong=25, moiNhom=6,
+           chuCuoi='Đầy 4 xe, còn thừa 1 bạn.',
+           loi=['Xếp thử. Được bốn xe đầy và còn thừa một bạn.']),
+        _c('y_toan', 'Phép chia', '25 : 6 = 4 (dư 1)', buoc=1, soBuoc=4,
+           loi=['Hai mươi lăm chia sáu bằng bốn, dư một.']),
+        _c('y_toan', 'Bây giờ đọc lại câu hỏi',
+           'Đề hỏi chở HẾT cả lớp.', buoc=2, soBuoc=4,
+           loi=['Bây giờ đọc lại câu hỏi. Đề hỏi chở hết cả lớp.']),
+        _c('y_toan', 'Bạn thừa ra vẫn phải đi',
+           'Nên phải thêm một xe nữa.', buoc=3, soBuoc=4,
+           loi=['Bạn thừa ra vẫn phải đi, nên phải thêm một xe nữa.']),
+        _c('y_toan', 'Đáp số', '4 + 1 = 5 xe', buoc=4, soBuoc=4,
+           loi=['Vậy cần năm xe.']),
+        _c('y_toan', 'Nhưng nếu đề hỏi khác thì đáp số khác',
+           'Hỏi mấy xe chở ĐẦY 6 bạn thì đáp số là 4.', buoc=4, soBuoc=4,
+           loi=['Nhưng nếu đề hỏi có mấy xe chở đầy sáu bạn thì đáp số chỉ là bốn.',
+                'Cùng một phép chia, hỏi khác nhau thì đáp số khác nhau.']),
+        _c('cong_thuc', 'Hai cách đọc số dư',
+           congThuc='chở HẾT  ⟶  thương + 1',
+           thay='4 + 1 = 5 xe',
+           loi=['Nếu phần thừa vẫn cần một chỗ thì lấy thương cộng một.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chia xong  ⟶  đọc lại câu hỏi',
+           loi=['Con nhớ lại một lần nữa. Chia xong thì đọc lại câu hỏi rồi mới viết '
+                'đáp số.',
+                'Tính đúng mà đọc nhầm câu hỏi thì vẫn sai.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_tan_cung(b):
+    """⑨ Chữ số tận cùng của một tích — lối nghĩ tách phần không ảnh hưởng, lần bốn."""
+    return [
+        _c('bia', 'Chữ số tận cùng của một tích', so_bai(b),
+           loi=['Hôm nay mình tìm chữ số cuối của một phép nhân mà không nhân hết.']),
+        _c('de_toan', 'Tích 23 × 17 có chữ số tận cùng là mấy?',
+           'Tìm mà không nhân hết cả phép.',
+           loi=['Tích hai mươi ba nhân mười bảy có chữ số tận cùng là mấy.',
+                'Mình tìm mà không nhân hết cả phép.']),
+        _c('y_toan', 'Tách hai thừa số ra', '23 = 20 + 3   và   17 = 10 + 7',
+           buoc=1, soBuoc=4,
+           loi=['Tách hai thừa số ra. Hai mươi ba bằng hai mươi cộng ba.',
+                'Mười bảy bằng mười cộng bảy.']),
+        _c('y_toan', 'Nhân ra thì được bốn phần',
+           '20 × 10 + 20 × 7 + 3 × 10 + 3 × 7', buoc=2, soBuoc=4,
+           loi=['Nhân ra thì được bốn phần.']),
+        _c('y_toan', 'Ba phần đầu đều là số tròn chục',
+           'Chữ số cuối của chúng đều bằng 0.', buoc=3, soBuoc=4,
+           loi=['Ba phần đầu đều có thừa số tròn chục, nên đều là số tròn chục.',
+                'Chữ số cuối của chúng đều bằng không.']),
+        _c('y_toan', 'Nên chúng không chạm tới chữ số cuối',
+           'Chỉ phần cuối cùng quyết định.', buoc=4, soBuoc=4,
+           loi=['Nên chúng không chạm tới chữ số cuối của tích.',
+                'Chỉ phần cuối cùng quyết định.']),
+        _c('tach_so', 'Nhân hai chữ số cuối với nhau', so=21, sang=[2],
+           phep='3 × 7 = 21',
+           chuPhu='Chữ số tận cùng của tích là 1.',
+           loi=['Ba nhân bảy bằng hai mươi mốt. Chữ số cuối là một.',
+                'Vậy tích tận cùng bằng một.']),
+        _c('tach_so', 'Kiểm lại bằng phép nhân đầy đủ', so=391, sang=[3],
+           chuPhu='23 × 17 = 391 — đúng là tận cùng bằng 1.',
+           loi=['Kiểm lại. Hai mươi ba nhân mười bảy bằng ba trăm chín mươi mốt.',
+                'Đúng là tận cùng bằng một.']),
+        _c('y_toan', 'Cách này dùng để soi bài rất nhanh',
+           'Nhân xong nhìn chữ số cuối, lệch là biết sai.', buoc=4, soBuoc=4,
+           loi=['Cách này dùng để soi lại bài rất nhanh.',
+                'Nhân xong nhìn chữ số cuối, lệch là biết mình sai ngay.']),
+        _c('cong_thuc', 'Chữ số tận cùng của một tích',
+           congThuc='lấy chữ số cuối nhân chữ số cuối',
+           thay='3 × 7 = 21  ⟶  tận cùng 1',
+           loi=['Lấy chữ số cuối của hai thừa số nhân với nhau, rồi lấy chữ số cuối '
+                'của kết quả.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='lấy chữ số cuối nhân chữ số cuối',
+           loi=['Con nhớ lại một lần nữa. Chỉ hai chữ số cuối quyết định.',
+                'Vì phần tròn chục nhân ra lúc nào cũng tận cùng bằng không.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+# Khoá theo MÃ BÀI, không theo số bài. Từ 14-08 (lối C) số bài đếm từ vị trí trong
+# `thu_tu.json`, nên nó đổi mỗi khi chèn bài mới — khoá theo nó thì chèn chín bài
+# vào chương 3 là tám kịch bản này nhảy sang nhầm bài, mà vẫn dựng ra video hợp lệ.
+BO = {
+    'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
+    'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
+    'DL:KSN4.B19': kb_b19, 'DL:KSN4.B20': kb_b20,
+    # ── chương 3 · chín bài dấu hiệu chia hết ──
+    'DL:KSN4.B50': kb_chia_het, 'DL:KSN4.B09': kb_chia_2,
+    'DL:KSN4.B51': kb_chia_5, 'DL:KSN4.B52': kb_chia_2_5,
+    'DL:KSN4.B10': kb_chia_9, 'DL:KSN4.B53': kb_chia_3,
+    'DL:KSN4.B11': kb_chia_du, 'DL:KSN4.B54': kb_thua_thieu,
+    'DL:KSN4.B12': kb_tan_cung,
+}
 
 
 def soi(ds: list[dict], bai_id: str) -> list[str]:
@@ -493,7 +979,7 @@ def soi(ds: list[dict], bai_id: str) -> list[str]:
 
 def kich_ban(ma: str) -> dict:
     bai = json.loads((NGUON / f'{ma}.json').read_text('utf8'))
-    lam = BO.get(bai['so'])
+    lam = BO.get(bai['id'])
     if not lam:
         raise SystemExit(f'{bai["id"]}: chưa viết kịch bản video cho bài này')
     ds = lam(bai)

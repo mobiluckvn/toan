@@ -2,56 +2,39 @@
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN4.B10",
  "grade": 4,
- "quyen": "lop4",
- "title": "Bài 10 · DẤU HIỆU CHIA HẾT CHO 3 VÀ CHO 9",
+ "quyen": "KSN4",
+ "title": "Bài 13 · DẤU HIỆU CHIA HẾT CHO 9 — VÌ SAO LẠI CỘNG CÁC CHỮ SỐ",
  "durationMinutes": 10,
- "so": 10,
+ "so": 13,
  "chuong": 3,
  "tenChuong": "DẤU HIỆU CHIA HẾT",
- "dangGoc": "SỐ 6.1 mức Lớp 4 (case 3, 9) + SỐ 3.2 + SỐ 6.2 làm quen — Tổng chữ số · tìm chữ số ẩn · lập số & đếm · hé cửa 4, 25",
+ "dangGoc": "Dạng gốc: SỐ 3.4 mức Lớp 4 — Dấu hiệu chia hết cho 9, kèm chứng minh bằng cách tách 10 = 9 + 1 và 100 = 99 + 1.",
  "skills": {
   "bktUnit": "CHUONG:3@G4",
   "primary": []
  },
  "series": {
-  "order": 10,
-  "prev": "DL:KSN4.B09",
-  "next": "DL:KSN4.B11"
+  "order": 13,
+  "prev": "DL:KSN4.B52",
+  "next": "DL:KSN4.B53"
  },
  "objective": {
   "id": "O1",
-  "text": "Dùng chắc dấu hiệu: chia hết cho 3 / cho 9 khi TỔNG các chữ số chia hết cho 3 / cho 9. Tìm chữ số ẩn x (một hoặc hai điều kiện) để một số chia hết cho 3, cho 9. Lập số từ bộ thẻ theo dấu hiệu chia hết và ĐẾM số lượng; làm quen dấu hiệu 4 và 25 qua HAI chữ số tận cùng.",
-  "kidText": "Lô 348 chiếc bánh, hộp có hai cỡ: 3 chiếc và 9 chiếc. Cỡ nào đóng vừa khít cả lô nhỉ?",
+  "text": "Nói được dấu hiệu: tổng các chữ số chia hết cho 9 thì số đó chia hết cho 9. Giải thích được vì sao lại cộng các chữ số, dựa vào 10 = 9 + 1. Xét được một số bất kỳ có chia hết cho 9 hay không.",
+  "kidText": "Số 270 to thế mà cô biết ngay nó chia hết cho 9, không cần chia thử. Con xem video để biết cô nhìn vào đâu nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — MÁY CỘNG CHỮ SỐ CHẠY THỬ: 348 → 3 + 4 + 8 = 15. Tổng 15 chia hết cho 3 → 348 chia hết cho 3: đóng hộp 3 vừa khít 116 hộp! Nhưng 15 không chia hết cho 9 → hộp 9 sẽ lẻ: 348 = 9 × 38 + 6, thừa đúng 6 chiếc. Một phép cộng nhỏ đoán trúng hai phép chia lớn."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — VÌ SAO CỘNG CHỮ SỐ LẠI LINH NGHIỆM: tách 348 = 3 × 100 + 4 × 10 + 8 = 3 × 99 + 4 × 9 + (3 + 4 + 8). Các phần 99, 9 đều chia hết cho 9 (và cho 3) — nên số dư của 348 nằm gọn trong ngoặc cuối: chính là TỔNG CHỮ SỐ. Định luật họ 9 của Bài 4 cũng sinh ra từ đúng chỗ này!"
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — TÌM CHỮ SỐ ẨN: số 47x chia hết cho 3: tổng 4 + 7 + x = 11 + x phải chia hết cho 3 → x nhận 1, 4 hoặc 7. Số 5x2 chia hết cho 9: tổng 7 + x chia hết cho 9 → x = 2 (thử: 522 = 9 × 58 ✓). Chữ số ẩn hết chỗ trốn khi máy cộng vào cuộc."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — LẬP SỐ, ĐẾM SỐ & : từ bốn thẻ 1, 2, 3, 5 chọn ba thẻ lập số chia hết cho 3: cần bộ thẻ có TỔNG chia hết cho 3 — soi bốn bộ: {1,2,3} tổng 6 ✓; {1,3,5} tổng 9 ✓; {1,2,5} tổng 8 ✗; {2,3,5} tổng 10 ✗. Mỗi bộ đạt xếp được 3 × 2 × 1 = 6 số → 12 số cả thảy. : với 4 và 25, dấu hiệu nằm ở HAI chữ số cuối: 316 chia hết cho 4 vì 16 chia hết cho 4; 425 chia hết cho 25 vì đuôi 25. (Vì sao hai chữ số? Vì 100 chia hết cho cả 4 lẫn 25 — phần \"trăm tròn\" luôn êm!)"
-   }
-  ],
-  "mantra": "Bốn dấu hiệu, hai họ: họ ĐUÔI — 2, 5 nhìn một chữ số cuối, 4, 25 nhìn hai chữ số cuối (làm quen); họ TỔNG — 3, 9 cộng tất cả chữ số. Tìm chữ số ẩn: dựng tổng có x rồi dò x từ 0 đến 9. Lập số chia hết cho 3: chọn BỘ THẺ có tổng đẹp trước, xếp chỗ sau.",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Kiểm lô bánh 570 chiếc, Trí Long phán: \"Tổng chữ số 5 + 7 + 0 = 12, mà 12 chia hết cho 3 nên 570 chia hết cho 3. Mà đã chia hết cho 3 thì chia hết cho 9 luôn — 3 với 9 cùng một họ mà!\"",
-    "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Cùng họ nhưng \"cửa\" 9 nghiêm hơn \"cửa\" 3 nhiều! Tổng 12 qua được cửa 3, nhưng 12 có chia hết cho 9 không? Gợi ý 2: Chia thật 570 : 9 xem dư mấy, rồi phát biểu lại quan hệ cho chuẩn: số chia hết cho 9 thì CHẮC CHẮN chia hết cho 3 — còn chiều ngược lại thì sao? Tìm thêm hai số \"qua cửa 3 nhưng trượt cửa 9\" tặng Trí Long làm bằng chứng."
+    "wrong": "Có bạn nhìn số 72 rồi nói: \"Số 72 không chia hết cho 9, vì chữ số cuối là 2 mà 2 không chia hết cho 9.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Với số 9 thì con có nhìn chữ số cuối không, hay làm cách khác? Gợi ý 2: Con cộng TẤT CẢ các chữ số của 72 lại xem được bao nhiêu. Chữa: 7 + 2 = 9, mà 9 chia hết cho 9, nên 72 CHIA HẾT cho 9. Cách nhìn chữ số cuối chỉ dùng cho 2 và cho 5 thôi."
    }
   ]
  },
@@ -59,117 +42,48 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Lô 348 chiếc bánh; hai cỡ hộp: 3 chiếc và 9 chiếc. Hỏi mỗi cỡ hộp có đóng vừa khít cả lô không; nếu lẻ thì lẻ mấy chiếc?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "CHO GÌ? lô 348 chiếc bánh; hai cỡ hộp: 3 chiếc và 9 chiếc.\nHỎI GÌ? mỗi cỡ hộp có đóng vừa khít cả lô không; nếu lẻ thì lẻ mấy chiếc.\nĐẠI LƯỢNG & ĐƠN VỊ: số bánh (chiếc); \"vừa khít\" = chia hết.\nQUAN HỆ GIỮA CHÚNG: với họ 3 và 9, số dư của cả con số bằng đúng số dư của TỔNG CÁC CHỮ SỐ — nên chỉ cần soi tổng 3 + 4 + 8.\nCHỌN CÔNG CỤ: MÁY CỘNG CHỮ SỐ: cộng các chữ số rồi soi tổng ấy chia hết cho 3, cho 9 hay không.\nƯỚC LƯỢNG TRƯỚC: tổng 15 — nghe đã thấy chia hết cho 3 nhưng \"đuối\" trước số 9.",
-    "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ lô bánh sang tổng các chữ số"
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S6",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S7",
-    "kind": "explain",
-    "narration": "LẮP: báo cáo gửi chị Ngọc Anh: \"Lô 348 chiếc đóng hộp 3 vừa khít 116 hộp. Hộp 9 sẽ lẻ 6 chiếc — chị hoặc làm thêm 3 chiếc cho tròn 351 (tổng chữ số 9 ✓), hoặc để 6 chiếc lẻ làm quà tặng khách quen!\" Hai phương án, chị chọn cả hai — bánh tặng khách hết veo.\nSOI: soi bằng phép chia thật: 348 : 3 = 116 dư 0 ✓; 348 : 9 = 38 dư 6 ✓ — và số dư 6 đúng bằng số dư của tổng 15 khi chia 9. Dấu hiệu chuẩn đến từng số dư!\nDÙNG NGOÀI ĐỜI: chia đội, chia quà, xếp mâm cỗ 3 người - 9 người — máy cộng chữ số chạy trong đầu nhanh hơn mọi máy tính, và đó là \"phép thuật\" con mang theo suốt đời học toán.",
-    "teaches": [],
-    "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
-   },
-   {
-    "id": "S8",
     "kind": "trap",
-    "narration": "Kiểm lô bánh 570 chiếc, Trí Long phán: \"Tổng chữ số 5 + 7 + 0 = 12, mà 12 chia hết cho 3 nên 570 chia hết cho 3. Mà đã chia hết cho 3 thì chia hết cho 9 luôn — 3 với 9 cùng một họ mà!\"",
+    "narration": "Có bạn nhìn số 72 rồi nói: \"Số 72 không chia hết cho 9, vì chữ số cuối là 2 mà 2 không chia hết cho 9.\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tìm chữ số x để số 5x2 chia hết cho 9.",
+  "problem": "Số 270 có chia hết cho 9 không? Vì sao lại đi cộng các chữ số?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Viết số ra theo hàng"
    },
    {
-    "show": "Số 5x2 (x là chữ số hàng chục). Tìm x để 5x2 chia hết cho 9."
+    "show": "270 = 2 × 100 + 7 × 10 + 0."
    },
    {
-    "show": "Gọi tên vị trí của x — tránh nhầm x là \"số\" thay vì \"chữ số\"."
+    "show": "Tách 100 và 10 ra"
    },
    {
-    "show": "Mô hình (máy cộng chữ số)"
+    "show": "100 = 99 + 1, và 10 = 9 + 1."
    },
    {
-    "show": "5x2 chia hết cho 9 ⇔ tổng 5 + x + 2 chia hết cho 9"
+    "show": "Nên 270 = 2 × 99 + 2 + 7 × 9 + 7 + 0."
    },
    {
-    "show": "⇔ 7 + x chia hết cho 9."
+    "show": "Gom lại thành hai phần"
    },
    {
-    "show": "Dấu hiệu biến \"chia số ba chữ số\" thành \"soi một tổng nhỏ\"."
+    "show": "Phần một là 2 × 99 + 7 × 9 — phần này luôn chia hết cho 9, vì 9 và 99 đều chia hết cho 9."
    },
    {
-    "show": "Bài giải"
+    "show": "Phần hai là 2 + 7 + 0 — đúng bằng tổng các chữ số."
    },
    {
-    "show": "Để 5x2 chia hết cho 9 thì tổng các chữ số 5 + x + 2 = 7 + x phải chia hết cho 9."
+    "show": "Vậy chỉ phần hai quyết định"
    },
    {
-    "show": "Vì x là chữ số nên 7 + x nhận giá trị từ 7 đến 16."
+    "show": "2 + 7 + 0 = 9, mà 9 chia hết cho 9, nên 270 chia hết cho 9."
    },
    {
-    "show": "Trong khoảng đó chỉ có 9 chia hết cho 9, vậy 7 + x = 9."
-   },
-   {
-    "show": "Suy ra x = 2."
-   },
-   {
-    "show": "Dòng \"7 + x từ 7 đến 16\" chặn khoảng — nhờ nó khẳng định x DUY NHẤT."
-   },
-   {
-    "show": "Đáp số: x = 2 (số 522)."
-   },
-   {
-    "show": "Nêu cả con số hoàn chỉnh 522."
-   },
-   {
-    "show": "Thử lại: 5 + 2 + 2 = 9 chia hết cho 9 ; 522 : 9 = 58 ✓"
-   },
-   {
-    "show": "Soi kép: soi tổng VÀ chia thật — hai lớp khóa."
+    "show": "Đáp số: 270 chia hết cho 9. Ta cộng các chữ số vì phần còn lại của số đã chia hết cho 9 sẵn rồi, không bao giờ làm thừa."
    }
   ]
  },
@@ -178,36 +92,24 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Dùng máy cộng chữ số, cho biết trong các số 348 ; 570 ; 244, số nào chia hết cho 3?",
+     "text": "Số 270 — số neo của chương. Tổng các chữ số của nó bằng bao nhiêu, và 270 có chia hết cho 9 không?",
      "answerKey": {
       "parts": [
        {
-        "label": "348",
-        "options": [
-         "chia hết",
-         "không chia hết"
-        ],
-        "value": "chia hết"
+        "label": "tổng các chữ số",
+        "value": 9
        },
        {
-        "label": "570",
+        "label": "có chia hết cho 9 không",
         "options": [
-         "chia hết",
-         "không chia hết"
+         "có",
+         "không"
         ],
-        "value": "chia hết"
-       },
-       {
-        "label": "244",
-        "options": [
-         "chia hết",
-         "không chia hết"
-        ],
-        "value": "không chia hết"
+        "value": "có"
        }
       ]
      },
-     "solutionNarrative": "348 → 15 ⋮ 3 ✓; 570 → 12 ⋮ 3 ✓; 244 → 10 không chia hết cho 3 ✗.",
+     "solutionNarrative": "2 + 7 + 0 = 9. Số 9 chia hết cho 9, nên 270 CHIA HẾT cho 9.",
      "hints": [
       "Họ TỔNG — cộng tất cả chữ số lại.",
       "Rồi soi tổng ấy với số 3."
@@ -215,28 +117,24 @@
     },
     {
      "id": "C2",
-     "text": "Trong hai số 522 và 348, số nào chia hết cho 9? Vì sao?",
+     "text": "Số 72 có chia hết cho 9 không? Vì sao?",
      "answerKey": {
       "parts": [
        {
-        "label": "522",
-        "options": [
-         "chia hết",
-         "không chia hết"
-        ],
-        "value": "chia hết"
+        "label": "tổng các chữ số",
+        "value": 9
        },
        {
-        "label": "348",
+        "label": "có chia hết cho 9 không",
         "options": [
-         "chia hết",
-         "không chia hết"
+         "có",
+         "không"
         ],
-        "value": "không chia hết"
+        "value": "có"
        }
       ]
      },
-     "solutionNarrative": "522 → 5 + 2 + 2 = 9 chia hết cho 9 ✓; 348 → 15 không chia hết cho 9 ✗.",
+     "solutionNarrative": "7 + 2 = 9, chia hết cho 9, nên 72 CHIA HẾT cho 9.",
      "hints": [
       "Vẫn cộng chữ số, nhưng lần này soi với số 9.",
       "Chia hết cho 3 chưa chắc đã chia hết cho 9."
@@ -244,25 +142,24 @@
     },
     {
      "id": "C3",
-     "text": "Lô 348 chiếc bánh đóng hộp 3 chiếc thì được bao nhiêu hộp, có lẻ chiếc nào không?",
+     "text": "Số 43 có chia hết cho 9 không?",
      "answerKey": {
       "parts": [
        {
-        "label": "số hộp",
-        "value": 116
+        "label": "tổng các chữ số",
+        "value": 7
        },
        {
-        "label": "có lẻ chiếc nào không",
+        "label": "có chia hết cho 9 không",
         "options": [
-         "không lẻ chiếc nào",
-         "lẻ 1 chiếc",
-         "lẻ 2 chiếc"
+         "có",
+         "không"
         ],
-        "value": "không lẻ chiếc nào"
+        "value": "không"
        }
       ]
      },
-     "solutionNarrative": "Vừa khít — 348 : 3 = 116 hộp, không lẻ chiếc nào (tổng chữ số 15 chia hết cho 3).",
+     "solutionNarrative": "4 + 3 = 7, mà 7 không chia hết cho 9, nên 43 KHÔNG chia hết cho 9.",
      "hints": [
       "Cộng chữ số để biết có vừa khít không.",
       "Vừa khít rồi mới đặt phép chia tìm số hộp."
@@ -272,16 +169,20 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Tìm tất cả các chữ số x để số 47x chia hết cho 3.",
+     "text": "Trong ba số 108 ; 235 ; 459, những số nào chia hết cho 9?",
      "answerKey": {
-      "ordered": false,
-      "values": [
-       1,
-       4,
-       7
+      "parts": [
+       {
+        "label": "số thứ nhất",
+        "value": 108
+       },
+       {
+        "label": "số thứ hai",
+        "value": 459
+       }
       ]
      },
-     "solutionNarrative": "11 + x chia hết cho 3 → x = 1 ; 4 ; 7.",
+     "solutionNarrative": "Cộng chữ số: 108 được 9 (chia hết), 235 được 10 (không), 459 được 18 (chia hết cho 9). Vậy 108 và 459.",
      "hints": [
       "Dựng tổng có chứa x trước đã.",
       "Dò x từ 0 đến 9, giữ những giá trị làm tổng chia hết."
@@ -289,11 +190,28 @@
     },
     {
      "id": "C5",
-     "text": "Tìm chữ số x để số 5x2 chia hết cho 9.",
+     "text": "Bạn Bình nói: \"Số 63 không chia hết cho 9 vì chữ số cuối là 3.\" Bạn nói đúng hay sai? Số 63 có chia hết cho 9 không?",
      "answerKey": {
-      "value": 2
+      "parts": [
+       {
+        "label": "bạn Bình nói",
+        "options": [
+         "đúng",
+         "sai"
+        ],
+        "value": "sai"
+       },
+       {
+        "label": "63 có chia hết cho 9 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
      },
-     "solutionNarrative": "7 + x chia hết cho 9, mà 7 + x từ 7 đến 16 → 7 + x = 9 → x = 2 (số 522).",
+     "solutionNarrative": "SAI. Với 9 phải cộng các chữ số: 6 + 3 = 9, chia hết cho 9. Vậy 63 CHIA HẾT cho 9.",
      "hints": [
       "Cộng hai chữ số đã biết rồi thêm x vào.",
       "Tổng ấy chạy trong khoảng nào, và bội nào của 9 nằm trong đó?"
@@ -301,11 +219,16 @@
     },
     {
      "id": "C6",
-     "text": "Từ bốn tấm thẻ 1 ; 2 ; 3 ; 5, chọn ra ba thẻ để lập số có ba chữ số chia hết cho 3. Hỏi chọn được những bộ thẻ nào và lập được tất cả bao nhiêu số?",
+     "text": "Vì sao phần 2 × 99 + 7 × 9 trong cách tách số 270 luôn chia hết cho 9?",
      "answerKey": {
-      "value": 12
+      "parts": [
+       {
+        "label": "vì 99 bằng 9 nhân",
+        "value": 11
+       }
+      ]
      },
-     "solutionNarrative": "Bộ thẻ có tổng chia hết cho 3: {1, 2, 3} (tổng 6) và {1, 3, 5} (tổng 9); mỗi bộ xếp được 3 × 2 × 1 = 6 số → tất cả 12 số.",
+     "solutionNarrative": "Vì 9 chia hết cho 9 và 99 cũng chia hết cho 9 (99 = 9 × 11). Bao nhiêu lần 9 hay bao nhiêu lần 99 thì vẫn chia hết cho 9.",
      "hints": [
       "Chọn BỘ THẺ có tổng chia hết cho 3 trước đã.",
       "Mỗi bộ ba thẻ xếp được mấy số?"
@@ -313,24 +236,20 @@
     },
     {
      "id": "C7",
-     "text": "Trong các số 316 ; 425 ; 550, số nào chia hết cho 4? Số nào chia hết cho 25? (Soi HAI chữ số tận cùng!)",
+     "text": "Tìm chữ số thích hợp điền vào ô trống để số 4 ô 5 chia hết cho 9.",
      "answerKey": {
       "parts": [
        {
-        "label": "số chia hết cho 4",
-        "value": 316
+        "label": "chữ số nhỏ nhất điền được",
+        "value": 0
        },
        {
-        "label": "số chia hết cho 25 (bé hơn)",
-        "value": 425
-       },
-       {
-        "label": "số chia hết cho 25 (lớn hơn)",
-        "value": 550
+        "label": "chữ số còn lại điền được",
+        "value": 9
        }
       ]
      },
-     "solutionNarrative": "Chia hết cho 4: 316 (vì 16 ⋮ 4); chia hết cho 25: 425 (đuôi 25) và 550 (đuôi 50).",
+     "solutionNarrative": "Tổng phải chia hết cho 9: 4 + ô + 5 = 9 + ô. Muốn chia hết cho 9 thì ô = 0 hoặc ô = 9. Vậy được 405 hoặc 495.",
      "hints": [
       "Hai dấu hiệu này soi HAI chữ số tận cùng.",
       "Cắt hai chữ số cuối ra mà xét riêng."
@@ -340,20 +259,20 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Tìm các chữ số x và y để số 4x3y chia hết cho cả 2 ; 5 và 9. (Dấu hiệu đuôi chốt y trước, máy cộng chữ số chốt x sau!)",
+     "text": "Từ bốn chữ số 1 ; 2 ; 3 ; 4 hãy chọn ba chữ số để viết một số có ba chữ số chia hết cho 9.",
      "answerKey": {
       "parts": [
        {
-        "label": "chữ số x",
-        "value": 2
+        "label": "tổng ba chữ số đã chọn",
+        "value": 9
        },
        {
-        "label": "chữ số y",
-        "value": 0
+        "label": "một số viết được",
+        "value": 234
        }
       ]
      },
-     "solutionNarrative": "Chia hết cho 2 và 5 → y = 0; khi đó tổng 4 + x + 3 + 0 = 7 + x chia hết cho 9 → x = 2. Số cần tìm: 4 230 (thử: 4 230 : 9 = 470 ✓, đuôi 0 ✓).",
+     "solutionNarrative": "Tổng ba chữ số phải chia hết cho 9. Thử: 2 + 3 + 4 = 9 — được. Vậy viết 234 (hoặc 243, 324, 342, 423, 432).",
      "hints": [
       "Dấu hiệu đuôi chốt y trước.",
       "Có y rồi mới dựng tổng chữ số để tìm x."
@@ -361,32 +280,20 @@
     },
     {
      "id": "C9",
-     "text": "Không thực hiện phép chia, cho biết 234 em xếp hàng 9 có vừa khít không? Thế xếp hàng 6 thì sao — hàng 6 cần ghép những dấu hiệu nào?",
+     "text": "Số 1 989 có chia hết cho 9 không? Nếu có thì thương bằng bao nhiêu?",
      "answerKey": {
       "parts": [
        {
-        "label": "xếp hàng 9",
-        "options": [
-         "vừa khít",
-         "không vừa khít"
-        ],
-        "value": "vừa khít"
+        "label": "tổng các chữ số",
+        "value": 27
        },
        {
-        "label": "xếp hàng 6",
-        "options": [
-         "vừa khít",
-         "không vừa khít"
-        ],
-        "value": "vừa khít"
-       },
-       {
-        "label": "số hàng khi xếp hàng 6",
-        "value": 39
+        "label": "thương",
+        "value": 221
        }
       ]
      },
-     "solutionNarrative": "2 + 3 + 4 = 9 chia hết cho 9 → xếp hàng 9 vừa khít (26 hàng). Hàng 6 cần ghép hai dấu hiệu: chia hết cho 2 (đuôi 4 ✓) và cho 3 (tổng 9 ✓) → cũng vừa khít, 39 hàng.",
+     "solutionNarrative": "1 + 9 + 8 + 9 = 27, mà 27 chia hết cho 9, nên 1 989 chia hết cho 9. Thương là 1 989 : 9 = 221.",
      "hints": [
       "Hàng 9 thì cộng chữ số lại mà soi.",
       "Hàng 6 phải ghép HAI dấu hiệu: một của đuôi, một của tổng."
@@ -400,70 +307,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Số có tổng các chữ số chia hết cho 3 thì chia hết cho 3.",
+    "text": "Muốn biết một số có chia hết cho 9 không, ta cộng tất cả các chữ số của nó lại.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đáp án: ĐÚNG."
    },
    {
     "id": "Q2",
-    "text": "Số 348 chia hết cho 9.",
+    "text": "Số 63 không chia hết cho 9 vì chữ số cuối là 3.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Tổng 15 không chia hết cho 9."
+    "solutionNarrative": "SAI — 6 + 3 = 9 nên 63 chia hết cho 9. Nhìn chữ số cuối chỉ dùng cho 2 và 5."
    },
    {
     "id": "Q3",
-    "text": "Số 5x2 chia hết cho 9 khi x bằng:",
+    "text": "Số nào dưới đây CHIA HẾT cho 9?",
     "format": "mcq",
     "choices": [
-     "A. 2",
-     "B. 4",
-     "C. 7"
+     "A. 279",
+     "B. 271",
+     "C. 275"
     ],
     "answerKey": {
-     "choice": "A. 2"
+     "choice": "A. 279"
     },
-    "solutionNarrative": "X = 2)."
+    "solutionNarrative": "2 + 7 + 9 = 18, chia hết cho 9."
    },
    {
     "id": "Q4",
-    "text": "Số chia hết cho 25 khi hai chữ số tận cùng là:",
+    "text": "Tổng các chữ số của 270 bằng:",
     "format": "mcq",
     "choices": [
-     "A. 00, 25, 50 hoặc 75",
-     "B. chỉ 25",
-     "C. chỉ 50"
+     "A. 9",
+     "B. 27",
+     "C. 10"
     ],
     "answerKey": {
-     "choice": "A. 00, 25, 50 hoặc 75"
+     "choice": "A. 9"
     },
-    "solutionNarrative": "00, 25, 50 hoặc 75."
+    "solutionNarrative": "2 + 7 + 0 = 9."
    },
    {
     "id": "Q5",
-    "text": "Chữ số x LỚN NHẤT để 47x chia hết cho 3 là:",
+    "text": "Vì sao xét chia hết cho 9 thì lại cộng các chữ số?",
     "format": "mcq",
     "choices": [
-     "A. 7",
-     "B. 9",
-     "C. 4"
+     "A. Vì 10 hơn 9 đúng một đơn vị, nên mỗi chục để lại đúng một đơn vị",
+     "B. Vì 9 là chữ số lớn nhất",
+     "C. Vì cộng cho nhanh hơn chia"
     ],
     "answerKey": {
-     "choice": "A. 7"
+     "choice": "A. Vì 10 hơn 9 đúng một đơn vị, nên mỗi chục để lại đúng một đơn vị"
     },
-    "solutionNarrative": "X nhận 1, 4, 7; lớn nhất là 7."
+    "solutionNarrative": "10 = 9 + 1 và 100 = 99 + 1, phần 9 và 99 đã chia hết cho 9 sẵn."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Nâng cấp trò \"thầy bói\": giờ con phán được cả chia hết cho 3, cho 9 — thử với số tiền trên hóa đơn, năm sinh của cả nhà. Bí quyết giữ lửa: để con GIẢI THÍCH vì sao cộng chữ số lại đoán được, bằng cách tách 348 = 3 × 99 + 4 × 9 + 15.",
-  "homeActivity": "Bẫy kinh điển \"chia hết cho 3 ắt chia hết cho 9\" đáng được nhắc đi nhắc lại — hỏi con: cửa nào nghiêm hơn, và chiều nào của mũi tên mới đúng?",
-  "watchFor": "NÊN: cho con tự chế số chia hết cho 9 (chọn chữ số sao cho tổng bằng 9, 18). KHÔNG NÊN: luyện sâu dấu hiệu 4, 8, 25, 11 — hôm nay chỉ là tìm hiểu thêm, bản đầy đủ hẹn lớp 5."
+  "onComplete": "Cho con một số bất kỳ rồi bảo con cộng các chữ số lại, sau đó bấm máy tính chia thử. Làm vài lần con sẽ tin là dấu hiệu luôn đúng.",
+  "homeActivity": "Nếu con hỏi \"vì sao lại cộng\", bố mẹ nói lại đúng một câu trong video: vì 10 hơn 9 đúng một đơn vị, nên mỗi chục để lại đúng một đơn vị.",
+  "watchFor": ""
  },
  "figureSpec": [
   {
@@ -479,7 +386,7 @@
   {
    "id": "L4H_B10_G1",
    "usedIn": [
-    "screen:S3"
+    "teach_domain"
    ],
    "file": "figures/L4H_B10_G1.png",
    "caption": "Dấu hiệu 3 và 9 xem TỔNG các chữ số, không xem đuôi.",
@@ -487,7 +394,7 @@
    "mucGoc": "khamPha"
   }
  ],
- "hatMam": "Bài 9 con vừa học họ dấu hiệu ĐUÔI SỐ (2 và 5). Nhưng thử soi đuôi số 348 xem nó có chia hết cho 3 không — chịu! Vì 3 và 9 thuộc một họ dấu hiệu khác hẳn: không nhìn đuôi, mà CỘNG TẤT CẢ CHỮ SỐ lại. Và con còn nhớ định luật họ 9 của Bài 4 chứ — ab − ba = 9 × (a − b)? Hôm nay con sẽ hiểu vì sao số 9 cứ quanh quẩn bên các chữ số như thế.",
+ "hatMam": "Ba bài vừa rồi con chỉ nhìn chữ số cuối là xong. Nhưng với số 9 thì cách ấy không dùng được — con phải cộng TẤT CẢ các chữ số lại. Nghe rất lạ, nên hôm nay con sẽ xem vì sao lại thế. Hiểu được chỗ này thì con không bao giờ quên dấu hiệu.",
  "duongLui": {
   "ve": [
    "DL:KSN3.B06"
@@ -498,5 +405,8 @@
   "canCu": "chuDe",
   "lopDuoi": 3,
   "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B10_giang.mp4"
  }
 }

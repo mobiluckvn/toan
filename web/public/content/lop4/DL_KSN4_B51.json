@@ -1,0 +1,331 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B51",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 11 · DẤU HIỆU CHIA HẾT CHO 5 — CŨNG CHỈ NHÌN CHỮ SỐ CUỐI",
+ "durationMinutes": 10,
+ "so": 11,
+ "chuong": 3,
+ "tenChuong": "DẤU HIỆU CHIA HẾT",
+ "dangGoc": "Dạng gốc: SỐ 3.2 mức Lớp 4 — Dấu hiệu chia hết cho 5, kèm chứng minh bằng cách tách số thành phần tròn chục và chữ số đơn vị.",
+ "skills": {
+  "bktUnit": "CHUONG:3@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 11,
+  "prev": "DL:KSN4.B09",
+  "next": "DL:KSN4.B52"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nói được số chia hết cho 5 là số có tận cùng là 0 hoặc 5. Giải thích được vì sao chỉ cần nhìn chữ số cuối, giống bài trước. Phân biệt được dấu hiệu chia hết cho 5 với dấu hiệu chia hết cho 2.",
+  "kidText": "Hôm nay vẫn chỉ nhìn một chữ số cuối, nhưng lần này là chia hết cho 5. Con đoán xem chữ số nào được phép?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nói: \"Số 52 chia hết cho 5, vì trong số ấy có chữ số 5.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Chữ số 5 ấy đứng ở đâu trong số 52? Gợi ý 2: Dấu hiệu chỉ xét chữ số CUỐI CÙNG. Chữ số cuối của 52 là mấy? Chữa: chữ số cuối của 52 là 2, không phải 0 cũng không phải 5, nên 52 KHÔNG chia hết cho 5. Có chữ số 5 ở giữa số thì không tính."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nói: \"Số 52 chia hết cho 5, vì trong số ấy có chữ số 5.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Số 35 có chia hết cho 5 không? Vì sao chỉ cần nhìn chữ số cuối?",
+  "steps": [
+   {
+    "show": "Tách số ra hai phần"
+   },
+   {
+    "show": "35 = 30 + 5. Phần tròn chục là 30, chữ số cuối là 5."
+   },
+   {
+    "show": "Xét phần tròn chục"
+   },
+   {
+    "show": "30 = 3 × 10, mà 10 = 5 × 2, nên 30 luôn chia hết cho 5."
+   },
+   {
+    "show": "Mọi số tròn chục đều chia hết cho 5, nên phần này không làm thừa."
+   },
+   {
+    "show": "Vậy chỉ còn chữ số cuối quyết định"
+   },
+   {
+    "show": "Chữ số cuối là 5, mà 5 chia hết cho 5, nên 35 chia hết cho 5."
+   },
+   {
+    "show": "Thử với số neo của chương"
+   },
+   {
+    "show": "270 có chữ số cuối là 0, mà 0 chia hết cho 5, nên 270 chia hết cho 5."
+   },
+   {
+    "show": "Đáp số: 35 chia hết cho 5. Chữ số cuối phải là 0 hoặc 5 thì số mới chia hết cho 5."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Số 35 — đúng số trong video. Chữ số cuối là mấy, và 35 có chia hết cho 5 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số cuối",
+        "value": 5
+       },
+       {
+        "label": "có chia hết cho 5 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Chữ số cuối là 5, nên 35 CHIA HẾT cho 5."
+    },
+    {
+     "id": "C2",
+     "text": "Số 52 có chia hết cho 5 không? Vì sao?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có chia hết cho 5 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Chữ số cuối là 2, không phải 0 cũng không phải 5, nên 52 KHÔNG chia hết cho 5."
+    },
+    {
+     "id": "C3",
+     "text": "Số 270 có chia hết cho 5 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có chia hết cho 5 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Chữ số cuối là 0, nên 270 CHIA HẾT cho 5."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Trong ba số 145 ; 132 ; 500, những số nào chia hết cho 5?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số thứ nhất",
+        "value": 145
+       },
+       {
+        "label": "số thứ hai",
+        "value": 500
+       }
+      ]
+     },
+     "solutionNarrative": "Nhìn chữ số cuối: 145 cuối là 5 (chia hết), 132 cuối là 2 (không), 500 cuối là 0 (chia hết). Vậy 145 và 500 chia hết cho 5."
+    },
+    {
+     "id": "C5",
+     "text": "Số 64 có chia hết cho 2 không, có chia hết cho 5 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "64 chia hết cho 2 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "64 chia hết cho 5 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Chữ số cuối là 4: chẵn nên CHIA HẾT cho 2; nhưng không phải 0 hay 5 nên KHÔNG chia hết cho 5."
+    },
+    {
+     "id": "C6",
+     "text": "Vì sao phần tròn chục của một số luôn chia hết cho 5?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "vì 10 bằng 5 nhân",
+        "value": 2
+       }
+      ]
+     },
+     "solutionNarrative": "Vì mọi số tròn chục đều là mấy lần 10, mà 10 = 5 × 2 nên 10 chia hết cho 5. Bao nhiêu lần 10 thì vẫn chia hết cho 5."
+    },
+    {
+     "id": "C7",
+     "text": "Viết một số có ba chữ số chia hết cho 5 và có chữ số hàng trăm là 4.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số con viết",
+        "value": 405
+       }
+      ]
+     },
+     "solutionNarrative": "Ví dụ 405 hoặc 450 — chữ số cuối phải là 0 hoặc 5."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Từ ba chữ số 2 ; 5 ; 7 hãy viết một số có ba chữ số chia hết cho 5, dùng mỗi chữ số đúng một lần.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số phải đặt ở cuối",
+        "value": 5
+       },
+       {
+        "label": "một số viết được",
+        "value": 275
+       }
+      ]
+     },
+     "solutionNarrative": "Chữ số cuối phải là 0 hoặc 5 — trong ba chữ số chỉ có 5. Đặt 5 ở cuối: được 275 hoặc 725."
+    },
+    {
+     "id": "C9",
+     "text": "Có bao nhiêu số có hai chữ số chia hết cho 5?",
+     "answerKey": {
+      "value": 18
+     },
+     "solutionNarrative": "Các số đó là 10, 15, 20, 25, … , 95. Từ 10 đến 95 cách đều 5, có (95 − 10) : 5 + 1 = 18 số."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Số có tận cùng là 5 thì chia hết cho 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Số 52 chia hết cho 5 vì trong số đó có chữ số 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — chỉ xét chữ số cuối. Chữ số cuối của 52 là 2."
+   },
+   {
+    "id": "Q3",
+    "text": "Số nào dưới đây CHIA HẾT cho 5?",
+    "format": "mcq",
+    "choices": [
+     "A. 340",
+     "B. 341",
+     "C. 342"
+    ],
+    "answerKey": {
+     "choice": "A. 340"
+    },
+    "solutionNarrative": "Chữ số cuối của 340 là 0."
+   },
+   {
+    "id": "Q4",
+    "text": "Chữ số cuối của một số chia hết cho 5 phải là:",
+    "format": "mcq",
+    "choices": [
+     "A. 0 hoặc 5",
+     "B. 0, 2, 4, 6 hoặc 8",
+     "C. 5 mà thôi"
+    ],
+    "answerKey": {
+     "choice": "A. 0 hoặc 5"
+    },
+    "solutionNarrative": "Hai chữ số ấy, không có chữ số nào khác."
+   },
+   {
+    "id": "Q5",
+    "text": "Số 64 chia hết cho số nào dưới đây?",
+    "format": "mcq",
+    "choices": [
+     "A. chỉ chia hết cho 2",
+     "B. chỉ chia hết cho 5",
+     "C. chia hết cho cả 2 và 5"
+    ],
+    "answerKey": {
+     "choice": "A. chỉ chia hết cho 2"
+    },
+    "solutionNarrative": "Chữ số cuối là 4: chẵn nên chia hết cho 2, nhưng không phải 0 hay 5."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Bảo con đọc các số trên hoá đơn hay biển số xe rồi hỏi số nào chia hết cho 5.",
+  "homeActivity": "Chỗ con hay nhầm nhất là thấy chữ số 5 ở bất kỳ đâu cũng nói chia hết. Bố mẹ hỏi lại: \"Chữ số CUỐI là mấy?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài trước con đã thấy: phần tròn chục của một số luôn chia hết cho 2, nên chỉ chữ số cuối quyết định. Hôm nay con thử đúng lối nghĩ ấy với số 5, và sẽ thấy nó lại đúng — vì 10 chia hết cho 5 y như 10 chia hết cho 2.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B06"
+  ],
+  "ten": [
+   "PHÉP CHIA CÓ DƯ CHÍNH DANH"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B51_giang.mp4"
+ }
+}

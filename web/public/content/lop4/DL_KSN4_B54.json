@@ -1,0 +1,319 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B54",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 16 · BÀI TOÁN THỪA - THIẾU — SỐ DƯ ĐÒI THÊM MỘT CHỖ NỮA",
+ "durationMinutes": 10,
+ "so": 16,
+ "chuong": 3,
+ "tenChuong": "DẤU HIỆU CHIA HẾT",
+ "dangGoc": "Dạng gốc: SỐ 3.7 mức Lớp 4 — Bài toán có lời văn dùng phép chia có dư, phân biệt lấy thương với lấy thương cộng một.",
+ "skills": {
+  "bktUnit": "CHUONG:3@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 16,
+  "prev": "DL:KSN4.B11",
+  "next": "DL:KSN4.B12"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Giải được bài toán lời văn bằng phép chia có dư. Biết khi nào lấy thương, khi nào phải cộng thêm 1. Đọc lại câu hỏi của đề trước khi viết đáp số.",
+  "kidText": "Lớp có 25 bạn, mỗi xe chở 6 bạn. Bạn thừa ra thì đi bằng gì hả con?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn tính 25 : 6 = 4 dư 1 rồi viết luôn: \"Đáp số: 4 xe.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con tính đúng rồi. Nhưng còn 1 bạn thừa ra thì bạn ấy đi bằng gì? Gợi ý 2: Bạn ấy cũng phải đi tham quan chứ. Vậy có đủ 4 xe không? Chữa: phải thêm một xe nữa cho bạn thừa ra, nên đáp số là 5 xe. Chia xong thì đọc lại câu hỏi rồi mới viết đáp số."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn tính 25 : 6 = 4 dư 1 rồi viết luôn: \"Đáp số: 4 xe.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Lớp có 25 bạn đi tham quan. Mỗi xe chở được 6 bạn. Hỏi cần ít nhất bao nhiêu xe để chở hết cả lớp?",
+  "steps": [
+   {
+    "show": "Chia thử"
+   },
+   {
+    "show": "25 : 6 = 4 (dư 1). Nghĩa là xếp đầy được 4 xe, còn thừa 1 bạn."
+   },
+   {
+    "show": "Đọc lại câu hỏi"
+   },
+   {
+    "show": "Đề hỏi cần ít nhất bao nhiêu xe để chở HẾT cả lớp."
+   },
+   {
+    "show": "Bạn thừa ra vẫn phải đi, nên vẫn phải có thêm một xe nữa cho bạn ấy."
+   },
+   {
+    "show": "Kết luận"
+   },
+   {
+    "show": "Số xe cần là 4 + 1 = 5 xe."
+   },
+   {
+    "show": "Nếu đề hỏi khác"
+   },
+   {
+    "show": "Nếu đề hỏi có mấy xe chở ĐẦY 6 bạn thì đáp số chỉ là 4 xe, không cộng thêm."
+   },
+   {
+    "show": "Đáp số: cần ít nhất 5 xe."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Lớp có 25 bạn — đúng bài trong video. Mỗi xe chở 6 bạn. Chia 25 cho 6 được thương và số dư bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "thương",
+        "value": 4
+       },
+       {
+        "label": "số dư",
+        "value": 1
+       }
+      ]
+     },
+     "solutionNarrative": "25 : 6 = 4 (dư 1). Thương là 4, số dư là 1."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên. Cần ít nhất bao nhiêu xe để chở HẾT 25 bạn?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Xếp đầy được 4 xe, còn 1 bạn thừa vẫn phải đi nên thêm 1 xe nữa. Cần 5 xe."
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn bài trên. Có bao nhiêu xe chở ĐẦY đủ 6 bạn?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Chỉ 4 xe chở đầy 6 bạn; xe thứ năm chỉ có 1 bạn."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Có 30 quyển vở xếp vào các thùng, mỗi thùng 7 quyển. Cần ít nhất bao nhiêu thùng để xếp hết?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "30 : 7 = 4 (dư 2). Còn 2 quyển thừa vẫn phải xếp nên thêm 1 thùng. Cần 5 thùng."
+    },
+    {
+     "id": "C5",
+     "text": "Có 30 quyển vở, mỗi thùng 7 quyển. Xếp được bao nhiêu thùng ĐẦY và còn thừa mấy quyển?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "thùng đầy",
+        "value": 4
+       },
+       {
+        "label": "thừa mấy quyển",
+        "value": 2
+       }
+      ]
+     },
+     "solutionNarrative": "30 : 7 = 4 (dư 2). Xếp đầy 4 thùng, thừa 2 quyển."
+    },
+    {
+     "id": "C6",
+     "text": "Bạn Mai tính 43 : 8 = 5 (dư 3) rồi trả lời \"cần 5 hộp để đựng hết 43 viên bi\". Bạn trả lời đúng chưa? Đáp số đúng là bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bạn Mai trả lời",
+        "options": [
+         "đúng",
+         "sai"
+        ],
+        "value": "sai"
+       },
+       {
+        "label": "số hộp đúng",
+        "value": 6
+       }
+      ]
+     },
+     "solutionNarrative": "CHƯA đúng. Còn 3 viên thừa vẫn phải đựng nên cần thêm 1 hộp. Đáp số đúng là 6 hộp."
+    },
+    {
+     "id": "C7",
+     "text": "Một sợi dây dài 47 mét, cắt thành các đoạn dài 9 mét. Cắt được mấy đoạn dài 9 mét và còn thừa bao nhiêu mét?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cắt được mấy đoạn",
+        "value": 5
+       },
+       {
+        "label": "thừa mấy mét",
+        "value": 2
+       }
+      ]
+     },
+     "solutionNarrative": "47 : 9 = 5 (dư 2). Cắt được 5 đoạn, thừa 2 mét. Ở dạng này KHÔNG cộng thêm, vì 2 mét không đủ thành một đoạn 9 mét."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Có 100 học sinh xếp hàng, mỗi hàng 8 bạn. Hỏi xếp được mấy hàng đầy, và cần bao nhiêu hàng để đủ chỗ cho tất cả?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hàng đầy",
+        "value": 12
+       },
+       {
+        "label": "cần bao nhiêu hàng",
+        "value": 13
+       }
+      ]
+     },
+     "solutionNarrative": "100 : 8 = 12 (dư 4). Xếp đầy 12 hàng; muốn đủ chỗ cho cả 4 bạn thừa thì cần 13 hàng."
+    },
+    {
+     "id": "C9",
+     "text": "Một cửa hàng có 53 kg gạo, đóng vào các bao 6 kg. Hỏi đóng được mấy bao đầy, còn thừa mấy ki-lô-gam, và cần mấy bao để đựng hết số gạo?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bao đầy",
+        "value": 8
+       },
+       {
+        "label": "thừa mấy ki-lô-gam",
+        "value": 5
+       },
+       {
+        "label": "cần mấy bao",
+        "value": 9
+       }
+      ]
+     },
+     "solutionNarrative": "53 : 6 = 8 (dư 5). Đóng đầy 8 bao, thừa 5 kg. Muốn đựng hết thì cần 9 bao."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Khi bài hỏi \"cần ít nhất bao nhiêu xe để chở hết\", nếu còn dư thì phải cộng thêm một xe.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Trong mọi bài toán chia có dư, ta luôn phải cộng thêm 1 vào thương.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — chỉ cộng khi phần thừa vẫn cần một chỗ. Cắt dây thì phần thừa không thành đoạn nên không cộng."
+   },
+   {
+    "id": "Q3",
+    "text": "Có 25 bạn, mỗi xe chở 6 bạn. Cần ít nhất bao nhiêu xe?",
+    "format": "mcq",
+    "choices": [
+     "A. 5 xe",
+     "B. 4 xe",
+     "C. 6 xe"
+    ],
+    "answerKey": {
+     "choice": "A. 5 xe"
+    },
+    "solutionNarrative": "25 : 6 = 4 dư 1, bạn thừa vẫn phải đi nên thêm một xe."
+   },
+   {
+    "id": "Q4",
+    "text": "Có 25 bạn, mỗi xe chở 6 bạn. Có bao nhiêu xe chở ĐẦY 6 bạn?",
+    "format": "mcq",
+    "choices": [
+     "A. 4 xe",
+     "B. 5 xe",
+     "C. 3 xe"
+    ],
+    "answerKey": {
+     "choice": "A. 4 xe"
+    },
+    "solutionNarrative": "Thương là 4, xe thứ năm chỉ chở 1 bạn."
+   },
+   {
+    "id": "Q5",
+    "text": "Sợi dây 47 mét cắt thành đoạn 9 mét thì được mấy đoạn?",
+    "format": "mcq",
+    "choices": [
+     "A. 5 đoạn",
+     "B. 6 đoạn",
+     "C. 4 đoạn"
+    ],
+    "answerKey": {
+     "choice": "A. 5 đoạn"
+    },
+    "solutionNarrative": "47 : 9 = 5 dư 2; 2 mét không đủ thành một đoạn nên không cộng thêm."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hỏi con những câu đời thường: \"Nhà mình 5 người, mỗi mâm ngồi 4, cần mấy mâm?\" Con sẽ tự thấy phải kê thêm mâm nữa.",
+  "homeActivity": "Con tính đúng mà đáp số sai là chuyện rất hay gặp ở dạng này. Bố mẹ chỉ cần hỏi: \"Phần thừa ra thì sao?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài trước con đã chia thành thạo và biết số dư là gì. Nhưng khi gặp bài toán có lời văn thì phải đọc số dư cho đúng câu hỏi. Cùng một phép chia, hỏi khác nhau thì đáp số khác nhau — hôm nay con học đúng chỗ đó.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B06",
+   "DL:KSN3.B07"
+  ],
+  "ten": [
+   "PHÉP CHIA CÓ DƯ CHÍNH DANH",
+   "TRUY TÌM SỐ CHIA a DƯ b"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B54_giang.mp4"
+ }
+}

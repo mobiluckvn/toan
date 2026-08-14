@@ -1,0 +1,336 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B50",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 9 · CHIA HẾT LÀ GÌ — VÀ PHẦN THỪA GỌI LÀ GÌ",
+ "durationMinutes": 10,
+ "so": 9,
+ "chuong": 3,
+ "tenChuong": "DẤU HIỆU CHIA HẾT",
+ "dangGoc": "Dạng gốc: SỐ 3.0 mức Lớp 4 — Khái niệm chia hết · số dư · số bị chia · số chia · thương. KHÔNG dấu hiệu, KHÔNG mẹo nhìn nhanh.",
+ "skills": {
+  "bktUnit": "CHUONG:3@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 9,
+  "prev": "DL:KSN4.B08",
+  "next": "DL:KSN4.B09"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nói được chia hết nghĩa là chia xong không thừa gì. Gọi đúng tên số bị chia, số chia, thương và số dư. Biết một số chia hết cho số này nhưng có thể không chia hết cho số khác.",
+  "kidText": "Cô có 12 viên kẹo: chia cho 3 bạn thì vừa khít, chia cho 5 bạn lại thừa. Con xem video xem vì sao nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nói: \"12 chia hết cho 5, vì chia được 2 viên mỗi bạn.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con xếp thử ra xem. Chia xong còn thừa mấy viên trên bàn? Gợi ý 2: Còn thừa thì chưa gọi là chia hết. Chia hết là chia xong KHÔNG còn viên nào. Chữa: 12 : 5 = 2 dư 2. Số dư là 2, khác 0, nên 12 KHÔNG chia hết cho 5."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nói: \"12 chia hết cho 5, vì chia được 2 viên mỗi bạn.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Có 12 viên kẹo. Chia đều cho 3 bạn thì mỗi bạn được mấy viên, có thừa không? Chia đều cho 5 bạn thì sao?",
+  "steps": [
+   {
+    "show": "Chia cho 3 bạn"
+   },
+   {
+    "show": "Xếp 12 viên thành từng nhóm 3 viên: được 4 nhóm, không thừa viên nào."
+   },
+   {
+    "show": "12 : 3 = 4, số dư bằng 0. Vậy 12 chia hết cho 3."
+   },
+   {
+    "show": "Chia cho 5 bạn"
+   },
+   {
+    "show": "Xếp 12 viên thành từng nhóm 5 viên: được 2 nhóm, còn thừa 2 viên."
+   },
+   {
+    "show": "12 : 5 = 2 (dư 2). Số dư khác 0 nên 12 KHÔNG chia hết cho 5."
+   },
+   {
+    "show": "Gọi tên trong phép 12 : 5 = 2 (dư 2)"
+   },
+   {
+    "show": "12 là số bị chia, 5 là số chia, 2 là thương, 2 còn lại là số dư."
+   },
+   {
+    "show": "Đáp số: 12 chia hết cho 3, mỗi bạn 4 viên không thừa; 12 không chia hết cho 5, chia được 2 viên mỗi bạn và thừa 2 viên."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Có 12 viên kẹo — đúng số kẹo trong video. Xếp thành từng nhóm 3 viên thì được mấy nhóm và thừa mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "được mấy nhóm",
+        "value": 4
+       },
+       {
+        "label": "thừa mấy viên",
+        "value": 0
+       }
+      ]
+     },
+     "solutionNarrative": "Xếp được 4 nhóm, không thừa viên nào. Vậy 12 chia hết cho 3."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn 12 viên kẹo. Xếp thành từng nhóm 5 viên thì được mấy nhóm và thừa mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "được mấy nhóm",
+        "value": 2
+       },
+       {
+        "label": "thừa mấy viên",
+        "value": 2
+       }
+      ]
+     },
+     "solutionNarrative": "Xếp được 2 nhóm, thừa 2 viên. Vậy 12 không chia hết cho 5."
+    },
+    {
+     "id": "C3",
+     "text": "Trong phép chia 12 : 5 = 2 (dư 2), số nào là số chia và số dư bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số chia là",
+        "value": 5
+       },
+       {
+        "label": "số dư là",
+        "value": 2
+       }
+      ]
+     },
+     "solutionNarrative": "Số chia là 5 (số ta đem chia cho), số dư là 2 (phần còn thừa lại)."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Số 20 có chia hết cho 4 không? Số dư bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "20 có chia hết cho 4 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "số dư",
+        "value": 0
+       }
+      ]
+     },
+     "solutionNarrative": "20 : 4 = 5, không thừa gì. Số dư bằng 0 nên 20 CHIA HẾT cho 4."
+    },
+    {
+     "id": "C5",
+     "text": "Số 20 có chia hết cho 3 không? Số dư bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "20 có chia hết cho 3 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       },
+       {
+        "label": "số dư",
+        "value": 2
+       }
+      ]
+     },
+     "solutionNarrative": "20 : 3 = 6 (dư 2). Số dư là 2, khác 0, nên 20 KHÔNG chia hết cho 3."
+    },
+    {
+     "id": "C6",
+     "text": "Bạn Nam nói: \"Số 15 chia hết cho 4 vì 15 : 4 = 3 dư 3.\" Bạn nói đúng hay sai? Vì sao?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bạn Nam nói",
+        "options": [
+         "đúng",
+         "sai"
+        ],
+        "value": "sai"
+       },
+       {
+        "label": "số dư của 15 chia 4",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "SAI. Chia xong vẫn còn thừa 3, mà chia hết là chia xong không thừa gì. Số dư phải bằng 0 mới gọi là chia hết."
+    },
+    {
+     "id": "C7",
+     "text": "Trong phép chia 27 : 4, thương bằng bao nhiêu và số dư bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "thương",
+        "value": 6
+       },
+       {
+        "label": "số dư",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "27 : 4 = 6 (dư 3). Thương là 6, số dư là 3."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Có 18 quả cam. Chia đều vào các đĩa, mỗi đĩa 6 quả thì có thừa không? Còn mỗi đĩa 4 quả thì thừa mấy quả?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi đĩa 6 quả thì được mấy đĩa",
+        "value": 3
+       },
+       {
+        "label": "mỗi đĩa 4 quả thì thừa mấy quả",
+        "value": 2
+       }
+      ]
+     },
+     "solutionNarrative": "Mỗi đĩa 6 quả: 18 : 6 = 3 đĩa, không thừa — 18 chia hết cho 6. Mỗi đĩa 4 quả: 18 : 4 = 4 (dư 2), thừa 2 quả — 18 không chia hết cho 4."
+    },
+    {
+     "id": "C9",
+     "text": "Tìm một số vừa chia hết cho 2 vừa chia hết cho 3, và số đó bé hơn 10.",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "Số 6 (6 : 2 = 3 không thừa, 6 : 3 = 2 không thừa). Ngoài ra 0 cũng được, nhưng số thường lấy là 6."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Chia hết nghĩa là chia xong không còn thừa gì.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG — chia hết là số dư bằng 0."
+   },
+   {
+    "id": "Q2",
+    "text": "Số 12 chia hết cho 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — 12 : 5 = 2 dư 2, còn thừa 2 nên không chia hết."
+   },
+   {
+    "id": "Q3",
+    "text": "Trong phép chia 17 : 5 = 3 (dư 2), số 2 được gọi là:",
+    "format": "mcq",
+    "choices": [
+     "A. số dư",
+     "B. thương",
+     "C. số chia"
+    ],
+    "answerKey": {
+     "choice": "A. số dư"
+    },
+    "solutionNarrative": "Phần còn thừa lại sau khi chia gọi là số dư."
+   },
+   {
+    "id": "Q4",
+    "text": "Một số chia hết cho 4 khi số dư của phép chia đó bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 0",
+     "B. 1",
+     "C. 4"
+    ],
+    "answerKey": {
+     "choice": "A. 0"
+    },
+    "solutionNarrative": "Chia hết nghĩa là không thừa gì, tức số dư bằng 0."
+   },
+   {
+    "id": "Q5",
+    "text": "Số nào dưới đây CHIA HẾT cho 3?",
+    "format": "mcq",
+    "choices": [
+     "A. 12",
+     "B. 13",
+     "C. 14"
+    ],
+    "answerKey": {
+     "choice": "A. 12"
+    },
+    "solutionNarrative": "12 : 3 = 4, không thừa. Còn 13 và 14 đều còn dư."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Lấy đúng 12 hạt đậu ra bàn rồi bảo con chia đều cho 3 người, sau đó chia đều cho 5 người. Con sẽ tự thấy lần nào thừa lần nào không.",
+  "homeActivity": "Con nói \"chia được\" thay cho \"chia hết\" là chuyện thường. Bố mẹ chỉ cần hỏi lại một câu: \"Chia xong còn thừa hạt nào không?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Lớp 3 con đã làm phép chia có dư rồi. Nhưng hôm ấy con làm theo phép tính. Hôm nay mình dừng lại gọi đúng tên: chia hết nghĩa là gì, phần thừa gọi là gì, và trong một phép chia thì số nào tên là gì. Gọi đúng tên rồi thì tám bài sau chỉ còn là tám cách nhìn cho nhanh.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B06"
+  ],
+  "ten": [
+   "PHÉP CHIA CÓ DƯ CHÍNH DANH"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B50_giang.mp4"
+ }
+}

@@ -44,6 +44,8 @@ import json
 import sys
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+
 GOC = Path(__file__).resolve().parent.parent
 RA = GOC / 'data' / 'lop4'
 O_NHAP = GOC / 'data' / 'lop4_dapan_o.json'
@@ -58,72 +60,17 @@ LUI_GA = {'ve': ['DL:KSN3.B11'], 'ten': ['GA NÀY TÀU CÓ DỪNG KHÔNG?'],
           'canCu': 'sach', 'lopDuoi': 3}
 
 
-def muc(ten, dong, nhip='', hinh=None):
-    return {'ten': ten, 'dong': list(dong), 'hinh': list(hinh or []), 'nhip': nhip}
+# ── KHUÔN BÀI DÙNG CHUNG ──
+# Tách sang `khuon_bai_lop4.py` khi bắt đầu chương 3: hai chương cùng một khuôn,
+# giữ hai bản sao là sớm muộn lệch nhau mà không cổng nào bắt được.
+from khuon_bai_lop4 import (                                       # noqa: E402
+    muc, lt, q_tf, q_mcq, TEN_MUC, dung_muc, soi_bai,
+    bai as _bai,
+)
 
 
 def bai(so, ten, dang_goc, hat_mam, gan_duoi, m, cau):
-    return {
-        'id': f'DL:KSN4.B{so:02d}', 'quyen': 'KSN4', 'so': so,
-        # `ten` ở BẢN GỐC là tên trần, KHÔNG có tiền tố "Bài n ·" —
-        # `khuon_chung` tự ghép tiền tố khi dựng bản cho app. Bản đầu của
-        # tệp này ghép sẵn, nên bản dựng sẽ ra "Bài 13 · Bài 13 · DÃY SỐ…".
-        'ten': ten, 'chuong': CHUONG, 'tenChuong': TEN_CHUONG,
-        'dangGoc': dang_goc, 'hatMam': hat_mam, 'ganDuoi': gan_duoi,
-        'muc': m, 'cau': cau,
-    }
-
-
-def lt(so, mucsao, text, loi_chua, ghi_chu=''):
-    """Một câu luyện tập. `tuLuan: True` nghĩa là có lời giải chữ; ô nhập chấm máy
-    khai riêng ở `lop4_dapan_o.json` — xem `O_NHAP_MOI` cuối tệp."""
-    return {'id': f'C{so}', 'maSach': f'C{so}', 'so': so, 'muc': mucsao,
-            'phan': 'luyenTap', 'ghiChu': ghi_chu, 'text': text,
-            'loiChua': loi_chua, 'tuLuan': True}
-
-
-def q_tf(so, text, dung, loi_chua, ke=''):
-    return {'id': f'Q{so}', 'maSach': f'C{so}', 'so': so, 'muc': 1, 'phan': 'quiz',
-            'ghiChu': 'Đúng/Sai?', 'text': text, 'format': 'tf', 'tuLuan': False,
-            'answerKey': {'value': dung}, 'loiChua': loi_chua,
-            'solutionNarrative': ke or loi_chua}
-
-
-def q_mcq(so, text, chon, dung, loi_chua, ke=''):
-    return {'id': f'Q{so}', 'maSach': f'C{so}', 'so': so, 'muc': 1, 'phan': 'quiz',
-            'ghiChu': '', 'text': text, 'choices': chon, 'format': 'mcq',
-            'tuLuan': False, 'answerKey': {'choice': dung}, 'loiChua': loi_chua,
-            'solutionNarrative': ke or loi_chua}
-
-
-TEN_MUC = {
-    'mucTieu': 'MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:',
-    'dichMoHinh': 'PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư',
-    'khamPha': 'KHÁM PHÁ CÙNG SU KEM — vào không gian toán',
-    'lapSoi': 'LẮP VỀ CUỘC SỐNG & SOI',
-    'viDuMau': 'LỜI GIẢI MẪU TRÌNH BÀY VỞ',
-    # Không tên ai — bác chốt bỏ nhân vật 14-08. `khuon_chung` suy dòng dấu hiệu
-    # từ chính tiêu đề này, nên đổi ở đây là dòng ấy tự trống theo.
-    'suKemNham': 'CHỖ HAY NHẦM',
-    'luyenTap': 'LUYỆN TẬP 3 MỨC SAO',
-    'quiz': 'QUIZ — CON HIỂU BÀI CHƯA?',
-    'gocBoMe': 'GÓC BỐ MẸ',
-}
-
-
-def dung_muc(mo_bai_ten, mo_bai, muc_tieu, dich, kham, lap, vidu, nham, bome):
-    return {
-        'mucTieu': muc(TEN_MUC['mucTieu'], muc_tieu),
-        'chuyenMoBai': muc(f'CHUYỆN MỞ BÀI — {mo_bai_ten}', mo_bai),
-        'dichMoHinh': muc(TEN_MUC['dichMoHinh'], dich, 'NHỊP 1, DỊCH'),
-        'khamPha': muc(TEN_MUC['khamPha'], kham, 'NHỊP 2, GIẢI'),
-        'lapSoi': muc(TEN_MUC['lapSoi'], lap, 'NHỊP 3, LẮP + NHỊP 4, SOI'),
-        'viDuMau': muc(TEN_MUC['viDuMau'], vidu),
-        'suKemNham': muc(TEN_MUC['suKemNham'], nham),
-        'luyenTap': muc(TEN_MUC['luyenTap'], []),
-        'quiz': muc(TEN_MUC['quiz'], ['Khoanh vào đáp án đúng (mỗi câu 1 sao ★)']),
-        'gocBoMe': muc(TEN_MUC['gocBoMe'], bome),
-    }
+    return _bai(so, ten, dang_goc, hat_mam, gan_duoi, m, cau, CHUONG, TEN_CHUONG)
 
 
 # ═══════════════════════════════════════════════════════════════════════════
@@ -748,30 +695,10 @@ O_NHAP_MOI = {
 
 
 def soi():
-    """Tự soi trước khi ghi — mấy chỗ dưới đây đều là luật đã có cổng canh."""
-    loi = []
-    for b in MOI:
-        n = b['so']
-        lt_ = [c for c in b['cau'] if c['phan'] == 'luyenTap']
-        qz = [c for c in b['cau'] if c['phan'] == 'quiz']
-        if len(lt_) != 9:
-            loi.append(f'B{n}: {len(lt_)} câu luyện tập, phải đúng 9')
-        if len(qz) != 5:
-            loi.append(f'B{n}: {len(qz)} câu quiz, phải đúng 5')
-        if [c['muc'] for c in lt_] != [1, 1, 1, 2, 2, 2, 2, 3, 3]:
-            loi.append(f'B{n}: mức sao luyện tập không đúng 1,1,1,2,2,2,2,3,3')
-        for m in ('mucTieu', 'chuyenMoBai', 'dichMoHinh', 'khamPha', 'lapSoi',
-                  'viDuMau', 'suKemNham', 'luyenTap', 'quiz', 'gocBoMe'):
-            if m not in b['muc']:
-                loi.append(f'B{n}: thiếu mục {m}')
-        for c in lt_:
-            if f'{b["id"]}#{c["id"]}' not in O_NHAP_MOI:
-                loi.append(f'B{n}: câu {c["id"]} chưa có ô nhập chấm máy')
-        # đáp án bấm chọn phải nằm trong danh sách nút (luật 3)
-        for c in qz:
-            if c.get('format') == 'mcq' and c['answerKey']['choice'] not in c['choices']:
-                loi.append(f'B{n}: quiz {c["id"]} đáp án không có trong danh sách nút')
-    # Bài khái niệm KHÔNG được có công thức
+    """Tự soi trước khi ghi. Phần chung ở `khuon_bai_lop4.soi_bai`; dưới đây chỉ
+    còn luật riêng của chương này."""
+    loi = soi_bai(MOI, O_NHAP_MOI)
+    # Bài khái niệm KHÔNG được có công thức — luật riêng của cụm dãy số.
     kham = ' '.join(B13['muc']['khamPha']['dong'])
     if '(n − 1)' in kham or 'n − 1)' in kham:
         loi.append('B13 là bài KHÁI NIỆM, không được có công thức số hạng thứ n')

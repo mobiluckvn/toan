@@ -41,10 +41,13 @@ RA = GOC / 'web' / 'public' / 'content' / 'toan' / 'video'
 SO_AM = GOC / 'web' / 'public' / 'content' / 'toan' / 'lop4_am.json'
 LOI_CAN = GOC / 'data' / 'lop4_loi_video.json'
 
-# Năm bài dãy số làm trước — bác duyệt khuôn rồi mới nhân ra cả quyển.
-# Đợt 1 xong thì nới dải này. Bài nào chưa có kịch bản thì `kich_ban()` ném
-# lỗi ngay, không dựng ra video rỗng.
-BAI_MAC_DINH = [f'DL_KSN4_B{n:02d}' for n in range(13, 21)]
+# Danh sách bài mặc định SUY TỪ KỊCH BẢN ĐÃ VIẾT, không gõ tay một dải số.
+# Bản đầu gõ dải `range(13, 21)`. Rồi chương 3 viết thêm chín kịch bản mang mã
+# B50 tới B54 và bốn mã cũ — không mã nào nằm trong dải ấy, nên chạy `--tat-ca`
+# vẫn im lặng bỏ qua đúng chín bài vừa viết. Suy từ `BO` thì viết xong bài nào là
+# bài ấy vào danh sách, không phải nhớ nới dải.
+BAI_MAC_DINH = sorted(m.replace('DL:', 'DL_').replace('.', '_')
+                      for m in kich_ban_toan.BO)
 
 
 def ds_bai(a) -> list[str]:

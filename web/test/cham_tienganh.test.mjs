@@ -195,7 +195,21 @@ function diemDanh() {
 
    Đừng bao giờ sửa bốn con số này chỉ để "cho cổng xanh". Sửa thì phải kèm một đoạn
    như đoạn này, nói rõ lệch bao nhiêu và VÌ SAO. */
-const MOC = { tong: 2228, dungKhiDungDap: 2226, dungKhiSaiDap: 1, tuDoiChieu: 1 };
+/* ⚠ NIÊM PHONG LẠI 14-08 (lần hai) · 2228 → 2273. LẠI KHÔNG phải đổi bộ chấm.
+   Chương 3 lớp 4 tách bốn bài thành chín. Cổng này chỉ đếm câu LUYỆN TẬP (`practice
+   .pools`), không đếm quiz, nên số lệch tính ra đúng bằng:
+
+       trước  4 bài × 9 câu = 36
+       sau    9 bài × 9 câu = 81
+       lệch                 = 45      ·   2228 + 45 = 2273  ✓
+
+   Đã soát trước khi sửa con số:
+     · `git diff` trên `src/mon/toan/lib/` và `src/chung/` — KHÔNG một dòng nào đổi;
+     · `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. Đây mới là hai con số
+       đáng tin: chúng đếm câu chấm BẤT THƯỜNG, nên đổi cách chấm là chúng động đậy
+       ngay cả khi tổng vẫn khớp. Chúng đứng yên nghĩa là cách chấm y nguyên;
+     · 11 kỳ sát hạch vẫn 124 câu và 112 câu đề B — phần sát hạch không xê dịch. */
+const MOC = { tong: 2273, dungKhiDungDap: 2271, dungKhiSaiDap: 1, tuDoiChieu: 1 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

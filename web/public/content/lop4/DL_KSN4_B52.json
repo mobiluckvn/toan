@@ -1,0 +1,319 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B52",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 12 · CHIA HẾT CHO CẢ 2 VÀ CHO 5 — PHẦN CHUNG CỦA HAI DẤU HIỆU",
+ "durationMinutes": 10,
+ "so": 12,
+ "chuong": 3,
+ "tenChuong": "DẤU HIỆU CHIA HẾT",
+ "dangGoc": "Dạng gốc: SỐ 3.3 mức Lớp 4 — Số chia hết đồng thời cho 2 và cho 5, suy ra từ phần chung của hai danh sách chữ số tận cùng.",
+ "skills": {
+  "bktUnit": "CHUONG:3@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 12,
+  "prev": "DL:KSN4.B51",
+  "next": "DL:KSN4.B10"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tìm được phần chung của hai danh sách chữ số tận cùng. Nói được số chia hết cho cả 2 và cho 5 là số có tận cùng bằng 0. Hiểu vì sao chỉ còn đúng một chữ số thoả cả hai điều kiện.",
+  "kidText": "Có số chia hết cho 2, có số chia hết cho 5. Vậy số nào làm được cả hai cùng lúc hả con?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nói: \"Số 275 chia hết cho cả 2 và 5, vì nó chia hết cho 5 rồi mà lại còn to nữa.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Chia hết cho 5 thì đúng rồi. Nhưng chia hết cho 2 thì phải tận cùng là mấy? Gợi ý 2: Chữ số cuối của 275 là 5. Số 5 có chẵn không? Chữa: 275 tận cùng là 5, mà 5 là số lẻ nên KHÔNG chia hết cho 2. Phải thoả ĐỦ CẢ HAI điều kiện mới được, thoả một cái thì chưa đủ."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nói: \"Số 275 chia hết cho cả 2 và 5, vì nó chia hết cho 5 rồi mà lại còn to nữa.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Trong các số 270 ; 275 ; 264, số nào chia hết cho CẢ 2 và 5?",
+  "steps": [
+   {
+    "show": "Viết ra hai danh sách"
+   },
+   {
+    "show": "Chia hết cho 2 thì tận cùng là 0, 2, 4, 6, 8."
+   },
+   {
+    "show": "Chia hết cho 5 thì tận cùng là 0 hoặc 5."
+   },
+   {
+    "show": "Tìm phần chung"
+   },
+   {
+    "show": "Chữ số nào có mặt ở CẢ HAI danh sách? Chỉ có số 0."
+   },
+   {
+    "show": "Vậy số chia hết cho cả 2 và 5 phải có tận cùng bằng 0."
+   },
+   {
+    "show": "Xét từng số"
+   },
+   {
+    "show": "270 tận cùng là 0 — thoả cả hai. 275 tận cùng là 5 — chỉ chia hết cho 5. 264 tận cùng là 4 — chỉ chia hết cho 2."
+   },
+   {
+    "show": "Đáp số: chỉ có 270 chia hết cho cả 2 và cho 5."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Số 270 — số neo của chương. Nó có chia hết cho cả 2 và cho 5 không? Vì sao?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có chia hết cho cả hai không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "chữ số cuối",
+        "value": 0
+       }
+      ]
+     },
+     "solutionNarrative": "Tận cùng là 0. Chữ số 0 vừa chẵn (chia hết cho 2) vừa thuộc nhóm 0 hoặc 5 (chia hết cho 5), nên 270 chia hết cho CẢ HAI."
+    },
+    {
+     "id": "C2",
+     "text": "Số 275 có chia hết cho cả 2 và cho 5 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có chia hết cho cả hai không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Tận cùng là 5: chia hết cho 5 nhưng KHÔNG chia hết cho 2 (vì 5 lẻ). Vậy không thoả cả hai."
+    },
+    {
+     "id": "C3",
+     "text": "Một số chia hết cho cả 2 và cho 5 thì chữ số tận cùng của nó là mấy?",
+     "answerKey": {
+      "value": 0
+     },
+     "solutionNarrative": "Bằng 0 — đó là chữ số duy nhất có mặt trong cả hai danh sách."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Trong bốn số 130 ; 135 ; 142 ; 200, những số nào chia hết cho cả 2 và cho 5?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số thứ nhất",
+        "value": 130
+       },
+       {
+        "label": "số thứ hai",
+        "value": 200
+       }
+      ]
+     },
+     "solutionNarrative": "Số có tận cùng bằng 0: đó là 130 và 200."
+    },
+    {
+     "id": "C5",
+     "text": "Số 640 chia hết cho những số nào trong hai số 2 và 5?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chia hết cho 2 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "chia hết cho 5 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Tận cùng là 0 nên chia hết cho CẢ 2 và 5."
+    },
+    {
+     "id": "C6",
+     "text": "Vì sao trong hai danh sách chữ số tận cùng chỉ còn đúng một chữ số chung?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số chung duy nhất",
+        "value": 0
+       }
+      ]
+     },
+     "solutionNarrative": "Danh sách của 2 là 0, 2, 4, 6, 8; danh sách của 5 là 0 và 5. So hai danh sách thì chỉ có chữ số 0 có mặt ở cả hai."
+    },
+    {
+     "id": "C7",
+     "text": "Viết một số có ba chữ số chia hết cho cả 2 và cho 5, có chữ số hàng trăm là 8.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số con viết",
+        "value": 800
+       }
+      ]
+     },
+     "solutionNarrative": "Ví dụ 800, 810, 850 — miễn chữ số cuối bằng 0."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Từ ba chữ số 0 ; 3 ; 7 hãy viết một số có ba chữ số chia hết cho cả 2 và cho 5, dùng mỗi chữ số đúng một lần.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số phải đặt ở cuối",
+        "value": 0
+       },
+       {
+        "label": "một số viết được",
+        "value": 370
+       }
+      ]
+     },
+     "solutionNarrative": "Chữ số cuối phải là 0, nên đặt 0 ở cuối: được 370 hoặc 730."
+    },
+    {
+     "id": "C9",
+     "text": "Có bao nhiêu số có hai chữ số chia hết cho cả 2 và cho 5?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Các số tận cùng bằng 0 có hai chữ số: 10, 20, 30, 40, 50, 60, 70, 80, 90 — tất cả 9 số."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Số chia hết cho cả 2 và cho 5 thì có tận cùng bằng 0.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Số 135 chia hết cho cả 2 và cho 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — tận cùng là 5, lẻ, nên không chia hết cho 2."
+   },
+   {
+    "id": "Q3",
+    "text": "Số nào dưới đây chia hết cho CẢ 2 và 5?",
+    "format": "mcq",
+    "choices": [
+     "A. 490",
+     "B. 495",
+     "C. 494"
+    ],
+    "answerKey": {
+     "choice": "A. 490"
+    },
+    "solutionNarrative": "Chỉ 490 có tận cùng bằng 0."
+   },
+   {
+    "id": "Q4",
+    "text": "Chữ số nào có mặt trong cả hai danh sách tận cùng của 2 và của 5?",
+    "format": "mcq",
+    "choices": [
+     "A. 0",
+     "B. 5",
+     "C. 2"
+    ],
+    "answerKey": {
+     "choice": "A. 0"
+    },
+    "solutionNarrative": "Danh sách của 2 là 0, 2, 4, 6, 8; của 5 là 0 và 5."
+   },
+   {
+    "id": "Q5",
+    "text": "Một số tận cùng bằng 5 thì:",
+    "format": "mcq",
+    "choices": [
+     "A. chia hết cho 5 nhưng không chia hết cho 2",
+     "B. chia hết cho cả 2 và 5",
+     "C. không chia hết cho số nào trong hai số đó"
+    ],
+    "answerKey": {
+     "choice": "A. chia hết cho 5 nhưng không chia hết cho 2"
+    },
+    "solutionNarrative": "Chữ số 5 là số lẻ nên không chia hết cho 2."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Viết ra giấy hai hàng chữ số rồi bảo con khoanh chữ số nào có mặt ở cả hai hàng. Con tự tìm ra số 0 sẽ nhớ lâu hơn nghe kể.",
+  "homeActivity": "Đây là bài dạy cách nghĩ \"phần chung\", con sẽ gặp lại ở lớp trên. Bố mẹ nhấn giúp: thoả một điều kiện chưa đủ, phải thoả hết.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Con đã có hai dấu hiệu rồi: chia hết cho 2 thì tận cùng là 0, 2, 4, 6, 8; chia hết cho 5 thì tận cùng là 0 hoặc 5. Hôm nay con hỏi một câu mới: số nào thoả CẢ HAI cùng lúc? Cách trả lời câu này con sẽ còn dùng lại rất nhiều lần.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B06"
+  ],
+  "ten": [
+   "PHÉP CHIA CÓ DƯ CHÍNH DANH"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B52_giang.mp4"
+ }
+}

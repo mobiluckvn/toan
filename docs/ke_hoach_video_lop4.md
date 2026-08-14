@@ -117,7 +117,7 @@ chương dùng chung ví dụ và chung cách nói.
 | đợt | chương | bài | vì sao xếp trước |
 |---|---|---|---|
 | 1 | 4 · Dãy số | B18 · B19 · B20 | **nối tiếp cụm vừa xong**, dùng lại đúng ví dụ 5·10·15·20·25 |
-| 2 | 3 · Dấu hiệu chia hết | B09–B12 | B17 đã dùng phép chia hết, bé vừa gặp |
+| ~~2~~ | ~~3 · Dấu hiệu chia hết~~ | **XONG 14-08** | 4 bài → **9 bài**, xem §12 |
 | 3 | 5 · Trung bình cộng | B21–B23 | ba bài, một công thức, dễ ra khuôn |
 | 4 | 6 · Tổng - hiệu | B24–B27 | có sơ đồ đoạn thẳng — cần thêm một kiểu cảnh mới |
 | 5 | 7 · Tổng - tỉ, Hiệu - tỉ | B28–B31 | dùng lại kiểu cảnh của đợt 4 |
@@ -318,3 +318,76 @@ cảnh đều không biết mình đang dựng cho lớp nào. Lớp 2 và lớp
 
 Nhưng đừng bắt đầu trước khi lớp 4 xong: mỗi lần đổi khuôn là phải dựng lại toàn bộ
 video của những lớp đã làm.
+
+---
+
+## 12 · Đợt 2 đã làm — chương 3 tách 4 bài thành 9
+
+Bốn bài cũ đang gộp đôi ba việc vào một chỗ, và **không bài nào định nghĩa "chia hết
+là gì"** — đúng lỗi của cụm dãy số trước khi sửa.
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 9 | B50 *(mới)* | **chia hết là gì** · số dư · gọi tên bốn thành phần |
+| 10 | B09 | dấu hiệu chia hết cho 2 — **và vì sao chỉ nhìn chữ số cuối** |
+| 11 | B51 *(mới)* | dấu hiệu chia hết cho 5 — cùng lối chứng minh, cố ý lặp |
+| 12 | B52 *(mới)* | chia hết cho cả 2 và 5 — dạy cách nghĩ **phần chung** |
+| 13 | B10 | dấu hiệu chia hết cho 9 — **vì sao lại cộng các chữ số** |
+| 14 | B53 *(mới)* | dấu hiệu chia hết cho 3 — và quan hệ **một chiều** với 9 |
+| 15 | B11 | phép chia có dư — **vì sao số dư luôn nhỏ hơn số chia** |
+| 16 | B54 *(mới)* | bài toán thừa - thiếu — khi nào cộng thêm một |
+| 17 | B12 | chữ số tận cùng của một tích |
+
+**Một lối nghĩ chạy suốt bốn bài dấu hiệu:** *tách số ra phần chắc chắn chia hết và
+phần còn lại, rồi chỉ xét phần còn lại.* Lặp đúng lối ấy bốn lần thì bé nhận ra nó là
+một cách nghĩ, không phải bốn mẹo rời rạc. Bài cuối dùng lại nó lần thứ tư cho phép
+nhân.
+
+**Số neo `270`** chạy suốt bảy bài đầu — một mình nó thoả cả bốn dấu hiệu (tận cùng 0;
+tổng chữ số bằng 9).
+
+### Hai kiểu cảnh mới — luật 9
+
+| cảnh | việc | dùng ở |
+|---|---|---|
+| `nhom_deu` | xếp N vật thành nhóm k, **phần thừa tô đỏ** | chia hết · số dư · thừa-thiếu |
+| `tach_so` | một số tách ra từng chữ số, **tô sáng phần đang xét** | bốn dấu hiệu · tận cùng tích |
+
+`nhom_deu` là cảnh đáng giá nhất chương: nó trả lời "vì sao số dư luôn nhỏ hơn số
+chia" trong một giây — phần thừa nhìn thấy được là **không đủ xếp thêm một nhóm**.
+
+### Số đo
+
+9 video · 10,4 phút · 155 clip tiếng mới · 126 câu hỏi · quyển từ **49 lên 54 bài**.
+
+### Ba lỗi ở CHỖ NỐI mà đợt này làm lộ ra
+
+Cả ba đều là **một bên đúng, một bên đúng, chỗ nối sai** — và không bên nào tự biết.
+
+**1 · Video đọc sai số bài.** Kịch bản gõ cứng `'Bài 13'`. Chèn chín bài xong thì B13
+đứng thứ mười tám, video vẫn đọc số cũ. Video dựng ra bình thường, không cổng nào kêu
+vì chuỗi chữ nào cũng hợp lệ. Nay số ấy **đếm từ `thu_tu.json`**, cùng nguồn với màn
+hình, nên hai bên không lệch được nữa.
+
+**2 · `BO` khoá theo SỐ bài.** Chín kịch bản mới mang mã ngoài dải `range(13, 21)`,
+nên `--tat-ca` im lặng bỏ qua đúng chín bài vừa viết. Nay khoá theo **mã bài** và danh
+sách mặc định **suy từ `BO`**.
+
+**3 · Cổng ghép bài nguồn với bản dựng bằng SỐ bài.** Từ lối C hai bên cố ý khác số,
+nên nó ghép trượt toàn bộ và báo thiếu hình màn mở ở những bài vốn có video. Nay ghép
+bằng **mã bài**.
+
+### Và một bẫy cũ sập lại
+
+Chạy `day_so_lop4.py` lần hai **xoá sạch hình đã gắn ngay trong bản gốc** —
+`gan_hinh_lop4.py` ghi hình vào chính tệp nguồn. `chia_het_lop4.py` nay **giữ lại
+`hinh` đã có** trước khi ghi đè. Sáu hình cũ neo vào mở bài và bài giảng của B09–B12
+đã gỡ hẳn (cả `lop4_hinh.json`, `lop4_hinh_manifest.json` lẫn tệp ảnh) vì hai mục ấy
+nay rỗng — giữ lại là hình không bao giờ hiện.
+
+### Dấu niêm phong bộ chấm
+
+`cham_tienganh.test.mjs` niêm phong lại **2228 → 2273**. Đã soát trước khi sửa: `git
+diff` trên `src/mon/toan/lib/` trống trơn; `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên
+ở 1 và 1 (hai con số này đếm câu chấm **bất thường**, nên đổi cách chấm là chúng động
+đậy ngay cả khi tổng khớp); 11 kỳ sát hạch vẫn 124 câu. Lệch đúng bằng 9×9 − 4×9 = 45.

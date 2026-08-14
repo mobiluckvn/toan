@@ -1,0 +1,356 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B53",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 14 · DẤU HIỆU CHIA HẾT CHO 3 — VÀ KHÁC CHO 9 CHỖ NÀO",
+ "durationMinutes": 10,
+ "so": 14,
+ "chuong": 3,
+ "tenChuong": "DẤU HIỆU CHIA HẾT",
+ "dangGoc": "Dạng gốc: SỐ 3.5 mức Lớp 4 — Dấu hiệu chia hết cho 3, và quan hệ một chiều giữa chia hết cho 9 và chia hết cho 3.",
+ "skills": {
+  "bktUnit": "CHUONG:3@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 14,
+  "prev": "DL:KSN4.B10",
+  "next": "DL:KSN4.B11"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nói được dấu hiệu: tổng các chữ số chia hết cho 3 thì số đó chia hết cho 3. Giải thích được vì sao lối nghĩ của bài 9 dùng lại được cho 3. Biết số chia hết cho 9 thì chắc chắn chia hết cho 3, nhưng ngược lại thì không.",
+  "kidText": "Số 12 chia hết cho 3, nhưng lại không chia hết cho 9. Con xem vì sao hai điều đó khác nhau nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nói: \"Số 12 chia hết cho 3 rồi, nên nó cũng chia hết cho 9.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con cộng chữ số của 12 xem được mấy? Gợi ý 2: Được 3. Số 3 có chia hết cho 9 không? Chữa: 3 không chia hết cho 9, nên 12 KHÔNG chia hết cho 9. Chiều đúng là chiều ngược lại: chia hết cho 9 thì mới chắc chắn chia hết cho 3."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nói: \"Số 12 chia hết cho 3 rồi, nên nó cũng chia hết cho 9.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Số 270 có chia hết cho 3 không? Còn số 12 thì sao — nó có chia hết cho 3 không, có chia hết cho 9 không?",
+  "steps": [
+   {
+    "show": "Xét số 270"
+   },
+   {
+    "show": "Tổng các chữ số: 2 + 7 + 0 = 9. Số 9 chia hết cho 3, nên 270 chia hết cho 3."
+   },
+   {
+    "show": "Vì sao lại cộng chữ số như với số 9"
+   },
+   {
+    "show": "Vì 270 tách được thành 2 × 99 + 7 × 9 rồi cộng 2 + 7 + 0. Mà 9 và 99 đều chia hết cho 3, nên phần trước không làm thừa, chỉ tổng chữ số quyết định."
+   },
+   {
+    "show": "Xét số 12"
+   },
+   {
+    "show": "Tổng chữ số là 1 + 2 = 3. Số 3 chia hết cho 3, nên 12 chia hết cho 3."
+   },
+   {
+    "show": "Nhưng 3 KHÔNG chia hết cho 9, nên 12 KHÔNG chia hết cho 9."
+   },
+   {
+    "show": "Rút ra quan hệ một chiều"
+   },
+   {
+    "show": "Số chia hết cho 9 thì chắc chắn chia hết cho 3, vì 9 đã chia hết cho 3. Nhưng chia hết cho 3 thì chưa chắc chia hết cho 9 — số 12 là ví dụ."
+   },
+   {
+    "show": "Đáp số: 270 chia hết cho cả 3 và 9; còn 12 chỉ chia hết cho 3."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Số 270 — số neo của chương. Tổng các chữ số bằng bao nhiêu và 270 có chia hết cho 3 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng các chữ số",
+        "value": 9
+       },
+       {
+        "label": "có chia hết cho 3 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "2 + 7 + 0 = 9. Số 9 chia hết cho 3, nên 270 CHIA HẾT cho 3."
+    },
+    {
+     "id": "C2",
+     "text": "Số 12 có chia hết cho 3 không? Có chia hết cho 9 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chia hết cho 3 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "chia hết cho 9 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "1 + 2 = 3. Số 3 chia hết cho 3 nên 12 chia hết cho 3; nhưng 3 không chia hết cho 9 nên 12 KHÔNG chia hết cho 9."
+    },
+    {
+     "id": "C3",
+     "text": "Số 25 có chia hết cho 3 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng các chữ số",
+        "value": 7
+       },
+       {
+        "label": "có chia hết cho 3 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "2 + 5 = 7, mà 7 không chia hết cho 3, nên 25 KHÔNG chia hết cho 3."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Trong ba số 123 ; 145 ; 306, những số nào chia hết cho 3?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số thứ nhất",
+        "value": 123
+       },
+       {
+        "label": "số thứ hai",
+        "value": 306
+       }
+      ]
+     },
+     "solutionNarrative": "Cộng chữ số: 123 được 6 (chia hết cho 3), 145 được 10 (không), 306 được 9 (chia hết cho 3). Vậy 123 và 306."
+    },
+    {
+     "id": "C5",
+     "text": "Số 45 chia hết cho 3, có chia hết cho 9 không? Còn số 15 thì sao?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "45 chia hết cho 9 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "15 chia hết cho 9 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "45 có tổng chữ số 9, chia hết cho 9 nên 45 chia hết cho cả 3 và 9. 15 có tổng chữ số 6, chia hết cho 3 nhưng không chia hết cho 9."
+    },
+    {
+     "id": "C6",
+     "text": "Vì sao số chia hết cho 9 thì chắc chắn chia hết cho 3?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "vì 9 bằng 3 nhân",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Vì 9 = 3 × 3, tức 9 đã chia hết cho 3. Cái gì chia được thành các nhóm 9 thì mỗi nhóm 9 lại tách được thành 3 nhóm 3, nên vẫn chia hết cho 3."
+    },
+    {
+     "id": "C7",
+     "text": "Tìm chữ số thích hợp điền vào ô trống để số 2 ô 4 chia hết cho 3.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số nhỏ nhất điền được",
+        "value": 0
+       },
+       {
+        "label": "một số viết được",
+        "value": 234
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng là 2 + ô + 4 = 6 + ô. Muốn chia hết cho 3 thì ô = 0, 3, 6 hoặc 9. Vậy được 204, 234, 264 hoặc 294."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tìm một số có hai chữ số vừa chia hết cho 3 vừa chia hết cho 5.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số con tìm được",
+        "value": 15
+       }
+      ]
+     },
+     "solutionNarrative": "Chia hết cho 5 thì tận cùng 0 hoặc 5; chia hết cho 3 thì tổng chữ số chia hết cho 3. Ví dụ 15 (tổng 6) hoặc 30 (tổng 3)."
+    },
+    {
+     "id": "C9",
+     "text": "Số 348 chia hết cho 3 hay cho 9, hay cho cả hai? Giải thích.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng các chữ số",
+        "value": 15
+       },
+       {
+        "label": "chia hết cho 9 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "3 + 4 + 8 = 15. Số 15 chia hết cho 3 nhưng không chia hết cho 9. Vậy 348 chia hết cho 3 và KHÔNG chia hết cho 9."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Số có tổng các chữ số chia hết cho 3 thì chia hết cho 3.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Số nào chia hết cho 3 thì cũng chia hết cho 9.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — số 12 chia hết cho 3 nhưng không chia hết cho 9."
+   },
+   {
+    "id": "Q3",
+    "text": "Số nào dưới đây chia hết cho 3 nhưng KHÔNG chia hết cho 9?",
+    "format": "mcq",
+    "choices": [
+     "A. 12",
+     "B. 18",
+     "C. 27"
+    ],
+    "answerKey": {
+     "choice": "A. 12"
+    },
+    "solutionNarrative": "Tổng chữ số của 12 là 3: chia hết cho 3, không chia hết cho 9."
+   },
+   {
+    "id": "Q4",
+    "text": "Tổng các chữ số của 123 bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 6",
+     "B. 5",
+     "C. 123"
+    ],
+    "answerKey": {
+     "choice": "A. 6"
+    },
+    "solutionNarrative": "1 + 2 + 3 = 6."
+   },
+   {
+    "id": "Q5",
+    "text": "Số chia hết cho 9 thì:",
+    "format": "mcq",
+    "choices": [
+     "A. chắc chắn chia hết cho 3",
+     "B. chắc chắn chia hết cho 2",
+     "C. chắc chắn chia hết cho 5"
+    ],
+    "answerKey": {
+     "choice": "A. chắc chắn chia hết cho 3"
+    },
+    "solutionNarrative": "Vì 9 = 3 × 3, tức 9 đã chia hết cho 3."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hỏi con hai câu liền nhau về cùng một số: \"chia hết cho 3 không?\" rồi \"chia hết cho 9 không?\" Con sẽ tự thấy hai câu không phải lúc nào cũng cùng đáp án.",
+  "homeActivity": "Chỗ nhầm phổ biến nhất là gộp hai dấu hiệu làm một. Bố mẹ nhấn giúp: 9 chia hết cho 3, nên đi từ 9 sang 3 thì được; đi ngược lại thì không.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài trước con đã hiểu vì sao xét số 9 thì phải cộng các chữ số. Hôm nay con thử đúng lối ấy với số 3 — và sẽ thấy nó lại đúng, vì 9 với 99 cũng chia hết cho 3. Rồi con học một chỗ rất hay nhầm: hai dấu hiệu giống nhau nhưng KHÔNG thay được cho nhau.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B06"
+  ],
+  "ten": [
+   "PHÉP CHIA CÓ DƯ CHÍNH DANH"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B53_giang.mp4"
+ }
+}

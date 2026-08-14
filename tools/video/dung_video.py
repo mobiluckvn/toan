@@ -281,6 +281,78 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuPhu"):
             giua(d, 440, c["chuPhu"], phong(38), INK, rong=W - 200)
 
+    elif L == "nhom_deu":
+        # ══ CHIA HẾT, NHÌN THẤY ĐƯỢC ══
+        # Luật 9 bác ra ở đợt 2: chỗ nào khó hiểu thì vẽ ra. "Chia hết" là chỗ khó
+        # nhất của cả chương, vì nói bằng lời thì nó chỉ là một câu trừu tượng —
+        # còn xếp 12 viên kẹo thành 4 nhóm 3 viên, không thừa viên nào, thì bé THẤY.
+        #
+        # Cảnh này vẽ `tong` viên thành từng nhóm `moiNhom` viên. Viên nào không đủ
+        # xếp thành nhóm thì đứng riêng, tô đỏ — đó chính là SỐ DƯ, và bé thấy ngay
+        # vì sao dư luôn phải nhỏ hơn số chia: đủ một nhóm nữa thì nó đã vào nhóm rồi.
+        giua(d, 50, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        tong, moi_nhom = c.get("tong", 0), c.get("moiNhom", 1)
+        so_nhom, du = divmod(tong, moi_nhom)
+        r, cach_v = 21, 52                      # bán kính viên, khoảng cách tâm
+        cot = min(moi_nhom, 3)                  # mỗi nhóm xếp tối đa 3 viên một hàng
+        hang = -(-moi_nhom // cot)
+        w_nhom = cot * cach_v + 34
+        h_nhom = hang * cach_v + 34
+        khung = [(w_nhom, h_nhom, moi_nhom)] * so_nhom
+        if du:
+            khung.append((min(du, 3) * cach_v + 34, cach_v + 34, du))
+        tong_w = sum(k[0] for k in khung) + 22 * (len(khung) - 1)
+        x = (W - tong_w) // 2
+        # Đặt khối ô CÂN GIỮA phần dưới tiêu đề, chừa chỗ cho hai dòng chữ.
+        # Bản đầu ghim y0 = 190 nên khung cao 720 bỏ trống hẳn một phần ba dưới.
+        y0 = max(150, (H - h_nhom - 150) // 2)
+        for k, (wn, hn, sl) in enumerate(khung):
+            le = du and k == len(khung) - 1     # ô cuối là phần thừa
+            the(d, x, y0, wn, hn, nen="#FFF0EE" if le else TEAL_PALE,
+                vien=ALERT if le else TEAL, day=4, bo=18)
+            for i in range(sl):
+                cx = x + 17 + (i % cot) * cach_v + r + 4
+                cy = y0 + 17 + (i // cot) * cach_v + r + 4
+                d.ellipse([cx - r, cy - r, cx + r, cy + r],
+                          fill=ALERT if le else TEAL_DARK,
+                          outline=ALERT if le else TEAL_DARK)
+            x += wn + 22
+        nhan = c.get("chuPhu") or (
+            f"{tong} chia {moi_nhom} được {so_nhom} nhóm, thừa {du}" if du
+            else f"{tong} chia {moi_nhom} được {so_nhom} nhóm, không thừa")
+        giua(d, y0 + h_nhom + 46, nhan, phong(38), ALERT if du else TEAL_DARK,
+             rong=W - 160)
+        if c.get("chuCuoi"):
+            giua(d, y0 + h_nhom + 118, c["chuCuoi"], phong(34), INK, rong=W - 200)
+
+    elif L == "tach_so":
+        # ══ MỘT SỐ, TÁCH RA TỪNG CHỮ SỐ ══
+        # Bốn dấu hiệu chia hết đều chỉ nhìn vào MỘT PHẦN của con số: cho 2 và cho 5
+        # thì nhìn chữ số cuối, cho 3 và cho 9 thì cộng hết các chữ số lại. Bé phải
+        # thấy được "phần đang nhìn" tách khỏi phần còn lại, nếu không thì bốn dấu
+        # hiệu trộn vào nhau thành một mớ.
+        giua(d, 50, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        chu_so = [x for x in str(c.get("so", ""))]
+        sang = set(c.get("sang", []))           # chỉ số 1-based của chữ số tô sáng
+        rong_o, cach = 108, 18
+        tong_w = len(chu_so) * rong_o + (len(chu_so) - 1) * cach
+        # Cân giữa như `nhom_deu`; chừa chỗ dưới cho dòng phép và dòng phụ.
+        cao_chu = 168 + (82 if c.get('phep') and c.get('chuPhu') else 0)
+        x0, y = (W - tong_w) // 2, max(150, (H - 118 - cao_chu) // 2)
+        for i, ch in enumerate(chu_so):
+            x = x0 + i * (rong_o + cach)
+            hi = (i + 1) in sang
+            the(d, x, y, rong_o, 118, nen=GOLD_PALE if hi else "#FFFFFF",
+                vien=GOLD if hi else LINE, day=6 if hi else 3, bo=18)
+            f = phong(66)
+            d.text((x + (rong_o - d.textlength(ch, font=f)) / 2, y + 20), ch,
+                   font=f, fill=GOLD_DARK if hi else NAVY)
+        if c.get("phep"):
+            giua(d, y + 168, c["phep"], phong(42), TEAL_DARK, rong=W - 180)
+        if c.get("chuPhu"):
+            giua(d, y + (250 if c.get("phep") else 172), c["chuPhu"], phong(36),
+                 INK, rong=W - 200)
+
     elif L == "y_toan":
         # MỘT Ý MỘT MÀN. Số thứ tự để bé biết đang ở bước mấy trên mấy.
         n, tong = c.get("buoc", 1), c.get("soBuoc", 1)

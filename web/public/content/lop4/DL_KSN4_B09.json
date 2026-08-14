@@ -2,56 +2,39 @@
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN4.B09",
  "grade": 4,
- "quyen": "lop4",
- "title": "Bài 9 · DẤU HIỆU CHIA HẾT CHO 2 VÀ CHO 5",
+ "quyen": "KSN4",
+ "title": "Bài 10 · DẤU HIỆU CHIA HẾT CHO 2 — VÌ SAO CHỈ NHÌN CHỮ SỐ CUỐI",
  "durationMinutes": 10,
- "so": 9,
+ "so": 10,
  "chuong": 3,
  "tenChuong": "DẤU HIỆU CHIA HẾT",
- "dangGoc": "SỐ 6.1 mức Lớp 4 (case 2, 5) + SỐ 3.1 mức Lớp 4 — Dấu hiệu chia hết cho 2, 5 · lập số chẵn - lẻ từ bộ thẻ",
+ "dangGoc": "Dạng gốc: SỐ 3.1 mức Lớp 4 — Dấu hiệu chia hết cho 2, kèm chứng minh bằng cách tách số thành phần tròn chục và chữ số đơn vị.",
  "skills": {
   "bktUnit": "CHUONG:3@G4",
   "primary": []
  },
  "series": {
-  "order": 9,
-  "prev": "DL:KSN4.B08",
-  "next": "DL:KSN4.B10"
+  "order": 10,
+  "prev": "DL:KSN4.B50",
+  "next": "DL:KSN4.B51"
  },
  "objective": {
   "id": "O1",
-  "text": "Thuộc và GIẢI THÍCH được dấu hiệu: chia hết cho 2 (đuôi 0, 2, 4, 6, 8), cho 5 (đuôi 0 hoặc 5), cho cả 2 và 5 (đuôi 0). Lập số chẵn / lẻ / chia hết cho 5 từ bộ thẻ chữ số — phân biệt rõ trường hợp được lặp và không lặp. Kết hợp dấu hiệu với công thức đếm của Chương 2 để ĐẾM các số chia hết trong một khoảng.",
-  "kidText": "Đoàn 234 em xếp hàng 2 rồi hàng 5. Kiểu nào vừa khít, kiểu nào thừa người?",
+  "text": "Nói được số chia hết cho 2 là số chẵn, tận cùng là 0, 2, 4, 6 hoặc 8. Giải thích được vì sao chỉ cần nhìn chữ số cuối. Nhìn một số bất kỳ và nói ngay nó có chia hết cho 2 không.",
+  "kidText": "Cô viết số 24 lên bảng và chỉ nhìn đúng một chữ số cuối là biết nó chia hết cho 2. Con xem cô làm thế nào nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — VÌ SAO CHỈ CẦN NHÌN ĐUÔI: 234 = 230 + 4. Phần 230 là các \"chục tròn\" — chục nào cũng chia đều cho 2 và cho 5 (10 = 2 × 5). Vậy chia 234 cho 2 hay cho 5, phần 230 luôn êm đẹp; số dư nằm trọn ở anh chàng 4 đứng cuối. Dấu hiệu ra đời từ chính cấu tạo số!"
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — ĐỌC DẤU HIỆU CHO ĐOÀN DIỄU HÀNH: hàng 2: đuôi 4 là chữ số chẵn → 234 chia hết cho 2 → xếp hàng đôi VỪA KHÍT (117 cặp). Hàng 5: đuôi phải là 0 hoặc 5 mới vừa; đuôi 4 → dư đúng 4 em (234 = 5 × 46 + 4). Chia hết cả 2 lẫn 5? Chỉ dành cho số đuôi 0 — vừa chẵn vừa \"họ nhà 5\"."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — LẬP SỐ THEO DẤU HIỆU (chọn đuôi trước!): từ ba tấm thẻ 0, 2, 5 lập các số có ba chữ số khác nhau chia hết cho 5: đuôi phải là 0 hoặc 5. Đuôi 0: còn thẻ 2, 5 cho hai vị trí đầu → 250, 520. Đuôi 5: còn thẻ 0, 2, nhưng 0 không được đứng đầu → chỉ 205. Cả thảy ba số: 205, 250, 520. Quy trình vàng: chốt ĐUÔI trước, xếp phần còn lại sau — và luôn canh chừng số 0 đòi đứng đầu hàng!"
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — ĐẾM SỐ CHIA HẾT (bắt tay Chương 2): từ 100 đến 200 có bao nhiêu số chia hết cho cả 2 và 5? Đó là các số tròn chục 100, 110, ..., 200 — dãy cách đều 10 → (200 − 100) : 10 + 1 = 11 số. Dấu hiệu chọn ra DÃY, công thức đếm lo phần còn lại: hai chương bắt tay nhau ngọt lịm."
-   }
-  ],
-  "mantra": "Họ nhà ĐUÔI SỐ: chia hết cho 2 — đuôi chẵn; chia hết cho 5 — đuôi 0 hoặc 5; chia hết cả hai — đuôi 0. Lập số theo điều kiện chia hết: CHỐT ĐUÔI TRƯỚC, và nhớ số 0 không được đứng đầu. Muốn đếm số chia hết trong khoảng: tìm số đầu - số cuối của dãy rồi dùng công thức đếm.",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Bác tổ trưởng hỏi thêm về đoàn 125 em. Trí Long liếc phát: \"Đuôi 5 — chia hết cho 5, mà 5 cũng lẻ... à mà 125 có chữ số 2 ở giữa nên nó CHẴN, xếp hàng đôi vừa luôn bác ơi!\"",
-    "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Dấu hiệu chẵn - lẻ nằm ở chữ số nào của con số — chữ số ĐỨNG GIỮA hay chữ số TẬN CÙNG? Số 125 tận cùng bằng mấy? Gợi ý 2: Lấy 125 chia 2 xem dư bao nhiêu, rồi phát biểu lại giúp Trí Long: một số là chẵn khi nào? Và cho bác tổ trưởng lời khuyên: đoàn 125 em nên xếp hàng 2 hay hàng 5?"
+    "wrong": "Có bạn nhìn số 132 rồi nói: \"Số này có chữ số 3 là số lẻ, nên 132 không chia hết cho 2.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con xem lại xem dấu hiệu bảo nhìn chữ số nào? Gợi ý 2: Chỉ nhìn chữ số CUỐI CÙNG thôi. Chữ số cuối của 132 là số mấy? Chữ: chữ số cuối là 2, mà 2 chia hết cho 2, nên 132 CHIA HẾT cho 2. Các chữ số đứng trước nằm ở phần tròn chục, phần ấy đã chia hết cho 2 sẵn rồi."
    }
   ]
  },
@@ -59,123 +42,45 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Đoàn 234 em; hai kiểu xếp: hàng 2 và hàng 5. Hỏi mỗi kiểu xếp có vừa khít không (chia hết hay có dư); nếu dư thì dư mấy em?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "CHO GÌ? đoàn 234 em; hai kiểu xếp: hàng 2 và hàng 5.\nHỎI GÌ? mỗi kiểu xếp có vừa khít không (chia hết hay có dư); nếu dư thì dư mấy em.\nĐẠI LƯỢNG & ĐƠN VỊ: số em (em) — \"vừa khít\" nghĩa là phép chia có dư 0.\nQUAN HỆ GIỮA CHÚNG: tách số theo cấu tạo: 234 = 23 chục + 4 đơn vị; mọi \"chục\" đều chia đều được cho 2 và cho 5 — nên số dư chỉ do CHỮ SỐ TẬN CÙNG quyết định!\nCHỌN CÔNG CỤ: DẤU HIỆU ĐUÔI SỐ: lập bảng dấu hiệu cho 2 và cho 5, soi đuôi thay vì chia.\nƯỚC LƯỢNG TRƯỚC: đuôi 4 là số chẵn — hàng 2 chắc vừa; 4 không phải 0 hay 5 — hàng 5 e là dư.",
-    "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ đội hình diễu hành sang chữ số tận cùng"
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S6",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S7",
-    "kind": "explain",
-    "narration": "LẮP: báo cáo gửi bác tổ trưởng: \"234 em xếp hàng đôi vừa khít 117 cặp qua cổng chào; nhưng chuyển hàng 5 sẽ dư 4 em. Ta chốt: mời thêm 1 em cầm cờ dẫn đoàn — 235 em xếp hàng 5 tròn 47 hàng!\" Một em bé, cả đội hình vuông vức.\nSOI: soi bằng phép chia thật: 234 : 2 = 117 (dư 0) ✓; 234 : 5 = 46 dư 4 ✓ — dấu hiệu đuôi số nói đúng từng chi tiết, khỏi chia mà biết trước.\nDÙNG NGOÀI ĐỜI: chia kẹo cho nhóm bạn, chia tổ trực nhật, bày cỗ Trung thu — liếc đuôi số một giây là biết \"chia có đẹp không\", kỹ năng dùng quanh năm.",
-    "teaches": [],
-    "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
-   },
-   {
-    "id": "S8",
     "kind": "trap",
-    "narration": "Bác tổ trưởng hỏi thêm về đoàn 125 em. Trí Long liếc phát: \"Đuôi 5 — chia hết cho 5, mà 5 cũng lẻ... à mà 125 có chữ số 2 ở giữa nên nó CHẴN, xếp hàng đôi vừa luôn bác ơi!\"",
+    "narration": "Có bạn nhìn số 132 rồi nói: \"Số này có chữ số 3 là số lẻ, nên 132 không chia hết cho 2.\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Từ ba tấm thẻ số 0 ; 2 ; 5, hãy lập tất cả các số có ba chữ số khác nhau chia hết cho 5.",
+  "problem": "Số 24 có chia hết cho 2 không? Vì sao chỉ cần nhìn chữ số cuối?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Tách số ra hai phần"
    },
    {
-    "show": "Thẻ: 0, 2, 5 — mỗi thẻ dùng một lần."
+    "show": "24 = 20 + 4. Phần tròn chục là 20, chữ số cuối là 4."
    },
    {
-    "show": "Lập các số có 3 chữ số chia hết cho 5."
+    "show": "Xét phần tròn chục"
    },
    {
-    "show": "Ghi rõ \"mỗi thẻ dùng một lần\" — điều kiện KHÔNG LẶP của đề."
+    "show": "20 = 2 × 10, mà 10 = 2 × 5, nên 20 luôn chia hết cho 2."
    },
    {
-    "show": "Mô hình (chốt đuôi trước)"
+    "show": "Mọi số tròn chục đều như vậy, nên phần này KHÔNG BAO GIỜ làm thừa."
    },
    {
-    "show": "Số chia hết cho 5 → chữ số tận cùng là 0 hoặc 5."
+    "show": "Vậy chỉ còn chữ số cuối quyết định"
    },
    {
-    "show": "Xét hai trường hợp theo đuôi."
+    "show": "Chữ số cuối là 4, mà 4 chia hết cho 2, nên 24 chia hết cho 2."
    },
    {
-    "show": "Dấu hiệu chia hết biến bài lập số thành hai nhánh gọn gàng."
+    "show": "Thử với số neo của chương"
    },
    {
-    "show": "Bài giải"
+    "show": "270 có chữ số cuối là 0, mà 0 chia hết cho 2, nên 270 chia hết cho 2."
    },
    {
-    "show": "Trường hợp đuôi là 0: hai thẻ 2 và 5 xếp vào hai vị trí đầu"
-   },
-   {
-    "show": "Được các số: 250 ; 520."
-   },
-   {
-    "show": "Trường hợp đuôi là 5: còn thẻ 0 và 2; chữ số 0 không được đứng đầu"
-   },
-   {
-    "show": "Nên chỉ được số: 205."
-   },
-   {
-    "show": "Vậy lập được ba số: 205 ; 250 ; 520."
-   },
-   {
-    "show": "Câu \"chữ số 0 không được đứng đầu\" là chốt lập luận — thiếu nó sẽ đếm thừa số 025."
-   },
-   {
-    "show": "Đáp số: 205 ; 250 ; 520."
-   },
-   {
-    "show": "Liệt kê đáp số cách nhau dấu chấm phẩy."
-   },
-   {
-    "show": "Thử lại: 205 : 5 = 41 ✓ ; 250 : 5 = 50 ✓ ; 520 : 5 = 104 ✓"
-   },
-   {
-    "show": "Thử ĐỦ cả ba số — bài liệt kê phải soi từng phần tử."
+    "show": "Đáp số: 24 chia hết cho 2. Chỉ cần nhìn chữ số cuối, vì phần tròn chục luôn chia hết cho 2 rồi."
    }
   ]
  },
@@ -184,20 +89,24 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Trong các số 34 ; 45 ; 70 ; 86 ; 91: số nào chia hết cho 2? Số nào chia hết cho 5?",
+     "text": "Số 24 — đúng số trong video. Chữ số cuối của nó là mấy, và 24 có chia hết cho 2 không?",
      "answerKey": {
       "parts": [
        {
-        "label": "số nào chia hết cho 2",
-        "value": "34, 70, 86"
+        "label": "chữ số cuối",
+        "value": 4
        },
        {
-        "label": "Số nào chia hết cho 5",
-        "value": "45, 70"
+        "label": "có chia hết cho 2 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
        }
       ]
      },
-     "solutionNarrative": "Chia hết cho 2: 34, 70, 86 (đuôi chẵn); chia hết cho 5: 45, 70 (đuôi 5 hoặc 0).",
+     "solutionNarrative": "Chữ số cuối là 4. Số 4 chia hết cho 2, nên 24 CHIA HẾT cho 2.",
      "hints": [
       "Họ nhà ĐUÔI — chỉ nhìn chữ số cuối.",
       "Đuôi chẵn thì chia hết cho 2; đuôi 0 hay 5 thì chia hết cho 5."
@@ -205,16 +114,20 @@
     },
     {
      "id": "C2",
-     "text": "Số chia hết cho cả 2 và 5 có chữ số tận cùng là gì? Kể ba số như vậy nằm giữa 100 và 150.",
+     "text": "Số 25 có chia hết cho 2 không? Vì sao?",
      "answerKey": {
       "parts": [
        {
-        "label": "chữ số tận cùng",
-        "value": 0
+        "label": "có chia hết cho 2 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
        }
       ]
      },
-     "solutionNarrative": "Tận cùng là 0; ví dụ ba số: 110, 120, 130 (các số tròn chục từ 100 đến 150 đều được).",
+     "solutionNarrative": "Chữ số cuối là 5, mà 5 không chia hết cho 2, nên 25 KHÔNG chia hết cho 2.",
      "hints": [
       "Đuôi phải vừa chẵn vừa thuộc nhóm của 5.",
       "Chỉ có đúng một chữ số thỏa được cả hai."
@@ -222,24 +135,20 @@
     },
     {
      "id": "C3",
-     "text": "Không thực hiện phép chia, cho biết 234 em xếp hàng 2 có vừa khít không? Xếp hàng 5 thì dư mấy em?",
+     "text": "Số 270 có chia hết cho 2 không?",
      "answerKey": {
       "parts": [
        {
-        "label": "xếp hàng 2",
+        "label": "có chia hết cho 2 không",
         "options": [
-         "vừa khít",
-         "không vừa khít"
+         "có",
+         "không"
         ],
-        "value": "vừa khít"
-       },
-       {
-        "label": "xếp hàng 5 dư mấy em",
-        "value": 4
+        "value": "có"
        }
       ]
      },
-     "solutionNarrative": "Đuôi 4 chẵn → hàng 2 vừa khít (117 cặp); đuôi 4 không phải 0 hay 5 → hàng 5 dư 4 em (234 = 5 × 46 + 4).",
+     "solutionNarrative": "Chữ số cuối là 0, mà 0 chia hết cho 2, nên 270 CHIA HẾT cho 2.",
      "hints": [
       "Nhìn đuôi là biết, khỏi phải chia.",
       "Đuôi ấy cách bội của 5 gần nhất bao nhiêu?"
@@ -249,16 +158,20 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Từ ba tấm thẻ 0 ; 2 ; 5, lập tất cả các số có ba chữ số khác nhau chia hết cho 5.",
+     "text": "Trong ba số 132 ; 145 ; 208, những số nào chia hết cho 2?",
      "answerKey": {
-      "ordered": false,
-      "values": [
-       205,
-       250,
-       520
+      "parts": [
+       {
+        "label": "số thứ nhất",
+        "value": 132
+       },
+       {
+        "label": "số thứ hai",
+        "value": 208
+       }
       ]
      },
-     "solutionNarrative": "Đuôi 0: 250, 520; đuôi 5 (số 0 không đứng đầu): 205 — ba số: 205, 250, 520.",
+     "solutionNarrative": "Nhìn chữ số cuối: 132 cuối là 2 (chia hết), 145 cuối là 5 (không), 208 cuối là 8 (chia hết). Vậy 132 và 208 chia hết cho 2.",
      "hints": [
       "CHỐT ĐUÔI TRƯỚC rồi mới xếp phần đầu.",
       "Nhớ chữ số 0 không được đứng đầu."
@@ -266,16 +179,28 @@
     },
     {
      "id": "C5",
-     "text": "Từ bốn tấm thẻ 5 ; 0 ; 2 ; 7, hãy lập số CHẴN lớn nhất có ba chữ số khác nhau.",
+     "text": "Bạn Lan nói: \"Số 137 có chữ số 3 đứng giữa nên chia hết cho 2.\" Bạn nói đúng hay sai? Số 137 có chia hết cho 2 không?",
      "answerKey": {
       "parts": [
        {
-        "label": "số chẵn lớn nhất",
-        "value": 752
+        "label": "bạn Lan nói",
+        "options": [
+         "đúng",
+         "sai"
+        ],
+        "value": "sai"
+       },
+       {
+        "label": "137 có chia hết cho 2 không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
        }
       ]
      },
-     "solutionNarrative": "Số chẵn → đuôi 0 hoặc 2; muốn lớn nhất chọn đuôi 2 để dành 7 và 5 cho hàng trăm - chục: 752.",
+     "solutionNarrative": "SAI. Chỉ nhìn chữ số CUỐI. Chữ số cuối của 137 là 7, không chia hết cho 2, nên 137 KHÔNG chia hết cho 2.",
      "hints": [
       "Chốt đuôi trước: đuôi phải là chữ số chẵn.",
       "Chọn đuôi nào để dành hai thẻ to nhất cho phía trước?"
@@ -283,34 +208,16 @@
     },
     {
      "id": "C6",
-     "text": "Tìm chữ số x để số 47x: a) chia hết cho 5; b) chia hết cho 2; c) chia hết cho cả 2 và 5.",
+     "text": "Vì sao khi xét chia hết cho 2 ta không cần quan tâm tới các chữ số đứng trước chữ số cuối?",
      "answerKey": {
       "parts": [
        {
-        "label": "a) chia hết cho 5",
-        "options": [
-         "0 hoặc 5",
-         "0",
-         "5"
-        ],
-        "value": "0 hoặc 5"
-       },
-       {
-        "label": "b) chia hết cho 2",
-        "options": [
-         "0, 2, 4, 6, 8",
-         "1, 3, 5, 7, 9",
-         "0 hoặc 5"
-        ],
-        "value": "0, 2, 4, 6, 8"
-       },
-       {
-        "label": "c) chia hết cho cả 2 và 5",
-        "value": 0
+        "label": "vì phần tròn chục luôn chia hết cho",
+        "value": 2
        }
       ]
      },
-     "solutionNarrative": "A) x = 0 hoặc 5; b) x là chữ số chẵn: 0, 2, 4, 6, 8; c) x = 0.",
+     "solutionNarrative": "Vì các chữ số đứng trước tạo thành phần tròn chục, mà mọi số tròn chục đều chia hết cho 2 (do 10 = 2 × 5). Phần ấy không bao giờ làm thừa.",
      "hints": [
       "Chỉ chữ số x quyết định, vì nó đứng ở đuôi.",
       "Câu cuối là chỗ giao của hai điều kiện trên."
@@ -318,16 +225,16 @@
     },
     {
      "id": "C7",
-     "text": "Đoàn 234 em muốn xếp hàng 5 thật vừa khít thì cần mời thêm ít nhất mấy em nữa? Vì sao?",
+     "text": "Viết một số có ba chữ số, chia hết cho 2, và có chữ số hàng trăm là 3.",
      "answerKey": {
       "parts": [
        {
-        "label": "cần mời thêm ít nhất mấy em",
-        "value": 1
+        "label": "số con viết",
+        "value": 302
        }
       ]
      },
-     "solutionNarrative": "Cần thêm ít nhất 1 em — vì 234 chia 5 dư 4, tức thiếu 1 là tròn: 235 = 5 × 47.",
+     "solutionNarrative": "Ví dụ 302 (chữ số cuối là 2 nên chia hết cho 2). Các số 300, 304, 316… cũng được, miễn chữ số cuối là 0, 2, 4, 6 hoặc 8.",
      "hints": [
       "Chia thử xem đang dư mấy.",
       "Thiếu bao nhiêu nữa thì đuôi mới thành 0 hoặc 5?"
@@ -337,19 +244,20 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Từ bốn tấm thẻ 2 ; 0 ; 7 ; 5, lập tất cả các số có bốn chữ số khác nhau chia hết cho cả 2 và 5. (Chốt đuôi trước — rồi đếm xem được mấy số!)",
+     "text": "Từ ba chữ số 1 ; 4 ; 5 hãy viết một số có ba chữ số chia hết cho 2, dùng mỗi chữ số đúng một lần.",
      "answerKey": {
-      "ordered": false,
-      "values": [
-       2750,
-       2570,
-       7250,
-       7520,
-       5270,
-       5720
+      "parts": [
+       {
+        "label": "chữ số phải đặt ở cuối",
+        "value": 4
+       },
+       {
+        "label": "một số viết được",
+        "value": 154
+       }
       ]
      },
-     "solutionNarrative": "Chia hết cả 2 và 5 → đuôi 0; ba thẻ 2, 7, 5 xếp vào ba vị trí đầu: 2 750, 2 570, 7 250, 7 520, 5 270, 5 720 — được 6 số.",
+     "solutionNarrative": "Muốn chia hết cho 2 thì chữ số cuối phải chẵn — trong ba chữ số chỉ có 4 là chẵn. Vậy đặt 4 ở cuối: được 154 hoặc 514.",
      "hints": [
       "Chốt đuôi trước — chỉ có một chữ số hợp lệ.",
       "Ba thẻ còn lại xếp tự do vào ba chỗ đầu."
@@ -357,16 +265,11 @@
     },
     {
      "id": "C9",
-     "text": "Có bao nhiêu số có ba chữ số chia hết cho cả 2 và 5? (Gợi ý: đó là dãy số nào? Dùng công thức đếm của Chương 2!)",
+     "text": "Có bao nhiêu số có hai chữ số vừa lớn hơn 20 vừa nhỏ hơn 30 và chia hết cho 2?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số các số",
-        "value": 90
-       }
-      ]
+      "value": 4
      },
-     "solutionNarrative": "Đó là các số tròn chục có ba chữ số: 100, 110, ..., 990 → (990 − 100) : 10 + 1 = 90 số.",
+     "solutionNarrative": "Các số từ 21 đến 29 có chữ số cuối chẵn là 22, 24, 26, 28 — tất cả 4 số.",
      "hints": [
       "Đó chính là các số tròn chục có ba chữ số.",
       "Viết dãy ra rồi trừ, chia, cộng một."
@@ -380,70 +283,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Số có chữ số tận cùng là 5 thì chia hết cho 5.",
+    "text": "Số chia hết cho 2 còn được gọi là số chẵn.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đáp án: ĐÚNG."
    },
    {
     "id": "Q2",
-    "text": "Số chia hết cho 2 là số lẻ.",
+    "text": "Muốn biết một số có chia hết cho 2 không, phải cộng tất cả các chữ số của nó lại.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Số chia hết cho 2 là số chẵn."
+    "solutionNarrative": "SAI — cộng chữ số là dấu hiệu của 3 và 9. Với 2 thì chỉ nhìn chữ số cuối."
    },
    {
     "id": "Q3",
-    "text": "Số chia hết cho cả 2 và 5 có tận cùng là:",
+    "text": "Số nào dưới đây CHIA HẾT cho 2?",
     "format": "mcq",
     "choices": [
-     "A. 0",
-     "B. 5",
-     "C. 2"
+     "A. 146",
+     "B. 231",
+     "C. 405"
     ],
     "answerKey": {
-     "choice": "A. 0"
+     "choice": "A. 146"
     },
-    "solutionNarrative": "Đuôi 0)."
+    "solutionNarrative": "Chữ số cuối của 146 là 6, một số chẵn."
    },
    {
     "id": "Q4",
-    "text": "Số 47x chia hết cho 2 khi x là:",
+    "text": "Chữ số cuối của một số chia hết cho 2 phải là:",
     "format": "mcq",
     "choices": [
-     "A. chữ số chẵn",
-     "B. chữ số lẻ",
-     "C. chỉ có thể là 0"
+     "A. 0, 2, 4, 6 hoặc 8",
+     "B. 0 hoặc 5",
+     "C. số bất kỳ"
     ],
     "answerKey": {
-     "choice": "A. chữ số chẵn"
+     "choice": "A. 0, 2, 4, 6 hoặc 8"
     },
-    "solutionNarrative": "X là chữ số chẵn."
+    "solutionNarrative": "Đó là năm chữ số chẵn."
    },
    {
     "id": "Q5",
-    "text": "Từ 100 đến 200 có bao nhiêu số tròn chục?",
+    "text": "Vì sao chỉ cần nhìn chữ số cuối để biết một số có chia hết cho 2?",
     "format": "mcq",
     "choices": [
-     "A. 11",
-     "B. 10",
-     "C. 9"
+     "A. Vì phần tròn chục luôn chia hết cho 2",
+     "B. Vì chữ số cuối là chữ số lớn nhất",
+     "C. Vì các chữ số khác không có giá trị"
     ],
     "answerKey": {
-     "choice": "A. 11"
+     "choice": "A. Vì phần tròn chục luôn chia hết cho 2"
     },
-    "solutionNarrative": "100, 110, ..., 200: 11 số."
+    "solutionNarrative": "10 = 2 × 5 nên mọi số tròn chục đều chia hết cho 2, không bao giờ làm thừa."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Trò \"thầy bói đuôi số\" ở bàn ăn: bố mẹ đọc một số bất kỳ (biển số xe, số nhà), con phán ngay \"chia hết cho 2? cho 5?\" rồi cả nhà bấm máy kiểm chứng. Phán trúng liên tục, con sẽ tự hỏi VÌ SAO — đúng lúc để nghe lại lời giải thích \"23 chục + 4\".",
-  "homeActivity": "Khi con lập số từ thẻ, hãy để con tự phát hiện cú lừa của số 0 đứng đầu — đừng nhắc trước; vấp một lần nhớ mười năm.",
-  "watchFor": "NÊN: hỏi thêm \"muốn chia hết thì sửa đuôi thành mấy?\" để con chủ động chế số. KHÔNG NÊN: dạy trước dấu hiệu chia hết cho 4, 8, 25 dạng đầy đủ — Bài 10 mới hé cửa làm quen, bản chính thức thuộc lớp 5."
+  "onComplete": "Đọc to vài số bất kỳ rồi hỏi con \"chia hết cho 2 không\". Con trả lời được trong một giây là đã nắm dấu hiệu.",
+  "homeActivity": "Nếu con còn ngập ngừng, hỏi thêm một câu: \"Vì sao chỉ nhìn chữ số cuối?\" — trả lời được câu này thì con hiểu bài, chứ không phải học thuộc.",
+  "watchFor": ""
  },
  "figureSpec": [
   {
@@ -457,20 +360,19 @@
    "mucGoc": "chuyenMoBai"
   }
  ],
- "hatMam": "Lớp 3, ở Bài 6-7, con đã thành thạo phép chia có dư và biết \"dư phải bé hơn số chia\". Lớp 3 Bài 3, con cũng từng lập số từ thẻ với điều kiện chẵn - lẻ (\"muốn chẵn: chọn đuôi trước!\"). Năm nay hai kỹ năng ấy hợp nhất thành dấu hiệu chính thức: chỉ nhìn CHỮ SỐ TẬN CÙNG, đoán ngay một số có chia hết cho 2, cho 5 hay không.",
+ "hatMam": "Bài trước con đã biết chia hết là chia xong không thừa gì. Nhưng số to như 270 thì chia thử rất lâu. Hôm nay con học cách nhìn một cái là biết — và quan trọng hơn, con sẽ hiểu VÌ SAO chỉ cần nhìn đúng một chữ số cuối cùng.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B03",
-   "DL:KSN3.B06",
-   "DL:KSN3.B07"
+   "DL:KSN3.B06"
   ],
   "ten": [
-   "XẾP THẺ SỐ PHIÊN BẢN KHÓ",
-   "PHÉP CHIA CÓ DƯ CHÍNH DANH",
-   "TRUY TÌM SỐ CHIA a DƯ b"
+   "PHÉP CHIA CÓ DƯ CHÍNH DANH"
   ],
-  "canCu": "sach",
+  "canCu": "chuDe",
   "lopDuoi": 3,
   "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B09_giang.mp4"
  }
 }

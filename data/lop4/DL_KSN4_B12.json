@@ -1,12 +1,12 @@
 {
  "id": "DL:KSN4.B12",
- "quyen": "lop4",
+ "quyen": "KSN4",
  "so": 12,
- "ten": "CHỮ SỐ TẬN CÙNG CỦA MỘT TÍCH",
+ "ten": "CHỮ SỐ TẬN CÙNG CỦA MỘT TÍCH — CHỈ HAI CHỮ SỐ CUỐI QUYẾT ĐỊNH",
  "chuong": 3,
  "tenChuong": "DẤU HIỆU CHIA HẾT",
- "dangGoc": "SỐ 6.4 mức Lớp 4 — Tận cùng của tích nhiều thừa số · cặp 2 × 5 và thừa số tròn chục cho tận cùng 0",
- "hatMam": "Bài 9 dạy con đọc dấu hiệu ĐUÔI của một số có sẵn. Bài này lợi hại hơn: DỰ ĐOÁN đuôi của một số CHƯA TÍNH RA — tích của cả dãy thừa số dài. Bí mật nằm ở chỗ: khi nhân, các chữ số tận cùng chỉ \"nói chuyện\" với nhau, không thèm để ý phần còn lại của con số.",
+ "dangGoc": "Dạng gốc: SỐ 3.8 mức Lớp 4 — Xác định chữ số tận cùng của một tích mà không cần nhân hết, dựa vào việc tách thừa số thành phần tròn chục và chữ số đơn vị.",
+ "hatMam": "Con đã ba lần dùng một lối nghĩ: tách ra phần chắc chắn không ảnh hưởng, rồi chỉ xét phần còn lại. Hôm nay con dùng nó lần thứ tư, để biết chữ số cuối của một phép nhân mà không phải nhân hết cả phép.",
  "ganDuoi": {
   "ve": [
    "DL:KSN3.B05"
@@ -21,18 +21,16 @@
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Tìm chữ số tận cùng của một tích mà không cần tính cả tích (chỉ nhân các chữ số tận cùng).",
-    "Nhận ra cặp 2 × 5 (hoặc thừa số tròn chục) ẩn trong tích → tích tận cùng bằng 0.",
-    "Trả lời nhanh \"tích này có chia hết cho 2, cho 5, cho 10 không\" nhờ chữ số tận cùng dự đoán được."
+    "Tìm được chữ số tận cùng của một tích mà không cần nhân hết.",
+    "Giải thích được vì sao chỉ hai chữ số cuối của hai thừa số quyết định.",
+    "Dùng được điều đó để kiểm tra nhanh một phép nhân."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 12: dàn đèn nháy đánh số",
-   "dong": [
-    "Đêm hội đến gần, chú thợ điện mắc dàn đèn nháy quanh sân đình và đố cả nhóm: \"Chú lập trình cho bảng điện tử hiện tích 1 × 2 × 3 × 4 × ... × 9 — đố các cháu biết TRƯỚC con số ấy tận cùng bằng mấy, đoán trúng chú thưởng đèn ông sao!\" Trí Long nhẩm: \"1 nhân 2 là 2, nhân 3 là 6, nhân 4 là 24...\" Su Kem đã giơ tay: \"Tận cùng bằng 0 ạ — và cháu không cần nhân đến cùng!\""
-   ],
+   "ten": "CHUYỆN MỞ BÀI — ",
+   "dong": [],
    "hinh": [
     {
      "id": "L4H_B12_MO",
@@ -46,69 +44,48 @@
   },
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
-   "dong": [
-    "CHO GÌ? tích 1 × 2 × 3 × 4 × 5 × 6 × 7 × 8 × 9 sẽ hiện trên bảng điện tử.",
-    "HỎI GÌ? chữ số tận cùng của tích — đoán TRƯỚC khi bảng hiện.",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: chỉ cần MỘT chữ số (hàng đơn vị của tích) — không cần cả con số khổng lồ.",
-    "QUAN HỆ GIỮA CHÚNG: khi nhân hai số, hàng đơn vị của tích chỉ do hàng đơn vị hai thừa số quyết định — nên có thể \"đi tắt\" bằng dãy tận cùng.",
-    "CHỌN CÔNG CỤ: SOI CẶP ĐẶC BIỆT: trong dãy thừa số có 2 và 5 — cặp đôi cho tích 10, đuôi 0.",
-    "ƯỚC LƯỢNG TRƯỚC: đã thấy 2 × 5 = 10 trong dãy — cả tích ắt tận cùng 0."
-   ],
+   "dong": [],
    "hinh": [],
-   "nhip": "NHỊP 1, DỊCH — từ dàn đèn sang các chữ số tận cùng"
+   "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
-   "dong": [
-    "Bước 1 — VÌ SAO ĐUÔI CHỈ NÓI CHUYỆN VỚI ĐUÔI: 13 × 27: tách 13 = 10 + 3 và 27 = 20 + 7 — mọi phần chứa \"chục\" nhân ra đều tròn chục, không đụng đến hàng đơn vị; chỉ còn 3 × 7 = 21 quyết định đuôi. Vậy 13 × 27 tận cùng bằng 1 (thử: 351 ✓). Quy tắc vàng: đuôi của tích = đuôi của tích các đuôi.",
-    "Bước 2 — CẶP ĐÔI VÀNG 2 × 5: hễ trong tích có một thừa số chẵn gặp một thừa số có đuôi 5 (hoặc có sẵn thừa số tròn chục) → sinh ra tích con tận cùng 0 — mà số nào nhân với số đuôi 0 cũng ra đuôi 0. Ví dụ 4 × 35: trong 4 có sẵn thừa số 2, gặp 35 → đuôi 0 (140 ✓). Dàn đèn 1 × 2 × ... × 9 chứa cả bóng 2 lẫn bóng 5 → tận cùng 0, chú thợ điện thua cuộc trong một nốt nhạc!",
-    "Bước 3 — DÂY CHUYỀN TẬN CÙNG: tích toàn thừa số \"cứng đầu\" thì lần theo dây chuyền: 7 × 7 × 7 → đuôi: 7 × 7 = 49 ra đuôi 9; 9 × 7 = 63 ra đuôi 3 → tận cùng 3 (343 ✓). Mỗi bước chỉ nhân HAI chữ số — nhẹ tênh dù tích to đùng.",
-    "Bước 4 — CHỮ KÝ THỨ HAI CỦA SỐ 5: tích toàn thừa số LẺ mà có mặt số 5 thì sao? 1 × 3 × 5 × 7 × 9: đuôi lần lượt 3 → 5 → 5 → 5: một khi đuôi 5 gặp số lẻ, nó giữ đuôi 5 mãi. Hai chữ ký của số 5: gặp chẵn ra 0, sống giữa toàn lẻ thì ra 5.",
-    "MẸO NGƯỜI GIẢI: Đoán đuôi của tích: chỉ nhân các ĐUÔI với nhau, mỗi bước giữ lại một chữ số. Soi trước cặp 2 × 5 hay thừa số tròn chục — thấy là hô \"đuôi 0\" khỏi nhân. Tích toàn số lẻ có mặt 5 → đuôi 5. Và nhớ: biết đuôi là biết ngay tích có chia hết cho 2, 5, 10 hay không!"
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
-   "dong": [
-    "LẮP: đúng 8 giờ tối, bảng điện tử hiện con số 362 880 — tận cùng 0 y như dự đoán từ chiều! Chú thợ điện trao chiếc đèn ông sao kèm lời phục: \"Đoán trước máy tính — các cháu đúng là người giải.\"",
-    "SOI: soi lại đường suy luận: cặp 2 × 5 nằm trong dãy → tích chia hết cho 10 → đuôi 0; kiểm chéo trên con số thật 362 880: chia hết cho 10 ✓. Suy luận và thực tế bắt tay nhau.",
-    "DÙNG NGOÀI ĐỜI: dự đoán trước khi máy tính trả lời — đó là thói quen của thật: nếu máy hiện số đuôi khác 0, con biết ngay AI đó bấm nhầm, dù chưa cần tính lại!"
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Không tính cả tích, hãy tìm chữ số tận cùng của tích 21 × 22 × 23 × 24 × 25.",
-    "Tóm tắt",
-    "Tìm chữ số tận cùng của 21 × 22 × 23 × 24 × 25 (không tính cả tích).",
-    "\"Không tính cả tích\" — đề cấm đường vòng, phải dùng dấu hiệu.",
-    "Mô hình (soi cặp 2 × 5)",
-    "Thừa số 24 là số chẵn (chứa thừa số 2)",
-    "Thừa số 25 có tận cùng 5.",
-    "Chưa vội nhân dây chuyền — soi cặp đặc biệt trước, có khi trúng lớn.",
-    "Bài giải",
-    "Trong tích có 24 × 25 = 600 là số có tận cùng bằng 0.",
-    "Một tích có thừa số tận cùng bằng 0 thì cả tích tận cùng bằng 0.",
-    "Vậy tích 21 × 22 × 23 × 24 × 25 có chữ số tận cùng là 0.",
-    "Chỉ cần tính MỘT tích con 24 × 25 làm bằng chứng — gọn và chặt.",
-    "Đáp số: chữ số tận cùng là 0.",
-    "Đáp số đúng câu hỏi — một chữ số.",
-    "Thử lại: tích chứa 24 × 25 = 600 chia hết cho 10 → tận cùng 0 ✓",
-    "Soi bằng ngôn ngữ chia hết — hai cách nói, một sự thật."
+    "Đề bài: Tích 23 × 17 có chữ số tận cùng là mấy? Tìm mà không nhân hết cả phép.",
+    "Tách hai thừa số",
+    "23 = 20 + 3 và 17 = 10 + 7.",
+    "Nhân ra thành bốn phần",
+    "23 × 17 = 20 × 10 + 20 × 7 + 3 × 10 + 3 × 7.",
+    "Xem ba phần đầu",
+    "Ba phần đầu đều có thừa số 10 hoặc 20, nên đều là số tròn chục — chữ số cuối của chúng đều bằng 0, không chạm tới chữ số cuối của tích.",
+    "Vậy chỉ phần cuối quyết định",
+    "3 × 7 = 21, chữ số cuối là 1. Nên tích 23 × 17 có chữ số tận cùng là 1.",
+    "Kiểm lại",
+    "23 × 17 = 391, đúng là tận cùng bằng 1.",
+    "Đáp số: chữ số tận cùng của tích là 1, lấy từ 3 nhân 7 bằng 21."
    ],
    "hinh": [],
    "nhip": ""
   },
   "suKemNham": {
-   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Chú thợ điện đố tiếp tận cùng của 15 × 8. Trí Long đáp tắp lự: \"Tích có số 15 đuôi 5 — mà số 5 thì lì lắm, nhân gì cũng giữ đuôi 5. Tận cùng bằng 5 ạ!\"",
-    "Gợi ý 1: \"Chữ ký đuôi 5\" chỉ đúng khi số đuôi 5 gặp toàn bạn LẺ. Thừa số 8 là chẵn hay lẻ?",
-    "Gợi ý 2: Nhân thật 15 × 8 xem tận cùng bằng mấy — rồi phát biểu lại cho chuẩn hai chữ ký của số 5: gặp thừa số chẵn thì đuôi mấy, sống giữa toàn số lẻ thì đuôi mấy? Ra thêm cho Trí Long hai ví dụ mỗi loại để cậu ấy nhớ đời."
+    "Có bạn nói: \"Tích 23 × 17 tận cùng là 21, vì 3 nhân 7 bằng 21.\"",
+    "Gợi ý 1: 21 có mấy chữ số? Câu hỏi đòi bao nhiêu chữ số?",
+    "Gợi ý 2: Đề hỏi CHỮ SỐ tận cùng, tức chỉ một chữ số thôi.",
+    "Chữa: 3 × 7 = 21, và chữ số tận cùng của 21 là 1. Vậy tích tận cùng là 1, không phải 21."
    ],
    "hinh": [],
    "nhip": ""
@@ -130,9 +107,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Trò \"đoán trước máy tính\": con đoán đuôi của tích hai số bố mẹ đọc, rồi cả nhà bấm máy phân thắng bại. Con thắng máy tính vài ván là bài học tự chạy vào đầu.",
-    "Hỏi xoáy để hiểu sâu: \"vì sao đuôi chỉ nói chuyện với đuôi?\" — câu trả lời đạt phải nhắc đến chuyện các phần \"chục\" nhân ra toàn số tròn chục.",
-    "NÊN: gắn với chia hết — đuôi 0 tức chia hết cho 10, đuôi chẵn tức chia hết cho 2. KHÔNG NÊN: sa vào lũy thừa lớn kiểu \"2 mũ 100 tận cùng mấy\" — câu ★★★ mười thừa số 2 là trần của lớp 4, vòng lặp dài hơn hẹn lớp 5."
+    "Bảo con đoán chữ số cuối của một phép nhân rồi mới bấm máy tính kiểm lại. Đoán đúng vài lần con sẽ thích cách này.",
+    "Đây cũng là mẹo kiểm tra bài: nhân xong nhìn chữ số cuối, lệch là biết sai ngay mà không phải làm lại cả phép."
    ],
    "hinh": [],
    "nhip": ""
@@ -146,8 +122,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Không tính cả tích, tìm chữ số tận cùng của 13 × 27.",
-   "loiChua": "3 × 7 = 21 → tận cùng 1 (13 × 27 = 351 ✓).",
+   "text": "Tích 23 × 17 — đúng phép trong video. Nhân hai chữ số cuối với nhau được bao nhiêu, và chữ số tận cùng của tích là mấy?",
+   "loiChua": "3 × 7 = 21. Chữ số tận cùng của 21 là 1, nên tích tận cùng bằng 1.",
    "tuLuan": true
   },
   {
@@ -157,8 +133,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Không tính cả tích, tìm chữ số tận cùng của 24 × 16.",
-   "loiChua": "4 × 6 = 24 → tận cùng 4 (24 × 16 = 384 ✓).",
+   "text": "Tích 34 × 26 có chữ số tận cùng là mấy?",
+   "loiChua": "4 × 6 = 24, tận cùng là 4. Vậy tích tận cùng bằng 4.",
    "tuLuan": true
   },
   {
@@ -168,8 +144,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Vì sao 4 × 35 có tận cùng bằng 0? Chỉ ra \"cặp đôi vàng\" trong tích.",
-   "loiChua": "4 = 2 × 2 chứa thừa số 2, gặp 35 có đuôi 5 → cặp 2 × 5 cho đuôi 0 (4 × 35 = 140 ✓).",
+   "text": "Tích 45 × 12 có chữ số tận cùng là mấy?",
+   "loiChua": "5 × 2 = 10, tận cùng là 0. Vậy tích tận cùng bằng 0.",
    "tuLuan": true
   },
   {
@@ -179,8 +155,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm chữ số tận cùng của tích 12 × 15 × 3.",
-   "loiChua": "12 chẵn gặp 15 đuôi 5 → đuôi 0; nhân tiếp 3 vẫn đuôi 0 (12 × 15 × 3 = 540 ✓).",
+   "text": "Vì sao khi tìm chữ số tận cùng của một tích, ta bỏ qua được phần tròn chục của hai thừa số?",
+   "loiChua": "Vì mọi phần có chứa thừa số tròn chục đều là số tròn chục, chữ số cuối bằng 0, nên không làm đổi chữ số cuối của tích.",
    "tuLuan": true
   },
   {
@@ -190,8 +166,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm chữ số tận cùng của 7 × 7 × 7 bằng dây chuyền tận cùng.",
-   "loiChua": "Dây chuyền: 7 × 7 = 49 → đuôi 9; 9 × 7 = 63 → đuôi 3. Tận cùng 3 (343 ✓).",
+   "text": "Bạn Tú nói: \"Tích 23 × 17 tận cùng là 21.\" Bạn nói đúng chưa? Vì sao?",
+   "loiChua": "CHƯA đúng. 3 × 7 = 21 nhưng câu hỏi đòi một CHỮ SỐ tận cùng, mà chữ số tận cùng của 21 là 1.",
    "tuLuan": true
   },
   {
@@ -201,8 +177,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Không tính, tìm chữ số tận cùng của 21 × 22 × 23 × 24 × 25.",
-   "loiChua": "Có 24 × 25 = 600 tận cùng 0 → cả tích tận cùng 0.",
+   "text": "Không nhân hết, hãy cho biết tích 128 × 35 có tận cùng bằng mấy.",
+   "loiChua": "8 × 5 = 40, tận cùng là 0. Vậy tích tận cùng bằng 0.",
    "tuLuan": true
   },
   {
@@ -212,8 +188,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Không tính, giải thích vì sao tích 36 × 45 có tận cùng bằng 0.",
-   "loiChua": "6 × 5 = 30 tận cùng 0 → 36 × 45 tận cùng 0 (= 1 620 ✓).",
+   "text": "Một bạn tính 23 × 17 = 394. Không cần tính lại cả phép, hãy chỉ ra bạn ấy chắc chắn sai.",
+   "loiChua": "Chữ số cuối phải là 1 (vì 3 × 7 = 21), mà kết quả bạn ấy viết tận cùng là 4. Vậy chắc chắn sai.",
    "tuLuan": true
   },
   {
@@ -223,8 +199,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm chữ số tận cùng của: a) 1 × 2 × 3 × ... × 9; b) 1 × 3 × 5 × 7 × 9. Vì sao hai đáp số khác nhau?",
-   "loiChua": "A) dãy chứa 2 × 5 → tận cùng 0 (tích bằng 362 880); b) toàn thừa số lẻ có mặt 5: đuôi chạy 3 → 5 → 5 → 5 → tận cùng 5 (tích bằng 945). Khác nhau vì dãy a có thừa số chẵn \"bắt cặp\" với 5, dãy b thì không.",
+   "text": "Tích 2 × 4 × 5 × 7 có chữ số tận cùng là mấy?",
+   "loiChua": "Nhân dần và chỉ giữ chữ số cuối: 2 × 4 = 8; 8 × 5 = 40 tận cùng 0; 0 × 7 = 0. Vậy tích tận cùng bằng 0.",
    "tuLuan": true
   },
   {
@@ -234,8 +210,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tích của MƯỜI thừa số 2 (tức 2 × 2 × ... × 2, mười lần) tận cùng bằng mấy? Lần theo dây chuyền 2 → 4 → 8 → 6 → 2 → ... và tìm quy luật vòng lặp!",
-   "loiChua": "Dây chuyền đuôi của các lũy thừa 2: 2, 4, 8, 6, 2, 4, 8, 6, ... — vòng lặp 4 nhịp. Mười thừa số: đếm 10 = 4 + 4 + 2 → dừng ở nhịp thứ hai của vòng: tận cùng 4 (2 × 2 × ... × 2 mười lần = 1 024 ✓).",
+   "text": "Tìm chữ số tận cùng của tích 13 × 13 × 13.",
+   "loiChua": "Chỉ giữ chữ số cuối: 3 × 3 = 9 tận cùng 9; 9 × 3 = 27 tận cùng 7. Vậy tích tận cùng bằng 7.",
    "tuLuan": true
   },
   {
@@ -245,14 +221,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Chữ số tận cùng của một tích chỉ phụ thuộc chữ số tận cùng của các thừa số.",
+   "text": "Chữ số tận cùng của một tích chỉ phụ thuộc vào chữ số tận cùng của các thừa số.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "Đáp án: ĐÚNG.",
+   "solutionNarrative": "Đáp án: ĐÚNG."
   },
   {
    "id": "Q2",
@@ -261,14 +237,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Tích chứa cặp 2 × 5 thì tận cùng bằng 5.",
+   "text": "Tích 23 × 17 có chữ số tận cùng là 21.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": false
    },
-   "loiChua": "Cặp 2 × 5 cho tận cùng 0.",
-   "solutionNarrative": "Cặp 2 × 5 cho tận cùng 0."
+   "loiChua": "SAI — chữ số tận cùng chỉ là MỘT chữ số. 3 × 7 = 21 nên tận cùng là 1.",
+   "solutionNarrative": "SAI — chữ số tận cùng chỉ là MỘT chữ số. 3 × 7 = 21 nên tận cùng là 1."
   },
   {
    "id": "Q3",
@@ -277,19 +253,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "13 × 24 có chữ số tận cùng là:",
+   "text": "Tích 34 × 26 có chữ số tận cùng là:",
    "choices": [
-    "A. 2",
-    "B. 4",
-    "C. 7"
+    "A. 4",
+    "B. 6",
+    "C. 24"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 2"
+    "choice": "A. 4"
    },
-   "loiChua": "3 × 4 = 12 → đuôi 2.",
-   "solutionNarrative": "3 × 4 = 12 → đuôi 2."
+   "loiChua": "4 × 6 = 24, tận cùng là 4.",
+   "solutionNarrative": "4 × 6 = 24, tận cùng là 4."
   },
   {
    "id": "Q4",
@@ -298,28 +274,7 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "15 × 8 có chữ số tận cùng là:",
-   "choices": [
-    "A. 0",
-    "B. 5",
-    "C. 8"
-   ],
-   "format": "mcq",
-   "tuLuan": false,
-   "answerKey": {
-    "choice": "A. 0"
-   },
-   "loiChua": "5 gặp 8 chẵn → đuôi 0 (120).",
-   "solutionNarrative": "5 gặp 8 chẵn → đuôi 0 (120)."
-  },
-  {
-   "id": "Q5",
-   "maSach": "C5",
-   "so": 5,
-   "muc": 1,
-   "phan": "quiz",
-   "ghiChu": "",
-   "text": "1 × 2 × 3 × 4 × 5 có chữ số tận cùng là:",
+   "text": "Tích 45 × 12 có chữ số tận cùng là:",
    "choices": [
     "A. 0",
     "B. 5",
@@ -330,8 +285,29 @@
    "answerKey": {
     "choice": "A. 0"
    },
-   "loiChua": "Chứa 2 × 5 → đuôi 0 (120).",
-   "solutionNarrative": "Chứa 2 × 5 → đuôi 0 (120)."
+   "loiChua": "5 × 2 = 10, tận cùng là 0.",
+   "solutionNarrative": "5 × 2 = 10, tận cùng là 0."
+  },
+  {
+   "id": "Q5",
+   "maSach": "C5",
+   "so": 5,
+   "muc": 1,
+   "phan": "quiz",
+   "ghiChu": "",
+   "text": "Vì sao phần tròn chục của thừa số không làm đổi chữ số cuối của tích?",
+   "choices": [
+    "A. Vì nhân với số tròn chục thì luôn được số tận cùng bằng 0",
+    "B. Vì số tròn chục quá lớn",
+    "C. Vì ta được phép bỏ bớt cho nhanh"
+   ],
+   "format": "mcq",
+   "tuLuan": false,
+   "answerKey": {
+    "choice": "A. Vì nhân với số tròn chục thì luôn được số tận cùng bằng 0"
+   },
+   "loiChua": "Chữ số cuối bằng 0 thì cộng vào không làm đổi chữ số cuối.",
+   "solutionNarrative": "Chữ số cuối bằng 0 thì cộng vào không làm đổi chữ số cuối."
   }
  ]
 }

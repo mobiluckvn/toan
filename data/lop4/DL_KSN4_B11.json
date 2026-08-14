@@ -1,12 +1,12 @@
 {
  "id": "DL:KSN4.B11",
- "quyen": "lop4",
+ "quyen": "KSN4",
  "so": 11,
- "ten": "PHÉP CHIA CÓ DƯ VÀ BÀI TOÁN THỪA - THIẾU",
+ "ten": "PHÉP CHIA CÓ DƯ — VÌ SAO SỐ DƯ LUÔN NHỎ HƠN SỐ CHIA",
  "chuong": 3,
  "tenChuong": "DẤU HIỆU CHIA HẾT",
- "dangGoc": "SỐ 6.3 mức Lớp 4 — Tìm số theo điều kiện chia có dư · tính chất chia hết của tổng - hiệu · bài xếp hàng thừa thiếu",
- "hatMam": "Lớp 3, ở Bài 6-7, phép chia có dư đã \"chính danh\" và con biết truy tìm số chia a dư b. Năm nay phép chia có dư lên trình người giải: hai manh mối dư cùng lúc (\"hàng 4 thừa 3, hàng 5 thừa 4\"), cùng một cách lật ngược thế cờ: nhìn phần THIẾU thay vì phần thừa. Kèm theo là bộ luật mới về tổng và hiệu của các số chia hết.",
+ "dangGoc": "Dạng gốc: SỐ 3.6 mức Lớp 4 — Công thức số bị chia bằng số chia nhân thương cộng số dư, và điều kiện số dư nhỏ hơn số chia.",
+ "hatMam": "Con đã biết chia còn thừa thì phần thừa gọi là số dư. Hôm nay con viết được cả phép chia thành một công thức, gọi tên từng chữ trong đó, và hiểu vì sao số dư không bao giờ được bằng hay lớn hơn số chia.",
  "ganDuoi": {
   "ve": [
    "DL:KSN3.B06",
@@ -23,18 +23,16 @@
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Tìm các số thỏa một điều kiện chia có dư trong một khoảng cho trước.",
-    "Dùng tính chất: hai số cùng chia hết cho m thì tổng và hiệu cũng chia hết cho m; chỉ một số chia hết thì tổng - hiệu KHÔNG chia hết.",
-    "Giải bài xếp hàng thừa - thiếu bằng cách \"thiếu 1 là tròn\" (cộng thêm cho chẵn rồi truy ngược)."
+    "Viết được công thức: số bị chia = số chia × thương + số dư.",
+    "Gọi đúng tên từng thành phần trong công thức.",
+    "Giải thích được vì sao số dư luôn nhỏ hơn số chia."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 11: kho ghế bí ẩn",
-   "dong": [
-    "Bác bảo vệ nhà văn hóa gãi đầu: \"Kho có một chồng ghế nhựa, khoảng ba bốn chục cái gì đó — bác quên đếm. Chỉ nhớ hôm họp tổ xếp hàng 4 thì THỪA 3 cái, hôm trung thu xếp hàng 5 lại THỪA 4 cái. Các tính hộ bác xem kho có đúng bao nhiêu ghế, mai bác còn báo kiểm kê!\" Trí Long lẩm bẩm: \"Thừa 3 với thừa 4... thông tin gì mà toàn đồ thừa!\" Su Kem mỉm cười: \"Đồ thừa của cậu là vàng của tớ — nhìn ngược lại xem: hai lần xếp đều chỉ THIẾU đúng một chiếc!\""
-   ],
+   "ten": "CHUYỆN MỞ BÀI — ",
+   "dong": [],
    "hinh": [
     {
      "id": "L4H_B11_MO",
@@ -48,26 +46,13 @@
   },
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
-   "dong": [
-    "CHO GÌ? số ghế trong khoảng 30 - 50; xếp hàng 4 thừa 3; xếp hàng 5 thừa 4.",
-    "HỎI GÌ? tìm đúng số ghế trong kho.",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: số ghế (chiếc) — một con số duy nhất phải thỏa CẢ HAI manh mối.",
-    "QUAN HỆ GIỮA CHÚNG: thừa 3 khi chia 4 nghĩa là thiếu 1 nữa thì tròn hàng 4; thừa 4 khi chia 5 cũng là thiếu 1 nữa thì tròn hàng 5 — cùng một khoảng trống \"1 chiếc\"!",
-    "CHỌN CÔNG CỤ: CÁCH THIẾU 1: cộng tưởng tượng 1 ghế → số mới chia hết cho cả 4 và 5, tức chia hết cho 20.",
-    "ƯỚC LƯỢNG TRƯỚC: trong khoảng 30-50, số chia hết cho 20 chỉ có 40 — số ghế chắc là 39."
-   ],
+   "dong": [],
    "hinh": [],
-   "nhip": "NHỊP 1, DỊCH — từ hai lần xếp ghế sang điều kiện chia"
+   "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
-   "dong": [
-    "Bước 1 — TRUY SỐ THEO MỘT MANH MỐI DƯ: các số chia 5 dư 2 trong khoảng 30 - 50: bắt đầu từ 32 (= 5 × 6 + 2) rồi cứ cộng 5: 32, 37, 42, 47. Một manh mối cho cả một họ số cách đều — muốn khoanh một số duy nhất phải có thêm manh mối thứ hai.",
-    "Bước 2 — CÁCH \"THIẾU 1 LÀ TRÒN\": số ghế chia 4 thừa 3 → mượn thêm 1 chiếc là tròn hàng 4; chia 5 thừa 4 → mượn 1 chiếc cũng tròn hàng 5. Vậy (số ghế + 1) chia hết cho cả 4 và 5 — mà số chia hết cho cả 4 và 5 thì chia hết cho 20. Trong khoảng 31 - 51, bội của 20 chỉ có 40 → số ghế = 40 − 1 = 39.",
-    "Bước 3 — LUẬT TỔNG - HIỆU CỦA HỌ CHIA HẾT: cả 45 và 30 đều chia hết cho 5 → tổng 75 và hiệu 15 cũng chia hết cho 5, khỏi cần cộng trừ để biết. Nhưng 52 + 35 thì sao? 35 \"trong đội\" của 5 còn 52 thì không — một kẻ phá đội hình khiến tổng lập tức trượt (52 + 35 = 87, chia 5 dư 2 — đúng bằng số dư của 52!).",
-    "Bước 4 — HỌ HÀNG CỦA CÁCH: một số chia 9 dư 5: bớt 5 thì chia hết cho 9 (bỏ phần thừa); mà THÊM 4 cũng chia hết cho 9 (bù cho tròn — vì 5 + 4 = 9)! Phần thừa và phần thiếu là hai mặt của một đồng xu: dư r khi chia m nghĩa là thiếu (m − r) nữa thì tròn.",
-    "MẸO NGƯỜI GIẢI: Gặp bài xếp hàng: dịch \"thừa r\" thành \"thiếu m − r\". Nếu mọi cách xếp cùng thiếu MỘT lượng như nhau — cộng lượng ấy vào, số mới chia hết cho tất cả các cỡ hàng. Luật tổng - hiệu: cả đội cùng chia hết thì tổng - hiệu chia hết; một kẻ lệch nhịp là cả tổng lệch theo."
-   ],
+   "dong": [],
    "hinh": [
     {
      "id": "L4H_B11_G2",
@@ -81,48 +66,35 @@
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
-   "dong": [
-    "LẮP: biên bản gửi bác bảo vệ: \"Kho có đúng 39 chiếc ghế.\" Kèm mẹo kiểm kê nhanh cho lần sau: xếp chồng 10 chiếc một — đếm chồng nhanh hơn đếm chiếc!",
-    "SOI: soi cả hai manh mối: 39 : 4 = 9 dư 3 ✓; 39 : 5 = 7 dư 4 ✓; và 39 nằm gọn trong khoảng \"ba bốn chục\" bác nhớ mang máng. Ba lớp khóa đều khớp — chốt hồ sơ.",
-    "DÙNG NGOÀI ĐỜI: kiểm đếm đồ theo nhiều cách xếp (hộp bút, vỉ trứng, khay bánh) rồi truy ngược tổng số — đây chính là cách người lớn kiểm kho khi... lỡ quên đếm từ đầu!"
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Một chồng ghế có từ 30 đến 50 chiếc. Nếu xếp hàng 4 thì thừa 3 chiếc, xếp hàng 5 thì thừa 4 chiếc. Hỏi chồng ghế có bao nhiêu chiếc?",
-    "Tóm tắt",
-    "Số ghế: từ 30 đến 50",
-    "Chia 4 dư 3; chia 5 dư 4. Tìm số ghế.",
-    "Dịch \"thừa\" thành \"dư\" — ngôn ngữ chia có dư chuẩn.",
-    "Mô hình (thiếu 1 là tròn)",
-    "Chia 4 dư 3 → thêm 1 thì chia hết cho 4.",
-    "Chia 5 dư 4 → thêm 1 thì chia hết cho 5.",
-    "Vậy (số ghế + 1) chia hết cho cả 4 và 5.",
-    "Cả hai điều kiện dồn về MỘT số mới đẹp — trái tim của mô hình.",
-    "Bài giải",
-    "Nếu có thêm 1 chiếc ghế thì số ghế chia hết cho cả 4 và 5",
-    "Nên số ghế thêm 1 chia hết cho 20.",
-    "Vì số ghế từ 30 đến 50 nên số ghế thêm 1 từ 31 đến 51.",
-    "Trong khoảng đó chỉ có 40 chia hết cho 20.",
-    "Vậy số ghế là: 40 − 1 = 39 (chiếc)",
-    "Dòng chặn khoảng \"31 đến 51\" bảo đảm đáp số DUY NHẤT.",
-    "Đáp số: 39 chiếc ghế.",
-    "Đáp số kèm đơn vị.",
-    "Thử lại: 39 : 4 = 9 (dư 3) ✓ ; 39 : 5 = 7 (dư 4) ✓",
-    "Soi ĐỦ hai manh mối của đề — thiếu một là chưa xong."
+    "Đề bài: Có 14 cái bánh, xếp vào các hộp, mỗi hộp 4 cái. Xếp được mấy hộp, thừa mấy cái? Viết phép chia rồi thử lại.",
+    "Xếp thử",
+    "Xếp 14 cái thành từng nhóm 4 cái: được 3 hộp, còn thừa 2 cái.",
+    "Viết phép chia",
+    "14 : 4 = 3 (dư 2). Ở đây 14 là số bị chia, 4 là số chia, 3 là thương, 2 là số dư.",
+    "Thử lại bằng công thức",
+    "Số bị chia = số chia × thương + số dư.",
+    "4 × 3 + 2 = 12 + 2 = 14. Đúng bằng số ban đầu, vậy phép chia không sai.",
+    "Vì sao số dư phải nhỏ hơn số chia",
+    "Phần thừa là 2, mà mỗi hộp cần 4 cái nên 2 cái không đủ xếp thêm hộp nào. Nếu phần thừa mà bằng 4 hay hơn 4 thì ta đã xếp thêm được một hộp nữa rồi.",
+    "Đáp số: xếp được 3 hộp, thừa 2 cái. Số dư 2 nhỏ hơn số chia 4."
    ],
    "hinh": [],
    "nhip": ""
   },
   "suKemNham": {
-   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Nghe \"hàng 4 thừa 3, hàng 5 thừa 4\", Trí Long cộng luôn: \"Thừa 3 với thừa 4 là thừa 7! Lấy số chia hết cho 20 rồi cộng 7: kho có 40 + 7 = 47 ghế!\"",
-    "Gợi ý 1: Hai phần thừa xảy ra ở HAI lần xếp khác nhau — có cộng chúng với nhau được không? Thử ngay: 47 : 4 dư mấy, có đúng \"thừa 3\" như bác kể?",
-    "Gợi ý 2: Lỗi nằm ở nhịp DỊCH: mỗi manh mối phải dịch riêng thành một điều kiện chia. Hãy dịch lại cả hai theo kiểu \"thiếu mấy thì tròn\" — con sẽ thấy chúng cùng chỉ về một khoảng trống, và tìm đúng con số 39 giúp Trí Long."
+    "Có bạn làm phép 14 : 4 rồi viết: \"14 : 4 = 2 (dư 6).\"",
+    "Gợi ý 1: Con thử lại xem: 4 × 2 + 6 có bằng 14 không?",
+    "Gợi ý 2: Bằng 14 thật đấy. Nhưng con nhìn số dư 6 và số chia 4 xem — số dư có nhỏ hơn số chia không?",
+    "Chữa: số dư 6 lớn hơn số chia 4, nghĩa là vẫn còn xếp thêm được một hộp nữa. Phải viết 14 : 4 = 3 (dư 2). Thử lại đúng thì chưa đủ, số dư còn phải nhỏ hơn số chia."
    ],
    "hinh": [],
    "nhip": ""
@@ -161,9 +133,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Cách \"thiếu 1 là tròn\" đáng một trò chơi thật: đưa nắm kẹo (39 viên chẳng hạn), cho con xếp hàng 4 rồi hàng 5, quan sát phần thừa — rồi hỏi \"thêm mấy viên thì cả hai kiểu đều đẹp?\". Trực giác đến trước, công thức đến sau.",
-    "Luật tổng - hiệu nên luyện kiểu \"phán trước - tính sau\": con phán 63 + 28 có chia hết cho 7 không rồi mới kiểm — phán có lý do là đạt, phán mò là chưa.",
-    "NÊN: khen câu dịch \"thừa 3 tức thiếu 1\" — đó là bước mô hình hóa đắt nhất bài. KHÔNG NÊN: sang bài dư KHÁC nhau ở các cách xếp (hàng 3 dư 1, hàng 5 dư 2) — dạng đồng dư ấy hẹn lớp 5."
+    "Đưa con một nắm hạt và một cái khay chia ô. Bảo con xếp cho tới khi không xếp thêm được nữa — phần còn lại chính là số dư.",
+    "Con hay quên điều kiện số dư nhỏ hơn số chia. Bố mẹ hỏi lại một câu: \"Chỗ thừa ấy còn xếp thêm được một nhóm nữa không?\""
    ],
    "hinh": [],
    "nhip": ""
@@ -177,8 +148,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính rồi nêu số dư: 47 : 5 ; 38 : 4.",
-   "loiChua": "47 : 5 = 9 (dư 2) ; 38 : 4 = 9 (dư 2).",
+   "text": "Có 14 cái bánh — đúng bài trong video. Xếp mỗi hộp 4 cái thì được mấy hộp và thừa mấy cái?",
+   "loiChua": "Được 3 hộp, thừa 2 cái. Phép chia: 14 : 4 = 3 (dư 2).",
    "tuLuan": true
   },
   {
@@ -188,8 +159,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Liệt kê các số chia 5 dư 2 trong khoảng từ 30 đến 50.",
-   "loiChua": "32, 37, 42, 47.",
+   "text": "Trong phép chia 14 : 4 = 3 (dư 2), thương bằng bao nhiêu và số dư bằng bao nhiêu?",
+   "loiChua": "Thương là 3, số dư là 2.",
    "tuLuan": true
   },
   {
@@ -199,8 +170,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Không tính tổng, cho biết 45 + 30 có chia hết cho 5 không? Vì sao?",
-   "loiChua": "Có — cả 45 và 30 đều chia hết cho 5 nên tổng chia hết cho 5 (75 = 5 × 15).",
+   "text": "Thử lại phép chia 14 : 4 = 3 (dư 2) bằng công thức. Kết quả bằng bao nhiêu?",
+   "loiChua": "Số chia × thương + số dư = 4 × 3 + 2 = 14. Đúng bằng số bị chia.",
    "tuLuan": true
   },
   {
@@ -210,8 +181,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Không tính tổng, cho biết 52 + 35 có chia hết cho 5 không? Nếu không, tổng ấy chia 5 dư mấy?",
-   "loiChua": "Không — 35 chia hết cho 5 nhưng 52 chia 5 dư 2 → tổng chia 5 dư 2 (87 = 5 × 17 + 2).",
+   "text": "Thực hiện phép chia 29 : 6 rồi thử lại.",
+   "loiChua": "29 : 6 = 4 (dư 5). Thử lại: 6 × 4 + 5 = 24 + 5 = 29. Số dư 5 nhỏ hơn số chia 6.",
    "tuLuan": true
   },
   {
@@ -221,8 +192,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm số LỚN NHẤT có hai chữ số mà chia 4 dư 3.",
-   "loiChua": "99 — vì 99 = 4 × 24 + 3; các số chia 4 dư 3 là 3, 7, ..., 99.",
+   "text": "Bạn Hùng viết: \"23 : 5 = 3 (dư 8).\" Bạn làm sai ở đâu? Kết quả đúng là bao nhiêu?",
+   "loiChua": "Số dư 8 LỚN HƠN số chia 5, nghĩa là còn xếp thêm được nhóm nữa. Đúng phải là 23 : 5 = 4 (dư 3).",
    "tuLuan": true
   },
   {
@@ -232,8 +203,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Một số chia 9 dư 5. Hỏi: a) bớt số đó 5 đơn vị thì có chia hết cho 9 không? b) THÊM 4 đơn vị thì sao? Vì sao thú vị vậy?",
-   "loiChua": "A) có — bớt đúng phần dư thì tròn; b) CŨNG chia hết — vì dư 5 tức thiếu 9 − 5 = 4 là tròn; phần thừa và phần thiếu là hai mặt của một đồng xu!",
+   "text": "Trong một phép chia cho 7, số dư lớn nhất có thể là bao nhiêu?",
+   "loiChua": "Số dư phải nhỏ hơn số chia, mà số chia là 7, nên số dư lớn nhất là 6.",
    "tuLuan": true
   },
   {
@@ -243,8 +214,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Chồng ghế từ 30 đến 50 chiếc, xếp hàng 4 thừa 3, xếp hàng 5 thừa 4. Tìm số ghế.",
-   "loiChua": "(số ghế + 1) chia hết cho cả 4 và 5 → chia hết cho 20; trong khoảng 31 - 51 chỉ có 40 → số ghế = 39. Thử: 39 : 4 = 9 dư 3 ✓; 39 : 5 = 7 dư 4 ✓.",
+   "text": "Một phép chia có số chia là 5, thương là 7, số dư là 3. Số bị chia bằng bao nhiêu?",
+   "loiChua": "Số bị chia = số chia × thương + số dư = 5 × 7 + 3 = 35 + 3 = 38.",
    "tuLuan": true
   },
   {
@@ -254,8 +225,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Một rổ trứng xếp vỉ 3 quả thừa 2, vỉ 4 quả thừa 3, vỉ 5 quả thừa 4. Hỏi rổ có ÍT NHẤT bao nhiêu quả trứng? (Cả ba cách xếp cùng thiếu mấy quả là tròn?)",
-   "loiChua": "Cả ba cách xếp cùng thiếu 1 quả → (số trứng + 1) chia hết cho 3, 4 và 5 → chia hết cho 60; ít nhất là 60 → rổ có ít nhất 59 quả. Thử: 59 : 3 dư 2 ✓; 59 : 4 dư 3 ✓; 59 : 5 dư 4 ✓.",
+   "text": "Một phép chia có số bị chia là 47, thương là 6, số dư là 5. Số chia bằng bao nhiêu?",
+   "loiChua": "Từ công thức: 47 = số chia × 6 + 5, nên số chia × 6 = 42, số chia = 7. Kiểm lại: số dư 5 nhỏ hơn 7, hợp lệ.",
    "tuLuan": true
   },
   {
@@ -265,8 +236,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Chứng tỏ rằng tổng của ba số tự nhiên liên tiếp luôn chia hết cho 3. Thế tổng của BỐN số tự nhiên liên tiếp có luôn chia hết cho 4 không — thử với 1 + 2 + 3 + 4 xem sao?",
-   "loiChua": "N + (n + 1) + (n + 2) = n × 3 + 3 = 3 × (n + 1) → luôn chia hết cho 3. Bốn số liên tiếp thì KHÔNG: 1 + 2 + 3 + 4 = 10 không chia hết cho 4 — một phản ví dụ đủ bác bỏ.",
+   "text": "Tìm một số bé hơn 40, chia cho 6 thì dư 4, và chia cho 5 thì dư 1.",
+   "loiChua": "Số chia 6 dư 4: 4, 10, 16, 22, 28, 34. Trong đó số chia 5 dư 1: 16 (16 : 5 = 3 dư 1). Vậy số cần tìm là 16.",
    "tuLuan": true
   },
   {
@@ -276,14 +247,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Hai số cùng chia hết cho 7 thì tổng của chúng chia hết cho 7.",
+   "text": "Trong một phép chia có dư, số dư luôn nhỏ hơn số chia.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "Đáp án: ĐÚNG — nếu bằng hoặc lớn hơn thì còn chia thêm được.",
+   "solutionNarrative": "Đáp án: ĐÚNG — nếu bằng hoặc lớn hơn thì còn chia thêm được."
   },
   {
    "id": "Q2",
@@ -292,14 +263,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Tổng 40 + 13 chia hết cho 5.",
+   "text": "Phép chia 23 : 5 = 3 (dư 8) là phép chia đúng.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": false
    },
-   "loiChua": "13 không chia hết cho 5 nên tổng chia 5 dư 3.",
-   "solutionNarrative": "13 không chia hết cho 5 nên tổng chia 5 dư 3."
+   "loiChua": "SAI — số dư 8 lớn hơn số chia 5. Đúng phải là 4 dư 3.",
+   "solutionNarrative": "SAI — số dư 8 lớn hơn số chia 5. Đúng phải là 4 dư 3."
   },
   {
    "id": "Q3",
@@ -308,19 +279,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Số dư LỚN NHẤT có thể có khi chia cho 5 là:",
+   "text": "Công thức thử lại phép chia có dư là:",
    "choices": [
-    "A. 4",
-    "B. 5",
-    "C. 6"
+    "A. số chia × thương + số dư",
+    "B. số chia + thương × số dư",
+    "C. thương × số dư + số chia"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 4"
+    "choice": "A. số chia × thương + số dư"
    },
-   "loiChua": "4).",
-   "solutionNarrative": "4)."
+   "loiChua": "Nhân trước rồi mới cộng số dư.",
+   "solutionNarrative": "Nhân trước rồi mới cộng số dư."
   },
   {
    "id": "Q4",
@@ -329,19 +300,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Số ghế chia 4 thừa 3 và chia 5 thừa 4 — cộng thêm mấy chiếc thì tròn cả hai kiểu xếp?",
+   "text": "Trong phép chia cho 4, số dư lớn nhất có thể là:",
    "choices": [
-    "A. 1",
-    "B. 2",
-    "C. 3"
+    "A. 3",
+    "B. 4",
+    "C. 5"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 1"
+    "choice": "A. 3"
    },
-   "loiChua": "Thêm 1).",
-   "solutionNarrative": "Thêm 1)."
+   "loiChua": "Số dư phải nhỏ hơn số chia là 4.",
+   "solutionNarrative": "Số dư phải nhỏ hơn số chia là 4."
   },
   {
    "id": "Q5",
@@ -350,19 +321,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "58 : 9 bằng:",
+   "text": "Vì sao số dư không được bằng số chia?",
    "choices": [
-    "A. 6 dư 4",
-    "B. 6 dư 5",
-    "C. 7 dư 1"
+    "A. Vì khi đó còn xếp thêm được một nhóm nữa",
+    "B. Vì số dư phải là số lẻ",
+    "C. Vì số chia luôn lớn hơn thương"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 6 dư 4"
+    "choice": "A. Vì khi đó còn xếp thêm được một nhóm nữa"
    },
-   "loiChua": "9 × 6 + 4 = 58.",
-   "solutionNarrative": "9 × 6 + 4 = 58."
+   "loiChua": "Đủ một nhóm nữa thì phải xếp vào nhóm, không để thừa.",
+   "solutionNarrative": "Đủ một nhóm nữa thì phải xếp vào nhóm, không để thừa."
   }
  ]
 }
