@@ -1,0 +1,307 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B59",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 34 · SỐ BÉ = (TỔNG − HIỆU) : 2 — CẮT BỚT CHO HAI ĐOẠN BẰNG NHAU",
+ "durationMinutes": 10,
+ "so": 34,
+ "chuong": 6,
+ "tenChuong": "TỔNG - HIỆU",
+ "dangGoc": "Dạng gốc: LV 2.1b mức Lớp 4 — Công thức tìm số bé, suy ra từ sơ đồ bằng cách cắt bỏ khúc hiệu khỏi đoạn dài; và cách kiểm chéo hai công thức.",
+ "skills": {
+  "bktUnit": "CHUONG:6@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 34,
+  "prev": "DL:KSN4.B24",
+  "next": "DL:KSN4.B25"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Suy ra được công thức số bé bằng tổng trừ hiệu rồi chia đôi. Hiểu nó là cùng một cách nghĩ với bài trước, chỉ soi từ phía kia. Kiểm chéo được kết quả bằng cả hai công thức.",
+  "kidText": "Hôm qua cô nối thêm, hôm nay cô cắt bớt. Con đoán xem lần này ra số nào?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nhớ nhầm thành: số bé bằng hiệu trừ tổng, rồi bảo không trừ được.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con nhìn sơ đồ. Cái nào lớn hơn, tổng hay hiệu? Gợi ý 2: Tổng lớn hơn. Vậy phải lấy cái lớn trừ cái nhỏ. Chữa: số bé bằng TỔNG trừ HIỆU rồi chia đôi: (70 − 10) : 2 = 30. Tổng bao giờ cũng lớn hơn hiệu nên trừ được."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nhớ nhầm thành: số bé bằng hiệu trừ tổng, rồi bảo không trừ được.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Hai số có tổng bằng 70 và hiệu bằng 10. Tìm số bé.",
+  "steps": [
+   {
+    "show": "Vẫn sơ đồ ấy"
+   },
+   {
+    "show": "Đoạn ngắn là số bé, đoạn dài là số lớn, khúc dôi ra là 10."
+   },
+   {
+    "show": "Lần này cắt bớt đoạn dài"
+   },
+   {
+    "show": "Cắt bỏ khúc 10 khỏi đoạn dài. Bây giờ hai đoạn bằng nhau, và mỗi đoạn đúng bằng số bé."
+   },
+   {
+    "show": "Xem tổng đổi thế nào"
+   },
+   {
+    "show": "Ta vừa cắt đi 10 nên tổng cũng giảm 10, còn 70 − 10 = 60."
+   },
+   {
+    "show": "Chia đôi"
+   },
+   {
+    "show": "60 chính là hai lần số bé. Nên số bé là 60 : 2 = 30."
+   },
+   {
+    "show": "Kiểm chéo"
+   },
+   {
+    "show": "Bài trước tìm được số lớn là 40. Cộng lại: 30 + 40 = 70, đúng bằng tổng. Trừ nhau: 40 − 30 = 10, đúng bằng hiệu."
+   },
+   {
+    "show": "Đáp số: số bé bằng 30. Công thức là tổng trừ hiệu rồi chia đôi."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Hai số có tổng 70 và hiệu 10 — đúng bài trong video. Sau khi cắt bớt hiệu khỏi đoạn dài thì tổng còn bao nhiêu?",
+     "answerKey": {
+      "value": 60
+     },
+     "solutionNarrative": "Tổng còn 70 − 10 = 60."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên. Số 60 là của mấy đoạn, và số bé bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "60 là của mấy đoạn",
+        "value": 2
+       },
+       {
+        "label": "số bé",
+        "value": 30
+       }
+      ]
+     },
+     "solutionNarrative": "60 là của HAI đoạn bằng nhau, nên số bé = 60 : 2 = 30."
+    },
+    {
+     "id": "C3",
+     "text": "Hai số có tổng 30 và hiệu 10. Tìm số bé.",
+     "answerKey": {
+      "value": 10
+     },
+     "solutionNarrative": "Số bé = (30 − 10) : 2 = 20 : 2 = 10."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tổng hai số là 145, hiệu là 27. Tìm số bé.",
+     "answerKey": {
+      "value": 59
+     },
+     "solutionNarrative": "Số bé = (145 − 27) : 2 = 118 : 2 = 59."
+    },
+    {
+     "id": "C5",
+     "text": "Bạn Bình viết số bé bằng hiệu trừ tổng rồi bảo không trừ được. Bạn sai ở đâu? Số bé đúng là bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phải lấy",
+        "options": [
+         "tổng trừ hiệu",
+         "hiệu trừ tổng"
+        ],
+        "value": "tổng trừ hiệu"
+       },
+       {
+        "label": "số bé đúng",
+        "value": 30
+       }
+      ]
+     },
+     "solutionNarrative": "Phải lấy TỔNG trừ HIỆU, vì tổng bao giờ cũng lớn hơn hiệu. Số bé = (70 − 10) : 2 = 30."
+    },
+    {
+     "id": "C6",
+     "text": "Tìm cả hai số khi tổng là 70 và hiệu là 10, rồi kiểm chéo.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lớn",
+        "value": 40
+       },
+       {
+        "label": "số bé",
+        "value": 30
+       }
+      ]
+     },
+     "solutionNarrative": "Số lớn = (70 + 10) : 2 = 40; số bé = (70 − 10) : 2 = 30. Kiểm: 40 + 30 = 70 và 40 − 30 = 10, đúng cả hai."
+    },
+    {
+     "id": "C7",
+     "text": "Hai anh em có 500 nghìn đồng, anh hơn em 60 nghìn. Em có bao nhiêu?",
+     "answerKey": {
+      "value": 220
+     },
+     "solutionNarrative": "Em (số bé) = (500 − 60) : 2 = 440 : 2 = 220 nghìn đồng."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tổng hai số là 96, hiệu là 14. Tìm cả hai số và kiểm chéo.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lớn",
+        "value": 55
+       },
+       {
+        "label": "số bé",
+        "value": 41
+       }
+      ]
+     },
+     "solutionNarrative": "Số lớn = (96 + 14) : 2 = 55; số bé = (96 − 14) : 2 = 41. Kiểm: 55 + 41 = 96 và 55 − 41 = 14."
+    },
+    {
+     "id": "C9",
+     "text": "Một mảnh vườn có tổng chiều dài và chiều rộng là 24 m, chiều dài hơn chiều rộng 6 m. Tìm chiều rộng, rồi tính diện tích mảnh vườn.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chiều rộng",
+        "value": 9
+       },
+       {
+        "label": "diện tích",
+        "value": 135
+       }
+      ]
+     },
+     "solutionNarrative": "Chiều rộng = (24 − 6) : 2 = 9 m; chiều dài = 24 − 9 = 15 m. Diện tích = 15 × 9 = 135 mét vuông."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Số bé bằng tổng trừ hiệu rồi chia cho 2.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Số bé bằng hiệu trừ tổng rồi chia cho 2.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — phải lấy tổng trừ hiệu, vì tổng luôn lớn hơn hiệu."
+   },
+   {
+    "id": "Q3",
+    "text": "Tổng 70, hiệu 10 thì số bé bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 30",
+     "B. 60",
+     "C. 40"
+    ],
+    "answerKey": {
+     "choice": "A. 30"
+    },
+    "solutionNarrative": "(70 − 10) : 2 = 30."
+   },
+   {
+    "id": "Q4",
+    "text": "Muốn tìm số bé trên sơ đồ, ta:",
+    "format": "mcq",
+    "choices": [
+     "A. cắt bớt khúc hiệu khỏi đoạn dài",
+     "B. thêm khúc hiệu vào đoạn ngắn",
+     "C. bỏ hẳn đoạn ngắn đi"
+    ],
+    "answerKey": {
+     "choice": "A. cắt bớt khúc hiệu khỏi đoạn dài"
+    },
+    "solutionNarrative": "Cắt xong thì mỗi đoạn bằng số bé."
+   },
+   {
+    "id": "Q5",
+    "text": "Sau khi tìm được cả hai số, cách kiểm chắc nhất là:",
+    "format": "mcq",
+    "choices": [
+     "A. cộng lại xem có bằng tổng và trừ xem có bằng hiệu không",
+     "B. chỉ cần cộng lại",
+     "C. không cần kiểm"
+    ],
+    "answerKey": {
+     "choice": "A. cộng lại xem có bằng tổng và trừ xem có bằng hiệu không"
+    },
+    "solutionNarrative": "Phải khớp CẢ HAI điều đề cho."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con một bài rồi bắt tính CẢ HAI số bằng hai công thức, sau đó cộng lại xem có ra đúng tổng không. Đó là cách tự soi rất chắc.",
+  "homeActivity": "Con lẫn dấu cộng với dấu trừ là chuyện thường. Bố mẹ hỏi: \"Con đang tìm số to hay số nhỏ?\" — tìm số to thì cộng, tìm số nhỏ thì trừ.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài trước con bù thêm cho đoạn ngắn. Hôm nay con làm ngược lại: cắt bớt khúc hiệu khỏi đoạn dài. Vẫn là hai đoạn bằng nhau, chỉ khác ở chỗ lần này mỗi đoạn bằng số bé. Con sẽ thấy đây không phải công thức mới, mà là cùng một cách nghĩ soi từ phía kia.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B19"
+  ],
+  "ten": [
+   "THÊM BỚT ĐỂ BẰNG NHAU"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B59_giang.mp4"
+ }
+}

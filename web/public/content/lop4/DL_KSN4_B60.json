@@ -1,0 +1,327 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B60",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 38 · BA SỐ BIẾT TỔNG VÀ HAI HIỆU — QUY VỀ ĐOẠN NGẮN NHẤT",
+ "durationMinutes": 10,
+ "so": 38,
+ "chuong": 6,
+ "tenChuong": "TỔNG - HIỆU",
+ "dangGoc": "Dạng gốc: LV 2.5 mức Lớp 4 — Ba số biết tổng và hai hiệu so với số bé nhất; vẽ ba đoạn thẳng và cắt cho bằng đoạn ngắn nhất.",
+ "skills": {
+  "bktUnit": "CHUONG:6@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 38,
+  "prev": "DL:KSN4.B27",
+  "next": "DL:KSN4.B28"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Vẽ được sơ đồ ba đoạn thẳng. Cắt bớt cho ba đoạn bằng nhau rồi chia ba. Tìm lại được hai số kia sau khi có số bé nhất.",
+  "kidText": "Lần này có ba đoạn thẳng chứ không phải hai. Con đoán xem cuối cùng phải chia cho mấy?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn cắt xong rồi vẫn chia đôi như bài hai số, được 75 chia 2.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Sau khi cắt, con còn mấy đoạn bằng nhau? Gợi ý 2: Còn BA đoạn. Vậy chia cho mấy? Chữa: chia cho 3, được 75 : 3 = 25. Có mấy đoạn bằng nhau thì chia cho bấy nhiêu, không phải lúc nào cũng chia đôi."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn cắt xong rồi vẫn chia đôi như bài hai số, được 75 chia 2.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Ba số có tổng bằng 90. Số thứ hai hơn số thứ nhất 5, số thứ ba hơn số thứ nhất 10. Tìm ba số.",
+  "steps": [
+   {
+    "show": "Vẽ ba đoạn"
+   },
+   {
+    "show": "Đoạn thứ nhất ngắn nhất. Đoạn thứ hai dôi ra 5, đoạn thứ ba dôi ra 10."
+   },
+   {
+    "show": "Cắt cho ba đoạn bằng nhau"
+   },
+   {
+    "show": "Cắt bỏ khúc 5 của đoạn hai và khúc 10 của đoạn ba. Bây giờ ba đoạn bằng nhau, mỗi đoạn đúng bằng số thứ nhất."
+   },
+   {
+    "show": "Xem tổng đổi thế nào"
+   },
+   {
+    "show": "Ta vừa cắt đi 5 và 10, tất cả là 15. Tổng còn 90 − 15 = 75."
+   },
+   {
+    "show": "Chia ba"
+   },
+   {
+    "show": "75 là ba lần số thứ nhất, nên số thứ nhất là 75 : 3 = 25."
+   },
+   {
+    "show": "Tìm hai số kia"
+   },
+   {
+    "show": "Số thứ hai = 25 + 5 = 30. Số thứ ba = 25 + 10 = 35. Thử lại: 25 + 30 + 35 = 90."
+   },
+   {
+    "show": "Đáp số: ba số là 25, 30 và 35."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Ba số có tổng 90, số hai hơn số một 5, số ba hơn số một 10 — đúng bài trong video. Cắt bỏ hai khúc dôi ra thì tổng còn bao nhiêu?",
+     "answerKey": {
+      "value": 75
+     },
+     "solutionNarrative": "Cắt đi 5 và 10, tất cả 15. Tổng còn 90 − 15 = 75."
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên. Sau khi cắt còn mấy đoạn bằng nhau, và số thứ nhất bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "còn mấy đoạn bằng nhau",
+        "value": 3
+       },
+       {
+        "label": "số thứ nhất",
+        "value": 25
+       }
+      ]
+     },
+     "solutionNarrative": "Còn 3 đoạn bằng nhau. Số thứ nhất = 75 : 3 = 25."
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn bài trên. Tìm số thứ hai và số thứ ba.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số thứ hai",
+        "value": 30
+       },
+       {
+        "label": "số thứ ba",
+        "value": 35
+       }
+      ]
+     },
+     "solutionNarrative": "Số thứ hai = 25 + 5 = 30; số thứ ba = 25 + 10 = 35."
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Bạn Minh cắt xong rồi chia 75 cho 2. Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phải chia cho",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Sau khi cắt còn BA đoạn bằng nhau nên phải chia cho 3, được 25."
+    },
+    {
+     "id": "C5",
+     "text": "Ba số có tổng 60. Số hai hơn số một 3, số ba hơn số một 6. Tìm số thứ nhất.",
+     "answerKey": {
+      "value": 17
+     },
+     "solutionNarrative": "Tổng sau khi cắt = 60 − 3 − 6 = 51. Số thứ nhất = 51 : 3 = 17."
+    },
+    {
+     "id": "C6",
+     "text": "Vẫn bài trên. Tìm số thứ hai và số thứ ba, rồi thử lại.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số thứ hai",
+        "value": 20
+       },
+       {
+        "label": "số thứ ba",
+        "value": 23
+       }
+      ]
+     },
+     "solutionNarrative": "Số hai = 17 + 3 = 20; số ba = 17 + 6 = 23. Thử: 17 + 20 + 23 = 60, đúng."
+    },
+    {
+     "id": "C7",
+     "text": "Vì sao phải cắt bỏ các khúc dôi ra trước khi chia?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chỉ khi ba đoạn thế nào thì mới chia đều được",
+        "options": [
+         "bằng nhau",
+         "khác nhau"
+        ],
+        "value": "bằng nhau"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì chỉ khi ba đoạn bằng nhau thì phép chia đều mới cho ra đúng một đoạn. Còn khúc dôi ra thì ba đoạn không bằng nhau."
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Ba lớp trồng được 120 cây. Lớp B trồng hơn lớp A 8 cây, lớp C trồng hơn lớp A 16 cây. Mỗi lớp trồng bao nhiêu cây?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớp A",
+        "value": 32
+       },
+       {
+        "label": "lớp B",
+        "value": 40
+       },
+       {
+        "label": "lớp C",
+        "value": 48
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng sau khi cắt = 120 − 8 − 16 = 96. Lớp A = 96 : 3 = 32 cây; lớp B = 40 cây; lớp C = 48 cây."
+    },
+    {
+     "id": "C9",
+     "text": "Ba số có tổng 99. Số thứ hai hơn số thứ nhất 6, số thứ ba hơn số thứ nhất 12. Tìm ba số rồi thử lại.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số thứ nhất",
+        "value": 27
+       },
+       {
+        "label": "số thứ hai",
+        "value": 33
+       },
+       {
+        "label": "số thứ ba",
+        "value": 39
+       }
+      ]
+     },
+     "solutionNarrative": "Tổng sau khi cắt = 99 − 6 − 12 = 81. Số thứ nhất = 81 : 3 = 27; số thứ hai = 33; số thứ ba = 39. Thử: 27 + 33 + 39 = 99, đúng."
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Sau khi cắt bỏ các khúc dôi ra, ba đoạn bằng nhau nên chia cho 3.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Bài ba số cũng chia đôi như bài hai số.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — có mấy đoạn bằng nhau thì chia cho bấy nhiêu."
+   },
+   {
+    "id": "Q3",
+    "text": "Ba số tổng 90, hai khúc dôi ra là 5 và 10. Sau khi cắt, tổng còn:",
+    "format": "mcq",
+    "choices": [
+     "A. 75",
+     "B. 85",
+     "C. 90"
+    ],
+    "answerKey": {
+     "choice": "A. 75"
+    },
+    "solutionNarrative": "90 − 5 − 10 = 75."
+   },
+   {
+    "id": "Q4",
+    "text": "Sau khi cắt còn 75 và ba đoạn bằng nhau, số thứ nhất là:",
+    "format": "mcq",
+    "choices": [
+     "A. 25",
+     "B. 37",
+     "C. 15"
+    ],
+    "answerKey": {
+     "choice": "A. 25"
+    },
+    "solutionNarrative": "75 : 3 = 25."
+   },
+   {
+    "id": "Q5",
+    "text": "Trên sơ đồ ba đoạn, đoạn ngắn nhất là:",
+    "format": "mcq",
+    "choices": [
+     "A. số thứ nhất",
+     "B. số thứ hai",
+     "C. số thứ ba"
+    ],
+    "answerKey": {
+     "choice": "A. số thứ nhất"
+    },
+    "solutionNarrative": "Hai số kia đều hơn nó."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Bảo con vẽ ba đoạn rồi lấy bút gạch bỏ hai khúc dôi ra. Con nhìn thấy ba đoạn bằng nhau thì sẽ chia ba chứ không chia hai.",
+  "homeActivity": "Chỗ sai duy nhất của bài này là chia nhầm số. Bố mẹ hỏi: \"Còn mấy đoạn bằng nhau?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài cuối chương, và là bài dùng lại tất cả. Lần này có BA số chứ không phải hai, nên sơ đồ có ba đoạn. Cách làm vẫn đúng như cũ: cắt cho ba đoạn bằng nhau, rồi chia đều.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B19",
+   "DL:KSN3.B18"
+  ],
+  "ten": [
+   "THÊM BỚT ĐỂ BẰNG NHAU",
+   "HƠN MẤY ĐƠN VỊ HAY GẤP MẤY LẦN?"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B60_giang.mp4"
+ }
+}

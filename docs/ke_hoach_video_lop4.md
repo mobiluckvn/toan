@@ -119,7 +119,7 @@ chương dùng chung ví dụ và chung cách nói.
 | 1 | 4 · Dãy số | B18 · B19 · B20 | **nối tiếp cụm vừa xong**, dùng lại đúng ví dụ 5·10·15·20·25 |
 | ~~2~~ | ~~3 · Dấu hiệu chia hết~~ | **XONG 14-08** | 4 bài → **9 bài**, xem §12 |
 | ~~3~~ | ~~5 · Trung bình cộng~~ | **XONG 14-08** | 3 bài → **6 bài**, xem §13 |
-| 4 | 6 · Tổng - hiệu | B24–B27 | có sơ đồ đoạn thẳng — cần thêm một kiểu cảnh mới |
+| ~~4~~ | ~~6 · Tổng - hiệu~~ | **XONG 14-08** | 4 bài → **7 bài**, xem §14 |
 | 5 | 7 · Tổng - tỉ, Hiệu - tỉ | B28–B31 | dùng lại kiểu cảnh của đợt 4 |
 | 6 | 1 · Số đến lớp triệu | B01–B04 | bài đầu quyển, bé mới vào |
 | 7 | 2 · Bốn phép tính | B05–B08 | |
@@ -190,9 +190,9 @@ nới cổng cho xanh thì bài ấy thành trống trơn mà không ai biết.
 
 ## 8 · Ba việc phải quyết trước khi bắt đầu đợt lớn
 
-**1 · Sơ đồ đoạn thẳng.** Chương 6 và 7 (8 bài) dạy bằng sơ đồ đoạn thẳng — kiểu
-cảnh chưa có. Phải dựng trước, và nên dựng chung với `figforge` để màn hình và video
-cùng một nguồn, đúng bài học của `hinh_ve.json`.
+**1 · Sơ đồ đoạn thẳng. → ĐÃ LÀM 14-08.** Cảnh `so_do_doan` — xem §14. Bác dặn
+riêng: **vẽ kiểu đoạn thẳng**, nên nó là đoạn thẳng nằm ngang có ngoặc hai đầu, đúng
+cách sách giáo khoa vẽ, không phải cột hay ô vuông. Chương 7 dùng lại được ngay.
 
 **2 · Bài cũ có nên giữ chữ giảng không.** Năm bài vừa làm xoá sạch. Nhưng 44 bài cũ
 đã có phần giảng viết kỹ, có hình, có bẫy Trí Long. Xoá hết là mất một khối lượng
@@ -470,3 +470,51 @@ mới thấy.
 6 video · 5,0 phút · 73 clip tiếng mới · 84 câu hỏi · quyển từ **54 lên 57 bài**.
 Niêm phong bộ chấm 2275 → 2303, lệch đúng bằng 54 − 26 = 28 câu luyện tập chấm máy
 được của chương (ba bài cũ có 26 vì một câu vốn để bé tự chấm).
+
+---
+
+## 14 · Đợt 4 · chương 6 — tổng - hiệu, 4 bài thành 7
+
+Chương này gói chặt nhất từ trước tới nay: **B24 dạy CẢ HAI công thức** cùng lúc lại
+kèm việc vẽ sơ đồ; **B27 gộp bài toán tuổi với bài ba số** — hai dạng chẳng liên quan.
+Và vẫn thiếu bài gốc: **không bài nào dạy sơ đồ đoạn thẳng là gì**, nó được dùng ngay
+từ bài đầu như thể bé đã biết.
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 32 | B58 *(mới)* | **sơ đồ đoạn thẳng là gì** — đọc và vẽ, KHÔNG công thức |
+| 33 | B24 | số lớn = (tổng + hiệu) : 2 — **thêm hiệu cho hai đoạn bằng nhau** |
+| 34 | B59 *(mới)* | số bé = (tổng − hiệu) : 2 — **cắt bớt cho hai đoạn bằng nhau** |
+| 35 | B25 | tổng bị giấu — lôi tổng ra trước |
+| 36 | B26 | hiệu bị giấu — dịch câu chữ thành con số |
+| 37 | B27 | cùng thêm vào cả hai — **hiệu đứng yên** |
+| 38 | B60 *(mới)* | ba số — quy về đoạn ngắn nhất, chia BA |
+
+### Vì sao hai công thức phải tách thành hai bài
+
+Đây là quyết định quan trọng nhất của chương. Dạy chung một bài thì bé nhận hai câu
+gần giống hệt nhau, khác đúng một dấu, và lẫn ngay. Tách ra thì mỗi bài **suy công
+thức từ hình**, và bé thấy chúng không phải hai điều phải nhớ mà là **một cách nghĩ
+soi từ hai phía**:
+
+```
+thêm HIỆU vào đoạn ngắn  →  hai đoạn bằng nhau  →  2 lần số lớn = tổng + hiệu
+cắt HIỆU khỏi đoạn dài   →  hai đoạn bằng nhau  →  2 lần số bé  = tổng − hiệu
+```
+
+Câu chốt bé mang theo: **tìm số to thì cộng, tìm số nhỏ thì trừ** — và bé biết vì sao.
+
+### Kiểu cảnh mới — `so_do_doan`
+
+Bác dặn riêng nên nó vẽ **đúng bằng đoạn thẳng**: hai vạch nằm ngang có ngoặc hai đầu,
+khúc dôi ra tô vàng, ngoặc bên phải ôm cả hai đoạn ghi tổng. Ba cờ để dựng cảnh chứng
+minh: `themVaoBe` (nối thêm nét đứt vàng), `botOLon` (khúc cắt tô đỏ), `chuTong`.
+
+Bộ neo **tổng 70 · hiệu 10** (số lớn 40, số bé 30) chạy suốt bảy bài — cả hai công
+thức đều ra số chẵn, và trung bình cộng của chúng là 35 nên bài "tổng bị giấu" nối
+được với chương 5 vừa học.
+
+### Số đo
+
+7 video · 88 clip tiếng mới · 98 câu hỏi · quyển từ **57 lên 60 bài**. Gỡ 7 hình cũ
+neo vào mở bài và bài giảng — chính video nay đã có sơ đồ, giữ lại là hình chết.

@@ -219,7 +219,13 @@ function diemDanh() {
        sau    54 câu  ·  lệch +28  ·  2275 + 28 = 2303  ✓
    Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
    `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
-const MOC = { tong: 2303, dungKhiDungDap: 2301, dungKhiSaiDap: 1, tuDoiChieu: 1 };
+/* ⚠ 2303 → 2332. Chương 6 tách bốn bài thành bảy. Đo lại:
+       luyện tập chương 6   36 → 63 câu chấm máy   (+27)
+       kỳ ôn 6              22 → 24 câu chấm máy   (+2, hai câu cũ chưa có ô nhập)
+                                          cộng  +29  ·  2303 + 29 = 2332  ✓
+   Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
+const MOC = { tong: 2332, dungKhiDungDap: 2330, dungKhiSaiDap: 1, tuDoiChieu: 1 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

@@ -1162,6 +1162,286 @@ def kb_them_so(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# CHƯƠNG 6 · BẢY KỊCH BẢN — TỔNG - HIỆU
+# ═══════════════════════════════════════════════════════════════════════════
+# Bác dặn riêng: chương này **vẽ kiểu đoạn thẳng**. Nên cảnh `so_do_doan` là đoạn
+# thẳng thật, và cả chương chứng minh BẰNG HÌNH chứ không nêu công thức:
+#
+#     thêm HIỆU vào đoạn ngắn → hai đoạn bằng nhau → hai lần số lớn = tổng + hiệu
+#     cắt HIỆU khỏi đoạn dài  → hai đoạn bằng nhau → hai lần số bé  = tổng − hiệu
+#
+# Đó là lý do hai công thức tách thành hai bài: chúng KHÔNG phải hai câu phải nhớ,
+# mà là một cách nghĩ soi từ hai phía. Dạy chung một bài thì bé lẫn dấu ngay.
+TONG, HIEU, LON, BE = 70, 10, 40, 30
+
+
+def kb_so_do(b):
+    """① Sơ đồ đoạn thẳng là gì — bài KHÁI NIỆM, không một công thức nào."""
+    return [
+        _c('bia', 'Sơ đồ đoạn thẳng', so_bai(b),
+           loi=['Hôm nay mình học cách vẽ bài toán ra thành hai đoạn thẳng.']),
+        _c('so_do_doan', 'Hai số có tổng 70 và hiệu 10', be=BE, lon=LON,
+           chuPhu='Đoạn ngắn là số bé, đoạn dài là số lớn.',
+           loi=['Hai số có tổng bảy mươi và hiệu mười.',
+                'Vẽ một đoạn ngắn cho số bé, một đoạn dài hơn cho số lớn.']),
+        _c('y_toan', 'Hai đoạn vẽ thẳng hàng', 'Đầu bên trái ngang nhau.',
+           buoc=1, soBuoc=3,
+           loi=['Hai đoạn vẽ thẳng hàng, đầu bên trái ngang nhau.',
+                'Có thế mới so được đoạn nào dài hơn.']),
+        _c('so_do_doan', 'Khúc dôi ra chính là HIỆU', be=BE, lon=LON,
+           hienHieu=True, chuHieu='hiệu 10',
+           chuPhu='Đoạn dài dôi ra một khúc bằng 10.',
+           loi=['Đoạn dài dôi ra một khúc so với đoạn ngắn.',
+                'Khúc ấy chính là hiệu, ở đây bằng mười.']),
+        _c('y_toan', 'Còn tổng thì ghi ở đâu', 'Tổng là của CẢ HAI đoạn cộng lại.',
+           buoc=2, soBuoc=3,
+           loi=['Còn tổng thì ghi ở đâu. Tổng là của cả hai đoạn cộng lại.']),
+        _c('so_do_doan', 'Ngoặc ôm cả hai đoạn, ghi tổng ra ngoài', be=BE, lon=LON,
+           hienHieu=True, chuHieu='hiệu 10', chuTong='tổng 70',
+           chuPhu='Ghi 70 lên một đoạn là sai.',
+           loi=['Ta ngoặc cả hai đoạn lại rồi ghi bảy mươi ra ngoài.',
+                'Ghi bảy mươi lên một đoạn là sai, vì nó không phải của riêng đoạn nào.']),
+        _c('y_toan', 'Đọc lại sơ đồ', 'Nhìn hình là biết đủ bốn thứ.',
+           buoc=3, soBuoc=3,
+           loi=['Nhìn hình là biết đoạn nào ngắn, khúc dôi ra bao nhiêu, và tổng bao nhiêu.']),
+        _c('cong_thuc', 'Bốn thứ trên một sơ đồ',
+           congThuc='đoạn ngắn · đoạn dài · khúc dôi ra = hiệu · ngoặc ngoài = tổng',
+           loi=['Một sơ đồ có bốn thứ. Đoạn ngắn, đoạn dài, khúc dôi ra, và ngoặc ngoài.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='khúc dôi ra = hiệu · ngoặc ngoài = tổng',
+           loi=['Con nhớ lại một lần nữa. Khúc dôi ra là hiệu, ngoặc ngoài là tổng.',
+                'Vẽ được sơ đồ là con đã làm xong nửa bài rồi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_so_lon(b):
+    """② Số lớn — SUY RA từ hình bằng cách thêm hiệu vào đoạn ngắn."""
+    return [
+        _c('bia', 'Tìm số lớn', so_bai(b),
+           loi=['Hôm nay mình tìm số lớn, và tự nhìn ra công thức trên hình.']),
+        _c('so_do_doan', 'Tổng 70, hiệu 10 — tìm số lớn', be=BE, lon=LON,
+           hienHieu=True, chuHieu='hiệu 10', chuTong='tổng 70',
+           loi=['Hai số có tổng bảy mươi và hiệu mười. Tìm số lớn.']),
+        _c('so_do_doan', 'Thêm hiệu vào đoạn ngắn', be=BE, lon=LON,
+           hienHieu=True, chuHieu='hiệu 10', themVaoBe=True,
+           chuPhu='Bây giờ hai đoạn bằng nhau.',
+           loi=['Nối thêm một khúc mười vào đoạn ngắn.',
+                'Bây giờ hai đoạn dài bằng nhau, và mỗi đoạn đúng bằng số lớn.']),
+        _c('y_toan', 'Tổng đổi thế nào', '70 + 10 = 80', buoc=1, soBuoc=3,
+           loi=['Ta vừa thêm mười nên tổng cũng tăng thêm mười, thành tám mươi.']),
+        _c('y_toan', '80 là của MẤY đoạn', 'Của hai đoạn bằng nhau.',
+           buoc=2, soBuoc=3,
+           loi=['Tám mươi là của hai đoạn bằng nhau, không phải của một đoạn.']),
+        _c('y_toan', 'Nên còn phải chia đôi', '80 : 2 = 40', buoc=3, soBuoc=3,
+           loi=['Nên còn phải chia đôi. Tám mươi chia hai bằng bốn mươi.',
+                'Quên chia đôi là ra số lớn gấp đôi số thật.']),
+        _c('cong_thuc', 'Cách tìm số lớn',
+           congThuc='số lớn = (tổng + hiệu) : 2',
+           thay='(70 + 10) : 2 = 40',
+           loi=['Số lớn bằng tổng cộng hiệu, rồi chia đôi.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='số lớn = (tổng + hiệu) : 2',
+           loi=['Con nhớ lại một lần nữa. Cộng hiệu vào vì ta bù cho đoạn ngắn.',
+                'Chia đôi vì sau khi bù thì có hai đoạn bằng nhau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_so_be(b):
+    """③ Số bé — cùng cách nghĩ, soi từ phía kia: cắt bớt đoạn dài."""
+    return [
+        _c('bia', 'Tìm số bé', so_bai(b),
+           loi=['Hôm nay mình làm ngược lại bài hôm qua.']),
+        _c('so_do_doan', 'Vẫn tổng 70, hiệu 10 — lần này tìm số bé', be=BE, lon=LON,
+           hienHieu=True, chuHieu='hiệu 10', chuTong='tổng 70',
+           loi=['Vẫn hai số có tổng bảy mươi và hiệu mười. Lần này tìm số bé.']),
+        _c('so_do_doan', 'Cắt bỏ khúc hiệu khỏi đoạn dài', be=BE, lon=LON,
+           hienHieu=True, botOLon=True, chuHieu='cắt bỏ khúc này',
+           chuPhu='Bây giờ hai đoạn lại bằng nhau.',
+           loi=['Cắt bỏ khúc mười khỏi đoạn dài.',
+                'Bây giờ hai đoạn lại bằng nhau, và mỗi đoạn đúng bằng số bé.']),
+        _c('y_toan', 'Tổng đổi thế nào', '70 − 10 = 60', buoc=1, soBuoc=3,
+           loi=['Ta vừa cắt đi mười nên tổng cũng giảm mười, còn sáu mươi.']),
+        _c('y_toan', '60 là của hai đoạn', 'Nên chia đôi.', buoc=2, soBuoc=3,
+           loi=['Sáu mươi là của hai đoạn bằng nhau, nên còn phải chia đôi.']),
+        _c('y_toan', 'Số bé', '60 : 2 = 30', buoc=3, soBuoc=3,
+           loi=['Sáu mươi chia hai bằng ba mươi. Vậy số bé là ba mươi.']),
+        _c('so_do_doan', 'Kiểm chéo với bài hôm qua', be=BE, lon=LON,
+           hienHieu=True, chuHieu='hiệu 10', chuTong='tổng 70',
+           chuPhu='30 + 40 = 70 và 40 − 30 = 10.',
+           loi=['Kiểm chéo. Ba mươi cộng bốn mươi bằng bảy mươi, đúng bằng tổng.',
+                'Bốn mươi trừ ba mươi bằng mười, đúng bằng hiệu.']),
+        _c('cong_thuc', 'Cách tìm số bé',
+           congThuc='số bé = (tổng − hiệu) : 2',
+           thay='(70 − 10) : 2 = 30',
+           loi=['Số bé bằng tổng trừ hiệu, rồi chia đôi.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='tìm số to thì CỘNG · tìm số nhỏ thì TRỪ',
+           loi=['Con nhớ lại một lần nữa. Tìm số to thì cộng, tìm số nhỏ thì trừ.',
+                'Và tổng bao giờ cũng lớn hơn hiệu nên lúc nào cũng trừ được.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_giau_tong(b):
+    """④ Tổng bị giấu — một việc: lôi tổng ra trước."""
+    return [
+        _c('bia', 'Khi đề không cho sẵn tổng', so_bai(b),
+           loi=['Hôm nay đề giấu mất tổng đi, mình phải tìm nó ra trước.']),
+        _c('de_toan', 'Trung bình cộng của hai số là 35, hiệu của chúng là 10.',
+           'Tìm hai số.',
+           loi=['Trung bình cộng của hai số là ba mươi lăm. Hiệu là mười.',
+                'Hỏi hai số ấy là bao nhiêu.']),
+        _c('y_toan', 'Đề cho gì và thiếu gì', 'Có hiệu rồi, nhưng chưa có tổng.',
+           buoc=1, soBuoc=3,
+           loi=['Đề cho hiệu rồi, nhưng chưa cho tổng. Mà công thức thì cần tổng.']),
+        _c('y_toan', 'Lôi tổng ra', '35 × 2 = 70', buoc=2, soBuoc=3,
+           loi=['Chương trước con đã học. Tổng bằng trung bình cộng nhân số lượng.',
+                'Ở đây ba mươi lăm nhân hai bằng bảy mươi.']),
+        _c('so_do_doan', 'Có tổng rồi thì làm như cũ', be=BE, lon=LON,
+           hienHieu=True, chuHieu='hiệu 10', chuTong='tổng 70',
+           chuPhu='Số lớn 40, số bé 30.',
+           loi=['Có tổng rồi thì làm như cũ. Số lớn bốn mươi, số bé ba mươi.']),
+        _c('y_toan', 'Một kiểu giấu khác', 'Chu vi 48 m thì tổng dài và rộng là 24 m.',
+           buoc=3, soBuoc=3,
+           loi=['Còn một kiểu giấu nữa. Nếu đề cho chu vi hình chữ nhật.',
+                'Chu vi bằng hai lần tổng chiều dài với chiều rộng, nên chia đôi là ra.']),
+        _c('cong_thuc', 'Việc đầu tiên luôn là tìm tổng',
+           congThuc='tổng = trung bình cộng × 2   ·   tổng = chu vi : 2',
+           thay='35 × 2 = 70',
+           loi=['Việc đầu tiên luôn là tìm tổng ra đã.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chưa có tổng thì chưa dùng được công thức',
+           loi=['Con nhớ lại một lần nữa. Chưa có tổng thì chưa dùng được công thức.',
+                'Đừng lấy nhầm trung bình cộng làm tổng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_giau_hieu(b):
+    """⑤ Hiệu bị giấu — nấp trong CÂU CHỮ, không nấp trong con số."""
+    return [
+        _c('bia', 'Khi đề không cho sẵn hiệu', so_bai(b),
+           loi=['Hôm nay đề giấu mất hiệu, và nó nấp trong câu chữ.']),
+        _c('de_toan', 'Hai số tự nhiên liên tiếp có tổng bằng 71.', 'Tìm hai số.',
+           loi=['Hai số tự nhiên liên tiếp có tổng bằng bảy mươi mốt.',
+                'Hỏi hai số ấy là bao nhiêu.']),
+        _c('y_toan', 'Đề không nói hiệu bằng mấy',
+           'Nó chỉ nói hai số LIÊN TIẾP.', buoc=1, soBuoc=3,
+           loi=['Đề không nói hiệu bằng mấy. Nó chỉ nói hai số liên tiếp.']),
+        _c('y_toan', 'Dịch câu ấy ra', 'Liên tiếp nghĩa là hơn kém nhau đúng 1.',
+           buoc=2, soBuoc=3,
+           loi=['Hai số tự nhiên liên tiếp thì hơn kém nhau đúng một đơn vị.',
+                'Vậy hiệu bằng một.']),
+        _c('y_toan', 'Có hiệu rồi thì làm như cũ',
+           'Số lớn = (71 + 1) : 2 = 36,  số bé = 35', buoc=3, soBuoc=3,
+           loi=['Có hiệu rồi thì làm như cũ. Số lớn là ba mươi sáu, số bé là ba mươi lăm.']),
+        _c('so_do_doan', 'Mấy kiểu nấp khác', be=8, lon=10,
+           hienHieu=True, chuHieu='hiệu 2',
+           chuPhu='Hai số chẵn liên tiếp thì hiệu là 2.',
+           chuCuoi='Bớt số lớn 8 thì bằng nhau, nghĩa là hiệu bằng 8.',
+           loi=['Hai số chẵn liên tiếp thì hiệu là hai, ví dụ tám và mười.',
+                'Còn nói bớt số lớn đi tám thì bằng nhau, nghĩa là hiệu bằng tám.']),
+        _c('cong_thuc', 'Dịch câu chữ thành con số',
+           congThuc='liên tiếp = 1 · chẵn hoặc lẻ liên tiếp = 2 · bớt k thì bằng = k',
+           thay='liên tiếp  ⟶  hiệu 1',
+           loi=['Việc đầu tiên là dịch câu chữ của đề thành con số.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chuyển k từ số này sang số kia  ⟶  hiệu = 2 lần k',
+           loi=['Con nhớ thêm một câu khó. Chuyển từ số lớn sang số bé.',
+                'Thì bên này bớt đi, bên kia được thêm, nên hiệu bằng hai lần chỗ chuyển.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_cung_them(b):
+    """⑥ Cùng thêm vào cả hai — hiệu đứng yên, và nhìn hình là thấy."""
+    return [
+        _c('bia', 'Cùng thêm vào cả hai số', so_bai(b),
+           loi=['Hôm nay mình xem điều gì xảy ra khi cả hai số cùng lớn lên.']),
+        _c('de_toan', 'Tổng tuổi hai anh em là 20, anh hơn em 4 tuổi.',
+           'Sau 3 năm nữa mỗi người bao nhiêu tuổi?',
+           loi=['Tổng số tuổi hai anh em là hai mươi. Anh hơn em bốn tuổi.',
+                'Hỏi sau ba năm nữa mỗi người bao nhiêu tuổi.']),
+        _c('so_do_doan', 'Sơ đồ hiện nay', be=8, lon=12,
+           hienHieu=True, chuHieu='hiệu 4', chuTong='tổng 20',
+           loi=['Vẽ sơ đồ hiện nay. Khúc dôi ra là bốn, ngoặc ngoài là hai mươi.']),
+        _c('so_do_doan', 'Sau 3 năm, CẢ HAI đoạn cùng dài thêm 3', be=11, lon=15,
+           hienHieu=True, chuHieu='hiệu vẫn 4', chuTong='tổng 26',
+           chuPhu='Khúc dôi ra y nguyên!',
+           loi=['Sau ba năm, cả hai đoạn cùng dài thêm ba.',
+                'Nhưng khúc dôi ra vẫn như cũ. Anh vẫn hơn em bốn tuổi.']),
+        _c('y_toan', 'Hiệu không bao giờ đổi', 'Vì hai đoạn cùng dài thêm như nhau.',
+           buoc=1, soBuoc=3,
+           loi=['Hiệu tuổi không bao giờ đổi, vì hai đoạn cùng dài thêm như nhau.']),
+        _c('y_toan', 'Nhưng tổng thì tăng gấp đôi phần thêm',
+           'Mỗi người thêm 3, hai người nên tổng thêm 6.', buoc=2, soBuoc=3,
+           loi=['Nhưng tổng thì tăng. Mỗi người thêm ba tuổi, hai người nên tổng thêm sáu.',
+                'Tổng mới là hai mươi sáu.']),
+        _c('y_toan', 'Bây giờ mới tính', 'Anh = (26 + 4) : 2 = 15,  em = 11',
+           buoc=3, soBuoc=3,
+           loi=['Bây giờ mới tính. Anh mười lăm tuổi, em mười một tuổi.']),
+        _c('cong_thuc', 'Cùng thêm vào cả hai số',
+           congThuc='hiệu KHÔNG đổi  ·  tổng tăng thêm 2 lần phần thêm',
+           thay='20 + 3 × 2 = 26',
+           loi=['Cùng thêm vào cả hai số thì hiệu không đổi, còn tổng tăng hai lần phần thêm.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hiệu tuổi KHÔNG bao giờ đổi',
+           loi=['Con nhớ lại một lần nữa. Hiệu tuổi không bao giờ đổi.',
+                'Bố hơn con bao nhiêu tuổi thì mãi mãi hơn bấy nhiêu.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_ba_so(b):
+    """⑦ Ba số — vẫn cách nghĩ cũ, chỉ khác là chia BA."""
+    return [
+        _c('bia', 'Ba số biết tổng và hai hiệu', so_bai(b),
+           loi=['Hôm nay có ba số chứ không phải hai.']),
+        _c('de_toan', 'Ba số có tổng 90. Số hai hơn số một 5, số ba hơn số một 10.',
+           'Tìm ba số.',
+           loi=['Ba số có tổng chín mươi.',
+                'Số thứ hai hơn số thứ nhất năm, số thứ ba hơn số thứ nhất mười.']),
+        _c('y_toan', 'Vẽ ba đoạn', 'Đoạn thứ nhất ngắn nhất.', buoc=1, soBuoc=4,
+           loi=['Vẽ ba đoạn. Đoạn thứ nhất ngắn nhất.',
+                'Đoạn hai dôi ra năm, đoạn ba dôi ra mười.']),
+        _c('so_do_doan', 'Đoạn hai dôi ra 5', be=25, lon=30,
+           hienHieu=True, chuHieu='5', nhanBe='Số một', nhanLon='Số hai',
+           loi=['Đoạn thứ hai dôi ra năm so với đoạn thứ nhất.']),
+        _c('so_do_doan', 'Đoạn ba dôi ra 10', be=25, lon=35,
+           hienHieu=True, chuHieu='10', nhanBe='Số một', nhanLon='Số ba',
+           loi=['Đoạn thứ ba dôi ra mười so với đoạn thứ nhất.']),
+        _c('y_toan', 'Cắt cho ba đoạn bằng nhau', 'Cắt đi 5 và 10, tất cả là 15.',
+           buoc=2, soBuoc=4,
+           loi=['Cắt bỏ khúc năm và khúc mười. Tất cả là mười lăm.',
+                'Bây giờ ba đoạn bằng nhau, mỗi đoạn bằng số thứ nhất.']),
+        _c('y_toan', 'Tổng còn lại', '90 − 15 = 75', buoc=3, soBuoc=4,
+           loi=['Tổng còn bảy mươi lăm.']),
+        _c('y_toan', 'Chia cho MẤY', 'Còn ba đoạn bằng nhau nên chia ba.',
+           buoc=4, soBuoc=4,
+           loi=['Còn ba đoạn bằng nhau nên chia ba, chứ không chia đôi như bài hai số.',
+                'Bảy mươi lăm chia ba bằng hai mươi lăm.']),
+        _c('cong_thuc', 'Cách làm bài ba số',
+           congThuc='cắt hết khúc dôi ra  ⟶  chia cho SỐ ĐOẠN',
+           thay='(90 − 15) : 3 = 25',
+           loi=['Cắt hết khúc dôi ra rồi chia cho số đoạn.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='có mấy đoạn bằng nhau thì chia cho bấy nhiêu',
+           loi=['Con nhớ lại một lần nữa. Có mấy đoạn bằng nhau thì chia cho bấy nhiêu.',
+                'Rồi cộng khúc dôi ra để tìm lại hai số kia.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 # Khoá theo MÃ BÀI, không theo số bài. Từ 14-08 (lối C) số bài đếm từ vị trí trong
 # `thu_tu.json`, nên nó đổi mỗi khi chèn bài mới — khoá theo nó thì chèn chín bài
 # vào chương 3 là tám kịch bản này nhảy sang nhầm bài, mà vẫn dựng ra video hợp lệ.
@@ -1179,6 +1459,11 @@ BO = {
     'DL:KSN4.B55': kb_tbc_la_gi, 'DL:KSN4.B21': kb_tim_tbc,
     'DL:KSN4.B56': kb_tim_tong, 'DL:KSN4.B57': kb_so_thieu,
     'DL:KSN4.B22': kb_hon_kem,  'DL:KSN4.B23': kb_them_so,
+    # ── chương 6 · bảy bài tổng - hiệu ──
+    'DL:KSN4.B58': kb_so_do,     'DL:KSN4.B24': kb_so_lon,
+    'DL:KSN4.B59': kb_so_be,     'DL:KSN4.B25': kb_giau_tong,
+    'DL:KSN4.B26': kb_giau_hieu, 'DL:KSN4.B27': kb_cung_them,
+    'DL:KSN4.B60': kb_ba_so,
 }
 
 

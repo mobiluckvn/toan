@@ -325,6 +325,84 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuCuoi"):
             giua(d, y0 + h_nhom + 118, c["chuCuoi"], phong(34), INK, rong=W - 200)
 
+    elif L == "so_do_doan":
+        # ══ SƠ ĐỒ ĐOẠN THẲNG ══
+        # Bác dặn riêng: chương tổng - hiệu thì **vẽ kiểu đoạn thẳng**. Nên đây là
+        # đoạn thẳng thật — hai vạch nằm ngang có ngoặc hai đầu, đúng cách sách giáo
+        # khoa vẽ, chứ không phải cột hay ô vuông.
+        #
+        #   Số bé   ├──────────┤              ⎫
+        #                                      ⎬ tổng
+        #   Số lớn  ├──────────┼────┤         ⎭
+        #                       hiệu
+        #
+        # Toàn bộ chương này chứng minh bằng hình: thêm HIỆU vào đoạn ngắn thì hai
+        # đoạn bằng nhau, nên hai lần số lớn bằng tổng cộng hiệu. Bớt HIỆU khỏi đoạn
+        # dài thì cũng thế, nên hai lần số bé bằng tổng trừ hiệu. Không có hình thì
+        # hai công thức ấy chỉ còn là hai câu phải học thuộc.
+        giua(d, 46, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        be, lon = c.get("be", 0), c.get("lon", 0)
+        x0, rong_toi_da = 300, 640
+        don_vi = rong_toi_da / max(lon, be, 1)
+        y_be, y_lon, day_net = 210, 340, 9
+
+        def doan(y, dai, mau, nhan_trai, net=day_net, dut=False):
+            x1 = x0 + dai
+            if dut:                                   # đoạn thêm vào: vẽ nét đứt
+                for x in range(int(x0), int(x1), 20):
+                    d.line([x, y, min(x + 11, x1), y], fill=mau, width=net)
+            else:
+                d.line([x0, y, x1, y], fill=mau, width=net)
+            for x in (x0, x1):                        # ngoặc hai đầu
+                d.line([x, y - 17, x, y + 17], fill=mau, width=5)
+            if nhan_trai:
+                f = phong(30)
+                d.text((x0 - 22 - d.textlength(nhan_trai, font=f), y - 17),
+                       nhan_trai, font=f, fill=MUTE)
+            return x1
+
+        # ── đoạn ngắn ──
+        x_be = doan(y_be, be * don_vi, TEAL_DARK, c.get("nhanBe", "Số bé"))
+        if c.get("themVaoBe"):
+            # Thêm hiệu vào đoạn ngắn cho bằng đoạn dài — nét đứt vàng.
+            x2 = x0 + lon * don_vi
+            for x in range(int(x_be), int(x2), 20):
+                d.line([x, y_be, min(x + 11, x2), y_be], fill=GOLD, width=day_net)
+            d.line([x2, y_be - 17, x2, y_be + 17], fill=GOLD, width=5)
+            # Nhãn đặt ngay TRÊN phần vừa thêm, không căn giữa cả màn — nó đang chỉ
+            # vào đúng một đoạn, để giữa màn thì bé không biết nó nói về chỗ nào.
+            f, nhan = phong(28), "thêm hiệu vào cho bằng"
+            d.text((min(max((x_be + x2) / 2 - d.textlength(nhan, font=f) / 2, 20),
+                        W - 20 - d.textlength(nhan, font=f)), y_be - 62),
+                   nhan, font=f, fill=GOLD_DARK)
+
+        # ── đoạn dài, phần dôi ra tô vàng ──
+        x_lon = doan(y_lon, lon * don_vi, TEAL_DARK, c.get("nhanLon", "Số lớn"))
+        if c.get("hienHieu") and lon > be:
+            xa = x0 + be * don_vi
+            mau_hieu = ALERT if c.get("botOLon") else GOLD
+            d.line([xa, y_lon, x_lon, y_lon], fill=mau_hieu, width=day_net + 4)
+            d.line([xa, y_lon - 17, xa, y_lon + 17], fill=mau_hieu, width=5)
+            nhan = c.get("chuHieu", "hiệu")
+            f = phong(28)
+            giua_x = (xa + x_lon) / 2
+            d.text((giua_x - d.textlength(nhan, font=f) / 2, y_lon + 26), nhan,
+                   font=f, fill=ALERT if c.get("botOLon") else GOLD_DARK)
+
+        # ── ngoặc tổng, ôm cả hai đoạn ──
+        if c.get("chuTong"):
+            xb = x0 + max(be, lon) * don_vi + 46
+            d.line([xb, y_be, xb, y_lon], fill=NAVY, width=5)
+            for y in (y_be, y_lon):
+                d.line([xb - 16, y, xb, y], fill=NAVY, width=5)
+            f = phong(30)
+            d.text((xb + 16, (y_be + y_lon) / 2 - 16), c["chuTong"], font=f, fill=NAVY)
+
+        if c.get("chuPhu"):
+            giua(d, 470, c["chuPhu"], phong(36), INK, rong=W - 160)
+        if c.get("chuCuoi"):
+            giua(d, 546, c["chuCuoi"], phong(34), TEAL_DARK, rong=W - 200)
+
     elif L == "san_bang":
         # ══ TRUNG BÌNH CỘNG, NHÌN THẤY ĐƯỢC ══
         # Luật 9 của bác. "Trung bình cộng" nói bằng lời thì mãi vẫn là một phép chia

@@ -39,7 +39,7 @@ const bais = teps.map((f) => doc(join(GOC, f))).sort((a, b) => a.so - b.so);
    Ba con số dưới đây là ĐẾM, không phải luật — nới chúng khi thêm bài là đúng. Nhưng
    phải nới CÙNG LÚC cả ba, và giữ nguyên phép "liền mạch": số bài rời rạc thì bé mở
    quyển thấy nhảy cóc Bài 12 sang Bài 18, mà không có gì báo. */
-const SO_BAI = 57;
+const SO_BAI = 60;
 const SO_CAU = SO_BAI * 14;      // mỗi bài đúng 9 luyện tập + 5 quiz
 
 t(`đủ ${SO_BAI} bài (${bais.length})`, bais.length === SO_BAI);
