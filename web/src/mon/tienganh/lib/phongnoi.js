@@ -46,7 +46,75 @@ export const CHU_TOI_DA = 300;
 const goiTu = (v) => ({ tu: v.tu, nghia: v.nghia, ipa: v.ipa });
 const goiCau = (m) => ({ cau: m.cau, congThuc: m.congThuc, dungDe: m.dungDe });
 
-/** Rút phần dạy được của MỘT bài: từ mới và mẫu câu. */
+const chuTrongCau = (s) => String(s || '').toLowerCase().match(/[a-z']+/g) || [];
+
+/**
+ * SỐ ĐẾM — vốn nền sách MẶC ĐỊNH bé đã có, chứ không dạy.
+ *
+ * Đã dò cả 16 bài: KHÔNG bài nào có một con số trong danh sách từ mới. Nhưng hai
+ * bài lại có công thức đòi hẳn một ô `[Number]` (`How many + [Noun-plural]? -
+ * [Number].`), và câu ví dụ của chính sách thì dùng one · two · three · six.
+ *
+ * Nghĩa là sách coi số đếm là thứ bé biết sẵn — bé lớp 1 đếm tới mười ở giờ Toán
+ * trước khi vào giờ tiếng Anh. Đúng, nhưng phải NÓI RA ở đây, vì luật của phòng
+ * này là "không từ nào ngoài vốn của bé", mà số thì không nằm trong vốn nào cả.
+ *
+ * ── CHỖ NÀY KHÁC HẲN "blue" ──
+ * Unit 6 có `"It's a blue pen."` mà cả quyển không dạy "blue". Nhìn qua thì giống
+ * nhau, nhưng khác ở gốc: MÀU thì sách CÓ dạy thành từ mới ("red" là từ của Unit
+ * 6), nên một màu nằm ngoài danh sách là chỗ HỞ của sách. Số thì sách không dạy
+ * cái nào cả, ở bất cứ đâu — đó là chủ ý, không phải bỏ sót.
+ *
+ * Nên: số được nhận, "blue" thì không. Có cổng canh đúng hai chiều ấy, để lần sau
+ * đừng ai lấy cớ này mà nới cho một từ lạ khác.
+ */
+export const SO_DEM = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+
+/**
+ * CÂU SẴN CỦA SÁCH — `canonicalExamples`, thứ trước nay bỏ không.
+ *
+ * ── VÌ SAO PHẢI LẤY ──
+ * Ba bài có công thức HAI ô trống (`It's a + [Colour] + [Noun].` ·
+ * `How many + [Noun-plural]? - [Number].`). Máy không đoán được ô nào nhận màu, ô
+ * nào nhận danh từ — bài không khai — nên bản sinh tự động bỏ hẳn bước "thay" của
+ * ba bài ấy. Nhưng SÁCH thì đã tự điền sẵn rồi: "It's a red bell." nằm ngay trong
+ * `canonicalExamples`. Không cần đoán, chỉ cần đọc.
+ *
+ * ── VÌ SAO PHẢI LỌC, DÙ ĐÂY LÀ CÂU CỦA CHÍNH SÁCH ──
+ * Unit 6 có `"It's a blue pen."` trong khi cả quyển KHÔNG bài nào dạy từ "blue" —
+ * đã dò cả 16 bài. Đây là chỗ hở của sách, không phải của mình, nhưng cứ lấy vào
+ * là bé gặp một màu chưa ai dạy và không có gì báo.
+ *
+ * Nên chỉ nhận câu mà MỌI CHỮ đều là thứ chính bài ấy đã đưa ra: từ mới, hoặc chữ
+ * nằm trong mẫu câu / công thức của bài. Không nới ra "cả quyển" — bé mở Unit 6
+ * chưa chắc đã học Unit 12.
+ *
+ * ── VÌ SAO TÁCH ĐÔI Ở " - " ──
+ * `"How many clocks? - Two."` là MỘT LƯỢT HỎI và MỘT LƯỢT ĐÁP, không phải một câu.
+ * Bắt bé đọc cả cụm là dạy sai nhịp nói. Chính sách cũng tách đôi như thế trong
+ * phần `hoiThoai` của nó.
+ */
+function cauSachCuaBai(k) {
+  const mau = k.mauCauDs?.length ? k.mauCauDs : (k.mauCau ? [k.mauCau] : []);
+  const biet = new Set([
+    ...(k.vocabulary || []).flatMap((v) => chuTrongCau(v.tu)),
+    ...mau.flatMap((m) => [...chuTrongCau(m.cau), ...chuTrongCau(m.congThuc)]),
+    /* Số đếm chỉ được cộng vào khi công thức của CHÍNH bài ấy đòi một con số. Bài
+       nào không có ô `[Number]` thì số vẫn là từ lạ như mọi từ khác. */
+    ...(mau.some((m) => /\[Number\]/i.test(m.congThuc || '')) ? SO_DEM : []),
+  ]);
+  const ra = [];
+  for (const c of k.canonicalExamples || []) {
+    for (const nua of String(c).split(' - ')) {
+      const s = nua.trim();
+      if (!s || !chuTrongCau(s).every((w) => biet.has(w))) continue;
+      if (!ra.includes(s)) ra.push(s);
+    }
+  }
+  return ra;
+}
+
+/** Rút phần dạy được của MỘT bài: từ mới, mẫu câu, và câu sẵn của sách. */
 export function vonCuaBai(bai) {
   const k = bai?.knowledgeCore || {};
   const cau = k.mauCauDs?.length ? k.mauCauDs : (k.mauCau ? [k.mauCau] : []);
@@ -55,6 +123,7 @@ export function vonCuaBai(bai) {
     ten: bai?.title || '',
     tu: (k.vocabulary || []).map(goiTu),
     cau: cau.map(goiCau),
+    cauSach: cauSachCuaBai(k),
   };
 }
 
@@ -398,6 +467,11 @@ export function cauHopLe(en, { von, tenBe = '', cauTruoc = '' } = {}) {
   if (tu.some((t) => gonCau(t.tu) === c)) return true;
   if (LOI_LOP_HOC.some((x) => gonCau(x) === c)) return true;
   if (cau.some((x) => gonCau(x.cau) === c)) return true;
+  /* Câu sẵn của sách — đã lọc theo từ ở `cauSachCuaBai`. Mở chỗ này ăn hai đường:
+     ba bài công thức hai ô nay có câu để luyện, và cô giáo máy bớt nhàm vì có
+     nhiều câu đúng để chọn thay vì đúng một mẫu. */
+  const sach = [...(von.loi.cauSach || []), ...von.on.flatMap((x) => x.cauSach || [])];
+  if (sach.some((x) => gonCau(x) === c)) return true;
 
   /* Công thức đã điền: dựng mọi cách điền HỢP LỆ rồi so. Số cách rất nhỏ (số mẫu
      câu × số từ), nên cứ dựng hết còn hơn đoán bằng biểu thức chính quy. */
@@ -695,10 +769,32 @@ export function buocTiepTheo({
 
   /* Lọc những bước KHÔNG còn phải làm nữa: chào rồi thì thôi chào, bé chọn sở
      thích rồi thì thôi hỏi lại. Đuối thì lùi hẳn về các bước TỪ. */
+  const soLuotBe = lichSu.filter((x) => x.vai === 'be' && x.diem != null).length;
+
   const conLai = ds.filter((b) => {
     if (b.loai === 'ket') return false;
     if (b.loai === 'chao') return !daChao;
-    if (b.loai === 'hoiThich') return !hoSo?.thich;
+    /**
+     * ⚠ HỎI SỞ THÍCH CHỈ ĐƯỢC CHIẾM ĐÚNG MỘT LƯỢT.
+     *
+     * Bản cũ viết `return !hoSo?.thich` — nghe rất hợp lý: bé chưa chọn thì còn
+     * phải hỏi. Nhưng bé KHÔNG BẮT BUỘC phải chọn, và thẻ hỏi thì máy con tự vẽ
+     * chứ không cần lượt nào của cô. Bé cứ nói mà không bấm hình là điều kiện ấy
+     * đúng mãi mãi, và `buocTiepTheo` trả về `hoiThich` cho MỌI lượt còn lại.
+     *
+     * Mà `dongBuoc` của `hoiThich` là chuỗi RỖNG. Nghĩa là suốt buổi mô hình
+     * không nhận được một dòng dẫn nào — cả tầng kịch bản viết sẵn nằm đó không
+     * chạy. Đã dò cả 16 bài: bài nào cũng thế.
+     *
+     * Không có gì đỏ, không có gì chậm, cô vẫn nói năng trôi chảy — vì `cauHopLe`
+     * vẫn gác vốn từ nên câu nào lọt ra cũng đúng. Chỉ là nó tự nghĩ, đúng cái
+     * việc bác bảo phải rút khỏi tay nó. Chỉ lộ khi trải thử từng lượt một.
+     *
+     * Nay: hỏi khi bé chưa chọn VÀ bé chưa nói câu nào. Bé đáp lời chào là hết
+     * cửa hỏi — thẻ chọn hình vẫn còn đó cho bé bấm lúc nào cũng được, nhưng
+     * kịch bản thì đi tiếp.
+     */
+    if (b.loai === 'hoiThich') return !hoSo?.thich && soLuotBe === 0;
     return haDoKho ? b.loai === 'tu' : BUOC_LUYEN.has(b.loai);
   });
   if (!conLai.length) return null;
@@ -714,7 +810,49 @@ export function buocTiepTheo({
      `tinhBuoi` (đạt đủ, hoặc hết giờ), không phải của việc hết bước. */
   const luyen = conLai.filter((b) => BUOC_LUYEN.has(b.loai));
   if (!luyen.length) return null;
-  return luyen[soDat % luyen.length];
+  return xenKe(luyen)[soDat % luyen.length];
+}
+
+/**
+ * XEN KẼ TỪ VÀ CÂU — hai từ rồi một câu, rồi lại thế.
+ *
+ * ── VÌ SAO KHÔNG ĐI THEO ĐÚNG THỨ TỰ KỊCH BẢN ──
+ * Kịch bản xếp hết từ mới trước rồi mới tới câu, và xếp thế là đúng cho người đọc.
+ * Nhưng bước được chọn theo `soDat` — SỐ LẦN BÉ NÓI ĐÚNG — mà buổi thì kết thúc ở
+ * `DAT_LIEN_DE_XONG = 3`. Nên bé nói đúng hết chỉ đi tới vị trí thứ 3, trong khi
+ * câu đầu tiên nằm ở vị trí thứ 4 (Unit 6 và Unit 9 đều có bốn từ mới).
+ *
+ * Kết quả: bé giỏi luyện xong ba TỪ LẺ rồi được khen "con nói được rồi" — chưa hề
+ * nói một câu nào. Đúng cái buổi ấy đáng lẽ phải dạy mẫu câu.
+ *
+ * Đã dò tận nơi trên bản chạy: Unit 9 đi clocks → locks → mops rồi kết thúc.
+ *
+ * Chỗ này KHÔNG lộ ra ở đâu cả: không lỗi, không cảnh báo, và màn kết thì vẫn vui
+ * vẻ chúc mừng. Chỉ trải từng lượt ra mới thấy.
+ *
+ * ── VÌ SAO KHÔNG NỚI `DAT_LIEN_DE_XONG` ──
+ * Con số 3 là bác chốt ("thấy học sinh đã nắm bài thì khen ngợi và kết thúc").
+ * Sửa thứ tự đi thì giữ nguyên được luật của bác, mà bé vẫn gặp câu. Nới con số
+ * là đổi luật của bác để chữa lỗi của mình — sai chỗ.
+ *
+ * Hai từ trước một câu: bé cần nghe vài từ rồi mới ghép được, nhưng không cần
+ * nghe hết cả bốn từ mới được ghép.
+ */
+export function xenKe(ds) {
+  const tu = ds.filter((b) => b.loai === 'tu');
+  const cau = ds.filter((b) => b.loai !== 'tu');
+  if (!tu.length || !cau.length) return ds;
+  const ra = [];
+  let i = 0;
+  let j = 0;
+  while (ra.length < ds.length) {
+    /* Hai từ, một câu. Bên nào hết thì bên kia chảy nốt — đừng để sót bước nào,
+       vì phần luyện quay vòng và bước bị sót là bước bé không bao giờ gặp. */
+    for (let k = 0; k < 2 && i < tu.length; k += 1, i += 1) ra.push(tu[i]);
+    if (j < cau.length) { ra.push(cau[j]); j += 1; }
+    if (i >= tu.length && j >= cau.length) break;
+  }
+  return ra;
 }
 
 /** Lời dặn cho lượt này khi ĐÃ CÓ kịch bản — câu tiếng Anh không để mô hình nghĩ. */
@@ -722,10 +860,29 @@ export function dongBuoc(buoc, hoSo) {
   if (!buoc) return '';
   if (buoc.loai === 'ket' || buoc.loai === 'hoiThich') return '';
   const en = dienBuoc(buoc, hoSo);
-  return [
+  const d = [
     `THIS TURN: your English sentence MUST be exactly: "${en}"`,
     '  Copy it character for character. Do not rephrase, extend, or substitute.',
     '  Your only job is the Vietnamese line: react to what the child just said',
     '  (praise a good try, gently fix a wrong one), then point at this sentence.',
-  ].join('\n');
+  ];
+  /**
+   * CHỖ KHÓ CỦA BƯỚC NÀY — thứ mô hình KHÔNG thể tự biết.
+   *
+   * Kịch bản viết tay ghi sẵn cái bẫy riêng của từng bài: Unit 6 là "màu đứng
+   * TRƯỚC đồ vật" (ngược tiếng Việt), Unit 16 là "đáp phải nói cả I can see rồi
+   * mới tới số, khác bài đếm ở cửa hàng". Đó là `misconceptions` của sách, không
+   * suy ra được từ câu tiếng Anh.
+   *
+   * ⚠ Trước 14-08 dòng này KHÔNG được gửi đi. `buoc.vi` chỉ là đường lui trong
+   * `goiPhongNoi.js` (`tra.vi || buoc.vi`), mà mô hình thì lượt nào cũng trả lời
+   * lời Việt — nên đường lui không bao giờ tới lượt. Công viết tay nằm trong tệp
+   * JSON, không ai đọc. Cũng chẳng có gì báo: lời Việt của mô hình vẫn trôi chảy,
+   * chỉ là nó nói chung chung và bỏ qua đúng chỗ bé hay sai.
+   */
+  if (buoc.vi) {
+    d.push(`  Your Vietnamese line MUST get this teaching point across: "${buoc.vi}"`,
+      '  Say it in your own words, warmly — but do not drop the point.');
+  }
+  return d.join('\n');
 }
