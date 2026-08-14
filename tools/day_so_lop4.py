@@ -217,46 +217,64 @@ B13 = bai(
          'Hỏi con: dãy này cách đều không? Khoảng cách mấy? Chủ nhật thứ ba là ngày mấy?',
          'Chưa cần công thức nào ở bài này. Con gọi đúng tên và chỉ đúng chỗ là đạt.'],
     ),
+    # ── BÀI TẬP ĐI ĐÚNG ĐƯỜNG VIDEO ĐÃ DẠY ──
+    # Bác duyệt video rồi bảo viết bài tập theo video. Nên bảy câu đầu bám đúng bảy
+    # nấc video đi qua, và MỞ ĐẦU BẰNG CHÍNH DÃY TRONG VIDEO (5, 10, 15, 20, 25):
+    # bé vừa xem xong, gặp lại dãy quen thì câu đầu không phải là một cửa ải.
+    #
+    #   nấc video                    câu
+    #   ─────────────────────────────────
+    #   số hạng, đếm bao nhiêu       C1
+    #   thứ tự  → giá trị            C2
+    #   giá trị → thứ tự (chiều ngược) C3
+    #   hai chiều trên dãy MỚI       C4
+    #   thứ tự KHÁC giá trị          C5
+    #   lấy số sau trừ số trước      C6
+    #   dãy nào cách đều             C7
+    #   gộp cả ba                    C8
+    #   dãy giảm cũng cách đều       C9
     [
-        lt(1, 1, 'Cho dãy 4 ; 8 ; 12 ; 16 ; 20. Dãy có mấy số hạng? Số hạng thứ 3 là số nào?',
-           'Dãy có 5 số hạng; số hạng thứ 3 là 12.'),
-        lt(2, 1, 'Vẫn dãy 4 ; 8 ; 12 ; 16 ; 20. Số 20 đứng ở vị trí thứ mấy?',
-           'Đếm từ đầu: 4 (1) ; 8 (2) ; 12 (3) ; 16 (4) ; 20 (5). Số 20 đứng thứ 5.'),
-        lt(3, 1, 'Cho dãy 7 ; 10 ; 13 ; 16. Dãy này có cách đều không? Khoảng cách bằng mấy?',
-           'Các hiệu: 10 − 7 = 3 ; 13 − 10 = 3 ; 16 − 13 = 3 — bằng nhau, nên dãy '
-           'cách đều, khoảng cách 3.'),
-        lt(4, 2, 'Trong hai dãy sau, dãy nào CÁCH ĐỀU: dãy A là 2 ; 4 ; 6 ; 8 hay '
-                 'dãy B là 2 ; 4 ; 8 ; 16?',
-           'Dãy A: hiệu 2 ; 2 ; 2 — cách đều. Dãy B: hiệu 2 ; 4 ; 8 — không bằng nhau '
-           'nên KHÔNG cách đều.'),
-        lt(5, 2, 'Cho dãy 100 ; 95 ; 90 ; 85 ; 80. Dãy này có cách đều không? Khoảng cách mấy?',
-           'Mỗi bước lùi đúng 5 đơn vị, đều tăm tắp → vẫn là dãy cách đều, khoảng cách 5.'),
-        lt(6, 2, 'Cho dãy cách đều 5 ; 10 ; 15 ; ... Hãy viết tiếp và cho biết số hạng '
-                 'thứ 6 là số nào.',
-           'Viết tiếp: 20 ; 25 ; 30. Số hạng thứ 6 là 30.'),
-        lt(7, 2, 'Bạn Mai nói: "Trong dãy 6 ; 11 ; 16 ; 21 ; 26, số 16 đứng thứ 16." '
-                 'Bạn nói đúng hay sai? Vì sao?',
-           'SAI. Số 16 là GIÁ TRỊ, còn vị trí của nó là thứ 3. Vị trí và giá trị là '
-           'hai con số khác nhau.'),
-        lt(8, 3, 'Cho dãy 3 ; 7 ; 11 ; 15 ; 19 ; 23. Cho biết: khoảng cách của dãy; '
-                 'số hạng thứ 5; và số 11 đứng thứ mấy.',
-           'Khoảng cách 4; số hạng thứ 5 là 19; số 11 đứng thứ 3.'),
-        lt(9, 3, 'Một dãy cách đều bắt đầu bằng 2, khoảng cách 4. Hãy viết 5 số hạng '
-                 'đầu tiên của dãy, rồi cho biết số hạng thứ 5 là số nào.',
-           'Dãy: 2 ; 6 ; 10 ; 14 ; 18. Số hạng thứ 5 là 18.'),
-        q_tf(1, 'Mỗi con số trong một dãy số được gọi là một SỐ HẠNG.', True,
+        lt(1, 1, 'Cho dãy 5 ; 10 ; 15 ; 20 ; 25 — đúng dãy trong video. Dãy này có '
+                 'bao nhiêu số hạng?',
+           'Đếm từng số: 5, 10, 15, 20, 25 — dãy có 5 số hạng.'),
+        lt(2, 1, 'Vẫn dãy 5 ; 10 ; 15 ; 20 ; 25. Số hạng thứ hai có giá trị là bao nhiêu?',
+           'Đếm chỗ: 5 đứng thứ nhất, 10 đứng thứ hai. Vậy số hạng thứ hai có giá trị 10.'),
+        lt(3, 1, 'Vẫn dãy 5 ; 10 ; 15 ; 20 ; 25. Số 20 đứng ở thứ tự thứ mấy?',
+           'Đếm chỗ: 5 (1), 10 (2), 15 (3), 20 (4). Số 20 đứng thứ tư.'),
+        lt(4, 2, 'Cho dãy 3 ; 6 ; 9 ; 12 ; 15. Số hạng thứ tư có giá trị bao nhiêu, '
+                 'và số 9 đứng thứ mấy?',
+           'Số hạng thứ tư có giá trị 12; số 9 đứng thứ 3.'),
+        lt(5, 2, 'Trong dãy 8 ; 16 ; 24 ; 32, bạn An nói: "Số 24 đứng thứ 24." Bạn nói '
+                 'đúng hay sai? Số 24 thật ra đứng thứ mấy?',
+           'SAI. 24 là GIÁ TRỊ, còn thứ tự của nó là 3. Thứ tự và giá trị là hai '
+           'con số khác nhau.'),
+        lt(6, 2, 'Cho dãy 5 ; 10 ; 15 ; 20 ; 25. Lấy số sau trừ số trước thì được bao '
+                 'nhiêu? Dãy này có cách đều không?',
+           'Các hiệu: 10 − 5 = 5 ; 15 − 10 = 5 ; 20 − 15 = 5 ; 25 − 20 = 5. Các hiệu '
+           'đều bằng 5 nên dãy CÁCH ĐỀU, khoảng cách 5.'),
+        lt(7, 2, 'Trong hai dãy sau, dãy nào CÁCH ĐỀU: dãy A là 2 ; 4 ; 6 ; 8 hay dãy '
+                 'B là 2 ; 4 ; 8 ; 16?',
+           'Dãy A có các hiệu 2 ; 2 ; 2 — bằng nhau nên cách đều. Dãy B có các hiệu '
+           '2 ; 4 ; 8 — khác nhau nên KHÔNG cách đều.'),
+        lt(8, 3, 'Cho dãy 7 ; 12 ; 17 ; 22 ; 27. Cho biết khoảng cách của dãy, giá trị '
+                 'của số hạng thứ tư, và số 17 đứng thứ mấy.',
+           'Khoảng cách 5; số hạng thứ tư có giá trị 22; số 17 đứng thứ 3.'),
+        lt(9, 3, 'Cho dãy 100 ; 90 ; 80 ; 70 ; 60. Dãy này có cách đều không? Khoảng '
+                 'cách bằng bao nhiêu?',
+           'Mỗi bước giảm đúng 10 đơn vị, đều nhau, nên dãy vẫn CÁCH ĐỀU với khoảng cách 10.'),
+        q_tf(1, 'Mỗi số trong một dãy số được gọi là một số hạng.', True,
              'Đáp án: ĐÚNG'),
-        q_tf(2, 'Trong dãy 6 ; 11 ; 16 ; 21, số 16 đứng ở vị trí thứ 16.', False,
-             'SAI — số 16 là GIÁ TRỊ, còn vị trí của nó là thứ 3.'),
-        q_mcq(3, 'Dãy nào dưới đây là dãy CÁCH ĐỀU?',
+        q_tf(2, 'Trong dãy 5 ; 10 ; 15 ; 20 ; 25, số 15 đứng thứ 15.', False,
+             'SAI — 15 là giá trị, còn thứ tự của nó là thứ ba.'),
+        q_mcq(3, 'Trong dãy 5 ; 10 ; 15 ; 20 ; 25, số hạng thứ tư có giá trị là:',
+              ['A. 20', 'B. 4', 'C. 15'], 'A. 20',
+              'Đếm chỗ: 5 (1), 10 (2), 15 (3), 20 (4).'),
+        q_mcq(4, 'Dãy nào dưới đây là dãy CÁCH ĐỀU?',
               ['A. 1 ; 3 ; 5 ; 7', 'B. 1 ; 2 ; 4 ; 8', 'C. 1 ; 4 ; 9 ; 16'],
               'A. 1 ; 3 ; 5 ; 7', 'Dãy A có các hiệu đều bằng 2.'),
-        q_mcq(4, 'Dãy 9 ; 14 ; 19 ; 24 có khoảng cách bằng:',
-              ['A. 5', 'B. 4', 'C. 9'], 'A. 5',
-              '14 − 9 = 5, và các hiệu sau cũng đều bằng 5.'),
-        q_mcq(5, 'Trong dãy 8 ; 12 ; 16 ; 20 ; 24, số hạng thứ 4 là:',
-              ['A. 20', 'B. 4', 'C. 16'], 'A. 20',
-              'Đếm chỗ: 8 (1) ; 12 (2) ; 16 (3) ; 20 (4).'),
+        q_mcq(5, 'Dãy 6 ; 12 ; 18 ; 24 có khoảng cách bằng:',
+              ['A. 6', 'B. 4', 'C. 12'], 'A. 6',
+              'Lấy số sau trừ số trước: 12 − 6 = 6, và các hiệu sau cũng bằng 6.'),
     ],
 )
 
@@ -804,23 +822,26 @@ HINH_MOI = [
 CO_KHONG = ['có', 'không']
 
 O_NHAP_MOI = {
-    # ── B13 · khái niệm ──
-    'DL:KSN4.B13#C1': {'parts': [{'label': 'dãy có mấy số hạng', 'value': 5},
-                                 {'label': 'số hạng thứ 3', 'value': 12}]},
-    'DL:KSN4.B13#C2': {'value': 5},
-    'DL:KSN4.B13#C3': {'parts': [{'label': 'dãy có cách đều không', 'options': CO_KHONG, 'value': 'có'},
-                                 {'label': 'khoảng cách', 'value': 3}]},
-    'DL:KSN4.B13#C4': {'parts': [{'label': 'dãy cách đều là dãy', 'options': ['dãy A', 'dãy B'],
+    # ── B13 · đi theo video ──
+    'DL:KSN4.B13#C1': {'value': 5},
+    'DL:KSN4.B13#C2': {'value': 10},
+    'DL:KSN4.B13#C3': {'value': 4},
+    'DL:KSN4.B13#C4': {'parts': [{'label': 'số hạng thứ tư', 'value': 12},
+                                 {'label': 'số 9 đứng thứ', 'value': 3}]},
+    'DL:KSN4.B13#C5': {'parts': [{'label': 'bạn An nói', 'options': ['đúng', 'sai'],
+                                  'value': 'sai'},
+                                 {'label': 'số 24 đứng thứ', 'value': 3}]},
+    'DL:KSN4.B13#C6': {'parts': [{'label': 'số sau trừ số trước bằng', 'value': 5},
+                                 {'label': 'dãy có cách đều không', 'options': CO_KHONG,
+                                  'value': 'có'}]},
+    'DL:KSN4.B13#C7': {'parts': [{'label': 'dãy cách đều là', 'options': ['dãy A', 'dãy B'],
                                   'value': 'dãy A'}]},
-    'DL:KSN4.B13#C5': {'parts': [{'label': 'dãy có cách đều không', 'options': CO_KHONG, 'value': 'có'},
-                                 {'label': 'khoảng cách', 'value': 5}]},
-    'DL:KSN4.B13#C6': {'value': 30},
-    'DL:KSN4.B13#C7': {'parts': [{'label': 'bạn Mai nói', 'options': ['đúng', 'sai'], 'value': 'sai'},
-                                 {'label': 'số 16 thật ra đứng thứ', 'value': 3}]},
-    'DL:KSN4.B13#C8': {'parts': [{'label': 'khoảng cách', 'value': 4},
-                                 {'label': 'số hạng thứ 5', 'value': 19},
-                                 {'label': 'số 11 đứng thứ', 'value': 3}]},
-    'DL:KSN4.B13#C9': {'value': 18},
+    'DL:KSN4.B13#C8': {'parts': [{'label': 'khoảng cách', 'value': 5},
+                                 {'label': 'số hạng thứ tư', 'value': 22},
+                                 {'label': 'số 17 đứng thứ', 'value': 3}]},
+    'DL:KSN4.B13#C9': {'parts': [{'label': 'dãy có cách đều không', 'options': CO_KHONG,
+                                  'value': 'có'},
+                                 {'label': 'khoảng cách', 'value': 10}]},
 
     # ── B14 · số hạng thứ n ──
     'DL:KSN4.B14#C1': {'parts': [{'label': 'khoảng cách', 'value': 5},

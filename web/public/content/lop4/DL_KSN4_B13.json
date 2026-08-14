@@ -169,42 +169,97 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Cho dãy 4 ; 8 ; 12 ; 16 ; 20. Dãy có mấy số hạng? Số hạng thứ 3 là số nào?",
+     "text": "Cho dãy 5 ; 10 ; 15 ; 20 ; 25 — đúng dãy trong video. Dãy này có bao nhiêu số hạng?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "dãy có mấy số hạng",
-        "value": 5
-       },
-       {
-        "label": "số hạng thứ 3",
-        "value": 12
-       }
-      ]
+      "value": 5
      },
-     "solutionNarrative": "Dãy có 5 số hạng; số hạng thứ 3 là 12.",
+     "solutionNarrative": "Đếm từng số: 5, 10, 15, 20, 25 — dãy có 5 số hạng.",
      "hints": [
-      "Đếm xem có mấy con số trong dãy.",
-      "Rồi chỉ tay vào chỗ thứ ba mà đọc."
+      "Đếm từng số một, từ trái sang phải.",
+      "Mỗi số là một số hạng."
      ]
     },
     {
      "id": "C2",
-     "text": "Vẫn dãy 4 ; 8 ; 12 ; 16 ; 20. Số 20 đứng ở vị trí thứ mấy?",
+     "text": "Vẫn dãy 5 ; 10 ; 15 ; 20 ; 25. Số hạng thứ hai có giá trị là bao nhiêu?",
      "answerKey": {
-      "value": 5
+      "value": 10
      },
-     "solutionNarrative": "Đếm từ đầu: 4 (1) ; 8 (2) ; 12 (3) ; 16 (4) ; 20 (5). Số 20 đứng thứ 5.",
+     "solutionNarrative": "Đếm chỗ: 5 đứng thứ nhất, 10 đứng thứ hai. Vậy số hạng thứ hai có giá trị 10.",
      "hints": [
-      "Đếm từ đầu dãy: chỗ thứ nhất, thứ hai…",
-      "Dừng lại đúng chỗ có số ấy."
+      "Đếm chỗ: số nào đứng thứ nhất, số nào đứng thứ hai.",
+      "Rồi đọc giá trị ở chỗ thứ hai."
      ]
     },
     {
      "id": "C3",
-     "text": "Cho dãy 7 ; 10 ; 13 ; 16. Dãy này có cách đều không? Khoảng cách bằng mấy?",
+     "text": "Vẫn dãy 5 ; 10 ; 15 ; 20 ; 25. Số 20 đứng ở thứ tự thứ mấy?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Đếm chỗ: 5 (1), 10 (2), 15 (3), 20 (4). Số 20 đứng thứ tư.",
+     "hints": [
+      "Lần này hỏi ngược lại: cho giá trị, tìm thứ tự.",
+      "Con đếm xem số ấy nằm ở chỗ thứ mấy."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Cho dãy 3 ; 6 ; 9 ; 12 ; 15. Số hạng thứ tư có giá trị bao nhiêu, và số 9 đứng thứ mấy?",
      "answerKey": {
       "parts": [
+       {
+        "label": "số hạng thứ tư",
+        "value": 12
+       },
+       {
+        "label": "số 9 đứng thứ",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Số hạng thứ tư có giá trị 12; số 9 đứng thứ 3.",
+     "hints": [
+      "Câu này hỏi cả hai chiều như video đã dạy.",
+      "Một chiều tìm giá trị, một chiều tìm thứ tự."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Trong dãy 8 ; 16 ; 24 ; 32, bạn An nói: \"Số 24 đứng thứ 24.\" Bạn nói đúng hay sai? Số 24 thật ra đứng thứ mấy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bạn An nói",
+        "options": [
+         "đúng",
+         "sai"
+        ],
+        "value": "sai"
+       },
+       {
+        "label": "số 24 đứng thứ",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "SAI. 24 là GIÁ TRỊ, còn thứ tự của nó là 3. Thứ tự và giá trị là hai con số khác nhau.",
+     "hints": [
+      "Số 24 là GIÁ TRỊ hay là chỗ đứng?",
+      "Con đếm chỗ xem nó đứng thứ mấy."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Cho dãy 5 ; 10 ; 15 ; 20 ; 25. Lấy số sau trừ số trước thì được bao nhiêu? Dãy này có cách đều không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số sau trừ số trước bằng",
+        "value": 5
+       },
        {
         "label": "dãy có cách đều không",
         "options": [
@@ -212,28 +267,22 @@
          "không"
         ],
         "value": "có"
-       },
-       {
-        "label": "khoảng cách",
-        "value": 3
        }
       ]
      },
-     "solutionNarrative": "Các hiệu: 10 − 7 = 3 ; 13 − 10 = 3 ; 16 − 13 = 3 — bằng nhau, nên dãy cách đều, khoảng cách 3.",
+     "solutionNarrative": "Các hiệu: 10 − 5 = 5 ; 15 − 10 = 5 ; 20 − 15 = 5 ; 25 − 20 = 5. Các hiệu đều bằng 5 nên dãy CÁCH ĐỀU, khoảng cách 5.",
      "hints": [
-      "Lấy mỗi số trừ số đứng ngay trước nó.",
+      "Lấy số sau trừ số trước, làm liên tiếp.",
       "Các hiệu có bằng nhau không?"
      ]
-    }
-   ],
-   "standard": [
+    },
     {
-     "id": "C4",
+     "id": "C7",
      "text": "Trong hai dãy sau, dãy nào CÁCH ĐỀU: dãy A là 2 ; 4 ; 6 ; 8 hay dãy B là 2 ; 4 ; 8 ; 16?",
      "answerKey": {
       "parts": [
        {
-        "label": "dãy cách đều là dãy",
+        "label": "dãy cách đều là",
         "options": [
          "dãy A",
          "dãy B"
@@ -242,15 +291,42 @@
        }
       ]
      },
-     "solutionNarrative": "Dãy A: hiệu 2 ; 2 ; 2 — cách đều. Dãy B: hiệu 2 ; 4 ; 8 — không bằng nhau nên KHÔNG cách đều.",
+     "solutionNarrative": "Dãy A có các hiệu 2 ; 2 ; 2 — bằng nhau nên cách đều. Dãy B có các hiệu 2 ; 4 ; 8 — khác nhau nên KHÔNG cách đều.",
      "hints": [
       "Trừ liên tiếp ở cả hai dãy.",
       "Dãy nào có các hiệu bằng nhau tăm tắp?"
      ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Cho dãy 7 ; 12 ; 17 ; 22 ; 27. Cho biết khoảng cách của dãy, giá trị của số hạng thứ tư, và số 17 đứng thứ mấy.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "khoảng cách",
+        "value": 5
+       },
+       {
+        "label": "số hạng thứ tư",
+        "value": 22
+       },
+       {
+        "label": "số 17 đứng thứ",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Khoảng cách 5; số hạng thứ tư có giá trị 22; số 17 đứng thứ 3.",
+     "hints": [
+      "Tìm khoảng cách trước bằng phép trừ.",
+      "Rồi đọc hai chiều: thứ tự và giá trị."
+     ]
     },
     {
-     "id": "C5",
-     "text": "Cho dãy 100 ; 95 ; 90 ; 85 ; 80. Dãy này có cách đều không? Khoảng cách mấy?",
+     "id": "C9",
+     "text": "Cho dãy 100 ; 90 ; 80 ; 70 ; 60. Dãy này có cách đều không? Khoảng cách bằng bao nhiêu?",
      "answerKey": {
       "parts": [
        {
@@ -263,90 +339,14 @@
        },
        {
         "label": "khoảng cách",
-        "value": 5
+        "value": 10
        }
       ]
      },
-     "solutionNarrative": "Mỗi bước lùi đúng 5 đơn vị, đều tăm tắp → vẫn là dãy cách đều, khoảng cách 5.",
+     "solutionNarrative": "Mỗi bước giảm đúng 10 đơn vị, đều nhau, nên dãy vẫn CÁCH ĐỀU với khoảng cách 10.",
      "hints": [
       "Dãy này đi lùi, nhưng vẫn trừ liên tiếp được.",
-      "Mỗi bước lùi bao nhiêu?"
-     ]
-    },
-    {
-     "id": "C6",
-     "text": "Cho dãy cách đều 5 ; 10 ; 15 ; ... Hãy viết tiếp và cho biết số hạng thứ 6 là số nào.",
-     "answerKey": {
-      "value": 30
-     },
-     "solutionNarrative": "Viết tiếp: 20 ; 25 ; 30. Số hạng thứ 6 là 30.",
-     "hints": [
-      "Tìm khoảng cách trước đã.",
-      "Rồi viết tiếp cho đủ sáu số."
-     ]
-    },
-    {
-     "id": "C7",
-     "text": "Bạn Mai nói: \"Trong dãy 6 ; 11 ; 16 ; 21 ; 26, số 16 đứng thứ 16.\" Bạn nói đúng hay sai? Vì sao?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "bạn Mai nói",
-        "options": [
-         "đúng",
-         "sai"
-        ],
-        "value": "sai"
-       },
-       {
-        "label": "số 16 thật ra đứng thứ",
-        "value": 3
-       }
-      ]
-     },
-     "solutionNarrative": "SAI. Số 16 là GIÁ TRỊ, còn vị trí của nó là thứ 3. Vị trí và giá trị là hai con số khác nhau.",
-     "hints": [
-      "Số 16 là giá trị hay là chỗ đứng?",
-      "Con đếm xem nó đứng thứ mấy."
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "C8",
-     "text": "Cho dãy 3 ; 7 ; 11 ; 15 ; 19 ; 23. Cho biết: khoảng cách của dãy; số hạng thứ 5; và số 11 đứng thứ mấy.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "khoảng cách",
-        "value": 4
-       },
-       {
-        "label": "số hạng thứ 5",
-        "value": 19
-       },
-       {
-        "label": "số 11 đứng thứ",
-        "value": 3
-       }
-      ]
-     },
-     "solutionNarrative": "Khoảng cách 4; số hạng thứ 5 là 19; số 11 đứng thứ 3.",
-     "hints": [
-      "Trừ liên tiếp để tìm khoảng cách.",
-      "Rồi đọc hai chiều: xuôi và ngược."
-     ]
-    },
-    {
-     "id": "C9",
-     "text": "Một dãy cách đều bắt đầu bằng 2, khoảng cách 4. Hãy viết 5 số hạng đầu tiên của dãy, rồi cho biết số hạng thứ 5 là số nào.",
-     "answerKey": {
-      "value": 18
-     },
-     "solutionNarrative": "Dãy: 2 ; 6 ; 10 ; 14 ; 18. Số hạng thứ 5 là 18.",
-     "hints": [
-      "Bắt đầu từ 2, mỗi lần cộng thêm khoảng cách.",
-      "Viết cho đủ năm số."
+      "Mỗi bước lùi bao nhiêu đơn vị?"
      ]
     }
    ]
@@ -357,7 +357,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Mỗi con số trong một dãy số được gọi là một SỐ HẠNG.",
+    "text": "Mỗi số trong một dãy số được gọi là một số hạng.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -366,15 +366,29 @@
    },
    {
     "id": "Q2",
-    "text": "Trong dãy 6 ; 11 ; 16 ; 21, số 16 đứng ở vị trí thứ 16.",
+    "text": "Trong dãy 5 ; 10 ; 15 ; 20 ; 25, số 15 đứng thứ 15.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — số 16 là GIÁ TRỊ, còn vị trí của nó là thứ 3."
+    "solutionNarrative": "SAI — 15 là giá trị, còn thứ tự của nó là thứ ba."
    },
    {
     "id": "Q3",
+    "text": "Trong dãy 5 ; 10 ; 15 ; 20 ; 25, số hạng thứ tư có giá trị là:",
+    "format": "mcq",
+    "choices": [
+     "A. 20",
+     "B. 4",
+     "C. 15"
+    ],
+    "answerKey": {
+     "choice": "A. 20"
+    },
+    "solutionNarrative": "Đếm chỗ: 5 (1), 10 (2), 15 (3), 20 (4)."
+   },
+   {
+    "id": "Q4",
     "text": "Dãy nào dưới đây là dãy CÁCH ĐỀU?",
     "format": "mcq",
     "choices": [
@@ -388,32 +402,18 @@
     "solutionNarrative": "Dãy A có các hiệu đều bằng 2."
    },
    {
-    "id": "Q4",
-    "text": "Dãy 9 ; 14 ; 19 ; 24 có khoảng cách bằng:",
-    "format": "mcq",
-    "choices": [
-     "A. 5",
-     "B. 4",
-     "C. 9"
-    ],
-    "answerKey": {
-     "choice": "A. 5"
-    },
-    "solutionNarrative": "14 − 9 = 5, và các hiệu sau cũng đều bằng 5."
-   },
-   {
     "id": "Q5",
-    "text": "Trong dãy 8 ; 12 ; 16 ; 20 ; 24, số hạng thứ 4 là:",
+    "text": "Dãy 6 ; 12 ; 18 ; 24 có khoảng cách bằng:",
     "format": "mcq",
     "choices": [
-     "A. 20",
+     "A. 6",
      "B. 4",
-     "C. 16"
+     "C. 12"
     ],
     "answerKey": {
-     "choice": "A. 20"
+     "choice": "A. 6"
     },
-    "solutionNarrative": "Đếm chỗ: 8 (1) ; 12 (2) ; 16 (3) ; 20 (4)."
+    "solutionNarrative": "Lấy số sau trừ số trước: 12 − 6 = 6, và các hiệu sau cũng bằng 6."
    }
   ]
  },
