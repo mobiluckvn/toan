@@ -34,7 +34,7 @@ bốn nhãn.
 
 ---
 
-## 2 · Bảy luật, mỗi luật là một lỗi đã xảy ra
+## 2 · Mười luật, mỗi luật là một lỗi đã xảy ra
 
 **1 · KHÔNG chuyện dẫn.** Bản đầu đọc trọn "chuyện mở bài" của giáo án — 300 chữ về
 bạn Mai và cậu giao báo, trước khi tới được chữ "dãy số". Bác xem xong bảo *"mở bài
@@ -64,6 +64,24 @@ câu VÌ SAO — *"cộng một vì số chỗ luôn nhiều hơn số lần c�
 
 **7 · BÀI TẬP BÁM TỪNG NẤC VIDEO.** Ba câu đầu dùng chính ví dụ trong video. Gợi ý
 nói cùng thứ tiếng với clip — không thì bé nghe một đằng đọc một nẻo.
+
+### Ba luật bác ra thêm ở đợt 2 (14-08)
+
+**8 · MỘT VIDEO — MỘT VẤN ĐỀ.** Tách bài nhỏ hơn nữa. Bài nào còn ôm hai việc thì
+cắt đôi, và bài tập ăn theo đúng một việc ấy. Đây là lý do chương 3 tách **4 bài
+thành 9**: bốn dấu hiệu chia hết đang nhồi chung, mà khái niệm gốc "chia hết là gì"
+thì chưa bài nào định nghĩa — đúng lỗi của cụm dãy số trước khi sửa.
+
+**9 · HÌNH MINH HOẠ CHO CHỖ KHÓ HIỂU.** Chỗ nào nói bằng lời mà bé phải tưởng tượng
+thì vẽ ra. Dựng qua `hinh_ve.json` để màn hình và video cùng một nguồn — đừng vẽ
+riêng cho video, sẽ lệch.
+
+**10 · CÔNG THỨC PHẢI GIẢI THÍCH TỪNG THÀNH PHẦN, VÀ VÌ SAO SUY RA ĐƯỢC.** Luật 5
+mới bắt công thức HIỆN LÊN; luật này bắt nó phải HIỂU ĐƯỢC. Mỗi chữ trong công thức
+là một khái niệm phải gọi tên trước. Rồi phải nói vì sao công thức ấy đúng — không
+phải "con nhớ nhé". Ví dụ đã làm: *"cộng một vì số chỗ luôn nhiều hơn số lần cộng
+đúng một"*. Bài "vì sao các dấu hiệu chia hết lại đúng" tách hẳn ra một bài riêng
+cũng vì luật này.
 
 ---
 
@@ -183,9 +201,66 @@ lớn nội dung đã soạn. Ba lối:
    - giữ chữ giảng làm phần ĐỌC THÊM, gấp lại dưới video;
    - chỉ xoá ở bài mà video thật sự nói đủ.
 
-**3 · Nhân vật Trí Long.** Mục "chỗ hay nhầm" của 44 bài đều xoay quanh nhân vật
-này. Video thì không có nhân vật nào. Giữ hay bỏ là quyết định về giọng của cả
-quyển, không phải chuyện kỹ thuật.
+**3 · Nhân vật Trí Long. → ĐÃ QUYẾT 14-08: BỎ.** Bác chốt bỏ nhân vật, làm đồng bộ
+với khuôn đã duyệt. Đã bỏ xong. Chú ý chỗ nhân vật chui ngược vào: `khuon_chung.py`
+suy dòng "dấu hiệu" từ **TÊN MỤC** `suKemNham`, nên đổi nội dung mà quên đổi tên mục
+là nhân vật hiện lại. Tên mục nay là `CHỖ HAY NHẦM`, và `video_toan.test.mjs` có hai
+phép canh (không nhân vật trong bài có video · không nhân vật trong lời đọc).
+
+---
+
+## 10 · ⚠ VIỆC CÒN TREO — ĐỌC TRƯỚC KHI LÀM ĐỢT 2
+
+### Câu hỏi bác chưa trả lời: dồn số kiểu nào
+
+Tách nhỏ bài thì số bài đổi, nên mã bài đổi, nên **tiến độ đã lưu của các bé phải
+dời theo**. Đợt 1 đã dồn một lần: 353 tệp, 4 566 chỗ đổi mã, 99 tệp đổi tên. Nếu mọi
+chương đều tách như bác muốn thì **còn 9 đợt dồn nữa** — chín lần dời tiến độ thật.
+
+| lối | làm gì | giá |
+|---|---|---|
+| A | dồn số sau mỗi đợt | 9 lần dời tiến độ thật của bé |
+| B | gom lại, dồn một lần ở cuối | số bài lộn xộn suốt lúc làm |
+| **C · cháu khuyên** | **mã bài đứng yên mãi, số hiển thị suy từ vị trí trong mảng** | sửa một lần, hết hẳn chuyện dồn |
+
+Lối C là chữa tận gốc: mã (`DL:KSN4.B14`) chỉ còn là cái tên, còn "Bài 19" là thứ
+màn hình tự đếm ra. Không còn đợt dồn nào nữa. **Chưa làm gì cả — chờ bác chọn.**
+
+### Chỗ đang đứng
+
+- Hạ tầng dồn số đã sửa để **chịu được nhiều đợt**: `donSoLop4.js` đổi từ cờ đúng/sai
+  sang **đếm số đợt** (`DOT`), vì bé đã chạy đợt 1 mang cờ `true` thì đợt 2 sẽ không
+  bao giờ chạy cho bé ấy — *tiến độ đứng yên trong khi bài đã dời*. 11 phép canh, có
+  phép **hội tụ**: bé chưa dồn · bé mang cờ cũ · bé lưu số đợt — cả ba phải về cùng
+  một chỗ.
+- **CHƯA dồn số đợt 2. CHƯA viết 9 bài chương 3.**
+
+### ⚠ Quả mìn đã gỡ — đừng đặt lại
+
+Có lúc `DOT` đã khai **hai** đợt trong khi nội dung mới dồn **một**. Dựng và deploy
+lúc ấy là tiến độ mọi bé nhảy **+10** trong khi bài chỉ dời **+5** — mọi huy hiệu
+trỏ vượt 5 bài, và **không cổng nào bắt được**, vì cả hai bên đều hợp lệ khi xét
+riêng. Đúng dòng họ "lỗi ở chỗ nối". May là chưa deploy.
+
+**Luật:** thêm dòng vào `DOT` **đúng lúc** chạy `don_so_lop4.py --that`, không sớm
+hơn một phút nào. Hai chỗ ấy phải đổi cùng một commit; cổng thứ 11 của
+`don_so_lop4.test.mjs` so dải bên JS với dải bên Python và đỏ nếu lệch.
+
+### 9 bài của chương 3 — bản đề xuất
+
+Tách theo luật 8, mỗi bài đúng một việc:
+
+| bài | việc duy nhất |
+|---|---|
+| 1 | **chia hết là gì** — khái niệm gốc, chưa bài nào định nghĩa |
+| 2 | dấu hiệu chia hết cho 2 |
+| 3 | dấu hiệu chia hết cho 5 |
+| 4 | chia hết cho cả 2 và 5 |
+| 5 | dấu hiệu chia hết cho 9 |
+| 6 | dấu hiệu chia hết cho 3 |
+| 7 | phân biệt chia hết cho 3 và cho 9 |
+| 8 | **vì sao các dấu hiệu ấy đúng** — luật 10 |
+| 9 | bài kết hợp |
 
 ---
 

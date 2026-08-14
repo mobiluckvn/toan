@@ -44,14 +44,16 @@ test('MỌI ĐƯỜNG ĐỀU HỘI TỤ — bé chạy đợt 1 rồi hay chưa 
      bé đã lưu số đợt. */
   const dich = (so) => Object.keys(chuyenSo(so).micros)[0];
   // B14 gốc: qua đợt 1 thành B19, qua đợt 2 thành B24
-  assert.equal(dich({ micros: { 'DL:KSN4.B14': { x: 1 } } }), 'DL:KSN4.B24',
-    'bé chưa chạy đợt nào');
-  assert.equal(dich({ micros: { 'DL:KSN4.B19': { x: 1 } }, [CO]: true }), 'DL:KSN4.B24',
+  const goc = 'DL:KSN4.B14';
+  const cuoi = dichCuoi(goc);                       // đích sau KHI qua hết mọi đợt
+  const sauDot1 = maMoi(goc, DOT[0]);               // bé đã chạy đợt 1 đang ở đây
+  assert.equal(dich({ micros: { [goc]: { x: 1 } } }), cuoi, 'bé chưa chạy đợt nào');
+  assert.equal(dich({ micros: { [sauDot1]: { x: 1 } }, [CO]: true }), cuoi,
     'bé mang cờ true của bản cũ — phải hiểu là đã xong đợt 1');
-  assert.equal(dich({ micros: { 'DL:KSN4.B19': { x: 1 } }, [CO]: 1 }), 'DL:KSN4.B24',
+  assert.equal(dich({ micros: { [sauDot1]: { x: 1 } }, [CO]: 1 }), cuoi,
     'bé đã lưu số đợt');
-  assert.equal(dich({ micros: { 'DL:KSN4.B24': { x: 1 } }, [CO]: DOT.length }),
-    'DL:KSN4.B24', 'đã chạy đủ thì đứng yên');
+  assert.equal(dich({ micros: { [cuoi]: { x: 1 } }, [CO]: DOT.length }), cuoi,
+    'đã chạy đủ thì đứng yên');
 });
 
 test('CỜ CŨ `true` phải được hiểu là ĐÃ XONG ĐỢT 1, không phải xong hết', () => {

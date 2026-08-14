@@ -44,8 +44,13 @@
  */
 export const DOT = [
   { tu: 13, den: 44, dich: 5 },   // đợt 1 · cụm dãy số tách 1 → 5 bài
-  { tu: 13, den: 49, dich: 5 },   // đợt 2 · chương chia hết tách 4 → 9 bài
 ];
+
+/* ⚠ CHỈ KHAI ĐỢT ĐÃ DỒN THẬT. Khai trước một đợt chưa chạy là đặt mìn: tiến độ bé
+   nhảy thêm 5 chỗ trong khi bài đứng yên, nên mọi huy hiệu trỏ vượt 5 bài — và
+   không có gì báo. Suýt dính 14-08: đã khai đợt 2 vào đây trước khi dồn nội dung,
+   may là chưa deploy.
+   Thêm đợt thì thêm ĐÚNG LÚC chạy `don_so_lop4.py --that`, không sớm hơn. */
 
 /** Cờ trong chính sổ tiến độ. Đổi tên là chạy lại từ đầu — đừng đổi. */
 export const CO = 'donSoLop4';
