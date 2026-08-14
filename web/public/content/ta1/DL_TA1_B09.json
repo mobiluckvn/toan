@@ -295,7 +295,7 @@
     "phan": "giai"
    },
    {
-    "show": "Chữ cuối là “two” — hai. Đổi chữ ấy là được câu mới.",
+    "show": "Chữ cuối là “clocks” — những cái đồng hồ. Đổi chữ ấy là được câu mới.",
     "phan": "giai"
    }
   ]
@@ -325,7 +325,7 @@
      "veNut": {
       "locks": null,
       "clocks": null,
-      "mops": null,
+      "mops": "mop",
       "pots": null
      },
      "answerKey": {
@@ -359,7 +359,7 @@
      "veNut": {
       "locks": null,
       "clocks": null,
-      "mops": null,
+      "mops": "mop",
       "pots": null
      },
      "answerKey": {
@@ -394,7 +394,7 @@
       "clocks": null,
       "locks": null,
       "pots": null,
-      "mops": null
+      "mops": "mop"
      },
      "answerKey": {
       "choice": "mops"
@@ -427,7 +427,7 @@
      "veNut": {
       "clocks": null,
       "locks": null,
-      "mops": null,
+      "mops": "mop",
       "pots": null
      },
      "answerKey": {
@@ -712,19 +712,19 @@
     {
      "id": "S5",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  How many clocks? - Two.",
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  How many ___? - Two.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": null,
+     "anh": "🕐",
      "anhVe": null,
      "format": "chon",
      "choices": [
-      "clocks",
       "locks",
-      "two",
-      "mops"
+      "clocks",
+      "mops",
+      "pots"
      ],
      "answerKey": {
-      "choice": "two"
+      "choice": "clocks"
      },
      "solutionNarrative": "How many clocks? - Two.",
      "hints": [
@@ -758,33 +758,10 @@
     {
      "id": "S7",
      "bac": 3,
-     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  How many clocks? - One.",
-     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
-     "anh": null,
-     "anhVe": null,
-     "format": "chon",
-     "choices": [
-      "clocks",
-      "locks",
-      "one",
-      "mops"
-     ],
-     "answerKey": {
-      "choice": "one"
-     },
-     "solutionNarrative": "How many clocks? - One.",
-     "hints": [
-      "Nhìn hình xem đó là con gì, cái gì.",
-      "Rồi nhớ lại từ tiếng Anh của nó."
-     ]
-    },
-    {
-     "id": "S8",
-     "bac": 3,
      "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  How many ___? - Two.",
      "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
      "anh": "🧹",
-     "anhVe": null,
+     "anhVe": "mop",
      "format": "chon",
      "choices": [
       "clocks",
@@ -950,7 +927,7 @@
     "id": "Q4",
     "am": "tu_locks",
     "anh": "🧹",
-    "anhVe": null,
+    "anhVe": "mop",
     "text": "",
     "format": "tf",
     "nhinNghe": true,
@@ -963,7 +940,7 @@
     "id": "Q5",
     "am": "tu_mops",
     "anh": "🧹",
-    "anhVe": null,
+    "anhVe": "mop",
     "text": "",
     "format": "tf",
     "nhinNghe": true,
@@ -1010,7 +987,7 @@
   {
    "tu": "mops",
    "hinh": "🧹",
-   "ve": null,
+   "ve": "mop",
    "no": null
   },
   {

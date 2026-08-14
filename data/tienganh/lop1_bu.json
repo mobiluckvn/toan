@@ -1,700 +1,1921 @@
 {
-  "_doc": "BÙ DỮ LIỆU TIẾNG ANH LỚP 1 — những gì bản đồ tri thức KHÔNG có.",
-  "_vi_sao_tach_ra": [
-    "KHÔNG sửa data/ban_do_tieng_anh.json. Bản đồ là nguyên liệu gốc do bên ngoài",
-    "cấp; sửa vào đó thì lần sau họ ra bản v11 là mất sạch phần bù, mà không ai biết",
-    "đã mất cái gì. Tệp này là LỚP ĐẮP LÊN, khớp với bản đồ bằng id node.",
-    "Bộ chuẩn hoá đọc bản đồ trước, rồi đắp tệp này lên trên."
-  ],
-  "_nguon": "data/ban_do_tieng_anh.json · 60 node vocabulary có grade=1",
-  "_ngay": "2026-08-12",
-  "_nguoi_soan": "máy soạn, BÁC PHẢI SOÁT — xem docs/lop1_tieng_anh_khao_sat_va_thiet_ke.md mục 7",
-
-  "_vai_la_gi": {
-    "dt": "danh từ đếm được, đi với a/an",
-    "dongtu": "động từ",
-    "mau": "màu sắc — chỉ từ này mới điền được vào ô [Colour]",
-    "bophan": "bộ phận cơ thể — ô [Body part]",
-    "thucan": "thức ăn, đồ uống — ô [Food]",
-    "sonhieu": "từ ĐANG ở dạng số nhiều — ô [Noun-plural]",
-    "khongdem": "danh từ không đếm được, KHÔNG đi với a/an (milk, water, hair)"
+ "_doc": "BÙ DỮ LIỆU TIẾNG ANH LỚP 1 — những gì bản đồ tri thức KHÔNG có.",
+ "_vi_sao_tach_ra": [
+  "KHÔNG sửa data/ban_do_tieng_anh.json. Bản đồ là nguyên liệu gốc do bên ngoài",
+  "cấp; sửa vào đó thì lần sau họ ra bản v11 là mất sạch phần bù, mà không ai biết",
+  "đã mất cái gì. Tệp này là LỚP ĐẮP LÊN, khớp với bản đồ bằng id node.",
+  "Bộ chuẩn hoá đọc bản đồ trước, rồi đắp tệp này lên trên."
+ ],
+ "_nguon": "data/ban_do_tieng_anh.json · 60 node vocabulary có grade=1",
+ "_ngay": "2026-08-12",
+ "_nguoi_soan": "máy soạn, BÁC PHẢI SOÁT — xem docs/lop1_tieng_anh_khao_sat_va_thiet_ke.md mục 7",
+ "_vai_la_gi": {
+  "dt": "danh từ đếm được, đi với a/an",
+  "dongtu": "động từ",
+  "mau": "màu sắc — chỉ từ này mới điền được vào ô [Colour]",
+  "bophan": "bộ phận cơ thể — ô [Body part]",
+  "thucan": "thức ăn, đồ uống — ô [Food]",
+  "sonhieu": "từ ĐANG ở dạng số nhiều — ô [Noun-plural]",
+  "khongdem": "danh từ không đếm được, KHÔNG đi với a/an (milk, water, hair)"
+ },
+ "_vi_sao_can_vai": [
+  "Cạnh HAS_SLOT của bản đồ chỉ nói 'từ này điền vào câu này được', KHÔNG nói điền",
+  "vào Ô NÀO. Mẫu câu U6 \"It's a + [Colour] + [Noun].\" có bốn từ trong slot là",
+  "red · pen · pencil · bell — máy thay bừa sẽ ra \"It's a pen bell.\" hoặc",
+  "\"It's a red red.\" Lớp 3 có trường pos; lớp 1 không có, nên phải gắn tay."
+ ],
+ "tu": {
+  "v_g1_u1_ball": {
+   "word": "ball",
+   "nghia": "quả bóng",
+   "ipa": "/bɔːl/",
+   "vai": [
+    "dt"
+   ]
   },
-  "_vi_sao_can_vai": [
-    "Cạnh HAS_SLOT của bản đồ chỉ nói 'từ này điền vào câu này được', KHÔNG nói điền",
-    "vào Ô NÀO. Mẫu câu U6 \"It's a + [Colour] + [Noun].\" có bốn từ trong slot là",
-    "red · pen · pencil · bell — máy thay bừa sẽ ra \"It's a pen bell.\" hoặc",
-    "\"It's a red red.\" Lớp 3 có trường pos; lớp 1 không có, nên phải gắn tay."
-  ],
-
-  "tu": {
-    "v_g1_u1_ball":        { "word": "ball",       "nghia": "quả bóng",        "ipa": "/bɔːl/",        "vai": ["dt"] },
-    "v_g1_u1_bike":        { "word": "bike",       "nghia": "xe đạp",          "ipa": "/baɪk/",        "vai": ["dt"] },
-    "v_g1_u1_book":        { "word": "book",       "nghia": "quyển sách",      "ipa": "/bʊk/",         "vai": ["dt"] },
-
-    "v_g1_u2_cake":        { "word": "cake",       "nghia": "cái bánh ngọt",   "ipa": "/keɪk/",        "vai": ["dt", "thucan"] },
-    "v_g1_u2_car":         { "word": "car",        "nghia": "ô tô",            "ipa": "/kɑː/",         "vai": ["dt"] },
-    "v_g1_u2_cat":         { "word": "cat",        "nghia": "con mèo",         "ipa": "/kæt/",         "vai": ["dt"] },
-    "v_g1_u2_cup":         { "word": "cup",        "nghia": "cái cốc",         "ipa": "/kʌp/",         "vai": ["dt"] },
-
-    "v_g1_u3_apple":       { "word": "apple",      "nghia": "quả táo",         "ipa": "/ˈæpl/",        "vai": ["dt", "thucan"], "an": true, "am_o": "dau" },
-    "v_g1_u3_bag":         { "word": "bag",        "nghia": "cái túi",         "ipa": "/bæɡ/",         "vai": ["dt"],  "am_o": "giua" },
-    "v_g1_u3_can":         { "word": "can",        "nghia": "cái lon",         "ipa": "/kæn/",         "vai": ["dt"],  "am_o": "giua" },
-    "v_g1_u3_hat":         { "word": "hat",        "nghia": "cái mũ",          "ipa": "/hæt/",         "vai": ["dt"],  "am_o": "giua" },
-
-    "v_g1_u4_desk":        { "word": "desk",       "nghia": "cái bàn học",     "ipa": "/desk/",        "vai": ["dt"] },
-    "v_g1_u4_dog":         { "word": "dog",        "nghia": "con chó",         "ipa": "/dɒɡ/",         "vai": ["dt"] },
-    "v_g1_u4_door":        { "word": "door",       "nghia": "cái cửa",         "ipa": "/dɔː/",         "vai": ["dt"] },
-    "v_g1_u4_duck":        { "word": "duck",       "nghia": "con vịt",         "ipa": "/dʌk/",         "vai": ["dt"] },
-
-    "v_g1_u5_chicken":     { "word": "chicken",    "nghia": "thịt gà",         "ipa": "/ˈtʃɪkɪn/",     "vai": ["thucan", "khongdem"], "am_o": "giua",
-                             "_ghi": "U5 là 'At the fish and chip shop' — ngữ cảnh THỨC ĂN, nên là 'thịt gà' chứ không phải 'con gà'." },
-    "v_g1_u5_chips":       { "word": "chips",      "nghia": "khoai tây chiên", "ipa": "/tʃɪps/",       "vai": ["thucan", "sonhieu"], "am_o": "giua" },
-    "v_g1_u5_fish":        { "word": "fish",       "nghia": "cá",              "ipa": "/fɪʃ/",         "vai": ["thucan", "khongdem"], "am_o": "giua" },
-    "v_g1_u5_milk":        { "word": "milk",       "nghia": "sữa",             "ipa": "/mɪlk/",        "vai": ["thucan", "khongdem"], "am_o": "giua" },
-
-    "v_g1_u6_bell":        { "word": "bell",       "nghia": "cái chuông",      "ipa": "/bel/",         "vai": ["dt"],  "am_o": "giua" },
-    "v_g1_u6_pen":         { "word": "pen",        "nghia": "cái bút mực",     "ipa": "/pen/",         "vai": ["dt"],  "am_o": "giua" },
-    "v_g1_u6_pencil":      { "word": "pencil",     "nghia": "cái bút chì",     "ipa": "/ˈpensl/",      "vai": ["dt"],  "am_o": "giua" },
-    "v_g1_u6_red":         { "word": "red",        "nghia": "màu đỏ",          "ipa": "/red/",         "vai": ["mau"], "am_o": "giua" },
-
-    "v_g1_u7_garden":      { "word": "garden",     "nghia": "khu vườn",        "ipa": "/ˈɡɑːdn/",      "vai": ["dt"] },
-    "v_g1_u7_gate":        { "word": "gate",       "nghia": "cái cổng",        "ipa": "/ɡeɪt/",        "vai": ["dt"] },
-    "v_g1_u7_girl":        { "word": "girl",       "nghia": "bạn gái",         "ipa": "/ɡɜːl/",        "vai": ["dt"] },
-    "v_g1_u7_goat":        { "word": "goat",       "nghia": "con dê",          "ipa": "/ɡəʊt/",        "vai": ["dt"] },
-
-    "v_g1_u8_hair":        { "word": "hair",       "nghia": "tóc",             "ipa": "/heə/",         "vai": ["bophan", "khongdem"] },
-    "v_g1_u8_hand":        { "word": "hand",       "nghia": "bàn tay",         "ipa": "/hænd/",        "vai": ["dt", "bophan"] },
-    "v_g1_u8_head":        { "word": "head",       "nghia": "cái đầu",         "ipa": "/hed/",         "vai": ["dt", "bophan"] },
-    "v_g1_u8_horse":       { "word": "horse",      "nghia": "con ngựa",        "ipa": "/hɔːs/",        "vai": ["dt"] },
-
-    "v_g1_u9_clocks":      { "word": "clocks",     "nghia": "những cái đồng hồ", "ipa": "/klɒks/",     "vai": ["sonhieu"], "soit": "clock", "am_o": "giua" },
-    "v_g1_u9_locks":       { "word": "locks",      "nghia": "những ổ khoá",      "ipa": "/lɒks/",      "vai": ["sonhieu"], "soit": "lock",  "am_o": "giua" },
-    "v_g1_u9_mops":        { "word": "mops",       "nghia": "những cây lau nhà", "ipa": "/mɒps/",      "vai": ["sonhieu"], "soit": "mop",   "am_o": "giua" },
-    "v_g1_u9_pots":        { "word": "pots",       "nghia": "những cái nồi",     "ipa": "/pɒts/",      "vai": ["sonhieu"], "soit": "pot",   "am_o": "giua" },
-
-    "v_g1_u10_mango":      { "word": "mango",      "nghia": "quả xoài",        "ipa": "/ˈmæŋɡəʊ/",     "vai": ["dt", "thucan"] },
-    "v_g1_u10_monkey":     { "word": "monkey",     "nghia": "con khỉ",         "ipa": "/ˈmʌŋki/",      "vai": ["dt"] },
-    "v_g1_u10_mother":     { "word": "mother",     "nghia": "mẹ",              "ipa": "/ˈmʌðə/",       "vai": ["dt"] },
-    "v_g1_u10_mouse":      { "word": "mouse",      "nghia": "con chuột",       "ipa": "/maʊs/",        "vai": ["dt"] },
-
-    "v_g1_u11_bus":        { "word": "bus",        "nghia": "xe buýt",         "ipa": "/bʌs/",         "vai": ["dt"],     "am_o": "giua" },
-    "v_g1_u11_run":        { "word": "run",        "nghia": "chạy",            "ipa": "/rʌn/",         "vai": ["dongtu"], "ing": "running", "am_o": "giua" },
-    "v_g1_u11_sun":        { "word": "sun",        "nghia": "mặt trời",        "ipa": "/sʌn/",         "vai": ["dt"],     "am_o": "giua" },
-    "v_g1_u11_truck":      { "word": "truck",      "nghia": "xe tải",          "ipa": "/trʌk/",        "vai": ["dt"],     "am_o": "giua" },
-
-    "v_g1_u12_lake":       { "word": "lake",       "nghia": "cái hồ",          "ipa": "/leɪk/",        "vai": ["dt"] },
-    "v_g1_u12_leaf":       { "word": "leaf",       "nghia": "chiếc lá",        "ipa": "/liːf/",        "vai": ["dt"] },
-    "v_g1_u12_lemons":     { "word": "lemons",     "nghia": "những quả chanh", "ipa": "/ˈlemənz/",     "vai": ["sonhieu", "thucan"], "soit": "lemon" },
-
-    "v_g1_u13_bananas":    { "word": "bananas",    "nghia": "những quả chuối", "ipa": "/bəˈnɑːnəz/",   "vai": ["sonhieu", "thucan"], "soit": "banana", "am_o": "giua",
-                             "_ghi": "Unit dạy âm /n/. 'bananas' có /n/ ở GIỮA, còn noodles·nuts thì ở ĐẦU — unit này TRỘN hai vị trí. Đừng ra đề 'từ nào bắt đầu bằng /n/' rồi kể cả từ này." },
-    "v_g1_u13_noodles":    { "word": "noodles",    "nghia": "mì",              "ipa": "/ˈnuːdlz/",     "vai": ["sonhieu", "thucan"], "soit": "noodle", "am_o": "dau" },
-    "v_g1_u13_nuts":       { "word": "nuts",       "nghia": "các loại hạt",    "ipa": "/nʌts/",        "vai": ["sonhieu", "thucan"], "soit": "nut",    "am_o": "dau" },
-
-    "v_g1_u14_teddy_bear": { "word": "teddy bear", "nghia": "con gấu bông",    "ipa": "/ˈtedi beə/",   "vai": ["dt"],
-                             "_ghi": "Từ DÀI NHẤT lớp 1 (10 ký tự, có dấu cách). Chỉ dùng ở bậc 1-3, KHÔNG bắt gõ ở bậc 4." },
-    "v_g1_u14_tiger":      { "word": "tiger",      "nghia": "con hổ",          "ipa": "/ˈtaɪɡə/",      "vai": ["dt"] },
-    "v_g1_u14_top":        { "word": "top",        "nghia": "con quay",        "ipa": "/tɒp/",         "vai": ["dt"],
-                             "_ghi": "U14 là 'In the toy shop' — 'top' ở đây là ĐỒ CHƠI con quay, không phải 'đỉnh/phía trên'." },
-    "v_g1_u14_turtle":     { "word": "turtle",     "nghia": "con rùa",         "ipa": "/ˈtɜːtl/",      "vai": ["dt"] },
-
-    "v_g1_u15_face":       { "word": "face",       "nghia": "khuôn mặt",       "ipa": "/feɪs/",        "vai": ["dt", "bophan"] },
-    "v_g1_u15_father":     { "word": "father",     "nghia": "bố",              "ipa": "/ˈfɑːðə/",      "vai": ["dt"] },
-    "v_g1_u15_foot":       { "word": "foot",       "nghia": "bàn chân",        "ipa": "/fʊt/",         "vai": ["dt", "bophan"], "sonhieu": "feet" },
-    "v_g1_u15_football":   { "word": "football",   "nghia": "quả bóng đá",     "ipa": "/ˈfʊtbɔːl/",    "vai": ["dt"] },
-
-    "v_g1_u16_wash":       { "word": "wash",       "nghia": "rửa",             "ipa": "/wɒʃ/",         "vai": ["dongtu"], "ing": "washing" },
-    "v_g1_u16_water":      { "word": "water",      "nghia": "nước",            "ipa": "/ˈwɔːtə/",      "vai": ["thucan", "khongdem"] },
-    "v_g1_u16_window":     { "word": "window",     "nghia": "cửa sổ",          "ipa": "/ˈwɪndəʊ/",     "vai": ["dt"], "sonhieu": "windows" }
+  "v_g1_u1_bike": {
+   "word": "bike",
+   "nghia": "xe đạp",
+   "ipa": "/baɪk/",
+   "vai": [
+    "dt"
+   ]
   },
-
-  "mau_cau": {
-    "_vi_sao": [
-      "Bản đầu dạy CÂU mà không dạy VIỆC. Bé học thuộc “Bye, Mai.” xong không biết",
-      "nói lúc nào, và “Hi, I'm Bill.” thì để làm gì — chỉ là một chuỗi âm phải nhớ.",
-      "Bác chỉ ra đúng chỗ ấy.",
-      "",
-      "Bản đồ KHÔNG có sẵn phần này: `sentence_type` chỉ ghi 'statement' cho 12/19",
-      "mẫu câu, còn `competences` thì ở mức unit và vẫn trừu tượng ('Nói về thứ mình",
-      "có'). Nên phải soạn tay — và đây là chỗ đáng bỏ công nhất của cả quyển.",
-      "",
-      "Mỗi mẫu câu khai ba thứ:",
-      "  dung_de     việc câu này làm được, nói bằng lời của bé",
-      "  tinh_huong  MỘT cảnh cụ thể bé hình dung ra ngay — không nói chung chung",
-      "  phan        tách câu thành từng mẩu, mỗi mẩu làm một việc; `thay` đánh dấu",
-      "              mẩu bé đổi được, để bé thấy chỗ nào là chỗ thay",
-      "  khac_voi    (nếu có) phân biệt với mẫu câu đã học — chỗ này mới là chỗ bé",
-      "              hay lẫn: 'This is' với 'That's', 'I have' với 'This is my'"
-    ],
-
-    "sp_g1_u1_1": {
-      "dung_de": "Cho người khác biết TÊN của con.",
-      "tinh_huong": "Ngày đầu tới lớp, con đứng cạnh một bạn chưa quen bao giờ.",
-      "phan": [
-        { "chu": "Hi",   "lam_gi": "lời chào — như “Chào bạn”" },
-        { "chu": "I'm",  "lam_gi": "“mình là” — nối con với tên con" },
-        { "chu": "Bill", "lam_gi": "TÊN — chỗ con thay tên mình vào", "thay": true }
-      ]
-    },
-    "sp_g1_u1_2": {
-      "dung_de": "Chào tạm biệt một người, có gọi tên người ấy.",
-      "tinh_huong": "Tan học, con vẫy tay với bạn trước khi về.",
-      "phan": [
-        { "chu": "Bye",  "lam_gi": "lời tạm biệt" },
-        { "chu": "Bill", "lam_gi": "TÊN người con đang chào", "thay": true }
-      ],
-      "khac_voi": "“Hi” là lúc GẶP, “Bye” là lúc CHIA TAY. Cùng một câu, khác một chữ."
-    },
-
-    "sp_g1_u2_1": {
-      "dung_de": "Khoe rằng con CÓ một thứ gì đó.",
-      "tinh_huong": "Bạn hỏi trong cặp con có gì, con lấy ra khoe.",
-      "phan": [
-        { "chu": "I have", "lam_gi": "“mình có” — nói về thứ thuộc về con" },
-        { "chu": "a",      "lam_gi": "“một” — tiếng Anh bắt buộc phải có" },
-        { "chu": "car",    "lam_gi": "thứ con có", "thay": true }
-      ]
-    },
-
-    "sp_g1_u3_1": {
-      "dung_de": "Chỉ vào một đồ vật và nói nó là CỦA CON.",
-      "tinh_huong": "Ở lớp có hai cái túi giống nhau, con chỉ vào cái của mình.",
-      "phan": [
-        { "chu": "This is", "lam_gi": "“đây là” — vật ở GẦN, con chạm tới được" },
-        { "chu": "my",      "lam_gi": "“của mình” — chỗ quan trọng nhất câu này" },
-        { "chu": "bag",     "lam_gi": "đồ vật", "thay": true }
-      ],
-      "khac_voi": "“This is a bag.” chỉ nói đó là cái túi. Thêm “my” mới thành CỦA CON."
-    },
-
-    "sp_g1_u4_1": {
-      "dung_de": "Gọi tên một vật hay một con vật đang ở GẦN con.",
-      "tinh_huong": "Con dắt bạn đi xem phòng mình, chỉ từng thứ cho bạn biết.",
-      "phan": [
-        { "chu": "This is", "lam_gi": "“đây là” — vật ở GẦN, với tay tới được" },
-        { "chu": "a",       "lam_gi": "“một” — bắt buộc, dù tiếng Việt không có" },
-        { "chu": "dog",     "lam_gi": "tên vật hoặc con vật", "thay": true }
-      ]
-    },
-
-    "sp_g1_u5_1": {
-      "dung_de": "Nói món con THÍCH.",
-      "tinh_huong": "Mẹ hỏi con muốn ăn gì, con chọn món mình thích.",
-      "phan": [
-        { "chu": "I like", "lam_gi": "“mình thích”" },
-        { "chu": "milk",   "lam_gi": "món ăn hoặc đồ uống", "thay": true }
-      ],
-      "khac_voi": "Sau “I like” KHÔNG có “a”, vì con thích món ấy nói chung, không phải một cái cụ thể."
-    },
-
-    "sp_g1_u6_1": {
-      "dung_de": "Tả một đồ vật kèm MÀU của nó, để người khác nhận ra đúng cái.",
-      "tinh_huong": "Trên bàn có ba cái bút, con bảo bạn lấy hộ cái bút đỏ.",
-      "phan": [
-        { "chu": "It's",  "lam_gi": "“nó là” — nhắc lại vật vừa nói tới" },
-        { "chu": "a",     "lam_gi": "“một”" },
-        { "chu": "red",   "lam_gi": "MÀU — tiếng Anh để màu đứng TRƯỚC đồ vật", "thay": true },
-        { "chu": "pen",   "lam_gi": "đồ vật", "thay": true }
-      ],
-      "khac_voi": "Tiếng Việt nói “cái bút ĐỎ” — màu đứng sau. Tiếng Anh ngược lại."
-    },
-
-    "sp_g1_u7_1": {
-      "dung_de": "Nói rằng ở chỗ đó CÓ một cái gì.",
-      "tinh_huong": "Con kể cho bạn nghe nhà mình có gì, dù bạn chưa nhìn thấy.",
-      "phan": [
-        { "chu": "There's", "lam_gi": "“có” — nói một thứ TỒN TẠI ở đó" },
-        { "chu": "a",       "lam_gi": "“một”" },
-        { "chu": "garden",  "lam_gi": "thứ có ở đó", "thay": true }
-      ],
-      "khac_voi": "“This is a garden.” là con đang CHỈ vào nó. “There's a garden.” là con kể có nó."
-    },
-
-    "sp_g1_u8_1": {
-      "dung_de": "Bảo người khác CHẠM vào một chỗ trên người.",
-      "tinh_huong": "Cô cho cả lớp chơi trò làm theo lời cô.",
-      "phan": [
-        { "chu": "Touch", "lam_gi": "“chạm vào” — lời BẢO, nên không có chủ ngữ" },
-        { "chu": "your",  "lam_gi": "“của bạn” — chỗ trên người NGƯỜI NGHE" },
-        { "chu": "hair",  "lam_gi": "bộ phận cơ thể", "thay": true }
-      ]
-    },
-
-    "sp_g1_u9_1": {
-      "_vi_sao_tach": [
-        "“How many clocks? - Two.” KHÔNG phải một câu — là HAI cấu trúc dán bằng dấu",
-        "gạch: một câu HỎI và một câu TRẢ LỜI. Bản đầu dạy gộp, và bắt bé lớp 1 nhắc",
-        "lại cả cụm ba lần. Bé chưa biết gì về tiếng Anh thì phải học hỏi trước, tập",
-        "hỏi cho thuộc, rồi mới sang trả lời.",
-        "",
-        "KHÔNG nói chuyện số ít / số nhiều ở đây — đó là việc của bài khác. Nhắc “s”",
-        "lúc này chỉ làm bé rối thêm một thứ chưa cần."
-      ],
-      "hoi": {
-        "cau": "How many clocks?",
-        "dung_de": "Hỏi xem có BAO NHIÊU cái.",
-        "tinh_huong": "Trong cửa hàng, con muốn biết trên giá có mấy cái đồng hồ.",
-        "phan": [
-          { "chu": "How many", "lam_gi": "“bao nhiêu” — mở đầu mọi câu hỏi đếm" },
-          { "chu": "clocks",   "lam_gi": "thứ con muốn đếm", "thay": true },
-          { "chu": "?",        "lam_gi": "dấu hỏi — cuối câu con lên giọng" }
-        ]
-      },
-      "dap": {
-        "cau": "Two.",
-        "dung_de": "Trả lời câu hỏi đếm — chỉ cần MỘT CON SỐ.",
-        "tinh_huong": "Con đếm xong rồi nói số ra cho bạn nghe.",
-        "phan": [
-          { "chu": "Two", "lam_gi": "con số con đếm được — nói số thôi là đủ", "thay": true }
-        ],
-        "khac_voi": "Tiếng Việt hay đáp cả câu “Có hai cái”. Tiếng Anh chỉ cần con số."
-      }
-    },
-
-    "sp_g1_u10_1": {
-      "dung_de": "Gọi tên một con vật ở XA, con chỉ nhìn thấy chứ không chạm tới.",
-      "tinh_huong": "Ở sở thú, con chỉ tay sang chuồng bên kia.",
-      "phan": [
-        { "chu": "That's", "lam_gi": "“kia là” — vật ở XA" },
-        { "chu": "a",      "lam_gi": "“một”" },
-        { "chu": "monkey", "lam_gi": "con vật", "thay": true }
-      ],
-      "khac_voi": "Đây là chỗ hay lẫn nhất: GẦN thì “This is”, XA thì “That's”."
-    },
-
-    "sp_g1_u11_1": {
-      "dung_de": "Tả việc một bạn GÁI đang làm ngay lúc này.",
-      "tinh_huong": "Con đứng ở bến xe, kể cho mẹ nghe bạn kia đang làm gì.",
-      "phan": [
-        { "chu": "She's",   "lam_gi": "“bạn ấy đang” — bạn GÁI" },
-        { "chu": "running", "lam_gi": "việc đang làm — động từ thêm “-ing”", "thay": true }
-      ],
-      "khac_voi": "“-ing” nghĩa là ĐANG làm, ngay bây giờ. Bỏ “-ing” là câu khác hẳn."
-    },
-    "sp_g1_u11_2": {
-      "dung_de": "Tả việc một bạn TRAI đang làm ngay lúc này.",
-      "tinh_huong": "Cũng cảnh ấy, nhưng người con kể là bạn trai.",
-      "phan": [
-        { "chu": "He's",    "lam_gi": "“bạn ấy đang” — bạn TRAI" },
-        { "chu": "running", "lam_gi": "việc đang làm", "thay": true }
-      ],
-      "khac_voi": "Chỉ khác “She's” đúng một chỗ: bạn gái dùng “She”, bạn trai dùng “He”."
-    },
-
-    "sp_g1_u12_1": {
-      "dung_de": "RỦ người khác nhìn vào cái gì đó.",
-      "tinh_huong": "Con thấy cái gì hay bên hồ, gọi bạn lại xem cùng.",
-      "phan": [
-        { "chu": "Look at", "lam_gi": "“nhìn kìa” — lời rủ, nên không có chủ ngữ" },
-        { "chu": "the",     "lam_gi": "“cái ấy” — thứ cả hai đều đang nhìn thấy" },
-        { "chu": "lemons",  "lam_gi": "thứ con muốn bạn nhìn", "thay": true }
-      ],
-      "khac_voi": "“I can see…” là CON nhìn thấy. “Look at…” là bảo NGƯỜI KHÁC nhìn."
-    },
-
-    "sp_g1_u13_1": {
-      "dung_de": "Tả món một bạn GÁI đang ăn.",
-      "tinh_huong": "Giờ ăn ở căng tin, con nhìn quanh xem các bạn ăn gì.",
-      "phan": [
-        { "chu": "She's having", "lam_gi": "“bạn ấy đang ăn”" },
-        { "chu": "noodles",      "lam_gi": "món đang ăn", "thay": true }
-      ]
-    },
-    "sp_g1_u13_2": {
-      "dung_de": "Tả món một bạn TRAI đang ăn.",
-      "tinh_huong": "Cũng giờ ăn ấy, nhưng là bạn trai.",
-      "phan": [
-        { "chu": "He's having", "lam_gi": "“bạn ấy đang ăn”" },
-        { "chu": "nuts",        "lam_gi": "món đang ăn", "thay": true }
-      ]
-    },
-
-    "sp_g1_u14_1": {
-      "dung_de": "Nói thứ CON NHÌN THẤY.",
-      "tinh_huong": "Trong cửa hàng đồ chơi, con kể cho mẹ nghe mình thấy gì.",
-      "phan": [
-        { "chu": "I can see", "lam_gi": "“mình nhìn thấy”" },
-        { "chu": "a",         "lam_gi": "“một”" },
-        { "chu": "tiger",     "lam_gi": "thứ con thấy", "thay": true }
-      ]
-    },
-
-    "sp_g1_u15_1": {
-      "dung_de": "Bảo người khác CHỈ TAY vào một chỗ trên người.",
-      "tinh_huong": "Trước trận bóng, cả đội khởi động theo lời hô.",
-      "phan": [
-        { "chu": "Point to", "lam_gi": "“chỉ vào” — lời bảo" },
-        { "chu": "your",     "lam_gi": "“của bạn”" },
-        { "chu": "hand",     "lam_gi": "bộ phận cơ thể", "thay": true }
-      ],
-      "khac_voi": "“Touch” là CHẠM vào, “Point to” là CHỈ TAY vào mà không chạm."
-    },
-
-    "sp_g1_u16_1": {
-      "_vi_sao_tach": "Cũng như U9: một câu HỎI và một câu TRẢ LỜI, học rời nhau.",
-      "hoi": {
-        "cau": "How many windows can you see?",
-        "dung_de": "Hỏi người kia NHÌN THẤY bao nhiêu cái.",
-        "tinh_huong": "Hai anh em ngồi trong phòng, thi nhau đếm cửa sổ.",
-        "phan": [
-          { "chu": "How many",     "lam_gi": "“bao nhiêu” — giống câu hỏi con đã học" },
-          { "chu": "windows",      "lam_gi": "thứ đem đếm", "thay": true },
-          { "chu": "can you see?", "lam_gi": "“bạn nhìn thấy được” — hỏi về mắt người kia" }
-        ],
-        "khac_voi": "“How many clocks?” là hỏi CÓ mấy cái. Thêm “can you see” là hỏi bạn NHÌN THẤY mấy cái."
-      },
-      "dap": {
-        "cau": "I can see six.",
-        "dung_de": "Trả lời rằng CON nhìn thấy mấy cái.",
-        "tinh_huong": "Con đếm số cửa sổ mình nhìn thấy rồi nói ra.",
-        "phan": [
-          { "chu": "I can see", "lam_gi": "“mình nhìn thấy” — nói về mắt của CON" },
-          { "chu": "six",       "lam_gi": "con số con đếm được", "thay": true }
-        ]
-      }
-    }
+  "v_g1_u1_book": {
+   "word": "book",
+   "nghia": "quyển sách",
+   "ipa": "/bʊk/",
+   "vai": [
+    "dt"
+   ]
   },
-
-  "kich_ban_noi": {
-    "_vi_sao": [
-      "Nói TỪ và nói CÂU là tập phát âm. Còn ĐỐI ĐÁP mới là dùng tiếng Anh: bé phải",
-      "nghe người kia nói gì rồi mới biết mình đáp gì. Đó là việc khác hẳn, và là",
-      "việc cuối cùng của chuỗi nghe → hiểu → ráp câu → gõ → nói.",
-      "",
-      "Hai kiểu lượt, tuỳ bài dạy được cái gì:",
-      "  · máy nói TIẾNG ANH  → bé đáp tiếng Anh   (bài có sẵn cặp hỏi–đáp: U1·U9·U16)",
-      "  · máy gợi TIẾNG VIỆT → bé nói tiếng Anh   (mọi bài còn lại)",
-      "",
-      "Kiểu thứ hai không phải giải pháp tạm: bé lớp 1 chưa có đủ vốn để hỏi lại,",
-      "nhưng ĐÃ đủ để NÓI RA thứ mình thấy. Gợi bằng tiếng Việt là đúng tầm.",
-      "",
-      "`{ten}` thay bằng biệt danh của chính bé — bé nghe tên mình trong đoạn hội",
-      "thoại tiếng Anh, đó là chỗ bài này khác mọi bài luyện phát âm khác."
-    ],
-
-    "u_g1_1":  { "ten": "Chào bạn mới", "canh": "Con gặp một bạn chưa quen ở sân trường.",
-      "luot": [
-        { "ai": "may", "chu": "Hi, I'm Mai.", "tieng": "en" },
-        { "ai": "be",  "chu": "Hi, I'm {ten}.", "goi": "Con chào lại và nói tên mình." },
-        { "ai": "may", "chu": "Bye, {ten}.", "tieng": "en" },
-        { "ai": "be",  "chu": "Bye, Mai.", "goi": "Con chào tạm biệt bạn Mai." }
-      ] },
-
-    "u_g1_2":  { "ten": "Khoe đồ trong cặp", "canh": "Bạn hỏi trong cặp con có gì.",
-      "luot": [
-        { "ai": "may", "chu": "Con mở cặp ra, trong đó có một cái ô tô. Con khoe với bạn thế nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "I have a car.", "goi": "Nói con CÓ cái ô tô." }
-      ] },
-
-    "u_g1_3":  { "ten": "Cái nào của mình", "canh": "Ở lớp có hai cái túi giống hệt nhau.",
-      "luot": [
-        { "ai": "may", "chu": "Cô hỏi cái túi nào là của con. Con chỉ vào và nói thế nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "This is my bag.", "goi": "Nhớ chữ “my” — của con." }
-      ] },
-
-    "u_g1_4":  { "ten": "Dắt bạn xem phòng", "canh": "Con dắt bạn đi xem phòng ngủ của mình.",
-      "luot": [
-        { "ai": "may", "chu": "Con chỉ vào con chó đang nằm cạnh giường. Con nói gì?", "tieng": "vi" },
-        { "ai": "be",  "chu": "This is a dog.", "goi": "Vật ở GẦN thì dùng “This is”." },
-        { "ai": "may", "chu": "Rồi con chỉ sang cái cửa. Con nói gì?", "tieng": "vi" },
-        { "ai": "be",  "chu": "This is a door.", "goi": "Vẫn khung câu ấy, chỉ đổi chữ cuối." }
-      ] },
-
-    "u_g1_5":  { "ten": "Chọn món", "canh": "Mẹ hỏi con muốn uống gì.",
-      "luot": [
-        { "ai": "may", "chu": "Mẹ đưa ra sữa và nước. Con thích sữa. Con nói thế nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "I like milk.", "goi": "Sau “I like” không có chữ “a”." }
-      ] },
-
-    "u_g1_6":  { "ten": "Nhờ bạn lấy bút", "canh": "Trên bàn có ba cái bút khác màu.",
-      "luot": [
-        { "ai": "may", "chu": "Con muốn cái bút màu đỏ. Con tả cho bạn biết là cái nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "It's a red pen.", "goi": "Màu đứng TRƯỚC đồ vật nhé." }
-      ] },
-
-    "u_g1_7":  { "ten": "Kể về nhà mình", "canh": "Con kể cho bạn nghe nhà mình có gì.",
-      "luot": [
-        { "ai": "may", "chu": "Nhà con có một khu vườn. Bạn chưa nhìn thấy bao giờ. Con kể thế nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "There's a garden.", "goi": "Kể có cái gì ở đó thì dùng “There's”." }
-      ] },
-
-    "u_g1_8":  { "ten": "Chơi trò làm theo", "canh": "Cô cho cả lớp chơi trò làm theo lời cô.",
-      "luot": [
-        { "ai": "may", "chu": "Đến lượt con làm quản trò. Con bảo bạn chạm vào tóc.", "tieng": "vi" },
-        { "ai": "be",  "chu": "Touch your hair.", "goi": "Câu ra lệnh không có chủ ngữ." }
-      ] },
-
-    "u_g1_9":  { "ten": "Đếm trong cửa hàng", "canh": "Con và bạn đếm đồ trên giá.",
-      "luot": [
-        { "ai": "may", "chu": "Con muốn biết trên giá có mấy cái đồng hồ. Con hỏi bạn thế nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "How many clocks?", "goi": "Mở đầu bằng “How many”." },
-        { "ai": "may", "chu": "How many clocks?", "tieng": "en" },
-        { "ai": "be",  "chu": "Two.", "goi": "Bạn hỏi lại con. Con đếm được hai cái — chỉ cần nói con số." }
-      ] },
-
-    "u_g1_10": { "ten": "Đi sở thú", "canh": "Con đứng xa chuồng khỉ.",
-      "luot": [
-        { "ai": "may", "chu": "Con chỉ sang chuồng bên kia, có một con khỉ. Nó ở XA con. Con nói gì?", "tieng": "vi" },
-        { "ai": "be",  "chu": "That's a monkey.", "goi": "Ở XA thì dùng “That's”, không phải “This is”." }
-      ] },
-
-    "u_g1_11": { "ten": "Kể chuyện ở bến xe", "canh": "Con đứng ở bến xe buýt với mẹ.",
-      "luot": [
-        { "ai": "may", "chu": "Con thấy một bạn gái đang chạy. Con kể cho mẹ nghe thế nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "She's running.", "goi": "Bạn gái thì dùng “She's”." },
-        { "ai": "may", "chu": "Còn kia là một bạn trai cũng đang chạy. Con kể thế nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "He's running.", "goi": "Bạn trai thì đổi thành “He's”." }
-      ] },
-
-    "u_g1_12": { "ten": "Gọi bạn ra xem", "canh": "Con thấy cái gì hay bên hồ.",
-      "luot": [
-        { "ai": "may", "chu": "Con thấy mấy quả chanh, muốn gọi bạn lại xem cùng. Con nói gì?", "tieng": "vi" },
-        { "ai": "be",  "chu": "Look at the lemons.", "goi": "Rủ người khác nhìn thì dùng “Look at”." }
-      ] },
-
-    "u_g1_13": { "ten": "Giờ ăn ở căng tin", "canh": "Con nhìn quanh xem các bạn ăn gì.",
-      "luot": [
-        { "ai": "may", "chu": "Một bạn gái đang ăn mì. Con kể thế nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "She's having noodles.", "goi": "Bạn gái đang ăn thì dùng “She's having”." },
-        { "ai": "may", "chu": "Một bạn trai đang ăn hạt. Con kể thế nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "He's having nuts.", "goi": "Đổi sang “He's having”." }
-      ] },
-
-    "u_g1_14": { "ten": "Trong cửa hàng đồ chơi", "canh": "Con đi cùng mẹ vào cửa hàng đồ chơi.",
-      "luot": [
-        { "ai": "may", "chu": "Con nhìn thấy một con hổ bông. Con kể cho mẹ nghe thế nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "I can see a tiger.", "goi": "Nói thứ CON nhìn thấy." }
-      ] },
-
-    "u_g1_15": { "ten": "Khởi động trước trận", "canh": "Cả đội khởi động theo lời hô.",
-      "luot": [
-        { "ai": "may", "chu": "Đến lượt con hô. Con bảo cả đội chỉ tay vào bàn tay.", "tieng": "vi" },
-        { "ai": "be",  "chu": "Point to your hand.", "goi": "“Point to” là chỉ vào, không chạm." }
-      ] },
-
-    "u_g1_16": { "ten": "Thi đếm cửa sổ", "canh": "Hai anh em ngồi trong phòng.",
-      "luot": [
-        { "ai": "may", "chu": "Con muốn hỏi anh nhìn thấy mấy cái cửa sổ. Con hỏi thế nào?", "tieng": "vi" },
-        { "ai": "be",  "chu": "How many windows can you see?", "goi": "Thêm “can you see” để hỏi người kia NHÌN THẤY." },
-        { "ai": "may", "chu": "How many windows can you see?", "tieng": "en" },
-        { "ai": "be",  "chu": "I can see six.", "goi": "Anh hỏi lại con. Con đếm được sáu cái." }
-      ] }
+  "v_g1_u2_cake": {
+   "word": "cake",
+   "nghia": "cái bánh ngọt",
+   "ipa": "/keɪk/",
+   "vai": [
+    "dt",
+    "thucan"
+   ]
   },
-
-  "chuong": {
-    "_vi_sao": [
-      "Sách TỰ chia 4 chương, đọc ra từ `book_map` của node khoá học: cứ 4 unit thì",
-      "một Fun time và một Review —",
-      "  U1-U4  … Review 1 (tr20)      U5-U8   … Review 2 (tr37)",
-      "  U9-U12 … Review 3 (tr54)      U13-U16 … Review 4 (tr71)",
-      "",
-      "Bản đầu cháu khai soChuong=16, coi mỗi unit là một chương. Cổng kesach bắt",
-      "được vì nó đòi MỖI CHƯƠNG MỘT KỲ ÔN TẬP — 16 kỳ ôn cho 16 bài là vô lý, và",
-      "quan trọng hơn là nó KHÔNG khớp cách sách chia. Bé học xong 4 unit mới có",
-      "đủ thứ để ôn.",
-      "",
-      "Tên chương đặt theo bốn cảnh của bốn unit trong chương ấy — bé lớp 1 nhớ",
-      "CẢNH chứ không nhớ số chương."
-    ],
-    "1": { "ten": "Quanh nhà và trường", "unit": [1, 2, 3, 4] },
-    "2": { "ten": "Ra ngoài chơi", "unit": [5, 6, 7, 8] },
-    "3": { "ten": "Đi xa hơn", "unit": [9, 10, 11, 12] },
-    "4": { "ten": "Bạn bè và trò chơi", "unit": [13, 14, 15, 16] }
+  "v_g1_u2_car": {
+   "word": "car",
+   "nghia": "ô tô",
+   "ipa": "/kɑː/",
+   "vai": [
+    "dt"
+   ]
   },
-
-  "unit": {
-    "_vi_sao": [
-      "Bản đồ khai `topic` và `competences` TOÀN BẰNG TIẾNG ANH: 'In the bedroom',",
-      "'Identifying objects and animals'. Hai thứ này hiện lên cho NGƯỜI VIỆT đọc —",
-      "tên cảnh thì bé 6 tuổi nhìn, năng lực thì bố mẹ đọc trong sổ.",
-      "",
-      "Không dịch thì lời giảng thành 'Cảnh hôm nay: In the bedroom.' — LẪN HAI THỨ",
-      "TIẾNG TRONG MỘT DÒNG, đúng cái mà tools/tts/README.md cấm: Kokoro-VI sẽ đọc",
-      "'In the bedroom' theo vần Việt. Đây là lỗi lộ muộn, phải chặn từ dữ liệu."
-    ],
-    "u_g1_1":  { "canh": "Ở sân trường",              "nang_luc": ["Chào hỏi và giới thiệu mình", "Nói lời tạm biệt"] },
-    "u_g1_2":  { "canh": "Trong phòng ăn",            "nang_luc": ["Nói về thứ mình có"] },
-    "u_g1_3":  { "canh": "Ở chợ",                     "nang_luc": ["Chỉ ra đồ của mình"] },
-    "u_g1_4":  { "canh": "Trong phòng ngủ",           "nang_luc": ["Gọi tên đồ vật và con vật"] },
-    "u_g1_5":  { "canh": "Ở quán cá rán",             "nang_luc": ["Nói về món mình thích"] },
-    "u_g1_6":  { "canh": "Trong lớp học",             "nang_luc": ["Tả đồ vật kèm màu sắc"] },
-    "u_g1_7":  { "canh": "Ở khu vườn",                "nang_luc": ["Nói có cái gì ở đó"] },
-    "u_g1_8":  { "canh": "Ở công viên",               "nang_luc": ["Ra hiệu lệnh về bộ phận cơ thể"] },
-    "u_g1_9":  { "canh": "Trong cửa hàng",            "nang_luc": ["Hỏi và đáp về số lượng"] },
-    "u_g1_10": { "canh": "Ở sở thú",                  "nang_luc": ["Gọi tên con vật ở xa"] },
-    "u_g1_11": { "canh": "Ở bến xe buýt",             "nang_luc": ["Tả việc đang diễn ra"] },
-    "u_g1_12": { "canh": "Bên hồ",                    "nang_luc": ["Rủ người khác nhìn vào cái gì"] },
-    "u_g1_13": { "canh": "Ở căng tin trường",         "nang_luc": ["Tả việc đang ăn món gì"] },
-    "u_g1_14": { "canh": "Trong cửa hàng đồ chơi",    "nang_luc": ["Nói về thứ mình nhìn thấy"] },
-    "u_g1_15": { "canh": "Ở trận bóng đá",            "nang_luc": ["Ra hiệu lệnh chỉ vào bộ phận cơ thể"] },
-    "u_g1_16": { "canh": "Ở nhà",                     "nang_luc": ["Hỏi và đáp về số lượng nhìn thấy"] }
+  "v_g1_u2_cat": {
+   "word": "cat",
+   "nghia": "con mèo",
+   "ipa": "/kæt/",
+   "vai": [
+    "dt"
+   ]
   },
-
-  "sua_phonics": {
-    "_vi_sao": [
-      "Cả 16 node phonics của lớp 1 đều khai position='initial'. Sai với 6 unit.",
-      "Bộ sinh đọc trường này để ra đề 'từ nào BẮT ĐẦU bằng âm /æ/' thì 20 từ ra đề",
-      "SAI, mà dữ liệu vẫn hợp lệ nên cổng vẫn xanh. Đây là lỗi câm."
-    ],
-    "_bai_hoc": [
-      "Bản đầu của phần bù này sửa position theo UNIT — và cổng bắt được là vẫn sai.",
-      "Vị trí âm là chuyện CỦA TỪNG TỪ, không phải của unit:",
-      "  U3  /æ/  apple ở ĐẦU · bag·can·hat ở GIỮA          → TRỘN",
-      "  U13 /n/  noodles·nuts ở ĐẦU · bananas ở GIỮA       → TRỘN (và đây là PHỤ ÂM,",
-      "           nên cái sai không chỉ nằm ở mấy unit nguyên âm như tưởng ban đầu)",
-      "Nên vị trí thật nằm ở trường `am_o` của TỪNG TỪ. Khối này chỉ còn ghi tóm tắt",
-      "cho cả unit, và bộ sinh PHẢI hỏi từng từ chứ đừng hỏi unit."
-    ],
-    "_dung_the_nao": "Ra đề nhận diện âm thì lọc theo `am_o` của từ, KHÔNG theo `position` của node phonics.",
-    "ph_g1_u3_a":  { "position": "mixed",  "_ghi": "apple ở đầu; bag·can·hat ở giữa" },
-    "ph_g1_u5_i":  { "position": "medial", "_ghi": "cả 4 từ đều ở giữa" },
-    "ph_g1_u6_e":  { "position": "medial", "_ghi": "cả 4 từ đều ở giữa" },
-    "ph_g1_u9_o":  { "position": "medial", "_ghi": "cả 4 từ đều ở giữa" },
-    "ph_g1_u11_u": { "position": "medial", "_ghi": "cả 4 từ đều ở giữa" },
-    "ph_g1_u13_n": { "position": "mixed",  "_ghi": "noodles·nuts ở đầu; bananas ở giữa" }
+  "v_g1_u2_cup": {
+   "word": "cup",
+   "nghia": "cái cốc",
+   "ipa": "/kʌp/",
+   "vai": [
+    "dt"
+   ]
   },
-
-  "sua_slot": {
-    "_vi_sao": [
-      "Hai chỗ cạnh HAS_SLOT không dùng thẳng được — xem mục 2.2 và 2.4 của sổ thiết kế."
-    ],
-    "sp_g1_u6_1": {
-      "_cau": "It's a + [Colour] + [Noun].",
-      "_loi": "Slot phẳng gồm cả màu lẫn danh từ → thay bừa ra 'It's a pen bell.'",
-      "o": { "Colour": ["mau"], "Noun": ["dt"] }
-    },
-    "sp_g1_u11_1": {
-      "_cau": "She's + [Verb-ing].",
-      "_loi": "Slot cho từ GỐC 'run', câu cần dạng 'running'. Ghép thẳng ra \"She's run.\"",
-      "o": { "Verb-ing": ["dongtu"] },
-      "dung_dang": "ing"
-    },
-    "sp_g1_u11_2": { "_cau": "He's + [Verb-ing].", "o": { "Verb-ing": ["dongtu"] }, "dung_dang": "ing" },
-    "sp_g1_u16_1": {
-      "_cau": "How many + [Noun-plural] + can you see? - I can see + [Number].",
-      "_loi": "Slot cho 'window' số ít, câu cần 'windows'. Còn U9 thì từ ĐÃ số nhiều sẵn — bất nhất giữa hai unit cùng dạy một mẫu câu.",
-      "o": { "Noun-plural": ["dt", "sonhieu"], "Number": ["so"] },
-      "dung_dang": "sonhieu"
-    },
-    "sp_g1_u9_1": {
-      "_cau": "How many + [Noun-plural]? - [Number].",
-      "o": { "Noun-plural": ["sonhieu"], "Number": ["so"] }
-    },
-    "sp_g1_u1_1": {
-      "_cau": "Hi, I'm + [Name].",
-      "_loi": "KHÔNG có cạnh HAS_SLOT nào — bản đồ không có node tên riêng. Bài ĐẦU TIÊN của cả quyển mà không sinh được câu nào.",
-      "o": { "Name": ["ten"] },
-      "lay_ten_be": true
-    },
-    "sp_g1_u1_2": { "_cau": "Bye, + [Name].", "o": { "Name": ["ten"] }, "lay_ten_be": true }
+  "v_g1_u3_apple": {
+   "word": "apple",
+   "nghia": "quả táo",
+   "ipa": "/ˈæpl/",
+   "vai": [
+    "dt",
+    "thucan"
+   ],
+   "an": true,
+   "am_o": "dau"
   },
-
-  "them": {
-    "_vi_sao": [
-      "Ba nhóm từ mà mẫu câu ĐÒI nhưng bản đồ KHÔNG có node nào. Thiếu chúng thì U6,",
-      "U9, U16 và U1 không sinh được bài."
-    ],
-
-    "so_dem": {
-      "_dung_cho": "ô [Number] của U9 và U16",
-      "muc": [
-        { "word": "one",   "nghia": "một",   "ipa": "/wʌn/",   "so": 1,  "vai": ["so"] },
-        { "word": "two",   "nghia": "hai",   "ipa": "/tuː/",   "so": 2,  "vai": ["so"] },
-        { "word": "three", "nghia": "ba",    "ipa": "/θriː/",  "so": 3,  "vai": ["so"] },
-        { "word": "four",  "nghia": "bốn",   "ipa": "/fɔː/",   "so": 4,  "vai": ["so"] },
-        { "word": "five",  "nghia": "năm",   "ipa": "/faɪv/",  "so": 5,  "vai": ["so"] },
-        { "word": "six",   "nghia": "sáu",   "ipa": "/sɪks/",  "so": 6,  "vai": ["so"] },
-        { "word": "seven", "nghia": "bảy",   "ipa": "/ˈsevn/", "so": 7,  "vai": ["so"] },
-        { "word": "eight", "nghia": "tám",   "ipa": "/eɪt/",   "so": 8,  "vai": ["so"] },
-        { "word": "nine",  "nghia": "chín",  "ipa": "/naɪn/",  "so": 9,  "vai": ["so"] },
-        { "word": "ten",   "nghia": "mười",  "ipa": "/ten/",   "so": 10, "vai": ["so"] }
-      ]
-    },
-
-    "mau": {
-      "_dung_cho": "ô [Colour] của U6 — bản đồ chỉ có đúng một màu là 'red'",
-      "_ghi": "Chọn 6 màu cơ bản, đều 3-6 ký tự nên gõ được ở bậc 4.",
-      "muc": [
-        { "word": "red",    "nghia": "màu đỏ",     "ipa": "/red/",     "vai": ["mau"], "_co_san": "v_g1_u6_red" },
-        { "word": "blue",   "nghia": "màu xanh dương", "ipa": "/bluː/", "vai": ["mau"] },
-        { "word": "green",  "nghia": "màu xanh lá", "ipa": "/ɡriːn/",  "vai": ["mau"] },
-        { "word": "yellow", "nghia": "màu vàng",   "ipa": "/ˈjeləʊ/",  "vai": ["mau"] },
-        { "word": "black",  "nghia": "màu đen",    "ipa": "/blæk/",    "vai": ["mau"] },
-        { "word": "white",  "nghia": "màu trắng",  "ipa": "/waɪt/",    "vai": ["mau"] }
-      ]
-    },
-
-    "ten": {
-      "_dung_cho": "ô [Name] của U1",
-      "_ghi": [
-        "Ưu tiên BIỆT DANH CỦA CHÍNH BÉ (app đã có sẵn, phần 'nhiều bé một máy').",
-        "Bài đầu tiên của cả quyển mà bé thấy tên mình trong câu tiếng Anh.",
-        "Danh sách dưới chỉ là dự phòng khi bé chưa đặt biệt danh.",
-        "",
-        "KHÔNG dùng nhân vật của sách Toán (Trí Long · Su Kem). Quyển này dựng cho",
-        "MỌI học sinh, không đòi bé phải biết thế giới của bốn quyển Toán trước.",
-        "",
-        "Sáu tên dưới đây lấy từ CHÍNH bộ Global Success — 'Bill' là tên trong câu",
-        "mẫu U1 của bản đồ ('Hi, I'm Bill.'), năm tên còn lại là nhân vật có thật",
-        "trong bản đồ lớp 3. Vừa trung tính, vừa có gốc trong sách."
-      ],
-      "muc": ["Bill", "Mai", "Nam", "Linh", "Ben", "Lucy"]
-    }
+  "v_g1_u3_bag": {
+   "word": "bag",
+   "nghia": "cái túi",
+   "ipa": "/bæɡ/",
+   "vai": [
+    "dt"
+   ],
+   "am_o": "giua"
   },
-
-  "hinh": {
-    "_vi_sao": [
-      "figforge KHÔNG dựng được hình từ vựng. Đã mở ra xem: 25 nguyên mẫu của nó —",
-      "bar_diagram · fraction_split · clock_face · place_value_chart · venn_two … —",
-      "đều là SƠ ĐỒ TOÁN dựng bằng matplotlib từ hình khối và mũi tên. Vẽ con vịt",
-      "cho bé 6 tuổi nhận ra là MINH HOẠ, không phải dựng sơ đồ; ép matplotlib làm",
-      "việc ấy thì ra thứ tệ hơn là không có hình.",
-      "",
-      "Đợt 1 dùng EMOJI làm lớp hình: cả 60 từ đều có, nhận ra ngay ở cỡ nhỏ, không",
-      "tốn dung lượng, nét ở mọi cỡ. Điểm yếu đã biết và chấp nhận: emoji hiện KHÁC",
-      "NHAU tuỳ máy (iPad và Windows vẽ con chó không giống nhau).",
-      "",
-      "`ve_tay: true` = emoji chỉ GẦN đúng, cần thay bằng hình vẽ thật. Sáu từ ấy",
-      "vẫn dùng được tạm, nhưng phải nằm trong danh sách nợ chứ không lẫn vào 54 từ",
-      "kia rồi quên mất."
-    ],
-    "_dung_the_nao": "Bậc 1 (nghe → bấm hình) và bài điền chỗ trống của bậc 3 lấy hình từ đây.",
-
-    "ball": "⚽", "bike": "🚲", "book": "📖",
-    "cake": "🍰", "car": "🚗", "cat": "🐱", "cup": "☕",
-    "apple": "🍎", "bag": "👜", "can": "🥫", "hat": "🎩",
-    "desk": "🪑", "dog": "🐕", "door": "🚪", "duck": "🦆",
-    "chicken": "🍗", "chips": "🍟", "fish": "🐟", "milk": "🥛",
-    "bell": "🔔", "pen": "🖊️", "pencil": "✏️", "red": "🟥",
-    "garden": "🌷", "girl": "👧", "goat": "🐐",
-    "hand": "✋", "horse": "🐴",
-    "clocks": "🕐", "locks": "🔒", "mops": "🧹", "pots": "🍲",
-    "mango": "🥭", "monkey": "🐒", "mother": "👩", "mouse": "🐭",
-    "bus": "🚌", "sun": "☀️", "truck": "🚚",
-    "leaf": "🍃", "lemons": "🍋",
-    "bananas": "🍌", "noodles": "🍜", "nuts": "🥜",
-    "teddy bear": "🧸", "tiger": "🐯", "turtle": "🐢",
-    "face": "🙂", "father": "👨", "foot": "🦶", "football": "⚽",
-    "water": "💧", "window": "🪟",
-
-    "_ve_tay": {
-      "_ghi": "Bảy chỗ emoji chỉ gần đúng. ĐÃ VẼ TAY bằng SVG — xem web/src/mon/tienganh/components/HinhVe.jsx. `ve` là khoá tra vào bộ hình ấy; `tam` giữ lại làm bản lùi nếu hình vẽ hỏng.",
-      "gate":  { "ve": "gate", "tam": "🚧", "sai_o_dau": "biển công trường, không phải cái cổng" },
-      "head":  { "ve": "head", "tam": "👤", "sai_o_dau": "bóng người, không phải cái đầu" },
-      "hair":  { "ve": "hair", "tam": "💇", "sai_o_dau": "đang cắt tóc, không phải mái tóc" },
-      "top":   { "ve": "top", "tam": "🪀", "sai_o_dau": "yo-yo, không phải con quay" },
-      "lake":  { "ve": "lake", "tam": "🏞️", "sai_o_dau": "phong cảnh chung, không rõ là cái hồ" },
-      "run":   { "ve": "run", "tam": "🏃", "sai_o_dau": "động từ — hình chỉ gợi được một phần" },
-      "wash":  { "ve": "wash", "tam": "🧼", "sai_o_dau": "động từ — bánh xà phòng không phải việc rửa" }
-    }
+  "v_g1_u3_can": {
+   "word": "can",
+   "nghia": "cái lon",
+   "ipa": "/kæn/",
+   "vai": [
+    "dt"
+   ],
+   "am_o": "giua"
   },
-
-  "khong_bat_go": {
-    "_vi_sao": [
-      "Bậc 4 (gõ lại) chia ba nấc vì bé 6 tuổi gõ chậm — xem sổ thiết kế mục 4.3.",
-      "Từ dài quá thì bé bỏ cuộc chứ không phải làm sai. Những từ dưới đây chỉ học ở",
-      "bậc 1-3; bậc 4 dùng nấc GHÉP THẺ CHỮ CÁI thay cho gõ."
-    ],
-    "tu": ["teddy bear", "chicken", "bananas", "noodles", "football", "pencil", "garden"]
+  "v_g1_u3_hat": {
+   "word": "hat",
+   "nghia": "cái mũ",
+   "ipa": "/hæt/",
+   "vai": [
+    "dt"
+   ],
+   "am_o": "giua"
+  },
+  "v_g1_u4_desk": {
+   "word": "desk",
+   "nghia": "cái bàn học",
+   "ipa": "/desk/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u4_dog": {
+   "word": "dog",
+   "nghia": "con chó",
+   "ipa": "/dɒɡ/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u4_door": {
+   "word": "door",
+   "nghia": "cái cửa",
+   "ipa": "/dɔː/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u4_duck": {
+   "word": "duck",
+   "nghia": "con vịt",
+   "ipa": "/dʌk/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u5_chicken": {
+   "word": "chicken",
+   "nghia": "thịt gà",
+   "ipa": "/ˈtʃɪkɪn/",
+   "vai": [
+    "thucan",
+    "khongdem"
+   ],
+   "am_o": "giua",
+   "_ghi": "U5 là 'At the fish and chip shop' — ngữ cảnh THỨC ĂN, nên là 'thịt gà' chứ không phải 'con gà'."
+  },
+  "v_g1_u5_chips": {
+   "word": "chips",
+   "nghia": "khoai tây chiên",
+   "ipa": "/tʃɪps/",
+   "vai": [
+    "thucan",
+    "sonhieu"
+   ],
+   "am_o": "giua"
+  },
+  "v_g1_u5_fish": {
+   "word": "fish",
+   "nghia": "cá",
+   "ipa": "/fɪʃ/",
+   "vai": [
+    "thucan",
+    "khongdem"
+   ],
+   "am_o": "giua"
+  },
+  "v_g1_u5_milk": {
+   "word": "milk",
+   "nghia": "sữa",
+   "ipa": "/mɪlk/",
+   "vai": [
+    "thucan",
+    "khongdem"
+   ],
+   "am_o": "giua"
+  },
+  "v_g1_u6_bell": {
+   "word": "bell",
+   "nghia": "cái chuông",
+   "ipa": "/bel/",
+   "vai": [
+    "dt"
+   ],
+   "am_o": "giua"
+  },
+  "v_g1_u6_pen": {
+   "word": "pen",
+   "nghia": "cái bút mực",
+   "ipa": "/pen/",
+   "vai": [
+    "dt"
+   ],
+   "am_o": "giua"
+  },
+  "v_g1_u6_pencil": {
+   "word": "pencil",
+   "nghia": "cái bút chì",
+   "ipa": "/ˈpensl/",
+   "vai": [
+    "dt"
+   ],
+   "am_o": "giua"
+  },
+  "v_g1_u6_red": {
+   "word": "red",
+   "nghia": "màu đỏ",
+   "ipa": "/red/",
+   "vai": [
+    "mau"
+   ],
+   "am_o": "giua"
+  },
+  "v_g1_u7_garden": {
+   "word": "garden",
+   "nghia": "khu vườn",
+   "ipa": "/ˈɡɑːdn/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u7_gate": {
+   "word": "gate",
+   "nghia": "cái cổng",
+   "ipa": "/ɡeɪt/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u7_girl": {
+   "word": "girl",
+   "nghia": "bạn gái",
+   "ipa": "/ɡɜːl/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u7_goat": {
+   "word": "goat",
+   "nghia": "con dê",
+   "ipa": "/ɡəʊt/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u8_hair": {
+   "word": "hair",
+   "nghia": "tóc",
+   "ipa": "/heə/",
+   "vai": [
+    "bophan",
+    "khongdem"
+   ]
+  },
+  "v_g1_u8_hand": {
+   "word": "hand",
+   "nghia": "bàn tay",
+   "ipa": "/hænd/",
+   "vai": [
+    "dt",
+    "bophan"
+   ]
+  },
+  "v_g1_u8_head": {
+   "word": "head",
+   "nghia": "cái đầu",
+   "ipa": "/hed/",
+   "vai": [
+    "dt",
+    "bophan"
+   ]
+  },
+  "v_g1_u8_horse": {
+   "word": "horse",
+   "nghia": "con ngựa",
+   "ipa": "/hɔːs/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u9_clocks": {
+   "word": "clocks",
+   "nghia": "những cái đồng hồ",
+   "ipa": "/klɒks/",
+   "vai": [
+    "sonhieu"
+   ],
+   "soit": "clock",
+   "am_o": "giua"
+  },
+  "v_g1_u9_locks": {
+   "word": "locks",
+   "nghia": "những ổ khoá",
+   "ipa": "/lɒks/",
+   "vai": [
+    "sonhieu"
+   ],
+   "soit": "lock",
+   "am_o": "giua"
+  },
+  "v_g1_u9_mops": {
+   "word": "mops",
+   "nghia": "những cây lau nhà",
+   "ipa": "/mɒps/",
+   "vai": [
+    "sonhieu"
+   ],
+   "soit": "mop",
+   "am_o": "giua"
+  },
+  "v_g1_u9_pots": {
+   "word": "pots",
+   "nghia": "những cái nồi",
+   "ipa": "/pɒts/",
+   "vai": [
+    "sonhieu"
+   ],
+   "soit": "pot",
+   "am_o": "giua"
+  },
+  "v_g1_u10_mango": {
+   "word": "mango",
+   "nghia": "quả xoài",
+   "ipa": "/ˈmæŋɡəʊ/",
+   "vai": [
+    "dt",
+    "thucan"
+   ]
+  },
+  "v_g1_u10_monkey": {
+   "word": "monkey",
+   "nghia": "con khỉ",
+   "ipa": "/ˈmʌŋki/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u10_mother": {
+   "word": "mother",
+   "nghia": "mẹ",
+   "ipa": "/ˈmʌðə/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u10_mouse": {
+   "word": "mouse",
+   "nghia": "con chuột",
+   "ipa": "/maʊs/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u11_bus": {
+   "word": "bus",
+   "nghia": "xe buýt",
+   "ipa": "/bʌs/",
+   "vai": [
+    "dt"
+   ],
+   "am_o": "giua"
+  },
+  "v_g1_u11_run": {
+   "word": "run",
+   "nghia": "chạy",
+   "ipa": "/rʌn/",
+   "vai": [
+    "dongtu"
+   ],
+   "ing": "running",
+   "am_o": "giua"
+  },
+  "v_g1_u11_sun": {
+   "word": "sun",
+   "nghia": "mặt trời",
+   "ipa": "/sʌn/",
+   "vai": [
+    "dt"
+   ],
+   "am_o": "giua"
+  },
+  "v_g1_u11_truck": {
+   "word": "truck",
+   "nghia": "xe tải",
+   "ipa": "/trʌk/",
+   "vai": [
+    "dt"
+   ],
+   "am_o": "giua"
+  },
+  "v_g1_u12_lake": {
+   "word": "lake",
+   "nghia": "cái hồ",
+   "ipa": "/leɪk/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u12_leaf": {
+   "word": "leaf",
+   "nghia": "chiếc lá",
+   "ipa": "/liːf/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u12_lemons": {
+   "word": "lemons",
+   "nghia": "những quả chanh",
+   "ipa": "/ˈlemənz/",
+   "vai": [
+    "sonhieu",
+    "thucan"
+   ],
+   "soit": "lemon"
+  },
+  "v_g1_u13_bananas": {
+   "word": "bananas",
+   "nghia": "những quả chuối",
+   "ipa": "/bəˈnɑːnəz/",
+   "vai": [
+    "sonhieu",
+    "thucan"
+   ],
+   "soit": "banana",
+   "am_o": "giua",
+   "_ghi": "Unit dạy âm /n/. 'bananas' có /n/ ở GIỮA, còn noodles·nuts thì ở ĐẦU — unit này TRỘN hai vị trí. Đừng ra đề 'từ nào bắt đầu bằng /n/' rồi kể cả từ này."
+  },
+  "v_g1_u13_noodles": {
+   "word": "noodles",
+   "nghia": "mì",
+   "ipa": "/ˈnuːdlz/",
+   "vai": [
+    "sonhieu",
+    "thucan"
+   ],
+   "soit": "noodle",
+   "am_o": "dau"
+  },
+  "v_g1_u13_nuts": {
+   "word": "nuts",
+   "nghia": "các loại hạt",
+   "ipa": "/nʌts/",
+   "vai": [
+    "sonhieu",
+    "thucan"
+   ],
+   "soit": "nut",
+   "am_o": "dau"
+  },
+  "v_g1_u14_teddy_bear": {
+   "word": "teddy bear",
+   "nghia": "con gấu bông",
+   "ipa": "/ˈtedi beə/",
+   "vai": [
+    "dt"
+   ],
+   "_ghi": "Từ DÀI NHẤT lớp 1 (10 ký tự, có dấu cách). Chỉ dùng ở bậc 1-3, KHÔNG bắt gõ ở bậc 4."
+  },
+  "v_g1_u14_tiger": {
+   "word": "tiger",
+   "nghia": "con hổ",
+   "ipa": "/ˈtaɪɡə/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u14_top": {
+   "word": "top",
+   "nghia": "con quay",
+   "ipa": "/tɒp/",
+   "vai": [
+    "dt"
+   ],
+   "_ghi": "U14 là 'In the toy shop' — 'top' ở đây là ĐỒ CHƠI con quay, không phải 'đỉnh/phía trên'."
+  },
+  "v_g1_u14_turtle": {
+   "word": "turtle",
+   "nghia": "con rùa",
+   "ipa": "/ˈtɜːtl/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u15_face": {
+   "word": "face",
+   "nghia": "khuôn mặt",
+   "ipa": "/feɪs/",
+   "vai": [
+    "dt",
+    "bophan"
+   ]
+  },
+  "v_g1_u15_father": {
+   "word": "father",
+   "nghia": "bố",
+   "ipa": "/ˈfɑːðə/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u15_foot": {
+   "word": "foot",
+   "nghia": "bàn chân",
+   "ipa": "/fʊt/",
+   "vai": [
+    "dt",
+    "bophan"
+   ],
+   "sonhieu": "feet"
+  },
+  "v_g1_u15_football": {
+   "word": "football",
+   "nghia": "quả bóng đá",
+   "ipa": "/ˈfʊtbɔːl/",
+   "vai": [
+    "dt"
+   ]
+  },
+  "v_g1_u16_wash": {
+   "word": "wash",
+   "nghia": "rửa",
+   "ipa": "/wɒʃ/",
+   "vai": [
+    "dongtu"
+   ],
+   "ing": "washing"
+  },
+  "v_g1_u16_water": {
+   "word": "water",
+   "nghia": "nước",
+   "ipa": "/ˈwɔːtə/",
+   "vai": [
+    "thucan",
+    "khongdem"
+   ]
+  },
+  "v_g1_u16_window": {
+   "word": "window",
+   "nghia": "cửa sổ",
+   "ipa": "/ˈwɪndəʊ/",
+   "vai": [
+    "dt"
+   ],
+   "sonhieu": "windows"
   }
+ },
+ "mau_cau": {
+  "_vi_sao": [
+   "Bản đầu dạy CÂU mà không dạy VIỆC. Bé học thuộc “Bye, Mai.” xong không biết",
+   "nói lúc nào, và “Hi, I'm Bill.” thì để làm gì — chỉ là một chuỗi âm phải nhớ.",
+   "Bác chỉ ra đúng chỗ ấy.",
+   "",
+   "Bản đồ KHÔNG có sẵn phần này: `sentence_type` chỉ ghi 'statement' cho 12/19",
+   "mẫu câu, còn `competences` thì ở mức unit và vẫn trừu tượng ('Nói về thứ mình",
+   "có'). Nên phải soạn tay — và đây là chỗ đáng bỏ công nhất của cả quyển.",
+   "",
+   "Mỗi mẫu câu khai ba thứ:",
+   "  dung_de     việc câu này làm được, nói bằng lời của bé",
+   "  tinh_huong  MỘT cảnh cụ thể bé hình dung ra ngay — không nói chung chung",
+   "  phan        tách câu thành từng mẩu, mỗi mẩu làm một việc; `thay` đánh dấu",
+   "              mẩu bé đổi được, để bé thấy chỗ nào là chỗ thay",
+   "  khac_voi    (nếu có) phân biệt với mẫu câu đã học — chỗ này mới là chỗ bé",
+   "              hay lẫn: 'This is' với 'That's', 'I have' với 'This is my'"
+  ],
+  "sp_g1_u1_1": {
+   "dung_de": "Cho người khác biết TÊN của con.",
+   "tinh_huong": "Ngày đầu tới lớp, con đứng cạnh một bạn chưa quen bao giờ.",
+   "phan": [
+    {
+     "chu": "Hi",
+     "lam_gi": "lời chào — như “Chào bạn”"
+    },
+    {
+     "chu": "I'm",
+     "lam_gi": "“mình là” — nối con với tên con"
+    },
+    {
+     "chu": "Bill",
+     "lam_gi": "TÊN — chỗ con thay tên mình vào",
+     "thay": true
+    }
+   ]
+  },
+  "sp_g1_u1_2": {
+   "dung_de": "Chào tạm biệt một người, có gọi tên người ấy.",
+   "tinh_huong": "Tan học, con vẫy tay với bạn trước khi về.",
+   "phan": [
+    {
+     "chu": "Bye",
+     "lam_gi": "lời tạm biệt"
+    },
+    {
+     "chu": "Bill",
+     "lam_gi": "TÊN người con đang chào",
+     "thay": true
+    }
+   ],
+   "khac_voi": "“Hi” là lúc GẶP, “Bye” là lúc CHIA TAY. Cùng một câu, khác một chữ."
+  },
+  "sp_g1_u2_1": {
+   "dung_de": "Khoe rằng con CÓ một thứ gì đó.",
+   "tinh_huong": "Bạn hỏi trong cặp con có gì, con lấy ra khoe.",
+   "phan": [
+    {
+     "chu": "I have",
+     "lam_gi": "“mình có” — nói về thứ thuộc về con"
+    },
+    {
+     "chu": "a",
+     "lam_gi": "“một” — tiếng Anh bắt buộc phải có"
+    },
+    {
+     "chu": "car",
+     "lam_gi": "thứ con có",
+     "thay": true
+    }
+   ]
+  },
+  "sp_g1_u3_1": {
+   "dung_de": "Chỉ vào một đồ vật và nói nó là CỦA CON.",
+   "tinh_huong": "Ở lớp có hai cái túi giống nhau, con chỉ vào cái của mình.",
+   "phan": [
+    {
+     "chu": "This is",
+     "lam_gi": "“đây là” — vật ở GẦN, con chạm tới được"
+    },
+    {
+     "chu": "my",
+     "lam_gi": "“của mình” — chỗ quan trọng nhất câu này"
+    },
+    {
+     "chu": "bag",
+     "lam_gi": "đồ vật",
+     "thay": true
+    }
+   ],
+   "khac_voi": "“This is a bag.” chỉ nói đó là cái túi. Thêm “my” mới thành CỦA CON."
+  },
+  "sp_g1_u4_1": {
+   "dung_de": "Gọi tên một vật hay một con vật đang ở GẦN con.",
+   "tinh_huong": "Con dắt bạn đi xem phòng mình, chỉ từng thứ cho bạn biết.",
+   "phan": [
+    {
+     "chu": "This is",
+     "lam_gi": "“đây là” — vật ở GẦN, với tay tới được"
+    },
+    {
+     "chu": "a",
+     "lam_gi": "“một” — bắt buộc, dù tiếng Việt không có"
+    },
+    {
+     "chu": "dog",
+     "lam_gi": "tên vật hoặc con vật",
+     "thay": true
+    }
+   ]
+  },
+  "sp_g1_u5_1": {
+   "dung_de": "Nói món con THÍCH.",
+   "tinh_huong": "Mẹ hỏi con muốn ăn gì, con chọn món mình thích.",
+   "phan": [
+    {
+     "chu": "I like",
+     "lam_gi": "“mình thích”"
+    },
+    {
+     "chu": "milk",
+     "lam_gi": "món ăn hoặc đồ uống",
+     "thay": true
+    }
+   ],
+   "khac_voi": "Sau “I like” KHÔNG có “a”, vì con thích món ấy nói chung, không phải một cái cụ thể."
+  },
+  "sp_g1_u6_1": {
+   "dung_de": "Tả một đồ vật kèm MÀU của nó, để người khác nhận ra đúng cái.",
+   "tinh_huong": "Trên bàn có ba cái bút, con bảo bạn lấy hộ cái bút đỏ.",
+   "phan": [
+    {
+     "chu": "It's",
+     "lam_gi": "“nó là” — nhắc lại vật vừa nói tới"
+    },
+    {
+     "chu": "a",
+     "lam_gi": "“một”"
+    },
+    {
+     "chu": "red",
+     "lam_gi": "MÀU — tiếng Anh để màu đứng TRƯỚC đồ vật",
+     "thay": true
+    },
+    {
+     "chu": "pen",
+     "lam_gi": "đồ vật",
+     "thay": true
+    }
+   ],
+   "khac_voi": "Tiếng Việt nói “cái bút ĐỎ” — màu đứng sau. Tiếng Anh ngược lại."
+  },
+  "sp_g1_u7_1": {
+   "dung_de": "Nói rằng ở chỗ đó CÓ một cái gì.",
+   "tinh_huong": "Con kể cho bạn nghe nhà mình có gì, dù bạn chưa nhìn thấy.",
+   "phan": [
+    {
+     "chu": "There's",
+     "lam_gi": "“có” — nói một thứ TỒN TẠI ở đó"
+    },
+    {
+     "chu": "a",
+     "lam_gi": "“một”"
+    },
+    {
+     "chu": "garden",
+     "lam_gi": "thứ có ở đó",
+     "thay": true
+    }
+   ],
+   "khac_voi": "“This is a garden.” là con đang CHỈ vào nó. “There's a garden.” là con kể có nó."
+  },
+  "sp_g1_u8_1": {
+   "dung_de": "Bảo người khác CHẠM vào một chỗ trên người.",
+   "tinh_huong": "Cô cho cả lớp chơi trò làm theo lời cô.",
+   "phan": [
+    {
+     "chu": "Touch",
+     "lam_gi": "“chạm vào” — lời BẢO, nên không có chủ ngữ"
+    },
+    {
+     "chu": "your",
+     "lam_gi": "“của bạn” — chỗ trên người NGƯỜI NGHE"
+    },
+    {
+     "chu": "hair",
+     "lam_gi": "bộ phận cơ thể",
+     "thay": true
+    }
+   ]
+  },
+  "sp_g1_u9_1": {
+   "_vi_sao_tach": [
+    "“How many clocks? - Two.” KHÔNG phải một câu — là HAI cấu trúc dán bằng dấu",
+    "gạch: một câu HỎI và một câu TRẢ LỜI. Bản đầu dạy gộp, và bắt bé lớp 1 nhắc",
+    "lại cả cụm ba lần. Bé chưa biết gì về tiếng Anh thì phải học hỏi trước, tập",
+    "hỏi cho thuộc, rồi mới sang trả lời.",
+    "",
+    "KHÔNG nói chuyện số ít / số nhiều ở đây — đó là việc của bài khác. Nhắc “s”",
+    "lúc này chỉ làm bé rối thêm một thứ chưa cần."
+   ],
+   "hoi": {
+    "cau": "How many clocks?",
+    "dung_de": "Hỏi xem có BAO NHIÊU cái.",
+    "tinh_huong": "Trong cửa hàng, con muốn biết trên giá có mấy cái đồng hồ.",
+    "phan": [
+     {
+      "chu": "How many",
+      "lam_gi": "“bao nhiêu” — mở đầu mọi câu hỏi đếm"
+     },
+     {
+      "chu": "clocks",
+      "lam_gi": "thứ con muốn đếm",
+      "thay": true
+     },
+     {
+      "chu": "?",
+      "lam_gi": "dấu hỏi — cuối câu con lên giọng"
+     }
+    ]
+   },
+   "dap": {
+    "cau": "Two.",
+    "dung_de": "Trả lời câu hỏi đếm — chỉ cần MỘT CON SỐ.",
+    "tinh_huong": "Con đếm xong rồi nói số ra cho bạn nghe.",
+    "phan": [
+     {
+      "chu": "Two",
+      "lam_gi": "con số con đếm được — nói số thôi là đủ",
+      "thay": true
+     }
+    ],
+    "khac_voi": "Tiếng Việt hay đáp cả câu “Có hai cái”. Tiếng Anh chỉ cần con số."
+   }
+  },
+  "sp_g1_u10_1": {
+   "dung_de": "Gọi tên một con vật ở XA, con chỉ nhìn thấy chứ không chạm tới.",
+   "tinh_huong": "Ở sở thú, con chỉ tay sang chuồng bên kia.",
+   "phan": [
+    {
+     "chu": "That's",
+     "lam_gi": "“kia là” — vật ở XA"
+    },
+    {
+     "chu": "a",
+     "lam_gi": "“một”"
+    },
+    {
+     "chu": "monkey",
+     "lam_gi": "con vật",
+     "thay": true
+    }
+   ],
+   "khac_voi": "Đây là chỗ hay lẫn nhất: GẦN thì “This is”, XA thì “That's”."
+  },
+  "sp_g1_u11_1": {
+   "dung_de": "Tả việc một bạn GÁI đang làm ngay lúc này.",
+   "tinh_huong": "Con đứng ở bến xe, kể cho mẹ nghe bạn kia đang làm gì.",
+   "phan": [
+    {
+     "chu": "She's",
+     "lam_gi": "“bạn ấy đang” — bạn GÁI"
+    },
+    {
+     "chu": "running",
+     "lam_gi": "việc đang làm — động từ thêm “-ing”",
+     "thay": true
+    }
+   ],
+   "khac_voi": "“-ing” nghĩa là ĐANG làm, ngay bây giờ. Bỏ “-ing” là câu khác hẳn."
+  },
+  "sp_g1_u11_2": {
+   "dung_de": "Tả việc một bạn TRAI đang làm ngay lúc này.",
+   "tinh_huong": "Cũng cảnh ấy, nhưng người con kể là bạn trai.",
+   "phan": [
+    {
+     "chu": "He's",
+     "lam_gi": "“bạn ấy đang” — bạn TRAI"
+    },
+    {
+     "chu": "running",
+     "lam_gi": "việc đang làm",
+     "thay": true
+    }
+   ],
+   "khac_voi": "Chỉ khác “She's” đúng một chỗ: bạn gái dùng “She”, bạn trai dùng “He”."
+  },
+  "sp_g1_u12_1": {
+   "dung_de": "RỦ người khác nhìn vào cái gì đó.",
+   "tinh_huong": "Con thấy cái gì hay bên hồ, gọi bạn lại xem cùng.",
+   "phan": [
+    {
+     "chu": "Look at",
+     "lam_gi": "“nhìn kìa” — lời rủ, nên không có chủ ngữ"
+    },
+    {
+     "chu": "the",
+     "lam_gi": "“cái ấy” — thứ cả hai đều đang nhìn thấy"
+    },
+    {
+     "chu": "lemons",
+     "lam_gi": "thứ con muốn bạn nhìn",
+     "thay": true
+    }
+   ],
+   "khac_voi": "“I can see…” là CON nhìn thấy. “Look at…” là bảo NGƯỜI KHÁC nhìn."
+  },
+  "sp_g1_u13_1": {
+   "dung_de": "Tả món một bạn GÁI đang ăn.",
+   "tinh_huong": "Giờ ăn ở căng tin, con nhìn quanh xem các bạn ăn gì.",
+   "phan": [
+    {
+     "chu": "She's having",
+     "lam_gi": "“bạn ấy đang ăn”"
+    },
+    {
+     "chu": "noodles",
+     "lam_gi": "món đang ăn",
+     "thay": true
+    }
+   ]
+  },
+  "sp_g1_u13_2": {
+   "dung_de": "Tả món một bạn TRAI đang ăn.",
+   "tinh_huong": "Cũng giờ ăn ấy, nhưng là bạn trai.",
+   "phan": [
+    {
+     "chu": "He's having",
+     "lam_gi": "“bạn ấy đang ăn”"
+    },
+    {
+     "chu": "nuts",
+     "lam_gi": "món đang ăn",
+     "thay": true
+    }
+   ]
+  },
+  "sp_g1_u14_1": {
+   "dung_de": "Nói thứ CON NHÌN THẤY.",
+   "tinh_huong": "Trong cửa hàng đồ chơi, con kể cho mẹ nghe mình thấy gì.",
+   "phan": [
+    {
+     "chu": "I can see",
+     "lam_gi": "“mình nhìn thấy”"
+    },
+    {
+     "chu": "a",
+     "lam_gi": "“một”"
+    },
+    {
+     "chu": "tiger",
+     "lam_gi": "thứ con thấy",
+     "thay": true
+    }
+   ]
+  },
+  "sp_g1_u15_1": {
+   "dung_de": "Bảo người khác CHỈ TAY vào một chỗ trên người.",
+   "tinh_huong": "Trước trận bóng, cả đội khởi động theo lời hô.",
+   "phan": [
+    {
+     "chu": "Point to",
+     "lam_gi": "“chỉ vào” — lời bảo"
+    },
+    {
+     "chu": "your",
+     "lam_gi": "“của bạn”"
+    },
+    {
+     "chu": "hand",
+     "lam_gi": "bộ phận cơ thể",
+     "thay": true
+    }
+   ],
+   "khac_voi": "“Touch” là CHẠM vào, “Point to” là CHỈ TAY vào mà không chạm."
+  },
+  "sp_g1_u16_1": {
+   "_vi_sao_tach": "Cũng như U9: một câu HỎI và một câu TRẢ LỜI, học rời nhau.",
+   "hoi": {
+    "cau": "How many windows can you see?",
+    "dung_de": "Hỏi người kia NHÌN THẤY bao nhiêu cái.",
+    "tinh_huong": "Hai anh em ngồi trong phòng, thi nhau đếm cửa sổ.",
+    "phan": [
+     {
+      "chu": "How many",
+      "lam_gi": "“bao nhiêu” — giống câu hỏi con đã học"
+     },
+     {
+      "chu": "windows",
+      "lam_gi": "thứ đem đếm",
+      "thay": true
+     },
+     {
+      "chu": "can you see?",
+      "lam_gi": "“bạn nhìn thấy được” — hỏi về mắt người kia"
+     }
+    ],
+    "khac_voi": "“How many clocks?” là hỏi CÓ mấy cái. Thêm “can you see” là hỏi bạn NHÌN THẤY mấy cái."
+   },
+   "dap": {
+    "cau": "I can see six.",
+    "dung_de": "Trả lời rằng CON nhìn thấy mấy cái.",
+    "tinh_huong": "Con đếm số cửa sổ mình nhìn thấy rồi nói ra.",
+    "phan": [
+     {
+      "chu": "I can see",
+      "lam_gi": "“mình nhìn thấy” — nói về mắt của CON"
+     },
+     {
+      "chu": "six",
+      "lam_gi": "con số con đếm được",
+      "thay": true
+     }
+    ]
+   }
+  }
+ },
+ "kich_ban_noi": {
+  "_vi_sao": [
+   "Nói TỪ và nói CÂU là tập phát âm. Còn ĐỐI ĐÁP mới là dùng tiếng Anh: bé phải",
+   "nghe người kia nói gì rồi mới biết mình đáp gì. Đó là việc khác hẳn, và là",
+   "việc cuối cùng của chuỗi nghe → hiểu → ráp câu → gõ → nói.",
+   "",
+   "Hai kiểu lượt, tuỳ bài dạy được cái gì:",
+   "  · máy nói TIẾNG ANH  → bé đáp tiếng Anh   (bài có sẵn cặp hỏi–đáp: U1·U9·U16)",
+   "  · máy gợi TIẾNG VIỆT → bé nói tiếng Anh   (mọi bài còn lại)",
+   "",
+   "Kiểu thứ hai không phải giải pháp tạm: bé lớp 1 chưa có đủ vốn để hỏi lại,",
+   "nhưng ĐÃ đủ để NÓI RA thứ mình thấy. Gợi bằng tiếng Việt là đúng tầm.",
+   "",
+   "`{ten}` thay bằng biệt danh của chính bé — bé nghe tên mình trong đoạn hội",
+   "thoại tiếng Anh, đó là chỗ bài này khác mọi bài luyện phát âm khác."
+  ],
+  "u_g1_1": {
+   "ten": "Chào bạn mới",
+   "canh": "Con gặp một bạn chưa quen ở sân trường.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Hi, I'm Mai.",
+     "tieng": "en"
+    },
+    {
+     "ai": "be",
+     "chu": "Hi, I'm {ten}.",
+     "goi": "Con chào lại và nói tên mình."
+    },
+    {
+     "ai": "may",
+     "chu": "Bye, {ten}.",
+     "tieng": "en"
+    },
+    {
+     "ai": "be",
+     "chu": "Bye, Mai.",
+     "goi": "Con chào tạm biệt bạn Mai."
+    }
+   ]
+  },
+  "u_g1_2": {
+   "ten": "Khoe đồ trong cặp",
+   "canh": "Bạn hỏi trong cặp con có gì.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Con mở cặp ra, trong đó có một cái ô tô. Con khoe với bạn thế nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "I have a car.",
+     "goi": "Nói con CÓ cái ô tô."
+    }
+   ]
+  },
+  "u_g1_3": {
+   "ten": "Cái nào của mình",
+   "canh": "Ở lớp có hai cái túi giống hệt nhau.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Cô hỏi cái túi nào là của con. Con chỉ vào và nói thế nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "This is my bag.",
+     "goi": "Nhớ chữ “my” — của con."
+    }
+   ]
+  },
+  "u_g1_4": {
+   "ten": "Dắt bạn xem phòng",
+   "canh": "Con dắt bạn đi xem phòng ngủ của mình.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Con chỉ vào con chó đang nằm cạnh giường. Con nói gì?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "This is a dog.",
+     "goi": "Vật ở GẦN thì dùng “This is”."
+    },
+    {
+     "ai": "may",
+     "chu": "Rồi con chỉ sang cái cửa. Con nói gì?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "This is a door.",
+     "goi": "Vẫn khung câu ấy, chỉ đổi chữ cuối."
+    }
+   ]
+  },
+  "u_g1_5": {
+   "ten": "Chọn món",
+   "canh": "Mẹ hỏi con muốn uống gì.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Mẹ đưa ra sữa và nước. Con thích sữa. Con nói thế nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "I like milk.",
+     "goi": "Sau “I like” không có chữ “a”."
+    }
+   ]
+  },
+  "u_g1_6": {
+   "ten": "Nhờ bạn lấy bút",
+   "canh": "Trên bàn có ba cái bút khác màu.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Con muốn cái bút màu đỏ. Con tả cho bạn biết là cái nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "It's a red pen.",
+     "goi": "Màu đứng TRƯỚC đồ vật nhé."
+    }
+   ]
+  },
+  "u_g1_7": {
+   "ten": "Kể về nhà mình",
+   "canh": "Con kể cho bạn nghe nhà mình có gì.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Nhà con có một khu vườn. Bạn chưa nhìn thấy bao giờ. Con kể thế nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "There's a garden.",
+     "goi": "Kể có cái gì ở đó thì dùng “There's”."
+    }
+   ]
+  },
+  "u_g1_8": {
+   "ten": "Chơi trò làm theo",
+   "canh": "Cô cho cả lớp chơi trò làm theo lời cô.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Đến lượt con làm quản trò. Con bảo bạn chạm vào tóc.",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "Touch your hair.",
+     "goi": "Câu ra lệnh không có chủ ngữ."
+    }
+   ]
+  },
+  "u_g1_9": {
+   "ten": "Đếm trong cửa hàng",
+   "canh": "Con và bạn đếm đồ trên giá.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Con muốn biết trên giá có mấy cái đồng hồ. Con hỏi bạn thế nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "How many clocks?",
+     "goi": "Mở đầu bằng “How many”."
+    },
+    {
+     "ai": "may",
+     "chu": "How many clocks?",
+     "tieng": "en"
+    },
+    {
+     "ai": "be",
+     "chu": "Two.",
+     "goi": "Bạn hỏi lại con. Con đếm được hai cái — chỉ cần nói con số."
+    }
+   ]
+  },
+  "u_g1_10": {
+   "ten": "Đi sở thú",
+   "canh": "Con đứng xa chuồng khỉ.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Con chỉ sang chuồng bên kia, có một con khỉ. Nó ở XA con. Con nói gì?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "That's a monkey.",
+     "goi": "Ở XA thì dùng “That's”, không phải “This is”."
+    }
+   ]
+  },
+  "u_g1_11": {
+   "ten": "Kể chuyện ở bến xe",
+   "canh": "Con đứng ở bến xe buýt với mẹ.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Con thấy một bạn gái đang chạy. Con kể cho mẹ nghe thế nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "She's running.",
+     "goi": "Bạn gái thì dùng “She's”."
+    },
+    {
+     "ai": "may",
+     "chu": "Còn kia là một bạn trai cũng đang chạy. Con kể thế nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "He's running.",
+     "goi": "Bạn trai thì đổi thành “He's”."
+    }
+   ]
+  },
+  "u_g1_12": {
+   "ten": "Gọi bạn ra xem",
+   "canh": "Con thấy cái gì hay bên hồ.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Con thấy mấy quả chanh, muốn gọi bạn lại xem cùng. Con nói gì?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "Look at the lemons.",
+     "goi": "Rủ người khác nhìn thì dùng “Look at”."
+    }
+   ]
+  },
+  "u_g1_13": {
+   "ten": "Giờ ăn ở căng tin",
+   "canh": "Con nhìn quanh xem các bạn ăn gì.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Một bạn gái đang ăn mì. Con kể thế nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "She's having noodles.",
+     "goi": "Bạn gái đang ăn thì dùng “She's having”."
+    },
+    {
+     "ai": "may",
+     "chu": "Một bạn trai đang ăn hạt. Con kể thế nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "He's having nuts.",
+     "goi": "Đổi sang “He's having”."
+    }
+   ]
+  },
+  "u_g1_14": {
+   "ten": "Trong cửa hàng đồ chơi",
+   "canh": "Con đi cùng mẹ vào cửa hàng đồ chơi.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Con nhìn thấy một con hổ bông. Con kể cho mẹ nghe thế nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "I can see a tiger.",
+     "goi": "Nói thứ CON nhìn thấy."
+    }
+   ]
+  },
+  "u_g1_15": {
+   "ten": "Khởi động trước trận",
+   "canh": "Cả đội khởi động theo lời hô.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Đến lượt con hô. Con bảo cả đội chỉ tay vào bàn tay.",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "Point to your hand.",
+     "goi": "“Point to” là chỉ vào, không chạm."
+    }
+   ]
+  },
+  "u_g1_16": {
+   "ten": "Thi đếm cửa sổ",
+   "canh": "Hai anh em ngồi trong phòng.",
+   "luot": [
+    {
+     "ai": "may",
+     "chu": "Con muốn hỏi anh nhìn thấy mấy cái cửa sổ. Con hỏi thế nào?",
+     "tieng": "vi"
+    },
+    {
+     "ai": "be",
+     "chu": "How many windows can you see?",
+     "goi": "Thêm “can you see” để hỏi người kia NHÌN THẤY."
+    },
+    {
+     "ai": "may",
+     "chu": "How many windows can you see?",
+     "tieng": "en"
+    },
+    {
+     "ai": "be",
+     "chu": "I can see six.",
+     "goi": "Anh hỏi lại con. Con đếm được sáu cái."
+    }
+   ]
+  }
+ },
+ "chuong": {
+  "_vi_sao": [
+   "Sách TỰ chia 4 chương, đọc ra từ `book_map` của node khoá học: cứ 4 unit thì",
+   "một Fun time và một Review —",
+   "  U1-U4  … Review 1 (tr20)      U5-U8   … Review 2 (tr37)",
+   "  U9-U12 … Review 3 (tr54)      U13-U16 … Review 4 (tr71)",
+   "",
+   "Bản đầu cháu khai soChuong=16, coi mỗi unit là một chương. Cổng kesach bắt",
+   "được vì nó đòi MỖI CHƯƠNG MỘT KỲ ÔN TẬP — 16 kỳ ôn cho 16 bài là vô lý, và",
+   "quan trọng hơn là nó KHÔNG khớp cách sách chia. Bé học xong 4 unit mới có",
+   "đủ thứ để ôn.",
+   "",
+   "Tên chương đặt theo bốn cảnh của bốn unit trong chương ấy — bé lớp 1 nhớ",
+   "CẢNH chứ không nhớ số chương."
+  ],
+  "1": {
+   "ten": "Quanh nhà và trường",
+   "unit": [
+    1,
+    2,
+    3,
+    4
+   ]
+  },
+  "2": {
+   "ten": "Ra ngoài chơi",
+   "unit": [
+    5,
+    6,
+    7,
+    8
+   ]
+  },
+  "3": {
+   "ten": "Đi xa hơn",
+   "unit": [
+    9,
+    10,
+    11,
+    12
+   ]
+  },
+  "4": {
+   "ten": "Bạn bè và trò chơi",
+   "unit": [
+    13,
+    14,
+    15,
+    16
+   ]
+  }
+ },
+ "unit": {
+  "_vi_sao": [
+   "Bản đồ khai `topic` và `competences` TOÀN BẰNG TIẾNG ANH: 'In the bedroom',",
+   "'Identifying objects and animals'. Hai thứ này hiện lên cho NGƯỜI VIỆT đọc —",
+   "tên cảnh thì bé 6 tuổi nhìn, năng lực thì bố mẹ đọc trong sổ.",
+   "",
+   "Không dịch thì lời giảng thành 'Cảnh hôm nay: In the bedroom.' — LẪN HAI THỨ",
+   "TIẾNG TRONG MỘT DÒNG, đúng cái mà tools/tts/README.md cấm: Kokoro-VI sẽ đọc",
+   "'In the bedroom' theo vần Việt. Đây là lỗi lộ muộn, phải chặn từ dữ liệu."
+  ],
+  "u_g1_1": {
+   "canh": "Ở sân trường",
+   "nang_luc": [
+    "Chào hỏi và giới thiệu mình",
+    "Nói lời tạm biệt"
+   ]
+  },
+  "u_g1_2": {
+   "canh": "Trong phòng ăn",
+   "nang_luc": [
+    "Nói về thứ mình có"
+   ]
+  },
+  "u_g1_3": {
+   "canh": "Ở chợ",
+   "nang_luc": [
+    "Chỉ ra đồ của mình"
+   ]
+  },
+  "u_g1_4": {
+   "canh": "Trong phòng ngủ",
+   "nang_luc": [
+    "Gọi tên đồ vật và con vật"
+   ]
+  },
+  "u_g1_5": {
+   "canh": "Ở quán cá rán",
+   "nang_luc": [
+    "Nói về món mình thích"
+   ]
+  },
+  "u_g1_6": {
+   "canh": "Trong lớp học",
+   "nang_luc": [
+    "Tả đồ vật kèm màu sắc"
+   ]
+  },
+  "u_g1_7": {
+   "canh": "Ở khu vườn",
+   "nang_luc": [
+    "Nói có cái gì ở đó"
+   ]
+  },
+  "u_g1_8": {
+   "canh": "Ở công viên",
+   "nang_luc": [
+    "Ra hiệu lệnh về bộ phận cơ thể"
+   ]
+  },
+  "u_g1_9": {
+   "canh": "Trong cửa hàng",
+   "nang_luc": [
+    "Hỏi và đáp về số lượng"
+   ]
+  },
+  "u_g1_10": {
+   "canh": "Ở sở thú",
+   "nang_luc": [
+    "Gọi tên con vật ở xa"
+   ]
+  },
+  "u_g1_11": {
+   "canh": "Ở bến xe buýt",
+   "nang_luc": [
+    "Tả việc đang diễn ra"
+   ]
+  },
+  "u_g1_12": {
+   "canh": "Bên hồ",
+   "nang_luc": [
+    "Rủ người khác nhìn vào cái gì"
+   ]
+  },
+  "u_g1_13": {
+   "canh": "Ở căng tin trường",
+   "nang_luc": [
+    "Tả việc đang ăn món gì"
+   ]
+  },
+  "u_g1_14": {
+   "canh": "Trong cửa hàng đồ chơi",
+   "nang_luc": [
+    "Nói về thứ mình nhìn thấy"
+   ]
+  },
+  "u_g1_15": {
+   "canh": "Ở trận bóng đá",
+   "nang_luc": [
+    "Ra hiệu lệnh chỉ vào bộ phận cơ thể"
+   ]
+  },
+  "u_g1_16": {
+   "canh": "Ở nhà",
+   "nang_luc": [
+    "Hỏi và đáp về số lượng nhìn thấy"
+   ]
+  }
+ },
+ "sua_phonics": {
+  "_vi_sao": [
+   "Cả 16 node phonics của lớp 1 đều khai position='initial'. Sai với 6 unit.",
+   "Bộ sinh đọc trường này để ra đề 'từ nào BẮT ĐẦU bằng âm /æ/' thì 20 từ ra đề",
+   "SAI, mà dữ liệu vẫn hợp lệ nên cổng vẫn xanh. Đây là lỗi câm."
+  ],
+  "_bai_hoc": [
+   "Bản đầu của phần bù này sửa position theo UNIT — và cổng bắt được là vẫn sai.",
+   "Vị trí âm là chuyện CỦA TỪNG TỪ, không phải của unit:",
+   "  U3  /æ/  apple ở ĐẦU · bag·can·hat ở GIỮA          → TRỘN",
+   "  U13 /n/  noodles·nuts ở ĐẦU · bananas ở GIỮA       → TRỘN (và đây là PHỤ ÂM,",
+   "           nên cái sai không chỉ nằm ở mấy unit nguyên âm như tưởng ban đầu)",
+   "Nên vị trí thật nằm ở trường `am_o` của TỪNG TỪ. Khối này chỉ còn ghi tóm tắt",
+   "cho cả unit, và bộ sinh PHẢI hỏi từng từ chứ đừng hỏi unit."
+  ],
+  "_dung_the_nao": "Ra đề nhận diện âm thì lọc theo `am_o` của từ, KHÔNG theo `position` của node phonics.",
+  "ph_g1_u3_a": {
+   "position": "mixed",
+   "_ghi": "apple ở đầu; bag·can·hat ở giữa"
+  },
+  "ph_g1_u5_i": {
+   "position": "medial",
+   "_ghi": "cả 4 từ đều ở giữa"
+  },
+  "ph_g1_u6_e": {
+   "position": "medial",
+   "_ghi": "cả 4 từ đều ở giữa"
+  },
+  "ph_g1_u9_o": {
+   "position": "medial",
+   "_ghi": "cả 4 từ đều ở giữa"
+  },
+  "ph_g1_u11_u": {
+   "position": "medial",
+   "_ghi": "cả 4 từ đều ở giữa"
+  },
+  "ph_g1_u13_n": {
+   "position": "mixed",
+   "_ghi": "noodles·nuts ở đầu; bananas ở giữa"
+  }
+ },
+ "sua_slot": {
+  "_vi_sao": [
+   "Hai chỗ cạnh HAS_SLOT không dùng thẳng được — xem mục 2.2 và 2.4 của sổ thiết kế."
+  ],
+  "sp_g1_u6_1": {
+   "_cau": "It's a + [Colour] + [Noun].",
+   "_loi": "Slot phẳng gồm cả màu lẫn danh từ → thay bừa ra 'It's a pen bell.'",
+   "o": {
+    "Colour": [
+     "mau"
+    ],
+    "Noun": [
+     "dt"
+    ]
+   }
+  },
+  "sp_g1_u11_1": {
+   "_cau": "She's + [Verb-ing].",
+   "_loi": "Slot cho từ GỐC 'run', câu cần dạng 'running'. Ghép thẳng ra \"She's run.\"",
+   "o": {
+    "Verb-ing": [
+     "dongtu"
+    ]
+   },
+   "dung_dang": "ing"
+  },
+  "sp_g1_u11_2": {
+   "_cau": "He's + [Verb-ing].",
+   "o": {
+    "Verb-ing": [
+     "dongtu"
+    ]
+   },
+   "dung_dang": "ing"
+  },
+  "sp_g1_u16_1": {
+   "_cau": "How many + [Noun-plural] + can you see? - I can see + [Number].",
+   "_loi": "Slot cho 'window' số ít, câu cần 'windows'. Còn U9 thì từ ĐÃ số nhiều sẵn — bất nhất giữa hai unit cùng dạy một mẫu câu.",
+   "o": {
+    "Noun-plural": [
+     "dt",
+     "sonhieu"
+    ],
+    "Number": [
+     "so"
+    ]
+   },
+   "dung_dang": "sonhieu"
+  },
+  "sp_g1_u9_1": {
+   "_cau": "How many + [Noun-plural]? - [Number].",
+   "o": {
+    "Noun-plural": [
+     "sonhieu"
+    ],
+    "Number": [
+     "so"
+    ]
+   }
+  },
+  "sp_g1_u1_1": {
+   "_cau": "Hi, I'm + [Name].",
+   "_loi": "KHÔNG có cạnh HAS_SLOT nào — bản đồ không có node tên riêng. Bài ĐẦU TIÊN của cả quyển mà không sinh được câu nào.",
+   "o": {
+    "Name": [
+     "ten"
+    ]
+   },
+   "lay_ten_be": true
+  },
+  "sp_g1_u1_2": {
+   "_cau": "Bye, + [Name].",
+   "o": {
+    "Name": [
+     "ten"
+    ]
+   },
+   "lay_ten_be": true
+  }
+ },
+ "them": {
+  "_vi_sao": [
+   "Ba nhóm từ mà mẫu câu ĐÒI nhưng bản đồ KHÔNG có node nào. Thiếu chúng thì U6,",
+   "U9, U16 và U1 không sinh được bài."
+  ],
+  "so_dem": {
+   "_dung_cho": "ô [Number] của U9 và U16",
+   "muc": [
+    {
+     "word": "one",
+     "nghia": "một",
+     "ipa": "/wʌn/",
+     "so": 1,
+     "vai": [
+      "so"
+     ]
+    },
+    {
+     "word": "two",
+     "nghia": "hai",
+     "ipa": "/tuː/",
+     "so": 2,
+     "vai": [
+      "so"
+     ]
+    },
+    {
+     "word": "three",
+     "nghia": "ba",
+     "ipa": "/θriː/",
+     "so": 3,
+     "vai": [
+      "so"
+     ]
+    },
+    {
+     "word": "four",
+     "nghia": "bốn",
+     "ipa": "/fɔː/",
+     "so": 4,
+     "vai": [
+      "so"
+     ]
+    },
+    {
+     "word": "five",
+     "nghia": "năm",
+     "ipa": "/faɪv/",
+     "so": 5,
+     "vai": [
+      "so"
+     ]
+    },
+    {
+     "word": "six",
+     "nghia": "sáu",
+     "ipa": "/sɪks/",
+     "so": 6,
+     "vai": [
+      "so"
+     ]
+    },
+    {
+     "word": "seven",
+     "nghia": "bảy",
+     "ipa": "/ˈsevn/",
+     "so": 7,
+     "vai": [
+      "so"
+     ]
+    },
+    {
+     "word": "eight",
+     "nghia": "tám",
+     "ipa": "/eɪt/",
+     "so": 8,
+     "vai": [
+      "so"
+     ]
+    },
+    {
+     "word": "nine",
+     "nghia": "chín",
+     "ipa": "/naɪn/",
+     "so": 9,
+     "vai": [
+      "so"
+     ]
+    },
+    {
+     "word": "ten",
+     "nghia": "mười",
+     "ipa": "/ten/",
+     "so": 10,
+     "vai": [
+      "so"
+     ]
+    }
+   ]
+  },
+  "mau": {
+   "_dung_cho": "ô [Colour] của U6 — bản đồ chỉ có đúng một màu là 'red'",
+   "_ghi": "Chọn 6 màu cơ bản, đều 3-6 ký tự nên gõ được ở bậc 4.",
+   "muc": [
+    {
+     "word": "red",
+     "nghia": "màu đỏ",
+     "ipa": "/red/",
+     "vai": [
+      "mau"
+     ],
+     "_co_san": "v_g1_u6_red"
+    },
+    {
+     "word": "blue",
+     "nghia": "màu xanh dương",
+     "ipa": "/bluː/",
+     "vai": [
+      "mau"
+     ]
+    },
+    {
+     "word": "green",
+     "nghia": "màu xanh lá",
+     "ipa": "/ɡriːn/",
+     "vai": [
+      "mau"
+     ]
+    },
+    {
+     "word": "yellow",
+     "nghia": "màu vàng",
+     "ipa": "/ˈjeləʊ/",
+     "vai": [
+      "mau"
+     ]
+    },
+    {
+     "word": "black",
+     "nghia": "màu đen",
+     "ipa": "/blæk/",
+     "vai": [
+      "mau"
+     ]
+    },
+    {
+     "word": "white",
+     "nghia": "màu trắng",
+     "ipa": "/waɪt/",
+     "vai": [
+      "mau"
+     ]
+    }
+   ]
+  },
+  "ten": {
+   "_dung_cho": "ô [Name] của U1",
+   "_ghi": [
+    "Ưu tiên BIỆT DANH CỦA CHÍNH BÉ (app đã có sẵn, phần 'nhiều bé một máy').",
+    "Bài đầu tiên của cả quyển mà bé thấy tên mình trong câu tiếng Anh.",
+    "Danh sách dưới chỉ là dự phòng khi bé chưa đặt biệt danh.",
+    "",
+    "KHÔNG dùng nhân vật của sách Toán (Trí Long · Su Kem). Quyển này dựng cho",
+    "MỌI học sinh, không đòi bé phải biết thế giới của bốn quyển Toán trước.",
+    "",
+    "Sáu tên dưới đây lấy từ CHÍNH bộ Global Success — 'Bill' là tên trong câu",
+    "mẫu U1 của bản đồ ('Hi, I'm Bill.'), năm tên còn lại là nhân vật có thật",
+    "trong bản đồ lớp 3. Vừa trung tính, vừa có gốc trong sách."
+   ],
+   "muc": [
+    "Bill",
+    "Mai",
+    "Nam",
+    "Linh",
+    "Ben",
+    "Lucy"
+   ]
+  }
+ },
+ "hinh": {
+  "_vi_sao": [
+   "figforge KHÔNG dựng được hình từ vựng. Đã mở ra xem: 25 nguyên mẫu của nó —",
+   "bar_diagram · fraction_split · clock_face · place_value_chart · venn_two … —",
+   "đều là SƠ ĐỒ TOÁN dựng bằng matplotlib từ hình khối và mũi tên. Vẽ con vịt",
+   "cho bé 6 tuổi nhận ra là MINH HOẠ, không phải dựng sơ đồ; ép matplotlib làm",
+   "việc ấy thì ra thứ tệ hơn là không có hình.",
+   "",
+   "Đợt 1 dùng EMOJI làm lớp hình: cả 60 từ đều có, nhận ra ngay ở cỡ nhỏ, không",
+   "tốn dung lượng, nét ở mọi cỡ. Điểm yếu đã biết và chấp nhận: emoji hiện KHÁC",
+   "NHAU tuỳ máy (iPad và Windows vẽ con chó không giống nhau).",
+   "",
+   "`ve_tay: true` = emoji chỉ GẦN đúng, cần thay bằng hình vẽ thật. Sáu từ ấy",
+   "vẫn dùng được tạm, nhưng phải nằm trong danh sách nợ chứ không lẫn vào 54 từ",
+   "kia rồi quên mất."
+  ],
+  "_dung_the_nao": "Bậc 1 (nghe → bấm hình) và bài điền chỗ trống của bậc 3 lấy hình từ đây.",
+  "ball": "⚽",
+  "bike": "🚲",
+  "book": "📖",
+  "cake": "🍰",
+  "car": "🚗",
+  "cat": "🐱",
+  "cup": "☕",
+  "apple": "🍎",
+  "bag": "👜",
+  "can": "🥫",
+  "hat": "🎩",
+  "desk": "🪑",
+  "dog": "🐕",
+  "door": "🚪",
+  "duck": "🦆",
+  "chicken": "🍗",
+  "chips": "🍟",
+  "fish": "🐟",
+  "milk": "🥛",
+  "bell": "🔔",
+  "pen": "🖊️",
+  "pencil": "✏️",
+  "red": "🟥",
+  "garden": "🌷",
+  "girl": "👧",
+  "goat": "🐐",
+  "hand": "✋",
+  "horse": "🐴",
+  "clocks": "🕐",
+  "locks": "🔒",
+  "mops": "🧹",
+  "pots": "🍲",
+  "mango": "🥭",
+  "monkey": "🐒",
+  "mother": "👩",
+  "mouse": "🐭",
+  "bus": "🚌",
+  "sun": "☀️",
+  "truck": "🚚",
+  "leaf": "🍃",
+  "lemons": "🍋",
+  "bananas": "🍌",
+  "noodles": "🍜",
+  "nuts": "🥜",
+  "teddy bear": "🧸",
+  "tiger": "🐯",
+  "turtle": "🐢",
+  "face": "🙂",
+  "father": "👨",
+  "foot": "🦶",
+  "football": "⚽",
+  "water": "💧",
+  "window": "🪟",
+  "_ve_tay": {
+   "_ghi": "Những chỗ emoji chỉ GẦN đúng hoặc SAI HẲN. Đã vẽ tay bằng SVG — nét vẽ ở web/src/mon/tienganh/lib/hinh_ve.json, dùng chung cho cả màn hình lẫn video. `ve` là khoá tra vào bộ hình ấy; `tam` giữ lại làm bản lùi nếu hình vẽ hỏng. Bốn mục thêm 14-08 (desk · mops · ball · garden) là SAI HẲN chứ không phải gần đúng — xem docs/hinh_da_soat.md.",
+   "gate": {
+    "ve": "gate",
+    "tam": "🚧",
+    "sai_o_dau": "biển công trường, không phải cái cổng"
+   },
+   "head": {
+    "ve": "head",
+    "tam": "👤",
+    "sai_o_dau": "bóng người, không phải cái đầu"
+   },
+   "hair": {
+    "ve": "hair",
+    "tam": "💇",
+    "sai_o_dau": "đang cắt tóc, không phải mái tóc"
+   },
+   "top": {
+    "ve": "top",
+    "tam": "🪀",
+    "sai_o_dau": "yo-yo, không phải con quay"
+   },
+   "lake": {
+    "ve": "lake",
+    "tam": "🏞️",
+    "sai_o_dau": "phong cảnh chung, không rõ là cái hồ"
+   },
+   "run": {
+    "ve": "run",
+    "tam": "🏃",
+    "sai_o_dau": "động từ — hình chỉ gợi được một phần"
+   },
+   "wash": {
+    "ve": "wash",
+    "tam": "🧼",
+    "sai_o_dau": "động từ — bánh xà phòng không phải việc rửa"
+   },
+   "desk": {
+    "ve": "desk",
+    "tam": "🪑",
+    "sai_o_dau": "tên Unicode là CHAIR — cái GHẾ, không phải cái bàn học. Bác bắt 14-08."
+   },
+   "mops": {
+    "ve": "mop",
+    "tam": "🧹",
+    "sai_o_dau": "tên Unicode là BROOM — cái CHỔI, khác cây lau nhà."
+   },
+   "ball": {
+    "ve": "ball",
+    "tam": "⚽",
+    "sai_o_dau": "SOCCER BALL — TRÙNG HỆT hình của `football` (U15). Hai từ khác nhau thì phải hai hình."
+   },
+   "garden": {
+    "ve": "garden",
+    "tam": "🌷",
+    "sai_o_dau": "TULIP — một bông hoa lẻ, không phải khu vườn."
+   }
+  }
+ },
+ "khong_bat_go": {
+  "_vi_sao": [
+   "Bậc 4 (gõ lại) chia ba nấc vì bé 6 tuổi gõ chậm — xem sổ thiết kế mục 4.3.",
+   "Từ dài quá thì bé bỏ cuộc chứ không phải làm sai. Những từ dưới đây chỉ học ở",
+   "bậc 1-3; bậc 4 dùng nấc GHÉP THẺ CHỮ CÁI thay cho gõ."
+  ],
+  "tu": [
+   "teddy bear",
+   "chicken",
+   "bananas",
+   "noodles",
+   "football",
+   "pencil",
+   "garden"
+  ]
+ }
 }

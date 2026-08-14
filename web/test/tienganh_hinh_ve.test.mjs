@@ -18,9 +18,14 @@ const NGUON = '../src/mon/tienganh/lib/hinh_ve.json';
 const KHO = JSON.parse(doc(NGUON));
 const COI = Object.keys(KHO.hinh);
 
-test('bảy hình, mỗi hình có tên và nét vẽ', () => {
-  assert.equal(COI.length, 7);
-  assert.deepEqual(COI.sort(), ['gate', 'hair', 'head', 'lake', 'run', 'top', 'wash']);
+test('mỗi hình vẽ tay có tên và có nét vẽ', () => {
+  /* Bản đầu ghim cứng `COI.length === 7` và liệt kê đủ bảy tên. Ghim thế thì mỗi
+     lần thêm một hình là cổng đỏ vì lý do KHÔNG PHẢI lỗi — và người sửa dễ nới
+     bừa con số cho xanh, tức là cổng mất hẳn ý nghĩa. Đợt soát hình 14-08 thêm
+     bốn hình (desk · mop · ball · garden) và đỏ đúng ở đây.
+     Nay không đếm nữa: danh sách ĐÚNG là danh sách các bài đang dùng — phép kiểm
+     thứ tư ở dưới so hai chiều, vừa chặn hình thiếu vừa chặn hình chết. */
+  assert.ok(COI.length >= 7, 'bộ hình không được rỗng');
   for (const [k, v] of Object.entries(KHO.hinh)) {
     assert.ok(v.ten, `${k} thiếu tên đọc lên cho máy đọc màn hình`);
     assert.ok(v.than?.includes('<'), `${k} không có nét vẽ nào`);
@@ -64,5 +69,8 @@ test('mọi khoá `ve` trong bài đều có hình thật', () => {
     for (const h of b.hinhTu || []) if (h.ve) dung.add(h.ve);
   }
   for (const v of dung) assert.ok(COI.includes(v), `bài khai hình "${v}" mà bộ hình không có`);
-  assert.equal(dung.size, 7, 'cả bảy hình đều phải được dùng — hình thừa là hình chết');
+  /* Hai chiều: bài khai hình nào thì bộ hình phải có (trên), và bộ hình có gì thì
+     phải có bài dùng (dưới). Hình chết không ai thấy, nên không ai sửa khi nó hỏng. */
+  for (const k of COI) assert.ok(dung.has(k), `bộ hình có "${k}" mà không bài nào dùng`);
+  assert.equal(dung.size, COI.length, 'số hình dùng phải bằng số hình có');
 });

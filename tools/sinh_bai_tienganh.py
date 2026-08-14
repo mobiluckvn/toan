@@ -49,6 +49,10 @@ TIEN_TO = {1: "DL:TA1.", 2: "DL:TA2.", 3: "DL:TA3."}
 # Bé 6 tuổi gõ ~10 ký tự/phút — từ 10 ký tự là bỏ cuộc chứ không phải làm sai.
 GO_TOI_DA = 5
 DAN_DIEN = "Nhìn hình rồi chọn từ điền vào chỗ trống."
+# Ô trống là TÊN NGƯỜI (`Hi, I'm + [Name].`) thì không có hình nào vẽ được, mà câu
+# vẫn dùng tốt — manh mối nằm ở chính câu. Bảo bé "nhìn hình" khi không có hình là
+# nói dối bé, và bé sáu tuổi sẽ ngồi tìm cái không có. 15 câu từng như thế.
+DAN_DIEN_KHONG_HINH = "Chọn từ điền vào chỗ trống."
 THE_TOI_DA = 5          # trùng THE_TOI_DA của mon/tienganh/lib/cham.js
 
 
@@ -178,8 +182,25 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
             return d.capitalize() if hoa.get(o) else d
 
         # câu SGK trước — đó là câu đã có người soạn sách duyệt
+        # `dang` = HÌNH DẠNG THẬT đã điền vào câu, không phải từ gốc. Hai thứ này
+        # khác nhau thường xuyên hơn tưởng: "run" điền vào thành "running",
+        # "window" thành "windows", "two" đầu câu thành "Two". Bước khoét chỗ
+        # trống ở dưới cần đúng hình dạng ấy — xem chỗ dùng nó.
+        # TỪ TRỌNG TÂM của câu SGK: ưu tiên ô nào neo được vào một TỪ MỚI CÓ HÌNH.
+        # Bản cũ lấy cứng `os[-1]`. Với U16 (`How many + [Noun-plural] + can you
+        # see? - I can see + [Number].`) ô cuối là con số — thứ duy nhất không vẽ
+        # được — nên câu duy nhất của bài rơi vào tay số đếm, và sau khi chặn số
+        # làm đáp án thì U16 còn ĐÚNG 0 câu luyện. Ô `[Noun-plural]` ngay bên cạnh
+        # thì neo vào "windows", có hình, và cho ra đúng câu đáng luyện:
+        #     "How many ___ can you see? - I can see six."
+        def dung_duoc(o):
+            t = nen[o]
+            return (neo_duoc[o] and not str(t.get("ma") or "").startswith("them_")
+                    and (t.get("hinh") or t.get("hinh_ve")))
+        o_cuoi = next((o for o in reversed(os) if dung_duoc(o)), os[-1])
         ra.append({"cau": goc or dien(ct, {o: chu(o, nen[o]) for o in os}),
-                   "tu": nen[os[-1]], "mc": mc})
+                   "tu": nen[o_cuoi], "dang": chu(o_cuoi, nen[o_cuoi]),
+                   "neo": neo_duoc[o_cuoi], "mc": mc})
 
         # Đổi LUÂN PHIÊN từng ô, mỗi vòng một ô. Bản đầu vét cạn ô thứ nhất rồi mới
         # sang ô sau, nên U6 ("It's a + [Colour] + [Noun].") có 6 màu là đủ chạm
@@ -196,7 +217,7 @@ def sinh_cau(u: dict, tu: list, them: dict, sua_slot: dict, toi_da: int = 4) -> 
                 gan[o] = chu(o, t)
                 c = dien(ct, gan)
                 if c != goc:
-                    ra.append({"cau": c, "tu": t, "mc": mc})
+                    ra.append({"cau": c, "tu": t, "dang": gan[o], "neo": True, "mc": mc})
                 if sum(1 for x in ra if x["mc"] is mc) >= toi_da:
                     break
     # bỏ câu trùng, giữ thứ tự
@@ -285,25 +306,64 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
                       "Thẻ có dấu chấm là thẻ cuối cùng."],
         })
     n = len(standard)
-    for i, c in enumerate(cau, 1):
+    for c in cau:
         t = c["tu"]
+        dang = c.get("dang") or t["tu"]
+        # ── BA CỬA, VÀ MỘT CHỖ NÓI THẬT ──
+        # Bác bắt 14-08; rà ra 18 câu hỏng. Câu hỏng tệ hơn câu thiếu: bé sáu tuổi
+        # gặp một câu KHÔNG THỂ làm đúng thì học được đúng một điều — rằng mình kém.
+        # Nhưng bỏ câu cũng phải có chừng: bản chặn đầu tiên của chính đợt sửa này
+        # xoá sạch bài luyện của Unit 16 (còn 0 câu), tức là chữa lỗi bằng cách tạo
+        # một lỗ hổng. Nên ba cửa dưới đây chỉ chặn cái KHÔNG cứu được, còn lại thì
+        # sửa cho đúng chứ không vứt đi.
+        #
+        # 1. SỐ ĐẾM và MÀU không được làm đáp án. Chúng nằm ở `them` để ĐIỀN VÀO
+        #    KHUNG cho có câu mà luyện, không phải từ mới của bài. Bản cũ lấy luôn
+        #    chúng làm đáp án, nên Unit 6 có câu đáp án là "blue" — một từ CẢ QUYỂN
+        #    không bài nào dạy (đã dò đủ 16 bài).
+        #    TÊN NGƯỜI thì KHÁC: `Hi, I'm + [Name].` có ô tên là chính chỗ bài đang
+        #    dạy, và "Bill" nằm trong câu ví dụ của sách. Chặn cả tên là mất 8 câu
+        #    của Unit 1 mà chẳng vì lý do gì.
+        ma = str(t.get("ma") or "")
+        if ma.startswith("them_so_dem") or ma.startswith("them_mau"):
+            continue
+        # 2. NEO HỤT — chỗ này thì đúng là không cứu được. Câu SGK của U15 là
+        #    "Point to your hand." trong khi `hand` là từ của U8, nên từ nền rơi về
+        #    `face`. `replace` không tìm thấy gì, chỗ trống không được tạo, và đề
+        #    hiện nguyên câu về BÀN TAY với đáp án là KHUÔN MẶT.
+        if not c.get("neo", True) or dang not in c["cau"]:
+            continue
+        # 3. DẠNG ĐÃ ĐIỀN mới là thứ phải khoét, không phải từ gốc. Câu chứa
+        #    "running" mà khoét theo "run" thì ra `"She's ___ning."` — chỗ trống cắt
+        #    vào giữa chữ, điền đáp án vào lại thành "She's runing.". Đã sinh ra thật
+        #    ở U11. Nay khoét TRỌN "running" và đáp án cũng là "running": đó chính
+        #    là dạng bé phải học, chứ không phải từ gốc trong từ điển.
+        #    Cùng chỗ này lo luôn "windows" của U16 — nếu không thì U16 mất trắng.
+        dap = dang
+        # 4. KHÔNG CÓ HÌNH thì đừng BẢO bé nhìn hình. 15 câu từng nói dối như thế.
+        #    Nhưng câu vẫn dùng được — chỉ là manh mối nằm ở CÂU chứ không ở hình,
+        #    nên đổi lời dẫn cho đúng sự thật thay vì vứt câu đi.
+        anh, anhVe = t.get("hinh"), t.get("hinh_ve")
+        coHinh = bool(anh or anhVe)
+        n += 1
         standard.append({
-            "id": f"S{n + i}",
+            "id": f"S{n}",
             "bac": 3,
-            "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  "
-                    + c["cau"].replace(t["tu"], "___", 1),
+            "text": ("Nhìn hình rồi chọn từ điền vào chỗ trống:  " if coHinh
+                     else "Chọn từ điền vào chỗ trống:  ")
+                    + c["cau"].replace(dang, "___", 1),
             # Lời dẫn TIẾNG VIỆT dùng chung cho mọi câu điền — bé chưa đọc được
             # thì không có tiếng là không biết phải làm gì. Vẫn KHÔNG đọc câu
             # tiếng Anh: manh mối phải là HÌNH, đọc lên là thành bài nghe.
-            "am": am_id("loi", DAN_DIEN),
+            "am": am_id("loi", DAN_DIEN if coHinh else DAN_DIEN_KHONG_HINH),
             # CỐ Ý KHÔNG có `am` cả câu. Phát cả câu lên thì bé chỉ việc nghe rồi
             # bấm — thành bài NGHE lặp lại của bậc 1, không còn kiểm cấu trúc nữa.
             # Manh mối ở đây là HÌNH; chỗ trống là chỗ bé phải tự nối hình với từ.
-            "anh": t.get("hinh"),
-            "anhVe": t.get("hinh_ve"),
+            "anh": anh,
+            "anhVe": anhVe,
             "format": "chon",
-            "choices": tron(t["tu"], moi_nhu(t, tu)),
-            "answerKey": {"choice": t["tu"]},
+            "choices": tron(dap, moi_nhu(t, tu)),
+            "answerKey": {"choice": dap},
             "solutionNarrative": c["cau"],
             "hints": ["Nhìn hình xem đó là con gì, cái gì.",
                       "Rồi nhớ lại từ tiếng Anh của nó."],
@@ -771,6 +831,22 @@ def loi_can_doc(bai: dict) -> list[dict]:
     for khoi in list(bai["lecture"]["screens"]) + list(bai["knowledgeCore"]["statements"]):
         for chu, tieng in khoi.get("doanAm") or []:
             them("loi" if tieng == "vi" else "cau", chu, tieng)
+
+    # ── LỜI DẪN CỦA CÂU HỎI cũng phải có tiếng ──
+    # Bản cũ không gom mấy dòng này: clip lời dẫn có mặt trên đĩa là do sinh tay từ
+    # một đợt trước. Nên thêm MỘT lời dẫn mới là nó lặng lẽ không có clip — bé bấm
+    # vào câu, không nghe thấy gì, mà bé sáu tuổi chưa đọc được chữ thì đứng luôn.
+    # Đã suýt dính đúng thế khi tách "Chọn từ điền vào chỗ trống." ra khỏi
+    # "Nhìn hình rồi chọn từ điền vào chỗ trống." trong đợt sửa hình 14-08.
+    #
+    # Gom theo `am` đã khai trong chính câu hỏi, không gõ lại danh sách ở đây: gõ
+    # lại là hai bảng, mà hai bảng thì sớm muộn lệch.
+    DAN = {am_id("loi", DAN_DIEN): DAN_DIEN,
+           am_id("loi", DAN_DIEN_KHONG_HINH): DAN_DIEN_KHONG_HINH}
+    for pool in bai["practice"]["pools"].values():
+        for x in pool:
+            if x.get("am") in DAN:
+                them("loi", DAN[x["am"]], "vi")
     return ra
 
 
