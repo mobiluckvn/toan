@@ -453,5 +453,25 @@ for (const a of TIEN_TO) {
 t('tiền tố mã bài không trùng / không lồng nhau', dungNhau.length === 0);
 in5(dungNhau);
 
+
+/* ═══════ SỐ HỌC TRONG LỜI CHỮA PHẢI ĐƯỢC TÍNH LẠI ═══════
+ *
+ * Đã viết hỏng hai câu (chương 6 và 7): bài không có đáp số tự nhiên, lời chữa thành
+ * một đoạn mò mẫm. Không cổng nào bắt được — với máy thì chuỗi chữ nào cũng hợp lệ.
+ *
+ * `khuon_bai_lop4.soi_so_hoc` tính lại mọi phép viết ra trong lời chữa (822 phép trên
+ * 63 bài lớp 4), và nó chạy TRƯỚC khi ghi, nên hỏng thì chưa ghi gì cả. Phép dưới đây
+ * chỉ canh rằng nó còn được CẮM VÀO — viết đúng hàm mà quên gọi thì cũng như không.
+ */
+{
+  const k = readFileSync(join(G, 'tools/khuon_bai_lop4.py'), 'utf8');
+  t('có hàm soi_so_hoc', /def soi_so_hoc/.test(k));
+  t('soi_bai CÓ gọi soi_so_hoc', /loi \+= soi_so_hoc\(ds\)/.test(k));
+  /* Chỗ cố ý bỏ qua phải được ghi rõ, không thì người sau tưởng nó soi hết. */
+  t('ghi rõ chỗ cố ý không soi (chuỗi trộn dấu)', /trộn dấu/.test(k));
+  /* Phép chia có dư là cả một chương — bỏ sót là báo sai hàng loạt. */
+  t('hiểu phép chia có dư', /du < so\[1\]/.test(k));
+}
+
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
