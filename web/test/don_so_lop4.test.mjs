@@ -13,7 +13,12 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { maMoi, chuyenSo, daChuyen, DAI, CO } from '../src/mon/toan/lib/donSoLop4.js';
+import { maMoi, chuyenSo, daChuyen, daChay, DOT, CO } from '../src/mon/toan/lib/donSoLop4.js';
+
+
+/** Đích cuối của một mã sau KHI qua hết mọi đợt — tính bằng chính DOT, không gõ số.
+    Gõ số thì thêm một đợt là phải sửa tay khắp tệp, và sửa sót thì cổng nói dối. */
+const dichCuoi = (id) => DOT.reduce((x, d) => maMoi(x, d), id);
 
 test('mã trong dải dời đúng 5 chỗ, ngoài dải giữ nguyên', () => {
   assert.equal(maMoi('DL:KSN4.B13'), 'DL:KSN4.B18');
@@ -30,18 +35,46 @@ test('KHÔNG đụng quyển khác', () => {
   }
 });
 
+test('MỌI ĐƯỜNG ĐỀU HỘI TỤ — bé chạy đợt 1 rồi hay chưa cũng về cùng một chỗ', () => {
+  /* ⚠ Đây là phép kiểm quan trọng nhất của tệp, và là lý do phải đổi cờ đúng/sai
+     thành ĐẾM ĐỢT. Bản cũ chỉ có một cờ `true`: bé chạy đợt 1 rồi thì cờ bật, và
+     đợt 2 KHÔNG BAO GIỜ chạy cho bé ấy — tiến độ đứng yên trong khi bài đã dời.
+
+     Ba đường phải cùng đích: bé chưa chạy đợt nào · bé mang cờ `true` của bản cũ ·
+     bé đã lưu số đợt. */
+  const dich = (so) => Object.keys(chuyenSo(so).micros)[0];
+  // B14 gốc: qua đợt 1 thành B19, qua đợt 2 thành B24
+  assert.equal(dich({ micros: { 'DL:KSN4.B14': { x: 1 } } }), 'DL:KSN4.B24',
+    'bé chưa chạy đợt nào');
+  assert.equal(dich({ micros: { 'DL:KSN4.B19': { x: 1 } }, [CO]: true }), 'DL:KSN4.B24',
+    'bé mang cờ true của bản cũ — phải hiểu là đã xong đợt 1');
+  assert.equal(dich({ micros: { 'DL:KSN4.B19': { x: 1 } }, [CO]: 1 }), 'DL:KSN4.B24',
+    'bé đã lưu số đợt');
+  assert.equal(dich({ micros: { 'DL:KSN4.B24': { x: 1 } }, [CO]: DOT.length }),
+    'DL:KSN4.B24', 'đã chạy đủ thì đứng yên');
+});
+
+test('CỜ CŨ `true` phải được hiểu là ĐÃ XONG ĐỢT 1, không phải xong hết', () => {
+  /* Hiểu nhầm thành "xong hết" thì bé chạy đợt 1 rồi sẽ không bao giờ được dời tiếp.
+     Hiểu nhầm thành "chưa chạy gì" thì bé bị dời HAI LẦN và mất sạch. */
+  assert.equal(daChay({ [CO]: true }), 1);
+  assert.equal(daChay({ [CO]: 2 }), 2);
+  assert.equal(daChay({}), 0);
+  assert.equal(daChay(null), 0);
+});
+
 test('dời đi từ số LỚN xuống — không dồn hai lần', () => {
   /* Đây là cái bẫy kinh điển của mọi phép đánh số lại: dời B13→B18 trước thì tới
      lượt B18 (vừa mới thành) lại bị dời tiếp thành B23. Đưa cả dải vào một lúc để
      bắt đúng chuyện ấy. */
   const micros = {};
-  for (let n = DAI.tu; n <= DAI.den; n += 1) {
+  for (let n = DOT[0].tu; n <= DOT[0].den; n += 1) {
     micros[`DL:KSN4.B${String(n).padStart(2, '0')}`] = { pass: true, danhDau: n };
   }
   const sau = chuyenSo({ micros }).micros;
-  assert.equal(Object.keys(sau).length, DAI.den - DAI.tu + 1, 'không được mất bài nào');
-  for (let n = DAI.tu; n <= DAI.den; n += 1) {
-    const k = `DL:KSN4.B${String(n + DAI.dich).padStart(2, '0')}`;
+  assert.equal(Object.keys(sau).length, DOT[0].den - DOT[0].tu + 1, 'không được mất bài nào');
+  for (let n = DOT[0].tu; n <= DOT[0].den; n += 1) {
+    const k = dichCuoi(`DL:KSN4.B${String(n).padStart(2, '0')}`);
     assert.ok(sau[k], `thiếu ${k}`);
     assert.equal(sau[k].danhDau, n, `${k} phải mang đúng bản ghi của B${n}, không phải bài khác`);
   }
@@ -52,10 +85,13 @@ test('CHẠY HAI LẦN không dời thêm — đây là chỗ mất sạch dữ 
   const mot = chuyenSo(goc);
   const hai = chuyenSo(mot);
   const ba = chuyenSo(hai);
-  assert.ok(mot.micros['DL:KSN4.B19'], 'lần một phải dời');
+  assert.ok(mot.micros[dichCuoi('DL:KSN4.B14')], 'lần một phải dời qua ĐỦ mọi đợt');
   assert.deepEqual(hai.micros, mot.micros, 'lần hai KHÔNG được đụng gì');
   assert.deepEqual(ba.micros, mot.micros, 'lần ba cũng thế');
-  assert.ok(daChuyen(mot) && mot[CO] === true);
+  /* Cờ nay giữ SỐ ĐỢT đã chạy, không phải `true`. Bản cũ so với `true` —
+     để nguyên thì phép kiểm này xanh mãi kể cả khi cờ sai. */
+  assert.ok(daChuyen(mot), 'phải đánh dấu đã chạy đủ');
+  assert.equal(mot[CO], DOT.length, 'cờ phải bằng số đợt đã chạy');
 });
 
 test('bài NGOÀI dải và môn khác đi qua nguyên vẹn', () => {
@@ -87,8 +123,10 @@ test('sổ CHƯA chuyển thì MỌI bản ghi đều là số cũ — dời h�
     'DL:KSN4.B18': { pass: true, danhDau: 'B18 cũ' },
   } };
   const sau = chuyenSo(goc).micros;
-  assert.equal(sau['DL:KSN4.B18'].danhDau, 'B13 cũ', 'B13 cũ về đúng chỗ B18');
-  assert.equal(sau['DL:KSN4.B23'].danhDau, 'B18 cũ', 'B18 cũ phải đi tiếp tới B23');
+  assert.equal(sau[dichCuoi('DL:KSN4.B13')].danhDau, 'B13 cũ');
+  assert.equal(sau[dichCuoi('DL:KSN4.B18')].danhDau, 'B18 cũ');
+  assert.notEqual(dichCuoi('DL:KSN4.B13'), dichCuoi('DL:KSN4.B18'),
+    'hai bài khác nhau không được rơi vào cùng một chỗ');
   assert.ok(!sau['DL:KSN4.B13'], 'mã cũ phải được dọn đi');
   assert.equal(Object.keys(sau).length, 2, 'không đẻ thêm cũng không mất bài nào');
 });
@@ -108,7 +146,10 @@ test('dải dời khớp với công cụ dồn số bên tools', () => {
   const py = readFileSync(new URL('../../tools/don_so_lop4.py', import.meta.url), 'utf8');
   const m = /DICH = (\d+)[\s\S]*?TU, DEN = (\d+), (\d+)/.exec(py);
   assert.ok(m, 'không đọc được dải trong don_so_lop4.py');
-  assert.equal(Number(m[1]), DAI.dich, 'số chỗ dời lệch nhau');
-  assert.equal(Number(m[2]), DAI.tu, 'đầu dải lệch nhau');
-  assert.equal(Number(m[3]), DAI.den, 'cuối dải lệch nhau');
+  /* So với đợt CUỐI — đó là đợt công cụ đang chuẩn bị chạy. Đợt cũ đã chạy xong,
+     không ai dồn lại nữa. */
+  const cuoi = DOT[DOT.length - 1];
+  assert.equal(Number(m[1]), cuoi.dich, 'số chỗ dời lệch nhau');
+  assert.equal(Number(m[2]), cuoi.tu, 'đầu dải lệch nhau');
+  assert.equal(Number(m[3]), cuoi.den, 'cuối dải lệch nhau');
 });

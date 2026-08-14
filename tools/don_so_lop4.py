@@ -39,7 +39,10 @@ from pathlib import Path
 
 GOC = Path(__file__).resolve().parent.parent
 DICH = 5                     # lùi 5 chỗ
-TU, DEN = 13, 44             # dải bài phải dồn
+# ⚠ ĐỢT 2 (14-08): chương 3 tách 4 → 9 bài, nên B13 trở đi lùi tiếp 5 chỗ.
+# Cuối dải nay là 49 — số bài HIỆN TẠI, không phải 44 của đợt 1. Để nguyên 44
+# thì năm bài cuối quyển đứng im trong khi cả dải trước đã dời, và thứ tự vỡ.
+TU, DEN = 13, 49             # dải bài phải dồn
 
 BO_QUA = {'.git', 'node_modules', 'dist', '.venv', '__pycache__',
           'Kokoro-Vietnamese', 'tool-results'}
