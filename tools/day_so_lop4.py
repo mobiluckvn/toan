@@ -139,83 +139,50 @@ B13 = bai(
     'gì là dãy, cái gì là số hạng, "thứ mấy" khác "số mấy" ở chỗ nào. Gọi đúng tên '
     'rồi thì bốn bài sau chỉ còn là bốn phép tính.',
     LUI_TOA,
+    # ⚠ BÀI 13 KHÔNG CÓ MỞ BÀI VÀ BÀI GIẢNG BẰNG CHỮ — VIDEO THAY CẢ HAI.
+    # Bác chốt 14-08 sau khi duyệt video: "Video đã thay thế cho cả phần mở bài và
+    # bài giảng. Xoá toàn bộ nội dung phần mở bài và bài giảng cũ đi, chỉ để Video."
+    #
+    # Nên bốn mục ②③④⑤ để RỖNG. Bộ dựng thấy rỗng thì không sinh màn nào, và
+    # `buildTeachSteps` trả về danh sách rỗng — bé đi thẳng từ video sang bài mẫu.
+    # Đây là chủ ý, không phải bỏ sót; `video_toan.test.mjs` canh đúng điều đó.
+    #
+    # Giữ lại ⑥ bài mẫu và ⑦ chỗ hay nhầm, nhưng VIẾT LẠI cho khớp video: cùng dãy
+    # ví dụ, cùng cách nói, và bỏ nhân vật Trí Long vì video không có nhân vật nào.
     dung_muc(
-        'Con phố nhà bạn Mai',
-        ['Bạn Mai chỉ tay xuống dãy nhà bên trái: "Nhà tớ là nhà thứ tư từ đầu phố."',
-         'Cậu bé giao báo gãi đầu: "Nhà thứ tư… nhưng số nhà là bao nhiêu ạ? Tớ chỉ '
-         'biết bấm chuông theo SỐ NHÀ thôi."',
-         'Mai đọc dãy số nhà bên ấy: 6 ; 11 ; 16 ; 21 ; 26 ; 31.',
-         'Vậy nhà THỨ TƯ mang số mấy? Và ngược lại, nhà số 26 là nhà THỨ MẤY?'],
-        ['Gọi đúng tên bốn thứ: dãy số, số hạng, vị trí (thứ mấy) và giá trị (số mấy).',
-         'Nhìn một dãy và nói được: dãy này có CÁCH ĐỀU không, KHOẢNG CÁCH bằng bao nhiêu.',
-         'Trả lời được hai câu ngược nhau: "chỗ thứ n là số nào" và "số x đứng thứ mấy".'],
-        ['CHO GÌ? dãy số nhà bên trái phố: 6 ; 11 ; 16 ; 21 ; 26 ; 31.',
-         'HỎI GÌ? nhà thứ tư mang số mấy; nhà số 26 đứng thứ mấy.',
-         'ĐẠI LƯỢNG & ĐƠN VỊ: hai loại số hoàn toàn khác nhau — VỊ TRÍ đếm bằng '
-         '"thứ nhất, thứ hai, thứ ba…", còn GIÁ TRỊ là con số sơn trên cửa. Đây '
-         'chính là chỗ cậu giao báo bị rối, và cũng là chỗ bé hay nhầm nhất.',
-         'QUAN HỆ GIỮA CHÚNG: mỗi vị trí ứng với đúng MỘT giá trị. Vị trí 1 ↔ số 6; '
-         'vị trí 2 ↔ số 11; vị trí 3 ↔ số 16…',
-         'CHỌN CÔNG CỤ: bài này CHƯA cần công thức nào. Chỉ cần đọc dãy và đếm cho '
-         'đúng chỗ. Công thức để dành bốn bài sau.',
-         'ƯỚC LƯỢNG TRƯỚC: số nhà cứ tăng dần, nhà thứ tư chắc chắn lớn hơn 16 và '
-         'nhỏ hơn 26.'],
-        ['Bước 1 — DÃY SỐ LÀ GÌ. Một DÃY SỐ là mấy con số viết nối nhau THEO MỘT THỨ '
-         'TỰ đã định, ngăn nhau bằng dấu chấm phẩy: 6 ; 11 ; 16 ; 21 ; 26 ; 31. Mỗi '
-         'con số trong dãy gọi là một SỐ HẠNG. Dãy trên có 6 số hạng. Thứ tự là phần '
-         'quan trọng: đảo chỗ hai số là thành một dãy KHÁC.',
-         'Bước 2 — MỘT SỐ HẠNG CÓ HAI CON SỐ ĐI KÈM, và đây là chỗ dễ nhầm nhất của '
-         'cả chương. VỊ TRÍ (còn gọi là SỐ THỨ TỰ) cho biết số hạng ấy đứng THỨ MẤY: '
-         'thứ nhất, thứ hai, thứ ba… GIÁ TRỊ cho biết số hạng ấy LÀ SỐ NÀO. Nhà thứ '
-         'tư có giá trị 21 — "thứ tư" và "21" cùng nói về một ngôi nhà, nhưng KHÔNG '
-         'phải một con số. Hỏi "thứ mấy" thì đếm chỗ; hỏi "số mấy" thì đọc giá trị.',
-         'Bước 3 — CÁCH ĐỀU LÀ GÌ. Lấy mỗi số hạng TRỪ số hạng ĐỨNG NGAY TRƯỚC nó: '
-         '11 − 6 = 5 ; 16 − 11 = 5 ; 21 − 16 = 5 ; 26 − 21 = 5 ; 31 − 26 = 5. Năm '
-         'hiệu đều bằng 5 — dãy này CÁCH ĐỀU, và con số 5 ấy gọi là KHOẢNG CÁCH của '
-         'dãy. Nói cách khác: từ một nhà sang nhà ngay bên cạnh, số nhà luôn tăng '
-         'đúng 5 đơn vị.',
-         'Bước 4 — THỬ TAY HAI DÃY. Dãy 3 ; 6 ; 9 ; 12 : hiệu lần lượt 3 ; 3 ; 3 → '
-         'CÁCH ĐỀU, khoảng cách 3. Dãy 1 ; 2 ; 4 ; 8 : hiệu lần lượt 1 ; 2 ; 4 → các '
-         'hiệu KHÁC nhau, nên KHÔNG cách đều (dãy này có quy luật khác — mỗi số gấp '
-         'đôi số trước — nhưng đó là chuyện của bài sau).',
-         'Bước 5 — DÃY GIẢM CŨNG CÁCH ĐỀU ĐƯỢC. 100 ; 95 ; 90 ; 85 có hiệu −5 mỗi '
-         'bước, đều tăm tắp → vẫn là dãy cách đều, khoảng cách 5, chỉ khác là bước '
-         'LÙI chứ không bước tới.',
-         'MẸO NGƯỜI GIẢI: gặp một dãy lạ, làm đúng ba việc theo thứ tự — (1) đếm xem '
-         'có mấy số hạng; (2) trừ liên tiếp xem các hiệu có bằng nhau không; (3) nếu '
-         'bằng nhau thì ghi ngay KHOẢNG CÁCH ra lề. Ba việc ấy xong là nhận diện xong.'],
-        ['LẮP: cậu giao báo dán vào ghi đông xe một mảnh giấy: "Phố này số nhà bắt '
-         'đầu từ 6, cách đều 5. Nhà thứ tư = số 21." Từ hôm ấy cậu bấm chuông không '
-         'sai nhà nào nữa.',
-         'SOI: soi ngược lại cho chắc — nhà số 26 đứng thứ mấy? Đếm từ đầu: 6 (thứ '
-         '1) → 11 (thứ 2) → 16 (thứ 3) → 21 (thứ 4) → 26 (thứ 5) ✓. Hỏi xuôi ra 21, '
-         'hỏi ngược ra thứ 5 — hai chiều đều thông thì mới thật là hiểu.',
-         'DÙNG NGOÀI ĐỜI: số nhà chẵn - lẻ trên phố, bậc thang đánh số, cột cây số '
-         'bên đường, các ngày thứ Bảy trong tờ lịch — chỗ nào cũng có dãy cách đều, '
-         'và chỗ nào cũng phân biệt "thứ mấy" với "số mấy".'],
-        ['Đề bài: Cho dãy 7 ; 12 ; 17 ; 22 ; 27. Dãy này có cách đều không? Nếu có '
-         'thì khoảng cách bằng bao nhiêu? Số hạng thứ 3 là số nào? Số 27 đứng thứ mấy?',
-         'Tóm tắt',
-         'Dãy 5 số hạng: 7 ; 12 ; 17 ; 22 ; 27.',
-         'Viết dãy ra giấy, đánh số vị trí 1, 2, 3, 4, 5 ngay bên dưới từng số hạng.',
+        '',
+        [],
+        ['Gọi đúng tên bốn thứ: dãy số, số hạng, thứ tự và giá trị.',
+         'Nhìn một dãy và nói được nó có cách đều không, khoảng cách bằng bao nhiêu.',
+         'Trả lời được hai chiều: chỗ thứ n là số nào, và số x đứng thứ mấy.'],
+        [],
+        [],
+        [],
+        ['Đề bài: Cho dãy 5 ; 10 ; 15 ; 20 ; 25. Dãy này có mấy số hạng? Số hạng thứ '
+         'ba có giá trị bao nhiêu? Số 20 đứng thứ mấy? Dãy có cách đều không?',
+         'Đếm số hạng',
+         'Đếm từng số: 5, 10, 15, 20, 25.',
+         'Dãy có 5 số hạng.',
+         'Đọc theo thứ tự',
+         'Chỗ thứ nhất là 5, chỗ thứ hai là 10, chỗ thứ ba là 15.',
+         'Số hạng thứ ba có giá trị 15.',
+         'Đọc ngược lại',
+         'Đếm tới số 20: 5 (1), 10 (2), 15 (3), 20 (4).',
+         'Số 20 đứng thứ 4.',
          'Kiểm cách đều',
-         '12 − 7 = 5 ; 17 − 12 = 5 ; 22 − 17 = 5 ; 27 − 22 = 5.',
-         'Bốn hiệu bằng nhau → dãy CÁCH ĐỀU, khoảng cách 5.',
-         'Đọc hai chiều',
-         'Vị trí 3 → nhìn xuống hàng vị trí, thấy số 17. Số hạng thứ 3 là 17.',
-         'Số 27 → nhìn lên hàng vị trí, thấy số 5. Số 27 đứng thứ 5.',
-         'Đáp số: dãy cách đều, khoảng cách 5; số hạng thứ 3 là 17; số 27 đứng thứ 5.'],
-        ['Cô hỏi "nhà thứ tư mang số mấy?", Trí Long đáp ngay: "Thứ tư thì là số 4 ạ!"',
-         'Gợi ý 1: Con thử đọc lại dãy số nhà xem — 6 ; 11 ; 16 ; 21 ; 26 ; 31. Có số '
-         '4 nào trong đó không?',
-         'Gợi ý 2: "Thứ tư" là CHỖ ĐỨNG, còn "số nhà" là con số sơn trên cửa. Hai '
-         'thứ khác nhau. Con chỉ tay vào chỗ thứ tư rồi đọc to số ở đó xem.',
-         'Chữa: nhà thứ tư là nhà mang số 21. Vị trí 4 ≠ giá trị 4.'],
-        ['Đi bộ cùng con dọc một dãy nhà, đọc to số nhà rồi hỏi: "Nhà mình là nhà '
-         'thứ mấy tính từ đầu phố?" — cho con tự đếm và tự nói ra hai con số khác nhau.',
-         'Mở tờ lịch tháng, khoanh tất cả các ngày Chủ nhật: 3 ; 10 ; 17 ; 24 ; 31. '
-         'Hỏi con: dãy này cách đều không? Khoảng cách mấy? Chủ nhật thứ ba là ngày mấy?',
-         'Chưa cần công thức nào ở bài này. Con gọi đúng tên và chỉ đúng chỗ là đạt.'],
+         'Lấy số sau trừ số trước: 10 − 5 = 5 ; 15 − 10 = 5 ; 20 − 15 = 5 ; 25 − 20 = 5.',
+         'Các hiệu đều bằng 5, nên dãy cách đều và khoảng cách là 5.',
+         'Đáp số: 5 số hạng; số hạng thứ ba là 15; số 20 đứng thứ 4; dãy cách đều, '
+         'khoảng cách 5.'],
+        ['Có bạn nhìn dãy 5 ; 10 ; 15 ; 20 ; 25 rồi nói: "Số 15 đứng thứ 15."',
+         'Gợi ý 1: Con đọc lại dãy xem. Dãy chỉ có 5 số hạng, làm gì có chỗ thứ 15.',
+         'Gợi ý 2: Số 15 là GIÁ TRỊ. Còn chỗ đứng của nó là THỨ TỰ. Con đếm chỗ xem '
+         'nó đứng thứ mấy.',
+         'Chữa: số 15 đứng thứ 3. Thứ tự là 3, giá trị là 15 — hai con số khác nhau.'],
+        ['Viết ra giấy một dãy cách đều bất kỳ rồi hỏi con hai câu ngược nhau: "Chỗ '
+         'thứ tư là số nào?" và "Số này đứng thứ mấy?"',
+         'Con lẫn thứ tự với giá trị là chuyện thường. Bố mẹ chỉ cần hỏi lại: "Con '
+         'đang nói chỗ đứng hay đang nói con số?"'],
     ),
     # ── BÀI TẬP ĐI ĐÚNG ĐƯỜNG VIDEO ĐÃ DẠY ──
     # Bác duyệt video rồi bảo viết bài tập theo video. Nên bảy câu đầu bám đúng bảy
@@ -759,13 +726,8 @@ def _o(t, mau):
 HINH_MOI = [
     # B13 — hai HÀNG chồng nhau là cách duy nhất cho bé THẤY "thứ mấy" khác "số
     # mấy": cùng một cột, hàng trên là chỗ đứng, hàng dưới là con số ở chỗ ấy.
-    {'id': 'L4H_B13_MO', 'arch': 'day_o',
-     'params': {'title': 'NHÀ THỨ TƯ MANG SỐ MẤY? NHÀ SỐ 26 ĐỨNG THỨ MẤY?',
-                'hang': [{'nhan': 'đứng thứ', 'o': [_o(i, 'gold') for i in range(1, 7)]},
-                         {'nhan': 'số nhà',
-                          'o': [_o(n, 'teal') for n in (6, 11, 16, 21, 26, 31)]}]},
-     'caption': 'Hai hàng, một ngôi nhà: hàng trên là VỊ TRÍ, hàng dưới là GIÁ TRỊ.',
-     'bai': 'DL:KSN4.B13', 'muc': 'chuyenMoBai', 'goc': 'B13 ②'},
+    # B13 KHÔNG có hình màn mở: video đã thay cả mở bài lẫn bài giảng, nên một
+    # hình mở bài nữa là thứ không bao giờ hiện ra — đúng nghĩa hình chết.
     {'id': 'L4H_B13_G1', 'arch': 'tia_so',
      'params': {'title': 'CÁCH ĐỀU LÀ GÌ — TRỪ LIÊN TIẾP XEM CÁC HIỆU CÓ BẰNG NHAU',
                 'moc': [{'so': 7, 'danh': True}, {'so': 12}, {'so': 17}, {'so': 22},
@@ -773,7 +735,7 @@ HINH_MOI = [
                 'nhan': '+5',
                 'note': 'Các hiệu đều bằng 5 → dãy cách đều, khoảng cách 5.'},
      'caption': 'Bước chân từ số hạng này sang số hạng kế luôn dài bằng nhau.',
-     'bai': 'DL:KSN4.B13', 'muc': 'khamPha', 'neoBuoc': 2, 'goc': 'B13 ④ bước 3'},
+     'bai': 'DL:KSN4.B13', 'muc': 'viDuMau', 'neoBuoc': 0, 'goc': 'B13 ⑥'},
 
     # B14 — tia số cho THẤY bước nhảy. Bốn chỗ nhưng chỉ ba bước: đó là cả bài.
     {'id': 'L4H_B14_MO', 'arch': 'tia_so',

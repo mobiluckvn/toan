@@ -177,9 +177,6 @@ def main(khai=False):
                              dap_an=dap_an)
         # Chặng giảng rỗng là hỏng CÂM: bài vẫn dựng, phòng học vẫn mở, chỉ là không
         # dạy gì. Đây đúng chỗ mẫu tên bước bỏ sót thì không ai hay.
-        if not d['knowledgeCore']['statements']:
-            canh_bao.append(f"{d['id']}: không có nguyên tắc nào — mẫu tên bước "
-                            f'trong khuon_chung.py bỏ sót cách đặt tên của bài này?')
         # ── VIDEO MỞ BÀI + BÀI GIẢNG ──
         # Bác chốt 14-08. Khai bằng cách DÒ TỆP CÓ THẬT, không gõ tay danh sách:
         # gõ tay thì khai một bài chưa dựng video là màn hình hiện ô đen, còn dựng
@@ -189,6 +186,13 @@ def main(khai=False):
         if os.path.exists(tep_video):
             d['video'] = {'giang': f'{ten_tep}_giang.mp4'}
 
+        # Rỗng nguyên tắc thường là hỏng CÂM (mẫu tên bước bỏ sót). NHƯNG bài mà
+        # VIDEO thay cả mở bài lẫn bài giảng thì rỗng là CHỦ Ý — bác chốt 14-08.
+        # Không phân biệt hai chuyện này thì cảnh báo kêu mãi, rồi người ta quen tai
+        # và bỏ qua cả lúc nó kêu thật.
+        if not d['knowledgeCore']['statements'] and not d.get('video', {}).get('giang'):
+            canh_bao.append(f"{d['id']}: không có nguyên tắc nào — mẫu tên bước "
+                            f'trong khuon_chung.py bỏ sót cách đặt tên của bài này?')
         ten = goc_ten + '.json'
         with open(os.path.join(RA, ten), 'w', encoding='utf-8') as f:
             json.dump(d, f, ensure_ascii=False, indent=1)

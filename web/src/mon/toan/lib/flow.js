@@ -703,7 +703,12 @@ export function buildFlow(lesson) {
   const check = (lesson.lecture?.screens || []).find((s) => s.item);
   if (check) steps.push({ type: 'check', phase: 'teach', item: check.item });
 
-  steps.push({ type: 'mantra', phase: 'teach', text: K.mantra, vocabulary: K.vocabulary });
+  /* Câu chốt RỖNG thì bỏ hẳn màn — bài mà video thay cả mở bài lẫn bài giảng
+     không có câu chốt nào, và một màn NGUYÊN TẮC CẦN NHỚ trống là màn bé bấm
+     qua mà chẳng hiểu vừa đọc gì. */
+  if ((K.mantra || '').trim() || (K.vocabulary || []).length) {
+    steps.push({ type: 'mantra', phase: 'teach', text: K.mantra, vocabulary: K.vocabulary });
+  }
 
   const figDomain = figFor(lesson, 'teach_domain');
   const figCore = figFor(lesson, 'teach_core');

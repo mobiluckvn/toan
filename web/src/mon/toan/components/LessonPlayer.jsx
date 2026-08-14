@@ -9,11 +9,17 @@ import StepView from './StepView.jsx';
 import CuonThem from '../../../chung/components/CuonThem.jsx';
 import TienTrinh from './TienTrinh.jsx';
 
-/** Thanh chặng: MỞ BÀI · GIẢNG · BÀI MẪU · LUYỆN TẬP · SÁT HẠCH */
-function PhaseBar({ current }) {
+/** Thanh chặng: MỞ BÀI · GIẢNG · BÀI MẪU · LUYỆN TẬP · SÁT HẠCH
+ *
+ * CHỈ hiện chặng BÀI NÀY THẬT SỰ CÓ. Bài mà video thay cả mở bài lẫn bài giảng thì
+ * không còn màn giảng nào — để nhãn GIẢNG nằm đó là bé thấy một chặng vĩnh viễn
+ * không sáng, và tưởng mình bỏ sót gì đó. Bác chốt 14-08.
+ */
+function PhaseBar({ current, co }) {
+  const hien = co ? PHASES.filter((p) => co.has(p.id)) : PHASES;
   return (
     <div className="sticky top-[47px] z-10 flex justify-center gap-1.5 bg-white border-b border-line px-3 py-1.5">
-      {PHASES.map((p) => (
+      {hien.map((p) => (
         <span key={p.id}
           className={`text-[10.5px] font-extrabold tracking-wide rounded-full px-2.5 py-1 ${
             p.id === current ? 'bg-navy text-white' : 'bg-[#F2F6FA] text-mute'}`}>
@@ -132,7 +138,7 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
         onChon={(k) => setI(k)} onLui={() => go(-1)}
       />
 
-      <PhaseBar current={step.phase} />
+      <PhaseBar current={step.phase} co={new Set(flow.map((s2) => s2.phase))} />
 
       <main className="mx-auto w-full max-w-[740px] flex-1 px-3.5 pb-32 pt-4">
         <StepView

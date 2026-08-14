@@ -114,9 +114,14 @@ export default function StepView({ step, lesson, onNext, onJump, onRecord, log, 
         </div>
         <div className="rounded-2xl bg-gradient-to-br from-gold to-[#fcd88a] px-4 py-4 text-center text-[17px] font-extrabold leading-snug text-gold-dark">
           {de ? 'Con thử nghĩ trước xem làm thế nào, rồi mình cùng gỡ nhé.'
+              : lesson.video?.giang ? 'Con xem video trước nhé, xem xong mình làm bài.'
               : 'Mình bắt đầu nhé — con thử nghĩ trước, rồi mình cùng tìm cách làm.'}
         </div>
-        <Foot label={de ? 'Nghe cô giảng ▶' : 'Xem bài toán ▶'} onClick={onNext} />
+        {/* Bài mà VIDEO thay cả mở bài lẫn bài giảng thì không còn đề bằng chữ,
+            cũng không còn màn giảng nào — mời "Xem bài toán" là chỉ vào chỗ trống.
+            Bé xem video xong là đi thẳng sang bài mẫu. */}
+        <Foot label={de ? 'Nghe cô giảng ▶'
+          : lesson.video?.giang ? 'Xem bài mẫu ▶' : 'Xem bài toán ▶'} onClick={onNext} />
       </>);
     }
 

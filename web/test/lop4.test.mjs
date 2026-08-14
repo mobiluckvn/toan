@@ -147,7 +147,16 @@ t(`hình đã vẽ đều đã gắn vào bài (${daGan.size})`, roi.length === 
 in5(roi);
 
 /* mọi bài phải có hình MÀN MỞ — bài nào cũng mở bằng một tình huống có hình */
-const khongMo = bais.filter((b) => !(b.muc.chuyenMoBai.hinh || []).length);
+/* Bài nào VIDEO thay cả mở bài lẫn bài giảng thì không cần hình màn mở — chính
+   video là màn mở. Giữ thêm một hình nữa là hình KHÔNG BAO GIỜ HIỆN, đúng nghĩa
+   hình chết mà phép kiểm ngay trên vừa canh. Bác chốt 14-08. */
+const coVideo = new Set(readdirSync(APP)
+  .filter((f) => /^DL_KSN4_B\d+\.json$/.test(f))
+  .map((f) => doc(join(APP, f)))
+  .filter((b) => b.video?.giang)
+  .map((b) => b.so));
+const khongMo = bais.filter((b) => !coVideo.has(b.so)
+  && !(b.muc.chuyenMoBai.hinh || []).length);
 t(`${SO_BAI}/${SO_BAI} bài có hình màn mở`, khongMo.length === 0);
 in5(khongMo.map((b) => `bài ${b.so}`));
 
@@ -186,9 +195,15 @@ if (existsSync(APP)) {
   in5(lechNoi);
 
   /* mỗi bài phải dạy ít nhất một nguyên tắc — chặng giảng rỗng là hỏng CÂM:
-     bài vẫn dựng, phòng học vẫn mở, chỉ là không dạy gì */
-  const rong = app.filter((d) => !(d.knowledgeCore.statements || []).length);
-  t('bài nào cũng có nguyên tắc để dạy', rong.length === 0);
+     bài vẫn dựng, phòng học vẫn mở, chỉ là không dạy gì.
+
+     TRỪ bài mà VIDEO thay cả mở bài lẫn bài giảng (bác chốt 14-08). Ở đó rỗng là
+     CHỦ Ý, và cái dạy nằm trong clip. Nhưng phải có video THẬT mới được rỗng —
+     nếu không thì đúng là hỏng câm, và đây là chỗ dễ nới bừa nhất: ai đó xoá nhầm
+     phần giảng rồi nới cổng cho xanh là bài ấy thành trống trơn. */
+  const rong = app.filter((d) => !(d.knowledgeCore.statements || []).length
+    && !d.video?.giang);
+  t('bài nào cũng có nguyên tắc để dạy, HOẶC có video thay', rong.length === 0);
   in5(rong.map((d) => d.id));
 
   /* mọi nguyên tắc đều có màn nhận nó */

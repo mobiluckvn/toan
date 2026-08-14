@@ -338,7 +338,10 @@ def sang_khuon_chung(bai, truoc=None, sau=None, dap_an=None):
                       'passRule': 'đúng ≥ 4/5 câu tự kiểm'},
         'knowledgeCore': {
             'statements': statements,
-            'mantra': _cau_meo(kham) or f"Bài {so}: {bai['ten']}",
+            # Không có mục KHÁM PHÁ thì KHÔNG có câu chốt. Bản cũ lùi về tên bài,
+            # nên bài mà video thay phần giảng vẫn hiện một màn NGUYÊN TẮC CẦN NHỚ
+            # chỉ chép lại đúng tên bài — một màn không nói gì. Bác chốt 14-08.
+            'mantra': _cau_meo(kham) or (f"Bài {so}: {bai['ten']}" if kham else ''),
             'vocabulary': [], 'canonicalExamples': [],
             'misconceptions': misconceptions,
         },
