@@ -256,110 +256,81 @@ B14 = bai(
     'Nhưng muốn biết số hạng thứ 50 thì viết cả dãy ra là hết vở. Hôm nay con học '
     'cách nhảy thẳng tới chỗ ấy — và chỗ tinh tế nhất của cả bài chỉ nằm ở một dấu trừ.',
     LUI_TOA,
+    # ⚠ VIDEO THAY CẢ MỞ BÀI LẪN BÀI GIẢNG — bốn mục ②③④⑤ để RỖNG.
+    # Cùng khuôn đã chốt ở Bài 13. Giữ ⑥ bài mẫu và ⑦ chỗ hay nhầm, nhưng viết
+    # theo đúng đường video đi, và KHÔNG nhân vật nào.
     dung_muc(
-        'Bậc thang lên đài quan sát',
-        ['Đài quan sát có một cầu thang dài. Bậc thứ nhất cao 15 cm so với mặt đất, '
-         'và cứ mỗi bậc lại cao thêm đúng 15 cm.',
-         'Bác bảo vệ hỏi con: "Cháu đứng ở bậc thứ 20 thì cao bao nhiêu so với mặt đất?"',
-         'Viết cả 20 bậc ra giấy thì được, nhưng nếu bác hỏi bậc thứ 200 thì sao?'],
-        ['Hiểu vì sao đi từ vị trí 1 đến vị trí n chỉ có n − 1 bước nhảy, không phải n.',
-         'Dùng được công thức: số hạng thứ n = số đầu + khoảng cách × (n − 1).',
-         'Tìm số hạng ở vị trí xa mà không phải viết cả dãy.'],
-        ['CHO GÌ? bậc thứ nhất cao 15 cm; mỗi bậc thêm 15 cm → dãy độ cao: 15 ; 30 ; 45 ; ...',
-         'HỎI GÌ? bậc thứ 20 cao bao nhiêu.',
-         'ĐẠI LƯỢNG & ĐƠN VỊ: độ cao tính bằng xăng-ti-mét, còn số bậc là vị trí — '
-         'đúng hai thứ con vừa phân biệt ở bài trước.',
-         'QUAN HỆ GIỮA CHÚNG: dãy độ cao là dãy CÁCH ĐỀU, số đầu 15, khoảng cách 15.',
-         'CHỌN CÔNG CỤ: công thức SỐ HẠNG THỨ n. Đây là công thức DUY NHẤT của bài này.',
-         'ƯỚC LƯỢNG TRƯỚC: 20 bậc, mỗi bậc 15 cm, chắc khoảng ba trăm mấy — nếu tính '
-         'ra 4 000 cm thì biết ngay là sai.'],
-        ['Bước 1 — ĐẾM BƯỚC NHẢY, KHÔNG ĐẾM CHỖ. Đây là chỗ tinh tế nhất của cả bài, '
-         'và cũng là chỗ hầu hết bạn sai. Từ bậc 1 lên bậc 4 thì leo mấy lần? Vẽ ra '
-         'mà đếm: 1 → 2 (một lần) → 3 (hai lần) → 4 (BA lần). Bốn bậc nhưng chỉ BA '
-         'lần leo. Số bước nhảy luôn ÍT HƠN số chỗ đúng 1.',
-         'Bước 2 — VÌ SAO ÍT HƠN 1. Vì bậc thứ nhất con ĐÃ ĐỨNG SẴN ở đó rồi, không '
-         'phải leo lần nào để tới nó. Chỉ từ bậc 2 trở đi mới cần leo. Cũng như hàng '
-         'rào: 5 cây cột thì chỉ có 4 khoảng ở giữa.',
-         'Bước 3 — GHÉP THÀNH CÔNG THỨC. Muốn tới vị trí n thì nhảy n − 1 bước, mỗi '
-         'bước cộng thêm đúng một KHOẢNG CÁCH. Vậy: số hạng thứ n = số đầu + khoảng '
-         'cách × (n − 1).',
-         'Bước 4 — GIẢI BÀI BẬC THANG. Số đầu 15, khoảng cách 15, n = 20 → bậc thứ 20 '
-         'cao 15 + 15 × (20 − 1) = 15 + 15 × 19 = 15 + 285 = 300 (cm), tức là 3 mét. '
-         'Khớp với ước lượng "ba trăm mấy" ✓.',
-         'Bước 5 — THỬ NGƯỢC CHO CHẮC. Thay n = 1 vào công thức: 15 + 15 × (1 − 1) = '
-         '15 + 0 = 15 ✓ — đúng bằng số hạng đầu. Một công thức tốt phải đúng ngay ở '
-         'chỗ dễ nhất; thử n = 1 là cách soi nhanh nhất xem mình có nhớ nhầm dấu trừ '
-         'không.',
-         'MẸO NGƯỜI GIẢI: viết công thức ra lề rồi khoanh tròn chữ (n − 1). Mỗi lần '
-         'thay số, tính (n − 1) TRƯỚC, xong mới nhân.'],
-        ['LẮP: con dán lên chân cầu thang một tấm bảng nhỏ: "Bậc thứ n cao 15 × (n − 1) '
-         '+ 15 cm". Bác bảo vệ hỏi bậc nào cũng đáp được ngay, không cần leo thử.',
-         'SOI: soi chéo bằng đường khác — 20 bậc, mỗi bậc 15 cm, nhưng bậc đầu tiên '
-         'đã cao sẵn 15 cm và còn 19 lần leo nữa: 15 × 20 = 300 cm. Hai con đường '
-         'cùng ra 300 ✓.',
-         'DÙNG NGOÀI ĐỜI: tiền tiết kiệm mỗi tuần bỏ thêm một khoản bằng nhau, số ghế '
-         'đầu mỗi hàng trong rạp, cột cây số trên quốc lộ — hỏi "cái thứ n" là dùng '
-         'đúng công thức này.'],
-        ['Đề bài: Tìm số hạng thứ 20 của dãy 3 ; 7 ; 11 ; 15 ; ...',
-         'Tóm tắt',
-         'Dãy cách đều, số đầu 3, khoảng cách 4, cần tìm số hạng thứ 20.',
-         'Kiểm khoảng cách trước: 7 − 3 = 4 ; 11 − 7 = 4 ; 15 − 11 = 4 ✓.',
-         'Mô hình (đếm bước nhảy)',
-         'Từ vị trí 1 đến vị trí 20 có 20 − 1 = 19 bước nhảy.',
-         'Mỗi bước cộng thêm 4, nên tất cả cộng thêm 4 × 19 = 76.',
+        '',
+        [],
+        ['Đếm được số lần cộng thêm từ chỗ này tới chỗ kia.',
+         'Tìm được số hạng ở chỗ xa mà không phải viết cả dãy.',
+         'Giải thích được vì sao số lần cộng ít hơn số chỗ đúng một.'],
+        [],
+        [],
+        [],
+        ['Đề bài: Cho dãy 5 ; 10 ; 15 ; 20 ; 25 ; ... Tìm số hạng thứ 10.',
+         'Tìm khoảng cách',
+         'Lấy số sau trừ số trước: 10 − 5 = 5.',
+         'Khoảng cách là 5.',
+         'Đếm số lần cộng thêm',
+         'Từ chỗ thứ nhất đến chỗ thứ 10 phải cộng thêm 10 − 1 = 9 lần.',
+         'Chỗ thứ nhất đã có sẵn, không phải cộng lần nào.',
          'Tính',
-         'Số hạng thứ 20 = 3 + 4 × (20 − 1) = 3 + 4 × 19 = 3 + 76 = 79.',
-         'Soi lại: thay n = 1 → 3 + 4 × 0 = 3 ✓ đúng số đầu.',
-         'Đáp số: số hạng thứ 20 là 79.'],
-        ['Cô hỏi số hạng thứ 20 của dãy 3 ; 7 ; 11 ; ..., Trí Long bấm máy: '
-         '"Khoảng cách 4, vị trí 20, vậy lấy 3 + 4 × 20 = 83 ạ!"',
-         'Gợi ý 1: Con thử công thức của Trí Long với vị trí thứ NHẤT xem: 3 + 4 × 1 '
-         '= 7. Nhưng số hạng thứ nhất rõ ràng là 3 mà?',
-         'Gợi ý 2: Từ chỗ thứ nhất đến chỗ thứ 20, con nhảy 20 bước hay 19 bước? Vẽ '
-         'bốn chỗ ra mà đếm thử.',
-         'Chữa: phải nhân với (20 − 1) = 19, không nhân với 20. Số hạng thứ 20 = '
-         '3 + 4 × 19 = 79. Nhớ: ĐẾM BƯỚC NHẢY, KHÔNG ĐẾM CHỖ.'],
-        ['Đứng ở chân cầu thang nhà mình, cho con đo chiều cao một bậc rồi hỏi: "Bậc '
-         'thứ 8 cao bao nhiêu?" — bắt con tính trước, rồi cùng đo lại để kiểm.',
-         'Mẹo kiểm nhanh cho bố mẹ: bảo con thay n = 1 vào công thức con vừa viết. Ra '
-         'đúng số đầu thì công thức đúng; ra số khác là con nhớ nhầm dấu trừ.'],
+         'Số hạng thứ 10 = 5 + 5 × 9 = 5 + 45 = 50.',
+         'Thử lại: thay số 1 vào thì được 5 + 5 × 0 = 5, đúng bằng số đầu.',
+         'Đáp số: số hạng thứ 10 là 50.'],
+        ['Có bạn tính số hạng thứ 10 của dãy 5 ; 10 ; 15 ; ... như sau: 5 + 5 × 10 = 55.',
+         'Gợi ý 1: Con thử cách ấy với chỗ thứ nhất xem: 5 + 5 × 1 = 10. Nhưng số '
+         'hạng thứ nhất rõ ràng là 5 mà?',
+         'Gợi ý 2: Từ chỗ thứ nhất đến chỗ thứ 10, con cộng thêm 10 lần hay 9 lần? '
+         'Vẽ bốn chỗ ra giấy mà đếm thử.',
+         'Chữa: phải nhân với 9, không nhân với 10. Số hạng thứ 10 = 5 + 5 × 9 = 50.'],
+        ['Đếm bậc cầu thang nhà mình, đo chiều cao một bậc, rồi hỏi con bậc thứ 8 '
+         'cao bao nhiêu. Tính trước rồi cùng đo lại để kiểm.',
+         'Mẹo kiểm nhanh: bảo con thay số 1 vào cách tính vừa viết. Ra đúng số đầu '
+         'thì đúng; ra số khác là con quên trừ một.'],
     ),
+    # Bám đúng nấc video: đếm số lần cộng thêm → vì sao ít hơn một → cách tính →
+    # thử ở chỗ xa. Ba câu đầu dùng chính dãy trong video.
     [
-        lt(1, 1, 'Dãy 5 ; 10 ; 15 ; ... có khoảng cách bằng mấy? Từ vị trí 1 đến vị trí '
-                 '10 có bao nhiêu bước nhảy?',
-           'Khoảng cách 5; từ vị trí 1 đến vị trí 10 có 10 − 1 = 9 bước nhảy.'),
-        lt(2, 1, 'Tìm số hạng thứ 10 của dãy 5 ; 10 ; 15 ; ...',
-           '5 + 5 × (10 − 1) = 5 + 45 = 50.'),
-        lt(3, 1, 'Tìm số hạng thứ 8 của dãy 2 ; 6 ; 10 ; ...',
-           '2 + 4 × (8 − 1) = 2 + 28 = 30.'),
-        lt(4, 2, 'Tìm số hạng thứ 20 của dãy 3 ; 7 ; 11 ; ...',
-           '3 + 4 × (20 − 1) = 3 + 76 = 79.'),
-        lt(5, 2, 'Tìm số hạng thứ 15 của dãy 1 ; 9 ; 17 ; 25 ; ...',
-           '1 + 8 × (15 − 1) = 1 + 112 = 113.'),
-        lt(6, 2, 'Một dãy cách đều có số đầu 6, khoảng cách 7. Số hạng thứ 12 là số nào?',
-           '6 + 7 × (12 − 1) = 6 + 77 = 83.'),
-        lt(7, 2, 'Bậc thứ nhất của cầu thang cao 15 cm, mỗi bậc cao thêm 15 cm. Bậc '
-                 'thứ 20 cao bao nhiêu xăng-ti-mét?',
-           '15 + 15 × (20 − 1) = 15 + 285 = 300 (cm).'),
-        lt(8, 3, 'Dãy 4 ; 11 ; 18 ; ... Tìm số hạng thứ 30, rồi thử lại công thức với '
-                 'n = 1 xem có ra đúng số đầu không.',
-           'Số hạng thứ 30 = 4 + 7 × 29 = 4 + 203 = 207. Thử n = 1: 4 + 7 × 0 = 4 ✓ '
-           'đúng bằng số đầu.'),
+        lt(1, 1, 'Cho dãy 5 ; 10 ; 15 ; 20 ; 25 — dãy trong video. Từ chỗ thứ nhất '
+                 'đến chỗ thứ tư phải cộng thêm mấy lần?',
+           'Đếm: từ chỗ 1 sang chỗ 2, sang chỗ 3, sang chỗ 4 — cộng thêm 3 lần, '
+           'không phải 4 lần.'),
+        lt(2, 1, 'Vẫn dãy 5 ; 10 ; 15 ; 20 ; 25. Khoảng cách bằng bao nhiêu, và số '
+                 'hạng thứ tư bằng bao nhiêu?',
+           'Khoảng cách 5. Số hạng thứ tư = 5 + 5 × 3 = 20.'),
+        lt(3, 1, 'Vẫn dãy 5 ; 10 ; 15 ; ... Số hạng thứ 6 bằng bao nhiêu?',
+           '5 + 5 × 5 = 30.'),
+        lt(4, 2, 'Cho dãy 5 ; 10 ; 15 ; ... Số hạng thứ 10 bằng bao nhiêu?',
+           '5 + 5 × 9 = 50.'),
+        lt(5, 2, 'Cho dãy 3 ; 7 ; 11 ; ... Số hạng thứ 8 bằng bao nhiêu?',
+           'Khoảng cách 4. Số hạng thứ 8 = 3 + 4 × 7 = 31.'),
+        lt(6, 2, 'Một dãy cách đều có số đầu 2, khoảng cách 4. Số hạng thứ 12 bằng '
+                 'bao nhiêu?',
+           '2 + 4 × 11 = 46.'),
+        lt(7, 2, 'Thay số 1 vào cách tính số hạng thứ n của dãy 5 ; 10 ; 15 ; ... thì '
+                 'được bao nhiêu?',
+           '5 + 5 × 0 = 5, đúng bằng số đầu. Đây là cách kiểm nhanh xem mình có quên '
+           'trừ một không.'),
+        lt(8, 3, 'Cho dãy 5 ; 10 ; 15 ; ... Số hạng thứ 100 bằng bao nhiêu? Đây chính '
+                 'là câu hỏi mở đầu video.',
+           '5 + 5 × 99 = 5 + 495 = 500.'),
         lt(9, 3, 'Số hạng thứ 6 của một dãy cách đều là 32, khoảng cách của dãy là 5. '
-                 'Hỏi số hạng ĐẦU của dãy là số nào?',
-           'Từ vị trí 1 đến vị trí 6 có 5 bước nhảy, cộng thêm 5 × 5 = 25. Vậy số đầu '
-           '= 32 − 25 = 7.'),
-        q_tf(1, 'Số hạng thứ n của dãy cách đều bằng số đầu + khoảng cách × (n − 1).',
+                 'Số hạng đầu của dãy bằng bao nhiêu?',
+           'Từ chỗ 1 đến chỗ 6 cộng thêm 5 lần, tức là thêm 5 × 5 = 25. '
+           'Số đầu = 32 − 25 = 7.'),
+        q_tf(1, 'Từ chỗ thứ nhất đến chỗ thứ 10 phải cộng thêm 10 lần.', False,
+             'SAI — chỉ cộng thêm 9 lần, vì chỗ thứ nhất đã có sẵn.'),
+        q_tf(2, 'Muốn tìm số hạng thứ n, ta lấy số đầu cộng khoảng cách nhân với n trừ 1.',
              True, 'Đáp án: ĐÚNG'),
-        q_tf(2, 'Từ vị trí thứ nhất đến vị trí thứ 10 có 10 bước nhảy.', False,
-             'SAI — chỉ có 9 bước nhảy, vì vị trí thứ nhất đã đứng sẵn ở đó.'),
         q_mcq(3, 'Số hạng thứ 12 của dãy 2 ; 5 ; 8 ; ... là:',
-              ['A. 35', 'B. 38', 'C. 32'], 'A. 35', '2 + 3 × (12 − 1) = 2 + 33 = 35.'),
-        q_mcq(4, 'Thay n = 1 vào công thức số hạng thứ n, kết quả phải bằng:',
+              ['A. 35', 'B. 38', 'C. 32'], 'A. 35', '2 + 3 × 11 = 35.'),
+        q_mcq(4, 'Thay số 1 vào cách tính số hạng thứ n, kết quả phải bằng:',
               ['A. số đầu của dãy', 'B. khoảng cách', 'C. số 1'], 'A. số đầu của dãy',
-              'Vì (1 − 1) = 0 nên không cộng thêm bước nào — ra đúng số đầu.'),
-        q_mcq(5, 'Dãy 1 ; 9 ; 17 ; 25 ; ... có số hạng thứ 15 là:',
-              ['A. 113', 'B. 120', 'C. 105'], 'A. 113', '1 + 8 × 14 = 1 + 112 = 113.'),
+              'Vì cộng thêm 0 lần nên ra đúng số đầu.'),
+        q_mcq(5, 'Dãy 5 ; 10 ; 15 ; ... có số hạng thứ 10 là:',
+              ['A. 50', 'B. 55', 'C. 45'], 'A. 50', '5 + 5 × 9 = 50.'),
     ],
 )
 
@@ -374,105 +345,78 @@ B15 = bai(
     'và số cuối, đếm xem cả dãy có bao nhiêu số hạng. Công thức lần này CỘNG 1, '
     'trong khi bài trước TRỪ 1 — hai dấu ngược nhau, và cả hai đều có lý do.',
     LUI_TOA,
+    # ⚠ VIDEO THAY CẢ MỞ BÀI LẪN BÀI GIẢNG — bốn mục ②③④⑤ để RỖNG.
+    # Cùng khuôn đã chốt ở Bài 13. Giữ ⑥ bài mẫu và ⑦ chỗ hay nhầm, nhưng viết
+    # theo đúng đường video đi, và KHÔNG nhân vật nào.
     dung_muc(
-        'Hàng rào nhà bác Tư',
-        ['Bác Tư đóng một hàng rào thẳng dài 40 mét, cứ 5 mét cắm một cây cột, cột '
-         'đầu tiên cắm ngay đầu hàng rào và cột cuối cùng cắm ngay cuối.',
-         'Bác nhẩm: "40 chia 5 bằng 8, vậy mua 8 cây cột là đủ."',
-         'Cắm xong bác đếm lại thì thiếu mất một cây. Bác thiếu ở đâu?'],
-        ['Hiểu vì sao đếm số hạng thì phải CỘNG 1, trong khi tìm số hạng thứ n lại TRỪ 1.',
-         'Dùng được công thức: số số hạng = (số cuối − số đầu) : khoảng cách + 1.',
-         'Biết soi lại kết quả bằng cách đếm tay trên một dãy ngắn.'],
-        ['CHO GÌ? hàng rào dài 40 m, mỗi 5 m một cột, cắm cả hai đầu.',
-         'HỎI GÌ? cần bao nhiêu cây cột.',
-         'ĐẠI LƯỢNG & ĐƠN VỊ: chiều dài tính bằng mét, còn cột đếm bằng cây — hai thứ '
-         'khác nhau, chớ lẫn.',
-         'QUAN HỆ GIỮA CHÚNG: vị trí các cột tạo thành dãy cách đều 0 ; 5 ; 10 ; ... ; 40, '
-         'khoảng cách 5. Số cột chính là SỐ SỐ HẠNG của dãy ấy.',
-         'CHỌN CÔNG CỤ: công thức ĐẾM SỐ SỐ HẠNG. Đây là công thức duy nhất của bài này.',
-         'ƯỚC LƯỢNG TRƯỚC: 8 khoảng thì cột phải nhiều hơn 8 một chút — bác Tư hụt '
-         'đúng chỗ đó.'],
-        ['Bước 1 — CỘT VÀ KHOẢNG LÀ HAI THỨ KHÁC NHAU. Vẽ một hàng rào ngắn ra giấy: '
-         '3 cây cột thì có mấy khoảng ở giữa? Đếm mà xem — chỉ 2 khoảng. 4 cột thì 3 '
-         'khoảng. Số KHOẢNG luôn ít hơn số CỘT đúng 1, vì hai đầu đều là cột.',
-         'Bước 2 — PHÉP CHIA CHO RA SỐ KHOẢNG, KHÔNG PHẢI SỐ CỘT. Bác Tư lấy 40 : 5 = 8 '
-         '— con số 8 ấy là số KHOẢNG, đúng chứ không sai. Bác chỉ quên mất rằng còn '
-         'phải thêm một cây cột cho cái đầu hàng rào. Vậy số cột = 8 + 1 = 9 cây.',
-         'Bước 3 — GHÉP THÀNH CÔNG THỨC. Với một dãy cách đều: (số cuối − số đầu) cho '
-         'ra "cả quãng đường", chia cho khoảng cách thì ra SỐ BƯỚC NHẢY, rồi cộng 1 để '
-         'đếm cả số hạng đầu tiên. Vậy: số số hạng = (số cuối − số đầu) : khoảng cách + 1.',
-         'Bước 4 — GIẢI BÀI HÀNG RÀO. Dãy vị trí cột: 0 ; 5 ; 10 ; ... ; 40. Số cột = '
-         '(40 − 0) : 5 + 1 = 8 + 1 = 9 cây ✓.',
-         'Bước 5 — VÌ SAO BÀI TRƯỚC TRỪ 1 MÀ BÀI NÀY CỘNG 1. Hai câu hỏi ngược nhau '
-         'nên hai phép ngược nhau. Bài trước: biết SỐ CHỖ, tìm SỐ BƯỚC → bớt đi 1. Bài '
-         'này: biết SỐ BƯỚC, tìm SỐ CHỖ → thêm vào 1. Nhớ một câu là đủ: CHỖ nhiều '
-         'hơn BƯỚC đúng một.',
-         'MẸO NGƯỜI GIẢI: tính xong luôn thử lại trên một dãy NGẮN mà đếm tay được. '
-         'Dãy 2 ; 4 ; 6 ; 8 : công thức cho (8 − 2) : 2 + 1 = 4 ✓ — đếm tay cũng 4.'],
-        ['LẮP: bác Tư mua thêm một cây cột nữa là vừa khít. Bác ghi vào sổ: "Cắm cả '
-         'hai đầu thì SỐ CỘT = SỐ KHOẢNG + 1."',
-         'SOI: soi lại bằng cách đếm tay đoạn ngắn — hàng rào 10 m, mỗi 5 m một cột: '
-         'cột ở 0, ở 5, ở 10 → 3 cây. Công thức: (10 − 0) : 5 + 1 = 2 + 1 = 3 ✓.',
-         'DÙNG NGOÀI ĐỜI: trồng cây hai bên đường, treo đèn lồng dọc hành lang, đếm '
-         'số trang từ trang 20 đến trang 80 — chỗ nào cũng phải nhớ cộng 1.'],
-        ['Đề bài: Dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng?',
-         'Tóm tắt',
-         'Dãy cách đều, số đầu 2, số cuối 100, khoảng cách 2.',
-         'Kiểm khoảng cách: 4 − 2 = 2 ; 6 − 4 = 2 ✓.',
-         'Mô hình (bước nhảy rồi cộng chỗ đầu)',
-         'Cả quãng: 100 − 2 = 98.',
-         'Số bước nhảy: 98 : 2 = 49.',
-         'Cộng thêm chính số hạng đầu: 49 + 1 = 50.',
-         'Tính',
-         'Số số hạng = (100 − 2) : 2 + 1 = 49 + 1 = 50 số hạng.',
-         'Soi lại trên dãy ngắn cùng kiểu: 2 ; 4 ; 6 ; 8 → (8 − 2) : 2 + 1 = 4 ✓ đếm tay cũng 4.',
-         'Đáp số: dãy có 50 số hạng.'],
-        ['Cô hỏi dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng, Trí Long đáp: '
-         '"Lấy 100 : 2 = 50… à không, lấy (100 − 2) : 2 = 49 số hạng ạ!"',
-         'Gợi ý 1: Con thử công thức của Trí Long trên dãy ngắn 2 ; 4 ; 6 ; 8 xem: '
-         '(8 − 2) : 2 = 3. Nhưng đếm tay thì rõ ràng có 4 số hạng mà?',
-         'Gợi ý 2: Phép chia ấy cho ra số BƯỚC NHẢY. Còn thiếu chính chỗ đứng đầu tiên '
-         '— con đã đếm nó chưa?',
-         'Chữa: phải cộng thêm 1. Số số hạng = (100 − 2) : 2 + 1 = 50.'],
-        ['Cùng con đếm số bậc cầu thang trong nhà rồi đếm số "lần bước" từ dưới lên — '
-         'cho con tự thấy hai con số lệch nhau đúng 1.',
-         'Bài đố vui: từ trang 20 đến trang 80 của quyển truyện có bao nhiêu trang? '
-         '(Đáp: 61 trang, không phải 60 — vì tính cả trang 20.)'],
+        '',
+        [],
+        ['Đếm được số số hạng của một dãy mà không phải viết cả dãy.',
+         'Biết phép chia cho ra số lần cộng thêm, chưa phải số số hạng.',
+         'Giải thích được vì sao phải cộng thêm một.'],
+        [],
+        [],
+        [],
+        ['Đề bài: Dãy 5 ; 10 ; 15 ; ... ; 100 có bao nhiêu số hạng?',
+         'Tìm khoảng cách',
+         'Lấy số sau trừ số trước: 10 − 5 = 5.',
+         'Khoảng cách là 5.',
+         'Lấy số cuối trừ số đầu',
+         '100 − 5 = 95.',
+         'Chia cho khoảng cách',
+         '95 : 5 = 19. Đây là số lần cộng thêm, chưa phải số số hạng.',
+         'Cộng thêm một cho chỗ đầu tiên',
+         '19 + 1 = 20 số hạng.',
+         'Soi lại trên dãy ngắn: 5 ; 10 ; 15 có (15 − 5) : 5 + 1 = 3, đếm tay cũng 3.',
+         'Đáp số: dãy có 20 số hạng.'],
+        ['Có bạn đếm dãy 5 ; 10 ; 15 ; ... ; 100 rồi nói: "(100 − 5) : 5 = 19 số hạng."',
+         'Gợi ý 1: Con thử cách ấy trên dãy ngắn 5 ; 10 ; 15 xem: (15 − 5) : 5 = 2. '
+         'Nhưng đếm tay thì rõ ràng có 3 số hạng mà?',
+         'Gợi ý 2: Phép chia cho ra số lần cộng thêm. Con đã đếm chỗ đứng đầu tiên '
+         'chưa?',
+         'Chữa: phải cộng thêm một. Dãy có 19 + 1 = 20 số hạng.'],
+        ['Đếm số bậc cầu thang rồi đếm số lần bước từ dưới lên — cho con tự thấy hai '
+         'con số lệch nhau đúng một.',
+         'Đố vui: từ trang 20 đến trang 80 có bao nhiêu trang? Đáp là 61, không phải '
+         '60, vì tính cả trang 20.'],
     ),
+    # Bám đúng nấc video: cuối trừ đầu → chia khoảng cách → đó là số lần cộng →
+    # cộng thêm một cho chỗ đầu tiên.
     [
-        lt(1, 1, 'Một hàng rào có 5 cây cột cắm cách đều. Hỏi giữa các cột có bao nhiêu khoảng?',
-           '5 cột thì có 4 khoảng — số khoảng ít hơn số cột đúng 1.'),
-        lt(2, 1, 'Dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng?',
-           '(100 − 2) : 2 + 1 = 49 + 1 = 50 số hạng.'),
-        lt(3, 1, 'Dãy 5 ; 10 ; 15 ; ... ; 100 có bao nhiêu số hạng?',
+        lt(1, 1, 'Cho dãy 5 ; 10 ; 15 ; 20 ; 25 — dãy trong video. Lấy số cuối trừ '
+                 'số đầu được bao nhiêu?',
+           '25 − 5 = 20.'),
+        lt(2, 1, 'Lấy 20 vừa tìm được chia cho khoảng cách 5 thì được bao nhiêu?',
+           '20 : 5 = 4. Đây là số lần cộng thêm, chưa phải số số hạng.'),
+        lt(3, 1, 'Vậy dãy 5 ; 10 ; 15 ; 20 ; 25 có bao nhiêu số hạng?',
+           '4 + 1 = 5 số hạng. Đếm tay cũng ra 5.'),
+        lt(4, 2, 'Dãy 5 ; 10 ; 15 ; ... ; 100 có bao nhiêu số hạng?',
            '(100 − 5) : 5 + 1 = 19 + 1 = 20 số hạng.'),
-        lt(4, 2, 'Dãy 3 ; 7 ; 11 ; ... ; 79 có bao nhiêu số hạng?',
+        lt(5, 2, 'Dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng?',
+           '(100 − 2) : 2 + 1 = 49 + 1 = 50 số hạng.'),
+        lt(6, 2, 'Dãy 3 ; 7 ; 11 ; ... ; 79 có bao nhiêu số hạng?',
            '(79 − 3) : 4 + 1 = 19 + 1 = 20 số hạng.'),
-        lt(5, 2, 'Hàng rào thẳng dài 40 m, cứ 5 m cắm một cột, cắm cả hai đầu. Cần bao '
-                 'nhiêu cây cột?',
-           '(40 − 0) : 5 + 1 = 8 + 1 = 9 cây cột.'),
-        lt(6, 2, 'Từ trang 20 đến trang 80 của một quyển truyện có bao nhiêu trang?',
-           '(80 − 20) : 1 + 1 = 60 + 1 = 61 trang. Nhớ tính cả trang 20.'),
-        lt(7, 2, 'Dãy 1 ; 9 ; 17 ; ... ; 113 có bao nhiêu số hạng?',
-           '(113 − 1) : 8 + 1 = 14 + 1 = 15 số hạng.'),
+        lt(7, 2, 'Một dãy phải cộng thêm 8 lần mới đi từ số đầu tới số cuối. Dãy ấy '
+                 'có bao nhiêu số hạng?',
+           '8 + 1 = 9 số hạng. Số chỗ luôn nhiều hơn số lần cộng đúng một.'),
         lt(8, 3, 'Dãy 4 ; 9 ; 14 ; ... ; 99 có bao nhiêu số hạng? Hãy soi lại kết quả '
-                 'bằng cách đếm tay trên một dãy ngắn cùng kiểu.',
+                 'trên một dãy ngắn cùng kiểu.',
            '(99 − 4) : 5 + 1 = 19 + 1 = 20 số hạng. Soi trên dãy ngắn 4 ; 9 ; 14 : '
-           '(14 − 4) : 5 + 1 = 3 ✓ đếm tay cũng 3.'),
-        lt(9, 3, 'Một dãy cách đều có 25 số hạng, số đầu là 6, khoảng cách là 4. Hỏi '
-                 'số hạng CUỐI của dãy là số nào?',
-           '25 số hạng thì có 24 bước nhảy: 6 + 4 × 24 = 6 + 96 = 102.'),
-        q_tf(1, 'Số số hạng của dãy cách đều bằng (số cuối − số đầu) : khoảng cách + 1.',
+           '(14 − 4) : 5 + 1 = 3, đếm tay cũng 3.'),
+        lt(9, 3, 'Một dãy cách đều có 25 số hạng, số đầu là 6, khoảng cách là 4. Số '
+                 'hạng cuối bằng bao nhiêu?',
+           '25 số hạng thì cộng thêm 24 lần: 6 + 4 × 24 = 6 + 96 = 102.'),
+        q_tf(1, 'Số số hạng bằng số cuối trừ số đầu, chia cho khoảng cách, rồi cộng 1.',
              True, 'Đáp án: ĐÚNG'),
-        q_tf(2, 'Một hàng rào có 10 khoảng thì có 10 cây cột.', False,
-             'SAI — cắm cả hai đầu thì có 11 cây cột.'),
+        q_tf(2, 'Một dãy phải cộng thêm 10 lần thì có 10 số hạng.', False,
+             'SAI — có 11 số hạng, vì còn chỗ đứng đầu tiên.'),
         q_mcq(3, 'Dãy 5 ; 10 ; 15 ; ... ; 100 có số số hạng là:',
-              ['A. 20', 'B. 19', 'C. 21'], 'A. 20', '(100 − 5) : 5 + 1 = 19 + 1 = 20.'),
-        q_mcq(4, 'Phép chia (số cuối − số đầu) : khoảng cách cho ra:',
-              ['A. số bước nhảy', 'B. số số hạng', 'C. số hạng cuối'], 'A. số bước nhảy',
-              'Muốn ra số số hạng thì phải cộng thêm 1.'),
-        q_mcq(5, 'Từ trang 20 đến trang 80 có số trang là:',
-              ['A. 61', 'B. 60', 'C. 59'], 'A. 61', '(80 − 20) + 1 = 61, vì tính cả trang 20.'),
+              ['A. 20', 'B. 19', 'C. 21'], 'A. 20', '(100 − 5) : 5 + 1 = 20.'),
+        q_mcq(4, 'Phép chia số cuối trừ số đầu cho khoảng cách cho ra:',
+              ['A. số lần cộng thêm', 'B. số số hạng', 'C. số hạng cuối'],
+              'A. số lần cộng thêm', 'Muốn ra số số hạng thì phải cộng thêm một.'),
+        q_mcq(5, 'Dãy 2 ; 4 ; 6 ; ... ; 100 có số số hạng là:',
+              ['A. 50', 'B. 49', 'C. 51'], 'A. 50', '(100 − 2) : 2 + 1 = 50.'),
     ],
 )
 
@@ -481,114 +425,80 @@ B15 = bai(
 # B16 · TỔNG DÃY CÁCH ĐỀU
 # ═══════════════════════════════════════════════════════════════════════════
 B16 = bai(
-    16, 'TỔNG DÃY CÁCH ĐỀU — CÁCH GHÉP CẶP CỦA GAUSS',
+    16, 'TỔNG DÃY CÁCH ĐỀU — GHÉP ĐẦU VỚI CUỐI',
     'Dạng gốc: SỐ 5.1d mức Lớp 4 — Công thức tổng = (số đầu + số cuối) × số số hạng : 2.',
     'Con đã biết tìm số hạng thứ n (Bài 14) và đếm số số hạng (Bài 15). Hôm nay dùng '
     'cả hai để làm một việc trông rất nặng: cộng cả trăm số trong một dòng. Có một '
     'cậu bé 10 tuổi từng làm việc ấy trong vài giây — và cách của cậu ấy chỉ là ghép cặp.',
     LUI_TOA,
+    # ⚠ VIDEO THAY CẢ MỞ BÀI LẪN BÀI GIẢNG — bốn mục ②③④⑤ để RỖNG.
+    # Cùng khuôn đã chốt ở Bài 13. Giữ ⑥ bài mẫu và ⑦ chỗ hay nhầm, nhưng viết
+    # theo đúng đường video đi, và KHÔNG nhân vật nào.
     dung_muc(
-        'Cậu bé Gauss và bài phạt của thầy giáo',
-        ['Chuyện kể hơn hai trăm năm trước: một thầy giáo muốn cả lớp ngồi yên, bèn ra '
-         'bài "cộng tất cả các số từ 1 đến 100".',
-         'Cả lớp cắm cúi cộng. Riêng cậu bé Gauss đặt bút xuống sau vài giây và nói: '
-         '"Thưa thầy, 5 050 ạ."',
-         'Cậu không cộng nhanh hơn ai cả. Cậu chỉ nhìn ra một chuyện mà cả lớp không nhìn ra.'],
-        ['Hiểu vì sao ghép số đầu với số cuối thì cặp nào cũng có tổng bằng nhau.',
-         'Dùng được công thức: tổng = (số đầu + số cuối) × số số hạng : 2.',
-         'Giải thích được vì sao công thức phải CHIA 2.'],
-        ['CHO GÌ? dãy 1 ; 2 ; 3 ; ... ; 100 — dãy cách đều, khoảng cách 1.',
-         'HỎI GÌ? tổng của cả dãy.',
-         'ĐẠI LƯỢNG & ĐƠN VỊ: ở đây chỉ có số thuần, không kèm đơn vị nào.',
-         'QUAN HỆ GIỮA CHÚNG: dãy cách đều nên đầu với cuối, số thứ hai với số áp '
-         'chót… ghép lại đều cho cùng một tổng.',
-         'CHỌN CÔNG CỤ: công thức TỔNG DÃY CÁCH ĐỀU. Cần biết SỐ SỐ HẠNG trước, nên '
-         'công thức của Bài 15 là bạn đồng hành.',
-         'ƯỚC LƯỢNG TRƯỚC: 100 số, số giữa quãng 50, nên tổng chắc quanh 5 000.'],
-        ['Bước 1 — GAUSS NHÌN RA GÌ. Cậu viết dãy hai lần, lần sau viết ngược: hàng '
-         'trên 1 ; 2 ; 3 ; ... ; 100, hàng dưới 100 ; 99 ; 98 ; ... ; 1. Rồi cộng '
-         'theo cột: 1 + 100 = 101 ; 2 + 99 = 101 ; 3 + 98 = 101 … cột nào cũng đúng '
-         '101!',
-         'Bước 2 — VÌ SAO CỘT NÀO CŨNG BẰNG NHAU. Vì mỗi bước sang phải thì hàng trên '
-         'TĂNG một khoảng, còn hàng dưới GIẢM đúng một khoảng ấy. Tăng bao nhiêu thì '
-         'giảm bấy nhiêu, nên tổng của cột không đổi. Điều này CHỈ đúng với dãy cách '
-         'đều — dãy không cách đều thì mẹo này hỏng.',
-         'Bước 3 — VÌ SAO PHẢI CHIA 2. Có 100 cột, mỗi cột 101, nên tất cả bằng 101 × '
-         '100 = 10 100. Nhưng con vừa cộng dãy HAI LẦN (một lần xuôi, một lần ngược), '
-         'nên phải chia đôi: 10 100 : 2 = 5 050. Đó chính là con số Gauss nói.',
-         'Bước 4 — GHÉP THÀNH CÔNG THỨC. Tổng = (số đầu + số cuối) × số số hạng : 2. '
-         'Đọc thành lời cho dễ nhớ: "đầu cộng cuối, nhân số số hạng, chia đôi".',
-         'Bước 5 — DÙNG VỚI DÃY KHÁC. Tính 5 + 10 + 15 + ... + 100. Trước hết đếm số '
-         'số hạng bằng công thức Bài 15: (100 − 5) : 5 + 1 = 20. Rồi tính tổng: '
-         '(5 + 100) × 20 : 2 = 105 × 20 : 2 = 2 100 : 2 = 1 050.',
-         'MẸO NGƯỜI GIẢI: bao giờ cũng làm hai việc theo thứ tự — (1) ĐẾM số số hạng '
-         'trước; (2) mới ghép đầu cộng cuối. Quên bước 1 là không có gì để nhân.'],
-        ['LẮP: từ hôm ấy cả lớp học được một mẹo: gặp dãy dài mà cách đều thì đừng '
-         'cộng lần lượt, hãy ghép cặp. Việc nửa tiếng rút xuống nửa phút.',
-         'SOI: soi trên dãy ngắn đếm tay được — 1 + 2 + 3 + 4 = 10. Công thức: '
-         '(1 + 4) × 4 : 2 = 5 × 4 : 2 = 10 ✓.',
-         'DÙNG NGOÀI ĐỜI: cộng tiền tiết kiệm tăng đều mỗi tuần, đếm tổng số ghế khi '
-         'mỗi hàng thêm đúng một ghế, cộng số bậc thang của nhiều tầng.'],
-        ['Đề bài: Tính tổng 5 + 10 + 15 + ... + 100.',
-         'Tóm tắt',
-         'Dãy cách đều, số đầu 5, số cuối 100, khoảng cách 5.',
-         'Gọi tên "dãy cách đều, khoảng cách 5" — nhận diện xong nửa bài.',
-         'Bước 1 — đếm số số hạng (dùng công thức Bài 15)',
-         '(100 − 5) : 5 + 1 = 19 + 1 = 20 số hạng.',
-         'Bước 2 — ghép cặp Gauss',
-         '5 + 100 = 105 ; 10 + 95 = 105 ; 15 + 90 = 105 ...',
-         'Cặp nào cũng có tổng bằng đầu + cuối.',
+        '',
+        [],
+        ['Ghép số đầu với số cuối và thấy cặp nào cũng có tổng bằng nhau.',
+         'Tính được tổng của một dãy cách đều mà không cộng lần lượt.',
+         'Giải thích được vì sao phải chia đôi.'],
+        [],
+        [],
+        [],
+        ['Đề bài: Tính tổng 5 + 10 + 15 + 20 + 25.',
+         'Ghép đầu với cuối',
+         '5 + 25 = 30 ; 10 + 20 = 30.',
+         'Cặp nào cũng bằng 30, đúng bằng số đầu cộng số cuối.',
+         'Đếm số số hạng',
+         'Dãy có 5 số hạng.',
          'Tính',
-         'Tổng = (5 + 100) × 20 : 2 = 105 × 20 : 2 = 2 100 : 2 = 1 050.',
-         'Soi lại trên dãy ngắn cùng kiểu: 5 + 10 + 15 = 30, công thức cho '
-         '(5 + 15) × 3 : 2 = 30 ✓.',
-         'Đáp số: tổng bằng 1 050.'],
-        ['Cô cho tính 1 + 2 + 3 + ... + 10, Trí Long viết: "(1 + 10) × 10 = 110 ạ!"',
-         'Gợi ý 1: Con thử cộng tay dãy ngắn 1 + 2 + 3 + 4 xem được bao nhiêu? Rồi '
-         'thử công thức của Trí Long: (1 + 4) × 4 = 20. Hai kết quả có khớp không?',
-         'Gợi ý 2: Khi ghép cặp, con đã viết dãy MẤY LẦN? Cộng hai lần thì phải làm '
-         'gì với kết quả?',
-         'Chữa: còn thiếu phép chia 2. Tổng = (1 + 10) × 10 : 2 = 55.'],
-        ['Kể con nghe chuyện Gauss 10 tuổi — trẻ con rất thích chuyện một bạn nhỏ '
-         'thắng cả lớp bằng cách NGHĨ chứ không phải bằng cách làm nhanh.',
-         'Bài đố vui: cộng tất cả các số lẻ từ 1 đến 19, rồi so với 10 × 10. Trùng '
-         'nhau — vì sao lại thế? (Gợi ý: 10 số lẻ đầu tiên.)'],
+         'Tổng = 30 × 5 : 2 = 150 : 2 = 75.',
+         'Chia đôi vì khi ghép cặp ta đã cộng mỗi số hai lần.',
+         'Soi lại bằng cách cộng tay: 5 + 10 + 15 + 20 + 25 = 75.',
+         'Đáp số: tổng bằng 75.'],
+        ['Có bạn tính tổng 5 + 10 + 15 + 20 + 25 như sau: (5 + 25) × 5 = 150.',
+         'Gợi ý 1: Con thử cộng tay dãy ngắn 1 + 2 + 3 + 4 xem được bao nhiêu, rồi '
+         'thử cách ấy: (1 + 4) × 4 = 20. Hai kết quả có khớp không?',
+         'Gợi ý 2: Khi ghép cặp, mỗi số được cộng mấy lần? Vậy còn phải làm gì với '
+         'kết quả?',
+         'Chữa: còn thiếu phép chia đôi. Tổng = (5 + 25) × 5 : 2 = 75.'],
+        ['Đố con cộng tất cả các số từ 1 đến 20 trong một phút. Ghép cặp thì làm được, '
+         'cộng lần lượt thì không kịp.',
+         'Bài đố vui: cộng các số lẻ 1 + 3 + 5 + ... + 19 rồi so với 10 × 10. Trùng '
+         'nhau — con thử tìm xem vì sao.'],
     ),
+    # Bám đúng nấc video: ghép đầu với cuối → cặp nào cũng bằng nhau → nhân số số
+    # hạng → chia đôi vì đã cộng hai lần.
     [
-        lt(1, 1, 'Tính tổng: 1 + 2 + 3 + 4 + 5 + 6. Hãy làm hai cách: cộng lần lượt, và '
-                 'ghép cặp đầu với cuối.',
-           'Cộng lần lượt: 21. Ghép cặp: (1 + 6) × 6 : 2 = 7 × 3 = 21 ✓ hai cách cùng '
-           'một kết quả.'),
-        lt(2, 1, 'Tính tổng: 1 + 2 + 3 + ... + 10.',
+        lt(1, 1, 'Cho dãy 5 ; 10 ; 15 ; 20 ; 25 — dãy trong video. Ghép số đầu với '
+                 'số cuối được bao nhiêu?',
+           '5 + 25 = 30.'),
+        lt(2, 1, 'Vẫn dãy ấy. Ghép số thứ hai với số áp chót được bao nhiêu?',
+           '10 + 20 = 30 — bằng đúng cặp đầu với cuối.'),
+        lt(3, 1, 'Dãy 5 ; 10 ; 15 ; 20 ; 25 có 5 số hạng. Tổng của dãy bằng bao nhiêu?',
+           'Tổng = 30 × 5 : 2 = 150 : 2 = 75.'),
+        lt(4, 2, 'Tính tổng 1 + 2 + 3 + ... + 10.',
            '(1 + 10) × 10 : 2 = 110 : 2 = 55.'),
-        lt(3, 1, 'Dãy 2 ; 4 ; 6 ; 8 ; 10 có 5 số hạng. Tính tổng của dãy.',
-           '(2 + 10) × 5 : 2 = 60 : 2 = 30.'),
-        lt(4, 2, 'Tính tổng: 1 + 2 + 3 + ... + 50.',
+        lt(5, 2, 'Tính tổng 1 + 2 + 3 + ... + 50.',
            '(1 + 50) × 50 : 2 = 51 × 25 = 1 275.'),
-        lt(5, 2, 'Tính tổng: 5 + 10 + 15 + ... + 100.',
-           'Số số hạng: (100 − 5) : 5 + 1 = 20. Tổng = (5 + 100) × 20 : 2 = 1 050.'),
-        lt(6, 2, 'Tính tổng: 3 + 6 + 9 + ... + 30.',
-           'Số số hạng: (30 − 3) : 3 + 1 = 10. Tổng = (3 + 30) × 10 : 2 = 165.'),
-        lt(7, 2, 'Tính tổng các số chẵn từ 2 đến 100.',
-           'Số số hạng: (100 − 2) : 2 + 1 = 50. Tổng = (2 + 100) × 50 : 2 = 2 550.'),
-        lt(8, 3, 'Tính tổng 15 số lẻ đầu tiên: 1 + 3 + 5 + ... + 29. Rồi so kết quả với '
-                 '15 × 15 và cho biết con thấy điều gì.',
-           'Tổng = (1 + 29) × 15 : 2 = 225. Mà 15 × 15 = 225 — trùng nhau! Tổng n số '
-           'lẻ đầu tiên luôn bằng n × n.'),
+        lt(6, 2, 'Tính tổng 5 + 10 + 15 + ... + 100.',
+           'Dãy có (100 − 5) : 5 + 1 = 20 số hạng. Tổng = (5 + 100) × 20 : 2 = 1 050.'),
+        lt(7, 2, 'Tính tổng 3 + 6 + 9 + ... + 30.',
+           'Dãy có (30 − 3) : 3 + 1 = 10 số hạng. Tổng = (3 + 30) × 10 : 2 = 165.'),
+        lt(8, 3, 'Tính tổng tất cả các số chẵn từ 2 đến 100.',
+           'Dãy có (100 − 2) : 2 + 1 = 50 số hạng. Tổng = (2 + 100) × 50 : 2 = 2 550.'),
         lt(9, 3, 'Một dãy cách đều có số đầu 4, khoảng cách 6, gồm 12 số hạng. Tính '
                  'tổng của dãy.',
            'Số hạng cuối = 4 + 6 × 11 = 70. Tổng = (4 + 70) × 12 : 2 = 74 × 6 = 444.'),
-        q_tf(1, 'Tổng dãy cách đều bằng (số đầu + số cuối) × số số hạng.', False,
-             'SAI — còn phải chia 2, vì khi ghép cặp ta đã cộng dãy hai lần.'),
-        q_tf(2, 'Mẹo ghép cặp của Gauss chỉ dùng được cho dãy CÁCH ĐỀU.', True,
+        q_tf(1, 'Tổng dãy cách đều bằng số đầu cộng số cuối, nhân với số số hạng.',
+             False, 'SAI — còn phải chia đôi, vì ghép cặp là đã cộng mỗi số hai lần.'),
+        q_tf(2, 'Cách ghép cặp chỉ dùng được cho dãy cách đều.', True,
              'ĐÚNG — dãy không cách đều thì các cặp không còn bằng nhau.'),
         q_mcq(3, 'Tổng 1 + 2 + ... + 10 bằng:', ['A. 55', 'B. 50', 'C. 45'], 'A. 55',
               '(1 + 10) × 10 : 2 = 55.'),
-        q_mcq(4, 'Muốn tính tổng một dãy cách đều, việc phải làm TRƯỚC TIÊN là:',
-              ['A. đếm số số hạng', 'B. cộng đầu với cuối', 'C. chia 2'],
+        q_mcq(4, 'Muốn tính tổng một dãy cách đều, việc phải làm trước tiên là:',
+              ['A. đếm số số hạng', 'B. cộng đầu với cuối', 'C. chia đôi'],
               'A. đếm số số hạng', 'Không biết số số hạng thì không có gì để nhân.'),
-        q_mcq(5, 'Tổng 2 + 4 + 6 + ... + 20 bằng:', ['A. 110', 'B. 100', 'C. 120'],
-              'A. 110', 'Có 10 số hạng; (2 + 20) × 10 : 2 = 110.'),
+        q_mcq(5, 'Tổng 5 + 10 + 15 + 20 + 25 bằng:', ['A. 75', 'B. 150', 'C. 60'],
+              'A. 75', '(5 + 25) × 5 : 2 = 75.'),
     ],
 )
 
@@ -603,112 +513,80 @@ B17 = bai(
     'nay việc ấy trở lại với đúng tên gọi của nó: cho một số bất kỳ, hỏi nó có nằm '
     'trong dãy không — và nếu có thì nó đứng ở chỗ thứ mấy.',
     LUI_GA,
+    # ⚠ VIDEO THAY CẢ MỞ BÀI LẪN BÀI GIẢNG — bốn mục ②③④⑤ để RỖNG.
+    # Cùng khuôn đã chốt ở Bài 13. Giữ ⑥ bài mẫu và ⑦ chỗ hay nhầm, nhưng viết
+    # theo đúng đường video đi, và KHÔNG nhân vật nào.
     dung_muc(
-        'Tấm vé số 113',
-        ['Rạp phim mini của cô Hạnh mỗi hàng đúng 8 ghế, đánh số liền từ 1. Vậy ghế '
-         'ĐẦU của các hàng lần lượt là 1 ; 9 ; 17 ; 25 ; ...',
-         'Một khách cầm vé số 113 hỏi: "Ghế của tôi có phải ghế đầu hàng không cô? '
-         'Tôi muốn ngồi sát lối đi."',
-         'Cô Hạnh không thể viết cả dãy ra để dò. Cô cần một cách soi nhanh.'],
-        ['Kiểm tra được một số có thuộc dãy cách đều hay không, bằng phép chia hết.',
-         'Nếu số ấy thuộc dãy thì tìm được nó đứng ở vị trí thứ mấy.',
-         'Biết rằng còn phải xét số ấy có nằm trong khoảng từ số đầu đến số cuối không.'],
-        ['CHO GÌ? dãy ghế đầu hàng: 1 ; 9 ; 17 ; 25 ; ... — cách đều, số đầu 1, khoảng cách 8.',
-         'HỎI GÌ? số 113 có thuộc dãy không; nếu thuộc thì đứng thứ mấy.',
-         'ĐẠI LƯỢNG & ĐƠN VỊ: số ghế (chiếc) và số thứ tự hàng — hai loại số khác '
-         'nhau, đúng như con đã phân biệt ở Bài 13.',
-         'QUAN HỆ GIỮA CHÚNG: mọi số hạng của dãy đều bằng số đầu cộng một số nguyên '
-         'lần khoảng cách.',
-         'CHỌN CÔNG CỤ: phép CHIA HẾT — dấu hiệu chia hết của Chương 3 quay lại gác '
-         'cổng cho bài này.',
-         'ƯỚC LƯỢNG TRƯỚC: 113 gần 112 = 8 × 14, nên khả năng cao là thuộc dãy.'],
-        ['Bước 1 — MỌI SỐ HẠNG ĐỀU CÁCH SỐ ĐẦU MỘT SỐ NGUYÊN LẦN KHOẢNG CÁCH. Nhìn '
-         'dãy 1 ; 9 ; 17 ; 25: lấy từng số trừ số đầu được 0 ; 8 ; 16 ; 24 — toàn bộ '
-         'đều chia hết cho 8. Mọi số hạng của dãy đều có tính chất này, còn số không '
-         'thuộc dãy thì không.',
-         'Bước 2 — CÁCH SOI. Muốn biết số x có thuộc dãy không, lấy (x − số đầu) rồi '
-         'chia cho khoảng cách. CHIA HẾT thì x thuộc dãy; CÒN DƯ thì không.',
-         'Bước 3 — SOI VÉ 113. (113 − 1) : 8 = 112 : 8 = 14, chia hết → số 113 THUỘC '
-         'dãy. Vậy đúng là một ghế đầu hàng.',
-         'Bước 4 — NÓ ĐỨNG THỨ MẤY. Phép chia vừa rồi cho ra 14 — đó là SỐ BƯỚC NHẢY '
-         'từ số đầu tới nó. Mà chỗ thì nhiều hơn bước đúng 1 (Bài 15 đã nói), nên vị '
-         'trí = 14 + 1 = 15. Vé 113 là ghế đầu của hàng 15!',
-         'Bước 5 — KHI CÒN DƯ THÌ SAO. Vé 100: (100 − 1) : 8 = 99 : 8 = 12 dư 3 → '
-         'KHÔNG thuộc dãy ghế-đầu-hàng. Khách này không được ngồi sát lối đi.',
-         'Bước 6 — MỘT CHỐT NỮA DỄ QUÊN. Chia hết CHƯA ĐỦ. Số ấy còn phải nằm TRONG '
-         'khoảng từ số đầu đến số cuối. Dãy 1 ; 9 ; 17 ; ... ; 57 (rạp chỉ có 8 hàng) '
-         'thì số 113 tuy chia hết nhưng đã vượt quá số cuối — nó KHÔNG thuộc dãy ấy.',
-         'MẸO NGƯỜI GIẢI: soi ba việc theo thứ tự — (1) trừ số đầu; (2) chia cho '
-         'khoảng cách, xem hết hay dư; (3) nếu hết thì cộng 1 ra vị trí, rồi kiểm xem '
-         'có vượt quá số cuối không.'],
-        ['LẮP: cô Hạnh dán ở quầy vé một dòng: "Ghế đầu hàng là các số chia 8 dư 1. '
-         'Muốn biết hàng mấy: lấy (số ghế − 1) : 8 rồi cộng 1."',
-         'SOI: soi chéo bằng công thức Bài 14 — số hạng thứ 15 = 1 + 8 × (15 − 1) = '
-         '1 + 112 = 113 ✓. Hai con đường một đáp số.',
-         'DÙNG NGOÀI ĐỜI: xem ngày 25 có phải Chủ nhật không khi biết Chủ nhật đầu '
-         'tháng là ngày 4; xem số nhà 87 có nằm bên dãy lẻ không; xem chuyến xe buýt '
-         'chạy cách nhau 15 phút có chuyến nào đúng 8 giờ 45 không.'],
-        ['Đề bài: Số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không? Nếu thuộc thì đứng thứ '
-         'mấy? Còn số 100 thì sao?',
-         'Tóm tắt',
-         'Dãy cách đều, số đầu 3, khoảng cách 4.',
-         'Kiểm khoảng cách: 7 − 3 = 4 ; 11 − 7 = 4 ✓.',
-         'Soi số 79',
-         '79 − 3 = 76 ; 76 : 4 = 19, chia hết → số 79 THUỘC dãy.',
-         'Vị trí = 19 + 1 = 20.',
-         'Soi lại bằng công thức Bài 14: 3 + 4 × (20 − 1) = 3 + 76 = 79 ✓.',
-         'Soi số 100',
-         '100 − 3 = 97 ; 97 : 4 = 24 dư 1 → còn dư, nên số 100 KHÔNG thuộc dãy.',
-         'Đáp số: 79 thuộc dãy và đứng thứ 20; 100 không thuộc dãy.'],
-        ['Cô hỏi số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không, Trí Long soi: '
-         '"79 chia 4 được 19 dư 3, còn dư nên không thuộc dãy ạ!"',
-         'Gợi ý 1: Con thử cách của Trí Long với chính số 3 — số hạng ĐẦU của dãy: '
-         '3 chia 4 dư 3. Vậy theo cách ấy thì số 3 cũng không thuộc dãy à?',
-         'Gợi ý 2: Trước khi chia, con phải TRỪ số đầu đi đã. Dãy này bắt đầu từ 3 '
-         'chứ không phải từ 0.',
-         'Chữa: lấy (79 − 3) : 4 = 19, chia hết → số 79 THUỘC dãy, đứng thứ 20.'],
+        '',
+        [],
+        ['Kiểm tra được một số có nằm trong dãy hay không.',
+         'Tìm được chỗ đứng của số ấy nếu nó thuộc dãy.',
+         'Nhớ kiểm thêm: số ấy còn phải nằm trong dãy, không vượt quá số cuối.'],
+        [],
+        [],
+        [],
+        ['Đề bài: Số 45 có thuộc dãy 5 ; 10 ; 15 ; ... không? Nếu thuộc thì đứng thứ mấy?',
+         'Trừ số đầu trước đã',
+         '45 − 5 = 40.',
+         'Chia cho khoảng cách',
+         '40 : 5 = 8, chia hết.',
+         'Chia hết nên số 45 thuộc dãy.',
+         'Tìm chỗ đứng',
+         'Phép chia cho ra 8, là số lần cộng thêm.',
+         'Cộng thêm một: 8 + 1 = 9. Số 45 đứng thứ 9.',
+         'Soi lại: 5 + 5 × 8 = 45, đúng.',
+         'Đáp số: số 45 thuộc dãy và đứng thứ 9.'],
+        ['Có bạn soi số 45 với dãy 5 ; 10 ; 15 ; ... như sau: "45 chia 5 được 9, chia '
+         'hết, nên đứng thứ 9." Bạn ra đúng đáp số nhưng làm thiếu một bước.',
+         'Gợi ý 1: Con thử cách ấy với dãy 3 ; 7 ; 11 ; ... và số 23 xem: 23 chia 4 '
+         'dư 3, vậy là không thuộc dãy à? Nhưng đếm ra thì 23 có trong dãy đấy.',
+         'Gợi ý 2: Trước khi chia, con phải làm gì với số đầu?',
+         'Chữa: phải TRỪ SỐ ĐẦU trước đã, rồi mới chia. Dãy này bắt đầu từ 5 nên '
+         '(45 − 5) : 5 = 8, chỗ đứng là 8 + 1 = 9.'],
         ['Mở tờ lịch, chỉ vào một Chủ nhật rồi hỏi con: "Ngày 25 có phải Chủ nhật '
-         'không?" — cho con soi bằng phép trừ rồi chia 7.',
-         'Nhắc con một câu duy nhất khi làm dạng này: TRỪ SỐ ĐẦU TRƯỚC ĐÃ. Quên bước '
-         'ấy là sai cả bài, và đó đúng là lỗi Trí Long mắc.'],
+         'không?" Cho con trừ rồi chia 7 để soi.',
+         'Nhắc con một câu duy nhất: TRỪ SỐ ĐẦU TRƯỚC ĐÃ. Quên bước ấy là sai cả bài.'],
     ),
+    # Bám đúng nấc video: trừ số đầu → chia khoảng cách → hết thì thuộc, dư thì
+    # không → cộng một ra chỗ đứng → và còn phải nằm trong dãy.
     [
-        lt(1, 1, 'Dãy 3 ; 7 ; 11 ; ... có số đầu và khoảng cách bằng mấy? Muốn soi một '
-                 'số có thuộc dãy không, việc đầu tiên phải làm là gì?',
-           'Số đầu 3, khoảng cách 4. Việc đầu tiên: lấy số cần soi TRỪ số đầu.'),
-        lt(2, 1, 'Số 23 có thuộc dãy 3 ; 7 ; 11 ; ... không?',
-           '(23 − 3) : 4 = 5, chia hết → số 23 THUỘC dãy.'),
-        lt(3, 1, 'Số 30 có thuộc dãy 2 ; 6 ; 10 ; ... không?',
-           '(30 − 2) : 4 = 7, chia hết → số 30 THUỘC dãy.'),
-        lt(4, 2, 'Số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không? Nếu thuộc thì đứng thứ mấy?',
-           '(79 − 3) : 4 = 19 chia hết → thuộc dãy, đứng thứ 19 + 1 = 20.'),
+        lt(1, 1, 'Cho dãy 5 ; 10 ; 15 ; 20 ; 25 ; ... Muốn soi số 45, việc đầu tiên '
+                 'là lấy 45 trừ số đầu. Được bao nhiêu?',
+           '45 − 5 = 40.'),
+        lt(2, 1, 'Lấy 40 vừa tìm được chia cho khoảng cách 5. Được bao nhiêu, và có '
+                 'chia hết không?',
+           '40 : 5 = 8, chia hết.'),
+        lt(3, 1, 'Vậy số 45 có thuộc dãy 5 ; 10 ; 15 ; ... không? Nếu thuộc thì đứng '
+                 'thứ mấy?',
+           'Chia hết nên số 45 THUỘC dãy. Chỗ đứng = 8 + 1 = 9.'),
+        lt(4, 2, 'Số 23 có thuộc dãy 3 ; 7 ; 11 ; ... không? Nếu thuộc thì đứng thứ mấy?',
+           '(23 − 3) : 4 = 5, chia hết nên thuộc dãy, đứng thứ 6.'),
         lt(5, 2, 'Số 100 có thuộc dãy 3 ; 7 ; 11 ; ... không?',
-           '(100 − 3) : 4 = 97 : 4 = 24 dư 1 → còn dư, nên KHÔNG thuộc dãy.'),
-        lt(6, 2, 'Số 113 có thuộc dãy 1 ; 9 ; 17 ; ... không? Nếu thuộc thì đứng thứ mấy?',
-           '(113 − 1) : 8 = 14 chia hết → thuộc dãy, đứng thứ 15.'),
-        lt(7, 2, 'Số 52 có thuộc dãy 7 ; 12 ; 17 ; ... không? Nếu thuộc thì đứng thứ mấy?',
-           '(52 − 7) : 5 = 9 chia hết → thuộc dãy, đứng thứ 10.'),
-        lt(8, 3, 'Dãy 1 ; 9 ; 17 ; ... ; 57. Hỏi số 113 có thuộc dãy này không? Chú ý '
-                 'đọc kỹ số CUỐI của dãy.',
-           '(113 − 1) : 8 = 14 chia hết, nhưng 113 đã VƯỢT QUÁ số cuối 57, nên số 113 '
+           '(100 − 3) : 4 = 97 : 4 = 24 dư 1. Còn dư nên số 100 KHÔNG thuộc dãy.'),
+        lt(6, 2, 'Số 52 có thuộc dãy 7 ; 12 ; 17 ; ... không? Nếu thuộc thì đứng thứ mấy?',
+           '(52 − 7) : 5 = 9, chia hết nên thuộc dãy, đứng thứ 10.'),
+        lt(7, 2, 'Số 30 có thuộc dãy 5 ; 10 ; 15 ; ... không? Nếu thuộc thì đứng thứ mấy?',
+           '(30 − 5) : 5 = 5, chia hết nên thuộc dãy, đứng thứ 6.'),
+        lt(8, 3, 'Cho dãy 5 ; 10 ; 15 ; 20 ; 25 — dãy này DỪNG ở 25. Số 45 có thuộc '
+                 'dãy này không?',
+           '(45 − 5) : 5 = 8 chia hết, nhưng 45 đã VƯỢT QUÁ số cuối 25, nên số 45 '
            'KHÔNG thuộc dãy này. Chia hết thôi chưa đủ.'),
-        lt(9, 3, 'Cho dãy 4 ; 9 ; 14 ; ... ; 99. Số 64 có thuộc dãy không, đứng thứ '
-                 'mấy? Hãy soi lại kết quả bằng công thức số hạng thứ n.',
-           '(64 − 4) : 5 = 12 chia hết, và 64 nằm giữa 4 và 99 → thuộc dãy, đứng thứ '
-           '13. Soi lại: 4 + 5 × (13 − 1) = 4 + 60 = 64 ✓.'),
-        q_tf(1, 'Muốn soi một số có thuộc dãy không, phải lấy số ấy TRỪ số đầu rồi mới '
-                'chia cho khoảng cách.', True, 'Đáp án: ĐÚNG'),
+        lt(9, 3, 'Cho dãy 4 ; 9 ; 14 ; ... ; 99. Số 64 có thuộc dãy không, và đứng '
+                 'thứ mấy?',
+           '(64 − 4) : 5 = 12 chia hết, và 64 nằm giữa 4 và 99 nên thuộc dãy, đứng '
+           'thứ 13.'),
+        q_tf(1, 'Muốn soi một số có thuộc dãy không, phải lấy số ấy trừ số đầu rồi '
+                'mới chia cho khoảng cách.', True, 'Đáp án: ĐÚNG'),
         q_tf(2, 'Cứ chia hết cho khoảng cách là số ấy chắc chắn thuộc dãy.', False,
-             'SAI — còn phải kiểm số ấy có nằm trong khoảng từ số đầu đến số cuối không.'),
-        q_mcq(3, 'Số 52 với dãy 7 ; 12 ; 17 ; ...:',
-              ['A. thuộc dãy, đứng thứ 10', 'B. không thuộc dãy', 'C. thuộc dãy, đứng thứ 9'],
-              'A. thuộc dãy, đứng thứ 10', '(52 − 7) : 5 = 9 chia hết → vị trí 9 + 1 = 10.'),
-        q_mcq(4, 'Phép chia (x − số đầu) : khoảng cách nếu CÒN DƯ thì nghĩa là:',
-              ['A. x không thuộc dãy', 'B. x thuộc dãy', 'C. x là số hạng cuối'],
-              'A. x không thuộc dãy', 'Còn dư nghĩa là x rơi vào giữa hai số hạng.'),
-        q_mcq(5, 'Số 113 với dãy 1 ; 9 ; 17 ; ... đứng ở vị trí thứ:',
-              ['A. 15', 'B. 14', 'C. 16'], 'A. 15',
-              '(113 − 1) : 8 = 14 bước nhảy, nên vị trí là 14 + 1 = 15.'),
+             'SAI — còn phải kiểm số ấy có nằm trong dãy không, đừng vượt quá số cuối.'),
+        q_mcq(3, 'Số 45 với dãy 5 ; 10 ; 15 ; ...:',
+              ['A. thuộc dãy, đứng thứ 9', 'B. không thuộc dãy', 'C. thuộc dãy, đứng thứ 8'],
+              'A. thuộc dãy, đứng thứ 9', '(45 − 5) : 5 = 8, chỗ đứng là 8 + 1 = 9.'),
+        q_mcq(4, 'Phép chia còn DƯ thì nghĩa là:',
+              ['A. số ấy không thuộc dãy', 'B. số ấy thuộc dãy', 'C. số ấy là số cuối'],
+              'A. số ấy không thuộc dãy', 'Còn dư nghĩa là nó rơi vào giữa hai số hạng.'),
+        q_mcq(5, 'Số 30 với dãy 5 ; 10 ; 15 ; ... đứng ở chỗ thứ:',
+              ['A. 6', 'B. 5', 'C. 7'], 'A. 6', '(30 − 5) : 5 = 5, chỗ đứng là 5 + 1 = 6.'),
     ],
 )
 
@@ -805,65 +683,65 @@ O_NHAP_MOI = {
                                   'value': 'có'},
                                  {'label': 'khoảng cách', 'value': 10}]},
 
-    # ── B14 · số hạng thứ n ──
-    'DL:KSN4.B14#C1': {'parts': [{'label': 'khoảng cách', 'value': 5},
-                                 {'label': 'số bước nhảy', 'value': 9}]},
-    'DL:KSN4.B14#C2': {'value': 50},
+    # ── B14 · số hạng thứ n (theo video) ──
+    'DL:KSN4.B14#C1': {'value': 3},
+    'DL:KSN4.B14#C2': {'parts': [{'label': 'khoảng cách', 'value': 5},
+                                 {'label': 'số hạng thứ tư', 'value': 20}]},
     'DL:KSN4.B14#C3': {'value': 30},
-    'DL:KSN4.B14#C4': {'value': 79},
-    'DL:KSN4.B14#C5': {'value': 113},
-    'DL:KSN4.B14#C6': {'value': 83},
-    'DL:KSN4.B14#C7': {'value': 300},
-    'DL:KSN4.B14#C8': {'parts': [{'label': 'số hạng thứ 30', 'value': 207},
-                                 {'label': 'thử n = 1 ra', 'value': 4}]},
+    'DL:KSN4.B14#C4': {'value': 50},
+    'DL:KSN4.B14#C5': {'value': 31},
+    'DL:KSN4.B14#C6': {'value': 46},
+    'DL:KSN4.B14#C7': {'value': 5},
+    'DL:KSN4.B14#C8': {'value': 500},
     'DL:KSN4.B14#C9': {'value': 7},
 
-    # ── B15 · đếm số số hạng ──
-    'DL:KSN4.B15#C1': {'value': 4},
-    'DL:KSN4.B15#C2': {'value': 50},
-    'DL:KSN4.B15#C3': {'value': 20},
+    # ── B15 · đếm số số hạng (theo video) ──
+    'DL:KSN4.B15#C1': {'value': 20},
+    'DL:KSN4.B15#C2': {'value': 4},
+    'DL:KSN4.B15#C3': {'value': 5},
     'DL:KSN4.B15#C4': {'value': 20},
-    'DL:KSN4.B15#C5': {'value': 9},
-    'DL:KSN4.B15#C6': {'value': 61},
-    'DL:KSN4.B15#C7': {'value': 15},
+    'DL:KSN4.B15#C5': {'value': 50},
+    'DL:KSN4.B15#C6': {'value': 20},
+    'DL:KSN4.B15#C7': {'value': 9},
     'DL:KSN4.B15#C8': {'value': 20},
     'DL:KSN4.B15#C9': {'value': 102},
 
-    # ── B16 · tổng dãy ──
-    'DL:KSN4.B16#C1': {'value': 21},
-    'DL:KSN4.B16#C2': {'value': 55},
-    'DL:KSN4.B16#C3': {'value': 30},
-    'DL:KSN4.B16#C4': {'value': 1275},
-    'DL:KSN4.B16#C5': {'value': 1050},
-    'DL:KSN4.B16#C6': {'value': 165},
-    'DL:KSN4.B16#C7': {'value': 2550},
-    'DL:KSN4.B16#C8': {'parts': [{'label': 'tổng', 'value': 225},
-                                 {'label': '15 × 15', 'value': 225}]},
+    # ── B16 · tổng dãy (theo video) ──
+    'DL:KSN4.B16#C1': {'value': 30},
+    'DL:KSN4.B16#C2': {'value': 30},
+    'DL:KSN4.B16#C3': {'value': 75},
+    'DL:KSN4.B16#C4': {'value': 55},
+    'DL:KSN4.B16#C5': {'value': 1275},
+    'DL:KSN4.B16#C6': {'value': 1050},
+    'DL:KSN4.B16#C7': {'value': 165},
+    'DL:KSN4.B16#C8': {'value': 2550},
     'DL:KSN4.B16#C9': {'value': 444},
 
-    # ── B17 · thuộc dãy không ──
-    'DL:KSN4.B17#C1': {'parts': [{'label': 'số đầu', 'value': 3},
-                                 {'label': 'khoảng cách', 'value': 4}]},
-    'DL:KSN4.B17#C2': {'parts': [{'label': 'số 23 có thuộc dãy không', 'options': CO_KHONG,
+    # ── B17 · thuộc dãy không (theo video) ──
+    'DL:KSN4.B17#C1': {'value': 40},
+    'DL:KSN4.B17#C2': {'parts': [{'label': 'kết quả phép chia', 'value': 8},
+                                 {'label': 'có chia hết không', 'options': CO_KHONG,
                                   'value': 'có'}]},
-    'DL:KSN4.B17#C3': {'parts': [{'label': 'số 30 có thuộc dãy không', 'options': CO_KHONG,
-                                  'value': 'có'}]},
-    'DL:KSN4.B17#C4': {'parts': [{'label': 'số 79 có thuộc dãy không', 'options': CO_KHONG,
+    'DL:KSN4.B17#C3': {'parts': [{'label': 'số 45 có thuộc dãy không', 'options': CO_KHONG,
                                   'value': 'có'},
-                                 {'label': 'đứng thứ', 'value': 20}]},
+                                 {'label': 'đứng thứ', 'value': 9}]},
+    'DL:KSN4.B17#C4': {'parts': [{'label': 'số 23 có thuộc dãy không', 'options': CO_KHONG,
+                                  'value': 'có'},
+                                 {'label': 'đứng thứ', 'value': 6}]},
     'DL:KSN4.B17#C5': {'parts': [{'label': 'số 100 có thuộc dãy không', 'options': CO_KHONG,
                                   'value': 'không'}]},
-    'DL:KSN4.B17#C6': {'parts': [{'label': 'số 113 có thuộc dãy không', 'options': CO_KHONG,
-                                  'value': 'có'},
-                                 {'label': 'đứng thứ', 'value': 15}]},
-    'DL:KSN4.B17#C7': {'parts': [{'label': 'số 52 có thuộc dãy không', 'options': CO_KHONG,
+    'DL:KSN4.B17#C6': {'parts': [{'label': 'số 52 có thuộc dãy không', 'options': CO_KHONG,
                                   'value': 'có'},
                                  {'label': 'đứng thứ', 'value': 10}]},
-    'DL:KSN4.B17#C8': {'parts': [{'label': 'số 113 có thuộc dãy này không', 'options': CO_KHONG,
+    'DL:KSN4.B17#C7': {'parts': [{'label': 'số 30 có thuộc dãy không', 'options': CO_KHONG,
+                                  'value': 'có'},
+                                 {'label': 'đứng thứ', 'value': 6}]},
+    'DL:KSN4.B17#C8': {'parts': [{'label': 'số 45 có thuộc dãy NÀY không', 'options': CO_KHONG,
                                   'value': 'không'}]},
     'DL:KSN4.B17#C9': {'parts': [{'label': 'số 64 có thuộc dãy không', 'options': CO_KHONG,
                                   'value': 'có'},
                                  {'label': 'đứng thứ', 'value': 13}]},
+
 }
 
 

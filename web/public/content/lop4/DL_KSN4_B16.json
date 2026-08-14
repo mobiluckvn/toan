@@ -3,7 +3,7 @@
  "id": "DL:KSN4.B16",
  "grade": 4,
  "quyen": "KSN4",
- "title": "Bài 16 · TỔNG DÃY CÁCH ĐỀU — CÁCH GHÉP CẶP CỦA GAUSS",
+ "title": "Bài 16 · TỔNG DÃY CÁCH ĐỀU — GHÉP ĐẦU VỚI CUỐI",
  "durationMinutes": 10,
  "so": 16,
  "chuong": 4,
@@ -20,42 +20,21 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Hiểu vì sao ghép số đầu với số cuối thì cặp nào cũng có tổng bằng nhau. Dùng được công thức: tổng = (số đầu + số cuối) × số số hạng : 2. Giải thích được vì sao công thức phải CHIA 2.",
-  "kidText": "Thầy giáo bắt cả lớp cộng từ 1 đến 100. Cậu bé Gauss đặt bút xuống sau vài giây — con đoán xem cậu ấy nhìn ra điều gì nhé!",
+  "text": "Ghép số đầu với số cuối và thấy cặp nào cũng có tổng bằng nhau. Tính được tổng của một dãy cách đều mà không cộng lần lượt. Giải thích được vì sao phải chia đôi.",
+  "kidText": "Cộng cả dãy 5, 10, 15, 20, 25 thì lâu lắm, mà có cách nhanh hơn đấy. Con xem video nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — GAUSS NHÌN RA GÌ. Cậu viết dãy hai lần, lần sau viết ngược: hàng trên 1 ; 2 ; 3 ; ... ; 100, hàng dưới 100 ; 99 ; 98 ; ... ; 1. Rồi cộng theo cột: 1 + 100 = 101 ; 2 + 99 = 101 ; 3 + 98 = 101 … cột nào cũng đúng 101!"
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — VÌ SAO CỘT NÀO CŨNG BẰNG NHAU. Vì mỗi bước sang phải thì hàng trên TĂNG một khoảng, còn hàng dưới GIẢM đúng một khoảng ấy. Tăng bao nhiêu thì giảm bấy nhiêu, nên tổng của cột không đổi. Điều này CHỈ đúng với dãy cách đều — dãy không cách đều thì mẹo này hỏng."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — VÌ SAO PHẢI CHIA 2. Có 100 cột, mỗi cột 101, nên tất cả bằng 101 × 100 = 10 100. Nhưng con vừa cộng dãy HAI LẦN (một lần xuôi, một lần ngược), nên phải chia đôi: 10 100 : 2 = 5 050. Đó chính là con số Gauss nói."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — GHÉP THÀNH CÔNG THỨC. Tổng = (số đầu + số cuối) × số số hạng : 2. Đọc thành lời cho dễ nhớ: \"đầu cộng cuối, nhân số số hạng, chia đôi\"."
-   },
-   {
-    "id": "K5",
-    "text": "Bước 5 — DÙNG VỚI DÃY KHÁC. Tính 5 + 10 + 15 + ... + 100. Trước hết đếm số số hạng bằng công thức Bài 15: (100 − 5) : 5 + 1 = 20. Rồi tính tổng: (5 + 100) × 20 : 2 = 105 × 20 : 2 = 2 100 : 2 = 1 050."
-   }
-  ],
-  "mantra": "bao giờ cũng làm hai việc theo thứ tự — (1) ĐẾM số số hạng trước; (2) mới ghép đầu cộng cuối. Quên bước 1 là không có gì để nhân.",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Cô cho tính 1 + 2 + 3 + ... + 10, Trí Long viết: \"(1 + 10) × 10 = 110 ạ!\"",
+    "wrong": "Có bạn tính tổng 5 + 10 + 15 + 20 + 25 như sau: (5 + 25) × 5 = 150.",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Con thử cộng tay dãy ngắn 1 + 2 + 3 + 4 xem được bao nhiêu? Rồi thử công thức của Trí Long: (1 + 4) × 4 = 20. Hai kết quả có khớp không? Gợi ý 2: Khi ghép cặp, con đã viết dãy MẤY LẦN? Cộng hai lần thì phải làm gì với kết quả? Chữa: còn thiếu phép chia 2. Tổng = (1 + 10) × 10 : 2 = 55."
+    "fix": "Gợi ý 1: Con thử cộng tay dãy ngắn 1 + 2 + 3 + 4 xem được bao nhiêu, rồi thử cách ấy: (1 + 4) × 4 = 20. Hai kết quả có khớp không? Gợi ý 2: Khi ghép cặp, mỗi số được cộng mấy lần? Vậy còn phải làm gì với kết quả? Chữa: còn thiếu phép chia đôi. Tổng = (5 + 25) × 5 : 2 = 75."
    }
   ]
  },
@@ -63,110 +42,45 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Dãy 1 ; 2 ; 3 ; ... ; 100 — dãy cách đều, khoảng cách 1. Hỏi tổng của cả dãy?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "CHO GÌ? dãy 1 ; 2 ; 3 ; ... ; 100 — dãy cách đều, khoảng cách 1.\nHỎI GÌ? tổng của cả dãy.\nĐẠI LƯỢNG & ĐƠN VỊ: ở đây chỉ có số thuần, không kèm đơn vị nào.\nQUAN HỆ GIỮA CHÚNG: dãy cách đều nên đầu với cuối, số thứ hai với số áp chót… ghép lại đều cho cùng một tổng.\nCHỌN CÔNG CỤ: công thức TỔNG DÃY CÁCH ĐỀU. Cần biết SỐ SỐ HẠNG trước, nên công thức của Bài 15 là bạn đồng hành.\nƯỚC LƯỢNG TRƯỚC: 100 số, số giữa quãng 50, nên tổng chắc quanh 5 000.",
-    "teaches": [],
-    "nhan": "NHỊP 1, DỊCH"
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S6",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S7",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K5"
-    ]
-   },
-   {
-    "id": "S8",
-    "kind": "explain",
-    "narration": "LẮP: từ hôm ấy cả lớp học được một mẹo: gặp dãy dài mà cách đều thì đừng cộng lần lượt, hãy ghép cặp. Việc nửa tiếng rút xuống nửa phút.\nSOI: soi trên dãy ngắn đếm tay được — 1 + 2 + 3 + 4 = 10. Công thức: (1 + 4) × 4 : 2 = 5 × 4 : 2 = 10 ✓.\nDÙNG NGOÀI ĐỜI: cộng tiền tiết kiệm tăng đều mỗi tuần, đếm tổng số ghế khi mỗi hàng thêm đúng một ghế, cộng số bậc thang của nhiều tầng.",
-    "teaches": [],
-    "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
-   },
-   {
-    "id": "S9",
     "kind": "trap",
-    "narration": "Cô cho tính 1 + 2 + 3 + ... + 10, Trí Long viết: \"(1 + 10) × 10 = 110 ạ!\"",
+    "narration": "Có bạn tính tổng 5 + 10 + 15 + 20 + 25 như sau: (5 + 25) × 5 = 150.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính tổng 5 + 10 + 15 + ... + 100.",
+  "problem": "Tính tổng 5 + 10 + 15 + 20 + 25.",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Ghép đầu với cuối"
    },
    {
-    "show": "Dãy cách đều, số đầu 5, số cuối 100, khoảng cách 5."
+    "show": "5 + 25 = 30 ; 10 + 20 = 30."
    },
    {
-    "show": "Gọi tên \"dãy cách đều, khoảng cách 5\" — nhận diện xong nửa bài."
+    "show": "Cặp nào cũng bằng 30, đúng bằng số đầu cộng số cuối."
    },
    {
-    "show": "Bước 1 — đếm số số hạng (dùng công thức Bài 15)"
+    "show": "Đếm số số hạng"
    },
    {
-    "show": "(100 − 5) : 5 + 1 = 19 + 1 = 20 số hạng."
-   },
-   {
-    "show": "Bước 2 — ghép cặp Gauss"
-   },
-   {
-    "show": "5 + 100 = 105 ; 10 + 95 = 105 ; 15 + 90 = 105 ..."
-   },
-   {
-    "show": "Cặp nào cũng có tổng bằng đầu + cuối."
+    "show": "Dãy có 5 số hạng."
    },
    {
     "show": "Tính"
    },
    {
-    "show": "Tổng = (5 + 100) × 20 : 2 = 105 × 20 : 2 = 2 100 : 2 = 1 050."
+    "show": "Tổng = 30 × 5 : 2 = 150 : 2 = 75."
    },
    {
-    "show": "Soi lại trên dãy ngắn cùng kiểu: 5 + 10 + 15 = 30, công thức cho (5 + 15) × 3 : 2 = 30 ✓."
+    "show": "Chia đôi vì khi ghép cặp ta đã cộng mỗi số hai lần."
    },
    {
-    "show": "Đáp số: tổng bằng 1 050."
+    "show": "Soi lại bằng cách cộng tay: 5 + 10 + 15 + 20 + 25 = 75."
+   },
+   {
+    "show": "Đáp số: tổng bằng 75."
    }
   ]
  },
@@ -175,11 +89,11 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tính tổng: 1 + 2 + 3 + 4 + 5 + 6. Hãy làm hai cách: cộng lần lượt, và ghép cặp đầu với cuối.",
+     "text": "Cho dãy 5 ; 10 ; 15 ; 20 ; 25 — dãy trong video. Ghép số đầu với số cuối được bao nhiêu?",
      "answerKey": {
-      "value": 21
+      "value": 30
      },
-     "solutionNarrative": "Cộng lần lượt: 21. Ghép cặp: (1 + 6) × 6 : 2 = 7 × 3 = 21 ✓ hai cách cùng một kết quả.",
+     "solutionNarrative": "5 + 25 = 30.",
      "hints": [
       "Cộng lần lượt trước cho chắc.",
       "Rồi ghép số đầu với số cuối xem được mấy."
@@ -187,11 +101,11 @@
     },
     {
      "id": "C2",
-     "text": "Tính tổng: 1 + 2 + 3 + ... + 10.",
+     "text": "Vẫn dãy ấy. Ghép số thứ hai với số áp chót được bao nhiêu?",
      "answerKey": {
-      "value": 55
+      "value": 30
      },
-     "solutionNarrative": "(1 + 10) × 10 : 2 = 110 : 2 = 55.",
+     "solutionNarrative": "10 + 20 = 30 — bằng đúng cặp đầu với cuối.",
      "hints": [
       "Ghép 1 với 10, 2 với 9…",
       "Mỗi cặp bằng nhau, và con đã cộng dãy hai lần."
@@ -199,11 +113,11 @@
     },
     {
      "id": "C3",
-     "text": "Dãy 2 ; 4 ; 6 ; 8 ; 10 có 5 số hạng. Tính tổng của dãy.",
+     "text": "Dãy 5 ; 10 ; 15 ; 20 ; 25 có 5 số hạng. Tổng của dãy bằng bao nhiêu?",
      "answerKey": {
-      "value": 30
+      "value": 75
      },
-     "solutionNarrative": "(2 + 10) × 5 : 2 = 60 : 2 = 30.",
+     "solutionNarrative": "Tổng = 30 × 5 : 2 = 150 : 2 = 75.",
      "hints": [
       "Đề đã cho sẵn số số hạng.",
       "Đầu cộng cuối, nhân lên, rồi chia đôi."
@@ -213,11 +127,11 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Tính tổng: 1 + 2 + 3 + ... + 50.",
+     "text": "Tính tổng 1 + 2 + 3 + ... + 10.",
      "answerKey": {
-      "value": 1275
+      "value": 55
      },
-     "solutionNarrative": "(1 + 50) × 50 : 2 = 51 × 25 = 1 275.",
+     "solutionNarrative": "(1 + 10) × 10 : 2 = 110 : 2 = 55.",
      "hints": [
       "Có bao nhiêu số hạng từ 1 đến 50?",
       "Đầu cộng cuối rồi nhân, nhớ chia đôi."
@@ -225,11 +139,11 @@
     },
     {
      "id": "C5",
-     "text": "Tính tổng: 5 + 10 + 15 + ... + 100.",
+     "text": "Tính tổng 1 + 2 + 3 + ... + 50.",
      "answerKey": {
-      "value": 1050
+      "value": 1275
      },
-     "solutionNarrative": "Số số hạng: (100 − 5) : 5 + 1 = 20. Tổng = (5 + 100) × 20 : 2 = 1 050.",
+     "solutionNarrative": "(1 + 50) × 50 : 2 = 51 × 25 = 1 275.",
      "hints": [
       "Đếm số số hạng trước đã.",
       "Rồi mới ghép đầu với cuối."
@@ -237,11 +151,11 @@
     },
     {
      "id": "C6",
-     "text": "Tính tổng: 3 + 6 + 9 + ... + 30.",
+     "text": "Tính tổng 5 + 10 + 15 + ... + 100.",
      "answerKey": {
-      "value": 165
+      "value": 1050
      },
-     "solutionNarrative": "Số số hạng: (30 − 3) : 3 + 1 = 10. Tổng = (3 + 30) × 10 : 2 = 165.",
+     "solutionNarrative": "Dãy có (100 − 5) : 5 + 1 = 20 số hạng. Tổng = (5 + 100) × 20 : 2 = 1 050.",
      "hints": [
       "Khoảng cách là 3.",
       "Đếm số số hạng trước, rồi ghép cặp."
@@ -249,11 +163,11 @@
     },
     {
      "id": "C7",
-     "text": "Tính tổng các số chẵn từ 2 đến 100.",
+     "text": "Tính tổng 3 + 6 + 9 + ... + 30.",
      "answerKey": {
-      "value": 2550
+      "value": 165
      },
-     "solutionNarrative": "Số số hạng: (100 − 2) : 2 + 1 = 50. Tổng = (2 + 100) × 50 : 2 = 2 550.",
+     "solutionNarrative": "Dãy có (30 − 3) : 3 + 1 = 10 số hạng. Tổng = (3 + 30) × 10 : 2 = 165.",
      "hints": [
       "Số chẵn đầu là 2, cuối là 100, cách nhau 2.",
       "Đếm trước, ghép sau."
@@ -263,20 +177,11 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Tính tổng 15 số lẻ đầu tiên: 1 + 3 + 5 + ... + 29. Rồi so kết quả với 15 × 15 và cho biết con thấy điều gì.",
+     "text": "Tính tổng tất cả các số chẵn từ 2 đến 100.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "tổng",
-        "value": 225
-       },
-       {
-        "label": "15 × 15",
-        "value": 225
-       }
-      ]
+      "value": 2550
      },
-     "solutionNarrative": "Tổng = (1 + 29) × 15 : 2 = 225. Mà 15 × 15 = 225 — trùng nhau! Tổng n số lẻ đầu tiên luôn bằng n × n.",
+     "solutionNarrative": "Dãy có (100 − 2) : 2 + 1 = 50 số hạng. Tổng = (2 + 100) × 50 : 2 = 2 550.",
      "hints": [
       "Các số lẻ cách nhau 2.",
       "Tính xong thì so với phép nhân đề cho."
@@ -302,16 +207,16 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Tổng dãy cách đều bằng (số đầu + số cuối) × số số hạng.",
+    "text": "Tổng dãy cách đều bằng số đầu cộng số cuối, nhân với số số hạng.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — còn phải chia 2, vì khi ghép cặp ta đã cộng dãy hai lần."
+    "solutionNarrative": "SAI — còn phải chia đôi, vì ghép cặp là đã cộng mỗi số hai lần."
    },
    {
     "id": "Q2",
-    "text": "Mẹo ghép cặp của Gauss chỉ dùng được cho dãy CÁCH ĐỀU.",
+    "text": "Cách ghép cặp chỉ dùng được cho dãy cách đều.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -334,12 +239,12 @@
    },
    {
     "id": "Q4",
-    "text": "Muốn tính tổng một dãy cách đều, việc phải làm TRƯỚC TIÊN là:",
+    "text": "Muốn tính tổng một dãy cách đều, việc phải làm trước tiên là:",
     "format": "mcq",
     "choices": [
      "A. đếm số số hạng",
      "B. cộng đầu với cuối",
-     "C. chia 2"
+     "C. chia đôi"
     ],
     "answerKey": {
      "choice": "A. đếm số số hạng"
@@ -348,37 +253,26 @@
    },
    {
     "id": "Q5",
-    "text": "Tổng 2 + 4 + 6 + ... + 20 bằng:",
+    "text": "Tổng 5 + 10 + 15 + 20 + 25 bằng:",
     "format": "mcq",
     "choices": [
-     "A. 110",
-     "B. 100",
-     "C. 120"
+     "A. 75",
+     "B. 150",
+     "C. 60"
     ],
     "answerKey": {
-     "choice": "A. 110"
+     "choice": "A. 75"
     },
-    "solutionNarrative": "Có 10 số hạng; (2 + 20) × 10 : 2 = 110."
+    "solutionNarrative": "(5 + 25) × 5 : 2 = 75."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Kể con nghe chuyện Gauss 10 tuổi — trẻ con rất thích chuyện một bạn nhỏ thắng cả lớp bằng cách NGHĨ chứ không phải bằng cách làm nhanh.",
-  "homeActivity": "Bài đố vui: cộng tất cả các số lẻ từ 1 đến 19, rồi so với 10 × 10. Trùng nhau — vì sao lại thế? (Gợi ý: 10 số lẻ đầu tiên.)",
+  "onComplete": "Đố con cộng tất cả các số từ 1 đến 20 trong một phút. Ghép cặp thì làm được, cộng lần lượt thì không kịp.",
+  "homeActivity": "Bài đố vui: cộng các số lẻ 1 + 3 + 5 + ... + 19 rồi so với 10 × 10. Trùng nhau — con thử tìm xem vì sao.",
   "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L4H_B16_MO",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L4H_B16_MO.png",
-   "caption": "Cột nào cũng bằng 6 — vì cộng hai lần nên cuối cùng phải chia đôi.",
-   "sha256_16": "b56f1ce3eba6469f",
-   "mucGoc": "chuyenMoBai"
-  }
- ],
+ "figureSpec": [],
  "hatMam": "Con đã biết tìm số hạng thứ n (Bài 14) và đếm số số hạng (Bài 15). Hôm nay dùng cả hai để làm một việc trông rất nặng: cộng cả trăm số trong một dòng. Có một cậu bé 10 tuổi từng làm việc ấy trong vài giây — và cách của cậu ấy chỉ là ghép cặp.",
  "duongLui": {
   "ve": [

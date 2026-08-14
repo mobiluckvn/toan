@@ -20,46 +20,21 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Kiểm tra được một số có thuộc dãy cách đều hay không, bằng phép chia hết. Nếu số ấy thuộc dãy thì tìm được nó đứng ở vị trí thứ mấy. Biết rằng còn phải xét số ấy có nằm trong khoảng từ số đầu đến số cuối không.",
-  "kidText": "Ghế đầu các hàng trong rạp mang số 1, 9, 17, 25… Khách cầm vé số 113 hỏi mình có được ngồi sát lối đi không — con soi giúp cô nhé!",
+  "text": "Kiểm tra được một số có nằm trong dãy hay không. Tìm được chỗ đứng của số ấy nếu nó thuộc dãy. Nhớ kiểm thêm: số ấy còn phải nằm trong dãy, không vượt quá số cuối.",
+  "kidText": "Số 30 có nằm trong dãy 5, 10, 15, 20, 25 hay không? Con xem video rồi mình cùng soi nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — MỌI SỐ HẠNG ĐỀU CÁCH SỐ ĐẦU MỘT SỐ NGUYÊN LẦN KHOẢNG CÁCH. Nhìn dãy 1 ; 9 ; 17 ; 25: lấy từng số trừ số đầu được 0 ; 8 ; 16 ; 24 — toàn bộ đều chia hết cho 8. Mọi số hạng của dãy đều có tính chất này, còn số không thuộc dãy thì không."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — CÁCH SOI. Muốn biết số x có thuộc dãy không, lấy (x − số đầu) rồi chia cho khoảng cách. CHIA HẾT thì x thuộc dãy; CÒN DƯ thì không."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — SOI VÉ 113. (113 − 1) : 8 = 112 : 8 = 14, chia hết → số 113 THUỘC dãy. Vậy đúng là một ghế đầu hàng."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — NÓ ĐỨNG THỨ MẤY. Phép chia vừa rồi cho ra 14 — đó là SỐ BƯỚC NHẢY từ số đầu tới nó. Mà chỗ thì nhiều hơn bước đúng 1 (Bài 15 đã nói), nên vị trí = 14 + 1 = 15. Vé 113 là ghế đầu của hàng 15!"
-   },
-   {
-    "id": "K5",
-    "text": "Bước 5 — KHI CÒN DƯ THÌ SAO. Vé 100: (100 − 1) : 8 = 99 : 8 = 12 dư 3 → KHÔNG thuộc dãy ghế-đầu-hàng. Khách này không được ngồi sát lối đi."
-   },
-   {
-    "id": "K6",
-    "text": "Bước 6 — MỘT CHỐT NỮA DỄ QUÊN. Chia hết CHƯA ĐỦ. Số ấy còn phải nằm TRONG khoảng từ số đầu đến số cuối. Dãy 1 ; 9 ; 17 ; ... ; 57 (rạp chỉ có 8 hàng) thì số 113 tuy chia hết nhưng đã vượt quá số cuối — nó KHÔNG thuộc dãy ấy."
-   }
-  ],
-  "mantra": "soi ba việc theo thứ tự — (1) trừ số đầu; (2) chia cho khoảng cách, xem hết hay dư; (3) nếu hết thì cộng 1 ra vị trí, rồi kiểm xem có vượt quá số cuối không.",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Cô hỏi số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không, Trí Long soi: \"79 chia 4 được 19 dư 3, còn dư nên không thuộc dãy ạ!\"",
+    "wrong": "Có bạn soi số 45 với dãy 5 ; 10 ; 15 ; ... như sau: \"45 chia 5 được 9, chia hết, nên đứng thứ 9.\" Bạn ra đúng đáp số nhưng làm thiếu một bước.",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Con thử cách của Trí Long với chính số 3 — số hạng ĐẦU của dãy: 3 chia 4 dư 3. Vậy theo cách ấy thì số 3 cũng không thuộc dãy à? Gợi ý 2: Trước khi chia, con phải TRỪ số đầu đi đã. Dãy này bắt đầu từ 3 chứ không phải từ 0. Chữa: lấy (79 − 3) : 4 = 19, chia hết → số 79 THUỘC dãy, đứng thứ 20."
+    "fix": "Gợi ý 1: Con thử cách ấy với dãy 3 ; 7 ; 11 ; ... và số 23 xem: 23 chia 4 dư 3, vậy là không thuộc dãy à? Nhưng đếm ra thì 23 có trong dãy đấy. Gợi ý 2: Trước khi chia, con phải làm gì với số đầu? Chữa: phải TRỪ SỐ ĐẦU trước đã, rồi mới chia. Dãy này bắt đầu từ 5 nên (45 − 5) : 5 = 8, chỗ đứng là 8 + 1 = 9."
    }
   ]
  },
@@ -67,112 +42,45 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Dãy ghế đầu hàng: 1 ; 9 ; 17 ; 25 ; ... — cách đều, số đầu 1, khoảng cách 8. Hỏi số 113 có thuộc dãy không; nếu thuộc thì đứng thứ mấy?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "CHO GÌ? dãy ghế đầu hàng: 1 ; 9 ; 17 ; 25 ; ... — cách đều, số đầu 1, khoảng cách 8.\nHỎI GÌ? số 113 có thuộc dãy không; nếu thuộc thì đứng thứ mấy.\nĐẠI LƯỢNG & ĐƠN VỊ: số ghế (chiếc) và số thứ tự hàng — hai loại số khác nhau, đúng như con đã phân biệt ở Bài 13.\nQUAN HỆ GIỮA CHÚNG: mọi số hạng của dãy đều bằng số đầu cộng một số nguyên lần khoảng cách.\nCHỌN CÔNG CỤ: phép CHIA HẾT — dấu hiệu chia hết của Chương 3 quay lại gác cổng cho bài này.\nƯỚC LƯỢNG TRƯỚC: 113 gần 112 = 8 × 14, nên khả năng cao là thuộc dãy.",
-    "teaches": [],
-    "nhan": "NHỊP 1, DỊCH"
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S6",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S7",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K5"
-    ]
-   },
-   {
-    "id": "S8",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K6"
-    ]
-   },
-   {
-    "id": "S9",
-    "kind": "explain",
-    "narration": "LẮP: cô Hạnh dán ở quầy vé một dòng: \"Ghế đầu hàng là các số chia 8 dư 1. Muốn biết hàng mấy: lấy (số ghế − 1) : 8 rồi cộng 1.\"\nSOI: soi chéo bằng công thức Bài 14 — số hạng thứ 15 = 1 + 8 × (15 − 1) = 1 + 112 = 113 ✓. Hai con đường một đáp số.\nDÙNG NGOÀI ĐỜI: xem ngày 25 có phải Chủ nhật không khi biết Chủ nhật đầu tháng là ngày 4; xem số nhà 87 có nằm bên dãy lẻ không; xem chuyến xe buýt chạy cách nhau 15 phút có chuyến nào đúng 8 giờ 45 không.",
-    "teaches": [],
-    "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
-   },
-   {
-    "id": "S10",
     "kind": "trap",
-    "narration": "Cô hỏi số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không, Trí Long soi: \"79 chia 4 được 19 dư 3, còn dư nên không thuộc dãy ạ!\"",
+    "narration": "Có bạn soi số 45 với dãy 5 ; 10 ; 15 ; ... như sau: \"45 chia 5 được 9, chia hết, nên đứng thứ 9.\" Bạn ra đúng đáp số nhưng làm thiếu một bước.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không? Nếu thuộc thì đứng thứ mấy? Còn số 100 thì sao?",
+  "problem": "Số 45 có thuộc dãy 5 ; 10 ; 15 ; ... không? Nếu thuộc thì đứng thứ mấy?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Trừ số đầu trước đã"
    },
    {
-    "show": "Dãy cách đều, số đầu 3, khoảng cách 4."
+    "show": "45 − 5 = 40."
    },
    {
-    "show": "Kiểm khoảng cách: 7 − 3 = 4 ; 11 − 7 = 4 ✓."
+    "show": "Chia cho khoảng cách"
    },
    {
-    "show": "Soi số 79"
+    "show": "40 : 5 = 8, chia hết."
    },
    {
-    "show": "79 − 3 = 76 ; 76 : 4 = 19, chia hết → số 79 THUỘC dãy."
+    "show": "Chia hết nên số 45 thuộc dãy."
    },
    {
-    "show": "Vị trí = 19 + 1 = 20."
+    "show": "Tìm chỗ đứng"
    },
    {
-    "show": "Soi lại bằng công thức Bài 14: 3 + 4 × (20 − 1) = 3 + 76 = 79 ✓."
+    "show": "Phép chia cho ra 8, là số lần cộng thêm."
    },
    {
-    "show": "Soi số 100"
+    "show": "Cộng thêm một: 8 + 1 = 9. Số 45 đứng thứ 9."
    },
    {
-    "show": "100 − 3 = 97 ; 97 : 4 = 24 dư 1 → còn dư, nên số 100 KHÔNG thuộc dãy."
+    "show": "Soi lại: 5 + 5 × 8 = 45, đúng."
    },
    {
-    "show": "Đáp số: 79 thuộc dãy và đứng thứ 20; 100 không thuộc dãy."
+    "show": "Đáp số: số 45 thuộc dãy và đứng thứ 9."
    }
   ]
  },
@@ -181,20 +89,11 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Dãy 3 ; 7 ; 11 ; ... có số đầu và khoảng cách bằng mấy? Muốn soi một số có thuộc dãy không, việc đầu tiên phải làm là gì?",
+     "text": "Cho dãy 5 ; 10 ; 15 ; 20 ; 25 ; ... Muốn soi số 45, việc đầu tiên là lấy 45 trừ số đầu. Được bao nhiêu?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số đầu",
-        "value": 3
-       },
-       {
-        "label": "khoảng cách",
-        "value": 4
-       }
-      ]
+      "value": 40
      },
-     "solutionNarrative": "Số đầu 3, khoảng cách 4. Việc đầu tiên: lấy số cần soi TRỪ số đầu.",
+     "solutionNarrative": "45 − 5 = 40.",
      "hints": [
       "Nhìn hai số đầu của dãy.",
       "Và nhớ: trừ số đầu trước đã."
@@ -202,11 +101,15 @@
     },
     {
      "id": "C2",
-     "text": "Số 23 có thuộc dãy 3 ; 7 ; 11 ; ... không?",
+     "text": "Lấy 40 vừa tìm được chia cho khoảng cách 5. Được bao nhiêu, và có chia hết không?",
      "answerKey": {
       "parts": [
        {
-        "label": "số 23 có thuộc dãy không",
+        "label": "kết quả phép chia",
+        "value": 8
+       },
+       {
+        "label": "có chia hết không",
         "options": [
          "có",
          "không"
@@ -215,7 +118,7 @@
        }
       ]
      },
-     "solutionNarrative": "(23 − 3) : 4 = 5, chia hết → số 23 THUỘC dãy.",
+     "solutionNarrative": "40 : 5 = 8, chia hết.",
      "hints": [
       "Lấy 23 trừ số đầu.",
       "Rồi chia cho khoảng cách xem hết hay dư."
@@ -223,20 +126,24 @@
     },
     {
      "id": "C3",
-     "text": "Số 30 có thuộc dãy 2 ; 6 ; 10 ; ... không?",
+     "text": "Vậy số 45 có thuộc dãy 5 ; 10 ; 15 ; ... không? Nếu thuộc thì đứng thứ mấy?",
      "answerKey": {
       "parts": [
        {
-        "label": "số 30 có thuộc dãy không",
+        "label": "số 45 có thuộc dãy không",
         "options": [
          "có",
          "không"
         ],
         "value": "có"
+       },
+       {
+        "label": "đứng thứ",
+        "value": 9
        }
       ]
      },
-     "solutionNarrative": "(30 − 2) : 4 = 7, chia hết → số 30 THUỘC dãy.",
+     "solutionNarrative": "Chia hết nên số 45 THUỘC dãy. Chỗ đứng = 8 + 1 = 9.",
      "hints": [
       "Trừ số đầu trước.",
       "Chia hết thì thuộc, còn dư thì không."
@@ -246,11 +153,11 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Số 79 có thuộc dãy 3 ; 7 ; 11 ; ... không? Nếu thuộc thì đứng thứ mấy?",
+     "text": "Số 23 có thuộc dãy 3 ; 7 ; 11 ; ... không? Nếu thuộc thì đứng thứ mấy?",
      "answerKey": {
       "parts": [
        {
-        "label": "số 79 có thuộc dãy không",
+        "label": "số 23 có thuộc dãy không",
         "options": [
          "có",
          "không"
@@ -259,11 +166,11 @@
        },
        {
         "label": "đứng thứ",
-        "value": 20
+        "value": 6
        }
       ]
      },
-     "solutionNarrative": "(79 − 3) : 4 = 19 chia hết → thuộc dãy, đứng thứ 19 + 1 = 20.",
+     "solutionNarrative": "(23 − 3) : 4 = 5, chia hết nên thuộc dãy, đứng thứ 6.",
      "hints": [
       "Số 79 trừ số đầu được bao nhiêu?",
       "Phép chia cho ra số bước, còn thiếu chỗ đầu tiên."
@@ -284,7 +191,7 @@
        }
       ]
      },
-     "solutionNarrative": "(100 − 3) : 4 = 97 : 4 = 24 dư 1 → còn dư, nên KHÔNG thuộc dãy.",
+     "solutionNarrative": "(100 − 3) : 4 = 97 : 4 = 24 dư 1. Còn dư nên số 100 KHÔNG thuộc dãy.",
      "hints": [
       "Trừ số đầu rồi chia thử.",
       "Còn dư nghĩa là rơi vào giữa hai số hạng."
@@ -292,31 +199,6 @@
     },
     {
      "id": "C6",
-     "text": "Số 113 có thuộc dãy 1 ; 9 ; 17 ; ... không? Nếu thuộc thì đứng thứ mấy?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "số 113 có thuộc dãy không",
-        "options": [
-         "có",
-         "không"
-        ],
-        "value": "có"
-       },
-       {
-        "label": "đứng thứ",
-        "value": 15
-       }
-      ]
-     },
-     "solutionNarrative": "(113 − 1) : 8 = 14 chia hết → thuộc dãy, đứng thứ 15.",
-     "hints": [
-      "Khoảng cách là 8.",
-      "Chia xong nhớ cộng một để ra chỗ đứng."
-     ]
-    },
-    {
-     "id": "C7",
      "text": "Số 52 có thuộc dãy 7 ; 12 ; 17 ; ... không? Nếu thuộc thì đứng thứ mấy?",
      "answerKey": {
       "parts": [
@@ -334,7 +216,32 @@
        }
       ]
      },
-     "solutionNarrative": "(52 − 7) : 5 = 9 chia hết → thuộc dãy, đứng thứ 10.",
+     "solutionNarrative": "(52 − 7) : 5 = 9, chia hết nên thuộc dãy, đứng thứ 10.",
+     "hints": [
+      "Khoảng cách là 8.",
+      "Chia xong nhớ cộng một để ra chỗ đứng."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Số 30 có thuộc dãy 5 ; 10 ; 15 ; ... không? Nếu thuộc thì đứng thứ mấy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số 30 có thuộc dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       },
+       {
+        "label": "đứng thứ",
+        "value": 6
+       }
+      ]
+     },
+     "solutionNarrative": "(30 − 5) : 5 = 5, chia hết nên thuộc dãy, đứng thứ 6.",
      "hints": [
       "Khoảng cách là 5.",
       "Trừ số đầu trước đã."
@@ -344,11 +251,11 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Dãy 1 ; 9 ; 17 ; ... ; 57. Hỏi số 113 có thuộc dãy này không? Chú ý đọc kỹ số CUỐI của dãy.",
+     "text": "Cho dãy 5 ; 10 ; 15 ; 20 ; 25 — dãy này DỪNG ở 25. Số 45 có thuộc dãy này không?",
      "answerKey": {
       "parts": [
        {
-        "label": "số 113 có thuộc dãy này không",
+        "label": "số 45 có thuộc dãy NÀY không",
         "options": [
          "có",
          "không"
@@ -357,7 +264,7 @@
        }
       ]
      },
-     "solutionNarrative": "(113 − 1) : 8 = 14 chia hết, nhưng 113 đã VƯỢT QUÁ số cuối 57, nên số 113 KHÔNG thuộc dãy này. Chia hết thôi chưa đủ.",
+     "solutionNarrative": "(45 − 5) : 5 = 8 chia hết, nhưng 45 đã VƯỢT QUÁ số cuối 25, nên số 45 KHÔNG thuộc dãy này. Chia hết thôi chưa đủ.",
      "hints": [
       "Chia thử xem có hết không.",
       "Rồi đọc kỹ số cuối của dãy — dãy này dừng ở đâu?"
@@ -365,7 +272,7 @@
     },
     {
      "id": "C9",
-     "text": "Cho dãy 4 ; 9 ; 14 ; ... ; 99. Số 64 có thuộc dãy không, đứng thứ mấy? Hãy soi lại kết quả bằng công thức số hạng thứ n.",
+     "text": "Cho dãy 4 ; 9 ; 14 ; ... ; 99. Số 64 có thuộc dãy không, và đứng thứ mấy?",
      "answerKey": {
       "parts": [
        {
@@ -382,7 +289,7 @@
        }
       ]
      },
-     "solutionNarrative": "(64 − 4) : 5 = 12 chia hết, và 64 nằm giữa 4 và 99 → thuộc dãy, đứng thứ 13. Soi lại: 4 + 5 × (13 − 1) = 4 + 60 = 64 ✓.",
+     "solutionNarrative": "(64 − 4) : 5 = 12 chia hết, và 64 nằm giữa 4 và 99 nên thuộc dãy, đứng thứ 13.",
      "hints": [
       "Số 64 trừ số đầu rồi chia cho khoảng cách.",
       "Kiểm cả hai điều: chia hết, và nằm trong dãy."
@@ -396,7 +303,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Muốn soi một số có thuộc dãy không, phải lấy số ấy TRỪ số đầu rồi mới chia cho khoảng cách.",
+    "text": "Muốn soi một số có thuộc dãy không, phải lấy số ấy trừ số đầu rồi mới chia cho khoảng cách.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -410,69 +317,58 @@
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — còn phải kiểm số ấy có nằm trong khoảng từ số đầu đến số cuối không."
+    "solutionNarrative": "SAI — còn phải kiểm số ấy có nằm trong dãy không, đừng vượt quá số cuối."
    },
    {
     "id": "Q3",
-    "text": "Số 52 với dãy 7 ; 12 ; 17 ; ...:",
+    "text": "Số 45 với dãy 5 ; 10 ; 15 ; ...:",
     "format": "mcq",
     "choices": [
-     "A. thuộc dãy, đứng thứ 10",
+     "A. thuộc dãy, đứng thứ 9",
      "B. không thuộc dãy",
-     "C. thuộc dãy, đứng thứ 9"
+     "C. thuộc dãy, đứng thứ 8"
     ],
     "answerKey": {
-     "choice": "A. thuộc dãy, đứng thứ 10"
+     "choice": "A. thuộc dãy, đứng thứ 9"
     },
-    "solutionNarrative": "(52 − 7) : 5 = 9 chia hết → vị trí 9 + 1 = 10."
+    "solutionNarrative": "(45 − 5) : 5 = 8, chỗ đứng là 8 + 1 = 9."
    },
    {
     "id": "Q4",
-    "text": "Phép chia (x − số đầu) : khoảng cách nếu CÒN DƯ thì nghĩa là:",
+    "text": "Phép chia còn DƯ thì nghĩa là:",
     "format": "mcq",
     "choices": [
-     "A. x không thuộc dãy",
-     "B. x thuộc dãy",
-     "C. x là số hạng cuối"
+     "A. số ấy không thuộc dãy",
+     "B. số ấy thuộc dãy",
+     "C. số ấy là số cuối"
     ],
     "answerKey": {
-     "choice": "A. x không thuộc dãy"
+     "choice": "A. số ấy không thuộc dãy"
     },
-    "solutionNarrative": "Còn dư nghĩa là x rơi vào giữa hai số hạng."
+    "solutionNarrative": "Còn dư nghĩa là nó rơi vào giữa hai số hạng."
    },
    {
     "id": "Q5",
-    "text": "Số 113 với dãy 1 ; 9 ; 17 ; ... đứng ở vị trí thứ:",
+    "text": "Số 30 với dãy 5 ; 10 ; 15 ; ... đứng ở chỗ thứ:",
     "format": "mcq",
     "choices": [
-     "A. 15",
-     "B. 14",
-     "C. 16"
+     "A. 6",
+     "B. 5",
+     "C. 7"
     ],
     "answerKey": {
-     "choice": "A. 15"
+     "choice": "A. 6"
     },
-    "solutionNarrative": "(113 − 1) : 8 = 14 bước nhảy, nên vị trí là 14 + 1 = 15."
+    "solutionNarrative": "(30 − 5) : 5 = 5, chỗ đứng là 5 + 1 = 6."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Mở tờ lịch, chỉ vào một Chủ nhật rồi hỏi con: \"Ngày 25 có phải Chủ nhật không?\" — cho con soi bằng phép trừ rồi chia 7.",
-  "homeActivity": "Nhắc con một câu duy nhất khi làm dạng này: TRỪ SỐ ĐẦU TRƯỚC ĐÃ. Quên bước ấy là sai cả bài, và đó đúng là lỗi Trí Long mắc.",
+  "onComplete": "Mở tờ lịch, chỉ vào một Chủ nhật rồi hỏi con: \"Ngày 25 có phải Chủ nhật không?\" Cho con trừ rồi chia 7 để soi.",
+  "homeActivity": "Nhắc con một câu duy nhất: TRỪ SỐ ĐẦU TRƯỚC ĐÃ. Quên bước ấy là sai cả bài.",
   "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L4H_B17_MO",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L4H_B17_MO.png",
-   "caption": "Trừ số đầu trước đã, rồi mới chia cho khoảng cách.",
-   "sha256_16": "b7b70b408a97db75",
-   "mucGoc": "chuyenMoBai"
-  }
- ],
+ "figureSpec": [],
  "hatMam": "Lớp 3, ở Bài 11, con đã soi \"ga này tàu có dừng không\" bằng phép chia dư. Hôm nay việc ấy trở lại với đúng tên gọi của nó: cho một số bất kỳ, hỏi nó có nằm trong dãy không — và nếu có thì nó đứng ở chỗ thứ mấy.",
  "duongLui": {
   "ve": [

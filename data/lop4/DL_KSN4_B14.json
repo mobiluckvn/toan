@@ -21,81 +21,51 @@
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Hiểu vì sao đi từ vị trí 1 đến vị trí n chỉ có n − 1 bước nhảy, không phải n.",
-    "Dùng được công thức: số hạng thứ n = số đầu + khoảng cách × (n − 1).",
-    "Tìm số hạng ở vị trí xa mà không phải viết cả dãy."
+    "Đếm được số lần cộng thêm từ chỗ này tới chỗ kia.",
+    "Tìm được số hạng ở chỗ xa mà không phải viết cả dãy.",
+    "Giải thích được vì sao số lần cộng ít hơn số chỗ đúng một."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Bậc thang lên đài quan sát",
-   "dong": [
-    "Đài quan sát có một cầu thang dài. Bậc thứ nhất cao 15 cm so với mặt đất, và cứ mỗi bậc lại cao thêm đúng 15 cm.",
-    "Bác bảo vệ hỏi con: \"Cháu đứng ở bậc thứ 20 thì cao bao nhiêu so với mặt đất?\"",
-    "Viết cả 20 bậc ra giấy thì được, nhưng nếu bác hỏi bậc thứ 200 thì sao?"
-   ],
-   "hinh": [
-    {
-     "id": "L4H_B14_MO",
-     "sauDong": 0,
-     "file": "figures/L4H_B14_MO.png",
-     "caption": "Bậc thứ nhất đã đứng sẵn ở đó — không phải leo lần nào để tới nó.",
-     "sha256_16": "aafddec718b7dc57"
-    }
-   ],
+   "ten": "CHUYỆN MỞ BÀI — ",
+   "dong": [],
+   "hinh": [],
    "nhip": ""
   },
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
-   "dong": [
-    "CHO GÌ? bậc thứ nhất cao 15 cm; mỗi bậc thêm 15 cm → dãy độ cao: 15 ; 30 ; 45 ; ...",
-    "HỎI GÌ? bậc thứ 20 cao bao nhiêu.",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: độ cao tính bằng xăng-ti-mét, còn số bậc là vị trí — đúng hai thứ con vừa phân biệt ở bài trước.",
-    "QUAN HỆ GIỮA CHÚNG: dãy độ cao là dãy CÁCH ĐỀU, số đầu 15, khoảng cách 15.",
-    "CHỌN CÔNG CỤ: công thức SỐ HẠNG THỨ n. Đây là công thức DUY NHẤT của bài này.",
-    "ƯỚC LƯỢNG TRƯỚC: 20 bậc, mỗi bậc 15 cm, chắc khoảng ba trăm mấy — nếu tính ra 4 000 cm thì biết ngay là sai."
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
-   "dong": [
-    "Bước 1 — ĐẾM BƯỚC NHẢY, KHÔNG ĐẾM CHỖ. Đây là chỗ tinh tế nhất của cả bài, và cũng là chỗ hầu hết bạn sai. Từ bậc 1 lên bậc 4 thì leo mấy lần? Vẽ ra mà đếm: 1 → 2 (một lần) → 3 (hai lần) → 4 (BA lần). Bốn bậc nhưng chỉ BA lần leo. Số bước nhảy luôn ÍT HƠN số chỗ đúng 1.",
-    "Bước 2 — VÌ SAO ÍT HƠN 1. Vì bậc thứ nhất con ĐÃ ĐỨNG SẴN ở đó rồi, không phải leo lần nào để tới nó. Chỉ từ bậc 2 trở đi mới cần leo. Cũng như hàng rào: 5 cây cột thì chỉ có 4 khoảng ở giữa.",
-    "Bước 3 — GHÉP THÀNH CÔNG THỨC. Muốn tới vị trí n thì nhảy n − 1 bước, mỗi bước cộng thêm đúng một KHOẢNG CÁCH. Vậy: số hạng thứ n = số đầu + khoảng cách × (n − 1).",
-    "Bước 4 — GIẢI BÀI BẬC THANG. Số đầu 15, khoảng cách 15, n = 20 → bậc thứ 20 cao 15 + 15 × (20 − 1) = 15 + 15 × 19 = 15 + 285 = 300 (cm), tức là 3 mét. Khớp với ước lượng \"ba trăm mấy\" ✓.",
-    "Bước 5 — THỬ NGƯỢC CHO CHẮC. Thay n = 1 vào công thức: 15 + 15 × (1 − 1) = 15 + 0 = 15 ✓ — đúng bằng số hạng đầu. Một công thức tốt phải đúng ngay ở chỗ dễ nhất; thử n = 1 là cách soi nhanh nhất xem mình có nhớ nhầm dấu trừ không.",
-    "MẸO NGƯỜI GIẢI: viết công thức ra lề rồi khoanh tròn chữ (n − 1). Mỗi lần thay số, tính (n − 1) TRƯỚC, xong mới nhân."
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
-   "dong": [
-    "LẮP: con dán lên chân cầu thang một tấm bảng nhỏ: \"Bậc thứ n cao 15 × (n − 1) + 15 cm\". Bác bảo vệ hỏi bậc nào cũng đáp được ngay, không cần leo thử.",
-    "SOI: soi chéo bằng đường khác — 20 bậc, mỗi bậc 15 cm, nhưng bậc đầu tiên đã cao sẵn 15 cm và còn 19 lần leo nữa: 15 × 20 = 300 cm. Hai con đường cùng ra 300 ✓.",
-    "DÙNG NGOÀI ĐỜI: tiền tiết kiệm mỗi tuần bỏ thêm một khoản bằng nhau, số ghế đầu mỗi hàng trong rạp, cột cây số trên quốc lộ — hỏi \"cái thứ n\" là dùng đúng công thức này."
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Tìm số hạng thứ 20 của dãy 3 ; 7 ; 11 ; 15 ; ...",
-    "Tóm tắt",
-    "Dãy cách đều, số đầu 3, khoảng cách 4, cần tìm số hạng thứ 20.",
-    "Kiểm khoảng cách trước: 7 − 3 = 4 ; 11 − 7 = 4 ; 15 − 11 = 4 ✓.",
-    "Mô hình (đếm bước nhảy)",
-    "Từ vị trí 1 đến vị trí 20 có 20 − 1 = 19 bước nhảy.",
-    "Mỗi bước cộng thêm 4, nên tất cả cộng thêm 4 × 19 = 76.",
+    "Đề bài: Cho dãy 5 ; 10 ; 15 ; 20 ; 25 ; ... Tìm số hạng thứ 10.",
+    "Tìm khoảng cách",
+    "Lấy số sau trừ số trước: 10 − 5 = 5.",
+    "Khoảng cách là 5.",
+    "Đếm số lần cộng thêm",
+    "Từ chỗ thứ nhất đến chỗ thứ 10 phải cộng thêm 10 − 1 = 9 lần.",
+    "Chỗ thứ nhất đã có sẵn, không phải cộng lần nào.",
     "Tính",
-    "Số hạng thứ 20 = 3 + 4 × (20 − 1) = 3 + 4 × 19 = 3 + 76 = 79.",
-    "Soi lại: thay n = 1 → 3 + 4 × 0 = 3 ✓ đúng số đầu.",
-    "Đáp số: số hạng thứ 20 là 79."
+    "Số hạng thứ 10 = 5 + 5 × 9 = 5 + 45 = 50.",
+    "Thử lại: thay số 1 vào thì được 5 + 5 × 0 = 5, đúng bằng số đầu.",
+    "Đáp số: số hạng thứ 10 là 50."
    ],
    "hinh": [],
    "nhip": ""
@@ -103,10 +73,10 @@
   "suKemNham": {
    "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
    "dong": [
-    "Cô hỏi số hạng thứ 20 của dãy 3 ; 7 ; 11 ; ..., Trí Long bấm máy: \"Khoảng cách 4, vị trí 20, vậy lấy 3 + 4 × 20 = 83 ạ!\"",
-    "Gợi ý 1: Con thử công thức của Trí Long với vị trí thứ NHẤT xem: 3 + 4 × 1 = 7. Nhưng số hạng thứ nhất rõ ràng là 3 mà?",
-    "Gợi ý 2: Từ chỗ thứ nhất đến chỗ thứ 20, con nhảy 20 bước hay 19 bước? Vẽ bốn chỗ ra mà đếm thử.",
-    "Chữa: phải nhân với (20 − 1) = 19, không nhân với 20. Số hạng thứ 20 = 3 + 4 × 19 = 79. Nhớ: ĐẾM BƯỚC NHẢY, KHÔNG ĐẾM CHỖ."
+    "Có bạn tính số hạng thứ 10 của dãy 5 ; 10 ; 15 ; ... như sau: 5 + 5 × 10 = 55.",
+    "Gợi ý 1: Con thử cách ấy với chỗ thứ nhất xem: 5 + 5 × 1 = 10. Nhưng số hạng thứ nhất rõ ràng là 5 mà?",
+    "Gợi ý 2: Từ chỗ thứ nhất đến chỗ thứ 10, con cộng thêm 10 lần hay 9 lần? Vẽ bốn chỗ ra giấy mà đếm thử.",
+    "Chữa: phải nhân với 9, không nhân với 10. Số hạng thứ 10 = 5 + 5 × 9 = 50."
    ],
    "hinh": [],
    "nhip": ""
@@ -128,8 +98,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Đứng ở chân cầu thang nhà mình, cho con đo chiều cao một bậc rồi hỏi: \"Bậc thứ 8 cao bao nhiêu?\" — bắt con tính trước, rồi cùng đo lại để kiểm.",
-    "Mẹo kiểm nhanh cho bố mẹ: bảo con thay n = 1 vào công thức con vừa viết. Ra đúng số đầu thì công thức đúng; ra số khác là con nhớ nhầm dấu trừ."
+    "Đếm bậc cầu thang nhà mình, đo chiều cao một bậc, rồi hỏi con bậc thứ 8 cao bao nhiêu. Tính trước rồi cùng đo lại để kiểm.",
+    "Mẹo kiểm nhanh: bảo con thay số 1 vào cách tính vừa viết. Ra đúng số đầu thì đúng; ra số khác là con quên trừ một."
    ],
    "hinh": [],
    "nhip": ""
@@ -143,8 +113,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Dãy 5 ; 10 ; 15 ; ... có khoảng cách bằng mấy? Từ vị trí 1 đến vị trí 10 có bao nhiêu bước nhảy?",
-   "loiChua": "Khoảng cách 5; từ vị trí 1 đến vị trí 10 có 10 − 1 = 9 bước nhảy.",
+   "text": "Cho dãy 5 ; 10 ; 15 ; 20 ; 25 — dãy trong video. Từ chỗ thứ nhất đến chỗ thứ tư phải cộng thêm mấy lần?",
+   "loiChua": "Đếm: từ chỗ 1 sang chỗ 2, sang chỗ 3, sang chỗ 4 — cộng thêm 3 lần, không phải 4 lần.",
    "tuLuan": true
   },
   {
@@ -154,8 +124,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm số hạng thứ 10 của dãy 5 ; 10 ; 15 ; ...",
-   "loiChua": "5 + 5 × (10 − 1) = 5 + 45 = 50.",
+   "text": "Vẫn dãy 5 ; 10 ; 15 ; 20 ; 25. Khoảng cách bằng bao nhiêu, và số hạng thứ tư bằng bao nhiêu?",
+   "loiChua": "Khoảng cách 5. Số hạng thứ tư = 5 + 5 × 3 = 20.",
    "tuLuan": true
   },
   {
@@ -165,8 +135,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm số hạng thứ 8 của dãy 2 ; 6 ; 10 ; ...",
-   "loiChua": "2 + 4 × (8 − 1) = 2 + 28 = 30.",
+   "text": "Vẫn dãy 5 ; 10 ; 15 ; ... Số hạng thứ 6 bằng bao nhiêu?",
+   "loiChua": "5 + 5 × 5 = 30.",
    "tuLuan": true
   },
   {
@@ -176,8 +146,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm số hạng thứ 20 của dãy 3 ; 7 ; 11 ; ...",
-   "loiChua": "3 + 4 × (20 − 1) = 3 + 76 = 79.",
+   "text": "Cho dãy 5 ; 10 ; 15 ; ... Số hạng thứ 10 bằng bao nhiêu?",
+   "loiChua": "5 + 5 × 9 = 50.",
    "tuLuan": true
   },
   {
@@ -187,8 +157,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm số hạng thứ 15 của dãy 1 ; 9 ; 17 ; 25 ; ...",
-   "loiChua": "1 + 8 × (15 − 1) = 1 + 112 = 113.",
+   "text": "Cho dãy 3 ; 7 ; 11 ; ... Số hạng thứ 8 bằng bao nhiêu?",
+   "loiChua": "Khoảng cách 4. Số hạng thứ 8 = 3 + 4 × 7 = 31.",
    "tuLuan": true
   },
   {
@@ -198,8 +168,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Một dãy cách đều có số đầu 6, khoảng cách 7. Số hạng thứ 12 là số nào?",
-   "loiChua": "6 + 7 × (12 − 1) = 6 + 77 = 83.",
+   "text": "Một dãy cách đều có số đầu 2, khoảng cách 4. Số hạng thứ 12 bằng bao nhiêu?",
+   "loiChua": "2 + 4 × 11 = 46.",
    "tuLuan": true
   },
   {
@@ -209,8 +179,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Bậc thứ nhất của cầu thang cao 15 cm, mỗi bậc cao thêm 15 cm. Bậc thứ 20 cao bao nhiêu xăng-ti-mét?",
-   "loiChua": "15 + 15 × (20 − 1) = 15 + 285 = 300 (cm).",
+   "text": "Thay số 1 vào cách tính số hạng thứ n của dãy 5 ; 10 ; 15 ; ... thì được bao nhiêu?",
+   "loiChua": "5 + 5 × 0 = 5, đúng bằng số đầu. Đây là cách kiểm nhanh xem mình có quên trừ một không.",
    "tuLuan": true
   },
   {
@@ -220,8 +190,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Dãy 4 ; 11 ; 18 ; ... Tìm số hạng thứ 30, rồi thử lại công thức với n = 1 xem có ra đúng số đầu không.",
-   "loiChua": "Số hạng thứ 30 = 4 + 7 × 29 = 4 + 203 = 207. Thử n = 1: 4 + 7 × 0 = 4 ✓ đúng bằng số đầu.",
+   "text": "Cho dãy 5 ; 10 ; 15 ; ... Số hạng thứ 100 bằng bao nhiêu? Đây chính là câu hỏi mở đầu video.",
+   "loiChua": "5 + 5 × 99 = 5 + 495 = 500.",
    "tuLuan": true
   },
   {
@@ -231,8 +201,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Số hạng thứ 6 của một dãy cách đều là 32, khoảng cách của dãy là 5. Hỏi số hạng ĐẦU của dãy là số nào?",
-   "loiChua": "Từ vị trí 1 đến vị trí 6 có 5 bước nhảy, cộng thêm 5 × 5 = 25. Vậy số đầu = 32 − 25 = 7.",
+   "text": "Số hạng thứ 6 của một dãy cách đều là 32, khoảng cách của dãy là 5. Số hạng đầu của dãy bằng bao nhiêu?",
+   "loiChua": "Từ chỗ 1 đến chỗ 6 cộng thêm 5 lần, tức là thêm 5 × 5 = 25. Số đầu = 32 − 25 = 7.",
    "tuLuan": true
   },
   {
@@ -242,14 +212,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Số hạng thứ n của dãy cách đều bằng số đầu + khoảng cách × (n − 1).",
+   "text": "Từ chỗ thứ nhất đến chỗ thứ 10 phải cộng thêm 10 lần.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "value": true
+    "value": false
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": "Đáp án: ĐÚNG"
+   "loiChua": "SAI — chỉ cộng thêm 9 lần, vì chỗ thứ nhất đã có sẵn.",
+   "solutionNarrative": "SAI — chỉ cộng thêm 9 lần, vì chỗ thứ nhất đã có sẵn."
   },
   {
    "id": "Q2",
@@ -258,14 +228,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Từ vị trí thứ nhất đến vị trí thứ 10 có 10 bước nhảy.",
+   "text": "Muốn tìm số hạng thứ n, ta lấy số đầu cộng khoảng cách nhân với n trừ 1.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "value": false
+    "value": true
    },
-   "loiChua": "SAI — chỉ có 9 bước nhảy, vì vị trí thứ nhất đã đứng sẵn ở đó.",
-   "solutionNarrative": "SAI — chỉ có 9 bước nhảy, vì vị trí thứ nhất đã đứng sẵn ở đó."
+   "loiChua": "Đáp án: ĐÚNG",
+   "solutionNarrative": "Đáp án: ĐÚNG"
   },
   {
    "id": "Q3",
@@ -285,8 +255,8 @@
    "answerKey": {
     "choice": "A. 35"
    },
-   "loiChua": "2 + 3 × (12 − 1) = 2 + 33 = 35.",
-   "solutionNarrative": "2 + 3 × (12 − 1) = 2 + 33 = 35."
+   "loiChua": "2 + 3 × 11 = 35.",
+   "solutionNarrative": "2 + 3 × 11 = 35."
   },
   {
    "id": "Q4",
@@ -295,7 +265,7 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Thay n = 1 vào công thức số hạng thứ n, kết quả phải bằng:",
+   "text": "Thay số 1 vào cách tính số hạng thứ n, kết quả phải bằng:",
    "choices": [
     "A. số đầu của dãy",
     "B. khoảng cách",
@@ -306,8 +276,8 @@
    "answerKey": {
     "choice": "A. số đầu của dãy"
    },
-   "loiChua": "Vì (1 − 1) = 0 nên không cộng thêm bước nào — ra đúng số đầu.",
-   "solutionNarrative": "Vì (1 − 1) = 0 nên không cộng thêm bước nào — ra đúng số đầu."
+   "loiChua": "Vì cộng thêm 0 lần nên ra đúng số đầu.",
+   "solutionNarrative": "Vì cộng thêm 0 lần nên ra đúng số đầu."
   },
   {
    "id": "Q5",
@@ -316,19 +286,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Dãy 1 ; 9 ; 17 ; 25 ; ... có số hạng thứ 15 là:",
+   "text": "Dãy 5 ; 10 ; 15 ; ... có số hạng thứ 10 là:",
    "choices": [
-    "A. 113",
-    "B. 120",
-    "C. 105"
+    "A. 50",
+    "B. 55",
+    "C. 45"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 113"
+    "choice": "A. 50"
    },
-   "loiChua": "1 + 8 × 14 = 1 + 112 = 113.",
-   "solutionNarrative": "1 + 8 × 14 = 1 + 112 = 113."
+   "loiChua": "5 + 5 × 9 = 50.",
+   "solutionNarrative": "5 + 5 × 9 = 50."
   }
  ]
 }

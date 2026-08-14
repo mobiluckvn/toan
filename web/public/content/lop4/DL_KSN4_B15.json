@@ -20,42 +20,21 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Hiểu vì sao đếm số hạng thì phải CỘNG 1, trong khi tìm số hạng thứ n lại TRỪ 1. Dùng được công thức: số số hạng = (số cuối − số đầu) : khoảng cách + 1. Biết soi lại kết quả bằng cách đếm tay trên một dãy ngắn.",
-  "kidText": "Hàng rào dài 40 mét, cứ 5 mét một cột. Bác Tư mua 8 cây mà cắm xong vẫn thiếu mất một — con tìm giúp bác xem thiếu ở đâu nhé!",
+  "text": "Đếm được số số hạng của một dãy mà không phải viết cả dãy. Biết phép chia cho ra số lần cộng thêm, chưa phải số số hạng. Giải thích được vì sao phải cộng thêm một.",
+  "kidText": "Dãy ngắn thì đếm tay được, dãy dài thì sao? Con xem video rồi mình cùng đếm nhanh nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — CỘT VÀ KHOẢNG LÀ HAI THỨ KHÁC NHAU. Vẽ một hàng rào ngắn ra giấy: 3 cây cột thì có mấy khoảng ở giữa? Đếm mà xem — chỉ 2 khoảng. 4 cột thì 3 khoảng. Số KHOẢNG luôn ít hơn số CỘT đúng 1, vì hai đầu đều là cột."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — PHÉP CHIA CHO RA SỐ KHOẢNG, KHÔNG PHẢI SỐ CỘT. Bác Tư lấy 40 : 5 = 8 — con số 8 ấy là số KHOẢNG, đúng chứ không sai. Bác chỉ quên mất rằng còn phải thêm một cây cột cho cái đầu hàng rào. Vậy số cột = 8 + 1 = 9 cây."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — GHÉP THÀNH CÔNG THỨC. Với một dãy cách đều: (số cuối − số đầu) cho ra \"cả quãng đường\", chia cho khoảng cách thì ra SỐ BƯỚC NHẢY, rồi cộng 1 để đếm cả số hạng đầu tiên. Vậy: số số hạng = (số cuối − số đầu) : khoảng cách + 1."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — GIẢI BÀI HÀNG RÀO. Dãy vị trí cột: 0 ; 5 ; 10 ; ... ; 40. Số cột = (40 − 0) : 5 + 1 = 8 + 1 = 9 cây ✓."
-   },
-   {
-    "id": "K5",
-    "text": "Bước 5 — VÌ SAO BÀI TRƯỚC TRỪ 1 MÀ BÀI NÀY CỘNG 1. Hai câu hỏi ngược nhau nên hai phép ngược nhau. Bài trước: biết SỐ CHỖ, tìm SỐ BƯỚC → bớt đi 1. Bài này: biết SỐ BƯỚC, tìm SỐ CHỖ → thêm vào 1. Nhớ một câu là đủ: CHỖ nhiều hơn BƯỚC đúng một."
-   }
-  ],
-  "mantra": "tính xong luôn thử lại trên một dãy NGẮN mà đếm tay được. Dãy 2 ; 4 ; 6 ; 8 : công thức cho (8 − 2) : 2 + 1 = 4 ✓ — đếm tay cũng 4.",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Cô hỏi dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng, Trí Long đáp: \"Lấy 100 : 2 = 50… à không, lấy (100 − 2) : 2 = 49 số hạng ạ!\"",
+    "wrong": "Có bạn đếm dãy 5 ; 10 ; 15 ; ... ; 100 rồi nói: \"(100 − 5) : 5 = 19 số hạng.\"",
     "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Con thử công thức của Trí Long trên dãy ngắn 2 ; 4 ; 6 ; 8 xem: (8 − 2) : 2 = 3. Nhưng đếm tay thì rõ ràng có 4 số hạng mà? Gợi ý 2: Phép chia ấy cho ra số BƯỚC NHẢY. Còn thiếu chính chỗ đứng đầu tiên — con đã đếm nó chưa? Chữa: phải cộng thêm 1. Số số hạng = (100 − 2) : 2 + 1 = 50."
+    "fix": "Gợi ý 1: Con thử cách ấy trên dãy ngắn 5 ; 10 ; 15 xem: (15 − 5) : 5 = 2. Nhưng đếm tay thì rõ ràng có 3 số hạng mà? Gợi ý 2: Phép chia cho ra số lần cộng thêm. Con đã đếm chỗ đứng đầu tiên chưa? Chữa: phải cộng thêm một. Dãy có 19 + 1 = 20 số hạng."
    }
   ]
  },
@@ -63,107 +42,48 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Hàng rào dài 40 m, mỗi 5 m một cột, cắm cả hai đầu. Hỏi cần bao nhiêu cây cột?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "CHO GÌ? hàng rào dài 40 m, mỗi 5 m một cột, cắm cả hai đầu.\nHỎI GÌ? cần bao nhiêu cây cột.\nĐẠI LƯỢNG & ĐƠN VỊ: chiều dài tính bằng mét, còn cột đếm bằng cây — hai thứ khác nhau, chớ lẫn.\nQUAN HỆ GIỮA CHÚNG: vị trí các cột tạo thành dãy cách đều 0 ; 5 ; 10 ; ... ; 40, khoảng cách 5. Số cột chính là SỐ SỐ HẠNG của dãy ấy.\nCHỌN CÔNG CỤ: công thức ĐẾM SỐ SỐ HẠNG. Đây là công thức duy nhất của bài này.\nƯỚC LƯỢNG TRƯỚC: 8 khoảng thì cột phải nhiều hơn 8 một chút — bác Tư hụt đúng chỗ đó.",
-    "teaches": [],
-    "nhan": "NHỊP 1, DỊCH"
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S6",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S7",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K5"
-    ]
-   },
-   {
-    "id": "S8",
-    "kind": "explain",
-    "narration": "LẮP: bác Tư mua thêm một cây cột nữa là vừa khít. Bác ghi vào sổ: \"Cắm cả hai đầu thì SỐ CỘT = SỐ KHOẢNG + 1.\"\nSOI: soi lại bằng cách đếm tay đoạn ngắn — hàng rào 10 m, mỗi 5 m một cột: cột ở 0, ở 5, ở 10 → 3 cây. Công thức: (10 − 0) : 5 + 1 = 2 + 1 = 3 ✓.\nDÙNG NGOÀI ĐỜI: trồng cây hai bên đường, treo đèn lồng dọc hành lang, đếm số trang từ trang 20 đến trang 80 — chỗ nào cũng phải nhớ cộng 1.",
-    "teaches": [],
-    "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
-   },
-   {
-    "id": "S9",
     "kind": "trap",
-    "narration": "Cô hỏi dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng, Trí Long đáp: \"Lấy 100 : 2 = 50… à không, lấy (100 − 2) : 2 = 49 số hạng ạ!\"",
+    "narration": "Có bạn đếm dãy 5 ; 10 ; 15 ; ... ; 100 rồi nói: \"(100 − 5) : 5 = 19 số hạng.\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng?",
+  "problem": "Dãy 5 ; 10 ; 15 ; ... ; 100 có bao nhiêu số hạng?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Tìm khoảng cách"
    },
    {
-    "show": "Dãy cách đều, số đầu 2, số cuối 100, khoảng cách 2."
+    "show": "Lấy số sau trừ số trước: 10 − 5 = 5."
    },
    {
-    "show": "Kiểm khoảng cách: 4 − 2 = 2 ; 6 − 4 = 2 ✓."
+    "show": "Khoảng cách là 5."
    },
    {
-    "show": "Mô hình (bước nhảy rồi cộng chỗ đầu)"
+    "show": "Lấy số cuối trừ số đầu"
    },
    {
-    "show": "Cả quãng: 100 − 2 = 98."
+    "show": "100 − 5 = 95."
    },
    {
-    "show": "Số bước nhảy: 98 : 2 = 49."
+    "show": "Chia cho khoảng cách"
    },
    {
-    "show": "Cộng thêm chính số hạng đầu: 49 + 1 = 50."
+    "show": "95 : 5 = 19. Đây là số lần cộng thêm, chưa phải số số hạng."
    },
    {
-    "show": "Tính"
+    "show": "Cộng thêm một cho chỗ đầu tiên"
    },
    {
-    "show": "Số số hạng = (100 − 2) : 2 + 1 = 49 + 1 = 50 số hạng."
+    "show": "19 + 1 = 20 số hạng."
    },
    {
-    "show": "Soi lại trên dãy ngắn cùng kiểu: 2 ; 4 ; 6 ; 8 → (8 − 2) : 2 + 1 = 4 ✓ đếm tay cũng 4."
+    "show": "Soi lại trên dãy ngắn: 5 ; 10 ; 15 có (15 − 5) : 5 + 1 = 3, đếm tay cũng 3."
    },
    {
-    "show": "Đáp số: dãy có 50 số hạng."
+    "show": "Đáp số: dãy có 20 số hạng."
    }
   ]
  },
@@ -172,11 +92,11 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Một hàng rào có 5 cây cột cắm cách đều. Hỏi giữa các cột có bao nhiêu khoảng?",
+     "text": "Cho dãy 5 ; 10 ; 15 ; 20 ; 25 — dãy trong video. Lấy số cuối trừ số đầu được bao nhiêu?",
      "answerKey": {
-      "value": 4
+      "value": 20
      },
-     "solutionNarrative": "5 cột thì có 4 khoảng — số khoảng ít hơn số cột đúng 1.",
+     "solutionNarrative": "25 − 5 = 20.",
      "hints": [
       "Vẽ năm cây cột ra giấy.",
       "Rồi đếm số chỗ trống ở giữa chúng."
@@ -184,11 +104,11 @@
     },
     {
      "id": "C2",
-     "text": "Dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng?",
+     "text": "Lấy 20 vừa tìm được chia cho khoảng cách 5 thì được bao nhiêu?",
      "answerKey": {
-      "value": 50
+      "value": 4
      },
-     "solutionNarrative": "(100 − 2) : 2 + 1 = 49 + 1 = 50 số hạng.",
+     "solutionNarrative": "20 : 5 = 4. Đây là số lần cộng thêm, chưa phải số số hạng.",
      "hints": [
       "Cuối trừ đầu, rồi chia cho khoảng cách.",
       "Đừng quên còn chính số hạng đầu."
@@ -196,11 +116,11 @@
     },
     {
      "id": "C3",
-     "text": "Dãy 5 ; 10 ; 15 ; ... ; 100 có bao nhiêu số hạng?",
+     "text": "Vậy dãy 5 ; 10 ; 15 ; 20 ; 25 có bao nhiêu số hạng?",
      "answerKey": {
-      "value": 20
+      "value": 5
      },
-     "solutionNarrative": "(100 − 5) : 5 + 1 = 19 + 1 = 20 số hạng.",
+     "solutionNarrative": "4 + 1 = 5 số hạng. Đếm tay cũng ra 5.",
      "hints": [
       "Khoảng cách là 5.",
       "Chia xong nhớ cộng thêm một."
@@ -210,11 +130,11 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Dãy 3 ; 7 ; 11 ; ... ; 79 có bao nhiêu số hạng?",
+     "text": "Dãy 5 ; 10 ; 15 ; ... ; 100 có bao nhiêu số hạng?",
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "(79 − 3) : 4 + 1 = 19 + 1 = 20 số hạng.",
+     "solutionNarrative": "(100 − 5) : 5 + 1 = 19 + 1 = 20 số hạng.",
      "hints": [
       "Khoảng cách là 4.",
       "Phép chia cho ra số bước, chưa phải số chỗ."
@@ -222,11 +142,11 @@
     },
     {
      "id": "C5",
-     "text": "Hàng rào thẳng dài 40 m, cứ 5 m cắm một cột, cắm cả hai đầu. Cần bao nhiêu cây cột?",
+     "text": "Dãy 2 ; 4 ; 6 ; ... ; 100 có bao nhiêu số hạng?",
      "answerKey": {
-      "value": 9
+      "value": 50
      },
-     "solutionNarrative": "(40 − 0) : 5 + 1 = 8 + 1 = 9 cây cột.",
+     "solutionNarrative": "(100 − 2) : 2 + 1 = 49 + 1 = 50 số hạng.",
      "hints": [
       "Cột đầu tiên cắm ở mốc 0 mét.",
       "Số cột nhiều hơn số khoảng đúng một."
@@ -234,11 +154,11 @@
     },
     {
      "id": "C6",
-     "text": "Từ trang 20 đến trang 80 của một quyển truyện có bao nhiêu trang?",
+     "text": "Dãy 3 ; 7 ; 11 ; ... ; 79 có bao nhiêu số hạng?",
      "answerKey": {
-      "value": 61
+      "value": 20
      },
-     "solutionNarrative": "(80 − 20) : 1 + 1 = 60 + 1 = 61 trang. Nhớ tính cả trang 20.",
+     "solutionNarrative": "(79 − 3) : 4 + 1 = 19 + 1 = 20 số hạng.",
      "hints": [
       "Hai trang liền nhau cách nhau 1.",
       "Nhớ tính cả trang đầu tiên."
@@ -246,11 +166,11 @@
     },
     {
      "id": "C7",
-     "text": "Dãy 1 ; 9 ; 17 ; ... ; 113 có bao nhiêu số hạng?",
+     "text": "Một dãy phải cộng thêm 8 lần mới đi từ số đầu tới số cuối. Dãy ấy có bao nhiêu số hạng?",
      "answerKey": {
-      "value": 15
+      "value": 9
      },
-     "solutionNarrative": "(113 − 1) : 8 + 1 = 14 + 1 = 15 số hạng.",
+     "solutionNarrative": "8 + 1 = 9 số hạng. Số chỗ luôn nhiều hơn số lần cộng đúng một.",
      "hints": [
       "Khoảng cách là 8.",
       "Chia xong cộng một."
@@ -260,11 +180,11 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Dãy 4 ; 9 ; 14 ; ... ; 99 có bao nhiêu số hạng? Hãy soi lại kết quả bằng cách đếm tay trên một dãy ngắn cùng kiểu.",
+     "text": "Dãy 4 ; 9 ; 14 ; ... ; 99 có bao nhiêu số hạng? Hãy soi lại kết quả trên một dãy ngắn cùng kiểu.",
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "(99 − 4) : 5 + 1 = 19 + 1 = 20 số hạng. Soi trên dãy ngắn 4 ; 9 ; 14 : (14 − 4) : 5 + 1 = 3 ✓ đếm tay cũng 3.",
+     "solutionNarrative": "(99 − 4) : 5 + 1 = 19 + 1 = 20 số hạng. Soi trên dãy ngắn 4 ; 9 ; 14 : (14 − 4) : 5 + 1 = 3, đếm tay cũng 3.",
      "hints": [
       "Làm như các câu trên.",
       "Rồi thử lại trên ba số đầu mà đếm tay."
@@ -272,11 +192,11 @@
     },
     {
      "id": "C9",
-     "text": "Một dãy cách đều có 25 số hạng, số đầu là 6, khoảng cách là 4. Hỏi số hạng CUỐI của dãy là số nào?",
+     "text": "Một dãy cách đều có 25 số hạng, số đầu là 6, khoảng cách là 4. Số hạng cuối bằng bao nhiêu?",
      "answerKey": {
       "value": 102
      },
-     "solutionNarrative": "25 số hạng thì có 24 bước nhảy: 6 + 4 × 24 = 6 + 96 = 102.",
+     "solutionNarrative": "25 số hạng thì cộng thêm 24 lần: 6 + 4 × 24 = 6 + 96 = 102.",
      "hints": [
       "Đi ngược: 25 chỗ thì có mấy bước nhảy?",
       "Từ số đầu cộng thêm bấy nhiêu bước."
@@ -290,7 +210,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Số số hạng của dãy cách đều bằng (số cuối − số đầu) : khoảng cách + 1.",
+    "text": "Số số hạng bằng số cuối trừ số đầu, chia cho khoảng cách, rồi cộng 1.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -299,12 +219,12 @@
    },
    {
     "id": "Q2",
-    "text": "Một hàng rào có 10 khoảng thì có 10 cây cột.",
+    "text": "Một dãy phải cộng thêm 10 lần thì có 10 số hạng.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — cắm cả hai đầu thì có 11 cây cột."
+    "solutionNarrative": "SAI — có 11 số hạng, vì còn chỗ đứng đầu tiên."
    },
    {
     "id": "Q3",
@@ -318,55 +238,44 @@
     "answerKey": {
      "choice": "A. 20"
     },
-    "solutionNarrative": "(100 − 5) : 5 + 1 = 19 + 1 = 20."
+    "solutionNarrative": "(100 − 5) : 5 + 1 = 20."
    },
    {
     "id": "Q4",
-    "text": "Phép chia (số cuối − số đầu) : khoảng cách cho ra:",
+    "text": "Phép chia số cuối trừ số đầu cho khoảng cách cho ra:",
     "format": "mcq",
     "choices": [
-     "A. số bước nhảy",
+     "A. số lần cộng thêm",
      "B. số số hạng",
      "C. số hạng cuối"
     ],
     "answerKey": {
-     "choice": "A. số bước nhảy"
+     "choice": "A. số lần cộng thêm"
     },
-    "solutionNarrative": "Muốn ra số số hạng thì phải cộng thêm 1."
+    "solutionNarrative": "Muốn ra số số hạng thì phải cộng thêm một."
    },
    {
     "id": "Q5",
-    "text": "Từ trang 20 đến trang 80 có số trang là:",
+    "text": "Dãy 2 ; 4 ; 6 ; ... ; 100 có số số hạng là:",
     "format": "mcq",
     "choices": [
-     "A. 61",
-     "B. 60",
-     "C. 59"
+     "A. 50",
+     "B. 49",
+     "C. 51"
     ],
     "answerKey": {
-     "choice": "A. 61"
+     "choice": "A. 50"
     },
-    "solutionNarrative": "(80 − 20) + 1 = 61, vì tính cả trang 20."
+    "solutionNarrative": "(100 − 2) : 2 + 1 = 50."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Cùng con đếm số bậc cầu thang trong nhà rồi đếm số \"lần bước\" từ dưới lên — cho con tự thấy hai con số lệch nhau đúng 1.",
-  "homeActivity": "Bài đố vui: từ trang 20 đến trang 80 của quyển truyện có bao nhiêu trang? (Đáp: 61 trang, không phải 60 — vì tính cả trang 20.)",
+  "onComplete": "Đếm số bậc cầu thang rồi đếm số lần bước từ dưới lên — cho con tự thấy hai con số lệch nhau đúng một.",
+  "homeActivity": "Đố vui: từ trang 20 đến trang 80 có bao nhiêu trang? Đáp là 61, không phải 60, vì tính cả trang 20.",
   "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L4H_B15_MO",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L4H_B15_MO.png",
-   "caption": "8 khoảng nhưng 9 cột — bác Tư hụt đúng một cây ở chỗ này.",
-   "sha256_16": "81d9468ab573a5dc",
-   "mucGoc": "chuyenMoBai"
-  }
- ],
+ "figureSpec": [],
  "hatMam": "Bài trước con đi XUÔI: biết vị trí, tìm giá trị. Hôm nay đi NGƯỢC: biết số đầu và số cuối, đếm xem cả dãy có bao nhiêu số hạng. Công thức lần này CỘNG 1, trong khi bài trước TRỪ 1 — hai dấu ngược nhau, và cả hai đều có lý do.",
  "duongLui": {
   "ve": [
