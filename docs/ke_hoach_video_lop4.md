@@ -827,7 +827,11 @@ nhưng lệch hẳn đề chính (ô nhập câu C1 chương 3 hỏi "xếp hàn
 đề hỏi chia cam vào đĩa), bản đang chạy thì ngược lại. Nay tệp ấy chỉ ĐIỀN CHỖ
 TRỐNG, không đè chỗ đã có.
 
-### ⚠ NỢ TÌM RA TRONG ĐỢT NÀY — CHƯA SỬA
+### ✅ NỢ TÌM RA TRONG ĐỢT NÀY — ĐÃ TRẢ (xem mục 22)
+
+*(Đoạn dưới giữ nguyên như lúc mới tìm ra, để còn đọc lại được vì sao nó xảy ra.)*
+
+### ⚠ NỢ TÌM RA TRONG ĐỢT NÀY
 
 **Lời giải của kỳ sát hạch lệch khỏi đề ở chương 3, 6 và 7.** Đây là lỗi của mấy đợt
 TRƯỚC, không phải đợt này, nhưng nó đang chạy thật:
@@ -850,3 +854,59 @@ sách bên cạnh, chứ không vá vội trong đợt này.
 
 Chương 1 (số đến lớp triệu, 4 bài) · chương 2 (bốn phép tính, 4 bài) · chương 11
 (quãng đường, 3 bài).
+
+---
+
+## 22 · Trả nợ · lời giải kỳ sát hạch lệch khỏi đề
+
+Bác bảo trả nợ trước. Đo lại thì rộng hơn lúc mới thấy: **bốn chương chứ không phải
+ba** — thêm chương 5 — và hỏng ở **hai chỗ ngược nhau**.
+
+### Hai nửa hỏng theo hai kiểu khác nhau
+
+| | đề chính | đề B |
+|---|---|---|
+| đề bài | mới, đúng | mới, đúng |
+| ô nhập | **đúng** | **lệch** |
+| lời giải | **lệch** | **đúng** |
+
+Vì chúng hỏng ở hai lượt khác nhau. **Đề chính** bị viết lại đề — ô nhập sửa theo mà
+lời giải quên sửa. **Đề B** bị thay hẳn bộ đề — lời giải thay theo mà ô nhập giữ
+nguyên bộ cũ. Cả hai đều đánh khoá theo SỐ THỨ TỰ CÂU (`OT7#C1`), nên khoá vẫn khớp
+còn nội dung thì đã là của câu khác.
+
+Đây cũng là lý do lúc đầu cháu đọc ngược: soi bảng nào cũng thấy "đúng một nửa", vì
+mỗi bảng đúng một phần khác nhau.
+
+### Cách đo
+
+Máy không đọc hiểu được "lời giải này có phải của câu này không". Nhưng ô nhập và
+lời giải cùng nói về MỘT đáp số, nên **mọi giá trị SỐ của ô nhập phải nằm nguyên văn
+trong lời giải**. Lệch câu là con số lệch theo ngay.
+
+    đo trước khi sửa:  đề chính 39 câu lệch (ch 3, 5, 6, 7)
+                       đề B     34 câu lệch (ch 3, 5, 6, 7, 8)
+    đo sau khi sửa:    0 và 0, trên cả 240 câu của mười một chương
+
+### Đã làm gì
+
+* **46 lời giải đề chính viết lại** bằng tay, bám vào ô nhập đã đối chiếu từng câu
+  (`tools/vá_loi_giai_ontap.py`, có phép tự soi và đã phá thử ba kiểu);
+* **đề B lấy ô nhập từ bảng tay** thay vì từ bản đang chạy — bảng tay khớp lời giải
+  100% ở cả mười một chương. Bốn câu bảng tay chưa có thì viết thêm, giữ **240/240
+  chấm máy**;
+* `tach_ontap_lop4.py` nay chọn nguồn **theo từng phần**: đề chính tin bản đang
+  chạy, đề B tin bảng tay. Chỗ này KHÔNG gộp lại được, và lý do ghi ngay trong mã.
+
+### Cổng mới
+
+`web/test/on_tap_loi_giai.test.mjs` — canh đúng phép đo ở trên, cộng phép "không câu
+nào được để trống lời giải". Ngưỡng đặt ở 0 vì dữ liệu nay sạch, và từ nay chỉ được
+siết. Đã phá thử bốn kiểu, kể cả dán đúng lời giải sai cũ vào chỗ cũ — cả bốn đều kêu.
+
+### Chỗ vẫn còn là bẫy
+
+`data/lop4_ontap_tay.json` còn giữ **59 mục đề chính đã cũ** (của bộ đề trước khi
+viết lại). Nay không ai đọc tới chúng nữa vì đề chính tin bản đang chạy, nhưng ai mở
+tệp ấy ra đọc thì vẫn dễ tưởng nó là bản đúng. Chưa dọn, vì sửa 59 mục bằng tay là
+mở thêm một cửa sai mới.

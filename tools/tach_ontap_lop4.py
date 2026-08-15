@@ -47,7 +47,20 @@ def main(chi_soat=False):
                 ma = f"OT{k['so']}#{phan}{q['qno']}"
                 # `suy_ra` nhận đúng hình dạng câu của bước 3: text + loiChua
                 cau = {'text': q['text'], 'loiChua': q.get('answer', '')}
-                if ma in da_co:
+                # ⚠ ĐỀ B KHÔNG DÙNG BẢN ĐANG CHẠY. Đo bằng phép "mọi giá trị số của
+                # ô nhập phải nằm trong lời giải": bản đang chạy lệch 34 câu đề B ở
+                # bốn chương, còn bảng tay khớp 100% ở cả mười một chương.
+                #
+                # Hai phần lệch ngược nhau vì chúng hỏng ở hai lượt khác nhau: ĐỀ
+                # CHÍNH bị viết lại đề (ô nhập sửa theo, lời giải quên sửa), còn ĐỀ B
+                # bị thay đề mà ô nhập giữ nguyên bộ cũ. Nên mỗi phần phải tin một
+                # bảng khác nhau — chỗ này KHÔNG gộp lại được.
+                if phan == 'B':
+                    if ma in tay:
+                        khoa, ten = tay[ma], 'VIẾT TAY'
+                    else:
+                        khoa, ten = suy_ra(cau, ma)
+                elif ma in da_co:
                     # ⚠ BẢN ĐANG CHẠY ĐỨNG TRƯỚC BẢNG VIẾT TAY, và đó là chủ ý.
                     #
                     # Chạy lại tệp này từng xoá ô nhập của bốn câu, rồi lúc soi kỹ
