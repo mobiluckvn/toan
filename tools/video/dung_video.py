@@ -325,6 +325,44 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuCuoi"):
             giua(d, y0 + h_nhom + 118, c["chuCuoi"], phong(34), INK, rong=W - 200)
 
+    elif L == "hinh_cn":
+        # ══ HÌNH CHỮ NHẬT — VẼ ĐƯỢC CẢ CHU VI LẪN DIỆN TÍCH ══
+        # Chỗ bé lẫn nhất cả chương là chu vi với diện tích. Nói bằng lời thì hai chữ
+        # ấy nghe na ná nhau; vẽ ra thì một cái là ĐƯỜNG ĐI QUANH MÉP, một cái là
+        # MẶT BỊ PHỦ KÍN — hai thứ chẳng giống nhau chút nào.
+        #
+        # `oVuong=True` phủ lưới ô đơn vị để đếm diện tích. `vienDam=True` tô đậm
+        # đường quanh mép để chỉ chu vi. Bật cả hai thì thấy luôn hai thứ trên cùng
+        # một hình, đúng chỗ cần so.
+        giua(d, 44, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        dai, rong = c.get("dai", 1), c.get("rong", 1)
+        o = min(74, int(560 / max(dai, 1)), int(300 / max(rong, 1)))
+        w, h = dai * o, rong * o
+        x0, y0 = (W - w) // 2, 190
+        if c.get("oVuong"):
+            for i in range(dai):
+                for j in range(rong):
+                    the(d, x0 + i * o, y0 + j * o, o, o,
+                        nen=TEAL_PALE, vien=TEAL, day=2, bo=0)
+        else:
+            the(d, x0, y0, w, h, nen="#FFFFFF", vien=LINE, day=3, bo=0)
+        if c.get("vienDam"):
+            d.rectangle([x0, y0, x0 + w, y0 + h], outline=GOLD, width=9)
+        else:
+            d.rectangle([x0, y0, x0 + w, y0 + h], outline=TEAL_DARK, width=4)
+        f = phong(32)
+        if c.get("nhanDai"):
+            giua(d, y0 - 44, c["nhanDai"], f, INK, rong=W - 200)
+        if c.get("nhanRong"):
+            t = c["nhanRong"]
+            d.text((x0 - 22 - d.textlength(t, font=f), y0 + h // 2 - 18), t,
+                   font=f, fill=INK)
+        if c.get("chuPhu"):
+            giua(d, y0 + h + 44, c["chuPhu"], phong(36), INK, rong=W - 180)
+        if c.get("chuCuoi"):
+            giua(d, y0 + h + 110, c["chuCuoi"], phong(32),
+                 GOLD_DARK if c.get("vienDam") else TEAL_DARK, rong=W - 200)
+
     elif L == "phan_so":
         # ══ PHÂN SỐ VẼ RA THÀNH BĂNG CHIA PHẦN ══
         # Cả chương phân số đứng hay đổ ở chỗ này: bé phải THẤY mẫu số là "chia làm

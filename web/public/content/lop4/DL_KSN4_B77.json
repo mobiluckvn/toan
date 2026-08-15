@@ -1,0 +1,358 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B77",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 72 · TĂNG CHIỀU NÀY GIẢM CHIỀU KIA — DIỆN TÍCH CÓ THỂ KHÔNG ĐỔI",
+ "durationMinutes": 10,
+ "so": 72,
+ "chuong": 10,
+ "tenChuong": "HÌNH HỌC",
+ "dangGoc": "Dạng gốc: HH 1.2b mức Lớp 4 — Tăng một chiều đồng thời giảm chiều kia; diện tích đổi hay không tuỳ vào tích hai cạnh mới.",
+ "skills": {
+  "bktUnit": "CHUONG:10@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 72,
+  "prev": "DL:KSN4.B44",
+  "next": "DL:KSN4.B45"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tính diện tích hình mới khi cả hai chiều cùng đổi. Thấy diện tích có thể giữ nguyên dù hình khác hẳn. Biết chu vi thì lại đổi, chứ không giữ nguyên như diện tích.",
+  "kidText": "Cô tăng chiều này rồi giảm chiều kia. Con đoán xem diện tích có đổi không?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nghĩ tăng 2 rồi giảm 1 thì bù trừ nhau nên cả hai đều không đổi.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con tính thử chu vi cũ và chu vi mới xem. Gợi ý 2: Một bên 20 mét, một bên 22 mét — đâu có bằng nhau. Chữa: diện tích không đổi nhưng chu vi thì đổi. Diện tích tính bằng phép nhân còn chu vi tính bằng phép cộng, nên chúng phản ứng khác nhau."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nghĩ tăng 2 rồi giảm 1 thì bù trừ nhau nên cả hai đều không đổi.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Hình chữ nhật dài 6 mét rộng 4 mét. Tăng chiều dài thêm 2 mét và giảm chiều rộng đi 1 mét. Diện tích đổi thế nào?",
+  "steps": [
+   {
+    "show": "Tính hai cạnh mới"
+   },
+   {
+    "show": "Chiều dài mới là 6 cộng 2, bằng 8 mét. Chiều rộng mới là 4 trừ 1, bằng 3 mét."
+   },
+   {
+    "show": "Tính diện tích mới"
+   },
+   {
+    "show": "8 nhân 3 bằng 24 mét vuông."
+   },
+   {
+    "show": "So với hình cũ"
+   },
+   {
+    "show": "Hình cũ là 6 nhân 4, cũng bằng 24 mét vuông. Diện tích KHÔNG đổi."
+   },
+   {
+    "show": "Hình khác hẳn mà diện tích như nhau"
+   },
+   {
+    "show": "Một hình dài và hẹp, một hình ngắn và rộng, nhưng phủ kín cùng một mặt."
+   },
+   {
+    "show": "Còn chu vi thì sao"
+   },
+   {
+    "show": "Chu vi cũ là 20 mét, chu vi mới là 8 cộng 3 rồi nhân đôi, bằng 22 mét. Chu vi ĐỔI, dù diện tích không đổi."
+   },
+   {
+    "show": "Đáp số: diện tích vẫn 24 mét vuông, còn chu vi tăng từ 20 lên 22 mét."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Hình dài 6 mét rộng 4 mét, tăng dài 2 mét giảm rộng 1 mét — đúng bài trong video. Hai cạnh mới bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chiều dài mới",
+        "value": 8
+       },
+       {
+        "label": "chiều rộng mới",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Chiều dài mới 6 + 2 = 8 mét; chiều rộng mới 4 − 1 = 3 mét.",
+     "hints": [
+      "Cộng phần tăng vào một cạnh, trừ phần giảm khỏi cạnh kia.",
+      "Làm riêng từng cạnh một."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên. Diện tích hình mới bằng bao nhiêu?",
+     "answerKey": {
+      "value": 24
+     },
+     "solutionNarrative": "8 × 3 = 24 mét vuông.",
+     "hints": [
+      "Có hai cạnh mới rồi thì nhân chúng với nhau.",
+      "Đừng đoán, cứ tính ra con số."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn bài trên. So với hình cũ thì diện tích đổi thế nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "diện tích có đổi không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Hình cũ 6 × 4 = 24 mét vuông, nên diện tích KHÔNG đổi.",
+     "hints": [
+      "Tính diện tích hình cũ rồi đặt cạnh diện tích hình mới.",
+      "So hai con số ấy xem chúng thế nào."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Vẫn bài trên. Tính chu vi cũ và chu vi mới rồi so.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chu vi cũ",
+        "value": 20
+       },
+       {
+        "label": "chu vi mới",
+        "value": 22
+       }
+      ]
+     },
+     "solutionNarrative": "Chu vi cũ (6 + 4) × 2 = 20 mét; chu vi mới (8 + 3) × 2 = 22 mét. Chu vi tăng 2 mét.",
+     "hints": [
+      "Tính chu vi cả hai hình bằng công thức quen thuộc.",
+      "Cộng hai cạnh rồi nhân đôi, làm cho từng hình."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Bạn Minh nghĩ tăng 2 giảm 1 thì mọi thứ đều bù trừ nên chẳng đổi gì. Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "diện tích có đổi không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       },
+       {
+        "label": "chu vi có đổi không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Diện tích thì không đổi thật, nhưng chu vi lại đổi. Diện tích tính bằng phép nhân còn chu vi tính bằng phép cộng nên chúng phản ứng khác nhau.",
+     "hints": [
+      "Tính riêng hai thứ chứ đừng gộp làm một.",
+      "Một thứ tính bằng phép nhân, thứ kia tính bằng phép cộng."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Hình chữ nhật dài 10 mét rộng 6 mét. Tăng dài 2 mét, giảm rộng 1 mét. Diện tích mới bằng bao nhiêu và có đổi không?",
+     "answerKey": {
+      "value": 60
+     },
+     "solutionNarrative": "Hình mới 12 × 5 = 60 mét vuông; hình cũ 10 × 6 = 60 mét vuông. Không đổi.",
+     "hints": [
+      "Tìm hai cạnh mới trước đã.",
+      "Rồi nhân chúng lại và so với hình cũ."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Hình dài 6 mét rộng 4 mét. Tăng dài 2 mét và giảm rộng 2 mét. Diện tích mới bằng bao nhiêu?",
+     "answerKey": {
+      "value": 16
+     },
+     "solutionNarrative": "Hình mới 8 × 2 = 16 mét vuông, ít hơn hình cũ 24 mét vuông. Lần này diện tích GIẢM.",
+     "hints": [
+      "Lần này phần giảm lớn hơn lần trước.",
+      "Tìm hai cạnh mới rồi nhân lại xem còn bằng cũ chăng."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Vì sao có lúc diện tích không đổi, có lúc lại đổi?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "diện tích là phép gì của hai cạnh",
+        "options": [
+         "tích",
+         "tổng"
+        ],
+        "value": "tích"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì diện tích là TÍCH hai cạnh. Chỉ khi tích hai cạnh mới bằng tích hai cạnh cũ thì diện tích mới giữ nguyên; phải tính ra mới biết, không đoán được.",
+     "hints": [
+      "Nghĩ xem diện tích tính từ hai cạnh bằng phép gì.",
+      "Phép ấy chỉ giữ nguyên kết quả khi hai cạnh mới nhân lại vẫn ra con số cũ."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Tìm một cách đổi hai cạnh của hình 6 mét nhân 4 mét sao cho diện tích vẫn là 24 mét vuông nhưng hình khác đi.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "một cạnh",
+        "value": 12
+       },
+       {
+        "label": "cạnh kia",
+        "value": 2
+       }
+      ]
+     },
+     "solutionNarrative": "Cần hai số có tích bằng 24: ví dụ 12 và 2, hoặc 24 và 1. Chẳng hạn hình 12 mét nhân 2 mét cũng có diện tích 24 mét vuông.",
+     "hints": [
+      "Tìm hai số nhân lại ra đúng diện tích cũ.",
+      "Thử các cặp số khác với cặp ban đầu."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Tăng chiều này giảm chiều kia thì diện tích có thể giữ nguyên.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG — nhưng phải tính mới biết."
+   },
+   {
+    "id": "Q2",
+    "text": "Diện tích giữ nguyên thì chu vi cũng giữ nguyên.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — chu vi vẫn đổi."
+   },
+   {
+    "id": "Q3",
+    "text": "Hình 6 nhân 4, tăng dài 2 giảm rộng 1 thì diện tích mới:",
+    "format": "mcq",
+    "choices": [
+     "A. 24 mét vuông",
+     "B. 22 mét vuông",
+     "C. 30 mét vuông"
+    ],
+    "answerKey": {
+     "choice": "A. 24 mét vuông"
+    },
+    "solutionNarrative": "Tám nhân ba."
+   },
+   {
+    "id": "Q4",
+    "text": "Cũng hình ấy, chu vi mới bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 22 mét",
+     "B. 20 mét",
+     "C. 24 mét"
+    ],
+    "answerKey": {
+     "choice": "A. 22 mét"
+    },
+    "solutionNarrative": "Tổng hai cạnh mới nhân đôi."
+   },
+   {
+    "id": "Q5",
+    "text": "Muốn biết diện tích có đổi hay không thì:",
+    "format": "mcq",
+    "choices": [
+     "A. phải tính tích hai cạnh mới",
+     "B. cứ bù trừ là xong",
+     "C. nhìn hình là biết"
+    ],
+    "answerKey": {
+     "choice": "A. phải tính tích hai cạnh mới"
+    },
+    "solutionNarrative": "Diện tích là tích hai cạnh."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Lấy 24 viên bi xếp thành hình 6 nhân 4 rồi xếp lại thành 8 nhân 3. Con thấy số bi vẫn thế mà hình khác hẳn.",
+  "homeActivity": "Chỗ hay nhầm là tưởng cái gì cũng bù trừ được. Bố mẹ hỏi riêng từng thứ: \"Diện tích thế nào? Còn chu vi thì sao?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài trước con chỉ đổi MỘT chiều. Hôm nay đổi cả hai cùng lúc, một chiều tăng và một chiều giảm — và con sẽ gặp một chuyện thú vị: đôi khi diện tích chẳng đổi chút nào, dù hình trông khác hẳn.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B28",
+   "DL:KSN3.B30"
+  ],
+  "ten": [
+   "CHU VI BIẾN HÌNH",
+   "DIỆN TÍCH — TẤM THẢM Ô VUÔNG"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B77_giang.mp4"
+ }
+}

@@ -1,12 +1,12 @@
 {
  "id": "DL:KSN4.B44",
- "quyen": "lop4",
+ "quyen": "KSN4",
  "so": 44,
- "ten": "ĐỔI KÍCH THƯỚC THÌ DIỆN TÍCH ĐỔI THẾ NÀO?",
+ "ten": "TĂNG MỘT CHIỀU — DIỆN TÍCH THÊM ĐÚNG MỘT DẢI",
  "chuong": 10,
- "tenChuong": "CHU VI, DIỆN TÍCH VÀ HÌNH KHỐI",
- "dangGoc": "HH 1.2 mức Lớp 4 — Tăng / giảm một chiều (S đổi = a × chiều kia) · tăng chiều này giảm chiều kia · chu vi không đổi, so diện tích",
- "hatMam": "Bản vẽ sân chơi vừa duyệt xong thì khu phố... đổi ý: chỗ muốn nới thêm, chỗ phải thu lại! May cho hai người giải: khi một chiều thay đổi, KHÔNG cần tính lại cả sân — chỉ cần nhìn DẢI ĐẤT mọc thêm (hay mất đi). Và một câu hỏi triết lý của nghề: cùng một cuộn rào, quây kiểu nào được sân rộng nhất?",
+ "tenChuong": "HÌNH HỌC",
+ "dangGoc": "Dạng gốc: HH 1.2a mức Lớp 4 — Tăng hoặc giảm một chiều, phần diện tích đổi bằng phần thêm nhân chiều kia.",
+ "hatMam": "Hôm nay con xem điều gì xảy ra khi kéo dài một cạnh của hình. Nhìn hình thì thấy ngay: phần diện tích thêm vào là một DẢI, và dải ấy tính rất gọn.",
  "ganDuoi": {
   "ve": [
    "DL:KSN3.B28",
@@ -16,25 +16,23 @@
    "CHU VI BIẾN HÌNH",
    "DIỆN TÍCH — TẤM THẢM Ô VUÔNG"
   ],
-  "canCu": "chuDe",
+  "canCu": "sach",
   "lopDuoi": 3
  },
  "muc": {
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Tính nhanh phần diện tích tăng (giảm) khi MỘT chiều thay đổi: S đổi = phần thay đổi × chiều kia (nhìn ra dải đất mới).",
-    "Xử ca \"tăng chiều này, giảm chiều kia\": tính diện tích mới rồi so — không vội kết luận \"bù trừ là hòa\".",
-    "Khám phá định luật: cùng chu vi, hình càng gần VUÔNG diện tích càng lớn."
+    "Thấy phần diện tích thêm vào là một dải hình chữ nhật.",
+    "Tính phần thêm bằng phần kéo dài nhân chiều kia.",
+    "Biết chu vi cũng đổi, nhưng đổi khác cách."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Hạng mục số 2: lệnh nới sân phút chót",
-   "dong": [
-    "Bác tổ trưởng gọi điện gấp: \"Khu phố xin thêm được dải đất, sân chính được KÉO DÀI thêm 5 mét! Khai bổ sung gấp: diện tích tăng thêm bao nhiêu để xin thêm gạch?\" Trí Long thở dài lấy nháp: \"Lại tính từ đầu: sân mới 35 nhân 20 bằng 700, trừ đi 600 cũ...\" Su Kem đã vẽ xong một hình: sân cũ, cộng đúng MỘT DẢI đất mới bên phải. \"Nhìn dải này mà xem — nó là hình chữ nhật 5 nhân 20 đấy. Cần gì tính lại cả sân?\""
-   ],
+   "ten": "CHUYỆN MỞ BÀI — ",
+   "dong": [],
    "hinh": [
     {
      "id": "L4H_B44_MO",
@@ -48,70 +46,46 @@
   },
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
-   "dong": [
-    "CHO GÌ? sân cũ 30 × 20 m; chiều dài được kéo thêm 5 m, chiều rộng giữ nguyên.",
-    "HỎI GÌ? diện tích tăng thêm bao nhiêu mét vuông.",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: độ dài (m) và diện tích (m²) — cái cần là PHẦN TĂNG, không phải diện tích mới.",
-    "QUAN HỆ GIỮA CHÚNG: phần đất mọc thêm là một DẢI hình chữ nhật: bề ngang đúng bằng 5 m kéo thêm, bề dọc đúng bằng chiều rộng cũ 20 m.",
-    "CHỌN CÔNG CỤ: MÔ HÌNH DẢI ĐẤT: S tăng = phần kéo thêm × chiều kia.",
-    "ƯỚC LƯỢNG TRƯỚC: dải 5 m ôm trọn bề rộng sân → tăng cỡ trăm mét vuông."
-   ],
+   "dong": [],
    "hinh": [],
-   "nhip": "NHỊP 1, DỊCH — từ lệnh nới sân sang dải đất mới"
+   "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
-   "dong": [
-    "Bước 1 — NHÌN RA DẢI ĐẤT MỚI: S tăng = 5 × 20 = 100 (m²) — một phép nhân, xong! Soi bằng đường vòng của Trí Long: 35 × 20 − 30 × 20 = 700 − 600 = 100 ✓. Hai đường cùng đáp số, nhưng đường dải đất nhanh gọn và NHÌN THẤY tận mắt phần tăng. Giảm cũng vậy: thu chiều rộng 4 m thì mất dải 4 × 30 = 120 m².",
-    "Bước 2 — TĂNG BÊN NÀY, GIẢM BÊN KIA — HÒA KHÔNG? phương án B: kéo dài thêm 5 m NHƯNG thu rộng bớt 5 m. Trí Long đoán \"thêm 5 bớt 5 là hòa\"; tính thật: sân mới 35 × 15 = 525 (m²) — GIẢM những 75 m² so với 600! Cộng trừ độ dài không bù nhau trên diện tích, vì mỗi mét thêm - bớt nhân với một chiều KHÁC nhau.",
-    "Bước 3 — ĐỊNH LUẬT CÙNG CHU VI: thí nghiệm với cuộn rào 40 m: quây 10 × 10 được 100 m²; quây 12 × 8 được 96 m²; quây 15 × 5 chỉ 75 m². Cùng độ dài rào, hình càng gần VUÔNG lòng càng rộng — hình dẹt dài trông \"to\" mà bụng lép! Đây chính là lý do phương án B thua: 35 × 15 dẹt hơn 30 × 20.",
-    "Bước 4 — BÀI NGƯỢC CỦA DẢI ĐẤT: \"kéo chiều dài thêm 3 m thì diện tích tăng 60 m² — chiều rộng là bao nhiêu?\" Dải mới 3 × rộng = 60 → rộng = 60 : 3 = 20 (m). Dải đất chạy được cả hai chiều xuôi ngược — vì nó chỉ là một hình chữ nhật bé mà con đã thuộc lòng.",
-    "MẸO NGƯỜI GIẢI: MỘT chiều đổi: vẽ ngay dải đất — S đổi = phần thay đổi × chiều kia, khỏi tính lại cả hình. HAI chiều cùng đổi: tính S mới rồi so, cấm đoán \"bù trừ là hòa\". Cùng chu vi: càng gần vuông càng rộng. Ngược lại: có S của dải và một cạnh dải, chia là ra cạnh kia."
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
-   "dong": [
-    "LẮP: tờ khai bổ sung nộp trong 10 phút: \"Nới dài 5 m: diện tích tăng đúng 100 m² — xin bổ sung gạch lát cho 100 m².\" Kèm khuyến nghị người giải: \"KHÔNG nên đổi 5 m rộng lấy 5 m dài — sân sẽ hụt 75 m².\" Bác tổ trưởng khen nức nở.",
-    "SOI: soi kép: đường dải 5 × 20 = 100 và đường trừ 700 − 600 = 100 gặp nhau ✓; định luật \"gần vuông rộng hơn\" giải thích vì sao phương án B thua ✓.",
-    "DÙNG NGOÀI ĐỜI: nới bàn học, cơi thêm gian nhà, chọn khuôn khay bánh — mọi quyết định \"đổi kích thước\" trong nhà từ nay có thẩm định bằng dải đất."
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Sân hình chữ nhật dài 30 m, rộng 20 m. Nếu kéo chiều dài thêm 5 m (giữ nguyên chiều rộng) thì diện tích sân tăng thêm bao nhiêu mét vuông?",
-    "Tóm tắt",
-    "Sân cũ: 30 m × 20 m; kéo dài thêm 5 m.",
-    "Tìm phần diện tích tăng thêm.",
-    "Gạch chân \"tăng thêm\" — đề không hỏi diện tích mới.",
-    "Mô hình (dải đất mới)",
-    "Phần tăng là dải hình chữ nhật",
-    "Ngang 5 m (phần kéo thêm) × dọc 20 m (chiều rộng cũ).",
-    "Vẽ sân cũ + dải tô đậm — phần tăng hiện nguyên hình.",
-    "Bài giải",
-    "Phần diện tích tăng thêm là một hình chữ nhật",
-    "Có chiều dài 20 m và chiều rộng 5 m.",
-    "Diện tích tăng thêm là: 20 × 5 = 100 (m²)",
-    "Nêu rõ hình dạng phần tăng trước khi nhân — căn cứ của phép tính.",
-    "Đáp số: 100 m².",
-    "Đáp số kèm đơn vị m².",
-    "Thử lại: sân mới 35 × 20 = 700 ; 700 − 600 = 100 ✓",
-    "Đường vòng \"mới trừ cũ\" kiểm chứng đường tắt dải đất."
+    "Đề bài: Hình chữ nhật dài 6 mét, rộng 4 mét. Kéo dài chiều dài thêm 3 mét thì diện tích tăng thêm bao nhiêu?",
+    "Vẽ phần thêm vào",
+    "Hình cũ dài 6, nay dài 9. Phần thêm là một dải rộng 3 mét và cao 4 mét.",
+    "Dải ấy cũng là hình chữ nhật",
+    "Nên diện tích dải là 3 nhân 4, bằng 12 mét vuông.",
+    "Kiểm lại bằng cách tính cả hình",
+    "Hình mới: 9 nhân 4 bằng 36. Hình cũ: 6 nhân 4 bằng 24. Chênh nhau đúng 12.",
+    "Nên nhớ một điều gọn",
+    "Kéo dài thêm bao nhiêu thì diện tích thêm đúng phần ấy nhân với chiều KIA.",
+    "Đáp số: diện tích tăng thêm 12 mét vuông."
    ],
    "hinh": [],
    "nhip": ""
   },
   "suKemNham": {
-   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Nghe phương án \"kéo dài thêm 5 m, thu rộng bớt 5 m\", Trí Long phán chắc nịch: \"Thêm 5 bớt 5 triệt tiêu nhau — diện tích giữ nguyên 600, khỏi tính!\"",
-    "Gợi ý 1: Dải MỌC THÊM nằm dọc theo chiều rộng mới (15 m), còn dải MẤT ĐI nằm dọc theo chiều dài (30 m rồi 35 m) — hai dải ấy có bằng nhau không mà đòi triệt tiêu?",
-    "Gợi ý 2: Tính thẳng 35 × 15 rồi so với 600 giúp Trí Long — và nghiệm lại bằng định luật cùng chu vi: sân mới có chu vi y hệt sân cũ nhưng DẸT hơn, mà dẹt hơn thì...?"
+    "Có bạn nghĩ kéo dài thêm 3 mét thì diện tích cũng tăng thêm 3 mét vuông.",
+    "Gợi ý 1: Con vẽ phần thêm ra xem nó là hình gì?",
+    "Gợi ý 2: Nó là một dải rộng 3 mét nhưng cao tận 4 mét, đâu phải một ô.",
+    "Chữa: phần thêm là cả một dải, diện tích bằng 3 nhân 4, tức 12 mét vuông."
    ],
    "hinh": [],
    "nhip": ""
@@ -133,9 +107,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Thí nghiệm sợi dây 40 cm buộc thành vòng: cùng con nắn thành các hình chữ nhật khác nhau trên giấy kẻ ô rồi đếm ô — định luật \"càng vuông càng rộng\" tự hiện ra dưới tay.",
-    "Rèn phản xạ \"vẽ dải\": mọi bài tăng - giảm một chiều, yêu cầu con vẽ dải đất tô đậm TRƯỚC khi đặt phép nhân — thấy dải là hết nhầm chiều kia.",
-    "NÊN: hỏi ngược \"muốn tăng đúng 50 m² thì kéo dài thêm mấy mét?\" cho con chạy hai chiều. KHÔNG NÊN: tăng - giảm theo phần trăm hay \"gấp rưỡi cả hai chiều\" — tỉ lệ diện tích hẹn lớp 5."
+    "Cắt thêm một dải giấy rồi dán vào cạnh hình cũ. Con nhìn thấy dải ấy rộng bao nhiêu và cao bao nhiêu là hiểu ngay.",
+    "Con hay nghĩ thêm mấy mét thì thêm mấy mét vuông. Bố mẹ hỏi: \"Phần thêm cao bao nhiêu?\""
    ],
    "hinh": [],
    "nhip": ""
@@ -149,8 +122,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hình chữ nhật 8 m × 5 m được kéo chiều dài thêm 2 m. Diện tích tăng thêm bao nhiêu?",
-   "loiChua": "Dải mới 2 × 5 = 10 m².",
+   "text": "Hình dài 6 mét rộng 4 mét, kéo dài thêm 3 mét — đúng bài trong video. Chiều dài mới bằng bao nhiêu?",
+   "loiChua": "6 + 3 = 9 mét.",
    "tuLuan": true
   },
   {
@@ -160,8 +133,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hình chữ nhật 8 m × 5 m được tăng chiều rộng thêm 3 m. Diện tích tăng thêm bao nhiêu?",
-   "loiChua": "Dải mới 3 × 8 = 24 m².",
+   "text": "Vẫn bài trên. Phần thêm vào là một dải rộng mấy mét và cao mấy mét?",
+   "loiChua": "Rộng 3 mét (phần kéo dài) và cao 4 mét (chiều kia giữ nguyên).",
    "tuLuan": true
   },
   {
@@ -171,8 +144,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính chu vi của hai hình: 10 m × 10 m và 12 m × 8 m. Con nhận thấy điều gì?",
-   "loiChua": "Cả hai đều có chu vi 40 m — cùng \"cuộn rào\" nhưng hình dáng khác nhau.",
+   "text": "Vẫn bài trên. Diện tích tăng thêm bao nhiêu?",
+   "loiChua": "3 × 4 = 12 mét vuông.",
    "tuLuan": true
   },
   {
@@ -182,8 +155,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Sân 30 m × 20 m được kéo chiều dài thêm 5 m. Tính phần diện tích tăng thêm (dùng dải đất, rồi kiểm bằng cách tính sân mới).",
-   "loiChua": "Dải 5 × 20 = 100 m². Kiểm: 35 × 20 − 30 × 20 = 700 − 600 = 100 ✓.",
+   "text": "Bạn Hoa nghĩ kéo dài thêm 3 mét thì diện tích thêm 3 mét vuông. Bạn sai ở đâu?",
+   "loiChua": "Phần thêm là cả một dải cao 4 mét, chứ không phải một ô. Diện tích thêm là 3 × 4 = 12 mét vuông.",
    "tuLuan": true
   },
   {
@@ -193,8 +166,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Sân 30 m × 20 m bị thu chiều rộng bớt 4 m. Diện tích giảm đi bao nhiêu mét vuông?",
-   "loiChua": "Dải mất 4 × 30 = 120 m².",
+   "text": "Kiểm lại bằng cách tính diện tích hình mới và hình cũ rồi trừ nhau.",
+   "loiChua": "Hình mới 9 × 4 = 36; hình cũ 6 × 4 = 24. Chênh nhau 36 − 24 = 12 mét vuông.",
    "tuLuan": true
   },
   {
@@ -204,8 +177,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Sân 30 m × 20 m: kéo dài thêm 5 m đồng thời thu rộng bớt 5 m. Tính diện tích mới và cho biết diện tích tăng hay giảm bao nhiêu so với sân cũ.",
-   "loiChua": "S mới = 35 × 15 = 525 m² — GIẢM 600 − 525 = 75 m². \"Thêm 5 bớt 5\" không hề hòa!",
+   "text": "Một hình chữ nhật dài 8 mét rộng 5 mét. Kéo dài chiều dài thêm 2 mét thì diện tích tăng thêm bao nhiêu?",
+   "loiChua": "2 × 5 = 10 mét vuông.",
    "tuLuan": true
   },
   {
@@ -215,8 +188,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hai mảnh vườn cùng chu vi 40 m: mảnh A là hình vuông 10 m × 10 m, mảnh B là 15 m × 5 m. So sánh diện tích hai mảnh.",
-   "loiChua": "10 × 10 = 100 m² > 15 × 5 = 75 m². Nhận xét: cùng chu vi, hình càng gần vuông diện tích càng lớn.",
+   "text": "Vẫn hình 6 mét nhân 4 mét. Nếu tăng chiều RỘNG thêm 3 mét thì diện tích tăng thêm bao nhiêu?",
+   "loiChua": "Lần này dải nằm ngang, rộng 6 mét và cao 3 mét, nên tăng 6 × 3 = 18 mét vuông.",
    "tuLuan": true
   },
   {
@@ -226,8 +199,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Một hình chữ nhật khi kéo chiều dài thêm 3 m thì diện tích tăng thêm 60 m². Tính chiều rộng của hình chữ nhật đó.",
-   "loiChua": "Dải tăng = 3 × rộng = 60 → rộng = 60 : 3 = 20 m.",
+   "text": "Một mảnh vườn dài 10 mét rộng 6 mét. Người ta cắt bớt chiều dài đi 2 mét. Diện tích giảm đi bao nhiêu?",
+   "loiChua": "Phần cắt là dải rộng 2 mét cao 6 mét, nên giảm 2 × 6 = 12 mét vuông.",
    "tuLuan": true
   },
   {
@@ -237,8 +210,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Có 24 m rào. Trong các hình chữ nhật có cạnh là số tự nhiên (mét) quây được từ cuộn rào ấy, hình nào có diện tích LỚN NHẤT? Liệt kê có hệ thống từ dẹt nhất đến vuông nhất mà xem!",
-   "loiChua": "Nửa chu vi 12; liệt kê: 11×1=11; 10×2=20; 9×3=27; 8×4=32; 7×5=35; 6×6=36 → hình vuông 6 × 6 có diện tích lớn nhất 36 m².",
+   "text": "Hình 6 mét nhân 4 mét, kéo dài chiều dài thêm 3 mét. Tính chu vi hình mới và cho biết chu vi tăng thêm bao nhiêu.",
+   "loiChua": "Chu vi mới = (9 + 4) × 2 = 26 mét. Chu vi cũ 20 mét, nên tăng 6 mét — đúng bằng phần kéo dài nhân đôi.",
    "tuLuan": true
   },
   {
@@ -248,14 +221,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Kéo chiều dài thêm a mét thì diện tích tăng thêm a nhân với chiều rộng.",
+   "text": "Kéo dài một chiều thì diện tích thêm bằng phần kéo dài nhân chiều kia.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "Đáp án: ĐÚNG.",
+   "solutionNarrative": "Đáp án: ĐÚNG."
   },
   {
    "id": "Q2",
@@ -264,14 +237,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Tăng chiều dài 2 m và giảm chiều rộng 2 m thì diện tích không đổi.",
+   "text": "Kéo dài thêm 3 mét thì diện tích thêm 3 mét vuông.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": false
    },
-   "loiChua": "35 × 15 = 525 ≠ 600: hai dải thêm - mất khác cỡ nhau.",
-   "solutionNarrative": "35 × 15 = 525 ≠ 600: hai dải thêm - mất khác cỡ nhau."
+   "loiChua": "SAI — phần thêm là cả một dải.",
+   "solutionNarrative": "SAI — phần thêm là cả một dải."
   },
   {
    "id": "Q3",
@@ -280,19 +253,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Hình 6 m × 4 m kéo dài thêm 3 m. Diện tích tăng:",
+   "text": "Hình 6 mét nhân 4 mét, kéo dài thêm 3 mét thì diện tích thêm:",
    "choices": [
-    "A. 12 m²",
-    "B. 18 m²",
-    "C. 3 m²"
+    "A. 12 mét vuông",
+    "B. 3 mét vuông",
+    "C. 36 mét vuông"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 12 m²"
+    "choice": "A. 12 mét vuông"
    },
-   "loiChua": "3 × 4 = 12 m².",
-   "solutionNarrative": "3 × 4 = 12 m²."
+   "loiChua": "Dải rộng 3 cao 4.",
+   "solutionNarrative": "Dải rộng 3 cao 4."
   },
   {
    "id": "Q4",
@@ -301,19 +274,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Cùng chu vi, hình có diện tích lớn nhất là hình:",
+   "text": "Cũng hình ấy, nếu tăng chiều rộng thêm 3 mét thì diện tích thêm:",
    "choices": [
-    "A. vuông",
-    "B. dài và dẹt",
-    "C. hình nào cũng như nhau"
+    "A. 18 mét vuông",
+    "B. 12 mét vuông",
+    "C. 3 mét vuông"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. vuông"
+    "choice": "A. 18 mét vuông"
    },
-   "loiChua": "Hình vuông.",
-   "solutionNarrative": "Hình vuông."
+   "loiChua": "Dải rộng 6 cao 3.",
+   "solutionNarrative": "Dải rộng 6 cao 3."
   },
   {
    "id": "Q5",
@@ -322,19 +295,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Hình 9 m × 5 m bị giảm chiều rộng 2 m. Diện tích giảm:",
+   "text": "Phần diện tích thêm vào có hình dạng:",
    "choices": [
-    "A. 18 m²",
-    "B. 10 m²",
-    "C. 2 m²"
+    "A. một dải hình chữ nhật",
+    "B. một ô vuông",
+    "C. một hình tròn"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 18 m²"
+    "choice": "A. một dải hình chữ nhật"
    },
-   "loiChua": "2 × 9 = 18 m².",
-   "solutionNarrative": "2 × 9 = 18 m²."
+   "loiChua": "Nó chạy dọc theo cạnh kia.",
+   "solutionNarrative": "Nó chạy dọc theo cạnh kia."
   }
  ]
 }

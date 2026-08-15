@@ -1,0 +1,347 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B76",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 70 · BIẾT DIỆN TÍCH TÌM CẠNH — ĐỌC NGƯỢC PHÉP NHÂN",
+ "durationMinutes": 10,
+ "so": 70,
+ "chuong": 10,
+ "tenChuong": "HÌNH HỌC",
+ "dangGoc": "Dạng gốc: HH 1.4 mức Lớp 4 — Bài toán ngược: biết diện tích và một cạnh, tìm cạnh kia; biết chu vi và một cạnh, tìm cạnh kia.",
+ "skills": {
+  "bktUnit": "CHUONG:10@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 70,
+  "prev": "DL:KSN4.B75",
+  "next": "DL:KSN4.B44"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Từ diện tích và một cạnh, tìm cạnh còn lại. Từ chu vi và một cạnh, tìm cạnh còn lại. Thử lại bằng cách tính xuôi.",
+  "kidText": "Lần này cô cho sẵn diện tích rồi bắt con tìm cạnh. Con làm được không?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn thấy diện tích 24 và chiều dài 6 rồi lấy 24 trừ 6.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Diện tích tính bằng phép gì từ hai cạnh? Gợi ý 2: Bằng phép nhân. Vậy đi ngược lại phải là phép gì? Chữa: phải chia, không phải trừ. Đi ngược của phép nhân là phép chia, được 24 chia 6 bằng 4 mét."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn thấy diện tích 24 và chiều dài 6 rồi lấy 24 trừ 6.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một hình chữ nhật có diện tích 24 mét vuông, chiều dài 6 mét. Tính chiều rộng.",
+  "steps": [
+   {
+    "show": "Nhớ lại chiều xuôi"
+   },
+   {
+    "show": "Diện tích bằng chiều dài nhân chiều rộng. Ở đây: 6 nhân chiều rộng bằng 24."
+   },
+   {
+    "show": "Đọc ngược phép nhân"
+   },
+   {
+    "show": "Nếu 6 nhân một số ra 24 thì số ấy là 24 chia 6, bằng 4 mét."
+   },
+   {
+    "show": "Nghĩ theo hình cũng ra thế"
+   },
+   {
+    "show": "Mỗi hàng có 6 ô, tất cả 24 ô, nên số hàng là 24 chia 6, bằng 4 hàng."
+   },
+   {
+    "show": "Còn nếu đề cho chu vi"
+   },
+   {
+    "show": "Chu vi 20 mét thì nửa chu vi là 10 mét, đó là dài cộng rộng. Biết dài 6 thì rộng là 10 trừ 6, bằng 4 mét."
+   },
+   {
+    "show": "Thử lại"
+   },
+   {
+    "show": "6 nhân 4 bằng 24, đúng bằng diện tích đề cho."
+   },
+   {
+    "show": "Đáp số: chiều rộng 4 mét."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Hình chữ nhật có diện tích 24 mét vuông, chiều dài 6 mét — đúng bài trong video. Đi xuôi thì diện tích tính bằng phép gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phép tính",
+        "options": [
+         "nhân",
+         "cộng"
+        ],
+        "value": "nhân"
+       }
+      ]
+     },
+     "solutionNarrative": "Bằng phép nhân: chiều dài nhân chiều rộng.",
+     "hints": [
+      "Nhớ lại cách tính diện tích từ hai cạnh.",
+      "Hai cạnh nối với nhau bằng dấu phép nào?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên. Vậy tính chiều rộng bằng phép gì và bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phép tính",
+        "options": [
+         "chia",
+         "trừ"
+        ],
+        "value": "chia"
+       },
+       {
+        "label": "chiều rộng",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Bằng phép chia: 24 : 6 = 4 mét.",
+     "hints": [
+      "Đi ngược lại phép vừa nói ở câu trước.",
+      "Phép ngược của nhân là phép nào, dùng nó với diện tích và cạnh đã biết."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Một hình chữ nhật có chu vi 20 mét. Nửa chu vi bằng bao nhiêu?",
+     "answerKey": {
+      "value": 10
+     },
+     "solutionNarrative": "20 : 2 = 10 mét — đó chính là chiều dài cộng chiều rộng.",
+     "hints": [
+      "Chu vi là tổng hai cạnh nhân đôi.",
+      "Vậy chia đôi chu vi thì được cái gì?"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Bạn Tú lấy 24 trừ 6 để tìm chiều rộng. Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phép đúng",
+        "options": [
+         "chia",
+         "trừ"
+        ],
+        "value": "chia"
+       },
+       {
+        "label": "chiều rộng",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Diện tích tính bằng phép NHÂN nên đi ngược phải là phép CHIA, được 4 mét.",
+     "hints": [
+      "Bạn ấy chọn nhầm dấu phép khi đi ngược.",
+      "Đi xuôi là nhân thì đi ngược phải là phép ngược của nhân."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Hình chữ nhật có chu vi 20 mét, chiều dài 6 mét. Tính chiều rộng.",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Nửa chu vi 10 mét là dài cộng rộng, nên chiều rộng = 10 − 6 = 4 mét.",
+     "hints": [
+      "Chia đôi chu vi để lấy tổng hai cạnh.",
+      "Có tổng rồi thì trừ đi cạnh đã biết."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Một hình chữ nhật có diện tích 45 mét vuông, chiều rộng 5 mét. Tính chiều dài.",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "45 : 5 = 9 mét.",
+     "hints": [
+      "Lấy diện tích chia cho cạnh đã biết.",
+      "Kết quả là cạnh còn lại."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Một hình vuông có diện tích 49 mét vuông. Tính cạnh hình vuông.",
+     "answerKey": {
+      "value": 7
+     },
+     "solutionNarrative": "Hình vuông có hai cạnh bằng nhau, mà 7 × 7 = 49, nên cạnh bằng 7 mét.",
+     "hints": [
+      "Hình vuông có hai cạnh bằng nhau.",
+      "Tìm số nào nhân với chính nó ra con số đề cho."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Một mảnh đất có diện tích 96 mét vuông, chiều dài 12 mét. Tính chiều rộng và chu vi.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chiều rộng",
+        "value": 8
+       },
+       {
+        "label": "chu vi",
+        "value": 40
+       }
+      ]
+     },
+     "solutionNarrative": "Chiều rộng = 96 : 12 = 8 mét. Chu vi = (12 + 8) × 2 = 40 mét.",
+     "hints": [
+      "Lấy diện tích chia cho cạnh đã biết để ra cạnh kia.",
+      "Có hai cạnh rồi thì cộng lại và nhân đôi."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Một hình chữ nhật có chu vi 20 mét và diện tích 24 mét vuông. Tìm hai cạnh của nó.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cạnh dài",
+        "value": 6
+       },
+       {
+        "label": "cạnh ngắn",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Nửa chu vi 10 mét là tổng hai cạnh. Thử các cặp có tổng 10: cặp 6 và 4 cho tích 24, đúng diện tích đề cho. Vậy hai cạnh là 6 mét và 4 mét.",
+     "hints": [
+      "Chia đôi chu vi để biết tổng hai cạnh.",
+      "Thử các cặp có tổng ấy, tìm cặp nào nhân lại ra đúng diện tích."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Biết diện tích và một cạnh thì tìm cạnh kia bằng phép chia.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Biết diện tích và một cạnh thì tìm cạnh kia bằng phép trừ.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — đi ngược của phép nhân là phép chia."
+   },
+   {
+    "id": "Q3",
+    "text": "Diện tích 24 mét vuông, chiều dài 6 mét thì chiều rộng bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 4 mét",
+     "B. 18 mét",
+     "C. 30 mét"
+    ],
+    "answerKey": {
+     "choice": "A. 4 mét"
+    },
+    "solutionNarrative": "24 chia 6."
+   },
+   {
+    "id": "Q4",
+    "text": "Chu vi 20 mét thì nửa chu vi bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 10 mét",
+     "B. 40 mét",
+     "C. 5 mét"
+    ],
+    "answerKey": {
+     "choice": "A. 10 mét"
+    },
+    "solutionNarrative": "Chia đôi chu vi."
+   },
+   {
+    "id": "Q5",
+    "text": "Nửa chu vi chính là:",
+    "format": "mcq",
+    "choices": [
+     "A. chiều dài cộng chiều rộng",
+     "B. chiều dài nhân chiều rộng",
+     "C. chiều dài trừ chiều rộng"
+    ],
+    "answerKey": {
+     "choice": "A. chiều dài cộng chiều rộng"
+    },
+    "solutionNarrative": "Vì chu vi là tổng ấy nhân đôi."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Xếp 24 hạt đậu thành các hàng 6 hạt rồi bảo con đếm số hàng. Con đếm ra bốn hàng là đã hiểu.",
+  "homeActivity": "Chỗ sai duy nhất là chọn nhầm phép. Bố mẹ hỏi: \"Đi xuôi là nhân, vậy đi ngược là gì?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Hai bài trước con có hai cạnh rồi tính ra chu vi và diện tích. Hôm nay đề làm ngược lại: cho con kết quả rồi bắt tìm cạnh. Vẫn công thức ấy, chỉ đọc ngược lại thôi.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B30"
+  ],
+  "ten": [
+   "DIỆN TÍCH — TẤM THẢM Ô VUÔNG"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B76_giang.mp4"
+ }
+}

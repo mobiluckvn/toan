@@ -1,0 +1,313 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B75",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 69 · ĐƠN VỊ ĐO DIỆN TÍCH — VÌ SAO ĐỔI ĐƠN VỊ LẠI NHÂN TRĂM",
+ "durationMinutes": 10,
+ "so": 69,
+ "chuong": 10,
+ "tenChuong": "HÌNH HỌC",
+ "dangGoc": "Dạng gốc: HH 1.3 mức Lớp 4 — Mét vuông, đề-xi-mét vuông, héc-ta và cách đổi; giải thích vì sao bậc đổi là một trăm chứ không phải mười.",
+ "skills": {
+  "bktUnit": "CHUONG:10@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 69,
+  "prev": "DL:KSN4.B43",
+  "next": "DL:KSN4.B76"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết một mét vuông bằng một trăm đề-xi-mét vuông. Giải thích được vì sao bậc đổi là một trăm. Biết một héc-ta bằng mười nghìn mét vuông.",
+  "kidText": "Một mét bằng mười đề-xi-mét. Con đoán xem một mét vuông bằng mấy đề-xi-mét vuông?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nhớ một mét bằng mười đề-xi-mét nên bảo một mét vuông bằng mười đề-xi-mét vuông.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con vẽ ô vuông ấy ra rồi chia cả hai chiều xem được mấy ô nhỏ. Gợi ý 2: Chia ngang được mười, chia dọc cũng mười. Vậy tất cả mấy ô? Chữa: được một trăm ô. Đo diện tích thì chia theo cả hai chiều nên bậc đổi phải nhân hai lần."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nhớ một mét bằng mười đề-xi-mét nên bảo một mét vuông bằng mười đề-xi-mét vuông.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một mét vuông bằng bao nhiêu đề-xi-mét vuông? Vì sao lại thế?",
+  "steps": [
+   {
+    "show": "Vẽ một mét vuông ra"
+   },
+   {
+    "show": "Đó là ô vuông cạnh một mét. Mà một mét bằng mười đề-xi-mét."
+   },
+   {
+    "show": "Chia cả hai chiều"
+   },
+   {
+    "show": "Chiều ngang chia được mười phần, chiều dọc cũng chia được mười phần."
+   },
+   {
+    "show": "Đếm số ô nhỏ"
+   },
+   {
+    "show": "Mỗi hàng mười ô, có mười hàng, nên tất cả là mười nhân mười, bằng một trăm ô."
+   },
+   {
+    "show": "Nên bậc đổi là một trăm"
+   },
+   {
+    "show": "Vì diện tích chia theo CẢ HAI chiều, chứ chiều dài chỉ chia theo một chiều."
+   },
+   {
+    "show": "Héc-ta cũng thế"
+   },
+   {
+    "show": "Một héc-ta là ô vuông cạnh một trăm mét, nên nó bằng một trăm nhân một trăm, tức mười nghìn mét vuông."
+   },
+   {
+    "show": "Đáp số: một mét vuông bằng một trăm đề-xi-mét vuông."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Một ô vuông cạnh 1 mét. Chia mỗi chiều thành các phần dài 1 đề-xi-mét thì mỗi chiều được mấy phần?",
+     "answerKey": {
+      "value": 10
+     },
+     "solutionNarrative": "Mỗi chiều được 10 phần, vì 1 mét bằng 10 đề-xi-mét.",
+     "hints": [
+      "Một mét bằng bao nhiêu đề-xi-mét?",
+      "Chia cạnh ô vuông theo con số ấy."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn ô vuông ấy. Đếm tất cả bao nhiêu ô nhỏ?",
+     "answerKey": {
+      "value": 100
+     },
+     "solutionNarrative": "10 × 10 = 100 ô nhỏ. Vậy 1 mét vuông bằng 100 đề-xi-mét vuông.",
+     "hints": [
+      "Chia cả chiều ngang lẫn chiều dọc rồi đếm ô nhỏ.",
+      "Mỗi hàng mấy ô, có mấy hàng, nhân lại."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Một héc-ta là ô vuông cạnh 100 mét. Vậy một héc-ta bằng bao nhiêu mét vuông?",
+     "answerKey": {
+      "value": 10000
+     },
+     "solutionNarrative": "100 × 100 = 10 000 mét vuông.",
+     "hints": [
+      "Ô vuông ấy có cạnh một trăm mét.",
+      "Nhân cạnh với chính nó."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Bạn Bình bảo một mét vuông bằng mười đề-xi-mét vuông. Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bậc đổi đúng",
+        "value": 100
+       }
+      ]
+     },
+     "solutionNarrative": "Bạn lấy bậc đổi của chiều dài áp cho diện tích. Diện tích chia theo cả hai chiều nên phải nhân hai lần, được 100.",
+     "hints": [
+      "Bạn ấy lấy bậc đổi của chiều dài áp cho mặt phẳng.",
+      "Vẽ ô vuông ra rồi chia cả hai chiều xem được mấy ô nhỏ."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Đổi 3 mét vuông ra đề-xi-mét vuông.",
+     "answerKey": {
+      "value": 300
+     },
+     "solutionNarrative": "3 × 100 = 300 đề-xi-mét vuông.",
+     "hints": [
+      "Mỗi mét vuông đổi được một số ô nhỏ nhất định.",
+      "Nhân số ấy lên theo số mét vuông."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Đổi 2 héc-ta ra mét vuông.",
+     "answerKey": {
+      "value": 20000
+     },
+     "solutionNarrative": "2 × 10 000 = 20 000 mét vuông.",
+     "hints": [
+      "Mỗi héc-ta đổi được một số mét vuông nhất định.",
+      "Nhân số ấy lên theo số héc-ta."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Vì sao bậc đổi của diện tích lớn hơn bậc đổi của chiều dài?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "diện tích chia theo mấy chiều",
+        "value": 2
+       }
+      ]
+     },
+     "solutionNarrative": "Vì chiều dài chỉ chia theo một chiều, còn diện tích chia theo cả hai chiều. Nên bậc đổi phải nhân với chính nó.",
+     "hints": [
+      "So xem chiều dài chia theo mấy chiều, mặt phẳng chia theo mấy chiều.",
+      "Chia theo bao nhiêu chiều thì bậc đổi nhân bấy nhiêu lần."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Một mảnh ruộng rộng 5 héc-ta. Hỏi mảnh ruộng ấy bao nhiêu mét vuông?",
+     "answerKey": {
+      "value": 50000
+     },
+     "solutionNarrative": "5 × 10 000 = 50 000 mét vuông.",
+     "hints": [
+      "Đổi từng héc-ta ra mét vuông rồi nhân lên.",
+      "Nhớ số mét vuông trong một héc-ta."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Một mảnh vườn hình chữ nhật dài 6 mét, rộng 4 mét. Diện tích mảnh vườn bằng bao nhiêu đề-xi-mét vuông?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "diện tích theo mét vuông",
+        "value": 24
+       },
+       {
+        "label": "theo đề-xi-mét vuông",
+        "value": 2400
+       }
+      ]
+     },
+     "solutionNarrative": "Diện tích là 6 × 4 = 24 mét vuông. Đổi ra: 24 × 100 = 2 400 đề-xi-mét vuông.",
+     "hints": [
+      "Tính diện tích theo mét vuông trước đã.",
+      "Có rồi thì đổi sang đơn vị nhỏ hơn bằng cách nhân."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Một mét vuông bằng một trăm đề-xi-mét vuông.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Một mét vuông bằng mười đề-xi-mét vuông.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — diện tích chia theo cả hai chiều nên bậc đổi là một trăm."
+   },
+   {
+    "id": "Q3",
+    "text": "Một héc-ta bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 10 000 mét vuông",
+     "B. 1 000 mét vuông",
+     "C. 100 mét vuông"
+    ],
+    "answerKey": {
+     "choice": "A. 10 000 mét vuông"
+    },
+    "solutionNarrative": "Ô vuông cạnh một trăm mét."
+   },
+   {
+    "id": "Q4",
+    "text": "Vì sao bậc đổi diện tích là một trăm?",
+    "format": "mcq",
+    "choices": [
+     "A. Vì chia theo cả hai chiều nên nhân hai lần",
+     "B. Vì mét vuông lớn hơn",
+     "C. Vì phải làm tròn"
+    ],
+    "answerKey": {
+     "choice": "A. Vì chia theo cả hai chiều nên nhân hai lần"
+    },
+    "solutionNarrative": "Mười nhân mười."
+   },
+   {
+    "id": "Q5",
+    "text": "Đổi 3 mét vuông ra đề-xi-mét vuông được:",
+    "format": "mcq",
+    "choices": [
+     "A. 300",
+     "B. 30",
+     "C. 3 000"
+    ],
+    "answerKey": {
+     "choice": "A. 300"
+    },
+    "solutionNarrative": "Nhân với một trăm."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Vẽ một ô vuông rồi chia mỗi chiều làm mười phần. Bảo con đếm số ô nhỏ — con sẽ tự thấy con số một trăm.",
+  "homeActivity": "Con hay lấy bậc đổi của chiều dài áp cho diện tích. Bố mẹ nhắc: diện tích có hai chiều nên nhân hai lần.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Đo chiều dài thì một mét bằng mười đề-xi-mét. Nhưng đo diện tích thì một mét vuông lại bằng MỘT TRĂM đề-xi-mét vuông. Nghe rất lạ — hôm nay con sẽ thấy vì sao, và thấy rồi thì chẳng bao giờ nhớ nhầm nữa.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B30"
+  ],
+  "ten": [
+   "DIỆN TÍCH — TẤM THẢM Ô VUÔNG"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B75_giang.mp4"
+ }
+}

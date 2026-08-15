@@ -2491,6 +2491,238 @@ def kb_ps_thuc_te(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# CHƯƠNG 10 · ĐỢT MỘT — SÁU KỊCH BẢN VỀ CHU VI VÀ DIỆN TÍCH
+# ═══════════════════════════════════════════════════════════════════════════
+# Số neo: hình chữ nhật 6 mét nhân 4 mét. Chu vi 20, diện tích 24 — HAI CON SỐ KHÁC
+# HẲN NHAU, nên bé không lẫn được như khi gặp hình vuông cạnh 4 (chu vi 16, diện tích
+# cũng 16).
+DAI, RONG = 6, 4
+
+
+def kb_cv_dt(b):
+    """① Chu vi và diện tích khác nhau chỗ nào — bài KHÁI NIỆM."""
+    return [
+        _c('bia', 'Chu vi và diện tích khác nhau chỗ nào', so_bai(b),
+           loi=['Hôm nay mình phân biệt hai chữ rất hay bị lẫn.']),
+        _c('hinh_cn', 'Chu vi — đường đi quanh mép', dai=DAI, rong=RONG,
+           vienDam=True, nhanDai='6 mét', nhanRong='4 mét',
+           chuPhu='Đi bộ một vòng quanh mép vườn.',
+           loi=['Tưởng tượng con đi bộ một vòng quanh mép vườn.',
+                'Quãng đường ấy gọi là chu vi.']),
+        _c('y_toan', 'Đi hết bốn cạnh', '6 + 4 + 6 + 4 = 20 mét', buoc=1, soBuoc=4,
+           loi=['Đi hết bốn cạnh thì được hai mươi mét.']),
+        _c('hinh_cn', 'Diện tích — mặt bị phủ kín', dai=DAI, rong=RONG,
+           oVuong=True, nhanDai='6 mét', nhanRong='4 mét',
+           chuPhu='Lát gạch kín cả mảnh vườn.',
+           loi=['Bây giờ tưởng tượng lát gạch kín cả mảnh vườn.',
+                'Mỗi viên gạch là một ô vuông cạnh một mét.']),
+        _c('y_toan', 'Đếm số ô', 'Mỗi hàng 6 ô, có 4 hàng — tất cả 24 ô',
+           buoc=2, soBuoc=4,
+           loi=['Mỗi hàng sáu ô, có bốn hàng, tất cả hai mươi tư ô.',
+                'Diện tích là hai mươi tư mét vuông.']),
+        _c('y_toan', 'Hai con số khác nhau', 'Chu vi 20 · diện tích 24',
+           buoc=3, soBuoc=4,
+           loi=['Chu vi hai mươi, diện tích hai mươi tư. Hai con số khác nhau.']),
+        _c('y_toan', 'Nên đơn vị cũng khác',
+           'Chu vi đo bằng mét · diện tích đo bằng mét vuông', buoc=4, soBuoc=4,
+           loi=['Chúng đo hai thứ khác hẳn nên đơn vị cũng khác.',
+                'Một bên là mét, một bên là mét vuông.']),
+        _c('cong_thuc', 'Hai thứ khác hẳn nhau',
+           congThuc='chu vi = đi quanh MÉP   ·   diện tích = phủ kín MẶT',
+           thay='20 mét   ·   24 mét vuông',
+           loi=['Chu vi là đi quanh mép, còn diện tích là phủ kín mặt.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='rào lưới → chu vi   ·   trồng cỏ → diện tích',
+           loi=['Con nhớ lại một lần nữa. Rào lưới quanh vườn thì tính chu vi.',
+                'Trồng cỏ phủ kín vườn thì tính diện tích.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_hai_ct(b):
+    """② Hai công thức — SUY RA từ hình."""
+    return [
+        _c('bia', 'Hai công thức', so_bai(b),
+           loi=['Hôm nay mình viết hai công thức, nhưng tự nhìn hình mà ra.']),
+        _c('hinh_cn', 'Đi quanh hình gặp mấy cạnh', dai=DAI, rong=RONG,
+           vienDam=True, nhanDai='6 mét', nhanRong='4 mét',
+           chuPhu='Chiều dài gặp HAI lần, chiều rộng cũng HAI lần.',
+           loi=['Đi quanh hình thì gặp chiều dài hai lần, chiều rộng cũng hai lần.']),
+        _c('y_toan', 'Nên gọn lại được', '(6 + 4) × 2 = 20', buoc=1, soBuoc=3,
+           loi=['Thay vì cộng bốn số, ta cộng dài với rộng rồi nhân đôi.',
+                'Sáu cộng bốn được mười, nhân đôi được hai mươi.']),
+        _c('hinh_cn', 'Bây giờ đếm ô theo hàng', dai=DAI, rong=RONG,
+           oVuong=True, nhanDai='6 ô mỗi hàng', nhanRong='4 hàng',
+           chuPhu='Số ô mỗi hàng đúng bằng chiều dài.',
+           loi=['Mỗi hàng có sáu ô, đúng bằng chiều dài.',
+                'Có bốn hàng, đúng bằng chiều rộng.']),
+        _c('y_toan', 'Nên đếm nhanh bằng phép nhân', '6 × 4 = 24', buoc=2, soBuoc=3,
+           loi=['Nên số ô là sáu nhân bốn, bằng hai mươi tư.',
+                'Chẳng cần đếm từng ô một.']),
+        _c('y_toan', 'Chỗ hay quên nhất', 'Quên nhân đôi khi tính chu vi.',
+           buoc=3, soBuoc=3,
+           loi=['Chỗ hay quên nhất là quên nhân đôi khi tính chu vi.',
+                'Hình có bốn cạnh chứ đâu phải hai.']),
+        _c('cong_thuc', 'Hai công thức',
+           congThuc='chu vi = (dài + rộng) × 2   ·   diện tích = dài × rộng',
+           thay='(6 + 4) × 2 = 20   ·   6 × 4 = 24',
+           loi=['Chu vi bằng dài cộng rộng rồi nhân đôi. Diện tích bằng dài nhân rộng.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='nhân đôi vì hình có HAI dài và HAI rộng',
+           loi=['Con nhớ lại một lần nữa. Nhân đôi vì hình có hai chiều dài và hai '
+                'chiều rộng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_don_vi(b):
+    """③ Đơn vị đo diện tích — vì sao bậc đổi là một trăm."""
+    return [
+        _c('bia', 'Đơn vị đo diện tích', so_bai(b),
+           loi=['Hôm nay mình xem vì sao đổi đơn vị diện tích lại nhân trăm.']),
+        _c('de_toan', 'Một mét bằng mười đề-xi-mét.',
+           'Vậy một mét vuông bằng bao nhiêu đề-xi-mét vuông?',
+           loi=['Một mét bằng mười đề-xi-mét.',
+                'Vậy một mét vuông bằng bao nhiêu đề-xi-mét vuông?']),
+        _c('y_toan', 'Nhiều bạn đoán là mười', 'Nhưng thử vẽ ra mà xem.',
+           buoc=1, soBuoc=3,
+           loi=['Nhiều bạn đoán là mười. Nhưng thử vẽ ra mà xem.']),
+        _c('hinh_cn', 'Ô vuông cạnh một mét, chia cả HAI chiều', dai=10, rong=10,
+           oVuong=True, nhanDai='10 phần', nhanRong='10 phần',
+           chuPhu='Chia ngang mười phần, chia dọc cũng mười phần.',
+           loi=['Ô vuông cạnh một mét. Chia ngang mười phần, chia dọc cũng mười phần.']),
+        _c('y_toan', 'Đếm số ô nhỏ', '10 × 10 = 100 ô', buoc=2, soBuoc=3,
+           loi=['Mỗi hàng mười ô, có mười hàng, tất cả một trăm ô.']),
+        _c('y_toan', 'Vì sao bậc đổi lớn hơn',
+           'Chiều dài chia MỘT chiều · diện tích chia CẢ HAI chiều', buoc=3, soBuoc=3,
+           loi=['Chiều dài chỉ chia theo một chiều, còn diện tích chia theo cả hai.',
+                'Nên bậc đổi phải nhân hai lần.']),
+        _c('cong_thuc', 'Bậc đổi của diện tích',
+           congThuc='1 m² = 100 dm²   ·   1 ha = 10 000 m²',
+           thay='10 × 10 = 100',
+           loi=['Một mét vuông bằng một trăm đề-xi-mét vuông.',
+                'Một héc-ta bằng mười nghìn mét vuông.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='diện tích có HAI chiều nên bậc đổi nhân hai lần',
+           loi=['Con nhớ lại một lần nữa. Đừng lấy bậc đổi của chiều dài áp cho diện tích.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_tim_canh(b):
+    """④ Biết diện tích tìm cạnh — đọc ngược phép nhân."""
+    return [
+        _c('bia', 'Biết diện tích, tìm cạnh', so_bai(b),
+           loi=['Hôm nay đề cho kết quả rồi bắt mình tìm cạnh.']),
+        _c('de_toan', 'Hình chữ nhật có diện tích 24 mét vuông, chiều dài 6 mét.',
+           'Tính chiều rộng.',
+           loi=['Hình chữ nhật có diện tích hai mươi tư mét vuông, chiều dài sáu mét.']),
+        _c('y_toan', 'Nhớ lại chiều xuôi', 'Diện tích = dài × rộng', buoc=1, soBuoc=3,
+           loi=['Đi xuôi thì diện tích bằng chiều dài nhân chiều rộng.']),
+        _c('y_toan', 'Đọc ngược phép nhân', 'Đi ngược của nhân là CHIA',
+           buoc=2, soBuoc=3,
+           loi=['Đi ngược của phép nhân là phép chia.',
+                'Hai mươi tư chia sáu bằng bốn mét.']),
+        _c('hinh_cn', 'Nghĩ theo hình cũng ra thế', dai=DAI, rong=RONG,
+           oVuong=True, nhanDai='6 ô mỗi hàng', nhanRong='? hàng',
+           chuPhu='Tất cả 24 ô, mỗi hàng 6 ô — vậy mấy hàng?',
+           loi=['Nghĩ theo hình cũng ra thế. Tất cả hai mươi tư ô, mỗi hàng sáu ô.',
+                'Nên số hàng là hai mươi tư chia sáu.']),
+        _c('y_toan', 'Nếu đề cho chu vi thì khác', 'Nửa chu vi = dài + rộng',
+           buoc=3, soBuoc=3,
+           loi=['Nếu đề cho chu vi thì chia đôi để lấy nửa chu vi.',
+                'Nửa chu vi chính là dài cộng rộng, rồi trừ đi cạnh đã biết.']),
+        _c('cong_thuc', 'Hai bài ngược',
+           congThuc='có diện tích → CHIA   ·   có chu vi → chia đôi rồi TRỪ',
+           thay='24 : 6 = 4   ·   20 : 2 − 6 = 4',
+           loi=['Có diện tích thì chia. Có chu vi thì chia đôi rồi trừ.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='diện tích đi bằng phép NHÂN nên đi ngược là phép CHIA',
+           loi=['Con nhớ lại một lần nữa. Đừng lấy diện tích trừ cạnh.',
+                'Diện tích đi bằng phép nhân nên đi ngược phải là phép chia.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_tang_mot(b):
+    """⑤ Tăng một chiều — phần thêm là một DẢI."""
+    return [
+        _c('bia', 'Tăng một chiều', so_bai(b),
+           loi=['Hôm nay mình kéo dài một cạnh rồi xem diện tích đổi thế nào.']),
+        _c('hinh_cn', 'Hình cũ: 6 mét nhân 4 mét', dai=DAI, rong=RONG,
+           oVuong=True, nhanDai='6 mét', nhanRong='4 mét',
+           chuPhu='Diện tích 24 mét vuông.',
+           loi=['Hình cũ dài sáu mét, rộng bốn mét, diện tích hai mươi tư mét vuông.']),
+        _c('hinh_cn', 'Kéo dài thêm 3 mét', dai=9, rong=RONG,
+           oVuong=True, nhanDai='9 mét', nhanRong='4 mét',
+           chuPhu='Phần thêm là một DẢI rộng 3 mét, cao 4 mét.',
+           loi=['Kéo dài thêm ba mét. Phần thêm là một dải rộng ba mét, cao bốn mét.']),
+        _c('y_toan', 'Dải ấy cũng là hình chữ nhật', '3 × 4 = 12 mét vuông',
+           buoc=1, soBuoc=3,
+           loi=['Dải ấy cũng là hình chữ nhật nên diện tích bằng ba nhân bốn.',
+                'Được mười hai mét vuông.']),
+        _c('y_toan', 'Kiểm lại bằng cách tính cả hình',
+           '9 × 4 = 36 · 6 × 4 = 24 · chênh 12', buoc=2, soBuoc=3,
+           loi=['Kiểm lại. Hình mới ba mươi sáu, hình cũ hai mươi tư, chênh nhau mười hai.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Thêm 3 mét KHÔNG phải thêm 3 mét vuông.',
+           buoc=3, soBuoc=3,
+           loi=['Chỗ hay nhầm là tưởng thêm ba mét thì thêm ba mét vuông.',
+                'Phần thêm là cả một dải cao bốn mét cơ mà.']),
+        _c('cong_thuc', 'Tăng một chiều',
+           congThuc='diện tích thêm = phần kéo dài × chiều KIA',
+           thay='3 × 4 = 12 mét vuông',
+           loi=['Diện tích thêm bằng phần kéo dài nhân với chiều kia.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='phần thêm là một DẢI, không phải một ô',
+           loi=['Con nhớ lại một lần nữa. Phần thêm là cả một dải, không phải một ô.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_tang_giam(b):
+    """⑥ Tăng chiều này giảm chiều kia — diện tích có thể không đổi."""
+    return [
+        _c('bia', 'Tăng chiều này, giảm chiều kia', so_bai(b),
+           loi=['Hôm nay mình đổi cả hai chiều cùng một lúc.']),
+        _c('hinh_cn', 'Hình cũ: 6 nhân 4', dai=DAI, rong=RONG,
+           oVuong=True, nhanDai='6 mét', nhanRong='4 mét',
+           chuPhu='Diện tích 24 mét vuông.',
+           loi=['Hình cũ sáu nhân bốn, diện tích hai mươi tư mét vuông.']),
+        _c('hinh_cn', 'Tăng dài 2, giảm rộng 1', dai=8, rong=3,
+           oVuong=True, nhanDai='8 mét', nhanRong='3 mét',
+           chuPhu='8 nhân 3 cũng bằng 24 mét vuông!',
+           chuCuoi='Hình khác hẳn mà diện tích như nhau.',
+           loi=['Tăng dài hai, giảm rộng một. Tám nhân ba cũng bằng hai mươi tư.',
+                'Hình khác hẳn mà diện tích như nhau.']),
+        _c('y_toan', 'Diện tích KHÔNG đổi', 'Một hình dài hẹp, một hình ngắn rộng.',
+           buoc=1, soBuoc=3,
+           loi=['Diện tích không đổi. Một hình dài và hẹp, một hình ngắn và rộng.',
+                'Nhưng chúng phủ kín cùng một mặt.']),
+        _c('y_toan', 'Còn chu vi thì sao', 'Cũ 20 mét · mới 22 mét', buoc=2, soBuoc=3,
+           loi=['Còn chu vi thì đổi. Cũ hai mươi mét, mới hai mươi hai mét.']),
+        _c('y_toan', 'Vì sao hai thứ phản ứng khác nhau',
+           'Diện tích là phép NHÂN, chu vi là phép CỘNG.', buoc=3, soBuoc=3,
+           loi=['Vì diện tích tính bằng phép nhân còn chu vi tính bằng phép cộng.',
+                'Nên chúng phản ứng khác nhau.']),
+        _c('cong_thuc', 'Đổi cả hai chiều',
+           congThuc='phải TÍNH tích hai cạnh mới, đừng đoán bù trừ',
+           thay='8 × 3 = 24, vẫn như cũ',
+           loi=['Phải tính tích hai cạnh mới, đừng đoán rằng chúng bù trừ nhau.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='diện tích có thể giữ nguyên · chu vi thì vẫn đổi',
+           loi=['Con nhớ lại một lần nữa. Diện tích có thể giữ nguyên.',
+                'Nhưng chu vi thì vẫn đổi. Hỏi riêng từng thứ một.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 # Khoá theo MÃ BÀI, không theo số bài. Từ 14-08 (lối C) số bài đếm từ vị trí trong
 # `thu_tu.json`, nên nó đổi mỗi khi chèn bài mới — khoá theo nó thì chèn chín bài
 # vào chương 3 là tám kịch bản này nhảy sang nhầm bài, mà vẫn dựng ra video hợp lệ.
@@ -2533,6 +2765,10 @@ BO = {
     'DL:KSN4.B40': kb_day_tong,  'DL:KSN4.B72': kb_day_tich,
     'DL:KSN4.B41': kb_cung_them_ps, 'DL:KSN4.B73': kb_chuyen_ps,
     'DL:KSN4.B42': kb_ps_thuc_te,
+    # ── chương 10 · đợt một, sáu bài chu vi và diện tích ──
+    'DL:KSN4.B74': kb_cv_dt,     'DL:KSN4.B43': kb_hai_ct,
+    'DL:KSN4.B75': kb_don_vi,    'DL:KSN4.B76': kb_tim_canh,
+    'DL:KSN4.B44': kb_tang_mot,  'DL:KSN4.B77': kb_tang_giam,
 }
 
 

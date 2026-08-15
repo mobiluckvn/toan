@@ -18,7 +18,7 @@ const VIDEO = new URL('../public/content/toan/video/', import.meta.url);
 const AUDIO = new URL('../public/content/toan/audio/', import.meta.url);
 
 const tep = readdirSync(APP).filter((f) => /^DL_KSN4_B\d+\.json$/.test(f)).sort();
-assert.equal(tep.length, 73, `phải thấy 73 bài, đang thấy ${tep.length}`);
+assert.equal(tep.length, 77, `phải thấy 77 bài, đang thấy ${tep.length}`);
 const BAI = tep.map((f) => JSON.parse(readFileSync(new URL(f, APP), 'utf8')));
 const coVideo = BAI.filter((b) => b.video?.giang);
 
@@ -111,7 +111,7 @@ test('lời đọc KHÔNG còn chữ cái đứng lẻ — máy sẽ đọc theo
   const so = JSON.parse(readFileSync(new URL('../public/content/toan/lop4_am.json', import.meta.url), 'utf8'));
   const xau = so.clip
     .filter((c) => /(?<![\p{L}\d])[a-zA-Z](?![\p{L}\d])/u.test(c.chu || ''))
-    .map((c) => `${c.id}: "${c.chu.slice(0, 73)}"`);
+    .map((c) => `${c.id}: "${c.chu.slice(0, 77)}"`);
   assert.deepEqual(xau, [], `${xau.length} câu đọc còn chữ cái đứng lẻ`);
 });
 
@@ -121,7 +121,7 @@ test('dấu NHÂN không được ăn vào chữ tiếng Việt', () => {
      Năm dòng như thế, và bé nghe ra câu vô nghĩa mà không ai kêu. */
   const so = JSON.parse(readFileSync(new URL('../public/content/toan/lop4_am.json', import.meta.url), 'utf8'));
   const xau = so.clip.filter((c) => /nhân\s+(em|a|é|ong|uống|ưa)\b/.test(c.chu || ''))
-    .map((c) => `${c.id}: "${c.chu.slice(0, 73)}"`);
+    .map((c) => `${c.id}: "${c.chu.slice(0, 77)}"`);
   assert.deepEqual(xau, [], `${xau.length} câu bị dấu nhân ăn vào chữ Việt`);
 });
 

@@ -243,7 +243,11 @@ function diemDanh() {
        luyện tập  45 → 99 câu chấm máy  (+54)  ·  2397 + 54 = 2451  ✓
    Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
    `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
-const MOC = { tong: 2451, dungKhiDungDap: 2449, dungKhiSaiDap: 1, tuDoiChieu: 1 };
+/* ⚠ 2451 → 2487. Chương 10 đợt một: hai bài đầu tách thành sáu.
+       luyện tập  18 → 54 câu chấm máy  (+36)  ·  2451 + 36 = 2487  ✓
+   Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
+const MOC = { tong: 2487, dungKhiDungDap: 2485, dungKhiSaiDap: 1, tuDoiChieu: 1 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

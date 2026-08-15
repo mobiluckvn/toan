@@ -710,3 +710,46 @@ so kiểu ấy chỉ gây báo oan.)
 
 **Bài học chung của cả chuyện này:** một cổng có ngưỡng phần trăm che được một lỗ
 đang lớn dần. Ngưỡng nên đặt ở chỗ dữ liệu ĐANG đứng, rồi chỉ siết lên.
+
+---
+
+## 20 · Đợt 8 · chương 10 — hình học, SÁU BÀI ĐẦU
+
+Chương gói nặng nhất cả quyển. **B45 gộp bốn thứ chẳng liên quan gì nhau** — góc,
+đường cao, cắt ghép, hình tròn. B43 gộp bốn việc, B46 gộp ba.
+
+Đợt này làm 6 trên 12 bài dự kiến, tất cả về chu vi và diện tích.
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 67 | B74 *(mới)* | **chu vi và diện tích khác nhau chỗ nào** — KHÔNG công thức |
+| 68 | B43 | hai công thức, suy ra từ hình |
+| 69 | B75 *(mới)* | đơn vị đo — **vì sao bậc đổi là một trăm** |
+| 70 | B76 *(mới)* | biết diện tích tìm cạnh — đọc ngược phép nhân |
+| 71 | B44 | tăng một chiều — phần thêm là một **dải** |
+| 72 | B77 *(mới)* | tăng chiều này giảm chiều kia |
+
+### Số neo chọn có chủ ý — 6 mét nhân 4 mét
+
+Chu vi 20, diện tích 24: **hai con số khác hẳn nhau**. Nếu lấy hình vuông cạnh 4 thì
+chu vi 16 và diện tích cũng 16 — bé sẽ không phân biệt nổi hai thứ vốn đã hay lẫn.
+
+Và nó chở luôn hai bài cuối: kéo dài thêm 3 thì diện tích thêm đúng 3 nhân 4; tăng
+dài 2 giảm rộng 1 thì 8 nhân 3 **vẫn bằng 24** — diện tích không đổi mà hình khác hẳn.
+
+### Kiểu cảnh mới — `hinh_cn`
+
+Vẽ được cả hai thứ trên cùng một hình: `vienDam` tô đậm đường quanh mép (chu vi),
+`oVuong` phủ lưới ô đơn vị (diện tích). Chỗ bé lẫn nhất cả chương nay **nhìn là thấy**
+— một cái là đường đi, một cái là mặt phẳng.
+
+### Gợi ý viết ngay trong đợt
+
+Cổng đã siết sau khi trả nợ, nên 54 câu có gợi ý viết tay **ngay trong đợt này**,
+không để nợ mọc lại. `tools/them_goi_y.py` bắt được hai chỗ viết hớ (gợi ý nói thẳng
+ra "mét vuông" và "chia" trong khi đó chính là đáp án) — sửa lời gợi ý, không nới cổng.
+
+### Còn lại đợt hai
+
+Bốn loại góc · đường cao · cắt ghép giữ diện tích · hình tròn · hình trải phẳng · đếm
+khối. Cần thêm **ba kiểu cảnh**: góc, hình tròn, khối.

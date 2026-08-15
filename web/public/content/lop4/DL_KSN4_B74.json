@@ -1,0 +1,353 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B74",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 67 · CHU VI VÀ DIỆN TÍCH KHÁC NHAU CHỖ NÀO",
+ "durationMinutes": 10,
+ "so": 67,
+ "chuong": 10,
+ "tenChuong": "HÌNH HỌC",
+ "dangGoc": "Dạng gốc: HH 1.0 mức Lớp 4 — Phân biệt chu vi với diện tích bằng hình: một cái là đường đi quanh mép, một cái là mặt bị phủ kín. KHÔNG công thức.",
+ "skills": {
+  "bktUnit": "CHUONG:10@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 67,
+  "prev": "DL:KSN4.B42",
+  "next": "DL:KSN4.B43"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nói được chu vi là đường đi quanh mép. Nói được diện tích là phần mặt bị phủ kín. Biết chu vi đo bằng mét, còn diện tích đo bằng mét vuông.",
+  "kidText": "Cô có mảnh vườn 6 mét nhân 4 mét. Con đoán xem đi quanh mép hết mấy mét nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn tính xong rồi viết: \"Diện tích mảnh vườn là 24 mét.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con đếm 24 cái gì? Đếm mét hay đếm ô vuông? Gợi ý 2: Đếm ô vuông, mà mỗi ô là một mét vuông chứ. Chữa: diện tích phải ghi là 24 mét vuông. Ghi nhầm đơn vị là nói sai hẳn thứ mình vừa đo."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn tính xong rồi viết: \"Diện tích mảnh vườn là 24 mét.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một mảnh vườn hình chữ nhật dài 6 mét, rộng 4 mét. Hãy chỉ ra đâu là chu vi, đâu là diện tích.",
+  "steps": [
+   {
+    "show": "Chu vi — đi quanh mép"
+   },
+   {
+    "show": "Tưởng tượng con đi bộ một vòng quanh mép vườn. Quãng đường ấy là chu vi."
+   },
+   {
+    "show": "Đi hết một vòng: 6 rồi 4 rồi 6 rồi 4, cộng lại được 20 mét."
+   },
+   {
+    "show": "Diện tích — phủ kín mặt"
+   },
+   {
+    "show": "Bây giờ tưởng tượng lát gạch kín cả mảnh vườn, mỗi viên gạch là ô vuông cạnh 1 mét."
+   },
+   {
+    "show": "Đếm số ô: mỗi hàng 6 ô, có 4 hàng, tất cả 24 ô. Diện tích là 24 mét vuông."
+   },
+   {
+    "show": "Hai con số khác nhau"
+   },
+   {
+    "show": "Chu vi 20, diện tích 24. Chúng đo hai thứ khác hẳn nên đơn vị cũng khác: một bên mét, một bên mét vuông."
+   },
+   {
+    "show": "Đáp số: chu vi 20 mét, diện tích 24 mét vuông."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Mảnh vườn dài 6 mét, rộng 4 mét — đúng hình trong video. Đi một vòng quanh mép vườn thì đi hết bao nhiêu mét?",
+     "answerKey": {
+      "value": 20
+     },
+     "solutionNarrative": "Đi bốn cạnh: 6 + 4 + 6 + 4 = 20 mét. Đó là chu vi.",
+     "hints": [
+      "Lấy ngón tay đi một vòng quanh hình và đếm to từng cạnh.",
+      "Cộng cả bốn cạnh lại."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn mảnh vườn ấy. Lát gạch ô vuông cạnh 1 mét thì mỗi hàng mấy ô và có mấy hàng?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi hàng mấy ô",
+        "value": 6
+       },
+       {
+        "label": "mấy hàng",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Mỗi hàng 6 ô, có 4 hàng.",
+     "hints": [
+      "Lát gạch ô vuông cạnh một mét lên mảnh vườn.",
+      "Số ô mỗi hàng theo chiều dài, số hàng theo chiều rộng."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn mảnh vườn ấy. Đếm tất cả bao nhiêu ô, tức diện tích bằng bao nhiêu?",
+     "answerKey": {
+      "value": 24
+     },
+     "solutionNarrative": "6 × 4 = 24 ô, nên diện tích là 24 mét vuông.",
+     "hints": [
+      "Đếm ô nhanh bằng phép nhân, đừng đếm từng ô.",
+      "Nhân số ô mỗi hàng với số hàng."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Bạn Nam viết \"diện tích mảnh vườn là 24 mét\". Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "đơn vị đúng",
+        "options": [
+         "mét vuông",
+         "mét"
+        ],
+        "value": "mét vuông"
+       }
+      ]
+     },
+     "solutionNarrative": "Diện tích đếm bằng ô vuông nên phải ghi là 24 mét vuông. Ghi mét là nói về đường đi, không phải mặt phẳng.",
+     "hints": [
+      "Bạn ấy đếm ô vuông mà lại ghi đơn vị của đường đi.",
+      "Mỗi ô là một ô cạnh một mét — đơn vị phải nói lên chuyện ấy."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Muốn rào lưới quanh vườn thì cần tính chu vi hay diện tích?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cần tính",
+        "options": [
+         "chu vi",
+         "diện tích"
+        ],
+        "value": "chu vi"
+       }
+      ]
+     },
+     "solutionNarrative": "Chu vi — vì lưới chạy quanh mép vườn.",
+     "hints": [
+      "Lưới chạy ở đâu trên mảnh vườn?",
+      "Nó chạy quanh mép chứ đâu phủ kín mặt."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Muốn trồng cỏ phủ kín vườn thì cần tính chu vi hay diện tích?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cần tính",
+        "options": [
+         "diện tích",
+         "chu vi"
+        ],
+        "value": "diện tích"
+       }
+      ]
+     },
+     "solutionNarrative": "Diện tích — vì cỏ phủ kín cả mặt vườn.",
+     "hints": [
+      "Cỏ nằm ở đâu trên mảnh vườn?",
+      "Nó phủ kín cả mặt chứ đâu chạy quanh mép."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Một hình vuông cạnh 4 mét. Tính chu vi và diện tích, rồi cho biết vì sao hai con số này dễ làm bé nhầm.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chu vi",
+        "value": 16
+       },
+       {
+        "label": "diện tích",
+        "value": 16
+       }
+      ]
+     },
+     "solutionNarrative": "Chu vi 4 × 4 = 16 mét; diện tích 4 × 4 = 16 mét vuông. Hai con số bằng nhau nên rất dễ tưởng chúng là một, dù chúng đo hai thứ khác hẳn.",
+     "hints": [
+      "Hình vuông có bốn cạnh bằng nhau.",
+      "Tính riêng từng thứ rồi so hai con số ấy với nhau."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Một mảnh vườn dài 8 mét, rộng 3 mét. Tính chu vi và diện tích, ghi đủ đơn vị.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chu vi",
+        "value": 22
+       },
+       {
+        "label": "diện tích",
+        "value": 24
+       }
+      ]
+     },
+     "solutionNarrative": "Chu vi: 8 + 3 + 8 + 3 = 22 mét. Diện tích: 8 × 3 = 24 mét vuông.",
+     "hints": [
+      "Cộng bốn cạnh để ra thứ thứ nhất.",
+      "Nhân hai cạnh để ra thứ thứ hai, nhớ ghi đúng đơn vị."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Hai mảnh vườn: một mảnh 6 mét nhân 4 mét, một mảnh 8 mét nhân 3 mét. Mảnh nào cần nhiều lưới rào hơn, mảnh nào trồng được nhiều cỏ hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mảnh cần nhiều lưới hơn có chu vi",
+        "value": 22
+       },
+       {
+        "label": "diện tích hai mảnh",
+        "value": 24
+       }
+      ]
+     },
+     "solutionNarrative": "Chu vi: mảnh đầu 20 mét, mảnh sau 22 mét — mảnh sau cần nhiều lưới hơn. Diện tích: cả hai đều 24 mét vuông — trồng được cỏ như nhau.",
+     "hints": [
+      "Tính riêng đường quanh mép của từng mảnh rồi so.",
+      "Rồi tính riêng mặt phủ kín của từng mảnh rồi so."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Chu vi là quãng đường đi quanh mép hình.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Diện tích cũng đo bằng mét như chu vi.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — diện tích đo bằng mét vuông."
+   },
+   {
+    "id": "Q3",
+    "text": "Mảnh vườn 6 mét nhân 4 mét có chu vi bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 20 mét",
+     "B. 24 mét",
+     "C. 10 mét"
+    ],
+    "answerKey": {
+     "choice": "A. 20 mét"
+    },
+    "solutionNarrative": "Đi hết bốn cạnh."
+   },
+   {
+    "id": "Q4",
+    "text": "Cũng mảnh vườn ấy có diện tích bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 24 mét vuông",
+     "B. 20 mét vuông",
+     "C. 24 mét"
+    ],
+    "answerKey": {
+     "choice": "A. 24 mét vuông"
+    },
+    "solutionNarrative": "Đếm ô vuông phủ kín mặt."
+   },
+   {
+    "id": "Q5",
+    "text": "Muốn rào lưới quanh vườn thì tính:",
+    "format": "mcq",
+    "choices": [
+     "A. chu vi",
+     "B. diện tích",
+     "C. cả hai"
+    ],
+    "answerKey": {
+     "choice": "A. chu vi"
+    },
+    "solutionNarrative": "Lưới chạy quanh mép."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Lấy một tờ giấy: bảo con lấy bút chì tô viền quanh mép, rồi lấy bút màu tô kín cả tờ. Hai việc ấy chính là chu vi và diện tích.",
+  "homeActivity": "Con lẫn hai chữ này là chuyện rất thường. Bố mẹ hỏi lại: \"Con đang đo đường đi hay đo mặt phẳng?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Lớp 3 con đã tính cả chu vi lẫn diện tích. Nhưng hai chữ ấy nghe na ná nhau nên rất dễ lẫn. Hôm nay mình dừng lại nhìn cho rõ: chúng đo hai thứ khác hẳn nhau, và đến đơn vị đo cũng khác.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B27",
+   "DL:KSN3.B30"
+  ],
+  "ten": [
+   "CHU VI CÓ CÔNG THỨC",
+   "DIỆN TÍCH — TẤM THẢM Ô VUÔNG"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B74_giang.mp4"
+ }
+}
