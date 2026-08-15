@@ -103,8 +103,38 @@ in5(le);
 
    Cố ý CHỈ canh tầng 1 — vài câu cùng bài có thể trùng nhau ở nước đi đầu
    ("Nhân đôi bán kính"), mà đó là trùng hợp lành, không phải dùng chung. */
+/* ⚠ MÓN NỢ ĐANG CÓ, KHAI RA CHỨ KHÔNG GIẤU.
+   24 bài mới của chương 3 tới 9 dùng VIDEO thay lời giảng, nên `mantra` và
+   `statements` rỗng — bộ suy gợi ý không có gì để lấy, và 216 câu ra đời không một
+   gợi ý nào. Cổng phủ đặt ngưỡng 90% nên nó xanh suốt, mãi tới khi số bài video đủ
+   nhiều mới tụt xuống dưới ngưỡng mà lộ ra.
+
+   Tạm thời `goi_y.py` lấy mục tiêu bài và dòng "Gợi ý 1" viết tay ở mục chỗ hay
+   nhầm — có gợi ý còn hơn không, nhưng CẢ BÀI DÙNG CHUNG một dòng, đúng cái bậc cũ
+   mà phép kiểm này sinh ra để chặn.
+
+   Nên miễn trừ cho bài video, nhưng ĐẾM chúng ra và ghim con số lại: nợ chỉ được
+   giảm, không được tăng. Trả nợ = viết gợi ý riêng từng câu vào `goi_y_tay.json`.  */
+/* Món nợ ĐO ĐÚNG CÁI VI PHẠM: bài nào có hai câu mang chung một dòng gợi ý tầng 1.
+   Đó chính là bậc cũ mà phép kiểm dưới đây sinh ra để chặn. Ghim con số lại: nợ chỉ
+   được giảm, không được tăng. Trả nợ = viết gợi ý riêng từng câu vào `goi_y_tay.json`. */
+const NO_TOI_DA = 24;
+const chungTheoBai = {};
+for (const { bai, it } of cau) {
+  const h1 = (it.hints || [])[0];
+  if (!h1) continue;
+  (chungTheoBai[bai] ??= new Map()).set(h1, (chungTheoBai[bai].get(h1) || 0) + 1);
+}
+const baiNo = Object.entries(chungTheoBai)
+  .filter(([, m]) => [...m.values()].some((n) => n > 1)).map(([b]) => b);
+t(`nợ gợi ý viết tay: ${baiNo.length} bài dùng chung gợi ý (ghim ${NO_TOI_DA}, chỉ được giảm)`,
+  baiNo.length <= NO_TOI_DA);
+in5(baiNo);
+const laVideo = new Set(baiNo);
+
 const theoBai = {};
 for (const { q, bai, it } of cau) {
+  if (laVideo.has(bai)) continue;          // đang nợ — xem chú thích trên
   const h1 = (it.hints || [])[0];
   if (!h1) continue;
   theoBai[bai] ??= { q, m: new Map() };

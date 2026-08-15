@@ -116,15 +116,52 @@ def _dap_an(item):
 
 
 def goi_y_cua_bai(b):
-    """Hai tầng gợi ý của một bài — lấy từ lời giảng của chính bài ấy."""
+    """Hai tầng gợi ý của một bài — lấy từ lời giảng của chính bài ấy.
+
+    ⚠ BÀI DÙNG VIDEO KHÔNG CÓ LỜI GIẢNG BẰNG CHỮ. Từ 14-08, bài nào video thay cả
+    mở bài lẫn bài giảng thì `mantra` rỗng và `statements` rỗng — cố ý. Nên hai
+    nguồn dưới đây trả về rỗng, và bài ấy **mất sạch gợi ý**.
+
+    Đã dính thật: 24 bài mới của chương 3 tới 9 đi ra với 216 câu không một gợi ý
+    nào. Cổng phủ đặt ngưỡng 90% nên nó vẫn xanh suốt, mãi tới khi số bài video đủ
+    nhiều mới tụt xuống dưới ngưỡng. Bé sai bao nhiêu lần cũng không được giúp.
+
+    Nay bài video lấy từ hai chỗ VẪN CÓ và đều viết tay:
+        tầng 1  mục tiêu đầu tiên của bài      → nhắc HƯỚNG ĐI
+        tầng 2  dòng "Gợi ý 1" ở mục chỗ hay nhầm → chỉ BƯỚC ĐẦU
+    Cả hai đều là lời dẫn, không phải lời giải, nên không lộ đáp số câu nào.
+    """
     K = b.get('knowledgeCore') or {}
     t1 = _gon(K.get('mantra') or '')
     st = K.get('statements') or []
     t2 = _gon(st[0].get('text') if st else '')
+    if not (t1 or t2):
+        t1, t2 = _goi_y_bai_video(b)
     # Hai tầng mà trùng nhau thì tầng 2 vô nghĩa — bỏ, thà một tầng thật.
     if t2 and t1 and t2[:40] == t1[:40]:
         t2 = _gon(st[1].get('text')) if len(st) > 1 else ''
     return [x for x in (t1, t2) if x]
+
+
+def _goi_y_bai_video(b):
+    """Hai tầng cho bài dùng video — xem chú thích ở `goi_y_cua_bai`.
+
+    Nguồn: mục tiêu bài (câu đầu) và dòng "Gợi ý 1" viết tay ở mục chỗ hay nhầm.
+    Dòng ấy nằm trong `knowledgeCore.misconceptions[0].fix` sau khi dựng — tìm được
+    bằng cách dò cả cây, chứ đoán chỗ thì trượt.
+    """
+    t1 = t2 = ''
+    ob = b.get('objective') or {}
+    if ob.get('text'):
+        # Mục tiêu ghép nhiều câu bằng dấu chấm — lấy câu ĐẦU, đủ để nhắc hướng đi.
+        t1 = _gon(str(ob['text']).split('.')[0].strip() + '.')
+    for mc in (b.get('knowledgeCore') or {}).get('misconceptions') or []:
+        van = str(mc.get('fix') or '')
+        if 'Gợi ý 1' in van:
+            sau = van.split('Gợi ý 1:', 1)[-1]
+            t2 = _gon(sau.split('Gợi ý 2')[0].strip())
+            break
+    return t1, t2
 
 
 def main(chi_soat=False):

@@ -123,7 +123,7 @@ chương dùng chung ví dụ và chung cách nói.
 | ~~5~~ | ~~7 · Tổng - tỉ, Hiệu - tỉ~~ | **XONG 14-08** | 4 bài → **7 bài**, xem §15 |
 | 6 | 1 · Số đến lớp triệu | B01–B04 | bài đầu quyển, bé mới vào |
 | 7 | 2 · Bốn phép tính | B05–B08 | |
-| 8 | 9 · Phân số | B38–B42 | cần kiểu cảnh vẽ phân số |
+| ~~8~~ | ~~9 · Phân số~~ | **XONG 15-08** | 5 bài → **11 bài**, xem §18 |
 | 9 | 10 · Hình học | B43–B46 | cần kiểu cảnh hình — nặng nhất |
 | 10 | 11 · Quãng đường | B47–B49 | |
 | ~~11~~ | ~~8 · Bài toán lời văn~~ | **XONG 14-08** | 6 bài → **10 bài**, xem §17 |
@@ -653,3 +653,44 @@ chuồng thỏ dùng lại `nhom_deu` — 12 chỗ kín, một đồ thừa tô 
 
 5 video · **62 clip tiếng mới trong 2 phút 29** (trước khi sửa bộ sinh tiếng thì đợt
 này sẽ mất hơn hai mươi phút) · 70 câu hỏi · quyển từ **63 lên 65 bài**.
+
+---
+
+## 18 · Đợt 7 · chương 9 — phân số, 5 bài thành 11
+
+Chương gói nặng nhất: B39 gộp ba việc, B42 gộp ba ứng dụng, B40 gộp hai kỹ thuật
+chẳng liên quan, B41 gộp đúng hai điều bé hay lẫn nhất. Và vẫn thiếu bài gốc —
+**không bài nào nói phân số là gì**.
+
+Bộ neo **ba phần tư** chở gần cả chương, và **mọi con số đã kiểm bằng máy trước khi
+viết** (dùng `fractions.Fraction`). Đẹp nhất: tổng tách hiệu ra đúng ba phần tư, nên
+bài dãy số nối liền với bộ neo.
+
+Kiểu cảnh mới `phan_so` vẽ băng chia phần. Khi so sánh thì hai băng phải DÀI BẰNG
+NHAU, nếu không thì hình nói dối.
+
+### Hai bài tách ra vì bé lẫn nhiều nhất
+
+B41 cũ dạy chung "cùng thêm ở tử và mẫu" với "chuyển giữa tử và mẫu". Nay tách:
+**thêm vào cả hai đầu → HIỆU đứng yên; chuyển qua lại → TỔNG đứng yên.** Dạy chung
+một bài là chắc chắn lẫn.
+
+---
+
+## 19 · ⚠ MÓN NỢ LỘ RA Ở ĐỢT NÀY — GỢI Ý CỦA BÀI VIDEO
+
+Bộ suy gợi ý lấy từ `knowledgeCore.mantra` và `statements[0]`. Nhưng bài dùng video
+thì **hai chỗ ấy cố ý rỗng** — nên **24 bài mới của chương 3 tới 9 ra đời với 216 câu
+không một gợi ý nào**. Bé sai bao nhiêu lần cũng không được giúp.
+
+Cổng phủ đặt ngưỡng 90% nên nó **xanh suốt năm đợt**, mãi tới khi số bài video đủ
+nhiều mới tụt xuống dưới ngưỡng mà lộ ra. Đây đúng loại hỏng nguy hiểm nhất: cổng có
+thật, ngưỡng có thật, chỉ là ngưỡng che mất một lỗ đang lớn dần.
+
+**Vá tạm:** `goi_y.py` nay lấy mục tiêu bài và dòng "Gợi ý 1" viết tay ở mục chỗ hay
+nhầm. Có gợi ý còn hơn không — nhưng **cả bài dùng chung một dòng**, đúng cái bậc cũ
+mà cổng "gợi ý riêng từng câu" sinh ra để chặn.
+
+**Nên món nợ được KHAI RA thành một con số ghim lại: 24 bài dùng chung gợi ý, chỉ
+được giảm.** Trả nợ = viết gợi ý riêng từng câu vào `data/goi_y_tay.json`. Đây là
+việc còn lại đáng làm nhất của quyển lớp 4.

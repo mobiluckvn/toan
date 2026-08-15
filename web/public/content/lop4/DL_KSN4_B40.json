@@ -2,56 +2,39 @@
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN4.B40",
  "grade": 4,
- "quyen": "lop4",
- "title": "Bài 58 · DÃY PHÂN SỐ — TÁCH HIỆU VÀ RÚT GỌN CHÉO",
+ "quyen": "KSN4",
+ "title": "Bài 62 · DÃY PHÂN SỐ · TỔNG — TÁCH MỖI SỐ THÀNH MỘT HIỆU",
  "durationMinutes": 10,
- "so": 58,
+ "so": 62,
  "chuong": 9,
  "tenChuong": "PHÂN SỐ",
- "dangGoc": "PS 2.1 + PS 2.2 mức Lớp 4 — Tổng sai phân 1/(1×2) + 1/(2×3) + ... · tích rút gọn chéo 1/2 × 2/3 × ...",
+ "dangGoc": "Dạng gốc: PS 2.1 mức Lớp 4 — Tổng dãy phân số dạng một phần tích hai số liên tiếp, giải bằng cách tách mỗi số hạng thành một hiệu.",
  "skills": {
   "bktUnit": "CHUONG:9@G4",
   "primary": []
  },
  "series": {
-  "order": 58,
-  "prev": "DL:KSN4.B39",
-  "next": "DL:KSN4.B41"
+  "order": 62,
+  "prev": "DL:KSN4.B71",
+  "next": "DL:KSN4.B72"
  },
  "objective": {
   "id": "O1",
-  "text": "Tự khám phá và kiểm chứng bí mật tách hiệu: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1. Tính tổng dãy sai phân kiểu 1/(1×2) + 1/(2×3) + 1/(3×4) bằng hiệu ứng domino (chỉ còn hai đầu). Tính tích kiểu 1/2 × 2/3 × 3/4 × 4/5 bằng rút gọn chéo (chỉ còn tử đầu và mẫu cuối).",
-  "kidText": "Dãy phân số một phần 1×2, một phần 2×3, rồi một phần 3×4. Cộng cả dãy dài như thế thì ra bao nhiêu?",
+  "text": "Tách một phần tích hai số liên tiếp thành một hiệu. Thấy các phần giữa triệt tiêu nhau. Chỉ còn số đầu và số cuối.",
+  "kidText": "Một phép cộng phân số dài dằng dặc, mà kết quả lại rất gọn. Con xem vì sao nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — TỰ KHÁM PHÁ BÍ MẬT TÁCH HIỆU: tính thử 1 − 1/2 = 1/2 — mà 1/(1×2) cũng bằng 1/2! Tính tiếp 1/2 − 1/3 = 3/6 − 2/6 = 1/6 — đúng bằng 1/(2×3)! Và 1/3 − 1/4 = 4/12 − 3/12 = 1/12 = 1/(3×4). Bí mật lộ diện: 1/(a × b) = 1/a − 1/b khi b hơn a đúng 1 (vì hiệu trên mẫu chung là b − a = 1)."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — CÚ CHẠM DOMINO: thay cả dãy bằng các hiệu: (1 − 1/2) + (1/2 − 1/3) + (1/3 − 1/4). Nhìn kỹ: −1/2 gặp +1/2 tự hủy; −1/3 gặp +1/3 tự hủy — cả khúc giữa đổ rạp! Chỉ còn hai đầu: 1 − 1/4 = 3/4. Dãy dài gấp mười cũng thế: sống sót chỉ có SỐ ĐẦU và SỐ CUỐI."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — MÀN HAI: TÍCH RÚT GỌN CHÉO: tính 1/2 × 2/3 × 3/4 × 4/5: tử của mỗi phân số đúng bằng mẫu của phân số đứng trước! Nhân các tử với nhau, nhân các mẫu với nhau: các cặp 2, 3, 4 xuất hiện cả trên lẫn dưới — gạch chéo từng đôi. Còn lại tử đầu 1 và mẫu cuối 5: tích bằng 1/5."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — DỰ ĐOÁN KHÔNG CẦN TÍNH: kéo dài tổng đến 1/(4×5)? Hai đầu là 1 và 1/5 → tổng 1 − 1/5 = 4/5. Kéo dài tích đến 9/10? Tử đầu 1, mẫu cuối 10 → tích 1/10. Sức mạnh của cấu trúc: đọc được luật domino là ĐOÁN trước đáp số của dãy dài tùy ý — điều mà tính trâu bò không bao giờ làm nổi."
-   }
-  ],
-  "mantra": "Gặp dãy phân số dài: đừng quy đồng vội — soi cấu trúc TỰ HỦY trước. Tổng mẫu-là-tích-liền-nhau: tách mỗi số thành hiệu 1/a − 1/b, cả dãy chỉ còn HAI ĐẦU. Tích tử-sau-bằng-mẫu-trước: gạch chéo, chỉ còn TỬ ĐẦU và MẪU CUỐI. Kiểm bí mật tách hiệu bằng một phép trừ trước khi tin!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Học xong tách hiệu, Trí Long hăng máu: \"1/(1×2) + 1/(2×3) hả? Cộng tử với tử, mẫu với mẫu: (1+1)/(2+6) = 2/8 = 1/4. Nhanh chưa!\"",
-    "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Thử \"luật\" của Trí Long với cặp dễ nhất: 1/2 + 1/2 theo kiểu ấy ra 2/4 = 1/2 — nửa bánh cộng nửa bánh mà vẫn chỉ... nửa bánh thôi sao? Gợi ý 2: Phân số chỉ cộng được khi CÙNG CỠ LÁT (cùng mẫu) — luật thép Bài 33! Tính lại 1/2 + 1/6 bằng quy đồng, rồi bằng tách hiệu, cho Trí Long thấy hai đường chân chính đều ra 2/3."
+    "wrong": "Có bạn cộng thẳng ba phân số mà quên quy đồng, ra một phần hai mươi.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Cộng phân số khác mẫu thì có cộng thẳng tử với tử, mẫu với mẫu được không? Gợi ý 2: Không được. Nhưng ở bài này còn có cách hay hơn cả quy đồng. Chữa: tách mỗi số thành một hiệu thì các phần giữa tự triệt tiêu, chỉ còn số đầu và số cuối. Kết quả là ba phần tư."
    }
   ]
  },
@@ -59,114 +42,48 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Dãy phân số 1/(1×2) ; 1/(2×3) ; 1/(3×4) — mẫu là tích hai số liền nhau. Hỏi tổng của cả dãy?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "CHO GÌ? dãy phân số 1/(1×2) ; 1/(2×3) ; 1/(3×4) — mẫu là tích hai số liền nhau.\nHỎI GÌ? tổng của cả dãy.\nĐẠI LƯỢNG & ĐƠN VỊ: các phân số (không đơn vị) — điểm lạ: mẫu nào cũng là TÍCH HAI SỐ LIỀN NHAU.\nQUAN HỆ GIỮA CHÚNG: nếu mỗi phân số tách được thành một HIỆU hai phân số đơn giản, thì khi cộng, đuôi của mảnh trước sẽ khớp đầu của mảnh sau mà tự hủy.\nCHỌN CÔNG CỤ: BÍ MẬT TÁCH HIỆU (tự kiểm chứng!) + hiệu ứng domino.\nƯỚC LƯỢNG TRƯỚC: cả dãy chưa đầy một chiếc bánh — tổng chắc dưới 1, cỡ ba phần tư.",
-    "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — nhìn ra cấu trúc tự hủy của dãy"
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S6",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S7",
-    "kind": "explain",
-    "narration": "LẮP: Su Kem công bố trước quầy: \"Tổng dãy nhãn là 3/4 — thưa quý khách, chưa đầy một chiếc bánh!\" Chị Ngọc Anh phục sát đất, thưởng nóng hai chiếc bánh nóng hổi; Trí Long vừa nhai vừa lẩm bẩm học thuộc bí mật tách hiệu.\nSOI: soi bằng đường trâu bò trên dãy ngắn: 1/2 + 1/6 + 1/12 = 6/12 + 2/12 + 1/12 = 9/12 = 3/4 ✓ — lối tắt và đường cày cho cùng đáp số, lối tắt được cấp phép!\nDÙNG NGOÀI ĐỜI: trong toán lớn, vô số tổng - tích dài được \"thuần hóa\" đúng kiểu này; con vừa chạm vào tư duy đẹp nhất của nghề toán: thay sức kéo bằng cấu trúc.",
-    "teaches": [],
-    "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
-   },
-   {
-    "id": "S8",
     "kind": "trap",
-    "narration": "Học xong tách hiệu, Trí Long hăng máu: \"1/(1×2) + 1/(2×3) hả? Cộng tử với tử, mẫu với mẫu: (1+1)/(2+6) = 2/8 = 1/4. Nhanh chưa!\"",
+    "narration": "Có bạn cộng thẳng ba phân số mà quên quy đồng, ra một phần hai mươi.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính: 1/(1×2) + 1/(2×3) + 1/(3×4).",
+  "problem": "Tính tổng một phần hai cộng một phần sáu cộng một phần mười hai.",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Nhìn kỹ các mẫu số"
    },
    {
-    "show": "Tính tổng ba phân số có mẫu là tích hai số liền nhau."
+    "show": "Hai bằng một nhân hai. Sáu bằng hai nhân ba. Mười hai bằng ba nhân bốn. Toàn là tích của hai số liên tiếp."
    },
    {
-    "show": "Gọi tên đặc điểm của mẫu — nhận diện dạng ngay từ tóm tắt."
+    "show": "Tách mỗi số thành một hiệu"
    },
    {
-    "show": "Mô hình (tách hiệu)"
+    "show": "Một phần một nhân hai bằng một phần một trừ một phần hai."
    },
    {
-    "show": "1/(1×2) = 1 − 1/2 ; 1/(2×3) = 1/2 − 1/3 ; 1/(3×4) = 1/3 − 1/4"
+    "show": "Một phần hai nhân ba bằng một phần hai trừ một phần ba."
    },
    {
-    "show": "(kiểm: 1/2 − 1/3 = 3/6 − 2/6 = 1/6 ✓)"
+    "show": "Một phần ba nhân bốn bằng một phần ba trừ một phần tư."
    },
    {
-    "show": "Tách kèm MỘT phép kiểm — không dùng bí mật chưa kiểm chứng."
+    "show": "Cộng lại thì các phần giữa triệt tiêu"
    },
    {
-    "show": "Bài giải"
+    "show": "Một phần hai trừ rồi lại cộng, nên mất. Một phần ba cũng thế. Chỉ còn một phần một trừ một phần tư."
    },
    {
-    "show": "Tổng = (1 − 1/2) + (1/2 − 1/3) + (1/3 − 1/4)"
+    "show": "Tính nốt"
    },
    {
-    "show": "Các phân số 1/2 ; 1/3 xuất hiện một lần trừ, một lần cộng nên triệt tiêu nhau."
+    "show": "Một trừ một phần tư bằng ba phần tư."
    },
    {
-    "show": "Tổng = 1 − 1/4 = 3/4"
-   },
-   {
-    "show": "Câu \"triệt tiêu nhau\" nêu căn cứ của cú sập domino."
-   },
-   {
-    "show": "Đáp số: 3/4."
-   },
-   {
-    "show": "Đáp số gọn một phân số."
-   },
-   {
-    "show": "Thử lại: 1/2 + 1/6 + 1/12 = 6/12 + 2/12 + 1/12 = 9/12 = 3/4 ✓"
-   },
-   {
-    "show": "Đường quy đồng kiểm chứng lối domino."
+    "show": "Đáp số: tổng bằng ba phần tư."
    }
   ]
  },
@@ -175,21 +92,20 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tính 1/2 − 1/3. So sánh kết quả với 1/(2×3) và nêu nhận xét.",
+     "text": "Tính tổng một phần hai cộng một phần sáu cộng một phần mười hai — đúng bài trong video. Mẫu số 6 bằng tích của hai số liên tiếp nào?",
      "answerKey": {
       "parts": [
        {
-        "label": "1/2 − 1/3",
-        "options": [
-         "1/6",
-         "1/5",
-         "1/12"
-        ],
-        "value": "1/6"
+        "label": "số thứ nhất",
+        "value": 2
+       },
+       {
+        "label": "số thứ hai",
+        "value": 3
        }
       ]
      },
-     "solutionNarrative": "1/2 − 1/3 = 3/6 − 2/6 = 1/6 — đúng bằng 1/(2×3): hiệu hai phân số \"liền kề\" chính là phân số mẫu-tích!",
+     "solutionNarrative": "6 = 2 × 3.",
      "hints": [
       "Quy đồng rồi trừ.",
       "Đem kết quả so với phân số mẫu-là-tích."
@@ -197,20 +113,20 @@
     },
     {
      "id": "C2",
-     "text": "Kiểm chứng: 1/(1×2) có bằng 1 − 1/2 không?",
+     "text": "Vẫn bài trên. Một phần hai nhân ba tách thành hiệu nào?",
      "answerKey": {
       "parts": [
        {
-        "label": "1/(1×2) có bằng 1 − 1/2 không",
-        "options": [
-         "có",
-         "không"
-        ],
-        "value": "có"
+        "label": "mẫu của số bị trừ",
+        "value": 2
+       },
+       {
+        "label": "mẫu của số trừ",
+        "value": 3
        }
       ]
      },
-     "solutionNarrative": "Có — 1 − 1/2 = 1/2 = 1/(1×2) ✓.",
+     "solutionNarrative": "Một phần hai trừ một phần ba.",
      "hints": [
       "Tính riêng hai vế rồi so.",
       "Đây chính là viên domino đầu tiên."
@@ -218,20 +134,16 @@
     },
     {
      "id": "C3",
-     "text": "Kiểm chứng: 1/(3×4) có bằng 1/3 − 1/4 không?",
+     "text": "Vẫn bài trên. Sau khi tách và triệt tiêu, còn lại hiệu nào?",
      "answerKey": {
       "parts": [
        {
-        "label": "1/(3×4) có bằng 1/3 − 1/4 không",
-        "options": [
-         "có",
-         "không"
-        ],
-        "value": "có"
+        "label": "mẫu của phần bị trừ đi",
+        "value": 4
        }
       ]
      },
-     "solutionNarrative": "Có — 1/3 − 1/4 = 4/12 − 3/12 = 1/12 = 1/(3×4) ✓.",
+     "solutionNarrative": "Một trừ một phần tư.",
      "hints": [
       "Quy đồng vế phải rồi trừ.",
       "So với phân số mẫu-là-tích ở vế trái."
@@ -241,21 +153,20 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Tính: 1/(1×2) + 1/(2×3).",
+     "text": "Vẫn bài trên. Tổng bằng bao nhiêu?",
      "answerKey": {
       "parts": [
        {
-        "label": "tổng",
-        "options": [
-         "2/3",
-         "1/3",
-         "3/4"
-        ],
-        "value": "2/3"
+        "label": "tử số của tổng",
+        "value": 3
+       },
+       {
+        "label": "mẫu số của tổng",
+        "value": 4
        }
       ]
      },
-     "solutionNarrative": "(1 − 1/2) + (1/2 − 1/3) = 1 − 1/3 = 2/3.",
+     "solutionNarrative": "Một trừ một phần tư bằng ba phần tư.",
      "hints": [
       "Tách mỗi số hạng thành một HIỆU.",
       "Các khúc giữa triệt tiêu, chỉ còn hai đầu."
@@ -263,21 +174,20 @@
     },
     {
      "id": "C5",
-     "text": "Tính: 1/(1×2) + 1/(2×3) + 1/(3×4).",
+     "text": "Bạn Nam cộng thẳng tử với tử, mẫu với mẫu. Bạn sai ở đâu?",
      "answerKey": {
       "parts": [
        {
-        "label": "tổng",
+        "label": "cộng thẳng tử với tử có được không",
         "options": [
-         "3/4",
-         "2/3",
-         "4/5"
+         "có",
+         "không"
         ],
-        "value": "3/4"
+        "value": "không"
        }
       ]
      },
-     "solutionNarrative": "Domino sập, còn hai đầu: 1 − 1/4 = 3/4.",
+     "solutionNarrative": "Cộng phân số không cộng thẳng tử với tử được. Ở bài này có cách hay hơn: tách thành hiệu rồi triệt tiêu.",
      "hints": [
       "Domino sập — tách hết thành hiệu.",
       "Chỉ còn số đầu tiên và số cuối cùng."
@@ -285,30 +195,20 @@
     },
     {
      "id": "C6",
-     "text": "Tính 1/2 × 2/3, rồi lấy kết quả nhân tiếp với 3/4. Con nhận ra quy luật gì?",
+     "text": "Tách một phần bốn nhân năm thành một hiệu.",
      "answerKey": {
       "parts": [
        {
-        "label": "1/2 × 2/3",
-        "options": [
-         "1/3",
-         "1/6",
-         "2/3"
-        ],
-        "value": "1/3"
+        "label": "mẫu của số bị trừ",
+        "value": 4
        },
        {
-        "label": "nhân tiếp với 3/4",
-        "options": [
-         "1/4",
-         "3/8",
-         "1/2"
-        ],
-        "value": "1/4"
+        "label": "mẫu của số trừ",
+        "value": 5
        }
       ]
      },
-     "solutionNarrative": "1/2 × 2/3 = 1/3; nhân tiếp 3/4 được 1/4 — mỗi lần nhân thêm, kết quả là 1 trên mẫu cuối cùng!",
+     "solutionNarrative": "Một phần bốn trừ một phần năm.",
      "hints": [
       "Tử của phân số sau đúng bằng mẫu của phân số trước.",
       "Rút gọn chéo rồi nhìn ra quy luật."
@@ -316,21 +216,20 @@
     },
     {
      "id": "C7",
-     "text": "Tính: 1/2 × 2/3 × 3/4 × 4/5.",
+     "text": "Tính tổng một phần hai cộng một phần sáu.",
      "answerKey": {
       "parts": [
        {
-        "label": "tích",
-        "options": [
-         "1/5",
-         "1/4",
-         "2/5"
-        ],
-        "value": "1/5"
+        "label": "tử số của tổng",
+        "value": 2
+       },
+       {
+        "label": "mẫu số của tổng",
+        "value": 3
        }
       ]
      },
-     "solutionNarrative": "Rút chéo 2, 3, 4 → còn 1/5.",
+     "solutionNarrative": "Tách ra: (một trừ một phần hai) cộng (một phần hai trừ một phần ba). Triệt tiêu còn một trừ một phần ba, bằng hai phần ba.",
      "hints": [
       "Rút gọn chéo cả dây chuyền.",
       "Chỉ tử đầu và mẫu cuối sống sót."
@@ -340,30 +239,20 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Tính: 1/(1×2) + 1/(2×3) + 1/(3×4) + 1/(4×5) — rồi ĐOÁN ngay tổng nếu kéo dài đến 1/(9×10).",
+     "text": "Tính tổng một phần hai cộng một phần sáu cộng một phần mười hai cộng một phần hai mươi.",
      "answerKey": {
       "parts": [
        {
-        "label": "tổng đến 1/(4×5)",
-        "options": [
-         "4/5",
-         "3/4",
-         "5/6"
-        ],
-        "value": "4/5"
+        "label": "tử số của tổng",
+        "value": 4
        },
        {
-        "label": "tổng nếu kéo đến 1/(9×10)",
-        "options": [
-         "9/10",
-         "8/9",
-         "10/11"
-        ],
-        "value": "9/10"
+        "label": "mẫu số của tổng",
+        "value": 5
        }
       ]
      },
-     "solutionNarrative": "1 − 1/5 = 4/5; kéo đến 1/(9×10): hai đầu là 1 và 1/10 → tổng 1 − 1/10 = 9/10.",
+     "solutionNarrative": "Mẫu cuối 20 = 4 × 5. Sau khi tách và triệt tiêu còn một trừ một phần năm, bằng bốn phần năm.",
      "hints": [
       "Tách hiệu rồi lấy hai đầu.",
       "Muốn đoán thì chỉ cần biết hai đầu là ai."
@@ -371,30 +260,16 @@
     },
     {
      "id": "C9",
-     "text": "Tính 2/3 × 3/4 × 4/5 × 5/6 — rồi đoán tích nếu kéo dài đến 9/10. Hai con số sống sót là ai?",
+     "text": "Vì sao cách tách này chỉ dùng được khi mẫu số là tích hai số liên tiếp?",
      "answerKey": {
       "parts": [
        {
-        "label": "tích 2/3 × 3/4 × 4/5 × 5/6",
-        "options": [
-         "1/3",
-         "1/6",
-         "2/5"
-        ],
-        "value": "1/3"
-       },
-       {
-        "label": "tích nếu kéo đến 9/10",
-        "options": [
-         "1/5",
-         "2/9",
-         "1/4"
-        ],
-        "value": "1/5"
+        "label": "mẫu phải là tích của mấy số liên tiếp",
+        "value": 2
        }
       ]
      },
-     "solutionNarrative": "Rút chéo 3, 4, 5 → còn 2/6 = 1/3; kéo đến 9/10: sống sót tử đầu 2 và mẫu cuối 10 → tích 2/10 = 1/5.",
+     "solutionNarrative": "Vì chỉ khi hai số liên tiếp thì hiệu hai phân số mới ra đúng một phần tích của chúng. Mẫu số kiểu khác thì tách ra không khớp, không triệt tiêu được.",
      "hints": [
       "Rút gọn chéo — ai sống sót?",
       "Tử đầu và mẫu cuối, rồi rút gọn thêm lần nữa."
@@ -408,70 +283,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "1/(2×3) = 1/2 − 1/3.",
+    "text": "Một phần hai nhân ba bằng một phần hai trừ một phần ba.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đáp án: ĐÚNG."
    },
    {
     "id": "Q2",
-    "text": "1/(1×2) + 1/(2×3) = 2/8 (cộng tử với tử, mẫu với mẫu).",
+    "text": "Cộng phân số thì cộng thẳng tử với tử, mẫu với mẫu.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Không được cộng tử với tử, mẫu với mẫu; kết quả đúng là 2/3."
+    "solutionNarrative": "SAI — không cộng thẳng như thế được."
    },
    {
     "id": "Q3",
-    "text": "1/2 × 2/3 bằng:",
+    "text": "Mẫu số 12 bằng tích hai số liên tiếp nào?",
     "format": "mcq",
     "choices": [
-     "A. 1/3",
-     "B. 2/5",
-     "C. 1/6"
+     "A. 3 × 4",
+     "B. 2 × 6",
+     "C. 1 × 12"
     ],
     "answerKey": {
-     "choice": "A. 1/3"
+     "choice": "A. 3 × 4"
     },
-    "solutionNarrative": "1/3)."
+    "solutionNarrative": "Phải là hai số liên tiếp."
    },
    {
     "id": "Q4",
-    "text": "1 − 1/5 bằng:",
+    "text": "Tổng một phần hai cộng một phần sáu cộng một phần mười hai bằng:",
     "format": "mcq",
     "choices": [
-     "A. 4/5",
-     "B. 1/5",
-     "C. 5/4"
+     "A. ba phần tư",
+     "B. một phần hai",
+     "C. một phần hai mươi"
     ],
     "answerKey": {
-     "choice": "A. 4/5"
+     "choice": "A. ba phần tư"
     },
-    "solutionNarrative": "4/5)."
+    "solutionNarrative": "Một trừ một phần tư."
    },
    {
     "id": "Q5",
-    "text": "1/(4×5) bằng:",
+    "text": "Sau khi tách, các phần ở giữa:",
     "format": "mcq",
     "choices": [
-     "A. 1/4 − 1/5",
-     "B. 1/4 + 1/5",
-     "C. 1/4 × 1/5? — chọn cách tách ĐÚNG để cộng dãy"
+     "A. triệt tiêu nhau",
+     "B. cộng dồn lại",
+     "C. nhân với nhau"
     ],
     "answerKey": {
-     "choice": "A. 1/4 − 1/5"
+     "choice": "A. triệt tiêu nhau"
     },
-    "solutionNarrative": "1/(4×5) = 1/4 − 1/5."
+    "solutionNarrative": "Trừ rồi lại cộng thì mất."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Dựng domino thật (thẻ bài, hộp sữa) dán nhãn các phân số của dãy — cú đẩy đổ hàng loạt là hình ảnh khắc sâu nhất về \"tự hủy dây chuyền\".",
-  "homeActivity": "Đặt lệ \"bí mật phải kiểm chứng\": trước khi dùng 1/(a×b) = 1/a − 1/b, con phải tự tay kiểm MỘT trường hợp bằng quy đồng — thói quen của nhà toán học thật.",
-  "watchFor": "NÊN: cho con đoán-trước-tính-sau với dãy kéo dài (đến 1/(9×10)) rồi thưởng khi đoán trúng. KHÔNG NÊN: dãy mẫu cách nhau 2 kiểu 1/(1×3) + 1/(3×5) — phiên bản \"nhân hệ số\" hẹn lớp 5."
+  "onComplete": "Viết ba hiệu ra giấy rồi bảo con gạch những phần xuất hiện hai lần. Con thấy chỉ còn hai đầu là hiểu.",
+  "homeActivity": "Cách này chỉ dùng được khi mẫu số là tích hai số LIÊN TIẾP. Bố mẹ nhắc con kiểm điều ấy trước.",
+  "watchFor": ""
  },
  "figureSpec": [
   {
@@ -485,7 +360,7 @@
    "mucGoc": "chuyenMoBai"
   }
  ],
- "hatMam": "Chương 4 con từng gặp những dãy số có quy luật. Hôm nay dãy số... hóa phân số — và mang theo hai màn ảo thuật đẹp nhất của toán tiểu học: TỔNG dài dằng dặc tự sập như dây domino chỉ còn trơ hai đầu, và TÍCH lê thê tự gạch chéo chỉ sót tử đầu - mẫu cuối. Bí quyết chung: đừng tính trâu bò — hãy tìm chỗ TỰ HỦY.",
+ "hatMam": "Có những phép cộng phân số dài dằng dặc, cộng thẳng thì rất lâu. Hôm nay con học một cách rất đẹp: tách mỗi số hạng thành một HIỆU, rồi hầu hết các phần sẽ tự triệt tiêu nhau.",
  "duongLui": {
   "ve": [
    "DL:KSN3.B12",
@@ -495,8 +370,11 @@
    "FIBONACCI & QUY LUẬT HAI TẦNG",
    "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
   ],
-  "canCu": "chuDe",
+  "canCu": "sach",
   "lopDuoi": 3,
   "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B40_giang.mp4"
  }
 }

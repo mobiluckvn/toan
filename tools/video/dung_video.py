@@ -325,6 +325,45 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuCuoi"):
             giua(d, y0 + h_nhom + 118, c["chuCuoi"], phong(34), INK, rong=W - 200)
 
+    elif L == "phan_so":
+        # ══ PHÂN SỐ VẼ RA THÀNH BĂNG CHIA PHẦN ══
+        # Cả chương phân số đứng hay đổ ở chỗ này: bé phải THẤY mẫu số là "chia làm
+        # mấy phần" và tử số là "lấy mấy phần". Nói bằng lời thì hai chữ tử với mẫu
+        # chỉ là hai cái tên khó nhớ; vẽ ra thì chúng có nghĩa ngay.
+        #
+        # Vẽ được một băng hoặc hai băng chồng nhau — hai băng là để SO SÁNH, và khi
+        # so sánh thì hai băng phải DÀI BẰNG NHAU, nếu không thì hình nói dối.
+        giua(d, 46, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        cap = [(c.get("tu"), c.get("mau"), c.get("nhan", ""))]
+        if c.get("mau2"):
+            cap.append((c.get("tu2"), c.get("mau2"), c.get("nhan2", "")))
+        rong_bang, x0 = 620, 340
+        y = 190 if len(cap) > 1 else 250
+        for tu, mau, nhan in cap:
+            if not mau:
+                continue
+            cao, b = 86, rong_bang / mau
+            for i in range(mau):
+                to = i < (tu or 0)
+                the(d, x0 + i * b, y, b, cao, nen=TEAL_PALE if to else "#FFFFFF",
+                    vien=TEAL if to else LINE, day=4 if to else 3, bo=0)
+            if nhan:
+                f = phong(40)
+                d.text((x0 - 26 - d.textlength(nhan, font=f), y + 20), nhan,
+                       font=f, fill=TEAL_DARK)
+            # phân số viết bên phải băng, dạng tử trên mẫu có gạch ngang
+            g = phong(34)
+            xc = x0 + rong_bang + 34
+            for k, t in enumerate((str(tu), str(mau))):
+                d.text((xc + (30 - d.textlength(t, font=g)) / 2, y + k * 44 + 2), t,
+                       font=g, fill=NAVY)
+            d.line([xc, y + 44, xc + 30, y + 44], fill=NAVY, width=4)
+            y += 152
+        if c.get("chuPhu"):
+            giua(d, y + 22, c["chuPhu"], phong(36), INK, rong=W - 180)
+        if c.get("chuCuoi"):
+            giua(d, y + 92, c["chuCuoi"], phong(32), TEAL_DARK, rong=W - 200)
+
     elif L == "so_do_ven":
         # ══ SƠ ĐỒ VEN — HAI VÒNG GIAO NHAU ══
         # Bài này chỉ có một ý, và ý ấy KHÔNG nói bằng lời được: phần giao bị đếm HAI

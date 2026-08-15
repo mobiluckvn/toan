@@ -1,0 +1,371 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B72",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 63 · DÃY PHÂN SỐ · TÍCH — GẠCH CHÉO CHO GỌN",
+ "durationMinutes": 10,
+ "so": 63,
+ "chuong": 9,
+ "tenChuong": "PHÂN SỐ",
+ "dangGoc": "Dạng gốc: PS 2.2 mức Lớp 4 — Tích dãy phân số nối tiếp, rút gọn chéo giữa tử của phân số này và mẫu của phân số kia.",
+ "skills": {
+  "bktUnit": "CHUONG:9@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 63,
+  "prev": "DL:KSN4.B40",
+  "next": "DL:KSN4.B41"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhân dãy phân số nối tiếp nhau. Rút gọn chéo giữa tử của phân số này và mẫu của phân số trước. Chỉ còn tử đầu và mẫu cuối.",
+  "kidText": "Hôm nay là phép nhân dài, và cách làm khác hẳn hôm qua. Con đoán xem khác chỗ nào?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn đem cách của bài cộng sang dùng cho bài nhân, đi tách thành hiệu.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Bài này là phép cộng hay phép nhân? Gợi ý 2: Phép nhân. Mà tách thành hiệu là cách của phép cộng. Chữa: bài nhân thì gạch chéo, bài cộng thì tách thành hiệu. Hai cách cho hai phép khác nhau, không dùng lẫn được."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn đem cách của bài cộng sang dùng cho bài nhân, đi tách thành hiệu.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tính tích một phần hai nhân hai phần ba nhân ba phần tư.",
+  "steps": [
+   {
+    "show": "Nhìn kỹ các con số"
+   },
+   {
+    "show": "Mẫu của phân số thứ nhất là 2, mà tử của phân số thứ hai cũng là 2."
+   },
+   {
+    "show": "Mẫu của phân số thứ hai là 3, mà tử của phân số thứ ba cũng là 3."
+   },
+   {
+    "show": "Gạch chéo cho triệt tiêu"
+   },
+   {
+    "show": "Số 2 ở mẫu và số 2 ở tử triệt tiêu nhau. Số 3 cũng thế."
+   },
+   {
+    "show": "Còn lại gì"
+   },
+   {
+    "show": "Chỉ còn tử số đầu tiên là 1, và mẫu số cuối cùng là 4."
+   },
+   {
+    "show": "Nên tích bằng một phần tư."
+   },
+   {
+    "show": "So với bài hôm qua"
+   },
+   {
+    "show": "Hôm qua cộng dài, các phần GIỮA triệt tiêu. Hôm nay nhân dài, các số CHÉO triệt tiêu. Hai cách khác nhau, đừng lẫn."
+   },
+   {
+    "show": "Đáp số: tích bằng một phần tư."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính tích một phần hai nhân hai phần ba nhân ba phần tư — đúng bài trong video. Số nào ở mẫu phân số đầu và tử phân số thứ hai giống nhau?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Số 2 — nó ở mẫu của phân số đầu và ở tử của phân số thứ hai.",
+     "hints": [
+      "Nhân dãy phân số nối tiếp nhau.",
+      "Bài này là phép cộng hay phép nhân?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên. Sau khi gạch chéo hết thì còn lại tử số nào và mẫu số nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tử còn lại",
+        "value": 1
+       },
+       {
+        "label": "mẫu còn lại",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Còn tử số đầu tiên là 1 và mẫu số cuối cùng là 4.",
+     "hints": [
+      "Nhân dãy phân số nối tiếp nhau.",
+      "Bài này là phép cộng hay phép nhân?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn bài trên. Tích bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tử số của tích",
+        "value": 1
+       },
+       {
+        "label": "mẫu số của tích",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Một phần tư.",
+     "hints": [
+      "Nhân dãy phân số nối tiếp nhau.",
+      "Bài này là phép cộng hay phép nhân?"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Bạn Lan đem cách tách thành hiệu sang dùng cho bài nhân. Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tách thành hiệu là cách của phép",
+        "options": [
+         "cộng",
+         "nhân"
+        ],
+        "value": "cộng"
+       }
+      ]
+     },
+     "solutionNarrative": "Tách thành hiệu là cách của phép CỘNG. Bài nhân thì gạch chéo. Hai cách cho hai phép khác nhau.",
+     "hints": [
+      "Nhân dãy phân số nối tiếp nhau."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Tính tích một phần hai nhân hai phần ba.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tử số",
+        "value": 1
+       },
+       {
+        "label": "mẫu số",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Số 2 triệt tiêu, còn một phần ba.",
+     "hints": [
+      "Nhân dãy phân số nối tiếp nhau.",
+      "Bài này là phép cộng hay phép nhân?"
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Tính tích một phần hai nhân hai phần ba nhân ba phần tư nhân bốn phần năm.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tử số",
+        "value": 1
+       },
+       {
+        "label": "mẫu số",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Các số 2, 3, 4 đều triệt tiêu, còn một phần năm.",
+     "hints": [
+      "Nhân dãy phân số nối tiếp nhau.",
+      "Bài này là phép cộng hay phép nhân?"
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Vì sao gạch chéo được?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số vừa ở tử vừa ở mẫu thì chia nhau bằng",
+        "value": 1
+       }
+      ]
+     },
+     "solutionNarrative": "Vì nhân phân số thì nhân tử với tử, mẫu với mẫu. Một số vừa có ở tử vừa có ở mẫu thì chia cho nhau bằng 1, nên bỏ đi được.",
+     "hints": [
+      "Nhân dãy phân số nối tiếp nhau.",
+      "Bài này là phép cộng hay phép nhân?"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tính tích hai phần ba nhân ba phần tư nhân bốn phần năm.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tử số",
+        "value": 2
+       },
+       {
+        "label": "mẫu số",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Các số 3 và 4 triệt tiêu, còn hai phần năm.",
+     "hints": [
+      "Nhân dãy phân số nối tiếp nhau.",
+      "Bài này là phép cộng hay phép nhân?"
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Bài cộng dài và bài nhân dài dùng hai cách khác nhau thế nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bài cộng dùng cách",
+        "options": [
+         "tách thành hiệu",
+         "gạch chéo"
+        ],
+        "value": "tách thành hiệu"
+       },
+       {
+        "label": "bài nhân dùng cách",
+        "options": [
+         "gạch chéo",
+         "tách thành hiệu"
+        ],
+        "value": "gạch chéo"
+       }
+      ]
+     },
+     "solutionNarrative": "Bài CỘNG tách mỗi số thành một hiệu rồi các phần GIỮA triệt tiêu. Bài NHÂN gạch chéo rồi các số Ở GIỮA triệt tiêu, chỉ còn tử đầu và mẫu cuối.",
+     "hints": [
+      "Nhân dãy phân số nối tiếp nhau.",
+      "Bài này là phép cộng hay phép nhân?"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Tích một phần hai nhân hai phần ba nhân ba phần tư bằng một phần tư.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Bài nhân dài cũng tách mỗi số thành một hiệu như bài cộng.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — bài nhân thì gạch chéo."
+   },
+   {
+    "id": "Q3",
+    "text": "Tích một phần hai nhân hai phần ba bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. một phần ba",
+     "B. hai phần sáu",
+     "C. ba phần hai"
+    ],
+    "answerKey": {
+     "choice": "A. một phần ba"
+    },
+    "solutionNarrative": "Số 2 triệt tiêu."
+   },
+   {
+    "id": "Q4",
+    "text": "Sau khi gạch chéo hết, tích chỉ còn:",
+    "format": "mcq",
+    "choices": [
+     "A. tử đầu và mẫu cuối",
+     "B. tử cuối và mẫu đầu",
+     "C. tất cả các số"
+    ],
+    "answerKey": {
+     "choice": "A. tử đầu và mẫu cuối"
+    },
+    "solutionNarrative": "Các số giữa đều triệt tiêu."
+   },
+   {
+    "id": "Q5",
+    "text": "Cách gạch chéo dùng cho phép:",
+    "format": "mcq",
+    "choices": [
+     "A. nhân",
+     "B. cộng",
+     "C. trừ"
+    ],
+    "answerKey": {
+     "choice": "A. nhân"
+    },
+    "solutionNarrative": "Phép cộng dùng cách tách thành hiệu."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Viết dãy nhân ra giấy rồi bảo con lấy bút gạch các số giống nhau ở tử và mẫu. Gạch xong chỉ còn hai số là con hiểu.",
+  "homeActivity": "Con hay lẫn hai cách của hai bài. Bố mẹ hỏi trước: \"Bài này cộng hay nhân?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài trước là phép CỘNG dài. Hôm nay là phép NHÂN dài, và cũng có một cách rất gọn — nhưng cách khác hẳn. Lần này con gạch chéo cho các số triệt tiêu nhau.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B12",
+   "DL:KSN3.B09"
+  ],
+  "ten": [
+   "FIBONACCI & QUY LUẬT HAI TẦNG",
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B72_giang.mp4"
+ }
+}

@@ -1,0 +1,343 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B73",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 65 · CHUYỂN GIỮA TỬ VÀ MẪU — TỔNG KHÔNG ĐỔI",
+ "durationMinutes": 10,
+ "so": 65,
+ "chuong": 9,
+ "tenChuong": "PHÂN SỐ",
+ "dangGoc": "Dạng gốc: PS 3.2 mức Lớp 4 — Chuyển một số từ mẫu sang tử hoặc ngược lại; tổng của tử và mẫu không đổi.",
+ "skills": {
+  "bktUnit": "CHUONG:9@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 65,
+  "prev": "DL:KSN4.B41",
+  "next": "DL:KSN4.B42"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết chuyển giữa tử và mẫu thì tổng của chúng không đổi. Dùng tổng không đổi để tìm phân số mới. Phân biệt được với bài cùng thêm hai đầu.",
+  "kidText": "Lần này cô chuyển 1 từ mẫu sang tử. Con đoán xem lần này cái gì đứng yên?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nhớ nhầm, tưởng chuyển qua lại thì hiệu không đổi.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Ba phần tư có mẫu trừ tử bằng 1. Bốn phần ba thì mẫu trừ tử bằng mấy? Gợi ý 2: Bằng âm một, tức đổi hẳn chiều. Vậy hiệu có giữ nguyên không? Chữa: chuyển qua lại thì TỔNG không đổi, không phải hiệu. Thêm vào cả hai đầu mới là hiệu không đổi. Nhớ lẫn hai chỗ này là sai cả bài."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nhớ nhầm, tưởng chuyển qua lại thì hiệu không đổi.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Cho phân số ba phần tư. Chuyển 1 đơn vị từ mẫu số sang tử số thì được phân số nào, và tổng của tử với mẫu có đổi không?",
+  "steps": [
+   {
+    "show": "Chuyển qua"
+   },
+   {
+    "show": "Mẫu số 4 bớt 1 còn 3. Tử số 3 thêm 1 thành 4. Được phân số bốn phần ba."
+   },
+   {
+    "show": "Xem tổng có đổi không"
+   },
+   {
+    "show": "Lúc đầu tử cộng mẫu là 3 cộng 4, bằng 7. Sau khi chuyển là 4 cộng 3, cũng bằng 7."
+   },
+   {
+    "show": "Tổng không đổi"
+   },
+   {
+    "show": "Vì bên này bớt bao nhiêu thì bên kia được thêm đúng bấy nhiêu, nên gộp lại vẫn y nguyên."
+   },
+   {
+    "show": "Đừng lẫn với bài hôm qua"
+   },
+   {
+    "show": "Hôm qua THÊM vào cả hai đầu, thứ đứng yên là HIỆU. Hôm nay CHUYỂN qua lại, thứ đứng yên là TỔNG. Hai bài khác hẳn."
+   },
+   {
+    "show": "Đáp số: được bốn phần ba, và tổng vẫn bằng 7."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Cho phân số ba phần tư, chuyển 1 từ mẫu sang tử — đúng bài trong video. Được phân số nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tử số mới",
+        "value": 4
+       },
+       {
+        "label": "mẫu số mới",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Mẫu 4 bớt 1 còn 3, tử 3 thêm 1 thành 4. Được bốn phần ba.",
+     "hints": [
+      "Biết chuyển giữa tử và mẫu thì tổng của chúng không đổi.",
+      "Ba phần tư có mẫu trừ tử bằng 1. Bốn phần ba thì mẫu trừ tử bằng mấy?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Vẫn bài trên. Lúc đầu tử cộng mẫu bằng bao nhiêu?",
+     "answerKey": {
+      "value": 7
+     },
+     "solutionNarrative": "3 + 4 = 7.",
+     "hints": [
+      "Biết chuyển giữa tử và mẫu thì tổng của chúng không đổi.",
+      "Ba phần tư có mẫu trừ tử bằng 1. Bốn phần ba thì mẫu trừ tử bằng mấy?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vẫn bài trên. Sau khi chuyển, tử cộng mẫu bằng bao nhiêu?",
+     "answerKey": {
+      "value": 7
+     },
+     "solutionNarrative": "4 + 3 = 7 — vẫn như cũ.",
+     "hints": [
+      "Biết chuyển giữa tử và mẫu thì tổng của chúng không đổi.",
+      "Ba phần tư có mẫu trừ tử bằng 1. Bốn phần ba thì mẫu trừ tử bằng mấy?"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Bạn Hoa tưởng chuyển qua lại thì hiệu không đổi. Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chuyển qua lại thì cái gì không đổi",
+        "options": [
+         "tổng",
+         "hiệu"
+        ],
+        "value": "tổng"
+       }
+      ]
+     },
+     "solutionNarrative": "Chuyển qua lại thì TỔNG không đổi. Thêm vào cả hai đầu mới là hiệu không đổi. Hai bài khác hẳn nhau.",
+     "hints": [
+      "Ba phần tư có mẫu trừ tử bằng 1. Bốn phần ba thì mẫu trừ tử bằng mấy?"
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Cho phân số hai phần bảy. Chuyển 2 từ mẫu sang tử thì được phân số nào, và tổng bằng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tử số mới",
+        "value": 4
+       },
+       {
+        "label": "mẫu số mới",
+        "value": 5
+       },
+       {
+        "label": "tổng",
+        "value": 9
+       }
+      ]
+     },
+     "solutionNarrative": "Được bốn phần năm. Tổng lúc đầu 2 + 7 = 9, sau vẫn 4 + 5 = 9.",
+     "hints": [
+      "Biết chuyển giữa tử và mẫu thì tổng của chúng không đổi.",
+      "Ba phần tư có mẫu trừ tử bằng 1. Bốn phần ba thì mẫu trừ tử bằng mấy?"
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Vì sao chuyển qua lại thì tổng không đổi?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bên này bớt bao nhiêu thì bên kia thêm",
+        "options": [
+         "bấy nhiêu",
+         "gấp đôi"
+        ],
+        "value": "bấy nhiêu"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì bên này bớt bao nhiêu thì bên kia được thêm đúng bấy nhiêu, nên gộp lại vẫn y nguyên.",
+     "hints": [
+      "Biết chuyển giữa tử và mẫu thì tổng của chúng không đổi.",
+      "Ba phần tư có mẫu trừ tử bằng 1. Bốn phần ba thì mẫu trừ tử bằng mấy?"
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Một phân số có tử cộng mẫu bằng 12. Sau khi chuyển vài đơn vị giữa tử và mẫu, tử cộng mẫu bằng bao nhiêu?",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Vẫn bằng 12.",
+     "hints": [
+      "Biết chuyển giữa tử và mẫu thì tổng của chúng không đổi.",
+      "Ba phần tư có mẫu trừ tử bằng 1. Bốn phần ba thì mẫu trừ tử bằng mấy?"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Cho phân số ba phần tư. Chuyển bao nhiêu từ mẫu sang tử để được phân số năm phần hai?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Tử từ 3 lên 5 là thêm 2; mẫu từ 4 xuống 2 là bớt 2. Vậy chuyển 2 đơn vị. Tổng vẫn là 7 ở cả hai phân số.",
+     "hints": [
+      "Biết chuyển giữa tử và mẫu thì tổng của chúng không đổi.",
+      "Ba phần tư có mẫu trừ tử bằng 1. Bốn phần ba thì mẫu trừ tử bằng mấy?"
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Hai bài \"cùng thêm vào tử và mẫu\" và \"chuyển giữa tử và mẫu\" khác nhau thế nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cùng thêm thì cái gì không đổi",
+        "options": [
+         "hiệu",
+         "tổng"
+        ],
+        "value": "hiệu"
+       },
+       {
+        "label": "chuyển qua lại thì cái gì không đổi",
+        "options": [
+         "tổng",
+         "hiệu"
+        ],
+        "value": "tổng"
+       }
+      ]
+     },
+     "solutionNarrative": "Cùng THÊM vào cả hai thì HIỆU giữa mẫu và tử không đổi. CHUYỂN qua lại thì TỔNG của tử và mẫu không đổi. Đọc kỹ đề để biết đang gặp bài nào.",
+     "hints": [
+      "Ba phần tư có mẫu trừ tử bằng 1. Bốn phần ba thì mẫu trừ tử bằng mấy?"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Chuyển giữa tử và mẫu thì tổng của chúng không đổi.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Chuyển giữa tử và mẫu thì hiệu của chúng không đổi.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — đó là bài cùng thêm vào cả hai đầu."
+   },
+   {
+    "id": "Q3",
+    "text": "Ba phần tư, chuyển 1 từ mẫu sang tử, được:",
+    "format": "mcq",
+    "choices": [
+     "A. bốn phần ba",
+     "B. bốn phần năm",
+     "C. hai phần năm"
+    ],
+    "answerKey": {
+     "choice": "A. bốn phần ba"
+    },
+    "solutionNarrative": "Tử thêm 1, mẫu bớt 1."
+   },
+   {
+    "id": "Q4",
+    "text": "Tổng của tử và mẫu của ba phần tư là:",
+    "format": "mcq",
+    "choices": [
+     "A. 7",
+     "B. 1",
+     "C. 12"
+    ],
+    "answerKey": {
+     "choice": "A. 7"
+    },
+    "solutionNarrative": "3 + 4 = 7."
+   },
+   {
+    "id": "Q5",
+    "text": "Cùng THÊM vào hai đầu thì thứ không đổi là:",
+    "format": "mcq",
+    "choices": [
+     "A. hiệu",
+     "B. tổng",
+     "C. cả hai"
+    ],
+    "answerKey": {
+     "choice": "A. hiệu"
+    },
+    "solutionNarrative": "Còn chuyển qua lại thì tổng không đổi."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Lấy 7 hạt đậu chia thành hai nhóm 3 và 4 rồi chuyển qua lại. Con thấy tổng vẫn là 7 dù chia thế nào.",
+  "homeActivity": "Hai bài này giống nhau tới mức rất dễ lẫn. Bố mẹ hỏi: \"Đề THÊM vào hay CHUYỂN qua lại?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài trước con THÊM vào cả hai đầu, và hiệu đứng yên. Hôm nay con CHUYỂN từ đầu này sang đầu kia — và lần này thứ đứng yên là TỔNG. Hai bài rất giống nhau nên phải phân biệt cho rõ, không thì lẫn ngay.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B19"
+  ],
+  "ten": [
+   "THÊM BỚT ĐỂ BẰNG NHAU"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B73_giang.mp4"
+ }
+}

@@ -1,0 +1,348 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B70",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 59 · SO VỚI 1 VÀ PHẦN BÙ — HAI CÁCH SO NHANH KHÔNG CẦN QUY ĐỒNG",
+ "durationMinutes": 10,
+ "so": 59,
+ "chuong": 9,
+ "tenChuong": "PHÂN SỐ",
+ "dangGoc": "Dạng gốc: PS 1.3 mức Lớp 4 — So sánh phân số bằng cách so với 1 và bằng cách so phần còn thiếu.",
+ "skills": {
+  "bktUnit": "CHUONG:9@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 59,
+  "prev": "DL:KSN4.B69",
+  "next": "DL:KSN4.B39"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "So một phân số với 1 để biết nó lớn hay bé hơn. So hai phân số bằng phần còn thiếu để đầy băng. Biết khi nào dùng được cách nhanh, khi nào phải quy đồng.",
+  "kidText": "Cô so hai phân số mà không cần quy đồng. Con xem cô nhìn vào đâu nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn thấy ba phần tư và bốn phần năm đều thiếu MỘT phần nên bảo hai phân số bằng nhau.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Một phần tư và một phần năm có bằng nhau không? Gợi ý 2: Một phần năm bé hơn chứ, vì chia làm 5 phần thì mỗi phần bé hơn. Chữa: đều thiếu một PHẦN, nhưng phần ấy to nhỏ khác nhau. Thiếu phần bé hơn thì đầy hơn, nên bốn phần năm lớn hơn."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn thấy ba phần tư và bốn phần năm đều thiếu MỘT phần nên bảo hai phân số bằng nhau.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "So sánh năm phần tư với ba phần bốn. Rồi so sánh ba phần tư với bốn phần năm.",
+  "steps": [
+   {
+    "show": "Cách một, so với 1"
+   },
+   {
+    "show": "Phân số nào có tử LỚN HƠN mẫu thì lớn hơn 1, vì đã tô quá cả băng. Năm phần tư như thế."
+   },
+   {
+    "show": "Phân số nào có tử BÉ HƠN mẫu thì bé hơn 1. Ba phần bốn như thế."
+   },
+   {
+    "show": "Một bên lớn hơn 1, một bên bé hơn 1, nên năm phần tư lớn hơn ba phần bốn."
+   },
+   {
+    "show": "Cách hai, so phần còn thiếu"
+   },
+   {
+    "show": "Ba phần tư còn thiếu một phần tư nữa thì đầy băng. Bốn phần năm còn thiếu một phần năm."
+   },
+   {
+    "show": "Bên nào thiếu ÍT hơn thì đầy hơn"
+   },
+   {
+    "show": "Một phần năm bé hơn một phần tư, nên bốn phần năm thiếu ít hơn, tức lớn hơn."
+   },
+   {
+    "show": "Đáp số: năm phần tư lớn hơn ba phần bốn; và bốn phần năm lớn hơn ba phần tư."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Phân số năm phần tư lớn hơn hay bé hơn 1? Vì sao?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn hơn hay bé hơn 1",
+        "options": [
+         "lớn hơn",
+         "bé hơn"
+        ],
+        "value": "lớn hơn"
+       }
+      ]
+     },
+     "solutionNarrative": "Lớn hơn 1, vì tử số 5 lớn hơn mẫu số 4 — đã tô quá cả băng.",
+     "hints": [
+      "So một phân số với 1 để biết nó lớn hay bé hơn.",
+      "Một phần tư và một phần năm có bằng nhau không?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Phân số ba phần bốn lớn hơn hay bé hơn 1?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lớn hơn hay bé hơn 1",
+        "options": [
+         "lớn hơn",
+         "bé hơn"
+        ],
+        "value": "bé hơn"
+       }
+      ]
+     },
+     "solutionNarrative": "Bé hơn 1, vì tử số 3 bé hơn mẫu số 4.",
+     "hints": [
+      "Một phần tư và một phần năm có bằng nhau không?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Ba phần tư còn thiếu bao nhiêu nữa thì đầy băng?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "thiếu mấy phần tư",
+        "value": 1
+       }
+      ]
+     },
+     "solutionNarrative": "Thiếu một phần tư.",
+     "hints": [
+      "Một phần tư và một phần năm có bằng nhau không?"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Bốn phần năm còn thiếu bao nhiêu, và so với ba phần tư thì phân số nào lớn hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "thiếu mấy phần năm",
+        "value": 1
+       },
+       {
+        "label": "mẫu số của phân số lớn hơn",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Thiếu một phần năm. Một phần năm bé hơn một phần tư nên bốn phần năm thiếu ít hơn, tức lớn hơn ba phần tư.",
+     "hints": [
+      "Một phần tư và một phần năm có bằng nhau không?"
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Bạn Tú thấy cả hai đều thiếu MỘT phần nên bảo chúng bằng nhau. Bạn sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phần thiếu có bằng nhau không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Đều thiếu một phần nhưng phần ấy to nhỏ khác nhau. Một phần năm bé hơn một phần tư nên bốn phần năm lớn hơn.",
+     "hints": [
+      "So một phân số với 1 để biết nó lớn hay bé hơn."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Không quy đồng, hãy so sánh bảy phần sáu với năm phần bảy.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mẫu số của phân số lớn hơn",
+        "value": 6
+       }
+      ]
+     },
+     "solutionNarrative": "Bảy phần sáu có tử lớn hơn mẫu nên lớn hơn 1. Năm phần bảy có tử bé hơn mẫu nên bé hơn 1. Vậy bảy phần sáu lớn hơn.",
+     "hints": [
+      "So một phân số với 1 để biết nó lớn hay bé hơn.",
+      "Một phần tư và một phần năm có bằng nhau không?"
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Không quy đồng, hãy so sánh năm phần sáu với sáu phần bảy.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mẫu số của phân số lớn hơn",
+        "value": 7
+       }
+      ]
+     },
+     "solutionNarrative": "Năm phần sáu thiếu một phần sáu; sáu phần bảy thiếu một phần bảy. Một phần bảy bé hơn nên sáu phần bảy lớn hơn.",
+     "hints": [
+      "So một phân số với 1 để biết nó lớn hay bé hơn.",
+      "Một phần tư và một phần năm có bằng nhau không?"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Trong ba phân số sau, phân số nào lớn hơn 1: hai phần ba, năm phần năm, chín phần tám?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tử số của phân số lớn hơn 1",
+        "value": 9
+       },
+       {
+        "label": "tử số của phân số bằng 1",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Chín phần tám lớn hơn 1 (tử lớn hơn mẫu). Năm phần năm bằng đúng 1. Hai phần ba bé hơn 1.",
+     "hints": [
+      "So một phân số với 1 để biết nó lớn hay bé hơn.",
+      "Một phần tư và một phần năm có bằng nhau không?"
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Cách so phần bù dùng được khi nào, và khi nào phải quy đồng?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "dùng được khi cùng thiếu mấy phần",
+        "value": 1
+       }
+      ]
+     },
+     "solutionNarrative": "Dùng được khi hai phân số cùng thiếu ĐÚNG MỘT phần để đầy băng. Trường hợp khác thì cứ quy đồng cho chắc.",
+     "hints": [
+      "Một phần tư và một phần năm có bằng nhau không?"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Phân số có tử lớn hơn mẫu thì lớn hơn 1.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đáp án: ĐÚNG."
+   },
+   {
+    "id": "Q2",
+    "text": "Hai phân số cùng thiếu một phần thì bằng nhau.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "SAI — phần thiếu ấy to nhỏ khác nhau."
+   },
+   {
+    "id": "Q3",
+    "text": "Phân số năm phần năm bằng:",
+    "format": "mcq",
+    "choices": [
+     "A. 1",
+     "B. 5",
+     "C. 0"
+    ],
+    "answerKey": {
+     "choice": "A. 1"
+    },
+    "solutionNarrative": "Tô hết cả băng."
+   },
+   {
+    "id": "Q4",
+    "text": "Ba phần tư và bốn phần năm, phân số nào lớn hơn?",
+    "format": "mcq",
+    "choices": [
+     "A. bốn phần năm",
+     "B. ba phần tư",
+     "C. bằng nhau"
+    ],
+    "answerKey": {
+     "choice": "A. bốn phần năm"
+    },
+    "solutionNarrative": "Nó thiếu ít hơn."
+   },
+   {
+    "id": "Q5",
+    "text": "Cách so phần bù dùng được khi:",
+    "format": "mcq",
+    "choices": [
+     "A. hai phân số cùng thiếu đúng một phần",
+     "B. hai phân số cùng mẫu",
+     "C. lúc nào cũng dùng được"
+    ],
+    "answerKey": {
+     "choice": "A. hai phân số cùng thiếu đúng một phần"
+    },
+    "solutionNarrative": "Trường hợp khác thì quy đồng."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cắt hai băng giấy, tô ba phần tư và bốn phần năm, rồi hỏi con: \"Băng nào còn trống ít hơn?\" Trống ít hơn là lớn hơn.",
+  "homeActivity": "Đây là mẹo nhìn nhanh, nhưng chỉ dùng được khi hai phân số cùng thiếu MỘT phần. Không thì cứ quy đồng cho chắc.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Quy đồng thì lúc nào cũng làm được, nhưng đôi khi hơi lâu. Hôm nay con học hai cách nhìn rất nhanh — và cả hai đều nhìn hình mà ra, không phải mẹo học thuộc.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B09"
+  ],
+  "ten": [
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B70_giang.mp4"
+ }
+}

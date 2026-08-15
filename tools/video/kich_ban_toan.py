@@ -2090,6 +2090,407 @@ def kb_chuong_tho(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# CHƯƠNG 9 · MƯỜI MỘT KỊCH BẢN — PHÂN SỐ
+# ═══════════════════════════════════════════════════════════════════════════
+# Bộ neo: phân số ba phần tư. Mọi con số đã kiểm bằng máy trước khi viết — kể cả
+# tổng tách hiệu, nó ra đúng ba phần tư nên nối liền với bộ neo.
+#
+# Chương này đứng hay đổ ở cảnh `phan_so`: bé phải THẤY mẫu số là "chia làm mấy phần"
+# và tử số là "lấy mấy phần". Nói bằng lời thì tử với mẫu chỉ là hai cái tên khó nhớ.
+
+
+def kb_ps_la_gi(b):
+    """① Phân số là gì — bài KHÁI NIỆM."""
+    return [
+        _c('bia', 'Phân số là gì', so_bai(b),
+           loi=['Hôm nay mình học xem phân số là gì.']),
+        _c('phan_so', 'Chia băng giấy làm 4 phần bằng nhau', tu=0, mau=4,
+           chuPhu='Bốn phần phải BẰNG NHAU.',
+           loi=['Chia một băng giấy làm bốn phần bằng nhau.',
+                'Phải bằng nhau thì mới đúng.']),
+        _c('phan_so', 'Rồi tô 3 phần', tu=3, mau=4,
+           chuPhu='Phần đã tô viết là ba phần tư.',
+           loi=['Rồi tô ba phần. Phần đã tô viết thành phân số ba phần tư.']),
+        _c('y_toan', 'Số viết DƯỚI gọi là mẫu số',
+           'Nó cho biết chia làm mấy phần.', buoc=1, soBuoc=3,
+           loi=['Số viết ở dưới gọi là mẫu số. Nó cho biết chia làm mấy phần.']),
+        _c('y_toan', 'Số viết TRÊN gọi là tử số',
+           'Nó cho biết lấy mấy phần.', buoc=2, soBuoc=3,
+           loi=['Số viết ở trên gọi là tử số. Nó cho biết lấy mấy phần.']),
+        _c('y_toan', 'Hai số nói HAI VIỆC khác nhau',
+           'Đổi chỗ chúng là ra phân số khác hẳn.', buoc=3, soBuoc=3,
+           loi=['Hai số nói hai việc khác nhau. Một số về việc chia, một số về việc lấy.',
+                'Đổi chỗ chúng là ra phân số khác hẳn.']),
+        _c('cong_thuc', 'Đọc một phân số',
+           congThuc='mẫu số = chia mấy phần   ·   tử số = lấy mấy phần',
+           thay='3 phần trong 4 phần',
+           loi=['Mẫu số là chia mấy phần, tử số là lấy mấy phần.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='các phần phải BẰNG NHAU',
+           loi=['Con nhớ lại một lần nữa. Các phần chia ra phải bằng nhau.',
+                'Chia to nhỏ khác nhau thì phân số không còn nghĩa gì.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_so_de(b):
+    """② So sánh cùng mẫu hoặc cùng tử — nhìn hình là thấy."""
+    return [
+        _c('bia', 'So sánh cùng mẫu hoặc cùng tử', so_bai(b),
+           loi=['Hôm nay mình so hai phân số, nhưng chỉ hai trường hợp dễ nhất.']),
+        _c('phan_so', 'Cùng mẫu số: ba phần tư và hai phần tư', tu=3, mau=4,
+           tu2=2, mau2=4, chuPhu='Chia giống hệt nhau, chỉ khác số phần lấy.',
+           loi=['Ba phần tư và hai phần tư đều chia băng làm bốn phần.',
+                'Chia giống hệt nhau, chỉ khác số phần lấy.']),
+        _c('y_toan', 'Cùng mẫu thì đếm số phần lấy',
+           'Lấy nhiều hơn thì lớn hơn.', buoc=1, soBuoc=3,
+           loi=['Cùng mẫu thì chỉ cần đếm số phần lấy. Lấy nhiều hơn thì lớn hơn.']),
+        _c('phan_so', 'Cùng tử số: ba phần tư và ba phần năm', tu=3, mau=4,
+           tu2=3, mau2=5, chuPhu='Cùng lấy 3 phần, nhưng phần bên nào to hơn?',
+           loi=['Ba phần tư và ba phần năm đều lấy ba phần.',
+                'Nhưng phần của bên nào to hơn.']),
+        _c('y_toan', 'Chia ÍT thì mỗi phần TO',
+           'Chia 4 phần thì mỗi phần to hơn chia 5 phần.', buoc=2, soBuoc=3,
+           loi=['Chia làm bốn phần thì mỗi phần to hơn chia làm năm phần.',
+                'Như chia bánh cho ít người thì miếng to hơn.']),
+        _c('y_toan', 'Nên ba phần tư lớn hơn',
+           'Cùng lấy 3 phần mà phần to hơn.', buoc=3, soBuoc=3,
+           loi=['Nên ba phần tư lớn hơn ba phần năm.']),
+        _c('cong_thuc', 'Hai trường hợp dễ',
+           congThuc='cùng mẫu → tử lớn hơn thì lớn hơn   ·   cùng tử → mẫu bé hơn thì lớn hơn',
+           thay='3/4 > 2/4   và   3/4 > 3/5',
+           loi=['Cùng mẫu thì tử lớn hơn là lớn hơn. Cùng tử thì mẫu bé hơn là lớn hơn.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='mẫu càng LỚN thì mỗi phần càng NHỎ',
+           loi=['Con nhớ lại một lần nữa. Mẫu số càng lớn thì mỗi phần càng nhỏ.',
+                'Đừng tưởng mẫu lớn thì phân số lớn.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_quy_dong(b):
+    """③ Quy đồng — chia lại cho hai băng giống nhau."""
+    return [
+        _c('bia', 'Quy đồng mẫu số', so_bai(b),
+           loi=['Hôm nay mình so hai phân số khác hẳn nhau.']),
+        _c('phan_so', 'Ba phần tư và hai phần ba', tu=3, mau=4, tu2=2, mau2=3,
+           chuPhu='Khác mẫu, khác cả tử — nhìn không ra.',
+           loi=['Ba phần tư và hai phần ba. Khác mẫu, khác cả tử nên nhìn không ra.']),
+        _c('y_toan', 'Vì sao nhìn không ra',
+           'Phần của hai băng to nhỏ khác nhau.', buoc=1, soBuoc=4,
+           loi=['Vì phần của hai băng to nhỏ khác nhau nên không đếm chung được.']),
+        _c('y_toan', 'Chia lại cho GIỐNG NHAU',
+           'Tìm số chia hết cho cả 4 và 3 — lấy 12.', buoc=2, soBuoc=4,
+           loi=['Mình chia lại cả hai băng thành mười hai phần.',
+                'Vì mười hai chia hết cho cả bốn và ba.']),
+        _c('phan_so', 'Ba phần tư thành chín phần mười hai', tu=9, mau=12,
+           chuPhu='Mỗi phần cũ tách làm 3, nên 3 phần thành 9 phần.',
+           loi=['Mỗi phần cũ tách làm ba, nên ba phần thành chín phần.',
+                'Ba phần tư bằng chín phần mười hai.']),
+        _c('phan_so', 'Hai phần ba thành tám phần mười hai', tu=8, mau=12,
+           chuPhu='Mỗi phần cũ tách làm 4, nên 2 phần thành 8 phần.',
+           loi=['Bên kia mỗi phần cũ tách làm bốn, nên hai phần thành tám phần.']),
+        _c('y_toan', 'Bây giờ cùng mẫu rồi', '9 phần nhiều hơn 8 phần',
+           buoc=3, soBuoc=4,
+           loi=['Bây giờ cùng mẫu rồi. Chín phần nhiều hơn tám phần.']),
+        _c('y_toan', 'Nên ba phần tư lớn hơn hai phần ba', '', buoc=4, soBuoc=4,
+           loi=['Nên ba phần tư lớn hơn hai phần ba.']),
+        _c('cong_thuc', 'Quy đồng mẫu số',
+           congThuc='nhân mẫu mấy lần thì nhân tử BẤY NHIÊU lần',
+           thay='3/4 = 9/12   ·   2/3 = 8/12',
+           loi=['Nhân mẫu mấy lần thì phải nhân tử bấy nhiêu lần.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='quên nhân tử là làm phân số BÉ ĐI',
+           loi=['Con nhớ lại một lần nữa. Quên nhân tử số là làm phân số bé đi.',
+                'Chia lại băng thì ô nhỏ đi, nhưng phần tô phải giữ nguyên chỗ ấy.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_so_nhanh(b):
+    """④ So với 1 và phần bù."""
+    return [
+        _c('bia', 'So với 1 và phần bù', so_bai(b),
+           loi=['Hôm nay mình học hai cách so rất nhanh, không cần quy đồng.']),
+        _c('phan_so', 'Cách một: so với 1', tu=5, mau=4,
+           chuPhu='Tử lớn hơn mẫu thì đã tô quá cả băng.',
+           chuCuoi='Năm phần tư lớn hơn 1.',
+           loi=['Cách một là so với một. Tử số lớn hơn mẫu số thì đã tô quá cả băng.',
+                'Nên năm phần tư lớn hơn một.']),
+        _c('y_toan', 'Còn tử bé hơn mẫu thì bé hơn 1',
+           'Ba phần bốn như thế.', buoc=1, soBuoc=3,
+           loi=['Còn tử số bé hơn mẫu số thì bé hơn một. Ba phần bốn như thế.',
+                'Một bên lớn hơn một, một bên bé hơn một, so ngay được.']),
+        _c('phan_so', 'Cách hai: so phần còn thiếu', tu=3, mau=4, tu2=4, mau2=5,
+           chuPhu='Băng trên thiếu 1 phần tư, băng dưới thiếu 1 phần năm.',
+           loi=['Cách hai là so phần còn thiếu để đầy băng.',
+                'Băng trên thiếu một phần tư, băng dưới thiếu một phần năm.']),
+        _c('y_toan', 'Thiếu ÍT hơn thì đầy hơn',
+           'Một phần năm bé hơn một phần tư.', buoc=2, soBuoc=3,
+           loi=['Một phần năm bé hơn một phần tư, nên băng dưới thiếu ít hơn.']),
+        _c('y_toan', 'Nên bốn phần năm lớn hơn ba phần tư', '', buoc=3, soBuoc=3,
+           loi=['Nên bốn phần năm lớn hơn ba phần tư.']),
+        _c('cong_thuc', 'Hai cách so nhanh',
+           congThuc='tử > mẫu → lớn hơn 1   ·   thiếu ít hơn → lớn hơn',
+           thay='4/5 thiếu 1/5 · 3/4 thiếu 1/4',
+           loi=['Tử lớn hơn mẫu thì lớn hơn một. Còn thiếu ít hơn thì lớn hơn.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='đều thiếu MỘT phần, nhưng phần ấy to nhỏ khác nhau',
+           loi=['Con nhớ lại một lần nữa. Đều thiếu một phần không có nghĩa là bằng nhau.',
+                'Phần ấy to nhỏ khác nhau. Không chắc thì cứ quy đồng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_tim_ps(b):
+    """⑤ Tìm phân số của một số — chia rồi nhân."""
+    return [
+        _c('bia', 'Tìm phân số của một số', so_bai(b),
+           loi=['Hôm nay mình lấy một phần của một con số thật.']),
+        _c('de_toan', 'Tìm ba phần tư của số 20.', '',
+           loi=['Tìm ba phần tư của số hai mươi.']),
+        _c('y_toan', 'Đọc phân số ra thành việc làm',
+           'Chia làm 4 phần rồi lấy 3 phần.', buoc=1, soBuoc=3,
+           loi=['Ba phần tư nghĩa là chia làm bốn phần rồi lấy ba phần.']),
+        _c('y_toan', 'Bước một, chia', '20 : 4 = 5', buoc=2, soBuoc=3,
+           loi=['Bước một, chia hai mươi thành bốn phần. Mỗi phần là năm.']),
+        _c('phan_so', 'Băng 20 chia làm 4 ô, mỗi ô 5', tu=3, mau=4,
+           chuPhu='Tô 3 ô thì được 15.',
+           loi=['Vẽ ra thì thấy. Băng hai mươi chia làm bốn ô, mỗi ô năm.',
+                'Tô ba ô thì được mười lăm.']),
+        _c('y_toan', 'Bước hai, lấy', '3 × 5 = 15', buoc=3, soBuoc=3,
+           loi=['Bước hai, lấy ba phần, được mười lăm.']),
+        _c('cong_thuc', 'Tìm phân số của một số',
+           congThuc='CHIA cho mẫu số  ⟶  NHÂN với tử số',
+           thay='20 : 4 = 5, rồi 3 × 5 = 15',
+           loi=['Chia cho mẫu số trước, rồi nhân với tử số.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='lấy một phần của số thì kết quả phải BÉ HƠN số ấy',
+           loi=['Con nhớ lại một lần nữa. Lấy một phần của số thì kết quả phải bé hơn.',
+                'Ra lớn hơn là chắc chắn làm ngược thứ tự.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_tim_so(b):
+    """⑥ Tìm số khi biết phân số của nó — bài ngược."""
+    return [
+        _c('bia', 'Tìm số khi biết phân số của nó', so_bai(b),
+           loi=['Hôm nay mình đi ngược lại bài hôm qua.']),
+        _c('de_toan', 'Ba phần tư của một số bằng 15.', 'Tìm số đó.',
+           loi=['Ba phần tư của một số bằng mười lăm. Tìm số đó.']),
+        _c('y_toan', 'So với bài hôm qua', 'Hôm qua có 20 tìm ra 15. Nay có 15 tìm lại 20.',
+           buoc=1, soBuoc=3,
+           loi=['Hôm qua có hai mươi rồi tìm ra mười lăm. Hôm nay ngược lại.']),
+        _c('phan_so', '15 ứng với MẤY phần', tu=3, mau=4,
+           chuPhu='15 là 3 phần, không phải 4 phần.',
+           loi=['Mười lăm ứng với ba phần, không phải bốn phần. Đây là chỗ hay nhầm.']),
+        _c('y_toan', 'Bước một, tìm một phần', '15 : 3 = 5', buoc=2, soBuoc=3,
+           loi=['Bước một, chia cho tử số. Mười lăm chia ba bằng năm.']),
+        _c('y_toan', 'Bước hai, nhân cho đủ mẫu', '4 × 5 = 20', buoc=3, soBuoc=3,
+           loi=['Bước hai, cả số gồm bốn phần nên nhân bốn, được hai mươi.']),
+        _c('cong_thuc', 'Bài đi ngược',
+           congThuc='CHIA cho tử số  ⟶  NHÂN với mẫu số',
+           thay='15 : 3 = 5, rồi 4 × 5 = 20',
+           loi=['Bài ngược thì chia cho tử số rồi nhân với mẫu số.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='xuôi chia MẪU · ngược chia TỬ',
+           loi=['Con nhớ lại một lần nữa. Bài xuôi chia cho mẫu, bài ngược chia cho tử.',
+                'Nhầm hai chỗ này là sai cả bài.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_day_tong(b):
+    """⑦ Dãy phân số · tổng — tách thành hiệu."""
+    return [
+        _c('bia', 'Dãy phân số · phép cộng', so_bai(b),
+           loi=['Hôm nay mình cộng một dãy phân số dài.']),
+        _c('de_toan', 'Tính một phần hai cộng một phần sáu cộng một phần mười hai.', '',
+           loi=['Tính một phần hai cộng một phần sáu cộng một phần mười hai.']),
+        _c('y_toan', 'Nhìn kỹ các mẫu số',
+           '2 = 1×2 · 6 = 2×3 · 12 = 3×4', buoc=1, soBuoc=4,
+           loi=['Nhìn kỹ các mẫu số. Toàn là tích của hai số liên tiếp.']),
+        _c('y_toan', 'Tách mỗi số thành một HIỆU',
+           '1/(1×2) = 1/1 − 1/2', buoc=2, soBuoc=4,
+           loi=['Tách mỗi số hạng thành một hiệu.',
+                'Một phần một nhân hai bằng một trừ một phần hai.']),
+        _c('y_toan', 'Cộng lại thì các phần GIỮA triệt tiêu',
+           'Một phần hai trừ rồi lại cộng nên mất.', buoc=3, soBuoc=4,
+           loi=['Cộng lại thì các phần ở giữa triệt tiêu nhau.',
+                'Một phần hai trừ rồi lại cộng nên mất. Một phần ba cũng thế.']),
+        _c('y_toan', 'Chỉ còn số đầu và số cuối', '1 − 1/4 = 3/4', buoc=4, soBuoc=4,
+           loi=['Chỉ còn một trừ một phần tư, bằng ba phần tư.']),
+        _c('phan_so', 'Tổng đúng bằng ba phần tư', tu=3, mau=4,
+           chuPhu='Cộng dài mà kết quả rất gọn.',
+           loi=['Tổng đúng bằng ba phần tư. Cộng dài mà kết quả rất gọn.']),
+        _c('cong_thuc', 'Tổng dãy phân số',
+           congThuc='tách mỗi số thành HIỆU  ⟶  phần giữa triệt tiêu',
+           thay='1 − 1/4 = 3/4',
+           loi=['Tách mỗi số thành một hiệu thì phần giữa triệt tiêu.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chỉ dùng được khi mẫu là tích hai số LIÊN TIẾP',
+           loi=['Con nhớ lại một lần nữa. Chỉ dùng được khi mẫu là tích hai số liên tiếp.',
+                'Kiểm điều ấy trước khi tách.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_day_tich(b):
+    """⑧ Dãy phân số · tích — gạch chéo."""
+    return [
+        _c('bia', 'Dãy phân số · phép nhân', so_bai(b),
+           loi=['Hôm nay là phép nhân dài, và cách làm khác hẳn hôm qua.']),
+        _c('de_toan', 'Tính một phần hai nhân hai phần ba nhân ba phần tư.', '',
+           loi=['Tính một phần hai nhân hai phần ba nhân ba phần tư.']),
+        _c('y_toan', 'Nhìn kỹ các con số',
+           'Mẫu của số này giống tử của số sau.', buoc=1, soBuoc=3,
+           loi=['Nhìn kỹ. Mẫu của phân số này giống tử của phân số sau.',
+                'Số hai, rồi số ba, đều xuất hiện hai lần.']),
+        _c('y_toan', 'Gạch chéo cho triệt tiêu',
+           'Số 2 và số 3 triệt tiêu nhau.', buoc=2, soBuoc=3,
+           loi=['Gạch chéo thì số hai và số ba triệt tiêu nhau.']),
+        _c('y_toan', 'Chỉ còn tử ĐẦU và mẫu CUỐI', 'Tích bằng một phần tư.',
+           buoc=3, soBuoc=3,
+           loi=['Chỉ còn tử số đầu tiên và mẫu số cuối cùng. Tích bằng một phần tư.']),
+        _c('phan_so', 'Tích bằng một phần tư', tu=1, mau=4,
+           chuPhu='Nhân dài mà kết quả rất gọn.',
+           loi=['Tích bằng một phần tư.']),
+        _c('y_toan', 'Đừng lẫn với bài hôm qua',
+           'Bài CỘNG tách thành hiệu. Bài NHÂN gạch chéo.', buoc=3, soBuoc=3,
+           loi=['Đừng lẫn với bài hôm qua. Bài cộng thì tách thành hiệu.',
+                'Bài nhân thì gạch chéo. Hai cách cho hai phép khác nhau.']),
+        _c('cong_thuc', 'Tích dãy phân số',
+           congThuc='gạch chéo  ⟶  chỉ còn tử ĐẦU và mẫu CUỐI',
+           thay='1/2 × 2/3 × 3/4 = 1/4',
+           loi=['Gạch chéo thì chỉ còn tử đầu và mẫu cuối.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='bài CỘNG tách hiệu · bài NHÂN gạch chéo',
+           loi=['Con nhớ lại một lần nữa. Bài cộng tách thành hiệu, bài nhân gạch chéo.',
+                'Gặp bài thì hỏi trước: đây là phép cộng hay phép nhân.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_cung_them_ps(b):
+    """⑨ Cùng thêm ở tử và mẫu — hiệu không đổi."""
+    return [
+        _c('bia', 'Cùng thêm ở tử và mẫu', so_bai(b),
+           loi=['Hôm nay mình thêm cùng một số vào cả tử và mẫu.']),
+        _c('phan_so', 'Phân số ba phần tư', tu=3, mau=4,
+           chuPhu='Mẫu trừ tử bằng 1.',
+           loi=['Cho phân số ba phần tư. Mẫu trừ tử bằng một.']),
+        _c('y_toan', 'Thêm 2 vào cả hai đầu', '3 + 2 = 5  ·  4 + 2 = 6',
+           buoc=1, soBuoc=3,
+           loi=['Thêm hai vào cả tử và mẫu. Tử thành năm, mẫu thành sáu.']),
+        _c('phan_so', 'Được phân số năm phần sáu', tu=5, mau=6,
+           chuPhu='Mẫu trừ tử vẫn bằng 1.',
+           loi=['Được phân số năm phần sáu. Mẫu trừ tử vẫn bằng một.']),
+        _c('y_toan', 'Hiệu KHÔNG đổi', 'Đúng như chương tổng - hiệu đã học.',
+           buoc=2, soBuoc=3,
+           loi=['Hiệu không đổi. Đúng như chương tổng trừ hiệu con đã học.',
+                'Cùng thêm vào cả hai thì khoảng cách giữa chúng như cũ.']),
+        _c('y_toan', 'Nhưng phân số thì ĐỔI',
+           'Năm phần sáu lớn hơn ba phần tư.', buoc=3, soBuoc=3,
+           loi=['Nhưng phân số thì đổi. Năm phần sáu lớn hơn ba phần tư.',
+                'Chỉ hiệu là không đổi thôi.']),
+        _c('cong_thuc', 'Cùng thêm vào tử và mẫu',
+           congThuc='HIỆU giữa mẫu và tử không đổi',
+           thay='4 − 3 = 1   và   6 − 5 = 1',
+           loi=['Cùng thêm vào cả tử và mẫu thì hiệu giữa chúng không đổi.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hiệu không đổi · nhưng PHÂN SỐ thì đổi',
+           loi=['Con nhớ lại một lần nữa. Hiệu không đổi, nhưng phân số thì đổi.',
+                'Đừng lẫn hai chuyện ấy.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_chuyen_ps(b):
+    """⑩ Chuyển giữa tử và mẫu — tổng không đổi."""
+    return [
+        _c('bia', 'Chuyển giữa tử và mẫu', so_bai(b),
+           loi=['Hôm nay mình chuyển từ đầu này sang đầu kia.']),
+        _c('phan_so', 'Vẫn phân số ba phần tư', tu=3, mau=4,
+           chuPhu='Tử cộng mẫu bằng 7.',
+           loi=['Vẫn phân số ba phần tư. Tử cộng mẫu bằng bảy.']),
+        _c('y_toan', 'Chuyển 1 từ mẫu sang tử', 'Mẫu bớt 1, tử thêm 1.',
+           buoc=1, soBuoc=3,
+           loi=['Chuyển một đơn vị từ mẫu sang tử. Mẫu bớt một, tử thêm một.']),
+        _c('phan_so', 'Được phân số bốn phần ba', tu=4, mau=3,
+           chuPhu='Tử cộng mẫu vẫn bằng 7.',
+           loi=['Được phân số bốn phần ba. Tử cộng mẫu vẫn bằng bảy.']),
+        _c('y_toan', 'TỔNG không đổi',
+           'Bên này bớt bao nhiêu thì bên kia thêm bấy nhiêu.', buoc=2, soBuoc=3,
+           loi=['Tổng không đổi. Vì bên này bớt bao nhiêu thì bên kia được thêm đúng '
+                'bấy nhiêu.']),
+        _c('y_toan', 'Đừng lẫn với bài hôm qua',
+           'THÊM vào hai đầu → hiệu không đổi. CHUYỂN qua lại → tổng không đổi.',
+           buoc=3, soBuoc=3,
+           loi=['Đừng lẫn với bài hôm qua. Thêm vào cả hai đầu thì hiệu không đổi.',
+                'Còn chuyển qua lại thì tổng không đổi. Hai bài khác hẳn.']),
+        _c('cong_thuc', 'Chuyển giữa tử và mẫu',
+           congThuc='TỔNG của tử và mẫu không đổi',
+           thay='3 + 4 = 7   và   4 + 3 = 7',
+           loi=['Chuyển giữa tử và mẫu thì tổng của chúng không đổi.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='THÊM → hiệu yên   ·   CHUYỂN → tổng yên',
+           loi=['Con nhớ lại một lần nữa. Thêm vào hai đầu thì hiệu đứng yên.',
+                'Chuyển qua lại thì tổng đứng yên. Đọc kỹ đề xem gặp bài nào.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_ps_thuc_te(b):
+    """⑪ Phân số trong bài toán thực tế — đọc ra phân số CỦA CÁI GÌ."""
+    return [
+        _c('bia', 'Phân số trong bài toán thực tế', so_bai(b),
+           loi=['Bài cuối chương, và nó không dạy phép mới nào.']),
+        _c('de_toan', 'Cửa hàng có 20 tấn gạo, ngày đầu bán ba phần tư số gạo.',
+           'Bán được bao nhiêu tấn, còn lại bao nhiêu?',
+           loi=['Một cửa hàng có hai mươi tấn gạo. Ngày đầu bán được ba phần tư số gạo.']),
+        _c('y_toan', 'Câu hỏi quan trọng nhất',
+           'Ba phần tư ấy là của CÁI GÌ?', buoc=1, soBuoc=4,
+           loi=['Câu hỏi quan trọng nhất là ba phần tư ấy là của cái gì.']),
+        _c('y_toan', 'Ở đây là của SỐ GẠO BAN ĐẦU', 'Tức của 20 tấn.',
+           buoc=2, soBuoc=4,
+           loi=['Ở đây là của số gạo ban đầu, tức của hai mươi tấn.']),
+        _c('phan_so', 'Băng 20 tấn chia 4 phần, bán 3 phần', tu=3, mau=4,
+           chuPhu='Mỗi phần 5 tấn, bán 15 tấn.',
+           chuCuoi='Còn lại đúng một phần, tức 5 tấn.',
+           loi=['Băng hai mươi tấn chia bốn phần, mỗi phần năm tấn.',
+                'Bán ba phần là mười lăm tấn, còn lại một phần là năm tấn.']),
+        _c('y_toan', 'Soi lại cho hợp lý',
+           'Bán 3/4 thì còn 1/4 — khớp với 5 tấn.', buoc=3, soBuoc=4,
+           loi=['Soi lại. Bán ba phần tư thì còn một phần tư, đúng bằng năm tấn.']),
+        _c('y_toan', 'Nếu đề nói "ba phần tư CHỖ CÒN LẠI"',
+           'Thì gốc đã đổi, phải lấy của 5 tấn.', buoc=4, soBuoc=4,
+           loi=['Nếu đề nói ba phần tư chỗ còn lại thì gốc đã đổi.',
+                'Lúc ấy phải lấy của năm tấn, không phải của hai mươi tấn.']),
+        _c('cong_thuc', 'Việc đầu tiên của bài lời văn',
+           congThuc='đọc ra phân số ấy là CỦA CÁI GÌ',
+           thay='3/4 của 20 tấn = 15 tấn',
+           loi=['Việc đầu tiên là đọc ra phân số ấy là của cái gì.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='lấy nhầm GỐC thì mọi phép sau đều sai',
+           loi=['Con nhớ lại một lần nữa. Lấy nhầm gốc thì mọi phép sau đều sai.',
+                'Dù con tính rất đúng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 # Khoá theo MÃ BÀI, không theo số bài. Từ 14-08 (lối C) số bài đếm từ vị trí trong
 # `thu_tu.json`, nên nó đổi mỗi khi chèn bài mới — khoá theo nó thì chèn chín bài
 # vào chương 3 là tám kịch bản này nhảy sang nhầm bài, mà vẫn dựng ra video hợp lệ.
@@ -2125,6 +2526,13 @@ BO = {
     'DL:KSN4.B35': kb_gia_thiet, 'DL:KSN4.B36': kb_khu,
     'DL:KSN4.B66': kb_the,       'DL:KSN4.B37': kb_ven,
     'DL:KSN4.B67': kb_chuong_tho,
+    # ── chương 9 · mười một bài phân số ──
+    'DL:KSN4.B68': kb_ps_la_gi,  'DL:KSN4.B38': kb_so_de,
+    'DL:KSN4.B69': kb_quy_dong,  'DL:KSN4.B70': kb_so_nhanh,
+    'DL:KSN4.B39': kb_tim_ps,    'DL:KSN4.B71': kb_tim_so,
+    'DL:KSN4.B40': kb_day_tong,  'DL:KSN4.B72': kb_day_tich,
+    'DL:KSN4.B41': kb_cung_them_ps, 'DL:KSN4.B73': kb_chuyen_ps,
+    'DL:KSN4.B42': kb_ps_thuc_te,
 }
 
 
