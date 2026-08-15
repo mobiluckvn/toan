@@ -1,0 +1,284 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B42",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 18 · TOA MỜ Ở GIỮA — TÌM NHỊP TỪ HAI SỐ CÒN RÕ",
+ "durationMinutes": 10,
+ "so": 18,
+ "chuong": 3,
+ "tenChuong": "Dãy số kỳ diệu",
+ "dangGoc": "SỐ 5.1b — Dãy số cách đều: điền số còn thiếu ở giữa dãy.",
+ "skills": {
+  "bktUnit": "CHUONG:3@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 18,
+  "prev": "DL:KSN2.B09",
+  "next": "DL:KSN2.B43"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Điền được số còn thiếu nằm giữa một dãy cách đều. Biết bắt nhịp từ hai số liền nhau còn rõ. Lần ngược lại chỗ bị thiếu bằng phép trừ.",
+  "kidText": "Dãy 5, rồi trống, rồi 15, 20 — số bị thiếu ở giữa là số nào nhỉ?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn thấy dãy 5, ..., 15, 20 rồi điền luôn số 6, vì nghĩ cứ điền số nào to hơn số bên trái là xong.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Nhìn sang bên phải xem, hai số 15 và 20 cách nhau bao xa? Gợi ý 2: Nếu điền 6 thì bước từ 6 sang 15 dài bao nhiêu? Có bằng 5 không? Chữa: nhịp của dãy là 5, nên số còn thiếu là $15 - 5 = 10$."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn thấy dãy 5, ..., 15, 20 rồi điền luôn số 6, vì nghĩ cứ điền số nào to hơn số bên trái là xong.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Điền số còn thiếu vào dãy 5, ..., 15, 20.",
+  "steps": [
+   {
+    "show": "Bắt nhịp ở chỗ còn rõ số",
+    "phan": "giai"
+   },
+   {
+    "show": "Hai số 15 và 20 đứng cạnh nhau và còn rõ: $20 - 15 = 5$. Nhịp của dãy là 5.",
+    "phan": "giai"
+   },
+   {
+    "show": "Lần ngược lại chỗ bị thiếu",
+    "phan": "giai"
+   },
+   {
+    "show": "Số đứng ngay trước 15 là $15 - 5 = 10$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Thử lại xuôi từ đầu dãy",
+    "phan": "giai"
+   },
+   {
+    "show": "Đi xuôi: $5 + 5 = 10$, rồi $10 + 5 = 15$, rồi $15 + 5 = 20$. Cả dãy đúng nhịp.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: số còn thiếu là 10.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Chỗ bị thiếu nằm đâu cũng được — miễn còn hai số liền nhau để bắt nhịp.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Dãy 2, ..., 6, 8 — nhịp của dãy là mấy?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Hai số 6 và 8 còn rõ và đứng cạnh nhau: $8 - 6 = 2$.",
+     "hints": [
+      "Con nhìn hai số còn rõ mà lại đứng cạnh nhau.",
+      "Lấy số sau trừ số trước ở đúng cặp ấy."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Dãy 2, ..., 6, 8 — số còn thiếu là số nào?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Nhịp là 2, nên số đứng trước 6 là $6 - 2 = 4$.",
+     "hints": [
+      "Con tìm nhịp trước, rồi mới lần tới chỗ bị thiếu.",
+      "Số cần điền đứng ngay trước một số đã biết — lấy số ấy trừ nhịp."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Dãy 10, 20, ..., 40 — số còn thiếu là số nào?",
+     "answerKey": {
+      "value": 30
+     },
+     "solutionNarrative": "Nhịp là 10, nên số sau 20 là $20 + 10 = 30$.",
+     "hints": [
+      "Hai số đầu của dãy còn rõ, bắt nhịp ở đó.",
+      "Chỗ thiếu đứng ngay sau một số đã biết, nên cộng nhịp vào."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Dãy 5, ..., 15, 20 — số còn thiếu là số nào?",
+     "answerKey": {
+      "value": 10
+     },
+     "solutionNarrative": "Nhịp là 5 vì $20 - 15 = 5$, nên số trước 15 là $15 - 5 = 10$.",
+     "hints": [
+      "Bên phải có hai số liền nhau còn rõ, bắt nhịp ở đó.",
+      "Rồi lần ngược: lấy số đứng sau chỗ thiếu trừ đi nhịp."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Dãy 3, 6, ..., 12, 15 — số còn thiếu là số nào?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Nhịp là 3, nên số sau 6 là $6 + 3 = 9$.",
+     "hints": [
+      "Hai số đầu còn rõ và đứng cạnh nhau.",
+      "Chỗ thiếu đứng ngay sau số thứ hai."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Dãy ..., 8, 12, 16 — số đầu tiên của dãy là số nào?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Nhịp là 4, nên số đứng trước 8 là $8 - 4 = 4$.",
+     "hints": [
+      "Ba số còn lại đều rõ, bắt nhịp ở bất cứ cặp nào.",
+      "Chỗ thiếu đứng trước tất cả, nên phải lần lùi lại."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Dãy 7, ..., ..., 22 — hai số còn thiếu là mấy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số thứ nhất",
+        "value": 12
+       },
+       {
+        "label": "số thứ hai",
+        "value": 17
+       }
+      ]
+     },
+     "solutionNarrative": "Từ 7 tới 22 có ba bước nhảy. Thử nhịp 5: $7 + 5 = 12$, $12 + 5 = 17$, $17 + 5 = 22$ — vừa khít. Vậy hai số là 12 và 17.",
+     "hints": [
+      "Từ số đầu tới số cuối con phải nhảy mấy bước?",
+      "Nhảy ba bước, thử một nhịp rồi xem có tới đúng số cuối không."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Dãy 6, ..., 16, 21 — cho biết nhịp của dãy và số còn thiếu.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "nhịp",
+        "value": 5
+       },
+       {
+        "label": "số còn thiếu",
+        "value": 11
+       }
+      ]
+     },
+     "solutionNarrative": "Hai số 16 và 21 còn rõ: $21 - 16 = 5$, nhịp là 5. Số trước 16 là $16 - 5 = 11$.",
+     "hints": [
+      "Bên phải có hai số liền nhau còn rõ — bắt nhịp ở đó trước.",
+      "Có nhịp rồi thì lần ngược lại chỗ bị thiếu."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Muốn điền số còn thiếu ở giữa, phải bắt nhịp từ hai số liền nhau còn rõ.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — hai số liền nhau là đủ để ra nhịp."
+   },
+   {
+    "id": "Q2",
+    "text": "Dãy 5, ..., 15, 20 — số còn thiếu là số nào?",
+    "format": "mcq",
+    "choices": [
+     "10",
+     "9",
+     "12",
+     "8"
+    ],
+    "answerKey": {
+     "choice": "10"
+    },
+    "solutionNarrative": "Nhịp là 5 nên $15 - 5 = 10$."
+   },
+   {
+    "id": "Q3",
+    "text": "Số bị thiếu nằm giữa dãy thì không tìm được nhịp nữa.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Chỉ cần còn hai số liền nhau ở bất cứ đâu là bắt được nhịp."
+   },
+   {
+    "id": "Q4",
+    "text": "Dãy 10, 20, ..., 40 — số còn thiếu là số nào?",
+    "format": "mcq",
+    "choices": [
+     "30",
+     "25",
+     "35",
+     "50"
+    ],
+    "answerKey": {
+     "choice": "30"
+    },
+    "solutionNarrative": "Nhịp là 10 nên $20 + 10 = 30$."
+   },
+   {
+    "id": "Q5",
+    "text": "Điền xong nên đi xuôi lại cả dãy xem có đúng nhịp không.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — thử lại một lượt là chắc ăn."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Che một số trên thước kẻ hoặc trên lịch rồi hỏi con số bị che là số nào — đúng cái nghề của bài này.",
+  "homeActivity": "Bố mẹ hỏi: \"Con bắt nhịp ở chỗ nào?\" Trả lời được chỗ ấy là hiểu bài.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B42_giang.mp4"
+ }
+}

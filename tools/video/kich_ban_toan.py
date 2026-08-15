@@ -4641,6 +4641,362 @@ def kb2_cong_hai_doan(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 2 · CHƯƠNG 3 · DÃY SỐ KỲ DIỆU — chín kịch bản.
+#
+# Ba bài của sách ôm chín nghề khác nhau. Chín video, mỗi video đúng một nghề, và
+# cả chín bám vào bốn dãy neo để bé không phải làm quen dãy mới ở mỗi bài:
+#     4, 8, 12, 16   ·   5, ?, 15, 20   ·   1, 2, 4, 8   ·   1, 2, 4, 7
+# ═══════════════════════════════════════════════════════════════════════════
+DAY_DEU = [4, 8, 12, 16]
+DAY_MO = [5, '?', 15, 20]
+DAY_DOI = [1, 2, 4, 8]
+DAY_THANG = [1, 2, 4, 7]
+
+
+def kb2_bat_nhip(b):
+    """C3① Tìm nhịp rồi đi tiếp."""
+    return [
+        _c('bia', 'Bắt nhịp của dãy', so_bai(b),
+           loi=['Dãy số cách đều chạy theo một nhịp. Tìm được nhịp là đi tiếp được.']),
+        _c('day_so', 'Một dãy cách đều', so=DAY_DEU,
+           chuPhu='Các số cách nhau đều nhau.',
+           loi=['Đây là một dãy cách đều. Bốn, tám, mười hai, mười sáu.']),
+        _c('y_toan', 'Lấy số sau trừ số trước', '8 − 4 = 4', buoc=1, soBuoc=3,
+           loi=['Muốn biết nhịp, lấy số sau trừ số trước.',
+                'Tám trừ bốn bằng bốn. Nhịp của dãy là bốn.']),
+        _c('y_toan', 'Thử thêm hai cặp nữa', '12 − 8 = 4   ·   16 − 12 = 4',
+           buoc=2, soBuoc=3,
+           loi=['Thử thêm hai cặp nữa cho chắc.',
+                'Mười hai trừ tám bằng bốn. Mười sáu trừ mười hai cũng bằng bốn.',
+                'Nhịp đều tăm tắp là bốn.']),
+        _c('y_toan', 'Cộng nhịp để đi tiếp', '16 + 4 = 20   ·   20 + 4 = 24',
+           buoc=3, soBuoc=3,
+           loi=['Giờ cộng nhịp vào số cuối là đi tiếp được.',
+                'Mười sáu cộng bốn bằng hai mươi. Hai mươi cộng bốn bằng hai mươi bốn.']),
+        _c('y_toan', 'Đáp số', '20 và 24',
+           loi=['Hai số tiếp theo là hai mươi và hai mươi bốn.']),
+        _c('y_toan', 'Chỗ hay nhầm',
+           'Chỉ cần số sau to hơn số trước là chưa đủ.',
+           loi=['Có bạn thấy dãy hai, bốn, sáu rồi điền tiếp số bảy.',
+                'Số bảy đúng là to hơn sáu, nhưng nhịp của dãy là hai nên phải điền '
+                'số tám.']),
+        _c('cong_thuc', 'Hai động tác của cả bài',
+           congThuc='TRỪ để tìm nhịp  ·  CỘNG nhịp để đi tiếp',
+           thay='dãy cách đều thì MỌI khoảng đều bằng nhau',
+           loi=['Trừ để tìm nhịp, rồi cộng nhịp để đi tiếp.',
+                'Dãy cách đều thì mọi khoảng đều bằng nhau.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='thử NHIỀU cặp rồi hãy tin',
+           loi=['Con nhớ lại một lần nữa. Thử nhiều cặp rồi hãy tin.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_so_mo(b):
+    """C3② Điền số còn thiếu ở giữa dãy."""
+    return [
+        _c('bia', 'Số còn thiếu ở giữa', so_bai(b),
+           loi=['Số bị thiếu nằm giữa dãy thì vẫn tìm ra được.']),
+        _c('day_so', 'Một số bị thiếu', so=DAY_MO, chiSo=2,
+           chuPhu='Ô thứ hai chưa có số.',
+           loi=['Dãy này thiếu mất số thứ hai. Năm, rồi trống, rồi mười lăm, hai mươi.']),
+        _c('day_so', 'Bắt nhịp ở chỗ còn rõ số', so=DAY_MO, chiSo=4,
+           chuPhu='Hai số 15 và 20 đứng cạnh nhau và còn rõ.',
+           loi=['Nhìn sang chỗ còn rõ số. Mười lăm và hai mươi đứng cạnh nhau.']),
+        _c('y_toan', 'Lấy hiệu hai số ấy', '20 − 15 = 5', buoc=1, soBuoc=3,
+           loi=['Hai mươi trừ mười lăm bằng năm. Nhịp của dãy là năm.']),
+        _c('y_toan', 'Lần ngược lại chỗ thiếu', '15 − 5 = 10', buoc=2, soBuoc=3,
+           loi=['Giờ lần ngược lại. Số đứng ngay trước mười lăm là mười lăm trừ năm.',
+                'Mười lăm trừ năm bằng mười.']),
+        _c('y_toan', 'Thử lại xuôi cả dãy',
+           '5 + 5 = 10   ·   10 + 5 = 15   ·   15 + 5 = 20', buoc=3, soBuoc=3,
+           loi=['Thử lại đi xuôi từ đầu.',
+                'Năm cộng năm bằng mười. Mười cộng năm bằng mười lăm. Mười lăm cộng '
+                'năm bằng hai mươi.',
+                'Cả dãy đúng nhịp.']),
+        _c('day_so', 'Điền vào là xong', so=[5, 10, 15, 20], chiSo=2,
+           loi=['Số còn thiếu là mười.']),
+        _c('cong_thuc', 'Hai động tác của cả bài',
+           congThuc='bắt nhịp ở hai số còn rõ  ·  TRỪ nhịp để lần ngược',
+           thay='chỗ thiếu nằm đâu cũng làm được',
+           loi=['Bắt nhịp ở hai số còn rõ, rồi trừ nhịp để lần ngược lại.',
+                'Chỗ thiếu nằm ở đâu cũng làm được.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='cần đúng HAI số liền nhau là đủ',
+           loi=['Con nhớ lại một lần nữa. Cần đúng hai số liền nhau là đủ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_nhay_thu(b):
+    """C3③ Kiểm tra một số có thuộc dãy không."""
+    return [
+        _c('bia', 'Số này có trong dãy không', so_bai(b),
+           loi=['Cho một dãy đếm thêm và một số. Số ấy có nằm trong dãy không?']),
+        _c('day_so', 'Dãy cộng thêm 3', so=[3, 6, 9, 12],
+           chuPhu='Câu hỏi: số 20 có trong dãy này không?',
+           loi=['Dãy này cộng thêm ba. Ba, sáu, chín, mười hai.',
+                'Câu hỏi là số hai mươi có nằm trong dãy không.']),
+        _c('y_toan', 'Nhảy thử từng bước một', '12 · 15 · 18 · 21', buoc=1, soBuoc=3,
+           loi=['Cứ nhảy thử từng bước một.',
+                'Mười hai, mười lăm, mười tám, rồi hai mươi mốt.']),
+        _c('y_toan', 'Xem chỗ dãy vượt qua', '18 rồi tới 21, không dừng ở 20',
+           buoc=2, soBuoc=3,
+           loi=['Dãy đi từ mười tám thẳng tới hai mươi mốt.',
+                'Nó không đặt chân xuống hai mươi.']),
+        _c('y_toan', 'Vượt qua rồi thì dừng lại', 'Không cần nhảy thêm nữa',
+           buoc=3, soBuoc=3,
+           loi=['Đã vượt qua rồi thì biết chắc, không cần nhảy thêm nữa.']),
+        _c('y_toan', 'Đáp số', 'Số 20 KHÔNG có trong dãy',
+           loi=['Số hai mươi không có trong dãy.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Nằm giữa hai số của dãy không có nghĩa là thuộc dãy.',
+           loi=['Có bạn thấy hai mươi to hơn chín nên đoán là có.',
+                'Dãy tăng mãi thật, nhưng nó chỉ đặt chân xuống đúng mấy số theo nhịp.']),
+        _c('cong_thuc', 'Cách làm của cả bài',
+           congThuc='nhảy thử tới khi VƯỢT QUA số cần hỏi',
+           thay='dừng đúng chỗ ấy, đừng nhảy tiếp',
+           loi=['Nhảy thử tới khi vượt qua số cần hỏi, rồi dừng đúng chỗ ấy.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='vượt qua là biết chắc',
+           loi=['Con nhớ lại một lần nữa. Vượt qua là biết chắc.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_gap_doi(b):
+    """C3④ Dãy gấp đôi."""
+    return [
+        _c('bia', 'Dãy gấp đôi', so_bai(b),
+           loi=['Có dãy không cách đều. Hôm nay mình gặp loại thứ nhất.']),
+        _c('day_so', 'Một dãy lạ', so=DAY_DOI,
+           chuPhu='Số tiếp theo là số nào?',
+           loi=['Đây là một dãy lạ. Một, hai, bốn, tám.']),
+        _c('y_toan', 'Thử tìm nhịp trước đã', '2 − 1 = 1   ·   4 − 2 = 2   ·   8 − 4 = 4',
+           buoc=1, soBuoc=3,
+           loi=['Việc đầu tiên vẫn là thử tìm nhịp.',
+                'Hai trừ một bằng một. Bốn trừ hai bằng hai. Tám trừ bốn bằng bốn.',
+                'Các khoảng không bằng nhau, nên đây không phải dãy cách đều.']),
+        _c('y_toan', 'Thử xem có phải gấp đôi không',
+           '1 + 1 = 2   ·   2 + 2 = 4   ·   4 + 4 = 8', buoc=2, soBuoc=3,
+           loi=['Nhìn lại từ đầu theo cách khác.',
+                'Một cộng một bằng hai. Hai cộng hai bằng bốn. Bốn cộng bốn bằng tám.',
+                'Mỗi số đúng bằng số trước cộng chính nó.']),
+        _c('y_toan', 'Đi tiếp theo quy luật ấy', '8 + 8 = 16', buoc=3, soBuoc=3,
+           loi=['Tám cộng tám bằng mười sáu.']),
+        _c('y_toan', 'Đáp số', 'Số tiếp theo là 16',
+           loi=['Số tiếp theo là mười sáu.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Thử một cặp cuối rồi kết luận là hỏng.',
+           loi=['Có bạn chỉ thử cặp cuối, thấy tám trừ bốn bằng bốn nên bảo nhịp là bốn.',
+                'Cặp đầu đã lệch rồi. Phải thử từ đầu dãy.']),
+        _c('cong_thuc', 'Dãy gấp đôi là gì',
+           congThuc='mỗi số  =  số trước  +  chính nó',
+           thay='gặp dãy lạ thì thử nhịp TRƯỚC, không đều mới đổi cách',
+           loi=['Dãy gấp đôi là dãy mà mỗi số bằng số trước cộng chính nó.',
+                'Gặp dãy lạ thì thử nhịp trước, không đều mới đổi cách.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='cộng CHÍNH NÓ, không phải cộng một số cố định',
+           loi=['Con nhớ lại một lần nữa. Cộng chính nó, không phải cộng một số cố định.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_bac_thang(b):
+    """C3⑤ Dãy bậc thang."""
+    return [
+        _c('bia', 'Dãy bậc thang', so_bai(b),
+           loi=['Loại dãy không cách đều thứ hai. Bước nhảy mỗi lần dài thêm một.']),
+        _c('day_so', 'Một dãy lạ nữa', so=[2, 3, 5, 8, 12],
+           chuPhu='Số tiếp theo là số nào?',
+           loi=['Đây là một dãy lạ nữa. Hai, ba, năm, tám, mười hai.']),
+        _c('y_toan', 'Viết các bước nhảy ra',
+           '3 − 2 = 1   ·   5 − 3 = 2   ·   8 − 5 = 3   ·   12 − 8 = 4',
+           buoc=1, soBuoc=3,
+           loi=['Viết các bước nhảy ra giấy.',
+                'Ba trừ hai bằng một. Năm trừ ba bằng hai. Tám trừ năm bằng ba. '
+                'Mười hai trừ tám bằng bốn.']),
+        _c('day_so', 'Nhìn chính các bước nhảy', so=[1, 2, 3, 4],
+           chuPhu='Mỗi bước dài thêm 1.',
+           loi=['Giờ nhìn chính các bước nhảy. Một, hai, ba, bốn.',
+                'Mỗi bước dài thêm một. Vậy bước tiếp theo dài năm.']),
+        _c('y_toan', 'Đi thêm một bước nữa', '12 + 5 = 17', buoc=3, soBuoc=3,
+           loi=['Mười hai cộng năm bằng mười bảy.']),
+        _c('y_toan', 'Đáp số', 'Số tiếp theo là 17',
+           loi=['Số tiếp theo là mười bảy.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Lấy bước cuối làm nhịp cho cả dãy.',
+           loi=['Có bạn thấy bước cuối dài ba nên cộng thêm ba.',
+                'Bước sau phải dài hơn bước trước một đơn vị, nên nó dài bốn chứ '
+                'không phải ba.']),
+        _c('cong_thuc', 'Hai loại dãy khác nhau ở đâu',
+           congThuc='cách đều: các BƯỚC bằng nhau',
+           thay='bậc thang: chính các BƯỚC mới xếp thành dãy đều',
+           loi=['Dãy cách đều thì các bước bằng nhau.',
+                'Dãy bậc thang thì chính các bước mới xếp thành dãy đều.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chưa viết các bước ra thì chưa làm được bài',
+           loi=['Con nhớ lại một lần nữa. Chưa viết các bước ra thì chưa làm được bài.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_dung_moi_so(b):
+    """C3⑥ Quy luật phải đúng với mọi số đã cho."""
+    return [
+        _c('bia', 'Quy luật phải đúng với mọi số', so_bai(b),
+           loi=['Hai dãy chỉ khác nhau một con số mà thành hai câu đố khác nhau.']),
+        _c('day_so', 'Dãy thứ nhất', so=DAY_DOI, chiSo=4,
+           chuPhu='Ba số đầu là 1, 2, 4.',
+           loi=['Dãy thứ nhất. Một, hai, bốn, tám.']),
+        _c('day_so', 'Dãy thứ hai', so=DAY_THANG, chiSo=4,
+           chuPhu='Ba số đầu cũng là 1, 2, 4.',
+           loi=['Dãy thứ hai. Một, hai, bốn, bảy.',
+                'Ba số đầu của hai dãy giống hệt nhau. Chỉ số thứ tư là khác.']),
+        _c('y_toan', 'Nhìn ba số đầu thì chưa quyết được gì',
+           'Cả hai dãy đều mở đầu 1, 2, 4', buoc=1, soBuoc=3,
+           loi=['Nhìn ba số đầu thôi thì chưa quyết được gì cả.']),
+        _c('y_toan', 'Số thứ tư mới lộ quy luật',
+           'dãy một: 4 + 4 = 8   ·   dãy hai: các bước 1, 2, 3', buoc=2, soBuoc=3,
+           loi=['Số thứ tư mới lộ ra quy luật.',
+                'Dãy thứ nhất có bốn cộng bốn bằng tám, nên là dãy gấp đôi.',
+                'Dãy thứ hai có các bước một, hai, ba, nên là dãy bậc thang.']),
+        _c('y_toan', 'Mỗi dãy đi tiếp theo cách của nó',
+           '8 + 8 = 16   ·   7 + 4 = 11', buoc=3, soBuoc=3,
+           loi=['Dãy gấp đôi đi tiếp là tám cộng tám bằng mười sáu.',
+                'Dãy bậc thang có bước sau dài bốn, nên bảy cộng bốn bằng mười một.']),
+        _c('y_toan', 'Đáp số', '16 và 11',
+           loi=['Hai số tiếp theo là mười sáu và mười một.']),
+        _c('cong_thuc', 'Luật của cả bài',
+           congThuc='quy luật phải đúng với TẤT CẢ các số đã cho',
+           thay='không phải chỉ đúng với hai số cuối',
+           loi=['Một quy luật chỉ được nhận khi nó đúng với tất cả các số đã cho.',
+                'Không phải chỉ đúng với hai số cuối.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='kiểm lại từ SỐ ĐẦU TIÊN',
+           loi=['Con nhớ lại một lần nữa. Kiểm lại từ số đầu tiên.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_nhin_duoi(b):
+    """C3⑦ Chẵn lẻ nhìn ở chữ số tận cùng."""
+    return [
+        _c('bia', 'Chẵn hay lẻ nhìn ở đuôi', so_bai(b),
+           loi=['Một số chẵn hay lẻ, nhìn chữ số cuối cùng là biết.']),
+        _c('nhom_deu', 'Số chẵn chia đôi được đều', tong=8, moiNhom=2,
+           chuPhu='8 viên chia đôi: mỗi bên 4 viên, không thừa.',
+           loi=['Số chẵn là số chia đôi được đều tăm tắp.',
+                'Tám viên chia đôi thì mỗi bên bốn viên, không thừa viên nào.']),
+        _c('nhom_deu', 'Số lẻ luôn thừa một', tong=7, moiNhom=2,
+           chuPhu='7 viên chia đôi thì thừa 1 viên.',
+           loi=['Số lẻ chia đôi thì luôn thừa đúng một viên.']),
+        _c('y_toan', 'Bí mật nằm ở chữ số tận cùng',
+           'tận cùng 0, 2, 4, 6, 8  →  chẵn', buoc=1, soBuoc=3,
+           loi=['Bí mật nằm ở chữ số cuối cùng bên phải.',
+                'Tận cùng là không, hai, bốn, sáu hoặc tám thì số ấy chẵn.']),
+        _c('y_toan', 'Còn nhóm kia là số lẻ',
+           'tận cùng 1, 3, 5, 7, 9  →  lẻ', buoc=2, soBuoc=3,
+           loi=['Tận cùng là một, ba, năm, bảy hoặc chín thì số ấy lẻ.']),
+        _c('y_toan', 'Thử với hai số lớn', '134 tận cùng 4   ·   275 tận cùng 5',
+           buoc=3, soBuoc=3,
+           loi=['Thử với hai số lớn.',
+                'Một trăm ba mươi tư có đuôi là bốn, nên chẵn.',
+                'Hai trăm bảy mươi lăm có đuôi là năm, nên lẻ.']),
+        _c('y_toan', 'Đáp số', '134 chẵn  ·  275 lẻ',
+           loi=['Số một trăm ba mươi tư là số chẵn. Số hai trăm bảy mươi lăm là số lẻ.']),
+        _c('cong_thuc', 'Cách làm của cả bài',
+           congThuc='chỉ nhìn CHỮ SỐ TẬN CÙNG',
+           thay='số to cỡ nào cũng vậy, không cần chia thử',
+           loi=['Chỉ nhìn chữ số tận cùng. Số to cỡ nào cũng vậy, không cần chia thử.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='cộng các chữ số lại là một nghề KHÁC',
+           loi=['Con nhớ lại một lần nữa. Cộng các chữ số lại là một nghề khác.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_duoi_bang_nhan(b):
+    """C3⑧ Bí mật cái đuôi của bảng nhân 2 và bảng nhân 5."""
+    return [
+        _c('bia', 'Bảng nhân giấu gì', so_bai(b),
+           loi=['Hai bảng nhân quen thuộc đang giấu hai bí mật rất đẹp về cái đuôi.']),
+        _c('day_so', 'Bảng nhân 2', so=[2, 4, 6, 8, 10],
+           chuPhu='Đuôi chỉ có 2, 4, 6, 8 và 0.',
+           loi=['Bảng nhân hai. Hai, bốn, sáu, tám, mười.',
+                'Cái đuôi chỉ có hai, bốn, sáu, tám và không.']),
+        _c('y_toan', 'Cả bảng toàn số chẵn', 'không có số lẻ nào', buoc=1, soBuoc=3,
+           loi=['Nhìn kỹ mà xem, cả bảng toàn số chẵn. Không có số lẻ nào.']),
+        _c('nhom_deu', 'Vì sao lại thế', tong=6, moiNhom=2,
+           chuPhu='Mỗi số của bảng nhân 2 là hai phần bằng nhau ghép lại.',
+           loi=['Vì mỗi số của bảng là hai phần bằng nhau ghép lại.',
+                'Nên chia đôi lúc nào cũng đều.']),
+        _c('day_so', 'Bảng nhân 5', so=[5, 10, 15, 20, 25],
+           chuPhu='Đuôi chỉ có 5 và 0, thay nhau.',
+           loi=['Bảng nhân năm. Năm, mười, mười lăm, hai mươi, hai mươi lăm.',
+                'Cái đuôi chỉ có năm và không, thay nhau lần lượt.']),
+        _c('y_toan', 'Dùng bí mật ấy để loại nhanh',
+           '37 có đuôi 7  →  không thuộc bảng nhân 5', buoc=3, soBuoc=3,
+           loi=['Dùng bí mật ấy để loại nhanh.',
+                'Ba mươi bảy có đuôi là bảy, mà bảng nhân năm chỉ có đuôi năm hoặc '
+                'không. Vậy nó không thuộc bảng.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Nằm giữa 35 và 40 không có nghĩa là thuộc bảng.',
+           loi=['Có bạn bảo ba mươi bảy thuộc bảng nhân năm vì nó nằm giữa ba mươi '
+                'lăm và bốn mươi.',
+                'Nằm giữa hai số của bảng không có nghĩa là thuộc bảng.']),
+        _c('cong_thuc', 'Hai bí mật của bài',
+           congThuc='bảng nhân 2:  toàn số CHẴN',
+           thay='bảng nhân 5:  đuôi chỉ 0 hoặc 5',
+           loi=['Bảng nhân hai toàn số chẵn. Bảng nhân năm chỉ có đuôi không hoặc năm.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='nhìn đuôi là LOẠI được ngay',
+           loi=['Con nhớ lại một lần nữa. Nhìn đuôi là loại được ngay.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_cong_chan_le(b):
+    """C3⑨ Đoán tổng chẵn hay lẻ mà chưa cần tính."""
+    return [
+        _c('bia', 'Chưa tính đã biết tổng', so_bai(b),
+           loi=['Nhìn hai số hạng là đoán được tổng chẵn hay lẻ, chưa cần tính.']),
+        _c('y_toan', 'Đề bài', 'Tổng 26 + 13 là số chẵn hay số lẻ?',
+           loi=['Tổng hai mươi sáu cộng mười ba là số chẵn hay số lẻ?']),
+        _c('y_toan', 'Soi tính nết từng số', '26 đuôi 6 → chẵn   ·   13 đuôi 3 → lẻ',
+           buoc=1, soBuoc=3,
+           loi=['Hai mươi sáu có đuôi là sáu nên chẵn.',
+                'Mười ba có đuôi là ba nên lẻ.']),
+        _c('nhom_deu', 'Lẻ cộng lẻ lại ra CHẴN', tong=8, moiNhom=2,
+           chuPhu='3 viên và 5 viên: hai viên lẻ loi bắt cặp với nhau.',
+           loi=['Chỗ lạ nhất là lẻ cộng lẻ lại ra chẵn.',
+                'Ba viên thừa một, năm viên cũng thừa một. Hai viên lẻ loi ấy gặp '
+                'nhau thì bắt cặp, nên tổng chia đôi được đều.']),
+        _c('cong_thuc', 'Ba luật cộng', congThuc='chẵn + chẵn = chẵn',
+           thay='lẻ + lẻ = chẵn   ·   chẵn + lẻ = lẻ',
+           loi=['Chẵn cộng chẵn ra chẵn. Lẻ cộng lẻ ra chẵn. Chẵn cộng lẻ ra lẻ.']),
+        _c('y_toan', 'Áp luật vào bài', 'chẵn + lẻ  →  tổng LẺ', buoc=3, soBuoc=3,
+           loi=['Bài này là chẵn cộng lẻ, nên tổng là số lẻ.']),
+        _c('y_toan', 'Thử lại cho chắc', '26 + 13 = 39, đuôi 9 → lẻ',
+           loi=['Thử lại cho chắc. Hai mươi sáu cộng mười ba bằng ba mươi chín.',
+                'Đuôi là chín, đúng là số lẻ.']),
+        _c('cong_thuc', 'Cách làm của cả bài',
+           congThuc='soi ĐUÔI từng số hạng rồi áp luật',
+           thay='không phải tính ra kết quả',
+           loi=['Soi đuôi từng số hạng rồi áp luật. Không phải tính ra kết quả.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hai cái lẻ gặp nhau thì BẮT CẶP',
+           loi=['Con nhớ lại một lần nữa. Hai cái lẻ gặp nhau thì bắt cặp.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
@@ -4714,6 +5070,12 @@ BO = {
     'DL:KSN2.B06': kb2_dem_khoang,  'DL:KSN2.B39': kb2_nhay_coc,
     'DL:KSN2.B07': kb2_hai_canh,    'DL:KSN2.B40': kb2_bot_mot,
     'DL:KSN2.B08': kb2_hai_doan_tau, 'DL:KSN2.B41': kb2_cong_hai_doan,
+    # ══ LỚP 2 · chương 3 · Dãy số kỳ diệu — chín bài ══
+    'DL:KSN2.B09': kb2_bat_nhip,    'DL:KSN2.B42': kb2_so_mo,
+    'DL:KSN2.B43': kb2_nhay_thu,    'DL:KSN2.B10': kb2_gap_doi,
+    'DL:KSN2.B44': kb2_bac_thang,   'DL:KSN2.B45': kb2_dung_moi_so,
+    'DL:KSN2.B11': kb2_nhin_duoi,   'DL:KSN2.B46': kb2_duoi_bang_nhan,
+    'DL:KSN2.B47': kb2_cong_chan_le,
 }
 
 

@@ -3,12 +3,12 @@
  "id": "DL:KSN2.B09",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 17 · ĐOÀN TÀU ĐẾM THÊM",
+ "title": "Bài 17 · BẮT NHỊP ĐOÀN TÀU — TRỪ ĐỂ TÌM NHỊP, CỘNG ĐỂ ĐI TIẾP",
  "durationMinutes": 10,
  "so": 17,
  "chuong": 3,
  "tenChuong": "Dãy số kỳ diệu",
- "dangGoc": "SỐ 5.1 — Dãy số cách đều (điền tiếp, điền giữa, kiểm tra số thuộc dãy)",
+ "dangGoc": "SỐ 5.1a — Dãy số cách đều: tìm nhịp rồi viết tiếp.",
  "skills": {
   "bktUnit": "CHUONG:3@G2",
   "primary": []
@@ -16,42 +16,25 @@
  "series": {
   "order": 17,
   "prev": "DL:KSN2.B41",
-  "next": "DL:KSN2.B10"
+  "next": "DL:KSN2.B42"
  },
  "objective": {
   "id": "O1",
-  "text": "Tìm được NHỊP của đoàn tàu số (lấy toa sau trừ toa trước). Điền được số còn thiếu và tìm toa tiếp theo của dãy đếm thêm. Kiểm tra được một ga có nằm trên đường chạy của tàu không (bằng cách nhảy cóc thử).",
+  "text": "Tìm được nhịp của một dãy số cách đều. Biết lấy số sau trừ số trước để ra nhịp. Cộng nhịp vào số cuối để viết tiếp dãy.",
   "kidText": "Đoàn tàu số 4, 8, 12, 16 đang chạy. Con đoán được hai toa tiếp theo mang số mấy không?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Muốn biết nhịp tàu, lấy toa sau trừ toa trước: $6 - 3 = 3$. Thử tiếp $9 - 6 = 3$. $12 - 9 = 3$. Nhịp đều tăm tắp là 3 → toa \"?\" chở số $12 + 3 = 15$."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Có khi toa bị mờ số ở GIỮA đoàn tàu. Không sao — tìm nhịp từ hai toa còn rõ số đứng cạnh nhau, rồi lần theo nhịp mà điền:"
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Câu hỏi hóc hơn của bác trưởng ga: \"Tàu nhịp 3 (xuất phát ga 3) có dừng ở ga 20 không?\". Cách kiểm tra của thám tử: cho tàu nhảy cóc thử đến khi vượt qua ga cần hỏi:"
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. Muốn biết đoàn tàu 3, 6, 9, ..., 27 có mấy toa? Dùng lại mẹo Vua Đếm của Bài 6: đếm nhảy cóc từng bến. Hoặc tinh ý hơn: các toa chính là bảng nhân 3 ($3  \\times  1$ đến $3  \\times  9$) → 9 toa!"
-   }
-  ],
-  "mantra": "TRỪ để tìm nhịp → CỘNG nhịp để đi tiếp → NHẢY CÓC THỬ để kiểm tra ga. Ba động tác này trị được mọi đoàn tàu đếm thêm!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Với dãy 2, 4, 6, ... Su Kem điền tiếp: \"2, 4, 6, 7! Miễn là số sau to hơn số trước là được chứ gì!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Đoàn tàu này đang chạy nhịp mấy? (Lấy $4 - 2$ và $6 - 4$ xem.) Gợi ý 2: Từ 6 nhảy sang 7 là bước nhảy dài bao nhiêu. Có giữ đúng nhịp cũ không? Sửa lại giúp Su Kem nhé!"
+    "wrong": "Có bạn gặp dãy 2, 4, 6 rồi điền tiếp số 7, vì nghĩ miễn số sau to hơn số trước là được.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Dãy này đang chạy nhịp mấy? Lấy $4 - 2$ rồi $6 - 4$ xem. Gợi ý 2: Từ 6 sang 7 là bước dài bao nhiêu? Có bằng nhịp cũ không? Chữa: nhịp của dãy là 2, nên sau số 6 phải là số 8 chứ không phải 7."
    }
   ]
  },
@@ -59,45 +42,8 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Trí Long và Su Kem đến nhà ga Vương quốc Số. Cho dãy số 4, 8, 12, 16, ... Hãy viết hai số tiếp theo của dãy."
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Với dãy 2, 4, 6, ... Su Kem điền tiếp: \"2, 4, 6, 7! Miễn là số sau to hơn số trước là được chứ gì!\"",
+    "narration": "Có bạn gặp dãy 2, 4, 6 rồi điền tiếp số 7, vì nghĩ miễn số sau to hơn số trước là được.",
     "teaches": []
    }
   ]
@@ -107,20 +53,36 @@
   "problem": "Cho dãy số 4, 8, 12, 16, ... Hãy viết hai số tiếp theo của dãy.",
   "steps": [
    {
-    "show": "Nhịp của dãy là: $8 - 4 = 4$. (Thử lại: $12 - 8 = 4$; $16 - 12 = 4$ — đúng nhịp đều.)",
+    "show": "Tìm nhịp trước đã",
     "phan": "giai"
    },
    {
-    "show": "Số tiếp theo là: $16 + 4 = 20$.",
+    "show": "Lấy số sau trừ số trước: $8 - 4 = 4$.",
     "phan": "giai"
    },
    {
-    "show": "Số tiếp theo nữa là: $20 + 4 = 24$.",
+    "show": "Thử lại cho chắc",
+    "phan": "giai"
+   },
+   {
+    "show": "Thử tiếp hai cặp nữa: $12 - 8 = 4$ và $16 - 12 = 4$. Nhịp đều tăm tắp là 4.",
+    "phan": "giai"
+   },
+   {
+    "show": "Cộng nhịp để đi tiếp",
+    "phan": "giai"
+   },
+   {
+    "show": "Số tiếp theo là $16 + 4 = 20$. Số tiếp theo nữa là $20 + 4 = 24$.",
     "phan": "giai"
    },
    {
     "show": "Đáp số: 20 và 24.",
     "phan": "dapso"
+   },
+   {
+    "show": "Một dãy chỉ gọi là cách đều khi MỌI khoảng đều bằng nhau, chứ không phải chỉ hai số đầu.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -129,169 +91,121 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tìm nhịp của mỗi đoàn tàu: (a) 5, 10, 15, 20; (b) 7, 14, 21, 28; (c) 10, 20, 30, 40.",
+     "text": "Dãy 3, 6, 9, 12 chạy nhịp mấy?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "(a) 5, 10, 15, 20",
-        "value": 5
-       },
-       {
-        "label": "(b) 7, 14, 21, 28",
-        "value": 7
-       },
-       {
-        "label": "(c) 10, 20, 30, 40",
-        "value": 10
-       }
-      ]
+      "value": 3
      },
-     "solutionNarrative": "(a) nhịp 5; (b) nhịp 7; (c) nhịp 10",
+     "solutionNarrative": "Lấy số sau trừ số trước: $6 - 3 = 3$.",
      "hints": [
-      "Lấy toa sau trừ toa trước.",
-      "Thử thêm một cặp nữa xem nhịp có đều không."
+      "Con lấy số đứng sau trừ số đứng ngay trước nó.",
+      "Thử cặp đầu tiên của dãy xem được bao nhiêu."
      ]
     },
     {
      "id": "C2",
-     "text": "Viết hai số tiếp theo: 3, 6, 9, 12, ▢, ▢.",
+     "text": "Dãy 4, 8, 12, 16 chạy nhịp mấy?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "ô trống 1",
-        "value": 15
-       },
-       {
-        "label": "ô trống 2",
-        "value": 18
-       }
-      ]
+      "value": 4
      },
-     "solutionNarrative": "15 và 18",
+     "solutionNarrative": "Lấy số sau trừ số trước: $8 - 4 = 4$.",
      "hints": [
-      "Tìm nhịp rồi cứ cộng nhịp mà đi tiếp.",
-      "Đoàn tàu này chính là bảng nhân 3."
+      "Con lấy số thứ hai trừ số thứ nhất.",
+      "Rồi thử thêm một cặp nữa xem có ra cùng kết quả không."
      ]
     },
     {
      "id": "C3",
-     "text": "Viết hai số tiếp theo: 4, 8, 12, ▢, ▢.",
+     "text": "Dãy 3, 6, 9, 12, ... — số tiếp theo là số nào?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "ô trống 1",
-        "value": 16
-       },
-       {
-        "label": "ô trống 2",
-        "value": 20
-       }
-      ]
+      "value": 15
      },
-     "solutionNarrative": "16 và 20",
+     "solutionNarrative": "Nhịp của dãy là 3, nên $12 + 3 = 15$.",
      "hints": [
-      "Toa sau trừ toa trước là ra nhịp.",
-      "Bảng nhân 4 đi tiếp hai bước nữa."
+      "Con tìm nhịp của dãy trước đã.",
+      "Rồi cộng nhịp ấy vào số cuối cùng đang thấy."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Điền số bị mờ: 6, ▢, 18, 24, ▢.",
+     "text": "Dãy 5, 10, 15, 20, ... — viết hai số tiếp theo.",
      "answerKey": {
       "parts": [
        {
-        "label": "ô trống 1",
-        "value": 12
+        "label": "số thứ nhất",
+        "value": 25
        },
        {
-        "label": "ô trống 2",
+        "label": "số thứ hai",
         "value": 30
        }
       ]
      },
-     "solutionNarrative": "nhịp = $24 - 18 = 6$ → dãy 6, 12, 18, 24, 30",
+     "solutionNarrative": "Nhịp là 5: $20 + 5 = 25$, rồi $25 + 5 = 30$.",
      "hints": [
-      "Toa mờ nằm giữa — tìm nhịp từ hai toa còn rõ đứng cạnh nhau.",
-      "Có nhịp rồi thì lùi một bước và tiến một bước."
+      "Nhịp của dãy này lấy từ hai số liền nhau bất kỳ.",
+      "Cộng nhịp một lần được số thứ nhất, cộng thêm lần nữa được số thứ hai."
      ]
     },
     {
      "id": "C5",
-     "text": "Điền số bị mờ: 5, 10, ▢, 20, 25, ▢.",
+     "text": "Dãy 7, 14, 21, ... — số tiếp theo là số nào?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "ô trống 1",
-        "value": 15
-       },
-       {
-        "label": "ô trống 2",
-        "value": 30
-       }
-      ]
+      "value": 28
      },
-     "solutionNarrative": "nhịp 5 → 5, 10, 15, 20, 25, 30",
+     "solutionNarrative": "Nhịp là 7 vì $14 - 7 = 7$, nên $21 + 7 = 28$.",
      "hints": [
-      "Hai toa đầu còn rõ, lấy chúng mà tìm nhịp.",
-      "Điền chỗ mờ ở giữa trước, chỗ mờ cuối sau."
+      "Con lấy số thứ hai trừ số thứ nhất để ra nhịp.",
+      "Rồi cộng nhịp ấy vào số cuối cùng của dãy."
      ]
     },
     {
      "id": "C6",
-     "text": "Đoàn tàu 2, 4, 6, ..., 20 có bao nhiêu toa? (Nhảy cóc đếm, hoặc nghĩ tới bảng nhân 2.)",
+     "text": "Muốn tìm nhịp của một dãy cách đều thì làm gì?",
      "answerKey": {
-      "value": 10
+      "parts": [
+       {
+        "label": "cách tìm nhịp",
+        "options": [
+         "lấy số sau trừ số trước",
+         "cộng cả dãy lại",
+         "nhìn số cuối cùng"
+        ],
+        "value": "lấy số sau trừ số trước"
+       }
+      ]
      },
-     "solutionNarrative": "2, 4, ..., 20 — nhảy cóc đếm được 10 toa (đúng 10 bước của bảng nhân 2)",
+     "solutionNarrative": "Lấy số sau trừ số trước là ra nhịp, rồi thử thêm vài cặp cho chắc.",
      "hints": [
-      "Nhảy cóc mà đếm, đừng chia thẳng.",
-      "Nghĩ tới bảng nhân 2 đi được mấy bước."
-     ]
-    },
-    {
-     "id": "C7",
-     "text": "Một dãy có nhịp 4, số đầu tiên là 4. Toa thứ năm của đoàn tàu chở số nào? (Viết dần từng toa ra nhé.)",
-     "answerKey": {
-      "value": 20
-     },
-     "solutionNarrative": "4, 8, 12, 16, 20 → toa thứ năm chở số 20",
-     "hints": [
-      "Viết dần từng toa ra giấy.",
-      "Toa xuất phát đã là một toa rồi — đếm cho đúng."
+      "Nhịp là khoảng cách giữa hai số đứng cạnh nhau.",
+      "Con nghĩ xem phép tính nào cho ra khoảng cách ấy."
      ]
     }
    ],
    "challenge": [
     {
-     "id": "C8",
-     "text": "Đoàn tàu nhịp 4 xuất phát từ ga 1 (các ga: 1, 5, 9, ...). Tàu có dừng ở ga 25 không? Nhảy cóc kiểm tra rồi trả lời — cẩn thận kẻo đoán nhầm!",
+     "id": "C7",
+     "text": "Dãy 2, 5, 8, 11, ... — số thứ sáu của dãy là số nào?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "tàu có dừng ở ga 25 không",
-        "options": [
-         "có",
-         "không"
-        ],
-        "value": "có"
-       }
-      ]
+      "value": 17
      },
-     "solutionNarrative": "nhảy cóc 1, 5, 9, 13, 17, 21, 25 — CÓ, tàu dừng đúng ga 25! (Đừng vội đoán \"không\" chỉ vì 25 không thuộc bảng nhân 4 nhé — tàu này xuất phát từ ga 1 cơ mà.)",
+     "solutionNarrative": "Nhịp là 3. Số thứ năm là $11 + 3 = 14$, số thứ sáu là $14 + 3 = 17$.",
      "hints": [
-      "Đừng đoán theo bảng nhân — tàu này xuất phát từ ga 1.",
-      "Nhảy cóc thật đến khi vượt qua ga cần hỏi."
+      "Dãy đang cho tới số thứ tư, con cần đi thêm hai bước nữa.",
+      "Tìm nhịp rồi cộng dần từng bước một, đừng nhảy tắt."
      ]
     },
     {
-     "id": "C9",
-     "text": "Đoàn tàu nhịp 5 xuất phát từ ga 5. Su Kem đứng chờ ở ga 52. Cậu ấy có đón được tàu không? Vì sao con biết ngay mà gần như không cần nhảy cóc? (Mẹo: nhớ bí mật tận cùng của bảng nhân 5!)",
-     "solutionNarrative": "các ga của tàu là 5, 10, 15, ... — kết quả bảng nhân 5, luôn tận cùng 0 hoặc 5. Ga 52 tận cùng 2 → tàu KHÔNG BAO GIỜ dừng ở đó. Su Kem chờ dài cổ mất thôi!",
+     "id": "C8",
+     "text": "Một dãy cách đều bắt đầu từ 6 và chạy nhịp 4. Số thứ tư của dãy là số nào?",
+     "answerKey": {
+      "value": 18
+     },
+     "solutionNarrative": "Từ số đầu tới số thứ tư có ba bước nhảy: $6 + 4 = 10$, $10 + 4 = 14$, $14 + 4 = 18$.",
      "hints": [
-      "Nhớ bí mật tận cùng của bảng nhân 5.",
-      "Ga 52 tận cùng là chữ số nào?"
+      "Từ số đầu tới số thứ tư con phải nhảy mấy bước?",
+      "Nhảy ba bước, mỗi bước cộng thêm bằng nhịp đã cho."
      ]
     }
    ]
@@ -302,101 +216,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Nhịp của dãy 3, 6, 9, 12 là 3.",
+    "text": "Muốn tìm nhịp của dãy cách đều, ta lấy số sau trừ số trước.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng, và nên thử lại với vài cặp nữa cho chắc."
    },
    {
     "id": "Q2",
-    "text": "Trong dãy đếm thêm, chỉ cần số sau lớn hơn số trước là được.",
+    "text": "Dãy 2, 4, 6 thì số tiếp theo có thể là 7.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "phải giữ đúng nhịp"
+    "solutionNarrative": "Sai. Nhịp của dãy là 2 nên sau số 6 phải là số 8."
    },
    {
     "id": "Q3",
-    "text": "Số tiếp theo của dãy 5, 10, 15, 20 là:",
+    "text": "Dãy 3, 6, 9, 12, ... — số tiếp theo là số nào?",
     "format": "mcq",
     "choices": [
-     "A. 21",
-     "B. 25",
-     "C. 30"
+     "15",
+     "13",
+     "14",
+     "18"
     ],
     "answerKey": {
-     "choice": "B. 25"
+     "choice": "15"
     },
-    "solutionNarrative": "Đáp án: B. 25"
+    "solutionNarrative": "Nhịp là 3 nên $12 + 3 = 15$."
    },
    {
     "id": "Q4",
-    "text": "Số bị mờ trong dãy 4, ▢, 12, 16 là:",
+    "text": "Dãy 5, 10, 15, 20 chạy nhịp mấy?",
     "format": "mcq",
     "choices": [
-     "A. 6",
-     "B. 8",
-     "C. 10"
+     "5",
+     "10",
+     "15",
+     "2"
     ],
     "answerKey": {
-     "choice": "B. 8"
+     "choice": "5"
     },
-    "solutionNarrative": "Đáp án: B. 8"
+    "solutionNarrative": "Lấy số sau trừ số trước: $10 - 5 = 5$."
    },
    {
     "id": "Q5",
-    "text": "Đoàn tàu nhịp 3 từ ga 3 có dừng ở ga 20 không?",
-    "format": "mcq",
-    "choices": [
-     "A. Có",
-     "B. Không",
-     "C. Không biết được"
-    ],
+    "text": "Dãy cách đều thì mọi khoảng giữa hai số liền nhau đều bằng nhau.",
+    "format": "tf",
     "answerKey": {
-     "choice": "B. Không"
+     "value": true
     },
-    "solutionNarrative": "Đáp án: B. Không"
+    "solutionNarrative": "Đúng — đó chính là nghĩa của chữ \"cách đều\"."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Chơi \"đoàn tàu vỗ tay\": cả nhà đếm to theo nhịp 3 (3, 6, 9...), ai hô sai nhịp bị loại. Đổi nhịp 2, 5, rồi thử nhịp 4 — nhịp chưa có trong bảng nhân đã học lại càng vui.",
-  "homeActivity": "Khi con kiểm tra \"ga 20 có thuộc tàu không\", hãy để con nhảy cóc đến cùng thay vì đoán — thói quen KIỂM CHỨNG quan trọng hơn đáp án.",
-  "watchFor": "NÊN: gợi ý con nối dãy với bảng nhân (\"dãy này giống bảng nhân mấy?\"). KHÔNG NÊN: dạy công thức số hạng thứ n = đầu + (n−1) × nhịp — công thức đó là quà của lớp 3."
+  "onComplete": "Số nhà trên một dãy phố, số ghế trong rạp, vạch đo trên cốc — chúng đều chạy theo một nhịp. Chỉ vào rồi hỏi con nhịp mấy.",
+  "homeActivity": "Bố mẹ chỉ cần hỏi một câu mỗi lần: \"Từ số này sang số kia con nhảy bao xa?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_DAY02",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_DAY02.png",
-   "caption": "Toa sau hơn toa trước 3 — toa cuối chở số nào?",
-   "sha256_16": "76997c55386195ad",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_DAY01",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L2H_DAY01.png",
-   "caption": "Đoàn tàu 6 toa: tìm nhịp rồi điền số vào hai toa bị mờ",
-   "sha256_16": "6ae2c56d88597f86",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L2H_TIA02",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L2H_TIA02.png",
-   "caption": "Tàu nhịp 3 bay qua ga 20, không dừng ở đó",
-   "sha256_16": "3c3234d75d7e4326",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B09_giang.mp4"
+ }
 }

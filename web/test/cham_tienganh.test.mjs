@@ -299,7 +299,19 @@ function diemDanh() {
    toàn bộ 2719 câu bằng chính phép đếm dưới đây, không còn câu nào rơi vào hai lối
    bất thường ấy. Từ nay hai con số này phải đứng yên ở 0 — nhích lên là có câu mới
    khai đáp án hụt kiểu B07/C3. */
-const MOC = { tong: 2719, dungKhiDungDap: 2717, dungKhiSaiDap: 0, tuDoiChieu: 0 };
+/* ⚠ 2719 → 2767. Đợt ba lớp 2: chương 3 ba bài chữ thành CHÍN bài video — chương
+   gộp nặng nhất từ trước tới nay, mỗi bài của sách ôm trọn ba nghề khác nhau.
+       luyện tập lớp 2  24 → 72 câu chấm máy  (+48)  ·  2719 + 48 = 2767  ✓
+
+   Ba bài cũ mỗi bài 9 câu mà chỉ 8 câu chấm máy được; chín bài mới đều 8 câu chấm
+   máy đủ. Bỏ 24 thêm 72.
+
+   Kỳ sát hạch chương 3 có VIẾT LẠI một câu (câu 5, xem `KHAI_TAY_L2`), nhưng câu
+   cũ lẫn câu mới đều có khoá nên tổng không xê dịch vì chuyện ấy.
+
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 0 — đúng như đã hẹn ở đợt trước.
+   Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn. */
+const MOC = { tong: 2767, dungKhiDungDap: 2765, dungKhiSaiDap: 0, tuDoiChieu: 0 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

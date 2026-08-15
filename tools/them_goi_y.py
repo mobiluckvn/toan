@@ -45,6 +45,24 @@ def _phang(s: str) -> str:
     return re.sub(r'\s+', '', str(s)).lower()
 
 
+def co_roi(chuoi: str, tu: str) -> bool:
+    """Chữ `tu` có đứng RỜI trong `chuoi` không — cùng luật với `goi_y.test.mjs`.
+
+    ⚠ CHỖ NÀY TỪNG LỆCH VỚI CỔNG VÀ CHO LỌT BỐN GỢI Ý. Bản đầu soi bằng phép "chuỗi
+    con" thô: nếu đáp án nằm đâu đó trong ĐỀ thì bỏ qua luôn, không soi gợi ý nữa.
+    Mà đáp "có" thì đề nào chẳng có — "Số 10 có trong dãy không?" — nên mọi gợi ý
+    của cả cụm câu ấy được tha bổng.
+
+    Cổng thì soi bằng luật ĐỨNG RỜI: chữ phải có ranh giới hai bên. Trong đề trên,
+    "có" dính ngay sau chữ số 10 nên cổng KHÔNG coi là đã có trong đề, và bắt được
+    gợi ý "xem dãy có đặt chân vào số ấy không".
+
+    Hai nơi soi khác luật thì bộ soi tại chỗ thành vô dụng — nó chỉ nói "qua rồi"
+    để mình yên tâm. Nay chép đúng luật của cổng sang đây.
+    """
+    return bool(re.search(rf'(^|[^\d,.]){re.escape(tu)}([^\d,.]|$)', _phang(chuoi)))
+
+
 def dap_an(item) -> list[str]:
     """Mọi chuỗi coi là đáp án của một câu — lấy đúng cách cổng lấy."""
     k = item.get('answerKey') or {}
@@ -81,9 +99,12 @@ def soi(bo: dict) -> list[str]:
                 if len(str(h)) > DAI_NHAT:
                     loi.append(f'{ma} {cid}: gợi ý dài {len(str(h))} chữ')
                 for a in dap_an(co[cid]):
-                    if _phang(a) in de:
+                    # Đáp một chữ thì câu nào chẳng dính — cổng cũng bỏ qua chúng.
+                    if len(_phang(a)) < 2:
+                        continue
+                    if co_roi(de, a):
                         continue          # đáp đã nằm sẵn trong đề, không phải lộ
-                    if _phang(a) in _phang(h):
+                    if co_roi(h, a):
                         loi.append(f'{ma} {cid}: gợi ý lộ đáp "{a}" → "{h[:44]}…"')
             if hs[0] in tang1:
                 loi.append(f'{ma} {cid}: tầng 1 trùng với {tang1[hs[0]]}')

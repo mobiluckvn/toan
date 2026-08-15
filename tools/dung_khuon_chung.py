@@ -48,6 +48,30 @@ KHAI_TAY_L2 = {
     (2, 7): {'ve': 'DL:KSN2.B41'},    # cuốn vở 13 trang — cộng hai đoàn tàu
     (2, 8): {'ve': 'DL:KSN2.B40'},    # số chứa chữ số 4 — bớt số đếm hai lần
     (2, 9): {'ve': 'DL:KSN2.B39'},    # số chẵn số lẻ — đếm nhảy cóc
+    # ── chương 3 · Dãy số kỳ diệu: ba bài tách thành chín ──
+    # Chương này gộp nặng nhất: mười câu ôn tập của sách đều trỏ dồn vào ba mã cũ,
+    # trong khi nay có chín bài. Khai lại từng câu một theo đúng nghề nó hỏi.
+    (3, 4): {'ve': 'DL:KSN2.B42'},    # điền hai số bị mờ ở giữa dãy
+    (3, 6): {'ve': 'DL:KSN2.B10'},    # 2, 4, 8, 16 — dãy gấp đôi
+    (3, 7): {'ve': 'DL:KSN2.B44'},    # 2, 3, 5, 8 — dãy bậc thang
+    (3, 8): {'ve': 'DL:KSN2.B47'},    # tổng chẵn hay lẻ, không tính kết quả
+    (3, 9): {'ve': 'DL:KSN2.B43'},    # tàu có dừng ở ga 30 không — nhảy cóc thử
+    (3, 10): {'ve': 'DL:KSN2.B45'},   # nhiều dãy khác quy luật trong cùng một đề
+    # Câu 5 cũ hỏi "đoàn tàu 3, 6, 9, ..., 27 có mấy toa" — đúng ý câu C8 luyện tập
+    # của bài NHẢY CÓC THỬ, mà câu 9 đã phủ bài ấy rồi. Trong khi bài BẢNG NHÂN
+    # GIẤU GÌ không có câu nào hỏi tới. Viết lại câu 5 cho phủ bài ấy; nghề đếm toa
+    # vẫn còn nguyên ở phần luyện tập nên sách không mất gì.
+    (3, 5): {'ve': 'DL:KSN2.B46',
+             'text': 'Số 37 có nằm trong bảng nhân 5 không? Nhìn vào chữ số nào là '
+                     'biết ngay mà không cần đọc cả bảng?',
+             'answer': 'Không. Bảng nhân 5 chỉ có số tận cùng bằng 0 hoặc 5, mà 37 '
+                       'tận cùng bằng 7 nên nó không thuộc bảng.',
+             'khoa': {'parts': [
+                 {'label': 'có trong bảng nhân 5 không',
+                  'options': ['có', 'không'], 'value': 'không'},
+                 {'label': 'nhìn chữ số nào',
+                  'options': ['chữ số tận cùng', 'chữ số đầu tiên'],
+                  'value': 'chữ số tận cùng'}]}},
 
     (1, 6): {'ve': 'DL:KSN2.B36',
              'text': 'Một cửa hàng ghi giá 90 nghìn đồng nhưng viết sót mất chữ số '
@@ -116,7 +140,10 @@ def dung_on_tap(bai_cua_chuong, ten_bai):
             else:
                 mic = mac_dinh                    # ải không có bảng tự soi
                 chua_soi += 0 if ai else 1
-            khoa = o_nhap.get(f"{ma}#C{c['so']}")
+            # Câu viết lại thì ô nhập cũ không còn khớp — cho khai đè luôn ở đây,
+            # chứ vá vào `lop2_ontap_o.json` thì lần chạy `tach_ontap.py` sau sẽ dựng
+            # lại tệp ấy và xoá mất bản vá, y như bốn lần đã dính trước đây.
+            khoa = khai.get('khoa') or o_nhap.get(f"{ma}#C{c['so']}")
             cau.append({'id': f"REVITEM:KSN2.C{ch}.A{c['so']}", 'qno': c['so'],
                         'star': c.get('muc', 1),
                         'text': khai.get('text') or c['text'],

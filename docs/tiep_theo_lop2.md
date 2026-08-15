@@ -209,3 +209,76 @@ ngay. Và **10 hình mồ côi** neo vào mục nay đã rỗng (lần thứ nă
 Kỳ sát hạch: khai thêm **năm mối nối** ở `KHAI_TAY_L2`. Ba bài mới vốn không câu nào
 hỏi tới — phép ④ của cổng `on_tap_noi_bai` tìm ra đúng ba chỗ trống ấy. Lần này
 không phải viết lại câu nào: mười câu của sách chia vừa đủ cho sáu bài.
+
+---
+
+## Đợt 3 · chương 3 · Dãy số kỳ diệu
+
+Ba bài chữ thành **chín bài video** — chương gộp nặng nhất từ trước tới nay. Quyển
+lớp 2 nay **47 bài · 25 video · 22.3 phút**.
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 17 | B09 | bắt nhịp — trừ để tìm nhịp, cộng để đi tiếp |
+| 18 | B42 *(mới)* | toa mờ ở giữa — bắt nhịp ở hai số còn rõ rồi lần ngược |
+| 19 | B43 *(mới)* | số này có trong dãy không — nhảy cóc thử |
+| 20 | B10 | dãy gấp đôi — mỗi số bằng số trước cộng chính nó |
+| 21 | B44 *(mới)* | dãy bậc thang — bước nhảy dài thêm một |
+| 22 | B45 *(mới)* | quy luật phải đúng với MỌI số đã cho |
+| 23 | B11 | chẵn hay lẻ nhìn ở đuôi — chữ số tận cùng |
+| 24 | B46 *(mới)* | bảng nhân 2 toàn chẵn, bảng nhân 5 đuôi 0 hoặc 5 |
+| 25 | B47 *(mới)* | cộng chẵn lẻ — chưa tính đã biết tổng |
+
+### Vì sao tách thành ba chứ không phải hai
+
+**B09** ôm ba động tác khác hẳn nhau: ĐI XUÔI (tìm nhịp rồi cộng tiếp), LẦN NGƯỢC
+(điền số mờ ở giữa), KIỂM TRA (số này có thuộc dãy không). Bé tắc ở động tác nào
+thì phải xem lại đúng động tác ấy — gộp một bài thì không chỉ được chỗ nào.
+
+**B10** ôm dãy gấp đôi, dãy bậc thang, và *"quy luật phải đúng với tất cả các số"*.
+Cái thứ ba mới là bài học thật của cả chương, mà nó nằm lọt thỏm ở bước 4 của sách.
+
+**B11** ôm nhìn đuôi đoán chẵn lẻ, bí mật hai bảng nhân, và cộng chẵn lẻ.
+
+### Số neo
+
+    4, 8, 12, 16       → nhịp 4, tiếp là 20 và 24
+    5, ?, 15, 20       → số mờ là 10
+    3, 6, 9, ...       → không dừng ở 20, nhảy thẳng 18 sang 21
+    1, 2, 4, 8         → gấp đôi, tiếp là 16
+    2, 3, 5, 8, 12     → bậc thang, tiếp là 17
+    134 chẵn · 275 lẻ  → nhìn chữ số tận cùng
+    26 + 13            → chẵn cộng lẻ ra lẻ
+
+### Cổng bắt được — và hai chỗ cổng KHÔNG bắt được
+
+Cổng bắt: **sáu bài mới không câu ôn tập nào hỏi tới** (phép ④ của
+`on_tap_noi_bai`), **bốn gợi ý lộ đáp án**, **sáu bài thiếu lời chào**.
+
+Hai chỗ chỉ lộ khi **mở mắt xem bản chạy thật**:
+
+1. **Lời chào của B10 nói về dãy của bài khác.** B10 nay dạy dãy gấp đôi 1, 2, 4, 8,
+   mà lời chào vẫn mời bé đoán tiếp dãy 2, 3, 5, 8, 12 — dãy ấy nay là của B44.
+2. **Lời chào của B11 hỏi đúng câu của B47**, lại còn nhắc tên nhân vật.
+
+Cả hai đều qua được cổng `loi_chao.test.mjs` cũ, vì cổng ấy soi HÌNH DẠNG (có hay
+không, dài bao nhiêu, mấy câu) chứ không soi NỘI DUNG. Đã dựng
+`web/test/loi_chao_dung_bai.test.mjs`: mọi số và mọi dãy số nêu trong lời chào phải
+có mặt trong chính bài ấy, và lời chào bài video không được nhắc tên nhân vật. Đo
+trên cả 120 bài video của ba quyển thì 0 chỗ lệch — nên đòi 0. Đã phá thử bốn kiểu,
+kêu cả bốn.
+
+### Một câu ôn tập viết lại
+
+Câu 5 hỏi *"đoàn tàu 3, 6, 9, ..., 27 có mấy toa"* — đúng ý câu C8 luyện tập của bài
+NHẢY CÓC THỬ, mà câu 9 đã phủ bài ấy rồi; trong khi bài BẢNG NHÂN GIẤU GÌ không câu
+nào hỏi tới. Viết lại câu 5 thành *"số 37 có nằm trong bảng nhân 5 không"*. Nghề đếm
+toa vẫn còn nguyên ở phần luyện tập nên sách không mất gì.
+
+`KHAI_TAY_L2` nay nhận thêm trường `khoa` để khai đè ô nhập — vá vào
+`lop2_ontap_o.json` thì lần chạy `tach_ontap.py` sau sẽ dựng lại tệp ấy và xoá mất.
+
+### Còn lại của quyển
+
+Năm chương, **22 bài chữ**: siêu nhân tính nhanh (4) · chuyện toán lời văn (6) ·
+thám tử tí hon (4) · vương quốc hình học (5) · toán trong cuộc sống (3).

@@ -1,0 +1,315 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B43",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 19 · SỐ NÀY CÓ TRONG DÃY KHÔNG — NHẢY CÓC THỬ",
+ "durationMinutes": 10,
+ "so": 19,
+ "chuong": 3,
+ "tenChuong": "Dãy số kỳ diệu",
+ "dangGoc": "SỐ 5.1c — Dãy số cách đều: kiểm tra một số có thuộc dãy hay không.",
+ "skills": {
+  "bktUnit": "CHUONG:3@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 19,
+  "prev": "DL:KSN2.B42",
+  "next": "DL:KSN2.B10"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Kiểm tra được một số có nằm trong dãy đếm thêm hay không. Biết nhảy cóc thử cho tới khi vượt qua số cần hỏi. Nhận ra chỗ dãy nhảy vượt qua số ấy.",
+  "kidText": "Dãy 3, 6, 9 cứ cộng thêm 3 mãi. Con đoán xem nó có dừng ở số 20 không?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn thấy dãy 3, 6, 9 rồi bảo số 20 chắc chắn có, vì 20 to hơn 9 và dãy thì cứ tăng mãi.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Dãy tăng mãi thật, nhưng nó đặt chân xuống những số nào? Gợi ý 2: Nhảy thử tới gần 20 xem dãy dừng ở đâu. Chữa: dãy đi 15 rồi 18 rồi 21, nhảy qua mất 20 nên số 20 không có trong dãy."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn thấy dãy 3, 6, 9 rồi bảo số 20 chắc chắn có, vì 20 to hơn 9 và dãy thì cứ tăng mãi.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Dãy 3, 6, 9, 12, ... cứ thế cộng thêm 3. Số 20 có nằm trong dãy không?",
+  "steps": [
+   {
+    "show": "Nhảy cóc thử từ đầu dãy",
+    "phan": "giai"
+   },
+   {
+    "show": "Đi từng bước một: 3, 6, 9, 12, 15, 18, 21.",
+    "phan": "giai"
+   },
+   {
+    "show": "Xem chỗ dãy vượt qua",
+    "phan": "giai"
+   },
+   {
+    "show": "Dãy nhảy thẳng từ 18 sang 21, không đặt chân xuống 20. Vậy 20 không nằm trong dãy.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: không.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Chỉ cần nhảy tới khi vượt qua số cần hỏi là dừng lại, không phải nhảy mãi.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Dãy 2, 4, 6, 8, ... cộng thêm 2. Số 10 có trong dãy không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có trong dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Nhảy tiếp từ 8 thêm 2 được đúng 10, nên số ấy có trong dãy.",
+     "hints": [
+      "Con nhảy tiếp từ số cuối cùng đang thấy.",
+      "Bước nhảy cuối rơi trúng số cần hỏi, hay vượt qua nó?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Dãy 5, 10, 15, ... cộng thêm 5. Số 25 có trong dãy không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có trong dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Nhảy tiếp: 15, 20, 25 — đặt chân đúng vào 25, nên có trong dãy.",
+     "hints": [
+      "Con cứ nhảy tiếp từng bước cho tới khi tới gần số cần hỏi.",
+      "Dãy này nhảy quãng năm một."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Dãy 3, 6, 9, ... cộng thêm 3. Số 20 có trong dãy không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có trong dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Nhảy tới 18 rồi 21, vượt qua mất 20 nên không có trong dãy.",
+     "hints": [
+      "Con nhảy thử tới khi vượt qua số cần hỏi rồi hãy kết luận.",
+      "Xem dãy dừng ở số nào ngay trước và ngay sau số ấy."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Dãy 4, 8, 12, ... cộng thêm 4. Số 30 có trong dãy không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có trong dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Nhảy tới 28 rồi 32, vượt qua mất 30 nên không có trong dãy.",
+     "hints": [
+      "Con nhảy thử từng bước quãng bốn.",
+      "Xem dãy có đặt chân xuống số cần hỏi hay nhảy vượt qua."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Dãy 3, 6, 9, ... cộng thêm 3. Viết số của dãy đứng ngay trước số 20.",
+     "answerKey": {
+      "value": 18
+     },
+     "solutionNarrative": "Nhảy cóc: 15 rồi 18, mà $18 + 3 = 21$ đã vượt qua 20. Vậy số ấy là 18.",
+     "hints": [
+      "Con nhảy tới khi vượt qua rồi lùi lại một bước.",
+      "Số cần tìm là số cuối cùng của dãy mà vẫn chưa vượt."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Dãy 6, 12, 18, ... cộng thêm 6. Số 36 có trong dãy không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có trong dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Nhảy tiếp: 24, 30, 36 — đặt chân đúng vào 36, nên có trong dãy.",
+     "hints": [
+      "Con nhảy tiếp quãng sáu một từ số cuối đang thấy.",
+      "Bước nhảy cuối rơi trúng số cần hỏi, hay nhảy vượt qua?"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Dãy 7, 14, 21, ... cộng thêm 7. Số 50 có trong dãy không, và số nào của dãy gần 50 nhất mà vẫn bé hơn 50?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có trong dãy không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       },
+       {
+        "label": "số gần nhất mà vẫn bé hơn",
+        "value": 49
+       }
+      ]
+     },
+     "solutionNarrative": "Nhảy cóc: 28, 35, 42, 49, rồi 56 đã vượt. Số 50 không có trong dãy, còn số gần nhất mà vẫn bé hơn là 49.",
+     "hints": [
+      "Con nhảy quãng bảy một cho tới khi vượt qua số cần hỏi.",
+      "Số của dãy ngay trước lúc vượt chính là số phải viết."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Dãy 3, 6, 9, ... cộng thêm 3 và dừng lại ở 27. Dãy ấy có bao nhiêu số?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Nhảy cóc rồi đếm: 3, 6, 9, 12, 15, 18, 21, 24, 27 — đúng 9 số. Cũng chính là bảng nhân 3 đọc từ đầu tới hết.",
+     "hints": [
+      "Con nhảy cóc từ đầu tới cuối rồi đếm xem có mấy chặng.",
+      "Dãy này chính là bảng nhân ba, đọc từ đầu tới hết."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Muốn biết một số có trong dãy đếm thêm không, ta nhảy cóc thử tới khi vượt qua nó.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, và vượt qua rồi thì dừng."
+   },
+   {
+    "id": "Q2",
+    "text": "Số 20 có trong dãy 3, 6, 9, 12, ...",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Dãy nhảy thẳng từ 18 sang 21, bỏ qua 20."
+   },
+   {
+    "id": "Q3",
+    "text": "Số nào sau đây có trong dãy 5, 10, 15, ...?",
+    "format": "mcq",
+    "choices": [
+     "25",
+     "22",
+     "27",
+     "31"
+    ],
+    "answerKey": {
+     "choice": "25"
+    },
+    "solutionNarrative": "Nhảy tiếp từ 15 được 20 rồi 25."
+   },
+   {
+    "id": "Q4",
+    "text": "Nhảy cóc thử thì dừng lúc nào?",
+    "format": "mcq",
+    "choices": [
+     "khi đã vượt qua số cần hỏi",
+     "khi mỏi tay",
+     "khi tới số 100"
+    ],
+    "answerKey": {
+     "choice": "khi đã vượt qua số cần hỏi"
+    },
+    "solutionNarrative": "Vượt qua rồi thì biết chắc, nhảy thêm cũng vô ích."
+   },
+   {
+    "id": "Q5",
+    "text": "Dãy 4, 8, 12, ... có chứa số 30.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Dãy nhảy từ 28 sang 32, không đặt chân xuống 30."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Đi cầu thang bộ mà bước cách hai bậc, rồi hỏi con có đặt chân xuống bậc 7 không — cùng một nghề với bài này.",
+  "homeActivity": "Bố mẹ hỏi: \"Con dừng nhảy lúc nào?\" Trả lời \"khi đã vượt qua\" là hiểu bài.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B43_giang.mp4"
+ }
+}

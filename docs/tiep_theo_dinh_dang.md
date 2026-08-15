@@ -58,9 +58,14 @@ B55.M1  V.3.1  + V.3.2       B56.M3  V.3.2 + V.4.1
 ⑨ cổng      cd web && npm test && npm run build
 ```
 
-⚠ **⑤ và ⑥ sửa thẳng bản DỰNG** (`web/public/content`), mà bộ dựng ① thì ghi đè
-trọn tệp từ bản gốc. **Chạy ① sau ⑤⑥ là mất sạch định dạng — dữ liệu vẫn hợp lệ và
-KHÔNG CÓ GÌ BÁO.**
+⚠ **⑤, ⑥ VÀ ⑦ sửa thẳng bản DỰNG** (`web/public/content`), mà bộ dựng ① thì ghi
+đè trọn tệp từ bản gốc. **Chạy ① sau ⑤⑥⑦ là mất sạch định dạng, bài mẫu và gợi ý —
+dữ liệu vẫn hợp lệ và KHÔNG CÓ GÌ BÁO.**
+
+Bản đầu của cảnh báo này chỉ kể ⑤ và ⑥. Ngày 15-08 chạy lại ① mấy lượt để phá thử
+một cổng mới, rồi quên chạy lại ⑦ — cổng gợi ý tụt từ 2174/2174 xuống 1790/2174,
+tức là **cả 384 câu lớp 2 mất sạch gợi ý**. Cổng có bắt được, nhưng chỉ vì nó đòi
+đủ 100%; hồi còn để ngưỡng 90% thì con số ấy vẫn xanh.
 
 ③ và ④ KHÔNG dính bẫy ấy: lớp 5 không có bộ dựng khuôn chung, và cả hai đều ghi
 **cả bản gốc lẫn bản dựng**.

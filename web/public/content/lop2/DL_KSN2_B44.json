@@ -1,0 +1,287 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B44",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 21 · DÃY BẬC THANG — BƯỚC NHẢY DÀI THÊM MỘT",
+ "durationMinutes": 10,
+ "so": 21,
+ "chuong": 3,
+ "tenChuong": "Dãy số kỳ diệu",
+ "dangGoc": "SỐ 5.2b — Dãy không cách đều: dãy bậc thang.",
+ "skills": {
+  "bktUnit": "CHUONG:3@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 21,
+  "prev": "DL:KSN2.B10",
+  "next": "DL:KSN2.B45"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Viết được các bước nhảy của một dãy ra giấy. Nhận ra dãy bậc thang: bước nhảy mỗi lần dài thêm một. Viết tiếp được dãy bậc thang.",
+  "kidText": "Dãy 2, 3, 5, 8, 12 nhảy mỗi lần một xa hơn. Con tìm số tiếp theo nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn thấy dãy 2, 3, 5, 8 rồi bảo nhịp là 3 vì $8 - 5 = 3$, và điền tiếp 11.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Viết cả bốn bước nhảy ra xem chúng có bằng nhau không. Gợi ý 2: Nếu các bước là 1, 2, 3 thì bước sau phải dài bao nhiêu? Chữa: các bước dài thêm một mỗi lần, nên bước sau dài 4 và số tiếp theo là $8 + 4 = 12$."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn thấy dãy 2, 3, 5, 8 rồi bảo nhịp là 3 vì $8 - 5 = 3$, và điền tiếp 11.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tìm quy luật rồi viết số tiếp theo của dãy 2, 3, 5, 8, 12, ...",
+  "steps": [
+   {
+    "show": "Viết các bước nhảy ra",
+    "phan": "giai"
+   },
+   {
+    "show": "Các bước là $3 - 2 = 1$, rồi $5 - 3 = 2$, rồi $8 - 5 = 3$, rồi $12 - 8 = 4$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Nhìn chính các bước nhảy",
+    "phan": "giai"
+   },
+   {
+    "show": "Các bước xếp thành 1, 2, 3, 4 — mỗi lần dài thêm một. Vậy bước tiếp theo dài 5.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đi thêm một bước nữa",
+    "phan": "giai"
+   },
+   {
+    "show": "Số tiếp theo là $12 + 5 = 17$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 17.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Dãy cách đều thì các bước bằng nhau; dãy bậc thang thì chính các bước mới xếp thành dãy đều.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Dãy 1, 2, 4, 7 — bước nhảy từ số 1 sang số 2 dài bao nhiêu?",
+     "answerKey": {
+      "value": 1
+     },
+     "solutionNarrative": "Lấy $2 - 1 = 1$.",
+     "hints": [
+      "Bước nhảy là khoảng cách giữa hai số ấy.",
+      "Con lấy số sau trừ số trước."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Dãy 1, 2, 4, 7 — bước nhảy từ số 4 sang số 7 dài bao nhiêu?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Lấy $7 - 4 = 3$.",
+     "hints": [
+      "Con lấy số sau trừ số trước ở đúng cặp được hỏi.",
+      "Hai số ấy đứng ở cuối dãy."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Dãy 1, 2, 4, 7, ... — số tiếp theo là số nào?",
+     "answerKey": {
+      "value": 11
+     },
+     "solutionNarrative": "Các bước là 1, 2, 3 nên bước sau dài 4: $7 + 4 = 11$.",
+     "hints": [
+      "Con viết ba bước nhảy đang có ra giấy xem chúng thế nào.",
+      "Chúng dài dần lên, nên bước sau còn dài hơn bước cuối một đơn vị."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Dãy 2, 3, 5, 8, ... — số tiếp theo là số nào?",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Các bước là 1, 2, 3 nên bước sau dài 4: $8 + 4 = 12$.",
+     "hints": [
+      "Con viết các bước nhảy của dãy ra trước đã.",
+      "Bước sau dài hơn bước trước đúng một đơn vị."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Dãy 1, 2, 4, 7, 11, ... — số tiếp theo là số nào?",
+     "answerKey": {
+      "value": 16
+     },
+     "solutionNarrative": "Bước sau dài 5, nên $11 + 5 = 16$.",
+     "hints": [
+      "Dãy này đã đi được bốn bước rồi.",
+      "Bước thứ năm dài hơn bước thứ tư một đơn vị."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Dãy bậc thang 3, 4, 6, 9 — viết ba bước nhảy của dãy.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bước thứ nhất",
+        "value": 1
+       },
+       {
+        "label": "bước thứ hai",
+        "value": 2
+       },
+       {
+        "label": "bước thứ ba",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Lấy $4 - 3 = 1$, rồi $6 - 4 = 2$, rồi $9 - 6 = 3$.",
+     "hints": [
+      "Mỗi bước là hiệu của hai số đứng cạnh nhau.",
+      "Con làm lần lượt từ trái sang phải, được ba con số."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Dãy 5, 6, 8, 11, 15, ... — viết hai số tiếp theo.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số thứ nhất",
+        "value": 20
+       },
+       {
+        "label": "số thứ hai",
+        "value": 26
+       }
+      ]
+     },
+     "solutionNarrative": "Các bước là 1, 2, 3, 4. Bước tiếp dài 5: $15 + 5 = 20$. Bước sau nữa dài 6: $20 + 6 = 26$.",
+     "hints": [
+      "Con viết các bước nhảy đang có ra trước.",
+      "Rồi đi thêm hai bước, mỗi bước lại dài hơn bước trước một đơn vị."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Một dãy bậc thang bắt đầu từ số 1 và bước đầu tiên dài 1. Số thứ năm của dãy là số nào?",
+     "answerKey": {
+      "value": 11
+     },
+     "solutionNarrative": "Các bước là 1, 2, 3, 4: $1 + 1 = 2$, rồi $2 + 2 = 4$, rồi $4 + 3 = 7$, rồi $7 + 4 = 11$.",
+     "hints": [
+      "Bước đầu dài một, bước sau dài hơn bước trước một đơn vị.",
+      "Từ số đầu tới số thứ năm con phải đi bốn bước."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Dãy bậc thang là dãy mà bước nhảy mỗi lần dài thêm một.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — chính các bước mới là dãy đều."
+   },
+   {
+    "id": "Q2",
+    "text": "Dãy 1, 2, 4, 7, ... — số tiếp theo là số nào?",
+    "format": "mcq",
+    "choices": [
+     "11",
+     "10",
+     "14",
+     "8"
+    ],
+    "answerKey": {
+     "choice": "11"
+    },
+    "solutionNarrative": "Bước sau dài 4 nên $7 + 4 = 11$."
+   },
+   {
+    "id": "Q3",
+    "text": "Dãy 2, 3, 5, 8 là dãy cách đều.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Các bước là 1, 2 rồi 3 — dài dần chứ không bằng nhau."
+   },
+   {
+    "id": "Q4",
+    "text": "Muốn nhận ra dãy bậc thang thì làm gì?",
+    "format": "mcq",
+    "choices": [
+     "viết các bước nhảy ra rồi nhìn chính chúng",
+     "cộng cả dãy lại",
+     "chỉ nhìn số cuối cùng"
+    ],
+    "answerKey": {
+     "choice": "viết các bước nhảy ra rồi nhìn chính chúng"
+    },
+    "solutionNarrative": "Quy luật nằm ở các bước chứ không nằm ở các số."
+   },
+   {
+    "id": "Q5",
+    "text": "Dãy 1, 2, 4, 7, 11 có các bước nhảy là 1, 2, 3, 4.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — mỗi bước dài thêm một."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Xếp que tính thành tam giác từng tầng: tầng 1 một que, tầng 2 hai que — số que cộng dồn chính là một dãy bậc thang.",
+  "homeActivity": "Bố mẹ hỏi: \"Con viết các bước nhảy ra chưa?\" Chưa viết là chưa làm được bài.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B44_giang.mp4"
+ }
+}

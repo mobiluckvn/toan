@@ -1,0 +1,340 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B47",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 25 · CỘNG CHẴN LẺ — CHƯA TÍNH ĐÃ BIẾT TỔNG",
+ "durationMinutes": 10,
+ "so": 25,
+ "chuong": 3,
+ "tenChuong": "Dãy số kỳ diệu",
+ "dangGoc": "SỐ 6.4b — Tính nết chẵn lẻ của tổng, không cần tính kết quả.",
+ "skills": {
+  "bktUnit": "CHUONG:3@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 25,
+  "prev": "DL:KSN2.B46",
+  "next": "DL:KSN2.B12"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhớ ba luật: chẵn cộng chẵn ra chẵn, lẻ cộng lẻ ra chẵn, chẵn cộng lẻ ra lẻ. Đoán được tổng chẵn hay lẻ mà chưa cần tính. Biết thử lại bằng cách tính ra rồi soi đuôi.",
+  "kidText": "Chưa tính 26 cộng 13 mà cô đã biết tổng là số lẻ. Con đoán cô nhìn vào đâu nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn bảo lẻ cộng lẻ thì ra lẻ, vì hai số lẻ cộng lại thì vẫn lẻ chứ sao.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Lấy 3 viên kẹo và 5 viên kẹo xếp ra bàn xem được bao nhiêu viên. Gợi ý 2: Mỗi bên thừa một viên lẻ loi. Hai viên lẻ loi ấy gặp nhau thì thành mấy? Chữa: hai viên lẻ loi bắt cặp với nhau thành một cặp đủ, nên lẻ cộng lẻ ra chẵn: $3 + 5 = 8$."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn bảo lẻ cộng lẻ thì ra lẻ, vì hai số lẻ cộng lại thì vẫn lẻ chứ sao.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Không tính kết quả, cho biết tổng $26 + 13$ là số chẵn hay số lẻ.",
+  "steps": [
+   {
+    "show": "Soi tính nết từng số hạng",
+    "phan": "giai"
+   },
+   {
+    "show": "Số 26 tận cùng là 6 nên chẵn. Số 13 tận cùng là 3 nên lẻ.",
+    "phan": "giai"
+   },
+   {
+    "show": "Nhớ ba luật cộng",
+    "phan": "giai"
+   },
+   {
+    "show": "Chẵn cộng chẵn ra chẵn. Lẻ cộng lẻ cũng ra chẵn, vì hai cái lẻ bắt cặp được với nhau. Chẵn cộng lẻ thì ra lẻ.",
+    "phan": "giai"
+   },
+   {
+    "show": "Áp luật vào bài",
+    "phan": "giai"
+   },
+   {
+    "show": "Đây là chẵn cộng lẻ, nên tổng là số lẻ.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: số lẻ.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Thử lại cho chắc: $26 + 13 = 39$, tận cùng là 9 — đúng là số lẻ.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tổng $4 + 6$ là số chẵn hay số lẻ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "chẵn"
+       }
+      ]
+     },
+     "solutionNarrative": "Cả hai đều chẵn, mà chẵn cộng chẵn ra chẵn.",
+     "hints": [
+      "Con soi đuôi của từng số hạng trước.",
+      "Hai số cùng chia đôi được đều thì tổng thế nào?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tổng $3 + 5$ là số chẵn hay số lẻ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "chẵn"
+       }
+      ]
+     },
+     "solutionNarrative": "Cả hai đều lẻ, mà lẻ cộng lẻ ra chẵn vì hai cái lẻ bắt cặp với nhau.",
+     "hints": [
+      "Mỗi số hạng đều thừa ra một khi chia đôi.",
+      "Hai cái thừa ấy gặp nhau thì thành một cặp đủ."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Tổng $4 + 5$ là số chẵn hay số lẻ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "lẻ"
+       }
+      ]
+     },
+     "solutionNarrative": "Một số chẵn cộng một số lẻ thì ra số lẻ.",
+     "hints": [
+      "Một số chia đôi được đều, số kia thừa một.",
+      "Cái thừa ấy không có bạn để bắt cặp."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Không tính kết quả, cho biết tổng $26 + 13$ là số chẵn hay số lẻ.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "lẻ"
+       }
+      ]
+     },
+     "solutionNarrative": "Số 26 chẵn, số 13 lẻ. Chẵn cộng lẻ ra lẻ.",
+     "hints": [
+      "Con soi đuôi hai số hạng trước đã.",
+      "Rồi tra vào ba luật cộng đã học, đừng tính ra kết quả."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Không tính kết quả, cho biết tổng $17 + 25$ là số chẵn hay số lẻ.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "chẵn"
+       }
+      ]
+     },
+     "solutionNarrative": "Cả 17 và 25 đều lẻ. Lẻ cộng lẻ ra chẵn.",
+     "hints": [
+      "Con soi đuôi cả hai số, chúng cùng một nhóm đấy.",
+      "Hai cái thừa gặp nhau thì bắt cặp với nhau."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Tính $26 + 13$, rồi viết chữ số tận cùng của tổng.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng",
+        "value": 39
+       },
+       {
+        "label": "chữ số tận cùng",
+        "value": 9
+       }
+      ]
+     },
+     "solutionNarrative": "Lấy $26 + 13 = 39$, chữ số tận cùng của tổng là 9.",
+     "hints": [
+      "Câu này thì tính thật chứ không đoán.",
+      "Có tổng rồi thì nhìn chữ số cuối cùng của nó."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Tổng của ba số lẻ là số chẵn hay số lẻ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "lẻ"
+       }
+      ]
+     },
+     "solutionNarrative": "Hai số lẻ đầu bắt cặp thành chẵn, rồi cộng thêm số lẻ thứ ba nên tổng là số lẻ.",
+     "hints": [
+      "Con gộp hai số đầu trước xem tổng của chúng thuộc nhóm nào.",
+      "Rồi cộng thêm số thứ ba vào kết quả ấy."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Không tính kết quả, cho biết tổng $12 + 34 + 57$ là số chẵn hay số lẻ, và trong ba số ấy có mấy số lẻ.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tổng chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "lẻ"
+       },
+       {
+        "label": "có mấy số lẻ",
+        "value": 1
+       }
+      ]
+     },
+     "solutionNarrative": "Số 12 và 34 đều chẵn, chỉ 57 là lẻ nên có đúng 1 số lẻ. Chẵn cộng chẵn ra chẵn, rồi cộng thêm một số lẻ nên tổng là số lẻ.",
+     "hints": [
+      "Con soi đuôi cả ba số rồi đếm xem mấy số thừa một khi chia đôi.",
+      "Gộp dần từng số một, đừng gộp cả ba cùng lúc."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Lẻ cộng lẻ ra số chẵn.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — hai cái lẻ bắt cặp được với nhau."
+   },
+   {
+    "id": "Q2",
+    "text": "Chẵn cộng lẻ ra số chẵn.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Chẵn cộng lẻ thì ra số lẻ."
+   },
+   {
+    "id": "Q3",
+    "text": "Tổng $26 + 13$ là số nào?",
+    "format": "mcq",
+    "choices": [
+     "số lẻ",
+     "số chẵn",
+     "vừa chẵn vừa lẻ"
+    ],
+    "answerKey": {
+     "choice": "số lẻ"
+    },
+    "solutionNarrative": "Số 26 chẵn cộng số 13 lẻ thì ra lẻ."
+   },
+   {
+    "id": "Q4",
+    "text": "Tổng $17 + 25$ là số nào?",
+    "format": "mcq",
+    "choices": [
+     "số chẵn",
+     "số lẻ",
+     "không đoán được"
+    ],
+    "answerKey": {
+     "choice": "số chẵn"
+    },
+    "solutionNarrative": "Cả hai đều lẻ, mà lẻ cộng lẻ ra chẵn."
+   },
+   {
+    "id": "Q5",
+    "text": "Muốn biết tổng chẵn hay lẻ thì bắt buộc phải tính ra kết quả.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Chỉ cần nhìn tính nết của từng số hạng."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chia kẹo là cách nhìn ra luật này nhanh nhất — số lẻ luôn thừa đúng một viên lẻ loi, và hai viên lẻ loi gặp nhau thì bắt cặp.",
+  "homeActivity": "Bố mẹ hỏi trước khi con bấm máy tính: \"Con đoán tổng chẵn hay lẻ?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B47_giang.mp4"
+ }
+}

@@ -1,0 +1,327 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B45",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 22 · QUY LUẬT PHẢI ĐÚNG VỚI MỌI SỐ — MỘT SỐ ĐỔI LÀ ĐỔI CẢ DÃY",
+ "durationMinutes": 10,
+ "so": 22,
+ "chuong": 3,
+ "tenChuong": "Dãy số kỳ diệu",
+ "dangGoc": "SỐ 5.2c — Dãy không cách đều: kiểm quy luật với tất cả các số đã cho.",
+ "skills": {
+  "bktUnit": "CHUONG:3@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 22,
+  "prev": "DL:KSN2.B44",
+  "next": "DL:KSN2.B11"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Hiểu rằng quy luật phải đúng với tất cả các số đã cho. Phân biệt được dãy gấp đôi và dãy bậc thang khi mấy số đầu giống nhau. Biết kiểm lại quy luật từ đầu dãy chứ không chỉ hai số cuối.",
+  "kidText": "Hai dãy 1, 2, 4, 8 và 1, 2, 4, 7 mở đầu giống hệt nhau. Con thử xem chúng đi tiếp có giống nhau không nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nhìn dãy 3, 6, 12, 24, 48 rồi bảo đây là dãy cách đều nhịp 3, vì $6 - 3 = 3$.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Bạn ấy mới thử đúng cặp đầu. Cặp sau thì sao, $12 - 6$ bằng mấy? Gợi ý 2: Một quy luật phải đúng với mọi cặp, không phải chỉ một cặp. Chữa: cặp sau đã lệch vì $12 - 6 = 6$ chứ không phải 3. Đây là dãy gấp đôi."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nhìn dãy 3, 6, 12, 24, 48 rồi bảo đây là dãy cách đều nhịp 3, vì $6 - 3 = 3$.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Hai dãy 1, 2, 4, 8, ... và 1, 2, 4, 7, ... chỉ khác nhau một con số. Mỗi dãy đi tiếp thế nào?",
+  "steps": [
+   {
+    "show": "Ba số đầu giống hệt nhau",
+    "phan": "giai"
+   },
+   {
+    "show": "Cả hai dãy đều mở đầu bằng 1, 2, 4. Nhìn ba số ấy thôi thì chưa quyết được gì cả.",
+    "phan": "giai"
+   },
+   {
+    "show": "Số thứ tư mới lộ ra quy luật",
+    "phan": "giai"
+   },
+   {
+    "show": "Dãy thứ nhất có $4 + 4 = 8$ nên là dãy gấp đôi. Dãy thứ hai có các bước 1, 2, 3 nên là dãy bậc thang.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đi tiếp theo đúng quy luật của từng dãy",
+    "phan": "giai"
+   },
+   {
+    "show": "Dãy gấp đôi: $8 + 8 = 16$. Dãy bậc thang: bước sau dài 4, nên $7 + 4 = 11$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 16 và 11.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Một quy luật chỉ được nhận khi nó đúng với TẤT CẢ các số đã cho, chứ không phải chỉ hai số cuối.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Ba số đầu của hai dãy 1, 2, 4, 8 và 1, 2, 4, 7 có giống nhau không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ba số đầu có giống nhau",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Cả hai dãy đều mở đầu bằng 1, 2, 4 nên ba số đầu giống hệt.",
+     "hints": [
+      "Con đọc ba số đầu của từng dãy rồi đặt cạnh nhau.",
+      "Đặt hai bộ ba số cạnh nhau rồi so từng chữ số một."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Dãy 1, 2, 4, 8, ... — số tiếp theo là số nào?",
+     "answerKey": {
+      "value": 16
+     },
+     "solutionNarrative": "Đây là dãy gấp đôi, nên $8 + 8 = 16$.",
+     "hints": [
+      "Con xem mỗi số có bằng số trước cộng chính nó không.",
+      "Nếu đúng thì làm y như vậy với số cuối."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Dãy 1, 2, 4, 7, ... — số tiếp theo là số nào?",
+     "answerKey": {
+      "value": 11
+     },
+     "solutionNarrative": "Đây là dãy bậc thang, bước sau dài 4 nên $7 + 4 = 11$.",
+     "hints": [
+      "Con viết các bước nhảy của dãy này ra.",
+      "Chúng dài dần lên, nên bước sau dài hơn bước cuối một đơn vị."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Dãy 2, 4, 8, 16 là dãy gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "loại dãy",
+        "options": [
+         "dãy gấp đôi",
+         "dãy cách đều",
+         "dãy bậc thang"
+        ],
+        "value": "dãy gấp đôi"
+       }
+      ]
+     },
+     "solutionNarrative": "Mỗi số bằng số trước cộng chính nó nên đây là dãy gấp đôi.",
+     "hints": [
+      "Con thử xem mỗi số có bằng số trước cộng chính nó không.",
+      "Nếu có thì dãy thuộc loại nhân đôi mỗi bước."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Dãy 2, 4, 6, 8 là dãy gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "loại dãy",
+        "options": [
+         "dãy gấp đôi",
+         "dãy cách đều",
+         "dãy bậc thang"
+        ],
+        "value": "dãy cách đều"
+       }
+      ]
+     },
+     "solutionNarrative": "Mọi khoảng đều bằng 2 nên đây là dãy cách đều.",
+     "hints": [
+      "Con viết các khoảng của dãy ra xem chúng có bằng nhau không.",
+      "Bằng nhau hết thì dãy thuộc loại có nhịp đều."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Dãy 2, 4, 7, 11 là dãy gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "loại dãy",
+        "options": [
+         "dãy gấp đôi",
+         "dãy cách đều",
+         "dãy bậc thang"
+        ],
+        "value": "dãy bậc thang"
+       }
+      ]
+     },
+     "solutionNarrative": "Các bước là 2, 3, 4 — dài thêm một mỗi lần, nên đây là dãy bậc thang.",
+     "hints": [
+      "Con viết các bước nhảy ra rồi nhìn chính chúng.",
+      "Nếu chúng dài dần lên từng một đơn vị thì là loại thứ ba."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Dãy mở đầu 1, 2, 4. Nếu là dãy gấp đôi thì số thứ tư là mấy, còn nếu là dãy bậc thang thì số thứ tư là mấy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "nếu là dãy gấp đôi",
+        "value": 8
+       },
+       {
+        "label": "nếu là dãy bậc thang",
+        "value": 7
+       }
+      ]
+     },
+     "solutionNarrative": "Gấp đôi thì $4 + 4 = 8$. Bậc thang thì bước sau dài 3, nên $4 + 3 = 7$.",
+     "hints": [
+      "Con làm hai lần, mỗi lần theo một quy luật khác nhau.",
+      "Lần đầu cộng số cuối với chính nó; lần sau đi thêm một bước dài hơn."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Có bạn bảo dãy 3, 6, 12, 24, 48 là dãy cách đều nhịp 3. Cho biết bạn ấy sai ở đâu, rồi viết số tiếp theo của dãy.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bạn ấy sai ở đâu",
+        "options": [
+         "chỉ thử một cặp, các cặp sau đã lệch",
+         "bạn ấy không sai gì cả"
+        ],
+        "value": "chỉ thử một cặp, các cặp sau đã lệch"
+       },
+       {
+        "label": "số tiếp theo",
+        "value": 96
+       }
+      ]
+     },
+     "solutionNarrative": "Cặp sau đã lệch: $12 - 6 = 6$ chứ không phải 3. Đây là dãy gấp đôi nên số tiếp theo là $48 + 48 = 96$.",
+     "hints": [
+      "Con thử lại nhịp ở CẶP THỨ HAI xem có còn đúng không.",
+      "Chỗ sai lộ ra rồi thì dãy này thuộc loại cộng chính nó."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Một quy luật phải đúng với tất cả các số đã cho, không phải chỉ hai số cuối.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đây là bài học chính của bài này."
+   },
+   {
+    "id": "Q2",
+    "text": "Dãy 1, 2, 4, 8, ... — số tiếp theo là số nào?",
+    "format": "mcq",
+    "choices": [
+     "16",
+     "11",
+     "12",
+     "10"
+    ],
+    "answerKey": {
+     "choice": "16"
+    },
+    "solutionNarrative": "Dãy gấp đôi: $8 + 8 = 16$."
+   },
+   {
+    "id": "Q3",
+    "text": "Dãy 1, 2, 4, 7, ... — số tiếp theo là số nào?",
+    "format": "mcq",
+    "choices": [
+     "11",
+     "14",
+     "8",
+     "12"
+    ],
+    "answerKey": {
+     "choice": "11"
+    },
+    "solutionNarrative": "Dãy bậc thang: $7 + 4 = 11$."
+   },
+   {
+    "id": "Q4",
+    "text": "Nhìn ba số 1, 2, 4 là đủ biết dãy chạy quy luật nào.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Ba số ấy hợp với cả dãy gấp đôi lẫn dãy bậc thang."
+   },
+   {
+    "id": "Q5",
+    "text": "Dãy 3, 6, 12, 24 là dãy cách đều.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Các khoảng là 3, 6 rồi 12 — không bằng nhau."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con hai dãy chỉ khác nhau một số rồi hỏi chúng có cùng quy luật không — câu hỏi này khó hơn vẻ ngoài của nó rất nhiều.",
+  "homeActivity": "Bố mẹ hỏi: \"Quy luật con vừa nói có đúng với số đầu tiên không?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B45_giang.mp4"
+ }
+}

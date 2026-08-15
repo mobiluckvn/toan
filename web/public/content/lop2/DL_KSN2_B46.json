@@ -1,0 +1,325 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B46",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 24 · BẢNG NHÂN GIẤU GÌ — BẢNG 2 TOÀN CHẴN, BẢNG 5 ĐUÔI 0 HOẶC 5",
+ "durationMinutes": 10,
+ "so": 24,
+ "chuong": 3,
+ "tenChuong": "Dãy số kỳ diệu",
+ "dangGoc": "SỐ 6.4a — Chữ số tận cùng của bảng nhân 2 và bảng nhân 5.",
+ "skills": {
+  "bktUnit": "CHUONG:3@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 24,
+  "prev": "DL:KSN2.B11",
+  "next": "DL:KSN2.B47"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Đọc được bảng nhân 2 và bảng nhân 5. Nhận ra bảng nhân 2 toàn số chẵn. Nhận ra bảng nhân 5 chỉ tận cùng bằng 0 hoặc 5.",
+  "kidText": "Bảng nhân 2 và bảng nhân 5 đang giấu một bí mật ở cái đuôi. Con soi thử xem!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn bảo số 37 nằm trong bảng nhân 5, vì 37 to hơn 35 mà lại bé hơn 40.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Bảng nhân 5 có những cái đuôi nào? Gợi ý 2: Đuôi của 37 là mấy? Nó có nằm trong hai cái đuôi ấy không? Chữa: bảng nhân 5 chỉ có đuôi 0 hoặc 5, mà 37 đuôi 7 nên không thuộc bảng. Nằm giữa hai số của bảng không có nghĩa là thuộc bảng."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn bảo số 37 nằm trong bảng nhân 5, vì 37 to hơn 35 mà lại bé hơn 40.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Đọc bảng nhân 2 và bảng nhân 5 rồi cho biết mỗi bảng giấu bí mật gì về cái đuôi.",
+  "steps": [
+   {
+    "show": "Đọc bảng nhân 2 rồi soi đuôi",
+    "phan": "giai"
+   },
+   {
+    "show": "Bảng chạy 2, 4, 6, 8, 10, 12, 14, 16, 18, 20. Cái đuôi chỉ có 2, 4, 6, 8 và 0 — toàn số chẵn.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đọc bảng nhân 5 rồi soi đuôi",
+    "phan": "giai"
+   },
+   {
+    "show": "Bảng chạy 5, 10, 15, 20, 25, 30, 35, 40, 45, 50. Cái đuôi chỉ có 5 và 0, thay nhau lần lượt.",
+    "phan": "giai"
+   },
+   {
+    "show": "Vì sao bảng nhân 2 toàn số chẵn",
+    "phan": "giai"
+   },
+   {
+    "show": "Vì mỗi số của bảng là hai phần bằng nhau ghép lại, nên chia đôi lúc nào cũng đều tăm tắp.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: bảng nhân 2 toàn số chẵn, bảng nhân 5 tận cùng bằng 0 hoặc 5.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Nhờ hai bí mật này, nhìn cái đuôi là loại ngay được nhiều số không thuộc bảng.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Đọc bảng nhân 2 rồi viết số thứ ba của bảng.",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "Bảng nhân 2 chạy 2, 4, 6 nên số thứ ba là 6.",
+     "hints": [
+      "Con đọc bảng nhân hai từ đầu.",
+      "Đếm tới chặng thứ ba thì dừng."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Các số trong bảng nhân 2 là số chẵn hay số lẻ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "chẵn"
+       }
+      ]
+     },
+     "solutionNarrative": "Cả bảng đều chia đôi được đều nên toàn số chẵn.",
+     "hints": [
+      "Con đọc cả bảng rồi soi đuôi từng số.",
+      "Có số nào chia đôi mà thừa ra không?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Đọc bảng nhân 5 rồi viết số thứ tư của bảng.",
+     "answerKey": {
+      "value": 20
+     },
+     "solutionNarrative": "Bảng nhân 5 chạy 5, 10, 15, 20 nên số thứ tư là 20.",
+     "hints": [
+      "Con đọc bảng nhân năm từ đầu.",
+      "Đếm tới chặng thứ tư thì dừng."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Các số trong bảng nhân 5 tận cùng bằng những chữ số nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số thứ nhất",
+        "value": 0
+       },
+       {
+        "label": "chữ số thứ hai",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Bảng chạy 5, 10, 15, 20 — cái đuôi chỉ có 0 và 5 thay nhau.",
+     "hints": [
+      "Con đọc bảng nhân năm rồi ghi riêng chữ số cuối của từng số.",
+      "Chỉ có hai chữ số thay nhau đi thay nhau lại."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Số 37 có nằm trong bảng nhân 5 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có trong bảng không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Đuôi của 37 là 7, mà bảng nhân 5 chỉ có đuôi 0 hoặc 5 nên không thuộc.",
+     "hints": [
+      "Con nhớ bảng nhân năm chỉ có hai cái đuôi.",
+      "So đuôi của số đang hỏi với hai cái đuôi ấy xem thế nào."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Số 25 có nằm trong bảng nhân 2 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có trong bảng không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Đuôi của 25 là 5 nên đây là số lẻ, mà bảng nhân 2 toàn số chẵn.",
+     "hints": [
+      "Con soi đuôi của số đang hỏi trước.",
+      "Bảng nhân hai chỉ nhận số chia đôi được đều."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Trong bốn số 15, 20, 27 và 33, số nào vừa có trong bảng nhân 2 vừa có trong bảng nhân 5?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số cần tìm",
+        "options": [
+         "15",
+         "20",
+         "27",
+         "33"
+        ],
+        "value": "20"
+       }
+      ]
+     },
+     "solutionNarrative": "Phải vừa là số chẵn vừa có đuôi 0 hoặc 5 — chỉ số 20 đủ cả hai điều ấy.",
+     "hints": [
+      "Số cần tìm phải thỏa cả hai điều một lúc.",
+      "Con loại dần: bỏ số lẻ trước, rồi soi đuôi của mấy số còn lại."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Viết ba số của bảng nhân 5 mà cũng là số chẵn.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số thứ nhất",
+        "value": 10
+       },
+       {
+        "label": "số thứ hai",
+        "value": 20
+       },
+       {
+        "label": "số thứ ba",
+        "value": 30
+       }
+      ]
+     },
+     "solutionNarrative": "Bảng nhân 5 chạy 5, 10, 15, 20, 25, 30 — trong đó 10, 20 và 30 tận cùng 0 nên chẵn.",
+     "hints": [
+      "Con đọc bảng nhân năm rồi nhặt ra những số chia đôi được đều.",
+      "Chúng đều có cùng một chữ số ở cuối."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Mọi số trong bảng nhân 2 đều là số chẵn.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — mỗi số là hai phần bằng nhau ghép lại."
+   },
+   {
+    "id": "Q2",
+    "text": "Bảng nhân 5 có số tận cùng bằng 3.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Bảng nhân 5 chỉ có đuôi 0 hoặc 5."
+   },
+   {
+    "id": "Q3",
+    "text": "Số nào sau đây chắc chắn KHÔNG có trong bảng nhân 5?",
+    "format": "mcq",
+    "choices": [
+     "32",
+     "35",
+     "40",
+     "25"
+    ],
+    "answerKey": {
+     "choice": "32"
+    },
+    "solutionNarrative": "Đuôi 2 không phải 0 cũng không phải 5."
+   },
+   {
+    "id": "Q4",
+    "text": "Bảng nhân 2 giấu bí mật gì?",
+    "format": "mcq",
+    "choices": [
+     "các số đều chẵn",
+     "các số đều lẻ",
+     "các số đều tận cùng bằng 5"
+    ],
+    "answerKey": {
+     "choice": "các số đều chẵn"
+    },
+    "solutionNarrative": "Vì mỗi số là hai phần bằng nhau ghép lại."
+   },
+   {
+    "id": "Q5",
+    "text": "Nhìn cái đuôi là loại ngay được nhiều số không thuộc bảng.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đỡ phải đọc lại cả bảng."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Đọc thuộc bảng nhân là một việc, NHÌN RA quy luật trong bảng là việc khác — bài này làm việc thứ hai.",
+  "homeActivity": "Bố mẹ đọc một số bất kỳ rồi hỏi: \"Số này chắc chắn không nằm trong bảng nào?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B46_giang.mp4"
+ }
+}

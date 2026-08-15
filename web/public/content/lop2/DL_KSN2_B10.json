@@ -3,55 +3,38 @@
  "id": "DL:KSN2.B10",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 18 · GIẢI MÃ QUY LUẬT BÍ ẨN",
+ "title": "Bài 20 · DÃY GẤP ĐÔI — MỖI SỐ BẰNG SỐ TRƯỚC CỘNG CHÍNH NÓ",
  "durationMinutes": 10,
- "so": 18,
+ "so": 20,
  "chuong": 3,
  "tenChuong": "Dãy số kỳ diệu",
- "dangGoc": "SỐ 5.2 — Dãy không cách đều (dãy gấp đôi, dãy bậc thang, dãy Fibonacci)",
+ "dangGoc": "SỐ 5.2a — Dãy không cách đều: dãy gấp đôi.",
  "skills": {
   "bktUnit": "CHUONG:3@G2",
   "primary": []
  },
  "series": {
-  "order": 18,
-  "prev": "DL:KSN2.B09",
-  "next": "DL:KSN2.B11"
+  "order": 20,
+  "prev": "DL:KSN2.B43",
+  "next": "DL:KSN2.B44"
  },
  "objective": {
   "id": "O1",
-  "text": "Phát hiện dãy GẤP ĐÔI: mỗi số bằng số trước cộng chính nó. Phát hiện dãy BẬC THANG: các bước nhảy dài thêm 1 (hiệu là +1, +2, +3...). Nói được quy luật bằng lời của con và kiểm tra quy luật với TẤT CẢ các số của dãy.",
-  "kidText": "Dãy 2, 3, 5, 8, 12 giấu một quy luật. Con thử tìm ra rồi viết số tiếp theo nhé!",
+  "text": "Nhận ra một dãy không cách đều. Nhận ra dãy gấp đôi: mỗi số bằng số trước cộng chính nó. Viết tiếp được dãy gấp đôi.",
+  "kidText": "Dãy 1, 2, 4, 8 lớn nhanh lắm. Con đoán số tiếp theo là số nào nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Gặp dãy lạ, việc đầu tiên là thử chìa khóa số 1: tìm nhịp (như Bài 9). Với dãy 1, 2, 4, 8: hiệu là 1, 2, 4 — không đều! Vậy đây không phải đoàn tàu đếm thêm, phải đổi chìa khóa."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Chìa khóa số 2. DÃY GẤP ĐÔI: để ý $1 + 1 = 2$. $2 + 2 = 4$. $4 + 4 = 8$. Mỗi số bằng số trước cộng chính nó! Số tiếp theo: $8 + 8 = 16$."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Còn dãy 1, 2, 4, 7, 11 thì sao? Viết các bước nhảy ra: +1, +2, +3, +4 — mỗi bước dài thêm 1! Đó là chìa khóa số 3 — DÃY BẬC THANG:"
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. Quan trọng nhất: quy luật phải đúng với TẤT CẢ các số đã cho, không phải chỉ hai số cuối. Vì thế 1, 2, 4, 8 là dãy gấp đôi, còn 1, 2, 4, 7 là dãy bậc thang. Chỉ khác nhau đúng một con số mà thành hai câu đố khác nhau!"
-   }
-  ],
-  "mantra": "Gặp dãy lạ, hãy VIẾT CÁC BƯỚC NHẢY RA GIẤY: bước đều → tàu đếm thêm. Bước dài thêm 1 → bậc thang. Số sau bằng số trước cộng chính nó → gấp đôi. Và luôn kiểm tra với mọi số của dãy!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Với dãy 1, 2, 4, 8, ... Su Kem điền: \"Số tiếp theo là 12! Vì $8 - 4 = 4$, nên cứ cộng 4 là xong.\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Su Kem mới nhìn HAI số cuối. Con thử quy luật \"cộng 4\" với các số đầu dãy xem: $1 + 4$ có bằng 2 không? Gợi ý 2: Quy luật thật của dãy là gì? Số tiếp theo đúng phải là bao nhiêu?"
+    "wrong": "Có bạn thấy dãy 1, 2, 4, 8 rồi bảo nhịp là 4 vì $8 - 4 = 4$, và điền tiếp 12.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Bạn ấy mới thử đúng một cặp cuối. Thử cặp đầu xem, $2 - 1$ bằng mấy? Gợi ý 2: Các khoảng có bằng nhau không? Nếu không thì đây đâu phải dãy cách đều. Chữa: các khoảng là 1, 2 rồi 4 nên dãy không cách đều. Đây là dãy gấp đôi, số tiếp theo là $8 + 8 = 16$."
    }
   ]
  },
@@ -59,68 +42,47 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Tìm quy luật rồi viết số tiếp theo của dãy: 2, 3, 5, 8, 12, ..."
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Với dãy 1, 2, 4, 8, ... Su Kem điền: \"Số tiếp theo là 12! Vì $8 - 4 = 4$, nên cứ cộng 4 là xong.\"",
+    "narration": "Có bạn thấy dãy 1, 2, 4, 8 rồi bảo nhịp là 4 vì $8 - 4 = 4$, và điền tiếp 12.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tìm quy luật rồi viết số tiếp theo của dãy: 2, 3, 5, 8, 12, ...",
+  "problem": "Tìm quy luật rồi viết số tiếp theo của dãy 1, 2, 4, 8, ...",
   "steps": [
    {
-    "show": "Các bước nhảy của dãy là: $3 - 2 = 1$. $5 - 3 = 2$. $8 - 5 = 3$. $12 - 8 = 4$.",
+    "show": "Thử tìm nhịp trước đã",
     "phan": "giai"
    },
    {
-    "show": "Các bước nhảy dài thêm 1, nên đây là dãy bậc thang; bước tiếp theo dài 5.",
+    "show": "Các khoảng là $2 - 1 = 1$, rồi $4 - 2 = 2$, rồi $8 - 4 = 4$. Không bằng nhau, nên đây không phải dãy cách đều.",
     "phan": "giai"
    },
    {
-    "show": "Số tiếp theo là: $12 + 5 = 17$.",
+    "show": "Thử xem có phải gấp đôi không",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: 17.",
+    "show": "Nhìn lại từ đầu: $1 + 1 = 2$, rồi $2 + 2 = 4$, rồi $4 + 4 = 8$. Mỗi số đúng bằng số trước cộng chính nó.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đi tiếp theo đúng quy luật ấy",
+    "phan": "giai"
+   },
+   {
+    "show": "Số tiếp theo là $8 + 8 = 16$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 16.",
     "phan": "dapso"
+   },
+   {
+    "show": "Gặp dãy lạ thì thử nhịp trước; nhịp không đều mới đi tìm quy luật khác.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -129,164 +91,133 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Viết số tiếp theo của dãy gấp đôi: 2, 4, 8, 16, ▢.",
+     "text": "Dãy 1, 2, 4, 8 có phải dãy cách đều không?",
      "answerKey": {
-      "value": 32
+      "parts": [
+       {
+        "label": "có cách đều không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
      },
-     "solutionNarrative": "$16 + 16 = 32$",
+     "solutionNarrative": "Các khoảng là 1, 2 rồi 4 — không bằng nhau nên không phải dãy cách đều.",
      "hints": [
-      "Mỗi số bằng số trước cộng chính nó.",
-      "Lấy số cuối cộng với chính nó."
+      "Con viết các khoảng giữa hai số liền nhau ra xem.",
+      "Chúng có bằng nhau cả không?"
      ]
     },
     {
      "id": "C2",
-     "text": "Viết số tiếp theo của dãy: 1, 2, 4, 7, 11, ▢.",
+     "text": "Tính $8 + 8$.",
      "answerKey": {
       "value": 16
      },
-     "solutionNarrative": "bước tiếp dài 5 → $11 + 5 = 16$",
+     "solutionNarrative": "Lấy $8 + 8 = 16$.",
      "hints": [
-      "Viết các bước nhảy ra giấy đã.",
-      "Bước sau dài hơn bước trước đúng 1."
+      "Con cộng số ấy với chính nó.",
+      "Tám thêm tám nữa là bao nhiêu?"
      ]
     },
     {
      "id": "C3",
-     "text": "Dãy 3, 6, 12, 24 có phải dãy đếm thêm (nhịp đều) không? Viết các bước nhảy ra để trả lời.",
+     "text": "Dãy 1, 2, 4, 8, ... — số tiếp theo là số nào?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "có phải dãy đếm thêm không",
-        "options": [
-         "phải",
-         "không phải"
-        ],
-        "value": "không phải"
-       }
-      ]
+      "value": 16
      },
-     "solutionNarrative": "bước nhảy là 3, 6, 12 — không đều → KHÔNG phải dãy đếm thêm (nó là dãy gấp đôi)",
+     "solutionNarrative": "Mỗi số bằng số trước cộng chính nó, nên $8 + 8 = 16$.",
      "hints": [
-      "Viết ba bước nhảy ra rồi so với nhau.",
-      "Nhịp không đều thì phải đổi sang chìa khóa khác."
+      "Con thử xem mỗi số có bằng số trước cộng chính nó không.",
+      "Nếu đúng thì làm y như thế với số cuối cùng."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Tìm quy luật rồi viết HAI số tiếp theo: 5, 6, 8, 11, 15, ▢, ▢.",
+     "text": "Dãy 3, 6, 12, 24, ... — số tiếp theo là số nào?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "ô trống 1",
-        "value": 20
-       },
-       {
-        "label": "ô trống 2",
-        "value": 26
-       }
-      ]
+      "value": 48
      },
-     "solutionNarrative": "bước nhảy 1, 2, 3, 4 → bậc thang → $15 + 5 = 20$; $20 + 6 = 26$",
+     "solutionNarrative": "Dãy gấp đôi, nên $24 + 24 = 48$.",
      "hints": [
-      "Các bước nhảy là 1, 2, 3, 4 — dãy bậc thang.",
-      "Bước kế dài 5, bước sau nữa dài 6."
+      "Dãy này mỗi số bằng số trước cộng chính nó.",
+      "Con cộng số cuối cùng với chính nó."
      ]
     },
     {
      "id": "C5",
-     "text": "Tìm quy luật rồi viết HAI số tiếp theo: 3, 6, 12, 24, ▢, ▢.",
+     "text": "Dãy 1, 2, 4, 8, 16, ... — viết hai số tiếp theo.",
      "answerKey": {
       "parts": [
        {
-        "label": "ô trống 1",
-        "value": 48
+        "label": "số thứ nhất",
+        "value": 32
        },
        {
-        "label": "ô trống 2",
-        "value": 96
+        "label": "số thứ hai",
+        "value": 64
        }
       ]
      },
-     "solutionNarrative": "gấp đôi → 48 và 96",
+     "solutionNarrative": "Gấp đôi tiếp: $16 + 16 = 32$, rồi $32 + 32 = 64$.",
      "hints": [
-      "Bước nhảy không đều — thử chìa khóa gấp đôi.",
-      "Mỗi số cộng chính nó là ra số sau."
+      "Con cộng số cuối với chính nó để được số thứ nhất.",
+      "Rồi lại cộng kết quả ấy với chính nó."
      ]
     },
     {
      "id": "C6",
-     "text": "Dãy nào là dãy bậc thang, dãy nào là dãy gấp đôi: (a) 1, 2, 4, 8, 16; (b) 1, 2, 4, 7, 11? Nói quy luật mỗi dãy bằng một câu của con.",
+     "text": "Một dãy gấp đôi bắt đầu từ số 5. Viết ba số đầu tiên của dãy.",
      "answerKey": {
       "parts": [
        {
-        "label": "(a) 1, 2, 4, 8, 16",
-        "options": [
-         "gấp đôi",
-         "bậc thang"
-        ],
-        "value": "gấp đôi"
+        "label": "số thứ nhất",
+        "value": 5
        },
        {
-        "label": "(b) 1, 2, 4, 7, 11",
-        "options": [
-         "gấp đôi",
-         "bậc thang"
-        ],
-        "value": "bậc thang"
+        "label": "số thứ hai",
+        "value": 10
+       },
+       {
+        "label": "số thứ ba",
+        "value": 20
        }
       ]
      },
-     "solutionNarrative": "(a) gấp đôi — \"mỗi số bằng số trước cộng chính nó\"; (b) bậc thang — \"mỗi bước nhảy dài thêm 1\"",
+     "solutionNarrative": "Số đầu là 5, rồi $5 + 5 = 10$, rồi $10 + 10 = 20$.",
      "hints": [
-      "Viết bước nhảy của cả hai dãy ra rồi so.",
-      "Quy luật phải đúng với TẤT CẢ các số, không chỉ hai số cuối."
-     ]
-    },
-    {
-     "id": "C7",
-     "text": "Điền số bị mờ Ở GIỮA dãy bậc thang: 2, 3, 5, ▢, 12, 17.",
-     "answerKey": {
-      "value": 8
-     },
-     "solutionNarrative": "bước nhảy 1, 2, ?, ?, 5 → số mờ là $5 + 3 = 8$ (kiểm tra: $8 + 4 = 12$ ✓)",
-     "hints": [
-      "Bước nhảy đầu là 1 rồi 2 — bậc thang.",
-      "Bước kế dài 3; điền xong nhớ kiểm lại với số đứng sau."
+      "Số đầu tiên đã cho sẵn rồi.",
+      "Cứ cộng số vừa có với chính nó là ra số tiếp theo."
      ]
     }
    ],
    "challenge": [
     {
-     "id": "C8",
-     "text": "DÃY THỎ FIBONACCI — dãy số nổi tiếng nhất thế giới: 1, 1, 2, 3, 5, 8, ... Mỗi số bằng tổng HAI số liền trước nó ($1 + 1 = 2$; $1 + 2 = 3$; $2 + 3 = 5$...). Con hãy viết tiếp HAI số nữa của dãy. Nhà toán học Fibonacci tìm ra dãy này khi đếm... các đôi thỏ đấy!",
+     "id": "C7",
+     "text": "Dãy 2, 4, 8, 16, ... — số thứ sáu của dãy là số nào?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số tiếp theo thứ nhất",
-        "value": 13
-       },
-       {
-        "label": "số tiếp theo thứ hai",
-        "value": 21
-       }
-      ]
+      "value": 64
      },
-     "solutionNarrative": "$5 + 8 = 13$; $8 + 13 = 21$ → hai số tiếp theo là 13 và 21",
+     "solutionNarrative": "Đi tiếp: $16 + 16 = 32$, rồi $32 + 32 = 64$.",
      "hints": [
-      "Mỗi số bằng tổng hai số liền trước nó.",
-      "Cộng hai số cuối cùng đang có."
+      "Dãy đang cho tới số thứ tư, con cần đi thêm hai bước.",
+      "Mỗi bước là cộng số vừa có với chính nó."
      ]
     },
     {
-     "id": "C9",
-     "text": "Đến lượt con làm chủ hang mật mã: tự nghĩ MỘT dãy số có quy luật (5 số), viết ra giấy và đố bố mẹ tìm quy luật. Nếu bố mẹ giải sai, con được quyền... kể đáp án một cách oai phong!",
-     "solutionNarrative": "dãy nào con nghĩ ra cũng đáng khen — miễn là con nói được quy luật thành lời!",
+     "id": "C8",
+     "text": "Một dãy gấp đôi có số thứ ba là 12. Số đầu tiên của dãy là số nào?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Lần ngược: số nào cộng chính nó ra 12? Là 6. Số nào cộng chính nó ra 6? Là 3.",
      "hints": [
-      "Chọn một chìa khóa con đã biết: nhịp đều, bậc thang hay gấp đôi.",
-      "Viết 5 số rồi tự kiểm quy luật có đúng với cả 5 số không."
+      "Lần này con đi ngược, từ cuối về đầu.",
+      "Số nào cộng chính nó thì ra được số thứ ba? Rồi lặp lại một lần nữa."
      ]
     }
    ]
@@ -297,111 +228,69 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Trong dãy gấp đôi, mỗi số bằng số trước cộng chính nó.",
+    "text": "Dãy gấp đôi là dãy mà mỗi số bằng số trước cộng chính nó.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng — đó là cách nhận ra nó."
    },
    {
     "id": "Q2",
-    "text": "Quy luật chỉ cần đúng với hai số cuối của dãy là được.",
+    "text": "Dãy 1, 2, 4, 8, ... — số tiếp theo là số nào?",
+    "format": "mcq",
+    "choices": [
+     "16",
+     "10",
+     "12",
+     "9"
+    ],
+    "answerKey": {
+     "choice": "16"
+    },
+    "solutionNarrative": "Gấp đôi: $8 + 8 = 16$."
+   },
+   {
+    "id": "Q3",
+    "text": "Dãy 1, 2, 4, 8 là dãy cách đều.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "phải đúng với TẤT CẢ các số"
-   },
-   {
-    "id": "Q3",
-    "text": "Số tiếp theo của dãy 1, 2, 4, 8 là:",
-    "format": "mcq",
-    "choices": [
-     "A. 12",
-     "B. 16",
-     "C. 10"
-    ],
-    "answerKey": {
-     "choice": "B. 16"
-    },
-    "solutionNarrative": "Đáp án: B. 16"
+    "solutionNarrative": "Sai. Các khoảng là 1, 2 rồi 4 — không bằng nhau."
    },
    {
     "id": "Q4",
-    "text": "Số tiếp theo của dãy 1, 2, 4, 7 là:",
+    "text": "Gặp một dãy lạ thì nên thử điều gì trước?",
     "format": "mcq",
     "choices": [
-     "A. 11",
-     "B. 10",
-     "C. 14"
+     "tìm nhịp xem có cách đều không",
+     "đoán bừa một số",
+     "cộng hết cả dãy lại"
     ],
     "answerKey": {
-     "choice": "A. 11"
+     "choice": "tìm nhịp xem có cách đều không"
     },
-    "solutionNarrative": "Đáp án: A. 11"
+    "solutionNarrative": "Thử nhịp là rẻ nhất; không đều mới đi tìm quy luật khác."
    },
    {
     "id": "Q5",
-    "text": "Trong dãy Fibonacci 1, 1, 2, 3, 5, 8 — số tiếp theo là:",
-    "format": "mcq",
-    "choices": [
-     "A. 11",
-     "B. 12",
-     "C. 13"
-    ],
+    "text": "Dãy 3, 6, 12, 24 là dãy gấp đôi.",
+    "format": "tf",
     "answerKey": {
-     "choice": "C. 13"
+     "value": true
     },
-    "solutionNarrative": "Đáp án: C. 13"
+    "solutionNarrative": "Đúng: $3 + 3 = 6$, $6 + 6 = 12$, $12 + 12 = 24$."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Chơi \"hang mật mã\" hai chiều: bố mẹ và con thay nhau ra dãy - giải dãy. Trẻ SÁNG TÁC quy luật học được nhiều gấp đôi trẻ chỉ giải quy luật.",
-  "homeActivity": "Với dãy Fibonacci: cùng con đếm cánh của vài bông hoa thật (nhiều hoa có 3, 5, 8 cánh!) — khoảnh khắc \"toán có thật ngoài đời\" quý hơn chục bài tập.",
-  "watchFor": "NÊN: yêu cầu con NÓI quy luật thành câu trước khi điền số. KHÔNG NÊN: chê dãy con sáng tác là \"dễ quá\" — mọi quy luật con tự nghĩ ra đều đáng một tràng vỗ tay."
+  "onComplete": "Gấp đôi hạt gạo trên bàn cờ là câu chuyện cổ rất hợp lúc này — con sẽ thấy dãy gấp đôi lớn nhanh đến mức nào.",
+  "homeActivity": "Bố mẹ hỏi một câu: \"Số này bằng số trước cộng cái gì?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_MO_B10",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_MO_B10.png",
-   "caption": "Dãy 2, 3, 5, 8, 12 và bước nhảy giữa các số",
-   "sha256_16": "c33fd7e146382e54",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_DAY05",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L2H_DAY05.png",
-   "caption": "Mỗi số bằng số trước cộng chính nó",
-   "sha256_16": "a61cb8bf3887453b",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L2H_DAY04",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L2H_DAY04.png",
-   "caption": "Bước nhảy dài thêm 1 mỗi lần: +1, +2, +3, +4, +5",
-   "sha256_16": "be005d16dc342ce2",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L2H_DAY03",
-   "usedIn": [
-    "item:C8"
-   ],
-   "file": "figures/L2H_DAY03.png",
-   "caption": "Mỗi số bằng tổng hai số đứng ngay trước nó",
-   "sha256_16": "bc30b8886a7af924",
-   "mucGoc": "luyenTap"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B10_giang.mp4"
+ }
 }

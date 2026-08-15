@@ -3,55 +3,38 @@
  "id": "DL:KSN2.B11",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 19 · SỐ CHẴN - SỐ LẺ & BÍ MẬT BẢNG NHÂN",
+ "title": "Bài 23 · CHẴN HAY LẺ NHÌN Ở ĐUÔI — CHỮ SỐ TẬN CÙNG",
  "durationMinutes": 10,
- "so": 19,
+ "so": 23,
  "chuong": 3,
  "tenChuong": "Dãy số kỳ diệu",
- "dangGoc": "SỐ 6.1 + 6.4 — Tiền thân dấu hiệu chia hết và chữ số tận cùng",
+ "dangGoc": "SỐ 6.1 — Số chẵn số lẻ nhận ra bằng chữ số tận cùng.",
  "skills": {
   "bktUnit": "CHUONG:3@G2",
   "primary": []
  },
  "series": {
-  "order": 19,
-  "prev": "DL:KSN2.B10",
-  "next": "DL:KSN2.B12"
+  "order": 23,
+  "prev": "DL:KSN2.B45",
+  "next": "DL:KSN2.B46"
  },
  "objective": {
   "id": "O1",
-  "text": "Nhận biết số chẵn - số lẻ bằng hai cách: chia đôi kẹo và nhìn chữ số TẬN CÙNG. Thuộc hai bí mật: kết quả bảng nhân 2 luôn tận cùng chẵn. Bảng nhân 5 luôn tận cùng 0 hoặc 5. Đoán được tổng hai số là chẵn hay lẻ mà KHÔNG cần tính hết.",
-  "kidText": "Sinh nhật Su Kem! Đố con: $26 + 13$ là số chẵn hay số lẻ — mà không được tính ra?",
+  "text": "Hiểu số chẵn là số chia đôi được đều, số lẻ thì thừa một. Nhận ra số chẵn số lẻ bằng chữ số tận cùng. Làm được với cả số lớn mà không phải chia thử.",
+  "kidText": "Số 134 và số 275, số nào chia đôi được đều? Con chỉ cần nhìn một chữ số là biết đấy!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Số CHẴN là số chia đôi được đều tăm tắp ($8 = 4 + 4$). Số LẺ chia đôi luôn thừa 1 viên ($7 = 3 + 3 + 1$ viên lẻ loi)."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Bí mật nằm ở chữ số TẬN CÙNG (chữ số cuối cùng bên phải): tận cùng 0, 2, 4, 6, 8 → số chẵn. Tận cùng 1, 3, 5, 7, 9 → số lẻ. Số to cỡ nào cũng vậy: 134 tận cùng 4 → chẵn; 275 tận cùng 5 → lẻ. Không cần chia thử!"
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Giờ soi bảng cửu chương bằng con mắt thám tử. Hai bảng quen thuộc đang giấu hai bí mật rất đẹp:"
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. Bí mật cuối. Trò ảo thuật với phép cộng: lấy kẹo ra xếp thử, con sẽ thấy CHẴN + CHẴN = CHẴN. LẺ + LẺ = CHẴN (hai viên lẻ loi bắt cặp với nhau!). CHẴN + LẺ = LẺ. Nhờ vậy chỉ cần nhìn tận cùng hai số là đoán được tổng chẵn hay lẻ — chưa cần tính!"
-   }
-  ],
-  "mantra": "Tính nết chẵn - lẻ của một số nằm hết ở CÁI ĐUÔI của nó. Và hai viên kẹo lẻ loi gặp nhau thì bắt cặp thành... chẵn!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem tuyên bố: \"35 là số CHẴN nhé! Vì 3 cộng 5 bằng 8, mà 8 chẵn!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Muốn biết chẵn - lẻ, ta nhìn vào đâu của con số. Cái ĐUÔI hay TỔNG các chữ số? Gợi ý 2: Lấy 35 viên kẹo (tưởng tượng thôi!) chia đôi xem có thừa viên nào không, rồi kết luận giúp Su Kem."
+    "wrong": "Có bạn bảo 35 là số chẵn, vì 3 cộng 5 bằng 8 mà 8 là số chẵn.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Bài học bảo nhìn vào chữ số nào của số 35? Gợi ý 2: Chữ số tận cùng của 35 là mấy? Nó nằm trong nhóm chẵn hay nhóm lẻ? Chữa: cộng các chữ số lại là một nghề khác. Chẵn lẻ chỉ nhìn cái đuôi, mà đuôi của 35 là 5 nên 35 là số lẻ."
    }
   ]
  },
@@ -59,67 +42,46 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Sinh nhật Su Kem! Không tính kết quả, cho biết tổng $26 + 13$ là số chẵn hay số lẻ."
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Su Kem tuyên bố: \"35 là số CHẴN nhé! Vì 3 cộng 5 bằng 8, mà 8 chẵn!\"",
+    "narration": "Có bạn bảo 35 là số chẵn, vì 3 cộng 5 bằng 8 mà 8 là số chẵn.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Không tính kết quả, cho biết tổng $26 + 13$ là số chẵn hay số lẻ.",
+  "problem": "Trong hai số 134 và 275, số nào chẵn số nào lẻ?",
   "steps": [
    {
-    "show": "Số 26 tận cùng là 6 → số chẵn. Số 13 tận cùng là 3 → số lẻ.",
+    "show": "Chẵn và lẻ nghĩa là gì",
     "phan": "giai"
    },
    {
-    "show": "Chẵn + Lẻ = Lẻ, nên tổng $26 + 13$ là số lẻ.",
+    "show": "Số chẵn chia đôi được đều tăm tắp. Số lẻ chia đôi thì luôn thừa đúng một.",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: số lẻ.",
+    "show": "Bí mật nằm ở chữ số cuối cùng bên phải",
+    "phan": "giai"
+   },
+   {
+    "show": "Tận cùng là 0, 2, 4, 6 hoặc 8 thì số ấy chẵn. Tận cùng là 1, 3, 5, 7 hoặc 9 thì số ấy lẻ.",
+    "phan": "giai"
+   },
+   {
+    "show": "Soi cái đuôi của hai số đã cho",
+    "phan": "giai"
+   },
+   {
+    "show": "Số 134 tận cùng là 4 nên chẵn. Số 275 tận cùng là 5 nên lẻ.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 134 là số chẵn, 275 là số lẻ.",
     "phan": "dapso"
    },
    {
-    "show": "Tự kiểm tra: $26 + 13 = 39$, tận cùng 9 — đúng là số lẻ ✓.",
+    "show": "Số to cỡ nào cũng vậy — không cần chia thử, chỉ cần nhìn cái đuôi.",
     "phan": "ghichu"
    }
   ]
@@ -129,52 +91,32 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Khoanh số chẵn: 12, 7, 30, 45, 68, 91.",
+     "text": "Số 8 là số chẵn hay số lẻ?",
      "answerKey": {
-      "ordered": false,
-      "values": [
-       12,
-       30,
-       68
+      "parts": [
+       {
+        "label": "chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "chẵn"
+       }
       ]
      },
-     "solutionNarrative": "12, 30, 68",
+     "solutionNarrative": "Chữ số tận cùng là 8 nên đây là số chẵn.",
      "hints": [
-      "Chỉ nhìn chữ số tận cùng thôi.",
-      "Tận cùng 0, 2, 4, 6, 8 là số chẵn."
+      "Con nhìn chữ số đứng ngoài cùng bên phải.",
+      "Nó nằm trong nhóm không, hai, bốn, sáu, tám hay nhóm còn lại?"
      ]
     },
     {
      "id": "C2",
-     "text": "Các số sau là chẵn hay lẻ: 134; 275; 480; 99?",
+     "text": "Số 7 là số chẵn hay số lẻ?",
      "answerKey": {
       "parts": [
        {
-        "label": "134",
-        "options": [
-         "chẵn",
-         "lẻ"
-        ],
-        "value": "chẵn"
-       },
-       {
-        "label": "275",
-        "options": [
-         "chẵn",
-         "lẻ"
-        ],
-        "value": "lẻ"
-       },
-       {
-        "label": "480",
-        "options": [
-         "chẵn",
-         "lẻ"
-        ],
-        "value": "chẵn"
-       },
-       {
-        "label": "99",
+        "label": "chẵn hay lẻ",
         "options": [
          "chẵn",
          "lẻ"
@@ -183,73 +125,42 @@
        }
       ]
      },
-     "solutionNarrative": "134 chẵn; 275 lẻ; 480 chẵn; 99 lẻ",
+     "solutionNarrative": "Chữ số tận cùng là 7 nên đây là số lẻ.",
      "hints": [
-      "Số to cỡ nào cũng chỉ soi cái đuôi.",
-      "Không cần chia thử một lần nào."
+      "Con nhìn chữ số cuối cùng của số ấy.",
+      "Nhóm một, ba, năm, bảy, chín là nhóm nào?"
      ]
     },
     {
      "id": "C3",
-     "text": "Viết 3 số chẵn liên tiếp bắt đầu từ 16.",
+     "text": "Số 134 là số chẵn hay số lẻ?",
      "answerKey": {
-      "ordered": true,
-      "values": [
-       16,
-       18,
-       20
+      "parts": [
+       {
+        "label": "chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "chẵn"
+       }
       ]
      },
-     "solutionNarrative": "16, 18, 20",
+     "solutionNarrative": "Chữ số tận cùng là 4 nên đây là số chẵn.",
      "hints": [
-      "Hai số chẵn liền nhau cách nhau mấy?",
-      "Cứ cộng thêm 2, và đếm cả số đề đã cho."
+      "Số dài hay ngắn không quan trọng, chỉ nhìn cái đuôi.",
+      "Chữ số cuối cùng của số này là mấy?"
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Đọc kết quả bảng nhân 2 (2, 4, ..., 20): các chữ số tận cùng lần lượt là gì? Chúng có gì chung?",
-     "answerKey": {
-      "ordered": true,
-      "values": [
-       2,
-       4,
-       6,
-       8,
-       0
-      ]
-     },
-     "solutionNarrative": "tận cùng lần lượt 2, 4, 6, 8, 0 rồi lặp lại — toàn chữ số chẵn",
-     "hints": [
-      "Viết kết quả bảng nhân 2 ra rồi chỉ nhìn chữ số cuối.",
-      "Chúng có phải đều là chữ số chẵn không?"
-     ]
-    },
-    {
-     "id": "C5",
-     "text": "Không tính, đoán tổng sau chẵn hay lẻ rồi mới tính kiểm tra: (a) $14 + 22$; (b) $15 + 23$; (c) $30 + 47$.",
+     "text": "Số 275 là số chẵn hay số lẻ?",
      "answerKey": {
       "parts": [
        {
-        "label": "(a) 14 + 22",
-        "options": [
-         "chẵn",
-         "lẻ"
-        ],
-        "value": "chẵn"
-       },
-       {
-        "label": "(b) 15 + 23",
-        "options": [
-         "chẵn",
-         "lẻ"
-        ],
-        "value": "chẵn"
-       },
-       {
-        "label": "(c) 30 + 47",
+        "label": "chẵn hay lẻ",
         "options": [
          "chẵn",
          "lẻ"
@@ -258,92 +169,91 @@
        }
       ]
      },
-     "solutionNarrative": "(a) chẵn + chẵn = chẵn (= 36 ✓); (b) lẻ + lẻ = chẵn (= 38 ✓); (c) chẵn + lẻ = lẻ (= 77 ✓)",
+     "solutionNarrative": "Chữ số tận cùng là 5 nên đây là số lẻ.",
      "hints": [
-      "Nhìn đuôi hai số hạng, chưa cần tính.",
-      "Hai viên lẻ loi gặp nhau thì bắt cặp thành chẵn."
+      "Con che hai chữ số đầu đi, chỉ nhìn chữ số cuối.",
+      "Chữ số ấy thuộc nhóm nào trong hai nhóm đã học?"
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Viết chữ số tận cùng của số 460, rồi cho biết số ấy chẵn hay lẻ.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số tận cùng",
+        "value": 0
+       },
+       {
+        "label": "chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "chẵn"
+       }
+      ]
+     },
+     "solutionNarrative": "Chữ số tận cùng là 0, mà tận cùng 0 thì số ấy chẵn.",
+     "hints": [
+      "Chữ số tận cùng là chữ số đứng ngoài cùng bên phải.",
+      "Tìm ra nó rồi thì tra vào hai nhóm đã học."
      ]
     },
     {
      "id": "C6",
-     "text": "Số 40 có thuộc bảng nhân 5 không? Số 43 thì sao? Con dùng bí mật tận cùng để trả lời thật nhanh.",
+     "text": "Trong ba số 21, 34 và 55 có mấy số lẻ?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số 40",
-        "options": [
-         "thuộc",
-         "không thuộc"
-        ],
-        "value": "thuộc"
-       },
-       {
-        "label": "số 43",
-        "options": [
-         "thuộc",
-         "không thuộc"
-        ],
-        "value": "không thuộc"
-       }
-      ]
+      "value": 2
      },
-     "solutionNarrative": "40 tận cùng 0 → thuộc bảng nhân 5 ($5  \\times  8$); 43 tận cùng 3 → không thuộc",
+     "solutionNarrative": "Số 21 tận cùng 1 và số 55 tận cùng 5 đều lẻ, còn 34 tận cùng 4 là chẵn. Vậy có 2 số lẻ.",
      "hints": [
-      "Kết quả bảng nhân 5 chỉ có hai kiểu đuôi.",
-      "Đó là đuôi 0 và đuôi 5."
-     ]
-    },
-    {
-     "id": "C7",
-     "text": "Tìm số chẵn lớn nhất có 2 chữ số và số lẻ bé nhất có 3 chữ số.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "số chẵn lớn nhất có 2 chữ số",
-        "value": 98
-       },
-       {
-        "label": "số lẻ bé nhất có 3 chữ số",
-        "value": 101
-       }
-      ]
-     },
-     "solutionNarrative": "số chẵn lớn nhất có 2 chữ số: 98; số lẻ bé nhất có 3 chữ số: 101",
-     "hints": [
-      "Đi từ số lớn nhất có hai chữ số, lùi dần tới số chẵn đầu tiên.",
-      "Rồi đi từ số bé nhất có ba chữ số, tiến tới số lẻ đầu tiên."
+      "Con soi đuôi của từng số một.",
+      "Đếm xem có mấy số rơi vào nhóm một, ba, năm, bảy, chín."
      ]
     }
    ],
    "challenge": [
     {
-     "id": "C8",
-     "text": "Không cộng hết, đoán xem tổng $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9$ là chẵn hay lẻ. (Mẹo: các số lẻ trong đó bắt cặp với nhau — đếm xem có mấy \"viên kẹo lẻ loi\", có bạn nào bị ế cặp không?) Sau đó dùng tuyệt chiêu Gauss nhí của Bài 13 sắp học... à không, dùng máy đếm tay để kiểm tra cũng được!",
+     "id": "C7",
+     "text": "Số bé nhất có hai chữ số là số chẵn hay số lẻ?",
      "answerKey": {
       "parts": [
        {
-        "label": "tổng đó là số",
+        "label": "chẵn hay lẻ",
         "options": [
          "chẵn",
          "lẻ"
         ],
-        "value": "lẻ"
+        "value": "chẵn"
        }
       ]
      },
-     "solutionNarrative": "các số lẻ trong tổng là 1, 3, 5, 7, 9 — có 5 \"viên kẹo lẻ loi\". Bốn viên bắt thành hai cặp (thành chẵn), còn đúng 1 viên bị ế → tổng là số LẺ. Kiểm tra: $1 + 2$ + ... + $9 = 45$, tận cùng 5 — lẻ thật ✓",
+     "solutionNarrative": "Số bé nhất có hai chữ số là 10, tận cùng là 0 nên đây là số chẵn.",
      "hints": [
-      "Chỉ cần đếm các số LẺ có trong tổng.",
-      "Chúng bắt cặp với nhau — có bạn nào bị ế cặp không?"
+      "Con viết số bé nhất có hai chữ số ra trước đã.",
+      "Rồi nhìn chữ số cuối của nó."
      ]
     },
     {
-     "id": "C9",
-     "text": "Su Kem nhân một số trong bảng 5 với một số trong bảng 2 (ví dụ $5  \\times  4$, $15  \\times  2$...). Trí Long chưa nhìn phép tính đã nói ngay: \"Kết quả tận cùng là 0!\" Con thử vài phép tính xem Trí Long nói đúng không, rồi giải thích vì sao bằng lời của con.",
-     "solutionNarrative": "Trí Long nói đúng! Thử: $5  \\times  4 = 20$; $15  \\times  2 = 30$; $5  \\times  6 = 30$ — đều tận cùng 0. Giải thích kiểu lớp 2: số trong bảng 5 tận cùng 0 hoặc 5; nhân với số chẵn (bảng 2) thì phần \"5\" cũng thành chẵn cặp đôi tròn chục → đuôi luôn là 0. (Bí mật đầy đủ \"$2  \\times  5 = 10$\" con sẽ gặp lại ở lớp 4!)",
+     "id": "C8",
+     "text": "Viết số chẵn lớn nhất có hai chữ số và số lẻ lớn nhất có hai chữ số.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số chẵn lớn nhất",
+        "value": 98
+       },
+       {
+        "label": "số lẻ lớn nhất",
+        "value": 99
+       }
+      ]
+     },
+     "solutionNarrative": "Số lớn nhất có hai chữ số là 99, tận cùng 9 nên lẻ. Lùi một bước được 98, tận cùng 8 nên chẵn.",
      "hints": [
-      "Thử vài phép tính đã rồi hãy tin.",
-      "Bảng 5 tận cùng 0 hoặc 5, mà bảng 2 thì toàn số chẵn."
+      "Con viết số lớn nhất có hai chữ số ra trước.",
+      "Nếu nó rơi vào một nhóm thì lùi một bước sẽ được số của nhóm kia."
      ]
     }
    ]
@@ -354,91 +264,69 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Số 134 là số chẵn vì tận cùng là 4.",
+    "text": "Muốn biết một số chẵn hay lẻ, chỉ cần nhìn chữ số tận cùng.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng — số to cỡ nào cũng vậy."
    },
    {
     "id": "Q2",
-    "text": "Muốn biết chẵn - lẻ, ta cộng các chữ số lại rồi xem.",
+    "text": "Số 134 là số nào?",
+    "format": "mcq",
+    "choices": [
+     "số chẵn",
+     "số lẻ",
+     "vừa chẵn vừa lẻ"
+    ],
+    "answerKey": {
+     "choice": "số chẵn"
+    },
+    "solutionNarrative": "Tận cùng là 4 nên chẵn."
+   },
+   {
+    "id": "Q3",
+    "text": "Số 275 là số chẵn.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "nhìn tận cùng, không cộng chữ số"
-   },
-   {
-    "id": "Q3",
-    "text": "Kết quả bảng nhân 5 luôn tận cùng là:",
-    "format": "mcq",
-    "choices": [
-     "A. 5",
-     "B. 0 hoặc 5",
-     "C. 2, 4, 6, 8"
-    ],
-    "answerKey": {
-     "choice": "B. 0 hoặc 5"
-    },
-    "solutionNarrative": "Đáp án: B. 0 hoặc 5"
+    "solutionNarrative": "Sai. Tận cùng là 5 nên đây là số lẻ."
    },
    {
     "id": "Q4",
-    "text": "Lẻ + Lẻ = ?",
+    "text": "Số nào sau đây là số lẻ?",
     "format": "mcq",
     "choices": [
-     "A. Lẻ",
-     "B. Chẵn",
-     "C. Lúc chẵn lúc lẻ"
+     "47",
+     "36",
+     "80",
+     "24"
     ],
     "answerKey": {
-     "choice": "B. Chẵn"
+     "choice": "47"
     },
-    "solutionNarrative": "Đáp án: B. Chẵn"
+    "solutionNarrative": "Tận cùng là 7 nên lẻ; ba số kia tận cùng 6, 0 và 4."
    },
    {
     "id": "Q5",
-    "text": "Không tính, tổng $18 + 25$ là:",
-    "format": "mcq",
-    "choices": [
-     "A. Số chẵn",
-     "B. Số lẻ",
-     "C. Không đoán được"
-    ],
+    "text": "Số nào tận cùng bằng 0 thì số ấy là số chẵn.",
+    "format": "tf",
     "answerKey": {
-     "choice": "B. Số lẻ"
+     "value": true
     },
-    "solutionNarrative": "Đáp án: B. Số lẻ"
+    "solutionNarrative": "Đúng — tận cùng 0 luôn là số chẵn."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Trò \"máy đoán chẵn lẻ\": con làm máy, bố mẹ đọc số bất kỳ (kể cả số to như 4 786) — máy chỉ được nhìn đuôi và trả lời trong 2 giây. Trẻ rất khoái làm máy!",
-  "homeActivity": "Chia kẹo/hạt lạc thật để con TỰ khám phá \"lẻ + lẻ = chẵn\" (hai viên lẻ loi bắt cặp) — đừng nói trước kết luận.",
-  "watchFor": "NÊN: dùng đúng từ \"chữ số tận cùng\". KHÔNG NÊN: dạy dấu hiệu chia hết cho 3, 9 (cộng các chữ số) lúc này — dễ trộn lẫn với mẹo nhìn đuôi; các dấu hiệu ấy là bài học lớp 4."
+  "onComplete": "Biển số xe, số nhà, số trang sách — chỉ vào rồi hỏi con chẵn hay lẻ. Một giây là trả lời được, không cần giấy bút.",
+  "homeActivity": "Bố mẹ hỏi: \"Con nhìn chữ số nào để biết?\" Chỉ đúng cái đuôi là hiểu bài.",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_CHAM03",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_CHAM03.png",
-   "caption": "8 viên chia đôi được đều, 7 viên thì thừa 1",
-   "sha256_16": "039d583899c3a9ba",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_DAY06",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L2H_DAY06.png",
-   "caption": "Bảng nhân 2 tận cùng là 2,4,6,8,0 — bảng nhân 5 tận cùng là 5 hoặc 0",
-   "sha256_16": "e2c0f631a18146eb",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B11_giang.mp4"
+ }
 }
