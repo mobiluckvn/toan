@@ -389,3 +389,47 @@ thành người NHIỀU hơn, đúng cái bẫy mà bài ấy dạy.
 
 Ba chương, **12 bài chữ**: thám tử tí hon (4) · vương quốc hình học (5) · toán
 trong cuộc sống (3).
+
+---
+
+## Đợt 6 · chương 6 · Thám tử tí hon
+
+Bốn bài chữ thành **tám bài video**. Nghề thứ hai của mỗi bài luôn là CHỖ SÁCH TỰ
+NÊU RA LÀ HAY SAI NHẤT — đúng thứ đáng đứng riêng. Quyển lớp 2 nay **63 bài · 55
+video · 50.7 phút · 506 câu luyện tập** (490 chấm máy).
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 48 | B22 | đi lùi qua hai máy — đảo phép từng máy |
+| 49 | B60 *(mới)* | máy làm sau cùng thì lùi qua trước |
+| 50 | B23 | đếm chân — gắn tạm hai chân cho tất cả |
+| 51 | B61 *(mới)* | chân thừa chia thành từng cặp |
+| 52 | B24 | cây và khoảng — luật bàn tay |
+| 53 | B62 *(mới)* | biết chiều dài, tìm số cây |
+| 54 | B25 | vẽ thang xếp thứ tự |
+| 55 | B63 *(mới)* | bảng loại trừ — đánh dấu rồi gạch |
+
+### Cảnh mới: `bang_loai_tru`
+
+Cả bài 55 đứng trên một cái bảng ba hàng ba cột. Nói bằng lời thì rối; vẽ ra thì bé
+thấy ngay hàng nào chỉ còn một ô trống. Cảnh nhận `hang`, `cot` và `o` — mỗi ô là
+`""` (chưa biết), `"v"` (đúng, tô teal) hoặc `"x"` (đã loại, tô đỏ). Video đi qua
+năm trạng thái của cùng cái bảng ấy, từ trống trơn tới kín dấu.
+
+### Hai chữ cấm của chính tên chương
+
+`TU_CAM` có sẵn **"thám tử"** và **"vũ khí"** — chúng là vỏ nhân vật của sách, mà
+tên chương lại đúng là *"Thám tử tí hon"*. Tên chương giữ nguyên trong dữ liệu, còn
+lời đọc và chữ trên màn thì tránh; `tools/suy_luan_lop2.py` có phép soi riêng, chỉ
+soi phần THÂN bài chứ không soi `tenChuong`.
+
+### Lại hai câu ôn tập mồ côi tên nhân vật
+
+Quét toàn bộ kỳ sát hạch lớp 2 thì thấy **hai câu ở chương ĐÃ chuyển hết sang
+video** vẫn nhắc tên nhân vật: chương 6 câu 4 và chương 2 câu 10. Đã viết lại cả
+hai thành "một bạn". Chương 8 và ải 3 giữ nguyên, vì chương 8 còn bài chữ nên nhân
+vật vẫn có mặt thật.
+
+### Còn lại của quyển
+
+Hai chương, **8 bài chữ**: vương quốc hình học (5) · toán trong cuộc sống (3).

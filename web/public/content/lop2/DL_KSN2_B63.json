@@ -1,0 +1,365 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B63",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 55 · BẢNG LOẠI TRỪ — ĐÁNH DẤU RỒI GẠCH",
+ "durationMinutes": 10,
+ "so": 55,
+ "chuong": 6,
+ "tenChuong": "Thám tử tí hon",
+ "dangGoc": "LV 8.4d — Suy luận: giải đố \"ai với cái gì\" bằng bảng loại trừ.",
+ "skills": {
+  "bktUnit": "CHUONG:6@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 55,
+  "prev": "DL:KSN2.B25",
+  "next": "DL:KSN2.B26"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Kẻ được bảng loại trừ cho câu đố \"ai với cái gì\". Đánh dấu từ manh mối chắc nhất rồi gạch cùng hàng cùng cột. Đọc ra đáp án từ hàng chỉ còn một ô trống.",
+  "kidText": "Ba bạn cầm ba bông hoa mà chỉ cho hai manh mối. Con thử kẻ bảng ra tìm nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn mới biết mình không cầm hoa hồng đã vội chốt là cầm hoa sen.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Loại được một ô thì còn mấy ô có thể? Đã đủ để chốt chưa? Gợi ý 2: Hoa sen đã có chủ rồi đấy, xem lại manh mối thứ hai. Chữa: phải dùng đủ mọi manh mối trên bảng. Hàng nào chỉ còn một ô trống thì ô ấy mới là đáp án."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn mới biết mình không cầm hoa hồng đã vội chốt là cầm hoa sen.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Ba bạn Mai, Đào, Cúc cầm ba bông hoa hồng, sen, cúc. Biết Mai không cầm hoa hồng, Đào cầm hoa sen. Hỏi mỗi bạn cầm hoa gì?",
+  "steps": [
+   {
+    "show": "Kẻ bảng ba hàng ba cột",
+    "phan": "giai"
+   },
+   {
+    "show": "Mỗi hàng một bạn, mỗi cột một bông hoa.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đánh dấu từ manh mối chắc nhất",
+    "phan": "giai"
+   },
+   {
+    "show": "Đào cầm hoa sen là manh mối chắc chắn, nên đánh dấu đúng ô ấy.",
+    "phan": "giai"
+   },
+   {
+    "show": "Gạch cả hàng và cả cột của ô vừa đánh dấu",
+    "phan": "giai"
+   },
+   {
+    "show": "Một bạn chỉ cầm một bông, một bông chỉ có một chủ. Nên gạch hết hàng Đào và cột sen.",
+    "phan": "giai"
+   },
+   {
+    "show": "Dùng nốt manh mối còn lại",
+    "phan": "giai"
+   },
+   {
+    "show": "Mai không cầm hoa hồng nên gạch ô ấy. Hàng Mai chỉ còn ô hoa cúc, vậy Mai cầm hoa cúc.",
+    "phan": "giai"
+   },
+   {
+    "show": "Hàng cuối chỉ còn một ô trống",
+    "phan": "giai"
+   },
+   {
+    "show": "Còn lại Cúc cầm hoa hồng.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: Mai cầm hoa cúc, Đào cầm hoa sen, Cúc cầm hoa hồng.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Bạn tên Cúc lại không cầm hoa cúc — đề trêu mình đấy, nhưng bảng thì không bị lừa.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Đào cầm hoa sen. Trong bảng thì đánh dấu vào ô nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "đánh dấu ô nào",
+        "options": [
+         "hàng Đào cột sen",
+         "hàng Mai cột sen"
+        ],
+        "value": "hàng Đào cột sen"
+       }
+      ]
+     },
+     "solutionNarrative": "Đánh dấu ô nằm ở hàng Đào và cột sen.",
+     "hints": [
+      "Manh mối nói bạn nào cầm bông nào?",
+      "Ô cần đánh dấu nằm ở chỗ hàng của bạn ấy gặp cột của bông ấy."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Đánh dấu xong một ô thì phải gạch những ô nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "gạch những ô nào",
+        "options": [
+         "cả hàng và cả cột của ô ấy",
+         "chỉ ô bên cạnh"
+        ],
+        "value": "cả hàng và cả cột của ô ấy"
+       }
+      ]
+     },
+     "solutionNarrative": "Gạch cả hàng và cả cột của ô vừa đánh dấu.",
+     "hints": [
+      "Một bạn thì chỉ cầm được một bông thôi.",
+      "Và một bông thì cũng chỉ có một chủ."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vì sao phải gạch cả hàng và cả cột?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "vì sao",
+        "options": [
+         "vì một bạn chỉ cầm một bông, một bông chỉ một chủ",
+         "vì cho bảng gọn"
+        ],
+        "value": "vì một bạn chỉ cầm một bông, một bông chỉ một chủ"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì một bạn chỉ cầm một bông, và một bông chỉ có một chủ.",
+     "hints": [
+      "Con nghĩ xem một bạn có cầm được hai bông cùng lúc không.",
+      "Và một bông có thuộc về hai bạn được không?"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Đào cầm hoa sen, Mai không cầm hoa hồng. Mai cầm hoa gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Mai cầm hoa gì",
+        "options": [
+         "cúc",
+         "sen",
+         "hồng"
+        ],
+        "value": "cúc"
+       }
+      ]
+     },
+     "solutionNarrative": "Cột sen đã bị gạch, ô hồng cũng bị gạch, nên hàng Mai chỉ còn ô hoa cúc.",
+     "hints": [
+      "Con đánh dấu ô của Đào rồi gạch cả hàng cả cột trước đã.",
+      "Rồi gạch nốt ô hồng của Mai, xem hàng Mai còn ô nào."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Mai cầm hoa cúc, Đào cầm hoa sen. Cúc cầm hoa gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Cúc cầm hoa gì",
+        "options": [
+         "hồng",
+         "sen",
+         "cúc"
+        ],
+        "value": "hồng"
+       }
+      ]
+     },
+     "solutionNarrative": "Hai bông kia đã có chủ, nên Cúc cầm hoa hồng.",
+     "hints": [
+      "Hai bạn kia đã có bông của mình rồi.",
+      "Bông còn lại thuộc về bạn cuối cùng."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Có bạn mới biết mình không cầm hoa hồng đã chốt luôn là cầm hoa sen. Bạn ấy sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "sai ở đâu",
+        "options": [
+         "mới loại được một ô đã vội chốt",
+         "không sai gì cả"
+        ],
+        "value": "mới loại được một ô đã vội chốt"
+       }
+      ]
+     },
+     "solutionNarrative": "Bạn ấy mới loại được một ô đã vội chốt, chưa dùng hết manh mối.",
+     "hints": [
+      "Loại được một ô thì vẫn còn mấy ô có thể?",
+      "Bạn ấy đã dùng hết manh mối trên bảng chưa?"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Ba bạn An, Bình, Cường nuôi chó, mèo, cá. Biết An nuôi cá, Bình không nuôi chó. Bình nuôi con gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Bình nuôi con gì",
+        "options": [
+         "mèo",
+         "chó",
+         "cá"
+        ],
+        "value": "mèo"
+       }
+      ]
+     },
+     "solutionNarrative": "Cột cá đã bị gạch vì An nuôi cá, ô chó cũng bị gạch, nên hàng Bình chỉ còn ô mèo.",
+     "hints": [
+      "Con đánh dấu ô của An rồi gạch cả hàng cả cột.",
+      "Rồi gạch nốt ô chó của Bình, xem hàng Bình còn ô nào."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Vẫn ba bạn An, Bình, Cường nuôi chó, mèo, cá. An nuôi cá, Bình không nuôi chó. Cho biết Bình nuôi con gì và Cường nuôi con gì.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Bình nuôi",
+        "options": [
+         "mèo",
+         "chó",
+         "cá"
+        ],
+        "value": "mèo"
+       },
+       {
+        "label": "Cường nuôi",
+        "options": [
+         "mèo",
+         "chó",
+         "cá"
+        ],
+        "value": "chó"
+       }
+      ]
+     },
+     "solutionNarrative": "Hàng Bình chỉ còn ô mèo. Còn lại Cường nuôi chó.",
+     "hints": [
+      "Con làm xong hàng Bình trước đã.",
+      "Hai bạn kia có con vật rồi thì bạn cuối nhận nốt con còn lại."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Đánh dấu một ô thì gạch cả hàng và cả cột của ô ấy.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — một bạn một bông, một bông một chủ."
+   },
+   {
+    "id": "Q2",
+    "text": "Đào cầm sen, Mai không cầm hồng. Mai cầm hoa gì?",
+    "format": "mcq",
+    "choices": [
+     "cúc",
+     "sen",
+     "hồng"
+    ],
+    "answerKey": {
+     "choice": "cúc"
+    },
+    "solutionNarrative": "Hàng Mai chỉ còn một ô trống."
+   },
+   {
+    "id": "Q3",
+    "text": "Mới loại được một ô là chốt được đáp án.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phải dùng đủ mọi manh mối trên bảng."
+   },
+   {
+    "id": "Q4",
+    "text": "Hàng nào chỉ còn một ô trống thì sao?",
+    "format": "mcq",
+    "choices": [
+     "ô ấy chính là đáp án",
+     "phải đoán thêm",
+     "bỏ qua hàng ấy"
+    ],
+    "answerKey": {
+     "choice": "ô ấy chính là đáp án"
+    },
+    "solutionNarrative": "Không cần đoán mò nữa."
+   },
+   {
+    "id": "Q5",
+    "text": "Bảng loại trừ giúp kết luận mà không phải đoán mò.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — mỗi kết luận đều có manh mối chống lưng."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Kẻ bảng ra giấy rồi cùng con đánh dấu và gạch — nhìn bảng đầy dần lên là bé hiểu ngay cách suy luận này.",
+  "homeActivity": "Bố mẹ hỏi: \"Hàng này còn mấy ô trống?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B63_giang.mp4"
+ }
+}

@@ -111,6 +111,35 @@ KHAI_TAY_L2 = {
                  {'label': 'ai nhiều hơn', 'options': ['Hoa', 'Lan'], 'value': 'Hoa'},
                  {'label': 'Hoa có mấy nhãn', 'value': 21}]}},
 
+    # ── chương 6 · Thám tử tí hon: bốn bài tách thành tám ──
+    (6, 2): {'ve': 'DL:KSN2.B23'},    # 4 đầu 12 chân — gắn tạm hai chân
+    (6, 5): {'ve': 'DL:KSN2.B61'},    # 6 đầu 14 chân — chân thừa chia thành cặp
+    (6, 6): {'ve': 'DL:KSN2.B62'},    # đường 18 mét — biết chiều dài, tìm số cây
+    (6, 7): {'ve': 'DL:KSN2.B25'},    # xếp hạng cuộc thi chạy — vẽ thang
+    (6, 8): {'ve': 'DL:KSN2.B63'},    # ba bạn ba món, hai manh mối — bảng loại trừ
+    # Câu 4 vốn đã đúng dạng "đi lùi qua hai máy khác loại", chỉ khai lại cho đúng
+    # bài THỨ TỰ ĐI LÙI. Nhân tiện bỏ tên nhân vật: chương này nay không còn bài chữ
+    # nào nên cái tên ấy mồ côi — bé đọc thấy một tên chưa gặp ở đâu.
+    (6, 4): {'ve': 'DL:KSN2.B60',
+             'text': 'Một bạn mua bút hết 6 nghìn đồng, rồi được mẹ cho 9 nghìn. Bây '
+                     'giờ bạn ấy có 12 nghìn. Hỏi lúc đầu bạn ấy có bao nhiêu nghìn '
+                     'đồng?',
+             'answer': 'Đi lùi từ cuối: trước khi được cho 9 nghìn thì có '
+                       '12 − 9 = 3 (nghìn). Trước khi mua bút hết 6 nghìn thì có '
+                       '3 + 6 = 9 (nghìn). Đáp số: lúc đầu có 9 nghìn đồng.',
+             'khoa': {'parts': [
+                 {'label': 'lúc đầu có bao nhiêu nghìn', 'value': 9}]}},
+    # ── chương 2 · cùng lỗi mồ côi, ở câu cuối ──
+    (2, 10): {'text': 'Một bạn đánh số một cuốn sổ từ trang 8 đến trang 21. Hỏi bạn '
+                      'ấy đánh số bao nhiêu trang, và cần tất cả bao nhiêu chữ số?',
+              'answer': 'Số trang: 21 − 8 = 13, thêm một được 14 trang. Số chữ số: '
+                        'trang 8 và 9 mỗi trang một chữ số nên hết 2 chữ số; từ trang '
+                        '10 đến trang 21 có 12 trang, mỗi trang hai chữ số nên hết '
+                        '24 chữ số. Cộng lại: 2 + 24 = 26 chữ số.',
+              'khoa': {'parts': [
+                  {'label': 'đánh số mấy trang', 'value': 14},
+                  {'label': 'cần mấy chữ số', 'value': 26}]}},
+
     (1, 6): {'ve': 'DL:KSN2.B36',
              'text': 'Một cửa hàng ghi giá 90 nghìn đồng nhưng viết sót mất chữ số '
                      '0 ở cuối, thành 9 nghìn đồng. Giá bị viết rẻ đi bao nhiêu '

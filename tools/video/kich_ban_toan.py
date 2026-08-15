@@ -5877,6 +5877,333 @@ def kb2_moi_gio_chia(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 2 · CHƯƠNG 6 · THÁM TỬ TÍ HON — tám kịch bản.
+#
+# ⚠ Chữ "thám tử" và "vũ khí" nằm trong TU_CAM — chúng là vỏ nhân vật của sách.
+# Tên chương giữ nguyên trong dữ liệu, nhưng lời đọc và chữ trên màn phải tránh.
+# ═══════════════════════════════════════════════════════════════════════════
+
+
+def kb2_di_lui(b):
+    """C6① Đi lùi qua hai máy, đảo phép từng máy."""
+    return [
+        _c('bia', 'Đi lùi qua hai máy', so_bai(b),
+           loi=['Số cần tìm đi qua hai máy rồi mới ra kết quả. Mình đi lùi để bắt '
+                'nó.']),
+        _c('de_toan', 'Đề bài',
+           de='Một số đem trừ đi 2, rồi nhân với 3 thì được 12. Tìm số ấy.',
+           loi=['Một số đem trừ đi hai, rồi nhân với ba thì được mười hai.',
+                'Tìm số ấy.']),
+        _c('y_toan', 'Vẽ hành trình xuôi', '?  →  máy − 2  →  máy × 3  →  12',
+           buoc=1, soBuoc=3,
+           loi=['Vẽ hành trình xuôi của số cần tìm.',
+                'Nó chui vào máy trừ hai, rồi vào máy nhân ba, và chạy ra thành mười '
+                'hai.']),
+        _c('cong_thuc', 'Đi lùi thì đảo phép từng máy',
+           congThuc='máy × 3  lùi thành  máy : 3',
+           thay='máy − 2  lùi thành  máy + 2',
+           loi=['Đi lùi là gỡ lại việc máy vừa làm, nên phải đảo phép.',
+                'Máy nhân ba lùi thành máy chia ba. Máy trừ hai lùi thành máy cộng '
+                'hai.']),
+        _c('y_toan', 'Lùi qua máy thứ nhất', '12 : 3 = 4', buoc=2, soBuoc=3,
+           loi=['Trước khi nhân ba, số ấy là mười hai chia ba bằng bốn.']),
+        _c('y_toan', 'Lùi qua máy thứ hai', '4 + 2 = 6', buoc=3, soBuoc=3,
+           loi=['Trước khi trừ hai, số ấy là bốn cộng hai bằng sáu.']),
+        _c('y_toan', 'Thử lại bằng cách chạy xuôi', '6 − 2 = 4   ·   4 × 3 = 12',
+           loi=['Thử lại bằng cách chạy xuôi. Sáu trừ hai bằng bốn, rồi bốn nhân ba '
+                'bằng mười hai, khớp đúng đề bài.']),
+        _c('y_toan', 'Đáp số', 'Số cần tìm là 6',
+           loi=['Số cần tìm là sáu.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='cộng ⇄ trừ      ·      nhân ⇄ chia',
+           loi=['Con nhớ lại một lần nữa. Cộng đảo thành trừ, nhân đảo thành chia.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_thu_tu_lui(b):
+    """C6② Máy làm sau cùng thì lùi qua trước."""
+    return [
+        _c('bia', 'Thứ tự đi lùi', so_bai(b),
+           loi=['Đảo phép đúng rồi mà lùi sai thứ tự thì vẫn tắc đường.']),
+        _c('de_toan', 'Đề bài',
+           de='Một số đem cộng 3, rồi nhân với 2 thì được 16. Tìm số ấy.',
+           loi=['Một số đem cộng ba, rồi nhân với hai thì được mười sáu.',
+                'Tìm số ấy.']),
+        _c('y_toan', 'Máy nào làm sau cùng', '?  →  máy + 3  →  máy × 2  →  16',
+           buoc=1, soBuoc=3,
+           loi=['Số ấy đi qua máy cộng ba trước, rồi mới qua máy nhân hai.',
+                'Vậy máy nhân hai là máy làm sau cùng.']),
+        _c('cong_thuc', 'Máy làm sau cùng thì lùi qua trước',
+           congThuc='cởi ba lô trước, rồi mới cởi áo',
+           thay='việc gì làm SAU thì gỡ TRƯỚC',
+           loi=['Cởi ba lô trước rồi mới cởi áo. Việc gì làm sau thì gỡ trước.']),
+        _c('y_toan', 'Lùi qua máy nhân 2 trước', '16 : 2 = 8', buoc=2, soBuoc=3,
+           loi=['Nên lùi qua máy nhân hai trước. Mười sáu chia hai bằng tám.']),
+        _c('y_toan', 'Rồi mới lùi qua máy cộng 3', '8 − 3 = 5', buoc=3, soBuoc=3,
+           loi=['Rồi mới lùi qua máy cộng ba. Tám trừ ba bằng năm.']),
+        _c('y_toan', 'Thử lại bằng cách chạy xuôi', '5 + 3 = 8   ·   8 × 2 = 16',
+           loi=['Thử lại. Năm cộng ba bằng tám, rồi tám nhân hai bằng mười sáu, khớp '
+                'đúng đề bài.']),
+        _c('y_toan', 'Nếu lùi sai thứ tự thì sao', '16 − 3 = 13  →  13 không chia đôi được',
+           loi=['Nếu lùi qua máy cộng ba trước thì được mười sáu trừ ba bằng mười ba.',
+                'Rồi tắc, vì mười ba không chia đôi được. Tắc đường chính là chuông '
+                'báo động.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='máy làm SAU CÙNG thì lùi qua TRƯỚC',
+           loi=['Con nhớ lại một lần nữa. Máy làm sau cùng thì lùi qua trước.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_gan_hai_chan(b):
+    """C6③ Gắn tạm hai chân cho tất cả."""
+    return [
+        _c('bia', 'Đếm chân gà và chó', so_bai(b),
+           loi=['Biết tổng số đầu và tổng số chân, tìm ra mỗi loại mấy con.']),
+        _c('de_toan', 'Đề bài',
+           de='Trong sân có gà và chó, đếm được 5 cái đầu và 14 cái chân. Sau khi gắn tạm mỗi con hai chân thì còn thừa mấy chân?',
+           loi=['Trong sân có gà và chó, đếm được năm cái đầu và mười bốn cái chân.',
+                'Hỏi sau khi gắn tạm mỗi con hai chân thì còn thừa mấy chân.']),
+        _c('y_toan', 'Mỗi con vật chỉ có một cái đầu', '5 cái đầu  →  5 con vật',
+           buoc=1, soBuoc=3,
+           loi=['Mỗi con vật, dù gà hay chó, đều chỉ có một cái đầu.',
+                'Đếm được năm cái đầu nên chắc chắn có năm con vật.']),
+        _c('luoi_cham', 'Gắn tạm mỗi con hai chân', hang=5, cot=2,
+           chuPhu='5 × 2 = 10 chân',
+           loi=['Gà có hai chân, chó có bốn chân, nên con nào cũng có ít nhất hai '
+                'chân.',
+                'Gắn tạm mỗi con hai chân thì được mười chân.']),
+        _c('y_toan', 'Đề nói có 14 chân', '14 − 10 = 4', buoc=2, soBuoc=3,
+           loi=['Đề nói có mười bốn chân mà mình mới gắn mười chân.',
+                'Mười bốn trừ mười bằng bốn. Còn thừa bốn chân.']),
+        _c('y_toan', 'Đáp số', 'còn thừa 4 chân', buoc=3, soBuoc=3,
+           loi=['Đáp số là còn thừa bốn chân.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Không lấy số CHÂN trừ số ĐẦU.',
+           loi=['Có bạn lấy mười bốn cái chân trừ năm cái đầu được chín, rồi bảo có '
+                'chín con chó.',
+                'Chân và đầu khác loại nhau. Với lại cả sân chỉ có năm con vật.']),
+        _c('cong_thuc', 'Ba bước của bài đếm chân',
+           congThuc='① vẽ đủ số đầu   ② gắn tạm 2 chân cho tất cả',
+           thay='③ chân còn thừa thì gắn thêm cho con bốn chân',
+           loi=['Ba bước. Vẽ đủ số đầu. Gắn tạm hai chân cho tất cả. Rồi xem chân còn '
+                'thừa.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='số ĐẦU chính là số CON',
+           loi=['Con nhớ lại một lần nữa. Số đầu chính là số con vật.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_chan_thua(b):
+    """C6④ Chân thừa chia thành từng cặp."""
+    return [
+        _c('bia', 'Chân thừa là của ai', so_bai(b),
+           loi=['Bốn chân còn thừa kia là của mấy chú chó? Bài này tìm ra.']),
+        _c('de_toan', 'Đề bài',
+           de='Có 5 cái đầu và 14 cái chân. Gắn tạm mỗi con hai chân thì còn thừa 4 chân. Hỏi mấy con gà, mấy con chó?',
+           loi=['Có năm cái đầu và mười bốn cái chân. Gắn tạm mỗi con hai chân thì còn '
+                'thừa bốn chân.',
+                'Hỏi có mấy con gà, mấy con chó.']),
+        _c('y_toan', 'Mỗi chú chó còn thiếu hai chân', '4 − 2 = 2', buoc=1, soBuoc=3,
+           loi=['Chó có bốn chân mà mới được gắn hai chân.',
+                'Bốn trừ hai bằng hai. Mỗi chú chó còn thiếu đúng hai chân nữa.']),
+        _c('nhom_deu', 'Chia 4 chân thừa thành từng cặp', tong=4, moiNhom=2,
+           chuPhu='4 chia 2 được 2 cặp — mỗi cặp cho một chú chó.',
+           loi=['Chia bốn chân thừa thành từng cặp. Bốn chia hai được hai cặp.',
+                'Mỗi cặp gắn cho một chú chó.']),
+        _c('y_toan', 'Vậy có 2 con chó', '5 − 2 = 3 con gà', buoc=2, soBuoc=3,
+           loi=['Vậy có hai con chó. Còn lại năm trừ hai bằng ba con chỉ có hai chân, '
+                'đó là gà.']),
+        _c('y_toan', 'Thử lại cho chắc',
+           'gà 3 × 2 = 6 chân   ·   chó 2 × 4 = 8 chân   ·   6 + 8 = 14',
+           buoc=3, soBuoc=3,
+           loi=['Thử lại. Gà ba nhân hai bằng sáu chân. Chó hai nhân bốn bằng tám '
+                'chân.',
+                'Sáu cộng tám bằng mười bốn chân, khớp đúng đề bài.']),
+        _c('y_toan', 'Đáp số', '3 con gà và 2 con chó',
+           loi=['Đáp số là ba con gà và hai con chó.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Thừa 4 chân KHÔNG có nghĩa là 4 con chó.',
+           loi=['Có bạn thấy thừa bốn chân rồi bảo luôn là có bốn con chó.',
+                'Mỗi chú chó cần một cặp hai chân, nên bốn chân thừa chỉ gắn được cho '
+                'hai chú.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chân thừa chia thành từng CẶP',
+           thay='rồi cộng chân của tất cả để thử lại',
+           loi=['Con nhớ lại một lần nữa. Chân thừa chia thành từng cặp, rồi cộng chân '
+                'của tất cả để thử lại.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_cay_khoang(b):
+    """C6⑤ Cây và khoảng — luật bàn tay."""
+    return [
+        _c('bia', 'Cây và khoảng', so_bai(b),
+           loi=['Số cây và số khoảng không bằng nhau, và đó là cả bài học.']),
+        _c('de_toan', 'Đề bài',
+           de='Một lối đi trồng 5 cây, cây nọ cách cây kia 2 mét, trồng ở cả hai đầu. Lối đi dài bao nhiêu mét?',
+           loi=['Một lối đi trồng năm cây, cây nọ cách cây kia hai mét, trồng ở cả hai '
+                'đầu.',
+                'Hỏi lối đi dài bao nhiêu mét.']),
+        _c('y_toan', 'Xòe bàn tay ra mà đếm', '5 ngón  —  chỉ có 4 kẽ',
+           buoc=1, soBuoc=3,
+           loi=['Xòe bàn tay ra mà đếm. Năm ngón tay nhưng chỉ có bốn kẽ tay.',
+                'Ngón là cây, kẽ là khoảng.']),
+        _c('day_so', 'Năm cây thì bốn khoảng', so=[1, 2, 3, 4, 5],
+           chuPhu='Giữa 5 cây chỉ có 4 khoảng.',
+           loi=['Trồng năm cây thì chỉ có bốn khoảng.',
+                'Số khoảng luôn ít hơn số cây đúng một, khi trồng cả hai đầu.']),
+        _c('y_toan', 'Chiều dài đi với KHOẢNG', '2 × 4 = 8 mét', buoc=2, soBuoc=3,
+           loi=['Chiều dài đi với khoảng, không đi với cây.',
+                'Mỗi khoảng hai mét, có bốn khoảng, nên lối đi dài tám mét.']),
+        _c('y_toan', 'Đáp số', '8 mét', buoc=3, soBuoc=3,
+           loi=['Đáp số là tám mét.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Nhân với số CÂY thì ra 10 mét — sai.',
+           loi=['Có bạn nhân hai với năm cây được mười mét.',
+                'Cây chỉ đứng ở các mốc chứ không tạo nên chiều dài. Thứ tạo nên chiều '
+                'dài là khoảng.']),
+        _c('cong_thuc', 'Luật bàn tay',
+           congThuc='trồng cả hai đầu:  số CÂY = số KHOẢNG + 1',
+           thay='chiều dài thì nhân với số KHOẢNG',
+           loi=['Trồng cả hai đầu thì số cây bằng số khoảng cộng một. Còn chiều dài '
+                'thì nhân với số khoảng.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hỏi trước: đề đang hỏi CÂY hay hỏi KHOẢNG?',
+           loi=['Con nhớ lại một lần nữa. Hỏi trước xem đề đang hỏi cây hay hỏi '
+                'khoảng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_tim_so_cay(b):
+    """C6⑥ Biết chiều dài, tìm số cây."""
+    return [
+        _c('bia', 'Biết chiều dài, tìm số cây', so_bai(b),
+           loi=['Bài trước biết số cây rồi hỏi chiều dài. Bài này ngược lại.']),
+        _c('de_toan', 'Đề bài',
+           de='Trồng cây dọc đoạn đường dài 15 mét, cây nọ cách cây kia 3 mét, trồng ở cả hai đầu. Trồng được mấy cây?',
+           loi=['Trồng cây dọc một đoạn đường dài mười lăm mét, cây nọ cách cây kia ba '
+                'mét, trồng ở cả hai đầu.',
+                'Hỏi trồng được bao nhiêu cây.']),
+        _c('y_toan', 'Tìm số khoảng trước đã', '15 : 3 = 5 khoảng', buoc=1, soBuoc=3,
+           loi=['Chiều dài đi với khoảng, nên chia trước để ra số khoảng.',
+                'Mười lăm chia ba bằng năm khoảng.']),
+        _c('day_so', 'Năm khoảng thì sáu cây', so=[1, 2, 3, 4, 5, 6],
+           chuPhu='Thêm một cây nữa ở đầu kia đường.',
+           loi=['Năm khoảng thì có sáu cây, vì trồng cả hai đầu.']),
+        _c('y_toan', 'Số cây nhiều hơn số khoảng đúng một', '5 + 1 = 6 cây',
+           buoc=2, soBuoc=3,
+           loi=['Số cây nhiều hơn số khoảng đúng một. Năm cộng một bằng sáu cây.']),
+        _c('y_toan', 'Thử lại cho chắc', '3 × 5 = 15 mét', buoc=3, soBuoc=3,
+           loi=['Thử lại. Sáu cây có năm khoảng, mỗi khoảng ba mét, ba nhân năm bằng '
+                'mười lăm mét, khớp đúng đề bài.']),
+        _c('y_toan', 'Đáp số', '6 cây',
+           loi=['Đáp số là sáu cây.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Chia xong mới ra số KHOẢNG, chưa phải số cây.',
+           loi=['Có bạn chia xong là ghi luôn đáp số, quên mất bước cộng một.',
+                'Quên cộng một thì mất hẳn một cây ở đầu đường.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chia ra số KHOẢNG  →  cộng 1  →  số CÂY',
+           loi=['Con nhớ lại một lần nữa. Chia ra số khoảng, rồi cộng một mới ra số '
+                'cây.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_ve_thang(b):
+    """C6⑦ Vẽ thang xếp thứ tự."""
+    return [
+        _c('bia', 'Vẽ thang xếp thứ tự', so_bai(b),
+           loi=['Đố kiểu ai hơn ai thì vẽ một chiếc thang ra là xong.']),
+        _c('de_toan', 'Đề bài',
+           de='Voi nặng hơn Gấu. Gấu nặng hơn Thỏ. Ai nặng nhất, ai nhẹ nhất, và Voi có nặng hơn Thỏ không?',
+           loi=['Voi nặng hơn Gấu. Gấu nặng hơn Thỏ.',
+                'Hỏi ai nặng nhất, ai nhẹ nhất, và Voi có nặng hơn Thỏ không.']),
+        _c('y_toan', 'Manh mối thứ nhất xếp được một bạn', 'Voi đứng trên Gấu',
+           buoc=1, soBuoc=3,
+           loi=['Manh mối thứ nhất nói Voi nặng hơn Gấu, nên Voi đứng trên Gấu.']),
+        _c('san_bang', 'Manh mối thứ hai xếp nốt bạn còn lại', so=[9, 6, 3],
+           chuPhu='Từ trên xuống: Voi, Gấu, Thỏ.',
+           loi=['Manh mối thứ hai nói Gấu nặng hơn Thỏ, nên Thỏ đứng dưới Gấu.',
+                'Thang thành Voi, Gấu, Thỏ từ trên xuống.']),
+        _c('y_toan', 'Đọc thang là biết ngay', 'Voi nặng nhất  ·  Thỏ nhẹ nhất',
+           buoc=2, soBuoc=3,
+           loi=['Đọc thang là biết ngay. Voi đứng trên cùng nên nặng nhất. Thỏ đứng '
+                'dưới cùng nên nhẹ nhất.']),
+        _c('y_toan', 'Thang cho biết cả điều đề không nói thẳng',
+           'Voi trên cùng, Thỏ dưới cùng  →  Voi nặng hơn Thỏ', buoc=3, soBuoc=3,
+           loi=['Đề không nói gì về Voi với Thỏ, nhưng thang thì nói.',
+                'Voi đứng trên cùng còn Thỏ đứng dưới cùng, nên Voi nặng hơn Thỏ.']),
+        _c('y_toan', 'Đáp số', 'Voi nặng nhất · Thỏ nhẹ nhất · Voi nặng hơn Thỏ',
+           loi=['Đáp số là Voi nặng nhất, Thỏ nhẹ nhất, và Voi nặng hơn Thỏ.']),
+        _c('cong_thuc', 'Hai manh mối, ba câu trả lời',
+           congThuc='mỗi manh mối xếp được MỘT bạn vào thang',
+           thay='xếp xong thì thang trả lời được cả câu đề không hỏi thẳng',
+           loi=['Mỗi manh mối xếp được một bạn vào thang. Xếp xong thì thang trả lời '
+                'được cả câu đề không hỏi thẳng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_bang_loai_tru(b):
+    """C6⑧ Bảng loại trừ."""
+    HANG = ['Mai', 'Đào', 'Cúc']
+    COT = ['hồng', 'sen', 'cúc']
+    return [
+        _c('bia', 'Bảng loại trừ', so_bai(b),
+           loi=['Đố kiểu ai cầm cái gì thì kẻ một cái bảng ra là tìm được, không phải '
+                'đoán mò.']),
+        _c('de_toan', 'Đề bài',
+           de='Ba bạn Mai, Đào, Cúc cầm ba bông hoa hồng, sen, cúc. Mai không cầm hoa hồng. Đào cầm hoa sen. Hỏi mỗi bạn cầm hoa gì?',
+           loi=['Ba bạn Mai, Đào, Cúc cầm ba bông hoa hồng, sen, cúc.',
+                'Biết Mai không cầm hoa hồng, và Đào cầm hoa sen. Hỏi mỗi bạn cầm hoa '
+                'gì.']),
+        _c('bang_loai_tru', 'Kẻ bảng ba hàng ba cột', hang=HANG, cot=COT,
+           o=[['', '', ''], ['', '', ''], ['', '', '']],
+           chuPhu='Mỗi hàng một bạn, mỗi cột một bông hoa.',
+           loi=['Kẻ bảng ba hàng ba cột. Mỗi hàng một bạn, mỗi cột một bông hoa.']),
+        _c('bang_loai_tru', 'Đánh dấu từ manh mối chắc nhất', hang=HANG, cot=COT,
+           o=[['', '', ''], ['', 'v', ''], ['', '', '']],
+           chuPhu='Đào cầm hoa sen — đánh dấu đúng ô ấy.',
+           loi=['Đánh dấu từ manh mối chắc nhất. Đào cầm hoa sen, nên đánh dấu đúng ô '
+                'ấy.']),
+        _c('bang_loai_tru', 'Gạch cả hàng và cả cột', hang=HANG, cot=COT,
+           o=[['', 'x', ''], ['x', 'v', 'x'], ['', 'x', '']],
+           chuPhu='Một bạn chỉ cầm một bông, một bông chỉ một chủ.',
+           loi=['Gạch cả hàng Đào và cả cột sen.',
+                'Vì một bạn chỉ cầm một bông, và một bông chỉ có một chủ.']),
+        _c('bang_loai_tru', 'Dùng nốt manh mối còn lại', hang=HANG, cot=COT,
+           o=[['x', 'x', 'v'], ['x', 'v', 'x'], ['', 'x', 'x']],
+           chuPhu='Mai không cầm hồng → hàng Mai chỉ còn ô cúc.',
+           loi=['Mai không cầm hoa hồng nên gạch ô ấy.',
+                'Hàng Mai chỉ còn một ô trống là hoa cúc, vậy Mai cầm hoa cúc.']),
+        _c('bang_loai_tru', 'Hàng cuối chỉ còn một ô', hang=HANG, cot=COT,
+           o=[['x', 'x', 'v'], ['x', 'v', 'x'], ['v', 'x', 'x']],
+           chuPhu='Còn lại Cúc cầm hoa hồng.',
+           loi=['Hàng cuối chỉ còn một ô trống, vậy Cúc cầm hoa hồng.']),
+        _c('y_toan', 'Đáp số', 'Mai cúc · Đào sen · Cúc hồng',
+           loi=['Đáp số là Mai cầm hoa cúc, Đào cầm hoa sen, Cúc cầm hoa hồng.',
+                'Bạn tên Cúc lại không cầm hoa cúc. Đề trêu mình đấy, nhưng bảng thì '
+                'không bị lừa.']),
+        _c('cong_thuc', 'Ba bước của bảng loại trừ',
+           congThuc='① đánh dấu từ manh mối chắc nhất',
+           thay='② gạch cả hàng cả cột   ③ hàng nào còn một ô, ô ấy là đáp án',
+           loi=['Ba bước. Đánh dấu từ manh mối chắc nhất. Gạch cả hàng cả cột. Hàng '
+                'nào chỉ còn một ô, ô ấy chính là đáp án.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
@@ -5969,6 +6296,11 @@ BO = {
     'DL:KSN2.B19': kb2_ve_theo_phan, 'DL:KSN2.B57': kb2_chia_phan,
     'DL:KSN2.B20': kb2_tuoi_sau_nam, 'DL:KSN2.B58': kb2_hieu_tuoi,
     'DL:KSN2.B21': kb2_moi_gio_nhan, 'DL:KSN2.B59': kb2_moi_gio_chia,
+    # ══ LỚP 2 · chương 6 · Thám tử tí hon — tám bài ══
+    'DL:KSN2.B22': kb2_di_lui,      'DL:KSN2.B60': kb2_thu_tu_lui,
+    'DL:KSN2.B23': kb2_gan_hai_chan, 'DL:KSN2.B61': kb2_chan_thua,
+    'DL:KSN2.B24': kb2_cay_khoang,  'DL:KSN2.B62': kb2_tim_so_cay,
+    'DL:KSN2.B25': kb2_ve_thang,    'DL:KSN2.B63': kb2_bang_loai_tru,
 }
 
 

@@ -367,6 +367,54 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuCuoi"):
             giua(d, y0 + h_luoi + 124, c["chuCuoi"], phong(34), INK, rong=W - 200)
 
+    elif L == "bang_loai_tru":
+        # ══ BẢNG LOẠI TRỪ — CÁCH SUY LUẬN KHÔNG PHẢI ĐOÁN MÒ ══
+        #
+        # Cả bài "ai cầm cái gì" đứng trên một cái bảng: mỗi hàng một bạn, mỗi cột
+        # một đồ vật, manh mối chắc chắn thì đánh dấu, rồi gạch hết ô cùng hàng cùng
+        # cột. Nói bằng lời thì rối; vẽ ra thì bé thấy ngay hàng nào chỉ còn một ô
+        # trống — và ô ấy chính là đáp án.
+        #
+        # `hang` và `cot` là nhãn. `o` là bảng ký hiệu, mỗi phần tử là "" (chưa
+        # biết), "v" (đúng, tô teal) hoặc "x" (đã loại, tô đỏ nhạt).
+        giua(d, 44, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        hang = c.get("hang", [])
+        cot = c.get("cot", [])
+        o = c.get("o", [])
+        n_h, n_c = len(hang), len(cot)
+        if not n_h or not n_c:
+            return im
+        w_o, h_o = 150, 84
+        w_nhan = 190
+        tong_w = w_nhan + n_c * w_o
+        x0 = (W - tong_w) // 2
+        y0 = 190
+        f_nhan, f_ky = phong(30), phong(52)
+        # hàng tiêu đề cột
+        for j, ten in enumerate(cot):
+            x = x0 + w_nhan + j * w_o
+            giua_x = x + w_o / 2
+            d.text((giua_x - d.textlength(ten, font=f_nhan) / 2, y0 - 48), ten,
+                   font=f_nhan, fill=NAVY)
+        for i, ten in enumerate(hang):
+            y = y0 + i * h_o
+            d.text((x0 + w_nhan - 20 - d.textlength(ten, font=f_nhan), y + 24), ten,
+                   font=f_nhan, fill=NAVY)
+            for j in range(n_c):
+                x = x0 + w_nhan + j * w_o
+                ky = (o[i][j] if i < len(o) and j < len(o[i]) else "") or ""
+                nen = TEAL_PALE if ky == "v" else ("#FFF0EE" if ky == "x" else "#FFFFFF")
+                vien = TEAL if ky == "v" else (ALERT if ky == "x" else LINE)
+                the(d, x + 6, y + 6, w_o - 12, h_o - 12, nen=nen, vien=vien,
+                    day=5 if ky else 3, bo=14)
+                if ky:
+                    t = "✓" if ky == "v" else "✗"
+                    mau = TEAL_DARK if ky == "v" else ALERT
+                    d.text((x + w_o / 2 - d.textlength(t, font=f_ky) / 2, y + 12), t,
+                           font=f_ky, fill=mau)
+        if c.get("chuPhu"):
+            giua(d, y0 + n_h * h_o + 40, c["chuPhu"], phong(36), INK, rong=W - 160)
+
     elif L == "hinh_cn":
         # ══ HÌNH CHỮ NHẬT — VẼ ĐƯỢC CẢ CHU VI LẪN DIỆN TÍCH ══
         # Chỗ bé lẫn nhất cả chương là chu vi với diện tích. Nói bằng lời thì hai chữ

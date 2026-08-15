@@ -1,0 +1,323 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B60",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 49 · MÁY LÀM SAU CÙNG THÌ LÙI QUA TRƯỚC",
+ "durationMinutes": 10,
+ "so": 49,
+ "chuong": 6,
+ "tenChuong": "Thám tử tí hon",
+ "dangGoc": "LV 8.1b — Tính ngược từ cuối: thứ tự đi lùi.",
+ "skills": {
+  "bktUnit": "CHUONG:6@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 49,
+  "prev": "DL:KSN2.B22",
+  "next": "DL:KSN2.B23"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhận ra máy nào làm sau cùng trong hành trình xuôi. Lùi qua máy làm sau cùng trước tiên. Biết tắc đường lúc đi lùi là chuông báo sai thứ tự.",
+  "kidText": "Một số cộng 3 rồi nhân 2 thì được 16. Con đoán xem nên lùi qua máy nào trước nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn lùi ngay qua máy cộng 3 trước, lấy $16 - 3 = 13$, rồi tắc vì 13 không chia đôi được.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Số ấy đi qua máy nào sau cùng trên đường xuôi? Gợi ý 2: Máy làm sau cùng thì phải lùi qua trước. Bạn ấy đảo phép đúng mà lùi sai thứ tự. Chữa: lùi qua máy nhân 2 trước, được $16 : 2 = 8$, rồi $8 - 3 = 5$."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn lùi ngay qua máy cộng 3 trước, lấy $16 - 3 = 13$, rồi tắc vì 13 không chia đôi được.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một số đem cộng 3, rồi nhân với 2 thì được 16. Tìm số ấy.",
+  "steps": [
+   {
+    "show": "Thứ tự đi lùi mới là chỗ khó",
+    "phan": "giai"
+   },
+   {
+    "show": "Số ấy đi qua máy cộng 3 trước, rồi mới qua máy nhân 2. Vậy máy nhân 2 là máy làm sau cùng.",
+    "phan": "giai"
+   },
+   {
+    "show": "Máy làm sau cùng thì lùi qua trước",
+    "phan": "giai"
+   },
+   {
+    "show": "Cởi ba lô trước rồi mới cởi áo. Nên phải lùi qua máy nhân 2 trước.",
+    "phan": "giai"
+   },
+   {
+    "show": "Lùi cho đúng thứ tự",
+    "phan": "giai"
+   },
+   {
+    "show": "Lấy $16 : 2 = 8$, rồi $8 - 3 = 5$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Thử lại bằng cách chạy xuôi",
+    "phan": "giai"
+   },
+   {
+    "show": "Lấy $5 + 3 = 8$, rồi $8  \\times  2 = 16$, khớp đúng đề bài.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: số cần tìm là 5.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Lùi sai thứ tự thì thường tắc đường ngay — đó chính là chuông báo động.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Một số đem cộng 3, rồi nhân 2. Máy nào làm sau cùng?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "máy làm sau cùng",
+        "options": [
+         "máy nhân 2",
+         "máy cộng 3"
+        ],
+        "value": "máy nhân 2"
+       }
+      ]
+     },
+     "solutionNarrative": "Số ấy qua máy cộng 3 trước, nên máy nhân 2 làm sau cùng.",
+     "hints": [
+      "Con đọc lại đề theo đúng thứ tự việc làm.",
+      "Việc nào được nhắc sau thì làm sau."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tính $16 : 2$.",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "Lấy $16 : 2 = 8$.",
+     "hints": [
+      "Con đọc bảng nhân hai tới khi gặp mười sáu.",
+      "Đó là hai lần mấy?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Một số đem cộng 3 rồi nhân 2 thì được 16. Phải lùi qua máy nào trước?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lùi qua máy nào trước",
+        "options": [
+         "máy nhân 2",
+         "máy cộng 3"
+        ],
+        "value": "máy nhân 2"
+       }
+      ]
+     },
+     "solutionNarrative": "Máy nhân 2 làm sau cùng nên phải lùi qua nó trước.",
+     "hints": [
+      "Cởi ba lô trước rồi mới cởi áo.",
+      "Việc gì làm sau cùng thì phải gỡ ra trước tiên."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Một số đem cộng 3 rồi nhân 2 thì được 16. Số cần tìm là mấy?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Lùi qua máy nhân 2 trước: $16 : 2 = 8$. Rồi $8 - 3 = 5$.",
+     "hints": [
+      "Lùi qua máy làm sau cùng trước đã.",
+      "Có kết quả rồi thì lùi tiếp qua máy còn lại."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Có bạn lùi bằng cách lấy 16 trừ 3 được 13 rồi tắc. Bạn ấy sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "sai ở đâu",
+        "options": [
+         "lùi sai thứ tự",
+         "đảo phép sai",
+         "không sai gì cả"
+        ],
+        "value": "lùi sai thứ tự"
+       }
+      ]
+     },
+     "solutionNarrative": "Bạn ấy lùi sai thứ tự. Phải lùi qua máy làm sau cùng trước đã.",
+     "hints": [
+      "Bạn ấy đảo phép đúng đấy chứ.",
+      "Nhưng bạn ấy gỡ máy nào trước — máy làm trước hay máy làm sau?"
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Một số đem nhân 2, rồi cộng 5 thì được 19. Lùi qua máy nào trước, và số cần tìm là mấy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lùi qua máy nào trước",
+        "options": [
+         "máy cộng 5",
+         "máy nhân 2"
+        ],
+        "value": "máy cộng 5"
+       },
+       {
+        "label": "số cần tìm",
+        "value": 7
+       }
+      ]
+     },
+     "solutionNarrative": "Máy cộng 5 làm sau cùng nên lùi qua nó trước: $19 - 5 = 14$. Rồi $14 : 2 = 7$.",
+     "hints": [
+      "Con đọc đề xem việc nào được nhắc sau cùng.",
+      "Gỡ việc ấy trước, rồi mới gỡ việc còn lại."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Một số đem trừ 4, rồi nhân 3 thì được 21. Số cần tìm là mấy?",
+     "answerKey": {
+      "value": 11
+     },
+     "solutionNarrative": "Máy nhân 3 làm sau cùng nên lùi trước: $21 : 3 = 7$. Rồi $7 + 4 = 11$.",
+     "hints": [
+      "Máy nhân ba được nhắc sau nên phải lùi qua nó trước.",
+      "Rồi lùi tiếp qua máy trừ bốn bằng phép ngược."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Một số đem cộng 2, rồi nhân 5 thì được 40. Số cần tìm là mấy, và thử lại chạy xuôi được bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số cần tìm",
+        "value": 6
+       },
+       {
+        "label": "thử lại được",
+        "value": 40
+       }
+      ]
+     },
+     "solutionNarrative": "Lùi qua máy nhân 5 trước: $40 : 5 = 8$. Rồi $8 - 2 = 6$. Thử lại: $6 + 2 = 8$, rồi $8  \\times  5 = 40$.",
+     "hints": [
+      "Máy nhân năm được nhắc sau nên lùi qua nó trước.",
+      "Có số rồi thì chạy xuôi lại cả hai máy cho chắc."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Máy làm sau cùng thì lùi qua trước.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — cởi ba lô trước rồi mới cởi áo."
+   },
+   {
+    "id": "Q2",
+    "text": "Một số cộng 3 rồi nhân 2 thì được 16. Số ấy là mấy?",
+    "format": "mcq",
+    "choices": [
+     "5",
+     "13",
+     "8",
+     "16"
+    ],
+    "answerKey": {
+     "choice": "5"
+    },
+    "solutionNarrative": "Lùi qua máy nhân trước."
+   },
+   {
+    "id": "Q3",
+    "text": "Lùi qua máy cộng 3 trước là đúng thứ tự.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Máy nhân 2 làm sau cùng nên phải lùi qua nó trước."
+   },
+   {
+    "id": "Q4",
+    "text": "Đi lùi mà tắc đường thì thường là vì sao?",
+    "format": "mcq",
+    "choices": [
+     "lùi sai thứ tự",
+     "đề bài sai",
+     "số quá to"
+    ],
+    "answerKey": {
+     "choice": "lùi sai thứ tự"
+    },
+    "solutionNarrative": "Đó là chuông báo động rất hữu ích."
+   },
+   {
+    "id": "Q5",
+    "text": "Việc gì mặc sau thì cởi trước — đi lùi cũng thế.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — cùng một luật."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cởi áo khoác rồi mới cởi áo trong — việc gì mặc sau thì cởi trước. Nhắc con câu ấy là con nhớ được thứ tự đi lùi.",
+  "homeActivity": "Bố mẹ hỏi: \"Máy nào làm sau cùng?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B60_giang.mp4"
+ }
+}

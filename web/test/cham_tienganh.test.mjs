@@ -334,7 +334,19 @@ function diemDanh() {
 
    `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 0. Đã soát: `git diff` trên
    `src/mon/toan/lib/` và `src/chung/` trống trơn. */
-const MOC = { tong: 2865, dungKhiDungDap: 2863, dungKhiSaiDap: 0, tuDoiChieu: 0 };
+/* ⚠ 2865 → 2899. Đợt sáu lớp 2: chương 6 bốn bài chữ thành tám bài video.
+       luyện tập lớp 2  30 → 64 câu chấm máy  (+34)  ·  2865 + 34 = 2899  ✓
+
+   Bốn bài cũ có 34 câu mà chỉ 30 câu chấm máy được: bốn câu bảo bé kẻ bảng ra nháp
+   rồi tự soi, máy không chấm nổi. Tám bài mới đều 8 câu chấm máy đủ.
+
+   Kỳ sát hạch cũng viết lại HAI câu (chương 6 câu 4 và chương 2 câu 10, xem
+   `KHAI_TAY_L2`) — bỏ tên nhân vật khỏi chương nay không còn bài chữ. Cả bốn câu
+   cũ lẫn mới đều có khoá nên tổng không xê dịch vì chuyện ấy.
+
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 0. Đã soát: `git diff` trên
+   `src/mon/toan/lib/` và `src/chung/` trống trơn. */
+const MOC = { tong: 2899, dungKhiDungDap: 2897, dungKhiSaiDap: 0, tuDoiChieu: 0 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

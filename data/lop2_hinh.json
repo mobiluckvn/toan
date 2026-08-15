@@ -1,58 +1,5 @@
 [
  {
-  "id": "L2H_MAY04",
-  "goc": "image32.png",
-  "bai": "DL:KSN2.B22",
-  "muc": "khamPha",
-  "arch": "may_bien_doi",
-  "caption": "Hai máy nối nhau: đi lùi thì ngược thứ tự và đảo phép tính",
-  "params": {
-   "title": "ĐI XUÔI: số bí mật ? cộng 3, rồi nhân 2, chạy ra 16",
-   "rows": [
-    {
-     "mau": "teal",
-     "o": [
-      {
-       "t": "?",
-       "mau": "do"
-      },
-      {
-       "may": "+ 3"
-      },
-      {
-       "may": "× 2"
-      },
-      {
-       "t": "16"
-      }
-     ]
-    },
-    {
-     "mau": "do",
-     "nguoc": true,
-     "o": [
-      {
-       "t": "5",
-       "mau": "teal"
-      },
-      {
-       "may": "− 3"
-      },
-      {
-       "may": ": 2"
-      },
-      {
-       "t": "16"
-      }
-     ]
-    }
-   ],
-   "giua": "ĐI LÙI từ 16 — máy vào SAU thì ngược TRƯỚC, và ĐẢO phép tính!",
-   "note": "16 : 2 = 8, rồi 8 − 3 = 5. Thử xuôi lại: 5 + 3 = 8; 8 × 2 = 16 ✓"
-  },
-  "neoBuoc": 2
- },
- {
   "id": "L2H_HOP01",
   "goc": "image10.png",
   "bai": "DL:KSN2.B32",
@@ -86,35 +33,6 @@
     }
    ],
    "note": "Người bán đếm lại tiền thừa, người mua cũng đếm lại."
-  }
- },
- {
-  "id": "L2H_HOP03",
-  "goc": "image42.png",
-  "bai": "DL:KSN2.B23",
-  "muc": "khamPha",
-  "neoBuoc": 4,
-  "arch": "hang_hop",
-  "caption": "Đếm chân gà và chân chó rồi cộng lại để thử lại",
-  "params": {
-   "title": "Thử lại xem có đúng 14 chân không",
-   "hop": [
-    {
-     "ten": "3 con gà",
-     "dong": [
-      "3 × 2 = 6 chân"
-     ],
-     "mau": "gold"
-    },
-    {
-     "ten": "2 con chó",
-     "dong": [
-      "2 × 4 = 8 chân"
-     ],
-     "mau": "do"
-    }
-   ],
-   "ket": "6 + 8 = 14 chân — đúng như đề bài!"
   }
  },
  {
@@ -277,126 +195,6 @@
   "onTap": "C8"
  },
  {
-  "id": "L2H_VAT01",
-  "goc": "image35.png",
-  "bai": "DL:KSN2.B23",
-  "muc": "khamPha",
-  "neoBuoc": 1,
-  "arch": "con_vat",
-  "caption": "5 cái đầu nghĩa là 5 con vật",
-  "params": {
-   "title": "Bà đếm được 5 cái đầu → có 5 con vật",
-   "con": [
-    {
-     "chan": 0,
-     "mau": "gold",
-     "ten": ""
-    },
-    {
-     "chan": 0,
-     "mau": "gold",
-     "ten": ""
-    },
-    {
-     "chan": 0,
-     "mau": "gold",
-     "ten": ""
-    },
-    {
-     "chan": 0,
-     "mau": "gold",
-     "ten": ""
-    },
-    {
-     "chan": 0,
-     "mau": "gold",
-     "ten": ""
-    }
-   ],
-   "note": "Chưa biết con nào là gà, con nào là chó — vẽ đầu trước đã."
-  }
- },
- {
-  "id": "L2H_VAT02",
-  "goc": "image24.png",
-  "bai": "DL:KSN2.B23",
-  "muc": "khamPha",
-  "neoBuoc": 2,
-  "arch": "con_vat",
-  "caption": "Gắn tạm mỗi con 2 chân, vừa gắn vừa đếm",
-  "params": {
-   "title": "Gắn tạm mỗi con 2 chân — đếm được 10 chân",
-   "con": [
-    {
-     "chan": 2,
-     "mau": "gold",
-     "ten": "2"
-    },
-    {
-     "chan": 2,
-     "mau": "gold",
-     "ten": "4"
-    },
-    {
-     "chan": 2,
-     "mau": "gold",
-     "ten": "6"
-    },
-    {
-     "chan": 2,
-     "mau": "gold",
-     "ten": "8"
-    },
-    {
-     "chan": 2,
-     "mau": "gold",
-     "ten": "10"
-    }
-   ],
-   "note": "Đề bài có 14 chân mà mới gắn 10 chân → còn thừa 4 chân."
-  }
- },
- {
-  "id": "L2H_VAT03",
-  "goc": "image22.png",
-  "bai": "DL:KSN2.B23",
-  "muc": "khamPha",
-  "neoBuoc": 3,
-  "arch": "con_vat",
-  "caption": "4 chân thừa gắn thêm cho 2 con — 2 con đó là chó",
-  "params": {
-   "title": "4 chân thừa = 2 cặp chân → gắn thêm cho 2 con",
-   "con": [
-    {
-     "chan": 4,
-     "mau": "do",
-     "ten": "chó · 4 chân"
-    },
-    {
-     "chan": 4,
-     "mau": "do",
-     "ten": "chó · 4 chân"
-    },
-    {
-     "chan": 2,
-     "mau": "gold",
-     "ten": "gà · 2 chân"
-    },
-    {
-     "chan": 2,
-     "mau": "gold",
-     "ten": "gà · 2 chân"
-    },
-    {
-     "chan": 2,
-     "mau": "gold",
-     "ten": "gà · 2 chân"
-    }
-   ],
-   "note": "Thử lại: 2 × 4 + 3 × 2 = 8 + 6 = 14 chân ✓"
-  }
- },
- {
   "id": "L2H_VAT04",
   "goc": "image45.png",
   "bai": "DL:KSN2.B23",
@@ -429,46 +227,6 @@
     }
    ],
    "note": "2 chân thừa là 1 cặp → chỉ 1 con nhận thêm → 1 thỏ và 3 gà."
-  }
- },
- {
-  "id": "L2H_VAT05",
-  "goc": "image26.png",
-  "bai": "DL:KSN2.B23",
-  "muc": "chuyenMoBai",
-  "neoBuoc": 0,
-  "arch": "con_vat",
-  "caption": "Chỉ nhìn thấy 5 cái đầu sau hàng rào",
-  "params": {
-   "title": "Sau hàng rào: nhìn thấy 5 cái đầu, đếm được 14 chân",
-   "con": [
-    {
-     "chan": 0,
-     "mau": "gold",
-     "ten": "?"
-    },
-    {
-     "chan": 0,
-     "mau": "gold",
-     "ten": "?"
-    },
-    {
-     "chan": 0,
-     "mau": "gold",
-     "ten": "?"
-    },
-    {
-     "chan": 0,
-     "mau": "gold",
-     "ten": "?"
-    },
-    {
-     "chan": 0,
-     "mau": "gold",
-     "ten": "?"
-    }
-   ],
-   "note": "Chân bị hàng rào che — phải tính chứ không đếm được."
   }
  },
  {
@@ -839,59 +597,6 @@
   }
  },
  {
-  "id": "L2H_BL02",
-  "goc": "image41.png",
-  "bai": "DL:KSN2.B25",
-  "muc": "khamPha",
-  "neoBuoc": 2,
-  "arch": "bang_luoi",
-  "caption": "Bảng loại trừ: đánh dấu chắc chắn rồi gạch cả hàng cả cột",
-  "params": {
-   "title": "Bảng loại trừ — mỗi bạn một màu, mỗi màu một bạn",
-   "cot": [
-    "",
-    "Đỏ",
-    "Xanh",
-    "Vàng"
-   ],
-   "hang": [
-    [
-     "Bin",
-     "✗",
-     "✗",
-     "✓"
-    ],
-    [
-     "Su Kem",
-     "✗",
-     "✓",
-     "✗"
-    ],
-    [
-     "Trí Long",
-     "✓",
-     "✗",
-     "✗"
-    ]
-   ],
-   "to": [
-    [
-     0,
-     3
-    ],
-    [
-     1,
-     2
-    ],
-    [
-     2,
-     1
-    ]
-   ],
-   "note": "Chắc chắn ô nào thì đánh ✓, rồi gạch ✗ cả hàng và cả cột của ô ấy."
-  }
- },
- {
   "id": "L2H_CANH01",
   "goc": "image3.png",
   "bai": "DL:KSN2.B33",
@@ -914,34 +619,6 @@
     }
    ],
    "note": "Kim dài chỉ số 6 là đã đi nửa vòng → thêm 30 phút."
-  }
- },
- {
-  "id": "L2H_CANH02",
-  "goc": "image44.png",
-  "bai": "DL:KSN2.B24",
-  "muc": "khamPha",
-  "neoBuoc": 2,
-  "arch": "hang_cay",
-  "caption": "5 cây trồng thẳng hàng chỉ có 4 khoảng",
-  "params": {
-   "title": "Trồng 5 cây thẳng hàng, mỗi khoảng cách nhau 2 m",
-   "so_cay": 5,
-   "khoang": "2 m",
-   "note": "5 cây nhưng chỉ có 4 khoảng → hàng cây dài 2 × 4 = 8 m."
-  }
- },
- {
-  "id": "L2H_CANH03",
-  "goc": "image46.png",
-  "bai": "DL:KSN2.B24",
-  "muc": "khamPha",
-  "neoBuoc": 1,
-  "arch": "ban_tay",
-  "caption": "Bàn tay: 5 ngón nhưng chỉ 4 kẽ",
-  "params": {
-   "title": "Xòe bàn tay ra mà đếm",
-   "note": "Số ngón nhiều hơn số kẽ đúng 1 — hàng cây cũng vậy."
   }
  },
  {
@@ -2448,113 +2125,6 @@
     }
    ],
    "note": "8 : 4 = 2 cái — một phần tư của 8 là 2."
-  }
- },
- {
-  "id": "L2H_MO_B22",
-  "bai": "DL:KSN2.B22",
-  "muc": "chuyenMoBai",
-  "arch": "may_bien_doi",
-  "caption": "Số bí mật đi qua hai máy rồi ra 12",
-  "params": {
-   "title": "SỐ BÍ MẬT ĐI QUA HAI MÁY RỒI RA 12 — LÚC ĐẦU LÀ SỐ MẤY?",
-   "rows": [
-    {
-     "mau": "teal",
-     "o": [
-      {
-       "t": "?"
-      },
-      {
-       "may": "MÁY − 2"
-      },
-      {
-       "t": "?"
-      },
-      {
-       "may": "MÁY × 3"
-      },
-      {
-       "t": "12"
-      }
-     ]
-    }
-   ]
-  }
- },
- {
-  "id": "L2H_MO_B24",
-  "bai": "DL:KSN2.B24",
-  "muc": "chuyenMoBai",
-  "arch": "day_o",
-  "caption": "Đường 15 m, mỗi khoảng 3 m, chưa biết mấy cây",
-  "params": {
-   "title": "ĐƯỜNG DÀI 15 M, CÂY CÁCH CÂY 3 M — TRỒNG MẤY CÂY?",
-   "hang": [
-    {
-     "nhan": "đường",
-     "o": [
-      {
-       "t": "15 m",
-       "mau": "teal"
-      }
-     ]
-    },
-    {
-     "nhan": "mỗi khoảng",
-     "o": [
-      {
-       "t": "3 m",
-       "mau": "gold"
-      }
-     ]
-    },
-    {
-     "nhan": "số cây",
-     "o": [
-      {
-       "t": "?",
-       "mau": "do"
-      }
-     ]
-    }
-   ]
-  }
- },
- {
-  "id": "L2H_MO_B25",
-  "bai": "DL:KSN2.B25",
-  "muc": "chuyenMoBai",
-  "arch": "bang_luoi",
-  "caption": "Bảng ba bạn và ba bông hoa",
-  "params": {
-   "title": "AI CẦM HOA GÌ? — MAI KHÔNG CẦM HỒNG, ĐÀO CẦM SEN",
-   "cot": [
-    "",
-    "hồng",
-    "sen",
-    "cúc"
-   ],
-   "hang": [
-    [
-     "Mai",
-     "?",
-     "?",
-     "?"
-    ],
-    [
-     "Đào",
-     "?",
-     "?",
-     "?"
-    ],
-    [
-     "Cúc",
-     "?",
-     "?",
-     "?"
-    ]
-   ]
   }
  },
  {

@@ -3,47 +3,38 @@
  "id": "DL:KSN2.B25",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 51 · AI NÓI THẬT?",
+ "title": "Bài 54 · VẼ THANG XẾP THỨ TỰ — AI TRÊN, AI DƯỚI",
  "durationMinutes": 10,
- "so": 51,
+ "so": 54,
  "chuong": 6,
  "tenChuong": "Thám tử tí hon",
- "dangGoc": "LV 8.4 — Suy luận đơn giản: xếp thứ tự & bảng loại trừ",
+ "dangGoc": "LV 8.4c — Suy luận: xếp thứ tự nhiều đối tượng từ các manh mối hơn kém.",
  "skills": {
   "bktUnit": "CHUONG:6@G2",
   "primary": []
  },
  "series": {
-  "order": 51,
-  "prev": "DL:KSN2.B24",
-  "next": "DL:KSN2.B26"
+  "order": 54,
+  "prev": "DL:KSN2.B62",
+  "next": "DL:KSN2.B63"
  },
  "objective": {
   "id": "O1",
-  "text": "Xếp được thứ tự 3 đối tượng từ 2 manh mối (ai hơn ai) bằng cách vẽ THANG. Giải được câu đố \"ai - cái gì\" bằng BẢNG LOẠI TRỪ với dấu ✓ và ✗. Hiểu luật thám tử: mỗi kết luận phải có manh mối chống lưng, không đoán mò.",
-  "kidText": "Ba bạn cầm ba bông hoa khác nhau. Chỉ với hai manh mối, con tìm ra ai cầm hoa gì không?",
+  "text": "Xếp được thứ tự ba đối tượng từ hai manh mối. Vẽ thang rồi đọc thứ tự trên thang. Rút ra được điều đề bài không nói thẳng.",
+  "kidText": "Voi nặng hơn Gấu, Gấu nặng hơn Thỏ. Con đoán Voi có nặng hơn Thỏ không nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Vũ khí 1 — VẼ THANG xếp thứ tự. Với đố kiểu \"ai hơn ai\": Voi nặng hơn Gấu, Gấu nặng hơn Thỏ → vẽ một chiếc thang, xếp từng bạn theo manh mối. Nhìn thang là đọc được cả: ai nặng nhất, ai nhẹ nhất, và cả điều đề KHÔNG nói thẳng. Voi nặng hơn Thỏ!"
-   },
-   {
-    "id": "K2",
-    "text": "Vũ khí 2 — BẢNG LOẠI TRỪ. Với đố kiểu \"ai - cái gì\": kẻ bảng, mỗi hàng một bạn, mỗi cột một chiếc cặp. Manh mối chắc chắn → đánh ✓. Rồi gạch ✗ hết các ô CÙNG HÀNG và CÙNG CỘT với dấu ✓ (một bạn chỉ đeo một cặp, một cặp chỉ của một bạn!):"
-   }
-  ],
-  "mantra": "\"Hơn - kém\" → vẽ THANG. \"Ai - cái gì\" → kẻ BẢNG, đánh ✓ từ manh mối chắc nhất, gạch ✗ cùng hàng cùng cột. Hàng nào chỉ còn một ô trống — ô đó chính là đáp án!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Với vụ chiếc cặp, Su Kem suy luận: \"Tớ không đeo cặp đỏ... vậy chắc tớ đeo cặp VÀNG — màu vàng đẹp nhất mà!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: \"Không đeo đỏ\" thì còn NHỮNG màu nào có thể? Su Kem mới loại được một ô mà đã vội chốt đáp án! Gợi ý 2: Cặp vàng đã có chủ là ai rồi (manh mối 2)? Dùng đủ CẢ HAI manh mối trên bảng loại trừ để tìm đúng cặp của Su Kem nhé."
+    "wrong": "Có bạn bảo đề không nói gì về Voi với Thỏ nên không kết luận được.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Vẽ thang ra rồi nhìn xem Voi đứng đâu, Thỏ đứng đâu. Gợi ý 2: Voi trên cùng, Thỏ dưới cùng thì ai nặng hơn? Chữa: thang cho biết cả những cặp mà đề không nói thẳng. Voi nặng hơn Thỏ."
    }
   ]
  },
@@ -51,56 +42,47 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Giờ ra chơi, ba chiếc cặp sách. Ba bạn Mai, Đào, Cúc cầm ba bông hoa: hồng, sen, cúc. Biết: Mai không cầm hoa hồng; Đào cầm hoa sen. Hỏi mỗi bạn cầm hoa gì?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "Đọc bảng: Bin ✓ vàng (manh mối 2) → gạch ✗ cả hàng Bin lẫn cột vàng. Su Kem không đeo đỏ (manh mối 1) → ✗ ô đỏ. Hàng Su Kem chỉ còn trống ô XANH → ✓ xanh! Cuối cùng hàng Trí Long chỉ còn ô ĐỎ → ✓ đỏ. Ba dấu ✓ — vụ án khép lại, không cần đoán mò một lần nào!",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
     "kind": "trap",
-    "narration": "Với vụ chiếc cặp, Su Kem suy luận: \"Tớ không đeo cặp đỏ... vậy chắc tớ đeo cặp VÀNG — màu vàng đẹp nhất mà!\"",
+    "narration": "Có bạn bảo đề không nói gì về Voi với Thỏ nên không kết luận được.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Ba bạn Mai, Đào, Cúc cầm ba bông hoa: hồng, sen, cúc. Biết: Mai không cầm hoa hồng; Đào cầm hoa sen. Hỏi mỗi bạn cầm hoa gì?",
+  "problem": "Voi nặng hơn Gấu. Gấu nặng hơn Thỏ. Hỏi ai nặng nhất, ai nhẹ nhất, và Voi có nặng hơn Thỏ không?",
   "steps": [
    {
-    "show": "Bài giải: (kẻ bảng 3 hàng × 3 cột ra nháp)",
+    "show": "Vẽ một chiếc thang rồi xếp từng bạn",
     "phan": "giai"
    },
    {
-    "show": "Đào cầm hoa sen (manh mối chắc chắn) → gạch bỏ cả hàng Đào và cột sen.",
+    "show": "Mỗi manh mối xếp được một bạn. Voi nặng hơn Gấu nên Voi đứng trên Gấu.",
     "phan": "giai"
    },
    {
-    "show": "Mai không cầm hoa hồng, cột sen đã bị gạch → hàng Mai chỉ còn ô hoa cúc → Mai cầm hoa cúc.",
+    "show": "Xếp tiếp theo manh mối thứ hai",
     "phan": "giai"
    },
    {
-    "show": "Còn lại: Cúc cầm hoa hồng.",
+    "show": "Gấu nặng hơn Thỏ nên Thỏ đứng dưới Gấu. Thang thành Voi, Gấu, Thỏ từ trên xuống.",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: Mai — hoa cúc; Đào — hoa sen; Cúc — hoa hồng. (Bạn tên Cúc lại không cầm hoa cúc. Đề bài trêu mình đấy, nhưng bảng loại trừ không bị lừa!)",
+    "show": "Đọc thang thì thấy cả điều đề không nói thẳng",
+    "phan": "giai"
+   },
+   {
+    "show": "Voi đứng trên cùng, Thỏ đứng dưới cùng, nên Voi nặng hơn Thỏ.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: Voi nặng nhất, Thỏ nhẹ nhất, và Voi nặng hơn Thỏ.",
     "phan": "dapso"
+   },
+   {
+    "show": "Đề chỉ cho hai manh mối mà chiếc thang trả lời được ba câu hỏi.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -109,20 +91,54 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Voi nặng hơn Gấu. Gấu nặng hơn Thỏ. Hỏi con nào nặng nhất, con nào nhẹ nhất? (Vẽ thang!)",
+     "text": "Voi nặng hơn Gấu. Trong thang thì ai đứng trên?",
      "answerKey": {
       "parts": [
        {
-        "label": "con nặng nhất",
+        "label": "ai đứng trên",
+        "options": [
+         "Voi",
+         "Gấu"
+        ],
+        "value": "Voi"
+       }
+      ]
+     },
+     "solutionNarrative": "Voi nặng hơn nên Voi đứng trên Gấu.",
+     "hints": [
+      "Nặng hơn thì xếp lên trên trong thang.",
+      "Đề nói ai nặng hơn ai?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Voi nặng hơn Gấu, Gấu nặng hơn Thỏ. Ai nặng nhất?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ai nặng nhất",
         "options": [
          "Voi",
          "Gấu",
          "Thỏ"
         ],
         "value": "Voi"
-       },
+       }
+      ]
+     },
+     "solutionNarrative": "Thang xếp từ trên xuống là Voi, Gấu, Thỏ, nên Voi nặng nhất.",
+     "hints": [
+      "Con vẽ thang rồi xếp lần lượt theo hai manh mối.",
+      "Bạn nào leo lên được bậc trên cùng?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Voi nặng hơn Gấu, Gấu nặng hơn Thỏ. Ai nhẹ nhất?",
+     "answerKey": {
+      "parts": [
        {
-        "label": "con nhẹ nhất",
+        "label": "ai nhẹ nhất",
         "options": [
          "Voi",
          "Gấu",
@@ -132,28 +148,21 @@
        }
       ]
      },
-     "solutionNarrative": "Voi nặng nhất, Thỏ nhẹ nhất",
+     "solutionNarrative": "Thỏ đứng dưới cùng thang nên Thỏ nhẹ nhất.",
      "hints": [
-      "Hơn - kém thì vẽ THANG.",
-      "Xếp từng bạn lên thang theo từng manh mối."
+      "Nhẹ hơn thì tụt xuống dưới trong thang.",
+      "Bạn nào tụt xuống bậc dưới cùng?"
      ]
-    },
+    }
+   ],
+   "standard": [
     {
-     "id": "C2",
-     "text": "Trí Long cao hơn Su Kem. Su Kem cao hơn Bin. Hỏi ai đứng giữa về chiều cao? Trí Long có cao hơn Bin không — đề đâu có nói thẳng, sao con biết?",
+     "id": "C4",
+     "text": "Voi nặng hơn Gấu, Gấu nặng hơn Thỏ. Voi có nặng hơn Thỏ không?",
      "answerKey": {
       "parts": [
        {
-        "label": "ai đứng giữa",
-        "options": [
-         "Trí Long",
-         "Su Kem",
-         "Bin"
-        ],
-        "value": "Su Kem"
-       },
-       {
-        "label": "Trí Long có cao hơn Bin không",
+        "label": "Voi có nặng hơn Thỏ không",
         "options": [
          "có",
          "không"
@@ -162,165 +171,120 @@
        }
       ]
      },
-     "solutionNarrative": "Su Kem đứng giữa; Trí Long cao hơn Bin vì Trí Long > Su Kem > Bin — cái thang nói hộ điều đề không nói thẳng!",
+     "solutionNarrative": "Voi đứng trên cùng còn Thỏ đứng dưới cùng, nên Voi nặng hơn Thỏ.",
      "hints": [
-      "Vẽ thang rồi nhìn xem ai đứng giữa.",
-      "Cái thang nói hộ điều đề không nói thẳng."
+      "Đề không nói thẳng, nhưng thang thì nói.",
+      "Con xem hai bạn ấy đứng bậc nào rồi so."
      ]
     },
     {
-     "id": "C3",
-     "text": "An chạy nhanh hơn Bích. Cường chạy chậm hơn Bích. Ai chạy nhanh nhất?",
+     "id": "C5",
+     "text": "An cao hơn Bình, Bình cao hơn Cường. Ai cao nhất?",
      "answerKey": {
       "parts": [
        {
-        "label": "ai chạy nhanh nhất",
+        "label": "ai cao nhất",
         "options": [
          "An",
-         "Bích",
+         "Bình",
          "Cường"
         ],
         "value": "An"
        }
       ]
      },
-     "solutionNarrative": "An nhanh nhất (An > Bích > Cường)",
+     "solutionNarrative": "Thang xếp từ trên xuống là An, Bình, Cường, nên An cao nhất.",
      "hints": [
-      "Đổi chậm hơn thành nhanh hơn cho cùng chiều đã.",
-      "Cùng chiều rồi mới xếp lên thang."
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "C4",
-     "text": "Ba bạn An, Bình, Cúc cầm ba quả bóng đỏ, xanh, vàng. An không cầm bóng đỏ, Bình cầm bóng vàng. Hỏi ai cầm bóng gì? (Kẻ bảng loại trừ!)",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "An cầm bóng",
-        "options": [
-         "đỏ",
-         "xanh",
-         "vàng"
-        ],
-        "value": "xanh"
-       },
-       {
-        "label": "Bình cầm bóng",
-        "options": [
-         "đỏ",
-         "xanh",
-         "vàng"
-        ],
-        "value": "vàng"
-       },
-       {
-        "label": "Cúc cầm bóng",
-        "options": [
-         "đỏ",
-         "xanh",
-         "vàng"
-        ],
-        "value": "đỏ"
-       }
-      ]
-     },
-     "solutionNarrative": "Bình ✓ vàng; An không đỏ, vàng đã có chủ → An ✓ xanh; Cúc ✓ đỏ",
-     "hints": [
-      "Ai - cái gì thì kẻ BẢNG loại trừ.",
-      "Đánh dấu manh mối chắc nhất trước, rồi gạch cùng hàng cùng cột."
-     ]
-    },
-    {
-     "id": "C5",
-     "text": "Ba bạn nuôi ba con vật: mèo, cún, cá vàng. Hoa nuôi cún. Lan không nuôi mèo. Hỏi ai nuôi con gì?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "Hoa nuôi",
-        "options": [
-         "mèo",
-         "cún",
-         "cá vàng"
-        ],
-        "value": "cún"
-       },
-       {
-        "label": "Lan nuôi",
-        "options": [
-         "mèo",
-         "cún",
-         "cá vàng"
-        ],
-        "value": "cá vàng"
-       }
-      ]
-     },
-     "solutionNarrative": "Hoa ✓ cún; Lan không mèo, cún đã có chủ → Lan ✓ cá vàng; còn lại nuôi mèo",
-     "hints": [
-      "Kẻ bảng, bắt đầu từ manh mối chắc chắn.",
-      "Gạch hết ô cùng hàng cùng cột với ô đã đánh dấu."
+      "Cao hơn thì xếp lên trên.",
+      "Xếp xong ba bạn rồi nhìn bậc trên cùng."
      ]
     },
     {
      "id": "C6",
-     "text": "Xếp thứ tự tuổi: chị Hai nhiều tuổi hơn anh Ba; anh Ba nhiều tuổi hơn bé Tư; bé Tư ít tuổi hơn chị Hai. Manh mối thứ ba có cần thiết không, hay hai manh mối đầu đã đủ xếp thang?",
-     "solutionNarrative": "hai manh mối đầu đã đủ xếp thang (Hai > Ba > Tư); manh mối thứ ba chỉ nói lại điều thang đã biết — thừa nhưng không sai",
+     "text": "Lan chạy nhanh hơn Mai, Mai chạy nhanh hơn Hoa. Ai đứng giữa thang?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ai đứng giữa",
+        "options": [
+         "Lan",
+         "Mai",
+         "Hoa"
+        ],
+        "value": "Mai"
+       }
+      ]
+     },
+     "solutionNarrative": "Thang xếp từ nhanh nhất xuống là Lan, Mai, Hoa, nên Mai đứng giữa.",
      "hints": [
-      "Thử xếp thang chỉ bằng hai manh mối đầu.",
-      "Xếp xong rồi hỏi manh mối thứ ba có thêm được gì không."
+      "Nhanh hơn thì xếp lên trên.",
+      "Bạn đứng giữa là bạn không ở trên cùng cũng không ở dưới cùng."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C7",
-     "text": "Vụ án kết hợp hai vũ khí: ba bạn Tí, Sửu, Dần nuôi ba con: mèo, cún, vẹt. Manh mối: (1) Tí cao hơn Sửu, Sửu cao hơn Dần; (2) bạn THẤP NHẤT nuôi mèo; (3) Tí không nuôi cún. Hỏi ai nuôi con gì? (Vẽ thang trước để tìm bạn thấp nhất, rồi mới kẻ bảng!)",
+     "text": "Nam nhiều bi hơn Việt, Việt nhiều bi hơn Hùng. Ai đứng trên cùng và ai đứng dưới cùng thang?",
      "answerKey": {
       "parts": [
        {
-        "label": "Tí nuôi",
+        "label": "trên cùng",
         "options": [
-         "mèo",
-         "cún",
-         "vẹt"
+         "Nam",
+         "Việt",
+         "Hùng"
         ],
-        "value": "vẹt"
+        "value": "Nam"
        },
        {
-        "label": "Sửu nuôi",
+        "label": "dưới cùng",
         "options": [
-         "mèo",
-         "cún",
-         "vẹt"
+         "Nam",
+         "Việt",
+         "Hùng"
         ],
-        "value": "cún"
-       },
-       {
-        "label": "Dần nuôi",
-        "options": [
-         "mèo",
-         "cún",
-         "vẹt"
-        ],
-        "value": "mèo"
+        "value": "Hùng"
        }
       ]
      },
-     "solutionNarrative": "thang: Tí > Sửu > Dần → Dần thấp nhất → Dần ✓ mèo. Tí không cún, mèo đã của Dần → Tí ✓ vẹt. Còn lại: Sửu ✓ cún",
+     "solutionNarrative": "Thang xếp từ trên xuống là Nam, Việt, Hùng.",
      "hints": [
-      "Vẽ thang trước để tìm bạn thấp nhất.",
-      "Có bạn thấp nhất rồi mới kẻ bảng loại trừ."
+      "Nhiều bi hơn thì xếp lên trên.",
+      "Xếp đủ ba bạn rồi đọc bậc trên cùng và bậc dưới cùng."
      ]
     },
     {
      "id": "C8",
-     "text": "Con tự làm \"trùm ra đề\": nghĩ một vụ án bảng loại trừ 3 bạn × 3 món đồ với ĐÚNG 2 manh mối, sao cho giải ra được duy nhất một đáp án. Đố bố mẹ giải — và kiểm tra xem manh mối của con có đủ chặt không!",
-     "solutionNarrative": "đề của con \"chặt\" khi bố mẹ chỉ tìm được đúng MỘT đáp án; nếu ra được hai đáp án khác nhau tức là manh mối còn lỏng — thêm một manh mối nữa vào!",
+     "text": "Voi nặng hơn Gấu, Gấu nặng hơn Thỏ, Thỏ nặng hơn Chuột. Ai nặng nhất và ai nhẹ nhất?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "nặng nhất",
+        "options": [
+         "Voi",
+         "Gấu",
+         "Thỏ",
+         "Chuột"
+        ],
+        "value": "Voi"
+       },
+       {
+        "label": "nhẹ nhất",
+        "options": [
+         "Voi",
+         "Gấu",
+         "Thỏ",
+         "Chuột"
+        ],
+        "value": "Chuột"
+       }
+      ]
+     },
+     "solutionNarrative": "Thang xếp từ trên xuống là Voi, Gấu, Thỏ, Chuột.",
      "hints": [
-      "Đề chặt là đề chỉ giải ra đúng một đáp án.",
-      "Tự giải thử đề của mình xem có ra hai cách không."
+      "Lần này thang có bốn bậc.",
+      "Xếp lần lượt theo ba manh mối rồi đọc hai đầu thang."
      ]
     }
    ]
@@ -331,91 +295,68 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Voi nặng hơn Gấu, Gấu nặng hơn Thỏ thì chắc chắn Voi nặng hơn Thỏ.",
+    "text": "Đố kiểu \"ai hơn ai\" thì vẽ thang ra mà xếp.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng — nhìn thang là đọc được cả thứ tự."
    },
    {
     "id": "Q2",
-    "text": "Trong bảng loại trừ, đánh ✓ một ô thì gạch ✗ các ô cùng hàng và cùng cột.",
+    "text": "Voi nặng hơn Gấu, Gấu nặng hơn Thỏ. Ai nặng nhất?",
+    "format": "mcq",
+    "choices": [
+     "Voi",
+     "Gấu",
+     "Thỏ"
+    ],
+    "answerKey": {
+     "choice": "Voi"
+    },
+    "solutionNarrative": "Voi đứng trên cùng thang."
+   },
+   {
+    "id": "Q3",
+    "text": "Đề không nói Voi nặng hơn Thỏ nên không kết luận được.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Nhìn thang là thấy ngay Voi nặng hơn Thỏ."
+   },
+   {
+    "id": "Q4",
+    "text": "An cao hơn Bình, Bình cao hơn Cường. Ai thấp nhất?",
+    "format": "mcq",
+    "choices": [
+     "Cường",
+     "An",
+     "Bình"
+    ],
+    "answerKey": {
+     "choice": "Cường"
+    },
+    "solutionNarrative": "Cường đứng dưới cùng thang."
+   },
+   {
+    "id": "Q5",
+    "text": "Mỗi manh mối xếp được một bạn vào thang.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
-   },
-   {
-    "id": "Q3",
-    "text": "\"Su Kem không đeo cặp đỏ\" — từ manh mối này ta biết chắc:",
-    "format": "mcq",
-    "choices": [
-     "A. Su Kem đeo cặp vàng",
-     "B. Su Kem đeo cặp xanh",
-     "C. Chỉ mới loại được cặp đỏ"
-    ],
-    "answerKey": {
-     "choice": "C. Chỉ mới loại được cặp đỏ"
-    },
-    "solutionNarrative": "Đáp án: C. Chỉ mới loại được cặp đỏ"
-   },
-   {
-    "id": "Q4",
-    "text": "An nhanh hơn Bích, Cường chậm hơn Bích. Ai nhanh nhất?",
-    "format": "mcq",
-    "choices": [
-     "A. An",
-     "B. Bích",
-     "C. Cường"
-    ],
-    "answerKey": {
-     "choice": "A. An"
-    },
-    "solutionNarrative": "Đáp án: A. An"
-   },
-   {
-    "id": "Q5",
-    "text": "Hàng của một bạn trong bảng chỉ còn đúng 1 ô trống thì:",
-    "format": "mcq",
-    "choices": [
-     "A. ô đó là đáp án của bạn ấy",
-     "B. phải đoán thêm",
-     "C. bảng bị sai"
-    ],
-    "answerKey": {
-     "choice": "A. ô đó là đáp án của bạn ấy"
-    },
-    "solutionNarrative": "Đáp án: A. ô đó là đáp án của bạn ấy"
+    "solutionNarrative": "Đúng — nên phải dùng đủ mọi manh mối."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Biến đồ vật trong nhà thành vụ án: ba chiếc cốc ba màu của ba thành viên + hai manh mối — con kẻ bảng phá án trước bữa cơm.",
-  "homeActivity": "Câu hỏi vàng sau mỗi kết luận của con: \"Manh mối nào cho con biết điều đó?\" — luyện thói quen nói có sách, mách có chứng, quý cho cả môn Văn lẫn đời sống.",
-  "watchFor": "NÊN: bắt đầu từ 2 manh mối, tăng dần lên 3 khi con thạo bảng. KHÔNG NÊN: ra đố \"kẻ nói dối\" phức tạp (một người luôn nói dối...) — dạng ấy dễ ra đề bị hớ và quá sức lớp 2; xếp thang + bảng loại trừ là đủ sâu rồi."
+  "onComplete": "Xếp cả nhà theo chiều cao rồi hỏi con ai cao nhất, ai thấp nhất — chiếc thang bằng người thật.",
+  "homeActivity": "Bố mẹ hỏi: \"Con vẽ thang ra chưa?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_MO_B25",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_MO_B25.png",
-   "caption": "Bảng ba bạn và ba bông hoa",
-   "sha256_16": "89a0c0eca7921937",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_BL02",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L2H_BL02.png",
-   "caption": "Bảng loại trừ: đánh dấu chắc chắn rồi gạch cả hàng cả cột",
-   "sha256_16": "5b3c37c527a07e1d",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B25_giang.mp4"
+ }
 }
