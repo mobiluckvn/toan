@@ -76,9 +76,14 @@ t(`không gợi ý nào nói ra đáp án (lộ: ${lo.length})`, lo.length === 0
 in5(lo);
 
 /* ── 2 · PHỦ ─── câu nào cũng phải được giúp khi làm sai */
+/* ⚠ NGƯỠNG 90% CHÍNH LÀ THỨ ĐẺ RA MÓN NỢ 216 CÂU.
+   Suốt năm đợt, bài video ra đời không gợi ý nào mà cổng vẫn xanh, vì tỉ lệ chung
+   còn trên chín phần mười. Ngưỡng ấy che một lỗ đang lớn dần — mất một bài trọn vẹn
+   cũng chỉ tụt hơn một phần trăm.
+   Nay cả bốn quyển đều ĐỦ, nên siết lên trọn vẹn: thiếu một câu là đỏ. */
 const thieu = cau.filter((c) => !(c.it.hints || []).length);
-t(`≥ 90% câu có gợi ý (${cau.length - thieu.length}/${cau.length})`,
-  cau.length - thieu.length >= cau.length * 0.9);
+t(`MỌI câu đều có gợi ý (${cau.length - thieu.length}/${cau.length})`,
+  thieu.length === 0);
 in5(thieu.map((c) => `${c.q} ${c.bai} ${c.it.id}`));
 
 /* ── 3 · NGẮN ─── gợi ý dài hơn đề bài thì bé đọc gợi ý còn lâu hơn tự làm */
@@ -115,10 +120,16 @@ in5(le);
 
    Nên miễn trừ cho bài video, nhưng ĐẾM chúng ra và ghim con số lại: nợ chỉ được
    giảm, không được tăng. Trả nợ = viết gợi ý riêng từng câu vào `goi_y_tay.json`.  */
-/* Món nợ ĐO ĐÚNG CÁI VI PHẠM: bài nào có hai câu mang chung một dòng gợi ý tầng 1.
-   Đó chính là bậc cũ mà phép kiểm dưới đây sinh ra để chặn. Ghim con số lại: nợ chỉ
-   được giảm, không được tăng. Trả nợ = viết gợi ý riêng từng câu vào `goi_y_tay.json`. */
-const NO_TOI_DA = 24;
+/* ── MÓN NỢ ĐÃ TRẢ XONG 15-08, GIỮ LẠI PHÉP ĐẾM ──
+   Bộ suy gợi ý lấy từ `mantra` và bước giảng đầu, mà bài dùng video thì hai chỗ ấy
+   cố ý rỗng. Nên 24 bài của chương 3 tới 9 từng ra đời với 216 câu không một gợi ý
+   riêng nào. Cổng phủ đặt ngưỡng 90% nên nó xanh suốt năm đợt, mãi tới khi số bài
+   video đủ nhiều mới tụt xuống dưới ngưỡng mà lộ.
+
+   Nay 216 câu đã có gợi ý viết tay riêng, nợ về KHÔNG. Giữ lại phép đếm và ghim ở
+   0 để nó không lặng lẽ mọc lại: thêm một bài video mà quên viết gợi ý là đỏ ngay,
+   thay vì đợi tỉ lệ tụt xuống dưới ngưỡng. */
+const NO_TOI_DA = 0;
 const chungTheoBai = {};
 for (const { bai, it } of cau) {
   const h1 = (it.hints || [])[0];
@@ -130,11 +141,9 @@ const baiNo = Object.entries(chungTheoBai)
 t(`nợ gợi ý viết tay: ${baiNo.length} bài dùng chung gợi ý (ghim ${NO_TOI_DA}, chỉ được giảm)`,
   baiNo.length <= NO_TOI_DA);
 in5(baiNo);
-const laVideo = new Set(baiNo);
 
 const theoBai = {};
 for (const { q, bai, it } of cau) {
-  if (laVideo.has(bai)) continue;          // đang nợ — xem chú thích trên
   const h1 = (it.hints || [])[0];
   if (!h1) continue;
   theoBai[bai] ??= { q, m: new Map() };

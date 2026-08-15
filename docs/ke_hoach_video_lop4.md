@@ -691,6 +691,22 @@ thật, ngưỡng có thật, chỉ là ngưỡng che mất một lỗ đang l�
 nhầm. Có gợi ý còn hơn không — nhưng **cả bài dùng chung một dòng**, đúng cái bậc cũ
 mà cổng "gợi ý riêng từng câu" sinh ra để chặn.
 
-**Nên món nợ được KHAI RA thành một con số ghim lại: 24 bài dùng chung gợi ý, chỉ
-được giảm.** Trả nợ = viết gợi ý riêng từng câu vào `data/goi_y_tay.json`. Đây là
-việc còn lại đáng làm nhất của quyển lớp 4.
+**→ ĐÃ TRẢ XONG 15-08.** 216 câu nay có gợi ý viết tay riêng, nợ về KHÔNG.
+
+Viết tay 216 câu bằng tay trần thì chắc chắn lọt, nên dựng `tools/them_goi_y.py` soi
+NGAY LÚC THÊM, đúng ba luật mà cổng canh: không nói ra đáp án · tầng 1 riêng từng câu
+· không quá 160 chữ. Nhờ nó mà 216 câu vào một lần, không câu nào phải sửa lại.
+
+### Và siết luôn cái ngưỡng đã đẻ ra món nợ
+
+**Ngưỡng 90% chính là thứ giấu món nợ suốt năm đợt.** Bài video ra đời không gợi ý
+nào mà cổng vẫn xanh, vì tỉ lệ chung còn trên chín phần mười — mất trọn một bài cũng
+chỉ tụt hơn một phần trăm. Nay cả bốn quyển đều ĐỦ nên siết lên **trọn vẹn: thiếu
+một câu là đỏ**. Cộng thêm phép đếm "bài dùng chung gợi ý" ghim ở 0.
+
+Thử ngược ba ca: mất sạch gợi ý một bài · hai câu chung một dòng · gợi ý nói thẳng
+đáp án. Cả ba đều đỏ. (Đáp án MỘT CHỮ SỐ thì cổng cố ý bỏ qua — câu nào cũng chứa,
+so kiểu ấy chỉ gây báo oan.)
+
+**Bài học chung của cả chuyện này:** một cổng có ngưỡng phần trăm che được một lỗ
+đang lớn dần. Ngưỡng nên đặt ở chỗ dữ liệu ĐANG đứng, rồi chỉ siết lên.
