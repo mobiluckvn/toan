@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn nhìn ba số 4, 6, 8 rồi nói: \"Trung bình cộng là 18, vì cộng lại được 18.\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con thử xem: nếu mỗi bạn được 18 cái thì ba bạn cần bao nhiêu cái? Gợi ý 2: Cần tới 54 cái, mà cả ba bạn cộng lại chỉ có 18 cái thôi. Chữa: 18 mới là TỔNG. Muốn ra trung bình cộng thì còn phải chia cho số phần: 18 : 3 = 6."
+    "fix": "Gợi ý 1: Con thử xem: nếu mỗi bạn được 18 cái thì ba bạn cần bao nhiêu cái? Gợi ý 2: Cần tới 54 cái, mà cả ba bạn cộng lại chỉ có 18 cái thôi. Chữa: 18 mới là TỔNG. Muốn ra trung bình cộng thì còn phải chia cho số phần: $18 : 3 = 6$."
    }
   ]
  },
@@ -53,31 +53,40 @@
   "problem": "Ba bạn có 4, 6 và 8 cái kẹo. Nếu chia lại cho ba bạn bằng nhau thì mỗi bạn được mấy cái?",
   "steps": [
    {
-    "show": "Cách 1 — san bằng tay"
+    "show": "Cách 1 — san bằng tay",
+    "phan": "giai"
    },
    {
-    "show": "Bạn có 8 cái nhường 2 cái cho bạn có 4 cái. Bạn có 6 cái đứng yên."
+    "show": "Bạn có 8 cái nhường 2 cái cho bạn có 4 cái. Bạn có 6 cái đứng yên.",
+    "phan": "giai"
    },
    {
-    "show": "Xong thì cả ba bạn đều có 6 cái."
+    "show": "Xong thì cả ba bạn đều có 6 cái.",
+    "phan": "giai"
    },
    {
-    "show": "Cách 2 — gộp lại rồi chia đều"
+    "show": "Cách 2 — gộp lại rồi chia đều",
+    "phan": "giai"
    },
    {
-    "show": "Gộp hết: 4 + 6 + 8 = 18 cái."
+    "show": "Gộp hết: $4 + 6 + 8 = 18$ cái.",
+    "phan": "giai"
    },
    {
-    "show": "Chia đều cho 3 bạn: 18 : 3 = 6 cái."
+    "show": "Chia đều cho 3 bạn: $18 : 3 = 6$ cái.",
+    "phan": "giai"
    },
    {
-    "show": "Hai cách cho cùng một kết quả"
+    "show": "Hai cách cho cùng một kết quả",
+    "phan": "giai"
    },
    {
-    "show": "Đều ra 6. Vì san bằng chỉ là chuyển kẹo qua lại, tổng số kẹo không đổi — nên gộp lại rồi chia đều cũng thế."
+    "show": "Đều ra 6. Vì san bằng chỉ là chuyển kẹo qua lại, tổng số kẹo không đổi — nên gộp lại rồi chia đều cũng thế.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: mỗi bạn được 6 cái. Số 6 gọi là trung bình cộng của 4, 6 và 8."
+    "show": "Đáp số: mỗi bạn được 6 cái. Số 6 gọi là trung bình cộng của 4, 6 và 8.",
+    "phan": "dapso"
    }
   ]
  },
@@ -90,7 +99,7 @@
      "answerKey": {
       "value": 18
      },
-     "solutionNarrative": "4 + 6 + 8 = 18 cái.",
+     "solutionNarrative": "$4 + 6 + 8 = 18$ cái.",
      "hints": [
       "Cộng cả ba số kẹo lại với nhau.",
       "Cộng lần lượt từ trái sang phải cho khỏi sót."
@@ -102,7 +111,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "18 : 3 = 6 cái. Vậy trung bình cộng của 4, 6 và 8 là 6.",
+     "solutionNarrative": "$18 : 3 = 6$ cái. Vậy trung bình cộng của 4, 6 và 8 là 6.",
      "hints": [
       "Chia chỗ kẹo ấy đều cho ba bạn.",
       "Chia đều nghĩa là mỗi bạn nhận phần bằng nhau."
@@ -114,7 +123,7 @@
      "answerKey": {
       "value": 15
      },
-     "solutionNarrative": "Tổng là 10 + 20 = 30, chia cho 2 số: 30 : 2 = 15.",
+     "solutionNarrative": "Tổng là $10 + 20 = 30$, chia cho 2 số: $30 : 2 = 15$.",
      "hints": [
       "Cộng hai số lại rồi chia đôi.",
       "Có hai số nên chia cho hai."
@@ -137,7 +146,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng là 12 + 15 + 18 = 45, chia cho 3 số: 45 : 3 = 15.",
+     "solutionNarrative": "Tổng là $12 + 15 + 18 = 45$, chia cho 3 số: $45 : 3 = 15$.",
      "hints": [
       "Cộng cả ba số lại đã, rồi mới chia.",
       "Có ba số nên chia cho ba."
@@ -162,7 +171,7 @@
        }
       ]
      },
-     "solutionNarrative": "SAI. 18 mới là tổng, còn phải chia cho 3 phần nữa: 18 : 3 = 6.",
+     "solutionNarrative": "SAI. 18 mới là tổng, còn phải chia cho 3 phần nữa: $18 : 3 = 6$.",
      "hints": [
       "Bạn ấy cộng xong rồi dừng lại luôn.",
       "Cộng mới ra tổng thôi, còn thiếu một bước nữa."
@@ -231,7 +240,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng là 2 + 4 + 6 + 8 = 20, chia cho 4 số: 20 : 4 = 5.",
+     "solutionNarrative": "Tổng là $2 + 4 + 6 + 8 = 20$, chia cho 4 số: $20 : 4 = 5$.",
      "hints": [
       "Cộng cả bốn số lại trước.",
       "Có bốn số nên chia cho bốn."
@@ -252,7 +261,7 @@
        }
       ]
      },
-     "solutionNarrative": "Trung bình cộng: (9 + 3) : 2 = 6 cái mỗi bạn. Bạn có 9 cái phải nhường 9 − 6 = 3 cái.",
+     "solutionNarrative": "Trung bình cộng: ($9 + 3$) : $2 = 6$ cái mỗi bạn. Bạn có 9 cái phải nhường $9 - 6 = 3$ cái.",
      "hints": [
       "Cộng hai số kẹo lại rồi chia đôi để biết mỗi bạn được mấy.",
       "Bạn nhiều kẹo phải nhường đúng phần dôi ra so với mức ấy."
@@ -280,7 +289,7 @@
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — 18 là tổng. Trung bình cộng là 18 : 3 = 6."
+    "solutionNarrative": "SAI — 18 là tổng. Trung bình cộng là $18 : 3 = 6$."
    },
    {
     "id": "Q3",
@@ -322,7 +331,7 @@
     "answerKey": {
      "choice": "A. 15"
     },
-    "solutionNarrative": "(10 + 20) : 2 = 15."
+    "solutionNarrative": "($10 + 20$) : $2 = 15$."
    }
   ]
  },

@@ -53,34 +53,44 @@
   "problem": "Dãy 8, 12, 16 và cứ thế cách đều cho tới 96. Hỏi dãy có bao nhiêu số?",
   "steps": [
    {
-    "show": "Ba thứ phải tìm trước"
+    "show": "Ba thứ phải tìm trước",
+    "phan": "giai"
    },
    {
-    "show": "Số đầu là 8, số cuối là 96, và khoảng cách giữa hai số liền nhau là 4."
+    "show": "Số đầu là 8, số cuối là 96, và khoảng cách giữa hai số liền nhau là 4.",
+    "phan": "giai"
    },
    {
-    "show": "Đếm số bước nhảy"
+    "show": "Đếm số bước nhảy",
+    "phan": "giai"
    },
    {
-    "show": "Từ 8 đi tới 96 phải vượt qua quãng 96 trừ 8, tức 88. Mỗi bước nhảy dài 4 nên có 88 chia 4, tức 22 bước nhảy."
+    "show": "Từ 8 đi tới 96 phải vượt qua quãng 96 trừ 8, tức 88. Mỗi bước nhảy dài 4 nên có 88 chia 4, tức 22 bước nhảy.",
+    "phan": "giai"
    },
    {
-    "show": "Vì sao phải cộng một"
+    "show": "Vì sao phải cộng một",
+    "phan": "giai"
    },
    {
-    "show": "Hai mươi hai là số BƯỚC NHẢY, không phải số SỐ. Số đầu tiên chưa nhảy bước nào đã đứng sẵn ở đó rồi, phải đếm nó vào."
+    "show": "Hai mươi hai là số BƯỚC NHẢY, không phải số SỐ. Số đầu tiên chưa nhảy bước nào đã đứng sẵn ở đó rồi, phải đếm nó vào.",
+    "phan": "giai"
    },
    {
-    "show": "Vậy dãy có 22 cộng 1, tức 23 số."
+    "show": "Vậy dãy có 22 cộng 1, tức 23 số.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 23 số."
+    "show": "Đáp số: 23 số.",
+    "phan": "dapso"
    },
    {
-    "show": "Đếm số chia hết cũng vậy"
+    "show": "Đếm số chia hết cũng vậy",
+    "phan": "ghichu"
    },
    {
-    "show": "Từ 1 đến 200 có bao nhiêu số chia hết cho 5? Dãy ấy là 5, 10 cho tới 200, cách đều 5. Tính: 200 − 5 = 195, rồi 195 : 5 = 39, rồi cộng một được 40."
+    "show": "Từ 1 đến 200 có bao nhiêu số chia hết cho 5? Dãy ấy là 5, 10 cho tới 200, cách đều 5. Tính: $200 - 5 = 195$, rồi $195 : 5 = 39$, rồi cộng một được 40.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -105,7 +115,7 @@
      "answerKey": {
       "value": 22
      },
-     "solutionNarrative": "Lấy hiệu: 96 − 8 = 88. Rồi 88 : 4 = 22.",
+     "solutionNarrative": "Lấy hiệu: $96 - 8 = 88$. Rồi $88 : 4 = 22$.",
      "hints": [
       "Con trừ hai số ấy trước, rồi chia cho khoảng cách.",
       "Đặt tính cho cẩn thận rồi chia."
@@ -131,7 +141,7 @@
      "answerKey": {
       "value": 40
      },
-     "solutionNarrative": "Tính: 200 − 5 = 195, rồi 195 : 5 = 39, rồi cộng một được 40 số.",
+     "solutionNarrative": "Tính: $200 - 5 = 195$, rồi $195 : 5 = 39$, rồi cộng một được 40 số.",
      "hints": [
       "Con tìm số đầu, số cuối và khoảng cách trước đã.",
       "Trừ rồi chia, xong nhớ thêm số đứng đầu vào."
@@ -168,7 +178,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số đầu chia hết cho 4 là 20, số cuối là 148. Tính: 148 − 20 = 128, rồi 128 : 4 = 32, cộng một được 33 số.",
+     "solutionNarrative": "Số đầu chia hết cho 4 là 20, số cuối là 148. Tính: $148 - 20 = 128$, rồi $128 : 4 = 32$, cộng một được 33 số.",
      "hints": [
       "Con tìm số đầu tiên và số cuối cùng chia hết cho bốn trong khoảng ấy.",
       "Có hai đầu rồi thì trừ, chia cho bốn, xong thêm số đứng đầu vào."
@@ -180,7 +190,7 @@
      "answerKey": {
       "value": 100
      },
-     "solutionNarrative": "Khoảng cách là 1: 100 − 1 = 99, rồi 99 : 1 = 99, cộng một được 100 số.",
+     "solutionNarrative": "Khoảng cách là 1: $100 - 1 = 99$, rồi $99 : 1 = 99$, cộng một được 100 số.",
      "hints": [
       "Dãy này cách đều một.",
       "Trừ rồi chia cho một, xong thêm số đứng đầu vào."
@@ -194,7 +204,7 @@
      "answerKey": {
       "value": 25
      },
-     "solutionNarrative": "Khoảng cách là 4: 99 − 3 = 96, rồi 96 : 4 = 24, cộng một được 25 số.",
+     "solutionNarrative": "Khoảng cách là 4: $99 - 3 = 96$, rồi $96 : 4 = 24$, cộng một được 25 số.",
      "hints": [
       "Con lấy số thứ hai trừ số thứ nhất để tìm khoảng cách.",
       "Rồi trừ hai đầu, chia cho khoảng cách, xong thêm số đứng đầu vào."
@@ -206,7 +216,7 @@
      "answerKey": {
       "value": 107
      },
-     "solutionNarrative": "Có 20 số thì có 19 bước nhảy: 19 × 5 = 95. Số cuối là 12 + 95 = 107.",
+     "solutionNarrative": "Có 20 số thì có 19 bước nhảy: $19  \\times  5 = 95$. Số cuối là $12 + 95 = 107$.",
      "hints": [
       "Có hai mươi số thì số bước nhảy ít hơn một.",
       "Nhân số bước nhảy với khoảng cách rồi cộng vào số đầu."

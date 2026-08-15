@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn tính chu vi là 6 cộng 4, ra 10 mét.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con thử đi thật một vòng quanh hình xem gặp mấy cạnh? Gợi ý 2: Gặp bốn cạnh, mà bạn mới đi có hai. Chữa: chiều dài có hai cạnh, chiều rộng cũng có hai cạnh. Nên phải nhân đôi: (6 + 4) × 2 = 20 mét."
+    "fix": "Gợi ý 1: Con thử đi thật một vòng quanh hình xem gặp mấy cạnh? Gợi ý 2: Gặp bốn cạnh, mà bạn mới đi có hai. Chữa: chiều dài có hai cạnh, chiều rộng cũng có hai cạnh. Nên phải nhân đôi: ($6 + 4$) × $2 = 20$ mét."
    }
   ]
  },
@@ -53,31 +53,40 @@
   "problem": "Hình chữ nhật dài 6 mét, rộng 4 mét. Viết công thức tính chu vi và diện tích, rồi giải thích.",
   "steps": [
    {
-    "show": "Chu vi — đếm bốn cạnh"
+    "show": "Chu vi — đếm bốn cạnh",
+    "phan": "giai"
    },
    {
-    "show": "Đi quanh hình gặp 6 rồi 4 rồi 6 rồi 4. Chiều dài gặp HAI lần, chiều rộng cũng gặp HAI lần."
+    "show": "Đi quanh hình gặp 6 rồi 4 rồi 6 rồi 4. Chiều dài gặp HAI lần, chiều rộng cũng gặp HAI lần.",
+    "phan": "giai"
    },
    {
-    "show": "Nên gọn lại"
+    "show": "Nên gọn lại",
+    "phan": "giai"
    },
    {
-    "show": "Thay vì cộng bốn số, ta cộng dài với rộng rồi nhân đôi: 6 cộng 4 được 10, nhân đôi được 20."
+    "show": "Thay vì cộng bốn số, ta cộng dài với rộng rồi nhân đôi: 6 cộng 4 được 10, nhân đôi được 20.",
+    "phan": "giai"
    },
    {
-    "show": "Diện tích — đếm ô theo hàng"
+    "show": "Diện tích — đếm ô theo hàng",
+    "phan": "giai"
    },
    {
-    "show": "Mỗi hàng có 6 ô, đúng bằng chiều dài. Có 4 hàng, đúng bằng chiều rộng."
+    "show": "Mỗi hàng có 6 ô, đúng bằng chiều dài. Có 4 hàng, đúng bằng chiều rộng.",
+    "phan": "giai"
    },
    {
-    "show": "Nên đếm nhanh bằng phép nhân"
+    "show": "Nên đếm nhanh bằng phép nhân",
+    "phan": "giai"
    },
    {
-    "show": "Số ô là 6 nhân 4, bằng 24. Không cần đếm từng ô một."
+    "show": "Số ô là 6 nhân 4, bằng 24. Không cần đếm từng ô một.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: chu vi 20 mét, diện tích 24 mét vuông."
+    "show": "Đáp số: chu vi 20 mét, diện tích 24 mét vuông.",
+    "phan": "dapso"
    }
   ]
  },
@@ -111,7 +120,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "Chu vi = (6 + 4) × 2 = 20 mét.",
+     "solutionNarrative": "Chu vi = ($6 + 4$) × $2 = 20$ mét.",
      "hints": [
       "Cộng một cạnh dài với một cạnh ngắn trước.",
       "Rồi nhân đôi vì mỗi loại cạnh có hai cái."
@@ -132,7 +141,7 @@
        }
       ]
      },
-     "solutionNarrative": "Mỗi hàng 6 ô, có 4 hàng, nên diện tích = 6 × 4 = 24 mét vuông.",
+     "solutionNarrative": "Mỗi hàng 6 ô, có 4 hàng, nên diện tích = $6  \\times  4 = 24$ mét vuông.",
      "hints": [
       "Số ô mỗi hàng đúng bằng chiều dài, số hàng đúng bằng chiều rộng.",
       "Nhân hai con số ấy với nhau."
@@ -142,7 +151,7 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Bạn Lan tính chu vi là 6 + 4 = 10 mét. Bạn sai ở đâu?",
+     "text": "Bạn Lan tính chu vi là $6 + 4 = 10$ mét. Bạn sai ở đâu?",
      "answerKey": {
       "parts": [
        {
@@ -172,7 +181,7 @@
        }
       ]
      },
-     "solutionNarrative": "Chu vi = (9 + 5) × 2 = 28 mét. Diện tích = 9 × 5 = 45 mét vuông.",
+     "solutionNarrative": "Chu vi = ($9 + 5$) × $2 = 28$ mét. Diện tích = $9  \\times  5 = 45$ mét vuông.",
      "hints": [
       "Cộng hai cạnh rồi nhân đôi để ra thứ thứ nhất.",
       "Nhân hai cạnh để ra thứ thứ hai."
@@ -214,7 +223,7 @@
        }
       ]
      },
-     "solutionNarrative": "Chu vi = 7 × 4 = 28 mét. Diện tích = 7 × 7 = 49 mét vuông.",
+     "solutionNarrative": "Chu vi = $7  \\times  4 = 28$ mét. Diện tích = $7  \\times  7 = 49$ mét vuông.",
      "hints": [
       "Hình vuông có bốn cạnh bằng nhau nên cộng bốn lần.",
       "Còn mặt phủ kín thì nhân cạnh với chính nó."
@@ -237,7 +246,7 @@
        }
       ]
      },
-     "solutionNarrative": "Chu vi = (12 + 8) × 2 = 40 mét. Diện tích = 12 × 8 = 96 mét vuông.",
+     "solutionNarrative": "Chu vi = ($12 + 8$) × $2 = 40$ mét. Diện tích = $12  \\times  8 = 96$ mét vuông.",
      "hints": [
       "Cộng hai cạnh rồi nhân đôi.",
       "Nhân hai cạnh với nhau cho thứ còn lại."
@@ -258,7 +267,7 @@
        }
       ]
      },
-     "solutionNarrative": "Nửa chu vi là dài cộng rộng, nên chiều rộng = 10 − 6 = 4 mét. Diện tích = 6 × 4 = 24 mét vuông.",
+     "solutionNarrative": "Nửa chu vi là dài cộng rộng, nên chiều rộng = $10 - 6 = 4$ mét. Diện tích = $6  \\times  4 = 24$ mét vuông.",
      "hints": [
       "Nửa chu vi chính là một cạnh dài cộng một cạnh ngắn.",
       "Biết tổng ấy và một cạnh thì tìm cạnh kia bằng phép trừ."

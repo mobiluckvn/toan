@@ -53,31 +53,40 @@
   "problem": "Máy in thêm một chữ số 0 vào giá 3 500 đồng, thành 35 000 đồng. Giá bị đội lên bao nhiêu, và con số ấy có quan hệ gì với giá cũ?",
   "steps": [
    {
-    "show": "Thêm 0 vào bên phải là gấp mười"
+    "show": "Thêm 0 vào bên phải là gấp mười",
+    "phan": "giai"
    },
    {
-    "show": "Mọi chữ số đều dịch sang trái một hàng, mà mỗi hàng nặng gấp mười hàng bên phải nó. Nên số mới bằng số cũ nhân mười."
+    "show": "Mọi chữ số đều dịch sang trái một hàng, mà mỗi hàng nặng gấp mười hàng bên phải nó. Nên số mới bằng số cũ nhân mười.",
+    "phan": "giai"
    },
    {
-    "show": "Vẽ ra thành sơ đồ"
+    "show": "Vẽ ra thành sơ đồ",
+    "phan": "giai"
    },
    {
-    "show": "Số cũ là 1 phần. Số mới là 10 phần. Vậy phần đội thêm là 10 trừ 1, bằng 9 phần — tức 9 lần số cũ."
+    "show": "Số cũ là 1 phần. Số mới là 10 phần. Vậy phần đội thêm là 10 trừ 1, bằng 9 phần — tức 9 lần số cũ.",
+    "phan": "giai"
    },
    {
-    "show": "Tính thử: 35 000 − 3 500 = 31 500 (đồng)."
+    "show": "Tính thử: 35 $000 - 3 500 = 31$ 500 (đồng).",
+    "phan": "giai"
    },
    {
-    "show": "Kiểm lại bằng phép nhân: 3 500 × 9 = 31 500 — khớp từng đồng."
+    "show": "Kiểm lại bằng phép nhân: 3 $500  \\times  9 = 31$ 500 — khớp từng đồng.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: đội thêm 31 500 đồng, đúng bằng 9 lần giá cũ."
+    "show": "Đáp số: đội thêm 31 500 đồng, đúng bằng 9 lần giá cũ.",
+    "phan": "dapso"
    },
    {
-    "show": "Thêm chữ số khác 0 thì sao"
+    "show": "Thêm chữ số khác 0 thì sao",
+    "phan": "ghichu"
    },
    {
-    "show": "Thêm chữ số 5 vào bên phải số 35 được 355. Phần thêm gồm 9 lần số cũ, cộng thêm chính chữ số ấy: 35 × 9 = 315, rồi 315 + 5 = 320."
+    "show": "Thêm chữ số 5 vào bên phải số 35 được 355. Phần thêm gồm 9 lần số cũ, cộng thêm chính chữ số ấy: $35  \\times  9 = 315$, rồi $315 + 5 = 320$.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -102,7 +111,7 @@
      "answerKey": {
       "value": 31500
      },
-     "solutionNarrative": "Lấy số mới trừ số cũ: 35 000 − 3 500 = 31 500.",
+     "solutionNarrative": "Lấy số mới trừ số cũ: 35 $000 - 3 500 = 31$ 500.",
      "hints": [
       "Con lấy số mới trừ đi số cũ.",
       "Trừ hai số ấy cho nhau là ra ngay phần đội lên."
@@ -137,7 +146,7 @@
        }
       ]
      },
-     "solutionNarrative": "Được số 240. Tăng thêm: 240 − 24 = 216, đúng bằng 24 × 9.",
+     "solutionNarrative": "Được số 240. Tăng thêm: $240 - 24 = 216$, đúng bằng $24  \\times  9$.",
      "hints": [
       "Thêm chữ số không vào cuối thì được số nào? Rồi lấy số ấy trừ số cũ.",
       "Phần tăng thêm cũng bằng chín lần số cũ, con nhân thử để kiểm."
@@ -149,7 +158,7 @@
      "answerKey": {
       "value": 24
      },
-     "solutionNarrative": "Phần tăng thêm gấp 9 lần số cũ nên số cũ là 216 : 9 = 24.",
+     "solutionNarrative": "Phần tăng thêm gấp 9 lần số cũ nên số cũ là $216 : 9 = 24$.",
      "hints": [
       "Phần tăng thêm gấp chín lần số cũ. Vậy muốn tìm số cũ thì làm ngược lại.",
       "Con lấy phần tăng thêm chia cho chín."
@@ -170,7 +179,7 @@
        }
       ]
      },
-     "solutionNarrative": "Được số 355. Tăng thêm: 355 − 35 = 320, gồm 35 × 9 = 315 rồi cộng 5.",
+     "solutionNarrative": "Được số 355. Tăng thêm: $355 - 35 = 320$, gồm $35  \\times  9 = 315$ rồi cộng 5.",
      "hints": [
       "Viết chữ số ấy vào ngay sau số cũ thì được số mới. Rồi lấy hiệu hai số.",
       "Kiểm lại: phần tăng gồm chín lần số cũ, cộng thêm chính chữ số vừa viết."
@@ -182,7 +191,7 @@
      "answerKey": {
       "value": 35
      },
-     "solutionNarrative": "Bớt chữ số vừa thêm ra: 320 − 5 = 315. Phần còn lại gấp 9 lần số cũ nên số cũ là 315 : 9 = 35.",
+     "solutionNarrative": "Bớt chữ số vừa thêm ra: $320 - 5 = 315$. Phần còn lại gấp 9 lần số cũ nên số cũ là $315 : 9 = 35$.",
      "hints": [
       "Trong phần tăng thêm có lẫn cả chữ số vừa viết vào. Con bớt nó ra trước đã.",
       "Phần còn lại gấp chín lần số cũ, nên chia cho chín."
@@ -205,7 +214,7 @@
        }
       ]
      },
-     "solutionNarrative": "Chín lần số cũ: 12 × 9 = 108. Cộng thêm chữ số vừa thêm: 108 + 7 = 115.",
+     "solutionNarrative": "Chín lần số cũ: $12  \\times  9 = 108$. Cộng thêm chữ số vừa thêm: $108 + 7 = 115$.",
      "hints": [
       "Con nhân số cũ với chín trước đã.",
       "Rồi cộng thêm chính chữ số vừa viết vào cuối."
@@ -217,7 +226,7 @@
      "answerKey": {
       "value": 33
      },
-     "solutionNarrative": "Bớt chữ số vừa thêm: 300 − 3 = 297. Số cũ là 297 : 9 = 33.",
+     "solutionNarrative": "Bớt chữ số vừa thêm: $300 - 3 = 297$. Số cũ là $297 : 9 = 33$.",
      "hints": [
       "Bớt chữ số vừa viết ra khỏi phần tăng thêm trước đã.",
       "Phần còn lại gấp chín lần số cũ, con chia cho chín là ra."
@@ -260,7 +269,7 @@
     "answerKey": {
      "choice": "31 500"
     },
-    "solutionNarrative": "Phần tăng thêm gấp 9 lần số cũ: 3 500 × 9 = 31 500."
+    "solutionNarrative": "Phần tăng thêm gấp 9 lần số cũ: 3 $500  \\times  9 = 31$ 500."
    },
    {
     "id": "Q4",

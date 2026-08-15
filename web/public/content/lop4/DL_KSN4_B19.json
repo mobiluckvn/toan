@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn nhìn dãy 1 ; 3 ; 6 ; 10 ; 15 rồi nói: \"Dãy này cách đều, khoảng cách là 2.\" Bạn ấy chỉ trừ đúng một lần.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con trừ tiếp đi. 6 − 3 bằng mấy? 10 − 6 bằng mấy? Gợi ý 2: Muốn kết luận cách đều thì phải trừ HẾT các cặp liền nhau, và các hiệu phải bằng nhau tăm tắp. Chữa: các hiệu là 2 ; 3 ; 4 ; 5 — khác nhau, nên dãy không cách đều."
+    "fix": "Gợi ý 1: Con trừ tiếp đi. $6 - 3$ bằng mấy? $10 - 6$ bằng mấy? Gợi ý 2: Muốn kết luận cách đều thì phải trừ HẾT các cặp liền nhau, và các hiệu phải bằng nhau tăm tắp. Chữa: các hiệu là 2 ; 3 ; 4 ; 5 — khác nhau, nên dãy không cách đều."
    }
   ]
  },
@@ -53,34 +53,44 @@
   "problem": "Cho dãy 1 ; 3 ; 6 ; 10 ; 15. Dãy này có cách đều không? Hai số tiếp theo là số nào?",
   "steps": [
    {
-    "show": "Thử trừ nhau"
+    "show": "Thử trừ nhau",
+    "phan": "giai"
    },
    {
-    "show": "3 − 1 = 2 ; 6 − 3 = 3 ; 10 − 6 = 4 ; 15 − 10 = 5."
+    "show": "$3 - 1 = 2$ ; $6 - 3 = 3$ ; $10 - 6 = 4$ ; $15 - 10 = 5$.",
+    "phan": "giai"
    },
    {
-    "show": "Các hiệu là 2 ; 3 ; 4 ; 5 — không bằng nhau, nên dãy KHÔNG cách đều."
+    "show": "Các hiệu là 2 ; 3 ; 4 ; 5 — không bằng nhau, nên dãy KHÔNG cách đều.",
+    "phan": "giai"
    },
    {
-    "show": "Nhưng chính các hiệu lại cách đều"
+    "show": "Nhưng chính các hiệu lại cách đều",
+    "phan": "giai"
    },
    {
-    "show": "Dãy 2 ; 3 ; 4 ; 5 có khoảng cách 1."
+    "show": "Dãy 2 ; 3 ; 4 ; 5 có khoảng cách 1.",
+    "phan": "giai"
    },
    {
-    "show": "Dãy như thế gọi là dãy hai tầng."
+    "show": "Dãy như thế gọi là dãy hai tầng.",
+    "phan": "giai"
    },
    {
-    "show": "Viết tiếp"
+    "show": "Viết tiếp",
+    "phan": "giai"
    },
    {
-    "show": "Hiệu tiếp theo là 6, nên số tiếp theo là 15 + 6 = 21."
+    "show": "Hiệu tiếp theo là 6, nên số tiếp theo là $15 + 6 = 21$.",
+    "phan": "giai"
    },
    {
-    "show": "Hiệu sau nữa là 7, nên số sau nữa là 21 + 7 = 28."
+    "show": "Hiệu sau nữa là 7, nên số sau nữa là $21 + 7 = 28$.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: dãy không cách đều; hai số tiếp theo là 21 và 28."
+    "show": "Đáp số: dãy không cách đều; hai số tiếp theo là 21 và 28.",
+    "phan": "dapso"
    }
   ]
  },
@@ -169,7 +179,7 @@
      "answerKey": {
       "value": 46
      },
-     "solutionNarrative": "Từ số thứ nhất đến số thứ 10 có 9 bước nhảy +1, +2, ..., +9; tổng bước nhảy = (1 + 9) × 9 : 2 = 45 → số thứ 10 = 1 + 45 = 46.",
+     "solutionNarrative": "Từ số thứ nhất đến số thứ 10 có 9 bước nhảy +1, +2, ..., +9; tổng bước nhảy = ($1 + 9$) × $9 : 2 = 45$ → số thứ $10 = 1 + 45 = 46$.",
      "hints": [
       "Từ số thứ nhất tới số thứ mười có mấy bước nhảy?",
       "Cộng dồn các bước nhảy bằng Gauss rồi thêm vào số đầu."
@@ -181,7 +191,7 @@
      "answerKey": {
       "value": 55
      },
-     "solutionNarrative": "Tổng trong heo = 1 + 2 + ... + 10 = (1 + 10) × 10 : 2 = 55 nghìn đồng.",
+     "solutionNarrative": "Tổng trong heo = $1 + 2$ + ... + 10 = ($1 + 10$) × $10 : 2 = 55$ nghìn đồng.",
      "hints": [
       "Số tiền mỗi tuần lập thành một dãy cách đều.",
       "Tổng cả heo = đầu cộng cuối, nhân số tuần, chia đôi."
@@ -195,7 +205,7 @@
      "answerKey": {
       "value": 15
      },
-     "solutionNarrative": "Cần 1 + 2 + ... + n = 120; thử n = 15: (1 + 15) × 15 : 2 = 120 ✓ (n = 14 mới được 105, chưa đủ) → đúng tuần thứ 15.",
+     "solutionNarrative": "Cần $1 + 2$ + ... + n = 120; thử n = 15: ($1 + 15$) × $15 : 2 = 120$ ✓ (n = 14 mới được 105, chưa đủ) → đúng tuần thứ 15.",
      "hints": [
       "Thử từng giá trị bằng công thức Gauss.",
       "Soi cả tuần liền trước xem đã đủ chưa."
@@ -231,7 +241,7 @@
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "10 : 5 = 20 : 10 = 40 : 20 = 2."
+    "solutionNarrative": "$10 : 5 = 20 : 10 = 40 : 20 = 2$."
    },
    {
     "id": "Q2",
@@ -268,7 +278,7 @@
     "answerKey": {
      "choice": "A. 25"
     },
-    "solutionNarrative": "Bước nhảy 3, 5, 7, tiếp là +9: 16 + 9 = 25."
+    "solutionNarrative": "Bước nhảy 3, 5, 7, tiếp là +9: $16 + 9 = 25$."
    },
    {
     "id": "Q5",

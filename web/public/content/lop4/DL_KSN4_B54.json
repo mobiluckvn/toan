@@ -32,7 +32,7 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn tính 25 : 6 = 4 dư 1 rồi viết luôn: \"Đáp số: 4 xe.\"",
+    "wrong": "Có bạn tính $25 : 6 = 4$ dư 1 rồi viết luôn: \"Đáp số: 4 xe.\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
     "fix": "Gợi ý 1: Con tính đúng rồi. Nhưng còn 1 bạn thừa ra thì bạn ấy đi bằng gì? Gợi ý 2: Bạn ấy cũng phải đi tham quan chứ. Vậy có đủ 4 xe không? Chữa: phải thêm một xe nữa cho bạn thừa ra, nên đáp số là 5 xe. Chia xong thì đọc lại câu hỏi rồi mới viết đáp số."
    }
@@ -43,7 +43,7 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn tính 25 : 6 = 4 dư 1 rồi viết luôn: \"Đáp số: 4 xe.\"",
+    "narration": "Có bạn tính $25 : 6 = 4$ dư 1 rồi viết luôn: \"Đáp số: 4 xe.\"",
     "teaches": []
    }
   ]
@@ -53,34 +53,40 @@
   "problem": "Lớp có 25 bạn đi tham quan. Mỗi xe chở được 6 bạn. Hỏi cần ít nhất bao nhiêu xe để chở hết cả lớp?",
   "steps": [
    {
-    "show": "Chia thử"
+    "show": "Chia thử",
+    "phan": "giai"
    },
    {
-    "show": "25 : 6 = 4 (dư 1). Nghĩa là xếp đầy được 4 xe, còn thừa 1 bạn."
+    "show": "$25 : 6 = 4$ (dư 1). Nghĩa là xếp đầy được 4 xe, còn thừa 1 bạn.",
+    "phan": "giai"
    },
    {
-    "show": "Đọc lại câu hỏi"
+    "show": "Đọc lại câu hỏi",
+    "phan": "giai"
    },
    {
-    "show": "Đề hỏi cần ít nhất bao nhiêu xe để chở HẾT cả lớp."
+    "show": "Đề hỏi cần ít nhất bao nhiêu xe để chở HẾT cả lớp.",
+    "phan": "giai"
    },
    {
-    "show": "Bạn thừa ra vẫn phải đi, nên vẫn phải có thêm một xe nữa cho bạn ấy."
+    "show": "Bạn thừa ra vẫn phải đi, nên vẫn phải có thêm một xe nữa cho bạn ấy.",
+    "phan": "giai"
    },
    {
-    "show": "Kết luận"
+    "show": "Số xe cần là $4 + 1 = 5$ xe.",
+    "phan": "dapso"
    },
    {
-    "show": "Số xe cần là 4 + 1 = 5 xe."
+    "show": "Nếu đề hỏi khác",
+    "phan": "ghichu"
    },
    {
-    "show": "Nếu đề hỏi khác"
+    "show": "Nếu đề hỏi có mấy xe chở ĐẦY 6 bạn thì đáp số chỉ là 4 xe, không cộng thêm.",
+    "phan": "ghichu"
    },
    {
-    "show": "Nếu đề hỏi có mấy xe chở ĐẦY 6 bạn thì đáp số chỉ là 4 xe, không cộng thêm."
-   },
-   {
-    "show": "Đáp số: cần ít nhất 5 xe."
+    "show": "Đáp số: cần ít nhất 5 xe.",
+    "phan": "dapso"
    }
   ]
  },
@@ -102,7 +108,7 @@
        }
       ]
      },
-     "solutionNarrative": "25 : 6 = 4 (dư 1). Thương là 4, số dư là 1.",
+     "solutionNarrative": "$25 : 6 = 4$ (dư 1). Thương là 4, số dư là 1.",
      "hints": [
       "Chia số bạn cho số chỗ trên một xe.",
       "Ghi lại cả thương lẫn phần còn thừa."
@@ -140,7 +146,7 @@
      "answerKey": {
       "value": 5
      },
-     "solutionNarrative": "30 : 7 = 4 (dư 2). Còn 2 quyển thừa vẫn phải xếp nên thêm 1 thùng. Cần 5 thùng.",
+     "solutionNarrative": "$30 : 7 = 4$ (dư 2). Còn 2 quyển thừa vẫn phải xếp nên thêm 1 thùng. Cần 5 thùng.",
      "hints": [
       "Chia số vở cho số quyển mỗi thùng trước.",
       "Còn thừa quyển nào thì vẫn phải xếp, nên thêm một thùng nữa."
@@ -161,7 +167,7 @@
        }
       ]
      },
-     "solutionNarrative": "30 : 7 = 4 (dư 2). Xếp đầy 4 thùng, thừa 2 quyển.",
+     "solutionNarrative": "$30 : 7 = 4$ (dư 2). Xếp đầy 4 thùng, thừa 2 quyển.",
      "hints": [
       "Vẫn phép chia ấy, nhưng câu hỏi khác hẳn câu trước.",
       "Lần này chỉ đếm thùng ĐẦY và phần còn thừa."
@@ -169,7 +175,7 @@
     },
     {
      "id": "C6",
-     "text": "Bạn Mai tính 43 : 8 = 5 (dư 3) rồi trả lời \"cần 5 hộp để đựng hết 43 viên bi\". Bạn trả lời đúng chưa? Đáp số đúng là bao nhiêu?",
+     "text": "Bạn Mai tính $43 : 8 = 5$ (dư 3) rồi trả lời \"cần 5 hộp để đựng hết 43 viên bi\". Bạn trả lời đúng chưa? Đáp số đúng là bao nhiêu?",
      "answerKey": {
       "parts": [
        {
@@ -207,7 +213,7 @@
        }
       ]
      },
-     "solutionNarrative": "47 : 9 = 5 (dư 2). Cắt được 5 đoạn, thừa 2 mét. Ở dạng này KHÔNG cộng thêm, vì 2 mét không đủ thành một đoạn 9 mét.",
+     "solutionNarrative": "$47 : 9 = 5$ (dư 2). Cắt được 5 đoạn, thừa 2 mét. Ở dạng này KHÔNG cộng thêm, vì 2 mét không đủ thành một đoạn 9 mét.",
      "hints": [
       "Chia chiều dài dây cho chiều dài mỗi đoạn.",
       "Phần thừa ngắn hơn một đoạn nên chẳng thành đoạn nào — đừng cộng thêm."
@@ -230,7 +236,7 @@
        }
       ]
      },
-     "solutionNarrative": "100 : 8 = 12 (dư 4). Xếp đầy 12 hàng; muốn đủ chỗ cho cả 4 bạn thừa thì cần 13 hàng.",
+     "solutionNarrative": "$100 : 8 = 12$ (dư 4). Xếp đầy 12 hàng; muốn đủ chỗ cho cả 4 bạn thừa thì cần 13 hàng.",
      "hints": [
       "Chia số học sinh cho số bạn mỗi hàng.",
       "Câu hỏi thứ hai đòi đủ chỗ cho cả mấy bạn thừa ra."
@@ -255,7 +261,7 @@
        }
       ]
      },
-     "solutionNarrative": "53 : 6 = 8 (dư 5). Đóng đầy 8 bao, thừa 5 kg. Muốn đựng hết thì cần 9 bao.",
+     "solutionNarrative": "$53 : 6 = 8$ (dư 5). Đóng đầy 8 bao, thừa 5 kg. Muốn đựng hết thì cần 9 bao.",
      "hints": [
       "Chia số gạo cho sức chứa mỗi bao.",
       "Ba câu hỏi khác nhau: bao đầy, phần thừa, và số bao cần để đựng hết."
@@ -297,7 +303,7 @@
     "answerKey": {
      "choice": "A. 5 xe"
     },
-    "solutionNarrative": "25 : 6 = 4 dư 1, bạn thừa vẫn phải đi nên thêm một xe."
+    "solutionNarrative": "$25 : 6 = 4$ dư 1, bạn thừa vẫn phải đi nên thêm một xe."
    },
    {
     "id": "Q4",
@@ -325,7 +331,7 @@
     "answerKey": {
      "choice": "A. 5 đoạn"
     },
-    "solutionNarrative": "47 : 9 = 5 dư 2; 2 mét không đủ thành một đoạn nên không cộng thêm."
+    "solutionNarrative": "$47 : 9 = 5$ dư 2; 2 mét không đủ thành một đoạn nên không cộng thêm."
    }
   ]
  },

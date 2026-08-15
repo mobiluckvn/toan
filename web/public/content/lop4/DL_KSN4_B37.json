@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn cộng 25 với 18 được 43 rồi bảo lớp có 43 bạn thích ít nhất một môn.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Lớp có bao nhiêu bạn tất cả? Gợi ý 2: Chỉ 38 bạn. Sao số bạn thích lại nhiều hơn cả lớp được? Chữa: vì 8 bạn thích cả hai đã bị đếm hai lần. Phải trừ đi một lần: 25 + 18 − 8 = 35 bạn."
+    "fix": "Gợi ý 1: Lớp có bao nhiêu bạn tất cả? Gợi ý 2: Chỉ 38 bạn. Sao số bạn thích lại nhiều hơn cả lớp được? Chữa: vì 8 bạn thích cả hai đã bị đếm hai lần. Phải trừ đi một lần: $25 + 18 - 8 = 35$ bạn."
    }
   ]
  },
@@ -53,37 +53,48 @@
   "problem": "Lớp có 38 bạn. Có 25 bạn thích bóng đá, 18 bạn thích cờ vua, 8 bạn thích cả hai môn. Hỏi có bao nhiêu bạn không thích môn nào?",
   "steps": [
    {
-    "show": "Cộng thẳng thì sai"
+    "show": "Cộng thẳng thì sai",
+    "phan": "giai"
    },
    {
-    "show": "25 + 18 = 43, mà lớp chỉ có 38 bạn. Số bạn không thể nhiều hơn cả lớp."
+    "show": "$25 + 18 = 43$, mà lớp chỉ có 38 bạn. Số bạn không thể nhiều hơn cả lớp.",
+    "phan": "giai"
    },
    {
-    "show": "Vì sao lại thừa"
+    "show": "Vì sao lại thừa",
+    "phan": "giai"
    },
    {
-    "show": "Vì 8 bạn thích cả hai môn đã bị đếm một lần ở nhóm bóng đá, rồi lại đếm thêm một lần ở nhóm cờ vua."
+    "show": "Vì 8 bạn thích cả hai môn đã bị đếm một lần ở nhóm bóng đá, rồi lại đếm thêm một lần ở nhóm cờ vua.",
+    "phan": "giai"
    },
    {
-    "show": "Vẽ ra thì thấy ngay"
+    "show": "Vẽ ra thì thấy ngay",
+    "phan": "giai"
    },
    {
-    "show": "Hai vòng chồng nhau. Phần chồng chính là 8 bạn ấy, và nó nằm trong cả hai vòng."
+    "show": "Hai vòng chồng nhau. Phần chồng chính là 8 bạn ấy, và nó nằm trong cả hai vòng.",
+    "phan": "giai"
    },
    {
-    "show": "Trừ đi một lần"
+    "show": "Trừ đi một lần",
+    "phan": "giai"
    },
    {
-    "show": "Số bạn thích ít nhất một môn là 25 + 18 − 8 = 35 bạn."
+    "show": "Số bạn thích ít nhất một môn là $25 + 18 - 8 = 35$ bạn.",
+    "phan": "giai"
    },
    {
-    "show": "Tìm số bạn không thích môn nào"
+    "show": "Tìm số bạn không thích môn nào",
+    "phan": "giai"
    },
    {
-    "show": "Cả lớp 38 bạn, có 35 bạn thích ít nhất một môn, nên 38 − 35 = 3 bạn không thích môn nào."
+    "show": "Cả lớp 38 bạn, có 35 bạn thích ít nhất một môn, nên $38 - 35 = 3$ bạn không thích môn nào.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 3 bạn không thích môn nào."
+    "show": "Đáp số: 3 bạn không thích môn nào.",
+    "phan": "dapso"
    }
   ]
  },
@@ -96,7 +107,7 @@
      "answerKey": {
       "value": 43
      },
-     "solutionNarrative": "25 + 18 = 43 bạn — nhiều hơn cả lớp, nên chắc chắn có chỗ sai.",
+     "solutionNarrative": "$25 + 18 = 43$ bạn — nhiều hơn cả lớp, nên chắc chắn có chỗ sai.",
      "hints": [
       "Điền phần GIAO trước rồi mới tính hai cánh.",
       "Chỉ thích một môn = số của môn ấy trừ phần giao."
@@ -125,7 +136,7 @@
      "answerKey": {
       "value": 35
      },
-     "solutionNarrative": "25 + 18 − 8 = 35 bạn.",
+     "solutionNarrative": "$25 + 18 - 8 = 35$ bạn.",
      "hints": [
       "Đứng ngoài = sĩ số trừ phần ít-nhất-một.",
       "Dùng lại kết quả của câu ngay trước."
@@ -139,7 +150,7 @@
      "answerKey": {
       "value": 3
      },
-     "solutionNarrative": "38 − 35 = 3 bạn.",
+     "solutionNarrative": "$38 - 35 = 3$ bạn.",
      "hints": [
       "Cộng thô lên xem vượt sĩ số bao nhiêu.",
       "Phần vượt ấy chính là phần bị đếm hai lần."
@@ -172,7 +183,7 @@
      "answerKey": {
       "value": 17
      },
-     "solutionNarrative": "25 − 8 = 17 bạn.",
+     "solutionNarrative": "$25 - 8 = 17$ bạn.",
      "hints": [
       "Màu là chuồng, viên bi là thỏ.",
       "Xấu nhất: mỗi màu bốc đúng một viên rồi mới bốc tiếp."
@@ -184,7 +195,7 @@
      "answerKey": {
       "value": 35
      },
-     "solutionNarrative": "22 + 25 − 12 = 35 bạn.",
+     "solutionNarrative": "$22 + 25 - 12 = 35$ bạn.",
      "hints": [
       "Điền phần giao trước rồi tính hai cánh riêng.",
       "Đúng một hoạt động là cộng hai cánh, chưa tính phần giao."
@@ -207,7 +218,7 @@
        }
       ]
      },
-     "solutionNarrative": "Không học môn nào: 40 − 35 = 5 bạn. Chỉ học nhạc: 25 − 12 = 13 bạn.",
+     "solutionNarrative": "Không học môn nào: $40 - 35 = 5$ bạn. Chỉ học nhạc: $25 - 12 = 13$ bạn.",
      "hints": [
       "Thử tình huống xấu nhất: mỗi tháng chỉ ba bạn.",
       "Xếp kiểu ấy thì được tối đa bao nhiêu bạn?"
@@ -219,7 +230,7 @@
      "answerKey": {
       "value": 5
      },
-     "solutionNarrative": "Nếu không ai bị đếm hai lần thì tổng là 20 + 15 = 35, mà chỉ có 30 bạn. Phần thừa 35 − 30 = 5 chính là số bạn biết cả hai.",
+     "solutionNarrative": "Nếu không ai bị đếm hai lần thì tổng là $20 + 15 = 35$, mà chỉ có 30 bạn. Phần thừa $35 - 30 = 5$ chính là số bạn biết cả hai.",
      "hints": [
       "Đề đảo chiều — xấu nhất là bốc mãi vẫn một màu.",
       "Màu nào nhiều nhất, bốc hết màu ấy được mấy viên?"
@@ -261,7 +272,7 @@
     "answerKey": {
      "choice": "A. 35"
     },
-    "solutionNarrative": "25 + 18 − 8 = 35."
+    "solutionNarrative": "$25 + 18 - 8 = 35$."
    },
    {
     "id": "Q4",
@@ -275,7 +286,7 @@
     "answerKey": {
      "choice": "A. 17"
     },
-    "solutionNarrative": "25 − 8 = 17."
+    "solutionNarrative": "$25 - 8 = 17$."
    },
    {
     "id": "Q5",

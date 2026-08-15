@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn giả sử tất cả là gà, tính ra thiếu 28 chân, rồi trả lời luôn có 28 con chó.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Đổi một con gà thành chó thì thêm mấy chân? Gợi ý 2: Thêm 2 chân, chứ không phải 1. Vậy 28 chân thiếu ứng với mấy con? Chữa: 28 : 2 = 14 con chó. Lấy thẳng 28 là quên chia cho phần lệch mỗi lần đổi."
+    "fix": "Gợi ý 1: Đổi một con gà thành chó thì thêm mấy chân? Gợi ý 2: Thêm 2 chân, chứ không phải 1. Vậy 28 chân thiếu ứng với mấy con? Chữa: $28 : 2 = 14$ con chó. Lấy thẳng 28 là quên chia cho phần lệch mỗi lần đổi."
    }
   ]
  },
@@ -53,34 +53,40 @@
   "problem": "Vừa gà vừa chó có 36 con, đếm được 100 cái chân. Tính số con mỗi loại.",
   "steps": [
    {
-    "show": "Đoán bừa cho dễ"
+    "show": "Đoán bừa cho dễ",
+    "phan": "giai"
    },
    {
-    "show": "Giả sử tất cả 36 con đều là gà. Gà 2 chân nên có 36 × 2 = 72 chân."
+    "show": "Giả sử tất cả 36 con đều là gà. Gà 2 chân nên có $36  \\times  2 = 72$ chân.",
+    "phan": "giai"
    },
    {
-    "show": "Xem lệch bao nhiêu"
+    "show": "Xem lệch bao nhiêu",
+    "phan": "giai"
    },
    {
-    "show": "Đề nói 100 chân, mà đoán ra 72 chân. Thiếu mất 100 − 72 = 28 chân."
+    "show": "Đề nói 100 chân, mà đoán ra 72 chân. Thiếu mất $100 - 72 = 28$ chân.",
+    "phan": "giai"
    },
    {
-    "show": "Đổi một con thì lệch bao nhiêu"
+    "show": "Đổi một con thì lệch bao nhiêu",
+    "phan": "giai"
    },
    {
-    "show": "Đổi một con gà thành một con chó thì thêm 2 chân, vì chó 4 chân còn gà 2 chân."
+    "show": "Đổi một con gà thành một con chó thì thêm 2 chân, vì chó 4 chân còn gà 2 chân.",
+    "phan": "giai"
    },
    {
-    "show": "Chia ra"
+    "show": "Chia ra",
+    "phan": "giai"
    },
    {
-    "show": "Thiếu 28 chân, mỗi lần đổi được thêm 2 chân, nên phải đổi 28 : 2 = 14 con."
+    "show": "Thiếu 28 chân, mỗi lần đổi được thêm 2 chân, nên phải đổi $28 : 2 = 14$ con.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số"
-   },
-   {
-    "show": "Có 14 con chó và 36 − 14 = 22 con gà. Thử lại: 14 × 4 = 56 chân chó, 22 × 2 = 44 chân gà, cộng lại đúng 100 chân."
+    "show": "Có 14 con chó và $36 - 14 = 22$ con gà. Thử lại: $14  \\times  4 = 56$ chân chó, $22  \\times  2 = 44$ chân gà, cộng lại đúng 100 chân.",
+    "phan": "dapso"
    }
   ]
  },
@@ -93,7 +99,7 @@
      "answerKey": {
       "value": 72
      },
-     "solutionNarrative": "36 × 2 = 72 chân.",
+     "solutionNarrative": "$36  \\times  2 = 72$ chân.",
      "hints": [
       "Mỗi con gà có hai chân.",
       "Nhân số con với số chân mỗi con."
@@ -105,7 +111,7 @@
      "answerKey": {
       "value": 28
      },
-     "solutionNarrative": "100 − 72 = 28 chân.",
+     "solutionNarrative": "$100 - 72 = 28$ chân.",
      "hints": [
       "GIẢ SỬ tất cả đều là gà rồi đếm chân.",
       "Thiếu bao nhiêu chân? Mỗi chú chó bù thêm mấy?"
@@ -140,7 +146,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số chó: 28 : 2 = 14 con. Số gà: 36 − 14 = 22 con.",
+     "solutionNarrative": "Số chó: $28 : 2 = 14$ con. Số gà: $36 - 14 = 22$ con.",
      "hints": [
       "Giả sử toàn gà, đếm chân giả vờ trước.",
       "Phần thiếu chia cho phần bù mỗi con."
@@ -161,7 +167,7 @@
        }
       ]
      },
-     "solutionNarrative": "Bạn quên chia cho phần lệch mỗi lần đổi. Mỗi con đổi được thêm 2 chân nên số chó là 28 : 2 = 14 con.",
+     "solutionNarrative": "Bạn quên chia cho phần lệch mỗi lần đổi. Mỗi con đổi được thêm 2 chân nên số chó là $28 : 2 = 14$ con.",
      "hints": [
       "Giả sử toàn xe đạp rồi đếm bánh.",
       "Mỗi xe ba bánh bù thêm mấy bánh?"
@@ -182,7 +188,7 @@
        }
       ]
      },
-     "solutionNarrative": "Giả sử tất cả là gà: 20 × 2 = 40 chân, thiếu 56 − 40 = 16 chân. Số chó: 16 : 2 = 8 con. Số gà: 20 − 8 = 12 con.",
+     "solutionNarrative": "Giả sử tất cả là gà: $20  \\times  2 = 40$ chân, thiếu $56 - 40 = 16$ chân. Số chó: $16 : 2 = 8$ con. Số gà: $20 - 8 = 12$ con.",
      "hints": [
       "Giả sử toàn vé rẻ rồi tính tiền thu.",
       "Mỗi vé đắt bù thêm bao nhiêu nghìn?"
@@ -226,7 +232,7 @@
        }
       ]
      },
-     "solutionNarrative": "Giả sử tất cả là vé 2 nghìn: 30 × 2 = 60 nghìn, thiếu 99 − 60 = 39 nghìn. Mỗi vé đổi lên loại 5 nghìn thì thêm 3 nghìn. Số vé 5 nghìn: 39 : 3 = 13 vé. Số vé 2 nghìn: 30 − 13 = 17 vé.",
+     "solutionNarrative": "Giả sử tất cả là vé 2 nghìn: $30  \\times  2 = 60$ nghìn, thiếu $99 - 60 = 39$ nghìn. Mỗi vé đổi lên loại 5 nghìn thì thêm 3 nghìn. Số vé 5 nghìn: $39 : 3 = 13$ vé. Số vé 2 nghìn: $30 - 13 = 17$ vé.",
      "hints": [
       "Ghép một chó với hai gà thành một BỘ.",
       "Mỗi bộ như thế có mấy cái chân?"
@@ -247,7 +253,7 @@
        }
       ]
      },
-     "solutionNarrative": "Giả sử tất cả là chó: 36 × 4 = 144 chân, THỪA 144 − 100 = 44 chân. Đổi một con chó thành gà thì bớt 2 chân, nên số gà là 44 : 2 = 22 con, số chó là 36 − 22 = 14 con. Vẫn ra đúng kết quả cũ.",
+     "solutionNarrative": "Giả sử tất cả là chó: $36  \\times  4 = 144$ chân, THỪA $144 - 100 = 44$ chân. Đổi một con chó thành gà thì bớt 2 chân, nên số gà là $44 : 2 = 22$ con, số chó là $36 - 22 = 14$ con. Vẫn ra đúng kết quả cũ.",
      "hints": [
       "Giả sử toàn thuyền nhỏ rồi đếm chỗ.",
       "Mỗi thuyền to bù thêm mấy chỗ?"
@@ -289,7 +295,7 @@
     "answerKey": {
      "choice": "A. 72 chân"
     },
-    "solutionNarrative": "36 × 2 = 72."
+    "solutionNarrative": "$36  \\times  2 = 72$."
    },
    {
     "id": "Q4",
@@ -303,7 +309,7 @@
     "answerKey": {
      "choice": "A. thêm 2"
     },
-    "solutionNarrative": "4 − 2 = 2."
+    "solutionNarrative": "$4 - 2 = 2$."
    },
    {
     "id": "Q5",
@@ -317,7 +323,7 @@
     "answerKey": {
      "choice": "A. 14 con"
     },
-    "solutionNarrative": "28 : 2 = 14."
+    "solutionNarrative": "$28 : 2 = 14$."
    }
   ]
  },

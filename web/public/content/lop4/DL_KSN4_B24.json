@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn nhớ công thức nhưng viết thành: số lớn bằng tổng cộng hiệu, rồi ra 80.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con nhìn lại sơ đồ. Sau khi thêm hiệu vào, có mấy đoạn bằng nhau? Gợi ý 2: Có HAI đoạn. Vậy 80 là của một đoạn hay của hai đoạn? Chữa: 80 là của hai đoạn nên còn phải chia đôi: 80 : 2 = 40. Quên chia hai là ra số lớn gấp đôi số thật."
+    "fix": "Gợi ý 1: Con nhìn lại sơ đồ. Sau khi thêm hiệu vào, có mấy đoạn bằng nhau? Gợi ý 2: Có HAI đoạn. Vậy 80 là của một đoạn hay của hai đoạn? Chữa: 80 là của hai đoạn nên còn phải chia đôi: $80 : 2 = 40$. Quên chia hai là ra số lớn gấp đôi số thật."
    }
   ]
  },
@@ -53,31 +53,40 @@
   "problem": "Hai số có tổng bằng 70 và hiệu bằng 10. Tìm số lớn.",
   "steps": [
    {
-    "show": "Vẽ sơ đồ"
+    "show": "Vẽ sơ đồ",
+    "phan": "giai"
    },
    {
-    "show": "Đoạn ngắn là số bé, đoạn dài là số lớn, khúc dôi ra là 10, ngoặc ngoài là 70."
+    "show": "Đoạn ngắn là số bé, đoạn dài là số lớn, khúc dôi ra là 10, ngoặc ngoài là 70.",
+    "phan": "giai"
    },
    {
-    "show": "Thêm hiệu vào đoạn ngắn"
+    "show": "Thêm hiệu vào đoạn ngắn",
+    "phan": "giai"
    },
    {
-    "show": "Nối thêm một khúc 10 vào đoạn ngắn. Bây giờ hai đoạn dài bằng nhau, và mỗi đoạn đúng bằng số lớn."
+    "show": "Nối thêm một khúc 10 vào đoạn ngắn. Bây giờ hai đoạn dài bằng nhau, và mỗi đoạn đúng bằng số lớn.",
+    "phan": "giai"
    },
    {
-    "show": "Xem tổng đổi thế nào"
+    "show": "Xem tổng đổi thế nào",
+    "phan": "giai"
    },
    {
-    "show": "Ta vừa thêm 10 nên tổng cũng tăng thêm 10, thành 70 + 10 = 80."
+    "show": "Ta vừa thêm 10 nên tổng cũng tăng thêm 10, thành $70 + 10 = 80$.",
+    "phan": "giai"
    },
    {
-    "show": "Chia đôi"
+    "show": "Chia đôi",
+    "phan": "giai"
    },
    {
-    "show": "80 chính là hai lần số lớn. Nên số lớn là 80 : 2 = 40."
+    "show": "80 chính là hai lần số lớn. Nên số lớn là $80 : 2 = 40$.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: số lớn bằng 40. Công thức là tổng cộng hiệu rồi chia đôi."
+    "show": "Đáp số: số lớn bằng 40. Công thức là tổng cộng hiệu rồi chia đôi.",
+    "phan": "dapso"
    }
   ]
  },
@@ -90,7 +99,7 @@
      "answerKey": {
       "value": 80
      },
-     "solutionNarrative": "Tổng mới = 70 + 10 = 80.",
+     "solutionNarrative": "Tổng mới = $70 + 10 = 80$.",
      "hints": [
       "Vẽ sơ đồ trước: hai phần bằng nhau, phần thừa tách riêng.",
       "Chặt phần thừa đi thì tổng còn lại chia đôi."
@@ -111,7 +120,7 @@
        }
       ]
      },
-     "solutionNarrative": "80 là của HAI đoạn bằng nhau, nên số lớn = 80 : 2 = 40.",
+     "solutionNarrative": "80 là của HAI đoạn bằng nhau, nên số lớn = $80 : 2 = 40$.",
      "hints": [
       "Chặt thừa ra số bé, bù thiếu ra số lớn.",
       "Tổng trừ hiệu rồi chia đôi."
@@ -123,7 +132,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "Số lớn = (30 + 10) : 2 = 40 : 2 = 20.",
+     "solutionNarrative": "Số lớn = ($30 + 10$) : $2 = 40 : 2 = 20$.",
      "hints": [
       "Vẽ sơ đồ cho thẳng cột đã.",
       "Chặt khúc thừa rồi chia đôi phần còn lại."
@@ -137,7 +146,7 @@
      "answerKey": {
       "value": 86
      },
-     "solutionNarrative": "Số lớn = (145 + 27) : 2 = 172 : 2 = 86.",
+     "solutionNarrative": "Số lớn = ($145 + 27$) : $2 = 172 : 2 = 86$.",
      "hints": [
       "Chặt phần thừa của anh sang một bên.",
       "Thử lại phải KÉP: cộng ra tổng, trừ ra hiệu."
@@ -145,7 +154,7 @@
     },
     {
      "id": "C5",
-     "text": "Bạn Lan tính (70 + 10) rồi trả lời số lớn là 80. Bạn sai ở đâu? Số lớn đúng là bao nhiêu?",
+     "text": "Bạn Lan tính ($70 + 10$) rồi trả lời số lớn là 80. Bạn sai ở đâu? Số lớn đúng là bao nhiêu?",
      "answerKey": {
       "parts": [
        {
@@ -162,7 +171,7 @@
        }
       ]
      },
-     "solutionNarrative": "Bạn quên chia hai. 80 là số của hai đoạn bằng nhau, nên số lớn = 80 : 2 = 40.",
+     "solutionNarrative": "Bạn quên chia hai. 80 là số của hai đoạn bằng nhau, nên số lớn = $80 : 2 = 40$.",
      "hints": [
       "Tổng trừ hiệu rồi chia đôi ra thùng bé.",
       "Thùng lớn bằng thùng bé cộng phần hơn."
@@ -195,7 +204,7 @@
      "answerKey": {
       "value": 280
      },
-     "solutionNarrative": "Anh (số lớn) = (500 + 60) : 2 = 560 : 2 = 280 nghìn đồng.",
+     "solutionNarrative": "Anh (số lớn) = ($500 + 60$) : $2 = 560 : 2 = 280$ nghìn đồng.",
      "hints": [
       "Tổng là sĩ số, hiệu là chỗ nam hơn nữ.",
       "Chặt thừa ra số bé — mà số bé ở đây là bên nào?"
@@ -218,7 +227,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số lớn = (96 + 14) : 2 = 55. Số bé = 96 − 55 = 41. Thử: 55 + 41 = 96 và 55 − 41 = 14, đúng cả hai.",
+     "solutionNarrative": "Số lớn = ($96 + 14$) : $2 = 55$. Số bé = $96 - 55 = 41$. Thử: $55 + 41 = 96$ và $55 - 41 = 14$, đúng cả hai.",
      "hints": [
       "Tổng trừ hiệu rồi chia đôi ra tuổi con.",
       "Tính xong nhớ soi xem đáp số có hợp đời không."
@@ -230,7 +239,7 @@
      "answerKey": {
       "value": 15
      },
-     "solutionNarrative": "Chiều dài (số lớn) = (24 + 6) : 2 = 30 : 2 = 15 m.",
+     "solutionNarrative": "Chiều dài (số lớn) = ($24 + 6$) : $2 = 30 : 2 = 15$ m.",
      "hints": [
       "Cứ áp công thức xem chuyện gì xảy ra.",
       "Tổng và hiệu hơn kém nhau hai lần số bé — nên phải cùng chẵn hoặc cùng lẻ."
@@ -258,7 +267,7 @@
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — còn phải chia hai: 80 : 2 = 40."
+    "solutionNarrative": "SAI — còn phải chia hai: $80 : 2 = 40$."
    },
    {
     "id": "Q3",
@@ -272,7 +281,7 @@
     "answerKey": {
      "choice": "A. 40"
     },
-    "solutionNarrative": "(70 + 10) : 2 = 40."
+    "solutionNarrative": "($70 + 10$) : $2 = 40$."
    },
    {
     "id": "Q4",
@@ -300,7 +309,7 @@
     "answerKey": {
      "choice": "A. 20"
     },
-    "solutionNarrative": "(30 + 10) : 2 = 20."
+    "solutionNarrative": "($30 + 10$) : $2 = 20$."
    }
   ]
  },

@@ -32,9 +32,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn làm phép 14 : 4 rồi viết: \"14 : 4 = 2 (dư 6).\"",
+    "wrong": "Có bạn làm phép $14 : 4$ rồi viết: \"$14 : 4 = 2$ (dư 6).\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con thử lại xem: 4 × 2 + 6 có bằng 14 không? Gợi ý 2: Bằng 14 thật đấy. Nhưng con nhìn số dư 6 và số chia 4 xem — số dư có nhỏ hơn số chia không? Chữa: số dư 6 lớn hơn số chia 4, nghĩa là vẫn còn xếp thêm được một hộp nữa. Phải viết 14 : 4 = 3 (dư 2). Thử lại đúng thì chưa đủ, số dư còn phải nhỏ hơn số chia."
+    "fix": "Gợi ý 1: Con thử lại xem: $4  \\times  2 + 6$ có bằng 14 không? Gợi ý 2: Bằng 14 thật đấy. Nhưng con nhìn số dư 6 và số chia 4 xem — số dư có nhỏ hơn số chia không? Chữa: số dư 6 lớn hơn số chia 4, nghĩa là vẫn còn xếp thêm được một hộp nữa. Phải viết $14 : 4 = 3$ (dư 2). Thử lại đúng thì chưa đủ, số dư còn phải nhỏ hơn số chia."
    }
   ]
  },
@@ -43,7 +43,7 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn làm phép 14 : 4 rồi viết: \"14 : 4 = 2 (dư 6).\"",
+    "narration": "Có bạn làm phép $14 : 4$ rồi viết: \"$14 : 4 = 2$ (dư 6).\"",
     "teaches": []
    }
   ]
@@ -53,34 +53,44 @@
   "problem": "Có 14 cái bánh, xếp vào các hộp, mỗi hộp 4 cái. Xếp được mấy hộp, thừa mấy cái? Viết phép chia rồi thử lại.",
   "steps": [
    {
-    "show": "Xếp thử"
+    "show": "Xếp thử",
+    "phan": "giai"
    },
    {
-    "show": "Xếp 14 cái thành từng nhóm 4 cái: được 3 hộp, còn thừa 2 cái."
+    "show": "Xếp 14 cái thành từng nhóm 4 cái: được 3 hộp, còn thừa 2 cái.",
+    "phan": "giai"
    },
    {
-    "show": "Viết phép chia"
+    "show": "Viết phép chia",
+    "phan": "giai"
    },
    {
-    "show": "14 : 4 = 3 (dư 2). Ở đây 14 là số bị chia, 4 là số chia, 3 là thương, 2 là số dư."
+    "show": "$14 : 4 = 3$ (dư 2). Ở đây 14 là số bị chia, 4 là số chia, 3 là thương, 2 là số dư.",
+    "phan": "giai"
    },
    {
-    "show": "Thử lại bằng công thức"
+    "show": "Thử lại bằng công thức",
+    "phan": "giai"
    },
    {
-    "show": "Số bị chia = số chia × thương + số dư."
+    "show": "Số bị chia = số chia × thương + số dư.",
+    "phan": "giai"
    },
    {
-    "show": "4 × 3 + 2 = 12 + 2 = 14. Đúng bằng số ban đầu, vậy phép chia không sai."
+    "show": "$4  \\times  3 + 2 = 12 + 2 = 14$. Đúng bằng số ban đầu, vậy phép chia không sai.",
+    "phan": "giai"
    },
    {
-    "show": "Vì sao số dư phải nhỏ hơn số chia"
+    "show": "Vì sao số dư phải nhỏ hơn số chia",
+    "phan": "giai"
    },
    {
-    "show": "Phần thừa là 2, mà mỗi hộp cần 4 cái nên 2 cái không đủ xếp thêm hộp nào. Nếu phần thừa mà bằng 4 hay hơn 4 thì ta đã xếp thêm được một hộp nữa rồi."
+    "show": "Phần thừa là 2, mà mỗi hộp cần 4 cái nên 2 cái không đủ xếp thêm hộp nào. Nếu phần thừa mà bằng 4 hay hơn 4 thì ta đã xếp thêm được một hộp nữa rồi.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: xếp được 3 hộp, thừa 2 cái. Số dư 2 nhỏ hơn số chia 4."
+    "show": "Đáp số: xếp được 3 hộp, thừa 2 cái. Số dư 2 nhỏ hơn số chia 4.",
+    "phan": "dapso"
    }
   ]
  },
@@ -102,7 +112,7 @@
        }
       ]
      },
-     "solutionNarrative": "Được 3 hộp, thừa 2 cái. Phép chia: 14 : 4 = 3 (dư 2).",
+     "solutionNarrative": "Được 3 hộp, thừa 2 cái. Phép chia: $14 : 4 = 3$ (dư 2).",
      "hints": [
       "Lần bảng nhân tìm bến gần nhất.",
       "Phần còn lại chính là số dư."
@@ -110,7 +120,7 @@
     },
     {
      "id": "C2",
-     "text": "Trong phép chia 14 : 4 = 3 (dư 2), thương bằng bao nhiêu và số dư bằng bao nhiêu?",
+     "text": "Trong phép chia $14 : 4 = 3$ (dư 2), thương bằng bao nhiêu và số dư bằng bao nhiêu?",
      "answerKey": {
       "parts": [
        {
@@ -131,11 +141,11 @@
     },
     {
      "id": "C3",
-     "text": "Thử lại phép chia 14 : 4 = 3 (dư 2) bằng công thức. Kết quả bằng bao nhiêu?",
+     "text": "Thử lại phép chia $14 : 4 = 3$ (dư 2) bằng công thức. Kết quả bằng bao nhiêu?",
      "answerKey": {
       "value": 14
      },
-     "solutionNarrative": "Số chia × thương + số dư = 4 × 3 + 2 = 14. Đúng bằng số bị chia.",
+     "solutionNarrative": "Số chia × thương + số dư = $4  \\times  3 + 2 = 14$. Đúng bằng số bị chia.",
      "hints": [
       "Luật tổng - hiệu: xét từng số hạng riêng.",
       "Cả hai cùng chia hết thì tổng ra sao?"
@@ -145,7 +155,7 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Thực hiện phép chia 29 : 6 rồi thử lại.",
+     "text": "Thực hiện phép chia $29 : 6$ rồi thử lại.",
      "answerKey": {
       "parts": [
        {
@@ -158,7 +168,7 @@
        }
       ]
      },
-     "solutionNarrative": "29 : 6 = 4 (dư 5). Thử lại: 6 × 4 + 5 = 24 + 5 = 29. Số dư 5 nhỏ hơn số chia 6.",
+     "solutionNarrative": "$29 : 6 = 4$ (dư 5). Thử lại: $6  \\times  4 + 5 = 24 + 5 = 29$. Số dư 5 nhỏ hơn số chia 6.",
      "hints": [
       "Xét từng số hạng: số nào chia hết, số nào còn dư?",
       "Phần dư của tổng chính là phần dư còn sót lại."
@@ -166,7 +176,7 @@
     },
     {
      "id": "C5",
-     "text": "Bạn Hùng viết: \"23 : 5 = 3 (dư 8).\" Bạn làm sai ở đâu? Kết quả đúng là bao nhiêu?",
+     "text": "Bạn Hùng viết: \"$23 : 5 = 3$ (dư 8).\" Bạn làm sai ở đâu? Kết quả đúng là bao nhiêu?",
      "answerKey": {
       "parts": [
        {
@@ -179,7 +189,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số dư 8 LỚN HƠN số chia 5, nghĩa là còn xếp thêm được nhóm nữa. Đúng phải là 23 : 5 = 4 (dư 3).",
+     "solutionNarrative": "Số dư 8 LỚN HƠN số chia 5, nghĩa là còn xếp thêm được nhóm nữa. Đúng phải là $23 : 5 = 4$ (dư 3).",
      "hints": [
       "Đi từ số lớn nhất có hai chữ số mà lùi dần.",
       "Hoặc lấy bội lớn nhất trong khoảng rồi cộng phần dư."
@@ -203,7 +213,7 @@
      "answerKey": {
       "value": 38
      },
-     "solutionNarrative": "Số bị chia = số chia × thương + số dư = 5 × 7 + 3 = 35 + 3 = 38.",
+     "solutionNarrative": "Số bị chia = số chia × thương + số dư = $5  \\times  7 + 3 = 35 + 3 = 38$.",
      "hints": [
       "Dịch thừa thành THIẾU: cả hai cách cùng thiếu mấy?",
       "Cộng phần thiếu vào thì số mới chia hết cho cả hai cỡ hàng."
@@ -217,7 +227,7 @@
      "answerKey": {
       "value": 7
      },
-     "solutionNarrative": "Từ công thức: 47 = số chia × 6 + 5, nên số chia × 6 = 42, số chia = 7. Kiểm lại: số dư 5 nhỏ hơn 7, hợp lệ.",
+     "solutionNarrative": "Từ công thức: 47 = số chia × $6 + 5$, nên số chia × $6 = 42$, số chia = 7. Kiểm lại: số dư 5 nhỏ hơn 7, hợp lệ.",
      "hints": [
       "Cả ba cách xếp cùng thiếu đúng một quả.",
       "Cộng vào rồi tìm số chia hết cho cả ba cỡ vỉ."
@@ -229,7 +239,7 @@
      "answerKey": {
       "value": 16
      },
-     "solutionNarrative": "Số chia 6 dư 4: 4, 10, 16, 22, 28, 34. Trong đó số chia 5 dư 1: 16 (16 : 5 = 3 dư 1). Vậy số cần tìm là 16.",
+     "solutionNarrative": "Số chia 6 dư 4: 4, 10, 16, 22, 28, 34. Trong đó số chia 5 dư 1: 16 ($16 : 5 = 3$ dư 1). Vậy số cần tìm là 16.",
      "hints": [
       "Gọi số đứng giữa làm chuẩn rồi cộng ba số lại.",
       "Với bốn số thì thử một ví dụ nhỏ — một phản ví dụ là đủ."
@@ -252,7 +262,7 @@
    },
    {
     "id": "Q2",
-    "text": "Phép chia 23 : 5 = 3 (dư 8) là phép chia đúng.",
+    "text": "Phép chia $23 : 5 = 3$ (dư 8) là phép chia đúng.",
     "format": "tf",
     "answerKey": {
      "value": false

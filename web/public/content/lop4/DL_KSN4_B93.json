@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn biết mỗi giờ xe đi 40 km, hỏi đi 200 km hết mấy giờ, liền nhân: \"200 nhân 40 bằng 8 000 giờ\".",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Tám nghìn giờ là gần một năm. Một chuyến xe có đi lâu thế không? Gợi ý 2: Con đang hỏi 200 chứa được mấy khúc 40. Đó là phép gì? Chữa: hỏi thời gian thì chia chứ không nhân. Đáp số là 200 : 40 = 5 giờ."
+    "fix": "Gợi ý 1: Tám nghìn giờ là gần một năm. Một chuyến xe có đi lâu thế không? Gợi ý 2: Con đang hỏi 200 chứa được mấy khúc 40. Đó là phép gì? Chữa: hỏi thời gian thì chia chứ không nhân. Đáp số là $200 : 40 = 5$ giờ."
    }
   ]
  },
@@ -53,34 +53,44 @@
   "problem": "Xe đi được 40 ki-lô-mét mỗi giờ. Hỏi 5 giờ xe đi được bao nhiêu, và đi 200 ki-lô-mét thì hết mấy giờ?",
   "steps": [
    {
-    "show": "Chiều xuôi: hỏi quãng đường"
+    "show": "Chiều xuôi: hỏi quãng đường",
+    "phan": "giai"
    },
    {
-    "show": "Mỗi giờ một khúc 40 ki-lô-mét, năm giờ là năm khúc như thế."
+    "show": "Mỗi giờ một khúc 40 ki-lô-mét, năm giờ là năm khúc như thế.",
+    "phan": "giai"
    },
    {
-    "show": "Tính: 40 × 5 = 200 (ki-lô-mét)."
+    "show": "Tính: $40  \\times  5 = 200$ (ki-lô-mét).",
+    "phan": "giai"
    },
    {
-    "show": "Chiều ngược: hỏi thời gian"
+    "show": "Chiều ngược: hỏi thời gian",
+    "phan": "giai"
    },
    {
-    "show": "Nay hỏi ngược lại: hai trăm ki-lô-mét chứa được mấy khúc bốn mươi?"
+    "show": "Nay hỏi ngược lại: hai trăm ki-lô-mét chứa được mấy khúc bốn mươi?",
+    "phan": "giai"
    },
    {
-    "show": "Tính: 200 : 40 = 5 (giờ)."
+    "show": "Tính: $200 : 40 = 5$ (giờ).",
+    "phan": "giai"
    },
    {
-    "show": "Hai chiều ngược nhau: hỏi quãng đường thì nhân, hỏi thời gian thì chia."
+    "show": "Hai chiều ngược nhau: hỏi quãng đường thì nhân, hỏi thời gian thì chia.",
+    "phan": "giai"
    },
    {
-    "show": "Chốt lộ trình"
+    "show": "Chốt lộ trình",
+    "phan": "giai"
    },
    {
-    "show": "Xuất phát lúc 7 giờ, đi hết 5 giờ, vậy tới nơi lúc 7 + 5 = 12 giờ."
+    "show": "Xuất phát lúc 7 giờ, đi hết 5 giờ, vậy tới nơi lúc $7 + 5 = 12$ giờ.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 200 ki-lô-mét, 5 giờ, và tới nơi lúc 12 giờ trưa."
+    "show": "Đáp số: 200 ki-lô-mét, 5 giờ, và tới nơi lúc 12 giờ trưa.",
+    "phan": "dapso"
    }
   ]
  },
@@ -93,7 +103,7 @@
      "answerKey": {
       "value": 200
      },
-     "solutionNarrative": "Nhân lên: 40 × 5 = 200 (km).",
+     "solutionNarrative": "Nhân lên: $40  \\times  5 = 200$ (km).",
      "hints": [
       "Mỗi giờ một khúc, năm giờ là năm khúc như thế.",
       "Con nhân con số một giờ với số giờ."
@@ -105,7 +115,7 @@
      "answerKey": {
       "value": 5
      },
-     "solutionNarrative": "Chia ra: 200 : 40 = 5 (giờ).",
+     "solutionNarrative": "Chia ra: $200 : 40 = 5$ (giờ).",
      "hints": [
       "Con hỏi ngược lại: cả quãng đường chứa được mấy khúc bốn mươi?",
       "Đó là phép ngược với phép ở câu trên."
@@ -148,7 +158,7 @@
      "answerKey": {
       "value": 12
      },
-     "solutionNarrative": "Cộng vào giờ xuất phát: 7 + 5 = 12 (giờ).",
+     "solutionNarrative": "Cộng vào giờ xuất phát: $7 + 5 = 12$ (giờ).",
      "hints": [
       "Con cộng số giờ đi đường vào giờ xuất phát.",
       "Bảy cộng năm thì được mấy?"
@@ -160,7 +170,7 @@
      "answerKey": {
       "value": 200
      },
-     "solutionNarrative": "Nhân lên: 50 × 4 = 200 (km).",
+     "solutionNarrative": "Nhân lên: $50  \\times  4 = 200$ (km).",
      "hints": [
       "Mỗi giờ một khúc, bốn giờ là bốn khúc.",
       "Con nhân con số một giờ với số giờ."
@@ -172,7 +182,7 @@
      "answerKey": {
       "value": 5
      },
-     "solutionNarrative": "Chia ra: 225 : 45 = 5 (giờ).",
+     "solutionNarrative": "Chia ra: $225 : 45 = 5$ (giờ).",
      "hints": [
       "Con hỏi: cả quãng đường chứa được mấy khúc bốn mươi lăm?",
       "Lấy quãng đường chia cho con số một giờ."
@@ -184,7 +194,7 @@
      "answerKey": {
       "value": 9
      },
-     "solutionNarrative": "Cộng vào giờ xuất phát: 6 + 3 = 9 (giờ).",
+     "solutionNarrative": "Cộng vào giờ xuất phát: $6 + 3 = 9$ (giờ).",
      "hints": [
       "Xe đi liền một mạch không nghỉ, nên chỉ việc cộng thời gian đi đường vào.",
       "Sáu cộng ba thì được mấy?"
@@ -207,7 +217,7 @@
        }
       ]
      },
-     "solutionNarrative": "Thời gian: 280 : 40 = 7 (giờ). Giờ tới: 6 + 7 = 13 (giờ).",
+     "solutionNarrative": "Thời gian: $280 : 40 = 7$ (giờ). Giờ tới: $6 + 7 = 13$ (giờ).",
      "hints": [
       "Trước hết tìm số giờ: lấy quãng đường chia cho con số một giờ.",
       "Có số giờ rồi thì cộng vào giờ xuất phát."
@@ -228,7 +238,7 @@
        }
       ]
      },
-     "solutionNarrative": "Mỗi giờ: 150 : 3 = 50 (km). Thời gian đi 250 km: 250 : 50 = 5 (giờ).",
+     "solutionNarrative": "Mỗi giờ: $150 : 3 = 50$ (km). Thời gian đi 250 km: $250 : 50 = 5$ (giờ).",
      "hints": [
       "Trước hết tìm con số một giờ: lấy quãng đường chia cho số giờ.",
       "Có nó rồi thì lấy quãng đường mới chia cho nó."
@@ -256,7 +266,7 @@
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Sai. Hỏi thời gian thì chia: 200 : 40 = 5 giờ."
+    "solutionNarrative": "Sai. Hỏi thời gian thì chia: $200 : 40 = 5$ giờ."
    },
    {
     "id": "Q3",

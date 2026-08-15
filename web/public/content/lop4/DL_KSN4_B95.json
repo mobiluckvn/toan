@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn làm bài gặp nhau mà vẫn lấy hiệu hai nhịp, ra 180 chia 10 bằng 18 giờ.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Hai xe đi cùng chiều hay chạy vào nhau? Cả hai có cùng làm quãng đường ngắn lại không? Gợi ý 2: Sau một giờ, phần đường bị nuốt mất gồm phần của xe nào? Chữa: chạy vào nhau thì cả hai cùng góp, nên phải cộng: 25 + 35 = 60. Thời gian là 180 : 60 = 3 giờ."
+    "fix": "Gợi ý 1: Hai xe đi cùng chiều hay chạy vào nhau? Cả hai có cùng làm quãng đường ngắn lại không? Gợi ý 2: Sau một giờ, phần đường bị nuốt mất gồm phần của xe nào? Chữa: chạy vào nhau thì cả hai cùng góp, nên phải cộng: $25 + 35 = 60$. Thời gian là $180 : 60 = 3$ giờ."
    }
   ]
  },
@@ -53,34 +53,44 @@
   "problem": "Hai đầu một quãng đường dài 180 ki-lô-mét, hai xe cùng lúc chạy vào nhau. Xe thứ nhất mỗi giờ đi 25 ki-lô-mét, xe thứ hai mỗi giờ đi 35 ki-lô-mét. Hỏi sau bao lâu hai xe gặp nhau?",
   "steps": [
    {
-    "show": "Cả hai cùng lao vào"
+    "show": "Cả hai cùng lao vào",
+    "phan": "giai"
    },
    {
-    "show": "Lần này không ai chạy trốn cả. Sau một giờ, xe thứ nhất đi được 25, xe thứ hai đi được 35 — hai bên gần thêm nhau cả hai phần."
+    "show": "Lần này không ai chạy trốn cả. Sau một giờ, xe thứ nhất đi được 25, xe thứ hai đi được 35 — hai bên gần thêm nhau cả hai phần.",
+    "phan": "giai"
    },
    {
-    "show": "Mỗi giờ gần thêm: 25 + 35 = 60 (ki-lô-mét)."
+    "show": "Mỗi giờ gần thêm: $25 + 35 = 60$ (ki-lô-mét).",
+    "phan": "giai"
    },
    {
-    "show": "Chia ra là xong"
+    "show": "Chia ra là xong",
+    "phan": "giai"
    },
    {
-    "show": "Cả quãng đường 180 ki-lô-mét, mỗi giờ nuốt được 60, nên hết 180 : 60 = 3 (giờ)."
+    "show": "Cả quãng đường 180 ki-lô-mét, mỗi giờ nuốt được 60, nên hết $180 : 60 = 3$ (giờ).",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: sau 3 giờ hai xe gặp nhau."
+    "show": "Đáp số: sau 3 giờ hai xe gặp nhau.",
+    "phan": "dapso"
    },
    {
-    "show": "Kiểm bằng hai cột quãng đường"
+    "show": "Kiểm bằng hai cột quãng đường",
+    "phan": "ghichu"
    },
    {
-    "show": "Xe thứ nhất đi 25 × 3 = 75. Xe thứ hai đi 35 × 3 = 105. Cộng lại 75 + 105 = 180 — vừa đúng cả quãng đường."
+    "show": "Xe thứ nhất đi $25  \\times  3 = 75$. Xe thứ hai đi $35  \\times  3 = 105$. Cộng lại $75 + 105 = 180$ — vừa đúng cả quãng đường.",
+    "phan": "ghichu"
    },
    {
-    "show": "Nhớ cho kỹ chỗ khác nhau"
+    "show": "Nhớ cho kỹ chỗ khác nhau",
+    "phan": "ghichu"
    },
    {
-    "show": "Cùng chiều là đuổi, mỗi giờ khép bằng HIỆU. Ngược chiều là gặp, mỗi giờ gần thêm bằng TỔNG."
+    "show": "Cùng chiều là đuổi, mỗi giờ khép bằng HIỆU. Ngược chiều là gặp, mỗi giờ gần thêm bằng TỔNG.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -93,7 +103,7 @@
      "answerKey": {
       "value": 60
      },
-     "solutionNarrative": "Cả hai cùng góp nên lấy tổng: 25 + 35 = 60 (km).",
+     "solutionNarrative": "Cả hai cùng góp nên lấy tổng: $25 + 35 = 60$ (km).",
      "hints": [
       "Cả hai xe cùng lao vào nhau nên cả hai cùng làm đường ngắn lại.",
       "Con cộng con số của hai xe lại với nhau."
@@ -105,7 +115,7 @@
      "answerKey": {
       "value": 3
      },
-     "solutionNarrative": "Lấy quãng đường chia tổng: 180 : 60 = 3 (giờ).",
+     "solutionNarrative": "Lấy quãng đường chia tổng: $180 : 60 = 3$ (giờ).",
      "hints": [
       "Mỗi giờ nuốt được một phần như nhau, nên chia là ra số giờ.",
       "Lấy cả quãng đường chia cho phần vừa tính ở câu trên."
@@ -140,7 +150,7 @@
      "answerKey": {
       "value": 75
      },
-     "solutionNarrative": "Nhân lên: 25 × 3 = 75 (km).",
+     "solutionNarrative": "Nhân lên: $25  \\times  3 = 75$ (km).",
      "hints": [
       "Con nhân con số một giờ của xe ấy với số giờ vừa tìm được.",
       "Hai mươi lăm nhân ba thì được mấy?"
@@ -161,7 +171,7 @@
        }
       ]
      },
-     "solutionNarrative": "Xe thứ hai: 35 × 3 = 105 (km). Cộng lại: 75 + 105 = 180 (km) — đúng cả quãng đường.",
+     "solutionNarrative": "Xe thứ hai: $35  \\times  3 = 105$ (km). Cộng lại: $75 + 105 = 180$ (km) — đúng cả quãng đường.",
      "hints": [
       "Con nhân con số một giờ của xe thứ hai với số giờ.",
       "Rồi cộng hai phần đường lại — phải vừa đúng cả quãng đường ban đầu."
@@ -173,7 +183,7 @@
      "answerKey": {
       "value": 3
      },
-     "solutionNarrative": "Tổng hai nhịp: 50 + 30 = 80 (km). Thời gian: 240 : 80 = 3 (giờ).",
+     "solutionNarrative": "Tổng hai nhịp: $50 + 30 = 80$ (km). Thời gian: $240 : 80 = 3$ (giờ).",
      "hints": [
       "Con cộng con số của hai xe lại trước đã.",
       "Rồi lấy cả quãng đường chia cho phần ấy."
@@ -185,7 +195,7 @@
      "answerKey": {
       "value": 2
      },
-     "solutionNarrative": "Tổng hai nhịp: 45 + 30 = 75 (km). Thời gian: 150 : 75 = 2 (giờ).",
+     "solutionNarrative": "Tổng hai nhịp: $45 + 30 = 75$ (km). Thời gian: $150 : 75 = 2$ (giờ).",
      "hints": [
       "Vẫn hai xe lao vào nhau, con gộp hai con số một giờ của chúng lại.",
       "Rồi lấy cả quãng đường chia cho phần ấy."
@@ -228,7 +238,7 @@
      "answerKey": {
       "value": 40
      },
-     "solutionNarrative": "Mỗi giờ hai xe gần thêm 210 : 3 = 70 (km) — đó là tổng hai nhịp. Nhịp xe thứ hai: 70 − 30 = 40 (km mỗi giờ).",
+     "solutionNarrative": "Mỗi giờ hai xe gần thêm $210 : 3 = 70$ (km) — đó là tổng hai nhịp. Nhịp xe thứ hai: $70 - 30 = 40$ (km mỗi giờ).",
      "hints": [
       "Con tìm phần gần thêm mỗi giờ trước: lấy quãng đường chia số giờ.",
       "Phần ấy gồm cả hai xe góp vào, nên trừ đi phần của xe đã biết."

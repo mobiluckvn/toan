@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn soi số 45 với dãy 5 ; 10 ; 15 ; ... như sau: \"45 chia 5 được 9, chia hết, nên đứng thứ 9.\" Bạn ra đúng đáp số nhưng làm thiếu một bước.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con thử cách ấy với dãy 3 ; 7 ; 11 ; ... và số 23 xem: 23 chia 4 dư 3, vậy là không thuộc dãy à? Nhưng đếm ra thì 23 có trong dãy đấy. Gợi ý 2: Trước khi chia, con phải làm gì với số đầu? Chữa: phải TRỪ SỐ ĐẦU trước đã, rồi mới chia. Dãy này bắt đầu từ 5 nên (45 − 5) : 5 = 8, chỗ đứng là 8 + 1 = 9."
+    "fix": "Gợi ý 1: Con thử cách ấy với dãy 3 ; 7 ; 11 ; ... và số 23 xem: 23 chia 4 dư 3, vậy là không thuộc dãy à? Nhưng đếm ra thì 23 có trong dãy đấy. Gợi ý 2: Trước khi chia, con phải làm gì với số đầu? Chữa: phải TRỪ SỐ ĐẦU trước đã, rồi mới chia. Dãy này bắt đầu từ 5 nên ($45 - 5$) : $5 = 8$, chỗ đứng là $8 + 1 = 9$."
    }
   ]
  },
@@ -53,34 +53,44 @@
   "problem": "Số 45 có thuộc dãy 5 ; 10 ; 15 ; ... không? Nếu thuộc thì đứng thứ mấy?",
   "steps": [
    {
-    "show": "Trừ số đầu trước đã"
+    "show": "Trừ số đầu trước đã",
+    "phan": "giai"
    },
    {
-    "show": "45 − 5 = 40."
+    "show": "$45 - 5 = 40$.",
+    "phan": "giai"
    },
    {
-    "show": "Chia cho khoảng cách"
+    "show": "Chia cho khoảng cách",
+    "phan": "giai"
    },
    {
-    "show": "40 : 5 = 8, chia hết."
+    "show": "$40 : 5 = 8$, chia hết.",
+    "phan": "giai"
    },
    {
-    "show": "Chia hết nên số 45 thuộc dãy."
+    "show": "Chia hết nên số 45 thuộc dãy.",
+    "phan": "giai"
    },
    {
-    "show": "Tìm chỗ đứng"
+    "show": "Tìm chỗ đứng",
+    "phan": "giai"
    },
    {
-    "show": "Phép chia cho ra 8, là số lần cộng thêm."
+    "show": "Phép chia cho ra 8, là số lần cộng thêm.",
+    "phan": "giai"
    },
    {
-    "show": "Cộng thêm một: 8 + 1 = 9. Số 45 đứng thứ 9."
+    "show": "Cộng thêm một: $8 + 1 = 9$. Số 45 đứng thứ 9.",
+    "phan": "giai"
    },
    {
-    "show": "Soi lại: 5 + 5 × 8 = 45, đúng."
+    "show": "Soi lại: $5 + 5  \\times  8 = 45$, đúng.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: số 45 thuộc dãy và đứng thứ 9."
+    "show": "Đáp số: số 45 thuộc dãy và đứng thứ 9.",
+    "phan": "dapso"
    }
   ]
  },
@@ -93,7 +103,7 @@
      "answerKey": {
       "value": 40
      },
-     "solutionNarrative": "45 − 5 = 40.",
+     "solutionNarrative": "$45 - 5 = 40$.",
      "hints": [
       "Nhìn hai số đầu của dãy.",
       "Và nhớ: trừ số đầu trước đã."
@@ -118,7 +128,7 @@
        }
       ]
      },
-     "solutionNarrative": "40 : 5 = 8, chia hết.",
+     "solutionNarrative": "$40 : 5 = 8$, chia hết.",
      "hints": [
       "Lấy 23 trừ số đầu.",
       "Rồi chia cho khoảng cách xem hết hay dư."
@@ -143,7 +153,7 @@
        }
       ]
      },
-     "solutionNarrative": "Chia hết nên số 45 THUỘC dãy. Chỗ đứng = 8 + 1 = 9.",
+     "solutionNarrative": "Chia hết nên số 45 THUỘC dãy. Chỗ đứng = $8 + 1 = 9$.",
      "hints": [
       "Trừ số đầu trước.",
       "Chia hết thì thuộc, còn dư thì không."
@@ -170,7 +180,7 @@
        }
       ]
      },
-     "solutionNarrative": "(23 − 3) : 4 = 5, chia hết nên thuộc dãy, đứng thứ 6.",
+     "solutionNarrative": "($23 - 3$) : $4 = 5$, chia hết nên thuộc dãy, đứng thứ 6.",
      "hints": [
       "Số 79 trừ số đầu được bao nhiêu?",
       "Phép chia cho ra số bước, còn thiếu chỗ đầu tiên."
@@ -191,7 +201,7 @@
        }
       ]
      },
-     "solutionNarrative": "(100 − 3) : 4 = 97 : 4 = 24 dư 1. Còn dư nên số 100 KHÔNG thuộc dãy.",
+     "solutionNarrative": "($100 - 3$) : $4 = 97 : 4 = 24$ dư 1. Còn dư nên số 100 KHÔNG thuộc dãy.",
      "hints": [
       "Trừ số đầu rồi chia thử.",
       "Còn dư nghĩa là rơi vào giữa hai số hạng."
@@ -216,7 +226,7 @@
        }
       ]
      },
-     "solutionNarrative": "(52 − 7) : 5 = 9, chia hết nên thuộc dãy, đứng thứ 10.",
+     "solutionNarrative": "($52 - 7$) : $5 = 9$, chia hết nên thuộc dãy, đứng thứ 10.",
      "hints": [
       "Khoảng cách là 8.",
       "Chia xong nhớ cộng một để ra chỗ đứng."
@@ -241,7 +251,7 @@
        }
       ]
      },
-     "solutionNarrative": "(30 − 5) : 5 = 5, chia hết nên thuộc dãy, đứng thứ 6.",
+     "solutionNarrative": "($30 - 5$) : $5 = 5$, chia hết nên thuộc dãy, đứng thứ 6.",
      "hints": [
       "Khoảng cách là 5.",
       "Trừ số đầu trước đã."
@@ -264,7 +274,7 @@
        }
       ]
      },
-     "solutionNarrative": "(45 − 5) : 5 = 8 chia hết, nhưng 45 đã VƯỢT QUÁ số cuối 25, nên số 45 KHÔNG thuộc dãy này. Chia hết thôi chưa đủ.",
+     "solutionNarrative": "($45 - 5$) : $5 = 8$ chia hết, nhưng 45 đã VƯỢT QUÁ số cuối 25, nên số 45 KHÔNG thuộc dãy này. Chia hết thôi chưa đủ.",
      "hints": [
       "Chia thử xem có hết không.",
       "Rồi đọc kỹ số cuối của dãy — dãy này dừng ở đâu?"
@@ -289,7 +299,7 @@
        }
       ]
      },
-     "solutionNarrative": "(64 − 4) : 5 = 12 chia hết, và 64 nằm giữa 4 và 99 nên thuộc dãy, đứng thứ 13.",
+     "solutionNarrative": "($64 - 4$) : $5 = 12$ chia hết, và 64 nằm giữa 4 và 99 nên thuộc dãy, đứng thứ 13.",
      "hints": [
       "Số 64 trừ số đầu rồi chia cho khoảng cách.",
       "Kiểm cả hai điều: chia hết, và nằm trong dãy."
@@ -331,7 +341,7 @@
     "answerKey": {
      "choice": "A. thuộc dãy, đứng thứ 9"
     },
-    "solutionNarrative": "(45 − 5) : 5 = 8, chỗ đứng là 8 + 1 = 9."
+    "solutionNarrative": "($45 - 5$) : $5 = 8$, chỗ đứng là $8 + 1 = 9$."
    },
    {
     "id": "Q4",
@@ -359,7 +369,7 @@
     "answerKey": {
      "choice": "A. 6"
     },
-    "solutionNarrative": "(30 − 5) : 5 = 5, chỗ đứng là 5 + 1 = 6."
+    "solutionNarrative": "($30 - 5$) : $5 = 5$, chỗ đứng là $5 + 1 = 6$."
    }
   ]
  },

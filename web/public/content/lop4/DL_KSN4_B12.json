@@ -32,9 +32,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn nói: \"Tích 23 × 17 tận cùng là 21, vì 3 nhân 7 bằng 21.\"",
+    "wrong": "Có bạn nói: \"Tích $23  \\times  17$ tận cùng là 21, vì 3 nhân 7 bằng 21.\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: 21 có mấy chữ số? Câu hỏi đòi bao nhiêu chữ số? Gợi ý 2: Đề hỏi CHỮ SỐ tận cùng, tức chỉ một chữ số thôi. Chữa: 3 × 7 = 21, và chữ số tận cùng của 21 là 1. Vậy tích tận cùng là 1, không phải 21."
+    "fix": "Gợi ý 1: 21 có mấy chữ số? Câu hỏi đòi bao nhiêu chữ số? Gợi ý 2: Đề hỏi CHỮ SỐ tận cùng, tức chỉ một chữ số thôi. Chữa: $3  \\times  7 = 21$, và chữ số tận cùng của 21 là 1. Vậy tích tận cùng là 1, không phải 21."
    }
   ]
  },
@@ -43,47 +43,58 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn nói: \"Tích 23 × 17 tận cùng là 21, vì 3 nhân 7 bằng 21.\"",
+    "narration": "Có bạn nói: \"Tích $23  \\times  17$ tận cùng là 21, vì 3 nhân 7 bằng 21.\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tích 23 × 17 có chữ số tận cùng là mấy? Tìm mà không nhân hết cả phép.",
+  "problem": "Tích $23  \\times  17$ có chữ số tận cùng là mấy? Tìm mà không nhân hết cả phép.",
   "steps": [
    {
-    "show": "Tách hai thừa số"
+    "show": "Tách hai thừa số",
+    "phan": "giai"
    },
    {
-    "show": "23 = 20 + 3 và 17 = 10 + 7."
+    "show": "$23 = 20 + 3$ và $17 = 10 + 7$.",
+    "phan": "giai"
    },
    {
-    "show": "Nhân ra thành bốn phần"
+    "show": "Nhân ra thành bốn phần",
+    "phan": "giai"
    },
    {
-    "show": "23 × 17 = 20 × 10 + 20 × 7 + 3 × 10 + 3 × 7."
+    "show": "$23  \\times  17 = 20  \\times  10 + 20  \\times  7 + 3  \\times  10 + 3  \\times  7$.",
+    "phan": "giai"
    },
    {
-    "show": "Xem ba phần đầu"
+    "show": "Xem ba phần đầu",
+    "phan": "giai"
    },
    {
-    "show": "Ba phần đầu đều có thừa số 10 hoặc 20, nên đều là số tròn chục — chữ số cuối của chúng đều bằng 0, không chạm tới chữ số cuối của tích."
+    "show": "Ba phần đầu đều có thừa số 10 hoặc 20, nên đều là số tròn chục — chữ số cuối của chúng đều bằng 0, không chạm tới chữ số cuối của tích.",
+    "phan": "giai"
    },
    {
-    "show": "Vậy chỉ phần cuối quyết định"
+    "show": "Vậy chỉ phần cuối quyết định",
+    "phan": "giai"
    },
    {
-    "show": "3 × 7 = 21, chữ số cuối là 1. Nên tích 23 × 17 có chữ số tận cùng là 1."
+    "show": "$3  \\times  7 = 21$, chữ số cuối là 1. Nên tích $23  \\times  17$ có chữ số tận cùng là 1.",
+    "phan": "giai"
    },
    {
-    "show": "Kiểm lại"
+    "show": "Kiểm lại",
+    "phan": "giai"
    },
    {
-    "show": "23 × 17 = 391, đúng là tận cùng bằng 1."
+    "show": "$23  \\times  17 = 391$, đúng là tận cùng bằng 1.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: chữ số tận cùng của tích là 1, lấy từ 3 nhân 7 bằng 21."
+    "show": "Đáp số: chữ số tận cùng của tích là 1, lấy từ 3 nhân 7 bằng 21.",
+    "phan": "dapso"
    }
   ]
  },
@@ -92,7 +103,7 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tích 23 × 17 — đúng phép trong video. Nhân hai chữ số cuối với nhau được bao nhiêu, và chữ số tận cùng của tích là mấy?",
+     "text": "Tích $23  \\times  17$ — đúng phép trong video. Nhân hai chữ số cuối với nhau được bao nhiêu, và chữ số tận cùng của tích là mấy?",
      "answerKey": {
       "parts": [
        {
@@ -105,7 +116,7 @@
        }
       ]
      },
-     "solutionNarrative": "3 × 7 = 21. Chữ số tận cùng của 21 là 1, nên tích tận cùng bằng 1.",
+     "solutionNarrative": "$3  \\times  7 = 21$. Chữ số tận cùng của 21 là 1, nên tích tận cùng bằng 1.",
      "hints": [
       "Đuôi chỉ nói chuyện với đuôi.",
       "Nhân hai chữ số cuối rồi giữ lại một chữ số."
@@ -113,11 +124,11 @@
     },
     {
      "id": "C2",
-     "text": "Tích 34 × 26 có chữ số tận cùng là mấy?",
+     "text": "Tích $34  \\times  26$ có chữ số tận cùng là mấy?",
      "answerKey": {
       "value": 4
      },
-     "solutionNarrative": "4 × 6 = 24, tận cùng là 4. Vậy tích tận cùng bằng 4.",
+     "solutionNarrative": "$4  \\times  6 = 24$, tận cùng là 4. Vậy tích tận cùng bằng 4.",
      "hints": [
       "Chỉ nhân hai cái đuôi với nhau.",
       "Kết quả ra hai chữ số thì chỉ giữ chữ số cuối."
@@ -125,11 +136,11 @@
     },
     {
      "id": "C3",
-     "text": "Tích 45 × 12 có chữ số tận cùng là mấy?",
+     "text": "Tích $45  \\times  12$ có chữ số tận cùng là mấy?",
      "answerKey": {
       "value": 0
      },
-     "solutionNarrative": "5 × 2 = 10, tận cùng là 0. Vậy tích tận cùng bằng 0.",
+     "solutionNarrative": "$5  \\times  2 = 10$, tận cùng là 0. Vậy tích tận cùng bằng 0.",
      "hints": [
       "Tìm CẶP ĐÔI VÀNG đang ẩn trong tích.",
       "Một thừa số chẵn gặp một đuôi 5 thì sinh ra gì?"
@@ -156,7 +167,7 @@
     },
     {
      "id": "C5",
-     "text": "Bạn Tú nói: \"Tích 23 × 17 tận cùng là 21.\" Bạn nói đúng chưa? Vì sao?",
+     "text": "Bạn Tú nói: \"Tích $23  \\times  17$ tận cùng là 21.\" Bạn nói đúng chưa? Vì sao?",
      "answerKey": {
       "parts": [
        {
@@ -173,7 +184,7 @@
        }
       ]
      },
-     "solutionNarrative": "CHƯA đúng. 3 × 7 = 21 nhưng câu hỏi đòi một CHỮ SỐ tận cùng, mà chữ số tận cùng của 21 là 1.",
+     "solutionNarrative": "CHƯA đúng. $3  \\times  7 = 21$ nhưng câu hỏi đòi một CHỮ SỐ tận cùng, mà chữ số tận cùng của 21 là 1.",
      "hints": [
       "Toàn thừa số cứng đầu — lần theo dây chuyền.",
       "Nhân từng bước, mỗi bước chỉ giữ lại chữ số cuối."
@@ -181,11 +192,11 @@
     },
     {
      "id": "C6",
-     "text": "Không nhân hết, hãy cho biết tích 128 × 35 có tận cùng bằng mấy.",
+     "text": "Không nhân hết, hãy cho biết tích $128  \\times  35$ có tận cùng bằng mấy.",
      "answerKey": {
       "value": 0
      },
-     "solutionNarrative": "8 × 5 = 40, tận cùng là 0. Vậy tích tận cùng bằng 0.",
+     "solutionNarrative": "$8  \\times  5 = 40$, tận cùng là 0. Vậy tích tận cùng bằng 0.",
      "hints": [
       "Soi cả dãy tìm thừa số chẵn gặp đuôi 5.",
       "Thấy cặp ấy là hô ngay, khỏi nhân."
@@ -193,7 +204,7 @@
     },
     {
      "id": "C7",
-     "text": "Một bạn tính 23 × 17 = 394. Không cần tính lại cả phép, hãy chỉ ra bạn ấy chắc chắn sai.",
+     "text": "Một bạn tính $23  \\times  17 = 394$. Không cần tính lại cả phép, hãy chỉ ra bạn ấy chắc chắn sai.",
      "answerKey": {
       "parts": [
        {
@@ -206,7 +217,7 @@
        }
       ]
      },
-     "solutionNarrative": "Chữ số cuối phải là 1 (vì 3 × 7 = 21), mà kết quả bạn ấy viết tận cùng là 4. Vậy chắc chắn sai.",
+     "solutionNarrative": "Chữ số cuối phải là 1 (vì $3  \\times  7 = 21$), mà kết quả bạn ấy viết tận cùng là 4. Vậy chắc chắn sai.",
      "hints": [
       "Nhân hai cái đuôi với nhau xem ra gì.",
       "Trong tích ấy có cặp đôi vàng nào ẩn không?"
@@ -216,11 +227,11 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Tích 2 × 4 × 5 × 7 có chữ số tận cùng là mấy?",
+     "text": "Tích $2  \\times  4  \\times  5  \\times  7$ có chữ số tận cùng là mấy?",
      "answerKey": {
       "value": 0
      },
-     "solutionNarrative": "Nhân dần và chỉ giữ chữ số cuối: 2 × 4 = 8; 8 × 5 = 40 tận cùng 0; 0 × 7 = 0. Vậy tích tận cùng bằng 0.",
+     "solutionNarrative": "Nhân dần và chỉ giữ chữ số cuối: $2  \\times  4 = 8$; $8  \\times  5 = 40$ tận cùng 0; $0  \\times  7 = 0$. Vậy tích tận cùng bằng 0.",
      "hints": [
       "Dãy nào có thừa số chẵn để bắt cặp với 5?",
       "Dãy toàn lẻ mà có mặt số 5 thì đuôi đứng im ở đâu?"
@@ -228,11 +239,11 @@
     },
     {
      "id": "C9",
-     "text": "Tìm chữ số tận cùng của tích 13 × 13 × 13.",
+     "text": "Tìm chữ số tận cùng của tích $13  \\times  13  \\times  13$.",
      "answerKey": {
       "value": 7
      },
-     "solutionNarrative": "Chỉ giữ chữ số cuối: 3 × 3 = 9 tận cùng 9; 9 × 3 = 27 tận cùng 7. Vậy tích tận cùng bằng 7.",
+     "solutionNarrative": "Chỉ giữ chữ số cuối: $3  \\times  3 = 9$ tận cùng 9; $9  \\times  3 = 27$ tận cùng 7. Vậy tích tận cùng bằng 7.",
      "hints": [
       "Lần dây chuyền đuôi rồi tìm vòng lặp.",
       "Vòng lặp dài mấy nhịp? Mười thừa số dừng ở nhịp nào?"
@@ -255,16 +266,16 @@
    },
    {
     "id": "Q2",
-    "text": "Tích 23 × 17 có chữ số tận cùng là 21.",
+    "text": "Tích $23  \\times  17$ có chữ số tận cùng là 21.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — chữ số tận cùng chỉ là MỘT chữ số. 3 × 7 = 21 nên tận cùng là 1."
+    "solutionNarrative": "SAI — chữ số tận cùng chỉ là MỘT chữ số. $3  \\times  7 = 21$ nên tận cùng là 1."
    },
    {
     "id": "Q3",
-    "text": "Tích 34 × 26 có chữ số tận cùng là:",
+    "text": "Tích $34  \\times  26$ có chữ số tận cùng là:",
     "format": "mcq",
     "choices": [
      "A. 4",
@@ -274,11 +285,11 @@
     "answerKey": {
      "choice": "A. 4"
     },
-    "solutionNarrative": "4 × 6 = 24, tận cùng là 4."
+    "solutionNarrative": "$4  \\times  6 = 24$, tận cùng là 4."
    },
    {
     "id": "Q4",
-    "text": "Tích 45 × 12 có chữ số tận cùng là:",
+    "text": "Tích $45  \\times  12$ có chữ số tận cùng là:",
     "format": "mcq",
     "choices": [
      "A. 0",
@@ -288,7 +299,7 @@
     "answerKey": {
      "choice": "A. 0"
     },
-    "solutionNarrative": "5 × 2 = 10, tận cùng là 0."
+    "solutionNarrative": "$5  \\times  2 = 10$, tận cùng là 0."
    },
    {
     "id": "Q5",

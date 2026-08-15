@@ -32,9 +32,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn đọc đề rồi làm luôn: \"Số còn lại là 36 − 40, không trừ được nên đề sai.\"",
+    "wrong": "Có bạn đọc đề rồi làm luôn: \"Số còn lại là $36 - 40$, không trừ được nên đề sai.\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: 36 là trung bình cộng, còn con đang trừ nó như thể nó là tổng. Gợi ý 2: Con tìm TỔNG trước đã. Trung bình 36, có hai số thì tổng bằng mấy? Chữa: tổng là 36 × 2 = 72, rồi mới lấy 72 − 40 = 32. Phải đi tổng trước, không trừ thẳng vào trung bình cộng được."
+    "fix": "Gợi ý 1: 36 là trung bình cộng, còn con đang trừ nó như thể nó là tổng. Gợi ý 2: Con tìm TỔNG trước đã. Trung bình 36, có hai số thì tổng bằng mấy? Chữa: tổng là $36  \\times  2 = 72$, rồi mới lấy $72 - 40 = 32$. Phải đi tổng trước, không trừ thẳng vào trung bình cộng được."
    }
   ]
  },
@@ -43,7 +43,7 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn đọc đề rồi làm luôn: \"Số còn lại là 36 − 40, không trừ được nên đề sai.\"",
+    "narration": "Có bạn đọc đề rồi làm luôn: \"Số còn lại là $36 - 40$, không trừ được nên đề sai.\"",
     "teaches": []
    }
   ]
@@ -53,25 +53,28 @@
   "problem": "Trung bình cộng của hai số là 36, một số bằng 40. Tìm số còn lại.",
   "steps": [
    {
-    "show": "Bước 1 — tìm tổng"
+    "show": "Bước 1 — tìm tổng",
+    "phan": "phantich"
    },
    {
-    "show": "Trung bình cộng là 36, có 2 số, nên tổng là 36 × 2 = 72."
+    "show": "Trung bình cộng là 36, có 2 số, nên tổng là $36  \\times  2 = 72$.",
+    "phan": "phantich"
    },
    {
-    "show": "Bước 2 — trừ đi số đã biết"
+    "show": "Bước 2 — trừ đi số đã biết",
+    "phan": "phantich"
    },
    {
-    "show": "Số còn lại là 72 − 40 = 32."
+    "show": "Số còn lại là $72 - 40 = 32$.",
+    "phan": "phantich"
    },
    {
-    "show": "Thử lại"
+    "show": "Tính trung bình cộng của 40 và 32: ($40 + 32$) : $2 = 72 : 2 = 36$. Đúng bằng đề cho, nên bài làm đúng.",
+    "phan": "thulai"
    },
    {
-    "show": "Tính trung bình cộng của 40 và 32: (40 + 32) : 2 = 72 : 2 = 36. Đúng bằng đề cho, nên bài làm đúng."
-   },
-   {
-    "show": "Đáp số: số còn lại là 32."
+    "show": "Đáp số: số còn lại là 32.",
+    "phan": "dapso"
    }
   ]
  },
@@ -84,7 +87,7 @@
      "answerKey": {
       "value": 72
      },
-     "solutionNarrative": "36 × 2 = 72.",
+     "solutionNarrative": "$36  \\times  2 = 72$.",
      "hints": [
       "Trung bình cộng là số của một phần, có hai số nên tổng gồm hai phần.",
       "Nhân số trung bình lên theo số lượng."
@@ -96,7 +99,7 @@
      "answerKey": {
       "value": 32
      },
-     "solutionNarrative": "72 − 40 = 32.",
+     "solutionNarrative": "$72 - 40 = 32$.",
      "hints": [
       "Có tổng rồi thì bớt đi phần đã biết.",
       "Đề đã cho sẵn một trong hai số."
@@ -117,7 +120,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng là 10 × 2 = 20; số còn lại là 20 − 6 = 14.",
+     "solutionNarrative": "Tổng là $10  \\times  2 = 20$; số còn lại là $20 - 6 = 14$.",
      "hints": [
       "Tìm tổng trước đã, rồi mới trừ.",
       "Hai số nên tổng gấp đôi số trung bình."
@@ -140,7 +143,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng là 6 × 3 = 18; số thứ ba là 18 − 4 − 6 = 8.",
+     "solutionNarrative": "Tổng là $6  \\times  3 = 18$; số thứ ba là $18 - 4 - 6 = 8$.",
      "hints": [
       "Ba số nên tổng gồm ba phần.",
       "Có tổng rồi thì trừ đi cả hai số đã biết."
@@ -148,7 +151,7 @@
     },
     {
      "id": "C5",
-     "text": "Bạn An lấy thẳng 36 − 40 rồi bảo đề sai. Bạn sai ở đâu?",
+     "text": "Bạn An lấy thẳng $36 - 40$ rồi bảo đề sai. Bạn sai ở đâu?",
      "answerKey": {
       "parts": [
        {
@@ -161,7 +164,7 @@
        }
       ]
      },
-     "solutionNarrative": "Bạn trừ thẳng vào trung bình cộng. Phải tìm TỔNG trước: 36 × 2 = 72, rồi mới 72 − 40 = 32.",
+     "solutionNarrative": "Bạn trừ thẳng vào trung bình cộng. Phải tìm TỔNG trước: $36  \\times  2 = 72$, rồi mới $72 - 40 = 32$.",
      "hints": [
       "Bạn ấy trừ thẳng vào con số trung bình.",
       "Con số ấy mới là của một phần, chưa phải của cả nhóm."
@@ -182,7 +185,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng ba bài: 8 × 3 = 24. Bài thứ ba: 24 − 7 − 8 = 9 điểm.",
+     "solutionNarrative": "Tổng ba bài: $8  \\times  3 = 24$. Bài thứ ba: $24 - 7 - 8 = 9$ điểm.",
      "hints": [
       "Ba bài nên tổng điểm gồm ba phần.",
       "Có tổng rồi thì trừ đi điểm hai bài đầu."
@@ -199,7 +202,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tính lại trung bình cộng của hai số: (40 + 32) : 2 = 36 — đúng bằng đề cho.",
+     "solutionNarrative": "Tính lại trung bình cộng của hai số: ($40 + 32$) : $2 = 36$ — đúng bằng đề cho.",
      "hints": [
       "Thử lại nghĩa là làm ngược lại rồi so với đề.",
       "Cộng hai số vừa có rồi chia đôi xem ra đúng con số đề cho chăng."
@@ -222,7 +225,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng: 15 × 4 = 60. Số thứ tư: 60 − 10 − 14 − 20 = 16. Thử lại: (10 + 14 + 20 + 16) : 4 = 60 : 4 = 15.",
+     "solutionNarrative": "Tổng: $15  \\times  4 = 60$. Số thứ tư: $60 - 10 - 14 - 20 = 16$. Thử lại: ($10 + 14 + 20 + 16$) : $4 = 60 : 4 = 15$.",
      "hints": [
       "Bốn số nên tổng gồm bốn phần.",
       "Có tổng rồi thì trừ lần lượt ba số đã biết."
@@ -243,7 +246,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng: 30 × 4 = 120 kg. Bạn thứ tư: 120 − 28 − 29 − 31 = 32 kg.",
+     "solutionNarrative": "Tổng: $30  \\times  4 = 120$ kg. Bạn thứ tư: $120 - 28 - 29 - 31 = 32$ kg.",
      "hints": [
       "Bốn bạn nên tổng cân nặng gồm bốn phần.",
       "Trừ đi cân nặng ba bạn đã biết."
@@ -266,7 +269,7 @@
    },
    {
     "id": "Q2",
-    "text": "Trung bình cộng hai số là 36, một số là 40, vậy số kia là 36 − 40.",
+    "text": "Trung bình cộng hai số là 36, một số là 40, vậy số kia là $36 - 40$.",
     "format": "tf",
     "answerKey": {
      "value": false

@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn cắt xong rồi vẫn chia đôi như bài hai số, được 75 chia 2.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Sau khi cắt, con còn mấy đoạn bằng nhau? Gợi ý 2: Còn BA đoạn. Vậy chia cho mấy? Chữa: chia cho 3, được 75 : 3 = 25. Có mấy đoạn bằng nhau thì chia cho bấy nhiêu, không phải lúc nào cũng chia đôi."
+    "fix": "Gợi ý 1: Sau khi cắt, con còn mấy đoạn bằng nhau? Gợi ý 2: Còn BA đoạn. Vậy chia cho mấy? Chữa: chia cho 3, được $75 : 3 = 25$. Có mấy đoạn bằng nhau thì chia cho bấy nhiêu, không phải lúc nào cũng chia đôi."
    }
   ]
  },
@@ -53,37 +53,48 @@
   "problem": "Ba số có tổng bằng 90. Số thứ hai hơn số thứ nhất 5, số thứ ba hơn số thứ nhất 10. Tìm ba số.",
   "steps": [
    {
-    "show": "Vẽ ba đoạn"
+    "show": "Vẽ ba đoạn",
+    "phan": "giai"
    },
    {
-    "show": "Đoạn thứ nhất ngắn nhất. Đoạn thứ hai dôi ra 5, đoạn thứ ba dôi ra 10."
+    "show": "Đoạn thứ nhất ngắn nhất. Đoạn thứ hai dôi ra 5, đoạn thứ ba dôi ra 10.",
+    "phan": "giai"
    },
    {
-    "show": "Cắt cho ba đoạn bằng nhau"
+    "show": "Cắt cho ba đoạn bằng nhau",
+    "phan": "giai"
    },
    {
-    "show": "Cắt bỏ khúc 5 của đoạn hai và khúc 10 của đoạn ba. Bây giờ ba đoạn bằng nhau, mỗi đoạn đúng bằng số thứ nhất."
+    "show": "Cắt bỏ khúc 5 của đoạn hai và khúc 10 của đoạn ba. Bây giờ ba đoạn bằng nhau, mỗi đoạn đúng bằng số thứ nhất.",
+    "phan": "giai"
    },
    {
-    "show": "Xem tổng đổi thế nào"
+    "show": "Xem tổng đổi thế nào",
+    "phan": "giai"
    },
    {
-    "show": "Ta vừa cắt đi 5 và 10, tất cả là 15. Tổng còn 90 − 15 = 75."
+    "show": "Ta vừa cắt đi 5 và 10, tất cả là 15. Tổng còn $90 - 15 = 75$.",
+    "phan": "giai"
    },
    {
-    "show": "Chia ba"
+    "show": "Chia ba",
+    "phan": "giai"
    },
    {
-    "show": "75 là ba lần số thứ nhất, nên số thứ nhất là 75 : 3 = 25."
+    "show": "75 là ba lần số thứ nhất, nên số thứ nhất là $75 : 3 = 25$.",
+    "phan": "giai"
    },
    {
-    "show": "Tìm hai số kia"
+    "show": "Tìm hai số kia",
+    "phan": "giai"
    },
    {
-    "show": "Số thứ hai = 25 + 5 = 30. Số thứ ba = 25 + 10 = 35. Thử lại: 25 + 30 + 35 = 90."
+    "show": "Số thứ hai = $25 + 5 = 30$. Số thứ ba = $25 + 10 = 35$. Thử lại: $25 + 30 + 35 = 90$.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: ba số là 25, 30 và 35."
+    "show": "Đáp số: ba số là 25, 30 và 35.",
+    "phan": "dapso"
    }
   ]
  },
@@ -96,7 +107,7 @@
      "answerKey": {
       "value": 75
      },
-     "solutionNarrative": "Cắt đi 5 và 10, tất cả 15. Tổng còn 90 − 15 = 75.",
+     "solutionNarrative": "Cắt đi 5 và 10, tất cả 15. Tổng còn $90 - 15 = 75$.",
      "hints": [
       "Cắt bỏ cả hai khúc thò ra khỏi hai đoạn dài.",
       "Cắt đi bao nhiêu thì con số ngoặc ngoài giảm bấy nhiêu."
@@ -117,7 +128,7 @@
        }
       ]
      },
-     "solutionNarrative": "Còn 3 đoạn bằng nhau. Số thứ nhất = 75 : 3 = 25.",
+     "solutionNarrative": "Còn 3 đoạn bằng nhau. Số thứ nhất = $75 : 3 = 25$.",
      "hints": [
       "Cắt xong thì cả ba đoạn dài như nhau.",
       "Có mấy đoạn bằng nhau thì chia cho bấy nhiêu."
@@ -138,7 +149,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số thứ hai = 25 + 5 = 30; số thứ ba = 25 + 10 = 35.",
+     "solutionNarrative": "Số thứ hai = $25 + 5 = 30$; số thứ ba = $25 + 10 = 35$.",
      "hints": [
       "Có đoạn ngắn nhất rồi thì cộng lại khúc đã cắt.",
       "Mỗi đoạn cộng đúng khúc của riêng nó."
@@ -169,7 +180,7 @@
      "answerKey": {
       "value": 17
      },
-     "solutionNarrative": "Tổng sau khi cắt = 60 − 3 − 6 = 51. Số thứ nhất = 51 : 3 = 17.",
+     "solutionNarrative": "Tổng sau khi cắt = $60 - 3 - 6 = 51$. Số thứ nhất = $51 : 3 = 17$.",
      "hints": [
       "Cắt cả hai khúc thò ra rồi mới chia.",
       "Chia cho số đoạn, chứ không chia đôi."
@@ -190,7 +201,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số hai = 17 + 3 = 20; số ba = 17 + 6 = 23. Thử: 17 + 20 + 23 = 60, đúng.",
+     "solutionNarrative": "Số hai = $17 + 3 = 20$; số ba = $17 + 6 = 23$. Thử: $17 + 20 + 23 = 60$, đúng.",
      "hints": [
       "Có đoạn ngắn nhất rồi thì cộng lại từng khúc.",
       "Thử lại bằng cách cộng cả ba số xem có khớp đề chăng."
@@ -238,7 +249,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng sau khi cắt = 120 − 8 − 16 = 96. Lớp A = 96 : 3 = 32 cây; lớp B = 40 cây; lớp C = 48 cây.",
+     "solutionNarrative": "Tổng sau khi cắt = $120 - 8 - 16 = 96$. Lớp A = $96 : 3 = 32$ cây; lớp B = 40 cây; lớp C = 48 cây.",
      "hints": [
       "Lớp A là lớp ít nhất, hai lớp kia đều hơn nó.",
       "Cắt cả hai phần hơn rồi chia cho số lớp."
@@ -263,7 +274,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng sau khi cắt = 99 − 6 − 12 = 81. Số thứ nhất = 81 : 3 = 27; số thứ hai = 33; số thứ ba = 39. Thử: 27 + 33 + 39 = 99, đúng.",
+     "solutionNarrative": "Tổng sau khi cắt = $99 - 6 - 12 = 81$. Số thứ nhất = $81 : 3 = 27$; số thứ hai = 33; số thứ ba = 39. Thử: $27 + 33 + 39 = 99$, đúng.",
      "hints": [
       "Cắt cả hai khúc thò ra khỏi tổng.",
       "Chia cho số đoạn rồi cộng lại từng khúc."
@@ -305,7 +316,7 @@
     "answerKey": {
      "choice": "A. 75"
     },
-    "solutionNarrative": "90 − 5 − 10 = 75."
+    "solutionNarrative": "$90 - 5 - 10 = 75$."
    },
    {
     "id": "Q4",
@@ -319,7 +330,7 @@
     "answerKey": {
      "choice": "A. 25"
     },
-    "solutionNarrative": "75 : 3 = 25."
+    "solutionNarrative": "$75 : 3 = 25$."
    },
    {
     "id": "Q5",

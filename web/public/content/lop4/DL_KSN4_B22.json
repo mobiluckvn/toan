@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn thấy ba số 4 ; 6 ; 8 rồi nói: \"Số 8 hơn mức trung bình 8 đơn vị.\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Mức trung bình của ba số này là bao nhiêu? Gợi ý 2: Là 6. Vậy 8 hơn 6 mấy đơn vị? Chữa: 8 − 6 = 2, nên số 8 hơn mức trung bình 2 đơn vị. Phải trừ đi mức trung bình, chứ không lấy luôn con số đó."
+    "fix": "Gợi ý 1: Mức trung bình của ba số này là bao nhiêu? Gợi ý 2: Là 6. Vậy 8 hơn 6 mấy đơn vị? Chữa: $8 - 6 = 2$, nên số 8 hơn mức trung bình 2 đơn vị. Phải trừ đi mức trung bình, chứ không lấy luôn con số đó."
    }
   ]
  },
@@ -53,25 +53,32 @@
   "problem": "Ba số 4 ; 6 ; 8 có trung bình cộng là 6. Mỗi số hơn hay kém mức 6 bao nhiêu?",
   "steps": [
    {
-    "show": "So từng số với mức 6"
+    "show": "So từng số với mức 6",
+    "phan": "giai"
    },
    {
-    "show": "Số 4 kém mức 6 là 2 đơn vị. Số 6 đúng bằng mức. Số 8 hơn mức 6 là 2 đơn vị."
+    "show": "Số 4 kém mức 6 là 2 đơn vị. Số 6 đúng bằng mức. Số 8 hơn mức 6 là 2 đơn vị.",
+    "phan": "giai"
    },
    {
-    "show": "Cộng riêng hai phía"
+    "show": "Cộng riêng hai phía",
+    "phan": "giai"
    },
    {
-    "show": "Phần hơn cộng lại được 2. Phần kém cộng lại cũng được 2."
+    "show": "Phần hơn cộng lại được 2. Phần kém cộng lại cũng được 2.",
+    "phan": "giai"
    },
    {
-    "show": "Vì sao hai bên luôn bằng nhau"
+    "show": "Vì sao hai bên luôn bằng nhau",
+    "phan": "giai"
    },
    {
-    "show": "Vì san bằng chính là lấy phần nhô lên đắp vào chỗ hụt xuống. Đắp xong vừa khít thì hai phần phải bằng nhau ngay từ đầu."
+    "show": "Vì san bằng chính là lấy phần nhô lên đắp vào chỗ hụt xuống. Đắp xong vừa khít thì hai phần phải bằng nhau ngay từ đầu.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: số 4 kém 2, số 6 bằng mức, số 8 hơn 2; phần hơn và phần kém đều bằng 2."
+    "show": "Đáp số: số 4 kém 2, số 6 bằng mức, số 8 hơn 2; phần hơn và phần kém đều bằng 2.",
+    "phan": "dapso"
    }
   ]
  },
@@ -84,7 +91,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "(4 + 6 + 8) : 3 = 18 : 3 = 6.",
+     "solutionNarrative": "($4 + 6 + 8$) : $3 = 18 : 3 = 6$.",
      "hints": [
       "San cho đều — cộng cả ba rồi chia ba.",
       "Tổng không đổi khi san."
@@ -105,7 +112,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số 8 hơn 8 − 6 = 2 đơn vị; số 4 kém 6 − 4 = 2 đơn vị.",
+     "solutionNarrative": "Số 8 hơn $8 - 6 = 2$ đơn vị; số 4 kém $6 - 4 = 2$ đơn vị.",
      "hints": [
       "Vẽ VẠCH trung bình rồi đánh dấu cột nhô.",
       "Cao hơn vạch bao nhiêu thì cộng bấy nhiêu."
@@ -131,7 +138,7 @@
      "answerKey": {
       "value": 5
      },
-     "solutionNarrative": "Số bàn trận một = 3 + 2 = 5 bàn.",
+     "solutionNarrative": "Số bàn trận một = $3 + 2 = 5$ bàn.",
      "hints": [
       "Định luật cân bằng: tổng vượt bằng tổng hụt.",
       "Bạn đứng đúng vạch thì không góp phần nào."
@@ -156,7 +163,7 @@
        }
       ]
      },
-     "solutionNarrative": "Bạn lấy luôn con số 8 thay vì trừ đi mức trung bình. Đúng là 8 − 6 = 2 đơn vị.",
+     "solutionNarrative": "Bạn lấy luôn con số 8 thay vì trừ đi mức trung bình. Đúng là $8 - 6 = 2$ đơn vị.",
      "hints": [
       "Tìm phần hụt bằng định luật cân bằng.",
       "Rồi lấy vạch trừ đi phần hụt ấy."
@@ -168,7 +175,7 @@
      "answerKey": {
       "value": 4
      },
-     "solutionNarrative": "134 − 130 = 4 cm.",
+     "solutionNarrative": "$134 - 130 = 4$ cm.",
      "hints": [
       "Đánh dấu vượt - hụt của hai số đã biết.",
       "Số thứ ba phải bù cho cân, rồi soi lại bằng đường tổng."
@@ -216,7 +223,7 @@
        }
       ]
      },
-     "solutionNarrative": "Trung bình: (10 + 12 + 14 + 20) : 4 = 56 : 4 = 14. Phần kém: 4 + 2 = 6; phần hơn: 0 + 6 = 6. Hai bên bằng nhau.",
+     "solutionNarrative": "Trung bình: ($10 + 12 + 14 + 20$) : $4 = 56 : 4 = 14$. Phần kém: $4 + 2 = 6$; phần hơn: $0 + 6 = 6$. Hai bên bằng nhau.",
      "hints": [
       "Cộng phần vượt, cộng phần hụt, rồi cân lại.",
       "Trận ba phải hụt đúng phần còn dư ra."
@@ -228,7 +235,7 @@
      "answerKey": {
       "value": 28
      },
-     "solutionNarrative": "Phần hơn phải bằng phần kém. Bạn hai hơn 5, bạn nhất kém 3, nên bạn ba phải kém 2 kg: 30 − 2 = 28 kg.",
+     "solutionNarrative": "Phần hơn phải bằng phần kém. Bạn hai hơn 5, bạn nhất kém 3, nên bạn ba phải kém 2 kg: $30 - 2 = 28$ kg.",
      "hints": [
       "Phần vượt của Tí chính là phần hụt chung của ba bạn.",
       "Chia đều phần ấy cho ba xem vạch của họ tụt bao nhiêu."
@@ -284,7 +291,7 @@
     "answerKey": {
      "choice": "A. 5 bàn"
     },
-    "solutionNarrative": "3 + 2 = 5."
+    "solutionNarrative": "$3 + 2 = 5$."
    },
    {
     "id": "Q5",

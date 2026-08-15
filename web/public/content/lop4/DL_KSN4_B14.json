@@ -32,9 +32,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn tính số hạng thứ 10 của dãy 5 ; 10 ; 15 ; ... như sau: 5 + 5 × 10 = 55.",
+    "wrong": "Có bạn tính số hạng thứ 10 của dãy 5 ; 10 ; 15 ; ... như sau: $5 + 5  \\times  10 = 55$.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con thử cách ấy với chỗ thứ nhất xem: 5 + 5 × 1 = 10. Nhưng số hạng thứ nhất rõ ràng là 5 mà? Gợi ý 2: Từ chỗ thứ nhất đến chỗ thứ 10, con cộng thêm 10 lần hay 9 lần? Vẽ bốn chỗ ra giấy mà đếm thử. Chữa: phải nhân với 9, không nhân với 10. Số hạng thứ 10 = 5 + 5 × 9 = 50."
+    "fix": "Gợi ý 1: Con thử cách ấy với chỗ thứ nhất xem: $5 + 5  \\times  1 = 10$. Nhưng số hạng thứ nhất rõ ràng là 5 mà? Gợi ý 2: Từ chỗ thứ nhất đến chỗ thứ 10, con cộng thêm 10 lần hay 9 lần? Vẽ bốn chỗ ra giấy mà đếm thử. Chữa: phải nhân với 9, không nhân với 10. Số hạng thứ $10 = 5 + 5  \\times  9 = 50$."
    }
   ]
  },
@@ -43,7 +43,7 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn tính số hạng thứ 10 của dãy 5 ; 10 ; 15 ; ... như sau: 5 + 5 × 10 = 55.",
+    "narration": "Có bạn tính số hạng thứ 10 của dãy 5 ; 10 ; 15 ; ... như sau: $5 + 5  \\times  10 = 55$.",
     "teaches": []
    }
   ]
@@ -53,34 +53,44 @@
   "problem": "Cho dãy 5 ; 10 ; 15 ; 20 ; 25 ; ... Tìm số hạng thứ 10.",
   "steps": [
    {
-    "show": "Tìm khoảng cách"
+    "show": "Tìm khoảng cách",
+    "phan": "giai"
    },
    {
-    "show": "Lấy số sau trừ số trước: 10 − 5 = 5."
+    "show": "Lấy số sau trừ số trước: $10 - 5 = 5$.",
+    "phan": "giai"
    },
    {
-    "show": "Khoảng cách là 5."
+    "show": "Khoảng cách là 5.",
+    "phan": "giai"
    },
    {
-    "show": "Đếm số lần cộng thêm"
+    "show": "Đếm số lần cộng thêm",
+    "phan": "giai"
    },
    {
-    "show": "Từ chỗ thứ nhất đến chỗ thứ 10 phải cộng thêm 10 − 1 = 9 lần."
+    "show": "Từ chỗ thứ nhất đến chỗ thứ 10 phải cộng thêm $10 - 1 = 9$ lần.",
+    "phan": "giai"
    },
    {
-    "show": "Chỗ thứ nhất đã có sẵn, không phải cộng lần nào."
+    "show": "Chỗ thứ nhất đã có sẵn, không phải cộng lần nào.",
+    "phan": "giai"
    },
    {
-    "show": "Tính"
+    "show": "Tính",
+    "phan": "giai"
    },
    {
-    "show": "Số hạng thứ 10 = 5 + 5 × 9 = 5 + 45 = 50."
+    "show": "Số hạng thứ $10 = 5 + 5  \\times  9 = 5 + 45 = 50$.",
+    "phan": "giai"
    },
    {
-    "show": "Thử lại: thay số 1 vào thì được 5 + 5 × 0 = 5, đúng bằng số đầu."
+    "show": "Thử lại: thay số 1 vào thì được $5 + 5  \\times  0 = 5$, đúng bằng số đầu.",
+    "phan": "thulai"
    },
    {
-    "show": "Đáp số: số hạng thứ 10 là 50."
+    "show": "Đáp số: số hạng thứ 10 là 50.",
+    "phan": "dapso"
    }
   ]
  },
@@ -114,7 +124,7 @@
        }
       ]
      },
-     "solutionNarrative": "Khoảng cách 5. Số hạng thứ tư = 5 + 5 × 3 = 20.",
+     "solutionNarrative": "Khoảng cách 5. Số hạng thứ tư = $5 + 5  \\times  3 = 20$.",
      "hints": [
       "Số đầu cộng khoảng nhân số bước nhảy.",
       "Từ chỗ 1 đến chỗ 10 có mấy bước?"
@@ -126,7 +136,7 @@
      "answerKey": {
       "value": 30
      },
-     "solutionNarrative": "5 + 5 × 5 = 30.",
+     "solutionNarrative": "$5 + 5  \\times  5 = 30$.",
      "hints": [
       "Tìm khoảng cách trước.",
       "Rồi đếm bước nhảy, đừng đếm chỗ."
@@ -140,7 +150,7 @@
      "answerKey": {
       "value": 50
      },
-     "solutionNarrative": "5 + 5 × 9 = 50.",
+     "solutionNarrative": "$5 + 5  \\times  9 = 50$.",
      "hints": [
       "Khoảng cách là 4.",
       "Từ chỗ 1 tới chỗ 20 nhảy mấy lần?"
@@ -152,7 +162,7 @@
      "answerKey": {
       "value": 31
      },
-     "solutionNarrative": "Khoảng cách 4. Số hạng thứ 8 = 3 + 4 × 7 = 31.",
+     "solutionNarrative": "Khoảng cách 4. Số hạng thứ $8 = 3 + 4  \\times  7 = 31$.",
      "hints": [
       "Khoảng cách là 8.",
       "Nhớ trừ một trước khi nhân."
@@ -164,7 +174,7 @@
      "answerKey": {
       "value": 46
      },
-     "solutionNarrative": "2 + 4 × 11 = 46.",
+     "solutionNarrative": "$2 + 4  \\times  11 = 46$.",
      "hints": [
       "Đề cho sẵn số đầu và khoảng cách rồi.",
       "Chỉ còn đếm bước nhảy nữa thôi."
@@ -176,7 +186,7 @@
      "answerKey": {
       "value": 5
      },
-     "solutionNarrative": "5 + 5 × 0 = 5, đúng bằng số đầu. Đây là cách kiểm nhanh xem mình có quên trừ một không.",
+     "solutionNarrative": "$5 + 5  \\times  0 = 5$, đúng bằng số đầu. Đây là cách kiểm nhanh xem mình có quên trừ một không.",
      "hints": [
       "Bậc thứ nhất đã cao sẵn 15 rồi.",
       "Còn phải leo thêm mấy lần nữa?"
@@ -190,7 +200,7 @@
      "answerKey": {
       "value": 500
      },
-     "solutionNarrative": "5 + 5 × 99 = 5 + 495 = 500.",
+     "solutionNarrative": "$5 + 5  \\times  99 = 5 + 495 = 500$.",
      "hints": [
       "Làm như mọi câu trên.",
       "Rồi thay số 1 vào xem có ra đúng số đầu không."
@@ -202,7 +212,7 @@
      "answerKey": {
       "value": 7
      },
-     "solutionNarrative": "Từ chỗ 1 đến chỗ 6 cộng thêm 5 lần, tức là thêm 5 × 5 = 25. Số đầu = 32 − 25 = 7.",
+     "solutionNarrative": "Từ chỗ 1 đến chỗ 6 cộng thêm 5 lần, tức là thêm $5  \\times  5 = 25$. Số đầu = $32 - 25 = 7$.",
      "hints": [
       "Đi ngược: từ chỗ 6 lùi về chỗ 1 là mấy bước?",
       "Lùi bấy nhiêu bước thì bớt đi bao nhiêu?"
@@ -244,7 +254,7 @@
     "answerKey": {
      "choice": "A. 35"
     },
-    "solutionNarrative": "2 + 3 × 11 = 35."
+    "solutionNarrative": "$2 + 3  \\times  11 = 35$."
    },
    {
     "id": "Q4",
@@ -272,7 +282,7 @@
     "answerKey": {
      "choice": "A. 50"
     },
-    "solutionNarrative": "5 + 5 × 9 = 50."
+    "solutionNarrative": "$5 + 5  \\times  9 = 50$."
    }
   ]
  },

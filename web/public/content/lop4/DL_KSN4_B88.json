@@ -53,34 +53,44 @@
   "problem": "Tính giá trị của biểu thức có ngoặc mười ba trừ bảy mươi tám chia sáu, rồi nhân hai trăm ba mươi mốt, rồi nhân tám.",
   "steps": [
    {
-    "show": "Đừng vội nhân"
+    "show": "Đừng vội nhân",
+    "phan": "giai"
    },
    {
-    "show": "Nhìn thấy tích dài là nhiều bạn cắm cúi nhân ngay. Nhưng hãy soi từng thừa số trước đã."
+    "show": "Nhìn thấy tích dài là nhiều bạn cắm cúi nhân ngay. Nhưng hãy soi từng thừa số trước đã.",
+    "phan": "giai"
    },
    {
-    "show": "Soi cái ngoặc"
+    "show": "Soi cái ngoặc",
+    "phan": "giai"
    },
    {
-    "show": "Trong ngoặc có phép chia: bảy mươi tám chia sáu bằng mười ba."
+    "show": "Trong ngoặc có phép chia: bảy mươi tám chia sáu bằng mười ba.",
+    "phan": "giai"
    },
    {
-    "show": "Mười ba trừ mười ba bằng không. Vậy cái ngoặc bằng 0."
+    "show": "Mười ba trừ mười ba bằng không. Vậy cái ngoặc bằng 0.",
+    "phan": "giai"
    },
    {
-    "show": "Một thừa số bằng 0 là xong"
+    "show": "Một thừa số bằng 0 là xong",
+    "phan": "giai"
    },
    {
-    "show": "Trong một tích, chỉ cần một thừa số bằng 0 thì cả tích bằng 0 — không cần nhân gì thêm nữa."
+    "show": "Trong một tích, chỉ cần một thừa số bằng 0 thì cả tích bằng 0 — không cần nhân gì thêm nữa.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 0."
+    "show": "Đáp số: 0.",
+    "phan": "dapso"
    },
    {
-    "show": "So sánh cũng không cần tính"
+    "show": "So sánh cũng không cần tính",
+    "phan": "ghichu"
    },
    {
-    "show": "So 52 nhân 25 với 51 nhân 25 cộng 20. Bên trái hơn 51 nhân 25 đúng một lần 25, mà bên phải chỉ hơn có 20. Vậy bên trái lớn hơn."
+    "show": "So 52 nhân 25 với 51 nhân 25 cộng 20. Bên trái hơn 51 nhân 25 đúng một lần 25, mà bên phải chỉ hơn có 20. Vậy bên trái lớn hơn.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -89,11 +99,11 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tính 78 : 6.",
+     "text": "Tính $78 : 6$.",
      "answerKey": {
       "value": 13
      },
-     "solutionNarrative": "Chia ra: 78 : 6 = 13.",
+     "solutionNarrative": "Chia ra: $78 : 6 = 13$.",
      "hints": [
       "Con làm phép chia trong ngoặc trước đã.",
       "Đặt tính rồi chia cho cẩn thận."
@@ -105,7 +115,7 @@
      "answerKey": {
       "value": 0
      },
-     "solutionNarrative": "Trong ngoặc: 13 − 13 = 0.",
+     "solutionNarrative": "Trong ngoặc: $13 - 13 = 0$.",
      "hints": [
       "Con vừa tính được số bị trừ ở câu trên. Nay lấy số kia trừ đi nó.",
       "Hai số ấy bằng nhau, mà số nào trừ chính nó thì ra bao nhiêu?"
@@ -131,7 +141,7 @@
      "answerKey": {
       "value": 0
      },
-     "solutionNarrative": "Trong ngoặc: 25 × 4 = 100, rồi 100 − 100 = 0. Cả tích bằng 0.",
+     "solutionNarrative": "Trong ngoặc: $25  \\times  4 = 100$, rồi $100 - 100 = 0$. Cả tích bằng 0.",
      "hints": [
       "Con tính trong ngoặc trước: nhân hai số ấy rồi trừ đi số kia.",
       "Ngoặc rỗng thì cả tích rỗng theo, khỏi nhân tiếp."
@@ -139,7 +149,7 @@
     },
     {
      "id": "C5",
-     "text": "Phép 52 × 25 hơn phép 51 × 25 bao nhiêu đơn vị?",
+     "text": "Phép $52  \\times  25$ hơn phép $51  \\times  25$ bao nhiêu đơn vị?",
      "answerKey": {
       "value": 25
      },
@@ -151,7 +161,7 @@
     },
     {
      "id": "C6",
-     "text": "So sánh 52 × 25 với 51 × 25 + 20. Bên nào lớn hơn?",
+     "text": "So sánh $52  \\times  25$ với $51  \\times  25 + 20$. Bên nào lớn hơn?",
      "answerKey": {
       "parts": [
        {
@@ -164,7 +174,7 @@
        }
       ]
      },
-     "solutionNarrative": "Bên trái hơn 51 × 25 đúng 25, bên phải chỉ hơn 20, nên 52 × 25 lớn hơn.",
+     "solutionNarrative": "Bên trái hơn $51  \\times  25$ đúng 25, bên phải chỉ hơn 20, nên $52  \\times  25$ lớn hơn.",
      "hints": [
       "Con so phần hơn của mỗi bên với cùng một mốc là năm mươi mốt nhân hai mươi lăm.",
       "Một bên hơn đúng hai mươi lăm, bên kia chỉ hơn hai mươi."
@@ -176,7 +186,7 @@
      "answerKey": {
       "value": 0
      },
-     "solutionNarrative": "Trong ngoặc: 10 × 10 = 100, rồi 100 − 100 = 0. Cả tích bằng 0.",
+     "solutionNarrative": "Trong ngoặc: $10  \\times  10 = 100$, rồi $100 - 100 = 0$. Cả tích bằng 0.",
      "hints": [
       "Con nhân hai số trong ngoặc với nhau rồi trừ đi số đứng trước chúng.",
       "Ngoặc rỗng thì khỏi nhân tiếp."
@@ -186,7 +196,7 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "So sánh 37 × 18 với 37 × 17 + 37. Hai bên bằng nhau hay khác nhau?",
+     "text": "So sánh $37  \\times  18$ với $37  \\times  17 + 37$. Hai bên bằng nhau hay khác nhau?",
      "answerKey": {
       "parts": [
        {
@@ -199,7 +209,7 @@
        }
       ]
      },
-     "solutionNarrative": "Bên trái hơn 37 × 17 đúng một lần 37, mà bên phải cũng cộng thêm đúng 37, nên hai bên bằng nhau.",
+     "solutionNarrative": "Bên trái hơn $37  \\times  17$ đúng một lần 37, mà bên phải cũng cộng thêm đúng 37, nên hai bên bằng nhau.",
      "hints": [
       "Bên trái hơn ba mươi bảy nhân mười bảy đúng một lần ba mươi bảy.",
       "Còn bên phải cộng thêm đúng bao nhiêu? So hai phần thêm ấy."
@@ -211,7 +221,7 @@
      "answerKey": {
       "value": 0
      },
-     "solutionNarrative": "Trong ngoặc: 9 × 9 = 81, rồi 81 − 81 = 0. Cả tích bằng 0.",
+     "solutionNarrative": "Trong ngoặc: $9  \\times  9 = 81$, rồi $81 - 81 = 0$. Cả tích bằng 0.",
      "hints": [
       "Trong ngoặc có một phép nhân, con làm phép ấy trước đã.",
       "Ngoặc rỗng thì cả tích rỗng, dù còn nhân với số to đến đâu."
@@ -258,7 +268,7 @@
    },
    {
     "id": "Q4",
-    "text": "Phép 52 × 25 hơn phép 51 × 25 bao nhiêu?",
+    "text": "Phép $52  \\times  25$ hơn phép $51  \\times  25$ bao nhiêu?",
     "format": "mcq",
     "choices": [
      "25",

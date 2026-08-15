@@ -53,31 +53,40 @@
   "problem": "Hai số có tỉ số là 2 trên 5. Hãy vẽ sơ đồ và cho biết cả hai gộp lại gồm mấy phần, chênh nhau mấy phần.",
   "steps": [
    {
-    "show": "Đọc tỉ số"
+    "show": "Đọc tỉ số",
+    "phan": "giai"
    },
    {
-    "show": "Tỉ số 2 trên 5 nghĩa là: số bé gồm 2 phần, số lớn gồm 5 phần, và mọi phần đều bằng nhau."
+    "show": "Tỉ số 2 trên 5 nghĩa là: số bé gồm 2 phần, số lớn gồm 5 phần, và mọi phần đều bằng nhau.",
+    "phan": "giai"
    },
    {
-    "show": "Vẽ ra"
+    "show": "Vẽ ra",
+    "phan": "giai"
    },
    {
-    "show": "Đoạn ngắn chia 2 phần, đoạn dài chia 5 phần. Các phần vẽ rộng bằng nhau — đây là điều quan trọng nhất."
+    "show": "Đoạn ngắn chia 2 phần, đoạn dài chia 5 phần. Các phần vẽ rộng bằng nhau — đây là điều quan trọng nhất.",
+    "phan": "giai"
    },
    {
-    "show": "Đếm tổng số phần"
+    "show": "Đếm tổng số phần",
+    "phan": "giai"
    },
    {
-    "show": "2 + 5 = 7. Cả hai gộp lại gồm 7 phần bằng nhau."
+    "show": "$2 + 5 = 7$. Cả hai gộp lại gồm 7 phần bằng nhau.",
+    "phan": "giai"
    },
    {
-    "show": "Đếm số phần chênh"
+    "show": "Đếm số phần chênh",
+    "phan": "giai"
    },
    {
-    "show": "5 − 2 = 3. Đoạn dài hơn đoạn ngắn 3 phần."
+    "show": "$5 - 2 = 3$. Đoạn dài hơn đoạn ngắn 3 phần.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: gộp lại 7 phần, chênh nhau 3 phần. Mọi phần đều bằng nhau."
+    "show": "Đáp số: gộp lại 7 phần, chênh nhau 3 phần. Mọi phần đều bằng nhau.",
+    "phan": "dapso"
    }
   ]
  },
@@ -86,7 +95,7 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tỉ số hai số là 2 : 5 — đúng tỉ số trong video. Số bé gồm mấy phần và số lớn gồm mấy phần?",
+     "text": "Tỉ số hai số là $2 : 5$ — đúng tỉ số trong video. Số bé gồm mấy phần và số lớn gồm mấy phần?",
      "answerKey": {
       "parts": [
        {
@@ -111,7 +120,7 @@
      "answerKey": {
       "value": 7
      },
-     "solutionNarrative": "2 + 5 = 7 phần.",
+     "solutionNarrative": "$2 + 5 = 7$ phần.",
      "hints": [
       "Gộp lại nghĩa là đếm phần của cả hai đoạn.",
       "Cộng số phần bên này với số phần bên kia."
@@ -123,7 +132,7 @@
      "answerKey": {
       "value": 3
      },
-     "solutionNarrative": "5 − 2 = 3 phần.",
+     "solutionNarrative": "$5 - 2 = 3$ phần.",
      "hints": [
       "Chênh nhau nghĩa là đoạn dài hơn đoạn ngắn mấy phần.",
       "Lấy số phần bên nhiều trừ số phần bên ít."
@@ -133,7 +142,7 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Hai số có tỉ số 3 : 4. Gộp lại gồm mấy phần, chênh nhau mấy phần?",
+     "text": "Hai số có tỉ số $3 : 4$. Gộp lại gồm mấy phần, chênh nhau mấy phần?",
      "answerKey": {
       "parts": [
        {
@@ -146,7 +155,7 @@
        }
       ]
      },
-     "solutionNarrative": "Gộp lại 3 + 4 = 7 phần; chênh nhau 4 − 3 = 1 phần.",
+     "solutionNarrative": "Gộp lại $3 + 4 = 7$ phần; chênh nhau $4 - 3 = 1$ phần.",
      "hints": [
       "Vẫn hai phép cũ: một phép cộng và một phép trừ.",
       "Cộng để biết gộp lại, trừ để biết chênh nhau."
@@ -192,7 +201,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tỉ số là 1 : 3 (số bé 1 phần, số lớn 3 phần). Gộp lại 1 + 3 = 4 phần.",
+     "solutionNarrative": "Tỉ số là $1 : 3$ (số bé 1 phần, số lớn 3 phần). Gộp lại $1 + 3 = 4$ phần.",
      "hints": [
       "Gấp mấy lần thì bên ít là một phần, bên nhiều là mấy phần.",
       "Viết ra rồi cộng lại để biết gộp mấy phần."
@@ -213,7 +222,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số bé = 2 × 10 = 20; số lớn = 5 × 10 = 50.",
+     "solutionNarrative": "Số bé = $2  \\times  10 = 20$; số lớn = $5  \\times  10 = 50$.",
      "hints": [
       "Mỗi phần đều bằng nhau và đề đã cho biết một phần đáng giá bao nhiêu.",
       "Nhân giá trị một phần với số phần của mỗi bên."
@@ -223,11 +232,11 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Hai số có tỉ số 2 : 5 và cả hai gộp lại là 70. Mỗi phần bằng bao nhiêu?",
+     "text": "Hai số có tỉ số $2 : 5$ và cả hai gộp lại là 70. Mỗi phần bằng bao nhiêu?",
      "answerKey": {
       "value": 10
      },
-     "solutionNarrative": "Gộp lại 7 phần, mà 7 phần là 70, nên mỗi phần bằng 70 : 7 = 10.",
+     "solutionNarrative": "Gộp lại 7 phần, mà 7 phần là 70, nên mỗi phần bằng $70 : 7 = 10$.",
      "hints": [
       "Đếm cả thảy mấy phần trước đã.",
       "Rồi chia con số đề cho cho số phần ấy."
@@ -248,7 +257,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tỉ số 1 : 4. Gộp lại 5 phần, chênh nhau 3 phần.",
+     "solutionNarrative": "Tỉ số $1 : 4$. Gộp lại 5 phần, chênh nhau 3 phần.",
      "hints": [
       "Bằng một phần mấy nghĩa là bên ít có đúng một phần.",
       "Viết tỉ số ra rồi cộng và trừ như các câu trước."
@@ -271,7 +280,7 @@
    },
    {
     "id": "Q2",
-    "text": "Tỉ số 2 : 5 nghĩa là số bé bằng 2 và số lớn bằng 5.",
+    "text": "Tỉ số $2 : 5$ nghĩa là số bé bằng 2 và số lớn bằng 5.",
     "format": "tf",
     "answerKey": {
      "value": false
@@ -280,7 +289,7 @@
    },
    {
     "id": "Q3",
-    "text": "Tỉ số 2 : 5 thì cả hai gộp lại gồm:",
+    "text": "Tỉ số $2 : 5$ thì cả hai gộp lại gồm:",
     "format": "mcq",
     "choices": [
      "A. 7 phần",
@@ -290,11 +299,11 @@
     "answerKey": {
      "choice": "A. 7 phần"
     },
-    "solutionNarrative": "2 + 5 = 7."
+    "solutionNarrative": "$2 + 5 = 7$."
    },
    {
     "id": "Q4",
-    "text": "Tỉ số 2 : 5 thì đoạn dài hơn đoạn ngắn:",
+    "text": "Tỉ số $2 : 5$ thì đoạn dài hơn đoạn ngắn:",
     "format": "mcq",
     "choices": [
      "A. 3 phần",
@@ -304,7 +313,7 @@
     "answerKey": {
      "choice": "A. 3 phần"
     },
-    "solutionNarrative": "5 − 2 = 3."
+    "solutionNarrative": "$5 - 2 = 3$."
    },
    {
     "id": "Q5",

@@ -53,34 +53,44 @@
   "problem": "Số 270 có chia hết cho 3 không? Còn số 12 thì sao — nó có chia hết cho 3 không, có chia hết cho 9 không?",
   "steps": [
    {
-    "show": "Xét số 270"
+    "show": "Xét số 270",
+    "phan": "giai"
    },
    {
-    "show": "Tổng các chữ số: 2 + 7 + 0 = 9. Số 9 chia hết cho 3, nên 270 chia hết cho 3."
+    "show": "Tổng các chữ số: $2 + 7 + 0 = 9$. Số 9 chia hết cho 3, nên 270 chia hết cho 3.",
+    "phan": "giai"
    },
    {
-    "show": "Vì sao lại cộng chữ số như với số 9"
+    "show": "Vì sao lại cộng chữ số như với số 9",
+    "phan": "giai"
    },
    {
-    "show": "Vì 270 tách được thành 2 × 99 + 7 × 9 rồi cộng 2 + 7 + 0. Mà 9 và 99 đều chia hết cho 3, nên phần trước không làm thừa, chỉ tổng chữ số quyết định."
+    "show": "Vì 270 tách được thành $2  \\times  99 + 7  \\times  9$ rồi cộng $2 + 7 + 0$. Mà 9 và 99 đều chia hết cho 3, nên phần trước không làm thừa, chỉ tổng chữ số quyết định.",
+    "phan": "giai"
    },
    {
-    "show": "Xét số 12"
+    "show": "Xét số 12",
+    "phan": "giai"
    },
    {
-    "show": "Tổng chữ số là 1 + 2 = 3. Số 3 chia hết cho 3, nên 12 chia hết cho 3."
+    "show": "Tổng chữ số là $1 + 2 = 3$. Số 3 chia hết cho 3, nên 12 chia hết cho 3.",
+    "phan": "giai"
    },
    {
-    "show": "Nhưng 3 KHÔNG chia hết cho 9, nên 12 KHÔNG chia hết cho 9."
+    "show": "Nhưng 3 KHÔNG chia hết cho 9, nên 12 KHÔNG chia hết cho 9.",
+    "phan": "giai"
    },
    {
-    "show": "Rút ra quan hệ một chiều"
+    "show": "Rút ra quan hệ một chiều",
+    "phan": "giai"
    },
    {
-    "show": "Số chia hết cho 9 thì chắc chắn chia hết cho 3, vì 9 đã chia hết cho 3. Nhưng chia hết cho 3 thì chưa chắc chia hết cho 9 — số 12 là ví dụ."
+    "show": "Số chia hết cho 9 thì chắc chắn chia hết cho 3, vì 9 đã chia hết cho 3. Nhưng chia hết cho 3 thì chưa chắc chia hết cho 9 — số 12 là ví dụ.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 270 chia hết cho cả 3 và 9; còn 12 chỉ chia hết cho 3."
+    "show": "Đáp số: 270 chia hết cho cả 3 và 9; còn 12 chỉ chia hết cho 3.",
+    "phan": "dapso"
    }
   ]
  },
@@ -106,7 +116,7 @@
        }
       ]
      },
-     "solutionNarrative": "2 + 7 + 0 = 9. Số 9 chia hết cho 3, nên 270 CHIA HẾT cho 3.",
+     "solutionNarrative": "$2 + 7 + 0 = 9$. Số 9 chia hết cho 3, nên 270 CHIA HẾT cho 3.",
      "hints": [
       "Với số ba thì đừng nhìn chữ số cuối, hãy cộng hết các chữ số lại.",
       "Cộng xong rồi mới hỏi tổng ấy chia hết cho ba chăng."
@@ -135,7 +145,7 @@
        }
       ]
      },
-     "solutionNarrative": "1 + 2 = 3. Số 3 chia hết cho 3 nên 12 chia hết cho 3; nhưng 3 không chia hết cho 9 nên 12 KHÔNG chia hết cho 9.",
+     "solutionNarrative": "$1 + 2 = 3$. Số 3 chia hết cho 3 nên 12 chia hết cho 3; nhưng 3 không chia hết cho 9 nên 12 KHÔNG chia hết cho 9.",
      "hints": [
       "Cộng hai chữ số của nó lại đã.",
       "Rồi hỏi tổng ấy chia hết cho ba chăng, chia hết cho chín chăng."
@@ -160,7 +170,7 @@
        }
       ]
      },
-     "solutionNarrative": "2 + 5 = 7, mà 7 không chia hết cho 3, nên 25 KHÔNG chia hết cho 3.",
+     "solutionNarrative": "$2 + 5 = 7$, mà 7 không chia hết cho 3, nên 25 KHÔNG chia hết cho 3.",
      "hints": [
       "Cộng hai chữ số lại rồi xét tổng.",
       "Tổng ấy nằm giữa sáu và chín nên chẳng chia hết cho ba."
@@ -229,7 +239,7 @@
        }
       ]
      },
-     "solutionNarrative": "Vì 9 = 3 × 3, tức 9 đã chia hết cho 3. Cái gì chia được thành các nhóm 9 thì mỗi nhóm 9 lại tách được thành 3 nhóm 3, nên vẫn chia hết cho 3.",
+     "solutionNarrative": "Vì $9 = 3  \\times  3$, tức 9 đã chia hết cho 3. Cái gì chia được thành các nhóm 9 thì mỗi nhóm 9 lại tách được thành 3 nhóm 3, nên vẫn chia hết cho 3.",
      "hints": [
       "Số chín tách được thành tích của hai số bằng nhau.",
       "Cái gì chia thành từng nhóm chín thì mỗi nhóm ấy lại tách nhỏ ra được."
@@ -250,7 +260,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng là 2 + ô + 4 = 6 + ô. Muốn chia hết cho 3 thì ô = 0, 3, 6 hoặc 9. Vậy được 204, 234, 264 hoặc 294.",
+     "solutionNarrative": "Tổng là 2 + ô + $4 = 6$ + ô. Muốn chia hết cho 3 thì ô = 0, 3, 6 hoặc 9. Vậy được 204, 234, 264 hoặc 294.",
      "hints": [
       "Cộng hai chữ số đã biết lại trước đã.",
       "Rồi tìm chữ số điền vào sao cho tổng cả ba chia hết cho ba."
@@ -294,7 +304,7 @@
        }
       ]
      },
-     "solutionNarrative": "3 + 4 + 8 = 15. Số 15 chia hết cho 3 nhưng không chia hết cho 9. Vậy 348 chia hết cho 3 và KHÔNG chia hết cho 9.",
+     "solutionNarrative": "$3 + 4 + 8 = 15$. Số 15 chia hết cho 3 nhưng không chia hết cho 9. Vậy 348 chia hết cho 3 và KHÔNG chia hết cho 9.",
      "hints": [
       "Cộng ba chữ số của nó lại.",
       "Tổng ấy chia hết cho ba, nhưng con hãy xét tiếp xem nó có đủ lớn để chia hết cho chín chăng."
@@ -350,7 +360,7 @@
     "answerKey": {
      "choice": "A. 6"
     },
-    "solutionNarrative": "1 + 2 + 3 = 6."
+    "solutionNarrative": "$1 + 2 + 3 = 6$."
    },
    {
     "id": "Q5",
@@ -364,7 +374,7 @@
     "answerKey": {
      "choice": "A. chắc chắn chia hết cho 3"
     },
-    "solutionNarrative": "Vì 9 = 3 × 3, tức 9 đã chia hết cho 3."
+    "solutionNarrative": "Vì $9 = 3  \\times  3$, tức 9 đã chia hết cho 3."
    }
   ]
  },

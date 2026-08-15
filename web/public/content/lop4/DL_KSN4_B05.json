@@ -32,9 +32,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn gộp nhầm thành cộng cả hai thừa số: \"4 × 38 + 4 × 62 = 8 × 100\".",
+    "wrong": "Có bạn gộp nhầm thành cộng cả hai thừa số: \"$4  \\times  38 + 4  \\times  62 = 8  \\times  100$\".",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Bạn ấy cộng hai số 4 lại. Nhưng số hộp có nhiều lên gấp đôi không? Gợi ý 2: Giá mỗi hộp vẫn là bốn nghìn chứ, sao lại thành tám nghìn? Chữa: thừa số chung chỉ viết MỘT lần ra ngoài ngoặc. Kết quả đúng là 4 × 100 = 400, không phải 800."
+    "fix": "Gợi ý 1: Bạn ấy cộng hai số 4 lại. Nhưng số hộp có nhiều lên gấp đôi không? Gợi ý 2: Giá mỗi hộp vẫn là bốn nghìn chứ, sao lại thành tám nghìn? Chữa: thừa số chung chỉ viết MỘT lần ra ngoài ngoặc. Kết quả đúng là $4  \\times  100 = 400$, không phải 800."
    }
   ]
  },
@@ -43,47 +43,58 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn gộp nhầm thành cộng cả hai thừa số: \"4 × 38 + 4 × 62 = 8 × 100\".",
+    "narration": "Có bạn gộp nhầm thành cộng cả hai thừa số: \"$4  \\times  38 + 4  \\times  62 = 8  \\times  100$\".",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính nhanh 4 × 38 + 4 × 62.",
+  "problem": "Tính nhanh $4  \\times  38 + 4  \\times  62$.",
   "steps": [
    {
-    "show": "Nhìn ra thứ chung nhau"
+    "show": "Nhìn ra thứ chung nhau",
+    "phan": "giai"
    },
    {
-    "show": "Hai tích này đều có thừa số 4. Bốn ấy chính là thứ chung."
+    "show": "Hai tích này đều có thừa số 4. Bốn ấy chính là thứ chung.",
+    "phan": "giai"
    },
    {
-    "show": "Vì sao gộp được"
+    "show": "Vì sao gộp được",
+    "phan": "giai"
    },
    {
-    "show": "Có ba mươi tám hộp gà và sáu mươi hai hộp tôm, hộp nào cũng đáng bốn nghìn. Vậy đếm chung số hộp trước rồi mới nhân giá, kết quả vẫn thế."
+    "show": "Có ba mươi tám hộp gà và sáu mươi hai hộp tôm, hộp nào cũng đáng bốn nghìn. Vậy đếm chung số hộp trước rồi mới nhân giá, kết quả vẫn thế.",
+    "phan": "giai"
    },
    {
-    "show": "Gộp lại"
+    "show": "Gộp lại",
+    "phan": "giai"
    },
    {
-    "show": "Viết thành 4 nhân với ngoặc ba mươi tám cộng sáu mươi hai."
+    "show": "Viết thành 4 nhân với ngoặc ba mươi tám cộng sáu mươi hai.",
+    "phan": "giai"
    },
    {
-    "show": "Trong ngoặc: 38 + 62 = 100 — vừa tròn."
+    "show": "Trong ngoặc: $38 + 62 = 100$ — vừa tròn.",
+    "phan": "giai"
    },
    {
-    "show": "Nhân nốt: 4 × 100 = 400."
+    "show": "Nhân nốt: $4  \\times  100 = 400$.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 400."
+    "show": "Đáp số: 400.",
+    "phan": "dapso"
    },
    {
-    "show": "Chiều trừ cũng gộp được"
+    "show": "Chiều trừ cũng gộp được",
+    "phan": "ghichu"
    },
    {
-    "show": "Ví dụ 9 × 47 − 9 × 37 gộp thành 9 nhân ngoặc bốn mươi bảy trừ ba mươi bảy, tức 9 × 10 = 90."
+    "show": "Ví dụ $9  \\times  47 - 9  \\times  37$ gộp thành 9 nhân ngoặc bốn mươi bảy trừ ba mươi bảy, tức $9  \\times  10 = 90$.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -92,7 +103,7 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Trong phép 4 × 38 + 4 × 62, thừa số chung của hai tích là số nào?",
+     "text": "Trong phép $4  \\times  38 + 4  \\times  62$, thừa số chung của hai tích là số nào?",
      "answerKey": {
       "value": 4
      },
@@ -104,11 +115,11 @@
     },
     {
      "id": "C2",
-     "text": "Gộp lại rồi tính trong ngoặc: 38 + 62 bằng bao nhiêu?",
+     "text": "Gộp lại rồi tính trong ngoặc: $38 + 62$ bằng bao nhiêu?",
      "answerKey": {
       "value": 100
      },
-     "solutionNarrative": "Cộng trong ngoặc: 38 + 62 = 100.",
+     "solutionNarrative": "Cộng trong ngoặc: $38 + 62 = 100$.",
      "hints": [
       "Con cộng hai số còn lại trong ngoặc.",
       "Hai số ấy vừa khéo cộng thành một số tròn."
@@ -116,11 +127,11 @@
     },
     {
      "id": "C3",
-     "text": "Vậy 4 × 38 + 4 × 62 bằng bao nhiêu?",
+     "text": "Vậy $4  \\times  38 + 4  \\times  62$ bằng bao nhiêu?",
      "answerKey": {
       "value": 400
      },
-     "solutionNarrative": "Nhân nốt: 4 × 100 = 400.",
+     "solutionNarrative": "Nhân nốt: $4  \\times  100 = 400$.",
      "hints": [
       "Có tổng trong ngoặc rồi, con nhân nó với thừa số chung.",
       "Nhân một số tròn thì nhẩm được ngay."
@@ -130,7 +141,7 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Tính nhanh 7 × 25 + 7 × 75.",
+     "text": "Tính nhanh $7  \\times  25 + 7  \\times  75$.",
      "answerKey": {
       "parts": [
        {
@@ -143,7 +154,7 @@
        }
       ]
      },
-     "solutionNarrative": "Trong ngoặc: 25 + 75 = 100. Rồi 7 × 100 = 700.",
+     "solutionNarrative": "Trong ngoặc: $25 + 75 = 100$. Rồi $7  \\times  100 = 700$.",
      "hints": [
       "Thừa số chung ở đây là số đứng đầu cả hai tích.",
       "Cộng hai số trong ngoặc trước, được số tròn rồi mới nhân."
@@ -151,7 +162,7 @@
     },
     {
      "id": "C5",
-     "text": "Tính nhanh 9 × 47 − 9 × 37.",
+     "text": "Tính nhanh $9  \\times  47 - 9  \\times  37$.",
      "answerKey": {
       "parts": [
        {
@@ -164,7 +175,7 @@
        }
       ]
      },
-     "solutionNarrative": "Trong ngoặc: 47 − 37 = 10. Rồi 9 × 10 = 90.",
+     "solutionNarrative": "Trong ngoặc: $47 - 37 = 10$. Rồi $9  \\times  10 = 90$.",
      "hints": [
       "Chiều trừ cũng gộp được, chỉ khác dấu trong ngoặc.",
       "Trừ hai số trong ngoặc trước rồi mới nhân."
@@ -172,11 +183,11 @@
     },
     {
      "id": "C6",
-     "text": "Tính nhanh 6 × 14 + 6 × 6.",
+     "text": "Tính nhanh $6  \\times  14 + 6  \\times  6$.",
      "answerKey": {
       "value": 120
      },
-     "solutionNarrative": "Trong ngoặc: 14 + 6 = 20. Rồi 6 × 20 = 120.",
+     "solutionNarrative": "Trong ngoặc: $14 + 6 = 20$. Rồi $6  \\times  20 = 120$.",
      "hints": [
       "Hai tích đều nhân với cùng một số. Đưa nó ra ngoài ngoặc.",
       "Cộng hai số trong ngoặc rồi mới nhân."
@@ -184,11 +195,11 @@
     },
     {
      "id": "C7",
-     "text": "Tính nhanh 25 × 13 + 25 × 7.",
+     "text": "Tính nhanh $25  \\times  13 + 25  \\times  7$.",
      "answerKey": {
       "value": 500
      },
-     "solutionNarrative": "Trong ngoặc: 13 + 7 = 20. Rồi 25 × 20 = 500.",
+     "solutionNarrative": "Trong ngoặc: $13 + 7 = 20$. Rồi $25  \\times  20 = 500$.",
      "hints": [
       "Thừa số chung ở đây đứng đầu cả hai tích.",
       "Cộng hai số trong ngoặc được số tròn, rồi nhân."
@@ -198,7 +209,7 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Tính nhanh 8 × 99 + 8. Gợi ý: viết số 8 đứng lẻ thành 8 × 1.",
+     "text": "Tính nhanh $8  \\times  99 + 8$. Gợi ý: viết số 8 đứng lẻ thành $8  \\times  1$.",
      "answerKey": {
       "parts": [
        {
@@ -211,7 +222,7 @@
        }
       ]
      },
-     "solutionNarrative": "Viết thành 8 × 99 + 8 × 1. Trong ngoặc: 99 + 1 = 100. Rồi 8 × 100 = 800.",
+     "solutionNarrative": "Viết thành $8  \\times  99 + 8  \\times  1$. Trong ngoặc: $99 + 1 = 100$. Rồi $8  \\times  100 = 800$.",
      "hints": [
       "Số đứng lẻ ấy chính là chính nó nhân một. Viết lại thế thì gộp được.",
       "Trong ngoặc cộng lại được một số tròn trăm."
@@ -219,11 +230,11 @@
     },
     {
      "id": "C9",
-     "text": "Tính nhanh 15 × 36 − 15 × 26.",
+     "text": "Tính nhanh $15  \\times  36 - 15  \\times  26$.",
      "answerKey": {
       "value": 150
      },
-     "solutionNarrative": "Trong ngoặc: 36 − 26 = 10. Rồi 15 × 10 = 150.",
+     "solutionNarrative": "Trong ngoặc: $36 - 26 = 10$. Rồi $15  \\times  10 = 150$.",
      "hints": [
       "Chiều trừ cũng gộp được như chiều cộng.",
       "Trừ hai số trong ngoặc trước, được số tròn chục rồi mới nhân."
@@ -237,7 +248,7 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Phép 4 × 38 + 4 × 62 viết gọn được thành 4 nhân với tổng 38 và 62.",
+    "text": "Phép $4  \\times  38 + 4  \\times  62$ viết gọn được thành 4 nhân với tổng 38 và 62.",
     "format": "tf",
     "answerKey": {
      "value": true
@@ -255,7 +266,7 @@
    },
    {
     "id": "Q3",
-    "text": "Tính 4 × 38 + 4 × 62.",
+    "text": "Tính $4  \\times  38 + 4  \\times  62$.",
     "format": "mcq",
     "choices": [
      "400",
@@ -266,11 +277,11 @@
     "answerKey": {
      "choice": "400"
     },
-    "solutionNarrative": "Gộp lại được 4 × 100 = 400."
+    "solutionNarrative": "Gộp lại được $4  \\times  100 = 400$."
    },
    {
     "id": "Q4",
-    "text": "Tính 9 × 47 − 9 × 37.",
+    "text": "Tính $9  \\times  47 - 9  \\times  37$.",
     "format": "mcq",
     "choices": [
      "90",
@@ -281,7 +292,7 @@
     "answerKey": {
      "choice": "90"
     },
-    "solutionNarrative": "Gộp lại được 9 × 10 = 90."
+    "solutionNarrative": "Gộp lại được $9  \\times  10 = 90$."
    },
    {
     "id": "Q5",

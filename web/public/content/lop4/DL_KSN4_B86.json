@@ -32,9 +32,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn tính 25 × 36 bằng cách nhân 25 với 30 rồi nhân 25 với 6, xong cộng lại, mất cả phút.",
+    "wrong": "Có bạn tính $25  \\times  36$ bằng cách nhân 25 với 30 rồi nhân 25 với 6, xong cộng lại, mất cả phút.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Cách ấy vẫn ra đúng, nhưng con thử tách 36 thành hai số nhân nhau xem có số nào hợp với 25 không. Gợi ý 2: Con số nào ghép với 25 thì thành một trăm tròn trịa? Chữa: tách 36 thành 4 × 9 rồi ghép 25 với 4 thành 100, phép tính chỉ còn 100 × 9 — nhẩm một cái là xong."
+    "fix": "Gợi ý 1: Cách ấy vẫn ra đúng, nhưng con thử tách 36 thành hai số nhân nhau xem có số nào hợp với 25 không. Gợi ý 2: Con số nào ghép với 25 thì thành một trăm tròn trịa? Chữa: tách 36 thành $4  \\times  9$ rồi ghép 25 với 4 thành 100, phép tính chỉ còn $100  \\times  9$ — nhẩm một cái là xong."
    }
   ]
  },
@@ -43,47 +43,58 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn tính 25 × 36 bằng cách nhân 25 với 30 rồi nhân 25 với 6, xong cộng lại, mất cả phút.",
+    "narration": "Có bạn tính $25  \\times  36$ bằng cách nhân 25 với 30 rồi nhân 25 với 6, xong cộng lại, mất cả phút.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính nhanh 25 × 36, rồi tính nhanh 48 × 25.",
+  "problem": "Tính nhanh $25  \\times  36$, rồi tính nhanh $48  \\times  25$.",
   "steps": [
    {
-    "show": "Cặp bài trùng của số 25"
+    "show": "Cặp bài trùng của số 25",
+    "phan": "giai"
    },
    {
-    "show": "Hai mươi lăm nhân bốn bằng một trăm. Nên gặp 25 là đi tìm số 4."
+    "show": "Hai mươi lăm nhân bốn bằng một trăm. Nên gặp 25 là đi tìm số 4.",
+    "phan": "giai"
    },
    {
-    "show": "Tách để lộ số 4 ra"
+    "show": "Tách để lộ số 4 ra",
+    "phan": "giai"
    },
    {
-    "show": "Số 36 tách được thành 4 nhân 9. Vậy 25 × 36 = 25 × 4 × 9."
+    "show": "Số 36 tách được thành 4 nhân 9. Vậy $25  \\times  36 = 25  \\times  4  \\times  9$.",
+    "phan": "giai"
    },
    {
-    "show": "Ghép cặp trước: 25 × 4 = 100. Rồi 100 × 9 = 900."
+    "show": "Ghép cặp trước: $25  \\times  4 = 100$. Rồi $100  \\times  9 = 900$.",
+    "phan": "giai"
    },
    {
-    "show": "Không tách được thì làm sao"
+    "show": "Không tách được thì làm sao",
+    "phan": "giai"
    },
    {
-    "show": "Với 48 × 25 thì đi lối khác: nhân 100 trước rồi trả lại phần thừa. Nhân 100 tức là nhân gấp bốn lần so với nhân 25, nên sau đó phải chia cho 4."
+    "show": "Với $48  \\times  25$ thì đi lối khác: nhân 100 trước rồi trả lại phần thừa. Nhân 100 tức là nhân gấp bốn lần so với nhân 25, nên sau đó phải chia cho 4.",
+    "phan": "giai"
    },
    {
-    "show": "Tính: 48 × 100 = 4 800. Rồi 4 800 : 4 = 1 200."
+    "show": "Tính: $48  \\times  100 = 4$ 800. Rồi 4 $800 : 4 = 1$ 200.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 900 và 1 200."
+    "show": "Đáp số: 900 và 1 200.",
+    "phan": "dapso"
    },
    {
-    "show": "Người anh của số 25"
+    "show": "Người anh của số 25",
+    "phan": "ghichu"
    },
    {
-    "show": "Số 125 ghép với 8 thì được 1000 — cùng một lối nghĩ, chỉ khác con số."
+    "show": "Số 125 ghép với 8 thì được 1000 — cùng một lối nghĩ, chỉ khác con số.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -96,7 +107,7 @@
      "answerKey": {
       "value": 4
      },
-     "solutionNarrative": "Hai mươi lăm nhân bốn: 25 × 4 = 100.",
+     "solutionNarrative": "Hai mươi lăm nhân bốn: $25  \\times  4 = 100$.",
      "hints": [
       "Con thử nhân nó với vài số nhỏ xem số nào cho ra một trăm tròn.",
       "Bốn lần hai mươi lăm là bao nhiêu?"
@@ -104,11 +115,11 @@
     },
     {
      "id": "C2",
-     "text": "Tách 36 thành 4 nhân 9 rồi tính 25 × 36.",
+     "text": "Tách 36 thành 4 nhân 9 rồi tính $25  \\times  36$.",
      "answerKey": {
       "value": 900
      },
-     "solutionNarrative": "Ghép cặp trước: 25 × 4 = 100. Rồi 100 × 9 = 900.",
+     "solutionNarrative": "Ghép cặp trước: $25  \\times  4 = 100$. Rồi $100  \\times  9 = 900$.",
      "hints": [
       "Tách xong thì ghép cặp trước đã, đừng nhân theo thứ tự viết.",
       "Ghép cặp được một trăm, rồi nhân nốt với thừa số còn lại."
@@ -116,11 +127,11 @@
     },
     {
      "id": "C3",
-     "text": "Tính nhanh 25 × 8.",
+     "text": "Tính nhanh $25  \\times  8$.",
      "answerKey": {
       "value": 200
      },
-     "solutionNarrative": "Tách 8 thành 4 × 2: 25 × 4 = 100, rồi 100 × 2 = 200.",
+     "solutionNarrative": "Tách 8 thành $4  \\times  2$: $25  \\times  4 = 100$, rồi $100  \\times  2 = 200$.",
      "hints": [
       "Con tách thừa số kia ra để lộ số bốn.",
       "Ghép cặp được một trăm rồi nhân với phần còn lại."
@@ -130,11 +141,11 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Tính nhanh 25 × 16.",
+     "text": "Tính nhanh $25  \\times  16$.",
      "answerKey": {
       "value": 400
      },
-     "solutionNarrative": "Tách 16 thành 4 × 4: 25 × 4 = 100, rồi 100 × 4 = 400.",
+     "solutionNarrative": "Tách 16 thành $4  \\times  4$: $25  \\times  4 = 100$, rồi $100  \\times  4 = 400$.",
      "hints": [
       "Con tách thừa số kia thành bốn nhân với một số nữa.",
       "Ghép cặp được một trăm, rồi nhân nốt."
@@ -142,7 +153,7 @@
     },
     {
      "id": "C5",
-     "text": "Tính 48 × 25 bằng cách nhân 100 rồi chia 4.",
+     "text": "Tính $48  \\times  25$ bằng cách nhân 100 rồi chia 4.",
      "answerKey": {
       "parts": [
        {
@@ -155,7 +166,7 @@
        }
       ]
      },
-     "solutionNarrative": "Trước hết 48 × 100 = 4 800. Rồi trả lại phần thừa: 4 800 : 4 = 1 200.",
+     "solutionNarrative": "Trước hết $48  \\times  100 = 4$ 800. Rồi trả lại phần thừa: 4 $800 : 4 = 1$ 200.",
      "hints": [
       "Nhân một trăm thì chỉ việc thêm hai chữ số không.",
       "Nhân một trăm là nhân gấp bốn lần so với nhân hai mươi lăm, nên phải chia lại cho bốn."
@@ -163,11 +174,11 @@
     },
     {
      "id": "C6",
-     "text": "Tính nhanh 25 × 12.",
+     "text": "Tính nhanh $25  \\times  12$.",
      "answerKey": {
       "value": 300
      },
-     "solutionNarrative": "Tách 12 thành 4 × 3: 25 × 4 = 100, rồi 100 × 3 = 300.",
+     "solutionNarrative": "Tách 12 thành $4  \\times  3$: $25  \\times  4 = 100$, rồi $100  \\times  3 = 300$.",
      "hints": [
       "Con tách thừa số kia để lộ số bốn ra.",
       "Ghép cặp được một trăm rồi nhân với phần còn lại."
@@ -179,7 +190,7 @@
      "answerKey": {
       "value": 8
      },
-     "solutionNarrative": "Một trăm hai mươi lăm nhân tám: 125 × 8 = 1 000.",
+     "solutionNarrative": "Một trăm hai mươi lăm nhân tám: $125  \\times  8 = 1$ 000.",
      "hints": [
       "Con thử nhân nó với vài số xem số nào cho ra một nghìn tròn.",
       "Nó là người anh của hai mươi lăm, nên bạn của nó cũng gấp đôi bạn kia."
@@ -189,7 +200,7 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Tính nhanh 125 × 24. Gợi ý: tách 24 thành 8 nhân mấy?",
+     "text": "Tính nhanh $125  \\times  24$. Gợi ý: tách 24 thành 8 nhân mấy?",
      "answerKey": {
       "parts": [
        {
@@ -202,7 +213,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tách 24 thành 8 × 3. Ghép cặp: 125 × 8 = 1 000, rồi 1 000 × 3 = 3 000.",
+     "solutionNarrative": "Tách 24 thành $8  \\times  3$. Ghép cặp: $125  \\times  8 = 1$ 000, rồi 1 $000  \\times  3 = 3$ 000.",
      "hints": [
       "Con tách thừa số kia thành tám nhân với một số nữa.",
       "Ghép cặp được một nghìn, rồi nhân nốt với phần còn lại."
@@ -210,11 +221,11 @@
     },
     {
      "id": "C9",
-     "text": "Tính nhanh 25 × 44.",
+     "text": "Tính nhanh $25  \\times  44$.",
      "answerKey": {
       "value": 1100
      },
-     "solutionNarrative": "Tách 44 thành 4 × 11: 25 × 4 = 100, rồi 100 × 11 = 1 100.",
+     "solutionNarrative": "Tách 44 thành $4  \\times  11$: $25  \\times  4 = 100$, rồi $100  \\times  11 = 1$ 100.",
      "hints": [
       "Số bốn mươi tư chia hết cho bốn, con tách nó ra làm hai thừa số.",
       "Ghép cặp được một trăm, rồi nhân với phần còn lại."
@@ -237,7 +248,7 @@
    },
    {
     "id": "Q2",
-    "text": "Tính 25 × 36.",
+    "text": "Tính $25  \\times  36$.",
     "format": "mcq",
     "choices": [
      "900",
@@ -248,7 +259,7 @@
     "answerKey": {
      "choice": "900"
     },
-    "solutionNarrative": "Tách 36 thành 4 × 9 rồi ghép: 100 × 9 = 900."
+    "solutionNarrative": "Tách 36 thành $4  \\times  9$ rồi ghép: $100  \\times  9 = 900$."
    },
    {
     "id": "Q3",
@@ -261,7 +272,7 @@
    },
    {
     "id": "Q4",
-    "text": "Muốn tính nhanh 48 × 25 thì",
+    "text": "Muốn tính nhanh $48  \\times  25$ thì",
     "format": "mcq",
     "choices": [
      "nhân 100 rồi chia 4",

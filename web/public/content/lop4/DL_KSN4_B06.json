@@ -53,34 +53,40 @@
   "problem": "Tìm X, biết X nhân 3 cộng X nhân 2 bằng 45.",
   "steps": [
    {
-    "show": "Nhìn ra chỗ khó"
+    "show": "Nhìn ra chỗ khó",
+    "phan": "giai"
    },
    {
-    "show": "X hiện ra hai lần. Chưa gom lại thì không giải được, vì không biết chia cho cái gì."
+    "show": "X hiện ra hai lần. Chưa gom lại thì không giải được, vì không biết chia cho cái gì.",
+    "phan": "giai"
    },
    {
-    "show": "Gom lại bằng thừa số chung"
+    "show": "Gom lại bằng thừa số chung",
+    "phan": "giai"
    },
    {
-    "show": "Cả hai số hạng đều có X. Đưa X ra ngoài: X nhân với ngoặc ba cộng hai."
+    "show": "Cả hai số hạng đều có X. Đưa X ra ngoài: X nhân với ngoặc ba cộng hai.",
+    "phan": "giai"
    },
    {
-    "show": "Trong ngoặc: 3 + 2 = 5. Vậy bài thành X nhân 5 bằng 45."
+    "show": "Trong ngoặc: $3 + 2 = 5$. Vậy bài thành X nhân 5 bằng 45.",
+    "phan": "giai"
    },
    {
-    "show": "Giải như bài quen"
+    "show": "Giải như bài quen",
+    "phan": "giai"
    },
    {
-    "show": "Muốn tìm thừa số chưa biết thì lấy tích chia cho thừa số kia: 45 : 5 = 9."
+    "show": "Muốn tìm thừa số chưa biết thì lấy tích chia cho thừa số kia: $45 : 5 = 9$.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: X bằng 9."
+    "show": "Đáp số: X bằng 9.",
+    "phan": "dapso"
    },
    {
-    "show": "Thử lại"
-   },
-   {
-    "show": "Lắp 9 vào đề: 9 × 3 = 27, rồi 9 × 2 = 18, cộng lại 27 + 18 = 45 — đúng bằng vế phải."
+    "show": "Lắp 9 vào đề: $9  \\times  3 = 27$, rồi $9  \\times  2 = 18$, cộng lại $27 + 18 = 45$ — đúng bằng vế phải.",
+    "phan": "thulai"
    }
   ]
  },
@@ -93,7 +99,7 @@
      "answerKey": {
       "value": 5
      },
-     "solutionNarrative": "Đưa X ra ngoài: trong ngoặc 3 + 2 = 5, nên được X × 5.",
+     "solutionNarrative": "Đưa X ra ngoài: trong ngoặc $3 + 2 = 5$, nên được X × 5.",
      "hints": [
       "Cả hai số hạng đều có X. Con đưa X ra ngoài ngoặc.",
       "Trong ngoặc hai số ấy cộng nhau chứ không nhân nhau."
@@ -101,11 +107,11 @@
     },
     {
      "id": "C2",
-     "text": "Từ X × 5 = 45, tìm X.",
+     "text": "Từ X × $5 = 45$, tìm X.",
      "answerKey": {
       "value": 9
      },
-     "solutionNarrative": "Lấy tích chia cho thừa số kia: 45 : 5 = 9.",
+     "solutionNarrative": "Lấy tích chia cho thừa số kia: $45 : 5 = 9$.",
      "hints": [
       "Muốn tìm thừa số chưa biết thì lấy tích chia cho thừa số kia.",
       "Con lấy bốn mươi lăm chia cho số vừa gộp được ở câu trên."
@@ -113,11 +119,11 @@
     },
     {
      "id": "C3",
-     "text": "Thử lại: 9 × 3 + 9 × 2 bằng bao nhiêu?",
+     "text": "Thử lại: $9  \\times  3 + 9  \\times  2$ bằng bao nhiêu?",
      "answerKey": {
       "value": 45
      },
-     "solutionNarrative": "Tính ra: 27 + 18 = 45 — đúng bằng vế phải.",
+     "solutionNarrative": "Tính ra: $27 + 18 = 45$ — đúng bằng vế phải.",
      "hints": [
       "Con lắp số vừa tìm được vào cả hai chỗ có X rồi tính.",
       "Tính từng tích một rồi cộng lại."
@@ -127,7 +133,7 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Tìm X, biết X × 4 + X × 6 = 80.",
+     "text": "Tìm X, biết X × 4 + X × $6 = 80$.",
      "answerKey": {
       "parts": [
        {
@@ -140,7 +146,7 @@
        }
       ]
      },
-     "solutionNarrative": "Gom lại: 4 + 6 = 10, nên X × 10 = 80. Vậy X = 80 : 10 = 8.",
+     "solutionNarrative": "Gom lại: $4 + 6 = 10$, nên X × $10 = 80$. Vậy X = $80 : 10 = 8$.",
      "hints": [
       "Con cộng hai số đứng cạnh X lại để gộp chúng.",
       "Gộp xong thì lấy vế phải chia cho số ấy."
@@ -148,7 +154,7 @@
     },
     {
      "id": "C5",
-     "text": "Tìm X, biết X × 7 − X × 3 = 24.",
+     "text": "Tìm X, biết X × 7 − X × $3 = 24$.",
      "answerKey": {
       "parts": [
        {
@@ -161,7 +167,7 @@
        }
       ]
      },
-     "solutionNarrative": "Gom lại: 7 − 3 = 4, nên X × 4 = 24. Vậy X = 24 : 4 = 6.",
+     "solutionNarrative": "Gom lại: $7 - 3 = 4$, nên X × $4 = 24$. Vậy X = $24 : 4 = 6$.",
      "hints": [
       "Chiều trừ cũng gộp được, chỉ khác dấu trong ngoặc.",
       "Trừ hai số đứng cạnh X rồi lấy vế phải chia cho kết quả."
@@ -173,7 +179,7 @@
      "answerKey": {
       "value": 9
      },
-     "solutionNarrative": "Ba lần X nên X × 3 = 27. Vậy X = 27 : 3 = 9.",
+     "solutionNarrative": "Ba lần X nên X × $3 = 27$. Vậy X = $27 : 3 = 9$.",
      "hints": [
       "Ba lần chính nó thì viết gọn thành X nhân với mấy?",
       "Gộp xong thì lấy vế phải chia cho số ấy."
@@ -185,7 +191,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "Số X đứng lẻ chính là X × 1, nên gom được X × 6 = 36. Vậy X = 36 : 6 = 6.",
+     "solutionNarrative": "Số X đứng lẻ chính là X × 1, nên gom được X × $6 = 36$. Vậy X = $36 : 6 = 6$.",
      "hints": [
       "Số X đứng lẻ chính là X nhân một. Viết lại thế rồi gộp.",
       "Gộp được X nhân sáu, con lấy vế phải chia cho sáu."
@@ -208,7 +214,7 @@
        }
       ]
      },
-     "solutionNarrative": "Gom lại: 8 − 1 = 7, nên X × 7 = 63. Vậy X = 63 : 7 = 9.",
+     "solutionNarrative": "Gom lại: $8 - 1 = 7$, nên X × $7 = 63$. Vậy X = $63 : 7 = 9$.",
      "hints": [
       "Số X đứng lẻ chính là X nhân một, nên trừ đi một.",
       "Gộp xong thì lấy vế phải chia cho số vừa gộp."
@@ -216,11 +222,11 @@
     },
     {
      "id": "C9",
-     "text": "Tìm X, biết X × 2 + X × 3 + X × 5 = 100.",
+     "text": "Tìm X, biết X × 2 + X × 3 + X × $5 = 100$.",
      "answerKey": {
       "value": 10
      },
-     "solutionNarrative": "Gom cả ba: 2 + 3 + 5 = 10, nên X × 10 = 100. Vậy X = 100 : 10 = 10.",
+     "solutionNarrative": "Gom cả ba: $2 + 3 + 5 = 10$, nên X × $10 = 100$. Vậy X = $100 : 10 = 10$.",
      "hints": [
       "Con cộng cả ba số đứng cạnh X lại một lượt.",
       "Gộp được một số tròn chục, chia vế phải cho nó là ra."
@@ -252,7 +258,7 @@
    },
    {
     "id": "Q3",
-    "text": "Từ X × 5 = 45 thì X bằng",
+    "text": "Từ X × $5 = 45$ thì X bằng",
     "format": "mcq",
     "choices": [
      "9",
@@ -263,7 +269,7 @@
     "answerKey": {
      "choice": "9"
     },
-    "solutionNarrative": "Lấy tích chia cho thừa số kia: 45 : 5 = 9."
+    "solutionNarrative": "Lấy tích chia cho thừa số kia: $45 : 5 = 9$."
    },
    {
     "id": "Q4",

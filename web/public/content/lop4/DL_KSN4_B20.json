@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn tính đoạn 40 m, mỗi 5 m một cây rồi nói: \"40 chia 5 bằng 8, vậy cần 8 cây.\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con vẽ thử đoạn ngắn 15 m ra giấy, đánh dấu chỗ trồng cây rồi đếm. Gợi ý 2: Phép chia cho ra số KHOẢNG. Trồng cả hai đầu thì còn thiếu một cây ở đầu kia. Chữa: cần 8 + 1 = 9 cây."
+    "fix": "Gợi ý 1: Con vẽ thử đoạn ngắn 15 m ra giấy, đánh dấu chỗ trồng cây rồi đếm. Gợi ý 2: Phép chia cho ra số KHOẢNG. Trồng cả hai đầu thì còn thiếu một cây ở đầu kia. Chữa: cần $8 + 1 = 9$ cây."
    }
   ]
  },
@@ -53,34 +53,44 @@
   "problem": "Đoạn đường dài 40 m, cứ 5 m trồng một cây, trồng cả hai đầu. Cần bao nhiêu cây?",
   "steps": [
    {
-    "show": "Tìm số khoảng"
+    "show": "Tìm số khoảng",
+    "phan": "giai"
    },
    {
-    "show": "40 : 5 = 8 khoảng."
+    "show": "$40 : 5 = 8$ khoảng.",
+    "phan": "giai"
    },
    {
-    "show": "Đây là số khoảng, chưa phải số cây."
+    "show": "Đây là số khoảng, chưa phải số cây.",
+    "phan": "giai"
    },
    {
-    "show": "Hỏi câu hỏi vàng"
+    "show": "Hỏi câu hỏi vàng",
+    "phan": "giai"
    },
    {
-    "show": "Hai đầu có cây không? Đề nói trồng cả hai đầu."
+    "show": "Hai đầu có cây không? Đề nói trồng cả hai đầu.",
+    "phan": "giai"
    },
    {
-    "show": "Vậy số cây = số khoảng + 1."
+    "show": "Vậy số cây = số khoảng + 1.",
+    "phan": "giai"
    },
    {
-    "show": "Tính"
+    "show": "Tính",
+    "phan": "giai"
    },
    {
-    "show": "Số cây = 8 + 1 = 9 cây."
+    "show": "Số cây = $8 + 1 = 9$ cây.",
+    "phan": "giai"
    },
    {
-    "show": "Soi lại trên đoạn ngắn: 15 m, mỗi 5 m một cây, trồng cả hai đầu — cây ở mốc 0, 5, 10, 15, tức 4 cây và 3 khoảng."
+    "show": "Soi lại trên đoạn ngắn: 15 m, mỗi 5 m một cây, trồng cả hai đầu — cây ở mốc 0, 5, 10, 15, tức 4 cây và 3 khoảng.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: cần 9 cây."
+    "show": "Đáp số: cần 9 cây.",
+    "phan": "dapso"
    }
   ]
  },
@@ -98,7 +108,7 @@
        }
       ]
      },
-     "solutionNarrative": "40 : 5 + 1 = 9 cây (8 khoảng, trồng cả hai đầu).",
+     "solutionNarrative": "$40 : 5 + 1 = 9$ cây (8 khoảng, trồng cả hai đầu).",
      "hints": [
       "Câu hỏi vàng: hai đầu có cây không, hay nối thành vòng?",
       "Có cả hai đầu thì cây nhiều hơn khoảng một."
@@ -110,7 +120,7 @@
      "answerKey": {
       "value": 8
      },
-     "solutionNarrative": "40 : 5 = 8 cây (một đầu là cổng, không trồng).",
+     "solutionNarrative": "$40 : 5 = 8$ cây (một đầu là cổng, không trồng).",
      "hints": [
       "Mất một đầu là mất một cây.",
       "Cây bằng đúng số khoảng."
@@ -122,7 +132,7 @@
      "answerKey": {
       "value": 8
      },
-     "solutionNarrative": "Vòng kín: 40 : 5 = 8 cây.",
+     "solutionNarrative": "Vòng kín: $40 : 5 = 8$ cây.",
      "hints": [
       "Vòng kín — điểm cuối trùng điểm đầu.",
       "Cây bằng đúng số khoảng."
@@ -136,7 +146,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "Chu vi (30 + 20) × 2 = 100 m → 100 : 5 = 20 chiếc đèn.",
+     "solutionNarrative": "Chu vi ($30 + 20$) × $2 = 100$ m → $100 : 5 = 20$ chiếc đèn.",
      "hints": [
       "Tính CHU VI trước, chia khoảng sau.",
       "Quanh sân là vòng kín nên đèn bằng số khoảng."
@@ -153,7 +163,7 @@
        }
       ]
      },
-     "solutionNarrative": "6 tiếng có 6 − 1 = 5 khoảng → 5 × 2 = 10 giây.",
+     "solutionNarrative": "6 tiếng có $6 - 1 = 5$ khoảng → $5  \\times  2 = 10$ giây.",
      "hints": [
       "Trồng cây trá hình: tiếng chuông là cây, quãng lặng là khoảng.",
       "Đếm số khoảng trước rồi mới nhân."
@@ -165,7 +175,7 @@
      "answerKey": {
       "value": 60
      },
-     "solutionNarrative": "13 cây có 13 − 1 = 12 khoảng → đường dài 12 × 5 = 60 m.",
+     "solutionNarrative": "13 cây có $13 - 1 = 12$ khoảng → đường dài $12  \\times  5 = 60$ m.",
      "hints": [
       "BÀI NGƯỢC: từ cây tìm đường.",
       "Có cả hai đầu nên khoảng ít hơn cây một."
@@ -182,7 +192,7 @@
        }
       ]
      },
-     "solutionNarrative": "Từ tầng 1 lên tầng 4 có 4 − 1 = 3 quãng cầu thang → 3 × 12 = 36 bậc.",
+     "solutionNarrative": "Từ tầng 1 lên tầng 4 có $4 - 1 = 3$ quãng cầu thang → $3  \\times  12 = 36$ bậc.",
      "hints": [
       "Tầng là cây, quãng cầu thang là khoảng.",
       "Từ tầng 1 lên tầng 4 có mấy quãng?"
@@ -205,7 +215,7 @@
        }
       ]
      },
-     "solutionNarrative": "Khoảng cách phải chia hết cả 30 và 20; các số chia hết cả hai: 1, 2, 5, 10 → lớn nhất là 10 m; số cọc = chu vi : khoảng = 100 : 10 = 10 cọc (bốn góc tự khớp vì 30 và 20 đều chia hết cho 10).",
+     "solutionNarrative": "Khoảng cách phải chia hết cả 30 và 20; các số chia hết cả hai: 1, 2, 5, 10 → lớn nhất là 10 m; số cọc = chu vi : khoảng = $100 : 10 = 10$ cọc (bốn góc tự khớp vì 30 và 20 đều chia hết cho 10).",
      "hints": [
       "Khoảng cách phải chia hết CẢ chiều dài lẫn chiều rộng.",
       "Kê các số chia hết cả hai rồi lấy số lớn nhất."
@@ -222,7 +232,7 @@
        }
       ]
      },
-     "solutionNarrative": "12 tiếng có 11 khoảng → mỗi khoảng 22 : 11 = 2 giây; 6 tiếng chỉ có 5 khoảng → 5 × 2 = 10 giây. Không phải 11 giây (một nửa của 22) — vì thứ chia đôi được là số TIẾNG chứ không phải số KHOẢNG: 6 tiếng không có \"5,5 khoảng\"!",
+     "solutionNarrative": "12 tiếng có 11 khoảng → mỗi khoảng $22 : 11 = 2$ giây; 6 tiếng chỉ có 5 khoảng → $5  \\times  2 = 10$ giây. Không phải 11 giây (một nửa của 22) — vì thứ chia đôi được là số TIẾNG chứ không phải số KHOẢNG: 6 tiếng không có \"5,5 khoảng\"!",
      "hints": [
       "Tìm thời gian MỘT khoảng trước đã.",
       "Thứ chia đôi được là số tiếng, không phải số khoảng."
@@ -264,7 +274,7 @@
     "answerKey": {
      "choice": "A. 12"
     },
-    "solutionNarrative": "60 : 5 = 12."
+    "solutionNarrative": "$60 : 5 = 12$."
    },
    {
     "id": "Q4",
@@ -292,7 +302,7 @@
     "answerKey": {
      "choice": "A. 11"
     },
-    "solutionNarrative": "100 : 10 + 1 = 11 cây."
+    "solutionNarrative": "$100 : 10 + 1 = 11$ cây."
    }
   ]
  },

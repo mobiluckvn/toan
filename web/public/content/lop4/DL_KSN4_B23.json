@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn tính tổng mới là 28 rồi chia cho 3, vì \"lúc đầu có ba bạn\".",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Bây giờ nhóm có mấy bạn rồi? Gợi ý 2: Có bốn bạn. Số kẹo chia cho bốn bạn chứ không phải ba. Chữa: phải chia cho 4, được 28 : 4 = 7. Thêm người vào nhóm thì số lượng để chia cũng đổi theo."
+    "fix": "Gợi ý 1: Bây giờ nhóm có mấy bạn rồi? Gợi ý 2: Có bốn bạn. Số kẹo chia cho bốn bạn chứ không phải ba. Chữa: phải chia cho 4, được $28 : 4 = 7$. Thêm người vào nhóm thì số lượng để chia cũng đổi theo."
    }
   ]
  },
@@ -53,31 +53,40 @@
   "problem": "Ba bạn có trung bình 6 cái kẹo. Thêm một bạn nữa có 10 cái. Trung bình của bốn bạn bây giờ là bao nhiêu?",
   "steps": [
    {
-    "show": "Bước 1 — lấy tổng cũ"
+    "show": "Bước 1 — lấy tổng cũ",
+    "phan": "phantich"
    },
    {
-    "show": "Ba bạn, trung bình 6, nên tổng cũ là 6 × 3 = 18 cái."
+    "show": "Ba bạn, trung bình 6, nên tổng cũ là $6  \\times  3 = 18$ cái.",
+    "phan": "phantich"
    },
    {
-    "show": "Bước 2 — cộng số mới"
+    "show": "Bước 2 — cộng số mới",
+    "phan": "phantich"
    },
    {
-    "show": "Tổng mới là 18 + 10 = 28 cái."
+    "show": "Tổng mới là $18 + 10 = 28$ cái.",
+    "phan": "phantich"
    },
    {
-    "show": "Bước 3 — chia lại cho SỐ LƯỢNG MỚI"
+    "show": "Bước 3 — chia lại cho SỐ LƯỢNG MỚI",
+    "phan": "phantich"
    },
    {
-    "show": "Bây giờ có 4 bạn chứ không phải 3 nữa. 28 : 4 = 7 cái."
+    "show": "Bây giờ có 4 bạn chứ không phải 3 nữa. $28 : 4 = 7$ cái.",
+    "phan": "phantich"
    },
    {
-    "show": "Đoán trước cho chắc"
+    "show": "Đoán trước cho chắc",
+    "phan": "phantich"
    },
    {
-    "show": "Bạn mới có 10 cái, nhiều hơn mức cũ là 6, nên trung bình phải TĂNG. Kết quả 7 lớn hơn 6, đúng như đoán."
+    "show": "Bạn mới có 10 cái, nhiều hơn mức cũ là 6, nên trung bình phải TĂNG. Kết quả 7 lớn hơn 6, đúng như đoán.",
+    "phan": "phantich"
    },
    {
-    "show": "Đáp số: trung bình của bốn bạn là 7 cái."
+    "show": "Đáp số: trung bình của bốn bạn là 7 cái.",
+    "phan": "dapso"
    }
   ]
  },
@@ -90,7 +99,7 @@
      "answerKey": {
       "value": 18
      },
-     "solutionNarrative": "6 × 3 = 18 cái.",
+     "solutionNarrative": "$6  \\times  3 = 18$ cái.",
      "hints": [
       "Qua cây cầu TỔNG.",
       "Trung bình nhân với số người."
@@ -111,7 +120,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng mới 18 + 10 = 28 cái; nhóm nay có 4 bạn.",
+     "solutionNarrative": "Tổng mới $18 + 10 = 28$ cái; nhóm nay có 4 bạn.",
      "hints": [
       "Quy hết về TỔNG, đừng cộng trừ hai mức trung bình.",
       "Tổng mới chia cho số người mới."
@@ -123,7 +132,7 @@
      "answerKey": {
       "value": 7
      },
-     "solutionNarrative": "28 : 4 = 7 cái.",
+     "solutionNarrative": "$28 : 4 = 7$ cái.",
      "hints": [
       "Vẫn qua tổng rồi chia lại.",
       "Góp đúng mức trung bình cũ thì vạch có nhúc nhích không?"
@@ -146,7 +155,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng cũ 10 × 4 = 40; tổng mới 40 + 15 = 55; chia 5 bạn được 55 : 5 = 11 nghìn.",
+     "solutionNarrative": "Tổng cũ $10  \\times  4 = 40$; tổng mới $40 + 15 = 55$; chia 5 bạn được $55 : 5 = 11$ nghìn.",
      "hints": [
       "Tổng cũ cộng phần góp mới, rồi chia năm.",
       "Góp dưới vạch cũ thì vạch phải tụt."
@@ -167,7 +176,7 @@
        }
       ]
      },
-     "solutionNarrative": "Nhóm nay có 4 bạn chứ không phải 3. Phải chia cho 4, được 28 : 4 = 7.",
+     "solutionNarrative": "Nhóm nay có 4 bạn chứ không phải 3. Phải chia cho 4, được $28 : 4 = 7$.",
      "hints": [
       "Tìm tổng cũ trước đã.",
       "Cộng phần góp mới rồi chia cho số người mới."
@@ -193,7 +202,7 @@
        }
       ]
      },
-     "solutionNarrative": "GIẢM, vì bạn mới có ít hơn mức trung bình cũ (2 nhỏ hơn 6). Tính ra: (18 + 2) : 4 = 5.",
+     "solutionNarrative": "GIẢM, vì bạn mới có ít hơn mức trung bình cũ (2 nhỏ hơn 6). Tính ra: ($18 + 2$) : $4 = 5$.",
      "hints": [
       "Tính TỔNG CẦN CÓ của năm bạn.",
       "Rồi trừ đi tổng cũ của bốn bạn."
@@ -205,7 +214,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "Vẫn bằng 6: (18 + 6) : 4 = 24 : 4 = 6. Thêm đúng bằng mức trung bình thì mức ấy không đổi.",
+     "solutionNarrative": "Vẫn bằng 6: ($18 + 6$) : $4 = 24 : 4 = 6$. Thêm đúng bằng mức trung bình thì mức ấy không đổi.",
      "hints": [
       "Bạn mới vừa tự đứng ở vạch mới, vừa gánh giúp người cũ.",
       "Mỗi bạn cũ cần leo lên bao nhiêu, mà có mấy bạn cũ?"
@@ -228,7 +237,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng cần có: 11 × 5 = 55 nghìn. Tổng cũ 10 × 4 = 40 nghìn. Bạn thứ năm góp 55 − 40 = 15 nghìn.",
+     "solutionNarrative": "Tổng cần có: $11  \\times  5 = 55$ nghìn. Tổng cũ $10  \\times  4 = 40$ nghìn. Bạn thứ năm góp $55 - 40 = 15$ nghìn.",
      "hints": [
       "Tính tổng mới từ mức trung bình mới.",
       "Rồi trừ đi tổng cũ."
@@ -249,7 +258,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng bốn tuần: 7 × 4 = 28 nghìn. Tổng năm tuần: 28 + 12 = 40 nghìn. Trung bình: 40 : 5 = 8 nghìn.",
+     "solutionNarrative": "Tổng bốn tuần: $7  \\times  4 = 28$ nghìn. Tổng năm tuần: $28 + 12 = 40$ nghìn. Trung bình: $40 : 5 = 8$ nghìn.",
      "hints": [
       "Đường tổng: tính tổng cần có rồi trừ tổng cũ.",
       "Đường gánh: tự đứng ở vạch mới, cộng phần kéo bốn tuần cũ lên."
@@ -291,7 +300,7 @@
     "answerKey": {
      "choice": "A. 7 cái"
     },
-    "solutionNarrative": "(18 + 10) : 4 = 7."
+    "solutionNarrative": "($18 + 10$) : $4 = 7$."
    },
    {
     "id": "Q4",
@@ -319,7 +328,7 @@
     "answerKey": {
      "choice": "A. 11 nghìn"
     },
-    "solutionNarrative": "(40 + 15) : 5 = 11."
+    "solutionNarrative": "($40 + 15$) : $5 = 11$."
    }
   ]
  },

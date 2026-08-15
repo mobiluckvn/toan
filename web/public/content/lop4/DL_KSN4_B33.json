@@ -53,34 +53,44 @@
   "problem": "Anh làm một mình xong việc trong 6 giờ, em làm một mình xong việc ấy trong 12 giờ. Hỏi hai anh em làm chung thì mấy giờ xong?",
   "steps": [
    {
-    "show": "Chia công việc thành phần"
+    "show": "Chia công việc thành phần",
+    "phan": "giai"
    },
    {
-    "show": "Chọn số phần chia hết cho cả 6 và 12. Số gọn nhất là 12 phần."
+    "show": "Chọn số phần chia hết cho cả 6 và 12. Số gọn nhất là 12 phần.",
+    "phan": "giai"
    },
    {
-    "show": "Mỗi người làm được mấy phần một giờ"
+    "show": "Mỗi người làm được mấy phần một giờ",
+    "phan": "giai"
    },
    {
-    "show": "Anh xong 12 phần trong 6 giờ, nên mỗi giờ anh làm 12 : 6 = 2 phần."
+    "show": "Anh xong 12 phần trong 6 giờ, nên mỗi giờ anh làm $12 : 6 = 2$ phần.",
+    "phan": "giai"
    },
    {
-    "show": "Em xong 12 phần trong 12 giờ, nên mỗi giờ em làm 12 : 12 = 1 phần."
+    "show": "Em xong 12 phần trong 12 giờ, nên mỗi giờ em làm $12 : 12 = 1$ phần.",
+    "phan": "giai"
    },
    {
-    "show": "Làm chung một giờ được mấy phần"
+    "show": "Làm chung một giờ được mấy phần",
+    "phan": "giai"
    },
    {
-    "show": "Cộng lại: 2 + 1 = 3 phần mỗi giờ."
+    "show": "Cộng lại: $2 + 1 = 3$ phần mỗi giờ.",
+    "phan": "giai"
    },
    {
-    "show": "Chia ra thời gian"
+    "show": "Chia ra thời gian",
+    "phan": "giai"
    },
    {
-    "show": "Cả việc là 12 phần, mỗi giờ làm 3 phần, nên xong sau 12 : 3 = 4 giờ."
+    "show": "Cả việc là 12 phần, mỗi giờ làm 3 phần, nên xong sau $12 : 3 = 4$ giờ.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: hai anh em làm chung 4 giờ thì xong."
+    "show": "Đáp số: hai anh em làm chung 4 giờ thì xong.",
+    "phan": "dapso"
    }
   ]
  },
@@ -114,7 +124,7 @@
        }
       ]
      },
-     "solutionNarrative": "Anh: 12 : 6 = 2 phần. Em: 12 : 12 = 1 phần.",
+     "solutionNarrative": "Anh: $12 : 6 = 2$ phần. Em: $12 : 12 = 1$ phần.",
      "hints": [
       "Năng suất = tổng phần chia số giờ.",
       "Đây là chiều ngược của câu trước."
@@ -126,7 +136,7 @@
      "answerKey": {
       "value": 4
      },
-     "solutionNarrative": "Mỗi giờ chung làm 2 + 1 = 3 phần. Cả việc 12 phần nên 12 : 3 = 4 giờ.",
+     "solutionNarrative": "Mỗi giờ chung làm $2 + 1 = 3$ phần. Cả việc 12 phần nên $12 : 3 = 4$ giờ.",
      "hints": [
       "Tổng phần chia cho năng suất chung.",
       "Đừng cộng số giờ — chỉ cộng năng suất."
@@ -157,7 +167,7 @@
      "answerKey": {
       "value": 3
      },
-     "solutionNarrative": "Chia bể thành 12 phần. Vòi một: 12 : 4 = 3 phần mỗi giờ; vòi hai: 1 phần. Chung 4 phần mỗi giờ, nên 12 : 4 = 3 giờ.",
+     "solutionNarrative": "Chia bể thành 12 phần. Vòi một: $12 : 4 = 3$ phần mỗi giờ; vòi hai: 1 phần. Chung 4 phần mỗi giờ, nên $12 : 4 = 3$ giờ.",
      "hints": [
       "Chọn số phần chia hết cho cả hai số giờ.",
       "Cộng năng suất rồi chia tổng phần."
@@ -186,7 +196,7 @@
      "answerKey": {
       "value": 1
      },
-     "solutionNarrative": "Chung mỗi giờ 12 : 4 = 3 phần. Người thứ nhất 12 : 6 = 2 phần. Người thứ hai: 3 − 2 = 1 phần.",
+     "solutionNarrative": "Chung mỗi giờ $12 : 4 = 3$ phần. Người thứ nhất $12 : 6 = 2$ phần. Người thứ hai: $3 - 2 = 1$ phần.",
      "hints": [
       "Tính phần đã làm được trong hai giờ chung.",
       "Phần còn lại chia cho năng suất của một người."
@@ -200,7 +210,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "Chia việc thành 30 phần. Anh 30 : 10 = 3 phần mỗi giờ, em 30 : 15 = 2 phần. Chung 5 phần mỗi giờ, nên 30 : 5 = 6 giờ.",
+     "solutionNarrative": "Chia việc thành 30 phần. Anh $30 : 10 = 3$ phần mỗi giờ, em $30 : 15 = 2$ phần. Chung 5 phần mỗi giờ, nên $30 : 5 = 6$ giờ.",
      "hints": [
       "Hai giờ chung làm được bao nhiêu phần?",
       "Phần còn lại chia cho năng suất của người ở lại."
@@ -212,7 +222,7 @@
      "answerKey": {
       "value": 2
      },
-     "solutionNarrative": "Chia việc thành 12 phần. Mỗi giờ: 3 phần, 2 phần và 1 phần. Chung 6 phần mỗi giờ, nên 12 : 6 = 2 giờ.",
+     "solutionNarrative": "Chia việc thành 12 phần. Mỗi giờ: 3 phần, 2 phần và 1 phần. Chung 6 phần mỗi giờ, nên $12 : 6 = 2$ giờ.",
      "hints": [
       "Truy ngược: tính năng suất CHUNG trước.",
       "Rồi trừ đi năng suất của người thứ nhất."

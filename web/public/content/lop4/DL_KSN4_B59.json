@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn nhớ nhầm thành: số bé bằng hiệu trừ tổng, rồi bảo không trừ được.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con nhìn sơ đồ. Cái nào lớn hơn, tổng hay hiệu? Gợi ý 2: Tổng lớn hơn. Vậy phải lấy cái lớn trừ cái nhỏ. Chữa: số bé bằng TỔNG trừ HIỆU rồi chia đôi: (70 − 10) : 2 = 30. Tổng bao giờ cũng lớn hơn hiệu nên trừ được."
+    "fix": "Gợi ý 1: Con nhìn sơ đồ. Cái nào lớn hơn, tổng hay hiệu? Gợi ý 2: Tổng lớn hơn. Vậy phải lấy cái lớn trừ cái nhỏ. Chữa: số bé bằng TỔNG trừ HIỆU rồi chia đôi: ($70 - 10$) : $2 = 30$. Tổng bao giờ cũng lớn hơn hiệu nên trừ được."
    }
   ]
  },
@@ -53,37 +53,48 @@
   "problem": "Hai số có tổng bằng 70 và hiệu bằng 10. Tìm số bé.",
   "steps": [
    {
-    "show": "Vẫn sơ đồ ấy"
+    "show": "Vẫn sơ đồ ấy",
+    "phan": "giai"
    },
    {
-    "show": "Đoạn ngắn là số bé, đoạn dài là số lớn, khúc dôi ra là 10."
+    "show": "Đoạn ngắn là số bé, đoạn dài là số lớn, khúc dôi ra là 10.",
+    "phan": "giai"
    },
    {
-    "show": "Lần này cắt bớt đoạn dài"
+    "show": "Lần này cắt bớt đoạn dài",
+    "phan": "giai"
    },
    {
-    "show": "Cắt bỏ khúc 10 khỏi đoạn dài. Bây giờ hai đoạn bằng nhau, và mỗi đoạn đúng bằng số bé."
+    "show": "Cắt bỏ khúc 10 khỏi đoạn dài. Bây giờ hai đoạn bằng nhau, và mỗi đoạn đúng bằng số bé.",
+    "phan": "giai"
    },
    {
-    "show": "Xem tổng đổi thế nào"
+    "show": "Xem tổng đổi thế nào",
+    "phan": "giai"
    },
    {
-    "show": "Ta vừa cắt đi 10 nên tổng cũng giảm 10, còn 70 − 10 = 60."
+    "show": "Ta vừa cắt đi 10 nên tổng cũng giảm 10, còn $70 - 10 = 60$.",
+    "phan": "giai"
    },
    {
-    "show": "Chia đôi"
+    "show": "Chia đôi",
+    "phan": "giai"
    },
    {
-    "show": "60 chính là hai lần số bé. Nên số bé là 60 : 2 = 30."
+    "show": "60 chính là hai lần số bé. Nên số bé là $60 : 2 = 30$.",
+    "phan": "giai"
    },
    {
-    "show": "Kiểm chéo"
+    "show": "Kiểm chéo",
+    "phan": "giai"
    },
    {
-    "show": "Bài trước tìm được số lớn là 40. Cộng lại: 30 + 40 = 70, đúng bằng tổng. Trừ nhau: 40 − 30 = 10, đúng bằng hiệu."
+    "show": "Bài trước tìm được số lớn là 40. Cộng lại: $30 + 40 = 70$, đúng bằng tổng. Trừ nhau: $40 - 30 = 10$, đúng bằng hiệu.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: số bé bằng 30. Công thức là tổng trừ hiệu rồi chia đôi."
+    "show": "Đáp số: số bé bằng 30. Công thức là tổng trừ hiệu rồi chia đôi.",
+    "phan": "dapso"
    }
   ]
  },
@@ -96,7 +107,7 @@
      "answerKey": {
       "value": 60
      },
-     "solutionNarrative": "Tổng còn 70 − 10 = 60.",
+     "solutionNarrative": "Tổng còn $70 - 10 = 60$.",
      "hints": [
       "Cắt khúc thò ra khỏi đoạn dài thì tổng cũng ngắn đi bấy nhiêu.",
       "Lấy con số ngoặc ngoài trừ đi khúc vừa cắt."
@@ -117,7 +128,7 @@
        }
       ]
      },
-     "solutionNarrative": "60 là của HAI đoạn bằng nhau, nên số bé = 60 : 2 = 30.",
+     "solutionNarrative": "60 là của HAI đoạn bằng nhau, nên số bé = $60 : 2 = 30$.",
      "hints": [
       "Sau khi cắt thì hai đoạn dài như nhau.",
       "Con số ấy là của cả hai đoạn gộp lại, nên còn phải chia."
@@ -129,7 +140,7 @@
      "answerKey": {
       "value": 10
      },
-     "solutionNarrative": "Số bé = (30 − 10) : 2 = 20 : 2 = 10.",
+     "solutionNarrative": "Số bé = ($30 - 10$) : $2 = 20 : 2 = 10$.",
      "hints": [
       "Cắt khúc thò ra rồi mới chia đôi.",
       "Trừ trước, chia sau."
@@ -143,7 +154,7 @@
      "answerKey": {
       "value": 59
      },
-     "solutionNarrative": "Số bé = (145 − 27) : 2 = 118 : 2 = 59.",
+     "solutionNarrative": "Số bé = ($145 - 27$) : $2 = 118 : 2 = 59$.",
      "hints": [
       "Vẫn hai bước: trừ khúc thò ra, rồi chia đôi.",
       "Số lớn hơn thì làm ngược lại, cộng vào rồi mới chia."
@@ -168,7 +179,7 @@
        }
       ]
      },
-     "solutionNarrative": "Phải lấy TỔNG trừ HIỆU, vì tổng bao giờ cũng lớn hơn hiệu. Số bé = (70 − 10) : 2 = 30.",
+     "solutionNarrative": "Phải lấy TỔNG trừ HIỆU, vì tổng bao giờ cũng lớn hơn hiệu. Số bé = ($70 - 10$) : $2 = 30$.",
      "hints": [
       "Trong hai con số đề cho, con số nào lớn hơn?",
       "Bao giờ cũng lấy con số lớn trừ con số bé."
@@ -189,7 +200,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số lớn = (70 + 10) : 2 = 40; số bé = (70 − 10) : 2 = 30. Kiểm: 40 + 30 = 70 và 40 − 30 = 10, đúng cả hai.",
+     "solutionNarrative": "Số lớn = ($70 + 10$) : $2 = 40$; số bé = ($70 - 10$) : $2 = 30$. Kiểm: $40 + 30 = 70$ và $40 - 30 = 10$, đúng cả hai.",
      "hints": [
       "Làm hai lần: một lần cộng khúc thò ra, một lần trừ đi.",
       "Xong rồi cộng hai kết quả xem có khớp ngoặc ngoài chăng."
@@ -201,7 +212,7 @@
      "answerKey": {
       "value": 220
      },
-     "solutionNarrative": "Em (số bé) = (500 − 60) : 2 = 440 : 2 = 220 nghìn đồng.",
+     "solutionNarrative": "Em (số bé) = ($500 - 60$) : $2 = 440 : 2 = 220$ nghìn đồng.",
      "hints": [
       "Em là người ít hơn, nên dùng cách trừ.",
       "Trừ đi phần anh hơn rồi mới chia đôi."
@@ -224,7 +235,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số lớn = (96 + 14) : 2 = 55; số bé = (96 − 14) : 2 = 41. Kiểm: 55 + 41 = 96 và 55 − 41 = 14.",
+     "solutionNarrative": "Số lớn = ($96 + 14$) : $2 = 55$; số bé = ($96 - 14$) : $2 = 41$. Kiểm: $55 + 41 = 96$ và $55 - 41 = 14$.",
      "hints": [
       "Làm cả hai chiều rồi kiểm chéo.",
       "Cộng hai kết quả phải ra ngoặc ngoài, trừ nhau phải ra khúc thò ra."
@@ -245,7 +256,7 @@
        }
       ]
      },
-     "solutionNarrative": "Chiều rộng = (24 − 6) : 2 = 9 m; chiều dài = 24 − 9 = 15 m. Diện tích = 15 × 9 = 135 mét vuông.",
+     "solutionNarrative": "Chiều rộng = ($24 - 6$) : $2 = 9$ m; chiều dài = $24 - 9 = 15$ m. Diện tích = $15  \\times  9 = 135$ mét vuông.",
      "hints": [
       "Chiều rộng là cạnh ngắn hơn nên dùng cách trừ.",
       "Có hai cạnh rồi thì nhân chúng với nhau để lấy diện tích."
@@ -287,7 +298,7 @@
     "answerKey": {
      "choice": "A. 30"
     },
-    "solutionNarrative": "(70 − 10) : 2 = 30."
+    "solutionNarrative": "($70 - 10$) : $2 = 30$."
    },
    {
     "id": "Q4",

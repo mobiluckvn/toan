@@ -53,40 +53,52 @@
   "problem": "Một cuốn sổ dày 250 trang. Đánh số trang thì tốn bao nhiêu chữ số?",
   "steps": [
    {
-    "show": "Không đếm chung được"
+    "show": "Không đếm chung được",
+    "phan": "giai"
    },
    {
-    "show": "Trang 7 tốn một chữ số, trang 70 tốn hai, trang 250 tốn ba. Nên phải tách thành từng nhóm cùng độ dài."
+    "show": "Trang 7 tốn một chữ số, trang 70 tốn hai, trang 250 tốn ba. Nên phải tách thành từng nhóm cùng độ dài.",
+    "phan": "giai"
    },
    {
-    "show": "Nhóm một chữ số"
+    "show": "Nhóm một chữ số",
+    "phan": "giai"
    },
    {
-    "show": "Từ trang 1 đến trang 9 có 9 trang, mỗi trang một chữ số: 9 chữ số."
+    "show": "Từ trang 1 đến trang 9 có 9 trang, mỗi trang một chữ số: 9 chữ số.",
+    "phan": "giai"
    },
    {
-    "show": "Nhóm hai chữ số"
+    "show": "Nhóm hai chữ số",
+    "phan": "giai"
    },
    {
-    "show": "Từ trang 10 đến trang 99 có 90 trang, mỗi trang hai chữ số: 90 nhân 2 bằng 180 chữ số."
+    "show": "Từ trang 10 đến trang 99 có 90 trang, mỗi trang hai chữ số: 90 nhân 2 bằng 180 chữ số.",
+    "phan": "giai"
    },
    {
-    "show": "Nhóm ba chữ số"
+    "show": "Nhóm ba chữ số",
+    "phan": "giai"
    },
    {
-    "show": "Từ trang 100 đến trang 250 có 151 trang, mỗi trang ba chữ số: 151 nhân 3 bằng 453 chữ số."
+    "show": "Từ trang 100 đến trang 250 có 151 trang, mỗi trang ba chữ số: 151 nhân 3 bằng 453 chữ số.",
+    "phan": "giai"
    },
    {
-    "show": "Cộng cả ba nhóm: 9 + 180 + 453 = 642."
+    "show": "Cộng cả ba nhóm: $9 + 180 + 453 = 642$.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 642 chữ số."
+    "show": "Đáp số: 642 chữ số.",
+    "phan": "dapso"
    },
    {
-    "show": "Bài ngược thì trừ dần"
+    "show": "Bài ngược thì trừ dần",
+    "phan": "ghichu"
    },
    {
-    "show": "Biết cuốn sách dùng hết 552 chữ số thì trừ dần: bớt 9 của nhóm một, bớt 180 của nhóm hai, còn 363. Chia cho 3 được 121 trang, cộng với 99 trang trước đó là 220 trang."
+    "show": "Biết cuốn sách dùng hết 552 chữ số thì trừ dần: bớt 9 của nhóm một, bớt 180 của nhóm hai, còn 363. Chia cho 3 được 121 trang, cộng với 99 trang trước đó là 220 trang.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -120,7 +132,7 @@
      "answerKey": {
       "value": 90
      },
-     "solutionNarrative": "Đếm cách đều 1: 99 − 10 = 89, cộng một được 90 trang.",
+     "solutionNarrative": "Đếm cách đều 1: $99 - 10 = 89$, cộng một được 90 trang.",
      "hints": [
       "Con dùng cách đếm dãy cách đều của bài trước.",
       "Trừ hai đầu, chia cho một, xong nhớ cộng thêm trang đầu tiên vào."
@@ -132,7 +144,7 @@
      "answerKey": {
       "value": 180
      },
-     "solutionNarrative": "Mỗi trang hai chữ số: 90 × 2 = 180 chữ số.",
+     "solutionNarrative": "Mỗi trang hai chữ số: $90  \\times  2 = 180$ chữ số.",
      "hints": [
       "Con có số trang của nhóm ấy rồi. Mỗi trang tốn mấy con chữ?",
       "Nhân số trang với hai."
@@ -146,7 +158,7 @@
      "answerKey": {
       "value": 151
      },
-     "solutionNarrative": "Đếm cách đều 1: 250 − 100 = 150, cộng một được 151 trang.",
+     "solutionNarrative": "Đếm cách đều 1: $250 - 100 = 150$, cộng một được 151 trang.",
      "hints": [
       "Con lại dùng cách đếm dãy cách đều: trừ hai đầu rồi cộng một.",
       "Đừng quên cộng thêm trang đầu tiên vào."
@@ -158,7 +170,7 @@
      "answerKey": {
       "value": 453
      },
-     "solutionNarrative": "Mỗi trang ba chữ số: 151 × 3 = 453 chữ số.",
+     "solutionNarrative": "Mỗi trang ba chữ số: $151  \\times  3 = 453$ chữ số.",
      "hints": [
       "Nhóm này gồm những trang dài nhất, mỗi trang tốn nhiều con chữ nhất.",
       "Nhân số trang với ba."
@@ -170,7 +182,7 @@
      "answerKey": {
       "value": 642
      },
-     "solutionNarrative": "Cộng ba nhóm: 9 + 180 + 453 = 642 chữ số.",
+     "solutionNarrative": "Cộng ba nhóm: $9 + 180 + 453 = 642$ chữ số.",
      "hints": [
       "Con cộng kết quả của cả ba nhóm lại.",
       "Cộng lần lượt từ nhóm nhỏ nhất lên cho khỏi nhầm."
@@ -182,7 +194,7 @@
      "answerKey": {
       "value": 363
      },
-     "solutionNarrative": "Trừ dần: 552 − 9 = 543, rồi 543 − 180 = 363 chữ số.",
+     "solutionNarrative": "Trừ dần: $552 - 9 = 543$, rồi $543 - 180 = 363$ chữ số.",
      "hints": [
       "Con bớt phần của nhóm một chữ số ra trước, rồi bớt tiếp phần của nhóm hai.",
       "Trừ dần từng nhóm, đừng trừ một lúc."
@@ -196,7 +208,7 @@
      "answerKey": {
       "value": 121
      },
-     "solutionNarrative": "Mỗi trang ba chữ số nên 363 : 3 = 121 trang.",
+     "solutionNarrative": "Mỗi trang ba chữ số nên $363 : 3 = 121$ trang.",
      "hints": [
       "Phần còn lại toàn là trang ba chữ số.",
       "Con chia phần ấy cho ba."
@@ -208,7 +220,7 @@
      "answerKey": {
       "value": 220
      },
-     "solutionNarrative": "Chín trang nhóm một cộng 90 trang nhóm hai là 99 trang, cộng thêm 121 trang: 99 + 121 = 220 trang.",
+     "solutionNarrative": "Chín trang nhóm một cộng 90 trang nhóm hai là 99 trang, cộng thêm 121 trang: $99 + 121 = 220$ trang.",
      "hints": [
       "Con cộng số trang của cả ba nhóm lại.",
       "Nhóm một có chín trang, nhóm hai có chín mươi trang, còn nhóm ba con vừa tính xong."
@@ -227,7 +239,7 @@
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đúng: 99 − 10 = 89, cộng một được 90."
+    "solutionNarrative": "Đúng: $99 - 10 = 89$, cộng một được 90."
    },
    {
     "id": "Q2",
@@ -274,7 +286,7 @@
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đúng: 250 − 100 = 150, cộng một được 151."
+    "solutionNarrative": "Đúng: $250 - 100 = 150$, cộng một được 151."
    }
   ]
  },

@@ -53,40 +53,52 @@
   "problem": "Một hình hộp chữ nhật dài 4 cm, rộng 3 cm, cao 2 cm. Tính tổng diện tích sáu mặt của hộp.",
   "steps": [
    {
-    "show": "Trải phẳng ra thì thấy gì"
+    "show": "Trải phẳng ra thì thấy gì",
+    "phan": "giai"
    },
    {
-    "show": "Sáu mặt hiện ra, và chúng không phải sáu mặt khác nhau: chúng hợp thành ba cặp, hai mặt trong một cặp bằng hệt nhau."
+    "show": "Sáu mặt hiện ra, và chúng không phải sáu mặt khác nhau: chúng hợp thành ba cặp, hai mặt trong một cặp bằng hệt nhau.",
+    "phan": "giai"
    },
    {
-    "show": "Ba cặp ấy dựng từ ba cặp số"
+    "show": "Ba cặp ấy dựng từ ba cặp số",
+    "phan": "giai"
    },
    {
-    "show": "Cặp đáy và nắp dựng từ dài và rộng: 4 × 3 = 12 (cm²)"
+    "show": "Cặp đáy và nắp dựng từ dài và rộng: $4  \\times  3 = 12$ ($cm^2$)",
+    "phan": "giai"
    },
    {
-    "show": "Cặp trước và sau dựng từ dài và cao: 4 × 2 = 8 (cm²)"
+    "show": "Cặp trước và sau dựng từ dài và cao: $4  \\times  2 = 8$ ($cm^2$)",
+    "phan": "giai"
    },
    {
-    "show": "Cặp hai bên hông dựng từ rộng và cao: 3 × 2 = 6 (cm²)"
+    "show": "Cặp hai bên hông dựng từ rộng và cao: $3  \\times  2 = 6$ ($cm^2$)",
+    "phan": "giai"
    },
    {
-    "show": "Cộng ba mặt khác nhau rồi nhân đôi"
+    "show": "Cộng ba mặt khác nhau rồi nhân đôi",
+    "phan": "giai"
    },
    {
-    "show": "Tổng ba mặt khác nhau là: 12 + 8 + 6 = 26 (cm²)"
+    "show": "Tổng ba mặt khác nhau là: $12 + 8 + 6 = 26$ ($cm^2$)",
+    "phan": "giai"
    },
    {
-    "show": "Mỗi mặt có một mặt đối diện bằng nó, nên nhân đôi một lần ở cuối:"
+    "show": "Mỗi mặt có một mặt đối diện bằng nó, nên nhân đôi một lần ở cuối:",
+    "phan": "giai"
    },
    {
-    "show": "26 × 2 = 52 (cm²)"
+    "show": "$26  \\times  2 = 52$ ($cm^2$)",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 52 cm²."
+    "show": "Đáp số: 52 cm².",
+    "phan": "dapso"
    },
    {
-    "show": "Thử lại bằng cách cộng đủ sáu mặt: 12 + 12 + 8 + 8 + 6 + 6 = 52"
+    "show": "Thử lại bằng cách cộng đủ sáu mặt: $12 + 12 + 8 + 8 + 6 + 6 = 52$",
+    "phan": "ghichu"
    }
   ]
  },
@@ -120,7 +132,7 @@
      "answerKey": {
       "value": 12
      },
-     "solutionNarrative": "Mặt đáy dựng từ dài và rộng: 4 × 3 = 12 (cm²).",
+     "solutionNarrative": "Mặt đáy dựng từ dài và rộng: $4  \\times  3 = 12$ ($cm^2$).",
      "hints": [
       "Mặt đáy là mặt hộp đặt xuống bàn, nên nó dựng từ chiều dài và chiều rộng.",
       "Lấy hai số ấy nhân với nhau."
@@ -132,7 +144,7 @@
      "answerKey": {
       "value": 8
      },
-     "solutionNarrative": "Mặt trước là 4 × 2 = 8 (cm²).",
+     "solutionNarrative": "Mặt trước là $4  \\times  2 = 8$ ($cm^2$).",
      "hints": [
       "Đề đã cho sẵn hai số của mặt này rồi, con chỉ việc nhân chúng lại.",
       "Mặt trước dựng đứng nên nó lấy chiều dài và chiều cao."
@@ -146,7 +158,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "Mặt hông là 3 × 2 = 6 (cm²).",
+     "solutionNarrative": "Mặt hông là $3  \\times  2 = 6$ ($cm^2$).",
      "hints": [
       "Mặt hông cũng dựng đứng, nhưng nó quay ngang nên lấy chiều rộng và chiều cao.",
       "Đề đã cho sẵn hai số ấy, con nhân chúng lại."
@@ -158,7 +170,7 @@
      "answerKey": {
       "value": 26
      },
-     "solutionNarrative": "Ba mặt khác nhau là 12, 8 và 6, cộng lại: 12 + 8 + 6 = 26 (cm²).",
+     "solutionNarrative": "Ba mặt khác nhau là 12, 8 và 6, cộng lại: $12 + 8 + 6 = 26$ ($cm^2$).",
      "hints": [
       "Ba mặt khác nhau con vừa tính ở ba câu trên. Giờ chỉ việc cộng ba kết quả ấy.",
       "Cộng lần lượt: mặt đáy, rồi mặt trước, rồi mặt hông."
@@ -170,7 +182,7 @@
      "answerKey": {
       "value": 52
      },
-     "solutionNarrative": "Mỗi mặt có một mặt đối diện bằng nó nên nhân đôi: 26 × 2 = 52 (cm²).",
+     "solutionNarrative": "Mỗi mặt có một mặt đối diện bằng nó nên nhân đôi: $26  \\times  2 = 52$ ($cm^2$).",
      "hints": [
       "Mỗi mặt đều có một mặt đối diện bằng hệt nó, nên tổng ba mặt mới chỉ là một nửa.",
       "Con nhân đôi cái tổng vừa tính ở câu trên lên."
@@ -214,7 +226,7 @@
        }
       ]
      },
-     "solutionNarrative": "Ba mặt: 5 × 4 = 20, rồi 5 × 3 = 15, rồi 4 × 3 = 12. Tổng ba mặt: 20 + 15 + 12 = 47 (cm²). Sáu mặt: 47 × 2 = 94 (cm²).",
+     "solutionNarrative": "Ba mặt: $5  \\times  4 = 20$, rồi $5  \\times  3 = 15$, rồi $4  \\times  3 = 12$. Tổng ba mặt: $20 + 15 + 12 = 47$ ($cm^2$). Sáu mặt: $47  \\times  2 = 94$ ($cm^2$).",
      "hints": [
       "Vẫn ba cặp như hộp cũ: dài với rộng, dài với cao, rộng với cao.",
       "Tính ba mặt ấy, cộng lại, rồi nhân đôi một lần ở cuối."
@@ -235,7 +247,7 @@
        }
       ]
      },
-     "solutionNarrative": "Một mặt: 3 × 3 = 9 (cm²). Hình lập phương có sáu mặt bằng nhau nên tổng là 9 × 6 = 54 (cm²).",
+     "solutionNarrative": "Một mặt: $3  \\times  3 = 9$ ($cm^2$). Hình lập phương có sáu mặt bằng nhau nên tổng là $9  \\times  6 = 54$ ($cm^2$).",
      "hints": [
       "Hình lập phương có mọi cạnh bằng nhau, nên một mặt là cạnh nhân cạnh.",
       "Sáu mặt của nó bằng hệt nhau, nên con nhân kết quả ấy với sáu."

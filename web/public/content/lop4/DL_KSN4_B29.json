@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn thấy \"trung bình cộng là 35\" rồi lấy luôn 35 chia cho 7 phần.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: 35 là của một phần hay của cả hai số? Gợi ý 2: Là trung bình của hai số, nên tổng phải gấp đôi nó. Chữa: tổng = 35 × 2 = 70, rồi mới chia cho 7 phần. Lấy nhầm 35 thì một phần ra 5, và hai số cộng lại chỉ được 35, không khớp đề."
+    "fix": "Gợi ý 1: 35 là của một phần hay của cả hai số? Gợi ý 2: Là trung bình của hai số, nên tổng phải gấp đôi nó. Chữa: tổng = $35  \\times  2 = 70$, rồi mới chia cho 7 phần. Lấy nhầm 35 thì một phần ra 5, và hai số cộng lại chỉ được 35, không khớp đề."
    }
   ]
  },
@@ -53,31 +53,40 @@
   "problem": "Trung bình cộng của hai số là 35, số bé bằng hai phần năm số lớn. Tìm hai số.",
   "steps": [
    {
-    "show": "Đề giấu tổng"
+    "show": "Đề giấu tổng",
+    "phan": "giai"
    },
    {
-    "show": "Nó cho trung bình cộng chứ không cho tổng."
+    "show": "Nó cho trung bình cộng chứ không cho tổng.",
+    "phan": "giai"
    },
    {
-    "show": "Lôi tổng ra"
+    "show": "Lôi tổng ra",
+    "phan": "giai"
    },
    {
-    "show": "Tổng bằng trung bình cộng nhân số lượng: 35 × 2 = 70."
+    "show": "Tổng bằng trung bình cộng nhân số lượng: $35  \\times  2 = 70$.",
+    "phan": "giai"
    },
    {
-    "show": "Bây giờ mới dùng tỉ số"
+    "show": "Bây giờ mới dùng tỉ số",
+    "phan": "giai"
    },
    {
-    "show": "Tỉ số 2 trên 5, cả thảy 7 phần. Một phần là 70 : 7 = 10. Hai số là 20 và 50."
+    "show": "Tỉ số 2 trên 5, cả thảy 7 phần. Một phần là $70 : 7 = 10$. Hai số là 20 và 50.",
+    "phan": "giai"
    },
    {
-    "show": "Một kiểu giấu hiệu"
+    "show": "Một kiểu giấu hiệu",
+    "phan": "giai"
    },
    {
-    "show": "Nếu đề nói mẹ hơn con 30 tuổi thì đó chính là hiệu. Tuổi mẹ hơn tuổi con bao nhiêu thì mãi mãi hơn bấy nhiêu, như con đã học ở chương trước."
+    "show": "Nếu đề nói mẹ hơn con 30 tuổi thì đó chính là hiệu. Tuổi mẹ hơn tuổi con bao nhiêu thì mãi mãi hơn bấy nhiêu, như con đã học ở chương trước.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: hai số là 20 và 50."
+    "show": "Đáp số: hai số là 20 và 50.",
+    "phan": "dapso"
    }
   ]
  },
@@ -90,7 +99,7 @@
      "answerKey": {
       "value": 70
      },
-     "solutionNarrative": "Tổng = 35 × 2 = 70.",
+     "solutionNarrative": "Tổng = $35  \\times  2 = 70$.",
      "hints": [
       "Tra từ điển tỉ ẩn.",
       "Gấp rưỡi nghĩa là một rưỡi lần — viết thành hai số nguyên."
@@ -102,7 +111,7 @@
      "answerKey": {
       "value": 7
      },
-     "solutionNarrative": "Tỉ số 2 : 5, cả thảy 7 phần.",
+     "solutionNarrative": "Tỉ số $2 : 5$, cả thảy 7 phần.",
      "hints": [
       "Dịch chữ gấp ba thành tỉ trước đã.",
       "Rồi chạy quy trình bốn bước."
@@ -123,7 +132,7 @@
        }
       ]
      },
-     "solutionNarrative": "Một phần = 70 : 7 = 10. Số bé 20, số lớn 50.",
+     "solutionNarrative": "Một phần = $70 : 7 = 10$. Số bé 20, số lớn 50.",
      "hints": [
       "Gấp đôi dịch thành mấy ô với mấy ô?",
       "Tổng số phần rồi mới tới một phần."
@@ -146,7 +155,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng dài rộng = 48 : 2 = 24 m. Tỉ số 1 : 2, cả thảy 3 phần. Một phần = 8 m. Chiều rộng 8 m, chiều dài 16 m.",
+     "solutionNarrative": "Tổng dài rộng = $48 : 2 = 24$ m. Tỉ số $1 : 2$, cả thảy 3 phần. Một phần = 8 m. Chiều rộng 8 m, chiều dài 16 m.",
      "hints": [
       "Gấp rưỡi là tỉ ẩn — dịch nó ra trước.",
       "Có tỉ rồi thì chạy quy trình bốn bước."
@@ -163,7 +172,7 @@
        }
       ]
      },
-     "solutionNarrative": "35 là trung bình cộng, không phải tổng. Tổng phải là 35 × 2 = 70.",
+     "solutionNarrative": "35 là trung bình cộng, không phải tổng. Tổng phải là $35  \\times  2 = 70$.",
      "hints": [
       "TỔNG đang trốn trong chữ trung bình cộng.",
       "Lột áo ra tổng rồi mới chia phần."
@@ -184,7 +193,7 @@
        }
       ]
      },
-     "solutionNarrative": "Hiệu là 30 (mẹ hơn con). Tỉ số 1 : 4, phần chênh 3 phần. Một phần = 10. Con 10 tuổi, mẹ 40 tuổi.",
+     "solutionNarrative": "Hiệu là 30 (mẹ hơn con). Tỉ số $1 : 4$, phần chênh 3 phần. Một phần = 10. Con 10 tuổi, mẹ 40 tuổi.",
      "hints": [
       "TỔNG đang trốn trong chữ chu vi.",
       "Nửa chu vi mới là tổng dài và rộng."
@@ -205,7 +214,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng = 48. Tỉ số 1 : 2, cả thảy 3 phần. Một phần = 16. Số bé 16, số lớn 32.",
+     "solutionNarrative": "Tổng = 48. Tỉ số $1 : 2$, cả thảy 3 phần. Một phần = 16. Số bé 16, số lớn 32.",
      "hints": [
       "Dịch chữ gấp bốn thành tỉ.",
       "Tổng số phần rồi tới một phần."
@@ -232,7 +241,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng dài rộng = 50 m. Tỉ số rộng trên dài là 2 : 3, cả thảy 5 phần. Một phần = 10 m. Rộng 20 m, dài 30 m. Diện tích = 600 mét vuông.",
+     "solutionNarrative": "Tổng dài rộng = 50 m. Tỉ số rộng trên dài là $2 : 3$, cả thảy 5 phần. Một phần = 10 m. Rộng 20 m, dài 30 m. Diện tích = 600 mét vuông.",
      "hints": [
       "Hai lớp cải trang — lột cả tổng lẫn tỉ.",
       "Nửa chu vi ra tổng; chữ một nửa ra tỉ."
@@ -253,7 +262,7 @@
        }
       ]
      },
-     "solutionNarrative": "Hiệu tuổi không đổi nên 4 năm nữa vẫn hơn 12. Lúc ấy tỉ số 1 : 2, phần chênh 1 phần = 12. Em 12 tuổi, anh 24 tuổi. Hiện nay: em 8 tuổi, anh 20 tuổi.",
+     "solutionNarrative": "Hiệu tuổi không đổi nên 4 năm nữa vẫn hơn 12. Lúc ấy tỉ số $1 : 2$, phần chênh 1 phần = 12. Em 12 tuổi, anh 24 tuổi. Hiện nay: em 8 tuổi, anh 20 tuổi.",
      "hints": [
       "Số thứ nhất chiếm mấy ô khi số thứ hai chiếm mấy ô?",
       "Có tỉ rồi thì chia tổng cho tổng số phần."

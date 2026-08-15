@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn đếm thẳng số có chứa chữ số 0, cộng ba trường hợp lại rồi ra một số lớn hơn cả 900.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Số 100 có chữ số 0 ở hàng chục, mà cũng có ở hàng đơn vị. Bạn ấy đếm nó mấy lần? Gợi ý 2: Thay vì đếm số CÓ, con thử đếm số KHÔNG có xem có gọn hơn không. Chữa: cộng ba trường hợp thì những số có hai chữ số 0 bị đếm hai lần. Đếm ngược rồi trừ thì không bao giờ trùng: 900 − 729 = 171."
+    "fix": "Gợi ý 1: Số 100 có chữ số 0 ở hàng chục, mà cũng có ở hàng đơn vị. Bạn ấy đếm nó mấy lần? Gợi ý 2: Thay vì đếm số CÓ, con thử đếm số KHÔNG có xem có gọn hơn không. Chữa: cộng ba trường hợp thì những số có hai chữ số 0 bị đếm hai lần. Đếm ngược rồi trừ thì không bao giờ trùng: $900 - 729 = 171$."
    }
   ]
  },
@@ -53,34 +53,44 @@
   "problem": "Có bao nhiêu số có ba chữ số mà trong đó CÓ chứa chữ số 0?",
   "steps": [
    {
-    "show": "Vì sao đếm thẳng thì rối"
+    "show": "Vì sao đếm thẳng thì rối",
+    "phan": "giai"
    },
    {
-    "show": "Chữ số 0 có thể nằm ở hàng chục, ở hàng đơn vị, hoặc ở cả hai. Ba trường hợp, lại còn chồng lên nhau — đếm dễ sót mà cũng dễ đếm trùng."
+    "show": "Chữ số 0 có thể nằm ở hàng chục, ở hàng đơn vị, hoặc ở cả hai. Ba trường hợp, lại còn chồng lên nhau — đếm dễ sót mà cũng dễ đếm trùng.",
+    "phan": "giai"
    },
    {
-    "show": "Đếm ngược thì gọn"
+    "show": "Đếm ngược thì gọn",
+    "phan": "giai"
    },
    {
-    "show": "Đếm những số KHÔNG chứa chữ số 0 thôi. Khi ấy mỗi hàng chỉ chọn từ 1 đến 9, tức 9 cách."
+    "show": "Đếm những số KHÔNG chứa chữ số 0 thôi. Khi ấy mỗi hàng chỉ chọn từ 1 đến 9, tức 9 cách.",
+    "phan": "giai"
    },
    {
-    "show": "Nhân dồn: 9 × 9 × 9 = 729 số."
+    "show": "Nhân dồn: $9  \\times  9  \\times  9 = 729$ số.",
+    "phan": "giai"
    },
    {
-    "show": "Lấy tất cả trừ đi"
+    "show": "Lấy tất cả trừ đi",
+    "phan": "giai"
    },
    {
-    "show": "Tất cả các số có ba chữ số là 900. Vậy số có chứa chữ số 0 là 900 − 729 = 171."
+    "show": "Tất cả các số có ba chữ số là 900. Vậy số có chứa chữ số 0 là $900 - 729 = 171$.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 171 số."
+    "show": "Đáp số: 171 số.",
+    "phan": "dapso"
    },
    {
-    "show": "Dấu hiệu nhận ra"
+    "show": "Dấu hiệu nhận ra",
+    "phan": "ghichu"
    },
    {
-    "show": "Gặp chữ \"có chứa\" hoặc \"ít nhất một\" thì nghĩ ngay tới phần bù — vì cái ngược lại của chúng là \"không có cái nào\", mà cái ấy đếm rất gọn."
+    "show": "Gặp chữ \"có chứa\" hoặc \"ít nhất một\" thì nghĩ ngay tới phần bù — vì cái ngược lại của chúng là \"không có cái nào\", mà cái ấy đếm rất gọn.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -93,7 +103,7 @@
      "answerKey": {
       "value": 900
      },
-     "solutionNarrative": "Nhân dồn: 9 × 10 × 10 = 900 số.",
+     "solutionNarrative": "Nhân dồn: $9  \\times  10  \\times  10 = 900$ số.",
      "hints": [
       "Con kẻ ba ô rồi điền số cách chọn của từng hàng.",
       "Hàng đầu không được là số không nên ít cách hơn hai hàng sau."
@@ -105,7 +115,7 @@
      "answerKey": {
       "value": 729
      },
-     "solutionNarrative": "Mỗi hàng chỉ chọn từ 1 đến 9: 9 × 9 × 9 = 729 số.",
+     "solutionNarrative": "Mỗi hàng chỉ chọn từ 1 đến 9: $9  \\times  9  \\times  9 = 729$ số.",
      "hints": [
       "Không được dùng số không thì mỗi hàng chỉ còn chọn từ một tới chín.",
       "Cả ba hàng đều chín cách, con nhân dồn lại."
@@ -117,7 +127,7 @@
      "answerKey": {
       "value": 171
      },
-     "solutionNarrative": "Lấy tất cả trừ đi: 900 − 729 = 171 số.",
+     "solutionNarrative": "Lấy tất cả trừ đi: $900 - 729 = 171$ số.",
      "hints": [
       "Con lấy tất cả trừ đi phần vừa tính ở câu trên.",
       "Đặt tính rồi trừ cho cẩn thận."
@@ -152,7 +162,7 @@
      "answerKey": {
       "value": 90
      },
-     "solutionNarrative": "Hàng chục 9 cách, hàng đơn vị 10 cách: 9 × 10 = 90 số.",
+     "solutionNarrative": "Hàng chục 9 cách, hàng đơn vị 10 cách: $9  \\times  10 = 90$ số.",
      "hints": [
       "Con kẻ hai ô: hàng đầu và hàng sau.",
       "Hàng đầu không được là số không, hàng sau thì thoải mái."
@@ -164,7 +174,7 @@
      "answerKey": {
       "value": 81
      },
-     "solutionNarrative": "Cả hai hàng đều chọn từ 1 đến 9: 9 × 9 = 81 số.",
+     "solutionNarrative": "Cả hai hàng đều chọn từ 1 đến 9: $9  \\times  9 = 81$ số.",
      "hints": [
       "Không dùng số không thì cả hai hàng đều chọn từ một tới chín.",
       "Nhân hai ô lại."
@@ -176,7 +186,7 @@
      "answerKey": {
       "value": 9
      },
-     "solutionNarrative": "Lấy hiệu: 90 − 81 = 9 số. Đó là 10, 20 cho tới 90.",
+     "solutionNarrative": "Lấy hiệu: $90 - 81 = 9$ số. Đó là 10, 20 cho tới 90.",
      "hints": [
       "Số hai chữ số tất cả bao nhiêu, và số không chứa chữ số không thì bao nhiêu?",
       "Kiểm lại bằng cách kể ra: chúng đều là số tròn chục."
@@ -199,7 +209,7 @@
        }
       ]
      },
-     "solutionNarrative": "Không chứa 5: hàng trăm 8 cách, hai hàng sau mỗi hàng 9 cách, được 8 × 9 × 9 = 648 số. Có ít nhất một chữ số 5: 900 − 648 = 252 số.",
+     "solutionNarrative": "Không chứa 5: hàng trăm 8 cách, hai hàng sau mỗi hàng 9 cách, được $8  \\times  9  \\times  9 = 648$ số. Có ít nhất một chữ số 5: $900 - 648 = 252$ số.",
      "hints": [
       "Con đếm phần không chứa chữ số ấy trước: hàng đầu bớt một cách, hai hàng sau cũng bớt một.",
       "Có phần ấy rồi thì lấy tất cả trừ đi."
@@ -211,7 +221,7 @@
      "answerKey": {
       "value": 125
      },
-     "solutionNarrative": "Mỗi hàng chọn trong 1, 3, 5, 7, 9 nên đều 5 cách: 5 × 5 × 5 = 125 số.",
+     "solutionNarrative": "Mỗi hàng chọn trong 1, 3, 5, 7, 9 nên đều 5 cách: $5  \\times  5  \\times  5 = 125$ số.",
      "hints": [
       "Con đếm xem có mấy chữ số lẻ, rồi mỗi hàng đều chọn trong bấy nhiêu.",
       "Hàng đầu cũng chọn được đủ, vì không có chữ số lẻ nào bằng không."

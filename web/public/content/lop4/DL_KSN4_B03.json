@@ -50,34 +50,43 @@
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính 47 × 10, rồi 47 × 100, rồi 4 700 : 100.",
+  "problem": "Tính $47  \\times  10$, rồi $47  \\times  100$, rồi 4 $700 : 100$.",
   "steps": [
    {
-    "show": "Vì sao thêm 0 là nhân mười"
+    "show": "Vì sao thêm 0 là nhân mười",
+    "phan": "giai"
    },
    {
-    "show": "Thêm một chữ số 0 vào bên phải thì mọi chữ số dịch sang trái một hàng. Mỗi hàng nặng gấp mười hàng bên phải nó, nên cả số nặng gấp mười."
+    "show": "Thêm một chữ số 0 vào bên phải thì mọi chữ số dịch sang trái một hàng. Mỗi hàng nặng gấp mười hàng bên phải nó, nên cả số nặng gấp mười.",
+    "phan": "giai"
    },
    {
-    "show": "Đi lên từng tầng"
+    "show": "Đi lên từng tầng",
+    "phan": "giai"
    },
    {
-    "show": "Số 47 nhân 10 được 470. Nhân 100 thì thêm hai chữ số 0, được 4 700. Nhân 1000 thì thêm ba, được 47 000."
+    "show": "Số 47 nhân 10 được 470. Nhân 100 thì thêm hai chữ số 0, được 4 700. Nhân 1000 thì thêm ba, được 47 000.",
+    "phan": "giai"
    },
    {
-    "show": "Bốn số ấy cùng một nhà, chỉ khác tầng đang đứng."
+    "show": "Bốn số ấy cùng một nhà, chỉ khác tầng đang đứng.",
+    "phan": "giai"
    },
    {
-    "show": "Đi xuống thì bớt"
+    "show": "Đi xuống thì bớt",
+    "phan": "giai"
    },
    {
-    "show": "Chia là đi ngược lại: 4 700 chia 100 thì bớt hai chữ số 0, còn 47."
+    "show": "Chia là đi ngược lại: 4 700 chia 100 thì bớt hai chữ số 0, còn 47.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 470, rồi 4 700, rồi 47."
+    "show": "Đáp số: 470, rồi 4 700, rồi 47.",
+    "phan": "dapso"
    },
    {
-    "show": "Thử lại: 47 nhân 100 được 4 700, rồi 4 700 chia 100 lại về 47 — đi lên rồi đi xuống thì về đúng chỗ cũ."
+    "show": "Thử lại: 47 nhân 100 được 4 700, rồi 4 700 chia 100 lại về 47 — đi lên rồi đi xuống thì về đúng chỗ cũ.",
+    "phan": "thulai"
    }
   ]
  },
@@ -86,11 +95,11 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tính 47 × 10.",
+     "text": "Tính $47  \\times  10$.",
      "answerKey": {
       "value": 470
      },
-     "solutionNarrative": "Thêm một chữ số 0 vào bên phải: 47 × 10 = 470.",
+     "solutionNarrative": "Thêm một chữ số 0 vào bên phải: $47  \\times  10 = 470$.",
      "hints": [
       "Nhân mười thì thêm một chữ số không vào bên phải.",
       "Con chép lại số cũ rồi viết thêm một chữ số không vào sau."
@@ -98,11 +107,11 @@
     },
     {
      "id": "C2",
-     "text": "Tính 47 × 100.",
+     "text": "Tính $47  \\times  100$.",
      "answerKey": {
       "value": 4700
      },
-     "solutionNarrative": "Thêm hai chữ số 0 vào bên phải: 47 × 100 = 4 700.",
+     "solutionNarrative": "Thêm hai chữ số 0 vào bên phải: $47  \\times  100 = 4$ 700.",
      "hints": [
       "Nhân một trăm thì thêm mấy chữ số không?",
       "Một trăm có hai chữ số không, nên thêm đúng hai."
@@ -110,11 +119,11 @@
     },
     {
      "id": "C3",
-     "text": "Tính 4 700 : 100.",
+     "text": "Tính 4 $700 : 100$.",
      "answerKey": {
       "value": 47
      },
-     "solutionNarrative": "Bớt hai chữ số 0: 4 700 : 100 = 47.",
+     "solutionNarrative": "Bớt hai chữ số 0: 4 $700 : 100 = 47$.",
      "hints": [
       "Chia thì làm ngược lại phép nhân: bớt chữ số không đi.",
       "Chia cho một trăm thì bớt đúng hai chữ số không."
@@ -124,11 +133,11 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Tính 350 000 : 10.",
+     "text": "Tính 350 $000 : 10$.",
      "answerKey": {
       "value": 35000
      },
-     "solutionNarrative": "Bớt một chữ số 0: 350 000 : 10 = 35 000.",
+     "solutionNarrative": "Bớt một chữ số 0: 350 $000 : 10 = 35$ 000.",
      "hints": [
       "Chia mười thì bớt một chữ số không ở cuối.",
       "Con đếm lại xem đã bớt đúng một chưa, đừng bớt quá tay."
@@ -149,7 +158,7 @@
        }
       ]
      },
-     "solutionNarrative": "Ghi sai thành 350 000 : 10 = 35 000 (đồng). Hụt: 350 000 − 35 000 = 315 000 (đồng).",
+     "solutionNarrative": "Ghi sai thành 350 $000 : 10 = 35$ 000 (đồng). Hụt: 350 $000 - 35 000 = 315$ 000 (đồng).",
      "hints": [
       "Ghi thiếu một chữ số không tận cùng nghĩa là số ấy bị chia mười.",
       "Có số ghi sai rồi thì lấy số đúng trừ đi là ra phần hụt."
@@ -169,11 +178,11 @@
     },
     {
      "id": "C7",
-     "text": "Tính 6 × 1000.",
+     "text": "Tính $6  \\times  1000$.",
      "answerKey": {
       "value": 6000
      },
-     "solutionNarrative": "Thêm ba chữ số 0 vào bên phải: 6 × 1000 = 6 000.",
+     "solutionNarrative": "Thêm ba chữ số 0 vào bên phải: $6  \\times  1000 = 6$ 000.",
      "hints": [
       "Một nghìn có ba chữ số không.",
       "Con chép số cũ rồi viết thêm đúng ba chữ số không vào sau."
@@ -208,7 +217,7 @@
        }
       ]
      },
-     "solutionNarrative": "Đi ngược lại: 8 200 : 10 = 820. Rồi 820 × 100 = 82 000.",
+     "solutionNarrative": "Đi ngược lại: 8 $200 : 10 = 820$. Rồi $820  \\times  100 = 82$ 000.",
      "hints": [
       "Muốn tìm số ấy thì làm ngược lại phép nhân mười, tức bớt một chữ số không.",
       "Có số ấy rồi thì đem nhân một trăm, tức thêm hai chữ số không."
@@ -240,7 +249,7 @@
    },
    {
     "id": "Q3",
-    "text": "Tính 47 × 1000.",
+    "text": "Tính $47  \\times  1000$.",
     "format": "mcq",
     "choices": [
      "47 000",

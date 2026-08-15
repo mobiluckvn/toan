@@ -32,9 +32,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn tính 2 + 5 + 2 + 3 = 12 rồi chia cho 3, vì \"chỉ có ba số khác nhau là 2, 5 và 3\".",
+    "wrong": "Có bạn tính $2 + 5 + 2 + 3 = 12$ rồi chia cho 3, vì \"chỉ có ba số khác nhau là 2, 5 và 3\".",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Đề nói đội đá mấy trận? Gợi ý 2: Bốn trận thì có bốn con số, dù hai trận cùng ghi 2 bàn. Chữa: phải chia cho 4, được 12 : 4 = 3 bàn. Số lặp lại vẫn đếm đủ số lần."
+    "fix": "Gợi ý 1: Đề nói đội đá mấy trận? Gợi ý 2: Bốn trận thì có bốn con số, dù hai trận cùng ghi 2 bàn. Chữa: phải chia cho 4, được $12 : 4 = 3$ bàn. Số lặp lại vẫn đếm đủ số lần."
    }
   ]
  },
@@ -43,7 +43,7 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn tính 2 + 5 + 2 + 3 = 12 rồi chia cho 3, vì \"chỉ có ba số khác nhau là 2, 5 và 3\".",
+    "narration": "Có bạn tính $2 + 5 + 2 + 3 = 12$ rồi chia cho 3, vì \"chỉ có ba số khác nhau là 2, 5 và 3\".",
     "teaches": []
    }
   ]
@@ -53,31 +53,40 @@
   "problem": "Đội bóng ghi bàn trong 4 trận: 2 ; 5 ; 2 ; 3 bàn. Trung bình mỗi trận đội ghi mấy bàn?",
   "steps": [
    {
-    "show": "Cộng hết lại"
+    "show": "Cộng hết lại",
+    "phan": "giai"
    },
    {
-    "show": "2 + 5 + 2 + 3 = 12 bàn."
+    "show": "$2 + 5 + 2 + 3 = 12$ bàn.",
+    "phan": "giai"
    },
    {
-    "show": "Đếm xem có mấy số"
+    "show": "Đếm xem có mấy số",
+    "phan": "giai"
    },
    {
-    "show": "Có 4 trận nên có 4 số. Số 2 xuất hiện hai lần thì vẫn đếm là hai số."
+    "show": "Có 4 trận nên có 4 số. Số 2 xuất hiện hai lần thì vẫn đếm là hai số.",
+    "phan": "giai"
    },
    {
-    "show": "Chia đều"
+    "show": "Chia đều",
+    "phan": "giai"
    },
    {
-    "show": "12 : 4 = 3 bàn."
+    "show": "$12 : 4 = 3$ bàn.",
+    "phan": "giai"
    },
    {
-    "show": "Soi lại cho chắc"
+    "show": "Soi lại cho chắc",
+    "phan": "giai"
    },
    {
-    "show": "Số bé nhất là 2, số lớn nhất là 5. Kết quả 3 nằm giữa hai số ấy nên hợp lý."
+    "show": "Số bé nhất là 2, số lớn nhất là 5. Kết quả 3 nằm giữa hai số ấy nên hợp lý.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: trung bình mỗi trận đội ghi 3 bàn."
+    "show": "Đáp số: trung bình mỗi trận đội ghi 3 bàn.",
+    "phan": "dapso"
    }
   ]
  },
@@ -90,7 +99,7 @@
      "answerKey": {
       "value": 12
      },
-     "solutionNarrative": "2 + 5 + 2 + 3 = 12 bàn.",
+     "solutionNarrative": "$2 + 5 + 2 + 3 = 12$ bàn.",
      "hints": [
       "Gộp cả rổ lại rồi chia đều.",
       "Tổng chia cho số số hạng."
@@ -111,7 +120,7 @@
        }
       ]
      },
-     "solutionNarrative": "Có 4 số (4 trận). 12 : 4 = 3 bàn.",
+     "solutionNarrative": "Có 4 số (4 trận). $12 : 4 = 3$ bàn.",
      "hints": [
       "San cho đều — tổng không đổi, chỉ chuyển chỗ.",
       "Cộng cả ba rồi chia ba."
@@ -123,7 +132,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "(4 + 6 + 8) : 3 = 18 : 3 = 6.",
+     "solutionNarrative": "($4 + 6 + 8$) : $3 = 18 : 3 = 6$.",
      "hints": [
       "Tổng chia cho số số hạng.",
       "Bốn số thì chia cho 4."
@@ -146,7 +155,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng 3 + 3 + 4 + 5 + 5 = 20; có 5 số nên 20 : 5 = 4.",
+     "solutionNarrative": "Tổng $3 + 3 + 4 + 5 + 5 = 20$; có 5 số nên $20 : 5 = 4$.",
      "hints": [
       "Cây cầu ngược: TỔNG = TBC nhân số số hạng.",
       "Không cần biết từng số là gì."
@@ -167,7 +176,7 @@
        }
       ]
      },
-     "solutionNarrative": "Sai ở chỗ đếm: bốn trận là bốn số, số lặp lại vẫn đếm đủ. Đúng là 12 : 4 = 3.",
+     "solutionNarrative": "Sai ở chỗ đếm: bốn trận là bốn số, số lặp lại vẫn đếm đủ. Đúng là $12 : 4 = 3$.",
      "hints": [
       "Cộng cả ba bao rồi chia ba.",
       "Đây là bài xuôi, chưa cần cầu ngược."
@@ -192,7 +201,7 @@
        }
       ]
      },
-     "solutionNarrative": "(10 + 20 + 60) : 3 = 90 : 3 = 30. Số 30 nằm giữa 10 và 60 nên hợp lý.",
+     "solutionNarrative": "($10 + 20 + 60$) : $3 = 90 : 3 = 30$. Số 30 nằm giữa 10 và 60 nên hợp lý.",
      "hints": [
       "Qua cầu TỔNG trước đã.",
       "Có tổng rồi thì trừ đi số đã biết."
@@ -232,7 +241,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng 28 + 30 + 31 + 35 = 124 kg; 124 : 4 = 31 kg.",
+     "solutionNarrative": "Tổng $28 + 30 + 31 + 35 = 124$ kg; $124 : 4 = 31$ kg.",
      "hints": [
       "Qua cầu tổng: trung bình nhân ba.",
       "Có tổng rồi thì trừ dần hai số đã biết."
@@ -253,7 +262,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng 12 + 15 + 18 + 12 + 13 = 70 chiếc; có 5 ngày nên 70 : 5 = 14 chiếc.",
+     "solutionNarrative": "Tổng $12 + 15 + 18 + 12 + 13 = 70$ chiếc; có 5 ngày nên $70 : 5 = 14$ chiếc.",
      "hints": [
       "Tính tổng bằng Gauss rồi chia số số hạng.",
       "Nhìn kỹ đáp số: nó đứng ở đâu trong dãy?"
@@ -309,7 +318,7 @@
     "answerKey": {
      "choice": "A. 6"
     },
-    "solutionNarrative": "18 : 3 = 6."
+    "solutionNarrative": "$18 : 3 = 6$."
    },
    {
     "id": "Q5",

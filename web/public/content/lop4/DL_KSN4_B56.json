@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn đọc \"trung bình cộng của 4 số là 25\" rồi trả lời luôn: \"Tổng là 25.\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: 25 là số của MỘT phần hay của cả bốn phần? Gợi ý 2: Của một phần thôi. Vậy bốn phần thì bao nhiêu? Chữa: 25 là số mỗi phần sau khi đã san đều. Bốn phần thì tổng là 25 × 4 = 100."
+    "fix": "Gợi ý 1: 25 là số của MỘT phần hay của cả bốn phần? Gợi ý 2: Của một phần thôi. Vậy bốn phần thì bao nhiêu? Chữa: 25 là số mỗi phần sau khi đã san đều. Bốn phần thì tổng là $25  \\times  4 = 100$."
    }
   ]
  },
@@ -53,31 +53,40 @@
   "problem": "Trung bình cộng của 4 số là 25. Tổng của bốn số ấy bằng bao nhiêu?",
   "steps": [
    {
-    "show": "Nhớ lại chiều thuận"
+    "show": "Nhớ lại chiều thuận",
+    "phan": "giai"
    },
    {
-    "show": "Trung bình cộng bằng tổng chia cho số lượng. Ở đây: tổng chia 4 được 25."
+    "show": "Trung bình cộng bằng tổng chia cho số lượng. Ở đây: tổng chia 4 được 25.",
+    "phan": "giai"
    },
    {
-    "show": "Đọc ngược phép chia"
+    "show": "Đọc ngược phép chia",
+    "phan": "giai"
    },
    {
-    "show": "Nếu chia cho 4 được 25 thì số ban đầu phải là 25 nhân 4."
+    "show": "Nếu chia cho 4 được 25 thì số ban đầu phải là 25 nhân 4.",
+    "phan": "giai"
    },
    {
-    "show": "Nghĩ theo cách san bằng cũng ra thế"
+    "show": "Nghĩ theo cách san bằng cũng ra thế",
+    "phan": "giai"
    },
    {
-    "show": "Sau khi san đều, mỗi phần có 25. Có 4 phần, nên gộp lại là 25 × 4 = 100."
+    "show": "Sau khi san đều, mỗi phần có 25. Có 4 phần, nên gộp lại là $25  \\times  4 = 100$.",
+    "phan": "giai"
    },
    {
-    "show": "Tính ra"
+    "show": "Tính ra",
+    "phan": "giai"
    },
    {
-    "show": "25 × 4 = 100."
+    "show": "$25  \\times  4 = 100$.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: tổng của bốn số là 100."
+    "show": "Đáp số: tổng của bốn số là 100.",
+    "phan": "dapso"
    }
   ]
  },
@@ -90,7 +99,7 @@
      "answerKey": {
       "value": 100
      },
-     "solutionNarrative": "Tổng = trung bình cộng × số lượng = 25 × 4 = 100.",
+     "solutionNarrative": "Tổng = trung bình cộng × số lượng = $25  \\times  4 = 100$.",
      "hints": [
       "Trung bình cộng là số của MỘT phần thôi.",
       "Muốn ra số của tất cả các phần thì nhân lên theo số lượng."
@@ -102,7 +111,7 @@
      "answerKey": {
       "value": 18
      },
-     "solutionNarrative": "6 × 3 = 18.",
+     "solutionNarrative": "$6  \\times  3 = 18$.",
      "hints": [
       "Có ba số nên tổng gồm ba phần như thế.",
       "Nhân số trung bình với số lượng."
@@ -114,7 +123,7 @@
      "answerKey": {
       "value": 50
      },
-     "solutionNarrative": "10 × 5 = 50.",
+     "solutionNarrative": "$10  \\times  5 = 50$.",
      "hints": [
       "Có năm số nên tổng gồm năm phần.",
       "Nhân số trung bình với số lượng."
@@ -128,7 +137,7 @@
      "answerKey": {
       "value": 70
      },
-     "solutionNarrative": "14 × 5 = 70 chiếc.",
+     "solutionNarrative": "$14  \\times  5 = 70$ chiếc.",
      "hints": [
       "Mỗi ngày bán được ngần ấy, mà bán trong nhiều ngày.",
       "Nhân số áo mỗi ngày với số ngày."
@@ -153,7 +162,7 @@
        }
       ]
      },
-     "solutionNarrative": "25 là số của MỘT phần sau khi san đều, không phải của cả bốn phần. Tổng đúng là 25 × 4 = 100.",
+     "solutionNarrative": "25 là số của MỘT phần sau khi san đều, không phải của cả bốn phần. Tổng đúng là $25  \\times  4 = 100$.",
      "hints": [
       "Bạn ấy lấy số của một phần làm số của cả nhóm.",
       "Bốn số thì tổng phải gấp mấy lần con số đề cho?"
@@ -182,7 +191,7 @@
      "answerKey": {
       "value": 18
      },
-     "solutionNarrative": "6 × 3 = 18 cái.",
+     "solutionNarrative": "$6  \\times  3 = 18$ cái.",
      "hints": [
       "Ba bạn, mỗi bạn có ngần ấy kẹo.",
       "Nhân số kẹo mỗi bạn với số bạn."
@@ -205,7 +214,7 @@
        }
       ]
      },
-     "solutionNarrative": "Bốn tuần đầu: 3 × 4 = 12 quyển. Cộng tuần thứ năm: 12 + 5 = 17 quyển.",
+     "solutionNarrative": "Bốn tuần đầu: $3  \\times  4 = 12$ quyển. Cộng tuần thứ năm: $12 + 5 = 17$ quyển.",
      "hints": [
       "Bốn tuần đầu tính theo cách nhân; tuần thứ năm đề cho riêng.",
       "Tính xong bốn tuần rồi mới cộng thêm tuần cuối."
@@ -226,7 +235,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng sáu số: 12 × 6 = 72. Bớt đi 12 thì còn 72 − 12 = 60.",
+     "solutionNarrative": "Tổng sáu số: $12  \\times  6 = 72$. Bớt đi 12 thì còn $72 - 12 = 60$.",
      "hints": [
       "Tìm tổng của cả sáu số trước đã.",
       "Rồi bớt đi đúng con số vừa lấy ra khỏi nhóm."
@@ -254,7 +263,7 @@
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — 25 là số của một phần. Tổng là 25 × 4 = 100."
+    "solutionNarrative": "SAI — 25 là số của một phần. Tổng là $25  \\times  4 = 100$."
    },
    {
     "id": "Q3",
@@ -268,7 +277,7 @@
     "answerKey": {
      "choice": "A. 18"
     },
-    "solutionNarrative": "6 × 3 = 18."
+    "solutionNarrative": "$6  \\times  3 = 18$."
    },
    {
     "id": "Q4",
@@ -296,7 +305,7 @@
     "answerKey": {
      "choice": "A. 70 chiếc"
     },
-    "solutionNarrative": "14 × 5 = 70."
+    "solutionNarrative": "$14  \\times  5 = 70$."
    }
   ]
  },

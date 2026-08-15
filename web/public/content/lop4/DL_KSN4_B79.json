@@ -53,40 +53,52 @@
   "problem": "Một tờ giấy hình chữ nhật dài 6 cm, rộng 4 cm, được cắt theo đường chéo thành hai tam giác. Hỏi diện tích mỗi tam giác bằng bao nhiêu?",
   "steps": [
    {
-    "show": "Trước khi cắt"
+    "show": "Trước khi cắt",
+    "phan": "giai"
    },
    {
-    "show": "Diện tích cả tờ giấy là: 6 × 4 = 24 (cm²)"
+    "show": "Diện tích cả tờ giấy là: $6  \\times  4 = 24$ ($cm^2$)",
+    "phan": "giai"
    },
    {
-    "show": "Đường chéo chia thế nào"
+    "show": "Đường chéo chia thế nào",
+    "phan": "giai"
    },
    {
-    "show": "Đường chéo chia tờ giấy thành hai tam giác. Úp mảnh này lên mảnh kia thì chúng khít nhau, nên hai mảnh bằng nhau."
+    "show": "Đường chéo chia tờ giấy thành hai tam giác. Úp mảnh này lên mảnh kia thì chúng khít nhau, nên hai mảnh bằng nhau.",
+    "phan": "giai"
    },
    {
-    "show": "Cắt không làm mất giấy"
+    "show": "Cắt không làm mất giấy",
+    "phan": "giai"
    },
    {
-    "show": "Cắt ra thì giấy vẫn là ngần ấy giấy — không thêm mảnh nào, không mất mảnh nào. Hai mảnh cộng lại vẫn đúng 24."
+    "show": "Cắt ra thì giấy vẫn là ngần ấy giấy — không thêm mảnh nào, không mất mảnh nào. Hai mảnh cộng lại vẫn đúng 24.",
+    "phan": "giai"
    },
    {
-    "show": "Hai mảnh bằng nhau, cộng lại 24, nên mỗi mảnh là:"
+    "show": "Hai mảnh bằng nhau, cộng lại 24, nên mỗi mảnh là:",
+    "phan": "giai"
    },
    {
-    "show": "24 : 2 = 12 (cm²)"
+    "show": "$24 : 2 = 12$ ($cm^2$)",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: mỗi tam giác 12 cm²."
+    "show": "Đáp số: mỗi tam giác 12 cm².",
+    "phan": "dapso"
    },
    {
-    "show": "Thử lại: ghép hai tam giác khít lại thành tờ giấy cũ: 12 + 12 = 24"
+    "show": "Thử lại: ghép hai tam giác khít lại thành tờ giấy cũ: $12 + 12 = 24$",
+    "phan": "thulai"
    },
    {
-    "show": "Còn chu vi thì sao"
+    "show": "Còn chu vi thì sao",
+    "phan": "thulai"
    },
    {
-    "show": "Chu vi thì đổi. Mỗi mảnh nay có thêm một mép cắt mà lúc chưa cắt không có, nên đường bao quanh dài ra."
+    "show": "Chu vi thì đổi. Mỗi mảnh nay có thêm một mép cắt mà lúc chưa cắt không có, nên đường bao quanh dài ra.",
+    "phan": "thulai"
    }
   ]
  },
@@ -99,7 +111,7 @@
      "answerKey": {
       "value": 24
      },
-     "solutionNarrative": "Diện tích là 6 × 4 = 24 (cm²).",
+     "solutionNarrative": "Diện tích là $6  \\times  4 = 24$ ($cm^2$).",
      "hints": [
       "Diện tích hình chữ nhật là chiều dài nhân chiều rộng — bộ số này con đã gặp ở bài mảnh vườn.",
       "Đếm ô cũng ra: mỗi hàng sáu ô, có bốn hàng."
@@ -136,7 +148,7 @@
      "answerKey": {
       "value": 12
      },
-     "solutionNarrative": "Hai mảnh bằng nhau và cộng lại bằng 24, nên mỗi mảnh là 24 : 2 = 12 (cm²).",
+     "solutionNarrative": "Hai mảnh bằng nhau và cộng lại bằng 24, nên mỗi mảnh là $24 : 2 = 12$ ($cm^2$).",
      "hints": [
       "Cả tờ hai mươi tư ô, chia đều cho hai mảnh bằng nhau.",
       "Vậy phải lấy hai mươi tư chia đôi."
@@ -162,7 +174,7 @@
      "answerKey": {
       "value": 25
      },
-     "solutionNarrative": "Diện tích hình vuông là 5 × 5 = 25 (cm²), và ghép lại vẫn là 25 cm².",
+     "solutionNarrative": "Diện tích hình vuông là $5  \\times  5 = 25$ ($cm^2$), và ghép lại vẫn là 25 $cm^2$.",
      "hints": [
       "Tính phần mặt của hình vuông trước đã: cạnh nhân cạnh.",
       "Cắt ra rồi ghép lại thì con số vừa tính có đổi đi chút nào không?"
@@ -183,7 +195,7 @@
        }
       ]
      },
-     "solutionNarrative": "Cả hình: 8 × 3 = 24 (cm²). Mỗi tam giác: 24 : 2 = 12 (cm²).",
+     "solutionNarrative": "Cả hình: $8  \\times  3 = 24$ ($cm^2$). Mỗi tam giác: $24 : 2 = 12$ ($cm^2$).",
      "hints": [
       "Tính cả hình trước: dài nhân rộng.",
       "Rồi chia đôi, vì một nhát cắt chéo cho hai mảnh bằng nhau."
@@ -235,7 +247,7 @@
        }
       ]
      },
-     "solutionNarrative": "Cả hình: 12 × 5 = 60 (cm²). Mỗi tam giác: 60 : 2 = 30 (cm²).",
+     "solutionNarrative": "Cả hình: $12  \\times  5 = 60$ ($cm^2$). Mỗi tam giác: $60 : 2 = 30$ ($cm^2$).",
      "hints": [
       "Tính cả hình chữ nhật trước: mười hai nhân năm.",
       "Rồi chia đôi vì hai mảnh bằng nhau."
@@ -256,7 +268,7 @@
        }
       ]
      },
-     "solutionNarrative": "Hình chữ nhật gồm hai tam giác như thế: 18 × 2 = 36 (cm²). Biết diện tích tìm cạnh: 36 : 9 = 4 (cm).",
+     "solutionNarrative": "Hình chữ nhật gồm hai tam giác như thế: $18  \\times  2 = 36$ ($cm^2$). Biết diện tích tìm cạnh: $36 : 9 = 4$ (cm).",
      "hints": [
       "Tam giác là một nửa, vậy cả hình gồm hai tam giác như thế — con nhân đôi lên.",
       "Có diện tích rồi mà biết một cạnh thì tìm cạnh kia bằng phép chia, như bài trước đã học."

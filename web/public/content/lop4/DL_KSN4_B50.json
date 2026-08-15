@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn nói: \"12 chia hết cho 5, vì chia được 2 viên mỗi bạn.\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con xếp thử ra xem. Chia xong còn thừa mấy viên trên bàn? Gợi ý 2: Còn thừa thì chưa gọi là chia hết. Chia hết là chia xong KHÔNG còn viên nào. Chữa: 12 : 5 = 2 dư 2. Số dư là 2, khác 0, nên 12 KHÔNG chia hết cho 5."
+    "fix": "Gợi ý 1: Con xếp thử ra xem. Chia xong còn thừa mấy viên trên bàn? Gợi ý 2: Còn thừa thì chưa gọi là chia hết. Chia hết là chia xong KHÔNG còn viên nào. Chữa: $12 : 5 = 2$ dư 2. Số dư là 2, khác 0, nên 12 KHÔNG chia hết cho 5."
    }
   ]
  },
@@ -53,31 +53,40 @@
   "problem": "Có 12 viên kẹo. Chia đều cho 3 bạn thì mỗi bạn được mấy viên, có thừa không? Chia đều cho 5 bạn thì sao?",
   "steps": [
    {
-    "show": "Chia cho 3 bạn"
+    "show": "Chia cho 3 bạn",
+    "phan": "giai"
    },
    {
-    "show": "Xếp 12 viên thành từng nhóm 3 viên: được 4 nhóm, không thừa viên nào."
+    "show": "Xếp 12 viên thành từng nhóm 3 viên: được 4 nhóm, không thừa viên nào.",
+    "phan": "giai"
    },
    {
-    "show": "12 : 3 = 4, số dư bằng 0. Vậy 12 chia hết cho 3."
+    "show": "$12 : 3 = 4$, số dư bằng 0. Vậy 12 chia hết cho 3.",
+    "phan": "giai"
    },
    {
-    "show": "Chia cho 5 bạn"
+    "show": "Chia cho 5 bạn",
+    "phan": "giai"
    },
    {
-    "show": "Xếp 12 viên thành từng nhóm 5 viên: được 2 nhóm, còn thừa 2 viên."
+    "show": "Xếp 12 viên thành từng nhóm 5 viên: được 2 nhóm, còn thừa 2 viên.",
+    "phan": "giai"
    },
    {
-    "show": "12 : 5 = 2 (dư 2). Số dư khác 0 nên 12 KHÔNG chia hết cho 5."
+    "show": "$12 : 5 = 2$ (dư 2). Số dư khác 0 nên 12 KHÔNG chia hết cho 5.",
+    "phan": "giai"
    },
    {
-    "show": "Gọi tên trong phép 12 : 5 = 2 (dư 2)"
+    "show": "Gọi tên trong phép $12 : 5 = 2$ (dư 2)",
+    "phan": "giai"
    },
    {
-    "show": "12 là số bị chia, 5 là số chia, 2 là thương, 2 còn lại là số dư."
+    "show": "12 là số bị chia, 5 là số chia, 2 là thương, 2 còn lại là số dư.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 12 chia hết cho 3, mỗi bạn 4 viên không thừa; 12 không chia hết cho 5, chia được 2 viên mỗi bạn và thừa 2 viên."
+    "show": "Đáp số: 12 chia hết cho 3, mỗi bạn 4 viên không thừa; 12 không chia hết cho 5, chia được 2 viên mỗi bạn và thừa 2 viên.",
+    "phan": "dapso"
    }
   ]
  },
@@ -128,7 +137,7 @@
     },
     {
      "id": "C3",
-     "text": "Trong phép chia 12 : 5 = 2 (dư 2), số nào là số chia và số dư bằng bao nhiêu?",
+     "text": "Trong phép chia $12 : 5 = 2$ (dư 2), số nào là số chia và số dư bằng bao nhiêu?",
      "answerKey": {
       "parts": [
        {
@@ -168,7 +177,7 @@
        }
       ]
      },
-     "solutionNarrative": "20 : 4 = 5, không thừa gì. Số dư bằng 0 nên 20 CHIA HẾT cho 4.",
+     "solutionNarrative": "$20 : 4 = 5$, không thừa gì. Số dư bằng 0 nên 20 CHIA HẾT cho 4.",
      "hints": [
       "Chia thử rồi nhìn xem trên bàn còn thừa gì chăng.",
       "Chia hết nghĩa là chia xong chẳng thừa gì cả."
@@ -193,7 +202,7 @@
        }
       ]
      },
-     "solutionNarrative": "20 : 3 = 6 (dư 2). Số dư là 2, khác 0, nên 20 KHÔNG chia hết cho 3.",
+     "solutionNarrative": "$20 : 3 = 6$ (dư 2). Số dư là 2, khác 0, nên 20 KHÔNG chia hết cho 3.",
      "hints": [
       "Lần này chia cho ba, xem phần thừa thế nào.",
       "Phần còn thừa lại chính là số dư mà đề hỏi."
@@ -201,7 +210,7 @@
     },
     {
      "id": "C6",
-     "text": "Bạn Nam nói: \"Số 15 chia hết cho 4 vì 15 : 4 = 3 dư 3.\" Bạn nói đúng hay sai? Vì sao?",
+     "text": "Bạn Nam nói: \"Số 15 chia hết cho 4 vì $15 : 4 = 3$ dư 3.\" Bạn nói đúng hay sai? Vì sao?",
      "answerKey": {
       "parts": [
        {
@@ -226,7 +235,7 @@
     },
     {
      "id": "C7",
-     "text": "Trong phép chia 27 : 4, thương bằng bao nhiêu và số dư bằng bao nhiêu?",
+     "text": "Trong phép chia $27 : 4$, thương bằng bao nhiêu và số dư bằng bao nhiêu?",
      "answerKey": {
       "parts": [
        {
@@ -239,7 +248,7 @@
        }
       ]
      },
-     "solutionNarrative": "27 : 4 = 6 (dư 3). Thương là 6, số dư là 3.",
+     "solutionNarrative": "$27 : 4 = 6$ (dư 3). Thương là 6, số dư là 3.",
      "hints": [
       "Chia lần lượt tới khi phần còn lại bé hơn số chia.",
       "Thương là số nhóm xếp được, số dư là phần còn lại."
@@ -262,7 +271,7 @@
        }
       ]
      },
-     "solutionNarrative": "Mỗi đĩa 6 quả: 18 : 6 = 3 đĩa, không thừa — 18 chia hết cho 6. Mỗi đĩa 4 quả: 18 : 4 = 4 (dư 2), thừa 2 quả — 18 không chia hết cho 4.",
+     "solutionNarrative": "Mỗi đĩa 6 quả: $18 : 6 = 3$ đĩa, không thừa — 18 chia hết cho 6. Mỗi đĩa 4 quả: $18 : 4 = 4$ (dư 2), thừa 2 quả — 18 không chia hết cho 4.",
      "hints": [
       "Làm hai lần riêng: một lần mỗi đĩa sáu quả, một lần mỗi đĩa bốn quả.",
       "Mỗi lần đều nhìn xem còn thừa quả nào chăng."
@@ -274,7 +283,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "Số 6 (6 : 2 = 3 không thừa, 6 : 3 = 2 không thừa). Ngoài ra 0 cũng được, nhưng số thường lấy là 6.",
+     "solutionNarrative": "Số 6 ($6 : 2 = 3$ không thừa, $6 : 3 = 2$ không thừa). Ngoài ra 0 cũng được, nhưng số thường lấy là 6.",
      "hints": [
       "Số ấy phải chia hết cho cả hai số cùng một lúc.",
       "Thử lần lượt các số chẵn bé hơn mười, xem số nào chia hết cho ba."
@@ -302,11 +311,11 @@
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — 12 : 5 = 2 dư 2, còn thừa 2 nên không chia hết."
+    "solutionNarrative": "SAI — $12 : 5 = 2$ dư 2, còn thừa 2 nên không chia hết."
    },
    {
     "id": "Q3",
-    "text": "Trong phép chia 17 : 5 = 3 (dư 2), số 2 được gọi là:",
+    "text": "Trong phép chia $17 : 5 = 3$ (dư 2), số 2 được gọi là:",
     "format": "mcq",
     "choices": [
      "A. số dư",
@@ -344,7 +353,7 @@
     "answerKey": {
      "choice": "A. 12"
     },
-    "solutionNarrative": "12 : 3 = 4, không thừa. Còn 13 và 14 đều còn dư."
+    "solutionNarrative": "$12 : 3 = 4$, không thừa. Còn 13 và 14 đều còn dư."
    }
   ]
  },

@@ -32,9 +32,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn tính ghế đầu hàng 15 như sau: mỗi hàng 8 ghế, hàng 15 thì lấy 8 × 15 = 120.",
+    "wrong": "Có bạn tính ghế đầu hàng 15 như sau: mỗi hàng 8 ghế, hàng 15 thì lấy $8  \\times  15 = 120$.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con thử cách ấy với hàng 1 xem: 8 × 1 = 8. Nhưng ghế đầu hàng 1 rõ ràng là ghế số 1 mà? Gợi ý 2: Từ hàng 1 đến hàng 15 cộng thêm 14 lần hay 15 lần? Chữa: phải nhân với 14. Ghế đầu hàng 15 = 1 + 8 × 14 = 113."
+    "fix": "Gợi ý 1: Con thử cách ấy với hàng 1 xem: $8  \\times  1 = 8$. Nhưng ghế đầu hàng 1 rõ ràng là ghế số 1 mà? Gợi ý 2: Từ hàng 1 đến hàng 15 cộng thêm 14 lần hay 15 lần? Chữa: phải nhân với 14. Ghế đầu hàng $15 = 1 + 8  \\times  14 = 113$."
    }
   ]
  },
@@ -43,7 +43,7 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn tính ghế đầu hàng 15 như sau: mỗi hàng 8 ghế, hàng 15 thì lấy 8 × 15 = 120.",
+    "narration": "Có bạn tính ghế đầu hàng 15 như sau: mỗi hàng 8 ghế, hàng 15 thì lấy $8  \\times  15 = 120$.",
     "teaches": []
    }
   ]
@@ -53,34 +53,44 @@
   "problem": "Rạp phim mỗi hàng 8 ghế, đánh số liền từ 1. Ghế đầu các hàng là 1 ; 9 ; 17 ; 25 ; ... Hỏi ghế đầu hàng 15 là số mấy, và vé số 113 có phải ghế đầu hàng không?",
   "steps": [
    {
-    "show": "Nhận dạng"
+    "show": "Nhận dạng",
+    "phan": "giai"
    },
    {
-    "show": "Ghế đầu các hàng tạo thành dãy cách đều, số đầu 1, khoảng cách 8."
+    "show": "Ghế đầu các hàng tạo thành dãy cách đều, số đầu 1, khoảng cách 8.",
+    "phan": "giai"
    },
    {
-    "show": "Hỏi ghế đầu hàng 15"
+    "show": "Hỏi ghế đầu hàng 15",
+    "phan": "giai"
    },
    {
-    "show": "Đây là câu hỏi số hạng thứ n."
+    "show": "Đây là câu hỏi số hạng thứ n.",
+    "phan": "giai"
    },
    {
-    "show": "Từ hàng 1 đến hàng 15 cộng thêm 14 lần: 1 + 8 × 14 = 113."
+    "show": "Từ hàng 1 đến hàng 15 cộng thêm 14 lần: $1 + 8  \\times  14 = 113$.",
+    "phan": "giai"
    },
    {
-    "show": "Hỏi vé 113"
+    "show": "Hỏi vé 113",
+    "phan": "giai"
    },
    {
-    "show": "Đây là câu hỏi soi một số."
+    "show": "Đây là câu hỏi soi một số.",
+    "phan": "giai"
    },
    {
-    "show": "(113 − 1) : 8 = 14, chia hết nên vé 113 đúng là ghế đầu hàng."
+    "show": "($113 - 1$) : $8 = 14$, chia hết nên vé 113 đúng là ghế đầu hàng.",
+    "phan": "giai"
    },
    {
-    "show": "Chỗ đứng = 14 + 1 = 15, tức là hàng 15."
+    "show": "Chỗ đứng = $14 + 1 = 15$, tức là hàng 15.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: ghế đầu hàng 15 là ghế 113; vé 113 chính là ghế ấy."
+    "show": "Đáp số: ghế đầu hàng 15 là ghế 113; vé 113 chính là ghế ấy.",
+    "phan": "dapso"
    }
   ]
  },
@@ -119,7 +129,7 @@
      "answerKey": {
       "value": 50
      },
-     "solutionNarrative": "5 + 5 × (10 − 1) = 50.",
+     "solutionNarrative": "$5 + 5$ × ($10 - 1$) = 50.",
      "hints": [
       "Số đầu cộng khoảng nhân số bước nhảy.",
       "Số bước nhảy ít hơn thứ tự đúng một."
@@ -131,7 +141,7 @@
      "answerKey": {
       "value": 50
      },
-     "solutionNarrative": "(100 − 2) : 2 + 1 = 50 số hạng.",
+     "solutionNarrative": "($100 - 2$) : $2 + 1 = 50$ số hạng.",
      "hints": [
       "Cuối trừ đầu, chia khoảng, rồi cộng một.",
       "Đừng quên cái cộng một ấy."
@@ -145,7 +155,7 @@
      "answerKey": {
       "value": 79
      },
-     "solutionNarrative": "3 + 4 × (20 − 1) = 3 + 76 = 79.",
+     "solutionNarrative": "$3 + 4$ × ($20 - 1$) = $3 + 76 = 79$.",
      "hints": [
       "Tìm khoảng trước, rồi đếm số bước nhảy.",
       "Số đầu cộng khoảng nhân số bước."
@@ -153,11 +163,11 @@
     },
     {
      "id": "C5",
-     "text": "Tính tổng: 1 + 2 + 3 + ... + 50.",
+     "text": "Tính tổng: $1 + 2 + 3$ + ... + 50.",
      "answerKey": {
       "value": 1275
      },
-     "solutionNarrative": "(1 + 50) × 50 : 2 = 51 × 25 = 1 275.",
+     "solutionNarrative": "($1 + 50$) × $50 : 2 = 51  \\times  25 = 1$ 275.",
      "hints": [
       "Ghép đầu với cuối — cặp nào cũng bằng nhau.",
       "Đầu cộng cuối, nhân số số hạng, rồi chia đôi."
@@ -165,11 +175,11 @@
     },
     {
      "id": "C6",
-     "text": "Tính tổng: 5 + 10 + 15 + ... + 100.",
+     "text": "Tính tổng: $5 + 10 + 15$ + ... + 100.",
      "answerKey": {
       "value": 1050
      },
-     "solutionNarrative": "Số số hạng (100 − 5) : 5 + 1 = 20 → tổng = (5 + 100) × 20 : 2 = 1 050.",
+     "solutionNarrative": "Số số hạng ($100 - 5$) : $5 + 1 = 20$ → tổng = ($5 + 100$) × $20 : 2 = 1$ 050.",
      "hints": [
       "Đếm số số hạng trước đã.",
       "Rồi mới áp công thức: đầu cộng cuối, nhân số hạng, chia đôi."
@@ -202,7 +212,7 @@
        }
       ]
      },
-     "solutionNarrative": "(79 − 3) : 4 = 19 chia hết → 79 thuộc dãy, đứng thứ 19 + 1 = 20; (100 − 3) : 4 = 97 : 4 dư 1 → 100 không thuộc dãy.",
+     "solutionNarrative": "($79 - 3$) : $4 = 19$ chia hết → 79 thuộc dãy, đứng thứ $19 + 1 = 20$; ($100 - 3$) : $4 = 97 : 4$ dư 1 → 100 không thuộc dãy.",
      "hints": [
       "Trừ số đầu rồi chia cho khoảng — soi phần dư.",
       "Chia hết thì thuộc dãy; thứ tự là thương cộng một."
@@ -225,7 +235,7 @@
        }
       ]
      },
-     "solutionNarrative": "Ghế đầu hàng 15 = 1 + 8 × 14 = 113; ghế cuối = 113 + 7 = 120.",
+     "solutionNarrative": "Ghế đầu hàng $15 = 1 + 8  \\times  14 = 113$; ghế cuối = $113 + 7 = 120$.",
      "hints": [
       "Ghế đầu các hàng lập thành một dãy cách đều.",
       "Có ghế đầu rồi thì ghế cuối cách nó mấy bước?"
@@ -233,7 +243,7 @@
     },
     {
      "id": "C9",
-     "text": "Tính tổng 15 số lẻ đầu tiên: 1 + 3 + 5 + ... + 29 — rồi so kết quả với 15 × 15. Trùng hợp hay bí mật? Thử thêm với 5 số lẻ đầu tiên xem sao!",
+     "text": "Tính tổng 15 số lẻ đầu tiên: $1 + 3 + 5$ + ... + 29 — rồi so kết quả với $15  \\times  15$. Trùng hợp hay bí mật? Thử thêm với 5 số lẻ đầu tiên xem sao!",
      "answerKey": {
       "parts": [
        {
@@ -246,7 +256,7 @@
        }
       ]
      },
-     "solutionNarrative": "(1 + 29) × 15 : 2 = 225 = 15 × 15! Với 5 số lẻ đầu: 1 + 3 + 5 + 7 + 9 = 25 = 5 × 5. Bí mật đẹp: tổng n số lẻ đầu tiên luôn bằng n × n — xếp các số lẻ thành hình vuông mà xem!",
+     "solutionNarrative": "($1 + 29$) × $15 : 2 = 225 = 15  \\times  15$! Với 5 số lẻ đầu: $1 + 3 + 5 + 7 + 9 = 25 = 5  \\times  5$. Bí mật đẹp: tổng n số lẻ đầu tiên luôn bằng n × n — xếp các số lẻ thành hình vuông mà xem!",
      "hints": [
       "Đếm số số hạng trước rồi mới áp công thức tổng.",
       "Tính xong đem so với tích mà đề gợi ý."
@@ -288,11 +298,11 @@
     "answerKey": {
      "choice": "A. 35"
     },
-    "solutionNarrative": "2 + 3 × 11 = 35."
+    "solutionNarrative": "$2 + 3  \\times  11 = 35$."
    },
    {
     "id": "Q4",
-    "text": "Tổng 1 + 2 + ... + 10 bằng:",
+    "text": "Tổng $1 + 2$ + ... + 10 bằng:",
     "format": "mcq",
     "choices": [
      "A. 55",
@@ -302,7 +312,7 @@
     "answerKey": {
      "choice": "A. 55"
     },
-    "solutionNarrative": "(1 + 10) × 10 : 2 = 55."
+    "solutionNarrative": "($1 + 10$) × $10 : 2 = 55$."
    },
    {
     "id": "Q5",
@@ -316,7 +326,7 @@
     "answerKey": {
      "choice": "A. thuộc dãy, đứng thứ 10"
     },
-    "solutionNarrative": "(52 − 7) : 5 = 9 chia hết → thuộc dãy, thứ 10."
+    "solutionNarrative": "($52 - 7$) : $5 = 9$ chia hết → thuộc dãy, thứ 10."
    }
   ]
  },

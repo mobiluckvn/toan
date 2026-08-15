@@ -53,31 +53,40 @@
   "problem": "Anh làm một mình xong trong 6 giờ, em xong trong 12 giờ. Hai anh em làm chung 2 giờ thì anh phải nghỉ, em làm nốt. Hỏi em còn phải làm mấy giờ nữa?",
   "steps": [
    {
-    "show": "Vẫn chia việc thành 12 phần"
+    "show": "Vẫn chia việc thành 12 phần",
+    "phan": "giai"
    },
    {
-    "show": "Mỗi giờ anh làm 2 phần, em làm 1 phần, chung được 3 phần."
+    "show": "Mỗi giờ anh làm 2 phần, em làm 1 phần, chung được 3 phần.",
+    "phan": "giai"
    },
    {
-    "show": "Hai giờ làm chung được mấy phần"
+    "show": "Hai giờ làm chung được mấy phần",
+    "phan": "giai"
    },
    {
-    "show": "Mỗi giờ 3 phần, hai giờ là 3 × 2 = 6 phần."
+    "show": "Mỗi giờ 3 phần, hai giờ là $3  \\times  2 = 6$ phần.",
+    "phan": "giai"
    },
    {
-    "show": "Còn lại mấy phần"
+    "show": "Còn lại mấy phần",
+    "phan": "giai"
    },
    {
-    "show": "Cả việc 12 phần, đã làm 6 phần, còn 12 − 6 = 6 phần."
+    "show": "Cả việc 12 phần, đã làm 6 phần, còn $12 - 6 = 6$ phần.",
+    "phan": "giai"
    },
    {
-    "show": "Em làm nốt mất mấy giờ"
+    "show": "Em làm nốt mất mấy giờ",
+    "phan": "giai"
    },
    {
-    "show": "Em làm 1 phần mỗi giờ, còn 6 phần nên mất 6 : 1 = 6 giờ."
+    "show": "Em làm 1 phần mỗi giờ, còn 6 phần nên mất $6 : 1 = 6$ giờ.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: em còn phải làm 6 giờ nữa."
+    "show": "Đáp số: em còn phải làm 6 giờ nữa.",
+    "phan": "dapso"
    }
   ]
  },
@@ -90,7 +99,7 @@
      "answerKey": {
       "value": 3
      },
-     "solutionNarrative": "Anh 2 phần, em 1 phần, chung 2 + 1 = 3 phần mỗi giờ.",
+     "solutionNarrative": "Anh 2 phần, em 1 phần, chung $2 + 1 = 3$ phần mỗi giờ.",
      "hints": [
       "Đếm số phần mỗi người làm được trong một giờ rồi cộng lại.",
       "Người nhanh làm nhiều phần hơn người chậm."
@@ -102,7 +111,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "3 × 2 = 6 phần.",
+     "solutionNarrative": "$3  \\times  2 = 6$ phần.",
      "hints": [
       "Mỗi giờ chung được ngần ấy phần, mà làm trong hai giờ.",
       "Nhân số phần mỗi giờ với số giờ."
@@ -114,7 +123,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "12 − 6 = 6 phần.",
+     "solutionNarrative": "$12 - 6 = 6$ phần.",
      "hints": [
       "Cả việc gồm mười hai phần, đã làm được một số phần rồi.",
       "Lấy cả việc trừ đi phần đã làm."
@@ -161,7 +170,7 @@
      "answerKey": {
       "value": 8
      },
-     "solutionNarrative": "Chia bể 12 phần: vòi một 3 phần, vòi hai 1 phần, chung 4 phần. Một giờ được 4 phần, còn 12 − 4 = 8 phần. Vòi hai chảy 1 phần mỗi giờ nên mất 8 giờ.",
+     "solutionNarrative": "Chia bể 12 phần: vòi một 3 phần, vòi hai 1 phần, chung 4 phần. Một giờ được 4 phần, còn $12 - 4 = 8$ phần. Vòi hai chảy 1 phần mỗi giờ nên mất 8 giờ.",
      "hints": [
       "Chia bể thành mười hai phần rồi đếm số phần mỗi vòi chảy mỗi giờ.",
       "Một giờ chung được mấy phần, còn lại mấy phần cho vòi kia."
@@ -206,7 +215,7 @@
        }
       ]
      },
-     "solutionNarrative": "Chia việc 12 phần: anh 1 phần, em 2 phần, chung 3 phần mỗi giờ. Hai giờ được 6 phần, còn 12 − 6 = 6 phần. Anh làm 1 phần mỗi giờ nên mất 6 giờ.",
+     "solutionNarrative": "Chia việc 12 phần: anh 1 phần, em 2 phần, chung 3 phần mỗi giờ. Hai giờ được 6 phần, còn $12 - 6 = 6$ phần. Anh làm 1 phần mỗi giờ nên mất 6 giờ.",
      "hints": [
       "Chia việc thành số phần chia hết cho cả hai thời gian.",
       "Người ở lại đây là người chậm hơn, mỗi giờ chỉ một phần."
@@ -218,7 +227,7 @@
      "answerKey": {
       "value": 3
      },
-     "solutionNarrative": "Chung 3 phần mỗi giờ, 3 giờ được 9 phần. Còn 12 − 9 = 3 phần. Em làm 1 phần mỗi giờ nên mất 3 giờ.",
+     "solutionNarrative": "Chung 3 phần mỗi giờ, 3 giờ được 9 phần. Còn $12 - 9 = 3$ phần. Em làm 1 phần mỗi giờ nên mất 3 giờ.",
      "hints": [
       "Lần này làm chung lâu hơn nên phần đã xong nhiều hơn.",
       "Tính phần đã xong rồi mới lấy cả việc trừ đi."
@@ -260,7 +269,7 @@
     "answerKey": {
      "choice": "A. 6 phần"
     },
-    "solutionNarrative": "3 × 2 = 6."
+    "solutionNarrative": "$3  \\times  2 = 6$."
    },
    {
     "id": "Q4",
@@ -274,7 +283,7 @@
     "answerKey": {
      "choice": "A. 6 phần"
     },
-    "solutionNarrative": "12 − 6 = 6."
+    "solutionNarrative": "$12 - 6 = 6$."
    },
    {
     "id": "Q5",
@@ -288,7 +297,7 @@
     "answerKey": {
      "choice": "A. 6 giờ"
     },
-    "solutionNarrative": "6 : 1 = 6."
+    "solutionNarrative": "$6 : 1 = 6$."
    }
   ]
  },

@@ -53,37 +53,44 @@
   "problem": "Tìm X, biết ngoặc X trừ 15, chia cho 3, bằng 8.",
   "steps": [
    {
-    "show": "Đừng nhìn vào trong vội"
+    "show": "Đừng nhìn vào trong vội",
+    "phan": "giai"
    },
    {
-    "show": "Cứ coi cả cặp ngoặc là một số bí ẩn. Bài thành: số gì chia 3 thì được 8?"
+    "show": "Cứ coi cả cặp ngoặc là một số bí ẩn. Bài thành: số gì chia 3 thì được 8?",
+    "phan": "giai"
    },
    {
-    "show": "Bóc lớp thứ nhất"
+    "show": "Bóc lớp thứ nhất",
+    "phan": "giai"
    },
    {
-    "show": "Số ấy là 3 nhân 8, tức 24. Vậy X trừ 15 bằng 24."
+    "show": "Số ấy là 3 nhân 8, tức 24. Vậy X trừ 15 bằng 24.",
+    "phan": "giai"
    },
    {
-    "show": "Bóc lớp thứ hai"
+    "show": "Bóc lớp thứ hai",
+    "phan": "giai"
    },
    {
-    "show": "Nay bài quen rồi: X bằng 24 cộng 15, tức 39."
+    "show": "Nay bài quen rồi: X bằng 24 cộng 15, tức 39.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: X bằng 39."
+    "show": "Đáp số: X bằng 39.",
+    "phan": "dapso"
    },
    {
-    "show": "Thử lại"
+    "show": "Lắp 39 vào đề: $39 - 15 = 24$, rồi $24 : 3 = 8$ — đúng vế phải.",
+    "phan": "thulai"
    },
    {
-    "show": "Lắp 39 vào đề: 39 − 15 = 24, rồi 24 : 3 = 8 — đúng vế phải."
+    "show": "Nhiều lớp cũng vậy",
+    "phan": "thulai"
    },
    {
-    "show": "Nhiều lớp cũng vậy"
-   },
-   {
-    "show": "Gặp ngoặc trong ngoặc thì cứ bóc dần, mỗi bước một lớp, không nhảy cóc."
+    "show": "Gặp ngoặc trong ngoặc thì cứ bóc dần, mỗi bước một lớp, không nhảy cóc.",
+    "phan": "thulai"
    }
   ]
  },
@@ -96,7 +103,7 @@
      "answerKey": {
       "value": 24
      },
-     "solutionNarrative": "Số ấy là 3 × 8 = 24.",
+     "solutionNarrative": "Số ấy là $3  \\times  8 = 24$.",
      "hints": [
       "Con che cả ngoặc lại bằng ngón tay rồi đọc phần còn nhìn thấy.",
       "Còn lại là: số gì chia ba thì được tám? Con nhân ngược lại."
@@ -104,11 +111,11 @@
     },
     {
      "id": "C2",
-     "text": "Vậy từ X − 15 = 24, tìm X.",
+     "text": "Vậy từ X − $15 = 24$, tìm X.",
      "answerKey": {
       "value": 39
      },
-     "solutionNarrative": "Lấy 24 + 15 = 39.",
+     "solutionNarrative": "Lấy $24 + 15 = 39$.",
      "hints": [
       "Nay bài thành dạng quen: X trừ một số thì bằng số vừa tìm được.",
       "Muốn tìm số bị trừ thì lấy hiệu cộng số trừ."
@@ -120,7 +127,7 @@
      "answerKey": {
       "value": 8
      },
-     "solutionNarrative": "Tính ra: 39 − 15 = 24, rồi 24 : 3 = 8 — đúng vế phải.",
+     "solutionNarrative": "Tính ra: $39 - 15 = 24$, rồi $24 : 3 = 8$ — đúng vế phải.",
      "hints": [
       "Con lắp số vừa tìm được vào chỗ X rồi tính theo đúng thứ tự đề viết.",
       "Trừ trong ngoặc trước, rồi mới chia."
@@ -143,7 +150,7 @@
        }
       ]
      },
-     "solutionNarrative": "Ngoặc bằng 30 : 2 = 15. Vậy X = 15 − 7 = 8.",
+     "solutionNarrative": "Ngoặc bằng $30 : 2 = 15$. Vậy X = $15 - 7 = 8$.",
      "hints": [
       "Con che ngoặc lại: còn lại là ngoặc nhân hai thì bằng ba mươi.",
       "Tìm được giá trị ngoặc rồi thì trừ đi số cộng thêm."
@@ -155,7 +162,7 @@
      "answerKey": {
       "value": 7
      },
-     "solutionNarrative": "Trước hết X × 3 = 16 + 5 = 21. Vậy X = 21 : 3 = 7.",
+     "solutionNarrative": "Trước hết X × $3 = 16 + 5 = 21$. Vậy X = $21 : 3 = 7$.",
      "hints": [
       "Con đưa phép trừ sang vế kia trước: cộng năm vào vế phải.",
       "Rồi lấy kết quả chia cho ba."
@@ -167,7 +174,7 @@
      "answerKey": {
       "value": 30
      },
-     "solutionNarrative": "Ngoặc lớn bằng 6 × 5 = 30.",
+     "solutionNarrative": "Ngoặc lớn bằng $6  \\times  5 = 30$.",
      "hints": [
       "Con che cả ngoặc lớn lại rồi đọc phần còn thấy.",
       "Còn lại là: cái gì chia sáu thì bằng năm? Con nhân ngược lại."
@@ -179,7 +186,7 @@
      "answerKey": {
       "value": 34
      },
-     "solutionNarrative": "Cộng số vừa trừ trở lại: 30 + 4 = 34.",
+     "solutionNarrative": "Cộng số vừa trừ trở lại: $30 + 4 = 34$.",
      "hints": [
       "Nay bên trong còn một phép trừ bốn. Con đưa nó sang vế kia.",
       "Cộng bốn vào con số vừa tìm được ở câu trên."
@@ -202,7 +209,7 @@
        }
       ]
      },
-     "solutionNarrative": "Ngoặc X cộng 5 bằng 34 : 2 = 17. Vậy X = 17 − 5 = 12.",
+     "solutionNarrative": "Ngoặc X cộng 5 bằng $34 : 2 = 17$. Vậy X = $17 - 5 = 12$.",
      "hints": [
       "Nay còn ngoặc nhân hai. Con chia con số vừa tìm cho hai.",
       "Được giá trị ngoặc rồi thì trừ đi số cộng thêm bên trong."
@@ -214,7 +221,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "Ngoặc bằng 40 : 5 = 8. Rồi X : 4 = 8 − 3 = 5. Vậy X = 5 × 4 = 20.",
+     "solutionNarrative": "Ngoặc bằng $40 : 5 = 8$. Rồi X : $4 = 8 - 3 = 5$. Vậy X = $5  \\times  4 = 20$.",
      "hints": [
       "Con che ngoặc lại: cái gì nhân năm thì bằng bốn mươi?",
       "Được giá trị ngoặc rồi, trừ đi ba, còn lại là X chia bốn — nhân bốn lên là xong."

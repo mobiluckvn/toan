@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn thấy \"trung bình cộng của hai số là 35\" rồi lấy luôn 35 làm tổng.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: 35 là số của một phần hay của cả hai phần? Gợi ý 2: Của một phần. Vậy cả hai phần là bao nhiêu? Chữa: tổng = 35 × 2 = 70. Lấy nhầm 35 làm tổng thì ra hai số 22 và 12, cộng lại chỉ được 34, không khớp đề."
+    "fix": "Gợi ý 1: 35 là số của một phần hay của cả hai phần? Gợi ý 2: Của một phần. Vậy cả hai phần là bao nhiêu? Chữa: tổng = $35  \\times  2 = 70$. Lấy nhầm 35 làm tổng thì ra hai số 22 và 12, cộng lại chỉ được 34, không khớp đề."
    }
   ]
  },
@@ -53,31 +53,40 @@
   "problem": "Trung bình cộng của hai số là 35, hiệu của chúng là 10. Tìm hai số.",
   "steps": [
    {
-    "show": "Đề không cho tổng"
+    "show": "Đề không cho tổng",
+    "phan": "giai"
    },
    {
-    "show": "Đề chỉ cho trung bình cộng và hiệu. Muốn dùng công thức thì phải có tổng."
+    "show": "Đề chỉ cho trung bình cộng và hiệu. Muốn dùng công thức thì phải có tổng.",
+    "phan": "giai"
    },
    {
-    "show": "Lôi tổng ra"
+    "show": "Lôi tổng ra",
+    "phan": "giai"
    },
    {
-    "show": "Chương trước con đã học: tổng bằng trung bình cộng nhân số lượng. Ở đây: 35 × 2 = 70."
+    "show": "Chương trước con đã học: tổng bằng trung bình cộng nhân số lượng. Ở đây: $35  \\times  2 = 70$.",
+    "phan": "giai"
    },
    {
-    "show": "Bây giờ mới làm như cũ"
+    "show": "Bây giờ mới làm như cũ",
+    "phan": "giai"
    },
    {
-    "show": "Số lớn = (70 + 10) : 2 = 40. Số bé = (70 − 10) : 2 = 30."
+    "show": "Số lớn = ($70 + 10$) : $2 = 40$. Số bé = ($70 - 10$) : $2 = 30$.",
+    "phan": "giai"
    },
    {
-    "show": "Một kiểu giấu khác"
+    "show": "Một kiểu giấu khác",
+    "phan": "giai"
    },
    {
-    "show": "Nếu đề cho chu vi hình chữ nhật là 48 mét thì tổng chiều dài và chiều rộng là 48 : 2 = 24 mét, vì chu vi bằng hai lần cái tổng ấy."
+    "show": "Nếu đề cho chu vi hình chữ nhật là 48 mét thì tổng chiều dài và chiều rộng là $48 : 2 = 24$ mét, vì chu vi bằng hai lần cái tổng ấy.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: hai số là 40 và 30. Việc đầu tiên luôn là tìm tổng."
+    "show": "Đáp số: hai số là 40 và 30. Việc đầu tiên luôn là tìm tổng.",
+    "phan": "dapso"
    }
   ]
  },
@@ -90,7 +99,7 @@
      "answerKey": {
       "value": 70
      },
-     "solutionNarrative": "Tổng = 35 × 2 = 70.",
+     "solutionNarrative": "Tổng = $35  \\times  2 = 70$.",
      "hints": [
       "Cây cầu: tổng bằng trung bình nhân số số hạng.",
       "Hai số thì nhân đôi."
@@ -111,7 +120,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số lớn = (70 + 10) : 2 = 40; số bé = (70 − 10) : 2 = 30.",
+     "solutionNarrative": "Số lớn = ($70 + 10$) : $2 = 40$; số bé = ($70 - 10$) : $2 = 30$.",
      "hints": [
       "Chu vi gồm HAI cặp dài - rộng.",
       "Chia đôi chu vi ra nửa vòng."
@@ -123,7 +132,7 @@
      "answerKey": {
       "value": 24
      },
-     "solutionNarrative": "Chu vi bằng hai lần tổng ấy, nên tổng = 48 : 2 = 24 m.",
+     "solutionNarrative": "Chu vi bằng hai lần tổng ấy, nên tổng = $48 : 2 = 24$ m.",
      "hints": [
       "Lột áo chu vi ra tổng trước.",
       "Có tổng và hiệu rồi thì chặt thừa chia đôi."
@@ -146,7 +155,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng dài và rộng = 18 : 2 = 9 m. Chiều dài = (9 + 1) : 2 = 5 m; chiều rộng = 9 − 5 = 4 m.",
+     "solutionNarrative": "Tổng dài và rộng = $18 : 2 = 9$ m. Chiều dài = ($9 + 1$) : $2 = 5$ m; chiều rộng = $9 - 5 = 4$ m.",
      "hints": [
       "Lột áo trung bình cộng ra tổng.",
       "Có tổng và hiệu rồi thì công thức quen thuộc."
@@ -163,7 +172,7 @@
        }
       ]
      },
-     "solutionNarrative": "35 là số của MỘT phần. Tổng phải là 35 × 2 = 70. Lấy nhầm thì hai số cộng lại không khớp đề.",
+     "solutionNarrative": "35 là số của MỘT phần. Tổng phải là $35  \\times  2 = 70$. Lấy nhầm thì hai số cộng lại không khớp đề.",
      "hints": [
       "Nửa chu vi chính là tổng dài và rộng.",
       "Rồi chặt thừa chia đôi ra chiều rộng."
@@ -188,7 +197,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng = 20 × 2 = 40. Số lớn = (40 + 8) : 2 = 24; số bé = 40 − 24 = 16.",
+     "solutionNarrative": "Tổng = $20  \\times  2 = 40$. Số lớn = ($40 + 8$) : $2 = 24$; số bé = $40 - 24 = 16$.",
      "hints": [
       "Nhân trung bình với số bao ra tổng.",
       "Có tổng và hiệu rồi thì áp công thức."
@@ -228,7 +237,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng dài rộng = 60 : 2 = 30 m. Chiều dài = (30 + 10) : 2 = 20 m; chiều rộng = 10 m. Diện tích = 20 × 10 = 200 mét vuông.",
+     "solutionNarrative": "Tổng dài rộng = $60 : 2 = 30$ m. Chiều dài = ($30 + 10$) : $2 = 20$ m; chiều rộng = 10 m. Diện tích = $20  \\times  10 = 200$ mét vuông.",
      "hints": [
       "Chi tiết thành hình vuông đang khai ra HIỆU.",
       "Có hiệu rồi thì lột áo chu vi ra tổng."
@@ -249,7 +258,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng = 50 × 2 = 100. Bớt 12 thì bằng nhau nghĩa là hiệu bằng 12. Số lớn = (100 + 12) : 2 = 56; số bé = 44.",
+     "solutionNarrative": "Tổng = $50  \\times  2 = 100$. Bớt 12 thì bằng nhau nghĩa là hiệu bằng 12. Số lớn = ($100 + 12$) : $2 = 56$; số bé = 44.",
      "hints": [
       "Lột áo trung bình cộng ra tổng trước.",
       "Rồi chặt thừa chia đôi."
@@ -277,7 +286,7 @@
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — tổng là 35 × 2 = 70."
+    "solutionNarrative": "SAI — tổng là $35  \\times  2 = 70$."
    },
    {
     "id": "Q3",
@@ -305,7 +314,7 @@
     "answerKey": {
      "choice": "A. 40"
     },
-    "solutionNarrative": "20 × 2 = 40."
+    "solutionNarrative": "$20  \\times  2 = 40$."
    },
    {
     "id": "Q5",

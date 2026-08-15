@@ -32,9 +32,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn bảo: \"Số 52 604 phân tích thành 5 + 2 + 6 + 0 + 4.\"",
+    "wrong": "Có bạn bảo: \"Số 52 604 phân tích thành $5 + 2 + 6 + 0 + 4$.\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Cộng năm số ấy lại được bao nhiêu? Có ra lại số cũ không? Gợi ý 2: Chữ số 5 ấy đứng ở hàng nào, và một chữ số đứng ở hàng ấy thì đáng bao nhiêu? Chữa: phân tích là tách theo GIÁ TRỊ chứ không phải tách rời từng chữ số. Phải viết 50 000 + 2 000 + 600 + 4."
+    "fix": "Gợi ý 1: Cộng năm số ấy lại được bao nhiêu? Có ra lại số cũ không? Gợi ý 2: Chữ số 5 ấy đứng ở hàng nào, và một chữ số đứng ở hàng ấy thì đáng bao nhiêu? Chữa: phân tích là tách theo GIÁ TRỊ chứ không phải tách rời từng chữ số. Phải viết 50 $000 + 2 000 + 600 + 4$."
    }
   ]
  },
@@ -43,7 +43,7 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn bảo: \"Số 52 604 phân tích thành 5 + 2 + 6 + 0 + 4.\"",
+    "narration": "Có bạn bảo: \"Số 52 604 phân tích thành $5 + 2 + 6 + 0 + 4$.\"",
     "teaches": []
    }
   ]
@@ -53,34 +53,44 @@
   "problem": "Nêu giá trị của chữ số 7 trong số 1 745 230.",
   "steps": [
    {
-    "show": "Tìm chỗ đứng trước"
+    "show": "Tìm chỗ đứng trước",
+    "phan": "giai"
    },
    {
-    "show": "Xếp số vào bảng hàng rồi đếm từ phải sang: 0 đơn vị, 3 chục, 2 trăm, 5 nghìn, 4 chục nghìn, 7 trăm nghìn, 1 triệu."
+    "show": "Xếp số vào bảng hàng rồi đếm từ phải sang: 0 đơn vị, 3 chục, 2 trăm, 5 nghìn, 4 chục nghìn, 7 trăm nghìn, 1 triệu.",
+    "phan": "giai"
    },
    {
-    "show": "Chữ số 7 đứng ở hàng trăm nghìn."
+    "show": "Chữ số 7 đứng ở hàng trăm nghìn.",
+    "phan": "giai"
    },
    {
-    "show": "Cân chữ số ấy"
+    "show": "Cân chữ số ấy",
+    "phan": "giai"
    },
    {
-    "show": "Giá trị của một chữ số bằng chính chữ số ấy nhân với giá trị của hàng nó đứng. Một trăm nghìn nhân bảy được bảy trăm nghìn."
+    "show": "Giá trị của một chữ số bằng chính chữ số ấy nhân với giá trị của hàng nó đứng. Một trăm nghìn nhân bảy được bảy trăm nghìn.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: chữ số 7 có giá trị 700 000."
+    "show": "Đáp số: chữ số 7 có giá trị 700 000.",
+    "phan": "dapso"
    },
    {
-    "show": "Phân tích cả số thành tổng"
+    "show": "Phân tích cả số thành tổng",
+    "phan": "ghichu"
    },
    {
-    "show": "Cũng một cách cân ấy, làm cho mọi hàng: 52 604 = 50 000 + 2 000 + 600 + 4."
+    "show": "Cũng một cách cân ấy, làm cho mọi hàng: 52 $604 = 50 000 + 2 000 + 600 + 4$.",
+    "phan": "ghichu"
    },
    {
-    "show": "Hàng chục đang trống nên không có số hạng nào, nhưng chữ số 0 vẫn phải viết để giữ chỗ."
+    "show": "Hàng chục đang trống nên không có số hạng nào, nhưng chữ số 0 vẫn phải viết để giữ chỗ.",
+    "phan": "ghichu"
    },
    {
-    "show": "Thử lại: cộng các số hạng lại: 50 000 + 2 000 + 600 + 4 = 52 604."
+    "show": "Thử lại: cộng các số hạng lại: 50 $000 + 2 000 + 600 + 4 = 52$ 604.",
+    "phan": "thulai"
    }
   ]
  },
@@ -141,7 +151,7 @@
      "answerKey": {
       "value": 4
      },
-     "solutionNarrative": "Được 4 số hạng: 50 000 + 2 000 + 600 + 4. Hàng chục trống nên không có số hạng cho hàng ấy.",
+     "solutionNarrative": "Được 4 số hạng: 50 $000 + 2 000 + 600 + 4$. Hàng chục trống nên không có số hạng cho hàng ấy.",
      "hints": [
       "Con viết số ấy thành tổng ra giấy, rồi đếm xem có mấy số hạng.",
       "Hàng nào trống thì không có số hạng cho hàng ấy — nên đừng đếm nó vào."
@@ -187,11 +197,11 @@
     },
     {
      "id": "C7",
-     "text": "Cộng lại: 50 000 + 2 000 + 600 + 4 bằng bao nhiêu?",
+     "text": "Cộng lại: 50 $000 + 2 000 + 600 + 4$ bằng bao nhiêu?",
      "answerKey": {
       "value": 52604
      },
-     "solutionNarrative": "Cộng các số hạng: 50 000 + 2 000 + 600 + 4 = 52 604 — đúng số ban đầu.",
+     "solutionNarrative": "Cộng các số hạng: 50 $000 + 2 000 + 600 + 4 = 52$ 604 — đúng số ban đầu.",
      "hints": [
       "Con cứ cộng lần lượt từ trái sang, đừng nhảy cóc.",
       "Cộng đúng thì phải ra lại chính con số ban đầu."
@@ -230,7 +240,7 @@
      "answerKey": {
       "value": 5940
      },
-     "solutionNarrative": "Chữ số hàng nghìn đáng 6 000, chữ số hàng chục đáng 60. Chênh nhau: 6 000 − 60 = 5 940.",
+     "solutionNarrative": "Chữ số hàng nghìn đáng 6 000, chữ số hàng chục đáng 60. Chênh nhau: 6 $000 - 60 = 5$ 940.",
      "hints": [
       "Con cân riêng từng chữ số một trước đã, rồi mới so hai giá trị ấy.",
       "Một cái đáng sáu nghìn, một cái đáng sáu chục. Lấy cái lớn trừ cái bé."
@@ -253,12 +263,12 @@
    },
    {
     "id": "Q2",
-    "text": "Phân tích số 52 604 thành tổng là viết 5 + 2 + 6 + 0 + 4.",
+    "text": "Phân tích số 52 604 thành tổng là viết $5 + 2 + 6 + 0 + 4$.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Sai. Phải tách theo giá trị: 50 000 + 2 000 + 600 + 4."
+    "solutionNarrative": "Sai. Phải tách theo giá trị: 50 $000 + 2 000 + 600 + 4$."
    },
    {
     "id": "Q3",

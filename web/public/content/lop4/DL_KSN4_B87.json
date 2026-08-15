@@ -32,7 +32,7 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn tính 57 × 11 bằng mẹo hai đầu rồi ghi thẳng 5, 12, 7 thành \"5127\".",
+    "wrong": "Có bạn tính $57  \\times  11$ bằng mẹo hai đầu rồi ghi thẳng 5, 12, 7 thành \"5127\".",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
     "fix": "Gợi ý 1: Số 5127 có mấy chữ số? Một số hai chữ số nhân 11 thì được số mấy chữ số? Gợi ý 2: Chỗ ở giữa chỉ chứa được MỘT chữ số thôi. Tổng 12 thì phần thừa đi đâu? Chữa: giữ chữ số 2 ở giữa, nhớ 1 sang trái cộng vào chữ số 5 thành 6. Kết quả là 627."
    }
@@ -43,44 +43,54 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn tính 57 × 11 bằng mẹo hai đầu rồi ghi thẳng 5, 12, 7 thành \"5127\".",
+    "narration": "Có bạn tính $57  \\times  11$ bằng mẹo hai đầu rồi ghi thẳng 5, 12, 7 thành \"5127\".",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính nhanh 35 × 11, rồi tính nhanh 57 × 11.",
+  "problem": "Tính nhanh $35  \\times  11$, rồi tính nhanh $57  \\times  11$.",
   "steps": [
    {
-    "show": "Cách chắc chắn nhất"
+    "show": "Cách chắc chắn nhất",
+    "phan": "giai"
    },
    {
-    "show": "Mười một bằng mười cộng một. Nên nhân với mười một là nhân mười rồi cộng thêm chính số ấy một lần."
+    "show": "Mười một bằng mười cộng một. Nên nhân với mười một là nhân mười rồi cộng thêm chính số ấy một lần.",
+    "phan": "giai"
    },
    {
-    "show": "Ba mươi lăm nhân mười bằng ba trăm năm mươi. Cộng thêm ba mươi lăm được ba trăm tám mươi lăm."
+    "show": "Ba mươi lăm nhân mười bằng ba trăm năm mươi. Cộng thêm ba mươi lăm được ba trăm tám mươi lăm.",
+    "phan": "giai"
    },
    {
-    "show": "Mẹo hai đầu, nhanh hơn nữa"
+    "show": "Mẹo hai đầu, nhanh hơn nữa",
+    "phan": "giai"
    },
    {
-    "show": "Viết hai chữ số ra hai bên: 3 và 5. Cộng chúng lại được 8, nhét vào giữa. Được 385 — đúng như vừa tính."
+    "show": "Viết hai chữ số ra hai bên: 3 và 5. Cộng chúng lại được 8, nhét vào giữa. Được 385 — đúng như vừa tính.",
+    "phan": "giai"
    },
    {
-    "show": "Chỗ phải cẩn thận"
+    "show": "Chỗ phải cẩn thận",
+    "phan": "giai"
    },
    {
-    "show": "Với 57 thì tổng hai chữ số là 12, hai chữ số mà nhét vào một chỗ không vừa."
+    "show": "Với 57 thì tổng hai chữ số là 12, hai chữ số mà nhét vào một chỗ không vừa.",
+    "phan": "giai"
    },
    {
-    "show": "Khi ấy để lại chữ số 2 ở giữa và nhớ 1 sang bên trái: 5 thêm 1 thành 6. Được 627."
+    "show": "Khi ấy để lại chữ số 2 ở giữa và nhớ 1 sang bên trái: 5 thêm 1 thành 6. Được 627.",
+    "phan": "giai"
    },
    {
-    "show": "Kiểm bằng cách chắc chắn: 570 + 57 = 627 — khớp."
+    "show": "Kiểm bằng cách chắc chắn: $570 + 57 = 627$ — khớp.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 385 và 627."
+    "show": "Đáp số: 385 và 627.",
+    "phan": "dapso"
    }
   ]
  },
@@ -89,11 +99,11 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tính 35 × 10.",
+     "text": "Tính $35  \\times  10$.",
      "answerKey": {
       "value": 350
      },
-     "solutionNarrative": "Thêm một chữ số 0: 35 × 10 = 350.",
+     "solutionNarrative": "Thêm một chữ số 0: $35  \\times  10 = 350$.",
      "hints": [
       "Nhân mười thì thêm một chữ số không vào bên phải.",
       "Con chép số cũ rồi viết thêm chữ số không vào sau."
@@ -101,11 +111,11 @@
     },
     {
      "id": "C2",
-     "text": "Tính 350 + 35.",
+     "text": "Tính $350 + 35$.",
      "answerKey": {
       "value": 385
      },
-     "solutionNarrative": "Cộng lại: 350 + 35 = 385.",
+     "solutionNarrative": "Cộng lại: $350 + 35 = 385$.",
      "hints": [
       "Con đặt tính rồi cộng.",
       "Cộng số vừa nhân mười với chính số ban đầu."
@@ -113,7 +123,7 @@
     },
     {
      "id": "C3",
-     "text": "Vậy 35 × 11 bằng bao nhiêu?",
+     "text": "Vậy $35  \\times  11$ bằng bao nhiêu?",
      "answerKey": {
       "value": 385
      },
@@ -127,7 +137,7 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Tính nhanh 24 × 11.",
+     "text": "Tính nhanh $24  \\times  11$.",
      "answerKey": {
       "value": 264
      },
@@ -139,11 +149,11 @@
     },
     {
      "id": "C5",
-     "text": "Dùng mẹo hai đầu cho 35 × 11: viết 3 và 5 ra hai bên, ở giữa là số nào?",
+     "text": "Dùng mẹo hai đầu cho $35  \\times  11$: viết 3 và 5 ra hai bên, ở giữa là số nào?",
      "answerKey": {
       "value": 8
      },
-     "solutionNarrative": "Ở giữa là tổng hai chữ số: 3 + 5 = 8.",
+     "solutionNarrative": "Ở giữa là tổng hai chữ số: $3 + 5 = 8$.",
      "hints": [
       "Mẹo hai đầu nhét tổng hai chữ số vào chỗ giữa.",
       "Con cộng hai chữ số của số ban đầu lại."
@@ -151,7 +161,7 @@
     },
     {
      "id": "C6",
-     "text": "Tính nhanh 62 × 11.",
+     "text": "Tính nhanh $62  \\times  11$.",
      "answerKey": {
       "value": 682
      },
@@ -163,7 +173,7 @@
     },
     {
      "id": "C7",
-     "text": "Tính nhanh 57 × 11.",
+     "text": "Tính nhanh $57  \\times  11$.",
      "answerKey": {
       "value": 627
      },
@@ -177,7 +187,7 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Với 57 × 11, tổng hai chữ số là 12 — hai chữ số mà chỗ giữa chỉ chứa được một. Phải làm gì?",
+     "text": "Với $57  \\times  11$, tổng hai chữ số là 12 — hai chữ số mà chỗ giữa chỉ chứa được một. Phải làm gì?",
      "answerKey": {
       "parts": [
        {
@@ -198,7 +208,7 @@
     },
     {
      "id": "C9",
-     "text": "Tính nhanh 11 × 11.",
+     "text": "Tính nhanh $11  \\times  11$.",
      "answerKey": {
       "value": 121
      },
@@ -225,7 +235,7 @@
    },
    {
     "id": "Q2",
-    "text": "Tính 35 × 11.",
+    "text": "Tính $35  \\times  11$.",
     "format": "mcq",
     "choices": [
      "385",
@@ -249,7 +259,7 @@
    },
    {
     "id": "Q4",
-    "text": "Tính 57 × 11.",
+    "text": "Tính $57  \\times  11$.",
     "format": "mcq",
     "choices": [
      "627",

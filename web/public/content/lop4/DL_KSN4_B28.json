@@ -53,37 +53,44 @@
   "problem": "Hai số có tổng bằng 70 và tỉ số là 2 trên 5. Tìm hai số.",
   "steps": [
    {
-    "show": "Vẽ sơ đồ"
+    "show": "Vẽ sơ đồ",
+    "phan": "giai"
    },
    {
-    "show": "Đoạn ngắn 2 phần, đoạn dài 5 phần, các phần bằng nhau. Ngoặc ngoài ghi 70."
+    "show": "Đoạn ngắn 2 phần, đoạn dài 5 phần, các phần bằng nhau. Ngoặc ngoài ghi 70.",
+    "phan": "giai"
    },
    {
-    "show": "Đếm tổng số phần"
+    "show": "Đếm tổng số phần",
+    "phan": "giai"
    },
    {
-    "show": "2 + 5 = 7 phần. Cả 7 phần ấy gộp lại đúng bằng 70."
+    "show": "$2 + 5 = 7$ phần. Cả 7 phần ấy gộp lại đúng bằng 70.",
+    "phan": "giai"
    },
    {
-    "show": "Tìm một phần"
+    "show": "Tìm một phần",
+    "phan": "giai"
    },
    {
-    "show": "7 phần là 70, nên một phần là 70 : 7 = 10."
+    "show": "7 phần là 70, nên một phần là $70 : 7 = 10$.",
+    "phan": "giai"
    },
    {
-    "show": "Suy ra hai số"
+    "show": "Suy ra hai số",
+    "phan": "giai"
    },
    {
-    "show": "Số bé có 2 phần: 2 × 10 = 20. Số lớn có 5 phần: 5 × 10 = 50."
+    "show": "Số bé có 2 phần: $2  \\times  10 = 20$. Số lớn có 5 phần: $5  \\times  10 = 50$.",
+    "phan": "giai"
    },
    {
-    "show": "Thử lại"
+    "show": "$20 + 50 = 70$, đúng bằng tổng. Và 20 so với 50 đúng là 2 so với 5.",
+    "phan": "thulai"
    },
    {
-    "show": "20 + 50 = 70, đúng bằng tổng. Và 20 so với 50 đúng là 2 so với 5."
-   },
-   {
-    "show": "Đáp số: hai số là 20 và 50."
+    "show": "Đáp số: hai số là 20 và 50.",
+    "phan": "dapso"
    }
   ]
  },
@@ -92,11 +99,11 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Hai số có tổng 70 và tỉ số 2 : 5 — đúng bài trong video. Cả thảy có mấy phần?",
+     "text": "Hai số có tổng 70 và tỉ số $2 : 5$ — đúng bài trong video. Cả thảy có mấy phần?",
      "answerKey": {
       "value": 7
      },
-     "solutionNarrative": "2 + 5 = 7 phần.",
+     "solutionNarrative": "$2 + 5 = 7$ phần.",
      "hints": [
       "Vẽ sơ đồ phần: các ô phải bằng nhau tăm tắp.",
       "Đếm TỔNG SỐ PHẦN rồi mới chia."
@@ -108,7 +115,7 @@
      "answerKey": {
       "value": 10
      },
-     "solutionNarrative": "7 phần là 70, nên một phần = 70 : 7 = 10.",
+     "solutionNarrative": "7 phần là 70, nên một phần = $70 : 7 = 10$.",
      "hints": [
       "Tổng số phần là bao nhiêu?",
       "Chia tổng cho tổng số phần ra giá trị MỘT phần."
@@ -129,7 +136,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số bé = 2 × 10 = 20; số lớn = 5 × 10 = 50.",
+     "solutionNarrative": "Số bé = $2  \\times  10 = 20$; số lớn = $5  \\times  10 = 50$.",
      "hints": [
       "Vẽ sơ đồ rồi đếm số ô.",
       "Một phần đáng bao nhiêu, rồi nhân lên từng bên."
@@ -139,7 +146,7 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Chia 20 viên kẹo cho hai bạn theo tỉ số 1 : 3. Mỗi bạn được mấy viên?",
+     "text": "Chia 20 viên kẹo cho hai bạn theo tỉ số $1 : 3$. Mỗi bạn được mấy viên?",
      "answerKey": {
       "parts": [
        {
@@ -152,7 +159,7 @@
        }
       ]
      },
-     "solutionNarrative": "Cả thảy 1 + 3 = 4 phần. Một phần = 20 : 4 = 5. Bạn thứ nhất 5 viên, bạn thứ hai 15 viên.",
+     "solutionNarrative": "Cả thảy $1 + 3 = 4$ phần. Một phần = $20 : 4 = 5$. Bạn thứ nhất 5 viên, bạn thứ hai 15 viên.",
      "hints": [
       "Đừng chia cho con số trong tỉ — chia cho TỔNG SỐ PHẦN.",
       "Tìm một phần rồi nhân lên từng loại."
@@ -181,7 +188,7 @@
     },
     {
      "id": "C6",
-     "text": "Tìm hai số có tổng bằng 56 và tỉ số 3 : 5.",
+     "text": "Tìm hai số có tổng bằng 56 và tỉ số $3 : 5$.",
      "answerKey": {
       "parts": [
        {
@@ -194,7 +201,7 @@
        }
       ]
      },
-     "solutionNarrative": "Cả thảy 8 phần. Một phần = 56 : 8 = 7. Số bé = 21; số lớn = 35.",
+     "solutionNarrative": "Cả thảy 8 phần. Một phần = $56 : 8 = 7$. Số bé = 21; số lớn = 35.",
      "hints": [
       "Sĩ số lớp chính là cái tổng cần đem chia.",
       "Sĩ số chia tổng số phần ra một phần."
@@ -202,7 +209,7 @@
     },
     {
      "id": "C7",
-     "text": "Bình nước cam 30 lít pha theo tỉ lệ cốt cam trên nước lọc là 2 : 3. Mỗi thứ bao nhiêu lít?",
+     "text": "Bình nước cam 30 lít pha theo tỉ lệ cốt cam trên nước lọc là $2 : 3$. Mỗi thứ bao nhiêu lít?",
      "answerKey": {
       "parts": [
        {
@@ -215,7 +222,7 @@
        }
       ]
      },
-     "solutionNarrative": "Cả thảy 5 phần. Một phần = 30 : 5 = 6 lít. Cốt cam 12 lít, nước lọc 18 lít.",
+     "solutionNarrative": "Cả thảy 5 phần. Một phần = $30 : 5 = 6$ lít. Cốt cam 12 lít, nước lọc 18 lít.",
      "hints": [
       "Bốn ô cộng năm ô là mấy ô?",
       "Chia độ dài cho số ô ấy."
@@ -238,7 +245,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tỉ số 1 : 2, cả thảy 3 phần. Một phần = 45 : 3 = 15. Lớp A 15 cây, lớp B 30 cây.",
+     "solutionNarrative": "Tỉ số $1 : 2$, cả thảy 3 phần. Một phần = $45 : 3 = 15$. Lớp A 15 cây, lớp B 30 cây.",
      "hints": [
       "Tổng số phần trước, rồi mới tới một phần.",
       "Thử lại KÉP: cộng ra tổng, và soi cả tỉ."
@@ -259,7 +266,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tỉ số 1 : 6, cả thảy 7 phần. Một phần = 12. Số bé 12, số lớn 72. Thử: 12 + 72 = 84 và 72 gấp 6 lần 12.",
+     "solutionNarrative": "Tỉ số $1 : 6$, cả thảy 7 phần. Một phần = 12. Số bé 12, số lớn 72. Thử: $12 + 72 = 84$ và 72 gấp 6 lần 12.",
      "hints": [
       "Giải riêng từng lần chia rồi mới so.",
       "Đổi chỗ hai số trong tỉ thì hai phần ra sao?"
@@ -282,7 +289,7 @@
    },
    {
     "id": "Q2",
-    "text": "Tổng 70, tỉ số 2 : 5 thì lấy 70 chia 2 được số bé.",
+    "text": "Tổng 70, tỉ số $2 : 5$ thì lấy 70 chia 2 được số bé.",
     "format": "tf",
     "answerKey": {
      "value": false
@@ -291,7 +298,7 @@
    },
    {
     "id": "Q3",
-    "text": "Tổng 70, tỉ số 2 : 5. Một phần bằng:",
+    "text": "Tổng 70, tỉ số $2 : 5$. Một phần bằng:",
     "format": "mcq",
     "choices": [
      "A. 10",
@@ -301,11 +308,11 @@
     "answerKey": {
      "choice": "A. 10"
     },
-    "solutionNarrative": "70 : 7 = 10."
+    "solutionNarrative": "$70 : 7 = 10$."
    },
    {
     "id": "Q4",
-    "text": "Tổng 70, tỉ số 2 : 5. Số lớn bằng:",
+    "text": "Tổng 70, tỉ số $2 : 5$. Số lớn bằng:",
     "format": "mcq",
     "choices": [
      "A. 50",
@@ -315,11 +322,11 @@
     "answerKey": {
      "choice": "A. 50"
     },
-    "solutionNarrative": "5 phần × 10 = 50."
+    "solutionNarrative": "5 phần × $10 = 50$."
    },
    {
     "id": "Q5",
-    "text": "Chia 20 viên kẹo theo tỉ số 1 : 3 thì bạn nhiều được:",
+    "text": "Chia 20 viên kẹo theo tỉ số $1 : 3$ thì bạn nhiều được:",
     "format": "mcq",
     "choices": [
      "A. 15 viên",

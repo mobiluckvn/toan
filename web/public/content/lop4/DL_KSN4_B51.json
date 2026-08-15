@@ -53,34 +53,44 @@
   "problem": "Số 35 có chia hết cho 5 không? Vì sao chỉ cần nhìn chữ số cuối?",
   "steps": [
    {
-    "show": "Tách số ra hai phần"
+    "show": "Tách số ra hai phần",
+    "phan": "giai"
    },
    {
-    "show": "35 = 30 + 5. Phần tròn chục là 30, chữ số cuối là 5."
+    "show": "$35 = 30 + 5$. Phần tròn chục là 30, chữ số cuối là 5.",
+    "phan": "giai"
    },
    {
-    "show": "Xét phần tròn chục"
+    "show": "Xét phần tròn chục",
+    "phan": "giai"
    },
    {
-    "show": "30 = 3 × 10, mà 10 = 5 × 2, nên 30 luôn chia hết cho 5."
+    "show": "$30 = 3  \\times  10$, mà $10 = 5  \\times  2$, nên 30 luôn chia hết cho 5.",
+    "phan": "giai"
    },
    {
-    "show": "Mọi số tròn chục đều chia hết cho 5, nên phần này không làm thừa."
+    "show": "Mọi số tròn chục đều chia hết cho 5, nên phần này không làm thừa.",
+    "phan": "giai"
    },
    {
-    "show": "Vậy chỉ còn chữ số cuối quyết định"
+    "show": "Vậy chỉ còn chữ số cuối quyết định",
+    "phan": "giai"
    },
    {
-    "show": "Chữ số cuối là 5, mà 5 chia hết cho 5, nên 35 chia hết cho 5."
+    "show": "Chữ số cuối là 5, mà 5 chia hết cho 5, nên 35 chia hết cho 5.",
+    "phan": "giai"
    },
    {
-    "show": "Thử với số neo của chương"
+    "show": "Thử với số neo của chương",
+    "phan": "giai"
    },
    {
-    "show": "270 có chữ số cuối là 0, mà 0 chia hết cho 5, nên 270 chia hết cho 5."
+    "show": "270 có chữ số cuối là 0, mà 0 chia hết cho 5, nên 270 chia hết cho 5.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 35 chia hết cho 5. Chữ số cuối phải là 0 hoặc 5 thì số mới chia hết cho 5."
+    "show": "Đáp số: 35 chia hết cho 5. Chữ số cuối phải là 0 hoặc 5 thì số mới chia hết cho 5.",
+    "phan": "dapso"
    }
   ]
  },
@@ -217,7 +227,7 @@
        }
       ]
      },
-     "solutionNarrative": "Vì mọi số tròn chục đều là mấy lần 10, mà 10 = 5 × 2 nên 10 chia hết cho 5. Bao nhiêu lần 10 thì vẫn chia hết cho 5.",
+     "solutionNarrative": "Vì mọi số tròn chục đều là mấy lần 10, mà $10 = 5  \\times  2$ nên 10 chia hết cho 5. Bao nhiêu lần 10 thì vẫn chia hết cho 5.",
      "hints": [
       "Mọi số tròn chục đều là mấy lần mười.",
       "Mà mười tách được thành năm nhân với một số nữa."
@@ -269,7 +279,7 @@
      "answerKey": {
       "value": 18
      },
-     "solutionNarrative": "Các số đó là 10, 15, 20, 25, … , 95. Từ 10 đến 95 cách đều 5, có (95 − 10) : 5 + 1 = 18 số.",
+     "solutionNarrative": "Các số đó là 10, 15, 20, 25, … , 95. Từ 10 đến 95 cách đều 5, có ($95 - 10$) : $5 + 1 = 18$ số.",
      "hints": [
       "Kể ra số bé nhất và số lớn nhất có hai chữ số thoả luật.",
       "Chúng cách đều nhau năm đơn vị — dùng cách đếm số hạng của dãy cách đều."

@@ -32,9 +32,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn đếm dãy 5 ; 10 ; 15 ; ... ; 100 rồi nói: \"(100 − 5) : 5 = 19 số hạng.\"",
+    "wrong": "Có bạn đếm dãy 5 ; 10 ; 15 ; ... ; 100 rồi nói: \"($100 - 5$) : $5 = 19$ số hạng.\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con thử cách ấy trên dãy ngắn 5 ; 10 ; 15 xem: (15 − 5) : 5 = 2. Nhưng đếm tay thì rõ ràng có 3 số hạng mà? Gợi ý 2: Phép chia cho ra số lần cộng thêm. Con đã đếm chỗ đứng đầu tiên chưa? Chữa: phải cộng thêm một. Dãy có 19 + 1 = 20 số hạng."
+    "fix": "Gợi ý 1: Con thử cách ấy trên dãy ngắn 5 ; 10 ; 15 xem: ($15 - 5$) : $5 = 2$. Nhưng đếm tay thì rõ ràng có 3 số hạng mà? Gợi ý 2: Phép chia cho ra số lần cộng thêm. Con đã đếm chỗ đứng đầu tiên chưa? Chữa: phải cộng thêm một. Dãy có $19 + 1 = 20$ số hạng."
    }
   ]
  },
@@ -43,7 +43,7 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn đếm dãy 5 ; 10 ; 15 ; ... ; 100 rồi nói: \"(100 − 5) : 5 = 19 số hạng.\"",
+    "narration": "Có bạn đếm dãy 5 ; 10 ; 15 ; ... ; 100 rồi nói: \"($100 - 5$) : $5 = 19$ số hạng.\"",
     "teaches": []
    }
   ]
@@ -53,37 +53,48 @@
   "problem": "Dãy 5 ; 10 ; 15 ; ... ; 100 có bao nhiêu số hạng?",
   "steps": [
    {
-    "show": "Tìm khoảng cách"
+    "show": "Tìm khoảng cách",
+    "phan": "giai"
    },
    {
-    "show": "Lấy số sau trừ số trước: 10 − 5 = 5."
+    "show": "Lấy số sau trừ số trước: $10 - 5 = 5$.",
+    "phan": "giai"
    },
    {
-    "show": "Khoảng cách là 5."
+    "show": "Khoảng cách là 5.",
+    "phan": "giai"
    },
    {
-    "show": "Lấy số cuối trừ số đầu"
+    "show": "Lấy số cuối trừ số đầu",
+    "phan": "giai"
    },
    {
-    "show": "100 − 5 = 95."
+    "show": "$100 - 5 = 95$.",
+    "phan": "giai"
    },
    {
-    "show": "Chia cho khoảng cách"
+    "show": "Chia cho khoảng cách",
+    "phan": "giai"
    },
    {
-    "show": "95 : 5 = 19. Đây là số lần cộng thêm, chưa phải số số hạng."
+    "show": "$95 : 5 = 19$. Đây là số lần cộng thêm, chưa phải số số hạng.",
+    "phan": "giai"
    },
    {
-    "show": "Cộng thêm một cho chỗ đầu tiên"
+    "show": "Cộng thêm một cho chỗ đầu tiên",
+    "phan": "giai"
    },
    {
-    "show": "19 + 1 = 20 số hạng."
+    "show": "$19 + 1 = 20$ số hạng.",
+    "phan": "giai"
    },
    {
-    "show": "Soi lại trên dãy ngắn: 5 ; 10 ; 15 có (15 − 5) : 5 + 1 = 3, đếm tay cũng 3."
+    "show": "Soi lại trên dãy ngắn: 5 ; 10 ; 15 có ($15 - 5$) : $5 + 1 = 3$, đếm tay cũng 3.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: dãy có 20 số hạng."
+    "show": "Đáp số: dãy có 20 số hạng.",
+    "phan": "dapso"
    }
   ]
  },
@@ -96,7 +107,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "25 − 5 = 20.",
+     "solutionNarrative": "$25 - 5 = 20$.",
      "hints": [
       "Vẽ năm cây cột ra giấy.",
       "Rồi đếm số chỗ trống ở giữa chúng."
@@ -108,7 +119,7 @@
      "answerKey": {
       "value": 4
      },
-     "solutionNarrative": "20 : 5 = 4. Đây là số lần cộng thêm, chưa phải số số hạng.",
+     "solutionNarrative": "$20 : 5 = 4$. Đây là số lần cộng thêm, chưa phải số số hạng.",
      "hints": [
       "Cuối trừ đầu, rồi chia cho khoảng cách.",
       "Đừng quên còn chính số hạng đầu."
@@ -120,7 +131,7 @@
      "answerKey": {
       "value": 5
      },
-     "solutionNarrative": "4 + 1 = 5 số hạng. Đếm tay cũng ra 5.",
+     "solutionNarrative": "$4 + 1 = 5$ số hạng. Đếm tay cũng ra 5.",
      "hints": [
       "Khoảng cách là 5.",
       "Chia xong nhớ cộng thêm một."
@@ -134,7 +145,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "(100 − 5) : 5 + 1 = 19 + 1 = 20 số hạng.",
+     "solutionNarrative": "($100 - 5$) : $5 + 1 = 19 + 1 = 20$ số hạng.",
      "hints": [
       "Khoảng cách là 4.",
       "Phép chia cho ra số bước, chưa phải số chỗ."
@@ -146,7 +157,7 @@
      "answerKey": {
       "value": 50
      },
-     "solutionNarrative": "(100 − 2) : 2 + 1 = 49 + 1 = 50 số hạng.",
+     "solutionNarrative": "($100 - 2$) : $2 + 1 = 49 + 1 = 50$ số hạng.",
      "hints": [
       "Cột đầu tiên cắm ở mốc 0 mét.",
       "Số cột nhiều hơn số khoảng đúng một."
@@ -158,7 +169,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "(79 − 3) : 4 + 1 = 19 + 1 = 20 số hạng.",
+     "solutionNarrative": "($79 - 3$) : $4 + 1 = 19 + 1 = 20$ số hạng.",
      "hints": [
       "Hai trang liền nhau cách nhau 1.",
       "Nhớ tính cả trang đầu tiên."
@@ -170,7 +181,7 @@
      "answerKey": {
       "value": 9
      },
-     "solutionNarrative": "8 + 1 = 9 số hạng. Số chỗ luôn nhiều hơn số lần cộng đúng một.",
+     "solutionNarrative": "$8 + 1 = 9$ số hạng. Số chỗ luôn nhiều hơn số lần cộng đúng một.",
      "hints": [
       "Khoảng cách là 8.",
       "Chia xong cộng một."
@@ -184,7 +195,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "(99 − 4) : 5 + 1 = 19 + 1 = 20 số hạng. Soi trên dãy ngắn 4 ; 9 ; 14 : (14 − 4) : 5 + 1 = 3, đếm tay cũng 3.",
+     "solutionNarrative": "($99 - 4$) : $5 + 1 = 19 + 1 = 20$ số hạng. Soi trên dãy ngắn 4 ; 9 ; 14 : ($14 - 4$) : $5 + 1 = 3$, đếm tay cũng 3.",
      "hints": [
       "Làm như các câu trên.",
       "Rồi thử lại trên ba số đầu mà đếm tay."
@@ -196,7 +207,7 @@
      "answerKey": {
       "value": 102
      },
-     "solutionNarrative": "25 số hạng thì cộng thêm 24 lần: 6 + 4 × 24 = 6 + 96 = 102.",
+     "solutionNarrative": "25 số hạng thì cộng thêm 24 lần: $6 + 4  \\times  24 = 6 + 96 = 102$.",
      "hints": [
       "Đi ngược: 25 chỗ thì có mấy bước nhảy?",
       "Từ số đầu cộng thêm bấy nhiêu bước."
@@ -238,7 +249,7 @@
     "answerKey": {
      "choice": "A. 20"
     },
-    "solutionNarrative": "(100 − 5) : 5 + 1 = 20."
+    "solutionNarrative": "($100 - 5$) : $5 + 1 = 20$."
    },
    {
     "id": "Q4",
@@ -266,7 +277,7 @@
     "answerKey": {
      "choice": "A. 50"
     },
-    "solutionNarrative": "(100 − 2) : 2 + 1 = 50."
+    "solutionNarrative": "($100 - 2$) : $2 + 1 = 50$."
    }
   ]
  },

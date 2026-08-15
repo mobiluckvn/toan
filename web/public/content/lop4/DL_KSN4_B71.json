@@ -32,7 +32,7 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn thấy 15 rồi lấy luôn 15 : 4 để tìm một phần.",
+    "wrong": "Có bạn thấy 15 rồi lấy luôn $15 : 4$ để tìm một phần.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
     "fix": "Gợi ý 1: Số 15 trong đề là mấy phần, 3 phần hay 4 phần? Gợi ý 2: Là 3 phần thôi, vì đề nói ba phần tư. Chữa: phải chia cho TỬ SỐ là 3, không chia cho mẫu. Chia nhầm là tìm sai một phần, và cả bài sai theo."
    }
@@ -43,7 +43,7 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn thấy 15 rồi lấy luôn 15 : 4 để tìm một phần.",
+    "narration": "Có bạn thấy 15 rồi lấy luôn $15 : 4$ để tìm một phần.",
     "teaches": []
    }
   ]
@@ -53,31 +53,40 @@
   "problem": "Ba phần tư của một số bằng 15. Tìm số đó.",
   "steps": [
    {
-    "show": "So với bài hôm qua"
+    "show": "So với bài hôm qua",
+    "phan": "giai"
    },
    {
-    "show": "Hôm qua có số 20, tìm ra 15. Hôm nay có 15, tìm lại 20."
+    "show": "Hôm qua có số 20, tìm ra 15. Hôm nay có 15, tìm lại 20.",
+    "phan": "giai"
    },
    {
-    "show": "Bước một, tìm một phần"
+    "show": "Bước một, tìm một phần",
+    "phan": "giai"
    },
    {
-    "show": "15 chính là 3 phần. Vậy một phần là 15 : 3 = 5."
+    "show": "15 chính là 3 phần. Vậy một phần là $15 : 3 = 5$.",
+    "phan": "giai"
    },
    {
-    "show": "Bước hai, nhân cho đủ mẫu"
+    "show": "Bước hai, nhân cho đủ mẫu",
+    "phan": "giai"
    },
    {
-    "show": "Cả số gồm 4 phần, nên nó là 4 × 5 = 20."
+    "show": "Cả số gồm 4 phần, nên nó là $4  \\times  5 = 20$.",
+    "phan": "giai"
    },
    {
-    "show": "Thử lại bằng cách đi xuôi"
+    "show": "Thử lại bằng cách đi xuôi",
+    "phan": "giai"
    },
    {
-    "show": "Ba phần tư của 20: 20 : 4 = 5, rồi 3 × 5 = 15. Đúng bằng đề cho."
+    "show": "Ba phần tư của 20: $20 : 4 = 5$, rồi $3  \\times  5 = 15$. Đúng bằng đề cho.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: số cần tìm là 20."
+    "show": "Đáp số: số cần tìm là 20.",
+    "phan": "dapso"
    }
   ]
  },
@@ -102,7 +111,7 @@
      "answerKey": {
       "value": 5
      },
-     "solutionNarrative": "15 : 3 = 5.",
+     "solutionNarrative": "$15 : 3 = 5$.",
      "hints": [
       "Con số đề cho là của mấy phần, chia cho số phần ấy.",
       "Chia cho tử số, chứ đừng chia cho mẫu."
@@ -114,7 +123,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "Cả số gồm 4 phần: 4 × 5 = 20.",
+     "solutionNarrative": "Cả số gồm 4 phần: $4  \\times  5 = 20$.",
      "hints": [
       "Có giá trị một phần rồi thì nhân lên cho đủ cả số.",
       "Cả số gồm số phần bằng mẫu số."
@@ -124,7 +133,7 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Bạn Minh lấy 15 : 4 để tìm một phần. Bạn sai ở đâu?",
+     "text": "Bạn Minh lấy $15 : 4$ để tìm một phần. Bạn sai ở đâu?",
      "answerKey": {
       "parts": [
        {
@@ -154,7 +163,7 @@
        }
       ]
      },
-     "solutionNarrative": "Một phần: 18 : 2 = 9. Cả số: 5 × 9 = 45.",
+     "solutionNarrative": "Một phần: $18 : 2 = 9$. Cả số: $5  \\times  9 = 45$.",
      "hints": [
       "Chia con số đề cho cho tử số để ra một phần.",
       "Rồi nhân với mẫu số để ra cả số."
@@ -175,7 +184,7 @@
        }
       ]
      },
-     "solutionNarrative": "Một phần: 24 : 3 = 8. Cả lớp: 4 × 8 = 32 bạn.",
+     "solutionNarrative": "Một phần: $24 : 3 = 8$. Cả lớp: $4  \\times  8 = 32$ bạn.",
      "hints": [
       "Số bạn đề cho ứng với số phần ở trên gạch ngang.",
       "Chia ra một phần rồi nhân theo mẫu số."
@@ -227,7 +236,7 @@
        }
       ]
      },
-     "solutionNarrative": "Một phần: 36 : 3 = 12. Cả kho: 5 × 12 = 60 tấn. Thử: 60 : 5 = 12, rồi 3 × 12 = 36 tấn, đúng đề cho.",
+     "solutionNarrative": "Một phần: $36 : 3 = 12$. Cả kho: $5  \\times  12 = 60$ tấn. Thử: $60 : 5 = 12$, rồi $3  \\times  12 = 36$ tấn, đúng đề cho.",
      "hints": [
       "Số gạo đề cho ứng với số phần ở trên gạch ngang.",
       "Chia ra một phần rồi nhân theo mẫu số."
@@ -239,7 +248,7 @@
      "answerKey": {
       "value": 28
      },
-     "solutionNarrative": "Một phần đã là 7 con. Cả đàn 4 phần: 4 × 7 = 28 con.",
+     "solutionNarrative": "Một phần đã là 7 con. Cả đàn 4 phần: $4  \\times  7 = 28$ con.",
      "hints": [
       "Ở đây con số đề cho đã đúng bằng MỘT phần rồi.",
       "Chẳng phải chia nữa, chỉ việc nhân lên theo mẫu số."
@@ -262,7 +271,7 @@
    },
    {
     "id": "Q2",
-    "text": "Ba phần tư của một số bằng 15 thì số đó là 15 : 4.",
+    "text": "Ba phần tư của một số bằng 15 thì số đó là $15 : 4$.",
     "format": "tf",
     "answerKey": {
      "value": false
@@ -281,7 +290,7 @@
     "answerKey": {
      "choice": "A. 5"
     },
-    "solutionNarrative": "15 : 3 = 5."
+    "solutionNarrative": "$15 : 3 = 5$."
    },
    {
     "id": "Q4",
@@ -295,7 +304,7 @@
     "answerKey": {
      "choice": "A. 20"
     },
-    "solutionNarrative": "4 × 5 = 20."
+    "solutionNarrative": "$4  \\times  5 = 20$."
    },
    {
     "id": "Q5",

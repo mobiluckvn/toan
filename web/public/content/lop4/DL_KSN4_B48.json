@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn tính thời gian đuổi kịp bằng cách lấy khoảng cách chia cho TỔNG hai nhịp: 30 chia cho 70.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Hai xe đi cùng chiều hay ngược chiều? Xe đi trước có chạy về phía xe sau không? Gợi ý 2: Sau một giờ, xe buýt đi 40 mà xe đồ cũng đi thêm 30. Khoảng cách rút ngắn được đúng bao nhiêu? Chữa: đi cùng chiều thì xe trước cũng chạy đi, nên mỗi giờ chỉ khép được phần HƠN, tức hiệu 40 − 30 = 10. Thời gian là 30 : 10 = 3 giờ."
+    "fix": "Gợi ý 1: Hai xe đi cùng chiều hay ngược chiều? Xe đi trước có chạy về phía xe sau không? Gợi ý 2: Sau một giờ, xe buýt đi 40 mà xe đồ cũng đi thêm 30. Khoảng cách rút ngắn được đúng bao nhiêu? Chữa: đi cùng chiều thì xe trước cũng chạy đi, nên mỗi giờ chỉ khép được phần HƠN, tức hiệu $40 - 30 = 10$. Thời gian là $30 : 10 = 3$ giờ."
    }
   ]
  },
@@ -53,34 +53,44 @@
   "problem": "Xe chở đồ đi trước 30 ki-lô-mét, mỗi giờ đi 30 ki-lô-mét. Xe buýt đuổi theo cùng chiều, mỗi giờ đi 40 ki-lô-mét. Hỏi sau bao lâu xe buýt đuổi kịp?",
   "steps": [
    {
-    "show": "Lập bảng cho dễ thấy"
+    "show": "Lập bảng cho dễ thấy",
+    "phan": "giai"
    },
    {
-    "show": "Lúc xuất phát hai xe cách nhau 30 ki-lô-mét."
+    "show": "Lúc xuất phát hai xe cách nhau 30 ki-lô-mét.",
+    "phan": "giai"
    },
    {
-    "show": "Sau một giờ, xe buýt đi 40 còn xe đồ đi 30, nên khoảng cách còn 20."
+    "show": "Sau một giờ, xe buýt đi 40 còn xe đồ đi 30, nên khoảng cách còn 20.",
+    "phan": "giai"
    },
    {
-    "show": "Sau hai giờ còn 10. Sau ba giờ còn 0 — đuổi kịp."
+    "show": "Sau hai giờ còn 10. Sau ba giờ còn 0 — đuổi kịp.",
+    "phan": "giai"
    },
    {
-    "show": "Quy luật lộ ra"
+    "show": "Quy luật lộ ra",
+    "phan": "giai"
    },
    {
-    "show": "Mỗi giờ khoảng cách khép lại đúng 10 ki-lô-mét, mà 10 chính là 40 trừ 30 — hiệu hai nhịp chân."
+    "show": "Mỗi giờ khoảng cách khép lại đúng 10 ki-lô-mét, mà 10 chính là 40 trừ 30 — hiệu hai nhịp chân.",
+    "phan": "giai"
    },
    {
-    "show": "Nên thời gian đuổi kịp bằng khoảng cách ban đầu chia cho hiệu: 30 : 10 = 3 (giờ)."
+    "show": "Nên thời gian đuổi kịp bằng khoảng cách ban đầu chia cho hiệu: $30 : 10 = 3$ (giờ).",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: sau 3 giờ."
+    "show": "Đáp số: sau 3 giờ.",
+    "phan": "dapso"
    },
    {
-    "show": "Kiểm bằng hai cột quãng đường"
+    "show": "Kiểm bằng hai cột quãng đường",
+    "phan": "ghichu"
    },
    {
-    "show": "Lúc kịp, xe buýt đã đi 40 × 3 = 120. Xe đồ đi 30 × 3 = 90, cộng 30 đi trước là 120. Hai xe đứng đúng một chỗ."
+    "show": "Lúc kịp, xe buýt đã đi $40  \\times  3 = 120$. Xe đồ đi $30  \\times  3 = 90$, cộng 30 đi trước là 120. Hai xe đứng đúng một chỗ.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -93,7 +103,7 @@
      "answerKey": {
       "value": 10
      },
-     "solutionNarrative": "Lấy hiệu hai nhịp: 40 − 30 = 10 (km).",
+     "solutionNarrative": "Lấy hiệu hai nhịp: $40 - 30 = 10$ (km).",
      "hints": [
       "Người đi trước cũng đang chạy, nên xe sau chỉ rút được phần hơn.",
       "Con lấy con số của xe sau trừ con số của xe trước."
@@ -105,7 +115,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "Khép được 10 km nên còn 30 − 10 = 20 (km).",
+     "solutionNarrative": "Khép được 10 km nên còn $30 - 10 = 20$ (km).",
      "hints": [
       "Sau một giờ, khoảng cách bị rút mất đúng phần vừa tính ở câu trên.",
       "Con lấy khoảng cách ban đầu trừ đi phần ấy."
@@ -117,7 +127,7 @@
      "answerKey": {
       "value": 3
      },
-     "solutionNarrative": "Lấy khoảng cách chia hiệu: 30 : 10 = 3 (giờ).",
+     "solutionNarrative": "Lấy khoảng cách chia hiệu: $30 : 10 = 3$ (giờ).",
      "hints": [
       "Mỗi giờ rút được một phần như nhau, nên chia là ra số giờ.",
       "Lấy khoảng cách ban đầu chia cho phần rút mỗi giờ."
@@ -131,7 +141,7 @@
      "answerKey": {
       "value": 120
      },
-     "solutionNarrative": "Nhân lên: 40 × 3 = 120 (km).",
+     "solutionNarrative": "Nhân lên: $40  \\times  3 = 120$ (km).",
      "hints": [
       "Con nhân con số một giờ của xe buýt với số giờ vừa tìm được.",
       "Bốn mươi nhân ba thì được mấy?"
@@ -152,7 +162,7 @@
        }
       ]
      },
-     "solutionNarrative": "Xe đồ đi thêm 30 × 3 = 90 (km). Cộng phần đi trước: 90 + 30 = 120 (km) — đúng bằng xe buýt.",
+     "solutionNarrative": "Xe đồ đi thêm $30  \\times  3 = 90$ (km). Cộng phần đi trước: $90 + 30 = 120$ (km) — đúng bằng xe buýt.",
      "hints": [
       "Con nhân con số một giờ của xe đồ với số giờ.",
       "Rồi cộng thêm phần nó đã đi trước lúc chưa xuất phát."
@@ -164,7 +174,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "Hiệu hai nhịp: 50 − 40 = 10 (km). Thời gian: 60 : 10 = 6 (giờ).",
+     "solutionNarrative": "Hiệu hai nhịp: $50 - 40 = 10$ (km). Thời gian: $60 : 10 = 6$ (giờ).",
      "hints": [
       "Con tìm phần rút được mỗi giờ trước: lấy con số lớn trừ con số bé.",
       "Rồi lấy khoảng cách chia cho phần ấy."
@@ -176,7 +186,7 @@
      "answerKey": {
       "value": 2
      },
-     "solutionNarrative": "Hiệu hai nhịp: 45 − 33 = 12 (km). Thời gian: 24 : 12 = 2 (giờ).",
+     "solutionNarrative": "Hiệu hai nhịp: $45 - 33 = 12$ (km). Thời gian: $24 : 12 = 2$ (giờ).",
      "hints": [
       "Con tìm phần rút được mỗi giờ trước đã.",
       "Rồi lấy khoảng cách chia cho phần ấy."
@@ -211,7 +221,7 @@
      "answerKey": {
       "value": 45
      },
-     "solutionNarrative": "Mỗi giờ khép được 45 : 3 = 15 (km) — đó là hiệu hai nhịp. Nhịp xe trước: 60 − 15 = 45 (km mỗi giờ).",
+     "solutionNarrative": "Mỗi giờ khép được $45 : 3 = 15$ (km) — đó là hiệu hai nhịp. Nhịp xe trước: $60 - 15 = 45$ (km mỗi giờ).",
      "hints": [
       "Con tìm phần rút được mỗi giờ trước: lấy khoảng cách chia cho số giờ.",
       "Phần ấy là chỗ xe sau hơn xe trước, nên lấy con số xe sau trừ đi nó."

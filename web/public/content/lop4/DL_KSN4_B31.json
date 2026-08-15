@@ -32,7 +32,7 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn cộng 2 + 3 + 4 rồi quên, lấy 90 chia cho 3 vì có ba lớp.",
+    "wrong": "Có bạn cộng $2 + 3 + 4$ rồi quên, lấy 90 chia cho 3 vì có ba lớp.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
     "fix": "Gợi ý 1: Ba lớp nhưng cả thảy có mấy PHẦN? Gợi ý 2: Có 9 phần chứ không phải 3. Ba lớp nhận số phần khác nhau. Chữa: chia cho 9 phần, được một phần bằng 10. Chia cho 3 là chia đều, mà đề không nói chia đều."
    }
@@ -43,47 +43,54 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn cộng 2 + 3 + 4 rồi quên, lấy 90 chia cho 3 vì có ba lớp.",
+    "narration": "Có bạn cộng $2 + 3 + 4$ rồi quên, lấy 90 chia cho 3 vì có ba lớp.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Chia 90 quyển vở cho ba lớp theo tỉ số 2 : 3 : 4. Mỗi lớp được bao nhiêu quyển?",
+  "problem": "Chia 90 quyển vở cho ba lớp theo tỉ số $2 : 3 : 4$. Mỗi lớp được bao nhiêu quyển?",
   "steps": [
    {
-    "show": "Vẽ ba đoạn"
+    "show": "Vẽ ba đoạn",
+    "phan": "giai"
    },
    {
-    "show": "Đoạn thứ nhất 2 phần, đoạn thứ hai 3 phần, đoạn thứ ba 4 phần. Mọi phần bằng nhau."
+    "show": "Đoạn thứ nhất 2 phần, đoạn thứ hai 3 phần, đoạn thứ ba 4 phần. Mọi phần bằng nhau.",
+    "phan": "giai"
    },
    {
-    "show": "Đếm cả thảy mấy phần"
+    "show": "Đếm cả thảy mấy phần",
+    "phan": "giai"
    },
    {
-    "show": "2 + 3 + 4 = 9 phần. Cả 9 phần gộp lại đúng bằng 90 quyển."
+    "show": "$2 + 3 + 4 = 9$ phần. Cả 9 phần gộp lại đúng bằng 90 quyển.",
+    "phan": "giai"
    },
    {
-    "show": "Tìm một phần"
+    "show": "Tìm một phần",
+    "phan": "giai"
    },
    {
-    "show": "9 phần là 90, nên một phần là 90 : 9 = 10 quyển."
+    "show": "9 phần là 90, nên một phần là $90 : 9 = 10$ quyển.",
+    "phan": "giai"
    },
    {
-    "show": "Suy ra ba số"
+    "show": "Suy ra ba số",
+    "phan": "giai"
    },
    {
-    "show": "Lớp một: 2 × 10 = 20. Lớp hai: 3 × 10 = 30. Lớp ba: 4 × 10 = 40."
+    "show": "Lớp một: $2  \\times  10 = 20$. Lớp hai: $3  \\times  10 = 30$. Lớp ba: $4  \\times  10 = 40$.",
+    "phan": "giai"
    },
    {
-    "show": "Thử lại"
+    "show": "$20 + 30 + 40 = 90$, đúng bằng số vở ban đầu.",
+    "phan": "thulai"
    },
    {
-    "show": "20 + 30 + 40 = 90, đúng bằng số vở ban đầu."
-   },
-   {
-    "show": "Đáp số: ba lớp được 20, 30 và 40 quyển."
+    "show": "Đáp số: ba lớp được 20, 30 và 40 quyển.",
+    "phan": "dapso"
    }
   ]
  },
@@ -92,11 +99,11 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Chia 90 quyển vở theo tỉ số 2 : 3 : 4 — đúng bài trong video. Cả thảy có mấy phần?",
+     "text": "Chia 90 quyển vở theo tỉ số $2 : 3 : 4$ — đúng bài trong video. Cả thảy có mấy phần?",
      "answerKey": {
       "value": 9
      },
-     "solutionNarrative": "2 + 3 + 4 = 9 phần.",
+     "solutionNarrative": "$2 + 3 + 4 = 9$ phần.",
      "hints": [
       "Ba hàng, mà vẫn quy trình bốn bước.",
       "Cộng cả ba số của tỉ ra tổng số phần."
@@ -108,7 +115,7 @@
      "answerKey": {
       "value": 10
      },
-     "solutionNarrative": "90 : 9 = 10 quyển.",
+     "solutionNarrative": "$90 : 9 = 10$ quyển.",
      "hints": [
       "Cộng cả ba số của tỉ lại.",
       "Mỗi số trong tỉ là số ô của một hàng."
@@ -143,7 +150,7 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Chia 60 viên kẹo cho ba bạn theo tỉ số 1 : 2 : 3. Mỗi bạn được mấy viên?",
+     "text": "Chia 60 viên kẹo cho ba bạn theo tỉ số $1 : 2 : 3$. Mỗi bạn được mấy viên?",
      "answerKey": {
       "parts": [
        {
@@ -185,7 +192,7 @@
     },
     {
      "id": "C6",
-     "text": "Ba số có tổng 84 và tỉ số 1 : 2 : 4. Tìm ba số.",
+     "text": "Ba số có tổng 84 và tỉ số $1 : 2 : 4$. Tìm ba số.",
      "answerKey": {
       "parts": [
        {
@@ -210,7 +217,7 @@
     },
     {
      "id": "C7",
-     "text": "Ba lớp trồng 120 cây theo tỉ số 3 : 4 : 5. Lớp trồng nhiều nhất được bao nhiêu cây?",
+     "text": "Ba lớp trồng 120 cây theo tỉ số $3 : 4 : 5$. Lớp trồng nhiều nhất được bao nhiêu cây?",
      "answerKey": {
       "value": 50
      },
@@ -224,7 +231,7 @@
    "challenge": [
     {
      "id": "C8",
-     "text": "Chia 96 quyển sách cho ba tủ theo tỉ số 2 : 3 : 3. Mỗi tủ bao nhiêu quyển, và hai tủ sau có bằng nhau không?",
+     "text": "Chia 96 quyển sách cho ba tủ theo tỉ số $2 : 3 : 3$. Mỗi tủ bao nhiêu quyển, và hai tủ sau có bằng nhau không?",
      "answerKey": {
       "parts": [
        {
@@ -262,7 +269,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tỉ số 1 : 2 : 3, cả thảy 6 phần. Một phần = 15. Ba số là 15, 30 và 45.",
+     "solutionNarrative": "Tỉ số $1 : 2 : 3$, cả thảy 6 phần. Một phần = 15. Ba số là 15, 30 và 45.",
      "hints": [
       "Lấy bạn thứ nhất làm một phần chuẩn.",
       "Bạn thứ ba chiếm mấy phần — đếm cho khéo."
@@ -294,7 +301,7 @@
    },
    {
     "id": "Q3",
-    "text": "Tỉ số 2 : 3 : 4 thì cả thảy có:",
+    "text": "Tỉ số $2 : 3 : 4$ thì cả thảy có:",
     "format": "mcq",
     "choices": [
      "A. 9 phần",
@@ -304,11 +311,11 @@
     "answerKey": {
      "choice": "A. 9 phần"
     },
-    "solutionNarrative": "2 + 3 + 4 = 9."
+    "solutionNarrative": "$2 + 3 + 4 = 9$."
    },
    {
     "id": "Q4",
-    "text": "Chia 90 theo tỉ số 2 : 3 : 4 thì một phần bằng:",
+    "text": "Chia 90 theo tỉ số $2 : 3 : 4$ thì một phần bằng:",
     "format": "mcq",
     "choices": [
      "A. 10",
@@ -318,11 +325,11 @@
     "answerKey": {
      "choice": "A. 10"
     },
-    "solutionNarrative": "90 : 9 = 10."
+    "solutionNarrative": "$90 : 9 = 10$."
    },
    {
     "id": "Q5",
-    "text": "Chia 60 theo tỉ số 1 : 2 : 3 thì phần lớn nhất bằng:",
+    "text": "Chia 60 theo tỉ số $1 : 2 : 3$ thì phần lớn nhất bằng:",
     "format": "mcq",
     "choices": [
      "A. 30",

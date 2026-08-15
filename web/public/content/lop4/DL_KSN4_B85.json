@@ -53,31 +53,40 @@
   "problem": "Xoá chữ số hàng trăm của số 725, rồi xoá chữ số tận cùng của số 303. Mỗi lần số giảm bao nhiêu?",
   "steps": [
    {
-    "show": "Xoá ở đầu thì dễ"
+    "show": "Xoá ở đầu thì dễ",
+    "phan": "giai"
    },
    {
-    "show": "Xoá chữ số hàng trăm của 725 thì còn 25. Hai chữ số còn lại đứng nguyên chỗ cũ, không ai phải dịch đi đâu."
+    "show": "Xoá chữ số hàng trăm của 725 thì còn 25. Hai chữ số còn lại đứng nguyên chỗ cũ, không ai phải dịch đi đâu.",
+    "phan": "giai"
    },
    {
-    "show": "Nên số giảm đúng bằng giá trị của chữ số vừa bị cắt: 725 − 25 = 700."
+    "show": "Nên số giảm đúng bằng giá trị của chữ số vừa bị cắt: $725 - 25 = 700$.",
+    "phan": "giai"
    },
    {
-    "show": "Xoá ở đuôi thì khác"
+    "show": "Xoá ở đuôi thì khác",
+    "phan": "giai"
    },
    {
-    "show": "Xoá chữ số tận cùng của 303 thì còn 30. Lần này mọi chữ số còn lại đều tụt xuống một hàng."
+    "show": "Xoá chữ số tận cùng của 303 thì còn 30. Lần này mọi chữ số còn lại đều tụt xuống một hàng.",
+    "phan": "giai"
    },
    {
-    "show": "Số cũ bằng số mới nhân mười rồi cộng chữ số bị xoá: 30 nhân 10 được 300, cộng 3 được 303."
+    "show": "Số cũ bằng số mới nhân mười rồi cộng chữ số bị xoá: 30 nhân 10 được 300, cộng 3 được 303.",
+    "phan": "giai"
    },
    {
-    "show": "Số giảm: 303 − 30 = 273."
+    "show": "Số giảm: $303 - 30 = 273$.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: xoá ở đầu giảm 700, xoá ở đuôi giảm 273."
+    "show": "Đáp số: xoá ở đầu giảm 700, xoá ở đuôi giảm 273.",
+    "phan": "dapso"
    },
    {
-    "show": "Thử lại chiều ngược: 30 × 10 = 300, rồi 300 + 3 = 303 — về đúng số cũ."
+    "show": "Thử lại chiều ngược: $30  \\times  10 = 300$, rồi $300 + 3 = 303$ — về đúng số cũ.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -102,7 +111,7 @@
      "answerKey": {
       "value": 700
      },
-     "solutionNarrative": "Giảm đúng bằng giá trị chữ số bị cắt: 725 − 25 = 700.",
+     "solutionNarrative": "Giảm đúng bằng giá trị chữ số bị cắt: $725 - 25 = 700$.",
      "hints": [
       "Các chữ số còn lại đứng yên, nên chỉ mất đúng phần của chữ số bị cắt.",
       "Chữ số ấy đứng ở hàng trăm nên nó đáng bao nhiêu?"
@@ -128,7 +137,7 @@
      "answerKey": {
       "value": 273
      },
-     "solutionNarrative": "Lấy hiệu: 303 − 30 = 273.",
+     "solutionNarrative": "Lấy hiệu: $303 - 30 = 273$.",
      "hints": [
       "Con lấy số cũ trừ số mới.",
       "Trừ hai số ấy cho nhau là ra ngay phần mất đi."
@@ -140,7 +149,7 @@
      "answerKey": {
       "value": 6
      },
-     "solutionNarrative": "Số giảm bằng giá trị chữ số ấy ở hàng trăm, nên chữ số ấy là 600 : 100 = 6.",
+     "solutionNarrative": "Số giảm bằng giá trị chữ số ấy ở hàng trăm, nên chữ số ấy là $600 : 100 = 6$.",
      "hints": [
       "Chữ số bị cắt đứng ở hàng trăm, nên phần giảm bằng chính nó nhân một trăm.",
       "Nay biết phần giảm rồi, con chia cho một trăm."
@@ -164,7 +173,7 @@
      "answerKey": {
       "value": 4371
      },
-     "solutionNarrative": "Lấy hiệu: 4 856 − 485 = 4 371.",
+     "solutionNarrative": "Lấy hiệu: 4 $856 - 485 = 4$ 371.",
      "hints": [
       "Con lấy số cũ trừ số mới vừa tìm được ở câu trên.",
       "Đặt tính rồi trừ cho cẩn thận, số này hơi to."
@@ -187,7 +196,7 @@
        }
       ]
      },
-     "solutionNarrative": "Số cũ bằng số mới nhân mười cộng chữ số bị xoá, nên phần chênh gồm 9 lần số mới cộng chữ số ấy. Thử số mới 30: 30 × 9 = 270, cộng 3 được 273 — khớp. Số mới là 30, số cũ là 303.",
+     "solutionNarrative": "Số cũ bằng số mới nhân mười cộng chữ số bị xoá, nên phần chênh gồm 9 lần số mới cộng chữ số ấy. Thử số mới 30: $30  \\times  9 = 270$, cộng 3 được 273 — khớp. Số mới là 30, số cũ là 303.",
      "hints": [
       "Phần chênh gồm chín lần số mới, cộng thêm chữ số bị xoá.",
       "Con thử số mới là ba mươi xem: chín lần nó bằng bao nhiêu, còn thiếu mấy?"
@@ -199,7 +208,7 @@
      "answerKey": {
       "value": 10
      },
-     "solutionNarrative": "Còn lại 38, mà 38 × 10 = 380, nên số ấy giảm đi 10 lần.",
+     "solutionNarrative": "Còn lại 38, mà $38  \\times  10 = 380$, nên số ấy giảm đi 10 lần.",
      "hints": [
       "Chữ số bị xoá là số không, nên xoá xong nhân lại mười là về số cũ.",
       "Vậy số ấy nhẹ đi đúng mười lần."

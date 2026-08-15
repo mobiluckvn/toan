@@ -53,37 +53,48 @@
   "problem": "Nghĩ một số, nhân với 2, rồi cộng 10, rồi trừ 4 thì được 26. Tìm số đã nghĩ.",
   "steps": [
    {
-    "show": "Đi xuôi thì chịu"
+    "show": "Đi xuôi thì chịu",
+    "phan": "giai"
    },
    {
-    "show": "Vì chưa biết số ban đầu là bao nhiêu để mà nhân với 2."
+    "show": "Vì chưa biết số ban đầu là bao nhiêu để mà nhân với 2.",
+    "phan": "giai"
    },
    {
-    "show": "Nên đi lùi từ số cuối"
+    "show": "Nên đi lùi từ số cuối",
+    "phan": "giai"
    },
    {
-    "show": "Số cuối là 26. Bước cuối cùng là trừ 4, nên đi lùi phải cộng 4: 26 + 4 = 30."
+    "show": "Số cuối là 26. Bước cuối cùng là trừ 4, nên đi lùi phải cộng 4: $26 + 4 = 30$.",
+    "phan": "giai"
    },
    {
-    "show": "Lùi tiếp"
+    "show": "Lùi tiếp",
+    "phan": "giai"
    },
    {
-    "show": "Trước đó là cộng 10, nên đi lùi phải trừ 10: 30 − 10 = 20."
+    "show": "Trước đó là cộng 10, nên đi lùi phải trừ 10: $30 - 10 = 20$.",
+    "phan": "giai"
    },
    {
-    "show": "Lùi nốt bước đầu"
+    "show": "Lùi nốt bước đầu",
+    "phan": "giai"
    },
    {
-    "show": "Đầu tiên là nhân 2, nên đi lùi phải chia 2: 20 : 2 = 10."
+    "show": "Đầu tiên là nhân 2, nên đi lùi phải chia 2: $20 : 2 = 10$.",
+    "phan": "giai"
    },
    {
-    "show": "Thử lại bằng cách đi xuôi"
+    "show": "Thử lại bằng cách đi xuôi",
+    "phan": "giai"
    },
    {
-    "show": "Lấy 10 nhân 2 được 20, cộng 10 được 30, trừ 4 được 26. Đúng bằng đề cho."
+    "show": "Lấy 10 nhân 2 được 20, cộng 10 được 30, trừ 4 được 26. Đúng bằng đề cho.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: số đã nghĩ là 10."
+    "show": "Đáp số: số đã nghĩ là 10.",
+    "phan": "dapso"
    }
   ]
  },
@@ -96,7 +107,7 @@
      "answerKey": {
       "value": 30
      },
-     "solutionNarrative": "Đi lùi của trừ là cộng: 26 + 4 = 30.",
+     "solutionNarrative": "Đi lùi của trừ là cộng: $26 + 4 = 30$.",
      "hints": [
       "Vẽ băng chuyền xuôi trước, dù chưa tính được gì.",
       "Đảo phép cộng thành phép trừ."
@@ -108,7 +119,7 @@
      "answerKey": {
       "value": 20
      },
-     "solutionNarrative": "Đi lùi của cộng là trừ: 30 − 10 = 20.",
+     "solutionNarrative": "Đi lùi của cộng là trừ: $30 - 10 = 20$.",
      "hints": [
       "Đi lùi: trạm cuối cùng đảo trước.",
       "Trừ đảo thành cộng, rồi nhân đảo thành chia."
@@ -120,7 +131,7 @@
      "answerKey": {
       "value": 10
      },
-     "solutionNarrative": "Đi lùi của nhân là chia: 20 : 2 = 10.",
+     "solutionNarrative": "Đi lùi của nhân là chia: $20 : 2 = 10$.",
      "hints": [
       "Vẽ băng chuyền hai chiều rồi mới tính.",
       "Gỡ trạm cộng trước, trạm chia sau."
@@ -134,7 +145,7 @@
      "answerKey": {
       "value": 26
      },
-     "solutionNarrative": "10 × 2 = 20; 20 + 10 = 30; 30 − 4 = 26. Đúng bằng đề cho.",
+     "solutionNarrative": "$10  \\times  2 = 20$; $20 + 10 = 30$; $30 - 4 = 26$. Đúng bằng đề cho.",
      "hints": [
       "Bốn trạm — đi lùi đúng thứ tự ngược.",
       "Trạm cộng gỡ trước, rồi chia, rồi trừ, rồi nhân."
@@ -160,7 +171,7 @@
        }
       ]
      },
-     "solutionNarrative": "Đi lùi thì phải ĐỔI PHÉP. Trừ thành cộng, nên phải lấy 26 + 4 = 30.",
+     "solutionNarrative": "Đi lùi thì phải ĐỔI PHÉP. Trừ thành cộng, nên phải lấy $26 + 4 = 30$.",
      "hints": [
       "Gỡ việc xảy ra sau cùng trước.",
       "Trả lại phần tiêu thêm thì được nửa số tiền mang theo."
@@ -172,7 +183,7 @@
      "answerKey": {
       "value": 5
      },
-     "solutionNarrative": "Đi lùi: 30 : 3 = 10; 10 − 5 = 5. Số đã nghĩ là 5.",
+     "solutionNarrative": "Đi lùi: $30 : 3 = 10$; $10 - 5 = 5$. Số đã nghĩ là 5.",
      "hints": [
       "Đi lùi: bỏ phần được cho thêm ra đã.",
       "Con số ấy chính là NỬA số bi ban đầu."
@@ -194,7 +205,7 @@
        }
       ]
      },
-     "solutionNarrative": "Là phép nhân. Ví dụ đi xuôi chia 4 được 5 thì đi lùi lấy 5 × 4 = 20.",
+     "solutionNarrative": "Là phép nhân. Ví dụ đi xuôi chia 4 được 5 thì đi lùi lấy $5  \\times  4 = 20$.",
      "hints": [
       "Gỡ ngược: việc cho sau thì gỡ trước.",
       "Con số còn lại là nửa của phần còn sau lần cho đầu."
@@ -208,7 +219,7 @@
      "answerKey": {
       "value": 10
      },
-     "solutionNarrative": "Đi lùi: 12 × 2 = 24; 24 + 6 = 30; 30 : 3 = 10. Số cần tìm là 10.",
+     "solutionNarrative": "Đi lùi: $12  \\times  2 = 24$; $24 + 6 = 30$; $30 : 3 = 10$. Số cần tìm là 10.",
      "hints": [
       "Gấp đôi nghĩa là thêm đúng một phần bằng số cũ.",
       "Phần thêm ấy bị ăn hết — vậy nó bằng bao nhiêu?"
@@ -220,7 +231,7 @@
      "answerKey": {
       "value": 12
      },
-     "solutionNarrative": "Mẹ cho thêm gấp đôi số còn lại nghĩa là số còn lại được nhân 3. Đi lùi: 24 : 3 = 8; 8 + 4 = 12. Lúc đầu An có 12 cái kẹo.",
+     "solutionNarrative": "Mẹ cho thêm gấp đôi số còn lại nghĩa là số còn lại được nhân 3. Đi lùi: $24 : 3 = 8$; $8 + 4 = 12$. Lúc đầu An có 12 cái kẹo.",
      "hints": [
       "Đi ngược từ con số 0.",
       "Mỗi nhịp gỡ hai bước: cộng lại phí, rồi chia đôi."
@@ -276,7 +287,7 @@
     "answerKey": {
      "choice": "A. 30"
     },
-    "solutionNarrative": "26 + 4 = 30."
+    "solutionNarrative": "$26 + 4 = 30$."
    },
    {
     "id": "Q5",

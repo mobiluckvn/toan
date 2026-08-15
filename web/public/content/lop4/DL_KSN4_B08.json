@@ -53,34 +53,44 @@
   "problem": "Một ổ khoá có ba vòng, mỗi vòng chọn được một chữ số từ 1 đến 9. Hỏi có bao nhiêu mật khẩu?",
   "steps": [
    {
-    "show": "Kẻ ô cho từng hàng"
+    "show": "Kẻ ô cho từng hàng",
+    "phan": "giai"
    },
    {
-    "show": "Ba vòng thì kẻ ba ô. Mỗi ô ghi số cách chọn của vòng ấy: 9, rồi 9, rồi 9."
+    "show": "Ba vòng thì kẻ ba ô. Mỗi ô ghi số cách chọn của vòng ấy: 9, rồi 9, rồi 9.",
+    "phan": "giai"
    },
    {
-    "show": "Vì sao lại nhân"
+    "show": "Vì sao lại nhân",
+    "phan": "giai"
    },
    {
-    "show": "Mỗi cách của vòng một ghép được với đủ chín cách của vòng hai, rồi mỗi cặp ấy lại ghép được với đủ chín cách của vòng ba."
+    "show": "Mỗi cách của vòng một ghép được với đủ chín cách của vòng hai, rồi mỗi cặp ấy lại ghép được với đủ chín cách của vòng ba.",
+    "phan": "giai"
    },
    {
-    "show": "Nên nhân dồn: 9 × 9 × 9 = 729."
+    "show": "Nên nhân dồn: $9  \\times  9  \\times  9 = 729$.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 729 mật khẩu."
+    "show": "Đáp số: 729 mật khẩu.",
+    "phan": "dapso"
    },
    {
-    "show": "Kiểm bằng người quen"
+    "show": "Kiểm bằng người quen",
+    "phan": "ghichu"
    },
    {
-    "show": "Đếm mọi số có ba chữ số cũng một lối ấy: hàng trăm 9 cách vì không được là 0, hàng chục 10 cách, hàng đơn vị 10 cách. Được 9 × 10 × 10 = 900 — đúng bằng số các số có ba chữ số."
+    "show": "Đếm mọi số có ba chữ số cũng một lối ấy: hàng trăm 9 cách vì không được là 0, hàng chục 10 cách, hàng đơn vị 10 cách. Được $9  \\times  10  \\times  10 = 900$ — đúng bằng số các số có ba chữ số.",
+    "phan": "ghichu"
    },
    {
-    "show": "Thêm điều kiện thì sao"
+    "show": "Thêm điều kiện thì sao",
+    "phan": "ghichu"
    },
    {
-    "show": "Mật khẩu không chứa 0 mà lại là số chẵn thì chỉ hàng đơn vị bị siết, chỉ còn chọn được 2, 4, 6 hoặc 8, tức 4 cách. Kết quả: 9 × 9 × 4 = 324."
+    "show": "Mật khẩu không chứa 0 mà lại là số chẵn thì chỉ hàng đơn vị bị siết, chỉ còn chọn được 2, 4, 6 hoặc 8, tức 4 cách. Kết quả: $9  \\times  9  \\times  4 = 324$.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -93,7 +103,7 @@
      "answerKey": {
       "value": 729
      },
-     "solutionNarrative": "Nhân dồn ba ô: 9 × 9 × 9 = 729.",
+     "solutionNarrative": "Nhân dồn ba ô: $9  \\times  9  \\times  9 = 729$.",
      "hints": [
       "Con kẻ ba ô, mỗi ô ghi số cách chọn của một vòng.",
       "Rồi nhân dồn cả ba ô lại với nhau."
@@ -131,7 +141,7 @@
      "answerKey": {
       "value": 900
      },
-     "solutionNarrative": "Nhân dồn: 9 × 10 × 10 = 900.",
+     "solutionNarrative": "Nhân dồn: $9  \\times  10  \\times  10 = 900$.",
      "hints": [
       "Con kẻ ba ô rồi điền số cách của từng hàng, hàng đầu ít hơn hai hàng sau.",
       "Nhân dồn ba ô lại."
@@ -155,7 +165,7 @@
      "answerKey": {
       "value": 324
      },
-     "solutionNarrative": "Nhân dồn: 9 × 9 × 4 = 324.",
+     "solutionNarrative": "Nhân dồn: $9  \\times  9  \\times  4 = 324$.",
      "hints": [
       "Hai hàng đầu vẫn chín cách như cũ, chỉ hàng cuối bị siết.",
       "Nhân dồn ba ô lại."
@@ -167,7 +177,7 @@
      "answerKey": {
       "value": 81
      },
-     "solutionNarrative": "Nhân dồn hai ô: 9 × 9 = 81.",
+     "solutionNarrative": "Nhân dồn hai ô: $9  \\times  9 = 81$.",
      "hints": [
       "Hai vòng thì kẻ hai ô thôi.",
       "Nhân hai ô ấy với nhau."
@@ -194,7 +204,7 @@
        }
       ]
      },
-     "solutionNarrative": "Hàng chục 9 cách. Hàng đơn vị phải khác chữ số vừa chọn nên chỉ còn 8 cách. Tất cả: 9 × 8 = 72 số.",
+     "solutionNarrative": "Hàng chục 9 cách. Hàng đơn vị phải khác chữ số vừa chọn nên chỉ còn 8 cách. Tất cả: $9  \\times  8 = 72$ số.",
      "hints": [
       "Hàng đầu chọn thoải mái trong chín chữ số ấy.",
       "Hàng sau phải khác chữ số vừa chọn, nên bớt đi một cách."
@@ -206,7 +216,7 @@
      "answerKey": {
       "value": 6561
      },
-     "solutionNarrative": "Nhân dồn bốn ô: 9 × 9 × 9 × 9 = 6 561.",
+     "solutionNarrative": "Nhân dồn bốn ô: $9  \\times  9  \\times  9  \\times  9 = 6$ 561.",
      "hints": [
       "Bốn vòng thì kẻ bốn ô, mỗi ô chín cách.",
       "Nhân dồn cả bốn ô, hoặc lấy kết quả ba vòng nhân thêm chín."
@@ -240,7 +250,7 @@
     "answerKey": {
      "choice": "729"
     },
-    "solutionNarrative": "Nhân dồn 9 × 9 × 9."
+    "solutionNarrative": "Nhân dồn $9  \\times  9  \\times  9$."
    },
    {
     "id": "Q3",
@@ -264,7 +274,7 @@
     "answerKey": {
      "choice": "900"
     },
-    "solutionNarrative": "Nhân dồn 9 × 10 × 10."
+    "solutionNarrative": "Nhân dồn $9  \\times  10  \\times  10$."
    },
    {
     "id": "Q5",

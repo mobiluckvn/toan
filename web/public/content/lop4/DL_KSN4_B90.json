@@ -32,7 +32,7 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn tìm số chia trong bài 45 chia X được 6 dư 3, rồi làm luôn 45 : 6 và ra một số lẻ, đành làm tròn.",
+    "wrong": "Có bạn tìm số chia trong bài 45 chia X được 6 dư 3, rồi làm luôn $45 : 6$ và ra một số lẻ, đành làm tròn.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
     "fix": "Gợi ý 1: Trong 45 ấy có 3 đơn vị không chia được cho ai. Chúng có nên đem chia không? Gợi ý 2: Bớt phần dư ra trước thì còn bao nhiêu, và số ấy có chia hết không? Chữa: phải bớt số dư ra trước đã. Còn 42, chia cho 6 được đúng 7 — không phải làm tròn gì cả."
    }
@@ -43,7 +43,7 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn tìm số chia trong bài 45 chia X được 6 dư 3, rồi làm luôn 45 : 6 và ra một số lẻ, đành làm tròn.",
+    "narration": "Có bạn tìm số chia trong bài 45 chia X được 6 dư 3, rồi làm luôn $45 : 6$ và ra một số lẻ, đành làm tròn.",
     "teaches": []
    }
   ]
@@ -53,37 +53,48 @@
   "problem": "Tìm X trong hai bài: X chia 7 được 8 dư 3; và 45 chia X được 6 dư 3.",
   "steps": [
    {
-    "show": "Nhớ lại luật vàng"
+    "show": "Nhớ lại luật vàng",
+    "phan": "giai"
    },
    {
-    "show": "Số bị chia bằng số chia nhân thương, rồi cộng số dư. Nhớ câu ấy là làm được cả hai bài."
+    "show": "Số bị chia bằng số chia nhân thương, rồi cộng số dư. Nhớ câu ấy là làm được cả hai bài.",
+    "phan": "giai"
    },
    {
-    "show": "Bài thứ nhất: tìm số bị chia"
+    "show": "Bài thứ nhất: tìm số bị chia",
+    "phan": "giai"
    },
    {
-    "show": "Nhân trước: 7 × 8 = 56. Rồi cộng số dư: 56 + 3 = 59. Vậy X bằng 59."
+    "show": "Nhân trước: $7  \\times  8 = 56$. Rồi cộng số dư: $56 + 3 = 59$. Vậy X bằng 59.",
+    "phan": "giai"
    },
    {
-    "show": "Bài thứ hai: tìm số chia"
+    "show": "Bài thứ hai: tìm số chia",
+    "phan": "giai"
    },
    {
-    "show": "Lần này bớt số dư ra trước cho gọn: 45 − 3 = 42. Phần 42 ấy chia hết cho X."
+    "show": "Lần này bớt số dư ra trước cho gọn: $45 - 3 = 42$. Phần 42 ấy chia hết cho X.",
+    "phan": "giai"
    },
    {
-    "show": "Mà 42 chia X được 6, nên X bằng 42 : 6 = 7."
+    "show": "Mà 42 chia X được 6, nên X bằng $42 : 6 = 7$.",
+    "phan": "giai"
    },
    {
-    "show": "Kiểm điều kiện bắt buộc"
+    "show": "Kiểm điều kiện bắt buộc",
+    "phan": "giai"
    },
    {
-    "show": "Số dư phải bé hơn số chia. Ở đây dư 3 mà chia 7 — đúng luật."
+    "show": "Số dư phải bé hơn số chia. Ở đây dư 3 mà chia 7 — đúng luật.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 59 và 7."
+    "show": "Đáp số: 59 và 7.",
+    "phan": "dapso"
    },
    {
-    "show": "Thử lại phải khớp cả thương lẫn số dư, thiếu một là hỏng."
+    "show": "Thử lại phải khớp cả thương lẫn số dư, thiếu một là hỏng.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -96,7 +107,7 @@
      "answerKey": {
       "value": 56
      },
-     "solutionNarrative": "Lấy số chia nhân thương: 7 × 8 = 56.",
+     "solutionNarrative": "Lấy số chia nhân thương: $7  \\times  8 = 56$.",
      "hints": [
       "Phần chia hết bằng số chia nhân với thương.",
       "Con nhân bảy với tám."
@@ -108,7 +119,7 @@
      "answerKey": {
       "value": 59
      },
-     "solutionNarrative": "Cộng số dư vào: 56 + 3 = 59.",
+     "solutionNarrative": "Cộng số dư vào: $56 + 3 = 59$.",
      "hints": [
       "Có phần chia hết rồi, con cộng nốt phần dư vào.",
       "Cộng ba vào con số vừa tính ở câu trên."
@@ -129,7 +140,7 @@
        }
       ]
      },
-     "solutionNarrative": "Chia ra: 59 : 7 = 8 (dư 3) — khớp cả thương lẫn số dư.",
+     "solutionNarrative": "Chia ra: $59 : 7 = 8$ (dư 3) — khớp cả thương lẫn số dư.",
      "hints": [
       "Con đặt tính rồi chia thử.",
       "Chia xong nhớ nói cả phần còn thừa ra nữa."
@@ -143,7 +154,7 @@
      "answerKey": {
       "value": 49
      },
-     "solutionNarrative": "Nhân trước: 5 × 9 = 45. Cộng số dư: 45 + 4 = 49.",
+     "solutionNarrative": "Nhân trước: $5  \\times  9 = 45$. Cộng số dư: $45 + 4 = 49$.",
      "hints": [
       "Con nhân số chia với thương trước đã.",
       "Rồi cộng nốt phần dư vào."
@@ -155,7 +166,7 @@
      "answerKey": {
       "value": 42
      },
-     "solutionNarrative": "Bớt phần không chia được: 45 − 3 = 42.",
+     "solutionNarrative": "Bớt phần không chia được: $45 - 3 = 42$.",
      "hints": [
       "Phần dư ấy không chia được cho ai, con bớt nó ra khỏi số bị chia trước.",
       "Lấy bốn mươi lăm trừ đi ba."
@@ -167,7 +178,7 @@
      "answerKey": {
       "value": 7
      },
-     "solutionNarrative": "Phần 42 chia cho X được 6, nên X = 42 : 6 = 7.",
+     "solutionNarrative": "Phần 42 chia cho X được 6, nên X = $42 : 6 = 7$.",
      "hints": [
       "Phần vừa bớt xong chia hết cho X và được đúng thương đã cho.",
       "Con lấy phần ấy chia cho thương."
@@ -202,7 +213,7 @@
      "answerKey": {
       "value": 47
      },
-     "solutionNarrative": "Nhân trước: 6 × 7 = 42. Cộng số dư: 42 + 5 = 47.",
+     "solutionNarrative": "Nhân trước: $6  \\times  7 = 42$. Cộng số dư: $42 + 5 = 47$.",
      "hints": [
       "Đây là bài tìm số bị chia, con dựng lại nó từ số chia và thương.",
       "Rồi cộng nốt phần dư vào."
@@ -223,7 +234,7 @@
        }
       ]
      },
-     "solutionNarrative": "Bớt số dư: 58 − 2 = 56. Rồi X = 56 : 8 = 7.",
+     "solutionNarrative": "Bớt số dư: $58 - 2 = 56$. Rồi X = $56 : 8 = 7$.",
      "hints": [
       "Con bớt phần dư ra khỏi số bị chia trước đã.",
       "Phần còn lại chia cho thương là ra."

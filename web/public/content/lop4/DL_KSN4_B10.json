@@ -20,7 +20,7 @@
  },
  "objective": {
   "id": "O1",
-  "text": "Nói được dấu hiệu: tổng các chữ số chia hết cho 9 thì số đó chia hết cho 9. Giải thích được vì sao lại cộng các chữ số, dựa vào 10 = 9 + 1. Xét được một số bất kỳ có chia hết cho 9 hay không.",
+  "text": "Nói được dấu hiệu: tổng các chữ số chia hết cho 9 thì số đó chia hết cho 9. Giải thích được vì sao lại cộng các chữ số, dựa vào $10 = 9 + 1$. Xét được một số bất kỳ có chia hết cho 9 hay không.",
   "kidText": "Số 270 to thế mà cô biết ngay nó chia hết cho 9, không cần chia thử. Con xem video để biết cô nhìn vào đâu nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
@@ -34,7 +34,7 @@
    {
     "wrong": "Có bạn nhìn số 72 rồi nói: \"Số 72 không chia hết cho 9, vì chữ số cuối là 2 mà 2 không chia hết cho 9.\"",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Với số 9 thì con có nhìn chữ số cuối không, hay làm cách khác? Gợi ý 2: Con cộng TẤT CẢ các chữ số của 72 lại xem được bao nhiêu. Chữa: 7 + 2 = 9, mà 9 chia hết cho 9, nên 72 CHIA HẾT cho 9. Cách nhìn chữ số cuối chỉ dùng cho 2 và cho 5 thôi."
+    "fix": "Gợi ý 1: Với số 9 thì con có nhìn chữ số cuối không, hay làm cách khác? Gợi ý 2: Con cộng TẤT CẢ các chữ số của 72 lại xem được bao nhiêu. Chữa: $7 + 2 = 9$, mà 9 chia hết cho 9, nên 72 CHIA HẾT cho 9. Cách nhìn chữ số cuối chỉ dùng cho 2 và cho 5 thôi."
    }
   ]
  },
@@ -53,37 +53,48 @@
   "problem": "Số 270 có chia hết cho 9 không? Vì sao lại đi cộng các chữ số?",
   "steps": [
    {
-    "show": "Viết số ra theo hàng"
+    "show": "Viết số ra theo hàng",
+    "phan": "giai"
    },
    {
-    "show": "270 = 2 × 100 + 7 × 10 + 0."
+    "show": "$270 = 2  \\times  100 + 7  \\times  10 + 0$.",
+    "phan": "giai"
    },
    {
-    "show": "Tách 100 và 10 ra"
+    "show": "Tách 100 và 10 ra",
+    "phan": "giai"
    },
    {
-    "show": "100 = 99 + 1, và 10 = 9 + 1."
+    "show": "$100 = 99 + 1$, và $10 = 9 + 1$.",
+    "phan": "giai"
    },
    {
-    "show": "Nên 270 = 2 × 99 + 2 + 7 × 9 + 7 + 0."
+    "show": "Nên $270 = 2  \\times  99 + 2 + 7  \\times  9 + 7 + 0$.",
+    "phan": "giai"
    },
    {
-    "show": "Gom lại thành hai phần"
+    "show": "Gom lại thành hai phần",
+    "phan": "giai"
    },
    {
-    "show": "Phần một là 2 × 99 + 7 × 9 — phần này luôn chia hết cho 9, vì 9 và 99 đều chia hết cho 9."
+    "show": "Phần một là $2  \\times  99 + 7  \\times  9$ — phần này luôn chia hết cho 9, vì 9 và 99 đều chia hết cho 9.",
+    "phan": "giai"
    },
    {
-    "show": "Phần hai là 2 + 7 + 0 — đúng bằng tổng các chữ số."
+    "show": "Phần hai là $2 + 7 + 0$ — đúng bằng tổng các chữ số.",
+    "phan": "giai"
    },
    {
-    "show": "Vậy chỉ phần hai quyết định"
+    "show": "Vậy chỉ phần hai quyết định",
+    "phan": "giai"
    },
    {
-    "show": "2 + 7 + 0 = 9, mà 9 chia hết cho 9, nên 270 chia hết cho 9."
+    "show": "$2 + 7 + 0 = 9$, mà 9 chia hết cho 9, nên 270 chia hết cho 9.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: 270 chia hết cho 9. Ta cộng các chữ số vì phần còn lại của số đã chia hết cho 9 sẵn rồi, không bao giờ làm thừa."
+    "show": "Đáp số: 270 chia hết cho 9. Ta cộng các chữ số vì phần còn lại của số đã chia hết cho 9 sẵn rồi, không bao giờ làm thừa.",
+    "phan": "dapso"
    }
   ]
  },
@@ -109,7 +120,7 @@
        }
       ]
      },
-     "solutionNarrative": "2 + 7 + 0 = 9. Số 9 chia hết cho 9, nên 270 CHIA HẾT cho 9.",
+     "solutionNarrative": "$2 + 7 + 0 = 9$. Số 9 chia hết cho 9, nên 270 CHIA HẾT cho 9.",
      "hints": [
       "Họ TỔNG — cộng tất cả chữ số lại.",
       "Rồi soi tổng ấy với số 3."
@@ -134,7 +145,7 @@
        }
       ]
      },
-     "solutionNarrative": "7 + 2 = 9, chia hết cho 9, nên 72 CHIA HẾT cho 9.",
+     "solutionNarrative": "$7 + 2 = 9$, chia hết cho 9, nên 72 CHIA HẾT cho 9.",
      "hints": [
       "Vẫn cộng chữ số, nhưng lần này soi với số 9.",
       "Chia hết cho 3 chưa chắc đã chia hết cho 9."
@@ -159,7 +170,7 @@
        }
       ]
      },
-     "solutionNarrative": "4 + 3 = 7, mà 7 không chia hết cho 9, nên 43 KHÔNG chia hết cho 9.",
+     "solutionNarrative": "$4 + 3 = 7$, mà 7 không chia hết cho 9, nên 43 KHÔNG chia hết cho 9.",
      "hints": [
       "Cộng chữ số để biết có vừa khít không.",
       "Vừa khít rồi mới đặt phép chia tìm số hộp."
@@ -211,7 +222,7 @@
        }
       ]
      },
-     "solutionNarrative": "SAI. Với 9 phải cộng các chữ số: 6 + 3 = 9, chia hết cho 9. Vậy 63 CHIA HẾT cho 9.",
+     "solutionNarrative": "SAI. Với 9 phải cộng các chữ số: $6 + 3 = 9$, chia hết cho 9. Vậy 63 CHIA HẾT cho 9.",
      "hints": [
       "Cộng hai chữ số đã biết rồi thêm x vào.",
       "Tổng ấy chạy trong khoảng nào, và bội nào của 9 nằm trong đó?"
@@ -219,7 +230,7 @@
     },
     {
      "id": "C6",
-     "text": "Vì sao phần 2 × 99 + 7 × 9 trong cách tách số 270 luôn chia hết cho 9?",
+     "text": "Vì sao phần $2  \\times  99 + 7  \\times  9$ trong cách tách số 270 luôn chia hết cho 9?",
      "answerKey": {
       "parts": [
        {
@@ -228,7 +239,7 @@
        }
       ]
      },
-     "solutionNarrative": "Vì 9 chia hết cho 9 và 99 cũng chia hết cho 9 (99 = 9 × 11). Bao nhiêu lần 9 hay bao nhiêu lần 99 thì vẫn chia hết cho 9.",
+     "solutionNarrative": "Vì 9 chia hết cho 9 và 99 cũng chia hết cho 9 ($99 = 9  \\times  11$). Bao nhiêu lần 9 hay bao nhiêu lần 99 thì vẫn chia hết cho 9.",
      "hints": [
       "Chọn BỘ THẺ có tổng chia hết cho 3 trước đã.",
       "Mỗi bộ ba thẻ xếp được mấy số?"
@@ -249,7 +260,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng phải chia hết cho 9: 4 + ô + 5 = 9 + ô. Muốn chia hết cho 9 thì ô = 0 hoặc ô = 9. Vậy được 405 hoặc 495.",
+     "solutionNarrative": "Tổng phải chia hết cho 9: 4 + ô + $5 = 9$ + ô. Muốn chia hết cho 9 thì ô = 0 hoặc ô = 9. Vậy được 405 hoặc 495.",
      "hints": [
       "Hai dấu hiệu này soi HAI chữ số tận cùng.",
       "Cắt hai chữ số cuối ra mà xét riêng."
@@ -272,7 +283,7 @@
        }
       ]
      },
-     "solutionNarrative": "Tổng ba chữ số phải chia hết cho 9. Thử: 2 + 3 + 4 = 9 — được. Vậy viết 234 (hoặc 243, 324, 342, 423, 432).",
+     "solutionNarrative": "Tổng ba chữ số phải chia hết cho 9. Thử: $2 + 3 + 4 = 9$ — được. Vậy viết 234 (hoặc 243, 324, 342, 423, 432).",
      "hints": [
       "Dấu hiệu đuôi chốt y trước.",
       "Có y rồi mới dựng tổng chữ số để tìm x."
@@ -293,7 +304,7 @@
        }
       ]
      },
-     "solutionNarrative": "1 + 9 + 8 + 9 = 27, mà 27 chia hết cho 9, nên 1 989 chia hết cho 9. Thương là 1 989 : 9 = 221.",
+     "solutionNarrative": "$1 + 9 + 8 + 9 = 27$, mà 27 chia hết cho 9, nên 1 989 chia hết cho 9. Thương là 1 $989 : 9 = 221$.",
      "hints": [
       "Hàng 9 thì cộng chữ số lại mà soi.",
       "Hàng 6 phải ghép HAI dấu hiệu: một của đuôi, một của tổng."
@@ -321,7 +332,7 @@
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "SAI — 6 + 3 = 9 nên 63 chia hết cho 9. Nhìn chữ số cuối chỉ dùng cho 2 và 5."
+    "solutionNarrative": "SAI — $6 + 3 = 9$ nên 63 chia hết cho 9. Nhìn chữ số cuối chỉ dùng cho 2 và 5."
    },
    {
     "id": "Q3",
@@ -335,7 +346,7 @@
     "answerKey": {
      "choice": "A. 279"
     },
-    "solutionNarrative": "2 + 7 + 9 = 18, chia hết cho 9."
+    "solutionNarrative": "$2 + 7 + 9 = 18$, chia hết cho 9."
    },
    {
     "id": "Q4",
@@ -349,7 +360,7 @@
     "answerKey": {
      "choice": "A. 9"
     },
-    "solutionNarrative": "2 + 7 + 0 = 9."
+    "solutionNarrative": "$2 + 7 + 0 = 9$."
    },
    {
     "id": "Q5",
@@ -363,7 +374,7 @@
     "answerKey": {
      "choice": "A. Vì 10 hơn 9 đúng một đơn vị, nên mỗi chục để lại đúng một đơn vị"
     },
-    "solutionNarrative": "10 = 9 + 1 và 100 = 99 + 1, phần 9 và 99 đã chia hết cho 9 sẵn."
+    "solutionNarrative": "$10 = 9 + 1$ và $100 = 99 + 1$, phần 9 và 99 đã chia hết cho 9 sẵn."
    }
   ]
  },

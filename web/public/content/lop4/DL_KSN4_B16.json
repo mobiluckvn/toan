@@ -32,9 +32,9 @@
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Có bạn tính tổng 5 + 10 + 15 + 20 + 25 như sau: (5 + 25) × 5 = 150.",
+    "wrong": "Có bạn tính tổng $5 + 10 + 15 + 20 + 25$ như sau: ($5 + 25$) × $5 = 150$.",
     "signal": "Bé làm theo cách sai vừa nêu ở trên.",
-    "fix": "Gợi ý 1: Con thử cộng tay dãy ngắn 1 + 2 + 3 + 4 xem được bao nhiêu, rồi thử cách ấy: (1 + 4) × 4 = 20. Hai kết quả có khớp không? Gợi ý 2: Khi ghép cặp, mỗi số được cộng mấy lần? Vậy còn phải làm gì với kết quả? Chữa: còn thiếu phép chia đôi. Tổng = (5 + 25) × 5 : 2 = 75."
+    "fix": "Gợi ý 1: Con thử cộng tay dãy ngắn $1 + 2 + 3 + 4$ xem được bao nhiêu, rồi thử cách ấy: ($1 + 4$) × $4 = 20$. Hai kết quả có khớp không? Gợi ý 2: Khi ghép cặp, mỗi số được cộng mấy lần? Vậy còn phải làm gì với kết quả? Chữa: còn thiếu phép chia đôi. Tổng = ($5 + 25$) × $5 : 2 = 75$."
    }
   ]
  },
@@ -43,44 +43,54 @@
    {
     "id": "S1",
     "kind": "trap",
-    "narration": "Có bạn tính tổng 5 + 10 + 15 + 20 + 25 như sau: (5 + 25) × 5 = 150.",
+    "narration": "Có bạn tính tổng $5 + 10 + 15 + 20 + 25$ như sau: ($5 + 25$) × $5 = 150$.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Tính tổng 5 + 10 + 15 + 20 + 25.",
+  "problem": "Tính tổng $5 + 10 + 15 + 20 + 25$.",
   "steps": [
    {
-    "show": "Ghép đầu với cuối"
+    "show": "Ghép đầu với cuối",
+    "phan": "giai"
    },
    {
-    "show": "5 + 25 = 30 ; 10 + 20 = 30."
+    "show": "$5 + 25 = 30$ ; $10 + 20 = 30$.",
+    "phan": "giai"
    },
    {
-    "show": "Cặp nào cũng bằng 30, đúng bằng số đầu cộng số cuối."
+    "show": "Cặp nào cũng bằng 30, đúng bằng số đầu cộng số cuối.",
+    "phan": "giai"
    },
    {
-    "show": "Đếm số số hạng"
+    "show": "Đếm số số hạng",
+    "phan": "giai"
    },
    {
-    "show": "Dãy có 5 số hạng."
+    "show": "Dãy có 5 số hạng.",
+    "phan": "giai"
    },
    {
-    "show": "Tính"
+    "show": "Tính",
+    "phan": "giai"
    },
    {
-    "show": "Tổng = 30 × 5 : 2 = 150 : 2 = 75."
+    "show": "Tổng = $30  \\times  5 : 2 = 150 : 2 = 75$.",
+    "phan": "giai"
    },
    {
-    "show": "Chia đôi vì khi ghép cặp ta đã cộng mỗi số hai lần."
+    "show": "Chia đôi vì khi ghép cặp ta đã cộng mỗi số hai lần.",
+    "phan": "giai"
    },
    {
-    "show": "Soi lại bằng cách cộng tay: 5 + 10 + 15 + 20 + 25 = 75."
+    "show": "Soi lại bằng cách cộng tay: $5 + 10 + 15 + 20 + 25 = 75$.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: tổng bằng 75."
+    "show": "Đáp số: tổng bằng 75.",
+    "phan": "dapso"
    }
   ]
  },
@@ -93,7 +103,7 @@
      "answerKey": {
       "value": 30
      },
-     "solutionNarrative": "5 + 25 = 30.",
+     "solutionNarrative": "$5 + 25 = 30$.",
      "hints": [
       "Cộng lần lượt trước cho chắc.",
       "Rồi ghép số đầu với số cuối xem được mấy."
@@ -105,7 +115,7 @@
      "answerKey": {
       "value": 30
      },
-     "solutionNarrative": "10 + 20 = 30 — bằng đúng cặp đầu với cuối.",
+     "solutionNarrative": "$10 + 20 = 30$ — bằng đúng cặp đầu với cuối.",
      "hints": [
       "Ghép 1 với 10, 2 với 9…",
       "Mỗi cặp bằng nhau, và con đã cộng dãy hai lần."
@@ -117,7 +127,7 @@
      "answerKey": {
       "value": 75
      },
-     "solutionNarrative": "Tổng = 30 × 5 : 2 = 150 : 2 = 75.",
+     "solutionNarrative": "Tổng = $30  \\times  5 : 2 = 150 : 2 = 75$.",
      "hints": [
       "Đề đã cho sẵn số số hạng.",
       "Đầu cộng cuối, nhân lên, rồi chia đôi."
@@ -127,11 +137,11 @@
    "standard": [
     {
      "id": "C4",
-     "text": "Tính tổng 1 + 2 + 3 + ... + 10.",
+     "text": "Tính tổng $1 + 2 + 3$ + ... + 10.",
      "answerKey": {
       "value": 55
      },
-     "solutionNarrative": "(1 + 10) × 10 : 2 = 110 : 2 = 55.",
+     "solutionNarrative": "($1 + 10$) × $10 : 2 = 110 : 2 = 55$.",
      "hints": [
       "Có bao nhiêu số hạng từ 1 đến 50?",
       "Đầu cộng cuối rồi nhân, nhớ chia đôi."
@@ -139,11 +149,11 @@
     },
     {
      "id": "C5",
-     "text": "Tính tổng 1 + 2 + 3 + ... + 50.",
+     "text": "Tính tổng $1 + 2 + 3$ + ... + 50.",
      "answerKey": {
       "value": 1275
      },
-     "solutionNarrative": "(1 + 50) × 50 : 2 = 51 × 25 = 1 275.",
+     "solutionNarrative": "($1 + 50$) × $50 : 2 = 51  \\times  25 = 1$ 275.",
      "hints": [
       "Đếm số số hạng trước đã.",
       "Rồi mới ghép đầu với cuối."
@@ -151,11 +161,11 @@
     },
     {
      "id": "C6",
-     "text": "Tính tổng 5 + 10 + 15 + ... + 100.",
+     "text": "Tính tổng $5 + 10 + 15$ + ... + 100.",
      "answerKey": {
       "value": 1050
      },
-     "solutionNarrative": "Dãy có (100 − 5) : 5 + 1 = 20 số hạng. Tổng = (5 + 100) × 20 : 2 = 1 050.",
+     "solutionNarrative": "Dãy có ($100 - 5$) : $5 + 1 = 20$ số hạng. Tổng = ($5 + 100$) × $20 : 2 = 1$ 050.",
      "hints": [
       "Khoảng cách là 3.",
       "Đếm số số hạng trước, rồi ghép cặp."
@@ -163,11 +173,11 @@
     },
     {
      "id": "C7",
-     "text": "Tính tổng 3 + 6 + 9 + ... + 30.",
+     "text": "Tính tổng $3 + 6 + 9$ + ... + 30.",
      "answerKey": {
       "value": 165
      },
-     "solutionNarrative": "Dãy có (30 − 3) : 3 + 1 = 10 số hạng. Tổng = (3 + 30) × 10 : 2 = 165.",
+     "solutionNarrative": "Dãy có ($30 - 3$) : $3 + 1 = 10$ số hạng. Tổng = ($3 + 30$) × $10 : 2 = 165$.",
      "hints": [
       "Số chẵn đầu là 2, cuối là 100, cách nhau 2.",
       "Đếm trước, ghép sau."
@@ -181,7 +191,7 @@
      "answerKey": {
       "value": 2550
      },
-     "solutionNarrative": "Dãy có (100 − 2) : 2 + 1 = 50 số hạng. Tổng = (2 + 100) × 50 : 2 = 2 550.",
+     "solutionNarrative": "Dãy có ($100 - 2$) : $2 + 1 = 50$ số hạng. Tổng = ($2 + 100$) × $50 : 2 = 2$ 550.",
      "hints": [
       "Các số lẻ cách nhau 2.",
       "Tính xong thì so với phép nhân đề cho."
@@ -193,7 +203,7 @@
      "answerKey": {
       "value": 444
      },
-     "solutionNarrative": "Số hạng cuối = 4 + 6 × 11 = 70. Tổng = (4 + 70) × 12 : 2 = 74 × 6 = 444.",
+     "solutionNarrative": "Số hạng cuối = $4 + 6  \\times  11 = 70$. Tổng = ($4 + 70$) × $12 : 2 = 74  \\times  6 = 444$.",
      "hints": [
       "Phải tìm số hạng cuối trước đã.",
       "Có cuối rồi mới ghép được với đầu."
@@ -225,7 +235,7 @@
    },
    {
     "id": "Q3",
-    "text": "Tổng 1 + 2 + ... + 10 bằng:",
+    "text": "Tổng $1 + 2$ + ... + 10 bằng:",
     "format": "mcq",
     "choices": [
      "A. 55",
@@ -235,7 +245,7 @@
     "answerKey": {
      "choice": "A. 55"
     },
-    "solutionNarrative": "(1 + 10) × 10 : 2 = 55."
+    "solutionNarrative": "($1 + 10$) × $10 : 2 = 55$."
    },
    {
     "id": "Q4",
@@ -253,7 +263,7 @@
    },
    {
     "id": "Q5",
-    "text": "Tổng 5 + 10 + 15 + 20 + 25 bằng:",
+    "text": "Tổng $5 + 10 + 15 + 20 + 25$ bằng:",
     "format": "mcq",
     "choices": [
      "A. 75",
@@ -263,13 +273,13 @@
     "answerKey": {
      "choice": "A. 75"
     },
-    "solutionNarrative": "(5 + 25) × 5 : 2 = 75."
+    "solutionNarrative": "($5 + 25$) × $5 : 2 = 75$."
    }
   ]
  },
  "parentNote": {
   "onComplete": "Đố con cộng tất cả các số từ 1 đến 20 trong một phút. Ghép cặp thì làm được, cộng lần lượt thì không kịp.",
-  "homeActivity": "Bài đố vui: cộng các số lẻ 1 + 3 + 5 + ... + 19 rồi so với 10 × 10. Trùng nhau — con thử tìm xem vì sao.",
+  "homeActivity": "Bài đố vui: cộng các số lẻ $1 + 3 + 5$ + ... + 19 rồi so với $10  \\times  10$. Trùng nhau — con thử tìm xem vì sao.",
   "watchFor": ""
  },
  "figureSpec": [],

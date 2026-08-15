@@ -24,6 +24,7 @@ NGUON = os.path.join(GOC_KHO, 'data', 'lop2')
 NGUON_ON = os.path.join(GOC_KHO, 'data', 'lop2_ontap.json')
 RA_ON = os.path.join(GOC_KHO, 'web', 'public', 'content', 'reviews')
 RA = os.path.join(GOC_KHO, 'web', 'public', 'content', 'lop2')
+RA_VIDEO = os.path.join(GOC_KHO, 'web', 'public', 'content', 'toan', 'video')
 SO_DK = os.path.join(GOC_KHO, 'data', 'chuong_trinh.json')
 DAP_AN = os.path.join(GOC_KHO, 'data', 'lop2_dapan.json')
 RA_DK = os.path.join(GOC_KHO, 'web', 'public', 'content', 'chuong_trinh.json')
@@ -125,9 +126,30 @@ def _cau_luyen(duong):
 
 def main():
     os.makedirs(RA, exist_ok=True)
+    # ══ LỐI C — THỨ TỰ HỌC ĐỌC TỪ `thu_tu.json`, KHÔNG ĐỌC TRƯỜNG `so` ══
+    #
+    # Trước đây thứ tự lấy từ chính trường `so` trong tệp nguồn. Chèn một bài vào
+    # giữa là phải dồn mã của mọi bài phía sau — 353 tệp ở lớp 4, và còn phải dời
+    # TIẾN ĐỘ ĐÃ LƯU của từng bé cho khớp. Lối C cắt sợi dây ấy: mã bài chỉ còn là
+    # cái TÊN, số hiển thị đếm từ vị trí trong lời khai.
+    #
+    # ⚠ Bộ dựng ĐÈ `b['so']` theo vị trí. Trường `so` trong tệp nguồn KHÔNG còn là
+    # sự thật — đừng đọc nó. Xem `docs/ke_hoach_video_lop4.md` §10.
     teps = sorted(f for f in os.listdir(NGUON) if f.startswith('DL_KSN2_B'))
-    bais = [json.load(open(os.path.join(NGUON, t), encoding='utf-8')) for t in teps]
-    bais.sort(key=lambda b: b['so'])
+    thu_tu = json.load(open(os.path.join(NGUON, 'thu_tu.json'), encoding='utf-8'))['thuTu']
+    co_tep = {t[:-5].replace('DL_KSN2_', 'DL:KSN2.'): t for t in teps}
+    thieu_tep = [i for i in thu_tu if i not in co_tep]
+    thieu_khai = sorted(i for i in co_tep if i not in thu_tu)
+    if thieu_tep or thieu_khai:
+        raise SystemExit(
+            'thu_tu.json lệch với thư mục nguồn — DỪNG, chưa ghi gì cả.\n'
+            + (f'  khai mà không có tệp: {thieu_tep}\n' if thieu_tep else '')
+            + (f'  có tệp mà chưa khai: {thieu_khai}' if thieu_khai else ''))
+    bais = []
+    for vi_tri, ma in enumerate(thu_tu, 1):
+        b = json.load(open(os.path.join(NGUON, co_tep[ma]), encoding='utf-8'))
+        b['so'] = vi_tri
+        bais.append(b)
     ids = [b['id'] for b in bais]
 
     dap_an = json.load(open(DAP_AN, encoding='utf-8')) if os.path.exists(DAP_AN) else {}
@@ -137,7 +159,14 @@ def main():
         d = sang_khuon_chung(b, truoc=ids[k - 1] if k else None,
                              sau=ids[k + 1] if k + 1 < len(ids) else None,
                              dap_an=dap_an)
-        ten = b['id'].replace('DL:', 'DL_').replace('.', '_') + '.json'
+        # Bài nào đã dựng video thì khai vào đây — `StepView.jsx` đọc trường này
+        # cho MỌI quyển, không riêng lớp 4. Khai theo tệp CÓ THẬT chứ đừng gõ tay:
+        # gõ tay mà khai một bài chưa dựng thì màn hình hiện ô đen, còn dựng xong
+        # mà quên khai thì video nằm đó không ai xem. Cả hai đều im lặng.
+        ten_tep = b['id'].replace('DL:', 'DL_').replace('.', '_')
+        if os.path.exists(os.path.join(RA_VIDEO, f'{ten_tep}_giang.mp4')):
+            d['video'] = {'giang': f'{ten_tep}_giang.mp4'}
+        ten = ten_tep + '.json'
         with open(os.path.join(RA, ten), 'w', encoding='utf-8') as f:
             json.dump(d, f, ensure_ascii=False, indent=1)
         idx.append({
