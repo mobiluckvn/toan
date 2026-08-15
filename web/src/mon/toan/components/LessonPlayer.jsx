@@ -30,7 +30,7 @@ function PhaseBar({ current, co }) {
   );
 }
 
-export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, onMoveStep, onEvents, onMoBai }) {
+export default function LessonPlayer({ microId, onFinish, onExit, onGhiRoiThoat, resumeAt = 0, onMoveStep, onEvents, onMoBai }) {
   const [lesson, setLesson] = useState(null);
   const [err, setErr] = useState(null);
   const [i, setI] = useState(0);
@@ -112,12 +112,41 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
     if (k >= 0) setI(k);
   };
 
+  /* Kết quả bài + gói nhật ký gửi kèm. Tách ra vì có HAI đường ra khỏi màn kết, và
+     cả hai đều phải ghi được: nút "Micro tiếp theo ▶" ở chân trang, và nút ⌂ Thoát
+     ở đầu trang. */
+  const ketQua = () => [
+    gradeMicro(log.assess, lesson.assessment?.passRule || ''),
+    lesson,
+    /* attempts đi từ sổ THÔ (mọi lượt bấm, đủ bốn chặng); tóm tắt tiến độ vẫn đi từ
+       sổ tóm tắt để con số "làm đúng ngay lần đầu" không đổi nghĩa. */
+    { sessionId, events: log.raw, tomTat: [...log.practice, ...log.assess],
+      bktUnit: lesson.skills?.bktUnit || null },
+  ];
+
+  /**
+   * ⚠ THOÁT TỪ MÀN KẾT LÀ PHẢI GHI, KHÔNG ĐƯỢC ĐI KHÔNG.
+   *
+   * Lỗi đã xảy ra thật (soi bằng tay trên bản chạy 15-08): con làm sát hạch 5/5,
+   * màn kết hiện "Đạt rồi!", rồi con bấm ⌂ Thoát ở góc trên — nút to nhất, quen tay
+   * nhất — thay vì "Micro tiếp theo ▶" ở chân trang. `onExit` chỉ đổi màn, nên
+   * `recordMicro` KHÔNG chạy: không sao, không đạt, không mở khoá bài sau. Sổ chỉ
+   * còn dấu `saveSpot` ở bước 15/16, nên lần sau con mở lại bị thả vào ngay trước
+   * kỳ sát hạch và phải làm lại cả năm câu.
+   *
+   * Không cổng nào bắt được: hai bên đều đúng phần việc của mình, chỉ chỗ NỐI sai.
+   */
+  const thoat = () => {
+    if (step?.type === 'finale' && onGhiRoiThoat) onGhiRoiThoat(...ketQua());
+    else onExit?.();
+  };
+
   return (
     <div className={`flex flex-col min-h-[100dvh]${cachDoc(microId).chuTo ? ' doc-to' : ''}`}>
       <header className="sticky top-0 z-20 flex items-center gap-2.5 bg-navy px-3.5 py-2 text-white">
         {/* Nói rõ đây là THOÁT khỏi bài. Trước chỉ có mũi tên ← nên con bấm vào
             tưởng lùi một bước, hoá ra ra thẳng trang chủ. */}
-        <button onClick={onExit} aria-label="Thoát khỏi bài học"
+        <button onClick={thoat} aria-label="Thoát khỏi bài học"
                 className="rounded-full border border-white/40 px-2 py-0.5 text-[11px] font-bold leading-none">
           ⌂ Thoát
         </button>
@@ -147,13 +176,7 @@ export default function LessonPlayer({ microId, onFinish, onExit, resumeAt = 0, 
           figureSrc={figureSrc} chapter={chapterOf(microId)}
           log={log} onRecord={record} onNext={() => go(1)} onJump={jumpTo}
           onMoBai={onMoBai}
-          onFinish={() => onFinish?.(
-            gradeMicro(log.assess, lesson.assessment?.passRule || ''),
-            lesson,
-            /* attempts đi từ sổ THÔ (mọi lượt bấm, đủ bốn chặng); tóm tắt tiến độ
-               vẫn đi từ sổ tóm tắt để con số "làm đúng ngay lần đầu" không đổi nghĩa. */
-            { sessionId, events: log.raw, tomTat: [...log.practice, ...log.assess],
-              bktUnit: lesson.skills?.bktUnit || null })}
+          onFinish={() => onFinish?.(...ketQua())}
           onRestart={() => { setI(0); setLog({ practice: [], assess: [], raw: [] }); onMoveStep?.(microId, 0, flow.length); }}
         />
       </main>

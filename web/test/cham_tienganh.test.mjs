@@ -362,7 +362,22 @@ function diemDanh() {
 
    `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 0. Đã soát: `git diff` trên
    `src/mon/toan/lib/` và `src/chung/` trống trơn. */
-const MOC = { tong: 2978, dungKhiDungDap: 2976, dungKhiSaiDap: 0, tuDoiChieu: 0 };
+/* ⚠ 2978 → 2982. Không phải bài mới — khai ô nhập cho BỐN câu kỳ sát hạch lớp 2
+   vốn chấm máy được mà chưa ai khai:
+       ôn tập 4 · examA câu 1 và đề B câu 1 — đáp là MỘT CHỮ SỐ (cái đuôi);
+       ôn tập 8 · đề B câu 2 và câu 10   — đáp là giờ và số trên mặt đồng hồ.
+       2978 + 4 = 2982  ✓
+
+   Kỳ sát hạch lớp 2 nay examA 114/114 và đề B 82/84. Hai câu còn lại CỐ Ý để tự
+   chấm: "kể 2 đồ vật trong nhà" và "vẽ một bức tranh của riêng con" — đáp mở, máy
+   chấm là chấm oan.
+
+   Đề B không đi qua `KHAI_TAY_L2` nên phải thêm bảng `KHAI_DE_B_L2`; vá thẳng vào
+   `lop2_ontap_o.json` thì mất ở lần chạy `tach_ontap.py` sau.
+
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 0. Đã soát: `git diff` trên
+   `src/mon/toan/lib/` và `src/chung/` trống trơn. */
+const MOC = { tong: 2982, dungKhiDungDap: 2980, dungKhiSaiDap: 0, tuDoiChieu: 0 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

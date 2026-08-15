@@ -92,6 +92,10 @@ KHAI_TAY_L2 = {
                   'options': ['chia hết', 'còn thừa'], 'value': 'còn thừa'},
                  {'label': 'thừa mấy viên', 'value': 2}]}},
 
+    # Hai câu này chấm máy được mà chưa ai khai ô nhập — đáp là MỘT CHỮ SỐ (cái
+    # đuôi), chứ không phải câu chữ. Khai vào để kỳ ôn tập 4 chấm máy trọn vẹn.
+    (4, 1): {'khoa': {'parts': [{'label': 'bạn ấy có đuôi mấy', 'value': 3}]}},
+
     # ── chương 5 · Chuyện toán lời văn: sáu bài tách thành mười hai ──
     (5, 5): {'ve': 'DL:KSN2.B54'},    # mỗi bạn góp 5 quyển, 4 bạn — biết mỗi, hỏi tất cả
     (5, 7): {'ve': 'DL:KSN2.B56'},    # tổng 14 hơn nhau 2 — bài hai điều kiện
@@ -332,6 +336,26 @@ def _ten_ky(ten):
     return DOI_TEN_KY_L2.get(t, t)
 
 
+# Ô nhập khai TAY cho ĐỀ B. Khoá là (chương, mã câu).
+#
+# Đề B không đi qua `KHAI_TAY_L2` — nó lấy ô nhập từ `lop2_ontap_o.json`, mà tệp ấy
+# do `tach_ontap.py` dựng lại mỗi lần chạy. Vá thẳng vào đó là mất ở lần chạy sau,
+# đúng cái bẫy "bản dựng lại đè mất bản sửa tay" đã dính bốn lần.
+KHAI_DE_B_L2 = {
+    # Đáp là MỘT CHỮ SỐ (cái đuôi), chấm máy được, chỉ là chưa ai khai.
+    (4, 'B1'): {'parts': [{'label': 'đuôi mấy', 'value': 8}]},
+    # Hai câu đồng hồ: đáp là giờ và là chữ số trên mặt số, chấm máy được cả.
+    (8, 'B2'): {'parts': [{'label': 'mấy giờ',
+                           'options': ['6 giờ rưỡi', '6 giờ', '7 giờ'],
+                           'value': '6 giờ rưỡi'}]},
+    (8, 'B10'): {'parts': [{'label': 'kim phút chỉ số', 'value': 6},
+                           {'label': 'kim giờ nằm giữa số này', 'value': 9},
+                           {'label': 'và số này', 'value': 10}]},
+    # Hai câu còn lại của ôn tập 7 CỐ Ý để tự chấm: "kể 2 đồ vật trong nhà" và "vẽ
+    # một bức tranh của riêng con" — đáp mở, máy chấm là chấm oan.
+}
+
+
 def dung_on_tap(bai_cua_chuong, ten_bai):
     """8 ôn tập + 3 ải → kỳ sát hạch, đúng khuôn DCR_* của lớp 5.
 
@@ -422,8 +446,10 @@ def dung_on_tap(bai_cua_chuong, ten_bai):
                      'text': _bo_ten_vo(c['text']),
                      'answer': d['dapAnB'].get(c['id'], ''),
                      'solutionNarrative': d['dapAnB'].get(c['id'], ''),
-                     **({'answerKey': o_nhap[f"{ma}#{c['id']}"]}
-                        if o_nhap.get(f"{ma}#{c['id']}") else {})}
+                     **({'answerKey': KHAI_DE_B_L2.get((ch, c['id']))
+                                     or o_nhap[f"{ma}#{c['id']}"]}
+                        if (KHAI_DE_B_L2.get((ch, c['id']))
+                            or o_nhap.get(f"{ma}#{c['id']}")) else {})}
                     for c in cau_de_b(d)],
             'selfCheck': 'Sai câu nào, bấm vào câu đó để mở lại đúng bài cần ôn.',
             'hinh': hinh_ky.get(f'C{ch}', []),

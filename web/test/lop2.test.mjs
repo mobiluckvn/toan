@@ -122,7 +122,17 @@ const hinhTrongBai = bai.flatMap((b) =>
   Object.entries(b.muc).flatMap(([mk, m]) => (m.hinh || []).map((h) => [b, mk, m, h])));
 const hinhChung = chung.flatMap((d) => d.figureSpec || []);
 
-t(`hình đã gắn vào bài (${hinhTrongBai.length})`, hinhTrongBai.length > 0);
+/* ⚠ KHÔNG đòi "phải có ít nhất một hình trong bài" nữa.
+   Phép cũ là `hinhTrongBai.length > 0`, đặt ra để bắt cái bẫy "chạy lại bộ dựng xoá
+   sạch hình vừa gắn". Nhưng quyển lớp 2 nay 71 trên 71 bài dùng video, không còn
+   màn giảng nào để đặt hình — nên số đúng là 0, và phép cũ đỏ vì một chuyện HỢP LỆ.
+   Nới nó thành `>= 0` thì thành câu nói suông, không bắt được gì nữa.
+   Nên đổi cách hỏi: sổ hình khai bao nhiêu hình THUỘC BÀI thì trong bài phải có
+   đúng bấy nhiêu. Cả hai bằng 0 thì xanh; sổ khai 5 mà bài có 0 là đỏ ngay — đúng
+   cái bẫy cũ, mà không phạt quyển đã chuyển hết sang video. */
+const hinhCuaBai = Object.values(soTay).filter((h) => !h.onTap && !h.hoan);
+t(`sổ hình khai ${hinhCuaBai.length} hình thuộc bài, trong bài có `
+  + `${hinhTrongBai.length}`, hinhCuaBai.length === hinhTrongBai.length);
 t('hình sang bản khuôn chung KHÔNG rơi rớt', hinhChung.length === hinhTrongBai.length);
 /* Hình đã vẽ nhưng chưa có chỗ đặt (thuộc Ôn tập / ba ải chưa trích) phải khai báo
    rõ, không được im lặng biến mất giữa các bước của dây chuyền. */

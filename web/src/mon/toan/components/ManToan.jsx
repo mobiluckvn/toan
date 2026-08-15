@@ -120,6 +120,10 @@ export default function ManToan({
         onExit={() => setView(view.veLai || { page: 'home' })}
         onFinish={(grade, lesson, session) => finishMicro(baiId, grade, lesson, session,
                                                          view.veLai)}
+        /* Thoát TỪ MÀN KẾT: ghi y như bấm "Micro tiếp theo", nhưng đi về đúng chỗ
+           nút Thoát vẫn đưa tới, chứ không đẩy con sang bài kế. */
+        onGhiRoiThoat={(grade, lesson, session) => finishMicro(
+          baiId, grade, lesson, session, view.veLai || { page: 'home' })}
         /* Đường LÙI về quyển dưới. Đích thuộc quyển khác nên phải hỏi lại nhịp đọc
            của CHÍNH nó, đừng ghim cứng ở đây. `fromStart`: đi lùi là để luyện lại
            gốc, nên vào từ đầu bài — thả con vào giữa chỗ học dở của năm ngoái thì
