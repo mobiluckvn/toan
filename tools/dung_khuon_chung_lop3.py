@@ -52,7 +52,10 @@ LECH_AI = 8
 KHAI_SO = {
     'ma': 'lop3', 'mon': 'toan', 'lop': 3, 'loai': 'hoc',
     'ten': 'Toán Tư Duy lớp 3',
-    'phuDe': 'Cùng Su Kem và Su Bống ra khơi Vạn Số',
+    # ⚠ GHIM CỨNG Ở ĐÂY THÌ SỬA Ở `chuong_trinh.json` LÀ VÔ ÍCH — bộ này ghi đè lại
+    # mỗi lần chạy. Đã dính: `bo_nhan_vat_lop3.py` sửa phụ đề xong, chạy bộ dựng một
+    # phát là nhân vật quay về, mà bộ dọn vẫn báo "2 phụ đề đã đổi".
+    'phuDe': 'Nhân chia ra ngoài bảng, biểu thức, hình học và xem giờ',
     'doTuoi': 'Dành cho bé lớp 2 – lớp 3',
     'bieuTuong': '🧭', 'tienTo': 'DL:KSN3.', 'thuMuc': 'lop3',
     'soChuong': 8, 'trangThai': 'dangCo', 'donVi': 'bài',

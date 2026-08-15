@@ -135,6 +135,17 @@ def main():
         print(f'  ⚠ {c}')
     if len(canh_bao) > 20:
         print(f'  ⚠ …và {len(canh_bao) - 20} chỗ nữa')
+
+    # ── BỎ NHÂN VẬT · PHẢI CHẠY Ở ĐÂY, KHÔNG PHẢI CHẠY TAY MỘT LẦN ──
+    #
+    # Nguồn thô `lop3_tho.json` cố ý GIỮ NGUYÊN văn sách (còn đối chiếu được với
+    # sách giấy), nên mỗi lần bộ này dựng lại `data/lop3/*.json` là nhân vật quay
+    # về đủ 267 chỗ. Sửa tay một lần rồi thôi chính là cái bẫy "bản dựng lại đè mất
+    # bản sửa tay" đã dính bốn lần ở chỗ khác — nên móc thẳng vào đây.
+    print()
+    import bo_nhan_vat_lop3
+    bo_nhan_vat_lop3.main([])
+
     return 1 if canh_bao else 0
 
 

@@ -73,17 +73,26 @@ for (const q of quyen) {
   }
 }
 
-/* Đảo chiều: phép trên chỉ có nghĩa nếu nó THẬT SỰ đọc được nội dung bài. Lớp 3 và
-   lớp 5 đang giữ nhân vật, nên phải có ít nhất một lời hứa được soi và soi ra CÓ. */
-t(`có lời hứa nào để mà soi (${soSoi} lượt)`, soSoi > 0);
-const l3 = readdirSync(join(ND, 'lop3')).filter((f) => /^DL_/.test(f))
-  .map((f) => readFileSync(join(ND, 'lop3', f), 'utf8')).join('');
-t('(đối chứng) lớp 3 vẫn còn nhân vật thật trong bài', /Su Kem|Su Bống/.test(l3));
-const l2 = readdirSync(join(ND, 'lop2')).filter((f) => /^DL_/.test(f))
-  .map((f) => readFileSync(join(ND, 'lop2', f), 'utf8')).join('');
-t('(đối chứng) lớp 2 đã sạch nhân vật',
-  !NHAN_VAT.some((n) => l2.includes(n)));
+/* ── ĐẢO CHIỀU ──
+   ⚠ ĐỪNG đòi `soSoi > 0`. Bản đầu của phép này đòi thế, và ngày 16-08 nó ĐỎ OAN:
+   lớp 3 bỏ nhân vật xong thì không phụ đề nào còn hứa gì nữa — trạng thái tốt nhất
+   có thể — mà cổng lại báo hỏng. Phép nào đòi "phải còn ít nhất một chỗ có thể sai
+   để tôi soi" là phép tự phá mình đúng lúc việc dọn hoàn tất.
 
-console.log(`\n   ${quyen.length} quyển · ${soSoi} lời hứa được soi\n`);
+   Cái cần chứng minh là phép trên ĐỌC ĐƯỢC nội dung bài, không phải là còn lời hứa.
+   Chứng minh bằng lớp 5: quyển ấy vẫn giữ Su Kem · Su Bống. Đọc thư mục bài của nó
+   mà không thấy tên nào thì phép đọc hỏng, và mọi câu "đã sạch" ở trên là nói suông. */
+console.log(`   ${soSoi} phụ đề có gọi tên nhân vật — 0 là đúng nhất`);
+const l5 = readdirSync(join(ND, 'lessons')).filter((f) => /^DL_/.test(f))
+  .map((f) => readFileSync(join(ND, 'lessons', f), 'utf8')).join('');
+t('(đối chứng) phép đọc nội dung có chạy — lớp 5 vẫn còn nhân vật thật',
+  NHAN_VAT.some((n) => l5.includes(n)));
+for (const q of ['lop2', 'lop3', 'lop4']) {
+  const s = readdirSync(join(ND, q)).filter((f) => /^DL_/.test(f))
+    .map((f) => readFileSync(join(ND, q, f), 'utf8')).join('');
+  t(`(đối chứng) ${q} đã sạch nhân vật`, !NHAN_VAT.some((n) => s.includes(n)));
+}
+
+console.log(`\n   ${quyen.length} quyển soi xong\n`);
 console.log(`${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
