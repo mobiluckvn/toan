@@ -1,0 +1,267 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B69",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 67 · MỘT NỬA CỦA MỘT NHÓM ĐỒ VẬT",
+ "durationMinutes": 10,
+ "so": 67,
+ "chuong": 8,
+ "tenChuong": "Toán trong cuộc sống",
+ "dangGoc": "PS 1.1b — Tìm một nửa và một phần tư của một nhóm bằng phép chia.",
+ "skills": {
+  "bktUnit": "CHUONG:8@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 67,
+  "prev": "DL:KSN2.B31",
+  "next": "DL:KSN2.B32"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tìm được một nửa của một nhóm đồ vật. Tìm được một phần tư của một nhóm đồ vật. Biết nghe \"một nửa\" là chia hai, nghe \"một phần tư\" là chia bốn.",
+  "kidText": "Có 8 viên kẹo. Con đoán một nửa là mấy viên, một phần tư là mấy viên nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nghe \"một phần tư của 8 viên\" rồi lấy 8 trừ 4 được 4 viên.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Một phần tư nghĩa là chia thành mấy phần bằng nhau? Gợi ý 2: Chia đều thành các phần bằng nhau là việc của phép gì? Chữa: chia thành bốn phần bằng nhau, tức là $8 : 4 = 2$ viên."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nghe \"một phần tư của 8 viên\" rồi lấy 8 trừ 4 được 4 viên.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Có 8 viên kẹo. Hỏi một nửa số kẹo là mấy viên, và một phần tư số kẹo là mấy viên?",
+  "steps": [
+   {
+    "show": "Một nửa thì chia thành hai phần bằng nhau",
+    "phan": "giai"
+   },
+   {
+    "show": "Chia 8 viên thành hai phần bằng nhau: $8 : 2 = 4$ viên.",
+    "phan": "giai"
+   },
+   {
+    "show": "Một phần tư thì chia thành bốn phần bằng nhau",
+    "phan": "giai"
+   },
+   {
+    "show": "Chia 8 viên thành bốn phần bằng nhau: $8 : 4 = 2$ viên.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: một nửa là 4 viên, một phần tư là 2 viên.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Nghe \"một nửa\" thì chia hai, nghe \"một phần tư\" thì chia bốn — phép chia đã học ở bài chia đều quay lại giúp sức.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính $8 : 2$.",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Lấy $8 : 2 = 4$.",
+     "hints": [
+      "Con đọc bảng nhân hai tới khi gặp số tám.",
+      "Đó là hai lần mấy?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Một nửa của 8 viên kẹo là mấy viên?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Chia thành hai phần bằng nhau: $8 : 2 = 4$ viên.",
+     "hints": [
+      "Một nửa nghĩa là chia thành mấy phần bằng nhau?",
+      "Chia đều thì dùng phép chia."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Một phần tư của 8 viên kẹo là mấy viên?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Chia thành bốn phần bằng nhau: $8 : 4 = 2$ viên.",
+     "hints": [
+      "Một phần tư nghĩa là chia thành mấy phần bằng nhau?",
+      "Chia đều thì dùng phép chia."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Mẹ có 12 quả quýt và cho một nửa. Được mấy quả?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "Chia thành hai phần bằng nhau: $12 : 2 = 6$ quả.",
+     "hints": [
+      "Một nửa thì chia cho hai.",
+      "Con lấy số quýt chia đôi."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Nghe \"một phần tư\" thì phải chia cho mấy?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Nghe một phần tư thì chia cho 4.",
+     "hints": [
+      "Cái tên ấy có chữ tư ở cuối đấy.",
+      "Chữ ấy nói cho con biết chia làm mấy phần."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Một phần tư của 20 viên bi là mấy viên?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Chia thành bốn phần bằng nhau: $20 : 4 = 5$ viên.",
+     "hints": [
+      "Một phần tư thì chia cho bốn.",
+      "Con lấy số bi chia cho bốn."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Có 16 cái bánh. Cho biết một nửa là mấy cái và một phần tư là mấy cái.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "một nửa",
+        "value": 8
+       },
+       {
+        "label": "một phần tư",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Một nửa là $16 : 2 = 8$ cái. Một phần tư là $16 : 4 = 4$ cái.",
+     "hints": [
+      "Con làm riêng hai phép chia.",
+      "Một lần chia hai, một lần chia bốn."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Một nửa số kẹo trong túi là 7 viên. Cả túi có mấy viên kẹo?",
+     "answerKey": {
+      "value": 14
+     },
+     "solutionNarrative": "Cả túi gồm hai nửa bằng nhau, nên có $7 + 7 = 14$ viên.",
+     "hints": [
+      "Cả túi gồm hai nửa bằng nhau.",
+      "Con cộng nửa này với nửa kia."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Nghe \"một nửa\" thì chia cho hai.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — hai phần bằng nhau."
+   },
+   {
+    "id": "Q2",
+    "text": "Một nửa của 8 viên kẹo là mấy viên?",
+    "format": "mcq",
+    "choices": [
+     "4",
+     "2",
+     "6",
+     "16"
+    ],
+    "answerKey": {
+     "choice": "4"
+    },
+    "solutionNarrative": "Chia tám cho hai."
+   },
+   {
+    "id": "Q3",
+    "text": "Một phần tư của 8 viên kẹo là mấy viên?",
+    "format": "mcq",
+    "choices": [
+     "2",
+     "4",
+     "6",
+     "32"
+    ],
+    "answerKey": {
+     "choice": "2"
+    },
+    "solutionNarrative": "Chia tám cho bốn."
+   },
+   {
+    "id": "Q4",
+    "text": "Một phần tư của 8 viên là 8 trừ 4, tức 4 viên.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phải chia bốn, được 2 viên."
+   },
+   {
+    "id": "Q5",
+    "text": "Một nửa của 12 quả quýt là 6 quả.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — chia mười hai cho hai."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chia kẹo thật cho hai người rồi cho bốn người — con thấy ngay vì sao một phần tư bé hơn một nửa.",
+  "homeActivity": "Bố mẹ hỏi: \"Một nửa thì chia mấy, một phần tư thì chia mấy?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B69_giang.mp4"
+ }
+}

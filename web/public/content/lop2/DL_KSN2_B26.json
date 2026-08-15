@@ -3,12 +3,12 @@
  "id": "DL:KSN2.B26",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 56 · NHẬN MẶT HÌNH",
+ "title": "Bài 56 · NHẬN MẶT HÌNH — ĐẾM CẠNH, ĐẾM ĐỈNH",
  "durationMinutes": 10,
  "so": 56,
  "chuong": 7,
  "tenChuong": "Vương quốc hình học",
- "dangGoc": "HH 1.1 — Nhận dạng hình & tổng độ dài các cạnh (tiền thân chu vi lớp 3)",
+ "dangGoc": "HH 1.1a — Nhận dạng hình phẳng bằng số cạnh và số đỉnh.",
  "skills": {
   "bktUnit": "CHUONG:7@G2",
   "primary": []
@@ -16,42 +16,25 @@
  "series": {
   "order": 56,
   "prev": "DL:KSN2.B63",
-  "next": "DL:KSN2.B27"
+  "next": "DL:KSN2.B64"
  },
  "objective": {
   "id": "O1",
-  "text": "Gọi đúng tên: hình tam giác, hình vuông, hình chữ nhật, hình tứ giác. Đếm được số CẠNH và số ĐỈNH của mỗi hình. Tính được quãng đường \"chú kiến bò một vòng quanh hình\" = cộng độ dài các cạnh.",
-  "kidText": "Chú kiến bò đúng một vòng quanh hình tam giác ba cạnh 3, 4, 5 cm. Chú đi hết bao nhiêu xăng-ti-mét?",
+  "text": "Gọi đúng tên tam giác, tứ giác, hình vuông, hình chữ nhật. Đếm được số cạnh và số đỉnh của mỗi hình. Biết hình bị xoay nghiêng vẫn là chính nó.",
+  "kidText": "Hình vuông đặt xoay nghiêng thì còn là hình vuông không nhỉ? Con đếm cạnh xem nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Mỗi hình có tấm danh thiếp là số cạnh và số đỉnh: tam giác 3 cạnh - 3 đỉnh. Các bạn 4 cạnh - 4 đỉnh đều mang họ chung là TỨ GIÁC. Kể cả bạn xiêu vẹo kia! Bạn ấy vẫn được dự hội đàng hoàng."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Hình có 4 cạnh thì có hai bạn quen nhất. HÌNH CHỮ NHẬT có hai cạnh dài bằng nhau và hai cạnh ngắn bằng nhau. HÌNH VUÔNG có cả 4 cạnh bằng nhau."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Quan trọng: hình bị XOAY nghiêng vẫn là chính nó! Hình vuông đặt xoay 45 độ trông như \"viên kim cương\" nhưng vẫn là hình vuông. Đếm cạnh đỉnh là biết, đừng tin dáng đứng."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. Trò chơi chú kiến: thả một chú kiến bò đúng một vòng quanh hình. Quãng đường kiến đi bằng tổng độ dài các cạnh cộng lại:"
-   }
-  ],
-  "mantra": "Nhận hình bằng cách ĐẾM CẠNH - ĐẾM ĐỈNH, đừng nhìn dáng đứng. Còn \"đường kiến bò một vòng\" = cộng đủ các cạnh, không sót cạnh nào!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Cô giáo xoay tấm bìa hình chữ nhật nghiêng đi một chút. Su Kem la lên: \"Nó hết là hình chữ nhật rồi! Chữ nhật phải nằm ngang ngay ngắn chứ!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Xoay tấm bìa thì số cạnh, số đỉnh, độ dài các cạnh của nó có thay đổi tí nào không? Gợi ý 2: Con thử cầm quyển vở (hình chữ nhật) xoay nghiêng. Nó có biến thành hình khác không? Danh thiếp của hình nằm ở đâu: ở CẠNH - ĐỈNH hay ở dáng đứng?"
+    "wrong": "Có bạn thấy hình vuông đặt xoay nghiêng rồi gọi nó là hình thoi hay hình gì lạ lắm.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con đếm xem hình ấy có mấy cạnh, mấy đỉnh. Gợi ý 2: Bốn cạnh có bằng nhau không? Nếu bằng nhau thì nó là hình gì? Chữa: xoay nghiêng không đổi được số cạnh số đỉnh, nên nó vẫn là hình vuông."
    }
   ]
  },
@@ -59,67 +42,46 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Đêm hội hóa trang, các hình xếp hàng giới thiệu bản thân. Một hình tam giác có ba cạnh dài 3 cm, 4 cm và 5 cm. Chú kiến bò đúng một vòng quanh hình. Hỏi chú kiến bò được bao nhiêu xăng-ti-mét?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Cô giáo xoay tấm bìa hình chữ nhật nghiêng đi một chút. Su Kem la lên: \"Nó hết là hình chữ nhật rồi! Chữ nhật phải nằm ngang ngay ngắn chứ!\"",
+    "narration": "Có bạn thấy hình vuông đặt xoay nghiêng rồi gọi nó là hình thoi hay hình gì lạ lắm.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Một hình tam giác có ba cạnh dài 3 cm, 4 cm và 5 cm. Chú kiến bò đúng một vòng quanh hình. Hỏi chú kiến bò được bao nhiêu xăng-ti-mét?",
+  "problem": "Cho biết hình tam giác có mấy cạnh mấy đỉnh, và một hình vuông đặt xoay nghiêng thì còn là hình vuông nữa không.",
   "steps": [
    {
-    "show": "Chú kiến bò được quãng đường là:",
+    "show": "Mỗi hình có một tấm danh thiếp",
     "phan": "giai"
    },
    {
-    "show": "$3 + 4 + 5 = 12$ (cm)",
+    "show": "Danh thiếp ấy là số cạnh và số đỉnh. Tam giác có 3 cạnh và 3 đỉnh.",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: 12 cm.",
+    "show": "Bốn cạnh bốn đỉnh thì mang họ TỨ GIÁC",
+    "phan": "giai"
+   },
+   {
+    "show": "Hình vuông có cả 4 cạnh bằng nhau. Hình chữ nhật có hai cạnh dài bằng nhau và hai cạnh ngắn bằng nhau. Cả hai đều là tứ giác.",
+    "phan": "giai"
+   },
+   {
+    "show": "Hình bị xoay vẫn là chính nó",
+    "phan": "giai"
+   },
+   {
+    "show": "Hình vuông đặt xoay nghiêng trông lạ mắt, nhưng đếm vẫn 4 cạnh bằng nhau và 4 đỉnh, nên vẫn là hình vuông.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: tam giác có 3 cạnh 3 đỉnh, và hình vuông xoay nghiêng vẫn là hình vuông.",
     "phan": "dapso"
    },
    {
-    "show": "Nói nhỏ của Trí Long: lên lớp 3, \"quãng đường kiến bò một vòng\" sẽ có tên riêng rất oách: CHU VI. Con cứ chơi với chú kiến trước đã!",
+    "show": "Nhận hình bằng cách đếm cạnh đếm đỉnh, đừng tin dáng đứng.",
     "phan": "ghichu"
    }
   ]
@@ -129,151 +91,143 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Hình tam giác có mấy cạnh, mấy đỉnh? Hình tứ giác có mấy cạnh, mấy đỉnh?",
+     "text": "Hình tam giác có mấy cạnh?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "tam giác mấy cạnh",
-        "value": 3
-       },
-       {
-        "label": "tam giác mấy đỉnh",
-        "value": 3
-       },
-       {
-        "label": "tứ giác mấy cạnh",
-        "value": 4
-       },
-       {
-        "label": "tứ giác mấy đỉnh",
-        "value": 4
-       }
-      ]
+      "value": 3
      },
-     "solutionNarrative": "tam giác 3 cạnh - 3 đỉnh; tứ giác 4 cạnh - 4 đỉnh",
+     "solutionNarrative": "Hình tam giác có 3 cạnh.",
      "hints": [
-      "Đếm cạnh, đếm đỉnh — đó là danh thiếp của hình.",
-      "Số cạnh và số đỉnh của một hình thì bằng nhau."
+      "Con đếm các đoạn thẳng làm nên viền của hình.",
+      "Tam giác nghe tên là biết mấy rồi đấy."
      ]
     },
     {
      "id": "C2",
-     "text": "Kể tên 3 đồ vật trong nhà có mặt là hình chữ nhật, 2 đồ vật có mặt là hình vuông.",
-     "solutionNarrative": "ví dụ chữ nhật: quyển vở, cửa ra vào, màn hình ti vi; vuông: viên gạch lát, mặt xúc xắc",
+     "text": "Hình tam giác có mấy đỉnh?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Hình tam giác có 3 đỉnh.",
      "hints": [
-      "Nhìn quanh nhà, tìm những mặt phẳng bốn cạnh.",
-      "Hình vuông thì bốn cạnh bằng nhau cả."
+      "Đỉnh là chỗ hai cạnh gặp nhau.",
+      "Con đếm xem có mấy góc nhọn chìa ra."
      ]
     },
     {
      "id": "C3",
-     "text": "Hình vuông khác hình chữ nhật ở điểm nào?",
+     "text": "Hình vuông có mấy cạnh?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "mấy cạnh bằng nhau",
-        "value": 4
-       }
-      ]
+      "value": 4
      },
-     "solutionNarrative": "hình vuông có CẢ 4 cạnh bằng nhau; chữ nhật chỉ cần từng cặp cạnh đối bằng nhau",
+     "solutionNarrative": "Hình vuông có 4 cạnh, và bốn cạnh ấy bằng nhau.",
      "hints": [
-      "So số cạnh trước: hai hình này có khác nhau không?",
-      "Khác nhau ở chỗ cạnh nào bằng cạnh nào."
+      "Con đếm các đoạn thẳng quanh viền.",
+      "Hình này còn có thêm điều kiện bốn cạnh bằng nhau."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Chú kiến bò một vòng quanh hình tam giác có các cạnh 2 cm, 3 cm, 4 cm. Kiến bò được bao nhiêu cm?",
+     "text": "Hình có 4 cạnh và 4 đỉnh thì mang họ chung là gì?",
      "answerKey": {
-      "value": 9
+      "parts": [
+       {
+        "label": "họ chung",
+        "options": [
+         "tứ giác",
+         "tam giác",
+         "hình tròn"
+        ],
+        "value": "tứ giác"
+       }
+      ]
      },
-     "solutionNarrative": "$2 + 3 + 4 = 9$ cm",
+     "solutionNarrative": "Mọi hình 4 cạnh 4 đỉnh đều mang họ tứ giác.",
      "hints": [
-      "Kiến bò một vòng thì đi qua đủ các cạnh.",
-      "Cộng tất cả các cạnh lại, đừng sót cạnh nào."
+      "Con đếm cạnh và đỉnh của mấy hình bốn cạnh xem chúng giống nhau chỗ nào.",
+      "Tên họ chung ấy bắt đầu bằng chữ tứ."
      ]
     },
     {
      "id": "C5",
-     "text": "Chú kiến bò một vòng quanh hình vuông có cạnh 5 cm. Kiến bò được bao nhiêu cm? (Hình vuông có mấy cạnh, mỗi cạnh dài bao nhiêu?)",
+     "text": "Một hình vuông đặt xoay nghiêng thì còn là hình vuông không?",
      "answerKey": {
-      "value": 20
+      "parts": [
+       {
+        "label": "còn là hình vuông không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
      },
-     "solutionNarrative": "hình vuông có 4 cạnh bằng nhau, mỗi cạnh 5 cm → $5 + 5 + 5 + 5 = 20$ cm",
+     "solutionNarrative": "Xoay nghiêng không đổi được số cạnh số đỉnh nên nó vẫn là hình vuông.",
      "hints": [
-      "Hình vuông có mấy cạnh, mỗi cạnh dài bao nhiêu?",
-      "Cộng đủ số cạnh ấy lại."
+      "Xoay hình thì số cạnh và số đỉnh của nó thế nào?",
+      "Đếm lại sau khi xoay xem hai con số ấy khác đi chưa."
      ]
     },
     {
      "id": "C6",
-     "text": "Chú kiến bò một vòng quanh hình chữ nhật có cạnh dài 6 cm, cạnh ngắn 3 cm. Kiến bò được bao nhiêu cm? (Nhớ hình chữ nhật có 2 cạnh dài và 2 cạnh ngắn!)",
+     "text": "Hình chữ nhật khác hình vuông ở chỗ nào?",
      "answerKey": {
-      "value": 18
+      "parts": [
+       {
+        "label": "khác ở chỗ nào",
+        "options": [
+         "hình vuông có cả bốn cạnh bằng nhau",
+         "hình vuông có nhiều đỉnh hơn"
+        ],
+        "value": "hình vuông có cả bốn cạnh bằng nhau"
+       }
+      ]
      },
-     "solutionNarrative": "$6 + 3 + 6 + 3 = 18$ cm (hai cạnh dài, hai cạnh ngắn!)",
+     "solutionNarrative": "Hình vuông có cả bốn cạnh bằng nhau, còn hình chữ nhật chỉ có hai cạnh dài bằng nhau và hai cạnh ngắn bằng nhau.",
      "hints": [
-      "Chữ nhật có HAI cạnh dài và HAI cạnh ngắn.",
-      "Cộng đủ bốn cạnh, đừng cộng có hai."
+      "Con so bốn cạnh của từng hình xem cạnh nào bằng cạnh nào.",
+      "Một hình có bốn cạnh bằng nhau, hình kia chỉ có từng cặp bằng nhau."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C7",
-     "text": "Hai chú kiến thi bò: kiến Đỏ bò quanh hình vuông cạnh 4 cm; kiến Đen bò quanh hình tam giác có các cạnh 5 cm, 5 cm, 5 cm. Chú kiến nào bò xa hơn? Xa hơn mấy cm?",
+     "text": "Một hình có 3 cạnh và một hình có 4 cạnh. Cộng số cạnh và số đỉnh của cả hai hình thì được bao nhiêu?",
      "answerKey": {
       "parts": [
        {
-        "label": "kiến Đỏ bò được",
-        "value": 16
+        "label": "tổng số cạnh",
+        "value": 7
        },
        {
-        "label": "kiến Đen bò được",
-        "value": 15
+        "label": "tổng số đỉnh",
+        "value": 7
        },
        {
-        "label": "con nào xa hơn",
-        "options": [
-         "kiến Đỏ",
-         "kiến Đen"
-        ],
-        "value": "kiến Đỏ"
-       },
-       {
-        "label": "xa hơn mấy cm",
-        "value": 1
+        "label": "cộng cả hai",
+        "value": 14
        }
       ]
      },
-     "solutionNarrative": "kiến Đỏ: $4 + 4 + 4 + 4 = 16$ cm; kiến Đen: $5 + 5 + 5 = 15$ cm → kiến Đỏ bò xa hơn $16 - 15 = 1$ cm",
+     "solutionNarrative": "Số cạnh: $3 + 4 = 7$. Số đỉnh cũng vậy: $3 + 4 = 7$. Cộng cả hai được 14.",
      "hints": [
-      "Tính đường của mỗi chú kiến riêng đã rồi mới so.",
-      "Đừng đoán theo cạnh dài hơn — số cạnh cũng khác nhau."
+      "Con cộng số cạnh của hai hình trước.",
+      "Số đỉnh của mỗi hình bằng đúng số cạnh của nó."
      ]
     },
     {
      "id": "C8",
-     "text": "Dùng thước, con hãy VẼ một hình tứ giác mà KHÔNG phải hình vuông cũng KHÔNG phải hình chữ nhật. Đếm lại cạnh - đỉnh để chứng minh nó vẫn là tứ giác \"chính hãng\"!",
+     "text": "Trong bốn hình: tam giác, hình vuông, hình chữ nhật, hình tứ giác xiêu vẹo — có mấy hình mang họ tứ giác?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "tứ giác có mấy cạnh",
-        "value": 4
-       },
-       {
-        "label": "mấy đỉnh",
-        "value": 4
-       }
-      ]
+      "value": 3
      },
-     "solutionNarrative": "chỉ cần 4 cạnh không đều tăm tắp, 4 đỉnh — đếm đúng 4 cạnh 4 đỉnh là \"chính hãng\"!",
+     "solutionNarrative": "Hình vuông, hình chữ nhật và hình xiêu vẹo đều 4 cạnh 4 đỉnh, nên có 3 hình mang họ tứ giác.",
      "hints": [
-      "Cứ vẽ bốn cạnh không đều tăm tắp.",
-      "Vẽ xong đếm lại cạnh và đỉnh để chứng minh."
+      "Con đếm cạnh của từng hình rồi loại hình nào không đủ bốn.",
+      "Hình xiêu vẹo vẫn được tính, miễn đủ bốn cạnh bốn đỉnh."
      ]
     }
    ]
@@ -289,186 +243,63 @@
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng — đó là tấm danh thiếp của nó."
    },
    {
     "id": "Q2",
-    "text": "Hình chữ nhật bị xoay nghiêng thì không còn là hình chữ nhật nữa.",
+    "text": "Hình có 4 cạnh 4 đỉnh mang họ gì?",
+    "format": "mcq",
+    "choices": [
+     "tứ giác",
+     "tam giác",
+     "hình tròn"
+    ],
+    "answerKey": {
+     "choice": "tứ giác"
+    },
+    "solutionNarrative": "Kể cả hình xiêu vẹo cũng vậy."
+   },
+   {
+    "id": "Q3",
+    "text": "Hình vuông đặt xoay nghiêng thì không còn là hình vuông.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "xoay không đổi tên"
-   },
-   {
-    "id": "Q3",
-    "text": "Hình vuông có:",
-    "format": "mcq",
-    "choices": [
-     "A. 4 cạnh bằng nhau",
-     "B. 3 cạnh bằng nhau",
-     "C. 2 cạnh bằng nhau"
-    ],
-    "answerKey": {
-     "choice": "A. 4 cạnh bằng nhau"
-    },
-    "solutionNarrative": "Đáp án: A. 4 cạnh bằng nhau"
+    "solutionNarrative": "Sai. Đếm cạnh đếm đỉnh vẫn thế nên nó vẫn là hình vuông."
    },
    {
     "id": "Q4",
-    "text": "Kiến bò một vòng quanh tam giác cạnh 3, 4, 5 cm được:",
+    "text": "Hình nào có cả bốn cạnh bằng nhau?",
     "format": "mcq",
     "choices": [
-     "A. 12 cm",
-     "B. 11 cm",
-     "C. 60 cm"
+     "hình vuông",
+     "hình chữ nhật",
+     "hình tam giác"
     ],
     "answerKey": {
-     "choice": "A. 12 cm"
+     "choice": "hình vuông"
     },
-    "solutionNarrative": "Đáp án: A. 12 cm"
+    "solutionNarrative": "Hình chữ nhật chỉ có từng cặp bằng nhau."
    },
    {
     "id": "Q5",
-    "text": "Kiến bò một vòng quanh hình vuông cạnh 5 cm được:",
-    "format": "mcq",
-    "choices": [
-     "A. 5 cm",
-     "B. 20 cm",
-     "C. 25 cm"
-    ],
+    "text": "Nhận hình thì nhìn dáng đứng là đủ.",
+    "format": "tf",
     "answerKey": {
-     "choice": "B. 20 cm"
+     "value": false
     },
-    "solutionNarrative": "Đáp án: B. 20 cm"
+    "solutionNarrative": "Sai. Phải đếm cạnh và đếm đỉnh."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Chơi \"săn hình\" khắp nhà: ai tìm được nhiều đồ vật hình vuông/chữ nhật/tam giác/tròn hơn trong 2 phút thì thắng — mắt hình học được luyện từ gạch lát nền đến hộp bánh.",
-  "homeActivity": "Lấy sợi len quấn đúng một vòng quanh nắp hộp rồi duỗi thẳng đo — con \"sờ\" được tổng độ dài các cạnh trước khi cộng trên giấy.",
-  "watchFor": "NÊN: xoay - lật hình thường xuyên để con thoát khỏi \"tư thế chuẩn\". KHÔNG NÊN: dùng từ \"chu vi\" hay công thức cạnh × 4 — cứ để chú kiến bò đến hết lớp 2 đã."
+  "onComplete": "Chỉ vào đồ vật quanh nhà rồi hỏi con hình gì — cửa sổ, mặt bàn, biển báo. Nhớ chỉ cả những cái đặt nghiêng.",
+  "homeActivity": "Bố mẹ hỏi: \"Hình này mấy cạnh, mấy đỉnh?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_HH01",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_HH01.png",
-   "caption": "Bốn hình cơ bản: đếm cạnh và đỉnh của từng hình",
-   "sha256_16": "67b600ac3295a90b",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_HH02",
-   "usedIn": [
-    "screen:S5"
-   ],
-   "file": "figures/L2H_HH02.png",
-   "caption": "Đi một vòng quanh hình = cộng hết các cạnh",
-   "sha256_16": "aadb9fd3cf6a44c0",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L2Q_B26C1",
-   "usedIn": [
-    "item:C1"
-   ],
-   "file": "figures/L2Q_B26C1.png",
-   "caption": "Hình của đề bài",
-   "sha256_16": "3f403f2a2728d3b5",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B26C1G",
-   "usedIn": [
-    "item:C1:giai"
-   ],
-   "file": "figures/L2Q_B26C1G.png",
-   "caption": "Lời giải",
-   "sha256_16": "3b1a4965bc1d6031",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B26C4",
-   "usedIn": [
-    "item:C4"
-   ],
-   "file": "figures/L2Q_B26C4.png",
-   "caption": "Hình của đề bài",
-   "sha256_16": "69b38efe3d38733d",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B26C4G",
-   "usedIn": [
-    "item:C4:giai"
-   ],
-   "file": "figures/L2Q_B26C4G.png",
-   "caption": "Lời giải",
-   "sha256_16": "0b34039fe5c47230",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B26C5",
-   "usedIn": [
-    "item:C5"
-   ],
-   "file": "figures/L2Q_B26C5.png",
-   "caption": "Hình của đề bài",
-   "sha256_16": "8b337a3df781ba64",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B26C5G",
-   "usedIn": [
-    "item:C5:giai"
-   ],
-   "file": "figures/L2Q_B26C5G.png",
-   "caption": "Lời giải",
-   "sha256_16": "55fd65e27769071d",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B26C6",
-   "usedIn": [
-    "item:C6"
-   ],
-   "file": "figures/L2Q_B26C6.png",
-   "caption": "Hình của đề bài",
-   "sha256_16": "71d30632a95339b2",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B26C6G",
-   "usedIn": [
-    "item:C6:giai"
-   ],
-   "file": "figures/L2Q_B26C6G.png",
-   "caption": "Lời giải",
-   "sha256_16": "1d1719cd0144dea5",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B26C7",
-   "usedIn": [
-    "item:C7"
-   ],
-   "file": "figures/L2Q_B26C7.png",
-   "caption": "Hình của đề bài",
-   "sha256_16": "72217a25c3d2519a",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B26C7G",
-   "usedIn": [
-    "item:C7:giai"
-   ],
-   "file": "figures/L2Q_B26C7G.png",
-   "caption": "Lời giải",
-   "sha256_16": "2421954072699d07",
-   "mucGoc": "luyenTap"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B26_giang.mp4"
+ }
 }

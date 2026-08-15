@@ -1,0 +1,277 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B64",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 57 · ĐƯỜNG KIẾN BÒ MỘT VÒNG — CỘNG ĐỦ CÁC CẠNH",
+ "durationMinutes": 10,
+ "so": 57,
+ "chuong": 7,
+ "tenChuong": "Vương quốc hình học",
+ "dangGoc": "HH 1.1b — Tổng độ dài các cạnh, tiền thân chu vi lớp 3.",
+ "skills": {
+  "bktUnit": "CHUONG:7@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 57,
+  "prev": "DL:KSN2.B26",
+  "next": "DL:KSN2.B27"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Hiểu đường kiến bò một vòng là tổng độ dài các cạnh. Cộng đủ các cạnh, không sót cạnh nào. Làm được với cả hình vuông và hình chữ nhật.",
+  "kidText": "Thả chú kiến bò một vòng quanh tam giác 3, 4, 5 xăng-ti-mét. Con đoán nó đi bao xa nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn cộng thiếu một cạnh, vì cạnh ấy nằm khuất phía dưới hình.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con đếm xem hình có mấy cạnh, rồi đếm xem đã cộng mấy số. Gợi ý 2: Chú kiến phải về đúng chỗ xuất phát mới là một vòng. Chữa: cộng đủ cả ba cạnh, không sót cạnh nào."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn cộng thiếu một cạnh, vì cạnh ấy nằm khuất phía dưới hình.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một hình tam giác có ba cạnh dài 3 xăng-ti-mét, 4 xăng-ti-mét và 5 xăng-ti-mét. Chú kiến bò đúng một vòng quanh hình. Hỏi chú kiến bò được bao nhiêu xăng-ti-mét?",
+  "steps": [
+   {
+    "show": "Thả chú kiến bò quanh mép hình",
+    "phan": "giai"
+   },
+   {
+    "show": "Chú kiến đi hết cạnh này sang cạnh kia, đủ một vòng rồi về chỗ cũ.",
+    "phan": "giai"
+   },
+   {
+    "show": "Quãng đường bằng tổng độ dài các cạnh",
+    "phan": "giai"
+   },
+   {
+    "show": "Cộng đủ cả ba cạnh: $3 + 4 + 5 = 12$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 12 xăng-ti-mét.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Lên lớp 3, quãng đường kiến bò một vòng sẽ có tên riêng là chu vi.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính $3 + 4 + 5$.",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Lấy $3 + 4 + 5 = 12$.",
+     "hints": [
+      "Con cộng lần lượt từ trái sang phải.",
+      "Cộng ba với bốn trước, rồi cộng tiếp năm."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tam giác có ba cạnh 3, 4 và 5 xăng-ti-mét. Chú kiến bò một vòng được mấy xăng-ti-mét?",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Cộng đủ ba cạnh: $3 + 4 + 5 = 12$.",
+     "hints": [
+      "Chú kiến đi hết cạnh này sang cạnh kia.",
+      "Quãng đường bằng tổng độ dài các cạnh."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Hình vuông có cạnh 5 xăng-ti-mét. Chú kiến bò một vòng được mấy xăng-ti-mét?",
+     "answerKey": {
+      "value": 20
+     },
+     "solutionNarrative": "Bốn cạnh đều bằng 5, nên $5 + 5 + 5 + 5 = 20$.",
+     "hints": [
+      "Hình vuông có bốn cạnh và cả bốn đều bằng nhau.",
+      "Con cộng bốn lần cạnh ấy."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Hình chữ nhật có hai cạnh dài 6 xăng-ti-mét và hai cạnh ngắn 3 xăng-ti-mét. Chú kiến bò một vòng được mấy xăng-ti-mét?",
+     "answerKey": {
+      "value": 18
+     },
+     "solutionNarrative": "Cộng đủ bốn cạnh: $6 + 3 + 6 + 3 = 18$.",
+     "hints": [
+      "Hình chữ nhật có hai cạnh dài và hai cạnh ngắn.",
+      "Cộng đủ bốn cạnh, đừng chỉ cộng hai."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Đường kiến bò một vòng bằng cái gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bằng cái gì",
+        "options": [
+         "tổng độ dài các cạnh",
+         "cạnh dài nhất",
+         "số cạnh"
+        ],
+        "value": "tổng độ dài các cạnh"
+       }
+      ]
+     },
+     "solutionNarrative": "Nó bằng tổng độ dài của tất cả các cạnh.",
+     "hints": [
+      "Chú kiến đi quanh viền chứ không đi xuyên qua hình.",
+      "Viền hình gồm những gì?"
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Tam giác có ba cạnh 2, 6 và 7 xăng-ti-mét. Chú kiến bò một vòng được mấy xăng-ti-mét?",
+     "answerKey": {
+      "value": 15
+     },
+     "solutionNarrative": "Cộng đủ ba cạnh: $2 + 6 + 7 = 15$.",
+     "hints": [
+      "Tam giác có ba cạnh nên cộng ba số.",
+      "Cộng lần lượt từ trái sang phải."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Hình vuông cạnh 4 xăng-ti-mét và hình vuông cạnh 6 xăng-ti-mét. Chú kiến bò một vòng quanh mỗi hình được mấy xăng-ti-mét?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hình cạnh 4",
+        "value": 16
+       },
+       {
+        "label": "hình cạnh 6",
+        "value": 24
+       }
+      ]
+     },
+     "solutionNarrative": "Hình nhỏ: $4 + 4 + 4 + 4 = 16$. Hình to: $6 + 6 + 6 + 6 = 24$.",
+     "hints": [
+      "Con làm riêng từng hình, mỗi hình cộng bốn cạnh.",
+      "Cạnh hình vuông thì bốn cạnh đều bằng nhau."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Chú kiến bò một vòng quanh hình chữ nhật được 20 xăng-ti-mét. Hai cạnh dài đều 7 xăng-ti-mét. Mỗi cạnh ngắn dài mấy xăng-ti-mét?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Hai cạnh dài hết $7 + 7 = 14$. Còn lại $20 - 14 = 6$ cho hai cạnh ngắn, nên mỗi cạnh ngắn là 3.",
+     "hints": [
+      "Hai cạnh dài hết bao nhiêu xăng-ti-mét rồi?",
+      "Phần còn lại chia đều cho hai cạnh ngắn."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Đường kiến bò một vòng bằng tổng độ dài các cạnh.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — lên lớp 3 nó tên là chu vi."
+   },
+   {
+    "id": "Q2",
+    "text": "Tam giác ba cạnh 3, 4, 5 thì kiến bò được mấy xăng-ti-mét?",
+    "format": "mcq",
+    "choices": [
+     "12",
+     "9",
+     "15",
+     "7"
+    ],
+    "answerKey": {
+     "choice": "12"
+    },
+    "solutionNarrative": "Cộng đủ ba cạnh."
+   },
+   {
+    "id": "Q3",
+    "text": "Hình vuông cạnh 5 thì kiến bò được mấy xăng-ti-mét?",
+    "format": "mcq",
+    "choices": [
+     "20",
+     "10",
+     "25",
+     "15"
+    ],
+    "answerKey": {
+     "choice": "20"
+    },
+    "solutionNarrative": "Bốn cạnh đều bằng nhau."
+   },
+   {
+    "id": "Q4",
+    "text": "Hình chữ nhật chỉ cần cộng hai cạnh là đủ.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phải cộng đủ cả bốn cạnh."
+   },
+   {
+    "id": "Q5",
+    "text": "Chú kiến phải về đúng chỗ xuất phát mới là một vòng.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — thiếu một cạnh là chưa đủ vòng."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con lấy sợi dây quấn quanh mép quyển sách rồi kéo thẳng ra đo — đó chính là đường kiến bò một vòng.",
+  "homeActivity": "Bố mẹ hỏi: \"Con đã cộng đủ mấy cạnh rồi?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B64_giang.mp4"
+ }
+}

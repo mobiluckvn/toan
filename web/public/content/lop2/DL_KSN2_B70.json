@@ -1,0 +1,294 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B70",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 69 · TIỀN THỪA — ĐỨNG Ở PHÍA NGƯỜI MUA",
+ "durationMinutes": 10,
+ "so": 69,
+ "chuong": 8,
+ "tenChuong": "Toán trong cuộc sống",
+ "dangGoc": "PS 5.1b — Tính tiền thối lại và kiểm tra có đủ tiền không.",
+ "skills": {
+  "bktUnit": "CHUONG:8@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 69,
+  "prev": "DL:KSN2.B32",
+  "next": "DL:KSN2.B33"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tính được tiền thối lại khi mua hàng. Biết tiền thừa bằng tiền đưa trừ tiền mua. Kiểm tra được có đủ tiền mua hay không.",
+  "kidText": "Đưa 10 nghìn mua món 7 nghìn. Con đoán được thối lại bao nhiêu nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn cộng tiền đưa với giá món hàng để tính tiền thối.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Thối lại là đưa bớt tiền ra hay nhận thêm tiền vào? Gợi ý 2: Tiền thối phải ít hơn tiền đưa chứ, đúng không? Chữa: tiền thừa bằng tiền đưa trừ tiền mua, tức $10 - 7 = 3$ nghìn."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn cộng tiền đưa với giá món hàng để tính tiền thối.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một cô khách đưa 10 nghìn để mua món hàng giá 7 nghìn. Hỏi phải thối lại bao nhiêu?",
+  "steps": [
+   {
+    "show": "Bài trước đứng ở phía người bán, bài này đứng ở phía người mua",
+    "phan": "giai"
+   },
+   {
+    "show": "Người mua đưa tiền ra, người bán thối lại phần dư.",
+    "phan": "giai"
+   },
+   {
+    "show": "Tiền thừa bằng tiền đưa trừ tiền mua",
+    "phan": "giai"
+   },
+   {
+    "show": "Lấy $10 - 7 = 3$ nghìn.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: thối lại 3 nghìn đồng.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Muốn biết có đủ tiền mua không thì so tiền mình có với giá món hàng — ít hơn giá thì chưa mua được.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Đưa 10 nghìn mua món 7 nghìn. Thối lại mấy nghìn?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Lấy $10 - 7 = 3$ nghìn.",
+     "hints": [
+      "Người bán đưa bớt tiền lại cho khách.",
+      "Con lấy tiền khách đưa trừ giá món hàng."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tiền thừa bằng cái gì trừ cái gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cách tính",
+        "options": [
+         "tiền đưa trừ tiền mua",
+         "tiền mua trừ tiền đưa"
+        ],
+        "value": "tiền đưa trừ tiền mua"
+       }
+      ]
+     },
+     "solutionNarrative": "Tiền thừa bằng tiền đưa trừ tiền mua.",
+     "hints": [
+      "Tiền thối phải ít hơn tiền đưa chứ.",
+      "Vậy làm phép cộng hay phép trừ?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Đưa 20 nghìn mua món 15 nghìn. Thối lại mấy nghìn?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Lấy $20 - 15 = 5$ nghìn.",
+     "hints": [
+      "Con lấy tiền đưa trừ giá món hàng.",
+      "Hai mươi bớt mười lăm."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Đưa 10 nghìn mua 2 cốc nước chanh, mỗi cốc 4 nghìn. Thối lại mấy nghìn?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Hai cốc hết $4  \\times  2 = 8$ nghìn, nên thối lại $10 - 8 = 2$ nghìn.",
+     "hints": [
+      "Bước một: hai cốc, mỗi cốc bốn nghìn.",
+      "Bước hai: lấy tiền đưa trừ số vừa tính."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Có 5 nghìn mà món hàng giá 8 nghìn. Có đủ tiền mua không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có đủ tiền không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Không đủ, vì tiền mình có ít hơn giá món hàng.",
+     "hints": [
+      "Con so tiền mình có với giá món hàng.",
+      "Ít hơn giá thì chưa mua được."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Có 5 nghìn mà món hàng giá 8 nghìn. Còn thiếu mấy nghìn?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Lấy $8 - 5 = 3$ nghìn.",
+     "hints": [
+      "Con lấy giá món hàng trừ số tiền đang có.",
+      "Phần chênh ấy là phần còn thiếu."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Đưa 50 nghìn mua 3 quyển vở, mỗi quyển 12 nghìn. Cho biết hết mấy nghìn và thối lại mấy nghìn.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hết mấy nghìn",
+        "value": 36
+       },
+       {
+        "label": "thối lại mấy nghìn",
+        "value": 14
+       }
+      ]
+     },
+     "solutionNarrative": "Ba quyển hết $12  \\times  3 = 36$ nghìn, nên thối lại $50 - 36 = 14$ nghìn.",
+     "hints": [
+      "Bước một: ba quyển bằng nhau, mỗi quyển mười hai nghìn.",
+      "Bước hai: lấy năm mươi trừ số vừa tính."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Có 20 nghìn, mua một cây bút 6 nghìn và một quyển vở 9 nghìn. Cho biết hết mấy nghìn và còn lại mấy nghìn.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hết mấy nghìn",
+        "value": 15
+       },
+       {
+        "label": "còn lại mấy nghìn",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Hết $6 + 9 = 15$ nghìn, còn lại $20 - 15 = 5$ nghìn.",
+     "hints": [
+      "Bước một: cộng giá hai món lại.",
+      "Bước hai: lấy số tiền có trừ đi tổng ấy."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Tiền thừa bằng tiền đưa trừ tiền mua.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đứng ở phía người mua thì tính thế."
+   },
+   {
+    "id": "Q2",
+    "text": "Đưa 10 nghìn mua món 7 nghìn. Thối lại mấy nghìn?",
+    "format": "mcq",
+    "choices": [
+     "3",
+     "17",
+     "7",
+     "10"
+    ],
+    "answerKey": {
+     "choice": "3"
+    },
+    "solutionNarrative": "Lấy mười bớt bảy."
+   },
+   {
+    "id": "Q3",
+    "text": "Đưa 20 nghìn mua món 15 nghìn. Thối lại mấy nghìn?",
+    "format": "mcq",
+    "choices": [
+     "5",
+     "35",
+     "15",
+     "20"
+    ],
+    "answerKey": {
+     "choice": "5"
+    },
+    "solutionNarrative": "Lấy hai mươi bớt mười lăm."
+   },
+   {
+    "id": "Q4",
+    "text": "Tính tiền thối thì cộng tiền đưa với giá món hàng.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phải trừ, chứ cộng thì tiền thối nhiều hơn tiền đưa."
+   },
+   {
+    "id": "Q5",
+    "text": "Có 5 nghìn thì mua được món giá 8 nghìn.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Tiền mình có ít hơn giá nên chưa mua được."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con cầm tiền đi mua một món nhỏ rồi tự đếm tiền thối — không gì dạy bài này nhanh bằng một lần đi chợ.",
+  "homeActivity": "Bố mẹ hỏi: \"Con đưa bao nhiêu, món hàng bao nhiêu?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B70_giang.mp4"
+ }
+}

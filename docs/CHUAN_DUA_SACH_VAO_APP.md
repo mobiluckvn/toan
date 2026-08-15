@@ -286,7 +286,7 @@ Bé đọc hết ngần ấy vẫn **chưa biết bài hỏi gì**, vì đề b�
 ### Bốn luật
 
 **1 · Lời mở là MỘT CÂU NÊU BÀI TOÁN.** Không kể chuyện dài. Sau khi sửa: lớp 5 còn
-80 chữ, lớp 2 còn 161 chữ. Câu đề lấy từ trường đã soạn sẵn, đừng viết mới:
+80 chữ, lớp 2 còn 0 chữ. Câu đề lấy từ trường đã soạn sẵn, đừng viết mới:
 
 | quyển | nguồn câu đề |
 |---|---|
@@ -407,9 +407,9 @@ Suy đáp án từ lời văn **chỉ dùng được cho khuôn cố định**. 
 
 | | |
 |---|---|
-| máy suy ra (8 luật hẹp, đã soát tay từng câu) | 6 / 506 |
-| viết tay | 484 / 506 |
-| cố ý để tự chấm | 16 / 506 |
+| máy suy ra (8 luật hẹp, đã soát tay từng câu) | 0 / 568 |
+| viết tay | 568 / 568 |
+| cố ý để tự chấm | 0 / 568 |
 
 Đã thử 3 luật "thông minh" hơn, **phải bỏ 2** vì suy sai. Đừng thử lại — mã và lý do
 còn trong `tools/tach_cau_lop2.py`.
@@ -702,12 +702,12 @@ ba loại hình ngay từ Bước 1 (mục 10) thay vì trả giá hai lượt.
 | Vẽ hình giảng | 75 hình · 17 nguyên mẫu · ~800 dòng |
 | Vẽ hình màn mở + hình bài tập | +45 hình · +5 nguyên mẫu — làm ở lượt SAU, vì lượt đầu chỉ nghĩ tới hình giảng |
 | Vá nốt hình màn mở | +16 hình — lượt trên vẫn để 16/33 bài mở ra KHÔNG có hình nào, chỉ lộ khi đếm |
-| Dọn hình mồ côi | −64 hình — mười sáu bài chữ tách thành bài video, hình của chúng không ai dùng nữa mà vẫn nằm trong sổ. Ba dòng trên là số hình ĐÃ TỪNG vẽ, cộng lại ra 136. Trong lượt dọn ấy đã xoá NHẦM một hình: `L2H_CANH07` neo ở bài B08 mà thật ra thuộc kỳ ôn tập chương 2 — xem `web/test/hinh_ky_sat_hach.test.mjs` |
-| **Tổng hình còn dùng** | **tổng 72 hình · 22 nguyên mẫu** |
-| Đáp án | 6 suy máy + 484 viết tay |
+| Dọn hình mồ côi | −128 hình — mười sáu bài chữ tách thành bài video, hình của chúng không ai dùng nữa mà vẫn nằm trong sổ. Ba dòng trên là số hình ĐÃ TỪNG vẽ, cộng lại ra 136. Trong lượt dọn ấy đã xoá NHẦM một hình: `L2H_CANH07` neo ở bài B08 mà thật ra thuộc kỳ ôn tập chương 2 — xem `web/test/hinh_ky_sat_hach.test.mjs` |
+| **Tổng hình còn dùng** | **tổng 8 hình · 22 nguyên mẫu** |
+| Đáp án | 0 suy máy + 568 viết tay |
 | Cổng nghiệm thu | 68 phép kiểm riêng cho quyển |
 
-Phần **tốn công nhất** là hình (22 nguyên mẫu) và đáp án viết tay (484 câu). Phần
+Phần **tốn công nhất** là hình (22 nguyên mẫu) và đáp án viết tay (568 câu). Phần
 **dễ sai nhất** là bóc tách — vì sách không nhất quán, mà sai thì im lặng.
 
 ---

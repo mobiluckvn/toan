@@ -4,10 +4,10 @@
  "chapter": 8,
  "loai": "ontap",
  "so": 8,
- "name": "ÔN TẬP 8 · MỘT NGÀY RA CHỢ CÙNG SU KEM",
+ "name": "ÔN TẬP 8 · MỘT NGÀY RA CHỢ",
  "gioiThieu": [
   "Bài kiểm tra tổng hợp Bài 31-33 · Đạt 8/10 câu: nhận sticker CÔNG DÂN NHÍ VƯƠNG QUỐC SỐ!",
-  "Luật chơi ĐẶC BIỆT: 10 câu dưới đây không rời rạc — chúng nối thành MỘT NGÀY có thật của Su Kem, từ lúc mở mắt đến lúc đi ngủ. Con hãy sống trọn một ngày cùng cậu ấy và giải toán ở từng chặng nhé!"
+  "Luật chơi ĐẶC BIỆT: 10 câu dưới đây không rời rạc — chúng nối thành MỘT NGÀY có thật của một bạn, từ lúc mở mắt đến lúc đi ngủ. Con hãy sống trọn một ngày cùng cậu ấy và giải toán ở từng chặng nhé!"
  ],
  "need": 8,
  "passRule": "Đạt 8/10 câu trở lên: dán sticker CÔNG DÂN NHÍ VƯƠNG QUỐC SỐ — sticker chương cuối cùng! Chưa đạt: ôn theo bảng trên rồi làm ĐỀ B.",
@@ -16,19 +16,24 @@
    "id": "REVITEM:KSN2.C8.A1",
    "qno": 1,
    "star": 1,
-   "text": "Su Kem mở mắt, đồng hồ có kim phút chỉ 12, kim giờ chỉ 7. Mấy giờ rồi nhỉ?",
-   "answer": "7 giờ đúng",
-   "solutionNarrative": "7 giờ đúng",
+   "text": "Một bạn mở mắt, đồng hồ có kim phút chỉ 12, kim giờ chỉ 7. Mấy giờ rồi nhỉ?",
+   "answer": "Kim phút chỉ 12 nên là giờ đúng; kim giờ chỉ 7 nên là 7 giờ. Đáp số: 7 giờ.",
+   "solutionNarrative": "Kim phút chỉ 12 nên là giờ đúng; kim giờ chỉ 7 nên là 7 giờ. Đáp số: 7 giờ.",
    "answerKey": {
     "parts": [
      {
       "label": "mấy giờ",
-      "value": 7
+      "options": [
+       "7 giờ",
+       "12 giờ",
+       "7 giờ rưỡi"
+      ],
+      "value": "7 giờ"
      }
     ]
    },
    "diagnosesMicro": "DL:KSN2.B33",
-   "trapName": "Bài 63 · XEM GIỜ — HAI CHIẾC KIM KỂ CHUYỆN"
+   "trapName": "Bài 70 · GIỜ ĐÚNG — KIM PHÚT CHỈ SỐ 12"
   },
   {
    "id": "REVITEM:KSN2.C8.A2",
@@ -41,7 +46,7 @@
     "value": 8
    },
    "diagnosesMicro": "DL:KSN2.B33",
-   "trapName": "Bài 63 · XEM GIỜ — HAI CHIẾC KIM KỂ CHUYỆN"
+   "trapName": "Bài 70 · GIỜ ĐÚNG — KIM PHÚT CHỈ SỐ 12"
   },
   {
    "id": "REVITEM:KSN2.C8.A3",
@@ -53,8 +58,8 @@
    "answerKey": {
     "value": 13
    },
-   "diagnosesMicro": "DL:KSN2.B32",
-   "trapName": "Bài 62 · CỬA HÀNG NƯỚC CHANH — TÍNH LÃI"
+   "diagnosesMicro": "DL:KSN2.B70",
+   "trapName": "Bài 69 · TIỀN THỪA — ĐỨNG Ở PHÍA NGƯỜI MUA"
   },
   {
    "id": "REVITEM:KSN2.C8.A4",
@@ -66,8 +71,8 @@
    "answerKey": {
     "value": 2
    },
-   "diagnosesMicro": "DL:KSN2.B32",
-   "trapName": "Bài 62 · CỬA HÀNG NƯỚC CHANH — TÍNH LÃI"
+   "diagnosesMicro": "DL:KSN2.B70",
+   "trapName": "Bài 69 · TIỀN THỪA — ĐỨNG Ở PHÍA NGƯỜI MUA"
   },
   {
    "id": "REVITEM:KSN2.C8.A5",
@@ -84,106 +89,125 @@
      }
     ]
    },
-   "diagnosesMicro": "DL:KSN2.B31",
-   "trapName": "Bài 61 · MỘT NỬA & MỘT PHẦN TƯ"
+   "diagnosesMicro": "DL:KSN2.B69",
+   "trapName": "Bài 67 · MỘT NỬA CỦA MỘT NHÓM ĐỒ VẬT"
   },
   {
    "id": "REVITEM:KSN2.C8.A6",
    "qno": 6,
    "star": 2,
-   "text": "Bữa trưa có chiếc bánh pizza cắt thành 4 phần bằng nhau. Su Kem ăn 1 phần — cậu ấy ăn một phần mấy chiếc bánh?",
-   "answer": "một phần tư chiếc bánh",
-   "solutionNarrative": "một phần tư chiếc bánh",
+   "text": "Bữa trưa có chiếc bánh chia thành 4 phần bằng nhau. Một bạn ăn 1 phần — bạn ấy ăn một phần mấy của chiếc bánh?",
+   "answer": "Chiếc bánh chia thành 4 phần bằng nhau, ăn 1 phần thì ăn một phần tư chiếc bánh. Đáp số: một phần tư.",
+   "solutionNarrative": "Chiếc bánh chia thành 4 phần bằng nhau, ăn 1 phần thì ăn một phần tư chiếc bánh. Đáp số: một phần tư.",
    "answerKey": {
     "parts": [
      {
-      "label": "ăn một phần mấy chiếc bánh",
+      "label": "ăn một phần mấy",
       "options": [
        "một phần tư",
-       "một nửa",
-       "một phần ba"
+       "một nửa"
       ],
       "value": "một phần tư"
      }
     ]
    },
    "diagnosesMicro": "DL:KSN2.B31",
-   "trapName": "Bài 61 · MỘT NỬA & MỘT PHẦN TƯ"
+   "trapName": "Bài 66 · MỘT NỬA VÀ MỘT PHẦN TƯ — CÁC PHẦN PHẢI BẰNG NHAU"
   },
   {
    "id": "REVITEM:KSN2.C8.A7",
    "qno": 7,
    "star": 2,
-   "text": "Sau khi Su Kem ăn, chiếc bánh còn lại mấy phần? Cả nhà 3 người còn lại mỗi người một phần — có vừa khít không?",
-   "answer": "còn 3 phần — vừa khít 3 người mỗi người một phần ✓",
-   "solutionNarrative": "còn 3 phần — vừa khít 3 người mỗi người một phần ✓",
+   "text": "Sau khi bạn ấy ăn một phần, chiếc bánh còn lại mấy phần? Cả nhà 3 người còn lại mỗi người được một phần chứ?",
+   "answer": "Bánh có 4 phần, ăn mất 1 phần thì còn 4 − 1 = 3 phần. Nhà còn 3 người nên mỗi người vừa đúng một phần. Đáp số: còn 3 phần, mỗi người một phần.",
+   "solutionNarrative": "Bánh có 4 phần, ăn mất 1 phần thì còn 4 − 1 = 3 phần. Nhà còn 3 người nên mỗi người vừa đúng một phần. Đáp số: còn 3 phần, mỗi người một phần.",
    "answerKey": {
     "parts": [
      {
-      "label": "còn lại mấy phần",
+      "label": "còn mấy phần",
       "value": 3
+     },
+     {
+      "label": "mỗi người có được một phần không",
+      "options": [
+       "có",
+       "không"
+      ],
+      "value": "có"
      }
     ]
    },
    "diagnosesMicro": "DL:KSN2.B31",
-   "trapName": "Bài 61 · MỘT NỬA & MỘT PHẦN TƯ"
+   "trapName": "Bài 66 · MỘT NỬA VÀ MỘT PHẦN TƯ — CÁC PHẦN PHẢI BẰNG NHAU"
   },
   {
    "id": "REVITEM:KSN2.C8.A8",
    "qno": 8,
    "star": 3,
-   "text": "Chiều, Su Kem mở quán: vốn mua chanh - đường hết 10 nghìn; bán được 4 cốc, mỗi cốc 4 nghìn. Tiền bán là bao nhiêu? Ông chủ nhỏ lãi bao nhiêu?",
-   "answer": "tiền bán 4 × 4 = 16 nghìn; lãi 16 − 10 = 6 nghìn",
-   "solutionNarrative": "tiền bán 4 × 4 = 16 nghìn; lãi 16 − 10 = 6 nghìn",
+   "text": "Chiều, một bạn mở quán nước chanh: vốn mua chanh và đường hết 10 nghìn; bán được 4 cốc, mỗi cốc 4 nghìn. Hỏi bạn ấy lãi bao nhiêu?",
+   "answer": "Tiền bán: 4 × 4 = 16 (nghìn đồng). Tiền lãi: 16 − 10 = 6 (nghìn đồng). Đáp số: lãi 6 nghìn đồng.",
+   "solutionNarrative": "Tiền bán: 4 × 4 = 16 (nghìn đồng). Tiền lãi: 16 − 10 = 6 (nghìn đồng). Đáp số: lãi 6 nghìn đồng.",
    "answerKey": {
     "parts": [
      {
-      "label": "tiền bán, tính bằng nghìn đồng",
+      "label": "tiền bán mấy nghìn",
       "value": 16
      },
      {
-      "label": "lãi, tính bằng nghìn đồng",
+      "label": "lãi mấy nghìn",
       "value": 6
      }
     ]
    },
    "diagnosesMicro": "DL:KSN2.B32",
-   "trapName": "Bài 62 · CỬA HÀNG NƯỚC CHANH — TÍNH LÃI"
+   "trapName": "Bài 68 · VỐN, BÁN VÀ LÃI — SỔ CỦA ÔNG CHỦ"
   },
   {
    "id": "REVITEM:KSN2.C8.A9",
    "qno": 9,
    "star": 3,
-   "text": "Một cô khách đưa 10 nghìn mua 2 cốc nước chanh. Su Kem phải thối lại bao nhiêu?",
-   "answer": "2 cốc hết 4 + 4 = 8 nghìn; thối 10 − 8 = 2 nghìn",
-   "solutionNarrative": "2 cốc hết 4 + 4 = 8 nghìn; thối 10 − 8 = 2 nghìn",
+   "text": "Một cô khách đưa 10 nghìn mua 2 cốc nước chanh, mỗi cốc 4 nghìn. Phải thối lại cô ấy bao nhiêu?",
+   "answer": "Hai cốc hết 4 × 2 = 8 (nghìn đồng). Thối lại: 10 − 8 = 2 (nghìn đồng). Đáp số: 2 nghìn đồng.",
+   "solutionNarrative": "Hai cốc hết 4 × 2 = 8 (nghìn đồng). Thối lại: 10 − 8 = 2 (nghìn đồng). Đáp số: 2 nghìn đồng.",
    "answerKey": {
     "parts": [
      {
-      "label": "thối lại bao nhiêu nghìn",
+      "label": "thối lại mấy nghìn",
       "value": 2
      }
     ]
    },
-   "diagnosesMicro": "DL:KSN2.B32",
-   "trapName": "Bài 62 · CỬA HÀNG NƯỚC CHANH — TÍNH LÃI"
+   "diagnosesMicro": "DL:KSN2.B70",
+   "trapName": "Bài 69 · TIỀN THỪA — ĐỨNG Ở PHÍA NGƯỜI MUA"
   },
   {
    "id": "REVITEM:KSN2.C8.A10",
    "qno": 10,
    "star": 3,
-   "text": "Tối, 8 giờ rưỡi là giờ đi ngủ của Su Kem. Hãy vẽ mặt đồng hồ lúc đó: kim phút chỉ số nào, kim giờ nằm ở đâu?",
-   "answer": "kim phút chỉ số 6; kim giờ nằm giữa số 8 và số 9 (đã đi qua số 8). Nhật ký toán: mọi câu trả lời thật thà của con đều đúng — toán trốn khắp nơi mà!",
-   "solutionNarrative": "kim phút chỉ số 6; kim giờ nằm giữa số 8 và số 9 (đã đi qua số 8). Nhật ký toán: mọi câu trả lời thật thà của con đều đúng — toán trốn khắp nơi mà!",
-   "diagnosesMicro": "DL:KSN2.B33",
-   "trapName": "Bài 63 · XEM GIỜ — HAI CHIẾC KIM KỂ CHUYỆN"
+   "text": "Tối, 8 giờ rưỡi là giờ đi ngủ. Lúc đó kim phút chỉ số nào, và kim giờ nằm giữa hai số nào?",
+   "answer": "Giờ rưỡi thì kim phút chỉ số 6. Kim giờ nằm giữa số 8 và số 9, vì nó đã đi qua số 8. Đáp số: kim phút chỉ 6; kim giờ giữa 8 và 9.",
+   "solutionNarrative": "Giờ rưỡi thì kim phút chỉ số 6. Kim giờ nằm giữa số 8 và số 9, vì nó đã đi qua số 8. Đáp số: kim phút chỉ 6; kim giờ giữa 8 và 9.",
+   "answerKey": {
+    "parts": [
+     {
+      "label": "kim phút chỉ số",
+      "value": 6
+     },
+     {
+      "label": "kim giờ đã đi qua số",
+      "value": 8
+     }
+    ]
+   },
+   "diagnosesMicro": "DL:KSN2.B71",
+   "trapName": "Bài 71 · GIỜ RƯỠI — ĐỌC THEO SỐ KIM GIỜ ĐÃ ĐI QUA"
   }
  ],
  "deB": [
   {
    "id": "B1",
    "qno": 1,
-   "text": "Kim phút chỉ 12, kim giờ chỉ 6 — Su Kem dậy lúc mấy giờ?",
+   "text": "Kim phút chỉ 12, kim giờ chỉ 6 — một bạn dậy lúc mấy giờ?",
    "answer": "6 giờ đúng",
    "solutionNarrative": "6 giờ đúng",
    "answerKey": {

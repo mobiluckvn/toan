@@ -415,6 +415,51 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuPhu"):
             giua(d, y0 + n_h * h_o + 40, c["chuPhu"], phong(36), INK, rong=W - 160)
 
+    elif L == "dong_ho":
+        # ══ MẶT ĐỒNG HỒ HAI KIM ══
+        # Cả bài xem giờ đứng trên việc PHÂN BIỆT HAI KIM: kim giờ ngắn và mập, kim
+        # phút dài và mảnh. Vẽ hai kim dài bằng nhau là bài học đổ ngay từ hình.
+        #
+        # `gio` và `phut` là số mà mỗi kim đang chỉ (phút tính theo MẶT SỐ, tức 12 là
+        # đúng giờ và 6 là rưỡi). Kim giờ tự xê dịch theo phút, nên "3 giờ rưỡi" thì
+        # kim giờ nằm đúng giữa 3 và 4 — chính là chỗ bé hay đọc nhầm thành 4 giờ.
+        import math
+        giua(d, 44, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        cx, cy, r = W // 2, 350, 190
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], fill="#FFFFFF", outline=NAVY,
+                  width=8)
+        gio = float(c.get("gio", 12))
+        phut = float(c.get("phut", 12))
+        # Kim giờ xê dịch theo kim phút: đi hết một vòng phút thì kim giờ tiến một số.
+        gio_that = (gio % 12) + (phut % 12) / 12
+        for nhan, val, dai, day, mau in (
+                ('kim giờ', gio_that * 30, r - 96, 20, TEAL_DARK),
+                ('kim phút', (phut % 12) * 30, r - 34, 12, GOLD_DARK)):
+            goc = math.radians(val - 90)
+            d.line([cx, cy, cx + dai * math.cos(goc), cy + dai * math.sin(goc)],
+                   fill=mau, width=day)
+        d.ellipse([cx - 12, cy - 12, cx + 12, cy + 12], fill=NAVY)
+        # ⚠ VẼ SỐ SAU KIM. Bản đầu vẽ số trước nên kim phút chỉ số 6 đè lên đúng con
+        # số 6 — chính con số mà cả bài đang bảo bé nhìn vào.
+        f_so = phong(38)
+        for k in range(1, 13):
+            goc = math.radians(k * 30 - 90)
+            x = cx + (r - 42) * math.cos(goc)
+            y = cy + (r - 42) * math.sin(goc)
+            t = str(k)
+            w = d.textlength(t, font=f_so)
+            # Nền trắng nhỏ dưới chữ, để kim có chạy qua thì số vẫn đọc được.
+            d.ellipse([x - w / 2 - 10, y - 30, x + w / 2 + 10, y + 30],
+                      fill="#FFFFFF")
+            d.text((x - w / 2, y - 24), t, font=f_so,
+                   fill=NAVY if k in (12, 6) else MUTE)
+        # Chú thích hai kim, đặt hai bên để không đè lên mặt số.
+        f_ch = phong(30)
+        d.text((80, cy - 40), 'kim giờ: NGẮN và mập', font=f_ch, fill=TEAL_DARK)
+        d.text((80, cy + 10), 'kim phút: DÀI', font=f_ch, fill=GOLD_DARK)
+        if c.get("chuPhu"):
+            giua(d, cy + r + 44, c["chuPhu"], phong(38), INK, rong=W - 160)
+
     elif L == "hinh_cn":
         # ══ HÌNH CHỮ NHẬT — VẼ ĐƯỢC CẢ CHU VI LẪN DIỆN TÍCH ══
         # Chỗ bé lẫn nhất cả chương là chu vi với diện tích. Nói bằng lời thì hai chữ

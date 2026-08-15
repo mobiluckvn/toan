@@ -6204,6 +6204,597 @@ def kb2_bang_loai_tru(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 2 · CHƯƠNG 7 · VƯƠNG QUỐC HÌNH HỌC — mười kịch bản.
+# ⚠ Viết "xăng-ti-mét" chứ đừng viết tắt: máy đọc hai chữ cái thành tiếng Anh.
+# ═══════════════════════════════════════════════════════════════════════════
+
+
+def kb2_nhan_hinh(b):
+    """C7① Nhận mặt hình bằng cạnh và đỉnh."""
+    return [
+        _c('bia', 'Nhận mặt hình', so_bai(b),
+           loi=['Nhận ra hình bằng cách đếm cạnh đếm đỉnh, đừng tin dáng đứng.']),
+        _c('tam_giac', 'Tam giác có 3 cạnh và 3 đỉnh', day=8, cao=6,
+           loi=['Mỗi hình có một tấm danh thiếp, là số cạnh và số đỉnh.',
+                'Tam giác có ba cạnh và ba đỉnh.']),
+        _c('hinh_cn', 'Hình chữ nhật: 4 cạnh, 4 đỉnh', dai=6, rong=4,
+           loi=['Hình chữ nhật có bốn cạnh và bốn đỉnh.',
+                'Hai cạnh dài bằng nhau, hai cạnh ngắn bằng nhau.']),
+        _c('hinh_cn', 'Hình vuông: 4 cạnh BẰNG NHAU', dai=5, rong=5,
+           loi=['Hình vuông cũng bốn cạnh bốn đỉnh, nhưng cả bốn cạnh bằng nhau.']),
+        _c('y_toan', 'Bốn cạnh bốn đỉnh thì mang họ TỨ GIÁC',
+           'hình vuông · hình chữ nhật · cả hình xiêu vẹo', buoc=1, soBuoc=3,
+           loi=['Mọi hình bốn cạnh bốn đỉnh đều mang họ tứ giác.',
+                'Kể cả hình xiêu vẹo cũng được dự hội đàng hoàng.']),
+        _c('y_toan', 'Hình bị XOAY vẫn là chính nó',
+           'hình vuông xoay nghiêng vẫn đủ 4 cạnh bằng nhau', buoc=2, soBuoc=3,
+           loi=['Hình vuông đặt xoay nghiêng trông lạ mắt.',
+                'Nhưng đếm vẫn bốn cạnh bằng nhau và bốn đỉnh, nên vẫn là hình '
+                'vuông.']),
+        _c('y_toan', 'Đáp số', 'tam giác 3 cạnh 3 đỉnh · hình vuông xoay vẫn là hình vuông',
+           buoc=3, soBuoc=3,
+           loi=['Tam giác có ba cạnh ba đỉnh. Hình vuông xoay nghiêng vẫn là hình '
+                'vuông.']),
+        _c('cong_thuc', 'Cách nhận hình',
+           congThuc='ĐẾM CẠNH  ·  ĐẾM ĐỈNH',
+           thay='đừng tin dáng đứng của hình',
+           loi=['Đếm cạnh, đếm đỉnh. Đừng tin dáng đứng của hình.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='4 cạnh 4 đỉnh  →  họ TỨ GIÁC',
+           loi=['Con nhớ lại một lần nữa. Bốn cạnh bốn đỉnh thì mang họ tứ giác.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_kien_bo(b):
+    """C7② Đường kiến bò một vòng."""
+    return [
+        _c('bia', 'Đường kiến bò một vòng', so_bai(b),
+           loi=['Thả một chú kiến bò quanh mép hình, xem nó đi được bao xa.']),
+        _c('de_toan', 'Đề bài',
+           de='Tam giác có ba cạnh 3, 4 và 5 xăng-ti-mét. Chú kiến bò đúng một vòng quanh hình được bao nhiêu xăng-ti-mét?',
+           loi=['Một hình tam giác có ba cạnh dài ba, bốn và năm xăng ti mét.',
+                'Chú kiến bò đúng một vòng quanh hình được bao nhiêu xăng ti mét?']),
+        _c('tam_giac', 'Chú kiến đi hết cạnh này sang cạnh kia', day=10, cao=6,
+           chuPhu='Đi đủ một vòng rồi về đúng chỗ cũ.',
+           loi=['Chú kiến đi hết cạnh này sang cạnh kia, đủ một vòng rồi về chỗ cũ.']),
+        _c('y_toan', 'Quãng đường bằng tổng độ dài các cạnh', '3 + 4 + 5 = 12',
+           buoc=1, soBuoc=3,
+           loi=['Quãng đường chú kiến đi bằng tổng độ dài các cạnh.',
+                'Ba cộng bốn cộng năm bằng mười hai.']),
+        _c('y_toan', 'Đáp số', '12 xăng-ti-mét', buoc=2, soBuoc=3,
+           loi=['Đáp số là mười hai xăng ti mét.']),
+        _c('hinh_cn', 'Hình chữ nhật thì cộng đủ BỐN cạnh', dai=6, rong=3,
+           loi=['Với hình chữ nhật thì phải cộng đủ bốn cạnh.',
+                'Sáu cộng ba cộng sáu cộng ba bằng mười tám.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Cộng thiếu cạnh nằm khuất phía dưới.',
+           buoc=3, soBuoc=3,
+           loi=['Có bạn cộng thiếu một cạnh, vì cạnh ấy nằm khuất phía dưới hình.',
+                'Chú kiến phải về đúng chỗ xuất phát mới là một vòng.']),
+        _c('cong_thuc', 'Cách làm của cả bài',
+           congThuc='cộng ĐỦ các cạnh, không sót cạnh nào',
+           thay='lên lớp 3, quãng đường ấy có tên riêng là CHU VI',
+           loi=['Cộng đủ các cạnh, không sót cạnh nào.',
+                'Lên lớp ba, quãng đường ấy sẽ có tên riêng là chu vi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_hinh_don(b):
+    """C7③ Đánh số mảnh rồi đếm hình đơn."""
+    return [
+        _c('bia', 'Đánh số rồi đếm', so_bai(b),
+           loi=['Đếm hình trong hình ghép thì phải làm có thứ tự, không thì sót.']),
+        _c('de_toan', 'Đề bài',
+           de='Một hình chữ nhật chia thành 3 ô vuông nhỏ xếp hàng ngang. Có mấy hình đơn?',
+           loi=['Một hình chữ nhật được chia thành ba ô vuông nhỏ xếp thành hàng '
+                'ngang.',
+                'Hỏi có mấy hình đơn, tức là mấy mảnh nhỏ.']),
+        _c('hinh_cn', 'Kẻ hình ra rồi nhìn cho kỹ', dai=6, rong=2, oVuong=True,
+           chuPhu='Ba ô vuông nhỏ xếp thành hàng ngang.',
+           loi=['Kẻ hình ra rồi nhìn cho kỹ. Ba ô vuông nhỏ xếp thành hàng ngang.']),
+        _c('day_so', 'Đánh số từng mảnh — điểm danh', so=[1, 2, 3],
+           chuPhu='Viết số 1, 2, 3 vào ba mảnh.',
+           loi=['Đánh số từng mảnh. Viết số một, số hai, số ba vào ba mảnh.',
+                'Đây là bước điểm danh, làm rồi thì không sót mảnh nào.']),
+        _c('y_toan', 'Đếm hình đơn', 'mỗi mảnh là một hình  →  3 hình đơn',
+           buoc=1, soBuoc=3,
+           loi=['Mỗi mảnh nhỏ là một hình đơn. Có ba mảnh nên có ba hình đơn.']),
+        _c('y_toan', 'Đáp số', '3 hình đơn', buoc=2, soBuoc=3,
+           loi=['Đáp số là ba hình đơn.']),
+        _c('y_toan', 'Nhưng mới xong một nửa việc',
+           'trong hình còn hình TO ẩn mình', buoc=3, soBuoc=3,
+           loi=['Nhưng đếm hình đơn mới xong một nửa việc.',
+                'Trong hình còn hình to đang ẩn mình, bài sau sẽ lùng ra.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='ĐÁNH SỐ trước, ĐẾM sau',
+           thay='có thứ tự thì không sót, không trùng',
+           loi=['Con nhớ lại một lần nữa. Đánh số trước, đếm sau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_hinh_ghep(b):
+    """C7④ Đếm hình ghép."""
+    return [
+        _c('bia', 'Hình ghép ẩn mình', so_bai(b),
+           loi=['Ghép mấy mảnh cạnh nhau lại cũng thành một hình. Đó là hình ghép.']),
+        _c('de_toan', 'Đề bài',
+           de='Băng 3 ô đánh số 1, 2, 3. Ghép được thêm mấy hình chữ nhật nữa?',
+           loi=['Băng ba ô đánh số một, hai, ba.',
+                'Hỏi ghép được thêm mấy hình chữ nhật nữa.']),
+        _c('y_toan', 'Ghép HAI mảnh cạnh nhau trước',
+           '(1 và 2)  ·  (2 và 3)  →  2 hình', buoc=1, soBuoc=3,
+           loi=['Ghép hai mảnh cạnh nhau trước.',
+                'Ghép mảnh một với mảnh hai được một hình. Ghép mảnh hai với mảnh ba '
+                'được một hình nữa. Vậy hai hình.']),
+        _c('y_toan', 'Rồi ghép BA mảnh', '(1 và 2 và 3)  →  1 hình to nhất',
+           buoc=2, soBuoc=3,
+           loi=['Rồi ghép cả ba mảnh, được hình to nhất ôm trọn cả hình. Thêm một '
+                'hình.']),
+        _c('y_toan', 'Cộng lại', '2 + 1 = 3 hình ghép', buoc=3, soBuoc=3,
+           loi=['Cộng lại được ba hình ghép.']),
+        _c('y_toan', 'Cả hình có mấy hình chữ nhật', '3 hình đơn + 3 hình ghép = 6',
+           loi=['Cộng cả hình đơn lẫn hình ghép thì băng ba ô có sáu hình chữ nhật.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Đếm ba mảnh nhỏ rồi ghi luôn đáp số là 3.',
+           loi=['Có bạn đếm được ba mảnh nhỏ rồi ghi luôn đáp số là ba.',
+                'Còn ba hình ghép nữa chưa đếm.']),
+        _c('cong_thuc', 'Đi tuần tự thì không sót',
+           congThuc='ghép 2 mảnh  →  ghép 3 mảnh  →  ghép cả hình',
+           thay='hình TO NHẤT luôn là hình hay ẩn mình nhất',
+           loi=['Đi tuần tự: ghép hai mảnh, ghép ba mảnh, rồi ghép cả hình.',
+                'Hình to nhất luôn là hình hay ẩn mình nhất.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_tam_nan_hoa(b):
+    """C7⑤ Tâm và nan hoa bằng nhau."""
+    return [
+        _c('bia', 'Bí mật của hình tròn', so_bai(b),
+           loi=['Hình tròn có một bí mật, và cả cái bánh xe đứng trên bí mật ấy.']),
+        _c('hinh_tron', 'Cái rốn chính giữa gọi là TÂM', ban_kinh=5, hienTam=True,
+           chuPhu='Từ tâm căng dây ra viền, ta được các nan hoa.',
+           loi=['Hình tròn có một cái rốn chính giữa gọi là tâm.',
+                'Từ tâm căng dây ra viền theo hướng nào cũng được, ta gọi đó là các '
+                'nan hoa.']),
+        _c('hinh_tron', 'Mọi nan hoa đều dài BẰNG NHAU', ban_kinh=5, hienTam=True,
+           hienBanKinh=True, chuPhu='Đo hướng nào cũng ra cùng một độ dài.',
+           loi=['Bí mật là mọi nan hoa đều dài bằng nhau.',
+                'Đo thử vài nan hoa mà xem, hướng nào cũng ra cùng một độ dài.']),
+        _c('y_toan', 'Đo nan hoa là biết tròn thật hay tròn giả',
+           'nan hoa bằng nhau  →  hình tròn', buoc=1, soBuoc=3,
+           loi=['Muốn biết tròn thật hay tròn giả thì cứ đo nan hoa.']),
+        _c('y_toan', 'Quả trứng nhìn nghiêng thì sao',
+           'viền cong nhưng nan hoa chỗ dài chỗ ngắn  →  hình MÉO',
+           buoc=2, soBuoc=3,
+           loi=['Quả trứng nhìn nghiêng cũng có viền cong.',
+                'Nhưng nan hoa chỗ dài chỗ ngắn, nên nó là hình méo chứ không phải '
+                'hình tròn.']),
+        _c('y_toan', 'Đáp số',
+           'mặt đồng hồ · chiếc đĩa · đồng xu  đều là hình tròn', buoc=3, soBuoc=3,
+           loi=['Mặt đồng hồ, chiếc đĩa và đồng xu đều có dạng hình tròn.',
+                'Quyển vở là hình chữ nhật, còn quả trứng nhìn nghiêng là hình méo.']),
+        _c('cong_thuc', 'Cách kiểm tra',
+           congThuc='đo NAN HOA xem có bằng nhau không',
+           thay='viền cong thôi thì chưa đủ',
+           loi=['Đo nan hoa xem có bằng nhau không. Viền cong thôi thì chưa đủ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_banh_xe(b):
+    """C7⑥ Vì sao bánh xe phải tròn."""
+    return [
+        _c('bia', 'Vì sao bánh xe phải tròn', so_bai(b),
+           loi=['Đây là chỗ hình học gặp cuộc sống thật.']),
+        _c('hinh_tron', 'Trục xe đặt đúng ở TÂM', ban_kinh=5, hienTam=True,
+           hienBanKinh=True, chuPhu='Trục nằm ở tâm, nan hoa chống xuống mặt đất.',
+           loi=['Trục xe đặt đúng ở tâm bánh xe.']),
+        _c('y_toan', 'Bánh tròn thì trục luôn cao đều một mức',
+           'nan hoa nào cũng bằng nhau  →  trục cao đều', buoc=1, soBuoc=3,
+           loi=['Vì mọi nan hoa dài bằng nhau, nên chỗ nào chạm đất thì trục cũng cao '
+                'đúng bằng một nan hoa.',
+                'Xe chạy êm ru.']),
+        _c('hinh_cn', 'Còn bánh vuông thì sao', dai=5, rong=5, duongCheo=True,
+           chuPhu='Nan hoa ra góc DÀI, ra giữa cạnh NGẮN.',
+           loi=['Còn bánh vuông thì nan hoa ra góc dài, ra giữa cạnh ngắn.']),
+        _c('y_toan', 'Trục lúc nhô lúc tụt', 'xe xóc suốt, không đi được',
+           buoc=2, soBuoc=3,
+           loi=['Nên trục xe lúc nhô lúc tụt. Xe xóc suốt, không đi được.']),
+        _c('y_toan', 'Đáp số',
+           'vì mọi nan hoa của hình tròn bằng nhau nên trục luôn cao đều',
+           buoc=3, soBuoc=3,
+           loi=['Bánh xe phải tròn vì mọi nan hoa của hình tròn bằng nhau, nên trục '
+                'luôn cao đều.']),
+        _c('y_toan', 'Tính chiều cao của trục', 'nan hoa 4  →  trục cao 4 xăng-ti-mét',
+           loi=['Nan hoa dài bốn xăng ti mét thì trục cao cách mặt đất đúng bốn xăng '
+                'ti mét.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='cả cái bánh xe đứng trên MỘT tính chất',
+           thay='mọi nan hoa đều bằng nhau',
+           loi=['Con nhớ lại một lần nữa. Cả cái bánh xe đứng trên một tính chất, là '
+                'mọi nan hoa đều bằng nhau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_hai_loai_khoi(b):
+    """C7⑦ Hai loại khối, mỗi khối sáu mặt."""
+    return [
+        _c('bia', 'Hai loại khối', so_bai(b),
+           loi=['Khối là thứ cầm nắm được, và khối nào cũng có sáu mặt.']),
+        _c('khoi', 'Khối lập phương: vuông vức mọi phía', dai=3, rong=3, cao=3,
+           kieu='chong', chuPhu='Mỗi mặt là một hình vuông giống hệt nhau.',
+           loi=['Khối lập phương vuông vức mọi phía, như viên xúc xắc hay khối '
+                'ru bích.',
+                'Mỗi mặt của nó là một hình vuông giống hệt nhau.']),
+        _c('khoi', 'Khối hộp chữ nhật: dài dài', dai=4, rong=2, cao=2,
+           kieu='chong', chuPhu='Mỗi mặt là một hình chữ nhật.',
+           loi=['Khối hộp chữ nhật thì dài dài, như hộp sữa hay viên gạch.',
+                'Mỗi mặt của nó là một hình chữ nhật.']),
+        _c('khoi', 'Trải phẳng ra thì thấy đủ SÁU mặt', dai=4, rong=2, cao=2,
+           kieu='trai', chuPhu='Hai mặt cùng màu là hai mặt đối diện.',
+           loi=['Trải phẳng ra thì thấy đủ sáu mặt. Hai mặt cùng màu là hai mặt đối '
+                'diện.']),
+        _c('y_toan', 'Đếm mặt kiểu sờ tay',
+           'trên · dưới · trước · sau · trái · phải', buoc=1, soBuoc=3,
+           loi=['Cầm hộp lên rồi sờ và đếm: mặt trên, mặt dưới, mặt trước, mặt sau, '
+                'mặt trái, mặt phải.',
+                'Đúng sáu mặt, khối nào cũng vậy.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Quên mặt đang úp xuống bàn.', buoc=2, soBuoc=3,
+           loi=['Có bạn đếm được bốn mặt rồi thôi, vì quên mặt trên và mặt đang úp '
+                'xuống bàn.']),
+        _c('y_toan', 'Đáp số',
+           'xúc xắc và ru-bích là khối lập phương · hộp sữa và viên gạch là khối hộp chữ nhật',
+           buoc=3, soBuoc=3,
+           loi=['Xúc xắc và ru bích là khối lập phương. Hộp sữa và viên gạch là khối '
+                'hộp chữ nhật.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='khối nào cũng có SÁU mặt',
+           thay='chỉ khác nhau ở chỗ mặt ấy vuông hay chữ nhật',
+           loi=['Con nhớ lại một lần nữa. Khối nào cũng có sáu mặt.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_hinh_va_khoi(b):
+    """C7⑧ Hình dẹt và khối."""
+    return [
+        _c('bia', 'Hình dẹt và khối', so_bai(b),
+           loi=['Hình vuông và khối lập phương là hai thứ khác nhau.']),
+        _c('hinh_cn', 'HÌNH thì dẹt, nằm trên giấy', dai=5, rong=5,
+           chuPhu='Mỏng dính, không cầm nắm được.',
+           loi=['Hình vuông vẽ trên giấy, mỏng dính, không cầm nắm được.']),
+        _c('khoi', 'KHỐI thì cầm nắm được', dai=3, rong=3, cao=3, kieu='chong',
+           chuPhu='Có chỗ rỗng bên trong để giấu kẹo.',
+           loi=['Khối lập phương cầm được trong tay, có chỗ rỗng bên trong để giấu '
+                'kẹo.']),
+        _c('y_toan', 'Hình chính là ẢNH CHỤP một mặt của khối',
+           'chấm một mặt vào mực rồi in lên giấy', buoc=1, soBuoc=3,
+           loi=['Hình chính là ảnh chụp một mặt của khối.',
+                'Chấm một mặt của khối lập phương vào mực rồi in lên giấy, ta được một '
+                'hình vuông.']),
+        _c('y_toan', 'In một mặt khối hộp chữ nhật', 'được một hình chữ nhật',
+           buoc=2, soBuoc=3,
+           loi=['In một mặt của khối hộp chữ nhật thì được một hình chữ nhật.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Gọi viên xúc xắc là "hình vuông".',
+           buoc=3, soBuoc=3,
+           loi=['Có bạn gọi viên xúc xắc là hình vuông.',
+                'Viên xúc xắc là khối lập phương. Hình vuông chỉ là ảnh chụp một mặt '
+                'của nó.']),
+        _c('cong_thuc', 'Cách phân biệt',
+           congThuc='dẹt trên giấy  →  HÌNH',
+           thay='cầm nắm được, có 6 mặt  →  KHỐI',
+           loi=['Dẹt trên giấy thì gọi là hình. Cầm nắm được và có sáu mặt thì gọi là '
+                'khối.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hỏi: "in một mặt ra giấy thì được hình gì?"',
+           loi=['Con nhớ lại một lần nữa. Hỏi rằng in một mặt của nó ra giấy thì được '
+                'hình gì.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_luat_ngoi(b):
+    """C7⑨ Luật ngồi."""
+    return [
+        _c('bia', 'Khối bị che vẫn phải đếm', so_bai(b),
+           loi=['Đếm bằng mắt thì sót. Phải đếm bằng luật.']),
+        _c('khoi', 'Một tòa tháp hai tầng', dai=2, rong=2, cao=2, kieu='chong',
+           chuPhu='Có khối nấp phía sau mà mắt không thấy.',
+           loi=['Nhìn tòa tháp này. Có khối nấp phía sau mà mắt không nhìn thấy.']),
+        _c('y_toan', 'Khối không biết bay', 'khối tầng trên phải NGỒI trên một khối',
+           buoc=1, soBuoc=3,
+           loi=['Khối ở tầng trên không biết bay. Nó phải ngồi trên một khối tầng '
+                'dưới.']),
+        _c('y_toan', 'Nên thấy khối tầng hai là biết chắc bên dưới có khối',
+           'dù khối ấy bị che gần hết', buoc=2, soBuoc=3,
+           loi=['Nên hễ thấy khối ở tầng hai, mình biết chắc bên dưới nó có một khối '
+                'đỡ.',
+                'Dù khối ấy bị che gần hết.']),
+        _c('khoi', 'Tách tầng ra thì thấy hết', dai=2, rong=2, cao=2, kieu='tang',
+           chuPhu='Tách từng tầng ra là đếm được cả khối bị che.',
+           loi=['Tách từng tầng ra thì thấy hết, đếm được cả khối bị che.']),
+        _c('y_toan', 'Đáp số', 'có, bên dưới chắc chắn có một khối đỡ',
+           buoc=3, soBuoc=3,
+           loi=['Đáp số là có, bên dưới chắc chắn có một khối đỡ.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Chỉ đếm những khối mắt nhìn thấy.',
+           loi=['Có bạn chỉ đếm những khối mắt nhìn thấy, nên tháp nào cũng đếm '
+                'thiếu.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='khối bị che VẪN PHẢI ĐẾM',
+           thay='nhìn thấy hay không không quyết định — luật ngồi mới quyết định',
+           loi=['Con nhớ lại một lần nữa. Khối bị che vẫn phải đếm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_dem_tang(b):
+    """C7⑩ Đếm theo tầng."""
+    return [
+        _c('bia', 'Đếm theo tầng', so_bai(b),
+           loi=['Đừng đếm lung tung theo mắt nhìn. Đếm từng tầng như đếm nhà cao '
+                'tầng.']),
+        _c('de_toan', 'Đề bài',
+           de='Tháp có tầng dưới xếp 2 hàng mỗi hàng 2 khối, tầng trên có 1 khối. Tháp có mấy khối?',
+           loi=['Một tháp có tầng dưới xếp hai hàng, mỗi hàng hai khối. Tầng trên có '
+                'một khối.',
+                'Hỏi tháp có tất cả bao nhiêu khối.']),
+        _c('khoi', 'Tháp trông thế này', dai=2, rong=2, cao=2, kieu='chong',
+           loi=['Tháp trông thế này. Nhìn thôi thì khó đếm.']),
+        _c('khoi', 'Tách từng tầng ra mà đếm', dai=2, rong=2, cao=2, kieu='tang',
+           chuPhu='Tầng dưới 4 khối, tầng trên 1 khối.',
+           loi=['Tách từng tầng ra mà đếm. Tầng dưới bốn khối, tầng trên một khối.']),
+        _c('y_toan', 'Đếm tầng dưới, kể cả hàng nấp phía sau', '2 × 2 = 4 khối',
+           buoc=1, soBuoc=3,
+           loi=['Tầng dưới có hai hàng, mỗi hàng hai khối, nên bốn khối.',
+                'Một khối ở góc sau bị che gần hết nhưng vẫn đếm.']),
+        _c('y_toan', 'Cộng các tầng lại', '4 + 1 = 5 khối', buoc=2, soBuoc=3,
+           loi=['Cộng các tầng lại. Bốn cộng một bằng năm khối.']),
+        _c('y_toan', 'Kiểm tra lại', 'gỡ tháp ra từng khối một — gỡ đủ 5 lần',
+           buoc=3, soBuoc=3,
+           loi=['Kiểm tra bằng cách tưởng tượng gỡ tháp ra từng khối một. Gỡ đủ năm '
+                'lần mới hết.']),
+        _c('cong_thuc', 'Cách làm của cả bài',
+           congThuc='đếm TỪNG TẦNG, kể cả hàng nấp phía sau',
+           thay='rồi cộng các tầng lại',
+           loi=['Đếm từng tầng, kể cả hàng nấp phía sau, rồi cộng các tầng lại.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 2 · CHƯƠNG 8 · TOÁN TRONG CUỘC SỐNG — sáu kịch bản, khép lại cả quyển.
+# ═══════════════════════════════════════════════════════════════════════════
+
+
+def kb2_mot_nua_hinh(b):
+    """C8① Một nửa và một phần tư của một hình."""
+    return [
+        _c('bia', 'Một nửa và một phần tư', so_bai(b),
+           loi=['Gấp một tờ giấy là hiểu ngay hai chữ ấy.']),
+        _c('phan_so', 'Gấp ĐÔI: hai phần bằng nhau', tu=1, mau=2,
+           nhan='mỗi phần là MỘT NỬA',
+           loi=['Gấp đôi tờ giấy thật khít. Hai phần chồng khít lên nhau, tức là hai '
+                'phần bằng nhau.',
+                'Mỗi phần được gọi là một nửa.']),
+        _c('phan_so', 'Gấp đôi thêm lần nữa: bốn phần bằng nhau', tu=1, mau=4,
+           nhan='mỗi phần là MỘT PHẦN TƯ',
+           loi=['Gấp đôi thêm lần nữa rồi mở ra. Tờ giấy chia thành bốn phần bằng '
+                'chằn chặn.',
+                'Mỗi phần được gọi là một phần tư.']),
+        _c('y_toan', 'Luật sống còn: các phần phải BẰNG NHAU',
+           'cắt lệch thì không miếng nào được gọi là một nửa', buoc=1, soBuoc=3,
+           loi=['Luật sống còn là các phần phải bằng nhau.',
+                'Cắt một miếng to một miếng nhỏ thì không miếng nào được gọi là một '
+                'nửa cả.']),
+        _c('phan_so', 'So hai miếng bánh', tu=1, mau=2, nhan='một nửa',
+           tu2=1, mau2=4, nhan2='một phần tư',
+           loi=['So hai miếng của cùng một cái bánh. Miếng một nửa to hơn miếng một '
+                'phần tư.']),
+        _c('y_toan', 'Chia càng nhiều phần thì mỗi phần càng bé',
+           'cùng một cái bánh', buoc=2, soBuoc=3,
+           loi=['Cùng một cái bánh, chia càng nhiều phần thì mỗi phần càng bé.']),
+        _c('y_toan', 'Đáp số',
+           'gấp đôi → một nửa   ·   gấp đôi hai lần → một phần tư',
+           buoc=3, soBuoc=3,
+           loi=['Gấp đôi được một nửa. Gấp đôi hai lần được một phần tư.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='các phần phải BẰNG NHAU mới được gọi tên',
+           loi=['Con nhớ lại một lần nữa. Các phần phải bằng nhau mới được gọi tên '
+                'như vậy.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_mot_nua_nhom(b):
+    """C8② Một nửa của một nhóm."""
+    return [
+        _c('bia', 'Một nửa của một nhóm', so_bai(b),
+           loi=['Không chỉ cái bánh mới chia được. Cả một nhóm đồ vật cũng vậy.']),
+        _c('de_toan', 'Đề bài',
+           de='Có 8 viên kẹo. Một nửa số kẹo là mấy viên, và một phần tư là mấy viên?',
+           loi=['Có tám viên kẹo.',
+                'Hỏi một nửa số kẹo là mấy viên, và một phần tư số kẹo là mấy viên.']),
+        _c('nhom_deu', 'Một nửa: chia thành HAI phần bằng nhau', tong=8, moiNhom=4,
+           chuPhu='8 chia 2 được 4 viên mỗi phần.',
+           loi=['Một nửa thì chia thành hai phần bằng nhau.',
+                'Tám chia hai được bốn viên mỗi phần.']),
+        _c('y_toan', 'Phép tính', '8 : 2 = 4', buoc=1, soBuoc=3,
+           loi=['Tám chia hai bằng bốn.']),
+        _c('nhom_deu', 'Một phần tư: chia thành BỐN phần bằng nhau', tong=8, moiNhom=2,
+           chuPhu='8 chia 4 được 2 viên mỗi phần.',
+           loi=['Một phần tư thì chia thành bốn phần bằng nhau.',
+                'Tám chia bốn được hai viên mỗi phần.']),
+        _c('y_toan', 'Phép tính', '8 : 4 = 2', buoc=2, soBuoc=3,
+           loi=['Tám chia bốn bằng hai.']),
+        _c('y_toan', 'Đáp số', 'một nửa là 4 viên  ·  một phần tư là 2 viên',
+           buoc=3, soBuoc=3,
+           loi=['Một nửa là bốn viên. Một phần tư là hai viên.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='nghe "một nửa"  →  CHIA 2',
+           thay='nghe "một phần tư"  →  CHIA 4',
+           loi=['Con nhớ lại một lần nữa. Nghe một nửa thì chia hai, nghe một phần tư '
+                'thì chia bốn.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_von_lai(b):
+    """C8③ Vốn, bán, lãi."""
+    return [
+        _c('bia', 'Sổ của ông chủ', so_bai(b),
+           loi=['Sổ của ông chủ chỉ có ba dòng: vốn, bán, và lãi.']),
+        _c('de_toan', 'Đề bài',
+           de='Mua chanh và đường hết 10 nghìn, bán được 4 cốc mỗi cốc 4 nghìn. Lãi bao nhiêu?',
+           loi=['Mua chanh và đường hết mười nghìn đồng, bán được bốn cốc, mỗi cốc bốn '
+                'nghìn.',
+                'Hỏi lãi bao nhiêu.']),
+        _c('y_toan', 'Tiền VỐN là tiền bỏ ra trước', '6 + 4 = 10 nghìn',
+           buoc=1, soBuoc=3,
+           loi=['Tiền vốn là tiền bỏ ra trước khi bán được đồng nào.',
+                'Sáu cộng bốn bằng mười nghìn.']),
+        _c('y_toan', 'Tiền BÁN là tiền thu về', '4 × 4 = 16 nghìn', buoc=2, soBuoc=3,
+           loi=['Tiền bán là tiền thu về. Bốn cốc, mỗi cốc bốn nghìn, nên bốn nhân bốn '
+                'bằng mười sáu nghìn.']),
+        _c('y_toan', 'Tiền LÃI là phần thật sự kiếm thêm', '16 − 10 = 6 nghìn',
+           buoc=3, soBuoc=3,
+           loi=['Tiền lãi là phần thật sự kiếm thêm. Mười sáu trừ mười bằng sáu '
+                'nghìn.']),
+        _c('y_toan', 'Đáp số', 'lãi 6 nghìn đồng',
+           loi=['Đáp số là lãi sáu nghìn đồng.',
+                'Giàu thêm sáu nghìn chứ không phải mười sáu nghìn, vì mười nghìn vốn '
+                'vốn dĩ đã là của mình từ đầu.']),
+        _c('y_toan', 'Còn nếu ế hàng', 'bán 8 nghìn mà vốn 10  →  LỖ 10 − 8 = 2 nghìn',
+           loi=['Nếu cả ngày chỉ bán được hai cốc thì thu về tám nghìn.',
+                'Mà tiền bỏ ra là mười nghìn, nên bị lỗ hai nghìn.']),
+        _c('cong_thuc', 'Sổ ông chủ chỉ có ba dòng',
+           congThuc='VỐN bỏ ra  →  BÁN thu về',
+           thay='LÃI = BÁN − VỐN   ·   bán ít hơn vốn là LỖ',
+           loi=['Vốn là tiền bỏ ra, bán là tiền thu về, còn lãi bằng bán trừ vốn.',
+                'Bán ít hơn vốn thì bị lỗ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_tien_thua(b):
+    """C8④ Tiền thừa."""
+    return [
+        _c('bia', 'Tiền thối lại', so_bai(b),
+           loi=['Bài trước đứng ở phía người bán. Bài này đứng ở phía người mua.']),
+        _c('de_toan', 'Đề bài',
+           de='Một cô khách đưa 10 nghìn để mua món hàng giá 7 nghìn. Phải thối lại bao nhiêu?',
+           loi=['Một cô khách đưa mười nghìn để mua món hàng giá bảy nghìn.',
+                'Hỏi phải thối lại bao nhiêu.']),
+        _c('y_toan', 'Người mua đưa tiền ra', 'người bán thối lại phần dư',
+           buoc=1, soBuoc=3,
+           loi=['Người mua đưa tiền ra, người bán thối lại phần dư.']),
+        _c('y_toan', 'Tiền thừa bằng tiền đưa trừ tiền mua', '10 − 7 = 3 nghìn',
+           buoc=2, soBuoc=3,
+           loi=['Tiền thừa bằng tiền đưa trừ tiền mua. Mười trừ bảy bằng ba nghìn.']),
+        _c('y_toan', 'Đáp số', 'thối lại 3 nghìn đồng', buoc=3, soBuoc=3,
+           loi=['Đáp số là thối lại ba nghìn đồng.']),
+        _c('y_toan', 'Có đủ tiền mua không', 'có 5 nghìn mà món hàng 8 nghìn → chưa đủ',
+           loi=['Muốn biết có đủ tiền mua không thì so tiền mình có với giá món hàng.',
+                'Có năm nghìn mà món hàng tám nghìn thì chưa mua được, còn thiếu ba '
+                'nghìn.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Cộng tiền đưa với giá món hàng.',
+           loi=['Có bạn cộng tiền đưa với giá món hàng để tính tiền thối.',
+                'Cộng thì tiền thối lại nhiều hơn tiền đưa, nghe đã thấy vô lý.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='THỪA = ĐƯA − MUA',
+           loi=['Con nhớ lại một lần nữa. Tiền thừa bằng tiền đưa trừ tiền mua.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_gio_dung(b):
+    """C8⑤ Giờ đúng."""
+    return [
+        _c('bia', 'Giờ đúng', so_bai(b),
+           loi=['Hai chiếc kim trên mặt đồng hồ, mỗi chiếc kể một chuyện.']),
+        _c('dong_ho', 'Làm quen hai chiếc kim', gio=3, phut=12,
+           chuPhu='Kim ngắn và mập là kim giờ. Kim dài là kim phút.',
+           loi=['Kim ngắn và mập là kim giờ. Kim dài là kim phút.',
+                'Kim giờ đi chậm rãi, kim phút chạy nhanh hơn nhiều.']),
+        _c('y_toan', 'Nhìn kim PHÚT trước', 'chỉ thẳng số 12  →  giờ đúng',
+           buoc=1, soBuoc=3,
+           loi=['Nhìn kim phút trước. Kim phút chỉ thẳng số mười hai nghĩa là giờ '
+                'đúng, không lẻ phút nào.']),
+        _c('y_toan', 'Rồi mới hỏi kim GIỜ', 'kim giờ chỉ 3  →  đọc "3 giờ"',
+           buoc=2, soBuoc=3,
+           loi=['Rồi mới hỏi kim giờ. Kim giờ chỉ số ba nên đọc là ba giờ đúng.']),
+        _c('y_toan', 'Đáp số', '3 giờ', buoc=3, soBuoc=3,
+           loi=['Đáp số là ba giờ.']),
+        _c('dong_ho', 'Một giờ nữa thì kim giờ tiến thêm một số', gio=4, phut=12,
+           chuPhu='Từ 3 giờ, một giờ nữa là 4 giờ.',
+           loi=['Một giờ nữa thì kim giờ tiến thêm đúng một số.',
+                'Từ ba giờ, một giờ nữa là bốn giờ.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Nhìn nhầm kim dài thành kim giờ.',
+           loi=['Có bạn nhìn nhầm kim dài thành kim giờ nên đọc sai hẳn.',
+                'Kim giờ là kim ngắn và mập.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='nhìn kim PHÚT trước, rồi mới hỏi kim GIỜ',
+           loi=['Con nhớ lại một lần nữa. Nhìn kim phút trước, rồi mới hỏi kim giờ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_gio_ruoi(b):
+    """C8⑥ Giờ rưỡi — bài cuối cùng của quyển."""
+    return [
+        _c('bia', 'Giờ rưỡi', so_bai(b),
+           loi=['Khi kim phút chỉ số sáu thì đọc thế nào?']),
+        _c('dong_ho', 'Kim phút chỉ số 6 — đi được NỬA vòng', gio=3, phut=6,
+           chuPhu='Nửa vòng là nửa giờ, nên đây là giờ rưỡi.',
+           loi=['Kim phút chỉ số sáu nghĩa là nó đi được một nửa vòng.',
+                'Nửa vòng là nửa giờ, nên đây là giờ rưỡi.']),
+        _c('y_toan', 'Kim giờ cũng đi được nửa đường',
+           'nó nằm giữa số 3 và số 4, chưa tới số 4', buoc=1, soBuoc=3,
+           loi=['Kim giờ cũng đi được nửa đường giữa hai số.',
+                'Nó nằm giữa số ba và số bốn, chưa tới số bốn.']),
+        _c('y_toan', 'Luật đọc: theo số kim giờ ĐÃ ĐI QUA', 'đã đi qua số 3  →  3 giờ rưỡi',
+           buoc=2, soBuoc=3,
+           loi=['Luật đọc là đọc theo số mà kim giờ đã đi qua.',
+                'Nó đã đi qua số ba, nên đọc là ba giờ rưỡi, chứ không phải bốn giờ '
+                'rưỡi.']),
+        _c('y_toan', 'Đáp số', '3 giờ rưỡi', buoc=3, soBuoc=3,
+           loi=['Đáp số là ba giờ rưỡi.']),
+        _c('dong_ho', 'Thêm nửa giờ nữa thì tròn 4 giờ', gio=4, phut=12,
+           chuPhu='Hai nửa giờ ghép lại thành một giờ.',
+           loi=['Từ ba giờ rưỡi thêm nửa giờ nữa thì tròn bốn giờ.',
+                'Hai nửa giờ ghép lại thành một giờ.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Đọc theo số kim giờ SẮP TỚI.',
+           loi=['Có bạn thấy kim giờ nằm giữa ba và bốn rồi đọc là bốn giờ rưỡi, vì nó '
+                'gần số bốn.',
+                'Nó mới mon men tới gần số bốn chứ đã tới đâu.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='kim phút chỉ 6  →  giờ RƯỠI',
+           thay='đọc theo số kim giờ ĐÃ ĐI QUA',
+           loi=['Con nhớ lại một lần nữa. Kim phút chỉ sáu là giờ rưỡi, và đọc theo số '
+                'kim giờ đã đi qua.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
@@ -6301,6 +6892,16 @@ BO = {
     'DL:KSN2.B23': kb2_gan_hai_chan, 'DL:KSN2.B61': kb2_chan_thua,
     'DL:KSN2.B24': kb2_cay_khoang,  'DL:KSN2.B62': kb2_tim_so_cay,
     'DL:KSN2.B25': kb2_ve_thang,    'DL:KSN2.B63': kb2_bang_loai_tru,
+    # ══ LỚP 2 · chương 7 · Vương quốc hình học — mười bài ══
+    'DL:KSN2.B26': kb2_nhan_hinh,   'DL:KSN2.B64': kb2_kien_bo,
+    'DL:KSN2.B27': kb2_hinh_don,    'DL:KSN2.B65': kb2_hinh_ghep,
+    'DL:KSN2.B28': kb2_tam_nan_hoa, 'DL:KSN2.B66': kb2_banh_xe,
+    'DL:KSN2.B29': kb2_hai_loai_khoi, 'DL:KSN2.B67': kb2_hinh_va_khoi,
+    'DL:KSN2.B30': kb2_luat_ngoi,   'DL:KSN2.B68': kb2_dem_tang,
+    # ══ LỚP 2 · chương 8 · Toán trong cuộc sống — sáu bài, khép lại quyển ══
+    'DL:KSN2.B31': kb2_mot_nua_hinh, 'DL:KSN2.B69': kb2_mot_nua_nhom,
+    'DL:KSN2.B32': kb2_von_lai,     'DL:KSN2.B70': kb2_tien_thua,
+    'DL:KSN2.B33': kb2_gio_dung,    'DL:KSN2.B71': kb2_gio_ruoi,
 }
 
 

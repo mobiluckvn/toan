@@ -1,0 +1,284 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B65",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 59 · ĐẾM HÌNH GHÉP — HÌNH TO HAY ẨN MÌNH NHẤT",
+ "durationMinutes": 10,
+ "so": 59,
+ "chuong": 7,
+ "tenChuong": "Vương quốc hình học",
+ "dangGoc": "HH 2.1b — Đếm hình ghép: ghép hai mảnh, ba mảnh, rồi cả hình.",
+ "skills": {
+  "bktUnit": "CHUONG:7@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 59,
+  "prev": "DL:KSN2.B27",
+  "next": "DL:KSN2.B28"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhận ra hình ghép do nhiều mảnh hợp lại. Đếm hình ghép theo thứ tự: ghép hai mảnh, rồi ba mảnh. Không sót hình to nhất ôm cả hình.",
+  "kidText": "Trong băng 3 ô còn hình to đang ẩn mình. Con thử lùng ra xem có mấy hình nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn đếm được ba mảnh nhỏ rồi ghi luôn đáp số là ba hình.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Ghép mảnh 1 với mảnh 2 lại thì có thành một hình chữ nhật không? Gợi ý 2: Còn hình to nhất ôm cả ba mảnh thì sao, có tính là một hình không? Chữa: ngoài ba hình đơn còn ba hình ghép nữa, tất cả là sáu hình."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn đếm được ba mảnh nhỏ rồi ghi luôn đáp số là ba hình.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một hình chữ nhật được chia thành 3 ô vuông nhỏ xếp thành hàng ngang và đánh số 1, 2, 3. Hỏi ghép được thêm mấy hình chữ nhật nữa?",
+  "steps": [
+   {
+    "show": "Ghép hai mảnh cạnh nhau trước",
+    "phan": "giai"
+   },
+   {
+    "show": "Ghép mảnh 1 với mảnh 2 được một hình. Ghép mảnh 2 với mảnh 3 được một hình nữa. Vậy 2 hình.",
+    "phan": "giai"
+   },
+   {
+    "show": "Rồi ghép ba mảnh",
+    "phan": "giai"
+   },
+   {
+    "show": "Ghép cả 1, 2 và 3 được hình to nhất ôm trọn cả hình. Thêm 1 hình.",
+    "phan": "giai"
+   },
+   {
+    "show": "Cộng lại",
+    "phan": "giai"
+   },
+   {
+    "show": "Ghép được tất cả $2 + 1 = 3$ hình.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 3 hình ghép.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Đi tuần tự ghép hai mảnh rồi ghép ba mảnh thì không sót hình nào — mà hình to nhất luôn là hình hay ẩn mình nhất.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Băng 3 ô đánh số 1, 2, 3. Ghép hai mảnh cạnh nhau được mấy hình?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Ghép được hai cách là mảnh 1 với 2, và mảnh 2 với 3, nên được 2 hình.",
+     "hints": [
+      "Con thử khoanh hai ô cạnh nhau, đếm xem khoanh được mấy cách.",
+      "Ô thứ nhất với ô thứ hai là một cách rồi đấy."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Băng 3 ô. Ghép cả ba mảnh được mấy hình?",
+     "answerKey": {
+      "value": 1
+     },
+     "solutionNarrative": "Chỉ ghép được một cách duy nhất nên được 1 hình.",
+     "hints": [
+      "Ghép cả ba mảnh thì được hình to nhất.",
+      "Chỉ có một cách khoanh cả ba ô thôi."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Băng 3 ô. Tất cả có mấy hình ghép?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Ghép hai mảnh được 2 hình, ghép ba mảnh được 1 hình, cộng lại là 3.",
+     "hints": [
+      "Con cộng số hình ghép hai mảnh với số hình ghép ba mảnh.",
+      "Đừng quên hình to nhất."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Băng 3 ô. Cộng cả hình đơn lẫn hình ghép thì có tất cả mấy hình chữ nhật?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "Có 3 hình đơn và 3 hình ghép, cộng lại được 6 hình.",
+     "hints": [
+      "Con đếm số hình đơn trước đã.",
+      "Rồi cộng với số hình ghép vừa tìm được."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Hình nào trong hình ghép hay bị bỏ sót nhất?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hình nào hay sót",
+        "options": [
+         "hình to nhất ôm trọn cả hình",
+         "mảnh nhỏ nhất"
+        ],
+        "value": "hình to nhất ôm trọn cả hình"
+       }
+      ]
+     },
+     "solutionNarrative": "Hình to nhất ôm trọn cả hình là hình hay bị bỏ sót nhất.",
+     "hints": [
+      "Hình nào to đến mức bé hay quên mất nó?",
+      "Nó ôm trọn cả các mảnh còn lại."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Băng 4 ô đánh số 1, 2, 3, 4. Ghép hai mảnh cạnh nhau được mấy hình?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Ghép được ba cách là 1 với 2, 2 với 3, và 3 với 4, nên được 3 hình.",
+     "hints": [
+      "Con khoanh hai ô cạnh nhau, dịch dần từ trái sang phải.",
+      "Băng bốn ô thì khoanh được mấy chỗ như thế?"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Băng 4 ô. Ghép ba mảnh cạnh nhau được mấy hình, và ghép cả bốn mảnh được mấy hình?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ghép ba mảnh",
+        "value": 2
+       },
+       {
+        "label": "ghép bốn mảnh",
+        "value": 1
+       }
+      ]
+     },
+     "solutionNarrative": "Ghép ba mảnh được hai cách nên 2 hình. Ghép cả bốn mảnh chỉ một cách nên 1 hình.",
+     "hints": [
+      "Con khoanh ba ô liền nhau, dịch dần từ trái sang.",
+      "Rồi khoanh cả bốn ô, xem được mấy cách."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Băng 4 ô. Cộng cả hình đơn lẫn hình ghép thì có tất cả mấy hình chữ nhật?",
+     "answerKey": {
+      "value": 10
+     },
+     "solutionNarrative": "Hình đơn 4, ghép hai mảnh 3, ghép ba mảnh 2, ghép bốn mảnh 1. Cộng lại được 10 hình.",
+     "hints": [
+      "Con cộng bốn nhóm: hình đơn, ghép hai, ghép ba, ghép bốn.",
+      "Đếm từng nhóm một rồi mới cộng."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Ghép nhiều mảnh cạnh nhau cũng được một hình.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đó là hình ghép."
+   },
+   {
+    "id": "Q2",
+    "text": "Băng 3 ô có tất cả mấy hình chữ nhật?",
+    "format": "mcq",
+    "choices": [
+     "6",
+     "3",
+     "4",
+     "9"
+    ],
+    "answerKey": {
+     "choice": "6"
+    },
+    "solutionNarrative": "Ba hình đơn cộng ba hình ghép."
+   },
+   {
+    "id": "Q3",
+    "text": "Băng 3 ô ghép hai mảnh được mấy hình?",
+    "format": "mcq",
+    "choices": [
+     "2",
+     "3",
+     "1",
+     "6"
+    ],
+    "answerKey": {
+     "choice": "2"
+    },
+    "solutionNarrative": "Hai cặp mảnh cạnh nhau."
+   },
+   {
+    "id": "Q4",
+    "text": "Đếm ba mảnh nhỏ là đếm xong cả hình.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Còn ba hình ghép nữa."
+   },
+   {
+    "id": "Q5",
+    "text": "Hình to nhất luôn là hình hay ẩn mình nhất.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — nhớ lùng nó sau cùng."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cắt một băng giấy thành ba ô rồi cho con lấy hai ngón tay khoanh từng hình — khoanh được bao nhiêu cách là bấy nhiêu hình.",
+  "homeActivity": "Bố mẹ hỏi: \"Con tìm hình to nhất chưa?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B65_giang.mp4"
+ }
+}

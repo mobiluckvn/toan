@@ -1,0 +1,320 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B66",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 61 · VÌ SAO BÁNH XE PHẢI TRÒN",
+ "durationMinutes": 10,
+ "so": 61,
+ "chuong": 7,
+ "tenChuong": "Vương quốc hình học",
+ "dangGoc": "HH 4.1b — Ứng dụng của hình tròn: trục xe luôn cao đều một mức.",
+ "skills": {
+  "bktUnit": "CHUONG:7@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 61,
+  "prev": "DL:KSN2.B28",
+  "next": "DL:KSN2.B29"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Giải thích được vì sao bánh xe tròn thì xe chạy êm. Hiểu trục xe đặt ở tâm nên luôn cao đều một mức. Biết bánh vuông thì trục lúc nhô lúc tụt.",
+  "kidText": "Vì sao bánh xe phải tròn mà không vuông? Con đoán thử xem nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn bảo bánh vuông cũng lăn được, chỉ hơi xóc thôi.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Trục xe cao bao nhiêu khi bánh vuông đứng trên một cạnh, và khi nó nghiêng trên một góc? Gợi ý 2: Hai độ cao ấy khác nhau thì người ngồi trên xe thấy thế nào? Chữa: trục nhấp nhô thì xe xóc suốt, không đi được. Nan hoa bằng nhau mới giữ trục cao đều."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn bảo bánh vuông cũng lăn được, chỉ hơi xóc thôi.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Vì sao bánh xe phải làm hình tròn mà không làm hình vuông?",
+  "steps": [
+   {
+    "show": "Trục xe đặt ở đâu",
+    "phan": "giai"
+   },
+   {
+    "show": "Trục xe đặt đúng ở tâm bánh xe.",
+    "phan": "giai"
+   },
+   {
+    "show": "Bánh tròn thì trục luôn cao đều một mức",
+    "phan": "giai"
+   },
+   {
+    "show": "Vì mọi nan hoa dài bằng nhau, nên chỗ nào chạm đất thì trục cũng cao đúng bằng một nan hoa. Xe chạy êm ru.",
+    "phan": "giai"
+   },
+   {
+    "show": "Bánh vuông thì trục lúc nhô lúc tụt",
+    "phan": "giai"
+   },
+   {
+    "show": "Nan hoa ra góc thì dài, ra giữa cạnh thì ngắn. Trục nhấp nhô nên xe xóc.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: vì mọi nan hoa của hình tròn bằng nhau nên trục xe luôn cao đều.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Bài này là chỗ hình học gặp cuộc sống thật — cả cái bánh xe đứng trên đúng một tính chất ấy.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Trục xe đặt ở đâu trên bánh xe?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "trục đặt ở đâu",
+        "options": [
+         "ở tâm",
+         "ở viền",
+         "ở góc"
+        ],
+        "value": "ở tâm"
+       }
+      ]
+     },
+     "solutionNarrative": "Trục xe đặt đúng ở tâm bánh xe.",
+     "hints": [
+      "Trục là chỗ bánh xe quay quanh.",
+      "Nó nằm ở điểm chính giữa bánh xe."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Bánh xe tròn thì trục xe cao đều hay lúc nhô lúc tụt?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "trục thế nào",
+        "options": [
+         "cao đều",
+         "lúc nhô lúc tụt"
+        ],
+        "value": "cao đều"
+       }
+      ]
+     },
+     "solutionNarrative": "Trục xe luôn cao đều một mức, vì mọi nan hoa bằng nhau.",
+     "hints": [
+      "Nan hoa nào cũng dài bằng nhau thì trục cách mặt đất thế nào?",
+      "Chỗ nào chạm đất thì trục cũng cao đúng bằng một nan hoa."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Bánh xe vuông thì xe chạy êm hay xóc?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "xe chạy thế nào",
+        "options": [
+         "xóc",
+         "êm"
+        ],
+        "value": "xóc"
+       }
+      ]
+     },
+     "solutionNarrative": "Xe chạy xóc, vì trục lúc nhô lúc tụt.",
+     "hints": [
+      "Con nghĩ xem trục xe có giữ được một độ cao không.",
+      "Trục nhấp nhô thì người ngồi thấy sao?"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Vì sao bánh tròn giữ được trục cao đều?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "vì sao",
+        "options": [
+         "vì mọi nan hoa đều dài bằng nhau",
+         "vì bánh tròn nhẹ hơn"
+        ],
+        "value": "vì mọi nan hoa đều dài bằng nhau"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì mọi nan hoa từ tâm ra viền đều dài bằng nhau.",
+     "hints": [
+      "Trục cao bằng đúng cái gì của bánh xe?",
+      "Mà cái ấy thì hướng nào cũng như hướng nào."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Bánh vuông thì nan hoa ra góc dài hơn hay ngắn hơn nan hoa ra giữa cạnh?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "nan hoa ra góc",
+        "options": [
+         "dài hơn",
+         "ngắn hơn"
+        ],
+        "value": "dài hơn"
+       }
+      ]
+     },
+     "solutionNarrative": "Nan hoa ra góc dài hơn nan hoa ra giữa cạnh.",
+     "hints": [
+      "Con vẽ hình vuông rồi kẻ từ tâm ra góc và ra giữa cạnh.",
+      "So hai đoạn ấy xem đoạn nào dài hơn."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Một bánh xe tròn có nan hoa dài 4 xăng-ti-mét. Trục xe cao cách mặt đất mấy xăng-ti-mét?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Trục cao đúng bằng một nan hoa, tức 4 xăng-ti-mét.",
+     "hints": [
+      "Trục cao đúng bằng một nan hoa.",
+      "Đề đã cho sẵn độ dài nan hoa rồi đấy."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Một bánh xe tròn có nan hoa 5 xăng-ti-mét. Bánh xe ấy cao tất cả mấy xăng-ti-mét, tính từ mặt đất lên đỉnh?",
+     "answerKey": {
+      "value": 10
+     },
+     "solutionNarrative": "Từ đất lên tâm là 5, từ tâm lên đỉnh cũng 5, nên $5 + 5 = 10$ xăng-ti-mét.",
+     "hints": [
+      "Từ đất lên tâm là một nan hoa.",
+      "Từ tâm lên đỉnh cũng là một nan hoa nữa."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Có bạn bảo bánh vuông cũng dùng được, chỉ hơi xóc. Nói xem vì sao xe lại xóc.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "vì sao xóc",
+        "options": [
+         "vì nan hoa chỗ dài chỗ ngắn nên trục nhấp nhô",
+         "vì bánh vuông nặng hơn"
+        ],
+        "value": "vì nan hoa chỗ dài chỗ ngắn nên trục nhấp nhô"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì nan hoa của hình vuông chỗ dài chỗ ngắn, nên trục xe lúc nhô lúc tụt.",
+     "hints": [
+      "Con so nan hoa ra góc với nan hoa ra giữa cạnh.",
+      "Hai độ dài ấy khác nhau thì trục xe thế nào?"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Trục xe đặt ở tâm bánh xe.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đó là chỗ then chốt."
+   },
+   {
+    "id": "Q2",
+    "text": "Vì sao bánh tròn thì xe chạy êm?",
+    "format": "mcq",
+    "choices": [
+     "vì mọi nan hoa bằng nhau nên trục cao đều",
+     "vì bánh tròn nhẹ hơn",
+     "vì bánh tròn đẹp hơn"
+    ],
+    "answerKey": {
+     "choice": "vì mọi nan hoa bằng nhau nên trục cao đều"
+    },
+    "solutionNarrative": "Trục cao đều thì người ngồi không thấy xóc."
+   },
+   {
+    "id": "Q3",
+    "text": "Bánh xe vuông thì trục xe vẫn cao đều.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Nan hoa ra góc dài hơn nên trục lúc nhô lúc tụt."
+   },
+   {
+    "id": "Q4",
+    "text": "Bánh tròn nan hoa 4 xăng-ti-mét thì trục cao mấy xăng-ti-mét?",
+    "format": "mcq",
+    "choices": [
+     "4",
+     "8",
+     "2",
+     "16"
+    ],
+    "answerKey": {
+     "choice": "4"
+    },
+    "solutionNarrative": "Đúng bằng một nan hoa."
+   },
+   {
+    "id": "Q5",
+    "text": "Cái bánh xe đứng trên đúng một tính chất của hình tròn.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — mọi nan hoa bằng nhau."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con lăn thử một đồng xu và một khối vuông trên mặt bàn — sự khác nhau thấy được ngay bằng tay.",
+  "homeActivity": "Bố mẹ hỏi: \"Trục xe cao lên tụt xuống thì người ngồi thấy sao?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B66_giang.mp4"
+ }
+}

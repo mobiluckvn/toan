@@ -140,6 +140,156 @@ KHAI_TAY_L2 = {
                   {'label': 'đánh số mấy trang', 'value': 14},
                   {'label': 'cần mấy chữ số', 'value': 26}]}},
 
+    # ── chương 7 · Vương quốc hình học: năm bài tách thành mười ──
+    (7, 2): {'ve': 'DL:KSN2.B64'},    # kiến bò quanh tam giác — tổng các cạnh
+    (7, 4): {'ve': 'DL:KSN2.B27'},    # tam giác chia bởi một vạch — đếm hình đơn
+    (7, 6): {'ve': 'DL:KSN2.B65'},    # ô cửa sổ 2 × 2 — đếm hình ghép
+    (7, 7): {'ve': 'DL:KSN2.B68'},    # tháp hai tầng — đếm theo tầng
+    (7, 9): {'ve': 'DL:KSN2.B30'},    # tháp cầu thang — luật ngồi
+    # Câu 8 và câu 10 cũ đều hỏi lại ý đã có ở câu 2 và câu 6, trong khi hai bài
+    # VÌ SAO BÁNH XE PHẢI TRÒN và HÌNH DẸT KHÁC KHỐI không câu nào hỏi tới. Viết
+    # lại hai câu ấy cho phủ hai bài.
+    (7, 8): {'ve': 'DL:KSN2.B66',
+             'text': 'Vì sao bánh xe phải làm hình tròn mà không làm hình vuông? Nếu '
+                     'nan hoa của bánh dài 4 xăng-ti-mét thì trục xe cao cách mặt đất '
+                     'mấy xăng-ti-mét?',
+             'answer': 'Vì mọi nan hoa của hình tròn đều dài bằng nhau, nên trục xe '
+                       'luôn cao đều một mức và xe chạy êm. Trục cao đúng bằng một '
+                       'nan hoa, tức 4 xăng-ti-mét. Đáp số: 4 xăng-ti-mét.',
+             'khoa': {'parts': [
+                 {'label': 'vì sao', 'options': ['vì mọi nan hoa đều bằng nhau',
+                                                 'vì bánh tròn nhẹ hơn'],
+                  'value': 'vì mọi nan hoa đều bằng nhau'},
+                 {'label': 'trục cao mấy xăng-ti-mét', 'value': 4}]}},
+    (7, 10): {'ve': 'DL:KSN2.B67',
+              'text': 'Viên gạch và hình chữ nhật vẽ trên vở — cái nào là KHỐI, cái '
+                      'nào là HÌNH? In một mặt của viên gạch ra giấy thì được hình gì?',
+              'answer': 'Viên gạch cầm nắm được và có sáu mặt nên là KHỐI. Hình chữ '
+                        'nhật vẽ trên vở thì dẹt nên là HÌNH. In một mặt của viên gạch '
+                        'ra giấy thì được một hình chữ nhật.',
+              'khoa': {'parts': [
+                  {'label': 'viên gạch là', 'options': ['khối', 'hình'],
+                   'value': 'khối'},
+                  {'label': 'in một mặt ra giấy được',
+                   'options': ['hình chữ nhật', 'hình tròn', 'hình tam giác'],
+                   'value': 'hình chữ nhật'}]}},
+
+    # ── chương 8 · Toán trong cuộc sống: ba bài tách thành sáu ──
+    # Chương này nay cũng hết bài chữ, nên bỏ nốt tên nhân vật ở sáu câu.
+    (8, 1): {'ve': 'DL:KSN2.B33',
+             'text': 'Một bạn mở mắt, đồng hồ có kim phút chỉ 12, kim giờ chỉ 7. Mấy '
+                     'giờ rồi nhỉ?',
+             'answer': 'Kim phút chỉ 12 nên là giờ đúng; kim giờ chỉ 7 nên là 7 giờ. '
+                       'Đáp số: 7 giờ.',
+             'khoa': {'parts': [{'label': 'mấy giờ',
+                                 'options': ['7 giờ', '12 giờ', '7 giờ rưỡi'],
+                                 'value': '7 giờ'}]}},
+    (8, 3): {'ve': 'DL:KSN2.B70'},    # mua bánh mì và sữa — tiền phải trả
+    (8, 4): {'ve': 'DL:KSN2.B70'},    # đưa 15 nghìn — tiền thối lại
+    (8, 5): {'ve': 'DL:KSN2.B69'},    # một nửa của một chục trứng
+    (8, 6): {'ve': 'DL:KSN2.B31',
+             'text': 'Bữa trưa có chiếc bánh chia thành 4 phần bằng nhau. Một bạn ăn '
+                     '1 phần — bạn ấy ăn một phần mấy của chiếc bánh?',
+             'answer': 'Chiếc bánh chia thành 4 phần bằng nhau, ăn 1 phần thì ăn một '
+                       'phần tư chiếc bánh. Đáp số: một phần tư.',
+             'khoa': {'parts': [{'label': 'ăn một phần mấy',
+                                 'options': ['một phần tư', 'một nửa'],
+                                 'value': 'một phần tư'}]}},
+    (8, 7): {'ve': 'DL:KSN2.B31',
+             'text': 'Sau khi bạn ấy ăn một phần, chiếc bánh còn lại mấy phần? Cả nhà '
+                     '3 người còn lại mỗi người được một phần chứ?',
+             'answer': 'Bánh có 4 phần, ăn mất 1 phần thì còn 4 − 1 = 3 phần. Nhà còn '
+                       '3 người nên mỗi người vừa đúng một phần. Đáp số: còn 3 phần, '
+                       'mỗi người một phần.',
+             'khoa': {'parts': [
+                 {'label': 'còn mấy phần', 'value': 3},
+                 {'label': 'mỗi người có được một phần không',
+                  'options': ['có', 'không'], 'value': 'có'}]}},
+    (8, 8): {'ve': 'DL:KSN2.B32',
+             'text': 'Chiều, một bạn mở quán nước chanh: vốn mua chanh và đường hết 10 '
+                     'nghìn; bán được 4 cốc, mỗi cốc 4 nghìn. Hỏi bạn ấy lãi bao nhiêu?',
+             'answer': 'Tiền bán: 4 × 4 = 16 (nghìn đồng). Tiền lãi: 16 − 10 = 6 '
+                       '(nghìn đồng). Đáp số: lãi 6 nghìn đồng.',
+             'khoa': {'parts': [
+                 {'label': 'tiền bán mấy nghìn', 'value': 16},
+                 {'label': 'lãi mấy nghìn', 'value': 6}]}},
+    (8, 9): {'ve': 'DL:KSN2.B70',
+             'text': 'Một cô khách đưa 10 nghìn mua 2 cốc nước chanh, mỗi cốc 4 nghìn. '
+                     'Phải thối lại cô ấy bao nhiêu?',
+             'answer': 'Hai cốc hết 4 × 2 = 8 (nghìn đồng). Thối lại: 10 − 8 = 2 '
+                       '(nghìn đồng). Đáp số: 2 nghìn đồng.',
+             'khoa': {'parts': [{'label': 'thối lại mấy nghìn', 'value': 2}]}},
+    (8, 10): {'ve': 'DL:KSN2.B71',
+              'text': 'Tối, 8 giờ rưỡi là giờ đi ngủ. Lúc đó kim phút chỉ số nào, và '
+                      'kim giờ nằm giữa hai số nào?',
+              'answer': 'Giờ rưỡi thì kim phút chỉ số 6. Kim giờ nằm giữa số 8 và số '
+                        '9, vì nó đã đi qua số 8. Đáp số: kim phút chỉ 6; kim giờ giữa '
+                        '8 và 9.',
+              'khoa': {'parts': [
+                  {'label': 'kim phút chỉ số', 'value': 6},
+                  {'label': 'kim giờ đã đi qua số', 'value': 8}]}},
+
+    # ── BA ẢI: cả ba đều trỏ dồn về MỘT bài, suốt từ ngày dựng ──
+    #
+    # Ải không có "bảng tự soi" trong sách, nên bộ dựng lấy mặc định là bài đầu của
+    # chương cùng số: ải 1 về B01, ải 2 về B06, ải 3 về B09. Ba mươi câu trỏ sai.
+    # Bé sai câu gà chó ở ải 3, bấm ôn lại, và được dẫn tới bài bắt nhịp đoàn tàu.
+    # Cổng `on_tap_noi_bai` không bắt được vì nó lọc bỏ ải ngay từ đầu.
+    (9, 1): {'ve': 'DL:KSN2.B34'},    # tách 361 thành trăm chục đơn vị
+    (9, 2): {'ve': 'DL:KSN2.B02'},    # thêm chữ số 0 vào bên phải
+    (9, 3): {'ve': 'DL:KSN2.B06'},    # từ 6 đến 13 có mấy số
+    (9, 4): {'ve': 'DL:KSN2.B09'},    # 5, 10, 15 — bắt nhịp dãy cách đều
+    (9, 5): {'ve': 'DL:KSN2.B14'},    # ô trống cộng 7 — cho kết quả chạy ngược
+    (9, 6): {'ve': 'DL:KSN2.B16'},    # 12 kẹo chia 3 bạn
+    (9, 7): {'ve': 'DL:KSN2.B17'},    # An 8, Bình nhiều hơn 4 — sơ đồ đoạn thẳng
+    (9, 8): {'ve': 'DL:KSN2.B20'},    # em 7, anh hơn 3 tuổi
+    (9, 9): {'ve': 'DL:KSN2.B64'},    # kiến bò quanh tam giác
+    (9, 10): {'ve': 'DL:KSN2.B33'},   # kim phút 12, kim giờ 9 — giờ đúng
+
+    (10, 1): {'ve': 'DL:KSN2.B38'},   # ba thẻ có số 0
+    (10, 2): {'ve': 'DL:KSN2.B40'},   # số đứng cả hai cánh — bớt một
+    (10, 3): {'ve': 'DL:KSN2.B41'},   # cuốn 15 trang — cộng hai đoàn tàu
+    (10, 4): {'ve': 'DL:KSN2.B44'},   # 2, 3, 5, 8, 12 — dãy bậc thang
+    (10, 5): {'ve': 'DL:KSN2.B12'},   # 37 + 25 + 13 + 5 — ghép đôi tròn chục
+    (10, 6): {'ve': 'DL:KSN2.B13'},   # 1 tới 10 — ghép cặp đầu cuối
+    (10, 7): {'ve': 'DL:KSN2.B56'},   # tổng 12 hơn nhau 4 — hai điều kiện
+    (10, 8): {'ve': 'DL:KSN2.B61'},   # 5 đầu 14 chân — chân thừa chia cặp
+    (10, 9): {'ve': 'DL:KSN2.B62'},   # đường 12 mét — tìm số cây
+    (10, 10): {'ve': 'DL:KSN2.B32'},  # vốn 10 bán 16 — tính lãi
+
+    (11, 1): {'ve': 'DL:KSN2.B05'},   # tìm số ba chữ số — liệt kê có thứ tự
+    (11, 2): {'ve': 'DL:KSN2.B18'},   # tổng 9 hơn nhau 2 — liệt kê mọi cách tách
+    (11, 4): {'ve': 'DL:KSN2.B60'},   # máy hai tầng — thứ tự đi lùi
+    (11, 6): {'ve': 'DL:KSN2.B68'},   # tháp bốn tầng — đếm theo tầng
+    (11, 7): {'ve': 'DL:KSN2.B61'},   # 7 đầu 20 chân — chân thừa chia cặp
+    (11, 9): {'ve': 'DL:KSN2.B57'},   # A gấp đôi B — chia tổng cho số phần
+    (11, 10): {'ve': 'DL:KSN2.B69'},  # một nửa của 12 và một phần tư của 20
+    # Ba câu còn lại của ải 3 nhắc tên riêng mà cả quyển nay không còn ai nhớ:
+    # "dãy thỏ Fibonacci", "cầu vồng Gauss", và tên nhân vật của sách.
+    (11, 3): {'ve': 'DL:KSN2.B45',
+              'text': 'Dãy 1, 1, 2, 3, 5, 8, ... có một quy luật rất lạ: mỗi số bằng '
+                      'TỔNG HAI SỐ đứng ngay trước nó. Viết hai số tiếp theo.',
+              'answer': 'Số tiếp theo: 5 + 8 = 13. Số sau nữa: 8 + 13 = 21. Đáp số: '
+                        '13 và 21.',
+              'khoa': {'parts': [{'label': 'số thứ nhất', 'value': 13},
+                                 {'label': 'số thứ hai', 'value': 21}]}},
+    (11, 5): {'ve': 'DL:KSN2.B41',
+              'text': 'Một bạn đánh số một cuốn sổ từ trang 8 đến trang 21. Hỏi bạn ấy '
+                      'đánh số bao nhiêu trang, và cần tất cả bao nhiêu chữ số?',
+              'answer': 'Số trang: 21 − 8 = 13, thêm một được 14 trang. Số chữ số: '
+                        'trang 8 và 9 hết 2 chữ số; từ trang 10 đến 21 có 12 trang, '
+                        'mỗi trang hai chữ số nên hết 24 chữ số. Cộng lại: '
+                        '2 + 24 = 26 chữ số.',
+              'khoa': {'parts': [{'label': 'đánh số mấy trang', 'value': 14},
+                                 {'label': 'cần mấy chữ số', 'value': 26}]}},
+    (11, 8): {'ve': 'DL:KSN2.B13',
+              'text': 'Tính nhanh: 2 + 4 + 6 + ... + 18 + 20. Nhớ mẹo ghép cặp đầu với '
+                      'cuối nhé!',
+              'answer': 'Dãy có 10 số nên ghép được 5 cặp, mỗi cặp là 2 + 20 = 22. '
+                        'Cộng dồn năm lần 22 được 110. Đáp số: 110.',
+              'khoa': {'parts': [{'label': 'mỗi cặp bằng', 'value': 22},
+                                 {'label': 'tổng', 'value': 110}]}},
+
     (1, 6): {'ve': 'DL:KSN2.B36',
              'text': 'Một cửa hàng ghi giá 90 nghìn đồng nhưng viết sót mất chữ số '
                      '0 ở cuối, thành 9 nghìn đồng. Giá bị viết rẻ đi bao nhiêu '
@@ -156,7 +306,25 @@ KHAI_TAY_L2 = {
 DOI_TEN_KY_L2 = {
     'ÔN TẬP 5 · TUYỂN TẬP CHUYỆN TOÁN CỦA TRÍ LONG':
         'ÔN TẬP 5 · TUYỂN TẬP CHUYỆN TOÁN LỜI VĂN',
+    'ÔN TẬP 8 · MỘT NGÀY RA CHỢ CÙNG SU KEM':
+        'ÔN TẬP 8 · MỘT NGÀY RA CHỢ',
 }
+
+
+# Quyển lớp 2 nay KHÔNG CÒN BÀI CHỮ NÀO — mọi bài đều là bài video, và video thì
+# bác đã chốt là bỏ hẳn nhân vật. Nên hai cái tên của sách không còn xuất hiện ở đâu
+# trong bài học nữa; câu ôn tập nào còn nhắc là bé đọc thấy một cái tên chưa gặp bao
+# giờ. `KHAI_TAY_L2` viết lại được câu của examA, nhưng đề B thì không đi qua bảng
+# ấy, nên quét nốt ở đây.
+VO_NHAN_VAT_L2 = {'Su Kem': 'một bạn', 'Trí Long': 'một bạn'}
+
+
+def _bo_ten_vo(t):
+    for a, b in VO_NHAN_VAT_L2.items():
+        if t.startswith(a):
+            t = b.capitalize() + t[len(a):]
+        t = t.replace(a, b)
+    return t
 
 
 def _ten_ky(ten):
@@ -243,14 +411,15 @@ def dung_on_tap(bai_cua_chuong, ten_bai):
             # Tên hiện lên màn hình: bỏ dấu sao và phần "(10 câu)" — bé đã thấy
             # số câu ở góc màn rồi, nhắc lại trong tên chỉ làm dòng dài thêm.
             'name': _ten_ky(d['ten']),
-            'gioiThieu': d['gioiThieu'],
+            'gioiThieu': [_bo_ten_vo(x) for x in (d['gioiThieu'] or [])],
             'need': d['can'], 'passRule': d.get('ketLuan', f"Đạt {d['can']}/{d['tong']} câu là qua."),
             'examA': cau,
             # Đề B của lớp 2 nhồi bốn câu vào MỘT dòng ("B1. … B2. … B3. …") nên
             # trước đây nó là một khối chữ không chấm được, và `ExamPlayer` cũng
             # chưa hề hiện tới. Nay cắt theo `B<số>.` thành từng câu thật, mỗi câu
             # một ô nhập — đáp án thì sách đã tách sẵn theo B1, B2… từ lâu.
-            'deB': [{'id': c['id'], 'qno': int(c['id'][1:]), 'text': c['text'],
+            'deB': [{'id': c['id'], 'qno': int(c['id'][1:]),
+                     'text': _bo_ten_vo(c['text']),
                      'answer': d['dapAnB'].get(c['id'], ''),
                      'solutionNarrative': d['dapAnB'].get(c['id'], ''),
                      **({'answerKey': o_nhap[f"{ma}#{c['id']}"]}

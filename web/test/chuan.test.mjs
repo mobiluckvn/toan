@@ -66,14 +66,24 @@ const trungBinh = (thuMuc, tienTo) => {
     const hook = (d.lecture?.screens || []).find((x) => x.kind === 'hook');
     return (hook?.narration || '').length;
   }).filter((x) => x > 0);
-  return n.reduce((a, b) => a + b, 0) / (n.length || 1);
+  return { tb: n.reduce((a, b) => a + b, 0) / (n.length || 1), soBai: n.length };
 };
 for (const [ten, thuMuc, tienTo, mau] of [
   ['lớp 5', 'data/lessons', 'DL_KSN5Q1_', /lớp 5 còn\s+(\d+) chữ/],
   ['lớp 2', 'web/public/content/lop2', 'DL_KSN2_', /lớp 2 còn (\d+) chữ/]]) {
-  const noi = so(mau), that = trungBinh(thuMuc, tienTo);
-  t(`màn mở ${ten} còn ${Math.round(that)} chữ, chuẩn nói ${noi}`,
-    Number.isFinite(noi) && Math.abs(that - noi) <= noi * 0.15);
+  const noi = so(mau), { tb, soBai } = trungBinh(thuMuc, tienTo);
+  /* ⚠ QUYỂN CHUYỂN HẾT SANG VIDEO THÌ KHÔNG CÒN MÀN MỞ BẰNG CHỮ ĐỂ MÀ ĐO.
+     Lớp 2 nay 71 trên 71 bài dùng video, nên `hook.narration` rỗng hết và phép
+     trung bình trả về 0. So 0 với con số trong chuẩn thì luôn đỏ, mà đỏ ấy không
+     nói lên điều gì thật. Nên khi KHÔNG CÒN BÀI CHỮ NÀO thì chuẩn phải ghi 0, và
+     phép kiểm đòi đúng 0 — chứ không nới ngưỡng cho qua. */
+  if (soBai === 0) {
+    t(`${ten} chuyển hết sang video, chuẩn phải ghi 0 chữ (đang ghi ${noi})`,
+      noi === 0);
+    continue;
+  }
+  t(`màn mở ${ten} còn ${Math.round(tb)} chữ, chuẩn nói ${noi}`,
+    Number.isFinite(noi) && Math.abs(tb - noi) <= noi * 0.15);
 }
 
 /* Danh sách bẫy đánh số liên tục, và tiêu đề phải khớp số cuối cùng.

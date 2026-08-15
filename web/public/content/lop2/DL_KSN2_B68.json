@@ -1,0 +1,305 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B68",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 65 · ĐẾM THEO TẦNG RỒI CỘNG LẠI",
+ "durationMinutes": 10,
+ "so": 65,
+ "chuong": 7,
+ "tenChuong": "Vương quốc hình học",
+ "dangGoc": "HH 6.1b — Đếm khối trong hình xếp: đếm từng tầng rồi cộng.",
+ "skills": {
+  "bktUnit": "CHUONG:7@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 65,
+  "prev": "DL:KSN2.B30",
+  "next": "DL:KSN2.B31"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Đếm khối theo từng tầng thay vì đếm lung tung. Đếm cả hàng nấp phía sau ở mỗi tầng. Cộng số khối của các tầng lại.",
+  "kidText": "Tháp có tầng dưới 4 khối, tầng trên 1 khối. Con đoán cả tháp mấy khối nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn đếm lung tung theo mắt nhìn nên lúc thì sót khối nấp sau, lúc thì đếm một khối hai lần.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Đếm từng tầng một, đừng nhảy qua nhảy lại. Gợi ý 2: Ở mỗi tầng, nhớ đếm cả hàng phía sau bị che. Chữa: đếm tầng dưới trước, tầng trên sau, rồi cộng lại."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn đếm lung tung theo mắt nhìn nên lúc thì sót khối nấp sau, lúc thì đếm một khối hai lần.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một tháp có tầng dưới xếp 2 hàng, mỗi hàng 2 khối; tầng trên có 1 khối. Hỏi tháp có tất cả bao nhiêu khối?",
+  "steps": [
+   {
+    "show": "Đừng đếm lung tung theo mắt nhìn",
+    "phan": "giai"
+   },
+   {
+    "show": "Đếm từng tầng một, như đếm nhà cao tầng.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đếm tầng dưới, kể cả hàng nấp phía sau",
+    "phan": "giai"
+   },
+   {
+    "show": "Tầng dưới có 2 hàng, mỗi hàng 2 khối, nên $2  \\times  2 = 4$ khối. Một khối ở góc sau bị che gần hết nhưng vẫn đếm.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đếm tầng trên",
+    "phan": "giai"
+   },
+   {
+    "show": "Tầng trên có 1 khối.",
+    "phan": "giai"
+   },
+   {
+    "show": "Cộng các tầng lại",
+    "phan": "giai"
+   },
+   {
+    "show": "Tất cả là $4 + 1 = 5$ khối.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 5 khối.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Kiểm tra bằng cách tưởng tượng gỡ tháp ra từng khối một — gỡ đủ năm lần mới hết.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tầng dưới xếp 2 hàng, mỗi hàng 2 khối. Tầng dưới có mấy khối?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Lấy $2  \\times  2 = 4$ khối.",
+     "hints": [
+      "Hai hàng, mỗi hàng hai khối.",
+      "Gộp các phần bằng nhau thì dùng phép nhân."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tầng dưới 4 khối, tầng trên 1 khối. Tháp có mấy khối?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Cộng hai tầng: $4 + 1 = 5$ khối.",
+     "hints": [
+      "Con cộng số khối của hai tầng lại.",
+      "Tầng nào cũng phải đếm, không bỏ tầng nào."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Nên đếm khối theo cách nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cách đếm",
+        "options": [
+         "đếm theo từng tầng",
+         "đếm lung tung theo mắt"
+        ],
+        "value": "đếm theo từng tầng"
+       }
+      ]
+     },
+     "solutionNarrative": "Đếm theo từng tầng, tầng dưới trước rồi tầng trên sau.",
+     "hints": [
+      "Đếm nhảy qua nhảy lại thì dễ trùng và dễ sót.",
+      "Đếm như đếm nhà cao tầng ấy."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tầng dưới có 3 khối xếp hàng ngang, tầng trên có 2 khối. Tháp có mấy khối?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Cộng hai tầng: $3 + 2 = 5$ khối.",
+     "hints": [
+      "Con cộng số khối của hai tầng.",
+      "Tầng dưới ba khối, tầng trên hai khối."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Ở mỗi tầng, phải nhớ đếm cả cái gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "đếm cả cái gì",
+        "options": [
+         "hàng nấp phía sau",
+         "khối trên cùng"
+        ],
+        "value": "hàng nấp phía sau"
+       }
+      ]
+     },
+     "solutionNarrative": "Phải đếm cả hàng nấp phía sau bị che.",
+     "hints": [
+      "Mắt không nhìn thấy nhưng nó vẫn nằm đó.",
+      "Nhớ luật ngồi ở bài trước nhé."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Tầng dưới xếp 3 hàng, mỗi hàng 3 khối. Tầng dưới có mấy khối?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Lấy $3  \\times  3 = 9$ khối.",
+     "hints": [
+      "Ba hàng, mỗi hàng ba khối.",
+      "Gộp các phần bằng nhau thì dùng phép nhân."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Một tháp có tầng dưới 9 khối, tầng giữa 4 khối, tầng trên 1 khối. Tháp có tất cả mấy khối?",
+     "answerKey": {
+      "value": 14
+     },
+     "solutionNarrative": "Cộng ba tầng: $9 + 4 = 13$, rồi $13 + 1 = 14$ khối.",
+     "hints": [
+      "Con cộng dần từng tầng một, đừng cộng cả ba cùng lúc.",
+      "Cộng hai tầng đầu trước rồi mới cộng tầng cuối."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Tầng dưới xếp 2 hàng mỗi hàng 3 khối, tầng trên xếp 1 hàng 2 khối. Cho biết mỗi tầng mấy khối và cả tháp mấy khối.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tầng dưới",
+        "value": 6
+       },
+       {
+        "label": "tầng trên",
+        "value": 2
+       },
+       {
+        "label": "cả tháp",
+        "value": 8
+       }
+      ]
+     },
+     "solutionNarrative": "Tầng dưới $2  \\times  3 = 6$ khối, tầng trên 2 khối, cả tháp $6 + 2 = 8$ khối.",
+     "hints": [
+      "Tầng dưới: hai hàng, mỗi hàng ba khối.",
+      "Rồi cộng với số khối của tầng trên."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Nên đếm khối theo từng tầng rồi cộng lại.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đếm lung tung thì sót."
+   },
+   {
+    "id": "Q2",
+    "text": "Tầng dưới 4 khối, tầng trên 1 khối. Tháp mấy khối?",
+    "format": "mcq",
+    "choices": [
+     "5",
+     "4",
+     "3",
+     "8"
+    ],
+    "answerKey": {
+     "choice": "5"
+    },
+    "solutionNarrative": "Cộng hai tầng."
+   },
+   {
+    "id": "Q3",
+    "text": "Tầng dưới xếp 2 hàng mỗi hàng 2 khối thì có mấy khối?",
+    "format": "mcq",
+    "choices": [
+     "4",
+     "2",
+     "6",
+     "8"
+    ],
+    "answerKey": {
+     "choice": "4"
+    },
+    "solutionNarrative": "Hai hàng, mỗi hàng hai khối."
+   },
+   {
+    "id": "Q4",
+    "text": "Đếm mỗi tầng thì bỏ qua hàng nấp phía sau.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Hàng nấp phía sau vẫn phải đếm."
+   },
+   {
+    "id": "Q5",
+    "text": "Có thể kiểm tra bằng cách gỡ tháp ra từng khối một.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — số lần gỡ phải bằng số khối đã đếm."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Xếp một tháp khối gỗ rồi cùng con đếm theo tầng, sau đó gỡ ra đếm lại để kiểm tra — hai con số phải bằng nhau.",
+  "homeActivity": "Bố mẹ hỏi: \"Tầng này có mấy khối, kể cả hàng sau?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B68_giang.mp4"
+ }
+}

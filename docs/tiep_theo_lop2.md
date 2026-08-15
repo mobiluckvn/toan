@@ -433,3 +433,65 @@ vật vẫn có mặt thật.
 ### Còn lại của quyển
 
 Hai chương, **8 bài chữ**: vương quốc hình học (5) · toán trong cuộc sống (3).
+
+---
+
+## Đợt 7 và 8 · hai chương cuối — XONG CẢ QUYỂN
+
+Chương 7 năm bài thành **mười bài video**, chương 8 ba bài thành **sáu**. Quyển lớp
+2 nay **71 bài · 71 video · 63.6 phút**, và **KHÔNG CÒN BÀI CHỮ NÀO**.
+
+| chương 7 | | chương 8 | |
+|---|---|---|---|
+| 52 · B26 | nhận mặt hình — đếm cạnh, đếm đỉnh | 62 · B31 | một nửa và một phần tư |
+| 53 · B64 | đường kiến bò một vòng | 63 · B69 | một nửa của một nhóm |
+| 54 · B27 | đánh số mảnh, đếm hình đơn | 64 · B32 | vốn, bán và lãi |
+| 55 · B65 | đếm hình ghép | 65 · B70 | tiền thừa |
+| 56 · B28 | tâm và nan hoa bằng nhau | 66 · B33 | giờ đúng |
+| 57 · B66 | vì sao bánh xe phải tròn | 67 · B71 | giờ rưỡi |
+| 58 · B29 | hai loại khối, mỗi khối sáu mặt | | |
+| 59 · B67 | hình dẹt và khối cầm nắm được | | |
+| 60 · B30 | luật ngồi | | |
+| 61 · B68 | đếm theo tầng | | |
+
+### 568 trên 568 câu chấm được máy
+
+Trước đợt này lớp 2 còn 16 câu để tự chấm — toàn những câu bảo bé gấp giấy, sờ hộp
+hay vẽ mặt đồng hồ. Mười sáu bài mới đều cho bấm chọn hoặc điền số, nên nay **mọi
+câu luyện tập của quyển đều chấm được máy**.
+
+### Cảnh mới: `dong_ho`
+
+Mặt đồng hồ hai kim, kim giờ tự xê dịch theo phút nên "3 giờ rưỡi" thì kim giờ nằm
+đúng giữa 3 và 4 — chính chỗ bé hay đọc nhầm thành 4 giờ. Rút khung hình ra nhìn thì
+thấy **kim phút đè lên đúng con số 6**, con số mà cả bài đang bảo bé nhìn vào. Đã
+sửa: vẽ số SAU kim, kèm nền trắng dưới chữ.
+
+### BA ẢI TRỎ DỒN CẢ 30 CÂU VỀ MỘT BÀI — lỗi câm từ ngày dựng
+
+Ải không có "bảng tự soi" trong sách, nên bộ dựng lấy mặc định là bài đầu của chương
+cùng số: **ải 1 về B01, ải 2 về B06, ải 3 về B09**. Ba mươi câu trỏ sai suốt từ đầu.
+Bé sai câu gà chó ở ải 3, bấm ôn lại, và được dẫn tới bài bắt nhịp đoàn tàu.
+
+Cổng `on_tap_noi_bai.test.mjs` không bắt được vì nó **lọc bỏ ải ngay từ đầu** —
+phép ④ đòi "mọi bài của chương đều được hỏi tới" không áp được cho ải, nên cả tệp ải
+bị bỏ qua luôn. Đã khai đích danh cả 30 mối nối ở `KHAI_TAY_L2`.
+
+### Tên nhân vật thành mồ côi trên toàn quyển
+
+Quyển hết bài chữ thì hai cái tên của sách không còn xuất hiện ở đâu trong bài học.
+Đã quét sạch: tên kỳ ôn tập 8, lời giới thiệu kỳ, sáu câu examA, một câu đề B, một
+lời chào, một lời tả hình, và ba chỗ ở ải 3 (*"dãy thỏ Fibonacci"*, *"cầu vồng
+Gauss"*, tên nhân vật). Bộ dựng nay có `VO_NHAN_VAT_L2` quét cả đề B lẫn lời giới
+thiệu.
+
+### Chuẩn: quyển hết bài chữ thì không còn màn mở để đo
+
+`chuan.test.mjs` so số chữ màn mở với con số trong sổ chuẩn. Lớp 2 nay 71 trên 71
+bài dùng video nên `hook.narration` rỗng hết, phép trung bình trả về 0 và so gì cũng
+đỏ. Đã dạy cổng: quyển không còn bài chữ nào thì chuẩn **phải ghi 0**, và cổng đòi
+đúng 0 chứ không nới ngưỡng. Đã phá thử, kêu đúng.
+
+### Còn lại của quyển
+
+Không còn gì. Lớp 2 **XONG TRỌN**.

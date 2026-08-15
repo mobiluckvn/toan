@@ -3,55 +3,38 @@
  "id": "DL:KSN2.B30",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 60 · ĐẾM KHỐI BỊ CHE",
+ "title": "Bài 64 · LUẬT NGỒI — KHỐI BỊ CHE VẪN PHẢI ĐẾM",
  "durationMinutes": 10,
- "so": 60,
+ "so": 64,
  "chuong": 7,
  "tenChuong": "Vương quốc hình học",
- "dangGoc": "HH 6.1 — Đếm khối lập phương trong hình xếp (đếm theo tầng, luật ngồi)",
+ "dangGoc": "HH 6.1a — Đếm khối trong hình xếp: luật ngồi bảo lãnh khối bị che.",
  "skills": {
   "bktUnit": "CHUONG:7@G2",
   "primary": []
  },
  "series": {
-  "order": 60,
-  "prev": "DL:KSN2.B29",
-  "next": "DL:KSN2.B31"
+  "order": 64,
+  "prev": "DL:KSN2.B67",
+  "next": "DL:KSN2.B68"
  },
  "objective": {
   "id": "O1",
-  "text": "Đếm được số khối lập phương trong một hình xếp — kể cả khối BỊ CHE. Thuộc LUẬT NGỒI: khối tầng trên phải có khối tầng dưới đỡ. Đếm theo TẦNG: tầng dưới trước, tầng trên sau, rồi cộng lại.",
-  "kidText": "Một hình xếp bằng khối gỗ, có khối bị che khuất phía sau. Con đếm được tất cả bao nhiêu khối?",
+  "text": "Hiểu luật ngồi: khối tầng trên phải có khối tầng dưới đỡ. Biết khối bị che vẫn phải đếm. Suy ra được khối nấp phía sau mà mắt không thấy.",
+  "kidText": "Trong tháp khối có bạn nấp phía sau mà mắt không thấy. Con đoán còn mấy khối nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. LUẬT NGỒI: khối ở tầng trên không biết bay. Nó phải NGỒI trên một khối tầng dưới. Vậy nên hễ thấy khối ở tầng 2, con biết chắc bên dưới nó có một khối đỡ, dù khối ấy bị che gần hết:"
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — ĐẾM THEO TẦNG: đừng đếm lung tung theo mắt nhìn. Hãy đếm từng tầng như đếm nhà cao tầng: tầng dưới cùng có mấy khối (đếm cả hàng sau bị nấp!), tầng trên có mấy khối. Rồi cộng lại."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Với tòa tháp của Vua Hình: tầng dưới xếp 2 hàng × 2 khối = 4 khối (một bạn ở góc sau bị che gần hết nhưng vẫn đếm!). Tầng trên 1 khối. Tất cả: $4 + 1 = 5$ khối."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. KIỂM TRA: tưởng tượng gỡ tháp ra từng khối một (hoặc xếp lại bằng khối thật). Gỡ đủ 5 lần mới hết tháp ✓."
-   }
-  ],
-  "mantra": "Khối bị che vẫn PHẢI ĐẾM — luật ngồi bảo lãnh cho nó! Đếm theo tầng: tầng dưới (cả hàng nấp sau) + tầng trên, cộng lại là xong.",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Với tòa tháp 2 tầng của Vua Hình, Su Kem đếm: \"Tớ nhìn thấy 4 khối thì tháp có 4 khối. Mắt tớ tinh lắm, không thể sai!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Khối ở tầng trên đang NGỒI trên cái gì? Nếu góc dưới đó trống trơn thì chuyện gì xảy ra với bạn tầng trên? Gợi ý 2: Mắt tinh là tốt, nhưng thám tử giỏi còn tin vào LUẬT: dùng luật ngồi đếm lại tầng dưới giúp Su Kem. Tầng dưới thật ra có mấy khối?"
+    "wrong": "Có bạn chỉ đếm những khối mắt nhìn thấy, nên tháp nào cũng đếm thiếu.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Khối ở tầng hai có bay lơ lửng được không? Gợi ý 2: Nếu nó không bay được thì bên dưới nó phải có gì? Chữa: khối bị che vẫn phải đếm, vì luật ngồi bảo lãnh cho nó."
    }
   ]
  },
@@ -59,72 +42,47 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Một hình xếp gồm: tầng dưới có 3 khối lập phương đặt thành hàng ngang, tầng trên có 2 khối đặt trên hai khối ngoài cùng. Hỏi hình xếp có tất cả bao nhiêu khối lập phương?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Với tòa tháp 2 tầng của Vua Hình, Su Kem đếm: \"Tớ nhìn thấy 4 khối thì tháp có 4 khối. Mắt tớ tinh lắm, không thể sai!\"",
+    "narration": "Có bạn chỉ đếm những khối mắt nhìn thấy, nên tháp nào cũng đếm thiếu.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Một hình xếp gồm: tầng dưới có 3 khối lập phương đặt thành hàng ngang, tầng trên có 2 khối đặt trên hai khối ngoài cùng. Hỏi hình xếp có tất cả bao nhiêu khối lập phương?",
+  "problem": "Một tháp có một khối ở tầng hai. Hỏi bên dưới khối ấy có khối nào không, dù mắt không nhìn thấy?",
   "steps": [
    {
-    "show": "Bài giải: (vẽ nháp hình xếp trước nhé!)",
+    "show": "Khối không biết bay",
     "phan": "giai"
    },
    {
-    "show": "Tầng dưới có: 3 khối.",
+    "show": "Khối ở tầng trên phải ngồi trên một khối tầng dưới, không thì nó rơi.",
     "phan": "giai"
    },
    {
-    "show": "Tầng trên có: 2 khối.",
+    "show": "Nên thấy khối tầng hai là biết chắc bên dưới có khối",
     "phan": "giai"
    },
    {
-    "show": "Hình xếp có tất cả: $3 + 2 = 5$ (khối)",
+    "show": "Dù khối ấy bị che gần hết, luật ngồi vẫn bảo lãnh cho nó.",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: 5 khối lập phương.",
+    "show": "Khối bị che vẫn phải đếm",
+    "phan": "giai"
+   },
+   {
+    "show": "Đếm bằng mắt thì sót; đếm bằng luật ngồi thì không.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: có, bên dưới chắc chắn có một khối đỡ.",
     "phan": "dapso"
+   },
+   {
+    "show": "Nhìn thấy hay không nhìn thấy không quyết định — luật ngồi mới quyết định.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -133,118 +91,138 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Xếp 4 khối thành hàng ngang rồi đặt 1 khối lên trên khối đầu tiên. Hình xếp có mấy khối?",
+     "text": "Khối ở tầng trên có bay lơ lửng được không?",
      "answerKey": {
-      "value": 5
+      "parts": [
+       {
+        "label": "có bay được không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
      },
-     "solutionNarrative": "$4 + 1 = 5$ khối",
+     "solutionNarrative": "Không, khối tầng trên phải ngồi trên một khối tầng dưới.",
      "hints": [
-      "Đếm theo TẦNG, đừng đếm theo mắt nhìn.",
-      "Tầng dưới mấy khối, tầng trên mấy khối?"
+      "Con thử tưởng tượng bỏ khối bên dưới đi xem khối trên thế nào.",
+      "Nó sẽ rơi xuống mất."
      ]
     },
     {
      "id": "C2",
-     "text": "Tầng dưới 2 khối, tầng trên 1 khối. Tất cả mấy khối? Khối tầng trên đang ngồi trên khối nào?",
+     "text": "Thấy một khối ở tầng hai thì bên dưới nó có khối không?",
      "answerKey": {
       "parts": [
        {
-        "label": "tất cả mấy khối",
-        "value": 3
+        "label": "có khối đỡ không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
        }
       ]
      },
-     "solutionNarrative": "$2 + 1 = 3$ khối; khối trên ngồi trên một trong hai khối dưới",
+     "solutionNarrative": "Có, luật ngồi bảo lãnh rằng bên dưới chắc chắn có một khối đỡ.",
      "hints": [
-      "Cộng hai tầng lại.",
-      "Luật ngồi: khối trên phải ngồi trên một khối dưới."
+      "Khối trên không tự treo lơ lửng được.",
+      "Vậy bên dưới nó phải có gì đỡ."
      ]
     },
     {
      "id": "C3",
-     "text": "Nhìn một hình xếp thấy tầng trên có 2 khối. Hỏi tầng dưới có ÍT NHẤT mấy khối? Vì sao?",
-     "solutionNarrative": "ít nhất 2 khối — vì mỗi khối tầng trên cần một khối đỡ riêng (luật ngồi!)",
+     "text": "Khối bị che khuất có phải đếm không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có phải đếm không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Có, khối bị che vẫn phải đếm.",
      "hints": [
-      "Khối tầng trên không biết bay.",
-      "Mỗi khối tầng trên cần một khối đỡ riêng."
+      "Bị che thì nó vẫn nằm đó chứ có biến mất đâu.",
+      "Luật ngồi bảo lãnh cho nó."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Hình xếp: tầng dưới 2 hàng × 2 khối, tầng trên 1 khối. Tất cả mấy khối? (Đếm cả bạn nấp hàng sau!)",
+     "text": "Tầng hai có 1 khối. Riêng khối đỡ nó ở tầng dưới là mấy khối?",
      "answerKey": {
-      "value": 5
+      "value": 1
      },
-     "solutionNarrative": "tầng dưới $2  \\times  2 = 4$ (cả bạn nấp sau!) + tầng trên $1 = 5$ khối",
+     "solutionNarrative": "Có 1 khối đỡ ngay bên dưới.",
      "hints": [
-      "Đếm cả bạn đang nấp ở hàng sau.",
-      "Tầng dưới đếm theo hàng, xong mới cộng tầng trên."
+      "Mỗi khối tầng trên cần một khối đỡ ngay bên dưới.",
+      "Có một khối tầng trên thì cần mấy khối đỡ?"
      ]
     },
     {
      "id": "C5",
-     "text": "Hình xếp: tầng dưới 3 khối hàng ngang, tầng giữa 2 khối, tầng trên 1 khối — xếp kiểu cầu thang. Tất cả mấy khối?",
+     "text": "Vì sao đếm bằng mắt thì hay sót?",
      "answerKey": {
-      "value": 6
+      "parts": [
+       {
+        "label": "vì sao",
+        "options": [
+         "vì có khối nấp phía sau hoặc bị che",
+         "vì khối quá nhỏ"
+        ],
+        "value": "vì có khối nấp phía sau hoặc bị che"
+       }
+      ]
      },
-     "solutionNarrative": "$3 + 2 + 1 = 6$ khối",
+     "solutionNarrative": "Vì có khối nấp phía sau hoặc bị che, mắt không nhìn thấy.",
      "hints": [
-      "Đếm từng tầng từ dưới lên.",
-      "Cộng cả ba tầng lại."
+      "Mắt chỉ nhìn được mặt trước và mặt trên.",
+      "Còn những khối nằm khuất phía sau thì sao?"
      ]
     },
     {
      "id": "C6",
-     "text": "Bin xếp một khối hộp chữ nhật to từ các khối lập phương nhỏ: 2 hàng, mỗi hàng 3 khối, chỉ một tầng. Hỏi Bin dùng mấy khối? (Hàng sau bị hàng trước che — nhưng thám tử không bị lừa!)",
+     "text": "Tầng hai có 2 khối, mỗi khối đều ngồi trên một khối riêng. Tầng dưới có ít nhất mấy khối?",
      "answerKey": {
-      "value": 6
+      "value": 2
      },
-     "solutionNarrative": "2 hàng × 3 khối = 6 khối — hàng sau bị che nhưng thám tử đếm đủ",
+     "solutionNarrative": "Mỗi khối tầng trên cần một khối đỡ, nên tầng dưới có ít nhất 2 khối.",
      "hints": [
-      "Hàng sau bị che nhưng thám tử không bị lừa.",
-      "Đếm đủ hai hàng rồi mới cộng."
+      "Mỗi khối tầng trên cần một khối riêng đỡ nó.",
+      "Hai khối tầng trên thì cần ít nhất mấy khối đỡ?"
      ]
     }
    ],
    "challenge": [
     {
      "id": "C7",
-     "text": "Tòa tháp 3 tầng: tầng dưới 3 khối, tầng giữa 2 khối, tầng trên 1 khối. (a) Tất cả mấy khối? (b) Con nhận ra dãy số 3, 2, 1 quen thuộc không — nếu xây thêm cho tháp cao 4 tầng theo đúng kiểu này (tầng dưới cùng 4 khối) thì cần tất cả mấy khối?",
+     "text": "Một tháp có tầng ba 1 khối, tầng hai 1 khối, tầng một 1 khối. Tháp có mấy khối?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "tháp 3 tầng có mấy khối",
-        "value": 6
-       },
-       {
-        "label": "tháp 4 tầng có mấy khối",
-        "value": 10
-       }
-      ]
+      "value": 3
      },
-     "solutionNarrative": "(a) $3 + 2 + 1 = 6$ khối. (b) Chính là dãy bậc thang của Bài 10! Tháp 4 tầng: $4 + 3 + 2 + 1 = 10$ khối — con vừa gặp lại cầu vồng Gauss nhí đấy",
+     "solutionNarrative": "Cộng ba tầng: $1 + 1 + 1 = 3$ khối.",
      "hints": [
-      "Cộng từng tầng — chính là dãy bậc thang của Bài 10.",
-      "Tháp bốn tầng thì thêm một tầng đáy rộng hơn nữa."
+      "Con cộng số khối của cả ba tầng.",
+      "Mỗi tầng chỉ có một khối thôi."
      ]
     },
     {
      "id": "C8",
-     "text": "Su Kem muốn xếp một khối lập phương TO từ các khối lập phương nhỏ: 2 tầng, mỗi tầng 2 hàng × 2 khối. Hỏi cần bao nhiêu khối nhỏ? Trong hình xếp xong, có mấy khối bị che khuất hoàn toàn (không nhìn thấy tí nào từ phía trước)?",
+     "text": "Tầng hai có 3 khối, mỗi khối ngồi trên một khối riêng ở tầng một. Tầng một còn thêm 2 khối nữa. Tháp có tất cả mấy khối?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "tất cả mấy khối nhỏ",
-        "value": 8
-       }
-      ]
+      "value": 8
      },
-     "solutionNarrative": "mỗi tầng $2  \\times  2 = 4$ khối, hai tầng → $4 + 4 = 8$ khối nhỏ. Trong hình xếp, khối ở GÓC SAU của tầng dưới bị các bạn phía trước và bên trên che khuất hoàn toàn — mắt không thấy nhưng đếm theo tầng vẫn tìm ra nó! Xếp thử bằng lego thật (8 khối thành khối lập phương to) để kiểm chứng nhé",
+     "solutionNarrative": "Tầng một có $3 + 2 = 5$ khối. Cộng với tầng hai: $5 + 3 = 8$ khối.",
      "hints": [
-      "Đếm một tầng trước rồi nhân với số tầng.",
-      "Khối ở góc SAU tầng dưới bị che hết — vẫn phải đếm."
+      "Bước một: tính tầng một gồm khối đỡ cộng khối thêm.",
+      "Bước hai: cộng với số khối của tầng hai."
      ]
     }
    ]
@@ -255,231 +233,69 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Khối bị che khuất thì không cần đếm.",
-    "format": "tf",
-    "answerKey": {
-     "value": false
-    },
-    "solutionNarrative": "vẫn phải đếm!"
-   },
-   {
-    "id": "Q2",
-    "text": "Khối ở tầng trên phải có khối tầng dưới đỡ.",
+    "text": "Khối tầng trên phải có khối tầng dưới đỡ.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng — đó là luật ngồi."
+   },
+   {
+    "id": "Q2",
+    "text": "Khối bị che thì không đếm.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Luật ngồi bảo lãnh cho nó, vẫn phải đếm."
    },
    {
     "id": "Q3",
-    "text": "Tầng dưới 4 khối, tầng trên 1 khối — tất cả:",
+    "text": "Thấy 1 khối ở tầng hai thì bên dưới có mấy khối đỡ?",
     "format": "mcq",
     "choices": [
-     "A. 4 khối",
-     "B. 5 khối",
-     "C. 6 khối"
+     "1",
+     "0",
+     "2",
+     "4"
     ],
     "answerKey": {
-     "choice": "B. 5 khối"
+     "choice": "1"
     },
-    "solutionNarrative": "Đáp án: B. 5 khối"
+    "solutionNarrative": "Một khối đỡ ngay bên dưới."
    },
    {
     "id": "Q4",
-    "text": "Cách đếm khối đáng tin nhất là:",
+    "text": "Vì sao đếm bằng mắt hay sót?",
     "format": "mcq",
     "choices": [
-     "A. đếm khối nhìn thấy",
-     "B. đếm theo tầng",
-     "C. đoán theo độ cao"
+     "vì có khối nấp phía sau",
+     "vì khối quá nhỏ",
+     "vì đếm nhanh quá"
     ],
     "answerKey": {
-     "choice": "B. đếm theo tầng"
+     "choice": "vì có khối nấp phía sau"
     },
-    "solutionNarrative": "Đáp án: B. đếm theo tầng"
+    "solutionNarrative": "Nên phải đếm bằng luật."
    },
    {
     "id": "Q5",
-    "text": "Tháp cầu thang $3 + 2 + 1$ có:",
-    "format": "mcq",
-    "choices": [
-     "A. 5 khối",
-     "B. 6 khối",
-     "C. 7 khối"
-    ],
+    "text": "Khối biết bay nên không cần khối đỡ.",
+    "format": "tf",
     "answerKey": {
-     "choice": "B. 6 khối"
+     "value": false
     },
-    "solutionNarrative": "Đáp án: B. 6 khối"
+    "solutionNarrative": "Sai. Khối không biết bay."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Không gì thay được KHỐI THẬT: lego, khối gỗ, hộp giấy nhỏ. Con xếp theo hình trong sách rồi GỠ RA ĐẾM — mỗi lần gỡ là một lần kiểm chứng luật ngồi.",
-  "homeActivity": "Chơi đảo vai: con xếp một hình che khuất khéo léo rồi đố bố mẹ đếm — bố mẹ thỉnh thoảng \"quên\" khối bị che để con được sửa sai cho người lớn.",
-  "watchFor": "NÊN: luôn hỏi \"khối này đang ngồi trên ai?\". KHÔNG NÊN: đưa hình xếp phức tạp nhiều khối khoét rỗng — dạng \"đếm khối bị khoét\" là đặc sản lớp 3-4; lớp 2 dừng ở 2-3 tầng nhìn rõ luật ngồi."
+  "onComplete": "Xếp vài khối gỗ thành tháp rồi cho con đếm, sau đó gỡ ra đếm lại — con sẽ thấy mình vừa sót mấy khối nấp phía sau.",
+  "homeActivity": "Bố mẹ hỏi: \"Khối trên cùng đang ngồi trên cái gì?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_KH02",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_KH02.png",
-   "caption": "Hình xếp của đề bài — đếm thử xem mấy khối",
-   "sha256_16": "340498a311155bed",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_KH03",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L2H_KH03.png",
-   "caption": "Khối ở tầng trên phải có khối đỡ bên dưới",
-   "sha256_16": "409ed4896faa1db2",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L2Q_B30C1",
-   "usedIn": [
-    "item:C1"
-   ],
-   "file": "figures/L2Q_B30C1.png",
-   "caption": "Hình xếp của đề bài",
-   "sha256_16": "48c896472918122e",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C1G",
-   "usedIn": [
-    "item:C1:giai"
-   ],
-   "file": "figures/L2Q_B30C1G.png",
-   "caption": "Lời giải — đếm theo từng tầng",
-   "sha256_16": "bbd19c378ccf1c7a",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C2",
-   "usedIn": [
-    "item:C2"
-   ],
-   "file": "figures/L2Q_B30C2.png",
-   "caption": "Hình xếp của đề bài",
-   "sha256_16": "6fa8da955883fe23",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C2G",
-   "usedIn": [
-    "item:C2:giai"
-   ],
-   "file": "figures/L2Q_B30C2G.png",
-   "caption": "Lời giải — đếm theo từng tầng",
-   "sha256_16": "13aff2f4015ed4b6",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C4",
-   "usedIn": [
-    "item:C4"
-   ],
-   "file": "figures/L2Q_B30C4.png",
-   "caption": "Hình xếp của đề bài",
-   "sha256_16": "f25c7fa6402fd8a7",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C4G",
-   "usedIn": [
-    "item:C4:giai"
-   ],
-   "file": "figures/L2Q_B30C4G.png",
-   "caption": "Lời giải — đếm theo từng tầng",
-   "sha256_16": "eb3abddfb2c3d02d",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C5",
-   "usedIn": [
-    "item:C5"
-   ],
-   "file": "figures/L2Q_B30C5.png",
-   "caption": "Hình xếp của đề bài",
-   "sha256_16": "565697a58ecbef5f",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C5G",
-   "usedIn": [
-    "item:C5:giai"
-   ],
-   "file": "figures/L2Q_B30C5G.png",
-   "caption": "Lời giải — đếm theo từng tầng",
-   "sha256_16": "18223c8f4791b615",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C6",
-   "usedIn": [
-    "item:C6"
-   ],
-   "file": "figures/L2Q_B30C6.png",
-   "caption": "Hình xếp của đề bài",
-   "sha256_16": "d80acd9da513dfdf",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C6G",
-   "usedIn": [
-    "item:C6:giai"
-   ],
-   "file": "figures/L2Q_B30C6G.png",
-   "caption": "Lời giải — đếm theo từng tầng",
-   "sha256_16": "afbf2b194a2d53eb",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C7",
-   "usedIn": [
-    "item:C7"
-   ],
-   "file": "figures/L2Q_B30C7.png",
-   "caption": "Hình xếp của đề bài",
-   "sha256_16": "078f88f940852313",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C7G",
-   "usedIn": [
-    "item:C7:giai"
-   ],
-   "file": "figures/L2Q_B30C7G.png",
-   "caption": "Lời giải — đếm theo từng tầng",
-   "sha256_16": "18223c8f4791b615",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C8",
-   "usedIn": [
-    "item:C8"
-   ],
-   "file": "figures/L2Q_B30C8.png",
-   "caption": "Hình xếp của đề bài",
-   "sha256_16": "1fd9015dc48ee1e8",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L2Q_B30C8G",
-   "usedIn": [
-    "item:C8:giai"
-   ],
-   "file": "figures/L2Q_B30C8G.png",
-   "caption": "Lời giải — đếm theo từng tầng",
-   "sha256_16": "1648e0edc3e27ed8",
-   "mucGoc": "luyenTap"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B30_giang.mp4"
+ }
 }
