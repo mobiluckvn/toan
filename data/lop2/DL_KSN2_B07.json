@@ -2,128 +2,83 @@
  "id": "DL:KSN2.B07",
  "quyen": "lop2",
  "so": 7,
- "ten": "TRUY TÌM CHỮ SỐ 5 TRỐN Ở ĐÂU",
+ "ten": "TRUY TÌM CHỮ SỐ — CHIA HAI CÁNH QUÂN",
  "chuong": 2,
  "tenChuong": "Bé là vua đếm",
- "dangGoc": "SỐ 4.2 — Đếm có điều kiện (tập đếm theo nhóm, né bẫy đếm trùng)",
+ "dangGoc": "SỐ 4.2 — Đếm các số chứa một chữ số cho trước: chia thành cánh đuôi và cánh phố.",
  "muc": {
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Tìm được TẤT CẢ các số từ 1 đến 100 có chứa chữ số 5.",
-    "Biết đếm theo hai nhóm gọn gàng: nhóm \"đuôi 5\" và nhóm \"phố 50\".",
-    "Phát hiện số đứng ở cả hai nhóm để không đếm trùng."
+    "Biết một chữ số có thể trốn ở hàng đơn vị hoặc hàng chục.",
+    "Đếm được cánh đuôi: mỗi chục đúng một số.",
+    "Đếm được cánh phố: mười số liền nhau."
    ],
-   "goc": [
-    "Tìm được TẤT CẢ các số từ 1 đến 100 có chứa chữ số 5.",
-    "Biết đếm theo hai nhóm gọn gàng: nhóm \"đuôi 5\" và nhóm \"phố 50\".",
-    "Phát hiện số đứng ở cả hai nhóm để không đếm trùng."
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Lệnh truy nã đặc biệt",
-   "dong": [
-    "Vua Đếm dán lệnh truy nã: \"Chữ số 5 tinh nghịch đang trốn trong bảng số 1 → 100. Thám tử nào tìm được TẤT CẢ những số có nó ẩn nấp sẽ được thưởng kính lúp vàng!\" Su Kem cầm bút khoanh loạn xạ: 5 này, 25 này, 51 này... rồi bối rối: \"Nhiều quá, tớ chẳng biết mình sót số nào!\""
-   ],
-   "goc": [
-    "Vua Đếm dán lệnh truy nã: \"Chữ số 5 tinh nghịch đang trốn trong bảng số 1 → 100. Thám tử nào tìm được TẤT CẢ những số có nó ẩn nấp sẽ được thưởng kính lúp vàng!\" Su Kem cầm bút khoanh loạn xạ: 5 này, 25 này, 51 này... rồi bối rối: \"Nhiều quá, tớ chẳng biết mình sót số nào!\""
-   ],
-   "hinh": [
-    {
-     "id": "L2H_MO_B07",
-     "sauDong": 0,
-     "file": "figures/L2H_MO_B07.png",
-     "caption": "Bảng số 1 đến 99, chữ số 7 nấp đâu đó",
-     "sha256_16": "23f203b97c1ef987"
-    }
-   ]
+   "ten": "CHUYỆN MỞ BÀI",
+   "dong": [],
+   "hinh": [],
+   "nhip": ""
   },
   "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Truy tìm theo nhóm",
-   "dong": [
-    "Bước 1. Trí Long trải bảng số 1 → 100 ra và tô màu mọi ô có chữ số 5. Con nhìn xem — chúng xếp thành hình gì?",
-    "Bước 2. Một CỘT DỌC. Nhóm \"đuôi 5\": 5, 15, 25, 35, 45, 55, 65, 75, 85, 95 → mỗi chục đúng một bạn → 10 số. Và một HÀNG NGANG. Nhóm \"phố 50\": 50, 51, 52, ..., 59 → dùng mẹo Bài 6: 59 − 50 = 9, thêm 1 → 10 số.",
-    "Bước 3. Cộng hai nhóm: 10 + 10 = 20? Khoan! Nhìn kỹ chỗ cột và hàng giao nhau — số 55 đứng ở CẢ HAI nhóm, bị đếm hai lần. Phải bớt đi 1:",
-    "MẸO THÁM TỬ: Truy tìm chữ số nào, cứ chia hai cánh quân: cánh \"ĐUÔI\" (hàng đơn vị) và cánh \"PHỐ\" (hàng chục). Gặp số đứng ở cả hai cánh — chỉ bắt MỘT lần thôi!"
-   ],
-   "goc": [
-    "Bước 1. Trí Long trải bảng số 1 → 100 ra và tô màu mọi ô có chữ số 5. Con nhìn xem — chúng xếp thành hình gì?",
-    "Bước 2. Một CỘT DỌC — nhóm \"đuôi 5\": 5, 15, 25, 35, 45, 55, 65, 75, 85, 95 → mỗi chục đúng một bạn → 10 số. Và một HÀNG NGANG — nhóm \"phố 50\": 50, 51, 52, ..., 59 → dùng mẹo Bài 6: 59 − 50 = 9, thêm 1 → 10 số.",
-    "Bước 3. Cộng hai nhóm: 10 + 10 = 20? Khoan! Nhìn kỹ chỗ cột và hàng giao nhau — số 55 đứng ở CẢ HAI nhóm, bị đếm hai lần. Phải bớt đi 1:",
-    "MẸO THÁM TỬ: Truy tìm chữ số nào, cứ chia hai cánh quân: cánh \"ĐUÔI\" (hàng đơn vị) và cánh \"PHỐ\" (hàng chục). Gặp số đứng ở cả hai cánh — chỉ bắt MỘT lần thôi!"
-   ],
-   "hinh": [
-    {
-     "id": "L2H_BL03",
-     "sauDong": 0,
-     "file": "figures/L2H_BL03.png",
-     "caption": "Các số chứa chữ số 5 từ 1 đến 100",
-     "sha256_16": "7be111fc79a5bf63"
-    },
-    {
-     "id": "L2H_HOP04",
-     "sauDong": 2,
-     "file": "figures/L2H_HOP04.png",
-     "caption": "Số 55 nằm ở cả hai nhóm nên chỉ được đếm một lần",
-     "sha256_16": "14ee455c023ea7ab"
-    }
-   ]
+   "ten": "CÙNG KHÁM PHÁ",
+   "dong": [],
+   "hinh": [],
+   "nhip": ""
   },
   "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
+   "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Từ 1 đến 99, có bao nhiêu số chứa chữ số 7?",
-    "Bài giải:",
-    "Nhóm \"đuôi 7\": 7, 17, 27, 37, 47, 57, 67, 77, 87, 97 → có 10 số.",
-    "Nhóm \"phố 70\": 70, 71, 72, ..., 79 → có 10 số.",
-    "Số 77 đứng ở cả hai nhóm, bị đếm hai lần nên phải bớt 1.",
-    "Vậy có tất cả: 10 + 10 − 1 = 19 (số)",
-    "Đáp số: 19 số."
+    "Đề bài: Trong bảng số từ 1 đến 99, chữ số 5 trốn ở những số nào?",
+    "Chữ số 5 trốn được hai chỗ",
+    "Một là ở hàng đơn vị, tức là số có đuôi bằng năm. Hai là ở hàng chục, tức là số thuộc phố năm mươi.",
+    "Cánh thứ nhất: các số đuôi 5",
+    "Năm, mười lăm, hai mươi lăm, cứ thế tới chín mươi lăm. Mỗi chục đúng một bạn, nên được 10 số.",
+    "Cánh thứ hai: phố 50",
+    "Năm mươi, năm mươi mốt, cho tới năm mươi chín. Dùng mẹo bài trước: 59 − 50 = 9, thêm một được 10 số.",
+    "Đáp số: cánh đuôi 10 số, cánh phố 10 số.",
+    "Nhớ cách chia",
+    "Truy tìm chữ số nào cũng chia hai cánh như thế: cánh ĐUÔI ở hàng đơn vị, và cánh PHỐ ở hàng chục."
    ],
-   "goc": [
-    "Đề bài: Từ 1 đến 99, có bao nhiêu số chứa chữ số 7?",
-    "Bài giải:",
-    "Nhóm \"đuôi 7\": 7, 17, 27, 37, 47, 57, 67, 77, 87, 97 → có 10 số.",
-    "Nhóm \"phố 70\": 70, 71, 72, ..., 79 → có 10 số.",
-    "Số 77 đứng ở cả hai nhóm, bị đếm hai lần nên phải bớt 1.",
-    "Vậy có tất cả: 10 + 10 − 1 = 19 (số)",
-    "Đáp số: 19 số."
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Su Kem nộp bài truy nã: \"Nhóm đuôi 5 có 10 số, phố 50 có 10 số. Tổng cộng bắt được 20 số. Thưởng kính lúp cho tớ!\"",
-    "Gợi ý 1: Con soi lại bảng số. Có \"tên trốn\" nào bị Su Kem còng tay tận hai lần không?",
-    "Gợi ý 2: Đếm trùng thì kết quả bị THỪA hay bị THIẾU? Sửa lại đáp số đúng giúp cậu ấy nhé."
+    "Có bạn tìm số chứa chữ số 5 rồi chỉ kể được 5, 15, 25 và bảo hết.",
+    "Gợi ý 1: Con nhìn số 53 xem. Nó có chữ số 5 không, mà đuôi nó có phải 5 không?",
+    "Gợi ý 2: Vậy chữ số 5 còn trốn được ở chỗ nào nữa ngoài hàng đơn vị?",
+    "Chữa: bạn ấy mới lùng có một cánh. Còn cả phố năm mươi nữa, từ năm mươi tới năm mươi chín."
    ],
-   "goc": [
-    "Su Kem nộp bài truy nã: \"Nhóm đuôi 5 có 10 số, phố 50 có 10 số. Tổng cộng bắt được 20 số. Thưởng kính lúp cho tớ!\"",
-    "Gợi ý 1: Con soi lại bảng số — có \"tên trốn\" nào bị Su Kem còng tay tận hai lần không?",
-    "Gợi ý 2: Đếm trùng thì kết quả bị THỪA hay bị THIẾU? Sửa lại đáp số đúng giúp cậu ấy nhé."
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "luyenTap": {
    "ten": "LUYỆN TẬP 3 MỨC SAO",
    "dong": [],
-   "goc": []
+   "hinh": [],
+   "nhip": ""
   },
   "quiz": {
    "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
    "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★)"
    ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "In (hoặc kẻ tay) một bảng 100, đưa con bút màu \"truy nã\" lần lượt: chữ số 2, chữ số 8... Hình cột-và-hàng hiện ra mỗi lần sẽ in sâu vào trí nhớ hình ảnh của con.",
-    "Hỏi câu then chốt: \"Số nào bị con tô những hai lần? Vì sao?\" — nhận diện phần giao chính là mầm non của sơ đồ Ven lớp 4-5.",
-    "NÊN: khuyến khích đếm theo nhóm dù chậm. KHÔNG NÊN: hài lòng khi con khoanh lung tung mà tình cờ đủ 19 — cách đếm mới là thứ cần rèn, không phải đáp số."
-   ]
+    "In một bảng số từ 1 đến 100 rồi cho con tô màu mọi ô có chữ số 5. Con nhìn thấy một cột dọc và một hàng ngang hiện ra.",
+    "Câu hỏi quen tay: \"Chữ số ấy đang trốn ở hàng đơn vị hay hàng chục?\""
+   ],
+   "hinh": [],
+   "nhip": ""
   }
  },
  "cau": [
@@ -134,8 +89,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Kể ra 3 số có chữ số 5 ở hàng ĐƠN VỊ.",
-   "loiChua": "ví dụ 5, 15, 25 (đuôi 5)",
+   "text": "Số nào có chữ số 5 ở hàng đơn vị: số 35 hay số 53?",
+   "loiChua": "Số 35 có đuôi là 5, nên chữ số 5 của nó ở hàng đơn vị.",
    "tuLuan": true
   },
   {
@@ -145,8 +100,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Kể ra 3 số có chữ số 5 ở hàng CHỤC.",
-   "loiChua": "ví dụ 51, 52, 53 (phố 50)",
+   "text": "Số nào có chữ số 5 ở hàng chục: số 35 hay số 53?",
+   "loiChua": "Số 53 có chữ số 5 đứng trước, nên nó ở hàng chục.",
    "tuLuan": true
   },
   {
@@ -156,8 +111,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Trong các số 35, 53, 30, 15, 51 — số nào KHÔNG chứa chữ số 5?",
-   "loiChua": "số 30 không chứa chữ số 5",
+   "text": "Cánh đuôi 5 gồm 5, 15, 25 cho tới 95. Có bao nhiêu số?",
+   "loiChua": "Mỗi chục đúng một bạn, từ chục 0 tới chục 9, nên được 10 số.",
    "tuLuan": true
   },
   {
@@ -167,8 +122,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Viết đầy đủ nhóm \"đuôi 3\" (các số từ 1 đến 99 có chữ số 3 ở hàng đơn vị). Có mấy số?",
-   "loiChua": "3, 13, 23, 33, 43, 53, 63, 73, 83, 93 → 10 số",
+   "text": "Cánh phố 50 gồm các số từ 50 đến 59. Có bao nhiêu số?",
+   "loiChua": "Lấy hiệu: 59 − 50 = 9, thêm một được 10 số.",
    "tuLuan": true
   },
   {
@@ -178,8 +133,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Viết đầy đủ nhóm \"phố 30\" (từ 30 đến 39). Có mấy số?",
-   "loiChua": "30, 31, ..., 39 → 10 số",
+   "text": "Trong các số 35, 53, 30, 15 — số nào KHÔNG có chữ số 5?",
+   "loiChua": "Số 30 không có chữ số 5 ở hàng nào cả.",
    "tuLuan": true
   },
   {
@@ -189,19 +144,19 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Từ 1 đến 99, có bao nhiêu số chứa chữ số 3? (Nhớ người bạn đứng ở cả hai nhóm!)",
-   "loiChua": "10 + 10 − 1 = 19 số (số 33 đứng cả hai nhóm)",
+   "text": "Cánh đuôi 3 gồm 3, 13, 23 cho tới 93. Có bao nhiêu số?",
+   "loiChua": "Cũng mỗi chục một bạn, nên được 10 số.",
    "tuLuan": true
   },
   {
    "id": "C7",
    "maSach": "C7",
    "so": 7,
-   "muc": 2,
+   "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Từ 1 đến 99, có bao nhiêu số chứa chữ số 9?",
-   "loiChua": "10 + 10 − 1 = 19 số (bạn đứng hai nhóm là 99)",
+   "text": "Cánh phố 30 gồm những số nào? Cho biết số đầu, số cuối và có bao nhiêu số.",
+   "loiChua": "Từ 30 đến 39. Lấy hiệu: 39 − 30 = 9, thêm một được 10 số.",
    "tuLuan": true
   },
   {
@@ -211,19 +166,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Từ 1 đến 99 có tất cả 99 số. Vậy có bao nhiêu số KHÔNG chứa chữ số 5? (Mẹo: lấy tất cả trừ đi những số có chứa — thám tử gọi đây là \"đếm phần còn lại\".)",
-   "loiChua": "\"đếm phần còn lại\": 99 − 19 = 80 số không chứa chữ số 5",
-   "tuLuan": true
-  },
-  {
-   "id": "C9",
-   "maSach": "C9",
-   "so": 9,
-   "muc": 3,
-   "phan": "luyenTap",
-   "ghiChu": "",
-   "text": "Số nào từ 1 đến 99 chứa chữ số 5 những HAI Lần? Từ đó con giải thích lại: vì sao phép tính là 10 + 10 − 1 chứ không phải 10 + 10?",
-   "loiChua": "số 55 chứa chữ số 5 hai lần (cả hàng chục lẫn hàng đơn vị) — nó nằm trong cả nhóm đuôi 5 lẫn phố 50, nên cộng thẳng 10 + 10 sẽ đếm nó hai lần; phải trừ 1 để nó chỉ được đếm một lần",
+   "text": "Trong mỗi chục có đúng bao nhiêu số có đuôi bằng 5?",
+   "loiChua": "Đúng 1 số. Chẳng hạn chục hai mươi thì chỉ có 25.",
    "tuLuan": true
   },
   {
@@ -233,14 +177,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Số 52 có chứa chữ số 5.",
+   "text": "Một chữ số có thể trốn ở hàng đơn vị hoặc ở hàng chục.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "Đúng, nên phải lùng cả hai cánh.",
+   "solutionNarrative": "Đúng, nên phải lùng cả hai cánh."
   },
   {
    "id": "Q2",
@@ -249,14 +193,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Nhóm \"đuôi 5\" từ 1 đến 99 có 10 số.",
+   "text": "Số 53 không có chữ số 5 vì đuôi nó là 3.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "value": true
+    "value": false
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "Sai. Chữ số 5 của nó đứng ở hàng chục.",
+   "solutionNarrative": "Sai. Chữ số 5 của nó đứng ở hàng chục."
   },
   {
    "id": "Q3",
@@ -265,19 +209,20 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Nhóm \"phố 50\" gồm các số từ 50 đến:",
-   "format": "mcq",
+   "text": "Cánh đuôi 5 từ 1 đến 99 có bao nhiêu số?",
    "choices": [
-    "A. 55",
-    "B. 59",
-    "C. 60"
+    "10",
+    "9",
+    "11",
+    "5"
    ],
+   "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "B. 59"
+    "choice": "10"
    },
-   "loiChua": "Đáp án: B. 59",
-   "solutionNarrative": ""
+   "loiChua": "Mỗi chục đúng một bạn, có mười chục.",
+   "solutionNarrative": "Mỗi chục đúng một bạn, có mười chục."
   },
   {
    "id": "Q4",
@@ -286,19 +231,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Số nào bị đếm TRÙNG nếu cộng thẳng hai nhóm?",
-   "format": "mcq",
+   "text": "Cánh phố 50 gồm",
    "choices": [
-    "A. 50",
-    "B. 55",
-    "C. 59"
+    "các số từ 50 đến 59",
+    "chỉ số 50",
+    "các số đuôi 5"
    ],
+   "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "B. 55"
+    "choice": "các số từ 50 đến 59"
    },
-   "loiChua": "Đáp án: B. 55",
-   "solutionNarrative": ""
+   "loiChua": "Đó là những số có chữ số 5 ở hàng chục.",
+   "solutionNarrative": "Đó là những số có chữ số 5 ở hàng chục."
   },
   {
    "id": "Q5",
@@ -306,20 +251,15 @@
    "so": 5,
    "muc": 1,
    "phan": "quiz",
-   "ghiChu": "",
-   "text": "Từ 1 đến 99 có bao nhiêu số chứa chữ số 5?",
-   "format": "mcq",
-   "choices": [
-    "A. 19",
-    "B. 20",
-    "C. 18"
-   ],
+   "ghiChu": "Đúng/Sai?",
+   "text": "Truy tìm chữ số nào cũng chia hai cánh: cánh đuôi và cánh phố.",
+   "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 19"
+    "value": true
    },
-   "loiChua": "Đáp án: A. 19",
-   "solutionNarrative": ""
+   "loiChua": "Đúng. Đó là cách lùng không sót.",
+   "solutionNarrative": "Đúng. Đó là cách lùng không sót."
   }
  ]
 }

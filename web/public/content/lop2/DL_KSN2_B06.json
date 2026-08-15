@@ -3,12 +3,12 @@
  "id": "DL:KSN2.B06",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 11 · ĐẾM SỐ TRONG KHOẢNG — ĐẾM CÁCH 2, CÁCH 5",
+ "title": "Bài 11 · ĐẾM TỪ ĐÂU ĐẾN ĐÂU — TRỪ RỒI THÊM MỘT",
  "durationMinutes": 10,
  "so": 11,
  "chuong": 2,
  "tenChuong": "Bé là vua đếm",
- "dangGoc": "SỐ 4.1 — Đếm số lượng các số (mầm non của công thức dãy số cách đều)",
+ "dangGoc": "SỐ 4.1 — Đếm số lượng các số trong một khoảng: trừ hai đầu rồi thêm một.",
  "skills": {
   "bktUnit": "CHUONG:2@G2",
   "primary": []
@@ -16,42 +16,25 @@
  "series": {
   "order": 11,
   "prev": "DL:KSN2.B05",
-  "next": "DL:KSN2.B07"
+  "next": "DL:KSN2.B39"
  },
  "objective": {
   "id": "O1",
-  "text": "Đếm được có bao nhiêu số từ a đến b — và nhớ đếm CẢ HAI ĐẦU. Đếm được số chẵn, số lẻ trong một khoảng bằng cách đi theo từng chục. Đếm được dãy nhảy cóc cách 2, cách 5 (dựa vào bảng nhân).",
-  "kidText": "Bạn An đọc từ trang 5 đến trang 12. Con thử đếm xem bạn ấy đọc mấy trang nhé!",
+  "text": "Đếm được có bao nhiêu số từ số này đến số kia. Biết lấy số cuối trừ số đầu rồi thêm một. Nói được vì sao phải thêm một.",
+  "kidText": "Từ nhà số 3 đến nhà số 7 có mấy ngôi nhà? Con đếm thử rồi trừ xem có khớp không nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Đếm thẳng tay từng nhà xem sao: nhà 3, nhà 4, nhà 5, nhà 6, nhà 7. Đúng 5 nhà, không phải 4! Phép trừ $7 - 3 = 4$ chỉ đếm được các \"bước nhảy\" giữa các nhà, mà quên mất nhà đầu tiên cũng cần một phong bì."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Vậy mẹo của Vua Đếm là: lấy số cuối trừ số đầu, rồi THÊM 1. Từ nhà 3 đến nhà 7: $7 - 3 = 4$, thêm 1 thành 5 nhà. Từ trang 1 đến trang 8: $8 - 1 = 7$, thêm 1 thành 8 trang."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Ở phố thật cũng vậy: một bên đường là nhà số LẺ 1, 3, 5, 7, 9. Bên kia là nhà số CHẴN 2, 4, 6, 8, 10. Muốn đếm nhà chẵn từ 2 đến 10, con cứ đếm nhảy cóc: 2, 4, 6, 8, 10 → 5 nhà."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. Đếm cách 5 cũng nhảy cóc như thế, và bảng nhân 5 chính là đôi giày nhảy của con:"
-   }
-  ],
-  "mantra": "Đếm \"từ a đến b\" → trừ nhau rồi THÊM 1. Còn đếm dãy nhảy cóc → cứ lần theo bảng nhân 2, bảng nhân 5 mà đếm số bước chân!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem quả quyết: \"Từ nhà 3 đến nhà 7 thì lấy $7 - 3 = 4$ nhà. Phép trừ không bao giờ sai!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Phép trừ không sai — nhưng nó đang đếm cái gì? Đếm NHÀ hay đếm KHOẢNG CÁCH giữa các nhà? Gợi ý 2: Con hãy đếm tay từ 3 đến 7 và chỉ cho Su Kem xem nhà nào bị cậu ấy bỏ quên."
+    "wrong": "Có bạn tính từ nhà 3 đến nhà 7 rồi ghi luôn 4 nhà, vì bảy trừ ba bằng bốn.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con đếm tay thử xem được mấy nhà. Gợi ý 2: Phép trừ đếm bước nhảy hay đếm nhà? Nhà đầu tiên có phải nhảy bước nào mới tới không? Chữa: bốn là số bước nhảy. Nhà đầu tiên đứng sẵn ở đó nên phải đếm nó vào nữa, thành năm nhà."
    }
   ]
  },
@@ -59,67 +42,50 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Bạn An đọc truyện từ trang 5 đến trang 12. Hỏi bạn An đã đọc bao nhiêu trang?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Su Kem quả quyết: \"Từ nhà 3 đến nhà 7 thì lấy $7 - 3 = 4$ nhà. Phép trừ không bao giờ sai!\"",
+    "narration": "Có bạn tính từ nhà 3 đến nhà 7 rồi ghi luôn 4 nhà, vì bảy trừ ba bằng bốn.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Bạn An đọc truyện từ trang 5 đến trang 12. Hỏi bạn An đã đọc bao nhiêu trang?",
+  "problem": "Từ nhà số 3 đến nhà số 7 có bao nhiêu ngôi nhà?",
   "steps": [
    {
-    "show": "Số trang bạn An đã đọc là: $12 - 5 = 7$, thêm 1 được 8 (trang)",
+    "show": "Đếm thẳng tay xem sao",
     "phan": "giai"
    },
    {
-    "show": "(Thêm 1 vì trang 5 — trang bắt đầu — cũng được đọc.)",
+    "show": "Nhà 3, nhà 4, nhà 5, nhà 6, nhà 7. Đúng 5 nhà.",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: 8 trang.",
+    "show": "Nhưng phép trừ lại ra 4",
+    "phan": "giai"
+   },
+   {
+    "show": "Bảy trừ ba bằng bốn. Lệch mất một nhà. Vì sao thế?",
+    "phan": "giai"
+   },
+   {
+    "show": "Vì phép trừ chỉ đếm BƯỚC NHẢY từ nhà nọ sang nhà kia. Mà nhà đầu tiên thì chưa nhảy bước nào đã đứng sẵn ở đó rồi.",
+    "phan": "giai"
+   },
+   {
+    "show": "Nên phải thêm một",
+    "phan": "giai"
+   },
+   {
+    "show": "Bảy trừ ba bằng bốn, thêm một được năm.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 5 ngôi nhà.",
     "phan": "dapso"
    },
    {
-    "show": "Tự kiểm tra: đếm tay: 5, 6, 7, 8, 9, 10, 11, 12 — đúng 8 trang ✓.",
+    "show": "Thử lại bằng cách đếm tay: ba, bốn, năm, sáu, bảy — đúng năm nhà.",
     "phan": "ghichu"
    }
   ]
@@ -133,148 +99,116 @@
      "answerKey": {
       "value": 8
      },
-     "solutionNarrative": "8 số",
+     "solutionNarrative": "Đếm tay: một, hai, ba cho tới tám — được 8 số.",
      "hints": [
-      "Đếm cả ngôi nhà đầu tiên nữa.",
-      "Trừ nhau rồi thêm 1."
+      "Con đếm tay từng số một, đọc to lên cho khỏi sót.",
+      "Một, hai, ba... đếm tới số cuối cùng đề cho."
      ]
     },
     {
      "id": "C2",
-     "text": "Từ 4 đến 9 có bao nhiêu số? (Đếm tay rồi thử lại bằng mẹo \"trừ rồi thêm 1\".)",
+     "text": "Tính $7 - 3$, rồi thêm 1 vào kết quả.",
      "answerKey": {
-      "value": 6
+      "parts": [
+       {
+        "label": "hiệu",
+        "value": 4
+       },
+       {
+        "label": "thêm một được",
+        "value": 5
+       }
+      ]
      },
-     "solutionNarrative": "$9 - 4 = 5$, thêm 1 → 6 số",
+     "solutionNarrative": "Lấy hiệu: $7 - 3 = 4$. Thêm một được 5.",
      "hints": [
-      "Phép trừ chỉ đếm bước nhảy, còn sót nhà đầu.",
-      "Lấy số cuối trừ số đầu rồi thêm 1."
+      "Con làm phép trừ trước đã.",
+      "Có kết quả rồi thì cộng thêm một vào."
      ]
     },
     {
      "id": "C3",
-     "text": "Viết tiếp dãy nhảy cóc: 2, 4, 6, ▢, ▢, ▢.",
+     "text": "Từ 4 đến 9 có bao nhiêu số?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "ô trống 1",
-        "value": 8
-       },
-       {
-        "label": "ô trống 2",
-        "value": 10
-       },
-       {
-        "label": "ô trống 3",
-        "value": 12
-       }
-      ]
+      "value": 6
      },
-     "solutionNarrative": "8, 10, 12",
+     "solutionNarrative": "Lấy hiệu: $9 - 4 = 5$, thêm một được 6 số.",
      "hints": [
-      "Dãy nhảy cóc — mỗi bước thêm mấy?",
-      "Cứ cộng thêm 2 vào số đứng ngay trước."
-     ]
-    },
-    {
-     "id": "C4",
-     "text": "Viết tiếp dãy: 5, 10, 15, ▢, ▢, ▢.",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "ô trống 1",
-        "value": 20
-       },
-       {
-        "label": "ô trống 2",
-        "value": 25
-       },
-       {
-        "label": "ô trống 3",
-        "value": 30
-       }
-      ]
-     },
-     "solutionNarrative": "20, 25, 30",
-     "hints": [
-      "Đây là bảng nhân 5 đang đi bộ.",
-      "Mỗi bước thêm 5."
+      "Con lấy số cuối trừ số đầu.",
+      "Rồi nhớ thêm một, vì số đầu tiên đã đứng sẵn ở đó."
      ]
     }
    ],
    "standard": [
     {
-     "id": "C5",
-     "text": "Từ 12 đến 20 có bao nhiêu số?",
+     "id": "C4",
+     "text": "Từ 10 đến 20 có bao nhiêu số?",
      "answerKey": {
-      "value": 9
+      "value": 11
      },
-     "solutionNarrative": "$20 - 12 = 8$, thêm 1 → 9 số",
+     "solutionNarrative": "Lấy hiệu: $20 - 10 = 10$, thêm một được 11 số.",
      "hints": [
-      "Vẫn mẹo trừ rồi thêm 1.",
-      "Hai số đề cho đem trừ nhau trước đã."
+      "Con lấy số cuối trừ số đầu trước đã.",
+      "Hiệu là mười, nhưng còn phải thêm một nữa."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Vì sao đếm xong phép trừ lại phải thêm một?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "vì sao",
+        "options": [
+         "vì số đầu tiên chưa nhảy đã đứng sẵn ở đó",
+         "vì cho tròn số"
+        ],
+        "value": "vì số đầu tiên chưa nhảy đã đứng sẵn ở đó"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì phép trừ chỉ đếm bước nhảy, mà số đầu tiên chưa nhảy đã đứng sẵn ở đó.",
+     "hints": [
+      "Con thử đếm tay một dãy ngắn rồi so với phép trừ xem lệch mấy.",
+      "Phép trừ đếm bước nhảy, mà số đứng đầu thì chưa nhảy đã có mặt."
      ]
     },
     {
      "id": "C6",
-     "text": "Bạn Bình đọc truyện từ trang 7 đến trang 15. Bạn đã đọc mấy trang?",
+     "text": "Từ 15 đến 15 có bao nhiêu số?",
      "answerKey": {
-      "value": 9
+      "value": 1
      },
-     "solutionNarrative": "$15 - 7 = 8$, thêm 1 → 9 trang",
+     "solutionNarrative": "Lấy hiệu: $15 - 15 = 0$, thêm một được 1 số. Đúng là chỉ có chính nó.",
      "hints": [
-      "Đếm trang cũng là đếm nhà.",
-      "Trang đầu tiên cũng phải tính một."
-     ]
-    },
-    {
-     "id": "C7",
-     "text": "Đếm các số chẵn từ 2 đến 20. Có bao nhiêu số? (Nhảy cóc theo bảng nhân 2 nhé.)",
-     "answerKey": {
-      "value": 10
-     },
-     "solutionNarrative": "2, 4, ..., 20 — đếm nhảy cóc được 10 số (đúng bằng 10 bước của bảng nhân 2)",
-     "hints": [
-      "Nhảy cóc theo bảng nhân 2, đừng trừ thẳng.",
-      "Đếm xem đi hết mấy bước thì tới nơi."
-     ]
-    },
-    {
-     "id": "C8",
-     "text": "Dãy đèn đường đánh số 5, 10, 15, ..., 35. Có bao nhiêu cột đèn?",
-     "answerKey": {
-      "value": 7
-     },
-     "solutionNarrative": "5, 10, ..., 35 → 7 cột đèn",
-     "hints": [
-      "Nhảy cóc theo bảng nhân 5.",
-      "Đếm số bước chân, mỗi bước một cột đèn."
+      "Số đầu và số cuối là cùng một số, nên hiệu bằng không.",
+      "Nhưng vẫn phải thêm một, vì chính số ấy vẫn được đếm."
      ]
     }
    ],
    "challenge": [
     {
-     "id": "C9",
-     "text": "Từ 1 đến 30 có bao nhiêu số LẺ? (Mẹo: đi theo từng chục — từ 1 đến 10 có mấy số lẻ? Mỗi chục sau có giống vậy không?)",
+     "id": "C7",
+     "text": "Từ 21 đến 30 có bao nhiêu số?",
      "answerKey": {
-      "value": 15
+      "value": 10
      },
-     "solutionNarrative": "Từ 1 đến 10 có 5 số lẻ (1, 3, 5, 7, 9); mỗi chục sau cũng có đúng 5 số lẻ → 3 chục có $5 + 5 + 5 = 15$ số lẻ",
+     "solutionNarrative": "Lấy hiệu: $30 - 21 = 9$, thêm một được 10 số.",
      "hints": [
-      "Chia ra từng chục cho dễ đếm.",
-      "Một chục có mấy số lẻ? Ba chục thì sao?"
+      "Khoảng này bắt đầu từ hai mươi mốt, con vẫn trừ hai đầu như trên.",
+      "Hiệu là chín, rồi thêm một nữa."
      ]
     },
     {
-     "id": "C10",
-     "text": "Phố nhà Su Kem có các nhà chẵn từ số 2 đến số 18 ở một bên đường. Su Kem bảo: \"Bên đường nhà tớ có $18 : 2 = 9$ nhà.\" Lần này Su Kem đúng hay nhầm? Con kiểm tra bằng cách nhảy cóc xem!",
+     "id": "C8",
+     "text": "Một dãy bắt đầu từ số 6 và có 9 số liền nhau. Số cuối cùng là số nào?",
      "answerKey": {
-      "value": 9
+      "value": 14
      },
-     "solutionNarrative": "Su Kem đúng! Nhà chẵn 2, 4, ..., 18 đếm nhảy cóc được 9 nhà — trùng với $18 : 2 = 9$. (Nhưng nhớ nhé: cách \"chia 2\" chỉ đúng khi dãy chẵn bắt đầu từ 2!)",
+     "solutionNarrative": "Có 9 số thì có 8 bước nhảy: $6 + 8 = 14$.",
      "hints": [
-      "Đừng tin ngay — nhảy cóc đếm lại xem.",
-      "Cách chia đôi chỉ đúng khi dãy chẵn bắt đầu từ 2."
+      "Có chín số thì số bước nhảy ít hơn một, tức là tám bước.",
+      "Cộng tám bước ấy vào số đầu tiên."
      ]
     }
    ]
@@ -285,101 +219,69 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Từ 3 đến 7 có 5 số.",
+    "text": "Đếm từ số này đến số kia thì trừ hai đầu rồi thêm một.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng, và chữ \"thêm một\" là chỗ hay quên nhất."
    },
    {
     "id": "Q2",
-    "text": "Muốn đếm số các số từ a đến b, chỉ cần lấy b trừ a là xong.",
+    "text": "Từ nhà 3 đến nhà 7 có 4 nhà.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "phải thêm 1"
+    "solutionNarrative": "Sai. Bốn là số bước nhảy; đếm nhà thì được 5."
    },
    {
     "id": "Q3",
-    "text": "Từ 6 đến 13 có bao nhiêu số?",
+    "text": "Từ 4 đến 9 có bao nhiêu số?",
     "format": "mcq",
     "choices": [
-     "A. 7",
-     "B. 8",
-     "C. 9"
+     "6",
+     "5",
+     "4",
+     "13"
     ],
     "answerKey": {
-     "choice": "B. 8"
+     "choice": "6"
     },
-    "solutionNarrative": "$13 - 6 = 7$, thêm 1 → 8"
+    "solutionNarrative": "Lấy 9 trừ 4 được 5, thêm một là 6."
    },
    {
     "id": "Q4",
-    "text": "Dãy 5, 10, 15, 20, 25 có bao nhiêu số?",
+    "text": "Vì sao phải thêm một?",
     "format": "mcq",
     "choices": [
-     "A. 4",
-     "B. 5",
-     "C. 25"
+     "vì số đầu tiên chưa nhảy đã đứng sẵn ở đó",
+     "vì cho tròn số",
+     "vì đếm cho vui"
     ],
     "answerKey": {
-     "choice": "B. 5"
+     "choice": "vì số đầu tiên chưa nhảy đã đứng sẵn ở đó"
     },
-    "solutionNarrative": "Đáp án: B. 5"
+    "solutionNarrative": "Phép trừ đếm bước nhảy chứ không đếm số."
    },
    {
     "id": "Q5",
-    "text": "Số nào tiếp theo trong dãy 2, 4, 6, 8?",
-    "format": "mcq",
-    "choices": [
-     "A. 9",
-     "B. 10",
-     "C. 12"
-    ],
+    "text": "Từ 15 đến 15 có 1 số.",
+    "format": "tf",
     "answerKey": {
-     "choice": "B. 10"
+     "value": true
     },
-    "solutionNarrative": "Đáp án: B. 10"
+    "solutionNarrative": "Đúng. Hiệu bằng không, thêm một được một."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Đi bộ ngoài phố, đố con: \"Từ nhà số 12 đến nhà số 20 bên chẵn là mấy nhà?\" rồi cùng đếm kiểm chứng — bài học sống động hơn mọi trang vở.",
-  "homeActivity": "Chơi \"phát phong bì\": đưa con một tập giấy, giao nhiệm vụ phát từ nhà 3 đến nhà 7 (ghế trong nhà đánh số) — con tự phát hiện thiếu - thừa.",
-  "watchFor": "NÊN: để con đếm tay trước, rồi mới hỏi \"có cách nào nhanh hơn không?\". KHÔNG NÊN: đọc luôn công thức \"(cuối − đầu) : khoảng cách + 1\" — dạng đầy đủ ấy thuộc lớp 3-4; lớp 2 chỉ cần hiểu chắc \"thêm 1 vì đếm cả hai đầu\"."
+  "onComplete": "Đếm bậc cầu thang cùng con: từ bậc 1 lên bậc 5 thì bước mấy bước. Bước có bốn mà bậc thì năm — đúng cái bẫy của bài này.",
+  "homeActivity": "Bố mẹ chỉ cần hỏi một câu mỗi lần: \"Con vừa đếm bước nhảy hay đếm số?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_CTS04",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_CTS04.png",
-   "caption": "Một bên đường toàn nhà lẻ, bên kia toàn nhà chẵn",
-   "sha256_16": "2c9e0093ef24e42c",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_DAY13",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L2H_DAY13.png",
-   "caption": "Đếm từ nhà 3 đến nhà 7: đếm cả hai nhà ở hai đầu",
-   "sha256_16": "83d9693aa1936fc8",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L2H_TIA01",
-   "usedIn": [
-    "screen:S5"
-   ],
-   "file": "figures/L2H_TIA01.png",
-   "caption": "Đếm cách 5: nhảy từng bước 5 đơn vị",
-   "sha256_16": "0bc5983d3ae9d103",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B06_giang.mp4"
+ }
 }

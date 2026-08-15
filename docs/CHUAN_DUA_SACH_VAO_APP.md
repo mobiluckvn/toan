@@ -407,9 +407,9 @@ Suy đáp án từ lời văn **chỉ dùng được cho khuôn cố định**. 
 
 | | |
 |---|---|
-| máy suy ra (8 luật hẹp, đã soát tay từng câu) | 66 / 318 |
-| viết tay | 220 / 318 |
-| cố ý để tự chấm | 32 / 318 |
+| máy suy ra (8 luật hẹp, đã soát tay từng câu) | 46 / 339 |
+| viết tay | 264 / 339 |
+| cố ý để tự chấm | 29 / 339 |
 
 Đã thử 3 luật "thông minh" hơn, **phải bỏ 2** vì suy sai. Đừng thử lại — mã và lý do
 còn trong `tools/tach_cau_lop2.py`.
@@ -702,11 +702,12 @@ ba loại hình ngay từ Bước 1 (mục 10) thay vì trả giá hai lượt.
 | Vẽ hình giảng | 75 hình · 17 nguyên mẫu · ~800 dòng |
 | Vẽ hình màn mở + hình bài tập | +45 hình · +5 nguyên mẫu — làm ở lượt SAU, vì lượt đầu chỉ nghĩ tới hình giảng |
 | Vá nốt hình màn mở | +16 hình — lượt trên vẫn để 16/33 bài mở ra KHÔNG có hình nào, chỉ lộ khi đếm |
-| **Tổng hình** | **tổng 122 hình · 22 nguyên mẫu** |
-| Đáp án | 88 suy máy + 154 viết tay |
+| Dọn hình mồ côi | −23 hình — mười sáu bài chữ tách thành bài video, hình của chúng không ai dùng nữa mà vẫn nằm trong sổ. Ba dòng trên là số hình ĐÃ TỪNG vẽ, cộng lại ra 136. Trong lượt dọn ấy đã xoá NHẦM một hình: `L2H_CANH07` neo ở bài B08 mà thật ra thuộc kỳ ôn tập chương 2 — xem `web/test/hinh_ky_sat_hach.test.mjs` |
+| **Tổng hình còn dùng** | **tổng 113 hình · 22 nguyên mẫu** |
+| Đáp án | 46 suy máy + 264 viết tay |
 | Cổng nghiệm thu | 68 phép kiểm riêng cho quyển |
 
-Phần **tốn công nhất** là hình (17 nguyên mẫu) và đáp án viết tay (154 câu). Phần
+Phần **tốn công nhất** là hình (22 nguyên mẫu) và đáp án viết tay (264 câu). Phần
 **dễ sai nhất** là bóc tách — vì sách không nhất quán, mà sai thì im lặng.
 
 ---

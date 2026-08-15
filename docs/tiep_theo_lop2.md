@@ -167,3 +167,45 @@ lớp 4 lẫn `diagnosesMicro` của lớp 2. Đã phá thử ba kiểu trên l�
 Bảy chương, **28 bài chữ**: bé là vua đếm (3) · dãy số kỳ diệu (3) · siêu nhân tính
 nhanh (4) · chuyện toán lời văn (6) · thám tử tí hon (4) · vương quốc hình học (5) ·
 toán trong cuộc sống (3).
+
+---
+
+## Đợt 2 · chương 2 · Bé là vua đếm
+
+Ba bài chữ thành **sáu bài video**. Quyển lớp 2 nay **41 bài**.
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 11 | B06 | đếm từ đâu đến đâu — trừ rồi thêm một |
+| 12 | B39 *(mới)* | đếm nhảy cóc — cách 2 và cách 5 |
+| 13 | B07 | truy tìm chữ số — chia hai cánh quân |
+| 14 | B40 *(mới)* | số đứng ở cả hai cánh — chỉ bắt một lần |
+| 15 | B08 | trang khác chữ số — chia hai đoàn tàu |
+| 16 | B41 *(mới)* | đếm chữ số cả cuốn — cộng hai đoàn tàu |
+
+### Vì sao tách đúng ba chỗ ấy
+
+**B06** gộp "đếm từ a đến b" với "đếm nhảy cóc" — hai nghề khác nhau. Cái đầu là hiểu
+vì sao phải THÊM MỘT; cái sau là nhận ra quãng nhảy đều.
+
+**B07** gộp "chia hai cánh quân" với "bớt số đếm hai lần". Cái sau là mầm non của
+phép đếm phần bù ở lớp 4 — đáng đứng riêng một bài.
+
+**B08** gộp "trang khác chữ số" với "cộng hai đoàn tàu". Bé hay tắc ở bước cộng cuối,
+nên tách ra cho bước ấy có chỗ riêng.
+
+### Số neo
+
+    từ nhà 3 đến nhà 7   → 5 nhà, mà phép trừ chỉ ra 4
+    2, 4, 6, 8, 10       → nhảy cóc cách hai
+    chữ số 5 từ 1 tới 99 → 10 + 10 − 1 = 19
+    cuốn 25 trang        → 9 + 32 = 41 chữ số
+
+### Cổng bắt được
+
+Ẩn dụ **"bước chân"** lọt vào lời đọc của bài nhảy cóc — `video_toan.test.mjs` kêu
+ngay. Và **10 hình mồ côi** neo vào mục nay đã rỗng (lần thứ năm).
+
+Kỳ sát hạch: khai thêm **năm mối nối** ở `KHAI_TAY_L2`. Ba bài mới vốn không câu nào
+hỏi tới — phép ④ của cổng `on_tap_noi_bai` tìm ra đúng ba chỗ trống ấy. Lần này
+không phải viết lại câu nào: mười câu của sách chia vừa đủ cho sáu bài.

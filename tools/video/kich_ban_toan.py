@@ -4430,6 +4430,217 @@ def kb2_tuan_tra(b):
     ]
 
 
+
+def kb2_dem_khoang(b):
+    """C2① Đếm từ đâu đến đâu."""
+    return [
+        _c('bia', 'Đếm từ đâu đến đâu', so_bai(b),
+           loi=['Đếm số nhà trên một dãy phố, mà phép trừ lại ra thiếu.']),
+        _c('y_toan', 'Đếm thẳng tay xem sao',
+           'nhà 3 · nhà 4 · nhà 5 · nhà 6 · nhà 7  →  5 nhà', buoc=1, soBuoc=3,
+           loi=['Đếm thẳng tay: nhà ba, nhà bốn, nhà năm, nhà sáu, nhà bảy.',
+                'Đúng năm nhà.']),
+        _c('y_toan', 'Nhưng phép trừ lại ra bốn', '7 − 3 = 4', buoc=2, soBuoc=3,
+           loi=['Nhưng bảy trừ ba lại bằng bốn. Lệch mất một nhà.']),
+        _c('y_toan', 'Vì phép trừ chỉ đếm BƯỚC NHẢY',
+           'Nhà đầu tiên chưa nhảy đã đứng sẵn ở đó.', buoc=3, soBuoc=3,
+           loi=['Vì phép trừ chỉ đếm bước nhảy từ nhà nọ sang nhà kia.',
+                'Mà nhà đầu tiên thì chưa nhảy bước nào đã đứng sẵn ở đó rồi.']),
+        _c('y_toan', 'Nên phải thêm một', '7 − 3 = 4, thêm 1 được 5',
+           loi=['Nên phải thêm một. Bảy trừ ba bằng bốn, thêm một được năm.',
+                'Đáp số là năm ngôi nhà.']),
+        _c('y_toan', 'Giống đếm bậc cầu thang',
+           'Từ bậc 1 lên bậc 5: bước bốn bước, mà bậc thì năm.',
+           loi=['Giống đếm bậc cầu thang. Từ bậc một lên bậc năm thì bước bốn bước.',
+                'Nhưng bậc thì có năm.']),
+        _c('cong_thuc', 'Đếm từ đâu đến đâu',
+           congThuc='số cuối  −  số đầu  +  1',
+           thay='7 − 3 = 4,  thêm 1  →  5 nhà',
+           loi=['Lấy số cuối trừ số đầu, rồi thêm một.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='ĐỪNG QUÊN thêm một',
+           loi=['Con nhớ lại một lần nữa. Đừng quên thêm một.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_nhay_coc(b):
+    """C2② Đếm nhảy cóc."""
+    return [
+        _c('bia', 'Đếm nhảy cóc', so_bai(b),
+           loi=['Không đếm từng số một, mà mỗi lần nhảy qua một quãng đều nhau.']),
+        _c('y_toan', 'Dãy cách hai', '2 · 4 · 6 · 8 · 10 · 12', buoc=1, soBuoc=3,
+           loi=['Hai, bốn, sáu, rồi tám, mười, mười hai. Mỗi lần thêm hai.']),
+        _c('y_toan', 'Dãy này toàn số CHẴN',
+           'Bắt đầu từ 1 thì được dãy số LẺ: 1 · 3 · 5 · 7 · 9', buoc=2, soBuoc=3,
+           loi=['Dãy này toàn số chẵn.',
+                'Bắt đầu từ một thì được dãy số lẻ: một, ba, năm, bảy, chín.']),
+        _c('y_toan', 'Dãy cách năm', '5 · 10 · 15 · 20 · 25 · 30', buoc=3, soBuoc=3,
+           loi=['Năm, mười, mười lăm, rồi hai mươi, hai mươi lăm, ba mươi.',
+                'Chính là bảng nhân năm con đã thuộc.']),
+        _c('y_toan', 'Đếm dãy nhảy cóc',
+           'Từ 2 đến 10 cách hai: 2, 4, 6, 8, 10 — đúng 5 số.',
+           loi=['Đếm dãy nhảy cóc thì cứ lần theo từng nấc một.',
+                'Từ hai đến mười, đếm cách hai được đúng năm số.']),
+        _c('y_toan', 'Chỗ hay nhầm',
+           'Nhảy được mấy bước rồi thì lần sau vẫn nhảy đúng bấy nhiêu.',
+           loi=['Con nhớ chỗ này. Nhảy cóc thì lần nào cũng nhảy đúng bằng nhau.',
+                'Đang nhảy năm một mà tự dưng nhảy một bước là hỏng.']),
+        _c('cong_thuc', 'Hai dãy nhảy cóc quen thuộc',
+           congThuc='cách 2:  2 · 4 · 6 · 8 · 10',
+           thay='cách 5:  5 · 10 · 15 · 20  —  chính là bảng nhân 5',
+           loi=['Dãy cách hai và dãy cách năm là hai dãy con gặp nhiều nhất.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='mỗi lần nhảy ĐỀU BẰNG NHAU',
+           loi=['Con nhớ lại một lần nữa. Mỗi lần nhảy đều bằng nhau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_hai_canh(b):
+    """C2③ Truy tìm chữ số — chia hai cánh quân."""
+    return [
+        _c('bia', 'Chữ số trốn ở đâu', so_bai(b),
+           loi=['Một chữ số trốn được ở hai chỗ khác nhau.']),
+        _c('bang_hang', 'Trốn ở hàng ĐƠN VỊ', so='35', hienLop=False, toSang=[0],
+           chuPhu='Số có đuôi bằng 5.',
+           loi=['Chỗ thứ nhất là hàng đơn vị, tức là số có đuôi bằng năm.']),
+        _c('bang_hang', 'Trốn ở hàng CHỤC', so='53', hienLop=False, toSang=[1],
+           chuPhu='Số thuộc phố 50.',
+           loi=['Chỗ thứ hai là hàng chục, tức là số thuộc phố năm mươi.']),
+        _c('y_toan', 'Cánh thứ nhất: các số đuôi 5',
+           '5 · 15 · 25 · 35 · 45 · 55 · 65 · 75 · 85 · 95', buoc=1, soBuoc=3,
+           loi=['Cánh thứ nhất gồm các số đuôi năm. Mỗi chục đúng một bạn.',
+                'Từ chục không tới chục chín, được mười số.']),
+        _c('y_toan', 'Cánh thứ hai: phố 50', '50 · 51 · … · 59', buoc=2, soBuoc=3,
+           loi=['Cánh thứ hai là cả phố năm mươi, từ năm mươi tới năm mươi chín.']),
+        _c('y_toan', 'Đếm phố bằng mẹo bài trước',
+           '59 − 50 = 9, thêm 1 được 10 số', buoc=3, soBuoc=3,
+           loi=['Đếm phố bằng mẹo bài trước. Năm mươi chín trừ năm mươi bằng chín, '
+                'thêm một được mười số.']),
+        _c('cong_thuc', 'Truy tìm một chữ số',
+           congThuc='chia HAI CÁNH: cánh ĐUÔI · cánh PHỐ',
+           thay='cánh đuôi 10 số  ·  cánh phố 10 số',
+           loi=['Truy tìm chữ số nào cũng chia hai cánh: cánh đuôi và cánh phố.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='lùng MỘT cánh thôi là sót mất một nửa',
+           loi=['Con nhớ lại một lần nữa. Lùng một cánh thôi là sót mất một nửa.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_bot_mot(b):
+    """C2④ Số đứng ở cả hai cánh."""
+    return [
+        _c('bia', 'Số đứng ở cả hai cánh', so_bai(b),
+           loi=['Cộng hai cánh lại thì thừa mất một bạn.']),
+        _c('y_toan', 'Cộng hai cánh đã', '10 + 10 = 20', buoc=1, soBuoc=3,
+           loi=['Cánh đuôi mười số, cánh phố cũng mười số. Cộng lại được hai mươi.']),
+        _c('bang_hang', 'Khoan đã — nhìn số này', so='55', hienLop=False,
+           toSang=[0, 1], chuPhu='Vừa có đuôi bằng 5, vừa thuộc phố 50.',
+           buoc=2, soBuoc=3,
+           loi=['Khoan đã. Nhìn số năm mươi lăm xem.',
+                'Nó vừa có đuôi bằng năm, vừa thuộc phố năm mươi.']),
+        _c('y_toan', 'Nó bị đếm HAI lần',
+           'Một lần ở cánh đuôi, một lần ở cánh phố.', buoc=3, soBuoc=3,
+           loi=['Nó đứng ở cả hai cánh, nên khi cộng thì nó bị đếm hai lần.',
+                'Một lần ở cánh đuôi, một lần ở cánh phố.']),
+        _c('y_toan', 'Bớt một lần đi', '20 − 1 = 19',
+           loi=['Bớt một lần đi. Hai mươi bớt một còn mười chín.',
+                'Đáp số là mười chín số.']),
+        _c('y_toan', 'Chữ số nào cũng thế',
+           'Với chữ số 3 thì số đứng cả hai cánh là 33 — cũng ra 19.',
+           loi=['Chữ số nào cũng thế. Với chữ số ba thì số đứng cả hai cánh là ba mươi '
+                'ba.',
+                'Và kết quả cũng là mười chín.']),
+        _c('cong_thuc', 'Khi hai nhóm giao nhau',
+           congThuc='cộng hai nhóm  −  phần đứng ở CẢ HAI',
+           thay='10 + 10 − 1 = 19',
+           loi=['Cộng hai nhóm rồi bớt đi phần đứng ở cả hai.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hỏi trước: có bạn nào đứng ở CẢ HAI nhóm không',
+           loi=['Con nhớ lại một lần nữa. Trước khi cộng, hỏi xem có bạn nào đứng ở cả '
+                'hai nhóm không.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_hai_doan_tau(b):
+    """C2⑤ Trang khác chữ số."""
+    return [
+        _c('bia', 'Trang khác chữ số', so_bai(b),
+           loi=['Dán số trang cho cuốn truyện thì tốn bao nhiêu con chữ.']),
+        _c('y_toan', 'Trang 4 chỉ cần MỘT chữ số',
+           'Nhưng trang 37 phải cần HAI — chữ 3 và chữ 7.', buoc=1, soBuoc=3,
+           loi=['Trang bốn chỉ cần dán một chữ số.',
+                'Nhưng trang ba mươi bảy phải dán hai chữ số, là chữ ba và chữ bảy.',
+                'Nên không đếm chung được.']),
+        _c('y_toan', 'Đoàn tàu MỘT TOA',
+           'Trang 1 đến trang 9 — mỗi trang một chữ số.', buoc=2, soBuoc=3,
+           loi=['Đoàn tàu một toa gồm trang một tới trang chín, mỗi trang một chữ số.',
+                'Có chín trang.']),
+        _c('y_toan', 'Đoàn tàu HAI TOA',
+           'Từ trang 10 trở đi — mỗi trang hai chữ số.', buoc=3, soBuoc=3,
+           loi=['Đoàn tàu hai toa chạy từ trang mười trở đi, mỗi trang hai chữ số.']),
+        _c('y_toan', 'Đếm số trang của đoàn hai toa',
+           'Cuốn 25 trang: 25 − 10 = 15, thêm 1 được 16 trang',
+           loi=['Với cuốn hai mươi lăm trang thì đoàn hai toa chạy từ trang mười tới '
+                'trang hai mươi lăm.',
+                'Đếm bằng mẹo bài trước: hai mươi lăm trừ mười bằng mười lăm, thêm một '
+                'được mười sáu trang.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Đếm TRANG khác đếm CHỮ SỐ.',
+           loi=['Con nhớ chỗ này. Đếm trang khác đếm chữ số.',
+                'Đếm trang xong rồi mới tính ra chữ số.']),
+        _c('cong_thuc', 'Chia thành hai đoàn tàu',
+           congThuc='đoàn MỘT TOA: trang 1 tới 9',
+           thay='đoàn HAI TOA: từ trang 10 trở đi',
+           loi=['Chia trang thành đoàn một toa và đoàn hai toa.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='trang đầu tiên cần hai chữ số là trang 10',
+           loi=['Con nhớ lại một lần nữa. Trang đầu tiên cần hai chữ số là trang mười.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_cong_hai_doan(b):
+    """C2⑥ Đếm chữ số cả cuốn — bài cuối chương."""
+    return [
+        _c('bia', 'Đếm chữ số cả cuốn', so_bai(b),
+           loi=['Cuốn truyện hai mươi lăm trang cần bao nhiêu con chữ.']),
+        _c('y_toan', 'Đoàn tàu một toa', '9 trang × 1 chữ số = 9 chữ số',
+           buoc=1, soBuoc=3,
+           loi=['Đoàn tàu một toa có chín trang, mỗi trang một chữ số. Cần chín chữ '
+                'số.']),
+        _c('y_toan', 'Đoàn tàu hai toa', '16 trang, mỗi trang 2 chữ số',
+           buoc=2, soBuoc=3,
+           loi=['Đoàn tàu hai toa có mười sáu trang, mỗi trang hai chữ số.']),
+        _c('y_toan', 'Tính đoàn hai toa', '16 + 16 = 32 chữ số',
+           loi=['Mười sáu cộng mười sáu bằng ba mươi hai chữ số.']),
+        _c('y_toan', 'Cộng hai đoàn lại', '9 + 32 = 41', buoc=3, soBuoc=3,
+           loi=['Cộng hai đoàn lại. Chín cộng ba mươi hai bằng bốn mươi mốt.',
+                'Đáp số là bốn mươi mốt chữ số.']),
+        _c('y_toan', 'Thử với cuốn khác',
+           'Cuốn 12 trang: 9 + 6 = 15 chữ số',
+           loi=['Thử với cuốn mười hai trang. Đoàn một toa chín chữ số.',
+                'Đoàn hai toa có ba trang nên sáu chữ số. Cộng lại được mười lăm.']),
+        _c('cong_thuc', 'Đếm chữ số cả cuốn',
+           congThuc='chữ số cả cuốn  =  đoàn MỘT TOA  +  đoàn HAI TOA',
+           thay='9 + 32 = 41 chữ số',
+           loi=['Chữ số cả cuốn bằng đoàn một toa cộng đoàn hai toa.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='đừng quên bước CỘNG cuối cùng',
+           loi=['Con nhớ lại một lần nữa. Tính riêng hai đoàn xong đừng quên bước cộng '
+                'cuối cùng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
@@ -4499,6 +4710,10 @@ BO = {
     'DL:KSN2.B36': kb2_xoa_khong,   'DL:KSN2.B03': kb2_doi_cho,
     'DL:KSN2.B37': kb2_hieu_bang_chin, 'DL:KSN2.B04': kb2_xep_the,
     'DL:KSN2.B38': kb2_the_khong,   'DL:KSN2.B05': kb2_tuan_tra,
+    # ══ LỚP 2 · chương 2 · Bé là vua đếm — sáu bài ══
+    'DL:KSN2.B06': kb2_dem_khoang,  'DL:KSN2.B39': kb2_nhay_coc,
+    'DL:KSN2.B07': kb2_hai_canh,    'DL:KSN2.B40': kb2_bot_mot,
+    'DL:KSN2.B08': kb2_hai_doan_tau, 'DL:KSN2.B41': kb2_cong_hai_doan,
 }
 
 

@@ -3,55 +3,38 @@
  "id": "DL:KSN2.B08",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 13 · ĐẾM CHỮ SỐ ĐÁNH SỐ TRANG TRUYỆN",
+ "title": "Bài 15 · TRANG KHÁC CHỮ SỐ — CHIA THÀNH HAI ĐOÀN TÀU",
  "durationMinutes": 10,
- "so": 13,
+ "so": 15,
  "chuong": 2,
  "tenChuong": "Bé là vua đếm",
- "dangGoc": "SỐ 4.3 — Đếm chữ số (mầm non của bài toán đánh trang sách lớp 4-5)",
+ "dangGoc": "SỐ 4.3 — Phân biệt số trang với số chữ số; chia trang thành nhóm một chữ số và nhóm hai chữ số.",
  "skills": {
   "bktUnit": "CHUONG:2@G2",
   "primary": []
  },
  "series": {
-  "order": 13,
-  "prev": "DL:KSN2.B07",
-  "next": "DL:KSN2.B09"
+  "order": 15,
+  "prev": "DL:KSN2.B40",
+  "next": "DL:KSN2.B41"
  },
  "objective": {
   "id": "O1",
-  "text": "Phân biệt được TRANG và CHỮ SỐ: trang 7 cần 1 chữ số, trang 25 cần 2 chữ số. Chia các trang thành hai \"đoàn tàu\": trang 1 chữ số (1-9) và trang 2 chữ số (từ 10 trở đi). Tính được tổng số chữ số cần dùng để đánh số một cuốn truyện mỏng.",
-  "kidText": "Một cuốn vở 14 trang. Đánh số hết cả cuốn cần bao nhiêu chữ số — nhiều hơn con nghĩ đấy!",
+  "text": "Biết một trang có thể cần một hoặc hai chữ số. Chia số trang thành đoàn tàu một toa và đoàn tàu hai toa. Đếm được số trang của từng đoàn.",
+  "kidText": "Trang 4 dán một chữ số, còn trang 37 thì mấy? Con đếm giúp cô nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. À ra vậy: trang 7 chỉ cần dán 1 chữ số, nhưng trang 25 phải dán 2 chữ số (chữ 2 và chữ 5). Vậy hãy chia 25 trang thành hai đoàn tàu:"
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Đoàn tàu 1 TOA. Trang 1 đến 9: có 9 trang, mỗi trang cần 1 chữ số → cần 9 chữ số."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Đoàn tàu 2 TOA. Trang 10 đến 25: dùng ngay mẹo Bài 6 để đếm số trang: $25 - 10 = 15$, thêm 1 → 16 trang. Mỗi trang cần 2 chữ số, tức là $16 + 16 = 32$ chữ số."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. Cộng hai đoàn tàu lại:"
-   }
-  ],
-  "mantra": "TRANG khác CHỮ SỐ! Cứ chia trang thành đoàn tàu 1 toa (1-9) và đoàn tàu 2 toa (10 trở đi), đếm số trang mỗi đoàn (mẹo \"thêm 1\"), rồi mới tính chữ số.",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem vẫn cãi: \"Truyện của tớ 25 trang thì cần đúng 25 chữ số. Mỗi trang một số mà!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: \"Mỗi trang một SỐ\" thì đúng, nhưng một SỐ có luôn là một CHỮ SỐ không? Trang 18 dán mấy tấm chữ số lấp lánh? Gợi ý 2: Tính giúp Su Kem xem cậu ấy cần mang bao nhiêu nghìn đồng mới đủ (mỗi chữ số giá 1 nghìn)."
+    "wrong": "Có bạn tính cuốn 25 trang rồi bảo cần 25 chữ số, vì mỗi trang một chữ số.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con nhìn trang 25 xem nó viết bằng mấy chữ số. Gợi ý 2: Vậy có phải trang nào cũng chỉ tốn một chữ số đâu. Từ trang nào trở đi thì tốn hai? Chữa: từ trang mười trở đi mỗi trang tốn hai chữ số. Phải chia hai đoàn tàu rồi mới đếm."
    }
   ]
  },
@@ -59,67 +42,50 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Một cuốn vở có 14 trang. Cần bao nhiêu chữ số để đánh số tất cả các trang?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Su Kem vẫn cãi: \"Truyện của tớ 25 trang thì cần đúng 25 chữ số. Mỗi trang một số mà!\"",
+    "narration": "Có bạn tính cuốn 25 trang rồi bảo cần 25 chữ số, vì mỗi trang một chữ số.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Một cuốn vở có 14 trang. Cần bao nhiêu chữ số để đánh số tất cả các trang?",
+  "problem": "Trang 4 cần mấy chữ số? Còn trang 37 thì mấy? Rồi chia cuốn 25 trang thành hai đoàn tàu.",
   "steps": [
    {
-    "show": "Trang 1 đến trang 9: có 9 trang, mỗi trang 1 chữ số → cần 9 chữ số.",
+    "show": "Trang khác chữ số",
     "phan": "giai"
    },
    {
-    "show": "Trang 10 đến trang 14: có $14 - 10 = 4$, thêm 1 được 5 trang. Mỗi trang 2 chữ số → cần $5 + 5 = 10$ chữ số.",
+    "show": "Trang bốn chỉ cần dán một chữ số. Nhưng trang ba mươi bảy phải dán hai chữ số — chữ ba và chữ bảy.",
     "phan": "giai"
    },
    {
-    "show": "Tất cả cần: $9 + 10 = 19$ (chữ số)",
+    "show": "Nên không đếm chung được.",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: 19 chữ số.",
+    "show": "Đoàn tàu một toa",
+    "phan": "giai"
+   },
+   {
+    "show": "Từ trang một tới trang chín, mỗi trang chỉ một chữ số. Có 9 trang.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đoàn tàu hai toa",
+    "phan": "giai"
+   },
+   {
+    "show": "Từ trang mười trở đi, mỗi trang hai chữ số. Với cuốn hai mươi lăm trang thì đoàn này chạy từ trang mười tới trang hai mươi lăm.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đếm số trang bằng mẹo bài trước: $25 - 10 = 15$, thêm một được 16 trang.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: trang 4 cần 1 chữ số, trang 37 cần 2; đoàn một toa có 9 trang, đoàn hai toa có 16 trang.",
     "phan": "dapso"
    }
   ]
@@ -129,124 +95,120 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Mỗi trang sau cần mấy chữ số: trang 4? trang 9? trang 10? trang 37?",
+     "text": "Trang 4 cần mấy chữ số để đánh số?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "trang 4",
-        "value": 1
-       },
-       {
-        "label": "trang 9",
-        "value": 1
-       },
-       {
-        "label": "trang 10",
-        "value": 2
-       },
-       {
-        "label": "trang 37",
-        "value": 2
-       }
-      ]
+      "value": 1
      },
-     "solutionNarrative": "trang 4 và trang 9: mỗi trang 1 chữ số; trang 10 và trang 37: mỗi trang 2 chữ số",
+     "solutionNarrative": "Số 4 viết bằng 1 chữ số.",
      "hints": [
-      "Hỏi viết trang ấy phải dán mấy tấm chữ số.",
-      "Trang một chữ số và trang hai chữ số là hai đoàn tàu khác nhau."
+      "Con viết số ấy ra rồi đếm xem có mấy chữ số.",
+      "Số này nhỏ nên chỉ viết bằng một chữ số."
      ]
     },
     {
      "id": "C2",
-     "text": "Viết các số từ 1 đến 9 cần tất cả bao nhiêu chữ số?",
+     "text": "Trang 37 cần mấy chữ số để đánh số?",
      "answerKey": {
-      "value": 9
+      "value": 2
      },
-     "solutionNarrative": "9 chữ số",
+     "solutionNarrative": "Số 37 viết bằng 2 chữ số, là chữ 3 và chữ 7.",
      "hints": [
-      "Đoàn tàu một toa: mỗi trang đúng một chữ số.",
-      "Đếm số trang là ra luôn số chữ số."
+      "Số trang này lớn hơn nhiều, con viết nó ra rồi đếm chữ số.",
+      "Số này viết bằng hai chữ số đứng cạnh nhau."
      ]
     },
     {
      "id": "C3",
-     "text": "Viết các số từ 10 đến 13 cần bao nhiêu chữ số?",
+     "text": "Từ trang 1 đến trang 9 có mấy trang, và cần mấy chữ số?",
      "answerKey": {
-      "value": 8
+      "parts": [
+       {
+        "label": "số trang",
+        "value": 9
+       },
+       {
+        "label": "số chữ số",
+        "value": 9
+       }
+      ]
      },
-     "solutionNarrative": "4 trang × 2 → $4 + 4 = 8$ chữ số",
+     "solutionNarrative": "Có 9 trang, mỗi trang một chữ số nên cần 9 chữ số.",
      "hints": [
-      "Đếm số trang trước đã, đừng vội tính chữ số.",
-      "Mỗi trang hai chữ số nên cộng chính nó thêm một lần."
+      "Con đếm số trang trước: từ trang một tới trang chín.",
+      "Mỗi trang chỉ tốn một chữ số nên hai con số bằng nhau."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Một cuốn vở có 12 trang. Cần bao nhiêu chữ số để đánh số hết các trang?",
+     "text": "Cuốn 25 trang: đoàn tàu hai toa chạy từ trang 10 đến trang 25, có mấy trang?",
      "answerKey": {
-      "value": 15
+      "value": 16
      },
-     "solutionNarrative": "9 + (3 trang × $2 = 6$) = 15 chữ số",
+     "solutionNarrative": "Lấy hiệu: $25 - 10 = 15$, thêm một được 16 trang.",
      "hints": [
-      "Chia làm hai đoàn tàu: từ 1 đến 9, và từ 10 trở đi.",
-      "Đoàn hai toa có mấy trang? Trừ rồi thêm 1."
+      "Con dùng mẹo đếm của bài trước: trừ hai đầu rồi thêm một.",
+      "Trang đầu của đoàn này là trang mười."
      ]
     },
     {
      "id": "C5",
-     "text": "Cuốn truyện có 20 trang. Cần bao nhiêu chữ số?",
+     "text": "Mỗi trang của đoàn tàu hai toa cần mấy chữ số?",
      "answerKey": {
-      "value": 31
+      "value": 2
      },
-     "solutionNarrative": "9 + (11 trang × $2 = 22$) = 31 chữ số",
+     "solutionNarrative": "Mỗi trang cần 2 chữ số.",
      "hints": [
-      "Vẫn hai đoàn tàu, đếm riêng từng đoàn rồi cộng.",
-      "Đoàn hai toa chạy từ trang 10 — trừ rồi thêm 1."
+      "Con nhìn một trang bất kỳ của đoàn này, ví dụ trang mười lăm.",
+      "Nó viết bằng mấy chữ số?"
      ]
     },
     {
      "id": "C6",
-     "text": "Viết các số từ 1 đến 15 cần bao nhiêu chữ số?",
+     "text": "Từ trang 10 đến trang 13 cần bao nhiêu chữ số?",
      "answerKey": {
-      "value": 21
+      "value": 8
      },
-     "solutionNarrative": "9 + (6 trang × $2 = 12$) = 21 chữ số",
+     "solutionNarrative": "Có 4 trang, mỗi trang hai chữ số: $4 + 4 = 8$ chữ số.",
      "hints": [
-      "Hai đoàn tàu như cũ.",
-      "Đoàn hai toa bắt đầu từ trang 10, có mấy trang?"
+      "Con đếm số trang trước, rồi mới tính chữ số.",
+      "Bốn trang, mỗi trang hai chữ số thì cộng lại."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C7",
-     "text": "Cuốn sổ tay của Trí Long có 30 trang. Cần bao nhiêu chữ số để đánh số hết?",
+     "text": "Từ trang 10 đến trang 20 có mấy trang và cần bao nhiêu chữ số?",
      "answerKey": {
-      "value": 51
+      "parts": [
+       {
+        "label": "số trang",
+        "value": 11
+       },
+       {
+        "label": "số chữ số",
+        "value": 22
+       }
+      ]
      },
-     "solutionNarrative": "trang 10 → 30 có $30 - 10 = 20$, thêm 1 → 21 trang; chữ số: $21 + 21 = 42$; tổng: $9 + 42 = 51$ chữ số",
+     "solutionNarrative": "Số trang: $20 - 10 = 10$, thêm một được 11 trang. Chữ số: $11 + 11 = 22$.",
      "hints": [
-      "Hai đoàn tàu, cẩn thận đoàn dài.",
-      "Từ trang 10 trở đi: trừ rồi thêm 1 mới ra số trang."
+      "Con đếm số trang trước bằng mẹo trừ hai đầu rồi thêm một.",
+      "Có số trang rồi thì cộng nó với chính nó, vì mỗi trang hai chữ số."
      ]
     },
     {
      "id": "C8",
-     "text": "Bài toán ngược của Vua Đếm: Su Kem mang đúng 11 tấm chữ số lấp lánh. Cậu ấy dán được đến hết trang mấy thì vừa hết sạch? (Mẹo: dán hết đoàn tàu 1 toa trước xem còn dư mấy tấm.)",
+     "text": "Trang nào là trang đầu tiên cần tới 2 chữ số?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "dán hết được đến trang",
-        "value": 10
-       }
-      ]
+      "value": 10
      },
-     "solutionNarrative": "đoàn tàu 1 toa (trang 1-9) dùng hết 9 tấm, còn dư $11 - 9 = 2$ tấm — vừa đủ dán trang 10. Vậy Su Kem dán được đến hết trang 10",
+     "solutionNarrative": "Trang 10 — từ đó trở đi mỗi trang đều hai chữ số.",
      "hints": [
-      "Bài ngược — dán hết đoàn một toa trước, xem còn dư mấy tấm.",
-      "Số tấm dư có đủ cho một trang hai chữ số không?"
+      "Con nghĩ xem số nhỏ nhất có hai chữ số là số nào.",
+      "Trước nó thì mọi trang chỉ tốn một chữ số."
      ]
     }
    ]
@@ -257,101 +219,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Trang 25 cần 2 chữ số để đánh số.",
-    "format": "tf",
-    "answerKey": {
-     "value": true
-    },
-    "solutionNarrative": "Đáp án: ĐÚNG"
-   },
-   {
-    "id": "Q2",
-    "text": "Cuốn truyện 25 trang cần đúng 25 chữ số.",
+    "text": "Trang nào cũng chỉ cần một chữ số.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Đáp án: SAI"
+    "solutionNarrative": "Sai. Từ trang 10 trở đi mỗi trang cần hai chữ số."
+   },
+   {
+    "id": "Q2",
+    "text": "Trang 37 cần hai chữ số.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, là chữ 3 và chữ 7."
    },
    {
     "id": "Q3",
-    "text": "Các trang từ 1 đến 9 cần tất cả:",
+    "text": "Từ trang 1 đến trang 9 cần bao nhiêu chữ số?",
     "format": "mcq",
     "choices": [
-     "A. 9 chữ số",
-     "B. 10 chữ số",
-     "C. 18 chữ số"
+     "9",
+     "10",
+     "18",
+     "8"
     ],
     "answerKey": {
-     "choice": "A. 9 chữ số"
+     "choice": "9"
     },
-    "solutionNarrative": "Đáp án: A. 9 chữ số"
+    "solutionNarrative": "Chín trang, mỗi trang một chữ số."
    },
    {
     "id": "Q4",
-    "text": "Từ trang 10 đến trang 25 có bao nhiêu trang?",
+    "text": "Trang đầu tiên cần hai chữ số là trang",
     "format": "mcq",
     "choices": [
-     "A. 15",
-     "B. 16",
-     "C. 25"
+     "10",
+     "9",
+     "11",
+     "20"
     ],
     "answerKey": {
-     "choice": "B. 16"
+     "choice": "10"
     },
-    "solutionNarrative": "Đáp án: B. 16"
+    "solutionNarrative": "Số 10 là số đầu tiên có hai chữ số."
    },
    {
     "id": "Q5",
-    "text": "Cuốn truyện 25 trang cần tất cả bao nhiêu chữ số?",
-    "format": "mcq",
-    "choices": [
-     "A. 25",
-     "B. 34",
-     "C. 41"
-    ],
+    "text": "Đếm TRANG và đếm CHỮ SỐ là hai việc khác nhau.",
+    "format": "tf",
     "answerKey": {
-     "choice": "C. 41"
+     "value": true
     },
-    "solutionNarrative": "$9 + 32 = 41$"
+    "solutionNarrative": "Đúng. Đếm trang xong mới tính ra chữ số."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Lấy một cuốn tập mỏng thật, cùng con dán giấy nhớ đánh số từng trang — con sẽ TỰ vấp đúng chỗ \"trang 10 cần 2 tờ\" và hiểu ngay khác biệt trang - chữ số.",
-  "homeActivity": "Trò \"tiệm chữ số\": bố mẹ làm chủ tiệm bán chữ số 1 nghìn/tấm, con tính tiền trước khi \"mua\" — sai thì thiếu tiền thật (bằng kẹo!).",
-  "watchFor": "NÊN: luôn hỏi \"trang này cần mấy chữ số?\" trước khi cho tính tổng. KHÔNG NÊN: mở rộng sang trang 100+ (3 chữ số) vội — phạm vi lớp 2 dừng ở hai đoàn tàu là đủ chắc."
+  "onComplete": "Giở một cuốn truyện của con, chỉ vào trang 9 rồi trang 10. Con thấy tận mắt chỗ đổi đoàn tàu.",
+  "homeActivity": "Bố mẹ nhắc một câu: \"Con đang đếm TRANG hay đếm CHỮ SỐ?\" Hai thứ ấy khác nhau.",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_MO_B08",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_MO_B08.png",
-   "caption": "Vở 14 trang, mỗi trang cần mấy chữ số",
-   "sha256_16": "c980cbcac00528e6",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_DAY07",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L2H_DAY07.png",
-   "caption": "Chia 25 trang thành hai nhóm: trang 1 chữ số và trang 2 chữ số",
-   "sha256_16": "473a936d61361a38",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L2H_HOP05",
-   "usedIn": [
-    "screen:S5"
-   ],
-   "file": "figures/L2H_HOP05.png",
-   "caption": "Cộng chữ số của hai nhóm trang lại",
-   "sha256_16": "5553c455b10d8416",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B08_giang.mp4"
+ }
 }

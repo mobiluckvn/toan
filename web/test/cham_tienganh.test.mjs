@@ -275,7 +275,31 @@ function diemDanh() {
 
    Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
    `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
-const MOC = { tong: 2695, dungKhiDungDap: 2693, dungKhiSaiDap: 1, tuDoiChieu: 1 };
+/* ⚠ 2695 → 2719, VÀ hai con số đáng canh nhất tụt 1 → 0. Đợt hai lớp 2: chương 2
+   ba bài chữ thành sáu bài video.
+       luyện tập lớp 2  24 → 48 câu chấm máy  (+24)  ·  2695 + 24 = 2719  ✓
+
+   Ba bài cũ có 27 câu mà chỉ 24 câu chấm được máy: B07 có ba câu "kể ra 3 số có
+   chữ số 5 ở hàng đơn vị" — câu mở, máy không chấm nổi. Sáu bài mới đều 8 câu chấm
+   máy đủ.
+
+   ── VÌ SAO `dungKhiSaiDap` VÀ `tuDoiChieu` TỤT XUỐNG 0 ──
+
+   Đây là lần đầu hai con số ấy động đậy, nên phải nói rõ vì sao — chúng tụt là do
+   MỘT CÂU HỎNG BỊ XOÁ, không phải do bộ chấm nới tay:
+
+       DL:KSN2.B07 câu C3 "Trong các số 35, 53, 30, 15, 51 — số nào KHÔNG chứa chữ
+       số 5?" khai answerKey `{choice: "30", choices: [...]}` mà THÂN CÂU KHÔNG có
+       `format: "mcq"`, cũng không có `options`. Bộ chấm không thấy đường nào chấm
+       được nên rơi xuống lối "tự đối chiếu" — tức là bé gõ gì cũng được tính đúng.
+       Một câu ấy vừa là câu duy nhất tự đối chiếu, vừa là câu duy nhất "đáp sai vẫn
+       đúng". B07 viết lại thành bài video đợt này nên câu ấy đi luôn.
+
+   Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn; dò lại
+   toàn bộ 2719 câu bằng chính phép đếm dưới đây, không còn câu nào rơi vào hai lối
+   bất thường ấy. Từ nay hai con số này phải đứng yên ở 0 — nhích lên là có câu mới
+   khai đáp án hụt kiểu B07/C3. */
+const MOC = { tong: 2719, dungKhiDungDap: 2717, dungKhiSaiDap: 0, tuDoiChieu: 0 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

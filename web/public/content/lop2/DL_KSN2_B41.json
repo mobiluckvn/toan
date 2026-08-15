@@ -1,0 +1,282 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B41",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 16 · ĐẾM CHỮ SỐ CẢ CUỐN — CỘNG HAI ĐOÀN TÀU",
+ "durationMinutes": 10,
+ "so": 16,
+ "chuong": 2,
+ "tenChuong": "Bé là vua đếm",
+ "dangGoc": "SỐ 4.3 — Tính tổng số chữ số cần để đánh số trang cả cuốn.",
+ "skills": {
+  "bktUnit": "CHUONG:2@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 16,
+  "prev": "DL:KSN2.B08",
+  "next": "DL:KSN2.B09"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tính được số chữ số của từng đoàn tàu. Cộng hai đoàn lại để ra số chữ số cả cuốn. Làm được với cuốn dày ít hay nhiều trang.",
+  "kidText": "Cuốn truyện 25 trang cần bao nhiêu con chữ để đánh số? Con đoán thử xem!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn tính cuốn 25 trang rồi lấy 25 nhân 2, được 50 chữ số.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con xem chín trang đầu có tốn hai chữ số mỗi trang không. Gợi ý 2: Chỉ đoàn tàu hai toa mới tốn hai chữ số. Đoàn một toa thì sao? Chữa: chín trang đầu chỉ tốn một chữ số mỗi trang. Phải tính riêng hai đoàn rồi cộng, được bốn mươi mốt."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn tính cuốn 25 trang rồi lấy 25 nhân 2, được 50 chữ số.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một cuốn truyện có 25 trang. Cần bao nhiêu chữ số để đánh số hết các trang?",
+  "steps": [
+   {
+    "show": "Đoàn tàu một toa",
+    "phan": "giai"
+   },
+   {
+    "show": "Từ trang một tới trang chín có 9 trang, mỗi trang một chữ số. Cần 9 chữ số.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đoàn tàu hai toa",
+    "phan": "giai"
+   },
+   {
+    "show": "Từ trang mười tới trang hai mươi lăm có 16 trang, mỗi trang hai chữ số.",
+    "phan": "giai"
+   },
+   {
+    "show": "Mười sáu cộng mười sáu bằng ba mươi hai chữ số.",
+    "phan": "giai"
+   },
+   {
+    "show": "Cộng hai đoàn lại",
+    "phan": "giai"
+   },
+   {
+    "show": "Chín cộng ba mươi hai bằng bốn mươi mốt.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 41 chữ số.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Thử với cuốn khác",
+    "phan": "ghichu"
+   },
+   {
+    "show": "Cuốn mười hai trang: đoàn một toa 9 chữ số, đoàn hai toa có 3 trang nên 6 chữ số. Cộng lại được mười lăm.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Đoàn tàu một toa gồm trang 1 đến trang 9. Cần bao nhiêu chữ số?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Chín trang, mỗi trang một chữ số nên cần 9 chữ số.",
+     "hints": [
+      "Đoàn này có chín trang, mỗi trang một chữ số.",
+      "Hai con số ấy bằng nhau."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Đoàn tàu hai toa của cuốn 25 trang có 16 trang. Cần bao nhiêu chữ số?",
+     "answerKey": {
+      "value": 32
+     },
+     "solutionNarrative": "Mỗi trang hai chữ số: $16 + 16 = 32$ chữ số.",
+     "hints": [
+      "Mỗi trang của đoàn này tốn hai chữ số.",
+      "Con cộng số trang với chính nó."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vậy cuốn 25 trang cần tất cả bao nhiêu chữ số?",
+     "answerKey": {
+      "value": 41
+     },
+     "solutionNarrative": "Cộng hai đoàn: $9 + 32 = 41$ chữ số.",
+     "hints": [
+      "Con cộng số chữ số của hai đoàn lại.",
+      "Chín cộng ba mươi hai thì được bao nhiêu?"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Một cuốn vở có 12 trang. Cần bao nhiêu chữ số?",
+     "answerKey": {
+      "value": 15
+     },
+     "solutionNarrative": "Đoàn một toa 9 chữ số. Đoàn hai toa có 3 trang nên $3 + 3 = 6$. Cộng lại: $9 + 6 = 15$ chữ số.",
+     "hints": [
+      "Con tính riêng hai đoàn trước đã.",
+      "Đoàn hai toa của cuốn này chỉ có ba trang thôi."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Một cuốn có 20 trang. Cần bao nhiêu chữ số?",
+     "answerKey": {
+      "value": 31
+     },
+     "solutionNarrative": "Đoàn một toa 9. Đoàn hai toa có 11 trang nên $11 + 11 = 22$. Cộng lại: $9 + 22 = 31$ chữ số.",
+     "hints": [
+      "Con đếm số trang của đoàn hai toa trước: từ trang mười tới trang hai mươi.",
+      "Rồi cộng nó với chính nó, xong cộng thêm phần đoàn một toa."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Cuốn 15 trang thì đoàn tàu hai toa có mấy trang?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "Từ trang 10 đến trang 15: $15 - 10 = 5$, thêm một được 6 trang.",
+     "hints": [
+      "Đoàn hai toa chạy từ trang mười tới trang cuối cùng.",
+      "Con dùng mẹo trừ hai đầu rồi thêm một."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Vậy cuốn 15 trang cần tất cả bao nhiêu chữ số?",
+     "answerKey": {
+      "value": 21
+     },
+     "solutionNarrative": "Đoàn hai toa: $6 + 6 = 12$. Cộng đoàn một toa: $9 + 12 = 21$ chữ số.",
+     "hints": [
+      "Con lấy số trang vừa tìm được rồi cộng nó với chính nó.",
+      "Xong nhớ cộng thêm chín chữ số của đoàn một toa."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Một cuốn có 30 trang. Đoàn tàu hai toa có mấy trang, và cả cuốn cần bao nhiêu chữ số?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "đoàn hai toa có mấy trang",
+        "value": 21
+       },
+       {
+        "label": "cả cuốn cần mấy chữ số",
+        "value": 51
+       }
+      ]
+     },
+     "solutionNarrative": "Đoàn hai toa: $30 - 10 = 20$, thêm một được 21 trang, tốn $21 + 21 = 42$ chữ số. Cả cuốn: $9 + 42 = 51$ chữ số.",
+     "hints": [
+      "Con đếm số trang của đoàn hai toa trước đã.",
+      "Rồi cộng nó với chính nó, xong cộng thêm phần đoàn một toa."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Cuốn 25 trang cần 41 chữ số.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng: 9 chữ số cho đoàn một toa, 32 cho đoàn hai toa."
+   },
+   {
+    "id": "Q2",
+    "text": "Cuốn 25 trang cần 50 chữ số vì mỗi trang hai chữ số.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Chín trang đầu chỉ tốn một chữ số mỗi trang."
+   },
+   {
+    "id": "Q3",
+    "text": "Cuốn 12 trang cần bao nhiêu chữ số?",
+    "format": "mcq",
+    "choices": [
+     "15",
+     "24",
+     "12",
+     "21"
+    ],
+    "answerKey": {
+     "choice": "15"
+    },
+    "solutionNarrative": "Chín chữ số cho đoàn một toa, sáu cho ba trang còn lại."
+   },
+   {
+    "id": "Q4",
+    "text": "Muốn tính chữ số cả cuốn thì",
+    "format": "mcq",
+    "choices": [
+     "cộng hai đoàn tàu lại",
+     "nhân số trang với 2",
+     "lấy số trang làm đáp số"
+    ],
+    "answerKey": {
+     "choice": "cộng hai đoàn tàu lại"
+    },
+    "solutionNarrative": "Tính riêng từng đoàn rồi mới cộng."
+   },
+   {
+    "id": "Q5",
+    "text": "Cuốn 15 trang cần 21 chữ số.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng: 9 cộng 12."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con đếm thật trên một cuốn mỏng: đếm chữ số ở chín trang đầu, rồi đếm tiếp. Đếm tay xong so với tính thì con tin ngay.",
+  "homeActivity": "Bài này gồm ba bước và bé hay quên bước cuối. Bố mẹ hỏi: \"Con đã cộng hai đoàn tàu lại chưa?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B41_giang.mp4"
+ }
+}

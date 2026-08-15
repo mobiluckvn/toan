@@ -42,6 +42,13 @@ KHAI_TAY_L2 = {
     # Câu 6 cũ hỏi lại đúng ý câu 2 (đều là thêm chữ số 0), trong khi bài XOÁ SỐ 0
     # TẬN CÙNG không có câu nào hỏi tới. Viết lại câu 6 cho phủ bài ấy — vẫn giữ
     # nguyên chuyện cửa hàng ghi nhầm giá, chỉ đổi chiều.
+    # ── chương 2 · Bé là vua đếm: ba bài tách thành sáu ──
+    (2, 1): {'ve': 'DL:KSN2.B39'},    # cột đèn 5, 10, 15 — đếm nhảy cóc
+    (2, 2): {'ve': 'DL:KSN2.B39'},    # ghế đá số chẵn — đếm nhảy cóc
+    (2, 7): {'ve': 'DL:KSN2.B41'},    # cuốn vở 13 trang — cộng hai đoàn tàu
+    (2, 8): {'ve': 'DL:KSN2.B40'},    # số chứa chữ số 4 — bớt số đếm hai lần
+    (2, 9): {'ve': 'DL:KSN2.B39'},    # số chẵn số lẻ — đếm nhảy cóc
+
     (1, 6): {'ve': 'DL:KSN2.B36',
              'text': 'Một cửa hàng ghi giá 90 nghìn đồng nhưng viết sót mất chữ số '
                      '0 ở cuối, thành 9 nghìn đồng. Giá bị viết rẻ đi bao nhiêu '

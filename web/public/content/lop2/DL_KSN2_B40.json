@@ -1,0 +1,283 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B40",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 14 · SỐ ĐỨNG Ở CẢ HAI CÁNH — CHỈ BẮT MỘT LẦN",
+ "durationMinutes": 10,
+ "so": 14,
+ "chuong": 2,
+ "tenChuong": "Bé là vua đếm",
+ "dangGoc": "SỐ 4.2 — Bớt phần đếm trùng khi hai nhóm giao nhau.",
+ "skills": {
+  "bktUnit": "CHUONG:2@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 14,
+  "prev": "DL:KSN2.B07",
+  "next": "DL:KSN2.B08"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Cộng hai cánh lại để đếm tất cả. Nhận ra số đứng ở CẢ HAI cánh thì bị đếm hai lần. Bớt đúng một lần để ra con số thật.",
+  "kidText": "Cô cộng hai nhóm lại mà hình như thừa mất một bạn. Con tìm giúp cô xem bạn nào nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn cộng hai cánh được 20 rồi ghi luôn đáp số 20.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con kể ra cả hai cánh rồi soi xem có số nào bị kể tới hai lần không. Gợi ý 2: Số nào vừa có đuôi bằng năm, vừa thuộc phố năm mươi? Chữa: số năm mươi lăm bị đếm hai lần nên phải bớt đi một, còn mười chín."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn cộng hai cánh được 20 rồi ghi luôn đáp số 20.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Từ 1 đến 99 có bao nhiêu số chứa chữ số 5?",
+  "steps": [
+   {
+    "show": "Cộng hai cánh đã",
+    "phan": "giai"
+   },
+   {
+    "show": "Cánh đuôi 5 có mười số. Cánh phố 50 cũng có mười số. Cộng lại được hai mươi.",
+    "phan": "giai"
+   },
+   {
+    "show": "Khoan đã",
+    "phan": "giai"
+   },
+   {
+    "show": "Nhìn kỹ chỗ hai cánh gặp nhau. Số năm mươi lăm vừa có đuôi là năm, vừa thuộc phố năm mươi.",
+    "phan": "giai"
+   },
+   {
+    "show": "Nó đứng ở cả hai cánh, nên khi cộng thì nó bị đếm HAI lần.",
+    "phan": "giai"
+   },
+   {
+    "show": "Bớt một lần đi",
+    "phan": "giai"
+   },
+   {
+    "show": "Hai mươi bớt một còn mười chín.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 19 số.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Chữ số nào cũng thế",
+    "phan": "ghichu"
+   },
+   {
+    "show": "Với chữ số ba thì số đứng cả hai cánh là ba mươi ba, và kết quả cũng là mười chín.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Cánh đuôi 5 có 10 số, cánh phố 50 có 10 số. Cộng hai cánh được bao nhiêu?",
+     "answerKey": {
+      "value": 20
+     },
+     "solutionNarrative": "Cộng lại: $10 + 10 = 20$.",
+     "hints": [
+      "Con cộng số của hai cánh lại với nhau.",
+      "Mười cộng mười thì được bao nhiêu?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Số nào vừa có đuôi bằng 5, vừa thuộc phố 50?",
+     "answerKey": {
+      "value": 55
+     },
+     "solutionNarrative": "Đó là số 55 — nó đứng ở cả hai cánh.",
+     "hints": [
+      "Con tìm số vừa có đuôi bằng năm, vừa thuộc phố năm mươi.",
+      "Nó nằm đúng chỗ hai cánh gặp nhau."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vậy từ 1 đến 99 có bao nhiêu số chứa chữ số 5?",
+     "answerKey": {
+      "value": 19
+     },
+     "solutionNarrative": "Bớt số bị đếm hai lần: $20 - 1 = 19$ số.",
+     "hints": [
+      "Con lấy tổng hai cánh rồi bớt đi số bị đếm hai lần.",
+      "Bớt đúng một lần thôi, vì nó chỉ thừa một lần."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Vì sao phải bớt đi một?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "vì sao",
+        "options": [
+         "vì số 55 bị đếm hai lần",
+         "vì đếm thừa cho vui"
+        ],
+        "value": "vì số 55 bị đếm hai lần"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì số 55 bị đếm hai lần, một lần ở cánh đuôi và một lần ở cánh phố.",
+     "hints": [
+      "Con kể cả hai cánh ra rồi soi xem bạn nào bị kể tới hai lần.",
+      "Kể tới hai lần thì phải bỏ bớt đi một."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Với chữ số 3 thì số nào đứng ở cả hai cánh?",
+     "answerKey": {
+      "value": 33
+     },
+     "solutionNarrative": "Đó là số 33 — vừa có đuôi bằng 3, vừa thuộc phố 30.",
+     "hints": [
+      "Con tìm số vừa có đuôi bằng ba, vừa thuộc phố ba mươi.",
+      "Hai chữ số của nó giống hệt nhau."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Vậy từ 1 đến 99 có bao nhiêu số chứa chữ số 3?",
+     "answerKey": {
+      "value": 19
+     },
+     "solutionNarrative": "Cũng như trên: $10 + 10 = 20$, bớt một còn 19 số.",
+     "hints": [
+      "Hai cánh vẫn mỗi cánh mười số như cũ.",
+      "Cộng lại rồi bớt đi số đứng ở cả hai cánh."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Từ 1 đến 99 có bao nhiêu số chứa chữ số 7?",
+     "answerKey": {
+      "value": 19
+     },
+     "solutionNarrative": "Hai cánh mỗi cánh 10 số, số 77 đứng cả hai cánh nên bớt một: còn 19 số.",
+     "hints": [
+      "Chữ số nào cũng chia hai cánh giống nhau, mỗi cánh mười số.",
+      "Và bao giờ cũng có đúng một số đứng ở cả hai cánh."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Số 55 có bao nhiêu chữ số 5?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Có 2 chữ số 5, một ở hàng chục và một ở hàng đơn vị.",
+     "hints": [
+      "Con nhìn từng chữ số của nó, đếm xem có mấy chữ số năm.",
+      "Cả hàng chục lẫn hàng đơn vị đều là chữ số ấy."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Cộng hai nhóm mà có số đứng ở cả hai thì phải bớt đi.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, nếu không thì số ấy bị đếm hai lần."
+   },
+   {
+    "id": "Q2",
+    "text": "Từ 1 đến 99 có 20 số chứa chữ số 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Số 55 bị đếm hai lần nên chỉ có 19 số."
+   },
+   {
+    "id": "Q3",
+    "text": "Số nào đứng ở cả cánh đuôi 5 lẫn cánh phố 50?",
+    "format": "mcq",
+    "choices": [
+     "55",
+     "50",
+     "5",
+     "95"
+    ],
+    "answerKey": {
+     "choice": "55"
+    },
+    "solutionNarrative": "Nó vừa có đuôi bằng 5, vừa thuộc phố 50."
+   },
+   {
+    "id": "Q4",
+    "text": "Từ 1 đến 99 có bao nhiêu số chứa chữ số 3?",
+    "format": "mcq",
+    "choices": [
+     "19",
+     "20",
+     "10",
+     "18"
+    ],
+    "answerKey": {
+     "choice": "19"
+    },
+    "solutionNarrative": "Hai cánh cộng lại 20, bớt số 33 bị đếm hai lần."
+   },
+   {
+    "id": "Q5",
+    "text": "Số 55 có hai chữ số 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, một ở hàng chục và một ở hàng đơn vị."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con tô bảng số: tô cột dọc trước, rồi tô hàng ngang. Ô nào bị tô hai lần thì chính là ô phải bớt.",
+  "homeActivity": "Câu hỏi nhắc con mỗi lần cộng hai nhóm: \"Có bạn nào đứng ở cả hai nhóm không?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B40_giang.mp4"
+ }
+}

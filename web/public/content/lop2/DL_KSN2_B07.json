@@ -3,51 +3,38 @@
  "id": "DL:KSN2.B07",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 12 · TRUY TÌM CHỮ SỐ 5 TRỐN Ở ĐÂU",
+ "title": "Bài 13 · TRUY TÌM CHỮ SỐ — CHIA HAI CÁNH QUÂN",
  "durationMinutes": 10,
- "so": 12,
+ "so": 13,
  "chuong": 2,
  "tenChuong": "Bé là vua đếm",
- "dangGoc": "SỐ 4.2 — Đếm có điều kiện (tập đếm theo nhóm, né bẫy đếm trùng)",
+ "dangGoc": "SỐ 4.2 — Đếm các số chứa một chữ số cho trước: chia thành cánh đuôi và cánh phố.",
  "skills": {
   "bktUnit": "CHUONG:2@G2",
   "primary": []
  },
  "series": {
-  "order": 12,
-  "prev": "DL:KSN2.B06",
-  "next": "DL:KSN2.B08"
+  "order": 13,
+  "prev": "DL:KSN2.B39",
+  "next": "DL:KSN2.B40"
  },
  "objective": {
   "id": "O1",
-  "text": "Tìm được TẤT CẢ các số từ 1 đến 100 có chứa chữ số 5. Biết đếm theo hai nhóm gọn gàng: nhóm \"đuôi 5\" và nhóm \"phố 50\". Phát hiện số đứng ở cả hai nhóm để không đếm trùng.",
-  "kidText": "Chữ số 7 trốn trong rất nhiều số từ 1 đến 99. Con đi tìm xem nó nấp ở bao nhiêu chỗ nhé!",
+  "text": "Biết một chữ số có thể trốn ở hàng đơn vị hoặc hàng chục. Đếm được cánh đuôi: mỗi chục đúng một số. Đếm được cánh phố: mười số liền nhau.",
+  "kidText": "Chữ số 5 trốn trong bảng số. Con đoán xem nó trốn được mấy chỗ nào?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Trí Long trải bảng số 1 → 100 ra và tô màu mọi ô có chữ số 5. Con nhìn xem — chúng xếp thành hình gì?"
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Một CỘT DỌC. Nhóm \"đuôi 5\": 5, 15, 25, 35, 45, 55, 65, 75, 85, 95 → mỗi chục đúng một bạn → 10 số. Và một HÀNG NGANG. Nhóm \"phố 50\": 50, 51, 52, ..., 59 → dùng mẹo Bài 6: $59 - 50 = 9$, thêm 1 → 10 số."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Cộng hai nhóm: $10 + 10 = 20$? Khoan! Nhìn kỹ chỗ cột và hàng giao nhau — số 55 đứng ở CẢ HAI nhóm, bị đếm hai lần. Phải bớt đi 1:"
-   }
-  ],
-  "mantra": "Truy tìm chữ số nào, cứ chia hai cánh quân: cánh \"ĐUÔI\" (hàng đơn vị) và cánh \"PHỐ\" (hàng chục). Gặp số đứng ở cả hai cánh — chỉ bắt MỘT lần thôi!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem nộp bài truy nã: \"Nhóm đuôi 5 có 10 số, phố 50 có 10 số. Tổng cộng bắt được 20 số. Thưởng kính lúp cho tớ!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Con soi lại bảng số. Có \"tên trốn\" nào bị Su Kem còng tay tận hai lần không? Gợi ý 2: Đếm trùng thì kết quả bị THỪA hay bị THIẾU? Sửa lại đáp số đúng giúp cậu ấy nhé."
+    "wrong": "Có bạn tìm số chứa chữ số 5 rồi chỉ kể được 5, 15, 25 và bảo hết.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con nhìn số 53 xem. Nó có chữ số 5 không, mà đuôi nó có phải 5 không? Gợi ý 2: Vậy chữ số 5 còn trốn được ở chỗ nào nữa ngoài hàng đơn vị? Chữa: bạn ấy mới lùng có một cánh. Còn cả phố năm mươi nữa, từ năm mươi tới năm mươi chín."
    }
   ]
  },
@@ -55,64 +42,51 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Từ 1 đến 99, có bao nhiêu số chứa chữ số 7?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
     "kind": "trap",
-    "narration": "Su Kem nộp bài truy nã: \"Nhóm đuôi 5 có 10 số, phố 50 có 10 số. Tổng cộng bắt được 20 số. Thưởng kính lúp cho tớ!\"",
+    "narration": "Có bạn tìm số chứa chữ số 5 rồi chỉ kể được 5, 15, 25 và bảo hết.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Từ 1 đến 99, có bao nhiêu số chứa chữ số 7?",
+  "problem": "Trong bảng số từ 1 đến 99, chữ số 5 trốn ở những số nào?",
   "steps": [
    {
-    "show": "Nhóm \"đuôi 7\": 7, 17, 27, 37, 47, 57, 67, 77, 87, 97 → có 10 số.",
+    "show": "Chữ số 5 trốn được hai chỗ",
     "phan": "giai"
    },
    {
-    "show": "Nhóm \"phố 70\": 70, 71, 72, ..., 79 → có 10 số.",
+    "show": "Một là ở hàng đơn vị, tức là số có đuôi bằng năm. Hai là ở hàng chục, tức là số thuộc phố năm mươi.",
     "phan": "giai"
    },
    {
-    "show": "Số 77 đứng ở cả hai nhóm, bị đếm hai lần nên phải bớt 1.",
+    "show": "Cánh thứ nhất: các số đuôi 5",
     "phan": "giai"
    },
    {
-    "show": "Vậy có tất cả: $10 + 10 - 1 = 19$ (số)",
+    "show": "Năm, mười lăm, hai mươi lăm, cứ thế tới chín mươi lăm. Mỗi chục đúng một bạn, nên được 10 số.",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: 19 số.",
+    "show": "Cánh thứ hai: phố 50",
+    "phan": "giai"
+   },
+   {
+    "show": "Năm mươi, năm mươi mốt, cho tới năm mươi chín. Dùng mẹo bài trước: $59 - 50 = 9$, thêm một được 10 số.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: cánh đuôi 10 số, cánh phố 10 số.",
     "phan": "dapso"
+   },
+   {
+    "show": "Nhớ cách chia",
+    "phan": "ghichu"
+   },
+   {
+    "show": "Truy tìm chữ số nào cũng chia hai cánh như thế: cánh ĐUÔI ở hàng đơn vị, và cánh PHỐ ở hàng chục.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -121,112 +95,115 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Kể ra 3 số có chữ số 5 ở hàng ĐƠN VỊ.",
-     "solutionNarrative": "ví dụ 5, 15, 25 (đuôi 5)",
+     "text": "Số nào có chữ số 5 ở hàng đơn vị: số 35 hay số 53?",
+     "answerKey": {
+      "value": 35
+     },
+     "solutionNarrative": "Số 35 có đuôi là 5, nên chữ số 5 của nó ở hàng đơn vị.",
      "hints": [
-      "Cánh quân ĐUÔI: chữ số 5 đứng ở cuối.",
-      "Mỗi chục góp đúng một bạn đuôi 5."
+      "Con nhìn chữ số đứng cuối cùng của từng số.",
+      "Số nào có chữ số 5 đứng ở cuối thì nó ở hàng đơn vị."
      ]
     },
     {
      "id": "C2",
-     "text": "Kể ra 3 số có chữ số 5 ở hàng CHỤC.",
-     "solutionNarrative": "ví dụ 51, 52, 53 (phố 50)",
+     "text": "Số nào có chữ số 5 ở hàng chục: số 35 hay số 53?",
+     "answerKey": {
+      "value": 53
+     },
+     "solutionNarrative": "Số 53 có chữ số 5 đứng trước, nên nó ở hàng chục.",
      "hints": [
-      "Cánh quân PHỐ: chữ số 5 đứng trước.",
-      "Cả một phố liền nhau, chỉ đổi dần chữ số cuối."
+      "Con nhìn chữ số đứng đầu của từng số.",
+      "Số nào có chữ số 5 đứng trước thì nó ở hàng chục."
      ]
     },
     {
      "id": "C3",
-     "text": "Trong các số 35, 53, 30, 15, 51 — số nào KHÔNG chứa chữ số 5?",
+     "text": "Cánh đuôi 5 gồm 5, 15, 25 cho tới 95. Có bao nhiêu số?",
      "answerKey": {
-      "choice": "30",
-      "choices": [
-       "35",
-       "53",
-       "30",
-       "15",
-       "51"
-      ]
+      "value": 10
      },
-     "solutionNarrative": "số 30 không chứa chữ số 5",
+     "solutionNarrative": "Mỗi chục đúng một bạn, từ chục 0 tới chục 9, nên được 10 số.",
      "hints": [
-      "Soi từng số, nhìn cả hai phòng.",
-      "Có một số chỉ chứa chữ số 3 và một chữ số 0."
+      "Con đếm xem có bao nhiêu chục, từ chục không tới chục chín.",
+      "Mỗi chục đúng một bạn có đuôi ấy."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Viết đầy đủ nhóm \"đuôi 3\" (các số từ 1 đến 99 có chữ số 3 ở hàng đơn vị). Có mấy số?",
+     "text": "Cánh phố 50 gồm các số từ 50 đến 59. Có bao nhiêu số?",
      "answerKey": {
       "value": 10
      },
-     "solutionNarrative": "3, 13, 23, 33, 43, 53, 63, 73, 83, 93 → 10 số",
+     "solutionNarrative": "Lấy hiệu: $59 - 50 = 9$, thêm một được 10 số.",
      "hints": [
-      "Mỗi chục góp đúng một bạn đuôi 3.",
-      "Viết từ 3 rồi cứ cộng thêm một chục."
+      "Con dùng mẹo đếm của bài trước: trừ hai đầu rồi thêm một.",
+      "Số đầu là năm mươi, số cuối là năm mươi chín."
      ]
     },
     {
      "id": "C5",
-     "text": "Viết đầy đủ nhóm \"phố 30\" (từ 30 đến 39). Có mấy số?",
+     "text": "Trong các số 35, 53, 30, 15 — số nào KHÔNG có chữ số 5?",
      "answerKey": {
-      "value": 10
+      "value": 30
      },
-     "solutionNarrative": "30, 31, ..., 39 → 10 số",
+     "solutionNarrative": "Số 30 không có chữ số 5 ở hàng nào cả.",
      "hints": [
-      "Cả phố liền nhau, từ số đầu phố tới số cuối phố.",
-      "Dùng lại mẹo trừ rồi thêm 1."
+      "Con nhìn từng số một, soi cả hai hàng.",
+      "Số nào không có chữ số ấy ở hàng đơn vị lẫn hàng chục thì chính là nó."
      ]
     },
     {
      "id": "C6",
-     "text": "Từ 1 đến 99, có bao nhiêu số chứa chữ số 3? (Nhớ người bạn đứng ở cả hai nhóm!)",
+     "text": "Cánh đuôi 3 gồm 3, 13, 23 cho tới 93. Có bao nhiêu số?",
      "answerKey": {
-      "value": 19
+      "value": 10
      },
-     "solutionNarrative": "$10 + 10 - 1 = 19$ số (số 33 đứng cả hai nhóm)",
+     "solutionNarrative": "Cũng mỗi chục một bạn, nên được 10 số.",
      "hints": [
-      "Cộng hai cánh quân: đuôi 3 và phố 30.",
-      "Có một bạn đứng ở cả hai cánh — bắt một lần thôi."
-     ]
-    },
-    {
-     "id": "C7",
-     "text": "Từ 1 đến 99, có bao nhiêu số chứa chữ số 9?",
-     "answerKey": {
-      "value": 19
-     },
-     "solutionNarrative": "$10 + 10 - 1 = 19$ số (bạn đứng hai nhóm là 99)",
-     "hints": [
-      "Vẫn hai cánh: đuôi 9 và phố 90.",
-      "Bạn đứng ở cả hai cánh lần này là ai?"
+      "Cánh đuôi của chữ số nào cũng đếm giống nhau.",
+      "Mỗi chục đúng một bạn, mà có mười chục."
      ]
     }
    ],
    "challenge": [
     {
-     "id": "C8",
-     "text": "Từ 1 đến 99 có tất cả 99 số. Vậy có bao nhiêu số KHÔNG chứa chữ số 5? (Mẹo: lấy tất cả trừ đi những số có chứa — thám tử gọi đây là \"đếm phần còn lại\".)",
+     "id": "C7",
+     "text": "Cánh phố 30 gồm những số nào? Cho biết số đầu, số cuối và có bao nhiêu số.",
      "answerKey": {
-      "value": 80
+      "parts": [
+       {
+        "label": "số đầu",
+        "value": 30
+       },
+       {
+        "label": "số cuối",
+        "value": 39
+       },
+       {
+        "label": "có mấy số",
+        "value": 10
+       }
+      ]
      },
-     "solutionNarrative": "\"đếm phần còn lại\": $99 - 19 = 80$ số không chứa chữ số 5",
+     "solutionNarrative": "Từ 30 đến 39. Lấy hiệu: $39 - 30 = 9$, thêm một được 10 số.",
      "hints": [
-      "Đếm phần còn lại: lấy tất cả trừ đi phần có chứa.",
-      "Số đếm được ở câu ngay trước dùng lại được."
+      "Phố nào cũng gồm mười số liền nhau, bắt đầu từ số tròn chục.",
+      "Con dùng mẹo trừ hai đầu rồi thêm một để đếm."
      ]
     },
     {
-     "id": "C9",
-     "text": "Số nào từ 1 đến 99 chứa chữ số 5 những HAI Lần? Từ đó con giải thích lại: vì sao phép tính là $10 + 10 - 1$ chứ không phải $10 + 10$?",
-     "solutionNarrative": "số 55 chứa chữ số 5 hai lần (cả hàng chục lẫn hàng đơn vị) — nó nằm trong cả nhóm đuôi 5 lẫn phố 50, nên cộng thẳng $10 + 10$ sẽ đếm nó hai lần; phải trừ 1 để nó chỉ được đếm một lần",
+     "id": "C8",
+     "text": "Trong mỗi chục có đúng bao nhiêu số có đuôi bằng 5?",
+     "answerKey": {
+      "value": 1
+     },
+     "solutionNarrative": "Đúng 1 số. Chẳng hạn chục hai mươi thì chỉ có 25.",
      "hints": [
-      "Tìm số có chữ số 5 ở cả hai phòng.",
-      "Chính bạn ấy bị đếm hai lần nên phải bớt đi một."
+      "Con thử kể các số đuôi năm trong chục hai mươi xem có mấy.",
+      "Chỉ có một bạn thôi, và chục nào cũng thế."
      ]
     }
    ]
@@ -237,101 +214,69 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Số 52 có chứa chữ số 5.",
+    "text": "Một chữ số có thể trốn ở hàng đơn vị hoặc ở hàng chục.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng, nên phải lùng cả hai cánh."
    },
    {
     "id": "Q2",
-    "text": "Nhóm \"đuôi 5\" từ 1 đến 99 có 10 số.",
+    "text": "Số 53 không có chữ số 5 vì đuôi nó là 3.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Chữ số 5 của nó đứng ở hàng chục."
+   },
+   {
+    "id": "Q3",
+    "text": "Cánh đuôi 5 từ 1 đến 99 có bao nhiêu số?",
+    "format": "mcq",
+    "choices": [
+     "10",
+     "9",
+     "11",
+     "5"
+    ],
+    "answerKey": {
+     "choice": "10"
+    },
+    "solutionNarrative": "Mỗi chục đúng một bạn, có mười chục."
+   },
+   {
+    "id": "Q4",
+    "text": "Cánh phố 50 gồm",
+    "format": "mcq",
+    "choices": [
+     "các số từ 50 đến 59",
+     "chỉ số 50",
+     "các số đuôi 5"
+    ],
+    "answerKey": {
+     "choice": "các số từ 50 đến 59"
+    },
+    "solutionNarrative": "Đó là những số có chữ số 5 ở hàng chục."
+   },
+   {
+    "id": "Q5",
+    "text": "Truy tìm chữ số nào cũng chia hai cánh: cánh đuôi và cánh phố.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
-   },
-   {
-    "id": "Q3",
-    "text": "Nhóm \"phố 50\" gồm các số từ 50 đến:",
-    "format": "mcq",
-    "choices": [
-     "A. 55",
-     "B. 59",
-     "C. 60"
-    ],
-    "answerKey": {
-     "choice": "B. 59"
-    },
-    "solutionNarrative": "Đáp án: B. 59"
-   },
-   {
-    "id": "Q4",
-    "text": "Số nào bị đếm TRÙNG nếu cộng thẳng hai nhóm?",
-    "format": "mcq",
-    "choices": [
-     "A. 50",
-     "B. 55",
-     "C. 59"
-    ],
-    "answerKey": {
-     "choice": "B. 55"
-    },
-    "solutionNarrative": "Đáp án: B. 55"
-   },
-   {
-    "id": "Q5",
-    "text": "Từ 1 đến 99 có bao nhiêu số chứa chữ số 5?",
-    "format": "mcq",
-    "choices": [
-     "A. 19",
-     "B. 20",
-     "C. 18"
-    ],
-    "answerKey": {
-     "choice": "A. 19"
-    },
-    "solutionNarrative": "Đáp án: A. 19"
+    "solutionNarrative": "Đúng. Đó là cách lùng không sót."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "In (hoặc kẻ tay) một bảng 100, đưa con bút màu \"truy nã\" lần lượt: chữ số 2, chữ số 8... Hình cột-và-hàng hiện ra mỗi lần sẽ in sâu vào trí nhớ hình ảnh của con.",
-  "homeActivity": "Hỏi câu then chốt: \"Số nào bị con tô những hai lần? Vì sao?\" — nhận diện phần giao chính là mầm non của sơ đồ Ven lớp 4-5.",
-  "watchFor": "NÊN: khuyến khích đếm theo nhóm dù chậm. KHÔNG NÊN: hài lòng khi con khoanh lung tung mà tình cờ đủ 19 — cách đếm mới là thứ cần rèn, không phải đáp số."
+  "onComplete": "In một bảng số từ 1 đến 100 rồi cho con tô màu mọi ô có chữ số 5. Con nhìn thấy một cột dọc và một hàng ngang hiện ra.",
+  "homeActivity": "Câu hỏi quen tay: \"Chữ số ấy đang trốn ở hàng đơn vị hay hàng chục?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_MO_B07",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_MO_B07.png",
-   "caption": "Bảng số 1 đến 99, chữ số 7 nấp đâu đó",
-   "sha256_16": "23f203b97c1ef987",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_BL03",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L2H_BL03.png",
-   "caption": "Các số chứa chữ số 5 từ 1 đến 100",
-   "sha256_16": "7be111fc79a5bf63",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L2H_HOP04",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L2H_HOP04.png",
-   "caption": "Số 55 nằm ở cả hai nhóm nên chỉ được đếm một lần",
-   "sha256_16": "14ee455c023ea7ab",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B07_giang.mp4"
+ }
 }
