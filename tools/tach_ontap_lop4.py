@@ -39,6 +39,7 @@ def main(chi_soat=False):
     tay = json.load(open(TAY, encoding='utf-8')) if os.path.exists(TAY) else {}
     tay = {k: v for k, v in tay.items() if not k.startswith('_')}
 
+    da_co = json.load(open(RA, encoding='utf-8')) if os.path.exists(RA) else {}
     ra, thong_ke, soat, canh_bao = {}, {}, [], []
     for k in ky:
         for phan, ds in (('C', k['examA']), ('B', k['deB'])):
@@ -46,7 +47,24 @@ def main(chi_soat=False):
                 ma = f"OT{k['so']}#{phan}{q['qno']}"
                 # `suy_ra` nhận đúng hình dạng câu của bước 3: text + loiChua
                 cau = {'text': q['text'], 'loiChua': q.get('answer', '')}
-                if ma in tay:
+                if ma in da_co:
+                    # ⚠ BẢN ĐANG CHẠY ĐỨNG TRƯỚC BẢNG VIẾT TAY, và đó là chủ ý.
+                    #
+                    # Chạy lại tệp này từng xoá ô nhập của bốn câu, rồi lúc soi kỹ
+                    # thì lộ ra chuyện lớn hơn: HAI BẢNG ĐỀU ĐÃ TRÔI, mỗi bảng đúng
+                    # một nửa. Đo trên chương 3: bảng tay khớp đề B nhưng lệch hẳn
+                    # đề chính (ô nhập câu C1 hỏi "xếp hàng 5 dư mấy em" trong khi
+                    # đề hỏi chia cam vào đĩa), còn bản đang chạy thì ngược lại.
+                    #
+                    # Đề chính của mấy chương đã tách bài được viết lại, và lượt ấy
+                    # chỉ sửa bản kết quả chứ không sửa bảng tay. Nên bảng tay nay
+                    # là bản CŨ HƠN. Lấy nó đè lên bản đang chạy là đi lùi.
+                    #
+                    # Nay tệp này chỉ ĐIỀN CHỖ TRỐNG, không đè chỗ đã có. Muốn thay
+                    # một khoá thì xoá khoá ấy khỏi `lop4_ontap_o.json` rồi khai lại
+                    # ở bảng tay — cố ý làm cho khó, để không ai đè nhầm cả loạt.
+                    khoa, ten = da_co[ma], 'GIỮ BẢN ĐANG CHẠY'
+                elif ma in tay:
                     khoa, ten = tay[ma], 'VIẾT TAY'
                     nguon = cau['loiChua'] + ' ⟂ ' + cau['text']
                     for gt in ([p['value'] for p in khoa['parts']] if 'parts' in khoa

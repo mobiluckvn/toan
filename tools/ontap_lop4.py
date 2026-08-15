@@ -49,6 +49,41 @@ def ma_bai(so):
     return f'{TIEN_TO}B{so:02d}'
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# SỐ BÀI CỦA SÁCH ĐÃ CHẾT — ĐỪNG SUY MÃ BÀI TỪ NÓ NỮA
+# ═══════════════════════════════════════════════════════════════════════════
+# `ma_bai()` đổi số bài của SÁCH thành mã bài, và hồi sách còn đúng 44 bài thì hai
+# thứ ấy trùng nhau. Nay không còn trùng nữa: mỗi đợt làm video lại tách một bài
+# sách thành mấy bài app, mã mới lấy số mới (B50 trở lên) còn số hiển thị thì suy
+# từ `thu_tu.json` — xem lối C.
+#
+# ⚠ CHẠY LẠI TỆP NÀY TỪNG XOÁ MỐI NỐI CỦA 102 CÂU Ở CHÍN CHƯƠNG mà không kêu một
+# tiếng: "Bài 42" của sách bị đổi thành B42, trong khi bài ấy nay mang mã B47. Câu
+# ôn tập về quãng đường sẽ dẫn bé sang bài phân số để ôn lại. Cả hai đầu đều hợp
+# lệ, chỉ chỗ nối là sai — không phép kiểm nào bắt được.
+#
+# Nên nay mối nối GIỮ LẠI từ bản đã dựng, và chỗ nào cần đổi thì khai đích danh ở
+# đây. Sách chỉ còn là đường lui cuối cùng cho câu chưa từng có mối nối.
+KHAI_TAY = {
+    # ── chương 10 đợt hai: B45 tách làm bốn, B46 tách làm hai ──
+    # Bài 45 cũ gộp góc, đường cao, cắt ghép và hình tròn; nay bốn bài riêng, nên
+    # câu nào hỏi gì thì trỏ về đúng bài ấy.
+    (10, 8): {'ve': ['DL:KSN4.B80']},                       # bán kính, đường kính
+    (10, 9): {'ve': ['DL:KSN4.B79']},                       # cắt chéo tấm tôn
+    (10, 10): {'ve': ['DL:KSN4.B81']},                      # đếm khối theo tầng
+    (10, 11): {'ve': ['DL:KSN4.B46']},                      # sáu mặt của hộp
+    (10, 12): {'ve': ['DL:KSN4.B81']},                      # tháp ba tầng khác cỡ
+    # Câu 7 cũ hỏi lại đúng ý của câu 6 (cùng chu vi thì diện tích khác nhau), nên
+    # cả hai cùng trỏ về một bài — trong khi HAI bài mới của đợt này, bốn loại góc
+    # và đường cao, không có câu nào hỏi tới. Viết lại câu 7 để phủ cả hai.
+    (10, 7): {'ve': ['DL:KSN4.B45', 'DL:KSN4.B78'],
+              'text': 'Áp ê ke vào góc đỉnh của tấm mái tam giác thì thấy cạnh góc '
+                      'xoè rộng ra ngoài ê ke. Góc ấy tên là gì? Và muốn dựng cột '
+                      'chống từ đỉnh mái xuống nền cho đúng thì cột phải hợp với '
+                      'nền một góc gì?'},
+}
+
+
 def _tach_moi_noi(chu, bai_cua_chuong):
     """BẢNG TỰ SOI → {số câu: [mã bài, …]} + căn cứ từng câu."""
     ve, can = {}, {}
@@ -75,6 +110,14 @@ def main():
     for b in tho['bai']:
         bai_theo_chuong.setdefault(b['chuong'], []).append(b['so'])
 
+    # Bản đã dựng lần trước — đọc để GIỮ LẠI mối nối, xem KHAI_TAY.
+    da_co, da_co_B = {}, {}
+    if os.path.exists(RA):
+        for k in json.load(open(RA, encoding='utf-8'))['ky']:
+            for q in k['examA']:
+                da_co[(k['so'], q['qno'])] = q
+            da_co_B[k['so']] = {q['qno']: q for q in k['deB']}
+    n_tay = n_giu = n_sach = 0
     ky = []
     for b in tho['bai']:
         if not b['sauBai']:
@@ -115,10 +158,33 @@ def main():
 
         for q in de:
             q['answer'] = dap.get(f'OT{so}#C{q["qno"]}', '')
-            q['veCau'] = ve.get(q['qno'], [])
-            q['canCu'] = can.get(q['qno'], 'khong')
+            # ⚠ MỐI NỐI KHÔNG ĐƯỢC LẤY TỪ SÁCH NỮA — xem chú thích SỐ BÀI CỦA SÁCH
+            # ĐÃ CHẾT ở đầu tệp. Thứ tự ưu tiên: bảng khai tay → bản đã có → sách.
+            cu = da_co.get((so, q['qno']))
+            if (so, q['qno']) in KHAI_TAY:
+                moi = KHAI_TAY[(so, q['qno'])]
+                q['veCau'], q['canCu'] = moi['ve'], moi.get('canCu', 'sach')
+                if moi.get('text'):
+                    q['text'] = moi['text']
+                n_tay += 1
+            elif cu and cu['veCau']:
+                q['veCau'], q['canCu'] = cu['veCau'], cu['canCu']
+                q['text'] = cu.get('text', q['text'])
+                n_giu += 1
+            else:
+                q['veCau'] = ve.get(q['qno'], [])
+                q['canCu'] = can.get(q['qno'], 'khong')
+                n_sach += 1
+        # ⚠ ĐỀ B CŨNG PHẢI GIỮ CÂU THÊM TAY. Chương 6 và 7 có 12 câu đề B trong bản
+        # đang chạy, mà sách chỉ bóc ra 10 — hai câu kia do người thêm ở đợt trước.
+        # Dựng lại theo sách là bốn câu ấy biến mất, và không phép chốt nào kêu vì
+        # 10 vẫn nằm trong khoảng cho phép. Cùng dòng họ với mối nối: bản dựng lại
+        # đè mất phần người sửa tay.
+        co = {q['qno'] for q in deB}
+        deB += [q for n, q in sorted(da_co_B.get(so, {}).items()) if n not in co]
+        deB.sort(key=lambda q: q['qno'])
         for q in deB:
-            q['answer'] = dap.get(f'OT{so}#B{q["qno"]}', '')
+            q['answer'] = q.get('answer') or dap.get(f'OT{so}#B{q["qno"]}', '')
 
         ky.append({
             'id': f'DCR:KSN4.C{so}', 'chapter': b['chuong'], 'loai': 'ontap',
@@ -131,6 +197,8 @@ def main():
         json.dump({'tienTo': TIEN_TO, 'ky': ky}, f, ensure_ascii=False, indent=1)
 
     # ── CHỐT ──
+    CO_THAT = set(json.load(open(
+        os.path.join(GOC_KHO, 'data', 'lop4', 'thu_tu.json'), encoding='utf-8'))['thuTu'])
     loi = []
     if len(ky) != 11:
         loi.append(f'{len(ky)} kỳ ôn tập, sách có 11')
@@ -152,12 +220,15 @@ def main():
         trong = [q['qno'] for q in k['examA'] + k['deB'] if not q['answer']]
         if trong:
             loi.append(f"{k['name']}: {len(trong)} câu không có đáp án: {trong}")
-        xau = [x for q in k['examA'] for x in q['veCau']
-               if x not in {ma_bai(b['so']) for b in tho['bai']}]
+        # ⚠ SOI THEO SỔ THỨ TỰ THẬT, KHÔNG SOI THEO SÁCH. Bản cũ so với số bài của
+        # sách, nên nó chỉ xanh khi mối nối cũng suy từ sách — tức là nó xanh đúng
+        # lúc mọi thứ cùng sai một kiểu. Sổ `thu_tu.json` mới là chỗ khai bài thật.
+        xau = [x for q in k['examA'] for x in q['veCau'] if x not in CO_THAT]
         if xau:
             loi.append(f"{k['name']}: trỏ về bài không có thật: {xau}")
 
     print(f'đã ghi {RA}')
+    print(f'  mối nối: {n_tay} khai tay · {n_giu} giữ từ bản cũ · {n_sach} suy từ sách')
     print(f"  {len(ky)} kỳ ôn tập · {sum(len(k['examA']) for k in ky)} câu đề chính"
           f" · {sum(len(k['deB']) for k in ky)} câu đề B")
     cc = {}

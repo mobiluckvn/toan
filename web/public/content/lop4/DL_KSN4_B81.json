@@ -1,0 +1,322 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B81",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 78 · ĐẾM KHỐI — LÁT TỪNG TẦNG MÀ ĐẾM",
+ "durationMinutes": 10,
+ "so": 78,
+ "chuong": 10,
+ "tenChuong": "HÌNH HỌC",
+ "dangGoc": "Dạng gốc: HH 5.2 mức Lớp 4 — Đếm số khối lập phương nhỏ trong một khối hộp bằng cách đếm theo tầng, kể cả khối bị khoét. Chưa gọi tên thể tích.",
+ "skills": {
+  "bktUnit": "CHUONG:10@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 78,
+  "prev": "DL:KSN4.B46",
+  "next": "DL:KSN4.B47"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Đếm được số khối lập phương nhỏ trong một khối hộp bằng cách đếm theo tầng. Biết mỗi tầng có số khối bằng dài nhân rộng, và tổng bằng một tầng nhân số tầng. Đếm được cả khối bị khoét, bằng cách đếm riêng từng tầng rồi cộng lại.",
+  "kidText": "Cô xếp đầy khối gỗ nhỏ vào trong cái hộp ấy. Con đoán xem có bao nhiêu khối nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Nhìn khối lập phương 3 nhân 3 nhân 3, có bạn đếm theo ảnh chụp: mặt trước 9 khối, mặt bên phải 9 khối, mặt trên 9 khối, ba mặt là 27; hộp có sáu mặt nên bạn ấy nhân đôi thành 54 khối.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Cái khối nằm ở chính giữa ruột hộp thì nó thuộc mặt nào? Còn cái khối ở góc thì bị đếm mấy lần khi cộng theo mặt? Gợi ý 2: Bỏ hẳn lối nhìn theo mặt đi. Cắt hộp thành từng tầng nằm ngang rồi đếm từng tầng một. Chữa: đếm theo mặt là đếm vỏ, mà khối thì đặc ruột — có khối chẳng nằm trên mặt nào, lại có khối bị đếm mấy lần. Đếm theo tầng thì mỗi tầng 9 khối, ba tầng là 27 khối."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Nhìn khối lập phương 3 nhân 3 nhân 3, có bạn đếm theo ảnh chụp: mặt trước 9 khối, mặt bên phải 9 khối, mặt trên 9 khối, ba mặt là 27; hộp có sáu mặt nên bạn ấy nhân đôi thành 54 khối.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một khối hộp xếp từ các khối lập phương nhỏ, dài 4 khối, rộng 3 khối, cao 2 khối. Hỏi khối hộp gồm bao nhiêu khối lập phương nhỏ?",
+  "steps": [
+   {
+    "show": "Đọc chiều cao thành số tầng"
+   },
+   {
+    "show": "Cao 2 khối nghĩa là khối hộp gồm 2 tầng chồng lên nhau. Đây là bước biến hình khối thành mấy hình phẳng."
+   },
+   {
+    "show": "Đếm một tầng"
+   },
+   {
+    "show": "Mỗi tầng là một sàn chữ nhật dài 4 khối, rộng 3 khối:"
+   },
+   {
+    "show": "4 × 3 = 12 (khối)"
+   },
+   {
+    "show": "Nhân với số tầng"
+   },
+   {
+    "show": "Hai tầng giống hệt nhau nên:"
+   },
+   {
+    "show": "12 × 2 = 24 (khối)"
+   },
+   {
+    "show": "Đáp số: 24 khối lập phương nhỏ."
+   },
+   {
+    "show": "Thử lại bằng cách đếm khác: đếm theo cột đứng. Có 4 × 3 = 12 cột, mỗi cột cao 2 khối, vậy 12 × 2 = 24"
+   },
+   {
+    "show": "Hai cách cắt khác nhau mà ra cùng một đáp số."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Một khối hộp cao 2 khối thì gồm mấy tầng chồng lên nhau?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Cao 2 khối nghĩa là 2 tầng.",
+     "hints": [
+      "Chiều cao đếm bằng khối, mà mỗi khối chồng lên nhau tạo thành một tầng.",
+      "Cao mấy khối thì đúng bấy nhiêu tầng."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Khối hộp dài 4 khối, rộng 3 khối. Mỗi tầng của nó có bao nhiêu khối nhỏ?",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Mỗi tầng là một sàn 4 × 3 = 12 (khối).",
+     "hints": [
+      "Mỗi tầng là một sàn phẳng hình chữ nhật, đếm ô như đếm diện tích.",
+      "Lấy chiều dài nhân chiều rộng."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Khối hộp dài 4 khối, rộng 3 khối, cao 2 khối gồm tất cả bao nhiêu khối nhỏ?",
+     "answerKey": {
+      "value": 24
+     },
+     "solutionNarrative": "Mỗi tầng 12 khối, có 2 tầng: 12 × 2 = 24 (khối).",
+     "hints": [
+      "Con tính số khối một tầng trước, rồi mới nhân với số tầng.",
+      "Một tầng mười hai khối, mà hộp có hai tầng."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Khối lập phương xếp từ khối nhỏ, mỗi chiều 3 khối. Mỗi tầng mấy khối, có mấy tầng, và tất cả bao nhiêu khối?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi tầng",
+        "value": 9
+       },
+       {
+        "label": "số tầng",
+        "value": 3
+       },
+       {
+        "label": "tất cả",
+        "value": 27
+       }
+      ]
+     },
+     "solutionNarrative": "Mỗi tầng 3 × 3 = 9 (khối), có 3 tầng, tất cả 9 × 3 = 27 (khối).",
+     "hints": [
+      "Mỗi chiều đều ba khối, nên một tầng là ba nhân ba.",
+      "Cao ba khối nên có ba tầng. Lấy số khối một tầng nhân số tầng."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Một khối lập phương mỗi chiều 2 khối gồm bao nhiêu khối nhỏ?",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "Mỗi tầng 2 × 2 = 4 (khối), có 2 tầng: 4 × 2 = 8 (khối).",
+     "hints": [
+      "Mỗi tầng là hai nhân hai khối.",
+      "Cao hai khối nên có hai tầng — nhân lên là xong."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Khối hộp dài 5 khối, rộng 4 khối, cao 3 khối. Tính số khối mỗi tầng rồi tính tổng số khối.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi tầng",
+        "value": 20
+       },
+       {
+        "label": "tất cả",
+        "value": 60
+       }
+      ]
+     },
+     "solutionNarrative": "Mỗi tầng 5 × 4 = 20 (khối). Ba tầng: 20 × 3 = 60 (khối).",
+     "hints": [
+      "Một tầng là năm nhân bốn khối.",
+      "Cao ba khối nên nhân tiếp với ba tầng."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Khối lập phương mỗi chiều 3 khối bị nhấc đi 1 khối ở tầng trên cùng. Còn lại bao nhiêu khối?",
+     "answerKey": {
+      "value": 26
+     },
+     "solutionNarrative": "Tầng dưới 9, tầng giữa 9, tầng trên còn 8. Cộng lại: 9 + 9 + 8 = 26 (khối).",
+     "hints": [
+      "Con đừng tính cả khối rồi trừ vội. Lát từng tầng ra mà đếm cho chắc.",
+      "Hai tầng dưới còn đủ chín khối, chỉ tầng trên cùng bị thiếu mất một."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Một khối hộp có mỗi tầng 15 khối và tất cả 45 khối. Hỏi khối hộp có mấy tầng?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Đọc ngược phép nhân: 45 : 15 = 3 (tầng).",
+     "hints": [
+      "Đề cho số khối một tầng và tổng số khối, hỏi ngược lại số tầng.",
+      "Nhân thành tổng thì làm ngược lại là chia — lấy tổng chia cho số khối một tầng."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Khối hộp dài 4 khối, rộng 3 khối, cao 3 khối, nhưng tầng trên cùng bị nhấc đi 2 khối. Tính số khối của một tầng đầy, rồi tính tổng số khối còn lại.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "một tầng đầy",
+        "value": 12
+       },
+       {
+        "label": "tổng còn lại",
+        "value": 34
+       }
+      ]
+     },
+     "solutionNarrative": "Một tầng đầy: 4 × 3 = 12 (khối). Hai tầng dưới đầy, tầng trên còn 10, nên tổng là 12 + 12 + 10 = 34 (khối).",
+     "hints": [
+      "Một tầng đầy là bốn nhân ba khối. Cả hộp cao ba khối nên có ba tầng.",
+      "Hai tầng dưới còn đầy, riêng tầng trên bị nhấc mất hai khối. Cộng ba tầng lại."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Số khối của mỗi tầng bằng chiều dài nhân chiều rộng.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Mỗi tầng là một sàn chữ nhật, đếm ô như đếm diện tích."
+   },
+   {
+    "id": "Q2",
+    "text": "Muốn biết khối hộp có bao nhiêu khối thì cộng số khối nhìn thấy trên các mặt.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Đếm theo mặt là đếm vỏ: khối ở giữa ruột không nằm trên mặt nào, còn khối ở góc lại bị đếm mấy lần."
+   },
+   {
+    "id": "Q3",
+    "text": "Khối hộp 4 nhân 3 nhân 2 gồm",
+    "format": "mcq",
+    "choices": [
+     "24 khối",
+     "12 khối",
+     "9 khối",
+     "48 khối"
+    ],
+    "answerKey": {
+     "choice": "24 khối"
+    },
+    "solutionNarrative": "Mỗi tầng 12 khối, hai tầng nên 24 khối."
+   },
+   {
+    "id": "Q4",
+    "text": "Khối lập phương mỗi chiều 3 khối gồm",
+    "format": "mcq",
+    "choices": [
+     "27 khối",
+     "9 khối",
+     "54 khối",
+     "18 khối"
+    ],
+    "answerKey": {
+     "choice": "27 khối"
+    },
+    "solutionNarrative": "Mỗi tầng 9 khối, ba tầng nên 27 khối."
+   },
+   {
+    "id": "Q5",
+    "text": "Khối bị nhấc mất vài chỗ thì vẫn đếm được, bằng cách đếm riêng từng tầng rồi cộng lại.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Tầng nào thiếu thì đếm đúng tầng ấy, các tầng khác vẫn đầy."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Xếp bằng đồ thật: rubik nhỏ, xúc xắc, khối gỗ. Bố mẹ ra đề một cỡ hộp, con tính trước rồi mới xếp ra đếm kiểm chứng.",
+  "homeActivity": "Trò hay nhất là nhấc bớt vài khối ở tầng trên rồi hỏi lại. Con nào còn đếm theo mặt sẽ tắc ngay, còn con đếm theo tầng thì vẫn làm được.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Vẫn cái hộp 4 nhân 3 nhân 2 của bài trước, nhưng lần này nó không rỗng: bên trong xếp đầy những khối lập phương nhỏ. Đếm bao nhiêu khối đây?",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B31"
+  ],
+  "ten": [
+   "ĐẾM KHỐI THEO TẦNG"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B81_giang.mp4"
+ }
+}

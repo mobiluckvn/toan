@@ -54,7 +54,11 @@ def ds_bai(a) -> list[str]:
     if a.bai:
         return [a.bai]
     if a.tat_ca:
-        return sorted(p.stem for p in NGUON.glob('DL_KSN4_B*.json'))
+        # ⚠ `--tat-ca` KHÔNG phải là "mọi tệp bài". Bản cũ quét cả thư mục nguồn,
+        # nên nó chết ngay ở B01 — bài chưa viết kịch bản video. Chưa đợt nào dựng
+        # nổi bằng cờ này, mà cờ thì vẫn nằm trong phần hướng dẫn đầu tệp.
+        # "Tất cả" ở đây nghĩa là mọi bài ĐÃ CÓ KỊCH BẢN, đúng như khi không có cờ.
+        return BAI_MAC_DINH
     return BAI_MAC_DINH
 
 

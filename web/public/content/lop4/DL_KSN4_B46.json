@@ -2,56 +2,39 @@
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN4.B46",
  "grade": 4,
- "quyen": "lop4",
- "title": "Bài 74 · HÌNH HỘP TRẢI PHẲNG VÀ ĐẾM KHỐI",
+ "quyen": "KSN4",
+ "title": "Bài 77 · TRẢI PHẲNG HỘP RA — SÁU MẶT, BA CẶP",
  "durationMinutes": 10,
- "so": 74,
+ "so": 77,
  "chuong": 10,
- "tenChuong": "CHU VI, DIỆN TÍCH VÀ HÌNH KHỐI",
- "dangGoc": "HH 5.1 + HH 5.2 + HH 6.1 mức Lớp 4 — Cắt - gấp hộp từ hình khai triển · đếm khối lập phương xếp hộp · khối n×n×n và khối bị khoét",
+ "tenChuong": "HÌNH HỌC",
+ "dangGoc": "Dạng gốc: HH 5.1 mức Lớp 4 — Hình khai triển của hình hộp chữ nhật; ba cặp mặt đối diện bằng nhau; tính tổng diện tích sáu mặt.",
  "skills": {
   "bktUnit": "CHUONG:10@G4",
   "primary": []
  },
  "series": {
-  "order": 74,
-  "prev": "DL:KSN4.B45",
-  "next": "DL:KSN4.B47"
+  "order": 77,
+  "prev": "DL:KSN4.B80",
+  "next": "DL:KSN4.B81"
  },
  "objective": {
   "id": "O1",
-  "text": "Nhận diện hình khai triển của hình hộp chữ nhật: 6 mặt, từng đôi đối diện bằng nhau; tính tổng giấy cần dùng. Đếm số khối lập phương đơn vị xếp thành khối hộp: số khối một tầng × số tầng. Đếm khối n × n × n và khối bị khoét đơn giản bằng cách lát từng tầng.",
-  "kidText": "Nhà kho mô hình là hình hộp 4 × 3 × 2 gang tay. Trải phẳng ra thì cần bao nhiêu tấm bìa?",
+  "text": "Biết hình hộp chữ nhật có sáu mặt, hợp thành ba cặp đối diện bằng nhau. Đọc được hình trải phẳng và chỉ ra mặt nào đối diện với mặt nào. Tính được tổng diện tích sáu mặt bằng cách nhân đôi tổng ba mặt khác nhau.",
+  "kidText": "Cô rọc cái hộp bánh ra rồi trải phẳng nó lên bàn. Con đếm giúp cô xem có mấy mặt nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — VẼ KHAI TRIỂN CHỮ THẬP: mặt đáy 4 × 3 nằm giữa; nắp 4 × 3 nối bên phải; trước - sau 4 × 2 nối trên - dưới; hai hông 3 × 2 nối trái - phải. Gấp theo nếp — hộp dựng đứng, không hở mặt nào! Quy tắc kiểm nhanh: đủ 6 mặt, và mặt đối diện KHÔNG được nằm cạnh nhau trên tờ trải."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — TÍNH BÌA THEO BA CẶP MẶT: cặp đáy - nắp: 4 × 3 = 12 (ô) mỗi mặt; cặp trước - sau: 4 × 2 = 8; cặp hai hông: 3 × 2 = 6. Tổng bìa: 2 × (12 + 8 + 6) = 2 × 26 = 52 (ô vuông). Nhân đôi MỘT LẦN ở cuối — đếm ba cặp gọn hơn đếm sáu mặt lẻ tẻ."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — ĐẾM KHỐI THEO TẦNG: tháp bê tông xếp từ khối lập phương nhỏ, dạng khối hộp 4 × 3 × 2: mỗi tầng là một \"sàn\" 4 × 3 = 12 khối; chồng 2 tầng → 12 × 2 = 24 (khối). Khối vuông 3 × 3 × 3: mỗi tầng 9, ba tầng → 27 khối. Ba chiều chỉ là hai chiều... nhân số tầng!"
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — KHỐI BỊ KHOÉT: MÁY CHỤP CẮT LỚP: khối 3 × 3 × 3 bị nhấc mất 1 khối ở góc trên: tầng dưới 9, tầng giữa 9, tầng trên chỉ còn 8 → 26 khối. Khoét kiểu gì cũng một chiêu: LÁT TỪNG TẦNG, tầng nào thiếu đếm đúng tầng ấy rồi cộng dồn — mắt không cần \"nhìn xuyên\", chỉ cần cắt lớp!"
-   }
-  ],
-  "mantra": "Hộp chữ nhật: 6 mặt = 3 cặp đối diện bằng nhau; bìa = 2 × (tổng ba mặt khác nhau); trên hình khai triển, hai mặt đối diện không kề nhau. Đếm khối: một tầng × số tầng; khối bị khoét: lát từng tầng mà đếm — không gian 3D là các lớp 2D xếp chồng!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Nhìn khối 3 × 3 × 3, Trí Long đếm ảnh chụp: \"Mặt trước 9 khối, mặt phải 9, mặt trên 9 — ba mặt nhìn thấy là 27, mà cả khối có 6 mặt, vậy tổng số khối là 27 × 2 = 54!\"",
-    "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Khối ở chính giữa tâm khối lớn — nó thuộc \"mặt\" nào? Còn khối ở góc — nó bị đếm mấy lần khi cộng theo mặt? Đếm theo MẶT là đếm vỏ, còn khối là đặc ruột! Gợi ý 2: Dùng máy cắt lớp: mỗi tầng bao nhiêu khối, có mấy tầng? Đếm lại giúp Trí Long — và thử với hộp 2 × 2 × 2 bằng đồ thật (8 khối xúc xắc) để cậu ấy tâm phục."
+    "wrong": "Có bạn tính một mặt là 4 nhân 3 bằng 12, rồi bảo hộp có sáu mặt nên nhân với sáu: 12 nhân 6 bằng 72 cm².",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Sáu mặt của hộp có phải mặt nào cũng giống mặt nào không? Con nhìn mặt bên hông rồi nhìn mặt nắp mà so. Gợi ý 2: Mặt bên hông của hộp này dựng từ hai số nào trong ba số đã cho? Chữa: chỉ hình lập phương mới có sáu mặt bằng nhau. Hộp chữ nhật có ba cặp khác nhau, phải tính từng cặp rồi mới cộng."
    }
   ]
  },
@@ -59,117 +42,51 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Nhà kho mô hình là hình hộp chữ nhật 4 × 3 × 2 (đơn vị gang tay). Hỏi hình khai triển trông thế nào và cần tổng cộng bao nhiêu bìa?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "CHO GÌ? nhà kho mô hình là hình hộp chữ nhật 4 × 3 × 2 (đơn vị gang tay).\nHỎI GÌ? hình khai triển trông thế nào và cần tổng cộng bao nhiêu bìa.\nĐẠI LƯỢNG & ĐƠN VỊ: ba kích thước (dài 4, rộng 3, cao 2) và diện tích bìa (ô vuông đơn vị).\nQUAN HỆ GIỮA CHÚNG: hộp có 6 mặt xếp thành 3 CẶP đối diện bằng nhau: đáy - nắp (4 × 3), trước - sau (4 × 2), hai bên hông (3 × 2) — trải phẳng ra chúng vẫn dính nhau thành hình chữ thập.\nCHỌN CÔNG CỤ: HÌNH KHAI TRIỂN chữ thập + phép đếm ô từng mặt.\nƯỚC LƯỢNG TRƯỚC: sáu mặt, mặt to nhất 12 ô → tổng bìa cỡ dăm chục ô vuông.",
-    "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ chiếc hộp sang tờ bìa trải phẳng"
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S6",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S7",
-    "kind": "explain",
-    "narration": "LẮP: mô hình nhà kho gấp từ MỘT tờ bìa 52 ô đứng ngay ngắn trên bàn họp tổ dân phố, cạnh tháp 24 khối gỗ — bác tổ trưởng gật gù duyệt phương án, còn xin luôn tờ khai triển \"về gấp cho cháu ở nhà chơi\".\nSOI: soi ba lớp: đếm đủ 6 mặt trên tờ trải ✓; gấp thử không hở mặt nào ✓; đếm khối bằng hai đường (4 × 3 × 2 và cộng hai sàn 12 + 12) cùng ra 24 ✓.\nDÙNG NGOÀI ĐỜI: mở hộp sữa, hộp giày ra ngắm đường khai triển; đếm thùng hàng xếp kho, viên gạch xây tường — con mắt \"cắt lớp\" nhìn đâu cũng thấy các tầng 2D ngăn nắp.",
-    "teaches": [],
-    "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
-   },
-   {
-    "id": "S8",
     "kind": "trap",
-    "narration": "Nhìn khối 3 × 3 × 3, Trí Long đếm ảnh chụp: \"Mặt trước 9 khối, mặt phải 9, mặt trên 9 — ba mặt nhìn thấy là 27, mà cả khối có 6 mặt, vậy tổng số khối là 27 × 2 = 54!\"",
+    "narration": "Có bạn tính một mặt là 4 nhân 3 bằng 12, rồi bảo hộp có sáu mặt nên nhân với sáu: 12 nhân 6 bằng 72 cm².",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Một khối hộp chữ nhật được xếp từ các khối lập phương nhỏ, có chiều dài 4 khối, chiều rộng 3 khối, chiều cao 2 khối. Hỏi khối hộp gồm bao nhiêu khối lập phương nhỏ?",
+  "problem": "Một hình hộp chữ nhật dài 4 cm, rộng 3 cm, cao 2 cm. Tính tổng diện tích sáu mặt của hộp.",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Trải phẳng ra thì thấy gì"
    },
    {
-    "show": "Khối hộp: dài 4, rộng 3, cao 2 (khối)."
+    "show": "Sáu mặt hiện ra, và chúng không phải sáu mặt khác nhau: chúng hợp thành ba cặp, hai mặt trong một cặp bằng hệt nhau."
    },
    {
-    "show": "Tìm tổng số khối lập phương nhỏ."
+    "show": "Ba cặp ấy dựng từ ba cặp số"
    },
    {
-    "show": "Ba con số — ba chiều của khối hộp."
+    "show": "Cặp đáy và nắp dựng từ dài và rộng: 4 × 3 = 12 (cm²)"
    },
    {
-    "show": "Mô hình (lát tầng)"
+    "show": "Cặp trước và sau dựng từ dài và cao: 4 × 2 = 8 (cm²)"
    },
    {
-    "show": "Chiều cao 2 khối → khối hộp gồm 2 tầng chồng lên nhau"
+    "show": "Cặp hai bên hông dựng từ rộng và cao: 3 × 2 = 6 (cm²)"
    },
    {
-    "show": "Mỗi tầng là một \"sàn\" chữ nhật 4 × 3 khối."
+    "show": "Cộng ba mặt khác nhau rồi nhân đôi"
    },
    {
-    "show": "Biến 3D thành \"2D × số tầng\" ngay ở mô hình."
+    "show": "Tổng ba mặt khác nhau là: 12 + 8 + 6 = 26 (cm²)"
    },
    {
-    "show": "Bài giải"
+    "show": "Mỗi mặt có một mặt đối diện bằng nó, nên nhân đôi một lần ở cuối:"
    },
    {
-    "show": "Số khối lập phương ở mỗi tầng là: 4 × 3 = 12 (khối)"
+    "show": "26 × 2 = 52 (cm²)"
    },
    {
-    "show": "Khối hộp có 2 tầng nên tổng số khối lập phương nhỏ là"
+    "show": "Đáp số: 52 cm²."
    },
    {
-    "show": "12 × 2 = 24 (khối)"
-   },
-   {
-    "show": "Hai phép nhân tách bạch: trong tầng, rồi nhân số tầng."
-   },
-   {
-    "show": "Đáp số: 24 khối lập phương nhỏ."
-   },
-   {
-    "show": "Đáp số kèm đơn vị \"khối\"."
-   },
-   {
-    "show": "Thử lại: đếm theo cột đứng: 4 × 3 = 12 cột, mỗi cột 2 khối: 12 × 2 = 24 ✓"
-   },
-   {
-    "show": "Đổi hướng cắt lớp (cột thay tầng) — hai hướng một đáp số."
+    "show": "Thử lại bằng cách cộng đủ sáu mặt: 12 + 12 + 8 + 8 + 6 + 6 = 52"
    }
   ]
  },
@@ -178,7 +95,7 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Hình hộp chữ nhật có bao nhiêu mặt? Các mặt đối diện có đặc điểm gì?",
+     "text": "Hình hộp chữ nhật có mấy mặt, và sáu mặt ấy hợp thành mấy cặp đối diện?",
      "answerKey": {
       "parts": [
        {
@@ -186,142 +103,142 @@
         "value": 6
        },
        {
-        "label": "các mặt đối diện",
-        "options": [
-         "từng đôi bằng nhau",
-         "tất cả bằng nhau",
-         "đều khác nhau"
-        ],
-        "value": "từng đôi bằng nhau"
+        "label": "số cặp đối diện",
+        "value": 3
        }
       ]
      },
-     "solutionNarrative": "6 mặt; các mặt đối diện từng đôi bằng nhau.",
+     "solutionNarrative": "Có 6 mặt, hợp thành 3 cặp đối diện; hai mặt trong một cặp bằng nhau.",
      "hints": [
-      "Đếm kiểu thám tử: trên - dưới, trước - sau, trái - phải.",
-      "Chúng đi thành từng cặp."
+      "Con nhìn hình trải phẳng trong video mà đếm từng mảnh một.",
+      "Đếm xong thì ghép chúng thành từng đôi cùng màu, mỗi đôi hai mảnh bằng nhau."
      ]
     },
     {
      "id": "C2",
-     "text": "Một khối hộp có mỗi tầng gồm 12 khối nhỏ và có 2 tầng. Hỏi khối hộp gồm bao nhiêu khối nhỏ?",
+     "text": "Hộp dài 4 cm, rộng 3 cm, cao 2 cm. Tính diện tích mặt đáy.",
      "answerKey": {
-      "value": 24
+      "value": 12
      },
-     "solutionNarrative": "12 × 2 = 24 khối.",
+     "solutionNarrative": "Mặt đáy dựng từ dài và rộng: 4 × 3 = 12 (cm²).",
      "hints": [
-      "Một tầng nhân với số tầng.",
-      "Cộng hai tầng lại cũng ra."
+      "Mặt đáy là mặt hộp đặt xuống bàn, nên nó dựng từ chiều dài và chiều rộng.",
+      "Lấy hai số ấy nhân với nhau."
      ]
     },
     {
      "id": "C3",
-     "text": "Khối lập phương 2 × 2 × 2 gồm bao nhiêu khối nhỏ?",
+     "text": "Vẫn hộp ấy. Tính diện tích mặt trước, biết mặt trước dựng từ chiều dài 4 cm và chiều cao 2 cm.",
      "answerKey": {
       "value": 8
      },
-     "solutionNarrative": "Mỗi tầng 2 × 2 = 4; hai tầng → 8 khối.",
+     "solutionNarrative": "Mặt trước là 4 × 2 = 8 (cm²).",
      "hints": [
-      "Đếm một tầng trước.",
-      "Rồi nhân với số tầng."
+      "Đề đã cho sẵn hai số của mặt này rồi, con chỉ việc nhân chúng lại.",
+      "Mặt trước dựng đứng nên nó lấy chiều dài và chiều cao."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Khối hộp chữ nhật dài 4 khối, rộng 3 khối, cao 2 khối. Tính tổng số khối lập phương nhỏ.",
+     "text": "Vẫn hộp ấy. Tính diện tích một mặt bên hông, biết mặt hông dựng từ chiều rộng 3 cm và chiều cao 2 cm.",
      "answerKey": {
-      "value": 24
+      "value": 6
      },
-     "solutionNarrative": "Mỗi tầng 4 × 3 = 12; hai tầng → 24 khối.",
+     "solutionNarrative": "Mặt hông là 3 × 2 = 6 (cm²).",
      "hints": [
-      "Một sàn có bao nhiêu khối?",
-      "Sàn nhân với số tầng."
+      "Mặt hông cũng dựng đứng, nhưng nó quay ngang nên lấy chiều rộng và chiều cao.",
+      "Đề đã cho sẵn hai số ấy, con nhân chúng lại."
      ]
     },
     {
      "id": "C5",
-     "text": "Khối lập phương 3 × 3 × 3 gồm bao nhiêu khối nhỏ? Đếm theo tầng.",
+     "text": "Cộng ba mặt khác nhau của hộp 4 nhân 3 nhân 2 lại với nhau.",
      "answerKey": {
-      "value": 27
+      "value": 26
      },
-     "solutionNarrative": "Mỗi tầng 3 × 3 = 9; ba tầng → 27 khối.",
+     "solutionNarrative": "Ba mặt khác nhau là 12, 8 và 6, cộng lại: 12 + 8 + 6 = 26 (cm²).",
      "hints": [
-      "Đếm theo tầng: mỗi sàn mấy khối?",
-      "Rồi nhân với số tầng."
+      "Ba mặt khác nhau con vừa tính ở ba câu trên. Giờ chỉ việc cộng ba kết quả ấy.",
+      "Cộng lần lượt: mặt đáy, rồi mặt trước, rồi mặt hông."
      ]
     },
     {
      "id": "C6",
-     "text": "Hộp bìa 4 × 3 × 2 (đơn vị ô): kể tên ba cặp mặt đối diện kèm kích thước từng mặt, rồi tính tổng số ô bìa cần dùng.",
+     "text": "Từ tổng ba mặt vừa tìm được, tính tổng diện tích cả sáu mặt của hộp.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "mặt đáy - nắp, tính bằng ô",
-        "value": 12
-       },
-       {
-        "label": "mặt trước - sau, tính bằng ô",
-        "value": 8
-       },
-       {
-        "label": "mỗi mặt hông, tính bằng ô",
-        "value": 6
-       },
-       {
-        "label": "tổng số ô bìa",
-        "value": 52
-       }
-      ]
+      "value": 52
      },
-     "solutionNarrative": "Đáy - nắp 4 × 3 = 12; trước - sau 4 × 2 = 8; hai hông 3 × 2 = 6 → tổng bìa 2 × (12 + 8 + 6) = 52 ô.",
+     "solutionNarrative": "Mỗi mặt có một mặt đối diện bằng nó nên nhân đôi: 26 × 2 = 52 (cm²).",
      "hints": [
-      "Ba cặp mặt: đáy - nắp, trước - sau, hai hông.",
-      "Cộng ba mặt khác nhau rồi nhân đôi."
+      "Mỗi mặt đều có một mặt đối diện bằng hệt nó, nên tổng ba mặt mới chỉ là một nửa.",
+      "Con nhân đôi cái tổng vừa tính ở câu trên lên."
      ]
     },
     {
      "id": "C7",
-     "text": "Khối 3 × 3 × 3 bị nhấc mất 1 khối nhỏ ở một góc trên cùng. Hỏi còn lại bao nhiêu khối nhỏ? Đếm theo từng tầng.",
+     "text": "Trên hình trải phẳng của một cái hộp, hai mặt đối diện nhau có nằm cạnh nhau không?",
      "answerKey": {
-      "value": 26
+      "parts": [
+       {
+        "label": "nằm cạnh nhau không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
      },
-     "solutionNarrative": "Tầng dưới 9 + tầng giữa 9 + tầng trên 8 = 26 khối.",
+     "solutionNarrative": "Không. Hai mặt đối diện luôn bị tách ra bởi một mặt khác — đó là cách kiểm nhanh xem tờ trải có gấp lại thành hộp được hay không.",
      "hints": [
-      "Đếm từng tầng như máy chụp cắt lớp.",
-      "Tầng nào bị hụt, hụt mấy khối?"
+      "Con thử gấp tờ trải lại trong đầu: hai mặt đối diện nhau thì lúc gấp xong chúng cách xa nhau.",
+      "Nếu chúng dính cạnh nhau trên tờ trải thì gấp lên sẽ chồng nhau, hộp hở mất một chỗ."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Tháp ba tầng xếp từ khối nhỏ: tầng dưới là sàn 4 × 4, tầng giữa 3 × 3, tầng trên 2 × 2. Hỏi tháp gồm bao nhiêu khối nhỏ?",
+     "text": "Hộp dài 5 cm, rộng 4 cm, cao 3 cm. Tính tổng ba mặt khác nhau, rồi tính tổng diện tích sáu mặt.",
      "answerKey": {
-      "value": 29
+      "parts": [
+       {
+        "label": "tổng ba mặt",
+        "value": 47
+       },
+       {
+        "label": "tổng sáu mặt",
+        "value": 94
+       }
+      ]
      },
-     "solutionNarrative": "4 × 4 + 3 × 3 + 2 × 2 = 16 + 9 + 4 = 29 khối.",
+     "solutionNarrative": "Ba mặt: 5 × 4 = 20, rồi 5 × 3 = 15, rồi 4 × 3 = 12. Tổng ba mặt: 20 + 15 + 12 = 47 (cm²). Sáu mặt: 47 × 2 = 94 (cm²).",
      "hints": [
-      "Mỗi tầng một sàn vuông, thu nhỏ dần.",
-      "Đếm từng sàn rồi cộng cả ba."
+      "Vẫn ba cặp như hộp cũ: dài với rộng, dài với cao, rộng với cao.",
+      "Tính ba mặt ấy, cộng lại, rồi nhân đôi một lần ở cuối."
      ]
     },
     {
      "id": "C9",
-     "text": "Khối 3 × 3 × 3 bị khoét một đường hầm thẳng xuyên từ chính giữa mặt trước ra chính giữa mặt sau (mất trọn hàng 3 khối ở giữa). Hỏi còn bao nhiêu khối nhỏ? Lát từng tầng: tầng nào mất, mất mấy khối?",
+     "text": "Một hình lập phương có cạnh 3 cm. Tính diện tích một mặt, rồi tính tổng diện tích sáu mặt.",
      "answerKey": {
       "parts": [
        {
-        "label": "số khối nhỏ còn lại",
-        "value": 24
+        "label": "một mặt",
+        "value": 9
+       },
+       {
+        "label": "sáu mặt",
+        "value": 54
        }
       ]
      },
-     "solutionNarrative": "Hầm xuyên giữa lấy mất hàng 3 khối chính giữa — nằm trọn ở TẦNG GIỮA: tầng dưới 9, tầng giữa 9 − 3 = 6, tầng trên 9 → còn 9 + 6 + 9 = 24 khối (= 27 − 3 ✓).",
+     "solutionNarrative": "Một mặt: 3 × 3 = 9 (cm²). Hình lập phương có sáu mặt bằng nhau nên tổng là 9 × 6 = 54 (cm²).",
      "hints": [
-      "Lát từng tầng ra mà soi.",
-      "Tầng nào mất khối, mà mất mấy khối?"
+      "Hình lập phương có mọi cạnh bằng nhau, nên một mặt là cạnh nhân cạnh.",
+      "Sáu mặt của nó bằng hệt nhau, nên con nhân kết quả ấy với sáu."
      ]
     }
    ]
@@ -332,134 +249,69 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Hình hộp chữ nhật có 6 mặt, từng đôi đối diện bằng nhau.",
+    "text": "Hình hộp chữ nhật có sáu mặt.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng, và sáu mặt ấy hợp thành ba cặp đối diện bằng nhau."
    },
    {
     "id": "Q2",
-    "text": "Khối lập phương 3 × 3 × 3 gồm 9 khối nhỏ.",
+    "text": "Sáu mặt của một hình hộp chữ nhật luôn bằng nhau.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "27 khối (9 mỗi tầng × 3 tầng)."
+    "solutionNarrative": "Sai. Chỉ hình lập phương mới thế; hộp chữ nhật có ba cặp khác nhau."
    },
    {
     "id": "Q3",
-    "text": "Mỗi tầng 6 khối, xếp 3 tầng. Tổng số khối:",
+    "text": "Hộp 4 nhân 3 nhân 2 có tổng diện tích sáu mặt bằng",
     "format": "mcq",
     "choices": [
-     "A. 18",
-     "B. 9",
-     "C. 6"
+     "52 cm²",
+     "26 cm²",
+     "72 cm²",
+     "24 cm²"
     ],
     "answerKey": {
-     "choice": "A. 18"
+     "choice": "52 cm²"
     },
-    "solutionNarrative": "18)."
+    "solutionNarrative": "Ba mặt khác nhau là 12, 8, 6; cộng được 26 rồi nhân đôi thành 52."
    },
    {
     "id": "Q4",
-    "text": "Khối 2 × 2 × 2 gồm:",
+    "text": "Ba cặp mặt của một hình hộp chữ nhật dựng từ",
     "format": "mcq",
     "choices": [
-     "A. 8 khối",
-     "B. 4 khối",
-     "C. 6 khối"
+     "ba cặp số khác nhau",
+     "cùng một cặp số",
+     "sáu số khác nhau"
     ],
     "answerKey": {
-     "choice": "A. 8 khối"
+     "choice": "ba cặp số khác nhau"
     },
-    "solutionNarrative": "8 khối)."
+    "solutionNarrative": "Dài với rộng, dài với cao, rộng với cao — ba cặp số lấy từ ba số đã cho."
    },
    {
     "id": "Q5",
-    "text": "Khối hộp 4 × 3 × 2: mặt đáy (sàn một tầng) gồm:",
-    "format": "mcq",
-    "choices": [
-     "A. 12 khối",
-     "B. 24 khối",
-     "C. 9 khối"
-    ],
+    "text": "Trên hình trải phẳng, hai mặt đối diện nhau nằm sát cạnh nhau.",
+    "format": "tf",
     "answerKey": {
-     "choice": "A. 12 khối"
+     "value": false
     },
-    "solutionNarrative": "4 × 3 = 12 khối."
+    "solutionNarrative": "Sai. Chúng luôn bị một mặt khác tách ra; đó là cách kiểm nhanh tờ trải."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Bóc một hộp bánh, hộp sữa dọc theo mép dán rồi trải phẳng — hình khai triển thật nằm ngay trong thùng rác tái chế, sinh động hơn mọi hình vẽ.",
-  "homeActivity": "Xếp khối bằng đồ thật (rubik con, xúc xắc, khối gỗ): giao con xếp 2 × 2 × 2, 3 × 3 × 2 rồi tự đếm hai kiểu (theo tầng, theo cột) cho khớp nhau.",
-  "watchFor": "NÊN: chơi \"tháp\": bố mẹ ra đề tầng (4 × 4, 3 × 3, 2 × 2), con tính trước tổng khối rồi xếp kiểm chứng. KHÔNG NÊN: gọi tên thể tích, cm³ hay công thức V = dài × rộng × cao — lớp 5 sẽ đặt tên cho điều con đang đếm hôm nay."
+  "onComplete": "Bóc một hộp bánh hay hộp sữa dọc theo mép dán rồi trải phẳng ra. Hình trải phẳng thật nằm sẵn trong thùng rác tái chế, sinh động hơn mọi hình vẽ.",
+  "homeActivity": "Cho con tô màu hai mặt đối diện cùng một màu trên tờ trải ấy. Tô xong là con tự thấy ba cặp, và tự hiểu vì sao chỉ phải tính ba lần.",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L4H_B46_MO",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L4H_B46_MO.png",
-   "caption": "Tháp khối thật, có khối nấp hàng sau, kèm bản trải từng tầng.",
-   "sha256_16": "3e42facc34a39a1e",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L4H_B46_G3",
-   "usedIn": [
-    "screen:S5"
-   ],
-   "file": "figures/L4H_B46_G3.png",
-   "caption": "Bản trải phẳng của hộp, đếm được đủ sáu mặt.",
-   "sha256_16": "88b9f0261adb8183",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L4H_B46_C6",
-   "usedIn": [
-    "item:C6"
-   ],
-   "file": "figures/L4H_B46_C6.png",
-   "caption": "Hộp trải phẳng, sáu mặt đã ghi tên — chưa ghi số ô.",
-   "sha256_16": "dda129cf03195144",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L4H_B46_C6_G",
-   "usedIn": [
-    "item:C6:giai"
-   ],
-   "file": "figures/L4H_B46_C6_G.png",
-   "caption": "Nắp và đáy tô đậm — cặp thứ nhất trong ba cặp.",
-   "sha256_16": "88d262370d79a5b8",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L4H_B46_C9",
-   "usedIn": [
-    "item:C9"
-   ],
-   "file": "figures/L4H_B46_C9.png",
-   "caption": "Tháp 3 tầng, mỗi tầng 3 × 3 khối — kèm bản trải phẳng từng tầng.",
-   "sha256_16": "a461364bdec82089",
-   "mucGoc": "luyenTap"
-  },
-  {
-   "id": "L4H_B46_C9_G",
-   "usedIn": [
-    "item:C9:giai"
-   ],
-   "file": "figures/L4H_B46_C9_G.png",
-   "caption": "Trải từng tầng ra là thấy ngay chỉ tầng giữa mất khối.",
-   "sha256_16": "f8c04acea88c40ad",
-   "mucGoc": "luyenTap"
-  }
- ],
- "hatMam": "Hạng mục cuối của sân chơi bước sang chiều thứ ba: nhà kho hình hộp và tháp khối bê tông! Hai kỹ năng mới: TRẢI PHẲNG chiếc hộp thành 6 mặt giấy để biết cần bao nhiêu vật liệu, và ĐẾM KHỐI theo tầng — máy chụp cắt lớp giúp con \"nhìn xuyên\" mọi khối 3D. Bí quyết chung: không gian ba chiều chỉ là các lớp hai chiều xếp chồng lên nhau.",
+ "figureSpec": [],
+ "hatMam": "Con lấy một cái hộp giấy, rọc theo mép rồi trải phẳng nó ra bàn. Cái hình vừa hiện ra sẽ nói cho con biết vì sao tính bìa của hộp lại dễ hơn con tưởng.",
  "duongLui": {
   "ve": [
    "DL:KSN3.B31"
@@ -470,5 +322,8 @@
   "canCu": "chuDe",
   "lopDuoi": 3,
   "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B46_giang.mp4"
  }
 }

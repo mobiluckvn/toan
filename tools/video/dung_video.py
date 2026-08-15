@@ -28,6 +28,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import subprocess
 import sys
 import tempfile
@@ -346,6 +347,15 @@ def khung(c: dict) -> Image.Image:
                         nen=TEAL_PALE, vien=TEAL, day=2, bo=0)
         else:
             the(d, x0, y0, w, h, nen="#FFFFFF", vien=LINE, day=3, bo=0)
+        # `duongCheo` cắt hình thành hai tam giác BẰNG NHAU — hình của bài cắt ghép.
+        # Tô hai nửa hai màu để bé thấy chúng đúng bằng nhau, không phải tin lời.
+        if c.get("duongCheo"):
+            # Tô nền hai nửa thì ĐÈ MẤT lưới ô — mà lưới ô mới là chỗ bé đếm ra 48.
+            # Nên có lưới thì chỉ kẻ đường chéo, không tô.
+            if not c.get("oVuong"):
+                d.polygon([(x0, y0), (x0 + w, y0), (x0 + w, y0 + h)], fill=TEAL_PALE)
+                d.polygon([(x0, y0), (x0, y0 + h), (x0 + w, y0 + h)], fill=GOLD_PALE)
+            d.line([x0, y0 + h, x0 + w, y0], fill=ALERT, width=7)
         if c.get("vienDam"):
             d.rectangle([x0, y0, x0 + w, y0 + h], outline=GOLD, width=9)
         else:
@@ -362,6 +372,186 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuCuoi"):
             giua(d, y0 + h + 110, c["chuCuoi"], phong(32),
                  GOLD_DARK if c.get("vienDam") else TEAL_DARK, rong=W - 200)
+
+    elif L == "goc":
+        # ══ GÓC — VẼ RA ĐỂ SO VỚI Ê KE, KHÔNG ĐỂ ĐOÁN BẰNG MẮT ══
+        # Cả bài góc đứng ở một ý: MẮT THƯỜNG ĐOÁN SAI. Nên hình này luôn vẽ được
+        # cái ê ke đè lên góc — bé thấy cạnh góc chui gọn trong ê ke, trùng khít với
+        # ê ke, hay xoè rộng ra ngoài ê ke. Ba cái nhìn ấy chính là ba loại góc, và
+        # không cần một con số đo độ nào.
+        giua(d, 44, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        do = float(c.get("do", 45))
+        cx, cy, dai = W // 2, 470, 300
+        if c.get("eKe"):
+            # Ê ke vẽ TRƯỚC để nằm dưới hai cạnh góc — cạnh góc phải nhìn thấy rõ.
+            e = 150
+            d.polygon([(cx, cy), (cx + e, cy), (cx, cy - e)], fill=GOLD_PALE)
+            d.line([(cx, cy), (cx + e, cy), (cx, cy - e), (cx, cy)], fill=GOLD, width=5)
+            d.rectangle([cx, cy - 26, cx + 26, cy], outline=GOLD, width=4)
+            d.text((cx + e + 16, cy - 34), "ê ke", font=phong(28), fill=GOLD_DARK)
+        x2 = cx + dai * math.cos(math.radians(do))
+        y2 = cy - dai * math.sin(math.radians(do))
+        d.line([cx, cy, cx + dai, cy], fill=NAVY, width=8)
+        d.line([cx, cy, x2, y2], fill=NAVY, width=8)
+        r = 74
+        d.arc([cx - r, cy - r, cx + r, cy + r], -do, 0, fill=ALERT, width=6)
+        d.ellipse([cx - 9, cy - 9, cx + 9, cy + 9], fill=NAVY)
+        if c.get("ten"):
+            giua(d, cy + 46, c["ten"], phong(44), ALERT, rong=W - 200)
+        if c.get("chuPhu"):
+            giua(d, cy + (110 if c.get("ten") else 46), c["chuPhu"], phong(34), INK,
+                 rong=W - 200)
+
+    elif L == "tam_giac":
+        # ══ TAM GIÁC VÀ ĐƯỜNG CAO ══
+        # Đường cao không nói bằng lời được. Phải thấy nó ĐI TỪ ĐỈNH XUỐNG ĐÁY và
+        # gặp đáy ở một góc vuông. `dinh` là chỗ đứng của đỉnh, tính theo chiều dài
+        # đáy — cho `dinh` ra ngoài khoảng không tới một là được ca đường cao RƠI
+        # NGOÀI ĐÁY, chỗ bé hay hoảng nhất. Khi ấy đáy phải kéo dài ra mà đón.
+        giua(d, 44, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        day, cao, dinh = c.get("day", 8), c.get("cao", 5), float(c.get("dinh", 0.5))
+        o = min(64, int(520 / max(day, 1)), int(230 / max(cao, 1)))
+        w = day * o
+        x0, y_day = (W - w) // 2, 480
+        xd, yd = x0 + dinh * w, y_day - cao * o
+        d.polygon([(x0, y_day), (x0 + w, y_day), (xd, yd)], fill=TEAL_PALE)
+        d.line([(x0, y_day), (x0 + w, y_day), (xd, yd), (x0, y_day)], fill=TEAL_DARK,
+               width=6)
+        if c.get("duongCao"):
+            if xd < x0 or xd > x0 + w:          # chân rơi NGOÀI đáy — kéo dài đáy ra
+                for t in range(int(min(xd, x0)), int(max(xd, x0 + w)), 22):
+                    d.line([t, y_day, t + 11, y_day], fill=MUTE, width=4)
+            d.line([xd, yd, xd, y_day], fill=ALERT, width=7)
+            ke = 26 if xd <= x0 + w / 2 else -26
+            d.rectangle([min(xd, xd + ke), y_day - 26, max(xd, xd + ke), y_day],
+                        outline=ALERT, width=4)
+            if c.get("nhanCao"):
+                d.text((xd + (14 if ke > 0 else -14 - d.textlength(
+                    c["nhanCao"], font=phong(32))), (yd + y_day) // 2 - 18),
+                    c["nhanCao"], font=phong(32), fill=ALERT)
+        if c.get("nhanDay"):
+            giua(d, y_day + 20, c["nhanDay"], phong(32), INK, rong=W - 200)
+        if c.get("chuPhu"):
+            giua(d, y_day + (74 if c.get("nhanDay") else 24), c["chuPhu"], phong(36),
+                 INK, rong=W - 180)
+
+    elif L == "hinh_tron":
+        # ══ HÌNH TRÒN — BÁN KÍNH VÀ ĐƯỜNG KÍNH ══
+        # `dayLech` vẽ thêm một dây KHÔNG qua tâm. Đó là cả chỗ hay nhầm của bài:
+        # bé căng dây từ mép này sang mép kia rồi gọi luôn là đường kính. Vẽ hai dây
+        # cạnh nhau thì thấy ngay dây lệch tâm NGẮN HƠN — khỏi phải cãi.
+        giua(d, 44, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        cx, cy, r = W // 2, 400, 190
+        d.ellipse([cx - r, cy - r, cx + r, cy + r], outline=TEAL_DARK, width=6)
+        if c.get("dayLech"):
+            dy = 116
+            x = math.sqrt(r * r - dy * dy)
+            d.line([cx - x, cy - dy, cx + x, cy - dy], fill=MUTE, width=6)
+            d.text((cx + x + 14, cy - dy - 20), c.get("nhanLech", "dây lệch tâm"),
+                   font=phong(28), fill=MUTE)
+        if c.get("hienD"):
+            d.line([cx - r, cy, cx + r, cy], fill=GOLD, width=8)
+        if c.get("hienR"):
+            d.line([cx, cy, cx + r, cy], fill=ALERT, width=8)
+        d.ellipse([cx - 10, cy - 10, cx + 10, cy + 10], fill=NAVY)
+        d.text((cx - 66, cy + 18), "tâm", font=phong(28), fill=NAVY)
+        f = phong(32)
+        if c.get("nhanR"):
+            t = c["nhanR"]
+            d.text((cx + r / 2 - d.textlength(t, font=f) / 2, cy - 46), t, font=f,
+                   fill=ALERT)
+        if c.get("nhanD"):
+            t = c["nhanD"]
+            d.text((cx - d.textlength(t, font=f) / 2, cy + r + 16), t, font=f,
+                   fill=GOLD_DARK)
+        if c.get("chuPhu"):
+            giua(d, cy + r + 66, c["chuPhu"], phong(36), INK, rong=W - 180)
+
+    elif L == "khoi":
+        # ══ KHỐI HỘP — BA CÁCH NHÌN CÙNG MỘT CÁI HỘP ══
+        # `trai` trải phẳng ra sáu mặt, TÔ MÀU THEO CẶP: hai mặt cùng màu là hai mặt
+        #        đối diện, bằng nhau. Cả bài nằm trong cách tô ấy.
+        # `chong` xếp các tầng chồng lên nhau — cho thấy hình khối trông thế nào.
+        # `tang`  tách rời từng tầng ra cạnh nhau — cho thấy CÁCH ĐẾM.
+        # Vẽ được `khuyet` là số khối bị nhấc đi ở mỗi tầng, cho ca khối bị khoét.
+        giua(d, 40, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        dai, rong, cao = c.get("dai", 4), c.get("rong", 3), c.get("cao", 2)
+        kieu = c.get("kieu", "chong")
+
+        def luoi(x, y, cot, hang, o, nen, vien, bo_bot=0):
+            """Một tầng: `cot` nhân `hang` ô, bỏ bớt `bo_bot` ô ở cuối."""
+            n = cot * hang
+            for i in range(n - bo_bot):
+                the(d, x + (i % cot) * o, y + (i // cot) * o, o, o,
+                    nen=nen, vien=vien, day=2, bo=0)
+
+        if kieu == "trai":
+            o = min(58, int(620 / (dai + 2 * cao)), int(400 / (2 * rong + 2 * cao)))
+            tw, th = (dai + 2 * cao) * o, (2 * rong + 2 * cao) * o
+            x0, y0 = (W - tw) // 2, 122
+            xd, yd = x0 + cao * o, y0 + (rong + cao) * o          # ô đáy nằm giữa
+            mat = [(xd, y0, dai, rong, TEAL_PALE, TEAL, "nắp"),
+                   (xd, y0 + rong * o, dai, cao, GOLD_PALE, GOLD, "sau"),
+                   (xd, yd, dai, rong, TEAL_PALE, TEAL, "đáy"),
+                   (xd, yd + rong * o, dai, cao, GOLD_PALE, GOLD, "trước"),
+                   (x0, yd, cao, rong, "#FFFFFF", MUTE, "hông"),
+                   (xd + dai * o, yd, cao, rong, "#FFFFFF", MUTE, "hông")]
+            g = phong(26)
+            for x, y, a, b, nen, vien, ten in mat:
+                the(d, x, y, a * o, b * o, nen=nen, vien=vien, day=4, bo=0)
+                d.text((x + (a * o - d.textlength(ten, font=g)) / 2,
+                        y + b * o / 2 - 16), ten, font=g, fill=INK)
+            y_cuoi = y0 + th
+        else:
+            o = min(46, int(200 / max(dai, 1)), int(150 / max(rong, 1)))
+            kh = list(c.get("khuyet") or [0] * cao)
+            if kieu == "tang":
+                g = phong(30)
+                cach = dai * o + 78
+                x0 = (W - (cach * cao - 78)) // 2
+                for j in range(cao):
+                    x = x0 + j * cach
+                    luoi(x, 250, dai, rong, o, TEAL_PALE, TEAL, kh[j])
+                    d.text((x + (dai * o - d.textlength(f"Tầng {j + 1}", font=g)) / 2,
+                            250 - 46), f"Tầng {j + 1}", font=g, fill=NAVY)
+                    n = dai * rong - kh[j]
+                    t = f"{n} khối"
+                    d.text((x + (dai * o - d.textlength(t, font=g)) / 2,
+                            250 + rong * o + 16), t, font=g, fill=TEAL_DARK)
+                y_cuoi = 250 + rong * o + 70
+            else:
+                # ══ XẾP KHỐI THEO LỐI HÌNH HỘP ══
+                # Bản đầu vẽ mấy tầng là mấy cái LƯỚI PHẲNG đè lệch nhau. Nhìn ra
+                # đúng cái nó là: mấy tấm lưới chồng lên nhau, không ra hình khối —
+                # mà bài này bé phải THẤY được khối đặc thì mới hiểu vì sao đếm theo
+                # tầng. Nay mỗi khối nhỏ vẽ đủ ba mặt: mặt trên, mặt trái, mặt phải.
+                #
+                # Thứ tự vẽ là chỗ dễ hỏng nhất: vẽ sai thứ tự thì khối đằng sau đè
+                # lên khối đằng trước, hình lộn ngược mà vẫn ra hình. Vẽ theo ĐỘ SÂU
+                # i cộng j cộng k tăng dần — xa vẽ trước, gần vẽ sau, gần đè lên xa.
+                a = min(42, int(560 / (dai + rong)), int(150 / max(cao, 1)))
+                bb, hh = a * 0.58, a * 1.12
+                ox = W // 2 + int((rong - dai) * a / 2)
+                oy = 250
+                khoi_ = [(i, j, k) for k in range(cao) for j in range(rong)
+                         for i in range(dai)
+                         if (j * dai + i) < dai * rong - kh[k]]
+                for i, j, k in sorted(khoi_, key=lambda t: t[0] + t[1] + t[2]):
+                    x = ox + (i - j) * a
+                    y = oy + (i + j) * bb - k * hh
+                    d.polygon([(x, y), (x + a, y + bb), (x, y + 2 * bb),
+                               (x - a, y + bb)], fill=TEAL_PALE, outline=TEAL_DARK)
+                    d.polygon([(x - a, y + bb), (x, y + 2 * bb),
+                               (x, y + 2 * bb + hh), (x - a, y + bb + hh)],
+                              fill="#FFFFFF", outline=TEAL_DARK)
+                    d.polygon([(x, y + 2 * bb), (x + a, y + bb),
+                               (x + a, y + bb + hh), (x, y + 2 * bb + hh)],
+                              fill=SOFT, outline=TEAL_DARK)
+                y_cuoi = int(oy + (dai + rong) * bb + hh + 20)
+        if c.get("chuPhu"):
+            y_cuoi = giua(d, y_cuoi + 20, c["chuPhu"], phong(36), INK, rong=W - 180)
+        if c.get("chuCuoi"):
+            giua(d, y_cuoi + 18, c["chuCuoi"], phong(32), TEAL_DARK, rong=W - 200)
 
     elif L == "phan_so":
         # ══ PHÂN SỐ VẼ RA THÀNH BĂNG CHIA PHẦN ══

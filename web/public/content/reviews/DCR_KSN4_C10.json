@@ -14,7 +14,7 @@
    "qno": 1,
    "star": 1,
    "text": "Sân chính hình chữ nhật dài 30 m, rộng 20 m. Muốn rào lưới quanh sân thì tính gì, muốn lát cỏ kín sân thì tính gì? Tính cả hai và ghi đủ đơn vị.",
-   "answer": "Rào lưới thì tính chu vi: (30 + 20) × 2 = 100 m. Lát cỏ thì tính diện tích: 30 × 20 = 600 mét vuông.",
+   "answer": "S = 600 m²; chu vi = 100 m.",
    "answerKey": {
     "parts": [
      {
@@ -35,7 +35,7 @@
      }
     ]
    },
-   "solutionNarrative": "Rào lưới thì tính chu vi: (30 + 20) × 2 = 100 m. Lát cỏ thì tính diện tích: 30 × 20 = 600 mét vuông.",
+   "solutionNarrative": "S = 600 m²; chu vi = 100 m.",
    "diagnosesMicro": "DL:KSN4.B74",
    "veBai": [
     {
@@ -100,7 +100,7 @@
    "qno": 4,
    "star": 1,
    "text": "Một sân hình chữ nhật có chu vi 100 m, chiều dài 30 m. Tính chiều rộng và diện tích.",
-   "answer": "Nửa chu vi 50 m là dài cộng rộng, nên chiều rộng = 50 − 30 = 20 m. Diện tích = 30 × 20 = 600 mét vuông.",
+   "answer": "Nửa chu vi 50 → dài 30, rộng 20 → S = 600 m².",
    "answerKey": {
     "parts": [
      {
@@ -113,7 +113,7 @@
      }
     ]
    },
-   "solutionNarrative": "Nửa chu vi 50 m là dài cộng rộng, nên chiều rộng = 50 − 30 = 20 m. Diện tích = 30 × 20 = 600 mét vuông.",
+   "solutionNarrative": "Nửa chu vi 50 → dài 30, rộng 20 → S = 600 m².",
    "diagnosesMicro": "DL:KSN4.B43",
    "veBai": [
     {
@@ -177,29 +177,45 @@
    "id": "REVITEM:KSN4.C10.A7",
    "qno": 7,
    "star": 1,
-   "text": "Cùng chu vi 40 m: so sánh diện tích hình 10 m × 10 m với hình 15 m × 5 m. Rút ra nhận xét gì?",
-   "answer": "100 m² > 75 m² — cùng chu vi, càng gần vuông càng rộng.",
+   "text": "Áp ê ke vào góc đỉnh của tấm mái tam giác thì thấy cạnh góc xoè rộng ra ngoài ê ke. Góc ấy tên là gì? Và muốn dựng cột chống từ đỉnh mái xuống nền cho đúng thì cột phải hợp với nền một góc gì?",
+   "answer": "Góc ở đỉnh mái là góc tù — cạnh của nó xoè rộng ra ngoài ê ke. Cột chống chính là đường cao, nên nó hợp với nền một góc vuông.",
    "answerKey": {
     "parts": [
      {
-      "label": "diện tích hình 10 m × 10 m",
-      "value": 100
+      "label": "góc ở đỉnh mái",
+      "options": [
+       "góc nhọn",
+       "góc vuông",
+       "góc tù",
+       "góc bẹt"
+      ],
+      "value": "góc tù"
      },
      {
-      "label": "diện tích hình 15 m × 5 m",
-      "value": 75
+      "label": "góc giữa cột chống và nền",
+      "options": [
+       "góc nhọn",
+       "góc vuông",
+       "góc tù",
+       "góc bẹt"
+      ],
+      "value": "góc vuông"
      }
     ]
    },
-   "solutionNarrative": "100 m² > 75 m² — cùng chu vi, càng gần vuông càng rộng.",
-   "diagnosesMicro": "DL:KSN4.B77",
+   "solutionNarrative": "Góc ở đỉnh mái là góc tù — cạnh của nó xoè rộng ra ngoài ê ke. Cột chống chính là đường cao, nên nó hợp với nền một góc vuông.",
+   "diagnosesMicro": "DL:KSN4.B45",
    "veBai": [
     {
-     "id": "DL:KSN4.B77",
-     "ten": "Bài 72 · TĂNG CHIỀU NÀY GIẢM CHIỀU KIA — DIỆN TÍCH CÓ THỂ KHÔNG ĐỔI"
+     "id": "DL:KSN4.B45",
+     "ten": "Bài 73 · BỐN LOẠI GÓC — ÁP Ê KE VÀO, ĐỪNG ĐOÁN BẰNG MẮT"
+    },
+    {
+     "id": "DL:KSN4.B78",
+     "ten": "Bài 74 · ĐƯỜNG CAO — HẠ TỪ ĐỈNH XUỐNG ĐÁY, PHẢI VUÔNG GÓC"
     }
    ],
-   "trapName": "Bài 72 · TĂNG CHIỀU NÀY GIẢM CHIỀU KIA — DIỆN TÍCH CÓ THỂ KHÔNG ĐỔI",
+   "trapName": "Bài 73 · BỐN LOẠI GÓC — ÁP Ê KE VÀO, ĐỪNG ĐOÁN BẰNG MẮT",
    "canCu": "sach"
   },
   {
@@ -221,14 +237,14 @@
     ]
    },
    "solutionNarrative": "D = 6 m; r = 5 m.",
-   "diagnosesMicro": "DL:KSN4.B45",
+   "diagnosesMicro": "DL:KSN4.B80",
    "veBai": [
     {
-     "id": "DL:KSN4.B45",
-     "ten": "Bài 73 · GÓC, ĐƯỜNG CAO, CẮT GHÉP VÀ HÌNH TRÒN"
+     "id": "DL:KSN4.B80",
+     "ten": "Bài 76 · HÌNH TRÒN — BÁN KÍNH VÀ ĐƯỜNG KÍNH"
     }
    ],
-   "trapName": "Bài 73 · GÓC, ĐƯỜNG CAO, CẮT GHÉP VÀ HÌNH TRÒN",
+   "trapName": "Bài 76 · HÌNH TRÒN — BÁN KÍNH VÀ ĐƯỜNG KÍNH",
    "canCu": "sach"
   },
   {
@@ -241,14 +257,14 @@
     "value": 24
    },
    "solutionNarrative": "48 : 2 = 24 m².",
-   "diagnosesMicro": "DL:KSN4.B45",
+   "diagnosesMicro": "DL:KSN4.B79",
    "veBai": [
     {
-     "id": "DL:KSN4.B45",
-     "ten": "Bài 73 · GÓC, ĐƯỜNG CAO, CẮT GHÉP VÀ HÌNH TRÒN"
+     "id": "DL:KSN4.B79",
+     "ten": "Bài 75 · CẮT RỒI GHÉP — DIỆN TÍCH KHÔNG SINH KHÔNG MẤT"
     }
    ],
-   "trapName": "Bài 73 · GÓC, ĐƯỜNG CAO, CẮT GHÉP VÀ HÌNH TRÒN",
+   "trapName": "Bài 75 · CẮT RỒI GHÉP — DIỆN TÍCH KHÔNG SINH KHÔNG MẤT",
    "canCu": "sach"
   },
   {
@@ -261,14 +277,14 @@
     "value": 24
    },
    "solutionNarrative": "12 × 2 = 24 khối.",
-   "diagnosesMicro": "DL:KSN4.B46",
+   "diagnosesMicro": "DL:KSN4.B81",
    "veBai": [
     {
-     "id": "DL:KSN4.B46",
-     "ten": "Bài 74 · HÌNH HỘP TRẢI PHẲNG VÀ ĐẾM KHỐI"
+     "id": "DL:KSN4.B81",
+     "ten": "Bài 78 · ĐẾM KHỐI — LÁT TỪNG TẦNG MÀ ĐẾM"
     }
    ],
-   "trapName": "Bài 74 · HÌNH HỘP TRẢI PHẲNG VÀ ĐẾM KHỐI",
+   "trapName": "Bài 78 · ĐẾM KHỐI — LÁT TỪNG TẦNG MÀ ĐẾM",
    "canCu": "sach"
   },
   {
@@ -290,10 +306,10 @@
    "veBai": [
     {
      "id": "DL:KSN4.B46",
-     "ten": "Bài 74 · HÌNH HỘP TRẢI PHẲNG VÀ ĐẾM KHỐI"
+     "ten": "Bài 77 · TRẢI PHẲNG HỘP RA — SÁU MẶT, BA CẶP"
     }
    ],
-   "trapName": "Bài 74 · HÌNH HỘP TRẢI PHẲNG VÀ ĐẾM KHỐI",
+   "trapName": "Bài 77 · TRẢI PHẲNG HỘP RA — SÁU MẶT, BA CẶP",
    "canCu": "sach"
   },
   {
@@ -306,14 +322,14 @@
     "value": 29
    },
    "solutionNarrative": "16 + 9 + 4 = 29 khối.",
-   "diagnosesMicro": "DL:KSN4.B46",
+   "diagnosesMicro": "DL:KSN4.B81",
    "veBai": [
     {
-     "id": "DL:KSN4.B46",
-     "ten": "Bài 74 · HÌNH HỘP TRẢI PHẲNG VÀ ĐẾM KHỐI"
+     "id": "DL:KSN4.B81",
+     "ten": "Bài 78 · ĐẾM KHỐI — LÁT TỪNG TẦNG MÀ ĐẾM"
     }
    ],
-   "trapName": "Bài 74 · HÌNH HỘP TRẢI PHẲNG VÀ ĐẾM KHỐI",
+   "trapName": "Bài 78 · ĐẾM KHỐI — LÁT TỪNG TẦNG MÀ ĐẾM",
    "canCu": "sach"
   }
  ],

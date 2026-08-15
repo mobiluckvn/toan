@@ -195,6 +195,14 @@ def main() -> int:
     # Nay so với sổ cũ trước khi sinh. Bỏ qua CHỈ KHI mọi thứ ảnh hưởng tới tiếng đều
     # trùng khít: chữ (qua vân tay), tiếng, giọng, tốc độ, model — và tệp mp3 phải
     # còn nằm đó thật. Thiếu một điều kiện là sinh lại, vì clip sai còn tệ hơn chờ.
+    if a.vao and not a.so:
+        # ⚠ THIẾU `--so` LÀ TẮT SẠCH VIỆC DÙNG LẠI, và tắt trong im lặng. Sổ tra là
+        # nơi giữ vân tay của từng clip; không có nó thì mọi dòng đều "chưa từng
+        # sinh", và một đợt sửa vài câu ngốn hai mươi phút thay vì vài giây. Đã mất
+        # đúng như thế một lần, nên nay nó phải kêu lên.
+        print('⚠ KHÔNG có --so: sinh lại TẤT CẢ, và không ghi sổ cho lượt sau.\n'
+              '  Lệnh đúng có thêm:  --so web/public/content/toan/lop4_am.json',
+              flush=True)
     so_cu = {}
     if a.so and a.so.exists() and not a.lam_lai:
         try:

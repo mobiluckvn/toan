@@ -1,0 +1,318 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B80",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 76 · HÌNH TRÒN — BÁN KÍNH VÀ ĐƯỜNG KÍNH",
+ "durationMinutes": 10,
+ "so": 76,
+ "chuong": 10,
+ "tenChuong": "HÌNH HỌC",
+ "dangGoc": "Dạng gốc: HH 3.1 mức Lớp 4 — Tâm, bán kính, đường kính; quan hệ đường kính gấp đôi bán kính. Chưa tính chu vi hay diện tích hình tròn.",
+ "skills": {
+  "bktUnit": "CHUONG:10@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 76,
+  "prev": "DL:KSN4.B79",
+  "next": "DL:KSN4.B46"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Chỉ ra được tâm, bán kính và đường kính của một hình tròn. Biết mọi bán kính của cùng một hình tròn đều bằng nhau. Biết đường kính đi qua tâm và dài gấp đôi bán kính.",
+  "kidText": "Cô muốn đóng khung gỗ ôm thật khít cái bồn hoa tròn. Đo chỗ nào của bồn mới đúng con nhỉ?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn căng dây từ mép này sang mép kia nhưng dây đi lệch, không qua tâm. Đo được 5 cm, bạn ấy liền bảo đường kính hình tròn là 5 cm.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Trong định nghĩa đường kính có bốn chữ nói về chỗ nó bắt buộc phải đi qua. Dây của bạn ấy có đi qua đó không? Gợi ý 2: Vẽ thử vài cái dây nối hai mép, cái qua giữa và cái lệch hẳn sang bên. Đo cả mấy cái rồi so xem cái nào dài nhất. Chữa: dây không qua tâm bao giờ cũng ngắn hơn. Bán kính 3 cm nên đường kính đúng 6 cm, không phải 5 cm."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn căng dây từ mép này sang mép kia nhưng dây đi lệch, không qua tâm. Đo được 5 cm, bạn ấy liền bảo đường kính hình tròn là 5 cm.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một hình tròn có bán kính 3 cm. Tính đường kính của hình tròn ấy.",
+  "steps": [
+   {
+    "show": "Com pa vẽ hình tròn thế nào"
+   },
+   {
+    "show": "Cắm mũi nhọn của com pa xuống một điểm, mở com pa ra 3 cm rồi xoay một vòng. Điểm cắm ấy gọi là tâm."
+   },
+   {
+    "show": "Vì sao mọi bán kính bằng nhau"
+   },
+   {
+    "show": "Suốt vòng xoay, độ mở của com pa không đổi. Nên mọi điểm trên nét vẽ đều cách tâm đúng 3 cm. Đoạn nối tâm với một điểm trên nét vẽ gọi là bán kính."
+   },
+   {
+    "show": "Đường kính là gì"
+   },
+   {
+    "show": "Đường kính là đoạn nối hai điểm trên nét vẽ và đi qua tâm. Bốn chữ đi qua tâm ấy là chỗ quan trọng nhất."
+   },
+   {
+    "show": "Đường kính đi từ mép này, qua tâm, sang mép kia — tức là gồm hai bán kính nối tiếp nhau:"
+   },
+   {
+    "show": "3 × 2 = 6 (cm)"
+   },
+   {
+    "show": "Đáp số: đường kính 6 cm."
+   },
+   {
+    "show": "Thử lại: đi ngược lại, lấy đường kính chia đôi: 6 : 2 = 3"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Một hình tròn có bán kính 3 cm. Đường kính dài bao nhiêu xăng-ti-mét?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "Đường kính gồm hai bán kính nối tiếp: 3 × 2 = 6 (cm).",
+     "hints": [
+      "Đường kính đi từ mép này, qua tâm, sang mép kia — tức là gồm hai bán kính nối tiếp.",
+      "Vậy con lấy bán kính nhân đôi lên."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Một hình tròn có đường kính 10 cm. Bán kính dài bao nhiêu xăng-ti-mét?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Bán kính là nửa đường kính: 10 : 2 = 5 (cm).",
+     "hints": [
+      "Đi ngược lại với bài trên: đường kính gồm hai bán kính nối tiếp nhau.",
+      "Vậy con chia đôi đường kính là ra."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Một đoạn nối hai điểm trên nét tròn có bắt buộc đi qua tâm mới được gọi là đường kính không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bắt buộc không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Có. Không đi qua tâm thì chỉ là một cái dây thường, không phải đường kính.",
+     "hints": [
+      "Con nhớ lại cảnh cái dây lệch trong video. Nó cũng nối hai mép, mà có được gọi là đường kính đâu.",
+      "Trong lời định nghĩa có bốn chữ nói về chỗ nó bắt buộc phải đi qua."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Hình tròn có bán kính 7 cm. Tính đường kính.",
+     "answerKey": {
+      "value": 14
+     },
+     "solutionNarrative": "Đường kính là 7 × 2 = 14 (cm).",
+     "hints": [
+      "Vẫn một lối ấy thôi: bán kính nhân đôi.",
+      "Bảy nhân đôi là bao nhiêu?"
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Hình tròn có đường kính 18 cm. Tính bán kính.",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Bán kính là 18 : 2 = 9 (cm).",
+     "hints": [
+      "Bài này cho phần dài, hỏi phần ngắn — nên làm ngược lại phép nhân đôi.",
+      "Mười tám chia đôi là bao nhiêu?"
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Vẽ hai bán kính khác nhau của cùng một hình tròn. Hai bán kính ấy có bằng nhau không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bằng nhau không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Có. Com pa giữ nguyên độ mở suốt vòng xoay nên mọi bán kính đều bằng nhau.",
+     "hints": [
+      "Com pa giữ nguyên độ mở suốt cả vòng xoay, không hé thêm chút nào.",
+      "Nên mọi điểm trên nét vẽ đều cách tâm đúng bằng nhau."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Một đường kính gồm mấy bán kính nối tiếp nhau?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Gồm 2 bán kính: từ mép tới tâm là một, từ tâm sang mép kia là một nữa.",
+     "hints": [
+      "Con nhìn hình: đường kính đi từ mép tới tâm, rồi từ tâm sang mép kia.",
+      "Đếm xem chặng ấy gồm mấy đoạn nối tiếp nhau."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Một bồn hoa hình tròn có bán kính 2 m. Muốn đóng một khung gỗ hình vuông ôm vừa khít bồn thì mỗi cạnh khung dài bao nhiêu mét?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Khung phải ôm được chỗ rộng nhất của bồn, tức đường kính: 2 × 2 = 4 (m). Vậy mỗi cạnh khung dài 4 m.",
+     "hints": [
+      "Khung phải ôm được chỗ rộng nhất của bồn. Chỗ rộng nhất của hình tròn gọi là gì?",
+      "Tìm chỗ rộng nhất ấy bằng cách nhân đôi bán kính, rồi lấy đúng số đó làm cạnh khung."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Một hình tròn có đường kính 12 cm. Vẽ một cái dây nối hai mép nhưng không đi qua tâm. Dây ấy dài hơn hay ngắn hơn 12 cm? Và bán kính hình tròn bằng bao nhiêu xăng-ti-mét?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cái dây ấy",
+        "options": [
+         "ngắn hơn",
+         "dài hơn"
+        ],
+        "value": "ngắn hơn"
+       },
+       {
+        "label": "bán kính",
+        "value": 6
+       }
+      ]
+     },
+     "solutionNarrative": "Dây không qua tâm thì ngắn hơn — đường kính là cái dây dài nhất. Bán kính là 12 : 2 = 6 (cm).",
+     "hints": [
+      "Đường kính là cái dây dài nhất của hình tròn, không dây nào vượt nổi nó.",
+      "Còn bán kính thì bằng nửa đường kính — con chia đôi là ra."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Đường kính dài gấp đôi bán kính.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Đường kính gồm hai bán kính nối tiếp nhau qua tâm."
+   },
+   {
+    "id": "Q2",
+    "text": "Mọi đoạn nối hai điểm trên nét tròn đều là đường kính.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phải đi qua tâm mới là đường kính; đoạn đi lệch chỉ là một cái dây thường và ngắn hơn."
+   },
+   {
+    "id": "Q3",
+    "text": "Hình tròn bán kính 5 cm có đường kính bằng",
+    "format": "mcq",
+    "choices": [
+     "10 cm",
+     "5 cm",
+     "15 cm",
+     "20 cm"
+    ],
+    "answerKey": {
+     "choice": "10 cm"
+    },
+    "solutionNarrative": "Đường kính gấp đôi bán kính nên bằng 10 cm."
+   },
+   {
+    "id": "Q4",
+    "text": "Trong cùng một hình tròn, các bán kính",
+    "format": "mcq",
+    "choices": [
+     "đều bằng nhau",
+     "dài ngắn khác nhau",
+     "có cái dài bằng đường kính"
+    ],
+    "answerKey": {
+     "choice": "đều bằng nhau"
+    },
+    "solutionNarrative": "Com pa giữ nguyên độ mở suốt vòng xoay, nên mọi bán kính bằng nhau."
+   },
+   {
+    "id": "Q5",
+    "text": "Một cái dây nối hai mép mà không đi qua tâm thì ngắn hơn đường kính.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Đường kính là cái dây dài nhất của hình tròn."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Đưa con cái com pa thật, cho vẽ mấy hình tròn to nhỏ khác nhau. Vẽ xong bảo con đo lại vài bán kính của cùng một hình xem có bằng nhau không.",
+  "homeActivity": "Trò dễ chơi: cho con tìm hình tròn quanh nhà — nắp nồi, đĩa, đồng hồ — rồi đo chỗ rộng nhất của nó. Chỗ rộng nhất ấy chính là đường kính.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Hôm nay đổi dụng cụ: cất ê ke đi, lấy com pa ra. Com pa vẽ được hình tròn, và cách nó vẽ sẽ nói cho con biết hình tròn là gì.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B29"
+  ],
+  "ten": [
+   "GIẢI PHẪU HÌNH TRÒN"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B80_giang.mp4"
+ }
+}

@@ -247,7 +247,17 @@ function diemDanh() {
        luyện tập  18 → 54 câu chấm máy  (+36)  ·  2451 + 36 = 2487  ✓
    Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
    `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
-const MOC = { tong: 2487, dungKhiDungDap: 2485, dungKhiSaiDap: 1, tuDoiChieu: 1 };
+/* ⚠ 2487 → 2524. Chương 10 đợt hai: hai bài cuối tách thành sáu.
+       luyện tập  17 → 54 câu chấm máy  (+37)  ·  2487 + 37 = 2524  ✓
+
+   Lệch +37 chứ không phải +36 như mấy đợt trước, và con số lẻ ấy có lý do thật:
+   bài B45 CŨ có 9 câu luyện tập mà chỉ 8 câu chấm được máy — câu C4 bảo bé "vẽ một
+   tam giác rồi hạ đường cao", tức là câu làm trên giấy, máy không chấm nổi. Sáu bài
+   mới đều 9 câu chấm máy đủ, nên bỏ 17 thêm 54.
+
+   Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
+const MOC = { tong: 2524, dungKhiDungDap: 2522, dungKhiSaiDap: 1, tuDoiChieu: 1 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

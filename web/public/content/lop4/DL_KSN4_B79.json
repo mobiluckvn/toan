@@ -1,0 +1,352 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B79",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 75 · CẮT RỒI GHÉP — DIỆN TÍCH KHÔNG SINH KHÔNG MẤT",
+ "durationMinutes": 10,
+ "so": 75,
+ "chuong": 10,
+ "tenChuong": "HÌNH HỌC",
+ "dangGoc": "Dạng gốc: HH 4.1 mức Lớp 4 — Luật bảo toàn diện tích khi cắt ghép; dùng nó tính diện tích nửa hình chữ nhật khi chưa có công thức tam giác.",
+ "skills": {
+  "bktUnit": "CHUONG:10@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 75,
+  "prev": "DL:KSN4.B78",
+  "next": "DL:KSN4.B80"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết cắt một hình ra rồi ghép lại thì diện tích không đổi. Dùng luật ấy tính được diện tích nửa hình chữ nhật, dù chưa học công thức. Biết chu vi thì ngược lại — cắt ghép xong chu vi có thể đổi.",
+  "kidText": "Cô cắt đôi tờ giấy quen thuộc rồi ghép lại thành hình khác hẳn. Con đoán xem nó còn to như cũ không?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn ghép hai tam giác ấy lại thành một hình khác — dài hơn và hẹp hơn — rồi bảo hình mới có diện tích lớn hơn vì trông nó dài hơn hẳn.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Ghép lại thì vẫn là đúng hai mảnh giấy ấy, không xin thêm mảnh nào. Số giấy trong tay có đổi không? Gợi ý 2: Con đếm số ô vuông trên hai mảnh trước khi ghép và sau khi ghép, rồi so hai lần đếm. Chữa: ghép kiểu nào thì phần mặt bị phủ vẫn đúng ngần ấy, vì không thêm không bớt mảnh giấy nào. Cái đổi khi ghép kiểu khác là đường bao quanh."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn ghép hai tam giác ấy lại thành một hình khác — dài hơn và hẹp hơn — rồi bảo hình mới có diện tích lớn hơn vì trông nó dài hơn hẳn.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một tờ giấy hình chữ nhật dài 6 cm, rộng 4 cm, được cắt theo đường chéo thành hai tam giác. Hỏi diện tích mỗi tam giác bằng bao nhiêu?",
+  "steps": [
+   {
+    "show": "Trước khi cắt"
+   },
+   {
+    "show": "Diện tích cả tờ giấy là: 6 × 4 = 24 (cm²)"
+   },
+   {
+    "show": "Đường chéo chia thế nào"
+   },
+   {
+    "show": "Đường chéo chia tờ giấy thành hai tam giác. Úp mảnh này lên mảnh kia thì chúng khít nhau, nên hai mảnh bằng nhau."
+   },
+   {
+    "show": "Cắt không làm mất giấy"
+   },
+   {
+    "show": "Cắt ra thì giấy vẫn là ngần ấy giấy — không thêm mảnh nào, không mất mảnh nào. Hai mảnh cộng lại vẫn đúng 24."
+   },
+   {
+    "show": "Hai mảnh bằng nhau, cộng lại 24, nên mỗi mảnh là:"
+   },
+   {
+    "show": "24 : 2 = 12 (cm²)"
+   },
+   {
+    "show": "Đáp số: mỗi tam giác 12 cm²."
+   },
+   {
+    "show": "Thử lại: ghép hai tam giác khít lại thành tờ giấy cũ: 12 + 12 = 24"
+   },
+   {
+    "show": "Còn chu vi thì sao"
+   },
+   {
+    "show": "Chu vi thì đổi. Mỗi mảnh nay có thêm một mép cắt mà lúc chưa cắt không có, nên đường bao quanh dài ra."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tờ giấy hình chữ nhật dài 6 cm, rộng 4 cm. Diện tích tờ giấy bằng bao nhiêu xăng-ti-mét vuông?",
+     "answerKey": {
+      "value": 24
+     },
+     "solutionNarrative": "Diện tích là 6 × 4 = 24 (cm²).",
+     "hints": [
+      "Diện tích hình chữ nhật là chiều dài nhân chiều rộng — bộ số này con đã gặp ở bài mảnh vườn.",
+      "Đếm ô cũng ra: mỗi hàng sáu ô, có bốn hàng."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Cắt tờ giấy ấy theo đường chéo thì được mấy mảnh, và hai mảnh có bằng nhau không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số mảnh",
+        "value": 2
+       },
+       {
+        "label": "hai mảnh bằng nhau không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Được 2 mảnh tam giác, và chúng bằng nhau — úp mảnh này lên mảnh kia thì khít.",
+     "hints": [
+      "Một nhát cắt chéo thì tờ giấy rời làm mấy phần?",
+      "Con úp phần này lên phần kia xem chúng có khít nhau không."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vậy diện tích mỗi tam giác bằng bao nhiêu xăng-ti-mét vuông?",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Hai mảnh bằng nhau và cộng lại bằng 24, nên mỗi mảnh là 24 : 2 = 12 (cm²).",
+     "hints": [
+      "Cả tờ hai mươi tư ô, chia đều cho hai mảnh bằng nhau.",
+      "Vậy phải lấy hai mươi tư chia đôi."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Lấy hai tam giác vừa cắt ghép lại thành một hình khác. Diện tích hình mới bằng bao nhiêu xăng-ti-mét vuông?",
+     "answerKey": {
+      "value": 24
+     },
+     "solutionNarrative": "Vẫn 24 cm². Ghép kiểu nào cũng đúng ngần ấy giấy, không thêm không bớt.",
+     "hints": [
+      "Ghép lại thì vẫn đúng hai mảnh giấy ấy, không xin thêm mảnh nào.",
+      "Số giấy trong tay không đổi, nên phần mặt bị phủ cũng không đổi."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Cắt một hình vuông cạnh 5 cm thành vài mảnh rồi ghép lại thành một hình khác hẳn. Diện tích hình mới bằng bao nhiêu?",
+     "answerKey": {
+      "value": 25
+     },
+     "solutionNarrative": "Diện tích hình vuông là 5 × 5 = 25 (cm²), và ghép lại vẫn là 25 cm².",
+     "hints": [
+      "Tính phần mặt của hình vuông trước đã: cạnh nhân cạnh.",
+      "Cắt ra rồi ghép lại thì con số vừa tính có đổi đi chút nào không?"
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Hình chữ nhật dài 8 cm rộng 3 cm, cắt theo đường chéo. Tính diện tích cả hình rồi tính diện tích mỗi tam giác.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cả hình",
+        "value": 24
+       },
+       {
+        "label": "mỗi tam giác",
+        "value": 12
+       }
+      ]
+     },
+     "solutionNarrative": "Cả hình: 8 × 3 = 24 (cm²). Mỗi tam giác: 24 : 2 = 12 (cm²).",
+     "hints": [
+      "Tính cả hình trước: dài nhân rộng.",
+      "Rồi chia đôi, vì một nhát cắt chéo cho hai mảnh bằng nhau."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Cắt một hình ra rồi ghép lại thành hình khác. Trong hai thứ diện tích và chu vi, thứ nào chắc chắn không đổi, thứ nào có thể đổi?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "diện tích",
+        "options": [
+         "không đổi",
+         "có thể đổi"
+        ],
+        "value": "không đổi"
+       },
+       {
+        "label": "chu vi",
+        "options": [
+         "không đổi",
+         "có thể đổi"
+        ],
+        "value": "có thể đổi"
+       }
+      ]
+     },
+     "solutionNarrative": "Diện tích chắc chắn không đổi. Chu vi thì có thể đổi, vì các mép cắt làm đường bao quanh dài ngắn khác đi.",
+     "hints": [
+      "Cắt ghép thì không thêm không bớt mảnh giấy nào, nên phần mặt bị phủ giữ nguyên.",
+      "Còn đường đi quanh mép thì mọc thêm mấy mép cắt mới."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Hình chữ nhật dài 12 cm, rộng 5 cm, cắt theo đường chéo. Tính diện tích cả hình và diện tích mỗi tam giác.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cả hình",
+        "value": 60
+       },
+       {
+        "label": "mỗi tam giác",
+        "value": 30
+       }
+      ]
+     },
+     "solutionNarrative": "Cả hình: 12 × 5 = 60 (cm²). Mỗi tam giác: 60 : 2 = 30 (cm²).",
+     "hints": [
+      "Tính cả hình chữ nhật trước: mười hai nhân năm.",
+      "Rồi chia đôi vì hai mảnh bằng nhau."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Một tam giác là đúng một nửa của hình chữ nhật, và diện tích tam giác ấy là 18 cm². Hỏi diện tích hình chữ nhật là bao nhiêu? Nếu hình chữ nhật ấy dài 9 cm thì rộng bao nhiêu xăng-ti-mét?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hình chữ nhật",
+        "value": 36
+       },
+       {
+        "label": "chiều rộng",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Hình chữ nhật gồm hai tam giác như thế: 18 × 2 = 36 (cm²). Biết diện tích tìm cạnh: 36 : 9 = 4 (cm).",
+     "hints": [
+      "Tam giác là một nửa, vậy cả hình gồm hai tam giác như thế — con nhân đôi lên.",
+      "Có diện tích rồi mà biết một cạnh thì tìm cạnh kia bằng phép chia, như bài trước đã học."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Cắt một hình ra rồi ghép lại thì diện tích không đổi.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Không thêm mảnh nào, không mất mảnh nào, nên phần mặt bị phủ vẫn ngần ấy."
+   },
+   {
+    "id": "Q2",
+    "text": "Đường chéo chia hình chữ nhật thành hai tam giác bằng nhau.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Úp mảnh này lên mảnh kia thì hai mảnh khít nhau."
+   },
+   {
+    "id": "Q3",
+    "text": "Hình chữ nhật 6 nhân 4 cắt theo đường chéo. Diện tích mỗi tam giác là",
+    "format": "mcq",
+    "choices": [
+     "12 cm²",
+     "24 cm²",
+     "20 cm²",
+     "10 cm²"
+    ],
+    "answerKey": {
+     "choice": "12 cm²"
+    },
+    "solutionNarrative": "Cả hình 24 cm², cắt thành hai mảnh bằng nhau nên mỗi mảnh 12 cm²."
+   },
+   {
+    "id": "Q4",
+    "text": "Cắt một hình rồi ghép lại thành hình khác thì thứ nào có thể đổi?",
+    "format": "mcq",
+    "choices": [
+     "chu vi",
+     "diện tích",
+     "cả hai đều không bao giờ đổi"
+    ],
+    "answerKey": {
+     "choice": "chu vi"
+    },
+    "solutionNarrative": "Diện tích luôn giữ nguyên; còn chu vi đổi vì mép cắt làm đường bao quanh khác đi."
+   },
+   {
+    "id": "Q5",
+    "text": "Ghép hai mảnh thành một hình trông dài hơn thì diện tích lớn lên.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Trông dài hơn nhưng vẫn đúng ngần ấy giấy — diện tích y nguyên."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cắt ghép bằng giấy màu thật, đừng chỉ vẽ. Cho con cắt một tờ chữ nhật theo đường chéo rồi thử ghép hai mảnh thành những hình khác nhau.",
+  "homeActivity": "Mỗi lần ghép xong hỏi con hai câu tách bạch: phần mặt bị phủ có đổi không, và đường đi quanh mép có đổi không. Hai câu ấy là cả bài.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Con vẫn nhớ mảnh vườn 6 nhân 4 chứ? Hôm nay mình lấy đúng bộ số ấy, nhưng là một tờ giấy — và mình cầm kéo cắt nó ra.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B30",
+   "DL:KSN3.B28"
+  ],
+  "ten": [
+   "DIỆN TÍCH — TẤM THẢM Ô VUÔNG",
+   "CHU VI BIẾN HÌNH"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B79_giang.mp4"
+ }
+}

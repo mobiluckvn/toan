@@ -753,3 +753,100 @@ ra "mét vuông" và "chia" trong khi đó chính là đáp án) — sửa lời
 
 Bốn loại góc · đường cao · cắt ghép giữ diện tích · hình tròn · hình trải phẳng · đếm
 khối. Cần thêm **ba kiểu cảnh**: góc, hình tròn, khối.
+
+---
+
+## 21 · Đợt 9 · chương 10 — SÁU BÀI CÒN LẠI, và ba lỗi ở chỗ nối
+
+Đợt tám làm sáu bài chu vi diện tích. Đợt này làm nốt: **B45 tách làm bốn, B46 tách
+làm hai**. Quyển lớp 4 nay **81 bài**.
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 73 | B45 | **bốn loại góc** — ê ke là thước đo, mắt thường thì không |
+| 74 | B78 *(mới)* | **đường cao** — từ đỉnh xuống đáy, phải VUÔNG GÓC |
+| 75 | B79 *(mới)* | **cắt rồi ghép** — diện tích không sinh không mất |
+| 76 | B80 *(mới)* | **hình tròn** — bán kính và đường kính |
+| 77 | B46 | **trải phẳng hộp** — sáu mặt, ba cặp |
+| 78 | B81 *(mới)* | **đếm khối** — lát từng tầng mà đếm |
+
+### Số neo — ba bộ, mỗi bộ chở mấy bài
+
+* **6 nhân 4** cho bài cắt ghép: ĐÚNG bộ số của đợt tám. Bé đã biết diện tích ấy là
+  24, nên khi cắt đôi ra 12 thì cả sức chú ý dồn vào ý mới, không phải làm quen hình
+  lạ giữa lúc học điều lạ;
+* **bán kính 3** cho hình tròn — đường kính 6, nhân đôi nhẩm được;
+* **hộp 4 nhân 3 nhân 2** chở CẢ HAI bài cuối: trải phẳng ra tính được 52, xếp lại
+  thành khối đếm được 24. Một cái hộp, hai cách nhìn.
+
+### Bốn kiểu cảnh mới — kế hoạch ghi ba
+
+`goc` · `tam_giac` · `hinh_tron` · `khoi`, cộng cờ `duongCheo` gắn vào `hinh_cn`.
+Đường cao không mượn được hình nào sẵn: nó cần tam giác thật, kèm ca chân đường cao
+rơi ra ngoài đáy.
+
+`khoi` vẽ được ba cách nhìn cùng một cái hộp — `trai` trải phẳng (tô màu THEO CẶP,
+cả bài nằm trong cách tô ấy) · `chong` xếp khối đặc · `tang` tách rời từng tầng.
+Bản đầu của `chong` vẽ mấy tầng là mấy cái lưới phẳng đè lệch nhau, nhìn ra đúng cái
+nó là — mấy tấm lưới chồng lên, không ra hình khối. Nay mỗi khối nhỏ vẽ đủ ba mặt,
+sắp theo độ sâu tăng dần.
+
+### Ba lỗi Ở CHỖ NỐI, cùng một dòng họ
+
+Đợt này không hỏng ở nội dung, mà hỏng ở chỗ hai bên nối vào nhau. Cả ba đều xanh
+cổng, và cả ba chỉ lộ ra khi ngồi đọc bằng mắt.
+
+**① Vỏ giữ hình lại làm SỐNG DẬY hình mồ côi.** Bộ soạn bài có một vỏ chép hình đã
+gắn từ bản cũ sang, để `gan_hinh_lop4.py` chạy sau không bị mất. Nhưng nó chép cả
+vào mục nay đã RỖNG — bài chuyển sang video thì mục ② và ④ trống, hình vẫn được chép
+về neo vào đó. Tám hình của B45 B46 dính đủ. Cái vỏ dựng ra để khỏi mất hình hoá ra
+giữ hộ mấy cái hình lẽ ra phải chết.
+
+**② Kỳ sát hạch trỏ bé về sai bài.** Câu hỏi bán kính đường kính vẫn trỏ về mã B45,
+mà mã ấy nay là bài BỐN LOẠI GÓC. Bé sai câu hình tròn, bấm "ôn lại bài này", và
+được dẫn tới bài dạy góc nhọn góc tù.
+
+Soi kỹ thì ra chuyện lớn hơn: `ontap_lop4.py` suy mã bài từ SỐ BÀI CỦA SÁCH. Hồi
+sách còn 44 bài thì hai thứ trùng nhau; nay không còn trùng. **Chạy lại tệp ấy đổi
+mối nối của 102 CÂU Ở CHÍN CHƯƠNG** mà không kêu một tiếng — câu quãng đường dẫn bé
+sang bài phân số. Phép chốt của chính nó cũng soi bằng số bài của sách, tức là nó
+chỉ xanh khi mọi thứ cùng sai một kiểu.
+
+Nay mối nối GIỮ LẠI từ bản đã dựng, chỗ nào đổi thì khai đích danh ở `KHAI_TAY`, và
+phép chốt soi theo `thu_tu.json`. Cổng mới `web/test/on_tap_noi_bai.test.mjs` canh
+năm chỗ; **phép ④ mới là phép đáng giá**: bài nào của chương cũng phải có ít nhất
+một câu hỏi tới. Trỏ nhầm sang bài khác thì luôn có một bài bị bỏ trống — và đó đúng
+là cách lỗi này lộ ra. Đã phá thử đủ năm kiểu, cả năm đều kêu.
+
+Nhân đó viết lại câu 7 của ôn tập 10: câu cũ hỏi lại đúng ý câu 6, trong khi hai bài
+mới (bốn loại góc, đường cao) không có câu nào hỏi tới.
+
+**③ Bảng ô nhập viết tay đã trôi khỏi đề.** `tach_ontap_lop4.py` chạy lại xoá ô nhập
+của bốn câu. Soi kỹ thì HAI BẢNG ĐỀU TRÔI, mỗi bảng đúng một nửa: bảng tay khớp đề B
+nhưng lệch hẳn đề chính (ô nhập câu C1 chương 3 hỏi "xếp hàng 5 dư mấy em" trong khi
+đề hỏi chia cam vào đĩa), bản đang chạy thì ngược lại. Nay tệp ấy chỉ ĐIỀN CHỖ
+TRỐNG, không đè chỗ đã có.
+
+### ⚠ NỢ TÌM RA TRONG ĐỢT NÀY — CHƯA SỬA
+
+**Lời giải của kỳ sát hạch lệch khỏi đề ở chương 3, 6 và 7.** Đây là lỗi của mấy đợt
+TRƯỚC, không phải đợt này, nhưng nó đang chạy thật:
+
+    ôn tập 7 · C1: "Tỉ số hai số là 2 : 5, cả hai gộp lại gồm mấy phần?"
+              lời giải hiện ra: "một phần 20 : 4 = 5 → 5 viên và 15 viên"   ← của C2
+    ôn tập 6 · C2: "Hai số có tổng 70 và hiệu 10. Tìm số lớn."
+              lời giải hiện ra: "(145 − 27) : 2 = 59 và 86"                 ← của C4
+
+Nguyên nhân: mấy đợt trước CHÈN thêm câu ôn tập để phủ bài mới tách, nhưng đáp án
+đánh khoá theo SỐ THỨ TỰ CÂU (`OT7#C1`), nên chèn một câu là mọi đáp án phía sau lệch
+đi một nấc. Đúng dòng họ với lỗi ②, và cũng chính tay cháu gây ra.
+
+Máy vẫn chấm ĐÚNG (ô nhập lấy theo đề, đã đối chiếu), chỉ phần "lời giải để bé đối
+chiếu" là của câu khác. Sửa được, nhưng phải viết mới chừng ba mươi lời giải cho mấy
+câu chèn thêm rồi dịch lại cả loạt — nên để thành một việc riêng, làm cẩn thận với
+sách bên cạnh, chứ không vá vội trong đợt này.
+
+### Còn lại của quyển
+
+Chương 1 (số đến lớp triệu, 4 bài) · chương 2 (bốn phép tính, 4 bài) · chương 11
+(quãng đường, 3 bài).
