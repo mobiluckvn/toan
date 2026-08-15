@@ -49,7 +49,7 @@ tự viết lấy payload thì nó chỉ chứng minh luật khớp với chính
 Nên thêm một phép kiểm đọc `loai` từ CHÍNH chỗ gọi rồi đối chiếu với danh sách
 trong `firestore.rules`, chứ đừng chép tay lần nữa.
 
-### (B) ✗ Thoát giữa chặng Luyện tập là mất sạch mức
+### (B) ✅ Thoát giữa chặng Luyện tập là mất sạch mức — SỬA XONG 15-08
 
 `ghiChang` (progress.js:81) chỉ ghi **một** con số: chặng. Còn mức trong chặng —
 `m`, `xaM`, `i`, `dem`, `no` ở `BaiHoc.jsx:400-406` — nằm nguyên trong `useState`,
@@ -59,8 +59,43 @@ không xuống sổ.
 Luyện tập ✔ nhưng **★★ khoá lại, ★ về "câu 1/9 · đúng 0/0"**. Bé phải làm lại cả
 mức. Với bé lớp 1 thì bị mẹ gọi đi ăn cơm là mất một buổi học.
 
-Chưa sửa — động vào chỗ lưu, **để bác quyết**. Cùng loại với món nợ "tiến độ HỌC
-THỬ chưa đẩy lên máy chủ" bên Toán.
+**Đã sửa 15-08-2026.** Thêm `ghiMoc` / `docMoc` vào `lib/progress.js`: nhớ chỗ đang
+dở BÊN TRONG một chặng, khoá riêng theo từng chặng (`moc: { tu, cau, luyen }`).
+
+Bốn điều cố ý, mỗi điều đổi bằng một lần vấp ở chỗ khác:
+
+1. **Khoá theo chặng.** Ghi chung một chỗ thì bé nhảy từ luyện tập về từ mới là xoá
+   mất chỗ dở của chặng kia.
+2. **Không đụng `at`.** `gopTienDo` so `at` để chọn bản thắng khi hoà sổ máy chủ; đổi
+   `at` mỗi lần bé làm xong một câu thì một buổi học dở trên máy này đè lên KẾT QUẢ
+   THẬT ghi từ máy khác.
+3. **Không đổi thì trả NGUYÊN khối cũ.** Không phải tối ưu — là điều kiện sống còn:
+   vỏ gộp sổ thấy sổ đổi là vẽ lại, vẽ lại thì `datTienDo` truyền xuống cũng mới, mà
+   màn hình có effect canh chính hàm ấy → vòng lặp không đáy (đã vỡ thật, xem
+   `test/so_tien_do.test.mjs`).
+4. **Chỉ giữ tại máy.** `luuBai` nhặt từng trường một khi đẩy máy chủ, `moc` cố ý
+   không có trong danh sách. Đổi máy giữa chừng thì vào lại từ đầu chặng — mất mấy
+   phút, không mất bài nào.
+
+Sửa luôn cả ba chặng chứ không riêng luyện tập: **Từ mới** nhớ từ nào đã nghe, đã
+nói, đang ở từ thứ mấy; **Mẫu câu** nhớ video nào đã xem. Cùng một cơ chế, cùng một
+nỗi đau — nghe bốn từ rồi bị gọi đi ăn cơm mà vào lại thanh VIỆC CỦA CON trắng trơn
+thì công vừa bỏ ra không để lại dấu.
+
+**KHÔNG lưu `lamLai`.** Lúc ấy `i` đánh số theo danh sách câu nợ chứ không theo mức;
+lưu vào rồi khôi phục là bé rơi vào câu khác hẳn. Thay vào đó lưu `moiLamLai`, nên
+vào lại thì lời mời làm lại hiện ra nguyên vẹn.
+
+Cổng: `test/tienganh_moc.test.mjs`, 33 phép. Đã phá thử sáu kiểu, kêu cả sáu.
+
+#### Và một lỗi ĐẺ RA TRONG LÚC SỬA — màn trắng bốc
+
+Ba hàm `useCallback` mới đặt **sau** hai lệnh `return` sớm của `BaiHoc`. Lần vẽ đầu
+(`bai` còn null, thoát ở nhánh "Đang mở bài…") gọi ít hook hơn lần vẽ sau; React đếm
+hook theo THỨ TỰ GỌI nên ném lỗi 310 và cả màn hình trắng.
+
+66 cổng xanh, `npm run build` xanh, mở bài ra thì trắng bốc. Chỉ lộ khi mở bản chạy
+thật ra bấm — đúng lớp lỗi đã ghi ở `kiem-bang-mat-truoc-khi-deploy`.
 
 ### (C) ✅ Thanh VIỆC CỦA CON — làm xong 13-08
 

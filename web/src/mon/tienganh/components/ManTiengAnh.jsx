@@ -3,7 +3,7 @@ import BaiHoc from './BaiHoc.jsx';
 import OnTap from './OnTap.jsx';
 import NutNghe from './NutNghe.jsx';
 import { napBai, napSoAm, napOnTap, chuongCua, quyenDau, timQuyen } from '../lib/noiDung.js';
-import { ghiBai, ghiChang, ghiChuong, khoaChuong } from '../lib/progress.js';
+import { ghiBai, ghiChang, ghiMoc, ghiChuong, khoaChuong } from '../lib/progress.js';
 import { luuBai, luuMucHocBa } from '../lib/duLieu.js';
 import {
   trangThaiBai, baiNenHoc, moBai, moKyOnTap, conThieuChoOnTap,
@@ -66,6 +66,13 @@ export default function ManTiengAnh({
     datTienDo((p) => ghiChang(p, id, chang));
   }, [datTienDo]);
 
+  /* Và nhớ luôn chỗ dở BÊN TRONG chặng — mức nào, câu thứ mấy. Cũng chỉ tại máy.
+     `ghiMoc` trả nguyên khối cũ khi không có gì đổi, nên hàm này gọi được sau MỖI
+     câu mà không làm vỏ vẽ lại. Bỏ điều ấy đi là vòng lặp không đáy. */
+  const nhoMoc = useCallback((id, chang, moc) => {
+    datTienDo((p) => ghiMoc(p, id, chang, moc));
+  }, [datTienDo]);
+
   /**
    * XONG MỘT KỲ ÔN TẬP — chỗ DUY NHẤT ghi vào học bạ Tiếng Anh.
    *
@@ -121,6 +128,7 @@ export default function ManTiengAnh({
         onThoat={() => setView({ page: 'home' })}
         onXongBai={(kq, sau) => xongBai(view.baiId, kq, sau)}
         onChang={(c) => nhoChang(view.baiId, c)}
+        onMoc={(chang, m) => nhoMoc(view.baiId, chang, m)}
         /* Biệt danh của chính bé đi vào đoạn hội thoại — bé nghe tên mình trong
            một câu tiếng Anh. Đó là chỗ bài này khác mọi bài luyện phát âm khác. */
         tenBe={(hoSo?.displayName || '').trim().split(/\s+/).pop() || 'Bo'}

@@ -44,15 +44,19 @@ const maCauAm = (c) => maCua(c, 'en');
  * `xa` chỉ nhích lên khi chặng ấy LÀM XONG THẬT, và không bao giờ tụt xuống. Luật
  * ở `lib/dandat.js` để cổng chạy bằng node soi được.
  */
-export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang, tenBe = 'Bo' }) {
+export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
+                                 onMoc, tenBe = 'Bo' }) {
   const [bai, datBai] = useState(null);
   const [loi, datLoi] = useState(null);
   const [tai, datTai] = useState(0);
   const [xa, datXa] = useState(0);
+  /* Mốc trong chặng, đọc MỘT LẦN lúc mở bài — cùng lý do với `chang` ở dưới:
+     nghe cả `tienDo` thì mỗi lần ghi mốc lại nạp lại bài, thành vòng lặp. */
+  const [mocDau, datMocDau] = useState(null);
 
   useEffect(() => {
     let song = true;
-    datBai(null); datLoi(null); datTai(0); datXa(0);
+    datBai(null); datLoi(null); datTai(0); datXa(0); datMocDau(null);
     (async () => {
       try {
         await napSoAm();
@@ -64,6 +68,7 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
            màn trắng. */
         const nho = Math.max(0, Math.min(tienDo?.micros?.[id]?.chang || 0, changCua(d).length - 1));
         datTai(nho); datXa(nho);
+        datMocDau(tienDo?.micros?.[id]?.moc || null);
       } catch (e) { if (song) datLoi(e.message); }
     })();
     return () => { song = false; };
@@ -73,6 +78,17 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
        ở sổ tiến độ, ghi trong docs/tiep_theo_tienganh_lop1.md. */
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
+
+  /* ⚠ BA HOOK NÀY PHẢI ĐỨNG TRƯỚC MỌI LỆNH `return` SỚM.
+     Đặt xuống dưới thì lần vẽ đầu (`bai` còn null, hàm thoát ở nhánh "Đang mở
+     bài…") gọi ít hook hơn lần vẽ sau — React đếm hook theo THỨ TỰ GỌI, lệch một
+     cái là ném lỗi 310 và cả màn hình trắng. Đã vỡ đúng thế: 66 cổng xanh, `npm run
+     build` xanh, mở bài ra thì trắng bốc.
+     Chúng cần `useCallback` vì ba màn con canh chính hàm này trong effect ghi mốc;
+     tạo mới mỗi lần vẽ thì effect chạy lại sau từng lần vẽ. */
+  const mocTu = useCallback((m) => onMoc?.('tu', m), [onMoc]);
+  const mocCau = useCallback((m) => onMoc?.('cau', m), [onMoc]);
+  const mocLuyen = useCallback((m) => onMoc?.('luyen', m), [onMoc]);
 
   if (loi) {
     return (
@@ -101,9 +117,20 @@ export default function BaiHoc({ id, tienDo, onXongBai, onThoat, onNoi, onChang,
     <Khung onThoat={onThoat} ten={bai.title}>
       <ThanhChang ten={tenChang} ds={CHANG} tai={tai} xa={xa} onChon={nhay} />
 
-      {k === 'tu' && <ManTu bai={bai} onTiep={xong} onNoi={onNoi} />}
-      {k === 'cau' && <ManCau bai={bai} onTiep={xong} />}
-      {k === 'luyen' && <LuyenTap bai={bai} onTiep={xong} />}
+      {/* `key` gắn mã bài: đổi bài thì ba màn dưới đây phải dựng lại từ đầu, không
+          thì mốc của bài cũ dính sang bài mới. */}
+      {k === 'tu' && (
+        <ManTu key={id} bai={bai} onTiep={xong} onNoi={onNoi}
+               moc={mocDau?.tu} onMoc={mocTu} />
+      )}
+      {k === 'cau' && (
+        <ManCau key={id} bai={bai} onTiep={xong}
+                moc={mocDau?.cau} onMoc={mocCau} />
+      )}
+      {k === 'luyen' && (
+        <LuyenTap key={id} bai={bai} onTiep={xong}
+                  moc={mocDau?.luyen} onMoc={mocLuyen} />
+      )}
       {k === 'noi' && (
         <HoiThoai
           hoiThoai={bai.knowledgeCore.hoiThoai}
@@ -211,16 +238,24 @@ const NutTiep = ({ onClick, chu = 'Tiếp tục', tat = false, viSao }) => (
  * từng từ cũng là nghe đủ chừng ấy từ. Video hỏng thì mở ngay và nói rõ — không
  * để bé kẹt vì tệp không tải được.
  */
-function ManTu({ bai, onTiep, onNoi }) {
-  const [daXem, datDaXem] = useState(false);
+function ManTu({ bai, onTiep, onNoi, moc, onMoc }) {
+  /* Nghe bốn từ rồi bị gọi đi ăn cơm — vào lại mà thanh VIỆC CỦA CON trắng trơn
+     thì công vừa bỏ ra không để lại dấu, và đó đúng là lúc bé bỏ cuộc. */
+  const [daXem, datDaXem] = useState(!!moc?.daXem);
   const [videoHong, datVideoHong] = useState(false);
-  const [daNghe, datDaNghe] = useState(() => new Set());
-  const [soNoi, datSoNoi] = useState(() => ({}));
+  const [daNghe, datDaNghe] = useState(() => new Set(moc?.daNghe || []));
+  const [soNoi, datSoNoi] = useState(() => ({ ...(moc?.soNoi || {}) }));
   const [micHong, datMicHong] = useState(false);
-  const [iTu, datITu] = useState(0);
+  const [iTu, datITu] = useState(() => Math.max(0, Number(moc?.iTu) || 0));
   const K = bai.knowledgeCore.statements || [];
   const dsTu = bai.knowledgeCore.vocabulary || [];
   const oVideo = useRef(null);
+
+  /* Ghi mốc — `daNghe` là Set nên phải rải thành mảng, không thì JSON ra `{}` và
+     phép so "có đổi không" bên `ghiMoc` luôn thấy giống nhau, mốc đứng im. */
+  useEffect(() => {
+    onMoc?.({ daXem, daNghe: [...daNghe], soNoi, iTu });
+  }, [daXem, daNghe, soNoi, iTu, onMoc]);
 
   /* Gắn hình vào từ TRƯỚC khi đưa cho thanh việc — cùng nguồn với thẻ từ. */
   const dsTuCoHinh = useMemo(
@@ -415,12 +450,12 @@ function LuyenTu({ bai, ds, i, onDoi, soNoi, micHong, onNoi, onNghe, onMicHong }
  * một rồi qua thì đúng nửa bài bị bỏ — mà đó là nửa bé sẽ gặp lại ngay ở luyện
  * tập và sát hạch.
  */
-function ManCau({ bai, onTiep }) {
+function ManCau({ bai, onTiep, moc, onMoc }) {
   const ds = bai.video?.cau || [];
-  const [i, datI] = useState(0);
-  const [daXem, datDaXem] = useState(() => new Set());
+  const [i, datI] = useState(() => Math.max(0, Number(moc?.i) || 0));
+  const [daXem, datDaXem] = useState(() => new Set(moc?.daXem || []));
   const [hong, datHong] = useState(false);
-  const [soNoi, datSoNoi] = useState(() => ({}));
+  const [soNoi, datSoNoi] = useState(() => ({ ...(moc?.soNoi || {}) }));
   const [micHong, datMicHong] = useState(false);
   const mcDs = bai.knowledgeCore.mauCauDs || [];
   const mc = mcDs[i] || bai.knowledgeCore.mauCau;
@@ -431,6 +466,10 @@ function ManCau({ bai, onTiep }) {
     () => ds.map((v) => ({ ...v, nhanVai: NHAN[v.vai] || 'Mẫu câu' })),
     [ds],
   );
+
+  useEffect(() => {
+    onMoc?.({ i, daXem: [...daXem], soNoi });
+  }, [i, daXem, soNoi, onMoc]);
   const { viec, mo, conThieu, vuongMicro } = viecChangCau({
     dsCau, daXem: [...daXem], videoHong: hong, soNoi, micHong, datNoi: DAT_NOI,
   });
@@ -547,16 +586,54 @@ const MUC = [
  * lượt nữa. Chỉ MỘT lượt: hai lượt rồi vẫn tắc thì cái bé cần là người lớn ngồi
  * cạnh, không phải vòng lặp thứ ba.
  */
-function LuyenTap({ bai, onTiep }) {
-  const [m, datM] = useState(0);
-  const [xaM, datXaM] = useState(0);          // mức xa nhất đã mở
-  const [i, datI] = useState(0);
-  const [dem, datDem] = useState({ dung: 0, tong: 0 });
-  const [no, datNo] = useState([]);           // câu bé bỏ qua trong mức này
-  const [lamLai, datLamLai] = useState(null); // đang làm lại đúng những câu ấy
-  const [moiLamLai, datMoiLamLai] = useState(false);
+function LuyenTap({ bai, onTiep, moc, onMoc }) {
+  /* ── VÀO LẠI ĐÚNG CHỖ BỎ DỞ ──
+     `moc` là thứ đã ghi lần trước. KHÔNG tin nó mù quáng: sổ có thể là của bản bài
+     cũ, mà chỉ số mức hay chỉ số câu nhảy ra ngoài mảng là màn trắng ngay. Nên kẹp
+     lại trong khoảng hợp lệ, và lọc `no` theo những câu CÓ THẬT trong bài này. */
+  const dau = useMemo(() => {
+    const d = { m: 0, xaM: 0, i: 0, dem: { dung: 0, tong: 0 }, no: [], tt: [],
+                moiLamLai: false };
+    if (!moc) return d;
+    const m0 = Math.max(0, Math.min(Number(moc.m) || 0, MUC.length - 1));
+    const pool = bai.practice.pools[MUC[m0].khoa] || [];
+    const idCo = new Set(pool.map((c) => c.id));
+    return {
+      m: m0,
+      xaM: Math.max(m0, Math.min(Number(moc.xaM) || 0, MUC.length - 1)),
+      i: Math.max(0, Math.min(Number(moc.i) || 0, Math.max(pool.length - 1, 0))),
+      dem: { dung: Number(moc.dem?.dung) || 0, tong: Number(moc.dem?.tong) || 0 },
+      no: (moc.no || []).filter((x) => idCo.has(x)),
+      tt: Array.isArray(moc.tt) ? moc.tt.slice(0, pool.length) : [],
+      moiLamLai: !!moc.moiLamLai,
+    };
+  }, [moc, bai]);
 
-  const [ttCau, datTtCau] = useState([]);     // trạng thái từng chấm của mức này
+  const [m, datM] = useState(dau.m);
+  const [xaM, datXaM] = useState(dau.xaM);    // mức xa nhất đã mở
+  const [i, datI] = useState(dau.i);
+  /* ⚠ `dem` HIỆN KHÔNG AI ĐỌC. Thanh "Đúng x/y" đếm thẳng từ `ttCau`, còn `dem` chỉ
+     được ghi vào chứ chưa hiện ở đâu. Vẫn giữ trong mốc vì nó là một trong năm thứ
+     mà Lỗi B làm mất, và ngày nào đó hiện nó ra thì con số đã đúng sẵn — chứ không
+     phải sửa lại chỗ lưu lần nữa. */
+  const [dem, datDem] = useState(dau.dem);
+  const [no, datNo] = useState(dau.no);       // câu bé bỏ qua trong mức này
+  const [lamLai, datLamLai] = useState(null); // đang làm lại đúng những câu ấy
+  const [moiLamLai, datMoiLamLai] = useState(dau.moiLamLai);
+
+  const [ttCau, datTtCau] = useState(dau.tt); // trạng thái từng chấm của mức này
+
+  /* Ghi mốc sau MỖI lần đổi chỗ. Gọi dày thế này chỉ an toàn vì `ghiMoc` trả nguyên
+     khối cũ khi không có gì đổi — xem chú thích dài ở `lib/progress.js`.
+
+     KHÔNG ghi `lamLai`: lúc ấy `i` đánh số theo danh sách câu nợ chứ không theo mức,
+     lưu vào rồi khôi phục là bé rơi vào câu khác hẳn. Thay vào đó ghi `moiLamLai`,
+     nên vào lại thì lời mời làm lại hiện ra nguyên vẹn — mất mấy giây, không mất
+     câu nào. */
+  useEffect(() => {
+    if (lamLai) return;
+    onMoc?.({ m, xaM, i, dem, no, tt: ttCau, moiLamLai });
+  }, [m, xaM, i, dem, no, ttCau, moiLamLai, lamLai, onMoc]);
 
   const goc = bai.practice.pools[MUC[m].khoa] || [];
   const pool = lamLai || goc;

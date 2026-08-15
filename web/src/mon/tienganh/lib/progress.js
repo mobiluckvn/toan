@@ -54,8 +54,11 @@ export function ghiBai(p, id, kq) {
         bac: Math.max(cu.bac || 0, kq.bac || 0),
         attempts: (cu.attempts || 0) + 1,
         /* Làm hết bài rồi thì không còn "đang dở" nữa — xoá dấu chặng, nếu không
-           bài đã đạt vẫn đội nhãn "đang học dở" trên danh sách. */
+           bài đã đạt vẫn đội nhãn "đang học dở" trên danh sách. Xoá luôn `moc`:
+           giữ lại thì lần sau mở bài ra làm lại, bé bị thả vào giữa mức cũ chứ
+           không được bắt đầu từ đầu. */
         chang: 0,
+        moc: undefined,
         at: new Date().toISOString(),
       },
     },
@@ -84,6 +87,49 @@ export function ghiChang(p, id, chang) {
   if ((cu.chang || 0) >= chang) return p;
   return { ...p, micros: { ...p.micros, [id]: { ...cu, chang } } };
 }
+
+/**
+ * Nhớ chỗ đang dở BÊN TRONG một chặng — mức nào, câu thứ mấy, đúng mấy câu.
+ *
+ * ── VÌ SAO CẦN, VÀ VÌ SAO KHÔNG PHẢI `ghiChang` LÀ ĐỦ ──
+ *
+ * `ghiChang` chỉ nhớ ĐANG Ở CHẶNG NÀO. Trong chặng luyện tập còn ba mức, mỗi mức
+ * chín câu, và toàn bộ chuyện ấy nằm trong `useState` của màn hình. Đi thử thật:
+ * làm xong 9 câu mức ★, sang mức ★★, thoát ra, vào lại → về đúng chặng luyện tập
+ * nhưng ★★ KHOÁ LẠI, ★ về "câu 1/9 · đúng 0/0". Bé phải làm lại cả mức. Với bé lớp
+ * một thì bị mẹ gọi đi ăn cơm là mất một buổi học.
+ *
+ * ── BỐN ĐIỀU CỐ Ý ──
+ *
+ * 1. KHOÁ THEO CHẶNG. `moc` là một khối `{ tu: …, cau: …, luyen: … }`. Ghi chung
+ *    một chỗ thì bé nhảy từ luyện tập về từ mới là xoá mất chỗ dở của chặng kia.
+ *
+ * 2. KHÔNG ĐỤNG `at`. Y như `ghiChang`: `gopTienDo` so `at` để chọn bản thắng khi
+ *    hoà sổ máy chủ. Đổi `at` mỗi lần bé làm xong một câu thì một buổi học dở trên
+ *    máy này sẽ đè lên KẾT QUẢ THẬT ghi từ máy khác.
+ *
+ * 3. KHÔNG ĐỔI THÌ TRẢ NGUYÊN KHỐI CŨ. Đây không phải chuyện tiết kiệm: vỏ gộp sổ
+ *    thấy sổ đổi là vẽ lại, vẽ lại thì hàm `datTienDo` truyền xuống cũng mới, mà
+ *    màn hình lại có effect canh chính hàm ấy để ghi mốc — thành vòng lặp không
+ *    đáy. Đã vỡ thật một lần, xem `test/so_tien_do.test.mjs`.
+ *
+ * 4. CHỈ GIỮ TẠI MÁY. `luuBai` nhặt từng trường một khi đẩy lên máy chủ, và `moc`
+ *    không nằm trong danh sách ấy — cố ý. Đổi máy giữa chừng thì bé vào lại từ đầu
+ *    chặng, mất mấy phút chứ không mất bài nào.
+ */
+export function ghiMoc(p, id, chang, moc) {
+  if (!chang) return p;
+  const cu = p.micros[id] || {};
+  const truoc = cu.moc || {};
+  if (JSON.stringify(truoc[chang]) === JSON.stringify(moc)) return p;
+  return {
+    ...p,
+    micros: { ...p.micros, [id]: { ...cu, moc: { ...truoc, [chang]: moc } } },
+  };
+}
+
+/** Đọc mốc của một chặng. Trả `null` khi chưa có — màn hình tự dựng mặc định. */
+export const docMoc = (p, id, chang) => p?.micros?.[id]?.moc?.[chang] || null;
 
 /** Khoá chương PHẢI kèm mã quyển — khoá số trần làm huy hiệu lây giữa các quyển. */
 export const khoaChuong = (ma, chuong) => `${ma}:C${chuong}`;
