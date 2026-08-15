@@ -1,0 +1,288 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B37",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 7 · HIỆU HAI SỐ ĐỔI CHỖ — TOÀN SỐ TRONG BẢNG NHÂN 9",
+ "durationMinutes": 10,
+ "so": 7,
+ "chuong": 1,
+ "tenChuong": "Vương quốc Số",
+ "dangGoc": "SỐ 1.4 — Hiệu của một số và số đổi chỗ luôn nằm trong bảng nhân 9.",
+ "skills": {
+  "bktUnit": "CHUONG:1@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 7,
+  "prev": "DL:KSN2.B03",
+  "next": "DL:KSN2.B04"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tính được hiệu của một số và số đổi chỗ của nó. Nhận ra mọi hiệu ấy đều nằm trong bảng nhân 9. Đoán trước hiệu bằng cách lấy hiệu hai chữ số nhân 9.",
+  "kidText": "Cô trừ mấy cặp số tráo chỗ, ra toàn số quen quen. Con thử tìm ra quy luật nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn tính 42 trừ 24 rồi ghi 22, vì lấy 4 trừ 2 rồi lấy 2 trừ 4.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Trừ số có hai chữ số thì phải đặt tính cho thẳng cột rồi trừ, không trừ rời từng chữ số. Gợi ý 2: Hàng đơn vị 2 không trừ được 4 thì phải mượn của hàng chục. Chữa: đặt tính rồi trừ có nhớ, được 18. Và 18 nằm trong bảng nhân chín, đúng như luật."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn tính 42 trừ 24 rồi ghi 22, vì lấy 4 trừ 2 rồi lấy 2 trừ 4.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tính 52 trừ 25. Rồi thử vài cặp khác xem có gì lạ.",
+  "steps": [
+   {
+    "show": "Tính cặp đầu tiên",
+    "phan": "giai"
+   },
+   {
+    "show": "Năm mươi hai trừ hai mươi lăm bằng hai mươi bảy.",
+    "phan": "giai"
+   },
+   {
+    "show": "Thử thêm vài cặp",
+    "phan": "giai"
+   },
+   {
+    "show": "Ba mươi mốt trừ mười ba bằng mười tám. Bốn mươi hai trừ hai mươi bốn cũng bằng mười tám. Năm mươi mốt trừ mười lăm bằng ba mươi sáu.",
+    "phan": "giai"
+   },
+   {
+    "show": "Nhìn ra điều lạ",
+    "phan": "giai"
+   },
+   {
+    "show": "Mười tám, hai mươi bảy, ba mươi sáu — toàn là số trong bảng nhân chín.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đoán trước được luôn",
+    "phan": "giai"
+   },
+   {
+    "show": "Lấy hiệu hai chữ số rồi nhân chín. Số 52 có hiệu hai chữ số là ba, mà ba nhân chín bằng hai mươi bảy — đúng đáp số vừa tính.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: $52 - 25 = 27$, và mọi hiệu như thế đều trong bảng nhân 9.",
+    "phan": "dapso"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính $52 - 25$.",
+     "answerKey": {
+      "value": 27
+     },
+     "solutionNarrative": "Đặt tính rồi trừ: $52 - 25 = 27$.",
+     "hints": [
+      "Con đặt tính rồi trừ, viết thẳng cột.",
+      "Hàng đơn vị 2 không trừ được 5 thì phải mượn của hàng chục."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tính $31 - 13$.",
+     "answerKey": {
+      "value": 18
+     },
+     "solutionNarrative": "Đặt tính rồi trừ: $31 - 13 = 18$.",
+     "hints": [
+      "Con đặt tính rồi trừ như bài trên.",
+      "Hàng đơn vị 1 không trừ được 3 thì mượn của hàng chục."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Hai số 27 và 18 nằm trong bảng nhân mấy?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Cả hai đều trong bảng nhân 9.",
+     "hints": [
+      "Con đọc thuộc bảng nhân chín xem có gặp hai số ấy không.",
+      "Chín nhân hai, chín nhân ba — con thử đọc tiếp."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tính $42 - 24$.",
+     "answerKey": {
+      "value": 18
+     },
+     "solutionNarrative": "Đặt tính rồi trừ: $42 - 24 = 18$.",
+     "hints": [
+      "Đặt tính rồi trừ, nhớ mượn ở hàng chục.",
+      "Kết quả cũng là một số trong bảng nhân chín."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Tính $51 - 15$.",
+     "answerKey": {
+      "value": 36
+     },
+     "solutionNarrative": "Đặt tính rồi trừ: $51 - 15 = 36$.",
+     "hints": [
+      "Đặt tính rồi trừ, hàng đơn vị 1 phải mượn.",
+      "Kết quả cũng nằm trong bảng nhân chín."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Tính $93 - 39$.",
+     "answerKey": {
+      "value": 54
+     },
+     "solutionNarrative": "Đặt tính rồi trừ: $93 - 39 = 54$.",
+     "hints": [
+      "Đặt tính rồi trừ, hàng đơn vị 3 phải mượn của hàng chục.",
+      "Số này to hơn mấy bài trước, con tính cẩn thận."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Hiệu hai chữ số của số 52 bằng mấy, và 27 gấp mấy lần số ấy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hiệu hai chữ số",
+        "value": 3
+       },
+       {
+        "label": "gấp mấy lần",
+        "value": 9
+       }
+      ]
+     },
+     "solutionNarrative": "Hiệu hai chữ số: $5 - 2 = 3$. Mà $27 : 3 = 9$ nên gấp 9 lần.",
+     "hints": [
+      "Con lấy chữ số đứng trước trừ chữ số đứng sau.",
+      "Rồi lấy kết quả vừa trừ ở câu một chia cho con số ấy."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Số 71 đổi chỗ được 17. Hãy đoán trước hiệu bằng cách lấy hiệu hai chữ số nhân 9, rồi tính để kiểm.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "đoán trước",
+        "value": 54
+       },
+       {
+        "label": "tính ra",
+        "value": 54
+       }
+      ]
+     },
+     "solutionNarrative": "Hiệu hai chữ số là 6, mà $6  \\times  9 = 54$. Tính thật: $71 - 17 = 54$ — khớp.",
+     "hints": [
+      "Con lấy hiệu hai chữ số rồi nhân chín để đoán trước.",
+      "Rồi đặt tính trừ thật xem có khớp với con số vừa đoán không."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Hiệu của một số và số đổi chỗ luôn nằm trong bảng nhân 9.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Thử bao nhiêu cặp cũng thấy thế."
+   },
+   {
+    "id": "Q2",
+    "text": "Trừ hai số có hai chữ số thì trừ rời từng chữ số cho nhanh.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phải đặt tính thẳng cột rồi trừ, có khi phải mượn."
+   },
+   {
+    "id": "Q3",
+    "text": "Tính $52 - 25$.",
+    "format": "mcq",
+    "choices": [
+     "27",
+     "37",
+     "33",
+     "22"
+    ],
+    "answerKey": {
+     "choice": "27"
+    },
+    "solutionNarrative": "Đặt tính rồi trừ có mượn."
+   },
+   {
+    "id": "Q4",
+    "text": "Số 51 đổi chỗ được 15. Hiệu hai số ấy là",
+    "format": "mcq",
+    "choices": [
+     "36",
+     "46",
+     "44",
+     "4"
+    ],
+    "answerKey": {
+     "choice": "36"
+    },
+    "solutionNarrative": "Hiệu hai chữ số là 4, mà 4 nhân 9 bằng 36."
+   },
+   {
+    "id": "Q5",
+    "text": "Muốn đoán trước hiệu thì lấy hiệu hai chữ số nhân với 9.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, và tính lại bao giờ cũng khớp."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con thử năm sáu cặp rồi ghi các đáp số ra một cột. Con tự nhìn ra bảng nhân chín là thích lắm.",
+  "homeActivity": "Đây là bài đầu tiên con gặp một LUẬT do chính mình tìm ra. Bố mẹ đừng nói trước đáp án, để con thử đủ vài cặp đã.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B37_giang.mp4"
+ }
+}

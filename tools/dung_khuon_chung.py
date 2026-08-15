@@ -30,6 +30,27 @@ DAP_AN = os.path.join(GOC_KHO, 'data', 'lop2_dapan.json')
 RA_DK = os.path.join(GOC_KHO, 'web', 'public', 'content', 'chuong_trinh.json')
 
 
+# Khai đích danh mối nối cho những câu mà bài gốc đã tách. Khoá là (chương, số câu).
+KHAI_TAY_L2 = {
+    # ── chương 1 · Vương quốc Số: năm bài tách thành mười ──
+    (1, 1): {'ve': 'DL:KSN2.B34'},    # tách số thành tổng — không còn ở B01
+    (1, 5): {'ve': 'DL:KSN2.B35'},    # điền dấu lớn bé — so hai số
+    (1, 7): {'ve': 'DL:KSN2.B37'},    # tính số mới hơn số cũ bao nhiêu — hiệu
+    (1, 8): {'ve': 'DL:KSN2.B38'},    # ba thẻ có số 0
+    (1, 11): {'ve': 'DL:KSN2.B37'},   # đổi chỗ hơn 45 đơn vị — hiệu
+    (1, 12): {'ve': 'DL:KSN2.B38'},   # ba thẻ 5, 0, 5
+    # Câu 6 cũ hỏi lại đúng ý câu 2 (đều là thêm chữ số 0), trong khi bài XOÁ SỐ 0
+    # TẬN CÙNG không có câu nào hỏi tới. Viết lại câu 6 cho phủ bài ấy — vẫn giữ
+    # nguyên chuyện cửa hàng ghi nhầm giá, chỉ đổi chiều.
+    (1, 6): {'ve': 'DL:KSN2.B36',
+             'text': 'Một cửa hàng ghi giá 90 nghìn đồng nhưng viết sót mất chữ số '
+                     '0 ở cuối, thành 9 nghìn đồng. Giá bị viết rẻ đi bao nhiêu '
+                     'nghìn đồng, và số ghi sai nhỏ hơn số đúng mấy lần?',
+             'answer': 'Rẻ đi: 90 − 9 = 81 (nghìn đồng). Xoá một chữ số 0 ở cuối '
+                       'thì số nhỏ đi 10 lần.'},
+}
+
+
 def dung_on_tap(bai_cua_chuong, ten_bai):
     """8 ôn tập + 3 ải → kỳ sát hạch, đúng khuôn DCR_* của lớp 5.
 
@@ -68,17 +89,33 @@ def dung_on_tap(bai_cua_chuong, ten_bai):
         mac_dinh = bai_cua_chuong.get(d['so'], [None])[0]
         cau = []
         for c in d['cau']:
+            # ══ MỐI NỐI KHÔNG SUY TỪ SỐ BÀI CỦA SÁCH NỮA ══
+            #
+            # Bảng tự soi của sách ghi "Câu 5 → Bài 1", và trước đây mã bài suy
+            # thẳng từ con số ấy. Từ khi tách bài làm video thì hỏng: mã B01 vẫn
+            # còn, nhưng nay nó CHỈ dạy ba phòng, còn phần so sánh đã sang bài
+            # khác. Bé sai câu so sánh, bấm "ôn lại bài này", và được dẫn tới bài
+            # dạy đọc số.
+            #
+            # Cả hai đầu đều hợp lệ, chỉ chỗ nối là sai — không phép kiểm nào bắt
+            # được. Nên chỗ nào đổi thì khai ĐÍCH DANH ở đây. Cùng cách làm với
+            # `KHAI_TAY` bên `tools/ontap_lop4.py`.
+            khai = KHAI_TAY_L2.get((ch, c['so'])) or {}
             b = d['soi'].get(str(c['so'])) or d['soi'].get(c['so'])
-            if b:
+            if khai.get('ve'):
+                mic = khai['ve']
+            elif b:
                 mic = f'DL:KSN2.B{int(b):02d}'
             else:
                 mic = mac_dinh                    # ải không có bảng tự soi
                 chua_soi += 0 if ai else 1
             khoa = o_nhap.get(f"{ma}#C{c['so']}")
             cau.append({'id': f"REVITEM:KSN2.C{ch}.A{c['so']}", 'qno': c['so'],
-                        'star': c.get('muc', 1), 'text': c['text'],
-                        'answer': d['dapAn'].get(f"C{c['so']}", ''),
-                        'solutionNarrative': d['dapAn'].get(f"C{c['so']}", ''),
+                        'star': c.get('muc', 1),
+                        'text': khai.get('text') or c['text'],
+                        'answer': khai.get('answer') or d['dapAn'].get(f"C{c['so']}", ''),
+                        'solutionNarrative': (khai.get('answer')
+                                              or d['dapAn'].get(f"C{c['so']}", '')),
                         **({'answerKey': khoa} if khoa else {}),
                         'diagnosesMicro': mic,
                         # Tên bài viết đủ chữ: bé lớp 2 không biết "micro" là gì,

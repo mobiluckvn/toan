@@ -3,51 +3,38 @@
  "id": "DL:KSN2.B03",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 3 · TRÒ CHƠI ĐỔI CHỖ CHỮ SỐ",
+ "title": "Bài 6 · ĐỔI CHỖ HAI CHỮ SỐ — SỐ NÀO LỚN HƠN",
  "durationMinutes": 10,
- "so": 3,
+ "so": 6,
  "chuong": 1,
  "tenChuong": "Vương quốc Số",
- "dangGoc": "SỐ 1.4 — Đổi chỗ / viết ngược chữ số (mầm non của bí mật \"nhịp 9\")",
+ "dangGoc": "SỐ 1.4 — Đổi chỗ hai chữ số của số có hai chữ số; số nào có thẻ to ở phòng chục thì lớn hơn.",
  "skills": {
   "bktUnit": "CHUONG:1@G2",
   "primary": []
  },
  "series": {
-  "order": 3,
-  "prev": "DL:KSN2.B02",
-  "next": "DL:KSN2.B04"
+  "order": 6,
+  "prev": "DL:KSN2.B36",
+  "next": "DL:KSN2.B37"
  },
  "objective": {
   "id": "O1",
-  "text": "Tạo được số mới bằng cách đổi chỗ hai chữ số của một số có 2 chữ số. So sánh được số mới với số cũ và giải thích bằng \"phòng chục\". Tính được số mới hơn (hoặc kém) số cũ bao nhiêu đơn vị.",
-  "kidText": "Số 38 đổi chỗ hai chữ số thì thành 83. Con thử đoán số mới hơn số cũ bao nhiêu nhé!",
+  "text": "Đổi chỗ hai chữ số của một số có hai chữ số. Biết số nào có chữ số to hơn ở phòng chục thì lớn hơn. Biết chữ số 0 không được lên đứng đầu.",
+  "kidText": "Cô tráo hai chữ số của 25 thành 52. Con đoán xem số nào lớn hơn nào?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Nhìn vào ngôi nhà của hai số: trong 25, chữ số 2 ở phòng CHỤC (đáng giá 20). Trong 52, chữ số 5 chiếm phòng CHỤC (đáng giá 50). Đổi chỗ thẻ tức là đổi phòng ở — mà phòng chục thì \"quyền lực\" hơn phòng đơn vị nhiều!"
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Số mới hơn số cũ bao nhiêu? Làm phép trừ là biết: $52 - 25 = 27$ (đơn vị)."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Giờ con làm nhà ảo thuật thử vài cặp khác xem: $31 - 13 = 18$. $42 - 24 = 18$. $51 - 15 = 36$. $93 - 39 = 54$. Con nhận ra điều gì thú vị không? 18, 27, 36, 54... đều là các số trong BẢNG NHÂN 9! Hiệu của hai số đổi chỗ luôn \"nhảy theo nhịp 9\". Một bí mật mà lên lớp 4 con sẽ được giải thích tường tận."
-   }
-  ],
-  "mantra": "Muốn biết số nào lớn hơn sau khi đổi chỗ, chỉ cần hỏi: \"thẻ TO đang ở phòng CHỤC của số nào?\". Số đó thắng!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem tuyên bố: \"Tớ có thẻ số 33. Tớ sẽ đổi chỗ hai chữ số để được số TO HƠN, các cậu chờ xem!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý: Đổi chỗ hai chữ số của 33 thì được số nào? Có gì thay đổi không? Vì sao? Câu hỏi thêm: những số nào có 2 chữ số mà đổi chỗ xong vẫn là chính mình? Con liệt kê hết ra nhé (có 9 số như vậy đấy)."
+    "wrong": "Có bạn đổi chỗ hai chữ số của 25 rồi bảo hai số bằng nhau, vì vẫn là hai chữ số ấy chứ có mất đi đâu.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con thử đếm xem 25 và 52 cách nhau bao nhiêu. Gợi ý 2: Thẻ số 5 lúc ở phòng đơn vị thì đáng mấy, lúc lên phòng chục thì đáng mấy? Chữa: hai thẻ vẫn thế nhưng chúng đổi phòng, mà phòng khác nhau thì đáng khác nhau. Nên hai số khác hẳn."
    }
   ]
  },
@@ -55,60 +42,47 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Cho số 38. Đổi chỗ hai chữ số của nó ta được số mới. Hỏi số mới hơn số cũ bao nhiêu đơn vị?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
     "kind": "trap",
-    "narration": "Su Kem tuyên bố: \"Tớ có thẻ số 33. Tớ sẽ đổi chỗ hai chữ số để được số TO HƠN, các cậu chờ xem!\"",
+    "narration": "Có bạn đổi chỗ hai chữ số của 25 rồi bảo hai số bằng nhau, vì vẫn là hai chữ số ấy chứ có mất đi đâu.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Cho số 38. Đổi chỗ hai chữ số của nó ta được số mới. Hỏi số mới hơn số cũ bao nhiêu đơn vị?",
+  "problem": "Đổi chỗ hai chữ số của số 25 thì được số nào, và số nào lớn hơn?",
   "steps": [
    {
-    "show": "Đổi chỗ hai chữ số của số 38 ta được số 83.",
+    "show": "Đổi chỗ là đổi phòng ở",
     "phan": "giai"
    },
    {
-    "show": "Vì 8 chục lớn hơn 3 chục nên $83 > 38$.",
+    "show": "Trong số 25, chữ số 2 ngồi phòng chục nên đáng 20. Chữ số 5 ngồi phòng đơn vị nên đáng 5.",
     "phan": "giai"
    },
    {
-    "show": "Số mới hơn số cũ là: $83 - 38 = 45$ (đơn vị)",
+    "show": "Đổi chỗ hai thẻ thì được số 52. Nay chữ số 5 chiếm phòng chục, đáng 50.",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: 45 đơn vị. (45 cũng thuộc bảng nhân 9 đấy: $9  \\times  5 = 45$!)",
+    "show": "Số nào lớn hơn",
+    "phan": "giai"
+   },
+   {
+    "show": "Phòng chục quyền lực hơn, mà thẻ to hơn đang ở phòng chục của 52.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: được số 52, và 52 lớn hơn 25.",
     "phan": "dapso"
+   },
+   {
+    "show": "Có một chỗ phải cẩn thận",
+    "phan": "ghichu"
+   },
+   {
+    "show": "Số 50 đổi chỗ thì chữ số 0 lên đứng đầu. Nhưng chữ số 0 không được đứng đầu nên số ấy không còn là số có hai chữ số nữa.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -117,53 +91,130 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Đổi chỗ hai chữ số của mỗi số: 14 → ?; 27 → ?; 50 → ? (cẩn thận số cuối nhé!)",
+     "text": "Đổi chỗ hai chữ số của số 25 thì được số nào?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "14 →",
-        "value": 41
-       },
-       {
-        "label": "27 →",
-        "value": 72
-       },
-       {
-        "label": "50 →",
-        "options": [
-         "không lập được",
-         "05"
-        ],
-        "value": "không lập được"
-       }
-      ]
+      "value": 52
      },
-     "solutionNarrative": "41; 72; 05 không phải số có 2 chữ số → số 50 đổi chỗ không tạo được số 2 chữ số mới hợp lệ (bẫy nhỏ để con nhớ luật số 0!)",
+     "solutionNarrative": "Hai thẻ đổi phòng cho nhau, được số 52.",
      "hints": [
-      "Đổi chỗ là hai thẻ đổi phòng cho nhau.",
-      "Thẻ 0 mà leo lên đứng đầu thì có còn là số hai chữ số?"
+      "Con đổi chỗ hai thẻ cho nhau: thẻ đứng trước ra sau, thẻ sau ra trước.",
+      "Chữ số 5 lên phòng chục, chữ số 2 xuống phòng đơn vị."
      ]
     },
     {
      "id": "C2",
-     "text": "Trong mỗi cặp, số nào lớn hơn: 36 và 63? 81 và 18? Giải thích bằng phòng chục.",
-     "solutionNarrative": "$63 > 36$ (6 chục > 3 chục); $81 > 18$",
+     "text": "Trong hai số 25 và 52, số nào lớn hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lớn hơn",
+        "options": [
+         "52",
+         "25"
+        ],
+        "value": "52"
+       }
+      ]
+     },
+     "solutionNarrative": "Số 52 lớn hơn, vì thẻ to hơn đang ở phòng chục của nó.",
      "hints": [
-      "Thẻ to nằm ở phòng chục của số nào thì số ấy thắng.",
-      "So phòng chục trước, đừng nhìn phòng đơn vị."
+      "Con nhìn xem thẻ to hơn đang ở phòng chục của số nào.",
+      "Phòng chục quyền lực hơn phòng đơn vị."
      ]
     },
     {
      "id": "C3",
-     "text": "Số 45 đổi chỗ được số mới. Số mới lớn hơn hay bé hơn 45?",
+     "text": "Trong số 52, chữ số nào đang ngồi phòng chục?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Chữ số 5 ngồi phòng chục nên nó đáng 50.",
+     "hints": [
+      "Con chỉ tay vào chữ số đứng đầu của số mới.",
+      "Chữ số ấy đang chiếm phòng chục nên nó đáng năm mươi."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Đổi chỗ hai chữ số của số 14 thì được số nào?",
+     "answerKey": {
+      "value": 41
+     },
+     "solutionNarrative": "Được số 41.",
+     "hints": [
+      "Con đổi chỗ hai thẻ cho nhau.",
+      "Thẻ đứng sau lên trước, thẻ đứng trước xuống sau."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Đổi chỗ hai chữ số của số 27 thì được số nào?",
+     "answerKey": {
+      "value": 72
+     },
+     "solutionNarrative": "Được số 72.",
+     "hints": [
+      "Số này cũng đổi chỗ như mấy bài trên thôi.",
+      "Thẻ 7 lên phòng chục, thẻ 2 xuống phòng đơn vị."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Đổi chỗ hai chữ số của số 50 thì chữ số 0 lên đứng đầu. Số ấy còn là số có hai chữ số không?",
      "answerKey": {
       "parts": [
        {
-        "label": "số mới là",
-        "value": 54
+        "label": "còn là số hai chữ số không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Không. Chữ số 0 không được đứng đầu, nên số ấy chỉ còn là số 5.",
+     "hints": [
+      "Con thử viết ra xem đổi chỗ rồi thì chữ số nào lên đứng đầu.",
+      "Chữ số 0 mà đứng đầu thì số ấy còn mấy chữ số?"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Trong hai số 38 và 83, số nào lớn hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lớn hơn",
+        "options": [
+         "83",
+         "38"
+        ],
+        "value": "83"
+       }
+      ]
+     },
+     "solutionNarrative": "Số 83 lớn hơn, vì thẻ 8 đang ở phòng chục của nó.",
+     "hints": [
+      "Con nhìn thẻ nào đang ở phòng chục của mỗi số.",
+      "Thẻ 8 ở phòng chục thì số ấy có tám chục."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Số 46 đổi chỗ hai chữ số được số nào, và số mới lớn hơn hay bé hơn số cũ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số mới",
+        "value": 64
        },
        {
-        "label": "so với 45",
+        "label": "so với số cũ",
         "options": [
          "lớn hơn",
          "bé hơn"
@@ -172,84 +223,10 @@
        }
       ]
      },
-     "solutionNarrative": "$54 > 45$ → số mới lớn hơn",
+     "solutionNarrative": "Được số 64. Thẻ 6 lên phòng chục nên số mới lớn hơn số cũ.",
      "hints": [
-      "Viết số mới ra đã rồi hãy so.",
-      "Chữ số nào đang leo lên phòng chục?"
-     ]
-    }
-   ],
-   "standard": [
-    {
-     "id": "C4",
-     "text": "Số 26 đổi chỗ hai chữ số được số mới. Tính số mới hơn số cũ bao nhiêu đơn vị.",
-     "answerKey": {
-      "value": 36
-     },
-     "solutionNarrative": "$62 - 26 = 36$",
-     "hints": [
-      "Đổi chỗ xong mới đặt phép trừ.",
-      "Hơn bao nhiêu = số mới trừ số cũ."
-     ]
-    },
-    {
-     "id": "C5",
-     "text": "Số 71 đổi chỗ hai chữ số được số mới. Số mới KÉM số cũ bao nhiêu đơn vị?",
-     "answerKey": {
-      "value": 54
-     },
-     "solutionNarrative": "71 → 17; kém $71 - 17 = 54$",
-     "hints": [
-      "Lần này thẻ to tụt xuống — số mới bé đi.",
-      "Kém bao nhiêu = số cũ trừ số mới."
-     ]
-    },
-    {
-     "id": "C6",
-     "text": "Tính hiệu \"số lớn trừ số bé\" của các cặp đổi chỗ: 13 và 31; 24 và 42; 57 và 75. Các hiệu tìm được có cùng nằm trong bảng nhân 9 không?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "31 − 13",
-        "value": 18
-       },
-       {
-        "label": "42 − 24",
-        "value": 18
-       },
-       {
-        "label": "75 − 57",
-        "value": 18
-       }
-      ]
-     },
-     "solutionNarrative": "$31 - 13 = 18$; $42 - 24 = 18$; $75 - 57 = 18$ — cả ba đều bằng 18, nằm trong bảng nhân 9 ($9  \\times  2$)",
-     "hints": [
-      "Mỗi cặp lấy số lớn trừ số bé.",
-      "Ba hiệu ra rồi thì đem soi bảng nhân 9."
-     ]
-    }
-   ],
-   "challenge": [
-    {
-     "id": "C7",
-     "text": "Tìm một số có 2 chữ số sao cho khi đổi chỗ hai chữ số, số mới hơn số cũ đúng 27 đơn vị. (Mẹo: thử các số mà chữ số đơn vị hơn chữ số chục 3, ví dụ 14, 25, 36... — vì sao lại thế nhỉ?)",
-     "solutionNarrative": "thử 14 → 41: $41 - 14 = 27$ ✓. (25 → 52 và 36 → 63... cũng cho hiệu 27 — mọi số mà đơn vị hơn chục đúng 3.)",
-     "hints": [
-      "Đề mách sẵn: chữ số đơn vị hơn chữ số chục 3.",
-      "Thử số nhỏ nhất theo mẹo ấy rồi trừ để kiểm."
-     ]
-    },
-    {
-     "id": "C8",
-     "text": "Trí Long nghĩ ra một số có 2 chữ số: đổi chỗ thì số KHÔNG thay đổi, và tổng hai chữ số bằng 8. Số đó là số nào?",
-     "answerKey": {
-      "value": 44
-     },
-     "solutionNarrative": "đổi chỗ không đổi → hai chữ số giống nhau; tổng bằng 8 → $4 + 4$ → số 44",
-     "hints": [
-      "Đổi chỗ mà số đứng im thì hai thẻ phải thế nào?",
-      "Hai chữ số giống nhau, cộng lại bằng 8."
+      "Con đổi chỗ hai thẻ trước đã.",
+      "Rồi nhìn xem thẻ to hơn đang ở phòng chục của số nào."
      ]
     }
    ]
@@ -260,91 +237,69 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Đổi chỗ hai chữ số của 47 ta được 74.",
+    "text": "Đổi chỗ hai chữ số thì hai số vẫn bằng nhau.",
     "format": "tf",
     "answerKey": {
-     "value": true
+     "value": false
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Sai. Hai thẻ đổi phòng, mà phòng khác nhau thì đáng khác nhau."
    },
    {
     "id": "Q2",
-    "text": "74 lớn hơn 47 vì 7 chục nhiều hơn 4 chục.",
+    "text": "Số nào có chữ số to hơn ở phòng chục thì lớn hơn.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng. Phòng chục quyền lực hơn phòng đơn vị."
    },
    {
     "id": "Q3",
-    "text": "Đổi chỗ hai chữ số của 19 được:",
+    "text": "Đổi chỗ hai chữ số của số 27 thì được",
     "format": "mcq",
     "choices": [
-     "A. 90",
-     "B. 91",
-     "C. 19"
+     "72",
+     "27",
+     "270",
+     "7"
     ],
     "answerKey": {
-     "choice": "B. 91"
+     "choice": "72"
     },
-    "solutionNarrative": "Đáp án: B. 91"
+    "solutionNarrative": "Hai thẻ đổi phòng cho nhau."
    },
    {
     "id": "Q4",
-    "text": "Số 66 đổi chỗ hai chữ số được số:",
+    "text": "Đổi chỗ hai chữ số của số 50 thì",
     "format": "mcq",
     "choices": [
-     "A. lớn hơn 66",
-     "B. bé hơn 66",
-     "C. vẫn là 66"
+     "chữ số 0 lên đầu nên không còn là số có hai chữ số",
+     "được số 05 lớn hơn 50",
+     "số không đổi"
     ],
     "answerKey": {
-     "choice": "C. vẫn là 66"
+     "choice": "chữ số 0 lên đầu nên không còn là số có hai chữ số"
     },
-    "solutionNarrative": "Đáp án: C. vẫn là 66"
+    "solutionNarrative": "Chữ số 0 không được đứng đầu."
    },
    {
     "id": "Q5",
-    "text": "$31 - 13$ = ?",
-    "format": "mcq",
-    "choices": [
-     "A. 18",
-     "B. 28",
-     "C. 22"
-    ],
+    "text": "Trong hai số 38 và 83 thì 83 lớn hơn.",
+    "format": "tf",
     "answerKey": {
-     "choice": "A. 18"
+     "value": true
     },
-    "solutionNarrative": "Đáp án: A. 18"
+    "solutionNarrative": "Đúng, vì thẻ 8 đang ở phòng chục của 83."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Làm bộ thẻ số 0-9 bằng bìa. Chơi \"ảo thuật đổi chỗ\": con rút 2 thẻ, ghép số, đổi chỗ, rồi đố bố mẹ số nào lớn hơn — cho con làm người ra đề.",
-  "homeActivity": "Với con thích khám phá: cùng lập bảng các hiệu (31−13, 42−24...) rồi tô màu các số ấy trên bảng cửu chương 9 — trẻ \"ồ\" lên khi thấy trùng khớp.",
-  "watchFor": "NÊN: hỏi \"vì sao con biết số này lớn hơn?\". KHÔNG NÊN: giải thích bằng công thức 9 × (hiệu hai chữ số) — lớp 2 chỉ cần thấy quy luật đẹp, chứng minh để dành lớp 4."
+  "onComplete": "Viết hai chữ số lên hai mẩu giấy rồi cho con tráo qua tráo lại, mỗi lần đọc to số vừa được.",
+  "homeActivity": "Trò hay: bố mẹ đọc một số, con phải nói ngay số đổi chỗ và số nào lớn hơn.",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_CAN01",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_CAN01.png",
-   "caption": "52 nặng hơn 25 nên bập bênh nghiêng về 52",
-   "sha256_16": "478e1139925fef13",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_DAY11",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L2H_DAY11.png",
-   "caption": "Cùng hai chữ số 2 và 5, đổi chỗ là ra hai số khác hẳn",
-   "sha256_16": "f9994c514b0dbeed",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B03_giang.mp4"
+ }
 }

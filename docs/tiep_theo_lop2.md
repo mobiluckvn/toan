@@ -108,3 +108,62 @@ gần như không đổi theo lời văn).
 |---|---|
 | `data/lop2/` | bản GỐC giữ 8 mục ①…⑧ của sách, để đối chiếu sách giấy |
 | `web/public/content/lop2/` | bản KHUÔN CHUNG với lớp 5, app đọc bản này — **sửa tay ở đây là mất** |
+
+---
+
+## Đợt 1 chuyển video · chương 1 · Vương quốc Số
+
+Năm bài chữ thành **mười bài video**. Quyển lớp 2 nay **38 bài**.
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 1 | B01 | ba phòng của một số |
+| 2 | B34 *(mới)* | mỗi chữ số đáng bao nhiêu · tách thành tổng |
+| 3 | B35 *(mới)* | so hai số — so phòng bên trái trước |
+| 4 | B02 | thêm số 0 vào bên phải — to gấp mười |
+| 5 | B36 *(mới)* | xoá số 0 tận cùng — nhỏ đi mười lần |
+| 6 | B03 | đổi chỗ hai chữ số — số nào lớn hơn |
+| 7 | B37 *(mới)* | hiệu hai số đổi chỗ — toàn số bảng nhân 9 |
+| 8 | B04 | xếp thẻ: số lớn nhất và bé nhất |
+| 9 | B38 *(mới)* | khi có thẻ số 0 |
+| 10 | B05 | tìm đủ mọi số — đi tuần tra có thứ tự |
+
+### Bác chốt: video KHÔNG nhân vật, giống lớp 4
+
+Quyển lớp 2 lấy nhân vật làm khung (phụ đề kệ sách, tên chương), nhưng video đi
+thẳng vào toán. Nên bốn mục còn chữ của bài cũng bỏ tên nhân vật luôn — để bé xem
+video xong đọc tiếp không thấy đổi giọng. Có phép soi canh: bài nào còn chữ
+"Trí Long" hay "Su Kem" là bộ soạn dừng ngay.
+
+### Ba chỗ lớp 2 khác lớp 4 — phải theo, đừng bê nguyên khuôn lớp 4
+
+1. **Tám mục**, không phải mười (không có dựng mô hình và lắp - soi);
+2. **Số câu luyện tập không cố định** — 18 bài có 8 câu, 13 bài có 9, 2 bài có 10.
+   Ép về một con số là phải bịa thêm câu hoặc cắt mất câu của sách;
+3. **LUẬT Ô NHẬP SỐ 1** — quyển đọc chậm KHÔNG được có ô gõ chữ. Đáp không phải con
+   số thì bắt buộc cho bấm nút. `khuon_bai_lop2.soi_bai` canh, và đã phá thử.
+
+### Hạ tầng phải làm trước
+
+* **lối C** — `data/lop2/thu_tu.json`. Nửa phía màn hình hoá ra đã có sẵn:
+  `noiDung.js` vốn đếm số bài từ vị trí cho mọi quyển;
+* **trường `video`** trong `dung_khuon_chung.py`;
+* **`them_goi_y.py` và bộ dựng video** mở cho nhiều quyển (`--quyen lop2`).
+
+### Vẫn đúng lớp lỗi cũ
+
+**14 hình mồ côi** neo vào mục nay đã rỗng — lần thứ tư liên tiếp, luôn cùng một chỗ.
+
+**Kỳ sát hạch trỏ sai bài.** Lớp 2 khai mối nối bằng `diagnosesMicro`, và bộ dựng
+suy mã bài từ SỐ BÀI CỦA SÁCH. Sau khi tách, câu "điền dấu lớn bé" vẫn trỏ về B01 —
+mà B01 nay chỉ dạy ba phòng. Đã khai đích danh sáu mối nối ở `KHAI_TAY_L2`, và viết
+lại câu 6 (hỏi trùng ý câu 2) cho phủ bài xoá số 0.
+
+Cổng `on_tap_noi_bai.test.mjs` nay soi **cả hai quyển** — nó đọc được cả `veBai` của
+lớp 4 lẫn `diagnosesMicro` của lớp 2. Đã phá thử ba kiểu trên lớp 2, cả ba đều kêu.
+
+### Còn lại của quyển
+
+Bảy chương, **28 bài chữ**: bé là vua đếm (3) · dãy số kỳ diệu (3) · siêu nhân tính
+nhanh (4) · chuyện toán lời văn (6) · thám tử tí hon (4) · vương quốc hình học (5) ·
+toán trong cuộc sống (3).

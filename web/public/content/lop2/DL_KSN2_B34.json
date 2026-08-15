@@ -1,0 +1,317 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B34",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 2 · MỖI CHỮ SỐ ĐÁNG BAO NHIÊU — TÁCH SỐ THÀNH TỔNG",
+ "durationMinutes": 10,
+ "so": 2,
+ "chuong": 1,
+ "tenChuong": "Vương quốc Số",
+ "dangGoc": "SỐ 1.1 — Giá trị của chữ số theo phòng; tách số thành tổng các phòng.",
+ "skills": {
+  "bktUnit": "CHUONG:1@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 2,
+  "prev": "DL:KSN2.B01",
+  "next": "DL:KSN2.B35"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết mỗi chữ số đáng bao nhiêu là do phòng nó ngồi. Tách một số thành tổng của ba phòng. Biết phòng trống thì viết chữ số 0 giữ chỗ, và bỏ nó khỏi tổng.",
+  "kidText": "Cùng là chữ số 2 mà chỗ này đáng 2, chỗ kia đáng 200. Vì sao lạ thế con nhỉ?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn tách số 245 thành $2 + 4 + 5$ rồi bảo bằng 11.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con cộng 2 với 4 với 5 xem được bao nhiêu. Có ra lại số 245 không? Gợi ý 2: Chữ số 2 đang ngồi phòng nào, và ngồi phòng ấy thì nó đáng bao nhiêu? Chữa: tách số là tách theo cái mỗi chữ số ĐÁNG, không phải tách rời từng chữ số. Phải viết $200 + 40 + 5$."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn tách số 245 thành $2 + 4 + 5$ rồi bảo bằng 11.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Trong số 245, mỗi chữ số đáng bao nhiêu? Tách số ấy thành tổng.",
+  "steps": [
+   {
+    "show": "Đáng bao nhiêu là do phòng",
+    "phan": "giai"
+   },
+   {
+    "show": "Chữ số 2 ngồi phòng trăm nên nó đáng 200. Chữ số 4 ngồi phòng chục nên đáng 40. Chữ số 5 ngồi phòng đơn vị nên đáng 5.",
+    "phan": "giai"
+   },
+   {
+    "show": "Cùng là chữ số, ngồi phòng khác nhau thì đáng khác nhau.",
+    "phan": "giai"
+   },
+   {
+    "show": "Tách thành tổng",
+    "phan": "giai"
+   },
+   {
+    "show": "Mở cửa từng phòng rồi cộng lại: $200 + 40 + 5 = 245$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: $245 = 200 + 40 + 5$.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Khi có phòng trống",
+    "phan": "ghichu"
+   },
+   {
+    "show": "Số 507 có phòng chục trống. Tách ra là $500 + 0 + 7$, viết gọn thành $500 + 7$.",
+    "phan": "ghichu"
+   },
+   {
+    "show": "Nhưng khi VIẾT SỐ thì chữ số 0 vẫn phải có, nếu không thì còn lại 57 — số khác hẳn.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Trong số 245, chữ số 2 đáng bao nhiêu?",
+     "answerKey": {
+      "value": 200
+     },
+     "solutionNarrative": "Chữ số 2 ngồi phòng trăm nên nó đáng 200.",
+     "hints": [
+      "Con xem chữ số ấy đang ngồi phòng nào đã.",
+      "Ngồi phòng trăm thì nó đáng mấy trăm?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Trong số 245, chữ số 4 đáng bao nhiêu?",
+     "answerKey": {
+      "value": 40
+     },
+     "solutionNarrative": "Chữ số 4 ngồi phòng chục nên nó đáng 40.",
+     "hints": [
+      "Chữ số này ngồi ở phòng giữa.",
+      "Ngồi phòng chục thì nó đáng mấy chục?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Trong số 245, chữ số 5 đáng bao nhiêu?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Chữ số 5 ngồi phòng đơn vị nên nó đáng 5.",
+     "hints": [
+      "Chữ số này ngồi ngoài cùng bên phải.",
+      "Ngồi phòng đơn vị thì nó chỉ đáng đúng chính nó."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tách số 245 thành tổng của ba phòng.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phòng trăm",
+        "value": 200
+       },
+       {
+        "label": "phòng chục",
+        "value": 40
+       },
+       {
+        "label": "phòng đơn vị",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Mở cửa từng phòng: $200 + 40 + 5$.",
+     "hints": [
+      "Con mở cửa từng phòng rồi viết ra cái mỗi chữ số đáng.",
+      "Ba số hạng ấy cộng lại phải ra đúng số ban đầu."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Tách số 368 thành tổng của ba phòng.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phòng trăm",
+        "value": 300
+       },
+       {
+        "label": "phòng chục",
+        "value": 60
+       },
+       {
+        "label": "phòng đơn vị",
+        "value": 8
+       }
+      ]
+     },
+     "solutionNarrative": "Mở cửa từng phòng: $300 + 60 + 8$.",
+     "hints": [
+      "Con làm y như bài trên, mở cửa từng phòng một.",
+      "Chữ số 3 đáng ba trăm, rồi tới hai phòng sau."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Trong số 507, chữ số 5 đáng bao nhiêu và chữ số 7 đáng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số 5 đáng",
+        "value": 500
+       },
+       {
+        "label": "chữ số 7 đáng",
+        "value": 7
+       }
+      ]
+     },
+     "solutionNarrative": "Chữ số 5 ngồi phòng trăm nên đáng 500; chữ số 7 ngồi phòng đơn vị nên đáng 7.",
+     "hints": [
+      "Con tìm chỗ ngồi của từng chữ số trước đã.",
+      "Một chữ số ở phòng trăm, một chữ số ở phòng đơn vị."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Số nào tách ra được $600 + 20 + 9$?",
+     "answerKey": {
+      "value": 629
+     },
+     "solutionNarrative": "Ghép ba phòng lại được số 629.",
+     "hints": [
+      "Ba số hạng ấy chính là ba phòng của số cần tìm.",
+      "Con ghép chữ số của từng phòng lại thành một số."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Trong số 444, ba chữ số 4 lần lượt đáng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số đứng đầu",
+        "value": 400
+       },
+       {
+        "label": "chữ số đứng giữa",
+        "value": 40
+       },
+       {
+        "label": "chữ số đứng cuối",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Từ trái sang: 400, rồi 40, rồi 4. Cùng chữ số mà ngồi khác phòng thì đáng khác nhau.",
+     "hints": [
+      "Ba chữ số giống hệt nhau nhưng ngồi ba phòng khác nhau.",
+      "Từ trái sang: phòng trăm, phòng chục, rồi phòng đơn vị."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Chữ số 2 trong số 245 đáng 200.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, vì nó đang ngồi phòng trăm."
+   },
+   {
+    "id": "Q2",
+    "text": "Tách số 245 thành tổng là viết 2 cộng 4 cộng 5.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phải tách theo cái mỗi chữ số đáng: $200 + 40 + 5$."
+   },
+   {
+    "id": "Q3",
+    "text": "Chữ số 6 trong số 368 đáng bao nhiêu?",
+    "format": "mcq",
+    "choices": [
+     "60",
+     "6",
+     "600",
+     "68"
+    ],
+    "answerKey": {
+     "choice": "60"
+    },
+    "solutionNarrative": "Chữ số 6 ngồi phòng chục nên đáng 60."
+   },
+   {
+    "id": "Q4",
+    "text": "Số 507 tách thành tổng là",
+    "format": "mcq",
+    "choices": [
+     "500 + 7",
+     "5 + 0 + 7",
+     "50 + 7"
+    ],
+    "answerKey": {
+     "choice": "500 + 7"
+    },
+    "solutionNarrative": "Phòng chục trống nên không có số hạng cho nó."
+   },
+   {
+    "id": "Q5",
+    "text": "Cùng một chữ số mà ngồi phòng khác nhau thì đáng khác nhau.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Trong số 444, ba chữ số 4 đáng 400, 40 và 4."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Dùng tiền thật cho con xếp: tờ 200, tờ 40 thì lấy bốn tờ 10, rồi 5 đồng lẻ. Xếp xong là con thấy phép tách bằng mắt.",
+  "homeActivity": "Con hay quên chữ số 0 giữ chỗ. Bố mẹ thử che nó đi rồi hỏi \"còn số mấy?\" — con sẽ thấy ngay vì sao không bỏ được.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B34_giang.mp4"
+ }
+}

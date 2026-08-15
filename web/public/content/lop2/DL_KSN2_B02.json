@@ -3,51 +3,38 @@
  "id": "DL:KSN2.B02",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 2 · CHÚ SỐ 0 DIỆU KỲ",
+ "title": "Bài 4 · THÊM SỐ 0 VÀO BÊN PHẢI — TO GẤP MƯỜI",
  "durationMinutes": 10,
- "so": 2,
+ "so": 4,
  "chuong": 1,
  "tenChuong": "Vương quốc Số",
- "dangGoc": "SỐ 1.2 + 1.3 — Thêm / xóa chữ số 0 (tiền thân bài toán thêm - xóa chữ số)",
+ "dangGoc": "SỐ 1.2 — Thêm chữ số 0 vào bên phải: mọi chữ số dọn sang phòng bên trái.",
  "skills": {
   "bktUnit": "CHUONG:1@G2",
   "primary": []
  },
  "series": {
-  "order": 2,
-  "prev": "DL:KSN2.B01",
-  "next": "DL:KSN2.B03"
+  "order": 4,
+  "prev": "DL:KSN2.B35",
+  "next": "DL:KSN2.B36"
  },
  "objective": {
   "id": "O1",
-  "text": "Biết: viết thêm số 0 vào bên phải một số thì số đó lớn gấp 10 lần. Biết: xóa số 0 ở tận cùng thì số giảm đi 10 lần. Giải thích được điều kỳ diệu ấy bằng \"hạt đơn vị biến thành thanh chục\".",
-  "kidText": "Su Kem viết thêm một chữ số 0 vào bên phải số 12. Con đoán xem số mới to lên bao nhiêu?",
+  "text": "Biết thêm chữ số 0 vào bên phải thì số to gấp mười lần. Nói được vì sao: mọi chữ số dọn sang phòng bên trái một bậc. Thêm được chữ số 0 cho số có một và hai chữ số.",
+  "kidText": "Số 3 thêm một chữ số 0 thì thành 30. Con đoán xem nó to lên bao nhiêu lần?",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Vì sao 3 thêm số 0 thành 30 — lớn gấp 10 lần? Vì khi số 0 chen vào phòng đơn vị, chữ số 3 bị đẩy sang phòng chục: mỗi hạt đơn vị lớn lên thành một thanh chục!"
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Con có thể tưởng tượng có hai cỗ máy: máy × 10 (thêm số 0) và máy : 10 (xóa số 0 tận cùng). Chúng là hai chiều xuôi - ngược của nhau:"
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Thử với số có 2 chữ số: 12 thêm số 0 thành 120 (12 chục!); 45 thành 450. Ngược lại 70 xóa số 0 còn 7; 250 xóa số 0 còn 25. Chú ý quan trọng: phép \"xóa thần kỳ\" chỉ đúng với số 0 ở TẬN CÙNG (phòng đơn vị) thôi nhé!"
-   }
-  ],
-  "mantra": "Thêm 0 bên phải = cả số dọn nhà sang trái một phòng (to gấp 10). Xóa 0 tận cùng = dọn về bên phải một phòng (nhỏ đi 10 lần).",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem khoe: \"40 xóa số 0 còn 4 đúng không? Vậy số 404 tớ xóa số 0 đi là còn 44!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý: Số 0 trong 404 có đứng ở tận cùng không? Nó đang giữ chỗ ở phòng nào? Nếu xóa nó đi, chữ số 4 phòng trăm bị tụt xuống phòng chục. 404 (bốn trăm linh tư) biến thành 44 (bốn mươi tư), hai số khác nhau một trời một vực! → Con giải thích cho Su Kem: khi nào xóa số 0 mới là phép \": 10\" thần kỳ?"
+    "wrong": "Có bạn thêm chữ số 0 vào bên phải số 3 rồi bảo số mới hơn số cũ đúng 3 đơn vị, vì chỉ thêm có một chữ số 0.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con đếm xem từ 3 tới 30 phải đi qua bao nhiêu số. Gợi ý 2: Chữ số 3 lúc đầu ngồi phòng nào, sau khi thêm thì nó ngồi phòng nào? Chữa: chữ số 0 tuy không đáng gì, nhưng nó ĐẨY chữ số 3 sang phòng bên trái. Số mới to gấp mười chứ không chỉ hơn vài đơn vị."
    }
   ]
  },
@@ -55,59 +42,50 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Su Kem mở quán nước chanh trước cổng thành. Viết thêm một chữ số 0 vào bên phải số 12. Hỏi số mới hơn số cũ bao nhiêu đơn vị?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
     "kind": "trap",
-    "narration": "Su Kem khoe: \"40 xóa số 0 còn 4 đúng không? Vậy số 404 tớ xóa số 0 đi là còn 44!\"",
+    "narration": "Có bạn thêm chữ số 0 vào bên phải số 3 rồi bảo số mới hơn số cũ đúng 3 đơn vị, vì chỉ thêm có một chữ số 0.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Viết thêm một chữ số 0 vào bên phải số 12. Hỏi số mới hơn số cũ bao nhiêu đơn vị?",
+  "problem": "Thêm chữ số 0 vào bên phải số 3 thì được số nào, và số mới to gấp mấy lần số cũ?",
   "steps": [
    {
-    "show": "Viết thêm chữ số 0 vào bên phải số 12 ta được số 120.",
+    "show": "Thêm vào thì được số nào",
     "phan": "giai"
    },
    {
-    "show": "Số mới hơn số cũ là: $120 - 12 = 108$ (đơn vị)",
+    "show": "Viết số 3 rồi đặt chữ số 0 vào ngay sau, được số 30.",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: 108 đơn vị.",
+    "show": "Vì sao to gấp mười",
+    "phan": "giai"
+   },
+   {
+    "show": "Chữ số 0 chen vào phòng đơn vị, nên chữ số 3 bị đẩy sang phòng chục.",
+    "phan": "giai"
+   },
+   {
+    "show": "Ở phòng đơn vị thì 3 chỉ đáng ba hạt. Sang phòng chục thì 3 đáng ba thanh chục, tức ba mươi hạt.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: được số 30, và nó to gấp 10 lần số 3.",
     "phan": "dapso"
    },
    {
-    "show": "Nói thêm của Trí Long: 120 gấp 10 lần 12, nên phần \"hơn\" chính là 9 lần số cũ: $12  \\times  9 = 108$. Bí mật này lớp 4-5 con sẽ dùng nhiều lắm đấy!",
+    "show": "Số nào cũng thế",
+    "phan": "ghichu"
+   },
+   {
+    "show": "Số 25 thêm chữ số 0 thành 250. Số 60 thêm chữ số 0 thành 600.",
+    "phan": "ghichu"
+   },
+   {
+    "show": "Cả số dọn nhà sang trái một phòng, nên lần nào cũng to gấp mười.",
     "phan": "ghichu"
    }
   ]
@@ -117,177 +95,121 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Viết thêm số 0 vào bên phải mỗi số: 7 → ?; 9 → ?; 25 → ?; 60 → ?",
+     "text": "Thêm chữ số 0 vào bên phải số 7 thì được số nào?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "7",
-        "value": "70"
-       },
-       {
-        "label": "9",
-        "value": "90"
-       },
-       {
-        "label": "25",
-        "value": "250"
-       },
-       {
-        "label": "60",
-        "value": "600"
-       }
-      ]
+      "value": 70
      },
-     "solutionNarrative": "70; 90; 250; 600",
+     "solutionNarrative": "Viết 7 rồi đặt chữ số 0 vào sau, được số 70.",
      "hints": [
-      "Thêm 0 là cả số dọn sang trái một phòng.",
-      "Chép lại số cũ rồi đặt số 0 vào cuối."
+      "Con viết lại số cũ rồi đặt chữ số 0 vào ngay sau nó.",
+      "Chữ số 7 bị đẩy sang phòng chục nên nó đáng bảy chục."
      ]
     },
     {
      "id": "C2",
-     "text": "Xóa số 0 tận cùng của mỗi số: 80 → ?; 140 → ?; 500 → ?",
+     "text": "Thêm chữ số 0 vào bên phải số 25 thì được số nào?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "80",
-        "value": "8"
-       },
-       {
-        "label": "140",
-        "value": "14"
-       },
-       {
-        "label": "500",
-        "value": "50"
-       }
-      ]
+      "value": 250
      },
-     "solutionNarrative": "8; 14; 50",
+     "solutionNarrative": "Viết 25 rồi đặt chữ số 0 vào sau, được số 250.",
      "hints": [
-      "Xóa 0 tận cùng là dọn ngược về bên phải một phòng.",
-      "Chỉ được xóa số 0 ở cuối, không xóa số 0 ở giữa."
+      "Con viết lại số cũ rồi đặt chữ số 0 vào sau cùng.",
+      "Hai chữ số cũ dọn sang trái một phòng, chữ số 0 chiếm phòng đơn vị."
      ]
     },
     {
      "id": "C3",
-     "text": "Số 6 thêm số 0 bên phải thì gấp lên mấy lần?",
+     "text": "Số 70 to gấp mấy lần số 7?",
      "answerKey": {
       "value": 10
      },
-     "solutionNarrative": "gấp 10 lần",
+     "solutionNarrative": "Cả số dọn sang trái một phòng nên to gấp 10 lần.",
      "hints": [
-      "Mỗi hạt đơn vị lớn lên thành một thanh chục.",
-      "Dịch sang trái một phòng thì to lên gấp mấy?"
-     ]
-    },
-    {
-     "id": "C4",
-     "text": "4 chục = ?; 40 gồm mấy chục?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "4 chục = ?",
-        "value": 40
-       },
-       {
-        "label": "40 gồm mấy chục?",
-        "value": 4
-       }
-      ]
-     },
-     "solutionNarrative": "4 chục = 40; 40 gồm 4 chục",
-     "hints": [
-      "Một chục là một thanh mười hạt.",
-      "Đọc xuôi rồi đọc ngược, vẫn một ý ấy."
+      "Con nhớ lại video: cả số dọn nhà sang trái mấy phòng?",
+      "Dọn sang trái một phòng thì to lên gấp bao nhiêu?"
      ]
     }
    ],
    "standard": [
     {
-     "id": "C5",
-     "text": "Su Kem định viết giá 8 nghìn nhưng lỡ tay viết thành 80 nghìn. Giá bị đắt lên bao nhiêu nghìn đồng?",
+     "id": "C4",
+     "text": "Thêm chữ số 0 vào bên phải số 12 thì được số nào?",
      "answerKey": {
-      "value": 72
+      "value": 120
      },
-     "solutionNarrative": "$80 - 8 = 72$ (nghìn đồng)",
+     "solutionNarrative": "Được số 120, tức là 12 chục.",
      "hints": [
-      "Đắt lên = giá viết nhầm trừ giá đúng.",
-      "Hai con số đề cho sẵn, chỉ việc đặt phép trừ."
+      "Con đặt chữ số 0 vào ngay sau số cũ.",
+      "Hai chữ số cũ dọn sang trái, được một số có ba chữ số."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Số 3 thêm chữ số 0 thành 30. Chữ số 3 dọn từ phòng nào sang phòng nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "dọn từ phòng",
+        "options": [
+         "phòng trăm",
+         "phòng chục",
+         "phòng đơn vị"
+        ],
+        "value": "phòng đơn vị"
+       },
+       {
+        "label": "sang phòng",
+        "options": [
+         "phòng trăm",
+         "phòng chục",
+         "phòng đơn vị"
+        ],
+        "value": "phòng chục"
+       }
+      ]
+     },
+     "solutionNarrative": "Nó dọn từ phòng đơn vị sang phòng chục.",
+     "hints": [
+      "Lúc đầu số 3 đứng một mình nên nó ở phòng ngoài cùng bên phải.",
+      "Chữ số 0 chen vào chỗ ấy thì số 3 phải nhường chỗ, dọn sang bên trái."
      ]
     },
     {
      "id": "C6",
-     "text": "Viết thêm số 0 vào bên phải số 35, được số mới hơn số cũ bao nhiêu đơn vị?",
+     "text": "Thêm chữ số 0 vào bên phải số 60 thì được số nào?",
      "answerKey": {
-      "value": 315
+      "value": 600
      },
-     "solutionNarrative": "$350 - 35 = 315$ (đơn vị)",
+     "solutionNarrative": "Được số 600.",
      "hints": [
-      "Viết ra số mới trước đã, rồi mới trừ.",
-      "Hơn bao nhiêu = số mới trừ số cũ."
-     ]
-    },
-    {
-     "id": "C7",
-     "text": "Một số xóa số 0 tận cùng thì còn 32. Hỏi số đó là số nào? Số đó hơn 32 bao nhiêu?",
-     "answerKey": {
-      "parts": [
-       {
-        "label": "số đó là",
-        "value": 320
-       },
-       {
-        "label": "hơn 32 bao nhiêu",
-        "value": 288
-       }
-      ]
-     },
-     "solutionNarrative": "số đó là 320; hơn 32 là $320 - 32 = 288$",
-     "hints": [
-      "Đi ngược: xóa 0 còn 32 thì lúc đầu phải thêm 0 vào 32.",
-      "Có số cũ rồi mới trừ được phần hơn."
+      "Con vẫn đặt chữ số 0 vào ngay sau số cũ.",
+      "Số cũ đã có một chữ số 0 rồi, nay thêm một cái nữa."
      ]
     }
    ],
    "challenge": [
     {
-     "id": "C8",
-     "text": "Có hai số: số lớn gấp 10 lần số bé, và số lớn hơn số bé 45 đơn vị. Đố con tìm được hai số đó! (Mẹo: phần hơn bằng 9 lần số bé — thử xem 9 nhân mấy bằng 45?)",
+     "id": "C7",
+     "text": "Số nào thêm chữ số 0 vào bên phải thì được 450?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số bé",
-        "value": 5
-       },
-       {
-        "label": "số lớn",
-        "value": 50
-       }
-      ]
+      "value": 45
      },
-     "solutionNarrative": "phần hơn = 9 lần số bé; $9  \\times  5 = 45$ → số bé là 5, số lớn là 50. Thử lại: $50 = 5  \\times  10$ và $50 - 5 = 45$ ✓",
+     "solutionNarrative": "Bỏ chữ số 0 ở cuối ra thì còn số 45.",
      "hints": [
-      "Vẽ số bé một phần thì số lớn mười phần.",
-      "Phần hơn là chín phần — mà đề cho phần hơn rồi."
+      "Con làm ngược lại: bỏ chữ số 0 ở cuối ra.",
+      "Bỏ xong còn lại hai chữ số ở phía trước."
      ]
     },
     {
-     "id": "C9",
-     "text": "Trong ba số 30, 303, 330 — xóa một chữ số 0 của mỗi số thì số nào giảm đi đúng 10 lần, số nào không? Vì sao?",
-     "solutionNarrative": "chỉ 30 → 3 và 330 → 33 là giảm đúng 10 lần (xóa 0 tận cùng); 303 xóa 0 thành 33 — không phải giảm 10 lần vì số 0 nằm ở giữa, nó đang giữ chỗ phòng chục",
+     "id": "C8",
+     "text": "Thêm chữ số 0 vào bên phải số 9, rồi thêm tiếp một chữ số 0 nữa thì được số nào?",
+     "answerKey": {
+      "value": 900
+     },
+     "solutionNarrative": "Lần đầu được 90, lần sau được 900.",
      "hints": [
-      "Hỏi từng số: số 0 ấy nằm ở cuối hay ở giữa?",
-      "Số 0 nằm giữa đang giữ chỗ cho một phòng trống."
-     ]
-    },
-    {
-     "id": "C10",
-     "text": "Thử tài gieo mầm: viết thêm chữ số 2 (chứ không phải số 0!) vào bên phải số 3 ta được số 32. Số mới hơn số cũ bao nhiêu? Số mới có gấp đúng 10 lần số cũ không? Từ đó con giải thích: vì sao chỉ CHÚ SỐ 0 mới có phép thuật × 10?",
-     "solutionNarrative": "$32 - 3 = 29$ — số mới hơn số cũ 29 đơn vị, KHÔNG gấp đúng 10 lần (10 lần của 3 là 30). Giải thích: viết thêm chữ số nào vào bên phải thì số 3 cũng nhảy sang phòng chục thành 3 chục = 30; nhưng thêm chữ số 2 là bỏ thêm 2 hạt vào phòng đơn vị → $30 + 2 = 32$. Chỉ khi thêm số 0 — không thêm hạt nào cả — số mới đúng tròn 30, tức gấp đúng 10 lần. Đó là phép thuật riêng của chú Số 0!",
-     "hints": [
-      "Vẫn dịch sang trái một phòng, nhưng phòng đơn vị không rỗng.",
-      "So số mới với đúng mười lần số cũ xem lệch mấy."
+      "Con làm từng bước một, đừng thêm cả hai chữ số 0 cùng lúc.",
+      "Thêm lần đầu được chín mươi, rồi thêm tiếp một chữ số 0 nữa."
      ]
     }
    ]
@@ -298,101 +220,69 @@
   "items": [
    {
     "id": "Q1",
-    "text": "5 viết thêm số 0 vào bên phải thành 50, gấp 10 lần 5.",
+    "text": "Thêm chữ số 0 vào bên phải thì số to gấp mười lần.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng, vì mọi chữ số dọn sang phòng bên trái một bậc."
    },
    {
     "id": "Q2",
-    "text": "Xóa số 0 nào trong số cũng làm số giảm 10 lần.",
+    "text": "Thêm chữ số 0 vào bên phải số 3 thì số mới chỉ hơn số cũ 3 đơn vị.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "chỉ số 0 tận cùng"
+    "solutionNarrative": "Sai. Được số 30, to gấp mười lần chứ không hơn vài đơn vị."
    },
    {
     "id": "Q3",
-    "text": "25 thêm số 0 vào bên phải thành:",
+    "text": "Thêm chữ số 0 vào bên phải số 25 thì được",
     "format": "mcq",
     "choices": [
-     "A. 205",
-     "B. 250",
-     "C. 2500"
+     "250",
+     "205",
+     "26",
+     "2500"
     ],
     "answerKey": {
-     "choice": "B. 250"
+     "choice": "250"
     },
-    "solutionNarrative": "Đáp án: B. 250"
+    "solutionNarrative": "Chữ số 0 vào phòng đơn vị, hai chữ số cũ dọn sang trái."
    },
    {
     "id": "Q4",
-    "text": "700 xóa MỘT số 0 tận cùng còn:",
+    "text": "Số 3 thêm chữ số 0 thì chữ số 3 dọn sang phòng nào?",
     "format": "mcq",
     "choices": [
-     "A. 7",
-     "B. 70",
-     "C. 700"
+     "phòng trăm",
+     "phòng chục",
+     "phòng đơn vị"
     ],
     "answerKey": {
-     "choice": "B. 70"
+     "choice": "phòng chục"
     },
-    "solutionNarrative": "Đáp án: B. 70"
+    "solutionNarrative": "Nó rời phòng đơn vị và sang phòng chục."
    },
    {
     "id": "Q5",
-    "text": "Số nào gấp 10 lần số 9?",
-    "format": "mcq",
-    "choices": [
-     "A. 19",
-     "B. 90",
-     "C. 900"
-    ],
+    "text": "Chữ số 0 không đáng gì nên thêm vào thì số không đổi.",
+    "format": "tf",
     "answerKey": {
-     "choice": "B. 90"
+     "value": false
     },
-    "solutionNarrative": "Đáp án: B. 90"
+    "solutionNarrative": "Sai. Nó không đáng gì nhưng nó đẩy các chữ số kia sang trái."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Chơi \"máy nhân 10\" bằng tiền thật: đưa con tờ 5 nghìn, hỏi \"qua máy ×10 thì thành tờ nào?\" (50 nghìn). Đổi vai để con làm máy, bố mẹ làm khách.",
-  "homeActivity": "Cắt giấy làm bảng giá quán nước, cố tình viết sai một giá (thêm 0) để con phát hiện — trẻ mê bắt lỗi người lớn lắm!",
-  "watchFor": "NÊN: dùng từ \"gấp 10 lần\" và \"giảm 10 lần\" tự nhiên trong ngày. KHÔNG NÊN: nói \"dịch dấu phẩy\" — khái niệm ấy để dành lớp 5, giờ con chỉ cần hạt-và-thanh-chục."
+  "onComplete": "Lấy que tính cho con làm thật: 3 que rời, rồi 3 bó mười que. Con cầm tay là thấy ngay ba mươi khác ba thế nào.",
+  "homeActivity": "Hỏi con: \"Chữ số 3 vừa dọn sang phòng nào?\" Trả lời được câu ấy là con hiểu cả bài.",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_CANH05",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_CANH05.png",
-   "caption": "Bảng giá viết nhầm: thêm một số 0 thành đắt gấp 10 lần",
-   "sha256_16": "30cf428cdc5456fa",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_CTS03",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L2H_CTS03.png",
-   "caption": "3 hạt đơn vị thành 3 thanh chục thì gấp 10 lần",
-   "sha256_16": "803e3061323dfcd0",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L2H_MAY01",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L2H_MAY01.png",
-   "caption": "Máy × 10 thêm số 0, máy : 10 xóa số 0 — hai máy ngược chiều nhau",
-   "sha256_16": "28b5163dd39948a3",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B02_giang.mp4"
+ }
 }

@@ -27,7 +27,16 @@ from pathlib import Path
 
 GOC = Path(__file__).resolve().parent.parent
 TAY = GOC / 'data' / 'goi_y_tay.json'
-APP = GOC / 'web' / 'public' / 'content' / 'lop4'
+# ⚠ ĐỪNG GHIM MỘT QUYỂN. Bản đầu ghim `lop4`; mở sang lớp 2 thì mọi câu đều báo
+# "không có bài này trong bản dựng" — đúng thật, vì nó đang tìm trong thư mục lớp 4.
+QUYEN_CUA = {'KSN2': 'lop2', 'KSN3': 'lop3', 'KSN4': 'lop4', 'KSN5Q1': 'lessons'}
+
+
+def _app(ma: str) -> Path:
+    for k, v in QUYEN_CUA.items():
+        if k in ma:
+            return GOC / 'web' / 'public' / 'content' / v
+    raise SystemExit(f'{ma}: không nhận ra quyển nào')
 
 DAI_NHAT = 160
 
@@ -53,7 +62,7 @@ def soi(bo: dict) -> list[str]:
     """Soi trước khi ghi. Trả về danh sách chỗ chưa đạt."""
     loi = []
     for ma, cau in bo.items():
-        tep = APP / f"{ma.replace('DL:', 'DL_').replace('.', '_')}.json"
+        tep = _app(ma) / f"{ma.replace('DL:', 'DL_').replace('.', '_')}.json"
         if not tep.exists():
             loi.append(f'{ma}: không có bài này trong bản dựng')
             continue

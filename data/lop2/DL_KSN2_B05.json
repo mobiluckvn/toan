@@ -2,123 +2,84 @@
  "id": "DL:KSN2.B05",
  "quyen": "lop2",
  "so": 5,
- "ten": "ĐI TÌM CÁC SỐ CÓ TỔNG BÍ MẬT",
+ "ten": "TÌM ĐỦ MỌI SỐ — ĐI TUẦN TRA CÓ THỨ TỰ",
  "chuong": 1,
  "tenChuong": "Vương quốc Số",
- "dangGoc": "SỐ 3.2 — Lập số theo điều kiện tổng chữ số (rèn liệt kê không sót - không trùng)",
+ "dangGoc": "SỐ 3.2 — Liệt kê đủ mọi số thoả điều kiện, không sót và không trùng.",
  "muc": {
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Tìm được TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng một số cho trước.",
-    "Biết liệt kê theo thứ tự (cho hàng chục tăng dần) để không sót, không trùng.",
-    "Giải thích được khi nào thì dừng liệt kê."
+    "Tính được tổng hai chữ số của một số.",
+    "Liệt kê đủ mọi số có tổng chữ số cho trước, theo thứ tự.",
+    "Nói được vì sao bắt đầu ở đâu và vì sao dừng ở đâu."
    ],
-   "goc": [
-    "Tìm được TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng một số cho trước.",
-    "Biết liệt kê theo thứ tự (cho hàng chục tăng dần) để không sót, không trùng.",
-    "Giải thích được khi nào thì dừng liệt kê."
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Chiếc cân của người gác kho báu",
-   "dong": [
-    "Người gác kho báu đưa ra chiếc cân kỳ lạ: \"Mật mã kho báu là MỘT SỐ CÓ HAI CHỮ SỐ, đem hai chữ số của nó đặt lên cân thì thăng bằng với quả cân số 5. Nhưng ta sẽ chỉ mở kho nếu các ngươi tìm được TẤT CẢ các số như vậy. Thiếu một số thôi cũng không được!\""
-   ],
-   "goc": [
-    "Người gác kho báu đưa ra chiếc cân kỳ lạ: \"Mật mã kho báu là MỘT SỐ CÓ HAI CHỮ SỐ, đem hai chữ số của nó đặt lên cân thì thăng bằng với quả cân số 5. Nhưng ta sẽ chỉ mở kho nếu các ngươi tìm được TẤT CẢ các số như vậy — thiếu một số thôi cũng không được!\""
-   ],
-   "hinh": [
-    {
-     "id": "L2H_CAN02",
-     "sauDong": 0,
-     "file": "figures/L2H_CAN02.png",
-     "caption": "Tìm số có hai chữ số cộng lại bằng 5",
-     "sha256_16": "93d5e53a927c305f"
-    }
-   ]
+   "ten": "CHUYỆN MỞ BÀI",
+   "dong": [],
+   "hinh": [],
+   "nhip": ""
   },
   "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Liệt kê kiểu thám tử",
-   "dong": [
-    "Bước 1. Su Kem hét toáng: \"23! À còn 41! Ơ hình như 32 nữa...\" — kể lộn xộn thế rất dễ sót. Trí Long có cách gọn hơn: cho hàng CHỤC tăng dần từng nấc một, hàng đơn vị sẽ tự động giảm theo.",
-    "Bước 2. Vì sao bắt đầu từ chục = 1 mà không phải chục = 0? Vì chục = 0 thì đâu còn là số có 2 chữ số (nhớ luật số 0 nhút nhát ở Bài 4 chứ!).",
-    "Bước 3. Vì sao dừng ở chục = 5? Vì nếu chục = 6 thì đơn vị phải bằng 5 − 6... không có số nào như vậy cả! Vậy đáp án đủ là: 14, 23, 32, 41, 50 — đúng 5 số.",
-    "MẸO THÁM TỬ: \"Tìm TẤT CẢ\" là lệnh phải đi tuần tra CÓ THỨ TỰ: chục đi từ bé đến lớn, mỗi nấc hỏi \"đơn vị phải là mấy?\". Hết đường thì dừng — và phải nói được VÌ SAO dừng!"
-   ],
-   "goc": [
-    "Bước 1. Su Kem hét toáng: \"23! À còn 41! Ơ hình như 32 nữa...\" — kể lộn xộn thế rất dễ sót. Trí Long có cách gọn hơn: cho hàng CHỤC tăng dần từng nấc một, hàng đơn vị sẽ tự động giảm theo.",
-    "Bước 2. Vì sao bắt đầu từ chục = 1 mà không phải chục = 0? Vì chục = 0 thì đâu còn là số có 2 chữ số (nhớ luật số 0 nhút nhát ở Bài 4 chứ!).",
-    "Bước 3. Vì sao dừng ở chục = 5? Vì nếu chục = 6 thì đơn vị phải bằng 5 − 6... không có số nào như vậy cả! Vậy đáp án đủ là: 14, 23, 32, 41, 50 — đúng 5 số.",
-    "MẸO THÁM TỬ: \"Tìm TẤT CẢ\" là lệnh phải đi tuần tra CÓ THỨ TỰ: chục đi từ bé đến lớn, mỗi nấc hỏi \"đơn vị phải là mấy?\". Hết đường thì dừng — và phải nói được VÌ SAO dừng!"
-   ],
-   "hinh": [
-    {
-     "id": "L2H_DAY12",
-     "sauDong": 0,
-     "file": "figures/L2H_DAY12.png",
-     "caption": "Cho hàng chục tăng dần thì không sót số nào",
-     "sha256_16": "34dbe5197fc43953"
-    }
-   ]
+   "ten": "CÙNG KHÁM PHÁ",
+   "dong": [],
+   "hinh": [],
+   "nhip": ""
   },
   "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
+   "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Tìm tất cả các số có 2 chữ số mà tổng hai chữ số bằng 4.",
-    "Bài giải:",
-    "Chữ số hàng chục là 1 thì chữ số hàng đơn vị là: 4 − 1 = 3 → số 13.",
-    "Chữ số hàng chục là 2 thì chữ số hàng đơn vị là: 4 − 2 = 2 → số 22.",
-    "Chữ số hàng chục là 3 thì chữ số hàng đơn vị là: 4 − 3 = 1 → số 31.",
-    "Chữ số hàng chục là 4 thì chữ số hàng đơn vị là: 4 − 4 = 0 → số 40.",
-    "Chữ số hàng chục không thể là 5 (vì 4 − 5 không có).",
-    "Đáp số: có 4 số là 13; 22; 31; 40."
+    "Đề bài: Tìm tất cả các số có hai chữ số mà tổng hai chữ số bằng 5.",
+    "Kể lộn xộn thì dễ sót",
+    "Nhớ ra số nào kể số ấy thì rất dễ bỏ quên, mà cũng dễ kể trùng.",
+    "Đi tuần tra có thứ tự",
+    "Cho chữ số hàng chục tăng dần từng nấc một. Mỗi nấc hỏi: đơn vị phải là mấy thì tổng bằng năm?",
+    "Chục bằng một thì đơn vị bằng bốn, được số 14. Chục hai thì đơn vị ba, được 23. Rồi 32, rồi 41, rồi 50.",
+    "Vì sao bắt đầu từ chục bằng một",
+    "Vì chục bằng không thì chữ số 0 đứng đầu, không còn là số có hai chữ số.",
+    "Vì sao dừng ở chục bằng năm",
+    "Vì chục bằng sáu thì đơn vị phải là năm trừ sáu — không có chữ số nào như thế.",
+    "Đáp số: đủ 5 số là 14, 23, 32, 41, 50."
    ],
-   "goc": [
-    "Đề bài: Tìm tất cả các số có 2 chữ số mà tổng hai chữ số bằng 4.",
-    "Bài giải:",
-    "Chữ số hàng chục là 1 thì chữ số hàng đơn vị là: 4 − 1 = 3 → số 13.",
-    "Chữ số hàng chục là 2 thì chữ số hàng đơn vị là: 4 − 2 = 2 → số 22.",
-    "Chữ số hàng chục là 3 thì chữ số hàng đơn vị là: 4 − 3 = 1 → số 31.",
-    "Chữ số hàng chục là 4 thì chữ số hàng đơn vị là: 4 − 4 = 0 → số 40.",
-    "Chữ số hàng chục không thể là 5 (vì 4 − 5 không có).",
-    "Đáp số: có 4 số là 13; 22; 31; 40."
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Với tổng bằng 5, Su Kem nộp bài: \"05, 14, 23, 32, 41. Đủ 5 số, chuẩn không cần chỉnh!\"",
-    "Gợi ý 1: \"05\" có phải số có 2 chữ số không? (Nhớ luật của thẻ 0!)",
-    "Gợi ý 2: Su Kem liệt kê đến chục = 4 rồi dừng — cậu ấy sót mất số nào? Kiểm tra bằng cách đi tiếp một nấc chục nữa xem."
+    "Có bạn kể được 14, 23, 41 rồi bảo hết rồi.",
+    "Gợi ý 1: Con xếp mấy số ấy theo hàng chục tăng dần xem có nấc nào bị nhảy cóc không.",
+    "Gợi ý 2: Chục bằng ba thì đơn vị phải là mấy? Còn chục bằng năm thì sao?",
+    "Chữa: kể lộn xộn nên sót mất 32 và 50. Đi tuần tra theo thứ tự thì không bao giờ sót."
    ],
-   "goc": [
-    "Với tổng bằng 5, Su Kem nộp bài: \"05, 14, 23, 32, 41 — đủ 5 số, chuẩn không cần chỉnh!\"",
-    "Gợi ý 1: \"05\" có phải số có 2 chữ số không? (Nhớ luật của thẻ 0!)",
-    "Gợi ý 2: Su Kem liệt kê đến chục = 4 rồi dừng — cậu ấy sót mất số nào? Kiểm tra bằng cách đi tiếp một nấc chục nữa xem."
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "luyenTap": {
    "ten": "LUYỆN TẬP 3 MỨC SAO",
    "dong": [],
-   "goc": []
+   "hinh": [],
+   "nhip": ""
   },
   "quiz": {
    "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
    "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★)"
    ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Chơi \"mật mã kho báu\" bằng bộ thẻ số: bố mẹ nêu tổng, con xếp các cặp thẻ; sau đó đổi vai cho con ra đề.",
-    "Khi con liệt kê, đừng vội xác nhận đủ hay thiếu — hãy hỏi: \"Làm sao con CHẮC là không sót?\". Câu trả lời \"vì con đi từ chục 1 đến hết\" quý hơn cả đáp số.",
-    "NÊN: khen cách liệt kê có thứ tự dù kết quả thiếu. KHÔNG NÊN: chấp nhận kiểu kể lộn xộn dù tình cờ đủ — thói quen tuần tra có thứ tự chính là thứ bài này muốn gieo."
-   ]
+    "Cho con kẻ một bảng hai cột: chục và đơn vị. Điền chục từ một tăng dần, con tự thấy đơn vị giảm theo.",
+    "Câu hỏi quan trọng nhất không phải \"được mấy số\" mà là \"vì sao dừng ở đây?\". Bố mẹ nhớ hỏi thêm câu ấy."
+   ],
+   "hinh": [],
+   "nhip": ""
   }
  },
  "cau": [
@@ -129,8 +90,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính tổng hai chữ số của mỗi số: 25; 43; 70; 36.",
-   "loiChua": "7; 7; 7; 9",
+   "text": "Tính tổng hai chữ số của số 25.",
+   "loiChua": "Cộng hai chữ số: 2 + 5 = 7.",
    "tuLuan": true
   },
   {
@@ -140,8 +101,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Số 61 có tổng hai chữ số bằng bao nhiêu? Đổi chỗ hai chữ số của nó thì tổng có thay đổi không?",
-   "loiChua": "6 + 1 = 7; đổi chỗ thành 16, tổng vẫn là 7 (đổi chỗ không đổi tổng!)",
+   "text": "Tính tổng hai chữ số của số 43.",
+   "loiChua": "Cộng hai chữ số: 4 + 3 = 7.",
    "tuLuan": true
   },
   {
@@ -151,8 +112,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm 2 số có 2 chữ số mà tổng hai chữ số bằng 3.",
-   "loiChua": "ví dụ 12 và 21 (hoặc 30)",
+   "text": "Số có hai chữ số, tổng hai chữ số bằng 5. Nếu hàng chục là 1 thì hàng đơn vị phải là mấy?",
+   "loiChua": "Tổng phải bằng 5 nên đơn vị là 5 − 1 = 4.",
    "tuLuan": true
   },
   {
@@ -162,8 +123,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 3 (liệt kê theo thứ tự và nói vì sao dừng).",
-   "loiChua": "12; 21; 30 — dừng vì chục = 4 thì đơn vị phải là 3 − 4, không có",
+   "text": "Vẫn tổng bằng 5. Nếu hàng chục là 2 thì được số nào?",
+   "loiChua": "Đơn vị là 5 − 2 = 3, nên được số 23.",
    "tuLuan": true
   },
   {
@@ -173,8 +134,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 6.",
-   "loiChua": "15; 24; 33; 42; 51; 60 — đủ 6 số",
+   "text": "Vẫn tổng bằng 5. Nếu hàng chục là 5 thì được số nào?",
+   "loiChua": "Đơn vị là 5 − 5 = 0, nên được số 50.",
    "tuLuan": true
   },
   {
@@ -184,8 +145,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm TẤT CẢ các số có 2 chữ số mà tổng hai chữ số bằng 2. Có mấy số?",
-   "loiChua": "11; 20 — có 2 số",
+   "text": "Có tất cả bao nhiêu số có hai chữ số mà tổng hai chữ số bằng 5?",
+   "loiChua": "Đi tuần tra được 14, 23, 32, 41, 50 — tất cả 5 số.",
    "tuLuan": true
   },
   {
@@ -195,8 +156,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Không cần liệt kê hết, con đoán xem: tổng bằng 7 thì có mấy số? Tổng bằng 9 thì có mấy số? (Con thử tìm quy luật giữa \"tổng\" và \"số lượng số\" — rồi liệt kê để kiểm chứng dự đoán!)",
-   "loiChua": "quy luật đẹp — tổng bằng bao nhiêu thì có bấy nhiêu số (với tổng từ 1 đến 9): tổng 7 → 7 số (16, 25, 34, 43, 52, 61, 70); tổng 9 → 9 số",
+   "text": "Vì sao không bắt đầu từ hàng chục bằng 0?",
+   "loiChua": "Vì chữ số 0 đứng đầu thì không còn là số có hai chữ số.",
    "tuLuan": true
   },
   {
@@ -206,8 +167,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm số có 2 chữ số mà tổng hai chữ số bằng 5 VÀ chữ số hàng chục lớn hơn chữ số hàng đơn vị. Có mấy số như vậy?",
-   "loiChua": "trong 14, 23, 32, 41, 50 chọn số có chục > đơn vị: 32, 41, 50 — có 3 số",
+   "text": "Có bao nhiêu số có hai chữ số mà tổng hai chữ số bằng 3?",
+   "loiChua": "Đi tuần tra: 12, 21, 30 — tất cả 3 số.",
    "tuLuan": true
   },
   {
@@ -217,14 +178,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Số 32 có tổng hai chữ số bằng 5.",
+   "text": "Kể lộn xộn thì dễ sót số.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "Đúng. Đi tuần tra theo thứ tự mới chắc.",
+   "solutionNarrative": "Đúng. Đi tuần tra theo thứ tự mới chắc."
   },
   {
    "id": "Q2",
@@ -233,14 +194,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "\"05\" là một số có 2 chữ số.",
+   "text": "Có 5 số có hai chữ số mà tổng hai chữ số bằng 5.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "value": false
+    "value": true
    },
-   "loiChua": "Đáp án: SAI",
-   "solutionNarrative": ""
+   "loiChua": "Đúng: 14, 23, 32, 41, 50.",
+   "solutionNarrative": "Đúng: 14, 23, 32, 41, 50."
   },
   {
    "id": "Q3",
@@ -249,19 +210,20 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Khi liệt kê các số có tổng chữ số bằng 5, ta bắt đầu từ chữ số hàng chục bằng:",
-   "format": "mcq",
+   "text": "Tổng hai chữ số bằng 5, hàng chục là 3 thì được số",
    "choices": [
-    "A. 0",
-    "B. 1",
-    "C. 5"
+    "32",
+    "35",
+    "23",
+    "53"
    ],
+   "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "B. 1"
+    "choice": "32"
    },
-   "loiChua": "Đáp án: B. 1",
-   "solutionNarrative": ""
+   "loiChua": "Đơn vị phải là 5 trừ 3, tức 2.",
+   "solutionNarrative": "Đơn vị phải là 5 trừ 3, tức 2."
   },
   {
    "id": "Q4",
@@ -270,19 +232,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Số nào dưới đây có tổng hai chữ số bằng 6?",
-   "format": "mcq",
+   "text": "Vì sao dừng ở hàng chục bằng 5?",
    "choices": [
-    "A. 51",
-    "B. 62",
-    "C. 46"
+    "vì chục bằng 6 thì đơn vị không có số nào",
+    "vì kể thế là đủ đẹp",
+    "vì mỏi tay"
    ],
+   "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 51"
+    "choice": "vì chục bằng 6 thì đơn vị không có số nào"
    },
-   "loiChua": "5 + 1 = 6",
-   "solutionNarrative": "5 + 1 = 6"
+   "loiChua": "Năm trừ sáu thì không ra chữ số nào cả.",
+   "solutionNarrative": "Năm trừ sáu thì không ra chữ số nào cả."
   },
   {
    "id": "Q5",
@@ -290,20 +252,15 @@
    "so": 5,
    "muc": 1,
    "phan": "quiz",
-   "ghiChu": "",
-   "text": "Có bao nhiêu số có 2 chữ số mà tổng hai chữ số bằng 5?",
-   "format": "mcq",
-   "choices": [
-    "A. 4 số",
-    "B. 5 số",
-    "C. 6 số"
-   ],
+   "ghiChu": "Đúng/Sai?",
+   "text": "Hàng chục có thể bằng 0 khi lập số có hai chữ số.",
+   "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "choice": "B. 5 số"
+    "value": false
    },
-   "loiChua": "5 số",
-   "solutionNarrative": "5 số"
+   "loiChua": "Sai. Khi ấy chữ số 0 đứng đầu và số mất một chữ số.",
+   "solutionNarrative": "Sai. Khi ấy chữ số 0 đứng đầu và số mất một chữ số."
   }
  ]
 }

@@ -42,8 +42,16 @@ test('KHÔNG bài nào khai video mà thiếu tệp', () => {
 
 test('KHÔNG video nào dựng rồi mà không bài nào dùng', () => {
   /* Chiều ngược lại: dựng xong quên khai thì video nằm đó, tốn dung lượng, và bé
-     không bao giờ được xem. Cùng luật hai chiều đã dùng cho hình vẽ tay. */
-  const dung = new Set(coVideo.map((b) => b.video.giang));
+     không bao giờ được xem. Cùng luật hai chiều đã dùng cho hình vẽ tay.
+     ⚠ Video của MỌI quyển Toán nằm chung một thư mục, nên phép này phải gom khai
+     báo của cả hai quyển. Chỉ đọc lớp 4 thì mười video lớp 2 trông như mồ côi. */
+  const APP2 = new URL('../public/content/lop2/', import.meta.url);
+  const khai2 = readdirSync(APP2)
+    .filter((f) => /^DL_KSN2_B\d+\.json$/.test(f))
+    .map((f) => JSON.parse(readFileSync(new URL(f, APP2), 'utf8')))
+    .filter((b) => b.video?.giang)
+    .map((b) => b.video.giang);
+  const dung = new Set([...coVideo.map((b) => b.video.giang), ...khai2]);
   const co = readdirSync(VIDEO).filter((f) => f.endsWith('.mp4'));
   assert.deepEqual(co.filter((f) => !dung.has(f)), []);
 });

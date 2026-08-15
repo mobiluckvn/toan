@@ -3,51 +3,38 @@
  "id": "DL:KSN2.B04",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 4 · XẾP THẺ SỐ — LẬP SỐ LỚN NHẤT, BÉ NHẤT",
+ "title": "Bài 8 · XẾP THẺ ĐỂ ĐƯỢC SỐ LỚN NHẤT VÀ BÉ NHẤT",
  "durationMinutes": 10,
- "so": 4,
+ "so": 8,
  "chuong": 1,
  "tenChuong": "Vương quốc Số",
- "dangGoc": "SỐ 3.1 — Lập số theo điều kiện lớn nhất / nhỏ nhất",
+ "dangGoc": "SỐ 3.1 — Lập số lớn nhất và bé nhất từ các thẻ số cho trước.",
  "skills": {
   "bktUnit": "CHUONG:1@G2",
   "primary": []
  },
  "series": {
-  "order": 4,
-  "prev": "DL:KSN2.B03",
-  "next": "DL:KSN2.B05"
+  "order": 8,
+  "prev": "DL:KSN2.B37",
+  "next": "DL:KSN2.B38"
  },
  "objective": {
   "id": "O1",
-  "text": "Lập được số LỚN NHẤT và BÉ NHẤT từ các thẻ chữ số cho trước (mỗi thẻ dùng một lần). Thuộc luật vàng: thẻ to đứng phòng càng cao (bên trái) thì số càng lớn. Nhớ luật đặc biệt của thẻ số 0: không được đứng đầu!",
-  "kidText": "Ba tấm thẻ 4, 0, 9 — mỗi thẻ dùng một lần. Con xếp được số to nhất và bé nhất là bao nhiêu?",
+  "text": "Xếp thẻ để được số lớn nhất: thẻ to nhất vào phòng bên trái. Xếp thẻ để được số bé nhất: làm ngược lại. Nói được vì sao phòng bên trái quyết định.",
+  "kidText": "Cô có ba thẻ số 8, 5 và 2. Con xếp giúp cô thành số lớn nhất nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Nhớ lại Bài 1: phòng TRĂM quyền lực nhất. Vậy muốn số LỚN NHẤT, hãy đưa thẻ to nhất vào phòng trăm, thẻ to nhì vào phòng chục, thẻ bé nhất vào phòng đơn vị. Xếp từ to đến bé: 8-5-2."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Muốn số BÉ NHẤT thì làm ngược lại: xếp từ bé đến to: 2-5-8."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Nhưng nếu trong tay có thẻ số 0 thì sao? Thử với ba thẻ 0, 3, 7 — xếp từ bé đến to là 0-3-7... nhưng khoan đã!"
-   }
-  ],
-  "mantra": "Số 0 giống bạn nhỏ nhút nhát: không dám đứng đầu hàng. Khi lập số BÉ NHẤT có thẻ 0, hãy cho thẻ bé nhất KHÁC 0 đứng đầu, rồi thẻ 0 đứng ngay vị trí thứ hai.",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem viết: \"Ba thẻ 0, 3, 7: số bé nhất là 037 chứ gì nữa — bé tí!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: \"037\" thực ra là số nào? Chữ số 0 đứng đầu có được tính là một phòng của ngôi nhà 3 tầng không? Gợi ý 2: đề bài yêu cầu số có 3 CHỮ SỐ — 37 chỉ có 2 chữ số thôi. Vậy số bé nhất đúng phải là bao nhiêu?"
+    "wrong": "Có bạn lập số lớn nhất từ ba thẻ 8, 5, 2 rồi viết 825, vì thấy 25 nghe to hơn 52.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con so hai số 852 và 825 xem số nào lớn hơn. Gợi ý 2: Hai số ấy cùng phòng trăm, nên phải nhìn tiếp phòng chục. Phòng chục nào có thẻ to hơn? Chữa: sau khi đặt thẻ to nhất vào phòng trăm thì phải đặt thẻ to NHÌ vào phòng chục. Số đúng là 852."
    }
   ]
  },
@@ -55,60 +42,47 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Từ ba thẻ số 4, 0, 9 (mỗi thẻ dùng một lần), hãy lập số lớn nhất và số bé nhất có 3 chữ số."
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
     "kind": "trap",
-    "narration": "Su Kem viết: \"Ba thẻ 0, 3, 7: số bé nhất là 037 chứ gì nữa — bé tí!\"",
+    "narration": "Có bạn lập số lớn nhất từ ba thẻ 8, 5, 2 rồi viết 825, vì thấy 25 nghe to hơn 52.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Từ ba thẻ số 4, 0, 9 (mỗi thẻ dùng một lần), hãy lập số lớn nhất và số bé nhất có 3 chữ số.",
+  "problem": "Có ba thẻ số 8, 5 và 2. Hãy lập số lớn nhất và số bé nhất có ba chữ số.",
   "steps": [
    {
-    "show": "Số lớn nhất: xếp các thẻ từ to đến bé: 940.",
+    "show": "Nhớ lại bài đầu chương",
     "phan": "giai"
    },
    {
-    "show": "Số bé nhất: thẻ bé nhất khác 0 là 4 đứng đầu, thẻ 0 đứng thứ hai: 409.",
+    "show": "Phòng bên trái quyền lực nhất. Muốn số lớn thì phải làm cho phòng trăm to nhất đã.",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: lớn nhất 940; bé nhất 409.",
+    "show": "Số lớn nhất",
+    "phan": "giai"
+   },
+   {
+    "show": "Xếp từ to đến bé: thẻ 8 vào phòng trăm, thẻ 5 vào phòng chục, thẻ 2 vào phòng đơn vị. Được số 852.",
+    "phan": "giai"
+   },
+   {
+    "show": "Số bé nhất",
+    "phan": "giai"
+   },
+   {
+    "show": "Làm ngược lại, xếp từ bé đến to: được số 258.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: số lớn nhất là 852, số bé nhất là 258.",
     "phan": "dapso"
    },
    {
-    "show": "Tự kiểm tra: cả 940 và 409 đều dùng đúng ba thẻ 4, 0, 9. Không thiếu, không thừa, không lặp.",
-    "phan": "ghichu"
+    "show": "Đổi thử hai thẻ bất kỳ xem có ra số lớn hơn 852 không. Không có, vì thẻ to nhất đã nằm ở phòng quyền lực nhất rồi.",
+    "phan": "thulai"
    }
   ]
  },
@@ -117,139 +91,134 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Từ hai thẻ 3 và 8, lập số lớn nhất và số bé nhất có 2 chữ số.",
+     "text": "Từ hai thẻ 3 và 8, lập số lớn nhất có hai chữ số.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số lớn nhất",
-        "value": 83
-       },
-       {
-        "label": "số bé nhất",
-        "value": 38
-       }
-      ]
+      "value": 83
      },
-     "solutionNarrative": "83 và 38",
+     "solutionNarrative": "Thẻ to hơn vào phòng chục, được số 83.",
      "hints": [
-      "Lớn nhất thì thẻ to giành phòng bên trái.",
-      "Bé nhất thì làm ngược lại."
+      "Con đặt thẻ to hơn vào phòng chục.",
+      "Phòng chục quyền lực hơn nên thẻ to phải vào đó."
      ]
     },
     {
      "id": "C2",
-     "text": "Từ ba thẻ 1, 6, 4, lập số lớn nhất có 3 chữ số.",
+     "text": "Từ hai thẻ 3 và 8, lập số bé nhất có hai chữ số.",
      "answerKey": {
-      "value": 641
+      "value": 38
      },
-     "solutionNarrative": "641",
+     "solutionNarrative": "Thẻ bé hơn vào phòng chục, được số 38.",
      "hints": [
-      "Xếp ba thẻ từ to xuống bé.",
-      "Thẻ to nhất vào phòng trăm trước đã."
+      "Muốn số bé thì làm ngược lại bài trên.",
+      "Con đặt thẻ bé hơn vào phòng chục."
      ]
     },
     {
      "id": "C3",
-     "text": "Từ ba thẻ 1, 6, 4, lập số bé nhất có 3 chữ số.",
+     "text": "Từ ba thẻ 8, 5, 2, lập số lớn nhất có ba chữ số.",
      "answerKey": {
-      "value": 146
+      "value": 852
      },
-     "solutionNarrative": "146",
+     "solutionNarrative": "Xếp từ to đến bé, được số 852.",
      "hints": [
-      "Xếp ba thẻ từ bé lên to.",
-      "Không có thẻ 0 nên cứ xếp thẳng."
+      "Con xếp ba thẻ từ to đến bé.",
+      "Thẻ to nhất vào phòng trăm, rồi thẻ to nhì, rồi thẻ bé nhất."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Từ ba thẻ 5, 0, 2: lập số lớn nhất và số bé nhất có 3 chữ số (coi chừng thẻ 0!).",
+     "text": "Từ ba thẻ 8, 5, 2, lập số bé nhất có ba chữ số.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số lớn nhất",
-        "value": 520
-       },
-       {
-        "label": "số bé nhất",
-        "value": 205
-       }
-      ]
+      "value": 258
      },
-     "solutionNarrative": "lớn nhất 520; bé nhất 205 (số 0 đứng thứ hai)",
+     "solutionNarrative": "Xếp từ bé đến to, được số 258.",
      "hints": [
-      "Thẻ 0 nhút nhát, không dám đứng đầu hàng.",
-      "Bé nhất: thẻ bé nhất KHÁC 0 đứng đầu, rồi mới tới thẻ 0."
+      "Con xếp ba thẻ từ bé đến to.",
+      "Thẻ bé nhất vào phòng trăm, rồi thẻ bé nhì, rồi thẻ to nhất."
      ]
     },
     {
      "id": "C5",
-     "text": "Từ ba thẻ 7, 7, 3: lập số lớn nhất và số bé nhất có 3 chữ số. (Có hai thẻ giống nhau thì chiến thuật có đổi không?)",
+     "text": "Muốn được số lớn nhất thì thẻ to nhất phải đặt vào phòng nào?",
      "answerKey": {
       "parts": [
        {
-        "label": "số lớn nhất",
-        "value": 773
-       },
-       {
-        "label": "số bé nhất",
-        "value": 377
+        "label": "phòng nào",
+        "options": [
+         "phòng trăm",
+         "phòng chục",
+         "phòng đơn vị"
+        ],
+        "value": "phòng trăm"
        }
       ]
      },
-     "solutionNarrative": "lớn nhất 773; bé nhất 377",
+     "solutionNarrative": "Vào phòng trăm, vì phòng bên trái quyền lực nhất.",
      "hints": [
-      "Hai thẻ giống nhau thì chiến thuật không đổi.",
-      "Vẫn là to-xuống-bé và bé-lên-to."
+      "Con nhớ lại: phòng nào quyết định số lớn hay bé?",
+      "Phòng bên trái nhất là phòng quyền lực nhất."
      ]
     },
     {
      "id": "C6",
-     "text": "Tính hiệu giữa số lớn nhất và số bé nhất lập được từ ba thẻ 2, 5, 8.",
+     "text": "Từ ba thẻ 4, 7, 1, lập số lớn nhất và số bé nhất.",
      "answerKey": {
-      "value": 594
+      "parts": [
+       {
+        "label": "số lớn nhất",
+        "value": 741
+       },
+       {
+        "label": "số bé nhất",
+        "value": 147
+       }
+      ]
      },
-     "solutionNarrative": "$852 - 258 = 594$",
+     "solutionNarrative": "Số lớn nhất là 741, số bé nhất là 147.",
      "hints": [
-      "Lập hai số trước, đặt phép trừ sau.",
-      "Không có thẻ 0 nên hai số lập thẳng."
+      "Con làm riêng hai lần: một lần xếp từ to đến bé, một lần ngược lại.",
+      "Ba thẻ ấy sắp theo thứ tự là một, bốn, bảy."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C7",
-     "text": "Từ ba thẻ 4, 4, 9 con lập được TẤT CẢ bao nhiêu số có 3 chữ số khác nhau? Liệt kê hết ra theo thứ tự từ bé đến lớn nhé.",
+     "text": "Từ ba thẻ 9, 3, 6: lập số lớn nhất, số bé nhất, rồi tính hiệu hai số ấy.",
      "answerKey": {
-      "ordered": true,
-      "values": [
-       449,
-       494,
-       944
+      "parts": [
+       {
+        "label": "số lớn nhất",
+        "value": 963
+       },
+       {
+        "label": "số bé nhất",
+        "value": 369
+       },
+       {
+        "label": "hiệu",
+        "value": 594
+       }
       ]
      },
-     "solutionNarrative": "các số lập được từ 4, 4, 9: 449; 494; 944 — đúng 3 số (vì hai thẻ 4 giống nhau nên nhiều cách xếp cho ra cùng một số)",
+     "solutionNarrative": "Số lớn nhất 963, số bé nhất 369. Hiệu: $963 - 369 = 594$.",
      "hints": [
-      "Hỏi thẻ 9 đứng được ở mấy chỗ.",
-      "Hai thẻ 4 giống nhau nên đổi chỗ chúng không ra số mới."
+      "Con lập hai số trước đã, mỗi số một cách xếp.",
+      "Có hai số rồi thì đặt tính trừ chúng cho nhau."
      ]
     },
     {
      "id": "C8",
-     "text": "Vua ra đề hóc: \"Hãy chọn giúp ta BA thẻ khác nhau sao cho số lớn nhất lập được là 976.\" — Ba thẻ đó là gì? Và số bé nhất lập được từ chính ba thẻ ấy là bao nhiêu?",
+     "text": "Từ hai thẻ 6 và 6 thì lập được mấy số có hai chữ số khác nhau?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số bé nhất lập được",
-        "value": 679
-       }
-      ]
+      "value": 1
      },
-     "solutionNarrative": "ba thẻ là 9, 7, 6; số bé nhất lập được: 679",
+     "solutionNarrative": "Hai thẻ giống hệt nhau nên đổi chỗ vẫn ra số 66. Chỉ lập được 1 số.",
      "hints": [
-      "Số lớn nhất vốn đã xếp từ to xuống bé — đọc ngay ra ba thẻ.",
-      "Có ba thẻ rồi thì đảo lại mà lấy số bé nhất."
+      "Con thử đổi chỗ hai thẻ ấy xem có ra số khác không.",
+      "Hai thẻ giống hệt nhau nên đổi thế nào cũng ra số cũ."
      ]
     }
    ]
@@ -260,101 +229,69 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Muốn lập số lớn nhất, ta cho thẻ to nhất đứng ở phòng trăm.",
+    "text": "Muốn số lớn nhất thì đặt thẻ to nhất vào phòng bên trái.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng, vì phòng bên trái quyền lực nhất."
    },
    {
     "id": "Q2",
-    "text": "Từ ba thẻ 0, 3, 7, số bé nhất có 3 chữ số là 037.",
+    "text": "Từ ba thẻ 8, 5, 2 thì số lớn nhất là 825.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "037 chỉ là 37"
+    "solutionNarrative": "Sai. Sau thẻ to nhất phải tới thẻ to nhì, nên số đúng là 852."
    },
    {
     "id": "Q3",
-    "text": "Số lớn nhất lập từ 2, 5, 8 là:",
+    "text": "Từ ba thẻ 4, 7, 1 thì số bé nhất là",
     "format": "mcq",
     "choices": [
-     "A. 852",
-     "B. 825",
-     "C. 582"
+     "147",
+     "174",
+     "417",
+     "741"
     ],
     "answerKey": {
-     "choice": "A. 852"
+     "choice": "147"
     },
-    "solutionNarrative": "Đáp án: A. 852"
+    "solutionNarrative": "Xếp từ bé đến to."
    },
    {
     "id": "Q4",
-    "text": "Số bé nhất có 3 chữ số lập từ 6, 0, 1 là:",
+    "text": "Muốn số bé nhất thì xếp thẻ thế nào?",
     "format": "mcq",
     "choices": [
-     "A. 016",
-     "B. 106",
-     "C. 160"
+     "từ bé đến to",
+     "từ to đến bé",
+     "xếp lộn xộn cũng được"
     ],
     "answerKey": {
-     "choice": "B. 106"
+     "choice": "từ bé đến to"
     },
-    "solutionNarrative": "Đáp án: B. 106"
+    "solutionNarrative": "Ngược hẳn với cách lập số lớn nhất."
    },
    {
     "id": "Q5",
-    "text": "Từ hai thẻ 9 và 4, số lớn nhất có 2 chữ số là:",
-    "format": "mcq",
-    "choices": [
-     "A. 49",
-     "B. 94",
-     "C. 99"
-    ],
+    "text": "Từ hai thẻ giống hệt nhau thì chỉ lập được một số.",
+    "format": "tf",
     "answerKey": {
-     "choice": "B. 94"
+     "value": true
     },
-    "solutionNarrative": "Đáp án: B. 94"
+    "solutionNarrative": "Đúng, vì đổi chỗ hai thẻ ấy vẫn ra số cũ."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Trò \"rút thẻ thi đấu\": mỗi người rút ngẫu nhiên 3 thẻ, cùng lập số lớn nhất — ai lớn hơn thắng ván. Thỉnh thoảng gài thẻ 0 vào để luyện luật đặc biệt.",
-  "homeActivity": "Nâng độ khó dần: 2 thẻ → 3 thẻ → 3 thẻ có 0 → 3 thẻ có cặp giống nhau.",
-  "watchFor": "NÊN: yêu cầu con kiểm tra lại \"đã dùng đúng và đủ các thẻ chưa\". KHÔNG NÊN: nhắc luật hộ con khi gặp thẻ 0 — cứ để con sai một lần, tự phát hiện sẽ nhớ mãi."
+  "onComplete": "Cắt ba mẩu giấy viết ba chữ số rồi cho con xếp thật. Xếp xong đọc to lên, rồi thử đổi chỗ xem có ra số lớn hơn không.",
+  "homeActivity": "Bí quyết chỉ một câu: \"Thẻ to nhất đi vào phòng bên trái nhất.\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_MO_B04",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_MO_B04.png",
-   "caption": "Ba tấm thẻ 4, 0, 9 chờ xếp thành số",
-   "sha256_16": "62620a84eea3c62c",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_DAY09",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L2H_DAY09.png",
-   "caption": "Ba thẻ 2, 5, 8: xếp thẻ to nhất lên đầu thì được số lớn nhất",
-   "sha256_16": "0d279f4b832f28d7",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L2H_DAY10",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L2H_DAY10.png",
-   "caption": "Số 0 không được đứng đầu — nếu không số 3 chữ số thành số 2 chữ số",
-   "sha256_16": "7eff8fac1ea5e6f1",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B04_giang.mp4"
+ }
 }

@@ -266,7 +266,16 @@ function diemDanh() {
 
    Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
    `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
-const MOC = { tong: 2651, dungKhiDungDap: 2649, dungKhiSaiDap: 1, tuDoiChieu: 1 };
+/* ⚠ 2651 → 2695. Đợt đầu tiên của quyển LỚP 2: chương 1 tách năm bài thành mười.
+       luyện tập lớp 2  242 → 286 câu chấm máy  (+44)  ·  2651 + 44 = 2695  ✓
+
+   Mười bài mới đều 8 câu, cả 80 câu đều chấm máy được — vì quyển đọc chậm không
+   cho gõ chữ, đáp không phải số thì phải cho bấm nút. Năm bài cũ trước đó đóng góp
+   36 câu chấm máy được, nên lệch đúng 44.
+
+   Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
+const MOC = { tong: 2695, dungKhiDungDap: 2693, dungKhiSaiDap: 1, tuDoiChieu: 1 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

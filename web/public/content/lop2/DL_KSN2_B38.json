@@ -1,0 +1,301 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B38",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 9 · KHI CÓ THẺ SỐ 0 — SỐ 0 KHÔNG ĐỨNG ĐẦU",
+ "durationMinutes": 10,
+ "so": 9,
+ "chuong": 1,
+ "tenChuong": "Vương quốc Số",
+ "dangGoc": "SỐ 3.1 — Lập số bé nhất khi trong tay có thẻ số 0.",
+ "skills": {
+  "bktUnit": "CHUONG:1@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 9,
+  "prev": "DL:KSN2.B04",
+  "next": "DL:KSN2.B05"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết chữ số 0 không được đứng ở phòng bên trái nhất. Lập được số bé nhất khi có thẻ số 0: thẻ bé nhất khác 0 đứng đầu. Biết thẻ 0 vẫn đứng được ở các phòng còn lại.",
+  "kidText": "Lần này trong tay có một thẻ số 0. Con đoán xem nó gây khó ở chỗ nào?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn lập số bé nhất từ ba thẻ 0, 3, 7 rồi viết 037.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con đếm xem số 037 có mấy chữ số thật sự. Gợi ý 2: Chữ số 0 đứng ở phòng trăm thì số ấy có mấy trăm? Chữa: chữ số 0 ở phòng trăm nghĩa là không có trăm nào, nên số ấy chỉ là 37. Muốn đủ ba chữ số thì cho thẻ 3 đứng đầu, được 307."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn lập số bé nhất từ ba thẻ 0, 3, 7 rồi viết 037.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Có ba thẻ số 0, 3 và 7. Hãy lập số bé nhất có ba chữ số.",
+  "steps": [
+   {
+    "show": "Làm như bài trước thì sao",
+    "phan": "giai"
+   },
+   {
+    "show": "Xếp từ bé đến to được không, ba, bảy. Nhưng khoan đã.",
+    "phan": "giai"
+   },
+   {
+    "show": "Số ấy viết ra là 037 — mà chữ số 0 đứng đầu thì nó chẳng làm nên trăm nào, số chỉ còn là 37 có hai chữ số.",
+    "phan": "giai"
+   },
+   {
+    "show": "Luật của thẻ số 0",
+    "phan": "giai"
+   },
+   {
+    "show": "Chữ số 0 không được đứng ở phòng bên trái nhất. Nhưng các phòng còn lại thì nó vẫn ngồi được.",
+    "phan": "giai"
+   },
+   {
+    "show": "Xếp lại cho đúng",
+    "phan": "giai"
+   },
+   {
+    "show": "Cho thẻ bé nhất KHÁC 0 đứng đầu, tức thẻ 3. Rồi thẻ 0 ngồi ngay phòng thứ hai. Còn thẻ 7 xuống cuối.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: số bé nhất là 307.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Còn số lớn nhất thì không vướng gì, vẫn xếp từ to đến bé: 730.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Từ ba thẻ 0, 3, 7, lập số lớn nhất có ba chữ số.",
+     "answerKey": {
+      "value": 730
+     },
+     "solutionNarrative": "Xếp từ to đến bé, được số 730.",
+     "hints": [
+      "Số lớn nhất thì không vướng gì cả, con xếp từ to đến bé.",
+      "Thẻ 7 vào phòng trăm, rồi thẻ 3, rồi thẻ 0 xuống cuối."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Xếp từ bé đến to được 0, 3, 7. Số 037 có phải số có ba chữ số không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có phải không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Không. Chữ số 0 đứng đầu thì không có trăm nào, số ấy chỉ là 37.",
+     "hints": [
+      "Con thử đọc to số ấy lên xem có nghe vô lý không.",
+      "Chữ số 0 ở phòng trăm nghĩa là không có trăm nào."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vậy từ ba thẻ 0, 3, 7 thì số bé nhất có ba chữ số là số nào?",
+     "answerKey": {
+      "value": 307
+     },
+     "solutionNarrative": "Cho thẻ bé nhất khác 0 đứng đầu, được số 307.",
+     "hints": [
+      "Thẻ 0 không đứng đầu được, nên thẻ nào phải đứng đầu?",
+      "Cho thẻ bé nhất khác 0 đứng đầu, rồi thẻ 0 ngồi ngay sau."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Từ ba thẻ 0, 5, 9, lập số bé nhất có ba chữ số.",
+     "answerKey": {
+      "value": 509
+     },
+     "solutionNarrative": "Thẻ 5 đứng đầu, thẻ 0 vào phòng chục, được số 509.",
+     "hints": [
+      "Thẻ 0 không đứng đầu được, con cho thẻ bé nhì đứng đầu.",
+      "Rồi thẻ 0 ngồi phòng chục, thẻ to nhất xuống cuối."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Từ ba thẻ 0, 5, 9, lập số lớn nhất có ba chữ số.",
+     "answerKey": {
+      "value": 950
+     },
+     "solutionNarrative": "Xếp từ to đến bé, được số 950.",
+     "hints": [
+      "Số lớn nhất thì không vướng thẻ 0, con xếp từ to đến bé.",
+      "Thẻ 9 vào phòng trăm, rồi thẻ 5, rồi thẻ 0."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Thẻ số 0 không được đứng ở phòng nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phòng nào",
+        "options": [
+         "phòng trăm",
+         "phòng chục",
+         "phòng đơn vị"
+        ],
+        "value": "phòng trăm"
+       }
+      ]
+     },
+     "solutionNarrative": "Không được đứng ở phòng trăm, tức phòng bên trái nhất.",
+     "hints": [
+      "Con nhớ lại: thẻ 0 đứng ở đâu thì số bị mất một chữ số?",
+      "Nó chỉ kiêng đúng một phòng thôi, phòng bên trái nhất."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Từ ba thẻ 0, 2, 8: lập số lớn nhất, số bé nhất, rồi tính hiệu.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lớn nhất",
+        "value": 820
+       },
+       {
+        "label": "số bé nhất",
+        "value": 208
+       },
+       {
+        "label": "hiệu",
+        "value": 612
+       }
+      ]
+     },
+     "solutionNarrative": "Số lớn nhất 820, số bé nhất 208. Hiệu: $820 - 208 = 612$.",
+     "hints": [
+      "Con lập số lớn nhất trước, rồi lập số bé nhất, nhớ luật thẻ 0.",
+      "Có hai số rồi thì đặt tính trừ chúng cho nhau."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Từ hai thẻ 0 và 6, lập được số có hai chữ số nào?",
+     "answerKey": {
+      "value": 60
+     },
+     "solutionNarrative": "Thẻ 0 không đứng đầu được, nên chỉ lập được số 60.",
+     "hints": [
+      "Thẻ 0 không đứng đầu được nên chỉ còn một cách xếp.",
+      "Thẻ 6 phải đứng đầu, thẻ 0 xuống sau."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Chữ số 0 không được đứng ở phòng bên trái nhất.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Đứng đó thì số bị mất một chữ số."
+   },
+   {
+    "id": "Q2",
+    "text": "Từ ba thẻ 0, 3, 7 thì số bé nhất có ba chữ số là 037.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Số ấy chỉ là 37. Số bé nhất đúng là 307."
+   },
+   {
+    "id": "Q3",
+    "text": "Từ ba thẻ 0, 5, 9 thì số bé nhất có ba chữ số là",
+    "format": "mcq",
+    "choices": [
+     "509",
+     "059",
+     "905",
+     "950"
+    ],
+    "answerKey": {
+     "choice": "509"
+    },
+    "solutionNarrative": "Thẻ bé nhất khác 0 đứng đầu, rồi mới tới thẻ 0."
+   },
+   {
+    "id": "Q4",
+    "text": "Thẻ số 0 đứng được ở phòng nào?",
+    "format": "mcq",
+    "choices": [
+     "phòng chục và phòng đơn vị",
+     "chỉ phòng trăm",
+     "không phòng nào"
+    ],
+    "answerKey": {
+     "choice": "phòng chục và phòng đơn vị"
+    },
+    "solutionNarrative": "Nó chỉ kiêng phòng bên trái nhất thôi."
+   },
+   {
+    "id": "Q5",
+    "text": "Từ hai thẻ 0 và 6 chỉ lập được số 60.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, vì thẻ 0 không đứng đầu được."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con xếp thẻ có số 0 thật. Xếp xong bảo con đọc to — đọc \"không trăm ba mươi bảy\" là con tự thấy nó vô lý.",
+  "homeActivity": "Câu nhắc: \"Số 0 nhút nhát, không dám đứng đầu hàng.\" Nhưng nó vẫn đứng giữa được bình thường.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B38_giang.mp4"
+ }
+}

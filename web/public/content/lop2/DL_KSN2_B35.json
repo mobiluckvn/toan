@@ -1,0 +1,341 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B35",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 3 · SO HAI SỐ — SO PHÒNG BÊN TRÁI TRƯỚC",
+ "durationMinutes": 10,
+ "so": 3,
+ "chuong": 1,
+ "tenChuong": "Vương quốc Số",
+ "dangGoc": "SỐ 1.1 — So sánh hai số bằng cách so từng phòng từ trái sang phải.",
+ "skills": {
+  "bktUnit": "CHUONG:1@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 3,
+  "prev": "DL:KSN2.B34",
+  "next": "DL:KSN2.B02"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "So hai số bằng cách so phòng trăm trước. Biết hoà phòng trăm thì so tiếp phòng chục, rồi phòng đơn vị. Biết phòng bên trái luôn quyền lực hơn các phòng sau.",
+  "kidText": "Cô có hai số 245 và 198. Con đoán xem số nào lớn hơn, mà đừng đếm nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn so 88 với 100 rồi bảo 88 lớn hơn, vì trong 88 có hai chữ số 8 to.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con đếm xem mỗi số có mấy chữ số. Số nào dài hơn? Gợi ý 2: Số 100 có chữ số ở phòng trăm, còn số 88 thì phòng trăm trống không. Chữa: so số thì so phòng chứ không so chữ số nào to. Số 100 có 1 trăm, số 88 không có trăm nào, nên 100 lớn hơn."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn so 88 với 100 rồi bảo 88 lớn hơn, vì trong 88 có hai chữ số 8 to.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "So sánh 245 với 198. Số nào lớn hơn?",
+  "steps": [
+   {
+    "show": "So phòng bên trái trước",
+    "phan": "giai"
+   },
+   {
+    "show": "Phòng trăm của 245 có chữ số 2. Phòng trăm của 198 có chữ số 1.",
+    "phan": "giai"
+   },
+   {
+    "show": "Hai lớn hơn một, nên 245 lớn hơn 198.",
+    "phan": "giai"
+   },
+   {
+    "show": "Không cần nhìn hai phòng sau nữa — phòng trăm đã phân thắng bại.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 245 lớn hơn 198.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Khi phòng trăm hoà nhau",
+    "phan": "ghichu"
+   },
+   {
+    "show": "So 245 với 254 thì phòng trăm đều là 2, hoà. Nhìn tiếp phòng chục: 4 với 5. Năm lớn hơn bốn nên 254 lớn hơn.",
+    "phan": "ghichu"
+   },
+   {
+    "show": "Hoà tiếp thì mới nhìn phòng đơn vị.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "So sánh 245 với 198. Số nào lớn hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lớn hơn",
+        "options": [
+         "245",
+         "198"
+        ],
+        "value": "245"
+       }
+      ]
+     },
+     "solutionNarrative": "Phòng trăm của 245 là 2, của 198 là 1. Hai lớn hơn một nên 245 lớn hơn.",
+     "hints": [
+      "Con nhìn phòng bên trái nhất của cả hai số.",
+      "Số nào có nhiều trăm hơn thì số ấy lớn hơn."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Phòng trăm của 245 có chữ số mấy, phòng trăm của 198 có chữ số mấy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số 245 có",
+        "value": 2
+       },
+       {
+        "label": "số 198 có",
+        "value": 1
+       }
+      ]
+     },
+     "solutionNarrative": "Số 245 có 2 ở phòng trăm; số 198 có 1 ở phòng trăm.",
+     "hints": [
+      "Con chỉ tay vào chữ số đứng đầu của từng số.",
+      "Đó chính là chữ số ở phòng trăm."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "So sánh 368 với 372. Số nào lớn hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lớn hơn",
+        "options": [
+         "372",
+         "368"
+        ],
+        "value": "372"
+       }
+      ]
+     },
+     "solutionNarrative": "Phòng trăm hoà nhau đều là 3. Nhìn phòng chục: 7 lớn hơn 6 nên 372 lớn hơn.",
+     "hints": [
+      "Phòng trăm của hai số này bằng nhau nên chưa phân được.",
+      "Con nhìn tiếp sang phòng chục."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "So sánh 245 với 254. Số nào lớn hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lớn hơn",
+        "options": [
+         "254",
+         "245"
+        ],
+        "value": "254"
+       }
+      ]
+     },
+     "solutionNarrative": "Phòng trăm hoà. Phòng chục: 5 lớn hơn 4 nên 254 lớn hơn.",
+     "hints": [
+      "Hai số này cùng có chữ số đứng đầu giống nhau.",
+      "Nhìn tiếp phòng chục xem bên nào nhiều hơn."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "So sánh 507 với 570. Số nào lớn hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lớn hơn",
+        "options": [
+         "570",
+         "507"
+        ],
+        "value": "570"
+       }
+      ]
+     },
+     "solutionNarrative": "Phòng trăm hoà đều là 5. Phòng chục: 7 lớn hơn 0 nên 570 lớn hơn.",
+     "hints": [
+      "Phòng trăm hoà nhau nên phải nhìn phòng tiếp theo.",
+      "Phòng chục một bên có bảy, một bên trống không."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "So sánh 88 với 100. Số nào lớn hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số lớn hơn",
+        "options": [
+         "100",
+         "88"
+        ],
+        "value": "100"
+       }
+      ]
+     },
+     "solutionNarrative": "Số 100 có 1 trăm, số 88 không có trăm nào, nên 100 lớn hơn.",
+     "hints": [
+      "Con đếm xem mỗi số có mấy chữ số.",
+      "Một số có phòng trăm, số kia thì không có trăm nào."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Xếp ba số 245, 254 và 198 từ bé đến lớn.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bé nhất",
+        "value": 198
+       },
+       {
+        "label": "ở giữa",
+        "value": 245
+       },
+       {
+        "label": "lớn nhất",
+        "value": 254
+       }
+      ]
+     },
+     "solutionNarrative": "Bé nhất là 198 vì chỉ có 1 trăm. Rồi tới 245, và lớn nhất là 254.",
+     "hints": [
+      "Con tìm số ít trăm nhất trước đã.",
+      "Hai số còn lại cùng số trăm, con nhìn tiếp phòng chục của chúng."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Hai số cùng có chữ số 3 ở phòng trăm và chữ số 6 ở phòng chục. Muốn biết số nào lớn hơn thì phải so phòng nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phòng nào",
+        "options": [
+         "phòng trăm",
+         "phòng chục",
+         "phòng đơn vị"
+        ],
+        "value": "phòng đơn vị"
+       }
+      ]
+     },
+     "solutionNarrative": "Hai phòng đầu đã hoà nên phải so phòng đơn vị.",
+     "hints": [
+      "Hai phòng đầu đã hoà nhau rồi thì còn phòng nào chưa xét?",
+      "Chỉ còn phòng ngoài cùng bên phải thôi."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "So hai số thì so phòng bên trái trước.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Phòng bên trái luôn quyền lực hơn."
+   },
+   {
+    "id": "Q2",
+    "text": "Số 88 lớn hơn số 100 vì trong 88 có hai chữ số 8 to.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. So số thì so phòng: 100 có 1 trăm còn 88 không có trăm nào."
+   },
+   {
+    "id": "Q3",
+    "text": "So 245 với 254 thì phải nhìn phòng nào để phân thắng bại?",
+    "format": "mcq",
+    "choices": [
+     "phòng trăm",
+     "phòng chục",
+     "phòng đơn vị"
+    ],
+    "answerKey": {
+     "choice": "phòng chục"
+    },
+    "solutionNarrative": "Phòng trăm hoà nhau nên phải nhìn tiếp phòng chục."
+   },
+   {
+    "id": "Q4",
+    "text": "Trong ba số 198, 245, 254 thì số nào bé nhất?",
+    "format": "mcq",
+    "choices": [
+     "198",
+     "245",
+     "254"
+    ],
+    "answerKey": {
+     "choice": "198"
+    },
+    "solutionNarrative": "Số 198 chỉ có 1 trăm, ít nhất trong ba số."
+   },
+   {
+    "id": "Q5",
+    "text": "Nếu phòng trăm đã phân thắng bại thì không cần nhìn hai phòng sau.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Các phòng sau không cứu lại được."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con so giá hai món đồ trong siêu thị. Bảo con chỉ tay vào phòng trăm của cả hai trước khi nói số nào đắt hơn.",
+  "homeActivity": "Mẹo nhắc con: \"Phòng bên trái nói trước.\" Chỉ khi hai phòng bên trái bằng nhau thì mới được hỏi phòng tiếp theo.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B35_giang.mp4"
+ }
+}

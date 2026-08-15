@@ -32,8 +32,18 @@ import re
 from pathlib import Path
 
 GOC = Path(__file__).resolve().parent.parent.parent
-NGUON = GOC / 'data' / 'lop4'
-THU_TU = NGUON / 'thu_tu.json'
+# ⚠ ĐỪNG GHIM MỘT QUYỂN VÀO ĐÂY. Bản đầu ghim `data/lop4`, nên lúc mở sang quyển
+# lớp 2 thì mọi thứ vẫn chạy — chỉ có điều nó đọc nhầm tệp của lớp 4 và chết ở chỗ
+# "không có bài này". Nay thư mục suy TỪ MÃ BÀI: `DL_KSN2_B01` → `data/lop2`.
+QUYEN_CUA = {'KSN2': 'lop2', 'KSN3': 'lop3', 'KSN4': 'lop4'}
+
+
+def _thu_muc(ma_hoac_id: str) -> Path:
+    """`DL_KSN4_B13` hay `DL:KSN4.B13` → thư mục nguồn của quyển ấy."""
+    for k, v in QUYEN_CUA.items():
+        if k in ma_hoac_id:
+            return GOC / 'data' / v
+    raise SystemExit(f'{ma_hoac_id}: không nhận ra quyển nào')
 
 
 def so_bai(b: dict) -> str:
@@ -47,7 +57,7 @@ def so_bai(b: dict) -> str:
     Nay số ấy đếm ra từ đúng cái lời khai mà màn hình đang dùng, nên hai bên không
     bao giờ lệch được nữa.
     """
-    tt = json.loads(THU_TU.read_text('utf8'))['thuTu']
+    tt = json.loads((_thu_muc(b['id']) / 'thu_tu.json').read_text('utf8'))['thuTu']
     try:
         return f'Bài {tt.index(b["id"]) + 1}'
     except ValueError:
@@ -4025,6 +4035,401 @@ def kb_kim_dong_ho(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 2 · CHƯƠNG 1 · VƯƠNG QUỐC SỐ — mười kịch bản
+#
+# Bác chốt: video KHÔNG nhân vật, giống hệt lớp 4. Nhưng lời đọc cho bé 7 tuổi
+# thì phải ngắn hơn nữa và dùng chữ quen hơn — "phòng" chứ không "hàng", "to gấp
+# mười" chứ không "gấp mười lần giá trị".
+# ═══════════════════════════════════════════════════════════════════════════
+
+def kb2_ba_phong(b):
+    """C1① Ba phòng của một số."""
+    return [
+        _c('bia', 'Ba phòng của một số', so_bai(b),
+           loi=['Số có ba chữ số ở trong một ngôi nhà ba phòng.']),
+        _c('bang_hang', 'Bên trái là phòng TRĂM', so='245', hienLop=False,
+           chuPhu='Ở giữa là phòng chục, bên phải là phòng đơn vị.',
+           loi=['Bên trái là phòng trăm. Ở giữa là phòng chục. Bên phải là phòng đơn '
+                'vị.']),
+        _c('bang_hang', 'Chữ số 2 ngồi phòng trăm', so='245', toSang=[2],
+           hienLop=False, chuPhu='Nó đứng ngoài cùng bên trái.',
+           loi=['Xếp số hai trăm bốn mươi lăm vào nhà.',
+                'Chữ số hai ngồi phòng trăm, vì nó đứng ngoài cùng bên trái.']),
+        _c('bang_hang', 'Chữ số 4 ngồi phòng chục', so='245', toSang=[1],
+           hienLop=False, chuPhu='Nó đứng ở giữa.',
+           loi=['Chữ số bốn ngồi phòng chục, vì nó đứng ở giữa.']),
+        _c('bang_hang', 'Chữ số 5 ngồi phòng đơn vị', so='245', toSang=[0],
+           hienLop=False, chuPhu='Nó đứng ngoài cùng bên phải.',
+           loi=['Chữ số năm ngồi phòng đơn vị, vì nó đứng ngoài cùng bên phải.']),
+        _c('y_toan', 'Đáp số', '2 trăm · 4 chục · 5 đơn vị',
+           loi=['Vậy số này có hai trăm, bốn chục, năm đơn vị.']),
+        _c('cong_thuc', 'Ngôi nhà ba phòng',
+           congThuc='trăm  ·  chục  ·  đơn vị',
+           thay='đọc từ TRÁI sang phải',
+           loi=['Ba phòng là trăm, chục, đơn vị. Đọc từ trái sang phải.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='phòng đơn vị luôn ở NGOÀI CÙNG BÊN PHẢI',
+           loi=['Con nhớ lại một lần nữa. Phòng đơn vị luôn ở ngoài cùng bên phải.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_gia_tri(b):
+    """C1② Mỗi chữ số đáng bao nhiêu."""
+    return [
+        _c('bia', 'Mỗi chữ số đáng bao nhiêu', so_bai(b),
+           loi=['Chữ số đáng bao nhiêu là do phòng nó ngồi.']),
+        _c('bang_hang', 'Chữ số 2 ở phòng trăm nên đáng 200', so='245', toSang=[2],
+           hienLop=False, chuPhu='Không phải đáng 2 đâu.',
+           loi=['Chữ số hai ngồi phòng trăm nên nó đáng hai trăm. Không phải đáng '
+                'hai.']),
+        _c('bang_hang', 'Chữ số 4 ở phòng chục nên đáng 40', so='245', toSang=[1],
+           hienLop=False, chuPhu='Bốn thanh chục.',
+           loi=['Chữ số bốn ngồi phòng chục nên nó đáng bốn mươi.']),
+        _c('bang_hang', 'Chữ số 5 ở phòng đơn vị nên đáng 5', so='245', toSang=[0],
+           hienLop=False, chuPhu='Năm hạt lẻ.',
+           loi=['Chữ số năm ngồi phòng đơn vị nên nó chỉ đáng năm.']),
+        _c('y_toan', 'Mở cửa từng phòng rồi cộng lại',
+           '200 + 40 + 5 = 245', buoc=1, soBuoc=2,
+           loi=['Mở cửa từng phòng rồi cộng lại. Hai trăm, cộng bốn mươi, cộng năm.',
+                'Được đúng số ban đầu.']),
+        _c('bang_hang', 'Khi có phòng trống', so='507', toSang=[1], hienLop=False,
+           chuPhu='507 tách ra là 500 + 7.',
+           chuCuoi='Nhưng khi VIẾT SỐ thì chữ số 0 vẫn phải có.',
+           loi=['Số năm trăm linh bảy có phòng chục trống.',
+                'Tách ra chỉ còn năm trăm cộng bảy.',
+                'Nhưng khi viết số thì chữ số không vẫn phải có, không thì còn lại năm '
+                'mươi bảy.']),
+        _c('cong_thuc', 'Tách số thành tổng',
+           congThuc='245  =  200  +  40  +  5',
+           thay='tách theo cái mỗi chữ số ĐÁNG',
+           loi=['Tách số là tách theo cái mỗi chữ số đáng.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='KHÔNG phải 2 + 4 + 5',
+           loi=['Con nhớ lại một lần nữa. Không phải tách rời từng chữ số ra cộng.',
+                'Cộng thế thì chỉ được mười một thôi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_so_sanh(b):
+    """C1③ So hai số."""
+    return [
+        _c('bia', 'So hai số', so_bai(b),
+           loi=['So hai số thì nhìn phòng bên trái trước.']),
+        _c('bang_hang', 'Số thứ nhất', so='245', toSang=[2], hienLop=False,
+           chuPhu='Phòng trăm có chữ số 2.',
+           loi=['Số thứ nhất là hai trăm bốn mươi lăm. Phòng trăm của nó có chữ số '
+                'hai.']),
+        _c('bang_hang', 'Số thứ hai', so='198', toSang=[2], hienLop=False,
+           chuPhu='Phòng trăm chỉ có chữ số 1.',
+           loi=['Số thứ hai là một trăm chín mươi tám. Phòng trăm chỉ có chữ số một.']),
+        _c('y_toan', 'Hai lớn hơn một', 'Nên 245 lớn hơn 198.', buoc=1, soBuoc=3,
+           loi=['Hai lớn hơn một, nên số thứ nhất lớn hơn.',
+                'Không cần nhìn hai phòng sau nữa. Phòng trăm đã phân thắng bại.']),
+        _c('y_toan', 'Khi phòng trăm hoà nhau',
+           '245 và 254 đều có 2 ở phòng trăm.', buoc=2, soBuoc=3,
+           loi=['Nhưng có khi phòng trăm hoà nhau. Hai số này đều có chữ số hai ở '
+                'phòng trăm.']),
+        _c('y_toan', 'Thì nhìn tiếp phòng chục',
+           '4 với 5 — năm lớn hơn nên 254 lớn hơn.', buoc=3, soBuoc=3,
+           loi=['Khi ấy nhìn tiếp phòng chục. Bốn với năm.',
+                'Năm lớn hơn bốn nên số hai trăm năm mươi tư lớn hơn.',
+                'Hoà tiếp nữa thì mới nhìn phòng đơn vị.']),
+        _c('cong_thuc', 'Cách so hai số',
+           congThuc='so phòng TRĂM trước  ·  hoà thì so CHỤC  ·  rồi ĐƠN VỊ',
+           thay='phòng bên trái luôn quyền lực hơn',
+           loi=['So phòng trăm trước. Hoà thì so phòng chục, rồi mới tới phòng đơn '
+                'vị.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='phòng bên trái nói TRƯỚC',
+           loi=['Con nhớ lại một lần nữa. Phòng bên trái nói trước.',
+                'Số nào nhiều trăm hơn thì lớn hơn, dù các chữ số sau có to đến đâu.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_them_khong(b):
+    """C1④ Thêm số 0 vào bên phải."""
+    return [
+        _c('bia', 'Thêm số 0 vào bên phải', so_bai(b),
+           loi=['Thêm một chữ số không mà số to hẳn lên.']),
+        _c('bang_hang', 'Số 3 ngồi phòng đơn vị', so='3', hienLop=False, toSang=[0],
+           chuPhu='Ba hạt lẻ.',
+           loi=['Số ba ngồi ở phòng đơn vị. Nó chỉ đáng ba hạt.']),
+        _c('bang_hang', 'Thêm số 0 — chữ số 3 bị ĐẨY sang phòng chục', so='30',
+           hienLop=False, toSang=[1], chuPhu='Nay nó đáng ba chục.',
+           loi=['Thêm chữ số không vào bên phải. Chữ số không chen vào phòng đơn vị.',
+                'Chữ số ba bị đẩy sang phòng chục, nay nó đáng ba chục.']),
+        _c('y_toan', 'Ba hạt thành ba chục hạt', '3  →  30, to gấp 10 lần',
+           buoc=1, soBuoc=2,
+           loi=['Ba hạt lẻ nay thành ba chục hạt. To gấp mười lần.']),
+        _c('bang_hang', 'Số nào cũng thế', so='250', hienLop=False, toSang=[0],
+           chuPhu='25 thêm số 0 thành 250.',
+           loi=['Số nào cũng thế. Hai mươi lăm thêm chữ số không thành hai trăm năm '
+                'mươi.',
+                'Cả số dọn nhà sang trái một phòng.']),
+        _c('y_toan', 'Chữ số 0 không đáng gì',
+           'Nhưng nó ĐẨY các chữ số kia sang trái.', buoc=2, soBuoc=2,
+           loi=['Con nhớ chỗ này. Bản thân chữ số không chẳng đáng gì.',
+                'Nhưng nó đẩy các chữ số kia sang trái, và chính cái đẩy ấy làm số to '
+                'lên.']),
+        _c('cong_thuc', 'Thêm số 0 vào bên phải',
+           congThuc='thêm 0  →  to gấp MƯỜI lần',
+           thay='3 → 30      25 → 250',
+           loi=['Thêm chữ số không vào bên phải thì số to gấp mười lần.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='cả số dọn nhà sang TRÁI một phòng',
+           loi=['Con nhớ lại một lần nữa. Cả số dọn nhà sang trái một phòng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_xoa_khong(b):
+    """C1⑤ Xoá số 0 tận cùng."""
+    return [
+        _c('bia', 'Xoá số 0 ở tận cùng', so_bai(b),
+           loi=['Hôm nay mình làm ngược lại bài hôm qua.']),
+        _c('bang_hang', 'Số 70 — chữ số 7 đang ngồi phòng chục', so='70',
+           hienLop=False, toSang=[1], chuPhu='Nó đáng bảy chục.',
+           loi=['Số bảy mươi. Chữ số bảy đang ngồi phòng chục nên nó đáng bảy chục.']),
+        _c('bang_hang', 'Xoá số 0 — chữ số 7 TỤT về phòng đơn vị', so='7',
+           hienLop=False, toSang=[0], chuPhu='Nay nó chỉ đáng bảy hạt.',
+           loi=['Xoá chữ số không ở cuối. Mất chỗ dựa, chữ số bảy tụt về phòng đơn vị.',
+                'Nay nó chỉ còn đáng bảy hạt.']),
+        _c('y_toan', 'Nhỏ đi mười lần', '70  →  7', buoc=1, soBuoc=3,
+           loi=['Bảy chục thành bảy hạt. Số nhỏ đi mười lần.']),
+        _c('y_toan', 'Hai chiều ngược nhau',
+           'Thêm 0 thì to gấp mười. Xoá 0 thì nhỏ đi mười lần.', buoc=2, soBuoc=3,
+           loi=['Hai chiều ngược nhau. Thêm chữ số không thì to gấp mười.',
+                'Xoá chữ số không thì nhỏ đi mười lần.']),
+        _c('bang_hang', 'Nhưng chỉ xoá được ở TẬN CÙNG', so='405', hienLop=False,
+           toSang=[1], chuPhu='Số 405 có chữ số 0 ở GIỮA — không xoá kiểu này được.',
+           buoc=3, soBuoc=3,
+           loi=['Nhưng chỉ xoá được khi chữ số không đứng ở tận cùng.',
+                'Số bốn trăm linh năm có chữ số không nằm ở giữa. Xoá nó là số đổi '
+                'hẳn.']),
+        _c('cong_thuc', 'Xoá số 0 ở tận cùng',
+           congThuc='xoá 0 ở CUỐI  →  nhỏ đi MƯỜI lần',
+           thay='70 → 7      250 → 25',
+           loi=['Xoá chữ số không ở cuối thì số nhỏ đi mười lần.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hỏi trước: chữ số CUỐI CÙNG có phải số 0 không',
+           loi=['Con nhớ lại một lần nữa. Hỏi trước xem chữ số cuối cùng có phải số '
+                'không.',
+                'Không phải thì đừng xoá.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_doi_cho(b):
+    """C1⑥ Đổi chỗ hai chữ số."""
+    return [
+        _c('bia', 'Đổi chỗ hai chữ số', so_bai(b),
+           loi=['Đổi chỗ hai thẻ số thì được số khác hẳn.']),
+        _c('bang_hang', 'Số 25 — chữ số 2 ngồi phòng chục', so='25', hienLop=False,
+           toSang=[1], chuPhu='Nó đáng 20. Còn chữ số 5 chỉ đáng 5.',
+           loi=['Số hai mươi lăm. Chữ số hai ngồi phòng chục nên nó đáng hai mươi.',
+                'Chữ số năm ngồi phòng đơn vị nên chỉ đáng năm.']),
+        _c('bang_hang', 'Đổi chỗ — nay chữ số 5 chiếm phòng chục', so='52',
+           hienLop=False, toSang=[1], chuPhu='Nó đáng 50.',
+           loi=['Đổi chỗ hai thẻ thì được số năm mươi hai.',
+                'Nay chữ số năm chiếm phòng chục, nó đáng năm mươi.']),
+        _c('y_toan', 'Nên số mới lớn hơn', 'Thẻ TO đang ở phòng chục của 52.',
+           buoc=1, soBuoc=3,
+           loi=['Nên số mới lớn hơn số cũ. Thẻ to đang ở phòng chục của nó.']),
+        _c('y_toan', 'Muốn biết số nào lớn hơn',
+           'Chỉ cần hỏi: thẻ TO đang ở phòng chục của số nào.', buoc=2, soBuoc=3,
+           loi=['Muốn biết số nào lớn hơn thì chỉ cần hỏi một câu.',
+                'Thẻ to đang ở phòng chục của số nào. Số đó thắng.']),
+        _c('bang_hang', 'Một chỗ phải cẩn thận', so='50', hienLop=False, toSang=[0],
+           chuPhu='Đổi chỗ số 50 thì chữ số 0 lên đứng đầu.',
+           chuCuoi='Mà số 0 không được đứng đầu.', buoc=3, soBuoc=3,
+           loi=['Có một chỗ phải cẩn thận. Đổi chỗ số năm mươi thì chữ số không lên '
+                'đứng đầu.',
+                'Mà chữ số không thì không được đứng đầu, nên số ấy chỉ còn là số '
+                'năm.']),
+        _c('cong_thuc', 'Đổi chỗ hai chữ số',
+           congThuc='thẻ TO ở phòng chục  →  số ấy LỚN HƠN',
+           thay='25  →  52,  và 52 lớn hơn',
+           loi=['Thẻ to ở phòng chục thì số ấy lớn hơn.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hai thẻ vẫn thế  ·  nhưng ĐỔI PHÒNG thì đáng khác',
+           loi=['Con nhớ lại một lần nữa. Hai thẻ vẫn là hai thẻ ấy.',
+                'Nhưng chúng đổi phòng, mà phòng khác nhau thì đáng khác nhau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_hieu_bang_chin(b):
+    """C1⑦ Hiệu hai số đổi chỗ."""
+    return [
+        _c('bia', 'Hiệu của hai số đổi chỗ', so_bai(b),
+           loi=['Hôm nay con tự tìm ra một luật.']),
+        _c('y_toan', 'Thử cặp đầu tiên', '52 − 25 = 27', buoc=1, soBuoc=3,
+           loi=['Năm mươi hai trừ hai mươi lăm bằng hai mươi bảy.']),
+        _c('y_toan', 'Thử thêm vài cặp nữa',
+           '31 − 13 = 18   ·   42 − 24 = 18   ·   51 − 15 = 36', buoc=2, soBuoc=3,
+           loi=['Ba mươi mốt trừ mười ba bằng mười tám.',
+                'Bốn mươi hai trừ hai mươi bốn cũng bằng mười tám.',
+                'Năm mươi mốt trừ mười lăm bằng ba mươi sáu.']),
+        _c('y_toan', 'Con nhìn ra gì chưa',
+           '18 · 27 · 36 — toàn số trong bảng nhân 9', buoc=3, soBuoc=3,
+           loi=['Con nhìn ra gì chưa. Mười tám, hai mươi bảy, ba mươi sáu.',
+                'Toàn là số trong bảng nhân chín.']),
+        _c('tach_so', 'Đoán trước được luôn', so='52', sang=[1, 2],
+           phep='5 − 2 = 3,  rồi  3 × 9 = 27',
+           chuPhu='Lấy hiệu hai chữ số rồi nhân chín.',
+           loi=['Đoán trước được luôn. Lấy hiệu hai chữ số rồi nhân chín.',
+                'Năm trừ hai bằng ba. Ba nhân chín bằng hai mươi bảy — đúng đáp số '
+                'vừa tính.']),
+        _c('y_toan', 'Thử lại với một cặp mới', '71 − 17: hiệu chữ số 6, mà 6 × 9 = 54',
+           loi=['Thử lại với một cặp mới. Bảy mươi mốt và mười bảy.',
+                'Hiệu hai chữ số là sáu, sáu nhân chín bằng năm mươi bốn.',
+                'Tính thật cũng ra năm mươi bốn.']),
+        _c('cong_thuc', 'Luật con vừa tìm ra',
+           congThuc='hiệu  =  hiệu hai chữ số  ×  9',
+           thay='52 − 25 = 27,  mà (5 − 2) × 9 = 27',
+           loi=['Hiệu bằng hiệu hai chữ số nhân chín.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='thử vài cặp rồi mới tin  ·  đó là cách người giỏi làm',
+           loi=['Con nhớ lại một lần nữa. Thử vài cặp rồi mới tin.',
+                'Đó chính là cách người giỏi tìm ra luật.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_xep_the(b):
+    """C1⑧ Xếp thẻ để được số lớn nhất và bé nhất."""
+    return [
+        _c('bia', 'Xếp thẻ số', so_bai(b),
+           loi=['Có ba thẻ số, xếp thế nào để được số lớn nhất.']),
+        _c('y_toan', 'Nhớ lại bài đầu chương',
+           'Phòng bên trái quyền lực nhất.', buoc=1, soBuoc=3,
+           loi=['Nhớ lại bài đầu chương. Phòng bên trái quyền lực nhất.',
+                'Muốn số lớn thì phải làm cho phòng trăm to nhất đã.']),
+        _c('bang_hang', 'Số lớn nhất — xếp từ TO đến BÉ', so='852', hienLop=False,
+           toSang=[2], chuPhu='Thẻ 8 vào phòng trăm, thẻ 5 vào phòng chục.',
+           buoc=2, soBuoc=3,
+           loi=['Xếp từ to đến bé. Thẻ tám vào phòng trăm, thẻ năm vào phòng chục, '
+                'thẻ hai xuống cuối.',
+                'Được số tám trăm năm mươi hai.']),
+        _c('bang_hang', 'Số bé nhất — làm NGƯỢC LẠI', so='258', hienLop=False,
+           toSang=[2], chuPhu='Thẻ 2 vào phòng trăm, thẻ 8 xuống cuối.',
+           buoc=3, soBuoc=3,
+           loi=['Số bé nhất thì làm ngược lại. Xếp từ bé đến to.',
+                'Được số hai trăm năm mươi tám.']),
+        _c('y_toan', 'Chỗ hay nhầm',
+           'Sau thẻ TO NHẤT phải tới thẻ TO NHÌ.',
+           loi=['Con nhớ chỗ hay nhầm. Sau thẻ to nhất thì phải tới thẻ to nhì.',
+                'Đặt lộn hai thẻ sau là ra số bé hơn ngay.']),
+        _c('y_toan', 'Thử lại', 'Đổi thử hai thẻ bất kỳ — không ra số nào lớn hơn.',
+           loi=['Thử lại bằng cách đổi hai thẻ bất kỳ. Không ra số nào lớn hơn được.',
+                'Vì thẻ to nhất đã nằm ở phòng quyền lực nhất rồi.']),
+        _c('cong_thuc', 'Xếp thẻ số',
+           congThuc='số LỚN nhất: xếp từ TO đến BÉ',
+           thay='số BÉ nhất: xếp từ BÉ đến TO',
+           loi=['Số lớn nhất thì xếp từ to đến bé. Số bé nhất thì làm ngược lại.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='thẻ to nhất đi vào phòng BÊN TRÁI NHẤT',
+           loi=['Con nhớ lại một lần nữa. Thẻ to nhất đi vào phòng bên trái nhất.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_the_khong(b):
+    """C1⑨ Khi có thẻ số 0."""
+    return [
+        _c('bia', 'Khi có thẻ số 0', so_bai(b),
+           loi=['Lần này trong tay có một thẻ số không.']),
+        _c('y_toan', 'Làm như bài trước thì sao',
+           'Ba thẻ 0, 3, 7 — xếp từ bé đến to được 0, 3, 7.', buoc=1, soBuoc=3,
+           loi=['Ba thẻ là không, ba, bảy. Làm như bài trước thì xếp từ bé đến to.',
+                'Được không, ba, bảy.']),
+        _c('bang_hang', 'Nhưng khoan đã', so='037', hienLop=False, toSang=[2],
+           chuPhu='Chữ số 0 ở phòng trăm nghĩa là KHÔNG CÓ TRĂM NÀO.',
+           chuCuoi='Số ấy chỉ còn là 37 — có hai chữ số thôi.',
+           loi=['Nhưng khoan đã. Chữ số không ở phòng trăm nghĩa là không có trăm nào.',
+                'Số ấy chỉ còn là ba mươi bảy, có hai chữ số thôi.']),
+        _c('y_toan', 'Luật của thẻ số 0',
+           'Không được đứng ở phòng bên trái nhất.', buoc=2, soBuoc=3,
+           loi=['Vậy thẻ số không không được đứng ở phòng bên trái nhất.',
+                'Nhưng các phòng còn lại thì nó vẫn ngồi được bình thường.']),
+        _c('bang_hang', 'Xếp lại cho đúng', so='307', hienLop=False, toSang=[2],
+           chuPhu='Thẻ bé nhất KHÁC 0 đứng đầu, rồi thẻ 0 ngồi ngay sau.',
+           buoc=3, soBuoc=3,
+           loi=['Xếp lại cho đúng. Cho thẻ bé nhất khác không đứng đầu, tức thẻ ba.',
+                'Rồi thẻ không ngồi ngay phòng thứ hai. Được số ba trăm linh bảy.']),
+        _c('y_toan', 'Còn số lớn nhất thì không vướng gì',
+           'Vẫn xếp từ to đến bé: 730.',
+           loi=['Còn số lớn nhất thì không vướng gì cả. Vẫn xếp từ to đến bé.',
+                'Được bảy trăm ba mươi.']),
+        _c('cong_thuc', 'Khi có thẻ số 0',
+           congThuc='số 0 KHÔNG đứng đầu',
+           thay='số bé nhất: thẻ bé nhất KHÁC 0 đứng đầu, rồi mới tới thẻ 0',
+           loi=['Thẻ số không không đứng đầu. Số bé nhất thì cho thẻ bé nhất khác '
+                'không đứng đầu.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='số 0 chỉ kiêng phòng đầu  ·  các phòng khác vẫn ngồi được',
+           loi=['Con nhớ lại một lần nữa. Số không chỉ kiêng phòng đầu thôi.',
+                'Các phòng khác nó vẫn ngồi được bình thường.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_tuan_tra(b):
+    """C1⑩ Tìm đủ mọi số — bài cuối chương."""
+    return [
+        _c('bia', 'Tìm đủ mọi số', so_bai(b),
+           loi=['Tìm tất cả các số có hai chữ số mà tổng hai chữ số bằng năm.']),
+        _c('y_toan', 'Kể lộn xộn thì dễ sót',
+           'Nhớ ra số nào kể số ấy — dễ quên, mà cũng dễ kể trùng.',
+           buoc=1, soBuoc=3,
+           loi=['Nhớ ra số nào kể số ấy thì rất dễ bỏ quên, mà cũng dễ kể trùng.']),
+        _c('y_toan', 'Đi tuần tra CÓ THỨ TỰ',
+           'Cho hàng chục tăng dần từng nấc một.', buoc=2, soBuoc=3,
+           loi=['Có cách chắc hơn. Cho hàng chục tăng dần từng nấc một.',
+                'Mỗi nấc hỏi một câu: đơn vị phải là mấy thì tổng bằng năm.']),
+        _c('y_toan', 'Đi từng nấc',
+           'chục 1 → 14   ·   chục 2 → 23   ·   chục 3 → 32   ·   chục 4 → 41   ·   chục 5 → 50',
+           buoc=3, soBuoc=3,
+           loi=['Chục bằng một thì đơn vị bằng bốn, được mười bốn.',
+                'Chục hai thì đơn vị ba, được hai mươi ba. Rồi ba mươi hai, bốn mươi '
+                'mốt, năm mươi.']),
+        _c('y_toan', 'Vì sao bắt đầu từ chục bằng 1',
+           'Vì chục bằng 0 thì số 0 đứng đầu — không còn là số có hai chữ số.',
+           loi=['Vì sao bắt đầu từ chục bằng một. Vì chục bằng không thì chữ số không '
+                'đứng đầu.',
+                'Khi ấy không còn là số có hai chữ số nữa.']),
+        _c('y_toan', 'Vì sao dừng ở chục bằng 5',
+           'Vì chục bằng 6 thì đơn vị phải là 5 trừ 6 — không có chữ số nào như thế.',
+           loi=['Vì sao dừng ở chục bằng năm. Vì chục bằng sáu thì đơn vị phải là năm '
+                'trừ sáu.',
+                'Không có chữ số nào như thế cả.']),
+        _c('cong_thuc', 'Tìm đủ mọi số',
+           congThuc='cho hàng chục TĂNG DẦN  ·  mỗi nấc hỏi đơn vị là mấy',
+           thay='tổng bằng 5  →  đủ 5 số: 14, 23, 32, 41, 50',
+           loi=['Cho hàng chục tăng dần, mỗi nấc hỏi đơn vị là mấy.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='phải nói được VÌ SAO DỪNG',
+           loi=['Con nhớ lại một lần nữa. Làm xong phải nói được vì sao mình dừng ở '
+                'đó.',
+                'Nói được thì mới chắc là không sót số nào.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
@@ -4088,6 +4493,12 @@ BO = {
     'DL:KSN4.B47': kb_nhip_chan,    'DL:KSN4.B93': kb_xuoi_nguoc,
     'DL:KSN4.B94': kb_so_hai_xe,    'DL:KSN4.B48': kb_duoi_kip,
     'DL:KSN4.B95': kb_gap_nhau,     'DL:KSN4.B49': kb_kim_dong_ho,
+    # ══ LỚP 2 · chương 1 · Vương quốc Số — mười bài ══
+    'DL:KSN2.B01': kb2_ba_phong,    'DL:KSN2.B34': kb2_gia_tri,
+    'DL:KSN2.B35': kb2_so_sanh,     'DL:KSN2.B02': kb2_them_khong,
+    'DL:KSN2.B36': kb2_xoa_khong,   'DL:KSN2.B03': kb2_doi_cho,
+    'DL:KSN2.B37': kb2_hieu_bang_chin, 'DL:KSN2.B04': kb2_xep_the,
+    'DL:KSN2.B38': kb2_the_khong,   'DL:KSN2.B05': kb2_tuan_tra,
 }
 
 
@@ -4121,7 +4532,7 @@ def soi(ds: list[dict], bai_id: str) -> list[str]:
 
 
 def kich_ban(ma: str) -> dict:
-    bai = json.loads((NGUON / f'{ma}.json').read_text('utf8'))
+    bai = json.loads((_thu_muc(ma) / f'{ma}.json').read_text('utf8'))
     lam = BO.get(bai['id'])
     if not lam:
         raise SystemExit(f'{bai["id"]}: chưa viết kịch bản video cho bài này')

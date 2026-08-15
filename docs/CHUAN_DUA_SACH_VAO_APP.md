@@ -407,9 +407,9 @@ Suy đáp án từ lời văn **chỉ dùng được cho khuôn cố định**. 
 
 | | |
 |---|---|
-| máy suy ra (8 luật hẹp, đã soát tay từng câu) | 87 / 281 |
-| viết tay | 155 / 281 |
-| cố ý để tự chấm | 39 / 281 |
+| máy suy ra (8 luật hẹp, đã soát tay từng câu) | 66 / 318 |
+| viết tay | 220 / 318 |
+| cố ý để tự chấm | 32 / 318 |
 
 Đã thử 3 luật "thông minh" hơn, **phải bỏ 2** vì suy sai. Đừng thử lại — mã và lý do
 còn trong `tools/tach_cau_lop2.py`.
@@ -702,7 +702,7 @@ ba loại hình ngay từ Bước 1 (mục 10) thay vì trả giá hai lượt.
 | Vẽ hình giảng | 75 hình · 17 nguyên mẫu · ~800 dòng |
 | Vẽ hình màn mở + hình bài tập | +45 hình · +5 nguyên mẫu — làm ở lượt SAU, vì lượt đầu chỉ nghĩ tới hình giảng |
 | Vá nốt hình màn mở | +16 hình — lượt trên vẫn để 16/33 bài mở ra KHÔNG có hình nào, chỉ lộ khi đếm |
-| **Tổng hình** | **tổng 136 hình · 22 nguyên mẫu** |
+| **Tổng hình** | **tổng 122 hình · 22 nguyên mẫu** |
 | Đáp án | 88 suy máy + 154 viết tay |
 | Cổng nghiệm thu | 68 phép kiểm riêng cho quyển |
 

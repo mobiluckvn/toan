@@ -32,8 +32,17 @@ const CON_DOC = ['mucTieu', 'chuyenMoBai', 'khamPha', 'viDuMau', 'suKemNham', 'l
 const cauCua = (s) => String(s).split(/(?<=[.!?…])\s+/).map((x) => x.trim()).filter(Boolean);
 
 /* ── 1. đủ bài, đủ mục ── */
-t('33 bài', bai.length === 33);
-t('chỉ mục có đủ 33 bài', idx.length === 33);
+/* ⚠ ĐỪNG GHIM SỐ BÀI. Quyển đang chuyển sang khuôn video nên số bài còn đổi nhiều
+   đợt nữa. Hỏi `thu_tu.json` — chỗ DUY NHẤT quyết định bài nào đứng thứ mấy. */
+const SO_BAI = JSON.parse(readFileSync(join(G, 'thu_tu.json'), 'utf8')).thuTu.length;
+t(`đủ ${SO_BAI} bài (${bai.length})`, bai.length === SO_BAI);
+t(`chỉ mục có đủ ${SO_BAI} bài (${idx.length})`, idx.length === SO_BAI);
+
+/* Bài dùng VIDEO thay mở bài và bài giảng thì mấy phép dưới đây không áp được:
+   mục ② và ③ cố ý để rỗng, và bài không có bản gốc trong sách. Bác chốt 14-08. */
+const laVideo = (b) => !(b.muc?.chuyenMoBai?.dong || []).length
+                    && !(b.muc?.khamPha?.dong || []).length;
+const baiSach = bai.filter((b) => !laVideo(b));
 t('8 chương', new Set(bai.map((b) => b.chuong)).size === 8);
 t('bài nào cũng đủ 8 mục', bai.every((b) => Object.keys(b.muc).length === 8));
 t('bài nào cũng có tên', bai.every((b) => String(b.ten || '').length > 3));
@@ -81,12 +90,12 @@ if (tiLeThat >= 0.08) console.log('    ', viDu.join(' · '));
 
 /* Bản gốc phải còn nguyên để đối chiếu — viết lại lời văn mà xoá mất bản gốc thì
    sau này không ai kiểm được đã đổi gì, đúng hay sai. */
-t('mọi mục con đọc đều giữ bản gốc của sách',
-  bai.every((b) => CON_DOC.every((k) => Array.isArray(b.muc[k]?.goc))));
+t(`mọi mục con đọc đều giữ bản gốc của sách (${baiSach.length} bài của sách)`,
+  baiSach.every((b) => CON_DOC.every((k) => Array.isArray(b.muc[k]?.goc))));
 
 /* Viết lại phải LÀM DỄ HƠN, không được làm khó thêm. */
 let xauDi = 0;
-for (const b of bai) {
+for (const b of baiSach) {
   for (const k of CON_DOC) {
     const g = (b.muc[k]?.goc || []).flatMap(cauCua).filter((c) => c.split(/\s+/).length > TOI_DA).length;
     const m = (b.muc[k]?.dong || []).flatMap(cauCua).filter((c) => c.split(/\s+/).length > TOI_DA).length;
@@ -161,7 +170,8 @@ t('không bài nào lọt trường sauBai của bản trích thô',
    chấm sau số, mà quiz ghi "Câu 1 (Đúng/Sai?):". Không tách được thì không chấm được. */
 const quiz = bai.flatMap((b) => b.cau.filter((c) => c.phan === 'quiz'));
 const satHach = chung.flatMap((d) => d.assessment?.items || []);
-t(`165 câu quiz (${quiz.length})`, quiz.length === 165);
+t(`5 câu quiz mỗi bài — ${SO_BAI * 5} câu (${quiz.length})`,
+  quiz.length === SO_BAI * 5);
 t('bài nào cũng đúng 5 câu quiz',
   bai.every((b) => b.cau.filter((c) => c.phan === 'quiz').length === 5));
 t('quiz nào cũng chấm được bằng máy', quiz.every((c) => c.tuLuan === false));
@@ -182,13 +192,16 @@ t('câu luyện tập vẫn để bé tự chấm',
    Lớp 2 và lớp 5 dùng chung một bộ mã, nên bài lớp 2 phải mang đúng hình dạng mà
    buildFlow() của lớp 5 đọc được. Lệch một trường là phòng học dựng ra màn trống,
    mà không có gì báo — bài vẫn mở, chỉ là bé không thấy gì. */
-t('33 bài ở bản khuôn chung', chung.length === 33);
+t(`${SO_BAI} bài ở bản khuôn chung (${chung.length})`, chung.length === SO_BAI);
 t('bài nào cũng có mã, tiêu đề, mục tiêu',
   chung.every((d) => d.id && d.title && d.objective?.kidText));
-t('bài nào cũng có câu chốt (mantra)',
-  chung.every((d) => String(d.knowledgeCore?.mantra || '').length > 5));
-t('bài nào cũng có nguyên tắc để giảng',
-  chung.every((d) => (d.knowledgeCore?.statements || []).length >= 1));
+/* Bài dùng video KHÔNG có câu chốt và nguyên tắc — video thay cả hai, và `flow.js`
+   bỏ hẳn màn ấy đi. Không phân biệt thì cổng đỏ mãi rồi người ta quen tai. */
+const chungSach = chung.filter((d) => !d.video?.giang);
+t(`bài nào cũng có câu chốt, HOẶC có video thay (${chungSach.length} bài chữ)`,
+  chungSach.every((d) => String(d.knowledgeCore?.mantra || '').length > 5));
+t('bài nào cũng có nguyên tắc để giảng, HOẶC có video thay',
+  chungSach.every((d) => (d.knowledgeCore?.statements || []).length >= 1));
 t('mỗi màn giảng chỉ dạy MỘT nguyên tắc (nhịp đọc lớp 2)',
   chung.every((d) => (d.lecture?.screens || [])
     .filter((sc) => sc.kind === 'explain').every((sc) => (sc.teaches || []).length <= 1)));

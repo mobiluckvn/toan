@@ -1,0 +1,278 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B36",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 5 · XOÁ SỐ 0 TẬN CÙNG — NHỎ ĐI MƯỜI LẦN",
+ "durationMinutes": 10,
+ "so": 5,
+ "chuong": 1,
+ "tenChuong": "Vương quốc Số",
+ "dangGoc": "SỐ 1.3 — Xoá chữ số 0 ở tận cùng: chiều ngược của phép thêm; chỉ làm được khi chữ số cuối đúng là 0.",
+ "skills": {
+  "bktUnit": "CHUONG:1@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 5,
+  "prev": "DL:KSN2.B02",
+  "next": "DL:KSN2.B03"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết xoá chữ số 0 tận cùng thì số nhỏ đi mười lần. Biết đó là chiều ngược của bài hôm trước. Biết chỉ xoá được khi chữ số cuối đúng là 0.",
+  "kidText": "Nay mình làm ngược lại: xoá chữ số 0 đi. Con đoán số sẽ thế nào nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn thấy số 405 có chữ số 0 nên xoá luôn chữ số 0 ở giữa, còn 45.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con nhìn chữ số ở tận cùng của số 405 xem là chữ số nào. Gợi ý 2: Phép xoá này chỉ làm được với chữ số 0 đứng ở chỗ nào? Chữa: chữ số 0 của 405 nằm ở giữa, không phải ở tận cùng. Xoá nó đi là chữ số 4 tụt phòng và số đổi hẳn, không còn nhỏ đi mười lần nữa."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn thấy số 405 có chữ số 0 nên xoá luôn chữ số 0 ở giữa, còn 45.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Xoá chữ số 0 ở tận cùng số 70 thì còn số nào, và số ấy nhỏ đi mấy lần?",
+  "steps": [
+   {
+    "show": "Hai chiều ngược nhau",
+    "phan": "giai"
+   },
+   {
+    "show": "Bài trước là thêm chữ số 0 để số to gấp mười. Nay làm ngược lại.",
+    "phan": "giai"
+   },
+   {
+    "show": "Xoá chữ số 0 ở cuối số 70 thì còn số 7.",
+    "phan": "giai"
+   },
+   {
+    "show": "Vì sao nhỏ đi mười lần",
+    "phan": "giai"
+   },
+   {
+    "show": "Chữ số 7 đang ngồi phòng chục, mất chỗ dựa thì nó tụt về phòng đơn vị.",
+    "phan": "giai"
+   },
+   {
+    "show": "Ở phòng chục nó đáng bảy chục; về phòng đơn vị chỉ còn đáng bảy hạt.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: còn số 7, và nó nhỏ đi 10 lần.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Chỉ xoá được khi cuối là chữ số 0",
+    "phan": "ghichu"
+   },
+   {
+    "show": "Số 250 xoá được, còn 25. Nhưng số 405 thì không xoá kiểu ấy được, vì chữ số cuối của nó là 5 chứ không phải 0.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Xoá chữ số 0 ở tận cùng số 70 thì còn số nào?",
+     "answerKey": {
+      "value": 7
+     },
+     "solutionNarrative": "Bỏ chữ số 0 ở cuối, còn số 7.",
+     "hints": [
+      "Con bỏ chữ số 0 ở cuối đi, giữ lại chữ số đứng trước.",
+      "Chữ số ấy tụt về phòng đơn vị nên chỉ còn đáng chính nó."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Xoá chữ số 0 ở tận cùng số 250 thì còn số nào?",
+     "answerKey": {
+      "value": 25
+     },
+     "solutionNarrative": "Bỏ chữ số 0 ở cuối, còn số 25.",
+     "hints": [
+      "Con bỏ chữ số 0 ở cuối, giữ lại hai chữ số đứng trước.",
+      "Hai chữ số ấy tụt về một phòng."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Số 25 nhỏ hơn số 250 mấy lần?",
+     "answerKey": {
+      "value": 10
+     },
+     "solutionNarrative": "Cả số tụt về bên phải một phòng nên nhỏ đi 10 lần.",
+     "hints": [
+      "Con nhớ lại video: cả số tụt về bên phải mấy phòng?",
+      "Tụt một phòng thì nhỏ đi bao nhiêu lần?"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Xoá chữ số 0 ở tận cùng số 600 thì còn số nào?",
+     "answerKey": {
+      "value": 60
+     },
+     "solutionNarrative": "Bỏ một chữ số 0 ở cuối, còn số 60.",
+     "hints": [
+      "Con chỉ bỏ MỘT chữ số 0 ở cuối thôi, đừng bỏ cả hai.",
+      "Bỏ một cái thì còn lại hai chữ số."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Số 405 có xoá chữ số 0 theo cách này được không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "xoá được không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Không. Chữ số 0 của nó nằm ở giữa chứ không ở tận cùng, và chữ số cuối là 5.",
+     "hints": [
+      "Con nhìn chữ số cuối cùng của số ấy xem là chữ số mấy.",
+      "Chữ số 0 của nó nằm ở giữa chứ không ở cuối."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Xoá chữ số 0 ở tận cùng số 120 thì còn số nào?",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Bỏ chữ số 0 ở cuối, còn số 12.",
+     "hints": [
+      "Số này có ba chữ số, con bỏ chữ số cuối cùng đi.",
+      "Hai chữ số ấy tụt về một phòng."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Số nào xoá chữ số 0 ở tận cùng thì còn 45?",
+     "answerKey": {
+      "value": 450
+     },
+     "solutionNarrative": "Làm ngược lại là thêm chữ số 0 vào, được số 450.",
+     "hints": [
+      "Con làm ngược lại: thêm chữ số 0 vào cho nó.",
+      "Thêm vào bên phải thì số to gấp mười."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Xoá chữ số 0 ở tận cùng số 900 hai lần liền thì còn số nào?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Lần đầu còn 90, lần sau còn 9.",
+     "hints": [
+      "Con làm từng lần một, đừng bỏ cả hai chữ số 0 cùng lúc.",
+      "Bỏ lần đầu còn chín mươi, rồi bỏ tiếp một cái nữa."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Xoá chữ số 0 ở tận cùng thì số nhỏ đi mười lần.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, vì mọi chữ số tụt về bên phải một phòng."
+   },
+   {
+    "id": "Q2",
+    "text": "Số nào có chữ số 0 thì cũng xoá được theo cách này.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Chỉ xoá được khi chữ số 0 đứng ở tận cùng."
+   },
+   {
+    "id": "Q3",
+    "text": "Xoá chữ số 0 ở tận cùng số 250 thì còn",
+    "format": "mcq",
+    "choices": [
+     "25",
+     "20",
+     "50",
+     "5"
+    ],
+    "answerKey": {
+     "choice": "25"
+    },
+    "solutionNarrative": "Bỏ chữ số 0 ở cuối, hai chữ số còn lại tụt về một phòng."
+   },
+   {
+    "id": "Q4",
+    "text": "Số 405 xoá chữ số 0 ở giữa thì",
+    "format": "mcq",
+    "choices": [
+     "số đổi hẳn, không còn nhỏ đi mười lần",
+     "số nhỏ đi mười lần",
+     "số không đổi"
+    ],
+    "answerKey": {
+     "choice": "số đổi hẳn, không còn nhỏ đi mười lần"
+    },
+    "solutionNarrative": "Chữ số 0 ấy không ở tận cùng nên phép này không dùng được."
+   },
+   {
+    "id": "Q5",
+    "text": "Thêm chữ số 0 và xoá chữ số 0 là hai chiều ngược nhau.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Một chiều to gấp mười, chiều kia nhỏ đi mười lần."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con đổi tiền: một tờ 50 nghìn đổi thành mấy tờ 5 nghìn. Đổi đi đổi lại là con quen hai chiều.",
+  "homeActivity": "Con hay xoá nhầm chữ số 0 ở giữa. Bố mẹ chỉ cần hỏi: \"Chữ số cuối cùng là chữ số mấy?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B36_giang.mp4"
+ }
+}

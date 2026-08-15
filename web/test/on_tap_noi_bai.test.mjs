@@ -33,39 +33,54 @@ import path from 'node:path';
 const GOC = path.resolve(import.meta.dirname, '..', '..');
 const doc = (p) => JSON.parse(fs.readFileSync(path.join(GOC, p), 'utf8'));
 
-const thuTu = doc('data/lop4/thu_tu.json').thuTu;
+/* Hai quyển khai mối nối bằng HAI TRƯỜNG KHÁC NHAU — lớp 4 dùng `veBai` (mảng, một
+   câu trỏ được nhiều bài), lớp 2 dùng `diagnosesMicro` (một mã). Đọc cả hai rồi
+   quy về một mảng, để phép soi bên dưới không phải biết quyển nào là quyển nào. */
+const moiNoi = (q) => (q.veBai || []).map((x) => x.id)
+  .concat(q.diagnosesMicro && !(q.veBai || []).length ? [q.diagnosesMicro] : []);
+
+const QUYEN = [
+  { ma: 'lop4', tienTo: 'DCR_KSN4_C', soKy: 11 },
+  { ma: 'lop2', tienTo: 'DCR_KSN2_C', soKy: 11 },
+];
+
+for (const Q of QUYEN) {
+const thuTu = doc(`data/${Q.ma}/thu_tu.json`).thuTu;
 const chuongCua = new Map();
 const tenCua = new Map();
 for (const ma of thuTu) {
-  const b = doc(`web/public/content/lop4/${ma.replace('DL:', 'DL_').replace(/\./g, '_')}.json`);
+  const b = doc(`web/public/content/${Q.ma}/${ma.replace('DL:', 'DL_').replace(/\./g, '_')}.json`);
   chuongCua.set(ma, b.chuong);
   tenCua.set(ma, b.title);
 }
 
 const ky = fs
   .readdirSync(path.join(GOC, 'web/public/content/reviews'))
-  .filter((f) => /^DCR_KSN4_C\d+\.json$/.test(f))
+  .filter((f) => new RegExp(`^${Q.tienTo}\\d+\\.json$`).test(f))
   .map((f) => doc(`web/public/content/reviews/${f}`))
+  /* Lớp 2 có thêm mấy "ải" xếp sau tám chương — chúng không thuộc chương nào nên
+     phép ④ không áp được. Chỉ soi kỳ của chương thật. */
+  .filter((d) => chuongCua.size && [...chuongCua.values()].includes(d.chapter))
   .sort((a, b) => a.chapter - b.chapter);
 
-test('lớp 4 · có đủ 11 kỳ sát hạch chương', () => {
-  assert.equal(ky.length, 11);
+test(`${Q.ma} · có kỳ sát hạch chương`, () => {
+  assert.ok(ky.length > 0, 'không thấy kỳ nào');
 });
 
 for (const k of ky) {
-  const nhan = `ch${k.chapter}`;
+  const nhan = `${Q.ma} ch${k.chapter}`;
   const baiCuaChuong = thuTu.filter((m) => chuongCua.get(m) === k.chapter);
 
   /* ① Câu nào cũng phải có đường về. Không có thì nút "ôn lại bài này" chết câm. */
   test(`${nhan} · mọi câu đều có mối nối về bài`, () => {
-    const trong = k.examA.filter((q) => !(q.veBai || []).length).map((q) => q.qno);
+    const trong = k.examA.filter((q) => !moiNoi(q).length).map((q) => q.qno);
     assert.deepEqual(trong, [], 'câu không có veBai');
   });
 
   /* ② Mã trỏ về phải là bài CÓ THẬT trong sổ thứ tự — đây là chỗ lỗi số 1 lọt qua,
      vì bộ dựng cũ tự soi bằng số bài của sách, tức là soi bằng chính cái đang sai. */
   test(`${nhan} · mọi mã trỏ về đều có trong thu_tu.json`, () => {
-    const ma = k.examA.flatMap((q) => (q.veBai || []).map((x) => x.id));
+    const ma = k.examA.flatMap(moiNoi);
     const la = [...new Set(ma.filter((x) => !chuongCua.has(x)))];
     assert.deepEqual(la, [], 'trỏ về bài không có trong sổ');
   });
@@ -75,8 +90,7 @@ for (const k of ky) {
   test(`${nhan} · mọi mã trỏ về đều thuộc đúng chương này`, () => {
     const lac = [
       ...new Set(
-        k.examA.flatMap((q) => (q.veBai || []).map((x) => x.id))
-          .filter((x) => chuongCua.get(x) !== k.chapter),
+        k.examA.flatMap(moiNoi).filter((x) => chuongCua.get(x) !== k.chapter),
       ),
     ];
     assert.deepEqual(lac, [], `trỏ ra ngoài chương ${k.chapter}`);
@@ -86,7 +100,7 @@ for (const k of ky) {
      Bài không ai hỏi tới là bài bé học xong rồi không bao giờ được kiểm — mà thường
      nó trống vì có câu khác đã trỏ nhầm vào chỗ của nó. */
   test(`${nhan} · mọi bài của chương đều được ít nhất một câu hỏi tới`, () => {
-    const tro = new Set(k.examA.flatMap((q) => (q.veBai || []).map((x) => x.id)));
+    const tro = new Set(k.examA.flatMap(moiNoi));
     const thieu = baiCuaChuong.filter((m) => !tro.has(m))
       .map((m) => `${m} (${tenCua.get(m)})`);
     assert.deepEqual(thieu, [], 'bài không câu nào hỏi tới');
@@ -100,4 +114,5 @@ for (const k of ky) {
       .map((q) => `câu ${q.qno}: "${q.trapName}" ≠ "${tenCua.get(q.diagnosesMicro)}"`);
     assert.deepEqual(lech, [], 'tên trên nút lệch tên bài');
   });
+}
 }

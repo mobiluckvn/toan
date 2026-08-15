@@ -36,9 +36,9 @@ const tay = JSON.parse(readFileSync(join(G, 'data/lop2_dapan_tay.json'), 'utf8')
 const dapan = JSON.parse(readFileSync(join(G, 'data/lop2_dapan.json'), 'utf8'));
 t(`số hình khớp (${Object.keys(sotay).length})`, so(/tổng (\d+) hình · \d+ nguyên mẫu/) === Object.keys(sotay).length);
 t(`số câu viết tay khớp (${Object.keys(tay).length})`,
-  so(/\| viết tay \| (\d+) \/ 281 \|/) === Object.keys(tay).length);
+  so(/\| viết tay \| (\d+) \/ \d+ \|/) === Object.keys(tay).length);
 t(`số câu suy máy khớp (${Object.keys(dapan).length - Object.keys(tay).length})`,
-  so(/soát tay từng câu\) \| (\d+) \/ 281 \|/) === Object.keys(dapan).length - Object.keys(tay).length);
+  so(/soát tay từng câu\) \| (\d+) \/ \d+ \|/) === Object.keys(dapan).length - Object.keys(tay).length);
 
 /* Các dạng khoá đáp án chuẩn liệt kê phải là dạng bộ chấm THẬT SỰ hiểu. */
 const flow = readFileSync(join(G, 'web/src/mon/toan/lib/flow.js'), 'utf8');
