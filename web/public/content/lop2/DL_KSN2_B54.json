@@ -1,0 +1,303 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B54",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 37 · BÀI NGƯỢC — BIẾT MỖI PHẦN, TÌM TẤT CẢ",
+ "durationMinutes": 10,
+ "so": 37,
+ "chuong": 5,
+ "tenChuong": "Chuyện toán lời văn",
+ "dangGoc": "LV 1.1b — Bài toán ngược của chia đều: gộp các phần bằng nhau.",
+ "skills": {
+  "bktUnit": "CHUONG:5@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 37,
+  "prev": "DL:KSN2.B16",
+  "next": "DL:KSN2.B17"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhận ra bài ngược của bài chia đều. Gộp các phần bằng nhau bằng phép nhân. Thử lại bằng phép chia.",
+  "kidText": "Mỗi bạn được 4 cái bánh, có 3 bạn. Con đoán khay có tất cả mấy cái nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn thấy đề nói \"mỗi bạn 4 cái, có 3 bạn\" rồi cộng luôn 4 với 3 được 7 cái.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Bốn là số bánh của MỘT bạn, còn ba là số BẠN. Hai thứ ấy khác loại nhau. Gợi ý 2: Vẽ ba khay, mỗi khay bốn cái rồi đếm xem được bao nhiêu. Chữa: gộp ba phần bằng nhau, mỗi phần 4 cái, là việc của phép nhân: $4  \\times  3 = 12$."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn thấy đề nói \"mỗi bạn 4 cái, có 3 bạn\" rồi cộng luôn 4 với 3 được 7 cái.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Mỗi bạn được 4 cái bánh, có 3 bạn. Hỏi khay có tất cả bao nhiêu cái bánh?",
+  "steps": [
+   {
+    "show": "Bài này ngược với bài trước",
+    "phan": "giai"
+   },
+   {
+    "show": "Bài trước biết tất cả rồi hỏi mỗi phần. Bài này biết mỗi phần rồi hỏi tất cả.",
+    "phan": "giai"
+   },
+   {
+    "show": "Gộp các phần bằng nhau là việc của phép nhân",
+    "phan": "giai"
+   },
+   {
+    "show": "Lấy $4  \\times  3 = 12$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Thử lại bằng phép chia",
+    "phan": "giai"
+   },
+   {
+    "show": "Chia ngược lại: $12 : 3 = 4$, đúng bằng phần của mỗi bạn.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 12 cái bánh.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Nhân và chia là đôi máy ngược chiều, y như đã học ở bài tìm ô trống.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính $4  \\times  3$.",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Lấy $4  \\times  3 = 12$.",
+     "hints": [
+      "Con đọc bảng nhân bốn tới chặng thứ ba.",
+      "Hoặc cộng dồn bốn ba lần."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Mỗi bạn được 4 cái bánh, có 3 bạn. Khay có tất cả mấy cái?",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Gộp các phần bằng nhau: $4  \\times  3 = 12$.",
+     "hints": [
+      "Ba phần bằng nhau, mỗi phần bốn cái.",
+      "Gộp các phần bằng nhau lại thì dùng phép nhân."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Mỗi hộp có 5 chiếc bút, có 4 hộp. Tất cả có mấy chiếc bút?",
+     "answerKey": {
+      "value": 20
+     },
+     "solutionNarrative": "Lấy $5  \\times  4 = 20$.",
+     "hints": [
+      "Bốn phần bằng nhau, mỗi phần năm chiếc.",
+      "Con đọc bảng nhân năm tới chặng thứ tư."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Biết mỗi phần rồi hỏi tất cả thì dùng phép gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phép tính",
+        "options": [
+         "phép nhân",
+         "phép chia",
+         "phép trừ"
+        ],
+        "value": "phép nhân"
+       }
+      ]
+     },
+     "solutionNarrative": "Gộp các phần bằng nhau lại là việc của phép nhân.",
+     "hints": [
+      "Bài trước biết tất cả rồi hỏi mỗi phần, dùng phép chia.",
+      "Bài này ngược lại, nên phép tính cũng ngược lại."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Mỗi bạn được 6 viên kẹo, có 5 bạn. Tất cả có mấy viên?",
+     "answerKey": {
+      "value": 30
+     },
+     "solutionNarrative": "Lấy $6  \\times  5 = 30$.",
+     "hints": [
+      "Năm phần bằng nhau, mỗi phần sáu viên.",
+      "Con đọc bảng nhân sáu tới chặng thứ năm."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Mỗi rổ có 7 quả trứng, có 3 rổ. Tất cả mấy quả, và thử lại bằng phép chia được bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "tất cả",
+        "value": 21
+       },
+       {
+        "label": "thử lại được",
+        "value": 7
+       }
+      ]
+     },
+     "solutionNarrative": "Lấy $7  \\times  3 = 21$. Thử lại: $21 : 3 = 7$, đúng phần mỗi rổ.",
+     "hints": [
+      "Bước một: nhân số quả mỗi rổ với số rổ.",
+      "Bước hai: chia ngược lại cho số rổ xem có về đúng chỗ cũ không."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Mỗi bạn được 4 quyển vở, có 6 bạn. Nếu thêm 2 bạn nữa thì có mấy bạn và cần tất cả bao nhiêu quyển?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số bạn",
+        "value": 8
+       },
+       {
+        "label": "cần mấy quyển",
+        "value": 32
+       }
+      ]
+     },
+     "solutionNarrative": "Thêm hai bạn thành 8 bạn. Cần $4  \\times  8 = 32$ quyển.",
+     "hints": [
+      "Bước một: đếm xem có tất cả mấy bạn.",
+      "Bước hai: nhân số vở mỗi bạn với số bạn vừa đếm."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Một khay 24 cái bánh chia đều cho 4 bạn. Cho biết lúc đầu mỗi bạn mấy cái, và nếu mỗi bạn được thêm 1 cái thì khay phải có mấy cái?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "lúc đầu mỗi bạn",
+        "value": 6
+       },
+       {
+        "label": "khay phải có",
+        "value": 28
+       }
+      ]
+     },
+     "solutionNarrative": "Lúc đầu $24 : 4 = 6$ cái mỗi bạn. Thêm một cái thành 7 cái, nên khay phải có $7  \\times  4 = 28$ cái.",
+     "hints": [
+      "Bước một: chia số bánh cho số bạn để biết lúc đầu mỗi bạn mấy cái.",
+      "Bước hai: thêm một cái cho mỗi bạn rồi nhân lại với số bạn."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Biết mỗi phần rồi hỏi tất cả thì dùng phép nhân.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — gộp các phần bằng nhau là việc của phép nhân."
+   },
+   {
+    "id": "Q2",
+    "text": "Mỗi bạn 4 cái bánh, có 3 bạn. Tất cả mấy cái?",
+    "format": "mcq",
+    "choices": [
+     "12",
+     "7",
+     "1",
+     "9"
+    ],
+    "answerKey": {
+     "choice": "12"
+    },
+    "solutionNarrative": "Ba phần, mỗi phần bốn cái."
+   },
+   {
+    "id": "Q3",
+    "text": "Nhân và chia là đôi máy ngược chiều.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đã gặp ở bài tìm ô trống."
+   },
+   {
+    "id": "Q4",
+    "text": "Mỗi hộp 5 bút, có 4 hộp. Tất cả mấy bút?",
+    "format": "mcq",
+    "choices": [
+     "20",
+     "9",
+     "1",
+     "25"
+    ],
+    "answerKey": {
+     "choice": "20"
+    },
+    "solutionNarrative": "Bốn phần, mỗi phần năm bút."
+   },
+   {
+    "id": "Q5",
+    "text": "Bài \"biết tất cả, hỏi mỗi phần\" cũng dùng phép nhân.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Bài ấy dùng phép chia."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Xếp bát đũa cho cả nhà rồi hỏi con cần tất cả bao nhiêu cái — bài ngược này gặp mỗi bữa cơm.",
+  "homeActivity": "Bố mẹ hỏi: \"Đề cho con biết MỖI phần hay biết TẤT CẢ?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B54_giang.mp4"
+ }
+}

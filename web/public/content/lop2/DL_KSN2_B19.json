@@ -3,55 +3,38 @@
  "id": "DL:KSN2.B19",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 39 · GẤP ĐÔI, GẤP BA — CHIA PHẦN",
+ "title": "Bài 42 · VẼ THEO PHẦN — GẤP MẤY LẦN LÀ MẤY KHỐI",
  "durationMinutes": 10,
- "so": 39,
+ "so": 42,
  "chuong": 5,
  "tenChuong": "Chuyện toán lời văn",
- "dangGoc": "LV 3.1 — Gấp một số lên nhiều lần (hạt mầm của Tổng - Tỉ lớp 4)",
+ "dangGoc": "LV 3.1a — Gấp một số lên nhiều lần: vẽ sơ đồ theo phần và đếm phần.",
  "skills": {
   "bktUnit": "CHUONG:5@G2",
   "primary": []
  },
  "series": {
-  "order": 39,
-  "prev": "DL:KSN2.B18",
-  "next": "DL:KSN2.B20"
+  "order": 42,
+  "prev": "DL:KSN2.B56",
+  "next": "DL:KSN2.B57"
  },
  "objective": {
   "id": "O1",
-  "text": "Hiểu \"gấp 2 lần\" nghĩa là có 2 PHẦN bằng nhau như thế. Vẽ được sơ đồ theo PHẦN: em 1 khối, chị 2 khối. Chia tổng cho tổng số phần để tìm 1 phần, rồi tìm từng người.",
-  "kidText": "Bố hái cam gấp 3 lần con, cả hai được 12 quả. Con đoán mỗi người hái mấy quả?",
+  "text": "Hiểu \"gấp mấy lần\" nghĩa là có bấy nhiêu phần bằng nhau. Vẽ được sơ đồ theo phần. Đếm được tổng số phần bằng nhau.",
+  "kidText": "Bố hái cam gấp 3 lần con. Con thử vẽ ra rồi đếm xem có mấy phần bằng nhau nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. \"Chị gấp 2 lần em\" → vẽ em 1 khối, chị 2 khối y hệt nhau. Cả gói 9 viên ôm trọn cả ba khối:"
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Đếm phần: $1 + 2 = 3$ phần bằng nhau chứa đủ 9 viên → mỗi phần có $9 : 3 = 3$ viên (phép chia của Bài 16!)."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Trả kẹo về từng người: em 1 phần = 3 viên. Chị 2 phần = $3 + 3 = 6$ viên."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. Thử lại ĐỦ HAI điều kiện (như Bài 18 đã rèn): $3 + 6 = 9$ ✓ đúng tổng. $6 = 3  \\times  2$ ✓ chị đúng gấp đôi em."
-   }
-  ],
-  "mantra": "thấy chữ \"gấp mấy lần\" thì nghĩ đến PHẦN. Vẽ các khối. Đếm xem có tất cả mấy phần. Lấy tổng chia cho số phần. Rồi trả về cho từng người. Bốn nhịp, không nhịp nào được bỏ!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Với bài 9 viên kẹo, Su Kem tính: \"Chị gấp đôi thì lấy $9  \\times  2 = 18$. Chị được 18 viên!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Cả gói chỉ có 9 viên mà chị được những 18 viên. Kẹo mọc thêm ở đâu ra vậy? Gợi ý 2: Chị gấp đôi AI — gấp đôi cả gói, hay gấp đôi phần của EM? Vẽ sơ đồ phần rồi chia lại giúp Su Kem nhé."
+    "wrong": "Với bài chị gấp đôi em và cả hai có 9 viên, có bạn lấy luôn 9 nhân 2 rồi ghi chị được 18 viên.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Cả gói chỉ có chín viên mà chị được những mười tám. Kẹo mọc thêm ở đâu ra vậy? Gợi ý 2: Chị gấp đôi AI — gấp đôi cả gói, hay gấp đôi phần của em? Chữa: chị gấp đôi PHẦN CỦA EM thôi. Vẽ em một khối, chị hai khối, rồi mới chia."
    }
   ]
  },
@@ -59,76 +42,47 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Bố hái được số cam gấp 3 lần con. Cả hai bố con hái được 12 quả. Hỏi mỗi người hái được mấy quả?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Với bài 9 viên kẹo, Su Kem tính: \"Chị gấp đôi thì lấy $9  \\times  2 = 18$. Chị được 18 viên!\"",
+    "narration": "Với bài chị gấp đôi em và cả hai có 9 viên, có bạn lấy luôn 9 nhân 2 rồi ghi chị được 18 viên.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Bố hái được số cam gấp 3 lần con. Cả hai bố con hái được 12 quả. Hỏi mỗi người hái được mấy quả?",
+  "problem": "Bố hái được số cam gấp 3 lần con. Cả hai bố con hái được 12 quả. Vẽ sơ đồ và cho biết có tất cả mấy phần bằng nhau.",
   "steps": [
    {
-    "show": "Bài giải: (sơ đồ nháp: con 1 khối, bố 3 khối, ngoặc ôm cả = 12 quả)",
+    "show": "Gấp mấy lần thì vẽ mấy khối",
     "phan": "giai"
    },
    {
-    "show": "Tổng số phần bằng nhau là: $1 + 3 = 4$ (phần)",
+    "show": "Con vẽ một khối. Bố gấp ba lần con nên bố vẽ ba khối y hệt.",
     "phan": "giai"
    },
    {
-    "show": "Con hái được số quả cam là: $12 : 4 = 3$ (quả)",
+    "show": "Ngoặc ôm cả hai đoạn",
     "phan": "giai"
    },
    {
-    "show": "Bố hái được số quả cam là: $3  \\times  3 = 9$ (quả)",
+    "show": "Cả 12 quả nằm trọn trong bốn khối ấy.",
     "phan": "giai"
    },
    {
-    "show": "Thử lại: $3 + 9 = 12$ ✓; $9 = 3  \\times  3$ ✓.",
-    "phan": "thulai"
+    "show": "Đếm tổng số phần",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: con 3 quả; bố 9 quả.",
+    "show": "Lấy $1 + 3 = 4$ phần bằng nhau.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: có 4 phần bằng nhau.",
     "phan": "dapso"
+   },
+   {
+    "show": "Chữ \"gấp mấy lần\" luôn nói về PHẦN, nên việc đầu tiên là vẽ khối rồi đếm phần.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -137,148 +91,134 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "An có 4 viên bi. Bình có số bi gấp 2 lần An. Hỏi Bình có mấy viên?",
+     "text": "Chị gấp 2 lần em. Chị vẽ mấy khối?",
      "answerKey": {
-      "value": 8
+      "value": 2
      },
-     "solutionNarrative": "$4  \\times  2 = 8$ viên",
+     "solutionNarrative": "Gấp hai lần thì vẽ 2 khối y hệt nhau.",
      "hints": [
-      "Thấy chữ gấp mấy lần thì nghĩ đến PHẦN.",
-      "An một khối, Bình mấy khối y hệt?"
+      "Gấp mấy lần thì vẽ bấy nhiêu khối y hệt nhau.",
+      "Đề nói chị gấp hai lần em."
      ]
     },
     {
      "id": "C2",
-     "text": "Con mèo nặng 3 kg. Con chó nặng gấp 3 lần con mèo. Con chó nặng mấy ki-lô-gam?",
+     "text": "Em vẽ 1 khối, chị vẽ 2 khối. Có tất cả mấy phần bằng nhau?",
      "answerKey": {
-      "value": 9
+      "value": 3
      },
-     "solutionNarrative": "$3  \\times  3 = 9$ kg",
+     "solutionNarrative": "Lấy $1 + 2 = 3$ phần.",
      "hints": [
-      "Vẽ mèo một khối, chó ba khối bằng nhau.",
-      "Gộp các khối bằng nhau lại — phép nhân."
+      "Con cộng số khối của em với số khối của chị.",
+      "Mỗi khối là một phần bằng nhau."
      ]
     },
     {
      "id": "C3",
-     "text": "Vẽ sơ đồ phần cho câu: \"Chị có số kẹo gấp 2 lần em\" (chưa cần tính — chỉ vẽ khối thôi).",
-     "solutionNarrative": "em 1 khối, chị 2 khối bằng nhau",
+     "text": "Bố gấp 3 lần con. Có tất cả mấy phần bằng nhau?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Con một khối, bố ba khối: $1 + 3 = 4$ phần.",
      "hints": [
-      "Em vẽ trước một khối làm chuẩn.",
-      "Chị vẽ mấy khối y hệt khối của em?"
+      "Con một khối, bố gấp ba lần con nên bố ba khối.",
+      "Cộng số khối của hai người lại."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Chị có số nhãn vở gấp 2 lần em. Cả hai chị em có 12 cái. Hỏi mỗi người có mấy cái? (Trình bày đủ như ví dụ mẫu.)",
+     "text": "Anh gấp 4 lần em. Có tất cả mấy phần bằng nhau?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "em",
-        "value": 4
-       },
-       {
-        "label": "chị",
-        "value": 8
-       }
-      ]
+      "value": 5
      },
-     "solutionNarrative": "tổng phần $1 + 2 = 3$; em: $12 : 3 = 4$ cái; chị: $4  \\times  2 = 8$ cái (thử: $4 + 8 = 12$ ✓)",
+     "solutionNarrative": "Em một khối, anh bốn khối: $1 + 4 = 5$ phần.",
      "hints": [
-      "Đếm xem cả hai chị em có tất cả mấy phần.",
-      "Lấy tổng chia cho số phần, ra một phần trước đã."
+      "Em một khối, anh gấp bốn lần em nên anh bốn khối.",
+      "Cộng số khối của hai người lại."
      ]
     },
     {
      "id": "C5",
-     "text": "Số vịt gấp 3 lần số gà. Cả gà và vịt có 8 con. Hỏi có mấy con gà, mấy con vịt?",
+     "text": "Chữ \"gấp mấy lần\" nói về cái gì?",
      "answerKey": {
       "parts": [
        {
-        "label": "gà",
-        "value": 2
-       },
-       {
-        "label": "vịt",
-        "value": 6
+        "label": "nói về cái gì",
+        "options": [
+         "số phần bằng nhau",
+         "số bạn",
+         "đơn vị đo"
+        ],
+        "value": "số phần bằng nhau"
        }
       ]
      },
-     "solutionNarrative": "gà 1 phần, vịt 3 phần → 4 phần; gà: $8 : 4 = 2$ con; vịt: $2  \\times  3 = 6$ con",
+     "solutionNarrative": "Nó nói về số phần bằng nhau, nên phải vẽ khối rồi đếm phần.",
      "hints": [
-      "Gà một phần, vịt ba phần — cộng lại mấy phần?",
-      "Tổng chia số phần là ra giá trị một phần."
+      "Chữ ấy không nói về số bạn, cũng không nói về đơn vị đo.",
+      "Nó nói về mấy khối y hệt nhau mà con vừa vẽ."
      ]
     },
     {
      "id": "C6",
-     "text": "Hộp bút đỏ có số bút gấp 2 lần hộp bút xanh. Cả hai hộp có 15 cái. Mỗi hộp có mấy cái bút?",
+     "text": "Chị gấp 2 lần em, cả hai có 9 viên kẹo. Vẽ sơ đồ thì em mấy khối, chị mấy khối, và tất cả mấy phần?",
      "answerKey": {
       "parts": [
        {
-        "label": "hộp xanh",
-        "value": 5
+        "label": "em mấy khối",
+        "value": 1
        },
        {
-        "label": "hộp đỏ",
-        "value": 10
+        "label": "chị mấy khối",
+        "value": 2
+       },
+       {
+        "label": "tất cả mấy phần",
+        "value": 3
        }
       ]
      },
-     "solutionNarrative": "xanh 1 phần, đỏ 2 phần → 3 phần; xanh: $15 : 3 = 5$ cái; đỏ: 10 cái",
+     "solutionNarrative": "Em 1 khối, chị 2 khối, cộng lại được 3 phần bằng nhau.",
      "hints": [
-      "Xanh một phần, đỏ hai phần.",
-      "Tìm một phần trước, rồi mới trả về từng hộp."
+      "Người được nhắc trước thường là một khối.",
+      "Vẽ xong hai đoạn thì cộng số khối lại."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C7",
-     "text": "Số kẹo của chị gấp 3 lần của em. Cả hai có 16 viên. Hỏi mỗi người mấy viên? Sau khi tìm xong, chị cho em 2 viên — bây giờ chị còn gấp mấy lần em?",
+     "text": "Có bạn thấy \"chị gấp đôi em, cả hai có 9 viên\" rồi ghi chị được 18 viên. Bạn ấy sai ở đâu?",
      "answerKey": {
       "parts": [
        {
-        "label": "em",
-        "value": 4
-       },
-       {
-        "label": "chị",
-        "value": 12
+        "label": "sai ở đâu",
+        "options": [
+         "chị gấp đôi phần của em chứ không gấp đôi cả gói",
+         "không sai gì cả"
+        ],
+        "value": "chị gấp đôi phần của em chứ không gấp đôi cả gói"
        }
       ]
      },
-     "solutionNarrative": "4 phần → em: $16 : 4 = 4$ viên; chị: 12 viên. Chị cho em 2: chị 10, em 6 — 10 không gấp 3 lần 6 nữa, cũng chưa tròn gấp 2 (gấp \"non\" 2 lần) → phần gấp THAY ĐỔI khi chuyển kẹo, khác với phần hơn tuổi ở Bài 20 đấy!",
+     "solutionNarrative": "Chị gấp đôi phần của em chứ không gấp đôi cả gói. Cả gói chỉ có chín viên thì chị không thể được mười tám viên.",
      "hints": [
-      "Bốn phần cả thảy — tìm một phần trước.",
-      "Cho kẹo xong thì đếm lại, đừng tưởng phần gấp giữ nguyên."
+      "Cả gói chỉ có chín viên mà chị được mười tám. Kẹo mọc thêm ở đâu ra?",
+      "Chị gấp đôi ai — gấp đôi cả gói, hay gấp đôi phần của em?"
      ]
     },
     {
      "id": "C8",
-     "text": "Ba bạn chia 8 quả quýt: bạn A được gấp ĐÔI bạn B, bạn C được BẰNG bạn B. Hỏi mỗi bạn mấy quả? (Đếm cẩn thận xem tất cả có mấy phần!)",
+     "text": "Bố gấp 3 lần con, mẹ gấp 2 lần con. Vẽ sơ đồ ba người thì có tất cả mấy phần bằng nhau?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "bạn A",
-        "value": 4
-       },
-       {
-        "label": "bạn B",
-        "value": 2
-       },
-       {
-        "label": "bạn C",
-        "value": 2
-       }
-      ]
+      "value": 6
      },
-     "solutionNarrative": "B 1 phần, A 2 phần, C 1 phần → 4 phần; mỗi phần $8 : 4 = 2$ → A 4 quả, B 2 quả, C 2 quả",
+     "solutionNarrative": "Con 1 phần, bố 3 phần, mẹ 2 phần: $1 + 3 + 2 = 6$ phần.",
      "hints": [
-      "Lấy bạn B làm một phần chuẩn.",
-      "Đếm cho đủ ba bạn: A mấy phần, B mấy, C mấy?"
+      "Con vẽ ba đoạn: con một khối, bố ba khối, mẹ hai khối.",
+      "Rồi cộng số khối của cả ba người lại."
      ]
     }
    ]
@@ -289,91 +229,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "\"Chị gấp 2 lần em\" nghĩa là chị có 2 phần, em có 1 phần bằng nhau.",
+    "text": "Gấp mấy lần thì vẽ bấy nhiêu khối bằng nhau.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng — đó là cách chuyển lời thành hình."
    },
    {
     "id": "Q2",
-    "text": "Với tổng 9 viên và chị gấp đôi em, chị được $9  \\times  2 = 18$ viên.",
+    "text": "Bố gấp 3 lần con. Tất cả mấy phần?",
+    "format": "mcq",
+    "choices": [
+     "4",
+     "3",
+     "2",
+     "12"
+    ],
+    "answerKey": {
+     "choice": "4"
+    },
+    "solutionNarrative": "Con một phần cộng bố ba phần."
+   },
+   {
+    "id": "Q3",
+    "text": "Chị gấp 2 lần em. Tất cả mấy phần?",
+    "format": "mcq",
+    "choices": [
+     "3",
+     "2",
+     "9",
+     "1"
+    ],
+    "answerKey": {
+     "choice": "3"
+    },
+    "solutionNarrative": "Em một phần cộng chị hai phần."
+   },
+   {
+    "id": "Q4",
+    "text": "Chị gấp đôi em nghĩa là chị gấp đôi cả gói kẹo.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "Đáp án: SAI"
-   },
-   {
-    "id": "Q3",
-    "text": "Chị gấp 2 lần em → cả hai có tất cả:",
-    "format": "mcq",
-    "choices": [
-     "A. 2 phần",
-     "B. 3 phần",
-     "C. 4 phần"
-    ],
-    "answerKey": {
-     "choice": "B. 3 phần"
-    },
-    "solutionNarrative": "Đáp án: B. 3 phần"
-   },
-   {
-    "id": "Q4",
-    "text": "Tổng 12, chị gấp 2 lần em → em có:",
-    "format": "mcq",
-    "choices": [
-     "A. 4",
-     "B. 6",
-     "C. 8"
-    ],
-    "answerKey": {
-     "choice": "A. 4"
-    },
-    "solutionNarrative": "Đáp án: A. 4"
+    "solutionNarrative": "Sai. Chị gấp đôi PHẦN của em thôi."
    },
    {
     "id": "Q5",
-    "text": "Bố gấp 3 lần con, tổng 12 quả → bố có:",
-    "format": "mcq",
-    "choices": [
-     "A. 3 quả",
-     "B. 9 quả",
-     "C. 4 quả"
-    ],
+    "text": "Việc đầu tiên của bài gấp mấy lần là vẽ khối rồi đếm phần.",
+    "format": "tf",
     "answerKey": {
-     "choice": "B. 9 quả"
+     "value": true
     },
-    "solutionNarrative": "Đáp án: B. 9 quả"
+    "solutionNarrative": "Đúng — chưa đếm phần thì chưa chia được."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Dùng khối lego cùng cỡ làm \"phần\": xếp em 1 thanh, chị 2 thanh rồi đổ kẹo thật vào từng thanh — trẻ phải THẤY các phần bằng nhau trước khi tin phép chia.",
-  "homeActivity": "Đổi vai trò cho vui: hôm nay \"em gấp đôi chị\" (em bé nhất nhà được ưu tiên!) — con nhận ra sơ đồ đổi chiều theo đề bài, không theo tuổi tác.",
-  "watchFor": "NÊN: luôn hỏi \"tất cả mấy phần?\" trước khi cho chia. KHÔNG NÊN: nói \"đây là toán Tổng - Tỉ\" hay dạy sơ đồ tỉ số — tên gọi và kỹ thuật đầy đủ để dành lớp 4; giờ chỉ cần khối lego."
+  "onComplete": "Xếp khối gỗ hoặc que tính thành từng cụm bằng nhau cho con nhìn — \"gấp ba lần\" thành ba cụm y hệt, thấy ngay.",
+  "homeActivity": "Bố mẹ hỏi: \"Gấp mấy lần thì vẽ mấy khối?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_MO_B19",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_MO_B19.png",
-   "caption": "Bố hái gấp 3 lần con, cả hai 12 quả",
-   "sha256_16": "1dd6a2e5d1d36544",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_DT02",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L2H_DT02.png",
-   "caption": "Chị gấp 2 lần em: chị hai phần, em một phần",
-   "sha256_16": "f0e7a03a5ecd336c",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B19_giang.mp4"
+ }
 }

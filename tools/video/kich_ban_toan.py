@@ -5385,6 +5385,498 @@ def kb2_chia_het(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 2 · CHƯƠNG 5 · CHUYỆN TOÁN LỜI VĂN — mười hai kịch bản.
+#
+# Chương dài nhất của quyển. Bốn bài dùng cảnh `so_do_doan` — sơ đồ đoạn thẳng vốn
+# dựng cho chương tổng-hiệu của lớp 4, nay dùng lại cho hai dạng của lớp 2:
+#   · hơn kém   → hai đoạn lệch nhau, khúc dôi ra là phần hơn;
+#   · chia phần → hai đoạn chia vạch, mỗi vạch là một phần bằng nhau.
+#
+# ⚠ Viết "ki lô mét" chứ đừng viết "km": máy đọc hai chữ cái ấy thành tiếng Anh.
+# ═══════════════════════════════════════════════════════════════════════════
+
+
+def kb2_chia_deu(b):
+    """C5① Chia đều và khuôn ba dòng."""
+    return [
+        _c('bia', 'Chia đều', so_bai(b),
+           loi=['Bài toán lời văn đầu tiên, và cách trình bày bài giải cho đúng.']),
+        _c('de_toan', 'Đề bài',
+           de='Cô giáo có 15 quyển vở thưởng đều cho 5 bạn. Hỏi mỗi bạn được mấy quyển?',
+           loi=['Cô giáo có mười lăm quyển vở thưởng đều cho năm bạn.',
+                'Hỏi mỗi bạn được mấy quyển vở.']),
+        _c('y_toan', 'Đề cho gì, hỏi gì', 'cho: 15 quyển · 5 bạn · chia đều',
+           buoc=1, soBuoc=3,
+           loi=['Đọc chậm xem đề cho gì. Cho mười lăm quyển vở, năm bạn, và chia đều.',
+                'Đề hỏi mỗi bạn được mấy quyển.']),
+        _c('nhom_deu', 'Chia đều thành 5 phần bằng nhau', tong=15, moiNhom=3,
+           chuPhu='Mỗi bạn được 3 quyển, không thừa quyển nào.',
+           loi=['Chia đều mười lăm quyển thành năm phần bằng nhau.',
+                'Mỗi phần được ba quyển, không thừa quyển nào.']),
+        _c('y_toan', 'Chia đều là việc của phép chia', '15 : 5 = 3',
+           buoc=2, soBuoc=3,
+           loi=['Chia đều thành các phần bằng nhau là việc của phép chia.',
+                'Mười lăm chia năm bằng ba.']),
+        _c('cong_thuc', 'Trình bày đủ ba dòng',
+           congThuc='① lời giải   ② phép tính kèm đơn vị   ③ đáp số',
+           thay='mọi bài toán lời văn của cả chương đều trình bày như thế',
+           loi=['Trình bày đủ ba dòng. Dòng một là lời giải, dòng hai là phép tính '
+                'kèm đơn vị, dòng ba là đáp số.']),
+        _c('y_toan', 'Đáp số', '3 quyển vở', buoc=3, soBuoc=3,
+           loi=['Đáp số là ba quyển vở.']),
+        _c('y_toan', 'Thử lại cho chắc', '3 × 5 = 15',
+           loi=['Thử lại bằng phép nhân. Ba nhân năm bằng mười lăm, khớp đúng số vở '
+                'của cô.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chia đều → phép CHIA',
+           loi=['Con nhớ lại một lần nữa. Chia đều thì dùng phép chia.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_bai_nguoc_chia(b):
+    """C5② Biết mỗi phần, tìm tất cả."""
+    return [
+        _c('bia', 'Bài ngược', so_bai(b),
+           loi=['Bài trước biết tất cả rồi hỏi mỗi phần. Bài này ngược lại.']),
+        _c('de_toan', 'Đề bài',
+           de='Mỗi bạn được 4 cái bánh, có 3 bạn. Hỏi khay có tất cả bao nhiêu cái bánh?',
+           loi=['Mỗi bạn được bốn cái bánh, có ba bạn.',
+                'Hỏi khay có tất cả bao nhiêu cái bánh.']),
+        _c('y_toan', 'Đề cho biết cái gì', 'biết MỖI phần, hỏi TẤT CẢ',
+           buoc=1, soBuoc=3,
+           loi=['Lần này đề cho biết mỗi phần rồi hỏi tất cả.',
+                'Đúng ngược với bài trước.']),
+        _c('luoi_cham', 'Ba phần bằng nhau, mỗi phần 4 cái', hang=3, cot=4,
+           chuPhu='3 × 4 = 12 cái bánh',
+           loi=['Vẽ ba phần bằng nhau, mỗi phần bốn cái.']),
+        _c('y_toan', 'Gộp các phần bằng nhau là việc của phép nhân', '4 × 3 = 12',
+           buoc=2, soBuoc=3,
+           loi=['Gộp các phần bằng nhau lại là việc của phép nhân.',
+                'Bốn nhân ba bằng mười hai.']),
+        _c('y_toan', 'Thử lại bằng phép chia', '12 : 3 = 4', buoc=3, soBuoc=3,
+           loi=['Thử lại bằng phép chia. Mười hai chia ba bằng bốn, đúng bằng phần của '
+                'mỗi bạn.']),
+        _c('y_toan', 'Đáp số', '12 cái bánh',
+           loi=['Đáp số là mười hai cái bánh.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Không cộng 4 cái với 3 bạn.',
+           loi=['Có bạn cộng luôn bốn với ba được bảy.',
+                'Bốn là số bánh của một bạn, còn ba là số bạn. Hai thứ khác loại nhau '
+                'thì không cộng thẳng được.']),
+        _c('cong_thuc', 'Hai bài đi cặp với nhau',
+           congThuc='biết TẤT CẢ, hỏi MỖI phần  →  chia',
+           thay='biết MỖI phần, hỏi TẤT CẢ  →  nhân',
+           loi=['Biết tất cả rồi hỏi mỗi phần thì chia. Biết mỗi phần rồi hỏi tất cả '
+                'thì nhân.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_so_do_doan(b):
+    """C5③ Sơ đồ hai đoạn thẳng cho bài hơn kém."""
+    return [
+        _c('bia', 'Sơ đồ hai đoạn thẳng', so_bai(b),
+           loi=['Bài hơn kém thì vẽ sơ đồ trước, phép tính tự hiện ra sau.']),
+        _c('de_toan', 'Đề bài',
+           de='Hoa gấp được 14 con hạc. Lan gấp được ít hơn Hoa 5 con. Hỏi Lan gấp được mấy con?',
+           loi=['Hoa gấp được mười bốn con hạc giấy.',
+                'Lan gấp được ít hơn Hoa năm con. Hỏi Lan gấp được mấy con.']),
+        _c('so_do_doan', 'Vẽ mỗi bạn một đoạn thẳng', be=9, lon=14,
+           nhanBe='Lan', nhanLon='Hoa',
+           chuPhu='Đoạn của Hoa dài 14. Đoạn của Lan ngắn hơn.',
+           loi=['Vẽ mỗi bạn một đoạn thẳng. Đoạn của Hoa dài mười bốn.',
+                'Lan ít hơn nên đoạn của Lan ngắn hơn.']),
+        _c('so_do_doan', 'Khúc hụt vào chính là phần ít hơn', be=9, lon=14,
+           nhanBe='Lan', nhanLon='Hoa', hienHieu=True, chuHieu='ít hơn 5 con',
+           chuPhu='Đoạn của Lan hụt vào đúng 5 con.',
+           loi=['Khúc hụt vào chính là phần ít hơn, ở đây bằng năm con.']),
+        _c('y_toan', 'Nhìn sơ đồ chọn phép tính', 'Lan = Hoa bớt đi khúc hụt',
+           buoc=1, soBuoc=3,
+           loi=['Nhìn sơ đồ mà chọn phép tính.',
+                'Đoạn của Lan bằng đoạn của Hoa bớt đi khúc hụt, nên đây là phép trừ.']),
+        _c('y_toan', 'Tính ra kết quả', '14 − 5 = 9', buoc=2, soBuoc=3,
+           loi=['Mười bốn trừ năm bằng chín.']),
+        _c('y_toan', 'Thử lại cho chắc', '14 − 9 = 5', buoc=3, soBuoc=3,
+           loi=['Thử lại. Hoa hơn Lan mười bốn trừ chín bằng năm con, khớp đúng đề '
+                'bài.']),
+        _c('y_toan', 'Đáp số', '9 con hạc',
+           loi=['Đáp số là chín con hạc.']),
+        _c('cong_thuc', 'Ba câu hỏi trước mọi bài hơn kém',
+           congThuc='AI DÀI?  AI NGẮN?  THÒ RA BAO NHIÊU?',
+           thay='vẽ xong ba câu ấy thì phép tính tự hiện ra',
+           loi=['Trước mọi bài hơn kém, hỏi ba câu. Ai dài? Ai ngắn? Thò ra bao '
+                'nhiêu?']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_cau_chu_dao(b):
+    """C5④ Bẫy câu chữ đảo."""
+    return [
+        _c('bia', 'Bẫy câu chữ đảo', so_bai(b),
+           loi=['Có kiểu đề mà chữ ít hơn lại đứng cạnh người nhiều hơn.']),
+        _c('de_toan', 'Đề bài',
+           de='An ít hơn Bình 3 viên bi. An có 8 viên. Hỏi Bình có bao nhiêu viên?',
+           loi=['An ít hơn Bình ba viên bi. An có tám viên.',
+                'Hỏi Bình có bao nhiêu viên.']),
+        _c('y_toan', 'Đọc lướt thì dễ mắc bẫy', 'thấy chữ "ít hơn" là trừ ngay',
+           buoc=1, soBuoc=3,
+           loi=['Đọc lướt thì thấy ngay chữ ít hơn, và nhiều bạn trừ luôn.',
+                'Tám trừ ba bằng năm. Nhưng thế là sai.']),
+        _c('y_toan', 'Hỏi lại: AI nhiều hơn', 'An ít hơn Bình → BÌNH nhiều hơn',
+           buoc=2, soBuoc=3,
+           loi=['Hỏi lại cho rõ. An ít hơn Bình, tức là Bình mới là người nhiều bi '
+                'hơn.']),
+        _c('so_do_doan', 'Vẽ ra thì thấy ngay', be=8, lon=11,
+           nhanBe='An', nhanLon='Bình', hienHieu=True, chuHieu='thò ra 3 viên',
+           chuPhu='Đoạn của Bình dài hơn, thò ra 3 viên.',
+           loi=['Vẽ ra thì thấy ngay. Đoạn của Bình dài hơn đoạn của An, thò ra ba '
+                'viên.']),
+        _c('y_toan', 'Nhìn sơ đồ chọn phép tính', '8 + 3 = 11', buoc=3, soBuoc=3,
+           loi=['Đoạn của Bình bằng đoạn của An thò thêm ba, nên đây là phép cộng.',
+                'Tám cộng ba bằng mười một.']),
+        _c('y_toan', 'Thử lại cho chắc', '11 − 8 = 3',
+           loi=['Thử lại. An ít hơn Bình mười một trừ tám bằng ba viên, khớp đúng đề '
+                'bài.']),
+        _c('y_toan', 'Đáp số', 'Bình có 11 viên bi',
+           loi=['Đáp số là Bình có mười một viên bi.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='chữ đứng cạnh AI không quyết định AI nhiều hơn',
+           thay='hỏi "ai nhiều hơn" rồi mới vẽ, rồi mới tính',
+           loi=['Con nhớ lại một lần nữa. Chữ đứng cạnh ai không quyết định ai nhiều '
+                'hơn.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_liet_ke(b):
+    """C5⑤ Liệt kê có thứ tự mọi cách tách tổng."""
+    return [
+        _c('bia', 'Liệt kê có thứ tự', so_bai(b),
+           loi=['Có bao nhiêu cách chia một gói kẹo cho hai bạn?']),
+        _c('de_toan', 'Đề bài',
+           de='Hai bạn có tất cả 12 viên kẹo, mỗi bạn ít nhất một viên. Liệt kê mọi cách chia.',
+           loi=['Hai bạn có tất cả mười hai viên kẹo, mỗi bạn ít nhất một viên.',
+                'Hãy liệt kê mọi cách chia.']),
+        _c('y_toan', 'Đừng nghĩ tới đâu ghi tới đó', 'nghĩ bừa thì vừa sót vừa trùng',
+           buoc=1, soBuoc=3,
+           loi=['Nghĩ tới đâu ghi tới đó thì vừa dễ sót cách, vừa dễ kể trùng.']),
+        _c('y_toan', 'Cho phần thứ nhất giảm dần', '11 · 10 · 9 · 8 · 7 · 6',
+           buoc=2, soBuoc=3,
+           loi=['Làm có thứ tự. Cho phần thứ nhất giảm dần từ lớn xuống bé.',
+                'Mười một, mười, chín, tám, bảy, sáu.']),
+        _c('bang_hang', 'Phần thứ hai tự hiện ra', so='12', hienLop=False,
+           chuChinh='Kẻ bảng hai cột rồi điền',
+           chuPhu='11 và 1 · 10 và 2 · 9 và 3 · 8 và 4 · 7 và 5 · 6 và 6',
+           loi=['Phần thứ hai tự hiện ra, vì hai phần phải cộng lại bằng mười hai.',
+                'Mười một và một. Mười và hai. Chín và ba. Tám và bốn. Bảy và năm. '
+                'Sáu và sáu.']),
+        _c('y_toan', 'Đếm xem có mấy cách', 'đúng 6 cách', buoc=3, soBuoc=3,
+           loi=['Đếm lại được đúng sáu cách.']),
+        _c('y_toan', 'Đáp số', 'có 6 cách tách',
+           loi=['Đáp số là có sáu cách.']),
+        _c('y_toan', 'Một bí mật nhỏ trong bảng',
+           'cột hơn nhau chạy 10, 8, 6, 4, 2, 0 — mỗi lần giảm 2',
+           loi=['Nhìn cột hơn nhau mà xem. Nó chạy mười, tám, sáu, bốn, hai, không.',
+                'Mỗi lần chuyển một viên thì phần hơn giảm hai, vì một bên bớt một '
+                'viên còn bên kia thêm một viên.']),
+        _c('cong_thuc', 'Cách làm của cả bài',
+           congThuc='cho MỘT phần giảm dần, phần kia tự hiện ra',
+           thay='có thứ tự thì không sót, không trùng',
+           loi=['Cho một phần giảm dần thì phần kia tự hiện ra. Có thứ tự thì không '
+                'sót cách nào, cũng không kể trùng cách nào.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_do_cot(b):
+    """C5⑥ Dò cột hơn nhau, thử lại đủ hai điều kiện."""
+    return [
+        _c('bia', 'Bài có hai điều kiện', so_bai(b),
+           loi=['Bài này bắt thoả hai điều kiện cùng lúc, không phải một.']),
+        _c('de_toan', 'Đề bài',
+           de='Hai bạn có tất cả 12 viên kẹo, An hơn Bình 4 viên. Hỏi mỗi bạn mấy viên?',
+           loi=['Hai bạn có tất cả mười hai viên kẹo, bạn An hơn bạn Bình bốn viên.',
+                'Hỏi mỗi bạn có mấy viên.']),
+        _c('y_toan', 'Gạch ra hai điều kiện',
+           '① tổng bằng 12      ② An hơn Bình 4', buoc=1, soBuoc=3,
+           loi=['Gạch ra hai điều kiện. Điều kiện một là tổng bằng mười hai.',
+                'Điều kiện hai là An hơn Bình bốn viên.']),
+        _c('bang_hang', 'Liệt kê theo điều kiện thứ nhất', so='12', hienLop=False,
+           chuChinh='Mọi cách tách 12',
+           chuPhu='11 và 1 · 10 và 2 · 9 và 3 · 8 và 4 · 7 và 5 · 6 và 6',
+           loi=['Liệt kê theo điều kiện thứ nhất, như bài trước đã làm.']),
+        _c('y_toan', 'Dò cột hơn nhau theo điều kiện thứ hai',
+           'cột hơn nhau: 10 · 8 · 6 · 4 · 2 · 0', buoc=2, soBuoc=3,
+           loi=['Giờ dò cột hơn nhau. Nó chạy mười, tám, sáu, bốn, hai, không.',
+                'Dòng có số bốn là dòng tám và bốn.']),
+        _c('so_do_doan', 'Sơ đồ của dòng vừa chọn', be=4, lon=8,
+           nhanBe='Bình', nhanLon='An', hienHieu=True, chuHieu='hơn 4',
+           chuTong='tổng 12',
+           loi=['Vẽ ra thì thấy An tám viên, Bình bốn viên, khúc dôi ra đúng bốn.']),
+        _c('y_toan', 'Thử lại ĐỦ CẢ HAI điều kiện',
+           'tổng: 8 + 4 = 12   ·   hơn nhau: 8 − 4 = 4', buoc=3, soBuoc=3,
+           loi=['Thử lại đủ cả hai điều kiện. Tám cộng bốn bằng mười hai, đúng tổng.',
+                'Tám trừ bốn bằng bốn, đúng phần hơn.']),
+        _c('y_toan', 'Đáp số', 'An 8 viên · Bình 4 viên',
+           loi=['Đáp số là An tám viên, Bình bốn viên.']),
+        _c('cong_thuc', 'Chỗ hay mất điểm nhất',
+           congThuc='chỉ thử MỘT điều kiện là chưa xong bài',
+           thay='có bạn chọn 7 và 3 vì cộng lại đúng 10, mà quên phần hơn',
+           loi=['Chỉ thử một điều kiện là chưa xong bài. Đó là chỗ hay mất điểm nhất.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_ve_theo_phan(b):
+    """C5⑦ Vẽ theo phần: gấp mấy lần là mấy khối."""
+    return [
+        _c('bia', 'Vẽ theo phần', so_bai(b),
+           loi=['Chữ gấp mấy lần luôn nói về phần. Bài này học cách vẽ nó ra.']),
+        _c('de_toan', 'Đề bài',
+           de='Bố hái được số cam gấp 3 lần con. Cả hai hái được 12 quả. Có tất cả mấy phần bằng nhau?',
+           loi=['Bố hái được số cam gấp ba lần con. Cả hai bố con hái được mười hai '
+                'quả.',
+                'Hỏi có tất cả mấy phần bằng nhau.']),
+        _c('y_toan', 'Gấp mấy lần thì vẽ mấy khối', 'con 1 khối · bố 3 khối',
+           buoc=1, soBuoc=3,
+           loi=['Gấp mấy lần thì vẽ bấy nhiêu khối. Con một khối.',
+                'Bố gấp ba lần con nên bố ba khối y hệt.']),
+        _c('so_do_doan', 'Vẽ ra thành sơ đồ phần', be=3, lon=9,
+           nhanBe='con', nhanLon='bố', phanBe=1, phanLon=3, chuTong='tổng 12 quả',
+           chuPhu='Mọi khối đều bằng nhau.',
+           loi=['Vẽ ra thành sơ đồ. Đoạn của con một khối, đoạn của bố ba khối.',
+                'Mọi khối đều bằng nhau.']),
+        _c('y_toan', 'Ngoặc ôm cả hai đoạn', 'cả 12 quả nằm trọn trong các khối ấy',
+           buoc=2, soBuoc=3,
+           loi=['Ngoặc ôm cả hai đoạn lại. Cả mười hai quả nằm trọn trong các khối '
+                'ấy.']),
+        _c('y_toan', 'Đếm tổng số phần', '1 + 3 = 4 phần', buoc=3, soBuoc=3,
+           loi=['Đếm tổng số phần. Một cộng ba bằng bốn phần bằng nhau.']),
+        _c('y_toan', 'Đáp số', 'có 4 phần bằng nhau',
+           loi=['Đáp số là có bốn phần bằng nhau.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Chị gấp đôi PHẦN CỦA EM, không gấp đôi cả gói.',
+           loi=['Có bạn thấy chị gấp đôi em, cả hai có chín viên, rồi lấy chín nhân '
+                'hai được mười tám viên cho chị.',
+                'Cả gói chỉ có chín viên thì kẹo mọc thêm ở đâu ra. Chị gấp đôi phần '
+                'của em thôi.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='"gấp mấy lần" nói về PHẦN',
+           thay='vẽ khối trước, đếm phần sau, rồi mới tính',
+           loi=['Con nhớ lại một lần nữa. Gấp mấy lần thì nói về phần. Vẽ khối trước, '
+                'đếm phần sau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_chia_phan(b):
+    """C5⑧ Chia tổng cho số phần rồi trả về từng người."""
+    return [
+        _c('bia', 'Tìm một phần rồi trả về', so_bai(b),
+           loi=['Đếm phần xong rồi thì chia, rồi trả kẹo về cho từng người.']),
+        _c('de_toan', 'Đề bài',
+           de='Bố hái được số cam gấp 3 lần con. Cả hai hái được 12 quả. Hỏi mỗi người mấy quả?',
+           loi=['Bố hái được số cam gấp ba lần con. Cả hai hái được mười hai quả.',
+                'Hỏi mỗi người hái được mấy quả.']),
+        _c('y_toan', 'Đếm tổng số phần trước', '1 + 3 = 4 phần', buoc=1, soBuoc=3,
+           loi=['Đếm tổng số phần trước. Con một phần, bố ba phần, cộng lại bốn phần '
+                'bằng nhau.']),
+        _c('y_toan', 'Chia tổng cho số phần để tìm MỘT phần', '12 : 4 = 3',
+           buoc=2, soBuoc=3,
+           loi=['Chia tổng cho số phần để tìm một phần.',
+                'Mười hai chia bốn bằng ba. Vậy một phần là ba quả.']),
+        _c('so_do_doan', 'Mỗi khối là 3 quả', be=3, lon=9,
+           nhanBe='con', nhanLon='bố', phanBe=1, phanLon=3, chuTong='tổng 12 quả',
+           chuPhu='Con 1 khối là 3 quả. Bố 3 khối là 9 quả.',
+           loi=['Giờ mỗi khối đã biết là ba quả.',
+                'Con một khối nên được ba quả. Bố ba khối nên được chín quả.']),
+        _c('y_toan', 'Trả về cho từng người', 'con: 3 quả   ·   bố: 3 × 3 = 9 quả',
+           buoc=3, soBuoc=3,
+           loi=['Trả về cho từng người. Con ba quả. Bố ba nhân ba bằng chín quả.']),
+        _c('y_toan', 'Thử lại đủ hai điều kiện', '3 + 9 = 12  ·  9 gấp 3 lần 3',
+           loi=['Thử lại đủ hai điều kiện. Ba cộng chín bằng mười hai, đúng tổng.',
+                'Và chín gấp ba lần ba, đúng số lần gấp.']),
+        _c('y_toan', 'Đáp số', 'con 3 quả · bố 9 quả',
+           loi=['Đáp số là con ba quả, bố chín quả.']),
+        _c('cong_thuc', 'Bốn nhịp, không bỏ nhịp nào',
+           congThuc='đếm phần → chia tìm 1 phần → trả về từng người → thử lại',
+           thay='tìm được 1 phần mới đi được nửa đường',
+           loi=['Bốn nhịp. Đếm phần, chia tìm một phần, trả về từng người, rồi thử '
+                'lại.',
+                'Tìm được một phần mới đi được nửa đường thôi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_tuoi_sau_nam(b):
+    """C5⑨ Tuổi sau mấy năm."""
+    return [
+        _c('bia', 'Tuổi sau mấy năm', so_bai(b),
+           loi=['Thời gian trôi thì ai cũng thêm tuổi, và thêm bằng nhau.']),
+        _c('de_toan', 'Đề bài',
+           de='Năm nay mẹ 32 tuổi, con 7 tuổi. Mẹ hơn con mấy tuổi, và sau 5 năm mỗi người mấy tuổi?',
+           loi=['Năm nay mẹ ba mươi hai tuổi, con bảy tuổi.',
+                'Hỏi mẹ hơn con bao nhiêu tuổi, và sau năm năm nữa mỗi người bao nhiêu '
+                'tuổi.']),
+        _c('y_toan', 'Tìm phần hơn của năm nay', '32 − 7 = 25', buoc=1, soBuoc=3,
+           loi=['Tìm phần hơn của năm nay. Ba mươi hai trừ bảy bằng hai mươi lăm.',
+                'Mẹ hơn con hai mươi lăm tuổi.']),
+        _c('y_toan', 'Sau mấy năm thì AI CŨNG thêm bấy nhiêu',
+           'cả mẹ lẫn con đều thêm đúng 5 tuổi', buoc=2, soBuoc=3,
+           loi=['Sau mấy năm thì ai cũng thêm bấy nhiêu. Thời gian công bằng với tất '
+                'cả.',
+                'Sau năm năm thì cả mẹ lẫn con đều thêm đúng năm tuổi.']),
+        _c('y_toan', 'Tính tuổi mẹ', '32 + 5 = 37', buoc=3, soBuoc=3,
+           loi=['Mẹ ba mươi hai cộng năm bằng ba mươi bảy tuổi.']),
+        _c('y_toan', 'Tính tuổi con', '7 + 5 = 12',
+           loi=['Con bảy cộng năm bằng mười hai tuổi.']),
+        _c('so_do_doan', 'Hai đoạn cùng dài thêm 5', be=12, lon=37,
+           nhanBe='con', nhanLon='mẹ', hienHieu=True, chuHieu='hơn 25 tuổi',
+           chuPhu='Sau 5 năm: mẹ 37 tuổi, con 12 tuổi.',
+           loi=['Vẽ ra thì thấy hai đoạn cùng dài thêm năm.']),
+        _c('y_toan', 'Đáp số', 'hơn 25 tuổi · mẹ 37 · con 12',
+           loi=['Đáp số là mẹ hơn con hai mươi lăm tuổi. Sau năm năm mẹ ba mươi bảy '
+                'tuổi, con mười hai tuổi.']),
+        _c('cong_thuc', 'Chỗ hay quên nhất',
+           congThuc='cộng tuổi cho CẢ HAI người',
+           thay='đừng để một người đứng yên',
+           loi=['Chỗ hay quên nhất là chỉ cộng tuổi cho một người rồi để người kia '
+                'đứng yên.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_hieu_tuoi(b):
+    """C5⑩ Phần hơn tuổi không bao giờ đổi."""
+    return [
+        _c('bia', 'Phần hơn tuổi không đổi', so_bai(b),
+           loi=['Một khám phá rất đẹp, và nó đúng mãi mãi.']),
+        _c('de_toan', 'Đề bài',
+           de='Năm nay em 6 tuổi, anh 9 tuổi. Sau 2 năm nữa anh hơn em bao nhiêu tuổi?',
+           loi=['Năm nay em sáu tuổi, anh chín tuổi.',
+                'Hỏi sau hai năm nữa anh hơn em bao nhiêu tuổi.']),
+        _c('so_do_doan', 'Phần hơn của năm nay', be=6, lon=9,
+           nhanBe='em', nhanLon='anh', hienHieu=True, chuHieu='hơn 3 tuổi',
+           chuPhu='9 − 6 = 3 tuổi.',
+           loi=['Phần hơn của năm nay. Chín trừ sáu bằng ba. Anh hơn em ba tuổi.']),
+        _c('y_toan', 'Sau 2 năm, tính tuổi hai người', 'em 6 + 2 = 8 · anh 9 + 2 = 11',
+           buoc=1, soBuoc=3,
+           loi=['Sau hai năm, em sáu cộng hai bằng tám tuổi.',
+                'Anh chín cộng hai bằng mười một tuổi.']),
+        _c('so_do_doan', 'Hai đoạn cùng dài thêm 2', be=8, lon=11,
+           nhanBe='em', nhanLon='anh', hienHieu=True, chuHieu='vẫn hơn 3 tuổi',
+           chuPhu='Khúc dôi ra không hề đổi.',
+           loi=['Vẽ lại thì thấy hai đoạn cùng dài thêm hai.',
+                'Khúc dôi ra không hề đổi.']),
+        _c('y_toan', 'Tính lại phần hơn', '11 − 8 = 3', buoc=2, soBuoc=3,
+           loi=['Tính lại phần hơn. Mười một trừ tám bằng ba. Vẫn đúng ba tuổi như '
+                'cũ.']),
+        _c('y_toan', 'Vì sao lại thế', 'hai bên cùng thêm bằng nhau', buoc=3, soBuoc=3,
+           loi=['Vì hai bên cùng thêm bằng nhau, nên phần hơn giữ nguyên.']),
+        _c('y_toan', 'Đáp số', 'vẫn 3 tuổi',
+           loi=['Đáp số là vẫn ba tuổi.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Không phải chỉ mình anh thêm tuổi.',
+           loi=['Có bạn bảo anh hơn em ba tuổi thì sau hai năm anh hơn em năm tuổi.',
+                'Em cũng thêm hai tuổi chứ có đứng yên đâu.']),
+        _c('cong_thuc', 'Kho báu của mọi bài toán tuổi',
+           congThuc='phần HƠN tuổi KHÔNG BAO GIỜ đổi',
+           thay='dù mười năm hay một trăm năm nữa',
+           loi=['Phần hơn tuổi giữa hai người không bao giờ đổi, dù mười năm hay một '
+                'trăm năm nữa.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_moi_gio_nhan(b):
+    """C5⑪ Biết mỗi giờ, hỏi tất cả."""
+    return [
+        _c('bia', 'Chữ "mỗi"', so_bai(b),
+           loi=['Thấy chữ mỗi là thấy một phần đều nhau lặp đi lặp lại.']),
+        _c('de_toan', 'Đề bài',
+           de='Một vòi nước mỗi phút chảy được 3 lít. Hỏi sau 4 phút vòi chảy được mấy lít?',
+           loi=['Một vòi nước mỗi phút chảy được ba lít.',
+                'Hỏi sau bốn phút vòi chảy được bao nhiêu lít nước.']),
+        _c('y_toan', 'Chữ "mỗi" nghĩa là gì', 'phút nào cũng đều tăm tắp 3 lít',
+           buoc=1, soBuoc=3,
+           loi=['Mỗi phút ba lít nghĩa là phút nào cũng đều tăm tắp ba lít.']),
+        _c('luoi_cham', 'Bốn phút, mỗi phút 3 lít', hang=4, cot=3,
+           chuPhu='4 × 3 = 12 lít',
+           loi=['Vẽ bốn phút, mỗi phút ba lít.']),
+        _c('y_toan', 'Các phần bằng nhau lặp lại là việc của phép nhân', '3 × 4 = 12',
+           buoc=2, soBuoc=3,
+           loi=['Các phần bằng nhau lặp lại là việc của phép nhân.',
+                'Ba nhân bốn bằng mười hai.']),
+        _c('y_toan', 'Đáp số', '12 lít nước', buoc=3, soBuoc=3,
+           loi=['Đáp số là mười hai lít nước.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Không cộng 4 ki lô mét với 3 giờ.',
+           loi=['Có bạn giải bài mỗi giờ đi bốn ki lô mét, đi ba giờ, bằng phép cộng.',
+                'Bốn là ki lô mét còn ba là giờ. Hai thứ khác loại thì không cộng '
+                'thẳng với nhau được.']),
+        _c('cong_thuc', 'Ba bài, một bộ xương',
+           congThuc='mỗi giờ 5 áo · 3 giờ  →  5 × 3 = 15 áo',
+           thay='mỗi giờ 4 ki lô mét · 3 giờ  →  4 × 3 = 12 ki lô mét',
+           loi=['Bài may áo, bài đi đường, bài chảy nước khoác áo khác nhau mà chung '
+                'một bộ xương.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='biết MỖI phần, hỏi TẤT CẢ  →  NHÂN',
+           loi=['Con nhớ lại một lần nữa. Biết mỗi phần rồi hỏi tất cả thì nhân.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_moi_gio_chia(b):
+    """C5⑫ Biết tất cả, hỏi mỗi giờ."""
+    return [
+        _c('bia', 'Bài ngược của chữ "mỗi"', so_bai(b),
+           loi=['Bài trước biết mỗi giờ rồi hỏi tất cả. Bài này ngược lại.']),
+        _c('de_toan', 'Đề bài',
+           de='Cô May làm 3 giờ được tất cả 15 cái áo, giờ nào cũng như giờ nào. Hỏi mỗi giờ mấy cái?',
+           loi=['Cô May làm ba giờ được tất cả mười lăm cái áo, giờ nào cũng như giờ '
+                'nào.',
+                'Hỏi mỗi giờ cô may được mấy cái áo.']),
+        _c('y_toan', 'Đề cho biết cái gì', 'biết TẤT CẢ, hỏi MỖI phần',
+           buoc=1, soBuoc=3,
+           loi=['Lần này đề cho biết tất cả rồi hỏi mỗi phần.',
+                'Đúng ngược với bài trước.']),
+        _c('nhom_deu', 'Tách đều 15 cái áo cho 3 giờ', tong=15, moiNhom=5,
+           chuPhu='Mỗi giờ được 5 cái áo.',
+           loi=['Tách đều mười lăm cái áo cho ba giờ.',
+                'Mỗi giờ được năm cái áo.']),
+        _c('y_toan', 'Tách đều là việc của phép chia', '15 : 3 = 5', buoc=2, soBuoc=3,
+           loi=['Tách đều tất cả ra từng phần là việc của phép chia.',
+                'Mười lăm chia ba bằng năm.']),
+        _c('y_toan', 'Thử lại bằng phép nhân', '5 × 3 = 15', buoc=3, soBuoc=3,
+           loi=['Thử lại bằng phép nhân. Năm nhân ba bằng mười lăm, khớp đúng số áo '
+                'của cả ba giờ.']),
+        _c('y_toan', 'Đáp số', 'mỗi giờ 5 cái áo',
+           loi=['Đáp số là mỗi giờ năm cái áo.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Thấy chữ "mỗi giờ" không có nghĩa là nhân.',
+           loi=['Có bạn thấy đề có chữ mỗi giờ là nhân luôn, được bốn mươi lăm cái '
+                'áo.',
+                'Cả ba giờ mới được mười lăm cái, thì một giờ phải ít hơn mười lăm '
+                'chứ.']),
+        _c('cong_thuc', 'Hai bài đi cặp với nhau',
+           congThuc='biết MỖI phần, hỏi TẤT CẢ  →  nhân',
+           thay='biết TẤT CẢ, hỏi MỖI phần  →  chia',
+           loi=['Biết mỗi phần rồi hỏi tất cả thì nhân. Biết tất cả rồi hỏi mỗi phần '
+                'thì chia.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
@@ -5470,6 +5962,13 @@ BO = {
     'DL:KSN2.B14': kb2_chay_nguoc,  'DL:KSN2.B50': kb2_nhan_chia_nguoc,
     'DL:KSN2.B51': kb2_bi_lay_di,   'DL:KSN2.B15': kb2_chia_vong,
     'DL:KSN2.B52': kb2_luat_vang,   'DL:KSN2.B53': kb2_chia_het,
+    # ══ LỚP 2 · chương 5 · Chuyện toán lời văn — mười hai bài ══
+    'DL:KSN2.B16': kb2_chia_deu,    'DL:KSN2.B54': kb2_bai_nguoc_chia,
+    'DL:KSN2.B17': kb2_so_do_doan,  'DL:KSN2.B55': kb2_cau_chu_dao,
+    'DL:KSN2.B18': kb2_liet_ke,     'DL:KSN2.B56': kb2_do_cot,
+    'DL:KSN2.B19': kb2_ve_theo_phan, 'DL:KSN2.B57': kb2_chia_phan,
+    'DL:KSN2.B20': kb2_tuoi_sau_nam, 'DL:KSN2.B58': kb2_hieu_tuoi,
+    'DL:KSN2.B21': kb2_moi_gio_nhan, 'DL:KSN2.B59': kb2_moi_gio_chia,
 }
 
 

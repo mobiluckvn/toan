@@ -332,3 +332,60 @@ số nửa.
 
 Bốn chương, **18 bài chữ**: chuyện toán lời văn (6) · thám tử tí hon (4) · vương
 quốc hình học (5) · toán trong cuộc sống (3).
+
+---
+
+## Đợt 5 · chương 5 · Chuyện toán lời văn
+
+Chương dài nhất của quyển. Sáu bài chữ thành **mười hai bài video** — bài nào cũng
+gộp đúng HAI nghề ngược chiều nhau, nên đợt này tách đôi đều tăm tắp. Quyển lớp 2
+nay **59 bài · 47 video · 42.8 phút · 476 câu luyện tập** (456 chấm máy).
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 36 | B16 | chia đều — phép chia và khuôn ba dòng |
+| 37 | B54 *(mới)* | bài ngược — biết mỗi phần, tìm tất cả |
+| 38 | B17 | sơ đồ hai đoạn thẳng — ai dài, ai ngắn |
+| 39 | B55 *(mới)* | bẫy câu chữ đảo — "An ít hơn Bình" thì ai nhiều hơn |
+| 40 | B18 | liệt kê có thứ tự mọi cách tách tổng |
+| 41 | B56 *(mới)* | dò cột hơn nhau — thử lại đủ hai điều kiện |
+| 42 | B19 | vẽ theo phần — gấp mấy lần là mấy khối |
+| 43 | B57 *(mới)* | chia tổng cho số phần rồi trả về từng người |
+| 44 | B20 | tuổi sau mấy năm — ai cũng thêm bằng nhau |
+| 45 | B58 *(mới)* | phần hơn tuổi không bao giờ đổi |
+| 46 | B21 | biết mỗi giờ, hỏi tất cả — phép nhân |
+| 47 | B59 *(mới)* | biết tất cả, hỏi mỗi giờ — phép chia |
+
+### Dùng lại sơ đồ đoạn thẳng của lớp 4
+
+Bốn bài dùng cảnh `so_do_doan` — vốn dựng cho chương tổng-hiệu lớp 4, nay chạy cho
+hai dạng của lớp 2 mà không phải sửa gì:
+
+- **hơn kém** → hai đoạn lệch nhau, khúc dôi ra tô vàng là phần hơn;
+- **chia phần** → `phanBe`/`phanLon` chia đoạn thành các khối bằng nhau.
+
+Đã rút khung hình ra nhìn cả ba loại — theo đúng bài học của đợt trước
+([[hinh-trong-video-phai-khop-loi-doc]]) — cả ba đều vẽ đúng thứ lời đọc đang nói.
+
+### Cổng bắt được ngay lúc viết
+
+Ẩn dụ **"thần chú"** trong tên một cảnh — `dung_video_toan.py --loi` kêu trước cả
+khi sinh âm, nên không tốn một clip nào. Còn 96 gợi ý thì qua sạch ngay lượt đầu.
+
+### Một tên kỳ sát hạch thành mồ côi
+
+Kỳ ôn tập 5 tên là *"TUYỂN TẬP CHUYỆN TOÁN CỦA TRÍ LONG"*. Chương này nay không còn
+bài chữ nào, nên nhân vật ấy không xuất hiện ở đâu trong chương nữa — bé đọc thấy
+một cái tên chưa gặp bao giờ. Đã đổi thành *"TUYỂN TẬP CHUYỆN TOÁN LỜI VĂN"* qua
+bảng `DOI_TEN_KY_L2`. Kỳ ôn tập 8 vẫn giữ tên có nhân vật, vì chương 8 còn bài chữ.
+
+### Một câu ôn tập đảo chiều
+
+Câu 6 cũ hỏi lại đúng ý câu 2 — đều là tìm người ÍT hơn, phép trừ thẳng — trong khi
+bài BẪY CÂU CHỮ ĐẢO không câu nào hỏi tới. Đã đảo chiều câu 6 cho người phải tìm
+thành người NHIỀU hơn, đúng cái bẫy mà bài ấy dạy.
+
+### Còn lại của quyển
+
+Ba chương, **12 bài chữ**: thám tử tí hon (4) · vương quốc hình học (5) · toán
+trong cuộc sống (3).

@@ -3,12 +3,12 @@
  "id": "DL:KSN2.B16",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 36 · CHIA ĐỀU — AI CŨNG VUI",
+ "title": "Bài 36 · CHIA ĐỀU — PHÉP CHIA VÀ KHUÔN BA DÒNG",
  "durationMinutes": 10,
  "so": 36,
  "chuong": 5,
  "tenChuong": "Chuyện toán lời văn",
- "dangGoc": "LV 1.1 — Chia đều (mầm non của Trung bình cộng lớp 4)",
+ "dangGoc": "LV 1.1a — Bài toán chia đều, và cách trình bày bài giải ba dòng.",
  "skills": {
   "bktUnit": "CHUONG:5@G2",
   "primary": []
@@ -16,42 +16,25 @@
  "series": {
   "order": 36,
   "prev": "DL:KSN2.B53",
-  "next": "DL:KSN2.B17"
+  "next": "DL:KSN2.B54"
  },
  "objective": {
   "id": "O1",
-  "text": "Giải bài toán chia đều bằng phép chia trong bảng cửu chương. Giải được bài NGƯỢC: biết mỗi phần, tìm tất cả (dùng phép nhân). Trình bày bài giải chuẩn 3 dòng: lời giải — phép tính — đáp số.",
-  "kidText": "Cô giáo thưởng 15 quyển vở đều cho 5 bạn. Mỗi bạn được mấy quyển nhỉ?",
+  "text": "Nhận ra bài chia đều thì dùng phép chia. Trình bày bài giải đủ ba dòng: lời giải, phép tính, đáp số. Thử lại kết quả bằng phép nhân.",
+  "kidText": "Cô có 15 quyển vở thưởng đều cho 5 bạn. Con đoán mỗi bạn được mấy quyển nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Nhịp 1 — ĐỌC CHẬM & GẠCH CHÂN: đề cho gì, hỏi gì? Cho: 12 cái bánh, 3 bạn, chia ĐỀU. Hỏi: mỗi bạn mấy cái. Gạch chân ngay các con số và chữ \"chia đều\"!"
-   },
-   {
-    "id": "K2",
-    "text": "Nhịp 2. CHỌN PHÉP TÍNH: \"chia đều thành các phần bằng nhau\" là việc của phép chia: $12 : 3 = 4$."
-   },
-   {
-    "id": "K3",
-    "text": "Nhịp 3. BÀI NGƯỢC: nếu biết mỗi bạn 4 cái, có 3 bạn. Hỏi khay có tất cả mấy cái? Gộp các phần bằng nhau là việc của phép nhân: $4  \\times  3 = 12$. Chia và nhân là đôi máy ngược chiều — con đã gặp ở Bài 14 rồi đấy!"
-   },
-   {
-    "id": "K4",
-    "text": "Nhịp 4 — THỬ LẠI: mỗi bạn 4 cái × 3 bạn = 12 cái, khớp khay bánh ✓."
-   }
-  ],
-  "mantra": "Chia ĐỀU ra từng phần → phép CHIA. Gộp các phần BẰNG NHAU lại → phép NHÂN. Đọc thấy chữ \"mỗi\" là đang nói về MỘT phần đấy!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem giải: \"12 cái bánh chia cho 3 bạn: $12 - 3 = 9$. Mỗi bạn 9 cái!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Thử lại giúp Su Kem: mỗi bạn 9 cái × 3 bạn = 27 cái. Mà khay chỉ có 12 cái. Bánh ở đâu ra nhiều thế?! Gợi ý 2: \"Chia đều\" là việc của phép tính nào? Vì sao phép trừ không dùng được ở đây?"
+    "wrong": "Có bạn giải bài 12 cái bánh chia cho 3 bạn bằng phép trừ, lấy $12 - 3$ rồi ghi mỗi bạn 9 cái.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Thử lại xem, mỗi bạn 9 cái mà có 3 bạn thì hết bao nhiêu cái? Gợi ý 2: Hết những hai mươi bảy cái, mà khay chỉ có mười hai. Bánh ở đâu ra nhiều thế? Chữa: chia đều là việc của phép chia, nên lấy $12 : 3 = 4$. Mỗi bạn 4 cái."
    }
   ]
  },
@@ -59,45 +42,8 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Cô giáo có 15 quyển vở thưởng đều cho 5 bạn. Hỏi mỗi bạn được mấy quyển vở?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Su Kem giải: \"12 cái bánh chia cho 3 bạn: $12 - 3 = 9$. Mỗi bạn 9 cái!\"",
+    "narration": "Có bạn giải bài 12 cái bánh chia cho 3 bạn bằng phép trừ, lấy $12 - 3$ rồi ghi mỗi bạn 9 cái.",
     "teaches": []
    }
   ]
@@ -107,19 +53,35 @@
   "problem": "Cô giáo có 15 quyển vở thưởng đều cho 5 bạn. Hỏi mỗi bạn được mấy quyển vở?",
   "steps": [
    {
-    "show": "Mỗi bạn được số quyển vở là: (dòng 1: LỜI GIẢI)",
+    "show": "Đọc chậm xem đề cho gì, hỏi gì",
     "phan": "giai"
    },
    {
-    "show": "$15 : 5 = 3$ (quyển) (dòng 2: PHÉP TÍNH kèm đơn vị)",
+    "show": "Đề cho 15 quyển vở, 5 bạn, và chia đều. Đề hỏi mỗi bạn được mấy quyển.",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: 3 quyển vở. (dòng 3: ĐÁP SỐ)",
+    "show": "Chia đều thành các phần bằng nhau là việc của phép chia",
+    "phan": "giai"
+   },
+   {
+    "show": "Lấy $15 : 5 = 3$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Trình bày đủ ba dòng",
+    "phan": "giai"
+   },
+   {
+    "show": "Dòng một là lời giải, dòng hai là phép tính kèm đơn vị, dòng ba là đáp số.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 3 quyển vở.",
     "phan": "dapso"
    },
    {
-    "show": "Ghi nhớ khuôn 3 dòng này — mọi bài toán lời văn của cả chương đều trình bày như vậy!",
+    "show": "Thử lại bằng phép nhân: $3  \\times  5 = 15$, khớp đúng số vở của cô.",
     "phan": "ghichu"
    }
   ]
@@ -129,111 +91,147 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Có 10 viên kẹo chia đều cho 2 bạn. Mỗi bạn được mấy viên?",
+     "text": "Tính $15 : 5$.",
      "answerKey": {
-      "value": 5
+      "value": 3
      },
-     "solutionNarrative": "$10 : 2 = 5$ viên",
+     "solutionNarrative": "Lấy $15 : 5 = 3$.",
      "hints": [
-      "Chia đều thành các phần bằng nhau là việc của phép chia.",
-      "Chữ MỖI đang hỏi về một phần."
+      "Con đọc bảng nhân năm tới khi gặp mười lăm.",
+      "Đó là năm lần mấy?"
      ]
     },
     {
      "id": "C2",
-     "text": "Có 18 que tính chia đều cho 3 bạn. Mỗi bạn được mấy que?",
+     "text": "Có 12 cái bánh chia đều cho 3 bạn. Mỗi bạn được mấy cái?",
      "answerKey": {
-      "value": 6
+      "value": 4
      },
-     "solutionNarrative": "$18 : 3 = 6$ que",
+     "solutionNarrative": "Chia đều là việc của phép chia: $12 : 3 = 4$.",
      "hints": [
-      "Vẫn là bài chia đều.",
-      "Lấy tất cả chia cho số bạn."
+      "Chia đều thì dùng phép chia, không phải phép trừ.",
+      "Con đọc bảng nhân ba tới khi gặp mười hai."
      ]
     },
     {
      "id": "C3",
-     "text": "Mỗi hộp có 5 cái bút, có 4 hộp. Hỏi có tất cả mấy cái bút? (Bài ngược — nghĩ xem dùng phép gì!)",
+     "text": "Có 20 quyển vở chia đều cho 4 bạn. Mỗi bạn được mấy quyển?",
      "answerKey": {
-      "value": 20
+      "value": 5
      },
-     "solutionNarrative": "bài ngược → $5  \\times  4 = 20$ cái bút",
+     "solutionNarrative": "Lấy $20 : 4 = 5$.",
      "hints": [
-      "Bài ngược: gộp các phần bằng nhau lại.",
-      "Gộp thì dùng phép nhân."
+      "Con lấy số vở chia cho số bạn.",
+      "Đọc bảng nhân bốn tới khi gặp hai mươi."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Bà chia đều 24 quả táo vào 4 túi. Mỗi túi có mấy quả? (Trình bày đủ 3 dòng.)",
+     "text": "Bài giải chuẩn gồm mấy dòng, và dòng thứ ba là dòng gì?",
      "answerKey": {
-      "value": 6
+      "parts": [
+       {
+        "label": "mấy dòng",
+        "value": 3
+       },
+       {
+        "label": "dòng thứ ba",
+        "options": [
+         "lời giải",
+         "phép tính",
+         "đáp số"
+        ],
+        "value": "đáp số"
+       }
+      ]
      },
-     "solutionNarrative": "$24 : 4 = 6$ quả",
+     "solutionNarrative": "Bài giải có 3 dòng: lời giải, phép tính, rồi đáp số.",
      "hints": [
-      "Đọc chậm và gạch chân: cho gì, hỏi gì?",
-      "Hỏi MỖI túi nên đây là phép chia."
+      "Con nhớ lại ba dòng trong video: lời giải, phép tính, rồi gì nữa?",
+      "Dòng cuối cùng là dòng ghi kết quả cho gọn."
      ]
     },
     {
      "id": "C5",
-     "text": "Lớp xếp thành 5 hàng, mỗi hàng 6 bạn. Lớp có tất cả bao nhiêu bạn?",
+     "text": "Có 18 quả cam chia đều cho 6 bạn. Mỗi bạn được mấy quả?",
      "answerKey": {
-      "value": 30
+      "value": 3
      },
-     "solutionNarrative": "$6  \\times  5 = 30$ bạn",
+     "solutionNarrative": "Lấy $18 : 6 = 3$.",
      "hints": [
-      "Đề cho MỘT phần, lại hỏi TẤT CẢ.",
-      "Gộp các hàng bằng nhau lại — phép nhân."
+      "Con lấy số cam chia cho số bạn.",
+      "Đọc bảng nhân sáu tới khi gặp mười tám."
      ]
     },
     {
      "id": "C6",
-     "text": "Có 27 bông hoa cắm đều vào 3 lọ. Mỗi lọ mấy bông? Nếu cắm đều vào 9 lọ thì mỗi lọ mấy bông?",
+     "text": "Chia 12 cái bánh cho 3 bạn mà làm phép trừ thì sai ở đâu?",
      "answerKey": {
       "parts": [
        {
-        "label": "cắm vào 3 lọ",
-        "value": 9
-       },
-       {
-        "label": "cắm vào 9 lọ",
-        "value": 3
+        "label": "sai ở đâu",
+        "options": [
+         "chia đều phải dùng phép chia",
+         "không sai gì cả"
+        ],
+        "value": "chia đều phải dùng phép chia"
        }
       ]
      },
-     "solutionNarrative": "$27 : 3 = 9$ bông; $27 : 9 = 3$ bông",
+     "solutionNarrative": "Chia đều là việc của phép chia, không phải phép trừ.",
      "hints": [
-      "Hai câu, cùng một khay hoa, khác số lọ.",
-      "Lọ càng nhiều thì mỗi lọ càng ít."
+      "Con thử lại xem: mỗi bạn chín cái mà có ba bạn thì hết mấy cái?",
+      "Hết hai mươi bảy cái mà khay chỉ có mười hai. Phép trừ dùng sai chỗ rồi."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C7",
-     "text": "Hai bước: Mẹ có 2 khay bánh, mỗi khay 8 cái. Mẹ chia đều tất cả số bánh cho 4 bạn. Mỗi bạn được mấy cái?",
+     "text": "Có 24 viên kẹo chia đều cho 4 bạn. Mỗi bạn mấy viên, và thử lại bằng phép nhân được bao nhiêu?",
      "answerKey": {
-      "value": 4
+      "parts": [
+       {
+        "label": "mỗi bạn",
+        "value": 6
+       },
+       {
+        "label": "thử lại được",
+        "value": 24
+       }
+      ]
      },
-     "solutionNarrative": "hai bước — tất cả bánh: $8  \\times  2 = 16$ cái; mỗi bạn: $16 : 4 = 4$ cái",
+     "solutionNarrative": "Lấy $24 : 4 = 6$. Thử lại: $6  \\times  4 = 24$, khớp đúng đề bài.",
      "hints": [
-      "Hai bước — tìm tất cả bánh trước đã.",
-      "Có tổng rồi mới chia cho số bạn."
+      "Bước một: lấy số kẹo chia cho số bạn.",
+      "Bước hai: nhân ngược lại xem có ra đúng số kẹo ban đầu không."
      ]
     },
     {
      "id": "C8",
-     "text": "Su Kem có một túi kẹo. Chia đều cho 3 bạn thì mỗi bạn được 6 viên, vừa hết túi. Hỏi túi kẹo có bao nhiêu viên? (Bài ngược trá hình — đọc kỹ xem cho gì, hỏi gì!)",
+     "text": "Có 30 quyển vở. Chia đều cho 5 bạn thì mỗi bạn mấy quyển, chia đều cho 6 bạn thì mỗi bạn mấy quyển, và ít hơn mấy quyển?",
      "answerKey": {
-      "value": 18
+      "parts": [
+       {
+        "label": "chia cho 5 bạn",
+        "value": 6
+       },
+       {
+        "label": "chia cho 6 bạn",
+        "value": 5
+       },
+       {
+        "label": "ít hơn mấy quyển",
+        "value": 1
+       }
+      ]
      },
-     "solutionNarrative": "cho \"mỗi bạn 6 viên\" và \"3 bạn\", hỏi tất cả → $6  \\times  3 = 18$ viên (đọc kỹ mới thấy đây là bài gộp chứ không phải bài chia!)",
+     "solutionNarrative": "Chia 5 bạn: $30 : 5 = 6$ quyển. Chia 6 bạn: $30 : 6 = 5$ quyển. Ít hơn 1 quyển.",
      "hints": [
-      "Đọc kỹ: đề cho MỖI phần, lại hỏi TẤT CẢ.",
-      "Đây là bài gộp chứ không phải bài chia."
+      "Con làm riêng hai phép chia trước đã.",
+      "Rồi lấy kết quả lớn trừ kết quả bé để xem ít hơn mấy quyển."
      ]
     }
    ]
@@ -244,81 +242,69 @@
   "items": [
    {
     "id": "Q1",
-    "text": "\"Chia đều\" thì dùng phép chia.",
+    "text": "Chia đều thành các phần bằng nhau là việc của phép chia.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng — đó là dấu hiệu để chọn phép tính."
    },
    {
     "id": "Q2",
-    "text": "Biết mỗi phần và số phần, muốn tìm tất cả thì dùng phép trừ.",
+    "text": "Có 15 quyển vở chia đều cho 5 bạn. Mỗi bạn mấy quyển?",
+    "format": "mcq",
+    "choices": [
+     "3",
+     "10",
+     "20",
+     "5"
+    ],
+    "answerKey": {
+     "choice": "3"
+    },
+    "solutionNarrative": "Lấy mười lăm chia năm."
+   },
+   {
+    "id": "Q3",
+    "text": "Bài giải chuẩn có ba dòng: lời giải, phép tính, đáp số.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — cả chương đều trình bày như thế."
+   },
+   {
+    "id": "Q4",
+    "text": "Chia 12 cái bánh cho 3 bạn thì dùng phép gì?",
+    "format": "mcq",
+    "choices": [
+     "phép chia",
+     "phép trừ",
+     "phép cộng"
+    ],
+    "answerKey": {
+     "choice": "phép chia"
+    },
+    "solutionNarrative": "Chia đều ra từng phần thì dùng phép chia."
+   },
+   {
+    "id": "Q5",
+    "text": "Dòng phép tính không cần ghi đơn vị.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "phép nhân"
-   },
-   {
-    "id": "Q3",
-    "text": "12 cái bánh chia đều 3 bạn, mỗi bạn được:",
-    "format": "mcq",
-    "choices": [
-     "A. 9 cái",
-     "B. 4 cái",
-     "C. 36 cái"
-    ],
-    "answerKey": {
-     "choice": "B. 4 cái"
-    },
-    "solutionNarrative": "Đáp án: B. 4 cái"
-   },
-   {
-    "id": "Q4",
-    "text": "Mỗi hộp 6 bút, 3 hộp có tất cả:",
-    "format": "mcq",
-    "choices": [
-     "A. 18 bút",
-     "B. 9 bút",
-     "C. 2 bút"
-    ],
-    "answerKey": {
-     "choice": "A. 18 bút"
-    },
-    "solutionNarrative": "Đáp án: A. 18 bút"
-   },
-   {
-    "id": "Q5",
-    "text": "Bài giải toán lời văn gồm 3 dòng theo thứ tự:",
-    "format": "mcq",
-    "choices": [
-     "A. Đáp số - phép tính - lời giải",
-     "B. Lời giải - phép tính - đáp số",
-     "C. Phép tính - đáp số - lời giải"
-    ],
-    "answerKey": {
-     "choice": "B. Lời giải - phép tính - đáp số"
-    },
-    "solutionNarrative": "Đáp án: B. Lời giải - phép tính - đáp số"
+    "solutionNarrative": "Sai. Dòng phép tính phải ghi đơn vị trong ngoặc."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Giao \"chức\" chia đồ cho con trong mọi bữa ăn: chia nem, chia múi cam cho cả nhà — chia đều là kỹ năng sống trước khi là kỹ năng toán.",
-  "homeActivity": "Khi con chọn sai phép tính, đừng sửa ngay — hãy hỏi \"thử lại xem có khớp đề không?\". Tự phát hiện vô lý (27 cái bánh từ khay 12 cái!) nhớ lâu hơn bị sửa.",
-  "watchFor": "NÊN: rèn khuôn 3 dòng ngay từ bài dễ. KHÔNG NÊN: cho phép chỉ viết mỗi phép tính — lời giải bằng chữ chính là bằng chứng con HIỂU chuyện gì đang xảy ra."
+  "onComplete": "Chia hoa quả trong bữa cơm rồi hỏi con mỗi người mấy quả — bài toán chia đều có sẵn ngay trên bàn ăn.",
+  "homeActivity": "Bố mẹ hỏi một câu: \"Con dùng phép gì, và vì sao?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_CHAM04",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_CHAM04.png",
-   "caption": "Khay 12 cái bánh chia đều cho 3 bạn",
-   "sha256_16": "23c4c426fd7dad22",
-   "mucGoc": "chuyenMoBai"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B16_giang.mp4"
+ }
 }

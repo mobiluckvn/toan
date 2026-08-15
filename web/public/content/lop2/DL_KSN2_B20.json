@@ -3,55 +3,38 @@
  "id": "DL:KSN2.B20",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 40 · BÀI TOÁN TUỔI ANH EM",
+ "title": "Bài 44 · TUỔI SAU MẤY NĂM — AI CŨNG THÊM BẰNG NHAU",
  "durationMinutes": 10,
- "so": 40,
+ "so": 44,
  "chuong": 5,
  "tenChuong": "Chuyện toán lời văn",
- "dangGoc": "LV 6.1 — Toán tuổi (khám phá vàng: HIỆU TUỔI KHÔNG BAO GIỜ ĐỔI)",
+ "dangGoc": "LV 6.1a — Bài toán tuổi: tìm phần hơn và tính tuổi sau mấy năm.",
  "skills": {
   "bktUnit": "CHUONG:5@G2",
   "primary": []
  },
  "series": {
-  "order": 40,
-  "prev": "DL:KSN2.B19",
-  "next": "DL:KSN2.B21"
+  "order": 44,
+  "prev": "DL:KSN2.B57",
+  "next": "DL:KSN2.B58"
  },
  "objective": {
   "id": "O1",
-  "text": "Giải bài toán tuổi bằng phép cộng, trừ (anh hơn em mấy tuổi, ai bao nhiêu tuổi). Tính được tuổi mỗi người SAU vài năm nữa: mỗi người cùng thêm từng ấy tuổi. Khám phá bí mật vàng: phần HƠN TUỔI giữa hai người không bao giờ thay đổi.",
-  "kidText": "Mẹ 32 tuổi, con 7 tuổi. Sau 5 năm nữa mẹ còn hơn con từng ấy tuổi không nhỉ?",
+  "text": "Tìm được phần hơn tuổi giữa hai người. Tính được tuổi mỗi người sau mấy năm nữa. Nhớ rằng ai cũng thêm cùng một số tuổi.",
+  "kidText": "Năm nay mẹ 32 tuổi, con 7 tuổi. Con đoán sau 5 năm nữa mỗi người mấy tuổi nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Năm nay: em 6 tuổi, anh 9 tuổi → anh hơn em: $9 - 6 = 3$ tuổi."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Sau 2 năm: MỖI người đều thêm đúng 2 tuổi (thời gian công bằng với tất cả!): em $6 + 2 = 8$ tuổi. Anh $9 + 2 = 11$ tuổi."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Kiểm tra phần hơn: $11 - 8 = 3$ — VẪN LÀ 3 TUỔI! Nhìn hai hàng nến mà xem: hai bên cùng cắm thêm 2 cây, nên phần \"nhô cao hơn\" của anh giữ nguyên:"
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. Vậy câu trả lời cho Su Kem: dù 10 năm hay 100 năm nữa, anh vẫn hơn em đúng 3 tuổi. Em không bao giờ \"đuổi kịp\" anh được, dù ăn bao nhiêu cơm đi nữa!"
-   }
-  ],
-  "mantra": "Thời gian trôi thì AI CŨNG thêm tuổi bằng nhau → phần HƠN giữa hai người là kho báu không đổi. Bài toán tuổi nào cũng nên tìm phần hơn ấy trước tiên!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem quả quyết: \"Anh hơn em 3 tuổi. Sau 2 năm nữa thì anh hơn em $3 + 2 = 5$ tuổi chứ — thời gian trôi mà!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Sau 2 năm, có phải CHỈ MÌNH anh thêm tuổi không? Em đứng yên à? Gợi ý 2: Lấy số cụ thể (em 6, anh 9) tính tuổi hai người sau 2 năm rồi trừ thử. Phần hơn là mấy? Nói lại cho Su Kem bí mật của những ngọn nến nhé."
+    "wrong": "Có bạn tính tuổi mẹ sau năm năm thì cộng đúng, mà tuổi con thì để nguyên như cũ.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Năm năm nữa thì có phải chỉ mình mẹ thêm tuổi không? Con đứng yên à? Gợi ý 2: Cộng thêm năm tuổi cho CẢ HAI người rồi hãy so. Chữa: thời gian trôi thì ai cũng thêm tuổi bằng nhau. Mẹ $32 + 5 = 37$ tuổi và con $7 + 5 = 12$ tuổi."
    }
   ]
  },
@@ -59,68 +42,47 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Năm nay mẹ 32 tuổi, con 7 tuổi. Hỏi: (a) Mẹ hơn con bao nhiêu tuổi? (b) Sau 5 năm nữa, mẹ hơn con bao nhiêu tuổi?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Su Kem quả quyết: \"Anh hơn em 3 tuổi. Sau 2 năm nữa thì anh hơn em $3 + 2 = 5$ tuổi chứ — thời gian trôi mà!\"",
+    "narration": "Có bạn tính tuổi mẹ sau năm năm thì cộng đúng, mà tuổi con thì để nguyên như cũ.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Năm nay mẹ 32 tuổi, con 7 tuổi. Hỏi: (a) Mẹ hơn con bao nhiêu tuổi? (b) Sau 5 năm nữa, mẹ hơn con bao nhiêu tuổi?",
+  "problem": "Năm nay mẹ 32 tuổi, con 7 tuổi. Hỏi mẹ hơn con bao nhiêu tuổi, và sau 5 năm nữa mỗi người bao nhiêu tuổi?",
   "steps": [
    {
-    "show": "(a) Mẹ hơn con số tuổi là: $32 - 7 = 25$ (tuổi)",
+    "show": "Tìm phần hơn của năm nay",
     "phan": "giai"
    },
    {
-    "show": "(b) Sau 5 năm, mẹ và con ĐỀU thêm 5 tuổi, nên mẹ vẫn hơn con 25 tuổi.",
+    "show": "Lấy $32 - 7 = 25$. Mẹ hơn con 25 tuổi.",
     "phan": "giai"
    },
    {
-    "show": "(Kiểm tra: mẹ $32 + 5 = 37$ tuổi. Con $7 + 5 = 12$ tuổi. $37 - 12 = 25$ ✓)",
+    "show": "Sau mấy năm thì AI CŨNG thêm bấy nhiêu",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: (a) 25 tuổi; (b) vẫn 25 tuổi.",
+    "show": "Thời gian công bằng với tất cả. Sau 5 năm thì cả mẹ lẫn con đều thêm đúng 5 tuổi.",
+    "phan": "giai"
+   },
+   {
+    "show": "Tính tuổi từng người",
+    "phan": "giai"
+   },
+   {
+    "show": "Mẹ $32 + 5 = 37$ tuổi. Con $7 + 5 = 12$ tuổi.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: mẹ hơn con 25 tuổi; sau 5 năm mẹ 37 tuổi, con 12 tuổi.",
     "phan": "dapso"
+   },
+   {
+    "show": "Chỗ hay quên nhất là chỉ cộng tuổi cho một người rồi để người kia đứng yên.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -129,126 +91,143 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Em 6 tuổi, anh hơn em 4 tuổi. Hỏi anh mấy tuổi?",
+     "text": "Tính $32 - 7$.",
      "answerKey": {
-      "value": 10
+      "value": 25
      },
-     "solutionNarrative": "$6 + 4 = 10$ tuổi",
+     "solutionNarrative": "Lấy $32 - 7 = 25$.",
      "hints": [
-      "Bài hơn - kém: ai dài, ai ngắn?",
-      "Anh là đoạn dài hơn nên phải nối thêm."
+      "Con đếm lùi từ ba mươi hai xuống bảy bước.",
+      "Đây chính là phần hơn tuổi của hai mẹ con."
      ]
     },
     {
      "id": "C2",
-     "text": "Chị 12 tuổi, em kém chị 5 tuổi. Hỏi em mấy tuổi?",
+     "text": "Năm nay em 6 tuổi. Sau 2 năm nữa em mấy tuổi?",
      "answerKey": {
-      "value": 7
+      "value": 8
      },
-     "solutionNarrative": "$12 - 5 = 7$ tuổi",
+     "solutionNarrative": "Lấy $6 + 2 = 8$.",
      "hints": [
-      "Em là đoạn ngắn hơn trên sơ đồ.",
-      "Cắt bớt phần kém ra khỏi tuổi chị."
+      "Sau hai năm thì thêm đúng hai tuổi.",
+      "Con cộng thêm hai vào tuổi hiện nay."
      ]
     },
     {
      "id": "C3",
-     "text": "Bố 38 tuổi, con 8 tuổi. Bố hơn con bao nhiêu tuổi?",
+     "text": "Năm nay mẹ 32 tuổi. Sau 5 năm nữa mẹ mấy tuổi?",
      "answerKey": {
-      "value": 30
+      "value": 37
      },
-     "solutionNarrative": "$38 - 8 = 30$ tuổi",
+     "solutionNarrative": "Lấy $32 + 5 = 37$.",
      "hints": [
-      "Phần hơn = tuổi lớn trừ tuổi bé.",
-      "Hai số đề cho sẵn, chỉ việc đặt phép trừ."
+      "Sau năm năm thì thêm đúng năm tuổi.",
+      "Con cộng thêm năm vào tuổi hiện nay."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Năm nay em 7 tuổi, anh 10 tuổi. Hỏi 3 năm nữa mỗi người bao nhiêu tuổi? Khi đó anh hơn em mấy tuổi?",
+     "text": "Năm nay em 6 tuổi, anh 9 tuổi. Anh hơn em mấy tuổi?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "3 năm nữa em",
-        "value": 10
-       },
-       {
-        "label": "3 năm nữa anh",
-        "value": 13
-       },
-       {
-        "label": "anh hơn em",
-        "value": 3
-       }
-      ]
+      "value": 3
      },
-     "solutionNarrative": "em $7 + 3 = 10$ tuổi; anh $10 + 3 = 13$ tuổi; anh vẫn hơn em 3 tuổi",
+     "solutionNarrative": "Lấy $9 - 6 = 3$.",
      "hints": [
-      "Thời gian công bằng: ai cũng thêm đúng bấy nhiêu tuổi.",
-      "Cộng cho từng người rồi trừ lại xem phần hơn có đổi không."
+      "Con lấy tuổi anh trừ tuổi em.",
+      "Đây là phần hơn tuổi của hai anh em."
      ]
     },
     {
      "id": "C5",
-     "text": "Năm nay mẹ hơn con 26 tuổi. Hỏi 10 năm nữa mẹ hơn con bao nhiêu tuổi? (Không cần biết tuổi từng người vẫn trả lời được đấy!)",
+     "text": "Sau 2 năm nữa thì ai được thêm tuổi?",
      "answerKey": {
       "parts": [
        {
-        "label": "10 năm nữa mẹ hơn con",
-        "value": 26
+        "label": "ai thêm tuổi",
+        "options": [
+         "cả hai người đều thêm 2 tuổi",
+         "chỉ người lớn thêm tuổi",
+         "chỉ người nhỏ thêm tuổi"
+        ],
+        "value": "cả hai người đều thêm 2 tuổi"
        }
       ]
      },
-     "solutionNarrative": "vẫn 26 tuổi — phần hơn không đổi, chẳng cần biết tuổi từng người!",
+     "solutionNarrative": "Cả hai người đều thêm hai tuổi, vì thời gian công bằng với tất cả.",
      "hints": [
-      "Phần hơn là kho báu không bao giờ đổi.",
-      "Không cần biết tuổi từng người vẫn trả lời được."
+      "Thời gian có bỏ sót ai không?",
+      "Người nhỏ có đứng yên trong hai năm ấy không?"
      ]
     },
     {
      "id": "C6",
-     "text": "Hai năm TRƯỚC, em 4 tuổi. Hỏi năm nay em mấy tuổi? Năm nay anh 9 tuổi thì hai năm trước anh mấy tuổi?",
+     "text": "Năm nay em 6 tuổi, anh 9 tuổi. Sau 2 năm nữa mỗi người mấy tuổi?",
      "answerKey": {
       "parts": [
        {
-        "label": "năm nay em",
-        "value": 6
+        "label": "em",
+        "value": 8
        },
        {
-        "label": "hai năm trước anh",
-        "value": 7
+        "label": "anh",
+        "value": 11
        }
       ]
      },
-     "solutionNarrative": "em nay $4 + 2 = 6$ tuổi; anh hai năm trước $9 - 2 = 7$ tuổi",
+     "solutionNarrative": "Em $6 + 2 = 8$ tuổi, anh $9 + 2 = 11$ tuổi.",
      "hints": [
-      "Đi tới thì cộng, đi lùi thì trừ.",
-      "Câu đầu đi tới, câu sau đi lùi — coi chừng lẫn chiều."
+      "Con cộng thêm hai tuổi cho em trước.",
+      "Rồi nhớ cộng thêm hai tuổi cho anh nữa, đừng để anh đứng yên."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C7",
-     "text": "Bây giờ em 5 tuổi, anh 9 tuổi. Hỏi khi em lên 10 tuổi thì anh bao nhiêu tuổi? (Mẹo: em thêm mấy tuổi thì anh cũng thêm bấy nhiêu — hoặc dùng luôn kho báu \"phần hơn không đổi\"!)",
+     "text": "Năm nay mẹ 32 tuổi, con 7 tuổi. Sau 5 năm nữa mẹ mấy tuổi và con mấy tuổi?",
      "answerKey": {
-      "value": 14
+      "parts": [
+       {
+        "label": "mẹ",
+        "value": 37
+       },
+       {
+        "label": "con",
+        "value": 12
+       }
+      ]
      },
-     "solutionNarrative": "em từ 5 lên 10 là thêm 5 tuổi → anh cũng thêm 5: $9 + 5 = 14$ tuổi. (Hoặc: hiệu 4 tuổi không đổi → $10 + 4 = 14$.)",
+     "solutionNarrative": "Mẹ $32 + 5 = 37$ tuổi, con $7 + 5 = 12$ tuổi.",
      "hints": [
-      "Em thêm mấy tuổi thì anh cũng thêm bấy nhiêu.",
-      "Hoặc dùng luôn kho báu phần hơn không đổi."
+      "Con cộng thêm năm tuổi cho mẹ.",
+      "Rồi cộng thêm năm tuổi cho con nữa."
      ]
     },
     {
      "id": "C8",
-     "text": "Hai chị em sinh cách nhau 4 năm. Em quả quyết: \"Lớn thật nhanh rồi sẽ có ngày em BẰNG TUỔI chị!\" Con dùng bí mật những ngọn nến để trả lời em ấy — có ngày đó không, vì sao?",
-     "solutionNarrative": "KHÔNG bao giờ — mỗi năm hai chị em cùng thêm đúng 1 tuổi nên khoảng cách 4 năm được \"đóng đinh\" mãi mãi. Em chỉ có thể đuổi kịp chị về... chiều cao thôi!",
+     "text": "Năm nay bố 35 tuổi, con 10 tuổi. Cho biết bố hơn con mấy tuổi, và sau 3 năm nữa mỗi người mấy tuổi.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bố hơn con",
+        "value": 25
+       },
+       {
+        "label": "bố sau 3 năm",
+        "value": 38
+       },
+       {
+        "label": "con sau 3 năm",
+        "value": 13
+       }
+      ]
+     },
+     "solutionNarrative": "Bố hơn con $35 - 10 = 25$ tuổi. Sau ba năm bố $35 + 3 = 38$ tuổi, con $10 + 3 = 13$ tuổi.",
      "hints": [
-      "Mỗi năm hai chị em cùng thêm đúng một tuổi.",
-      "Vậy khoảng cách ấy có bao giờ hụt đi được không?"
+      "Bước một: lấy tuổi bố trừ tuổi con để ra phần hơn.",
+      "Bước hai: cộng thêm ba tuổi cho cả hai người."
      ]
     }
    ]
@@ -259,91 +238,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Sau 2 năm, cả anh và em đều thêm đúng 2 tuổi.",
+    "text": "Sau mấy năm thì ai cũng thêm bấy nhiêu tuổi.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng — thời gian công bằng với tất cả."
    },
    {
     "id": "Q2",
-    "text": "Anh hơn em 3 tuổi; sau 2 năm anh hơn em 5 tuổi.",
+    "text": "Mẹ 32 tuổi, con 7 tuổi. Mẹ hơn con mấy tuổi?",
+    "format": "mcq",
+    "choices": [
+     "25",
+     "39",
+     "32",
+     "7"
+    ],
+    "answerKey": {
+     "choice": "25"
+    },
+    "solutionNarrative": "Lấy ba mươi hai trừ bảy."
+   },
+   {
+    "id": "Q3",
+    "text": "Em 6 tuổi, sau 2 năm em mấy tuổi?",
+    "format": "mcq",
+    "choices": [
+     "8",
+     "4",
+     "12",
+     "6"
+    ],
+    "answerKey": {
+     "choice": "8"
+    },
+    "solutionNarrative": "Sáu cộng hai."
+   },
+   {
+    "id": "Q4",
+    "text": "Sau 2 năm thì chỉ người lớn thêm tuổi.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "vẫn hơn 3"
-   },
-   {
-    "id": "Q3",
-    "text": "Em 6 tuổi, anh hơn em 4 tuổi. Anh mấy tuổi?",
-    "format": "mcq",
-    "choices": [
-     "A. 2",
-     "B. 10",
-     "C. 24"
-    ],
-    "answerKey": {
-     "choice": "B. 10"
-    },
-    "solutionNarrative": "Đáp án: B. 10"
-   },
-   {
-    "id": "Q4",
-    "text": "Mẹ hơn con 25 tuổi. Sau 10 năm mẹ hơn con:",
-    "format": "mcq",
-    "choices": [
-     "A. 25 tuổi",
-     "B. 35 tuổi",
-     "C. 15 tuổi"
-    ],
-    "answerKey": {
-     "choice": "A. 25 tuổi"
-    },
-    "solutionNarrative": "Đáp án: A. 25 tuổi"
+    "solutionNarrative": "Sai. Cả hai người đều thêm hai tuổi."
    },
    {
     "id": "Q5",
-    "text": "Em 5 tuổi, anh 9 tuổi. Khi em 10 tuổi thì anh:",
-    "format": "mcq",
-    "choices": [
-     "A. 12 tuổi",
-     "B. 14 tuổi",
-     "C. 19 tuổi"
-    ],
+    "text": "Mẹ 32 tuổi, sau 5 năm mẹ 37 tuổi.",
+    "format": "tf",
     "answerKey": {
-     "choice": "B. 14 tuổi"
+     "value": true
     },
-    "solutionNarrative": "Đáp án: B. 14 tuổi"
+    "solutionNarrative": "Đúng — ba mươi hai cộng năm."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Lấy chính gia đình mình làm đề bài: \"Mẹ hơn con bao nhiêu tuổi? 20 năm nữa thì sao?\" — toán về người thân luôn hấp dẫn gấp đôi toán về nhân vật lạ.",
-  "homeActivity": "Câu hỏi \"em có đuổi kịp tuổi chị không?\" đáng để cả nhà thảo luận vui trong bữa cơm — đây là lần đầu con chạm vào một ĐẠI LƯỢNG BẤT BIẾN, khái niệm rất lớn của toán học.",
-  "watchFor": "NÊN: cho con kiểm chứng \"hiệu không đổi\" bằng vài mốc thời gian (2 năm, 5 năm, 10 năm nữa). KHÔNG NÊN: ra bài kiểu \"3 năm nữa tổng tuổi hai mẹ con là...\" — cộng tuổi nhiều người qua thời gian là bẫy lớp 4-5, giờ chưa cần."
+  "onComplete": "Lấy tuổi thật của người nhà ra tính cùng con — bài toán tuổi thú vị nhất khi nó nói về chính gia đình mình.",
+  "homeActivity": "Bố mẹ hỏi: \"Con đã cộng tuổi cho cả hai người chưa?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_MO_B20",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_MO_B20.png",
-   "caption": "Tuổi mẹ và tuổi con, nay và 5 năm nữa",
-   "sha256_16": "c66d4430fe8d3780",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_CANH06",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L2H_CANH06.png",
-   "caption": "Cả hai cùng thêm 2 tuổi thì phần hơn vẫn giữ nguyên",
-   "sha256_16": "2dd9bb22af537ffc",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B20_giang.mp4"
+ }
 }

@@ -1,0 +1,314 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B56",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 41 · DÒ CỘT HƠN NHAU — THỬ LẠI ĐỦ HAI ĐIỀU KIỆN",
+ "durationMinutes": 10,
+ "so": 41,
+ "chuong": 5,
+ "tenChuong": "Chuyện toán lời văn",
+ "dangGoc": "LV 2.1d — Bài hai điều kiện: chọn dòng đúng rồi kiểm cả tổng lẫn phần hơn.",
+ "skills": {
+  "bktUnit": "CHUONG:5@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 41,
+  "prev": "DL:KSN2.B18",
+  "next": "DL:KSN2.B19"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhận ra bài có hai điều kiện cùng lúc. Dò cột \"hơn nhau\" để chọn đúng dòng. Thử lại đủ cả hai điều kiện trước khi chốt.",
+  "kidText": "Hai bạn có 12 viên kẹo và An hơn Bình 4 viên. Con đoán mỗi bạn mấy viên nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với bài tổng 10 và hơn nhau 2, có bạn hớn hở ghi anh 7 em 3 vì cộng lại đúng mười.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Bạn ấy mới kiểm được mấy điều kiện? Còn điều kiện nào chưa kiểm? Gợi ý 2: Bảy hơn ba mấy viên? Có đúng bằng hai như đề nói không? Chữa: tổng thì đúng nhưng phần hơn sai. Dòng đúng là 6 và 4."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Với bài tổng 10 và hơn nhau 2, có bạn hớn hở ghi anh 7 em 3 vì cộng lại đúng mười.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Hai bạn có tất cả 12 viên kẹo, bạn An hơn bạn Bình 4 viên. Hỏi mỗi bạn có mấy viên kẹo?",
+  "steps": [
+   {
+    "show": "Bài này có hai điều kiện cùng lúc",
+    "phan": "giai"
+   },
+   {
+    "show": "Điều kiện thứ nhất là tổng bằng 12. Điều kiện thứ hai là An hơn Bình 4 viên.",
+    "phan": "giai"
+   },
+   {
+    "show": "Liệt kê theo điều kiện thứ nhất",
+    "phan": "giai"
+   },
+   {
+    "show": "Các cách tách 12 là 11 và 1, 10 và 2, 9 và 3, 8 và 4, 7 và 5, 6 và 6.",
+    "phan": "giai"
+   },
+   {
+    "show": "Dò cột hơn nhau theo điều kiện thứ hai",
+    "phan": "giai"
+   },
+   {
+    "show": "Cột hơn nhau chạy 10, 8, 6, 4, 2, 0. Dòng có số bốn là dòng 8 và 4.",
+    "phan": "giai"
+   },
+   {
+    "show": "Thử lại đủ cả hai điều kiện",
+    "phan": "giai"
+   },
+   {
+    "show": "Kiểm tổng: $8 + 4 = 12$ đúng. Kiểm phần hơn: $8 - 4 = 4$ đúng.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: An 8 viên, Bình 4 viên.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Chỉ thử một điều kiện là chưa xong bài — đó là chỗ hay mất điểm nhất.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính $8 + 4$.",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Lấy $8 + 4 = 12$.",
+     "hints": [
+      "Con đếm thêm bốn nữa từ số tám.",
+      "Đây là phép kiểm điều kiện thứ nhất của bài."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tính $8 - 4$.",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Lấy $8 - 4 = 4$.",
+     "hints": [
+      "Con đếm lùi từ tám xuống bốn bước.",
+      "Đây là phép kiểm điều kiện thứ hai của bài."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Hai bạn có tất cả 12 viên, An hơn Bình 4 viên. An có mấy viên?",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "Dò bảng thấy dòng 8 và 4 có phần hơn đúng bốn, nên An có 8 viên.",
+     "hints": [
+      "Con kẻ bảng mọi cách tách mười hai trước đã.",
+      "Rồi dò cột hơn nhau tìm dòng có số bốn."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Hai bạn có tất cả 12 viên, An hơn Bình 4 viên. Bình có mấy viên?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Dòng đúng là 8 và 4, nên Bình có 4 viên.",
+     "hints": [
+      "Dòng con vừa chọn có hai số, một cho An một cho Bình.",
+      "Bình là người ít hơn nên lấy số nhỏ."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Hai bạn có tất cả 10 viên, anh hơn em 2 viên. Mỗi bạn mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "anh",
+        "value": 6
+       },
+       {
+        "label": "em",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Dò bảng tách 10 thấy dòng 6 và 4 có phần hơn đúng hai. Anh 6 viên, em 4 viên.",
+     "hints": [
+      "Con kẻ bảng mọi cách tách mười.",
+      "Dò cột hơn nhau tìm dòng có số hai."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Có bạn giải bài tổng 10 hơn nhau 2 rồi ghi anh 7 em 3. Bạn ấy quên kiểm điều kiện nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "quên kiểm điều kiện nào",
+        "options": [
+         "điều kiện phần hơn",
+         "điều kiện tổng"
+        ],
+        "value": "điều kiện phần hơn"
+       }
+      ]
+     },
+     "solutionNarrative": "Bạn ấy quên kiểm điều kiện phần hơn: bảy trừ ba bằng bốn chứ không phải hai.",
+     "hints": [
+      "Bạn ấy kiểm được điều kiện tổng rồi đấy.",
+      "Còn điều kiện kia thì sao — bảy hơn ba mấy viên?"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Hai bạn có tất cả 14 viên, bạn lớn hơn bạn bé 4 viên. Mỗi bạn mấy viên, và thử lại tổng được bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bạn lớn",
+        "value": 9
+       },
+       {
+        "label": "bạn bé",
+        "value": 5
+       },
+       {
+        "label": "thử lại tổng",
+        "value": 14
+       }
+      ]
+     },
+     "solutionNarrative": "Dò bảng tách 14 thấy dòng 9 và 5 hơn nhau đúng bốn. Thử lại: $9 + 5 = 14$.",
+     "hints": [
+      "Con kẻ bảng mọi cách tách mười bốn.",
+      "Dò cột hơn nhau tìm dòng có số bốn, rồi cộng lại để thử."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Hai bạn có tất cả 12 viên và bằng nhau. Mỗi bạn mấy viên, và phần hơn bằng mấy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi bạn",
+        "value": 6
+       },
+       {
+        "label": "phần hơn",
+        "value": 0
+       }
+      ]
+     },
+     "solutionNarrative": "Dòng cuối bảng là 6 và 6, nên mỗi bạn 6 viên và phần hơn bằng 0.",
+     "hints": [
+      "Hai bạn bằng nhau thì dòng ấy nằm ở đâu trong bảng?",
+      "Hai số bằng nhau thì trừ đi được bao nhiêu?"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Bài hai điều kiện thì phải thử lại cả hai.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đó là chỗ hay mất điểm nhất."
+   },
+   {
+    "id": "Q2",
+    "text": "Tổng 12, An hơn Bình 4 viên. An có mấy viên?",
+    "format": "mcq",
+    "choices": [
+     "8",
+     "4",
+     "6",
+     "10"
+    ],
+    "answerKey": {
+     "choice": "8"
+    },
+    "solutionNarrative": "Dòng có phần hơn bằng bốn."
+   },
+   {
+    "id": "Q3",
+    "text": "Tổng 10, anh hơn em 2 viên. Anh có mấy viên?",
+    "format": "mcq",
+    "choices": [
+     "6",
+     "7",
+     "5",
+     "8"
+    ],
+    "answerKey": {
+     "choice": "6"
+    },
+    "solutionNarrative": "Dòng 6 và 4 hơn nhau đúng hai."
+   },
+   {
+    "id": "Q4",
+    "text": "Anh 7 em 3 là đáp án đúng cho bài tổng 10 hơn nhau 2.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Tổng thì đúng nhưng phần hơn lại bằng bốn."
+   },
+   {
+    "id": "Q5",
+    "text": "Liệt kê xong thì dò cột hơn nhau để chọn dòng đúng.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — hai bước đi liền nhau."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Bài nào có hai điều kiện thì hỏi con hai lần: \"Đúng điều kiện thứ nhất chưa?\" rồi \"Đúng điều kiện thứ hai chưa?\"",
+  "homeActivity": "Bố mẹ hỏi: \"Con kiểm đủ hai điều kiện chưa?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B56_giang.mp4"
+ }
+}

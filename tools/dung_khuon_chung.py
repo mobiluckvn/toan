@@ -92,6 +92,25 @@ KHAI_TAY_L2 = {
                   'options': ['chia hết', 'còn thừa'], 'value': 'còn thừa'},
                  {'label': 'thừa mấy viên', 'value': 2}]}},
 
+    # ── chương 5 · Chuyện toán lời văn: sáu bài tách thành mười hai ──
+    (5, 5): {'ve': 'DL:KSN2.B54'},    # mỗi bạn góp 5 quyển, 4 bạn — biết mỗi, hỏi tất cả
+    (5, 7): {'ve': 'DL:KSN2.B56'},    # tổng 14 hơn nhau 2 — bài hai điều kiện
+    (5, 9): {'ve': 'DL:KSN2.B59'},    # 3 giờ được 18 sản phẩm — biết tất cả, hỏi mỗi
+    (5, 10): {'ve': 'DL:KSN2.B18'},   # tổng 9 hơn nhau 2 có chia được không — liệt kê
+    (5, 11): {'ve': 'DL:KSN2.B58'},   # khi em 8 tuổi thì chị mấy — hiệu tuổi không đổi
+    (5, 12): {'ve': 'DL:KSN2.B57'},   # A gấp đôi B, cả hai 15 — chia tổng cho số phần
+    # Câu 6 cũ hỏi lại đúng ý câu 2 (đều là tìm người ÍT hơn, phép trừ thẳng), trong
+    # khi bài BẪY CÂU CHỮ ĐẢO không có câu nào hỏi tới. Đảo chiều câu 6 cho người
+    # phải tìm thành người NHIỀU hơn — đúng cái bẫy mà bài ấy dạy.
+    (5, 6): {'ve': 'DL:KSN2.B55',
+             'text': 'Lan có ít hơn Hoa 6 nhãn vở. Lan có 15 nhãn vở. Hỏi Hoa có mấy '
+                     'nhãn vở? Cẩn thận nhé — ai mới là người nhiều hơn?',
+             'answer': 'Lan ít hơn Hoa nên HOA mới là người nhiều nhãn hơn. Vậy phải '
+                       'cộng: 15 + 6 = 21 (nhãn vở). Đáp số: 21 nhãn vở.',
+             'khoa': {'parts': [
+                 {'label': 'ai nhiều hơn', 'options': ['Hoa', 'Lan'], 'value': 'Hoa'},
+                 {'label': 'Hoa có mấy nhãn', 'value': 21}]}},
+
     (1, 6): {'ve': 'DL:KSN2.B36',
              'text': 'Một cửa hàng ghi giá 90 nghìn đồng nhưng viết sót mất chữ số '
                      '0 ở cuối, thành 9 nghìn đồng. Giá bị viết rẻ đi bao nhiêu '
@@ -99,6 +118,21 @@ KHAI_TAY_L2 = {
              'answer': 'Rẻ đi: 90 − 9 = 81 (nghìn đồng). Xoá một chữ số 0 ở cuối '
                        'thì số nhỏ đi 10 lần.'},
 }
+
+
+# Tên kỳ sát hạch của sách có chỗ nhắc nhân vật. Chương nào đã chuyển hết sang
+# video thì trong bài không còn nhân vật nào nữa, nên cái tên ấy thành mồ côi — bé
+# đọc thấy một cái tên chưa gặp ở đâu bao giờ. Đổi tên đúng những chương ấy thôi;
+# chương còn bài chữ thì giữ nguyên tên của sách.
+DOI_TEN_KY_L2 = {
+    'ÔN TẬP 5 · TUYỂN TẬP CHUYỆN TOÁN CỦA TRÍ LONG':
+        'ÔN TẬP 5 · TUYỂN TẬP CHUYỆN TOÁN LỜI VĂN',
+}
+
+
+def _ten_ky(ten):
+    t = re.sub(r'^★+\s*|\s*\(\d+ câu\)$', '', ten).replace('—', '·')
+    return DOI_TEN_KY_L2.get(t, t)
 
 
 def dung_on_tap(bai_cua_chuong, ten_bai):
@@ -179,7 +213,7 @@ def dung_on_tap(bai_cua_chuong, ten_bai):
             'loai': d['loai'], 'so': d['so'],
             # Tên hiện lên màn hình: bỏ dấu sao và phần "(10 câu)" — bé đã thấy
             # số câu ở góc màn rồi, nhắc lại trong tên chỉ làm dòng dài thêm.
-            'name': re.sub(r'^★+\s*|\s*\(\d+ câu\)$', '', d['ten']).replace('—', '·'),
+            'name': _ten_ky(d['ten']),
             'gioiThieu': d['gioiThieu'],
             'need': d['can'], 'passRule': d.get('ketLuan', f"Đạt {d['can']}/{d['tong']} câu là qua."),
             'examA': cau,
@@ -202,7 +236,7 @@ def dung_on_tap(bai_cua_chuong, ten_bai):
                    'soHinh': len(doc['hinh']),
                    # Tên hiện lên màn hình: bỏ dấu sao và phần "(10 câu)" — bé đã thấy
             # số câu ở góc màn rồi, nhắc lại trong tên chỉ làm dòng dài thêm.
-            'name': re.sub(r'^★+\s*|\s*\(\d+ câu\)$', '', d['ten']).replace('—', '·'), 'soCau': len(cau), 'need': d['can']})
+            'name': _ten_ky(d['ten']), 'soCau': len(cau), 'need': d['can']})
     if chua_soi:
         print(f'  ⚠ {chua_soi} câu ôn tập chưa có trong Bảng tự soi → tạm trỏ về bài đầu chương')
     print(f'  {len(ra)} kỳ sát hạch · {sum(x["soCau"] for x in ra)} câu')

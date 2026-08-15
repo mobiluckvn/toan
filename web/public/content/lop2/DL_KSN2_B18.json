@@ -3,55 +3,38 @@
  "id": "DL:KSN2.B18",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 38 · TÁCH TỔNG — HAI BẠN CÓ TẤT CẢ 10 VIÊN BI",
+ "title": "Bài 40 · LIỆT KÊ CÓ THỨ TỰ MỌI CÁCH TÁCH TỔNG",
  "durationMinutes": 10,
- "so": 38,
+ "so": 40,
  "chuong": 5,
  "tenChuong": "Chuyện toán lời văn",
- "dangGoc": "LV 2.1 — Thử - liệt kê theo hai điều kiện (hạt mầm của Tổng - Hiệu lớp 4)",
+ "dangGoc": "LV 2.1c — Tách một tổng thành hai phần: liệt kê có thứ tự.",
  "skills": {
   "bktUnit": "CHUONG:5@G2",
   "primary": []
  },
  "series": {
-  "order": 38,
-  "prev": "DL:KSN2.B17",
-  "next": "DL:KSN2.B19"
+  "order": 40,
+  "prev": "DL:KSN2.B55",
+  "next": "DL:KSN2.B56"
  },
  "objective": {
   "id": "O1",
-  "text": "Liệt kê được CÓ THỨ TỰ các cách tách một tổng thành hai phần. Dò bảng để tìm cách tách thỏa thêm điều kiện \"hơn nhau k viên\". Kiểm tra đáp án với ĐỦ CẢ HAI điều kiện: đúng tổng VÀ đúng phần hơn.",
-  "kidText": "Hai bạn có tất cả 12 viên kẹo, An hơn Bình 4 viên. Con thử đoán mỗi bạn có mấy viên nhé!",
+  "text": "Liệt kê có thứ tự mọi cách tách một tổng thành hai phần. Đếm được số cách tách. Hiểu vì sao liệt kê có thứ tự thì không sót và không trùng.",
+  "kidText": "Hai bạn có tất cả 12 viên kẹo. Con đoán xem có bao nhiêu cách chia nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Bài này có HAI điều kiện cùng lúc: (1) tổng hai phần bằng 10. (2) phần anh hơn phần em đúng 2. Không đoán bừa — hãy liệt kê MỌI cách tách 10, có thứ tự như Bài 5 đã luyện."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Kẻ bảng ba cột: phần A, phần B, và cột \"hơn nhau\" — rồi dò từng dòng:"
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Dòng $6 - 4$ có \"hơn nhau\" đúng bằng 2 → anh 6 viên, em 4 viên. Thử lại đủ cả hai điều kiện: $6 + 4 = 10$ ✓ và $6 - 4 = 2$ ✓. Ông nội gật gù!"
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. Con nhìn cột \"hơn nhau\": 8 → 6 → 4 → 2 → 0. Mỗi lần chuyển 1 viên, phần hơn giảm 2. Vì một bên bớt 1 viên, bên kia thêm 1 viên. Bí mật nhỏ này lên lớp 4 sẽ thành một dạng toán lớn đấy!"
-   }
-  ],
-  "mantra": "Bài hai điều kiện thì LIỆT KÊ theo điều kiện thứ nhất (đúng tổng), rồi DÒ CỘT theo điều kiện thứ hai (đúng phần hơn). Chọn xong phải thử lại CẢ HAI!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Với bài của ông nội (tổng 10, hơn nhau 2), Su Kem hớn hở: \"Anh 7, em 3! Cộng lại đúng 10 luôn, chuẩn chưa nào!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Su Kem mới thử được MẤY điều kiện? Còn điều kiện nào của ông nội chưa được kiểm tra? Gợi ý 2: 7 hơn 3 mấy viên? Có đúng 2 như ông dặn không? Chọn lại dòng đúng trong bảng giúp Su Kem kẻo ông thu mất bi!"
+    "wrong": "Có bạn nghĩ ra được vài cách rồi ghi luôn đáp số, không kẻ bảng gì cả.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Làm sao biết mình đã nghĩ hết chưa, hay còn sót cách nào? Gợi ý 2: Nếu cho phần thứ nhất giảm dần từng một thì có bỏ sót được không? Chữa: liệt kê có thứ tự mới chắc chắn không sót. Nghĩ tới đâu ghi tới đó thì vừa dễ sót vừa dễ kể trùng."
    }
   ]
  },
@@ -59,72 +42,47 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Hai bạn có tất cả 12 viên kẹo, bạn An hơn bạn Bình 4 viên. Hỏi mỗi bạn có mấy viên kẹo?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Với bài của ông nội (tổng 10, hơn nhau 2), Su Kem hớn hở: \"Anh 7, em 3! Cộng lại đúng 10 luôn, chuẩn chưa nào!\"",
+    "narration": "Có bạn nghĩ ra được vài cách rồi ghi luôn đáp số, không kẻ bảng gì cả.",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Hai bạn có tất cả 12 viên kẹo, bạn An hơn bạn Bình 4 viên. Hỏi mỗi bạn có mấy viên kẹo?",
+  "problem": "Hai bạn có tất cả 12 viên kẹo, mỗi bạn ít nhất một viên. Hãy liệt kê mọi cách chia số kẹo ấy cho hai bạn.",
   "steps": [
    {
-    "show": "Bài giải: (lập bảng nháp các cách tách 12: 11-1, 10-2, 9-3, 8-4, 7-5, 6-6)",
+    "show": "Liệt kê có thứ tự, đừng đoán bừa",
     "phan": "giai"
    },
    {
-    "show": "Dò cột \"hơn nhau\": 10, 8, 6, 4, 2, 0 → chọn cách tách $8 - 4$.",
+    "show": "Cho phần thứ nhất giảm dần từ lớn xuống bé, thì phần thứ hai tự hiện ra.",
     "phan": "giai"
    },
    {
-    "show": "Vậy An có 8 viên kẹo, Bình có 4 viên kẹo.",
+    "show": "Kẻ bảng ra nháp",
     "phan": "giai"
    },
    {
-    "show": "Thử lại: $8 + 4 = 12$ ✓ (đúng tổng); $8 - 4 = 4$ ✓ (đúng phần hơn).",
-    "phan": "thulai"
+    "show": "Các cách tách là 11 và 1, rồi 10 và 2, rồi 9 và 3, rồi 8 và 4, rồi 7 và 5, rồi 6 và 6.",
+    "phan": "giai"
    },
    {
-    "show": "Đáp số: An 8 viên; Bình 4 viên.",
+    "show": "Đếm xem có mấy cách",
+    "phan": "giai"
+   },
+   {
+    "show": "Đếm được 6 cách tách.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: có 6 cách.",
     "phan": "dapso"
+   },
+   {
+    "show": "Liệt kê có thứ tự thì không sót cách nào, cũng không kể trùng cách nào.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -133,150 +91,133 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Liệt kê tất cả các cách tách 8 viên bi cho hai bạn (mỗi bạn ít nhất 1 viên), theo thứ tự 7-1, 6-2, ...",
-     "solutionNarrative": "7-1, 6-2, 5-3, 4-4 (và các cách đảo lại)",
+     "text": "Tách 12 thành hai phần, phần thứ nhất là 11 thì phần thứ hai là mấy?",
+     "answerKey": {
+      "value": 1
+     },
+     "solutionNarrative": "Lấy $12 - 11 = 1$.",
      "hints": [
-      "Liệt kê có thứ tự: cho phần lớn giảm dần từng nấc.",
-      "Mỗi bạn ít nhất một viên nên phải dừng đúng lúc."
+      "Hai phần cộng lại phải bằng mười hai.",
+      "Con lấy mười hai bớt đi phần đã biết."
      ]
     },
     {
      "id": "C2",
-     "text": "Trong các cách tách 8 ở câu 1, cách nào cho hai bạn BẰNG NHAU?",
+     "text": "Tách 12 thành hai phần, phần thứ nhất là 9 thì phần thứ hai là mấy?",
      "answerKey": {
-      "accept": [
-       "4 - 4",
-       "4-4",
-       "4 và 4",
-       "4 với 4"
-      ]
+      "value": 3
      },
-     "solutionNarrative": "cách $4 - 4$",
+     "solutionNarrative": "Lấy $12 - 9 = 3$.",
      "hints": [
-      "Nhìn dòng nào có hai phần giống hệt nhau.",
-      "Chia đôi số kẹo là ra."
+      "Hai phần cộng lại vẫn phải bằng mười hai.",
+      "Con lấy mười hai bớt đi chín."
      ]
     },
     {
      "id": "C3",
-     "text": "Hai bạn có tất cả 6 viên kẹo, bạn này hơn bạn kia 2 viên. Mỗi bạn có mấy viên?",
+     "text": "Tách 10 thành hai phần, mỗi phần ít nhất một viên và phần trước không bé hơn phần sau. Có mấy cách?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "bạn nhiều hơn",
-        "value": 4
-       },
-       {
-        "label": "bạn ít hơn",
-        "value": 2
-       }
-      ]
+      "value": 5
      },
-     "solutionNarrative": "bảng tách 6: 5-1 (hơn 4), 4-2 (hơn 2 ✓), 3-3 → chọn 4 và 2",
+     "solutionNarrative": "Liệt kê 9 và 1, 8 và 2, 7 và 3, 6 và 4, 5 và 5 — đếm được 5 cách.",
      "hints": [
-      "Kẻ bảng ba cột: phần A, phần B, và cột hơn nhau.",
-      "Dò cột hơn nhau tìm đúng số đề cho."
+      "Con cho phần trước giảm dần từ chín xuống, rồi đếm số dòng.",
+      "Dừng lại lúc hai phần bằng nhau, đừng kể tiếp kẻo trùng."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Hai bạn có tất cả 14 viên bi, bạn A hơn bạn B 2 viên. Mỗi bạn có mấy viên? (Lập bảng — trình bày như ví dụ mẫu.)",
+     "text": "Tách 12 thành hai phần, mỗi phần ít nhất một viên và phần trước không bé hơn phần sau. Có mấy cách?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "bạn A",
-        "value": 8
-       },
-       {
-        "label": "bạn B",
-        "value": 6
-       }
-      ]
+      "value": 6
      },
-     "solutionNarrative": "bảng tách 14 → dò \"hơn nhau 2\" → $8 - 6$. Thử: $8 + 6 = 14$ ✓; $8 - 6 = 2$ ✓",
+     "solutionNarrative": "Liệt kê từ 11 và 1 cho tới 6 và 6, đếm được 6 cách.",
      "hints": [
-      "Liệt kê mọi cách tách trước đã, đừng đoán.",
-      "Dò cột hơn nhau, rồi thử lại CẢ HAI điều kiện."
+      "Con kẻ bảng cho phần trước chạy từ mười một xuống.",
+      "Dừng lại ở dòng hai phần bằng nhau rồi đếm số dòng."
      ]
     },
     {
      "id": "C5",
-     "text": "Hai chị em có tất cả 15 nhãn vở, chị hơn em 3 cái. Mỗi người có mấy cái?",
+     "text": "Vì sao phải liệt kê có thứ tự?",
      "answerKey": {
       "parts": [
        {
-        "label": "chị",
-        "value": 9
-       },
-       {
-        "label": "em",
-        "value": 6
+        "label": "vì sao",
+        "options": [
+         "để không sót và không kể trùng cách nào",
+         "để bài trông dài hơn"
+        ],
+        "value": "để không sót và không kể trùng cách nào"
        }
       ]
      },
-     "solutionNarrative": "tách 15 → hơn nhau 3 → $9 - 6$",
+     "solutionNarrative": "Để không sót cách nào và cũng không kể trùng cách nào.",
      "hints": [
-      "Vẫn bảng ba cột như cũ.",
-      "Cột hơn nhau phải bằng đúng 3."
+      "Nghĩ tới đâu ghi tới đó thì làm sao biết đã hết chưa?",
+      "Có thứ tự thì vừa chắc không thiếu, vừa chắc không thừa."
      ]
     },
     {
      "id": "C6",
-     "text": "Hai bạn có tất cả 12 que tính và hai bạn BẰNG NHAU. Mỗi bạn có mấy que? (Điều kiện \"hơn nhau\" bằng mấy nhỉ?)",
+     "text": "Tách 8 thành hai phần, mỗi phần ít nhất một viên và phần trước không bé hơn phần sau. Cách đầu tiên và cách cuối cùng có phần thứ nhất là mấy?",
      "answerKey": {
       "parts": [
        {
-        "label": "mỗi bạn mấy que",
-        "value": 6
+        "label": "cách đầu tiên",
+        "value": 7
+       },
+       {
+        "label": "cách cuối cùng",
+        "value": 4
        }
       ]
      },
-     "solutionNarrative": "bằng nhau = hơn nhau 0 → $6 - 6$",
+     "solutionNarrative": "Cách đầu là 7 và 1, cách cuối là 4 và 4.",
      "hints": [
-      "Bằng nhau nghĩa là hơn nhau mấy?",
-      "Dò dòng có cột hơn nhau bằng 0."
+      "Cách đầu tiên là cách phần trước lớn nhất mà phần sau vẫn còn một viên.",
+      "Cách cuối cùng là lúc hai phần bằng nhau."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C7",
-     "text": "Hai bạn có tất cả 9 viên bi, bạn này hơn bạn kia 2 viên. Con lập bảng tách 9 và dò thử — có tìm được cách chia nào không? Con phát hiện điều gì lạ ở cột \"hơn nhau\" của tổng 9? (Nhớ bí mật chẵn - lẻ của Bài 11 nhé!)",
+     "text": "Tách 12 thành hai phần. Nếu phần thứ nhất là 8 thì phần ấy hơn phần kia mấy viên?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "có tìm được không",
-        "options": [
-         "tìm được",
-         "không tìm được"
-        ],
-        "value": "không tìm được"
-       }
-      ]
+      "value": 4
      },
-     "solutionNarrative": "bảng tách 9: 8-1 (hơn 7), 7-2 (hơn 5), 6-3 (hơn 3), 5-4 (hơn 1) — cột \"hơn nhau\" toàn số LẺ, không có 2! Vì tổng 9 là số lẻ nên hai phần luôn một chẵn một lẻ → hiệu luôn lẻ. KHÔNG chia được theo yêu cầu",
+     "solutionNarrative": "Phần kia là $12 - 8 = 4$, nên hơn nhau $8 - 4 = 4$ viên.",
      "hints": [
-      "Cứ lập bảng rồi dò — đừng vội kết luận.",
-      "Nhìn cả cột hơn nhau: chúng chẵn hay lẻ?"
+      "Bước một: tìm phần kia bằng cách lấy mười hai bớt tám.",
+      "Bước hai: lấy phần lớn trừ phần bé."
      ]
     },
     {
      "id": "C8",
-     "text": "Ông nội đổi đề: \"Tổng 10 viên, anh hơn em 2 viên, NHƯNG lần này em được chọn phần TRƯỚC.\" Em nên xin phần mấy viên? Bài toán có khác gì bài cũ không?",
+     "text": "Trong bảng tách 12, cột \"hơn nhau\" chạy 10, 8, 6, 4, 2, 0. Cho biết mỗi lần chuyển một viên thì phần hơn giảm mấy, và vì sao.",
      "answerKey": {
       "parts": [
        {
-        "label": "em nên xin mấy viên",
-        "value": 4
+        "label": "phần hơn giảm mấy",
+        "value": 2
+       },
+       {
+        "label": "vì sao",
+        "options": [
+         "vì một bên bớt một viên, bên kia thêm một viên",
+         "vì cho tròn số"
+        ],
+        "value": "vì một bên bớt một viên, bên kia thêm một viên"
        }
       ]
      },
-     "solutionNarrative": "em nên xin 4 viên (anh nhận 6) — bài toán không đổi, chỉ đổi người chọn trước; phần của mỗi người vẫn do HAI ĐIỀU KIỆN quyết định",
+     "solutionNarrative": "Mỗi lần chuyển một viên thì phần hơn giảm 2, vì một bên bớt một viên còn bên kia thêm một viên.",
      "hints": [
-      "Hai điều kiện của đề có đổi gì không?",
-      "Ai chọn trước cũng không đổi được phần của mỗi người."
+      "Con so hai dòng liền nhau trong cột hơn nhau xem chênh bao nhiêu.",
+      "Chuyển một viên thì bên này bớt một mà bên kia được thêm một."
      ]
     }
    ]
@@ -287,91 +228,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Bài \"tổng 10, hơn nhau 2\" có HAI điều kiện phải kiểm tra.",
+    "text": "Liệt kê có thứ tự thì không sót cách nào.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng — đó là lý do phải kẻ bảng."
    },
    {
     "id": "Q2",
-    "text": "Cách tách $7 - 3$ thỏa mãn bài \"tổng 10, hơn nhau 2\".",
+    "text": "Tách 12 thành hai phần, mỗi phần ít nhất một viên và phần trước không bé hơn phần sau. Có mấy cách?",
+    "format": "mcq",
+    "choices": [
+     "6",
+     "12",
+     "5",
+     "11"
+    ],
+    "answerKey": {
+     "choice": "6"
+    },
+    "solutionNarrative": "Từ 11 và 1 cho tới 6 và 6."
+   },
+   {
+    "id": "Q3",
+    "text": "Tách 12 mà phần thứ nhất là 9 thì phần thứ hai là mấy?",
+    "format": "mcq",
+    "choices": [
+     "3",
+     "21",
+     "9",
+     "4"
+    ],
+    "answerKey": {
+     "choice": "3"
+    },
+    "solutionNarrative": "Mười hai bớt chín."
+   },
+   {
+    "id": "Q4",
+    "text": "Đoán bừa một cách rồi thôi là làm xong bài.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "$7 - 3 = 4$ ≠ 2"
-   },
-   {
-    "id": "Q3",
-    "text": "Tổng 10, hơn nhau 2 → hai phần là:",
-    "format": "mcq",
-    "choices": [
-     "A. 7 và 3",
-     "B. 6 và 4",
-     "C. 8 và 2"
-    ],
-    "answerKey": {
-     "choice": "B. 6 và 4"
-    },
-    "solutionNarrative": "Đáp án: B. 6 và 4"
-   },
-   {
-    "id": "Q4",
-    "text": "Tổng 12, hai phần bằng nhau → mỗi phần là:",
-    "format": "mcq",
-    "choices": [
-     "A. 5",
-     "B. 6",
-     "C. 12"
-    ],
-    "answerKey": {
-     "choice": "B. 6"
-    },
-    "solutionNarrative": "Đáp án: B. 6"
+    "solutionNarrative": "Sai. Phải liệt kê đủ để chắc chắn không sót cách nào."
    },
    {
     "id": "Q5",
-    "text": "Chuyển 1 viên từ người nhiều sang người ít thì phần hơn:",
-    "format": "mcq",
-    "choices": [
-     "A. giảm 1",
-     "B. giảm 2",
-     "C. không đổi"
-    ],
+    "text": "Trong bảng tách một tổng, mỗi lần chuyển một viên thì phần hơn giảm 2.",
+    "format": "tf",
     "answerKey": {
-     "choice": "B. giảm 2"
+     "value": true
     },
-    "solutionNarrative": "Đáp án: B. giảm 2"
+    "solutionNarrative": "Đúng — một bên bớt một, bên kia thêm một."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Chơi bằng bi/cúc áo thật: đặt điều kiện \"tổng 10, hơn nhau 2\" rồi cho con XÊ DỊCH từng viên giữa hai bên và quan sát phần hơn thay đổi — trải nghiệm này là nền của công thức (Tổng ± Hiệu) : 2 lớp 4.",
-  "homeActivity": "Đây là bài NẶNG TƯ DUY nhất nửa đầu sách — con làm chậm là bình thường; giá trị nằm ở cái bảng liệt kê, không ở tốc độ.",
-  "watchFor": "NÊN: khen bảng liệt kê đầy đủ - có thứ tự. KHÔNG NÊN: dạy công thức \"số lớn = (tổng + hiệu) : 2\" — lớp 2 mà học công thức này là cướp mất của con niềm vui tự tìm ra nó ở lớp 4."
+  "onComplete": "Đưa con một nắm kẹo rồi bảo chia cho hai bạn búp bê theo đủ mọi cách — con sẽ tự thấy phải làm có thứ tự mới không rối.",
+  "homeActivity": "Bố mẹ hỏi: \"Con chắc chưa sót cách nào chứ?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_MO_B18",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_MO_B18.png",
-   "caption": "Hai bạn có 12 viên kẹo, An hơn Bình 4 viên",
-   "sha256_16": "d0c03367c739a677",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_BL01",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L2H_BL01.png",
-   "caption": "Liệt kê có thứ tự thì không sót cách nào",
-   "sha256_16": "86091c51273be8c5",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B18_giang.mp4"
+ }
 }

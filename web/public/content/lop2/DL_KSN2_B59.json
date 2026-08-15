@@ -1,0 +1,303 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B59",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 47 · BIẾT TẤT CẢ, HỎI MỖI GIỜ — PHÉP CHIA",
+ "durationMinutes": 10,
+ "so": 47,
+ "chuong": 5,
+ "tenChuong": "Chuyện toán lời văn",
+ "dangGoc": "LV 7.1b — Bài toán ngược của năng suất: tách đều cho từng giờ.",
+ "skills": {
+  "bktUnit": "CHUONG:5@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 47,
+  "prev": "DL:KSN2.B21",
+  "next": "DL:KSN2.B22"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhận ra bài ngược của bài năng suất. Tách đều tất cả cho từng giờ bằng phép chia. Thử lại bằng phép nhân.",
+  "kidText": "Làm 3 giờ được 15 cái áo. Con đoán mỗi giờ may được mấy cái nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn đọc thấy đề có chữ \"mỗi giờ\" là nhân luôn, lấy $15  \\times  3$ rồi ghi bốn mươi lăm cái áo.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Đề cho biết con số nào — số áo của một giờ, hay số áo của cả ba giờ? Gợi ý 2: Cả ba giờ mới được mười lăm cái, thì một giờ phải ít hơn hay nhiều hơn mười lăm? Chữa: đề cho biết TẤT CẢ rồi hỏi MỖI phần, nên phải chia: $15 : 3 = 5$."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn đọc thấy đề có chữ \"mỗi giờ\" là nhân luôn, lấy $15  \\times  3$ rồi ghi bốn mươi lăm cái áo.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Cô May làm 3 giờ được tất cả 15 cái áo, giờ nào cũng như giờ nào. Hỏi mỗi giờ cô may được mấy cái áo?",
+  "steps": [
+   {
+    "show": "Bài này ngược với bài trước",
+    "phan": "giai"
+   },
+   {
+    "show": "Bài trước biết mỗi giờ rồi hỏi tất cả. Bài này biết tất cả rồi hỏi mỗi giờ.",
+    "phan": "giai"
+   },
+   {
+    "show": "Tách đều tất cả cho từng giờ là việc của phép chia",
+    "phan": "giai"
+   },
+   {
+    "show": "Lấy $15 : 3 = 5$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Thử lại bằng phép nhân",
+    "phan": "giai"
+   },
+   {
+    "show": "Nhân ngược lại: $5  \\times  3 = 15$, khớp đúng số áo của cả ba giờ.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: mỗi giờ 5 cái áo.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Biết MỖI phần rồi hỏi TẤT CẢ thì nhân; biết TẤT CẢ rồi hỏi MỖI phần thì chia.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính $15 : 3$.",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Lấy $15 : 3 = 5$.",
+     "hints": [
+      "Con đọc bảng nhân ba tới khi gặp mười lăm.",
+      "Đó là ba lần mấy?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Làm 3 giờ được tất cả 15 cái áo. Mỗi giờ may được mấy cái?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Tách đều cho từng giờ: $15 : 3 = 5$.",
+     "hints": [
+      "Đề cho biết cả ba giờ được bao nhiêu, rồi hỏi một giờ.",
+      "Tách đều tất cả cho từng giờ thì dùng phép chia."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Đi 4 giờ được tất cả 20 ki lô mét. Mỗi giờ đi được mấy ki lô mét?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Lấy $20 : 4 = 5$.",
+     "hints": [
+      "Đề cho biết cả bốn giờ đi được bao xa, rồi hỏi một giờ.",
+      "Con lấy quãng đường chia cho số giờ."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Biết tất cả rồi hỏi mỗi phần thì dùng phép gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phép tính",
+        "options": [
+         "phép chia",
+         "phép nhân",
+         "phép trừ"
+        ],
+        "value": "phép chia"
+       }
+      ]
+     },
+     "solutionNarrative": "Tách đều tất cả ra từng phần là việc của phép chia.",
+     "hints": [
+      "Bài trước biết mỗi phần rồi hỏi tất cả, dùng phép nhân.",
+      "Bài này ngược lại nên phép tính cũng ngược lại."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Vòi chảy 6 phút được tất cả 18 lít. Mỗi phút chảy mấy lít?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Lấy $18 : 6 = 3$.",
+     "hints": [
+      "Đề cho biết cả sáu phút chảy được bao nhiêu.",
+      "Con lấy số lít chia cho số phút."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Làm 3 giờ được 15 cái áo. Mỗi giờ mấy cái, và thử lại bằng phép nhân được bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi giờ",
+        "value": 5
+       },
+       {
+        "label": "thử lại được",
+        "value": 15
+       }
+      ]
+     },
+     "solutionNarrative": "Lấy $15 : 3 = 5$. Thử lại: $5  \\times  3 = 15$.",
+     "hints": [
+      "Bước một: chia số áo cho số giờ.",
+      "Bước hai: nhân ngược lại xem có về đúng số áo ban đầu không."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Đi 4 giờ được 20 ki lô mét. Hỏi mỗi giờ đi mấy ki lô mét, và đi 7 giờ thì được mấy ki lô mét?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi giờ",
+        "value": 5
+       },
+       {
+        "label": "đi 7 giờ",
+        "value": 35
+       }
+      ]
+     },
+     "solutionNarrative": "Mỗi giờ $20 : 4 = 5$ ki lô mét. Đi bảy giờ: $5  \\times  7 = 35$ ki lô mét.",
+     "hints": [
+      "Bước một: chia quãng đường cho số giờ để biết mỗi giờ đi bao xa.",
+      "Bước hai: nhân số ấy với bảy giờ."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Cô May làm 3 giờ được 15 cái áo. Hỏi mỗi giờ cô may mấy cái, và muốn may 25 cái áo thì cô cần mấy giờ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi giờ",
+        "value": 5
+       },
+       {
+        "label": "cần mấy giờ",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Mỗi giờ cô may $15 : 3 = 5$ cái. Muốn hai mươi lăm cái thì cần $25 : 5 = 5$ giờ.",
+     "hints": [
+      "Bước một: chia số áo cho số giờ để biết mỗi giờ may mấy cái.",
+      "Bước hai: chia số áo cần may cho số áo mỗi giờ."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Biết tất cả rồi hỏi mỗi phần thì dùng phép chia.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — tách đều ra từng phần."
+   },
+   {
+    "id": "Q2",
+    "text": "Làm 3 giờ được 15 cái áo. Mỗi giờ mấy cái?",
+    "format": "mcq",
+    "choices": [
+     "5",
+     "45",
+     "12",
+     "18"
+    ],
+    "answerKey": {
+     "choice": "5"
+    },
+    "solutionNarrative": "Tách mười lăm cho ba giờ."
+   },
+   {
+    "id": "Q3",
+    "text": "Đi 4 giờ được 20 ki lô mét. Mỗi giờ mấy ki lô mét?",
+    "format": "mcq",
+    "choices": [
+     "5",
+     "80",
+     "16",
+     "24"
+    ],
+    "answerKey": {
+     "choice": "5"
+    },
+    "solutionNarrative": "Tách hai mươi cho bốn giờ."
+   },
+   {
+    "id": "Q4",
+    "text": "Thử lại bài chia bằng phép nhân là hợp lý.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — nhân và chia ngược chiều nhau."
+   },
+   {
+    "id": "Q5",
+    "text": "Bài \"biết mỗi giờ, hỏi tất cả\" cũng dùng phép chia.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Bài ấy dùng phép nhân."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Nấu cơm hay gấp quần áo cùng con rồi hỏi ngược: \"Cả buổi làm được ngần này, vậy mỗi lượt được bao nhiêu?\"",
+  "homeActivity": "Bố mẹ hỏi: \"Đề cho biết mỗi phần hay biết tất cả?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B59_giang.mp4"
+ }
+}

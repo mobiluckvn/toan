@@ -322,7 +322,19 @@ function diemDanh() {
 
    `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 0. Đã soát: `git diff` trên
    `src/mon/toan/lib/` và `src/chung/` trống trơn. */
-const MOC = { tong: 2814, dungKhiDungDap: 2812, dungKhiSaiDap: 0, tuDoiChieu: 0 };
+/* ⚠ 2814 → 2865. Đợt năm lớp 2: chương 5 sáu bài chữ thành mười hai bài video —
+   chương dài nhất của quyển, và bài nào cũng gộp đúng HAI nghề ngược chiều nhau.
+       luyện tập lớp 2  45 → 96 câu chấm máy  (+51)  ·  2814 + 51 = 2865  ✓
+
+   Sáu bài cũ có 49 câu mà chỉ 45 câu chấm máy được: bốn câu bảo bé vẽ sơ đồ ra nháp
+   rồi tự soi, máy không chấm nổi. Mười hai bài mới đều 8 câu chấm máy đủ.
+
+   Kỳ sát hạch chương 5 cũng viết lại một câu (câu 6, xem `KHAI_TAY_L2`), nhưng câu
+   cũ lẫn câu mới đều có khoá nên tổng không xê dịch vì chuyện ấy.
+
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 0. Đã soát: `git diff` trên
+   `src/mon/toan/lib/` và `src/chung/` trống trơn. */
+const MOC = { tong: 2865, dungKhiDungDap: 2863, dungKhiSaiDap: 0, tuDoiChieu: 0 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

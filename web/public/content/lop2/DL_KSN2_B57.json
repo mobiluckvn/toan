@@ -1,0 +1,305 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B57",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 43 · CHIA TỔNG CHO SỐ PHẦN RỒI TRẢ VỀ TỪNG NGƯỜI",
+ "durationMinutes": 10,
+ "so": 43,
+ "chuong": 5,
+ "tenChuong": "Chuyện toán lời văn",
+ "dangGoc": "LV 3.1b — Gấp một số lên nhiều lần: tìm một phần rồi tìm từng người.",
+ "skills": {
+  "bktUnit": "CHUONG:5@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 43,
+  "prev": "DL:KSN2.B19",
+  "next": "DL:KSN2.B20"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Chia tổng cho số phần để tìm một phần. Trả về cho từng người theo số phần của họ. Thử lại đủ hai điều kiện: đúng tổng và đúng số lần gấp.",
+  "kidText": "Bố gấp 3 lần con, cả hai hái 12 quả. Con đoán mỗi người mấy quả nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn tìm được một phần bằng 3 rồi ghi luôn đáp số là 3, không trả về cho từng người nữa.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Ba quả là phần của ai — của con, của bố, hay của cả hai? Gợi ý 2: Bố có mấy phần? Mỗi phần ba quả thì bố được bao nhiêu? Chữa: tìm được một phần mới đi được nửa đường. Còn phải nhân số phần của từng người: bố $3  \\times  3 = 9$ quả."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn tìm được một phần bằng 3 rồi ghi luôn đáp số là 3, không trả về cho từng người nữa.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Bố hái được số cam gấp 3 lần con. Cả hai hái được 12 quả. Hỏi mỗi người hái được mấy quả?",
+  "steps": [
+   {
+    "show": "Đếm tổng số phần trước",
+    "phan": "giai"
+   },
+   {
+    "show": "Con 1 phần, bố 3 phần, cộng lại $1 + 3 = 4$ phần bằng nhau.",
+    "phan": "giai"
+   },
+   {
+    "show": "Chia tổng cho số phần để tìm MỘT phần",
+    "phan": "giai"
+   },
+   {
+    "show": "Lấy $12 : 4 = 3$. Vậy một phần là 3 quả.",
+    "phan": "giai"
+   },
+   {
+    "show": "Trả về cho từng người",
+    "phan": "giai"
+   },
+   {
+    "show": "Con một phần nên được 3 quả. Bố ba phần nên được $3  \\times  3 = 9$ quả.",
+    "phan": "giai"
+   },
+   {
+    "show": "Thử lại đủ hai điều kiện",
+    "phan": "giai"
+   },
+   {
+    "show": "Kiểm tổng: $3 + 9 = 12$ đúng. Kiểm số lần gấp: chín gấp ba lần ba, đúng.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: con 3 quả, bố 9 quả.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Bốn nhịp: đếm phần, chia tìm một phần, trả về từng người, rồi thử lại.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính $12 : 4$.",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Lấy $12 : 4 = 3$.",
+     "hints": [
+      "Con đọc bảng nhân bốn tới khi gặp mười hai.",
+      "Đó là bốn lần mấy?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Bố gấp 3 lần con, cả hai hái 12 quả. Một phần là mấy quả?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Có bốn phần nên $12 : 4 = 3$ quả một phần.",
+     "hints": [
+      "Con đếm tổng số phần trước đã: con một phần, bố ba phần.",
+      "Rồi lấy tổng số quả chia cho số phần ấy."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Một phần là 3 quả, bố có 3 phần. Bố hái được mấy quả?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Lấy $3  \\times  3 = 9$.",
+     "hints": [
+      "Bố có ba phần, mà mỗi phần đã biết là ba quả.",
+      "Gộp ba phần bằng nhau thì dùng phép nhân."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Chị gấp 2 lần em, cả hai có 9 viên kẹo. Em được mấy viên?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Có ba phần nên một phần là $9 : 3 = 3$ viên. Em một phần nên được 3 viên.",
+     "hints": [
+      "Em một phần, chị hai phần, cộng lại là mấy phần?",
+      "Lấy chín chia cho số phần ấy, rồi em được đúng một phần."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Chị gấp 2 lần em, cả hai có 9 viên kẹo. Chị được mấy viên?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "Một phần là 3 viên, chị hai phần nên được $3  \\times  2 = 6$ viên.",
+     "hints": [
+      "Một phần đã tìm được ở câu trên rồi.",
+      "Chị có hai phần nên nhân đôi phần ấy lên."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Anh gấp 4 lần em, cả hai có 20 quả. Em mấy quả, anh mấy quả?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "em",
+        "value": 4
+       },
+       {
+        "label": "anh",
+        "value": 16
+       }
+      ]
+     },
+     "solutionNarrative": "Có năm phần nên một phần là $20 : 5 = 4$ quả. Em 4 quả, anh $4  \\times  4 = 16$ quả.",
+     "hints": [
+      "Bước một: đếm phần — em một, anh bốn.",
+      "Bước hai: chia hai mươi cho số phần, rồi nhân lại cho anh."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Bố gấp 3 lần con, cả hai hái 16 quả. Mỗi người mấy quả, và thử lại tổng được bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "con",
+        "value": 4
+       },
+       {
+        "label": "bố",
+        "value": 12
+       },
+       {
+        "label": "thử lại tổng",
+        "value": 16
+       }
+      ]
+     },
+     "solutionNarrative": "Có bốn phần nên một phần là $16 : 4 = 4$ quả. Con 4 quả, bố $4  \\times  3 = 12$ quả. Thử lại: $4 + 12 = 16$.",
+     "hints": [
+      "Bước một: đếm phần rồi chia mười sáu cho số phần ấy.",
+      "Bước hai: trả về từng người, rồi cộng lại để thử."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Chị gấp 2 lần em, chị hơn em 5 viên kẹo. Một phần là mấy viên, và cả hai có tất cả mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "một phần",
+        "value": 5
+       },
+       {
+        "label": "cả hai có",
+        "value": 15
+       }
+      ]
+     },
+     "solutionNarrative": "Chị hơn em đúng một phần nên một phần là 5 viên. Em 5 viên, chị $5  \\times  2 = 10$ viên, cả hai có 15 viên.",
+     "hints": [
+      "Chị hai phần, em một phần, nên chị hơn em đúng một phần.",
+      "Biết một phần rồi thì tính được cả hai người."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Lấy tổng chia cho số phần thì được một phần.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đó là bước then chốt."
+   },
+   {
+    "id": "Q2",
+    "text": "Bố gấp 3 lần con, cả hai 12 quả. Con mấy quả?",
+    "format": "mcq",
+    "choices": [
+     "3",
+     "4",
+     "9",
+     "6"
+    ],
+    "answerKey": {
+     "choice": "3"
+    },
+    "solutionNarrative": "Con đúng một phần."
+   },
+   {
+    "id": "Q3",
+    "text": "Bố gấp 3 lần con, cả hai 12 quả. Bố mấy quả?",
+    "format": "mcq",
+    "choices": [
+     "9",
+     "3",
+     "4",
+     "12"
+    ],
+    "answerKey": {
+     "choice": "9"
+    },
+    "solutionNarrative": "Bố ba phần, mỗi phần ba quả."
+   },
+   {
+    "id": "Q4",
+    "text": "Tìm được một phần rồi là xong bài.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Còn phải trả về cho từng người rồi thử lại."
+   },
+   {
+    "id": "Q5",
+    "text": "Chị gấp 2 lần em, cả hai 9 viên thì em được 3 viên.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — ba phần, mỗi phần ba viên."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chia quà cho hai anh em theo kiểu \"anh gấp đôi em\" rồi cùng con tính xem mỗi người mấy cái — con sẽ thấy phải tìm một phần trước.",
+  "homeActivity": "Bố mẹ hỏi: \"Ba quả ấy là phần của ai?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B57_giang.mp4"
+ }
+}

@@ -1,0 +1,314 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B55",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 39 · BẪY CÂU CHỮ ĐẢO — \"AN ÍT HƠN BÌNH\" THÌ AI NHIỀU HƠN",
+ "durationMinutes": 10,
+ "so": 39,
+ "chuong": 5,
+ "tenChuong": "Chuyện toán lời văn",
+ "dangGoc": "LV 2.1b — Bài toán hơn kém: chữ chỉ hơn kém đứng cạnh người kia.",
+ "skills": {
+  "bktUnit": "CHUONG:5@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 39,
+  "prev": "DL:KSN2.B17",
+  "next": "DL:KSN2.B18"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Đọc đúng câu có chữ hơn kém đứng cạnh người ít hơn. Hỏi \"ai nhiều hơn\" trước khi chọn phép tính. Thử lại kết quả cho khớp đề bài.",
+  "kidText": "An ít hơn Bình 3 viên bi, An có 8 viên. Con thử đoán xem Bình có mấy viên nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn thấy chữ \"ít hơn\" là trừ luôn, lấy $8 - 3$ rồi ghi Bình có 5 viên.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Bình 5 viên mà lại nhiều bi hơn An 8 viên — nghe có xuôi tai không? Gợi ý 2: Vẽ sơ đồ xem đoạn của Bình phải dài hơn hay ngắn hơn đoạn của An. Chữa: Bình mới là người nhiều hơn, nên phải cộng: $8 + 3 = 11$ viên."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn thấy chữ \"ít hơn\" là trừ luôn, lấy $8 - 3$ rồi ghi Bình có 5 viên.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "An ít hơn Bình 3 viên bi. An có 8 viên. Hỏi Bình có bao nhiêu viên?",
+  "steps": [
+   {
+    "show": "Chữ \"ít hơn\" đứng cạnh An",
+    "phan": "giai"
+   },
+   {
+    "show": "Đọc lướt thì tưởng phải làm phép trừ, vì thấy ngay chữ ít hơn.",
+    "phan": "giai"
+   },
+   {
+    "show": "Hỏi lại: ai nhiều hơn",
+    "phan": "giai"
+   },
+   {
+    "show": "An ít hơn Bình, tức là BÌNH mới là người nhiều bi hơn. Đoạn của Bình dài hơn.",
+    "phan": "giai"
+   },
+   {
+    "show": "Nhìn sơ đồ chọn phép tính",
+    "phan": "giai"
+   },
+   {
+    "show": "Đoạn của Bình bằng đoạn của An thò thêm 3, nên đây là phép cộng: $8 + 3 = 11$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: Bình có 11 viên bi.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Thử lại: An ít hơn Bình $11 - 8 = 3$ viên, khớp đúng đề bài.",
+    "phan": "thulai"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "An ít hơn Bình 3 viên bi. Ai có nhiều bi hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ai nhiều bi hơn",
+        "options": [
+         "Bình",
+         "An"
+        ],
+        "value": "Bình"
+       }
+      ]
+     },
+     "solutionNarrative": "An ít hơn nên Bình mới là người nhiều bi hơn.",
+     "hints": [
+      "Con đọc lại câu ấy thật chậm: ai đang ít bi hơn?",
+      "Người còn lại chính là người nhiều bi hơn."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tính $8 + 3$.",
+     "answerKey": {
+      "value": 11
+     },
+     "solutionNarrative": "Lấy $8 + 3 = 11$.",
+     "hints": [
+      "Con đếm thêm ba nữa từ số tám.",
+      "Đây chính là phép tính của bài."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "An ít hơn Bình 3 viên, An có 8 viên. Bình có mấy viên?",
+     "answerKey": {
+      "value": 11
+     },
+     "solutionNarrative": "Bình nhiều hơn nên lấy $8 + 3 = 11$.",
+     "hints": [
+      "Con hỏi trước xem ai nhiều bi hơn rồi hãy chọn phép tính.",
+      "Người nhiều hơn thì đoạn dài hơn, nên phải thêm vào."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Hoa nhiều hơn Mai 6 quyển vở. Mai có 9 quyển. Hoa có mấy quyển?",
+     "answerKey": {
+      "value": 15
+     },
+     "solutionNarrative": "Hoa nhiều hơn nên lấy $9 + 6 = 15$.",
+     "hints": [
+      "Hoa nhiều hơn Mai nên đoạn của Hoa dài hơn.",
+      "Lấy số của Mai thêm vào phần thò ra."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Câu \"An ít hơn Bình\" nói ai là người nhiều hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ai nhiều hơn",
+        "options": [
+         "Bình",
+         "An"
+        ],
+        "value": "Bình"
+       }
+      ]
+     },
+     "solutionNarrative": "Chữ ít hơn đứng cạnh An, nhưng người nhiều hơn là Bình.",
+     "hints": [
+      "Chữ ít hơn đứng cạnh An, nhưng nó nói An đang thiệt hơn.",
+      "Vậy người còn lại là người hơn."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Việt ít hơn Nam 4 viên bi, Việt có 12 viên. Nam có mấy viên, và cả hai có tất cả mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Nam có",
+        "value": 16
+       },
+       {
+        "label": "cả hai có",
+        "value": 28
+       }
+      ]
+     },
+     "solutionNarrative": "Nam nhiều hơn nên có $12 + 4 = 16$ viên. Cả hai có $12 + 16 = 28$ viên.",
+     "hints": [
+      "Bước một: Nam nhiều hơn Việt nên cộng thêm bốn.",
+      "Bước hai: cộng số bi của hai bạn lại."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Có bạn gặp bài \"An ít hơn Bình 3 viên, An có 8 viên\" rồi ghi Bình có 5 viên. Cho biết bạn ấy sai ở đâu và số đúng là bao nhiêu.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "sai ở đâu",
+        "options": [
+         "thấy chữ ít hơn là trừ, không hỏi ai nhiều hơn",
+         "không sai gì cả"
+        ],
+        "value": "thấy chữ ít hơn là trừ, không hỏi ai nhiều hơn"
+       },
+       {
+        "label": "số đúng",
+        "value": 11
+       }
+      ]
+     },
+     "solutionNarrative": "Bạn ấy thấy chữ ít hơn là trừ ngay, không hỏi ai nhiều hơn. Bình mới là người nhiều bi hơn nên phải cộng: $8 + 3 = 11$ viên.",
+     "hints": [
+      "Con thử lại giúp bạn ấy: Bình năm viên mà An tám viên thì ai nhiều hơn?",
+      "Đề nói Bình phải là người nhiều hơn, nên phép tính phải đổi chiều."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Mai ít hơn Lan 5 nhãn vở. Lan ít hơn Hoa 3 nhãn. Mai có 10 nhãn. Lan và Hoa mỗi người có mấy nhãn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "Lan có",
+        "value": 15
+       },
+       {
+        "label": "Hoa có",
+        "value": 18
+       }
+      ]
+     },
+     "solutionNarrative": "Lan nhiều hơn Mai nên có $10 + 5 = 15$ nhãn. Hoa nhiều hơn Lan nên có $15 + 3 = 18$ nhãn.",
+     "hints": [
+      "Bước một: Lan nhiều hơn Mai nên cộng thêm năm.",
+      "Bước hai: Hoa lại nhiều hơn Lan nên cộng tiếp ba nữa."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Câu \"An ít hơn Bình\" nghĩa là Bình nhiều hơn An.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — chữ đứng cạnh ai không quyết định ai nhiều hơn."
+   },
+   {
+    "id": "Q2",
+    "text": "An ít hơn Bình 3 viên, An có 8 viên. Bình mấy viên?",
+    "format": "mcq",
+    "choices": [
+     "11",
+     "5",
+     "3",
+     "8"
+    ],
+    "answerKey": {
+     "choice": "11"
+    },
+    "solutionNarrative": "Bình nhiều hơn nên phải cộng."
+   },
+   {
+    "id": "Q3",
+    "text": "Thấy chữ \"ít hơn\" thì cứ làm phép trừ.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phải hỏi ai nhiều hơn rồi mới chọn phép tính."
+   },
+   {
+    "id": "Q4",
+    "text": "Trước khi chọn phép tính, phải hỏi câu nào?",
+    "format": "mcq",
+    "choices": [
+     "ai nhiều hơn, ai ít hơn",
+     "số nào to hơn",
+     "có mấy con số"
+    ],
+    "answerKey": {
+     "choice": "ai nhiều hơn, ai ít hơn"
+    },
+    "solutionNarrative": "Trả lời xong câu ấy thì vẽ được sơ đồ."
+   },
+   {
+    "id": "Q5",
+    "text": "Hoa nhiều hơn Mai 6 quyển, Mai có 9 quyển thì Hoa có 15 quyển.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — chín cộng sáu."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Đọc đề chậm cùng con và hỏi lại bằng lời khác: \"Vậy ai nhiều hơn?\" — chỉ một câu ấy là gỡ được cả cái bẫy.",
+  "homeActivity": "Bố mẹ hỏi: \"Chữ ít hơn đang nói về ai?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B55_giang.mp4"
+ }
+}

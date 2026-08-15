@@ -1,0 +1,302 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B58",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 45 · PHẦN HƠN TUỔI KHÔNG BAO GIỜ ĐỔI",
+ "durationMinutes": 10,
+ "so": 45,
+ "chuong": 5,
+ "tenChuong": "Chuyện toán lời văn",
+ "dangGoc": "LV 6.1b — Bài toán tuổi: hiệu số tuổi giữ nguyên theo thời gian.",
+ "skills": {
+  "bktUnit": "CHUONG:5@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 45,
+  "prev": "DL:KSN2.B20",
+  "next": "DL:KSN2.B21"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Khám phá phần hơn tuổi giữa hai người không đổi. Giải thích được vì sao nó không đổi. Dùng phần hơn để trả lời nhanh mà không phải tính lại.",
+  "kidText": "Anh hơn em 3 tuổi. Sau 2 năm nữa anh còn hơn em 3 tuổi không nhỉ?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn quả quyết anh hơn em ba tuổi thì sau hai năm anh sẽ hơn em năm tuổi, vì thời gian trôi mà.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Sau hai năm, có phải chỉ mình anh thêm tuổi không? Em đứng yên à? Gợi ý 2: Lấy số cụ thể mà tính: em sáu tuổi, anh chín tuổi, cộng thêm hai cho cả hai rồi trừ thử. Chữa: em cũng thêm hai tuổi nên phần hơn vẫn là ba. Em không bao giờ đuổi kịp anh được."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn quả quyết anh hơn em ba tuổi thì sau hai năm anh sẽ hơn em năm tuổi, vì thời gian trôi mà.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Năm nay em 6 tuổi, anh 9 tuổi. Sau 2 năm nữa anh hơn em bao nhiêu tuổi?",
+  "steps": [
+   {
+    "show": "Tính phần hơn của năm nay",
+    "phan": "giai"
+   },
+   {
+    "show": "Lấy $9 - 6 = 3$. Anh hơn em 3 tuổi.",
+    "phan": "giai"
+   },
+   {
+    "show": "Tính tuổi hai người sau 2 năm",
+    "phan": "giai"
+   },
+   {
+    "show": "Em $6 + 2 = 8$ tuổi. Anh $9 + 2 = 11$ tuổi.",
+    "phan": "giai"
+   },
+   {
+    "show": "Tính lại phần hơn",
+    "phan": "giai"
+   },
+   {
+    "show": "Lấy $11 - 8 = 3$. Vẫn đúng 3 tuổi như cũ.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: vẫn 3 tuổi.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Hai bên cùng thêm bằng nhau thì phần hơn giữ nguyên — dù mười năm hay một trăm năm nữa cũng thế.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Năm nay em 6 tuổi, anh 9 tuổi. Anh hơn em mấy tuổi?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Lấy $9 - 6 = 3$.",
+     "hints": [
+      "Con lấy tuổi anh trừ tuổi em.",
+      "Đây là phần hơn tuổi của năm nay."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Sau 2 năm em 8 tuổi, anh 11 tuổi. Anh hơn em mấy tuổi?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Lấy $11 - 8 = 3$.",
+     "hints": [
+      "Con lấy tuổi anh trừ tuổi em, vẫn cách làm ấy.",
+      "So kết quả với phần hơn của năm nay xem có khác không."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Phần hơn tuổi giữa hai người có đổi theo thời gian không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có đổi không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Hai bên cùng thêm bằng nhau nên phần hơn giữ nguyên.",
+     "hints": [
+      "Hai người cùng thêm tuổi bằng nhau thì khoảng cách giữa họ thế nào?",
+      "Vẽ hai đoạn cùng dài thêm một khúc bằng nhau mà xem."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Anh hơn em 3 tuổi. Sau 10 năm nữa anh hơn em mấy tuổi?",
+     "answerKey": {
+      "value": 3
+     },
+     "solutionNarrative": "Phần hơn không đổi nên vẫn là 3 tuổi.",
+     "hints": [
+      "Sau mười năm thì cả hai đều thêm mười tuổi.",
+      "Cùng thêm bằng nhau thì phần hơn có đổi không?"
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Mẹ hơn con 25 tuổi. Sau 8 năm nữa mẹ hơn con mấy tuổi?",
+     "answerKey": {
+      "value": 25
+     },
+     "solutionNarrative": "Phần hơn không đổi nên vẫn là 25 tuổi.",
+     "hints": [
+      "Sau tám năm thì cả hai mẹ con đều thêm tám tuổi.",
+      "Phần hơn của họ vẫn là con số đã cho trong đề."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Có bạn bảo anh hơn em 3 tuổi thì sau 2 năm anh hơn em 5 tuổi. Bạn ấy sai ở đâu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "sai ở đâu",
+        "options": [
+         "tưởng chỉ mình anh thêm tuổi",
+         "không sai gì cả"
+        ],
+        "value": "tưởng chỉ mình anh thêm tuổi"
+       }
+      ]
+     },
+     "solutionNarrative": "Bạn ấy tưởng chỉ mình anh thêm tuổi. Em cũng thêm hai tuổi nên phần hơn vẫn là 3.",
+     "hints": [
+      "Bạn ấy cộng thêm hai vào phần hơn. Con thử tính tuổi cả hai người rồi trừ xem.",
+      "Em có đứng yên trong hai năm ấy không?"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Năm nay bố 35 tuổi, con 10 tuổi. Sau 5 năm nữa bố hơn con mấy tuổi, và cách đây 2 năm bố hơn con mấy tuổi?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "sau 5 năm",
+        "value": 25
+       },
+       {
+        "label": "cách đây 2 năm",
+        "value": 25
+       }
+      ]
+     },
+     "solutionNarrative": "Bố hơn con $35 - 10 = 25$ tuổi. Phần hơn không đổi nên lúc nào cũng là 25 tuổi.",
+     "hints": [
+      "Con tìm phần hơn của năm nay trước đã.",
+      "Phần hơn không đổi, nên hai câu hỏi có chung một đáp số."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Anh hơn em 4 tuổi, năm nay em 7 tuổi. Cho biết năm nay anh mấy tuổi và sau 6 năm nữa anh hơn em mấy tuổi.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "anh năm nay",
+        "value": 11
+       },
+       {
+        "label": "sau 6 năm hơn mấy",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Anh có $7 + 4 = 11$ tuổi. Phần hơn không đổi nên sau sáu năm anh vẫn hơn em 4 tuổi.",
+     "hints": [
+      "Bước một: anh hơn em bốn tuổi nên lấy tuổi em cộng thêm bốn.",
+      "Bước hai: nhớ rằng phần hơn không đổi theo thời gian."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Phần hơn tuổi giữa hai người không bao giờ đổi.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — vì cả hai cùng thêm bằng nhau."
+   },
+   {
+    "id": "Q2",
+    "text": "Anh hơn em 3 tuổi. Sau 2 năm anh hơn em mấy tuổi?",
+    "format": "mcq",
+    "choices": [
+     "3",
+     "5",
+     "1",
+     "6"
+    ],
+    "answerKey": {
+     "choice": "3"
+    },
+    "solutionNarrative": "Phần hơn giữ nguyên."
+   },
+   {
+    "id": "Q3",
+    "text": "Mẹ hơn con 25 tuổi. Sau 8 năm mẹ hơn con mấy tuổi?",
+    "format": "mcq",
+    "choices": [
+     "25",
+     "33",
+     "17",
+     "8"
+    ],
+    "answerKey": {
+     "choice": "25"
+    },
+    "solutionNarrative": "Phần hơn giữ nguyên."
+   },
+   {
+    "id": "Q4",
+    "text": "Sau 2 năm thì phần hơn tuổi tăng thêm 2.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Cả hai cùng thêm hai nên phần hơn giữ nguyên."
+   },
+   {
+    "id": "Q5",
+    "text": "Bài toán tuổi nào cũng nên tìm phần hơn trước tiên.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đó là con số không đổi của cả bài."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Hỏi con một câu vui: \"Bao giờ thì con bằng tuổi anh?\" — câu trả lời không bao giờ, và bài này nói rõ vì sao.",
+  "homeActivity": "Bố mẹ hỏi: \"Cả hai cùng thêm tuổi thì phần hơn đổi không?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B58_giang.mp4"
+ }
+}
