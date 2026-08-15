@@ -39,7 +39,7 @@ const bais = teps.map((f) => doc(join(GOC, f))).sort((a, b) => a.so - b.so);
    Ba con số dưới đây là ĐẾM, không phải luật — nới chúng khi thêm bài là đúng. Nhưng
    phải nới CÙNG LÚC cả ba, và giữ nguyên phép "liền mạch": số bài rời rạc thì bé mở
    quyển thấy nhảy cóc Bài 12 sang Bài 18, mà không có gì báo. */
-const SO_BAI = 81;
+const SO_BAI = 95;
 const SO_CAU = SO_BAI * 14;      // mỗi bài đúng 9 luyện tập + 5 quiz
 
 t(`đủ ${SO_BAI} bài (${bais.length})`, bais.length === SO_BAI);
@@ -460,7 +460,7 @@ in5(dungNhau);
  * một đoạn mò mẫm. Không cổng nào bắt được — với máy thì chuỗi chữ nào cũng hợp lệ.
  *
  * `khuon_bai_lop4.soi_so_hoc` tính lại mọi phép viết ra trong lời chữa (822 phép trên
- * 81 bài lớp 4), và nó chạy TRƯỚC khi ghi, nên hỏng thì chưa ghi gì cả. Phép dưới đây
+ * 95 bài lớp 4), và nó chạy TRƯỚC khi ghi, nên hỏng thì chưa ghi gì cả. Phép dưới đây
  * chỉ canh rằng nó còn được CẮM VÀO — viết đúng hàm mà quên gọi thì cũng như không.
  */
 {

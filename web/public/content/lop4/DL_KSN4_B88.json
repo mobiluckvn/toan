@@ -1,0 +1,306 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B88",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 12 · NHÌN KỸ TRƯỚC KHI TÍNH — THỪA SỐ 0 ẨN",
+ "durationMinutes": 10,
+ "so": 12,
+ "chuong": 2,
+ "tenChuong": "BỐN PHÉP TÍNH VÀ TÍNH NHANH",
+ "dangGoc": "Dạng gốc: SỐ 7.1 mức Lớp 4 — Phát hiện thừa số 0 ẩn trong tích dài; so sánh hai biểu thức mà không tính hết.",
+ "skills": {
+  "bktUnit": "CHUONG:2@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 12,
+  "prev": "DL:KSN4.B87",
+  "next": "DL:KSN4.B06"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết một tích chỉ cần có một thừa số bằng 0 thì cả tích bằng 0. Soi được thừa số 0 nấp trong một cặp ngoặc. So sánh được hai biểu thức mà không phải tính hết ra.",
+  "kidText": "Cô có bài tính dài cả dòng mà đáp số là số không. Con soi thử xem vì sao nào!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn thấy biểu thức dài liền nhân hết ra, mất năm phút rồi mới ra 0.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con thử tính riêng cái ngoặc trước xem nó bằng bao nhiêu. Gợi ý 2: Nếu một thừa số đã bằng 0 thì nhân tiếp có thay đổi được gì không? Chữa: soi ba giây trước khi đặt bút. Thấy một thừa số bằng 0 là ghi đáp số 0 ngay, khỏi nhân."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn thấy biểu thức dài liền nhân hết ra, mất năm phút rồi mới ra 0.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tính giá trị của biểu thức có ngoặc mười ba trừ bảy mươi tám chia sáu, rồi nhân hai trăm ba mươi mốt, rồi nhân tám.",
+  "steps": [
+   {
+    "show": "Đừng vội nhân"
+   },
+   {
+    "show": "Nhìn thấy tích dài là nhiều bạn cắm cúi nhân ngay. Nhưng hãy soi từng thừa số trước đã."
+   },
+   {
+    "show": "Soi cái ngoặc"
+   },
+   {
+    "show": "Trong ngoặc có phép chia: bảy mươi tám chia sáu bằng mười ba."
+   },
+   {
+    "show": "Mười ba trừ mười ba bằng không. Vậy cái ngoặc bằng 0."
+   },
+   {
+    "show": "Một thừa số bằng 0 là xong"
+   },
+   {
+    "show": "Trong một tích, chỉ cần một thừa số bằng 0 thì cả tích bằng 0 — không cần nhân gì thêm nữa."
+   },
+   {
+    "show": "Đáp số: 0."
+   },
+   {
+    "show": "So sánh cũng không cần tính"
+   },
+   {
+    "show": "So 52 nhân 25 với 51 nhân 25 cộng 20. Bên trái hơn 51 nhân 25 đúng một lần 25, mà bên phải chỉ hơn có 20. Vậy bên trái lớn hơn."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính 78 : 6.",
+     "answerKey": {
+      "value": 13
+     },
+     "solutionNarrative": "Chia ra: 78 : 6 = 13.",
+     "hints": [
+      "Con làm phép chia trong ngoặc trước đã.",
+      "Đặt tính rồi chia cho cẩn thận."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Vậy giá trị của ngoặc 13 trừ 78 chia 6 bằng bao nhiêu?",
+     "answerKey": {
+      "value": 0
+     },
+     "solutionNarrative": "Trong ngoặc: 13 − 13 = 0.",
+     "hints": [
+      "Con vừa tính được số bị trừ ở câu trên. Nay lấy số kia trừ đi nó.",
+      "Hai số ấy bằng nhau, mà số nào trừ chính nó thì ra bao nhiêu?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vậy ngoặc ấy nhân 231 rồi nhân 8 thì bằng bao nhiêu?",
+     "answerKey": {
+      "value": 0
+     },
+     "solutionNarrative": "Một thừa số đã bằng 0 nên cả tích bằng 0.",
+     "hints": [
+      "Cái ngoặc vừa tính ở câu trên là một thừa số của tích này.",
+      "Trong một tích, chỉ cần một thừa số rỗng thì cả tích rỗng theo."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tính giá trị của ngoặc 25 nhân 4 trừ 100, rồi nhân 999.",
+     "answerKey": {
+      "value": 0
+     },
+     "solutionNarrative": "Trong ngoặc: 25 × 4 = 100, rồi 100 − 100 = 0. Cả tích bằng 0.",
+     "hints": [
+      "Con tính trong ngoặc trước: nhân hai số ấy rồi trừ đi số kia.",
+      "Ngoặc rỗng thì cả tích rỗng theo, khỏi nhân tiếp."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Phép 52 × 25 hơn phép 51 × 25 bao nhiêu đơn vị?",
+     "answerKey": {
+      "value": 25
+     },
+     "solutionNarrative": "Hơn đúng một lần 25, tức là hơn 25 đơn vị.",
+     "hints": [
+      "Hai bên chỉ khác nhau ở thừa số đầu, mà chúng chỉ hơn kém nhau một.",
+      "Hơn nhau một lần thừa số kia, tức là hơn đúng thừa số kia."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "So sánh 52 × 25 với 51 × 25 + 20. Bên nào lớn hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bên nào lớn hơn",
+        "options": [
+         "bên trái",
+         "bên phải"
+        ],
+        "value": "bên trái"
+       }
+      ]
+     },
+     "solutionNarrative": "Bên trái hơn 51 × 25 đúng 25, bên phải chỉ hơn 20, nên 52 × 25 lớn hơn.",
+     "hints": [
+      "Con so phần hơn của mỗi bên với cùng một mốc là năm mươi mốt nhân hai mươi lăm.",
+      "Một bên hơn đúng hai mươi lăm, bên kia chỉ hơn hai mươi."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Tính giá trị của ngoặc 100 trừ 10 nhân 10, rồi nhân 4 567.",
+     "answerKey": {
+      "value": 0
+     },
+     "solutionNarrative": "Trong ngoặc: 10 × 10 = 100, rồi 100 − 100 = 0. Cả tích bằng 0.",
+     "hints": [
+      "Con nhân hai số trong ngoặc với nhau rồi trừ đi số đứng trước chúng.",
+      "Ngoặc rỗng thì khỏi nhân tiếp."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "So sánh 37 × 18 với 37 × 17 + 37. Hai bên bằng nhau hay khác nhau?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hai bên thế nào",
+        "options": [
+         "bằng nhau",
+         "khác nhau"
+        ],
+        "value": "bằng nhau"
+       }
+      ]
+     },
+     "solutionNarrative": "Bên trái hơn 37 × 17 đúng một lần 37, mà bên phải cũng cộng thêm đúng 37, nên hai bên bằng nhau.",
+     "hints": [
+      "Bên trái hơn ba mươi bảy nhân mười bảy đúng một lần ba mươi bảy.",
+      "Còn bên phải cộng thêm đúng bao nhiêu? So hai phần thêm ấy."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Tính giá trị của ngoặc 9 nhân 9 trừ 81, rồi nhân 1 234, rồi nhân 567.",
+     "answerKey": {
+      "value": 0
+     },
+     "solutionNarrative": "Trong ngoặc: 9 × 9 = 81, rồi 81 − 81 = 0. Cả tích bằng 0.",
+     "hints": [
+      "Trong ngoặc có một phép nhân, con làm phép ấy trước đã.",
+      "Ngoặc rỗng thì cả tích rỗng, dù còn nhân với số to đến đâu."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Trong một tích, chỉ cần một thừa số bằng 0 thì cả tích bằng 0.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, và đó là mẹo soi nhanh nhất của bài này."
+   },
+   {
+    "id": "Q2",
+    "text": "Ngoặc 13 trừ 78 chia 6, nhân 231, nhân 8 thì bằng",
+    "format": "mcq",
+    "choices": [
+     "0",
+     "13",
+     "231",
+     "1"
+    ],
+    "answerKey": {
+     "choice": "0"
+    },
+    "solutionNarrative": "Ngoặc bằng 0 nên cả tích bằng 0."
+   },
+   {
+    "id": "Q3",
+    "text": "Muốn so sánh hai biểu thức thì bao giờ cũng phải tính hết ra.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Nhiều khi chỉ cần so phần chênh lệch là đủ."
+   },
+   {
+    "id": "Q4",
+    "text": "Phép 52 × 25 hơn phép 51 × 25 bao nhiêu?",
+    "format": "mcq",
+    "choices": [
+     "25",
+     "1",
+     "52",
+     "51"
+    ],
+    "answerKey": {
+     "choice": "25"
+    },
+    "solutionNarrative": "Hơn đúng một lần thừa số 25."
+   },
+   {
+    "id": "Q5",
+    "text": "Soi ba giây trước khi đặt bút có khi tiết kiệm được cả bài tính.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Đó là thói quen của người tính giỏi."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Đưa con vài biểu thức dài trong đó có một ngoặc bằng 0. Bấm giờ xem con mất bao lâu — lần đầu lâu, lần sau vài giây.",
+  "homeActivity": "Ba câu hỏi soi nhanh: có thừa số chung không, có cặp tròn trăm không, có thừa số 0 ẩn không. Ba câu ấy đáng cả buổi luyện tính.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Có những bài trông dài đến phát sợ, mà đáp số là 0 — chỉ cần nhìn ba giây là thấy. Bài này dạy con nhìn ba giây ấy.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B05"
+  ],
+  "ten": [
+   "NHÂN RA NGOÀI BẢNG"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B88_giang.mp4"
+ }
+}

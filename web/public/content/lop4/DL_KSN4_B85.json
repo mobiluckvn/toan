@@ -1,0 +1,293 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B85",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 7 · XOÁ MỘT CHỮ SỐ — Ở ĐUÔI KHÁC HẲN Ở ĐẦU",
+ "durationMinutes": 10,
+ "so": 7,
+ "chuong": 1,
+ "tenChuong": "SỐ ĐẾN LỚP TRIỆU",
+ "dangGoc": "Dạng gốc: SỐ 1.3 mức Lớp 4 — Xoá chữ số tận cùng và xoá chữ số hàng cao nhất; bài ngược dựng lại số cũ.",
+ "skills": {
+  "bktUnit": "CHUONG:1@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 7,
+  "prev": "DL:KSN4.B03",
+  "next": "DL:KSN4.B04"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết xoá chữ số hàng cao nhất thì số giảm đúng bằng giá trị chữ số ấy. Biết xoá chữ số tận cùng thì số cũ bằng số mới nhân mười cộng chữ số bị xoá. Giải được bài ngược: biết số giảm bao nhiêu, tìm lại số cũ.",
+  "kidText": "Cô lấy tay che một chữ số của số 725. Che ở đầu và che ở cuối, con đoán khác nhau thế nào?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn bảo: \"Xoá một chữ số ở đuôi thì số nào cũng giảm đi mười lần.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con thử với số 47 xem. Xoá chữ số 7 còn số 4. Số 4 nhân mười có ra lại 47 không? Gợi ý 2: Chỉ khi chữ số bị xoá là chữ số nào thì mới về đúng được số cũ? Chữa: chỉ đúng khi chữ số bị xoá là 0. Còn khác 0 thì số cũ bằng số mới nhân mười RỒI CỘNG chữ số ấy, nên không giảm tròn mười lần."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn bảo: \"Xoá một chữ số ở đuôi thì số nào cũng giảm đi mười lần.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Xoá chữ số hàng trăm của số 725, rồi xoá chữ số tận cùng của số 303. Mỗi lần số giảm bao nhiêu?",
+  "steps": [
+   {
+    "show": "Xoá ở đầu thì dễ"
+   },
+   {
+    "show": "Xoá chữ số hàng trăm của 725 thì còn 25. Hai chữ số còn lại đứng nguyên chỗ cũ, không ai phải dịch đi đâu."
+   },
+   {
+    "show": "Nên số giảm đúng bằng giá trị của chữ số vừa bị cắt: 725 − 25 = 700."
+   },
+   {
+    "show": "Xoá ở đuôi thì khác"
+   },
+   {
+    "show": "Xoá chữ số tận cùng của 303 thì còn 30. Lần này mọi chữ số còn lại đều tụt xuống một hàng."
+   },
+   {
+    "show": "Số cũ bằng số mới nhân mười rồi cộng chữ số bị xoá: 30 nhân 10 được 300, cộng 3 được 303."
+   },
+   {
+    "show": "Số giảm: 303 − 30 = 273."
+   },
+   {
+    "show": "Đáp số: xoá ở đầu giảm 700, xoá ở đuôi giảm 273."
+   },
+   {
+    "show": "Thử lại chiều ngược: 30 × 10 = 300, rồi 300 + 3 = 303 — về đúng số cũ."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Xoá chữ số hàng trăm của số 725 thì còn số nào?",
+     "answerKey": {
+      "value": 25
+     },
+     "solutionNarrative": "Hai chữ số còn lại đứng nguyên chỗ cũ nên còn số 25.",
+     "hints": [
+      "Xoá chữ số đứng ngoài cùng bên trái, giữ nguyên hai chữ số còn lại.",
+      "Hai chữ số còn lại không phải dịch đi đâu cả."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Số ấy giảm đi bao nhiêu đơn vị?",
+     "answerKey": {
+      "value": 700
+     },
+     "solutionNarrative": "Giảm đúng bằng giá trị chữ số bị cắt: 725 − 25 = 700.",
+     "hints": [
+      "Các chữ số còn lại đứng yên, nên chỉ mất đúng phần của chữ số bị cắt.",
+      "Chữ số ấy đứng ở hàng trăm nên nó đáng bao nhiêu?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Xoá chữ số tận cùng của số 303 thì còn số nào?",
+     "answerKey": {
+      "value": 30
+     },
+     "solutionNarrative": "Bỏ chữ số 3 ở hàng đơn vị, còn lại số 30.",
+     "hints": [
+      "Xoá chữ số cuối cùng, giữ lại phần trước nó.",
+      "Số ấy có ba chữ số, bỏ một thì còn hai."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Số 303 giảm đi bao nhiêu sau khi xoá chữ số tận cùng?",
+     "answerKey": {
+      "value": 273
+     },
+     "solutionNarrative": "Lấy hiệu: 303 − 30 = 273.",
+     "hints": [
+      "Con lấy số cũ trừ số mới.",
+      "Trừ hai số ấy cho nhau là ra ngay phần mất đi."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Xoá chữ số hàng trăm của một số làm nó giảm 600. Chữ số hàng trăm ấy là mấy?",
+     "answerKey": {
+      "value": 6
+     },
+     "solutionNarrative": "Số giảm bằng giá trị chữ số ấy ở hàng trăm, nên chữ số ấy là 600 : 100 = 6.",
+     "hints": [
+      "Chữ số bị cắt đứng ở hàng trăm, nên phần giảm bằng chính nó nhân một trăm.",
+      "Nay biết phần giảm rồi, con chia cho một trăm."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Xoá chữ số tận cùng của số 4 856 thì còn số nào?",
+     "answerKey": {
+      "value": 485
+     },
+     "solutionNarrative": "Bỏ chữ số 6 ở hàng đơn vị, còn lại số 485.",
+     "hints": [
+      "Bỏ chữ số cuối cùng đi, giữ lại ba chữ số đứng trước.",
+      "Đừng bỏ nhầm chữ số ngoài cùng bên trái."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Số 4 856 giảm đi bao nhiêu sau khi xoá chữ số tận cùng?",
+     "answerKey": {
+      "value": 4371
+     },
+     "solutionNarrative": "Lấy hiệu: 4 856 − 485 = 4 371.",
+     "hints": [
+      "Con lấy số cũ trừ số mới vừa tìm được ở câu trên.",
+      "Đặt tính rồi trừ cho cẩn thận, số này hơi to."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Xoá chữ số tận cùng của một số có ba chữ số thì được số mới kém số cũ 273 đơn vị. Tìm số mới và số cũ.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số mới",
+        "value": 30
+       },
+       {
+        "label": "số cũ",
+        "value": 303
+       }
+      ]
+     },
+     "solutionNarrative": "Số cũ bằng số mới nhân mười cộng chữ số bị xoá, nên phần chênh gồm 9 lần số mới cộng chữ số ấy. Thử số mới 30: 30 × 9 = 270, cộng 3 được 273 — khớp. Số mới là 30, số cũ là 303.",
+     "hints": [
+      "Phần chênh gồm chín lần số mới, cộng thêm chữ số bị xoá.",
+      "Con thử số mới là ba mươi xem: chín lần nó bằng bao nhiêu, còn thiếu mấy?"
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Xoá chữ số 0 tận cùng của số 380 thì số ấy giảm đi mấy lần?",
+     "answerKey": {
+      "value": 10
+     },
+     "solutionNarrative": "Còn lại 38, mà 38 × 10 = 380, nên số ấy giảm đi 10 lần.",
+     "hints": [
+      "Chữ số bị xoá là số không, nên xoá xong nhân lại mười là về số cũ.",
+      "Vậy số ấy nhẹ đi đúng mười lần."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Xoá chữ số hàng cao nhất thì số giảm đúng bằng giá trị chữ số ấy.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, vì các chữ số còn lại không phải dịch chỗ."
+   },
+   {
+    "id": "Q2",
+    "text": "Xoá một chữ số ở đuôi thì số nào cũng giảm đi đúng 10 lần.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Chỉ đúng khi chữ số bị xoá là 0."
+   },
+   {
+    "id": "Q3",
+    "text": "Xoá chữ số hàng trăm của số 725 thì số giảm",
+    "format": "mcq",
+    "choices": [
+     "700",
+     "7",
+     "25",
+     "70"
+    ],
+    "answerKey": {
+     "choice": "700"
+    },
+    "solutionNarrative": "Chữ số 7 đứng ở hàng trăm nên đáng 700."
+   },
+   {
+    "id": "Q4",
+    "text": "Xoá chữ số tận cùng của một số thì số cũ bằng",
+    "format": "mcq",
+    "choices": [
+     "số mới nhân 10 rồi cộng chữ số bị xoá",
+     "số mới cộng chữ số bị xoá",
+     "số mới nhân chữ số bị xoá"
+    ],
+    "answerKey": {
+     "choice": "số mới nhân 10 rồi cộng chữ số bị xoá"
+    },
+    "solutionNarrative": "Các chữ số còn lại đều tụt một hàng, nên phải nhân mười để trả về chỗ cũ."
+   },
+   {
+    "id": "Q5",
+    "text": "Xoá chữ số 0 tận cùng của số 380 thì được 38, tức là giảm 10 lần.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Chữ số bị xoá là 0 nên về đúng một phần mười."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Viết một số lên giấy rồi lấy tay che một chữ số. Che ở đầu và che ở cuối, mỗi lần hỏi con số còn lại là bao nhiêu và mất đi bao nhiêu.",
+  "homeActivity": "Đây là bài dễ nhầm nhất chương một. Bố mẹ chỉ cần hỏi đúng một câu mỗi lần: \"Các chữ số còn lại có phải dịch chỗ không?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Thêm chữ số thì con đã biết. Nay làm ngược: xoá đi một chữ số. Xoá ở đuôi và xoá ở đầu là hai chuyện khác hẳn nhau.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B02"
+  ],
+  "ten": [
+   "THÊM CHỮ SỐ BÊN TRÁI — BÊN PHẢI"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B85_giang.mp4"
+ }
+}

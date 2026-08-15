@@ -1,0 +1,308 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B86",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 10 · NHẨM NHANH VỚI 25 — BẮT CẶP CHO TRÒN TRĂM",
+ "durationMinutes": 10,
+ "so": 10,
+ "chuong": 2,
+ "tenChuong": "BỐN PHÉP TÍNH VÀ TÍNH NHANH",
+ "dangGoc": "Dạng gốc: SỐ 7.1 mức Lớp 4 — Nhẩm nhân với 25 và 125 bằng cách ghép thành 100 và 1000.",
+ "skills": {
+  "bktUnit": "CHUONG:2@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 10,
+  "prev": "DL:KSN4.B05",
+  "next": "DL:KSN4.B87"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết 25 ghép với 4 thành 100, và 125 ghép với 8 thành 1000. Tách một thừa số ra để lộ số 4 hoặc số 8 ẩn trong đó. Biết cách nhân 100 rồi chia 4 khi không tách được.",
+  "kidText": "Số 25 lúc nào cũng đi tìm bạn. Con đoán xem nó thích chơi với số nào nhất?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn tính 25 × 36 bằng cách nhân 25 với 30 rồi nhân 25 với 6, xong cộng lại, mất cả phút.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Cách ấy vẫn ra đúng, nhưng con thử tách 36 thành hai số nhân nhau xem có số nào hợp với 25 không. Gợi ý 2: Con số nào ghép với 25 thì thành một trăm tròn trịa? Chữa: tách 36 thành 4 × 9 rồi ghép 25 với 4 thành 100, phép tính chỉ còn 100 × 9 — nhẩm một cái là xong."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn tính 25 × 36 bằng cách nhân 25 với 30 rồi nhân 25 với 6, xong cộng lại, mất cả phút.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tính nhanh 25 × 36, rồi tính nhanh 48 × 25.",
+  "steps": [
+   {
+    "show": "Cặp bài trùng của số 25"
+   },
+   {
+    "show": "Hai mươi lăm nhân bốn bằng một trăm. Nên gặp 25 là đi tìm số 4."
+   },
+   {
+    "show": "Tách để lộ số 4 ra"
+   },
+   {
+    "show": "Số 36 tách được thành 4 nhân 9. Vậy 25 × 36 = 25 × 4 × 9."
+   },
+   {
+    "show": "Ghép cặp trước: 25 × 4 = 100. Rồi 100 × 9 = 900."
+   },
+   {
+    "show": "Không tách được thì làm sao"
+   },
+   {
+    "show": "Với 48 × 25 thì đi lối khác: nhân 100 trước rồi trả lại phần thừa. Nhân 100 tức là nhân gấp bốn lần so với nhân 25, nên sau đó phải chia cho 4."
+   },
+   {
+    "show": "Tính: 48 × 100 = 4 800. Rồi 4 800 : 4 = 1 200."
+   },
+   {
+    "show": "Đáp số: 900 và 1 200."
+   },
+   {
+    "show": "Người anh của số 25"
+   },
+   {
+    "show": "Số 125 ghép với 8 thì được 1000 — cùng một lối nghĩ, chỉ khác con số."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Số 25 nhân với số nào thì được 100?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Hai mươi lăm nhân bốn: 25 × 4 = 100.",
+     "hints": [
+      "Con thử nhân nó với vài số nhỏ xem số nào cho ra một trăm tròn.",
+      "Bốn lần hai mươi lăm là bao nhiêu?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tách 36 thành 4 nhân 9 rồi tính 25 × 36.",
+     "answerKey": {
+      "value": 900
+     },
+     "solutionNarrative": "Ghép cặp trước: 25 × 4 = 100. Rồi 100 × 9 = 900.",
+     "hints": [
+      "Tách xong thì ghép cặp trước đã, đừng nhân theo thứ tự viết.",
+      "Ghép cặp được một trăm, rồi nhân nốt với thừa số còn lại."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Tính nhanh 25 × 8.",
+     "answerKey": {
+      "value": 200
+     },
+     "solutionNarrative": "Tách 8 thành 4 × 2: 25 × 4 = 100, rồi 100 × 2 = 200.",
+     "hints": [
+      "Con tách thừa số kia ra để lộ số bốn.",
+      "Ghép cặp được một trăm rồi nhân với phần còn lại."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tính nhanh 25 × 16.",
+     "answerKey": {
+      "value": 400
+     },
+     "solutionNarrative": "Tách 16 thành 4 × 4: 25 × 4 = 100, rồi 100 × 4 = 400.",
+     "hints": [
+      "Con tách thừa số kia thành bốn nhân với một số nữa.",
+      "Ghép cặp được một trăm, rồi nhân nốt."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Tính 48 × 25 bằng cách nhân 100 rồi chia 4.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "nhân 100 trước được",
+        "value": 4800
+       },
+       {
+        "label": "kết quả",
+        "value": 1200
+       }
+      ]
+     },
+     "solutionNarrative": "Trước hết 48 × 100 = 4 800. Rồi trả lại phần thừa: 4 800 : 4 = 1 200.",
+     "hints": [
+      "Nhân một trăm thì chỉ việc thêm hai chữ số không.",
+      "Nhân một trăm là nhân gấp bốn lần so với nhân hai mươi lăm, nên phải chia lại cho bốn."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Tính nhanh 25 × 12.",
+     "answerKey": {
+      "value": 300
+     },
+     "solutionNarrative": "Tách 12 thành 4 × 3: 25 × 4 = 100, rồi 100 × 3 = 300.",
+     "hints": [
+      "Con tách thừa số kia để lộ số bốn ra.",
+      "Ghép cặp được một trăm rồi nhân với phần còn lại."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Số 125 nhân với số nào thì được 1000?",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "Một trăm hai mươi lăm nhân tám: 125 × 8 = 1 000.",
+     "hints": [
+      "Con thử nhân nó với vài số xem số nào cho ra một nghìn tròn.",
+      "Nó là người anh của hai mươi lăm, nên bạn của nó cũng gấp đôi bạn kia."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tính nhanh 125 × 24. Gợi ý: tách 24 thành 8 nhân mấy?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "thừa số còn lại sau khi tách",
+        "value": 3
+       },
+       {
+        "label": "kết quả",
+        "value": 3000
+       }
+      ]
+     },
+     "solutionNarrative": "Tách 24 thành 8 × 3. Ghép cặp: 125 × 8 = 1 000, rồi 1 000 × 3 = 3 000.",
+     "hints": [
+      "Con tách thừa số kia thành tám nhân với một số nữa.",
+      "Ghép cặp được một nghìn, rồi nhân nốt với phần còn lại."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Tính nhanh 25 × 44.",
+     "answerKey": {
+      "value": 1100
+     },
+     "solutionNarrative": "Tách 44 thành 4 × 11: 25 × 4 = 100, rồi 100 × 11 = 1 100.",
+     "hints": [
+      "Số bốn mươi tư chia hết cho bốn, con tách nó ra làm hai thừa số.",
+      "Ghép cặp được một trăm, rồi nhân với phần còn lại."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Số 25 nhân 4 được 100.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, và đó là cặp bài trùng của nó."
+   },
+   {
+    "id": "Q2",
+    "text": "Tính 25 × 36.",
+    "format": "mcq",
+    "choices": [
+     "900",
+     "810",
+     "90",
+     "9 000"
+    ],
+    "answerKey": {
+     "choice": "900"
+    },
+    "solutionNarrative": "Tách 36 thành 4 × 9 rồi ghép: 100 × 9 = 900."
+   },
+   {
+    "id": "Q3",
+    "text": "Số 125 ghép với 8 thì được 1000.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Cùng lối nghĩ với cặp 25 và 4."
+   },
+   {
+    "id": "Q4",
+    "text": "Muốn tính nhanh 48 × 25 thì",
+    "format": "mcq",
+    "choices": [
+     "nhân 100 rồi chia 4",
+     "nhân 4 rồi chia 100",
+     "cộng thêm 100"
+    ],
+    "answerKey": {
+     "choice": "nhân 100 rồi chia 4"
+    },
+    "solutionNarrative": "Nhân 100 là nhân gấp bốn lần so với nhân 25, nên phải chia 4 để trả lại."
+   },
+   {
+    "id": "Q5",
+    "text": "Gặp số 25 thì mắt đi tìm số 4 trước đã.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Tìm được số 4 là bài xong một nửa."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con nhẩm giá tiền: 25 nghìn một hộp thì 8 hộp bao nhiêu, 12 hộp bao nhiêu. Nhẩm được là con thấy cái lợi ngay.",
+  "homeActivity": "Bí quyết duy nhất của bài này: gặp 25 thì mắt đi tìm số 4, gặp 125 thì đi tìm số 8.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Số 25 lúc nào cũng đi tìm bạn: gặp được số 4 là hai đứa thành 100 ngay. Biết chuyện ấy thì nhân với 25 nhẩm được trong đầu.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B05"
+  ],
+  "ten": [
+   "NHÂN RA NGOÀI BẢNG"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B86_giang.mp4"
+ }
+}

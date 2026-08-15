@@ -257,7 +257,16 @@ function diemDanh() {
 
    Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
    `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
-const MOC = { tong: 2524, dungKhiDungDap: 2522, dungKhiSaiDap: 1, tuDoiChieu: 1 };
+/* ⚠ 2524 → 2651. Đợt cuối: chương 1, 2 và 11 — mười một bài chữ cuối cùng thành
+   hai mươi lăm bài video. Quyển lớp 4 nay 95 bài, không còn bài chữ nào.
+       luyện tập  98 → 225 câu chấm máy  (+127)  ·  2524 + 127 = 2651  ✓
+
+   Con số 98 chứ không phải 99: bài B01 CŨ có một câu "đọc các số sau" mà máy không
+   chấm nổi. Hai mươi lăm bài mới thì cả 225 câu đều chấm máy được.
+
+   Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn;
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 1 và 1. */
+const MOC = { tong: 2651, dungKhiDungDap: 2649, dungKhiSaiDap: 1, tuDoiChieu: 1 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`

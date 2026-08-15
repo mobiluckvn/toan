@@ -910,3 +910,54 @@ siết. Đã phá thử bốn kiểu, kể cả dán đúng lời giải sai cũ
 viết lại). Nay không ai đọc tới chúng nữa vì đề chính tin bản đang chạy, nhưng ai mở
 tệp ấy ra đọc thì vẫn dễ tưởng nó là bản đúng. Chưa dọn, vì sửa 59 mục bằng tay là
 mở thêm một cửa sai mới.
+
+---
+
+## 23 · Đợt 10 · chương 1, 2 và 11 — KHÉP LẠI CẢ QUYỂN
+
+Mười một bài chữ cuối cùng thành **hai mươi lăm bài video**. Quyển lớp 4 nay
+**95 bài**, và **không còn bài chữ nào**.
+
+| chương | cũ | mới | vì sao tách |
+|---|---|---|---|
+| 1 · số đến lớp triệu | 4 | **8** | B01 gộp bảng hàng, cách đọc, giá trị chữ số và bảng liệt kê — bốn thứ dùng bốn cái đầu khác nhau |
+| 2 · bốn phép tính | 4 | **11** | mỗi bài cũ dạy ba bốn mẹo chẳng liên quan gì nhau; bé nhớ được một hai cái rồi lẫn hết |
+| 11 · quãng đường | 3 | **6** | B48 gộp đuổi kịp với gặp nhau — hai kịch bản ngược nhau, dễ lẫn nhất chương |
+
+### Kiểu cảnh mới — `bang_hang`
+
+Cả chương một đứng ở một ý mà nói bằng lời thì rối: **chữ số đứng đâu nặng đấy**, và
+**cứ ba hàng gom thành một lớp**. Vẽ ra thì hai chuyện ấy thành một cái nhìn — mỗi
+chữ số một ô, ba ô một khung, khung có tên. Ô đánh số TỪ PHẢI SANG, đúng chiều đọc
+giá trị chứ không phải chiều đọc chữ.
+
+### Số neo
+
+    24 358 và 1 745 230   đọc số, tách lớp, giá trị chữ số
+    3 500 → 35 000        cả cụm thêm và xoá chữ số
+    72 và 27              tráo hai chữ số
+    4 × 38 + 4 × 62       đặt thừa số chung, ra tròn 400
+    3 giờ đi 120 km       chở cả cụm ba bài đầu chương 11
+
+### Vẫn đúng lớp lỗi cũ — hình mồ côi
+
+**25 hình** neo vào mục nay đã rỗng. Lần thứ ba liên tiếp, và lần nào cũng đúng cùng
+một chỗ: bài chuyển sang video thì mục ② và ④ trống, hình vẫn nằm đó chờ. Nay xoá
+sạch, kể cả hai hình luyện tập của B49 — chúng vẽ theo câu hỏi CŨ, mà câu hỏi đã
+viết lại rồi. Trỏ lại hình cũ vào câu mới là đúng cái bẫy "hình phải đúng với từ".
+
+### Kỳ sát hạch — trỏ lại 24 câu, viết lại 2 câu
+
+Cùng cách làm của đợt trước: khai đích danh ở `KHAI_TAY`. Hai bài mới không có câu
+nào hỏi tới nên phải viết lại đề:
+
+* ôn tập 1 câu 2 hỏi lại đúng ý câu 1 → viết lại thành bài **thêm bên trái và xen
+  vào giữa**;
+* ôn tập 2 câu 9 hỏi lại đúng ý câu 7 → viết lại thành bài **đếm bằng phần bù**.
+
+Cổng `on_tap_noi_bai` phép ④ chính là thứ tìm ra hai chỗ trống ấy.
+
+### Quyển lớp 4 khép lại
+
+    95 bài · 95 video · 855 câu luyện tập · 855 gợi ý viết tay
+    11 chương, không còn bài chữ nào

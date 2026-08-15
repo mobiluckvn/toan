@@ -2,56 +2,39 @@
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN4.B08",
  "grade": 4,
- "quyen": "lop4",
- "title": "Bài 8 · ĐẾM BẰNG QUY TẮC NHÂN VÀ PHẦN BÙ",
+ "quyen": "KSN4",
+ "title": "Bài 18 · QUY TẮC NHÂN — MỖI HÀNG MỘT Ô, RỒI NHÂN DỒN",
  "durationMinutes": 10,
- "so": 8,
+ "so": 18,
  "chuong": 2,
  "tenChuong": "BỐN PHÉP TÍNH VÀ TÍNH NHANH",
- "dangGoc": "SỐ 4.2 mức Lớp 4 — Quy tắc nhân theo hàng · đếm bằng phần bù",
+ "dangGoc": "Dạng gốc: SỐ 4.2 mức Lớp 4 — Quy tắc nhân: đếm số cách chọn của từng hàng rồi nhân lại; áp thêm điều kiện vào đúng hàng.",
  "skills": {
   "bktUnit": "CHUONG:2@G4",
   "primary": []
  },
  "series": {
-  "order": 8,
-  "prev": "DL:KSN4.B07",
-  "next": "DL:KSN4.B50"
+  "order": 18,
+  "prev": "DL:KSN4.B91",
+  "next": "DL:KSN4.B92"
  },
  "objective": {
   "id": "O1",
-  "text": "Đếm số lượng số theo quy tắc nhân: mỗi hàng đếm số cách chọn, rồi nhân các cách với nhau. Giải thích vì sao có 900 số có ba chữ số (9 × 10 × 10) — khớp với phép đếm của Bài 7. Dùng phần bù để đếm \"số CÓ chứa chữ số 0\": lấy tất cả trừ số KHÔNG chứa.",
-  "kidText": "Mật khẩu ba chữ số, mỗi chữ số từ 1 đến 9. Có bao nhiêu mật khẩu như thế — đủ an toàn chưa nhỉ?",
+  "text": "Kẻ một ô cho mỗi hàng rồi điền số cách chọn của hàng ấy. Nhân dồn các số cách lại để ra tổng số cách. Biết điều kiện rơi vào hàng nào thì sửa số cách của đúng hàng ấy.",
+  "kidText": "Ổ khoá ba vòng, mỗi vòng chín chữ số. Con đoán có bao nhiêu mật khẩu nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — QUY TẮC NHÂN THEO HÀNG: vòng 1: 9 cách (1-9); vòng 2: 9 cách; vòng 3: 9 cách. Mỗi cách của vòng 1 ghép được với đủ 9 cách của vòng 2, rồi mỗi cặp lại ghép đủ 9 cách của vòng 3 → tổng: 9 × 9 × 9 = 729 mật khẩu. Không viết ra số nào mà đếm được tất cả!"
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — KIỂM CHỨNG BẰNG NGƯỜI QUEN: đếm mọi số có 3 chữ số (không kiêng gì): hàng trăm 9 cách (1-9, vì không đứng đầu bằng 0), hàng chục 10 cách, hàng đơn vị 10 cách → 9 × 10 × 10 = 900. Bài 7 từng đếm dãy 100...999 được 900 số — hai con đường, một đáp số: quy tắc nhân đã qua kiểm định!"
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — PHẦN BÙ, PHÉP ĐẾM NGƯỢC ĐỜI: \"có bao nhiêu số 3 chữ số CÓ chứa chữ số 0?\" — đếm thẳng thì rối vì số 0 có thể ở chục, ở đơn vị, ở cả hai. Đếm ngược: KHÔNG chứa 0 là 9 × 9 × 9 = 729 → CÓ chứa 0 = 900 − 729 = 171. Khẩu quyết: khó đếm cái CÓ, hãy đếm cái KHÔNG rồi trừ."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — THÊM ĐIỀU KIỆN VÀO TỪNG HÀNG: mật khẩu không chứa 0 VÀ là số chẵn? Chỉ hàng đơn vị bị siết: phải thuộc {2, 4, 6, 8} — 4 cách. Kết quả: 9 × 9 × 4 = 324. Điều kiện rơi vào hàng nào, sửa số cách của ĐÚNG hàng ấy."
-   }
-  ],
-  "mantra": "Cách đếm: kẻ một ô cho mỗi hàng, điền số cách chọn của hàng ấy (nhớ: hàng đầu không được là 0), rồi nhân dồn. Gặp chữ \"CÓ chứa\": nghĩ ngay phần bù. Gặp thêm điều kiện chẵn - lẻ: siết đúng hàng đơn vị. Và luôn kiểm chứng công cụ bằng một trường hợp đã biết đáp số!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Được hỏi \"có bao nhiêu số ba chữ số?\", Trí Long tính ngay: \"Ba hàng, hàng nào cũng 10 chữ số 0-9, vậy là 10 × 10 × 10 = 1000 số!\"",
-    "signal": "Bé làm theo cách Trí Long vừa nói.",
-    "fix": "Gợi ý 1: Viết thử một \"số\" mà hàng trăm bằng 0 — chẳng hạn 047. Nó có thật là số có BA chữ số không, hay chỉ là số 47 đội mũ? Gợi ý 2: Hàng nào bị cấm chữ số 0? Sửa số cách của đúng hàng ấy rồi tính lại — và đối chiếu với phép đếm dãy 100 đến 999 của Bài 7 để phân xử: 1000 hay 900 mới đúng?"
+    "wrong": "Có bạn đếm ba vòng khoá rồi cộng lại: \"9 cộng 9 cộng 9 bằng 27 mật khẩu.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con thử với ổ khoá hai vòng, mỗi vòng chỉ có 2 chữ số thôi. Liệt kê ra giấy xem được mấy mật khẩu. Gợi ý 2: Liệt kê được 4 chứ không phải 4 do cộng — con thử xem 2 và 2 phải làm phép gì mới ra 4. Chữa: mỗi cách của vòng trước ghép được với ĐỦ mọi cách của vòng sau, nên phải nhân chứ không cộng. Kết quả là 729."
    }
   ]
  },
@@ -59,117 +42,45 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Mật khẩu gồm 3 chữ số, mỗi chữ số lấy từ 1 đến 9 (kiêng số 0). Hỏi có tất cả bao nhiêu mật khẩu như vậy — đủ an toàn không?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "CHO GÌ? mật khẩu gồm 3 chữ số, mỗi chữ số lấy từ 1 đến 9 (kiêng số 0).\nHỎI GÌ? có tất cả bao nhiêu mật khẩu như vậy — đủ an toàn không?\nĐẠI LƯỢNG & ĐƠN VỊ: số mật khẩu (cách) — không phải giá trị con số, mà là SỐ CÁCH CHỌN.\nQUAN HỆ GIỮA CHÚNG: ba vòng số ĐỘC LẬP nhau: vòng 1 chọn gì không cản vòng 2, vòng 3 — mỗi tổ hợp ba vòng cho đúng một mật khẩu.\nCHỌN CÔNG CỤ: QUY TẮC NHÂN: đếm số cách chọn TỪNG vòng, rồi nhân dồn ba con số ấy.\nƯỚC LƯỢNG TRƯỚC: mỗi vòng gần chục cách, ba vòng nhân nhau — chắc cỡ bảy, tám trăm mật khẩu.",
-    "teaches": [],
-    "nhan": "NHỊP 1, DỊCH — từ chiếc khóa 3 vòng sang ba lần chọn"
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S6",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S7",
-    "kind": "explain",
-    "narration": "LẮP: tư vấn gửi bác Hòa: \"Kiêng số 0, bác vẫn còn 729 mật khẩu — kẻ gian mò trúng khó hơn trúng thưởng. Nhưng nếu bỏ kiêng, bác có 900 lựa chọn; còn muốn thật kín, đừng đặt mật khẩu là năm sinh!\" — lời khuyên bảo mật đầu tiên của các nhí.\nSOI: soi bằng phép cộng phần: số CÓ chứa 0 (171) + số KHÔNG chứa 0 (729) = 900 ✓ — hai mảnh ghép khít thành tổng thể, không hụt không thừa.\nDÙNG NGOÀI ĐỜI: quy tắc nhân đếm được mọi thứ quanh con: cách phối áo - quần - giày, cách chọn món ba bữa, số biển số xe một tỉnh — thế giới của các CÁCH CHỌN mở ra từ hôm nay.",
-    "teaches": [],
-    "nhan": "NHỊP 3, LẮP + NHỊP 4, SOI"
-   },
-   {
-    "id": "S8",
     "kind": "trap",
-    "narration": "Được hỏi \"có bao nhiêu số ba chữ số?\", Trí Long tính ngay: \"Ba hàng, hàng nào cũng 10 chữ số 0-9, vậy là 10 × 10 × 10 = 1000 số!\"",
+    "narration": "Có bạn đếm ba vòng khoá rồi cộng lại: \"9 cộng 9 cộng 9 bằng 27 mật khẩu.\"",
     "teaches": []
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "Có bao nhiêu số có ba chữ số mà cả ba chữ số đều khác 0?",
+  "problem": "Một ổ khoá có ba vòng, mỗi vòng chọn được một chữ số từ 1 đến 9. Hỏi có bao nhiêu mật khẩu?",
   "steps": [
    {
-    "show": "Tóm tắt"
+    "show": "Kẻ ô cho từng hàng"
    },
    {
-    "show": "Số có 3 chữ số; mỗi chữ số đều khác 0. Đếm số lượng."
+    "show": "Ba vòng thì kẻ ba ô. Mỗi ô ghi số cách chọn của vòng ấy: 9, rồi 9, rồi 9."
    },
    {
-    "show": "Nhận diện: bài đếm SỐ CÁCH, không phải tính giá trị."
+    "show": "Vì sao lại nhân"
    },
    {
-    "show": "Mô hình (quy tắc nhân)"
+    "show": "Mỗi cách của vòng một ghép được với đủ chín cách của vòng hai, rồi mỗi cặp ấy lại ghép được với đủ chín cách của vòng ba."
    },
    {
-    "show": "Hàng trăm: chọn 1 trong 1-9 → 9 cách"
+    "show": "Nên nhân dồn: 9 × 9 × 9 = 729."
    },
    {
-    "show": "Hàng chục: chọn 1 trong 1-9 → 9 cách"
+    "show": "Đáp số: 729 mật khẩu."
    },
    {
-    "show": "Hàng đơn vị: chọn 1 trong 1-9 → 9 cách"
+    "show": "Kiểm bằng người quen"
    },
    {
-    "show": "Mỗi hàng một dòng — \"bảng ba ô\" là sơ đồ của bài đếm."
+    "show": "Đếm mọi số có ba chữ số cũng một lối ấy: hàng trăm 9 cách vì không được là 0, hàng chục 10 cách, hàng đơn vị 10 cách. Được 9 × 10 × 10 = 900 — đúng bằng số các số có ba chữ số."
    },
    {
-    "show": "Bài giải"
+    "show": "Thêm điều kiện thì sao"
    },
    {
-    "show": "Mỗi chữ số có 9 cách chọn (các chữ số từ 1 đến 9)."
-   },
-   {
-    "show": "Ba hàng chọn độc lập với nhau nên số các số cần đếm là"
-   },
-   {
-    "show": "9 × 9 × 9 = 729 (số)"
-   },
-   {
-    "show": "Chữ \"độc lập\" là căn cứ cho phép NHÂN — thiếu nó phép nhân thành vô căn cứ."
-   },
-   {
-    "show": "Đáp số: 729 số."
-   },
-   {
-    "show": "Đáp số kèm đơn vị \"số\"."
-   },
-   {
-    "show": "Thử lại: tất cả số 3 chữ số là 900; số có chứa 0 là 900 − 729 = 171 — cộng lại đủ 900 ✓"
-   },
-   {
-    "show": "Soi bằng phần bù: hai mảnh phải ghép khít lại thành tổng."
+    "show": "Mật khẩu không chứa 0 mà lại là số chẵn thì chỉ hàng đơn vị bị siết, chỉ còn chọn được 2, 4, 6 hoặc 8, tức 4 cách. Kết quả: 9 × 9 × 4 = 324."
    }
   ]
  },
@@ -178,134 +89,127 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Dùng quy tắc nhân, đếm xem có bao nhiêu số có hai chữ số.",
+     "text": "Ổ khoá ba vòng, mỗi vòng 9 cách chọn. Có bao nhiêu mật khẩu?",
      "answerKey": {
-      "value": 90
+      "value": 729
      },
-     "solutionNarrative": "Hàng chục 9 cách (1-9), hàng đơn vị 10 cách → 9 × 10 = 90 số.",
+     "solutionNarrative": "Nhân dồn ba ô: 9 × 9 × 9 = 729.",
      "hints": [
-      "Kẻ một ô cho mỗi hàng rồi điền số cách chọn.",
-      "Hàng đầu không được là 0."
+      "Con kẻ ba ô, mỗi ô ghi số cách chọn của một vòng.",
+      "Rồi nhân dồn cả ba ô lại với nhau."
      ]
     },
     {
      "id": "C2",
-     "text": "Có bao nhiêu số có hai chữ số mà cả hai chữ số đều khác 0?",
+     "text": "Chữ số hàng trăm của một số có ba chữ số có mấy cách chọn?",
      "answerKey": {
-      "value": 81
+      "value": 9
      },
-     "solutionNarrative": "9 × 9 = 81 số.",
+     "solutionNarrative": "Chọn từ 1 đến 9, tức 9 cách — không được là 0 vì số sẽ tụt mất một chữ số.",
      "hints": [
-      "Giờ thì cả hai ô đều bị siết.",
-      "Nhân dồn số cách chọn của hai ô."
+      "Chữ số đứng đầu không được là số không, vì số sẽ tụt mất một chữ số.",
+      "Vậy nó chỉ chọn được từ một trở lên."
      ]
     },
     {
      "id": "C3",
-     "text": "Từ hai kết quả trên, suy ra có bao nhiêu số có hai chữ số CÓ chứa chữ số 0. Liệt kê để kiểm chứng.",
+     "text": "Chữ số hàng chục của số ấy có mấy cách chọn?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số các số có chứa chữ số 0",
-        "value": 9
-       }
-      ]
+      "value": 10
      },
-     "solutionNarrative": "90 − 81 = 9 số; liệt kê: 10, 20, 30, 40, 50, 60, 70, 80, 90 — đúng 9 số ✓.",
+     "solutionNarrative": "Chọn từ 0 đến 9, tức 10 cách.",
      "hints": [
-      "Gặp chữ CÓ chứa thì nghĩ ngay tới phần bù.",
-      "Lấy tất cả trừ đi phần không chứa."
+      "Hai hàng sau thì chọn thoải mái, kể cả số không.",
+      "Từ không tới chín thì có bao nhiêu chữ số?"
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Dùng quy tắc nhân chứng tỏ rằng có đúng 900 số có ba chữ số.",
+     "text": "Vậy có bao nhiêu số có ba chữ số?",
      "answerKey": {
       "value": 900
      },
-     "solutionNarrative": "Hàng trăm 9 cách (không được 0), hàng chục 10, hàng đơn vị 10 → 9 × 10 × 10 = 900 số.",
+     "solutionNarrative": "Nhân dồn: 9 × 10 × 10 = 900.",
      "hints": [
-      "Ba ô: trăm, chục, đơn vị.",
-      "Ô đầu chỉ có chín lựa chọn, hai ô sau đủ mười."
+      "Con kẻ ba ô rồi điền số cách của từng hàng, hàng đầu ít hơn hai hàng sau.",
+      "Nhân dồn ba ô lại."
      ]
     },
     {
      "id": "C5",
-     "text": "Bác Hòa đặt mật khẩu 3 chữ số đều khác 0. Bác có bao nhiêu lựa chọn?",
+     "text": "Mật khẩu ba chữ số không chứa 0 và phải là số chẵn. Hàng đơn vị có mấy cách chọn?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số lựa chọn",
-        "value": 729
-       }
-      ]
+      "value": 4
      },
-     "solutionNarrative": "9 × 9 × 9 = 729 lựa chọn.",
+     "solutionNarrative": "Chỉ chọn được 2, 4, 6, 8 — tức 4 cách.",
      "hints": [
-      "Ba ô, ô nào cũng bị siết như nhau.",
-      "Nhân dồn số cách chọn của cả ba ô."
+      "Số chẵn thì chữ số cuối phải là số chẵn, mà lại không được là số không.",
+      "Con liệt kê ra: hai, bốn, sáu, tám — đếm xem mấy cái."
      ]
     },
     {
      "id": "C6",
-     "text": "Có bao nhiêu số có ba chữ số CÓ chứa ít nhất một chữ số 0?",
+     "text": "Vậy có bao nhiêu mật khẩu như thế?",
      "answerKey": {
-      "value": 171
+      "value": 324
      },
-     "solutionNarrative": "Phần bù: 900 − 729 = 171 số.",
+     "solutionNarrative": "Nhân dồn: 9 × 9 × 4 = 324.",
      "hints": [
-      "Phần bù: lấy tất cả trừ đi phần không chứa.",
-      "Hai con số ấy vừa tính ở hai câu trên."
+      "Hai hàng đầu vẫn chín cách như cũ, chỉ hàng cuối bị siết.",
+      "Nhân dồn ba ô lại."
      ]
     },
     {
      "id": "C7",
-     "text": "Có bao nhiêu số có hai chữ số mà cả hai chữ số đều là chữ số chẵn? (Chú ý: hàng chục không được bằng 0!)",
+     "text": "Ổ khoá hai vòng, mỗi vòng 9 cách chọn thì có bao nhiêu mật khẩu?",
      "answerKey": {
-      "value": 20
+      "value": 81
      },
-     "solutionNarrative": "Hàng chục chọn trong 2, 4, 6, 8 (4 cách — số 0 không được đứng đầu!), hàng đơn vị chọn trong 0, 2, 4, 6, 8 (5 cách) → 4 × 5 = 20 số.",
+     "solutionNarrative": "Nhân dồn hai ô: 9 × 9 = 81.",
      "hints": [
-      "Kẻ hai ô rồi điền số cách chọn từng ô.",
-      "Ô hàng chục ít lựa chọn hơn vì số 0 không đứng đầu."
+      "Hai vòng thì kẻ hai ô thôi.",
+      "Nhân hai ô ấy với nhau."
      ]
     }
    ],
    "challenge": [
     {
      "id": "C8",
-     "text": "Có bao nhiêu số có ba chữ số mà cả ba chữ số đều là chữ số lẻ?",
+     "text": "Lập số có hai chữ số KHÁC NHAU từ các chữ số 1 đến 9. Hàng chục mấy cách, hàng đơn vị mấy cách, và tất cả bao nhiêu số?",
      "answerKey": {
       "parts": [
        {
-        "label": "số các số",
-        "value": 125
+        "label": "hàng chục",
+        "value": 9
+       },
+       {
+        "label": "hàng đơn vị",
+        "value": 8
+       },
+       {
+        "label": "tất cả",
+        "value": 72
        }
       ]
      },
-     "solutionNarrative": "Mỗi hàng chọn trong 1, 3, 5, 7, 9 → 5 × 5 × 5 = 125 số.",
+     "solutionNarrative": "Hàng chục 9 cách. Hàng đơn vị phải khác chữ số vừa chọn nên chỉ còn 8 cách. Tất cả: 9 × 8 = 72 số.",
      "hints": [
-      "Chữ số lẻ thì có mấy lựa chọn?",
-      "Ba ô đều chọn trong cùng một bộ."
+      "Hàng đầu chọn thoải mái trong chín chữ số ấy.",
+      "Hàng sau phải khác chữ số vừa chọn, nên bớt đi một cách."
      ]
     },
     {
      "id": "C9",
-     "text": "Có bao nhiêu số có ba chữ số chứa ĐÚNG MỘT chữ số 0? (Gợi ý: chữ số 0 ấy đứng được ở những hàng nào? Đếm từng trường hợp rồi cộng — và kiểm chứng bằng kết quả Câu 6!)",
+     "text": "Ổ khoá bốn vòng, mỗi vòng 9 cách chọn thì có bao nhiêu mật khẩu?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "số các số chứa đúng một chữ số 0",
-        "value": 162
-       }
-      ]
+      "value": 6561
      },
-     "solutionNarrative": "Chữ số 0 không đứng được hàng trăm. Trường hợp 0 ở hàng chục (đơn vị khác 0): 9 × 1 × 9 = 81; trường hợp 0 ở hàng đơn vị (chục khác 0): 9 × 9 × 1 = 81 → đúng một chữ số 0: 81 + 81 = 162 số. Kiểm chứng: có chứa 0 (171) = đúng một 0 (162) + hai chữ số 0 (100, 200, ..., 900: 9 số) ✓.",
+     "solutionNarrative": "Nhân dồn bốn ô: 9 × 9 × 9 × 9 = 6 561.",
      "hints": [
-      "Chữ số 0 ấy đứng được ở những hàng nào?",
-      "Đếm riêng từng trường hợp rồi cộng lại."
+      "Bốn vòng thì kẻ bốn ô, mỗi ô chín cách.",
+      "Nhân dồn cả bốn ô, hoặc lấy kết quả ba vòng nhân thêm chín."
      ]
     }
    ]
@@ -316,103 +220,82 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Có tất cả 900 số có ba chữ số.",
+    "text": "Quy tắc nhân là nhân số cách chọn của từng hàng với nhau.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng. Kẻ một ô cho mỗi hàng rồi nhân dồn."
    },
    {
     "id": "Q2",
-    "text": "Có 90 số có hai chữ số mà cả hai chữ số đều khác 0.",
+    "text": "Ba vòng khoá, mỗi vòng 9 cách, có bao nhiêu mật khẩu?",
+    "format": "mcq",
+    "choices": [
+     "729",
+     "27",
+     "81",
+     "999"
+    ],
+    "answerKey": {
+     "choice": "729"
+    },
+    "solutionNarrative": "Nhân dồn 9 × 9 × 9."
+   },
+   {
+    "id": "Q3",
+    "text": "Chữ số hàng trăm của một số ba chữ số có 10 cách chọn.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "9 × 9 = 81 số."
-   },
-   {
-    "id": "Q3",
-    "text": "Số các số có hai chữ số là:",
-    "format": "mcq",
-    "choices": [
-     "A. 90",
-     "B. 99",
-     "C. 89"
-    ],
-    "answerKey": {
-     "choice": "A. 90"
-    },
-    "solutionNarrative": "90)."
+    "solutionNarrative": "Sai. Chỉ 9 cách, vì nó không được là 0."
    },
    {
     "id": "Q4",
-    "text": "Số các số có ba chữ số toàn chữ số lẻ là:",
+    "text": "Có bao nhiêu số có ba chữ số?",
     "format": "mcq",
     "choices": [
-     "A. 125",
-     "B. 100",
-     "C. 729"
+     "900",
+     "999",
+     "1 000",
+     "899"
     ],
     "answerKey": {
-     "choice": "A. 125"
+     "choice": "900"
     },
-    "solutionNarrative": "125)."
+    "solutionNarrative": "Nhân dồn 9 × 10 × 10."
    },
    {
     "id": "Q5",
-    "text": "Số các số có ba chữ số CÓ chứa chữ số 0 là:",
-    "format": "mcq",
-    "choices": [
-     "A. 171",
-     "B. 271",
-     "C. 900"
-    ],
+    "text": "Điều kiện rơi vào hàng nào thì sửa số cách của đúng hàng ấy.",
+    "format": "tf",
     "answerKey": {
-     "choice": "A. 171"
+     "value": true
     },
-    "solutionNarrative": "171)."
+    "solutionNarrative": "Đúng. Các hàng khác giữ nguyên."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Trò \"phối đồ\": 3 áo, 2 quần, 2 đôi giày — con đoán số cách phối bằng quy tắc nhân (12) rồi... xếp thật ra giường kiểm chứng. Quy tắc nhân sống động hơn mọi lời giảng.",
-  "homeActivity": "Khi con dùng phần bù, hỏi lại: \"vì sao không đếm thẳng?\" — con nói được \"vì cái CÓ nhiều trường hợp, cái KHÔNG chỉ một kiểu\" là đã nắm hồn phương pháp.",
-  "watchFor": "NÊN: cho con tự kiểm \"hai mảnh ghép khít\" (CÓ + KHÔNG = tất cả) ở mọi bài phần bù. KHÔNG NÊN: đưa bài nhiều điều kiện kết hợp (chẵn + các chữ số khác nhau) — tổ hợp ấy hẹn lớp 5."
+  "onComplete": "Lấy hai bộ quần áo và ba cái mũ, cho con thử mọi cách phối. Đếm ra 6 chứ không phải 5 — đó chính là quy tắc nhân.",
+  "homeActivity": "Con hay lẫn cộng với nhân. Mẹo phân biệt: chọn MỘT thứ trong nhiều nhóm thì cộng; chọn MỖI NHÓM một thứ rồi ghép lại thì nhân.",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L4H_B08_MO",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L4H_B08_MO.png",
-   "caption": "Ba vòng số, mỗi vòng chọn được mấy chữ số.",
-   "sha256_16": "e94627440030224e",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L4H_B08_G1",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L4H_B08_G1.png",
-   "caption": "Khó đếm cái CÓ thì đếm cái KHÔNG rồi lấy tất cả trừ đi.",
-   "sha256_16": "9745fdadb2f7ed5c",
-   "mucGoc": "khamPha"
-  }
- ],
- "hatMam": "Lớp 3, ở Bài 8, con đếm số chứa (hoặc không chứa) một chữ số bằng liệt kê chăm chỉ. Năm nay có hai công cụ khiến việc liệt kê... thất nghiệp: QUY TẮC NHÂN (đếm cách chọn từng hàng rồi nhân dồn) và PHẦN BÙ (khó đếm cái CÓ thì đếm cái KHÔNG rồi lấy tất cả trừ đi).",
+ "figureSpec": [],
+ "hatMam": "Ổ khoá ba vòng, mỗi vòng chín chữ số. Có bao nhiêu mật khẩu? Liệt kê ra thì chép cả ngày. Có một cách đếm không phải liệt kê.",
  "duongLui": {
   "ve": [
-   "DL:KSN3.B04"
+   "DL:KSN3.B11"
   ],
   "ten": [
-   "ĐẾM SỐ & ĐẾM TRANG NÂNG CẤP"
+   "GA NÀY TÀU CÓ DỪNG KHÔNG?"
   ],
-  "canCu": "sachSua",
+  "canCu": "chuDe",
   "lopDuoi": 3,
   "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B08_giang.mp4"
  }
 }

@@ -1,0 +1,297 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B87",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 11 · NHẨM NHANH VỚI 11 — NHÂN MƯỜI RỒI CỘNG CHÍNH NÓ",
+ "durationMinutes": 10,
+ "so": 11,
+ "chuong": 2,
+ "tenChuong": "BỐN PHÉP TÍNH VÀ TÍNH NHANH",
+ "dangGoc": "Dạng gốc: SỐ 7.1 mức Lớp 4 — Nhẩm nhân với 11 bằng hai cách: nhân mười rồi cộng, và mẹo hai đầu.",
+ "skills": {
+  "bktUnit": "CHUONG:2@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 11,
+  "prev": "DL:KSN4.B86",
+  "next": "DL:KSN4.B88"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhẩm nhân 11 bằng cách nhân 10 rồi cộng chính số ấy. Dùng được mẹo hai đầu: hai chữ số ra hai bên, tổng của chúng vào giữa. Biết khi tổng hai chữ số vượt 9 thì phải nhớ 1 sang trái.",
+  "kidText": "Nhân với 11 nghe khó mà thật ra dễ lắm. Con thử đoán 35 nhân 11 bằng bao nhiêu nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn tính 57 × 11 bằng mẹo hai đầu rồi ghi thẳng 5, 12, 7 thành \"5127\".",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Số 5127 có mấy chữ số? Một số hai chữ số nhân 11 thì được số mấy chữ số? Gợi ý 2: Chỗ ở giữa chỉ chứa được MỘT chữ số thôi. Tổng 12 thì phần thừa đi đâu? Chữa: giữ chữ số 2 ở giữa, nhớ 1 sang trái cộng vào chữ số 5 thành 6. Kết quả là 627."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn tính 57 × 11 bằng mẹo hai đầu rồi ghi thẳng 5, 12, 7 thành \"5127\".",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tính nhanh 35 × 11, rồi tính nhanh 57 × 11.",
+  "steps": [
+   {
+    "show": "Cách chắc chắn nhất"
+   },
+   {
+    "show": "Mười một bằng mười cộng một. Nên nhân với mười một là nhân mười rồi cộng thêm chính số ấy một lần."
+   },
+   {
+    "show": "Ba mươi lăm nhân mười bằng ba trăm năm mươi. Cộng thêm ba mươi lăm được ba trăm tám mươi lăm."
+   },
+   {
+    "show": "Mẹo hai đầu, nhanh hơn nữa"
+   },
+   {
+    "show": "Viết hai chữ số ra hai bên: 3 và 5. Cộng chúng lại được 8, nhét vào giữa. Được 385 — đúng như vừa tính."
+   },
+   {
+    "show": "Chỗ phải cẩn thận"
+   },
+   {
+    "show": "Với 57 thì tổng hai chữ số là 12, hai chữ số mà nhét vào một chỗ không vừa."
+   },
+   {
+    "show": "Khi ấy để lại chữ số 2 ở giữa và nhớ 1 sang bên trái: 5 thêm 1 thành 6. Được 627."
+   },
+   {
+    "show": "Kiểm bằng cách chắc chắn: 570 + 57 = 627 — khớp."
+   },
+   {
+    "show": "Đáp số: 385 và 627."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính 35 × 10.",
+     "answerKey": {
+      "value": 350
+     },
+     "solutionNarrative": "Thêm một chữ số 0: 35 × 10 = 350.",
+     "hints": [
+      "Nhân mười thì thêm một chữ số không vào bên phải.",
+      "Con chép số cũ rồi viết thêm chữ số không vào sau."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tính 350 + 35.",
+     "answerKey": {
+      "value": 385
+     },
+     "solutionNarrative": "Cộng lại: 350 + 35 = 385.",
+     "hints": [
+      "Con đặt tính rồi cộng.",
+      "Cộng số vừa nhân mười với chính số ban đầu."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vậy 35 × 11 bằng bao nhiêu?",
+     "answerKey": {
+      "value": 385
+     },
+     "solutionNarrative": "Nhân mười rồi cộng chính nó, được 385.",
+     "hints": [
+      "Nhân mười một là nhân mười rồi cộng thêm chính nó một lần.",
+      "Hai câu trên vừa làm đúng hai bước ấy rồi."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tính nhanh 24 × 11.",
+     "answerKey": {
+      "value": 264
+     },
+     "solutionNarrative": "Nhân mười được 240, cộng 24 được 264. Mẹo hai đầu cũng ra: 2 và 4 hai bên, tổng 6 vào giữa.",
+     "hints": [
+      "Con nhân mười trước rồi cộng thêm chính nó.",
+      "Kiểm bằng mẹo hai đầu: hai chữ số ra hai bên, cộng chúng lại nhét vào giữa."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Dùng mẹo hai đầu cho 35 × 11: viết 3 và 5 ra hai bên, ở giữa là số nào?",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "Ở giữa là tổng hai chữ số: 3 + 5 = 8.",
+     "hints": [
+      "Mẹo hai đầu nhét tổng hai chữ số vào chỗ giữa.",
+      "Con cộng hai chữ số của số ban đầu lại."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Tính nhanh 62 × 11.",
+     "answerKey": {
+      "value": 682
+     },
+     "solutionNarrative": "Nhân mười được 620, cộng 62 được 682.",
+     "hints": [
+      "Số này có hai chữ số, con vẫn nhân mười rồi cộng chính nó vào.",
+      "Đặt tính cho thẳng hàng rồi cộng."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Tính nhanh 57 × 11.",
+     "answerKey": {
+      "value": 627
+     },
+     "solutionNarrative": "Nhân mười được 570, cộng 57 được 627.",
+     "hints": [
+      "Tổng hai chữ số của số này hơi lớn, nên đi lối chắc chắn cho khỏi nhầm.",
+      "Cách này chắc chắn hơn mẹo hai đầu khi tổng hai chữ số hơi lớn."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Với 57 × 11, tổng hai chữ số là 12 — hai chữ số mà chỗ giữa chỉ chứa được một. Phải làm gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "phải làm gì",
+        "options": [
+         "nhớ 1 sang trái",
+         "bỏ bớt chữ số đi"
+        ],
+        "value": "nhớ 1 sang trái"
+       }
+      ]
+     },
+     "solutionNarrative": "Giữ chữ số 2 ở giữa và nhớ 1 sang bên trái, cộng vào chữ số 5 thành 6.",
+     "hints": [
+      "Chỗ giữa chỉ chứa được một chữ số thôi. Phần thừa phải đi đâu đó.",
+      "Nó chạy sang bên trái và cộng vào chữ số đứng đầu."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Tính nhanh 11 × 11.",
+     "answerKey": {
+      "value": 121
+     },
+     "solutionNarrative": "Nhân mười được 110, cộng 11 được 121.",
+     "hints": [
+      "Hai chữ số của nó giống hệt nhau, nhưng cách làm thì vẫn thế.",
+      "Mẹo hai đầu cũng ra: một và một hai bên, tổng của chúng vào giữa."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Nhân với 11 là nhân 10 rồi cộng thêm chính số ấy.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, vì 11 bằng 10 cộng 1."
+   },
+   {
+    "id": "Q2",
+    "text": "Tính 35 × 11.",
+    "format": "mcq",
+    "choices": [
+     "385",
+     "350",
+     "355",
+     "3 511"
+    ],
+    "answerKey": {
+     "choice": "385"
+    },
+    "solutionNarrative": "Nhân mười được 350, cộng 35 được 385."
+   },
+   {
+    "id": "Q3",
+    "text": "Mẹo hai đầu: hai chữ số ra hai bên, tổng của chúng nhét vào giữa.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, và nhớ để ý khi tổng vượt 9."
+   },
+   {
+    "id": "Q4",
+    "text": "Tính 57 × 11.",
+    "format": "mcq",
+    "choices": [
+     "627",
+     "517",
+     "5 127",
+     "587"
+    ],
+    "answerKey": {
+     "choice": "627"
+    },
+    "solutionNarrative": "Tổng hai chữ số là 12, giữ 2 ở giữa và nhớ 1 sang trái."
+   },
+   {
+    "id": "Q5",
+    "text": "Tổng hai chữ số vượt 9 thì bỏ bớt chữ số hàng chục của tổng đi.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phải nhớ 1 sang bên trái chứ không được bỏ."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cho con nhẩm nhanh vài phép nhân 11 rồi kiểm bằng máy tính. Sai ở đâu gần như luôn là chỗ nhớ 1.",
+  "homeActivity": "Nếu con lẫn thì bảo con quay về cách chắc chắn: nhân 10 rồi cộng. Chậm hơn vài giây nhưng không bao giờ sai.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Nhân với 11 nghe khó, mà thật ra chỉ là nhân với 10 rồi cộng thêm một lần nữa. Còn có một mẹo nhanh hơn nữa, nhưng phải cẩn thận một chỗ.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B05"
+  ],
+  "ten": [
+   "NHÂN RA NGOÀI BẢNG"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B87_giang.mp4"
+ }
+}

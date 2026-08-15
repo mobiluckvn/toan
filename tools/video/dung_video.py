@@ -373,6 +373,56 @@ def khung(c: dict) -> Image.Image:
             giua(d, y0 + h + 110, c["chuCuoi"], phong(32),
                  GOLD_DARK if c.get("vienDam") else TEAL_DARK, rong=W - 200)
 
+    elif L == "bang_hang":
+        # ══ BẢNG HÀNG VÀ LỚP ══
+        # Cả chương một đứng ở một ý mà nói bằng lời thì rối: chữ số đứng ở đâu thì
+        # nặng bấy nhiêu, và cứ BA HÀNG gom thành MỘT LỚP. Vẽ ra thì hai chuyện ấy
+        # thành một cái nhìn: mỗi chữ số một ô, ba ô một khung, khung có tên.
+        #
+        # Ô đánh số TỪ PHẢI SANG — đúng chiều đọc giá trị, không phải chiều đọc chữ.
+        # `toSang` khai theo chiều ấy: 0 là hàng đơn vị.
+        giua(d, 40, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        chu_so = [k for k in str(c.get("so", "")) if k.isdigit()]
+        n = len(chu_so)
+        TEN_HANG = ["đơn vị", "chục", "trăm", "nghìn", "chục nghìn", "trăm nghìn",
+                    "triệu", "chục triệu", "trăm triệu"]
+        TEN_LOP = ["đơn vị", "nghìn", "triệu"]
+        o = min(104, int((W - 200) / max(n, 1)))
+        x0, y0 = (W - n * o) // 2, 210
+        sang = set(c.get("toSang") or [])
+        for i, k in enumerate(chu_so):
+            bac = n - 1 - i                       # bậc tính từ PHẢI sang
+            to = bac in sang
+            the(d, x0 + i * o, y0, o, o, nen=GOLD_PALE if to else "#FFFFFF",
+                vien=GOLD if to else LINE, day=4 if to else 3, bo=0)
+            f = phong(int(o * 0.56))
+            d.text((x0 + i * o + (o - d.textlength(k, font=f)) / 2, y0 + o * 0.18),
+                   k, font=f, fill=GOLD_DARK if to else NAVY)
+            g = phong(21)
+            ten = TEN_HANG[bac] if bac < len(TEN_HANG) else ""
+            for j, t in enumerate(ten.split()):
+                d.text((x0 + i * o + (o - d.textlength(t, font=g)) / 2,
+                        y0 + o + 8 + j * 24), t, font=g, fill=MUTE)
+        # Khung lớp: ba hàng một khung, tên khung viết phía trên.
+        if c.get("hienLop", True):
+            for lop in range((n + 2) // 3):
+                dau = n - (lop + 1) * 3
+                rong_lop = 3 if dau >= 0 else 3 + dau
+                dau = max(dau, 0)
+                x = x0 + dau * o
+                d.rounded_rectangle([x - 6, y0 - 44, x + rong_lop * o + 6, y0 + o + 6],
+                                    radius=10, outline=TEAL, width=4)
+                t = f"lớp {TEN_LOP[lop]}" if lop < len(TEN_LOP) else ""
+                if t:
+                    g = phong(24)
+                    d.text((x + (rong_lop * o - d.textlength(t, font=g)) / 2, y0 - 40),
+                           t, font=g, fill=TEAL_DARK)
+        y = y0 + o + 76
+        if c.get("chuPhu"):
+            y = giua(d, y, c["chuPhu"], phong(36), INK, rong=W - 180)
+        if c.get("chuCuoi"):
+            giua(d, y + 16, c["chuCuoi"], phong(32), TEAL_DARK, rong=W - 200)
+
     elif L == "goc":
         # ══ GÓC — VẼ RA ĐỂ SO VỚI Ê KE, KHÔNG ĐỂ ĐOÁN BẰNG MẮT ══
         # Cả bài góc đứng ở một ý: MẮT THƯỜNG ĐOÁN SAI. Nên hình này luôn vẽ được

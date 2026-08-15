@@ -1,12 +1,12 @@
 {
  "id": "DL:KSN4.B04",
- "quyen": "lop4",
+ "quyen": "KSN4",
  "so": 4,
- "ten": "LẬP SỐ TỪ THẺ SỐ VÀ SỐ VIẾT NGƯỢC",
+ "ten": "TRÁO HAI CHỮ SỐ — HỌ 9 VÀ HỌ 11",
  "chuong": 1,
  "tenChuong": "SỐ ĐẾN LỚP TRIỆU",
- "dangGoc": "SỐ 1.4 mức Lớp 4 — Hai định luật ab − ba = 9 × (a − b) và ab + ba = 11 × (a + b)",
- "hatMam": "Lớp 3, ở Bài 3, con xếp thẻ số lập số lớn nhất - bé nhất. Năm nay chỉ cần TRÁO hai tấm thẻ của một số — và cả một định luật hiện ra: mọi cú tráo đều để lại dấu vân tay của số 9. Đây là bài \"chứng minh nhỏ\" đầu tiên trong đời của con!",
+ "dangGoc": "Dạng gốc: SỐ 1.4 mức Lớp 4 — Hai định luật khi tráo hai chữ số: hiệu chia hết cho 9, tổng chia hết cho 11.",
+ "hatMam": "Lấy số 72 rồi tráo hai chữ số được 27. Trừ nhau ra 45. Thử số khác cũng ra những con số họ hàng với nhau. Hôm nay con biết vì sao.",
  "ganDuoi": {
   "ve": [
    "DL:KSN3.B03"
@@ -21,103 +21,61 @@
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Hiểu và tự kiểm chứng: ab − ba = 9 × (a − b) và ab + ba = 11 × (a + b).",
-    "Vận dụng tìm số khi biết hiệu (hoặc tổng) của số cũ và số viết ngược, kèm điều kiện về chữ số.",
-    "Tập lập luận \"chứng minh nhỏ\" bằng cấu tạo số — nói được VÌ SAO, không chỉ tính được."
+    "Biết tráo hai chữ số rồi trừ thì hiệu bằng 9 nhân hiệu hai chữ số.",
+    "Biết tráo hai chữ số rồi cộng thì tổng bằng 11 nhân tổng hai chữ số.",
+    "Dùng được hai luật ấy để truy ra số khi biết hiệu hoặc tổng."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 4: cú tráo 72 thành 27",
-   "dong": [
-    "Chiều thứ Bảy, chị Ngọc Anh đến với vẻ mặt hình sự: \"Chị bán hộp bánh 72 nghìn, cô khách quen chuyển khoản xong chị mới thấy màn hình ghi 27 nghìn — em gõ NGƯỢC hai chữ số! Thiếu đúng 45 nghìn.\" Trí Long bấm tay: \"72 trừ 27 bằng 45... Ơ, mà 45 = 9 × 5, mà 7 − 2 cũng bằng 5?!\" Su Kem mắt sáng rực: \"Trùng hợp hay định luật? mình thử HẾT các cú tráo xem sao!\""
-   ],
-   "hinh": [
-    {
-     "id": "L4H_B04_MO",
-     "sauDong": 0,
-     "file": "figures/L4H_B04_MO.png",
-     "caption": "Hai chữ số đổi chỗ cho nhau.",
-     "sha256_16": "21048c1e4bd1c11b"
-    }
-   ],
+   "ten": "CHUYỆN MỞ BÀI — ",
+   "dong": [],
+   "hinh": [],
    "nhip": ""
   },
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
-   "dong": [
-    "CHO GÌ? giá đúng 72 nghìn; khách gõ ngược thành 27 nghìn; tiền thiếu 45 nghìn.",
-    "HỎI GÌ? phần thiếu có tuân theo quy luật nào không — với MỌI cú tráo hai chữ số, hiệu bằng gì?",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: tiền (nghìn đồng); tổng quát hóa: số ab bất kỳ với hai chữ số a, b.",
-    "QUAN HỆ GIỮA CHÚNG: số ab gồm a chục và b đơn vị; số ba gồm b chục và a đơn vị — tráo thẻ là hai chữ số ĐỔI TẦNG cho nhau.",
-    "CHỌN CÔNG CỤ: BẢNG THÍ NGHIỆM (thử nhiều cặp số) + CẤU TẠO SỐ ab = a × 10 + b để chứng minh tổng quát.",
-    "ƯỚC LƯỢNG TRƯỚC: các hiệu thử được (45, 27, 18...) đều có vẻ chia hết cho 9 — dự đoán: hiệu = 9 × (hiệu hai chữ số)."
-   ],
+   "dong": [],
    "hinh": [],
-   "nhip": "NHỊP 1, DỊCH — từ cú gõ nhầm sang cấu tạo số"
+   "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
-   "dong": [
-    "Bước 1 — BÀN THÍ NGHIỆM: thử vài cú tráo: 72 − 27 = 45; 63 − 36 = 27; 91 − 19 = 72; 52 − 25 = 27. Soi cột hiệu hai chữ số: 5, 3, 8, 3 — nhân 9 lên: 45, 27, 72, 27. Khớp cả bốn! Nhưng chưa vội tin: thử mới là dự đoán, phải CHỨNG MINH.",
-    "Bước 2 — CHỨNG MINH NHỎ ĐẦU ĐỜI: viết bằng cấu tạo số: ab = a × 10 + b và ba = b × 10 + a. Trừ nhau: phần a còn a × 10 − a = a × 9; phần b còn b − b × 10 = bớt đi b × 9. Vậy ab − ba = 9 × (a − b) — đúng với MỌI cặp chữ số, không cần thử thêm bất kỳ số nào nữa. Đó là sức mạnh của chứng minh!",
-    "Bước 3 — ĐỊNH LUẬT ANH EM: cộng thay vì trừ: ab + ba = (a × 10 + b) + (b × 10 + a) = 11 × (a + b). Kiểm nhanh: 74 + 47 = 121 = 11 × 11 ✓ (vì 7 + 4 = 11). Hai định luật thẻ số — một họ 9, một họ 11.",
-    "Bước 4 — DÙNG ĐỊNH LUẬT ĐỂ TRUY SỐ: bài ngược lợi hại: hiệu số cũ và số đảo là 45 → a − b = 45 : 9 = 5; thêm điều kiện tổng hai chữ số bằng 9 → tra bảng liệt kê của Bài 1: cặp (7, 2). Số cần tìm: 72 — đúng hộp bánh của chị Ngọc Anh! Hai bài học đầu chương bắt tay nhau.",
-    "MẸO NGƯỜI GIẢI: Tráo hai chữ số: hiệu mang họ SỐ 9 (9 × hiệu chữ số), tổng mang họ SỐ 11 (11 × tổng chữ số). Gặp bài \"số cũ và số viết ngược\": chia hiệu cho 9 (hoặc tổng cho 11) để lộ ra hiệu/tổng hai chữ số, rồi lập bảng liệt kê. Và hãy nhớ cảm giác hôm nay: THỬ cho ta dự đoán, CHỨNG MINH cho ta chắc chắn."
-   ],
-   "hinh": [
-    {
-     "id": "L4H_B04_G2",
-     "sauDong": 1,
-     "file": "figures/L4H_B04_G2.png",
-     "caption": "Hiệu của số và số viết ngược luôn là 9 lần hiệu hai chữ số.",
-     "sha256_16": "cb3257cccf0af8db"
-    }
-   ],
+   "dong": [],
+   "hinh": [],
    "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
-   "dong": [
-    "LẮP: báo cáo gửi chị Ngọc Anh: \"Khách gõ ngược 72 thành 27 nên thiếu đúng 9 × (7 − 2) = 45 nghìn — chị nhắn khách chuyển bổ sung 45 nghìn là khớp sổ.\" Kèm mẹo phòng lỗi: giá bán nên đặt số có hai chữ số GIỐNG nhau (55, 66...) thì gõ ngược cũng... vô hại!",
-    "SOI: soi bằng định luật họ 11: nếu khách chuyển thừa kiểu cộng ngược (72 + 27 = 99 = 11 × 9 ✓) — mọi con số trong vụ án đều khớp hai định luật, hồ sơ đóng.",
-    "DÙNG NGOÀI ĐỜI: từ nay thấy hai giao dịch lệch nhau một số chia hết cho 9, sẽ nghi ngay: \"có ai gõ ngược hai chữ số không?\" — mẹo kiểm toán thật của người lớn đấy!"
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Tìm số có hai chữ số, biết tổng của số đó và số viết ngược lại bằng 121, đồng thời chữ số hàng chục hơn chữ số hàng đơn vị 3 đơn vị.",
-    "Tóm tắt",
-    "Số ab: ab + ba = 121; a hơn b: 3. Tìm ab.",
-    "Ký hiệu ab, ba cho gọn — nhớ gạch ngang trên đầu khi viết vở.",
-    "Mô hình",
-    "Ab + ba = 11 × (a + b) (định luật họ 11)",
-    "→ a + b = 121 : 11 = 11 ; a − b = 3.",
-    "Định luật vừa chứng minh trở thành công cụ dịch đề: 121 → tổng chữ số 11.",
-    "Bài giải",
-    "Tổng của số đó và số viết ngược bằng 11 lần tổng hai chữ số.",
-    "Tổng hai chữ số là: 121 : 11 = 11",
-    "Lập bảng các cặp có tổng 11: 9-2, 8-3, 7-4, 6-5 → hiệu: 7, 5, 3 ✓, 1",
-    "Chữ số hàng chục là 7, chữ số hàng đơn vị là 4. Số cần tìm là 74.",
-    "Bảng liệt kê của Bài 1 tái xuất — công cụ cũ, bài toán mới.",
-    "Đáp số: 74.",
-    "Đáp số một dòng riêng.",
-    "Thử lại: 74 + 47 = 121 ✓ ; 7 − 4 = 3 ✓",
-    "Soi cả HAI điều kiện — thiếu một là chưa xong."
+    "Đề bài: Số 72 tráo hai chữ số được 27. Tính hiệu và tổng của hai số ấy, rồi tìm quy luật.",
+    "Thử vài lần đã",
+    "Bảy mươi hai trừ hai mươi bảy bằng bốn mươi lăm. Sáu mươi ba trừ ba mươi sáu bằng hai mươi bảy. Chín mươi mốt trừ mười chín bằng bảy mươi hai.",
+    "Soi hiệu hai chữ số của từng số: 5, rồi 3, rồi 8. Nhân chín lên: 45, rồi 27, rồi 72 — khớp cả ba.",
+    "Vì sao lại thế",
+    "Chữ số hàng chục vốn đáng gấp mười chính nó; tráo xuống hàng đơn vị thì chỉ còn đáng chính nó, tức mất đi chín lần. Chữ số kia thì ngược lại, được thêm chín lần. Nên hiệu hai số bằng chín nhân hiệu hai chữ số.",
+    "Luật anh em: đem cộng",
+    "Bảy mươi tư cộng bốn mươi bảy bằng một trăm hai mươi mốt, đúng bằng mười một nhân mười một. Mà bảy cộng bốn cũng bằng mười một.",
+    "Đáp số: hiệu mang họ 9, tổng mang họ 11.",
+    "Thử lại: 72 − 27 = 45, mà 45 chia 9 được 5 — đúng bằng 7 trừ 2."
    ],
    "hinh": [],
    "nhip": ""
   },
   "suKemNham": {
-   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Trí Long tổng kết vụ án: \"Định luật là: hiệu hai số tráo LUÔN bằng 45! Vụ nào thiếu 45 nghìn là do gõ ngược, thiếu số khác thì... không phải!\"",
-    "Gợi ý 1: Trí Long lấy MỘT thí nghiệm (72 − 27) làm luôn định luật — lỗi khái quát vội. Thử cú tráo 91 → 19 xem hiệu có bằng 45 không? Vậy con số nào mới là \"phần cứng\" của định luật?",
-    "Gợi ý 2: Phát biểu lại định luật cho chuẩn: hiệu bằng 9 nhân với... gì? Rồi kiểm tra: vụ thiếu 18 nghìn và vụ thiếu 72 nghìn — vụ nào CÓ THỂ do gõ ngược hai chữ số, vụ nào chắc chắn không? (Nhớ: hiệu phải chia hết cho 9!)"
+    "Có bạn nhớ nhầm: \"Tráo hai chữ số rồi cộng thì tổng cũng chia hết cho 9.\"",
+    "Gợi ý 1: Con thử với 74 và 47 xem. Tổng bằng bao nhiêu, có chia hết cho 9 không?",
+    "Gợi ý 2: Chia tổng ấy cho 11 xem được số nào, rồi so với tổng hai chữ số của số ban đầu.",
+    "Chữa: cộng thì mang họ 11 chứ không phải họ 9. Hiệu mới mang họ 9. Hai luật khác nhau, đừng lẫn."
    ],
    "hinh": [],
    "nhip": ""
@@ -139,9 +97,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Trò \"vạch mặt cú tráo\": bố mẹ bí mật tráo hai chữ số của một con số rồi chỉ nói phần chênh — con dùng định luật họ 9 truy ngược. Chơi lúc chờ cơm là vừa một ván.",
-    "Bài này gieo hạt CHỨNG MINH: khi con nói \"vì em thử 4 số đều đúng\", hãy hỏi tiếp \"thế số thứ năm thì sao?\" — dẫn con tới nhu cầu chứng minh bằng cấu tạo số. Đó là bước ngoặt tư duy quan trọng hơn mọi đáp số.",
-    "NÊN: kiểm chứng định luật họ 11 bằng chính ngày sinh, biển số nhà. KHÔNG NÊN: mở rộng sang tráo chữ số của số ba chữ số ở vị trí bất kỳ — để dành lớp 5, hôm nay chỉ hé một câu đố ★★★ là đủ."
+    "Chơi trò tráo số: con viết một số hai chữ số, bố mẹ tráo lại, rồi cả nhà đoán trước hiệu bằng bao nhiêu trước khi tính.",
+    "Con đoán đúng vài lần là tin luật. Nhưng nhớ hỏi con thêm câu \"vì sao\" — bài này có lời giải thích, không phải mẹo học thuộc."
    ],
    "hinh": [],
    "nhip": ""
@@ -155,8 +112,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính: 52 − 25 ; 63 − 36.",
-   "loiChua": "27 ; 27.",
+   "text": "Tính 72 − 27.",
+   "loiChua": "Lấy hiệu: 72 − 27 = 45.",
    "tuLuan": true
   },
   {
@@ -166,8 +123,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính: 41 + 14 ; 82 + 28.",
-   "loiChua": "55 ; 110.",
+   "text": "Hiệu hai chữ số của số 72 bằng bao nhiêu, và 45 gấp mấy lần nó?",
+   "loiChua": "Hiệu hai chữ số: 7 − 2 = 5. Mà 45 : 5 = 9 nên gấp 9 lần.",
    "tuLuan": true
   },
   {
@@ -177,8 +134,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Không đặt tính, dùng định luật họ 9 để tính nhanh 72 − 27.",
-   "loiChua": "72 − 27 = 9 × (7 − 2) = 9 × 5 = 45.",
+   "text": "Tính 74 + 47.",
+   "loiChua": "Lấy tổng: 74 + 47 = 121.",
    "tuLuan": true
   },
   {
@@ -188,8 +145,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hiệu của một số có hai chữ số và số viết ngược lại bằng 45. Hiệu hai chữ số của nó bằng bao nhiêu? Liệt kê tất cả các số như vậy.",
-   "loiChua": "A − b = 45 : 9 = 5; các số: 50, 61, 72, 83, 94 (năm số).",
+   "text": "Tổng hai chữ số của số 74 bằng bao nhiêu, và 121 gấp mấy lần nó?",
+   "loiChua": "Tổng hai chữ số: 7 + 4 = 11. Mà 121 : 11 = 11 nên gấp 11 lần.",
    "tuLuan": true
   },
   {
@@ -199,8 +156,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tổng của một số có hai chữ số và số viết ngược lại bằng 121. Tổng hai chữ số của nó bằng bao nhiêu?",
-   "loiChua": "A + b = 121 : 11 = 11.",
+   "text": "Tính 63 − 36.",
+   "loiChua": "Lấy hiệu: 63 − 36 = 27, đúng bằng 9 nhân hiệu hai chữ số 6 − 3 = 3.",
    "tuLuan": true
   },
   {
@@ -210,8 +167,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Có bao nhiêu số có hai chữ số mà khi trừ đi số viết ngược lại thì được 27?",
-   "loiChua": "A − b = 27 : 9 = 3 → các số 30, 41, 52, 63, 74, 85, 96 — có 7 số.",
+   "text": "Số 85 tráo hai chữ số được 58. Hiệu hai số ấy bằng bao nhiêu?",
+   "loiChua": "Hiệu hai chữ số là 8 − 5 = 3, nên hiệu hai số là 9 × 3 = 27.",
    "tuLuan": true
   },
   {
@@ -221,8 +178,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm số có hai chữ số biết tổng hai chữ số bằng 11 và hiệu hai chữ số bằng 3 (hàng chục lớn hơn). Kiểm tra lại bằng định luật họ 11.",
-   "loiChua": "Bảng cặp tổng 11: 9-2, 8-3, 7-4 ✓ (hiệu 3), 6-5 → số 74. Kiểm bằng họ 11: 74 + 47 = 121 = 11 × 11 ✓.",
+   "text": "Số 26 tráo hai chữ số được 62. Tổng hai số ấy bằng bao nhiêu?",
+   "loiChua": "Tổng hai chữ số là 2 + 6 = 8, nên tổng hai số là 11 × 8 = 88.",
    "tuLuan": true
   },
   {
@@ -232,8 +189,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Một số có hai chữ số hơn số viết ngược của nó 45 đơn vị, và tổng hai chữ số bằng 9. Tìm số đó. (Đây chính là vụ án hộp bánh — giải trọn vẹn bằng hai định luật!)",
-   "loiChua": "A − b = 45 : 9 = 5 và a + b = 9 → tra bảng Bài 1: cặp 7-2 → số 72 — đúng vụ hộp bánh!",
+   "text": "Hiệu của một số có hai chữ số và số viết ngược của nó bằng 45. Hai chữ số của nó chênh nhau bao nhiêu?",
+   "loiChua": "Hiệu mang họ 9 nên hiệu hai chữ số là 45 : 9 = 5.",
    "tuLuan": true
   },
   {
@@ -243,8 +200,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hãy trình bày lại chứng minh vì sao ab − ba luôn chia hết cho 9 — rồi đoán xem với số BA chữ số, hiệu abc − cba có chia hết cho 9 không? Thử với 321 và 123 trước khi kết luận.",
-   "loiChua": "Ab − ba = (a × 10 + b) − (b × 10 + a) = a × 9 − b × 9 = 9 × (a − b) → luôn chia hết cho 9. Với ba chữ số: 321 − 123 = 198 = 9 × 22 → vẫn chia hết cho 9 (phần giữa triệt tiêu, còn 99 × hiệu hai chữ số đầu - cuối).",
+   "text": "Một số có hai chữ số, hiệu của nó với số viết ngược bằng 45, và tổng hai chữ số bằng 9. Tìm hai chữ số rồi tìm số ấy.",
+   "loiChua": "Hiệu hai chữ số: 45 : 9 = 5. Tra bảng cặp có tổng 9: cặp có hiệu 5 là 7 và 2. Số cần tìm là 72.",
    "tuLuan": true
   },
   {
@@ -254,14 +211,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Hiệu của một số có hai chữ số và số viết ngược lại luôn chia hết cho 9.",
+   "text": "Tráo hai chữ số rồi trừ thì hiệu luôn chia hết cho 9.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "Đúng, vì hiệu bằng 9 nhân hiệu hai chữ số.",
+   "solutionNarrative": "Đúng, vì hiệu bằng 9 nhân hiệu hai chữ số."
   },
   {
    "id": "Q2",
@@ -270,14 +227,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "63 + 36 = 90.",
+   "text": "Tráo hai chữ số rồi cộng thì tổng luôn chia hết cho 9.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": false
    },
-   "loiChua": "63 + 36 = 99 (= 11 × 9).",
-   "solutionNarrative": "63 + 36 = 99 (= 11 × 9)."
+   "loiChua": "Sai. Cộng thì mang họ 11 chứ không phải họ 9.",
+   "solutionNarrative": "Sai. Cộng thì mang họ 11 chứ không phải họ 9."
   },
   {
    "id": "Q3",
@@ -286,19 +243,20 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Nếu ab − ba = 18 thì a − b bằng:",
+   "text": "Tính 72 − 27.",
    "choices": [
-    "A. 2",
-    "B. 9",
-    "C. 18"
+    "45",
+    "54",
+    "99",
+    "35"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 2"
+    "choice": "45"
    },
-   "loiChua": "18 : 9 = 2.",
-   "solutionNarrative": "18 : 9 = 2."
+   "loiChua": "Hiệu hai chữ số là 5, nhân 9 được 45.",
+   "solutionNarrative": "Hiệu hai chữ số là 5, nhân 9 được 45."
   },
   {
    "id": "Q4",
@@ -307,19 +265,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Nếu ab + ba = 88 thì a + b bằng:",
+   "text": "Một số hai chữ số cộng với số viết ngược của nó luôn bằng",
    "choices": [
-    "A. 8",
-    "B. 11",
-    "C. 44"
+    "11 nhân tổng hai chữ số",
+    "9 nhân tổng hai chữ số",
+    "11 nhân hiệu hai chữ số"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 8"
+    "choice": "11 nhân tổng hai chữ số"
    },
-   "loiChua": "88 : 11 = 8.",
-   "solutionNarrative": "88 : 11 = 8."
+   "loiChua": "Mỗi chữ số một lần đứng hàng chục, một lần hàng đơn vị, nên góp đúng 11 lần chính nó.",
+   "solutionNarrative": "Mỗi chữ số một lần đứng hàng chục, một lần hàng đơn vị, nên góp đúng 11 lần chính nó."
   },
   {
    "id": "Q5",
@@ -327,20 +285,15 @@
    "so": 5,
    "muc": 1,
    "phan": "quiz",
-   "ghiChu": "",
-   "text": "Gõ ngược 91 thành 19, số tiền bị thiếu là:",
-   "choices": [
-    "A. 72",
-    "B. 81",
-    "C. 9"
-   ],
-   "format": "mcq",
+   "ghiChu": "Đúng/Sai?",
+   "text": "Nếu hiệu của một số và số viết ngược là 45 thì hai chữ số của nó chênh nhau 5.",
+   "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 72"
+    "value": true
    },
-   "loiChua": "91 − 19 = 72 (= 9 × 8).",
-   "solutionNarrative": "91 − 19 = 72 (= 9 × 8)."
+   "loiChua": "Đúng, vì 45 : 9 = 5.",
+   "solutionNarrative": "Đúng, vì 45 : 9 = 5."
   }
  ]
 }

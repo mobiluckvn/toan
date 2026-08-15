@@ -1,0 +1,324 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B82",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 2 · GIÁ TRỊ CỦA MỘT CHỮ SỐ — ĐỨNG ĐÂU NẶNG ĐẤY",
+ "durationMinutes": 10,
+ "so": 2,
+ "chuong": 1,
+ "tenChuong": "SỐ ĐẾN LỚP TRIỆU",
+ "dangGoc": "Dạng gốc: SỐ 1.1 mức Lớp 4 — Giá trị chữ số theo hàng; phân tích số thành tổng.",
+ "skills": {
+  "bktUnit": "CHUONG:1@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 2,
+  "prev": "DL:KSN4.B01",
+  "next": "DL:KSN4.B83"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nói được giá trị của một chữ số bằng chữ số ấy nhân giá trị hàng nó đứng. Phân tích một số thành tổng giá trị các hàng. Biết chữ số 0 giữ chỗ cho một hàng trống, không đọc nhưng không bỏ được.",
+  "kidText": "Cùng chữ số 7 mà chỗ này đáng bảy, chỗ kia đáng bảy trăm nghìn. Vì sao lạ thế con nhỉ?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn bảo: \"Số 52 604 phân tích thành 5 + 2 + 6 + 0 + 4.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Cộng năm số ấy lại được bao nhiêu? Có ra lại số cũ không? Gợi ý 2: Chữ số 5 ấy đứng ở hàng nào, và một chữ số đứng ở hàng ấy thì đáng bao nhiêu? Chữa: phân tích là tách theo GIÁ TRỊ chứ không phải tách rời từng chữ số. Phải viết 50 000 + 2 000 + 600 + 4."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn bảo: \"Số 52 604 phân tích thành 5 + 2 + 6 + 0 + 4.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Nêu giá trị của chữ số 7 trong số 1 745 230.",
+  "steps": [
+   {
+    "show": "Tìm chỗ đứng trước"
+   },
+   {
+    "show": "Xếp số vào bảng hàng rồi đếm từ phải sang: 0 đơn vị, 3 chục, 2 trăm, 5 nghìn, 4 chục nghìn, 7 trăm nghìn, 1 triệu."
+   },
+   {
+    "show": "Chữ số 7 đứng ở hàng trăm nghìn."
+   },
+   {
+    "show": "Cân chữ số ấy"
+   },
+   {
+    "show": "Giá trị của một chữ số bằng chính chữ số ấy nhân với giá trị của hàng nó đứng. Một trăm nghìn nhân bảy được bảy trăm nghìn."
+   },
+   {
+    "show": "Đáp số: chữ số 7 có giá trị 700 000."
+   },
+   {
+    "show": "Phân tích cả số thành tổng"
+   },
+   {
+    "show": "Cũng một cách cân ấy, làm cho mọi hàng: 52 604 = 50 000 + 2 000 + 600 + 4."
+   },
+   {
+    "show": "Hàng chục đang trống nên không có số hạng nào, nhưng chữ số 0 vẫn phải viết để giữ chỗ."
+   },
+   {
+    "show": "Thử lại: cộng các số hạng lại: 50 000 + 2 000 + 600 + 4 = 52 604."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Trong số 1 745 230, chữ số 7 đứng ở hàng nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hàng nào",
+        "options": [
+         "trăm nghìn",
+         "chục nghìn",
+         "nghìn"
+        ],
+        "value": "trăm nghìn"
+       }
+      ]
+     },
+     "solutionNarrative": "Đếm từ phải sang, chữ số 7 đứng ở hàng trăm nghìn.",
+     "hints": [
+      "Con xếp số vào bảng hàng rồi đếm ô từ phải sang cho tới chữ số ấy.",
+      "Nó đứng ở ô thứ sáu tính từ bên phải."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Vậy chữ số 7 trong số ấy có giá trị bằng bao nhiêu?",
+     "answerKey": {
+      "value": 700000
+     },
+     "solutionNarrative": "Đứng ở hàng trăm nghìn nên giá trị là 700 000.",
+     "hints": [
+      "Chữ số ấy đứng ở hàng nào thì đáng bằng chính nó nhân giá trị của hàng ấy.",
+      "Một trăm nghìn đem nhân với bảy thì được bao nhiêu?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Trong số 24 358, chữ số 4 có giá trị bằng bao nhiêu?",
+     "answerKey": {
+      "value": 4000
+     },
+     "solutionNarrative": "Chữ số 4 đứng ở hàng nghìn nên giá trị là 4 000.",
+     "hints": [
+      "Con tìm chỗ đứng của chữ số ấy trước đã, rồi mới cân.",
+      "Nó đứng ở hàng nghìn, nên lấy một nghìn nhân với chính nó."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Phân tích số 52 604 thành tổng thì có mấy số hạng khác 0?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Được 4 số hạng: 50 000 + 2 000 + 600 + 4. Hàng chục trống nên không có số hạng cho hàng ấy.",
+     "hints": [
+      "Con viết số ấy thành tổng ra giấy, rồi đếm xem có mấy số hạng.",
+      "Hàng nào trống thì không có số hạng cho hàng ấy — nên đừng đếm nó vào."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Trong số 52 604, chữ số 5 có giá trị bằng bao nhiêu?",
+     "answerKey": {
+      "value": 50000
+     },
+     "solutionNarrative": "Chữ số 5 đứng ở hàng chục nghìn nên giá trị là 50 000.",
+     "hints": [
+      "Chữ số ấy đứng ngoài cùng bên trái, tức là hàng nặng nhất của số này.",
+      "Đó là hàng chục nghìn, nên lấy mười nghìn nhân với chính nó."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Số 3 072 có chữ số 0 ở hàng nào, và chữ số 3 đáng bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số 0 ở hàng",
+        "options": [
+         "chục",
+         "trăm",
+         "nghìn"
+        ],
+        "value": "trăm"
+       },
+       {
+        "label": "chữ số 3 đáng bao nhiêu",
+        "value": 3000
+       }
+      ]
+     },
+     "solutionNarrative": "Chữ số 0 ở hàng trăm. Chữ số 3 đứng ở hàng nghìn nên đáng 3 000.",
+     "hints": [
+      "Con đếm ô từ phải sang để tìm chỗ đứng của chữ số không.",
+      "Còn chữ số kia đứng ngoài cùng bên trái, tức hàng nghìn."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Cộng lại: 50 000 + 2 000 + 600 + 4 bằng bao nhiêu?",
+     "answerKey": {
+      "value": 52604
+     },
+     "solutionNarrative": "Cộng các số hạng: 50 000 + 2 000 + 600 + 4 = 52 604 — đúng số ban đầu.",
+     "hints": [
+      "Con cứ cộng lần lượt từ trái sang, đừng nhảy cóc.",
+      "Cộng đúng thì phải ra lại chính con số ban đầu."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Trong số 777, ba chữ số 7 có giá trị lần lượt là bao nhiêu?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số đứng đầu",
+        "value": 700
+       },
+       {
+        "label": "chữ số đứng giữa",
+        "value": 70
+       },
+       {
+        "label": "chữ số đứng cuối",
+        "value": 7
+       }
+      ]
+     },
+     "solutionNarrative": "Từ trái sang: 700, rồi 70, rồi 7. Cùng một chữ số mà đứng khác hàng thì đáng khác nhau.",
+     "hints": [
+      "Cùng một chữ số mà đứng ba chỗ khác nhau thì đáng ba giá trị khác nhau.",
+      "Từ trái sang là hàng trăm, hàng chục, rồi hàng đơn vị."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Một số có chữ số hàng nghìn là 6 và chữ số hàng chục là 6. Hai chữ số ấy chênh nhau bao nhiêu về giá trị?",
+     "answerKey": {
+      "value": 5940
+     },
+     "solutionNarrative": "Chữ số hàng nghìn đáng 6 000, chữ số hàng chục đáng 60. Chênh nhau: 6 000 − 60 = 5 940.",
+     "hints": [
+      "Con cân riêng từng chữ số một trước đã, rồi mới so hai giá trị ấy.",
+      "Một cái đáng sáu nghìn, một cái đáng sáu chục. Lấy cái lớn trừ cái bé."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Giá trị của một chữ số phụ thuộc vào hàng nó đứng.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Cùng một chữ số, đứng hàng khác thì đáng khác nhau."
+   },
+   {
+    "id": "Q2",
+    "text": "Phân tích số 52 604 thành tổng là viết 5 + 2 + 6 + 0 + 4.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phải tách theo giá trị: 50 000 + 2 000 + 600 + 4."
+   },
+   {
+    "id": "Q3",
+    "text": "Chữ số 4 trong số 24 358 có giá trị là",
+    "format": "mcq",
+    "choices": [
+     "4 000",
+     "400",
+     "4",
+     "40 000"
+    ],
+    "answerKey": {
+     "choice": "4 000"
+    },
+    "solutionNarrative": "Chữ số 4 đứng ở hàng nghìn nên đáng 4 000."
+   },
+   {
+    "id": "Q4",
+    "text": "Chữ số 0 trong một số dùng để",
+    "format": "mcq",
+    "choices": [
+     "giữ chỗ cho hàng trống",
+     "cho số dài ra",
+     "không dùng làm gì"
+    ],
+    "answerKey": {
+     "choice": "giữ chỗ cho hàng trống"
+    },
+    "solutionNarrative": "Bỏ chữ số 0 đi thì các chữ số khác tụt hàng và số đổi hẳn."
+   },
+   {
+    "id": "Q5",
+    "text": "Trong số 777, ba chữ số 7 đều có giá trị bằng nhau.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Chúng đáng 700, 70 và 7 — khác hẳn nhau."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Lấy tờ tiền ra chơi: 50 nghìn, 2 nghìn, 5 trăm. Con xếp tiền để trả đúng một số tiền — đó chính là phân tích số thành tổng.",
+  "homeActivity": "Hỏi con câu này thường xuyên: \"Chữ số này đứng ở hàng nào, và nó đáng bao nhiêu?\" Hai câu ấy là cả bài.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Cùng một chữ số 7, nhưng đứng chỗ này thì đáng bảy, đứng chỗ kia lại đáng bảy trăm nghìn. Hôm nay con biết cách cân nó.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B01"
+  ],
+  "ten": [
+   "TÒA THÁP THỨ TƯ MANG TÊN NGHÌN"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B82_giang.mp4"
+ }
+}

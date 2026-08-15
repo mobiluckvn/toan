@@ -1,0 +1,306 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B92",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 19 · ĐẾM BẰNG PHẦN BÙ — ĐẾM NGƯỢC CHO NHANH",
+ "durationMinutes": 10,
+ "so": 19,
+ "chuong": 2,
+ "tenChuong": "BỐN PHÉP TÍNH VÀ TÍNH NHANH",
+ "dangGoc": "Dạng gốc: SỐ 4.2 mức Lớp 4 — Phép đếm phần bù: lấy tất cả trừ đi phần không thoả điều kiện.",
+ "skills": {
+  "bktUnit": "CHUONG:2@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 19,
+  "prev": "DL:KSN4.B08",
+  "next": "DL:KSN4.B50"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết khi nào nên đếm ngược: khi đếm thẳng phải chia nhiều trường hợp. Đếm phần không thoả điều kiện, rồi lấy tất cả trừ đi. Nhận ra dấu hiệu: gặp chữ \"có chứa\" hay \"ít nhất một\" thì nghĩ tới phần bù.",
+  "kidText": "Có những câu hỏi đếm ngược lại thì dễ hơn hẳn. Con thử xem có tin được không nào!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn đếm thẳng số có chứa chữ số 0, cộng ba trường hợp lại rồi ra một số lớn hơn cả 900.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Số 100 có chữ số 0 ở hàng chục, mà cũng có ở hàng đơn vị. Bạn ấy đếm nó mấy lần? Gợi ý 2: Thay vì đếm số CÓ, con thử đếm số KHÔNG có xem có gọn hơn không. Chữa: cộng ba trường hợp thì những số có hai chữ số 0 bị đếm hai lần. Đếm ngược rồi trừ thì không bao giờ trùng: 900 − 729 = 171."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn đếm thẳng số có chứa chữ số 0, cộng ba trường hợp lại rồi ra một số lớn hơn cả 900.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Có bao nhiêu số có ba chữ số mà trong đó CÓ chứa chữ số 0?",
+  "steps": [
+   {
+    "show": "Vì sao đếm thẳng thì rối"
+   },
+   {
+    "show": "Chữ số 0 có thể nằm ở hàng chục, ở hàng đơn vị, hoặc ở cả hai. Ba trường hợp, lại còn chồng lên nhau — đếm dễ sót mà cũng dễ đếm trùng."
+   },
+   {
+    "show": "Đếm ngược thì gọn"
+   },
+   {
+    "show": "Đếm những số KHÔNG chứa chữ số 0 thôi. Khi ấy mỗi hàng chỉ chọn từ 1 đến 9, tức 9 cách."
+   },
+   {
+    "show": "Nhân dồn: 9 × 9 × 9 = 729 số."
+   },
+   {
+    "show": "Lấy tất cả trừ đi"
+   },
+   {
+    "show": "Tất cả các số có ba chữ số là 900. Vậy số có chứa chữ số 0 là 900 − 729 = 171."
+   },
+   {
+    "show": "Đáp số: 171 số."
+   },
+   {
+    "show": "Dấu hiệu nhận ra"
+   },
+   {
+    "show": "Gặp chữ \"có chứa\" hoặc \"ít nhất một\" thì nghĩ ngay tới phần bù — vì cái ngược lại của chúng là \"không có cái nào\", mà cái ấy đếm rất gọn."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Có bao nhiêu số có ba chữ số?",
+     "answerKey": {
+      "value": 900
+     },
+     "solutionNarrative": "Nhân dồn: 9 × 10 × 10 = 900 số.",
+     "hints": [
+      "Con kẻ ba ô rồi điền số cách chọn của từng hàng.",
+      "Hàng đầu không được là số không nên ít cách hơn hai hàng sau."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Có bao nhiêu số có ba chữ số mà KHÔNG chứa chữ số 0?",
+     "answerKey": {
+      "value": 729
+     },
+     "solutionNarrative": "Mỗi hàng chỉ chọn từ 1 đến 9: 9 × 9 × 9 = 729 số.",
+     "hints": [
+      "Không được dùng số không thì mỗi hàng chỉ còn chọn từ một tới chín.",
+      "Cả ba hàng đều chín cách, con nhân dồn lại."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vậy có bao nhiêu số có ba chữ số CÓ chứa chữ số 0?",
+     "answerKey": {
+      "value": 171
+     },
+     "solutionNarrative": "Lấy tất cả trừ đi: 900 − 729 = 171 số.",
+     "hints": [
+      "Con lấy tất cả trừ đi phần vừa tính ở câu trên.",
+      "Đặt tính rồi trừ cho cẩn thận."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Vì sao đếm ngược lại dễ hơn đếm thẳng ở bài này?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "vì sao",
+        "options": [
+         "vì đếm thẳng phải chia nhiều trường hợp",
+         "vì con số nhỏ hơn"
+        ],
+        "value": "vì đếm thẳng phải chia nhiều trường hợp"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì đếm thẳng phải chia nhiều trường hợp, mà các trường hợp ấy còn chồng lên nhau nên dễ đếm trùng.",
+     "hints": [
+      "Con thử đếm thẳng xem: số không nấp được ở mấy chỗ khác nhau?",
+      "Lại có số nấp ở hai chỗ cùng lúc, nên cộng vào là đếm nó tới hai lần."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Có bao nhiêu số có hai chữ số?",
+     "answerKey": {
+      "value": 90
+     },
+     "solutionNarrative": "Hàng chục 9 cách, hàng đơn vị 10 cách: 9 × 10 = 90 số.",
+     "hints": [
+      "Con kẻ hai ô: hàng đầu và hàng sau.",
+      "Hàng đầu không được là số không, hàng sau thì thoải mái."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Có bao nhiêu số có hai chữ số mà không chứa chữ số 0?",
+     "answerKey": {
+      "value": 81
+     },
+     "solutionNarrative": "Cả hai hàng đều chọn từ 1 đến 9: 9 × 9 = 81 số.",
+     "hints": [
+      "Không dùng số không thì cả hai hàng đều chọn từ một tới chín.",
+      "Nhân hai ô lại."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Vậy có bao nhiêu số có hai chữ số có chứa chữ số 0?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Lấy hiệu: 90 − 81 = 9 số. Đó là 10, 20 cho tới 90.",
+     "hints": [
+      "Số hai chữ số tất cả bao nhiêu, và số không chứa chữ số không thì bao nhiêu?",
+      "Kiểm lại bằng cách kể ra: chúng đều là số tròn chục."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Có bao nhiêu số có ba chữ số không chứa chữ số 5, và bao nhiêu số có ít nhất một chữ số 5?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "không chứa chữ số 5",
+        "value": 648
+       },
+       {
+        "label": "có ít nhất một chữ số 5",
+        "value": 252
+       }
+      ]
+     },
+     "solutionNarrative": "Không chứa 5: hàng trăm 8 cách, hai hàng sau mỗi hàng 9 cách, được 8 × 9 × 9 = 648 số. Có ít nhất một chữ số 5: 900 − 648 = 252 số.",
+     "hints": [
+      "Con đếm phần không chứa chữ số ấy trước: hàng đầu bớt một cách, hai hàng sau cũng bớt một.",
+      "Có phần ấy rồi thì lấy tất cả trừ đi."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Có bao nhiêu số có ba chữ số mà cả ba chữ số đều lẻ?",
+     "answerKey": {
+      "value": 125
+     },
+     "solutionNarrative": "Mỗi hàng chọn trong 1, 3, 5, 7, 9 nên đều 5 cách: 5 × 5 × 5 = 125 số.",
+     "hints": [
+      "Con đếm xem có mấy chữ số lẻ, rồi mỗi hàng đều chọn trong bấy nhiêu.",
+      "Hàng đầu cũng chọn được đủ, vì không có chữ số lẻ nào bằng không."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Gặp chữ \"có chứa\" thì nên nghĩ tới đếm phần bù.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, vì cái ngược lại của nó thường đếm rất gọn."
+   },
+   {
+    "id": "Q2",
+    "text": "Có bao nhiêu số ba chữ số có chứa chữ số 0?",
+    "format": "mcq",
+    "choices": [
+     "171",
+     "729",
+     "900",
+     "100"
+    ],
+    "answerKey": {
+     "choice": "171"
+    },
+    "solutionNarrative": "Lấy 900 trừ đi 729 số không chứa chữ số 0."
+   },
+   {
+    "id": "Q3",
+    "text": "Phần bù là lấy tất cả trừ đi phần không thoả điều kiện.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Trừ một lần là xong, không lo đếm trùng."
+   },
+   {
+    "id": "Q4",
+    "text": "Số có ba chữ số không chứa chữ số 0 thì có",
+    "format": "mcq",
+    "choices": [
+     "729",
+     "900",
+     "171",
+     "81"
+    ],
+    "answerKey": {
+     "choice": "729"
+    },
+    "solutionNarrative": "Mỗi hàng 9 cách nên nhân dồn được 729."
+   },
+   {
+    "id": "Q5",
+    "text": "Đếm thẳng bao giờ cũng nhanh hơn đếm phần bù.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Có bài đếm thẳng phải chia nhiều trường hợp chồng nhau, rối hơn hẳn."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chơi trò đếm ngược ngoài đời: trong nhà có mấy đồ KHÔNG phải màu trắng — dễ hơn nhiều so với đếm từng đồ trắng một.",
+  "homeActivity": "Bí quyết chỉ có một câu: gặp chữ \"có chứa\" hay \"ít nhất một\" là nghĩ ngay tới đếm ngược.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Có những câu hỏi mà đếm thẳng thì rối tung, nhưng đếm cái ngược lại thì dễ như chơi. Rồi lấy tất cả trừ đi là xong.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B11"
+  ],
+  "ten": [
+   "GA NÀY TÀU CÓ DỪNG KHÔNG?"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B92_giang.mp4"
+ }
+}

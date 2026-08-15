@@ -1,118 +1,82 @@
 {
  "id": "DL:KSN4.B48",
- "quyen": "lop4",
+ "quyen": "KSN4",
  "so": 48,
- "ten": "BÀI TOÁN ĐUỔI KỊP VÀ GẶP NHAU",
+ "ten": "ĐUỔI KỊP — MỖI GIỜ KHÉP LẠI ĐƯỢC BAO NHIÊU",
  "chuong": 11,
  "tenChuong": "QUÃNG ĐƯỜNG VÀ THỜI GIAN",
- "dangGoc": "CĐ 2.1 + CĐ 3.1 mức Lớp 4 — Đuổi kịp (khoảng cách khép bằng hiệu mỗi giờ) · gặp nhau (gần thêm bằng tổng mỗi giờ)",
- "hatMam": "Chuyến dã ngoại có HAI xe — và hai xe là có kịch tính: xe nọ đuổi xe kia, xe nọ chạy về phía xe kia! Công cụ của lớp 4 là LẬP BẢNG THEO GIỜ: ghi khoảng cách sau từng giờ, nhìn nó co dần về 0. Và một khám phá đẹp: cùng chiều thì mỗi giờ khép bằng HIỆU hai nhịp chân, ngược chiều thì gần thêm bằng TỔNG — cán cân Chương 6 tái xuất ngay trên mặt đường!",
+ "dangGoc": "Dạng gốc: CĐ 2.1 mức Lớp 4 — Bài toán đuổi kịp: khoảng cách khép lại mỗi giờ bằng hiệu hai nhịp chân.",
+ "hatMam": "Xe đồ đi trước 30 ki-lô-mét, xe buýt đuổi theo. Xe buýt nhanh hơn, nên mỗi giờ lại rút ngắn được một ít. Bao lâu thì bắt kịp?",
  "ganDuoi": {
-  "ve": [],
-  "ten": [],
-  "canCu": "khong",
+  "ve": [
+   "DL:KSN3.B09"
+  ],
+  "ten": [
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+  ],
+  "canCu": "chuDe",
   "lopDuoi": 3
  },
  "muc": {
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Lập bảng khoảng cách theo giờ cho kịch bản ĐUỔI KỊP: mỗi giờ khoảng cách giảm bằng HIỆU hai nhịp chân.",
-    "Lập bảng cho kịch bản GẶP NHAU (đi ngược chiều): mỗi giờ hai bên gần nhau thêm bằng TỔNG hai nhịp chân.",
-    "Kiểm chứng đáp số bằng \"hai cột quãng đường\": lúc kịp (gặp), quãng đường hai bên phải khớp nhau."
+    "Biết khi cùng chiều thì mỗi giờ khoảng cách khép lại bằng hiệu hai nhịp.",
+    "Tính được thời gian đuổi kịp bằng khoảng cách chia hiệu.",
+    "Kiểm lại bằng hai cột quãng đường: lúc kịp thì hai xe đứng cùng một chỗ."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Nhiệm vụ số 2: xe đồ trốn trước",
-   "dong": [
-    "Sáng dã ngoại, xe chở đồ lỉnh kỉnh lều bạt nên xin chạy trước; đến lúc xe buýt lăn bánh thì bác tài thông báo: \"Xe đồ đang ở TRƯỚC chúng ta 30 km. Nó chạy mỗi giờ 30 km, mình mỗi giờ 40 km.\" Su Bống (được đi ké) lo lắng: \"Thế mình có đuổi kịp trước khi đến nơi không anh chị?\" Trí Long gãi đầu: \"Nó vừa chạy mình vừa đuổi, hai bên cùng nhúc nhích — rối tinh!\" Su Kem mở sổ kẻ một bảng: \"Rối thì ta xem TỪNG GIỜ một. Cứ mỗi giờ trôi qua, ghi lại xem khoảng cách còn bao nhiêu — con số sẽ tự kể hết câu chuyện.\""
-   ],
-   "hinh": [
-    {
-     "id": "L4H_B48_MO",
-     "sauDong": 0,
-     "file": "figures/L4H_B48_MO.png",
-     "caption": "Bảng theo giờ, cột khoảng cách còn trống.",
-     "sha256_16": "ff4032980e08a69a"
-    }
-   ],
+   "ten": "CHUYỆN MỞ BÀI — ",
+   "dong": [],
+   "hinh": [],
    "nhip": ""
   },
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
-   "dong": [
-    "CHO GÌ? xe đồ ở trước 30 km, mỗi giờ đi 30 km; xe buýt mỗi giờ đi 40 km, đuổi theo cùng chiều.",
-    "HỎI GÌ? sau bao nhiêu giờ xe buýt đuổi kịp xe đồ.",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: khoảng cách (km) và thời gian (giờ) — theo dõi MỘT con số duy nhất: khoảng cách giữa hai xe.",
-    "QUAN HỆ GIỮA CHÚNG: mỗi giờ: xe buýt tiến 40 km nhưng xe đồ cũng tiến 30 km → khoảng cách chỉ khép được phần CHÊNH: 40 − 30 = 10 km mỗi giờ.",
-    "CHỌN CÔNG CỤ: BẢNG THEO GIỜ: cột thời gian - cột khoảng cách, ghi đến khi về 0.",
-    "ƯỚC LƯỢNG TRƯỚC: khép 10 km mỗi giờ, đang cách 30 km → chừng dăm ba giờ là kịp."
-   ],
+   "dong": [],
    "hinh": [],
-   "nhip": "NHỊP 1, DỊCH — từ cuộc rượt đuổi sang bảng khoảng cách"
+   "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
-   "dong": [
-    "Bước 1 — LẬP BẢNG ĐUỔI KỊP: xuất phát: cách 30 km. Sau 1 giờ: buýt đi 40, xe đồ đi 30 → khép 10 → còn 20 km. Sau 2 giờ: còn 10 km. Sau 3 giờ: còn 0 km — ĐUỔI KỊP! Bảng cho thấy quy luật: mỗi giờ khoảng cách giảm ĐỀU 10 km = hiệu hai nhịp chân, nên thời gian đuổi = 30 : 10 = 3 (giờ).",
-    "Bước 2 — KIỂM BẰNG HAI CỘT QUÃNG ĐƯỜNG: lúc kịp, xe buýt đã đi 40 × 3 = 120 (km); xe đồ đi 30 × 3 = 90 (km) cộng 30 km trốn trước = 120 (km) — hai xe đứng ĐÚNG một điểm ✓. Phép kiểm này bắt được mọi bảng ghi nhầm, chuyên nghiệp không bao giờ bỏ.",
-    "Bước 3 — KỊCH BẢN GẶP NHAU — ĐI NGƯỢC CHIỀU: chiều về: xe buýt rời điểm dã ngoại, xe đón của phụ huynh rời trường, hai đầu quãng đường 180 km chạy VÀO nhau: buýt mỗi giờ 25 km (đường về đông), xe đón 35 km. Mỗi giờ hai xe gần nhau thêm 25 + 35 = 60 (km) — cả hai cùng góp phần khép! Bảng: 180 → 120 → 60 → 0: gặp sau 180 : 60 = 3 (giờ). Nơi gặp cách điểm dã ngoại: 25 × 3 = 75 (km); kiểm: 75 + 35 × 3 = 75 + 105 = 180 ✓.",
-    "Bước 4 — HAI KỊCH BẢN, MỘT CÁN CÂN: CÙNG chiều (đuổi): kẻ chạy trước \"gỡ lại\" phần mình → mỗi giờ khép bằng HIỆU. NGƯỢC chiều (gặp): cả hai cùng lao vào → mỗi giờ gần thêm bằng TỔNG. Tổng và Hiệu của Chương 6 tái xuất trên mặt đường! Chưa chắc tay? Cứ lập bảng theo giờ — bảng không bao giờ nói dối.",
-    "MẸO NGƯỜI GIẢI: Đuổi kịp: thời gian = khoảng cách ban đầu : HIỆU hai nhịp chân. Gặp nhau (ngược chiều): thời gian = quãng đường : TỔNG hai nhịp chân. Luôn kiểm bằng hai cột quãng đường: lúc kịp (gặp), hai bên phải cùng đứng một điểm. Bối rối thì lập bảng theo giờ — nhìn khoảng cách co dần là hiểu."
-   ],
-   "hinh": [
-    {
-     "id": "L4H_B48_G1",
-     "sauDong": 0,
-     "file": "figures/L4H_B48_G1.png",
-     "caption": "Lập bảng theo giờ là thấy ngay lúc gặp nhau.",
-     "sha256_16": "2593cf23b7a79675"
-    }
-   ],
+   "dong": [],
+   "hinh": [],
    "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
-   "dong": [
-    "LẮP: sổ báo cáo: \"Xe buýt đuổi kịp xe đồ sau ĐÚNG 3 giờ — tại cây số 120, vừa khéo là trạm nghỉ giữa đường: hai xe ăn trưa chung!\" Chiều về, hẹn xe đón của phụ huynh: \"Gặp nhau sau 3 giờ, tại cây số 75 tính từ điểm dã ngoại.\" Mọi việc khớp như lập trình.",
-    "SOI: soi ba lớp: bảng co đều 30/20/10/0 ✓; hai cột quãng đường cùng ra 120 ✓; chiều về 75 + 105 = 180 ✓. Ba con dấu, lộ trình đóng hồ sơ.",
-    "DÙNG NGOÀI ĐỜI: anh đạp xe đuổi em đi bộ, hai bà cháu hẹn gặp giữa đường làng — mọi cuộc rượt đuổi và hò hẹn trên đời đều nằm gọn trong hai chữ TỔNG - HIỆU của nhịp chân."
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Xe thứ nhất ở trước xe thứ hai 30 km và mỗi giờ đi được 30 km. Xe thứ hai đuổi theo cùng chiều, mỗi giờ đi được 40 km. Hỏi sau bao lâu xe thứ hai đuổi kịp xe thứ nhất?",
-    "Tóm tắt",
-    "Khoảng cách đầu: 30 km",
-    "Mỗi giờ: xe trước đi 30 km, xe sau đi 40 km (cùng chiều). Tìm thời gian đuổi kịp.",
-    "Ba dữ kiện: khoảng cách đầu + hai nhịp chân.",
-    "Mô hình (bảng theo giờ)",
-    "Mỗi giờ khoảng cách khép: 40 − 30 = 10 (km).",
-    "Bảng: 30 → 20 → 10 → 0 (km).",
-    "Bảng nhỏ ba mũi tên — thấy tận mắt khoảng cách co đều.",
-    "Bài giải",
-    "Mỗi giờ xe thứ hai đến gần xe thứ nhất thêm: 40 − 30 = 10 (km)",
-    "Thời gian để xe thứ hai đuổi kịp xe thứ nhất là: 30 : 10 = 3 (giờ)",
-    "Hai dòng: phần khép mỗi giờ, rồi chia khoảng cách ban đầu.",
-    "Đáp số: 3 giờ.",
-    "Đáp số kèm đơn vị giờ.",
-    "Thử lại: xe sau đi 40 × 3 = 120 km ; xe trước đi 30 × 3 + 30 = 120 km — cùng một điểm ✓",
-    "Kiểm hai cột quãng đường — lúc kịp phải đứng chung một chỗ."
+    "Đề bài: Xe chở đồ đi trước 30 ki-lô-mét, mỗi giờ đi 30 ki-lô-mét. Xe buýt đuổi theo cùng chiều, mỗi giờ đi 40 ki-lô-mét. Hỏi sau bao lâu xe buýt đuổi kịp?",
+    "Lập bảng cho dễ thấy",
+    "Lúc xuất phát hai xe cách nhau 30 ki-lô-mét.",
+    "Sau một giờ, xe buýt đi 40 còn xe đồ đi 30, nên khoảng cách còn 20.",
+    "Sau hai giờ còn 10. Sau ba giờ còn 0 — đuổi kịp.",
+    "Quy luật lộ ra",
+    "Mỗi giờ khoảng cách khép lại đúng 10 ki-lô-mét, mà 10 chính là 40 trừ 30 — hiệu hai nhịp chân.",
+    "Nên thời gian đuổi kịp bằng khoảng cách ban đầu chia cho hiệu: 30 : 10 = 3 (giờ).",
+    "Đáp số: sau 3 giờ.",
+    "Kiểm bằng hai cột quãng đường",
+    "Lúc kịp, xe buýt đã đi 40 × 3 = 120. Xe đồ đi 30 × 3 = 90, cộng 30 đi trước là 120. Hai xe đứng đúng một chỗ."
    ],
    "hinh": [],
    "nhip": ""
   },
   "suKemNham": {
-   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Bài chiều về (hai xe ngược chiều, mỗi giờ đi 25 km và 35 km, đường 180 km), Trí Long quen tay: \"Đuổi nhau thì lấy hiệu: 35 − 25 = 10; thời gian gặp là 180 : 10 = 18 giờ. Ối, đi từ trưa đến nửa đêm mới gặp?!\"",
-    "Gợi ý 1: Hai xe này chạy CÙNG chiều đuổi nhau, hay từ hai đầu chạy VÀO nhau? Khi cả hai cùng lao về phía nhau, mỗi giờ khoảng cách co lại nhờ MỘT xe hay nhờ CẢ HAI?",
-    "Gợi ý 2: Con số 18 giờ đã bấm chuông SOI inh ỏi (nửa đêm mới gặp — vô lý với chuyến về!). Lập bảng theo giờ với phần gần thêm là TỔNG hai nhịp chân, tính lại giúp Trí Long — và dặn cậu ấy: đọc chữ \"ngược chiều / về phía nhau\" trước khi chọn tổng hay hiệu."
+    "Có bạn tính thời gian đuổi kịp bằng cách lấy khoảng cách chia cho TỔNG hai nhịp: 30 chia cho 70.",
+    "Gợi ý 1: Hai xe đi cùng chiều hay ngược chiều? Xe đi trước có chạy về phía xe sau không?",
+    "Gợi ý 2: Sau một giờ, xe buýt đi 40 mà xe đồ cũng đi thêm 30. Khoảng cách rút ngắn được đúng bao nhiêu?",
+    "Chữa: đi cùng chiều thì xe trước cũng chạy đi, nên mỗi giờ chỉ khép được phần HƠN, tức hiệu 40 − 30 = 10. Thời gian là 30 : 10 = 3 giờ."
    ],
    "hinh": [],
    "nhip": ""
@@ -134,9 +98,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Diễn kịch rượt đuổi trong nhà: hai bố con bước theo nhịp đếm (bố 4 ô gạch mỗi nhịp, con 3 ô, con xuất phát trước 6 ô) — đếm nhịp đến lúc kịp rồi so với phép chia 6 : 1.",
-    "Bảng theo giờ là công cụ vàng của tuổi này: đừng vội ép công thức, cứ để con kẻ bảng vài chục lần — công thức sẽ tự \"mọc\" ra từ bảng như lời sách vẫn hứa.",
-    "NÊN: sau mỗi bài, hỏi \"kịch bản này chia cho TỔNG hay HIỆU — vì sao?\". KHÔNG NÊN: hai xe xuất phát lệch giờ, đường vòng quanh hồ hay xuôi ngược dòng nước — các kịch bản ấy ma trận hẹn lớp 5."
+    "Chơi trò đuổi bắt ngoài sân: bố mẹ đi trước mấy bước rồi cùng bước đều, con bước dài hơn. Đếm xem mấy bước thì bắt kịp.",
+    "Chỗ khó duy nhất là nhớ dùng HIỆU. Bố mẹ hỏi một câu: \"Người đi trước có đứng yên không?\" — không đứng yên thì phải trừ."
    ],
    "hinh": [],
    "nhip": ""
@@ -150,8 +113,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hai xe cách nhau 30 km, mỗi giờ khoảng cách khép lại 10 km. Hỏi sau mấy giờ xe sau đuổi kịp xe trước?",
-   "loiChua": "30 : 10 = 3 giờ.",
+   "text": "Xe buýt đi 40 km mỗi giờ, xe đồ đi 30 km mỗi giờ. Mỗi giờ xe buýt rút ngắn được bao nhiêu ki-lô-mét?",
+   "loiChua": "Lấy hiệu hai nhịp: 40 − 30 = 10 (km).",
    "tuLuan": true
   },
   {
@@ -161,8 +124,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hai xe đi ngược chiều, mỗi giờ gần nhau thêm 60 km, lúc đầu cách nhau 180 km. Hỏi sau mấy giờ hai xe gặp nhau?",
-   "loiChua": "180 : 60 = 3 giờ.",
+   "text": "Hai xe cách nhau 30 km. Sau 1 giờ còn cách nhau bao nhiêu?",
+   "loiChua": "Khép được 10 km nên còn 30 − 10 = 20 (km).",
    "tuLuan": true
   },
   {
@@ -172,8 +135,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Lập bảng khoảng cách theo giờ cho Câu 1 (từ 30 km về 0 km).",
-   "loiChua": "Bảng: xuất phát 30 km → sau 1 giờ 20 km → sau 2 giờ 10 km → sau 3 giờ 0 km — đuổi kịp.",
+   "text": "Vậy sau bao nhiêu giờ thì xe buýt đuổi kịp?",
+   "loiChua": "Lấy khoảng cách chia hiệu: 30 : 10 = 3 (giờ).",
    "tuLuan": true
   },
   {
@@ -183,8 +146,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Xe đồ ở trước 30 km, mỗi giờ đi 30 km; xe buýt đuổi theo mỗi giờ đi 40 km. Hỏi sau mấy giờ đuổi kịp? Kiểm chứng bằng hai cột quãng đường.",
-   "loiChua": "Mỗi giờ khép 40 − 30 = 10 km → 30 : 10 = 3 giờ. Kiểm: buýt đi 120 km; xe đồ đi 90 + 30 = 120 km — cùng một điểm ✓.",
+   "text": "Lúc đuổi kịp, xe buýt đã đi được bao nhiêu ki-lô-mét?",
+   "loiChua": "Nhân lên: 40 × 3 = 120 (km).",
    "tuLuan": true
   },
   {
@@ -194,8 +157,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Su Bống đạp xe đi trước, được 6 km thì anh Trí Dũng đuổi theo. Mỗi giờ Trí Dũng đi 10 km, Su Bống đi 7 km. Hỏi sau mấy giờ anh đuổi kịp em?",
-   "loiChua": "Mỗi giờ khép 10 − 7 = 3 km → 6 : 3 = 2 giờ. Thử: anh đi 20 km; em đi 14 + 6 = 20 km ✓.",
+   "text": "Lúc ấy xe đồ đã đi thêm bao nhiêu, và tính cả 30 km đi trước thì tổng bằng bao nhiêu?",
+   "loiChua": "Xe đồ đi thêm 30 × 3 = 90 (km). Cộng phần đi trước: 90 + 30 = 120 (km) — đúng bằng xe buýt.",
    "tuLuan": true
   },
   {
@@ -205,8 +168,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hai bạn ở hai đầu con đường 24 km đạp xe về phía nhau: một bạn mỗi giờ đi 7 km, bạn kia 5 km. Hỏi sau mấy giờ hai bạn gặp nhau?",
-   "loiChua": "Mỗi giờ gần thêm 7 + 5 = 12 km → 24 : 12 = 2 giờ.",
+   "text": "Hai xe cách nhau 60 km, nhịp 50 và 40 km mỗi giờ. Sau bao lâu đuổi kịp?",
+   "loiChua": "Hiệu hai nhịp: 50 − 40 = 10 (km). Thời gian: 60 : 10 = 6 (giờ).",
    "tuLuan": true
   },
   {
@@ -216,8 +179,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hai xe khởi hành cùng lúc từ hai bến cách nhau 180 km, đi về phía nhau; mỗi giờ một xe đi 25 km, xe kia 35 km. Hỏi sau mấy giờ gặp nhau, và nơi gặp cách bến của xe thứ nhất bao nhiêu ki-lô-mét?",
-   "loiChua": "Mỗi giờ gần thêm 25 + 35 = 60 km → 180 : 60 = 3 giờ.",
+   "text": "Hai xe cách nhau 24 km, nhịp 45 và 33 km mỗi giờ. Sau bao lâu đuổi kịp?",
+   "loiChua": "Hiệu hai nhịp: 45 − 33 = 12 (km). Thời gian: 24 : 12 = 2 (giờ).",
    "tuLuan": true
   },
   {
@@ -227,8 +190,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Với bài xe đồ - xe buýt (Câu 4): chỗ đuổi kịp cách điểm xuất phát của xe buýt bao nhiêu ki-lô-mét? Tính bằng HAI cách (theo xe buýt và theo xe đồ) rồi đối chiếu.",
-   "loiChua": "Theo xe buýt: 40 × 3 = 120 km; theo xe đồ: 30 + 30 × 3 = 120 km — hai cách cùng ra 120 km ✓.",
+   "text": "Muốn tính thời gian đuổi kịp thì lấy khoảng cách chia cho tổng hay chia cho hiệu hai nhịp?",
+   "loiChua": "Chia cho hiệu, vì người đi trước cũng đang chạy nên mỗi giờ chỉ khép được phần hơn.",
    "tuLuan": true
   },
   {
@@ -238,8 +201,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Hai xe khởi hành lúc 8 giờ sáng từ hai đầu quãng đường 180 km, đi về phía nhau với nhịp chân 25 km và 35 km mỗi giờ. Hỏi hai xe gặp nhau lúc mấy giờ, và đến lúc gặp mỗi xe đã đi được bao nhiêu ki-lô-mét? Cộng hai quãng ấy lại phải ra con số nào?",
-   "loiChua": "Gặp sau 3 giờ → lúc 8 + 3 = 11 giờ trưa; xe thứ nhất đi 25 × 3 = 75 km, xe thứ hai đi 35 × 3 = 105 km; cộng lại 75 + 105 = 180 km — đúng cả quãng đường ✓.",
+   "text": "Hai xe cách nhau 45 km, xe sau đi 60 km mỗi giờ và đuổi kịp sau 3 giờ. Xe trước đi bao nhiêu ki-lô-mét mỗi giờ?",
+   "loiChua": "Mỗi giờ khép được 45 : 3 = 15 (km) — đó là hiệu hai nhịp. Nhịp xe trước: 60 − 15 = 45 (km mỗi giờ).",
    "tuLuan": true
   },
   {
@@ -249,14 +212,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Khi đuổi nhau cùng chiều, mỗi giờ khoảng cách giảm bằng HIỆU quãng đường một giờ của hai xe.",
+   "text": "Đi cùng chiều thì mỗi giờ khoảng cách khép lại bằng hiệu hai nhịp.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "Đúng, vì người đi trước cũng đang chạy.",
+   "solutionNarrative": "Đúng, vì người đi trước cũng đang chạy."
   },
   {
    "id": "Q2",
@@ -265,14 +228,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Khi đi ngược chiều về phía nhau, mỗi giờ hai xe gần nhau thêm bằng HIỆU quãng đường một giờ.",
+   "text": "Thời gian đuổi kịp bằng khoảng cách chia tổng hai nhịp.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": false
    },
-   "loiChua": "Ngược chiều thì gần thêm bằng TỔNG.",
-   "solutionNarrative": "Ngược chiều thì gần thêm bằng TỔNG."
+   "loiChua": "Sai. Cùng chiều thì chia cho hiệu.",
+   "solutionNarrative": "Sai. Cùng chiều thì chia cho hiệu."
   },
   {
    "id": "Q3",
@@ -281,19 +244,20 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Mỗi giờ khép 10 km, đang cách 50 km. Thời gian đuổi kịp:",
+   "text": "Cách 30 km, nhịp 40 và 30 km mỗi giờ. Sau bao lâu đuổi kịp?",
    "choices": [
-    "A. 5 giờ",
-    "B. 10 giờ",
-    "C. 40 giờ"
+    "3 giờ",
+    "30 giờ",
+    "1 giờ",
+    "7 giờ"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 5 giờ"
+    "choice": "3 giờ"
    },
-   "loiChua": "5 giờ).",
-   "solutionNarrative": "5 giờ)."
+   "loiChua": "Hiệu hai nhịp là 10, rồi 30 chia 10 được 3.",
+   "solutionNarrative": "Hiệu hai nhịp là 10, rồi 30 chia 10 được 3."
   },
   {
    "id": "Q4",
@@ -302,19 +266,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "Mỗi giờ gần thêm 60 km, đang cách 120 km. Thời gian gặp:",
+   "text": "Lúc đuổi kịp, hai xe",
    "choices": [
-    "A. 2 giờ",
-    "B. 60 giờ",
-    "C. 180 giờ"
+    "đứng cùng một chỗ",
+    "cách nhau như cũ",
+    "xe sau vượt lên trước"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 2 giờ"
+    "choice": "đứng cùng một chỗ"
    },
-   "loiChua": "2 giờ).",
-   "solutionNarrative": "2 giờ)."
+   "loiChua": "Đó cũng là cách kiểm lại bằng hai cột quãng đường.",
+   "solutionNarrative": "Đó cũng là cách kiểm lại bằng hai cột quãng đường."
   },
   {
    "id": "Q5",
@@ -322,20 +286,15 @@
    "so": 5,
    "muc": 1,
    "phan": "quiz",
-   "ghiChu": "",
-   "text": "Xe A mỗi giờ 45 km, xe B mỗi giờ 30 km, đi ngược chiều. Mỗi giờ gần thêm:",
-   "choices": [
-    "A. 75 km",
-    "B. 15 km",
-    "C. 45 km"
-   ],
-   "format": "mcq",
+   "ghiChu": "Đúng/Sai?",
+   "text": "Kiểm bài đuổi kịp bằng cách tính quãng đường của cả hai xe rồi so.",
+   "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 75 km"
+    "value": true
    },
-   "loiChua": "45 + 30 = 75 km.",
-   "solutionNarrative": "45 + 30 = 75 km."
+   "loiChua": "Đúng. Hai bên phải bằng nhau.",
+   "solutionNarrative": "Đúng. Hai bên phải bằng nhau."
   }
  ]
 }

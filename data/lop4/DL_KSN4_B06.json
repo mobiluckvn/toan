@@ -1,120 +1,82 @@
 {
  "id": "DL:KSN4.B06",
- "quyen": "lop4",
+ "quyen": "KSN4",
  "so": 6,
- "ten": "TÌM X NÂNG CAO",
+ "ten": "X XUẤT HIỆN HAI LẦN — GOM VỀ MỘT CHỖ",
  "chuong": 2,
  "tenChuong": "BỐN PHÉP TÍNH VÀ TÍNH NHANH",
- "dangGoc": "SỐ 7.2 mức Lớp 4 — Nhiều lớp ngoặc · X xuất hiện hai lần · X trong phép chia có dư",
- "hatMam": "Lớp 3, ở Bài 15, con đã tìm X kiểu \"đi lùi hai trạm\" (X × 4 + 5 = 29) và biến thử-lại thành nghi thức. Năm nay X chơi khó hơn: trốn sau NHIỀU lớp ngoặc, xuất hiện HAI lần trong một biểu thức, thậm chí nấp trong phép chia có dư. Người làm giỏi tìm X có đủ ba chìa khóa mở ba cửa ấy.",
+ "dangGoc": "Dạng gốc: SỐ 7.2 mức Lớp 4 — Tìm X khi X có mặt ở hai số hạng; đặt thừa số chung để đưa về bài tìm X quen thuộc.",
+ "hatMam": "Bài tìm X con làm quen rồi. Nhưng gặp bài mà X hiện ra hai lần thì bối rối: biết bắt đầu từ đâu? Bắt đầu bằng cách gom chúng lại.",
  "ganDuoi": {
   "ve": [
-   "DL:KSN3.B15"
+   "DL:KSN3.B07"
   ],
   "ten": [
-   "SỐ BÍ MẬT X PHIÊN BẢN 2.0"
+   "TRUY TÌM SỐ CHIA a DƯ b"
   ],
-  "canCu": "sach",
+  "canCu": "chuDe",
   "lopDuoi": 3
  },
  "muc": {
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Bóc biểu thức nhiều lớp ngoặc từ NGOÀI vào trong, mỗi bước một lớp.",
-    "Gom X khi nó xuất hiện hai lần: X × a + X × b = X × (a + b) — luật gộp kệ tái xuất.",
-    "Tìm X trong phép chia có dư bằng công thức: số bị chia = số chia × thương + số dư."
+    "Nhận ra X xuất hiện ở hai số hạng.",
+    "Gom hai số hạng ấy lại bằng cách đặt thừa số chung.",
+    "Đưa về bài tìm X một lần rồi giải như đã quen."
    ],
    "hinh": [],
    "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Đơn hàng số 6: hóa đơn dính vệt mực",
-   "dong": [
-    "Bác Hòa đưa một tờ hóa đơn dính vệt mực: \"Khách mua kẹo và bánh — SỐ GÓI MỖI LOẠI BẰNG NHAU, kẹo 3 nghìn một gói, bánh 2 nghìn một gói, tổng 45 nghìn. Vệt mực che đúng số gói, bác chịu không đọc nổi!\" Trí Long nheo mắt: \"Ẩn số kìa... gọi nó là X đi! Nhưng X những HAI chỗ, tính kiểu gì?\" Su Kem cười: \"Hai chỗ nhưng cùng một X — và cậu quên luật gộp kệ hôm qua rồi à?\""
-   ],
-   "hinh": [
-    {
-     "id": "L4H_B06_MO",
-     "sauDong": 0,
-     "file": "figures/L4H_B06_MO.png",
-     "caption": "Hai vế cân nhau: tiền kẹo cộng tiền bánh bằng 45 nghìn.",
-     "sha256_16": "fe0de2a76692957c"
-    }
-   ],
+   "ten": "CHUYỆN MỞ BÀI — ",
+   "dong": [],
+   "hinh": [],
    "nhip": ""
   },
   "dichMoHinh": {
    "ten": "PHÂN TÍCH & DỰNG MÔ HÌNH — bàn vẽ của kỹ sư",
-   "dong": [
-    "CHO GÌ? khách mua X gói kẹo (3 nghìn/gói) và X gói bánh (2 nghìn/gói); tổng tiền 45 nghìn.",
-    "HỎI GÌ? tìm X — số gói mỗi loại bị vệt mực che.",
-    "ĐẠI LƯỢNG & ĐƠN VỊ: số gói (gói), đơn giá (nghìn đồng/gói), tổng tiền (nghìn đồng).",
-    "QUAN HỆ GIỮA CHÚNG: tiền kẹo là X × 3, tiền bánh là X × 2; cộng lại bằng 45 → X × 3 + X × 2 = 45 — X xuất hiện hai lần nhưng là CÙNG một số.",
-    "CHỌN CÔNG CỤ: PHƯƠNG TRÌNH + luật gộp kệ để gom X về một chỗ.",
-    "ƯỚC LƯỢNG TRƯỚC: mỗi cặp kẹo-bánh giá 5 nghìn; 45 nghìn chắc mua được khoảng chục cặp — X cỡ dưới 10."
-   ],
+   "dong": [],
    "hinh": [],
-   "nhip": "NHỊP 1, DỊCH — từ hóa đơn mờ sang phương trình"
+   "nhip": "NHỊP 1, DỊCH"
   },
   "khamPha": {
    "ten": "KHÁM PHÁ CÙNG SU KEM — vào không gian toán",
-   "dong": [
-    "Bước 1 — GOM X VỀ MỘT CHỖ: X × 3 + X × 2 = X × (3 + 2) = X × 5. Phương trình thành X × 5 = 45 → X = 45 : 5 = 9. Vệt mực che con số 9! Chìa khóa: X hai lần → đặt thừa số chung, đưa về bài tìm X quen thuộc.",
-    "Bước 2 — BÓC NGOẶC TỪ NGOÀI VÀO: với (X − 15) : 3 = 8, coi CẢ NGOẶC là một số bí ẩn: \"số gì chia 3 bằng 8?\" → X − 15 = 24 → X = 39. Hai lớp cũng vậy, bóc như bóc hành: ((X + 5) × 2 − 4) : 6 = 5 → (X + 5) × 2 − 4 = 30 → (X + 5) × 2 = 34 → X + 5 = 17 → X = 12. Mỗi bước MỘT lớp, không nhảy cóc.",
-    "Bước 3 — X TRONG PHÉP CHIA CÓ DƯ: nhớ luật vàng lớp 3: số bị chia = số chia × thương + số dư. X : 7 = 8 (dư 3) → X = 7 × 8 + 3 = 59. Chiều khó hơn: 45 : X = 6 (dư 3) → phần chia hết là 45 − 3 = 42 → X = 42 : 6 = 7; soi luật dư < số chia: 3 < 7 ✓.",
-    "Bước 4 — THỬ LẠI: người làm giỏi không nộp bài khi chưa lắp X ngược vào đề: (39 − 15) : 3 = 8 ✓; 59 : 7 = 8 dư 3 ✓. Với chia có dư, thử lại phải khớp CẢ thương lẫn số dư — thiếu một là hỏng.",
-    "MẸO NGƯỜI GIẢI: Ba chìa khóa của người làm giỏi: X hai lần → GOM bằng thừa số chung; nhiều ngoặc → BÓC từ ngoài vào, mỗi bước một lớp; chia có dư → dựng lại từ \"số chia × thương + dư\". Và chìa khóa thứ tư mở mọi cửa: THỬ LẠI."
-   ],
-   "hinh": [
-    {
-     "id": "L4H_B06_G1",
-     "sauDong": 0,
-     "file": "figures/L4H_B06_G1.png",
-     "caption": "Gộp hai vế về một phép nhân rồi đi lùi.",
-     "sha256_16": "509fbd18ce153325"
-    }
-   ],
+   "dong": [],
+   "hinh": [],
    "nhip": "NHỊP 2, GIẢI"
   },
   "lapSoi": {
    "ten": "LẮP VỀ CUỘC SỐNG & SOI",
-   "dong": [
-    "LẮP: báo cáo gửi bác Hòa: \"Khách mua 9 gói kẹo và 9 gói bánh.\" Hóa đơn được phục dựng nguyên vẹn từ một ẩn số — bác Hòa dán tem \"đã đối soát\" lên tờ hóa đơn mờ.",
-    "SOI: soi: 9 × 3 + 9 × 2 = 27 + 18 = 45 ✓; và X = 9 nằm đúng vùng ước lượng \"dưới 10\". Kết quả 9 gói cũng hợp đời: chẳng ai mua 900 gói kẹo lẻ ở tiệm tạp hóa!",
-    "DÙNG NGOÀI ĐỜI: mọi \"vệt mực\" ngoài đời — số bị mờ trên biên lai, số tiền quên ghi — đều là một bài tìm X. Dựng phương trình là kỹ năng phục hồi thông tin của người lớn."
-   ],
+   "dong": [],
    "hinh": [],
    "nhip": "NHỊP 3, LẮP + NHỊP 4, SOI"
   },
   "viDuMau": {
    "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
-    "Đề bài: Tìm X, biết: X × 3 + X × 2 = 45.",
-    "Nhận xét",
-    "X xuất hiện hai lần → gom X bằng cách đặt thừa số chung.",
-    "Nêu chiến thuật trước — dòng \"vì sao\" của bài tìm X.",
-    "Bài giải",
-    "X × 3 + X × 2 = 45",
-    "X × (3 + 2) = 45",
-    "X × 5 = 45",
-    "X = 45 : 5",
-    "X = 9",
-    "Mỗi dòng một phép biến đổi; dấu \"=\" thẳng cột; X luôn đứng đầu vế trái.",
-    "Đáp số: X = 9.",
-    "Đáp số một dòng riêng.",
-    "Thử lại: 9 × 3 + 9 × 2 = 27 + 18 = 45 ✓",
-    "Lắp X = 9 vào ĐÚNG biểu thức gốc của đề — không thử vào biểu thức đã rút gọn."
+    "Đề bài: Tìm X, biết X nhân 3 cộng X nhân 2 bằng 45.",
+    "Nhìn ra chỗ khó",
+    "X hiện ra hai lần. Chưa gom lại thì không giải được, vì không biết chia cho cái gì.",
+    "Gom lại bằng thừa số chung",
+    "Cả hai số hạng đều có X. Đưa X ra ngoài: X nhân với ngoặc ba cộng hai.",
+    "Trong ngoặc: 3 + 2 = 5. Vậy bài thành X nhân 5 bằng 45.",
+    "Giải như bài quen",
+    "Muốn tìm thừa số chưa biết thì lấy tích chia cho thừa số kia: 45 : 5 = 9.",
+    "Đáp số: X bằng 9.",
+    "Thử lại",
+    "Lắp 9 vào đề: 9 × 3 = 27, rồi 9 × 2 = 18, cộng lại 27 + 18 = 45 — đúng bằng vế phải."
    ],
    "hinh": [],
    "nhip": ""
   },
   "suKemNham": {
-   "ten": "TRÍ LONG ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Gặp bài (X − 4) × 3 = 24, Trí Long phán: \"Thấy × 3 và − 4 là tớ xử luôn một thể: X = 24 : 3 + ... à không, X = 24 + 4 : 3... ơ sao lẻ nhỉ?!\"",
-    "Gợi ý 1: Trí Long bóc hai lớp CÙNG LÚC nên rối. Lớp nào đang ôm ngoài cùng: phép × 3 hay phép − 4? Bóc lớp ấy trước: cả ngoặc (X − 4) bằng bao nhiêu?",
-    "Gợi ý 2: Bóc đúng thứ tự từng lớp một rồi tìm X, sau đó lắp lại đề thử — và nhắc Trí Long khẩu quyết: \"ngoặc là một củ hành, bóc từ vỏ ngoài vào, mỗi lần một lớp, ai bóc vội cay mắt ráng chịu!\""
+    "Có bạn thấy X nhân 3 cộng X nhân 2 rồi cộng luôn thành X nhân 6.",
+    "Gợi ý 1: Bạn ấy nhân 3 với 2. Nhưng ở đây hai số ấy đang cộng hay đang nhân nhau?",
+    "Gợi ý 2: Thử với một số cụ thể xem: lấy X bằng 1 thì vế trái bằng bao nhiêu?",
+    "Chữa: gom lại thì hai số trong ngoặc CỘNG nhau, được 5 chứ không phải 6. Bài đúng là X nhân 5 bằng 45."
    ],
    "hinh": [],
    "nhip": ""
@@ -136,9 +98,8 @@
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Chơi \"vệt mực\": bố mẹ viết một phép tính đúng rồi lấy giấy nhớ che một số — con dựng phương trình tìm lại. Đổi vai để con ra đề cho bố mẹ: ra đề khó còn học sâu hơn giải đề.",
-    "Với biểu thức nhiều ngoặc, yêu cầu con NÓI TÊN lớp đang bóc (\"bóc lớp chia... bóc lớp trừ...\") — nói được là hiểu, im lặng bấm số dễ là làm theo quán tính.",
-    "NÊN: chấm cả dòng thử lại như một phần bắt buộc của bài. KHÔNG NÊN: đưa X ở cả hai vế (3 × X + 5 = 2 × X + 9) — cấu trúc ấy hẹn lớp 5."
+    "Cho con thay X bằng một vật thật: ba cái bút cộng hai cái bút là mấy cái bút. Gom được ngoài đời thì gom được trong bài.",
+    "Con làm xong luôn bắt lắp lại vào đề để thử. Bài tìm X mà không thử lại thì sai cũng không biết."
    ],
    "hinh": [],
    "nhip": ""
@@ -152,8 +113,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm X: X + 27 = 63 ; X × 6 = 54.",
-   "loiChua": "X = 63 − 27 = 36 ; X = 54 : 6 = 9.",
+   "text": "Gom X × 3 + X × 2 lại thì được X nhân với số nào?",
+   "loiChua": "Đưa X ra ngoài: trong ngoặc 3 + 2 = 5, nên được X × 5.",
    "tuLuan": true
   },
   {
@@ -163,8 +124,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm X: X : 4 = 12 ; 72 : X = 8.",
-   "loiChua": "X = 12 × 4 = 48 ; X = 72 : 8 = 9.",
+   "text": "Từ X × 5 = 45, tìm X.",
+   "loiChua": "Lấy tích chia cho thừa số kia: 45 : 5 = 9.",
    "tuLuan": true
   },
   {
@@ -174,8 +135,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm X rồi thử lại: X × 5 = 35.",
-   "loiChua": "X = 35 : 5 = 7. Thử lại: 7 × 5 = 35 ✓.",
+   "text": "Thử lại: 9 × 3 + 9 × 2 bằng bao nhiêu?",
+   "loiChua": "Tính ra: 27 + 18 = 45 — đúng bằng vế phải.",
    "tuLuan": true
   },
   {
@@ -185,8 +146,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm X: (X − 15) : 3 = 8.",
-   "loiChua": "X − 15 = 8 × 3 = 24 → X = 24 + 15 = 39. Thử lại: (39 − 15) : 3 = 8 ✓.",
+   "text": "Tìm X, biết X × 4 + X × 6 = 80.",
+   "loiChua": "Gom lại: 4 + 6 = 10, nên X × 10 = 80. Vậy X = 80 : 10 = 8.",
    "tuLuan": true
   },
   {
@@ -196,8 +157,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm X: (X + 8) × 4 = 60.",
-   "loiChua": "X + 8 = 60 : 4 = 15 → X = 15 − 8 = 7. Thử lại: (7 + 8) × 4 = 60 ✓.",
+   "text": "Tìm X, biết X × 7 − X × 3 = 24.",
+   "loiChua": "Gom lại: 7 − 3 = 4, nên X × 4 = 24. Vậy X = 24 : 4 = 6.",
    "tuLuan": true
   },
   {
@@ -207,8 +168,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm X: X × 4 + X = 60. (Nhớ: X đứng một mình nghĩa là X × 1!)",
-   "loiChua": "X × 4 + X × 1 = X × 5 = 60 → X = 12. Thử lại: 12 × 4 + 12 = 60 ✓.",
+   "text": "Tìm X, biết X + X + X = 27.",
+   "loiChua": "Ba lần X nên X × 3 = 27. Vậy X = 27 : 3 = 9.",
    "tuLuan": true
   },
   {
@@ -218,8 +179,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm X: X : 6 = 9 (dư 4).",
-   "loiChua": "X = 6 × 9 + 4 = 58. Thử lại: 58 : 6 = 9 dư 4 ✓.",
+   "text": "Tìm X, biết X × 5 + X = 36.",
+   "loiChua": "Số X đứng lẻ chính là X × 1, nên gom được X × 6 = 36. Vậy X = 36 : 6 = 6.",
    "tuLuan": true
   },
   {
@@ -229,8 +190,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm X: ((X + 5) × 2 − 4) : 6 = 5. (Bóc từng lớp và ghi rõ mỗi bước bóc lớp nào!)",
-   "loiChua": "Bóc lớp chia: (X + 5) × 2 − 4 = 30; bóc lớp trừ: (X + 5) × 2 = 34; bóc lớp nhân: X + 5 = 17; bóc lớp cộng: X = 12. Thử lại: ((12 + 5) × 2 − 4) : 6 = 30 : 6 = 5 ✓.",
+   "text": "Tìm X, biết X × 8 − X = 63.",
+   "loiChua": "Gom lại: 8 − 1 = 7, nên X × 7 = 63. Vậy X = 63 : 7 = 9.",
    "tuLuan": true
   },
   {
@@ -240,8 +201,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tìm X biết 53 : X = 7 (dư 4) — và giải thích vì sao phải kiểm tra số dư nhỏ hơn X mới được kết luận.",
-   "loiChua": "Phần chia hết là 53 − 4 = 49 → X = 49 : 7 = 7; kiểm luật dư: 4 < 7 ✓ nên nhận. Nếu dư không nhỏ hơn X thì phép chia \"dư\" ấy sai luật — phải loại.",
+   "text": "Tìm X, biết X × 2 + X × 3 + X × 5 = 100.",
+   "loiChua": "Gom cả ba: 2 + 3 + 5 = 10, nên X × 10 = 100. Vậy X = 100 : 10 = 10.",
    "tuLuan": true
   },
   {
@@ -251,14 +212,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "X × 2 + X × 3 = X × 5.",
+   "text": "Phép X × 3 + X × 2 gom lại được thành X × 5.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
-   "loiChua": "Gom X bằng thừa số chung.",
-   "solutionNarrative": "Gom X bằng thừa số chung."
+   "loiChua": "Đúng. Hai số trong ngoặc cộng nhau.",
+   "solutionNarrative": "Đúng. Hai số trong ngoặc cộng nhau."
   },
   {
    "id": "Q2",
@@ -267,14 +228,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Với (X − 4) : 2 = 6 thì X = 8.",
+   "text": "Phép X × 3 + X × 2 gom lại được thành X × 6.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": false
    },
-   "loiChua": "X − 4 = 12 → X = 16.",
-   "solutionNarrative": "X − 4 = 12 → X = 16."
+   "loiChua": "Sai. Ba và hai đang cộng nhau chứ không nhân nhau.",
+   "solutionNarrative": "Sai. Ba và hai đang cộng nhau chứ không nhân nhau."
   },
   {
    "id": "Q3",
@@ -283,19 +244,20 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "X × 7 = 63 thì X bằng:",
+   "text": "Từ X × 5 = 45 thì X bằng",
    "choices": [
-    "A. 9",
-    "B. 7",
-    "C. 56"
+    "9",
+    "40",
+    "50",
+    "5"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 9"
+    "choice": "9"
    },
-   "loiChua": "9).",
-   "solutionNarrative": "9)."
+   "loiChua": "Lấy tích chia cho thừa số kia: 45 : 5 = 9.",
+   "solutionNarrative": "Lấy tích chia cho thừa số kia: 45 : 5 = 9."
   },
   {
    "id": "Q4",
@@ -304,19 +266,19 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "X : 8 = 5 (dư 3) thì X bằng:",
+   "text": "Phép X + X + X gom lại được thành",
    "choices": [
-    "A. 43",
-    "B. 40",
-    "C. 35"
+    "X × 3",
+    "X × 111",
+    "đúng 3"
    ],
    "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 43"
+    "choice": "X × 3"
    },
-   "loiChua": "8 × 5 + 3 = 43.",
-   "solutionNarrative": "8 × 5 + 3 = 43."
+   "loiChua": "Ba lần chính nó, nên viết X × 3.",
+   "solutionNarrative": "Ba lần chính nó, nên viết X × 3."
   },
   {
    "id": "Q5",
@@ -324,20 +286,15 @@
    "so": 5,
    "muc": 1,
    "phan": "quiz",
-   "ghiChu": "",
-   "text": "X × 6 − X × 2 = 36 thì X bằng:",
-   "choices": [
-    "A. 9",
-    "B. 6",
-    "C. 8"
-   ],
-   "format": "mcq",
+   "ghiChu": "Đúng/Sai?",
+   "text": "Gặp X hai lần thì gom về một chỗ trước rồi mới giải.",
+   "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "choice": "A. 9"
+    "value": true
    },
-   "loiChua": "X × 4 = 36 → X = 9.",
-   "solutionNarrative": "X × 4 = 36 → X = 9."
+   "loiChua": "Đúng. Chưa gom thì chưa biết chia cho cái gì.",
+   "solutionNarrative": "Đúng. Chưa gom thì chưa biết chia cho cái gì."
   }
  ]
 }

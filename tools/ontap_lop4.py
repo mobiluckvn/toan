@@ -73,6 +73,40 @@ KHAI_TAY = {
     (10, 10): {'ve': ['DL:KSN4.B81']},                      # đếm khối theo tầng
     (10, 11): {'ve': ['DL:KSN4.B46']},                      # sáu mặt của hộp
     (10, 12): {'ve': ['DL:KSN4.B81']},                      # tháp ba tầng khác cỡ
+    # ── chương 1: B01 tách làm ba, B02 làm hai, B03 làm hai ──
+    (1, 3): {'ve': ['DL:KSN4.B82']},                        # giá trị chữ số
+    (1, 6): {'ve': ['DL:KSN4.B03']},                        # thiếu một chữ số 0
+    (1, 7): {'ve': ['DL:KSN4.B85']},                        # xoá chữ số tận cùng
+    (1, 9): {'ve': ['DL:KSN4.B85']},                        # xoá tận cùng, bài ngược
+    (1, 10): {'ve': ['DL:KSN4.B04', 'DL:KSN4.B83']},        # tráo + bảng liệt kê
+    # Câu 2 cũ hỏi lại đúng ý câu 1 (vẫn là đọc và viết số), trong khi bài THÊM BÊN
+    # TRÁI VÀ XEN VÀO GIỮA không có câu nào hỏi tới. Viết lại câu 2 cho phủ bài ấy.
+    (1, 2): {'ve': ['DL:KSN4.B84'],
+             'text': 'Thêm chữ số 4 vào bên trái số 75 thì số tăng thêm bao nhiêu? '
+                     'Còn xen chữ số 0 vào giữa số 84 thì số tăng thêm bao nhiêu?'},
+
+    # ── chương 2: mỗi mẹo tính nhanh nay một bài riêng ──
+    (2, 2): {'ve': ['DL:KSN4.B86']},                        # nhẩm với 25
+    (2, 3): {'ve': ['DL:KSN4.B87']},                        # nhẩm với 11
+    (2, 4): {'ve': ['DL:KSN4.B89']},                        # bóc ngoặc
+    (2, 6): {'ve': ['DL:KSN4.B90']},                        # X trong chia có dư
+    (2, 8): {'ve': ['DL:KSN4.B91']},                        # đếm chữ số trang
+    (2, 11): {'ve': ['DL:KSN4.B91']},                       # bài ngược đếm chữ số
+    (2, 12): {'ve': ['DL:KSN4.B88', 'DL:KSN4.B87']},        # thừa số 0 ẩn + nhẩm 11
+    # Câu 9 cũ hỏi lại đúng ý câu 7 (vẫn đếm dãy cách đều), còn bài ĐẾM BẰNG PHẦN BÙ
+    # không có câu nào hỏi tới. Viết lại câu 9 cho phủ bài ấy.
+    (2, 9): {'ve': ['DL:KSN4.B92'],
+             'text': 'Có bao nhiêu số có ba chữ số mà trong đó có chứa chữ số 0? '
+                     'Hãy đếm phần không chứa chữ số 0 trước.'},
+
+    # ── chương 11: B47 tách làm ba, B48 làm hai ──
+    (11, 2): {'ve': ['DL:KSN4.B93']},                       # chiều xuôi
+    (11, 3): {'ve': ['DL:KSN4.B93']},                       # chiều ngược
+    (11, 4): {'ve': ['DL:KSN4.B94']},                       # so hai xe
+    (11, 7): {'ve': ['DL:KSN4.B95']},                       # gặp nhau
+    (11, 8): {'ve': ['DL:KSN4.B95']},                       # gặp nhau, hỏi chỗ gặp
+    (11, 12): {'ve': ['DL:KSN4.B95', 'DL:KSN4.B93']},       # gặp nhau + giờ đến
+
     # Câu 7 cũ hỏi lại đúng ý của câu 6 (cùng chu vi thì diện tích khác nhau), nên
     # cả hai cùng trỏ về một bài — trong khi HAI bài mới của đợt này, bốn loại góc
     # và đường cao, không có câu nào hỏi tới. Viết lại câu 7 để phủ cả hai.

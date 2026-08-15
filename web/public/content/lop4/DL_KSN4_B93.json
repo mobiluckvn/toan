@@ -1,0 +1,323 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B93",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 91 · BIẾT MỘT GIỜ THÌ TÍNH ĐƯỢC MỌI GIỜ — HAI CHIỀU XUÔI NGƯỢC",
+ "durationMinutes": 10,
+ "so": 91,
+ "chuong": 11,
+ "tenChuong": "QUÃNG ĐƯỜNG VÀ THỜI GIAN",
+ "dangGoc": "Dạng gốc: CĐ 1.1 mức Lớp 4 — Từ quãng đường một giờ, tính quãng đường theo số giờ và tính số giờ theo quãng đường; suy ra giờ đến.",
+ "skills": {
+  "bktUnit": "CHUONG:11@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 91,
+  "prev": "DL:KSN4.B47",
+  "next": "DL:KSN4.B94"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tính quãng đường bằng cách lấy quãng đường một giờ nhân số giờ. Tính số giờ bằng cách lấy quãng đường chia quãng đường một giờ. Tính được giờ đến bằng cách cộng số giờ vào giờ xuất phát.",
+  "kidText": "Cô biết xe đi bốn mươi cây số mỗi giờ. Con đoán xem cô còn hỏi được gì nữa nào!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn biết mỗi giờ xe đi 40 km, hỏi đi 200 km hết mấy giờ, liền nhân: \"200 nhân 40 bằng 8 000 giờ\".",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Tám nghìn giờ là gần một năm. Một chuyến xe có đi lâu thế không? Gợi ý 2: Con đang hỏi 200 chứa được mấy khúc 40. Đó là phép gì? Chữa: hỏi thời gian thì chia chứ không nhân. Đáp số là 200 : 40 = 5 giờ."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn biết mỗi giờ xe đi 40 km, hỏi đi 200 km hết mấy giờ, liền nhân: \"200 nhân 40 bằng 8 000 giờ\".",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Xe đi được 40 ki-lô-mét mỗi giờ. Hỏi 5 giờ xe đi được bao nhiêu, và đi 200 ki-lô-mét thì hết mấy giờ?",
+  "steps": [
+   {
+    "show": "Chiều xuôi: hỏi quãng đường"
+   },
+   {
+    "show": "Mỗi giờ một khúc 40 ki-lô-mét, năm giờ là năm khúc như thế."
+   },
+   {
+    "show": "Tính: 40 × 5 = 200 (ki-lô-mét)."
+   },
+   {
+    "show": "Chiều ngược: hỏi thời gian"
+   },
+   {
+    "show": "Nay hỏi ngược lại: hai trăm ki-lô-mét chứa được mấy khúc bốn mươi?"
+   },
+   {
+    "show": "Tính: 200 : 40 = 5 (giờ)."
+   },
+   {
+    "show": "Hai chiều ngược nhau: hỏi quãng đường thì nhân, hỏi thời gian thì chia."
+   },
+   {
+    "show": "Chốt lộ trình"
+   },
+   {
+    "show": "Xuất phát lúc 7 giờ, đi hết 5 giờ, vậy tới nơi lúc 7 + 5 = 12 giờ."
+   },
+   {
+    "show": "Đáp số: 200 ki-lô-mét, 5 giờ, và tới nơi lúc 12 giờ trưa."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Xe đi 40 km mỗi giờ. Trong 5 giờ xe đi được bao nhiêu ki-lô-mét?",
+     "answerKey": {
+      "value": 200
+     },
+     "solutionNarrative": "Nhân lên: 40 × 5 = 200 (km).",
+     "hints": [
+      "Mỗi giờ một khúc, năm giờ là năm khúc như thế.",
+      "Con nhân con số một giờ với số giờ."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Xe đi 40 km mỗi giờ. Đi 200 km thì hết mấy giờ?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Chia ra: 200 : 40 = 5 (giờ).",
+     "hints": [
+      "Con hỏi ngược lại: cả quãng đường chứa được mấy khúc bốn mươi?",
+      "Đó là phép ngược với phép ở câu trên."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Hỏi quãng đường thì làm phép gì, hỏi thời gian thì làm phép gì?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hỏi quãng đường thì",
+        "options": [
+         "nhân",
+         "chia"
+        ],
+        "value": "nhân"
+       },
+       {
+        "label": "hỏi thời gian thì",
+        "options": [
+         "nhân",
+         "chia"
+        ],
+        "value": "chia"
+       }
+      ]
+     },
+     "solutionNarrative": "Hỏi quãng đường thì nhân, hỏi thời gian thì chia.",
+     "hints": [
+      "Hỏi cả năm giờ đi được bao xa thì con số phải to lên hay nhỏ đi?",
+      "Còn hỏi mấy giờ mới hết quãng đường thì làm ngược lại phép kia."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Xe đi 40 km mỗi giờ, xuất phát lúc 7 giờ và đi 5 giờ. Mấy giờ thì tới nơi?",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Cộng vào giờ xuất phát: 7 + 5 = 12 (giờ).",
+     "hints": [
+      "Con cộng số giờ đi đường vào giờ xuất phát.",
+      "Bảy cộng năm thì được mấy?"
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Một xe đi 50 km mỗi giờ. Trong 4 giờ đi được bao nhiêu?",
+     "answerKey": {
+      "value": 200
+     },
+     "solutionNarrative": "Nhân lên: 50 × 4 = 200 (km).",
+     "hints": [
+      "Mỗi giờ một khúc, bốn giờ là bốn khúc.",
+      "Con nhân con số một giờ với số giờ."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Một xe đi 45 km mỗi giờ. Đi 225 km thì hết mấy giờ?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Chia ra: 225 : 45 = 5 (giờ).",
+     "hints": [
+      "Con hỏi: cả quãng đường chứa được mấy khúc bốn mươi lăm?",
+      "Lấy quãng đường chia cho con số một giờ."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Xe đi 60 km mỗi giờ, xuất phát lúc 6 giờ, đi 3 giờ. Mấy giờ tới nơi?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Cộng vào giờ xuất phát: 6 + 3 = 9 (giờ).",
+     "hints": [
+      "Xe đi liền một mạch không nghỉ, nên chỉ việc cộng thời gian đi đường vào.",
+      "Sáu cộng ba thì được mấy?"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Xe đi 40 km mỗi giờ, phải đi 280 km. Hỏi hết mấy giờ, và xuất phát lúc 6 giờ thì mấy giờ tới?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "hết mấy giờ",
+        "value": 7
+       },
+       {
+        "label": "mấy giờ tới nơi",
+        "value": 13
+       }
+      ]
+     },
+     "solutionNarrative": "Thời gian: 280 : 40 = 7 (giờ). Giờ tới: 6 + 7 = 13 (giờ).",
+     "hints": [
+      "Trước hết tìm số giờ: lấy quãng đường chia cho con số một giờ.",
+      "Có số giờ rồi thì cộng vào giờ xuất phát."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Một xe đi 3 giờ được 150 km. Hỏi mỗi giờ đi bao nhiêu, và đi 250 km thì hết mấy giờ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi giờ đi",
+        "value": 50
+       },
+       {
+        "label": "đi 250 km hết",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Mỗi giờ: 150 : 3 = 50 (km). Thời gian đi 250 km: 250 : 50 = 5 (giờ).",
+     "hints": [
+      "Trước hết tìm con số một giờ: lấy quãng đường chia cho số giờ.",
+      "Có nó rồi thì lấy quãng đường mới chia cho nó."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Quãng đường bằng quãng đường một giờ nhân số giờ.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Mỗi giờ một khúc, có mấy giờ thì mấy khúc."
+   },
+   {
+    "id": "Q2",
+    "text": "Hỏi đi 200 km hết mấy giờ thì lấy 200 nhân 40.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Hỏi thời gian thì chia: 200 : 40 = 5 giờ."
+   },
+   {
+    "id": "Q3",
+    "text": "Xe đi 40 km mỗi giờ thì 5 giờ đi được",
+    "format": "mcq",
+    "choices": [
+     "200 km",
+     "45 km",
+     "8 km",
+     "2 000 km"
+    ],
+    "answerKey": {
+     "choice": "200 km"
+    },
+    "solutionNarrative": "Lấy 40 nhân 5."
+   },
+   {
+    "id": "Q4",
+    "text": "Xe đi 40 km mỗi giờ, đi 200 km thì hết",
+    "format": "mcq",
+    "choices": [
+     "5 giờ",
+     "8 000 giờ",
+     "160 giờ",
+     "240 giờ"
+    ],
+    "answerKey": {
+     "choice": "5 giờ"
+    },
+    "solutionNarrative": "Lấy 200 chia 40."
+   },
+   {
+    "id": "Q5",
+    "text": "Giờ đến bằng giờ xuất phát cộng số giờ đi đường.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng, khi xe đi liền một mạch không nghỉ."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Trước mỗi chuyến đi, cho con tra quãng đường rồi tự tính mất mấy tiếng và mấy giờ thì tới. Đúng hay sai đường về sẽ biết.",
+  "homeActivity": "Mẹo chống nhầm: bảo con ước lượng trước bằng lời — \"chắc khoảng mấy tiếng\" — rồi mới tính. Đáp số lệch quá xa ước lượng là biết mình làm nhầm phép.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Bài trước con tìm được con số bốn mươi ki-lô-mét mỗi giờ. Nay dùng nó: hỏi quãng đường thì nhân, hỏi thời gian thì chia.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B09"
+  ],
+  "ten": [
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B93_giang.mp4"
+ }
+}

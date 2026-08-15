@@ -1,0 +1,302 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B91",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 17 · ĐẾM CHỮ SỐ KHI ĐÁNH SỐ TRANG — CHIA NHÓM MÀ ĐẾM",
+ "durationMinutes": 10,
+ "so": 17,
+ "chuong": 2,
+ "tenChuong": "BỐN PHÉP TÍNH VÀ TÍNH NHANH",
+ "dangGoc": "Dạng gốc: SỐ 4.3 mức Lớp 4 — Đếm tổng số chữ số dùng để đánh số trang, và bài ngược tìm số trang khi biết số chữ số.",
+ "skills": {
+  "bktUnit": "CHUONG:2@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 17,
+  "prev": "DL:KSN4.B07",
+  "next": "DL:KSN4.B08"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Chia số trang thành ba nhóm theo độ dài: một, hai và ba chữ số. Tính số chữ số của từng nhóm rồi cộng lại. Giải được bài ngược: biết tổng số chữ số, tìm số trang.",
+  "kidText": "Đánh số trang cho cuốn sổ 250 trang thì tốn bao nhiêu con chữ? Con đoán thử xem!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn lấy 250 nhân 3 rồi bảo cuốn sổ tốn 750 chữ số.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Trang số 7 có tốn ba chữ số không? Còn trang 70 thì mấy? Gợi ý 2: Vậy có phải trang nào cũng tốn ba chữ số đâu. Con phải tách chúng thành mấy nhóm? Chữa: chỉ nhóm từ trang 100 trở đi mới tốn ba chữ số. Phải chia ba nhóm rồi cộng lại, được 642 chứ không phải 750."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn lấy 250 nhân 3 rồi bảo cuốn sổ tốn 750 chữ số.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Một cuốn sổ dày 250 trang. Đánh số trang thì tốn bao nhiêu chữ số?",
+  "steps": [
+   {
+    "show": "Không đếm chung được"
+   },
+   {
+    "show": "Trang 7 tốn một chữ số, trang 70 tốn hai, trang 250 tốn ba. Nên phải tách thành từng nhóm cùng độ dài."
+   },
+   {
+    "show": "Nhóm một chữ số"
+   },
+   {
+    "show": "Từ trang 1 đến trang 9 có 9 trang, mỗi trang một chữ số: 9 chữ số."
+   },
+   {
+    "show": "Nhóm hai chữ số"
+   },
+   {
+    "show": "Từ trang 10 đến trang 99 có 90 trang, mỗi trang hai chữ số: 90 nhân 2 bằng 180 chữ số."
+   },
+   {
+    "show": "Nhóm ba chữ số"
+   },
+   {
+    "show": "Từ trang 100 đến trang 250 có 151 trang, mỗi trang ba chữ số: 151 nhân 3 bằng 453 chữ số."
+   },
+   {
+    "show": "Cộng cả ba nhóm: 9 + 180 + 453 = 642."
+   },
+   {
+    "show": "Đáp số: 642 chữ số."
+   },
+   {
+    "show": "Bài ngược thì trừ dần"
+   },
+   {
+    "show": "Biết cuốn sách dùng hết 552 chữ số thì trừ dần: bớt 9 của nhóm một, bớt 180 của nhóm hai, còn 363. Chia cho 3 được 121 trang, cộng với 99 trang trước đó là 220 trang."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Từ trang 1 đến trang 9 có bao nhiêu trang, và tốn bao nhiêu chữ số?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số trang",
+        "value": 9
+       },
+       {
+        "label": "số chữ số",
+        "value": 9
+       }
+      ]
+     },
+     "solutionNarrative": "Có 9 trang, mỗi trang một chữ số nên tốn 9 chữ số.",
+     "hints": [
+      "Con đếm từ trang đầu tới trang cuối của nhóm ấy.",
+      "Mỗi trang trong nhóm này chỉ tốn một con chữ thôi, nên hai con số bằng nhau."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Từ trang 10 đến trang 99 có bao nhiêu trang?",
+     "answerKey": {
+      "value": 90
+     },
+     "solutionNarrative": "Đếm cách đều 1: 99 − 10 = 89, cộng một được 90 trang.",
+     "hints": [
+      "Con dùng cách đếm dãy cách đều của bài trước.",
+      "Trừ hai đầu, chia cho một, xong nhớ cộng thêm trang đầu tiên vào."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Nhóm ấy tốn bao nhiêu chữ số?",
+     "answerKey": {
+      "value": 180
+     },
+     "solutionNarrative": "Mỗi trang hai chữ số: 90 × 2 = 180 chữ số.",
+     "hints": [
+      "Con có số trang của nhóm ấy rồi. Mỗi trang tốn mấy con chữ?",
+      "Nhân số trang với hai."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Từ trang 100 đến trang 250 có bao nhiêu trang?",
+     "answerKey": {
+      "value": 151
+     },
+     "solutionNarrative": "Đếm cách đều 1: 250 − 100 = 150, cộng một được 151 trang.",
+     "hints": [
+      "Con lại dùng cách đếm dãy cách đều: trừ hai đầu rồi cộng một.",
+      "Đừng quên cộng thêm trang đầu tiên vào."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Nhóm ấy tốn bao nhiêu chữ số?",
+     "answerKey": {
+      "value": 453
+     },
+     "solutionNarrative": "Mỗi trang ba chữ số: 151 × 3 = 453 chữ số.",
+     "hints": [
+      "Nhóm này gồm những trang dài nhất, mỗi trang tốn nhiều con chữ nhất.",
+      "Nhân số trang với ba."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Cả cuốn 250 trang tốn bao nhiêu chữ số?",
+     "answerKey": {
+      "value": 642
+     },
+     "solutionNarrative": "Cộng ba nhóm: 9 + 180 + 453 = 642 chữ số.",
+     "hints": [
+      "Con cộng kết quả của cả ba nhóm lại.",
+      "Cộng lần lượt từ nhóm nhỏ nhất lên cho khỏi nhầm."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Một cuốn sách dùng hết 552 chữ số. Trừ phần của nhóm một chữ số và nhóm hai chữ số thì còn bao nhiêu?",
+     "answerKey": {
+      "value": 363
+     },
+     "solutionNarrative": "Trừ dần: 552 − 9 = 543, rồi 543 − 180 = 363 chữ số.",
+     "hints": [
+      "Con bớt phần của nhóm một chữ số ra trước, rồi bớt tiếp phần của nhóm hai.",
+      "Trừ dần từng nhóm, đừng trừ một lúc."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Phần còn lại ấy đủ đánh cho bao nhiêu trang ba chữ số?",
+     "answerKey": {
+      "value": 121
+     },
+     "solutionNarrative": "Mỗi trang ba chữ số nên 363 : 3 = 121 trang.",
+     "hints": [
+      "Phần còn lại toàn là trang ba chữ số.",
+      "Con chia phần ấy cho ba."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Vậy cuốn sách ấy dày bao nhiêu trang?",
+     "answerKey": {
+      "value": 220
+     },
+     "solutionNarrative": "Chín trang nhóm một cộng 90 trang nhóm hai là 99 trang, cộng thêm 121 trang: 99 + 121 = 220 trang.",
+     "hints": [
+      "Con cộng số trang của cả ba nhóm lại.",
+      "Nhóm một có chín trang, nhóm hai có chín mươi trang, còn nhóm ba con vừa tính xong."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Từ trang 10 đến trang 99 có 90 trang.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng: 99 − 10 = 89, cộng một được 90."
+   },
+   {
+    "id": "Q2",
+    "text": "Cuốn sổ 250 trang tốn bao nhiêu chữ số?",
+    "format": "mcq",
+    "choices": [
+     "642",
+     "750",
+     "453",
+     "250"
+    ],
+    "answerKey": {
+     "choice": "642"
+    },
+    "solutionNarrative": "Cộng ba nhóm: 9 rồi 180 rồi 453."
+   },
+   {
+    "id": "Q3",
+    "text": "Trang nào cũng tốn đúng ba chữ số.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Trang một chữ số, hai chữ số và ba chữ số tốn khác nhau."
+   },
+   {
+    "id": "Q4",
+    "text": "Bài ngược thì làm thế nào?",
+    "format": "mcq",
+    "choices": [
+     "trừ dần theo từng nhóm",
+     "chia luôn cho 3",
+     "nhân với 3"
+    ],
+    "answerKey": {
+     "choice": "trừ dần theo từng nhóm"
+    },
+    "solutionNarrative": "Bớt phần của nhóm một, rồi nhóm hai, phần còn lại mới chia cho 3."
+   },
+   {
+    "id": "Q5",
+    "text": "Từ trang 100 đến trang 250 có 151 trang.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng: 250 − 100 = 150, cộng một được 151."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Lấy một cuốn sách thật, giở trang 9, trang 10 và trang 100 cho con so. Con thấy tận mắt chỗ đổi nhóm là hiểu ngay.",
+  "homeActivity": "Đây là bài dễ nhầm ở chỗ đếm số trang mỗi nhóm. Bố mẹ hỏi lại một câu: \"Từ trang 100 đến trang 250 có bao nhiêu trang?\" — bài trước vừa học cách đếm.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Đánh số trang cho một cuốn sổ thì tốn bao nhiêu con chữ? Trang 7 tốn một chữ số, trang 250 tốn ba. Không đếm chung được — phải chia nhóm.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B04"
+  ],
+  "ten": [
+   "ĐẾM SỐ & ĐẾM TRANG NÂNG CẤP"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B91_giang.mp4"
+ }
+}

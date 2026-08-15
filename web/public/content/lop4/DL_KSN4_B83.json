@@ -1,0 +1,290 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B83",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 3 · TÌM SỐ BẰNG BẢNG LIỆT KÊ — ĐỪNG ĐOÁN MÒ",
+ "durationMinutes": 10,
+ "so": 3,
+ "chuong": 1,
+ "tenChuong": "SỐ ĐẾN LỚP TRIỆU",
+ "dangGoc": "Dạng gốc: SỐ 1.1 mức Lớp 4 — Tìm số theo tổng và hiệu của hai chữ số, bằng cách lập bảng liệt kê thay vì thử mò.",
+ "skills": {
+  "bktUnit": "CHUONG:1@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 3,
+  "prev": "DL:KSN4.B82",
+  "next": "DL:KSN4.B02"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Lập được bảng liệt kê mọi cặp chữ số thoả điều kiện thứ nhất. Soi điều kiện thứ hai trên bảng để chọn ra cặp đúng. Biết vì sao cách này chắc hơn thử mò: nó không bỏ sót cặp nào.",
+  "kidText": "Cô nghĩ một số có hai chữ số, cộng lại bằng chín. Con đoán mò hay tìm cho chắc đây?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn thử vài số rồi tuyên bố: \"Chắc là 36, vì 3 cộng 6 bằng 9.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Số 36 có chữ số hàng chục là mấy, hàng đơn vị là mấy? Cái nào lớn hơn? Gợi ý 2: Đề đòi chữ số hàng chục PHẢI HƠN chữ số hàng đơn vị. Con soi lại điều kiện ấy trên bảng xem. Chữa: số 36 có hàng chục là 3, nhỏ hơn hàng đơn vị 6, nên không đạt. Cặp đúng phải là 6 đứng trước 3, tức số 63."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn thử vài số rồi tuyên bố: \"Chắc là 36, vì 3 cộng 6 bằng 9.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tìm số có hai chữ số, biết tổng hai chữ số bằng 9 và chữ số hàng chục hơn chữ số hàng đơn vị 3 đơn vị.",
+  "steps": [
+   {
+    "show": "Đừng thử mò"
+   },
+   {
+    "show": "Thử mò thì hên xui, mà lại không biết mình đã thử hết chưa. Lập bảng thì chắc chắn không sót cặp nào."
+   },
+   {
+    "show": "Bảng cặp chữ số có tổng bằng 9"
+   },
+   {
+    "show": "Chữ số hàng chục lớn hơn nên xếp nó đứng trước: 9 và 0, rồi 8 và 1, rồi 7 và 2, rồi 6 và 3, rồi 5 và 4. Được 5 cặp."
+   },
+   {
+    "show": "Soi điều kiện thứ hai"
+   },
+   {
+    "show": "Tính hiệu từng cặp: 9, rồi 7, rồi 5, rồi 3, rồi 1. Chỉ một cặp có hiệu bằng 3, đó là cặp 6 và 3."
+   },
+   {
+    "show": "Đáp số: số cần tìm là 63."
+   },
+   {
+    "show": "Thử lại: 6 + 3 = 9 và 6 − 3 = 3 — khớp cả hai điều kiện."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Có bao nhiêu cặp chữ số có tổng bằng 9, trong đó chữ số đứng trước lớn hơn chữ số đứng sau?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Có 5 cặp: 9 và 0, 8 và 1, 7 và 2, 6 và 3, 5 và 4.",
+     "hints": [
+      "Con viết ra giấy mọi cặp cộng lại bằng chín, cho số lớn đứng trước.",
+      "Bắt đầu từ chín và không, rồi hạ dần: tám và một, bảy và hai, cứ thế."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Trong bảng ấy, cặp nào có hiệu bằng 3?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chữ số hàng chục",
+        "value": 6
+       },
+       {
+        "label": "chữ số hàng đơn vị",
+        "value": 3
+       }
+      ]
+     },
+     "solutionNarrative": "Cặp 6 và 3, vì 6 − 3 = 3.",
+     "hints": [
+      "Con lấy từng cặp trong bảng rồi trừ hai chữ số cho nhau.",
+      "Cặp nào trừ ra đúng bằng ba thì đó là cặp cần tìm."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vậy số cần tìm là số nào?",
+     "answerKey": {
+      "value": 63
+     },
+     "solutionNarrative": "Chữ số hàng chục là 6, hàng đơn vị là 3, nên số cần tìm là 63.",
+     "hints": [
+      "Cặp con vừa tìm được ở câu trên chính là hai chữ số của số này.",
+      "Chữ số lớn hơn viết trước, chữ số bé hơn viết sau."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tìm số có hai chữ số, tổng hai chữ số bằng 7 và chữ số hàng chục hơn hàng đơn vị 3 đơn vị.",
+     "answerKey": {
+      "value": 52
+     },
+     "solutionNarrative": "Bảng cặp có tổng 7: 7 và 0, 6 và 1, 5 và 2, 4 và 3. Cặp có hiệu 3 là 5 và 2, nên số cần tìm là 52.",
+     "hints": [
+      "Con lập bảng mọi cặp cộng lại bằng bảy trước đã, cho số lớn đứng trước.",
+      "Rồi soi cột hiệu xem cặp nào trừ ra đúng ba."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Tìm số có hai chữ số, tổng hai chữ số bằng 11 và chữ số hàng chục hơn hàng đơn vị 1 đơn vị.",
+     "answerKey": {
+      "value": 65
+     },
+     "solutionNarrative": "Bảng cặp có tổng 11: 9 và 2, 8 và 3, 7 và 4, 6 và 5. Cặp có hiệu 1 là 6 và 5, nên số cần tìm là 65.",
+     "hints": [
+      "Con lập bảng mọi cặp cộng lại bằng mười một, cho số lớn đứng trước.",
+      "Rồi soi xem cặp nào hai chữ số chỉ hơn kém nhau một."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Có bao nhiêu số có hai chữ số mà tổng hai chữ số bằng 5?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Các số ấy là 50, 41, 32, 23, 14 — tất cả 5 số. Số 05 không phải số có hai chữ số.",
+     "hints": [
+      "Con liệt kê ra giấy: chữ số hàng chục lấy lớn nhất trước rồi hạ dần.",
+      "Nhớ bỏ trường hợp chữ số hàng chục bằng không, vì khi ấy không còn là số hai chữ số."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Số có hai chữ số mà tổng hai chữ số bằng 9 và hiệu cũng bằng 9 là số nào?",
+     "answerKey": {
+      "value": 90
+     },
+     "solutionNarrative": "Cặp duy nhất là 9 và 0, nên số ấy là 90.",
+     "hints": [
+      "Hai chữ số vừa cộng ra chín lại vừa trừ ra chín thì một trong hai phải rất bé.",
+      "Con thử cặp đầu bảng xem: chín và không có hợp cả hai điều kiện không?"
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Tìm số có hai chữ số, tổng hai chữ số bằng 12 và hiệu bằng 4.",
+     "answerKey": {
+      "value": 84
+     },
+     "solutionNarrative": "Bảng cặp có tổng 12: 9 và 3, 8 và 4, 7 và 5. Cặp có hiệu 4 là 8 và 4, nên số cần tìm là 84.",
+     "hints": [
+      "Con lập bảng mọi cặp cộng lại bằng mười hai, cho số lớn đứng trước.",
+      "Rồi soi cột hiệu xem cặp nào trừ ra đúng bốn."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Tìm số có hai chữ số, biết chữ số hàng chục gấp đôi chữ số hàng đơn vị và tổng hai chữ số bằng 9.",
+     "answerKey": {
+      "value": 63
+     },
+     "solutionNarrative": "Cặp gấp đôi nhau: 2 và 1, 4 và 2, 6 và 3, 8 và 4. Cặp có tổng 9 là 6 và 3, nên số cần tìm là 63.",
+     "hints": [
+      "Con liệt kê các cặp mà chữ số trước gấp đôi chữ số sau: hai và một, bốn và hai, cứ thế.",
+      "Rồi soi xem cặp nào cộng lại bằng chín."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Gặp bài tìm số theo tổng và hiệu chữ số thì nên đoán mò cho nhanh.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Đoán mò dễ sót; lập bảng liệt kê thì chắc chắn không bỏ cặp nào."
+   },
+   {
+    "id": "Q2",
+    "text": "Chữ số hàng chục của một số có hai chữ số không thể bằng 0.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Chữ số 0 đứng đầu thì số ấy chỉ còn một chữ số."
+   },
+   {
+    "id": "Q3",
+    "text": "Số có hai chữ số, tổng hai chữ số bằng 9 và hiệu bằng 3 là",
+    "format": "mcq",
+    "choices": [
+     "63",
+     "36",
+     "54",
+     "72"
+    ],
+    "answerKey": {
+     "choice": "63"
+    },
+    "solutionNarrative": "Cặp 6 và 3 có tổng 9, hiệu 3, và hàng chục phải là số lớn hơn."
+   },
+   {
+    "id": "Q4",
+    "text": "Có bao nhiêu cặp chữ số có tổng bằng 9 mà chữ số đứng trước lớn hơn?",
+    "format": "mcq",
+    "choices": [
+     "bốn",
+     "năm",
+     "sáu"
+    ],
+    "answerKey": {
+     "choice": "năm"
+    },
+    "solutionNarrative": "Đó là 9 và 0, 8 và 1, 7 và 2, 6 và 3, 5 và 4."
+   },
+   {
+    "id": "Q5",
+    "text": "Lập bảng xong thì chỉ việc soi điều kiện thứ hai trên bảng.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Bảng lo điều kiện thứ nhất, mắt lo điều kiện thứ hai."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chơi trò đoán số: bố mẹ nghĩ một số hai chữ số rồi cho hai manh mối (tổng và hiệu của hai chữ số). Con phải lập bảng ra giấy, không được đoán.",
+  "homeActivity": "Con làm xong nhớ bắt thử lại cả hai điều kiện. Nhiều bài sai chỉ vì bé khớp điều kiện đầu rồi quên mất điều kiện sau.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Gặp bài \"tìm số có hai chữ số, tổng hai chữ số bằng chín…\", con hay thử đại vài số rồi chán. Hôm nay có cách làm không bỏ sót số nào.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B03"
+  ],
+  "ten": [
+   "XẾP THẺ SỐ PHIÊN BẢN KHÓ"
+  ],
+  "canCu": "sach",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B83_giang.mp4"
+ }
+}

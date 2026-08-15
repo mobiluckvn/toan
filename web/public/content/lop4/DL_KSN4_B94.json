@@ -1,0 +1,345 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B94",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 92 · SO HAI XE — PHẢI QUY VỀ CÙNG MỘT GIỜ",
+ "durationMinutes": 10,
+ "so": 92,
+ "chuong": 11,
+ "tenChuong": "QUÃNG ĐƯỜNG VÀ THỜI GIAN",
+ "dangGoc": "Dạng gốc: CĐ 1.1 mức Lớp 4 — So sánh hai chuyển động bằng cách quy cả hai về quãng đường đi trong một giờ.",
+ "skills": {
+  "bktUnit": "CHUONG:11@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 92,
+  "prev": "DL:KSN4.B93",
+  "next": "DL:KSN4.B48"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Biết không so được hai quãng đường đi trong số giờ khác nhau. Quy cả hai về quãng đường đi trong một giờ rồi mới so. Nói được vì sao phải quy về cùng một giờ.",
+  "kidText": "Xe này ba giờ đi 120 cây, xe kia hai giờ đi 90 cây. Con đoán xe nào nhanh hơn nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn nhìn 120 và 90 rồi kết luận: \"Xe buýt đi được xa hơn nên nhanh hơn.\"",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Xe buýt đi mấy giờ mới được 120? Còn xe kia đi mấy giờ được 90? Gợi ý 2: Hai con số ấy đo trong khoảng thời gian khác nhau. Muốn so thì phải đưa về cùng cái gì? Chữa: quy cả hai về một giờ đã. Xe buýt 40, xe chở đồ 45 — hoá ra xe chở đồ mới là xe nhanh hơn."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn nhìn 120 và 90 rồi kết luận: \"Xe buýt đi được xa hơn nên nhanh hơn.\"",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Xe buýt 3 giờ đi được 120 ki-lô-mét. Xe chở đồ 2 giờ đi được 90 ki-lô-mét. Xe nào đi nhanh hơn?",
+  "steps": [
+   {
+    "show": "Cái bẫy"
+   },
+   {
+    "show": "Một trăm hai mươi lớn hơn chín mươi, nên nhiều bạn kết luận ngay xe buýt nhanh hơn. Nhưng hai con số ấy đo trong số giờ khác nhau."
+   },
+   {
+    "show": "Giống như so hai bạn ăn cơm: một bạn ăn ba bát trong ba bữa, một bạn ăn hai bát trong một bữa. So thẳng thì vô nghĩa."
+   },
+   {
+    "show": "Quy về cùng một giờ"
+   },
+   {
+    "show": "Xe buýt: 120 : 3 = 40 (ki-lô-mét mỗi giờ)."
+   },
+   {
+    "show": "Xe chở đồ: 90 : 2 = 45 (ki-lô-mét mỗi giờ)."
+   },
+   {
+    "show": "Nay mới so được"
+   },
+   {
+    "show": "Bốn mươi lăm lớn hơn bốn mươi, nên xe chở đồ đi nhanh hơn."
+   },
+   {
+    "show": "Đáp số: xe chở đồ nhanh hơn, hơn 5 ki-lô-mét mỗi giờ."
+   },
+   {
+    "show": "Bài học chung: muốn so hai thứ thì phải đưa chúng về cùng một thước đo."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Xe buýt 3 giờ đi 120 km. Mỗi giờ xe buýt đi được bao nhiêu?",
+     "answerKey": {
+      "value": 40
+     },
+     "solutionNarrative": "Chia đều: 120 : 3 = 40 (km).",
+     "hints": [
+      "Con lấy quãng đường của xe ấy chia cho số giờ của nó.",
+      "Một trăm hai mươi chia ba thì được mấy?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Xe chở đồ 2 giờ đi 90 km. Mỗi giờ xe chở đồ đi được bao nhiêu?",
+     "answerKey": {
+      "value": 45
+     },
+     "solutionNarrative": "Chia đều: 90 : 2 = 45 (km).",
+     "hints": [
+      "Xe này đi ít giờ hơn, con vẫn chia quãng đường của nó cho số giờ của nó.",
+      "Chín mươi chia đôi thì được mấy?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Vậy xe nào đi nhanh hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "xe nào nhanh hơn",
+        "options": [
+         "xe chở đồ",
+         "xe buýt"
+        ],
+        "value": "xe chở đồ"
+       }
+      ]
+     },
+     "solutionNarrative": "Xe chở đồ, vì 45 km mỗi giờ nhiều hơn 40 km mỗi giờ.",
+     "hints": [
+      "Con so hai con số vừa tính ở hai câu trên.",
+      "Con số nào lớn hơn thì xe ấy đi nhanh hơn."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Xe chở đồ hơn xe buýt bao nhiêu ki-lô-mét mỗi giờ?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Lấy hiệu: 45 − 40 = 5 (km mỗi giờ).",
+     "hints": [
+      "Con lấy con số lớn hơn trừ con số bé hơn.",
+      "Bốn mươi lăm trừ bốn mươi thì còn mấy?"
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Vì sao không so thẳng 120 với 90 được?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "vì sao",
+        "options": [
+         "vì đo trong số giờ khác nhau",
+         "vì hai xe khác loại"
+        ],
+        "value": "vì đo trong số giờ khác nhau"
+       }
+      ]
+     },
+     "solutionNarrative": "Vì hai quãng đường ấy đo trong số giờ khác nhau, không cùng một thước đo.",
+     "hints": [
+      "Con để ý hai quãng đường ấy đo trong mấy giờ, có bằng nhau không.",
+      "Không bằng nhau thì đem so thẳng là vô nghĩa."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Xe A 4 giờ đi 200 km, xe B 3 giờ đi 165 km. Mỗi xe đi bao nhiêu ki-lô-mét mỗi giờ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "xe A",
+        "value": 50
+       },
+       {
+        "label": "xe B",
+        "value": 55
+       }
+      ]
+     },
+     "solutionNarrative": "Xe A: 200 : 4 = 50 (km). Xe B: 165 : 3 = 55 (km).",
+     "hints": [
+      "Con làm riêng từng xe: chia quãng đường cho số giờ của chính xe ấy.",
+      "Đừng trộn số của hai xe vào nhau."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Trong hai xe ấy, xe nào nhanh hơn?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "xe nào nhanh hơn",
+        "options": [
+         "xe B",
+         "xe A"
+        ],
+        "value": "xe B"
+       }
+      ]
+     },
+     "solutionNarrative": "Xe B, vì 55 km mỗi giờ nhiều hơn 50 km mỗi giờ.",
+     "hints": [
+      "Con so hai con số vừa tính được ở câu trên.",
+      "Con số nào lớn hơn thì xe ấy nhanh hơn."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Xe A 5 giờ đi 300 km, xe B 4 giờ đi 240 km. Tính nhịp mỗi xe rồi cho biết hai xe thế nào.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "xe A",
+        "value": 60
+       },
+       {
+        "label": "xe B",
+        "value": 60
+       }
+      ]
+     },
+     "solutionNarrative": "Xe A: 300 : 5 = 60 (km mỗi giờ). Xe B: 240 : 4 = 60 (km mỗi giờ). Hai xe đi nhanh bằng nhau.",
+     "hints": [
+      "Con chia riêng cho từng xe rồi mới nhìn kết quả.",
+      "Hai kết quả lần này bằng nhau đấy, con tính lại cho chắc."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Xe A 2 giờ đi 130 km, xe B 3 giờ đi 180 km. Xe nào nhanh hơn và hơn bao nhiêu ki-lô-mét mỗi giờ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "xe nào nhanh hơn",
+        "options": [
+         "xe A",
+         "xe B"
+        ],
+        "value": "xe A"
+       },
+       {
+        "label": "hơn mấy km mỗi giờ",
+        "value": 5
+       }
+      ]
+     },
+     "solutionNarrative": "Xe A: 130 : 2 = 65 (km). Xe B: 180 : 3 = 60 (km). Xe A nhanh hơn 65 − 60 = 5 (km mỗi giờ).",
+     "hints": [
+      "Con chia riêng cho từng xe để tìm con số một giờ.",
+      "Rồi so hai con số ấy, và lấy con số lớn trừ con số bé."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "So hai xe thì so thẳng hai quãng đường là được.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai, nếu hai quãng đường ấy đo trong số giờ khác nhau."
+   },
+   {
+    "id": "Q2",
+    "text": "Muốn so hai xe thì quy cả hai về quãng đường đi trong một giờ.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Cùng một thước đo thì mới so được."
+   },
+   {
+    "id": "Q3",
+    "text": "Xe buýt 3 giờ đi 120 km, xe chở đồ 2 giờ đi 90 km. Xe nào nhanh hơn?",
+    "format": "mcq",
+    "choices": [
+     "xe chở đồ",
+     "xe buýt",
+     "bằng nhau"
+    ],
+    "answerKey": {
+     "choice": "xe chở đồ"
+    },
+    "solutionNarrative": "Quy về một giờ: 40 và 45, nên xe chở đồ nhanh hơn."
+   },
+   {
+    "id": "Q4",
+    "text": "Xe chở đồ hơn xe buýt mỗi giờ bao nhiêu ki-lô-mét?",
+    "format": "mcq",
+    "choices": [
+     "5 km",
+     "30 km",
+     "45 km",
+     "1 km"
+    ],
+    "answerKey": {
+     "choice": "5 km"
+    },
+    "solutionNarrative": "Lấy 45 trừ 40."
+   },
+   {
+    "id": "Q5",
+    "text": "Muốn so hai thứ thì phải đưa chúng về cùng một thước đo.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Bài này dạy một thói quen chứ không phải một công thức."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "So giá ngoài siêu thị cùng con: gói 500 gam giá này, gói 1 ki-lô-gam giá kia, gói nào rẻ hơn. Cũng đúng một lối nghĩ — quy về cùng một đơn vị.",
+  "homeActivity": "Đây là bài dạy một thói quen chứ không phải một công thức: trước khi so cái gì, hỏi xem hai bên có cùng thước đo chưa.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Xe này ba giờ đi 120 ki-lô-mét, xe kia hai giờ đi 90. Xe nào nhanh hơn? Nhìn hai con số 120 và 90 mà kết luận là mắc bẫy ngay.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B09"
+  ],
+  "ten": [
+   "TÌM MỘT PHẦN MẤY CỦA MỘT SỐ"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B94_giang.mp4"
+ }
+}

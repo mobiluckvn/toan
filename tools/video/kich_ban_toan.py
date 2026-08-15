@@ -3008,6 +3008,1023 @@ def kb_dem_khoi(b):
     ]
 
 
+def kb_doc_so(b):
+    """C1① Đọc số to — chia lớp trước rồi đọc."""
+    return [
+        _c('bia', 'Đọc số to', so_bai(b),
+           loi=['Hôm nay con có cách đọc chắc chắn cho những số thật dài.']),
+        _c('bang_hang', 'Bảng hàng đếm từ PHẢI sang trái', so='24358',
+           chuPhu='Đơn vị, chục, trăm — rồi nghìn, chục nghìn, trăm nghìn.',
+           loi=['Bảng hàng đếm từ phải sang trái. Đơn vị, chục, trăm, rồi nghìn.']),
+        _c('y_toan', 'Cứ BA HÀNG gom thành MỘT LỚP',
+           'Lớp đơn vị · lớp nghìn · lớp triệu', buoc=1, soBuoc=3,
+           loi=['Cứ ba hàng thì gom thành một lớp. Lớp đơn vị, lớp nghìn, rồi lớp '
+                'triệu.']),
+        _c('bang_hang', 'Số 1 745 230 tách được ba lớp', so='1745230',
+           chuPhu='Một · bảy trăm bốn mươi lăm · hai trăm ba mươi.',
+           loi=['Số này có bảy chữ số nên tách được ba lớp.']),
+        _c('y_toan', 'Đọc từng lớp từ TRÁI sang',
+           'Đọc xong lớp nào thì gắn tên lớp ấy vào sau.', buoc=2, soBuoc=3,
+           loi=['Đọc từng lớp từ trái sang. Đọc xong lớp nào thì gắn tên lớp ấy vào '
+                'sau.',
+                'Một triệu. Rồi bảy trăm bốn mươi lăm nghìn. Rồi hai trăm ba mươi.']),
+        _c('y_toan', 'Riêng lớp đơn vị đọc xong là thôi',
+           'Không phải gắn tên lớp.', buoc=3, soBuoc=3,
+           loi=['Riêng lớp đơn vị thì đọc xong là thôi, không phải gắn tên lớp vào.']),
+        _c('y_toan', 'Chỗ hay đọc hỏng',
+           'Số 24 358 KHÔNG đọc là "hai bốn nghìn".',
+           loi=['Con nhớ chỗ này. Hai chữ số đầu ghép lại thành số hai mươi bốn.',
+                'Nên phải đọc là hai mươi bốn nghìn, không đọc rời từng chữ số.']),
+        _c('cong_thuc', 'Cách đọc số to',
+           congThuc='tách lớp trước  ·  đọc từng lớp  ·  gắn tên lớp',
+           thay='1 745 230  →  1 · 745 · 230',
+           loi=['Tách lớp trước, đọc từng lớp, rồi gắn tên lớp vào sau.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='mỗi lớp đọc như MỘT SỐ ba chữ số',
+           loi=['Con nhớ lại một lần nữa. Mỗi lớp đọc như một số ba chữ số riêng.',
+                'Đọc rời từng chữ số là hỏng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_gia_tri(b):
+    """C1② Giá trị của một chữ số."""
+    return [
+        _c('bia', 'Giá trị của một chữ số', so_bai(b),
+           loi=['Cùng một chữ số mà đứng chỗ khác thì đáng khác nhau.']),
+        _c('bang_hang', 'Chữ số 7 đứng ở hàng nào', so='1745230', toSang=[5],
+           chuPhu='Đếm từ phải sang: nó đứng hàng trăm nghìn.',
+           loi=['Xếp số vào bảng hàng rồi đếm từ phải sang.',
+                'Chữ số bảy đứng ở hàng trăm nghìn.']),
+        _c('y_toan', 'Cân chữ số ấy', 'Chữ số × giá trị hàng nó đứng',
+           buoc=1, soBuoc=3,
+           loi=['Giá trị một chữ số bằng chính chữ số ấy, nhân với giá trị hàng nó '
+                'đứng.',
+                'Một trăm nghìn nhân bảy được bảy trăm nghìn.']),
+        _c('bang_hang', 'Cân cho MỌI hàng thì được tổng', so='52604',
+           chuPhu='50 000 + 2 000 + 600 + 4', buoc=2,
+           loi=['Cân như thế cho mọi hàng thì được số ấy viết thành tổng.',
+                'Năm mươi nghìn, cộng hai nghìn, cộng sáu trăm, cộng bốn.']),
+        _c('bang_hang', 'Hàng chục đang TRỐNG', so='52604', toSang=[1],
+           chuPhu='Chữ số 0 giữ chỗ — không đọc, nhưng không bỏ được.',
+           loi=['Hàng chục đang trống nên không có số hạng nào cho nó.',
+                'Nhưng chữ số không vẫn phải viết để giữ chỗ. Bỏ đi là mọi chữ số tụt '
+                'hàng.']),
+        _c('y_toan', 'Đừng tách rời từng chữ số',
+           'Phân tích là tách theo GIÁ TRỊ.', buoc=3, soBuoc=3,
+           loi=['Con nhớ chỗ hay nhầm. Phân tích không phải là tách rời từng chữ số ra.',
+                'Phải tách theo giá trị của chúng.']),
+        _c('cong_thuc', 'Giá trị của một chữ số',
+           congThuc='giá trị = chữ số  ×  giá trị của hàng',
+           thay='chữ số 7 ở hàng trăm nghìn  →  700 000',
+           loi=['Giá trị bằng chữ số nhân với giá trị của hàng nó đứng.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='đứng đâu  ·  nặng đấy',
+           loi=['Con nhớ lại một lần nữa. Đứng đâu thì nặng đấy.',
+                'Hỏi chỗ đứng trước, rồi mới cân.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_bang_liet_ke(b):
+    """C1③ Tìm số bằng bảng liệt kê."""
+    return [
+        _c('bia', 'Tìm số bằng bảng liệt kê', so_bai(b),
+           loi=['Hôm nay con có cách tìm số mà không bỏ sót trường hợp nào.']),
+        _c('de_toan', 'Tìm số có hai chữ số, tổng hai chữ số bằng 9.',
+           'Và chữ số hàng chục hơn chữ số hàng đơn vị 3 đơn vị.',
+           loi=['Tìm số có hai chữ số. Tổng hai chữ số bằng chín.',
+                'Và chữ số hàng chục hơn chữ số hàng đơn vị ba đơn vị.']),
+        _c('y_toan', 'Đừng thử mò', 'Thử mò thì không biết đã thử hết chưa.',
+           buoc=1, soBuoc=3,
+           loi=['Thử mò thì hên xui, mà lại không biết mình đã thử hết chưa.']),
+        _c('y_toan', 'Lập bảng cho điều kiện THỨ NHẤT',
+           '9 và 0 · 8 và 1 · 7 và 2 · 6 và 3 · 5 và 4', buoc=2, soBuoc=3,
+           loi=['Lập bảng mọi cặp có tổng bằng chín, chữ số lớn hơn đứng trước.',
+                'Chín và không. Tám và một. Bảy và hai. Sáu và ba. Năm và bốn.',
+                'Được năm cặp, không sót cặp nào.']),
+        _c('y_toan', 'Soi điều kiện THỨ HAI trên bảng',
+           'Hiệu từng cặp: 9 · 7 · 5 · 3 · 1', buoc=3, soBuoc=3,
+           loi=['Nay tính hiệu từng cặp. Chín, bảy, năm, ba, một.',
+                'Chỉ một cặp có hiệu bằng ba, đó là cặp sáu và ba.']),
+        _c('y_toan', 'Đáp số', 'Số cần tìm là 63.',
+           loi=['Số cần tìm là sáu mươi ba.',
+                'Thử lại: sáu cộng ba bằng chín, sáu trừ ba bằng ba. Khớp cả hai.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Số 36 cũng có tổng 9, nhưng hàng chục lại BÉ hơn.',
+           loi=['Con nhớ chỗ này. Số ba mươi sáu cũng có tổng chín.',
+                'Nhưng hàng chục của nó lại bé hơn hàng đơn vị, nên không đạt.']),
+        _c('cong_thuc', 'Cách làm bài tìm số',
+           congThuc='lập bảng cho điều kiện MỘT  ·  soi điều kiện HAI',
+           thay='tổng bằng 9 → năm cặp → cặp nào hiệu bằng 3',
+           loi=['Lập bảng cho điều kiện thứ nhất, rồi soi điều kiện thứ hai trên bảng.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='lập bảng thì KHÔNG SÓT  ·  thử mò thì hên xui',
+           loi=['Con nhớ lại một lần nữa. Lập bảng thì không sót trường hợp nào.',
+                'Và làm xong nhớ thử lại cả hai điều kiện.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_them_phai(b):
+    """C1④ Thêm một chữ số vào bên phải — sơ đồ mười phần."""
+    return [
+        _c('bia', 'Thêm chữ số vào bên phải', so_bai(b),
+           loi=['Thêm một chữ số không mà giá nhảy vọt. Nhảy bao nhiêu đây.']),
+        _c('de_toan', 'Máy in giá 3 500 đồng thành 35 000 đồng.',
+           'Giá bị đội lên bao nhiêu?',
+           loi=['Máy in giá ba nghìn năm trăm đồng thành ba mươi lăm nghìn đồng.']),
+        _c('y_toan', 'Thêm 0 vào bên phải là GẤP MƯỜI',
+           'Mọi chữ số dịch sang trái một hàng.', buoc=1, soBuoc=3,
+           loi=['Thêm số không vào bên phải thì mọi chữ số dịch sang trái một hàng.',
+                'Mỗi hàng nặng gấp mười hàng bên phải nó, nên cả số nặng gấp mười.']),
+        _c('so_do_doan', 'Vẽ ra thành sơ đồ', be=1, lon=10, phanLon=10,
+           nhanBe='số cũ', nhanLon='số mới', hienHieu=True, chuHieu='9 phần đội thêm',
+           chuPhu='Số cũ 1 phần, số mới 10 phần.',
+           loi=['Vẽ ra thì thấy ngay. Số cũ một phần, số mới mười phần.',
+                'Vậy phần đội thêm là chín phần, tức chín lần số cũ.']),
+        _c('y_toan', 'Tính thử xem có khớp không',
+           '35 000 − 3 500 = 31 500', buoc=2, soBuoc=3,
+           loi=['Lấy hiệu: ba mươi lăm nghìn trừ ba nghìn năm trăm, được ba mươi mốt '
+                'nghìn năm trăm.']),
+        _c('y_toan', 'Kiểm bằng phép nhân', '3 500 × 9 = 31 500',
+           buoc=3, soBuoc=3,
+           loi=['Kiểm lại bằng phép nhân. Ba nghìn năm trăm nhân chín cũng ra đúng con '
+                'số ấy.']),
+        _c('y_toan', 'Thêm chữ số KHÁC 0 thì sao',
+           'Thêm 5 vào bên phải 35 → 9 lần số cũ, rồi cộng 5.',
+           loi=['Thêm chữ số khác không thì phần thêm gồm chín lần số cũ, cộng chính '
+                'chữ số ấy.',
+                'Ba mươi lăm nhân chín được ba trăm mười lăm, cộng năm được ba trăm '
+                'hai mươi.']),
+        _c('cong_thuc', 'Thêm chữ số vào bên phải',
+           congThuc='tăng thêm  =  9 × số cũ  +  chữ số vừa thêm',
+           thay='thêm 0 vào 3 500  →  9 × 3 500 = 31 500',
+           loi=['Phần tăng thêm bằng chín lần số cũ, cộng chữ số vừa thêm.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='số mới là MƯỜI phần  ·  không phải hai phần',
+           loi=['Con nhớ lại một lần nữa. Số mới là mười phần chứ không phải hai phần.',
+                'Nên nó đội thêm chín lần, không phải gấp đôi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_them_trai(b):
+    """C1⑤ Thêm bên trái và xen vào giữa."""
+    return [
+        _c('bia', 'Thêm bên trái và xen vào giữa', so_bai(b),
+           loi=['Còn hai cánh cửa nữa, mỗi cửa để lại một dấu vết riêng.']),
+        _c('bang_hang', 'Cửa TRÁI — chữ số mới ngồi vào hàng trăm', so='475',
+           toSang=[2], chuPhu='Hai chữ số cũ đứng yên tại chỗ.',
+           loi=['Thêm chữ số bốn vào bên trái số bảy mươi lăm được bốn trăm bảy mươi '
+                'lăm.',
+                'Hai chữ số cũ đứng yên, chỉ chữ số mới ngồi vào hàng trăm.']),
+        _c('y_toan', 'Nên số tăng đúng một số TRÒN TRĂM',
+           '4 × 100 = 400', buoc=1, soBuoc=3,
+           loi=['Nên số tăng thêm đúng bằng giá trị chữ số mới ở hàng trăm.',
+                'Bốn nhân một trăm bằng bốn trăm. Kiểm lại cũng đúng bốn trăm.']),
+        _c('bang_hang', 'Cửa GIỮA — chữ số 8 bị ĐẨY lên hàng trăm', so='804',
+           toSang=[2], chuPhu='Còn chữ số 4 vẫn đứng yên.',
+           loi=['Xen số không vào giữa số tám mươi tư được tám trăm linh tư.',
+                'Lần này chữ số tám bị đẩy từ hàng chục lên hàng trăm.']),
+        _c('y_toan', 'Chữ số bị đẩy đội thêm 90 lần chính nó',
+           'Đang đáng 80, nay đáng 800 → thêm 720', buoc=2, soBuoc=3,
+           loi=['Chữ số tám đang đáng tám mươi, nay đáng tám trăm.',
+                'Nó đội thêm bảy trăm hai mươi, đúng bằng chín mươi nhân tám.']),
+        _c('y_toan', 'Kiểm lại', '804 − 84 = 720', buoc=3, soBuoc=3,
+           loi=['Kiểm lại bằng phép trừ. Tám trăm linh tư trừ tám mươi tư được bảy '
+                'trăm hai mươi.']),
+        _c('y_toan', 'Chỗ hay nhầm',
+           'Số 0 không đáng gì, nhưng nó ĐẨY chữ số kia lên.',
+           loi=['Con nhớ chỗ này. Bản thân số không chẳng đáng gì.',
+                'Nhưng nó đẩy chữ số bên cạnh lên một hàng, và chính cái đẩy ấy làm số '
+                'to lên.']),
+        _c('cong_thuc', 'Hai cửa còn lại',
+           congThuc='cửa TRÁI: + chữ số × 100   ·   cửa GIỮA: + 90 × chữ số bị đẩy',
+           thay='4 vào trái 75 → 400   ·   0 vào giữa 84 → 720',
+           loi=['Cửa trái thêm chữ số nhân một trăm. Cửa giữa thêm chín mươi nhân chữ '
+                'số bị đẩy.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='lên một hàng  =  nặng gấp mười',
+           loi=['Con nhớ lại một lần nữa. Lên một hàng là nặng gấp mười.',
+                'Hiểu câu ấy thì cả ba cánh cửa đều dễ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_thang_may(b):
+    """C1⑥ Nhân và chia cho 10, 100, 1000."""
+    return [
+        _c('bia', 'Nhân và chia cho mười', so_bai(b),
+           loi=['Thêm một chữ số không là nhân mười. Hôm nay con biết vì sao.']),
+        _c('y_toan', 'Vì sao thêm 0 là nhân mười',
+           'Mọi chữ số dịch sang trái một hàng.', buoc=1, soBuoc=3,
+           loi=['Thêm một chữ số không vào bên phải thì mọi chữ số dịch sang trái một '
+                'hàng.',
+                'Mỗi hàng nặng gấp mười hàng bên phải nó, nên cả số nặng gấp mười.']),
+        _c('y_toan', 'Đi LÊN từng tầng',
+           '47  →  470  →  4 700  →  47 000', buoc=2, soBuoc=3,
+           loi=['Bốn mươi bảy nhân mười được bốn trăm bảy mươi.',
+                'Nhân một trăm thì thêm hai chữ số không. Nhân một nghìn thì thêm ba.',
+                'Bốn số ấy cùng một nhà, chỉ khác tầng đang đứng.']),
+        _c('y_toan', 'Đi XUỐNG thì bớt', '4 700 : 100 = 47', buoc=3, soBuoc=3,
+           loi=['Chia là đi ngược lại. Bốn nghìn bảy trăm chia một trăm thì bớt hai '
+                'chữ số không, còn bốn mươi bảy.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Chia 100 phải bớt HAI chữ số 0, không phải một.',
+           loi=['Con nhớ chỗ này. Chia cho một trăm phải bớt hai chữ số không.',
+                'Bớt có một là ra số lớn gấp mười lần đáp án đúng.']),
+        _c('y_toan', 'Ghi thiếu một chữ số 0 thì hụt bao nhiêu',
+           'Số đúng 10 phần, số ghi sai 1 phần → hụt 9 phần',
+           loi=['Một khoản bị ghi thiếu một chữ số không thì số ghi sai chỉ bằng một '
+                'phần mười.',
+                'Nên phần hụt là chín phần, tức chín lần số đã ghi.']),
+        _c('cong_thuc', 'Thang máy chữ số 0',
+           congThuc='nhân 10, 100, 1000  →  thêm 1, 2, 3 chữ số 0',
+           thay='chia thì làm ngược lại — bớt đi từng ấy',
+           loi=['Nhân mười, một trăm, một nghìn thì thêm một, hai, ba chữ số không.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='ĐẾM số chữ số 0 trước  ·  rồi mới viết',
+           loi=['Con nhớ lại một lần nữa. Đếm số chữ số không trước, rồi mới viết.',
+                'Nhầm ở bài này gần như luôn là nhầm một chữ số không.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_xoa_chu_so(b):
+    """C1⑦ Xoá một chữ số — ở đuôi khác hẳn ở đầu."""
+    return [
+        _c('bia', 'Xoá một chữ số', so_bai(b),
+           loi=['Xoá ở đuôi và xoá ở đầu là hai chuyện khác hẳn nhau.']),
+        _c('bang_hang', 'Xoá ở ĐẦU — các chữ số còn lại ĐỨNG YÊN', so='725',
+           toSang=[2], chuPhu='Xoá chữ số 7 thì còn số 25.',
+           loi=['Xoá chữ số hàng trăm của bảy trăm hai mươi lăm thì còn hai mươi lăm.',
+                'Hai chữ số còn lại đứng nguyên chỗ cũ, không ai phải dịch đi đâu.']),
+        _c('y_toan', 'Nên số giảm đúng GIÁ TRỊ chữ số bị cắt',
+           '725 − 25 = 700', buoc=1, soBuoc=3,
+           loi=['Nên số giảm đúng bằng giá trị của chữ số vừa bị cắt, tức bảy trăm.']),
+        _c('bang_hang', 'Xoá ở ĐUÔI — mọi chữ số TỤT một hàng', so='303',
+           toSang=[0], chuPhu='Xoá chữ số 3 thì còn số 30.',
+           loi=['Xoá chữ số tận cùng của ba trăm linh ba thì còn ba mươi.',
+                'Lần này mọi chữ số còn lại đều tụt xuống một hàng.']),
+        _c('y_toan', 'Dựng lại số cũ', 'số cũ = số mới × 10 + chữ số bị xoá',
+           buoc=2, soBuoc=3,
+           loi=['Số cũ bằng số mới nhân mười, rồi cộng chữ số bị xoá.',
+                'Ba mươi nhân mười được ba trăm, cộng ba được ba trăm linh ba.']),
+        _c('y_toan', 'Số giảm bao nhiêu', '303 − 30 = 273', buoc=3, soBuoc=3,
+           loi=['Số giảm là ba trăm linh ba trừ ba mươi, được hai trăm bảy mươi ba.']),
+        _c('y_toan', 'Chỗ hay nhầm',
+           'Xoá ở đuôi KHÔNG phải lúc nào cũng giảm mười lần.',
+           loi=['Con nhớ chỗ này. Xoá ở đuôi chỉ giảm đúng mười lần khi chữ số bị xoá '
+                'là số không.',
+                'Khác không thì còn phải cộng thêm chữ số ấy nữa.']),
+        _c('cong_thuc', 'Hai kiểu xoá',
+           congThuc='xoá ở ĐẦU: giảm đúng giá trị chữ số ấy',
+           thay='xoá ở ĐUÔI: số cũ = số mới × 10 + chữ số bị xoá',
+           loi=['Xoá ở đầu thì giảm đúng giá trị chữ số ấy. Xoá ở đuôi thì phải dựng '
+                'lại bằng phép nhân mười.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hỏi: các chữ số còn lại có phải DỊCH CHỖ không',
+           loi=['Con nhớ lại một lần nữa. Hỏi xem các chữ số còn lại có phải dịch chỗ '
+                'không.',
+                'Không dịch thì dễ, có dịch thì phải nhân mười.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_trao_chu_so(b):
+    """C1⑧ Tráo hai chữ số — họ 9 và họ 11."""
+    return [
+        _c('bia', 'Tráo hai chữ số', so_bai(b),
+           loi=['Tráo hai chữ số rồi trừ nhau, các đáp số đều họ hàng với nhau.']),
+        _c('y_toan', 'Thử vài lần đã',
+           '72 − 27 = 45   ·   63 − 36 = 27   ·   91 − 19 = 72', buoc=1, soBuoc=3,
+           loi=['Bảy mươi hai trừ hai mươi bảy bằng bốn mươi lăm.',
+                'Sáu mươi ba trừ ba mươi sáu bằng hai mươi bảy.',
+                'Chín mươi mốt trừ mười chín bằng bảy mươi hai.']),
+        _c('tach_so', 'Soi hiệu hai chữ số của từng số', so='72', sang=[1, 2],
+           phep='7 − 2 = 5, mà 5 × 9 = 45', chuPhu='Hiệu hai chữ số nhân chín.',
+           loi=['Soi hiệu hai chữ số của từng số. Năm, ba, tám.',
+                'Nhân chín lên được bốn mươi lăm, hai mươi bảy, bảy mươi hai. Khớp cả '
+                'ba.']),
+        _c('y_toan', 'Vì sao lại thế',
+           'Chữ số hàng chục tụt xuống thì MẤT chín lần chính nó.',
+           buoc=2, soBuoc=3,
+           loi=['Chữ số hàng chục vốn đáng gấp mười chính nó. Tráo xuống hàng đơn vị '
+                'thì chỉ còn đáng chính nó.',
+                'Tức là mất đi chín lần. Chữ số kia thì ngược lại, được thêm chín lần.']),
+        _c('y_toan', 'Luật anh em: đem CỘNG',
+           '74 + 47 = 121, mà 7 + 4 = 11 và 11 × 11 = 121', buoc=3, soBuoc=3,
+           loi=['Nay thử đem cộng. Bảy mươi tư cộng bốn mươi bảy bằng một trăm hai '
+                'mươi mốt.',
+                'Mà bảy cộng bốn bằng mười một, rồi mười một nhân mười một cũng ra con '
+                'số ấy.']),
+        _c('y_toan', 'Đừng lẫn hai luật',
+           'Trừ thì họ 9. Cộng thì họ 11.',
+           loi=['Con đừng lẫn hai luật. Trừ thì mang họ chín, cộng thì mang họ mười '
+                'một.']),
+        _c('cong_thuc', 'Hai định luật tráo chữ số',
+           congThuc='HIỆU = 9 × hiệu hai chữ số',
+           thay='TỔNG = 11 × tổng hai chữ số',
+           loi=['Hiệu bằng chín nhân hiệu hai chữ số. Tổng bằng mười một nhân tổng hai '
+                'chữ số.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='biết hiệu → chia 9  ·  biết tổng → chia 11',
+           loi=['Con nhớ lại một lần nữa. Biết hiệu thì chia chín, biết tổng thì chia '
+                'mười một.',
+                'Chia xong là lộ ra hai chữ số, rồi tra bảng liệt kê là tìm được số.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_thua_so_chung(b):
+    """C2① Đặt thừa số chung."""
+    return [
+        _c('bia', 'Đặt thừa số chung', so_bai(b),
+           loi=['Có phép tính dài mà làm được trong đầu. Bí quyết là nhìn ra thứ chung '
+                'nhau.']),
+        _c('de_toan', 'Tính nhanh 4 × 38 + 4 × 62.', 'Đừng vội nhân từng tích.',
+           loi=['Tính nhanh bốn nhân ba mươi tám, cộng bốn nhân sáu mươi hai.']),
+        _c('y_toan', 'Nhìn ra thứ CHUNG NHAU', 'Cả hai tích đều có thừa số 4.',
+           buoc=1, soBuoc=3,
+           loi=['Cả hai tích đều có thừa số bốn. Bốn ấy chính là thứ chung.']),
+        _c('y_toan', 'Vì sao gộp được',
+           'Ba mươi tám hộp gà và sáu mươi hai hộp tôm, hộp nào cũng đáng 4.',
+           buoc=2, soBuoc=3,
+           loi=['Có ba mươi tám hộp gà và sáu mươi hai hộp tôm, hộp nào cũng đáng bốn '
+                'nghìn.',
+                'Vậy đếm chung số hộp trước rồi mới nhân giá, kết quả vẫn thế.']),
+        _c('y_toan', 'Gộp lại rồi tính', '4 × (38 + 62) = 4 × 100 = 400',
+           buoc=3, soBuoc=3,
+           loi=['Gộp lại thành bốn nhân với ngoặc. Trong ngoặc được đúng một trăm.',
+                'Bốn nhân một trăm bằng bốn trăm.']),
+        _c('y_toan', 'Chiều TRỪ cũng gộp được', '9 × 47 − 9 × 37 = 9 × 10 = 90',
+           loi=['Chiều trừ cũng gộp được. Chín nhân bốn mươi bảy trừ chín nhân ba mươi '
+                'bảy.',
+                'Trong ngoặc còn mười, nhân chín được chín mươi.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Thừa số chung chỉ viết MỘT lần ra ngoài ngoặc.',
+           loi=['Con nhớ chỗ này. Thừa số chung chỉ viết một lần ra ngoài ngoặc.',
+                'Cộng cả hai thừa số lại là hỏng.']),
+        _c('cong_thuc', 'Đặt thừa số chung',
+           congThuc='a × b + a × c  =  a × (b + c)',
+           thay='4 × 38 + 4 × 62 = 4 × 100 = 400',
+           loi=['Thừa số chung đưa ra ngoài, hai số kia gộp vào trong ngoặc.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='trước khi tính, hỏi: CÓ GÌ CHUNG KHÔNG',
+           loi=['Con nhớ lại một lần nữa. Trước khi tính hãy hỏi: có gì chung không.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_nham_25(b):
+    """C2② Nhẩm nhanh với 25."""
+    return [
+        _c('bia', 'Nhẩm nhanh với hai mươi lăm', so_bai(b),
+           loi=['Số hai mươi lăm lúc nào cũng đi tìm bạn.']),
+        _c('y_toan', 'Cặp bài trùng của số 25', '25 × 4 = 100', buoc=1, soBuoc=3,
+           loi=['Hai mươi lăm nhân bốn bằng một trăm. Nên gặp nó là đi tìm số bốn.']),
+        _c('y_toan', 'Tách để LỘ số 4 ra', '36 = 4 × 9', buoc=2, soBuoc=3,
+           loi=['Số ba mươi sáu tách được thành bốn nhân chín.',
+                'Vậy hai mươi lăm nhân ba mươi sáu thành hai mươi lăm nhân bốn nhân '
+                'chín.']),
+        _c('y_toan', 'Ghép cặp trước rồi mới nhân',
+           '25 × 4 = 100, rồi 100 × 9 = 900', buoc=3, soBuoc=3,
+           loi=['Ghép cặp trước được một trăm. Rồi một trăm nhân chín bằng chín trăm.']),
+        _c('y_toan', 'Không tách được thì đi lối khác',
+           '48 × 100 = 4 800, rồi 4 800 : 4 = 1 200',
+           loi=['Gặp bốn mươi tám nhân hai mươi lăm thì nhân một trăm trước.',
+                'Nhân một trăm là nhân gấp bốn lần so với nhân hai mươi lăm, nên sau '
+                'đó phải chia cho bốn.',
+                'Bốn nghìn tám trăm chia bốn được một nghìn hai trăm.']),
+        _c('y_toan', 'Người anh của số 25', '125 × 8 = 1 000',
+           loi=['Số một trăm hai mươi lăm ghép với tám thì được một nghìn.',
+                'Cùng một lối nghĩ, chỉ khác con số.']),
+        _c('cong_thuc', 'Hai cặp phải thuộc',
+           congThuc='25 × 4 = 100      ·      125 × 8 = 1 000',
+           thay='25 × 36 = 25 × 4 × 9 = 900',
+           loi=['Hai mươi lăm ghép với bốn. Một trăm hai mươi lăm ghép với tám.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='gặp 25 thì mắt đi tìm số 4',
+           loi=['Con nhớ lại một lần nữa. Gặp hai mươi lăm thì mắt đi tìm số bốn.',
+                'Tìm được là bài xong một nửa.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_nham_11(b):
+    """C2③ Nhẩm nhanh với 11."""
+    return [
+        _c('bia', 'Nhẩm nhanh với mười một', so_bai(b),
+           loi=['Nhân với mười một nghe khó mà thật ra rất dễ.']),
+        _c('y_toan', 'Cách chắc chắn nhất', '11 = 10 + 1', buoc=1, soBuoc=3,
+           loi=['Mười một bằng mười cộng một.',
+                'Nên nhân mười một là nhân mười rồi cộng thêm chính số ấy một lần.']),
+        _c('y_toan', 'Làm thử', '35 × 10 = 350, rồi 350 + 35 = 385',
+           buoc=2, soBuoc=3,
+           loi=['Ba mươi lăm nhân mười bằng ba trăm năm mươi.',
+                'Cộng thêm ba mươi lăm được ba trăm tám mươi lăm.']),
+        _c('tach_so', 'Mẹo hai đầu — nhanh hơn nữa', so='385', sang=[2],
+           phep='3 và 5 ra hai bên, tổng 8 nhét vào giữa',
+           chuPhu='Ra đúng con số vừa tính.',
+           loi=['Có mẹo nhanh hơn. Viết hai chữ số ra hai bên, cộng chúng lại rồi nhét '
+                'vào giữa.',
+                'Ba và năm ra hai bên, tổng tám vào giữa. Được ba trăm tám mươi lăm.']),
+        _c('y_toan', 'Chỗ phải cẩn thận',
+           'Với 57 thì tổng là 12 — hai chữ số mà chỗ giữa chỉ chứa được một.',
+           buoc=3, soBuoc=3,
+           loi=['Với năm mươi bảy thì tổng hai chữ số là mười hai.',
+                'Hai chữ số mà chỗ giữa chỉ chứa được một, nên phải nhớ.']),
+        _c('y_toan', 'Nhớ 1 sang trái', '5 thêm 1 thành 6 → được 627',
+           loi=['Để lại chữ số hai ở giữa, nhớ một sang bên trái. Năm thêm một thành '
+                'sáu.',
+                'Được sáu trăm hai mươi bảy. Kiểm bằng cách chắc chắn cũng ra thế.']),
+        _c('cong_thuc', 'Nhân với mười một',
+           congThuc='× 11  =  × 10  rồi  cộng chính nó',
+           thay='mẹo hai đầu: hai chữ số ra hai bên, TỔNG vào giữa',
+           loi=['Nhân mười một là nhân mười rồi cộng chính nó.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='tổng vượt 9  →  NHỚ 1 sang trái',
+           loi=['Con nhớ lại một lần nữa. Tổng vượt chín thì nhớ một sang trái.',
+                'Lẫn thì quay về cách chắc chắn, chậm vài giây nhưng không bao giờ '
+                'sai.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_thua_so_0(b):
+    """C2④ Nhìn kỹ trước khi tính — thừa số 0 ẩn."""
+    return [
+        _c('bia', 'Nhìn kỹ trước khi tính', so_bai(b),
+           loi=['Có bài dài cả dòng mà đáp số là số không.']),
+        _c('de_toan', 'Tính giá trị của ngoặc 13 trừ 78 chia 6, nhân 231, nhân 8.',
+           'Đừng vội nhân.',
+           loi=['Tính giá trị của ngoặc mười ba trừ bảy mươi tám chia sáu, rồi nhân '
+                'hai trăm ba mươi mốt, rồi nhân tám.']),
+        _c('y_toan', 'Soi cái ngoặc trước', '78 : 6 = 13', buoc=1, soBuoc=3,
+           loi=['Soi cái ngoặc trước đã. Trong ngoặc có phép chia.',
+                'Bảy mươi tám chia sáu bằng mười ba.']),
+        _c('y_toan', 'Ngoặc bằng KHÔNG', '13 − 13 = 0', buoc=2, soBuoc=3,
+           loi=['Mười ba trừ mười ba bằng không. Vậy cái ngoặc bằng không.']),
+        _c('y_toan', 'Một thừa số bằng 0 là xong',
+           'Cả tích bằng 0 — khỏi nhân gì thêm.', buoc=3, soBuoc=3,
+           loi=['Trong một tích, chỉ cần một thừa số bằng không thì cả tích bằng không.',
+                'Không phải nhân gì thêm nữa. Đáp số là không.']),
+        _c('y_toan', 'So sánh cũng không cần tính hết',
+           '52 × 25 hơn 51 × 25 đúng một lần 25 — mà bên kia chỉ hơn 20.',
+           loi=['So năm mươi hai nhân hai mươi lăm với năm mươi mốt nhân hai mươi lăm '
+                'cộng hai mươi.',
+                'Bên trái hơn đúng một lần hai mươi lăm, mà bên phải chỉ hơn có hai '
+                'mươi. Vậy bên trái lớn hơn.']),
+        _c('cong_thuc', 'Ba câu soi trước khi đặt bút',
+           congThuc='có thừa số CHUNG không  ·  có cặp TRÒN TRĂM không',
+           thay='có thừa số 0 ẩn không',
+           loi=['Ba câu hỏi soi nhanh: có thừa số chung không, có cặp tròn trăm không, '
+                'có thừa số không ẩn không.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='soi ba giây  ·  tiết kiệm cả bài',
+           loi=['Con nhớ lại một lần nữa. Soi ba giây trước khi đặt bút.',
+                'Có khi tiết kiệm được cả bài tính.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_gom_x(b):
+    """C2⑤ X xuất hiện hai lần."""
+    return [
+        _c('bia', 'X xuất hiện hai lần', so_bai(b),
+           loi=['Gặp bài mà số cần tìm hiện ra hai lần thì gom chúng lại trước đã.']),
+        _c('de_toan', 'Tìm X, biết X nhân 3 cộng X nhân 2 bằng 45.',
+           'X hiện ra hai lần.',
+           loi=['Bài cho biết số cần tìm nhân ba, cộng số ấy nhân hai, bằng bốn mươi lăm.']),
+        _c('y_toan', 'Chưa gom thì chưa giải được',
+           'Không biết phải chia cho cái gì.', buoc=1, soBuoc=3,
+           loi=['Chưa gom lại thì chưa giải được, vì không biết phải chia cho cái gì.']),
+        _c('y_toan', 'Gom bằng thừa số chung', 'X × (3 + 2) = X × 5',
+           buoc=2, soBuoc=3,
+           loi=['Cả hai số hạng đều có số cần tìm. Đưa nó ra ngoài ngoặc.',
+                'Trong ngoặc ba cộng hai bằng năm. Bài thành số ấy nhân năm bằng bốn '
+                'mươi lăm.']),
+        _c('y_toan', 'Nay là bài quen rồi', '45 : 5 = 9', buoc=3, soBuoc=3,
+           loi=['Muốn tìm thừa số chưa biết thì lấy tích chia cho thừa số kia.',
+                'Bốn mươi lăm chia năm bằng chín. Vậy số cần tìm là chín.']),
+        _c('y_toan', 'Thử lại', '9 × 3 = 27, rồi 9 × 2 = 18, và 27 + 18 = 45',
+           loi=['Lắp chín vào đề. Hai mươi bảy cộng mười tám bằng bốn mươi lăm.',
+                'Đúng bằng vế phải.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Trong ngoặc hai số CỘNG nhau, không nhân nhau.',
+           loi=['Con nhớ chỗ này. Trong ngoặc hai số cộng nhau chứ không nhân nhau.',
+                'Gom ra năm chứ không phải sáu.']),
+        _c('cong_thuc', 'Gom X về một chỗ',
+           congThuc='X × a + X × b  =  X × (a + b)',
+           thay='X × 3 + X × 2 = X × 5 = 45  →  X = 9',
+           loi=['Số cần tìm nhân số này, cộng số ấy nhân số kia, bằng số ấy nhân với '
+                'tổng hai số.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='X đứng lẻ  =  X × 1',
+           loi=['Con nhớ lại một lần nữa. Số cần tìm đứng lẻ chính là nó nhân một.',
+                'Nhờ thế mà gom được cả những bài có nó đứng lẻ một mình.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_boc_ngoac(b):
+    """C2⑥ Bóc ngoặc từ ngoài vào."""
+    return [
+        _c('bia', 'Bóc ngoặc từ ngoài vào', so_bai(b),
+           loi=['Bóc ngoặc cũng như bóc củ hành, mỗi lần một lớp.']),
+        _c('de_toan', 'Tìm X, biết ngoặc X trừ 15, chia cho 3, bằng 8.',
+           'Có một lớp ngoặc.',
+           loi=['Bài cho biết ngoặc số cần tìm trừ mười lăm, chia cho ba, bằng tám.']),
+        _c('y_toan', 'Coi cả ngoặc là MỘT số bí ẩn',
+           'Bài thành: số gì chia 3 thì được 8?', buoc=1, soBuoc=3,
+           loi=['Cứ coi cả cặp ngoặc là một số bí ẩn.',
+                'Bài thành: số gì chia ba thì được tám.']),
+        _c('y_toan', 'Bóc lớp thứ nhất', '3 × 8 = 24, nên X − 15 = 24',
+           buoc=2, soBuoc=3,
+           loi=['Số trong ngoặc là ba nhân tám, tức hai mươi tư. Vậy số cần tìm trừ '
+                'mười lăm bằng hai mươi tư.']),
+        _c('y_toan', 'Bóc lớp thứ hai', '24 + 15 = 39', buoc=3, soBuoc=3,
+           loi=['Nay bài quen rồi. Số cần tìm bằng hai mươi tư cộng mười lăm, tức ba '
+                'mươi chín.']),
+        _c('y_toan', 'Thử lại', '39 − 15 = 24, rồi 24 : 3 = 8',
+           loi=['Lắp ba mươi chín vào đề. Ba mươi chín trừ mười lăm bằng hai mươi tư.',
+                'Hai mươi tư chia ba bằng tám. Đúng vế phải.']),
+        _c('y_toan', 'Mẹo tìm lớp phải bóc trước',
+           'Lấy ngón tay che cái ngoặc lại rồi đọc phần còn thấy.',
+           loi=['Con lấy ngón tay che cái ngoặc lại rồi đọc to phần còn nhìn thấy.',
+                'Đó chính là lớp phải bóc trước.']),
+        _c('cong_thuc', 'Bóc ngoặc',
+           congThuc='coi cả ngoặc là MỘT số  ·  bóc từ NGOÀI vào',
+           thay='(X − 15) : 3 = 8  →  X − 15 = 24  →  X = 39',
+           loi=['Coi cả ngoặc là một số, rồi bóc từ ngoài vào, mỗi bước một lớp.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='đừng nhảy cóc  ·  và luôn thử lại',
+           loi=['Con nhớ lại một lần nữa. Đừng nhảy cóc, đi từng bước một.',
+                'Và giải xong phải lắp số vừa tìm ngược vào đề để thử lại.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_x_chia_du(b):
+    """C2⑦ Tìm X trong phép chia có dư."""
+    return [
+        _c('bia', 'Tìm X trong phép chia có dư', so_bai(b),
+           loi=['Phép chia có dư quay lại, nhưng chỗ chưa biết nay khác.']),
+        _c('y_toan', 'Nhớ lại luật vàng',
+           'số bị chia = số chia × thương + số dư', buoc=1, soBuoc=3,
+           loi=['Số bị chia bằng số chia nhân thương, rồi cộng số dư.',
+                'Nhớ câu ấy là làm được cả hai chiều.']),
+        _c('y_toan', 'Chiều một: tìm số bị chia',
+           'X : 7 = 8 dư 3  →  7 × 8 = 56, rồi 56 + 3 = 59', buoc=2, soBuoc=3,
+           loi=['Số cần tìm chia bảy được tám dư ba. Nhân trước, bảy nhân tám bằng '
+                'năm mươi sáu.',
+                'Cộng số dư: năm mươi sáu cộng ba bằng năm mươi chín.']),
+        _c('y_toan', 'Chiều hai: tìm số chia',
+           '45 : X = 6 dư 3  →  bớt dư trước: 45 − 3 = 42', buoc=3, soBuoc=3,
+           loi=['Bốn mươi lăm chia cho số cần tìm được sáu dư ba. Lần này bớt số dư ra '
+                'trước cho gọn.',
+                'Bốn mươi lăm trừ ba bằng bốn mươi hai. Phần ấy mới chia hết.']),
+        _c('y_toan', 'Rồi chia nốt', '42 : 6 = 7',
+           loi=['Bốn mươi hai chia sáu bằng bảy. Vậy số cần tìm là bảy.']),
+        _c('y_toan', 'Kiểm điều kiện bắt buộc',
+           'Số dư PHẢI bé hơn số chia — ở đây 3 bé hơn 7.',
+           loi=['Kiểm điều kiện bắt buộc. Số dư phải bé hơn số chia.',
+                'Ở đây dư ba mà chia bảy, đúng luật.']),
+        _c('y_toan', 'Chỗ hay nhầm',
+           'Đừng đem cả 45 ra chia — ba đơn vị kia không chia được cho ai.',
+           loi=['Con nhớ chỗ này. Đừng đem cả bốn mươi lăm ra chia.',
+                'Ba đơn vị dư ấy không chia được cho ai, phải bớt ra trước.']),
+        _c('cong_thuc', 'Phép chia có dư',
+           congThuc='số bị chia  =  số chia × thương  +  số dư',
+           thay='tìm số chia: bớt số dư ra trước rồi mới chia',
+           loi=['Số bị chia bằng số chia nhân thương cộng số dư.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='số dư luôn BÉ HƠN số chia',
+           loi=['Con nhớ lại một lần nữa. Số dư luôn bé hơn số chia.',
+                'Và thử lại phải khớp cả thương lẫn số dư, thiếu một là hỏng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_dem_cach_deu(b):
+    """C2⑧ Đếm số cách đều."""
+    return [
+        _c('bia', 'Đếm số cách đều', so_bai(b),
+           loi=['Đếm dãy dài thì có công thức, nhưng công thức ấy có một cái bẫy.']),
+        _c('de_toan', 'Dãy 8, 12, 16 cho tới 96. Dãy có bao nhiêu số?',
+           'Các số cách đều nhau.',
+           loi=['Dãy tám, mười hai, mười sáu, cứ thế cách đều cho tới chín mươi sáu.']),
+        _c('y_toan', 'Ba thứ phải tìm trước',
+           'số đầu 8  ·  số cuối 96  ·  khoảng cách 4', buoc=1, soBuoc=3,
+           loi=['Ba thứ phải tìm trước. Số đầu là tám, số cuối là chín mươi sáu, '
+                'khoảng cách là bốn.']),
+        _c('y_toan', 'Đếm số BƯỚC NHẢY', '96 − 8 = 88, rồi 88 : 4 = 22',
+           buoc=2, soBuoc=3,
+           loi=['Từ tám đi tới chín mươi sáu phải vượt quãng tám mươi tám.',
+                'Mỗi bước dài bốn nên có hai mươi hai bước nhảy.']),
+        _c('y_toan', 'Nhưng đó là BƯỚC, không phải SỐ',
+           'Số đầu tiên chưa nhảy đã đứng sẵn ở đó.', buoc=3, soBuoc=3,
+           loi=['Nhưng hai mươi hai là số bước nhảy, không phải số số.',
+                'Số đầu tiên chưa nhảy bước nào đã đứng sẵn ở đó, phải đếm nó vào.',
+                'Vậy dãy có hai mươi ba số.']),
+        _c('y_toan', 'Đếm số chia hết cũng vậy',
+           'Từ 1 tới 200 chia hết cho 5: 200 − 5 = 195, rồi 195 : 5 = 39, cộng 1',
+           loi=['Đếm số chia hết cũng một lối ấy. Từ một tới hai trăm, số chia hết cho '
+                'năm.',
+                'Dãy là năm, mười, cho tới hai trăm. Tính ra ba mươi chín, cộng một '
+                'được bốn mươi.']),
+        _c('cong_thuc', 'Công thức đếm dãy cách đều',
+           congThuc='số các số  =  (cuối − đầu) : khoảng  +  1',
+           thay='(96 − 8) : 4 + 1 = 23',
+           loi=['Số các số bằng hiệu chia khoảng, rồi cộng một.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='ĐỪNG QUÊN cộng một',
+           loi=['Con nhớ lại một lần nữa. Đừng quên cộng một.',
+                'Giống đếm bậc thang: đi chín bước mà có tới mười bậc.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_dem_trang(b):
+    """C2⑨ Đếm chữ số khi đánh số trang."""
+    return [
+        _c('bia', 'Đếm chữ số trang sách', so_bai(b),
+           loi=['Đánh số trang cho cuốn sổ thì tốn bao nhiêu con chữ.']),
+        _c('y_toan', 'Không đếm chung được',
+           'Trang 7 tốn một chữ số, trang 250 tốn ba.', buoc=1, soBuoc=3,
+           loi=['Trang bảy tốn một chữ số, trang bảy mươi tốn hai, trang hai trăm năm '
+                'mươi tốn ba.',
+                'Nên phải tách thành từng nhóm cùng độ dài.']),
+        _c('y_toan', 'Nhóm một chữ số', 'Trang 1 tới 9: 9 trang × 1 = 9',
+           buoc=2, soBuoc=3,
+           loi=['Từ trang một đến trang chín có chín trang, mỗi trang một chữ số. '
+                'Được chín.']),
+        _c('y_toan', 'Nhóm hai chữ số', 'Trang 10 tới 99: 90 trang × 2 = 180',
+           buoc=3, soBuoc=3,
+           loi=['Từ trang mười đến trang chín mươi chín có chín mươi trang, mỗi trang '
+                'hai chữ số. Được một trăm tám mươi.']),
+        _c('y_toan', 'Nhóm ba chữ số', 'Trang 100 tới 250: 151 trang × 3 = 453',
+           loi=['Từ trang một trăm đến trang hai trăm năm mươi có một trăm năm mươi '
+                'mốt trang.',
+                'Mỗi trang ba chữ số, được bốn trăm năm mươi ba.']),
+        _c('y_toan', 'Cộng cả ba nhóm', '9 + 180 + 453 = 642',
+           loi=['Cộng cả ba nhóm được sáu trăm bốn mươi hai chữ số.']),
+        _c('y_toan', 'Bài ngược thì TRỪ DẦN',
+           '552 − 9 = 543, rồi 543 − 180 = 363, rồi 363 : 3 = 121 trang',
+           loi=['Biết cuốn sách dùng hết năm trăm năm mươi hai chữ số thì trừ dần.',
+                'Bớt phần nhóm một, bớt phần nhóm hai, còn ba trăm sáu mươi ba.',
+                'Chia ba được một trăm hai mươi mốt trang, cộng với chín mươi chín '
+                'trang trước là hai trăm hai mươi trang.']),
+        _c('cong_thuc', 'Đếm chữ số trang sách',
+           congThuc='chia NHÓM theo độ dài  ·  mỗi nhóm một phép nhân',
+           thay='9 + 180 + 453 = 642',
+           loi=['Chia nhóm theo độ dài, mỗi nhóm một phép nhân, rồi cộng lại.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='bài ngược  →  TRỪ DẦN theo từng nhóm',
+           loi=['Con nhớ lại một lần nữa. Bài ngược thì trừ dần theo từng nhóm.',
+                'Trừ hết nhóm nào thì bỏ nhóm ấy đi, phần còn lại mới chia.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_quy_tac_nhan(b):
+    """C2⑩ Quy tắc nhân."""
+    return [
+        _c('bia', 'Quy tắc nhân', so_bai(b),
+           loi=['Ổ khoá ba vòng có bao nhiêu mật khẩu. Liệt kê thì chép cả ngày.']),
+        _c('y_toan', 'Kẻ một ô cho mỗi hàng', '9 cách  ·  9 cách  ·  9 cách',
+           buoc=1, soBuoc=3,
+           loi=['Ba vòng thì kẻ ba ô. Mỗi ô ghi số cách chọn của vòng ấy.',
+                'Chín, chín, và chín.']),
+        _c('y_toan', 'Vì sao lại NHÂN',
+           'Mỗi cách của vòng một ghép được với ĐỦ 9 cách của vòng hai.',
+           buoc=2, soBuoc=3,
+           loi=['Mỗi cách của vòng một ghép được với đủ chín cách của vòng hai.',
+                'Rồi mỗi cặp ấy lại ghép được với đủ chín cách của vòng ba.']),
+        _c('y_toan', 'Nhân dồn lại', '9 × 9 × 9 = 729', buoc=3, soBuoc=3,
+           loi=['Nhân dồn lại được bảy trăm hai mươi chín mật khẩu.']),
+        _c('y_toan', 'Kiểm bằng người quen',
+           'Số có ba chữ số: 9 × 10 × 10 = 900 — đúng bằng số các số ba chữ số.',
+           loi=['Đếm mọi số có ba chữ số cũng một lối ấy.',
+                'Hàng trăm chín cách vì không được là không. Hai hàng sau mỗi hàng '
+                'mười cách.',
+                'Được chín trăm, đúng bằng số các số có ba chữ số.']),
+        _c('y_toan', 'Thêm điều kiện thì siết ĐÚNG hàng ấy',
+           'Mật khẩu chẵn: hàng đơn vị chỉ còn 4 cách → 9 × 9 × 4 = 324',
+           loi=['Mật khẩu không chứa số không mà lại chẵn thì chỉ hàng đơn vị bị siết.',
+                'Chỉ còn chọn được hai, bốn, sáu, tám, tức bốn cách. Kết quả ba trăm '
+                'hai mươi tư.']),
+        _c('cong_thuc', 'Quy tắc nhân',
+           congThuc='kẻ một ô cho mỗi hàng  ·  rồi NHÂN DỒN',
+           thay='9 × 9 × 9 = 729',
+           loi=['Kẻ một ô cho mỗi hàng, điền số cách chọn, rồi nhân dồn.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='ghép MỖI NHÓM một thứ  →  NHÂN, không cộng',
+           loi=['Con nhớ lại một lần nữa. Chọn mỗi nhóm một thứ rồi ghép lại thì nhân.',
+                'Cộng là khi chỉ chọn một thứ trong nhiều nhóm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_phan_bu(b):
+    """C2⑪ Đếm bằng phần bù."""
+    return [
+        _c('bia', 'Đếm bằng phần bù', so_bai(b),
+           loi=['Có câu hỏi đếm ngược lại thì dễ hơn hẳn.']),
+        _c('de_toan', 'Có bao nhiêu số ba chữ số CÓ chứa chữ số 0?',
+           'Đếm thẳng thì rối.',
+           loi=['Có bao nhiêu số có ba chữ số mà trong đó có chứa chữ số không.']),
+        _c('y_toan', 'Vì sao đếm thẳng thì rối',
+           'Số 0 nấp ở hàng chục, ở hàng đơn vị, hoặc ở cả hai.', buoc=1, soBuoc=3,
+           loi=['Chữ số không có thể nằm ở hàng chục, ở hàng đơn vị, hoặc ở cả hai.',
+                'Ba trường hợp lại chồng lên nhau, dễ sót mà cũng dễ đếm trùng.']),
+        _c('y_toan', 'Đếm cái NGƯỢC LẠI thì gọn',
+           'Không chứa số 0: mỗi hàng chỉ còn 9 cách → 9 × 9 × 9 = 729',
+           buoc=2, soBuoc=3,
+           loi=['Đếm những số không chứa chữ số không thôi.',
+                'Khi ấy mỗi hàng chỉ chọn từ một đến chín, tức chín cách. Nhân dồn '
+                'được bảy trăm hai mươi chín.']),
+        _c('y_toan', 'Lấy tất cả trừ đi', '900 − 729 = 171', buoc=3, soBuoc=3,
+           loi=['Tất cả các số có ba chữ số là chín trăm.',
+                'Chín trăm trừ bảy trăm hai mươi chín được một trăm bảy mươi mốt.']),
+        _c('y_toan', 'Dấu hiệu nhận ra',
+           'Gặp chữ "CÓ chứa" hay "ÍT NHẤT MỘT" thì nghĩ tới phần bù.',
+           loi=['Gặp chữ có chứa hoặc ít nhất một thì nghĩ ngay tới phần bù.',
+                'Vì cái ngược lại của chúng là không có cái nào, mà cái ấy đếm rất '
+                'gọn.']),
+        _c('cong_thuc', 'Đếm bằng phần bù',
+           congThuc='cần đếm  =  TẤT CẢ  −  phần không thoả',
+           thay='900 − 729 = 171',
+           loi=['Phần cần đếm bằng tất cả trừ đi phần không thoả điều kiện.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='trừ MỘT lần  ·  không lo đếm trùng',
+           loi=['Con nhớ lại một lần nữa. Trừ một lần là xong, không lo đếm trùng.',
+                'Còn cộng nhiều trường hợp thì rất dễ đếm một số tới hai lần.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_nhip_chan(b):
+    """C11① Nhịp chân một giờ."""
+    return [
+        _c('bia', 'Quãng đường đi trong một giờ', so_bai(b),
+           loi=['Trước khi hỏi gì thêm, phải biết một con số đã.']),
+        _c('de_toan', 'Xe chạy đều, 3 giờ đi được 120 km.',
+           'Hỏi mỗi giờ xe đi được bao nhiêu ki-lô-mét?',
+           loi=['Một xe chạy đều, ba giờ đi được một trăm hai mươi ki lô mét.']),
+        _c('y_toan', 'Chạy ĐỀU nghĩa là gì',
+           'Giờ nào cũng đi được bằng nhau — không giờ nhanh giờ chậm.',
+           buoc=1, soBuoc=3,
+           loi=['Chạy đều nghĩa là giờ nào xe cũng đi được đúng bằng nhau.',
+                'Không có giờ nhanh giờ chậm.']),
+        _c('so_do_doan', 'Ba giờ chia đường thành ba khúc bằng nhau',
+           be=1, lon=3, phanLon=3, nhanBe='một giờ', nhanLon='ba giờ',
+           chuTong='120 km', chuPhu='Mỗi khúc là quãng đường đi trong một giờ.',
+           loi=['Ba giờ chia đường thành ba khúc bằng nhau.',
+                'Mỗi khúc chính là quãng đường đi trong một giờ.']),
+        _c('y_toan', 'Vậy chia đều ra', '120 : 3 = 40 ki-lô-mét',
+           buoc=2, soBuoc=3,
+           loi=['Một trăm hai mươi chia ba bằng bốn mươi ki lô mét.']),
+        _c('y_toan', 'Con số ấy là tấm căn cước của chiếc xe',
+           'Biết nó rồi thì hỏi gì cũng trả lời được.', buoc=3, soBuoc=3,
+           loi=['Bốn mươi ấy là tấm căn cước của chiếc xe.',
+                'Biết nó rồi thì hỏi quãng đường, hỏi thời gian, hay so với xe khác '
+                'đều làm được.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Một giờ phải đi ÍT HƠN ba giờ — nên CHIA.',
+           loi=['Con nhớ chỗ này. Một giờ phải đi ít hơn ba giờ.',
+                'Nên phải chia chứ không nhân.']),
+        _c('cong_thuc', 'Rút về đơn vị',
+           congThuc='quãng đường một giờ  =  quãng đường  :  số giờ',
+           thay='120 : 3 = 40 ki-lô-mét',
+           loi=['Quãng đường một giờ bằng quãng đường chia cho số giờ.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='tìm con số MỘT GIỜ trước mọi câu hỏi khác',
+           loi=['Con nhớ lại một lần nữa. Tìm con số một giờ trước đã.',
+                'Chưa có nó thì mấy bài sau đều tắc.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_xuoi_nguoc(b):
+    """C11② Biết một giờ thì tính được mọi giờ."""
+    return [
+        _c('bia', 'Hai chiều xuôi và ngược', so_bai(b),
+           loi=['Có con số một giờ rồi, nay đem dùng.']),
+        _c('y_toan', 'Chiều XUÔI: hỏi quãng đường',
+           'Mỗi giờ một khúc 40 km, năm giờ là năm khúc.', buoc=1, soBuoc=3,
+           loi=['Chiều xuôi là hỏi quãng đường. Mỗi giờ một khúc bốn mươi ki lô mét.',
+                'Năm giờ là năm khúc như thế.']),
+        _c('y_toan', 'Nhân lên', '40 × 5 = 200 ki-lô-mét', buoc=2, soBuoc=3,
+           loi=['Bốn mươi nhân năm bằng hai trăm ki lô mét.']),
+        _c('y_toan', 'Chiều NGƯỢC: hỏi thời gian',
+           '200 km chứa được mấy khúc 40?', buoc=3, soBuoc=3,
+           loi=['Chiều ngược là hỏi thời gian. Hai trăm ki lô mét chứa được mấy khúc '
+                'bốn mươi.',
+                'Hai trăm chia bốn mươi bằng năm giờ.']),
+        _c('y_toan', 'Hai chiều ngược nhau',
+           'Hỏi quãng đường thì NHÂN. Hỏi thời gian thì CHIA.',
+           loi=['Hai chiều ngược nhau. Hỏi quãng đường thì nhân, hỏi thời gian thì '
+                'chia.']),
+        _c('y_toan', 'Chốt lộ trình', 'Xuất phát 7 giờ, đi 5 giờ → tới lúc 12 giờ',
+           loi=['Xuất phát lúc bảy giờ, đi hết năm giờ, vậy tới nơi lúc mười hai giờ '
+                'trưa.']),
+        _c('y_toan', 'Chỗ hay nhầm',
+           'Hỏi thời gian mà đem nhân thì ra tám nghìn giờ — gần một năm.',
+           loi=['Con nhớ chỗ này. Hỏi thời gian mà đem nhân thì ra tám nghìn giờ.',
+                'Gần một năm. Một chuyến xe đâu có đi lâu thế.']),
+        _c('cong_thuc', 'Ba việc từ một con số',
+           congThuc='quãng đường = một giờ × số giờ   ·   số giờ = quãng đường : một giờ',
+           thay='giờ đến = giờ xuất phát + số giờ',
+           loi=['Quãng đường bằng con số một giờ nhân số giờ. Số giờ thì chia ngược '
+                'lại.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='ƯỚC LƯỢNG trước bằng lời  ·  rồi mới tính',
+           loi=['Con nhớ lại một lần nữa. Ước lượng trước bằng lời rồi mới tính.',
+                'Đáp số lệch quá xa ước lượng là biết mình làm nhầm phép.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_so_hai_xe(b):
+    """C11③ So hai xe phải quy về cùng một giờ."""
+    return [
+        _c('bia', 'So hai xe', so_bai(b),
+           loi=['Xe này ba giờ đi trăm hai, xe kia hai giờ đi chín mươi. Xe nào nhanh '
+                'hơn.']),
+        _c('y_toan', 'Cái bẫy',
+           '120 lớn hơn 90 — nhưng hai con số ấy đo trong SỐ GIỜ KHÁC NHAU.',
+           buoc=1, soBuoc=3,
+           loi=['Một trăm hai mươi lớn hơn chín mươi, nên nhiều bạn kết luận ngay.',
+                'Nhưng hai con số ấy đo trong số giờ khác nhau.']),
+        _c('y_toan', 'Giống so hai bạn ăn cơm',
+           'Một bạn ba bát trong ba bữa, một bạn hai bát trong một bữa.',
+           loi=['Giống như so hai bạn ăn cơm. Một bạn ăn ba bát trong ba bữa.',
+                'Một bạn ăn hai bát trong một bữa. So thẳng thì vô nghĩa.']),
+        _c('y_toan', 'Quy cả hai về MỘT GIỜ',
+           '120 : 3 = 40   ·   90 : 2 = 45', buoc=2, soBuoc=3,
+           loi=['Quy cả hai về một giờ. Xe buýt bốn mươi, xe chở đồ bốn mươi lăm.']),
+        _c('y_toan', 'Nay mới so được',
+           'Xe chở đồ nhanh hơn, hơn 5 ki-lô-mét mỗi giờ.', buoc=3, soBuoc=3,
+           loi=['Nay mới so được. Bốn mươi lăm lớn hơn bốn mươi.',
+                'Xe chở đồ mới là xe nhanh hơn, hơn năm ki lô mét mỗi giờ.']),
+        _c('y_toan', 'Bài học chung',
+           'Muốn so hai thứ thì đưa chúng về CÙNG MỘT THƯỚC ĐO.',
+           loi=['Muốn so hai thứ thì phải đưa chúng về cùng một thước đo.',
+                'So giá ngoài chợ cũng thế: gói nửa cân với gói một cân, phải quy về '
+                'cùng đơn vị.']),
+        _c('cong_thuc', 'So hai chuyển động',
+           congThuc='quy cả hai về QUÃNG ĐƯỜNG MỘT GIỜ  ·  rồi mới so',
+           thay='120 : 3 = 40   và   90 : 2 = 45',
+           loi=['Quy cả hai về quãng đường một giờ, rồi mới so.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hỏi trước: hai bên đã CÙNG THƯỚC ĐO chưa',
+           loi=['Con nhớ lại một lần nữa. Trước khi so cái gì, hỏi xem hai bên đã cùng '
+                'thước đo chưa.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_duoi_kip(b):
+    """C11④ Đuổi kịp."""
+    return [
+        _c('bia', 'Bài toán đuổi kịp', so_bai(b),
+           loi=['Xe đồ đi trước một quãng, xe buýt đuổi theo. Bao lâu thì bắt kịp.']),
+        _c('de_toan', 'Xe đồ đi trước 30 km, mỗi giờ đi 30 km.',
+           'Xe buýt đuổi theo cùng chiều, mỗi giờ đi 40 km.',
+           loi=['Xe chở đồ đi trước ba mươi ki lô mét, mỗi giờ đi ba mươi.',
+                'Xe buýt đuổi theo cùng chiều, mỗi giờ đi bốn mươi.']),
+        _c('y_toan', 'Lập bảng cho dễ thấy',
+           'Đầu: cách 30  ·  sau 1 giờ: còn 20  ·  sau 2 giờ: còn 10  ·  sau 3 giờ: 0',
+           buoc=1, soBuoc=3,
+           loi=['Lúc xuất phát hai xe cách nhau ba mươi ki lô mét.',
+                'Sau một giờ còn hai mươi. Sau hai giờ còn mười. Sau ba giờ còn không.']),
+        _c('y_toan', 'Quy luật lộ ra',
+           'Mỗi giờ khép được đúng 10 — mà 10 chính là 40 trừ 30.', buoc=2, soBuoc=3,
+           loi=['Mỗi giờ khoảng cách khép lại đúng mười ki lô mét.',
+                'Mà mười chính là bốn mươi trừ ba mươi, tức hiệu hai nhịp chân.']),
+        _c('y_toan', 'Nên chia cho HIỆU', '30 : 10 = 3 giờ', buoc=3, soBuoc=3,
+           loi=['Nên thời gian đuổi kịp bằng khoảng cách chia cho hiệu.',
+                'Ba mươi chia mười bằng ba giờ.']),
+        _c('y_toan', 'Kiểm bằng hai cột quãng đường',
+           'Buýt đi 40 × 3 = 120  ·  xe đồ đi 30 × 3 = 90, cộng 30 đi trước = 120',
+           loi=['Lúc kịp, xe buýt đã đi một trăm hai mươi.',
+                'Xe đồ đi chín mươi, cộng ba mươi đi trước cũng là một trăm hai mươi.',
+                'Hai xe đứng đúng một chỗ.']),
+        _c('cong_thuc', 'Bài toán đuổi kịp',
+           congThuc='thời gian  =  khoảng cách  :  HIỆU hai nhịp',
+           thay='30 : (40 − 30) = 3 giờ',
+           loi=['Thời gian đuổi kịp bằng khoảng cách chia cho hiệu hai nhịp chân.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='người đi trước KHÔNG đứng yên  ·  nên chỉ khép được phần HƠN',
+           loi=['Con nhớ lại một lần nữa. Người đi trước không đứng yên.',
+                'Nên mỗi giờ chỉ khép được phần hơn, tức là hiệu.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_gap_nhau(b):
+    """C11⑤ Gặp nhau."""
+    return [
+        _c('bia', 'Bài toán gặp nhau', so_bai(b),
+           loi=['Nay hai xe từ hai đầu chạy vào nhau. Đổi một dấu thôi.']),
+        _c('de_toan', 'Hai đầu quãng đường 180 km, hai xe cùng lúc chạy vào nhau.',
+           'Xe thứ nhất 25 km mỗi giờ, xe thứ hai 35 km mỗi giờ.',
+           loi=['Hai đầu một quãng đường dài một trăm tám mươi ki lô mét.',
+                'Hai xe cùng lúc chạy vào nhau, xe thứ nhất hai mươi lăm, xe thứ hai '
+                'ba mươi lăm.']),
+        _c('y_toan', 'Lần này không ai chạy trốn',
+           'Cả hai cùng lao vào, nên góp cả hai phần.', buoc=1, soBuoc=3,
+           loi=['Lần này không ai chạy trốn cả. Cả hai cùng lao vào nhau.',
+                'Nên quãng đường ngắn lại cả hai phần.']),
+        _c('y_toan', 'Mỗi giờ gần thêm bằng TỔNG', '25 + 35 = 60 ki-lô-mét',
+           buoc=2, soBuoc=3,
+           loi=['Mỗi giờ hai xe gần thêm nhau hai mươi lăm cộng ba mươi lăm, bằng sáu '
+                'mươi ki lô mét.']),
+        _c('y_toan', 'Chia ra là xong', '180 : 60 = 3 giờ', buoc=3, soBuoc=3,
+           loi=['Cả quãng đường một trăm tám mươi, mỗi giờ nuốt được sáu mươi.',
+                'Một trăm tám mươi chia sáu mươi bằng ba giờ.']),
+        _c('y_toan', 'Kiểm bằng hai cột quãng đường',
+           '25 × 3 = 75  ·  35 × 3 = 105  ·  75 + 105 = 180',
+           loi=['Xe thứ nhất đi bảy mươi lăm, xe thứ hai đi một trăm linh năm.',
+                'Cộng lại vừa đúng cả quãng đường.']),
+        _c('cong_thuc', 'Hai bài ngược nhau',
+           congThuc='CÙNG chiều → chia HIỆU      ·      NGƯỢC chiều → chia TỔNG',
+           thay='180 : (25 + 35) = 3 giờ',
+           loi=['Cùng chiều thì chia hiệu. Ngược chiều thì chia tổng.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hỏi TRƯỚC: cùng chiều hay ngược chiều',
+           loi=['Con nhớ lại một lần nữa. Hỏi trước xem hai xe cùng chiều hay ngược '
+                'chiều.',
+                'Hỏi xong rồi mới chọn phép tính.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb_kim_dong_ho(b):
+    """C11⑥ Góc giữa hai kim đồng hồ — bài cuối quyển."""
+    return [
+        _c('bia', 'Góc giữa hai kim đồng hồ', so_bai(b),
+           loi=['Bài cuối quyển, và nó bắt tay với bài bốn loại góc.']),
+        _c('y_toan', 'Mặt đồng hồ là một cái thước',
+           'Mười hai con số chia vòng tròn thành 12 khấc bằng nhau.',
+           buoc=1, soBuoc=3,
+           loi=['Mười hai con số chia vòng tròn thành mười hai khấc bằng nhau.']),
+        _c('goc', 'Ướm ê ke vào: góc vuông phủ từ số 12 tới số 3',
+           'Đúng 3 khấc.', do=90, eKe=True, ten='3 KHẤC = GÓC VUÔNG',
+           loi=['Ướm ê ke vào thì thấy góc vuông phủ từ số mười hai tới số ba.',
+                'Đúng ba khấc.']),
+        _c('goc', 'Nửa vòng thì đúng 6 khấc', 'Hai kim duỗi thẳng.',
+           do=180, eKe=True, ten='6 KHẤC = GÓC BẸT',
+           loi=['Nửa vòng là góc bẹt, và nửa vòng thì đúng sáu khấc. Hai kim duỗi '
+                'thẳng.']),
+        _c('y_toan', 'Giờ đúng thì kim phút luôn ở số 12',
+           'Nên chỉ cần đếm khấc từ số 12 tới kim giờ.', buoc=2, soBuoc=3,
+           loi=['Giờ đúng thì kim phút luôn chỉ số mười hai.',
+                'Nên chỉ cần đếm khấc từ số mười hai tới kim giờ.']),
+        _c('y_toan', 'Điểm danh cả mặt đồng hồ',
+           'dưới 3 khấc: nhọn  ·  đúng 3: vuông  ·  4 tới 5: tù  ·  đúng 6: bẹt',
+           buoc=3, soBuoc=3,
+           loi=['Dưới ba khấc thì góc nhọn. Đúng ba khấc là vuông.',
+                'Từ bốn tới năm khấc là tù. Đúng sáu khấc là bẹt.']),
+        _c('y_toan', 'Quá 6 khấc thì đếm phía NGẮN',
+           'Lúc 7 giờ đếm ngược chỉ 5 khấc → vẫn là góc tù.',
+           loi=['Quá sáu khấc thì đếm phía ngắn.',
+                'Lúc bảy giờ, đếm ngược chỉ năm khấc, nên vẫn là góc tù, giống lúc năm '
+                'giờ.']),
+        _c('cong_thuc', 'Mặt đồng hồ là thước đo góc',
+           congThuc='góc vuông = 3 khấc      ·      góc bẹt = 6 khấc',
+           thay='3 giờ và 9 giờ đều cho góc vuông',
+           loi=['Góc vuông là ba khấc, góc bẹt là sáu khấc.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='góc giữa hai kim luôn lấy phía NGẮN',
+           loi=['Con nhớ lại một lần nữa. Góc giữa hai kim luôn lấy phía ngắn.',
+                'Đó là bài cuối cùng của quyển. Con giỏi lắm.']),
+        _c('ket', 'Con học xong cả quyển rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con học xong cả quyển rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
@@ -3055,6 +4072,22 @@ BO = {
     'DL:KSN4.B45': kb_bon_goc,   'DL:KSN4.B78': kb_duong_cao,
     'DL:KSN4.B79': kb_cat_ghep,  'DL:KSN4.B80': kb_hinh_tron,
     'DL:KSN4.B46': kb_trai_phang, 'DL:KSN4.B81': kb_dem_khoi,
+    # ── chương 1 · tám bài số đến lớp triệu ──
+    'DL:KSN4.B01': kb_doc_so,      'DL:KSN4.B82': kb_gia_tri,
+    'DL:KSN4.B83': kb_bang_liet_ke, 'DL:KSN4.B02': kb_them_phai,
+    'DL:KSN4.B84': kb_them_trai,   'DL:KSN4.B03': kb_thang_may,
+    'DL:KSN4.B85': kb_xoa_chu_so,  'DL:KSN4.B04': kb_trao_chu_so,
+    # ── chương 2 · mười một bài bốn phép tính và đếm ──
+    'DL:KSN4.B05': kb_thua_so_chung, 'DL:KSN4.B86': kb_nham_25,
+    'DL:KSN4.B87': kb_nham_11,      'DL:KSN4.B88': kb_thua_so_0,
+    'DL:KSN4.B06': kb_gom_x,        'DL:KSN4.B89': kb_boc_ngoac,
+    'DL:KSN4.B90': kb_x_chia_du,    'DL:KSN4.B07': kb_dem_cach_deu,
+    'DL:KSN4.B91': kb_dem_trang,    'DL:KSN4.B08': kb_quy_tac_nhan,
+    'DL:KSN4.B92': kb_phan_bu,
+    # ── chương 11 · sáu bài quãng đường, khép lại cả quyển ──
+    'DL:KSN4.B47': kb_nhip_chan,    'DL:KSN4.B93': kb_xuoi_nguoc,
+    'DL:KSN4.B94': kb_so_hai_xe,    'DL:KSN4.B48': kb_duoi_kip,
+    'DL:KSN4.B95': kb_gap_nhau,     'DL:KSN4.B49': kb_kim_dong_ho,
 }
 
 

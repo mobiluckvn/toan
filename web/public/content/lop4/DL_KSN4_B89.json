@@ -1,0 +1,309 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN4.B89",
+ "grade": 4,
+ "quyen": "KSN4",
+ "title": "Bài 14 · BÓC NGOẶC TỪ NGOÀI VÀO — MỖI BƯỚC MỘT LỚP",
+ "durationMinutes": 10,
+ "so": 14,
+ "chuong": 2,
+ "tenChuong": "BỐN PHÉP TÍNH VÀ TÍNH NHANH",
+ "dangGoc": "Dạng gốc: SỐ 7.2 mức Lớp 4 — Tìm X trong biểu thức có một hoặc nhiều lớp ngoặc; coi cả ngoặc là một số chưa biết.",
+ "skills": {
+  "bktUnit": "CHUONG:2@G4",
+  "primary": []
+ },
+ "series": {
+  "order": 14,
+  "prev": "DL:KSN4.B06",
+  "next": "DL:KSN4.B90"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Coi cả cặp ngoặc là một số chưa biết duy nhất. Bóc từng lớp ngoặc, mỗi bước một lớp, từ ngoài vào trong. Thử lại bằng cách lắp X ngược vào đề ban đầu.",
+  "kidText": "Bài này có ngoặc lồng trong ngoặc, trông rối lắm. Con đoán nên bóc lớp nào trước?",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn gặp ngoặc X trừ 15 chia 3 bằng 8 rồi làm ngay X trừ 15 chia 3, mỗi thứ một phép, thành ra loạn.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Trong đề, phép nào làm sau cùng — phép trừ trong ngoặc hay phép chia ngoài ngoặc? Gợi ý 2: Bóc thì phải bóc phép làm sau cùng trước. Con thử che cả ngoặc lại bằng ngón tay xem còn nhìn thấy phép gì. Chữa: che ngoặc lại thì chỉ còn \"số gì chia 3 bằng 8\". Giải cái ấy trước, rồi mới mở ngoặc ra."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn gặp ngoặc X trừ 15 chia 3 bằng 8 rồi làm ngay X trừ 15 chia 3, mỗi thứ một phép, thành ra loạn.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tìm X, biết ngoặc X trừ 15, chia cho 3, bằng 8.",
+  "steps": [
+   {
+    "show": "Đừng nhìn vào trong vội"
+   },
+   {
+    "show": "Cứ coi cả cặp ngoặc là một số bí ẩn. Bài thành: số gì chia 3 thì được 8?"
+   },
+   {
+    "show": "Bóc lớp thứ nhất"
+   },
+   {
+    "show": "Số ấy là 3 nhân 8, tức 24. Vậy X trừ 15 bằng 24."
+   },
+   {
+    "show": "Bóc lớp thứ hai"
+   },
+   {
+    "show": "Nay bài quen rồi: X bằng 24 cộng 15, tức 39."
+   },
+   {
+    "show": "Đáp số: X bằng 39."
+   },
+   {
+    "show": "Thử lại"
+   },
+   {
+    "show": "Lắp 39 vào đề: 39 − 15 = 24, rồi 24 : 3 = 8 — đúng vế phải."
+   },
+   {
+    "show": "Nhiều lớp cũng vậy"
+   },
+   {
+    "show": "Gặp ngoặc trong ngoặc thì cứ bóc dần, mỗi bước một lớp, không nhảy cóc."
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Trong bài ngoặc X trừ 15, chia 3, bằng 8: số nào chia 3 thì được 8?",
+     "answerKey": {
+      "value": 24
+     },
+     "solutionNarrative": "Số ấy là 3 × 8 = 24.",
+     "hints": [
+      "Con che cả ngoặc lại bằng ngón tay rồi đọc phần còn nhìn thấy.",
+      "Còn lại là: số gì chia ba thì được tám? Con nhân ngược lại."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Vậy từ X − 15 = 24, tìm X.",
+     "answerKey": {
+      "value": 39
+     },
+     "solutionNarrative": "Lấy 24 + 15 = 39.",
+     "hints": [
+      "Nay bài thành dạng quen: X trừ một số thì bằng số vừa tìm được.",
+      "Muốn tìm số bị trừ thì lấy hiệu cộng số trừ."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Thử lại: ngoặc 39 trừ 15, chia 3, bằng bao nhiêu?",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "Tính ra: 39 − 15 = 24, rồi 24 : 3 = 8 — đúng vế phải.",
+     "hints": [
+      "Con lắp số vừa tìm được vào chỗ X rồi tính theo đúng thứ tự đề viết.",
+      "Trừ trong ngoặc trước, rồi mới chia."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tìm X, biết ngoặc X cộng 7, nhân 2, bằng 30.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "giá trị của ngoặc",
+        "value": 15
+       },
+       {
+        "label": "X",
+        "value": 8
+       }
+      ]
+     },
+     "solutionNarrative": "Ngoặc bằng 30 : 2 = 15. Vậy X = 15 − 7 = 8.",
+     "hints": [
+      "Con che ngoặc lại: còn lại là ngoặc nhân hai thì bằng ba mươi.",
+      "Tìm được giá trị ngoặc rồi thì trừ đi số cộng thêm."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Tìm X, biết X nhân 3 trừ 5 bằng 16.",
+     "answerKey": {
+      "value": 7
+     },
+     "solutionNarrative": "Trước hết X × 3 = 16 + 5 = 21. Vậy X = 21 : 3 = 7.",
+     "hints": [
+      "Con đưa phép trừ sang vế kia trước: cộng năm vào vế phải.",
+      "Rồi lấy kết quả chia cho ba."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Trong bài ngoặc lớn chia 6 bằng 5, giá trị của ngoặc lớn ấy bằng bao nhiêu?",
+     "answerKey": {
+      "value": 30
+     },
+     "solutionNarrative": "Ngoặc lớn bằng 6 × 5 = 30.",
+     "hints": [
+      "Con che cả ngoặc lớn lại rồi đọc phần còn thấy.",
+      "Còn lại là: cái gì chia sáu thì bằng năm? Con nhân ngược lại."
+     ]
+    },
+    {
+     "id": "C7",
+     "text": "Biết ngoặc X cộng 5, nhân 2, rồi trừ 4 thì bằng 30. Vậy ngoặc X cộng 5 nhân 2 bằng bao nhiêu?",
+     "answerKey": {
+      "value": 34
+     },
+     "solutionNarrative": "Cộng số vừa trừ trở lại: 30 + 4 = 34.",
+     "hints": [
+      "Nay bên trong còn một phép trừ bốn. Con đưa nó sang vế kia.",
+      "Cộng bốn vào con số vừa tìm được ở câu trên."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C8",
+     "text": "Từ đó tìm ngoặc X cộng 5, rồi tìm X.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "giá trị của ngoặc trong",
+        "value": 17
+       },
+       {
+        "label": "X",
+        "value": 12
+       }
+      ]
+     },
+     "solutionNarrative": "Ngoặc X cộng 5 bằng 34 : 2 = 17. Vậy X = 17 − 5 = 12.",
+     "hints": [
+      "Nay còn ngoặc nhân hai. Con chia con số vừa tìm cho hai.",
+      "Được giá trị ngoặc rồi thì trừ đi số cộng thêm bên trong."
+     ]
+    },
+    {
+     "id": "C9",
+     "text": "Tìm X, biết ngoặc X chia 4 cộng 3, nhân 5, bằng 40.",
+     "answerKey": {
+      "value": 20
+     },
+     "solutionNarrative": "Ngoặc bằng 40 : 5 = 8. Rồi X : 4 = 8 − 3 = 5. Vậy X = 5 × 4 = 20.",
+     "hints": [
+      "Con che ngoặc lại: cái gì nhân năm thì bằng bốn mươi?",
+      "Được giá trị ngoặc rồi, trừ đi ba, còn lại là X chia bốn — nhân bốn lên là xong."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Bóc ngoặc thì bóc từ lớp ngoài cùng vào trong.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Phép làm sau cùng phải bóc trước."
+   },
+   {
+    "id": "Q2",
+    "text": "Từ ngoặc X trừ 15, chia 3, bằng 8 thì X bằng",
+    "format": "mcq",
+    "choices": [
+     "39",
+     "24",
+     "9",
+     "45"
+    ],
+    "answerKey": {
+     "choice": "39"
+    },
+    "solutionNarrative": "Ngoặc bằng 24, rồi X bằng 24 cộng 15."
+   },
+   {
+    "id": "Q3",
+    "text": "Coi cả cặp ngoặc là một số chưa biết rồi giải như bài quen.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Đó là cả bí quyết của bài này."
+   },
+   {
+    "id": "Q4",
+    "text": "Từ ngoặc X cộng 7, nhân 2, bằng 30 thì ngoặc ấy bằng",
+    "format": "mcq",
+    "choices": [
+     "15",
+     "30",
+     "60",
+     "7"
+    ],
+    "answerKey": {
+     "choice": "15"
+    },
+    "solutionNarrative": "Lấy 30 chia cho 2 được 15."
+   },
+   {
+    "id": "Q5",
+    "text": "Giải xong phải lắp X ngược vào đề để thử lại.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng. Bài tìm X mà không thử lại thì sai cũng không biết."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Bảo con lấy ngón tay che cái ngoặc lại rồi đọc to phần còn nhìn thấy. Đó chính là lớp phải bóc trước.",
+  "homeActivity": "Bài này không khó, chỉ đòi kiên nhẫn. Con nhảy cóc là sai, đi từng bước là đúng.",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "hatMam": "Gặp bài tìm X có ngoặc trong ngoặc, con hay nản. Nhưng bóc nó cũng như bóc củ hành: mỗi lần một lớp, từ ngoài vào trong.",
+ "duongLui": {
+  "ve": [
+   "DL:KSN3.B07"
+  ],
+  "ten": [
+   "TRUY TÌM SỐ CHIA a DƯ b"
+  ],
+  "canCu": "chuDe",
+  "lopDuoi": 3,
+  "nhan": "Học lại bài lớp 3"
+ },
+ "video": {
+  "giang": "DL_KSN4_B89_giang.mp4"
+ }
+}
