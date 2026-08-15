@@ -72,6 +72,25 @@ KHAI_TAY_L2 = {
                  {'label': 'nhìn chữ số nào',
                   'options': ['chữ số tận cùng', 'chữ số đầu tiên'],
                   'value': 'chữ số tận cùng'}]}},
+    # ── chương 4 · Siêu nhân tính nhanh: bốn bài tách thành mười ──
+    (4, 6): {'ve': 'DL:KSN2.B48'},    # ghép khay kẹo 4 × 2 + 4 × 8
+    (4, 7): {'ve': 'DL:KSN2.B50'},    # ô trống nhân 4 — máy nhân chia ngược nhau
+    (4, 8): {'ve': 'DL:KSN2.B51'},    # 19 trừ ô trống — ca ô trống đứng sau dấu trừ
+    (4, 10): {'ve': 'DL:KSN2.B49'},   # dãy chín số, có một bạn đứng giữa
+    (4, 12): {'ve': 'DL:KSN2.B52'},   # số thừa nhiều nhất — luật vàng
+    # Câu 5 cũ hỏi lại đúng ý câu 2 (đều là ghép đôi tròn chục ở phép cộng), trong
+    # khi bài CHIA HẾT HAY CÒN THỪA không có câu nào hỏi tới. Viết lại câu 5 cho phủ
+    # bài ấy — vẫn nằm trong mạch chia kẹo của nửa sau chương.
+    (4, 5): {'ve': 'DL:KSN2.B53',
+             'text': 'Chia 26 viên kẹo cho 4 bạn thì chia hết hay còn thừa, và thừa '
+                     'mấy viên?',
+             'answer': 'Số 26 không có trong bảng nhân 4 nên còn thừa. Trạm dừng gần '
+                       'nhất mà chưa vượt là 24, nên mỗi bạn 6 viên và còn thừa 2 '
+                       'viên.',
+             'khoa': {'parts': [
+                 {'label': 'chia hết hay còn thừa',
+                  'options': ['chia hết', 'còn thừa'], 'value': 'còn thừa'},
+                 {'label': 'thừa mấy viên', 'value': 2}]}},
 
     (1, 6): {'ve': 'DL:KSN2.B36',
              'text': 'Một cửa hàng ghi giá 90 nghìn đồng nhưng viết sót mất chữ số '

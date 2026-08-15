@@ -1,0 +1,306 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B49",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 29 · DÃY LẺ SỐ THÌ CÓ MỘT BẠN ĐỨNG GIỮA",
+ "durationMinutes": 10,
+ "so": 29,
+ "chuong": 4,
+ "tenChuong": "Siêu nhân tính nhanh",
+ "dangGoc": "SỐ 7.1d — Ghép cặp đầu cuối khi dãy có số lượng lẻ.",
+ "skills": {
+  "bktUnit": "CHUONG:4@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 29,
+  "prev": "DL:KSN2.B13",
+  "next": "DL:KSN2.B14"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Đếm được dãy có số lượng chẵn hay lẻ. Nhận ra số đứng giữa khi dãy có số lượng lẻ. Cộng dồn các cặp rồi cộng thêm số đứng giữa.",
+  "kidText": "Cộng từ 1 đến 9 thì ghép cặp xong vẫn còn một bạn lẻ loi. Con đoán bạn ấy là số mấy nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn tính tổng từ 1 đến 9 rồi ghi 40, vì ghép được bốn cặp mười.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Bốn cặp thì dùng hết mấy số? Dãy có mấy số? Gợi ý 2: Có một số không được ghép với ai. Số ấy là số nào? Chữa: bốn cặp mới dùng tám số, còn số 5 đứng giữa chưa được cộng. Tổng đúng là 45."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn tính tổng từ 1 đến 9 rồi ghi 40, vì ghép được bốn cặp mười.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tính nhanh tổng $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9$.",
+  "steps": [
+   {
+    "show": "Ghép cặp đầu với cuối như bài trước",
+    "phan": "giai"
+   },
+   {
+    "show": "Cặp ngoài cùng là $1 + 9 = 10$. Lùi vào: $2 + 8 = 10$, rồi $3 + 7 = 10$, rồi $4 + 6 = 10$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đếm xem đã dùng hết số chưa",
+    "phan": "giai"
+   },
+   {
+    "show": "Bốn cặp mới dùng hết tám số, mà dãy có chín số. Số 5 đứng chính giữa, không ai ghép cùng.",
+    "phan": "giai"
+   },
+   {
+    "show": "Cộng dồn rồi cộng thêm bạn đứng giữa",
+    "phan": "giai"
+   },
+   {
+    "show": "Bốn cặp mười là $10 + 10 + 10 + 10 = 40$. Cộng thêm số đứng giữa: $40 + 5 = 45$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 45.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Dãy có số lượng lẻ thì luôn còn đúng một số đứng giữa — nhớ cộng nó vào.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Dãy 1 đến 9 có bao nhiêu số?",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Đếm từ 1 tới 9 được 9 số.",
+     "hints": [
+      "Con đếm lần lượt từ một cho tới chín.",
+      "Đếm tới đâu thì dừng ở đó, kể cả số cuối."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Số lượng số của dãy 1 đến 9 là chẵn hay lẻ?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chẵn hay lẻ",
+        "options": [
+         "chẵn",
+         "lẻ"
+        ],
+        "value": "lẻ"
+       }
+      ]
+     },
+     "solutionNarrative": "Dãy có chín số, mà 9 tận cùng là 9 nên là số lẻ.",
+     "hints": [
+      "Con đếm xem dãy có mấy số đã.",
+      "Rồi soi cái đuôi của con số ấy, như bài chẵn lẻ đã học."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Trong dãy 1 đến 9, số nào đứng chính giữa?",
+     "answerKey": {
+      "value": 5
+     },
+     "solutionNarrative": "Có bốn số đứng trước và bốn số đứng sau, nên số 5 đứng giữa.",
+     "hints": [
+      "Số đứng giữa thì hai bên phải có số lượng bằng nhau.",
+      "Con thử che bốn số bên trái và bốn số bên phải xem còn số nào."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Dãy 1 đến 9 ghép được mấy cặp đầu cuối?",
+     "answerKey": {
+      "value": 4
+     },
+     "solutionNarrative": "Tám số ghép thành 4 cặp, còn một số đứng giữa.",
+     "hints": [
+      "Mỗi cặp lấy hai số, một từ đầu và một từ cuối.",
+      "Ghép tới lúc chỉ còn một số lẻ loi thì dừng."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Tính nhanh tổng $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9$.",
+     "answerKey": {
+      "value": 45
+     },
+     "solutionNarrative": "Bốn cặp mười là $10 + 10 + 10 + 10 = 40$, cộng thêm số 5 đứng giữa được 45.",
+     "hints": [
+      "Con ghép cặp đầu cuối trước, mỗi cặp bằng mười.",
+      "Cộng dồn xong nhớ nhìn lại xem còn số nào chưa dùng."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Tính nhanh tổng $1 + 2 + 3 + 4 + 5$. Cho biết số đứng giữa và tổng.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số đứng giữa",
+        "value": 3
+       },
+       {
+        "label": "tổng",
+        "value": 15
+       }
+      ]
+     },
+     "solutionNarrative": "Hai cặp sáu là $6 + 6 = 12$, cộng thêm số 3 đứng giữa được 15.",
+     "hints": [
+      "Dãy này có năm số, ghép được hai cặp.",
+      "Còn một số ở chính giữa chưa ai ghép cùng — đừng quên nó."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Tính nhanh tổng $2 + 3 + 4 + 5 + 6 + 7 + 8$. Cho biết số đứng giữa và tổng.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số đứng giữa",
+        "value": 5
+       },
+       {
+        "label": "tổng",
+        "value": 35
+       }
+      ]
+     },
+     "solutionNarrative": "Ba cặp mười là $10 + 10 + 10 = 30$, cộng thêm số 5 đứng giữa được 35.",
+     "hints": [
+      "Dãy này có bảy số, ghép được ba cặp mười.",
+      "Còn một số ở chính giữa nữa mới đủ."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Có bạn tính tổng từ 1 đến 9 rồi ghi 40. Cho biết bạn ấy quên điều gì và tổng đúng là bao nhiêu.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bạn ấy quên điều gì",
+        "options": [
+         "quên cộng số đứng giữa",
+         "không quên gì cả"
+        ],
+        "value": "quên cộng số đứng giữa"
+       },
+       {
+        "label": "tổng đúng",
+        "value": 45
+       }
+      ]
+     },
+     "solutionNarrative": "Bốn cặp mười mới được 40, bạn ấy quên cộng số đứng giữa. Tổng đúng là 45.",
+     "hints": [
+      "Bốn cặp thì dùng hết mấy số? Dãy có mấy số?",
+      "Có một số chưa được cộng vào. Số ấy là số nào?"
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Dãy có số lượng lẻ thì còn một số đứng giữa không ghép được với ai.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — và phải cộng nó vào."
+   },
+   {
+    "id": "Q2",
+    "text": "Tổng các số từ 1 đến 9 bằng bao nhiêu?",
+    "format": "mcq",
+    "choices": [
+     "45",
+     "40",
+     "50",
+     "36"
+    ],
+    "answerKey": {
+     "choice": "45"
+    },
+    "solutionNarrative": "Bốn cặp mười, cộng thêm số đứng giữa."
+   },
+   {
+    "id": "Q3",
+    "text": "Trong dãy 1 đến 9, số nào đứng chính giữa?",
+    "format": "mcq",
+    "choices": [
+     "5",
+     "4",
+     "9",
+     "1"
+    ],
+    "answerKey": {
+     "choice": "5"
+    },
+    "solutionNarrative": "Bốn số đứng trước, bốn số đứng sau."
+   },
+   {
+    "id": "Q4",
+    "text": "Dãy 1 đến 9 ghép được đúng bốn cặp và dùng hết số.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Bốn cặp mới dùng tám số, còn số 5 đứng giữa."
+   },
+   {
+    "id": "Q5",
+    "text": "Ghép cặp xong thì phải đếm lại xem đã dùng hết số chưa.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đó là chỗ hay quên nhất."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Xếp chín viên kẹo thành hàng rồi cho con nhặt từ hai đầu vào — tới lúc chỉ còn một viên ở giữa thì bé hiểu ngay.",
+  "homeActivity": "Bố mẹ hỏi: \"Ghép hết chưa, còn ai lẻ loi không?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B49_giang.mp4"
+ }
+}

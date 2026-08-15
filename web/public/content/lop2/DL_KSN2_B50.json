@@ -1,0 +1,307 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B50",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 31 · MÁY NHÂN VÀ MÁY CHIA NGƯỢC NHAU",
+ "durationMinutes": 10,
+ "so": 31,
+ "chuong": 4,
+ "tenChuong": "Siêu nhân tính nhanh",
+ "dangGoc": "SỐ 7.2b — Tìm thành phần chưa biết của phép nhân và phép chia.",
+ "skills": {
+  "bktUnit": "CHUONG:4@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 31,
+  "prev": "DL:KSN2.B14",
+  "next": "DL:KSN2.B51"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Tìm được số trong ô trống của phép nhân và phép chia. Biết nhân và chia là đôi máy ngược chiều nhau. Thử lại bằng chính phép tính của đề bài.",
+  "kidText": "Một số nhân 4 thì ra 28. Con đoán số đang trốn trong ô trống là số nào nhé!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Với bài ô trống chia 3 bằng 6, có bạn giải là thấy dấu chia thì cứ chia, lấy $6 : 3 = 2$.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Thử lại giúp bạn ấy xem 2 chia cho 3 có ra 6 không. Gợi ý 2: Số cần tìm bị máy chia 3 làm nhỏ đi mà vẫn còn 6. Vậy lúc đầu nó phải to hơn hay bé hơn 6? Chữa: máy ngược của máy chia 3 là máy nhân 3, nên số cần tìm là $6  \\times  3 = 18$."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Với bài ô trống chia 3 bằng 6, có bạn giải là thấy dấu chia thì cứ chia, lấy $6 : 3 = 2$.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tìm số thích hợp điền vào ô trống: ô trống nhân 4 bằng 28.",
+  "steps": [
+   {
+    "show": "Máy nhân cũng có bạn ngược của nó",
+    "phan": "giai"
+   },
+   {
+    "show": "Máy ngược của máy nhân 4 là máy chia 4.",
+    "phan": "giai"
+   },
+   {
+    "show": "Cho kết quả chạy ngược",
+    "phan": "giai"
+   },
+   {
+    "show": "Cho 28 chạy ngược qua máy chia 4: $28 : 4 = 7$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Thử lại trước khi chốt",
+    "phan": "giai"
+   },
+   {
+    "show": "Thay 7 vào ô trống rồi tính xuôi: $7  \\times  4 = 28$, khớp đúng đề bài.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: số cần tìm là 7.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Nhân và chia là đôi máy ngược chiều, y như cộng và trừ ở bài trước.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính $28 : 4$.",
+     "answerKey": {
+      "value": 7
+     },
+     "solutionNarrative": "Lấy $28 : 4 = 7$.",
+     "hints": [
+      "Con đọc bảng nhân bốn tới khi gặp số hai mươi tám.",
+      "Đó là bốn lần mấy?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Máy ngược của máy nhân 4 là máy nào?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "máy ngược",
+        "options": [
+         "máy chia 4",
+         "máy nhân 4",
+         "máy trừ 4"
+        ],
+        "value": "máy chia 4"
+       }
+      ]
+     },
+     "solutionNarrative": "Nhân và chia ngược chiều nhau, nên máy ngược là máy chia 4.",
+     "hints": [
+      "Máy ngược phải gỡ lại đúng việc mà máy xuôi vừa làm.",
+      "Máy xuôi nhân lên bốn lần, thì máy ngược làm gì?"
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Tìm số trong ô trống: ô trống nhân 4 bằng 28.",
+     "answerKey": {
+      "value": 7
+     },
+     "solutionNarrative": "Cho 28 chạy ngược qua máy chia 4: $28 : 4 = 7$.",
+     "hints": [
+      "Số cần tìm chui vào máy nhân bốn rồi ra hai mươi tám.",
+      "Con cho hai mươi tám chạy ngược qua máy chia bốn."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tìm số trong ô trống: ô trống nhân 5 bằng 45.",
+     "answerKey": {
+      "value": 9
+     },
+     "solutionNarrative": "Cho 45 chạy ngược qua máy chia 5: $45 : 5 = 9$.",
+     "hints": [
+      "Máy xuôi là máy nhân năm, vậy máy ngược là máy nào?",
+      "Con đọc bảng nhân năm tới khi gặp bốn mươi lăm."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Tìm số trong ô trống: ô trống chia 3 bằng 6.",
+     "answerKey": {
+      "value": 18
+     },
+     "solutionNarrative": "Máy ngược của máy chia 3 là máy nhân 3, nên số cần tìm là $6  \\times  3 = 18$.",
+     "hints": [
+      "Lần này máy xuôi là máy chia ba.",
+      "Máy ngược của máy chia là máy gì? Cho sáu chạy ngược qua nó."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Tìm số trong ô trống rồi thử lại: ô trống nhân 2 bằng 16.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số cần tìm",
+        "value": 8
+       },
+       {
+        "label": "thử lại được",
+        "value": 16
+       }
+      ]
+     },
+     "solutionNarrative": "Cho 16 chạy ngược: $16 : 2 = 8$. Thử lại xuôi: $8  \\times  2 = 16$.",
+     "hints": [
+      "Con cho mười sáu chạy ngược qua máy chia hai.",
+      "Có số rồi thì thay vào ô trống, tính xuôi một lần cho chắc."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Có bạn giải bài ô trống chia 3 bằng 6 rồi ghi số cần tìm là 2. Cho biết bạn ấy sai ở đâu và số đúng là bao nhiêu.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bạn ấy sai ở đâu",
+        "options": [
+         "chia tiếp thay vì cho chạy ngược",
+         "không sai gì cả"
+        ],
+        "value": "chia tiếp thay vì cho chạy ngược"
+       },
+       {
+        "label": "số đúng",
+        "value": 18
+       }
+      ]
+     },
+     "solutionNarrative": "Thử lại thì 2 chia cho 3 không ra 6. Bạn ấy chia tiếp thay vì cho chạy ngược. Số đúng là $6  \\times  3 = 18$.",
+     "hints": [
+      "Con thử lại giúp bạn ấy: hai chia cho ba có ra sáu không?",
+      "Số cần tìm bị chia nhỏ đi mà vẫn còn sáu, nên lúc đầu nó phải to hơn sáu."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Một số nhân 5 thì được 40. Cho biết số ấy là số nào, rồi tính số ấy nhân 3 thì được bao nhiêu.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số cần tìm",
+        "value": 8
+       },
+       {
+        "label": "nhân 3 được",
+        "value": 24
+       }
+      ]
+     },
+     "solutionNarrative": "Cho 40 chạy ngược: $40 : 5 = 8$. Rồi $8  \\times  3 = 24$.",
+     "hints": [
+      "Bước một: cho bốn mươi chạy ngược qua máy chia năm.",
+      "Bước hai: lấy số vừa tìm được nhân với ba."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Nhân và chia là đôi máy ngược chiều nhau.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — cùng luật với cộng và trừ."
+   },
+   {
+    "id": "Q2",
+    "text": "Ô trống nhân 4 bằng 28. Số trong ô trống là mấy?",
+    "format": "mcq",
+    "choices": [
+     "7",
+     "24",
+     "32",
+     "4"
+    ],
+    "answerKey": {
+     "choice": "7"
+    },
+    "solutionNarrative": "Cho kết quả chạy ngược qua máy chia 4."
+   },
+   {
+    "id": "Q3",
+    "text": "Ô trống chia 3 bằng 6. Số trong ô trống là mấy?",
+    "format": "mcq",
+    "choices": [
+     "18",
+     "2",
+     "9",
+     "3"
+    ],
+    "answerKey": {
+     "choice": "18"
+    },
+    "solutionNarrative": "Máy ngược của máy chia là máy nhân."
+   },
+   {
+    "id": "Q4",
+    "text": "Bài ô trống chia 3 bằng 6 thì lấy 6 chia 3 là ra.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phải cho 6 chạy ngược qua máy nhân 3, được 18."
+   },
+   {
+    "id": "Q5",
+    "text": "Thử lại là bước cuối bắt buộc.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — chưa thử lại thì chưa được hô đáp án."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Chia kẹo thật rồi hỏi ngược: \"Mỗi bạn được 4 viên, có 5 bạn, vậy lúc đầu gói có mấy viên?\" — đó chính là cho kết quả chạy ngược.",
+  "homeActivity": "Bố mẹ hỏi: \"Máy ngược của máy này là máy gì?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B50_giang.mp4"
+ }
+}

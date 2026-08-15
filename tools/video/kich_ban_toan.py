@@ -4888,12 +4888,12 @@ def kb2_nhin_duoi(b):
     return [
         _c('bia', 'Chẵn hay lẻ nhìn ở đuôi', so_bai(b),
            loi=['Một số chẵn hay lẻ, nhìn chữ số cuối cùng là biết.']),
-        _c('nhom_deu', 'Số chẵn chia đôi được đều', tong=8, moiNhom=2,
+        _c('nhom_deu', 'Số chẵn chia đôi được đều', tong=8, moiNhom=4,
            chuPhu='8 viên chia đôi: mỗi bên 4 viên, không thừa.',
            loi=['Số chẵn là số chia đôi được đều tăm tắp.',
                 'Tám viên chia đôi thì mỗi bên bốn viên, không thừa viên nào.']),
-        _c('nhom_deu', 'Số lẻ luôn thừa một', tong=7, moiNhom=2,
-           chuPhu='7 viên chia đôi thì thừa 1 viên.',
+        _c('nhom_deu', 'Số lẻ luôn thừa một', tong=7, moiNhom=3,
+           chuPhu='7 viên chia đôi: mỗi bên 3 viên, thừa 1 viên.',
            loi=['Số lẻ chia đôi thì luôn thừa đúng một viên.']),
         _c('y_toan', 'Bí mật nằm ở chữ số tận cùng',
            'tận cùng 0, 2, 4, 6, 8  →  chẵn', buoc=1, soBuoc=3,
@@ -4932,7 +4932,7 @@ def kb2_duoi_bang_nhan(b):
                 'Cái đuôi chỉ có hai, bốn, sáu, tám và không.']),
         _c('y_toan', 'Cả bảng toàn số chẵn', 'không có số lẻ nào', buoc=1, soBuoc=3,
            loi=['Nhìn kỹ mà xem, cả bảng toàn số chẵn. Không có số lẻ nào.']),
-        _c('nhom_deu', 'Vì sao lại thế', tong=6, moiNhom=2,
+        _c('nhom_deu', 'Vì sao lại thế', tong=6, moiNhom=3,
            chuPhu='Mỗi số của bảng nhân 2 là hai phần bằng nhau ghép lại.',
            loi=['Vì mỗi số của bảng là hai phần bằng nhau ghép lại.',
                 'Nên chia đôi lúc nào cũng đều.']),
@@ -4972,8 +4972,8 @@ def kb2_cong_chan_le(b):
            buoc=1, soBuoc=3,
            loi=['Hai mươi sáu có đuôi là sáu nên chẵn.',
                 'Mười ba có đuôi là ba nên lẻ.']),
-        _c('nhom_deu', 'Lẻ cộng lẻ lại ra CHẴN', tong=8, moiNhom=2,
-           chuPhu='3 viên và 5 viên: hai viên lẻ loi bắt cặp với nhau.',
+        _c('nhom_deu', 'Lẻ cộng lẻ lại ra CHẴN', tong=8, moiNhom=4,
+           chuPhu='Tổng 8 viên chia đôi vừa khít: mỗi bên 4 viên.',
            loi=['Chỗ lạ nhất là lẻ cộng lẻ lại ra chẵn.',
                 'Ba viên thừa một, năm viên cũng thừa một. Hai viên lẻ loi ấy gặp '
                 'nhau thì bắt cặp, nên tổng chia đôi được đều.']),
@@ -4992,6 +4992,394 @@ def kb2_cong_chan_le(b):
         _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
            congThuc='hai cái lẻ gặp nhau thì BẮT CẶP',
            loi=['Con nhớ lại một lần nữa. Hai cái lẻ gặp nhau thì bắt cặp.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 2 · CHƯƠNG 4 · SIÊU NHÂN TÍNH NHANH — mười kịch bản.
+#
+# ⚠ KHÔNG gọi ô trống là "X". Sách đặt tên bài là "ĐI TÌM SỐ BÍ MẬT X", mà máy đọc
+# chữ ấy thành tiếng Anh — lớp 4 đã dính đúng mười lăm chỗ. Cả bốn bài tìm ô trống
+# ở đây gọi thẳng là "ô trống", trên màn hình cũng vẽ ô trống chứ không viết chữ.
+# ═══════════════════════════════════════════════════════════════════════════
+
+
+def kb2_ghep_doi(b):
+    """C4① Ghép đôi tròn chục ở phép cộng."""
+    return [
+        _c('bia', 'Ghép đôi tròn chục', so_bai(b),
+           loi=['Cộng một dãy dài mà không phải đặt tính dọc lần nào.']),
+        _c('y_toan', 'Đề bài', '37 + 25 + 13 + 5',
+           loi=['Tính tổng ba mươi bảy, hai mươi lăm, mười ba, năm.']),
+        _c('y_toan', 'Dòm đuôi tìm đôi bạn', '7 + 3 = 10   ·   5 + 5 = 10',
+           buoc=1, soBuoc=3,
+           loi=['Đừng vội cộng. Nhìn cái đuôi của từng số trước.',
+                'Đuôi bảy đi với đuôi ba, vì bảy cộng ba bằng mười.',
+                'Đuôi năm đi với đuôi năm, vì năm cộng năm cũng bằng mười.']),
+        _c('y_toan', 'Kéo đôi bạn về cạnh nhau', '37 + 13 = 50   ·   25 + 5 = 30',
+           buoc=2, soBuoc=3,
+           loi=['Phép cộng đổi chỗ thoải mái mà tổng vẫn vậy, nên kéo đôi bạn về '
+                'đứng cạnh nhau.',
+                'Ba mươi bảy cộng mười ba bằng năm mươi. Hai mươi lăm cộng năm bằng '
+                'ba mươi.']),
+        _c('y_toan', 'Cộng hai số tròn chục', '50 + 30 = 80', buoc=3, soBuoc=3,
+           loi=['Còn lại phép dễ nhất. Năm mươi cộng ba mươi bằng tám mươi.']),
+        _c('y_toan', 'Đáp số', '80',
+           loi=['Tổng cả dãy là tám mươi.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Không bắt buộc phải cộng từ trái sang phải.',
+           loi=['Có bạn bảo phải cộng từ trái sang phải nên không được đổi chỗ.',
+                'Con thử tính ba cộng năm rồi năm cộng ba mà xem. Đổi chỗ thì tổng '
+                'vẫn giữ nguyên.']),
+        _c('cong_thuc', 'Cách làm của cả bài',
+           congThuc='dòm ĐUÔI tìm đôi bạn tròn chục',
+           thay='rồi kéo đôi bạn về đứng cạnh nhau',
+           loi=['Dòm đuôi tìm đôi bạn tròn chục, rồi kéo đôi bạn về đứng cạnh nhau.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='hai đuôi cộng lại bằng 10 là một đôi',
+           loi=['Con nhớ lại một lần nữa. Hai đuôi cộng lại bằng mười là một đôi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_ghep_khay(b):
+    """C4② Ghép hai khay cùng số hàng — mầm non của thừa số chung."""
+    return [
+        _c('bia', 'Ghép hai khay kẹo', so_bai(b),
+           loi=['Mẹo ghép đôi dùng được cho cả phép nhân, không riêng phép cộng.']),
+        _c('y_toan', 'Đề bài', '3 × 4 + 3 × 6',
+           loi=['Tính ba nhân bốn cộng ba nhân sáu.']),
+        _c('luoi_cham', 'Khay thứ nhất: 3 hàng, mỗi hàng 4 viên', hang=3, cot=4,
+           chuPhu='3 × 4 = 12 viên',
+           loi=['Khay thứ nhất có ba hàng, mỗi hàng bốn viên. Tất cả mười hai viên.']),
+        _c('luoi_cham', 'Khay thứ hai: 3 hàng, mỗi hàng 6 viên', hang=3, cot=6,
+           chuPhu='3 × 6 = 18 viên',
+           loi=['Khay thứ hai cũng ba hàng, mỗi hàng sáu viên. Tất cả mười tám viên.']),
+        _c('y_toan', 'Đẩy hai khay sát vào nhau', 'số hàng vẫn là 3',
+           buoc=1, soBuoc=3,
+           loi=['Giờ đẩy hai khay sát vào nhau. Hàng nối vào hàng.',
+                'Số hàng không đổi, vẫn là ba hàng.']),
+        _c('y_toan', 'Mỗi hàng dài thêm', '4 + 6 = 10 viên', buoc=2, soBuoc=3,
+           loi=['Nhưng mỗi hàng nay dài ra. Bốn viên nối sáu viên thành mười viên.']),
+        _c('luoi_cham', 'Thành một khay to', hang=3, cot=4, cot2=6,
+           chuPhu='3 × 10 = 30 viên',
+           chuCuoi='Phần vàng là khay thứ hai vừa nối vào.',
+           loi=['Khay to là ba hàng mười viên. Ba nhân mười bằng ba mươi.']),
+        _c('y_toan', 'Tính riêng cũng ra đúng thế', '12 + 18 = 30',
+           loi=['Tính riêng từng khay rồi cộng cũng ra ba mươi. Nhưng ghép khay thì '
+                'nhanh hơn nhiều.']),
+        _c('cong_thuc', 'Điều kiện để ghép được',
+           congThuc='hai khay phải CÙNG SỐ HÀNG',
+           thay='ghép xong: số hàng giữ nguyên, mỗi hàng dài thêm',
+           loi=['Hai khay phải cùng số hàng thì mới ghép được.',
+                'Ghép xong thì số hàng giữ nguyên, chỉ mỗi hàng dài thêm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_cap_dau_cuoi(b):
+    """C4③ Ghép cặp đầu với cuối."""
+    return [
+        _c('bia', 'Ghép cặp đầu với cuối', so_bai(b),
+           loi=['Cộng cả một dãy dài chỉ bằng vài phép tính.']),
+        _c('day_so', 'Đề bài', so=[1, 2, 3, 4, 5, 6, 7, 8],
+           chuPhu='Tính tổng cả dãy.',
+           loi=['Tính tổng từ một đến tám.']),
+        _c('y_toan', 'Bắc cầu nối số đầu với số cuối', '1 + 8 = 9', buoc=1, soBuoc=3,
+           loi=['Đừng cộng từ trái sang. Bắc cầu nối số đầu với số cuối.',
+                'Một cộng tám bằng chín.']),
+        _c('y_toan', 'Lùi vào trong, cặp nào cũng bằng chín',
+           '2 + 7 = 9   ·   3 + 6 = 9   ·   4 + 5 = 9', buoc=2, soBuoc=3,
+           loi=['Lùi vào trong một nấc. Hai cộng bảy bằng chín.',
+                'Rồi ba cộng sáu bằng chín. Rồi bốn cộng năm cũng bằng chín.',
+                'Cặp nào cũng bằng chín cả.']),
+        _c('y_toan', 'Vì sao cặp nào cũng bằng nhau',
+           'bên trái tăng 1 thì bên phải giảm 1',
+           loi=['Mỗi lần lùi vào trong, số bên trái tăng một còn số bên phải giảm một.',
+                'Một bên đưa, một bên nhận, nên tổng của cặp giữ nguyên.']),
+        _c('y_toan', 'Đếm số cặp rồi cộng dồn', '9 + 9 + 9 + 9 = 36',
+           buoc=3, soBuoc=3,
+           loi=['Tám số ghép vừa khít thành bốn cặp, mỗi cặp chín.',
+                'Cộng dồn bốn lần chín được ba mươi sáu.']),
+        _c('y_toan', 'Đáp số', '36',
+           loi=['Tổng cả dãy là ba mươi sáu.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Số 9 là tổng MỘT CẶP, chưa phải tổng cả dãy.',
+           loi=['Có bạn ghép cặp xong rồi ghi luôn đáp số là chín.',
+                'Chín mới là tổng một cặp thôi. Còn phải cộng dồn tất cả các cặp nữa.']),
+        _c('cong_thuc', 'Cách làm của cả bài',
+           congThuc='ghép ĐẦU với CUỐI, mọi cặp bằng nhau',
+           thay='đếm số cặp rồi cộng dồn',
+           loi=['Ghép đầu với cuối thì mọi cặp bằng nhau. Đếm số cặp rồi cộng dồn.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_ban_giua(b):
+    """C4④ Dãy lẻ số thì có một bạn đứng giữa."""
+    return [
+        _c('bia', 'Một bạn đứng giữa', so_bai(b),
+           loi=['Ghép cặp xong mà vẫn còn một số lẻ loi. Bài này nói về số ấy.']),
+        _c('day_so', 'Đề bài', so=[1, 2, 3, 4, 5, 6, 7, 8, 9],
+           chuPhu='Tính tổng cả dãy.',
+           loi=['Tính tổng từ một đến chín.']),
+        _c('y_toan', 'Ghép cặp đầu cuối như bài trước',
+           '1 + 9 = 10   ·   2 + 8 = 10   ·   3 + 7 = 10   ·   4 + 6 = 10',
+           buoc=1, soBuoc=3,
+           loi=['Ghép cặp đầu cuối như bài trước. Một cộng chín bằng mười.',
+                'Rồi hai cộng tám, ba cộng bảy, bốn cộng sáu. Cặp nào cũng bằng mười.']),
+        _c('day_so', 'Đếm xem đã dùng hết số chưa', so=[1, 2, 3, 4, 5, 6, 7, 8, 9],
+           chiSo=5, chuPhu='Bốn cặp mới dùng tám số. Số 5 chưa ai ghép cùng.',
+           loi=['Đếm lại xem đã dùng hết số chưa.',
+                'Bốn cặp mới dùng hết tám số, mà dãy có chín số.',
+                'Số năm đứng chính giữa, chưa ai ghép cùng.']),
+        _c('y_toan', 'Cộng dồn bốn cặp trước', '10 + 10 + 10 + 10 = 40',
+           buoc=2, soBuoc=3,
+           loi=['Cộng dồn bốn cặp mười được bốn mươi.']),
+        _c('y_toan', 'Rồi cộng thêm bạn đứng giữa', '40 + 5 = 45', buoc=3, soBuoc=3,
+           loi=['Rồi cộng thêm số năm đứng giữa. Bốn mươi cộng năm bằng bốn mươi lăm.']),
+        _c('y_toan', 'Đáp số', '45',
+           loi=['Tổng cả dãy là bốn mươi lăm.']),
+        _c('y_toan', 'Khi nào có bạn đứng giữa',
+           'Dãy có SỐ LƯỢNG LẺ thì luôn còn đúng một số.',
+           loi=['Dãy có số lượng lẻ thì luôn còn đúng một số đứng giữa.',
+                'Dãy có số lượng chẵn thì ghép vừa khít, không ai lẻ loi.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='ghép xong phải ĐẾM LẠI xem hết số chưa',
+           loi=['Con nhớ lại một lần nữa. Ghép xong phải đếm lại xem đã hết số chưa.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_chay_nguoc(b):
+    """C4⑤ Tìm ô trống của phép cộng và phép trừ."""
+    return [
+        _c('bia', 'Cho kết quả chạy ngược', so_bai(b),
+           loi=['Tìm số đang trốn trong ô trống, bằng cách cho kết quả chạy ngược.']),
+        _c('y_toan', 'Đề bài', 'ô trống  +  5  =  12',
+           loi=['Ô trống cộng năm bằng mười hai. Ô trống đang giấu số nào?']),
+        _c('y_toan', 'Máy chạy xuôi thế nào', 'số cần tìm  →  máy + 5  →  12',
+           buoc=1, soBuoc=3,
+           loi=['Số cần tìm chui vào máy cộng năm rồi chạy ra thành mười hai.']),
+        _c('y_toan', 'Máy ngược của máy cộng là máy trừ', '12  →  máy − 5  →  ?',
+           buoc=2, soBuoc=3,
+           loi=['Máy ngược của máy cộng năm là máy trừ năm.',
+                'Cho mười hai chạy ngược qua máy ấy.']),
+        _c('y_toan', 'Cho kết quả chạy ngược', '12 − 5 = 7', buoc=3, soBuoc=3,
+           loi=['Mười hai trừ năm bằng bảy.']),
+        _c('y_toan', 'Thử lại trước khi chốt', '7 + 5 = 12',
+           loi=['Chưa xong đâu. Thay bảy vào ô trống rồi tính xuôi một lần.',
+                'Bảy cộng năm bằng mười hai, khớp đúng đề bài.']),
+        _c('y_toan', 'Đáp số', 'Số cần tìm là 7',
+           loi=['Số cần tìm là bảy.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Bài ô trống − 4 = 9 thì KHÔNG lấy 9 trừ 4.',
+           loi=['Có bạn gặp bài ô trống trừ bốn bằng chín, thấy dấu trừ thì cứ trừ, '
+                'lấy chín trừ bốn bằng năm.',
+                'Thử lại thì năm trừ bốn bằng một, không ra chín. Máy ngược của máy '
+                'trừ là máy cộng, nên phải lấy chín cộng bốn bằng mười ba.']),
+        _c('cong_thuc', 'Đôi máy ngược chiều thứ nhất',
+           congThuc='cộng  ⇄  trừ',
+           thay='tìm xong PHẢI thử lại',
+           loi=['Cộng và trừ là đôi máy ngược chiều. Tìm xong phải thử lại.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_nhan_chia_nguoc(b):
+    """C4⑥ Tìm ô trống của phép nhân và phép chia."""
+    return [
+        _c('bia', 'Máy nhân và máy chia', so_bai(b),
+           loi=['Phép nhân cũng có máy ngược của nó. Đó là phép chia.']),
+        _c('y_toan', 'Đề bài', 'ô trống  ×  4  =  28',
+           loi=['Ô trống nhân bốn bằng hai mươi tám. Ô trống đang giấu số nào?']),
+        _c('y_toan', 'Máy chạy xuôi thế nào', 'số cần tìm  →  máy × 4  →  28',
+           buoc=1, soBuoc=3,
+           loi=['Số cần tìm chui vào máy nhân bốn rồi chạy ra thành hai mươi tám.']),
+        _c('y_toan', 'Máy ngược của máy nhân là máy chia', '28  →  máy : 4  →  ?',
+           buoc=2, soBuoc=3,
+           loi=['Máy ngược của máy nhân bốn là máy chia bốn.',
+                'Cho hai mươi tám chạy ngược qua máy ấy.']),
+        _c('y_toan', 'Cho kết quả chạy ngược', '28 : 4 = 7', buoc=3, soBuoc=3,
+           loi=['Hai mươi tám chia bốn bằng bảy.']),
+        _c('y_toan', 'Thử lại trước khi chốt', '7 × 4 = 28',
+           loi=['Thay bảy vào ô trống rồi tính xuôi. Bảy nhân bốn bằng hai mươi tám, '
+                'khớp đúng đề bài.']),
+        _c('y_toan', 'Đáp số', 'Số cần tìm là 7',
+           loi=['Số cần tìm là bảy.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Bài ô trống : 3 = 6 thì KHÔNG lấy 6 chia 3.',
+           loi=['Có bạn gặp bài ô trống chia ba bằng sáu, thấy dấu chia thì cứ chia, '
+                'lấy sáu chia ba bằng hai.',
+                'Máy ngược của máy chia là máy nhân, nên phải lấy sáu nhân ba bằng '
+                'mười tám.']),
+        _c('cong_thuc', 'Đôi máy ngược chiều thứ hai',
+           congThuc='nhân  ⇄  chia',
+           thay='y như cộng ⇄ trừ ở bài trước',
+           loi=['Nhân và chia là đôi máy ngược chiều, y như cộng và trừ ở bài trước.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_bi_lay_di(b):
+    """C4⑦ Ca ô trống đứng SAU dấu trừ."""
+    return [
+        _c('bia', 'Khi số cần tìm bị lấy đi', so_bai(b),
+           loi=['Có một ca làm ngược hẳn hai bài trước. Bài này chỉ nói về ca ấy.']),
+        _c('y_toan', 'Đề bài', '14  −  ô trống  =  6',
+           loi=['Mười bốn trừ ô trống bằng sáu. Ô trống đang giấu số nào?']),
+        _c('y_toan', 'Ca này khác ở đâu', 'ô trống đứng SAU dấu trừ',
+           buoc=1, soBuoc=3,
+           loi=['Nhìn kỹ chỗ đứng của ô trống. Nó nằm sau dấu trừ.',
+                'Số cần tìm không chui vào máy nào cả. Nó chính là phần bị lấy đi.']),
+        _c('y_toan', 'Hỏi lại cho dễ hiểu', 'Từ 14 lấy đi bao nhiêu thì còn 6?',
+           buoc=2, soBuoc=3,
+           loi=['Câu hỏi thật ra rất dễ. Từ mười bốn lấy đi bao nhiêu thì còn sáu?']),
+        _c('y_toan', 'Lấy số ban đầu trừ phần còn lại', '14 − 6 = 8',
+           buoc=3, soBuoc=3,
+           loi=['Mười bốn trừ sáu bằng tám. Phần bị lấy đi là tám.']),
+        _c('y_toan', 'Thử lại trước khi chốt', '14 − 8 = 6',
+           loi=['Thay tám vào ô trống rồi tính xuôi. Mười bốn trừ tám bằng sáu, khớp '
+                'đúng đề bài.']),
+        _c('y_toan', 'Đáp số', 'Số cần tìm là 8',
+           loi=['Số cần tìm là tám.']),
+        _c('y_toan', 'Hai bài trông giống nhau mà khác hẳn',
+           'ô trống − 6 = 14  →  20      ·      14 − ô trống = 6  →  8',
+           loi=['Hai bài này trông giống nhau mà đáp số khác hẳn.',
+                'Ô trống trừ sáu bằng mười bốn thì ra hai mươi. Còn mười bốn trừ ô '
+                'trống bằng sáu thì ra tám.']),
+        _c('cong_thuc', 'Con nhớ kỹ chỗ này nhé',
+           congThuc='nhìn ô trống đứng TRƯỚC hay SAU dấu trừ',
+           thay='đứng sau thì lấy số đầu trừ kết quả',
+           loi=['Con nhớ lại một lần nữa. Nhìn ô trống đứng trước hay sau dấu trừ '
+                'rồi mới chọn cách làm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_chia_vong(b):
+    """C4⑧ Chia theo vòng, tìm trạm dừng trong bảng nhân."""
+    return [
+        _c('bia', 'Chia theo vòng', so_bai(b),
+           loi=['Chia một gói đồ cho mấy bạn, mà không chia hết được.']),
+        _c('y_toan', 'Đề bài', '20 viên bi chia đều cho 6 bạn',
+           loi=['Có hai mươi viên bi chia đều cho sáu bạn.',
+                'Mỗi bạn được mấy viên, và còn thừa mấy viên?']),
+        _c('y_toan', 'Chia theo vòng cho công bằng', 'mỗi vòng tốn 6 viên',
+           buoc=1, soBuoc=3,
+           loi=['Chia theo vòng cho công bằng. Mỗi vòng phát cho mỗi bạn đúng một '
+                'viên.',
+                'Có sáu bạn nên mỗi vòng tốn sáu viên.']),
+        _c('y_toan', 'Lần theo bảng nhân 6 tìm trạm dừng',
+           '6 × 3 = 18 chưa vượt   ·   6 × 4 = 24 vượt mất', buoc=2, soBuoc=3,
+           loi=['Lần theo bảng nhân sáu tìm trạm dừng gần nhất mà chưa vượt.',
+                'Sáu nhân ba bằng mười tám, chưa vượt hai mươi.',
+                'Sáu nhân bốn bằng hai mươi tư, vượt mất rồi. Vậy dừng ở ba vòng.']),
+        _c('nhom_deu', 'Ba vòng: mỗi bạn 3 viên, còn thừa 2', tong=20, moiNhom=6,
+           chuPhu='Hai viên đỏ là phần còn thừa.',
+           loi=['Ba vòng thì mỗi bạn được ba viên.',
+                'Nhìn hai viên tô đỏ đứng riêng kia, đó là phần còn thừa.']),
+        _c('y_toan', 'Đếm số viên còn lại', '20 − 18 = 2', buoc=3, soBuoc=3,
+           loi=['Đã phát đi mười tám viên. Hai mươi trừ mười tám bằng hai.']),
+        _c('y_toan', 'Đáp số', 'mỗi bạn 3 viên, thừa 2 viên',
+           loi=['Mỗi bạn được ba viên, còn thừa hai viên.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Phải nói ĐỦ HAI SỐ.',
+           loi=['Có bạn ghi mỗi bạn ba viên rồi thôi, quên không nói thừa mấy viên.',
+                'Bài chia còn thừa phải nói đủ hai số.']),
+        _c('cong_thuc', 'Cách làm của cả bài',
+           congThuc='lần theo BẢNG NHÂN tìm trạm dừng gần nhất',
+           thay='rồi lấy tổng trừ đi phần đã phát',
+           loi=['Lần theo bảng nhân tìm trạm dừng gần nhất mà chưa vượt, rồi lấy tổng '
+                'trừ đi phần đã phát.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_luat_vang(b):
+    """C4⑨ Luật vàng: số thừa phải bé hơn số bạn."""
+    return [
+        _c('bia', 'Luật vàng của phép chia', so_bai(b),
+           loi=['Có một luật giúp con biết ngay mình chia đúng hay chia sai.']),
+        _c('y_toan', 'Đề bài',
+           'Có bạn chia 17 viên cho 3 bạn rồi bảo: mỗi bạn 4 viên, thừa 5 viên.',
+           loi=['Có bạn chia mười bảy viên kẹo cho ba bạn.',
+                'Bạn ấy bảo mỗi bạn bốn viên, còn thừa năm viên. Chỗ ấy vô lý ở đâu?']),
+        _c('y_toan', 'Soi luật vàng trước đã', 'thừa 5   ·   số bạn 3   ·   5 > 3',
+           buoc=1, soBuoc=3,
+           loi=['Soi luật vàng trước đã. Số thừa là năm, mà chỉ có ba bạn.',
+                'Số thừa đang lớn hơn số bạn.']),
+        _c('y_toan', 'Vì sao thế là vô lý', 'còn 5 viên thì phát thêm được một vòng',
+           buoc=2, soBuoc=3,
+           loi=['Còn năm viên trong tay thì phát thêm được cả một vòng nữa.',
+                'Một vòng chỉ tốn ba viên thôi mà.']),
+        _c('nhom_deu', 'Chia lại cho đúng', tong=17, moiNhom=3,
+           chuPhu='Mỗi bạn 5 viên, hai viên đỏ là phần thừa.',
+           loi=['Chia lại cho đúng. Phát thêm một vòng thì mỗi bạn thành năm viên.',
+                'Chỉ còn hai viên tô đỏ đứng riêng.']),
+        _c('y_toan', 'Đếm phần còn lại', '17 − 15 = 2', buoc=3, soBuoc=3,
+           loi=['Đã phát mười lăm viên. Mười bảy trừ mười lăm bằng hai.']),
+        _c('y_toan', 'Đáp số', 'mỗi bạn 5 viên, thừa 2 viên',
+           loi=['Mỗi bạn được năm viên, còn thừa hai viên.',
+                'Lần này số thừa là hai, đã bé hơn ba bạn nên chia xong thật.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Thừa BẰNG số bạn thì vẫn còn chia thêm được.',
+           loi=['Có bạn chia cho sáu bạn rồi bảo thừa đúng sáu viên, và tưởng thế là '
+                'hợp luật.',
+                'Còn sáu viên mà có sáu bạn thì vẫn phát thêm được một vòng nữa. Luật '
+                'đòi thừa phải bé hơn hẳn.']),
+        _c('cong_thuc', 'Luật vàng',
+           congThuc='số THỪA phải BÉ HƠN số bạn',
+           thay='không thì còn phát thêm được một vòng nữa',
+           loi=['Số thừa phải bé hơn số bạn. Không thì còn phát thêm được một vòng '
+                'nữa.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb2_chia_het(b):
+    """C4⑩ Chia hết hay còn thừa — bảng nhân là danh sách chia đẹp."""
+    return [
+        _c('bia', 'Chia hết hay còn thừa', so_bai(b),
+           loi=['Nhìn bảng nhân là biết trước một số chia có hết hay không.']),
+        _c('y_toan', 'Đề bài',
+           'Chia 15 viên cho 3 bạn có vừa khít không? Còn 17 viên thì sao?',
+           loi=['Chia mười lăm viên kẹo cho ba bạn có vừa khít không?',
+                'Còn mười bảy viên thì sao?']),
+        _c('day_so', 'Soi bảng nhân 3', so=[3, 6, 9, 12, 15, 18], chiSo=5,
+           chuPhu='Số 15 có mặt trong bảng.',
+           loi=['Soi bảng nhân ba. Ba, sáu, chín, mười hai, mười lăm, mười tám.',
+                'Số mười lăm có mặt trong bảng.']),
+        _c('nhom_deu', 'Số nằm trong bảng thì chia vừa khít', tong=15, moiNhom=3,
+           chuPhu='Năm vòng, không viên nào đứng riêng.',
+           loi=['Chia mười lăm viên cho ba bạn được đúng năm vòng.',
+                'Không viên nào đứng riêng. Đó là chia hết.']),
+        _c('y_toan', 'Còn số không có trong bảng', '17 không có trong bảng nhân 3',
+           buoc=1, soBuoc=3,
+           loi=['Số mười bảy thì không có trong bảng nhân ba.',
+                'Bảng nhảy thẳng từ mười lăm sang mười tám, bỏ qua nó.']),
+        _c('y_toan', 'Tìm trạm dừng gần nhất mà chưa vượt', '17 − 15 = 2',
+           buoc=2, soBuoc=3,
+           loi=['Trạm dừng gần nhất mà chưa vượt là mười lăm.',
+                'Mười bảy trừ mười lăm bằng hai. Còn thừa hai viên.']),
+        _c('nhom_deu', 'Chia 17 viên thì còn thừa 2', tong=17, moiNhom=3,
+           chuPhu='Hai viên đỏ không đủ phát thêm một vòng.',
+           loi=['Hai viên tô đỏ không đủ phát thêm một vòng cho ba bạn.']),
+        _c('y_toan', 'Chỗ hay nhầm',
+           'Nằm GIỮA hai số của bảng không có nghĩa là thuộc bảng.',
+           loi=['Có bạn thấy mười bảy nằm giữa mười lăm và mười tám nên bảo nó cũng '
+                'chia hết cho ba.',
+                'Nằm giữa hai số của bảng không có nghĩa là thuộc bảng.']),
+        _c('cong_thuc', 'Bảng nhân dùng để làm gì',
+           congThuc='bảng nhân = danh sách các số chia VỪA KHÍT',
+           thay='thuộc bảng thì biết trước, khỏi chia thử',
+           loi=['Bảng nhân chính là danh sách những số chia vừa khít.',
+                'Thuộc bảng thì biết trước, khỏi phải chia thử.']),
         _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
            loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
     ]
@@ -5076,6 +5464,12 @@ BO = {
     'DL:KSN2.B44': kb2_bac_thang,   'DL:KSN2.B45': kb2_dung_moi_so,
     'DL:KSN2.B11': kb2_nhin_duoi,   'DL:KSN2.B46': kb2_duoi_bang_nhan,
     'DL:KSN2.B47': kb2_cong_chan_le,
+    # ══ LỚP 2 · chương 4 · Siêu nhân tính nhanh — mười bài ══
+    'DL:KSN2.B12': kb2_ghep_doi,    'DL:KSN2.B48': kb2_ghep_khay,
+    'DL:KSN2.B13': kb2_cap_dau_cuoi, 'DL:KSN2.B49': kb2_ban_giua,
+    'DL:KSN2.B14': kb2_chay_nguoc,  'DL:KSN2.B50': kb2_nhan_chia_nguoc,
+    'DL:KSN2.B51': kb2_bi_lay_di,   'DL:KSN2.B15': kb2_chia_vong,
+    'DL:KSN2.B52': kb2_luat_vang,   'DL:KSN2.B53': kb2_chia_het,
 }
 
 

@@ -1,0 +1,288 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B48",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 27 · GHÉP HAI KHAY KẸO — CÙNG SỐ HÀNG THÌ GỘP LÀM MỘT",
+ "durationMinutes": 10,
+ "so": 27,
+ "chuong": 4,
+ "tenChuong": "Siêu nhân tính nhanh",
+ "dangGoc": "SỐ 7.1b — Tính thuận tiện phép nhân: mầm non của thừa số chung.",
+ "skills": {
+  "bktUnit": "CHUONG:4@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 27,
+  "prev": "DL:KSN2.B12",
+  "next": "DL:KSN2.B13"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhận ra hai phép nhân có cùng số hàng. Gộp hai khay cùng số hàng thành một khay to. Hiểu vì sao số hàng giữ nguyên mà mỗi hàng dài thêm.",
+  "kidText": "Hai khay kẹo $3  \\times  4$ và $3  \\times  6$ đẩy sát vào nhau thì thành khay gì? Con thử đoán xem!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn ghép hai khay rồi cộng luôn cả số hàng, ra khay 6 hàng mười viên.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Đẩy hai khay sát vào nhau thì hàng nằm chồng lên nhau hay nối dài ra? Gợi ý 2: Con đếm lại số hàng của khay to xem có đúng 3 hàng không. Chữa: đẩy sát vào nhau thì mỗi hàng nối dài ra, còn số hàng giữ nguyên là 3. Khay to là $3  \\times  10$ chứ không phải $6  \\times  10$."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn ghép hai khay rồi cộng luôn cả số hàng, ra khay 6 hàng mười viên.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tính nhanh $3  \\times  4 + 3  \\times  6$.",
+  "steps": [
+   {
+    "show": "Hai khay đều có 3 hàng",
+    "phan": "giai"
+   },
+   {
+    "show": "Khay thứ nhất 3 hàng, mỗi hàng 4 viên. Khay thứ hai cũng 3 hàng, mỗi hàng 6 viên.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đẩy hai khay sát vào nhau",
+    "phan": "giai"
+   },
+   {
+    "show": "Số hàng vẫn là 3, còn mỗi hàng nay dài thêm: $4 + 6 = 10$ viên.",
+    "phan": "giai"
+   },
+   {
+    "show": "Thành một khay to",
+    "phan": "giai"
+   },
+   {
+    "show": "Khay to là 3 hàng mười viên: $3  \\times  10 = 30$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 30.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Tính riêng cũng ra đúng thế: $3  \\times  4 = 12$ và $3  \\times  6 = 18$, mà $12 + 18 = 30$.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính $3  \\times  4$.",
+     "answerKey": {
+      "value": 12
+     },
+     "solutionNarrative": "Lấy $3  \\times  4 = 12$.",
+     "hints": [
+      "Con đọc bảng nhân ba tới chặng thứ tư.",
+      "Ba lần bốn là bao nhiêu?"
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Tính $3  \\times  6$.",
+     "answerKey": {
+      "value": 18
+     },
+     "solutionNarrative": "Lấy $3  \\times  6 = 18$.",
+     "hints": [
+      "Con đọc bảng nhân ba tới chặng thứ sáu.",
+      "Sáu lần ba cũng ra kết quả ấy."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Hai khay đều 3 hàng, một khay mỗi hàng 4 viên, khay kia mỗi hàng 6 viên. Ghép lại thì mỗi hàng có mấy viên?",
+     "answerKey": {
+      "value": 10
+     },
+     "solutionNarrative": "Mỗi hàng nối dài ra: $4 + 6 = 10$ viên.",
+     "hints": [
+      "Đẩy hai khay sát nhau thì hàng nối vào hàng.",
+      "Con cộng số viên của một hàng khay này với một hàng khay kia."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tính nhanh $3  \\times  4 + 3  \\times  6$ bằng cách ghép hai khay.",
+     "answerKey": {
+      "value": 30
+     },
+     "solutionNarrative": "Ghép lại thành 3 hàng mười viên: $3  \\times  10 = 30$.",
+     "hints": [
+      "Hai khay đều ba hàng nên ghép được.",
+      "Khay to vẫn ba hàng, còn mỗi hàng dài thành mấy viên?"
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Tính nhanh $5  \\times  3 + 5  \\times  7$.",
+     "answerKey": {
+      "value": 50
+     },
+     "solutionNarrative": "Vẫn 5 hàng, mỗi hàng dài thành $3 + 7 = 10$ viên, nên $5  \\times  10 = 50$.",
+     "hints": [
+      "Hai khay đều năm hàng đấy.",
+      "Mỗi hàng dài thành ba cộng bảy viên."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Ghép hai khay $2  \\times  8$ và $2  \\times  2$ thì được khay mấy hàng, mỗi hàng mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số hàng",
+        "value": 2
+       },
+       {
+        "label": "mỗi hàng mấy viên",
+        "value": 10
+       }
+      ]
+     },
+     "solutionNarrative": "Số hàng vẫn là 2, mỗi hàng dài thành $8 + 2 = 10$ viên.",
+     "hints": [
+      "Ghép khay thì số hàng có đổi không?",
+      "Còn mỗi hàng thì dài thành tám cộng hai viên."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Tính nhanh $4  \\times  6 + 4  \\times  4$.",
+     "answerKey": {
+      "value": 40
+     },
+     "solutionNarrative": "Vẫn 4 hàng, mỗi hàng dài thành $6 + 4 = 10$ viên, nên $4  \\times  10 = 40$.",
+     "hints": [
+      "Hai khay đều bốn hàng.",
+      "Mỗi hàng dài thành sáu cộng bốn viên."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Hai khay $3  \\times  5$ và $2  \\times  6$ có ghép thành một khay to được không, và cả hai khay có tất cả bao nhiêu viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "ghép được không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       },
+       {
+        "label": "cả hai khay có mấy viên",
+        "value": 27
+       }
+      ]
+     },
+     "solutionNarrative": "Khay này 3 hàng, khay kia 2 hàng nên không ghép được. Phải tính riêng: $3  \\times  5 = 15$ và $2  \\times  6 = 12$, cộng lại được 27 viên.",
+     "hints": [
+      "Con đếm số hàng của từng khay xem có bằng nhau không.",
+      "Ghép được thì gộp, ghép chưa được thì tính riêng từng khay rồi cộng lại."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Hai khay có cùng số hàng thì ghép lại thành một khay to.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — đó là điều kiện để ghép."
+   },
+   {
+    "id": "Q2",
+    "text": "Tính nhanh $3  \\times  4 + 3  \\times  6$.",
+    "format": "mcq",
+    "choices": [
+     "30",
+     "24",
+     "18",
+     "36"
+    ],
+    "answerKey": {
+     "choice": "30"
+    },
+    "solutionNarrative": "Ghép thành 3 hàng mười viên."
+   },
+   {
+    "id": "Q3",
+    "text": "Ghép hai khay $5  \\times  3$ và $5  \\times  7$ thì được khay $5  \\times  10$.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — vẫn 5 hàng, mỗi hàng dài thành mười."
+   },
+   {
+    "id": "Q4",
+    "text": "Ghép hai khay cùng 4 hàng, một khay mỗi hàng 6 viên, khay kia mỗi hàng 4 viên. Khay to có mấy hàng?",
+    "format": "mcq",
+    "choices": [
+     "4",
+     "8",
+     "10",
+     "40"
+    ],
+    "answerKey": {
+     "choice": "4"
+    },
+    "solutionNarrative": "Số hàng không đổi, chỉ mỗi hàng dài thêm."
+   },
+   {
+    "id": "Q5",
+    "text": "Ghép hai khay thì số hàng cộng lại với nhau.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Số hàng giữ nguyên, chỉ mỗi hàng dài thêm."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Xếp kẹo hoặc hạt ra bàn thành hai khay rồi đẩy sát vào nhau cho con nhìn — thấy tận mắt một lần là nhớ.",
+  "homeActivity": "Bố mẹ hỏi: \"Ghép xong thì số hàng đổi hay mỗi hàng đổi?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B48_giang.mp4"
+ }
+}

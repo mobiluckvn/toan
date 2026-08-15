@@ -1,0 +1,321 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B53",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 35 · CHIA HẾT HAY CÒN THỪA — BẢNG NHÂN LÀ DANH SÁCH CHIA ĐẸP",
+ "durationMinutes": 10,
+ "so": 35,
+ "chuong": 4,
+ "tenChuong": "Siêu nhân tính nhanh",
+ "dangGoc": "SỐ 6.3c — Phân biệt chia hết và chia còn thừa qua bảng nhân.",
+ "skills": {
+  "bktUnit": "CHUONG:4@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 35,
+  "prev": "DL:KSN2.B52",
+  "next": "DL:KSN2.B16"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Phân biệt chia hết và chia còn thừa. Dùng bảng nhân để biết trước một số có chia hết hay không. Tìm trạm dừng gần nhất khi số không có trong bảng.",
+  "kidText": "Chia 15 viên cho 3 bạn thì vừa khít, còn 17 viên thì sao? Con đoán thử xem!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn thấy 17 nằm giữa 15 và 18 của bảng nhân 3 nên bảo 17 cũng chia hết cho 3.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Bảng nhân 3 có đọc tới số 17 bao giờ không? Gợi ý 2: Nằm giữa hai số của bảng thì có nghĩa là thuộc bảng không? Chữa: bảng nhảy thẳng từ 15 sang 18, bỏ qua 17. Nằm giữa hai số của bảng không có nghĩa là thuộc bảng, nên 17 chia 3 còn thừa 2."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn thấy 17 nằm giữa 15 và 18 của bảng nhân 3 nên bảo 17 cũng chia hết cho 3.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Chia 15 viên kẹo cho 3 bạn có vừa khít không? Còn 17 viên thì sao?",
+  "steps": [
+   {
+    "show": "Soi bảng nhân 3",
+    "phan": "giai"
+   },
+   {
+    "show": "Bảng nhân 3 chạy 3, 6, 9, 12, 15, 18. Số 15 có mặt trong bảng.",
+    "phan": "giai"
+   },
+   {
+    "show": "Số nằm trong bảng thì chia vừa khít",
+    "phan": "giai"
+   },
+   {
+    "show": "Chia 15 viên cho 3 bạn được đúng năm vòng, thừa 0 viên. Đó là chia hết.",
+    "phan": "giai"
+   },
+   {
+    "show": "Còn số không có trong bảng thì sao",
+    "phan": "giai"
+   },
+   {
+    "show": "Số 17 không có trong bảng nhân 3. Trạm dừng gần nhất mà chưa vượt là 15, nên còn $17 - 15 = 2$ viên.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: 15 chia hết cho 3, còn 17 thì thừa 2 viên.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Bảng nhân chính là danh sách những số chia vừa khít — thuộc bảng là biết trước.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Số 15 có trong bảng nhân 3 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có trong bảng không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "có"
+       }
+      ]
+     },
+     "solutionNarrative": "Bảng nhân 3 chạy 3, 6, 9, 12, 15 nên số ấy có trong bảng.",
+     "hints": [
+      "Con đọc bảng nhân ba từ đầu.",
+      "Đọc tới chặng thứ năm rồi đối chiếu với số trong đề."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Chia 15 viên cho 3 bạn thì thừa mấy viên?",
+     "answerKey": {
+      "value": 0
+     },
+     "solutionNarrative": "Chia vừa khít thành năm vòng nên thừa 0 viên.",
+     "hints": [
+      "Số này có mặt trong bảng nhân ba đấy.",
+      "Số nằm trong bảng thì chia vừa khít, chẳng viên nào đứng riêng."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Số 17 có trong bảng nhân 3 không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "có trong bảng không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Bảng nhân 3 nhảy thẳng từ 15 sang 18, bỏ qua số ấy.",
+     "hints": [
+      "Con đọc bảng nhân ba xem nó nhảy từ số nào sang số nào.",
+      "Bảng nhảy thẳng từ mười lăm sang mười tám, giữa hai chặng ấy nó bỏ qua số nào?"
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Chia 17 viên cho 3 bạn thì thừa mấy viên?",
+     "answerKey": {
+      "value": 2
+     },
+     "solutionNarrative": "Trạm dừng gần nhất là 15, còn $17 - 15 = 2$ viên.",
+     "hints": [
+      "Con tìm trạm dừng gần nhất trong bảng nhân ba mà chưa vượt.",
+      "Rồi lấy tổng trừ đi trạm dừng ấy."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Trong hai số 24 và 25, số nào chia hết cho 4?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số chia hết cho 4",
+        "options": [
+         "24",
+         "25"
+        ],
+        "value": "24"
+       }
+      ]
+     },
+     "solutionNarrative": "Bảng nhân 4 có 24 mà không có 25.",
+     "hints": [
+      "Con đọc bảng nhân bốn xem gặp số nào trong hai số ấy.",
+      "Số có trong bảng thì chia hết."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Chia 25 viên cho 4 bạn thì thừa mấy viên?",
+     "answerKey": {
+      "value": 1
+     },
+     "solutionNarrative": "Trạm dừng gần nhất là 24, còn $25 - 24 = 1$ viên.",
+     "hints": [
+      "Con tìm trạm dừng gần nhất trong bảng nhân bốn mà chưa vượt.",
+      "Rồi lấy tổng trừ đi trạm dừng ấy."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Trong bốn số 18, 20, 21 và 23, số nào chia hết cho 5?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số chia hết cho 5",
+        "options": [
+         "18",
+         "20",
+         "21",
+         "23"
+        ],
+        "value": "20"
+       }
+      ]
+     },
+     "solutionNarrative": "Bảng nhân 5 chỉ có số đuôi 0 hoặc 5, trong bốn số ấy chỉ 20 hợp.",
+     "hints": [
+      "Bảng nhân năm chỉ có hai cái đuôi, con nhớ lại bài trước.",
+      "Soi đuôi bốn số rồi loại dần."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Chia 34 viên cho 5 bạn. Cho biết chia hết hay còn thừa, mỗi bạn mấy viên và thừa mấy viên.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "chia hết hay còn thừa",
+        "options": [
+         "chia hết",
+         "còn thừa"
+        ],
+        "value": "còn thừa"
+       },
+       {
+        "label": "mỗi bạn",
+        "value": 6
+       },
+       {
+        "label": "thừa",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Số 34 không có trong bảng nhân 5 nên còn thừa. Trạm dừng gần nhất là $5  \\times  6 = 30$, nên mỗi bạn 6 viên và còn $34 - 30 = 4$ viên.",
+     "hints": [
+      "Con đọc bảng nhân năm xem có gặp số ba mươi tư không.",
+      "Không gặp thì tìm trạm dừng gần nhất mà chưa vượt."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Số nằm trong bảng nhân thì chia vừa khít, không thừa viên nào.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — bảng nhân là danh sách các số chia đẹp."
+   },
+   {
+    "id": "Q2",
+    "text": "Chia 15 viên cho 3 bạn thì thừa mấy viên?",
+    "format": "mcq",
+    "choices": [
+     "0",
+     "2",
+     "3",
+     "5"
+    ],
+    "answerKey": {
+     "choice": "0"
+    },
+    "solutionNarrative": "Số 15 có trong bảng nhân 3."
+   },
+   {
+    "id": "Q3",
+    "text": "Chia 17 viên cho 3 bạn thì thừa mấy viên?",
+    "format": "mcq",
+    "choices": [
+     "2",
+     "1",
+     "3",
+     "0"
+    ],
+    "answerKey": {
+     "choice": "2"
+    },
+    "solutionNarrative": "Trạm dừng gần nhất là 15."
+   },
+   {
+    "id": "Q4",
+    "text": "Số 25 chia hết cho 4.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Bảng nhân 4 không có 25, chia còn thừa 1 viên."
+   },
+   {
+    "id": "Q5",
+    "text": "Nằm giữa hai số của bảng nhân thì cũng coi như thuộc bảng.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Bảng nhảy qua số ấy, nên chia vẫn còn thừa."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Đố con nhanh: \"Số này chia hết cho 5 không?\" — bé chỉ cần nhớ bảng nhân là trả lời được, không phải chia thử.",
+  "homeActivity": "Bố mẹ hỏi: \"Số này có trong bảng nhân ấy không?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B53_giang.mp4"
+ }
+}

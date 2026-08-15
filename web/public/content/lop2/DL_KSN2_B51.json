@@ -1,0 +1,305 @@
+{
+ "$schema": "digital-lesson/v2-micro",
+ "id": "DL:KSN2.B51",
+ "grade": 2,
+ "quyen": "lop2",
+ "title": "Bài 32 · KHI SỐ CẦN TÌM BỊ LẤY ĐI — 14 TRỪ Ô TRỐNG BẰNG 6",
+ "durationMinutes": 10,
+ "so": 32,
+ "chuong": 4,
+ "tenChuong": "Siêu nhân tính nhanh",
+ "dangGoc": "SỐ 7.2c — Tìm số trừ: ca ô trống đứng SAU dấu trừ.",
+ "skills": {
+  "bktUnit": "CHUONG:4@G2",
+  "primary": []
+ },
+ "series": {
+  "order": 32,
+  "prev": "DL:KSN2.B50",
+  "next": "DL:KSN2.B15"
+ },
+ "objective": {
+  "id": "O1",
+  "text": "Nhận ra ca ô trống đứng sau dấu trừ. Hiểu số cần tìm chính là phần bị lấy đi. Lấy số ban đầu trừ phần còn lại để tìm nó.",
+  "kidText": "Bài 14 trừ ô trống bằng 6 nhìn quen mà làm ngược hẳn bài trước. Con thử xem!",
+  "laLoiChao": true,
+  "passRule": "đúng ≥ 4/5 câu tự kiểm"
+ },
+ "knowledgeCore": {
+  "statements": [],
+  "mantra": "",
+  "vocabulary": [],
+  "canonicalExamples": [],
+  "misconceptions": [
+   {
+    "wrong": "Có bạn giải bài 14 trừ ô trống bằng 6 rồi ghi số cần tìm là 20, vì quen tay cho kết quả chạy ngược qua máy cộng.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Thử lại giúp bạn ấy xem $14 - 20$ có làm được không. Gợi ý 2: Ô trống đứng trước hay đứng sau dấu trừ? Nó là số bị lấy đi hay số ban đầu? Chữa: ô trống đứng sau dấu trừ nên nó là phần bị lấy đi. Lấy $14 - 6 = 8$."
+   }
+  ]
+ },
+ "lecture": {
+  "screens": [
+   {
+    "id": "S1",
+    "kind": "trap",
+    "narration": "Có bạn giải bài 14 trừ ô trống bằng 6 rồi ghi số cần tìm là 20, vì quen tay cho kết quả chạy ngược qua máy cộng.",
+    "teaches": []
+   }
+  ]
+ },
+ "workedExample": {
+  "title": "Bài mẫu",
+  "problem": "Tìm số thích hợp điền vào ô trống: 14 trừ ô trống bằng 6.",
+  "steps": [
+   {
+    "show": "Ca này khác hai bài trước",
+    "phan": "giai"
+   },
+   {
+    "show": "Số cần tìm không chui vào máy nào cả. Nó chính là phần bị lấy đi khỏi 14.",
+    "phan": "giai"
+   },
+   {
+    "show": "Hỏi lại cho dễ hiểu",
+    "phan": "giai"
+   },
+   {
+    "show": "Câu hỏi thật ra là: từ 14 lấy đi bao nhiêu thì còn 6?",
+    "phan": "giai"
+   },
+   {
+    "show": "Lấy số ban đầu trừ phần còn lại",
+    "phan": "giai"
+   },
+   {
+    "show": "Phần bị lấy đi là $14 - 6 = 8$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Thử lại trước khi chốt",
+    "phan": "giai"
+   },
+   {
+    "show": "Thay 8 vào ô trống rồi tính xuôi: $14 - 8 = 6$, khớp đúng đề bài.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: số cần tìm là 8.",
+    "phan": "dapso"
+   },
+   {
+    "show": "Ô trống đứng SAU dấu trừ thì cách làm khác hẳn ô trống đứng trước.",
+    "phan": "ghichu"
+   }
+  ]
+ },
+ "practice": {
+  "pools": {
+   "warmup": [
+    {
+     "id": "C1",
+     "text": "Tính $14 - 6$.",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "Lấy $14 - 6 = 8$.",
+     "hints": [
+      "Con đếm lùi từ mười bốn xuống sáu bước.",
+      "Hoặc đếm từ sáu lên mười bốn xem mấy bước."
+     ]
+    },
+    {
+     "id": "C2",
+     "text": "Từ 14 lấy đi bao nhiêu thì còn lại 6?",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "Phần bị lấy đi là $14 - 6 = 8$.",
+     "hints": [
+      "Lúc đầu có mười bốn, cuối cùng còn sáu.",
+      "Phần biến mất chính là hiệu của hai số ấy."
+     ]
+    },
+    {
+     "id": "C3",
+     "text": "Tìm số trong ô trống: 14 trừ ô trống bằng 6.",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "Ô trống là phần bị lấy đi, nên lấy $14 - 6 = 8$.",
+     "hints": [
+      "Con nhìn xem ô trống đứng trước hay đứng sau dấu trừ.",
+      "Đứng sau thì nó là phần bị lấy đi, nên lấy số đầu trừ phần còn lại."
+     ]
+    }
+   ],
+   "standard": [
+    {
+     "id": "C4",
+     "text": "Tìm số trong ô trống: 20 trừ ô trống bằng 12.",
+     "answerKey": {
+      "value": 8
+     },
+     "solutionNarrative": "Phần bị lấy đi là $20 - 12 = 8$.",
+     "hints": [
+      "Ô trống đứng sau dấu trừ nên nó là phần bị lấy đi.",
+      "Lấy hai mươi trừ đi phần còn lại là mười hai."
+     ]
+    },
+    {
+     "id": "C5",
+     "text": "Tìm số trong ô trống: 30 trừ ô trống bằng 11.",
+     "answerKey": {
+      "value": 19
+     },
+     "solutionNarrative": "Phần bị lấy đi là $30 - 11 = 19$.",
+     "hints": [
+      "Ô trống lại đứng sau dấu trừ.",
+      "Lấy ba mươi trừ đi phần còn lại là mười một."
+     ]
+    },
+    {
+     "id": "C6",
+     "text": "Hai bài \"ô trống trừ 6 bằng 14\" và \"14 trừ ô trống bằng 6\" có cùng đáp số không?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "cùng đáp số không",
+        "options": [
+         "có",
+         "không"
+        ],
+        "value": "không"
+       }
+      ]
+     },
+     "solutionNarrative": "Bài đầu ra 20 còn bài sau ra 8, nên hai đáp số khác hẳn nhau.",
+     "hints": [
+      "Con giải riêng từng bài rồi mới so.",
+      "Bài đầu ô trống đứng trước dấu trừ, bài sau thì đứng sau — hai cách làm khác nhau."
+     ]
+    }
+   ],
+   "challenge": [
+    {
+     "id": "C7",
+     "text": "Tìm số trong ô trống rồi thử lại: 25 trừ ô trống bằng 9.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "số cần tìm",
+        "value": 16
+       },
+       {
+        "label": "thử lại được",
+        "value": 9
+       }
+      ]
+     },
+     "solutionNarrative": "Phần bị lấy đi là $25 - 9 = 16$. Thử lại xuôi: $25 - 16 = 9$.",
+     "hints": [
+      "Lấy hai mươi lăm trừ đi phần còn lại.",
+      "Có số rồi thì thay vào ô trống, tính xuôi một lần cho chắc."
+     ]
+    },
+    {
+     "id": "C8",
+     "text": "Có bạn giải bài 14 trừ ô trống bằng 6 rồi ghi số cần tìm là 20. Cho biết bạn ấy sai ở đâu và số đúng là bao nhiêu.",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "bạn ấy sai ở đâu",
+        "options": [
+         "cộng vào thay vì trừ đi",
+         "không sai gì cả"
+        ],
+        "value": "cộng vào thay vì trừ đi"
+       },
+       {
+        "label": "số đúng",
+        "value": 8
+       }
+      ]
+     },
+     "solutionNarrative": "Bạn ấy cộng 14 với 6 vì quen tay cho chạy ngược. Ô trống đứng sau dấu trừ nên phải lấy $14 - 6 = 8$.",
+     "hints": [
+      "Con thử lại giúp bạn ấy: mười bốn trừ hai mươi có làm được không?",
+      "Ô trống đứng sau dấu trừ thì phải lấy số đầu trừ đi, chứ không phải cộng vào."
+     ]
+    }
+   ]
+  }
+ },
+ "assessment": {
+  "passRule": "≥ 4/5",
+  "items": [
+   {
+    "id": "Q1",
+    "text": "Ô trống đứng sau dấu trừ thì lấy số ban đầu trừ đi kết quả.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — nó chính là phần bị lấy đi."
+   },
+   {
+    "id": "Q2",
+    "text": "Bài 14 trừ ô trống bằng 6. Số trong ô trống là mấy?",
+    "format": "mcq",
+    "choices": [
+     "8",
+     "20",
+     "6",
+     "14"
+    ],
+    "answerKey": {
+     "choice": "8"
+    },
+    "solutionNarrative": "Lấy số ban đầu trừ phần còn lại."
+   },
+   {
+    "id": "Q3",
+    "text": "Bài ô trống trừ 6 bằng 14. Số trong ô trống là mấy?",
+    "format": "mcq",
+    "choices": [
+     "20",
+     "8",
+     "14",
+     "6"
+    ],
+    "answerKey": {
+     "choice": "20"
+    },
+    "solutionNarrative": "Ca này thì cho kết quả chạy ngược."
+   },
+   {
+    "id": "Q4",
+    "text": "Hai bài \"ô trống trừ 6 bằng 14\" và \"14 trừ ô trống bằng 6\" có cùng đáp số.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Một bài ra 20, bài kia ra 8."
+   },
+   {
+    "id": "Q5",
+    "text": "Phải nhìn xem ô trống đứng trước hay sau dấu trừ rồi mới chọn cách làm.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — hai chỗ đứng là hai cách làm khác nhau."
+   }
+  ]
+ },
+ "parentNote": {
+  "onComplete": "Cầm 14 viên kẹo rồi giấu đi một nắm, đếm số còn lại là 6, hỏi con vừa giấu mấy viên — đúng cái ca của bài này.",
+  "homeActivity": "Bố mẹ hỏi: \"Ô trống đứng trước hay sau dấu trừ?\"",
+  "watchFor": ""
+ },
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B51_giang.mp4"
+ }
+}

@@ -3,55 +3,38 @@
  "id": "DL:KSN2.B15",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 29 · CHIA KẸO CÒN THỪA",
+ "title": "Bài 33 · CHIA THEO VÒNG — MỖI BẠN MẤY VIÊN, THỪA MẤY VIÊN",
  "durationMinutes": 10,
- "so": 29,
+ "so": 33,
  "chuong": 4,
  "tenChuong": "Siêu nhân tính nhanh",
- "dangGoc": "SỐ 6.3 — Tiền thân phép chia có dư (mức thao tác - hình ảnh)",
+ "dangGoc": "SỐ 6.3a — Phép chia có dư ở mức thao tác: chia theo vòng.",
  "skills": {
   "bktUnit": "CHUONG:4@G2",
   "primary": []
  },
  "series": {
-  "order": 29,
-  "prev": "DL:KSN2.B14",
-  "next": "DL:KSN2.B16"
+  "order": 33,
+  "prev": "DL:KSN2.B51",
+  "next": "DL:KSN2.B52"
  },
  "objective": {
   "id": "O1",
-  "text": "Chia được một nhóm đồ vật thành các phần bằng nhau và nói rõ CÒN THỪA mấy. Phân biệt chia HẾT (vừa khít) và chia CÒN THỪA. Hiểu luật vàng: số thừa phải BÉ HƠN số bạn được chia — nếu không thì chia tiếp được!",
-  "kidText": "Chia 20 viên bi cho 6 bạn. Chia mãi vẫn còn thừa — con thử xem mỗi bạn được mấy viên nhé!",
+  "text": "Chia một nhóm đồ vật thành các phần bằng nhau. Lần theo bảng nhân để tìm trạm dừng gần nhất mà chưa vượt. Nói rõ mỗi bạn được mấy và còn thừa mấy.",
+  "kidText": "Có 20 viên bi chia cho 6 bạn thì kiểu gì cũng thừa. Con đoán mỗi bạn mấy viên nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Cách chia công bằng nhất: chia theo VÒNG. Mỗi vòng phát cho mỗi bạn đúng 1 viên, tức mỗi vòng tốn 3 viên."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Hết vòng 5 đã phát 15 viên (đúng bảng nhân: $3  \\times  5 = 15$). Trong tay còn $17 - 15 = 2$ viên. Mà có tận 3 bạn → không đủ phát vòng 6, dừng! Vậy: mỗi bạn 5 viên, thừa 2 viên."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Luật vàng của phép chia còn thừa: số thừa phải BÉ HƠN số bạn. Nếu ai đó bảo \"thừa 5 viên\" khi chia cho 3 bạn — vô lý! 5 viên đủ phát thêm cả một vòng (3 viên) nữa cơ mà."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. Có gói chia đẹp vừa khít: 15 viên chia 3 bạn — mỗi bạn 5 viên, thừa 0. Đó là chia HẾT. Bảng cửu chương chính là danh sách các ca \"chia đẹp\": 15 nằm trong bảng nhân 3 nên chia 3 là hết veo!"
-   }
-  ],
-  "mantra": "Chia cho 3 bạn? Lần theo bảng nhân 3 tìm trạm dừng GẦN NHẤT mà không vượt quá: 17 → trạm 15 ($3  \\times  5$). Số vòng là 5, số thừa là $17 - 15 = 2$. Và luôn soi luật vàng: thừa phải bé hơn số bạn!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem chia 17 viên cho 3 bạn: \"Mỗi bạn 4 viên, thừa 5 viên. Chỗ thừa để tớ... bảo quản!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Soi luật vàng xem: thừa 5 viên mà chỉ có 3 bạn. 5 có bé hơn 3 không? Gợi ý 2: Với 5 viên \"bảo quản\" đó còn phát thêm được vòng nào không? Chia lại chuẩn giúp Su Kem (và cứu chỗ kẹo) nhé!"
+    "wrong": "Có bạn chia 20 viên cho 6 bạn rồi ghi mỗi bạn 3 viên, mà quên không nói còn thừa mấy viên.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Ba vòng đã phát đi bao nhiêu viên rồi? Gợi ý 2: Gói có 20 viên, đã phát 18 viên. Trong tay còn lại mấy viên? Chữa: bài chia còn thừa phải nói ĐỦ HAI SỐ — mỗi bạn 3 viên, và còn thừa $20 - 18 = 2$ viên."
    }
   ]
  },
@@ -59,45 +42,8 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Có 20 viên bi chia đều cho 6 bạn. Hỏi mỗi bạn được mấy viên và còn thừa mấy viên?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
-   {
-    "id": "S6",
     "kind": "trap",
-    "narration": "Su Kem chia 17 viên cho 3 bạn: \"Mỗi bạn 4 viên, thừa 5 viên. Chỗ thừa để tớ... bảo quản!\"",
+    "narration": "Có bạn chia 20 viên cho 6 bạn rồi ghi mỗi bạn 3 viên, mà quên không nói còn thừa mấy viên.",
     "teaches": []
    }
   ]
@@ -107,20 +53,36 @@
   "problem": "Có 20 viên bi chia đều cho 6 bạn. Hỏi mỗi bạn được mấy viên và còn thừa mấy viên?",
   "steps": [
    {
-    "show": "Lần theo bảng nhân 6: $6  \\times  3 = 18$ (chưa vượt 20). $6  \\times  4 = 24$ (vượt mất rồi!).",
+    "show": "Chia theo vòng cho công bằng",
     "phan": "giai"
    },
    {
-    "show": "Vậy chia được 3 vòng: mỗi bạn được 3 viên.",
+    "show": "Mỗi vòng phát cho mỗi bạn đúng một viên, tức là mỗi vòng tốn 6 viên.",
     "phan": "giai"
    },
    {
-    "show": "Số bi còn thừa là: $20 - 18 = 2$ (viên)",
+    "show": "Lần theo bảng nhân 6 tìm trạm dừng",
     "phan": "giai"
    },
    {
-    "show": "Đáp số: mỗi bạn 3 viên, thừa 2 viên. (Kiểm tra luật vàng: $2 < 6$ ✓)",
+    "show": "Trạm $6  \\times  3 = 18$, chưa vượt 20. Trạm sau là $6  \\times  4 = 24$, vượt mất rồi. Vậy dừng ở ba vòng.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đếm số viên còn lại trong tay",
+    "phan": "giai"
+   },
+   {
+    "show": "Đã phát đi 18 viên, còn lại $20 - 18 = 2$ viên.",
+    "phan": "giai"
+   },
+   {
+    "show": "Đáp số: mỗi bạn 3 viên, còn thừa 2 viên.",
     "phan": "dapso"
+   },
+   {
+    "show": "Còn 2 viên mà có tới 6 bạn nên không phát thêm vòng nào được nữa.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -129,174 +91,142 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Chia 10 viên kẹo cho 2 bạn: mỗi bạn mấy viên, thừa mấy viên? Đây là chia hết hay chia còn thừa?",
+     "text": "Tính $6  \\times  3$.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "mỗi bạn mấy viên",
-        "value": 5
-       },
-       {
-        "label": "thừa mấy viên",
-        "value": 0
-       },
-       {
-        "label": "đây là",
-        "options": [
-         "chia hết",
-         "chia còn thừa"
-        ],
-        "value": "chia hết"
-       }
-      ]
+      "value": 18
      },
-     "solutionNarrative": "mỗi bạn 5 viên, thừa 0 — chia hết",
+     "solutionNarrative": "Lấy $6  \\times  3 = 18$.",
      "hints": [
-      "Lần theo bảng nhân 2 tìm trạm dừng gần nhất.",
-      "Dừng đúng khít thì thừa mấy viên?"
+      "Con đọc bảng nhân sáu tới chặng thứ ba.",
+      "Ba vòng thì tốn mấy viên?"
      ]
     },
     {
      "id": "C2",
-     "text": "Chia 11 viên kẹo cho 2 bạn: mỗi bạn mấy viên, thừa mấy viên?",
+     "text": "Tính $20 - 18$.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "mỗi bạn mấy viên",
-        "value": 5
-       },
-       {
-        "label": "thừa mấy viên",
-        "value": 1
-       }
-      ]
+      "value": 2
      },
-     "solutionNarrative": "mỗi bạn 5 viên, thừa 1",
+     "solutionNarrative": "Lấy $20 - 18 = 2$.",
      "hints": [
-      "Trạm gần nhất trong bảng nhân 2 mà không vượt quá số kẹo.",
-      "Số thừa = số kẹo trừ đi trạm dừng."
+      "Gói có hai mươi viên, đã phát đi mười tám.",
+      "Con đếm lùi hoặc lấy hiệu hai số ấy."
      ]
     },
     {
      "id": "C3",
-     "text": "Chia 13 que tính cho 4 bạn (vẽ 4 vòng tròn rồi chia theo vòng nhé): mỗi bạn mấy que, thừa mấy que?",
+     "text": "Chia 20 viên bi cho 6 bạn thì mỗi bạn được mấy viên?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "mỗi bạn mấy que",
-        "value": 3
-       },
-       {
-        "label": "thừa mấy que",
-        "value": 1
-       }
-      ]
+      "value": 3
      },
-     "solutionNarrative": "$4  \\times  3 = 12$ → mỗi bạn 3 que, thừa 1",
+     "solutionNarrative": "Lần theo bảng nhân 6: trạm $6  \\times  3 = 18$ chưa vượt 20, nên mỗi bạn 3 viên.",
      "hints": [
-      "Vẽ 4 vòng tròn rồi phát theo từng vòng.",
-      "Lần bảng nhân 4 tới trạm gần nhất không vượt quá."
+      "Mỗi vòng phát cho mỗi bạn một viên, tức mỗi vòng tốn sáu viên.",
+      "Con lần theo bảng nhân sáu tới trạm gần nhất mà chưa vượt hai mươi."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Chia 22 viên bi cho 4 bạn: mỗi bạn mấy viên, thừa mấy viên?",
+     "text": "Chia 20 viên bi cho 6 bạn thì còn thừa mấy viên?",
      "answerKey": {
-      "parts": [
-       {
-        "label": "mỗi bạn mấy viên",
-        "value": 5
-       },
-       {
-        "label": "thừa mấy viên",
-        "value": 2
-       }
-      ]
+      "value": 2
      },
-     "solutionNarrative": "$4  \\times  5 = 20$ → mỗi bạn 5 viên, thừa 2",
+     "solutionNarrative": "Đã phát 18 viên, còn lại $20 - 18 = 2$ viên.",
      "hints": [
-      "Lần bảng nhân 4 tìm trạm dừng.",
-      "Soi luật vàng: số thừa phải bé hơn số bạn."
+      "Ba vòng đã phát đi bao nhiêu viên?",
+      "Con lấy cả gói trừ đi phần đã phát."
      ]
     },
     {
      "id": "C5",
-     "text": "Chia 30 quyển vở cho 5 bạn: mỗi bạn mấy quyển, thừa mấy quyển? Vì sao lần này \"đẹp\" thế?",
-     "solutionNarrative": "$5  \\times  6 = 30$ → mỗi bạn 6 quyển, thừa 0 — \"đẹp\" vì 30 nằm ngay trong bảng nhân 5!",
-     "hints": [
-      "Lần bảng nhân 5 xem có trạm nào đúng khít không.",
-      "Đúng khít, không thừa viên nào thì gọi là gì?"
-     ]
-    },
-    {
-     "id": "C6",
-     "text": "Chia 26 viên kẹo cho 3 bạn: mỗi bạn mấy viên, thừa mấy viên?",
+     "text": "Chia 17 viên kẹo cho 3 bạn. Mỗi bạn được mấy viên và thừa mấy viên?",
      "answerKey": {
       "parts": [
        {
-        "label": "mỗi bạn mấy viên",
-        "value": 8
+        "label": "mỗi bạn",
+        "value": 5
        },
        {
-        "label": "thừa mấy viên",
+        "label": "thừa",
         "value": 2
        }
       ]
      },
-     "solutionNarrative": "$3  \\times  8 = 24$ → mỗi bạn 8 viên, thừa 2",
+     "solutionNarrative": "Lần theo bảng nhân 3: trạm $3  \\times  5 = 15$ chưa vượt 17. Mỗi bạn 5 viên, còn $17 - 15 = 2$ viên.",
      "hints": [
-      "Lần bảng nhân 3 tới trạm gần nhất không vượt quá.",
-      "Số kẹo còn trong tay chính là số thừa."
+      "Mỗi vòng tốn ba viên. Con lần theo bảng nhân ba.",
+      "Trạm gần nhất mà chưa vượt mười bảy là trạm nào?"
      ]
     },
     {
-     "id": "C7",
-     "text": "Cô giáo có 19 bông hoa cắm đều vào 5 lọ. Mỗi lọ mấy bông và còn thừa mấy bông?",
+     "id": "C6",
+     "text": "Chia 22 viên cho 4 bạn. Mỗi bạn được mấy viên và thừa mấy viên?",
      "answerKey": {
       "parts": [
        {
-        "label": "mỗi lọ mấy bông",
-        "value": 3
+        "label": "mỗi bạn",
+        "value": 5
        },
        {
-        "label": "thừa mấy bông",
-        "value": 4
+        "label": "thừa",
+        "value": 2
        }
       ]
      },
-     "solutionNarrative": "$5  \\times  3 = 15$ → mỗi lọ 3 bông, thừa 4 bông (soi luật vàng: $4 < 5$ ✓)",
+     "solutionNarrative": "Lần theo bảng nhân 4: trạm $4  \\times  5 = 20$ chưa vượt 22. Mỗi bạn 5 viên, còn $22 - 20 = 2$ viên.",
      "hints": [
-      "Lần bảng nhân 5 tìm trạm dừng.",
-      "Soi luật vàng: số thừa có bé hơn số lọ không?"
+      "Mỗi vòng tốn bốn viên. Con lần theo bảng nhân bốn.",
+      "Trạm gần nhất mà chưa vượt hai mươi hai là trạm nào?"
      ]
     }
    ],
    "challenge": [
     {
-     "id": "C8",
-     "text": "Khi chia kẹo cho 4 bạn, số viên THỪA nhiều nhất có thể là mấy? Vì sao không thể thừa nhiều hơn thế? Cho một ví dụ số kẹo bị thừa đúng như vậy.",
-     "solutionNarrative": "thừa nhiều nhất là 3 viên — vì thừa 4 viên là đủ phát thêm một vòng cho 4 bạn rồi! Ví dụ: 19 viên chia 4 bạn → mỗi bạn 4 viên, thừa 3",
+     "id": "C7",
+     "text": "Chia 29 viên cho 5 bạn. Mỗi bạn được mấy viên và thừa mấy viên?",
+     "answerKey": {
+      "parts": [
+       {
+        "label": "mỗi bạn",
+        "value": 5
+       },
+       {
+        "label": "thừa",
+        "value": 4
+       }
+      ]
+     },
+     "solutionNarrative": "Lần theo bảng nhân 5: trạm $5  \\times  5 = 25$ chưa vượt 29. Mỗi bạn 5 viên, còn $29 - 25 = 4$ viên.",
      "hints": [
-      "Thừa đúng bằng số bạn thì còn phát thêm được một vòng nữa.",
-      "Vậy số thừa lớn nhất phải kém số bạn đúng 1."
+      "Mỗi vòng tốn năm viên. Con lần theo bảng nhân năm.",
+      "Trạm gần nhất mà chưa vượt hai mươi chín là trạm nào?"
      ]
     },
     {
-     "id": "C9",
-     "text": "Su Kem có một nắm kẹo từ 20 đến 25 viên. Chia cho 4 bạn thì vừa khít không thừa viên nào. Hỏi Su Kem có bao nhiêu viên kẹo? (Lần theo bảng nhân 4 trong khoảng 20-25 xem!)",
+     "id": "C8",
+     "text": "Chia 31 viên cho 7 bạn. Cho biết mỗi bạn mấy viên, đã phát đi tất cả bao nhiêu viên, và còn thừa mấy viên.",
      "answerKey": {
-      "ordered": false,
-      "values": [
-       20,
-       24
+      "parts": [
+       {
+        "label": "mỗi bạn",
+        "value": 4
+       },
+       {
+        "label": "đã phát",
+        "value": 28
+       },
+       {
+        "label": "thừa",
+        "value": 3
+       }
       ]
      },
-     "solutionNarrative": "lần theo bảng nhân 4 trong khoảng 20-25: chỉ có $4  \\times  5 = 20$ và $4  \\times  6 = 24$ → Su Kem có 20 hoặc 24 viên kẹo (hai đáp án đều đúng!)",
+     "solutionNarrative": "Lần theo bảng nhân 7: trạm $7  \\times  4 = 28$ chưa vượt 31. Mỗi bạn 4 viên, đã phát 28 viên, còn $31 - 28 = 3$ viên.",
      "hints": [
-      "Lần bảng nhân 4 trong khoảng đề cho.",
-      "Có thể có nhiều hơn một đáp án đấy."
+      "Mỗi vòng tốn bảy viên. Con lần theo bảng nhân bảy.",
+      "Có trạm dừng rồi thì biết luôn số vòng, phần đã phát và phần còn lại."
      ]
     }
    ]
@@ -307,91 +237,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "17 viên kẹo chia 3 bạn thì mỗi bạn 5 viên, thừa 2 viên.",
+    "text": "Chia theo vòng thì mỗi vòng phát cho mỗi bạn đúng một viên.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng — chia thế mới công bằng."
    },
    {
     "id": "Q2",
-    "text": "Chia cho 3 bạn mà thừa 4 viên là kết quả hợp lệ.",
+    "text": "Chia 20 viên cho 6 bạn thì mỗi bạn được mấy viên?",
+    "format": "mcq",
+    "choices": [
+     "3",
+     "4",
+     "2",
+     "5"
+    ],
+    "answerKey": {
+     "choice": "3"
+    },
+    "solutionNarrative": "Trạm dừng là ba vòng."
+   },
+   {
+    "id": "Q3",
+    "text": "Chia 20 viên cho 6 bạn thì thừa mấy viên?",
+    "format": "mcq",
+    "choices": [
+     "2",
+     "4",
+     "0",
+     "6"
+    ],
+    "answerKey": {
+     "choice": "2"
+    },
+    "solutionNarrative": "Đã phát 18 viên trong tổng số 20."
+   },
+   {
+    "id": "Q4",
+    "text": "Chia 17 viên cho 3 bạn thì mỗi bạn được 5 viên và thừa 2 viên.",
+    "format": "tf",
+    "answerKey": {
+     "value": true
+    },
+    "solutionNarrative": "Đúng — trạm dừng là 15."
+   },
+   {
+    "id": "Q5",
+    "text": "Bài chia còn thừa chỉ cần nói mỗi bạn được mấy viên là đủ.",
     "format": "tf",
     "answerKey": {
      "value": false
     },
-    "solutionNarrative": "$4 > 3$, còn phát thêm vòng nữa"
-   },
-   {
-    "id": "Q3",
-    "text": "15 viên chia 3 bạn là phép chia:",
-    "format": "mcq",
-    "choices": [
-     "A. Còn thừa",
-     "B. Hết (vừa khít)",
-     "C. Không chia được"
-    ],
-    "answerKey": {
-     "choice": "B. Hết (vừa khít)"
-    },
-    "solutionNarrative": "Đáp án: B. Hết (vừa khít)"
-   },
-   {
-    "id": "Q4",
-    "text": "22 viên chia 4 bạn thì thừa:",
-    "format": "mcq",
-    "choices": [
-     "A. 1 viên",
-     "B. 2 viên",
-     "C. 3 viên"
-    ],
-    "answerKey": {
-     "choice": "B. 2 viên"
-    },
-    "solutionNarrative": "Đáp án: B. 2 viên"
-   },
-   {
-    "id": "Q5",
-    "text": "Chia cho 5 bạn, số thừa nhiều nhất có thể là:",
-    "format": "mcq",
-    "choices": [
-     "A. 4",
-     "B. 5",
-     "C. 6"
-    ],
-    "answerKey": {
-     "choice": "A. 4"
-    },
-    "solutionNarrative": "Đáp án: A. 4"
+    "solutionNarrative": "Sai. Phải nói đủ hai số: mỗi bạn mấy, và còn thừa mấy."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Chia thật mọi thứ trong nhà: nho, hạt lạc, viên lego — cho 2, 3, 4 \"nhân vật\" (thêm gấu bông cho đủ đội hình). Bàn tay chia trước, con số theo sau.",
-  "homeActivity": "Hỏi câu luật vàng mỗi lần chia xong: \"Chỗ thừa có phát thêm được vòng nữa không?\" — đây chính là điều kiện số dư < số chia mà lớp 3 sẽ học thành lời.",
-  "watchFor": "NÊN: cho con gặp cả ca chia hết lẫn chia thừa xen kẽ. KHÔNG NÊN: viết phép tính $17 : 3 = 5$ (dư 2) vội — ký hiệu \"dư\" là bài chính khóa lớp 3; lớp 2 nói bằng lời \"mỗi bạn 5 viên, thừa 2 viên\" là chuẩn đẹp."
+  "onComplete": "Chia thật một nắm kẹo cho cả nhà theo vòng, mỗi vòng mỗi người một viên — con sẽ thấy chỗ thừa hiện ra rất tự nhiên.",
+  "homeActivity": "Bố mẹ hỏi: \"Con đã nói đủ hai số chưa — mỗi bạn mấy, và thừa mấy?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_CHAM02",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_CHAM02.png",
-   "caption": "Chia 17 viên cho 3 bạn: mỗi bạn 5 viên, thừa 2",
-   "sha256_16": "16308b198a911252",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_HOP02",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L2H_HOP02.png",
-   "caption": "Phát 5 vòng thì hết 15 viên, còn 2 viên không đủ chia",
-   "sha256_16": "c6a0b0bf5b20358d",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B15_giang.mp4"
+ }
 }

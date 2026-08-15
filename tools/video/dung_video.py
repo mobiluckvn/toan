@@ -326,6 +326,47 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuCuoi"):
             giua(d, y0 + h_nhom + 118, c["chuCuoi"], phong(34), INK, rong=W - 200)
 
+    elif L == "luoi_cham":
+        # ══ KHAY KẸO HÀNG × CỘT — VẼ ĐÚNG CÁI MÌNH ĐANG NÓI ══
+        #
+        # ⚠ CẢNH NÀY RA ĐỜI VÌ MỘT LỖI CHỈ LỘ KHI MỞ MẮT XEM. Bài "ghép hai khay kẹo"
+        # ban đầu mượn cảnh `nhom_deu`, lời đọc bảo "ba hàng, mỗi hàng bốn viên", mà
+        # `nhom_deu` xếp tối đa ba viên một dòng nên vẽ ra BA NHÓM bốn viên, mỗi nhóm
+        # gấp thành hai dòng. Bé nghe "hàng" mà nhìn thấy "nhóm" — hai thứ khác nhau,
+        # và cả bài dạy phép nhân đứng trên đúng chữ "hàng" ấy.
+        #
+        # Nên cảnh này vẽ ĐÚNG một lưới `hang` dòng, mỗi dòng `cot` viên. `cot2` vẽ
+        # thêm phần nối dài bên phải bằng màu khác — đó chính là lúc hai khay đẩy sát
+        # vào nhau: số hàng giữ nguyên, mỗi hàng dài thêm.
+        giua(d, 46, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        hang = max(1, c.get("hang", 1))
+        cot = max(1, c.get("cot", 1))
+        cot2 = max(0, c.get("cot2", 0))
+        tong_cot = cot + cot2
+        # Viên to hết mức mà vẫn vừa bề ngang; lưới rộng thì viên nhỏ lại.
+        cach = min(62, int((W - 260) / max(tong_cot, 1)), int(360 / hang))
+        r = max(7, cach // 2 - 6)
+        w_luoi = tong_cot * cach
+        h_luoi = hang * cach
+        x0 = (W - w_luoi) // 2
+        y0 = max(150, (H - h_luoi - 190) // 2)
+        # Khung ôm khay thứ nhất, và khay nối thêm nếu có.
+        the(d, x0 - 20, y0 - 20, cot * cach + 40, h_luoi + 40,
+            nen=TEAL_PALE, vien=TEAL, day=4, bo=18)
+        if cot2:
+            the(d, x0 + cot * cach - 20, y0 - 20, cot2 * cach + 40, h_luoi + 40,
+                nen=GOLD_PALE, vien=GOLD, day=4, bo=18)
+        for i in range(hang):
+            for j in range(tong_cot):
+                cx = x0 + j * cach + cach // 2
+                cy = y0 + i * cach + cach // 2
+                mau = GOLD_DARK if j >= cot else TEAL_DARK
+                d.ellipse([cx - r, cy - r, cx + r, cy + r], fill=mau, outline=mau)
+        nhan = c.get("chuPhu") or f"{hang} × {tong_cot} = {hang * tong_cot} viên"
+        giua(d, y0 + h_luoi + 54, nhan, phong(38), TEAL_DARK, rong=W - 160)
+        if c.get("chuCuoi"):
+            giua(d, y0 + h_luoi + 124, c["chuCuoi"], phong(34), INK, rong=W - 200)
+
     elif L == "hinh_cn":
         # ══ HÌNH CHỮ NHẬT — VẼ ĐƯỢC CẢ CHU VI LẪN DIỆN TÍCH ══
         # Chỗ bé lẫn nhất cả chương là chu vi với diện tích. Nói bằng lời thì hai chữ

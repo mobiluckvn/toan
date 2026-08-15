@@ -2,121 +2,82 @@
  "id": "DL:KSN2.B13",
  "quyen": "lop2",
  "so": 13,
- "ten": "CỘNG DÃY SỐ KIỂU GAUSS NHÍ",
+ "ten": "GHÉP CẶP ĐẦU VỚI CUỐI — MỌI CẶP ĐỀU BẰNG NHAU",
  "chuong": 4,
  "tenChuong": "Siêu nhân tính nhanh",
- "dangGoc": "SỐ 5.1/7.1 — Tổng dãy cách đều bằng ghép cặp đầu - cuối",
+ "dangGoc": "SỐ 7.1c — Tổng dãy cách đều bằng cách ghép cặp đầu với cuối.",
  "muc": {
   "mucTieu": {
    "ten": "MỤC TIÊU BÀI HỌC — Sau bài này con sẽ:",
    "dong": [
-    "Tính được tổng 1 + 2 + ... + 10 bằng cách ghép cặp ĐẦU với CUỐI.",
+    "Tính tổng một dãy bằng cách ghép số đầu với số cuối.",
     "Giải thích được vì sao mọi cặp đều bằng nhau.",
-    "Áp dụng cầu vồng ghép cặp cho các dãy cách đều khác."
+    "Đếm số cặp rồi cộng dồn."
    ],
-   "goc": [
-    "Tính được tổng 1 + 2 + ... + 10 bằng cách ghép cặp ĐẦU với CUỐI.",
-    "Giải thích được vì sao mọi cặp đều bằng nhau.",
-    "Áp dụng cầu vồng ghép cặp cho các dãy cách đều khác."
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "chuyenMoBai": {
-   "ten": "CHUYỆN MỞ BÀI — Cậu bé khiến thầy giáo sửng sốt",
-   "dong": [
-    "Trí Long kể: \"Ngày xưa ở nước Đức có cậu bé tên Gauss. Một hôm thầy giáo muốn cả lớp ngồi im thật lâu nên ra bài: cộng tất cả các số từ 1 đến 100! Thầy vừa quay đi, Gauss đã giơ tay nộp bài — ĐÚNG đáp số. Cậu ấy không cộng lần lượt đâu, cậu ấy nhìn thấy một bí mật. Hôm nay tụi mình khám phá bí mật đó với dãy vừa sức hơn: 1 + 2 + 3 + ... + 10.\""
-   ],
-   "goc": [
-    "Trí Long kể: \"Ngày xưa ở nước Đức có cậu bé tên Gauss. Một hôm thầy giáo muốn cả lớp ngồi im thật lâu nên ra bài: cộng tất cả các số từ 1 đến 100! Thầy vừa quay đi, Gauss đã giơ tay nộp bài — ĐÚNG đáp số. Cậu ấy không cộng lần lượt đâu, cậu ấy nhìn thấy một bí mật. Hôm nay tụi mình khám phá bí mật đó với dãy vừa sức hơn: 1 + 2 + 3 + ... + 10.\""
-   ],
-   "hinh": [
-    {
-     "id": "L2H_MO_B13",
-     "sauDong": 0,
-     "file": "figures/L2H_MO_B13.png",
-     "caption": "Dãy 1 đến 8, hai đầu chờ ghép",
-     "sha256_16": "9a2e88b92bb06a7b"
-    }
-   ]
+   "ten": "CHUYỆN MỞ BÀI",
+   "dong": [],
+   "hinh": [],
+   "nhip": ""
   },
   "khamPha": {
-   "ten": "KHÁM PHÁ CÙNG TRÍ LONG — Bắc cầu vồng qua dãy số",
-   "dong": [
-    "Bước 1. Đừng cộng từ trái sang! Hãy bắc cầu nối số ĐẦU với số CUỐI: 1 + 10 = 11. Rồi cặp kế tiếp: 2 + 9 = 11. Rồi 3 + 8 = 11... Ơ kìa — cặp nào cũng bằng 11!",
-    "Bước 2. Vì sao thế? Mỗi lần lùi vào trong, số bên trái tăng 1 còn số bên phải giảm 1. Một bên đưa, một bên nhận, tổng giữ nguyên như cũ!",
-    "Bước 3. Mười số bắt thành 5 cặp, mỗi cặp 11. Tổng = 11 + 11 + 11 + 11 + 11. Tính nhanh bằng tuyệt chiêu Bài 12: năm số 11 = năm số 10 và năm số 1 = 50 + 5 = 55.",
-    "MẸO THÁM TỬ: Dãy cách đều thì ĐẦU + CUỐI = như nhau ở mọi cặp. Đếm số cặp (nhớ để ý bạn đứng giữa lẻ loi nếu dãy có số lượng lẻ!), rồi cộng dồn là xong."
-   ],
-   "goc": [
-    "Bước 1. Đừng cộng từ trái sang! Hãy bắc cầu nối số ĐẦU với số CUỐI: 1 + 10 = 11. Rồi cặp kế tiếp: 2 + 9 = 11. Rồi 3 + 8 = 11... Ơ kìa — cặp nào cũng bằng 11!",
-    "Bước 2. Vì sao thế? Mỗi lần lùi vào trong, số bên trái tăng 1 còn số bên phải giảm 1 — một bên đưa, một bên nhận, tổng giữ nguyên như cũ!",
-    "Bước 3. Mười số bắt thành 5 cặp, mỗi cặp 11. Tổng = 11 + 11 + 11 + 11 + 11. Tính nhanh bằng tuyệt chiêu Bài 12: năm số 11 = năm số 10 và năm số 1 = 50 + 5 = 55.",
-    "MẸO THÁM TỬ: Dãy cách đều thì ĐẦU + CUỐI = như nhau ở mọi cặp. Đếm số cặp (nhớ để ý bạn đứng giữa lẻ loi nếu dãy có số lượng lẻ!), rồi cộng dồn là xong."
-   ],
-   "hinh": [
-    {
-     "id": "L2H_NC01",
-     "sauDong": 0,
-     "file": "figures/L2H_NC01.png",
-     "caption": "Ghép hai đầu dãy lại: cặp nào cũng bằng 11",
-     "sha256_16": "a2c1b294809784ef"
-    }
-   ]
+   "ten": "CÙNG KHÁM PHÁ",
+   "dong": [],
+   "hinh": [],
+   "nhip": ""
   },
   "viDuMau": {
-   "ten": "VÍ DỤ MẪU — Trình bày vào vở thế nào?",
+   "ten": "LỜI GIẢI MẪU TRÌNH BÀY VỞ",
    "dong": [
     "Đề bài: Tính nhanh tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8.",
-    "Bài giải:",
-    "Ghép cặp đầu - cuối: (1 + 8) + (2 + 7) + (3 + 6) + (4 + 5)",
-    "= 9 + 9 + 9 + 9",
-    "= 36",
+    "Bắc cầu nối số đầu với số cuối",
+    "Cặp ngoài cùng là 1 + 8 = 9. Lùi vào trong: 2 + 7 = 9, rồi 3 + 6 = 9, rồi 4 + 5 = 9.",
+    "Vì sao cặp nào cũng bằng nhau",
+    "Mỗi lần lùi vào trong, số bên trái tăng một còn số bên phải giảm một. Một bên đưa, một bên nhận, nên tổng của cặp giữ nguyên.",
+    "Đếm số cặp rồi cộng dồn",
+    "Tám số ghép vừa khít thành bốn cặp, mỗi cặp chín: 9 + 9 + 9 + 9 = 36.",
     "Đáp số: 36.",
-    "Nói thêm của Trí Long: 8 số ghép vừa khít 4 cặp — không bạn nào lẻ loi. Khi nào dãy có số lượng LẺ thì mới có một bạn đứng giữa chờ được cộng riêng nhé!"
+    "Tám số là số lượng chẵn nên ghép vừa khít, không bạn nào lẻ loi."
    ],
-   "goc": [
-    "Đề bài: Tính nhanh tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8.",
-    "Bài giải:",
-    "Ghép cặp đầu - cuối: (1 + 8) + (2 + 7) + (3 + 6) + (4 + 5)",
-    "= 9 + 9 + 9 + 9",
-    "= 36",
-    "Đáp số: 36.",
-    "Nói thêm của Trí Long: 8 số ghép vừa khít 4 cặp — không bạn nào lẻ loi. Khi nào dãy có số lượng LẺ thì mới có một bạn đứng giữa chờ được cộng riêng nhé!"
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "suKemNham": {
-   "ten": "SU KEM ƠI, NHẦM RỒI!",
+   "ten": "CHỖ HAY NHẦM",
    "dong": [
-    "Su Kem tính 1 + 2 + ... + 9: \"Ghép cặp nào: 1+9, 2+8, 3+7, 4+6 — bốn cặp 10, vậy tổng là 40!\"",
-    "Gợi ý 1: Dãy 1 đến 9 có mấy số — chẵn hay lẻ số lượng? Ghép 4 cặp thì mới dùng hết 8 số...",
-    "Gợi ý 2: Có một bạn số đứng chính giữa dãy không được ghép với ai. Bạn ấy là ai, và tổng đúng phải là bao nhiêu?"
+    "Có bạn ghép cặp xong rồi ghi luôn đáp số là 9, vì cặp nào cũng bằng 9.",
+    "Gợi ý 1: Số 9 là tổng của MỘT cặp hay của cả dãy?",
+    "Gợi ý 2: Cả dãy có mấy cặp như thế? Phải làm gì với mấy cặp ấy nữa?",
+    "Chữa: chín mới là tổng một cặp. Có bốn cặp nên phải cộng dồn: 9 + 9 + 9 + 9 = 36."
    ],
-   "goc": [
-    "Su Kem tính 1 + 2 + ... + 9: \"Ghép cặp nào: 1+9, 2+8, 3+7, 4+6 — bốn cặp 10, vậy tổng là 40!\"",
-    "Gợi ý 1: Dãy 1 đến 9 có mấy số — chẵn hay lẻ số lượng? Ghép 4 cặp thì mới dùng hết 8 số...",
-    "Gợi ý 2: Có một bạn số đứng chính giữa dãy không được ghép với ai. Bạn ấy là ai, và tổng đúng phải là bao nhiêu?"
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "luyenTap": {
    "ten": "LUYỆN TẬP 3 MỨC SAO",
    "dong": [],
-   "goc": []
+   "hinh": [],
+   "nhip": ""
   },
   "quiz": {
    "ten": "QUIZ — CON HIỂU BÀI CHƯA?",
    "dong": [
-    "Con bấm chọn đáp án đúng nhé (mỗi câu 1 sao ★):"
+    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★)"
    ],
-   "goc": [
-    "Khoanh vào đáp án đúng (mỗi câu 1 sao ★):"
-   ]
+   "hinh": [],
+   "nhip": ""
   },
   "gocBoMe": {
    "ten": "GÓC BỐ MẸ",
    "dong": [
-    "Kể trọn câu chuyện Gauss cho con nghe trước giờ ngủ — trẻ nhớ tuyệt chiêu qua câu chuyện bền hơn qua bài tập gấp nhiều lần.",
-    "Xếp 10 lá bài (1-10) thành hàng, cho con lật cặp đầu - cuối và tự cộng — khoảnh khắc \"cặp nào cũng bằng 11!\" phải do chính con thốt lên.",
-    "NÊN: cho con thử dãy lẻ số lượng (1-9) để tự vấp bạn đứng giữa. KHÔNG NÊN: dạy công thức (đầu + cuối) × số số hạng : 2 — đó là kho báu của lớp 3-4."
-   ]
+    "Xếp tám que tính thành hàng rồi cho con lấy hai đầu vào giữa từng cặp — bé thấy ngay vì sao cặp nào cũng bằng nhau.",
+    "Bố mẹ hỏi: \"Chín là tổng một cặp hay tổng cả dãy?\""
+   ],
+   "hinh": [],
+   "nhip": ""
   }
  },
  "cau": [
@@ -127,8 +88,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính các cặp: 1 + 10; 2 + 9; 3 + 8; 4 + 7; 5 + 6. Con nhận xét gì?",
-   "loiChua": "cặp nào cũng bằng 11!",
+   "text": "Tính 1 + 8.",
+   "loiChua": "Lấy 1 + 8 = 9.",
    "tuLuan": true
   },
   {
@@ -138,8 +99,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Dãy 1, 2, 3, ..., 10 ghép được mấy cặp đầu - cuối?",
-   "loiChua": "5 cặp",
+   "text": "Trong dãy 1, 2, 3, 4, 5, 6, 7, 8 — ghép số đầu với số cuối được tổng bằng mấy?",
+   "loiChua": "Số đầu là 1, số cuối là 8, mà 1 + 8 = 9.",
    "tuLuan": true
   },
   {
@@ -149,8 +110,8 @@
    "muc": 1,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính nhanh: 1 + 2 + 3 + 4 + 5 + 6. (Ghép 3 cặp nhé.)",
-   "loiChua": "(1 + 6) + (2 + 5) + (3 + 4) = 7 × 3 lần = 7 + 7 + 7 = 21",
+   "text": "Dãy 1 đến 8 có tám số. Ghép cặp đầu với cuối thì được mấy cặp?",
+   "loiChua": "Tám số ghép vừa khít thành 4 cặp.",
    "tuLuan": true
   },
   {
@@ -160,8 +121,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính nhanh: 1 + 2 + 3 + ... + 10.",
-   "loiChua": "5 cặp 11 → 55",
+   "text": "Tính nhanh tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8.",
+   "loiChua": "Bốn cặp, mỗi cặp chín. Cộng dồn: 9 + 9 + 9 + 9 = 36.",
    "tuLuan": true
   },
   {
@@ -171,8 +132,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính nhanh: 3 + 4 + 5 + 6 + 7 + 8. (Dãy không bắt đầu từ 1 vẫn bắc cầu vồng được!)",
-   "loiChua": "(3 + 8) + (4 + 7) + (5 + 6) = 11 + 11 + 11 = 33",
+   "text": "Tính nhanh tổng 1 + 2 + 3 + 4 + 5 + 6.",
+   "loiChua": "Ba cặp, mỗi cặp bảy. Cộng dồn: 7 + 7 + 7 = 21.",
    "tuLuan": true
   },
   {
@@ -182,8 +143,8 @@
    "muc": 2,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính nhanh: 2 + 4 + 6 + 8 + 10. (Dãy nhảy cóc 2 — cầu vồng vẫn hoạt động, và có một bạn đứng giữa đấy!)",
-   "loiChua": "(2 + 10) + (4 + 8) + 6 = 12 + 12 + 6 = 30 (bạn 6 đứng giữa)",
+   "text": "Vì sao ghép cặp đầu với cuối thì cặp nào cũng bằng nhau?",
+   "loiChua": "Vì lùi vào trong thì bên trái tăng một mà bên phải giảm một.",
    "tuLuan": true
   },
   {
@@ -193,8 +154,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Tính nhanh: 1 + 2 + 3 + ... + 9. (Bài của Su Kem — lần này con làm chuẩn giúp cậu ấy!)",
-   "loiChua": "(1 + 9) + (2 + 8) + (3 + 7) + (4 + 6) + 5 = 10 × 4 cặp + 5 = 45 — Su Kem quên đúng bạn số 5!",
+   "text": "Tính nhanh tổng 2 + 4 + 6 + 8 + 10 + 12. Cho biết mỗi cặp bằng bao nhiêu và tổng bằng bao nhiêu.",
+   "loiChua": "Mỗi cặp là 2 + 12 = 14. Có ba cặp, cộng dồn: 14 + 14 + 14 = 42.",
    "tuLuan": true
   },
   {
@@ -204,8 +165,8 @@
    "muc": 3,
    "phan": "luyenTap",
    "ghiChu": "",
-   "text": "Thử thách Gauss thật sự: 2 + 4 + 6 + ... + 18 + 20. (Mười số chẵn đầu tiên — ghép cặp đầu cuối xem mỗi cặp bằng bao nhiêu, có mấy cặp?)",
-   "loiChua": "(2 + 20) + (4 + 18) + (6 + 16) + (8 + 14) + (10 + 12) = 22 + 22 + 22 + 22 + 22 = 110 — con vừa làm bài của Gauss phiên bản số chẵn đấy!",
+   "text": "Tính nhanh tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10. Cho biết số cặp, mỗi cặp bằng bao nhiêu, và tổng bằng bao nhiêu.",
+   "loiChua": "Mười số ghép thành 5 cặp, mỗi cặp là 1 + 10 = 11. Cộng dồn năm lần được 55.",
    "tuLuan": true
   },
   {
@@ -215,14 +176,14 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "Đúng/Sai?",
-   "text": "Trong dãy 1 đến 10, mọi cặp đầu - cuối đều có tổng bằng 11.",
+   "text": "Ghép cặp đầu với cuối thì mọi cặp đều có tổng bằng nhau.",
    "format": "tf",
    "tuLuan": false,
    "answerKey": {
     "value": true
    },
-   "loiChua": "Đáp án: ĐÚNG",
-   "solutionNarrative": ""
+   "loiChua": "Đúng — bên trái tăng bao nhiêu thì bên phải giảm bấy nhiêu.",
+   "solutionNarrative": "Đúng — bên trái tăng bao nhiêu thì bên phải giảm bấy nhiêu."
   },
   {
    "id": "Q2",
@@ -230,15 +191,21 @@
    "so": 2,
    "muc": 1,
    "phan": "quiz",
-   "ghiChu": "Đúng/Sai?",
-   "text": "Dãy 1 đến 9 ghép vừa khít thành các cặp, không thừa số nào.",
-   "format": "tf",
+   "ghiChu": "",
+   "text": "Tổng 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 bằng bao nhiêu?",
+   "choices": [
+    "36",
+    "32",
+    "40",
+    "28"
+   ],
+   "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "value": false
+    "choice": "36"
    },
-   "loiChua": "9 số — bạn số 5 lẻ cặp",
-   "solutionNarrative": "9 số — bạn số 5 lẻ cặp"
+   "loiChua": "Bốn cặp, mỗi cặp chín.",
+   "solutionNarrative": "Bốn cặp, mỗi cặp chín."
   },
   {
    "id": "Q3",
@@ -247,19 +214,20 @@
    "muc": 1,
    "phan": "quiz",
    "ghiChu": "",
-   "text": "1 + 2 + ... + 10 = ?",
-   "format": "mcq",
+   "text": "Dãy 1 đến 8 ghép được mấy cặp?",
    "choices": [
-    "A. 50",
-    "B. 55",
-    "C. 60"
+    "4",
+    "8",
+    "3",
+    "5"
    ],
+   "format": "mcq",
    "tuLuan": false,
    "answerKey": {
-    "choice": "B. 55"
+    "choice": "4"
    },
-   "loiChua": "Đáp án: B. 55",
-   "solutionNarrative": ""
+   "loiChua": "Tám số chia thành từng đôi.",
+   "solutionNarrative": "Tám số chia thành từng đôi."
   },
   {
    "id": "Q4",
@@ -267,20 +235,15 @@
    "so": 4,
    "muc": 1,
    "phan": "quiz",
-   "ghiChu": "",
-   "text": "Dãy 1 đến 8 có mấy cặp đầu - cuối?",
-   "format": "mcq",
-   "choices": [
-    "A. 3",
-    "B. 4",
-    "C. 8"
-   ],
+   "ghiChu": "Đúng/Sai?",
+   "text": "Mỗi lần lùi vào trong, số bên trái tăng một và số bên phải giảm một.",
+   "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "choice": "B. 4"
+    "value": true
    },
-   "loiChua": "Đáp án: B. 4",
-   "solutionNarrative": ""
+   "loiChua": "Đúng — nên tổng của cặp không đổi.",
+   "solutionNarrative": "Đúng — nên tổng của cặp không đổi."
   },
   {
    "id": "Q5",
@@ -288,20 +251,15 @@
    "so": 5,
    "muc": 1,
    "phan": "quiz",
-   "ghiChu": "",
-   "text": "Trong dãy 1 đến 9, bạn số nào đứng giữa không có cặp?",
-   "format": "mcq",
-   "choices": [
-    "A. 4",
-    "B. 5",
-    "C. 9"
-   ],
+   "ghiChu": "Đúng/Sai?",
+   "text": "Ghép cặp xong là có đáp số luôn, khỏi cộng dồn.",
+   "format": "tf",
    "tuLuan": false,
    "answerKey": {
-    "choice": "B. 5"
+    "value": false
    },
-   "loiChua": "Đáp án: B. 5",
-   "solutionNarrative": ""
+   "loiChua": "Sai. Đó mới là tổng một cặp, còn phải cộng dồn tất cả các cặp.",
+   "solutionNarrative": "Sai. Đó mới là tổng một cặp, còn phải cộng dồn tất cả các cặp."
   }
  ]
 }

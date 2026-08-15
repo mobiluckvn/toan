@@ -3,12 +3,12 @@
  "id": "DL:KSN2.B12",
  "grade": 2,
  "quyen": "lop2",
- "title": "Bài 26 · TUYỆT CHIÊU GHÉP ĐÔI TRÒN CHỤC",
+ "title": "Bài 26 · GHÉP ĐÔI TRÒN CHỤC — DÒM ĐUÔI TÌM ĐÔI BẠN",
  "durationMinutes": 10,
  "so": 26,
  "chuong": 4,
  "tenChuong": "Siêu nhân tính nhanh",
- "dangGoc": "SỐ 7.1 — Tính thuận tiện: ghép cặp + tách - gộp bảng nhân (tiền thân thừa số chung)",
+ "dangGoc": "SỐ 7.1a — Tính thuận tiện phép cộng: ghép cặp có tổng tròn chục.",
  "skills": {
   "bktUnit": "CHUONG:4@G2",
   "primary": []
@@ -16,38 +16,25 @@
  "series": {
   "order": 26,
   "prev": "DL:KSN2.B47",
-  "next": "DL:KSN2.B13"
+  "next": "DL:KSN2.B48"
  },
  "objective": {
   "id": "O1",
-  "text": "Nhìn chữ số tận cùng để bắt cặp hai số có tổng tròn chục (6 với 4, 8 với 2, 5 với 5...). Tính dãy cộng dài thật nhanh bằng cách đổi chỗ - ghép đôi. Biết tuyệt chiêu ghép hai khay kẹo: $3  \\times  4 + 3  \\times  6 = 3  \\times  10$.",
-  "kidText": "Cộng $37 + 25 + 13 + 5$ mà không cần bút. Có cách làm nhanh hơn hẳn, con thử tìm xem!",
+  "text": "Nhìn chữ số tận cùng để bắt cặp hai số có tổng tròn chục. Biết đổi chỗ các số hạng cho đôi bạn đứng cạnh nhau. Cộng dãy dài nhanh mà không phải đặt tính dọc.",
+  "kidText": "Tính $37 + 25 + 13 + 5$ mà không đặt tính dọc lần nào. Con đoán mẹo nằm ở đâu nhé!",
   "laLoiChao": true,
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Nhớ Bài 11 chứ — tính nết của số nằm ở cái đuôi! Hai số có đuôi cộng lại bằng 10 thì thành một đôi bạn. Đuôi 6 đi với đuôi 4. Đuôi 8 đi với đuôi 2. Đuôi 1 đi với đuôi 9."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Phép cộng cho phép đổi chỗ các số thoải mái — tính theo thứ tự nào tổng vẫn vậy. Nên ta cứ kéo đôi bạn về đứng cạnh nhau: ($26 + 4$) + ($18 + 12$) = $30 + 30 = 60$. Xong trong 3 giây!"
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Tuyệt chiêu còn dùng được cho cả phép NHÂN. Nhìn hai khay kẹo này: 3 hàng 4 viên và 3 hàng 6 viên. Đẩy hai khay sát vào nhau xem điều gì xảy ra:"
-   }
-  ],
-  "mantra": "Trước khi cộng một dãy số, đừng vội tính. Hãy DÒM ĐUÔI tìm đôi bạn tròn chục trước. Với phép nhân: hai khay kẹo có SỐ HÀNG bằng nhau thì ghép lại thành một khay to!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
    {
-    "wrong": "Su Kem phản đối: \"Không được đổi chỗ! Cô giáo dạy phép tính phải làm từ trái sang phải: 37 cộng 25 trước đã!\"",
-    "signal": "Bé làm theo cách Su Kem vừa nói.",
-    "fix": "Gợi ý 1: Con lấy $3 + 5$ và $5 + 3$ tính thử. Kết quả có khác nhau không? Phép cộng có bí mật gì về chỗ đứng? Gợi ý 2: Tính $37 + 25 + 13 + 5$ theo cả hai cách (từ trái sang, và ghép đôi). Cách nào ra kết quả trước — và hai kết quả có giống nhau không?"
+    "wrong": "Có bạn phản đối, bảo phép tính phải làm từ trái sang phải nên phải cộng 37 với 25 trước đã.",
+    "signal": "Bé làm theo cách sai vừa nêu ở trên.",
+    "fix": "Gợi ý 1: Con tính $3 + 5$ rồi tính $5 + 3$ xem hai kết quả có khác nhau không. Gợi ý 2: Tính cả dãy theo hai cách — từ trái sang, và ghép đôi — rồi so hai kết quả. Chữa: phép cộng đổi chỗ thì tổng giữ nguyên, nên kéo đôi bạn về cạnh nhau là hợp luật, mà lại nhanh hơn nhiều."
    }
   ]
  },
@@ -55,37 +42,8 @@
   "screens": [
    {
     "id": "S1",
-    "kind": "hook",
-    "narration": "Tính bằng cách thuận tiện: $37 + 25 + 13 + 5$."
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
     "kind": "trap",
-    "narration": "Su Kem phản đối: \"Không được đổi chỗ! Cô giáo dạy phép tính phải làm từ trái sang phải: 37 cộng 25 trước đã!\"",
+    "narration": "Có bạn phản đối, bảo phép tính phải làm từ trái sang phải nên phải cộng 37 với 25 trước đã.",
     "teaches": []
    }
   ]
@@ -95,24 +53,36 @@
   "problem": "Tính bằng cách thuận tiện: $37 + 25 + 13 + 5$.",
   "steps": [
    {
-    "show": "$37 + 25 + 13 + 5$",
+    "show": "Dòm đuôi tìm đôi bạn",
     "phan": "giai"
    },
    {
-    "show": "= ($37 + 13$) + ($25 + 5$) (đuôi 7 bắt cặp đuôi 3; đuôi 5 bắt cặp đuôi 5)",
+    "show": "Đuôi 7 bắt cặp với đuôi 3 vì $7 + 3 = 10$. Đuôi 5 bắt cặp với đuôi 5 vì $5 + 5 = 10$.",
     "phan": "giai"
    },
    {
-    "show": "= $50 + 30$",
+    "show": "Kéo đôi bạn về đứng cạnh nhau",
     "phan": "giai"
    },
    {
-    "show": "= 80",
+    "show": "Phép cộng đổi chỗ thoải mái mà tổng vẫn vậy, nên ghép được $37 + 13 = 50$ và $25 + 5 = 30$.",
+    "phan": "giai"
+   },
+   {
+    "show": "Cộng hai số tròn chục",
+    "phan": "giai"
+   },
+   {
+    "show": "Còn lại phép dễ nhất: $50 + 30 = 80$.",
     "phan": "giai"
    },
    {
     "show": "Đáp số: 80.",
     "phan": "dapso"
+   },
+   {
+    "show": "Số tròn chục thì nhẩm được ngay, không phải đặt tính dọc lần nào.",
+    "phan": "ghichu"
    }
   ]
  },
@@ -121,136 +91,134 @@
    "warmup": [
     {
      "id": "C1",
-     "text": "Tìm \"đôi bạn tròn chục\" cho mỗi số (đuôi cộng lại bằng 10): 7 → ▢; 24 → ▢ (một số có đuôi 6); 35 → ▢ (một số có đuôi 5).",
+     "text": "Tính $6 + 4$.",
      "answerKey": {
-      "parts": [
-       {
-        "label": "7 cần bạn đuôi",
-        "value": 3
-       },
-       {
-        "label": "24 cần bạn đuôi",
-        "value": 6
-       },
-       {
-        "label": "35 cần bạn đuôi",
-        "value": 5
-       }
-      ]
+      "value": 10
      },
-     "solutionNarrative": "7 cần bạn đuôi 3 (ví dụ 3, 13, 23...); 24 cần bạn đuôi 6 (ví dụ 6, 16, 36...); 35 cần bạn đuôi 5 (ví dụ 5, 15, 25...)",
+     "solutionNarrative": "Lấy $6 + 4 = 10$.",
      "hints": [
-      "Chỉ nhìn đuôi: hai đuôi cộng lại thành tròn chục.",
-      "Đuôi 7 thì tìm bạn đuôi mấy?"
+      "Con đếm thêm bốn nữa từ số sáu.",
+      "Hai số này ghép lại vừa tròn một chục."
      ]
     },
     {
      "id": "C2",
-     "text": "Tính nhanh: $18 + 2 + 30$.",
+     "text": "Số có đuôi 8 phải bắt cặp với số có đuôi mấy để tổng tròn chục?",
      "answerKey": {
-      "value": 50
+      "value": 2
      },
-     "solutionNarrative": "($18 + 2$) + $30 = 50$",
+     "solutionNarrative": "Vì $8 + 2 = 10$ nên đuôi 8 đi với đuôi 2.",
      "hints": [
-      "Dòm đuôi tìm đôi bạn trước, đừng cộng từ trái sang.",
-      "Số nào cộng với 18 thì tròn chục?"
+      "Con nghĩ xem tám thiếu bao nhiêu nữa thì đủ một chục.",
+      "Đếm tiếp từ tám lên mười xem mấy bước."
      ]
     },
     {
      "id": "C3",
-     "text": "Tính nhanh: $26 + 7 + 4$.",
+     "text": "Tính $26 + 4$.",
      "answerKey": {
-      "value": 37
+      "value": 30
      },
-     "solutionNarrative": "($26 + 4$) + $7 = 37$",
+     "solutionNarrative": "Lấy $26 + 4 = 30$.",
      "hints": [
-      "Đuôi 6 đi với đuôi 4.",
-      "Ghép cặp ấy trước, bạn còn lại cộng sau."
+      "Số này chỉ thiếu một chút nữa là tròn chục.",
+      "Con nhìn đuôi của nó là mấy rồi cộng nốt."
      ]
     }
    ],
    "standard": [
     {
      "id": "C4",
-     "text": "Tính bằng cách thuận tiện: $45 + 17 + 5 + 3$.",
+     "text": "Tính nhanh $26 + 18 + 4 + 12$ bằng cách ghép đôi.",
      "answerKey": {
-      "value": 70
+      "parts": [
+       {
+        "label": "cặp thứ nhất",
+        "value": 30
+       },
+       {
+        "label": "cặp thứ hai",
+        "value": 30
+       },
+       {
+        "label": "tổng",
+        "value": 60
+       }
+      ]
      },
-     "solutionNarrative": "($45 + 5$) + ($17 + 3$) = $50 + 20 = 70$",
+     "solutionNarrative": "Ghép $26 + 4 = 30$ và $18 + 12 = 30$, rồi $30 + 30 = 60$.",
      "hints": [
-      "Bốn số này bắt được đúng hai cặp.",
-      "Đuôi 5 đi với đuôi 5; đuôi 7 đi với đuôi 3."
+      "Con dòm đuôi bốn số trước đã: sáu, tám, bốn, hai.",
+      "Đuôi sáu đi với đuôi bốn, đuôi tám đi với đuôi hai."
      ]
     },
     {
      "id": "C5",
-     "text": "Tính bằng cách thuận tiện: $28 + 36 + 12 + 4$.",
+     "text": "Tính nhanh $37 + 25 + 13 + 5$.",
      "answerKey": {
       "value": 80
      },
-     "solutionNarrative": "($28 + 12$) + ($36 + 4$) = $40 + 40 = 80$",
+     "solutionNarrative": "Ghép $37 + 13 = 50$ và $25 + 5 = 30$, rồi $50 + 30 = 80$.",
      "hints": [
-      "Dòm đuôi: 8 đi với 2, còn 6 đi với 4.",
-      "Kéo hai bạn của mỗi cặp về đứng cạnh nhau."
+      "Con dòm đuôi: bảy, năm, ba, năm.",
+      "Bảy bắt cặp với ba, còn năm bắt cặp với năm."
      ]
     },
     {
      "id": "C6",
-     "text": "Tính bằng cách thuận tiện: $19 + 24 + 1 + 6 + 30$. (Có một bạn tròn chục sẵn — cứ để bạn ấy đứng chờ!)",
-     "answerKey": {
-      "value": 80
-     },
-     "solutionNarrative": "($19 + 1$) + ($24 + 6$) + $30 = 20 + 30 + 30 = 80$",
-     "hints": [
-      "Có một bạn đã tròn chục sẵn — cứ để bạn ấy đứng chờ.",
-      "Đuôi 9 đi với đuôi 1; đuôi 4 đi với đuôi 6."
-     ]
-    },
-    {
-     "id": "C7",
-     "text": "Ghép khay kẹo: $4  \\times  3 + 4  \\times  7 = 4$ × ▢ = ▢.",
+     "text": "Vì sao được phép đổi chỗ các số trong một dãy cộng?",
      "answerKey": {
       "parts": [
        {
-        "label": "4 × ▢",
-        "value": 10
-       },
-       {
-        "label": "kết quả",
-        "value": 40
+        "label": "vì sao",
+        "options": [
+         "vì đổi chỗ thì tổng vẫn giữ nguyên",
+         "vì làm thế cho nhanh tay",
+         "vì cô giáo cho phép"
+        ],
+        "value": "vì đổi chỗ thì tổng vẫn giữ nguyên"
        }
       ]
      },
-     "solutionNarrative": "$4  \\times  3 + 4  \\times  7 = 4  \\times  10 = 40$",
+     "solutionNarrative": "Vì phép cộng đổi chỗ thì tổng vẫn giữ nguyên.",
      "hints": [
-      "Hai khay cùng có 4 hàng — đẩy sát vào nhau.",
-      "Số hàng giữ nguyên, số viên mỗi hàng thì cộng lại."
+      "Con thử tính ba cộng năm rồi năm cộng ba xem.",
+      "Hai kết quả ấy nói lên điều gì về chỗ đứng của các số?"
      ]
     }
    ],
    "challenge": [
     {
-     "id": "C8",
-     "text": "Tính nhanh: $1 + 3 + 5 + 7 + 9$. (Ghép đôi từ hai đầu — có bạn nào bị lẻ cặp không?)",
+     "id": "C7",
+     "text": "Tính nhanh $15 + 47 + 35 + 3$.",
      "answerKey": {
-      "value": 25
+      "value": 100
      },
-     "solutionNarrative": "($1 + 9$) + ($3 + 7$) + $5 = 10 + 10 + 5 = 25$ (bạn số 5 đứng giữa lẻ cặp!)",
+     "solutionNarrative": "Ghép $15 + 35 = 50$ và $47 + 3 = 50$, rồi $50 + 50 = 100$.",
      "hints": [
-      "Ghép đôi từ hai đầu vào giữa.",
-      "Có một bạn đứng giữa lẻ cặp — cộng riêng bạn ấy."
+      "Con dòm đuôi bốn số: năm, bảy, năm, ba.",
+      "Đuôi năm đi với đuôi năm, đuôi bảy đi với đuôi ba."
      ]
     },
     {
-     "id": "C9",
-     "text": "Tính bằng tuyệt chiêu ghép khay: $2  \\times  3 + 2  \\times  5 + 2  \\times  2$. (Ba khay kẹo cùng có 2 hàng — ghép cả ba!)",
+     "id": "C8",
+     "text": "Trong dãy $22 + 19 + 8 + 11$, số 22 nên bắt cặp với số nào, và tổng cả dãy bằng bao nhiêu?",
      "answerKey": {
-      "value": 20
+      "parts": [
+       {
+        "label": "22 bắt cặp với số nào",
+        "value": 8
+       },
+       {
+        "label": "tổng cả dãy",
+        "value": 60
+       }
+      ]
      },
-     "solutionNarrative": "$2  \\times  3 + 2  \\times  5 + 2  \\times  2 = 2$ × ($3 + 5 + 2$ hàng gộp lại) = $2  \\times  10 = 20$",
+     "solutionNarrative": "Đuôi 2 bắt cặp đuôi 8 nên 22 đi với 8: $22 + 8 = 30$. Còn lại $19 + 11 = 30$. Tổng là $30 + 30 = 60$.",
      "hints": [
-      "Ba khay cùng có 2 hàng — ghép cả ba.",
-      "Giữ nguyên số hàng, cộng số viên mỗi hàng lại."
+      "Đuôi của số hai mươi hai là mấy? Nó cần bạn có đuôi mấy?",
+      "Ghép xong hai cặp thì cộng hai kết quả tròn chục lại."
      ]
     }
    ]
@@ -261,101 +229,70 @@
   "items": [
    {
     "id": "Q1",
-    "text": "Trong phép cộng, đổi chỗ các số thì tổng không thay đổi.",
+    "text": "Hai số có đuôi cộng lại bằng 10 thì tổng của chúng tròn chục.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
+    "solutionNarrative": "Đúng — đó là cách nhận ra đôi bạn."
    },
    {
     "id": "Q2",
-    "text": "26 và 4 là đôi bạn tròn chục vì đuôi 6 + đuôi $4 = 10$.",
+    "text": "Đổi chỗ các số trong một dãy cộng thì tổng thay đổi.",
+    "format": "tf",
+    "answerKey": {
+     "value": false
+    },
+    "solutionNarrative": "Sai. Phép cộng đổi chỗ thì tổng giữ nguyên."
+   },
+   {
+    "id": "Q3",
+    "text": "Số có đuôi 8 bắt cặp với số có đuôi mấy?",
+    "format": "mcq",
+    "choices": [
+     "2",
+     "8",
+     "1",
+     "5"
+    ],
+    "answerKey": {
+     "choice": "2"
+    },
+    "solutionNarrative": "Vì 8 cộng 2 vừa tròn một chục."
+   },
+   {
+    "id": "Q4",
+    "text": "Tính nhanh $26 + 18 + 4 + 12$.",
+    "format": "mcq",
+    "choices": [
+     "60",
+     "50",
+     "58",
+     "62"
+    ],
+    "answerKey": {
+     "choice": "60"
+    },
+    "solutionNarrative": "Hai cặp đều bằng 30."
+   },
+   {
+    "id": "Q5",
+    "text": "Trước khi cộng một dãy dài, nên dòm đuôi tìm đôi bạn tròn chục.",
     "format": "tf",
     "answerKey": {
      "value": true
     },
-    "solutionNarrative": "Đáp án: ĐÚNG"
-   },
-   {
-    "id": "Q3",
-    "text": "Nên ghép cặp nào khi tính $33 + 15 + 7$?",
-    "format": "mcq",
-    "choices": [
-     "A. 33 với 15",
-     "B. 33 với 7",
-     "C. 15 với 7"
-    ],
-    "answerKey": {
-     "choice": "B. 33 với 7"
-    },
-    "solutionNarrative": "33 với 7: đuôi $3 + 7 = 10$"
-   },
-   {
-    "id": "Q4",
-    "text": "($26 + 4$) + ($18 + 12$) = ?",
-    "format": "mcq",
-    "choices": [
-     "A. 50",
-     "B. 60",
-     "C. 70"
-    ],
-    "answerKey": {
-     "choice": "B. 60"
-    },
-    "solutionNarrative": "Đáp án: B. 60"
-   },
-   {
-    "id": "Q5",
-    "text": "$3  \\times  4 + 3  \\times  6$ = ?",
-    "format": "mcq",
-    "choices": [
-     "A. 3 × 10",
-     "B. 6 × 10",
-     "C. 3 × 24"
-    ],
-    "answerKey": {
-     "choice": "A. 3 × 10"
-    },
-    "solutionNarrative": "Đáp án: A. $3  \\times  10$"
+    "solutionNarrative": "Đúng — nhìn trước một giây, đỡ tính cả phút."
    }
   ]
  },
  "parentNote": {
-  "onComplete": "Chơi \"bắn đuôi\": bố mẹ hô một số (ví dụ 47), con phải hô ngay một số có đuôi bắt cặp (đuôi 3). Chơi trong bữa cơm, trên xe — 2 phút mỗi ngày là phản xạ hình thành.",
-  "homeActivity": "Với tuyệt chiêu ghép khay kẹo: xếp kẹo/cúc áo thật thành hai khay rồi ĐẨY sát vào nhau — đây là hạt mầm của kỹ thuật \"đặt thừa số chung\" lớp 4, con cần THẤY bằng mắt trước khi học bằng chữ.",
-  "watchFor": "NÊN: khen khi con phát hiện cặp đôi dù tính còn chậm. KHÔNG NÊN: viết công thức a × b + a × c = a × (b + c) — chữ cái để dành lớp 4; lớp 2 chỉ cần khay kẹo."
+  "onComplete": "Đi chợ cùng con: cộng nhẩm mấy món có giá đuôi bù nhau, ví dụ 26 nghìn với 24 nghìn. Con sẽ thấy mẹo này dùng được thật.",
+  "homeActivity": "Bố mẹ hỏi một câu: \"Đuôi của hai số này cộng lại có tròn chục không?\"",
+  "watchFor": ""
  },
- "figureSpec": [
-  {
-   "id": "L2H_MO_B12",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L2H_MO_B12.png",
-   "caption": "Bốn số chờ ghép đôi cho tròn chục",
-   "sha256_16": "381e7b4c4621a042",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L2H_NC02",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L2H_NC02.png",
-   "caption": "Nhìn chữ số cuối để bắt cặp tròn chục",
-   "sha256_16": "e05e99be934b9747",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L2H_CHAM01",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L2H_CHAM01.png",
-   "caption": "Ghép hai khay kẹo lại thành 3 hàng 10 viên",
-   "sha256_16": "9422ab51dc62b356",
-   "mucGoc": "khamPha"
-  }
- ]
+ "figureSpec": [],
+ "video": {
+  "giang": "DL_KSN2_B12_giang.mp4"
+ }
 }

@@ -282,3 +282,53 @@ toa vẫn còn nguyên ở phần luyện tập nên sách không mất gì.
 
 Năm chương, **22 bài chữ**: siêu nhân tính nhanh (4) · chuyện toán lời văn (6) ·
 thám tử tí hon (4) · vương quốc hình học (5) · toán trong cuộc sống (3).
+
+---
+
+## Đợt 4 · chương 4 · Siêu nhân tính nhanh
+
+Bốn bài chữ thành **mười bài video**. Quyển lớp 2 nay **53 bài · 35 video · 31.8
+phút · 429 câu luyện tập** (405 chấm máy).
+
+| bài | mã | một việc duy nhất |
+|---|---|---|
+| 26 | B12 | ghép đôi tròn chục — dòm đuôi tìm đôi bạn |
+| 27 | B48 *(mới)* | ghép hai khay kẹo — cùng số hàng thì gộp làm một |
+| 28 | B13 | ghép cặp đầu với cuối — mọi cặp bằng nhau |
+| 29 | B49 *(mới)* | dãy lẻ số thì có một bạn đứng giữa |
+| 30 | B14 | cho kết quả chạy ngược — cộng và trừ |
+| 31 | B50 *(mới)* | máy nhân và máy chia ngược nhau |
+| 32 | B51 *(mới)* | khi số cần tìm bị lấy đi — 14 trừ ô trống bằng 6 |
+| 33 | B15 | chia theo vòng — mỗi bạn mấy viên, thừa mấy |
+| 34 | B52 *(mới)* | luật vàng — số thừa phải bé hơn số bạn |
+| 35 | B53 *(mới)* | chia hết hay còn thừa — bảng nhân là danh sách chia đẹp |
+
+### Chữ "X" của sách phải bỏ
+
+Sách đặt tên bài là *"ĐI TÌM SỐ BÍ MẬT X"*. Máy đọc chữ X thành tiếng Anh — lớp 4
+đã dính đúng mười lăm chỗ như thế. Cả bốn bài tìm ô trống ở đây gọi thẳng là
+**"ô trống"**, và `tools/tinh_nhanh_lop2.py` có phép soi chặn cả `X` lẫn `▢`.
+
+### LỖI CHỈ LỘ KHI MỞ MẮT XEM — lần này ở HÌNH VẼ TRONG VIDEO
+
+Bài 27 mượn cảnh `nhom_deu` để vẽ khay kẹo. Lời đọc bảo *"ba hàng, mỗi hàng bốn
+viên"*, mà `nhom_deu` xếp tối đa ba viên một dòng nên vẽ ra **ba NHÓM bốn viên, mỗi
+nhóm gấp thành hai dòng**. Bé nghe "hàng" mà nhìn thấy "nhóm" — trong khi cả bài
+dạy phép nhân đứng trên đúng chữ "hàng" ấy.
+
+Không cổng nào bắt được: cảnh hợp lệ, video dựng ra bình thường, lời đọc sạch. Chỉ
+lệch giữa LỜI và HÌNH.
+
+Đã thêm cảnh **`luoi_cham`** vào `tools/video/dung_video.py`: vẽ đúng một lưới
+`hang` dòng × `cot` viên, và `cot2` vẽ phần nối dài bên phải bằng màu khác — đúng
+lúc hai khay đẩy sát vào nhau.
+
+Soát lại **toàn bộ 17 cảnh `nhom_deu`** của cả bốn quyển thì thấy thêm **bốn chỗ
+cùng lỗi ở chương 3**: lời bảo *"8 viên chia đôi, mỗi bên 4 viên"* mà hình vẽ bốn
+CẶP. Sửa cả bốn: muốn vẽ hai nửa thì `moiNhom` phải là số viên MỖI NỬA, không phải
+số nửa.
+
+### Còn lại của quyển
+
+Bốn chương, **18 bài chữ**: chuyện toán lời văn (6) · thám tử tí hon (4) · vương
+quốc hình học (5) · toán trong cuộc sống (3).

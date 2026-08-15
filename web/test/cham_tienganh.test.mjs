@@ -311,7 +311,18 @@ function diemDanh() {
 
    `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 0 — đúng như đã hẹn ở đợt trước.
    Đã soát: `git diff` trên `src/mon/toan/lib/` và `src/chung/` trống trơn. */
-const MOC = { tong: 2767, dungKhiDungDap: 2765, dungKhiSaiDap: 0, tuDoiChieu: 0 };
+/* ⚠ 2767 → 2814. Đợt bốn lớp 2: chương 4 bốn bài chữ thành mười bài video.
+       luyện tập lớp 2  33 → 80 câu chấm máy  (+47)  ·  2767 + 47 = 2814  ✓
+
+   Bốn bài cũ có 35 câu mà chỉ 33 câu chấm máy được: B15 có hai câu bảo bé lấy kẹo
+   ra xếp thử rồi tự soi, máy không chấm nổi. Mười bài mới đều 8 câu chấm máy đủ.
+
+   Kỳ sát hạch chương 4 cũng viết lại một câu (câu 5, xem `KHAI_TAY_L2`), nhưng câu
+   cũ lẫn câu mới đều có khoá nên tổng không xê dịch vì chuyện ấy.
+
+   `dungKhiSaiDap` và `tuDoiChieu` vẫn đứng yên ở 0. Đã soát: `git diff` trên
+   `src/mon/toan/lib/` và `src/chung/` trống trơn. */
+const MOC = { tong: 2814, dungKhiDungDap: 2812, dungKhiSaiDap: 0, tuDoiChieu: 0 };
 
 const nay = diemDanh();
 console.log(`   ${nay.tong} câu Toán · đưa đáp án đúng → ${nay.dungKhiDungDap} chấm đúng`
