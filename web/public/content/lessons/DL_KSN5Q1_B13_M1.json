@@ -34,24 +34,7 @@
   "kidText": "Con thuộc các cặp số vàng như 0,25 nhân 4 bằng 1, rồi kéo chúng lại gần nhau để tính vèo trong đầu."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Kho cặp vàng cho ra số TRÒN: $0,25  \\times  4 = 1$ · $0,5  \\times  2 = 1$ · $0,125  \\times  8 = 1$ · $2,5  \\times  4 = 10$ · $1,25  \\times  8 = 10$ · $12,5  \\times  8 = 100$."
-   },
-   {
-    "id": "K2",
-    "text": "Giao hoán – kết hợp cho phép ĐỔI CHỖ và GHÉP NHÓM tùy ý trong tích: $0,25  \\times  7,3  \\times  4$ = ($0,25  \\times  4$) × 7,3 — kéo cặp vàng về sát nhau trước, nhân số lẻ sau cùng."
-   },
-   {
-    "id": "K3",
-    "text": "Nhẩm theo NGHĨA: nhân 0,5 là lấy MỘT NỬA (chia 2); nhân 0,25 là lấy MỘT PHẦN TƯ (chia 4); nhân 0,2 là chia 5 — vì $0,5 = 1$/2, $0,25 = 1$/4, chứ không phải vì \"mặt chữ có số 5\"."
-   },
-   {
-    "id": "K4",
-    "text": "Đề càng đông thừa số càng phải soi kỹ: trong đám đông thường giấu HAI cặp vàng ($2,5  \\times  4$ và $1,25  \\times  8$) — nhặt đủ cặp rồi mới nhân số còn lại."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: TIỆC KHIÊU VŨ CỦA CÁC THỪA SỐ. Trong phòng tiệc, vài đôi là BẠN NHẢY VÀNG: 0,25 tìm 4, 0,125 tìm 8, 2,5 tìm 4, 1,25 tìm 8, 12,5 tìm 8 — cứ ghép đúng đôi là họ xoay ra số tròn 1, 10, 100 lấp lánh. Luật sàn nhảy (giao hoán – kết hợp) cho phép ai cũng được đổi chỗ: việc của con là KÉO đúng đôi về sát nhau trước, để số lẻ loi như 7,3 hay 3,17 đứng ngoài nhân sau cùng. Riêng bạn 0,5 hay bị gọi nhầm tên: \"phẩy năm\" không phải \"số năm\" — bạn ấy là MỘT NỬA, nhân với ai là người ấy còn một nửa!",
   "canonicalExamples": [
    {
@@ -82,14 +65,8 @@
     "counterExample": "Nếu nhân 0,5 mà là chia 5 thì $10  \\times  0,5$ phải bằng 2 — trong khi một nửa của 10 rõ ràng là 5!"
    }
   ],
-  "vocabulary": [
-   "kho cặp số vàng",
-   "bạn nhảy vàng",
-   "kéo cặp về sát nhau",
-   "số lẻ loi nhân sau cùng",
-   "nhẩm theo nghĩa"
-  ],
-  "mantra": "PHẨY NĂM LÀ MỘT NỬA — KHÔNG PHẢI SỐ NĂM!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,70 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Tính bằng cách thuận tiện: $0,25  \\times  7,3  \\times  4$.",
-    "display": {
-     "type": "story_panel",
-     "caption": "$0,25  \\times  7,3  \\times  4$ trong 10 giây?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để vào phòng tiệc!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Phòng tiệc thừa số: 0,25 và 4 là đôi bạn nhảy vàng — ghép vào là xoay ra số 1! Luật sàn nhảy cho đổi chỗ thoải mái: con kéo 4 vượt qua 7,3 về cạnh 0,25 — thành ($0,25  \\times  4$) × $7,3 = 1  \\times  7,3 = 7,3$. Kho đôi vàng đây: 0,25·4 → 1; 0,125·8 → 1; 2,5·4 → 10; 1,25·8 → 10; 12,5·8 → 100 — thuộc mặt từng đôi!",
-    "display": {
-     "type": "dance_pair_interactive",
-     "spec": {
-      "pairs": [
-       [
-        "0,25",
-        "4",
-        "1"
-       ],
-       [
-        "0,125",
-        "8",
-        "1"
-       ],
-       [
-        "2,5",
-        "4",
-        "10"
-       ],
-       [
-        "1,25",
-        "8",
-        "10"
-       ],
-       [
-        "12,5",
-        "8",
-        "100"
-       ]
-      ],
-      "task": "0,25 × 7,3 × 4 → kéo cặp"
-     }
-    },
-    "interaction": {
-     "type": "drag_pair",
-     "answerKey": {
-      "value": 7.3
-     },
-     "successMessage": "(0,25 × 4) × 7,3 = 7,3 — ghép đôi xong là xong bài!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -191,46 +104,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 36,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Cáo Đề gài chữ: \"nhân 0,5 là chia… 5 chứ gì!\" Khoan — nhớ theo NGHĨA: 0,5 là MỘT NỬA, nên 48 nhân 0,5 là một nửa của 48: hai mươi tư. Còn 0,25 là một phần tư: 48 nhân 0,25 bằng mười hai. Kiểm ngược: 24 nhân 2 về đúng 48 — nghĩa không bao giờ lừa mình!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "48 × 0,5 = \"chia 5\" = 9,6",
-       "output": "✗",
-       "valid": false,
-       "reason": "phẩy năm không phải số năm"
-      },
-      {
-       "input": "48 × 0,5 = một nửa = 24",
-       "output": "✓",
-       "valid": true,
-       "reason": "0,5 = 1/2; kiểm 24 × 2 = 48"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: phẩy năm là một nửa — không phải số năm!",
-    "display": {
-     "type": "mantra_card",
-     "text": "PHẨY NĂM LÀ MỘT NỬA!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -557,103 +430,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B13.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "0,25 × 7,3 × 4 trong 10 giây?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Cuộc thi tính nhanh: 0,25 × 7,3 × 4 — mười giây!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B13_M1_F1.png",
-   "sha256_16": "dea9f6e46f1aa819"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "48 × 0,5 = \"chia 5\" = 9,6"
-     ],
-     "result": ""
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "48 × 0,5 = một nửa = 24"
-     ],
-     "result": ""
-    },
-    "verdict": "0,5 = 1/2; kiểm 24 × 2 = 48"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B13_M1_F2.png",
-   "sha256_16": "7b6fd256051f3914"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Kho cặp vàng cho ra số TRÒN",
-      "text": "0,25 × 4 = 1 · 0,5 × 2 = 1 · 0,125 × 8 = 1 · 2,5 × 4 = 10 · 1,25 × 8 = 10 · 12,5 × 8 = 100.",
-      "tone": "navy"
-     },
-     {
-      "label": "Giao hoán",
-      "text": "kết hợp cho phép ĐỔI CHỖ và GHÉP NHÓM tùy ý trong tích: 0,25 × 7,3 × 4 = (0,25 × 4) × 7,3 — kéo cặp vàng về sát nhau trước, nhân số lẻ sau cùng.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "PHẨY NĂM LÀ MỘT NỬA — KHÔNG PHẢI SỐ NĂM!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B13_M1_F3.png",
-   "sha256_16": "8176c1747e5fec94"
-  },
-  {
-   "archetype": "pair_sum",
-   "params": {
-    "title": "KÉO CẶP SỐ VÀNG VỀ GẦN NHAU: 0,25 × 7,3 × 4",
-    "seq": [
-     "0,25",
-     "7,3",
-     "4"
-    ],
-    "pair_label": "cặp vàng 0,25 × 4 = 1",
-    "formula": "(0,25 × 4) × 7,3 = 1 × 7,3 = 7,3",
-    "note": "Kho cặp vàng: 0,25 × 4 = 1 · 0,125 × 8 = 1 · 2,5 × 4 = 10 · 1,25 × 8 = 10 · 12,5 × 8 = 100"
-   },
-   "caption": "Giao hoán – kết hợp cho phép kéo hai bạn vàng đứng cạnh nhau",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B13_M1_F4.png",
-   "sha256_16": "508cc9792a7c26f1"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B05"
@@ -665,5 +442,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Kho cặp số vàng: kéo cặp về gần nhau bằng giao hoán – kết hợp"
+ "titleDay": "Kho cặp số vàng: kéo cặp về gần nhau bằng giao hoán – kết hợp",
+ "video": {
+  "giang": "DL_KSN5Q1_B13_M1_giang.mp4"
+ }
 }

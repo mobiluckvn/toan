@@ -32,20 +32,7 @@
   "kidText": "Hai tích cùng chứa một thừa số thì con rút nó ra ngoài ngoặc. Nhìn 5 giây chọn đúng chiêu rồi mới đặt bút."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "a × b + a × c = a × (b + c) và a × b − a × c = a × (b − c): thừa số chung a được RÚT ra ngoài, phần còn lại vào ngoặc."
-   },
-   {
-    "id": "K2",
-    "text": "Dấu hiệu nhận chiêu: hai (hay nhiều) tích cùng chứa MỘT thừa số lặp lại — phần trong ngoặc sau khi rút thường tròn đẹp ($6,8 + 3,2 = 10$; $611 - 211 = 400$): đề cố tình cài như vậy."
-   },
-   {
-    "id": "K3",
-    "text": "NGHI THỨC NHÌN 5 GIÂY trước mọi biểu thức: (1) soi CẶP VÀNG? (2) soi SỐ GẦN TRÒN (99, 101, 4,98)? (3) soi THỪA SỐ CHUNG? — chọn chiêu xong mới đặt bút; không thấy gì mới tính thẳng."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: GOM HÓA ĐƠN CHUNG QUẦY. Mua ở quầy 3,7: lần đầu 6,8 món, lần sau 3,2 món — kế toán giỏi không tính hai hóa đơn rồi cộng, mà GOM: quầy 3,7 bán tổng (6,8 + 3,2) = 10 món → 37. Thừa số chung là TÊN QUẦY xuất hiện ở cả hai hóa đơn — rút tên quầy ra, gom số món vào ngoặc. Và trước mọi bài tính nhanh, thám tử biểu thức dành đúng 5 GIÂY quét ba câu hỏi: có đôi bạn nhảy vàng không? — có số sát vách số tròn không? — có tên quầy lặp lại không? Chọn chiêu xong mới ra tay: dao nào thớt nấy.",
   "canonicalExamples": [
    {
@@ -76,14 +63,8 @@
     "counterExample": "Cùng ra 37 nhưng đường rút chung chỉ một dòng: $3,7  \\times  10$."
    }
   ],
-  "vocabulary": [
-   "gom hóa đơn chung quầy",
-   "tên quầy (thừa số chung)",
-   "ngoặc tròn là chủ ý đề",
-   "nghi thức nhìn 5 giây",
-   "dao nào thớt nấy"
-  ],
-  "mantra": "NHÌN 5 GIÂY: CẶP VÀNG — GẦN TRÒN — THỪA SỐ CHUNG!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -105,48 +86,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Tính bằng cách thuận tiện: $6,8  \\times  3,7 + 3,7  \\times  3,2$.",
-    "display": {
-     "type": "story_panel",
-     "caption": "hai tích — một tên quầy?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để gom hóa đơn!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Hai hóa đơn cùng QUẦY 3,7: lần đầu 6,8 món, lần sau 3,2 món. Kế toán gom: quầy 3,7 nhân tổng (6,8 cộng 3,2) — ngoặc ra tròn MƯỜI, đâu phải tình cờ: người ra đề cài sẵn đấy! 3,7 nhân 10 bằng BA MƯƠI BẢY — một dòng xong bài.",
-    "display": {
-     "type": "invoice_merge_interactive",
-     "spec": {
-      "common": "3,7",
-      "parts": [
-       "6,8",
-       "3,2"
-      ],
-      "merged": "3,7 × (6,8 + 3,2) = 3,7 × 10 = 37"
-     }
-    },
-    "interaction": {
-     "type": "merge_invoices",
-     "answerKey": {
-      "value": 37
-     },
-     "successMessage": "3,7 × 10 = 37 — rút tên quầy, gom món vào ngoặc!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -163,37 +102,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Nghi thức NHÌN 5 GIÂY — quét ba câu trước khi đặt bút: MỘT — có đôi bạn nhảy vàng không? HAI — có số sát vách số tròn (99, 101, 4,98) không? BA — có tên quầy lặp lại không? Thử ba đề chớp nhoáng: $0,25  \\times  9,1  \\times  4$ — cặp vàng! $5,7  \\times  99$ — gần tròn! $4,5  \\times  6,3 + 4,5  \\times  3,7$ — thừa số chung! Dao nào thớt nấy.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "5 giây: VÀNG? — GẦN TRÒN? — CHUNG?",
-      "0,25×9,1×4 → vàng · 5,7×99 → gần tròn",
-      "4,5×6,3 + 4,5×3,7 → chung: 4,5 × 10 = 45"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: nhìn năm giây — cặp vàng, gần tròn, thừa số chung!",
-    "display": {
-     "type": "mantra_card",
-     "text": "NHÌN 5 GIÂY: VÀNG — GẦN TRÒN — CHUNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -500,115 +408,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B13.M3",
- "figureSpec": [
-  {
-   "archetype": "area_split",
-   "params": {
-    "title": "",
-    "height": {
-     "label": "3,7",
-     "val": 3.7
-    },
-    "parts": [
-     {
-      "label": "6,8",
-      "val": 6.8
-     },
-     {
-      "label": "3,2",
-      "val": 3.2
-     }
-    ]
-   },
-   "caption": "Đề bài — số đo đã cho",
-   "id": "F0",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B13_M3_F0.png",
-   "sha256_16": "f6708c2f792f59c1"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Rút thừa số chung & nghi thức nhìn-5-giây",
-    "steps": [
-     {
-      "text": "5 giây: VÀNG? — GẦN TRÒN? — CHUNG?"
-     },
-     {
-      "text": "0,25×9,1×4 → vàng · 5,7×99 → gần tròn"
-     },
-     {
-      "text": "4,5×6,3 + 4,5×3,7 → chung: 4,5 × 10 = 45"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B13_M3_F2.png",
-   "sha256_16": "a01bfb85af664eb9"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "a × b + a × c = a × (b + c) và a × b − a × c = a × (b − c)",
-      "text": "thừa số chung a được RÚT ra ngoài, phần còn lại vào ngoặc.",
-      "tone": "navy"
-     },
-     {
-      "label": "Dấu hiệu nhận chiêu",
-      "text": "hai (hay nhiều) tích cùng chứa MỘT thừa số lặp lại — phần trong ngoặc sau khi rút thường tròn đẹp (6,8 + 3,2 = 10; 611 − 211 = 400): đề cố tình cài như vậy.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "NHÌN 5 GIÂY: CẶP VÀNG — GẦN TRÒN — THỪA SỐ CHUNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B13_M3_F3.png",
-   "sha256_16": "97d9c3fea5a32887"
-  },
-  {
-   "archetype": "area_split",
-   "params": {
-    "title": "RÚT THỪA SỐ CHUNG: 6,8 × 3,7 + 3,7 × 3,2",
-    "height": {
-     "label": "3,7",
-     "val": 3.7
-    },
-    "parts": [
-     {
-      "label": "6,8",
-      "val": 6.8
-     },
-     {
-      "label": "3,2",
-      "val": 3.2
-     }
-    ],
-    "formula": "3,7 × (6,8 + 3,2) = 3,7 × 10 = 37",
-    "note": "Ngoặc ra số tròn đẹp là CHỦ Ý người ra đề — nhìn 5 giây tìm tên quầy lặp lại"
-   },
-   "caption": "Hai mảnh cùng chiều cao ghép lại thành một hình chữ nhật lớn",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B13_M3_F4.png",
-   "sha256_16": "019c7b8cc642c6bb"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B05"
@@ -619,5 +419,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B13_M3_giang.mp4"
  }
 }

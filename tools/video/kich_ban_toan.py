@@ -9894,7 +9894,141 @@ def kb5_day_lap_chu_ky(b):
     ]
 
 
+def kb5_cap_so_vang(b):
+    """L5·B13·M1 Cặp số cho ra số tròn — và 0,5 là một nửa."""
+    return [
+        _c('bia', 'Những cặp số cho ra số tròn', so_bai(b),
+           loi=['Có những cặp số nhân vào nhau là ra số tròn. Nhớ chúng thì tính rất '
+                'nhanh.']),
+        _c('de_toan', 'Đề bài', de='Tính nhanh  0,25 × 7,3 × 4',
+           loi=['Tính nhanh không phẩy hai lăm, nhân bảy phẩy ba, nhân bốn.']),
+        _c('y_toan', 'Trong tích thì được ĐỔI CHỖ và GHÉP NHÓM tuỳ ý',
+           'kéo số 4 về cạnh 0,25', buoc=1, soBuoc=3,
+           loi=['Trong một tích thì được đổi chỗ và ghép nhóm tuỳ ý.',
+                'Con kéo số bốn về cạnh không phẩy hai lăm.']),
+        _c('cong_thuc', 'Vì hai số ấy là một cặp vàng',
+           congThuc='0,25 × 4 = 1  →  còn lại đúng 7,3',
+           thay='nhân với 1 thì số kia giữ nguyên, khỏi tính gì thêm',
+           loi=['Vì hai số ấy là một cặp vàng. Không phẩy hai lăm nhân bốn bằng một.',
+                'Nhân với một thì số kia giữ nguyên, nên đáp số đúng bằng bảy phẩy '
+                'ba.']),
+        _c('day_so', 'Kho cặp vàng nên thuộc', so=[4, 2, 8, 4],
+           hienThuTu=False,
+           chuPhu='0,25 × 4 · 0,5 × 2 · 0,125 × 8 · 2,5 × 4 — đều ra số tròn.',
+           loi=['Kho cặp vàng nên thuộc. Không phẩy hai lăm với bốn, không phẩy năm '
+                'với hai.',
+                'Không phẩy một hai lăm với tám, và hai phẩy năm với bốn.']),
+        _c('y_toan', 'Còn một chỗ bẫy về NGHĨA',
+           'nhân 0,5 là chia 5?  —  KHÔNG', buoc=2, soBuoc=3,
+           loi=['Còn một chỗ bẫy về nghĩa. Nhiều bạn tưởng nhân không phẩy năm là chia '
+                'năm.']),
+        _c('y_toan', 'Nhân 0,5 là lấy MỘT NỬA', '48 × 0,5 = 24, không phải 9,6',
+           buoc=3, soBuoc=3,
+           loi=['Nhân không phẩy năm là lấy một nửa, vì không phẩy năm chính là một '
+                'nửa.',
+                'Bốn mươi tám nhân không phẩy năm bằng hai mươi tư, không phải chín '
+                'phẩy sáu.']),
+        _c('cong_thuc', 'Nhẩm theo NGHĨA thì nhanh hơn đặt tính',
+           congThuc='× 0,5 là chia 2  ·  × 0,25 là chia 4  ·  × 0,2 là chia 5',
+           thay='vì 0,5 là một nửa, 0,25 là một phần tư, 0,2 là một phần năm',
+           loi=['Nhẩm theo nghĩa thì nhanh hơn đặt tính. Nhân không phẩy năm là chia '
+                'hai.',
+                'Nhân không phẩy hai lăm là chia bốn. Nhân không phẩy hai là chia '
+                'năm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_muon_roi_tra(b):
+    """L5·B13·M2 Số gần tròn — nhân 99, và mượn rồi trả."""
+    return [
+        _c('bia', 'Số sát vách số tròn', so_bai(b),
+           loi=['Gặp số sát vách số tròn thì mượn cho tròn, rồi trả lại.']),
+        _c('de_toan', 'Đề bài', de='Tính nhanh  4,3 × 99',
+           loi=['Tính nhanh bốn phẩy ba nhân chín mươi chín.']),
+        _c('cong_thuc', 'Tách 99 ra một dòng trước đã',
+           congThuc='99 = 100 − 1  →  4,3 × 99 = 4,3 × 100 − 4,3',
+           thay='trừ MỘT LẦN chính nó, không phải trừ 1',
+           loi=['Tách chín mươi chín ra một dòng trước đã. Chín mươi chín bằng một '
+                'trăm trừ một.',
+                'Nên bốn phẩy ba nhân chín mươi chín bằng bốn phẩy ba nhân một trăm, '
+                'trừ một lần bốn phẩy ba.']),
+        _c('y_toan', 'Chỗ hỏng nằm ngay đây',
+           'Nhiều bạn trừ đi 1, chứ không trừ một LẦN chính nó', buoc=1, soBuoc=3,
+           loi=['Chỗ hỏng nằm ngay đây. Nhiều bạn trừ đi một, chứ không trừ một lần '
+                'chính nó.']),
+        _c('y_toan', 'Làm cho trọn', '430 − 4,3 = 425,7', buoc=2, soBuoc=3,
+           loi=['Làm cho trọn. Bốn trăm ba mươi trừ bốn phẩy ba, bằng bốn trăm hai '
+                'mươi lăm phẩy bảy.']),
+        _c('y_toan', 'Mua 99 món mà trả tiền 100 món', 'thì phải được thối lại 1 món',
+           loi=['Nghĩ như đi chợ. Mua chín mươi chín món mà trả tiền một trăm món.',
+                'Thì phải được thối lại tiền của đúng một món.']),
+        _c('de_toan', 'Phép CỘNG cũng mượn được', de='Tính nhanh  4,98 + 3,97',
+           loi=['Phép cộng cũng mượn được. Tính nhanh bốn phẩy chín tám cộng ba phẩy '
+                'chín bảy.']),
+        _c('y_toan', 'Mượn cho tròn — nhưng phải mở SỔ NỢ ngay',
+           '5 + 4 = 9  ·  nợ 0,02 và 0,03  →  9 − 0,05 = 8,95', buoc=3, soBuoc=3,
+           loi=['Mượn cho tròn thành năm và bốn, cộng lại được chín.',
+                'Nhưng mở sổ nợ ngay. Nợ không phẩy không hai và không phẩy không ba.',
+                'Chín trừ không phẩy không năm, bằng tám phẩy chín lăm.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='nhân 99 — trừ MỘT LẦN chính nó  ·  mượn cho tròn — TRẢ cho đủ',
+           thay='ghi dòng tách hoặc dòng nợ ra giấy, đừng giữ trong đầu',
+           loi=['Con nhớ hai câu. Nhân chín mươi chín thì trừ một lần chính nó.',
+                'Mượn cho tròn thì trả cho đủ, và ghi dòng nợ ra giấy chứ đừng giữ '
+                'trong đầu.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_rut_thua_so_chung(b):
+    """L5·B13·M3 Rút thừa số chung, và nghi thức nhìn 5 giây."""
+    return [
+        _c('bia', 'Khi hai tích dùng chung một thừa số', so_bai(b),
+           loi=['Hai tích cùng có một thừa số lặp lại. Rút nó ra là xong ngay.']),
+        _c('de_toan', 'Đề bài', de='Tính nhanh  6,8 × 3,7 + 3,7 × 3,2',
+           loi=['Tính nhanh sáu phẩy tám nhân ba phẩy bảy, cộng ba phẩy bảy nhân ba '
+                'phẩy hai.']),
+        _c('y_toan', 'Cả hai tích đều có 3,7', 'rút nó ra ngoài ngoặc',
+           buoc=1, soBuoc=3,
+           loi=['Cả hai tích đều có ba phẩy bảy. Con rút nó ra ngoài ngoặc.']),
+        _c('cong_thuc', 'Phần còn lại vào trong ngoặc',
+           congThuc='3,7 × (6,8 + 3,2) = 3,7 × 10 = 37',
+           thay='trong ngoặc thường tròn đẹp — đó là dấu hiệu con rút đúng',
+           loi=['Phần còn lại vào trong ngoặc. Sáu phẩy tám cộng ba phẩy hai bằng mười '
+                'chẵn.',
+                'Ba phẩy bảy nhân mười, bằng ba mươi bảy.',
+                'Trong ngoặc tròn đẹp chính là dấu hiệu con rút đúng.']),
+        _c('y_toan', 'Phép trừ cũng rút được y hệt',
+           '0,25 × 611 − 0,25 × 211 = 0,25 × 400 = 100', buoc=2, soBuoc=3,
+           loi=['Phép trừ cũng rút được y hệt. Không phẩy hai lăm nhân sáu trăm mười '
+                'một, trừ không phẩy hai lăm nhân hai trăm mười một.',
+                'Rút ra còn không phẩy hai lăm nhân bốn trăm, bằng một trăm.']),
+        _c('y_toan', 'Nghi thức trước mọi biểu thức tính nhanh',
+           'nhìn 5 giây và quét ba câu hỏi', buoc=3, soBuoc=3,
+           loi=['Nay con có ba chiêu. Nên trước mọi biểu thức tính nhanh, nhìn năm '
+                'giây và quét ba câu hỏi.']),
+        _c('y_toan', 'Ba câu quét',
+           '① có CẶP VÀNG?  ② có SỐ GẦN TRÒN?  ③ có THỪA SỐ CHUNG?',
+           loi=['Có cặp vàng nào không. Có số nào sát vách số tròn không.',
+                'Có thừa số nào lặp lại ở hai tích không.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='nhìn 5 giây: CẶP VÀNG — GẦN TRÒN — THỪA SỐ CHUNG',
+           thay='năm giây ấy rẻ hơn nhiều so với đặt tính cột dọc hai tích',
+           loi=['Con nhớ câu này. Nhìn năm giây, soi cặp vàng, số gần tròn, thừa số '
+                'chung.',
+                'Năm giây ấy rẻ hơn nhiều so với đặt tính cột dọc hai lần.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B13.M1': kb5_cap_so_vang,
+    'DL:KSN5Q1.B13.M2': kb5_muon_roi_tra,
+    'DL:KSN5Q1.B13.M3': kb5_rut_thua_so_chung,
     'DL:KSN5Q1.B12.M1': kb5_so_hang_thu_n,
     'DL:KSN5Q1.B12.M2': kb5_tong_ghep_cap,
     'DL:KSN5Q1.B12.M3': kb5_day_lap_chu_ky,
