@@ -7194,6 +7194,153 @@ def kb3_mot_phan_may(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 3 · chương 3 · Dãy số thám hiểm — ba bài
+# ═══════════════════════════════════════════════════════════════════════════
+# Cả ba bài đứng hay đổ ở MỘT chỗ: TOA LÀ CÂY, BƯỚC NHẢY LÀ KHOẢNG. Từ toa thứ
+# nhất tới toa thứ năm chỉ có bốn bước nhảy, không phải năm. Mọi dấu trừ một và
+# cộng một trong cả chương đều từ đó mà ra.
+#
+# `day_so` bật `hienThuTu` vẽ HAI hàng chồng nhau: hàng trên là ĐỨNG THỨ MẤY, hàng
+# dưới là SỐ NÀO. Đó đúng là hai thứ bé hay trộn vào nhau, và cũng là lý do cảnh
+# này được viết ra từ đầu.
+
+
+def kb3_toa_thu_n(b):
+    """L3·C3① Toa thứ n ở đâu — toa là cây, bước nhảy là khoảng."""
+    return [
+        _c('bia', 'Toa thứ mấy thì mang số nào', so_bai(b),
+           loi=['Không cần viết cả dãy vẫn biết toa thứ mười mang số nào.']),
+        _c('day_so', 'Dãy này có nhịp đều', so=[5, 8, 11, 14, 17],
+           hienThuTu=True, chuPhu='Cứ mỗi toa lại cộng thêm 3.',
+           loi=['Dãy này có nhịp đều. Cứ sang toa sau là cộng thêm ba.',
+                'Hàng trên là đứng thứ mấy, hàng dưới là số nào. Hai thứ khác nhau '
+                'đấy.']),
+        _c('day_so', 'Từ toa 1 đến toa 5 có mấy bước nhảy?', so=[5, 8, 11, 14, 17],
+           hienThuTu=True, chiSo=5,
+           chuPhu='Chỉ 4 bước, không phải 5 — toa là cây, bước nhảy là khoảng.',
+           loi=['Con đếm kỹ chỗ này. Từ toa thứ nhất tới toa thứ năm có mấy bước '
+                'nhảy.',
+                'Chỉ bốn bước thôi, không phải năm. Toa giống như cây, còn bước nhảy '
+                'là khoảng giữa hai cây.']),
+        _c('y_toan', 'Nên toa thứ 5 tính thế này', '5 + 3 × 4 = 17',
+           buoc=1, soBuoc=3,
+           loi=['Nên toa thứ năm bằng số đầu cộng ba nhân bốn, được mười bảy.']),
+        _c('cong_thuc', 'Công thức của cả chương',
+           congThuc='toa thứ n = số đầu + nhịp × (n − 1)',
+           thay='trừ một, vì đi từ toa đầu tới toa thứ n chỉ có n trừ một khoảng',
+           loi=['Toa thứ en-nờ bằng số đầu cộng nhịp nhân với en-nờ trừ một.',
+                'Trừ một là vì đi từ toa đầu tới toa ấy chỉ có ngần ấy khoảng.']),
+        _c('y_toan', 'Thử toa thứ 10 — đứng yên mà tính', '5 + 3 × 9 = 32',
+           buoc=2, soBuoc=3,
+           loi=['Thử toa thứ mười. Năm cộng ba nhân chín, bằng ba mươi hai.']),
+        _c('day_so', 'Liệt kê ra để đối chiếu',
+           so=[5, 8, 11, 14, 17, 20, 23, 26, 29, 32], hienThuTu=False, chiSo=10,
+           chuPhu='Đếm tay cũng ra 32 — hai con đường gặp nhau.',
+           loi=['Đếm tay cũng ra ba mươi hai. Hai con đường gặp nhau ở cùng một chỗ.']),
+        _c('y_toan', 'Bài ngược: số 29 ở toa thứ mấy?',
+           '(29 − 5) : 3 = 8 bước  →  toa thứ 9', buoc=3, soBuoc=3,
+           loi=['Đề đi ngược thì làm ngược. Hai mươi chín trừ năm được hai mươi bốn.',
+                'Chia cho nhịp ba được tám bước nhảy. Cộng thêm một vì đếm cả toa xuất '
+                'phát, ra toa thứ chín.']),
+        _c('cong_thuc', 'Hai chiều, cùng một lẽ',
+           congThuc='xuôi: đầu + nhịp × (n−1)   ·   ngược: (số − đầu) : nhịp + 1',
+           thay='cả hai chỗ lệch một đều vì TOA LÀ CÂY, BƯỚC NHẢY LÀ KHOẢNG',
+           loi=['Hai chiều, mà chỗ lệch một đều từ cùng một lẽ. Toa là cây, bước nhảy '
+                'là khoảng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_ma_du(b):
+    """L3·C3② Số này có thuộc dãy không — soi mã dư."""
+    return [
+        _c('bia', 'Số này có thuộc dãy không', so_bai(b),
+           loi=['Cho một số lạ, hỏi nó có nằm trong dãy hay không.']),
+        _c('day_so', 'Dãy nhịp 4, bắt đầu từ 3', so=[3, 7, 11, 15, 19],
+           hienThuTu=False, chuPhu='Viết mãi cũng không hết dãy.',
+           loi=['Dãy này nhịp bốn, bắt đầu từ ba. Viết mãi cũng không hết được.']),
+        _c('y_toan', 'Chia thử vài số cho nhịp 4',
+           '3 dư 3  ·  7 dư 3  ·  11 dư 3  ·  15 dư 3', buoc=1, soBuoc=3,
+           loi=['Con chia thử vài số cho nhịp bốn. Ba dư ba, bảy dư ba, mười một dư '
+                'ba. Cả dãy chung một phần dư.']),
+        _c('cong_thuc', 'Vì sao cả dãy chung một phần dư?',
+           congThuc='mỗi bước cộng thêm ĐÚNG một nhịp',
+           thay='thêm tròn một nhóm thì phần dư không đổi chút nào',
+           loi=['Vì mỗi bước cộng thêm đúng một nhịp, tức là thêm tròn một nhóm.',
+                'Thêm tròn một nhóm thì phần dư không đổi chút nào.']),
+        _c('tach_so', 'Soi số lạ: 30 có thuộc dãy không?', so='30',
+           phep='30 : 4 = 7 (dư 2)', chuPhu='Dư 2, mà dãy dư 3 — tàu KHÔNG dừng.',
+           loi=['Soi số ba mươi. Chia bốn được bảy, dư hai.',
+                'Dãy thì dư ba, lệch nhau nên ba mươi không thuộc dãy.']),
+        _c('tach_so', 'Còn số 39?', so='39', phep='39 : 4 = 9 (dư 3)',
+           chuPhu='Khớp — 39 thuộc dãy.',
+           loi=['Còn ba mươi chín. Chia bốn được chín, dư ba. Khớp, nên nó thuộc dãy.']),
+        _c('y_toan', 'Và nó đứng ở toa thứ mấy?',
+           '(39 − 3) : 4 + 1 = 10', buoc=2, soBuoc=3,
+           loi=['Ba mươi chín trừ ba, chia bốn, cộng một, được toa thứ mười.']),
+        _c('y_toan', 'Cạm bẫy: nhìn chẵn lẻ chỉ để LOẠI',
+           'Dãy 4, 8, 12… toàn số chẵn — nhưng 34 chẵn mà KHÔNG thuộc',
+           buoc=3, soBuoc=3,
+           loi=['Con cẩn thận chỗ này. Dãy bốn, tám, mười hai toàn số chẵn.',
+                'Số ba mươi tư cũng chẵn, nhưng chia bốn lại dư hai nên không thuộc '
+                'dãy.',
+                'Nhìn chẵn lẻ chỉ giúp loại nhanh, chưa đủ để kết luận.']),
+        _c('cong_thuc', 'Muốn biết một số có thuộc dãy',
+           congThuc='chia cho NHỊP, so PHẦN DƯ với phần dư của dãy',
+           thay='vì cả dãy chung một phần dư, còn chẵn lẻ chỉ loại được một nửa',
+           loi=['Con nhớ cách soi. Chia cho nhịp rồi so phần dư với phần dư của dãy.',
+                'Vì cả dãy chung một phần dư, còn nhìn chẵn lẻ mới loại được một nửa '
+                'thôi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_nhip_khong_deu(b):
+    """L3·C3③ Nhịp không đều thì thử tiếp, đừng vội bảo đề sai."""
+    return [
+        _c('bia', 'Khi nhịp không đều', so_bai(b),
+           loi=['Có dãy nhịp không đều. Đề không sai đâu, chỉ là quy luật khác.']),
+        _c('day_so', 'Dãy này thì sao?', so=[1, 2, 4, 7, 11],
+           hienThuTu=False, chuPhu='Thử phép thử thứ nhất: tính hiệu.',
+           loi=['Dãy một, hai, bốn, bảy, mười một. Con thử phép thử thứ nhất, tính '
+                'hiệu hai số liền nhau.']),
+        _c('y_toan', 'Phép thử 1 — hiệu có đều không?',
+           '1, 2, 3, 4 — KHÔNG đều', buoc=1, soBuoc=4,
+           loi=['Hiệu lần lượt là một, hai, ba, bốn. Không đều.',
+                'Nhiều bạn dừng ở đây và bảo đề sai. Con đừng dừng.']),
+        _c('day_so', 'Phép thử 3 — soi chính hàng hiệu ấy', so=[1, 2, 3, 4],
+           hienThuTu=False, chuPhu='Hàng hiệu lại là một bậc thang đều tăm tắp!',
+           loi=['Con soi chính hàng hiệu ấy. Một, hai, ba, bốn.',
+                'Hàng dưới lại là một bậc thang đều tăm tắp.']),
+        _c('y_toan', 'Nên số tiếp theo cộng thêm 5', '11 + 5 = 16',
+           buoc=2, soBuoc=4,
+           loi=['Nên phần cộng thêm lần sau là năm. Mười một cộng năm bằng mười sáu.']),
+        _c('y_toan', 'Phép thử 2 — cộng hai toa trước?',
+           'Dãy 1, 1, 2, 3, 5, 8 — mỗi số là tổng hai số liền trước',
+           buoc=3, soBuoc=4,
+           loi=['Còn một kiểu nữa. Dãy một, một, hai, ba, năm, tám.',
+                'Mỗi số bằng tổng của hai số đứng ngay trước nó. Hai cộng ba bằng '
+                'năm, ba cộng năm bằng tám.']),
+        _c('y_toan', 'Phép thử 4 — hai phép thay phiên?',
+           'Dãy 2, 4, 5, 10, 11, 22 — nhân 2 rồi cộng 1, luân phiên',
+           buoc=4, soBuoc=4,
+           loi=['Kiểu cuối là hai phép thay phiên nhau. Hai nhân hai được bốn, bốn '
+                'cộng một được năm.',
+                'Rồi năm nhân hai được mười, mười cộng một được mười một.']),
+        _c('cong_thuc', 'Bốn phép thử, thử lần lượt',
+           congThuc='① hiệu đều?  ② cộng hai số trước?  ③ soi hàng hiệu?  ④ luân phiên?',
+           thay='nhịp không đều KHÔNG có nghĩa là đề sai, chỉ là chưa thử tới',
+           loi=['Con nhớ bốn phép thử, làm lần lượt từng phép một.',
+                'Nhịp không đều không có nghĩa là đề sai, chỉ là mình chưa thử tới '
+                'thôi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN3.B01': kb3_thap_nghin,   'DL:KSN3.B02': kb3_hai_cua,
     'DL:KSN3.B03': kb3_duoi_dat_ve,  'DL:KSN3.B04': kb3_dem_nguoc_trang,
@@ -7201,6 +7348,9 @@ BO = {
     'DL:KSN3.B05': kb3_nhan_ngoai_bang, 'DL:KSN3.B06': kb3_chia_co_du,
     'DL:KSN3.B07': kb3_doan_tau_du,     'DL:KSN3.B08': kb3_chu_lan,
     'DL:KSN3.B09': kb3_mot_phan_may,
+    # ══ LỚP 3 · chương 3 · Dãy số thám hiểm — ba bài ══
+    'DL:KSN3.B10': kb3_toa_thu_n,       'DL:KSN3.B11': kb3_ma_du,
+    'DL:KSN3.B12': kb3_nhip_khong_deu,
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
     'DL:KSN4.B19': kb_b19, 'DL:KSN4.B20': kb_b20,

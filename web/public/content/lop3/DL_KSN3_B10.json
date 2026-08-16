@@ -26,25 +26,8 @@
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Dãy 5, 8, 11, 14, ... có nhịp +3. Điều tinh tế nhất nằm ở đây: từ toa 1 đến toa 5 có mấy bước nhảy? Đếm hình mà xem — chỉ 4 bước, không phải 5! Toa là CÂY, bước nhảy là KHOẢNG — luật bàn tay 5 ngón 4 kẽ trở lại!"
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2. Vậy toa thứ 5 = số đầu + đi 4 bước nhảy = $5 + 3  \\times  4 = 17$ ✓ (khớp hình). Công thức lời của thám tử: toa thứ n = số đầu + nhịp × (n − 1)."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Toa thứ 10: đứng yên tại ga, tính $5 + 3  \\times  9 = 5 + 27 = 32$. Kiểm chứng bằng cách liệt kê: 5, 8, 11, 14, 17, 20, 23, 26, 29, 32 — đúng toa thứ mười! Hai con đường một đích, nhưng công thức thắng xa khi n lớn."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — BÀI NGƯỢC: số 29 nằm ở toa thứ mấy? Quãng đường từ số đầu: $29 - 5 = 24$; số bước nhảy: $24 : 3 = 8$ bước → 29 ở toa thứ $8 + 1 = 9$ (lại +1 vì đếm cả toa xuất phát!)."
-   }
-  ],
-  "mantra": "Toa thứ n = số đầu + nhịp × (n − 1). Bài ngược: (số trên toa − số đầu) : nhịp + 1. Hai chỗ có \"−1/+1\" đều vì một lẽ: TOA LÀ CÂY, BƯỚC NHẢY LÀ KHOẢNG!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
@@ -57,43 +40,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "narration": "Cho dãy số 2, 6, 10, 14, ... Tìm số hạng thứ 8 của dãy."
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
    {
     "id": "S6",
     "kind": "trap",
@@ -348,28 +294,7 @@
   "homeActivity": "Lỗi \"nhân với n thay vì n − 1\" là lỗi hàng rào (fencepost) nổi tiếng — cả người lớn viết phần mềm còn mắc! Khi con sai, đừng sửa số, hãy hỏi \"toa hay bước nhảy?\".",
   "watchFor": "NÊN: luôn liệt kê kiểm chứng với n nhỏ trước khi tin công thức với n to. KHÔNG NÊN: đưa dãy giảm dần hay nhịp âm — hẹn lớp 4; và đừng gọi đây là \"cấp số cộng\", cứ để là chuyện đoàn tàu."
  },
- "figureSpec": [
-  {
-   "id": "L3H_MO10",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L3H_MO10.png",
-   "caption": "Dãy 2, 6, 10, 14 với nhịp +4 — tìm toa thứ 8",
-   "sha256_16": "73f0e719dc2d3a8c",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L3H_GI12",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L3H_GI12.png",
-   "caption": "Từ toa 1 đến toa 5 chỉ có 4 bước nhảy — toa là cây, bước là khoảng",
-   "sha256_16": "9ae72659d5f7dacd",
-   "mucGoc": "khamPha"
-  }
- ],
+ "figureSpec": [],
  "hatMam": "Lớp 2, ở Bài 9, con lái đoàn tàu đếm thêm: 5, 8, 11, ... và chỉ cần điền vài toa kế tiếp. Còn ở Bài 24, con thuộc luật bàn tay \"số cây = số khoảng + 1\". Hai người quen ấy hôm nay bắt tay nhau làm nên một công thức lợi hại!",
  "duongLui": {
   "ve": [
@@ -381,5 +306,8 @@
   "canCu": "chuDe",
   "lopDuoi": 2,
   "nhan": "Học lại bài lớp 2"
+ },
+ "video": {
+  "giang": "DL_KSN3_B10_giang.mp4"
  }
 }
