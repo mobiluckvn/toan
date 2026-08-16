@@ -34,24 +34,7 @@
   "kidText": "Dãy lặp đi lặp lại: con tìm được phần tử thứ 100 và tính được tổng — nhớ cộng cả cái đuôi lẻ chưa đủ một vòng."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Dãy lặp chu kỳ k (đèn xanh-đỏ-vàng, dãy 2; 0; 2; 6;…): phần tử thứ n xác định bằng phép chia n : k và đọc số dư."
-   },
-   {
-    "id": "K2",
-    "text": "Đọc dư đúng luật máy định vị (lần thứ BA tái xuất!): dư r → phần tử thứ r của chu kỳ; dư 0 → phần tử CUỐI chu kỳ."
-   },
-   {
-    "id": "K3",
-    "text": "Tổng n phần tử đầu = (số chu kỳ trọn) × (tổng một chu kỳ) + (tổng CÁI ĐUÔI LẺ — các phần tử dư ra chưa đủ chu kỳ). Dư 0 thì đuôi rỗng; dư r thì đuôi gồm r phần tử ĐẦU chu kỳ."
-   },
-   {
-    "id": "K4",
-    "text": "Nghi thức hai dòng: dòng 1 chia lấy thương–dư; dòng 2 ghi rõ \"trọn × tổng + đuôi\" — bỏ quên đuôi là hụt, quên luật dư 0 là lệch phần tử."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: DÀN ĐÈN NHÁY LỄ HỘI lặp bộ ba xanh–đỏ–vàng. Muốn biết bóng thứ 14 màu gì? Máy định vị (đã phục vụ ở thư viện Bài 8 và xưởng vòng quay Bài 11 — nay lần thứ ba!) chia 14 cho 3: bốn bộ trọn, DƯ HAI — lấn hai bóng vào bộ mới: màu ĐỎ. Còn tính TỔNG dãy số lặp? Đếm tiền theo XẤP: mỗi chu kỳ là một xấp có tổng cố định; n phần tử = mấy xấp trọn cộng CÁI ĐUÔI LẺ vài tờ chưa đóng xấp. Hai lỗi rình rập: dư 0 mà quay về phần tử đầu (phải lấy CUỐI!), và đếm xấp xong quên nhét mấy tờ lẻ.",
   "canonicalExamples": [
    {
@@ -88,14 +71,8 @@
     "counterExample": "4050 thiếu mất số 1 mở đầu chu kỳ 676 — đáp đúng 4051."
    }
   ],
-  "vocabulary": [
-   "dàn đèn nháy lễ hội",
-   "xấp tiền chu kỳ",
-   "cái đuôi lẻ",
-   "máy định vị lần thứ ba",
-   "nghi thức hai dòng"
-  ],
-  "mantra": "DƯ 0 LẤY CUỐI VÒNG — DƯ MẤY, CỘNG ĐUÔI BẤY NHIÊU PHẦN TỬ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -116,55 +93,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Dàn đèn lặp theo bộ ba màu xanh - đỏ - vàng. Hỏi bóng đèn thứ 14 màu gì?",
-    "display": {
-     "type": "story_panel",
-     "caption": "thứ 100, dư 0 → số 2??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đếm bộ đầu tiên!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Đếm tay bộ đầu: bóng 1 là số 2, bóng 2 số 0, bóng 3 số 2, bóng 4 — số SÁU! Bốn chia bốn dư 0 mà phần tử là số CUỐI bộ! Máy định vị nói y hệt hai lần trước: dư 0 nghĩa là vừa khép TRỌN chu kỳ — kim dừng ở cuối. Vậy bóng thứ 100: hai lăm bộ trọn, dừng ở phần tử cuối: số 6! Còn đèn thứ 14 bộ ba màu: 14 chia 3 dư 2 — bóng thứ hai của bộ: màu ĐỎ.",
-    "display": {
-     "type": "lamp_chain_interactive",
-     "spec": {
-      "cycle": [
-       2,
-       0,
-       2,
-       6
-      ],
-      "n": 100,
-      "calc": "100 : 4 = 25 dư 0 → CUỐI: 6",
-      "second": {
-       "cycle": "xanh-đỏ-vàng",
-       "n": 14,
-       "calc": "14 : 3 = 4 dư 2 → ĐỎ"
-      }
-     }
-    },
-    "interaction": {
-     "type": "locate_lamp",
-     "answerKey": {
-      "value": 6
-     },
-     "successMessage": "Dư 0 → phần tử CUỐI: số 6 — bóng thứ tư làm chứng!"
-    }
-   },
    {
     "id": "C1",
     "kind": "checkpoint",
@@ -187,38 +115,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Trùm cuối: tổng 2026 phần tử đầu của dãy lặp 1; 2; 3. Đếm tiền theo xấp! 2026 chia 3 bằng 675 dư 1: sáu trăm bảy lăm XẤP trọn — mỗi xấp tổng 1 cộng 2 cộng 3 bằng 6 — và CÁI ĐUÔI LẺ một tờ: số 1 mở đầu xấp mới. Tổng: 675 nhân 6 cộng 1 bằng BỐN NGHÌN KHÔNG TRĂM NĂM MƯƠI MỐT. Bỏ quên tờ lẻ là hụt ngay!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "2026 : 3 = 675 dư 1",
-      "675 xấp × 6 = 4050",
-      "+ đuôi lẻ (số 1) → 4051"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: dư không lấy cuối vòng — dư mấy, cộng đuôi bấy nhiêu phần tử!",
-    "display": {
-     "type": "mantra_card",
-     "text": "DƯ 0 LẤY CUỐI — ĐUÔI LẺ PHẢI CỘNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -528,105 +424,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B12.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "thứ 100, dư 0 → số 2??",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "Bóng thứ MỘT TRĂM ghi số mấy?",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Câu hỏi mở bài",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B12_M3_F1.png",
-   "sha256_16": "0c798f5a1ae7e1ec"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Dãy lặp chu kỳ: phần tử thứ n & tổng có cái đuôi lẻ",
-    "steps": [
-     {
-      "text": "2026 : 3 = 675 dư 1"
-     },
-     {
-      "text": "675 xấp × 6 = 4050"
-     },
-     {
-      "text": "+ đuôi lẻ (số 1) → 4051"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B12_M3_F2.png",
-   "sha256_16": "8bd831d968da2378"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Dãy lặp chu kỳ k (đèn xanh-đỏ-vàng, dãy 2; 0; 2; 6;…)",
-      "text": "phần tử thứ n xác định bằng phép chia n : k và đọc số dư.",
-      "tone": "navy"
-     },
-     {
-      "label": "Đọc dư đúng luật máy định vị (lần thứ BA tái xuất!)",
-      "text": "dư r → phần tử thứ r của chu kỳ; dư 0 → phần tử CUỐI chu kỳ.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "DƯ 0 LẤY CUỐI VÒNG — DƯ MẤY, CỘNG ĐUÔI BẤY NHIÊU PHẦN TỬ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B12_M3_F3.png",
-   "sha256_16": "90aabac58822b8af"
-  },
-  {
-   "archetype": "cycle_ring",
-   "params": {
-    "title": "DÃY LẶP 2; 0; 2; 6 — PHẦN TỬ THỨ 100 LÀ SỐ NÀO?",
-    "items": [
-     "2",
-     "0",
-     "2",
-     "6"
-    ],
-    "pointer": 4,
-    "rule": [
-     "chu kỳ 4",
-     "100 : 4 = 25 dư 0",
-     "dư 0 → phần tử CUỐI = 6"
-    ],
-    "note": "Đèn xanh - đỏ - vàng chu kỳ 3: bóng thứ 14 → 14 : 3 = 4 dư 2 → màu ĐỎ"
-   },
-   "caption": "Dãy lặp cũng đọc dư hai cửa như vòng tận cùng",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B12_M3_F4.png",
-   "sha256_16": "88d9da49e438de48"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B18",
@@ -639,5 +437,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B12_M3_giang.mp4"
  }
 }

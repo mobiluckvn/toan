@@ -9772,7 +9772,132 @@ def kb5_gop_duoi_chinh_phuong(b):
     ]
 
 
+def kb5_so_hang_thu_n(b):
+    """L5·B12·M1 Số hạng thứ n của dãy cách đều."""
+    return [
+        _c('bia', 'Số hạng thứ n là số nào', so_bai(b),
+           loi=['Dãy cách đều. Không viết cả dãy vẫn biết số hạng thứ mười là số nào.']),
+        _c('day_so', 'Dãy 2 · 5 · 8 · 11 — nhịp 3', so=[2, 5, 8, 11, 14],
+           hienThuTu=True, chuPhu='Hàng trên là ĐỨNG THỨ MẤY, hàng dưới là SỐ NÀO.',
+           loi=['Dãy hai, năm, tám, mười một. Nhịp ba.',
+                'Hàng trên là đứng thứ mấy, hàng dưới là số nào.']),
+        _c('y_toan', 'Đứng ở số ĐẦU là chưa nhảy bước nào',
+           'tới số thứ 2 mới là 1 bước · thứ 3 là 2 bước', buoc=1, soBuoc=3,
+           loi=['Đứng ở số đầu là chưa nhảy bước nào cả.',
+                'Tới số thứ hai mới là một bước, số thứ ba là hai bước.']),
+        _c('y_toan', 'Nên tới số thứ 10 chỉ mới nhảy 9 bước',
+           '2 + 9 × 3 = 29, không phải 2 + 10 × 3', buoc=2, soBuoc=3,
+           loi=['Nên tới số thứ mười chỉ mới nhảy chín bước.',
+                'Hai cộng chín nhân ba, bằng hai mươi chín. Không phải hai cộng mười '
+                'nhân ba.']),
+        _c('cong_thuc', 'Công thức số hạng thứ n',
+           congThuc='số thứ n = số đầu + (n − 1) × khoảng cách',
+           thay='trừ một vì đứng ở số đầu là chưa nhảy bước nào',
+           loi=['Số hạng thứ en-nờ bằng số đầu, cộng en-nờ trừ một, nhân khoảng cách.',
+                'Trừ một vì đứng ở số đầu là chưa nhảy bước nào.']),
+        _c('y_toan', 'Còn một mẹo nữa cho dãy cách đều',
+           'trung bình cộng = (số đầu + số cuối) : 2', buoc=3, soBuoc=3,
+           loi=['Còn một mẹo nữa. Trung bình cộng của dãy cách đều bằng số đầu cộng số '
+                'cuối, chia hai.']),
+        _c('y_toan', 'Khỏi cộng cả dãy', 'dãy 3 · 6 · 9 … 99  →  (3 + 99) : 2 = 51',
+           loi=['Khỏi phải cộng cả dãy. Dãy ba, sáu, chín tới chín mươi chín.',
+                'Ba cộng chín mươi chín, chia hai, được năm mươi mốt.']),
+        _c('cong_thuc', 'Vì sao mẹo ấy đúng',
+           congThuc='dãy cách đều cân xứng qua điểm giữa',
+           thay='hai đầu cân nhau, nên trung bình cộng nằm đúng giữa',
+           loi=['Vì dãy cách đều cân xứng qua điểm giữa. Hai đầu cân nhau, nên trung '
+                'bình cộng nằm đúng ở giữa.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tong_ghep_cap(b):
+    """L5·B12·M2 Tổng dãy cách đều — ghép cặp rồi chia đôi."""
+    return [
+        _c('bia', 'Cộng cả dãy trong mười giây', so_bai(b),
+           loi=['Cộng từ một tới một trăm. Có cách làm trong mười giây.']),
+        _c('y_toan', 'Ghép đầu với cuối thành từng cặp',
+           '1 + 100 = 101   ·   2 + 99 = 101   ·   3 + 98 = 101', buoc=1, soBuoc=3,
+           loi=['Ghép đầu với cuối thành từng cặp. Một cộng một trăm bằng một trăm '
+                'linh một.',
+                'Hai cộng chín mươi chín cũng thế. Ba cộng chín mươi tám cũng thế.']),
+        _c('y_toan', 'Mỗi cặp ăn HAI số hạng',
+           '100 số hạng  →  chỉ 50 cặp, không phải 100', buoc=2, soBuoc=3,
+           loi=['Nhưng mỗi cặp ăn hai số hạng. Một trăm số hạng thì chỉ được năm mươi '
+                'cặp.']),
+        _c('y_toan', 'Nên nhân xong phải chia đôi', '101 × 100 : 2 = 5050',
+           buoc=3, soBuoc=3,
+           loi=['Nên nhân xong phải chia đôi. Một trăm linh một nhân một trăm, chia '
+                'hai, bằng năm nghìn không trăm năm mươi.']),
+        _c('cong_thuc', 'Công thức tổng dãy cách đều',
+           congThuc='tổng = (đầu + cuối) × số số hạng : 2',
+           thay='số số hạng đếm bằng công thức của bài 7 — cộng 1 ra cọc',
+           loi=['Tổng bằng đầu cộng cuối, nhân số số hạng, rồi chia hai.',
+                'Số số hạng thì đếm bằng công thức bài trước, nhớ cộng một.']),
+        _c('y_toan', 'Chỗ hay quên', 'Nhân xong ghi luôn — quên chia đôi là gấp đôi đáp số',
+           loi=['Chỗ hay quên là nhân xong ghi luôn. Quên chia đôi thì đáp số gấp đôi '
+                'sự thật.']),
+        _c('y_toan', 'Bài ngược cũng làm được', 'tổng 1 tới n bằng 210 — tìm n',
+           loi=['Bài ngược cũng làm được. Tổng từ một tới en-nờ bằng hai trăm mười, '
+                'tìm en-nờ.']),
+        _c('cong_thuc', 'Chạy ngược công thức',
+           congThuc='n × (n + 1) = 2 × tổng = 420 = 20 × 21  →  n = 20',
+           thay='tách 2 lần tổng thành tích HAI SỐ LIỀN NHAU, n là số bé',
+           loi=['Chạy ngược công thức. En-nờ nhân en-nờ cộng một, bằng hai lần tổng, '
+                'tức bốn trăm hai mươi.',
+                'Tách bốn trăm hai mươi thành hai số liền nhau là hai mươi nhân hai '
+                'mươi mốt. Vậy en-nờ bằng hai mươi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_day_lap_chu_ky(b):
+    """L5·B12·M3 Dãy lặp chu kỳ — phần tử thứ n và tổng có đuôi lẻ."""
+    return [
+        _c('bia', 'Dãy lặp đi lặp lại', so_bai(b),
+           loi=['Dàn đèn lặp bộ bốn, rồi lại lặp. Bóng thứ một trăm ghi số mấy.']),
+        _c('day_so', 'Chu kỳ có bốn phần tử', so=[2, 0, 2, 6],
+           hienThuTu=True, chuPhu='Rồi lặp lại y hệt: 2 · 0 · 2 · 6 · 2 · 0 …',
+           loi=['Chu kỳ có bốn phần tử. Hai, không, hai, sáu, rồi lặp lại y hệt.']),
+        _c('y_toan', 'Chia vị trí cho độ dài chu kỳ', '100 : 4 = 25 dư 0',
+           buoc=1, soBuoc=3,
+           loi=['Chia vị trí cho độ dài chu kỳ. Một trăm chia bốn bằng hai mươi lăm dư '
+                'không.']),
+        _c('y_toan', 'Dư 0 thì lấy phần tử CUỐI chu kỳ',
+           'đếm tay bộ đầu: bóng thứ 4 chính là số 6', buoc=2, soBuoc=3,
+           loi=['Dư không thì lấy phần tử cuối chu kỳ.',
+                'Đếm tay bộ đầu mà xem. Bóng thứ tư chính là số sáu, không phải số '
+                'hai.']),
+        _c('y_toan', 'Đây là lần thứ BA gặp luật ấy',
+           'định vị chữ số · vòng đuôi luỹ thừa · và nay dãy lặp', buoc=3, soBuoc=3,
+           loi=['Đây là lần thứ ba con gặp luật ấy. Định vị chữ số, vòng đuôi luỹ '
+                'thừa, và nay dãy lặp.',
+                'Cùng một luật đọc số dư.']),
+        _c('y_toan', 'Còn tính TỔNG thì đếm theo xấp',
+           'tổng 2026 phần tử của dãy 1 · 2 · 3 lặp mãi',
+           loi=['Còn tính tổng thì đếm theo xấp. Tổng hai nghìn không trăm hai sáu '
+                'phần tử đầu của dãy một, hai, ba lặp mãi.']),
+        _c('y_toan', 'Chia ra xấp trọn và cái đuôi lẻ',
+           '2026 : 3 = 675 xấp trọn, dư 1 phần tử',
+           loi=['Chia ra xấp trọn và cái đuôi lẻ. Hai nghìn không trăm hai sáu chia '
+                'ba, được sáu trăm bảy lăm xấp trọn, dư một phần tử.']),
+        _c('cong_thuc', 'Nghi thức hai dòng',
+           congThuc='675 × 6 + 1 = 4051',
+           thay='xấp trọn × tổng một chu kỳ, CỘNG tổng cái đuôi lẻ — đừng bỏ quên đuôi',
+           loi=['Sáu trăm bảy lăm xấp, mỗi xấp tổng sáu, cộng phần tử lẻ là một.',
+                'Được bốn nghìn không trăm năm mươi mốt. Bỏ quên cái đuôi lẻ là hụt '
+                'ngay.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B12.M1': kb5_so_hang_thu_n,
+    'DL:KSN5Q1.B12.M2': kb5_tong_ghep_cap,
+    'DL:KSN5Q1.B12.M3': kb5_day_lap_chu_ky,
     'DL:KSN5Q1.B11.M1': kb5_ban_do_vong_duoi,
     'DL:KSN5Q1.B11.M2': kb5_vong_bon,
     'DL:KSN5Q1.B11.M3': kb5_gop_duoi_chinh_phuong,
