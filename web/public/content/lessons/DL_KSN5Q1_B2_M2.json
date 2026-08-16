@@ -36,24 +36,7 @@
   "kidText": "Bỏ dấu phẩy là số to lên gấp 10, 100 hay 1000 lần. Con đếm phẩy cõng mấy chữ số trước, rồi mới nhân."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bỏ dấu phẩy của số có k chữ số ở phần thập phân là gấp số đó lên 10^k lần (1 chữ số: ×10; 2 chữ số: ×100; 3 chữ số: ×1000)."
-   },
-   {
-    "id": "K2",
-    "text": "Nghi thức hai giây trước khi nhân: ĐẾM số chữ số sau dấu phẩy — không được nhân theo quán tính ×10."
-   },
-   {
-    "id": "K3",
-    "text": "Thêm chữ số 0 vào tận cùng PHẦN THẬP PHÂN: giá trị KHÔNG đổi ($3,5 = 3,50 = 3,500$ — số 0 trang trí)."
-   },
-   {
-    "id": "K4",
-    "text": "Hai thế giới của số 0 đuôi: rơi vào đuôi SỐ TỰ NHIÊN là ×10; rơi vào đuôi PHẦN THẬP PHÂN là số cũ nguyên vẹn."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: dấu phẩy là CÔNG TẮC trên bảng điện của con số. Gạt bỏ công tắc đi, mọi chữ số thập phân ùa qua cổng sang phần nguyên — mỗi đứa nhảy lên đúng số hàng bằng số chữ số nó cõng: phẩy cõng 1 chữ số thì cả số ×10, cõng 2 chữ số thì ×100. Còn chữ số 0 gắn vào TẬN CÙNG phần thập phân chỉ là đèn trang trí sau công tắc — bật hay tháo, dòng điện (giá trị) vẫn y nguyên. Nhưng cũng chữ số 0 ấy gắn vào đuôi số TỰ NHIÊN thì lại là cả một tầng nhà mới: ×10 ngay.",
   "canonicalExamples": [
    {
@@ -90,13 +73,8 @@
     "counterExample": "3,50 đọc vẫn là ba phẩy năm mươi = ba phẩy năm."
    }
   ],
-  "vocabulary": [
-   "công tắc dấu phẩy",
-   "phẩy cõng k chữ số",
-   "số 0 trang trí",
-   "hai thế giới của số 0 đuôi"
-  ],
-  "mantra": "PHẨY CÕNG MẤY CHỮ SỐ — NHÂN BẤY NHIÊU LẦN MƯỜI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -118,48 +96,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Bỏ dấu phẩy của số 3,45 ta được số nào? Số mới gấp số cũ bao nhiêu lần?",
-    "display": {
-     "type": "story_panel",
-     "caption": "3,45 bỏ phẩy = ×10???"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để kiểm tra bảng công tắc!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 40,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Nghi thức hai giây: ĐẾM trước — sau dấu phẩy của 3,45 có mấy chữ số? Con chạm vào từng chữ số để đếm, rồi gạt công tắc.",
-    "display": {
-     "type": "tap_count_interactive",
-     "spec": {
-      "number": "3,45",
-      "countTargets": [
-       "4",
-       "5"
-      ],
-      "thenAnimate": "bỏ phẩy → 345, nhãn ×100"
-     }
-    },
-    "interaction": {
-     "type": "tap_count",
-     "answerKey": {
-      "value": 2
-     },
-     "successMessage": "Hai chữ số sau phẩy → bỏ phẩy là ×100: 3,45 thành 345!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -180,67 +116,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 40,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Giờ đến số 0 hai thế giới. Cùng một hành động 'thêm 0 vào bên phải': với 47 — số 0 rơi vào đuôi số TỰ NHIÊN, cả số nhảy lên 470, gấp 10. Với 3,5 — số 0 rơi vào đuôi PHẦN THẬP PHÂN, chỉ là đèn trang trí: 3,50 vẫn bằng 3,5, chẳng gấp lần nào!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "47 + 0 đuôi",
-       "output": "470",
-       "valid": true,
-       "reason": "đuôi tự nhiên → ×10"
-      },
-      {
-       "input": "3,5 + 0 đuôi thập phân",
-       "output": "3,50 = 3,5",
-       "valid": true,
-       "reason": "0 trang trí — KHÔNG đổi"
-      }
-     ]
-    },
-    "interaction": {
-     "type": "sort_cards",
-     "prompt": "Kéo vào đúng giỏ: GẤP 10 LẦN / KHÔNG ĐỔI",
-     "cards": [
-      "82 → 820",
-      "6,4 → 6,40",
-      "150 → 1500",
-      "0,7 → 0,70"
-     ],
-     "answerKey": {
-      "GẤP 10 LẦN": [
-       "82 → 820",
-       "150 → 1500"
-      ],
-      "KHÔNG ĐỔI": [
-       "6,4 → 6,40",
-       "0,7 → 0,70"
-      ]
-     }
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai câu cần nhớ: phẩy cõng mấy chữ số — nhân bấy nhiêu lần mười! Và: 0 đuôi tự nhiên là nhân mười — 0 đuôi thập phân là số cũ!",
-    "display": {
-     "type": "mantra_card",
-     "text": "PHẨY CÕNG MẤY CHỮ SỐ — NHÂN BẤY NHIÊU LẦN MƯỜI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -596,127 +471,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B2.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "3,45 bỏ phẩy = ×10???",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Bỏ dấu phẩy là gấp 10 — em thuộc lòng rồi!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B2_M2_F1.png",
-   "sha256_16": "c4e6c8004f91970e"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "Công tắc dấu phẩy & số 0 hai thế giới",
-    "formulas": [
-     {
-      "text": "3,45",
-      "tone": "navy"
-     },
-     {
-      "text": "bỏ phẩy → 345, nhãn ×100",
-      "tone": "gold"
-     }
-    ]
-   },
-   "caption": "Ý chính của bài gói trong mấy dòng",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B2_M2_F2.png",
-   "sha256_16": "a21b64439bf04cad"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "text": "Bỏ dấu phẩy của số có k chữ số ở phần thập phân là gấp số đó lên 10^k lần (1 chữ số: ×10; 2 chữ số: ×100; 3 chữ số: ×1000).",
-      "tone": "navy"
-     },
-     {
-      "label": "Nghi thức hai giây trước khi nhân",
-      "text": "ĐẾM số chữ số sau dấu phẩy — không được nhân theo quán tính ×10.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "PHẨY CÕNG MẤY CHỮ SỐ — NHÂN BẤY NHIÊU LẦN MƯỜI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B2_M2_F3.png",
-   "sha256_16": "fbf1e9c6ae5dbabe"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "BỎ DẤU PHẨY CỦA 3,45 — GẤP 100 LẦN, KHÔNG PHẢI 10",
-    "headers": [
-     "trăm",
-     "chục",
-     "đơn vị",
-     "phần mười",
-     "phần trăm"
-    ],
-    "comma_after": 2,
-    "rows": [
-     {
-      "label": "3,45",
-      "cells": [
-       "",
-       "",
-       "3",
-       "4",
-       "5"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "345",
-      "cells": [
-       "3",
-       "4",
-       "5",
-       "",
-       ""
-      ],
-      "color": "#FFF4DF"
-     }
-    ],
-    "shift": {
-     "steps": 2,
-     "dir": "<",
-     "label": "sau phẩy có 2 chữ số → dịch 2 bậc → gấp 100"
-    },
-    "note": "Đếm số chữ số SAU dấu phẩy trước khi trả lời"
-   },
-   "caption": "Bỏ phẩy là kéo cả số lên mấy bậc bằng số chữ số phần thập phân",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B2_M2_F4.png",
-   "sha256_16": "5bce72bd4125876a"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B02",
@@ -729,5 +484,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B2_M2_giang.mp4"
  }
 }

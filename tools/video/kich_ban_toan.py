@@ -8514,7 +8514,142 @@ def kb5_so_gap_k_lan_tong(b):
     ]
 
 
+def kb5_chuyen_nha(b):
+    """L5·B2·M1 Xóa một chữ số thì cả dãy chuyển nhà."""
+    return [
+        _c('bia', 'Xóa một chữ số, cả dãy chuyển nhà', so_bai(b),
+           loi=['Xóa một chữ số khỏi số, thì các chữ số còn lại không đứng yên đâu.']),
+        _c('de_toan', 'Câu hỏi mở đầu', de='Xóa chữ số 4 khỏi 345 thì còn số nào?',
+           loi=['Xóa chữ số bốn khỏi ba trăm bốn mươi lăm thì còn số nào.',
+                'Nhiều bạn trả lời ngay ba trăm bốn mươi mốt. Con thử nghĩ lại.']),
+        _c('tach_so', 'Số cũ: mỗi chữ số ở một hàng', so='345', sang=[2],
+           phep='3 trăm · 4 chục · 5 đơn vị',
+           chuPhu='Chữ số 4 đang đứng giữa.',
+           loi=['Số cũ có ba trăm, bốn chục, năm đơn vị. Chữ số bốn đứng ở giữa.']),
+        _c('tach_so', 'Rút chữ số 4 ra — chữ số 3 TỤT HÀNG', so='35', sang=[1],
+           phep='3 chục · 5 đơn vị = 35',
+           chuPhu='Chữ số 3 từ hàng trăm tụt xuống hàng chục.',
+           loi=['Rút chữ số bốn ra thì chữ số ba tụt hàng ngay.',
+                'Từ hàng trăm xuống hàng chục, nó chỉ còn đáng ba chục. Số mới là ba '
+                'mươi lăm.']),
+        _c('y_toan', 'Nên số giảm rất nhiều, không phải giảm 4',
+           '345 − 35 = 310, chứ không phải 4', buoc=1, soBuoc=3,
+           loi=['Nên số giảm những ba trăm mười, chứ không phải giảm bốn.',
+                'Vì mất một chỗ đứng thì mọi chữ số bên trái đều tụt xuống một hàng.']),
+        _c('cong_thuc', 'Thêm bên phải: cả dãy dọn sang trái',
+           congThuc='số mới = số cũ × 10 + c',
+           thay='vì chữ số mới chiếm hàng đơn vị, đẩy mọi chữ số cũ lên một hàng',
+           loi=['Thêm chữ số vào bên phải thì cả dãy dọn sang trái. Lấy số cũ nhân '
+                'mười rồi cộng chữ số mới.']),
+        _c('y_toan', 'Thêm bên trái: không ai phải dọn',
+           'số mới = số cũ + c × giá của hàng mới', buoc=2, soBuoc=3,
+           loi=['Thêm vào bên trái thì không ai phải dọn nhà. Chỉ cộng thêm phần của '
+                'người mới.']),
+        _c('y_toan', 'Xóa chữ số TẬN CÙNG', 'số mới = (số cũ − c) : 10',
+           buoc=3, soBuoc=3,
+           loi=['Xóa chữ số tận cùng thì trừ nó ra rồi chia mười, vì cả dãy tụt xuống '
+                'một hàng.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='tính bằng HIỆU hai số  ·  đừng trừ chữ số',
+           thay='vì xóa một chữ số là đổi CHỖ ĐỨNG của mọi chữ số bên trái nó',
+           loi=['Con nhớ câu này. Tính bằng hiệu của hai số, đừng trừ chữ số.',
+                'Vì xóa một chữ số là đổi chỗ đứng của mọi chữ số bên trái nó.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_cong_tac_dau_phay(b):
+    """L5·B2·M2 Bỏ dấu phẩy là nhân 10 mũ k."""
+    return [
+        _c('bia', 'Bỏ dấu phẩy thì gấp mấy lần', so_bai(b),
+           loi=['Bỏ dấu phẩy đi thì số gấp lên. Nhưng gấp mấy lần mới đúng.']),
+        _c('de_toan', 'Câu hỏi mở đầu', de='Bỏ dấu phẩy của 3,45 — gấp 10 lần?',
+           loi=['Bỏ dấu phẩy của ba phẩy bốn lăm. Có phải gấp mười lần không.']),
+        _c('tach_so', 'Đếm trước đã: sau dấu phẩy có mấy chữ số?', so='3,45',
+           sang=[2, 3], phep='2 chữ số',
+           chuPhu='Nghi thức hai giây — đếm rồi mới nhân.',
+           loi=['Nghi thức hai giây. Đếm trước khi nhân.',
+                'Sau dấu phẩy của ba phẩy bốn lăm có hai chữ số.']),
+        _c('y_toan', 'Nên bỏ phẩy là nhân MỘT TRĂM',
+           '3,45  →  345, gấp 100 lần', buoc=1, soBuoc=3,
+           loi=['Nên bỏ phẩy là nhân một trăm. Ba phẩy bốn lăm thành ba trăm bốn mươi '
+                'lăm.']),
+        _c('cong_thuc', 'Luật chung',
+           congThuc='phẩy cõng k chữ số  →  bỏ phẩy là nhân 10 mũ k',
+           thay='vì mỗi chữ số vượt qua cổng phẩy là nó lên một hàng',
+           loi=['Luật chung. Phẩy cõng mấy chữ số thì bỏ phẩy là nhân bấy nhiêu lần '
+                'mười.',
+                'Vì mỗi chữ số vượt qua cổng phẩy là nó lên một hàng.']),
+        _c('y_toan', 'Số 0 ở đuôi có HAI thế giới',
+           'đuôi số tự nhiên  ·  đuôi phần thập phân', buoc=2, soBuoc=3,
+           loi=['Còn số không ở đuôi thì có hai thế giới khác hẳn nhau.']),
+        _c('tach_so', 'Thêm 0 vào đuôi SỐ TỰ NHIÊN: gấp 10 lần', so='470', sang=[3],
+           phep='47  →  470', chuPhu='Cả hai chữ số cũ đều lên một hàng.',
+           loi=['Thêm số không vào đuôi số tự nhiên thì gấp mười. Bốn mươi bảy thành '
+                'bốn trăm bảy mươi.']),
+        _c('tach_so', 'Thêm 0 vào đuôi PHẦN THẬP PHÂN: y nguyên', so='3,50',
+           sang=[3], phep='3,5 = 3,50', chuPhu='Số 0 này chỉ đứng trang trí.',
+           loi=['Nhưng thêm số không vào đuôi phần thập phân thì số y nguyên.',
+                'Ba phẩy năm bằng ba phẩy năm mươi. Số không ấy chỉ đứng trang trí.']),
+        _c('cong_thuc', 'Hai câu, đừng lẫn',
+           congThuc='phẩy cõng k chữ số → × 10 mũ k  ·  0 đuôi thập phân → y nguyên',
+           thay='vì bên trái phẩy thì thêm 0 là chiếm chỗ, bên phải thì không',
+           loi=['Con nhớ hai câu, đừng lẫn. Phẩy cõng mấy chữ số thì nhân bấy nhiêu '
+                'lần mười.',
+                'Còn số không ở đuôi phần thập phân thì số cũ y nguyên.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_chia_chin_khong_chia_muoi(b):
+    """L5·B2·M3 Bài ngược — phần tăng là 9 lần, không phải 10."""
+    return [
+        _c('bia', 'Biết phần tăng, tìm số cũ', so_bai(b),
+           loi=['Đề cho biết số tăng thêm bao nhiêu, hỏi ngược lại số cũ.']),
+        _c('de_toan', 'Đề bài', de='Bỏ dấu phẩy làm một số TĂNG THÊM 32,4. Số cũ là số nào?',
+           loi=['Bỏ mất dấu phẩy làm một số tăng thêm ba mươi hai phẩy bốn đơn vị.',
+                'Hỏi số cũ là số nào. Nhiều bạn chia ngay cho mười. Sai.']),
+        _c('so_do_doan', 'Vẽ ra thì thấy ngay', be=1, lon=10,
+           nhanBe='số cũ · 1 phần', nhanLon='số mới · 10 phần',
+           hienHieu=True, chuHieu='phần tăng = 9 phần',
+           chuPhu='Số mới gấp 10 lần, nên phần TĂNG THÊM chỉ là 9 lần.',
+           loi=['Vẽ ra thì thấy ngay. Số cũ là một phần, số mới gấp mười nên là mười '
+                'phần.',
+                'Phần tăng thêm là mười phần trừ một phần, còn chín phần.']),
+        _c('cong_thuc', 'Nên phải chia cho 9',
+           congThuc='số cũ = phần tăng : 9',
+           thay='vì mười lần trừ một lần thì còn chín lần, không phải mười',
+           loi=['Nên phải chia cho chín. Vì mười lần trừ đi một lần thì còn chín lần.']),
+        _c('y_toan', 'Phá án', '32,4 : 9 = 3,6', buoc=1, soBuoc=3,
+           loi=['Ba mươi hai phẩy bốn chia chín, bằng ba phẩy sáu.']),
+        _c('y_toan', 'Thử lại — dựng lại hiện trường',
+           '3,6 bỏ phẩy thành 36 · 36 − 3,6 = 32,4 ✓', buoc=2, soBuoc=3,
+           loi=['Thử lại. Ba phẩy sáu bỏ phẩy thành ba mươi sáu.',
+                'Ba mươi sáu trừ ba phẩy sáu, đúng bằng ba mươi hai phẩy bốn.']),
+        _c('y_toan', 'Số có HAI chữ số thập phân thì khác',
+           'gấp 100 lần  →  phần tăng là 99 lần  →  chia 99', buoc=3, soBuoc=3,
+           loi=['Số có hai chữ số thập phân thì bỏ phẩy là gấp một trăm.',
+                'Phần tăng thành chín mươi chín lần, nên phải chia cho chín mươi '
+                'chín.']),
+        _c('y_toan', 'Chỗ hay hỏng', 'Chia cho 10 hay 100 là sai — phải chia 9 hay 99',
+           loi=['Đây là chỗ hay hỏng. Chia cho mười hay một trăm là sai.',
+                'Phần tăng luôn ít hơn số mới đúng một lần số cũ.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='mười lần trừ một lần — còn CHÍN lần',
+           thay='đề cho PHẦN TĂNG thì chia 9 hoặc 99, đề cho SỐ MỚI mới chia 10',
+           loi=['Con nhớ câu này. Mười lần trừ một lần còn chín lần.',
+                'Đề cho phần tăng thì chia chín. Đề cho số mới thì mới chia mười.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B2.M1': kb5_chuyen_nha,
+    'DL:KSN5Q1.B2.M2': kb5_cong_tac_dau_phay,
+    'DL:KSN5Q1.B2.M3': kb5_chia_chin_khong_chia_muoi,
     'DL:KSN5Q1.B1.M1': kb5_ban_do_cac_hang,
     'DL:KSN5Q1.B1.M2': kb5_cung_chu_so_khac_hang,
     'DL:KSN5Q1.B1.M3': kb5_so_gap_k_lan_tong,

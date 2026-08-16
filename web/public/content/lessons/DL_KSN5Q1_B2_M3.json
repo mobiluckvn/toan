@@ -34,24 +34,7 @@
   "kidText": "Biết số phình lên bao nhiêu, con tìm ngược ra số ban đầu — nhờ chìa khoá phần chênh bằng 9 lần hoặc 99 lần số cũ."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Khi một số bị gấp lên 10 lần (bỏ phẩy 1 chữ số thập phân, thêm 0 đuôi tự nhiên…), phần TĂNG THÊM = 10 lần − 1 lần = 9 LẦN số cũ."
-   },
-   {
-    "id": "K2",
-    "text": "Gấp 100 lần (bỏ phẩy 2 chữ số thập phân) thì phần tăng = 99 lần số cũ."
-   },
-   {
-    "id": "K3",
-    "text": "Bài ngược: số cũ = mức tăng : 9 (hoặc : 99) — chia cho 9 và 99, tuyệt đối không chia cho 10 hay 100."
-   },
-   {
-    "id": "K4",
-    "text": "Luôn THỬ LẠI: lấy số cũ dựng lại tình huống, kiểm mức tăng có khớp đề không."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: DẤU VÂN TAY 9 LẦN. Mỗi khi một con số bị 'phù phép' gấp 10, nó để lại hiện trường một vết chênh — vết ấy KHÔNG to bằng 10 lần nó, mà đúng bằng 9 lần (vì số mới = 10 phần, số cũ = 1 phần, chênh = 9 phần). Thám tử chỉ cần đo vết chênh rồi chia 9 là lộ mặt thủ phạm. Vụ gấp 100 để lại vết 99 phần — chia 99. Đây là dấu vân tay sẽ theo con suốt tới 'vụ án quên dấu phẩy' ở Bài 4.",
   "canonicalExamples": [
    {
@@ -88,13 +71,8 @@
     "counterExample": "8,25 bỏ phẩy được 825, tăng 816,75 ≠ 74,25."
    }
   ],
-  "vocabulary": [
-   "dấu vân tay 9 lần",
-   "vết chênh",
-   "sơ đồ phần 10 vạch − 1 vạch",
-   "thử lại dựng hiện trường"
-  ],
-  "mantra": "MƯỜI LẦN TRỪ MỘT LẦN — CÒN CHÍN LẦN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -116,44 +94,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Bỏ dấu phẩy của một số có một chữ số ở phần thập phân thì số đó tăng thêm 32,4 đơn vị. Tìm số đó.",
-    "display": {
-     "type": "story_panel",
-     "caption": "tăng 32,4 → số cũ = $32,4 : 10$???"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đo dấu vân tay!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 42,
-    "teaches": [
-     "K1"
-    ],
-    "narration": "Vẽ sơ đồ phần: số cũ là MỘT vạch. Bỏ phẩy làm nó gấp 10 — số mới là MƯỜI vạch y hệt. Con kéo để so hai băng: phần tăng thêm là mấy vạch?",
-    "display": {
-     "type": "bar_model_interactive",
-     "spec": {
-      "old": 1,
-      "new": 10,
-      "question": "phần chênh = ? vạch"
-     }
-    },
-    "interaction": {
-     "type": "count_bars",
-     "answerKey": {
-      "value": 9
-     },
-     "successMessage": "Đúng! 10 vạch trừ 1 vạch còn 9 vạch — phần tăng là 9 LẦN số cũ, không phải 10!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 18,
@@ -169,38 +109,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K2",
-     "K4"
-    ],
-    "narration": "Thử lại dựng hiện trường: 3,6 bỏ phẩy thành 36; mức tăng 36 trừ 3,6 đúng bằng 32,4 — khớp! Nâng cấp: nếu số có HAI chữ số thập phân thì bỏ phẩy là gấp 100, vết chênh 99 phần — chia 99. Đếm phẩy quyết định chia 9 hay 99.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "Thử: 36 − 3,6 = 32,4 ✓",
-      "2 chữ số TP → ×100 → chênh 99 phần",
-      "74,25 : 99 = 0,75 → thử: 75 − 0,75 = 74,25 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Khắc dấu vân tay: mười lần trừ một lần — còn chín lần!",
-    "display": {
-     "type": "mantra_card",
-     "text": "MƯỜI LẦN TRỪ MỘT LẦN — CÒN CHÍN LẦN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -514,106 +422,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B2.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "tăng 32,4 → số cũ = 32,4 : 10???",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Gấp 10 lần thì chia 10 — thủ phạm là 3,24!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B2_M3_F1.png",
-   "sha256_16": "f9179321d4d730aa"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Bài ngược thêm – xóa: chìa khóa 9 lần / 99 lần",
-    "steps": [
-     {
-      "text": "Thử: 36 − 3,6 = 32,4"
-     },
-     {
-      "text": "2 chữ số TP → ×100 → chênh 99 phần"
-     },
-     {
-      "text": "74,25 : 99 = 0,75 → thử: 75 − 0,75 = 74,25"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B2_M3_F2.png",
-   "sha256_16": "957466b5920e0bd0"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "text": "Khi một số bị gấp lên 10 lần (bỏ phẩy 1 chữ số thập phân, thêm 0 đuôi tự nhiên…), phần TĂNG THÊM = 10 lần − 1 lần = 9 LẦN số cũ.",
-      "tone": "navy"
-     },
-     {
-      "text": "Gấp 100 lần (bỏ phẩy 2 chữ số thập phân) thì phần tăng = 99 lần số cũ.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MƯỜI LẦN TRỪ MỘT LẦN — CÒN CHÍN LẦN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B2_M3_F3.png",
-   "sha256_16": "0cff0bdb0a361a20"
-  },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "BỎ PHẨY 1 CHỮ SỐ → TĂNG THÊM 32,4 ĐƠN VỊ",
-    "bars": [
-     {
-      "name": "số cũ",
-      "units": 1,
-      "label": "số cũ = ?"
-     },
-     {
-      "name": "số mới",
-      "units": 10,
-      "label": "gấp 10 lần"
-     }
-    ],
-    "brace": {
-     "text": "phần tăng = 9 lần số cũ = 32,4 → số cũ = 32,4 : 9 = 3,6"
-    },
-    "note": "Thử lại: 36 − 3,6 = 32,4 ✓ · bỏ phẩy 2 chữ số thì chia cho 99"
-   },
-   "caption": "Chìa khóa của bài ngược: phần tăng luôn là 9 lần (hoặc 99 lần) số cũ",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B2_M3_F4.png",
-   "sha256_16": "ba9b567464f1b43c"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B02",
@@ -626,5 +435,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B2_M3_giang.mp4"
  }
 }
