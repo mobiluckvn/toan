@@ -9278,7 +9278,131 @@ def kb5_dem_hoac(b):
     ]
 
 
+def kb5_danh_trang_xuoi(b):
+    """L5·B8·M1 Đếm chữ số đánh trang — ba vùng và hai mốc vàng."""
+    return [
+        _c('bia', 'Đánh số trang tốn bao nhiêu chữ số', so_bai(b),
+           loi=['Dán số cho từng trang một cuốn sách. Tốn bao nhiêu chữ số dán.']),
+        _c('de_toan', 'Đề bài', de='Cuốn sách 256 trang cần bao nhiêu chữ số?',
+           loi=['Cuốn sách hai trăm năm mươi sáu trang cần bao nhiêu chữ số dán.']),
+        _c('y_toan', 'Chia sách làm BA vùng',
+           'trang 1–9  ·  trang 10–99  ·  trang 100 trở lên', buoc=1, soBuoc=3,
+           loi=['Chia sách làm ba vùng, vì mỗi vùng dùng thẻ dán khác cỡ.']),
+        _c('y_toan', 'Hai mốc vàng phải thuộc lòng',
+           'hết trang 9: 9 chữ số   ·   hết trang 99: 189 chữ số', buoc=2, soBuoc=3,
+           loi=['Hai mốc vàng phải thuộc lòng. Hết trang chín là chín chữ số.',
+                'Vùng hai có chín mươi trang, mỗi trang hai chữ số. Nên hết trang chín '
+                'mươi chín là một trăm tám mươi chín.']),
+        _c('y_toan', 'Vùng ba đếm bằng công thức đoạn',
+           'từ 100 đến 256: (256 − 100) + 1 = 157 trang', buoc=3, soBuoc=3,
+           loi=['Vùng ba đếm bằng công thức đoạn của bài trước, được một trăm năm '
+                'mươi bảy trang.']),
+        _c('cong_thuc', 'Ghép lại thành đáp số',
+           congThuc='189 + 157 × 3 = 189 + 471 = 660 chữ số',
+           thay='mỗi trang vùng ba tốn ba chữ số, cộng vào mốc 189',
+           loi=['Ghép lại. Một trăm năm bảy trang nhân ba, được bốn trăm bảy mươi '
+                'mốt.',
+                'Cộng mốc một trăm tám mươi chín, được sáu trăm sáu mươi chữ số.']),
+        _c('tach_so', 'Bẫy ranh giới', so='100', sang=[1, 2, 3],
+           phep='trang 100 đã tốn BA chữ số',
+           chuPhu='Cửa ngăn giữa các vùng nằm ở 9 và 99, không ở số tròn.',
+           loi=['Đây là bẫy ranh giới. Trang một trăm đã tốn ba chữ số rồi.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='ranh giới vùng ở 9 – 99 – 999, KHÔNG ở số tròn',
+           thay='vì trang 100 đã là cư dân đầu tiên của vùng ba chữ số',
+           loi=['Con nhớ câu này. Ranh giới vùng nằm ở chín, chín mươi chín, chín trăm '
+                'chín mươi chín.',
+                'Không nằm ở số tròn, vì trang một trăm đã là cư dân của vùng ba chữ '
+                'số.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_danh_trang_nguoc(b):
+    """L5·B8·M2 Biết số chữ số, tìm số trang — trừ vùng, chia, cộng mốc."""
+    return [
+        _c('bia', 'Biết số chữ số, tìm số trang', so_bai(b),
+           loi=['Đề cho biết đã dùng hết bao nhiêu chữ số, hỏi sách dày mấy trang.']),
+        _c('de_toan', 'Đề bài', de='Dùng hết 660 chữ số dán trang. Sách dày mấy trang?',
+           loi=['Dùng hết sáu trăm sáu mươi chữ số. Hỏi sách dày bao nhiêu trang.',
+                'Nhiều bạn chia luôn cho ba. Sai ngay từ đó.']),
+        _c('y_toan', 'Vì sao KHÔNG chia 3 ngay từ đầu?',
+           'Vùng 1 dùng thẻ 1 chữ số, vùng 2 dùng thẻ 2 — chia sớm là gán oan cho chúng',
+           buoc=1, soBuoc=3,
+           loi=['Vì sao không chia ba ngay từ đầu. Vùng một dùng thẻ một chữ số, '
+                'vùng hai dùng thẻ hai.',
+                'Chia ba ngay là gán oan cho chúng dùng thẻ ba chữ số.']),
+        _c('y_toan', 'Nhịp 1 — TRỪ hai vùng đầu ra',
+           '660 − 9 = 651  →  651 − 180 = 471', buoc=2, soBuoc=3,
+           loi=['Nhịp một, trừ hai vùng đầu ra. Trừ chín rồi trừ một trăm tám mươi, '
+                'còn bốn trăm bảy mươi mốt.',
+                'Nay mới toàn thẻ ba chữ số.']),
+        _c('y_toan', 'Nhịp 2 — CHIA cho 3', '471 : 3 = 157 trang', buoc=3, soBuoc=3,
+           loi=['Nhịp hai, chia cho ba. Bốn trăm bảy mốt chia ba, được một trăm năm '
+                'mươi bảy trang.']),
+        _c('y_toan', 'Nhịp 3 — CỘNG mốc trở lại', '157 + 99 = 256 trang',
+           loi=['Nhịp ba, cộng mốc trở lại, được hai trăm năm mươi sáu trang.',
+                'Vì con số vừa chia mới chỉ là số trang của riêng vùng ba.']),
+        _c('y_toan', 'Hai cú trượt kinh điển',
+           'chia sớm khi chưa trừ vùng  ·  chia xong quên cộng mốc',
+           loi=['Hai cú trượt kinh điển. Chia sớm khi chưa trừ vùng, và chia xong '
+                'quên cộng mốc.']),
+        _c('cong_thuc', 'Ba nhịp, ghi thành ba dòng',
+           congThuc='TRỪ vùng  →  CHIA  →  CỘNG mốc',
+           thay='và luôn thử lại bằng phép đếm xuôi của bài trước',
+           loi=['Con nhớ ba nhịp, ghi thành ba dòng. Trừ vùng, chia, cộng mốc.',
+                'Rồi thử lại bằng phép đếm xuôi của bài trước.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_dinh_vi_chu_so(b):
+    """L5·B8·M3 Chữ số thứ n của dãy — hai cửa đọc số dư."""
+    return [
+        _c('bia', 'Chữ số thứ mấy là chữ số nào', so_bai(b),
+           loi=['Viết liền các số lại thành một dãy dài, rồi hỏi chữ số ở một vị trí '
+                'là chữ số gì.']),
+        _c('de_toan', 'Đề bài', de='Dãy 123456789101112… — chữ số thứ 200 là chữ số nào?',
+           loi=['Hỏi chữ số thứ hai trăm của dãy ấy là chữ số nào.']),
+        _c('y_toan', 'Bước 1 — trừ mốc để biết đang ở vùng nào',
+           '200 > 189  →  đã sang vùng 3 chữ số  ·  200 − 189 = 11', buoc=1, soBuoc=3,
+           loi=['Bước một, trừ mốc. Hai trăm lớn hơn một tám chín nên đã sang vùng ba '
+                'chữ số, còn dư mười một.']),
+        _c('y_toan', 'Bước 2 — chia cho cỡ thẻ, LẤY CẢ SỐ DƯ',
+           '11 : 3 = 3 dư 2', buoc=2, soBuoc=3,
+           loi=['Bước hai, chia cho cỡ thẻ. Mười một chia ba bằng ba dư hai.',
+                'Đi trọn ba số, rồi bước thêm hai chữ số.']),
+        _c('y_toan', 'Đi trọn 3 số kể từ mốc 99', '100 · 101 · 102 — dừng ở 102',
+           buoc=3, soBuoc=3,
+           loi=['Đi trọn ba số kể từ mốc chín mươi chín, là một trăm, một linh một, '
+                'một linh hai.']),
+        _c('y_toan', 'Bước 3 — DƯ 2 nên bước vào số KẾ TIẾP',
+           'số kế là 103 · lấy chữ số thứ 2 của nó  →  chữ số 0',
+           loi=['Bước ba. Dư hai nên phải bước vào số kế tiếp là một linh ba.',
+                'Lấy chữ số thứ hai của nó, chính là chữ số không.']),
+        _c('y_toan', 'Thử một vị trí xa hơn',
+           '2026 − 189 = 1837 · 1837 : 3 = 612 dư 1  →  số kế 712, lấy chữ số đầu',
+           loi=['Thử một vị trí xa hơn. Trừ mốc rồi chia ba, được sáu trăm mười hai '
+                'dư một.',
+                'Đi trọn tới số bảy trăm mười một, rồi lấy chữ số đầu của số kế.']),
+        _c('cong_thuc', 'HAI CỬA đọc số dư — đây là chỗ hỏng',
+           congThuc='dư 0 → chữ số CUỐI của số vừa đi trọn  ·  dư r → chữ số thứ r của số KẾ',
+           thay='dư khác 0 nghĩa là kim đã RỜI số cũ, đang đứng giữa số mới',
+           loi=['Hai cửa đọc số dư, đây là chỗ hỏng.',
+                'Dư không thì lấy chữ số cuối của số vừa đi trọn.',
+                'Dư khác không thì kim đã rời số cũ, phải lấy chữ số thứ ấy của số kế '
+                'tiếp.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B8.M1': kb5_danh_trang_xuoi,
+    'DL:KSN5Q1.B8.M2': kb5_danh_trang_nguoc,
+    'DL:KSN5Q1.B8.M3': kb5_dinh_vi_chu_so,
     'DL:KSN5Q1.B7.M1': kb5_hang_rao_coc,
     'DL:KSN5Q1.B7.M2': kb5_tu_khac_giua,
     'DL:KSN5Q1.B7.M3': kb5_dem_hoac,

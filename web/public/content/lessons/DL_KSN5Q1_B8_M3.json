@@ -35,24 +35,7 @@
   "kidText": "Con chỉ ra được chữ số thứ 200 của dãy 1234… là số mấy và nó thuộc số nào, bằng một phép chia có dư."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Dãy 123456… ghép mọi số liền nhau; vị trí n bé hơn hoặc bằng 9 nằm ở vùng một; 9 < n bé hơn hoặc bằng 189 ở vùng hai (trừ 9 rồi chia 2); n > 189 ở vùng ba (trừ 189 rồi chia 3)."
-   },
-   {
-    "id": "K2",
-    "text": "Phép chia có dư định vị: thương = số con số ĐI TRỌN kể từ đầu vùng; số dư cho biết đã bước thêm mấy chữ số vào con số kế."
-   },
-   {
-    "id": "K3",
-    "text": "HAI CỬA đọc dư: dư 0 → lấy chữ số CUỐI của số vừa đi trọn; dư r → lấy chữ số THỨ r của số kế tiếp."
-   },
-   {
-    "id": "K4",
-    "text": "Tìm 'số kế tiếp' của vùng ba: số thứ k sau mốc 99 là 99 + k (đi trọn k số nghĩa là dừng ở số 99 + k)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: MÁY ĐỊNH VỊ của thư viện. Nhập vị trí n, máy chạy ba bước: (1) trừ mốc vùng để biết n rơi vào khu nào (9 hay 189); (2) chia phần còn lại cho cỡ thẻ của khu (2 hoặc 3) — thương là số con số đã ĐI TRỌN, dư là số bước lấn sang con số kế; (3) mở đúng CỬA: dư 0 — kim chỉ ngay chữ số CUỐI của số vừa đi hết; dư r — kim bước r nhịp vào số mới. Lỗi kinh điển: dư 2 mà đọc 'chữ số cuối số cũ' — kim đang đứng GIỮA số mới cơ mà!",
   "canonicalExamples": [
    {
@@ -89,13 +72,8 @@
     "counterExample": "$200 : 3 = 66$ dư 2 → chỉ về số 67 — mà chữ số thứ 200 rõ ràng nằm ở vùng số ba chữ số."
    }
   ],
-  "vocabulary": [
-   "máy định vị",
-   "đi trọn / bước lấn",
-   "hai cửa đọc dư",
-   "kim chỉ giữa số mới"
-  ],
-  "mantra": "DƯ KHÔNG LẤY CUỐI SỐ CŨ — DƯ MẤY BƯỚC MẤY VÀO SỐ MỚI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -116,47 +94,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Trong dãy 123456789101112…, chữ số thứ 15 là chữ số nào, thuộc số nào?",
-    "display": {
-     "type": "story_panel",
-     "caption": "chữ số thứ 200 = ?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để khởi động máy định vị!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 48,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
-    ],
-    "narration": "Máy chạy ba bước cho n = 200. Bước một — trừ mốc: 200 trừ 189 còn 11 bước trong vùng ba. Bước hai — chia cỡ thẻ: 11 chia 3 bằng 3 DƯ 2: đi trọn ba số một trăm, một linh một, một linh hai — rồi bước thêm HAI nhịp vào số kế. Bước ba — mở cửa dư r: chữ số thứ HAI của số 103 — là chữ số KHÔNG!",
-    "display": {
-     "type": "locator_interactive",
-     "spec": {
-      "n": 200,
-      "steps": [
-       "200 − 189 = 11",
-       "11 : 3 = 3 dư 2",
-       "số kế 103 → chữ số thứ 2 = 0"
-      ],
-      "tape": "…100·101·102·1[0]3…"
-     }
-    },
-    "interaction": {
-     "type": "step_machine",
-     "successMessage": "Chữ số 0, thuộc số 103 — kim đứng GIỮA số mới, không phải cuối số cũ!"
-    }
-   },
    {
     "id": "C1",
     "kind": "checkpoint",
@@ -195,37 +132,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K4"
-    ],
-    "narration": "Trùm cuối cho máy: n bằng hai nghìn không trăm hai sáu. Trừ mốc: 1837. Chia ba: 612 dư 1. Đi trọn 612 số kể từ 100 — dừng ở số 99 cộng 612 bằng 711; bước MỘT nhịp vào số 712: chữ số đầu tiên của nó — số BẢY!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "2026 − 189 = 1837",
-      "1837 : 3 = 612 dư 1",
-      "đi trọn 100→711 · bước 1 vào 712 → chữ số 7"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: dư không lấy cuối số cũ — dư mấy bước mấy vào số mới!",
-    "display": {
-     "type": "mantra_card",
-     "text": "DƯ MẤY — BƯỚC MẤY VÀO SỐ MỚI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -577,107 +483,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B8.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "chữ số thứ 200 = ?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Chữ số thứ 200 á? Để tớ dò tay đếm từng ô… mới tới ô thứ 40 đã hoa mắt rồi!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B8_M3_F1.png",
-   "sha256_16": "8f29c6f1d8c9201e"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Máy định vị chữ số thứ n: chia có dư — hai cửa đọc dư",
-    "steps": [
-     {
-      "text": "2026 − 189 = 1837"
-     },
-     {
-      "text": "1837 : 3 = 612 dư 1"
-     },
-     {
-      "text": "đi trọn 100→711 · bước 1 vào 712 → chữ số 7"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B8_M3_F2.png",
-   "sha256_16": "7c523587dc11c35e"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "text": "Dãy 123456… ghép mọi số liền nhau; vị trí n bé hơn hoặc bằng 9 nằm ở vùng một; 9 < n bé hơn hoặc bằng 189 ở vùng hai (trừ 9 rồi chia 2); n > 189 ở vùng ba (trừ 189 rồi chia 3).",
-      "tone": "navy"
-     },
-     {
-      "label": "Phép chia có dư định vị",
-      "text": "thương = số con số ĐI TRỌN kể từ đầu vùng; số dư cho biết đã bước thêm mấy chữ số vào con số kế.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "DƯ KHÔNG LẤY CUỐI SỐ CŨ — DƯ MẤY BƯỚC MẤY VÀO SỐ MỚI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B8_M3_F3.png",
-   "sha256_16": "83fe72b4bbc82c5c"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CHỮ SỐ THỨ N — HAI CỬA ĐỌC SỐ DƯ",
-    "neutral": true,
-    "wrong": {
-     "head": "CỬA DƯ 0",
-     "steps": [
-      "15 − 9 = 6 · 6 : 2 = 3 dư 0"
-     ],
-     "result": "chữ số CUỐI của số 12"
-    },
-    "right": {
-     "head": "CỬA DƯ r",
-     "steps": [
-      "200 − 189 = 11 · 11 : 3 = 3 dư 2"
-     ],
-     "result": "chữ số thứ 2 của số 103"
-    },
-    "verdict": "Dư 0 → quay lại số vừa đi hết · dư r → bước r chữ số vào số kế"
-   },
-   "caption": "Trừ mốc vùng — chia có dư — rồi đọc dư đúng cửa",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B8_M3_F4.png",
-   "sha256_16": "fc6b9f6d3b582989"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B07"
@@ -688,5 +494,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B8_M3_giang.mp4"
  }
 }

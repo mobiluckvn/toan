@@ -34,24 +34,7 @@
   "kidText": "Con tính được đánh số trang một cuốn sách tốn bao nhiêu chữ số — chia làm ba vùng, thuộc hai mốc 9 và 189."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Ba vùng đánh trang: vùng 1 (trang 1–9): 9 trang × 1 chữ số = 9; vùng 2 (trang 10–99): 90 trang × $2 = 180$; vùng 3 (trang 100 trở đi): mỗi trang 3 chữ số."
-   },
-   {
-    "id": "K2",
-    "text": "Hai mốc vàng phải thuộc: hết trang 9 — 9 chữ số; hết trang 99 — $9 + 180 = 189$ chữ số."
-   },
-   {
-    "id": "K3",
-    "text": "Sách n trang (n lớn hơn hoặc bằng 100): tổng chữ số = 189 + (n − 99) × 3. Số trang vùng 3 đếm bằng công thức đoạn: từ 100 đến n có (n − 100) + 1 = n − 99 trang."
-   },
-   {
-    "id": "K4",
-    "text": "Ranh giới vùng nằm ở 9 – 99 – 999, KHÔNG nằm ở số tròn 10 – 100 – 1000: trang 100 đã là cư dân vùng ba chữ số."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: THƯ VIỆN HỌC VIỆN có ba khu kệ. KHU MỘT — trang 1 đến 9: mỗi trang đeo một thẻ tên MỘT chữ số, cả khu ngốn 9 thẻ. KHU HAI — trang 10 đến 99: mỗi trang đeo thẻ HAI chữ số, chín mươi trang ngốn 180 thẻ. KHU BA — từ trang 100: thẻ BA chữ số. Muốn biết cả sách ngốn bao nhiêu thẻ, đi qua từng khu và cộng lại. Cửa ngăn giữa các khu đặt ở 9 và 99 — trang 100 KHÔNG phải công dân khu hai; nó là trang đầu tiên của khu ba.",
   "canonicalExamples": [
    {
@@ -82,13 +65,8 @@
     "counterExample": "Đúng ra 1–100 dùng $9 + 180 + 3 = 192$ chữ số, không phải 200."
    }
   ],
-  "vocabulary": [
-   "ba khu kệ thư viện",
-   "thẻ tên 1–2–3 chữ số",
-   "hai mốc vàng 9 và 189",
-   "cửa ngăn ở 9 – 99 – 999"
-  ],
-  "mantra": "RANH GIỚI VÙNG Ở 9 – 99 – 999, KHÔNG Ở SỐ TRÒN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -110,66 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Đánh số trang từ 1 đến 99 cần dùng bao nhiêu chữ số?",
-    "display": {
-     "type": "story_panel",
-     "caption": "256 trang khoảng 512 chữ số??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để vào ba khu kệ!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Đi qua ba khu. KHU MỘT — trang 1 đến 9: chín thẻ một chữ số → 9. KHU HAI — trang 10 đến 99: chín mươi trang, mỗi trang hai thẻ → 180. Cộng hai khu: 189 — đây là MỐC VÀNG, khắc vào tim! Con điền số thẻ từng khu.",
-    "display": {
-     "type": "zone_table_interactive",
-     "spec": {
-      "zones": [
-       [
-        "1–9",
-        "9 trang × 1",
-        "9"
-       ],
-       [
-        "10–99",
-        "90 trang × 2",
-        "180"
-       ],
-       [
-        "100–…",
-        "mỗi trang × 3",
-        "?"
-       ]
-      ],
-      "goldenMarks": [
-       9,
-       189
-      ]
-     }
-    },
-    "interaction": {
-     "type": "fill_zone_counts",
-     "answerKey": {
-      "values": [
-       9,
-       180
-      ]
-     },
-     "successMessage": "9 + 180 = 189 — hết trang 99 là đúng 189 chữ số. Mốc vàng!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 18,
@@ -185,46 +103,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 32,
-    "teaches": [
-     "K4"
-    ],
-    "narration": "Bẫy ranh giới: 'trang 100 chỉ ngốn hai miếng dán thôi nhỉ?' — Nhìn kỹ: 1 · 0 · 0 — BA chữ số! Cửa ngăn giữa các khu đặt ở 9 và 99, không đặt ở số tròn: trang 100 là công dân ĐẦU TIÊN của khu ba.",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "trang 99",
-       "output": "2 chữ số",
-       "valid": true,
-       "reason": "công dân cuối khu hai"
-      },
-      {
-       "input": "trang 100",
-       "output": "3 chữ số",
-       "valid": true,
-       "reason": "công dân ĐẦU khu ba"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: ranh giới vùng ở chín — chín chín — chín chín chín, không ở số tròn!",
-    "display": {
-     "type": "mantra_card",
-     "text": "RANH GIỚI Ở 9 – 99 – 999!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -542,107 +420,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B8.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "256 trang khoảng 512 chữ số??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Mỗi trang chừng 2 chữ số, sách 256 trang thì tầm 512 chữ số!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B8_M1_F1.png",
-   "sha256_16": "e6cef1dcff8c6ca4"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "CA MẪU · mốc vàng 189 (ca nền)",
-    "formulas": [
-     {
-      "label": "ĐỀ",
-      "text": "Đánh số trang từ 1 đến 99 cần dùng bao nhiêu chữ số?",
-      "tone": "navy"
-     },
-     {
-      "label": "LỜI GIẢI",
-      "text": "Khu 1: 9 × 1 = 9. Khu 2: 90 × 2 = 180. Tổng: 9 + 180 = 189 chữ số.",
-      "tone": "teal"
-     }
-    ]
-   },
-   "caption": "Ca mẫu chuẩn của bài",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B8_M1_F2.png",
-   "sha256_16": "3527123a73e90538"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Ba vùng đánh trang",
-      "text": "9 trang × 1 chữ số = 9",
-      "tone": "navy"
-     },
-     {
-      "label": "Hai mốc vàng phải thuộc",
-      "text": "hết trang 9 — 9 chữ số; hết trang 99 — 9 + 180 = 189 chữ số.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "RANH GIỚI VÙNG Ở 9 – 99 – 999, KHÔNG Ở SỐ TRÒN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B8_M1_F3.png",
-   "sha256_16": "af02069408abb909"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "ĐÁNH SỐ TRANG SÁCH DÀY 256 TRANG",
-    "steps": [
-     {
-      "text": "Khu 1 · trang 1–9",
-      "sub": "9 trang × 1 chữ số = 9"
-     },
-     {
-      "text": "Khu 2 · trang 10–99",
-      "sub": "90 trang × 2 = 180 (mốc vàng 189)"
-     },
-     {
-      "text": "Khu 3 · trang 100–256",
-      "sub": "157 trang × 3 = 471"
-     }
-    ],
-    "note": "Tổng: 9 + 180 + 471 = 660 chữ số"
-   },
-   "caption": "Ba vùng · hai mốc vàng phải thuộc lòng: 9 và 189",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B8_M1_F4.png",
-   "sha256_16": "6053e0d5e759c1cb"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B07"
@@ -653,5 +431,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B8_M1_giang.mp4"
  }
 }
