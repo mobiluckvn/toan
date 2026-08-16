@@ -33,20 +33,7 @@
   "kidText": "Biểu thức hai bước thì bóc như bóc củ hành: khoanh khối chứa X, bóc vỏ ngoài trước, mỗi lớp một dòng."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "LUẬT CỦ HÀNH: khoanh cụm chứa X (X × 2) thành MỘT KHỐI; lớp vỏ NGOÀI cùng (+ 3,5) bóc trước bằng phép ngược; mỗi lớp viết MỘT DÒNG — vào tới lõi mới gỡ X."
-   },
-   {
-    "id": "K2",
-    "text": "Bài mẫu: X × $2 + 3,5 = 10,5$ → bóc vỏ cộng: X × $2 = 10,5 - 3,5 = 7$ → bóc vỏ nhân: X = $7 : 2 = 3,5$. Thử: $3,5  \\times  2 + 3,5 = 10,5$ ✓."
-   },
-   {
-    "id": "K3",
-    "text": "X bị kẹp giữa hai mốc thập phân (2,5 < X < 5,5, X tự nhiên): X phải VƯỢT mốc dưới và CHƯA CHẠM mốc trên — dấu < không lấy đầu mút; liệt kê: 3; 4; 5."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: BÓC CỦ HÀNH TÌM LÕI NGỌC. Biểu thức X × 2 + 3,5 = 10,5 là củ hành: lõi ngọc X nằm trong cùng, bọc lớp áo nhân-2, ngoài cùng là lớp áo cộng-3,5. Muốn lấy ngọc phải bóc từ NGOÀI vào: lớp cộng bóc trước (trừ đi 3,5), lộ ra X × 2 = 7; rồi bóc lớp nhân (chia 2): ngọc X = 3,5. Bóc từ trong ra là nát củ hành! Còn trò X BỊ KẸP: hai mốc 2,5 và 5,5 như hai bức tường — X là số tự nhiên đứng lọt giữa sân: phải BƯỚC QUA tường 2,5 (số 3 trở đi) và ĐỨNG TRƯỚC tường 5,5 (đến số 5) — điểm danh: 3, 4, 5.",
   "canonicalExamples": [
    {
@@ -77,14 +64,8 @@
     "counterExample": "Số $2 < 2,5$: còn kẹt sau tường — loại."
    }
   ],
-  "vocabulary": [
-   "củ hành lõi ngọc",
-   "khoanh khối chứa X",
-   "bóc vỏ ngoài trước",
-   "hai bức tường mốc",
-   "điểm danh trên tia số"
-  ],
-  "mantra": "KHOANH KHỐI — BÓC VỎ NGOÀI TRƯỚC, MỖI LỚP MỘT DÒNG!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -106,51 +87,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Tìm X: X × $2 + 3,5 = 10,5$.",
-    "display": {
-     "type": "story_panel",
-     "caption": "chia 2 trước… rồi 3,5 để đâu?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để khoanh khối!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Khoanh khối [X nhân 2] — coi như MỘT viên ngọc bọc vỏ. Lớp ngoài cùng: CỘNG 3,5 — bóc trước: X nhân 2 bằng 10,5 trừ 3,5 bằng BẢY. Dòng hai — bóc lớp nhân: X bằng 7 chia 2 bằng BA PHẨY NĂM. Thử: ba phẩy năm nhân hai cộng ba phẩy năm — đúng mười phẩy năm! Mỗi lớp một dòng, từ ngoài vào trong.",
-    "display": {
-     "type": "onion_peel_interactive",
-     "spec": {
-      "layers": [
-       "+ 3,5 (ngoài)",
-       "× 2 (trong)"
-      ],
-      "steps": [
-       "X × 2 = 10,5 − 3,5 = 7",
-       "X = 7 : 2 = 3,5"
-      ],
-      "check": "3,5 × 2 + 3,5 = 10,5 ✓"
-     }
-    },
-    "interaction": {
-     "type": "peel_layers",
-     "answerKey": {
-      "value": 3.5
-     },
-     "successMessage": "Bóc ngoài vào trong: X = 3,5 — củ hành nguyên vẹn!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -167,37 +103,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Trò thứ hai: X tự nhiên bị KẸP: 2,5 bé hơn X bé hơn 5,5. Hai bức tường dựng ở 2,5 và 5,5 — X phải BƯỚC QUA tường thấp: số 3 trở đi; và ĐỨNG TRƯỚC tường cao: đến số 5 thôi. Điểm danh trên tia số: BA — BỐN — NĂM, đủ ba bạn. Số 2 còn kẹt sau tường, số 6 vượt rào — loại cả hai!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "tường 2,5 |—— sân ——| tường 5,5",
-      "vượt 2,5 → từ 3 · chưa chạm 5,5 → đến 5",
-      "X ∈ {3; 4; 5}"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: khoanh khối — bóc vỏ ngoài trước, mỗi lớp một dòng!",
-    "display": {
-     "type": "mantra_card",
-     "text": "BÓC VỎ NGOÀI TRƯỚC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -484,107 +389,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B16.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "chia 2 trước… rồi 3,5 để đâu?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "10,5 chia 2 là 5,25… rồi 3,5 để đâu nhỉ?",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Câu hỏi mở bài",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B16_M2_F1.png",
-   "sha256_16": "249ac9f188ca75ba"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Bóc vỏ củ hành hai bước & đếm X bị kẹp giữa hai mốc",
-    "steps": [
-     {
-      "text": "tường 2,5 |—— sân ——| tường 5,5"
-     },
-     {
-      "text": "vượt 2,5 → từ 3 · chưa chạm 5,5 → đến 5"
-     },
-     {
-      "text": "X là 3, 4 hoặc 5"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B16_M2_F2.png",
-   "sha256_16": "ed98ad21a56d8ece"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "LUẬT CỦ HÀNH",
-      "text": "khoanh cụm chứa X (X × 2) thành MỘT KHỐI",
-      "tone": "navy"
-     },
-     {
-      "label": "Bài mẫu",
-      "text": "3,5 × 2 + 3,5 = 10,5.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "KHOANH KHỐI — BÓC VỎ NGOÀI TRƯỚC, MỖI LỚP MỘT DÒNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B16_M2_F3.png",
-   "sha256_16": "835671556f390fdb"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "BÓC VỎ CỦ HÀNH: X × 2 + 3,5 = 10,5",
-    "steps": [
-     {
-      "text": "Khoanh khối [X × 2]",
-      "sub": "coi cả cụm là MỘT khối"
-     },
-     {
-      "text": "Bóc vỏ CỘNG",
-      "sub": "X × 2 = 10,5 − 3,5 = 7 → X = 3,5."
-     },
-     {
-      "text": "Bóc vỏ NHÂN",
-      "sub": "X = 7 : 2 = 3,5"
-     }
-    ],
-    "note": "Mỗi lớp một dòng — bóc vỏ ngoài trước, đừng bóc nhảy cóc"
-   },
-   "caption": "Củ hành có mấy lớp thì bóc bấy nhiêu dòng",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B16_M2_F4.png",
-   "sha256_16": "1c4c43c4b34e2fd5"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B06"
@@ -595,5 +400,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B16_M2_giang.mp4"
  }
 }

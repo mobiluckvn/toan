@@ -10271,7 +10271,129 @@ def kb5_rut_nguyen_cum(b):
     ]
 
 
+def kb5_bang_chieu_nguoc(b):
+    """L5·B16·M1 Bảng chiều ngược — và hai ô X đứng SAU dấu."""
+    return [
+        _c('bia', 'Gỡ X ra khỏi phép tính', so_bai(b),
+           loi=['Tìm X thì làm phép ngược lại. Nhưng có hai chỗ phải cẩn thận.']),
+        _c('de_toan', 'Đề bài', de='12,6 − X = 4,8',
+           loi=['Mười hai phẩy sáu trừ X bằng bốn phẩy tám.',
+                'Nhiều bạn nói trừ thì gỡ bằng cộng, ra mười bảy phẩy tư. Sai.']),
+        _c('y_toan', 'Nhìn VỊ TRÍ của X trước đã',
+           'X đứng SAU dấu trừ  →  X chính là SỐ TRỪ', buoc=1, soBuoc=3,
+           loi=['Nhìn vị trí của X trước đã. X đứng sau dấu trừ, nên X chính là số '
+                'trừ.']),
+        _c('cong_thuc', 'Số trừ thì gỡ bằng phép TRỪ',
+           congThuc='X = 12,6 − 4,8 = 7,8',
+           thay='số trừ = số bị trừ − hiệu, chứ không phải cộng',
+           loi=['Số trừ bằng số bị trừ trừ hiệu. Mười hai phẩy sáu trừ bốn phẩy tám, '
+                'được bảy phẩy tám.']),
+        _c('y_toan', 'Bốn ô THUẬN — X đứng trước dấu',
+           'X + a = b → trừ  ·  X − a = b → cộng  ·  X × a = b → chia  ·  X : a = b → nhân',
+           buoc=2, soBuoc=3,
+           loi=['Bốn ô thuận, khi X đứng trước dấu. Cộng thì gỡ bằng trừ, trừ thì gỡ '
+                'bằng cộng.',
+                'Nhân thì gỡ bằng chia, chia thì gỡ bằng nhân.']),
+        _c('y_toan', 'Hai ô CẢNH GIÁC — X đứng sau dấu',
+           'a − X = b  →  X = a − b     ·     a : X = b  →  X = a : b',
+           buoc=3, soBuoc=3,
+           loi=['Hai ô cảnh giác, khi X đứng sau dấu trừ hoặc sau dấu chia.',
+                'Cả hai ô ấy đều gỡ bằng chính phép cũ, không đổi phép.']),
+        _c('y_toan', 'Làm thử hai ô thuận',
+           'X × 3,5 = 14  →  X = 4     ·     X : 2,5 = 4,2  →  X = 10,5',
+           loi=['Làm thử. X nhân ba phẩy năm bằng mười bốn, nên X bằng bốn.',
+                'X chia hai phẩy năm bằng bốn phẩy hai, nên X bằng mười phẩy năm.']),
+        _c('cong_thuc', 'Nghi thức chốt bài',
+           congThuc='xem VỊ TRÍ  →  tra bảng  →  THỬ LẠI bằng phép xuôi',
+           thay='thay X vào đề mà lệch thì chắc chắn gỡ nhầm chiều',
+           loi=['Con nhớ nghi thức. Xem vị trí của X, tra bảng, rồi thử lại bằng phép '
+                'xuôi.',
+                'Thay X vào đề mà lệch thì chắc chắn gỡ nhầm chiều.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_boc_vo_cu_hanh(b):
+    """L5·B16·M2 Bóc vỏ ngoài trước, và đếm X kẹp giữa hai mốc."""
+    return [
+        _c('bia', 'X nằm trong hai lớp vỏ', so_bai(b),
+           loi=['X đi qua hai phép tính. Bóc lớp nào trước mới đúng.']),
+        _c('de_toan', 'Đề bài', de='X × 2 + 3,5 = 10,5',
+           loi=['X nhân hai, cộng ba phẩy năm, bằng mười phẩy năm.',
+                'Nhiều bạn chia hai ngay. Sai từ đó.']),
+        _c('y_toan', 'Khoanh cụm chứa X thành MỘT khối',
+           'coi (X × 2) như một viên ngọc bọc trong vỏ', buoc=1, soBuoc=3,
+           loi=['Khoanh cụm chứa X thành một khối. Coi X nhân hai như một viên ngọc '
+                'bọc trong vỏ.']),
+        _c('y_toan', 'Lớp vỏ NGOÀI cùng bóc trước',
+           'vỏ ngoài là "+ 3,5"  →  X × 2 = 10,5 − 3,5 = 7', buoc=2, soBuoc=3,
+           loi=['Lớp vỏ ngoài cùng là cộng ba phẩy năm, nên bóc nó trước.',
+                'Mười phẩy năm trừ ba phẩy năm, được bảy. Nay còn X nhân hai bằng '
+                'bảy.']),
+        _c('y_toan', 'Rồi mới bóc lớp trong', 'X = 7 : 2 = 3,5', buoc=3, soBuoc=3,
+           loi=['Rồi mới bóc lớp trong. Bảy chia hai, được ba phẩy năm.']),
+        _c('y_toan', 'Thử lại', '3,5 × 2 + 3,5 = 7 + 3,5 = 10,5 ✓',
+           loi=['Thử lại. Ba phẩy năm nhân hai được bảy, cộng ba phẩy năm, đúng bằng '
+                'mười phẩy năm.']),
+        _c('de_toan', 'Một dạng khác cùng chương',
+           de='X tự nhiên, 2,5 < X < 5,5 — có mấy giá trị?',
+           loi=['Một dạng khác. X là số tự nhiên, kẹp giữa hai phẩy năm và năm phẩy '
+                'năm.']),
+        _c('cong_thuc', 'Hai bức tường, đếm số đứng lọt giữa',
+           congThuc='X = 3 · 4 · 5  →  ba giá trị',
+           thay='vượt qua tường thấp, và chưa chạm tường cao',
+           loi=['Hai bức tường. X phải vượt qua tường thấp nên từ ba trở đi.',
+                'Và chưa chạm tường cao nên dừng ở năm. Vậy có ba giá trị.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tim_x_chia_co_du(b):
+    """L5·B16·M3 Tìm X trong phép chia có dư — hai ghế khác nhau."""
+    return [
+        _c('bia', 'Tìm X trong phép chia có dư', so_bai(b),
+           loi=['X nằm trong một phép chia có dư. X ngồi ghế nào thì làm khác nhau.']),
+        _c('de_toan', 'Ghế thứ nhất', de='X : 4 = 5 dư 3',
+           loi=['Ghế thứ nhất. X chia bốn bằng năm dư ba.',
+                'Nhiều bạn nhân luôn bốn với năm, ra hai mươi. Thiếu mất phần dư.']),
+        _c('y_toan', 'Đọc thành một câu chuyện',
+           'X gồm 5 túi, mỗi túi 4 viên, VÀ còn 3 viên lẻ', buoc=1, soBuoc=3,
+           loi=['Đọc thành một câu chuyện. X gồm năm túi, mỗi túi bốn viên, và còn ba '
+                'viên lẻ.']),
+        _c('cong_thuc', 'Nên thương thì NHÂN, dư thì CỘNG',
+           congThuc='X = 4 × 5 + 3 = 23',
+           thay='bỏ rơi số dư là mất đúng ba viên lẻ ấy',
+           loi=['Nên thương thì nhân, dư thì cộng. Bốn nhân năm cộng ba, bằng hai mươi '
+                'ba.',
+                'Thử lại, hai mươi ba chia bốn bằng năm dư ba. Đúng.']),
+        _c('de_toan', 'Ghế thứ hai khó hơn', de='39 : X = 7 dư 4',
+           loi=['Ghế thứ hai khó hơn. Ba mươi chín chia X bằng bảy dư bốn.',
+                'Nhiều bạn chia thẳng ba mươi chín cho bảy. Sai.']),
+        _c('y_toan', 'Nhịp 1 — nhặt phần lẻ ra trước',
+           '39 − 4 = 35 — đây mới là phần chia đều được', buoc=2, soBuoc=3,
+           loi=['Nhịp một, nhặt phần lẻ ra trước. Ba mươi chín trừ bốn, còn ba mươi '
+                'lăm.',
+                'Ba mươi lăm ấy mới là phần chia đều được.']),
+        _c('y_toan', 'Nhịp 2 — chia cho thương', '35 : 7 = 5  →  X = 5',
+           buoc=3, soBuoc=3,
+           loi=['Nhịp hai, chia cho thương. Ba mươi lăm chia bảy, được năm. Vậy X bằng '
+                'năm.']),
+        _c('cong_thuc', 'Nhịp 3 — KIỂM số dư, đừng bỏ qua',
+           congThuc='dư 4 < số chia 5  ✓',
+           thay='dư mà bằng hoặc lớn hơn X thì đáp số ấy phạm luật nền',
+           loi=['Nhịp ba, kiểm số dư. Dư bốn phải bé hơn số chia là năm. Đúng.',
+                'Dư mà bằng hoặc lớn hơn X thì đáp số ấy phạm luật nền, phải bỏ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B16.M1': kb5_bang_chieu_nguoc,
+    'DL:KSN5Q1.B16.M2': kb5_boc_vo_cu_hanh,
+    'DL:KSN5Q1.B16.M3': kb5_tim_x_chia_co_du,
     'DL:KSN5Q1.B15.M1': kb5_rut_cheo_day_chuyen,
     'DL:KSN5Q1.B15.M2': kb5_hai_ho_tich,
     'DL:KSN5Q1.B15.M3': kb5_rut_nguyen_cum,

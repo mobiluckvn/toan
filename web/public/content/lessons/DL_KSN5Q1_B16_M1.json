@@ -34,20 +34,7 @@
   "kidText": "Con tìm được X trong bốn phép tính — nhìn X đứng trước hay sau dấu rồi mới gỡ, xong thử lại vào đề."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bảng chiều ngược sáu ô: X + a = b → X = b − a · X − a = b → X = b + a · X × a = b → X = b : a · X : a = b → X = b × a — bốn ô X đứng TRƯỚC dấu, gỡ bằng phép ngược."
-   },
-   {
-    "id": "K2",
-    "text": "Hai ô cảnh giác — X đứng SAU dấu: a − X = b → X = a − b (số trừ = số bị trừ − hiệu); a : X = b → X = a : b (số chia = số bị chia : thương). KHÔNG lấy phép ngược theo quán tính!"
-   },
-   {
-    "id": "K3",
-    "text": "Nghi thức THỬ LẠI: thay X vừa tìm vào đề, tính xuôi — khớp thì ký tên; lệch là gỡ nhầm chiều."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: TRÒ GỠ NÚT DÂY. Mỗi phép tính là một nút thắt: muốn gỡ phải kéo NGƯỢC chiều đã thắt — cộng gỡ bằng trừ, nhân gỡ bằng chia. Nhưng có hai nút GIẢ DẠNG: X đứng SAU dấu trừ (12,6 − X) và SAU dấu chia (15 : X) — kéo theo quán tính \"tìm số trừ thì cộng\" là nút càng chặt! Với hai nút này, tra BẢNG treo tường: số trừ = số bị trừ − hiệu; số chia = số bị chia : thương. Và thợ gỡ nút chuyên nghiệp bao giờ cũng GIẬT THỬ sợi dây sau khi gỡ: thay X vào đề tính xuôi — trơn tru mới nộp.",
   "canonicalExamples": [
    {
@@ -78,13 +65,8 @@
     "counterExample": "X = 45 cho 15 : X = 3? Thử: $15 : 45$ = $\\frac{1}{3}$ ≠ 3 — nút thắt chặt hơn!"
    }
   ],
-  "vocabulary": [
-   "trò gỡ nút dây",
-   "bảng chiều ngược sáu ô",
-   "nút giả dạng (X sau dấu)",
-   "giật thử sợi dây (thử lại)"
-  ],
-  "mantra": "X SAU DẤU — CHIỀU GỠ ĐỔI: TRA BẢNG, THỬ LẠI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -106,63 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Tìm X: X + $3,7 = 10$ và X × $3,5 = 14$.",
-    "display": {
-     "type": "story_panel",
-     "caption": "X = $12,6 + 4,8$??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để nhìn vị trí X!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Nhìn VỊ TRÍ đã: X đứng SAU dấu trừ — nó là SỐ TRỪ, không phải số bị trừ! Tra bảng treo tường: số trừ bằng số bị trừ TRỪ hiệu: 12,6 trừ 4,8 bằng BẢY PHẨY TÁM. Giật thử: 12,6 trừ 7,8 đúng 4,8 — trơn tru! Nút anh em: 15 chia X bằng 3 — X là SỐ CHIA: X bằng 15 CHIA 3 bằng 5, tuyệt đối không nhân!",
-    "display": {
-     "type": "reverse_table_interactive",
-     "spec": {
-      "table6": [
-       "X+a=b→b−a",
-       "X−a=b→b+a",
-       "X×a=b→b:a",
-       "X:a=b→b×a",
-       "a−X=b→a−b ⚠",
-       "a:X=b→a:b ⚠"
-      ],
-      "tasks": [
-       [
-        "12,6 − X = 4,8",
-        "7,8"
-       ],
-       [
-        "15 : X = 3",
-        "5"
-       ]
-      ]
-     }
-    },
-    "interaction": {
-     "type": "pick_row_and_solve",
-     "answerKey": {
-      "values": [
-       7.8,
-       5
-      ]
-     },
-     "successMessage": "X sau dấu — tra hai ô cảnh giác: 7,8 và 5!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -178,38 +103,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Chạy đủ bốn ô thuận: X nhân 3,5 bằng 14 — chia: X bằng BỐN. X chia 2,5 bằng 4,2 — X đứng TRƯỚC dấu chia: nhân lại: 2,5 nhân 4,2 bằng MƯỜI PHẨY NĂM. Và nghi thức chốt mọi bài: THỬ LẠI — thay X vào đề tính xuôi, khớp mới ký tên. Thử lại chỉ tốn 5 giây mà bắt được mọi cú gỡ nhầm chiều!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "X × 3,5 = 14 → X = 4 (thử ✓)",
-      "X : 2,5 = 4,2 → X = 10,5 (thử ✓)",
-      "luật vàng: THỬ LẠI trước khi nộp"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: X sau dấu — chiều gỡ đổi: tra bảng, thử lại!",
-    "display": {
-     "type": "mantra_card",
-     "text": "X SAU DẤU — TRA BẢNG, THỬ LẠI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -519,106 +412,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B16.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "X = 12,6 + 4,8??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Tìm X thì làm phép ngược — trừ gỡ bằng cộng: X bằng 12,6 cộng 4,8 bằng 17,4!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B16_M1_F1.png",
-   "sha256_16": "f10130f8bbddddeb"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Bảng chiều ngược bốn phép: cảnh giác X đứng sau dấu trừ, dấu chia",
-    "steps": [
-     {
-      "text": "X × 3,5 = 14 → X = 4 (thử )"
-     },
-     {
-      "text": "X : 2,5 = 4,2 → X = 10,5 (thử )"
-     },
-     {
-      "text": "luật vàng: THỬ LẠI trước khi nộp"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B16_M1_F2.png",
-   "sha256_16": "8183ad8b2894b856"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "text": "Bảng chiều ngược sáu ô? Hai ô cảnh giác?",
-      "tone": "navy"
-     },
-     {
-      "label": "Hai ô cảnh giác",
-      "text": "X đứng SAU dấu: a − X = b → X = a − b (số trừ = số bị trừ − hiệu); a : X = b → X = a : b (số chia = số bị chia : thương). KHÔNG lấy phép ngược theo quán tính!",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "X SAU DẤU — CHIỀU GỠ ĐỔI: TRA BẢNG, THỬ LẠI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B16_M1_F3.png",
-   "sha256_16": "28572e3fc4f2a22f"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "TÌM X: 12,6 − X = 4,8 (X ĐỨNG SAU DẤU TRỪ)",
-    "wrong": {
-     "head": "CỘNG THEO QUÁN TÍNH",
-     "steps": [
-      "X = 12,6 + 4,8"
-     ],
-     "result": "17,4 ✗"
-    },
-    "right": {
-     "head": "X LÀ SỐ TRỪ",
-     "steps": [
-      "X = 12,6 − 4,8"
-     ],
-     "result": "7,8 ✓"
-    },
-    "verdict": "Thử lại: 12,6 − 7,8 = 4,8 ✓ — luôn thử là bắt được ngay"
-   },
-   "caption": "Nhìn VỊ TRÍ của X so với dấu trước khi gỡ",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B16_M1_F4.png",
-   "sha256_16": "45247ddafeb8526b"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B06"
@@ -630,5 +424,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Bảng chiều ngược bốn phép: cảnh giác X đứng sau dấu trừ, dấu chia"
+ "titleDay": "Bảng chiều ngược bốn phép: cảnh giác X đứng sau dấu trừ, dấu chia",
+ "video": {
+  "giang": "DL_KSN5Q1_B16_M1_giang.mp4"
+ }
 }
