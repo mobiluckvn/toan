@@ -34,20 +34,7 @@
   "kidText": "Con tách một phân số thành hiệu hai phân số, rồi cộng cả dãy dài chỉ trong vài dòng — như xô đổ một hàng domino."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Phân số mẫu là tích hai số LIỀN KỀ, tử 1: $\\frac{1}{n \\times (n + 1)}$ = $\\frac{1}{n}$ − $\\frac{1}{n + 1}$. Kiểm bằng quy đồng: $\\frac{1}{2}$ − $\\frac{1}{3}$ = $\\frac{3}{6}$ − $\\frac{2}{6}$ = $\\frac{1}{6}$ = $\\frac{1}{2 \\times 3}$ ✓."
-   },
-   {
-    "id": "K2",
-    "text": "CÚ SẬP DOMINO: viết cả dãy thành các hiệu — các cặp giữa (−$\\frac{1}{2}$ rồi +$\\frac{1}{2}$; −$\\frac{1}{3}$ rồi +$\\frac{1}{3}$…) tự triệt tiêu nhau — chỉ còn MẢNH ĐẦU trừ MẢNH CUỐI."
-   },
-   {
-    "id": "K3",
-    "text": "Nghi thức DỌN HIỆN TRƯỜNG hai bước sau cú sập: (1) TÍNH GỌN hiệu hai đầu ra một phân số; (2) TỐI GIẢN nếu còn rút được — đáp số luôn tối giản."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HÀNG DOMINO PHÂN SỐ. Mỗi quân 1/(n × (n + 1)) thực ra là một quân domino hai mặt: mặt trước ghi +1/n, mặt sau ghi −1/(n + 1). Xếp cả dãy sát nhau: mặt sau quân này (−1/2) áp đúng mặt trước quân kế (+1/2) — đẩy nhẹ quân đầu là RẦM: các cặp giữa đổ đè lên nhau triệt tiêu sạch, cả hàng chỉ trơ lại mặt trước quân ĐẦU (1) và mặt sau quân CUỐI (−1/10). Nhưng nghề chơi domino có luật: SẬP XONG PHẢI DỌN — cầm hai mảnh sống sót tính ra 9/10, soi xem còn rút gọn được không, rồi mới ký tên nộp bài. Để nguyên đống '1 − 1/10' giữa nhà là Cáo Đề lập biên bản!",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "Đáp '1 − $\\frac{1}{10}$' và '$\\frac{9}{10}$' cùng giá trị nhưng chỉ $\\frac{9}{10}$ được chấm trọn điểm."
    }
   ],
-  "vocabulary": [
-   "quân domino hai mặt",
-   "cặp giữa triệt tiêu",
-   "mảnh đầu – mảnh cuối sống sót",
-   "dọn hiện trường",
-   "ký tên nộp bài"
-  ],
-  "mantra": "SẬP XONG PHẢI DỌN — ĐÁP SỐ LUÔN TỐI GIẢN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -107,49 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Tính: $\\frac{1}{1 \\times 2}$ + $\\frac{1}{2 \\times 3}$ + $\\frac{1}{3 \\times 4}$.",
-    "display": {
-     "type": "story_panel",
-     "caption": "9 phân số — 60 giây?!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để búng quân đầu!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Mỗi quân là phân số HAI MẶT: $\\frac{1}{2 \\times 3}$ mở ra thành $\\frac{1}{2}$ trừ $\\frac{1}{3}$ — con kiểm bằng quy đồng: ba phần sáu trừ hai phần sáu đúng bằng một phần sáu! Xếp cả dãy: trừ $\\frac{1}{2}$ áp sát cộng $\\frac{1}{2}$, trừ $\\frac{1}{3}$ áp sát cộng $\\frac{1}{3}$… Búng quân đầu — RẦM — các cặp giữa triệt tiêu sạch, chỉ trơ lại số 1 ở đầu hàng và trừ $\\frac{1}{10}$ ở cuối hàng!",
-    "display": {
-     "type": "domino_chain_interactive",
-     "spec": {
-      "pairs": [
-       "1−1/2",
-       "1/2−1/3",
-       "…",
-       "1/9−1/10"
-      ],
-      "survivors": [
-       "1",
-       "−1/10"
-      ]
-     }
-    },
-    "interaction": {
-     "type": "topple_chain",
-     "successMessage": "Chỉ mảnh đầu và mảnh cuối sống sót: 1 − 1/10!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -170,46 +108,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 38,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Trí Long hớn hở nộp bài: \"1 trừ $\\frac{1}{10}$!\" Cáo Đề lập biên bản ngay: hiện trường chưa dọn! Nghề domino có nghi thức hai bước: TÍNH GỌN — mười phần mười trừ một phần mười bằng CHÍN PHẦN MƯỜI; rồi SOI TỐI GIẢN — $\\frac{9}{10}$ hết rút được: giờ mới ký tên nộp bài. Gặp $\\frac{2}{10}$ mà nộp luôn cũng dính biên bản: phải dọn về $\\frac{1}{5}$!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "nộp '1 − 1/10'",
-       "output": "biên bản ✗",
-       "valid": false,
-       "reason": "chưa tính gọn"
-      },
-      {
-       "input": "dọn: 9/10 (tối giản)",
-       "output": "trọn điểm ✓",
-       "valid": true,
-       "reason": "nghi thức hai bước"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: sập xong phải dọn — đáp số luôn tối giản!",
-    "display": {
-     "type": "mantra_card",
-     "text": "SẬP XONG PHẢI DỌN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -545,116 +443,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B14.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "9 phân số — 60 giây?!",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Chín phân số lận! Thôi quy đồng mẫu chung vậy, tay tớ run rồi!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B14_M1_F1.png",
-   "sha256_16": "c08c5c2445912475"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "nộp '1 − 1/10'"
-     ],
-     "result": "biên bản"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "dọn: 9/10 (tối giản)"
-     ],
-     "result": "trọn điểm"
-    },
-    "verdict": "nghi thức hai bước"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B14_M1_F2.png",
-   "sha256_16": "470d7b09dea6efd1"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Phân số mẫu là tích hai số LIỀN KỀ, tử 1",
-      "text": "1/(n × (n + 1)) = 1/n − 1/(n + 1). Kiểm bằng quy đồng: 1/2 − 1/3 = 3/6 − 2/6 = 1/6 = 1/(2 × 3) .",
-      "tone": "navy"
-     },
-     {
-      "label": "CÚ SẬP DOMINO",
-      "text": "viết cả dãy thành các hiệu",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "SẬP XONG PHẢI DỌN — ĐÁP SỐ LUÔN TỐI GIẢN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B14_M1_F3.png",
-   "sha256_16": "d630e3a4d4f89fd4"
-  },
-  {
-   "archetype": "chain_cancel",
-   "params": {
-    "title": "CÚ SẬP DOMINO: 1/(1×2) + 1/(2×3) + 1/(3×4)",
-    "terms": [
-     "1",
-     "− 1/2",
-     "+ 1/2",
-     "− 1/3",
-     "+ 1/3",
-     "− 1/4"
-    ],
-    "cancel": [
-     1,
-     2,
-     3,
-     4
-    ],
-    "survive": [
-     0,
-     5
-    ],
-    "cancel_note": "−1/2 gặp +1/2 · −1/3 gặp +1/3 → triệt sạch",
-    "result": "chỉ còn 1 − 1/4 = 3/4",
-    "note": "Cả hàng chín quân cũng vậy: 1 − 1/10 = 9/10"
-   },
-   "caption": "Tách 1/(n×(n+1)) = 1/n − 1/(n+1) rồi để domino tự đổ",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B14_M1_F4.png",
-   "sha256_16": "0f616bdb0b53afe7"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B40"
@@ -665,5 +454,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B14_M1_giang.mp4"
  }
 }

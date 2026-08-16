@@ -10025,7 +10025,140 @@ def kb5_rut_thua_so_chung(b):
     ]
 
 
+def kb5_cu_sap_domino(b):
+    """L5·B14·M1 Tách phân số mẫu là tích hai số liền kề."""
+    return [
+        _c('bia', 'Cộng cả một dãy phân số', so_bai(b),
+           loi=['Cộng một dãy phân số rất dài. Có cách làm trong một phút.']),
+        _c('de_toan', 'Đề bài',
+           de='1/(1×2) + 1/(2×3) + … + 1/(9×10)',
+           loi=['Một phần một nhân hai, cộng một phần hai nhân ba, cộng mãi tới một '
+                'phần chín nhân mười.']),
+        _c('cong_thuc', 'Mỗi phân số tách được thành một HIỆU',
+           congThuc='1/(n × (n+1)) = 1/n − 1/(n+1)',
+           thay='vì mẫu là tích của hai số liền kề nhau',
+           loi=['Mỗi phân số ấy tách được thành một hiệu, vì mẫu là tích của hai số '
+                'liền kề.']),
+        _c('phan_so', 'Kiểm thử một quân bằng quy đồng', tu=1, mau=6,
+           nhan='1/(2×3)', chuPhu='1/2 − 1/3 = 3/6 − 2/6 = 1/6 ✓',
+           chuCuoi='Tách đúng thì hai vế bằng nhau.',
+           loi=['Kiểm thử một quân bằng quy đồng. Một phần hai trừ một phần ba.',
+                'Quy đồng thành ba phần sáu trừ hai phần sáu, đúng bằng một phần '
+                'sáu.']),
+        _c('y_toan', 'Viết cả dãy thành các hiệu thì có chuyện hay',
+           '(1 − 1/2) + (1/2 − 1/3) + (1/3 − 1/4) + …', buoc=1, soBuoc=3,
+           loi=['Viết cả dãy thành các hiệu thì có chuyện hay xảy ra.']),
+        _c('y_toan', 'Các mảnh GIỮA triệt tiêu từng đôi một',
+           'trừ 1/2 rồi cộng 1/2 · trừ 1/3 rồi cộng 1/3 …', buoc=2, soBuoc=3,
+           loi=['Các mảnh ở giữa triệt tiêu từng đôi một. Trừ một phần hai rồi lại '
+                'cộng một phần hai.',
+                'Cả hàng đổ sập, chỉ còn hai đầu.']),
+        _c('y_toan', 'Còn lại đúng hai đầu', '1 − 1/10', buoc=3, soBuoc=3,
+           loi=['Còn lại đúng hai đầu. Một trừ một phần mười.']),
+        _c('cong_thuc', 'Nhưng CHƯA XONG — phải dọn hiện trường',
+           congThuc='1 − 1/10 = 10/10 − 1/10 = 9/10',
+           thay='tính gọn ra một phân số, rồi tối giản nếu còn rút được',
+           loi=['Nhưng chưa xong. Phải tính gọn ra một phân số, rồi tối giản nếu còn '
+                'rút được.',
+                'Mười phần mười trừ một phần mười, bằng chín phần mười.',
+                'Nộp bài mà để nguyên một trừ một phần mười là chưa dọn hiện '
+                'trường.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_doi_chieu_tu_va_khoang(b):
+    """L5·B14·M2 Tử bằng khoảng cách thì tách thẳng, khác thì nhân hệ số."""
+    return [
+        _c('bia', 'Không phải dãy nào cũng tách thẳng được', so_bai(b),
+           loi=['Không phải dãy nào cũng tách thẳng được. Phải cân trước đã.']),
+        _c('phan_so', 'Quân này tách thẳng được', tu=2, mau=3,
+           nhan='2/(1×3)', chuPhu='Tử 2, mẫu cách nhau 2 — khớp nhau.',
+           chuCuoi='2/(1×3) = 1 − 1/3 = 2/3 ✓',
+           loi=['Quân này tách thẳng được. Tử bằng hai, mà hai mẫu cách nhau cũng '
+                'bằng hai.',
+                'Hai phần một nhân ba bằng một trừ một phần ba, tức hai phần ba.']),
+        _c('phan_so', 'Nhưng quân này chỉ nặng MỘT NỬA', tu=1, mau=3,
+           nhan='1/(1×3)', chuPhu='Tử 1, mà mẫu vẫn cách nhau 2.',
+           chuCuoi='Tách thẳng ra 2/3 là gấp đôi sự thật.',
+           loi=['Nhưng quân này chỉ nặng một nửa. Tử bằng một, mà hai mẫu vẫn cách '
+                'nhau hai.',
+                'Tách thẳng thì ra hai phần ba, gấp đôi sự thật.']),
+        _c('cong_thuc', 'Nên phải nhân thêm hệ số điều chỉnh',
+           congThuc='hệ số = tử : khoảng cách',
+           thay='tử 1, khoảng 2 thì hệ số là một nửa',
+           loi=['Nên phải nhân thêm hệ số điều chỉnh. Hệ số bằng tử chia khoảng cách.',
+                'Tử một, khoảng hai, nên hệ số là một nửa.']),
+        _c('y_toan', 'Làm lại cho đúng', '1/(1×3) = (1 − 1/3) × 1/2 = 1/3',
+           buoc=1, soBuoc=3,
+           loi=['Làm lại cho đúng. Một trừ một phần ba, rồi nhân một nửa, được một '
+                'phần ba.']),
+        _c('y_toan', 'Giữ hệ số NGOÀI ngoặc tới phút cuối',
+           '(mảnh đầu − mảnh cuối) × hệ số  →  rồi mới dọn', buoc=2, soBuoc=3,
+           loi=['Khi sập cả hàng thì giữ hệ số ngoài ngoặc tới phút cuối.',
+                'Lấy mảnh đầu trừ mảnh cuối, nhân hệ số, rồi mới dọn tối giản.']),
+        _c('y_toan', 'Làm trọn một dãy',
+           '1/(1×3) + 1/(3×5) + … + 1/(7×9) = (1 − 1/9) × 1/2 = 4/9',
+           buoc=3, soBuoc=3,
+           loi=['Làm trọn một dãy. Một trừ một phần chín, được tám phần chín.',
+                'Nhân một nửa, còn bốn phần chín.']),
+        _c('cong_thuc', 'Nghi thức an toàn',
+           congThuc='tách MỘT quân · thử MỘT quân · rồi mới đẩy cả hàng',
+           thay='quen tay tách bừa là cả dãy sai theo, không cứu được',
+           loi=['Con nhớ nghi thức an toàn. Tách một quân, thử lại một quân bằng quy '
+                'đồng, rồi mới đẩy cả hàng.',
+                'Quen tay tách bừa là cả dãy sai theo.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_day_nua_dan(b):
+    """L5·B14·M3 Dãy nửa dần — tổng bằng 1 trừ mảnh còn trống."""
+    return [
+        _c('bia', 'Chiếc bánh ăn mãi không hết', so_bai(b),
+           loi=['Ăn nửa cái bánh, rồi nửa phần còn lại, rồi lại nửa nữa.']),
+        _c('phan_so', 'Bữa đầu: ăn một nửa', tu=1, mau=2, nhan='đã ăn',
+           chuPhu='Còn trống đúng 1/2.',
+           loi=['Bữa đầu ăn một nửa. Còn trống đúng một nửa.']),
+        _c('phan_so', 'Bữa hai: ăn nửa của phần còn lại', tu=3, mau=4,
+           nhan='đã ăn', tu2=1, mau2=4, nhan2='còn trống',
+           chuPhu='Ăn thêm 1/4 — phần trống teo còn 1/4.',
+           loi=['Bữa hai ăn nửa của phần còn lại, tức một phần tư.',
+                'Đã ăn ba phần tư, phần trống teo còn một phần tư.']),
+        _c('phan_so', 'Bữa ba cũng thế', tu=7, mau=8, nhan='đã ăn',
+           tu2=1, mau2=8, nhan2='còn trống',
+           chuPhu='Phần trống lại teo một nửa.',
+           loi=['Bữa ba cũng thế. Đã ăn bảy phần tám, còn trống một phần tám.']),
+        _c('cong_thuc', 'Nhìn ra ngay quy luật',
+           congThuc='tổng đã ăn = 1 − mảnh còn trống',
+           thay='mà mảnh còn trống đúng bằng mảnh vừa ăn ở bữa cuối',
+           loi=['Nhìn ra ngay quy luật. Tổng đã ăn bằng một trừ mảnh còn trống.',
+                'Mà mảnh còn trống đúng bằng mảnh vừa ăn ở bữa cuối.']),
+        _c('y_toan', 'Nên tính rất nhanh', 'ăn tới mảnh 1/64  →  tổng = 1 − 1/64 = 63/64',
+           buoc=1, soBuoc=3,
+           loi=['Nên tính rất nhanh. Ăn tới mảnh một phần sáu tư thì tổng bằng sáu '
+                'mươi ba phần sáu tư.']),
+        _c('y_toan', 'Cộng thêm bao nhiêu bữa nữa cũng thế',
+           'phần trống chỉ TEO ĐI một nửa, không biến mất', buoc=2, soBuoc=3,
+           loi=['Cộng thêm bao nhiêu bữa nữa cũng thế. Mỗi bữa chỉ ăn đúng một nửa '
+                'phần còn lại.',
+                'Nên phần trống chỉ teo đi một nửa, không bao giờ biến mất.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='gần 1 mà KHÔNG là 1 — chiếc bánh còn mảnh trống',
+           thay='tổng tiến sát 1 tuỳ ý, nhưng không bao giờ chạm tới',
+           loi=['Con nhớ câu này. Gần một mà không là một, chiếc bánh vẫn còn mảnh '
+                'trống.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B14.M1': kb5_cu_sap_domino,
+    'DL:KSN5Q1.B14.M2': kb5_doi_chieu_tu_va_khoang,
+    'DL:KSN5Q1.B14.M3': kb5_day_nua_dan,
     'DL:KSN5Q1.B13.M1': kb5_cap_so_vang,
     'DL:KSN5Q1.B13.M2': kb5_muon_roi_tra,
     'DL:KSN5Q1.B13.M3': kb5_rut_thua_so_chung,
