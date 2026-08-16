@@ -34,24 +34,7 @@
   "kidText": "Đề đòi hai điều kiện cùng lúc thì con làm họ tổng trước, họ tận cùng sau. Đúng thứ tự là ra."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Điều kiện kép = mỗi họ ra một lệnh: họ TỔNG (3, 9) quyết BỘ THẺ; họ TẬN CÙNG (2, 5) quyết chữ số ĐUÔI."
-   },
-   {
-    "id": "K2",
-    "text": "Thứ tự vàng: HỌ TỔNG TRƯỚC — HỌ TẬN CÙNG SAU. Tuyển bộ thẻ theo tổng xong mới chốt đuôi trong bộ ấy; làm ngược dễ tuyển nhầm bộ không có đuôi hợp lệ."
-   },
-   {
-    "id": "K3",
-    "text": "Điều kiện 'vừa chia hết cho 2 vừa cho 5' gộp lại thành một lệnh duy nhất: tận cùng bằng 0."
-   },
-   {
-    "id": "K4",
-    "text": "Sau khi cả hai họ ra lệnh xong, phần thẻ còn lại xếp tham lam như thường (lớn nhất giảm dần / nhỏ nhất theo luật hàng đầu)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HAI TRẠM GÁC nối tiếp trên đường ra sân. Trạm 1 — gia tộc TỔNG: soát BỘ THẺ, tổng chưa đạt chuẩn thì cả đội quay về (thử bỏ/chọn thẻ đến khi tổng chia hết). Trạm 2 — gia tộc TẬN CÙNG: chỉ định NGƯỜI GÁC CỔNG (chữ số đuôi) trong số thẻ đã qua trạm 1; đuôi có nhiều ứng viên thì mở nhánh và so như bài trước. Qua đủ hai trạm rồi mới xếp đội hình. Đi ngược thứ tự trạm là dễ chọn đuôi xong mới phát hiện bộ thẻ tổng trượt chuẩn — công cốc.",
   "canonicalExamples": [
    {
@@ -82,13 +65,8 @@
     "counterExample": "8305 chia hết cho 5 nhưng lẻ — trượt."
    }
   ],
-  "vocabulary": [
-   "hai trạm gác",
-   "trạm TỔNG tuyển bộ",
-   "trạm TẬN CÙNG chỉ định gác cổng",
-   "gộp lệnh tận cùng 0"
-  ],
-  "mantra": "HỌ TỔNG TRƯỚC — HỌ TẬN CÙNG SAU!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -115,60 +93,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Từ các thẻ 0; 3; 5; 8, lập số lớn nhất có bốn chữ số khác nhau vừa chia hết cho 2 vừa chia hết cho 5.",
-    "display": {
-     "type": "story_panel",
-     "caption": "chẵn + chia hết cho 9 — trạm nào trước?"
-    },
-    "interaction": {
-     "type": "mcq_inline",
-     "prompt": "Con chọn trạm xuất phát:",
-     "choices": [
-      "Chốt đuôi chẵn trước",
-      "Tuyển bộ thẻ theo tổng trước",
-      "Xếp đại rồi thử"
-     ],
-     "answerKey": {
-      "choice": "Tuyển bộ thẻ theo tổng trước"
-     }
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Trạm 1 — gia tộc TỔNG soát bộ: tổng năm thẻ là 16. Con thử bỏ từng thẻ: bỏ 0? còn 16 — trượt. Bỏ 2? còn 14 — trượt. Bỏ 7? còn 9 — ĐẠT! Bộ qua trạm: 0 · 2 · 3 · 4.",
-    "display": {
-     "type": "try_remove_interactive",
-     "spec": {
-      "cards": [
-       0,
-       2,
-       3,
-       4,
-       7
-      ],
-      "total": 16,
-      "target": "tổng ⋮ 9",
-      "answer": "bỏ 7 → 9"
-     }
-    },
-    "interaction": {
-     "type": "try_each",
-     "answerKey": {
-      "value": 7
-     },
-     "successMessage": "Bỏ thẻ 7 — tổng còn 9 chia hết cho 9. Bộ {0;2;3;4} qua trạm 1!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 18,
@@ -190,38 +114,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K4"
-    ],
-    "narration": "Ba nhánh đuôi — đi trọn từng nhánh trong bộ {0;2;3;4}: đuôi 0 — phần đầu 4·3·2 → 4320. Đuôi 2 — phần đầu 4·3·0 → 4302. Đuôi 4 — phần đầu 3·2·0, thẻ 3 dẫn → 3204. So ba số: 4320 vô địch! Còn đề 'vừa chia 2 vừa chia 5' thì nhẹ hơn nhiều: hai lệnh gộp thành một — tận cùng 0, hết nhánh.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "đuôi 0 → 4320 · đuôi 2 → 4302 · đuôi 4 → 3204",
-      "SO: 4320 lớn nhất ✓ (thử: 4+3+2+0=9 ⋮9, chẵn ✓)",
-      "⋮2 và ⋮5 cùng lúc = tận cùng 0"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: họ tổng trước — họ tận cùng sau!",
-    "display": {
-     "type": "mantra_card",
-     "text": "HỌ TỔNG TRƯỚC — HỌ TẬN CÙNG SAU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -537,107 +429,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B5.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "chẵn + chia hết cho 9 — trạm nào trước?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Vừa CHẴN vừa chia hết cho 9 — hai điều kiện một lúc, biết bắt đầu từ đâu?!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B5_M3_F1.png",
-   "sha256_16": "41f98fbec3020ce4"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Điều kiện kép: họ TỔNG trước — họ TẬN CÙNG sau",
-    "steps": [
-     {
-      "text": "đuôi 0 → 4320 · đuôi 2 → 4302 · đuôi 4 → 3204"
-     },
-     {
-      "text": "SO: 4320 lớn nhất (thử: 4+3+2+0=9 chia hết cho 9, chẵn )"
-     },
-     {
-      "text": "chia hết cho 2 và chia hết cho 5 cùng lúc = tận cùng 0"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B5_M3_F2.png",
-   "sha256_16": "016da92576657f53"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Điều kiện kép = mỗi họ ra một lệnh",
-      "text": "họ TỔNG (3, 9) quyết BỘ THẺ; họ TẬN CÙNG (2, 5) quyết chữ số ĐUÔI.",
-      "tone": "navy"
-     },
-     {
-      "label": "Thứ tự vàng",
-      "text": "HỌ TỔNG TRƯỚC",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "HỌ TỔNG TRƯỚC — HỌ TẬN CÙNG SAU!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B5_M3_F3.png",
-   "sha256_16": "a3a25c9dafa3ec89"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "ĐIỀU KIỆN KÉP: HỌ TỔNG TRƯỚC — HỌ TẬN CÙNG SAU",
-    "steps": [
-     {
-      "text": "TRẠM 1 · chọn bộ thẻ",
-      "sub": "tổng 5 thẻ = 16 → bỏ thẻ 7 còn 9 chia hết cho 9"
-     },
-     {
-      "text": "TRẠM 2 · chốt đuôi",
-      "sub": "số chẵn → đuôi là 0, 2 hoặc 4"
-     },
-     {
-      "text": "XẾP GIẢM DẦN phần còn lại",
-      "sub": "bộ {0;2;3;4} → số lớn nhất 4320"
-     }
-    ],
-    "note": "Bài 5 micro 3 · làm ngược thứ tự là phải xếp lại từ đầu"
-   },
-   "caption": "Hai trạm nối tiếp — chọn bộ thẻ xong mới bàn tới đuôi",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B5_M3_F4.png",
-   "sha256_16": "a33c74904e52f914"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B04"
@@ -648,5 +440,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B5_M3_giang.mp4"
  }
 }

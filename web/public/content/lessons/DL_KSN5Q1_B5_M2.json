@@ -35,24 +35,7 @@
   "kidText": "Lập số vừa lớn nhất vừa chia hết: chia 2 và chia 5 thì chốt đuôi trước; chia 3 và chia 9 thì chọn bộ thẻ trước."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Điều kiện chia hết cho 2, 5 thuộc họ TẬN CÙNG: chốt chữ số ĐUÔI trước (chẵn / 0 hoặc 5), phần còn lại xếp tham lam như bài trước."
-   },
-   {
-    "id": "K2",
-    "text": "Điều kiện họ tận cùng thường đẻ ra NHIỀU NHÁNH đuôi — phải tính trọn TỪNG nhánh rồi mới so chọn đáp số; chốt vội một nhánh là sập bẫy."
-   },
-   {
-    "id": "K3",
-    "text": "Điều kiện chia hết cho 9, 3 thuộc họ TỔNG: chọn BỘ THẺ có tổng chia hết trước (thử bỏ từng thẻ), rồi mới xếp đội hình."
-   },
-   {
-    "id": "K4",
-    "text": "Trong nhánh đuôi 5, số 0 quay về phần đầu — nhớ luật hàng đầu: 0 không dẫn đội nhưng chen ngay sau đội trưởng (bài nhỏ nhất)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: hai gia tộc dấu hiệu (con gặp ở Bài 3) giờ chỉ huy việc xếp đội. Gia tộc TẬN CÙNG (2, 5) ra lệnh cho NGƯỜI GÁC CỔNG: đuôi phải là quân nhà họ — mà họ thường cho hai lựa chọn (đuôi 0 hay đuôi 5, đuôi chẵn nào?), mỗi lựa chọn mở một CON ĐƯỜNG riêng. Kỹ sư phải đi trọn từng con đường, tính ra số của mỗi đường, đặt cạnh nhau SO rồi mới chốt — đường đầu tiên chưa chắc đẹp nhất! Gia tộc TỔNG (9, 3) thì ra lệnh từ vòng tuyển quân: BỘ THẺ phải có tổng đạt chuẩn — thử bỏ từng thẻ xem tổng còn lại có chia hết không, chọn xong bộ mới được xếp.",
   "canonicalExamples": [
    {
@@ -89,14 +72,8 @@
     "counterExample": "Bộ {2;3;5;8} tổng 18 chia hết cho 9: xếp kiểu gì cũng chia hết — khỏi thử từng số."
    }
   ],
-  "vocabulary": [
-   "chốt đuôi trước",
-   "con đường nhánh",
-   "so nhánh rồi mới chốt",
-   "vòng tuyển quân theo tổng",
-   "thử bỏ từng thẻ"
-  ],
-  "mantra": "ĐUÔI CÓ MẤY NHÁNH — TÍNH ĐỦ BẤY NHIÊU RỒI MỚI CHỐT!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -123,54 +100,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Từ các thẻ 0; 3; 5; 8, lập số LỚN NHẤT có bốn chữ số khác nhau chia hết cho 5.",
-    "display": {
-     "type": "story_panel",
-     "caption": "đuôi 0 → 2570… hết chưa?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đi nốt con đường thứ hai!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K2",
-     "K4"
-    ],
-    "narration": "Chia hết 5 → đuôi 0 HOẶC 5: hai con đường. Đường một — đuôi 0: phần đầu {2;5;7} tăng dần → 2570. Đường hai — đuôi 5: phần đầu {0;2;7}, thẻ 2 dẫn đội, số 0 chen sau → 2075. Con đặt hai số cạnh nhau và chọn.",
-    "display": {
-     "type": "branch_map_interactive",
-     "spec": {
-      "branches": [
-       {
-        "tail": 0,
-        "result": 2570
-       },
-       {
-        "tail": 5,
-        "result": 2075
-       }
-      ],
-      "question": "số nhỏ hơn?"
-     }
-    },
-    "interaction": {
-     "type": "compare_pick",
-     "answerKey": {
-      "value": 2075
-     },
-     "successMessage": "2075 < 2570 — quán quân nằm ở con đường THỨ HAI! Chốt vội là thua."
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 18,
@@ -187,37 +116,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Gặp chia hết 9 thì gia tộc TỔNG chỉ huy từ vòng tuyển quân: năm thẻ 1·2·3·5·8 có tổng 19 — phải bỏ một thẻ cho tổng chia hết 9. Thử lần lượt: bỏ 1 còn 18 — đạt! Bỏ thẻ khác đều trượt. Bộ tuyển: 2·3·5·8. Giờ mới xếp: nhỏ nhất là 2358 — và xếp kiểu gì cũng chia hết 9, vì tổng đã chuẩn từ vòng tuyển!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "Tổng 19 → thử bỏ từng thẻ",
-      "Bỏ 1 → 18 ⋮ 9 ✓ · bộ {2;3;5;8}",
-      "Nhỏ nhất: 2358 (tổng chuẩn → xếp gì cũng ⋮ 9)"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: đuôi có mấy nhánh — tính đủ bấy nhiêu rồi mới chốt! Chia hết chín ba — tuyển bộ theo tổng trước!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐUÔI CÓ MẤY NHÁNH — TÍNH ĐỦ BẤY NHIÊU RỒI MỚI CHỐT!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -554,107 +452,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B5.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "đuôi 0 → 2570… hết chưa?",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "Muốn nhỏ thì đuôi 0 luôn cho gọn — 2570 nhé!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B5_M2_F1.png",
-   "sha256_16": "28c1efba19d96268"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Lập số chia hết: chốt đuôi so nhánh (2, 5) — chọn bộ theo tổng (9, 3)",
-    "steps": [
-     {
-      "text": "Tổng 19 → thử bỏ từng thẻ"
-     },
-     {
-      "text": "Bỏ 1 → 18 chia hết cho 9 · bộ {2;3;5;8}"
-     },
-     {
-      "text": "Nhỏ nhất: 2358 (tổng chuẩn → xếp gì cũng chia hết cho 9)"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B5_M2_F2.png",
-   "sha256_16": "6798739876e13078"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Điều kiện chia hết cho 2, 5 thuộc họ TẬN CÙNG",
-      "text": "chốt chữ số ĐUÔI trước (chẵn / 0 hoặc 5), phần còn lại xếp tham lam như bài trước.",
-      "tone": "navy"
-     },
-     {
-      "text": "Điều kiện họ tận cùng thường đẻ ra NHIỀU NHÁNH đuôi — phải tính trọn TỪNG nhánh rồi mới so chọn đáp số; chốt vội một nhánh là sập bẫy.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "ĐUÔI CÓ MẤY NHÁNH — TÍNH ĐỦ BẤY NHIÊU RỒI MỚI CHỐT!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B5_M2_F3.png",
-   "sha256_16": "f2ef3c7b3f9dd75a"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "LẬP SỐ LỚN NHẤT CHIA HẾT CHO 5 — PHẢI SO ĐỦ HAI NHÁNH",
-    "neutral": true,
-    "wrong": {
-     "head": "NHÁNH ĐUÔI 0",
-     "steps": [
-      "còn {3;5;8} xếp giảm"
-     ],
-     "result": "8530"
-    },
-    "right": {
-     "head": "NHÁNH ĐUÔI 5",
-     "steps": [
-      "còn {0;3;8} xếp giảm"
-     ],
-     "result": "8305"
-    },
-    "verdict": "So hai nhánh → chọn 8530"
-   },
-   "caption": "Chia hết cho 2 hay 5 thì chốt ĐUÔI trước — nhưng phải so đủ mọi nhánh mới kết luận",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B5_M2_F4.png",
-   "sha256_16": "bd51f7990ffd2ae6"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B04"
@@ -666,5 +464,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Lập số chia hết: chốt đuôi so nhánh (2, 5) — chọn bộ theo tổng (9, 3)"
+ "titleDay": "Lập số chia hết: chốt đuôi so nhánh (2, 5) — chọn bộ theo tổng (9, 3)",
+ "video": {
+  "giang": "DL_KSN5Q1_B5_M2_giang.mp4"
+ }
 }

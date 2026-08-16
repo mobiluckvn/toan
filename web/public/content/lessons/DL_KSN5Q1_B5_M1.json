@@ -37,24 +37,7 @@
   "kidText": "Con xếp được số lớn nhất và số nhỏ nhất từ một bộ thẻ — nhớ luật thẻ 0 không được đứng đầu."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Lập số LỚN NHẤT: tham lam giảm dần từ hàng cao nhất — thẻ to nhất đứng đầu, rồi to nhì, to ba…"
-   },
-   {
-    "id": "K2",
-    "text": "Lập số NHỎ NHẤT: chữ số đầu là thẻ BÉ NHẤT KHÁC 0; số 0 chen ngay vị trí thứ hai; các thẻ còn lại xếp tăng dần."
-   },
-   {
-    "id": "K3",
-    "text": "LUẬT HÀNG ĐẦU: chữ số đầu tiên phải lớn hơn hoặc bằng 1 — số 0 đứng đầu làm số rụng mất một chữ số (0358 chỉ là 358)."
-   },
-   {
-    "id": "K4",
-    "text": "Gạch chân cụm \"khác nhau\" / \"được phép lặp\" ngay khi đọc đề — hai đề, hai thế giới: được lặp thì thẻ to nhất phủ mọi hàng (888)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: XẾP ĐỘI HÌNH ra sân. Mỗi hàng của con số là một suất đá chính, hàng càng cao càng 'nặng ký'. Muốn đội mạnh nhất (số lớn nhất): cầu thủ khỏe nhất đá vị trí nặng ký nhất — tham lam từ trái sang. Muốn đội 'khiêm tốn nhất' (số nhỏ nhất): cầu thủ yếu nhất dẫn đầu… NHƯNG có luật sân: cầu thủ số 0 bị CẤM đứng đầu đội hình — nó mà cầm cờ là cả đội bị xử rụng một người! Nên đội nhỏ nhất do thẻ bé-nhất-khác-0 dẫn, và số 0 lách ngay vào vị trí thứ hai — chỗ nhẹ ký nhất còn lại.",
   "canonicalExamples": [
    {
@@ -91,13 +74,8 @@
     "counterExample": "Hai thẻ 3, 8 mà đòi 'ba chữ số khác nhau' thì vô nghiệm — chỉ 'được lặp' mới lập nổi."
    }
   ],
-  "vocabulary": [
-   "xếp đội hình",
-   "tham lam từng hàng",
-   "luật hàng đầu (cấm số 0 cầm cờ)",
-   "khác nhau / được lặp — hai thế giới"
-  ],
-  "mantra": "SỐ 0 CẦM ĐẦU — ĐỘI HÌNH RỤNG MỘT NGƯỜI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -124,53 +102,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Từ các thẻ 0; 3; 5; 8 (mỗi thẻ một lần), lập số lớn nhất có bốn chữ số khác nhau.",
-    "display": {
-     "type": "story_panel",
-     "caption": "nhỏ nhất = 0358?? 🟨"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm nghe trọng tài giải thích!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 42,
-    "teaches": [
-     "K3",
-     "K2"
-    ],
-    "narration": "Luật sân: cầu thủ số 0 CẤM đứng đầu đội hình — 0358 đọc lên chỉ còn 'ba trăm năm tám', rụng mất một người! Con xếp lại: ai dẫn đội? Thẻ bé nhất KHÁC 0 — là 3. Rồi số 0 chen ngay vào đâu?",
-    "display": {
-     "type": "drag_interactive",
-     "spec": {
-      "slots": 4,
-      "cards": [
-       0,
-       3,
-       5,
-       8
-      ],
-      "rule": "ô đầu cấm thẻ 0",
-      "target": [
-       3,
-       0,
-       5,
-       8
-      ]
-     }
-    },
-    "interaction": {
-     "type": "drag_digit",
-     "successMessage": "3058 — thẻ 3 cầm cờ, số 0 lách vào vị trí thứ hai (chỗ nhẹ ký nhất còn lại), rồi 5, 8 tăng dần!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -187,47 +118,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 35,
-    "teaches": [
-     "K1",
-     "K4"
-    ],
-    "narration": "Bẫy thứ hai tinh vi hơn: hai đề chỉ khác một cụm từ. \"Bốn chữ số KHÁC NHAU\" — mỗi thẻ đá một suất. \"ĐƯỢC PHÉP LẶP\" — cầu thủ khỏe nhất được đá mọi vị trí: từ hai thẻ 3 và 8, số lớn nhất ba chữ số là 888 chứ không phải 883! Gạch chân cụm ấy ngay khi đọc đề.",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "khác nhau {3;8}, 2 chữ số",
-       "output": "83",
-       "valid": true,
-       "reason": "mỗi thẻ một lần"
-      },
-      {
-       "input": "được lặp {3;8}, 3 chữ số",
-       "output": "888",
-       "valid": true,
-       "reason": "thẻ 8 phủ mọi hàng"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai câu cần nhớ: số 0 cầm đầu — đội hình rụng một người! Và: khác nhau hay được lặp — hai đề, hai thế giới!",
-    "display": {
-     "type": "mantra_card",
-     "text": "SỐ 0 CẦM ĐẦU — ĐỘI HÌNH RỤNG MỘT NGƯỜI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -561,122 +451,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B5.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "nhỏ nhất = 0358??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Nhỏ nhất thì thẻ bé xếp trước: 0358!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B5_M1_F1.png",
-   "sha256_16": "3bf95fe980216a68"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "CA MẪU · lớn nhất (ca thường)",
-    "formulas": [
-     {
-      "label": "ĐỀ",
-      "text": "Từ các thẻ 0; 3; 5; 8 (mỗi thẻ một lần), lập số lớn nhất có bốn chữ số khác nhau.",
-      "tone": "navy"
-     },
-     {
-      "label": "LỜI GIẢI",
-      "text": "Tham lam giảm dần từ hàng nghìn: 8 → 5 → 3 → 0 nên 8530.",
-      "tone": "teal"
-     }
-    ]
-   },
-   "caption": "Ca mẫu chuẩn của bài",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B5_M1_F2.png",
-   "sha256_16": "fb0f97e8391d9014"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Lập số LỚN NHẤT",
-      "text": "tham lam giảm dần từ hàng cao nhất",
-      "tone": "navy"
-     },
-     {
-      "label": "Lập số NHỎ NHẤT",
-      "text": "chữ số đầu là thẻ BÉ NHẤT KHÁC 0",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "SỐ 0 CẦM ĐẦU — ĐỘI HÌNH RỤNG MỘT NGƯỜI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B5_M1_F3.png",
-   "sha256_16": "dfe876ae5de1f6d0"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "BỘ THẺ 0; 3; 5; 8 — LỚN NHẤT VÀ NHỎ NHẤT",
-    "headers": [
-     "nghìn",
-     "trăm",
-     "chục",
-     "đơn vị"
-    ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "lớn nhất",
-      "cells": [
-       "8",
-       "5",
-       "3",
-       "0"
-      ],
-      "color": "#E6FAF5"
-     },
-     {
-      "label": "nhỏ nhất",
-      "cells": [
-       "3",
-       "0",
-       "5",
-       "8"
-      ],
-      "color": "#FFF4DF"
-     }
-    ],
-    "note": "Số nhỏ nhất KHÔNG phải 0358 — luật hàng đầu cấm số 0 dẫn đội, thẻ 3 phải ra trước"
-   },
-   "caption": "Tham lam từng hàng: lớn nhất xếp giảm dần · nhỏ nhất xếp tăng dần nhưng né số 0 ở đầu",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B5_M1_F4.png",
-   "sha256_16": "4f21168b2188ec7b"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B04"
@@ -687,5 +462,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B5_M1_giang.mp4"
  }
 }

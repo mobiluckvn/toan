@@ -8902,7 +8902,138 @@ def kb5_quen_phay_khi_tru(b):
     ]
 
 
+def kb5_xep_doi_hinh(b):
+    """L5·B5·M1 Lập số lớn nhất, nhỏ nhất — và luật hàng đầu."""
+    return [
+        _c('bia', 'Xếp thẻ thành số lớn nhất, nhỏ nhất', so_bai(b),
+           loi=['Có bộ thẻ số. Xếp thế nào cho được số lớn nhất, số nhỏ nhất.']),
+        _c('de_toan', 'Bộ thẻ', de='Bốn thẻ: 0 · 3 · 5 · 8',
+           loi=['Bốn tấm thẻ mang các chữ số không, ba, năm, tám.']),
+        _c('tach_so', 'Số LỚN NHẤT — xếp giảm dần từ hàng cao', so='8530',
+           sang=[1], phep='8 · 5 · 3 · 0',
+           chuPhu='Thẻ to nhất chiếm hàng cao nhất, rồi to nhì, to ba.',
+           loi=['Số lớn nhất thì xếp giảm dần. Thẻ to nhất chiếm hàng cao nhất, rồi '
+                'to nhì, to ba.']),
+        _c('y_toan', 'Số NHỎ NHẤT thì KHÔNG làm ngược y hệt',
+           'Xếp tăng dần được 0358 — mà số 0 không được đứng đầu', buoc=1, soBuoc=3,
+           loi=['Số nhỏ nhất thì không làm ngược y hệt được.',
+                'Xếp tăng dần thì số không đứng đầu, mà số không không được đứng '
+                'đầu.']),
+        _c('tach_so', 'Vì số 0 cầm đầu thì đội hình RỤNG một người', so='358',
+           phep='0358 đọc lên chỉ là 358',
+           chuPhu='Đang là số 4 chữ số, hoá thành số 3 chữ số.',
+           loi=['Vì không ba năm tám đọc lên chỉ là ba trăm năm mươi tám.',
+                'Đang là số bốn chữ số, hoá thành số ba chữ số. Sai đề.']),
+        _c('tach_so', 'Nên số nhỏ nhất xếp thế này', so='3058', sang=[1, 2],
+           phep='thẻ bé nhất KHÁC 0 dẫn đầu · số 0 chen ngay sau',
+           chuPhu='Rồi các thẻ còn lại xếp tăng dần.',
+           loi=['Nên thẻ bé nhất khác không dẫn đầu, số không chen ngay sau nó.',
+                'Các thẻ còn lại xếp tăng dần, được ba nghìn không trăm năm mươi '
+                'tám.']),
+        _c('y_toan', 'Còn một cụm từ phải gạch chân ngay khi đọc đề',
+           '"bốn chữ số KHÁC NHAU"   ·   "ĐƯỢC PHÉP LẶP"', buoc=3, soBuoc=3,
+           loi=['Còn một cụm từ phải gạch chân ngay khi đọc đề.',
+                'Bốn chữ số khác nhau, hay được phép lặp. Hai đề, hai thế giới.',
+                'Được phép lặp thì thẻ to nhất phủ mọi hàng, thành tám nghìn tám trăm '
+                'tám mươi tám.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='số 0 cầm đầu → đội hình rụng một người',
+           thay='và luôn hỏi đề: các chữ số KHÁC NHAU hay ĐƯỢC LẶP?',
+           loi=['Con nhớ hai câu. Số không cầm đầu thì đội hình rụng một người.',
+                'Và luôn hỏi đề xem các chữ số phải khác nhau hay được phép lặp.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_lap_so_chia_het(b):
+    """L5·B5·M2 Lập số chia hết — đuôi có mấy nhánh thì tính đủ."""
+    return [
+        _c('bia', 'Lập số mà phải chia hết', so_bai(b),
+           loi=['Lập số từ bộ thẻ, nhưng số ấy còn phải chia hết cho một số nữa.']),
+        _c('de_toan', 'Đề bài',
+           de='Thẻ 0·2·5·7·9 — số NHỎ NHẤT 4 chữ số khác nhau, chia hết cho 5',
+           loi=['Từ năm thẻ không, hai, năm, bảy, chín.',
+                'Lập số nhỏ nhất có bốn chữ số khác nhau và chia hết cho năm.']),
+        _c('y_toan', 'Chia hết cho 5 thuộc họ TẬN CÙNG',
+           'nên chốt chữ số ĐUÔI trước, rồi mới xếp phần đầu', buoc=1, soBuoc=3,
+           loi=['Chia hết cho năm thuộc họ tận cùng, nên chốt chữ số đuôi trước đã.',
+                'Đuôi phải là không hoặc năm. Có hai nhánh.']),
+        _c('tach_so', 'Nhánh 1 — đuôi là 0', so='2570', sang=[4],
+           phep='phần đầu xếp tăng dần: 2 · 5 · 7',
+           chuPhu='Được số 2570.',
+           loi=['Nhánh thứ nhất, đuôi là không. Phần đầu xếp tăng dần, được hai nghìn '
+                'năm trăm bảy mươi.']),
+        _c('tach_so', 'Nhánh 2 — đuôi là 5, số 0 quay về phần đầu', so='2075',
+           sang=[2, 4], phep='thẻ 2 dẫn đội · số 0 chen ngay sau',
+           chuPhu='Được số 2075 — nhỏ hơn nhánh 1.',
+           loi=['Nhánh thứ hai, đuôi là năm. Số không quay về phần đầu.',
+                'Nó không được dẫn đội nên chen ngay sau thẻ hai, được hai nghìn không '
+                'trăm bảy mươi lăm. Nhỏ hơn nhánh trước.']),
+        _c('y_toan', 'Chốt vội một nhánh là mất đáp số',
+           'Đuôi có 2 nhánh thì phải tính đủ 2, rồi mới so', buoc=3, soBuoc=3,
+           loi=['Chốt vội một nhánh là mất đáp số. Đuôi có mấy nhánh thì tính đủ bấy '
+                'nhiêu, rồi mới so chọn.']),
+        _c('y_toan', 'Chia hết cho 9 thì họ TỔNG chỉ huy từ vòng chọn thẻ',
+           'thẻ 1·2·3·5·8 tổng 19 — bỏ thẻ 1 còn 18, chia hết 9 ✓',
+           loi=['Còn chia hết cho chín thì họ tổng chỉ huy ngay từ vòng chọn thẻ.',
+                'Năm thẻ có tổng mười chín. Thử bỏ từng thẻ, bỏ thẻ một thì còn mười '
+                'tám, chia hết cho chín.']),
+        _c('cong_thuc', 'Hai họ, hai chỗ ra lệnh',
+           congThuc='họ TẬN CÙNG quyết ĐUÔI  ·  họ TỔNG quyết BỘ THẺ',
+           thay='vì tổng không đổi khi xếp lại, còn đuôi thì đổi theo cách xếp',
+           loi=['Con nhớ hai họ ra lệnh ở hai chỗ khác nhau.',
+                'Họ tận cùng quyết chữ số đuôi, còn họ tổng quyết cả bộ thẻ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_dieu_kien_kep(b):
+    """L5·B5·M3 Điều kiện kép — họ tổng trước, họ tận cùng sau."""
+    return [
+        _c('bia', 'Hai điều kiện cùng lúc', so_bai(b),
+           loi=['Đề đòi hai điều kiện cùng lúc. Làm điều nào trước mới đúng.']),
+        _c('de_toan', 'Đề bài',
+           de='Thẻ 0·2·3·4·7 — chọn 4 thẻ, lập số LỚN NHẤT vừa chẵn vừa chia hết cho 9',
+           loi=['Từ năm thẻ không, hai, ba, bốn, bảy, chọn bốn thẻ.',
+                'Lập số lớn nhất vừa chẵn vừa chia hết cho chín.']),
+        _c('y_toan', 'Thứ tự vàng', 'họ TỔNG trước  →  họ TẬN CÙNG sau',
+           buoc=1, soBuoc=3,
+           loi=['Thứ tự vàng. Họ tổng trước, họ tận cùng sau.',
+                'Vì họ tổng quyết bộ thẻ, mà chưa có bộ thẻ thì chốt đuôi làm gì.']),
+        _c('y_toan', 'Trạm 1 — họ TỔNG soát bộ thẻ',
+           'tổng 5 thẻ = 16 · bỏ thẻ 7 còn 9 — chia hết cho 9 ✓', buoc=2, soBuoc=3,
+           loi=['Trạm một, họ tổng soát bộ thẻ. Tổng năm thẻ là mười sáu.',
+                'Thử bỏ từng thẻ. Bỏ thẻ bảy thì còn chín, chia hết cho chín.',
+                'Vậy bộ thẻ là không, hai, ba, bốn.']),
+        _c('y_toan', 'Trạm 2 — điều kiện CHẴN mở ba nhánh đuôi',
+           'đuôi 0  ·  đuôi 2  ·  đuôi 4', buoc=3, soBuoc=3,
+           loi=['Trạm hai, điều kiện chẵn mở ba nhánh đuôi. Đuôi không, đuôi hai, đuôi '
+                'bốn.']),
+        _c('day_so', 'Tính đủ cả ba nhánh rồi mới so', so=[4320, 4302, 3240],
+           hienThuTu=False, chuPhu='Lớn nhất là 4320.',
+           loi=['Tính đủ cả ba nhánh rồi mới so. Bốn nghìn ba trăm hai mươi là lớn '
+                'nhất.']),
+        _c('y_toan', 'Làm ngược thứ tự thì hỏng ở đâu?',
+           'Chốt đuôi trước, rồi mới soát tổng — dễ tuyển nhầm bộ thẻ',
+           loi=['Làm ngược thứ tự thì dễ tuyển nhầm bộ thẻ, rồi phải quay lại từ '
+                'đầu.']),
+        _c('cong_thuc', 'Và một mẹo gộp',
+           congThuc='vừa chia hết 2 vừa chia hết 5  →  tận cùng bằng 0',
+           thay='hai lệnh gộp thành một, khỏi phải đi hai nhánh',
+           loi=['Còn một mẹo gộp. Vừa chia hết cho hai vừa chia hết cho năm thì tận '
+                'cùng phải bằng không.',
+                'Hai lệnh gộp thành một, khỏi phải đi hai nhánh.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B5.M1': kb5_xep_doi_hinh,
+    'DL:KSN5Q1.B5.M2': kb5_lap_so_chia_het,
+    'DL:KSN5Q1.B5.M3': kb5_dieu_kien_kep,
     'DL:KSN5Q1.B4.M1': kb5_thang_may_dau_phay,
     'DL:KSN5Q1.B4.M2': kb5_quen_phay_khi_cong,
     'DL:KSN5Q1.B4.M3': kb5_quen_phay_khi_tru,
