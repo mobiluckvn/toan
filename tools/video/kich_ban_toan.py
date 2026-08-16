@@ -9030,7 +9030,132 @@ def kb5_dieu_kien_kep(b):
     ]
 
 
+def kb5_quy_tac_nhan(b):
+    """L5·B6·M1 Đếm số lập được — nhân dọc, và hàng đầu cấm thẻ 0."""
+    return [
+        _c('bia', 'Lập được bao nhiêu số', so_bai(b),
+           loi=['Không phải lập ra số nào, mà đếm xem lập được tất cả bao nhiêu số.']),
+        _c('de_toan', 'Đề bài', de='Thẻ 0·3·5·8 — lập được mấy số 3 chữ số? (được lặp)',
+           loi=['Từ bốn thẻ không, ba, năm, tám. Lập được bao nhiêu số có ba chữ số.',
+                'Các chữ số được phép lặp lại.']),
+        _c('y_toan', 'Mỗi hàng là một chỗ phải điền',
+           'hàng trăm  ·  hàng chục  ·  hàng đơn vị', buoc=1, soBuoc=3,
+           loi=['Mỗi hàng là một chỗ phải điền. Ba hàng, ba chỗ.']),
+        _c('y_toan', 'Nhiều bạn nhân ngay 4 × 4 × 4 = 64',
+           'Nhưng hàng trăm KHÔNG được nhận thẻ 0', buoc=2, soBuoc=3,
+           loi=['Nhiều bạn nhân ngay bốn nhân bốn nhân bốn, được sáu mươi tư.',
+                'Nhưng hàng trăm không được nhận thẻ không.']),
+        _c('tach_so', 'Vì thẻ 0 đứng đầu thì số rụng một chữ số', so='058',
+           sang=[1], phep='058 chỉ là 58',
+           chuPhu='Đang là số 3 chữ số, hoá thành số 2 chữ số.',
+           loi=['Vì không năm tám đọc lên chỉ là năm mươi tám. Số rụng mất một chữ '
+                'số.']),
+        _c('cong_thuc', 'Nên hàng đầu ít hơn đúng một lựa chọn',
+           congThuc='3 × 4 × 4 = 48 số',
+           thay='hàng trăm chỉ có 3 thẻ dùng được, hai hàng sau đủ cả 4',
+           loi=['Nên hàng trăm chỉ có ba thẻ dùng được, hai hàng sau đủ cả bốn.',
+                'Ba nhân bốn nhân bốn, được bốn mươi tám số.']),
+        _c('y_toan', 'Đối chứng: bộ thẻ KHÔNG có số 0',
+           'thẻ 1·2·3·4  →  4 × 4 × 4 = 64 số', buoc=3, soBuoc=3,
+           loi=['Đối chứng với bộ thẻ một, hai, ba, bốn. Bộ này không có thẻ không.',
+                'Hàng đầu đủ bốn lựa chọn, nên được sáu mươi tư số.',
+                'Cùng bốn thẻ mà hai bộ cho hai kết quả khác nhau.']),
+        _c('cong_thuc', 'Nghi thức mở bài đếm',
+           congThuc='viết dòng "hàng đầu: … cách (đã bỏ thẻ 0)"  rồi mới nhân',
+           thay='vì chỗ hỏng duy nhất của dạng này nằm đúng ở hàng đầu',
+           loi=['Con nhớ nghi thức. Viết dòng hàng đầu có mấy cách, đã bỏ thẻ không '
+                'chưa, rồi mới nhân.',
+                'Vì chỗ hỏng duy nhất của dạng này nằm đúng ở hàng đầu.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_kho_the_voi_dan(b):
+    """L5·B6·M2 Chữ số khác nhau — kho thẻ vơi dần theo hàng."""
+    return [
+        _c('bia', 'Khi đề đòi các chữ số KHÁC NHAU', so_bai(b),
+           loi=['Đề thêm một dòng: các chữ số phải khác nhau. Cách đếm đổi hẳn.']),
+        _c('de_toan', 'Đề bài', de='Thẻ 0·3·5·8 — mấy số 3 chữ số KHÁC NHAU?',
+           loi=['Vẫn bốn thẻ ấy, nhưng nay các chữ số phải khác nhau.']),
+        _c('y_toan', 'Mỗi thẻ chỉ dùng MỘT lần',
+           'nên chọn xong hàng nào, kho vơi đi một thẻ cho hàng sau',
+           buoc=1, soBuoc=3,
+           loi=['Mỗi thẻ chỉ dùng được một lần. Chọn xong hàng nào thì kho vơi đi một '
+                'thẻ cho hàng sau.']),
+        _c('y_toan', 'Hàng trăm: 3 cách', 'bỏ thẻ 0 — còn 3 · 5 · 8',
+           loi=['Hàng trăm vẫn ba cách, vì phải bỏ thẻ không ra.']),
+        _c('y_toan', 'Hàng chục: cũng 3 cách — nghe lạ mà đúng',
+           'kho vơi một thẻ đã dùng, NHƯNG thẻ 0 được trả tự do', buoc=2, soBuoc=3,
+           loi=['Hàng chục cũng ba cách. Nghe lạ mà đúng.',
+                'Kho vơi một thẻ vừa dùng, nhưng thẻ không nay được trả tự do vì nó '
+                'không còn đứng đầu.']),
+        _c('cong_thuc', 'Hàng đơn vị còn 2 — nhân dọc là xong',
+           congThuc='3 × 3 × 2 = 18 số',
+           thay='dãy thừa số GIẢM DẦN chính là dấu hiệu của đề "khác nhau"',
+           loi=['Hàng đơn vị còn hai thẻ. Ba nhân ba nhân hai, được mười tám số.']),
+        _c('y_toan', 'Mẹo đọc ngược: nhìn dãy thừa số biết ngay đề',
+           '3 × 4 × 4 — các hàng sau BẰNG NHAU → được lặp', buoc=3, soBuoc=3,
+           loi=['Có mẹo đọc ngược. Nhìn dãy thừa số là biết đề nào.',
+                'Ba nhân bốn nhân bốn, các hàng sau bằng nhau, là đề được lặp.']),
+        _c('y_toan', 'Còn dãy giảm dần thì là đề "khác nhau"',
+           '3 × 3 × 2 — giảm dần từng nấc',
+           loi=['Còn ba nhân ba nhân hai, giảm dần từng nấc, là đề các chữ số khác '
+                'nhau.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='mỗi thẻ một lần  →  kho vơi theo hàng',
+           thay='và thẻ 0 được tự do từ hàng thứ hai trở đi',
+           loi=['Con nhớ câu này. Mỗi thẻ một lần thì kho vơi theo hàng.',
+                'Và thẻ không được tự do từ hàng thứ hai trở đi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_dem_co_dieu_kien(b):
+    """L5·B6·M3 Đếm có điều kiện — khác luật thì phải tách nhánh."""
+    return [
+        _c('bia', 'Đếm khi có thêm điều kiện', so_bai(b),
+           loi=['Đề đòi đếm, mà số lập ra còn phải chẵn nữa.']),
+        _c('de_toan', 'Đề bài', de='Thẻ 0·3·5·8 — mấy số CHẴN 3 chữ số khác nhau?',
+           loi=['Từ bốn thẻ không, ba, năm, tám. Đếm xem có mấy số chẵn ba chữ số khác '
+                'nhau.']),
+        _c('y_toan', 'Cho hàng KHÓ TÍNH chọn trước',
+           'đuôi phải chẵn: chỉ có thẻ 0 hoặc thẻ 8', buoc=1, soBuoc=3,
+           loi=['Cho hàng khó tính chọn trước. Đuôi phải chẵn nên chỉ có thẻ không '
+                'hoặc thẻ tám.']),
+        _c('y_toan', 'Nhánh 1 — đuôi là thẻ 0', 'hàng trăm 3 · hàng chục 2  →  6 số',
+           buoc=2, soBuoc=3,
+           loi=['Nhánh thứ nhất, đuôi là thẻ không. Thẻ không đã bị giam ở đuôi rồi.',
+                'Nên hàng trăm có ba cách, hàng chục còn hai. Được sáu số.']),
+        _c('y_toan', 'Nhánh 2 — đuôi là thẻ 8', 'hàng trăm chỉ 2 · hàng chục 2  →  4 số',
+           buoc=3, soBuoc=3,
+           loi=['Nhánh thứ hai, đuôi là thẻ tám. Nay thẻ không còn ở trong kho.',
+                'Nhưng nó không được đứng đầu, nên hàng trăm chỉ hai cách. Được bốn '
+                'số.']),
+        _c('y_toan', 'Cộng hai nhánh lại', '6 + 4 = 10 số',
+           loi=['Cộng hai nhánh lại được mười số.']),
+        _c('y_toan', 'Vì sao KHÔNG nhân gộp một lần?',
+           'Hai nhánh cho hàng trăm hai luật khác nhau: 3 cách và 2 cách',
+           loi=['Vì sao không nhân gộp một lần cho nhanh.',
+                'Vì hai nhánh cho hàng trăm hai luật khác nhau, ba cách và hai cách.',
+                'Nhân gộp là lấy một luật áp cho cả hai, sai ngay.']),
+        _c('cong_thuc', 'Thứ tự vàng, và luật tách nhánh',
+           congThuc='hàng RÀNG BUỘC trước  →  hàng ĐẦU  →  các hàng dễ sau',
+           thay='cùng luật mới nhân chung, khác luật thì phải tách nhánh rồi cộng',
+           loi=['Con nhớ thứ tự vàng. Hàng ràng buộc chọn trước, rồi tới hàng đầu, '
+                'rồi các hàng dễ.',
+                'Cùng luật mới nhân chung. Khác luật thì phải tách nhánh rồi cộng '
+                'lại.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B6.M1': kb5_quy_tac_nhan,
+    'DL:KSN5Q1.B6.M2': kb5_kho_the_voi_dan,
+    'DL:KSN5Q1.B6.M3': kb5_dem_co_dieu_kien,
     'DL:KSN5Q1.B5.M1': kb5_xep_doi_hinh,
     'DL:KSN5Q1.B5.M2': kb5_lap_so_chia_het,
     'DL:KSN5Q1.B5.M3': kb5_dieu_kien_kep,

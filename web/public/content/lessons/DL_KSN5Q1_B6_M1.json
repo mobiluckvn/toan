@@ -34,24 +34,7 @@
   "kidText": "Con đếm được lập ra bao nhiêu số từ bộ thẻ: nhân số cách chọn của từng toa, nhớ trừ thẻ 0 ở toa đầu."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Đếm số lập được (các chữ số ĐƯỢC LẶP): số cách = tích số lựa chọn của từng hàng — mỗi hàng một toa, nhân dọc dây chuyền."
-   },
-   {
-    "id": "K2",
-    "text": "Toa ĐẦU (hàng cao nhất) không được chọn thẻ 0: bộ thẻ có 0 thì toa đầu ít hơn các toa khác đúng MỘT lựa chọn."
-   },
-   {
-    "id": "K3",
-    "text": "Bộ thẻ KHÔNG có 0 thì toa đầu đủ lựa chọn như mọi toa — không phải trừ gì cả."
-   },
-   {
-    "id": "K4",
-    "text": "Nghi thức mở bài đếm: viết ngay dòng 'toa đầu: … cách (đã bỏ thẻ 0)' rồi mới nhân."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: mỗi số ba chữ số là một ĐOÀN TÀU BA TOA chạy ra từ nhà máy. Ở mỗi toa ta gắn một thẻ số — toa này gắn gì không ảnh hưởng toa kia (khi được lặp), nên tổng số đoàn tàu bằng số cách toa 1 × toa 2 × toa 3. Nhưng TOA ĐẦU là toa lái: thẻ 0 không có bằng lái! Bộ {0;3;5;8} cho toa giữa và toa cuối mỗi toa 4 lựa chọn, riêng toa lái chỉ 3 — tổng 3 × 4 × 4 = 48 đoàn, không phải 64.",
   "canonicalExamples": [
    {
@@ -82,13 +65,8 @@
     "counterExample": "Các 'số' 038, 035… thực chất chỉ có hai chữ số — 16 đoàn tàu ma phải loại: $64 - 16 = 48$."
    }
   ],
-  "vocabulary": [
-   "đoàn tàu ba toa",
-   "toa lái (toa đầu)",
-   "thẻ 0 không có bằng lái",
-   "nhân dọc dây chuyền"
-  ],
-  "mantra": "THẺ 0 KHÔNG ĐƯỢC LÁI TÀU!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -110,65 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Từ các chữ số 0; 3; 5; 8 (được lặp lại), lập được bao nhiêu số có ba chữ số?",
-    "display": {
-     "type": "story_panel",
-     "caption": "$4 \\times 4 \\times 4 = 64$??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để kiểm tra bằng lái!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K2",
-     "K4"
-    ],
-    "narration": "Xưởng lắp ráp: toa TRĂM là toa lái — con thử gắn thẻ 0 vào xem. Máy từ chối! Thẻ 0 không có bằng lái. Toa trăm chỉ còn 3 lựa chọn; toa chục và toa đơn vị vẫn đủ 4. Con điền số cách từng toa rồi kéo cần nhân.",
-    "display": {
-     "type": "assembly_interactive",
-     "spec": {
-      "slots": [
-       "TRĂM (toa lái)",
-       "CHỤC",
-       "ĐƠN VỊ"
-      ],
-      "cards": [
-       0,
-       3,
-       5,
-       8
-      ],
-      "counts": [
-       3,
-       4,
-       4
-      ],
-      "result": 48
-     }
-    },
-    "interaction": {
-     "type": "fill_counts_multiply",
-     "answerKey": {
-      "values": [
-       3,
-       4,
-       4
-      ],
-      "product": 48
-     },
-     "successMessage": "3 × 4 × 4 = 48 đoàn tàu — không phải 64!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -185,46 +104,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 35,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Đối chứng để hiểu tận gốc: bộ 1 · 2 · 3 · 4 KHÔNG có thẻ 0 — toa lái đủ 4 ứng viên có bằng: $4  \\times  4  \\times  4 = 64$ đoàn hẳn hoi. Cùng cỡ bộ thẻ, chênh nhau 16 — đó chính là 16 đoàn tàu ma bắt đầu bằng số 0 bị loại ở bộ kia. Nghi thức mở mọi bài đếm: viết dòng đầu tiên 'toa đầu: mấy cách (đã bỏ thẻ 0 chưa?)'.",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "{0;3;5;8}",
-       "output": "3×4×4 = 48",
-       "valid": true,
-       "reason": "toa lái bỏ 0"
-      },
-      {
-       "input": "{1;2;3;4}",
-       "output": "4×4×4 = 64",
-       "valid": true,
-       "reason": "không có 0 — khỏi trừ"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: thẻ không — không được lái tàu!",
-    "display": {
-     "type": "mantra_card",
-     "text": "THẺ 0 KHÔNG ĐƯỢC LÁI TÀU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -545,113 +424,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B6.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "4×4×4 = 64??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Bốn thẻ, ba toa: bốn nhân bốn nhân bốn — 64 đoàn tàu!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B6_M1_F1.png",
-   "sha256_16": "e84ef0755083df03"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "CA MẪU · bộ có thẻ 0 (ca lõi)",
-    "formulas": [
-     {
-      "label": "ĐỀ",
-      "text": "Từ các chữ số 0; 3; 5; 8 (được lặp lại), lập được bao nhiêu số có ba chữ số?",
-      "tone": "navy"
-     },
-     {
-      "label": "LỜI GIẢI",
-      "text": "Toa trăm: 3 cách (bỏ 0). Toa chục: 4. Toa đơn vị: 4. Tổng: 3 × 4 × 4 = 48 số.",
-      "tone": "teal"
-     }
-    ]
-   },
-   "caption": "Ca mẫu chuẩn của bài",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B6_M1_F2.png",
-   "sha256_16": "1b140a6820005d38"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Đếm số lập được (các chữ số ĐƯỢC LẶP)",
-      "text": "số cách = tích số lựa chọn của từng hàng — mỗi hàng một toa, nhân dọc dây chuyền.",
-      "tone": "navy"
-     },
-     {
-      "label": "Toa ĐẦU (hàng cao nhất) không được chọn thẻ 0",
-      "text": "bộ thẻ có 0 thì toa đầu ít hơn các toa khác đúng MỘT lựa chọn.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "THẺ 0 KHÔNG ĐƯỢC LÁI TÀU!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B6_M1_F3.png",
-   "sha256_16": "d126e7beca3f27ec"
-  },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "ĐẾM SỐ CÓ 3 CHỮ SỐ TỪ 0; 3; 5; 8 (ĐƯỢC LẶP)",
-    "bars": [
-     {
-      "name": "toa trăm",
-      "units": 3,
-      "label": "3 cách — bỏ số 0"
-     },
-     {
-      "name": "toa chục",
-      "units": 4,
-      "label": "4 cách"
-     },
-     {
-      "name": "toa đơn vị",
-      "units": 4,
-      "label": "4 cách"
-     }
-    ],
-    "brace": {
-     "text": "3 × 4 × 4 = 48 số"
-    },
-    "note": "Toa đầu luôn phải bỏ thẻ 0 — bộ {1;2;3;4} không có số 0 nên được 4 × 4 × 4 = 64"
-   },
-   "caption": "Mỗi hàng là một toa tàu — số cách chọn của các toa NHÂN dọc dây chuyền",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B6_M1_F4.png",
-   "sha256_16": "dd09afde00f379bf"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B08"
@@ -662,5 +435,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B6_M1_giang.mp4"
  }
 }

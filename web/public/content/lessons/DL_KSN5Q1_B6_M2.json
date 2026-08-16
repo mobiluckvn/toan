@@ -32,20 +32,7 @@
   "kidText": "Khi các chữ số phải khác nhau thì kho thẻ vơi dần sau mỗi toa. Con đếm đúng theo từng bước một."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "'Chữ số khác nhau' = mỗi thẻ chỉ dùng một lần: chọn xong toa nào, kho thẻ VƠI đi một cho toa sau."
-   },
-   {
-    "id": "K2",
-    "text": "Với bộ n thẻ có chứa 0: toa đầu (n − 1) cách (bỏ 0); toa hai cũng (n − 1) cách — kho vơi một thẻ đã dùng nhưng thẻ 0 được TRẢ TỰ DO; các toa sau vơi tiếp (n − 2)…"
-   },
-   {
-    "id": "K3",
-    "text": "Kiểm nhanh bằng dãy thừa số: bài 'khác nhau' có dãy giảm dần; bài 'được lặp' có các toa sau bằng nhau."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: KHO THẺ MỖI LOẠI MỘT BẢN. Đoàn tàu 'khác nhau' lắp đến đâu, thẻ ấy rời kho đến đó — toa sau chỉ thấy phần còn lại. Riêng thẻ 0 bị giam ở toa lái (không bằng lái) nhưng từ toa thứ hai nó được TRẢ TỰ DO, tham gia bình đẳng: với bộ {0;3;5;8}, toa trăm 3 cách; toa chục cũng 3 cách (mất một thẻ đã dùng, cộng thẻ 0 vừa được thả); toa đơn vị 2 cách. 3 × 3 × 2 = 18.",
   "canonicalExamples": [
    {
@@ -76,12 +63,8 @@
     "counterExample": "Các số 305, 308, 350, 508… có 0 ở toa chục đều hợp lệ — đếm thiếu là mất cả nhóm."
    }
   ],
-  "vocabulary": [
-   "kho vơi dần",
-   "thẻ 0 được trả tự do (từ toa hai)",
-   "dãy thừa số kể chuyện đề bài"
-  ],
-  "mantra": "MỖI THẺ MỘT LẦN — KHO VƠI THEO TOA; THẺ 0 TỰ DO TỪ TOA HAI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -103,59 +86,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau?",
-    "display": {
-     "type": "story_panel",
-     "caption": "khác nhau → vẫn 48?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở kho!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Lắp thử: toa trăm lấy thẻ 5 — kho còn 0 · 3 · 8. Toa chục mấy lựa chọn? Ba — vì thẻ 0 giờ được tự do! Toa đơn vị lấy tiếp — còn hai. Con điền dãy số cách 3 · 3 · 2 và nhân.",
-    "display": {
-     "type": "assembly_interactive",
-     "spec": {
-      "slots": [
-       "TRĂM",
-       "CHỤC",
-       "ĐƠN VỊ"
-      ],
-      "mode": "kho vơi dần + thả thẻ 0",
-      "counts": [
-       3,
-       3,
-       2
-      ],
-      "result": 18
-     }
-    },
-    "interaction": {
-     "type": "fill_counts_multiply",
-     "answerKey": {
-      "values": [
-       3,
-       3,
-       2
-      ],
-      "product": 18
-     },
-     "successMessage": "3 × 3 × 2 = 18 số — kho vơi dần nhưng toa hai được cộng lại thẻ 0 tự do!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -171,46 +101,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 30,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Mẹo đọc ngược: nhìn dãy thừa số biết ngay đề. Ba nhân bốn nhân bốn — toa sau bằng chằn chặn: đề ĐƯỢC LẶP. Ba nhân ba nhân hai — giảm dần từng nấc: đề KHÁC NHAU. Dãy thừa số kể chuyện luật chơi!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "3 × 4 × 4 = 48",
-       "output": "ĐƯỢC LẶP",
-       "valid": true,
-       "reason": "toa sau bằng nhau"
-      },
-      {
-       "input": "3 × 3 × 2 = 18",
-       "output": "KHÁC NHAU",
-       "valid": true,
-       "reason": "kho vơi dần"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: mỗi thẻ một lần — kho vơi theo toa; thẻ không tự do từ toa thứ hai!",
-    "display": {
-     "type": "mantra_card",
-     "text": "KHO VƠI THEO TOA — THẺ 0 TỰ DO TỪ TOA HAI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -530,113 +420,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B6.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "khác nhau → vẫn 48?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Đơn hàng mới có dòng chữ đỏ: 'các toa phải gắn thẻ KHÁC NHAU'.",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B6_M2_F1.png",
-   "sha256_16": "278cf13da13b1ca1"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "CA MẪU · ba toa khác nhau (ca lõi)",
-    "formulas": [
-     {
-      "label": "ĐỀ",
-      "text": "Từ các chữ số 0; 3; 5; 8, lập được bao nhiêu số có ba chữ số khác nhau?",
-      "tone": "navy"
-     },
-     {
-      "label": "LỜI GIẢI",
-      "text": "Toa trăm: 3 (bỏ 0). Toa chục: 3 (kho vơi 1, thẻ 0 được thả: 4 − 1 = 3). Toa đơn vị: 2. Tổng 3 × 3 × 2 = 18 số.",
-      "tone": "teal"
-     }
-    ]
-   },
-   "caption": "Ca mẫu chuẩn của bài",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B6_M2_F2.png",
-   "sha256_16": "84995756ee438e7e"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "'Chữ số khác nhau' = mỗi thẻ chỉ dùng một lần",
-      "text": "chọn xong toa nào, kho thẻ VƠI đi một cho toa sau.",
-      "tone": "navy"
-     },
-     {
-      "label": "Với bộ n thẻ có chứa 0",
-      "text": "toa đầu (n − 1) cách (bỏ 0); toa hai cũng (n − 1) cách — kho vơi một thẻ đã dùng nhưng thẻ 0 được TRẢ TỰ DO; các toa sau vơi tiếp (n − 2)…",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MỖI THẺ MỘT LẦN — KHO VƠI THEO TOA; THẺ 0 TỰ DO TỪ TOA HAI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B6_M2_F3.png",
-   "sha256_16": "372bc8aeb0aece9c"
-  },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "CHỮ SỐ KHÁC NHAU — KHO THẺ VƠI DẦN",
-    "bars": [
-     {
-      "name": "toa trăm",
-      "units": 3,
-      "label": "3 (bỏ số 0)"
-     },
-     {
-      "name": "toa chục",
-      "units": 3,
-      "label": "vơi 1, thả số 0 → 3"
-     },
-     {
-      "name": "toa đơn vị",
-      "units": 2,
-      "label": "2"
-     }
-    ],
-    "brace": {
-     "text": "3 × 3 × 2 = 18 số"
-    },
-    "note": "So với bài trước (48 số): thẻ dùng rồi không quay lại nên kho vơi dần"
-   },
-   "caption": "Thẻ 0 bị cấm ở toa đầu nhưng được trả tự do từ toa thứ hai",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B6_M2_F4.png",
-   "sha256_16": "1c2b4857f19e38c3"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B08"
@@ -647,5 +431,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B6_M2_giang.mp4"
  }
 }
