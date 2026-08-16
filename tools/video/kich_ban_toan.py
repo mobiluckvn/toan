@@ -8208,6 +8208,151 @@ def kb3_dem_khoi_theo_tang(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 3 · chương 8 · Toán trong cuộc sống — ba bài (CHƯƠNG CUỐI)
+# ═══════════════════════════════════════════════════════════════════════════
+# Ba bài đo đạc và tiền nong. Điểm chung: đơn vị. Bài nào cũng có một chỗ mà lẫn
+# đơn vị là hỏng hẳn:
+#   B32 mỗi số trên mặt đồng hồ đáng 5 phút, không phải 1
+#   B33 gam với mi-li-lít KHÔNG cộng được với nhau
+#   B34 tiền trong hộp chưa phải lãi — phải trừ vốn đã
+
+
+def kb3_xem_gio_to_lich(b):
+    """L3·C8① Xem giờ đến từng phút, và tờ lịch chạy nhịp bảy."""
+    return [
+        _c('bia', 'Xem giờ đến từng phút', so_bai(b),
+           loi=['Xem giờ cho đúng tới từng phút, và đọc tờ lịch.']),
+        _c('dong_ho', 'Kim phút đi trọn vòng hết 60 phút', gio=3, phut=12,
+           chuPhu='Vòng ấy có 12 số, nên mỗi chặng dài 60 : 12 = 5 phút.',
+           loi=['Kim phút đi trọn một vòng hết sáu mươi phút, qua mười hai số.',
+                'Nên mỗi chặng dài năm phút.']),
+        _c('dong_ho', 'Kim phút chỉ số 3 nghĩa là 15 phút', gio=7, phut=3,
+           chuPhu='3 chặng, mỗi chặng 5 phút: 3 × 5 = 15.',
+           loi=['Kim phút chỉ số ba là đã đi ba chặng. Ba nhân năm bằng mười lăm '
+                'phút.']),
+        _c('cong_thuc', 'Đọc số phút bằng phép nhân',
+           congThuc='số phút = số kim phút chỉ × 5',
+           thay='vì mỗi chặng giữa hai số đúng bằng năm phút',
+           loi=['Con nhớ cách đọc. Lấy số mà kim phút chỉ, nhân với năm.',
+                'Còn kim giờ thì đọc theo số nó vừa đi qua.']),
+        _c('dong_ho', 'Kim phút chỉ số 11 là 55 phút', gio=8, phut=11,
+           chuPhu='Người lớn hay nói gọn: "9 giờ kém 5".',
+           loi=['Kim phút chỉ số mười một là năm mươi lăm phút.',
+                'Người lớn hay nói gọn là chín giờ kém năm, nghĩa là còn năm phút nữa '
+                'thì tròn chín giờ.']),
+        _c('y_toan', 'Quá nửa vòng thì thử đọc kiểu KÉM',
+           '60 − 55 = 5, mượn tên giờ sắp tới', buoc=1, soBuoc=2,
+           loi=['Quá nửa vòng thì con thử đọc kiểu kém. Lấy sáu mươi trừ số phút, rồi '
+                'mượn tên giờ sắp tới.']),
+        _c('day_so', 'Tờ lịch thì chạy nhịp 7', so=[6, 13, 20, 27],
+           hienThuTu=False, chuPhu='Cùng một cột dọc là cùng thứ, cách nhau 7 ngày.',
+           loi=['Tờ lịch thì chạy nhịp bảy. Các ngày cùng một cột dọc là cùng thứ.',
+                'Chúng cách nhau đúng bảy ngày, lại là đoàn tàu đếm thêm quen thuộc.']),
+        _c('y_toan', 'Nên biết một ngày là suy ra ngày khác',
+           'Thứ Ba ngày 8  →  ngày 22 cách 14 ngày = 2 tuần tròn  →  cũng thứ Ba',
+           buoc=2, soBuoc=2,
+           loi=['Hôm nay thứ ba ngày tám. Ngày hai mươi hai cách mười bốn ngày, '
+                'đúng hai tuần tròn, nên cũng là thứ ba.']),
+        _c('cong_thuc', 'Hai nhịp phải nhớ',
+           congThuc='mặt đồng hồ: mỗi số 5 phút   ·   tờ lịch: mỗi cột 7 ngày',
+           thay='đếm số trên mặt đồng hồ như đếm phút là sai gấp năm lần',
+           loi=['Con nhớ hai nhịp. Trên mặt đồng hồ mỗi số đáng năm phút, còn trên tờ '
+                'lịch mỗi cột cách nhau bảy ngày.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_can_va_dong(b):
+    """L3·C8② Gam, mi-li-lít, và luật cùng phe trên cân hai đĩa."""
+    return [
+        _c('bia', 'Cân nặng và lượng nước', so_bai(b),
+           loi=['Hai thứ đo bằng hai đơn vị khác nhau, và không cộng được với nhau.']),
+        _c('y_toan', 'Cầu nối vạn năng mang tên một nghìn',
+           '1 kg = 1000 g     ·     1 l = 1000 ml', buoc=1, soBuoc=3,
+           loi=['Cầu nối mang tên một nghìn. Một ki lô gam bằng một nghìn gam, một '
+                'lít bằng một nghìn mi li lít.']),
+        _c('y_toan', 'Cỡ nào thì hình dung ra được',
+           'Quả trứng ~50 g  ·  gói mì ~75 g  ·  ca nước 250 ml',
+           loi=['Con hình dung cỡ cho quen. Quả trứng chừng năm mươi gam.',
+                'Một ca nước chừng hai trăm năm mươi mi li lít, bốn ca là tròn một '
+                'lít.']),
+        _c('de_toan', 'Đề bài', de='Chai 1 lít, rót ra cốc hết 350 ml. Trong chai còn mấy ml?',
+           loi=['Chai nước ngọt chứa một lít, rót ra cốc hết ba trăm năm mươi mi li '
+                'lít.',
+                'Hỏi trong chai còn lại bao nhiêu mi li lít.']),
+        _c('y_toan', 'Đổi về CÙNG đơn vị trước đã',
+           '1 l = 1000 ml  →  1000 − 350 = 650 (ml)', buoc=2, soBuoc=3,
+           loi=['Đổi về cùng đơn vị trước đã. Một lít là một nghìn mi li lít.',
+                'Một nghìn trừ ba trăm năm mươi, còn sáu trăm năm mươi mi li lít.']),
+        _c('y_toan', 'Cân hai đĩa: quả cân đứng ở phe nào?',
+           'bột + 50 = 500  →  bột = 500 − 50 = 450 (g)', buoc=3, soBuoc=3,
+           loi=['Cân thăng bằng nghĩa là hai đĩa nặng bằng nhau.',
+                'Quả cân năm mươi gam đứng cùng phe với bột, đang gánh hộ, nên phải '
+                'trừ ra. Bột nặng bốn trăm năm mươi gam.']),
+        _c('y_toan', 'Chỗ hỏng nặng nhất',
+           '400 g + 100 ml — hai thứ khác loại, KHÔNG cộng được',
+           loi=['Đây là chỗ hỏng nặng nhất. Bốn trăm gam cộng một trăm mi li lít.',
+                'Gam là cân nặng, mi li lít là lượng nước. Hai thứ khác loại thì không '
+                'cộng được.']),
+        _c('cong_thuc', 'Ba điều phải nhớ',
+           congThuc='cầu nối 1000  ·  quả cân cùng phe thì TRỪ  ·  khác loại thì đừng cộng',
+           thay='vì con số cộng ra từ hai loại khác nhau không mang nghĩa gì cả',
+           loi=['Con nhớ ba điều. Cầu nối là một nghìn, quả cân cùng phe thì trừ ra.',
+                'Và hai thứ khác loại thì đừng cộng, vì con số ra không mang nghĩa gì '
+                'cả.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_tien_va_lai(b):
+    """L3·C8③ Vốn, bán, lãi — và tiền trong hộp chưa phải lãi."""
+    return [
+        _c('bia', 'Bán hàng thì lãi bao nhiêu', so_bai(b),
+           loi=['Hộp tiền đầy chưa chắc đã lãi nhiều. Phải trừ vốn đã.']),
+        _c('y_toan', 'Cùng một số tiền, nhiều bộ áo khác nhau',
+           '1 tờ 10 nghìn = 2 tờ 5 nghìn = 10 tờ 1 nghìn', buoc=1, soBuoc=3,
+           loi=['Cùng một số tiền mà nhiều cách đổi. Một tờ mười nghìn bằng hai tờ '
+                'năm nghìn, hay mười tờ một nghìn.']),
+        _c('y_toan', 'Trả tiền thừa cũng là một phép trừ',
+           'Đưa 20 nghìn, mua cốc 8 nghìn  →  trả lại 12 nghìn',
+           loi=['Trả tiền thừa cũng chỉ là một phép trừ. Đưa hai mươi nghìn, mua cốc '
+                'tám nghìn, trả lại mười hai nghìn.']),
+        _c('de_toan', 'Đề bài',
+           de='Vốn 24 nghìn, pha 8 cốc, bán 5 nghìn một cốc. Buổi bán hàng lãi mấy nghìn?',
+           loi=['Bỏ vốn hai mươi tư nghìn, pha được tám cốc, bán năm nghìn một cốc.',
+                'Hỏi buổi bán hàng lãi bao nhiêu nghìn đồng.']),
+        _c('y_toan', 'Ba dòng sổ, đừng lẫn',
+           'VỐN bỏ ra  ·  BÁN thu về  ·  LÃI là phần thực sự kiếm được',
+           buoc=2, soBuoc=3,
+           loi=['Ba dòng sổ, con đừng lẫn. Vốn là tiền bỏ ra lúc đầu.',
+                'Bán là toàn bộ tiền thu về. Còn lãi mới là phần thực sự kiếm được.']),
+        _c('y_toan', 'Tính tiền bán trước', '5 × 8 = 40 (nghìn đồng)',
+           loi=['Tính tiền bán trước. Năm nghìn một cốc, tám cốc, được bốn mươi nghìn '
+                'đồng.']),
+        _c('cong_thuc', 'Rồi mới ra lãi',
+           congThuc='LÃI = BÁN − VỐN = 40 − 24 = 16 (nghìn đồng)',
+           thay='vì hộp tiền đang giữ cả phần vốn mình bỏ ra lúc đầu',
+           loi=['Rồi mới ra lãi. Lãi bằng bán trừ vốn, bốn mươi trừ hai mươi tư, được '
+                'mười sáu nghìn đồng.',
+                'Vì hộp tiền đang giữ cả phần vốn mình bỏ ra lúc đầu.']),
+        _c('y_toan', 'Muốn biết mỗi cốc lãi bao nhiêu thì rút về một',
+           'vốn mỗi cốc 24 : 8 = 3  →  mỗi cốc lãi 5 − 3 = 2 nghìn',
+           buoc=3, soBuoc=3,
+           loi=['Muốn biết mỗi cốc lãi bao nhiêu thì rút về một cốc. Vốn mỗi cốc là '
+                'ba nghìn, bán năm nghìn, nên lãi hai nghìn.']),
+        _c('cong_thuc', 'Nhớ một câu thôi',
+           congThuc='LÃI = BÁN − VỐN',
+           thay='và hễ thấy chữ MỖI thì tay với ngay phép chia',
+           loi=['Con nhớ một câu thôi. Lãi bằng bán trừ vốn.',
+                'Và hễ thấy chữ mỗi thì tay với ngay phép chia.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN3.B01': kb3_thap_nghin,   'DL:KSN3.B02': kb3_hai_cua,
     'DL:KSN3.B03': kb3_duoi_dat_ve,  'DL:KSN3.B04': kb3_dem_nguoc_trang,
@@ -8233,6 +8378,9 @@ BO = {
     'DL:KSN3.B27': kb3_chu_vi_cong_thuc, 'DL:KSN3.B28': kb3_chu_vi_bien_hinh,
     'DL:KSN3.B29': kb3_giai_phau_hinh_tron, 'DL:KSN3.B30': kb3_dien_tich,
     'DL:KSN3.B31': kb3_dem_khoi_theo_tang,
+    # ══ LỚP 3 · chương 8 · Toán trong cuộc sống — ba bài (chương cuối) ══
+    'DL:KSN3.B32': kb3_xem_gio_to_lich, 'DL:KSN3.B33': kb3_can_va_dong,
+    'DL:KSN3.B34': kb3_tien_va_lai,
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
     'DL:KSN4.B19': kb_b19, 'DL:KSN4.B20': kb_b20,

@@ -26,25 +26,8 @@
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — HỌ NHÀ TIỀN: các tờ hay gặp: 1 nghìn, 2 nghìn, 5 nghìn, 10 nghìn, 20 nghìn, 50 nghìn đồng. Tính toán cứ nhẩm theo \"nghìn\" cho nhẹ đầu: tờ 10 nghìn với tờ 5 nghìn là 15 nghìn — như đếm số nhỏ vậy thôi."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — ĐỔI TIỀN TƯƠNG ĐƯƠNG: cùng một số tiền có nhiều \"bộ áo\": 1 tờ 10 nghìn = 2 tờ 5 nghìn = 5 tờ 2 nghìn = 10 tờ 1 nghìn. Khách đưa tờ 20 nghìn mua cốc 8 nghìn → trả lại $20 - 8 = 12$ nghìn, ghép bằng tờ 10 và tờ 2. Kế toán Mai đòi kiểm tra: $8 + 12 = 20$ ✓ — thử lại là nghi thức, nhớ chưa!"
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — BA DÒNG SỔ VÀNG: VỐN là tiền bỏ ra lúc đầu (mua chanh, đường, đá). BÁN là toàn bộ tiền thu về. LÃI là phần THỰC SỰ kiếm được: LÃI = BÁN − VỐN. Bán được 40 nghìn mà vốn 24 nghìn thì lãi chỉ 16 nghìn thôi — hộp tiền đầy chưa chắc đã lãi to!"
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — GIÁ VỐN MỖI CỐC: vốn 24 nghìn pha được tròn 8 cốc → mỗi cốc \"cõng\" số vốn $24 : 8 = 3$ nghìn (rút về đơn vị — Bài 21 tái xuất!). Bán 5 nghìn một cốc → mỗi cốc lãi $5 - 3 = 2$ nghìn. Muốn biết lãi cả buổi? Nhân lên hoặc lấy sổ tổng — hai đường phải về MỘT đích."
-   }
-  ],
-  "mantra": "LÃI = BÁN − VỐN — hộp tiền đầy đến mấy cũng chưa phải lãi, phải trừ vốn đã! Chữ \"mỗi\" xuất hiện là tay với phép chia (Bài 21). Đổi tiền, trả tiền thừa: luôn thử lại bằng phép cộng ngược.",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
@@ -57,43 +40,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "narration": "Minh mua chanh, đường và đá hết 24 nghìn đồng làm vốn, pha được 8 cốc nước chanh và bán hết với giá 5 nghìn đồng một cốc. Hỏi buổi bán hàng lãi bao nhiêu nghìn đồng?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
    {
     "id": "S6",
     "kind": "trap",
@@ -373,38 +319,7 @@
   "homeActivity": "Nếu con \"khởi nghiệp\" bán đồ chơi cũ hay nước chanh thật, hãy giúp con lập sổ ba dòng VỐN - BÁN - LÃI. Bài học \"hộp tiền đầy chưa chắc đã lãi\" đáng giá hơn nhiều bài tập in.",
   "watchFor": "NÊN: cho con tự ghép các tờ tiền khi trả lại (một bài đổi tiền sống động). KHÔNG NÊN: đưa tiền lẻ trăm đồng, phần trăm lãi hay \"giảm giá 20%\" — những vị khách ấy hẹn lớp 5."
  },
- "figureSpec": [
-  {
-   "id": "L3H_MO34",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L3H_MO34.png",
-   "caption": "Sổ vốn - bán - lãi, dòng lãi còn để trống",
-   "sha256_16": "390c2a9b5a61c28d",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L3H_TIEN01",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L3H_TIEN01.png",
-   "caption": "Một tờ 10 nghìn đổi được hai tờ 5 nghìn — cùng một số tiền, hai bộ áo",
-   "sha256_16": "c8aacc3fb2b21819",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L3H_TIEN02",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L3H_TIEN02.png",
-   "caption": "Ba dòng sổ vàng: vốn 24 nghìn, bán 40 nghìn, lãi 16 nghìn",
-   "sha256_16": "fd1591706010ec74",
-   "mucGoc": "khamPha"
-  }
- ],
+ "figureSpec": [],
  "hatMam": "Lớp 2, ở Bài 32, quán nước chanh của Minh khai trương: cộng tiền bán được và biết tiền thừa. Năm nay quán mở lại phiên bản 2.0 — gây quỹ mua quà sinh nhật Mai — với sổ sách xịn: VỐN, BÁN, LÃI rành mạch, và chữ \"MỖI\" của Bài 21 quay lại giữ két!",
  "duongLui": {
   "ve": [
@@ -416,5 +331,8 @@
   "canCu": "sach",
   "lopDuoi": 2,
   "nhan": "Học lại bài lớp 2"
+ },
+ "video": {
+  "giang": "DL_KSN3_B34_giang.mp4"
  }
 }
