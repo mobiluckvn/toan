@@ -35,20 +35,7 @@
   "kidText": "Chuyển 5 quyển từ kệ này sang kệ kia: tổng đứng im, nhưng hiệu đổi tới 2 lần 5 vì hai đầu cùng nhúc nhích."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Chuyển k quyển từ kệ A sang kệ B: TỔNG hai kệ KHÔNG ĐỔI — sách chỉ đổi chỗ ở, không sinh thêm không mất đi (chiếc neo tổng Bài 18 tái xuất)."
-   },
-   {
-    "id": "K2",
-    "text": "HIỆU thay đổi đúng 2 × k: bên cho MẤT k, bên nhận ĐƯỢC k — khoảng cách hai bên nhúc nhích từ CẢ HAI ĐẦU: chuyển 5 làm hiệu đổi 10, không phải 5."
-   },
-   {
-    "id": "K3",
-    "text": "Kiểm chứng bằng số cụ thể: A = 30, B = 20 (hiệu 10) — chuyển 5: A còn 25, B thành 25 — hiệu về 0: đổi đúng $10 = 2  \\times  5$; tổng vẫn 50."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HAI CHỒNG VỞ TRÊN BÀN. Nhấc MỘT quyển từ chồng cao sang chồng thấp — đo lại khoảng cách hai đỉnh: chồng cao TỤT một, chồng thấp NHÔ một — khoảng cách khép lại những HAI nấc! Một cú chuyển — hai đầu nhúc nhích: hiệu đổi GẤP ĐÔI lượng chuyển. Còn tổng? Vở vẫn nằm nguyên trên bàn, chỉ đổi chồng — CỦA KHÔNG SINH KHÔNG MẤT: tổng bám neo, y như bè hai thùng Bài 18! Cáo Đề hay gài hai mũi: mũi một dịch \"chuyển 5\" thành \"hiệu đổi 5\"; mũi hai xúi cộng trừ 5 vào tổng \"vì sách đã bị chuyển đi\". Cả hai đều gãy trước hai chồng vở thật.",
   "canonicalExamples": [
    {
@@ -85,14 +72,8 @@
     "counterExample": "$25 + 25 = 50 = 30 + 20$ — vở vẫn nguyên trên bàn."
    }
   ],
-  "vocabulary": [
-   "hai chồng vở",
-   "hai đầu nhúc nhích",
-   "khoảng cách khép hai nấc",
-   "của không sinh không mất",
-   "tổng bám neo"
-  ],
-  "mantra": "MỘT CÚ CHUYỂN — HIỆU ĐỔI GẤP ĐÔI; TỔNG BÁM NEO KHÔNG RỜI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -114,50 +95,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Chuyển 5 quyển sách từ kệ A sang kệ B. Hỏi tổng số sách hai kệ có thay đổi không? Hiệu số sách thay đổi bao nhiêu?",
-    "display": {
-     "type": "story_panel",
-     "caption": "chuyển 5 → hiệu 5??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để nhấc một quyển!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Nhấc MỘT quyển từ chồng cao sang chồng thấp — đo lại khoảng cách hai đỉnh: chồng cao TỤT một nấc, chồng thấp NHÔ một nấc — khoảng cách khép những HAI nấc! Kiểm bằng số: ba mươi và hai mươi, hiệu MƯỜI — chuyển năm: hai lăm và hai lăm, hiệu VỀ KHÔNG — đổi đúng mười, bằng HAI LẦN năm! Một cú chuyển — hai đầu nhúc nhích: hiệu đổi GẤP ĐÔI.",
-    "display": {
-     "type": "two_stacks_interactive",
-     "spec": {
-      "a": 30,
-      "b": 20,
-      "k": 5,
-      "after": [
-       25,
-       25
-      ],
-      "diffChange": "10 = 2 × 5"
-     }
-    },
-    "interaction": {
-     "type": "move_and_measure",
-     "answerKey": {
-      "value": 10
-     },
-     "successMessage": "Bên mất 5, bên được 5 — hiệu khép 10 = 2k!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -173,47 +110,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 40,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Mũi gài thứ hai của Cáo: \"sách bị chuyển đi rồi — tổng chín mươi phải bớt năm chứ!\" Gọi tên chiếc neo cũ Bài mười tám: CHUYỂN QUA LẠI — TỔNG KHÔNG ĐỔI! Vở vẫn nguyên trên bàn, chỉ đổi chồng: hai lăm cộng hai lăm vẫn năm mươi. Của không sinh không mất. Nạp sẵn viên gạch cho bài sau: tổng chín mươi, hiệu mười — máy quen chạy ra NĂM MƯƠI và BỐN MƯƠI.",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "tổng 90 − 5 = 85 (sách 'mất')",
-       "output": "✗",
-       "valid": false,
-       "reason": "vở chỉ đổi chồng — vẫn trên bàn"
-      },
-      {
-       "input": "tổng bám neo 90 · hiệu 10 → 50 & 40",
-       "output": "✓",
-       "valid": true,
-       "reason": "neo B18 + máy tổng-hiệu"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai câu cần nhớ: một cú chuyển — hai đầu nhúc nhích: hiệu đổi gấp đôi! Của không sinh không mất — chỉ đổi kệ: tổng bám neo!",
-    "display": {
-     "type": "mantra_card",
-     "text": "HIỆU ĐỔI 2k — TỔNG BÁM NEO!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -526,112 +422,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B27.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "chuyển 5 → hiệu 5??",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "chuyển 5 quyển từ kệ A sang kệ B thì hai kệ bằng nhau",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B27_M1_F1.png",
-   "sha256_16": "27c1d190d81a4f3d"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "tổng 90 − 5 = 85 (sách 'mất')"
-     ],
-     "result": ""
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "tổng bám neo 90 · hiệu 10 → 50 & 40"
-     ],
-     "result": ""
-    },
-    "verdict": "neo B18 + máy tổng-hiệu"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B27_M1_F2.png",
-   "sha256_16": "70437c4b13dc99a5"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Chuyển k quyển từ kệ A sang kệ B",
-      "text": "TỔNG hai kệ KHÔNG ĐỔI — sách chỉ đổi chỗ ở, không sinh thêm không mất đi (chiếc neo tổng Bài 18 tái xuất).",
-      "tone": "navy"
-     },
-     {
-      "label": "HIỆU thay đổi đúng 2 × k",
-      "text": "bên cho MẤT k, bên nhận ĐƯỢC k — khoảng cách hai bên nhúc nhích từ CẢ HAI ĐẦU: chuyển 5 làm hiệu đổi 10, không phải 5.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MỘT CÚ CHUYỂN — HIỆU ĐỔI GẤP ĐÔI; TỔNG BÁM NEO KHÔNG RỜI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B27_M1_F3.png",
-   "sha256_16": "c3151b19da5985e4"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CHUYỂN 5 QUYỂN TỪ KỆ A SANG KỆ B — LUẬT KÉP",
-    "neutral": true,
-    "wrong": {
-     "head": "TỔNG",
-     "steps": [
-      "của không sinh không mất",
-      "chỉ đổi kệ"
-     ],
-     "result": "KHÔNG ĐỔI"
-    },
-    "right": {
-     "head": "HIỆU",
-     "steps": [
-      "bên mất 5 · bên được 5"
-     ],
-     "result": "ĐỔI 2 × 5 = 10"
-    },
-    "verdict": "Kiểm: 30 − 5 = 25 = 20 + 5 → hiệu 10 khép trọn"
-   },
-   "caption": "Tổng đứng im — hiệu đổi HAI lần lượng chuyển",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B27_M1_F4.png",
-   "sha256_16": "3d4474c0dd8c00f0"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B26"
@@ -643,5 +434,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Luật kép cú chuyển: tổng đứng im — hiệu đổi HAI lần lượng chuyển"
+ "titleDay": "Luật kép cú chuyển: tổng đứng im — hiệu đổi HAI lần lượng chuyển",
+ "video": {
+  "giang": "DL_KSN5Q1_B27_M1_giang.mp4"
+ }
 }

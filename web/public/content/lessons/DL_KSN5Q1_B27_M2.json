@@ -32,20 +32,7 @@
   "kidText": "Chuyển k thì hai bên bằng nhau nghĩa là hiệu ban đầu bằng 2 lần k. Chiều ngược lại: lượng cần chuyển bằng hiệu chia đôi."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "\"Chuyển k từ bên nhiều sang bên ít thì BẰNG NHAU\" cũng có nghĩa là cú chuyển đã khép trọn khoảng cách cũng có nghĩa là hiệu ban đầu = 2 × k."
-   },
-   {
-    "id": "K2",
-    "text": "Quy trình: hiệu = 2k, tổng bám neo → máy tổng – hiệu: tổng 90 chuyển 5 → hiệu 10 → 50 và 40. Thử bằng cách DIỄN LẠI cú chuyển: $50 - 5 = 45 = 40 + 5$ ✓."
-   },
-   {
-    "id": "K3",
-    "text": "Chiều ngược: biết hai bên 50 và 40, muốn bằng nhau thì chuyển = hiệu : $2 = 5$ (mỗi đầu khép một nửa khoảng cách) — hai chiều của cùng một luật 2k."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: CÂY CẦU HAI CHIỀU TRÊN LUẬT 2k. Chiều XUÔI: đề khai \"chuyển 5 thì bằng nhau\" — cú chuyển vừa khép TRỌN khoảng cách: khoảng cách ấy (hiệu ban đầu) đúng bằng HAI LẦN NĂM là mười! Tổng chín mươi bám neo — máy tổng – hiệu nhả 50 và 40; diễn lại kịch bản thử: kệ một đưa năm quyển — bốn lăm; kệ hai nhận năm — cũng bốn lăm: khớp lời khai! Chiều NGƯỢC: biết sẵn 50 và 40, hỏi chuyển mấy để bằng nhau — khoảng cách mười khép từ hai đầu, mỗi đầu gánh một nửa: chuyển MƯỜI CHIA HAI bằng năm. Xuôi nhân hai — ngược chia hai: một cây cầu, hai làn xe.",
   "canonicalExamples": [
    {
@@ -76,13 +63,8 @@
     "counterExample": "Chuyển 10: kệ 1 còn 40, kệ 2 thành 50 — đổi ngôi chứ đâu bằng nhau!"
    }
   ],
-  "vocabulary": [
-   "cầu hai chiều luật 2k",
-   "khép trọn khoảng cách",
-   "diễn lại kịch bản",
-   "xuôi nhân hai — ngược chia hai"
-  ],
-  "mantra": "XUÔI: HIỆU = 2k — NGƯỢC: CHUYỂN = HIỆU : 2!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -104,51 +86,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Hai kệ sách tổng 90 quyển. Chuyển 5 quyển từ kệ 1 sang kệ 2 thì hai kệ bằng nhau. Tìm số sách mỗi kệ lúc đầu.",
-    "display": {
-     "type": "story_panel",
-     "caption": "hiệu = 5 → 47,5 lẻ?!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đo khoảng cách!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "\"Chuyển năm thì bằng nhau\" nghĩa là cú chuyển vừa khép TRỌN khoảng cách — mà mỗi cú chuyển khép HAI LẦN lượng chuyển: hiệu ban đầu bằng hai nhân năm — MƯỜI! Tổng chín mươi bám neo — máy quen: kệ một NĂM MƯƠI, kệ hai BỐN MƯƠI. Diễn lại kịch bản thử: kệ một đưa năm — bốn lăm; kệ hai nhận năm — cũng bốn lăm: khớp lời khai!",
-    "display": {
-     "type": "bridge_forward_interactive",
-     "spec": {
-      "total": 90,
-      "k": 5,
-      "diff": 10,
-      "a": 50,
-      "b": 40,
-      "replay": "50 − 5 = 45 = 40 + 5"
-     }
-    },
-    "interaction": {
-     "type": "double_then_solve",
-     "answerKey": {
-      "values": [
-       50,
-       40
-      ]
-     },
-     "successMessage": "Hiệu 2 × 5 = 10 → 50 & 40 — diễn lại khớp!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -169,38 +106,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Đổi số vẫn một máy: tổng chín sáu, chuyển tám thì bằng nhau — hiệu mười sáu: thùng một NĂM SÁU, thùng hai BỐN MƯƠI, diễn lại bốn tám bằng bốn tám! Chiều NGƯỢC đảo làn: biết sẵn năm mươi và bốn mươi, hỏi chuyển mấy để bằng nhau? Khoảng cách mười khép từ HAI đầu — mỗi đầu gánh một nửa: chuyển mười chia hai bằng NĂM. Ai chuyển nguyên mười quyển? Kệ đổi ngôi bốn mươi — năm mươi, vẫn lệch!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "96, chuyển 8: hiệu 16 → 56 & 40 ✓",
-      "ngược: 50 & 40 → chuyển 10 : 2 = 5",
-      "chuyển cả 10 → đổi ngôi, vẫn lệch ✗"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: xuôi — hiệu bằng hai ka! Ngược — chuyển bằng hiệu chia hai!",
-    "display": {
-     "type": "mantra_card",
-     "text": "XUÔI ×2 — NGƯỢC :2!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -508,103 +413,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B27.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "hiệu = 5 → 47,5 lẻ?!",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Chuyển 5 quyển thì hiệu bằng 5 chứ gì — mà sao ra 47,5 quyển lẻ loi thế này?",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Câu hỏi mở bài",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B27_M2_F1.png",
-   "sha256_16": "bee999661b017012"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Chuyển k thì bằng nhau: hiệu ban đầu = 2k — hai chiều một luật",
-    "steps": [
-     {
-      "text": "96, chuyển 8: hiệu 16 → 56 & 40"
-     },
-     {
-      "text": "ngược: 50 & 40 → chuyển 10 : 2 = 5"
-     },
-     {
-      "text": "chuyển cả 10 → đổi ngôi, vẫn lệch"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B27_M2_F2.png",
-   "sha256_16": "57db768ccb40b082"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "text": "\"Chuyển k từ bên nhiều sang bên ít thì BẰNG NHAU\" cũng có nghĩa là cú chuyển đã khép trọn khoảng cách cũng có nghĩa là hiệu ban đầu = 2 × k.",
-      "tone": "navy"
-     },
-     {
-      "label": "Quy trình",
-      "text": "50 − 5 = 45 = 40 + 5.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "XUÔI: HIỆU = 2k — NGƯỢC: CHUYỂN = HIỆU : 2!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B27_M2_F3.png",
-   "sha256_16": "ae338ba69edce7b1"
-  },
-  {
-   "archetype": "sum_diff_bars",
-   "params": {
-    "title": "CHUYỂN 5 QUYỂN THÌ HAI KỆ BẰNG NHAU (TỔNG 90)",
-    "small": {
-     "label": "kệ 2 · 40",
-     "val": 40
-    },
-    "big": {
-     "label": "kệ 1 · 50",
-     "val": 50
-    },
-    "diff_label": "hiệu 10 = 2 × 5",
-    "total_label": "tổng 90",
-    "formula": "hiệu ban đầu = 2 × 5 = 10 → kệ 1 = (90 + 10) : 2 = 50",
-    "note": "Thử: 50 − 5 = 45 = 40 + 5 ✓"
-   },
-   "caption": "\"Chuyển k thì bằng nhau\" → hiệu ban đầu đúng bằng 2k",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B27_M2_F4.png",
-   "sha256_16": "c3c42b3e465cb8cb"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B26"
@@ -616,5 +425,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Chuyển k thì bằng nhau: hiệu ban đầu = 2k — hai chiều một luật"
+ "titleDay": "Chuyển k thì bằng nhau: hiệu ban đầu = 2k — hai chiều một luật",
+ "video": {
+  "giang": "DL_KSN5Q1_B27_M2_giang.mp4"
+ }
 }

@@ -11729,7 +11729,156 @@ def kb5_may_chan_le(b):
     ]
 
 
+def kb5_luat_kep_cu_chuyen(b):
+    """L5·B27·M1 Một cú chuyển — tổng bám neo, còn hiệu đổi gấp đôi."""
+    return [
+        _c('bia', 'Một cú chuyển làm hai chuyện khác hẳn nhau', so_bai(b),
+           loi=['Chuyển đồ từ bên này sang bên kia. Tổng và hiệu chịu hai số phận khác '
+                'nhau.']),
+        _c('de_toan', 'Đề bài',
+           de='Chuyển 5 quyển từ kệ A sang kệ B.\nTổng có đổi không? Hiệu đổi bao nhiêu?',
+           loi=['Chuyển năm quyển sách từ kệ A sang kệ B.',
+                'Tổng có đổi không, và hiệu đổi bao nhiêu.']),
+        _c('so_do_doan', 'Trước khi chuyển', be=20, lon=30,
+           nhanBe='kệ B', nhanLon='kệ A', hienHieu=True, chuHieu='hiệu 10',
+           chuTong='tổng 50', chuPhu='Kệ A đang hơn kệ B đúng 10 quyển.',
+           loi=['Lấy số cụ thể cho dễ nhìn. Kệ A ba mươi, kệ B hai mươi, hiệu là '
+                'mười.']),
+        _c('y_toan', 'Tổng thì BÁM NEO, không nhúc nhích',
+           'của không sinh thêm, không mất đi — chỉ đổi chỗ ở', buoc=1, soBuoc=3,
+           loi=['Tổng thì bám neo. Sách không sinh thêm cũng không mất đi, chỉ đổi chỗ '
+                'ở.',
+                'Đây chính là chiếc neo tổng đã gặp ở bài mười tám.']),
+        _c('y_toan', 'Nhưng hiệu nhúc nhích từ CẢ HAI đầu',
+           'bên cho MẤT 5   ·   bên nhận ĐƯỢC 5   →   khoảng cách khép 10',
+           buoc=2, soBuoc=3,
+           loi=['Nhưng hiệu thì nhúc nhích từ cả hai đầu. Bên cho tụt xuống, bên nhận '
+                'nhô lên.',
+                'Nên khoảng cách khép lại gấp đôi lượng chuyển.']),
+        _c('so_do_doan', 'Sau khi chuyển 5', be=25, lon=25,
+           nhanBe='kệ B', nhanLon='kệ A', chuTong='tổng 50',
+           chuPhu='Hai kệ bằng nhau — hiệu về 0, mà tổng vẫn 50.',
+           loi=['Sau khi chuyển năm thì cả hai kệ đều hai mươi lăm.',
+                'Hiệu về không, còn tổng vẫn là năm mươi.']),
+        _c('y_toan', 'Nên một cú chuyển k làm hiệu đổi 2 × k',
+           'chuyển 5 thì hiệu đổi 10, không phải 5', buoc=3, soBuoc=3,
+           loi=['Nên một cú chuyển làm hiệu đổi gấp đôi lượng chuyển.']),
+        _c('de_toan', 'Một bẫy hay gặp',
+           de='"Sách chuyển đi rồi — tổng 50 phải bớt 5 chứ?"',
+           loi=['Một bẫy hay gặp. Nhiều bạn nghĩ sách chuyển đi thì tổng phải bớt.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='chuyển qua lại:   TỔNG bám neo   ·   HIỆU đổi 2 × k',
+           thay='sách vẫn nguyên trên bàn, chỉ đổi chồng — 25 + 25 vẫn là 50',
+           loi=['Con nhớ hai câu. Của không sinh không mất nên tổng bám neo.',
+                'Còn một cú chuyển thì hai đầu cùng nhúc nhích, nên hiệu đổi gấp '
+                'đôi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_chuyen_thi_bang_nhau(b):
+    """L5·B27·M2 Chuyển k thì bằng nhau — hiệu ban đầu bằng 2k, và chiều ngược."""
+    return [
+        _c('bia', 'Lời khai "chuyển k thì bằng nhau"', so_bai(b),
+           loi=['Đề chỉ cho tổng và một cú chuyển. Cái hiệu nằm ngay trong lời khai '
+                'ấy.']),
+        _c('de_toan', 'Đề bài',
+           de='Hai kệ tổng 90 quyển. Chuyển 5 từ kệ 1 sang kệ 2 thì HAI KỆ BẰNG NHAU',
+           loi=['Hai kệ có tổng chín mươi quyển. Chuyển năm quyển từ kệ một sang kệ '
+                'hai thì hai kệ bằng nhau.']),
+        _c('y_toan', 'Dịch lời khai ấy ra HIỆU',
+           'chuyển 5 đã khép TRỌN khoảng cách   →   hiệu ban đầu = 2 × 5 = 10',
+           buoc=1, soBuoc=4,
+           loi=['Bằng nhau nghĩa là cú chuyển ấy đã khép trọn khoảng cách.',
+                'Mà mỗi cú chuyển khép gấp đôi, nên hiệu ban đầu bằng mười.']),
+        _c('so_do_doan', 'Nay đủ tổng và hiệu', be=40, lon=50,
+           nhanBe='kệ 2', nhanLon='kệ 1', hienHieu=True, chuHieu='hiệu 10',
+           chuTong='tổng 90', chuPhu='Máy tổng – hiệu của bài 25 chạy được ngay.',
+           loi=['Nay đủ tổng và hiệu, máy của bài hai mươi lăm chạy được ngay.']),
+        _c('y_toan', 'Máy cũ chạy',
+           'kệ 1 = (90 + 10) : 2 = 50      ·      kệ 2 = 40', buoc=2, soBuoc=4,
+           loi=['Chín mươi cộng mười chia hai được năm mươi. Kệ hai là bốn mươi.']),
+        _c('y_toan', 'Thử bằng cách DIỄN LẠI cú chuyển',
+           '50 − 5 = 45      ·      40 + 5 = 45      ✓  bằng nhau thật',
+           buoc=3, soBuoc=4,
+           loi=['Thử bằng cách diễn lại cú chuyển. Năm mươi bớt năm còn bốn mươi lăm.',
+                'Bốn mươi thêm năm cũng bốn mươi lăm. Bằng nhau thật.']),
+        _c('de_toan', 'Đổi số vẫn một máy', de='Tổng 96, chuyển 8 thì hai bên bằng nhau',
+           loi=['Đổi số vẫn một máy. Tổng chín mươi sáu, chuyển tám thì bằng nhau.']),
+        _c('y_toan', 'Và chiều NGƯỢC cũng cùng một luật ấy',
+           'biết sẵn 50 và 40, hỏi chuyển mấy thì bằng nhau  →  k = hiệu : 2 = 5',
+           buoc=4, soBuoc=4,
+           loi=['Chiều ngược cũng cùng một luật. Biết sẵn hai bên, hỏi chuyển mấy thì '
+                'bằng nhau.',
+                'Lấy hiệu chia hai, vì mỗi đầu chỉ khép một nửa khoảng cách.']),
+        _c('cong_thuc', 'Hai chiều của một luật',
+           congThuc='xuôi:  hiệu = 2 × k          ·          ngược:  k = hiệu : 2',
+           thay='tổng 96 chuyển 8 → hiệu 16 → 56 và 40, diễn lại đều ra 48',
+           loi=['Con nhớ hai chiều. Xuôi thì hiệu bằng hai lần lượng chuyển, ngược thì '
+                'lượng chuyển bằng hiệu chia hai.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_so_do_truoc_sau(b):
+    """L5·B27·M3 Sơ đồ trước – sau, và ca đổi ngôi."""
+    return [
+        _c('bia', 'Vẽ hai tầng: TRƯỚC và SAU cú chuyển', so_bai(b),
+           loi=['Ca chuyển nào rắc rối thì vẽ hai tầng, trước và sau. Đọc ra ngay.']),
+        _c('de_toan', 'Đề bài',
+           de='Tổng 90. Chuyển 3 từ kệ 2 sang kệ 1 thì kệ 1 hơn kệ 2 là 16 quyển',
+           loi=['Tổng chín mươi. Chuyển ba quyển từ kệ hai sang kệ một thì kệ một hơn '
+                'kệ hai mười sáu.']),
+        _c('y_toan', 'Cú chuyển này đi từ bên ÍT sang bên NHIỀU',
+           'nên nó KHÔNG khép khoảng cách — nó NỚI ra', buoc=1, soBuoc=4,
+           loi=['Cú chuyển này đi từ bên ít sang bên nhiều, nên nó không khép khoảng '
+                'cách mà nới ra.']),
+        _c('y_toan', 'Nới đúng 2 × k, nên trừ ngược lại',
+           'hiệu sau = hiệu trước + 2 × 3   →   hiệu trước = 16 − 6 = 10',
+           buoc=2, soBuoc=4,
+           loi=['Nới đúng gấp đôi, nên lấy mười sáu trừ sáu, được hiệu ban đầu là '
+                'mười.',
+                'Máy cũ cho ra năm mươi và bốn mươi. Diễn lại thì hơn đúng mười sáu.']),
+        _c('de_toan', 'Ca khó nhất: ĐỔI NGÔI',
+           de='Tổng 90. Chuyển 5 từ A sang B thì B hơn A là 4 quyển',
+           loi=['Ca khó nhất là đổi ngôi. Chuyển năm từ A sang B thì B hơn ngược lại '
+                'bốn.']),
+        _c('so_do_doan', 'Tầng TRƯỚC — A đang hơn', be=42, lon=48,
+           nhanBe='B trước', nhanLon='A trước', hienHieu=True, chuHieu='hiệu 6',
+           chuTong='tổng 90', chuPhu='Khoảng cách ban đầu chưa biết là bao nhiêu.',
+           loi=['Tầng trước, A đang hơn B một khoảng chưa biết.']),
+        _c('so_do_doan', 'Tầng SAU — ngôi đã đổi', be=43, lon=47,
+           nhanBe='A sau', nhanLon='B sau', hienHieu=True, chuHieu='B hơn 4',
+           chuTong='tổng 90', chuPhu='Cú chuyển khép hết khoảng cũ, còn dư đà mở sang phía B.',
+           loi=['Tầng sau ngôi đã đổi, B hơn A đúng bốn.',
+                'Cú chuyển khép hết khoảng cũ rồi còn dư đà.']),
+        _c('y_toan', 'Nên khoảng cũ chính là phần đà đã dùng hết',
+           'hiệu ban đầu = 2 × k − d = 10 − 4 = 6   →   A = 48 · B = 42',
+           buoc=3, soBuoc=4,
+           loi=['Nên khoảng cũ bằng gấp đôi lượng chuyển trừ đi phần dôi ra, được '
+                'sáu.',
+                'Máy cũ cho A bằng bốn mươi tám, B bằng bốn mươi hai.']),
+        _c('y_toan', 'Luôn DIỄN LẠI kịch bản mà thử',
+           '48 − 5 = 43   ·   42 + 5 = 47   →   B hơn A đúng 4  ✓', buoc=4, soBuoc=4,
+           loi=['Luôn diễn lại kịch bản mà thử. Bốn mươi tám đưa năm còn bốn mươi ba.',
+                'Bốn mươi hai nhận năm thành bốn mươi bảy. B hơn đúng bốn, khớp lời '
+                'đề.']),
+        _c('cong_thuc', 'Ba ca của một luật',
+           congThuc='khép: d = hiệu − 2k   ·   nới: d = hiệu + 2k   ·   đổi ngôi: hiệu = 2k − d',
+           thay='đáp 52 và 38 thì chuyển 5 vẫn ra kệ 1 hơn — trái kịch bản, loại ngay',
+           loi=['Đừng học thuộc ba công thức. Cứ vẽ hai tầng rồi diễn lại kịch bản là '
+                'ra.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B27.M1': kb5_luat_kep_cu_chuyen,
+    'DL:KSN5Q1.B27.M2': kb5_chuyen_thi_bang_nhau,
+    'DL:KSN5Q1.B27.M3': kb5_so_do_truoc_sau,
     'DL:KSN5Q1.B26.M1': kb5_can_tung_doi,
     'DL:KSN5Q1.B26.M2': kb5_cap_so_lien_nhau,
     'DL:KSN5Q1.B26.M3': kb5_may_chan_le,
