@@ -38,24 +38,7 @@
   "kidText": "Chia 4 và 25 thì soi hai chữ số cuối, chia 8 và 125 thì soi ba chữ số cuối. Con soi đúng tầm, không nhầm ống kính."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Họ TẬN CÙNG sâu dần theo số tròn nó \"ăn theo\": 2, 5 ăn theo 10 → soi MỘT chữ số cuối; 4, 25 ăn theo 100 → soi HAI chữ số cuối; 8, 125 ăn theo 1000 → soi BA chữ số cuối."
-   },
-   {
-    "id": "K2",
-    "text": "Cách soi: cắt cụm chữ số cuối đúng tầm rồi kiểm cụm ấy có chia hết không (1236: cụm $36 = 4  \\times  9$ → chia hết cho 4)."
-   },
-   {
-    "id": "K3",
-    "text": "Họ XEN KẼ của số 11: lấy tổng các chữ số ở vị trí lẻ và tổng ở vị trí chẵn; HIỆU hai tổng chia hết cho 11 — hoặc bằng 0 — thì số chia hết cho 11."
-   },
-   {
-    "id": "K4",
-    "text": "Nghi thức trước khi soi: hỏi \"số này ăn theo số tròn nào?\" — trả lời xong mới chọn ống kính; họ TỔNG (3, 9) vẫn soi tổng như Bài 3, đừng trộn rổ."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: TRẠM SOI của Học Viện có BA ỐNG KÍNH treo tường. Ống NGẮN soi 1 chữ số cuối — dành cho 2 và 5 (ăn theo 10). Ống VỪA soi 2 chữ số cuối — dành cho 4 và 25, vì 100 chia hết cho cả hai: mọi phần \"trăm trở lên\" tự động chia hết, chỉ cần khám hai chữ số cuối. Ống DÀI soi 3 chữ số cuối — cho 8 và 125, ăn theo 1000. Riêng thanh tra 11 không dùng ống kính: bác ấy đeo KÍNH SO LE, đọc các chữ số cách quãng — cộng nhà lẻ, cộng nhà chẵn, lấy hiệu; hiệu chia hết 11 (kể cả bằng 0) là cho qua. Lỗi kinh điển: cầm nhầm ống — đem \"soi tổng\" cho số 4, hay soi mỗi 1 chữ số cho số 25.",
   "canonicalExamples": [
    {
@@ -86,13 +69,8 @@
     "counterExample": "Số 112: tổng 4 chia hết cho 4 nhưng 112 cũng chia hết cho 4 vì 12 chia hết cho 4 — còn số 13: tổng 4 mà 13 đâu chia hết 4! Soi tổng cho số 4 là lý lẽ gãy."
    }
   ],
-  "vocabulary": [
-   "ba ống kính ngắn – vừa – dài",
-   "ăn theo 10 / 100 / 1000",
-   "kính so le (xen kẽ)",
-   "hiệu hai tổng xen kẽ"
-  ],
-  "mantra": "SOI ĐUÔI MẤY CHỮ SỐ — HỎI SỐ TRÒN NÓ ĂN THEO!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -119,73 +97,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Trong hai số 1236 và 1226, số nào chia hết cho 4? Vì sao?",
-    "display": {
-     "type": "story_panel",
-     "caption": "soi 4 bằng… tổng??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để chọn đúng ống kính!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Vì sao 4 soi HAI chữ số cuối? Vì 100 chia hết cho 4 — cả tòa nhà từ hàng trăm trở lên tự động qua cửa, chỉ hai phòng cuối cần khám! Con cầm ống VỪA soi 1236: cụm 36 bằng 4 nhân 9 — chia hết! Đổi ống DÀI soi 5104 cho số 8: cụm 104 bằng 8 nhân 13 — qua cửa!",
-    "display": {
-     "type": "lens_interactive",
-     "spec": {
-      "lenses": [
-       {
-        "len": 1,
-        "for_": "2·5",
-        "why": "ăn theo 10"
-       },
-       {
-        "len": 2,
-        "for_": "4·25",
-        "why": "ăn theo 100"
-       },
-       {
-        "len": 3,
-        "for_": "8·125",
-        "why": "ăn theo 1000"
-       }
-      ],
-      "tasks": [
-       [
-        "1236",
-        "4",
-        "36 ✓"
-       ],
-       [
-        "5104",
-        "8",
-        "104 ✓"
-       ],
-       [
-        "3275",
-        "25",
-        "75 ✓"
-       ]
-      ]
-     }
-    },
-    "interaction": {
-     "type": "pick_lens_and_check",
-     "successMessage": "Chọn đúng tầm ống — cụm cuối kể hết sự thật!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -206,37 +117,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Thanh tra 11 làm việc kiểu khác: đeo kính so le, đọc cách quãng. Số 2728, đếm từ phải: nhà lẻ là 8 và 7 — tổng mười lăm; nhà chẵn là 2 và 2 — tổng bốn. Hiệu: mười lăm trừ bốn bằng MƯỜI MỘT — chia hết cho 11! Và nhớ luật khoan hồng: hiệu bằng KHÔNG cũng đạt.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "2 7 2 8 → lẻ: 8+7=15 · chẵn: 2+2=4",
-      "hiệu 15 − 4 = 11 ⋮ 11 ✓",
-      "hiệu = 0 cũng ĐẠT"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: soi đuôi mấy chữ số — hỏi số tròn nó ăn theo!",
-    "display": {
-     "type": "mantra_card",
-     "text": "SOI ĐUÔI MẤY CHỮ SỐ — HỎI SỐ TRÒN NÓ ĂN THEO!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -625,131 +505,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B9.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "soi 4 bằng… tổng??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "1236 có chia hết cho 4 không nhỉ? 1 + 2 + 3 + 6 = 12, chia hết cho 3… ơ mà đề hỏi số 4 mà?!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B9_M1_F1.png",
-   "sha256_16": "ea17d6a02f102dcb"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Trạm soi ba ống kính: đuôi sâu dần (4·25 / 8·125) & họ xen kẽ 11",
-    "steps": [
-     {
-      "text": "2 7 2 8 → lẻ: 8+7=15 · chẵn: 2+2=4"
-     },
-     {
-      "text": "hiệu 15 − 4 = 11 chia hết cho 11"
-     },
-     {
-      "text": "hiệu = 0 cũng ĐẠT"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B9_M1_F2.png",
-   "sha256_16": "77d130fddcd20348"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Họ TẬN CÙNG sâu dần theo số tròn nó \"ăn theo\"",
-      "text": "2, 5 ăn theo 10 → soi MỘT chữ số cuối; 4, 25 ăn theo 100 → soi HAI chữ số cuối; 8, 125 ăn theo 1000 → soi BA chữ số cuối.",
-      "tone": "navy"
-     },
-     {
-      "label": "Cách soi",
-      "text": "cụm 36 = 4 × 9 → chia hết cho 4).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "SOI ĐUÔI MẤY CHỮ SỐ — HỎI SỐ TRÒN NÓ ĂN THEO!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B9_M1_F3.png",
-   "sha256_16": "ae4611f2d805e1bb"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "SOI ĐUÔI SÂU DẦN: 4 · 25 SOI 2 CHỮ SỐ — 8 · 125 SOI 3 CHỮ SỐ",
-    "headers": [
-     "nghìn",
-     "trăm",
-     "chục",
-     "đơn vị"
-    ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "1236",
-      "cells": [
-       "1",
-       "2",
-       "3",
-       "6"
-      ],
-      "color": "white",
-      "highlight": [
-       2,
-       3
-      ]
-     },
-     {
-      "label": "5104",
-      "cells": [
-       "5",
-       "1",
-       "0",
-       "4"
-      ],
-      "color": "white",
-      "highlight": [
-       1,
-       2,
-       3
-      ]
-     }
-    ],
-    "note": "1236: cụm 36 = 4 × 9 → chia hết cho 4 ✓ · 5104: cụm 104 = 8 × 13 → chia hết cho 8 ✓"
-   },
-   "caption": "Ống kính càng sâu thì soi càng nhiều chữ số cuối — không cần nhìn cả số",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B9_M1_F4.png",
-   "sha256_16": "b3512c726c4c219c"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B09",
@@ -763,5 +519,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Trạm soi ba ống kính: đuôi sâu dần (4·$\\frac{25}{8}$·125) & họ xen kẽ 11"
+ "titleDay": "Trạm soi ba ống kính: đuôi sâu dần (4·$\\frac{25}{8}$·125) & họ xen kẽ 11",
+ "video": {
+  "giang": "DL_KSN5Q1_B9_M1_giang.mp4"
+ }
 }

@@ -9399,7 +9399,134 @@ def kb5_dinh_vi_chu_so(b):
     ]
 
 
+def kb5_soi_duoi_may_chu_so(b):
+    """L5·B9·M1 Soi đuôi mấy chữ số — hỏi số tròn nó ăn theo."""
+    return [
+        _c('bia', 'Soi đuôi mấy chữ số mới đủ', so_bai(b),
+           loi=['Chia hết cho hai thì soi một chữ số cuối. Cho bốn thì mấy chữ số.']),
+        _c('tach_so', 'Chia hết cho 4 — soi HAI chữ số cuối', so='1236', sang=[3, 4],
+           phep='36 : 4 = 9  ✓', chuPhu='Không cần đụng tới hai chữ số đầu.',
+           loi=['Chia hết cho bốn thì soi hai chữ số cuối. Ba mươi sáu chia bốn được '
+                'chín.']),
+        _c('y_toan', 'Vì sao chỉ cần soi hai chữ số?',
+           'vì 100 chia hết cho 4 — mọi hàng từ trăm trở lên tự qua cửa',
+           buoc=1, soBuoc=3,
+           loi=['Vì một trăm chia hết cho bốn. Mọi hàng từ trăm trở lên tự qua cửa.']),
+        _c('cong_thuc', 'Nên hỏi: số này ăn theo số tròn nào?',
+           congThuc='2·5 ăn theo 10 → soi 1  ·  4·25 ăn theo 100 → soi 2',
+           thay='số tròn ấy có mấy số 0 thì soi bấy nhiêu chữ số cuối',
+           loi=['Nên trước khi soi, con hỏi số này ăn theo số tròn nào.',
+                'Hai và năm ăn theo mười nên soi một chữ số. Bốn và hai lăm ăn theo '
+                'một trăm nên soi hai.']),
+        _c('y_toan', 'Sâu thêm một bậc nữa', '8 · 125 ăn theo 1000 → soi 3 chữ số cuối',
+           buoc=2, soBuoc=3,
+           loi=['Sâu thêm một bậc. Tám và một trăm hai lăm ăn theo một nghìn nên soi '
+                'ba chữ số cuối.']),
+        _c('tach_so', 'Số 11 thì soi kiểu khác hẳn — XEN KẼ', so='2728',
+           sang=[2, 4], phep='(8 + 7) − (2 + 2) = 11  ✓',
+           chuPhu='Cộng cách quãng hai bên, rồi lấy hiệu.',
+           loi=['Số mười một soi kiểu khác hẳn. Cộng các chữ số ở vị trí lẻ, rồi cộng '
+                'ở vị trí chẵn.',
+                'Đếm từ phải sang. Tám cộng bảy được mười lăm, hai cộng hai được bốn.',
+                'Hiệu bằng mười một nên số ấy chia hết cho mười một.']),
+        _c('y_toan', 'Còn họ TỔNG thì vẫn như cũ', '3 và 9 — cộng hết các chữ số',
+           loi=['Còn ba và chín thì vẫn cộng hết các chữ số như con đã học.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='soi đuôi mấy chữ số — hỏi SỐ TRÒN nó ăn theo',
+           thay='chọn nhầm ống kính là soi thiếu, số trượt mà tưởng đạt',
+           loi=['Con nhớ câu này. Soi đuôi mấy chữ số thì hỏi số tròn nó ăn theo.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_so_hop_thao_cap(b):
+    """L5·B9·M2 Số hợp không có dấu hiệu riêng — tháo thành cặp không chung ước."""
+    return [
+        _c('bia', 'Số 6 có dấu hiệu riêng không?', so_bai(b),
+           loi=['Có bạn bảo tổng chữ số chia hết cho sáu thì số chia hết cho sáu.']),
+        _c('tach_so', 'Thử ngay một số', so='15', sang=[1, 2],
+           phep='1 + 5 = 6, chia hết cho 6', chuPhu='Nhưng 15 là số LẺ — đâu chia hết cho 6.',
+           loi=['Thử ngay số mười lăm. Tổng chữ số bằng sáu, chia hết cho sáu.',
+                'Nhưng mười lăm là số lẻ, đâu chia hết cho sáu. Vậy là không có dấu '
+                'hiệu ấy.']),
+        _c('cong_thuc', 'Số 6 phải khám HAI cửa',
+           congThuc='6 = 2 × 3  →  khám cửa CHẴN và cửa TỔNG chia hết 3',
+           thay='số hợp không có dấu hiệu riêng, phải tháo ra thành cặp thừa số',
+           loi=['Số sáu phải khám hai cửa, vì sáu bằng hai nhân ba.',
+                'Khám cửa chẵn, rồi khám cửa tổng chia hết cho ba.']),
+        _c('y_toan', 'Làm thử', '53x chia hết 6: chẵn → x ∈ 0,2,4,6,8',
+           buoc=1, soBuoc=3,
+           loi=['Làm thử. Tìm chữ số ích để năm ba ích chia hết cho sáu.',
+                'Cửa chẵn cho ích là không, hai, bốn, sáu hoặc tám.']),
+        _c('y_toan', 'Cửa thứ hai lọc tiếp', 'tổng 8 + x chia hết 3 → x ∈ 1,4,7',
+           buoc=2, soBuoc=3,
+           loi=['Cửa thứ hai lọc tiếp. Tổng tám cộng ích phải chia hết cho ba, nên ích '
+                'là một, bốn hoặc bảy.']),
+        _c('y_toan', 'Qua ĐỦ hai cửa mới được', 'chỉ còn x = 4  →  số 534',
+           buoc=3, soBuoc=3,
+           loi=['Qua đủ hai cửa mới được. Chỉ còn ích bằng bốn, được số năm trăm ba '
+                'mươi tư.']),
+        _c('y_toan', 'Nhưng THÁO thế nào cũng được sao?',
+           '45 = 15 × 3 — hai mảnh CHUNG ước 3, tháo thế là sai',
+           loi=['Nhưng tháo thế nào cũng được sao. Bốn lăm bằng mười lăm nhân ba.',
+                'Hai mảnh ấy chung ước ba, nên tháo thế là sai.']),
+        _c('cong_thuc', 'Luật tháo',
+           congThuc='hai mảnh phải KHÔNG chung ước nào ngoài 1',
+           thay='số 15 qua cả cửa 15 lẫn cửa 3 mà vẫn không chia hết 45',
+           loi=['Luật tháo. Hai mảnh phải không chung ước nào ngoài một.',
+                'Ví dụ số mười lăm qua cả cửa mười lăm lẫn cửa ba, mà vẫn không chia '
+                'hết cho bốn lăm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_hai_an_x_y(b):
+    """L5·B9·M3 Hai chữ số bị xoá — chốt ẩn ở đuôi trước."""
+    return [
+        _c('bia', 'Hai chữ số bị xoá', so_bai(b),
+           loi=['Một số bị xoá mất hai chữ số. Tìm lại chúng.']),
+        _c('de_toan', 'Đề bài', de='Số x47y chia hết cho 45. Tìm x và y.',
+           loi=['Số ích bốn bảy ích dài chia hết cho bốn lăm. Tìm hai chữ số bị xoá.']),
+        _c('y_toan', 'Tháo 45 thành cặp không chung ước',
+           '45 = 9 × 5  ·  mỗi mảnh phụ trách một ẩn', buoc=1, soBuoc=3,
+           loi=['Tháo bốn lăm thành chín nhân năm. Hai mảnh này không chung ước.']),
+        _c('y_toan', 'Chốt ẩn ở ĐUÔI trước — vì nó ít lựa chọn nhất',
+           'chia hết 5  →  y chỉ có thể là 0 hoặc 5', buoc=2, soBuoc=3,
+           loi=['Chốt ẩn ở đuôi trước, vì cửa đuôi cho ít lựa chọn nhất.',
+                'Chia hết cho năm nên chữ số cuối chỉ có thể là không hoặc năm.']),
+        _c('y_toan', 'Mỗi giá trị là MỘT NHÁNH riêng',
+           'nhánh y = 0  ·  nhánh y = 5', buoc=3, soBuoc=3,
+           loi=['Mỗi giá trị là một nhánh riêng, phải đi trọn cả hai.']),
+        _c('tach_so', 'Nhánh y = 0 — dò x theo cửa tổng', so='7470',
+           sang=[1], phep='7 + 4 + 7 + 0 = 18, chia hết 9 ✓',
+           chuPhu='Được số 7470.',
+           loi=['Nhánh thứ nhất, đuôi bằng không. Tổng phải chia hết cho chín.',
+                'Dò được ích bằng bảy, thành số bảy nghìn bốn trăm bảy mươi.']),
+        _c('tach_so', 'Nhánh y = 5 — cũng dò như thế', so='2475',
+           sang=[1], phep='2 + 4 + 7 + 5 = 18, chia hết 9 ✓',
+           chuPhu='Được số 2475 — nghiệm thứ hai.',
+           loi=['Nhánh thứ hai, đuôi bằng năm. Dò được ích bằng hai, thành số hai '
+                'nghìn bốn trăm bảy mươi lăm.',
+                'Bài này có tới hai đáp số, dừng ở nhánh đầu là mất một nửa.']),
+        _c('y_toan', 'Thử lại từng số', '7470 : 45 = 166  ·  2475 : 45 = 55',
+           loi=['Thử lại từng số bằng phép chia cho chắc.']),
+        _c('cong_thuc', 'Nghi thức ba nhịp',
+           congThuc='tháo cặp  →  chốt ẩn ĐUÔI trước  →  dò ẩn kia TỪNG NHÁNH',
+           thay='và gom đủ mọi nghiệm, đừng bắt được một số đã nghỉ',
+           loi=['Con nhớ ba nhịp. Tháo cặp, chốt ẩn ở đuôi trước, rồi dò ẩn kia theo '
+                'từng nhánh.',
+                'Và gom đủ mọi nghiệm, đừng bắt được một số đã vội nghỉ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B9.M1': kb5_soi_duoi_may_chu_so,
+    'DL:KSN5Q1.B9.M2': kb5_so_hop_thao_cap,
+    'DL:KSN5Q1.B9.M3': kb5_hai_an_x_y,
     'DL:KSN5Q1.B8.M1': kb5_danh_trang_xuoi,
     'DL:KSN5Q1.B8.M2': kb5_danh_trang_nguoc,
     'DL:KSN5Q1.B8.M3': kb5_dinh_vi_chu_so,
