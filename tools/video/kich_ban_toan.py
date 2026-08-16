@@ -12270,7 +12270,143 @@ def kb5_tong_tron_trong_tbc(b):
     ]
 
 
+def kb5_hieu_ti_phan_chenh(b):
+    """L5·B31·M1 Hiệu nằm ở phần thò ra — tổng cặp tổng phần, hiệu cặp phần chênh."""
+    return [
+        _c('bia', 'Đề cho HIỆU thì chia cho số phần khác', so_bai(b),
+           loi=['Bài trước cho tổng. Nay cho hiệu, và số chia đổi hẳn.']),
+        _c('de_toan', 'Đề bài', de='Hiệu hai số là 15, số lớn gấp 4 lần số bé',
+           loi=['Hiệu hai số là mười lăm, số lớn gấp bốn lần số bé.']),
+        _c('y_toan', 'Chồng hai dãy ô cùng mép trái',
+           'dãy bé 1 ô   ·   dãy lớn 4 ô', buoc=1, soBuoc=4,
+           loi=['Chồng hai dãy ô cùng mép trái. Dãy bé một ô, dãy lớn bốn ô.']),
+        _c('so_do_doan', 'Hiệu nằm ở phần THÒ RA', be=5, lon=20,
+           phanBe=1, phanLon=4, nhanBe='số bé', nhanLon='số lớn',
+           hienHieu=True, chuHieu='hiệu 15 nằm trọn ở đây',
+           chuPhu='Phần thò ra chỉ 3 ô — không phải 4.',
+           loi=['Hiệu nằm trọn ở phần thò ra khỏi mép dãy bé.',
+                'Bốn ô trừ một ô, phần thò ra chỉ ba ô, chứ không phải bốn.']),
+        _c('y_toan', 'Nên chia hiệu cho PHẦN CHÊNH',
+           '15 : 3 = 5   ←   giá một ô', buoc=2, soBuoc=4,
+           loi=['Nên chia hiệu cho phần chênh. Mười lăm chia ba, mỗi ô đáng năm.']),
+        _c('y_toan', 'Rồi nhân ra từng số',
+           'bé 1 ô = 5   ·   lớn 4 ô = 20   ·   thử: 20 − 5 = 15 ✓', buoc=3, soBuoc=4,
+           loi=['Số bé năm, số lớn hai mươi. Thử lại thì hiệu đúng mười lăm.']),
+        _c('de_toan', 'Bẫy nhầm nhà', de='Chia 15 cho 4 + 1 = 5 phần  →  3 và 12',
+           loi=['Bẫy nhầm nhà. Nhiều bạn chia mười lăm cho bốn cộng một, ra ba với '
+                'mười hai.']),
+        _c('y_toan', 'Áo thập phân và phần trăm cũng máy ấy',
+           'hiệu 4,5 gấp 4 → chênh 3 → phần 1,5      ·      A = 40% B → tỉ 2 : 5',
+           buoc=4, soBuoc=4,
+           loi=['Áo thập phân hay phần trăm cũng dùng máy ấy, không đổi gì.']),
+        _c('cong_thuc', 'Hai họ máy đối xứng nhau',
+           congThuc='TỔNG cặp TỔNG SỐ PHẦN   —   HIỆU cặp PHẦN CHÊNH',
+           thay='chia nhầm ra 3 và 12 thì hiệu chỉ 9 — trượt trạm ngay',
+           loi=['Con khoanh chữ tổng hay hiệu trước khi chia.',
+                'Chia nhầm ra ba với mười hai thì hiệu chỉ chín, trượt trạm ngay.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_khui_hieu_tu_cu_chuyen(b):
+    """L5·B31·M2 Hiệu trốn trong cú chuyển — khui tầng 1, kẻ ô tầng 2."""
+    return [
+        _c('bia', 'Đề cho tỉ mà không cho hiệu', so_bai(b),
+           loi=['Đề cho tỉ số, nhưng cái hiệu thì đang trốn ở chỗ khác.']),
+        _c('de_toan', 'Đề bài',
+           de='Kệ trên gấp 3 kệ dưới. Chuyển 10 quyển từ trên xuống dưới\n'
+              'thì HAI KỆ BẰNG NHAU. Tìm số sách mỗi kệ lúc đầu',
+           loi=['Kệ trên gấp ba kệ dưới. Chuyển mười quyển từ trên xuống dưới thì hai '
+                'kệ bằng nhau.']),
+        _c('y_toan', 'Hiệu trốn trong CÚ CHUYỂN',
+           'soi bằng luật bài 27: chuyển k thì bằng nhau  →  hiệu = 2 × k',
+           buoc=1, soBuoc=4,
+           loi=['Hiệu trốn trong cú chuyển. Soi bằng luật của bài hai bảy.']),
+        _c('y_toan', 'TẦNG 1 — khui hiệu ra trước',
+           'chuyển 10 thì bằng nhau   →   hiệu = 2 × 10 = 20', buoc=2, soBuoc=4,
+           loi=['Tầng một, khui hiệu ra. Cú chuyển khép trọn khoảng cách, mà mỗi cú '
+                'khép gấp đôi.',
+                'Nên hiệu ban đầu là hai mươi.']),
+        _c('so_do_doan', 'TẦNG 2 — nay mới kẻ ô được', be=10, lon=30,
+           phanBe=1, phanLon=3, nhanBe='kệ dưới', nhanLon='kệ trên',
+           hienHieu=True, chuHieu='hiệu 20 = 2 ô',
+           chuPhu='Gấp 3 nên chênh 2 ô — 20 : 2 = 10.',
+           loi=['Tầng hai, nay mới kẻ ô được. Gấp ba nên chênh hai ô.',
+                'Hai mươi chia hai, mỗi ô mười. Kệ dưới mười, kệ trên ba mươi.']),
+        _c('de_toan', 'Nếu nhét thẳng số chuyển vào sơ đồ',
+           de='Chênh 2 phần = 10   →   5 và 15',
+           loi=['Thử nhét thẳng lượng chuyển vào sơ đồ xem sao. Ra năm với mười lăm.']),
+        _c('y_toan', 'DIỄN LẠI cú chuyển là biết ngay',
+           '30 − 10 = 20 = 10 + 10 ✓      ·      15 − 10 = 5, còn 5 + 10 = 15 ✗',
+           buoc=3, soBuoc=4,
+           loi=['Diễn lại cú chuyển là biết ngay. Ba mươi đưa mười còn hai mươi, mười '
+                'nhận mười thành hai mươi. Bằng nhau.',
+                'Còn mười lăm với năm thì hai kệ đổi ngôi, trái lời đề.']),
+        _c('y_toan', 'Bài đổi ngôi cũng khui bằng luật ấy',
+           'hơn ngược d   →   hiệu = 2k − d, rồi mới kẻ ô', buoc=4, soBuoc=4,
+           loi=['Bài đổi ngôi cũng khui bằng luật ấy, rồi mới kẻ ô.']),
+        _c('cong_thuc', 'Ba nhịp đóng đinh',
+           congThuc='khui hiệu TẦNG 1  →  kẻ ô TẦNG 2  →  rồi DIỄN LẠI',
+           thay='đừng nhét thẳng lượng chuyển vào sơ đồ phần',
+           loi=['Con nhớ ba nhịp. Khui hiệu tầng một, kẻ ô tầng hai, rồi diễn lại kịch '
+                'bản.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_hieu_tuoi_bat_bien(b):
+    """L5·B31·M3 Hiệu tuổi bất biến — mượn hôm nay, dùng ở mọi mốc."""
+    return [
+        _c('bia', 'Hang trốn thứ hai của hiệu: toán tuổi', so_bai(b),
+           loi=['Toán tuổi cũng là bài hiệu tỉ, mà cái hiệu cũng trốn. Nhưng dễ tìm '
+                'hơn.']),
+        _c('de_toan', 'Đề bài',
+           de='Con 8 tuổi, mẹ hơn con 24 tuổi.\nMấy năm TRƯỚC thì tuổi mẹ gấp 5 lần tuổi con?',
+           loi=['Con tám tuổi, mẹ hơn con hai mươi tư tuổi.',
+                'Hỏi mấy năm trước thì tuổi mẹ gấp năm lần tuổi con.']),
+        _c('y_toan', 'Đề không cho hiệu tại mốc "gấp 5" — mà khỏi cần',
+           'hiệu tuổi BẤT BIẾN — đường ray song song của bài 28', buoc=1, soBuoc=4,
+           loi=['Đề không cho hiệu tại mốc gấp năm. Nhưng khỏi cần, vì hiệu tuổi bất '
+                'biến.',
+                'Hôm nay hơn hai mươi tư thì ở mọi mốc đều hơn hai mươi tư.']),
+        _c('y_toan', 'Mượn chiếc neo hôm nay đem sang mốc đích',
+           'ở mốc gấp 5, hiệu VẪN là 24', buoc=2, soBuoc=4,
+           loi=['Mượn chiếc neo hôm nay đem sang mốc đích mà dùng.']),
+        _c('so_do_doan', 'Rồi kẻ ô như bài hiệu – tỉ', be=6, lon=30,
+           phanBe=1, phanLon=5, nhanBe='con', nhanLon='mẹ',
+           hienHieu=True, chuHieu='hiệu 24 = 4 ô',
+           chuPhu='Gấp 5 nên chênh 4 ô — 24 : 4 = 6.',
+           loi=['Rồi kẻ ô như bài hiệu tỉ. Gấp năm nên chênh bốn ô.',
+                'Hai mươi tư chia bốn, con lúc đó sáu tuổi.']),
+        _c('y_toan', 'So tuổi ấy với hôm nay để định vị',
+           '6 BÉ hơn 8   →   mốc ở QUÁ KHỨ, hai năm trước   ·   mẹ 30 = 5 × 6 ✓',
+           buoc=3, soBuoc=4,
+           loi=['Sáu bé hơn tám hôm nay, nên mốc ấy nằm ở quá khứ, hai năm trước.',
+                'Mẹ lúc đó ba mươi, đúng gấp năm lần sáu.']),
+        _c('de_toan', 'Chiều dựng XUÔI',
+           de='Con 8 tuổi. SAU 4 NĂM thì mẹ gấp 3 con. Mẹ NAY bao nhiêu tuổi?',
+           loi=['Còn chiều dựng xuôi. Sau bốn năm thì mẹ gấp ba con, hỏi mẹ nay bao '
+                'nhiêu.']),
+        _c('y_toan', 'Đi thẳng tới mốc, rồi mượn neo quay về',
+           'con lúc đó 12  →  mẹ lúc đó 36  →  mẹ nay = 36 − 4 = 32', buoc=4, soBuoc=4,
+           loi=['Đi thẳng tới mốc. Con lúc đó mười hai, mẹ gấp ba là ba mươi sáu.',
+                'Đề hỏi mẹ nay, nên lùi bốn năm, mẹ ba mươi hai.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='hiệu tuổi BẤT BIẾN — mượn hôm nay, dùng ở mọi mốc',
+           thay='kiểm: 32 − 8 = 24, đúng chiếc neo ban đầu',
+           loi=['Con nhớ câu này. Hiệu tuổi bất biến, mượn hôm nay dùng được ở mọi '
+                'mốc.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B31.M1': kb5_hieu_ti_phan_chenh,
+    'DL:KSN5Q1.B31.M2': kb5_khui_hieu_tu_cu_chuyen,
+    'DL:KSN5Q1.B31.M3': kb5_hieu_tuoi_bat_bien,
     'DL:KSN5Q1.B30.M1': kb5_ti_gan_voi_thoi_diem,
     'DL:KSN5Q1.B30.M2': kb5_chuoi_ti_ba_so,
     'DL:KSN5Q1.B30.M3': kb5_tong_tron_trong_tbc,

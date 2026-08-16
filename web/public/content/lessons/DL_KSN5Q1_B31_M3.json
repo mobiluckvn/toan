@@ -32,20 +32,7 @@
   "kidText": "Hiệu trốn trong bài tuổi. Hiệu tuổi không bao giờ đổi nên con mượn từ hôm nay đem sang mốc \"gấp k lần\"."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Toán tuổi là bài hiệu – tỉ với hiệu TRỐN: đề không cho hiệu tại mốc \"gấp k\" — nhưng hiệu tuổi BẤT BIẾN (đường ray B28): mượn hiệu hôm nay (24) đem sang mốc đích dùng."
-   },
-   {
-    "id": "K2",
-    "text": "Máy quen tại mốc đích: gấp 5 → chênh 4 phần = 24 → con lúc đó 6 → so tuổi nay (8) → 2 năm TRƯỚC; thử tuổi mẹ $30 = 5  \\times  6$."
-   },
-   {
-    "id": "K3",
-    "text": "Chiều dựng xuôi khi đề cho tuổi con + mốc tương lai: đi tới mốc đích tính trực tiếp (sau 4 năm con 12 → mẹ lúc đó $3  \\times  12 = 36$) → hiệu 24 bất biến → quay về: mẹ nay $36 - 4 = 32$."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HANG TRỐN THỨ HAI — MƯỢN NEO ĐEM THEO. Bài tuổi: \"con 8 tuổi, mẹ hơn con 24 — mấy năm trước mẹ gấp 5 con?\" Tại mốc \"gấp 5\" đề chẳng cho hiệu… nhưng cần gì cho: hiệu tuổi là chiếc NEO BẤT BIẾN — mượn con số 24 của hôm nay bỏ túi ĐEM SANG mốc gấp 5! Tại đó máy hiệu – tỉ quen: chênh 5 trừ 1 bằng BỐN phần = 24 → con lúc đó SÁU tuổi — bé hơn 8 hôm nay: HAI NĂM TRƯỚC (mẹ 30 = 5 × 6 ✓). Bài sư phụ chiều xuôi: \"con 8; SAU 4 năm mẹ gấp 3 con — mẹ nay?\" Đi thẳng tới mốc: con lúc đó 12 → mẹ lúc đó 36 → mượn neo chiều về: hiệu 24 không đổi — mẹ nay 32 (hoặc đơn giản 36 − 4). Hai hang của hiệu đã khui trọn: cú chuyển và tuổi tác — hiệu trốn đâu cũng có đèn.",
   "canonicalExamples": [
    {
@@ -70,14 +57,8 @@
     "counterExample": "Đáp mẹ nay 36: hiệu $36 - 8 = 28$ ≠ 24 — neo lệch, lộ ngay."
    }
   ],
-  "vocabulary": [
-   "hang thứ hai",
-   "neo bất biến bỏ túi",
-   "đem sang mốc đích",
-   "dựng xuôi — quay về",
-   "hai hang khui trọn"
-  ],
-  "mantra": "HIỆU TUỔI BẤT BIẾN — MƯỢN HÔM NAY, DÙNG Ở MỌI MỐC!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -99,48 +80,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Hiện nay con 8 tuổi, mẹ hơn con 24 tuổi. Hỏi mấy năm trước tuổi mẹ gấp 5 lần tuổi con?",
-    "display": {
-     "type": "story_panel",
-     "caption": "mốc gấp 5 — hiệu đâu?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để bỏ neo vào túi!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Hiệu tuổi BẤT BIẾN — đường ray song song Bài hai tám: hôm nay hơn hai tư thì Ở MỌI MỐC đều hơn hai tư! Mượn neo đem sang mốc gấp năm: máy hiệu – tỉ quen — chênh năm trừ một bằng BỐN phần, bốn phần bằng hai tư: con lúc đó SÁU tuổi! Sáu bé hơn tám hôm nay: HAI NĂM TRƯỚC — thử mẹ ba mươi đúng gấp năm sáu!",
-    "display": {
-     "type": "anchor_pocket_interactive",
-     "spec": {
-      "anchor": 24,
-      "k": 5,
-      "chenh": 4,
-      "unit": 6,
-      "when": "8 − 6 = 2 năm trước",
-      "check": "mẹ 30 = 5 × 6"
-     }
-    },
-    "interaction": {
-     "type": "carry_anchor_solve",
-     "answerKey": {
-      "value": 2
-     },
-     "successMessage": "Mượn 24 → chênh 4 → con lúc đó 6 → 2 năm trước!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -161,37 +100,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Chiều dựng xuôi của sư phụ: con tám tuổi; SAU BỐN NĂM mẹ gấp ba con — mẹ nay bao nhiêu? Đi thẳng tới mốc: con lúc đó tám cộng bốn — MƯỜI HAI; mẹ lúc đó gấp ba: BA SÁU! Nhưng đề hỏi mẹ NAY — mượn neo chiều về: lùi bốn năm — ba sáu trừ bốn: BA MƯƠI HAI! Kiểm neo: ba hai trừ tám đúng hai tư. Hai hang của hiệu đã khui trọn: cú chuyển soi đèn hai ka — tuổi tác mượn neo bất biến!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "tới mốc: con 12 → mẹ 36",
-      "quay về: mẹ nay 36 − 4 = 32",
-      "kiểm neo: 32 − 8 = 24 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: hiệu tuổi bất biến — mượn hôm nay, dùng ở mọi mốc!",
-    "display": {
-     "type": "mantra_card",
-     "text": "MƯỢN NEO — DÙNG MỌI MỐC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -482,107 +390,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B31.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "mốc gấp 5 — hiệu đâu?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Mốc gấp 5 có cho hiệu đâu mà chia phần?!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B31_M3_F1.png",
-   "sha256_16": "7c290855e4d7ed90"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Hang trốn thứ hai: mượn hiệu tuổi bất biến đem sang mốc gấp k",
-    "steps": [
-     {
-      "text": "tới mốc: con 12 → mẹ 36"
-     },
-     {
-      "text": "quay về: mẹ nay 36 − 4 = 32"
-     },
-     {
-      "text": "kiểm neo: 32 − 8 = 24"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B31_M3_F2.png",
-   "sha256_16": "dde21ceae8dc0267"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Toán tuổi là bài hiệu",
-      "text": "tỉ với hiệu TRỐN: đề không cho hiệu tại mốc \"gấp k\" — nhưng hiệu tuổi BẤT BIẾN (đường ray B28): mượn hiệu hôm nay (24) đem sang mốc đích dùng.",
-      "tone": "navy"
-     },
-     {
-      "label": "Máy quen tại mốc đích",
-      "text": "gấp 5 → chênh 4 phần = 24 → con lúc đó 6 → so tuổi nay (8) → 2 năm TRƯỚC; thử tuổi mẹ 30 = 5 × 6.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "HIỆU TUỔI BẤT BIẾN — MƯỢN HÔM NAY, DÙNG Ở MỌI MỐC!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B31_M3_F3.png",
-   "sha256_16": "9437d9e1701b515b"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "HANG TRỐN THỨ HAI: MƯỢN HIỆU TUỔI BẤT BIẾN",
-    "steps": [
-     {
-      "text": "Hiệu tuổi là NEO",
-      "sub": "mẹ hơn con 24 tuổi — không bao giờ đổi"
-     },
-     {
-      "text": "Mang neo sang mốc gấp 5",
-      "sub": "chênh 5 − 1 = 4 phần = 24 → con lúc đó 6"
-     },
-     {
-      "text": "Định vị thời điểm",
-      "sub": "6 < 8 → hai năm TRƯỚC · thử: mẹ 30 = 5 × 6 ✓"
-     }
-    ],
-    "note": "Chiều ngược: sau 4 năm mẹ gấp 3 lần con 12 → mẹ lúc đó 36 → mẹ nay 32"
-   },
-   "caption": "Hiệu tuổi mượn được từ mốc này sang mốc khác vì nó bất biến",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B31_M3_F4.png",
-   "sha256_16": "6334231ba4f3abd5"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B30"
@@ -594,5 +402,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Hang trốn thứ hai: mượn hiệu tuổi bất biến đem sang mốc gấp k"
+ "titleDay": "Hang trốn thứ hai: mượn hiệu tuổi bất biến đem sang mốc gấp k",
+ "video": {
+  "giang": "DL_KSN5Q1_B31_M3_giang.mp4"
+ }
 }
