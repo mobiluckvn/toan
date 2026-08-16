@@ -34,20 +34,7 @@
   "kidText": "Con tìm được chữ số cuối của tổng nhiều tích. Và biết số có đuôi 2, 3, 7, 8 thì chắc chắn không phải số chính phương."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tận cùng của TỔNG (hay tích) nhiều cụm: tìm đuôi từng cụm, CỘNG (nhân) các đuôi lại, rồi LẠI LẤY ĐUÔI của kết quả ($4 + 9 = 13$ → tận cùng 3)."
-   },
-   {
-    "id": "K2",
-    "text": "Số chính phương (tích của một số với chính nó) KHÔNG BAO GIỜ tận cùng bằng 2, 3, 7, 8 — vì bình phương của mọi đuôi 0–9 chỉ cho các đuôi 0, 1, 4, 5, 6, 9."
-   },
-   {
-    "id": "K3",
-    "text": "Cửa loại là cửa MỘT CHIỀU: đuôi xấu (2, 3, 7, 8) → loại THẲNG; đuôi đẹp → CHƯA DUYỆT — phải kiểm thêm cách khác (2116 đuôi 6 đẹp nhưng đuôi đẹp chưa chắc chính phương)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: CỔNG AN NINH SÂN BAY một chiều. Máy quét chỉ nhìn ĐUÔI hành khách: đuôi 2, 3, 7, 8 — còi hú, LOẠI THẲNG khỏi danh sách chính phương, khỏi bàn cãi. Nhưng đuôi đẹp (0, 1, 4, 5, 6, 9) chỉ được… ĐI TIẾP VÀO trong kiểm tra kỹ — qua máy quét đâu có nghĩa là lên được máy bay! Còn khi nhiều cụm số gộp thành tổng: mỗi cụm nộp cái ĐUÔI của mình, cộng các đuôi ở quầy gộp, rồi quầy lại chỉ giữ ĐUÔI của tổng ấy — gộp xong mới lấy đuôi lần cuối.",
   "canonicalExamples": [
    {
@@ -84,13 +71,8 @@
     "counterExample": "Tận cùng phải là MỘT chữ số."
    }
   ],
-  "vocabulary": [
-   "cổng an ninh một chiều",
-   "nhóm cấm cửa 2·3·7·8",
-   "đuôi đẹp — chưa duyệt",
-   "gộp xong lấy đuôi lần cuối"
-  ],
-  "mantra": "ĐUÔI XẤU LOẠI THẲNG — ĐUÔI ĐẸP CHƯA DUYỆT; GỘP XONG LẤY ĐUÔI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -112,63 +94,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Tìm chữ số tận cùng của tổng: (tích 10 thừa số 2) + (tích 10 thừa số 3).",
-    "display": {
-     "type": "story_panel",
-     "caption": "đuôi đẹp = chính phương? · đuôi 13??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để qua cổng an ninh!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Cổng an ninh quét đuôi. Vì sao 2, 3, 7, 8 bị cấm cửa? Con bình phương đủ mười đuôi 0 đến 9 mà xem: các đuôi ra chỉ có 0, 1, 4, 5, 6, 9 — không đời nào ra 2, 3, 7, 8! Vậy 1327 đuôi 7, 5433 đuôi 3: LOẠI THẲNG. Còn 2116 đuôi 6: máy chỉ nói \"chưa bị loại\" — cổng một chiều, muốn duyệt phải kiểm sâu hơn.",
-    "display": {
-     "type": "gate_scan_interactive",
-     "spec": {
-      "squares": "0²..9² → đuôi {0,1,4,5,6,9}",
-      "banned": [
-       2,
-       3,
-       7,
-       8
-      ],
-      "cases": [
-       [
-        "1327",
-        "đuôi 7",
-        "LOẠI"
-       ],
-       [
-        "5433",
-        "đuôi 3",
-        "LOẠI"
-       ],
-       [
-        "2116",
-        "đuôi 6",
-        "chưa kết luận"
-       ]
-      ]
-     }
-    },
-    "interaction": {
-     "type": "scan_each",
-     "successMessage": "Đuôi xấu loại thẳng — đuôi đẹp chưa duyệt: cổng chỉ mở MỘT chiều!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -189,37 +114,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K1"
-    ],
-    "narration": "Quầy gộp tổng: tích mười thừa số 2 — dư 2 — đuôi BỐN. Tích mười thừa số 3 — dư 2 — đuôi CHÍN. Gộp: bốn cộng chín bằng mười ba — và quầy chỉ giữ ĐUÔI: tận cùng BA! Trùm cuối 2026 thừa số? 2026 chia 4 dư 2 — y hệt: vẫn đuôi 4 và 9, tổng vẫn tận cùng 3. Chu kỳ biến số khổng lồ thành trò trẻ con!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "10 t.số 2 → 4 · 10 t.số 3 → 9",
-      "4 + 9 = 13 → LẤY ĐUÔI: 3",
-      "2026 : 4 dư 2 → vẫn ra 3!"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: đuôi xấu loại thẳng — đuôi đẹp chưa duyệt; gộp xong lấy đuôi!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐUÔI XẤU LOẠI THẲNG — ĐUÔI ĐẸP CHƯA DUYỆT!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -530,109 +424,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B11.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "đuôi đẹp = chính phương? · đuôi 13??",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "Số 2116 đuôi 6 đẹp thế — chính phương chắc rồi ha? Còn tổng hai tích khủng kia, đuôi 4 cộng đuôi 9 bằng… 13 nhé!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B11_M3_F1.png",
-   "sha256_16": "7be44303f8032481"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Vận dụng vòng đuôi: tổng – tích hỗn hợp & cửa loại số chính phương",
-    "steps": [
-     {
-      "text": "10 t.số 2 → 4 · 10 t.số 3 → 9"
-     },
-     {
-      "text": "4 + 9 = 13 → LẤY ĐUÔI: 3"
-     },
-     {
-      "text": "2026 : 4 dư 2 → vẫn ra 3!"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B11_M3_F2.png",
-   "sha256_16": "ab57485891d4ceda"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tận cùng của TỔNG (hay tích) nhiều cụm",
-      "text": "tìm đuôi từng cụm, CỘNG (nhân) các đuôi lại, rồi LẠI LẤY ĐUÔI của kết quả (4 + 9 = 13 → tận cùng 3).",
-      "tone": "navy"
-     },
-     {
-      "text": "Số chính phương (tích của một số với chính nó) KHÔNG BAO GIỜ tận cùng bằng 2, 3, 7, 8 — vì bình phương của mọi đuôi 0–9 chỉ cho các đuôi 0, 1, 4, 5, 6, 9.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "ĐUÔI XẤU LOẠI THẲNG — ĐUÔI ĐẸP CHƯA DUYỆT; GỘP XONG LẤY ĐUÔI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B11_M3_F3.png",
-   "sha256_16": "94c78c115b6bb891"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "ĐUÔI CỦA TỔNG HAI TÍCH (10 thừa số 2) + (10 thừa số 3)",
-    "neutral": true,
-    "wrong": {
-     "head": "CỤM SỐ 2",
-     "steps": [
-      "10 : 4 = 2 dư 2",
-      "vòng 2-4-8-6"
-     ],
-     "result": "đuôi 4"
-    },
-    "right": {
-     "head": "CỤM SỐ 3",
-     "steps": [
-      "10 : 4 = 2 dư 2",
-      "vòng 3-9-7-1"
-     ],
-     "result": "đuôi 9"
-    },
-    "verdict": "Gộp hai đuôi rồi LẠI lấy đuôi: 4 + 9 = 13 → đuôi 3"
-   },
-   "caption": "Tìm đuôi từng cụm trước, cộng xong vẫn phải lấy đuôi lần nữa",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B11_M3_F4.png",
-   "sha256_16": "ce5d7e6b4dd54200"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B12"
@@ -644,5 +436,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Vận dụng vòng đuôi: tổng – tích hỗn hợp & cửa loại số chính phương"
+ "titleDay": "Vận dụng vòng đuôi: tổng – tích hỗn hợp & cửa loại số chính phương",
+ "video": {
+  "giang": "DL_KSN5Q1_B11_M3_giang.mp4"
+ }
 }

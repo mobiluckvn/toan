@@ -34,20 +34,7 @@
   "kidText": "Đuôi 2, 3, 7, 8 quay vòng bốn. Con chia số thừa số cho 4 rồi đọc dư — dư 0 thì lấy ô cuối vòng, đừng quay về đầu."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tận cùng của tích n thừa số đuôi d (d là 2, 3, 7 hoặc 8): chia n cho chu kỳ 4, đọc dư trên vòng của d."
-   },
-   {
-    "id": "K2",
-    "text": "HAI CỬA đọc dư (máy định vị của Bài 8 tái xuất!): dư r → phần tử THỨ r của vòng; dư 0 → phần tử CUỐI vòng — đi tròn vòng thì kim dừng ở cuối, không quay về vạch xuất phát."
-   },
-   {
-    "id": "K3",
-    "text": "Kiểm bằng vòng nhỏ khi nghi ngờ: 4 thừa số $2 = 16$ — đuôi 6 đúng là phần tử CUỐI vòng 2-4-8-6."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: chiếc MÁY ĐỊNH VỊ từ thư viện Bài 8 được chuyển sang xưởng vòng quay! Nhập số thừa số n, máy chia cho chu kỳ 4: thương là số VÒNG TRỌN kim đã chạy, dư là số NHỊP lấn thêm. Dư 2? — kim lấn hai nhịp: dừng ở phần tử thứ hai. Dư 0? — kim vừa đi TRÒN các vòng: nó đang đậu ở phần tử CUỐI (đuôi 6 của vòng số 2), tuyệt đối không phải nhảy ngược về vạch xuất phát! Cùng một luật hai-cửa với chữ số thứ n — học một lần, dùng hai xưởng.",
   "canonicalExamples": [
    {
@@ -78,13 +65,8 @@
     "counterExample": "Nếu dư 0 về đầu thì 16 phải có đuôi 2 — mà 16 đuôi 6!"
    }
   ],
-  "vocabulary": [
-   "máy định vị vòng quay",
-   "vòng trọn / nhịp lấn",
-   "hai cửa đọc dư",
-   "kiểm bằng vòng nhỏ"
-  ],
-  "mantra": "DƯ 0 — DỪNG CUỐI VÒNG, KHÔNG VỀ VẠCH XUẤT PHÁT!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,53 +93,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Tìm chữ số tận cùng của tích gồm 5 thừa số 2.",
-    "display": {
-     "type": "story_panel",
-     "caption": "dư 0 → về đầu vòng??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để khởi động lại máy định vị!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
-    ],
-    "narration": "Máy định vị chạy: hai mươi chia bốn bằng năm dư KHÔNG — kim chạy tròn NĂM vòng và đậu ở đâu? Con quay thử một vòng nhỏ: bốn thừa số 2 là mười sáu — đuôi SÁU, đúng phần tử CUỐI vòng! Dư 0 là đi trọn — kim dừng cuối vòng, không nhảy ngược về vạch xuất phát.",
-    "display": {
-     "type": "wheel_locator_interactive",
-     "spec": {
-      "cycle": [
-       2,
-       4,
-       8,
-       6
-      ],
-      "n": 20,
-      "calc": "20 : 4 = 5 dư 0",
-      "check": "2×2×2×2 = 16 → đuôi 6",
-      "answer": 6
-     }
-    },
-    "interaction": {
-     "type": "spin_and_read",
-     "answerKey": {
-      "value": 6
-     },
-     "successMessage": "Đuôi 6 — dư 0 dừng CUỐI vòng; 16 làm chứng!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -173,38 +108,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 36,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Đổi vòng vẫn một luật. Mười ba thừa số 3: mười ba chia bốn dư MỘT — phần tử thứ nhất của vòng 3-9-7-1: đuôi BA. Ba mươi thừa số 7: ba mươi chia bốn dư HAI — phần tử thứ hai của vòng 7-9-3-1: đuôi CHÍN. Nhập n — chia 4 — đọc dư hai cửa: xong!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "13 t.số 3: dư 1 → đuôi 3",
-      "30 t.số 7: dư 2 → đuôi 9",
-      "luật: dư r → thứ r · dư 0 → CUỐI"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: dư không — dừng cuối vòng, không về vạch xuất phát!",
-    "display": {
-     "type": "mantra_card",
-     "text": "DƯ 0 — DỪNG CUỐI VÒNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -509,105 +412,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B11.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "dư 0 → về đầu vòng??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "20 chia 4 bằng 5 dư 0 — chia hết đẹp thế, quay về đầu vòng: đuôi 2!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B11_M2_F1.png",
-   "sha256_16": "729f28c6665da420"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Vòng bốn 2·3·7·8: chia số thừa số cho 4 — đọc dư như máy định vị",
-    "steps": [
-     {
-      "text": "13 t.số 3: dư 1 → đuôi 3"
-     },
-     {
-      "text": "30 t.số 7: dư 2 → đuôi 9"
-     },
-     {
-      "text": "luật: dư r → thứ r · dư 0 → CUỐI"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B11_M2_F2.png",
-   "sha256_16": "cc85fea1271d8f78"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tận cùng của tích n thừa số đuôi d (d là 2, 3, 7 hoặc 8)",
-      "text": "chia n cho chu kỳ 4, đọc dư trên vòng của d.",
-      "tone": "navy"
-     },
-     {
-      "label": "HAI CỬA đọc dư (máy định vị của Bài 8 tái xuất!)",
-      "text": "dư r → phần tử THỨ r của vòng; dư 0 → phần tử CUỐI vòng — đi tròn vòng thì kim dừng ở cuối, không quay về vạch xuất phát.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "DƯ 0 — DỪNG CUỐI VÒNG, KHÔNG VỀ VẠCH XUẤT PHÁT!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B11_M2_F3.png",
-   "sha256_16": "902f49cbaca1d11e"
-  },
-  {
-   "archetype": "cycle_ring",
-   "params": {
-    "title": "TÍCH 20 THỪA SỐ 2 CÓ ĐUÔI LÀ GÌ?",
-    "items": [
-     "2",
-     "4",
-     "8",
-     "6"
-    ],
-    "pointer": 4,
-    "rule": [
-     "20 : 4 = 5 dư 0",
-     "dư 0 → phần tử CUỐI",
-     "đuôi là 6"
-    ],
-    "note": "Cửa dư r thì lấy phần tử thứ r · cửa dư 0 thì quay về phần tử cuối vòng"
-   },
-   "caption": "Chia số thừa số cho 4 rồi đọc số dư đúng hai cửa",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B11_M2_F4.png",
-   "sha256_16": "65b37b87b2f6b4f9"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B12"
@@ -619,5 +424,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Vòng bốn 2·3·7·8: chia số thừa số cho 4 — đọc dư như máy định vị"
+ "titleDay": "Vòng bốn 2·3·7·8: chia số thừa số cho 4 — đọc dư như máy định vị",
+ "video": {
+  "giang": "DL_KSN5Q1_B11_M2_giang.mp4"
+ }
 }

@@ -9651,7 +9651,131 @@ def kb5_hai_dieu_kien_du(b):
     ]
 
 
+def kb5_ban_do_vong_duoi(b):
+    """L5·B11·M1 Vòng quay chữ số tận cùng — nhóm đứng im và vòng đôi."""
+    return [
+        _c('bia', 'Nhân mãi thì chữ số cuối chạy đi đâu', so_bai(b),
+           loi=['Nhân một số với chính nó nhiều lần. Chữ số cuối đổi thế nào.']),
+        _c('day_so', 'Đuôi 5 thì không đổi chút nào', so=[5, 25, 125, 625],
+           hienThuTu=False, chuPhu='Nhân bao nhiêu lần, đuôi vẫn là 5.',
+           loi=['Đuôi năm thì không đổi chút nào. Năm, hai lăm, một trăm hai lăm, sáu '
+                'trăm hai lăm.',
+                'Nhân bao nhiêu lần đuôi vẫn là năm.']),
+        _c('y_toan', 'Bốn chữ số đứng im', 'đuôi 0 · 1 · 5 · 6 — nhân mãi vẫn thế',
+           buoc=1, soBuoc=3,
+           loi=['Có bốn chữ số đứng im. Đuôi không, một, năm, sáu.',
+                'Sáu nhân sáu bằng ba mươi sáu, đuôi vẫn sáu.']),
+        _c('day_so', 'Đuôi 4 thì quay vòng ĐÔI', so=[4, 6, 4, 6],
+           hienThuTu=False, chuPhu='4 → 6 → 4 → 6 …',
+           loi=['Đuôi bốn thì quay vòng đôi. Bốn, sáu, bốn, sáu.',
+                'Đuôi chín cũng vòng đôi. Chín, một, chín, một.']),
+        _c('y_toan', 'Vòng đôi thì đọc theo LẺ hay CHẴN',
+           'số thừa số lẻ → lấy nhịp đầu  ·  chẵn → lấy nhịp sau',
+           loi=['Vòng đôi thì đọc theo số thừa số. Lẻ thì lấy nhịp đầu, chẵn thì lấy '
+                'nhịp sau.']),
+        _c('day_so', 'Còn 2 · 3 · 7 · 8 quay vòng BỐN', so=[2, 4, 8, 6],
+           hienThuTu=False, chuPhu='Vòng của đuôi 2 — bài sau khai thác kỹ.',
+           loi=['Còn đuôi hai, ba, bảy, tám thì quay vòng bốn. Vòng của đuôi hai là '
+                'hai, bốn, tám, sáu.']),
+        _c('y_toan', 'Quên vòng thì dựng lại được',
+           'nhân đuôi liên tiếp, mỗi lần CHỈ GIỮ chữ số cuối',
+           loi=['Quên vòng thì dựng lại được. Nhân đuôi liên tiếp, mỗi lần chỉ giữ chữ '
+                'số cuối.',
+                'Hai, bốn, tám, mười sáu lấy sáu, rồi sáu nhân hai được mười hai lấy '
+                'hai. Vòng khép lại.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='không phải đuôi nào cũng quay — 0 · 1 · 5 · 6 ngồi im',
+           thay='nên hỏi "đuôi này thuộc nhóm nào" trước khi tính',
+           loi=['Con nhớ câu này. Không phải đuôi nào cũng quay, bốn chữ số ngồi im.',
+                'Nên hỏi đuôi này thuộc nhóm nào trước khi tính.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_vong_bon(b):
+    """L5·B11·M2 Vòng bốn — chia số thừa số cho 4 rồi đọc dư."""
+    return [
+        _c('bia', 'Vòng bốn và số dư', so_bai(b),
+           loi=['Nhân hai mươi lần số có đuôi hai. Chữ số cuối là mấy.']),
+        _c('day_so', 'Vòng của đuôi 2 có bốn nhịp', so=[2, 4, 8, 6],
+           hienThuTu=True, chuPhu='Nhịp 1 · 2 · 3 · 4 rồi lặp lại.',
+           loi=['Vòng của đuôi hai có bốn nhịp. Hai, bốn, tám, sáu, rồi lặp lại.']),
+        _c('y_toan', 'Nên chia số thừa số cho 4', '20 : 4 = 5 dư 0', buoc=1, soBuoc=3,
+           loi=['Nên chia số thừa số cho bốn. Hai mươi chia bốn bằng năm dư không.']),
+        _c('y_toan', 'Dư 0 — nhiều bạn quay về nhịp ĐẦU',
+           'trả lời đuôi 2 — nhưng sai', buoc=2, soBuoc=3,
+           loi=['Dư không thì nhiều bạn quay về nhịp đầu và trả lời đuôi hai. Sai.']),
+        _c('y_toan', 'Kiểm bằng một vòng nhỏ', '4 thừa số 2 = 16  →  đuôi 6',
+           buoc=3, soBuoc=3,
+           loi=['Kiểm bằng một vòng nhỏ. Bốn thừa số hai là mười sáu, đuôi sáu.',
+                'Đúng là nhịp cuối vòng, không phải nhịp đầu.']),
+        _c('y_toan', 'Đổi vòng vẫn một luật', '13 thừa số 3: 13 : 4 dư 1  →  đuôi 3',
+           loi=['Đổi vòng vẫn một luật. Mười ba thừa số ba, chia bốn dư một, lấy nhịp '
+                'đầu của vòng ba chín bảy một, được đuôi ba.']),
+        _c('y_toan', 'Thêm một ca nữa', '30 thừa số 7: 30 : 4 dư 2  →  đuôi 9',
+           loi=['Thêm một ca. Ba mươi thừa số bảy, chia bốn dư hai, lấy nhịp thứ hai '
+                'của vòng bảy chín ba một, được đuôi chín.']),
+        _c('cong_thuc', 'HAI CỬA đọc số dư — đúng như máy định vị bài trước',
+           congThuc='dư r → nhịp thứ r  ·  dư 0 → nhịp CUỐI vòng',
+           thay='đi tròn vòng thì dừng ở cuối, chưa bước sang vòng mới',
+           loi=['Hai cửa đọc số dư, đúng như máy định vị bài trước.',
+                'Dư mấy thì lấy nhịp ấy. Dư không thì lấy nhịp cuối vòng, vì đi tròn '
+                'vòng là dừng ở cuối, chưa bước sang vòng mới.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_gop_duoi_chinh_phuong(b):
+    """L5·B11·M3 Gộp đuôi, và cửa loại của số chính phương."""
+    return [
+        _c('bia', 'Gộp đuôi, và một cửa loại rất nhanh', so_bai(b),
+           loi=['Cộng hai tích khổng lồ. Chữ số cuối của tổng là mấy.']),
+        _c('y_toan', 'Tìm đuôi từng cụm trước',
+           '10 thừa số 2 → đuôi 4   ·   10 thừa số 3 → đuôi 9', buoc=1, soBuoc=3,
+           loi=['Tìm đuôi từng cụm trước. Mười thừa số hai cho đuôi bốn, mười thừa số '
+                'ba cho đuôi chín.']),
+        _c('y_toan', 'Cộng hai đuôi rồi LẠI LẤY ĐUÔI',
+           '4 + 9 = 13  →  đuôi của tổng là 3', buoc=2, soBuoc=3,
+           loi=['Cộng hai đuôi lại được mười ba, rồi lại lấy đuôi. Đuôi của tổng là '
+                'ba.',
+                'Nhiều bạn dừng ở mười ba và ghi luôn, đó là chỗ hỏng.']),
+        _c('day_so', 'Bình phương mọi đuôi chỉ ra 6 kết quả',
+           so=[0, 1, 4, 5, 6, 9], hienThuTu=False,
+           chuPhu='Không bao giờ ra 2, 3, 7 hay 8.',
+           loi=['Nhân thử mười đuôi từ không tới chín với chính nó.',
+                'Đuôi ra chỉ có sáu con số. Không bao giờ ra hai, ba, bảy hay tám.']),
+        _c('tach_so', 'Nên có cửa loại rất nhanh', so='1327', sang=[4],
+           phep='đuôi 7 — LOẠI THẲNG', chuPhu='Chắc chắn không phải số chính phương.',
+           loi=['Nên có cửa loại rất nhanh. Số một ba hai bảy có đuôi bảy, loại '
+                'thẳng.',
+                'Chắc chắn nó không phải bình phương của số nào cả.']),
+        _c('tach_so', 'Nhưng đuôi đẹp thì CHƯA duyệt', so='2116', sang=[4],
+           phep='đuôi 6 — chưa kết luận được gì',
+           chuPhu='Phải kiểm thêm cách khác. Số này đúng là chính phương.',
+           loi=['Nhưng đuôi đẹp thì chưa duyệt. Số hai một một sáu có đuôi sáu.',
+                'Phải kiểm thêm cách khác mới biết. Số này đúng là bình phương của bốn '
+                'mươi sáu.']),
+        _c('y_toan', 'Đây là cửa MỘT CHIỀU',
+           'đuôi xấu → kết luận được ngay   ·   đuôi đẹp → chưa kết luận gì',
+           loi=['Đây là cửa một chiều. Đuôi xấu thì kết luận được ngay, đuôi đẹp thì '
+                'chưa kết luận được gì.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='gộp xong LẠI LẤY ĐUÔI  ·  đuôi xấu loại thẳng, đuôi đẹp chưa duyệt',
+           thay='vì cửa đuôi chỉ loại được, không chứng minh được',
+           loi=['Con nhớ hai câu. Gộp xong thì lại lấy đuôi.',
+                'Và đuôi xấu loại thẳng, đuôi đẹp chưa duyệt, vì cửa đuôi chỉ loại '
+                'được chứ không chứng minh được.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B11.M1': kb5_ban_do_vong_duoi,
+    'DL:KSN5Q1.B11.M2': kb5_vong_bon,
+    'DL:KSN5Q1.B11.M3': kb5_gop_duoi_chinh_phuong,
     'DL:KSN5Q1.B10.M1': kb5_luat_nen_chia_du,
     'DL:KSN5Q1.B10.M2': kb5_bot_bang_du_them_bang_bu,
     'DL:KSN5Q1.B10.M3': kb5_hai_dieu_kien_du,

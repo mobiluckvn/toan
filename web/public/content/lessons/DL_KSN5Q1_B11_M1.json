@@ -35,24 +35,7 @@
   "kidText": "Nhân một số với chính nó nhiều lần thì chữ số cuối quay vòng. Con thuộc bản đồ: đuôi nào ngồi im, đuôi nào quay."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Đuôi 0, 1, 5, 6: nhân với chính nó bao nhiêu lần đuôi vẫn NGUYÊN ($6  \\times  6 = 36$ đuôi 6; $5  \\times  5 = 25$ đuôi 5) — nhóm ĐỨNG IM, trả lời không cần chia chác."
-   },
-   {
-    "id": "K2",
-    "text": "Đuôi 4 quay vòng ĐÔI 4 → 6 → 4…; đuôi 9 quay vòng 9 → 1 → 9…: số thừa số LẺ lấy phần tử đầu, CHẴN lấy phần tử sau."
-   },
-   {
-    "id": "K3",
-    "text": "Đuôi 2, 3, 7, 8 quay vòng BỐN: 2→4→8→6 · 3→9→7→1 · 7→9→3→1 · 8→4→2→6 — chu kỳ 4 (bài sau khai thác)."
-   },
-   {
-    "id": "K4",
-    "text": "Cách dựng lại vòng khi quên: nhân đuôi liên tiếp và chỉ GIỮ CHỮ SỐ CUỐI mỗi lần (2, 4, 8, 16→6, rồi $6 \\times 2=12$→2: khép vòng)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: SÀN NHẢY VÒNG QUAY của các chữ số đuôi. Giữa sàn là dãy GHẾ LƯỜI: 0, 1, 5, 6 ngồi im không nhảy — nhân kiểu gì đuôi vẫn thế (5 nhân 5 là 25, đuôi vẫn 5!). Cạnh đó hai vũ công nhảy ĐÔI: anh 4 lắc qua lắc lại 4-6, chị 9 lắc 9-1. Còn bốn tay chơi 2, 3, 7, 8 nhảy vòng BỐN nhịp quanh sàn. Bẫy kinh điển: thấy ai cũng quay, lôi cả anh 5 ra bắt nhảy \"5, 25, 125 — vòng dài ghê!\" — nhìn lại xem: đuôi TOÀN là 5, anh ấy có rời ghế đâu!",
   "canonicalExamples": [
    {
@@ -83,14 +66,8 @@
     "counterExample": "$5  \\times  5 = 25$; $25  \\times  5 = 125$ — đuôi ba lần liền đều là 5."
    }
   ],
-  "vocabulary": [
-   "sàn nhảy vòng quay",
-   "ghế lười 0-1-5-6",
-   "vòng đôi 4-6 / 9-1",
-   "vòng bốn nhịp",
-   "giữ chữ số cuối"
-  ],
-  "mantra": "KHÔNG PHẢI ĐUÔI NÀO CŨNG QUAY — 0, 1, 5, 6 NGỒI IM!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -112,69 +89,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Tìm chữ số tận cùng của $6  \\times  6  \\times  6$ và của $5  \\times  5  \\times  5  \\times  5$.",
-    "display": {
-     "type": "story_panel",
-     "caption": "5 → 25 → 125: quay hay… ngồi im?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để soi đuôi!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K4"
-    ],
-    "narration": "Soi đuôi: 5, 25, 125, 625 — đuôi TOÀN 5! Anh 5 thuộc dãy GHẾ LƯỜI cùng 0, 1, 6: nhân mãi đuôi vẫn thế. Giờ con dựng vòng cho tay chơi số 2: nhân liên tiếp, mỗi lần chỉ GIỮ chữ số cuối — 2, 4, 8, rồi 16 giữ 6, rồi 6 nhân 2 là 12 giữ 2: KHÉP VÒNG bốn nhịp!",
-    "display": {
-     "type": "wheel_build_interactive",
-     "spec": {
-      "lazy": [
-       0,
-       1,
-       5,
-       6
-      ],
-      "build": {
-       "start": 2,
-       "steps": [
-        "2",
-        "4",
-        "8",
-        "16→6",
-        "12→2 khép vòng"
-       ],
-       "cycle": [
-        2,
-        4,
-        8,
-        6
-       ]
-      }
-     }
-    },
-    "interaction": {
-     "type": "build_cycle",
-     "answerKey": {
-      "values": [
-       2,
-       4,
-       8,
-       6
-      ]
-     },
-     "successMessage": "Vòng 2-4-8-6, chu kỳ 4 — tự dựng được thì không bao giờ quên!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -190,38 +104,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 34,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Toàn cảnh bản đồ sàn nhảy: ghế lười 0-1-5-6. Vũ công đôi: anh 4 lắc 4-6, chị 9 lắc 9-1 — số thừa số lẻ lấy nhịp đầu, chẵn lấy nhịp sau. Bốn tay chơi vòng bốn: 2-4-8-6, 3-9-7-1, 7-9-3-1, 8-4-2-6 — bài sau sẽ có máy đọc dư cho vòng này.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "Ghế lười: 0·1·5·6",
-      "Vòng đôi: 4↔6 · 9↔1 (lẻ đầu, chẵn sau)",
-      "Vòng bốn: 2-4-8-6 · 3-9-7-1 · 7-9-3-1 · 8-4-2-6"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: không phải đuôi nào cũng quay — không, một, năm, sáu ngồi im!",
-    "display": {
-     "type": "mantra_card",
-     "text": "0, 1, 5, 6 NGỒI IM!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -536,104 +418,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B11.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "5 → 25 → 125: quay hay… ngồi im?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Đuôi 5 quay này: 5 — 25 — 125 — vòng dài ghê!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B11_M1_F1.png",
-   "sha256_16": "c85118ef4c66304d"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Bản đồ vòng quay tận cùng: nhóm đứng im & vòng đôi",
-    "steps": [
-     {
-      "text": "Ghế lười: 0·1·5·6"
-     },
-     {
-      "text": "Vòng đôi: 4↔6 · 9↔1 (lẻ đầu, chẵn sau)"
-     },
-     {
-      "text": "Vòng bốn: 2-4-8-6 · 3-9-7-1 · 7-9-3-1 · 8-4-2-6"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B11_M1_F2.png",
-   "sha256_16": "9d186a2528096368"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Đuôi 0, 1, 5, 6",
-      "text": "nhân với chính nó bao nhiêu lần đuôi vẫn NGUYÊN (6 × 6 = 36 đuôi 6; 5 × 5 = 25 đuôi 5) — nhóm ĐỨNG IM, trả lời không cần chia chác.",
-      "tone": "navy"
-     },
-     {
-      "label": "Đuôi 4 quay vòng ĐÔI 4 → 6 → 4…; đuôi 9 quay vòng 9 → 1 → 9…",
-      "text": "số thừa số LẺ lấy phần tử đầu, CHẴN lấy phần tử sau.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "KHÔNG PHẢI ĐUÔI NÀO CŨNG QUAY — 0, 1, 5, 6 NGỒI IM!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B11_M1_F3.png",
-   "sha256_16": "19f5d5f60b4f53b3"
-  },
-  {
-   "archetype": "cycle_ring",
-   "params": {
-    "title": "VÒNG QUAY CHỮ SỐ TẬN CÙNG KHI NHÂN MÃI SỐ 2",
-    "items": [
-     "2",
-     "4",
-     "8",
-     "6"
-    ],
-    "rule": [
-     "nhóm ĐỨNG IM: 0 · 1 · 5 · 6",
-     "vòng ĐÔI: 4 (4-6) · 9 (9-1)",
-     "vòng BỐN: 2 · 3 · 7 · 8"
-    ],
-    "note": "2 → 4 → 8 → 16 giữ đuôi 6 → 12 giữ đuôi 2: khép vòng, chu kỳ 4"
-   },
-   "caption": "Ba nhóm ghế: đứng im · vòng đôi · vòng bốn",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B11_M1_F4.png",
-   "sha256_16": "90c3d9143693a54c"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B12"
@@ -644,5 +429,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B11_M1_giang.mp4"
  }
 }
