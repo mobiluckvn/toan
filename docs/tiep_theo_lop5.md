@@ -7,9 +7,9 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **84/168 — ĐÚNG NỬA QUYỂN** — bài 1 tới 28, hết chương 7 |
-| Còn lại | 84 micro · 28 bài lớn · chương 8 tới 14 |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 28 — **trọn nửa quyển đầu** |
+| Đã xong | **87/168** — bài 1 tới 29 (bài 29 mở chương 8) |
+| Còn lại | 81 micro · 27 bài lớn · bài 30 tới 56 |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 28; **bài 29 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
@@ -22,7 +22,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**84**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**81**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 16 lần)
 
@@ -131,6 +131,9 @@ MỚI không được nợ — thêm một cái vượt 70 giây là cổng đ�
    hoá theo đoạn dài nhất CỦA NÓ, nên khúc hiệu 24 ở màn "sau 5 năm" vẽ ngắn hơn ở
    màn "hôm nay" — hình nói ngược lại đúng điều lời đang dạy. Khai `thangDo` bằng giá
    trị lớn nhất của cả cụm thì mọi màn chung một thước. Lỗi thật, bắt được ở bài 28.
+
+   `phanBe` · `phanLon` chia đoạn thành ô đều nhau — đó là hình của chương 8 (tổng –
+   tỉ): kẻ ô ra thì bé ĐẾM được tổng số phần, thứ mà cả chương đứng hay đổ ở đó.
 5. **Chương trung bình cộng thì dùng `san_bang`**, không phải `day_so`. Nó vẽ cột
    cao thấp kèm vạch `mucTB`, nên đặt hai màn cạnh nhau là bé THẤY vạch nhích lên
    (bài 22 M1: ba cột mốc 26, rồi bốn cột mốc 29) hoặc thấy vạch đứng im (M2: cột

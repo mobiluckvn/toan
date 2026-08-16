@@ -35,24 +35,7 @@
   "kidText": "Biết tổng và tỉ số: đếm xem có tất cả mấy phần, chia tổng cho SỐ PHẦN ra giá một phần, rồi nhân ra từng số."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tỉ gấp k lần = k : 1 → sơ đồ (k + 1) phần: 'A gấp đôi B' vẽ A hai ô, B một ô — TỔNG SỐ PHẦN là 3 (không phải 2!)."
-   },
-   {
-    "id": "K2",
-    "text": "Tỉ phân số $\\frac{m}{n}$ = m : n → sơ đồ m phần và n phần, tổng m + n phần: khay mè bằng $\\frac{3}{4}$ khay bơ → 3 ô và 4 ô — 7 phần."
-   },
-   {
-    "id": "K3",
-    "text": "Ba nhịp: ĐẾM tổng số phần → CHIA tổng cho nó ra giá một phần ($35 : 7 = 5$) → NHÂN ra từng số ($3  \\times  5 = 15$; $4  \\times  5 = 20$). Con số trong tỉ chỉ để ĐẾM Ô — tổng số phần mới là số chia."
-   },
-   {
-    "id": "K4",
-    "text": "Thử về HAI cửa: cửa tổng ($15 + 20 = 35$ ✓) và cửa tỉ ($15 : 20 = 3 : 4$ ✓ — cùng chia 5); qua đủ hai cửa mới nộp."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: XƯỞNG KẺ Ô CỦA KIẾN TRÚC SƯ. Tổng 36, A gấp đôi B — Trí Long thấy số 2 là chia luôn: 36 : 2 = 18, hai bên 18 đều nhau?! Nhưng con số 2 KHÔNG phải số chia — nó chỉ là bản vẽ: 'A hai ô khi B một ô'. Kiến trúc sư kẻ ô đã: A ▢▢, B ▢ — đếm cả công trình: BA ô! Ba nhịp máy: ĐẾM 3 ô — CHIA 36 : 3 = 12 ra giá một ô — NHÂN: B một ô 12, A hai ô 24. Thử hai cửa: 24 + 12 = 36 và 24 gấp đôi 12 — mộc kép! Tỉ phân số cũng chỉ là bản vẽ khác: khay mè bằng 3/4 khay bơ — mè 3 ô, bơ 4 ô, đếm BẢY: 35 : 7 = 5 → 15 và 20.",
   "canonicalExamples": [
    {
@@ -83,14 +66,8 @@
     "counterExample": "18 và 18: đâu có ai gấp đôi ai — trượt ngay cửa tỉ!"
    }
   ],
-  "vocabulary": [
-   "xưởng kẻ ô",
-   "bản vẽ tỉ số",
-   "giá một ô",
-   "đếm cả công trình",
-   "mộc kép hai cửa"
-  ],
-  "mantra": "TỈ ĐỂ ĐẾM PHẦN — TỔNG SỐ PHẦN MỚI LÀ SỐ CHIA!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,55 +88,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Tổng hai số là 36. Số lớn gấp đôi số bé. Tìm hai số.",
-    "display": {
-     "type": "story_panel",
-     "caption": "$36 : 2 = 18$ mỗi bên??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để kẻ ô!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K3",
-     "K4"
-    ],
-    "narration": "Con số 2 KHÔNG phải số chia — nó là BẢN VẼ: A hai ô khi B một ô! Kiến trúc sư kẻ ô: A hai ô, B một ô — đếm cả công trình: BA ô. Ba nhịp máy: ĐẾM ba ô — CHIA ba sáu cho ba ra giá một ô: MƯỜI HAI — NHÂN: B một ô mười hai, A hai ô HAI MƯƠI TƯ! Thử hai cửa: hai tư cộng mười hai đúng ba sáu; hai tư đúng gấp đôi mười hai — mộc kép!",
-    "display": {
-     "type": "part_grid_interactive",
-     "spec": {
-      "ratio": "2 : 1",
-      "totalParts": 3,
-      "total": 36,
-      "unit": 12,
-      "values": [
-       24,
-       12
-      ],
-      "check": "36 ✓ · gấp đôi ✓"
-     }
-    },
-    "interaction": {
-     "type": "count_divide_multiply",
-     "answerKey": {
-      "values": [
-       24,
-       12
-      ]
-     },
-     "successMessage": "3 ô → ô 12 → 24 & 12 — hai cửa mộc kép!"
-    }
-   },
    {
     "id": "C1",
     "kind": "checkpoint",
@@ -182,38 +110,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K4"
-    ],
-    "narration": "Bản vẽ phân số: khay mè bằng BA PHẦN TƯ khay bơ — mè ba ô, bơ bốn ô: đếm BẢY ô! Ba lăm chia bảy ra ô NĂM: mè mười lăm, bơ hai mươi — kiểm cửa tỉ: mười lăm trên hai mươi cùng chia năm đúng ba trên bốn! Đề chữ của sư phụ: tổng là số nhỏ nhất có ba chữ số — MỘT TRĂM; gấp bốn — năm ô: ô hai mươi, hai số HAI MƯƠI và TÁM MƯƠI!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "3/4 → 3 ô + 4 ô = 7 ô → 35 : 7 = 5 → 15 & 20",
-      "kiểm tỉ: 15 : 20 = 3 : 4 (cùng chia 5) ✓",
-      "sư phụ: 100 · 4:1 → 5 ô → 20 & 80"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: tỉ để đếm phần — tổng số phần mới là số chia!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TỔNG SỐ PHẦN MỚI LÀ SỐ CHIA!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -594,108 +490,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B29.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "36 : 2 = 18 mỗi bên??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "36 chia 2 bằng 18 — mỗi bên 18!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B29_M1_F1.png",
-   "sha256_16": "75f64d18369eb3e6"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Sơ đồ phần ba nhịp: đếm tổng số phần — chia — nhân ra từng số",
-    "steps": [
-     {
-      "text": "3/4 → 3 ô + 4 ô = 7 ô → 35 : 7 = 5 → 15 & 20"
-     },
-     {
-      "text": "kiểm tỉ: 15 : 20 = 3 : 4 (cùng chia 5)"
-     },
-     {
-      "text": "sư phụ: 100 · 4:1 → 5 ô → 20 & 80"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B29_M1_F2.png",
-   "sha256_16": "03fb6f1ef5923b97"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tỉ gấp k lần = k",
-      "text": "1 → sơ đồ (k + 1) phần: 'A gấp đôi B' vẽ A hai ô, B một ô — TỔNG SỐ PHẦN là 3 (không phải 2!).",
-      "tone": "navy"
-     },
-     {
-      "label": "Tỉ phân số m/n = m",
-      "text": "n → sơ đồ m phần và n phần",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "TỈ ĐỂ ĐẾM PHẦN — TỔNG SỐ PHẦN MỚI LÀ SỐ CHIA!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B29_M1_F3.png",
-   "sha256_16": "4be2d4a36466a7b0"
-  },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "TỔNG 36 · SỐ LỚN GẤP ĐÔI SỐ BÉ",
-    "bars": [
-     {
-      "name": "số bé",
-      "units": 1,
-      "label": "1 phần = 12"
-     },
-     {
-      "name": "số lớn",
-      "units": 2,
-      "label": "2 phần = 24"
-     }
-    ],
-    "brace": {
-     "text": "ĐẾM 3 phần → CHIA 36 : 3 = 12 → NHÂN ra từng số"
-    },
-    "note": "Ba nhịp: đếm tổng số phần — chia ra giá một phần — nhân ra từng số"
-   },
-   "caption": "Sơ đồ phần: mỗi ô là một phần bằng nhau",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B29_M1_F4.png",
-   "sha256_16": "08ad61e479ac0ce7"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B28"
@@ -707,5 +502,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Sơ đồ phần ba nhịp: đếm tổng số phần — chia — nhân ra từng số"
+ "titleDay": "Sơ đồ phần ba nhịp: đếm tổng số phần — chia — nhân ra từng số",
+ "video": {
+  "giang": "DL_KSN5Q1_B29_M1_giang.mp4"
+ }
 }

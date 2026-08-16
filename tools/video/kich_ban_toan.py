@@ -12014,7 +12014,136 @@ def kb5_quy_ve_mot_moc(b):
     ]
 
 
+def kb5_so_do_phan_tong_ti(b):
+    """L5·B29·M1 Tỉ để ĐẾM Ô — tổng số ô mới là số chia."""
+    return [
+        _c('bia', 'Con số trong tỉ không phải số chia', so_bai(b),
+           loi=['Nhiều bạn thấy chữ gấp đôi là chia luôn cho hai. Đó là chỗ sập.']),
+        _c('de_toan', 'Đề bài', de='Tổng hai số là 36. Số lớn gấp đôi số bé',
+           loi=['Tổng hai số là ba mươi sáu, số lớn gấp đôi số bé.']),
+        _c('y_toan', 'Con số 2 là một BẢN VẼ, không phải phép chia',
+           'gấp đôi nghĩa là: số lớn 2 ô  ·  số bé 1 ô', buoc=1, soBuoc=3,
+           loi=['Con số hai ở đây là một bản vẽ. Nó bảo số lớn hai ô thì số bé một '
+                'ô.']),
+        _c('so_do_doan', 'Kẻ ô ra rồi ĐẾM', be=12, lon=24, phanBe=1, phanLon=2,
+           nhanBe='số bé', nhanLon='số lớn', chuTong='tổng 36',
+           chuPhu='Đếm cả công trình: 3 ô — không phải 2.',
+           loi=['Kẻ ô ra rồi đếm. Số bé một ô, số lớn hai ô, cả thảy ba ô.',
+                'Ba mới là số chia, chứ không phải hai.']),
+        _c('y_toan', 'Chia tổng cho TỔNG SỐ Ô', '36 : 3 = 12  ←  giá một ô',
+           buoc=2, soBuoc=3,
+           loi=['Chia tổng cho tổng số ô. Ba mươi sáu chia ba, mỗi ô đáng mười hai.']),
+        _c('y_toan', 'Rồi NHÂN ra từng số',
+           'số bé 1 ô = 12      ·      số lớn 2 ô = 24', buoc=3, soBuoc=3,
+           loi=['Rồi nhân ra từng số. Số bé mười hai, số lớn hai mươi tư.']),
+        _c('de_toan', 'Tỉ viết bằng phân số cũng vậy',
+           de='Tổng 35 chiếc bánh. Khay mè bằng 3/4 khay bơ',
+           loi=['Tỉ viết bằng phân số cũng vậy. Khay mè bằng ba phần tư khay bơ.']),
+        _c('so_do_doan', 'Ba phần tư nghĩa là 3 ô với 4 ô', be=15, lon=20,
+           phanBe=3, phanLon=4, nhanBe='mè', nhanLon='bơ', chuTong='tổng 35',
+           chuPhu='Cả thảy 7 ô — nên 35 : 7 = 5.',
+           loi=['Ba phần tư nghĩa là mè ba ô, bơ bốn ô. Cả thảy bảy ô.',
+                'Ba mươi lăm chia bảy, mỗi ô đáng năm. Mè mười lăm, bơ hai mươi.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='tỉ để ĐẾM Ô   —   tổng số ô mới là SỐ CHIA',
+           thay='thử hai cửa: 15 + 20 = 35 ✓ và 15 : 20 rút gọn đúng 3 : 4 ✓',
+           loi=['Con nhớ câu này. Tỉ chỉ để đếm ô, tổng số ô mới là số chia.',
+                'Và thử về đủ hai cửa, cửa tổng lẫn cửa tỉ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_thay_ao_ti(b):
+    """L5·B29·M2 Phần trăm và chữ đời thường chỉ là áo — lột về hai số nguyên."""
+    return [
+        _c('bia', 'Tỉ hay khoác áo cho khó nhận ra', so_bai(b),
+           loi=['Cái tỉ hay khoác áo. Lột áo ra thì bài lạ hoá bài đã biết.']),
+        _c('de_toan', 'Đề bài',
+           de='Hai khay có 35 chiếc bánh. Khay mè bằng 75% khay bơ',
+           loi=['Hai khay có ba mươi lăm chiếc bánh. Khay mè bằng bảy mươi lăm phần '
+                'trăm khay bơ.']),
+        _c('y_toan', 'Phần trăm chỉ là chiếc ÁO của phân số',
+           '75%  =  75/100  =  3/4     (cùng chia 25)', buoc=1, soBuoc=3,
+           loi=['Phần trăm chỉ là chiếc áo của phân số. Bảy mươi lăm phần một trăm.',
+                'Cùng chia hai mươi lăm thì còn ba phần tư.']),
+        _c('so_do_doan', 'Lột áo xong thì hoá ra bài hôm trước', be=15, lon=20,
+           phanBe=3, phanLon=4, nhanBe='mè', nhanLon='bơ', chuTong='tổng 35',
+           chuPhu='Cùng bản vẽ 3 ô với 4 ô — cùng đáp 15 và 20.',
+           loi=['Lột áo xong thì hoá ra đúng bài hôm trước. Cùng bản vẽ, cùng bảy ô.',
+                'Ba mươi lăm chia bảy ra năm, mè mười lăm, bơ hai mươi.']),
+        _c('y_toan', 'Chữ đời thường cũng là một chiếc áo',
+           'gấp rưỡi = một lần rưỡi = 3/2   →   tỉ 3 : 2', buoc=2, soBuoc=3,
+           loi=['Chữ đời thường cũng là một chiếc áo. Gấp rưỡi là một lần rưỡi, tức ba '
+                'nửa.',
+                'Nên tỉ là ba trên hai. Đừng vẽ ô rưỡi lửng lơ.']),
+        _c('y_toan', 'Bộ áo hay gặp, nên thuộc sẵn',
+           '40% = 2/5   ·   50% = 1/2   ·   75% = 3/4   ·   gấp đôi = 2 : 1',
+           buoc=3, soBuoc=3,
+           loi=['Có mấy chiếc áo hay gặp, con nên thuộc sẵn cho nhanh.']),
+        _c('de_toan', 'Nghi thức cho mọi đề có áo',
+           de='gặp % · gấp rưỡi · phân số  →  lột về HAI SỐ NGUYÊN trước',
+           loi=['Nghi thức cho mọi đề có áo. Lột về hai số nguyên trước đã.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='THAY ÁO về hai số nguyên   —   rồi hãy kẻ ô',
+           thay='thay áo xong, bài 75% giống hệt bài 3/4 — cùng đáp 15 và 20',
+           loi=['Con nhớ câu này. Thay áo về hai số nguyên rồi hãy kẻ ô.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tong_ti_bay_cu_ao_moi(b):
+    """L5·B29·M3 Tổng – tỉ trên thập phân, và nửa chu vi quay lại."""
+    return [
+        _c('bia', 'Máy cũ chạy trên số thập phân, và trên chu vi', so_bai(b),
+           loi=['Máy ba nhịp không đổi. Chỉ có cái tổng là hay trốn ở chỗ khác.']),
+        _c('de_toan', 'Đề bài',
+           de='Bình nước cam 8,4 lít. Lượng nước cam gấp 3 lần xi-rô',
+           loi=['Bình nước cam tám phẩy tư lít, lượng nước cam gấp ba lần xi-rô.']),
+        _c('y_toan', 'Dấu phẩy không đổi luật — giá một ô ĐƯỢC PHÉP lẻ',
+           'xi-rô 1 ô · cam 3 ô  →  4 ô  →  8,4 : 4 = 2,1', buoc=1, soBuoc=4,
+           loi=['Dấu phẩy không đổi luật. Xi-rô một ô, nước cam ba ô, cả thảy bốn ô.',
+                'Tám phẩy tư chia bốn, mỗi ô hai phẩy một. Giá một ô được phép lẻ.']),
+        _c('so_do_doan', 'Nhân ra từng thứ', be=21, lon=63, phanBe=1, phanLon=3,
+           nhanBe='xi-rô', nhanLon='nước cam', chuTong='8,4 lít',
+           chuPhu='Xi-rô 2,1 lít · nước cam 6,3 lít.',
+           loi=['Xi-rô hai phẩy một lít, nước cam sáu phẩy ba lít.']),
+        _c('de_toan', 'Bẫy cũ, áo mới',
+           de='Hình chữ nhật chu vi 30 cm, chiều dài gấp rưỡi chiều rộng',
+           loi=['Bẫy cũ mà khoác áo mới. Hình chữ nhật chu vi ba mươi, dài gấp rưỡi '
+                'rộng.']),
+        _c('y_toan', 'Câu cần nhớ của bài 25 vẫn linh',
+           'chu vi là CẢ vòng   →   tổng dài rộng = 30 : 2 = 15', buoc=2, soBuoc=4,
+           loi=['Câu cần nhớ của bài hai lăm vẫn linh. Chu vi là cả vòng, tổng dài '
+                'rộng chỉ nửa vòng.',
+                'Ba mươi chia hai, tổng thật là mười lăm.']),
+        _c('y_toan', 'Rồi mới thay áo "gấp rưỡi"',
+           'gấp rưỡi = 3 : 2   →   5 ô   →   15 : 5 = 3', buoc=3, soBuoc=4,
+           loi=['Rồi mới thay áo gấp rưỡi thành ba trên hai. Năm ô, mỗi ô đáng ba.']),
+        _c('so_do_doan', 'Trả về vòng mà kiểm', be=6, lon=9, phanBe=2, phanLon=3,
+           nhanBe='rộng', nhanLon='dài', chuTong='nửa chu vi 15',
+           chuPhu='Dài 9 cm · rộng 6 cm · trả vòng: (9 + 6) × 2 = 30 ✓',
+           loi=['Chiều dài chín, chiều rộng sáu. Trả về vòng thì đúng ba mươi.']),
+        _c('y_toan', 'Đề khó chồng hai lớp áo một lúc',
+           '42,5 kg, bao hai gấp rưỡi bao ba  →  5 ô  →  8,5  →  17 và 25,5',
+           buoc=4, soBuoc=4,
+           loi=['Đề khó chồng hai lớp áo một lúc, vừa thập phân vừa gấp rưỡi. Máy vẫn '
+                'chạy y nguyên.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='bẫy cũ áo mới — NỬA CHU VI vẫn là câu cần nhớ',
+           thay='thay áo trước, kẻ ô sau, rồi trả về đúng cửa của đề mà thử',
+           loi=['Con nhớ thứ tự. Thay áo trước, kẻ ô sau, rồi trả về đúng cửa của đề mà '
+                'thử.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B29.M1': kb5_so_do_phan_tong_ti,
+    'DL:KSN5Q1.B29.M2': kb5_thay_ao_ti,
+    'DL:KSN5Q1.B29.M3': kb5_tong_ti_bay_cu_ao_moi,
     'DL:KSN5Q1.B28.M1': kb5_hieu_tuoi_dung_im,
     'DL:KSN5Q1.B28.M2': kb5_gap_k_lan,
     'DL:KSN5Q1.B28.M3': kb5_quy_ve_mot_moc,

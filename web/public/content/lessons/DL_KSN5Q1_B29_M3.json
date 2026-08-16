@@ -34,20 +34,7 @@
   "kidText": "Vẫn máy tổng – tỉ nhưng với số thập phân. Và nhớ chu vi hình chữ nhật phải chia đôi mới ra tổng dài với rộng."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Máy ba nhịp chạy y nguyên trên thập phân — giá một phần ĐƯỢC PHÉP lẻ: 8,4 lít gấp 3 → 4 phần → phần $8,4 : 4 = 2,1$ → 2,1 và 6,3."
-   },
-   {
-    "id": "K2",
-    "text": "Chu vi cho TỔNG ẨN: tổng dài + rộng = chu vi : 2 (câu cần nhớ Bài 25 nguyên xi) — rồi mới kẻ ô theo tỉ; kiểm cuối bằng phép nhân 2 trả vòng."
-   },
-   {
-    "id": "K3",
-    "text": "\"Gấp rưỡi\" trên nửa chu vi: 15 với tỉ $3 : 2$ → 5 phần → phần 3 → dài 9, rộng 6; và bài thập phân gấp rưỡi: 42,5 → 5 phần → phần 8,5 → 17 và 25,5."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: BẪY CŨ KHOÁC ÁO MỚI. Cáo Đề khoái tái chế: bẫy nửa-chu-vi của Bài 25 nay khoác áo tỉ số! \"Chu vi 30, dài gấp rưỡi rộng\" — Trí Long lấy luôn 30 làm tổng: 5 phần → phần 6 → dài 18, rộng 12?! Đi thử một vòng quanh sân đáp: (18 + 12) × 2 = 60 mét — gấp đôi sân thật, đúng vết xe đổ hôm trước! Câu thần chú cũ vẫn linh: chu vi là CẢ vòng — tổng dài + rộng chỉ NỬA vòng: 30 : 2 = 15 mới là tổng. Thay áo gấp rưỡi = 3 : 2, kẻ 5 ô: ô BA — dài 9, rộng 6, trả vòng (9 + 6) × 2 = 30 khớp! Còn dấu phẩy? Không đổi luật: bình 8,4 lít gấp 3 — bốn ô, ô HAI PHẨY MỘT: xi-rô 2,1, nước cam 6,3.",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "($18 + 12$) × $2 = 60$ ≠ 30 — sân phình gấp đôi, vết xe đổ hôm trước!"
    }
   ],
-  "vocabulary": [
-   "bẫy cũ áo mới",
-   "vết xe đổ",
-   "nửa vòng rào",
-   "giá phần được phép lẻ",
-   "trả vòng kiểm"
-  ],
-  "mantra": "BẪY CŨ ÁO MỚI — NỬA CHU VI VẪN LÀ CÂU CẦN NHỚ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -107,53 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Bình nước cam 8,4 lít gồm nước cam và xi-rô, lượng nước cam gấp 3 lần xi-rô. Tính mỗi loại.",
-    "display": {
-     "type": "story_panel",
-     "caption": "tổng = 30? lại 60m một vòng!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đọc thần chú cũ!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Câu cần nhớ Bài hai lăm vẫn linh: chu vi là CẢ vòng — tổng dài cộng rộng chỉ NỬA vòng: ba mươi chia hai bằng MƯỜI LĂM mới là tổng! Thay áo gấp rưỡi thành ba trên hai — kẻ NĂM ô: mười lăm chia năm ra ô BA — dài ba ô CHÍN xăng-ti-mét, rộng hai ô SÁU! Trả vòng kiểm: chín cộng sáu nhân hai — đúng BA MƯƠI, sân khớp thước!",
-    "display": {
-     "type": "perimeter_ratio_interactive",
-     "spec": {
-      "P": 30,
-      "half": 15,
-      "ratio": "3 : 2",
-      "parts": 5,
-      "unit": 3,
-      "dai": 9,
-      "rong": 6,
-      "check": "(9 + 6) × 2 = 30"
-     }
-    },
-    "interaction": {
-     "type": "halve_dress_grid",
-     "answerKey": {
-      "values": [
-       9,
-       6
-      ]
-     },
-     "successMessage": "Nửa vòng 15 → 5 ô → dài 9, rộng 6 — trả vòng khớp!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -169,38 +103,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Dấu phẩy không đổi luật: bình tám phẩy tư lít, nước cam gấp BA xi-rô — bốn ô: tám phẩy tư chia bốn ra ô HAI PHẨY MỘT — xi-rô hai phẩy một lít, nước cam SÁU PHẨY BA! Sư phụ chồng hai lớp áo: bốn hai phẩy năm ký, bao hai gấp RƯỠI bao một — thay áo ba trên hai, năm ô: ô TÁM PHẨY NĂM — bao một MƯỜI BẢY ký, bao hai HAI LĂM PHẨY NĂM!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "8,4 : 4 = 2,1 → 2,1 & 6,3 (phần lẻ OK)",
-      "42,5 · gấp rưỡi = 3:2 → 5 ô → ô 8,5",
-      "bao 1 = 17 kg · bao 2 = 25,5 kg ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: bẫy cũ áo mới — nửa chu vi vẫn là câu cần nhớ!",
-    "display": {
-     "type": "mantra_card",
-     "text": "NỬA CHU VI — THẦN CHÚ KHÔNG ĐỔI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -530,108 +432,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B29.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "tổng = 30? lại 60m một vòng!",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Chu vi 30, dài gấp rưỡi rộng — lấy 30 làm tổng: 5 phần, mỗi phần 6, dài 18 rộng 12!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B29_M3_F1.png",
-   "sha256_16": "934909a24043855e"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Tổng – tỉ thập phân & nửa chu vi: bẫy cũ áo mới",
-    "steps": [
-     {
-      "text": "8,4 : 4 = 2,1 → 2,1 & 6,3 (phần lẻ OK)"
-     },
-     {
-      "text": "42,5 · gấp rưỡi = 3:2 → 5 ô → ô 8,5"
-     },
-     {
-      "text": "bao 1 = 17 kg · bao 2 = 25,5 kg"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B29_M3_F2.png",
-   "sha256_16": "b22c4b7284a206c1"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Máy ba nhịp chạy y nguyên trên thập phân",
-      "text": "giá một phần ĐƯỢC PHÉP lẻ: 8,4 lít gấp 3 → 4 phần → phần 8,4 : 4 = 2,1 → 2,1 và 6,3.",
-      "tone": "navy"
-     },
-     {
-      "label": "Chu vi cho TỔNG ẨN",
-      "text": "tổng dài + rộng = chu vi : 2 (câu cần nhớ Bài 25 nguyên xi) — rồi mới kẻ ô theo tỉ; kiểm cuối bằng phép nhân 2 trả vòng.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "BẪY CŨ ÁO MỚI — NỬA CHU VI VẪN LÀ CÂU CẦN NHỚ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B29_M3_F3.png",
-   "sha256_16": "69a62e1d24040649"
-  },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "BÌNH 8,4 LÍT · NƯỚC CAM GẤP 3 LẦN XI-RÔ",
-    "bars": [
-     {
-      "name": "xi-rô",
-      "units": 1,
-      "label": "1 phần = 2,1 lít"
-     },
-     {
-      "name": "nước cam",
-      "units": 3,
-      "label": "3 phần = 6,3 lít"
-     }
-    ],
-    "brace": {
-     "text": "4 phần = 8,4 → 1 phần = 8,4 : 4 = 2,1 lít"
-    },
-    "note": "Giá một phần được phép LẺ — thập phân không làm đổi luật · nửa chu vi 30 : 2 = 15 cũng vậy"
-   },
-   "caption": "Chia ra số lẻ vẫn đúng, đừng thấy lẻ mà tưởng làm sai",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B29_M3_F4.png",
-   "sha256_16": "86ca45985a8c4f7f"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B28"
@@ -642,5 +443,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B29_M3_giang.mp4"
  }
 }
