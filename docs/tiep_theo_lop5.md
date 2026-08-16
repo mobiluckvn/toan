@@ -7,9 +7,9 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **69/168** — bài 1 tới 23 |
-| Còn lại | 99 micro · 33 bài lớn · bài 24 tới 56 (bài 24 khép chương 6) |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 20; **bài 21 · 22 · 23 chưa deploy** |
+| Đã xong | **72/168** — bài 1 tới 24, **HẾT chương 6** |
+| Còn lại | 96 micro · 32 bài lớn · bài 25 tới 56 (chương 7 tới 14) |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 20; **bài 21 tới 24 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
@@ -22,7 +22,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**99**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**96**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 16 lần)
 
@@ -78,7 +78,8 @@ vừa**; quá mười lăm câu là chắc chắn vượt trần. Bài 19 viết
 lượt đầu (14 · 13 · 13 câu) và ra 71 · 61 · 68 giây — chỉ phải rút MỘT câu. Bài 20
 (12 · 12 · 13 câu) ra 59 · 64 · 61 giây và bài 21 (13 · 14 · 12 câu) ra 63 · 60 · 60
 giây, bài 22 (13 · 13 · 14 câu) ra 62 · 57 · 59 giây, bài 23 (14 · 12 · 11 câu) ra 66 ·
-55 · 52 giây — **cả mười hai không phải rút câu nào**.
+55 · 52 giây, bài 24 (14 · 14 · 14 câu) ra 64 · 61 · 64 giây — **cả mười lăm không
+phải rút câu nào**.
 
 Đếm trước khi dựng, khỏi mất công sinh âm lại:
 

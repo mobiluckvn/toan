@@ -11327,7 +11327,143 @@ def kb5_tim_so_nguoi_cu(b):
     ]
 
 
+def kb5_gop_nhieu_nhom(b):
+    """L5·B24·M1 Gộp nhiều nhóm — TBC là đại diện, nhân với quân số mới thành tổng."""
+    return [
+        _c('bia', 'Gộp hai nhóm có mức trung bình khác nhau', so_bai(b),
+           loi=['Hai nhóm, hai mức trung bình. Gộp lại thì mức chung là bao nhiêu.']),
+        _c('de_toan', 'Đề bài',
+           de='Hai ngày đầu TBC 26 chiếc. Bốn ngày sau TBC 32 chiếc.\nTBC cả 6 ngày?',
+           loi=['Hai ngày đầu bán trung bình hai mươi sáu chiếc, bốn ngày sau trung '
+                'bình ba mươi hai chiếc.']),
+        _c('y_toan', 'Đừng cộng thẳng hai mức trung bình',
+           '26 + 32 = 58  —  con số ấy không phải tổng của ai cả', buoc=1, soBuoc=4,
+           loi=['Đừng cộng thẳng hai mức trung bình với nhau.',
+                'Hai mươi sáu cộng ba mươi hai được năm mươi tám, mà năm mươi tám '
+                'không phải tổng của ai cả.']),
+        _c('y_toan', 'Kẻ bảng ba cột: NHÓM · QUÂN SỐ · TỔNG',
+           '2 ngày × 26 = 52          ·          4 ngày × 32 = 128', buoc=2, soBuoc=4,
+           loi=['Kẻ bảng ba cột. Nhóm, quân số, rồi tổng.',
+                'Hai ngày nhân hai mươi sáu được năm mươi hai. Bốn ngày nhân ba mươi '
+                'hai được một trăm hai mươi tám.']),
+        _c('san_bang', 'Sáu ngày xếp cạnh nhau', so=[26, 26, 32, 32, 32, 32],
+           mucTB=True, chuPhu='Tổng 180 chiếc — vạch đậu ở 30.',
+           loi=['Sáu ngày xếp cạnh nhau thì vạch trung bình đậu ở ba mươi.']),
+        _c('y_toan', 'Cộng CỘT TỔNG rồi chia TỔNG quân số',
+           '52 + 128 = 180        ·        180 : 6 = 30', buoc=3, soBuoc=4,
+           loi=['Cộng cột tổng lại được một trăm tám mươi, rồi chia cho tổng quân số '
+                'là sáu ngày.',
+                'Một trăm tám mươi chia sáu, được ba mươi.']),
+        _c('de_toan', 'Máy này chạy mọi cỡ',
+           de='Tổ Một: 10 bạn TBC 12 nghìn.  Tổ Hai: 15 bạn TBC 8 nghìn',
+           loi=['Máy này chạy mọi cỡ. Tổ Một mười bạn, tổ Hai mười lăm bạn.']),
+        _c('y_toan', 'Vẫn đúng ba nhịp ấy',
+           'tổng 120 và 120  →  240  →  240 : 25 = 9,6 nghìn', buoc=4, soBuoc=4,
+           loi=['Vẫn ba nhịp ấy. Mỗi tổ có tổng một trăm hai mươi nghìn.',
+                'Cộng lại hai trăm bốn mươi, chia cho hai mươi lăm bạn, được chín phẩy '
+                'sáu nghìn.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='TBC là ĐẠI DIỆN — nhân với QUÂN SỐ mới thành tổng',
+           thay='ba nhóm trở lên vẫn một máy: 52 + 90 + 38 = 180, rồi 180 : 6 = 30',
+           loi=['Con nhớ câu này. Mức trung bình chỉ là đại diện, phải nhân với quân số '
+                'mới thành tổng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_don_ganh_lech(b):
+    """L5·B24·M2 Vì sao không chia đôi hai TBC — và khi nào thì được."""
+    return [
+        _c('bia', 'Vì sao chia đôi hai mức trung bình lại sai', so_bai(b),
+           loi=['Cộng hai mức rồi chia đôi trông rất hợp lý. Nhưng thường là sai.']),
+        _c('de_toan', 'Đề bài', de='2 ngày TBC 26 · 4 ngày TBC 32.\nSao (26 + 32) : 2 = 29 lại sai?',
+           loi=['Hai ngày trung bình hai mươi sáu, bốn ngày trung bình ba mươi hai.',
+                'Cộng lại chia đôi ra hai mươi chín. Sai ở đâu.']),
+        _c('san_bang', 'Nhìn số cột thì rõ', so=[26, 26, 32, 32, 32, 32], mucTB=True,
+           chuPhu='Bốn cột cao, chỉ hai cột thấp — vạch bị kéo về phía 32.',
+           loi=['Nhìn số cột thì rõ. Bốn cột cao mà chỉ có hai cột thấp.',
+                'Vạch bị kéo về phía nhóm đông, đậu ở ba mươi chứ không phải hai mươi '
+                'chín.']),
+        _c('y_toan', 'Chỗ sập nằm ở QUÂN SỐ',
+           'nhóm 4 ngày ĐÔNG GẤP ĐÔI nhóm 2 ngày', buoc=1, soBuoc=3,
+           loi=['Chỗ sập nằm ở quân số. Nhóm bốn ngày đông gấp đôi nhóm hai ngày.']),
+        _c('y_toan', 'Nên TBC gộp NGẢ VỀ PHÍA nhóm đông',
+           'nó vẫn nằm giữa 26 và 32, nhưng không đứng chính giữa', buoc=2, soBuoc=3,
+           loi=['Nên mức gộp ngả về phía nhóm đông. Nó vẫn nằm giữa hai mức, nhưng '
+                'không đứng chính giữa.']),
+        _c('san_bang', 'Còn nếu hai nhóm BẰNG cỡ', so=[26, 26, 26, 32, 32, 32],
+           mucTB=True, chuPhu='Ba với ba — nay vạch đứng đúng chính giữa, ở 29.',
+           loi=['Còn nếu ba ngày với ba ngày thì hai bên bằng cỡ.',
+                'Nay vạch đứng đúng chính giữa, ở hai mươi chín.']),
+        _c('y_toan', 'Bằng quân số thì chia đôi MỚI hợp lệ',
+           'kiểm bằng bảng tổng:  78 + 96 = 174  ·  174 : 6 = 29  ✓', buoc=3, soBuoc=3,
+           loi=['Bằng quân số thì chia đôi mới hợp lệ.',
+                'Kiểm bằng bảng tổng cũng ra hai mươi chín. Hai đường trùng nhau.']),
+        _c('cong_thuc', 'Một câu hỏi trước khi chia đôi',
+           congThuc='HỎI QUÂN SỐ TRƯỚC   →   chia đôi sau, nếu được',
+           thay='bằng cỡ thì chia đôi chỉ là lối tắt của cùng một phép tính',
+           loi=['Con nhớ hỏi quân số trước. Hai nhóm có bằng số phần tử không.',
+                'Bằng thì chia đôi được. Khác cỡ thì phải đi ba nhịp bảng tổng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tach_tang(b):
+    """L5·B24·M3 Bài ngược gộp, và bài ghép hai tầng — gộp tổng trước, kéo cân sau."""
+    return [
+        _c('bia', 'Đề có HAI máy thì chạy ở HAI tầng riêng', so_bai(b),
+           loi=['Đề khó của chương này thường chứa hai máy. Trộn chúng vào một phép là '
+                'nghẹn.']),
+        _c('de_toan', 'Trước hết, bài ngược của máy gộp',
+           de='TBC cả 6 ngày là 30 chiếc. Hai ngày đầu TBC 26.\nTBC bốn ngày sau?',
+           loi=['Trung bình cả sáu ngày là ba mươi chiếc, hai ngày đầu là hai mươi '
+                'sáu.']),
+        _c('y_toan', 'Bài ngược cũng đi qua cầu TỔNG',
+           'tổng cả = 30 × 6 = 180      ·      tổng hai ngày đầu = 26 × 2 = 52',
+           buoc=1, soBuoc=4,
+           loi=['Bài ngược cũng đi qua cầu tổng. Ba mươi nhân sáu được một trăm tám '
+                'mươi.',
+                'Hai ngày đầu có tổng năm mươi hai.']),
+        _c('y_toan', 'Lấy tổng cả TRỪ tổng nhóm đã biết',
+           '180 − 52 = 128   →   128 : 4 = 32', buoc=2, soBuoc=4,
+           loi=['Lấy tổng cả trừ tổng nhóm đã biết, còn một trăm hai mươi tám, chia '
+                'bốn được ba mươi hai.']),
+        _c('de_toan', 'Nay tới bài ghép hai tầng',
+           de='Tổng 6 ngày là 180. Chủ nhật bán HƠN TBC cả 7 ngày 12 chiếc',
+           loi=['Nay tới bài ghép. Chủ nhật bán hơn trung bình của cả bảy ngày mười '
+                'hai chiếc.']),
+        _c('y_toan', 'Gạch đề ra thành HAI tầng',
+           'tầng ngoài: máy GỘP (bài này)      ·      tầng trong: máy KÉO CÂN (bài 22)',
+           buoc=3, soBuoc=4,
+           loi=['Gạch đề ra thành hai tầng. Tầng ngoài là máy gộp, tầng trong là máy '
+                'kéo cân đã học.']),
+        _c('y_toan', 'Chạy tầng trong: cho cân nhích rồi mới cộng phần hơn',
+           'TBC bảy ngày = 30 + 12 : 6 = 32   →   Chủ nhật = 32 + 12 = 44',
+           buoc=4, soBuoc=4,
+           loi=['Phần hơn mười hai chảy xuống sáu ngày cũ, mỗi ngày hai nấc, nên mức '
+                'bảy ngày là ba mươi hai.',
+                'Chủ nhật bằng ba mươi hai cộng mười hai, là bốn mươi tư chiếc.']),
+        _c('de_toan', 'Trộn hai máy vào một phép thì sao',
+           de='30 + 12 = 42   →   (180 + 42) : 7 = 31,7 …',
+           loi=['Thử trộn hai máy xem. Ba mươi cộng mười hai ra bốn mươi hai.',
+                'Thay vào thì chia bảy không tròn. Trượt ngay.']),
+        _c('cong_thuc', 'Câu cần nhớ cho bài ghép',
+           congThuc='tách TẦNG: gộp tổng TRƯỚC — kéo cân SAU',
+           thay='thử toàn cục: (180 + 44) : 7 = 32 ✓  và  44 − 32 = 12 ✓',
+           loi=['Con nhớ câu này. Bài ghép thì tách tầng, gộp tổng trước rồi mới kéo '
+                'cân.',
+                'Và thử toàn cục, mọi tầng khớp mới xong.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B24.M1': kb5_gop_nhieu_nhom,
+    'DL:KSN5Q1.B24.M2': kb5_don_ganh_lech,
+    'DL:KSN5Q1.B24.M3': kb5_tach_tang,
     'DL:KSN5Q1.B23.M1': kb5_den_va_roi_nhom,
     'DL:KSN5Q1.B23.M2': kb5_tim_phan_mang,
     'DL:KSN5Q1.B23.M3': kb5_tim_so_nguoi_cu,

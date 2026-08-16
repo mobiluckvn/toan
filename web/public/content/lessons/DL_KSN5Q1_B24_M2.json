@@ -34,24 +34,7 @@
   "kidText": "Vì sao không lấy hai mức trung bình cộng rồi chia đôi? Vì nhóm đông kéo cân về phía nó. Chỉ chia đôi được khi hai nhóm bằng cỡ."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "($26 + 32$) : $2 = 29$ là phép CHIA ĐÔI LẬU khi hai nhóm khác cỡ: nhóm bốn ngày đông gấp đôi nhóm hai ngày — kéo điểm cân về phía 32: TBC gộp thật là 30, không phải 29."
-   },
-   {
-    "id": "K2",
-    "text": "TBC gộp luôn nằm GIỮA hai TBC và NGẢ VỀ PHÍA NHÓM ĐÔNG hơn — như đòn gánh lệch nghiêng về đầu thúng nặng người."
-   },
-   {
-    "id": "K3",
-    "text": "CÂU HỎI CỬA NGÕ trước khi chia đôi: \"hai nhóm có BẰNG số phần tử không?\" BẰNG → (a + b) : 2 hợp lệ (3 ngày TBC $26 + 3$ ngày TBC 32 → 29 ✓). KHÁC → phải đi ba nhịp bảng tổng."
-   },
-   {
-    "id": "K4",
-    "text": "Kiểm chứng hai đường khi hai nhóm bằng cỡ: ($78 + 96$) : $6 = 29$ = ($26 + 32$) : 2 — chia đôi chỉ là lối tắt của cùng một phép tính."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: CHÍNH CÁO ĐỀ CŨNG TỰ SẬP. Cáo Đề đứng lớp dạy nhanh: \"hai sáu với ba hai — chia đôi ra hai chín, gọn!\" — rồi tự mở thúng đếm lại: 180 chia 6 ra BA MƯƠI. Cáo tái mặt: sai ở đâu?! Ở QUÂN SỐ: nhóm bốn ngày ĐÔNG GẤP ĐÔI — mỗi ngày TBC 32 là BỐN phiếu bầu kéo điểm cân về phía 32, trong khi phe 26 chỉ hai phiếu: điểm cân ngả về nhóm đông, đậu ở 30 chứ không đứng giữa 29! Từ đó khắc CÂU HỎI CỬA NGÕ: \"hai nhóm có BẰNG quân số không?\" — Bằng thì chia đôi thoải mái (ba ngày 26 với ba ngày 32: đúng 29, kiểm bằng bảng tổng cũng 29). Khác thì cửa đóng — đi đường bảng ba cột.",
   "canonicalExamples": [
    {
@@ -76,14 +59,8 @@
     "counterExample": "Bảng tổng: $180 : 6 = 30$ ≠ 29 — chia đôi lậu lệch đúng về phía nhóm ít."
    }
   ],
-  "vocabulary": [
-   "chia đôi lậu",
-   "phiếu bầu kéo điểm cân",
-   "ngả về nhóm đông",
-   "câu hỏi cửa ngõ",
-   "lối tắt hợp lệ"
-  ],
-  "mantra": "HỎI QUÂN SỐ TRƯỚC — CHIA ĐÔI SAU (NẾU ĐƯỢC)!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -105,47 +82,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "2 ngày TBC 26, 4 ngày TBC 32 → TBC cả 6 ngày? So sánh với ($26 + 32$) : 2 và giải thích.",
-    "display": {
-     "type": "story_panel",
-     "caption": "29 hay 30 — Cáo tự sập?!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để tìm chỗ sập!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Chỗ sập nằm ở QUÂN SỐ: nhóm bốn ngày ĐÔNG GẤP ĐÔI nhóm hai ngày! Coi mỗi ngày là một phiếu bầu: phe ba hai có BỐN phiếu, phe hai sáu chỉ HAI — điểm cân bị kéo NGẢ VỀ NHÓM ĐÔNG, đậu ở BA MƯƠI chứ không đứng chính giữa hai chín! Đòn gánh lệch nghiêng về đầu thúng nặng người — chia đôi chỉ đúng khi hai đầu nặng đều.",
-    "display": {
-     "type": "vote_pull_interactive",
-     "spec": {
-      "side26": 2,
-      "side32": 4,
-      "midpoint": 29,
-      "real": 30,
-      "note": "ngả về nhóm đông"
-     }
-    },
-    "interaction": {
-     "type": "pull_balance",
-     "answerKey": {
-      "value": 30
-     },
-     "successMessage": "4 phiếu kéo về 32 → điểm cân đậu 30, không phải 29!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -161,47 +97,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Vậy khi nào chia đôi HỢP LỆ? Khắc câu hỏi cửa ngõ: \"hai nhóm có BẰNG số phần tử không?\" Đề mới: BA ngày TBC hai sáu, BA ngày TBC ba hai — bằng quân số! Chia đôi: hai chín. Kiểm bằng bảng tổng: bảy tám cộng chín sáu là một trăm bảy tư, chia sáu — cũng HAI CHÍN: khớp! Chia đôi chỉ là lối tắt của bảng tổng khi hai thúng nặng đều — quân số khác nhau là cửa đóng ngay.",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "2 ngày + 4 ngày: (26+32):2",
-       "output": "✗ 29 ≠ 30",
-       "valid": false,
-       "reason": "quân số khác — cửa đóng"
-      },
-      {
-       "input": "3 ngày + 3 ngày: (26+32):2",
-       "output": "✓ 29 = 174:6",
-       "valid": true,
-       "reason": "bằng quân số — lối tắt hợp lệ"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: hỏi quân số trước — chia đôi sau, nếu được!",
-    "display": {
-     "type": "mantra_card",
-     "text": "HỎI QUÂN SỐ TRƯỚC — CHIA ĐÔI SAU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -519,109 +414,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B24.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "29 hay 30 — Cáo tự sập?!",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "Hai sáu với ba hai, chia đôi ra hai chín — gọn!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B24_M2_F1.png",
-   "sha256_16": "780284b91ccbed3b"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "2 ngày + 4 ngày: (26+32):2"
-     ],
-     "result": "29 ≠ 30"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "3 ngày + 3 ngày: (26+32):2"
-     ],
-     "result": "29 = 174:6"
-    },
-    "verdict": "bằng quân số — lối tắt hợp lệ"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B24_M2_F2.png",
-   "sha256_16": "d5d13822935eb7b0"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "(26 + 32)",
-      "text": "2 = 29 là phép CHIA ĐÔI LẬU khi hai nhóm khác cỡ: nhóm bốn ngày đông gấp đôi nhóm hai ngày — kéo điểm cân về phía 32: TBC gộp thật là 30, không phải 29.",
-      "tone": "navy"
-     },
-     {
-      "text": "TBC gộp luôn nằm GIỮA hai TBC và NGẢ VỀ PHÍA NHÓM ĐÔNG hơn — như đòn gánh lệch nghiêng về đầu thúng nặng người.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "HỎI QUÂN SỐ TRƯỚC — CHIA ĐÔI SAU (NẾU ĐƯỢC)!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B24_M2_F3.png",
-   "sha256_16": "cd87c2b38e3fa5f3"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "VÌ SAO KHÔNG ĐƯỢC CỘNG HAI TBC RỒI CHIA ĐÔI?",
-    "wrong": {
-     "head": "CHIA ĐÔI HAI TBC",
-     "steps": [
-      "(26 + 32) : 2"
-     ],
-     "result": "29 ✗"
-    },
-    "right": {
-     "head": "QUA CẦU TỔNG",
-     "steps": [
-      "(52 + 128) : 6"
-     ],
-     "result": "30 ✓"
-    },
-    "verdict": "Nhóm 4 ngày đông gấp đôi nên kéo điểm cân về phía mình"
-   },
-   "caption": "Chỉ khi hai nhóm BẰNG cỡ thì chia đôi mới hợp lệ",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B24_M2_F4.png",
-   "sha256_16": "4c6ae8529f3ee98e"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B23",
@@ -634,5 +427,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B24_M2_giang.mp4"
  }
 }
