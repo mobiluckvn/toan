@@ -35,24 +35,7 @@
   "kidText": "Vừa chia 3 dư 1 vừa chia 5 dư 2? Con dò số đầu tiên rồi nhảy bước bằng tích hai số chia để kể hết mọi số."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bài \"chia a dư r₁ VÀ chia b dư r₂\": dò nghiệm ĐẦU trên dãy của số chia LỚN hơn (thưa hơn, dò nhanh), kiểm bằng điều kiện kia."
-   },
-   {
-    "id": "K2",
-    "text": "Từ nghiệm đầu, các nghiệm tiếp theo cách đều một BƯỚC NHẢY = tích hai số chia (3 và 5 → bước 15): chỉ bước 15 mới giữ nguyên CẢ HAI số dư."
-   },
-   {
-    "id": "K3",
-    "text": "Mẹo CÙNG HỤT 1: nếu các dư đều bằng số chia − 1 (dư 2 khi chia 3, dư 4 khi chia 5) thì SỐ + 1 chia hết cho cả hai → số + 1 chia hết cho 15."
-   },
-   {
-    "id": "K4",
-    "text": "Suy dư lồng nhau: số chia 9 dư 5 → viết số = 9k + $5 = 3$(3k + 1) + 2 → luôn chia 3 dư 2, đúng với MỌI k."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HAI LỊCH TƯỚI CÂY. Vòi số 3 tưới các gốc 1, 4, 7, 10… (chia 3 dư 1); vòi số 5 tưới gốc 2, 7, 12… (chia 5 dư 2). Gốc nào được CẢ HAI vòi tưới? Dò trên lịch thưa của vòi 5: gốc 2 — vòi 3 trượt; gốc 7 — vòi 3 trúng! Nghiệm đầu: 7. Từ đó, hai lịch chỉ tái trùng khi cả hai vòi cùng quay đủ vòng: sau đúng 3 × 5 = 15 gốc — nhảy 7, 22, 37, 52… Kẻ vội nhảy bước 3 (ra 10) là gãy ngay lịch vòi 5!",
   "canonicalExamples": [
    {
@@ -83,13 +66,8 @@
     "counterExample": "$10 : 5 = 2$ dư 0 — gãy lịch vòi 5 ngay bước đầu."
    }
   ],
-  "vocabulary": [
-   "hai lịch tưới cây",
-   "dò trên dãy thưa",
-   "bước nhảy = tích hai số chia",
-   "cùng hụt 1 — cộng 1 tròn cả đôi"
-  ],
-  "mantra": "BƯỚC NHẢY BẰNG TÍCH HAI SỐ CHIA!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,56 +89,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Tìm số nhỏ nhất chia cho 3 dư 1 và chia cho 5 dư 2. Kể tiếp ba số nữa.",
-    "display": {
-     "type": "story_panel",
-     "caption": "7 rồi… 10?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để kiểm gốc 10!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Kiểm gốc 10: vòi 5 tưới gốc 2, 7, 12 — gốc 10 KHÔ QUEO! Nhảy 3 giữ được lịch vòi 3 nhưng gãy lịch vòi 5. Hai lịch chỉ tái trùng khi cả hai cùng quay đủ vòng: 3 nhân 5 bằng 15 gốc. Con nhảy đúng: 7 — 22 — 37 — 52, kiểm mỗi gốc hai lịch đều trúng!",
-    "display": {
-     "type": "two_hose_interactive",
-     "spec": {
-      "hose3": "1,4,7,10,13,16,19,22…",
-      "hose5": "2,7,12,17,22…",
-      "first": 7,
-      "jump": 15,
-      "seq": [
-       7,
-       22,
-       37,
-       52
-      ]
-     }
-    },
-    "interaction": {
-     "type": "jump_and_check",
-     "answerKey": {
-      "values": [
-       22,
-       37,
-       52
-      ]
-     },
-     "successMessage": "Bước 15 giữ nguyên CẢ HAI số dư — bước 3 hay 5 đều gãy một lịch!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -176,38 +104,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Hai tuyệt chiêu cuối. MẸO CÙNG HỤT 1: chia 3 dư 2, chia 5 dư 4 — cả hai dư đều hụt đúng 1 so với số chia: vậy số cộng 1 chia hết cả 15! Số cộng 1 bằng 15 — số cần tìm là 14. Và SUY DƯ LỒNG NHAU: số chia 9 dư 5 viết thành 9k cộng 5, tức 3 nhân (3k cộng 1) cộng 2 — chia 3 LUÔN dư 2, đúng với mọi k.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "dư 2 = 3−1 · dư 4 = 5−1 → số + 1 ⋮ 15 → 14",
-      "9k + 5 = 3(3k + 1) + 2",
-      "→ chia 3 dư 2 với MỌI k"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: bước nhảy bằng tích hai số chia!",
-    "display": {
-     "type": "mantra_card",
-     "text": "BƯỚC NHẢY = TÍCH HAI SỐ CHIA!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -542,107 +438,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B10.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "7 rồi… 10?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Dò được gốc 7 rồi! Nhảy thêm bước 3 nữa là gốc 10!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B10_M3_F1.png",
-   "sha256_16": "7680b719306ef62b"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Hai điều kiện dư: dò nghiệm đầu — nhảy bước bằng tích hai số chia",
-    "steps": [
-     {
-      "text": "dư 2 = 3−1 · dư 4 = 5−1 → số + 1 chia hết cho 15 → 14"
-     },
-     {
-      "text": "9k + 5 = 3(3k + 1) + 2 → luôn dư 2."
-     },
-     {
-      "text": "→ chia 3 dư 2 với MỌI k"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B10_M3_F2.png",
-   "sha256_16": "d22d130c6bbd9d9c"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Bài \"chia a dư r₁ VÀ chia b dư r₂\"",
-      "text": "dò nghiệm ĐẦU trên dãy của số chia LỚN hơn (thưa hơn, dò nhanh), kiểm bằng điều kiện kia.",
-      "tone": "navy"
-     },
-     {
-      "text": "Từ nghiệm đầu, các nghiệm tiếp theo cách đều một BƯỚC NHẢY = tích hai số chia (3 và 5 → bước 15): chỉ bước 15 mới giữ nguyên CẢ HAI số dư.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "BƯỚC NHẢY BẰNG TÍCH HAI SỐ CHIA!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B10_M3_F3.png",
-   "sha256_16": "7d301d9b2c859028"
-  },
-  {
-   "archetype": "fence_posts",
-   "params": {
-    "title": "CHIA 3 DƯ 1 VÀ CHIA 5 DƯ 2 — DÒ NGHIỆM ĐẦU RỒI NHẢY BƯỚC",
-    "first": 7,
-    "last": 97,
-    "step": 15,
-    "show": 6,
-    "labels": [
-     "7",
-     "22",
-     "37",
-     "…",
-     "82",
-     "97"
-    ],
-    "gap_at": 3,
-    "gap_note": "bước nhảy = 3 × 5 = 15",
-    "formula": "nghiệm đầu 7 → 7; 22; 37; 52; 67; 82; 97",
-    "note": "Số lớn nhất có hai chữ số là 97 · số kế 112 đã vượt"
-   },
-   "caption": "Dò trên dãy thưa hơn để tìm nghiệm đầu, rồi nhảy đều bằng tích hai số chia",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B10_M3_F4.png",
-   "sha256_16": "92bfc82632e4e825"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B11"
@@ -654,5 +450,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Hai điều kiện dư: dò nghiệm đầu — nhảy bước bằng tích hai số chia"
+ "titleDay": "Hai điều kiện dư: dò nghiệm đầu — nhảy bước bằng tích hai số chia",
+ "video": {
+  "giang": "DL_KSN5Q1_B10_M3_giang.mp4"
+ }
 }

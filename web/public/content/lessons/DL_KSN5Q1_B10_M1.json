@@ -34,20 +34,7 @@
   "kidText": "Số dư luôn bé hơn số chia, nên dư lớn nhất bằng số chia trừ 1. Con nhận ra ngay đáp án nào phạm luật."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Trong phép chia có dư: số bị chia = số chia × thương + số dư, với số dư bé hơn số chia."
-   },
-   {
-    "id": "K2",
-    "text": "Số dư lớn nhất có thể = số chia − 1 (chia cho 5 thì dư tối đa 4; chia cho 7 thì dư tối đa 6)."
-   },
-   {
-    "id": "K3",
-    "text": "Vì sao dư không thể bằng số chia: nếu dư đủ bằng số chia thì đủ chia thêm một lượt — thương nhảy thêm một bậc và dư quay về nhỏ hơn."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: CHIA KẸO VÀO TÚI. Chia cho 5 là đóng kẹo vào túi 5 viên: đóng đầy được bao nhiêu túi là THƯƠNG, mấy viên lẻ chưa đủ túi là DƯ. Viên lẻ mà gom đủ 5? Thì đóng luôn thành túi mới — thương tăng một, tay lại trống! Vậy số viên lẻ chỉ có thể là 0, 1, 2, 3, 4 — tối đa là 5 trừ 1. Đáp số nào khai \"dư 5 khi chia 5\" là NGHIỆM MA: nó tự tố cáo mình đóng túi chưa xong.",
   "canonicalExamples": [
    {
@@ -78,13 +65,8 @@
     "counterExample": "\"$25 : 5 = 4$ dư 5\"? Không — $25 : 5 = 5$ dư 0."
    }
   ],
-  "vocabulary": [
-   "túi kẹo (thương)",
-   "viên lẻ (dư)",
-   "nghiệm ma phạm luật",
-   "thương nhảy bậc"
-  ],
-  "mantra": "DƯ MÀ BẰNG SỐ CHIA — THƯƠNG ĐÃ KỊP LỚN THÊM MỘT!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -106,44 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Tính $47 : 5$. Số dư lớn nhất có thể khi chia một số cho 5 là bao nhiêu?",
-    "display": {
-     "type": "story_panel",
-     "caption": "chia 5 — dư max = 5??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đóng túi kẹo!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 40,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Con đóng thử: 47 viên kẹo vào túi 5 viên. Chín túi đầy — còn 2 viên lẻ trên tay: 47 chia 5 bằng 9 dư 2. Giờ thêm kẹo cho tay lẻ đủ 5 viên xem — chúng tự đóng thành túi mới! Viên lẻ không bao giờ giữ nổi đủ 5.",
-    "display": {
-     "type": "candy_pack_interactive",
-     "spec": {
-      "total": 47,
-      "perBag": 5,
-      "bags": 9,
-      "left": 2,
-      "tryFive": "5 viên lẻ → +1 túi, dư về 0"
-     }
-    },
-    "interaction": {
-     "type": "pack_and_observe",
-     "successMessage": "Dư chỉ chạy trong 0–4: cứ đủ 5 là thương nhảy bậc, tay lại trống!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -159,38 +103,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 32,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Phép chia hồ sơ cho bài sau: 100 chia 9 bằng 11 dư 1 — thử lại: 9 nhân 11 cộng 1 đúng bằng 100. Và phản xạ bắt nghiệm ma: ai khai \"43 chia 5 bằng 7 dư 8\" là phạm luật ngay — 8 viên lẻ còn đóng được túi nữa: đáp đúng là 8 dư 3.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "100 : 9 = 11 dư 1 (9×11+1=100 ✓)",
-      "\"7 dư 8\" ✗ — dư ≥ số chia là nghiệm ma",
-      "43 : 5 = 8 dư 3 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: dư mà bằng số chia — thương đã kịp lớn thêm một!",
-    "display": {
-     "type": "mantra_card",
-     "text": "DƯ BẰNG SỐ CHIA — THƯƠNG ĐÃ LỚN THÊM MỘT!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -499,305 +411,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B10.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "chia 5 — dư max = 5??",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "Chia một số cho 5, số dư LỚN NHẤT là mấy nhỉ?",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Câu hỏi mở bài",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B10_M1_F1.png",
-   "sha256_16": "51421257a317cf55"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Luật nền phép chia có dư: dư luôn bé hơn số chia",
-    "steps": [
-     {
-      "text": "100 : 9 = 11 dư 1 (9×11+1=100 )"
-     },
-     {
-      "text": "\"7 dư 8\" — dư lớn hơn hoặc bằng số chia là nghiệm ma"
-     },
-     {
-      "text": "43 : 5 = 8 dư 3"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B10_M1_F2.png",
-   "sha256_16": "6eebd07e833e7d49"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Trong phép chia có dư",
-      "text": "số bị chia = số chia × thương + số dư, với số dư bé hơn số chia.",
-      "tone": "navy"
-     },
-     {
-      "text": "Số dư lớn nhất có thể = số chia − 1 (chia cho 5 thì dư tối đa 4; chia cho 7 thì dư tối đa 6).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "DƯ MÀ BẰNG SỐ CHIA — THƯƠNG ĐÃ KỊP LỚN THÊM MỘT!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B10_M1_F3.png",
-   "sha256_16": "43acc77cb94d69b4"
-  },
-  {
-   "archetype": "grid_count",
-   "params": {
-    "title": "47 : 5 = 9 DƯ 2 — DƯ LUÔN BÉ HƠN SỐ CHIA",
-    "cols": 5,
-    "rows": 10,
-    "fill": [
-     [
-      0,
-      0
-     ],
-     [
-      1,
-      0
-     ],
-     [
-      2,
-      0
-     ],
-     [
-      3,
-      0
-     ],
-     [
-      4,
-      0
-     ],
-     [
-      0,
-      1
-     ],
-     [
-      1,
-      1
-     ],
-     [
-      2,
-      1
-     ],
-     [
-      3,
-      1
-     ],
-     [
-      4,
-      1
-     ],
-     [
-      0,
-      2
-     ],
-     [
-      1,
-      2
-     ],
-     [
-      2,
-      2
-     ],
-     [
-      3,
-      2
-     ],
-     [
-      4,
-      2
-     ],
-     [
-      0,
-      3
-     ],
-     [
-      1,
-      3
-     ],
-     [
-      2,
-      3
-     ],
-     [
-      3,
-      3
-     ],
-     [
-      4,
-      3
-     ],
-     [
-      0,
-      4
-     ],
-     [
-      1,
-      4
-     ],
-     [
-      2,
-      4
-     ],
-     [
-      3,
-      4
-     ],
-     [
-      4,
-      4
-     ],
-     [
-      0,
-      5
-     ],
-     [
-      1,
-      5
-     ],
-     [
-      2,
-      5
-     ],
-     [
-      3,
-      5
-     ],
-     [
-      4,
-      5
-     ],
-     [
-      0,
-      6
-     ],
-     [
-      1,
-      6
-     ],
-     [
-      2,
-      6
-     ],
-     [
-      3,
-      6
-     ],
-     [
-      4,
-      6
-     ],
-     [
-      0,
-      7
-     ],
-     [
-      1,
-      7
-     ],
-     [
-      2,
-      7
-     ],
-     [
-      3,
-      7
-     ],
-     [
-      4,
-      7
-     ],
-     [
-      0,
-      8
-     ],
-     [
-      1,
-      8
-     ],
-     [
-      2,
-      8
-     ],
-     [
-      3,
-      8
-     ],
-     [
-      4,
-      8
-     ],
-     [
-      0,
-      9
-     ],
-     [
-      1,
-      9
-     ]
-    ],
-    "fill_color": "#1FCBAB",
-    "show_dims": false,
-    "row_labels": [
-     {
-      "row": 9,
-      "text": "lẻ 2"
-     },
-     {
-      "row": 8,
-      "text": "túi 9"
-     },
-     {
-      "row": 0,
-      "text": "túi 1"
-     }
-    ],
-    "memo": [
-     "9 túi đầy × 5 = 45",
-     "còn lẻ 2 viên",
-     "dư lớn nhất = 5 − 1 = 4"
-    ],
-    "note": "Nếu dư bằng 5 thì gom thêm được một túi nữa — nên dư luôn bé hơn số chia"
-   },
-   "caption": "Chín hàng đầy đủ 5 viên, hàng cuối chỉ có 2 viên lẻ",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B10_M1_F4.png",
-   "sha256_16": "5396f56c024b1617"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B11"
@@ -808,5 +422,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B10_M1_giang.mp4"
  }
 }

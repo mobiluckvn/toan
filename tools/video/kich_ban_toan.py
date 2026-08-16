@@ -9523,7 +9523,138 @@ def kb5_hai_an_x_y(b):
     ]
 
 
+def kb5_luat_nen_chia_du(b):
+    """L5·B10·M1 Dư luôn bé hơn số chia — dư tối đa là số chia trừ 1."""
+    return [
+        _c('bia', 'Số dư lớn nhất là bao nhiêu', so_bai(b),
+           loi=['Chia một số cho năm thì số dư lớn nhất có thể là mấy.']),
+        _c('nhom_deu', 'Xếp 14 viên vào túi 5 viên', tong=14, moiNhom=5,
+           chuPhu='Được 2 túi đầy, còn 4 viên lẻ — đó là dư lớn nhất.',
+           loi=['Xếp mười bốn viên vào túi năm viên. Được hai túi đầy, còn bốn viên '
+                'lẻ.',
+                'Bốn là số dư lớn nhất khi chia cho năm.']),
+        _c('y_toan', 'Vì sao dư không thể bằng 5?',
+           'đủ 5 viên lẻ thì chúng TỰ đóng thêm một túi', buoc=1, soBuoc=3,
+           loi=['Vì sao dư không thể bằng năm. Vì đủ năm viên lẻ thì chúng tự đóng '
+                'thêm một túi nữa.',
+                'Lúc ấy thương nhảy thêm một, và tay lại trống.']),
+        _c('cong_thuc', 'Nên có một luật nền cho mọi phép chia',
+           congThuc='số dư < số chia  ·  dư lớn nhất = số chia − 1',
+           thay='chia cho 5 dư tối đa 4, chia cho 7 dư tối đa 6',
+           loi=['Nên có luật nền cho mọi phép chia. Số dư luôn bé hơn số chia.',
+                'Dư lớn nhất bằng số chia trừ một. Chia cho bảy thì dư tối đa là '
+                'sáu.']),
+        _c('y_toan', 'Phép thử lại của mọi bài chia có dư',
+           'số bị chia = số chia × thương + số dư', buoc=2, soBuoc=3,
+           loi=['Phép thử lại của mọi bài chia có dư. Số chia nhân thương, cộng số '
+                'dư, phải ra đúng số bị chia.']),
+        _c('y_toan', 'Thử một số', '100 : 9 = 11 dư 1  →  9 × 11 + 1 = 100 ✓',
+           loi=['Thử một số. Một trăm chia chín bằng mười một dư một.',
+                'Chín nhân mười một cộng một, đúng bằng một trăm.']),
+        _c('y_toan', 'Phản xạ bắt lỗi', '"43 : 5 = 7 dư 8" — dư 8 lớn hơn số chia 5',
+           buoc=3, soBuoc=3,
+           loi=['Con tập phản xạ bắt lỗi. Có bạn viết bốn ba chia năm bằng bảy dư '
+                'tám.',
+                'Dư tám mà số chia có năm, phạm luật ngay. Đáp đúng là tám dư ba.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='dư mà bằng số chia — thương đã kịp lớn thêm một',
+           thay='nên soi số dư trước khi ghi đáp số, lần nào cũng soi',
+           loi=['Con nhớ câu này. Dư mà bằng số chia thì thương đã kịp lớn thêm một.',
+                'Nên soi số dư trước khi ghi đáp số.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_bot_bang_du_them_bang_bu(b):
+    """L5·B10·M2 Bớt bằng dư, thêm bằng bù — cộng lại tròn một khoảng."""
+    return [
+        _c('bia', 'Vá cho tròn', so_bai(b),
+           loi=['Một số chưa chia hết. Bớt hay thêm ít nhất bao nhiêu cho nó chia '
+                'hết.']),
+        _c('de_toan', 'Đề bài', de='100 : 9 dư 1. Thêm ít nhất mấy để chia hết cho 9?',
+           loi=['Một trăm chia chín dư một. Thêm ít nhất bao nhiêu để chia hết cho '
+                'chín.',
+                'Nhiều bạn trả lời ngay là thêm một. Con thử nghĩ lại.']),
+        _c('day_so', 'Vẽ con đường kẻ vạch mỗi 9 mét', so=[90, 99, 108],
+           hienThuTu=False, chuPhu='Số 100 đứng GIỮA hai vạch 99 và 108.',
+           loi=['Vẽ con đường kẻ vạch mỗi chín mét. Chín mươi, chín mươi chín, một '
+                'trăm linh tám.',
+                'Số một trăm đứng giữa hai vạch.']),
+        _c('y_toan', 'Lùi về vạch SAU thì bớt đúng số DƯ',
+           '100 − 1 = 99  ·  đó chính là số dư', buoc=1, soBuoc=3,
+           loi=['Lùi về vạch sau thì bớt đúng số dư. Một trăm bớt một được chín mươi '
+                'chín.']),
+        _c('y_toan', 'Tiến tới vạch TRƯỚC thì thêm PHẦN BÙ',
+           'phần bù = số chia − dư = 9 − 1 = 8  →  108', buoc=2, soBuoc=3,
+           loi=['Tiến tới vạch trước thì phải thêm phần bù. Phần bù bằng số chia trừ '
+                'số dư.',
+                'Chín trừ một bằng tám, nên thêm tám được một trăm linh tám.']),
+        _c('cong_thuc', 'Hai cửa ngược chiều — và có phép thử nhanh',
+           congThuc='bớt + thêm = dư + bù = SỐ CHIA',
+           thay='cộng hai đáp không ra số chia thì chắc chắn sai một cái',
+           loi=['Hai cửa ngược chiều nhau. Bớt một, thêm tám, cộng lại đúng chín.',
+                'Đó là phép thử nhanh. Cộng hai đáp không ra số chia thì chắc chắn '
+                'sai một cái.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Thấy dư 1 là thêm 1 — nhưng 101 vẫn không chia hết',
+           buoc=3, soBuoc=3,
+           loi=['Chỗ hay nhầm là thấy dư một thì thêm một.',
+                'Nhưng một trăm linh một vẫn chưa chia hết cho chín.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='BỚT bằng dư  ·  THÊM bằng bù',
+           thay='vì lùi về vạch sau khác hẳn tiến tới vạch trước',
+           loi=['Con nhớ câu này. Bớt thì bằng dư, thêm thì bằng bù.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_hai_dieu_kien_du(b):
+    """L5·B10·M3 Hai điều kiện dư cùng lúc — bước nhảy bằng tích hai số chia."""
+    return [
+        _c('bia', 'Hai điều kiện dư cùng lúc', so_bai(b),
+           loi=['Tìm số vừa chia ba dư một, vừa chia năm dư hai.']),
+        _c('y_toan', 'Dò trên dãy của số chia LỚN hơn cho nhanh',
+           'chia 5 dư 2: 2, 7, 12, 17…  — thưa hơn nên ít số phải thử',
+           buoc=1, soBuoc=3,
+           loi=['Dò trên dãy của số chia lớn hơn cho nhanh, vì dãy ấy thưa hơn.',
+                'Chia năm dư hai được dãy hai, bảy, mười hai, mười bảy.']),
+        _c('y_toan', 'Kiểm từng số bằng điều kiện còn lại',
+           '2 chia 3 dư 2 ✗  ·  7 chia 3 dư 1 ✓', buoc=2, soBuoc=3,
+           loi=['Kiểm từng số bằng điều kiện còn lại. Hai chia ba dư hai, trượt.',
+                'Bảy chia ba dư một, khớp. Vậy bảy là nghiệm đầu tiên.']),
+        _c('day_so', 'Các nghiệm sau cách đều 15', so=[7, 22, 37, 52],
+           hienThuTu=False, chuPhu='Bước nhảy 15 = 3 × 5.',
+           loi=['Các nghiệm sau cách đều mười lăm. Bảy, hai mươi hai, ba mươi bảy, năm '
+                'mươi hai.']),
+        _c('cong_thuc', 'Vì sao bước nhảy là 15?',
+           congThuc='bước nhảy = tích hai số chia',
+           thay='chỉ bước đúng bội chung mới giữ nguyên CẢ HAI số dư',
+           loi=['Vì sao bước nhảy là mười lăm. Vì chỉ bước đúng bội chung của hai số '
+                'chia.',
+                'Bước ba thì giữ được dư của ba nhưng gãy dư của năm.']),
+        _c('y_toan', 'Có một mẹo cho trường hợp riêng',
+           'chia 3 dư 2 VÀ chia 5 dư 4 — cả hai dư đều HỤT ĐÚNG 1', buoc=3, soBuoc=3,
+           loi=['Có một mẹo cho trường hợp riêng. Chia ba dư hai và chia năm dư bốn.',
+                'Cả hai số dư đều hụt đúng một so với số chia.']),
+        _c('y_toan', 'Thì cộng 1 vào là chia hết cả hai',
+           'số + 1 chia hết 15  →  số = 14, 29, 44…',
+           loi=['Thì cộng một vào là số ấy chia hết cho cả hai. Nên số cần tìm là mười '
+                'lăm trừ một, bằng mười bốn.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='tìm nghiệm ĐẦU  →  rồi nhảy đều bằng TÍCH hai số chia',
+           thay='và nếu các dư cùng hụt 1 thì cộng 1 cho gọn',
+           loi=['Con nhớ hai nhịp. Tìm nghiệm đầu, rồi nhảy đều bằng tích hai số chia.',
+                'Và nếu các số dư cùng hụt một thì cộng một vào cho gọn.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B10.M1': kb5_luat_nen_chia_du,
+    'DL:KSN5Q1.B10.M2': kb5_bot_bang_du_them_bang_bu,
+    'DL:KSN5Q1.B10.M3': kb5_hai_dieu_kien_du,
     'DL:KSN5Q1.B9.M1': kb5_soi_duoi_may_chu_so,
     'DL:KSN5Q1.B9.M2': kb5_so_hop_thao_cap,
     'DL:KSN5Q1.B9.M3': kb5_hai_an_x_y,
