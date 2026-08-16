@@ -11192,7 +11192,145 @@ def kb5_tbc_cua_ai(b):
     ]
 
 
+def kb5_den_va_roi_nhom(b):
+    """L5·B23·M1 Thêm hay bớt người — luôn đi qua cây cầu TỔNG, và đếm lại quân số."""
+    return [
+        _c('bia', 'Có người vào nhóm, có người rời nhóm', so_bai(b),
+           loi=['Nhóm thay đổi thì mức trung bình đổi theo. Nhưng đừng cộng bừa.']),
+        _c('de_toan', 'Đề bài',
+           de='Nhóm 4 bạn có tổng 100 viên kẹo. Một bạn mang 40 viên VÀO nhóm.\n'
+              'TBC mới của cả 5 bạn?',
+           loi=['Nhóm bốn bạn có tổng một trăm viên kẹo. Một bạn mang bốn mươi viên '
+                'vào nhóm.']),
+        _c('san_bang', 'Bốn bạn cũ, mức trung bình 25', so=[20, 25, 25, 30],
+           mucTB=True, chuPhu='Tổng 100 chia cho 4 bạn.',
+           loi=['Bốn bạn cũ có mức trung bình hai mươi lăm.']),
+        _c('y_toan', 'Đừng lấy 25 cộng 40 rồi chia đôi',
+           '25 đại diện cho BỐN bạn  ·  40 chỉ là MỘT bạn  →  khác vai nhau',
+           buoc=1, soBuoc=4,
+           loi=['Nhiều bạn lấy hai mươi lăm cộng bốn mươi rồi chia đôi. Sai.',
+                'Hai mươi lăm đại diện cho bốn bạn, còn bốn mươi chỉ là một bạn. Khác '
+                'vai nhau.']),
+        _c('y_toan', 'Muốn gộp thì phải đi qua cây cầu TỔNG',
+           'tổng cũ 100  +  40  =  140', buoc=2, soBuoc=4,
+           loi=['Muốn gộp thì phải đi qua cây cầu tổng. Một trăm cộng bốn mươi được '
+                'một trăm bốn mươi.']),
+        _c('san_bang', 'Thêm cột 40 vào — vạch nhích lên 28',
+           so=[20, 25, 25, 30, 40], mucTB=True,
+           chuPhu='Nay là 5 cột, nên chia cho 5.',
+           loi=['Thêm cột bốn mươi vào thì vạch nhích lên hai mươi tám.']),
+        _c('y_toan', 'ĐẾM LẠI QUÂN SỐ rồi mới chia', '140 : 5 = 28', buoc=3, soBuoc=4,
+           loi=['Đếm lại quân số rồi mới chia. Nay năm bạn, nên một trăm bốn mươi chia '
+                'năm, được hai mươi tám.']),
+        _c('de_toan', 'Còn chiều cửa RA',
+           de='Bạn ôm 40 viên RỜI khỏi nhóm 5 người đang có TBC 28',
+           loi=['Còn chiều cửa ra. Bạn ấy ôm bốn mươi viên rời khỏi nhóm.']),
+        _c('y_toan', 'Rời thì TRỪ khỏi tổng, rồi chia cho số còn lại',
+           '140 − 40 = 100   ·   còn 4 người   ·   100 : 4 = 25', buoc=4, soBuoc=4,
+           loi=['Rời thì trừ khỏi tổng rồi chia cho số còn lại. Một trăm chia bốn được '
+                'hai mươi lăm.',
+                'Bạn ấy đứng trên mốc, nên bạn ấy đi thì cân tụt xuống.']),
+        _c('cong_thuc', 'Cửa mở ra vào thì đếm lại quân số',
+           congThuc='vào thì chia (n + 1)        ·        ra thì chia (n − 1)',
+           thay='người TRÊN mốc rời đi thì cân tụt, người DƯỚI mốc rời đi thì cân nhích',
+           loi=['Con nhớ hai câu. Một người không cân ngang được cả nhóm, muốn gộp '
+                'phải qua tổng.',
+                'Và cửa mở ra vào thì đếm lại quân số trước khi chia.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tim_phan_mang(b):
+    """L5·B23·M2 Bài ngược — phần người mới mang là HIỆU HAI TỔNG."""
+    return [
+        _c('bia', 'Bài ngược: biết TBC đổi, tìm phần người mới mang', so_bai(b),
+           loi=['Lần này đề cho mức trung bình trước và sau, hỏi bạn mới mang bao '
+                'nhiêu.']),
+        _c('de_toan', 'Đề bài',
+           de='Nhóm 4 bạn có TBC 25 viên. Thêm một bạn thì TBC thành 28 viên.\n'
+              'Bạn mới mang bao nhiêu?',
+           loi=['Nhóm bốn bạn có mức trung bình hai mươi lăm. Thêm một bạn thì mức ấy '
+                'thành hai mươi tám.']),
+        _c('y_toan', 'Hai mức trung bình KHÔNG trừ thẳng nhau được',
+           '28 − 25 = 3 là SAI — chúng đại diện cho hai nhóm khác nhau',
+           buoc=1, soBuoc=4,
+           loi=['Nhiều bạn lấy hai mươi tám trừ hai mươi lăm rồi đáp là ba. Sai.',
+                'Hai mức ấy đại diện cho hai nhóm khác nhau, không trừ thẳng nhau '
+                'được.']),
+        _c('y_toan', 'Đổi mỗi mức thành một TỔNG đã',
+           'tổng cũ = 25 × 4 = 100      ·      tổng mới = 28 × 5 = 140',
+           buoc=2, soBuoc=4,
+           loi=['Đổi mỗi mức thành một tổng đã. Hai mươi lăm nhân bốn được một trăm.',
+                'Hai mươi tám nhân năm được một trăm bốn mươi.']),
+        _c('day_so', 'Chỉ hai TỔNG mới trừ được cho nhau', so=['100', '140'],
+           nhanHang='tổng', chuPhu='Cùng đơn vị, cùng vai — nên trừ được.',
+           loi=['Hai tổng thì cùng vai nhau, nên trừ được.']),
+        _c('y_toan', 'Phần mang chính là HIỆU hai tổng', '140 − 100 = 40 viên',
+           buoc=3, soBuoc=4,
+           loi=['Phần bạn mới mang chính là hiệu hai tổng, tức bốn mươi viên.']),
+        _c('y_toan', 'Thử lại bằng đường XUÔI của bài trước',
+           '100 + 40 = 140   ·   140 : 5 = 28  ✓', buoc=4, soBuoc=4,
+           loi=['Thử lại bằng đường xuôi. Một trăm cộng bốn mươi chia năm, đúng hai '
+                'mươi tám.']),
+        _c('de_toan', 'Còn nếu đáp là 3 thì sao',
+           de='100 + 3 = 103   ·   103 : 5 = 20,6',
+           loi=['Còn nếu đáp là ba thì tổng thành một trăm linh ba, chia năm ra hai '
+                'mươi phẩy sáu. Lệch hẳn.']),
+        _c('cong_thuc', 'Một câu cho cả dạng này',
+           congThuc='đổi hai TBC thành hai TỔNG  →  phần mang = tổng mới − tổng cũ',
+           thay='TBC hai số là 15, thêm số thứ ba thành 18 → 54 − 30 = 24',
+           loi=['Con nhớ câu này. Đổi hai mức thành hai tổng, rồi phần mang là hiệu '
+                'hai tổng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tim_so_nguoi_cu(b):
+    """L5·B23·M3 Bài ngược tìm số người cũ — đo từ cân MỚI, chia cho bạn CŨ."""
+    return [
+        _c('bia', 'Bài ngược khó hơn: tìm nhóm cũ có mấy người', so_bai(b),
+           loi=['Lần này đề giấu luôn số người. Phải lần theo dòng kẹo mà tìm.']),
+        _c('de_toan', 'Đề bài',
+           de='Bạn mới mang 40 viên. TBC từ 25 nhích lên 28.\nNhóm CŨ có mấy bạn?',
+           loi=['Bạn mới mang bốn mươi viên, và mức trung bình nhích từ hai mươi lăm '
+                'lên hai mươi tám.']),
+        _c('san_bang', 'Vạch mới ở 28 — cột bạn mới nhô lên trên',
+           so=[20, 25, 25, 30, 40], mucTB=True,
+           chuPhu='Phần nhô lên ấy chính là chỗ đem chia cho các bạn cũ.',
+           loi=['Vạch mới ở hai mươi tám, và cột bạn mới nhô lên trên vạch.',
+                'Phần nhô lên ấy chính là chỗ đem chia cho các bạn cũ.']),
+        _c('y_toan', 'Đo phần thừa từ CÂN MỚI, không phải cân cũ',
+           '40 − 28 = 12 viên thừa', buoc=1, soBuoc=3,
+           loi=['Đo phần thừa từ cân mới. Bốn mươi trừ hai mươi tám còn mười hai '
+                'viên.']),
+        _c('y_toan', 'Mười hai viên ấy chảy xuống các bạn CŨ',
+           'mỗi bạn cũ được kéo lên  28 − 25 = 3 nấc', buoc=2, soBuoc=3,
+           loi=['Mười hai viên ấy chảy xuống các bạn cũ, kéo mỗi bạn lên đúng ba '
+                'nấc.']),
+        _c('y_toan', 'Nên số bạn cũ = phần thừa chia mức kéo', '12 : 3 = 4 bạn',
+           buoc=3, soBuoc=3,
+           loi=['Nên số bạn cũ bằng mười hai chia ba, là bốn bạn.']),
+        _c('de_toan', 'Đo nhầm mốc thì ra gì',
+           de='Lấy 40 − 25 = 15, rồi 15 : 3 = 5 bạn — thử xem có khớp không',
+           loi=['Thử đo nhầm từ cân cũ xem sao. Bốn mươi trừ hai mươi lăm ra mười lăm, '
+                'chia ba được năm.']),
+        _c('cong_thuc', 'Hai chỗ phải đo cho đúng',
+           congThuc='đo từ CÂN MỚI        ·        chia cho bạn CŨ',
+           thay='5 bạn cũ thì tổng 125, cộng 40 chia 6 ra 27,5 — lệch ngay',
+           loi=['Thử lại thì năm bạn cũ có tổng một trăm hai mươi lăm, cộng bốn mươi '
+                'chia sáu ra số lẻ. Lệch.',
+                'Nên nhớ hai chỗ. Đo từ cân mới, và chia cho bạn cũ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B23.M1': kb5_den_va_roi_nhom,
+    'DL:KSN5Q1.B23.M2': kb5_tim_phan_mang,
+    'DL:KSN5Q1.B23.M3': kb5_tim_so_nguoi_cu,
     'DL:KSN5Q1.B22.M1': kb5_can_nhich_truoc,
     'DL:KSN5Q1.B22.M2': kb5_can_dung_im,
     'DL:KSN5Q1.B22.M3': kb5_tbc_cua_ai,
