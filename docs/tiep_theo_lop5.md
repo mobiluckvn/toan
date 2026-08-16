@@ -7,9 +7,9 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **75/168** — bài 1 tới 25 (bài 25 mở chương 7) |
-| Còn lại | 93 micro · 31 bài lớn · bài 26 tới 56 |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 24; **bài 25 chưa deploy** |
+| Đã xong | **78/168** — bài 1 tới 26 |
+| Còn lại | 90 micro · 30 bài lớn · bài 27 tới 56 |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 24; **bài 25 · 26 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
@@ -22,7 +22,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**93**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**90**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 16 lần)
 
@@ -83,7 +83,8 @@ phải rút câu nào**.
 
 ⚠ Phép ước lượng cũng có đầu DƯỚI. Bài 25 M2 viết 12 câu, dựng ra **45,2 giây** —
 lọt trần dưới đúng hai phần mười giây. Dưới 13 câu là phải ngó chừng; thêm một hai
-câu cho dày là vừa.
+câu cho dày là vừa. Bài 26 viết 15 · 13 · 13 câu ra 68 · 59 · 60 giây, nằm giữa
+khoảng — đó là chỗ nên nhắm.
 
 Đếm trước khi dựng, khỏi mất công sinh âm lại:
 

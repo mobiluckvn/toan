@@ -35,20 +35,7 @@
   "kidText": "Chữ \"liên tiếp\" là đề đang khai hiệu: hai số tự nhiên thì hiệu 1, hai số chẵn hay hai số lẻ thì hiệu 2."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Hai số TỰ NHIÊN liên tiếp: hiệu = 1 (sát vách): tổng 45 → bé = ($45 - 1$) : $2 = 22$; lớn = 23."
-   },
-   {
-    "id": "K2",
-    "text": "Hai số CHẴN liên tiếp và hai số LẺ liên tiếp: hiệu = 2 — cùng họ đứng cách nhau 2, vì giữa hai nhà cùng họ luôn có một nhà họ kia chen giữa."
-   },
-   {
-    "id": "K3",
-    "text": "Quy trình: dịch \"liên tiếp\" ra hiệu (1 hay 2) → máy tổng – hiệu: 86 → 42 và 44; 96 → 47 và 49; 90 → 44 và 46. Thử: hai đáp có đúng họ và đúng liền nhau không."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: DÃY PHỐ BA HỌ NHÀ SỐ. Trên dãy phố số, nhà tự nhiên xếp sát vách: 40, 41, 42… — hai nhà TỰ NHIÊN liên tiếp cách nhau đúng MỘT. Nhưng họ nhà CHẴN chỉ gồm 40, 42, 44… — muốn từ nhà chẵn này sang nhà chẵn kế phải BƯỚC QUA một nhà lẻ chen giữa: cách nhau HAI! Họ nhà LẺ 41, 43, 45 cũng vậy. Chữ \"liên tiếp\" trong đề là LỜI KHAI HIỆU trá hình: đọc thấy nó, hỏi ngay \"liên tiếp họ nào?\" — tự nhiên khai hiệu 1, chẵn / lẻ khai hiệu 2 — rồi tổng – hiệu chạy như thường. Thử cuối: cặp đáp phải ĐÚNG HỌ (42 và 44 đều chẵn) và đúng liền nhau trong họ.",
   "canonicalExamples": [
    {
@@ -79,14 +66,8 @@
     "counterExample": "($86 - 1$) : $2 = 42,5$ — nhà số lẻ nửa căn: không tồn tại trên phố!"
    }
   ],
-  "vocabulary": [
-   "dãy phố ba họ",
-   "sát vách (hiệu 1)",
-   "cách nhau 2 (cùng họ)",
-   "lời khai hiệu trá hình",
-   "đúng họ đúng liền"
-  ],
-  "mantra": "CÙNG HỌ ĐỨNG CÁCH NHAU 2 — CHỈ TỰ NHIÊN MỚI SÁT VÁCH!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -117,55 +98,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Hai số tự nhiên liên tiếp có tổng bằng 45. Tìm hai số.",
-    "display": {
-     "type": "story_panel",
-     "caption": "chẵn liên tiếp — hiệu 1??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đi dọc dãy phố!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Dạo dãy phố: nhà tự nhiên xếp SÁT VÁCH — bốn mươi, bốn mốt, bốn hai: liên tiếp cách nhau MỘT. Nhưng họ nhà CHẴN chỉ gồm bốn mươi, bốn hai, bốn tư — muốn sang nhà chẵn kế phải BƯỚC QUA một nhà lẻ chen giữa: cách nhau HAI! Họ lẻ bốn mốt, bốn ba cũng vậy. Chữ liên tiếp là lời khai hiệu trá hình: hỏi ngay — liên tiếp HỌ NÀO?",
-    "display": {
-     "type": "street_houses_interactive",
-     "spec": {
-      "natural": [
-       40,
-       41,
-       42
-      ],
-      "even": [
-       40,
-       42,
-       44
-      ],
-      "odd": [
-       41,
-       43,
-       45
-      ],
-      "rule": "tự nhiên: 1 · chẵn/lẻ: 2"
-     }
-    },
-    "interaction": {
-     "type": "walk_families",
-     "successMessage": "Cùng họ cách nhau 2 — chỉ tự nhiên mới sát vách!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -186,37 +118,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Máy chạy: chẵn liên tiếp tổng tám sáu — hiệu HAI: bé bằng tám sáu trừ hai chia hai — BỐN MƯƠI HAI, lớn BỐN MƯƠI BỐN: đều chẵn, liền trong họ — chuẩn! Lẻ liên tiếp tổng chín sáu: BỐN BẢY và BỐN CHÍN. Còn phản xạ hiệu-một trên đề chẵn? Ra bốn hai phẩy năm — nhà số lẻ nửa căn, không tồn tại trên phố! Thử cuối hai tiêu chí: đúng HỌ và đúng LIỀN.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "chẵn, tổng 86: (86 − 2):2 = 42 → 42 & 44 ✓",
-      "lẻ, tổng 96: 47 & 49 ✓",
-      "hiệu 1 nhầm: 42,5 — nhà nửa căn ✗"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: cùng họ đứng cách nhau hai — chỉ tự nhiên mới sát vách!",
-    "display": {
-     "type": "mantra_card",
-     "text": "CÙNG HỌ CÁCH 2 — TỰ NHIÊN SÁT VÁCH!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -565,104 +466,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B26.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "chẵn liên tiếp — hiệu 1??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Liên tiếp là hiệu 1! (86 − 1) : 2 bằng… bốn mươi hai phẩy năm?",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Câu hỏi mở bài",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B26_M2_F1.png",
-   "sha256_16": "5e49717e0974911e"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Cặp số liền nhau: \"liên tiếp\" là lời khai hiệu — tự nhiên 1, chẵn / lẻ 2",
-    "steps": [
-     {
-      "text": "chẵn, tổng 86: (86 − 2):2 = 42 → 42 & 44"
-     },
-     {
-      "text": "lẻ, tổng 96: 47 & 49"
-     },
-     {
-      "text": "hiệu 1 nhầm: 42,5 — nhà nửa căn"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B26_M2_F2.png",
-   "sha256_16": "422f3973c6d5840c"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Hai số TỰ NHIÊN liên tiếp",
-      "text": "hiệu = 1 (sát vách): tổng 45 → bé = (45 − 1) : 2 = 22; lớn = 23.",
-      "tone": "navy"
-     },
-     {
-      "label": "Hai số CHẴN liên tiếp và hai số LẺ liên tiếp",
-      "text": "hiệu = 2 — cùng họ đứng cách nhau 2, vì giữa hai nhà cùng họ luôn có một nhà họ kia chen giữa.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CÙNG HỌ ĐỨNG CÁCH NHAU 2 — CHỈ TỰ NHIÊN MỚI SÁT VÁCH!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B26_M2_F3.png",
-   "sha256_16": "fcbe81e09edd1b52"
-  },
-  {
-   "archetype": "sum_diff_bars",
-   "params": {
-    "title": "\"LIÊN TIẾP\" LÀ LỜI KHAI HIỆU TRÁ HÌNH",
-    "small": {
-     "label": "số bé 42",
-     "val": 42
-    },
-    "big": {
-     "label": "số lớn 44",
-     "val": 44
-    },
-    "diff_label": "hiệu 2",
-    "total_label": "tổng 86",
-    "formula": "hai số CHẴN liên tiếp → hiệu 2 → bé = (86 − 2) : 2 = 42",
-    "note": "Tự nhiên liên tiếp thì hiệu 1 · chẵn (hay lẻ) liên tiếp thì hiệu 2"
-   },
-   "caption": "Nghe chữ \"liên tiếp\" là biết ngay hiệu bằng bao nhiêu",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B26_M2_F4.png",
-   "sha256_16": "bb2e5486dfdbc06d"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B25"
@@ -674,5 +478,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Cặp số liền nhau: \"liên tiếp\" là lời khai hiệu — tự nhiên 1, chẵn / lẻ 2"
+ "titleDay": "Cặp số liền nhau: \"liên tiếp\" là lời khai hiệu — tự nhiên 1, chẵn / lẻ 2",
+ "video": {
+  "giang": "DL_KSN5Q1_B26_M2_giang.mp4"
+ }
 }

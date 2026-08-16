@@ -11592,7 +11592,147 @@ def kb5_khui_tong_hieu(b):
     ]
 
 
+def kb5_can_tung_doi(b):
+    """L5·B26·M1 Cân từng đôi — cộng cặp là đếm đôi, chia hai rồi mới trừ."""
+    return [
+        _c('bia', 'Ba hộp, mà chỉ cân được từng đôi một', so_bai(b),
+           loi=['Cái cân chỉ đặt được hai hộp một lúc. Vẫn tìm ra từng hộp.']),
+        _c('de_toan', 'Đề bài',
+           de='A + B = 25   ·   B + C = 30   ·   C + A = 29   (lạng)',
+           loi=['Ba lần cân từng đôi, được hai mươi lăm, ba mươi, và hai mươi chín '
+                'lạng.']),
+        _c('day_so', 'Cộng cả ba phiếu cân lại', so=['25', '30', '29'],
+           nhanHang='cặp', chuPhu='Ba phiếu cộng lại được 84.',
+           loi=['Cộng cả ba phiếu cân lại được tám mươi tư.']),
+        _c('y_toan', 'Nhưng mỗi hộp xuất hiện đúng HAI lần',
+           'A ở phiếu 1 và 3   ·   B ở phiếu 1 và 2   ·   C ở phiếu 2 và 3',
+           buoc=1, soBuoc=4,
+           loi=['Nhưng nhìn kỹ thì mỗi hộp xuất hiện ở đúng hai phiếu.',
+                'Hộp A ở phiếu một và phiếu ba, hộp B ở phiếu một và phiếu hai.']),
+        _c('y_toan', 'Nên 84 là ĐẾM ĐÔI cả kho',
+           '84 : 2 = 42   ←   đây mới là tổng thật của ba hộp', buoc=2, soBuoc=4,
+           loi=['Nên tám mươi tư là đếm đôi cả kho. Chia hai mới ra tổng thật là bốn '
+                'mươi hai.']),
+        _c('y_toan', 'Lộ từng hộp bằng MỘT phép trừ khéo',
+           'muốn biết C thì trừ cặp KHÔNG chứa C:   42 − 25 = 17', buoc=3, soBuoc=4,
+           loi=['Nay lộ từng hộp bằng một phép trừ. Muốn biết hộp C thì trừ đi cặp '
+                'không chứa C.',
+                'Bốn mươi hai trừ hai mươi lăm, được mười bảy.']),
+        _c('day_so', 'Làm nốt hai hộp kia', so=['12', '13', '17'], nhanHang='hộp',
+           chuPhu='A = 42 − 30 · B = 42 − 29 · C = 42 − 25.',
+           loi=['Làm nốt hai hộp kia cũng thế. Được mười hai, mười ba và mười bảy.',
+                'Thử lại từng cặp thì khớp cả ba lần cân.']),
+        _c('de_toan', 'Đề xoay kiểu khác', de='Cho TỔNG 60, và hai cặp: 38 và 45',
+           loi=['Đề xoay kiểu khác. Cho tổng sáu mươi và hai cặp là ba mươi tám với '
+                'bốn mươi lăm.']),
+        _c('y_toan', 'Tìm kẻ có mặt ở CẢ HAI cặp',
+           'B = 38 + 45 − 60 = 23      →      A = 15   ·   C = 22', buoc=4, soBuoc=4,
+           loi=['Tìm kẻ có mặt ở cả hai cặp, đó là B. Cộng hai cặp thì riêng B bị đếm '
+                'đôi.',
+                'Nên B bằng ba mươi tám cộng bốn mươi lăm trừ sáu mươi, là hai mươi '
+                'ba.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='cộng cặp là ĐẾM ĐÔI   →   chia hai rồi mới trừ',
+           thay='máy chạy y nguyên trên thập phân: 9,5 + 10,2 + 10,3 = 30 → tổng 15',
+           loi=['Con nhớ câu này. Cộng cặp là đếm đôi, nên chia hai rồi mới trừ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_cap_so_lien_nhau(b):
+    """L5·B26·M2 Liên tiếp là lời khai của HIỆU — tự nhiên 1, cùng họ 2."""
+    return [
+        _c('bia', 'Chữ "liên tiếp" chính là hiệu đã cho sẵn', so_bai(b),
+           loi=['Đề chỉ cho tổng. Nhưng chữ liên tiếp đã cho luôn cái hiệu rồi.']),
+        _c('de_toan', 'Đề bài', de='Hai số tự nhiên liên tiếp có tổng bằng 45',
+           loi=['Hai số tự nhiên liên tiếp có tổng bằng bốn mươi lăm.']),
+        _c('day_so', 'Số tự nhiên xếp SÁT VÁCH',
+           so=['40', '41', '42', '43', '44'], nhanHang='tự nhiên',
+           chuPhu='Hai nhà kề nhau cách đúng 1.',
+           loi=['Số tự nhiên xếp sát vách, hai nhà kề nhau cách đúng một.']),
+        _c('y_toan', 'Nên hiệu đã có sẵn, bằng 1',
+           'có tổng, có hiệu  →  máy của bài trước chạy được ngay', buoc=1, soBuoc=3,
+           loi=['Nên hiệu đã có sẵn, bằng một. Có tổng có hiệu thì máy bài trước chạy '
+                'được ngay.']),
+        _c('so_do_doan', 'Vẽ lại sơ đồ quen thuộc', be=22, lon=23,
+           nhanBe='số bé', nhanLon='số lớn', hienHieu=True, chuHieu='hiệu 1',
+           chuTong='tổng 45', chuPhu='Phần hơn mỏng dính, đúng 1 đơn vị.',
+           loi=['Vẽ lại sơ đồ quen thuộc. Phần hơn mỏng dính, đúng một đơn vị.']),
+        _c('y_toan', 'Máy cũ chạy', 'bé = (45 − 1) : 2 = 22      ·      lớn = 23',
+           buoc=2, soBuoc=3,
+           loi=['Bốn mươi lăm trừ một chia hai, được hai mươi hai. Số lớn là hai mươi '
+                'ba.']),
+        _c('day_so', 'Nhưng CÙNG HỌ thì khác', so=['40', '42', '44'], nhanHang='chẵn',
+           chuPhu='Giữa hai nhà chẵn luôn có một nhà lẻ chen vào.',
+           loi=['Nhưng cùng họ thì khác. Giữa hai nhà chẵn luôn có một nhà lẻ chen '
+                'vào.',
+                'Nên hai số chẵn liên tiếp cách nhau hai, chứ không phải một.']),
+        _c('y_toan', 'Chẵn liên tiếp và lẻ liên tiếp đều có hiệu 2',
+           'tổng 86  →  42 và 44        ·        tổng 96  →  47 và 49',
+           buoc=3, soBuoc=3,
+           loi=['Chẵn liên tiếp và lẻ liên tiếp đều có hiệu bằng hai.',
+                'Tổng tám mươi sáu cho ra bốn mươi hai với bốn mươi tư, đều chẵn và '
+                'liền trong họ.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='cùng họ cách nhau 2 — chỉ số TỰ NHIÊN mới sát vách',
+           thay='thử lại: hai đáp có đúng họ, và có liền nhau không',
+           loi=['Con nhớ câu này. Cùng họ thì cách nhau hai, chỉ số tự nhiên mới sát '
+                'vách.',
+                'Và thử lại xem hai đáp có đúng họ, có liền nhau không.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_may_chan_le(b):
+    """L5·B26·M3 Soi chẵn lẻ trước khi giải — vô nghiệm có lý do cũng là đáp."""
+    return [
+        _c('bia', 'Có đề không có đáp — và biết trước được', so_bai(b),
+           loi=['Có những đề không có đáp nào cả. Mà nhìn ra được ngay từ đầu.']),
+        _c('de_toan', 'Đề bài', de='Hai số chẵn liên tiếp có tổng 99. Tìm hai số',
+           loi=['Hai số chẵn liên tiếp có tổng chín mươi chín.']),
+        _c('y_toan', 'Ba phép nền của máy chẵn lẻ',
+           'chẵn + chẵn = CHẴN   ·   lẻ + lẻ = CHẴN   ·   chẵn + lẻ = LẺ',
+           buoc=1, soBuoc=4,
+           loi=['Máy chẵn lẻ chỉ có ba phép nền. Chẵn cộng chẵn ra chẵn, lẻ cộng lẻ '
+                'cũng ra chẵn.',
+                'Chỉ chẵn cộng lẻ mới ra lẻ.']),
+        _c('y_toan', 'Hai số CÙNG HỌ cộng lại thì BẮT BUỘC chẵn',
+           'mà đề ghi tổng là 99 — một số LẺ', buoc=2, soBuoc=4,
+           loi=['Hai số cùng họ cộng lại thì bắt buộc chẵn. Mà đề ghi chín mươi chín, '
+                'là số lẻ.']),
+        _c('y_toan', 'Nên đề này VÔ NGHIỆM, khỏi phải mò',
+           'viết rõ lý do cũng là trọn điểm', buoc=3, soBuoc=4,
+           loi=['Nên đề này vô nghiệm, khỏi phải mò.',
+                'Viết rõ lý do rằng chẵn cộng chẵn phải chẵn cũng là trọn điểm rồi.']),
+        _c('de_toan', 'Nhưng cổng soi cũng cho vé THẬT đi qua',
+           de='Tổng của BA số lẻ liên tiếp là 99',
+           loi=['Nhưng cổng soi cũng cho vé thật đi qua. Ba số lẻ liên tiếp có tổng '
+                'chín mươi chín.']),
+        _c('y_toan', 'Ba số lẻ liên tiếp là dãy CÁCH ĐỀU 2',
+           'đặc quyền bài 21: số GIỮA = tổng : 3 = 99 : 3 = 33', buoc=4, soBuoc=4,
+           loi=['Ba số lẻ liên tiếp là dãy cách đều hai, nên dùng được đặc quyền của '
+                'bài trung bình cộng.',
+                'Số giữa bằng chín mươi chín chia ba, là ba mươi ba, đúng họ lẻ.']),
+        _c('day_so', 'Dựng lại cả dãy quanh số giữa', so=['31', '33', '35'],
+           nhanHang='lẻ', chuPhu='Cộng lại đúng 99 — vé thật.',
+           loi=['Dựng lại cả dãy quanh số giữa, được ba mươi mốt, ba mươi ba, ba mươi '
+                'lăm.']),
+        _c('cong_thuc', 'Soi trước khi giải',
+           congThuc='SOI CHẴN LẺ TRƯỚC — vô nghiệm CÓ LÝ DO cũng là một đáp',
+           thay='bài ba số còn phải kiểm: tổng chia hết cho 3, và số giữa đúng họ',
+           loi=['Con nhớ soi chẵn lẻ trước khi giải. Vô nghiệm mà nêu được lý do cũng '
+                'là một đáp.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B26.M1': kb5_can_tung_doi,
+    'DL:KSN5Q1.B26.M2': kb5_cap_so_lien_nhau,
+    'DL:KSN5Q1.B26.M3': kb5_may_chan_le,
     'DL:KSN5Q1.B25.M1': kb5_so_do_tong_hieu,
     'DL:KSN5Q1.B25.M2': kb5_tong_hieu_thap_phan,
     'DL:KSN5Q1.B25.M3': kb5_khui_tong_hieu,

@@ -34,24 +34,7 @@
   "kidText": "Biết tổng từng đôi trong ba số: cộng ba cặp lại thì mỗi số bị đếm hai lần. Chia 2 rồi mới trừ ra từng số."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Cộng ba cặp A+B, B+C, C+A: mỗi hộp xuất hiện đúng HAI lần → tổng ba lần cân = 2 × (A + B + C) → tổng cả ba = tổng ba cặp : 2."
-   },
-   {
-    "id": "K2",
-    "text": "Lộ từng số bằng MỘT phép trừ: số nào = tổng cả ba − cặp KHÔNG chứa nó (C = 42 − (A + B) = $42 - 25 = 17$) — vì cặp ấy chính là \"phần còn lại\" của tổng."
-   },
-   {
-    "id": "K3",
-    "text": "Biến thể cho TỔNG và hai cặp: số đứng giữa (xuất hiện ở cả hai cặp) = cặp một + cặp hai − tổng (B = $38 + 45 - 60 = 23$), rồi lộ nốt hai số kia."
-   },
-   {
-    "id": "K4",
-    "text": "Máy chạy y nguyên trên thập phân: $9,5 + 10,2 + 10,3 = 30$ → tổng ba bạn 15 → trừ từng cặp: 5,5; 4,8; 4,7. Thử: cộng lại từng cặp phải khớp ba lần cân."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: BA HỘP BÁNH LÊN CÂN TỪNG ĐÔI. Ba hộp A, B, C không chịu lên cân một mình — chỉ chịu cân TỪNG ĐÔI: A với B ra 25 lạng, B với C ra 30, C với A ra 29. Trí Long cộng ba phiếu cân: 84 — \"tổng ba hộp đây rồi!\" Su Kem hỏi một câu chí mạng: \"Trong 84 ấy, hộp A bị đếm MẤY LẦN?\" Soi phiếu: A nằm ở phiếu một VÀ phiếu ba — hai lần! B hai lần, C hai lần: 84 là ĐẾM ĐÔI cả kho — chia 2 mới ra tổng thật 42. Giờ mỗi hộp lộ mặt bằng một phép trừ khéo: muốn biết C, trừ đi cặp KHÔNG CHỨA C: 42 − 25 = 17 — vì cặp A+B chính là phần-còn-lại của tổng!",
   "canonicalExamples": [
    {
@@ -82,14 +65,8 @@
     "counterExample": "C = 59 lạng mà phiếu B + C chỉ có 30 lạng — một mình C nặng gấp đôi cả cặp: vô lý!"
    }
   ],
-  "vocabulary": [
-   "cân từng đôi",
-   "phiếu cân",
-   "đếm đôi cả kho",
-   "phép trừ lộ mặt",
-   "cặp không chứa nó"
-  ],
-  "mantra": "CỘNG CẶP LÀ ĐẾM ĐÔI — CHIA 2 RỒI MỚI TRỪ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,65 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Ba hộp bánh cân từng đôi: A + B = 25; B + C = 30; C + A = 29 (lạng). Tính khối lượng mỗi hộp.",
-    "display": {
-     "type": "story_panel",
-     "caption": "84 = tổng ba hộp??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để soi ba phiếu cân!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Soi ba phiếu: A nằm ở phiếu một VÀ phiếu ba — HAI lần! B hai lần, C hai lần: tám tư là ĐẾM ĐÔI cả kho — chia hai mới ra tổng thật BỐN MƯƠI HAI! Giờ lộ mặt từng hộp bằng phép trừ khéo: muốn biết C, trừ cặp KHÔNG CHỨA C — bốn hai trừ hai lăm bằng MƯỜI BẢY! A bằng bốn hai trừ ba mươi: mười hai; B: mười ba. Thử phiếu một: mười hai cộng mười ba đúng hai lăm!",
-    "display": {
-     "type": "pair_scale_interactive",
-     "spec": {
-      "pairs": [
-       [
-        "A+B",
-        25
-       ],
-       [
-        "B+C",
-        30
-       ],
-       [
-        "C+A",
-        29
-       ]
-      ],
-      "double": 84,
-      "total": 42,
-      "C": 17,
-      "A": 12,
-      "B": 13
-     }
-    },
-    "interaction": {
-     "type": "halve_then_subtract",
-     "answerKey": {
-      "values": [
-       12,
-       13,
-       17
-      ]
-     },
-     "successMessage": "84 : 2 = 42 → trừ cặp không chứa: 12 · 13 · 17!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -190,38 +108,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Biến thể xoay đề: cho TỔNG sáu mươi và hai cặp — ba tám với bốn lăm. Kẻ nào xuất hiện ở CẢ HAI cặp? Số B! Cộng hai cặp: B bị đếm đôi còn A, C mỗi kẻ một lần — nên B bằng ba tám cộng bốn lăm trừ sáu mươi: HAI MƯƠI BA! A bằng ba tám trừ hai ba: mười lăm; C: hai hai. Máy chạy cả thập phân: ba phiếu chín phẩy năm, mười phẩy hai, mười phẩy ba — cộng ra ba mươi, tổng ba bạn MƯỜI LĂM, trừ từng cặp: năm phẩy năm, bốn phẩy tám, bốn phẩy bảy!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "B = 38 + 45 − 60 = 23 → A = 15; C = 22",
-      "thập phân: 30 : 2 = 15",
-      "C = 5,5 · A = 4,8 · B = 4,7"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: cộng cặp là đếm đôi — chia hai rồi mới trừ!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐẾM ĐÔI — CHIA 2 RỒI MỚI TRỪ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -562,107 +448,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B26.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "84 = tổng ba hộp??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "84 — tổng ba hộp đây, C bằng 84 trừ 25 là 59!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B26_M1_F1.png",
-   "sha256_16": "a275f6575a863a61"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Cân từng đôi ba hộp: cộng cặp là đếm đôi — chia 2 rồi mới trừ",
-    "steps": [
-     {
-      "text": "B = 38 + 45 − 60 = 23 → A = 15; C = 22"
-     },
-     {
-      "text": "thập phân: 30 : 2 = 15"
-     },
-     {
-      "text": "C = 5,5 · A = 4,8 · B = 4,7"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B26_M1_F2.png",
-   "sha256_16": "14cfb73888d93a08"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Cộng ba cặp A+B, B+C, C+A",
-      "text": "mỗi hộp xuất hiện đúng HAI lần → tổng ba lần cân = 2 × (A + B + C) → tổng cả ba = tổng ba cặp : 2.",
-      "tone": "navy"
-     },
-     {
-      "label": "Lộ từng số bằng MỘT phép trừ",
-      "text": "số nào = tổng cả ba − cặp KHÔNG chứa nó (C = 42 − (A + B) = 42 − 25 = 17) — vì cặp ấy chính là \"phần còn lại\" của tổng.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CỘNG CẶP LÀ ĐẾM ĐÔI — CHIA 2 RỒI MỚI TRỪ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B26_M1_F3.png",
-   "sha256_16": "f8b31877b1faf86c"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "BA HỘP CÂN TỪNG ĐÔI: A+B = 25 · B+C = 30 · C+A = 29",
-    "steps": [
-     {
-      "text": "Cộng ba cặp",
-      "sub": "25 + 30 + 29 = 84"
-     },
-     {
-      "text": "Mỗi hộp bị ĐẾM HAI LẦN",
-      "sub": "tổng ba hộp = 84 : 2 = 42"
-     },
-     {
-      "text": "Trừ từng cặp ra từng hộp",
-      "sub": "C = 42 − 25 = 17 · A = 12 · B = 13"
-     }
-    ],
-    "note": "Bỏ cặp không chứa C ra khỏi tổng thì phần còn lại đúng bằng C"
-   },
-   "caption": "Cộng cặp là đếm đôi — chia 2 rồi mới trừ",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B26_M1_F4.png",
-   "sha256_16": "333536a256c479af"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B25"
@@ -674,5 +460,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Cân từng đôi ba hộp: cộng cặp là đếm đôi — chia 2 rồi mới trừ"
+ "titleDay": "Cân từng đôi ba hộp: cộng cặp là đếm đôi — chia 2 rồi mới trừ",
+ "video": {
+  "giang": "DL_KSN5Q1_B26_M1_giang.mp4"
+ }
 }
