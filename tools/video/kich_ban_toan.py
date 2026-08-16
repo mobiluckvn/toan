@@ -10526,7 +10526,148 @@ def kb5_doi_ve_mot_dang(b):
     ]
 
 
+def kb5_nhan_chia_giu_gia(b):
+    """L5·B18·M1 Nhân chia giữ giá trị; cộng trừ đổi giá, nhưng còn chỗ đứng yên."""
+    return [
+        _c('bia', 'Làm gì với tử và mẫu thì phân số vẫn nguyên giá', so_bai(b),
+           loi=['Bốn phép làm với tử và mẫu. Hai phép giữ nguyên giá trị, hai phép '
+                'thì không.']),
+        _c('phan_so', 'NHÂN cả hai: phần tô Y HỆT', tu=3, mau=4, nhan='chia 4',
+           tu2=6, mau2=8, nhan2='chia 8',
+           chuPhu='Nhân cả tử và mẫu với 2: 3/4 thành 6/8.',
+           chuCuoi='Hai băng tô dài đúng bằng nhau — giá trị KHÔNG đổi.',
+           loi=['Nhân cả tử và mẫu với hai, ba phần tư thành sáu phần tám.',
+                'Băng dưới chia vụn hơn, nhưng phần tô dài đúng bằng băng trên.']),
+        _c('y_toan', 'Nhân hay chia cả hai cho cùng một số thì GIỮ NGUYÊN giá trị',
+           'đó chính là rút gọn và quy đồng  ·  42/49 chia cả hai cho 7 được 6/7',
+           buoc=1, soBuoc=4,
+           loi=['Nhân hay chia cả tử và mẫu cho cùng một số khác không thì giá trị '
+                'giữ nguyên.',
+                'Đó chính là rút gọn. Bốn mươi hai phần bốn mươi chín chia cả hai cho '
+                'bảy, được sáu phần bảy.']),
+        _c('phan_so', 'CỘNG cùng một số vào cả hai thì KHÁC hẳn', tu=1, mau=2,
+           nhan='chia 2', tu2=2, mau2=3, nhan2='chia 3',
+           chuPhu='Thêm 1 vào cả tử và mẫu: 1/2 thành 2/3.',
+           chuCuoi='Băng dưới tô DÀI hơn — giá trị đã trôi đi.',
+           loi=['Cộng thì khác hẳn. Thêm một vào cả tử và mẫu, một phần hai thành hai '
+                'phần ba.',
+                'Băng dưới tô dài hơn hẳn. Một nửa đâu có bằng hai phần ba.']),
+        _c('y_toan', 'Cộng hay trừ cùng một số vào cả hai thì giá trị THAY ĐỔI',
+           'phản chứng bỏ túi: 1/2 thêm 1 vào cả hai thành 2/3', buoc=2, soBuoc=4,
+           loi=['Cộng hay trừ cùng một số vào cả hai thì giá trị thay đổi. Con nhớ '
+                'lấy phản chứng này.']),
+        _c('y_toan', 'Nhưng cộng cả hai vẫn để lại một chỗ ĐỨNG YÊN: HIỆU',
+           '34/41 cộng 8 vào cả hai thành 42/49  ·  41 − 34 = 7  và  49 − 42 = 7',
+           buoc=3, soBuoc=4,
+           loi=['Nhưng phép cộng để lại một chỗ đứng yên, là hiệu của mẫu trừ tử.',
+                'Ba mươi tư phần bốn mươi mốt cộng tám vào cả hai thì hiệu vẫn là bảy.']),
+        _c('y_toan', 'Còn CHUYỂN qua lại giữa tử và mẫu thì TỔNG đứng yên',
+           '41/58 chuyển 5 xuống mẫu thành 36/63  ·  41 + 58 = 99  và  36 + 63 = 99',
+           buoc=4, soBuoc=4,
+           loi=['Còn chuyển qua lại giữa tử và mẫu thì tổng đứng yên.',
+                'Bốn mươi mốt phần năm mươi tám chuyển năm xuống thì tổng vẫn là chín '
+                'mươi chín.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='nhân chia GIỮ giá  ·  cộng trừ ĐỔI giá, nhưng còn chỗ đứng yên',
+           thay='cộng cả hai thì giữ HIỆU, chuyển qua lại thì giữ TỔNG',
+           loi=['Con nhớ câu này. Nhân chia giữ giá, cộng trừ đổi giá nhưng còn chỗ '
+                'đứng yên.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_neo_hieu(b):
+    """L5·B18·M2 Cộng cùng một số vào cả hai — HIỆU là cây thước đo cả bài."""
+    return [
+        _c('bia', 'Cộng cùng một số vào cả hai để ra phân số cho trước', so_bai(b),
+           loi=['Đề cho phân số gốc và phân số đích. Hỏi phải cộng thêm bao nhiêu.']),
+        _c('de_toan', 'Đề bài', de='34/41 — cộng cùng số n vào CẢ HAI để được 6/7',
+           loi=['Ba mươi tư phần bốn mươi mốt. Cộng cùng một số vào cả tử và mẫu để '
+                'được sáu phần bảy.']),
+        _c('y_toan', 'Nhịp 1 — tìm chỗ ĐỨNG YÊN: hiệu mẫu trừ tử',
+           '41 − 34 = 7  →  cộng bao nhiêu vào cả hai, hiệu vẫn là 7',
+           buoc=1, soBuoc=4,
+           loi=['Nhịp một, tìm chỗ đứng yên. Bốn mươi mốt trừ ba mươi tư bằng bảy, '
+                'và cộng bao nhiêu thì hiệu ấy vẫn là bảy.']),
+        _c('y_toan', 'Nhịp 2 — đích chênh mấy PHẦN, chia hiệu ra',
+           'đích 6/7: mẫu hơn tử 1 phần  →  một phần đáng  7 : 1 = 7',
+           buoc=2, soBuoc=4,
+           loi=['Nhịp hai, xem đích chênh mấy phần. Sáu phần bảy có mẫu hơn tử đúng '
+                'một phần.',
+                'Lấy hiệu bảy chia cho một phần ấy, được bảy. Vậy một phần đáng bảy.']),
+        _c('y_toan', 'Nhịp 3 — nhân ra tử mới rồi trừ tử cũ',
+           'tử mới = 6 phần = 42  →  n = 42 − 34 = 8', buoc=3, soBuoc=4,
+           loi=['Nhịp ba, tử của đích là sáu phần, nên tử mới bằng sáu nhân bảy, là '
+                'bốn mươi hai.',
+                'Bốn mươi hai trừ ba mươi tư bằng tám. Vậy phải cộng thêm tám.']),
+        _c('y_toan', 'Nhịp 4 — THỬ LẠI hai tầng, cả hai khớp mới ký tên',
+           '42/49 rút gọn được 6/7 ✓   ·   49 − 42 vẫn là 7 ✓', buoc=4, soBuoc=4,
+           loi=['Nhịp bốn, thử hai tầng. Bốn mươi hai phần bốn mươi chín rút gọn '
+                'đúng bằng đích, và hiệu mới vẫn là bảy.']),
+        _c('de_toan', 'Cùng đề ấy, nhưng đích viết là 12/14',
+           de='34/41 — cộng cùng n để được 12/14',
+           loi=['Vẫn đề ấy, nhưng đích viết thành mười hai phần mười bốn.',
+                'Đếm luôn là chênh hai phần thì bảy chia hai ra số lẻ, và bé tưởng đề '
+                'sai.']),
+        _c('cong_thuc', 'Nên nhịp đầu tiên là TỐI GIẢN cái đích',
+           congThuc='tối giản đích  →  chia hiệu cho số phần chênh  →  nhân ra tử mới',
+           thay='12/14 rút về 6/7 thì chênh 1 phần, và 7 chia 1 ra số tròn',
+           loi=['Nên trước hết phải tối giản cái đích. Mười hai phần mười bốn rút về '
+                'sáu phần bảy.',
+                'Chênh một phần, và bảy chia một ra số tròn. Đường đi lại sạch sẽ như '
+                'cũ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_neo_tong(b):
+    """L5·B18·M3 Chuyển qua lại giữa tử và mẫu — TỔNG là cây thước; gạch chân động từ."""
+    return [
+        _c('bia', 'Chuyển qua lại giữa tử và mẫu', so_bai(b),
+           loi=['Đề này không cộng thêm gì cả. Nó chỉ dời một ít từ tử xuống mẫu.']),
+        _c('de_toan', 'Đề bài', de='41/58 — chuyển k đơn vị từ TỬ xuống MẪU để được 4/7',
+           loi=['Bốn mươi mốt phần năm mươi tám. Chuyển từ tử xuống mẫu bao nhiêu để '
+                'được bốn phần bảy.']),
+        _c('y_toan', 'Nhịp 1 — chuyển thì chỗ đứng yên là TỔNG',
+           '41 + 58 = 99  →  dời bao nhiêu qua lại, tổng vẫn là 99', buoc=1, soBuoc=4,
+           loi=['Nhịp một. Dời qua dời lại thì không mất đi đâu, nên tổng đứng yên.',
+                'Bốn mươi mốt cộng năm mươi tám bằng chín mươi chín.']),
+        _c('y_toan', 'Nhịp 2 — đích gồm mấy PHẦN tất cả, chia tổng ra',
+           'đích 4/7: cả thảy  4 + 7 = 11 phần  →  một phần đáng  99 : 11 = 9',
+           buoc=2, soBuoc=4,
+           loi=['Nhịp hai. Đích gồm bốn cộng bảy, tức mười một phần.',
+                'Chín mươi chín chia mười một được chín, nên một phần đáng chín.']),
+        _c('y_toan', 'Nhịp 3 — nhân ra tử mới rồi so với tử cũ',
+           'tử mới = 4 phần = 36  →  k = 41 − 36 = 5', buoc=3, soBuoc=4,
+           loi=['Nhịp ba. Tử của đích là bốn phần, nên tử mới bằng bốn nhân chín, là '
+                'ba mươi sáu.',
+                'Bốn mươi mốt trừ ba mươi sáu bằng năm. Vậy chuyển năm đơn vị xuống '
+                'mẫu.']),
+        _c('y_toan', 'Nhịp 4 — THỬ LẠI hai tầng', '36/63 rút gọn được 4/7 ✓   ·   '
+           '36 + 63 vẫn là 99 ✓', buoc=4, soBuoc=4,
+           loi=['Nhịp bốn, thử lại. Ba mươi sáu phần sáu mươi ba rút gọn đúng bằng '
+                'đích, tổng vẫn chín mươi chín.']),
+        _c('de_toan', 'Nếu cầm nhầm cây thước thì sao',
+           de='vẫn 41/58 → 4/7, nhưng lấy HIỆU 7 − 4 = 3 mà chia',
+           loi=['Cầm nhầm thước thì chín mươi chín chia ba, được ba mươi ba.',
+                'Tử mới thành một trăm ba mươi hai, lớn hơn cả tổng. Vô lý ngay.']),
+        _c('cong_thuc', 'Nên gạch chân ĐỘNG TỪ của đề trước khi chọn thước',
+           congThuc='cộng hay bớt CẢ HAI → neo HIỆU   ·   CHUYỂN qua lại → neo TỔNG',
+           thay='neo hiệu thì chia cho số phần chênh, neo tổng thì chia cho tổng phần',
+           loi=['Nên trước khi làm, con gạch chân động từ của đề.',
+                'Cộng hay bớt cả hai thì neo vào hiệu, chuyển qua lại thì neo vào '
+                'tổng. Chia nhầm là lệch hết.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B18.M1': kb5_nhan_chia_giu_gia,
+    'DL:KSN5Q1.B18.M2': kb5_neo_hieu,
+    'DL:KSN5Q1.B18.M3': kb5_neo_tong,
     'DL:KSN5Q1.B17.M1': kb5_cung_mau_cung_tu,
     'DL:KSN5Q1.B17.M2': kb5_phan_bu_va_moc_nua,
     'DL:KSN5Q1.B17.M3': kb5_doi_ve_mot_dang,

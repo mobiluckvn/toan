@@ -34,20 +34,7 @@
   "kidText": "Nhân chia cả tử và mẫu thì phân số giữ nguyên giá trị. Cộng trừ thì đổi — nhưng để lại hai mỏ neo quý: hiệu và tổng."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "NHÂN hoặc CHIA cả tử và mẫu cho cùng một số (khác 0): giá trị phân số GIỮ NGUYÊN — đó chính là rút gọn / quy đồng ($\\frac{42}{49}$ = $\\frac{6}{7}$ khi chia cả hai cho 7)."
-   },
-   {
-    "id": "K2",
-    "text": "CỘNG hoặc TRỪ cùng một số vào cả tử và mẫu: giá trị THAY ĐỔI. Phản chứng bỏ túi: $\\frac{1}{2}$ thêm 1 cả hai thành $\\frac{2}{3}$ ≠ $\\frac{1}{2}$."
-   },
-   {
-    "id": "K3",
-    "text": "Tuy giá trị trôi, phép cộng/trừ đều để lại MỎ NEO: cộng (bớt) cùng số vào cả hai → HIỆU mẫu − tử KHÔNG đổi ($\\frac{34}{41}$ và $\\frac{42}{49}$ cùng hiệu 7); chuyển k đơn vị từ tử sang mẫu (hay ngược) → TỔNG không đổi ($\\frac{41}{58}$ và $\\frac{36}{63}$ cùng tổng 99)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: BÈ HAI THÙNG TRÊN SÔNG. Tử và mẫu là hai thùng hàng trên chiếc bè. NHÂN / CHIA cả hai cùng số là ĐÓNG LẠI KIỆN — hàng vẫn nguyên từng ấy, chỉ đổi cỡ kiện: giá trị đứng im. Nhưng CỘNG cùng một số vào cả hai là đổ THÊM hàng thật vào từng thùng — bè trôi đi chỗ khác ngay: 1/2 thêm mỗi thùng một kiện thành 2/3, khác hẳn! Điều thú vị: bè trôi nhưng vẫn thả NEO. Đổ thêm đều hai thùng — khoảng CHÊNH giữa hai thùng (hiệu) không nhúc nhích. Bốc hàng từ thùng này sang thùng kia — TỔNG hàng cả bè không đổi. Hai mỏ neo ấy là chỗ bám cho hai bài toán lớn phía sau.",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "$\\frac{1}{2}$ = 0,5 còn $\\frac{2}{3}$ khoảng 0,67 — bè đã trôi rõ ràng."
    }
   ],
-  "vocabulary": [
-   "bè hai thùng",
-   "đóng lại kiện (nhân/chia)",
-   "đổ thêm hàng (cộng/trừ)",
-   "bè trôi nhưng còn neo",
-   "phản chứng bỏ túi"
-  ],
-  "mantra": "NHÂN CHIA GIỮ GIÁ — CỘNG TRỪ TRÔI GIÁ, CÒN NEO!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -107,42 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Rút gọn phân số $\\frac{42}{49}$.",
-    "display": {
-     "type": "story_panel",
-     "caption": "cộng đều hai bên = giữ nguyên??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để thử phản chứng!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Phản chứng ba giây: $\\frac{1}{2}$ thêm 1 cả hai thành $\\frac{2}{3}$ — mà 0,5 đâu có bằng 0,67: bè TRÔI rồi! Vì sao? Nhân / chia cả hai là ĐÓNG LẠI KIỆN — hàng nguyên đó, chỉ đổi cỡ: $\\frac{42}{49}$ chia cả hai cho 7 vẫn là $\\frac{6}{7}$ đúng giá. Còn cộng là ĐỔ THÊM HÀNG THẬT vào từng thùng — giá trị đổi ngay. Chỉ nhân chia mới giữ giá!",
-    "display": {
-     "type": "raft_interactive",
-     "spec": {
-      "keep": "42/49 ÷7 → 6/7 (đóng kiện: giữ giá)",
-      "drift": "1/2 +1 → 2/3 (đổ hàng: trôi!)",
-      "check": "0,5 ≠ 0,67"
-     }
-    },
-    "interaction": {
-     "type": "test_both",
-     "successMessage": "Nhân chia giữ giá — cộng trừ làm bè trôi!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -163,37 +108,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Bè trôi — nhưng nhìn kỹ: vẫn còn NEO! Đổ thêm 8 kiện đều hai thùng: $\\frac{34}{41}$ thành $\\frac{42}{49}$ — đo khoảng chênh: 41 trừ 34 là BẢY, 49 trừ 42 vẫn BẢY: HIỆU đứng im! Còn bốc 5 kiện từ thùng tử sang thùng mẫu: $\\frac{41}{58}$ thành $\\frac{36}{63}$ — đếm cả bè: 99 và vẫn 99: TỔNG đứng im! Hai mỏ neo này là chỗ bám của hai bài toán lớn hai tiết tới.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "34/41 +8 cả hai → 42/49: hiệu 7 = 7 (NEO HIỆU)",
-      "41/58 chuyển 5 tử→mẫu → 36/63: tổng 99 = 99 (NEO TỔNG)",
-      "bè trôi — neo ở lại!"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: nhân chia giữ giá — cộng trừ trôi giá, còn neo!",
-    "display": {
-     "type": "mantra_card",
-     "text": "NHÂN CHIA GIỮ GIÁ — CỘNG TRỪ TRÔI GIÁ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -512,109 +426,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B18.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "cộng đều hai bên = giữ nguyên??",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "Cộng thêm 1 vào cả tử và mẫu của 1/2 — công bằng tuyệt đối hai bên, tỉ lệ giữ nguyên nhé!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B18_M1_F1.png",
-   "sha256_16": "4304594e9b16033f"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "Nhân chia giữ giá",
-    "formulas": [
-     {
-      "text": "42/49 ÷7 → 6/7 (đóng kiện: giữ giá)",
-      "tone": "navy"
-     },
-     {
-      "text": "1/2 +1 → 2/3 (đổ hàng: trôi!)",
-      "tone": "teal"
-     },
-     {
-      "text": "0,5 ≠ 0,67",
-      "tone": "gold"
-     }
-    ]
-   },
-   "caption": "Ý chính của bài gói trong mấy dòng",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B18_M1_F2.png",
-   "sha256_16": "665f880adf4146b6"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "NHÂN hoặc CHIA cả tử và mẫu cho cùng một số (khác 0)",
-      "text": "giá trị phân số GIỮ NGUYÊN — đó chính là rút gọn / quy đồng (42/49 = 6/7 khi chia cả hai cho 7).",
-      "tone": "navy"
-     },
-     {
-      "label": "CỘNG hoặc TRỪ cùng một số vào cả tử và mẫu",
-      "text": "giá trị THAY ĐỔI. Phản chứng bỏ túi: 1/2 thêm 1 cả hai thành 2/3 ≠ 1/2.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "NHÂN CHIA GIỮ GIÁ — CỘNG TRỪ TRÔI GIÁ, CÒN NEO!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B18_M1_F3.png",
-   "sha256_16": "3329b94dac06916f"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT SỐ — NHÂN CHIA KHÁC HẲN CỘNG TRỪ",
-    "wrong": {
-     "head": "CỘNG cùng 8 vào cả hai",
-     "steps": [
-      "34/41 → 42/49"
-     ],
-     "result": "GIÁ TRỊ ĐỔI ✗"
-    },
-    "right": {
-     "head": "CHIA cùng 7 cả hai",
-     "steps": [
-      "42/49 → 6/7"
-     ],
-     "result": "GIÁ TRỊ GIỮ NGUYÊN ✓"
-    },
-    "verdict": "Cộng trừ làm trôi giá — nhưng để lại NEO: hiệu 41 − 34 = 49 − 42 = 7"
-   },
-   "caption": "Nhân chia giữ giá · cộng trừ trôi giá nhưng vẫn còn neo để bám",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B18_M1_F4.png",
-   "sha256_16": "16a9fe6cc6a54389"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B41"
@@ -625,5 +437,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B18_M1_giang.mp4"
  }
 }

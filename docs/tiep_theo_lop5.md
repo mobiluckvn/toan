@@ -7,9 +7,9 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **51/168** — bài 1 tới 17 (bài 17 mở chương 5) |
-| Còn lại | 117 micro · 39 bài lớn · bài 18 tới 56 |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 16; **bài 17 chưa deploy** |
+| Đã xong | **54/168** — bài 1 tới 18 |
+| Còn lại | 114 micro · 38 bài lớn · bài 19 tới 56 |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 16; **bài 17 và 18 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
@@ -22,7 +22,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**117**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**114**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 16 lần)
 
@@ -65,9 +65,14 @@ Xong thì đi thử trên bản chạy, commit, deploy.
 
 ## Video phải dài 45–70 GIÂY, và cổng đo thật
 
-`video_dai_bao_lau.test.mjs` đo bằng `ffprobe`, không đoán bằng dung lượng. Bài 17
-lần dựng đầu ra 76 · 84 · 84 giây — **cả ba đều trượt**, phải rút lời ba lượt mới
-về 63 · 68 · 68. Nhịp thật của cả bộ: trung bình 57,6 giây.
+`video_dai_bao_lau.test.mjs` đo bằng `ffprobe`, không đoán bằng dung lượng.
+
+**Đợt nào cũng trượt lượt đầu, cứ tính trước là phải rút.** Bài 17 dựng ra 76 · 84 ·
+84 giây, rút ba lượt mới về 63 · 68 · 68. Bài 18 dựng ra 74 · 76 · 80, rút hai lượt
+về 68 · 68 · 67. Nhịp thật của cả bộ: trung bình 57,7 giây.
+
+Ước lượng để khỏi phải rút: **một câu đọc ≈ 4 giây**, một micro chín cảnh nên nhắm
+**13–14 câu là vừa**. Viết lượt đầu mà quá mười lăm câu thì chắc chắn vượt trần.
 
 Rút bằng cách **gộp hai câu đọc thành một**, đừng bỏ ý. Mỗi câu bỏ đi bớt được
 khoảng 4 giây. Cũng gộp được hai màn cùng một bảng tra thành một màn.
@@ -87,6 +92,11 @@ MỚI không được nợ — thêm một cái vượt 70 giây là cổng đ�
    màn không đánh số lên TRƯỚC chuỗi.
 3. **`giua()` ngắt dòng theo DẤU CÁCH**, nên `7/8 = 0,875` bị xẻ đôi giữa hai dòng.
    Viết liền `7/8=0,875` thì mỗi phép là một cụm không tách được.
+
+Và một việc dọn: **rút lời xong thì `sinh_am.py` để lại clip mồ côi** — nó chỉ sinh
+thêm, không bao giờ xoá. Sau mỗi đợt, xoá đúng những clip đợt này sinh ra mà sổ tra
+không còn nhắc tới (đối chiếu `git ls-files --others` với mọi `*_am.json`). Đừng đụng
+95 clip mồ côi CŨ trong kho — chúng có từ các đợt trước, và chưa cổng nào canh.
 
 ## Bốn chỗ vấp lặp đi lặp lại
 
