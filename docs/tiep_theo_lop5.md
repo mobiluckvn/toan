@@ -7,9 +7,9 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **48/168** — bài 1 tới 16, hết chương 4 |
-| Còn lại | 120 micro · 40 bài lớn · chương 5 tới 14 |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 16 |
+| Đã xong | **51/168** — bài 1 tới 17 (bài 17 mở chương 5) |
+| Còn lại | 117 micro · 39 bài lớn · bài 18 tới 56 |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 16; **bài 17 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
@@ -22,7 +22,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**120**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**117**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 16 lần)
 
@@ -62,6 +62,31 @@ cd web && npm run build && npm test
 ```
 
 Xong thì đi thử trên bản chạy, commit, deploy.
+
+## Video phải dài 45–70 GIÂY, và cổng đo thật
+
+`video_dai_bao_lau.test.mjs` đo bằng `ffprobe`, không đoán bằng dung lượng. Bài 17
+lần dựng đầu ra 76 · 84 · 84 giây — **cả ba đều trượt**, phải rút lời ba lượt mới
+về 63 · 68 · 68. Nhịp thật của cả bộ: trung bình 57,6 giây.
+
+Rút bằng cách **gộp hai câu đọc thành một**, đừng bỏ ý. Mỗi câu bỏ đi bớt được
+khoảng 4 giây. Cũng gộp được hai màn cùng một bảng tra thành một màn.
+
+⚠ Cổng ấy CHỈ NIÊM PHONG món nợ cũ (`NO_DAI = 7` video lớp 2·4 đã deploy). Video
+MỚI không được nợ — thêm một cái vượt 70 giây là cổng đỏ ngay.
+
+## Ba chỗ nữa dễ lọt, chỉ lộ khi rút khung hình ra nhìn
+
+1. **Chữ tràn ra ngoài khung.** Ô "Thay số vào thử" của màn `cong_thuc` từng đóng
+   cứng cao 120px — vừa đúng MỘT dòng. Câu dài hơn thì dòng thứ hai rơi xuống dưới
+   đáy khung. **72 trong 419 màn công thức của cả bốn quyển đã lên bản thật như
+   thế.** Nay khung giãn theo số dòng, và có cổng `chu_co_lot_trong_khung.test.mjs`
+   đo bằng chính bộ chữ của bộ vẽ.
+2. **Chuỗi `y_toan` không khai `buoc` thì hiện "Bước 1 trên 1".** Đặt ngay sau màn
+   "Bước 3 trên 3" là đọc ra như tụt về đầu. Khai đủ số bước cho cả chuỗi, hoặc xếp
+   màn không đánh số lên TRƯỚC chuỗi.
+3. **`giua()` ngắt dòng theo DẤU CÁCH**, nên `7/8 = 0,875` bị xẻ đôi giữa hai dòng.
+   Viết liền `7/8=0,875` thì mỗi phép là một cụm không tách được.
 
 ## Bốn chỗ vấp lặp đi lặp lại
 

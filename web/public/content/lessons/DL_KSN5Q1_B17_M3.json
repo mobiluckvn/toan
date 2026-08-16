@@ -32,20 +32,7 @@
   "kidText": "Dãy trộn hỗn số, phân số và thập phân? Con cho tất cả mặc một đồng phục rồi mới xếp, xong trả lại áo gốc."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Dãy trộn nhiều dạng: đổi TẤT CẢ về MỘT dạng trước khi so — thường chọn số thập phân vì so từng hàng nhanh nhất."
-   },
-   {
-    "id": "K2",
-    "text": "Phép đổi tủ cần thuộc: $\\frac{1}{2}$ = 0,5 · $\\frac{1}{4}$ = 0,25 · $\\frac{3}{4}$ = 0,75 · $\\frac{1}{5}$ = 0,2 · $\\frac{4}{5}$ = 0,8 · $\\frac{7}{8}$ = 0,875 · $\\frac{1}{8}$ = 0,125; hỗn số: 1 $\\frac{3}{4}$ = $1 + 0,75 = 1,75$."
-   },
-   {
-    "id": "K3",
-    "text": "Đổi đồng phục xong: xếp theo luật so từng hàng (bài M1); viết đáp bằng DẠNG GỐC của đề — con số mặc lại áo cũ khi lên bảng xếp hạng."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: LỄ DIỄU HÀNH MỘT ĐỒNG PHỤC. Bốn vận động viên đến từ bốn đội — 0,85 mặc áo thập phân, 7/8 áo phân số, 4/5 áo phân số, 0,9 áo thập phân — trọng tài không thể xếp hàng khi mỗi người một kiểu áo! Luật diễu hành: TẤT CẢ THAY ĐỒNG PHỤC THẬP PHÂN ở phòng thay đồ (tra tủ đồ quen: 4/5 khoác áo 0,8; 7/8 khoác áo 0,875), rồi xếp hàng theo luật từng-hàng: 0,8 — 0,85 — 0,875 — 0,9. Lên bục nhận giải, từng bạn mặc lại áo đội mình: 4/5 < 0,85 < 7/8 < 0,9.",
   "canonicalExamples": [
    {
@@ -70,13 +57,8 @@
     "counterExample": "Cảm giác nói $\\frac{7}{8}$ 'bé vì có phần tám' — nhưng $0,875 > 0,85$!"
    }
   ],
-  "vocabulary": [
-   "lễ diễu hành một đồng phục",
-   "phòng thay đồ (đổi dạng)",
-   "tủ đồ quen (phép đổi tủ)",
-   "mặc lại áo gốc"
-  ],
-  "mantra": "THAY MỘT ĐỒNG PHỤC — XẾP TỪNG HÀNG — MẶC LẠI ÁO GỐC!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -98,57 +80,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "So sánh: 1 $\\frac{3}{4}$ (một và ba phần tư) với 1,8.",
-    "display": {
-     "type": "story_panel",
-     "caption": "xếp 0,85 · $\\frac{7}{8}$ · $\\frac{4}{5}$ · 0,9?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở phòng thay đồ!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Phòng thay đồ mở tủ quen: $\\frac{4}{5}$ khoác áo 0,8; $\\frac{7}{8}$ khoác áo 0,875 — tủ đồ này con nên thuộc: một phần hai là 0,5; một phần tư 0,25; ba phần tư 0,75; bốn phần năm 0,8; bảy phần tám 0,875! Giờ cả bốn cùng đồng phục thập phân: 0,85 — 0,875 — 0,8 — 0,9: so từng hàng được rồi!",
-    "display": {
-     "type": "uniform_swap_interactive",
-     "spec": {
-      "wardrobe": [
-       "1/2=0,5",
-       "1/4=0,25",
-       "3/4=0,75",
-       "4/5=0,8",
-       "7/8=0,875",
-       "1/8=0,125"
-      ],
-      "converts": [
-       [
-        "4/5",
-        "0,8"
-       ],
-       [
-        "7/8",
-        "0,875"
-       ]
-      ]
-     }
-    },
-    "interaction": {
-     "type": "dress_all",
-     "successMessage": "Cả bốn cùng đồng phục: 0,8 · 0,85 · 0,875 · 0,9!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -169,37 +100,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 36,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Xếp hàng từng hàng: 0,8 bé nhất — rồi 0,85 — rồi 0,875 — 0,9 dẫn đầu. Lên bục nhận giải, từng bạn mặc lại áo đội mình: BỐN PHẦN NĂM bé hơn 0,85 bé hơn BẢY PHẦN TÁM bé hơn 0,9! Và trận đấu đôi: một và ba phần tư là 1,75 — thua 1,8 ở hàng phần mười. Đổi hết — xếp — trả áo: ba nhịp gọn gàng.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "0,8 < 0,85 < 0,875 < 0,9",
-      "→ 4/5 < 0,85 < 7/8 < 0,9 (áo gốc)",
-      "1 3/4 = 1,75 < 1,8"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: thay một đồng phục — xếp từng hàng — mặc lại áo gốc!",
-    "display": {
-     "type": "mantra_card",
-     "text": "THAY MỘT ĐỒNG PHỤC RỒI XẾP!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -516,110 +416,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B17.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "xếp 0,85 · 7/8 · 4/5 · 0,9?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "7/8 có 'phần tám' nghe bé bé… đứng đầu hàng!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B17_M3_F1.png",
-   "sha256_16": "7c5220c5bb232ef4"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Xếp dãy trộn hỗn số – phân số – thập phân: đổi tất cả về một dạng",
-    "steps": [
-     {
-      "text": "0,8 < 0,85 < 0,875 < 0,9 → 4/5 < 0,85 < 7/8 < 0,9."
-     },
-     {
-      "text": "→ 4/5 < 0,85 < 7/8 < 0,9 (áo gốc)"
-     },
-     {
-      "text": "1 3/4 = 1,75 < 1,8"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B17_M3_F2.png",
-   "sha256_16": "baa14dda0459c4db"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Dãy trộn nhiều dạng",
-      "text": "đổi TẤT CẢ về MỘT dạng trước khi so",
-      "tone": "navy"
-     },
-     {
-      "label": "Phép đổi tủ cần thuộc",
-      "text": "1/2 = 0,5 · 1/4 = 0,25 · 3/4 = 0,75 · 1/5 = 0,2 · 4/5 = 0,8 · 7/8 = 0,875 · 1/8 = 0,125; hỗn số: 1 3/4 = 1 + 0,75 = 1,75.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "THAY MỘT ĐỒNG PHỤC — XẾP TỪNG HÀNG — MẶC LẠI ÁO GỐC!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B17_M3_F3.png",
-   "sha256_16": "c7420839b2f21f19"
-  },
-  {
-   "archetype": "fence_posts",
-   "params": {
-    "title": "XẾP DÃY TRỘN: ĐỔI TẤT CẢ VỀ MỘT ĐỒNG PHỤC",
-    "first": 0,
-    "last": 0,
-    "step": 0,
-    "show": 4,
-    "show_step": false,
-    "labels": [
-     "4/5 = 0,8",
-     "0,85",
-     "7/8 = 0,875",
-     "0,9"
-    ],
-    "highlight": [
-     0,
-     2
-    ],
-    "gap_note": "hai kẻ mặc áo phân số phải thay đồng phục thập phân",
-    "formula": "4/5 < 0,85 < 7/8 < 0,9",
-    "note": "So từng hàng sau khi cùng dạng: 0,8 < 0,85 < 0,875 < 0,9"
-   },
-   "caption": "Một đồng phục — rồi mới xếp hàng so sánh",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B17_M3_F4.png",
-   "sha256_16": "430cdcf00933c584"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B38"
@@ -631,5 +428,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Xếp dãy trộn hỗn số – phân số – thập phân: đổi tất cả về một dạng"
+ "titleDay": "Xếp dãy trộn hỗn số – phân số – thập phân: đổi tất cả về một dạng",
+ "video": {
+  "giang": "DL_KSN5Q1_B17_M3_giang.mp4"
+ }
 }

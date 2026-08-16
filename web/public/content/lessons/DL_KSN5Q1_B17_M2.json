@@ -35,24 +35,7 @@
   "kidText": "Con so phân số mà không cần quy đồng: dùng phần bù, hoặc lấy $\\frac{1}{2}$ làm trọng tài. Nhớ phần bù nói ngược chiều."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "PHẦN BÙ: khi cả hai phân số sát nút 1, so mẩu hụt tới 1 (phần bù của $\\frac{7}{8}$ là $\\frac{1}{8}$). Hụt NHIỀU hơn thì BÉ hơn — kết luận ĐẢO chiều so với phần bù: $\\frac{1}{8}$ > $\\frac{1}{10}$ nên $\\frac{7}{8}$ < $\\frac{9}{10}$."
-   },
-   {
-    "id": "K2",
-    "text": "TRỌNG TÀI $\\frac{1}{2}$: so tử với NỬA MẪU — tử bé hơn nửa mẫu thì phân số < $\\frac{1}{2}$, tử lớn hơn nửa mẫu thì > $\\frac{1}{2}$. Trọng tài chỉ phân xử được khi thắng một vế và thua vế kia: $\\frac{12}{25}$ < $\\frac{1}{2}$ < $\\frac{25}{49}$ → $\\frac{12}{25}$ < $\\frac{25}{49}$."
-   },
-   {
-    "id": "K3",
-    "text": "Trọng tài phải XỬ CẢ HAI VẾ và đứng GIỮA: nếu cả hai cùng một phía so với $\\frac{1}{2}$ thì trọng tài bó tay — đổi lưỡi dao khác."
-   },
-   {
-    "id": "K4",
-    "text": "Chọn lưỡi dao 5 giây: cả hai sát nút 1 → phần bù; hai phân số 'lửng lơ quanh nửa' → mời trọng tài $\\frac{1}{2}$; số khổng lồ ($\\frac{2025}{2026}$) chính là tín hiệu phần bù."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: hai dụng cụ mới của TIỆM BÁNH. Dụng cụ một — CÂN MẨU HỤT: hai chiếc bánh 7/8 và 9/10 đều gần đầy khay, khó nhìn bằng mắt; nhưng lật ngược vấn đề: cân chỗ TRỐNG! Khay 7/8 trống 1/8, khay 9/10 trống 1/10 — chỗ trống 1/8 TO hơn nghĩa là bánh HỤT nhiều hơn: 7/8 thua! Phần bù luôn NÓI NGƯỢC — bù to thì bánh bé. Dụng cụ hai — TRỌNG TÀI NỬA KHAY: vạch kẻ 1/2 giữa khay; 12/25 chưa chạm vạch (12 bé hơn nửa của 25 là 12,5), còn 25/49 vượt vạch (25 lớn hơn 24,5) — kẻ dưới vạch thua kẻ trên vạch! Nhưng trọng tài chỉ có quyền khi hai đấu thủ ở HAI BÊN vạch — cùng bên là trọng tài bó tay.",
   "canonicalExamples": [
    {
@@ -89,14 +72,8 @@
     "counterExample": "So $\\frac{12}{25}$ với $\\frac{11}{23}$: cả hai đều < $\\frac{1}{2}$ — trọng tài $\\frac{1}{2}$ bó tay, phải đổi chiêu."
    }
   ],
-  "vocabulary": [
-   "cân mẩu hụt (phần bù)",
-   "phần bù nói ngược",
-   "trọng tài nửa khay 1/2",
-   "tử so nửa mẫu",
-   "xử cả hai vế"
-  ],
-  "mantra": "PHẦN BÙ NÓI NGƯỢC — TRỌNG TÀI PHẢI XỬ CẢ HAI VẾ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -123,51 +100,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Không quy đồng mẫu số, so sánh $\\frac{7}{8}$ và $\\frac{9}{10}$ bằng phần bù.",
-    "display": {
-     "type": "story_panel",
-     "caption": "bù $\\frac{1}{8}$ > $\\frac{1}{10}$ → $\\frac{7}{8}$ thắng??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để cân chỗ trống!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1"
-    ],
-    "narration": "Hai khay gần đầy — mắt thường khó phân. Lật vấn đề: cân CHỖ TRỐNG! Khay $\\frac{7}{8}$ trống một phần tám; khay $\\frac{9}{10}$ trống một phần mười — chỗ trống $\\frac{1}{8}$ TO hơn: bánh HỤT nhiều hơn: $\\frac{7}{8}$ THUA! Phần bù luôn nói ngược: bù to thì bánh bé. Kiểm thập phân: $0,875 < 0,9$ — chuẩn!",
-    "display": {
-     "type": "gap_scale_interactive",
-     "spec": {
-      "a": {
-       "frac": "7/8",
-       "gap": "1/8"
-      },
-      "b": {
-       "frac": "9/10",
-       "gap": "1/10"
-      },
-      "rule": "bù to → bánh bé",
-      "answer": "7/8 < 9/10"
-     }
-    },
-    "interaction": {
-     "type": "weigh_gaps",
-     "answerKey": {
-      "value": "7/8 < 9/10"
-     },
-     "successMessage": "Bù 1/8 to hơn → 7/8 hụt nhiều hơn → BÉ hơn: chiều đảo!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -188,38 +120,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Lưỡi dao hai: TRỌNG TÀI NỬA KHAY. So $\\frac{12}{25}$ với $\\frac{25}{49}$ — mời $\\frac{1}{2}$ ra sân! Vế trái: nửa của 25 là mười hai phẩy năm — tử 12 chưa chạm: $\\frac{12}{25}$ BÉ hơn một nửa. Vế phải: nửa của 49 là hai tư phẩy năm — tử 25 vượt: $\\frac{25}{49}$ LỚN hơn một nửa. Trọng tài đứng giữa hai đấu thủ: $\\frac{12}{25}$ thua $\\frac{25}{49}$! Nhớ: phải xử CẢ HAI vế — cùng một phía là trọng tài bó tay, đổi chiêu.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "12 < 12,5 → 12/25 < 1/2",
-      "25 > 24,5 → 25/49 > 1/2",
-      "1/2 đứng giữa → 12/25 < 25/49"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: phần bù nói ngược — trọng tài phải xử cả hai vế!",
-    "display": {
-     "type": "mantra_card",
-     "text": "PHẦN BÙ NÓI NGƯỢC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -591,108 +491,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B17.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "bù 1/8 > 1/10 → 7/8 thắng??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "1/8 lớn hơn 1/10… vậy 7/8 thắng!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B17_M2_F1.png",
-   "sha256_16": "b6959787f6abda05"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Phần bù nói ngược & trọng tài 1/2 xử cả hai vế",
-    "steps": [
-     {
-      "text": "12 < 12,5 → 12/25 < 1/2"
-     },
-     {
-      "text": "25 > 24,5 → 25/49 > 1/2"
-     },
-     {
-      "text": "1/2 đứng giữa → 12/25 < 25/49"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B17_M2_F2.png",
-   "sha256_16": "b7a5e1666342f3be"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "PHẦN BÙ",
-      "text": "khi cả hai phân số sát nút 1",
-      "tone": "navy"
-     },
-     {
-      "label": "TRỌNG TÀI 1/2",
-      "text": "so tử với NỬA MẪU",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "PHẦN BÙ NÓI NGƯỢC — TRỌNG TÀI PHẢI XỬ CẢ HAI VẾ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B17_M2_F3.png",
-   "sha256_16": "25f3d977d2f9bd37"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "SO BẰNG PHẦN BÙ: 7/8 VÀ 9/10 (KHÔNG QUY ĐỒNG)",
-    "neutral": true,
-    "wrong": {
-     "head": "PHẦN BÙ CỦA 7/8",
-     "steps": [
-      "thiếu 1/8 nữa mới đầy"
-     ],
-     "result": "hụt 1/8 (nhiều hơn)"
-    },
-    "right": {
-     "head": "PHẦN BÙ CỦA 9/10",
-     "steps": [
-      "thiếu 1/10 nữa mới đầy"
-     ],
-     "result": "hụt 1/10 (ít hơn)"
-    },
-    "verdict": "Hụt NHIỀU hơn thì BÉ hơn → 7/8 < 9/10 (chiều đảo!)"
-   },
-   "caption": "Hai phân số sát nút 1 thì đo phần còn thiếu, đừng quy đồng",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B17_M2_F4.png",
-   "sha256_16": "7c1fb6b5a6817919"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B38"
@@ -703,5 +502,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B17_M2_giang.mp4"
  }
 }

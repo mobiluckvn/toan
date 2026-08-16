@@ -10390,7 +10390,146 @@ def kb5_tim_x_chia_co_du(b):
     ]
 
 
+def kb5_cung_mau_cung_tu(b):
+    """L5·B17·M1 Cùng mẫu và cùng tử ngược chiều nhau; thập phân so từng hàng."""
+    return [
+        _c('bia', 'So hai phân số mà không phải quy đồng', so_bai(b),
+           loi=['Có hai trường hợp so được ngay, nhưng hai luật ấy ngược chiều nhau.']),
+        _c('phan_so', 'Cùng MẪU — hai băng cùng chia 7 phần', tu=3, mau=7,
+           nhan='tô 3', tu2=5, mau2=7, nhan2='tô 5',
+           chuPhu='Lát bằng nhau, ai lấy nhiều lát hơn thì lớn hơn.',
+           chuCuoi='3/7 < 5/7',
+           loi=['Cùng mẫu là hai băng cùng chia bảy phần bằng nhau.',
+                'Băng trên tô ba, băng dưới tô năm. Lát bằng nhau nên tô nhiều thì '
+                'lớn hơn.']),
+        _c('y_toan', 'Cùng mẫu thì TỬ lớn hơn là phân số lớn hơn',
+           'nhìn thẳng vào tử, không phải quy đồng', buoc=1, soBuoc=3,
+           loi=['Cùng mẫu thì tử lớn hơn là phân số lớn hơn. Nhìn thẳng vào tử là '
+                'xong.']),
+        _c('phan_so', 'Cùng TỬ — hai băng đều tô 2 phần', tu=2, mau=5,
+           nhan='chia 5', tu2=2, mau2=7, nhan2='chia 7',
+           chuPhu='Băng dưới chia nhiều phần hơn nên mỗi lát MỎNG hơn.',
+           chuCuoi='2/5 > 2/7',
+           loi=['Cùng tử là hai băng đều tô hai phần, nhưng trên chia năm, dưới chia '
+                'bảy.',
+                'Chia càng nhiều phần thì lát càng mỏng, nên hai lát dưới hẹp hơn.']),
+        _c('y_toan', 'Cùng tử thì MẪU lớn hơn lại là phân số BÉ hơn',
+           'hai luật NGƯỢC CHIỀU nhau  →  phải xem giống nhau ở đâu trước',
+           buoc=2, soBuoc=3,
+           loi=['Cùng tử thì ngược lại, mẫu lớn hơn là phân số bé hơn. Nên phải xem '
+                'giống nhau ở đâu trước.']),
+        _c('de_toan', 'Đề bài', de='0,9 và 0,85 — số nào lớn hơn?',
+           loi=['Sang số thập phân. So không phẩy chín với không phẩy tám lăm.',
+                'Nhiều bạn thấy đuôi tám lăm dài hơn đuôi chín nên chọn nhầm.']),
+        _c('y_toan', 'Viết thẳng cột rồi so TỪNG HÀNG từ trái',
+           '0,90  và  0,85  →  hàng phần mười: 9 > 8  →  dừng ngay',
+           buoc=3, soBuoc=3,
+           loi=['Viết thẳng cột. Không phẩy chín viết thành không phẩy chín mươi cho '
+                'đủ hàng.',
+                'So từ trái sang. Hàng phần mười có chín lớn hơn tám nên dừng ngay, '
+                'vế trái thắng.']),
+        _c('cong_thuc', 'Ba câu cần nhớ',
+           congThuc='cùng mẫu xem TỬ  ·  cùng tử xem MẪU  ·  thập phân so TỪNG HÀNG',
+           thay='đuôi dài hơn không có nghĩa là số lớn hơn',
+           loi=['Con nhớ ba câu. Cùng mẫu xem tử, cùng tử xem mẫu, thập phân so từng '
+                'hàng từ trái.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_phan_bu_va_moc_nua(b):
+    """L5·B17·M2 Phần bù nói ngược; mốc một phần hai phải xét cả hai vế."""
+    return [
+        _c('bia', 'Hai cách so nhanh khi quy đồng quá mệt', so_bai(b),
+           loi=['Mẫu số to thì quy đồng rất mệt. Có hai cách nhanh hơn nhiều.']),
+        _c('de_toan', 'Đề bài', de='7/8 và 9/10 — không được quy đồng',
+           loi=['So bảy phần tám với chín phần mười, mà không được quy đồng.']),
+        _c('phan_so', 'Cả hai gần đầy — nhìn CHỖ TRỐNG', tu=7, mau=8, nhan='chia 8',
+           tu2=9, mau2=10, nhan2='chia 10',
+           chuPhu='Băng trên trống 1/8, băng dưới trống 1/10.',
+           chuCuoi='Ô trống trên RỘNG hơn — nên băng trên hụt nhiều hơn.',
+           loi=['Cả hai gần đầy nên nhìn chỗ đã tô khó phân. Nhìn chỗ trống thì rõ '
+                'ngay.',
+                'Băng trên trống một phần tám, băng dưới trống một phần mười. Ô trống '
+                'trên rộng hơn.']),
+        _c('y_toan', 'Phần bù là mẩu còn HỤT tới 1',
+           'bù của 7/8 là 1/8   ·   bù của 9/10 là 1/10', buoc=1, soBuoc=4,
+           loi=['Phần bù là mẩu còn hụt tới một. Bù của bảy phần tám là một phần tám.']),
+        _c('y_toan', 'Hụt NHIỀU hơn thì BÉ hơn — kết luận ĐẢO chiều',
+           '1/8 > 1/10   →   7/8 < 9/10', buoc=2, soBuoc=4,
+           loi=['Chỗ vấp nằm ở đây, so phần bù xong phải đảo chiều kết luận lại.',
+                'Hụt nhiều hơn nên bảy phần tám bé hơn.']),
+        _c('de_toan', 'Đề thứ hai', de='12/25 và 25/49',
+           loi=['Đề thứ hai, hai phân số không sát nút một nên cách phần bù chịu.']),
+        _c('y_toan', 'Lấy MỘT NỬA làm mốc — so tử với NỬA MẪU',
+           'nửa của 25 là 12,5  ·  tử 12 chưa tới  →  12/25 < 1/2', buoc=3, soBuoc=4,
+           loi=['Lấy một phần hai làm mốc, so tử với nửa mẫu. Nửa của hai lăm là mười '
+                'hai phẩy năm, tử chưa tới.']),
+        _c('y_toan', 'Phải xử CẢ HAI vế thì mốc mới phân được',
+           'nửa của 49 là 24,5  ·  tử 25 vượt qua  →  25/49 > 1/2', buoc=4, soBuoc=4,
+           loi=['Vế phải, nửa của bốn chín là hai tư phẩy năm. Tử hai lăm đã vượt qua.',
+                'Một bên bé hơn nửa, một bên lớn hơn nửa, vậy vế trái bé hơn.']),
+        _c('cong_thuc', 'Chọn cách trong năm giây',
+           congThuc='sát nút 1 → so PHẦN BÙ   ·   hai bên mốc 1/2 → so với 1/2',
+           thay='cả hai cùng một phía so với 1/2 thì mốc ấy bó tay, phải đổi cách',
+           loi=['Con nhớ cách chọn. Sát nút một thì so phần bù, nằm hai bên nửa thì so '
+                'với nửa.',
+                'Còn cả hai cùng một phía thì mốc ấy bó tay, phải đổi cách khác.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_doi_ve_mot_dang(b):
+    """L5·B17·M3 Xếp dãy trộn ba kiểu số — đổi về một dạng rồi trả lại dạng gốc."""
+    return [
+        _c('bia', 'Xếp thứ tự khi đề trộn nhiều dạng số', so_bai(b),
+           loi=['Đề trộn lẫn phân số, hỗn số và số thập phân. Không so thẳng được.']),
+        _c('de_toan', 'Làm quen với hai số trước', de='1 3/4 và 1,8 — số nào lớn hơn?',
+           loi=['Làm quen với hai số trước. So một và ba phần tư với một phẩy tám.']),
+        _c('y_toan', 'Đổi rồi so từng hàng',
+           '1 3/4 = 1,75   ·   phần nguyên bằng nhau  →  xét hàng phần mười: 7 < 8',
+           loi=['Một và ba phần tư đổi ra là một phẩy bảy lăm.',
+                'Phần nguyên bằng nhau nên xét hàng phần mười. Bảy bé hơn tám, vế '
+                'trái bé hơn.']),
+        _c('de_toan', 'Đề chính', de='Xếp từ bé đến lớn:  0,85  ·  7/8  ·  4/5  ·  0,9',
+           loi=['Đề chính, xếp bốn số từ bé đến lớn. Ba dạng số trộn vào nhau.']),
+        _c('y_toan', 'Đổi TẤT CẢ về MỘT dạng trước đã',
+           'chọn số thập phân, vì so số thập phân chỉ cần so từng hàng',
+           buoc=1, soBuoc=3,
+           loi=['Đổi tất cả về một dạng trước đã. Nên chọn số thập phân, vì so số '
+                'thập phân chỉ cần so từng hàng.']),
+        _c('y_toan', 'Sáu phép đổi nên thuộc lòng',
+           '1/2=0,5   ·   1/4=0,25   ·   3/4=0,75   ·   '
+           '1/5=0,2   ·   4/5=0,8   ·   7/8=0,875', buoc=2, soBuoc=3,
+           loi=['Sáu phép đổi nên thuộc lòng. Một phần hai không phẩy năm, một phần '
+                'tư không phẩy hai lăm, ba phần tư không phẩy bảy lăm.',
+                'Một phần năm bằng không phẩy hai, bốn phần năm không phẩy tám, bảy '
+                'phần tám không phẩy tám bảy lăm.']),
+        _c('day_so', 'Đổi xong thì xếp theo từng hàng',
+           so=['0,8', '0,85', '0,875', '0,9'],
+           chuPhu='Bốn số đã cùng một dạng — xếp từ bé đến lớn.',
+           loi=['Bốn số nay cùng một dạng, xếp lại được ngay. Không phẩy tám đứng '
+                'đầu, không phẩy chín đứng cuối.']),
+        _c('y_toan', 'Nhịp cuối: viết đáp bằng DẠNG GỐC của đề',
+           '4/5  <  0,85  <  7/8  <  0,9', buoc=3, soBuoc=3,
+           loi=['Nhịp cuối hay bị quên. Viết đáp số bằng đúng dạng mà đề đã cho, chứ '
+                'không phải dạng vừa đổi.']),
+        _c('cong_thuc', 'Ba nhịp của bài xếp thứ tự',
+           congThuc='đổi về MỘT dạng  →  xếp từng hàng  →  viết lại DẠNG GỐC',
+           thay='quên nhịp cuối là đáp số không khớp với đề',
+           loi=['Con nhớ ba nhịp. Đổi hết về một dạng, xếp theo từng hàng, rồi viết '
+                'lại theo dạng gốc.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B17.M1': kb5_cung_mau_cung_tu,
+    'DL:KSN5Q1.B17.M2': kb5_phan_bu_va_moc_nua,
+    'DL:KSN5Q1.B17.M3': kb5_doi_ve_mot_dang,
     'DL:KSN5Q1.B16.M1': kb5_bang_chieu_nguoc,
     'DL:KSN5Q1.B16.M2': kb5_boc_vo_cu_hanh,
     'DL:KSN5Q1.B16.M3': kb5_tim_x_chia_co_du,

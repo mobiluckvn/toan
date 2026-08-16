@@ -74,12 +74,17 @@ def ve_emoji(im: Image.Image, ch: str, tam_x: int, tam_y: int, co: int):
     im.paste(o, (tam_x - o.width // 2, tam_y - o.height // 2), o)
 
 
-def giua(d: ImageDraw.ImageDraw, y: int, chu: str, f, mau=INK, rong=W - 160):
-    """Viết một dòng CĂN GIỮA, tự xuống dòng khi quá rộng. Trả về y sau cùng."""
+def ngat_dong(d: ImageDraw.ImageDraw, chu: str, f, rong: int) -> list[str]:
+    """Ngắt chữ thành các dòng vừa bề rộng — CÙNG phép ngắt mà `giua()` dùng.
+
+    Tách riêng ra để chỗ nào cần BIẾT TRƯỚC số dòng (mà vẽ khung cho vừa) thì hỏi
+    được, thay vì đoán bằng số ký tự. Đếm bằng ký tự là sai: chữ tiếng Việt có dấu
+    rộng hẹp khác nhau, và đó đúng là cách 72 màn công thức lọt lưới.
+    """
     if not chu:
-        return y
-    tu, dong, hien = chu.split(), [], ""
-    for t in tu:
+        return []
+    dong, hien = [], ""
+    for t in chu.split():
         thu = f"{hien} {t}".strip()
         if d.textlength(thu, font=f) <= rong:
             hien = thu
@@ -87,6 +92,14 @@ def giua(d: ImageDraw.ImageDraw, y: int, chu: str, f, mau=INK, rong=W - 160):
             dong.append(hien)
             hien = t
     dong.append(hien)
+    return dong
+
+
+def giua(d: ImageDraw.ImageDraw, y: int, chu: str, f, mau=INK, rong=W - 160):
+    """Viết một dòng CĂN GIỮA, tự xuống dòng khi quá rộng. Trả về y sau cùng."""
+    if not chu:
+        return y
+    dong = ngat_dong(d, chu, f, rong)
     cao = (f.size * 1.32)
     for i, x in enumerate(dong):
         d.text(((W - d.textlength(x, font=f)) / 2, y + i * cao), x, font=f, fill=mau)
@@ -250,9 +263,18 @@ def khung(c: dict) -> Image.Image:
         the(d, 60, 120, W - 120, 210, nen=GOLD_PALE, vien=GOLD, day=6)
         giua(d, 175, c["congThuc"], phong(46), NAVY, rong=W - 190)
         if c.get("thay"):
+            # ⚠ KHUNG PHẢI GIÃN THEO SỐ DÒNG. Bản cũ đóng cứng cao 120 — vừa đúng
+            # MỘT dòng. Câu nào dài hơn thì dòng thứ hai rơi xuống DƯỚI đáy khung,
+            # chữ đen nằm trần trên nền. 72 trong 419 màn công thức của cả bốn quyển
+            # đã lên bản thật như thế (lộ ra ở lớp 5 bài 17, 16-08-2026).
             giua(d, 385, "Thay số vào thử", phong(30), MUTE)
-            the(d, 110, 430, W - 220, 120, nen="#FFFFFF", vien=TEAL, day=4)
-            giua(d, 462, c["thay"], phong(42), TEAL_DARK, rong=W - 260)
+            f = phong(42)
+            n = len(ngat_dong(d, c["thay"], f, W - 260))
+            b_dong = int(f.size * 1.32)
+            cao_khung = max(120, b_dong * n + 64)
+            the(d, 110, 430, W - 220, cao_khung, nen="#FFFFFF", vien=TEAL, day=4)
+            giua(d, 430 + (cao_khung - b_dong * n) // 2, c["thay"], f, TEAL_DARK,
+                 rong=W - 260)
 
     elif L == "day_so":
         # MỘT DÃY SỐ VẼ RA THÀNH Ô — đây là hình quan trọng nhất của cả cụm, vì nó
