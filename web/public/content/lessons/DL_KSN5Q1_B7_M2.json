@@ -34,20 +34,7 @@
   "kidText": "Con đếm số chia hết cho k trong một đoạn, và phân biệt được \"từ 10 đến 100\" với \"giữa 10 và 100\" — hai đề khác nhau đấy."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Đếm số chia hết cho k trong đoạn: tìm số ĐẦU THẬT (số chia hết cho k nhỏ nhất trong đoạn) và số CUỐI THẬT (số chia hết cho k lớn nhất trong đoạn) rồi mới áp (cuối − đầu) : k + 1."
-   },
-   {
-    "id": "K2",
-    "text": "\"TỪ a đến b\": các đầu mút được ở lại (nếu thỏa điều kiện). \"GIỮA a và b\": đuổi cả hai đầu mút khỏi đoạn — dù chúng có thỏa."
-   },
-   {
-    "id": "K3",
-    "text": "Khoanh tròn chữ \"từ / giữa\" ngay khi đọc đề — một chữ lệch, hai đáp số."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HAI TRẠM DÒ ĐẦU–CUỐI. Trước khi dựng hàng rào trong đoạn, thợ rào phải đi DÒ: từ mép trái tiến vào, gặp số chia hết đầu tiên — cắm biển ĐẦU THẬT; từ mép phải lùi vào, gặp số chia hết cuối cùng — cắm biển CUỐI THẬT. Đề nói 'từ 10 đến 100' thì mép được tính (10 và 100 dự tuyển); đề nói 'giữa 10 và 100' thì hai mép bị đuổi trước khi dò. Cắm xong hai biển mới gọi đội hàng rào (công thức +1) vào.",
   "canonicalExamples": [
    {
@@ -84,12 +71,8 @@
     "counterExample": "Bài chia hết cho 5: 'từ' ra 19, 'giữa' chỉ 17."
    }
   ],
-  "vocabulary": [
-   "biển ĐẦU THẬT / CUỐI THẬT",
-   "dò từ hai mép",
-   "từ — giữ hai đầu; giữa — đuổi cả đôi"
-  ],
-  "mantra": "TỪ THÌ GIỮ HAI ĐẦU — GIỮA THÌ ĐUỔI CẢ ĐÔI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,58 +94,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Từ 1 đến 100 có bao nhiêu số chia hết cho 3? Từ 10 đến 100 thì sao?",
-    "display": {
-     "type": "story_panel",
-     "caption": "TỪ 10–100?= GIỮA 10–100"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để soi hai chữ bị khoanh!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Trạm dò làm việc: đề TỪ — mép 10 và 100 được dự tuyển: 10 chia hết cho 5 ✓ cắm biển ĐẦU; 100 chia hết cho 5 ✓ cắm biển CUỐI → ($100 - 10$) : $5 + 1 = 19$. Đề GIỮA — đuổi cả 10 lẫn 100 trước: dò vào trong gặp 15 và 95 → ($95 - 15$) : $5 + 1 = 17$. Con kéo biển vào đúng chỗ cho từng đề.",
-    "display": {
-     "type": "range_scan_interactive",
-     "spec": {
-      "k": 5,
-      "cases": [
-       {
-        "mode": "từ",
-        "start": 10,
-        "end": 100,
-        "first": 10,
-        "last": 100,
-        "count": 19
-       },
-       {
-        "mode": "giữa",
-        "start": 10,
-        "end": 100,
-        "first": 15,
-        "last": 95,
-        "count": 17
-       }
-      ]
-     }
-    },
-    "interaction": {
-     "type": "place_flags",
-     "successMessage": "TỪ: 19 số · GIỮA: 17 số — một chữ lệch, hai số hạng bay mất!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 18,
@@ -178,38 +109,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 32,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Vụ quen thuộc nhất của trạm dò: 'có bao nhiêu số có hai chữ số?' — đoạn ngầm từ 10 đến 99, khoảng 1: chín mươi số. Nghi thức đầy đủ: khoanh chữ từ/giữa — dò cắm hai biển thật — rồi mới gọi công thức cộng một.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "Khoanh 'từ / giữa'",
-      "Dò biển ĐẦU THẬT — CUỐI THẬT",
-      "(cuối − đầu) : k + 1 · vd 2 chữ số: (99−10):1+1 = 90"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: từ thì giữ hai đầu — giữa thì đuổi cả đôi!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TỪ GIỮ HAI ĐẦU — GIỮA ĐUỔI CẢ ĐÔI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -532,108 +431,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B7.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "TỪ 10–100?= GIỮA 10–100",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Thì như nhau chứ gì — 19!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B7_M2_F1.png",
-   "sha256_16": "c8bd83935ba03c70"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Chia hết trong đoạn: dò đầu – cuối thật · \"từ\" khác \"giữa\"",
-    "steps": [
-     {
-      "text": "Khoanh 'từ / giữa'"
-     },
-     {
-      "text": "Dò biển ĐẦU THẬT — CUỐI THẬT"
-     },
-     {
-      "text": "(cuối − đầu) : k + 1 · vd 2 chữ số: (99−10):1+1 = 90"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B7_M2_F2.png",
-   "sha256_16": "f4c7795a289e8936"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Đếm số chia hết cho k trong đoạn",
-      "text": "nghi thức nào? 'Từ' khác 'giữa' ra sao?",
-      "tone": "navy"
-     },
-     {
-      "label": "\"TỪ a đến b\"",
-      "text": "các đầu mút được ở lại (nếu thỏa điều kiện).…",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "TỪ THÌ GIỮ HAI ĐẦU — GIỮA THÌ ĐUỔI CẢ ĐÔI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B7_M2_F3.png",
-   "sha256_16": "d6de07ba7e6eb5ca"
-  },
-  {
-   "archetype": "fence_posts",
-   "params": {
-    "title": "TỪ 10 ĐẾN 100 CÓ BAO NHIÊU SỐ CHIA HẾT CHO 3?",
-    "first": 12,
-    "last": 99,
-    "step": 3,
-    "show": 6,
-    "labels": [
-     "12",
-     "15",
-     "18",
-     "…",
-     "96",
-     "99"
-    ],
-    "gap_at": 3,
-    "gap_note": "đầu THẬT là 12 (10 và 11 trượt) · cuối THẬT là 99",
-    "formula": "(99 − 12) : 3 + 1 = 30 số",
-    "note": "Phải dò số đầu và số cuối THẬT SỰ thỏa mãn rồi mới áp công thức"
-   },
-   "caption": "\"Từ a đến b\" giữ hai đầu · \"giữa a và b\" thì đuổi hai đầu ra",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B7_M2_F4.png",
-   "sha256_16": "242540690d176964"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B07",
@@ -646,5 +444,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B7_M2_giang.mp4"
  }
 }

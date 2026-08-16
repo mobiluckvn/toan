@@ -9152,7 +9152,136 @@ def kb5_dem_co_dieu_kien(b):
     ]
 
 
+def kb5_hang_rao_coc(b):
+    """L5·B7·M1 Số số hạng dãy cách đều — chia ra khoảng, cộng 1 ra cọc."""
+    return [
+        _c('bia', 'Đếm số hạng của dãy cách đều', so_bai(b),
+           loi=['Một dãy số cách đều nhau. Đếm xem nó có bao nhiêu số.']),
+        _c('de_toan', 'Đề bài', de='Rào từ mét số 3 đến mét số 99, cứ 3 m một cọc. Mấy cọc?',
+           loi=['Rào từ mét số ba đến mét số chín mươi chín, cứ ba mét một cọc.',
+                'Nhiều bạn tính chín mươi chín trừ ba, chia ba, được ba mươi hai cọc.']),
+        _c('luoi_cham', 'Thu nhỏ lại mà đếm cho chắc', hang=1, cot=4,
+           chuPhu='4 cọc — nhưng chỉ 3 khoảng ở giữa.',
+           loi=['Thu nhỏ lại mà đếm cho chắc. Bốn cọc thì chỉ có ba khoảng ở giữa.',
+                'Cọc luôn đông hơn khoảng đúng một.']),
+        _c('y_toan', 'Phép chia chỉ đếm được KHOẢNG',
+           '(cuối − đầu) : khoảng cách  →  ra số KHOẢNG, chưa phải số cọc',
+           buoc=1, soBuoc=3,
+           loi=['Phép chia ấy chỉ đếm được số khoảng, chưa phải số cọc.']),
+        _c('cong_thuc', 'Nên phải cộng thêm 1',
+           congThuc='số số hạng = (cuối − đầu) : khoảng + 1',
+           thay='vì cọc luôn nhiều hơn khoảng đúng một — hàng rào nào cũng thế',
+           loi=['Nên phải cộng thêm một. Số số hạng bằng cuối trừ đầu, chia khoảng '
+                'cách, rồi cộng một.']),
+        _c('y_toan', 'Làm lại đề trên cho đúng',
+           '(99 − 3) : 3 + 1 = 32 + 1 = 33 cọc', buoc=2, soBuoc=3,
+           loi=['Làm lại đề trên. Chín mươi chín trừ ba, chia ba, được ba mươi hai.',
+                'Cộng một, được ba mươi ba cọc.']),
+        _c('y_toan', 'Thử một đề nữa', 'số chẵn từ 1 đến 50: (50 − 2) : 2 + 1 = 25',
+           buoc=3, soBuoc=3,
+           loi=['Thử một đề nữa. Các số chẵn từ một đến năm mươi là dãy hai, bốn, và '
+                'cứ thế.',
+                'Năm mươi trừ hai, chia hai, cộng một, được hai mươi lăm số.']),
+        _c('cong_thuc', 'Ba nhịp, đừng thiếu nhịp nào',
+           congThuc='tính HIỆU  →  chia KHOẢNG  →  cộng 1',
+           thay='thiếu nhịp ba là đếm hụt đúng một số hạng, lần nào cũng thế',
+           loi=['Con nhớ ba nhịp. Tính hiệu, chia khoảng, rồi cộng một.',
+                'Thiếu nhịp ba là đếm hụt đúng một số hạng, lần nào cũng thế.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tu_khac_giua(b):
+    """L5·B7·M2 Đếm số chia hết trong đoạn — dò đầu cuối thật, và "từ" khác "giữa"."""
+    return [
+        _c('bia', 'Đếm số chia hết trong một đoạn', so_bai(b),
+           loi=['Trong một đoạn số, đếm xem có mấy số chia hết cho một số cho trước.']),
+        _c('y_toan', 'Dãy ấy cũng cách đều, nên dùng lại công thức cũ',
+           'nhưng phải tìm ĐẦU THẬT và CUỐI THẬT trước đã', buoc=1, soBuoc=3,
+           loi=['Dãy các số chia hết cũng cách đều, nên dùng lại công thức bài trước.',
+                'Nhưng phải tìm số đầu thật và số cuối thật đã.']),
+        _c('day_so', 'Đầu thật không phải lúc nào cũng là mép đoạn',
+           so=[12, 15, 18, 21], hienThuTu=False,
+           chuPhu='Từ 10 đến 100, đếm số chia hết cho 3: mép là 10 nhưng đầu thật là 12.',
+           loi=['Đầu thật không phải lúc nào cũng là mép đoạn.',
+                'Từ mười đến một trăm mà đếm số chia hết cho ba, thì mười trượt, mười '
+                'một trượt, mười hai mới là số đầu thật.']),
+        _c('de_toan', 'Hai đề chỉ khác nhau MỘT chữ',
+           de='TỪ 10 đến 100   ·   GIỮA 10 và 100',
+           loi=['Nay xem hai đề chỉ khác nhau một chữ. Từ mười đến một trăm, và giữa '
+                'mười và một trăm.']),
+        _c('y_toan', 'Đề "TỪ" thì hai mép được ở lại',
+           '10 và 100 đều chia hết 5  →  đầu 10, cuối 100  →  19 số',
+           buoc=2, soBuoc=3,
+           loi=['Đề từ thì hai mép được ở lại nếu chúng thoả điều kiện.',
+                'Mười và một trăm đều chia hết cho năm, nên đếm được mười chín số.']),
+        _c('y_toan', 'Đề "GIỮA" thì đuổi cả hai mép',
+           'dù chúng có thoả  →  đầu 15, cuối 95  →  17 số', buoc=3, soBuoc=3,
+           loi=['Đề giữa thì đuổi cả hai mép, dù chúng có thoả điều kiện đi nữa.',
+                'Nên đầu thật là mười lăm, cuối thật là chín mươi lăm, đếm được mười '
+                'bảy số.']),
+        _c('y_toan', 'Một chữ lệch, hai đáp số', '19 số  ·  17 số',
+           loi=['Một chữ lệch mà ra hai đáp số khác nhau.']),
+        _c('cong_thuc', 'Nghi thức đọc đề',
+           congThuc='khoanh tròn chữ TỪ / GIỮA ngay khi đọc',
+           thay='từ thì giữ hai đầu, giữa thì đuổi cả đôi',
+           loi=['Con khoanh tròn chữ từ hay giữa ngay khi đọc đề.',
+                'Từ thì giữ hai đầu, giữa thì đuổi cả đôi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_dem_hoac(b):
+    """L5·B7·M3 Đếm "hoặc" — trừ phần giao, và phép đếm ngược."""
+    return [
+        _c('bia', 'Đếm "chia hết cho a HOẶC cho b"', so_bai(b),
+           loi=['Đếm những số chia hết cho số này hoặc chia hết cho số kia.']),
+        _c('de_toan', 'Đề bài', de='Từ 1 đến 30, mấy số chia hết cho 2 HOẶC cho 3?',
+           loi=['Từ một đến ba mươi, có mấy số chia hết cho hai hoặc chia hết cho ba.',
+                'Nhiều bạn cộng luôn mười lăm với mười, được hai mươi lăm.']),
+        _c('so_do_ven', 'Vẽ hai vòng ra thì thấy ngay',
+           tenA='chia hết 2', tenB='chia hết 3', caHai='5',
+           chuGiao='6 · 12 · 18 · 24 · 30 — chia hết cho CẢ HAI',
+           chuPhu='Năm số này đứng ở phần giao.',
+           loi=['Vẽ hai vòng ra thì thấy ngay. Có năm số chia hết cho cả hai.',
+                'Chúng đứng ở chỗ hai vòng ôm nhau.']),
+        _c('y_toan', 'Năm số ấy bị điểm danh HAI lần',
+           'một lần ở hàng chia hết 2, một lần ở hàng chia hết 3', buoc=1, soBuoc=3,
+           loi=['Năm số ấy bị điểm danh hai lần. Một lần ở hàng chia hết cho hai, một '
+                'lần ở hàng chia hết cho ba.']),
+        _c('so_do_ven', 'Nên phải trả lại một lần',
+           tenA='chia hết 2', tenB='chia hết 3', chiA='10', caHai='5', chiB='5',
+           chuGiao='15 + 10 − 5 = 20 số',
+           chuPhu='Ba vùng cộng lại: 10 + 5 + 5 = 20.',
+           loi=['Nên phải trả lại một lần. Mười lăm cộng mười, trừ năm, được hai mươi '
+                'số.',
+                'Cộng ba vùng cũng ra hai mươi.']),
+        _c('cong_thuc', 'Công thức đếm "hoặc"',
+           congThuc='hoặc = A + B − (cả hai)',
+           thay='vì ai đứng cả hai hàng đều bị đếm hai lần',
+           loi=['Công thức đếm hoặc. Lấy nhóm thứ nhất cộng nhóm thứ hai, trừ nhóm cả '
+                'hai.']),
+        _c('y_toan', 'Đếm "KHÔNG chia hết" thì đếm NGƯỢC cho nhanh',
+           'từ 1 đến 100: 100 − 33 = 67 số không chia hết cho 3', buoc=3, soBuoc=3,
+           loi=['Còn đếm những số không chia hết thì đếm ngược cho nhanh.',
+                'Từ một đến một trăm có ba mươi ba số chia hết cho ba.',
+                'Lấy một trăm trừ ba mươi ba, còn sáu mươi bảy số không chia hết.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='ai đứng hai hàng — chỉ được điểm danh MỘT lần',
+           thay='và đếm xuôi khó thì đếm ngược: cả sân trừ đi phần không cần',
+           loi=['Con nhớ câu này. Ai đứng hai hàng thì chỉ được điểm danh một lần.',
+                'Và đếm xuôi khó thì đếm ngược, lấy cả sân trừ đi phần không cần.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B7.M1': kb5_hang_rao_coc,
+    'DL:KSN5Q1.B7.M2': kb5_tu_khac_giua,
+    'DL:KSN5Q1.B7.M3': kb5_dem_hoac,
     'DL:KSN5Q1.B6.M1': kb5_quy_tac_nhan,
     'DL:KSN5Q1.B6.M2': kb5_kho_the_voi_dan,
     'DL:KSN5Q1.B6.M3': kb5_dem_co_dieu_kien,

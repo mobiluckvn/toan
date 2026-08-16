@@ -34,20 +34,7 @@
   "kidText": "Con đếm được dãy cách đều có bao nhiêu số — và hiểu vì sao phải cộng thêm 1, nhờ hình hàng rào cọc."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Dãy cách đều: số số hạng = (số cuối − số đầu) : khoảng cách + 1."
-   },
-   {
-    "id": "K2",
-    "text": "Vì sao +1: phép chia (cuối − đầu) : khoảng chỉ đếm được số KHOẢNG giữa các cọc; số CỌC luôn nhiều hơn số khoảng đúng 1 — hàng rào 3 khoảng có 4 cọc."
-   },
-   {
-    "id": "K3",
-    "text": "Nghi thức ba nhịp: tính hiệu — chia khoảng — CỘNG 1. Thiếu nhịp ba là đếm hụt một số hạng."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HÀNG RÀO CỌC. Mỗi số hạng của dãy là một CỌC rào; khoảng cách giữa hai số liền nhau là một KHOẢNG rào. Phép chia (cuối − đầu) : khoảng đo được bao nhiêu KHOẢNG — nhưng người ta hỏi CỌC! Nhìn bốn viên sỏi đặt cách nhau: 3 khoảng, 4 viên. Cọc luôn đông hơn khoảng đúng một — nên chia xong phải cộng 1. Chia ra khoảng — cộng 1 ra cọc.",
   "canonicalExamples": [
    {
@@ -78,12 +65,8 @@
     "counterExample": "Dãy 3; 6; 9 tí hon: ($9 - 3$) : $3 = 2$ mà rõ ràng có 3 số."
    }
   ],
-  "vocabulary": [
-   "cọc và khoảng",
-   "bốn viên sỏi — ba khoảng",
-   "nghi thức ba nhịp: hiệu — chia — cộng 1"
-  ],
-  "mantra": "CHIA RA KHOẢNG — CỘNG 1 RA CỌC!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -105,46 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Dãy 3; 6; 9; …; 99 có bao nhiêu số hạng?",
-    "display": {
-     "type": "story_panel",
-     "caption": "(99−3):$3 = 32$… thiếu 1 cọc!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để tìm chiếc cọc mất tích!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Thu nhỏ hàng rào: bốn viên sỏi cách đều. Con đếm số KHOẢNG giữa chúng — rồi đếm số VIÊN. Ba khoảng, bốn viên! Phép chia chỉ đo được khoảng; muốn ra cọc phải cộng thêm một.",
-    "display": {
-     "type": "pebble_interactive",
-     "spec": {
-      "pebbles": 4,
-      "gaps": 3,
-      "question": "khoảng? viên?"
-     }
-    },
-    "interaction": {
-     "type": "count_two",
-     "answerKey": {
-      "gaps": 3,
-      "pebbles": 4
-     },
-     "successMessage": "3 khoảng — 4 viên: cọc luôn đông hơn khoảng đúng MỘT. Vậy 32 khoảng → 33 cọc!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -161,37 +104,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 32,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Nghi thức ba nhịp cho mọi dãy cách đều: nhịp một — tính hiệu cuối trừ đầu. Nhịp hai — chia cho khoảng cách. Nhịp ba — CỘNG MỘT. Áp cho số chẵn từ 1 đến 50: dãy 2; 4; …; 50 → ($50 - 2$) : $2 + 1 = 25$.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "Nhịp 1: 50 − 2 = 48",
-      "Nhịp 2: 48 : 2 = 24 khoảng",
-      "Nhịp 3: 24 + 1 = 25 số chẵn"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: chia ra khoảng — cộng một ra cọc!",
-    "display": {
-     "type": "mantra_card",
-     "text": "CHIA RA KHOẢNG — CỘNG 1 RA CỌC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -477,108 +389,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B7.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "(99−3):3 = 32… thiếu 1 cọc!",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "(99 − 3) : 3 = 32 — cần 32 cọc!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B7_M1_F1.png",
-   "sha256_16": "f63745afccbc4452"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Hàng rào cọc: (cuối − đầu) : khoảng + 1",
-    "steps": [
-     {
-      "text": "Nhịp 1: 50 − 2 = 48"
-     },
-     {
-      "text": "Nhịp 2: 48 : 2 = 24 khoảng"
-     },
-     {
-      "text": "Nhịp 3: 24 + 1 = 25 số chẵn"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B7_M1_F2.png",
-   "sha256_16": "1766edd1cc14d634"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Dãy cách đều",
-      "text": "số số hạng = (số cuối − số đầu) : khoảng cách + 1.",
-      "tone": "navy"
-     },
-     {
-      "label": "Vì sao +1",
-      "text": "phép chia (cuối − đầu) : khoảng chỉ đếm được số KHOẢNG giữa các cọc; số CỌC luôn nhiều hơn số khoảng đúng 1 — hàng rào 3 khoảng có 4 cọc.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CHIA RA KHOẢNG — CỘNG 1 RA CỌC!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B7_M1_F3.png",
-   "sha256_16": "625503e5f3a823f0"
-  },
-  {
-   "archetype": "fence_posts",
-   "params": {
-    "title": "DÃY 3; 6; 9; …; 99 CÓ BAO NHIÊU SỐ HẠNG?",
-    "first": 3,
-    "last": 99,
-    "step": 3,
-    "show": 6,
-    "labels": [
-     "3",
-     "6",
-     "9",
-     "…",
-     "96",
-     "99"
-    ],
-    "gap_at": 3,
-    "gap_note": "đếm KHOẢNG trước — cộng 1 ra CỌC",
-    "formula": "(99 − 3) : 3 = 32 khoảng → 32 + 1 = 33 số hạng",
-    "note": "Cọc luôn nhiều hơn khoảng đúng 1 — đó chính là lý do có dấu +1"
-   },
-   "caption": "Hình ảnh hàng rào giải thích vì sao công thức có \"+1\"",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B7_M1_F4.png",
-   "sha256_16": "24510c761eda14ff"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B07",
@@ -591,5 +402,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B7_M1_giang.mp4"
  }
 }
