@@ -36,24 +36,7 @@
   "kidText": "Tỉ số là một tấm ảnh có ghi ngày giờ. Con vẽ sơ đồ đúng lúc chụp ảnh, tính xong rồi mới trả về mốc đề hỏi."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tỉ số có NGÀY GIỜ: \"lúc đó kho 1 gấp 3 kho 2\" là ảnh chụp của mốc SAU KHI BÁN — không được đem dán cho lúc đầu."
-   },
-   {
-    "id": "K2",
-    "text": "Quy trình giải theo thời điểm: giải TẠI MỐC CÓ TỈ (còn 80, tỉ $3 : 1$ → 4 phần → còn 60 và 20) → rồi CỘNG TRẢ phần đã bán để về lúc đầu ($60 + 12 = 72$; $20 + 8 = 28$)."
-   },
-   {
-    "id": "K3",
-    "text": "Chiều thêm-vào ngược nghi thức: giải tại mốc sau rồi TRỪ ĐI phần vừa rót (hiện 40 và 10 → lúc đầu 36 và 4); \"thêm vào MỖI chuồng\" thì trừ ở CẢ hai."
-   },
-   {
-    "id": "K4",
-    "text": "Ba câu hỏi trước khi kẻ ô: tỉ này của LÚC NÀO? — tổng ở mốc ấy bao nhiêu? — đề HỎI mốc nào? Gạch chân câu hỏi ngay khi tóm tắt; thử trọn vụ: lấy đáp đầu diễn lại cả câu chuyện."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: CÁNH CỬA KHO VÀ TẤM ẢNH CÓ ĐÓNG DẤU NGÀY. Vụ án hai kho gạo: bán 12 tấn ở kho 1, 8 tấn ở kho 2 — CÒN tổng 80 tấn, và LÚC ĐÓ kho 1 gấp 3 kho 2. Hỏi lúc ĐẦU mỗi kho? Tấm ảnh \"gấp 3\" có đóng dấu ngày: chụp SAU khi bán! Giải ngay trên tấm ảnh: 4 phần = 80 → phần 20 → còn 60 và 20. Trí Long khoanh đáp nộp — nhưng đề hỏi LÚC ĐẦU: mở cửa kho CỘNG TRẢ hàng đã bán: 60 + 12 = 72 tấn; 20 + 8 = 28 tấn! Thử trọn vụ: 72 − 12 = 60 đúng gấp 3 lần 20. Chiều ngược — rót THÊM: sau khi rót tổng 50, thùng 1 gấp 4 thùng 2 → hiện 40 và 10 — muốn về lúc đầu thì TRỪ phần vừa rót: 36 và 4. Hai lỗi tối kỵ: dừng ở hiện tại quên trả; và dán tỉ 3 : 1 cho lúc đầu (4 phần = 100 — ảnh chụp sai mốc!).",
   "canonicalExamples": [
    {
@@ -90,14 +73,8 @@
     "counterExample": "$75 - 12 = 63$; $25 - 8 = 17$: 63 có gấp 3 lần 17 đâu — ảnh dán sai mốc lộ ngay!"
    }
   ],
-  "vocabulary": [
-   "mốc thời điểm",
-   "ảnh chụp có đóng dấu ngày",
-   "cộng trả / trừ đi",
-   "gạch chân câu hỏi",
-   "thử trọn vụ"
-  ],
-  "mantra": "GIẢI Ở MỐC CÓ TỈ — TRẢ LỜI Ở MỐC ĐƯỢC HỎI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -118,50 +95,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Hai kho gạo: sau khi bán 12 tấn ở kho 1 và 8 tấn ở kho 2 thì còn tổng 80 tấn, lúc đó kho 1 gấp 3 kho 2. Hỏi lúc đầu mỗi kho có bao nhiêu tấn?",
-    "display": {
-     "type": "story_panel",
-     "caption": "đáp 60 & 20 — nộp luôn?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đọc dấu ngày trên ảnh!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2",
-     "K4"
-    ],
-    "narration": "Tấm ảnh \"gấp ba\" có đóng dấu ngày: chụp SAU KHI BÁN! Giải ngay trên tấm ảnh: bốn phần bằng tám mươi — phần HAI MƯƠI: còn sáu mươi và hai mươi. Nhưng gạch chân câu hỏi: đề hỏi LÚC ĐẦU — mở cửa kho CỘNG TRẢ hàng đã bán: sáu mươi cộng mười hai bằng BẢY MƯƠI HAI tấn; hai mươi cộng tám bằng HAI MƯƠI TÁM tấn! Thử trọn vụ: bảy hai trừ mười hai ra sáu mươi — đúng gấp ba hai mươi!",
-    "display": {
-     "type": "warehouse_door_interactive",
-     "spec": {
-      "after": "80 : 4 = 20 → còn 60 & 20",
-      "payback": "+12 · +8",
-      "start": "72 & 28",
-      "check": "72 − 12 = 60 = 3 × 20"
-     }
-    },
-    "interaction": {
-     "type": "solve_then_payback",
-     "answerKey": {
-      "values": [
-       72,
-       28
-      ]
-     },
-     "successMessage": "Giải mốc sau 60 & 20 → cộng trả → 72 & 28!"
-    }
-   },
    {
     "id": "C1",
     "kind": "checkpoint",
@@ -184,47 +117,6 @@
       "K4"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Bẫy thứ hai: dán tỉ ba-một cho LÚC ĐẦU — bốn phần bằng một trăm, ra bảy lăm và hai lăm? Kiểm: bảy lăm trừ mười hai ra sáu ba, hai lăm trừ tám ra mười bảy — sáu ba đâu có gấp ba mười bảy: ảnh dán SAI MỐC lộ ngay! Chiều rót THÊM thì ngược nghi thức: sau khi rót tổng năm mươi, thùng một gấp bốn — hiện bốn mươi và mười; muốn về lúc đầu thì TRỪ phần vừa rót: BA SÁU và BỐN!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "dán tỉ cho lúc đầu: 100 : 4 → 75 & 25",
-       "output": "✗ 63 ≠ 3 × 17",
-       "valid": false,
-       "reason": "ảnh chụp sai mốc"
-      },
-      {
-       "input": "thêm 4 & 6 → hiện 40 & 10 → trừ: 36 & 4",
-       "output": "✓ 40 = 4 × 10",
-       "valid": true,
-       "reason": "thêm thì trừ để lùi mốc"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai câu cần nhớ: giải ở mốc có tỉ — trả lời ở mốc được hỏi! Tỉ là ảnh chụp có ngày giờ — không dán nhầm mốc!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ẢNH CÓ NGÀY GIỜ — TRẢ LỜI ĐÚNG MỐC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -601,111 +493,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B30.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "đáp 60 & 20 — nộp luôn?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "4 phần, phần 20 — đáp 60 và 20, nộp!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B30_M1_F1.png",
-   "sha256_16": "f0ac8ad8b0237008"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "dán tỉ cho lúc đầu: 100 : 4 → 75…"
-     ],
-     "result": "63 ≠ 3 × 17"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "thêm 4 & 6 → hiện 40 & 10 →…"
-     ],
-     "result": "40 = 4 × 10"
-    },
-    "verdict": "thêm thì trừ để lùi mốc"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B30_M1_F2.png",
-   "sha256_16": "3da0c4011a5a3da3"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tỉ số có NGÀY GIỜ",
-      "text": "\"lúc đó kho 1 gấp 3 kho 2\" là ảnh chụp của mốc SAU KHI BÁN — không được đem dán cho lúc đầu.",
-      "tone": "navy"
-     },
-     {
-      "label": "Quy trình giải theo thời điểm",
-      "text": "giải TẠI MỐC CÓ TỈ (còn 80, tỉ 3 : 1 → 4 phần → còn 60 và 20) → rồi CỘNG TRẢ phần đã bán để về lúc đầu (60 + 12 = 72; 20 + 8 = 28).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "GIẢI Ở MỐC CÓ TỈ — TRẢ LỜI Ở MỐC ĐƯỢC HỎI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B30_M1_F3.png",
-   "sha256_16": "7a00b17457c42cac"
-  },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "TỈ LÀ ẢNH CHỤP CÓ NGÀY GIỜ — VẼ TẠI ĐÚNG MỐC CÓ TỈ",
-    "bars": [
-     {
-      "name": "kho 2 (sau bán)",
-      "units": 1,
-      "label": "1 phần = 20 tấn"
-     },
-     {
-      "name": "kho 1 (sau bán)",
-      "units": 3,
-      "label": "3 phần = 60 tấn"
-     }
-    ],
-    "brace": {
-     "text": "4 phần = 80 tấn → 1 phần = 20 → cộng TRẢ: 72 và 28 tấn"
-    },
-    "note": "Bán 12 ở kho 1 và 8 ở kho 2 → giải xong ở mốc có tỉ rồi mới trả lại phần đã bớt"
-   },
-   "caption": "Giải ở mốc có tỉ — rồi mới trả về mốc đề hỏi",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B30_M1_F4.png",
-   "sha256_16": "deabbedb9c5aa819"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B29",
@@ -719,5 +507,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Đề chưa cho tổng: tỉ số luôn gắn với MỘT thời điểm — giải ở thời điểm có tỉ, rồi trả lời thời điểm đề hỏi"
+ "titleDay": "Đề chưa cho tổng: tỉ số luôn gắn với MỘT thời điểm — giải ở thời điểm có tỉ, rồi trả lời thời điểm đề hỏi",
+ "video": {
+  "giang": "DL_KSN5Q1_B30_M1_giang.mp4"
+ }
 }

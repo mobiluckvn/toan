@@ -34,20 +34,7 @@
   "kidText": "Ba số nối nhau bằng tỉ: con quy tất cả về phần của số bé nhất — một thước đo chung — rồi mới cộng phần."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Chuỗi tỉ móc xích: \"B gấp đôi A, C gấp đôi B\" — chọn A (số bé nhất) làm thước: A = 1 phần → B = 2 phần → C gấp đôi B = $2  \\times  2 = 4$ phần (KHÔNG phải 2!)."
-   },
-   {
-    "id": "K2",
-    "text": "Cộng ĐỦ phần theo một thước: $1 + 2 + 4 = 7$ phần = 70 → phần 10 → ba số 10; 20; 40. Thử từng mắt xích: $20 = 2  \\times  10$ ✓; $40 = 2  \\times  20$ ✓."
-   },
-   {
-    "id": "K3",
-    "text": "Tỉ ba ngôi cho sẵn $1 : 2 : 3$ là chuỗi đã quy sẵn thước: cộng 6 phần, chia, nhân. Mắt xích kiểu \"số thứ ba bằng TỔNG hai số kia\" thì dịch ra phần: C = $1 + 2 = 3$ phần → cả chuỗi 6 phần."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: BA ĐỒNG TIỀN MỘT TỶ GIÁ. Chuỗi \"B gấp đôi A, C gấp đôi B\" — Trí Long đếm phần kiểu một-hai-hai: cộng ra 5 phần?! Nhầm tiền tệ rồi: con số \"gấp đôi\" của C đo bằng đồng B, còn phần đang cộng đo bằng đồng A! Nghi thức quy đổi TIỀN TỆ CHUNG trước khi cộng: lấy A — số bé nhất — làm thước: A một phần; B gấp đôi A — hai phần; C gấp đôi B — mà B đã hai phần: C bốn phần! Cộng đủ: một, hai, bốn — BẢY phần bằng bảy mươi: phần mười — ba số 10, 20, 40. Thử từng mắt xích: 20 gấp đôi 10, 40 gấp đôi 20 — chuỗi khớp ròn rã!",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "$70 : 5 = 14$ → 14; 28; 28 — C có gấp đôi B đâu: mắt xích cuối đứt!"
    }
   ],
-  "vocabulary": [
-   "ba đồng tiền một tỷ giá",
-   "thước đo chung (số bé nhất)",
-   "quy đổi trước khi cộng",
-   "mắt xích tỉ",
-   "chuỗi khớp ròn rã"
-  ],
-  "mantra": "ĐỔI HẾT VỀ MỘT THƯỚC ĐO — RỒI MỚI CỘNG PHẦN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -107,56 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Ba số có tổng 70. Số thứ hai gấp đôi số thứ nhất, số thứ ba gấp đôi số thứ hai. Tìm ba số.",
-    "display": {
-     "type": "story_panel",
-     "caption": "$1 + 2 + 2 = 5$ phần??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đổi tiền tệ!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Con số \"gấp đôi\" của C đo bằng đồng B — còn phần đang cộng đo bằng đồng A: hai loại tiền, cấm cộng lẫn! Quy đổi về MỘT thước — lấy A bé nhất: A một phần; B gấp đôi A — HAI phần; C gấp đôi B, mà B đã hai phần — C BỐN phần! Cộng đủ: một, hai, bốn — BẢY phần bằng bảy mươi: phần MƯỜI — ba số MƯỜI, HAI MƯƠI, BỐN MƯƠI! Thử mắt xích: hai mươi gấp đôi mười; bốn mươi gấp đôi hai mươi — khớp ròn rã!",
-    "display": {
-     "type": "currency_chain_interactive",
-     "spec": {
-      "chain": "A=1 → B=2 → C=2×2=4",
-      "parts": 7,
-      "total": 70,
-      "unit": 10,
-      "values": [
-       10,
-       20,
-       40
-      ],
-      "check": "20=2×10 · 40=2×20"
-     }
-    },
-    "interaction": {
-     "type": "convert_then_add",
-     "answerKey": {
-      "values": [
-       10,
-       20,
-       40
-      ]
-     },
-     "successMessage": "1 + 2 + 4 = 7 phần → 10; 20; 40 — mắt xích khớp!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -177,37 +108,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Mắt xích chữ cũng dịch ra phần: \"số thứ ba bằng TỔNG hai số kia\" — C bằng một cộng hai: BA phần — cả chuỗi sáu phần bằng chín sáu: phần mười sáu — ba số mười sáu, ba hai, bốn tám; thử: bốn tám đúng bằng mười sáu cộng ba hai! Tỉ ba ngôi cho sẵn thì đã quy sẵn thước: chia sáu mươi viên bi theo một-hai-ba — sáu phần: mười, hai mươi, ba mươi viên!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "C = tổng hai số kia = 3 phần → 6 phần = 96 → 16; 32; 48",
-      "tỉ 1:2:3 → 6 phần = 60 → 10; 20; 30",
-      "thử từng mắt xích trước khi nộp"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: đổi hết về một thước đo — rồi mới cộng phần!",
-    "display": {
-     "type": "mantra_card",
-     "text": "MỘT THƯỚC ĐO — RỒI CỘNG PHẦN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -541,113 +441,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B30.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "1 + 2 + 2 = 5 phần??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "A một, B hai, C… gấp đôi là hai! Một cộng hai cộng hai bằng năm phần!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B30_M2_F1.png",
-   "sha256_16": "256beac115ea8313"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "CA MẪU · chuỗi gấp đôi kép (ca lõi)",
-    "formulas": [
-     {
-      "label": "ĐỀ",
-      "text": "Ba số có tổng 70. Số thứ hai gấp đôi số thứ nhất, số thứ ba gấp đôi số thứ hai. Tìm ba số.",
-      "tone": "navy"
-     },
-     {
-      "label": "LỜI GIẢI",
-      "text": "Thước = số thứ nhất: 1 + 2 + 4 = 7 phần = 70 → phần 10 → 10; 20; 40. Thử: 20 = 2×10; 40 = 2×20.",
-      "tone": "teal"
-     }
-    ]
-   },
-   "caption": "Ca mẫu chuẩn của bài",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B30_M2_F2.png",
-   "sha256_16": "75017e4642d9ee5b"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Chuỗi tỉ móc xích",
-      "text": "\"B gấp đôi A, C gấp đôi B\"",
-      "tone": "navy"
-     },
-     {
-      "label": "Cộng ĐỦ phần theo một thước",
-      "text": "1 + 2 + 4 = 7 phần = 70 → phần 10 → ba số 10; 20; 40. Thử từng mắt xích: 20 = 2 × 10; 40 = 2 × 20.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "ĐỔI HẾT VỀ MỘT THƯỚC ĐO — RỒI MỚI CỘNG PHẦN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B30_M2_F3.png",
-   "sha256_16": "02387196478b506a"
-  },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "CHUỖI TỈ BA SỐ — ĐỔI HẾT VỀ MỘT THƯỚC ĐO",
-    "bars": [
-     {
-      "name": "số thứ nhất",
-      "units": 1,
-      "label": "1 phần = 10"
-     },
-     {
-      "name": "số thứ hai",
-      "units": 2,
-      "label": "2 phần = 20"
-     },
-     {
-      "name": "số thứ ba",
-      "units": 4,
-      "label": "4 phần = 40"
-     }
-    ],
-    "brace": {
-     "text": "thước = số bé nhất → 1 + 2 + 4 = 7 phần = 70 → 1 phần = 10"
-    },
-    "note": "\"C gấp đôi B\" mà B đã 2 phần thì C là 4 phần — không phải 2"
-   },
-   "caption": "Một thước đo chung cho cả ba số rồi mới cộng phần",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B30_M2_F4.png",
-   "sha256_16": "f42bebb1a7d0e4b3"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B29",
@@ -660,5 +454,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B30_M2_giang.mp4"
  }
 }

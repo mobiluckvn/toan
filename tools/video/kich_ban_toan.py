@@ -12140,7 +12140,140 @@ def kb5_tong_ti_bay_cu_ao_moi(b):
     ]
 
 
+def kb5_ti_gan_voi_thoi_diem(b):
+    """L5·B30·M1 Tỉ là ảnh chụp có ngày giờ — giải ở mốc có tỉ, trả lời ở mốc được hỏi."""
+    return [
+        _c('bia', 'Tỉ số luôn gắn với MỘT thời điểm', so_bai(b),
+           loi=['Cái tỉ trong đề bao giờ cũng thuộc về một lúc nào đó. Dán nhầm lúc là '
+                'hỏng.']),
+        _c('de_toan', 'Đề bài',
+           de='Bán 12 tấn ở kho 1 và 8 tấn ở kho 2 thì còn tổng 80 tấn.\n'
+              'LÚC ĐÓ kho 1 gấp 3 kho 2. Hỏi lúc ĐẦU mỗi kho bao nhiêu?',
+           loi=['Bán mười hai tấn ở kho một và tám tấn ở kho hai thì còn tổng tám mươi '
+                'tấn.',
+                'Lúc đó kho một gấp ba kho hai. Hỏi lúc đầu mỗi kho có bao nhiêu.']),
+        _c('y_toan', 'Tấm ảnh "gấp 3" có đóng dấu NGÀY GIỜ',
+           'nó chụp SAU KHI BÁN  —  không được dán cho lúc đầu', buoc=1, soBuoc=4,
+           loi=['Tấm ảnh gấp ba ấy chụp sau khi bán, chứ không phải lúc đầu.']),
+        _c('so_do_doan', 'Giải ngay TẠI MỐC CÓ TỈ', be=20, lon=60,
+           phanBe=1, phanLon=3, nhanBe='kho 2', nhanLon='kho 1',
+           chuTong='còn 80 tấn', chuPhu='4 ô, mỗi ô 20 — kho 1 còn 60, kho 2 còn 20.',
+           loi=['Giải ngay tại mốc có tỉ. Bốn ô, mỗi ô hai mươi tấn.',
+                'Kho một còn sáu mươi, kho hai còn hai mươi.']),
+        _c('y_toan', 'Rồi gạch chân xem đề HỎI mốc nào',
+           'đề hỏi LÚC ĐẦU   →   phải CỘNG TRẢ phần đã bán', buoc=2, soBuoc=4,
+           loi=['Rồi gạch chân xem đề hỏi mốc nào. Đề hỏi lúc đầu, nên phải cộng trả '
+                'phần đã bán.']),
+        _c('y_toan', 'Cộng trả xong mới nộp bài',
+           'kho 1 = 60 + 12 = 72      ·      kho 2 = 20 + 8 = 28', buoc=3, soBuoc=4,
+           loi=['Kho một bằng sáu mươi cộng mười hai, là bảy mươi hai. Kho hai hai mươi '
+                'tám.']),
+        _c('y_toan', 'Chiều rót THÊM thì làm ngược lại',
+           'giải ở mốc sau  →  rồi TRỪ ĐI phần vừa rót', buoc=4, soBuoc=4,
+           loi=['Nếu đề rót thêm vào thì làm ngược lại. Giải ở mốc sau rồi trừ đi phần '
+                'vừa rót.']),
+        _c('de_toan', 'Nếu dán tỉ cho LÚC ĐẦU thì sao',
+           de='4 phần = 100   →   75 và 25',
+           loi=['Thử dán tỉ cho lúc đầu xem sao. Bốn phần bằng một trăm, ra bảy mươi '
+                'lăm với hai mươi lăm.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='giải ở MỐC CÓ TỈ   —   trả lời ở MỐC ĐƯỢC HỎI',
+           thay='thử: 75 − 12 = 63 và 25 − 8 = 17, mà 63 đâu gấp 3 lần 17',
+           loi=['Thử lại thì sáu mươi ba đâu có gấp ba mười bảy. Dán sai mốc lộ ra '
+                'ngay.',
+                'Con nhớ hai câu. Giải ở mốc có tỉ, trả lời ở mốc được hỏi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_chuoi_ti_ba_so(b):
+    """L5·B30·M2 Chuỗi tỉ ba số — đổi hết về một thước đo rồi mới cộng phần."""
+    return [
+        _c('bia', 'Ba số móc xích vào nhau', so_bai(b),
+           loi=['Ba số nối nhau thành một chuỗi. Có một chỗ rất dễ cộng nhầm.']),
+        _c('de_toan', 'Đề bài',
+           de='Ba số có tổng 70. Số hai gấp đôi số một, số ba gấp đôi số hai',
+           loi=['Ba số có tổng bảy mươi. Số hai gấp đôi số một, số ba gấp đôi số '
+                'hai.']),
+        _c('y_toan', 'Hai chữ "gấp đôi" đo bằng HAI thước khác nhau',
+           'cái sau đo theo SỐ HAI, không phải theo số một', buoc=1, soBuoc=3,
+           loi=['Hai chữ gấp đôi ấy đo bằng hai thước khác nhau.',
+                'Cái sau đo theo số hai, chứ không phải theo số một. Cấm cộng lẫn.']),
+        _c('y_toan', 'Quy hết về MỘT thước — lấy số bé nhất',
+           'số một = 1 phần   ·   số hai = 2 phần   ·   số ba = 2 × 2 = 4 phần',
+           buoc=2, soBuoc=3,
+           loi=['Quy hết về một thước, lấy số bé nhất làm chuẩn.',
+                'Số ba gấp đôi số hai, mà số hai đã hai phần, nên số ba bốn phần chứ '
+                'không phải hai.']),
+        _c('day_so', 'Nay mới cộng phần được', so=['1', '2', '4'], nhanHang='phần',
+           chuPhu='Cộng đủ: 1 + 2 + 4 = 7 phần.',
+           loi=['Nay mới cộng phần được. Một cộng hai cộng bốn, bảy phần.']),
+        _c('y_toan', 'Chia rồi nhân ra từng số', '70 : 7 = 10   →   10 · 20 · 40',
+           buoc=3, soBuoc=3,
+           loi=['Bảy mươi chia bảy, mỗi phần mười. Ba số là mười, hai mươi, bốn mươi.']),
+        _c('day_so', 'Thử từng mắt xích', so=['10', '20', '40'], nhanHang='số',
+           chuPhu='20 = 2 × 10  ·  40 = 2 × 20  ·  cộng lại đúng 70.',
+           loi=['Thử từng mắt xích. Hai mươi đúng gấp đôi mười, bốn mươi đúng gấp đôi '
+                'hai mươi.']),
+        _c('de_toan', 'Mắt xích viết bằng chữ cũng dịch được',
+           de='Tổng 96. "Số thứ ba bằng TỔNG hai số kia"',
+           loi=['Mắt xích viết bằng chữ cũng dịch ra phần được.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='đổi hết về MỘT thước đo   —   rồi mới cộng phần',
+           thay='số ba = 1 + 2 = 3 phần → cả chuỗi 6 phần → 96 : 6 = 16 → 16 · 32 · 48',
+           loi=['Số thứ ba bằng một cộng hai, tức ba phần. Cả chuỗi sáu phần.',
+                'Chín mươi sáu chia sáu ra mười sáu. Ba số là mười sáu, ba hai, bốn '
+                'tám.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tong_tron_trong_tbc(b):
+    """L5·B30·M3 TBC là tấm màn che tổng — kéo màn trước, chia phần sau."""
+    return [
+        _c('bia', 'Có đề giấu luôn cái tổng', so_bai(b),
+           loi=['Đề không cho tổng. Nó cho trung bình cộng, và cái tổng nấp sau đó.']),
+        _c('de_toan', 'Đề bài',
+           de='Trung bình cộng của ba số là 24. Ba số theo tỉ  1 : 2 : 3',
+           loi=['Trung bình cộng của ba số là hai mươi tư. Ba số theo tỉ một, hai, '
+                'ba.']),
+        _c('y_toan', 'TBC là tấm màn che TỔNG — kéo màn bằng cầu ngược bài 21',
+           'tổng = TBC × số số hạng = 24 × 3 = 72', buoc=1, soBuoc=3,
+           loi=['Trung bình cộng là tấm màn che cái tổng. Kéo màn bằng cây cầu ngược '
+                'của bài hai mốt.',
+                'Hai mươi tư nhân ba, tổng là bảy mươi hai.']),
+        _c('y_toan', 'Kéo màn xong là bài tổng – tỉ quen thuộc',
+           '1 + 2 + 3 = 6 phần   →   72 : 6 = 12', buoc=2, soBuoc=3,
+           loi=['Kéo màn xong thì bên trong là bài quen. Sáu phần, mỗi phần mười hai.']),
+        _c('san_bang', 'Ba số hiện ra', so=[12, 24, 36], mucTB=True,
+           chuPhu='Cột giữa chạm đúng vạch trung bình — 24.',
+           loi=['Ba số là mười hai, hai mươi tư, ba mươi sáu.',
+                'Cột giữa chạm đúng vạch trung bình, vì tỉ một hai ba là dãy cách '
+                'đều.']),
+        _c('y_toan', 'Thử cả HAI tầng',
+           'tầng TBC: 72 : 3 = 24 ✓      ·      tầng tỉ: 12 : 24 : 36 = 1 : 2 : 3 ✓',
+           buoc=3, soBuoc=3,
+           loi=['Thử cả hai tầng. Bảy mươi hai chia ba đúng hai mươi tư.',
+                'Và ba số ấy rút gọn đúng thành một, hai, ba.']),
+        _c('de_toan', 'Nhận diện bài hai tầng',
+           de='đề có CẢ chữ "trung bình cộng" LẪN tỉ số',
+           loi=['Nhận ra bài hai tầng rất dễ. Đề có cả chữ trung bình cộng lẫn tỉ số.']),
+        _c('cong_thuc', 'Hai máy nối tiếp, không trộn',
+           congThuc='gặp TBC   →   kéo màn ra TỔNG trước, rồi mới chia phần',
+           thay='TBC 20 với tỉ 1 : 2 : 3 → tổng 60 → 6 phần → 10 · 20 · 30',
+           loi=['Con nhớ thứ tự. Gặp trung bình cộng thì kéo màn ra tổng trước, rồi mới '
+                'chia phần.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B30.M1': kb5_ti_gan_voi_thoi_diem,
+    'DL:KSN5Q1.B30.M2': kb5_chuoi_ti_ba_so,
+    'DL:KSN5Q1.B30.M3': kb5_tong_tron_trong_tbc,
     'DL:KSN5Q1.B29.M1': kb5_so_do_phan_tong_ti,
     'DL:KSN5Q1.B29.M2': kb5_thay_ao_ti,
     'DL:KSN5Q1.B29.M3': kb5_tong_ti_bay_cu_ao_moi,
