@@ -7740,6 +7740,238 @@ def kb3_rut_ve_don_vi(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 3 · chương 6 · Suy luận — năm bài
+# ═══════════════════════════════════════════════════════════════════════════
+# Năm dạng suy luận, mỗi dạng một mẹo riêng, không dạng nào suy được từ dạng kia:
+#   B22 đi lùi thì phải ĐẢO KÉP — đảo thứ tự VÀ đảo phép
+#   B23 giả sử tất cả cùng loại, rồi đổi dần
+#   B24 cây và khoảng: hỏi đường thẳng hay vòng tròn TRƯỚC khi cộng một
+#   B25 hai nhóm chồng nhau: phần giao bị đếm hai lần
+#   B26 hai loại lẫn lộn thì chưa được cộng — quy về một loại đã
+#
+# ⚠ Tên chương trong sách là "Thám tử cao cấp", mà `TU_CAM` cấm chữ ấy trong video.
+# Màn hình bên ngoài vẫn giữ tên chương của sách — chỉ LỜI VIDEO là nói thẳng.
+
+
+def kb3_di_lui_nhieu_tram(b):
+    """L3·C6① Đi lùi nhiều trạm — đảo kép."""
+    return [
+        _c('bia', 'Đi lùi qua nhiều trạm', so_bai(b),
+           loi=['Số bí mật đi qua ba trạm. Muốn tìm nó thì phải đi lùi cho đúng.']),
+        _c('de_toan', 'Đề bài',
+           de='Kho gạo bán một nửa, rồi bán thêm 5 kg, còn lại 15 kg. Lúc đầu có mấy kg?',
+           loi=['Kho gạo bán đi một nửa, rồi bán thêm năm ki lô gam, thì còn lại mười '
+                'lăm ki lô gam.',
+                'Hỏi lúc đầu kho có bao nhiêu ki lô gam.']),
+        _c('y_toan', 'Vẽ hành trình XUÔI ra đã',
+           'kho  →  bán một nửa  →  bán thêm 5 kg  →  còn 15 kg', buoc=1, soBuoc=3,
+           loi=['Con vẽ hành trình xuôi ra đã. Kho, bán một nửa, bán thêm năm ki lô '
+                'gam, còn mười lăm.']),
+        _c('y_toan', 'Đi lùi phải ĐẢO HAI THỨ',
+           'đảo THỨ TỰ trạm  ·  và đảo cả PHÉP ở từng trạm', buoc=2, soBuoc=3,
+           loi=['Đi lùi thì phải đảo hai thứ. Đảo thứ tự các trạm, và đảo luôn phép '
+                'tính ở từng trạm.',
+                'Thiếu một trong hai cú đảo là lạc đường ngay.']),
+        _c('y_toan', 'Lùi trạm cuối trước: gỡ "bán thêm 5"',
+           '15 + 5 = 20 (kg)', buoc=3, soBuoc=3,
+           loi=['Lùi trạm cuối trước. Gỡ phép bán thêm năm thì đảo thành cộng năm.',
+                'Mười lăm cộng năm bằng hai mươi ki lô gam.']),
+        _c('y_toan', 'Rồi lùi tiếp: 20 kg chính là MỘT NỬA kho',
+           '20 × 2 = 40 (kg)',
+           loi=['Rồi lùi tiếp. Hai mươi ki lô gam ấy chính là một nửa kho.',
+                'Gỡ phép chia đôi thì đảo thành nhân hai, được bốn mươi ki lô gam.']),
+        _c('y_toan', 'Chốt lại bằng chuyến đi XUÔI',
+           '40 bán nửa còn 20  ·  bán thêm 5 còn 15 ✓',
+           loi=['Chốt lại bằng chuyến đi xuôi. Bốn mươi bán nửa còn hai mươi.',
+                'Bán thêm năm thì còn mười lăm. Đúng đề.']),
+        _c('cong_thuc', 'Đi lùi là ĐẢO KÉP',
+           congThuc='đảo THỨ TỰ trạm  +  đảo PHÉP từng trạm',
+           thay='vì trạm vào sau cùng là trạm phải gỡ ra trước nhất',
+           loi=['Con nhớ hai cú đảo. Đảo thứ tự trạm và đảo phép từng trạm.',
+                'Vì trạm vào sau cùng là trạm phải gỡ ra trước nhất.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_ga_cho(b):
+    """L3·C6② Giả sử tất cả cùng một loại rồi đổi dần."""
+    return [
+        _c('bia', 'Đếm đầu, đếm chân', so_bai(b),
+           loi=['Biết số con và số chân, tìm mỗi loài mấy con.']),
+        _c('de_toan', 'Đề bài', de='Sân có gà và chó: 8 con, 22 cái chân. Mỗi loài mấy con?',
+           loi=['Trong sân có gà và chó. Tất cả tám con và hai mươi hai cái chân.',
+                'Hỏi có mấy con gà, mấy con chó.']),
+        _c('y_toan', 'Nhịp 1 — giả sử tất cả đều là GÀ',
+           '8 × 2 = 16 (chân)', buoc=1, soBuoc=4,
+           loi=['Nhịp một. Giả sử cả tám con đều là gà. Mỗi con hai chân thì được '
+                'mười sáu chân.']),
+        _c('y_toan', 'Nhịp 2 — so với số chân đếm thật',
+           '22 − 16 = 6 chân còn thừa, chưa có chủ', buoc=2, soBuoc=4,
+           loi=['Nhịp hai. Đếm thật thì có hai mươi hai chân.',
+                'Hai mươi hai trừ mười sáu, còn thừa sáu chân chưa có chủ.']),
+        _c('y_toan', 'Nhịp 3 — đổi một con gà thành chó',
+           'Mỗi lần đổi, đàn thêm đúng 4 − 2 = 2 chân', buoc=3, soBuoc=4,
+           loi=['Nhịp ba. Mỗi lần đổi một con gà giả thành chó thật, đàn thêm đúng '
+                'hai chân.',
+                'Vì chó bốn chân, gà hai chân, hơn nhau hai.']),
+        _c('y_toan', 'Nhịp 4 — chia cho phần chênh', '6 : 2 = 3 con chó',
+           buoc=4, soBuoc=4,
+           loi=['Nhịp bốn. Muốn tiêu hết sáu chân thừa thì phải đổi ba lần.',
+                'Vậy có ba con chó, và gà là tám trừ ba, còn năm con.']),
+        _c('y_toan', 'Thử lại cả hai điều đề cho',
+           '5 × 2 + 3 × 4 = 22 chân ✓   ·   5 + 3 = 8 con ✓',
+           loi=['Thử lại cả hai điều đề cho. Năm con gà mười chân, ba con chó mười '
+                'hai chân, cộng lại hai mươi hai.',
+                'Và tổng số con vẫn là tám.']),
+        _c('cong_thuc', 'Bốn nhịp của bài đếm chân',
+           congThuc='giả sử cùng loại ÍT chân  →  so chân thừa  →  chia phần chênh',
+           thay='vì mỗi cú đổi làm số chân nhích đúng bằng phần chênh giữa hai loài',
+           loi=['Con nhớ bốn nhịp. Giả sử tất cả là loài ít chân, tính chân giả vờ.',
+                'So với số chân thật xem thừa bao nhiêu, rồi chia cho phần chênh giữa '
+                'hai loài.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_ba_the_tran_cay(b):
+    """L3·C6③ Cây và khoảng — ba thế trận."""
+    return [
+        _c('bia', 'Cây và khoảng, ba kiểu đề', so_bai(b),
+           loi=['Cùng một bài trồng cây mà ba kiểu đề cho ba đáp số khác nhau.']),
+        _c('y_toan', 'Xòe bàn tay ra mà nhớ', '5 ngón tay  —  chỉ 4 kẽ',
+           buoc=1, soBuoc=3,
+           loi=['Con xòe bàn tay ra mà nhớ. Năm ngón tay nhưng chỉ có bốn kẽ.']),
+        _c('luoi_cham', 'Thế trận 1 — đường thẳng, trồng CẢ HAI đầu',
+           hang=1, cot=5,
+           chuPhu='5 cây thì chỉ có 4 khoảng ở giữa.',
+           loi=['Thế trận thứ nhất. Đường thẳng và trồng ở cả hai đầu.',
+                'Con đếm mà xem. Năm cây thì chỉ có bốn khoảng nằm giữa chúng.']),
+        _c('y_toan', 'Nên phải cộng thêm 1',
+           'Lối đi 12 m cách 3 m: 12 : 3 = 4 khoảng  →  5 cây', buoc=1, soBuoc=1,
+           loi=['Nên phải cộng thêm một. Lối đi mười hai mét, cách ba mét, chia ra '
+                'được bốn khoảng.',
+                'Bốn khoảng thì năm cây.']),
+        _c('y_toan', 'Thế trận 2 — một đầu đã có cột đèn',
+           'Mất một cây ở đầu ấy  →  cây = khoảng = 4', buoc=2, soBuoc=3,
+           loi=['Thế trận thứ hai. Một đầu lối đi đã có cột đèn, không trồng cây ở '
+                'đó.',
+                'Mất một cây, nên số cây đúng bằng số khoảng, là bốn.']),
+        _c('y_toan', 'Thế trận 3 — quanh hồ, vòng khép kín',
+           '24 m cách 4 m: 6 khoảng  →  cũng đúng 6 cây', buoc=3, soBuoc=3,
+           loi=['Thế trận thứ ba. Trồng quanh hồ, vòng khép kín lại.',
+                'Đi trọn một vòng thì chỗ cuối trùng đúng chỗ đầu, nên sáu khoảng '
+                'cũng đúng sáu cây.']),
+        _c('y_toan', 'Tiếng chuông cũng là cây',
+           'Đồng hồ điểm 6 tiếng, cách nhau 2 giây  →  5 khoảng  →  10 giây',
+           loi=['Tiếng chuông cũng là cây. Sáu tiếng chuông thì chỉ có năm khoảng, '
+                'nên nghe trọn mất mười giây.']),
+        _c('cong_thuc', 'Hỏi hai câu TRƯỚC khi cộng một',
+           congThuc='① đường thẳng hay vòng tròn?  ② hai đầu có trồng không?',
+           thay='chỉ đường thẳng đủ hai đầu mới cộng một, còn lại cây bằng khoảng',
+           loi=['Con hỏi hai câu trước khi cộng một. Đường thẳng hay vòng tròn, và '
+                'hai đầu có trồng không.',
+                'Chỉ đường thẳng đủ hai đầu mới cộng một. Còn lại thì cây bằng '
+                'khoảng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_hai_vong_giao_nhau(b):
+    """L3·C6④ Hai nhóm chồng nhau — phần giao bị đếm hai lần."""
+    return [
+        _c('bia', 'Khi hai nhóm chồng lên nhau', so_bai(b),
+           loi=['Hai nhóm có người đứng ở cả hai bên. Cộng thô là ra số vô lý.']),
+        _c('de_toan', 'Đề bài',
+           de='Lớp 35 bạn: 20 thích bóng đá, 18 thích cầu lông, 8 thích cả hai. Mấy bạn không thích môn nào?',
+           loi=['Lớp có ba mươi lăm bạn. Hai mươi bạn thích bóng đá, mười tám bạn '
+                'thích cầu lông.',
+                'Trong đó tám bạn thích cả hai môn. Hỏi mấy bạn không thích môn nào.']),
+        _c('y_toan', 'Cộng thô thì vỡ trần ngay',
+           '20 + 18 = 38, mà cả lớp chỉ có 35 bạn', buoc=1, soBuoc=3,
+           loi=['Cộng thô thì vỡ trần ngay. Hai mươi cộng mười tám bằng ba mươi tám.',
+                'Mà cả lớp chỉ có ba mươi lăm bạn. Con số ấy chính là dấu hiệu có '
+                'nhóm thích cả hai.']),
+        _c('so_do_ven', 'Vẽ hai vòng, điền vùng GIỮA trước',
+           tenA='bóng đá', tenB='cầu lông', caHai='8',
+           chuGiao='8 bạn thích cả hai môn đứng ở vùng giữa',
+           chuPhu='Luật vàng: điền giữa trước, hai cánh sau.',
+           loi=['Con vẽ hai vòng chồng nhau rồi điền vùng giữa trước.',
+                'Tám bạn thích cả hai môn đứng đúng ở chỗ hai vòng ôm nhau.']),
+        _c('so_do_ven', 'Hai cánh suy ra từ vùng giữa',
+           tenA='bóng đá', tenB='cầu lông', chiA='12', caHai='8', chiB='10',
+           chuGiao='20 − 8 = 12    và    18 − 8 = 10',
+           chuPhu='Chỉ bóng đá 12 bạn, chỉ cầu lông 10 bạn.',
+           loi=['Hai cánh suy ra từ vùng giữa. Hai mươi trừ tám còn mười hai bạn chỉ '
+                'thích bóng đá.',
+                'Mười tám trừ tám còn mười bạn chỉ thích cầu lông.']),
+        _c('y_toan', 'Nay cộng ba vùng thì không trùng nữa',
+           '12 + 8 + 10 = 30 bạn thích ít nhất một môn', buoc=3, soBuoc=3,
+           loi=['Nay cộng ba vùng thì không ai bị đếm hai lần nữa.',
+                'Mười hai cộng tám cộng mười, bằng ba mươi bạn thích ít nhất một '
+                'môn.']),
+        _c('y_toan', 'Còn lại là vùng ngoài cả hai vòng',
+           '35 − 30 = 5 bạn không thích môn nào',
+           loi=['Còn lại là vùng ngoài cả hai vòng. Ba mươi lăm trừ ba mươi, còn năm '
+                'bạn.']),
+        _c('cong_thuc', 'Đường tắt, và vì sao nó đúng',
+           congThuc='ít nhất một môn  =  A + B − cả hai',
+           thay='vì nhóm cả hai bị hai danh sách đếm hai lần, phải trả lại một lần',
+           loi=['Có đường tắt. Lấy nhóm thứ nhất cộng nhóm thứ hai rồi trừ nhóm cả '
+                'hai.',
+                'Vì nhóm cả hai bị hai danh sách đếm những hai lần, nên phải trả lại '
+                'một lần.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_quy_ve_mot_loai(b):
+    """L3·C6⑤ Hai loại lẫn lộn thì chưa được cộng."""
+    return [
+        _c('bia', 'Quy về một loại rồi mới cộng', so_bai(b),
+           loi=['Hai loại lẫn lộn thì chưa được cộng. Phải đổi hết về một loại đã.']),
+        _c('de_toan', 'Đề bài',
+           de='1 quả dưa đổi được 3 quả cam. Hỏi 2 quả dưa và 4 quả cam đổi được mấy quả cam?',
+           loi=['Một quả dưa đổi được ba quả cam.',
+                'Hỏi hai quả dưa và bốn quả cam đổi được tất cả bao nhiêu quả cam.']),
+        _c('y_toan', 'Cân thăng bằng cho phép ta THAY',
+           'Gặp 1 dưa ở đâu cũng được nhấc ra, đặt 3 cam vào', buoc=1, soBuoc=3,
+           loi=['Cân thăng bằng nói một quả dưa nặng bằng ba quả cam.',
+                'Nghĩa là gặp một quả dưa ở đâu, ta cũng được nhấc nó ra và đặt ba '
+                'quả cam vào thay.']),
+        _c('luoi_cham', 'Thay 2 quả dưa bằng cam', hang=2, cot=3,
+           chuPhu='Mỗi quả dưa thành 3 quả cam, hai quả dưa thành 6 quả cam.',
+           loi=['Thay hai quả dưa bằng cam. Mỗi quả thành ba, nên hai quả thành sáu '
+                'quả cam.']),
+        _c('y_toan', 'Giờ mới được cộng — vì đã cùng một loại',
+           '6 + 4 = 10 (quả cam)', buoc=2, soBuoc=3,
+           loi=['Giờ mới được cộng, vì tất cả đã cùng một loại.',
+                'Sáu cộng bốn bằng mười quả cam.']),
+        _c('y_toan', 'Chỗ hay hỏng', 'Cộng thẳng 2 + 4 = 6 là cộng dưa với cam',
+           loi=['Đây là chỗ hay hỏng. Cộng thẳng hai với bốn là đang cộng dưa với '
+                'cam.',
+                'Hai thứ khác nhau thì không cộng được.']),
+        _c('y_toan', 'Phép thay chạy được cả hai chiều',
+           'Có 6 quả cam đổi mấy quả dưa?  →  6 : 3 = 2 quả dưa',
+           buoc=3, soBuoc=3,
+           loi=['Phép thay chạy được cả hai chiều. Có sáu quả cam thì đổi được mấy '
+                'quả dưa.',
+                'Lấy sáu chia ba, được hai quả dưa.']),
+        _c('cong_thuc', 'Gặp hai loại lẫn lộn',
+           congThuc='đổi hết về MỘT loại (thường là loại nhỏ)  →  rồi mới tính',
+           thay='vì cộng hai thứ khác loại thì con số ra không mang nghĩa gì',
+           loi=['Con nhớ nghi thức. Đổi hết về một loại, thường là loại nhỏ, rồi mới '
+                'tính.',
+                'Vì cộng hai thứ khác loại thì con số ra không mang nghĩa gì cả.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN3.B01': kb3_thap_nghin,   'DL:KSN3.B02': kb3_hai_cua,
     'DL:KSN3.B03': kb3_duoi_dat_ve,  'DL:KSN3.B04': kb3_dem_nguoc_trang,
@@ -7757,6 +7989,10 @@ BO = {
     'DL:KSN3.B17': kb3_hai_buoc_tinh,   'DL:KSN3.B18': kb3_hon_hay_gap,
     'DL:KSN3.B19': kb3_them_bot_bang_nhau, 'DL:KSN3.B20': kb3_toan_tuoi,
     'DL:KSN3.B21': kb3_rut_ve_don_vi,
+    # ══ LỚP 3 · chương 6 · Suy luận — năm bài ══
+    'DL:KSN3.B22': kb3_di_lui_nhieu_tram, 'DL:KSN3.B23': kb3_ga_cho,
+    'DL:KSN3.B24': kb3_ba_the_tran_cay,   'DL:KSN3.B25': kb3_hai_vong_giao_nhau,
+    'DL:KSN3.B26': kb3_quy_ve_mot_loai,
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
     'DL:KSN4.B19': kb_b19, 'DL:KSN4.B20': kb_b20,
@@ -7907,6 +8143,11 @@ def soi(ds: list[dict], bai_id: str) -> list[str]:
             # Mọi con số bé có thể ĐẾM RA từ hình này.
             dem = {h, k, k2, h * k, h * k2, h * (k + k2), k + k2,
                    tong, moi, tong // moi if moi else 0, tong % moi if moi else 0}
+            # SỐ KHOẢNG cũng đếm được từ hình: một hàng n chấm thì nhìn thấy n trừ
+            # một cái khe giữa chúng. Cả bài "cây và khoảng" đứng ở chỗ ấy, và nó là
+            # thứ bé ĐẾM ĐƯỢC chứ không phải suy ra — nên phải cho vào danh sách,
+            # không thì cổng báo chết oan đúng cái hình phục vụ bài tốt nhất.
+            dem |= {x - 1 for x in (h, k, k2, tong) if x and x > 1}
             dem |= {0, 1, 2}          # số đếm chung chung, không phải khai gì
             # Màn BẪY cố ý nhắc lại một con số SAI để bé thấy nó sai. Số ấy dĩ nhiên
             # không đếm ra được từ hình — đó là cả điểm của màn. Phải khai rõ bằng

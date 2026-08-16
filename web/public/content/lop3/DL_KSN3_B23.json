@@ -26,25 +26,8 @@
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Nhịp 1 — GIẢ VỜ: giả sử cả 10 con đều là GÀ → số chân sẽ là $10  \\times  2 = 20$ chân."
-   },
-   {
-    "id": "K2",
-    "text": "Nhịp 2 — SO VỚI SỰ THẬT: đếm thật được 32 chân → thừa ra $32 - 20 = 12$ chân chưa có chủ."
-   },
-   {
-    "id": "K3",
-    "text": "Nhịp 3 — ĐỔI DẦN: mỗi lần đổi một \"gà giả\" thành CHÓ thật, đàn thêm đúng $4 - 2 = 2$ chân. Muốn tiêu hết 12 chân thừa: $12 : 2 = 6$ con chó."
-   },
-   {
-    "id": "K4",
-    "text": "Nhịp 4 — CHỐT & THỬ: gà: $10 - 6 = 4$ con. Thử: $4  \\times  2 + 6  \\times  4 = 8 + 24 = 32$ chân ✓, đầu $4 + 6 = 10$ ✓. (Giả sử tất cả là CHÓ cũng phá được án — thiếu 8 chân, mỗi cú đổi bớt 2 → 4 gà. Hai cửa vào một hiện trường!)"
-   }
-  ],
-  "mantra": "GIẢ SỬ tất cả là loài ÍT chân → tính chân giả vờ → THỪA bao nhiêu so với thật → chia cho phần chênh mỗi cú đổi (thường là 2) → ra số con NHIỀU chân. Chốt án bằng phép thử hai cửa: đủ chân VÀ đủ đầu!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
@@ -57,43 +40,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "narration": "Trong sân có gà và chó, tất cả có 8 con và 22 cái chân. Hỏi có mấy con gà, mấy con chó?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
    {
     "id": "S6",
     "kind": "trap",
@@ -401,28 +347,7 @@
   "homeActivity": "Chuông báo động \"12 chó trong 10 đầu\" là bài học kiểm tra tính hợp lý — mọi đáp số phải chào hỏi số ĐẦU trước khi được ghi vào vở.",
   "watchFor": "NÊN: đổi bối cảnh đa dạng (xe, ghế, thuyền) để con thấy cấu trúc chung. KHÔNG NÊN: cho tổng chân lẻ với gà - chó (vô nghiệm) trừ khi muốn đố mẹo — và nếu đố, hãy để con TỰ phát hiện điều vô lý!"
  },
- "figureSpec": [
-  {
-   "id": "L3H_MO23",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L3H_MO23.png",
-   "caption": "Sân có gà và chó: 8 con, 22 chân",
-   "sha256_16": "f06539708c4cd690",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L3H_GI23",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L3H_GI23.png",
-   "caption": "Giả vờ cả mười con đều là gà: đếm được 20 chân, thiếu so với sự thật",
-   "sha256_16": "9362c787e068b25e",
-   "mucGoc": "khamPha"
-  }
- ],
+ "figureSpec": [],
  "hatMam": "Lớp 2, ở Bài 23, con phá vụ án gà - chó bằng cách vẽ mỗi con 2 chân rồi CHIA ĐÔI số chân thừa để gắn thêm cho chó. Ý tưởng ấy giữ nguyên — hôm nay chỉ thay bút vẽ bằng bốn phép tính, để xử được cả trang trại to!",
  "duongLui": {
   "ve": [
@@ -434,5 +359,8 @@
   "canCu": "sach",
   "lopDuoi": 2,
   "nhan": "Học lại bài lớp 2"
+ },
+ "video": {
+  "giang": "DL_KSN3_B23_giang.mp4"
  }
 }
