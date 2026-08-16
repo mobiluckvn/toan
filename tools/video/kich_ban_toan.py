@@ -11056,7 +11056,146 @@ def kb5_tbc_day_cach_deu(b):
     ]
 
 
+def kb5_can_nhich_truoc(b):
+    """L5·B22·M1 Hơn TBC CẢ NHÓM — cân nhích trước, cộng phần hơn sau."""
+    return [
+        _c('bia', 'Khi mốc so sánh CHƯA có sẵn', so_bai(b),
+           loi=['Đề so với một cái mốc mà chính nó chưa có. Phải dựng mốc ấy trước.']),
+        _c('de_toan', 'Đề bài',
+           de='Ba ngày đầu bán 22 · 31 · 25 chiếc.\nNgày tư bán HƠN TBC CẢ BỐN NGÀY 9 chiếc',
+           loi=['Ba ngày đầu bán hai mươi hai, ba mươi mốt, hai mươi lăm chiếc.',
+                'Ngày tư bán hơn trung bình cộng của cả bốn ngày là chín chiếc.']),
+        _c('san_bang', 'Ba ngày đầu, mức trung bình là 26', so=[22, 31, 25],
+           mucTB=True, chuPhu='Nhưng đề so với mốc của CẢ BỐN ngày, chưa phải vạch này.',
+           loi=['Ba ngày đầu có mức trung bình là hai mươi sáu. Nhưng đề so với mốc '
+                'của cả bốn ngày.']),
+        _c('y_toan', 'Nên KHÔNG được cộng 9 thẳng vào 26',
+           'thêm ngày tư vào thì cân sẽ NHÍCH — mốc là vạch MỚI, chưa biết',
+           buoc=1, soBuoc=3,
+           loi=['Nên không được cộng chín thẳng vào hai mươi sáu. Thêm ngày tư vào thì '
+                'cân sẽ nhích lên.']),
+        _c('y_toan', 'Phần hơn của người mới, những người CŨ chia nhau gánh',
+           '9 : 3 = 3 nấc   →   TBC mới = 26 + 3 = 29', buoc=2, soBuoc=3,
+           loi=['Phần hơn ấy chảy xuống ba ngày cũ chia nhau gánh. Chín chia ba được '
+                'ba nấc.',
+                'Nên mốc mới bằng hai mươi sáu cộng ba, là hai mươi chín.']),
+        _c('y_toan', 'Nhích xong MỚI cộng phần hơn', 'số mới = 29 + 9 = 38',
+           buoc=3, soBuoc=3,
+           loi=['Nhích xong mới cộng phần hơn. Hai mươi chín cộng chín, được ba mươi '
+                'tám.']),
+        _c('san_bang', 'Vạch đã nhích lên 29', so=[22, 31, 25, 38], mucTB=True,
+           chuPhu='Cột ngày tư nhô lên trên vạch đúng 9.',
+           loi=['Vạch đã nhích lên hai mươi chín, và cột ngày tư nhô lên trên vạch '
+                'đúng chín.']),
+        _c('de_toan', 'Một bẫy rình sẵn ở đây',
+           de='"Chia đều thì chia cho cả 4 chứ — 9 : 4 = 2,25 …"',
+           loi=['Một bẫy rình sẵn. Nhiều bạn chia chín cho cả bốn, ra số lẻ rồi thấy '
+                'ngờ ngợ.']),
+        _c('cong_thuc', 'Người mới KHÔNG tự gánh phần hơn của chính mình',
+           congThuc='cân NHÍCH trước   →   rồi mới CỘNG phần hơn',
+           thay='chia cho số người CŨ, không chia cho cả nhóm',
+           loi=['Người mới không tự gánh phần hơn của chính mình, nên chia cho số '
+                'người cũ.',
+                'Con nhớ hai nhịp. Cho cân nhích trước, rồi mới cộng phần hơn.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_can_dung_im(b):
+    """L5·B22·M2 Góp đúng bằng TBC cả nhóm — cân đứng im, số mới bằng TBC cũ."""
+    return [
+        _c('bia', 'Một ca trông khó mà đáp có sẵn', so_bai(b),
+           loi=['Ca này đọc lên tưởng rắc rối, nhưng đáp số nằm ngay trong đề.']),
+        _c('de_toan', 'Đề bài',
+           de='TBC kẹo của 3 bạn là 24 viên.\nBạn thứ tư góp ĐÚNG BẰNG TBC của cả 4 bạn',
+           loi=['Trung bình cộng kẹo của ba bạn là hai mươi tư viên.',
+                'Bạn thứ tư góp đúng bằng mức trung bình của cả bốn bạn.']),
+        _c('san_bang', 'Ba bạn cao thấp khác nhau', so=[20, 24, 28], mucTB=True,
+           chuPhu='Nhưng mức trung bình của họ là 24.',
+           loi=['Ba bạn cao thấp khác nhau, nhưng mức trung bình của họ là hai mươi '
+                'tư.']),
+        _c('y_toan', 'Bạn mới đứng ĐÚNG trên vạch thì lệch bằng 0',
+           'không kéo ai lên, cũng không dìm ai xuống', buoc=1, soBuoc=3,
+           loi=['Bạn mới đứng đúng trên vạch, nên phần lệch của bạn ấy bằng không.',
+                'Không kéo ai lên, cũng không dìm ai xuống.']),
+        _c('san_bang', 'Thêm một cột đúng 24 — vạch KHÔNG nhúc nhích',
+           so=[20, 24, 28, 24], mucTB=True,
+           chuPhu='Tổng tăng đúng một suất, số người tăng 1 — chia lại vẫn thế.',
+           loi=['Thêm một cột đúng hai mươi tư thì vạch không nhúc nhích.']),
+        _c('y_toan', 'Nên số mới bằng đúng TBC CŨ', 'bạn thứ tư góp 24 viên',
+           buoc=2, soBuoc=3,
+           loi=['Nên số mới bằng đúng mức trung bình cũ. Bạn thứ tư góp hai mươi tư '
+                'viên.']),
+        _c('y_toan', 'Thử lại cho chắc', '72 + 24 = 96   ·   96 : 4 = 24  ✓',
+           buoc=3, soBuoc=3,
+           loi=['Thử lại. Bảy mươi hai cộng hai mươi tư được chín mươi sáu, chia bốn '
+                'đúng hai mươi tư.']),
+        _c('de_toan', 'Nhận ra ca này là được tặng điểm',
+           de='Nhóm 5 bạn có TBC 30. Bạn thứ sáu góp đúng bằng TBC cả 6 bạn',
+           loi=['Nhận ra ca này là được tặng điểm. Nhóm năm bạn có mức trung bình ba '
+                'mươi.']),
+        _c('cong_thuc', 'Đọc thấy cụm ấy là trả lời được ngay',
+           congThuc='góp ĐÚNG BẰNG TBC cả nhóm   →   số mới = TBC CŨ',
+           thay='đáp là 30, khỏi phải tính thêm gì',
+           loi=['Đọc thấy cụm góp đúng bằng mức trung bình của cả nhóm là trả lời được '
+                'ngay.',
+                'Đáp là ba mươi. Ai lôi máy phức tạp ra quay là vừa mất giờ vừa dễ '
+                'sai.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tbc_cua_ai(b):
+    """L5·B22·M3 Hai kiểu phát biểu — gạch chân TBC CỦA AI rồi mới chọn đường."""
+    return [
+        _c('bia', 'Hai đề khác nhau vài chữ, hai đáp khác hẳn', so_bai(b),
+           loi=['Hai đề chỉ khác nhau vài chữ. Mà đáp số thì khác hẳn.']),
+        _c('de_toan', 'Đề bài',
+           de='Ngày tư bán hơn TBC của BA NGÀY ĐẦU (22 · 31 · 25) là 9 chiếc',
+           loi=['Ngày tư bán hơn trung bình cộng của ba ngày đầu là chín chiếc.']),
+        _c('y_toan', 'Nhịp đầu tiên — gạch chân cụm TBC CỦA AI',
+           'CẢ BỐN NGÀY  (có ngày tư)      hay      BA NGÀY ĐẦU  (không có ngày tư)',
+           buoc=1, soBuoc=3,
+           loi=['Nhịp đầu tiên, gạch chân cụm trung bình cộng của ai.',
+                'Nhóm ấy có tính cả ngày tư hay không. Đó là chỗ quyết định.']),
+        _c('san_bang', 'Ở đề này, mốc là vạch của BA NGÀY ĐẦU', so=[22, 31, 25],
+           mucTB=True, chuPhu='Mốc 26 CÓ SẴN — ngày tư không nằm trong nhóm ấy.',
+           loi=['Ở đề này nhóm không có ngày tư, nên mốc hai mươi sáu là có sẵn.']),
+        _c('y_toan', 'Mốc có sẵn thì CỘNG THẲNG, không chia chác gì',
+           'số mới = 26 + 9 = 35', buoc=2, soBuoc=3,
+           loi=['Mốc có sẵn thì cộng thẳng, không phải chia chác gì.',
+                'Hai mươi sáu cộng chín, được ba mươi lăm.']),
+        _c('y_toan', 'Còn kiểu kia thì mốc CHƯA có, phải cho cân nhích',
+           'hơn TBC CẢ BỐN NGÀY:   26 + 9 : 3 = 29   rồi   29 + 9 = 38',
+           buoc=3, soBuoc=3,
+           loi=['Còn kiểu kia thì mốc chưa có, phải cho cân nhích trước rồi mới cộng.',
+                'Đường ấy ra ba mươi tám.']),
+        _c('day_so', 'Cùng con số 9, mà hai đáp khác nhau', so=['35', '38'],
+           nhanHang='đáp', chuPhu='Chỉ vì cụm "TBC của ai" khác nhau.',
+           loi=['Cùng con số chín, mà hai đáp khác nhau, chỉ vì cụm trung bình cộng '
+                'của ai.']),
+        _c('de_toan', 'Còn một kiểu nữa, làm cầu sang bài sau',
+           de='Thêm số thứ tư thì TBC cả 4 số TĂNG THÊM 3. Tổng 3 số cũ là 90',
+           loi=['Còn một kiểu nữa. Thêm số thứ tư thì mức trung bình của cả bốn số '
+                'tăng thêm ba.']),
+        _c('cong_thuc', 'Kiểu này đi bằng cầu TỔNG',
+           congThuc='TBC cũ 30 → TBC mới 33 → tổng mới 132 → số thứ tư = 132 − 90 = 42',
+           thay='gạch chân TBC CỦA AI trước, rồi mới chọn đường',
+           loi=['Kiểu này đi bằng cầu tổng. Mức trung bình cũ là ba mươi, mới là ba '
+                'mươi ba.',
+                'Tổng mới là một trăm ba mươi hai, trừ tổng cũ chín mươi, được bốn '
+                'mươi hai.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B22.M1': kb5_can_nhich_truoc,
+    'DL:KSN5Q1.B22.M2': kb5_can_dung_im,
+    'DL:KSN5Q1.B22.M3': kb5_tbc_cua_ai,
     'DL:KSN5Q1.B21.M1': kb5_diem_can,
     'DL:KSN5Q1.B21.M2': kb5_luat_bu_tru,
     'DL:KSN5Q1.B21.M3': kb5_tbc_day_cach_deu,

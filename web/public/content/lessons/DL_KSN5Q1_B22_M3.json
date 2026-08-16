@@ -34,24 +34,7 @@
   "kidText": "Hơn trung bình CẢ NHÓM khác hẳn hơn trung bình CÁC BẠN CÒN LẠI. Con gạch chân xem đề đang nói trung bình của ai."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Kiểu A — \"hơn TBC CẢ NHÓM k\" (nhóm tính cả số mới): mốc là điểm cân MỚI chưa biết → máy cân-nhích: TBC mới = TBC cũ + k : n_cũ; số mới = TBC mới + k."
-   },
-   {
-    "id": "K2",
-    "text": "Kiểu B — \"hơn TBC CÁC SỐ CÒN LẠI k\" (nhóm KHÔNG tính số mới): mốc là TBC CŨ có sẵn → CỘNG THẲNG: số mới = TBC cũ + k. Không chia chác gì."
-   },
-   {
-    "id": "K3",
-    "text": "Nghi thức sống còn: gạch chân cụm \"TBC CỦA AI\" — CẢ NHÓM hay CÁC SỐ CÒN LẠI — rồi mới chọn máy; hai đề chỉ khác vài chữ mà hai đáp khác hẳn (38 vs 35)."
-   },
-   {
-    "id": "K4",
-    "text": "Cầu nối hai kiểu: số mới luôn hơn TBC MỚI đúng (mức kéo cân × số cũ) — đó là cửa vào bài ngược của Bài 23."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HAI TẤM BIỂN CHỈ ĐƯỜNG GIỐNG NHAU NHƯ ĐÚC. Cáo Đề dựng hai biển cạnh nhau: biển một \"ngày tư hơn TBC của CẢ BỐN NGÀY 9 chiếc\", biển hai \"ngày tư hơn TBC của BA NGÀY ĐẦU 9 chiếc\" — chỉ tráo vài chữ! Nhưng hai biển dẫn hai con đường: biển CẢ BỐN NGÀY — mốc là cân MỚI, phải cho cân nhích đã (26 + 3 = 29) rồi cộng 9: ra 38. Biển BA NGÀY ĐẦU — mốc là cân CŨ nằm sẵn đó: cộng thẳng 26 + 9 = 35, không chia chác gì! Nghi thức trước ngã ba: rút bút GẠCH CHÂN \"TBC CỦA AI\" — cả nhóm hay các số còn lại — gạch xong mới bước.",
   "canonicalExamples": [
    {
@@ -82,13 +65,8 @@
     "counterExample": "Cùng số liệu, hai đáp 38 và 35 — lệch 3 đúng bằng mức cân nhích bị bỏ quên."
    }
   ],
-  "vocabulary": [
-   "hai tấm biển giống nhau như đúc",
-   "mốc cân mới / mốc có sẵn",
-   "gạch chân TBC của ai",
-   "ngã ba chọn đường"
-  ],
-  "mantra": "GẠCH CHÂN \"TBC CỦA AI\" — RỒI MỚI CHỌN ĐƯỜNG!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -110,54 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Ngày thứ tư bán hơn TBC của BA NGÀY ĐẦU (22; 31; 25) là 9 chiếc. Hỏi ngày thứ tư bán bao nhiêu?",
-    "display": {
-     "type": "story_panel",
-     "caption": "hai biển — một đáp??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để soi hai biển!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
-    ],
-    "narration": "Rút bút gạch chân TBC CỦA AI! Biển một: CẢ BỐN NGÀY — nhóm tính cả ngày tư: mốc là cân MỚI, phải cho cân nhích đã — hai sáu cộng chín-chia-ba bằng hai chín, rồi cộng chín: BA MƯƠI TÁM. Biển hai: BA NGÀY ĐẦU — nhóm KHÔNG tính ngày tư: mốc hai sáu nằm sẵn — cộng thẳng chín: BA MƯƠI LĂM, không chia chác gì! Hai biển — hai đường — hai đáp.",
-    "display": {
-     "type": "two_signs_interactive",
-     "spec": {
-      "signA": {
-       "text": "cả BỐN ngày",
-       "path": "26 + 9:3 = 29 → 38"
-      },
-      "signB": {
-       "text": "BA ngày đầu",
-       "path": "26 + 9 = 35"
-      }
-     }
-    },
-    "interaction": {
-     "type": "underline_and_route",
-     "answerKey": {
-      "values": [
-       38,
-       35
-      ]
-     },
-     "successMessage": "Gạch chân xong: 38 và 35 — hai đề khác nhau!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -178,37 +108,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K4"
-    ],
-    "narration": "Kiểu phát biểu thứ ba làm cầu sang bài sau: \"thêm số thứ tư thì TBC cả bốn số TĂNG THÊM 3\". Đi bằng cầu tổng: TBC mới ba ba — tổng mới ba ba nhân bốn là một trăm ba hai; tổng cũ chín mươi — số thứ tư BỐN MƯƠI HAI. Ngắm kỹ: bốn hai hơn TBC mới đúng chín — bằng mức kéo cân 3 nhân 3 số cũ! Sợi dây này chính là cửa vào bài ngược của Bài hai ba.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "TBC mới 33 → tổng 132; cũ 90 → số 4 = 42",
-      "42 − 33 = 9 = 3 (kéo cân) × 3 (số cũ)",
-      "→ cửa vào bài ngược Bài 23"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: gạch chân TBC của ai — rồi mới chọn đường!",
-    "display": {
-     "type": "mantra_card",
-     "text": "GẠCH CHÂN \"TBC CỦA AI\"!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -502,108 +401,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B22.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "hai biển — một đáp??",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "hơn TBC của CẢ BỐN NGÀY 9 chiếc",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B22_M3_F1.png",
-   "sha256_16": "da529df6714b205b"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Hai kiểu phát biểu: gạch chân \"TBC CỦA AI\" rồi mới chọn đường",
-    "steps": [
-     {
-      "text": "TBC mới 33 → tổng 132; cũ 90 → số 4 = 42"
-     },
-     {
-      "text": "42 − 33 = 9 = 3 (kéo cân) × 3 (số cũ)"
-     },
-     {
-      "text": "→ cửa vào bài ngược Bài 23"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B22_M3_F2.png",
-   "sha256_16": "1fb36b610c0b30c5"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Kiểu A — \"hơn TBC CẢ NHÓM k\" (nhóm tính cả số mới)",
-      "text": "mốc là điểm cân MỚI chưa biết → máy cân-nhích: TBC mới = TBC cũ + k : n_cũ; số mới = TBC mới + k.",
-      "tone": "navy"
-     },
-     {
-      "label": "Kiểu B — \"hơn TBC CÁC SỐ CÒN LẠI k\" (nhóm KHÔNG tính số mới)",
-      "text": "mốc là TBC CŨ có sẵn → CỘNG THẲNG: số mới = TBC cũ + k. Không chia chác gì.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "GẠCH CHÂN \"TBC CỦA AI\" — RỒI MỚI CHỌN ĐƯỜNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B22_M3_F3.png",
-   "sha256_16": "34e739e48ba5856f"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "HAI ĐỀ CHỈ KHÁC VÀI CHỮ — HAI ĐÁP KHÁC HẲN",
-    "neutral": true,
-    "wrong": {
-     "head": "hơn TBC CẢ BỐN ngày 9",
-     "steps": [
-      "cân nhích: 26 + 9 : 3 = 29"
-     ],
-     "result": "ngày tư = 38"
-    },
-    "right": {
-     "head": "hơn TBC BA ngày đầu 9",
-     "steps": [
-      "mốc có sẵn: 26"
-     ],
-     "result": "ngày tư = 35"
-    },
-    "verdict": "Gạch chân \"TBC CỦA AI\" rồi mới chọn đường"
-   },
-   "caption": "Kiểu A phải cân nhích · kiểu B cộng thẳng vào mốc có sẵn",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B22_M3_F4.png",
-   "sha256_16": "a83a9c2f6dcdbac3"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B22"
@@ -615,5 +413,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Hai kiểu phát biểu: gạch chân \"TBC CỦA AI\" rồi mới chọn đường"
+ "titleDay": "Hai kiểu phát biểu: gạch chân \"TBC CỦA AI\" rồi mới chọn đường",
+ "video": {
+  "giang": "DL_KSN5Q1_B22_M3_giang.mp4"
+ }
 }

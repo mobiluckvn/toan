@@ -32,20 +32,7 @@
   "kidText": "Bạn mới góp đúng bằng mức trung bình thì cân đứng im — mức trung bình không đổi, khỏi phải tính gì thêm."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Số mới góp đúng bằng TBC CẢ NHÓM (tính cả nó): người mới đứng ĐÚNG điểm cân — TBC không đổi; số mới = TBC cũ."
-   },
-   {
-    "id": "K2",
-    "text": "Vì sao (luật bù trừ Bài 21): người mới lệch 0 quanh điểm cân — không kéo ai lên, không dìm ai xuống; tổng tăng đúng một suất TBC, số người tăng 1 — phép chia cho lại đúng TBC cũ."
-   },
-   {
-    "id": "K3",
-    "text": "Nhận diện nhanh: đọc thấy \"góp bằng / đúng bằng mức trung bình của cả nhóm\" — trả lời ngay bằng TBC cũ, dành thời gian cho câu khó."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: NGƯỜI MỚI ĐỨNG ĐÚNG ĐIỂM CÂN. Nhóm ba bạn TBC 24 viên — bàn cân thăng bằng tại vạch 24. Dũng bước vào và góp ĐÚNG BẰNG mức trung bình của cả bốn bạn: Dũng đặt chân ngay TRÊN VẠCH CÂN — không nghiêng trái, không nghiêng phải, lệch bằng KHÔNG! Cân đứng im: TBC vẫn 24, và Dũng góp đúng 24 viên. Kiểm bằng máy Bài trước: phần hơn k = 0, chia kiểu gì cũng ra 0 — cân nhích 0 nấc. Đây là ca TẶNG ĐIỂM của mọi đề thi: nhận diện đúng là trả lời trong ba giây.",
   "canonicalExamples": [
    {
@@ -70,13 +57,8 @@
     "counterExample": "($72 + 24$) : $4 = 24$ — thêm người mà TBC y nguyên."
    }
   ],
-  "vocabulary": [
-   "đứng đúng điểm cân",
-   "lệch bằng không",
-   "cân đứng im",
-   "ca tặng điểm"
-  ],
-  "mantra": "ĐỨNG ĐÚNG VẠCH — CÂN ĐỨNG IM!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -98,46 +80,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "TBC số kẹo của ba bạn An, Bình, Cường là 24 viên. Bạn Dũng vào nhóm và góp ĐÚNG BẰNG mức trung bình của cả bốn bạn. Hỏi Dũng góp bao nhiêu viên?",
-    "display": {
-     "type": "story_panel",
-     "caption": "góp bằng TBC — máy nào đây?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để nhìn vạch cân!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Dũng đặt chân ĐÚNG vạch 24 — không nghiêng trái, không nghiêng phải: lệch bằng KHÔNG! Cân đứng im — TBC vẫn hai tư, Dũng góp đúng HAI TƯ viên. Vì sao? Tổng tăng đúng một suất TBC, số người tăng một — phép chia trả lại đúng TBC cũ: bảy hai cộng hai tư, chia bốn, vẫn hai tư! Máy kéo cân cũng gật: phần hơn bằng không, nhích không nấc.",
-    "display": {
-     "type": "stand_on_mark_interactive",
-     "spec": {
-      "tbc": 24,
-      "newcomer": "Dũng",
-      "offset": 0,
-      "check": "(72 + 24) : 4 = 24"
-     }
-    },
-    "interaction": {
-     "type": "place_on_mark",
-     "answerKey": {
-      "value": 24
-     },
-     "successMessage": "Lệch 0 → cân đứng im → Dũng góp 24 viên!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -153,37 +95,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 34,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Nhận diện ca tặng điểm: đọc thấy cụm \"góp ĐÚNG BẰNG mức trung bình của cả nhóm\" — bút khoanh, miệng trả lời: BẰNG TBC CŨ, ba giây xong! Đề thi cài ca này để thưởng người đọc kỹ: ai lôi máy phức tạp ra quay là vừa mất giờ vừa dễ trượt. Nạp máy sẵn hai viên gạch: TBC của 22, 31, 25 là hai sáu; TBC bốn số hai chín thì tổng một trăm mười sáu.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "thấy 'bằng TBC cả nhóm' → đáp = TBC cũ",
-      "3 giây — dành sức cho câu khó",
-      "gạch nền: 78 : 3 = 26 · 29 × 4 = 116"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: đứng đúng vạch — cân đứng im!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐỨNG ĐÚNG VẠCH — CÂN ĐỨNG IM!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -471,102 +382,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B22.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "góp bằng TBC — máy nào đây?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "phần hơn... ơ, phần hơn bằng mấy nhỉ?",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Câu hỏi mở bài",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B22_M2_F1.png",
-   "sha256_16": "b2eebe2f39edcaf5"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Bằng TBC cả nhóm: chiếc cân đứng im",
-    "steps": [
-     {
-      "text": "thấy 'bằng TBC cả nhóm' → đáp = TBC cũ"
-     },
-     {
-      "text": "3 giây — dành sức cho câu khó"
-     },
-     {
-      "text": "gạch nền: 78 : 3 = 26 · 29 × 4 = 116"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B22_M2_F2.png",
-   "sha256_16": "6ac313ad77150e0f"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Số mới góp đúng bằng TBC CẢ NHÓM (tính cả nó)",
-      "text": "người mới đứng ĐÚNG điểm cân — TBC không đổi; số mới = TBC cũ.",
-      "tone": "navy"
-     },
-     {
-      "label": "Vì sao (luật bù trừ Bài 21)",
-      "text": "người mới lệch 0 quanh điểm cân — không kéo ai lên, không dìm ai xuống; tổng tăng đúng một suất TBC, số người tăng 1 — phép chia cho lại đúng TBC cũ.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "ĐỨNG ĐÚNG VẠCH — CÂN ĐỨNG IM!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B22_M2_F3.png",
-   "sha256_16": "e6e25b83abdddd9f"
-  },
-  {
-   "archetype": "balance_scale",
-   "params": {
-    "title": "GÓP ĐÚNG BẰNG TBC CẢ NHÓM — CHIẾC CÂN ĐỨNG IM",
-    "left": {
-     "text": "3 bạn cũ · TBC 24 viên",
-     "weight": 1
-    },
-    "right": {
-     "text": "Dũng góp 24 viên",
-     "weight": 1
-    },
-    "verdict": "Người mới đứng đúng điểm cân → TBC không đổi = 24",
-    "note": "Thử: (72 + 24) : 4 = 24 ✓ — khỏi tính gì thêm"
-   },
-   "caption": "Cân thăng bằng: thêm người đúng mức trung bình thì không kéo lệch",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B22_M2_F4.png",
-   "sha256_16": "556c51504de01ed9"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B22"
@@ -577,5 +393,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B22_M2_giang.mp4"
  }
 }
