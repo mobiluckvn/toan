@@ -39,24 +39,7 @@
   "kidText": "Con tìm được số khi biết tổng hoặc hiệu của nó với số soi gương — và loại đúng những đáp án giả có đuôi bằng 0."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Từ TỔNG: tổng : 11 = a + b → duyệt các cặp (a; b) có tổng ấy, mỗi cặp cho một số ab."
-   },
-   {
-    "id": "K2",
-    "text": "Từ HIỆU: hiệu : 9 = a − b → duyệt các cặp a > b; ba chữ số thì hiệu : 99 = a − c."
-   },
-   {
-    "id": "K3",
-    "text": "Điều kiện ẩn phải ghi vào tóm tắt ngay từ đầu: BÓNG GƯƠNG cũng phải là số có đủ chữ số — nên chữ số hàng đơn vị (hoặc hàng cuối) phải lớn hơn hoặc bằng 1. Cặp chứa 0 ở vị trí ấy là NGHIỆM MA, phải loại."
-   },
-   {
-    "id": "K4",
-    "text": "Hiệu ab − ba chỉ chia hết cho 11 khi a = b (hiệu bằng 0) — tổng ăn 11, hiệu ăn 9, đừng trả lời theo quán tính."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: PHIÊN TÒA GƯƠNG VỠ. Mỗi cặp chữ số duyệt được là một 'nghi phạm' bước qua máy soi gương. Nghi phạm nào có chữ số cuối bằng 0 thì khi soi, bóng gương bị MẤT một chữ số (60 soi thành 06 — chỉ còn là số 6): gương vỡ loảng xoảng, nghi phạm bị loại khỏi danh sách dù thoạt nhìn rất hợp lệ. Quy trình: chia (11 / 9 / 99) → điểm danh cặp → cho từng cặp qua máy soi → loại gương vỡ → thử lại các cặp sống sót.",
   "canonicalExamples": [
    {
@@ -93,13 +76,8 @@
     "counterExample": "$74 - 47 = 27$ không chia hết cho 11."
    }
   ],
-  "vocabulary": [
-   "phiên tòa gương vỡ",
-   "nghiệm ma",
-   "máy soi gương",
-   "điều kiện ẩn ghi vào tóm tắt"
-  ],
-  "mantra": "SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -120,67 +98,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Tìm tất cả các số có hai chữ số sao cho tổng của số đó và số viết ngược bằng 66.",
-    "display": {
-     "type": "story_panel",
-     "caption": "a+b=6 → …51, 60?!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở phiên tòa!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "trap",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Cho 60 qua máy soi: bóng của nó là 06 — mà 06 chỉ là số 6, đâu còn hai chữ số! Gương vỡ loảng xoảng: 60 là NGHIỆM MA, phải loại. Điều kiện ẩn của mọi bài gương: bóng cũng phải đủ chữ số — ghi ngay vào tóm tắt từ đầu.",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "51",
-       "output": "15 ✓",
-       "valid": true,
-       "reason": "bóng đủ 2 chữ số"
-      },
-      {
-       "input": "60",
-       "output": "06 = 6 ✗",
-       "valid": false,
-       "reason": "bóng mất chữ số — GƯƠNG VỠ"
-      }
-     ]
-    },
-    "interaction": {
-     "type": "sort_cards",
-     "prompt": "Nghi phạm nào qua được máy soi? Kéo vào giỏ HỢP LỆ / GƯƠNG VỠ",
-     "cards": [
-      24,
-      33,
-      42,
-      60
-     ],
-     "answerKey": {
-      "HỢP LỆ": [
-       24,
-       33,
-       42
-      ],
-      "GƯƠNG VỠ": [
-       60
-      ]
-     }
-    }
-   },
    {
     "id": "C1",
     "kind": "checkpoint",
@@ -206,38 +123,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K2",
-     "K4"
-    ],
-    "narration": "Bài hiệu làm y hệt với số 9: hiệu 45 chia 9 được a trừ b bằng 5 → 61, 72, 83, 94 — còn cặp (5;0) cho số 50 thì bóng 05 vỡ gương, loại. Và cảnh giác câu hỏi xoáy: hiệu có chia hết cho 11 không? KHÔNG — tổng ăn 11, hiệu ăn 9; hiệu chỉ chia hết 11 khi hai chữ số bằng nhau.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "45 : 9 = 5 → a − b = 5",
-      "(6;1)(7;2)(8;3)(9;4) ✓ · (5;0) GƯƠNG VỠ",
-      "ab − ba ⋮ 11 ⇔ a = b"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: số tận cùng không — soi gương là vỡ!",
-    "display": {
-     "type": "mantra_card",
-     "text": "SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -604,110 +489,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B3.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "a+b=6 → …51, 60?!",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Tổng số và bóng gương bằng 66, tức a cộng b bằng 6: có 15, 24, 33, 42, 51 và… 60!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B3_M2_F1.png",
-   "sha256_16": "a4400a137030793b"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "60"
-     ],
-     "result": "06 = 6"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "51"
-     ],
-     "result": "15"
-    },
-    "verdict": "bóng đủ 2 chữ số"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B3_M2_F2.png",
-   "sha256_16": "baf843d1a8d33ca5"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Từ TỔNG",
-      "text": "11 = a + b → duyệt các cặp (a",
-      "tone": "navy"
-     },
-     {
-      "label": "Từ HIỆU",
-      "text": "9 = a − b → duyệt các cặp a > b",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "SỐ TẬN CÙNG 0 — SOI GƯƠNG LÀ VỠ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B3_M2_F3.png",
-   "sha256_16": "22cd8d89595390fc"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "TÌM SỐ CÓ TỔNG VỚI BÓNG GƯƠNG BẰNG 66",
-    "wrong": {
-     "head": "QUÊN SOI GƯƠNG VỠ",
-     "steps": [
-      "nhận cả số 60"
-     ],
-     "result": "6 đáp án"
-    },
-    "right": {
-     "head": "LOẠI SỐ TẬN CÙNG 0",
-     "steps": [
-      "60 soi ra 06 = 6"
-     ],
-     "result": "5 đáp án"
-    },
-    "verdict": "15 · 24 · 33 · 42 · 51 — số 60 bị loại"
-   },
-   "caption": "Gương vỡ: số tận cùng bằng 0 soi ngược không còn là số hai chữ số",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B3_M2_F4.png",
-   "sha256_16": "c407327365456e11"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B04"
@@ -718,5 +500,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B3_M2_giang.mp4"
  }
 }

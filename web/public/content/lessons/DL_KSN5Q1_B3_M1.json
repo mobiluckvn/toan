@@ -35,24 +35,7 @@
   "kidText": "Một số và số soi gương của nó: cộng lại luôn chia hết cho 11, trừ nhau luôn chia hết cho 9. Con biết vì sao."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "TỔNG của số hai chữ số và số viết ngược: ab + ba = 11 × (a + b) — luôn chia hết cho 11."
-   },
-   {
-    "id": "K2",
-    "text": "HIỆU của số hai chữ số và số viết ngược: ab − ba = 9 × (a − b) — luôn chia hết cho 9."
-   },
-   {
-    "id": "K3",
-    "text": "Với ba chữ số: abc − cba = 99 × (a − c) — chữ số giữa b triệt tiêu, hiệu luôn chia hết cho 99."
-   },
-   {
-    "id": "K4",
-    "text": "Cả ba định luật đều chứng minh bằng MỘT vũ khí: khai triển theo hàng (10a + b) rồi gom nhóm — nối thẳng về phòng cân của Bài 1."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: TRÒ CHƠI SOI GƯƠNG. Đặt số ab trước gương — bóng của nó là ba. Khi số và bóng BẮT TAY (cộng nhau), khai triển: (10a + b) + (10b + a) = 11a + 11b — mười một ôm trọn cả hai. Khi số và bóng SO GĂNG (trừ nhau): (10a + b) − (10b + a) = 9a − 9b — chín cầm còi trận đấu. Gương ba chữ số: abc − cba, anh b đứng chính giữa nên soi gương vẫn là chính mình — triệt tiêu, còn 99 × (a − c). Thần chú: tổng ăn 11 — hiệu ăn 9 — ba chữ số hiệu ăn 99.",
   "canonicalExamples": [
    {
@@ -89,13 +72,8 @@
     "counterExample": "$594 = 99  \\times  6$."
    }
   ],
-  "vocabulary": [
-   "bóng gương",
-   "bắt tay (cộng) / so găng (trừ)",
-   "chữ số giữa triệt tiêu",
-   "khai triển — gom nhóm"
-  ],
-  "mantra": "TỔNG ĂN 11 — HIỆU ĂN 9 — BA CHỮ SỐ HIỆU ĂN 99!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -122,57 +100,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Tính $35 + 53$. Tổng ấy có chia hết cho 11 không?",
-    "display": {
-     "type": "story_panel",
-     "caption": "47 ⇄ 74 · 121? · 27?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để soi bí mật!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K2",
-     "K4"
-    ],
-    "narration": "Khai triển lên bàn mổ: ab cộng ba là mười a cộng b, cộng mười b cộng a. Con kéo các bao giống nhau về một nhóm xem gom được gì.",
-    "display": {
-     "type": "group_terms_interactive",
-     "spec": {
-      "terms": [
-       "10a",
-       "b",
-       "10b",
-       "a"
-      ],
-      "groups": {
-       "11a": [
-        "10a",
-        "a"
-       ],
-       "11b": [
-        "b",
-        "10b"
-       ]
-      },
-      "result": "11(a + b)"
-     }
-    },
-    "interaction": {
-     "type": "drag_group",
-     "successMessage": "11a + 11b = 11 × (a + b): TỔNG ĂN 11! Làm y hệt với phép trừ: (10a + b) − (10b + a) = 9a − 9b = 9 × (a − b): HIỆU ĂN 9!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -189,37 +116,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 35,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Gương ba chữ số: abc trừ cba. Khai triển: một trăm a cộng mười b cộng c, trừ một trăm c cộng mười b cộng a. Anh b đứng chính giữa — soi gương vẫn là chính mình nên triệt tiêu! Còn chín mươi chín a trừ chín mươi chín c: hiệu luôn bằng 99 nhân (a trừ c).",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "(100a + 10b + c) − (100c + 10b + a)",
-      "10b − 10b = 0 (triệt tiêu!)",
-      "= 99a − 99c = 99 × (a − c)"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Ba công thức khắc lên thước kẻ: tổng ăn mười một — hiệu ăn chín — ba chữ số hiệu ăn chín mươi chín!",
-    "display": {
-     "type": "mantra_card",
-     "text": "TỔNG ĂN 11 — HIỆU ĂN 9 — HIỆU 3 CHỮ SỐ ĂN 99!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -600,103 +496,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B3.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "47 ⇄ 74 · 121? · 27?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Tổng thì chia 9, hiệu thì chia 11 chứ gì!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B3_M1_F1.png",
-   "sha256_16": "393b3072b6e2d9f9"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Ba công thức soi gương: 11 · 9 · 99",
-    "steps": [
-     {
-      "text": "(100a + 10b + c) − (100c + 10b + a)"
-     },
-     {
-      "text": "10b − 10b = 0 (triệt tiêu!)"
-     },
-     {
-      "text": "= 99a − 99c = 99 × (a − c)"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B3_M1_F2.png",
-   "sha256_16": "cb1584d55166a72a"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "TỔNG của số hai chữ số và số viết ngược",
-      "text": "ab + ba = 11 × (a + b) — luôn chia hết cho 11.",
-      "tone": "navy"
-     },
-     {
-      "label": "HIỆU của số hai chữ số và số viết ngược",
-      "text": "ab − ba = 9 × (a − b) — luôn chia hết cho 9.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "TỔNG ĂN 11 — HIỆU ĂN 9 — BA CHỮ SỐ HIỆU ĂN 99!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B3_M1_F3.png",
-   "sha256_16": "27b01155e1c1b0c5"
-  },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "35 + 53 = 11 × (3 + 5)",
-    "bars": [
-     {
-      "name": "tổng 88",
-      "units": 8,
-      "label": "11 × 8 = 88"
-     }
-    ],
-    "brace": {
-     "text": "mỗi ô đáng 11 — có đúng (a + b) = 8 ô"
-    },
-    "note": "Tổng của số và bóng gương LUÔN chia hết cho 11 · hiệu luôn chia hết cho 9"
-   },
-   "caption": "Tổng ăn 11, hiệu ăn 9 — hai định luật soi gương",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B3_M1_F4.png",
-   "sha256_16": "2287f78d705d5fac"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B04"
@@ -707,5 +507,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B3_M1_giang.mp4"
  }
 }

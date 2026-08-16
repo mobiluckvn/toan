@@ -8646,7 +8646,130 @@ def kb5_chia_chin_khong_chia_muoi(b):
     ]
 
 
+def kb5_ba_cong_thuc_guong(b):
+    """L5·B3·M1 Tổng ăn 11, hiệu ăn 9, ba chữ số hiệu ăn 99."""
+    return [
+        _c('bia', 'Số và số viết ngược', so_bai(b),
+           loi=['Lấy một số hai chữ số rồi viết ngược nó lại. Cộng và trừ hai số ấy.']),
+        _c('de_toan', 'Thử với số 47', de='47 + 74 = 121   ·   74 − 47 = 27',
+           loi=['Thử với số bốn mươi bảy. Viết ngược thành bảy mươi tư.',
+                'Cộng lại được một trăm hai mươi mốt, trừ nhau được hai mươi bảy.']),
+        _c('y_toan', 'Khai triển theo hàng đã', 'ab = 10a + b   ·   ba = 10b + a',
+           buoc=1, soBuoc=3,
+           loi=['Khai triển theo hàng đã. Số a b là mười a cộng b.',
+                'Còn số viết ngược là mười b cộng a.']),
+        _c('y_toan', 'Cộng lại rồi gom nhóm',
+           '10a + b + 10b + a = 11a + 11b = 11 × (a + b)', buoc=2, soBuoc=3,
+           loi=['Gom nhóm lại. Mười a với a thành mười một a, b với mười b thành '
+                'mười một b.',
+                'Nên tổng luôn chia hết cho mười một.']),
+        _c('y_toan', 'Trừ nhau thì ra số 9',
+           '10a + b − 10b − a = 9a − 9b = 9 × (a − b)', buoc=3, soBuoc=3,
+           loi=['Trừ nhau thì ra số chín. Nên hiệu luôn chia hết cho chín.']),
+        _c('tach_so', 'Số ba chữ số: chữ số GIỮA triệt tiêu', so='abc', sang=[2],
+           phep='abc − cba = 99 × (a − c)',
+           chuPhu='Chữ số giữa soi gương vẫn là chính nó.',
+           loi=['Với số ba chữ số thì chữ số ở giữa soi gương vẫn là chính nó, nên nó '
+                'triệt tiêu.',
+                'Còn lại chín mươi chín lần hiệu của hai chữ số đầu và cuối.']),
+        _c('y_toan', 'Thử lại bằng số thật', '121 : 11 = 11 ✓   ·   27 : 9 = 3 ✓',
+           loi=['Thử lại bằng số thật. Một trăm hai mươi mốt chia mười một được mười '
+                'một.',
+                'Hai mươi bảy chia chín được ba. Đúng cả hai.']),
+        _c('cong_thuc', 'Ba công thức, một cách chứng minh',
+           congThuc='tổng ăn 11  ·  hiệu ăn 9  ·  ba chữ số hiệu ăn 99',
+           thay='cả ba đều ra từ một việc: khai triển theo hàng rồi gom nhóm',
+           loi=['Con nhớ ba công thức. Tổng ăn mười một, hiệu ăn chín, ba chữ số thì '
+                'hiệu ăn chín mươi chín.',
+                'Cả ba đều ra từ một việc thôi, là khai triển theo hàng rồi gom '
+                'nhóm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_guong_vo(b):
+    """L5·B3·M2 Tìm số từ tổng hoặc hiệu — coi chừng số tận cùng 0."""
+    return [
+        _c('bia', 'Tìm số từ tổng với bóng gương', so_bai(b),
+           loi=['Đề cho tổng của một số với số viết ngược, hỏi số ấy là số nào.']),
+        _c('de_toan', 'Đề bài', de='Tổng của số và số viết ngược bằng 66. Tìm số đó.',
+           loi=['Tổng của một số hai chữ số và số viết ngược của nó bằng sáu mươi '
+                'sáu.']),
+        _c('y_toan', 'Dùng ngay công thức bài trước', '66 : 11 = 6, nên a + b = 6',
+           buoc=1, soBuoc=3,
+           loi=['Dùng ngay công thức bài trước. Tổng chia mười một được sáu.',
+                'Nghĩa là hai chữ số cộng lại bằng sáu.']),
+        _c('day_so', 'Duyệt hết các cặp có tổng 6', so=[15, 24, 33, 42, 51, 60],
+           hienThuTu=False, chuPhu='Sáu số — nhưng có một số không hợp lệ.',
+           loi=['Duyệt hết các cặp có tổng bằng sáu. Được sáu số.',
+                'Nhưng trong đó có một số không hợp lệ.']),
+        _c('y_toan', 'Soi gương số 51', '51  →  15, hai chữ số ✓',
+           loi=['Soi gương số năm mươi mốt được mười lăm. Vẫn là số hai chữ số, hợp '
+                'lệ.']),
+        _c('y_toan', 'Nhưng soi gương số 60 thì VỠ',
+           '60  →  06, mà 06 chỉ là số 6 — mất một chữ số', buoc=3, soBuoc=3,
+           loi=['Nhưng soi gương số sáu mươi thì vỡ. Nó thành không sáu.',
+                'Mà không sáu chỉ là số sáu, đâu còn là số hai chữ số nữa. Nên loại '
+                'số sáu mươi.']),
+        _c('y_toan', 'Bài HIỆU làm y hệt, chỉ đổi số chia',
+           'hiệu 45 : 9 = 5  →  61, 72, 83, 94 — và loại 50',
+           loi=['Bài hiệu làm y hệt, chỉ đổi số chia. Bốn mươi lăm chia chín được năm.',
+                'Ra sáu mốt, bảy hai, tám ba, chín tư. Còn số năm mươi thì loại, vì '
+                'soi gương lại vỡ.']),
+        _c('cong_thuc', 'Điều kiện ẩn phải ghi ngay từ đầu',
+           congThuc='số tận cùng 0  →  soi gương là VỠ, loại ngay',
+           thay='vì bóng gương cũng phải là số có đủ chữ số như số gốc',
+           loi=['Con nhớ điều kiện ẩn này, ghi vào tóm tắt ngay từ đầu.',
+                'Số tận cùng bằng không thì soi gương là vỡ, phải loại.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_hai_ho_dau_hieu(b):
+    """L5·B3·M3 Đổi chỗ chữ số: họ tổng bình an, họ tận cùng khám lại."""
+    return [
+        _c('bia', 'Viết ngược thì còn chia hết không', so_bai(b),
+           loi=['Một số chia hết cho vài số. Viết ngược nó lại thì còn chia hết không.']),
+        _c('de_toan', 'Đề bài', de='18 chia hết cho 9 và cho 2. Viết ngược thành 81 thì sao?',
+           loi=['Số mười tám chia hết cho chín và cho hai.',
+                'Viết ngược thành tám mươi mốt thì còn chia hết cho những số nào.']),
+        _c('y_toan', 'Chẻ câu hỏi làm HAI HỌ trước đã',
+           'họ TỔNG: 3 và 9   ·   họ TẬN CÙNG: 2 và 5', buoc=1, soBuoc=3,
+           loi=['Con chẻ câu hỏi làm hai họ trước đã.',
+                'Họ tổng gồm số ba và số chín. Họ tận cùng gồm số hai và số năm.']),
+        _c('tach_so', 'Họ TỔNG chỉ nhìn tổng các chữ số', so='18', sang=[1, 2],
+           phep='1 + 8 = 9', chuPhu='Đổi chỗ thì tổng ấy KHÔNG đổi.',
+           loi=['Họ tổng chỉ nhìn tổng các chữ số. Một cộng tám bằng chín.',
+                'Đổi chỗ hai chữ số thì tổng ấy không đổi chút nào.']),
+        _c('tach_so', 'Nên 81 vẫn chia hết cho 9', so='81', sang=[1, 2],
+           phep='8 + 1 = 9 — vẫn thế', chuPhu='Họ tổng: CHẮC CHẮN còn chia hết.',
+           loi=['Nên tám mươi mốt vẫn chia hết cho chín. Họ tổng thì chắc chắn còn.']),
+        _c('tach_so', 'Nhưng họ TẬN CÙNG nhìn chữ số cuối', so='81', sang=[2],
+           phep='đuôi là 1 — số lẻ', chuPhu='18 đuôi 8 chia hết cho 2, còn 81 thì không.',
+           loi=['Nhưng họ tận cùng chỉ nhìn chữ số cuối. Mười tám có đuôi tám nên chia '
+                'hết cho hai.',
+                'Còn tám mươi mốt đuôi là một, số lẻ, hết chia hết cho hai.']),
+        _c('y_toan', 'Nên trả lời phải khác nhau',
+           'họ tổng: "chắc chắn còn"   ·   họ tận cùng: "chưa chắc, phải khám lại"',
+           loi=['Nên hai họ phải trả lời khác nhau. Họ tổng thì nói chắc chắn còn.',
+                'Họ tận cùng thì nói chưa chắc, phải khám lại từng số một.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='đổi chỗ  →  họ TỔNG bình an  ·  họ TẬN CÙNG khám lại',
+           thay='vì đổi chỗ không đụng tổng, nhưng có thể đổi hẳn chữ số cuối',
+           loi=['Con nhớ câu này. Đổi chỗ thì họ tổng bình an, họ tận cùng phải khám '
+                'lại.',
+                'Vì đổi chỗ không đụng tới tổng, nhưng có thể đổi hẳn chữ số cuối.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B3.M1': kb5_ba_cong_thuc_guong,
+    'DL:KSN5Q1.B3.M2': kb5_guong_vo,
+    'DL:KSN5Q1.B3.M3': kb5_hai_ho_dau_hieu,
     'DL:KSN5Q1.B2.M1': kb5_chuyen_nha,
     'DL:KSN5Q1.B2.M2': kb5_cong_tac_dau_phay,
     'DL:KSN5Q1.B2.M3': kb5_chia_chin_khong_chia_muoi,
