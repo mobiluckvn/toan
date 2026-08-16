@@ -548,9 +548,19 @@ def khung(c: dict) -> Image.Image:
                                     radius=10, outline=TEAL, width=4)
                 t = f"lớp {TEN_LOP[lop]}" if lop < len(TEN_LOP) else ""
                 if t:
-                    g = phong(24)
-                    d.text((x + (rong_lop * o - d.textlength(t, font=g)) / 2, y0 - 40),
-                           t, font=g, fill=TEAL_DARK)
+                    # ⚠ CO NHÃN CHO VỪA KHUNG. Số bốn chữ số thì lớp nghìn chỉ rộng
+                    # MỘT ô, mà chữ "lớp nghìn" ở cỡ 24 rộng gấp rưỡi ô ấy — nhãn
+                    # tràn ra ngoài và đè lên khung bên cạnh. Nhìn thì hai khung
+                    # dính vào nhau thành một, tức là vẽ ngược hẳn điều đang dạy.
+                    # Chỉ lộ khi rút khung hình ra nhìn; video vẫn dựng ra bình
+                    # thường, không cổng nào kêu.
+                    cho = rong_lop * o - 12
+                    co = 24
+                    while co > 13 and d.textlength(t, font=phong(co)) > cho:
+                        co -= 1
+                    g = phong(co)
+                    d.text((x + (rong_lop * o - d.textlength(t, font=g)) / 2,
+                            y0 - 40 + (24 - co) // 2), t, font=g, fill=TEAL_DARK)
         y = y0 + o + 76
         if c.get("chuPhu"):
             y = giua(d, y, c["chuPhu"], phong(36), INK, rong=W - 180)

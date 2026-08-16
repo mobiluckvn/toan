@@ -6795,7 +6795,199 @@ def kb2_gio_ruoi(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 3 · chương 1 · Hàng nghìn và các chữ số — bốn bài
+# ═══════════════════════════════════════════════════════════════════════════
+# Quyển lớp 3 là quyển cuối chuyển sang video. Bốn bài này đều xoay quanh MỘT thứ:
+# chữ số đứng ở đâu thì đáng bấy nhiêu. Nhưng mỗi video chỉ được nói MỘT việc, nên
+# chia thế này:
+#   B01 tháp thứ tư (nghìn) và giá trị theo chỗ đứng
+#   B02 thêm chữ số bên trái khác hẳn bên phải
+#   B03 có điều kiện chẵn lẻ thì ĐUÔI đặt trước
+#   B04 đếm ngược: biết số chữ số, tìm số trang
+#
+# `bang_hang` vẽ được bốn ô và tự đóng khung "lớp nghìn · lớp đơn vị" — đúng thứ
+# chương này cần, không phải vẽ thêm kiểu cảnh mới nào.
+
+
+def kb3_thap_nghin(b):
+    """L3·C1① Tòa tháp thứ tư mang tên nghìn."""
+    return [
+        _c('bia', 'Tòa tháp thứ tư', so_bai(b),
+           loi=['Năm ngoái con học ba tháp. Nay có thêm một tháp nữa.']),
+        _c('y_toan', 'Luật cũ leo thêm một tầng',
+           '10 trăm gom lại thành 1 nghìn', buoc=1, soBuoc=3,
+           loi=['Mười đơn vị gom thành một chục. Mười chục gom thành một trăm.',
+                'Nay thêm một nấc nữa. Mười trăm gom lại thành một nghìn.']),
+        # `hienLop=False`: quyển lớp 3 dạy THÁP THỨ TƯ, chưa dạy khái niệm "lớp"
+        # (lớp nghìn · lớp đơn vị) — đó là chuyện của lớp 4. Bày thêm một khung có
+        # tên lạ ở đây là thêm một thứ phải hiểu mà bài không dùng tới.
+        _c('bang_hang', 'Số 2 435 ở trong bốn tháp', so='2435', hienLop=False,
+           chuPhu='Đọc từ tháp cao nhất xuống thấp dần.',
+           loi=['Số hai nghìn bốn trăm ba mươi lăm dọn vào bốn tháp.',
+                'Con đọc từ tháp cao nhất xuống dần thì ra đúng tên của nó.']),
+        _c('bang_hang', 'Chữ số 2 đứng ở tháp nghìn', so='2435', hienLop=False,
+           toSang=[3],
+           chuPhu='Nên nó đáng 2 nghìn, chứ không phải 2.',
+           loi=['Chữ số hai đứng ở tháp nghìn, nên nó đáng hai nghìn.',
+                'Cùng một chữ số ấy mà đứng ở tháp đơn vị thì chỉ đáng hai thôi.']),
+        _c('tach_so', 'Tách số theo từng tháp', so='2435',
+           phep='2 435 = 2 000 + 400 + 30 + 5',
+           chuPhu='Mỗi chữ số góp đúng phần của tháp nó đứng.',
+           loi=['Tách ra thì thấy rõ. Hai nghìn, cộng bốn trăm, cộng ba mươi, cộng '
+                'năm.',
+                'Mỗi chữ số góp đúng phần của cái tháp nó đang đứng.']),
+        _c('y_toan', 'Tháp trống thì ai giữ chỗ?',
+           'Chữ số 0 đứng canh cho tháp khỏi mất chỗ.', buoc=2, soBuoc=3,
+           loi=['Có khi một tháp trống không. Lúc ấy chữ số không đứng canh chỗ.']),
+        _c('bang_hang', 'Ba nghìn không trăm bảy mươi hai', so='3072',
+           hienLop=False, toSang=[2],
+           chuPhu='Bỏ chữ số 0 đi thì còn 372 — sai hẳn số.',
+           loi=['Số ba nghìn không trăm bảy mươi hai viết ra là ba, không, bảy, hai.',
+                'Bỏ chữ số không đi thì còn ba trăm bảy mươi hai. Sai hẳn thành số '
+                'khác.']),
+        _c('y_toan', 'Thử lại', 'Cộng bốn phần vừa tách — phải ra đúng số cũ.',
+           buoc=3, soBuoc=3,
+           loi=['Con thử lại được. Cộng bốn phần vừa tách thì phải ra đúng số ban '
+                'đầu.']),
+        _c('cong_thuc', 'Muốn biết một chữ số đáng bao nhiêu',
+           congThuc='nhìn CHỖ NÓ ĐỨNG, đừng nhìn mặt nó',
+           thay='vì mỗi tháp có một sức nặng riêng',
+           loi=['Con nhớ chỗ này. Muốn biết một chữ số đáng bao nhiêu thì nhìn chỗ nó '
+                'đứng.',
+                'Đừng nhìn mặt chữ số, vì mỗi tháp có một sức nặng riêng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_hai_cua(b):
+    """L3·C1② Thêm chữ số bên trái khác hẳn bên phải."""
+    return [
+        _c('bia', 'Thêm bên trái, thêm bên phải', so_bai(b),
+           loi=['Thêm một chữ số vào số cũ. Thêm bên nào thì khác nhau hẳn.']),
+        _c('bang_hang', 'Số cũ là 45', so='45', hienLop=False,
+           chuPhu='Chữ số 4 ở tháp chục, chữ số 5 ở tháp đơn vị.',
+           loi=['Số cũ là bốn mươi lăm. Chữ số bốn ở tháp chục, chữ số năm ở tháp đơn '
+                'vị.']),
+        _c('bang_hang', 'Thêm 0 vào BÊN PHẢI', so='450', hienLop=False,
+           toSang=[1, 2], chuPhu='Cả hai chữ số cũ bị đẩy lên một tháp.',
+           loi=['Thêm chữ số không vào bên phải. Cả hai chữ số cũ bị đẩy lên một tháp.',
+                'Bốn lên tháp trăm, năm lên tháp chục. Số cũ to gấp mười lần.']),
+        _c('y_toan', 'Bên phải là CẢ NHÀ CHUYỂN TẦNG',
+           'Số cũ × 10, rồi cộng chữ số mới', buoc=1, soBuoc=2,
+           loi=['Thêm bên phải thì cả nhà chuyển tầng. Lấy số cũ nhân mười, rồi cộng '
+                'chữ số mới vào.']),
+        _c('bang_hang', 'Thêm 3 vào BÊN TRÁI', so='345', hienLop=False,
+           toSang=[2], chuPhu='Chữ số 4 và 5 KHÔNG hề nhúc nhích.',
+           loi=['Nay thêm chữ số ba vào bên trái. Con nhìn kỹ hai chữ số cũ.',
+                'Bốn vẫn ở tháp chục, năm vẫn ở tháp đơn vị. Không ai nhúc nhích cả.',
+                'Chỉ có chữ số ba dọn vào cái tháp còn trống ở bên trái.']),
+        _c('tach_so', 'Nên số mới chỉ hơn số cũ đúng một phần', so='345',
+           phep='345 = 300 + 45', sang=[1],
+           chuPhu='Phần thêm chính là 3 trăm — giá trị chỗ nó vừa dọn vào.',
+           loi=['Nên số mới bằng số cũ cộng thêm ba trăm.',
+                'Ba trăm chính là giá trị của cái tháp mà chữ số ba vừa dọn vào.']),
+        _c('y_toan', 'Bên trái là HÀNG XÓM MỚI DỌN ĐẾN',
+           'Số cũ đứng yên, chỉ CỘNG thêm', buoc=2, soBuoc=2,
+           loi=['Thêm bên trái thì số cũ đứng yên, chỉ cộng thêm phần của người mới.']),
+        _c('cong_thuc', 'Hai cửa, hai luật khác hẳn',
+           congThuc='phải  →  NHÂN     ·     trái  →  CỘNG',
+           thay='vì chỉ cửa phải mới đẩy các chữ số cũ đi',
+           loi=['Con nhớ hai cửa này. Thêm bên phải thì nhân, thêm bên trái thì cộng.',
+                'Vì chỉ có cửa bên phải mới đẩy các chữ số cũ sang chỗ khác.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_duoi_dat_ve(b):
+    """L3·C1③ Có điều kiện chẵn lẻ thì đuôi đặt vé trước."""
+    return [
+        _c('bia', 'Xếp thẻ khi có thêm điều kiện', so_bai(b),
+           loi=['Xếp ba thẻ số, nhưng lần này có thêm một điều kiện.']),
+        _c('y_toan', 'Luật cũ con đã biết',
+           'Muốn số lớn nhất: xếp thẻ TO trước', buoc=1, soBuoc=3,
+           loi=['Luật cũ con đã biết. Muốn được số lớn nhất thì xếp thẻ to lên trước.']),
+        _c('tach_so', 'Từ ba thẻ 3, 8, 5 — số lớn nhất là 853', so='853', sang=[3],
+           chuPhu='Nhưng đuôi là 3, nên nó LẺ.',
+           loi=['Từ ba thẻ ba, tám, năm thì số lớn nhất là tám trăm năm mươi ba.',
+                'Nhưng đề đòi số chẵn. Mà đuôi của nó là ba, nên nó lẻ.']),
+        _c('y_toan', 'Chẵn hay lẻ do ĐUÔI quyết định',
+           'Nên phải chọn đuôi TRƯỚC, xếp phần đầu SAU', buoc=2, soBuoc=3,
+           loi=['Một số chẵn hay lẻ là do cái đuôi quyết định.',
+                'Nên khi đề đòi chẵn, con phải chọn đuôi trước đã, rồi mới xếp phần '
+                'đầu.']),
+        _c('tach_so', 'Trong ba thẻ chỉ có 8 là chẵn', so='8', sang=[1],
+           chuPhu='Vậy đuôi bắt buộc là 8 — không còn lựa chọn nào khác.',
+           loi=['Trong ba thẻ chỉ có thẻ tám là chẵn.',
+                'Vậy đuôi bắt buộc phải là tám. Không còn lựa chọn nào khác.']),
+        _c('tach_so', 'Hai thẻ còn lại xếp to trước', so='538', sang=[3],
+           phep='5 trước, 3 sau, đuôi giữ chỗ cho 8',
+           chuPhu='Được số chẵn lớn nhất: 538.',
+           loi=['Hai thẻ còn lại là năm và ba, xếp to trước bé sau.',
+                'Được số năm trăm ba mươi tám. Đây là số chẵn lớn nhất lập được.']),
+        _c('y_toan', 'Thử lại', 'Mọi cách xếp khác có đuôi 8 đều bé hơn.',
+           buoc=3, soBuoc=3,
+           loi=['Con thử lại. Mọi cách xếp khác mà đuôi vẫn là tám thì đều bé hơn.']),
+        # ⚠ Màn NGAY TRƯỚC `ket` bắt buộc là `cong_thuc` — luật của `soi()`, bác chốt
+        # 14-08: đã dạy xong thì phải nhắc lại công thức lần cuối rồi mới chào.
+        _c('cong_thuc', 'Khi đề đòi chẵn hay lẻ',
+           congThuc='ĐUÔI chọn trước  ·  phần đầu xếp sau',
+           thay='vì đuôi quyết định chẵn lẻ, còn phần đầu quyết định to nhỏ',
+           loi=['Con nhớ chỗ này. Đuôi chọn trước, phần đầu xếp sau.',
+                'Vì đuôi quyết định chẵn lẻ, còn phần đầu mới quyết định số to hay '
+                'nhỏ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_dem_nguoc_trang(b):
+    """L3·C1④ Biết số chữ số, tìm số trang."""
+    return [
+        _c('bia', 'Đánh số trang — và đi ngược lại', so_bai(b),
+           loi=['Đánh số trang một cuốn sách tốn bao nhiêu chữ số.']),
+        _c('y_toan', 'Trang 1 đến 9 — mỗi trang MỘT chữ số',
+           'Chín trang ấy tốn 9 chữ số', buoc=1, soBuoc=3,
+           loi=['Từ trang một đến trang chín, mỗi trang chỉ có một chữ số.',
+                'Chín trang ấy tốn chín chữ số.']),
+        _c('y_toan', 'Từ trang 10 trở đi — mỗi trang HAI chữ số',
+           'Nên số chữ số tăng gấp đôi theo trang', buoc=2, soBuoc=3,
+           loi=['Từ trang mười trở đi, mỗi trang có hai chữ số.',
+                'Nên từ đó mỗi trang tốn gấp đôi.']),
+        _c('de_toan', 'Dùng hết đúng 45 chữ số. Sách dày mấy trang?',
+           chuPhu='Lần này biết số chữ số, phải tìm ngược ra số trang.',
+           loi=['Nay đề cho ngược lại. Dùng hết đúng bốn mươi lăm chữ số, hỏi sách dày '
+                'mấy trang.']),
+        _c('tach_so', 'Trả phần của chín trang đầu trước', so='45',
+           phep='45 − 9 = 36', chuPhu='Còn 36 chữ số cho các trang hai chữ số.',
+           loi=['Chín trang đầu đã ngốn chín chữ số. Trả phần ấy ra trước.',
+                'Bốn mươi lăm trừ chín còn ba mươi sáu chữ số.']),
+        _c('tach_so', 'Mỗi trang hai chữ số nên chia đôi', so='36',
+           phep='36 : 2 = 18', chuPhu='Có 18 trang loại hai chữ số.',
+           loi=['Mỗi trang loại này tốn hai chữ số, nên lấy ba mươi sáu chia hai.',
+                'Được mười tám trang.']),
+        _c('y_toan', 'Cộng hai phần lại', '9 + 18 = 27 trang', buoc=3, soBuoc=3,
+           loi=['Cộng hai phần lại. Chín trang đầu cộng mười tám trang sau, được hai '
+                'mươi bảy trang.']),
+        _c('y_toan', 'Thử lại cho chắc', '9 + 18 × 2 = 45 chữ số — đúng đề.',
+           loi=['Con thử lại cho chắc. Chín cộng mười tám nhân hai bằng bốn mươi lăm '
+                'chữ số, đúng như đề cho.']),
+        _c('cong_thuc', 'Đếm ngược thì TRẢ NỢ từng nhóm',
+           congThuc='trừ phần nhóm 1 chữ số  →  phần còn lại chia 2',
+           thay='vì mỗi nhóm trang tốn số chữ số khác nhau',
+           loi=['Con nhớ cách đi ngược. Trừ phần của nhóm một chữ số ra trước, phần còn '
+                'lại mới chia đôi.',
+                'Vì mỗi nhóm trang tốn số chữ số khác nhau, không gộp chung được.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN3.B01': kb3_thap_nghin,   'DL:KSN3.B02': kb3_hai_cua,
+    'DL:KSN3.B03': kb3_duoi_dat_ve,  'DL:KSN3.B04': kb3_dem_nguoc_trang,
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
     'DL:KSN4.B19': kb_b19, 'DL:KSN4.B20': kb_b20,

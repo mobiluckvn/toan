@@ -60,6 +60,14 @@ TEP_KHAC = [
     'data/lop3_dapan.json',
     'data/lop3_dapan_tay.json',
     'data/lop3_dapan_o.json',
+    # ── CỬA THỨ NĂM: SỔ HÌNH ──
+    # `gan_hinh_lop3.py` chép `caption` từ hai tệp này NGƯỢC vào `data/lop3/*.json`,
+    # và nó chạy SAU bước dọn. Nên dọn xong, quét ra 0, rồi chạy lại dây chuyền một
+    # lượt là lời chú hình mang tên cũ quay về — "Ba thanh: Su Bống 6 con, Su Kem
+    # gấp đôi…". Cùng dòng họ với cửa lời chào và cửa gợi ý tay: tệp nằm ngoài thư
+    # mục quyển, được một bước sau ghi đè vào.
+    'data/lop3_hinh.json',
+    'data/lop3_hinh_manifest.json',
 ]
 
 # ── LỜI CHÀO · TỆP DÙNG CHUNG BỐN QUYỂN ──

@@ -382,10 +382,25 @@ if (existsSync(APP)) {
      gì. Sách lớp 3 đặt tên bước mười kiểu (Nhân vật · Phép thử · Thế trận · Kho
      báu…); mẫu bốn tên của lớp 2 làm 7 bài mất sạch nguyên tắc và 26 bước bốc hơi
      mà không một dòng cảnh báo. Phép kiểm này canh đúng chỗ ấy. */
-  const rong = app.filter((b) => !(b.knowledgeCore?.statements || []).length)
+  /* ⚠ TRỪ BÀI ĐÃ CÓ VIDEO. Bài mà video thay cả mở bài lẫn bài giảng thì rỗng
+     nguyên tắc là CHỦ Ý, không phải sót — `dung_khuon_chung_lop3.py` xoá hẳn
+     `statements` và `mantra` cho đúng khuôn lớp 2 và lớp 4 (chặng GIẢNG biến mất
+     hoàn toàn). Không tách hai chuyện này thì cổng đỏ dần theo từng chương chuyển
+     sang video, và tới lúc nó kêu thật thì không còn ai nhìn. */
+  const coVideo = (b) => !!b.video?.giang;
+  const rong = app.filter((b) => !coVideo(b) && !(b.knowledgeCore?.statements || []).length)
     .map((b) => `${b.id} — mẫu tên bước bỏ sót cách sách đặt tên?`);
-  t('bài nào cũng có ít nhất một nguyên tắc để dạy', rong.length === 0);
+  t('bài CHƯA có video nào cũng có ít nhất một nguyên tắc để dạy', rong.length === 0);
   in5(rong);
+  /* Chiều ngược lại: bài ĐÃ có video thì KHÔNG được còn chữ giảng — sót lại là bé
+     xem video xong phải đọc lại y hệt bằng chữ. */
+  const thuaChu = app.filter(coVideo).filter(
+    (b) => (b.knowledgeCore?.statements || []).length || (b.knowledgeCore?.mantra || '')
+      || (b.lecture?.screens || []).some((s) => s.kind !== 'trap'))
+    .map((b) => b.id);
+  t(`bài có video thì không còn chữ giảng (${app.filter(coVideo).length} bài có video)`,
+    thuaChu.length === 0);
+  in5(thuaChu);
 
   const khongMan = app.filter((b) => !(b.lecture?.screens || []).length).map((b) => b.id);
   t('bài nào cũng có màn giảng', khongMan.length === 0);

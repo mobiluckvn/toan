@@ -125,6 +125,18 @@ def main():
     with open(os.path.join(RA_DATA, 'index.json'), 'w', encoding='utf-8') as f:
         json.dump(idx, f, ensure_ascii=False, indent=1)
 
+    # ── THỨ TỰ HỌC · cho bìa video đọc ──
+    # `kich_ban_toan.so_bai()` in chữ "Bài n" lên bìa video, và nó ĐẾM TỪ VỊ TRÍ
+    # trong tệp này chứ không đọc trường `so` — vì `so` là TÊN bài, chèn bài mới là
+    # nó lệch ngay. Lớp 2 và lớp 4 giữ tệp này bằng tay (lối C, mã bài xen kẽ);
+    # lớp 3 thì thứ tự đúng bằng thứ tự `index.json`, nên SINH RA ở đây cho khỏi
+    # phải nhớ đồng bộ hai chỗ.
+    with open(os.path.join(RA_DATA, 'thu_tu.json'), 'w', encoding='utf-8') as f:
+        json.dump({'_doc': 'THỨ TỰ HỌC quyển lớp 3 — SINH TỰ ĐỘNG từ index.json bởi '
+                           'chuan_lop3.py. Đừng sửa tay: lần dựng sau đè mất. Bìa '
+                           'video đọc số bài từ đây.',
+                   'thuTu': [x['id'] for x in idx]}, f, ensure_ascii=False, indent=1)
+
     lui = sum(1 for x in idx if x['coDuongLui'])
     print(f'đã ghi {len(idx)} bài GỐC vào {RA_DATA}')
     print(f'  {tong} câu · có lời chữa {co_dap} ({co_dap * 100 // tong}%) · '

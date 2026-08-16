@@ -44,6 +44,8 @@ SO_TAY = os.path.join(GOC_KHO, 'data', 'lop3_hinh_manifest.json')
 DAP_AN_O = os.path.join(GOC_KHO, 'data', 'lop3_dapan_o.json')
 RA = os.path.join(GOC_KHO, 'web', 'public', 'content', 'lop3')
 RA_ON = os.path.join(GOC_KHO, 'web', 'public', 'content', 'reviews')
+# Video của MỌI quyển Toán nằm chung một thư mục — mã bài đã đủ phân biệt.
+RA_VIDEO = os.path.join(GOC_KHO, 'web', 'public', 'content', 'toan', 'video')
 SO_DK = os.path.join(GOC_KHO, 'data', 'chuong_trinh.json')
 RA_DK = os.path.join(GOC_KHO, 'web', 'public', 'content', 'chuong_trinh.json')
 
@@ -169,9 +171,40 @@ def main():
         d = sang_khuon_chung(b, truoc=ids[k - 1] if k else None,
                              sau=ids[k + 1] if k + 1 < len(ids) else None,
                              dap_an=dap_an)
+        # ── VIDEO THAY CẢ MỞ BÀI LẪN BÀI GIẢNG ──
+        #
+        # Khai bằng cách DÒ TỆP CÓ THẬT, không gõ tay danh sách: gõ tay thì khai một
+        # bài chưa dựng video là màn hình hiện ô đen, còn dựng xong mà quên khai thì
+        # video nằm đó không ai xem. Cả hai đều im lặng. Lớp 4 đã làm đúng lối này.
+        ten_tep = b['id'].replace('DL:', 'DL_').replace('.', '_')
+        co_video = os.path.exists(os.path.join(RA_VIDEO, f'{ten_tep}_giang.mp4'))
+        if co_video:
+            d['video'] = {'giang': f'{ten_tep}_giang.mp4'}
+            # Thu về ĐÚNG hình dạng của lớp 4: không nguyên tắc chữ, chỉ còn MỘT màn
+            # bẫy. `buildFlow` bỏ hẳn chặng GIẢNG khi cả hai đều rỗng — để lại một
+            # trong hai thì bé xem video xong lại phải đọc y hệt bằng chữ.
+            d['knowledgeCore']['statements'] = []
+            d['lecture']['screens'] = [s for s in d['lecture']['screens']
+                                       if s.get('kind') == 'trap']
+            # `mantra` cũng phải rỗng, không thì `buildFlow` vẫn dựng MỘT bước
+            # `mantra` trong chặng GIẢNG và bé xem video xong lại gặp một màn chữ.
+            # Lớp 2 và lớp 4 đều rỗng ô này — chúng không có mục KHÁM PHÁ nên rỗng
+            # sẵn, còn lớp 3 thì có, nên phải xoá tay. Câu chốt ấy KHÔNG mất đi:
+            # nó chính là màn công thức cuối video, và luật `soi()` bắt mọi kịch bản
+            # phải có màn ấy ngay trước lúc chào.
+            d['knowledgeCore']['mantra'] = ''
+            # Hình của phần giảng nay KHÔNG còn màn nào vẽ. Giữ lại là 73 tệp PNG
+            # tải về máy bé rồi nằm im — đúng lỗi `hinh_co_ai_ve.test.mjs` sinh ra
+            # để bắt. Chỉ giữ hình gắn vào CÂU HỎI.
+            d['figureSpec'] = [h for h in d['figureSpec']
+                               if all(str(u).startswith('item:')
+                                      for u in (h.get('usedIn') or []))]
+
         # Chặng giảng rỗng là hỏng CÂM: bài vẫn dựng ra, phòng học vẫn mở, chỉ là
-        # không dạy gì. Đây đúng chỗ mẫu tên bước bỏ sót thì không ai hay.
-        if not d['knowledgeCore']['statements']:
+        # không dạy gì. NHƯNG bài đã có video thì rỗng là CHỦ Ý — không phân biệt
+        # hai chuyện này thì cảnh báo kêu suốt rồi người ta quen tai, tới lúc nó
+        # kêu thật cũng không ai nhìn.
+        if not d['knowledgeCore']['statements'] and not co_video:
             canh_bao.append(f"{d['id']}: không có nguyên tắc nào — mẫu tên bước "
                             f"trong khuon_chung.py bỏ sót cách đặt tên của bài này?")
         ten = b['id'].replace('DL:', 'DL_').replace('.', '_') + '.json'

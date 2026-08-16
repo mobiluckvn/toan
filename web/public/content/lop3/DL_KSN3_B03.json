@@ -26,25 +26,8 @@
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — LUẬT LẶP: từ hai thẻ 2 và 5, KHÔNG lặp thì số 2 chữ số lớn nhất là 52. Nhưng nếu ĐƯỢC LẶP — cứ dùng thẻ to nhất cho mọi vị trí: 55! Bé nhất được lặp: 22."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — LUẬT CHẴN - LẺ: số chẵn hay lẻ do cái ĐUÔI quyết định (bí mật Bài 11 lớp 2!). Vậy muốn lập số chẵn, phải đặt vé giữ đuôi TRƯỚC, rồi mới xếp phần đầu to-trước như thường lệ:"
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3. Từ 3, 8, 5: số lớn nhất tự do là 853 — nhưng nó LẺ! Muốn chẵn: đuôi bắt buộc là 8 (thẻ chẵn duy nhất), phần đầu xếp từ 3, 5 to trước → 538. Muốn số LẺ lớn nhất: đuôi chọn thẻ lẻ NHỎ nhất (thẻ 3) để dành thẻ to cho phần đầu → 853."
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4. Có số 0 thì sao? Từ 6, 0, 3 lập số chẵn BÉ nhất: phần đầu muốn nhỏ → 3 đứng đầu (0 bị cấm!); đuôi chẵn còn 0 hoặc 6 → chọn 0 nhỏ hơn... khoan, đuôi 0 thì giữa là 6: 360; đuôi 6 thì giữa là 0: 306. So sánh: $306 < 360$ → đáp án 306. Bài học: khi phân vân, LIỆT KÊ cả hai ứng viên rồi so — đừng đoán!"
-   }
-  ],
-  "mantra": "Có điều kiện chẵn - lẻ: ĐUÔI ĐẶT VÉ TRƯỚC, phần đầu xếp sau. Được lặp: thẻ tốt nhất dùng cho mọi ghế. Và muôn đời: chú số 0 không đứng đầu, phân vân thì liệt kê ứng viên rồi so!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
@@ -57,43 +40,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "narration": "Từ ba tấm thẻ 3, 8, 5 (mỗi thẻ dùng một lần), hãy lập số chẵn lớn nhất có ba chữ số."
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
    {
     "id": "S6",
     "kind": "trap",
@@ -385,28 +331,7 @@
   "homeActivity": "Khi con trả lời, hỏi ngược: \"Sao con chọn đuôi này?\" — nói được lý do tức là chiến thuật đã thành của con, không phải học vẹt.",
   "watchFor": "NÊN: cho con gặp ca phân vân (như 306 vs 360) để luyện thói quen liệt kê - so sánh. KHÔNG NÊN: đưa điều kiện chia hết cho 3, 5, 9 — các dấu hiệu đó là đại tiệc của lớp 4."
  },
- "figureSpec": [
-  {
-   "id": "L3H_MO03",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L3H_MO03.png",
-   "caption": "Ba tấm thẻ 3, 8, 5 và ba ô trống phải xếp thành số chẵn lớn nhất",
-   "sha256_16": "d81a76badbb1ce9c",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L3H_GI04",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L3H_GI04.png",
-   "caption": "Đuôi đặt vé trước: thẻ chẵn 8 giữ chỗ cuối, hai thẻ còn lại xếp to trước",
-   "sha256_16": "ba6f17db6df19032",
-   "mucGoc": "khamPha"
-  }
- ],
+ "figureSpec": [],
  "hatMam": "Lớp 2 con đã thạo luật xếp thẻ: lớn nhất thì thẻ to đứng trước, bé nhất thì thẻ nhỏ đứng trước — riêng chú số 0 không được đứng đầu (Bài 4 lớp 2). Năm nay trò chơi thêm hai luật mới toanh!",
  "duongLui": {
   "ve": [
@@ -418,5 +343,8 @@
   "canCu": "chuDe",
   "lopDuoi": 2,
   "nhan": "Học lại bài lớp 2"
+ },
+ "video": {
+  "giang": "DL_KSN3_B03_giang.mp4"
  }
 }

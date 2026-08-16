@@ -43,15 +43,24 @@ test('KHÔNG bài nào khai video mà thiếu tệp', () => {
 test('KHÔNG video nào dựng rồi mà không bài nào dùng', () => {
   /* Chiều ngược lại: dựng xong quên khai thì video nằm đó, tốn dung lượng, và bé
      không bao giờ được xem. Cùng luật hai chiều đã dùng cho hình vẽ tay.
+
      ⚠ Video của MỌI quyển Toán nằm chung một thư mục, nên phép này phải gom khai
-     báo của cả hai quyển. Chỉ đọc lớp 4 thì mười video lớp 2 trông như mồ côi. */
-  const APP2 = new URL('../public/content/lop2/', import.meta.url);
-  const khai2 = readdirSync(APP2)
-    .filter((f) => /^DL_KSN2_B\d+\.json$/.test(f))
-    .map((f) => JSON.parse(readFileSync(new URL(f, APP2), 'utf8')))
+     báo của MỌI quyển. Bản trước gõ tay hai thư mục (lop2, lop4); ngày 16-08 lớp 3
+     dựng bốn video đầu tiên và cả bốn lập tức bị báo là mồ côi — video khai đúng,
+     bài đúng, chỉ phép kiểm là không biết có quyển thứ ba. Đúng cái bẫy đã ghi
+     trong sổ: mọi chỗ so tên quyển bằng danh sách gõ tay đều hỏng câm khi thêm
+     quyển. Nay QUÉT thư mục, thêm quyển không phải sửa tệp này. */
+  const ND = new URL('../public/content/', import.meta.url);
+  const khaiHet = readdirSync(ND, { withFileTypes: true })
+    .filter((e) => e.isDirectory())
+    .flatMap((e) => {
+      const d = new URL(`${e.name}/`, ND);
+      return readdirSync(d).filter((f) => /^DL_.*\.json$/.test(f))
+        .map((f) => JSON.parse(readFileSync(new URL(f, d), 'utf8')));
+    })
     .filter((b) => b.video?.giang)
     .map((b) => b.video.giang);
-  const dung = new Set([...coVideo.map((b) => b.video.giang), ...khai2]);
+  const dung = new Set([...coVideo.map((b) => b.video.giang), ...khaiHet]);
   const co = readdirSync(VIDEO).filter((f) => f.endsWith('.mp4'));
   assert.deepEqual(co.filter((f) => !dung.has(f)), []);
 });
