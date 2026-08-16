@@ -9,7 +9,7 @@
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
 | Đã xong | **96/168** — bài 1 tới 32, **HẾT chương 8** |
 | Còn lại | 72 micro · 24 bài lớn · chương 9 tới 14 |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 28; **bài 29 tới 32 chưa deploy** |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32 (trọn chương 8) |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
