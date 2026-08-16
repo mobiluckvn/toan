@@ -7972,6 +7972,242 @@ def kb3_quy_ve_mot_loai(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 3 · chương 7 · Hình học — năm bài
+# ═══════════════════════════════════════════════════════════════════════════
+# Chương này CHỈ dạy được bằng hình. Năm bài, năm câu hỏi khác nhau về cùng một
+# hình chữ nhật:
+#   B27 đi vòng quanh hết bao nhiêu — chu vi có công thức
+#   B28 nới một chiều thì vòng rào đổi bao nhiêu
+#   B29 hình tròn có ba bộ phận và một quan hệ
+#   B30 phủ kín ruột hết bao nhiêu viên — diện tích, khác hẳn chu vi
+#   B31 đếm khối thì đếm bằng BẢN ĐỒ TẦNG, đừng đếm bằng mắt nhìn nghiêng
+#
+# `hinh_cn` có sẵn `vienDam` (tô đậm đường viền — chu vi) và `oVuong` (lát lưới ô
+# — diện tích). Hai chế độ ấy đứng cạnh nhau là cả bài B30: cùng một hình, hai câu
+# hỏi khác hẳn nhau.
+
+
+def kb3_chu_vi_cong_thuc(b):
+    """L3·C7① Chu vi hình chữ nhật và hình vuông."""
+    return [
+        _c('bia', 'Đi hết một vòng quanh hình', so_bai(b),
+           loi=['Đi hết một vòng quanh hình thì được bao nhiêu mét.']),
+        _c('hinh_cn', 'Cộng cả vòng thì cũng ra', dai=6, rong=4, vienDam=True,
+           nhanDai='6 m', nhanRong='4 m',
+           chuPhu='6 + 4 + 6 + 4 = 20 m — đúng, nhưng dài dòng.',
+           loi=['Cách cũ là cộng cả vòng. Sáu cộng bốn cộng sáu cộng bốn, bằng hai '
+                'mươi mét.',
+                'Đúng, nhưng dài dòng.']),
+        _c('y_toan', 'Mắt tinh sẽ thấy ngay',
+           'Số 6 xuất hiện HAI lần, số 4 cũng HAI lần', buoc=1, soBuoc=3,
+           loi=['Mắt tinh sẽ thấy ngay. Số sáu xuất hiện hai lần, số bốn cũng hai '
+                'lần.',
+                'Vì hình chữ nhật có hai cặp cạnh bằng nhau.']),
+        _c('cong_thuc', 'Nên gom lại cho gọn',
+           congThuc='chu vi hình chữ nhật = (dài + rộng) × 2',
+           thay='gom một cặp dài với rộng rồi lấy hai lần — đúng phép gom đã học',
+           loi=['Nên gom lại cho gọn. Lấy dài cộng rộng rồi nhân hai.',
+                'Sáu cộng bốn là mười, nhân hai bằng hai mươi mét.']),
+        _c('hinh_cn', 'Hình vuông thì bốn cạnh bằng nhau', dai=5, rong=5,
+           vienDam=True, nhanDai='5 m', nhanRong='5 m',
+           chuPhu='Chu vi = cạnh × 4 = 5 × 4 = 20 m.',
+           loi=['Hình vuông thì cả bốn cạnh bằng nhau, nên lấy cạnh nhân bốn.',
+                'Năm nhân bốn cũng bằng hai mươi mét.']),
+        _c('y_toan', 'Đề chạy ngược thì chia trả lại',
+           'Chu vi 20 m  →  cạnh vuông = 20 : 4 = 5 m', buoc=2, soBuoc=3,
+           loi=['Đề chạy ngược thì chia trả lại. Biết chu vi hai mươi mét thì cạnh '
+                'hình vuông là hai mươi chia bốn, bằng năm mét.']),
+        _c('y_toan', 'Chữ nhật chạy ngược thì chia ĐÔI trước',
+           '20 : 2 = 10 là NỬA vòng (dài + rộng)  →  rộng = 10 − 6 = 4 m',
+           buoc=3, soBuoc=3,
+           loi=['Hình chữ nhật chạy ngược thì chia đôi trước. Hai mươi chia hai được '
+                'mười.',
+                'Mười ấy là nửa vòng, tức dài cộng rộng. Biết dài sáu thì rộng là '
+                'bốn mét.']),
+        _c('cong_thuc', 'Hai công thức, một phép ngược',
+           congThuc='chữ nhật: (dài + rộng) × 2   ·   vuông: cạnh × 4',
+           thay='vì mỗi chiều đều có mặt ở HAI phía của hình',
+           loi=['Con nhớ hai công thức. Chữ nhật lấy dài cộng rộng nhân hai, vuông '
+                'lấy cạnh nhân bốn.',
+                'Vì mỗi chiều đều có mặt ở hai phía của hình.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_chu_vi_bien_hinh(b):
+    """L3·C7② Nới một chiều thì chu vi đổi gấp đôi."""
+    return [
+        _c('bia', 'Nới vườn thì cần thêm mấy mét rào', so_bai(b),
+           loi=['Nới vườn ra một chút thì phải mua thêm mấy mét rào.']),
+        _c('hinh_cn', 'Vườn cũ: dài 6, rộng 4', dai=6, rong=4, vienDam=True,
+           nhanDai='6 m', nhanRong='4 m', chuPhu='Chu vi (6 + 4) × 2 = 20 m.',
+           loi=['Vườn cũ dài sáu mét, rộng bốn mét. Chu vi là hai mươi mét.']),
+        _c('hinh_cn', 'Nới chiều dài thêm 2 m', dai=8, rong=4, vienDam=True,
+           nhanDai='8 m', nhanRong='4 m', chuPhu='Chu vi mới (8 + 4) × 2 = 24 m.',
+           loi=['Nay nới chiều dài thêm hai mét. Chu vi mới là hai mươi tư mét.',
+                'Tăng những bốn mét, chứ không phải hai.']),
+        _c('y_toan', 'Vì sao tăng gấp đôi phần nới?',
+           'Chiều dài nằm ở CẢ cạnh trên lẫn cạnh dưới', buoc=1, soBuoc=3,
+           loi=['Vì sao lại tăng gấp đôi phần nới.',
+                'Vì chiều dài nằm ở cả cạnh trên lẫn cạnh dưới. Nới hai mét là nới ở '
+                'hai nơi cùng lúc.']),
+        _c('y_toan', 'Nên có đường tắt, khỏi tính lại từ đầu',
+           'chu vi mới = chu vi cũ + 2 × phần nới = 20 + 4 = 24', buoc=2, soBuoc=3,
+           loi=['Nên có đường tắt, khỏi phải tính lại từ đầu.',
+                'Chu vi mới bằng chu vi cũ cộng hai lần phần nới.']),
+        _c('hinh_cn', 'Dài thêm 2 mà rộng BỚT 2 thì sao?', dai=8, rong=2,
+           vienDam=True, nhanDai='8 m', nhanRong='2 m',
+           chuPhu='Chu vi (8 + 2) × 2 = 20 m — y nguyên vòng rào cũ.',
+           loi=['Nay thử dài thêm hai mà rộng bớt hai. Chu vi vẫn đúng hai mươi mét.',
+                'Hình đổi dáng hẳn, mà vòng rào cũ vẫn ôm vừa.']),
+        _c('y_toan', 'Vì phần thêm và phần bớt triệt tiêu nhau',
+           'Thêm 2 ở dài: +4  ·  bớt 2 ở rộng: −4',
+           loi=['Vì phần thêm và phần bớt triệt tiêu nhau. Thêm hai ở chiều dài là '
+                'cộng bốn.',
+                'Bớt hai ở chiều rộng là trừ bốn. Cộng lại thành không.']),
+        _c('cong_thuc', 'Mọi thay đổi ở một chiều đều nhân đôi',
+           congThuc='thêm k  →  chu vi tăng 2k     ·     bớt k  →  giảm 2k',
+           thay='vì chiều nào cũng có mặt ở hai phía của hình',
+           loi=['Con nhớ luật này. Thêm bao nhiêu ở một chiều thì chu vi tăng gấp đôi '
+                'chừng ấy.',
+                'Vì chiều nào cũng có mặt ở hai phía của hình.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_giai_phau_hinh_tron(b):
+    """L3·C7③ Tâm, bán kính, đường kính."""
+    return [
+        _c('bia', 'Ba bộ phận của hình tròn', so_bai(b),
+           loi=['Hình tròn có ba bộ phận, và giữa chúng có một quan hệ rất gọn.']),
+        _c('hinh_tron', 'Chân nhọn com pa đứng ở đâu — đó là TÂM',
+           chuPhu='Thường đặt tên là O.',
+           loi=['Cắm chân nhọn com pa xuống một điểm rồi xoay trọn một vòng.',
+                'Điểm ấy gọi là tâm, thường đặt tên là O.']),
+        _c('hinh_tron', 'Từ tâm ra mép — đó là BÁN KÍNH', hienR=True, nhanR='r',
+           chuPhu='Chính là độ mở của com pa.',
+           loi=['Đoạn từ tâm ra tới mép gọi là bán kính. Nó chính là độ mở của com '
+                'pa.']),
+        _c('y_toan', 'Bí mật thứ nhất',
+           'Mọi bán kính của MỘT hình tròn đều bằng nhau', buoc=1, soBuoc=3,
+           loi=['Bí mật thứ nhất. Mọi bán kính của cùng một hình tròn đều bằng nhau.',
+                'Vì com pa có đổi độ mở giữa chừng đâu.']),
+        _c('hinh_tron', 'Nối hai mép VÀ đi qua tâm — đó là ĐƯỜNG KÍNH',
+           hienR=True, hienD=True, nhanR='r', nhanD='d',
+           chuPhu='Nó ghép từ hai bán kính chụm đầu.',
+           loi=['Đoạn nối hai mép mà đi qua tâm gọi là đường kính.',
+                'Nó ghép từ đúng hai bán kính chụm đầu vào nhau.']),
+        _c('cong_thuc', 'Nên quan hệ rất gọn',
+           congThuc='đường kính = bán kính × 2',
+           thay='vì đường kính đúng bằng hai bán kính nối lại ở tâm',
+           loi=['Nên quan hệ rất gọn. Đường kính bằng bán kính nhân hai.',
+                'Bán kính ba xăng ti mét thì đường kính sáu xăng ti mét.']),
+        _c('hinh_tron', 'Đoạn nối hai mép mà KHÔNG qua tâm thì sao?',
+           dayLech=True, nhanLech='dây lệch tâm',
+           chuPhu='Nó ngắn hơn đường kính — không phải đường kính.',
+           loi=['Đoạn nối hai mép mà không đi qua tâm thì ngắn hơn.',
+                'Nó không phải đường kính. Muốn kiểm tra, con hỏi nó có đi qua tâm '
+                'không.']),
+        _c('y_toan', 'Và tâm là ĐIỂM GIỮA của đường kính',
+           'Muốn tìm điểm giữa đoạn 8 cm: 8 : 2 = 4 cm', buoc=3, soBuoc=3,
+           loi=['Tâm chia đường kính thành hai nửa bằng nhau, nên tâm là điểm giữa.',
+                'Muốn tìm điểm giữa của một đoạn tám xăng ti mét thì lấy tám chia '
+                'hai, được bốn.']),
+        _c('cong_thuc', 'Nhớ cả bộ bằng một cú xoay com pa',
+           congThuc='chân đứng = TÂM  ·  độ mở = BÁN KÍNH  ·  hai lần độ mở = ĐƯỜNG KÍNH',
+           thay='và đường kính buộc phải ĐI QUA TÂM, không thì chỉ là dây thường',
+           loi=['Con nhớ cả bộ bằng một cú xoay com pa. Chân đứng là tâm, độ mở là '
+                'bán kính, hai lần độ mở là đường kính.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_dien_tich(b):
+    """L3·C7④ Diện tích — và nó khác hẳn chu vi."""
+    return [
+        _c('bia', 'Phủ kín ruột hết bao nhiêu viên', so_bai(b),
+           loi=['Lần này không đi vòng quanh nữa, mà phủ kín ruột hình.']),
+        _c('y_toan', 'Chọn một viên gạch chuẩn',
+           'Ô vuông cạnh 1 cm — gọi là 1 xăng-ti-mét vuông', buoc=1, soBuoc=3,
+           loi=['Chọn một viên gạch chuẩn. Ô vuông mỗi cạnh một xăng ti mét.',
+                'Nó tên là một xăng ti mét vuông.']),
+        _c('hinh_cn', 'Lát thử vào hình 4 × 3', dai=4, rong=3, oVuong=True,
+           nhanDai='4 cm', nhanRong='3 cm',
+           chuPhu='Vừa khít 3 hàng, mỗi hàng 4 viên.',
+           loi=['Lát thử vào hình dài bốn rộng ba. Vừa khít ba hàng, mỗi hàng bốn '
+                'viên.']),
+        _c('y_toan', 'Không cần đếm từng viên — phép nhân đếm hộ',
+           '4 × 3 = 12 (cm²)', buoc=2, soBuoc=3,
+           loi=['Không cần đếm từng viên. Bốn nhân ba bằng mười hai, phép nhân đếm '
+                'hộ rồi.']),
+        _c('cong_thuc', 'Công thức diện tích',
+           congThuc='chữ nhật: dài × rộng   ·   vuông: cạnh × cạnh',
+           thay='vì mỗi hàng có "dài" viên, và có đúng "rộng" hàng như thế',
+           loi=['Chữ nhật thì lấy dài nhân rộng. Vuông là chữ nhật có dài bằng rộng, '
+                'nên lấy cạnh nhân cạnh.',
+                'Vì mỗi hàng có đúng bằng chiều dài số viên, và có đúng bằng chiều '
+                'rộng số hàng.']),
+        _c('hinh_cn', 'Cùng hình ấy, hỏi VÒNG RÀO thì khác', dai=4, rong=3,
+           vienDam=True, nhanDai='4 cm', nhanRong='3 cm',
+           chuPhu='Chu vi (4 + 3) × 2 = 14 cm — đi vòng quanh.',
+           loi=['Vẫn hình ấy, nhưng hỏi vòng rào thì khác hẳn.',
+                'Chu vi là mười bốn xăng ti mét, còn diện tích là mười hai xăng ti '
+                'mét vuông.']),
+        _c('y_toan', 'Hai câu hỏi khác nhau, hai đơn vị khác nhau',
+           'rào: đi VÒNG QUANH, cm   ·   thảm: phủ KÍN RUỘT, cm²',
+           loi=['Hai câu hỏi khác nhau nên hai đơn vị cũng khác nhau.',
+                'Vòng rào đo bằng xăng ti mét. Tấm thảm đo bằng xăng ti mét vuông.']),
+        _c('cong_thuc', 'Hỏi trước khi tính',
+           congThuc='đề muốn VÒNG RÀO hay TẤM THẢM?',
+           thay='thiếu chữ vuông bé xíu ở đơn vị là trả lời sang câu hỏi khác',
+           loi=['Con hỏi trước khi tính. Đề muốn vòng rào hay tấm thảm.',
+                'Thiếu chữ vuông bé xíu ở đơn vị là trả lời sang câu hỏi khác mất '
+                'rồi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_dem_khoi_theo_tang(b):
+    """L3·C7⑤ Đếm khối bằng bản đồ tầng."""
+    return [
+        _c('bia', 'Đếm khối, đừng tin con mắt', so_bai(b),
+           loi=['Đếm khối xếp chồng. Con mắt nhìn nghiêng hay đánh lừa lắm.']),
+        # `khuyet` khai theo TỪNG TẦNG (chỉ số 0 là tầng dưới cùng), không phải
+        # một con số chung — truyền số trần vào là bộ vẽ vỡ ngay.
+        _c('khoi', 'Khối gỗ hai tầng', kieu='chong', dai=3, rong=2, cao=2,
+           khuyet=[0, 2], chuPhu='Tầng trên bị nhấc mất mấy khối.',
+           loi=['Một khối gỗ xếp hai tầng. Tầng trên bị nhấc mất mấy khối.']),
+        _c('y_toan', 'Đừng đếm mặt nhìn thấy',
+           'Khối đứng sau và đứng dưới bị che khuất hết', buoc=1, soBuoc=3,
+           loi=['Con đừng đếm những mặt nhìn thấy. Khối đứng sau và đứng dưới bị che '
+                'khuất hết.']),
+        _c('khoi', 'Tách từng tầng ra mà đếm', kieu='tang', dai=3, rong=2, cao=2,
+           khuyet=[0, 2], chuPhu='Mỗi tầng một bản đồ riêng.',
+           loi=['Con tách từng tầng ra. Mỗi tầng vẽ một bản đồ riêng.']),
+        _c('y_toan', 'Tầng dưới nguyên vẹn', '3 × 2 = 6 (khối)',
+           loi=['Tầng dưới còn nguyên vẹn. Ba nhân hai bằng sáu khối.',
+                'Đếm y như đếm khay kẹo ở bài diện tích.']),
+        _c('y_toan', 'Tầng trên bị khoét mất 2', '6 − 2 = 4 (khối)',
+           loi=['Tầng trên vốn cũng sáu khối, bị nhấc đi hai, nên còn bốn khối.']),
+        _c('y_toan', 'Cộng dọc các tầng', '6 + 4 = 10 (khối)', buoc=3, soBuoc=3,
+           loi=['Cộng dọc các tầng lại. Sáu cộng bốn bằng mười khối.']),
+        _c('cong_thuc', 'Đếm bằng bản đồ, không đếm bằng mắt',
+           congThuc='mỗi tầng một lưới  →  tầng khoét thì trừ  →  cộng dọc các tầng',
+           thay='vì bản đồ tầng thấy cả khối bị che, còn mắt nhìn nghiêng thì không',
+           loi=['Con nhớ cách đếm. Mỗi tầng một lưới, tầng nào bị khoét thì trừ đi, '
+                'rồi cộng dọc các tầng.',
+                'Vì bản đồ tầng thấy được cả khối bị che, còn mắt nhìn nghiêng thì '
+                'không.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN3.B01': kb3_thap_nghin,   'DL:KSN3.B02': kb3_hai_cua,
     'DL:KSN3.B03': kb3_duoi_dat_ve,  'DL:KSN3.B04': kb3_dem_nguoc_trang,
@@ -7993,6 +8229,10 @@ BO = {
     'DL:KSN3.B22': kb3_di_lui_nhieu_tram, 'DL:KSN3.B23': kb3_ga_cho,
     'DL:KSN3.B24': kb3_ba_the_tran_cay,   'DL:KSN3.B25': kb3_hai_vong_giao_nhau,
     'DL:KSN3.B26': kb3_quy_ve_mot_loai,
+    # ══ LỚP 3 · chương 7 · Hình học — năm bài ══
+    'DL:KSN3.B27': kb3_chu_vi_cong_thuc, 'DL:KSN3.B28': kb3_chu_vi_bien_hinh,
+    'DL:KSN3.B29': kb3_giai_phau_hinh_tron, 'DL:KSN3.B30': kb3_dien_tich,
+    'DL:KSN3.B31': kb3_dem_khoi_theo_tang,
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
     'DL:KSN4.B19': kb_b19, 'DL:KSN4.B20': kb_b20,
