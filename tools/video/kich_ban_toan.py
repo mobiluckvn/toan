@@ -12403,7 +12403,145 @@ def kb5_hieu_tuoi_bat_bien(b):
     ]
 
 
+def kb5_ti_an_sau_hai_phan_so(b):
+    """L5·B32·M1 Quy đồng TỬ để khui tỉ, rồi ghép về máy tổng hoặc hiệu."""
+    return [
+        _c('bia', 'Hai phân số của đề chưa phải tỉ của đáp', so_bai(b),
+           loi=['Đề cho hai phân số. Lấy thẳng chúng làm tỉ là hỏng ngay.']),
+        _c('de_toan', 'Đề bài', de='2/3 của A bằng 3/4 của B. Tìm tỉ số A và B',
+           loi=['Hai phần ba của A bằng ba phần tư của B. Tìm tỉ số của A và B.']),
+        _c('y_toan', 'Hai phân số ấy đo trên HAI thứ khác nhau',
+           'chiêu quy đồng TỬ của bài 20 quay lại', buoc=1, soBuoc=4,
+           loi=['Hai phân số ấy đo trên hai thứ khác nhau. Chiêu quy đồng tử của bài '
+                'hai mươi quay lại.']),
+        _c('y_toan', 'Đưa hai miếng về CÙNG số phần',
+           '2/3 = 6/9   ·   3/4 = 6/8   →   1/9 của A  =  1/8 của B', buoc=2, soBuoc=4,
+           loi=['Đưa hai miếng về cùng sáu phần. Hai phần ba thành sáu phần chín, ba '
+                'phần tư thành sáu phần tám.',
+                'Chia cả hai cho sáu thì một phần chín của A bằng một phần tám của B.']),
+        _c('so_do_doan', 'Vẽ ra thì tỉ hiện ngay', be=8, lon=9,
+           phanBe=8, phanLon=9, nhanBe='B', nhanLon='A',
+           chuPhu='Mọi ô bằng nhau — A chín ô, B tám ô, nên A : B = 9 : 8.',
+           loi=['Vẽ ra thì tỉ hiện ngay. A chín ô, B tám ô, mà mọi ô bằng nhau.']),
+        _c('y_toan', 'Có một trực giác chắn được bẫy lộn chiều',
+           'miếng 2/3 NHỎ hơn miếng 3/4, mà hai miếng bằng nhau  →  A phải NHIỀU hơn',
+           buoc=3, soBuoc=4,
+           loi=['Có một trực giác chắn được bẫy lộn chiều.',
+                'Miếng hai phần ba nhỏ hơn miếng ba phần tư, mà hai miếng bằng nhau, '
+                'nên A phải nhiều hơn.']),
+        _c('de_toan', 'Khui tỉ xong là về nhà quen',
+           de='Ghép TỔNG 34  →  17 phần  →  A = 18 · B = 16',
+           loi=['Khui tỉ xong là về nhà quen. Ghép với tổng ba mươi tư thì mười bảy '
+                'phần.']),
+        _c('y_toan', 'Ghép HIỆU thì đổi số đếm',
+           'hiệu 3   →   chênh 1 ô = 3   →   A = 27 · B = 24', buoc=4, soBuoc=4,
+           loi=['Ghép với hiệu thì đổi số đếm. Chênh chỉ một ô, nên một ô đáng ba.',
+                'A hai mươi bảy, B hai mươi tư.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='phân số của đề chưa phải tỉ của đáp — QUY ĐỒNG TỬ đã',
+           thay='thử đẳng thức gốc: 2/3 của 27 = 18 = 3/4 của 24 ✓',
+           loi=['Con nhớ câu này. Phân số của đề chưa phải tỉ của đáp, phải quy đồng '
+                'tử đã.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_ti_an_trong_cau_tao_so(b):
+    """L5·B32·M2 Lời khai cấu tạo số dịch thẳng ra tỉ 1 : 10."""
+    return [
+        _c('bia', 'Tỉ cũng biết trốn trong cấu tạo của số', so_bai(b),
+           loi=['Lần này cái tỉ trốn ngay trong cách viết con số.']),
+        _c('de_toan', 'Đề bài',
+           de='Số B là số A viết thêm chữ số 0 vào bên phải.\nHiệu hai số là 108',
+           loi=['Số B là số A viết thêm chữ số không vào bên phải. Hiệu hai số là một '
+                'trăm linh tám.']),
+        _c('y_toan', 'Lời khai ấy dịch thẳng ra tỉ',
+           'thêm 0 bên phải = nhân với 10   →   tỉ  1 : 10', buoc=1, soBuoc=3,
+           loi=['Thêm chữ số không vào bên phải là nhân với mười, như bài hai mươi đã '
+                'học.',
+                'Nên tỉ số là một trên mười.']),
+        _c('so_do_doan', 'Số 10 chỉ để ĐẾM Ô', be=12, lon=120,
+           phanBe=1, phanLon=10, nhanBe='số A', nhanLon='số B',
+           hienHieu=True, chuHieu='hiệu 108 = 9 ô',
+           chuPhu='Phần thò ra là 10 − 1 = 9 ô, không phải 10.',
+           loi=['Số mười chỉ để đếm ô, không phải số chia.',
+                'Đề cho hiệu nên nhìn phần thò ra. Mười ô trừ một ô, còn chín ô.']),
+        _c('y_toan', 'Chia hiệu cho phần chênh',
+           '108 : 9 = 12   →   A = 12 · B = 120', buoc=2, soBuoc=3,
+           loi=['Một trăm linh tám chia chín, mỗi ô mười hai. A là mười hai, B là một '
+                'trăm hai mươi.']),
+        _c('y_toan', 'Thử về đủ hai cửa',
+           'viết thêm 0 vào 12 đúng ra 120 ✓      ·      120 − 12 = 108 ✓',
+           buoc=3, soBuoc=3,
+           loi=['Thử về đủ hai cửa. Viết thêm không vào mười hai đúng ra một trăm hai '
+                'mươi.',
+                'Và trừ nhau đúng một trăm linh tám.']),
+        _c('de_toan', 'Nếu đề cho TỔNG thay vì hiệu',
+           de='vẫn một máy — chỉ đổi số đếm ô',
+           loi=['Nếu đề cho tổng thay vì hiệu thì vẫn một máy, chỉ đổi số đếm ô.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='thêm 0 là GẤP 10   —   tổng 11 phần, hiệu 9 phần',
+           thay='khoanh chữ trước: tổng đi với tổng phần, hiệu đi với phần chênh',
+           loi=['Con nhớ câu này. Thêm không là gấp mười, tổng mười một phần, hiệu chín '
+                'phần.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_ti_bien_hinh(b):
+    """L5·B32·M3 Chuyện hai hồi — ai đứng im người ấy làm thước."""
+    return [
+        _c('bia', 'Khi tỉ số ĐỔI giữa chừng', so_bai(b),
+           loi=['Có đề kể chuyện hai hồi, và cái tỉ đổi giữa chừng.']),
+        _c('de_toan', 'Đề bài',
+           de='Hộp A gấp 3 lần hộp B. Nếu hộp A bớt đi 6 viên\nthì chỉ còn gấp 2 lần',
+           loi=['Hộp A gấp ba lần hộp B. Nếu hộp A bớt đi sáu viên thì chỉ còn gấp hai '
+                'lần.']),
+        _c('y_toan', 'Một sơ đồ không chứa nổi hai hồi',
+           'tỉ trước khác tỉ sau   →   phải vẽ HAI sơ đồ', buoc=1, soBuoc=4,
+           loi=['Một sơ đồ không chứa nổi hai hồi, nên phải vẽ hai.']),
+        _c('y_toan', 'Nhưng lấy gì làm thước? — AI ĐỨNG IM',
+           'hộp A đang đổi  ·  hộp B không ai đụng vào  →  lấy B làm thước',
+           buoc=2, soBuoc=4,
+           loi=['Nhưng lấy gì làm thước. Hộp A đang đổi, còn hộp B không ai đụng vào.',
+                'Ai đứng im thì người ấy làm thước.']),
+        _c('so_do_doan', 'HỒI MỘT', be=6, lon=18, phanBe=1, phanLon=3, thangDo=18,
+           nhanBe='hộp B', nhanLon='hộp A', chuPhu='A bằng ba phần của B.',
+           loi=['Hồi một, hộp A bằng ba phần của hộp B.']),
+        _c('so_do_doan', 'HỒI HAI — sau khi bớt 6', be=6, lon=12,
+           phanBe=1, phanLon=2, thangDo=18, nhanBe='hộp B', nhanLon='hộp A',
+           chuPhu='A còn hai phần — mà B không nhúc nhích.',
+           loi=['Hồi hai, hộp A còn hai phần, mà hộp B không nhúc nhích.',
+                'Vì cùng một thước nên hai tầng so được với nhau.']),
+        _c('y_toan', 'Manh mối nằm ở CHÊNH TẦNG',
+           '3 phần − 2 phần = 1 phần   ·   mà đó chính là 6 viên vừa bớt',
+           buoc=3, soBuoc=4,
+           loi=['Manh mối nằm ở chênh giữa hai tầng. Ba phần trừ hai phần còn một '
+                'phần.',
+                'Mà một phần ấy chính là sáu viên vừa bớt đi.']),
+        _c('y_toan', 'Nên một phần bằng 6',
+           'hộp B = 6 viên   ·   hộp A = 3 × 6 = 18 viên', buoc=4, soBuoc=4,
+           loi=['Nên hộp B sáu viên, hộp A mười tám viên.']),
+        _c('de_toan', 'Vì sao KHÔNG lấy hộp A làm thước',
+           de='tầng trước đo bằng A cũ, tầng sau đo bằng A mới',
+           loi=['Không lấy A làm thước được. Tầng trước đo bằng A cũ, tầng sau đo bằng '
+                'A mới, hai thước khác vạch.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='chuyện hai hồi → sơ đồ HAI TẦNG, chênh tầng là manh mối',
+           thay='diễn hai hồi mà thử: 18 = 3 × 6 ✓ và 18 − 6 = 12 = 2 × 6 ✓',
+           loi=['Con nhớ hai câu. Chuyện hai hồi thì vẽ sơ đồ hai tầng, và ai đứng im '
+                'người ấy làm thước.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B32.M1': kb5_ti_an_sau_hai_phan_so,
+    'DL:KSN5Q1.B32.M2': kb5_ti_an_trong_cau_tao_so,
+    'DL:KSN5Q1.B32.M3': kb5_ti_bien_hinh,
     'DL:KSN5Q1.B31.M1': kb5_hieu_ti_phan_chenh,
     'DL:KSN5Q1.B31.M2': kb5_khui_hieu_tu_cu_chuyen,
     'DL:KSN5Q1.B31.M3': kb5_hieu_tuoi_bat_bien,

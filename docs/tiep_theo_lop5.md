@@ -7,9 +7,9 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **93/168** — bài 1 tới 31 |
-| Còn lại | 75 micro · 25 bài lớn · bài 32 khép chương 8, rồi chương 9 tới 14 |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 28; **bài 29 · 30 · 31 chưa deploy** |
+| Đã xong | **96/168** — bài 1 tới 32, **HẾT chương 8** |
+| Còn lại | 72 micro · 24 bài lớn · chương 9 tới 14 |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 28; **bài 29 tới 32 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
@@ -22,7 +22,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**75**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**72**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 16 lần)
 
@@ -130,7 +130,9 @@ MỚI không được nợ — thêm một cái vượt 70 giây là cổng đ�
    ⚠ **Đặt hai màn cạnh nhau thì PHẢI khai `thangDo`.** Mặc định mỗi màn tự chuẩn
    hoá theo đoạn dài nhất CỦA NÓ, nên khúc hiệu 24 ở màn "sau 5 năm" vẽ ngắn hơn ở
    màn "hôm nay" — hình nói ngược lại đúng điều lời đang dạy. Khai `thangDo` bằng giá
-   trị lớn nhất của cả cụm thì mọi màn chung một thước. Lỗi thật, bắt được ở bài 28.
+   trị lớn nhất của cả cụm thì mọi màn chung một thước. Lỗi thật, bắt được ở bài 28,
+   và bài 32 M3 sống nhờ nó: hai hồi của câu chuyện phải vẽ hộp ĐỨNG IM dài y hệt
+   nhau, không thì hình nói ngược lại đúng điều lời đang dạy.
 
    `phanBe` · `phanLon` chia đoạn thành ô đều nhau — đó là hình của chương 8 (tổng –
    tỉ): kẻ ô ra thì bé ĐẾM được tổng số phần, thứ mà cả chương đứng hay đổ ở đó.

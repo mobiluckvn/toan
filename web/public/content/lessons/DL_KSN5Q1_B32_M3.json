@@ -35,24 +35,7 @@
   "kidText": "Tỉ số đổi sau khi thêm bớt: con chọn cái KHÔNG đổi làm thước, vẽ HAI sơ đồ trước và sau. Phần chênh chính là lượng thêm bớt."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tỉ BIẾN HÌNH: chuyện hai hồi — tỉ trước khác tỉ sau (gấp 3 rồi chỉ còn gấp 2): MỘT sơ đồ không chứa nổi hai hồi — phải vẽ HAI sơ đồ trước – sau."
-   },
-   {
-    "id": "K2",
-    "text": "Chọn thước = ĐẠI LƯỢNG KHÔNG ĐỔI suốt câu chuyện (hũ Su Bống không ai đụng vào): hai sơ đồ cùng đơn vị phần mới so được với nhau — thước tự đổi là so lệch."
-   },
-   {
-    "id": "K3",
-    "text": "Manh mối nằm ở CHÊNH TẦNG: trước Cáo 3 phần — sau Cáo 2 phần (cùng thước Su Bống): chênh 1 phần = 6 viên vừa bớt → Su Bống 6 viên; Cáo 18 viên."
-   },
-   {
-    "id": "K4",
-    "text": "Thử diễn hai hồi: hồi một $18 = 3  \\times  6$ ✓; bớt 6 còn $12 = 2  \\times  6$ ✓ — cả hai tỉ cùng khớp mới đóng bài."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: VỞ KỊCH HAI HỒI TRÊN MỘT CÂY THƯỚC. Đề trùm: \"kẹo Cáo Đề gấp 3 lần Su Bống; Cáo bớt đi 6 viên thì chỉ còn gấp 2 — mỗi bạn mấy viên?\" Trí Long vẽ MỘT sơ đồ gấp-3 rồi loay hoay nhét số 6 vào đâu cũng lệch! Đây là vở kịch HAI HỒI — tỉ hồi một khác hồi hai: phải vẽ HAI sơ đồ. Nhưng lấy gì làm thước? Hũ Cáo thì thay đổi giữa chừng — hũ SU BỐNG không ai đụng: AI ĐỨNG IM NGƯỜI ẤY LÀM THƯỚC! Hai tầng cùng thước Su Bống: hồi một — Cáo BA phần; hồi hai — Cáo HAI phần. Chênh tầng: một phần — đúng bằng 6 viên vừa bớt! Vậy một phần = 6: Su Bống SÁU viên, Cáo MƯỜI TÁM. Diễn hai hồi thử: 18 gấp 3 lần 6; bớt 6 còn 12 gấp 2 lần 6 — cả hai tỉ cùng gật đầu!",
   "canonicalExamples": [
    {
@@ -77,14 +60,8 @@
     "counterExample": "Thước đổi giữa chừng như đo vải bằng hai cây thước khác vạch — số đo nào cũng vô giá trị."
    }
   ],
-  "vocabulary": [
-   "vở kịch hai hồi",
-   "ai đứng im làm thước",
-   "hai sơ đồ cùng đơn vị",
-   "chênh tầng là manh mối",
-   "diễn hai hồi để thử"
-  ],
-  "mantra": "CHUYỆN HAI HỒI — HAI SƠ ĐỒ; AI ĐỨNG IM, NGƯỜI ẤY LÀM THƯỚC!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -106,54 +83,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Số kẹo của Cáo Đề gấp 3 lần của Su Bống. Nếu Cáo Đề bớt đi 6 viên thì chỉ còn gấp 2 lần. Hỏi mỗi bạn có bao nhiêu viên?",
-    "display": {
-     "type": "story_panel",
-     "caption": "một sơ đồ — nhét 6 vào đâu?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở màn hồi hai!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
-    ],
-    "narration": "Vẽ HAI sơ đồ — nhưng lấy gì làm thước? Hũ Cáo đang đổi; hũ SU BỐNG không ai đụng: ai đứng im người ấy làm thước! Hai tầng cùng thước: hồi một — Cáo BA phần Su Bống; hồi hai — Cáo còn HAI phần. Nhìn CHÊNH TẦNG: một phần — đúng bằng SÁU viên vừa bớt! Một phần bằng sáu: Su Bống SÁU viên, Cáo MƯỜI TÁM viên!",
-    "display": {
-     "type": "two_act_diagram_interactive",
-     "spec": {
-      "ruler": "Su Bống (không đổi)",
-      "act1": "Cáo = 3 phần",
-      "act2": "Cáo = 2 phần",
-      "gap": "chênh 1 phần = 6",
-      "values": [
-       6,
-       18
-      ]
-     }
-    },
-    "interaction": {
-     "type": "pick_ruler_compare",
-     "answerKey": {
-      "values": [
-       6,
-       18
-      ]
-     },
-     "successMessage": "Thước Su Bống → chênh tầng 1 phần = 6 → 6 & 18!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -174,47 +103,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K4"
-    ],
-    "narration": "Vì sao không lấy hũ Cáo làm thước? Tầng trước đo bằng Cáo-cũ, tầng sau đo bằng Cáo-mới — HAI cây thước khác vạch: so chênh vô nghĩa! Thước phải là đại lượng đứng im xuyên suốt. Diễn hai hồi để thử đáp: hồi một — mười tám đúng gấp ba sáu; hồi hai — bớt sáu còn mười hai, đúng gấp đôi sáu: cả HAI tỉ cùng gật đầu mới đóng bài!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "thước = hũ Cáo (đang đổi)",
-       "output": "✗ hai tầng khác đơn vị",
-       "valid": false,
-       "reason": "thước đổi là so lệch"
-      },
-      {
-       "input": "thước = hũ Su Bống (đứng im)",
-       "output": "✓ chênh 1 phần = 6 → 6 & 18",
-       "valid": true,
-       "reason": "diễn hai hồi: 3× ✓ và 2× ✓"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai câu cần nhớ: chuyện hai hồi — sơ đồ hai tầng, chênh tầng là manh mối! Ai đứng im — người ấy làm thước!",
-    "display": {
-     "type": "mantra_card",
-     "text": "HAI HỒI — HAI SƠ ĐỒ · AI ĐỨNG IM LÀM THƯỚC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -526,112 +414,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B32.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "một sơ đồ — nhét 6 vào đâu?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Tớ vẽ một sơ đồ gấp-3 rồi… giờ nhét số 6 vào đâu bây giờ?!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B32_M3_F1.png",
-   "sha256_16": "0a2aaad70e0c2308"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "thước = hũ Cáo (đang đổi)"
-     ],
-     "result": "hai tầng khác đơn vị"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "thước = hũ Su Bống (đứng im)"
-     ],
-     "result": "chênh 1 phần = 6 → 6 & 18"
-    },
-    "verdict": "diễn hai hồi: 3× và 2×"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B32_M3_F2.png",
-   "sha256_16": "8b4ff440d31880fb"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tỉ BIẾN HÌNH",
-      "text": "chuyện hai hồi",
-      "tone": "navy"
-     },
-     {
-      "text": "Chọn thước = ĐẠI LƯỢNG KHÔNG ĐỔI suốt câu chuyện (hũ Su Bống không ai đụng vào): hai sơ đồ cùng đơn vị phần mới so được với nhau — thước tự đổi là so lệch.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CHUYỆN HAI HỒI — HAI SƠ ĐỒ; AI ĐỨNG IM, NGƯỜI ẤY LÀM THƯỚC!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B32_M3_F3.png",
-   "sha256_16": "7dd9ed8e08121188"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "TỈ BIẾN HÌNH: AI ĐỨNG IM NGƯỜI ẤY LÀM THƯỚC",
-    "neutral": true,
-    "wrong": {
-     "head": "SƠ ĐỒ TRƯỚC",
-     "steps": [
-      "Su Bống 1 phần",
-      "Cáo Đề 3 phần"
-     ],
-     "result": "gấp 3 lần"
-    },
-    "right": {
-     "head": "SƠ ĐỒ SAU",
-     "steps": [
-      "Su Bống vẫn 1 phần",
-      "Cáo Đề 2 phần"
-     ],
-     "result": "gấp 2 lần"
-    },
-    "verdict": "Chênh 1 phần = 6 viên → Su Bống 6 · Cáo Đề 18"
-   },
-   "caption": "Su Bống không đổi nên lấy làm thước — chênh tầng chính là manh mối",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B32_M3_F4.png",
-   "sha256_16": "3226be2523389e50"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B29"
@@ -643,5 +426,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Tỉ biến hình: ai đứng im người ấy làm thước — hai sơ đồ, chênh tầng là manh mối"
+ "titleDay": "Tỉ biến hình: ai đứng im người ấy làm thước — hai sơ đồ, chênh tầng là manh mối",
+ "video": {
+  "giang": "DL_KSN5Q1_B32_M3_giang.mp4"
+ }
 }

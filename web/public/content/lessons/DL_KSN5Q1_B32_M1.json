@@ -35,24 +35,7 @@
   "kidText": "Hai phân số đang giấu tỉ số thật: con quy đồng tử để lộ ra. Miếng nhỏ hơn thì khay phải nhiều hơn — nhớ kẻo lộn chiều."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Hai phân số nói về HAI ĐẠI LƯỢNG KHÁC NHAU ($\\frac{2}{3}$ của A, $\\frac{3}{4}$ của B) — không lấy thẳng làm tỉ! Quy đồng TỬ: $\\frac{2}{3}$ = $\\frac{6}{9}$; $\\frac{3}{4}$ = $\\frac{6}{8}$ → sáu phần chín của A = sáu phần tám của B → $\\frac{1}{9}$ A = $\\frac{1}{8}$ B → A : B = $9 : 8$ (mẫu A : mẫu B)."
-   },
-   {
-    "id": "K2",
-    "text": "Trực giác chiều chắn bẫy lộn: miếng $\\frac{2}{3}$ NHỎ hơn miếng $\\frac{3}{4}$ mà hai miếng bằng nhau → khay A phải NHIỀU hơn: A đứng trước với số to ($9 : 8$, cấm $8 : 9$)."
-   },
-   {
-    "id": "K3",
-    "text": "Khui tỉ xong ghép về máy quen: + tổng 34 → 17 phần → 18 và 16 (tổng – tỉ); + hiệu 3 → chênh 1 phần = 3 → 27 và 24 (hiệu – tỉ). Thử về ĐẲNG THỨC GỐC: $\\frac{2}{3}$ × $27 = 18$ = $\\frac{3}{4}$ × 24 ✓."
-   },
-   {
-    "id": "K4",
-    "text": "Ca cùng tử sẵn ($\\frac{1}{2}$ A = $\\frac{1}{3}$ B) thì tỉ lộ ngay $2 : 3$; ca lệch cả hai ($\\frac{3}{5}$ A = $\\frac{2}{3}$ B) quy tử chung 6: $\\frac{6}{10}$ và $\\frac{6}{9}$ → $10 : 9$."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HAI MIẾNG BÁNH BẰNG NHAU TỪ HAI KHAY KHÁC CỠ. Đề: \"2/3 khay A bằng 3/4 khay B\" — Trí Long phán ngay A : B = 2 : 3! Nhưng hai phân số đo trên HAI KHAY KHÁC NHAU — như hai đồng tiền khác tệ, không so thẳng được. Chiêu quy đồng TỬ Bài 20 tái xuất: đưa hai miếng về cùng SỐ PHẦN — 2/3 = 6/9 và 3/4 = 6/8: sáu miếng nhỏ của A = sáu miếng nhỏ của B → MỘT miếng 1/9 của A = MỘT miếng 1/8 của B → cả khay: A : B = 9 : 8! Trực giác chiều kiểm ngay: miếng 2/3 NHỎ hơn miếng 3/4 mà hai phần bằng nhau — khay A phải NHIỀU bánh hơn: 9 đứng bên A, chuẩn chiều! Khui tỉ xong là về nhà quen: + tổng 34 → 17 phần → 18 và 16; + hiệu 3 → chênh 1 = 3 → 27 và 24 — thử đẳng thức gốc đóng hồ sơ.",
   "canonicalExamples": [
    {
@@ -83,14 +66,8 @@
     "counterExample": "A : B = $2 : 3$ với tổng 34? Chẳng chia nổi 34 cho 5 phần đẹp — còn thử gốc: $\\frac{2}{3}$ × 13,6 lệch tung."
    }
   ],
-  "vocabulary": [
-   "hai khay khác cỡ",
-   "quy đồng tử tái xuất",
-   "miếng nhỏ — khay nhiều",
-   "ghép tổng / hiệu",
-   "thử đẳng thức gốc"
-  ],
-  "mantra": "PHÂN SỐ CỦA ĐỀ CHƯA PHẢI TỈ CỦA ĐÁP — QUY ĐỒNG TỬ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -117,46 +94,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Biết $\\frac{2}{3}$ của A bằng $\\frac{3}{4}$ của B. Quy đồng tử số để tìm tỉ số A : B.",
-    "display": {
-     "type": "story_panel",
-     "caption": "A : B = $2 : 3$ luôn??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để quy đồng tử!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Chiêu quy đồng TỬ Bài hai mươi tái xuất: đưa hai miếng về cùng số phần — hai phần ba bằng SÁU PHẦN CHÍN; ba phần tư bằng SÁU PHẦN TÁM: sáu miếng nhỏ của A bằng sáu miếng nhỏ của B — vậy MỘT miếng một-phần-chín của A bằng một miếng một-phần-tám của B: cả khay A : B = CHÍN : TÁM! Kiểm chiều: miếng hai-phần-ba NHỎ hơn — khay A phải NHIỀU: số chín bên A, chuẩn!",
-    "display": {
-     "type": "numerator_match_interactive",
-     "spec": {
-      "left": "2/3 = 6/9",
-      "right": "3/4 = 6/8",
-      "ratio": "A : B = 9 : 8",
-      "direction": "miếng nhỏ → khay nhiều: A = 9"
-     }
-    },
-    "interaction": {
-     "type": "match_numerators",
-     "answerKey": {
-      "value": "9:8"
-     },
-     "successMessage": "6/9 = 6/8 → A : B = 9 : 8 — đúng chiều!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -178,38 +115,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Khui tỉ xong là về nhà quen! Ghép TỔNG ba tư: mười bảy phần — phần HAI: A mười tám, B mười sáu. Ghép HIỆU ba: chênh chín trừ tám bằng MỘT phần — bằng ba: A HAI BẢY, B HAI TƯ — thử đẳng thức gốc: hai phần ba của hai bảy là mười tám, đúng bằng ba phần tư của hai tư! Ca cùng tử sẵn thì tỉ lộ ngay: một phần hai A bằng một phần ba B — A : B = HAI : BA, năm phần bằng ba mươi: mười hai và mười tám!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "+ tổng 34: 17 phần → 18 & 16",
-      "+ hiệu 3: chênh 1 = 3 → 27 & 24 (thử 18 = 18 ✓)",
-      "cùng tử 1: 1/2 A = 1/3 B → 2 : 3 → 12 & 18"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: phân số của đề chưa phải tỉ của đáp — quy đồng tử!",
-    "display": {
-     "type": "mantra_card",
-     "text": "QUY ĐỒNG TỬ — RỒI MỚI RA TỈ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -608,108 +513,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B32.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "A : B = 2 : 3 luôn??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "A : B = 2 : 3, dễ!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B32_M1_F1.png",
-   "sha256_16": "6ccdd45bad8bfa24"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Tỉ ẩn sau hai phân số: quy đồng tử tái xuất — ghép tổng / hiệu",
-    "steps": [
-     {
-      "text": "+ tổng 34: 17 phần → 18 & 16"
-     },
-     {
-      "text": "+ hiệu 3: chênh 1 = 3 → 27 & 24 (thử 18 = 18 )"
-     },
-     {
-      "text": "cùng tử 1: 1/2 A = 1/3 B → 2 : 3 → 12 & 18"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B32_M1_F2.png",
-   "sha256_16": "625713401a5cf013"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Hai phân số nói về HAI ĐẠI LƯỢNG KHÁC NHAU (2/3 của A, 3/4 của B)",
-      "text": "không lấy thẳng làm tỉ! Quy đồng TỬ: 2/3 = 6/9; 3/4 = 6/8 → sáu phần chín của A = sáu phần tám của B → 1/9 A = 1/8 B → A : B = 9 : 8 (mẫu A : mẫu B).",
-      "tone": "navy"
-     },
-     {
-      "label": "Trực giác chiều chắn bẫy lộn",
-      "text": "miếng 2/3 NHỎ hơn miếng 3/4 mà hai miếng bằng nhau → khay A phải NHIỀU hơn: A đứng trước với số to (9 : 8, cấm 8 : 9).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "PHÂN SỐ CỦA ĐỀ CHƯA PHẢI TỈ CỦA ĐÁP — QUY ĐỒNG TỬ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B32_M1_F3.png",
-   "sha256_16": "3b8de279058220a4"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "KHUI TỈ ẨN: 2/3 CỦA A BẰNG 3/4 CỦA B",
-    "neutral": true,
-    "wrong": {
-     "head": "QUY ĐỒNG TỬ — VẾ A",
-     "steps": [
-      "2/3 = 6/9"
-     ],
-     "result": "A chia 9 phần"
-    },
-    "right": {
-     "head": "QUY ĐỒNG TỬ — VẾ B",
-     "steps": [
-      "3/4 = 6/8"
-     ],
-     "result": "B chia 8 phần"
-    },
-    "verdict": "A : B = 9 : 8 → ghép tổng 34 → A 18 · B 16"
-   },
-   "caption": "Miếng lấy ra nhỏ hơn thì cả cái phải nhiều hơn",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B32_M1_F4.png",
-   "sha256_16": "a292d5b04a0b5970"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B29"
@@ -721,5 +525,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Tỉ ẩn sau hai phân số: quy đồng tử tái xuất — ghép tổng / hiệu"
+ "titleDay": "Tỉ ẩn sau hai phân số: quy đồng tử tái xuất — ghép tổng / hiệu",
+ "video": {
+  "giang": "DL_KSN5Q1_B32_M1_giang.mp4"
+ }
 }
