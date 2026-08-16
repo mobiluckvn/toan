@@ -833,8 +833,9 @@ def kb_chia_du(b):
            'Thì mình đã xếp thêm được rồi.', buoc=4, soBuoc=4,
            loi=['Nếu phần thừa mà đủ một nhóm nữa thì mình đã xếp thêm được rồi.',
                 'Nên chỗ thừa lại luôn ít hơn số chia.']),
-        _c('nhom_deu', 'Xếp sai thì trông thế này', tong=14, moiNhom=4,
-           chuPhu='Viết 14 : 4 = 2 (dư 6) là sai',
+        _c('nhom_deu', 'Đối chiếu với cách viết sai', tong=14, moiNhom=4,
+           chuPhu='Có bạn viết 14 : 4 = 2 (dư 6) — con đếm lại hình mà xem',
+           soSai=[6],
            chuCuoi='Thừa 6 thì còn xếp thêm được một hộp nữa.',
            loi=['Có bạn viết mười bốn chia bốn bằng hai, dư sáu.',
                 'Thừa sáu thì còn xếp thêm được một hộp nữa, nên viết thế là sai.']),
@@ -1849,8 +1850,8 @@ def kb_mot_nguoi_nghi(b):
            'Anh 2 phần · em 1 phần · chung 3 phần mỗi giờ', buoc=1, soBuoc=4,
            loi=['Vẫn chia việc thành mười hai phần như bài trước.',
                 'Làm chung mỗi giờ được ba phần.']),
-        _c('nhom_deu', 'Hai giờ làm chung được 6 phần', tong=12, moiNhom=6,
-           chuPhu='3 phần mỗi giờ, hai giờ là 6 phần.',
+        _c('nhom_deu', 'Hai giờ làm chung được 6 phần', tong=6, moiNhom=3,
+           chuPhu='Mỗi giờ 3 phần, hai giờ là 6 phần.',
            chuCuoi='Nửa việc đã xong.',
            loi=['Ba phần mỗi giờ, hai giờ là sáu phần. Nửa việc đã xong.']),
         _c('y_toan', 'Còn lại mấy phần', '12 − 6 = 6 phần', buoc=2, soBuoc=4,
@@ -7341,6 +7342,188 @@ def kb3_nhip_khong_deu(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 3 · chương 4 · Thứ tự phép tính — bốn bài
+# ═══════════════════════════════════════════════════════════════════════════
+# Bốn bài này dạy MỘT thứ tự và cách dùng nó:
+#   B13 không ngoặc: nhân chia trước, cộng trừ sau, cùng loại thì trái trước
+#   B14 có ngoặc: mở trong cùng ra ngoài
+#   B15 tìm X hai máy: gỡ máy ngoài trước, đảo phép
+#   B16 rà mắt tìm cấu trúc trước khi cắm đầu tính
+#
+# ⚠ Sách viết chương này bằng rất nhiều ví von bị `TU_CAM` cấm (mật thất, tuyệt kỹ,
+# thám tử, Gauss). Kịch bản nói thẳng bằng chữ toán — đó chính là điều bác chốt khi
+# bỏ nhân vật: giữ Ý của sách, bỏ VỎ của sách.
+
+
+def kb3_lan_uu_tien(b):
+    """L3·C4① Nhân chia tính trước, cộng trừ tính sau."""
+    return [
+        _c('bia', 'Phép nào tính trước', so_bai(b),
+           loi=['Một dãy phép tính. Làm phép nào trước thì ra kết quả khác nhau.']),
+        _c('de_toan', 'Đề bài', de='Tính 5 + 3 × 2',
+           loi=['Tính năm cộng ba nhân hai.']),
+        _c('y_toan', 'Hai cách làm, hai đáp số khác nhau',
+           'cộng trước: 8 × 2 = 16     ·     nhân trước: 5 + 6 = 11',
+           buoc=1, soBuoc=3,
+           loi=['Cộng trước thì được mười sáu. Nhân trước thì được mười một.',
+                'Chỉ một trong hai là đúng, nên phải có luật.']),
+        _c('luoi_cham', 'Đọc lại đề bằng đồ vật: 3 túi, mỗi túi 2 viên',
+           hang=3, cot=2,
+           chuPhu='Muốn biết cả thảy mấy viên thì phải bóc túi ra đã.',
+           loi=['Con đọc lại đề bằng đồ vật. Có ba túi, mỗi túi hai viên.',
+                'Muốn biết cả thảy bao nhiêu viên thì phải bóc túi ra trước đã.']),
+        _c('y_toan', 'Nên nhân tính trước', '5 + 3 × 2 = 5 + 6 = 11',
+           buoc=2, soBuoc=3,
+           loi=['Nên phép nhân tính trước. Ba nhân hai bằng sáu, rồi cộng năm, được '
+                'mười một.']),
+        _c('y_toan', 'Chia cũng đi cùng làn với nhân', '20 − 12 : 4 = 20 − 3 = 17',
+           buoc=3, soBuoc=3,
+           loi=['Phép chia cũng đi cùng nhóm với phép nhân.',
+                'Hai mươi trừ mười hai chia bốn. Chia trước được ba, rồi lấy hai mươi '
+                'trừ ba, bằng mười bảy.']),
+        _c('y_toan', 'Cùng một nhóm thì làm từ TRÁI sang',
+           '24 : 4 × 2 = 6 × 2 = 12, không phải 24 : 8', buoc=1, soBuoc=1,
+           loi=['Gặp hai phép cùng một nhóm thì làm lần lượt từ trái sang phải.',
+                'Hai mươi tư chia bốn được sáu, rồi nhân hai được mười hai. Không '
+                'được nhảy cóc nhân bốn với hai trước.']),
+        _c('cong_thuc', 'Luật của mọi dãy phép tính',
+           congThuc='NHÂN CHIA trước  ·  CỘNG TRỪ sau  ·  cùng nhóm thì TRÁI trước',
+           thay='vì nhân là gộp nhiều nhóm bằng nhau, phải gộp xong mới cộng thêm được',
+           loi=['Con nhớ luật này. Nhân chia làm trước, cộng trừ làm sau, cùng nhóm '
+                'thì làm từ trái sang.',
+                'Vì nhân là gộp nhiều nhóm bằng nhau, gộp xong mới cộng thêm được.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_dau_ngoac(b):
+    """L3·C4② Dấu ngoặc — mở trong cùng ra ngoài."""
+    return [
+        _c('bia', 'Dấu ngoặc đổi cả đáp số', so_bai(b),
+           loi=['Cùng những con số ấy, thêm một dấu ngoặc là đáp số khác hẳn.']),
+        _c('y_toan', 'Cùng bộ số, khác một dấu ngoặc',
+           '5 + 3 × 2 = 11     ·     (5 + 3) × 2 = 16', buoc=1, soBuoc=3,
+           loi=['Con nhìn hai dòng này. Cùng ba con số ấy, cùng hai phép tính ấy.',
+                'Một bên được mười một, một bên được mười sáu. Khác nhau chỉ ở dấu '
+                'ngoặc.']),
+        _c('y_toan', 'Ngoặc được quyền đi trước tất cả',
+           'Trong ngoặc  →  nhân chia  →  cộng trừ', buoc=2, soBuoc=3,
+           loi=['Dấu ngoặc được quyền đi trước tất cả. Tính trong ngoặc xong đã.',
+                'Rồi mới tới nhân chia, sau cùng mới tới cộng trừ.']),
+        _c('de_toan', 'Hai lớp ngoặc thì sao?', de='Tính 20 − (12 − (3 + 1))',
+           loi=['Có khi ngoặc nằm trong ngoặc. Tính hai mươi trừ, mở ngoặc, mười hai '
+                'trừ, mở ngoặc, ba cộng một.']),
+        _c('y_toan', 'Mở từ lớp TRONG CÙNG ra ngoài',
+           '(3 + 1) = 4  →  (12 − 4) = 8  →  20 − 8 = 12', buoc=3, soBuoc=3,
+           loi=['Mở từ lớp trong cùng ra ngoài. Ba cộng một bằng bốn.',
+                'Rồi mười hai trừ bốn bằng tám. Sau cùng hai mươi trừ tám bằng mười '
+                'hai.']),
+        _c('y_toan', 'Một dấu ngoặc đổi hẳn phép chia',
+           '36 : (2 + 4) = 6     nhưng     36 : 2 + 4 = 22', buoc=1, soBuoc=1,
+           loi=['Con xem chỗ này. Ba mươi sáu chia cho, mở ngoặc, hai cộng bốn, được '
+                'sáu.',
+                'Còn ba mươi sáu chia hai rồi cộng bốn thì được hai mươi hai. Chép '
+                'sót một dấu ngoặc là lạc sang bài khác.']),
+        _c('cong_thuc', 'Thứ tự đầy đủ, và một phép soát đề',
+           congThuc='NGOẶC → NHÂN CHIA → CỘNG TRỪ  ·  đếm ngoặc mở = ngoặc đóng',
+           thay='vì ngoặc nói rõ phần nào phải gộp lại thành một cụm trước',
+           loi=['Con nhớ thứ tự đầy đủ. Ngoặc trước, rồi nhân chia, sau cùng cộng trừ.',
+                'Và khi chép đề, đếm xem số ngoặc mở có bằng số ngoặc đóng không.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_tim_x_hai_may(b):
+    """L3·C4③ Tìm X khi có hai phép — gỡ phép ngoài trước."""
+    return [
+        _c('bia', 'Tìm số bí mật khi có hai phép', so_bai(b),
+           loi=['Tìm số bí mật. Lần này nó đi qua hai phép tính chứ không phải một.']),
+        _c('de_toan', 'Đề bài', de='Tìm X, biết  X × 4 + 5 = 29',
+           loi=['Tìm ích, biết ích nhân bốn rồi cộng năm thì được hai mươi chín.']),
+        _c('y_toan', 'X đi qua hai phép, theo đúng thứ tự',
+           'X  →  × 4  →  + 5  →  29', buoc=1, soBuoc=3,
+           loi=['Ích đi qua hai phép. Nhân bốn trước, rồi cộng năm, ra hai mươi '
+                'chín.']),
+        _c('y_toan', 'Đi lùi thì gỡ phép VÀO SAU trước',
+           'Mặc áo rồi mới khoác ba lô — cởi thì cởi ba lô trước', buoc=2, soBuoc=3,
+           loi=['Muốn đi lùi thì gỡ cái vào sau cùng ra trước.',
+                'Giống như mặc áo rồi mới khoác ba lô. Lúc cởi thì phải cởi ba lô '
+                'trước.']),
+        _c('y_toan', 'Gỡ phép cộng 5 — đảo thành trừ 5', 'X × 4 = 29 − 5 = 24',
+           buoc=3, soBuoc=3,
+           loi=['Gỡ phép cộng năm thì đảo thành trừ năm. Hai mươi chín trừ năm bằng '
+                'hai mươi bốn.',
+                'Nay chỉ còn ích nhân bốn bằng hai mươi bốn, quen rồi.']),
+        _c('y_toan', 'Gỡ nốt phép nhân 4 — đảo thành chia 4', 'X = 24 : 4 = 6',
+           buoc=1, soBuoc=1,
+           loi=['Gỡ nốt phép nhân bốn thì đảo thành chia bốn. Hai mươi bốn chia bốn '
+                'bằng sáu.',
+                'Vậy ích bằng sáu.']),
+        _c('y_toan', 'Thử lại — và nhớ luật thứ tự',
+           '6 × 4 + 5 = 24 + 5 = 29 ✓',
+           loi=['Thử lại. Sáu nhân bốn bằng hai mươi bốn, cộng năm bằng hai mươi '
+                'chín. Đúng đề.',
+                'Lúc thử vẫn phải theo luật nhân trước cộng sau.']),
+        _c('cong_thuc', 'Hai phép thì làm hai nấc',
+           congThuc='gỡ phép NGOÀI trước, đảo phép  ·  còn lại là bài một phép',
+           thay='vì cụm chứa X phải coi như MỘT ô trống to, gỡ xong mới mở ra được',
+           loi=['Con nhớ cách làm. Gỡ phép ngoài trước và đảo phép ấy lại.',
+                'Vì cụm chứa ích phải coi như một ô trống to, gỡ xong mới mở nó ra '
+                'được.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_ra_mat_truoc(b):
+    """L3·C4④ Rà mắt tìm cấu trúc trước khi cắm đầu tính."""
+    return [
+        _c('bia', 'Nhìn trước, tính sau', so_bai(b),
+           loi=['Có những dãy tính, nhìn một cái là làm được ngay trong đầu.']),
+        _c('de_toan', 'Đề bài', de='Tính nhanh  37 + 25 + 13 + 5',
+           loi=['Tính nhanh ba mươi bảy cộng hai mươi lăm cộng mười ba cộng năm.']),
+        _c('y_toan', 'Rà đuôi số tìm cặp tròn chục',
+           '37 với 13 thành 50   ·   25 với 5 thành 30', buoc=1, soBuoc=3,
+           loi=['Con rà đuôi các số. Ba mươi bảy với mười ba thành năm mươi.',
+                'Hai mươi lăm với năm thành ba mươi.']),
+        _c('y_toan', 'Ghép cặp rồi cộng', '50 + 30 = 80', buoc=2, soBuoc=3,
+           loi=['Ghép cặp xong chỉ còn năm mươi cộng ba mươi, bằng tám mươi.']),
+        _c('de_toan', 'Kiểu thứ hai', de='Tính nhanh  2 × 36 + 2 × 64',
+           loi=['Kiểu thứ hai. Tính nhanh hai nhân ba mươi sáu, cộng hai nhân sáu '
+                'mươi tư.']),
+        # ⚠ HÌNH VẼ ĐƯỢC BAO NHIÊU THÌ NÓI BẤY NHIÊU. Bản đầu để lưới 2×3 và 2×4 mà
+        # lời chú ghi "2 khay 36 và 2 khay 64" — bé đếm ra 6 với 8, đọc thấy 36 với
+        # 64. Đúng cái bẫy đã dính ở lớp 2 (`hinh-trong-video-phai-khop-loi-doc`).
+        # Nay lưới dạy NGUYÊN TẮC bằng đúng số nó vẽ, rồi màn sau mới áp vào đề.
+        _c('luoi_cham', 'Hai cụm cùng có phần "2 hàng"', hang=2, cot=3, cot2=4,
+           chuPhu='2 hàng 3 và 2 hàng 4 ghép lại đúng bằng 2 hàng 7.',
+           loi=['Hai hàng ba viên, ghép với hai hàng bốn viên, đúng bằng hai hàng '
+                'bảy viên.',
+                'Phần hai hàng giữ nguyên, chỉ cộng phần ruột lại.']),
+        _c('y_toan', 'Đề bài cũng đúng nguyên tắc ấy',
+           '2 × 36 + 2 × 64 = 2 × (36 + 64) = 2 × 100 = 200', buoc=3, soBuoc=3,
+           loi=['Đề bài cũng đúng nguyên tắc ấy. Giữ phần hai nhân, cộng phần ruột '
+                'lại.',
+                'Ba mươi sáu cộng sáu mươi tư được một trăm chẵn. Hai nhân một trăm '
+                'bằng hai trăm.']),
+        _c('y_toan', 'Một số đứng lẻ cũng gom được',
+           '4 × 9 + 4 = 4 × 9 + 4 × 1 = 4 × 10 = 40',
+           loi=['Số bốn đứng lẻ ấy chính là bốn nhân một. Gom lại thành bốn nhân, '
+                'mở ngoặc, chín cộng một, bằng bốn mươi.']),
+        _c('cong_thuc', 'Rà một vòng trước khi cắm đầu tính',
+           congThuc='có cặp tròn chục?  ·  có hai cụm cùng một thừa số?',
+           thay='vì đổi chỗ và gom nhóm không làm đổi kết quả, chỉ làm nhẹ việc',
+           loi=['Con rà một vòng trước khi cắm đầu tính. Có cặp nào tròn chục không, '
+                'có hai cụm nào cùng một thừa số không.',
+                'Đổi chỗ và gom nhóm không làm đổi kết quả, chỉ làm việc nhẹ đi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN3.B01': kb3_thap_nghin,   'DL:KSN3.B02': kb3_hai_cua,
     'DL:KSN3.B03': kb3_duoi_dat_ve,  'DL:KSN3.B04': kb3_dem_nguoc_trang,
@@ -7351,6 +7534,9 @@ BO = {
     # ══ LỚP 3 · chương 3 · Dãy số thám hiểm — ba bài ══
     'DL:KSN3.B10': kb3_toa_thu_n,       'DL:KSN3.B11': kb3_ma_du,
     'DL:KSN3.B12': kb3_nhip_khong_deu,
+    # ══ LỚP 3 · chương 4 · Thứ tự phép tính — bốn bài ══
+    'DL:KSN3.B13': kb3_lan_uu_tien,     'DL:KSN3.B14': kb3_dau_ngoac,
+    'DL:KSN3.B15': kb3_tim_x_hai_may,   'DL:KSN3.B16': kb3_ra_mat_truoc,
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
     'DL:KSN4.B19': kb_b19, 'DL:KSN4.B20': kb_b20,
@@ -7486,6 +7672,33 @@ def soi(ds: list[dict], bai_id: str) -> list[str]:
                 loi.append(f'{bai_id} · {c["loai"]}: lời đọc còn CHỮ SỐ, phải đọc thành chữ')
         if TU_CAM.search(c['chuChinh'] + ' ' + c['chuPhu']):
             loi.append(f'{bai_id} · {c["loai"]}: chữ trên màn có ẩn dụ')
+
+        # ── HÌNH ĐẾM ĐƯỢC THÌ LỜI PHẢI NÓI ĐÚNG SỐ ẤY ──
+        #
+        # Ba cảnh dưới đây vẽ ra từng viên bé ĐẾM ĐƯỢC. Nói một con số mà hình không
+        # đếm ra được là hình nói dối — và bé tin mắt chứ không tin tai.
+        #
+        # Đã dính hai lần: `nhom_deu` vẽ "nhóm" trong khi lời đọc "hàng" (lớp 2, năm
+        # chỗ), và `luoi_cham` vẽ lưới 2×3 với 2×4 mà lời chú ghi "2 khay 36 và 2
+        # khay 64" (lớp 3 B16). Cả hai lần đều chỉ lộ ra khi rút khung hình ra nhìn.
+        if c['loai'] in ('luoi_cham', 'nhom_deu'):
+            h, k, k2 = c.get('hang', 0), c.get('cot', 0), c.get('cot2', 0)
+            tong, moi = c.get('tong', 0), c.get('moiNhom', 0)
+            # Mọi con số bé có thể ĐẾM RA từ hình này.
+            dem = {h, k, k2, h * k, h * k2, h * (k + k2), k + k2,
+                   tong, moi, tong // moi if moi else 0, tong % moi if moi else 0}
+            dem |= {0, 1, 2}          # số đếm chung chung, không phải khai gì
+            # Màn BẪY cố ý nhắc lại một con số SAI để bé thấy nó sai. Số ấy dĩ nhiên
+            # không đếm ra được từ hình — đó là cả điểm của màn. Phải khai rõ bằng
+            # `soSai` chứ đừng nới luật: khai ra thì người đọc kịch bản biết ngay
+            # đây là số cố ý, còn nới luật thì mọi lỗi thật cũng lọt theo.
+            dem |= set(c.get('soSai') or [])
+            chu = f"{c['chuChinh']} {c['chuPhu']} " + ' '.join(x for x, _ in c['loiAm'])
+            la = [int(x) for x in re.findall(r'(?<![\d,.])\d+(?![\d,.])', chu)]
+            thua = sorted({x for x in la if x not in dem})
+            if thua:
+                loi.append(f'{bai_id} · {c["loai"]}: nói số {thua} mà hình không đếm '
+                           f'ra được (hình cho {sorted(x for x in dem if x > 2)})')
     return loi
 
 

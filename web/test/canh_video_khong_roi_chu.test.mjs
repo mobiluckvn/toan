@@ -68,8 +68,13 @@ moc.forEach((m, i) => {
 
 /* `chuChinh` và `chuPhu` đi qua `_c()` cho MỌI loại cảnh, kể cả loại không vẽ chúng
    (ví dụ `bia` vẽ bằng đường khác). Chỉ soi các khoá RIÊNG của từng cảnh — đó đúng
-   là chỗ gõ nhầm tên hoặc quên đọc. */
-const BO_QUA = new Set(['chuChinh', 'chuPhu']);
+   là chỗ gõ nhầm tên hoặc quên đọc.
+
+   `soSai` là LỜI KHAI CHO PHÉP KIỂM, không phải cho bộ vẽ: `soi()` trong
+   `kich_ban_toan.py` dùng nó để biết con số nào được cố ý nhắc lại như một cái sai
+   (màn bẫy), nên `khung()` không đọc là ĐÚNG. Thêm khoá kiểu này thì khai vào đây
+   kèm lý do — đừng nới luật chung, không thì lỗi thật cũng lọt theo. */
+const BO_QUA = new Set(['chuChinh', 'chuPhu', 'soSai']);
 
 const roi = new Map();
 for (const c of canh) {
