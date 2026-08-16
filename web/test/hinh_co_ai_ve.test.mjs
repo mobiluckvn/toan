@@ -112,7 +112,9 @@ for (const q of QUYEN) {
      cổng đỏ liên miên và người ta sẽ tắt nó đi — nên ghi đúng con số đang có, và
      CHỈ CHO PHÉP GIẢM. Sửa được chỗ nào thì hạ số ấy xuống; nó nhích lên là có hình
      chết mới. */
-  const NO = { lop2: 0, lop3: 0, lop4: 29, lessons: 168 };
+  /* `lessons` tụt dần theo từng đợt lớp 5 chuyển sang video: mỗi micro có video là
+     bỏ luôn hình `mantra` chết của nó. Hạ con số này mỗi đợt — cổng tự in ra nhắc. */
+  const NO = { lop2: 0, lop3: 0, lop4: 29, lessons: 165 };
   const muc = NO[q] ?? 0;
   t(`${q} · hình chết không được nhiều hơn ${muc} (đang ${chet.length})`,
     chet.length <= muc);

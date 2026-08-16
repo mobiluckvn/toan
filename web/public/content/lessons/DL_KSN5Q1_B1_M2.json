@@ -36,24 +36,7 @@
   "kidText": "Cùng một chữ số nhưng đứng khác hàng thì giá trị khác hẳn nhau. Con tính được nó hơn kém nhau bao nhiêu lần."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Muốn so sánh phải DỊCH chữ số ra giá trị theo hàng trước — không bao giờ so hai chữ số trần trụi."
-   },
-   {
-    "id": "K2",
-    "text": "Cùng một chữ số đứng ở hai hàng cách nhau k bậc thì giá trị hơn kém nhau 10^k lần (cách 1 hàng: 10 lần; 2 hàng: 100 lần; 3 hàng: 1000 lần)."
-   },
-   {
-    "id": "K3",
-    "text": "Cách đếm k: đặt hai vị trí lên bản đồ các hàng rồi đếm số bước nhảy giữa hai căn hộ — đếm BƯỚC, không đếm căn hộ."
-   },
-   {
-    "id": "K4",
-    "text": "Phép chia kiểm chứng: giá trị lớn chia giá trị bé phải ra đúng 10^k (ví dụ $80 : 0,08 = 1000$)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: cùng một nhân vật (chữ số) nhưng ở căn hộ khác nhau trên BẢN ĐỒ CÁC HÀNG thì tài sản khác nhau. Muốn biết ai giàu hơn bao nhiêu lần, làm nghi thức ba bước: (1) DỊCH — viết tài sản thật của từng người theo căn hộ; (2) ĐẾM — đếm số bước nhảy giữa hai căn hộ trên bản đồ; (3) KẾT LUẬN — mỗi bước là một lần nhân 10, k bước là 10^k lần. Tuyệt đối không nhìn mặt (chữ số) mà đoán tài sản.",
   "canonicalExamples": [
    {
@@ -90,13 +73,8 @@
     "counterExample": "Phần trăm → phần mười → đơn vị → chục = 3 bước, không phải 4."
    }
   ],
-  "vocabulary": [
-   "dịch — đếm — kết luận",
-   "bước nhảy trên bản đồ hàng",
-   "so giá trị, không so chữ số",
-   "nhân vật: Cáo Đề hay hỏi xoáy \"cùng là 7 mà?\""
-  ],
-  "mantra": "KHÔNG SO CHỮ SỐ — CHỈ SO GIÁ TRỊ THEO HÀNG!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -123,62 +101,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Nêu giá trị của chữ số 5 trong mỗi số: 3,52 và 35,2. Hai giá trị hơn kém nhau bao nhiêu lần?",
-    "display": {
-     "type": "story_panel",
-     "caption": "8 trong 84,6?= 8 trong 4,68"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để lấy thước đo tài sản!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 40,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
-    ],
-    "narration": "Nghi thức ba bước: DỊCH — ĐẾM — KẾT LUẬN. Con đặt hai chữ số 8 lên bản đồ, dịch ra giá trị, rồi đếm số bước nhảy giữa hai căn hộ.",
-    "display": {
-     "type": "drag_interactive",
-     "spec": {
-      "houses": [
-       "CHỤC",
-       "ĐƠN VỊ",
-       "︱PHẨY︱",
-       "PHẦN MƯỜI",
-       "PHẦN TRĂM"
-      ],
-      "place": {
-       "84,6": {
-        "CHỤC": 8,
-        "value": 80
-       },
-       "4,68": {
-        "PHẦN TRĂM": 8,
-        "value": "0,08"
-       }
-      },
-      "countSteps": 3
-     }
-    },
-    "interaction": {
-     "type": "count_steps",
-     "prompt": "Đếm số bước nhảy từ PHẦN TRĂM lên CHỤC:",
-     "answerKey": {
-      "value": 3
-     },
-     "successMessage": "3 bước → gấp 10 × 10 × 10 = 1000 lần! Kiểm chứng: 80 : 0,08 = 1000 ✓"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 18,
@@ -194,58 +116,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 30,
-    "teaches": [
-     "K1"
-    ],
-    "narration": "Bẫy kinh điển: hỏi \"giá trị chữ số 7 trong 2,73\" — trò trả lời \"7\"! Sai rồi: 7 đang ở căn hộ phần mười, tài sản thật chỉ là không phẩy bảy. Trả lời bằng chữ số trần là chưa DỊCH.",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "7 trong 27,3",
-       "output": "7",
-       "valid": true,
-       "reason": "hàng đơn vị"
-      },
-      {
-       "input": "7 trong 2,73",
-       "output": "7 ✗ (đúng: 0,7)",
-       "valid": false,
-       "reason": "hàng phần mười — phải dịch!"
-      }
-     ]
-    },
-    "interaction": {
-     "type": "mcq_inline",
-     "prompt": "Giá trị của chữ số 9 trong 0,89 là:",
-     "choices": [
-      "9",
-      "0,9",
-      "0,09"
-     ],
-     "answerKey": {
-      "choice": "0,09"
-     }
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: không so chữ số — chỉ so giá trị theo hàng!",
-    "display": {
-     "type": "mantra_card",
-     "text": "KHÔNG SO CHỮ SỐ — CHỈ SO GIÁ TRỊ THEO HÀNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -582,128 +452,7 @@
   "homeActivity": "Chơi 'ai giàu hơn' với tờ tiền: chữ số 5 trên tờ 50 nghìn và trên tờ 5 nghìn — con nói được 'gấp 10 lần vì hơn nhau một hàng' là đạt.",
   "watchFor": "Nếu con trả lời giá trị chữ số bằng chính chữ số ('7 đáng 7' trong 2,73) — mở lại màn bẫy S3 cùng con."
  },
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "8 trong 84,6?= 8 trong 4,68",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "Chữ số 8 trong 84,6 và chữ số 8 trong 4,68 — cùng là số 8, chắc bằng nhau nhỉ?",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Câu hỏi mở bài",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B1_M2_F1.png",
-   "sha256_16": "62cd724d60e35139"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "7 trong 2,73"
-     ],
-     "result": "7 (đúng: 0,7)"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "7 trong 27,3"
-     ],
-     "result": "7"
-    },
-    "verdict": "hàng đơn vị"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B1_M2_F2.png",
-   "sha256_16": "9238018b2dfacf15"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "text": "Muốn so sánh phải DỊCH chữ số ra giá trị theo hàng trước — không bao giờ so hai chữ số trần trụi.",
-      "tone": "navy"
-     },
-     {
-      "text": "Cùng một chữ số đứng ở hai hàng cách nhau k bậc thì giá trị hơn kém nhau 10^k lần (cách 1 hàng: 10 lần; 2 hàng: 100 lần; 3 hàng: 1000 lần).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "KHÔNG SO CHỮ SỐ — CHỈ SO GIÁ TRỊ THEO HÀNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B1_M2_F3.png",
-   "sha256_16": "7fbedf07a7afbf44"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "CÙNG CHỮ SỐ 5 — KHÁC HÀNG THÌ KHÁC GIÁ TRỊ",
-    "headers": [
-     "chục",
-     "đơn vị",
-     "phần mười",
-     "phần trăm"
-    ],
-    "comma_after": 1,
-    "rows": [
-     {
-      "label": "3,52",
-      "cells": [
-       "",
-       "3",
-       "5",
-       "2"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "35,2",
-      "cells": [
-       "3",
-       "5",
-       "2",
-       ""
-      ],
-      "color": "#FFF4DF"
-     }
-    ],
-    "shift": {
-     "steps": 1,
-     "dir": "<",
-     "label": "cách nhau 1 hàng → gấp 10 lần"
-    },
-    "note": "Trong 3,52 chữ số 5 đáng 0,5 · trong 35,2 chữ số 5 đáng 5"
-   },
-   "caption": "Mỗi bậc hàng là một lần gấp 10 — cách 3 bậc là gấp 1000",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B1_M2_F4.png",
-   "sha256_16": "ca2a4045f378d1b9"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B01"
@@ -714,5 +463,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B1_M2_giang.mp4"
  }
 }

@@ -970,22 +970,38 @@ def khung(c: dict) -> Image.Image:
         # thì nhìn chữ số cuối, cho 3 và cho 9 thì cộng hết các chữ số lại. Bé phải
         # thấy được "phần đang nhìn" tách khỏi phần còn lại, nếu không thì bốn dấu
         # hiệu trộn vào nhau thành một mớ.
+        # ── DẤU PHẨY LÀ CÁI CỔNG, KHÔNG PHẢI MỘT CHỮ SỐ ──
+        # Lớp 5 mở đầu bằng số thập phân, mà bản đầu của cảnh này bỏ MỌI ký tự vào
+        # một ô như nhau — nên dấu phẩy ngồi trong ô y hệt chữ số, đúng chỗ bài đang
+        # dạy "dấu phẩy là cổng ngăn hai bên" thì hình lại nói ngược. Nay dấu phẩy
+        # vẽ THẤP và HẸP ở giữa hai ô, không có khung.
+        # `sang` vẫn đếm theo CHỮ SỐ, không đếm dấu phẩy — kịch bản khỏi phải nhớ
+        # trong số có mấy dấu.
         giua(d, 50, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
-        chu_so = [x for x in str(c.get("so", ""))]
-        sang = set(c.get("sang", []))           # chỉ số 1-based của chữ số tô sáng
-        rong_o, cach = 108, 18
-        tong_w = len(chu_so) * rong_o + (len(chu_so) - 1) * cach
+        ky_tu = [x for x in str(c.get("so", ""))]
+        sang = set(c.get("sang", []))           # chỉ số 1-based của CHỮ SỐ tô sáng
+        rong_o, cach, rong_phay = 108, 18, 34
+        tong_w = sum((rong_phay if x in ',.' else rong_o) for x in ky_tu) \
+            + (len(ky_tu) - 1) * cach
         # Cân giữa như `nhom_deu`; chừa chỗ dưới cho dòng phép và dòng phụ.
         cao_chu = 168 + (82 if c.get('phep') and c.get('chuPhu') else 0)
         x0, y = (W - tong_w) // 2, max(150, (H - 118 - cao_chu) // 2)
-        for i, ch in enumerate(chu_so):
-            x = x0 + i * (rong_o + cach)
-            hi = (i + 1) in sang
+        x, k = x0, 0
+        for ch in ky_tu:
+            if ch in ',.':
+                f = phong(66)
+                d.text((x + (rong_phay - d.textlength(ch, font=f)) / 2, y + 34), ch,
+                       font=f, fill=NAVY)
+                x += rong_phay + cach
+                continue
+            k += 1
+            hi = k in sang
             the(d, x, y, rong_o, 118, nen=GOLD_PALE if hi else "#FFFFFF",
                 vien=GOLD if hi else LINE, day=6 if hi else 3, bo=18)
             f = phong(66)
             d.text((x + (rong_o - d.textlength(ch, font=f)) / 2, y + 20), ch,
                    font=f, fill=GOLD_DARK if hi else NAVY)
+            x += rong_o + cach
         if c.get("phep"):
             giua(d, y + 168, c["phep"], phong(42), TEAL_DARK, rong=W - 180)
         if c.get("chuPhu"):

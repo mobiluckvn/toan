@@ -73,8 +73,15 @@ for (const L of lessons.slice(0, 40)) {
 t(`bác đáp sai: ${wrongOK}/${wrongTot}`, wrongOK === wrongTot);
 
 /* ── 4. dựng flow cho cả 168 micro ── */
+/* ⚠ MICRO ĐÃ CÓ VIDEO thì KHÔNG còn chặng giảng và KHÔNG còn hình phần giảng —
+   đó là CHỦ Ý, đúng khuôn lớp 2·3·4 (`tools/video_lop5.py`). Trộn hai loại vào
+   một phép đếm thì cổng đỏ dần theo từng đợt chuyển video, và tới lúc nó kêu thật
+   thì không còn ai nhìn. Nên tách hẳn: bài CHƯA có video soi như cũ, bài ĐÃ có
+   video soi bằng phép riêng ở cuối mục. */
+const coVideo = (L) => !!L.video?.giang;
+const chuaVideo = lessons.filter((L) => !coVideo(L));
 let minSteps = 1e9, maxSteps = 0, noFig = 0, badPhase = 0;
-for (const L of lessons) {
+for (const L of chuaVideo) {
   const flow = buildFlow(L);
   minSteps = Math.min(minSteps, flow.length); maxSteps = Math.max(maxSteps, flow.length);
   if (!flow.some((s) => s.figure)) noFig++;
@@ -87,8 +94,22 @@ for (const L of lessons) {
 }
 t('mọi micro dựng được flow', minSteps > 0);
 t('mọi bước có phase hợp lệ', badPhase === 0);
-t('mọi micro có ít nhất 1 hình trong flow', noFig === 0);
+t(`micro CHƯA có video đều có hình trong flow (${chuaVideo.length} micro)`, noFig === 0);
 console.log(`   số bước mỗi micro: ${minSteps} – ${maxSteps}`);
+
+/* Bài ĐÃ chuyển video: soi chiều ngược — phải SẠCH chữ giảng, và vẫn còn đủ
+   luyện tập với sát hạch. Mất hai chặng ấy là mất bài, không phải chuyển khuôn. */
+const daVideo = lessons.filter(coVideo);
+if (daVideo.length) {
+  const xau = daVideo.filter((L) => {
+    const ty = buildFlow(L).map((s) => s.type);
+    return ty.includes('teach') || ty.includes('mantra')
+      || !ty.includes('practice') || !ty.includes('assess') || !ty.includes('finale');
+  }).map((L) => L.id);
+  t(`micro có video thì hết chữ giảng mà vẫn đủ luyện + sát hạch `
+    + `(${daVideo.length} micro)`, xau.length === 0);
+  xau.slice(0, 5).forEach((x) => console.log('      ', x));
+}
 
 /* ── 5. luật đạt ── */
 const A1 = { id: 'A1', ok: true, mustPass: true };
@@ -263,15 +284,16 @@ t('tách được nhãn loại ca', parsed.filter((p) => p.kind).length / parsed
 console.log(`   tổng ca mẫu: ${exs.length} · có nhãn loại: ${parsed.filter((p) => p.kind).length}`);
 /* ── 10. hình được gắn đúng chặng ── */
 let sampleWithFig = 0, workedWithFig = 0, teachWithFig = 0;
-for (const L of lessons) {
+for (const L of chuaVideo) {
   const flow = buildFlow(L);
   if (flow.filter((s) => s.type === 'sample' && s.figure).length > 0) sampleWithFig++;
   if (flow.some((s) => s.type === 'worked' && s.figure)) workedWithFig++;
   if (flow.filter((s) => s.type === 'teach' && s.figure).length >= 2) teachWithFig++;
 }
-t(`ca mẫu có hình: ${sampleWithFig}/168`, sampleWithFig === 168);
-t(`ví dụ dẫn dắt có hình: ${workedWithFig}/168`, workedWithFig === 168);
-t(`chặng GIẢNG có ≥ 2 hình: ${teachWithFig}/168`, teachWithFig === 168);
+const N = chuaVideo.length;
+t(`ca mẫu có hình: ${sampleWithFig}/${N}`, sampleWithFig === N);
+t(`ví dụ dẫn dắt có hình: ${workedWithFig}/${N}`, workedWithFig === N);
+t(`chặng GIẢNG có ≥ 2 hình: ${teachWithFig}/${N}`, teachWithFig === N);
 
 /* ── 11. mọi hình gắn vào flow đều tồn tại trong figureSpec ── */
 let badFig = 0;

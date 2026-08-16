@@ -35,7 +35,10 @@ GOC = Path(__file__).resolve().parent.parent.parent
 # ⚠ ĐỪNG GHIM MỘT QUYỂN VÀO ĐÂY. Bản đầu ghim `data/lop4`, nên lúc mở sang quyển
 # lớp 2 thì mọi thứ vẫn chạy — chỉ có điều nó đọc nhầm tệp của lớp 4 và chết ở chỗ
 # "không có bài này". Nay thư mục suy TỪ MÃ BÀI: `DL_KSN2_B01` → `data/lop2`.
-QUYEN_CUA = {'KSN2': 'lop2', 'KSN3': 'lop3', 'KSN4': 'lop4'}
+# ⚠ `KSN5Q1` phải đứng TRƯỚC — không thì `KSN2` không khớp nhưng một mã lớp 5 nào
+# đó chứa chuỗi khác lại khớp nhầm. Thư mục nguồn của lớp 5 tên là `lessons`, không
+# theo nếp `lop<n>` của ba quyển kia.
+QUYEN_CUA = {'KSN5Q1': 'lessons', 'KSN2': 'lop2', 'KSN3': 'lop3', 'KSN4': 'lop4'}
 
 
 def _thu_muc(ma_hoac_id: str) -> Path:
@@ -57,6 +60,13 @@ def so_bai(b: dict) -> str:
     Nay số ấy đếm ra từ đúng cái lời khai mà màn hình đang dùng, nên hai bên không
     bao giờ lệch được nữa.
     """
+    # ── LỚP 5 ĐÁNH SỐ KHÁC ──
+    # Mã bài đã mang sẵn số: `DL:KSN5Q1.B1.M2` là bài 1 phần 2. Màn hình cũng suy
+    # đúng thế (`soBaiCua` trong noiDung.js), nên đừng dựng thêm `thu_tu.json` cho
+    # quyển này — hai nguồn số bài là hai chỗ để lệch nhau.
+    m5 = re.match(r'DL:KSN5Q1\.B(\d+)\.M(\d+)', b['id'])
+    if m5:
+        return f'Bài {m5.group(1)} · phần {m5.group(2)}'
     tt = json.loads((_thu_muc(b['id']) / 'thu_tu.json').read_text('utf8'))['thuTu']
     try:
         return f'Bài {tt.index(b["id"]) + 1}'
@@ -8353,7 +8363,161 @@ def kb3_tien_va_lai(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 5 QUYỂN 1 · bài 1 — BA MICRO ĐẦU TIÊN (bài mẫu)
+# ═══════════════════════════════════════════════════════════════════════════
+# Lớp 5 khác ba quyển kia ở bốn chỗ, phải nhớ trước khi viết tiếp:
+#
+#   ① 56 bài lớn × 3 micro = 168 micro, mỗi micro là một buổi học riêng có hook,
+#      có phần giảng, có câu chốt của nó. Nên MỘT VIDEO MỘT MICRO, không gộp.
+#   ② Mỗi micro đã có sẵn khối `videoSpec` viết tay trong sách: 840 cảnh, trung
+#      bình 87 giây. Đó là NGUỒN quý — nhịp dạy và số liệu đã có — nhưng KHÔNG
+#      dùng thẳng được: nó viết cho video dọc 9:16 có hoạt hình, 363/840 cảnh có
+#      từ `TU_CAM` cấm, 191 cảnh gọi tên nhân vật, và 532/840 câu dài quá 130 chữ.
+#      Nên đọc `videoSpec` để lấy Ý, rồi viết lại theo luật của mình.
+#   ③ Chặng giảng của lớp 5 có thêm bước `check` — một CÂU HỎI tương tác, không
+#      phải màn chữ. Video thay hook và hai màn giảng và màn câu chốt, nhưng
+#      PHẢI GIỮ `check` lại.
+#   ④ Mỗi micro khai 4 hình; hình `mantra` (F3) chưa từng hiện lên kể từ ngày dựng
+#      vì bước `mantra` không mang khoá hình nào — 168 hình chết, dọn theo luôn.
+
+
+def kb5_ban_do_cac_hang(b):
+    """L5·B1·M1 Bản đồ các hàng của số thập phân."""
+    return [
+        _c('bia', 'Bản đồ các hàng', so_bai(b),
+           loi=['Số thập phân là hai dãy nhà hai bên dấu phẩy.']),
+        _c('de_toan', 'Câu hỏi mở đầu', de='3,05 với 3,5 — một số hay hai số?',
+           loi=['Ba phẩy không năm với ba phẩy năm. Một số hay hai số khác nhau.']),
+        _c('y_toan', 'Dấu phẩy là cái cổng',
+           'trái cổng: đơn vị · chục · trăm   ·   phải cổng: phần mười · phần trăm',
+           buoc=1, soBuoc=3,
+           loi=['Dấu phẩy là cái cổng. Bên trái cổng là đơn vị, chục, trăm.',
+                'Bên phải cổng là phần mười, phần trăm, phần nghìn.']),
+        _c('y_toan', 'Mỗi bước sang phải, giá trị nhỏ đi 10 lần',
+           'đơn vị  →  phần mười  →  phần trăm  →  phần nghìn', buoc=2, soBuoc=3,
+           loi=['Cứ mỗi bước sang phải thì giá trị nhỏ đi mười lần.']),
+        _c('y_toan', 'Tách số là viết thành tổng theo hàng',
+           '35,46 = 30 + 5 + 0,4 + 0,06',
+           loi=['Tách số là viết nó thành tổng giá trị của từng hàng.',
+                'Ba mươi lăm phẩy bốn sáu bằng ba mươi, cộng năm, cộng không phẩy '
+                'bốn, cộng không phẩy không sáu.']),
+        _c('y_toan', 'Chiều ngược cũng phải thạo',
+           '3 chục · 5 đơn vị · 4 phần mười · 6 phần trăm  →  35,46', buoc=3, soBuoc=3,
+           loi=['Chiều ngược cũng phải thạo. Ba chục, năm đơn vị, bốn phần mười, sáu '
+                'phần trăm, ghép lại thành ba mươi lăm phẩy bốn sáu.']),
+        _c('y_toan', 'Số 0 ở CUỐI thì bỏ được', '3,50 = 3,5 — giá trị không đổi',
+           loi=['Số không ở cuối phần thập phân thì bỏ được. Ba phẩy năm mươi đúng '
+                'bằng ba phẩy năm.']),
+        _c('y_toan', 'Nhưng số 0 ở GIỮA thì đang giữ chỗ',
+           '3,05 bỏ số 0 đi thành 3,5 — sai hẳn thành số khác',
+           loi=['Nhưng số không ở giữa thì đang giữ chỗ cho một hàng.',
+                'Ba phẩy không năm mà bỏ số không đi là thành ba phẩy năm, sai hẳn '
+                'thành số khác.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='0 ở ĐUÔI thì rụng  ·  0 ở GIỮA thì giữ chỗ',
+           thay='vì số 0 ở giữa đang giữ một hàng, nhấc nó ra là mọi hàng sau dồn lên',
+           loi=['Con nhớ câu này. Số không ở đuôi thì rụng, số không ở giữa thì giữ '
+                'chỗ.',
+                'Vì nhấc nó ra là mọi hàng phía sau dồn lên một bậc.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_cung_chu_so_khac_hang(b):
+    """L5·B1·M2 Cùng chữ số, khác hàng thì khác giá trị."""
+    return [
+        _c('bia', 'Cùng chữ số mà khác giá trị', so_bai(b),
+           loi=['Cùng một chữ số, đứng hai hàng khác nhau thì đáng khác nhau xa.']),
+        _c('de_toan', 'Câu hỏi mở đầu',
+           de='Chữ số 8 trong 84,6 và chữ số 8 trong 4,68 — bằng nhau không?',
+           loi=['Chữ số tám trong tám mươi tư phẩy sáu, và chữ số tám trong bốn phẩy '
+                'sáu tám.',
+                'Cùng mặt chữ số, nhưng có bằng nhau không.']),
+        _c('tach_so', 'Chữ số 8 thứ nhất đứng hàng chục', so='84,6', sang=[1],
+           phep='đáng 80', chuPhu='Nó ở bên trái dấu phẩy, hàng chục.',
+           loi=['Chữ số tám thứ nhất đứng ở hàng chục, nên nó đáng tám mươi.']),
+        _c('tach_so', 'Chữ số 8 thứ hai đứng hàng phần trăm', so='4,68', sang=[3],
+           phep='đáng 0,08', chuPhu='Nó ở bên phải dấu phẩy, hàng phần trăm.',
+           loi=['Chữ số tám thứ hai đứng ở hàng phần trăm, nên nó chỉ đáng không phẩy '
+                'không tám.']),
+        _c('y_toan', 'Nghi thức ba bước', 'DỊCH ra giá trị  →  SO  →  CHIA kiểm chứng',
+           buoc=1, soBuoc=3,
+           loi=['Nghi thức ba bước. Dịch ra giá trị theo hàng, rồi mới so, rồi chia '
+                'để kiểm chứng.']),
+        _c('y_toan', 'Chia để kiểm chứng', '80 : 0,08 = 1000 lần', buoc=2, soBuoc=3,
+           loi=['Lấy giá trị lớn chia giá trị bé. Tám mươi chia không phẩy không tám '
+                'bằng một nghìn lần.']),
+        _c('y_toan', 'Đếm BƯỚC NHẢY, đừng đếm căn hộ',
+           'chục → đơn vị → phần mười → phần trăm: 3 bước  →  1000 lần',
+           buoc=3, soBuoc=3,
+           loi=['Cách đếm cho nhanh. Từ hàng chục sang hàng phần trăm là ba bước nhảy.',
+                'Ba bước thì hơn kém nhau một nghìn lần. Con đếm bước, đừng đếm căn '
+                'hộ.']),
+        _c('tach_so', 'Bẫy kinh điển', so='2,73', sang=[2],
+           phep='chữ số 7 đáng 0,7 — KHÔNG phải 7',
+           chuPhu='Nó đang ở hàng phần mười.',
+           loi=['Đây là bẫy kinh điển. Hỏi giá trị chữ số bảy trong hai phẩy bảy ba.',
+                'Nhiều bạn trả lời bảy. Sai. Nó đang ở hàng phần mười nên chỉ đáng '
+                'không phẩy bảy.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='KHÔNG so chữ số  ·  chỉ so GIÁ TRỊ THEO HÀNG',
+           thay='vì mặt chữ số không nói lên gì, chỗ đứng mới quyết định',
+           loi=['Con nhớ câu này. Đừng so chữ số, chỉ so giá trị theo hàng.',
+                'Vì mặt chữ số không nói lên gì cả, chỗ nó đứng mới quyết định.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_so_gap_k_lan_tong(b):
+    """L5·B1·M3 Số hai chữ số gấp k lần tổng các chữ số."""
+    return [
+        _c('bia', 'Số gấp mấy lần tổng chữ số của nó', so_bai(b),
+           loi=['Tìm số có hai chữ số gấp bốn lần tổng các chữ số của nó.']),
+        _c('de_toan', 'Đề bài', de='Tìm số có 2 chữ số gấp 4 lần tổng các chữ số',
+           loi=['Tìm số có hai chữ số gấp bốn lần tổng các chữ số của nó.',
+                'Có bạn thử được số hai mươi tư, đúng. Nhưng đã tìm hết chưa.']),
+        _c('cong_thuc', 'Khai triển số hai chữ số ra đã',
+           congThuc='số ab = 10 × a + b',
+           thay='vì a đứng hàng chục nên nó mang theo mười lần chính nó',
+           loi=['Khai triển số hai chữ số ra đã. Số a b bằng mười nhân a, cộng b.',
+                'Vì a đứng hàng chục nên nó mang theo mười lần chính nó.']),
+        _c('y_toan', 'Dịch đề thành một cái cân', '10a + b = 4 × (a + b)',
+           buoc=1, soBuoc=3,
+           loi=['Dịch đề thành một cái cân. Vế trái mười a cộng b, vế phải bốn lần '
+                'a cộng b.']),
+        _c('y_toan', 'Dọn cân: bớt đều hai vế', '10a + b − 4a − b = 6a = 3b',
+           buoc=2, soBuoc=3,
+           loi=['Dọn cân bằng cách bớt đều hai vế, còn lại sáu a bằng ba b.']),
+        _c('y_toan', 'Rút gọn thành quan hệ đơn giản', 'b = 2a', buoc=3, soBuoc=3,
+           loi=['Rút gọn cho ba, được b bằng hai a. Chữ số hàng đơn vị gấp đôi chữ '
+                'số hàng chục.']),
+        _c('day_so', 'Điểm danh cho ĐỦ, đừng bắt được một số đã nghỉ',
+           so=[12, 24, 36, 48], hienThuTu=False,
+           chuPhu='a = 1, 2, 3, 4. Tới a = 5 thì b = 10, vượt quá 9 nên dừng.',
+           loi=['Nay điểm danh cho đủ. Mười hai, hai mươi tư, ba mươi sáu, bốn mươi '
+                'tám.',
+                'Tới a bằng năm thì b thành mười, vượt quá chín nên dừng lại.']),
+        _c('y_toan', 'Thử lại một số cho chắc',
+           '48 có tổng chữ số 12, mà 12 × 4 = 48 ✓',
+           loi=['Thử lại một số cho chắc. Bốn mươi tám có tổng chữ số là mười hai.',
+                'Mười hai nhân bốn đúng bằng bốn mươi tám.']),
+        _c('cong_thuc', 'Bốn nhịp của dạng này',
+           congThuc='khai triển 10a + b  →  dọn cân  →  điểm danh đủ  →  thử lại',
+           thay='ném nguyên cụm ab lên cân mà quên phần mười a là sai từ gốc',
+           loi=['Con nhớ bốn nhịp. Khai triển, dọn cân, điểm danh cho đủ, rồi thử lại.',
+                'Ném nguyên cụm a b lên cân mà quên phần mười a là sai ngay từ gốc.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B1.M1': kb5_ban_do_cac_hang,
+    'DL:KSN5Q1.B1.M2': kb5_cung_chu_so_khac_hang,
+    'DL:KSN5Q1.B1.M3': kb5_so_gap_k_lan_tong,
     'DL:KSN3.B01': kb3_thap_nghin,   'DL:KSN3.B02': kb3_hai_cua,
     'DL:KSN3.B03': kb3_duoi_dat_ve,  'DL:KSN3.B04': kb3_dem_nguoc_trang,
     # ══ LỚP 3 · chương 2 · Nhân chia ra ngoài bảng — năm bài ══

@@ -40,28 +40,7 @@
   "kidText": "Con đọc và viết được số thập phân, tách nó thành tổng các hàng. Biết khi nào bỏ được chữ số 0, khi nào không."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Mỗi chữ số trong một số có giá trị bằng chữ số đó nhân với giá của hàng nó đang đứng."
-   },
-   {
-    "id": "K2",
-    "text": "Số thập phân là hai dãy phố hai bên dấu phẩy: bên trái là phần nguyên (đơn vị, chục, trăm…), bên phải là phần thập phân với các hàng phần mười, phần trăm, phần nghìn — mỗi bước sang phải giá hàng nhỏ đi 10 lần."
-   },
-   {
-    "id": "K3",
-    "text": "Tách số là viết số thành tổng giá trị các hàng, và phải thạo cả chiều ngược: ghép tổng (hoặc lời mô tả các hàng) thành số — hàng nào trống phải viết chữ số 0 giữ chỗ."
-   },
-   {
-    "id": "K4",
-    "text": "Chữ số 0 ở TẬN CÙNG phần thập phân bỏ được, giá trị không đổi ($3,50 = 3,5$); chữ số 0 ở GIỮA đang giữ chỗ một hàng, không bỏ được (3,05 ≠ 3,5)."
-   },
-   {
-    "id": "K5",
-    "text": "Khi đọc đề phải gạch chân cụm từ chỉ VỊ TRÍ: \"hai chữ số Ở PHẦN THẬP PHÂN\" khác hẳn \"số có hai chữ số\"."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: BẢN ĐỒ CÁC HÀNG là dãy căn hộ chạy dài hai phía dấu phẩy — dấu phẩy là cái CỔNG LÀNG. Bên trái cổng: đơn vị, chục, trăm, nghìn… mỗi bước sang trái giá nhà đắt gấp 10. Bên phải cổng: phần mười, phần trăm, phần nghìn… mỗi bước sang phải giá nhà rẻ đi 10 lần. Chữ số nào cũng phải 'khai đúng căn hộ mình ở' — cùng một chữ số nhưng ở căn hộ khác nhau thì tài sản khác hẳn nhau. Chữ số 0 có hai vai: đứng cuối phần thập phân là khách vãng lai (đi hay ở, giá trị số không đổi), đứng giữa là NGƯỜI GIỮ CHỖ cho một căn hộ trống (rút đi là cả dãy khai man địa chỉ).",
   "canonicalExamples": [
    {
@@ -104,15 +83,8 @@
     "counterExample": "\"Số có HAI chữ số ở phần thập phân\" như 3,05 vẫn có tổng cộng ba chữ số."
    }
   ],
-  "vocabulary": [
-   "bản đồ các hàng",
-   "cổng làng dấu phẩy",
-   "hàng phần mười / phần trăm / phần nghìn",
-   "khai đúng căn hộ",
-   "0 đuôi — 0 giữa",
-   "nhân vật: Su Kem, Trí Long, Cáo Đề, sư phụ Trí Dũng"
-  ],
-  "mantra": "0 ĐUÔI THÌ RỤNG — 0 GIỮA THÌ THIÊNG!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -142,74 +114,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 22,
-    "narration": "Viết số 4 507 thành tổng giá trị các hàng.",
-    "display": {
-     "type": "story_panel",
-     "caption": "$3,05 = 3,5$???"
-    },
-    "interaction": {
-     "type": "mcq_inline",
-     "prompt": "Con đoán xem:",
-     "choices": [
-      "Bằng nhau — số 0 bỏ được",
-      "Khác nhau",
-      "Chưa biết, phải mở bản đồ các hàng"
-     ],
-     "answerKey": {
-      "choice": "Khác nhau",
-      "acceptAlso": [
-       "Chưa biết, phải mở bản đồ các hàng"
-      ]
-     }
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Đây là BẢN ĐỒ CÁC HÀNG — dấu phẩy là cổng làng. Con kéo từng chữ số của 2,73 vào đúng căn hộ, xem tài sản mỗi chữ số là bao nhiêu.",
-    "display": {
-     "type": "drag_interactive",
-     "spec": {
-      "houses": [
-       "TRĂM",
-       "CHỤC",
-       "ĐƠN VỊ",
-       "︱PHẨY︱",
-       "PHẦN MƯỜI",
-       "PHẦN TRĂM",
-       "PHẦN NGHÌN"
-      ],
-      "digits": [
-       "2",
-       "7",
-       "3"
-      ],
-      "target": {
-       "ĐƠN VỊ": 2,
-       "PHẦN MƯỜI": 7,
-       "PHẦN TRĂM": 3
-      },
-      "valueLabels": {
-       "2": "2",
-       "7": "0,7",
-       "3": "0,03"
-      }
-     }
-    },
-    "interaction": {
-     "type": "drag_digit",
-     "successMessage": "Chuẩn! 2 đáng 2 · 7 đáng 0,7 · 3 đáng 0,03 — nên 2,73 = 2 + 0,7 + 0,03. Mỗi bước sang phải, giá căn hộ rẻ đi 10 lần."
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 20,
@@ -225,70 +129,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 45,
-    "teaches": [
-     "K4",
-     "K5"
-    ],
-    "narration": "Giờ xử vụ 3,05. Cáo Đề thủ thỉ: \"số 0 trong phần thập phân bỏ được mà!\" Soi bản đồ: trong 3,50 số 0 đứng CUỐI — nó là khách vãng lai, đi hay ở thì 3,50 vẫn bằng 3,5. Nhưng trong 3,05 số 0 đứng GIỮA — nó đang giữ chỗ căn hộ phần mười! Rút nó đi, chữ số 5 từ phần trăm nhảy lên phần mười, tài sản gấp 10 lần — thành số khác hẳn.",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "3,50",
-       "action": "bỏ số 0 tận cùng",
-       "output": "3,5",
-       "valid": true,
-       "reason": "0 đuôi — khách vãng lai"
-      },
-      {
-       "input": "3,05",
-       "action": "bỏ số 0 ở giữa",
-       "output": "3,5",
-       "valid": false,
-       "reason": "0 giữa giữ chỗ hàng phần mười"
-      }
-     ]
-    },
-    "interaction": {
-     "type": "sort_cards",
-     "prompt": "Kéo vào đúng giỏ: BẰNG số bỏ hết 0 / KHÁC số bỏ hết 0",
-     "cards": [
-      "6,20",
-      "6,02",
-      "8,10",
-      "8,01"
-     ],
-     "answerKey": {
-      "BẰNG": [
-       "6,20",
-       "8,10"
-      ],
-      "KHÁC": [
-       "6,02",
-       "8,01"
-      ]
-     },
-     "objective": "O1"
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 14,
-    "narration": "Khắc hai câu cần nhớ của bài: 0 đuôi thì rụng — 0 giữa thì thiêng! Và khi đọc đề: hai chữ số — nhưng hai chữ số CỦA AI?",
-    "display": {
-     "type": "mantra_card",
-     "text": "0 ĐUÔI THÌ RỤNG — 0 GIỮA THÌ THIÊNG · HAI CHỮ SỐ CỦA AI?"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to một lần rồi vào phòng luyện!"
     }
    }
   ]
@@ -731,124 +571,7 @@
   "homeActivity": "Nhờ con đọc hóa đơn siêu thị: chỉ vào giá 35,46 và hỏi 'chữ số 4 đáng giá bao nhiêu tiền?' — con trả lời 0,4 (tức 4 hào/4 phần mười) là đạt.",
   "watchFor": "Nếu con nói '3,05 với 3,5 như nhau' — mở lại màn xử vụ số 0 (S3) cùng con."
  },
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "3,05 = 3,5???",
-    "lines": [
-     {
-      "who": "Su Kem",
-      "say": "3,05 phút — tức là ba phẩy năm phút!",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B1_M1_F1.png",
-   "sha256_16": "cf60ea556f278772"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "3,05"
-     ],
-     "result": "3,5"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "3,50"
-     ],
-     "result": "3,5"
-    },
-    "verdict": "0 đuôi — khách vãng lai"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B1_M1_F2.png",
-   "sha256_16": "af82aa82e1c6509f"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "text": "Mỗi chữ số trong một số có giá trị bằng chữ số đó nhân với giá của hàng nó đang đứng.",
-      "tone": "navy"
-     },
-     {
-      "label": "Số thập phân là hai dãy phố hai bên dấu phẩy",
-      "text": "bên trái là phần nguyên (đơn vị, chục, trăm…), bên phải là phần thập phân với các hàng phần mười, phần trăm, phần nghìn — mỗi bước sang phải giá hàng nhỏ đi 10 lần.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "0 ĐUÔI THÌ RỤNG — 0 GIỮA THÌ THIÊNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B1_M1_F3.png",
-   "sha256_16": "46241c2c56164a3c"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "SỐ 2,73 TÁCH THÀNH TỔNG GIÁ TRỊ CÁC HÀNG",
-    "headers": [
-     "chục",
-     "đơn vị",
-     "phần mười",
-     "phần trăm"
-    ],
-    "comma_after": 1,
-    "rows": [
-     {
-      "label": "2,73",
-      "cells": [
-       "",
-       "2",
-       "7",
-       "3"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "giá trị",
-      "cells": [
-       "",
-       "2",
-       "0,7",
-       "0,03"
-      ],
-      "color": "#E6FAF5"
-     }
-    ],
-    "note": "2,73 = 2 + 0,7 + 0,03 — mỗi chữ số đáng bao nhiêu là do HÀNG quyết định"
-   },
-   "caption": "Ca lõi của bài: chữ số đứng ở hàng nào thì mang giá trị của hàng đó",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B1_M1_F4.png",
-   "sha256_16": "d29b6a5b2d805c91"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B01"
@@ -859,5 +582,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B1_M1_giang.mp4"
  }
 }

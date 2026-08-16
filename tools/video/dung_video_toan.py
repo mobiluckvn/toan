@@ -69,9 +69,9 @@ def ds_bai(a) -> list[str]:
         # nên nó chết ngay ở B01 — bài chưa viết kịch bản video. Nay "tất cả" nghĩa
         # là mọi bài ĐÃ CÓ KỊCH BẢN *của quyển đang chọn* — trộn quyển vào nhau thì
         # bộ sinh âm quét thừa cả nghìn dòng của quyển khác.
-        ma_q = {'lop2': 'KSN2', 'lop3': 'KSN3', 'lop4': 'KSN4'}[a.quyen]
+        ma_q = {'lop2': 'KSN2', 'lop3': 'KSN3', 'lop4': 'KSN4', 'lop5': 'KSN5Q1'}[a.quyen]
         return [m for m in BAI_MAC_DINH if ma_q in m]
-    ma_q = {'lop2': 'KSN2', 'lop3': 'KSN3', 'lop4': 'KSN4'}[a.quyen]
+    ma_q = {'lop2': 'KSN2', 'lop3': 'KSN3', 'lop4': 'KSN4', 'lop5': 'KSN5Q1'}[a.quyen]
     return [m for m in BAI_MAC_DINH if ma_q in m]
 
 
@@ -97,7 +97,7 @@ def main() -> int:
     p.add_argument('--bai')
     p.add_argument('--tat-ca', action='store_true')
     p.add_argument('--quyen', default='lop4',
-                   help='lop2 · lop3 · lop4 — mặc định lop4')
+                   help='lop2 · lop3 · lop4 · lop5 — mặc định lop4')
     p.add_argument('--loi', action='store_true', help='gom lời cần đọc rồi dừng')
     a = p.parse_args()
     # Đổi ba đường dẫn theo quyển được chọn, TRƯỚC khi bất cứ ai đọc chúng.
