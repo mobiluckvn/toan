@@ -7524,6 +7524,222 @@ def kb3_ra_mat_truoc(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 3 · chương 5 · Toán lời văn — năm bài
+# ═══════════════════════════════════════════════════════════════════════════
+# Cả chương xoay quanh một nghi thức: ĐỨNG Ở CÂU HỎI CUỐI MÀ HỎI NGƯỢC. Bài 17 dạy
+# nghi thức ấy, bốn bài sau là bốn dạng trạm giữa khác nhau:
+#   B18 trạm giữa là "ai nhiều phần, ai một phần"
+#   B19 trạm giữa là HIỆU, và chuyển qua lại thì chỉ cần một nửa hiệu
+#   B20 trạm giữa là hiệu tuổi (không đổi) hoặc số người (tổng tăng theo)
+#   B21 trạm giữa luôn mang tên MỘT ĐƠN VỊ
+#
+# `so_do_doan` vẽ hai đoạn dài ngắn khác nhau — đúng thứ bốn bài này cần, vì vẽ
+# xong thì phép tính gần như tự lộ ra.
+
+
+def kb3_hai_buoc_tinh(b):
+    """L3·C5① Bài toán hai bước — tìm trạm giữa bị giấu."""
+    return [
+        _c('bia', 'Bài toán phải tính hai lần', so_bai(b),
+           loi=['Có bài không tính một phép là xong. Phải đi qua một trạm giữa.']),
+        _c('de_toan', 'Đề bài',
+           de='Thùng 1 có 18 lít. Thùng 2 ít hơn thùng 1 sáu lít. Cả hai thùng mấy lít?',
+           loi=['Thùng thứ nhất có mười tám lít. Thùng thứ hai ít hơn thùng thứ nhất '
+                'sáu lít.',
+                'Hỏi cả hai thùng có bao nhiêu lít.']),
+        _c('y_toan', 'Đứng ở câu hỏi cuối mà hỏi ngược',
+           'Muốn tính CẢ HAI thùng thì cần biết gì?', buoc=1, soBuoc=3,
+           loi=['Con đứng ở câu hỏi cuối rồi hỏi ngược lại. Muốn tính cả hai thùng '
+                'thì cần biết gì.',
+                'Cần biết thùng một và thùng hai. Thùng một đề cho rồi, thùng hai thì '
+                'chưa.']),
+        _c('so_do_doan', 'Thùng 2 chính là trạm giữa bị giấu', be=12, lon=18,
+           nhanBe='thùng 2 · chưa biết', nhanLon='thùng 1 · 18 lít',
+           hienHieu=True, chuHieu='ít hơn 6 lít',
+           chuPhu='Vẽ ra thì thấy ngay phải tìm gì trước.',
+           loi=['Thùng hai chính là trạm giữa bị giấu. Vẽ hai đoạn ra thì thấy ngay.']),
+        _c('y_toan', 'Chặng 1 — tìm trạm giữa', '18 − 6 = 12 (lít)',
+           buoc=2, soBuoc=3,
+           loi=['Chặng một, tìm trạm giữa. Mười tám trừ sáu bằng mười hai lít.']),
+        _c('y_toan', 'Chặng 2 — mới về đích', '18 + 12 = 30 (lít)',
+           buoc=3, soBuoc=3,
+           loi=['Chặng hai mới về đích. Mười tám cộng mười hai bằng ba mươi lít.']),
+        _c('y_toan', 'Soi lại trước khi ghi đáp số',
+           'Số 12 mới là trạm giữa — dừng ở đó là chưa trả lời đề',
+           loi=['Con soi lại trước khi ghi đáp số. Số mười hai mới chỉ là trạm giữa.',
+                'Dừng ở đó là chưa trả lời câu hỏi của đề.']),
+        _c('cong_thuc', 'Nghi thức của mọi bài hai bước',
+           congThuc='hỏi ngược từ đích  →  thứ CHƯA BIẾT là trạm giữa  →  tìm nó trước',
+           thay='vì cái đề hỏi luôn dựa trên một cái mà đề chưa cho sẵn',
+           loi=['Con nhớ nghi thức này. Hỏi ngược từ đích, thứ chưa biết chính là '
+                'trạm giữa, tìm nó trước rồi mới về đích.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_hon_hay_gap(b):
+    """L3·C5② Hơn mấy đơn vị hay gấp mấy lần — hai câu hỏi vàng."""
+    return [
+        _c('bia', 'Hơn mấy, hay gấp mấy lần', so_bai(b),
+           loi=['Hai kiểu đề trông giống nhau mà làm khác hẳn nhau.']),
+        _c('y_toan', 'Câu hỏi thứ nhất: đề có chữ LẦN không?',
+           'Có LẦN → nhân chia, vẽ sơ đồ PHẦN. Không → cộng trừ, vẽ đoạn nối dài.',
+           buoc=1, soBuoc=3,
+           loi=['Câu hỏi thứ nhất. Đề có chữ lần hay không.',
+                'Có chữ lần thì đi đường nhân chia. Không có thì đi đường cộng trừ.']),
+        _c('de_toan', 'Đề bài',
+           de='Chị có 15 chiếc nhãn vở, gấp 3 lần số nhãn của Mai. Mai có mấy chiếc?',
+           loi=['Chị có mười lăm chiếc nhãn vở, gấp ba lần số nhãn của Mai.',
+                'Hỏi Mai có mấy chiếc.']),
+        _c('y_toan', 'Câu hỏi thứ hai: AI gấp AI?',
+           'Chị = 3 phần   ·   Mai = 1 phần', buoc=2, soBuoc=3,
+           loi=['Câu hỏi thứ hai. Ai gấp ai. Chị gấp ba lần Mai, nên chị là ba phần, '
+                'Mai là một phần.']),
+        _c('so_do_doan', 'Vẽ sơ đồ phần rồi nhìn', be=5, lon=15,
+           nhanBe='Mai · 1 phần', nhanLon='chị · 3 phần',
+           chuPhu='Chị 3 phần là 15, nên mỗi phần là 15 : 3.',
+           loi=['Vẽ ra rồi nhìn. Ba phần của chị là mười lăm, nên mỗi phần là mười '
+                'lăm chia ba.']),
+        _c('y_toan', 'Người ẩn ÍT phần thì CHIA', '15 : 3 = 5 (chiếc)',
+           buoc=3, soBuoc=3,
+           loi=['Người đang phải tìm ít phần hơn, nên lấy chia. Mười lăm chia ba bằng '
+                'năm chiếc.',
+                'Nếu ngược lại, biết Mai mà tìm chị, thì mới lấy nhân.']),
+        _c('y_toan', 'Thử lại', '5 × 3 = 15 ✓ đúng bằng số nhãn của chị',
+           loi=['Thử lại. Năm nhân ba bằng mười lăm, đúng bằng số nhãn của chị.']),
+        _c('cong_thuc', 'Hai câu hỏi vàng trước mọi đề so sánh',
+           congThuc='① có chữ LẦN không?   ② AI hơn/gấp AI, và ai đang ẩn?',
+           thay='vẽ sơ đồ xong thì phép tính gần như tự lộ ra',
+           loi=['Con nhớ hai câu hỏi vàng. Đề có chữ lần không, và ai gấp ai.',
+                'Vẽ sơ đồ xong thì phép tính gần như tự lộ ra.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_them_bot_bang_nhau(b):
+    """L3·C5③ Chuyển qua lại thì chỉ cần một nửa hiệu."""
+    return [
+        _c('bia', 'Làm sao cho hai bên bằng nhau', so_bai(b),
+           loi=['Hai giỏ lệch nhau. Làm sao cho hai bên bằng nhau.']),
+        _c('so_do_doan', 'Giỏ A hơn giỏ B đúng 6 quả', be=14, lon=20,
+           nhanBe='giỏ B · 14', nhanLon='giỏ A · 20',
+           hienHieu=True, chuHieu='hiệu 6 quả',
+           loi=['Giỏ A có hai mươi quả, giỏ B có mười bốn. Giỏ A hơn đúng sáu quả.']),
+        _c('y_toan', 'Thêm vào bên ít — thêm đúng bằng hiệu',
+           'B thêm 6 quả  →  hai giỏ cùng 20', buoc=1, soBuoc=3,
+           loi=['Cách thứ nhất, thêm vào bên ít. Thêm đúng sáu quả thì hai giỏ cùng '
+                'hai mươi.']),
+        _c('y_toan', 'Bớt ở bên nhiều — cũng đúng bằng hiệu',
+           'A bớt 6 quả  →  hai giỏ cùng 14', buoc=2, soBuoc=3,
+           loi=['Cách thứ hai, bớt ở bên nhiều. Bớt đúng sáu quả thì hai giỏ cùng '
+                'mười bốn.']),
+        _c('y_toan', 'Nhưng CHUYỂN qua lại thì khác hẳn',
+           'Mỗi quả chuyển đi: bên kia hụt 1 VÀ bên này phình 1', buoc=3, soBuoc=3,
+           loi=['Nhưng chuyển qua lại thì khác hẳn. Mỗi quả chuyển đi làm bên cho hụt '
+                'một, mà bên nhận lại phình lên một.',
+                'Nên một lần chuyển làm hiệu giảm những hai.']),
+        _c('so_do_doan', 'Nên chỉ cần chuyển một NỬA hiệu', be=17, lon=17,
+           nhanBe='giỏ B · 17', nhanLon='giỏ A · 17',
+           chuPhu='6 : 2 = 3 quả. A còn 17, B được 17.',
+           loi=['Nên chỉ cần chuyển một nửa hiệu. Sáu chia hai bằng ba quả.',
+                'Giỏ A còn mười bảy, giỏ B cũng mười bảy.']),
+        _c('y_toan', 'Chỗ hay nhầm', 'Chuyển 6 quả thì lệch ngược lại — B hơn A',
+           loi=['Đây là chỗ hay nhầm. Chuyển hẳn sáu quả thì lệch ngược lại, thành B '
+                'hơn A.']),
+        _c('cong_thuc', 'Ba đường, hai con số khác nhau',
+           congThuc='thêm HOẶC bớt một bên: đúng bằng HIỆU  ·  chuyển qua lại: HIỆU : 2',
+           thay='vì chuyển thì một bên hụt và một bên phình, hiệu đổi gấp đôi',
+           loi=['Con nhớ hai con số. Thêm hoặc bớt một bên thì đúng bằng hiệu.',
+                'Còn chuyển qua lại thì chỉ cần một nửa hiệu, vì hiệu đổi gấp đôi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_toan_tuoi(b):
+    """L3·C5④ Hiệu tuổi đóng băng, tổng tuổi tăng theo số người."""
+    return [
+        _c('bia', 'Hai điều về tuổi', so_bai(b),
+           loi=['Hai điều về tuổi mà biết rồi thì bài nào cũng làm được.']),
+        _c('so_do_doan', 'Mẹ 32, con 8 — mẹ hơn con 24 tuổi', be=8, lon=32,
+           nhanBe='con · 8', nhanLon='mẹ · 32',
+           hienHieu=True, chuHieu='hơn 24 tuổi',
+           loi=['Mẹ ba mươi hai tuổi, con tám tuổi. Mẹ hơn con hai mươi bốn tuổi.']),
+        _c('y_toan', 'Điều thứ nhất: HIỆU tuổi không bao giờ đổi',
+           'Mỗi năm cả hai cùng thêm 1 — khoảng cách giữ nguyên', buoc=1, soBuoc=3,
+           loi=['Điều thứ nhất. Hiệu tuổi không bao giờ đổi.',
+                'Vì mỗi năm cả hai người cùng thêm một tuổi, nên khoảng cách giữ '
+                'nguyên mãi.']),
+        _c('de_toan', 'Đề bài', de='Khi con 12 tuổi thì mẹ bao nhiêu tuổi?',
+           loi=['Hỏi khi con mười hai tuổi thì mẹ bao nhiêu tuổi.']),
+        _c('y_toan', 'Dùng ngay hiệu đóng băng', '12 + 24 = 36 (tuổi)',
+           buoc=2, soBuoc=3,
+           loi=['Dùng ngay cái hiệu đóng băng ấy. Mười hai cộng hai mươi bốn bằng ba '
+                'mươi sáu tuổi.',
+                'Thử lại cũng được. Con thêm bốn năm thì mẹ cũng thêm bốn năm.']),
+        _c('y_toan', 'Điều thứ hai: TỔNG tuổi thì có đổi',
+           'Mỗi năm tổng tăng đúng bằng SỐ NGƯỜI', buoc=3, soBuoc=3,
+           loi=['Điều thứ hai. Tổng tuổi thì có đổi, và mỗi năm nó tăng đúng bằng số '
+                'người.']),
+        _c('y_toan', 'Năm anh chị em, tổng nay 46 tuổi',
+           'Hai năm nữa: 46 + 2 × 5 = 56, không phải 48',
+           loi=['Năm anh chị em, tổng nay bốn mươi sáu tuổi. Hai năm nữa mỗi người '
+                'thêm hai tuổi.',
+                'Nên tổng thành bốn mươi sáu cộng hai nhân năm, bằng năm mươi sáu. '
+                'Không phải bốn mươi tám.']),
+        _c('cong_thuc', 'Hai điều, đừng lẫn',
+           congThuc='HIỆU tuổi: đóng băng  ·  TỔNG tuổi: mỗi năm tăng bằng SỐ NGƯỜI',
+           thay='vì hiệu là khoảng cách, còn tổng là cộng dồn của từng người',
+           loi=['Con nhớ hai điều, đừng lẫn. Hiệu tuổi đóng băng, còn tổng tuổi mỗi '
+                'năm tăng đúng bằng số người.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_rut_ve_don_vi(b):
+    """L3·C5⑤ Rút về một đơn vị trước đã."""
+    return [
+        _c('bia', 'Ghé trạm MỘT trước đã', so_bai(b),
+           loi=['Đề cho giá của nhiều món. Muốn tính gì cũng phải ghé trạm một trước.']),
+        _c('de_toan', 'Đề bài', de='Mua 3 hộp sữa chua hết 21 nghìn. Mua 5 hộp hết bao nhiêu?',
+           loi=['Mua ba hộp sữa chua hết hai mươi mốt nghìn. Hỏi mua năm hộp hết bao '
+                'nhiêu tiền.']),
+        _c('y_toan', 'Đọc kỹ chỗ này trước đã',
+           '21 nghìn là giá của BA hộp, không phải một hộp', buoc=1, soBuoc=3,
+           loi=['Con đọc kỹ chỗ này. Hai mươi mốt nghìn là giá của ba hộp, không phải '
+                'của một hộp.',
+                'Cái bẫy nằm ngay đó.']),
+        _c('y_toan', 'Bước 1 — rút về MỘT hộp', '21 : 3 = 7 (nghìn)',
+           buoc=2, soBuoc=3,
+           loi=['Bước một, rút về một hộp. Hai mươi mốt chia ba bằng bảy nghìn.']),
+        _c('y_toan', 'Bước 2 — nhân ra số hộp cần', '7 × 5 = 35 (nghìn)',
+           buoc=3, soBuoc=3,
+           loi=['Bước hai, nhân ra số hộp cần. Bảy nhân năm bằng ba mươi lăm nghìn.']),
+        _c('y_toan', 'Ướm lại cho chắc',
+           '5 hộp phải đắt hơn 3 hộp — 35 so với 21, hợp lý',
+           loi=['Ướm lại cho chắc. Năm hộp phải đắt hơn ba hộp.',
+                'Ba mươi lăm so với hai mươi mốt, hợp lý.']),
+        _c('y_toan', 'Đề đi ngược cũng ghé đúng trạm ấy',
+           'Có 42 nghìn mua được mấy hộp?  →  42 : 7 = 6 hộp',
+           loi=['Đề đi ngược cũng ghé đúng trạm ấy. Có bốn mươi hai nghìn thì mua '
+                'được mấy hộp.',
+                'Vẫn tìm giá một hộp trước, rồi lấy bốn mươi hai chia bảy, được sáu '
+                'hộp.']),
+        _c('cong_thuc', 'Gặp đề cho giá của nhiều món',
+           congThuc='rút về MỘT trước  →  muốn nhiều thì NHÂN, muốn biết mấy thì CHIA',
+           thay='vì trạm MỘT là chỗ duy nhất hai chiều đều đi qua',
+           loi=['Con nhớ nghi thức. Rút về một trước đã.',
+                'Rồi muốn tính nhiều món thì nhân, muốn biết mua được mấy món thì '
+                'chia.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN3.B01': kb3_thap_nghin,   'DL:KSN3.B02': kb3_hai_cua,
     'DL:KSN3.B03': kb3_duoi_dat_ve,  'DL:KSN3.B04': kb3_dem_nguoc_trang,
@@ -7537,6 +7753,10 @@ BO = {
     # ══ LỚP 3 · chương 4 · Thứ tự phép tính — bốn bài ══
     'DL:KSN3.B13': kb3_lan_uu_tien,     'DL:KSN3.B14': kb3_dau_ngoac,
     'DL:KSN3.B15': kb3_tim_x_hai_may,   'DL:KSN3.B16': kb3_ra_mat_truoc,
+    # ══ LỚP 3 · chương 5 · Toán lời văn — năm bài ══
+    'DL:KSN3.B17': kb3_hai_buoc_tinh,   'DL:KSN3.B18': kb3_hon_hay_gap,
+    'DL:KSN3.B19': kb3_them_bot_bang_nhau, 'DL:KSN3.B20': kb3_toan_tuoi,
+    'DL:KSN3.B21': kb3_rut_ve_don_vi,
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
     'DL:KSN4.B19': kb_b19, 'DL:KSN4.B20': kb_b20,

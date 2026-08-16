@@ -26,25 +26,8 @@
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1 — ĐỌC VÀ GẠCH: gạch một gạch dưới số liệu (18 lít; ít hơn 6 lít), gạch HAI gạch dưới câu hỏi cuối (cả hai thùng?). Nghi thức cũ, kỷ luật mới."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — HỎI NGƯỢC TỪ ĐÍCH: muốn tính \"cả hai thùng\" cần biết gì? — Thùng 1 (có rồi: 18) và thùng 2 (chưa có!). Thùng 2 chính là TRẠM GIỮA bị giấu."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — ĐI HAI CHẶNG: chặng 1: thùng $2 = 18 - 6 = 12$ lít; chặng 2: cả hai thùng = $18 + 12 = 30$ lít. Mỗi chặng một lời văn, một phép tính — không gộp ẩu!"
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — SOI LẠI: đáp số 30 trả lời đúng câu hỏi HAI GẠCH chưa? (Nhiều bạn dừng ở 12 — mới tới trạm nghỉ đã... xuống xe!)"
-   }
-  ],
-  "mantra": "Đứng ở câu hỏi cuối, hỏi ngược: \"muốn tính cái này, mình cần biết gì?\" — thứ CHƯA BIẾT lộ ra chính là trạm giữa. Tìm trạm giữa trước, về đích sau. Đáp số phải khớp câu hỏi HAI GẠCH!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
@@ -57,43 +40,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "narration": "Thùng thứ nhất có 18 lít nước mắm, thùng thứ hai có ít hơn thùng thứ nhất 6 lít. Hỏi cả hai thùng có bao nhiêu lít nước mắm?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
    {
     "id": "S6",
     "kind": "trap",
@@ -382,26 +328,6 @@
  },
  "figureSpec": [
   {
-   "id": "L3H_MO17",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L3H_MO17.png",
-   "caption": "Thùng hai ít hơn thùng một 6 lít — hỏi cả hai thùng",
-   "sha256_16": "571f202430ff5113",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L3H_GI17",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L3H_GI17.png",
-   "caption": "Thùng 2 là trạm giữa bị giấu — phải tìm nó trước rồi mới cộng",
-   "sha256_16": "e7b0f6563cf6e332",
-   "mucGoc": "khamPha"
-  },
-  {
    "id": "L3H_LT03",
    "usedIn": [
     "item:C8"
@@ -433,5 +359,8 @@
   "canCu": "chuDe",
   "lopDuoi": 2,
   "nhan": "Học lại bài lớp 2"
+ },
+ "video": {
+  "giang": "DL_KSN3_B17_giang.mp4"
  }
 }
