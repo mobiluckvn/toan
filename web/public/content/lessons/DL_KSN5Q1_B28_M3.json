@@ -34,24 +34,7 @@
   "kidText": "Mỗi dữ kiện có thể ở một mốc thời gian khác nhau. Con kẻ trục thời gian, quy hết về một mốc rồi mới vẽ sơ đồ."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Định vị: tính tuổi con Ở MỐC ĐÍCH trước, rồi SO với tuổi hôm nay — bé hơn là quá khứ (\"mấy năm trước\"), lớn hơn là tương lai (\"mấy năm nữa\"); đề không mách sẵn chiều."
-   },
-   {
-    "id": "K2",
-    "text": "Quy mốc: mỗi dữ kiện có thể ở một mốc khác nhau (hiệu hôm nay, tổng 3 năm nữa…) — kẻ trục thời gian, ghi mốc của TỪNG dữ kiện, rồi quy hết về một chỗ: tổng lùi n năm thì bớt 2n, tiến n năm thì thêm 2n; hiệu bám neo khỏi quy."
-   },
-   {
-    "id": "K3",
-    "text": "Bài trùm hai tầng: quy tổng về mốc đích ($40 + 2  \\times  4 = 48$) → tại đó gấp 3 nên tổng = $3 + 1 = 4$ phần → con lúc đó = $48 : 4 = 12$ → lùi về hiện tại: con 8, mẹ 32."
-   },
-   {
-    "id": "K4",
-    "text": "Thử toàn cục: dựng lại cả dòng thời gian với đáp — mọi dữ kiện ở đúng mốc của nó phải khớp."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: TRỤC THỜI GIAN CẮM CỜ. Toán tuổi hay trộn dữ kiện ở NHIỀU mốc: \"anh hơn em 6 (hôm nay); BA NĂM NỮA tổng tuổi 24\" — kẻ trục thời gian, cắm cờ từng dữ kiện đúng mốc của nó! Tổng 24 là của mốc ba-năm-nữa; muốn giải ở hôm nay phải QUY VỀ: lùi ba năm, hai anh em mỗi người trẻ đi 3 — tổng bớt 2 × 3 = 6: tổng hôm nay 18, hiệu 6 (neo khỏi quy) → anh 12, em 6. Chuyện ĐỊNH VỊ cũng từ trục này: bố 41 con 9, hỏi khi bố gấp 5 — hiệu 32 chia 4 phần ra con-lúc-đó 8 — BÉ hơn 9 hôm nay: cờ cắm về phía QUÁ KHỨ — \"1 năm trước\", chứ không phải năm nữa! Bài trùm gộp cả hai: tổng hôm nay 40, SAU BỐN NĂM gấp 3 — quy tổng tới mốc đích 40 + 8 = 48 = bốn phần → con lúc đó 12 → lùi cờ về hiện tại: con 8, mẹ 32.",
   "canonicalExamples": [
    {
@@ -82,14 +65,8 @@
     "counterExample": "$40 : 4 = 10$ → con hôm nay 10?! — mà 4 năm nữa 14 nhân 3 ra mẹ 42, tổng 56 ≠ 48: gãy."
    }
   ],
-  "vocabulary": [
-   "trục thời gian cắm cờ",
-   "mốc của từng dữ kiện",
-   "quy tổng cộng hoặc trừ 2n",
-   "cờ phía quá khứ",
-   "thử toàn cục"
-  ],
-  "mantra": "MỖI DỮ KIỆN MỘT MỐC — QUY VỀ MỘT CHỖ RỒI MỚI VẼ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,50 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Anh hơn em 6 tuổi. Ba năm nữa, tổng tuổi hai anh em là 24. Tính tuổi mỗi người hiện nay.",
-    "display": {
-     "type": "story_panel",
-     "caption": "tổng 24 — của mốc nào?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để cắm cờ!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Kẻ trục, cắm cờ: hiệu SÁU cắm ở mọi nơi — neo mà! Tổng HAI TƯ cắm ở mốc ba-năm-nữa. Muốn giải hôm nay, QUY tổng về: lùi ba năm — mỗi người trẻ đi ba, tổng bớt hai nhân ba bằng SÁU: tổng hôm nay MƯỜI TÁM! Máy quen: anh mười hai, em sáu. Thử tiến lại ba năm: mười lăm cộng chín — đúng hai tư! Còn đáp lắp-bừa anh mười lăm em chín là tuổi của BA NĂM NỮA, không phải hôm nay.",
-    "display": {
-     "type": "timeline_flags_interactive",
-     "spec": {
-      "anchor": "hiệu 6 (mọi mốc)",
-      "flag": "tổng 24 @ +3 năm",
-      "back": "$24 - 6 = 18$ @ nay",
-      "ans": "anh 12 · em 6",
-      "check": "15 + 9 = 24"
-     }
-    },
-    "interaction": {
-     "type": "plant_flags_and_shift",
-     "answerKey": {
-      "values": [
-       12,
-       6
-      ]
-     },
-     "successMessage": "Quy tổng 24 → 18 → anh 12, em 6!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -175,38 +108,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Định vị bằng chính trục ấy: bố bốn mốt, con chín — khi bố gấp NĂM: hiệu ba hai chia bốn phần — con lúc đó TÁM. Tám BÉ hơn chín hôm nay: cờ cắm phía QUÁ KHỨ — MỘT NĂM TRƯỚC, thử bố bốn mươi đúng gấp năm tám! Bài trùm gộp hết: tổng nay bốn mươi, SAU BỐN NĂM gấp ba — quy tổng tới mốc đích: bốn mươi cộng tám bằng BỐN TÁM — bốn phần — con lúc đó mười hai — lùi cờ về: con TÁM, mẹ BA HAI!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "bố gấp 5: con lúc đó 8 < 9 → 1 NĂM TRƯỚC ✓",
-      "trùm: tổng đích 40 + 2×4 = 48 = 4 phần",
-      "con lúc đó 12 → nay con 8 · mẹ 32 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: mỗi dữ kiện một mốc — quy về một chỗ rồi mới vẽ!",
-    "display": {
-     "type": "mantra_card",
-     "text": "QUY VỀ MỘT CHỖ RỒI MỚI VẼ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -522,107 +423,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B28.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "tổng 24 — của mốc nào?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Tổng 24, hiệu 6 — anh 15, em 9!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B28_M3_F1.png",
-   "sha256_16": "eb6320def6e71f99"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Định vị thời điểm & quy mốc: trước hay sau — mọi dữ kiện về một chỗ",
-    "steps": [
-     {
-      "text": "bố gấp 5: con lúc đó 8 < 9 → 1 NĂM TRƯỚC"
-     },
-     {
-      "text": "trùm: tổng đích 40 + 2×4 = 48 = 4 phần"
-     },
-     {
-      "text": "con lúc đó 12 → nay con 8 · mẹ 32"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B28_M3_F2.png",
-   "sha256_16": "0652ef4f2adb16ec"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Định vị",
-      "text": "tính tuổi con Ở MỐC ĐÍCH trước",
-      "tone": "navy"
-     },
-     {
-      "label": "Quy mốc",
-      "text": "mỗi dữ kiện có thể ở một mốc khác nhau (hiệu hôm nay, tổng 3 năm nữa…) — kẻ trục thời gian, ghi mốc của TỪNG dữ kiện, rồi quy hết về một chỗ: tổng lùi n năm thì bớt 2n, tiến n năm thì thêm 2n; hiệu bám neo khỏi quy.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MỖI DỮ KIỆN MỘT MỐC — QUY VỀ MỘT CHỖ RỒI MỚI VẼ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B28_M3_F3.png",
-   "sha256_16": "6e541faa2d5d6d19"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "QUY MỌI DỮ KIỆN VỀ MỘT MỐC RỒI MỚI GIẢI",
-    "steps": [
-     {
-      "text": "Quy TỔNG về hôm nay",
-      "sub": "24 − 2 × 3 = 18 (ba năm nữa mỗi người +3)"
-     },
-     {
-      "text": "Hiệu là NEO, giữ nguyên",
-      "sub": "hiệu 6 tuổi"
-     },
-     {
-      "text": "Lắp máy tổng – hiệu",
-      "sub": "anh = (18 + 6) : 2 = 12 · em = 6"
-     }
-    ],
-    "note": "Định vị thời điểm: tuổi đích BÉ hơn tuổi nay → \"mấy năm TRƯỚC\" (bố 41/con 9 → 1 năm trước)"
-   },
-   "caption": "Tổng phải quy về mốc — hiệu thì khỏi, vì hiệu không đổi",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B28_M3_F4.png",
-   "sha256_16": "36e788fa627a65eb"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B32",
@@ -636,5 +437,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Định vị thời điểm & quy mốc: trước hay sau — mọi dữ kiện về một chỗ"
+ "titleDay": "Định vị thời điểm & quy mốc: trước hay sau — mọi dữ kiện về một chỗ",
+ "video": {
+  "giang": "DL_KSN5Q1_B28_M3_giang.mp4"
+ }
 }

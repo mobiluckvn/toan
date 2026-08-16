@@ -34,20 +34,7 @@
   "kidText": "Hiệu tuổi hai người không bao giờ đổi — như hai đường ray song song. Còn tổng tuổi thì mỗi năm trôi thêm 2."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Mỗi năm, MỌI NGƯỜI cùng thêm đúng 1 tuổi — nên KHOẢNG CÁCH tuổi giữa hai người đứng im vĩnh viễn: mẹ hơn con 24 tuổi hôm nay thì 5 năm nữa, 50 năm nữa vẫn hơn 24."
-   },
-   {
-    "id": "K2",
-    "text": "TỔNG tuổi hai người thì TRÔI: mỗi năm cả hai cùng +1 → tổng +2; sau n năm tổng thêm 2 × n (ba người thì +3n)."
-   },
-   {
-    "id": "K3",
-    "text": "Toán tuổi có một chiếc neo và một dòng trôi: HIỆU là neo (mượn được ở mọi thời điểm), TỔNG là dòng (phải hỏi 'tổng ở mốc nào?'). Kiểm nhanh mọi đáp bằng phép trừ hai tuổi."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HAI ĐƯỜNG RAY SONG SONG. Tuổi mẹ và tuổi con là hai đoàn tàu chạy trên hai đường ray SONG SONG — mỗi năm cả hai cùng lăn thêm đúng MỘT nấc: khoảng cách ngang giữa hai tàu (hiệu tuổi) không bao giờ co giãn! Mẹ 32, con 8 — cách nhau 24; năm năm sau tàu mẹ ở 37, tàu con ở 13 — đo lại: vẫn 24! Cáo Đề hay hỏi xỏ \"5 năm nữa mẹ hơn con mấy tuổi?\" để dụ cộng 24 với 5 — nhưng con cũng lớn chứ đâu đứng yên đợi mẹ! Còn TỔNG tuổi hai mẹ con là quãng đường gộp của cả hai tàu: mỗi năm dồn thêm HAI nấc — tổng trôi, hiệu đứng im: một neo, một dòng.",
   "canonicalExamples": [
    {
@@ -72,13 +59,8 @@
     "counterExample": "$37 - 13 = 24$, không phải 29 — con đâu đứng yên đợi mẹ già!"
    }
   ],
-  "vocabulary": [
-   "hai đường ray song song",
-   "khoảng cách không co giãn",
-   "neo hiệu — dòng tổng",
-   "tổng trôi 2 mỗi năm"
-  ],
-  "mantra": "ĐƯỜNG RAY SONG SONG — HIỆU ĐỨNG IM, TỔNG MỚI TRÔI!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -100,50 +82,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Hiện nay mẹ 32 tuổi, con 8 tuổi. Tính hiệu tuổi hai mẹ con hiện nay và sau 5 năm nữa.",
-    "display": {
-     "type": "story_panel",
-     "caption": "5 năm nữa: hơn $24 + 5 = 29$??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để nhìn hai đoàn tàu!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1"
-    ],
-    "narration": "Nhìn hai đoàn tàu trên hai đường ray SONG SONG: mỗi năm CẢ HAI cùng lăn thêm đúng MỘT nấc! Hôm nay tàu mẹ ở ba hai, tàu con ở tám — cách nhau HAI TƯ. Cho thời gian chạy năm năm: tàu mẹ tới ba bảy, tàu con tới mười ba — đo lại khoảng cách: ba bảy trừ mười ba vẫn HAI TƯ! Khoảng cách hai đường ray không bao giờ co giãn: hiệu tuổi đứng im vĩnh viễn.",
-    "display": {
-     "type": "parallel_rails_interactive",
-     "spec": {
-      "now": [
-       32,
-       8
-      ],
-      "after5": [
-       37,
-       13
-      ],
-      "gap": 24
-     }
-    },
-    "interaction": {
-     "type": "run_years_and_measure",
-     "answerKey": {
-      "value": 24
-     },
-     "successMessage": "37 − 13 = 24 — hiệu đứng im, con cũng lớn mà!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -159,38 +97,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Còn TỔNG tuổi thì khác: đó là quãng đường GỘP của cả hai tàu — mỗi năm mỗi người thêm một, hai mẹ con dồn thêm HAI nấc: sau ba năm, mỗi người thêm BA tuổi còn tổng thêm ba nhân hai bằng SÁU! Toán tuổi có một neo một dòng: HIỆU là neo mượn được ở mọi thời điểm — TỔNG là dòng, phải hỏi \"tổng ở mốc nào?\". Khắc kỹ: neo hiệu — dòng tổng.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "mỗi năm: mỗi người +1 → tổng hai người +2",
-      "sau 3 năm: mỗi người +3 · tổng +6",
-      "HIỆU = neo ⚓ · TỔNG = dòng trôi"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: đường ray song song — hiệu đứng im, tổng mới trôi!",
-    "display": {
-     "type": "mantra_card",
-     "text": "HIỆU ĐỨNG IM — TỔNG MỚI TRÔI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -478,142 +384,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B28.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "5 năm nữa: hơn 24 + 5 = 29??",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "Mẹ 32, con 8 — mẹ hơn con 24 tuổi. Vậy NĂM NĂM NỮA mẹ hơn con mấy tuổi nào?",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Câu hỏi mở bài",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B28_M1_F1.png",
-   "sha256_16": "27a6e4315e48b0f4"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Đường ray song song: hiệu tuổi đứng im — tổng trôi 2 mỗi năm",
-    "steps": [
-     {
-      "text": "mỗi năm: mỗi người +1 → tổng hai người +2"
-     },
-     {
-      "text": "sau 3 năm: mỗi người +3 · tổng +6 · hiệu ⚓ đứng im"
-     },
-     {
-      "text": "HIỆU = neo ⚓ · TỔNG = dòng trôi"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B28_M1_F2.png",
-   "sha256_16": "39043cddfb7ffd16"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Mỗi năm, MỌI NGƯỜI cùng thêm đúng 1 tuổi",
-      "text": "nên KHOẢNG CÁCH tuổi giữa hai người đứng im vĩnh viễn: mẹ hơn con 24 tuổi hôm nay thì 5 năm nữa, 50 năm nữa vẫn hơn 24.",
-      "tone": "navy"
-     },
-     {
-      "label": "TỔNG tuổi hai người thì TRÔI",
-      "text": "mỗi năm cả hai cùng +1 → tổng +2; sau n năm tổng thêm 2 × n (ba người thì +3n).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "ĐƯỜNG RAY SONG SONG — HIỆU ĐỨNG IM, TỔNG MỚI TRÔI!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B28_M1_F3.png",
-   "sha256_16": "a7229e6f8c62cb5f"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "ĐƯỜNG RAY SONG SONG: HIỆU TUỔI KHÔNG BAO GIỜ ĐỔI",
-    "headers": [
-     "hiện nay",
-     "sau 3 năm",
-     "sau 5 năm"
-    ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "mẹ",
-      "cells": [
-       "32",
-       "35",
-       "37"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "con",
-      "cells": [
-       "8",
-       "11",
-       "13"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "hiệu",
-      "cells": [
-       "24",
-       "24",
-       "24"
-      ],
-      "color": "#E6FAF5",
-      "highlight": [
-       0,
-       1,
-       2
-      ]
-     },
-     {
-      "label": "tổng",
-      "cells": [
-       "40",
-       "46",
-       "50"
-      ],
-      "color": "#FFF4DF"
-     }
-    ],
-    "note": "Hiệu ĐỨNG IM 24 · tổng TRÔI 2 tuổi mỗi năm (mỗi người thêm 1)"
-   },
-   "caption": "Hai đường ray song song: khoảng cách giữa chúng không bao giờ đổi",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B28_M1_F4.png",
-   "sha256_16": "f6a35982b45f9b18"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B32",
@@ -626,5 +397,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B28_M1_giang.mp4"
  }
 }

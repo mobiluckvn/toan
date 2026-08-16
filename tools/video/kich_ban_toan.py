@@ -11739,7 +11739,7 @@ def kb5_luat_kep_cu_chuyen(b):
            de='Chuyển 5 quyển từ kệ A sang kệ B.\nTổng có đổi không? Hiệu đổi bao nhiêu?',
            loi=['Chuyển năm quyển sách từ kệ A sang kệ B.',
                 'Tổng có đổi không, và hiệu đổi bao nhiêu.']),
-        _c('so_do_doan', 'Trước khi chuyển', be=20, lon=30,
+        _c('so_do_doan', 'Trước khi chuyển', be=20, lon=30, thangDo=30,
            nhanBe='kệ B', nhanLon='kệ A', hienHieu=True, chuHieu='hiệu 10',
            chuTong='tổng 50', chuPhu='Kệ A đang hơn kệ B đúng 10 quyển.',
            loi=['Lấy số cụ thể cho dễ nhìn. Kệ A ba mươi, kệ B hai mươi, hiệu là '
@@ -11755,7 +11755,7 @@ def kb5_luat_kep_cu_chuyen(b):
            loi=['Nhưng hiệu thì nhúc nhích từ cả hai đầu. Bên cho tụt xuống, bên nhận '
                 'nhô lên.',
                 'Nên khoảng cách khép lại gấp đôi lượng chuyển.']),
-        _c('so_do_doan', 'Sau khi chuyển 5', be=25, lon=25,
+        _c('so_do_doan', 'Sau khi chuyển 5', be=25, lon=25, thangDo=30,
            nhanBe='kệ B', nhanLon='kệ A', chuTong='tổng 50',
            chuPhu='Hai kệ bằng nhau — hiệu về 0, mà tổng vẫn 50.',
            loi=['Sau khi chuyển năm thì cả hai kệ đều hai mươi lăm.',
@@ -11845,11 +11845,11 @@ def kb5_so_do_truoc_sau(b):
            de='Tổng 90. Chuyển 5 từ A sang B thì B hơn A là 4 quyển',
            loi=['Ca khó nhất là đổi ngôi. Chuyển năm từ A sang B thì B hơn ngược lại '
                 'bốn.']),
-        _c('so_do_doan', 'Tầng TRƯỚC — A đang hơn', be=42, lon=48,
+        _c('so_do_doan', 'Tầng TRƯỚC — A đang hơn', be=42, lon=48, thangDo=48,
            nhanBe='B trước', nhanLon='A trước', hienHieu=True, chuHieu='hiệu 6',
            chuTong='tổng 90', chuPhu='Khoảng cách ban đầu chưa biết là bao nhiêu.',
            loi=['Tầng trước, A đang hơn B một khoảng chưa biết.']),
-        _c('so_do_doan', 'Tầng SAU — ngôi đã đổi', be=43, lon=47,
+        _c('so_do_doan', 'Tầng SAU — ngôi đã đổi', be=43, lon=47, thangDo=48,
            nhanBe='A sau', nhanLon='B sau', hienHieu=True, chuHieu='B hơn 4',
            chuTong='tổng 90', chuPhu='Cú chuyển khép hết khoảng cũ, còn dư đà mở sang phía B.',
            loi=['Tầng sau ngôi đã đổi, B hơn A đúng bốn.',
@@ -11875,7 +11875,149 @@ def kb5_so_do_truoc_sau(b):
     ]
 
 
+def kb5_hieu_tuoi_dung_im(b):
+    """L5·B28·M1 Hiệu tuổi là neo, tổng tuổi là dòng trôi 2 mỗi năm."""
+    return [
+        _c('bia', 'Toán tuổi có một chiếc neo và một dòng trôi', so_bai(b),
+           loi=['Trong toán tuổi, có thứ đứng im mãi và có thứ trôi đi từng năm.']),
+        _c('de_toan', 'Đề bài',
+           de='Mẹ 32 tuổi, con 8 tuổi.\nHiệu tuổi hôm nay và sau 5 năm nữa là bao nhiêu?',
+           loi=['Mẹ ba mươi hai tuổi, con tám tuổi. Hỏi hiệu tuổi hôm nay và sau năm '
+                'năm nữa.']),
+        _c('so_do_doan', 'Hôm nay', be=8, lon=32, thangDo=37,
+           nhanBe='con', nhanLon='mẹ',
+           hienHieu=True, chuHieu='hiệu 24', chuTong='tổng 40',
+           chuPhu='Mẹ hơn con đúng 24 tuổi.',
+           loi=['Hôm nay mẹ hơn con đúng hai mươi tư tuổi.']),
+        _c('y_toan', 'Mỗi năm thì MỌI NGƯỜI cùng thêm đúng 1 tuổi',
+           'hai đoạn cùng dài ra một lượng như nhau  →  khoảng cách ĐỨNG IM',
+           buoc=1, soBuoc=3,
+           loi=['Mỗi năm thì mọi người cùng thêm đúng một tuổi.',
+                'Hai đoạn cùng dài ra một lượng như nhau, nên khoảng cách giữa chúng '
+                'đứng im.']),
+        _c('so_do_doan', 'Sau 5 năm', be=13, lon=37, thangDo=37,
+           nhanBe='con', nhanLon='mẹ',
+           hienHieu=True, chuHieu='hiệu vẫn 24', chuTong='tổng 50',
+           chuPhu='Hai đoạn đều dài ra 5 — mà khoảng cách y nguyên.',
+           loi=['Sau năm năm, mẹ ba mươi bảy còn con mười ba. Đo lại khoảng cách vẫn '
+                'đúng hai mươi tư.']),
+        _c('y_toan', 'Nên HIỆU tuổi là chiếc NEO',
+           'mượn được ở mọi thời điểm — hôm nay, 5 năm nữa, 50 năm nữa', buoc=2,
+           soBuoc=3,
+           loi=['Nên hiệu tuổi là chiếc neo, mượn được ở bất cứ thời điểm nào.']),
+        _c('y_toan', 'Còn TỔNG thì TRÔI, mỗi năm thêm 2',
+           'hai người cùng thêm 1   →   tổng thêm 2   ·   sau n năm thêm 2 × n',
+           buoc=3, soBuoc=3,
+           loi=['Còn tổng thì trôi. Hai người cùng thêm một, nên tổng thêm hai mỗi '
+                'năm.',
+                'Ở đây tổng đi từ bốn mươi lên năm mươi, đúng hai nhân năm.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='HIỆU là NEO  —  TỔNG là DÒNG TRÔI',
+           thay='ba người thì tổng thêm 3 × n — nên luôn hỏi "tổng ở mốc nào?"',
+           loi=['Con nhớ câu này. Hiệu tuổi đứng im, chỉ tổng mới trôi.',
+                'Nên gặp chữ tổng là phải hỏi ngay, tổng ấy ở mốc nào.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_gap_k_lan(b):
+    """L5·B28·M2 Gấp k lần ở mốc khác — hiệu là (k − 1) phần, và mượn neo."""
+    return [
+        _c('bia', 'Mấy năm nữa thì mẹ gấp mấy lần con', so_bai(b),
+           loi=['Dạng này phải vẽ sơ đồ ở một mốc chưa tới, rồi mượn neo mà tính.']),
+        _c('de_toan', 'Phần đầu là máy quen',
+           de='Tổng tuổi hai mẹ con là 40, mẹ hơn con 24 tuổi',
+           loi=['Tổng tuổi hai mẹ con là bốn mươi, mẹ hơn con hai mươi tư tuổi.']),
+        _c('y_toan', 'Máy tổng – hiệu của bài 25 khoác áo mới',
+           'mẹ = (40 + 24) : 2 = 32      ·      con = 8', buoc=1, soBuoc=4,
+           loi=['Đây chính là máy tổng hiệu của bài hai lăm. Mẹ ba mươi hai, con '
+                'tám.']),
+        _c('de_toan', 'Câu hỏi thật nằm ở đây',
+           de='Mấy năm nữa thì tuổi mẹ gấp 3 lần tuổi con?',
+           loi=['Câu hỏi thật nằm ở đây. Mấy năm nữa thì tuổi mẹ gấp ba lần tuổi con.']),
+        _c('y_toan', 'Vẽ sơ đồ TẠI MỐC ĐÍCH, không phải hôm nay',
+           'ở mốc ấy: mẹ 3 phần   ·   con 1 phần', buoc=2, soBuoc=4,
+           loi=['Vẽ sơ đồ ngay tại mốc đích chứ không phải hôm nay. Mẹ ba phần, con '
+                'một phần.']),
+        _c('so_do_doan', 'Đếm xem hiệu gồm mấy phần', be=12, lon=36,
+           phanBe=1, phanLon=3, nhanBe='con', nhanLon='mẹ', hienHieu=True,
+           chuHieu='hiệu = 2 phần',
+           chuPhu='Gấp 3 thì hiệu chỉ 2 phần — không phải 3.',
+           loi=['Đếm phần mẹ hơn con. Ba trừ một, chỉ hai phần thôi, chứ không phải '
+                'ba.']),
+        _c('y_toan', 'MƯỢN chiếc neo của hôm nay',
+           'hiệu ở mốc đích VẪN là 24   →   1 phần = 24 : 2 = 12', buoc=3, soBuoc=4,
+           loi=['Nay mượn chiếc neo. Hiệu ở mốc đích vẫn là hai mươi tư như hôm nay.',
+                'Hai mươi tư chia hai phần, mỗi phần mười hai.']),
+        _c('y_toan', 'Một phần chính là tuổi con LÚC ĐÓ',
+           'con 12 tuổi  →  số năm = 12 − 8 = 4   ·   thử: 36 = 3 × 12 ✓',
+           buoc=4, soBuoc=4,
+           loi=['Một phần chính là tuổi con lúc đó, tức mười hai.',
+                'Trừ tuổi con hôm nay thì ra bốn năm nữa. Thử lại, ba mươi sáu đúng '
+                'gấp ba mười hai.']),
+        _c('cong_thuc', 'Chỗ dễ chia nhầm nhất',
+           congThuc='gấp k lần   →   hiệu là (k − 1) phần',
+           thay='chia 24 cho 3 ra con 8 tuổi, tức HÔM NAY — mà 32 đâu gấp 3 lần 8',
+           loi=['Con nhớ câu này. Gấp ka lần thì hiệu chỉ là ka trừ một phần.',
+                'Chia nhầm cho ba thì ra con tám tuổi, tức hôm nay, mà máy thử loại '
+                'ngay.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_quy_ve_mot_moc(b):
+    """L5·B28·M3 Mỗi dữ kiện một mốc — quy về một chỗ, rồi định vị chiều thời gian."""
+    return [
+        _c('bia', 'Mỗi dữ kiện có thể nằm ở một MỐC khác nhau', so_bai(b),
+           loi=['Đề hay trộn mốc. Một dữ kiện ở hôm nay, một dữ kiện ở vài năm nữa.']),
+        _c('de_toan', 'Đề bài',
+           de='Anh hơn em 6 tuổi. BA NĂM NỮA tổng tuổi hai anh em là 24',
+           loi=['Anh hơn em sáu tuổi. Ba năm nữa tổng tuổi hai anh em là hai mươi '
+                'tư.']),
+        _c('y_toan', 'Kẻ trục thời gian, cắm cờ từng dữ kiện',
+           'hiệu 6 cắm ở MỌI mốc (neo)   ·   tổng 24 cắm ở mốc BA NĂM NỮA',
+           buoc=1, soBuoc=4,
+           loi=['Kẻ trục thời gian rồi cắm cờ từng dữ kiện.',
+                'Hiệu sáu là neo nên cắm ở mọi mốc, còn tổng hai mươi tư chỉ cắm ở mốc '
+                'ba năm nữa.']),
+        _c('y_toan', 'Quy tổng về hôm nay: lùi 3 năm thì BỚT 2 × 3',
+           '24 − 6 = 18   ←   tổng hôm nay', buoc=2, soBuoc=4,
+           loi=['Quy tổng về hôm nay. Lùi ba năm thì mỗi người trẻ đi ba, nên tổng bớt '
+                'sáu.',
+                'Tổng hôm nay là mười tám.']),
+        _c('so_do_doan', 'Nay mọi dữ kiện đã về cùng một mốc', be=6, lon=12,
+           nhanBe='em', nhanLon='anh', hienHieu=True, chuHieu='hiệu 6',
+           chuTong='tổng 18', chuPhu='Có tổng, có hiệu, cùng một mốc — vẽ được rồi.',
+           loi=['Nay mọi dữ kiện đã về cùng một mốc, vẽ sơ đồ được rồi.']),
+        _c('y_toan', 'Máy cũ chạy, rồi trả về mốc của đề mà thử',
+           'anh = (18 + 6) : 2 = 12  ·  em = 6  ·  ba năm nữa: 15 và 9, tổng 24 ✓',
+           buoc=3, soBuoc=4,
+           loi=['Anh mười hai, em sáu. Trả về mốc ba năm nữa thì mười lăm với chín, '
+                'tổng đúng hai mươi tư.']),
+        _c('de_toan', 'Đề KHÔNG mách sẵn chiều thời gian',
+           de='Bố 41 tuổi, con 9 tuổi. Khi nào bố gấp 5 lần tuổi con?',
+           loi=['Còn chuyện này nữa. Đề không mách chiều thời gian, phải tự định vị.']),
+        _c('y_toan', 'Tính tuổi con Ở MỐC ĐÍCH rồi SO với hôm nay',
+           'hiệu 32 : 4 phần = 8  →  con 8, BÉ hơn 9  →  là QUÁ KHỨ, một năm trước',
+           buoc=4, soBuoc=4,
+           loi=['Gấp năm lần thì hiệu là bốn phần. Ba mươi hai chia bốn, con lúc đó '
+                'tám tuổi.',
+                'Tám bé hơn chín hôm nay, nên mốc ấy nằm ở quá khứ, một năm trước.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='mỗi dữ kiện một MỐC — quy về một chỗ rồi mới vẽ',
+           thay='tuổi đích BÉ hơn hôm nay là năm trước, LỚN hơn là năm nữa',
+           loi=['Con nhớ câu này. Mỗi dữ kiện một mốc, quy về một chỗ rồi mới vẽ.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B28.M1': kb5_hieu_tuoi_dung_im,
+    'DL:KSN5Q1.B28.M2': kb5_gap_k_lan,
+    'DL:KSN5Q1.B28.M3': kb5_quy_ve_mot_moc,
     'DL:KSN5Q1.B27.M1': kb5_luat_kep_cu_chuyen,
     'DL:KSN5Q1.B27.M2': kb5_chuyen_thi_bang_nhau,
     'DL:KSN5Q1.B27.M3': kb5_so_do_truoc_sau,

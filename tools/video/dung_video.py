@@ -872,7 +872,16 @@ def khung(c: dict) -> Image.Image:
         giua(d, 46, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
         be, lon = c.get("be", 0), c.get("lon", 0)
         x0, rong_toi_da = 300, 640
-        don_vi = rong_toi_da / max(lon, be, 1)
+        # ⚠ HAI MÀN ĐẶT CẠNH NHAU THÌ PHẢI CHUNG MỘT THANG ĐO.
+        #
+        # Mặc định mỗi màn tự chuẩn hoá theo đoạn dài nhất CỦA NÓ — hợp lý khi màn
+        # đứng một mình. Nhưng cả chương này hay đặt hai màn cạnh nhau để nói "cái
+        # này KHÔNG đổi": tuổi mẹ con hôm nay và sau 5 năm, hiệu vẫn 24. Nếu mỗi màn
+        # một thang thì khúc hiệu 24 vẽ ở màn sau NGẮN HƠN màn trước — hình nói ngược
+        # lại đúng cái điều lời đang dạy. Lỗi thật, bắt được ở lớp 5 bài 28.
+        #
+        # Khai `thangDo` bằng giá trị lớn nhất của CẢ CỤM màn thì mọi màn cùng thước.
+        don_vi = rong_toi_da / max(c.get("thangDo") or 0, lon, be, 1)
         y_be, y_lon, day_net = 210, 340, 9
 
         def vach_phan(y, dai, so_phan, mau):

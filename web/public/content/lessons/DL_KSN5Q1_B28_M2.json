@@ -35,24 +35,7 @@
   "kidText": "Mẹ gấp 5 lần tuổi con thì phần hơn chỉ là 4 phần chứ không phải 5. Con mượn chiếc neo hiệu từ hôm nay để chia phần."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tuổi tổng – hiệu hiện tại là máy B25 khoác áo: tổng 40, mẹ hơn con 24 → mẹ = ($40 + 24$) : $2 = 32$; con = 8."
-   },
-   {
-    "id": "K2",
-    "text": "\"Mấy năm nữa mẹ gấp k lần con\": vẽ sơ đồ phần TẠI MỐC ĐÍCH — mẹ k phần, con 1 phần → phần mẹ HƠN con = k − 1 phần (gấp 3 thì hiệu chỉ 2 phần!)."
-   },
-   {
-    "id": "K3",
-    "text": "Mượn neo: hiệu tuổi ở mốc đích VẪN là hiệu hôm nay (đường ray song song) → 1 phần = hiệu : (k − 1) = tuổi con lúc đó → số năm = tuổi con lúc đó − tuổi con hôm nay."
-   },
-   {
-    "id": "K4",
-    "text": "Thử hai lớp: tuổi mẹ lúc đó có đúng gấp k tuổi con không ($36 = 3  \\times  12$ ✓), và số năm cộng vào cả hai người có khớp không."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: SƠ ĐỒ PHẦN MƯỢN NEO. Đề: mẹ 32, con 8 — mấy năm nữa mẹ gấp BA con? Nhảy tới mốc đích vẽ sơ đồ phần: mẹ BA phần, con MỘT phần. Trí Long hồn nhiên: \"hiệu là 3 phần!\" — đếm lại: phần mẹ HƠN con là ba trừ một — HAI phần thôi (gấp k thì hiệu chỉ k − 1 phần)! Hai phần ấy bằng bao nhiêu tuổi? Mượn chiếc neo từ hôm nay: hiệu tuổi mãi là 24 — vậy MỘT phần bằng 24 : 2 = 12: tuổi con LÚC ĐÓ! Con hôm nay 8 → còn 12 − 8 = BỐN NĂM NỮA. Thử: 4 năm nữa mẹ 36 = 3 × 12 ✓. Cùng máy chạy ngược thời gian: gấp NĂM → 4 phần → con lúc đó 6 → HAI NĂM TRƯỚC (mẹ 30 = 5 × 6 ✓); gấp ĐÔI → 1 phần = 24 → con 24 → MƯỜI SÁU năm nữa (mẹ 48 = 2 × 24 ✓).",
   "canonicalExamples": [
    {
@@ -83,14 +66,8 @@
     "counterExample": "$24 : 3 = 8$ → con lúc đó 8 = hôm nay → '0 năm nữa mẹ gấp 3' — mà 32 ≠ $3  \\times  8 = 24$: sai ngay!"
    }
   ],
-  "vocabulary": [
-   "sơ đồ phần tại mốc đích",
-   "phần hơn (k − 1)",
-   "mượn neo hiệu",
-   "tuổi con lúc đó",
-   "thử hai lớp"
-  ],
-  "mantra": "GẤP k — HIỆU CHỈ LÀ (k TRỪ 1) PHẦN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -112,48 +89,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Tổng tuổi hai mẹ con hiện nay là 40, mẹ hơn con 24 tuổi. Tính tuổi mỗi người.",
-    "display": {
-     "type": "story_panel",
-     "caption": "gấp 3 → hiệu 3 phần??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đếm phần hơn!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Nhảy tới mốc đích vẽ sơ đồ: mẹ BA phần — con MỘT phần. Đếm phần mẹ HƠN con: ba trừ một — chỉ HAI phần (gấp ka thì hiệu là ka trừ một phần)! Hai phần ấy bằng mấy tuổi? Mượn chiếc neo hôm nay: hiệu mãi là HAI TƯ — một phần bằng hai tư chia hai: MƯỜI HAI — đó là tuổi con LÚC ĐÓ! Con hôm nay tám: còn mười hai trừ tám — BỐN NĂM NỮA! Thử: mẹ ba sáu đúng gấp ba mười hai!",
-    "display": {
-     "type": "part_diagram_interactive",
-     "spec": {
-      "k": 3,
-      "parts": "mẹ 3 · con 1 · hơn 2",
-      "anchor": 24,
-      "unit": 12,
-      "years": 4,
-      "check": "36 = 3 × 12"
-     }
-    },
-    "interaction": {
-     "type": "count_parts_borrow_anchor",
-     "answerKey": {
-      "value": 4
-     },
-     "successMessage": "Hiệu = 2 phần → con lúc đó 12 → 4 năm nữa!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -174,38 +109,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K4"
-    ],
-    "narration": "Chia nhầm cho ba thì sao? Hai tư chia ba ra tám — con lúc đó tám tuổi, tức HÔM NAY — mà ba hai đâu có gấp ba lần tám: máy thử loại ngay! Cùng cỗ máy chạy hai hướng thời gian: gấp NĂM — hiệu bốn phần — con lúc đó SÁU: hai năm TRƯỚC, thử mẹ ba mươi đúng gấp năm sáu! Gấp ĐÔI — hiệu một phần bằng hai tư — con lúc đó hai tư: MƯỜI SÁU năm nữa, mẹ bốn tám! Và nền của mọi bài: tổng bốn mươi hiệu hai tư — máy hai lăm ra mẹ ba hai, con tám.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "24 : 3 = 8 → 'hôm nay' mà 32 ≠ 24 ✗",
-      "gấp 5: 4 phần → con 6 → 2 năm trước ✓",
-      "gấp đôi: 1 phần 24 → 16 năm nữa ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: gấp ka — hiệu chỉ là ka trừ một phần!",
-    "display": {
-     "type": "mantra_card",
-     "text": "GẤP k — HIỆU = (k − 1) PHẦN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -530,104 +433,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B28.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "gấp 3 → hiệu 3 phần??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "hiệu là BA phần — 24 chia 3 bằng 8!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B28_M2_F1.png",
-   "sha256_16": "0a95632a3a7ac060"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Tuổi tổng – hiệu & gấp k ở mốc khác: hiệu = (k − 1) phần",
-    "steps": [
-     {
-      "text": "24 : 3 = 8 → 'hôm nay' mà 32 ≠ 24"
-     },
-     {
-      "text": "gấp 5: 4 phần → con 6 → 2 năm trước"
-     },
-     {
-      "text": "gấp đôi: 1 phần 24 → 16 năm nữa"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B28_M2_F2.png",
-   "sha256_16": "aba18c56e136db23"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Tuổi tổng",
-      "text": "hiệu hiện tại là máy B25 khoác áo: tổng 40, mẹ hơn con 24 → mẹ = (40 + 24) : 2 = 32; con = 8.",
-      "tone": "navy"
-     },
-     {
-      "label": "\"Mấy năm nữa mẹ gấp k lần con\"",
-      "text": "vẽ sơ đồ phần TẠI MỐC ĐÍCH — mẹ k phần, con 1 phần → phần mẹ HƠN con = k − 1 phần (gấp 3 thì hiệu chỉ 2 phần!).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "GẤP k — HIỆU CHỈ LÀ (k TRỪ 1) PHẦN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B28_M2_F3.png",
-   "sha256_16": "c109b56b94a38ee4"
-  },
-  {
-   "archetype": "sum_diff_bars",
-   "params": {
-    "title": "MẤY NĂM NỮA TUỔI MẸ GẤP 3 LẦN TUỔI CON?",
-    "small": {
-     "label": "con lúc đó · 1 phần = 12",
-     "val": 12
-    },
-    "big": {
-     "label": "mẹ lúc đó · 3 phần = 36",
-     "val": 36
-    },
-    "diff_label": "hiệu 24 = 2 phần",
-    "total_label": "tổng 48",
-    "formula": "hiệu 24 = (3 − 1) = 2 phần → 1 phần = 12 → con 12 tuổi → 12 − 8 = 4 năm nữa",
-    "note": "Vẽ sơ đồ phần TẠI MỐC ĐÍCH — hiệu vẫn là 24 vì hiệu không đổi"
-   },
-   "caption": "Gấp k lần thì hiệu chiếm đúng (k − 1) phần",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B28_M2_F4.png",
-   "sha256_16": "e99ead9367759121"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B32",
@@ -640,5 +446,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B28_M2_giang.mp4"
  }
 }
