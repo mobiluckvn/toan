@@ -34,24 +34,7 @@
   "kidText": "Dãy cách đều có đặc quyền: trung bình cộng bằng số đầu cộng số cuối rồi chia đôi. Dãy thường mà dùng là sập bẫy."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Dãy CÁCH ĐỀU (mỗi bước cùng khoảng): TBC = (số đầu + số cuối) : 2 — điểm giữa hai đầu; các cặp đối xứng đầu-cuối đều chung tổng nên điểm cân rơi đúng giữa."
-   },
-   {
-    "id": "K2",
-    "text": "Đếm số hạng dãy cách đều: (cuối − đầu) : khoảng + 1 (dãy 3; 6; …; 99: ($99 - 3$) : $3 + 1 = 33$ số)."
-   },
-   {
-    "id": "K3",
-    "text": "ĐẶC QUYỀN không cho mượn: dãy KHÔNG cách đều mà dùng (đầu + cuối) : 2 là sai — phải về đường gốc tổng : n. Kiểm nhanh: các khoảng cách có đều nhau không?"
-   },
-   {
-    "id": "K4",
-    "text": "Dãy lẻ liên tiếp / chẵn liên tiếp là dãy cách đều 2 → TBC = số CHÍNH GIỮA; biết TBC là dựng lại được cả dãy quanh nó."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HÀNG CỌC RÀO ĐÓNG ĐỀU TAY. Dãy 3, 6, 9, …, 99 là hàng cọc đóng ĐỀU TAY — cọc đầu bắt tay cọc cuối: 3 + 99 = 102; cọc nhì bắt tay cọc áp chót: 6 + 96 = 102 — CẶP NÀO CŨNG 102! Nên điểm cân rơi đúng CHÍNH GIỮA hàng rào: (3 + 99) : 2 = 51. Muốn đếm cọc: quãng đường (99 − 3) chia bước 3, cộng cọc xuất phát: 33 cọc (nợ Bài 12 đòi về!). Nhưng đặc quyền này KHÔNG CHO MƯỢN: hàng cọc đóng lệch tay (22; 38; 31…) — cặp đầu-cuối mỗi cặp một tổng, điểm giữa hai đầu chẳng còn ý nghĩa: phải về đường gốc tổng chia số cọc. Trước khi rút công thức, liếc một vòng: các khoảng có ĐỀU không?",
   "canonicalExamples": [
    {
@@ -82,14 +65,8 @@
     "counterExample": "28,5 ≠ 31 — công thức mượn trả giá ngay."
    }
   ],
-  "vocabulary": [
-   "hàng cọc đóng đều tay",
-   "cặp bắt tay chung tổng",
-   "điểm giữa hàng rào",
-   "đặc quyền không cho mượn",
-   "liếc khoảng cách"
-  ],
-  "mantra": "ĐIỂM GIỮA HAI ĐẦU — ĐẶC QUYỀN CỦA DÃY CÁCH ĐỀU!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,57 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Không cộng cả dãy, tính TBC của dãy 3; 6; 9; … ; 99.",
-    "display": {
-     "type": "story_panel",
-     "caption": "33 số — cấm cộng?!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để cho các cọc bắt tay!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Hàng cọc đóng đều tay: cọc đầu bắt tay cọc cuối — 3 cộng 99 là MỘT TRĂM LẺ HAI; cọc nhì với cọc áp chót — 6 cộng 96: cũng một trăm lẻ hai — CẶP NÀO CŨNG THẾ! Nên điểm cân rơi đúng chính giữa hàng rào: một trăm lẻ hai chia hai bằng NĂM MƯƠI MỐT. Đếm cọc kiểu Bài 12: chín chín trừ ba, chia bước ba, cộng một — ba mươi ba cọc.",
-    "display": {
-     "type": "fence_pairs_interactive",
-     "spec": {
-      "seq": "3..99 bước 3",
-      "pairs": [
-       [
-        "3",
-        "99",
-        "102"
-       ],
-       [
-        "6",
-        "96",
-        "102"
-       ]
-      ],
-      "tbc": "(3 + 99) : 2 = 51",
-      "count": 33
-     }
-    },
-    "interaction": {
-     "type": "pair_and_average",
-     "answerKey": {
-      "value": 51
-     },
-     "successMessage": "Cặp nào cũng 102 → TBC = 51 — điểm giữa hàng rào!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -177,47 +103,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Cáo Đề dụ: \"tiện tay lấy luôn (22 cộng 35) chia 2 cho sổ bán hàng nhé!\" DỪNG — liếc khoảng: 22 nhảy lên 38 những mười sáu bước, rồi lùi về 31 — hàng cọc LỆCH TAY: đặc quyền điểm giữa không cho mượn, phải về đường gốc tổng chia số cọc! Còn dãy lẻ liên tiếp TBC 27: cách đều 2 — số CHÍNH GIỮA chính là 27, dựng quanh nó: hai ba, hai lăm, HAI BẢY, hai chín, ba mốt!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "dãy thường: (22 + 35) : 2 = 28,5",
-       "output": "✗",
-       "valid": false,
-       "reason": "khoảng không đều — đặc quyền không cho mượn"
-      },
-      {
-       "input": "dãy lẻ TBC 27 → 23; 25; 27; 29; 31",
-       "output": "✓",
-       "valid": true,
-       "reason": "cách đều 2: TBC = số chính giữa"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: điểm giữa hai đầu — đặc quyền của dãy cách đều!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐẶC QUYỀN CỦA DÃY CÁCH ĐỀU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -510,113 +395,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B21.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "33 số — cấm cộng?!",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "TBC của 3, 6, 9, tới 99 mà cấm cộng cả dãy? Ba mươi ba số lận, tính sao nổi!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B21_M3_F1.png",
-   "sha256_16": "1e6b2480a4c0a729"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "dãy thường: (22 + 35) : 2 = 28,5"
-     ],
-     "result": ""
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "dãy lẻ TBC 27 → 23; 25; 27; 29; 31"
-     ],
-     "result": ""
-    },
-    "verdict": "cách đều 2: TBC = số chính giữa"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B21_M3_F2.png",
-   "sha256_16": "4c9e687fa20ddce8"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Dãy CÁCH ĐỀU (mỗi bước cùng khoảng)",
-      "text": "TBC = (số đầu + số cuối) : 2 — điểm giữa hai đầu; các cặp đối xứng đầu-cuối đều chung tổng nên điểm cân rơi đúng giữa.",
-      "tone": "navy"
-     },
-     {
-      "label": "Đếm số hạng dãy cách đều",
-      "text": "(cuối − đầu) : khoảng + 1 (dãy 3; 6; …; 99: (99 − 3) : 3 + 1 = 33 số).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "ĐIỂM GIỮA HAI ĐẦU — ĐẶC QUYỀN CỦA DÃY CÁCH ĐỀU!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B21_M3_F3.png",
-   "sha256_16": "505602ad31ec7ed4"
-  },
-  {
-   "archetype": "fence_posts",
-   "params": {
-    "title": "DÃY CÁCH ĐỀU: TBC CHÍNH LÀ ĐIỂM GIỮA (ĐẦU + CUỐI) : 2",
-    "first": 3,
-    "last": 99,
-    "step": 3,
-    "show": 5,
-    "labels": [
-     "3",
-     "…",
-     "51",
-     "…",
-     "99"
-    ],
-    "highlight": [
-     2
-    ],
-    "show_step": false,
-    "gap_note": "chỉ dãy CÁCH ĐỀU mới có đặc quyền này",
-    "formula": "(3 + 99) : 2 = 51 — khỏi cộng cả 33 số hạng",
-    "note": "Chiều ngược: TBC năm số lẻ liên tiếp là 27 → số giữa 27 → 23; 25; 27; 29; 31"
-   },
-   "caption": "Đặc quyền không cho mượn: dãy không cách đều thì phải cộng thật rồi chia",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B21_M3_F4.png",
-   "sha256_16": "2956dc280651894b"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B21",
@@ -630,5 +409,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Dãy cách đều: TBC = (đầu + cuối) : 2 — đặc quyền không cho mượn"
+ "titleDay": "Dãy cách đều: TBC = (đầu + cuối) : 2 — đặc quyền không cho mượn",
+ "video": {
+  "giang": "DL_KSN5Q1_B21_M3_giang.mp4"
+ }
 }

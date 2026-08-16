@@ -7,9 +7,9 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **60/168** — bài 1 tới 20, **HẾT chương 5** |
-| Còn lại | 108 micro · 36 bài lớn · bài 21 tới 56 (chương 6 tới 14) |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 19; **bài 20 chưa deploy** |
+| Đã xong | **63/168** — bài 1 tới 21 (bài 21 mở chương 6) |
+| Còn lại | 105 micro · 35 bài lớn · bài 22 tới 56 |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 20; **bài 21 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
@@ -22,7 +22,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**108**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**105**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 16 lần)
 
@@ -73,7 +73,8 @@ Bài 17 dựng ra 76 · 84 · 84 giây, rút ba lượt mới về 63 · 68 · 6
 **Phép ước lượng: một câu đọc ≈ 4,3 giây.** Một micro chín cảnh nhắm **13–14 câu là
 vừa**; quá mười lăm câu là chắc chắn vượt trần. Bài 19 viết theo phép này ngay từ
 lượt đầu (14 · 13 · 13 câu) và ra 71 · 61 · 68 giây — chỉ phải rút MỘT câu. Bài 20
-(12 · 12 · 13 câu) ra 59 · 64 · 61 giây, **không phải rút câu nào**.
+(12 · 12 · 13 câu) ra 59 · 64 · 61 giây và bài 21 (13 · 14 · 12 câu) ra 63 · 60 · 60
+giây — **cả sáu không phải rút câu nào**.
 
 Đếm trước khi dựng, khỏi mất công sinh âm lại:
 
@@ -108,7 +109,10 @@ MỚI không được nợ — thêm một cái vượt 70 giây là cổng đ�
    `phan_so` là hình nói dối rằng A bằng B. Chỗ ấy dùng `so_do_doan`, có sẵn
    `phanBe` · `phanLon` để chia ô đều nhau, `hienHieu` tô chỗ nhô ra, `chuTong` vẽ
    ngoặc ôm cả hai.
-4. **`giua()` ngắt dòng theo DẤU CÁCH**, nên `7/8 = 0,875` bị xẻ đôi giữa hai dòng.
+4. **`day_so` ghi nhãn hàng là "số"** — sai nghĩa khi hàng ấy không phải số của đề.
+   Bài 21 vẽ dãy PHẦN LỆCH (−3 +3 +1 −1) mà nhãn vẫn ghi "số" thì bé đọc ra một dãy
+   số không có trong đề nào cả. Nay khai `nhanHang` để đổi.
+5. **`giua()` ngắt dòng theo DẤU CÁCH**, nên `7/8 = 0,875` bị xẻ đôi giữa hai dòng.
    Viết liền `7/8=0,875` thì mỗi phép là một cụm không tách được.
 
 Và một việc dọn: **rút lời xong thì `sinh_am.py` để lại clip mồ côi** — nó chỉ sinh

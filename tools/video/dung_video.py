@@ -291,7 +291,11 @@ def khung(c: dict) -> Image.Image:
         y_tt, y_gt = 190, 300
         if c.get("hienThuTu"):
             d.text((x0 - 130, y_tt + 22), "đứng thứ", font=phong(30), fill=MUTE)
-        d.text((x0 - 130, y_gt + 26), "số", font=phong(30), fill=MUTE)
+        # Nhãn hàng giá trị. Mặc định là "số", nhưng khai `nhanHang` để đổi khi hàng
+        # ấy KHÔNG phải là số của đề — lớp 5 bài 21 vẽ dãy PHẦN LỆCH (−3 +3 +1 −1),
+        # để nguyên chữ "số" thì bé đọc ra một dãy số không có trong đề nào cả.
+        d.text((x0 - 130, y_gt + 26), c.get("nhanHang", "số"), font=phong(30),
+               fill=MUTE)
         for i, v in enumerate(so):
             x = x0 + i * (rong_o + cach)
             sang = chi is not None and (i + 1) == chi

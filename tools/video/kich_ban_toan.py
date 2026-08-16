@@ -10921,7 +10921,145 @@ def kb5_them_khong_la_gap_muoi(b):
     ]
 
 
+def kb5_diem_can(b):
+    """L5·B21·M1 TBC nằm ở phép chia, không ở chỗ ngồi; cầu hai chiều tổng và TBC."""
+    return [
+        _c('bia', 'Trung bình cộng là ĐIỂM CÂN, không phải chỗ ngồi giữa', so_bai(b),
+           loi=['Nhiều bạn tưởng trung bình cộng là số đứng giữa danh sách. Không '
+                'phải.']),
+        _c('de_toan', 'Đề bài', de='Tính trung bình cộng của:  22 · 38 · 31 · 29 · 35',
+           loi=['Tính trung bình cộng của năm số này.']),
+        _c('day_so', 'Gom hết vào một chỗ', so=['22', '38', '31', '29', '35'],
+           chuPhu='Cộng cả năm số: tổng bằng 155.',
+           loi=['Gom hết vào một chỗ. Cộng cả năm số được một trăm năm mươi lăm.']),
+        _c('y_toan', 'Rồi CHIA ĐỀU lại cho từng chỗ',
+           'TBC = tổng : số số hạng   →   155 : 5 = 31', buoc=1, soBuoc=3,
+           loi=['Rồi chia đều lại. Một trăm năm mươi lăm chia năm được ba mươi mốt.',
+                'Trung bình cộng bằng tổng chia số số hạng. Đó là định nghĩa duy '
+                'nhất.']),
+        _c('day_so', 'Chia đều xong thì mọi chỗ bằng nhau',
+           so=['31', '31', '31', '31', '31'],
+           chuPhu='Vẫn đúng tổng 155 — chỉ san cho phẳng.',
+           loi=['Chia đều xong thì mọi chỗ bằng nhau, mà tổng vẫn thế. Chỉ là san cho '
+                'phẳng.']),
+        _c('y_toan', 'TBC nằm ở PHÉP CHIA, không nằm ở chỗ ngồi',
+           'xáo trộn dãy thì chỗ ngồi đổi, mà TBC vẫn là 31', buoc=2, soBuoc=3,
+           loi=['Số ba mươi mốt tình cờ ngồi giữa dãy thôi. Xáo trộn dãy thì chỗ ngồi '
+                'đổi, mà trung bình cộng vẫn thế.']),
+        _c('de_toan', 'Đề giấu mất một số',
+           de='TBC của 4 số là 25. Ba số là 20 · 24 · 28. Số thứ tư?',
+           loi=['Đề khác, giấu mất một số. Trung bình cộng của bốn số là hai mươi lăm.']),
+        _c('y_toan', 'Thấy chữ TBC thì NHÂN RA TỔNG trước đã',
+           'tổng = 25 × 4 = 100   ·   100 − 72 = 28', buoc=3, soBuoc=3,
+           loi=['Thấy chữ trung bình cộng là nhân ra tổng trước đã. Hai mươi lăm nhân '
+                'bốn được một trăm.',
+                'Ba số đã biết cộng lại là bảy mươi hai, nên số thứ tư bằng hai mươi '
+                'tám.']),
+        _c('cong_thuc', 'Một cây cầu đi được hai chiều',
+           congThuc='tổng : n = TBC        ·        TBC × n = tổng',
+           thay='và TBC luôn nằm giữa số bé nhất với số lớn nhất',
+           loi=['Con nhớ cây cầu hai chiều này. Chiều xuôi thì chia, chiều ngược thì '
+                'nhân.',
+                'Và trung bình cộng luôn nằm giữa số bé nhất với số lớn nhất.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_luat_bu_tru(b):
+    """L5·B21·M2 Mốc nhanh và luật bù trừ — tổng các phần lệch quanh TBC bằng 0."""
+    return [
+        _c('bia', 'Tính nhẩm trung bình cộng bằng một cái MỐC', so_bai(b),
+           loi=['Số nào cũng to mà lại xúm quanh nhau thì có cách nhẩm rất nhanh.']),
+        _c('de_toan', 'Đề bài', de='Tính TBC của:  97 · 103 · 101 · 99',
+           loi=['Tính trung bình cộng của bốn số này. Cộng thẳng thì hơi mệt.']),
+        _c('day_so', 'Bốn số đều quanh quẩn một chỗ',
+           so=['97', '103', '101', '99'], chuPhu='Cả bốn đều bám quanh số 100.',
+           loi=['Nhìn kỹ thì cả bốn số đều bám quanh số một trăm.']),
+        _c('y_toan', 'Cắm MỐC ở đó, rồi chỉ ghi mỗi số LỆCH bao nhiêu',
+           'mốc 100  →  97 lệch −3 · 103 lệch +3 · 101 lệch +1 · 99 lệch −1',
+           buoc=1, soBuoc=3,
+           loi=['Cắm mốc ở đúng chỗ ấy, rồi chỉ ghi mỗi số lệch bao nhiêu so với '
+                'mốc.']),
+        _c('day_so', 'Cộng các phần lệch lại', so=['−3', '+3', '+1', '−1'],
+           nhanHang='lệch',
+           chuPhu='Trừ 3 với cộng 3 triệt nhau; trừ 1 với cộng 1 cũng thế.',
+           loi=['Cộng các phần lệch lại. Trừ ba với cộng ba triệt nhau, trừ một với '
+                'cộng một cũng thế.',
+                'Tổng lệch bằng không.']),
+        _c('y_toan', 'Chia đều tổng lệch rồi CỘNG VÀO MỐC',
+           '0 : 4 = 0   →   TBC = 100 + 0 = 100', buoc=2, soBuoc=3,
+           loi=['Chia đều tổng lệch cho bốn rồi cộng vào mốc. Trung bình cộng bằng '
+                'đúng một trăm.']),
+        _c('y_toan', 'Mốc nào cũng được, miễn TRÒN và gần',
+           'mốc 50 · dãy 52 · 47 · 55 · 50  →  lệch +4  →  TBC = 50 + 4 : 4 = 51',
+           buoc=3, soBuoc=3,
+           loi=['Mốc nào cũng được, miễn tròn và gần. Lấy mốc năm mươi cho dãy này.',
+                'Tổng lệch là cộng bốn, chia bốn được một, nên trung bình cộng bằng '
+                'năm mươi mốt.']),
+        _c('de_toan', 'Luật ấy giải được cả bài KHÔNG biết số nào',
+           de='An thừa 5 viên so với mức trung bình, Bình thiếu 3 viên. Cường thế nào?',
+           loi=['Luật ấy còn giải được bài không biết số nào cả.',
+                'An thừa năm viên so với mức trung bình, Bình thiếu ba viên.']),
+        _c('cong_thuc', 'Vì sao cân mới thăng bằng',
+           congThuc='quanh TBC thật, TỔNG các phần LỆCH luôn bằng 0',
+           thay='An thừa 5, Bình thiếu 3, còn dư 2 — nên Cường phải thiếu đúng 2 viên',
+           loi=['Vì bên thừa phải bù đúng bên thiếu thì cân mới thăng bằng.',
+                'Thừa năm bù thiếu ba thì còn dư hai, nên Cường phải thiếu đúng hai '
+                'viên.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tbc_day_cach_deu(b):
+    """L5·B21·M3 Dãy cách đều thì TBC là điểm giữa hai đầu — đặc quyền không cho mượn."""
+    return [
+        _c('bia', 'Có dãy tính được TBC mà không phải cộng', so_bai(b),
+           loi=['Dãy này ba mươi ba số. Cộng hết thì lâu, mà có lối đi tắt.']),
+        _c('de_toan', 'Đề bài', de='Tính TBC của dãy:  3 · 6 · 9 · … · 99',
+           loi=['Tính trung bình cộng của dãy ba, sáu, chín, cho tới chín mươi chín.']),
+        _c('day_so', 'Trước hết xem các khoảng có ĐỀU không',
+           so=['3', '6', '9', '...', '96', '99'],
+           chuPhu='Bước nào cũng cách nhau đúng 3 — dãy CÁCH ĐỀU.',
+           loi=['Trước hết xem các khoảng có đều không. Bước nào cũng cách nhau đúng '
+                'ba.']),
+        _c('y_toan', 'Bắt CẶP số đầu với số cuối',
+           '3 + 99 = 102   ·   6 + 96 = 102   ·   cặp nào cũng 102', buoc=1, soBuoc=3,
+           loi=['Bắt cặp số đầu với số cuối. Ba cộng chín mươi chín được một trăm linh '
+                'hai.',
+                'Sáu cộng chín mươi sáu cũng thế. Cặp nào cũng chung một tổng.']),
+        _c('y_toan', 'Nên điểm cân rơi đúng GIỮA hai đầu',
+           'TBC = (số đầu + số cuối) : 2 = 102 : 2 = 51', buoc=2, soBuoc=3,
+           loi=['Nên điểm cân rơi đúng giữa hai đầu. Một trăm linh hai chia hai được '
+                'năm mươi mốt.']),
+        _c('y_toan', 'Đếm số hạng, nếu đề có hỏi',
+           'số hạng = (cuối − đầu) : khoảng + 1 = (99 − 3) : 3 + 1 = 33',
+           buoc=3, soBuoc=3,
+           loi=['Nếu đề hỏi có bao nhiêu số thì lấy hiệu hai đầu chia khoảng rồi cộng '
+                'một, được ba mươi ba.']),
+        _c('de_toan', 'Nhưng lối tắt này KHÔNG cho mượn',
+           de='Sổ bán hàng 22 · 38 · 31 · 29 · 35 — lấy (22 + 35) : 2 được không?',
+           loi=['Nhưng lối tắt này không cho mượn. Thử với sổ bán hàng bài trước xem '
+                'sao.']),
+        _c('cong_thuc', 'Liếc các khoảng TRƯỚC khi dùng lối tắt',
+           congThuc='(đầu + cuối) : 2 — CHỈ khi dãy CÁCH ĐỀU',
+           thay='sổ ấy khoảng lệch tay: lối tắt ra 28,5 mà TBC thật là 31',
+           loi=['Sổ ấy nhảy từ hai mươi hai lên ba mươi tám rồi lùi về ba mươi mốt. '
+                'Khoảng lệch tay.',
+                'Lối tắt ra hai mươi tám phẩy năm, mà trung bình cộng thật là ba mươi '
+                'mốt.',
+                'Nên liếc các khoảng trước đã. Không đều thì về đường gốc, tổng chia '
+                'số số hạng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B21.M1': kb5_diem_can,
+    'DL:KSN5Q1.B21.M2': kb5_luat_bu_tru,
+    'DL:KSN5Q1.B21.M3': kb5_tbc_day_cach_deu,
     'DL:KSN5Q1.B20.M1': kb5_ti_so_an,
     'DL:KSN5Q1.B20.M2': kb5_ti_so_voi_tong_hieu,
     'DL:KSN5Q1.B20.M3': kb5_them_khong_la_gap_muoi,
