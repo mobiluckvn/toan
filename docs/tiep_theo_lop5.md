@@ -13,6 +13,15 @@
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
+## Mở đầu buổi sau: làm bài 33
+
+Chương 9 bắt đầu ở bài 33. Chạy đúng nhịp bảy bước ở dưới. Cây làm việc đang SẠCH,
+tám chương đầu đã deploy và đã đi thử bằng mắt trên bản thật.
+
+```bash
+git -C /Users/v/Documents/Code/web5/repo log --oneline -3   # commit cuối: deploy chương 8
+```
+
 ## ⚠ HAI MÓN NỢ ĐANG TREO
 
 **1. `khoaBai` của lớp 5 đang TẠM MỞ.** Bác nhờ mở hết để đi thử trọn quyển
@@ -24,7 +33,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
 **72**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
-## Nhịp làm một bài lớn (đã chạy 16 lần)
+## Nhịp làm một bài lớn (đã chạy 32 lần)
 
 ```bash
 # ① đọc nội dung ba micro
@@ -68,25 +77,19 @@ Xong thì đi thử trên bản chạy, commit, deploy.
 
 ## Video phải dài 45–70 GIÂY, và cổng đo thật
 
-`video_dai_bao_lau.test.mjs` đo bằng `ffprobe`, không đoán bằng dung lượng.
+`video_dai_bao_lau.test.mjs` đo bằng `ffprobe`, không đoán bằng dung lượng. Nhịp
+thật của cả bộ: trung bình 58 giây.
 
-Bài 17 dựng ra 76 · 84 · 84 giây, rút ba lượt mới về 63 · 68 · 68. Bài 18 dựng ra
-74 · 76 · 80, rút hai lượt về 68 · 68 · 67. Nhịp thật của cả bộ: trung bình 57,8 giây.
+**Phép ước lượng: một câu đọc ≈ 4,3 giây.** Nhắm **13–14 câu** cho một micro.
 
-**Phép ước lượng: một câu đọc ≈ 4,3 giây.** Một micro chín cảnh nhắm **13–14 câu là
-vừa**; quá mười lăm câu là chắc chắn vượt trần. Bài 19 viết theo phép này ngay từ
-lượt đầu (14 · 13 · 13 câu) và ra 71 · 61 · 68 giây — chỉ phải rút MỘT câu. Bài 20
-(12 · 12 · 13 câu) ra 59 · 64 · 61 giây và bài 21 (13 · 14 · 12 câu) ra 63 · 60 · 60
-giây, bài 22 (13 · 13 · 14 câu) ra 62 · 57 · 59 giây, bài 23 (14 · 12 · 11 câu) ra 66 ·
-55 · 52 giây, bài 24 (14 · 14 · 14 câu) ra 64 · 61 · 64 giây — **cả mười lăm không
-phải rút câu nào**.
+| | |
+|---|---|
+| dưới 13 câu | ngó chừng trần DƯỚI (bài 25 M2 viết 12 câu ra 45,2 giây, suýt lọt) |
+| 13–14 câu | chỗ nên nhắm — mười sáu bài liền không phải sửa gì |
+| 15 câu | SÁT trần trên; có 2 cảnh hình là gần như chắc vượt (bài 27 M3, bài 32 M3) |
 
-⚠ Phép ước lượng cũng có đầu DƯỚI. Bài 25 M2 viết 12 câu, dựng ra **45,2 giây** —
-lọt trần dưới đúng hai phần mười giây. Dưới 13 câu là phải ngó chừng; thêm một hai
-câu cho dày là vừa. Bài 26 viết 15 · 13 · 13 câu ra 68 · 59 · 60 giây, nằm giữa
-khoảng — đó là chỗ nên nhắm. ⚠ Nhưng 15 câu là SÁT trần trên: bài 27 M3 viết 15 câu
-ra 70,6 giây, phải rút một câu. Cảnh có `so_do_doan` hay `san_bang` ngốn thêm giây
-vì lời tả hình thường dài.
+Cảnh có `so_do_doan` hay `san_bang` ngốn thêm giây, vì lời tả hình dài hơn lời tả
+phép tính. Cứ 15 câu kèm hai cảnh hình thì rút trước một câu, khỏi dựng lại.
 
 Đếm trước khi dựng, khỏi mất công sinh âm lại:
 
