@@ -3073,7 +3073,7 @@ def kb_gia_tri(b):
                 'đứng.',
                 'Một trăm nghìn nhân bảy được bảy trăm nghìn.']),
         _c('bang_hang', 'Cân cho MỌI hàng thì được tổng', so='52604',
-           chuPhu='50 000 + 2 000 + 600 + 4', buoc=2,
+           chuPhu='50 000 + 2 000 + 600 + 4',
            loi=['Cân như thế cho mọi hàng thì được số ấy viết thành tổng.',
                 'Năm mươi nghìn, cộng hai nghìn, cộng sáu trăm, cộng bốn.']),
         _c('bang_hang', 'Hàng chục đang TRỐNG', so='52604', toSang=[1],
@@ -4210,7 +4210,6 @@ def kb2_xoa_khong(b):
                 'Xoá chữ số không thì nhỏ đi mười lần.']),
         _c('bang_hang', 'Nhưng chỉ xoá được ở TẬN CÙNG', so='405', hienLop=False,
            toSang=[1], chuPhu='Số 405 có chữ số 0 ở GIỮA — không xoá kiểu này được.',
-           buoc=3, soBuoc=3,
            loi=['Nhưng chỉ xoá được khi chữ số không đứng ở tận cùng.',
                 'Số bốn trăm linh năm có chữ số không nằm ở giữa. Xoá nó là số đổi '
                 'hẳn.']),
@@ -4250,7 +4249,7 @@ def kb2_doi_cho(b):
                 'Thẻ to đang ở phòng chục của số nào. Số đó thắng.']),
         _c('bang_hang', 'Một chỗ phải cẩn thận', so='50', hienLop=False, toSang=[0],
            chuPhu='Đổi chỗ số 50 thì chữ số 0 lên đứng đầu.',
-           chuCuoi='Mà số 0 không được đứng đầu.', buoc=3, soBuoc=3,
+           chuCuoi='Mà số 0 không được đứng đầu.',
            loi=['Có một chỗ phải cẩn thận. Đổi chỗ số năm mươi thì chữ số không lên '
                 'đứng đầu.',
                 'Mà chữ số không thì không được đứng đầu, nên số ấy chỉ còn là số '
@@ -4318,13 +4317,11 @@ def kb2_xep_the(b):
                 'Muốn số lớn thì phải làm cho phòng trăm to nhất đã.']),
         _c('bang_hang', 'Số lớn nhất — xếp từ TO đến BÉ', so='852', hienLop=False,
            toSang=[2], chuPhu='Thẻ 8 vào phòng trăm, thẻ 5 vào phòng chục.',
-           buoc=2, soBuoc=3,
            loi=['Xếp từ to đến bé. Thẻ tám vào phòng trăm, thẻ năm vào phòng chục, '
                 'thẻ hai xuống cuối.',
                 'Được số tám trăm năm mươi hai.']),
         _c('bang_hang', 'Số bé nhất — làm NGƯỢC LẠI', so='258', hienLop=False,
            toSang=[2], chuPhu='Thẻ 2 vào phòng trăm, thẻ 8 xuống cuối.',
-           buoc=3, soBuoc=3,
            loi=['Số bé nhất thì làm ngược lại. Xếp từ bé đến to.',
                 'Được số hai trăm năm mươi tám.']),
         _c('y_toan', 'Chỗ hay nhầm',
@@ -4366,7 +4363,6 @@ def kb2_the_khong(b):
                 'Nhưng các phòng còn lại thì nó vẫn ngồi được bình thường.']),
         _c('bang_hang', 'Xếp lại cho đúng', so='307', hienLop=False, toSang=[2],
            chuPhu='Thẻ bé nhất KHÁC 0 đứng đầu, rồi thẻ 0 ngồi ngay sau.',
-           buoc=3, soBuoc=3,
            loi=['Xếp lại cho đúng. Cho thẻ bé nhất khác không đứng đầu, tức thẻ ba.',
                 'Rồi thẻ không ngồi ngay phòng thứ hai. Được số ba trăm linh bảy.']),
         _c('y_toan', 'Còn số lớn nhất thì không vướng gì',
@@ -4541,7 +4537,6 @@ def kb2_bot_mot(b):
            loi=['Cánh đuôi mười số, cánh phố cũng mười số. Cộng lại được hai mươi.']),
         _c('bang_hang', 'Khoan đã — nhìn số này', so='55', hienLop=False,
            toSang=[0, 1], chuPhu='Vừa có đuôi bằng 5, vừa thuộc phố 50.',
-           buoc=2, soBuoc=3,
            loi=['Khoan đã. Nhìn số năm mươi lăm xem.',
                 'Nó vừa có đuôi bằng năm, vừa thuộc phố năm mươi.']),
         _c('y_toan', 'Nó bị đếm HAI lần',
@@ -6358,13 +6353,11 @@ def kb2_tam_nan_hoa(b):
     return [
         _c('bia', 'Bí mật của hình tròn', so_bai(b),
            loi=['Hình tròn có một bí mật, và cả cái bánh xe đứng trên bí mật ấy.']),
-        _c('hinh_tron', 'Cái rốn chính giữa gọi là TÂM', ban_kinh=5, hienTam=True,
-           chuPhu='Từ tâm căng dây ra viền, ta được các nan hoa.',
+        _c('hinh_tron', 'Cái rốn chính giữa gọi là TÂM', chuPhu='Từ tâm căng dây ra viền, ta được các nan hoa.',
            loi=['Hình tròn có một cái rốn chính giữa gọi là tâm.',
                 'Từ tâm căng dây ra viền theo hướng nào cũng được, ta gọi đó là các '
                 'nan hoa.']),
-        _c('hinh_tron', 'Mọi nan hoa đều dài BẰNG NHAU', ban_kinh=5, hienTam=True,
-           hienBanKinh=True, chuPhu='Đo hướng nào cũng ra cùng một độ dài.',
+        _c('hinh_tron', 'Mọi nan hoa đều dài BẰNG NHAU', hienR=True, chuPhu='Đo hướng nào cũng ra cùng một độ dài.',
            loi=['Bí mật là mọi nan hoa đều dài bằng nhau.',
                 'Đo thử vài nan hoa mà xem, hướng nào cũng ra cùng một độ dài.']),
         _c('y_toan', 'Đo nan hoa là biết tròn thật hay tròn giả',
@@ -6394,8 +6387,7 @@ def kb2_banh_xe(b):
     return [
         _c('bia', 'Vì sao bánh xe phải tròn', so_bai(b),
            loi=['Đây là chỗ hình học gặp cuộc sống thật.']),
-        _c('hinh_tron', 'Trục xe đặt đúng ở TÂM', ban_kinh=5, hienTam=True,
-           hienBanKinh=True, chuPhu='Trục nằm ở tâm, nan hoa chống xuống mặt đất.',
+        _c('hinh_tron', 'Trục xe đặt đúng ở TÂM', hienR=True, chuPhu='Trục nằm ở tâm, nan hoa chống xuống mặt đất.',
            loi=['Trục xe đặt đúng ở tâm bánh xe.']),
         _c('y_toan', 'Bánh tròn thì trục luôn cao đều một mức',
            'nan hoa nào cũng bằng nhau  →  trục cao đều', buoc=1, soBuoc=3,
@@ -6985,9 +6977,230 @@ def kb3_dem_nguoc_trang(b):
     ]
 
 
+# ═══════════════════════════════════════════════════════════════════════════
+# LỚP 3 · chương 2 · Nhân chia ra ngoài bảng — năm bài
+# ═══════════════════════════════════════════════════════════════════════════
+# Năm bài này là chỗ bé rời khỏi bảng cửu chương và bắt đầu tính với số to. Mỗi
+# video một việc:
+#   B05 nhân số to bằng cách TÁCH theo hàng
+#   B06 chia có dư: bốn cái tên, và vì sao dư phải bé hơn số chia
+#   B07 các số chia a dư b xếp thành một dãy đếm thêm a
+#   B08 chữ LẦN là còi hiệu của nhân chia
+#   B09 tìm một phần mấy là chia, và chiều ngược lại là nhân
+#
+# `nhom_deu` vẽ được cả phần DƯ (viên lẻ đứng riêng, tô đỏ) — đó đúng là thứ B06
+# cần, và cũng là lý do bé thấy được vì sao dư không bao giờ bằng số chia.
+
+
+def kb3_nhan_ngoai_bang(b):
+    """L3·C2① Nhân số to bằng cách tách theo hàng."""
+    return [
+        _c('bia', 'Nhân số to bằng cách tách', so_bai(b),
+           loi=['Số to quá không có trong bảng nhân. Con tách nó ra.']),
+        _c('de_toan', 'Đề bài', de='Tính 23 × 4',
+           loi=['Tính hai mươi ba nhân bốn. Bảng nhân không có dòng nào như thế.']),
+        _c('tach_so', 'Tách 23 thành hai phần', so='23', sang=[1],
+           phep='23 = 20 + 3', chuPhu='Hai chục để riêng, ba đơn vị để riêng.',
+           loi=['Con tách hai mươi ba thành hai chục và ba đơn vị.']),
+        _c('y_toan', 'Nhân từng phần một', '20 × 4 = 80  ·  3 × 4 = 12',
+           buoc=1, soBuoc=2,
+           loi=['Nhân từng phần một. Hai chục nhân bốn được tám chục.',
+                'Ba nhân bốn được mười hai.']),
+        _c('y_toan', 'Rồi gộp hai phần lại', '80 + 12 = 92', buoc=2, soBuoc=2,
+           loi=['Rồi gộp hai phần lại. Tám mươi cộng mười hai bằng chín mươi hai.']),
+        _c('cong_thuc', 'Vì sao tách được?',
+           congThuc='4 lần của (20 + 3) = 4 lần 20, rồi 4 lần 3',
+           thay='lấy bốn lần cả cụm cũng bằng lấy bốn lần từng phần',
+           loi=['Vì sao tách được. Lấy bốn lần cả cụm cũng bằng lấy bốn lần từng '
+                'phần rồi cộng lại.']),
+        _c('y_toan', 'Ướm trước một con số cho chắc',
+           '23 gần 20, mà 20 × 4 = 80 — đáp số phải quanh 80', buoc=1, soBuoc=1,
+           loi=['Trước khi tính, con ướm thử. Hai mươi ba gần hai mươi, mà hai mươi '
+                'nhân bốn là tám mươi.',
+                'Vậy đáp số phải quanh tám mươi. Ra tám trăm mười hai là con biết '
+                'mình vừa sai chỗ nào đó.']),
+        _c('cong_thuc', 'Nhân số to',
+           congThuc='TÁCH theo hàng  →  nhân từng phần  →  GỘP',
+           thay='vì mỗi hàng có sức nặng riêng, tách ra mới nhân được bằng bảng',
+           loi=['Con nhớ ba nhịp. Tách theo hàng, nhân từng phần, rồi gộp lại.',
+                'Tách ra thì mỗi phần đều nằm trong bảng nhân con đã thuộc.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_chia_co_du(b):
+    """L3·C2② Phép chia có dư và luật dư bé hơn số chia."""
+    return [
+        _c('bia', 'Chia mà còn thừa', so_bai(b),
+           loi=['Chia xong mà vẫn còn thừa. Chỗ thừa ấy cũng có tên riêng.']),
+        _c('de_toan', 'Đề bài', de='Chia 17 viên bi vào các hộp, mỗi hộp 3 viên',
+           loi=['Chia mười bảy viên bi vào các hộp, mỗi hộp ba viên.']),
+        _c('nhom_deu', 'Xếp thử: mỗi hộp 3 viên', tong=17, moiNhom=3,
+           chuPhu='Được 5 hộp đầy, và còn 2 viên lẻ.',
+           loi=['Xếp thử. Mỗi hộp ba viên thì được năm hộp đầy.',
+                'Còn hai viên lẻ không đủ thành một hộp nữa.']),
+        _c('y_toan', 'Viết cho chính danh', '17 : 3 = 5 (dư 2)', buoc=1, soBuoc=3,
+           loi=['Viết cho chính danh. Mười bảy chia ba bằng năm, dư hai.']),
+        _c('cong_thuc', 'Bốn cái tên phải gọi đúng',
+           congThuc='17 bị chia  ·  3 số chia  ·  5 thương  ·  2 số dư',
+           thay='gọi sai tên thì đọc đề sai, không phải chuyện hình thức',
+           loi=['Bốn cái tên. Mười bảy là số bị chia, ba là số chia.',
+                'Năm là thương, và hai là số dư.']),
+        _c('nhom_deu', 'Vì sao dư luôn BÉ HƠN số chia?', tong=17, moiNhom=3,
+           chuPhu='Nếu còn thừa 3 viên thì đã xếp thêm được một hộp nữa rồi.',
+           loi=['Con nhìn chỗ thừa. Nếu còn thừa đủ ba viên thì đã xếp thêm được '
+                'một hộp nữa.',
+                'Nên phép chia chưa xong việc. Vì thế số dư luôn phải bé hơn số '
+                'chia.']),
+        _c('y_toan', 'Thử lại bằng phép nhân', '5 × 3 + 2 = 17', buoc=3, soBuoc=3,
+           loi=['Thử lại. Năm hộp, mỗi hộp ba viên, cộng hai viên lẻ, bằng mười bảy '
+                'viên ban đầu.']),
+        _c('cong_thuc', 'Ba nhịp của phép chia có dư',
+           congThuc='tìm bến gần nhất  ·  viết thương và dư  ·  soi dư < số chia',
+           thay='vì bến vượt quá là chia lố, còn dư to là chia chưa xong',
+           loi=['Con nhớ ba nhịp. Tìm bến gần nhất mà không vượt quá, viết thương và '
+                'dư, rồi soi xem dư đã bé hơn số chia chưa.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_doan_tau_du(b):
+    """L3·C2③ Các số chia a dư b xếp thành một dãy đếm thêm a."""
+    return [
+        _c('bia', 'Tìm những số chia còn dư', so_bai(b),
+           loi=['Tìm tất cả những số chia cho một số mà còn dư đúng bằng ấy.']),
+        _c('de_toan', 'Đề bài', de='Tìm các số chia 4 dư 1, từ 10 đến 25',
+           loi=['Tìm các số chia bốn dư một, nằm trong khoảng từ mười đến hai mươi '
+                'lăm.']),
+        _c('y_toan', 'Cách chậm: thử từng số một',
+           'Số nào cũng đem chia 4 rồi xem dư mấy', buoc=1, soBuoc=3,
+           loi=['Cách chậm là thử từng số một. Số nào cũng đem chia bốn rồi xem dư '
+                'mấy.',
+                'Làm được, nhưng lâu và dễ sót.']),
+        _c('day_so', 'Cách nhanh: chúng xếp thành một dãy',
+           so=[1, 5, 9, 13, 17, 21, 25], hienThuTu=False,
+           chuPhu='Ga đầu là 1, và cứ đếm thêm 4.',
+           loi=['Cách nhanh hơn. Những số ấy xếp thành một dãy rất trật tự.',
+                'Bắt đầu từ một, rồi cứ đếm thêm bốn.']),
+        _c('y_toan', 'Vì sao lại đều đặn như thế?',
+           'Cộng thêm đúng 4 thì phần dư không đổi', buoc=2, soBuoc=3,
+           loi=['Vì sao lại đều đặn như thế. Cộng thêm đúng bốn là thêm tròn một '
+                'nhóm.',
+                'Thêm tròn một nhóm thì phần dư không đổi chút nào.']),
+        _c('day_so', 'Lấy phần nằm trong khoảng đề cho',
+           so=[13, 17, 21, 25], hienThuTu=False,
+           chuPhu='Từ 10 đến 25 thì dãy dừng ở 4 ga này.',
+           loi=['Lấy phần nằm trong khoảng đề cho. Từ mười đến hai mươi lăm thì dãy '
+                'dừng ở bốn số.']),
+        _c('y_toan', 'Thử một số cho chắc', '21 : 4 = 5 (dư 1)', buoc=3, soBuoc=3,
+           loi=['Thử một số cho chắc. Hai mươi mốt chia bốn bằng năm, dư một.']),
+        _c('cong_thuc', 'Muốn CHẾ một số chia a dư b',
+           congThuc='số = a × thương + b',
+           thay='đây chính là phép thử lại, dùng ngược chiều',
+           loi=['Muốn tự chế ra một số như thế thì lấy số chia nhân với thương, rồi '
+                'cộng phần dư.',
+                'Đây chính là phép thử lại, nay dùng ngược chiều.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_chu_lan(b):
+    """L3·C2④ Chữ LẦN là còi hiệu của nhân chia."""
+    return [
+        _c('bia', 'Một chữ đổi cả phép tính', so_bai(b),
+           loi=['Chỉ một chữ trong đề mà đổi hẳn phép tính con phải làm.']),
+        _c('so_do_doan', 'Gấp 3 lần: xếp NGUYÊN KHỐI ra ba lần', be=5, lon=15,
+           nhanBe='số cũ', nhanLon='gấp 3 lần',
+           chuPhu='5 gấp 3 lần là 5 × 3 = 15.',
+           loi=['Gấp ba lần nghĩa là xếp nguyên khối ấy ra ba lần.',
+                'Năm gấp ba lần là năm nhân ba, bằng mười lăm.']),
+        _c('so_do_doan', 'Thêm 3: chỉ bỏ thêm 3 vào', be=5, lon=8,
+           nhanBe='số cũ', nhanLon='thêm 3', hienHieu=True, chuHieu='thêm 3',
+           chuPhu='5 thêm 3 chỉ là 5 + 3 = 8.',
+           loi=['Còn thêm ba thì chỉ bỏ thêm ba vào. Năm thêm ba là tám.',
+                'Mười lăm với tám, khác nhau xa lắm.']),
+        _c('y_toan', 'Chữ LẦN là còi hiệu', 'Có LẦN → nhân chia. Không LẦN → cộng trừ.',
+           buoc=1, soBuoc=3,
+           loi=['Con nghe kỹ chữ lần. Có chữ lần thì nghĩ tới nhân và chia.',
+                'Không có chữ lần thì là cộng và trừ.']),
+        _c('so_do_doan', 'Giảm 3 lần: cắt thành 3 phần, lấy một phần',
+           be=6, lon=18, nhanBe='giảm 3 lần', nhanLon='số cũ',
+           chuPhu='18 giảm 3 lần là 18 : 3 = 6.',
+           loi=['Giảm ba lần thì làm ngược lại. Cắt thành ba phần bằng nhau rồi lấy '
+                'một phần.',
+                'Mười tám giảm ba lần là mười tám chia ba, bằng sáu.']),
+        _c('y_toan', 'Gấp và giảm là đôi máy ngược chiều',
+           'Gấp k lần: × k     ·     Giảm k lần: : k', buoc=2, soBuoc=3,
+           loi=['Gấp và giảm là đôi máy chạy ngược chiều nhau.']),
+        _c('so_do_doan', 'Hỏi "gấp mấy lần" thì lấy số lớn CHIA số bé',
+           be=4, lon=12, nhanBe='4', nhanLon='12',
+           chuPhu='Khối 4 xếp 3 lần thì đầy 12, nên 12 gấp 3 lần 4.',
+           loi=['Có khi đề hỏi ngược. Mười hai gấp mấy lần bốn.',
+                'Xem khối bốn xếp mấy lần thì đầy mười hai. Lấy số lớn chia số bé, '
+                'được ba lần.']),
+        _c('cong_thuc', 'Nghe chữ LẦN thì nhớ ba việc',
+           congThuc='gấp k lần: × k  ·  giảm k lần: : k  ·  gấp mấy lần: lớn : bé',
+           thay='vì chữ LẦN nói về SỐ KHỐI, còn thêm bớt nói về SỐ ĐƠN VỊ',
+           loi=['Con nhớ ba việc. Gấp thì nhân, giảm thì chia, hỏi gấp mấy lần thì '
+                'lấy số lớn chia số bé.',
+                'Vì chữ lần nói về số khối, còn thêm bớt chỉ nói về số đơn vị.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb3_mot_phan_may(b):
+    """L3·C2⑤ Tìm một phần mấy của một số."""
+    return [
+        _c('bia', 'Một phần mấy của một số', so_bai(b),
+           loi=['Một nửa, một phần ba, một phần tư. Nay con viết chúng gọn lại.']),
+        _c('phan_so', 'Số dưới cho biết chia làm mấy phần', tu=1, mau=3,
+           nhan='một phần ba',
+           chuPhu='Số 1 ở trên nghĩa là lấy MỘT phần trong số ấy.',
+           loi=['Số ở dưới cho biết chia làm mấy phần bằng nhau.',
+                'Số một ở trên nghĩa là lấy đúng một phần.']),
+        _c('nhom_deu', 'Tìm một phần ba của 12', tong=12, moiNhom=4,
+           chuPhu='Chia 12 thành 3 phần bằng nhau, mỗi phần 4.',
+           loi=['Tìm một phần ba của mười hai. Con chia mười hai thành ba phần bằng '
+                'nhau.',
+                'Mỗi phần được bốn. Vậy một phần ba của mười hai là bốn.']),
+        _c('y_toan', 'Nên tìm một phần mấy chính là CHIA',
+           '1/3 của 12  →  12 : 3 = 4', buoc=1, soBuoc=3,
+           loi=['Nên tìm một phần mấy của một số chính là đem số ấy chia đi.']),
+        _c('phan_so', 'Cùng số 12, ba anh em cho ba kết quả', tu=1, mau=2,
+           nhan='1/2 của 12 là 6', tu2=1, mau2=4, nhan2='1/4 của 12 là 3',
+           chuPhu='Số dưới càng to thì phần nhận càng bé.',
+           loi=['Vẫn số mười hai ấy. Một phần hai được sáu, một phần tư chỉ được ba.',
+                'Số ở dưới càng to thì chia càng nhiều phần, nên mỗi phần càng bé.']),
+        _c('y_toan', 'Chiều ngược lại', 'Biết 1/5 là 4 — cả số là bao nhiêu?',
+           buoc=2, soBuoc=3,
+           loi=['Có khi đề đi ngược. Biết một phần năm là bốn, hỏi cả số là bao '
+                'nhiêu.']),
+        _c('y_toan', 'Một phần là 4, mà cả số gồm 5 phần', '4 × 5 = 20',
+           buoc=3, soBuoc=3,
+           loi=['Một phần là bốn, mà cả số gồm năm phần. Vậy lấy bốn nhân năm, được '
+                'hai mươi.']),
+        _c('cong_thuc', 'Hai chiều của cùng một việc',
+           congThuc='tìm 1/k của số:  : k     ·     biết 1/k, tìm cả số:  × k',
+           thay='và chỉ gọi là một phần mấy khi các phần BẰNG NHAU',
+           loi=['Con nhớ hai chiều. Tìm một phần mấy thì chia, biết một phần rồi tìm '
+                'cả số thì nhân.',
+                'Và chỉ được gọi là một phần mấy khi các phần bằng nhau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
     'DL:KSN3.B01': kb3_thap_nghin,   'DL:KSN3.B02': kb3_hai_cua,
     'DL:KSN3.B03': kb3_duoi_dat_ve,  'DL:KSN3.B04': kb3_dem_nguoc_trang,
+    # ══ LỚP 3 · chương 2 · Nhân chia ra ngoài bảng — năm bài ══
+    'DL:KSN3.B05': kb3_nhan_ngoai_bang, 'DL:KSN3.B06': kb3_chia_co_du,
+    'DL:KSN3.B07': kb3_doan_tau_du,     'DL:KSN3.B08': kb3_chu_lan,
+    'DL:KSN3.B09': kb3_mot_phan_may,
     'DL:KSN4.B13': kb_b13, 'DL:KSN4.B14': kb_b14, 'DL:KSN4.B15': kb_b15,
     'DL:KSN4.B16': kb_b16, 'DL:KSN4.B17': kb_b17, 'DL:KSN4.B18': kb_b18,
     'DL:KSN4.B19': kb_b19, 'DL:KSN4.B20': kb_b20,

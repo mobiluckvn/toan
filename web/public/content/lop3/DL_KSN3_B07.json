@@ -26,21 +26,8 @@
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Tuyệt kỹ 1 — SOI TỪNG SỐ: muốn biết 17 chia 5 dư mấy: $17 : 5 = 3$ (dư 2) → đảo 17 có kho báu ✓. Số 15: $15 : 5 = 3$ (dư 0) — chia hết, không phải dư 2 → bơi qua!"
-   },
-   {
-    "id": "K2",
-    "text": "Tuyệt kỹ 2 — LẦN THEO ĐOÀN TÀU: các số chia 5 dư 2 xếp hàng rất trật tự: 2, 7, 12, 17, 22, 27, ... — một đoàn tàu nhịp 5 xuất phát từ ga số 2! (Vì cứ cộng thêm đúng một lần số chia thì số dư giữ nguyên.) Muốn liệt kê trong khoảng nào, cứ cho tàu chạy qua khoảng đó."
-   },
-   {
-    "id": "K3",
-    "text": "Tuyệt kỹ 3 — CHẾ SỐ THEO ĐƠN: công thức vàng chạy ngược: số = 5 × thương + 2. Muốn một số chia 5 dư 2 to cỡ ba chục? Lấy $5  \\times  6 + 2 = 32$ — xong!"
-   }
-  ],
-  "mantra": "Số chia a dư b lập thành đoàn tàu NHỊP a, ga xuất phát là b. Soi một số: cứ chia thử. Liệt kê cả loạt: cho tàu chạy. Chế số: a × thương + b!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
@@ -53,35 +40,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "narration": "Tìm tất cả các số chia cho 4 dư 1 trong khoảng từ 10 đến 25."
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "Mẹo nhìn đuôi (riêng số chia 5): chia 5 chỉ cần soi ĐUÔI: đuôi 0 hoặc 5 → chia hết; đuôi 1 hoặc 6 → dư 1; đuôi 2 hoặc 7 → dư 2... Mỗi mức dư có ĐÚNG HAI cái đuôi — nhớ đủ cặp!",
-    "teaches": [
-     "K3"
-    ]
-   },
    {
     "id": "S5",
     "kind": "trap",
@@ -374,28 +332,7 @@
   "homeActivity": "Đây là hạt mầm của đồng dư và bài \"tìm số thỏa nhiều điều kiện chia\" lớp 4-5; câu 9 cho nếm trước đúng một thìa — đủ thơm, đừng múc thêm.",
   "watchFor": "NÊN: luôn thử lại một ga bất kỳ trong danh sách. KHÔNG NÊN: dạy dấu hiệu chia hết cho 3, 9 (cộng chữ số) — pháo hoa đó để dành lớp 4."
  },
- "figureSpec": [
-  {
-   "id": "L3H_MO07",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L3H_MO07.png",
-   "caption": "Dãy số từ 10 đến 25 — số nào chia 4 dư 1",
-   "sha256_16": "9ec1c46339cb6cab",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L3H_GI09",
-   "usedIn": [
-    "screen:S3"
-   ],
-   "file": "figures/L3H_GI09.png",
-   "caption": "Các số chia 5 dư 2 xếp thành đoàn tàu nhịp 5 xuất phát từ ga số 2",
-   "sha256_16": "8da130798d9e21a0",
-   "mucGoc": "khamPha"
-  }
- ],
+ "figureSpec": [],
  "hatMam": "Bài 6 vừa trao cho con phép chia có dư và công thức vàng. Bây giờ chạy công thức ấy NGƯỢC CHIỀU: không phải \"chia ra dư mấy\" mà là \"truy tìm những số chia 5 dư 2\" — nghề ruột của thám tử!",
  "duongLui": {
   "ve": [
@@ -407,5 +344,8 @@
   "canCu": "chuDe",
   "lopDuoi": 2,
   "nhan": "Học lại bài lớp 2"
+ },
+ "video": {
+  "giang": "DL_KSN3_B07_giang.mp4"
  }
 }

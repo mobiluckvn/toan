@@ -208,9 +208,16 @@ def khung(c: dict) -> Image.Image:
     # mới là kênh chính, giống hệt cách video Tiếng Anh đang làm.
     elif L == "de_toan":
         # ĐỀ BÀI — chỉ đọc đề, KHÔNG hé cách làm. Đây là bản đề, không phải bài giải.
+        #
+        # ⚠ NHẬN CẢ `de` LẪN `chuChinh`. Kịch bản viết theo hai lối, và lối phổ biến
+        # hơn là `_c('de_toan', 'Đề bài', de='<đề thật>')`. Bản cũ chỉ đọc `chuChinh`
+        # nên 27 video lớp 2 đã lên bản thật với cái khung TRẮNG TRƠN mang đúng hai
+        # chữ "Đề bài", trong khi tiếng vẫn đọc trọn đề — bé nghe một đằng, nhìn một
+        # nẻo, và không có gì để đọc lại. Không cổng nào kêu vì mp4 vẫn hợp lệ; chỉ
+        # lộ ra khi rút khung hình ra nhìn.
         giua(d, 56, "Bài toán hôm nay", phong(32), MUTE)
         the(d, 80, 130, W - 160, 330, nen="#FFFFFF", vien=NAVY, day=4)
-        giua(d, 175, c["chuChinh"], phong(40), INK, rong=W - 240)
+        giua(d, 175, c.get("de") or c["chuChinh"], phong(40), INK, rong=W - 240)
         if c.get("chuPhu"):
             giua(d, 500, c["chuPhu"], phong(36), GOLD_DARK, rong=W - 220)
 
@@ -423,7 +430,12 @@ def khung(c: dict) -> Image.Image:
         # `gio` và `phut` là số mà mỗi kim đang chỉ (phút tính theo MẶT SỐ, tức 12 là
         # đúng giờ và 6 là rưỡi). Kim giờ tự xê dịch theo phút, nên "3 giờ rưỡi" thì
         # kim giờ nằm đúng giữa 3 và 4 — chính là chỗ bé hay đọc nhầm thành 4 giờ.
-        import math
+        # ⚠ ĐỪNG `import math` ở đây. `math` đã nhập ở đầu tệp; nhập lại BÊN TRONG
+        # hàm làm nó thành biến CỤC BỘ của cả hàm `khung()`, nên mọi nhánh khác gọi
+        # `math` mà chạy TRƯỚC nhánh này đều vỡ với `UnboundLocalError`. Đã dính:
+        # `hinh_tron` có `dayLech` gọi `math.sqrt`, và video `DL_KSN4_B80` không
+        # dựng lại được nữa — tệp cũ vẫn nằm đó nên không ai hay, cho tới lần dựng
+        # lại đầu tiên, mà lần ấy cách hàng tháng.
         giua(d, 44, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
         cx, cy, r = W // 2, 350, 190
         d.ellipse([cx - r, cy - r, cx + r, cy + r], fill="#FFFFFF", outline=NAVY,

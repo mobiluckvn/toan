@@ -26,25 +26,8 @@
   "passRule": "đúng ≥ 4/5 câu tự kiểm"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bước 1. Chia 17 cho 3: lần bảng nhân 3 tìm bến đỗ gần nhất không vượt quá 17 → $3  \\times  5 = 15$ (vì $3  \\times  6 = 18$ lố mất rồi). Mỗi rương 5 viên, còn thừa $17 - 15 = 2$ viên."
-   },
-   {
-    "id": "K2",
-    "text": "Bước 2 — VIẾT CHÍNH DANH: $17 : 3 = 5$ (dư 2). Đọc tên bốn nhân vật: 17 là số bị chia, 3 là số chia, 5 là thương, 2 là số dư."
-   },
-   {
-    "id": "K3",
-    "text": "Bước 3 — LUẬT VÀNG: số dư phải BÉ HƠN số chia. Vì nếu dư còn bằng hoặc vượt số chia — tức là mỗi rương còn nhét thêm được, phép chia chưa xong việc!"
-   },
-   {
-    "id": "K4",
-    "text": "Bước 4 — THỬ LẠI KIỂU MỚI: công thức vàng: thương × số chia + số dư = số bị chia: $5  \\times  3 + 2 = 17$ ✓. Khi dư bằng 0 ta nói phép chia HẾT — như $15 : 3 = 5$."
-   }
-  ],
-  "mantra": "Chia có dư 3 nhịp: lần bảng nhân tìm BẾN GẦN NHẤT không vượt quá → viết thương và dư → soi luật vàng (dư < chia) rồi thử công thức vàng. Thiếu một nhịp là chưa chính danh!",
+  "statements": [],
+  "mantra": "",
   "vocabulary": [],
   "canonicalExamples": [],
   "misconceptions": [
@@ -57,43 +40,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "narration": "Có 20 chiếc bánh xếp đều vào các hộp, mỗi hộp 3 chiếc. Hỏi xếp được nhiều nhất mấy hộp đầy và còn thừa mấy chiếc bánh?"
-   },
-   {
-    "id": "S2",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K1"
-    ]
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K2"
-    ]
-   },
-   {
-    "id": "S4",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K3"
-    ]
-   },
-   {
-    "id": "S5",
-    "kind": "explain",
-    "narration": "",
-    "teaches": [
-     "K4"
-    ]
-   },
    {
     "id": "S6",
     "kind": "trap",
@@ -441,38 +387,7 @@
   "homeActivity": "Câu 5 (bài thuyền chở khách) là mầm của dạng \"làm tròn lên\" rất hay gặp: cho con tranh luận \"nhóm dư có bị bỏ lại không?\" — đời thực quyết định phép toán.",
   "watchFor": "NÊN: luôn đòi ĐỦ HAI cửa kiểm tra (thử khớp + soi luật dư). KHÔNG NÊN: dạy chia dọc cho số bị chia 3 chữ số vội — học kỳ sau của lớp 3 sẽ tới; giờ cần chắc khái niệm dư."
  },
- "figureSpec": [
-  {
-   "id": "L3H_MO06",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/L3H_MO06.png",
-   "caption": "Hai mươi chiếc bánh chưa xếp hộp — đếm được từng cái",
-   "sha256_16": "342090424336b409",
-   "mucGoc": "chuyenMoBai"
-  },
-  {
-   "id": "L3H_GI07",
-   "usedIn": [
-    "screen:S2"
-   ],
-   "file": "figures/L3H_GI07.png",
-   "caption": "Mười bảy viên chia vào rương 3 viên: đầy 5 rương, còn thừa 2 viên",
-   "sha256_16": "699ae6f1d0ba665e",
-   "mucGoc": "khamPha"
-  },
-  {
-   "id": "L3H_GI08",
-   "usedIn": [
-    "screen:S4"
-   ],
-   "file": "figures/L3H_GI08.png",
-   "caption": "Số dư phải bé hơn số chia, không thì rương còn nhét thêm được",
-   "sha256_16": "78704aaea9318db9",
-   "mucGoc": "khamPha"
-  }
- ],
+ "figureSpec": [],
  "hatMam": "Lớp 2, ở Bài 15, con chia kẹo còn thừa và thuộc LUẬT VÀNG \"số thừa phải bé hơn số người\". Hôm nay \"số thừa\" được làm lễ đặt tên chính thức: SỐ DƯ — và cách viết người lớn: 17 : 3 = 5 (dư 2)!",
  "duongLui": {
   "ve": [
@@ -484,5 +399,8 @@
   "canCu": "sach",
   "lopDuoi": 2,
   "nhan": "Học lại bài lớp 2"
+ },
+ "video": {
+  "giang": "DL_KSN3_B06_giang.mp4"
  }
 }
