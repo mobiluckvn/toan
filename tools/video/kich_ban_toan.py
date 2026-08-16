@@ -10664,7 +10664,138 @@ def kb5_neo_tong(b):
     ]
 
 
+def kb5_chieu_bien_thien(b):
+    """L5·B19·M1 Tử tăng thì tăng, mẫu tăng thì giảm; thêm một phía là đứt cả hai neo."""
+    return [
+        _c('bia', 'Thêm vào tử hay thêm vào mẫu, phân số đi về đâu', so_bai(b),
+           loi=['Hai chỗ thêm, hai kết quả ngược nhau. Và bài trước không dùng lại '
+                'được.']),
+        _c('de_toan', 'Đề bài', de='3/8 và 3/10 — số nào lớn hơn?',
+           loi=['Ba phần tám và ba phần mười. Tử giống nhau, chỉ mẫu là khác.']),
+        _c('phan_so', 'Thêm vào TỬ: lấy thêm lát, băng vẫn thế', tu=3, mau=8,
+           nhan='tô 3', tu2=5, mau2=8, nhan2='tô 5',
+           chuPhu='Mẫu vẫn là 8 — chỉ tô thêm hai lát nữa.',
+           chuCuoi='3/8 < 5/8 — phân số TĂNG.',
+           loi=['Thêm vào tử là tô thêm lát, mà băng vẫn chia tám phần như cũ.',
+                'Ba phần tám thành năm phần tám. Vệt tô dài ra, phân số tăng.']),
+        _c('y_toan', 'Tử tăng, mẫu giữ nguyên thì phân số TĂNG',
+           'lát vẫn to như cũ, chỉ lấy nhiều lát hơn', buoc=1, soBuoc=3,
+           loi=['Tử tăng mà mẫu giữ nguyên thì phân số tăng. Lát vẫn to như cũ, chỉ '
+                'lấy nhiều lát hơn.']),
+        _c('phan_so', 'Thêm vào MẪU: băng bị chia vụn ra', tu=3, mau=8,
+           nhan='chia 8', tu2=3, mau2=10, nhan2='chia 10',
+           chuPhu='Vẫn tô 3 lát, nhưng băng dưới chia làm 10.',
+           chuCuoi='3/8 > 3/10 — phân số XẸP xuống.',
+           loi=['Thêm vào mẫu thì băng bị chia vụn ra, mỗi lát mỏng đi.',
+                'Vẫn tô ba lát, nhưng ba lát dưới ngắn hơn hẳn. Ba phần tám lớn hơn '
+                'ba phần mười.']),
+        _c('y_toan', 'Mẫu tăng, tử giữ nguyên thì phân số GIẢM',
+           'ngược chiều với ô trên  ·  7/15 lớn hơn 7/18', buoc=2, soBuoc=3,
+           loi=['Mẫu tăng mà tử giữ nguyên thì phân số giảm, ngược chiều với ô trên.',
+                'Bảy phần mười lăm lớn hơn bảy phần mười tám.']),
+        _c('y_toan', 'Thêm MỘT PHÍA thì cả hai chỗ đứng yên của bài trước ĐỨT',
+           '5/21 thêm 4 vào tử → 9/21  ·  hiệu 16 thành 12  ·  tổng 26 thành 30',
+           buoc=3, soBuoc=3,
+           loi=['Bài trước neo vào hiệu hoặc tổng. Nhưng thêm một phía thì cả hai đều '
+                'đổi.',
+                'Năm phần hai mươi mốt thêm bốn vào tử, hiệu tụt từ mười sáu xuống '
+                'mười hai, tổng cũng khác.']),
+        _c('cong_thuc', 'Nên bài một phía cần đồ nghề khác',
+           congThuc='thêm vào TỬ → phân số TĂNG   ·   thêm vào MẪU → phân số XẸP',
+           thay='không neo được nữa, phải quy đồng — đó là bài kế tiếp',
+           loi=['Con nhớ hai câu. Thêm vào tử thì phân số tăng, thêm vào mẫu thì phân '
+                'số xẹp.',
+                'Và bài một phía không neo được nữa, phải quy đồng. Đó là bài kế '
+                'tiếp.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_ai_dung_im(b):
+    """L5·B19·M2 Số nào đứng im thì quy đồng theo số ấy."""
+    return [
+        _c('bia', 'Thêm vào một phía để ra phân số cho trước', so_bai(b),
+           loi=['Đề chỉ thêm vào một phía. Có một mẹo chọn đường rất gọn.']),
+        _c('de_toan', 'Đề bài', de='5/21 — thêm n vào TỬ để được 4/7. Tìm n',
+           loi=['Năm phần hai mươi mốt. Thêm một số vào tử để được bốn phần bảy.']),
+        _c('y_toan', 'Nhịp 1 — tìm SỐ ĐỨNG IM', 'chỉ tử bị thêm  →  MẪU 21 đứng im',
+           buoc=1, soBuoc=3,
+           loi=['Nhịp một, tìm số đứng im. Đề chỉ thêm vào tử, nên mẫu hai mươi mốt '
+                'không đổi.']),
+        _c('y_toan', 'Nhịp 2 — quy đồng cái đích THEO số đứng im',
+           '4/7 nhân cả tử và mẫu với 3  →  12/21', buoc=2, soBuoc=3,
+           loi=['Nhịp hai, viết lại đích theo số đứng im ấy.',
+                'Bốn phần bảy nhân cả hai với ba, được mười hai phần hai mươi mốt.']),
+        _c('phan_so', 'Hai phân số này là MỘT', tu=4, mau=7, nhan='chia 7',
+           tu2=12, mau2=21, nhan2='chia 21',
+           chuPhu='Nhân cả hai với 3 — vệt tô không nhúc nhích.',
+           chuCuoi='Nay đích đã cùng mẫu 21 với đề.',
+           loi=['Hai băng tô dài đúng bằng nhau, nên viết lại kiểu ấy không làm đích '
+                'lệch đi.']),
+        _c('y_toan', 'Nhịp 3 — cùng mẫu rồi thì chỉ còn so TỬ',
+           '5 + n = 12  →  n = 7   ·   thử lại: 12/21 rút gọn được 4/7 ✓',
+           buoc=3, soBuoc=3,
+           loi=['Nhịp ba, hai bên cùng mẫu rồi nên chỉ còn so tử.',
+                'Năm cộng n bằng mười hai, nên n bằng bảy. Thử lại thì đúng.']),
+        _c('de_toan', 'Chiều ngược lại', de='3/8 — thêm n vào MẪU để được 1/4',
+           loi=['Chiều ngược lại. Ba phần tám, thêm vào mẫu để được một phần tư.',
+                'Lần này tử ba là số đứng im, nên quy đồng theo tử.']),
+        _c('cong_thuc', 'Một câu chọn đường cho cả hai chiều',
+           congThuc='SỐ NÀO ĐỨNG IM  →  QUY ĐỒNG THEO SỐ ẤY',
+           thay='1/4 viết về tử 3 là 3/12, nên 8 + n = 12 và n = 4',
+           loi=['Con nhớ câu này. Số nào đứng im thì quy đồng theo số ấy.',
+                'Một phần tư viết về tử ba là ba phần mười hai. Tám cộng n bằng mười '
+                'hai, nên n bằng bốn.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_chan_hai_bo(b):
+    """L5·B19·M3 Kéo hai bờ về cùng mẫu; dấu bé hơn nghiêm; cùng tử thì mẫu chạy ngược."""
+    return [
+        _c('bia', 'Tìm mọi số tự nhiên kẹp giữa hai phân số', so_bai(b),
+           loi=['Đề cho hai bờ và hỏi có những số nào lọt vào giữa.']),
+        _c('de_toan', 'Đề bài', de='Tìm mọi số tự nhiên n:   1/3  <  n/12  <  3/4',
+           loi=['Tìm mọi số tự nhiên n sao cho n phần mười hai lọt giữa một phần ba và '
+                'ba phần tư.']),
+        _c('y_toan', 'Nhịp 1 — kéo hai bờ về cùng mẫu với chỗ chứa n',
+           'mẫu 12 đứng im  →  1/3 = 4/12  và  3/4 = 9/12', buoc=1, soBuoc=3,
+           loi=['Nhịp một, kéo hai bờ về cùng mẫu với chỗ chứa n, tức mẫu mười hai.',
+                'Một phần ba thành bốn phần mười hai, ba phần tư thành chín phần mười '
+                'hai.']),
+        _c('y_toan', 'Nhịp 2 — cùng mẫu rồi thì chỉ còn so TỬ',
+           '4/12  <  n/12  <  9/12   →   4 < n < 9', buoc=2, soBuoc=3,
+           loi=['Nhịp hai, ba phân số cùng mẫu nên chỉ còn so tử. Bốn bé hơn n, n bé '
+                'hơn chín.']),
+        _c('day_so', 'Nhưng lấy được những số nào', so=['4', '5', '6', '7', '8', '9'],
+           chuPhu='Dấu < KHÔNG có gạch ngang — hai đầu không được lấy.',
+           loi=['Nhưng con nhìn kỹ cái dấu. Dấu bé hơn không có gạch ngang ở dưới.',
+                'Nên hai đầu là bờ để tựa mắt, không phải chỗ đứng vào.']),
+        _c('y_toan', 'Nhịp 3 — loại hai đầu, còn lại là đáp số',
+           'n = 5 · 6 · 7 · 8   —   bốn giá trị', buoc=3, soBuoc=3,
+           loi=['Nhịp ba, loại hai đầu đi. Còn lại n bằng năm, sáu, bảy, tám. Bốn giá '
+                'trị.']),
+        _c('de_toan', 'Một dạng đổi chỗ', de='Tìm n:   1/2  <  8/n  <  2/3',
+           loi=['Một dạng nữa. Lần này n nằm dưới mẫu, còn tử tám mới là số đứng im.']),
+        _c('cong_thuc', 'Cùng TỬ thì mẫu chạy NGƯỢC — viết riêng một dòng',
+           congThuc='1/2 = 8/16  ·  2/3 = 8/12   →   8/16 < 8/n < 8/12',
+           thay='mẫu chạy ngược nên 12 < n < 16, tức n bằng 13, 14 hoặc 15',
+           loi=['Kéo hai bờ về cùng tử tám. Một nửa là tám phần mười sáu, hai phần ba '
+                'là tám phần mười hai.',
+                'Nhưng cùng tử thì mẫu chạy ngược. Chép xuôi là ra mười sáu bé hơn n '
+                'bé hơn mười hai, vô nghĩa.',
+                'Viết lại cho đúng thì n lớn hơn mười hai và bé hơn mười sáu.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B19.M1': kb5_chieu_bien_thien,
+    'DL:KSN5Q1.B19.M2': kb5_ai_dung_im,
+    'DL:KSN5Q1.B19.M3': kb5_chan_hai_bo,
     'DL:KSN5Q1.B18.M1': kb5_nhan_chia_giu_gia,
     'DL:KSN5Q1.B18.M2': kb5_neo_hieu,
     'DL:KSN5Q1.B18.M3': kb5_neo_tong,

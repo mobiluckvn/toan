@@ -33,20 +33,7 @@
   "kidText": "Thêm vào tử thì mẫu đứng im, thêm vào mẫu thì tử đứng im. Con quy đồng theo kẻ đứng im ấy là ra."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Thêm n vào TỬ của $\\frac{a}{b}$ để được $\\frac{p}{q}$: MẪU b đứng im → viết $\\frac{p}{q}$ về mẫu b (cùng MẪU): (5 + n)/21 = $\\frac{4}{7}$ = $\\frac{12}{21}$ → 5 + n = 12 → n = 7."
-   },
-   {
-    "id": "K2",
-    "text": "Thêm n vào MẪU của $\\frac{a}{b}$ để được $\\frac{p}{q}$: TỬ a đứng im → viết $\\frac{p}{q}$ về tử a (cùng TỬ): $\\frac{3}{8 + n}$ = $\\frac{1}{4}$ = $\\frac{3}{12}$ → 8 + n = 12 → n = 4."
-   },
-   {
-    "id": "K3",
-    "text": "Khẩu quyết chọn sân: KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY; quy đồng xong chỉ còn một phương trình phần động, giải như tìm X, thử lại vào đề."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: CHỤP ẢNH ĐÔI BẠN — MỘT NGƯỜI ĐỨNG IM. Bài thêm-một-phía là bức ảnh có một người ĐỨNG IM (phía không bị thêm) và một người ĐANG BƯỚC (phía nhận n). Muốn ghép ảnh đích 4/7 vào khung của 5/21: người đứng im là MẪU 21 — phóng ảnh đích theo đúng chiều cao 21: 4/7 khoác khung 12/21. Giờ hai ảnh chung khung: người bước phải từ 5 tới 12 — bước n = 7! Ngược lại tử đứng im (số 3) thì phóng đích theo tử: 1/4 thành 3/12 — mẫu bước từ 8 tới 12: n = 4. Khẩu quyết dán gương: kẻ nào đứng im — quy đồng theo kẻ ấy.",
   "canonicalExamples": [
    {
@@ -77,13 +64,8 @@
     "counterExample": "$\\frac{4}{7}$ theo tử 5: $\\frac{5}{8,75}$ — lẻ ngay, sai đường."
    }
   ],
-  "vocabulary": [
-   "người đứng im / người đang bước",
-   "chung khung ảnh",
-   "phóng ảnh đích",
-   "khẩu quyết dán gương"
-  ],
-  "mantra": "KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -105,46 +87,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Thêm số tự nhiên n vào tử số của $\\frac{5}{21}$ để được phân số bằng $\\frac{4}{7}$. Tìm n.",
-    "display": {
-     "type": "story_panel",
-     "caption": "quy đồng về 147?!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để tìm người đứng im!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Bức ảnh có một người ĐỨNG IM: mẫu 21 không bị thêm gì! Phóng ảnh đích theo người đứng im: $\\frac{4}{7}$ khoác khung mẫu 21 — nhân cả hai với 3: MƯỜI HAI phần hai mốt. Chung khung rồi: tử phải bước từ 5 tới 12 — n bằng BẢY! Thử: $\\frac{12}{21}$ rút gọn đúng $\\frac{4}{7}$. Một phép nhân thay cho cả trận quy đồng 147!",
-    "display": {
-     "type": "photo_frame_interactive",
-     "spec": {
-      "still": "mẫu 21",
-      "target": "4/7 → 12/21",
-      "eq": "5 + n = 12",
-      "n": 7
-     }
-    },
-    "interaction": {
-     "type": "frame_and_step",
-     "answerKey": {
-      "value": 7
-     },
-     "successMessage": "4/7 = 12/21 → n = 7 — quy đồng theo kẻ đứng im!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -160,38 +102,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 38,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Chiều ngược: thêm n vào MẪU của $\\frac{3}{8}$ để thành $\\frac{1}{4}$ — giờ TỬ số 3 là người đứng im! Phóng đích theo tử: $\\frac{1}{4}$ thành BA phần mười hai. Chung khung: mẫu bước từ 8 tới 12 — n bằng BỐN. Thử: $\\frac{3}{12}$ đúng $\\frac{1}{4}$! Khẩu quyết dán gương studio: kẻ nào đứng im — quy đồng theo kẻ ấy; tử im về cùng tử, mẫu im về cùng mẫu.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "3/(8 + n) = 1/4: TỬ 3 đứng im",
-      "1/4 = 3/12 → 8 + n = 12 → n = 4",
-      "tử im → cùng tử · mẫu im → cùng mẫu"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Khẩu quyết studio: kẻ nào đứng im — quy đồng theo kẻ ấy!",
-    "display": {
-     "type": "mantra_card",
-     "text": "KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -515,110 +425,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B19.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "quy đồng về 147?!",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Studio ảnh nhận đơn: thêm n vào TỬ của 5/21 để thành 4/7.",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B19_M2_F1.png",
-   "sha256_16": "43feed6a98aa01c5"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Kẻ nào đứng im — quy đồng theo kẻ ấy",
-    "steps": [
-     {
-      "text": "3/(8 + n) = 1/4: TỬ 3 đứng im"
-     },
-     {
-      "text": "1/4 = 3/12 → 8 + n = 12 → n = 4"
-     },
-     {
-      "text": "tử im → cùng tử · mẫu im → cùng mẫu"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B19_M2_F2.png",
-   "sha256_16": "e8b4ae8ca674004b"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Thêm n vào TỬ của a/b để được p/q",
-      "text": "MẪU b đứng im → viết p/q về mẫu b (cùng MẪU): (5 + n)/21 = 4/7 = 12/21 → 5 + n = 12 → n = 7.",
-      "tone": "navy"
-     },
-     {
-      "label": "Thêm n vào MẪU của a/b để được p/q",
-      "text": "TỬ a đứng im → viết p/q về tử a (cùng TỬ): 3/(8 + n) = 1/4 = 3/12 → 8 + n = 12 → n = 4.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "KẺ NÀO ĐỨNG IM — QUY ĐỒNG THEO KẺ ẤY!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B19_M2_F3.png",
-   "sha256_16": "12e6a8e03b884dad"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "THÊM MỘT PHÍA — QUY ĐỒNG THEO KẺ ĐỨNG IM",
-    "neutral": true,
-    "wrong": {
-     "head": "THÊM VÀO TỬ",
-     "steps": [
-      "5/21 → 4/7",
-      "mẫu 21 đứng im · 4/7 = 12/21"
-     ],
-     "result": "5 + n = 12 → n = 7"
-    },
-    "right": {
-     "head": "THÊM VÀO MẪU",
-     "steps": [
-      "3/8 → 1/4",
-      "tử 3 đứng im · 1/4 = 3/12"
-     ],
-     "result": "8 + n = 12 → n = 4"
-    },
-    "verdict": "Kẻ nào đứng im thì quy đồng theo kẻ ấy"
-   },
-   "caption": "Thêm vào tử thì đưa về cùng mẫu — thêm vào mẫu thì đưa về cùng tử",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B19_M2_F4.png",
-   "sha256_16": "673a06d4a05b95e3"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B41"
@@ -629,5 +436,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B19_M2_giang.mp4"
  }
 }

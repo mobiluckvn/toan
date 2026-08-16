@@ -7,9 +7,9 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **54/168** — bài 1 tới 18 |
-| Còn lại | 114 micro · 38 bài lớn · bài 19 tới 56 |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 16; **bài 17 và 18 chưa deploy** |
+| Đã xong | **57/168** — bài 1 tới 19 |
+| Còn lại | 111 micro · 37 bài lớn · bài 20 tới 56 |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 16; **bài 17 · 18 · 19 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
@@ -22,7 +22,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**114**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**111**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 16 lần)
 
@@ -67,12 +67,25 @@ Xong thì đi thử trên bản chạy, commit, deploy.
 
 `video_dai_bao_lau.test.mjs` đo bằng `ffprobe`, không đoán bằng dung lượng.
 
-**Đợt nào cũng trượt lượt đầu, cứ tính trước là phải rút.** Bài 17 dựng ra 76 · 84 ·
-84 giây, rút ba lượt mới về 63 · 68 · 68. Bài 18 dựng ra 74 · 76 · 80, rút hai lượt
-về 68 · 68 · 67. Nhịp thật của cả bộ: trung bình 57,7 giây.
+Bài 17 dựng ra 76 · 84 · 84 giây, rút ba lượt mới về 63 · 68 · 68. Bài 18 dựng ra
+74 · 76 · 80, rút hai lượt về 68 · 68 · 67. Nhịp thật của cả bộ: trung bình 57,8 giây.
 
-Ước lượng để khỏi phải rút: **một câu đọc ≈ 4 giây**, một micro chín cảnh nên nhắm
-**13–14 câu là vừa**. Viết lượt đầu mà quá mười lăm câu thì chắc chắn vượt trần.
+**Phép ước lượng: một câu đọc ≈ 4,3 giây.** Một micro chín cảnh nhắm **13–14 câu là
+vừa**; quá mười lăm câu là chắc chắn vượt trần. Bài 19 viết theo phép này ngay từ
+lượt đầu (14 · 13 · 13 câu) và ra 71 · 61 · 68 giây — chỉ phải rút MỘT câu, thay vì
+ba lượt như bài 17.
+
+Đếm trước khi dựng, khỏi mất công sinh âm lại:
+
+```bash
+python3 -c "
+import sys; sys.path.insert(0,'tools/video')
+import kich_ban_toan as K
+for m in ('DL_KSN5Q1_B<N>_M1','DL_KSN5Q1_B<N>_M2','DL_KSN5Q1_B<N>_M3'):
+    n = sum(len(c['loiAm']) for c in K.kich_ban(m)['canh'])
+    print(m, n, 'câu → ước', round(n*4.3), 'giây')
+"
+```
 
 Rút bằng cách **gộp hai câu đọc thành một**, đừng bỏ ý. Mỗi câu bỏ đi bớt được
 khoảng 4 giây. Cũng gộp được hai màn cùng một bảng tra thành một màn.
