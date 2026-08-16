@@ -35,24 +35,7 @@
   "kidText": "Có người quên dấu phẩy lúc cộng. Con tìm ra số bị quên, vì tổng lệch đúng 9 lần hoặc 99 lần số đó."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Quên dấu phẩy của số hạng có k chữ số thập phân khi CỘNG: số hạng ấy bị gấp 10^k lần → tổng bị TĂNG thêm (10^k − 1) lần số hạng thật: 9 lần hoặc 99 lần."
-   },
-   {
-    "id": "K2",
-    "text": "Tìm số hạng bị quên: số hạng = mức lệch : 9 (1 chữ số thập phân) hoặc : 99 (2 chữ số) — chia cho $9 - 99$, không chia $10 - 100$."
-   },
-   {
-    "id": "K3",
-    "text": "Mức lệch = tổng nhầm − tổng đúng (hoặc tổng nhầm − 500 kiểu dữ kiện đề cho)."
-   },
-   {
-    "id": "K4",
-    "text": "Khi đề cho số hạng thật (ví dụ 3,57 bị cộng thành 357): tổng đúng = tổng nhầm − (số nhầm − số thật)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: đây chính là DẤU VÂN TAY 9 LẦN tái xuất (con đã gặp ở Bài 2)! Trong phép cộng, một số hạng bị 'phù phép' gấp 10 (hay 100) — cả phần phình ra ấy đổ trọn vào tổng. Phần phình = số mới − số cũ = 10 lần − 1 lần = 9 lần số cũ (hoặc 99 lần). Thám tử đo mức lệch của tổng, chia 9 (99) là tóm được số hạng. Nếu đề đã khai số hạng, chỉ cần trừ phần phình khỏi tổng nhầm là ra tổng đúng.",
   "canonicalExamples": [
    {
@@ -89,13 +72,8 @@
     "counterExample": "13,75 bỏ phẩy thành 1375 — phình 1361,25 ≠ 123,75."
    }
   ],
-  "vocabulary": [
-   "phần phình",
-   "mức lệch của tổng",
-   "dấu vân tay 9 lần / 99 lần",
-   "dựng lại hiện trường (thử lại)"
-  ],
-  "mantra": "MƯỜI LẦN TRỪ MỘT LẦN — CÒN CHÍN LẦN: DẤU VÂN TAY CỦA VỤ ÁN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -117,54 +95,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Khi cộng hai số, một bạn quên dấu phẩy của số hạng có một chữ số ở phần thập phân nên tổng tăng thêm 76,5 đơn vị. Tìm số hạng đó.",
-    "display": {
-     "type": "story_panel",
-     "caption": "tổng tăng 76,5 — hung thủ là ai?"
-    },
-    "interaction": {
-     "type": "mcq_inline",
-     "prompt": "Con còn nhớ dấu vân tay từ Bài 2 chứ?",
-     "choices": [
-      "Lệch 10 lần số hạng",
-      "Lệch 9 lần số hạng",
-      "Lệch 100 lần số hạng"
-     ],
-     "answerKey": {
-      "choice": "Lệch 9 lần số hạng"
-     }
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 42,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Dựng hiện trường: số hạng thật là 1 vạch; quên phẩy làm nó thành 10 vạch — cả 9 vạch phình ra đổ trọn vào tổng! Con kéo 9 vạch phình vào cột tổng, rồi tính số hạng.",
-    "display": {
-     "type": "bar_model_interactive",
-     "spec": {
-      "old": 1,
-      "new": 10,
-      "spill": "9 vạch → tổng",
-      "equation": "9 phần = 76,5"
-     }
-    },
-    "interaction": {
-     "type": "solve_one_part",
-     "answerKey": {
-      "value": "8,5"
-     },
-     "successMessage": "Số hạng = 76,5 : 9 = 8,5. Thử: 85 − 8,5 = 76,5 ✓ — tóm được hung thủ!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -180,38 +110,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Hai biến thể phải thuộc: (1) đề chưa cho mức lệch — tự tính: lệch = tổng nhầm trừ tổng đúng; hai chữ số thập phân thì chia 99: lệch 123,75 chia 99 bằng 1,25. (2) đề cho sẵn số hạng 3,57 bị cộng thành 357 — chỉ cần trừ phần phình: tổng đúng = 500 trừ 353,43 bằng 146,57.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "Lệch = 173,75 − 50 = 123,75 → :99 = 1,25",
-      "Phình = 357 − 3,57 = 353,43",
-      "Tổng đúng = 500 − 353,43 = 146,57"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Khắc lại dấu vân tay: mười lần trừ một lần — còn chín lần!",
-    "display": {
-     "type": "mantra_card",
-     "text": "MƯỜI LẦN TRỪ MỘT LẦN — CÒN CHÍN LẦN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -532,108 +430,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B4.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "tổng tăng 76,5 — hung thủ là ai?",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Phòng thi Học Viện: bạn Bống cộng hai số, lỡ quên dấu phẩy của một số hạng — tổng vọt lên thêm 76,5!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B4_M2_F1.png",
-   "sha256_16": "6d2d940ac47c21cb"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Vụ án quên phẩy khi CỘNG — dấu vân tay 9 lần / 99 lần",
-    "steps": [
-     {
-      "text": "Lệch = 173,75 − 50 = 123,75 → :99 = 1,25"
-     },
-     {
-      "text": "Phình = 357 − 3,57 = 353,43"
-     },
-     {
-      "text": "Tổng đúng = 500 − 353,43 = 146,57"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B4_M2_F2.png",
-   "sha256_16": "d59078721cea0001"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Quên dấu phẩy của số hạng có k chữ số thập phân khi CỘNG",
-      "text": "số hạng ấy bị gấp 10^k lần → tổng bị TĂNG thêm (10^k − 1) lần số hạng thật: 9 lần hoặc 99 lần.",
-      "tone": "navy"
-     },
-     {
-      "label": "Tìm số hạng bị quên",
-      "text": "số hạng = mức lệch : 9 (1 chữ số thập phân) hoặc : 99 (2 chữ số) — chia cho 9 - 99, không chia 10 - 100.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MƯỜI LẦN TRỪ MỘT LẦN — CÒN CHÍN LẦN: DẤU VÂN TAY CỦA VỤ ÁN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B4_M2_F3.png",
-   "sha256_16": "5afb17a05389036e"
-  },
-  {
-   "archetype": "bar_diagram",
-   "params": {
-    "title": "QUÊN PHẨY KHI CỘNG → TỔNG TĂNG 76,5",
-    "bars": [
-     {
-      "name": "số hạng thật",
-      "units": 1,
-      "label": "8,5"
-     },
-     {
-      "name": "số hạng bị phình",
-      "units": 10,
-      "label": "85"
-     }
-    ],
-    "brace": {
-     "text": "phần tăng = 9 lần số hạng = 76,5 → số hạng = 76,5 : 9 = 8,5"
-    },
-    "note": "Dấu vân tay của thủ phạm: chia cho 9 (một chữ số thập phân) hoặc 99 (hai chữ số)"
-   },
-   "caption": "Cùng một dấu vân tay 9 lần như bài bỏ phẩy",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B4_M2_F4.png",
-   "sha256_16": "74e628277995495d"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B03"
@@ -644,5 +441,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B4_M2_giang.mp4"
  }
 }

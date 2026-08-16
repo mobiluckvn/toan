@@ -36,24 +36,7 @@
   "kidText": "Quên phẩy ở số trừ thì hiệu giảm, quên ở số bị trừ thì hiệu tăng. Con phân biệt được hai chiều ngược nhau này."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Trong phép trừ, SỐ BỊ TRỪ đứng TRƯỚC dấu trừ, SỐ TRỪ đứng SAU dấu trừ: hiệu = số bị trừ − số trừ."
-   },
-   {
-    "id": "K2",
-    "text": "Quên dấu phẩy ở SỐ TRỪ: số trừ phình to → hiệu GIẢM đi 9 (99) lần số trừ thật."
-   },
-   {
-    "id": "K3",
-    "text": "Quên dấu phẩy ở SỐ BỊ TRỪ: số bị trừ phình to → hiệu TĂNG thêm 9 (99) lần số bị trừ thật — chiều ngược hẳn K2."
-   },
-   {
-    "id": "K4",
-    "text": "Trước khi tính, vẽ SƠ ĐỒ HIỆN TRƯỜNG: viết hiệu = bị trừ − trừ, khoanh tròn vị trí bị phình, rồi mới kết luận hiệu tăng hay giảm."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: phép trừ là chiếc BẬP BÊNH — số bị trừ ngồi đầu TRƯỚC dấu trừ (đẩy hiệu LÊN), số trừ ngồi đầu SAU (kéo hiệu XUỐNG). Ai bị 'phù phép' phình to gấp 10 thì sức nặng tăng 9 phần: phình ở đầu TRƯỚC — hiệu vọt lên 9 lần số ấy; phình ở đầu SAU — hiệu tụt xuống 9 lần số ấy. Hai vụ án chỉ khác nhau một chữ trong đề — nên thám tử luôn vẽ sơ đồ hiện trường và khoanh tròn kẻ bị phình trước khi phán.",
   "canonicalExamples": [
    {
@@ -90,13 +73,8 @@
     "counterExample": "Ca đối chiếu 2,5: cùng 22,5 nhưng một vụ giảm, một vụ tăng."
    }
   ],
-  "vocabulary": [
-   "bập bênh phép trừ",
-   "số bị trừ (TRƯỚC dấu trừ) / số trừ (SAU dấu trừ)",
-   "sơ đồ hiện trường",
-   "khoanh kẻ bị phình"
-  ],
-  "mantra": "PHÌNH TRƯỚC DẤU TRỪ — HIỆU VỌT LÊN; PHÌNH SAU DẤU TRỪ — HIỆU TỤT XUỐNG!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -123,44 +101,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Bạn Bống quên dấu phẩy của SỐ TRỪ 6,3 nên đã trừ đi 63. Hiệu tìm được tăng hay giảm, và bao nhiêu?",
-    "display": {
-     "type": "story_panel",
-     "caption": "số TRỪ ≠ số BỊ TRỪ — một chữ, hai số phận"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để lên bập bênh!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 45,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
-    ],
-    "narration": "Bập bênh phép trừ: số BỊ TRỪ ngồi đầu trước dấu trừ — đẩy hiệu LÊN; số TRỪ ngồi đầu sau — kéo hiệu XUỐNG. Con thổi phồng lần lượt từng bạn (gấp 10) và nhìn kim hiệu: phình ở số trừ — kim tụt; phình ở số bị trừ — kim vọt!",
-    "display": {
-     "type": "seesaw_interactive",
-     "spec": {
-      "left": "số bị trừ (đẩy hiệu lên)",
-      "right": "số trừ (kéo hiệu xuống)",
-      "inflate": "×10 từng bên",
-      "gauge": "kim HIỆU"
-     }
-    },
-    "interaction": {
-     "type": "inflate_and_observe",
-     "successMessage": "Thấy chưa: cùng một phép phù phép — phình SAU dấu trừ thì hiệu tụt, phình TRƯỚC dấu trừ thì hiệu vọt!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -181,39 +121,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K3",
-     "K4"
-    ],
-    "narration": "Giải hai vụ bằng sơ đồ hiện trường. Vụ A: số trừ 6,3 phình thành 63 — hiệu GIẢM đi 63 trừ 6,3 bằng 56,7. Vụ B trùm cuối: hiệu đúng 5,37 vọt thành 80,07 vì số BỊ TRỪ phình — mức tăng 74,7 chính là 9 lần số bị trừ thật: 74,7 chia 9 bằng 8,3!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "Vụ A: hiệu GIẢM 63 − 6,3 = 56,7",
-      "Vụ B: tăng = 80,07 − 5,37 = 74,7",
-      "Số bị trừ = 74,7 : 9 = 8,3 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: phình trước dấu trừ — hiệu vọt lên; phình sau dấu trừ — hiệu tụt xuống!",
-    "display": {
-     "type": "mantra_card",
-     "text": "PHÌNH TRƯỚC — VỌT LÊN · PHÌNH SAU — TỤT XUỐNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -548,106 +455,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B4.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "số TRỪ ≠ số BỊ TRỪ — một chữ, hai số phận",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Hai vụ giống nhau mà, đều tăng 9 lần chứ gì!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B4_M3_F1.png",
-   "sha256_16": "edb8a1e79ca82e55"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Quên phẩy trong phép TRỪ — hai chiều ngược nhau",
-    "steps": [
-     {
-      "text": "Vụ A: hiệu GIẢM 63 − 6,3 = 56,7"
-     },
-     {
-      "text": "Vụ B: tăng = 80,07 − 5,37 = 74,7"
-     },
-     {
-      "text": "Số bị trừ = 74,7 : 9 = 8,3"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B4_M3_F2.png",
-   "sha256_16": "e7825ea381fa2bba"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Trong phép trừ, SỐ BỊ TRỪ đứng TRƯỚC dấu trừ, SỐ TRỪ đứng SAU dấu trừ",
-      "text": "hiệu = số bị trừ − số trừ.",
-      "tone": "navy"
-     },
-     {
-      "text": "Quên dấu phẩy ở SỐ TRỪ thì hiệu sẽ:",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "PHÌNH TRƯỚC DẤU TRỪ — HIỆU VỌT LÊN; PHÌNH SAU DẤU TRỪ — HIỆU TỤT XUỐNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B4_M3_F3.png",
-   "sha256_16": "868c10e2eb4db1ba"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "QUÊN PHẨY Ở ĐÂU THÌ HIỆU ĐỔI CHIỀU NẤY",
-    "wrong": {
-     "head": "QUÊN Ở SỐ TRỪ",
-     "steps": [
-      "6,3 phình thành 63"
-     ],
-     "result": "hiệu GIẢM 56,7"
-    },
-    "right": {
-     "head": "QUÊN Ở SỐ BỊ TRỪ",
-     "steps": [
-      "số bị trừ phình 10 lần"
-     ],
-     "result": "hiệu TĂNG"
-    },
-    "verdict": "Hiệu tăng 74,7 → số bị trừ thật = 74,7 : 9 = 8,3"
-   },
-   "caption": "Hai chiều ngược nhau — đọc kỹ quên phẩy ở số nào",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B4_M3_F4.png",
-   "sha256_16": "8830521cdbb85bb8"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B03"
@@ -658,5 +466,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B4_M3_giang.mp4"
  }
 }

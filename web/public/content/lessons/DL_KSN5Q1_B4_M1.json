@@ -35,20 +35,7 @@
   "kidText": "Con dịch dấu phẩy sang phải hay sang trái để nhân chia cho 10, 100, 1000 — hết chữ số thì đệm thêm số 0."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Nhân với $\\frac{10}{100}$ / 1000: dấu phẩy đi THANG MÁY sang PHẢI $\\frac{1}{2}$ / 3 bậc; hết chữ số thì thêm 0 vào đuôi ($3,5  \\times  100 = 350$)."
-   },
-   {
-    "id": "K2",
-    "text": "Chia cho $\\frac{10}{100}$ / 1000: dấu phẩy sang TRÁI $\\frac{1}{2}$ / 3 bậc; thiếu bậc phải ĐỆM 0 vào trước ($3,5 : 100 = 0,035$)."
-   },
-   {
-    "id": "K3",
-    "text": "Nghi thức: ĐẾM BẬC trước (nhân/chia với 10^k là k bậc) rồi mới cho thang chạy — thang máy không được nhảy cóc hay dừng giữa chừng."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: dấu phẩy là chiếc THANG MÁY chạy ngang tòa nhà con số. Bảng điều khiển ghi rõ: ×10 — một bậc sang phải; :100 — hai bậc sang trái. Thang bắt buộc chạy ĐỦ số bậc đã bấm. Chạy sang trái mà hết phòng thì tòa nhà tự xây thêm phòng 0 phía trước (đệm 0); chạy sang phải hết phòng thì xây thêm phòng 0 phía sau. Lỗi chết người: thang dừng sớm vì 'hết chữ số' — đó là nhảy cóc, cấm tuyệt đối.",
   "canonicalExamples": [
    {
@@ -79,13 +66,8 @@
     "counterExample": "Thử ngược: $0,35  \\times  100 = 35$ ≠ 3,5."
    }
   ],
-  "vocabulary": [
-   "thang máy dấu phẩy",
-   "bậc",
-   "đệm 0",
-   "nhảy cóc (cấm!)"
-  ],
-  "mantra": "THIẾU BẬC THÌ ĐỆM 0 — THANG MÁY KHÔNG ĐƯỢC NHẢY CÓC!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -107,45 +89,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Tính $3,45  \\times  10$ và $3,45  \\times  100$.",
-    "display": {
-     "type": "story_panel",
-     "caption": "$3,5 : 100 = 0,35$??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để sửa thang máy!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 42,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Bảng điều khiển ghi :100 — tức PHẢI đi đủ HAI bậc sang trái. Đi bậc một: 0,35. Bậc hai hết phòng? Tòa nhà xây thêm phòng 0 phía trước — con chạm để đệm 0 và cho thang đi nốt.",
-    "display": {
-     "type": "elevator_interactive",
-     "spec": {
-      "number": "3,5",
-      "op": ":100",
-      "steps": [
-       "0,35",
-       "đệm 0 → 0,035"
-      ]
-     }
-    },
-    "interaction": {
-     "type": "tap_pad_zero",
-     "successMessage": "Đệm 0 xong: 3,5 : 100 = 0,035. Thang đi đủ 2 bậc — không nhảy cóc!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -161,38 +104,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 35,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Chiều nhân chạy sang phải y luật: 3,45 nhân 10 — một bậc — 34,5; nhân 100 — hai bậc — 345. Hết chữ số bên phải thì thêm 0 vào đuôi: 3,5 nhân 100 bằng 350. Nghi thức duy nhất: ĐẾM BẬC trước, cho thang chạy đủ sau.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "3,45 × 10 = 34,5 (1 bậc)",
-      "3,45 × 100 = 345 (2 bậc)",
-      "3,5 × 100 = 350 (thêm 0 đuôi)"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 12,
-    "narration": "Câu cần nhớ: thiếu bậc thì đệm 0 — thang máy không được nhảy cóc!",
-    "display": {
-     "type": "mantra_card",
-     "text": "THIẾU BẬC THÌ ĐỆM 0 — KHÔNG NHẢY CÓC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -532,141 +443,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B4.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "3,5 : 100 = 0,35??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "3,5 chia 100, thang chạy một bậc thành 0,35 thì hết chữ số. Thì… dừng ở 0,35 vậy?",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Câu hỏi mở bài",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B4_M1_F1.png",
-   "sha256_16": "a60ad9ea92d50f18"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Thang máy dấu phẩy — đếm bậc rồi mới nhân chia, thiếu bậc đệm 0",
-    "steps": [
-     {
-      "text": "3,45 × 10 = 34,5 (1 bậc)"
-     },
-     {
-      "text": "3,45 × 100 = 345 (2 bậc)"
-     },
-     {
-      "text": "3,5 × 100 = 350 (thêm 0 đuôi)"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B4_M1_F2.png",
-   "sha256_16": "1605825069b12a3f"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Nhân với 10 / 100 / 1000",
-      "text": "dấu phẩy đi THANG MÁY sang PHẢI 1 / 2 / 3 bậc; hết chữ số thì thêm 0 vào đuôi (3,5 × 100 = 350).",
-      "tone": "navy"
-     },
-     {
-      "label": "Chia cho 10 / 100 / 1000",
-      "text": "dấu phẩy sang TRÁI 1 / 2 / 3 bậc; thiếu bậc phải ĐỆM 0 vào trước (3,5 : 100 = 0,035).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "THIẾU BẬC THÌ ĐỆM 0 — THANG MÁY KHÔNG ĐƯỢC NHẢY CÓC!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B4_M1_F3.png",
-   "sha256_16": "fc3ead46f86ce5a6"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "THANG MÁY DẤU PHẨY: 3,45 × 10 VÀ × 100",
-    "headers": [
-     "trăm",
-     "chục",
-     "đơn vị",
-     "phần mười",
-     "phần trăm"
-    ],
-    "comma_after": 2,
-    "rows": [
-     {
-      "label": "3,45",
-      "cells": [
-       "",
-       "",
-       "3",
-       "4",
-       "5"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "× 10",
-      "cells": [
-       "",
-       "3",
-       "4",
-       "5",
-       ""
-      ],
-      "color": "#E6FAF5"
-     },
-     {
-      "label": "× 100",
-      "cells": [
-       "3",
-       "4",
-       "5",
-       "",
-       ""
-      ],
-      "color": "#FFF4DF"
-     }
-    ],
-    "shift": {
-     "steps": 2,
-     "dir": "<",
-     "label": "nhân 100 → phẩy đi sang phải 2 bậc"
-    },
-    "note": "Chia thì phẩy đi ngược lại: 62,7 : 100 = 0,627 — thiếu bậc thì mượn số 0 làm bậc đệm"
-   },
-   "caption": "Đếm bậc trước, nhân chia sau",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B4_M1_F4.png",
-   "sha256_16": "4dcdc229eca16de3"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B03"
@@ -678,5 +455,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Thang máy dấu phẩy — đếm bậc rồi mới nhân chia, thiếu bậc đệm 0"
+ "titleDay": "Thang máy dấu phẩy — đếm bậc rồi mới nhân chia, thiếu bậc đệm 0",
+ "video": {
+  "giang": "DL_KSN5Q1_B4_M1_giang.mp4"
+ }
 }

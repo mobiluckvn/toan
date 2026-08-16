@@ -8766,7 +8766,146 @@ def kb5_hai_ho_dau_hieu(b):
     ]
 
 
+def kb5_thang_may_dau_phay(b):
+    """L5·B4·M1 Nhân chia cho 10·100·1000 — đếm bậc rồi đệm 0."""
+    return [
+        _c('bia', 'Dấu phẩy đi thang máy', so_bai(b),
+           loi=['Nhân hay chia cho mười, một trăm, một nghìn thì dấu phẩy dịch chỗ.']),
+        _c('y_toan', 'Đếm BẬC trước, rồi mới cho thang chạy',
+           'nhân/chia cho 10 mũ k  →  đúng k bậc', buoc=1, soBuoc=3,
+           loi=['Nghi thức: đếm bậc trước rồi mới cho thang chạy.',
+                'Nhân hay chia cho mười mũ mấy thì đi đúng bấy nhiêu bậc.']),
+        _c('tach_so', 'Nhân thì phẩy chạy sang PHẢI', so='34,5',
+           phep='3,45 × 10 = 34,5', chuPhu='Một bậc sang phải.',
+           loi=['Nhân thì phẩy chạy sang phải. Ba phẩy bốn lăm nhân mười thành ba '
+                'mươi tư phẩy năm.']),
+        _c('tach_so', 'Hết chữ số bên phải thì thêm 0 vào đuôi', so='3450',
+           sang=[4], phep='3,45 × 1000 = 3450', chuPhu='Ba bậc — bậc cuối phải thêm 0.',
+           loi=['Ba phẩy bốn lăm nhân một nghìn là ba bậc. Nhưng bên phải chỉ còn hai '
+                'chữ số.',
+                'Hết phòng thì xây thêm một phòng số không, được ba nghìn bốn trăm '
+                'năm mươi.']),
+        _c('tach_so', 'Chia thì phẩy chạy sang TRÁI', so='0,35',
+           phep='3,5 : 10 = 0,35', chuPhu='Một bậc sang trái.',
+           loi=['Chia thì phẩy chạy sang trái. Ba phẩy năm chia mười thành không phẩy '
+                'ba lăm.']),
+        _c('tach_so', 'Thiếu bậc bên trái thì ĐỆM 0 vào trước', so='0,035',
+           sang=[2], phep='3,5 : 100 = 0,035',
+           chuPhu='Hai bậc — bậc thứ hai phải đệm thêm một số 0.',
+           loi=['Ba phẩy năm chia một trăm là hai bậc. Đi được một bậc thì hết chữ '
+                'số.',
+                'Thiếu bậc thì đệm thêm số không vào trước, được không phẩy không ba '
+                'lăm.']),
+        _c('y_toan', 'Chỗ hay hỏng', 'Hết chữ số rồi DỪNG GIỮA CHỪNG là sai',
+           loi=['Đây là chỗ hay hỏng. Đi được một bậc, hết chữ số rồi dừng lại luôn.',
+                'Thang máy phải đi đủ số bậc, không được dừng giữa chừng.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='đếm bậc  →  chạy đủ bậc  →  thiếu chỗ thì ĐỆM 0',
+           thay='vì mỗi bậc là một hàng, bỏ dở một bậc là sai hẳn mười lần',
+           loi=['Con nhớ ba nhịp. Đếm bậc, chạy đủ bậc, thiếu chỗ thì đệm số không.',
+                'Vì mỗi bậc là một hàng, bỏ dở một bậc là sai hẳn mười lần.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_quen_phay_khi_cong(b):
+    """L5·B4·M2 Quên dấu phẩy khi cộng — tổng tăng 9 lần số hạng."""
+    return [
+        _c('bia', 'Quên dấu phẩy khi cộng', so_bai(b),
+           loi=['Cộng hai số mà quên dấu phẩy của một số hạng, tổng vọt lên.']),
+        _c('de_toan', 'Đề bài', de='Quên phẩy một số hạng làm TỔNG tăng thêm 76,5. Số hạng đó là số nào?',
+           loi=['Quên dấu phẩy của một số hạng làm tổng tăng thêm bảy mươi sáu phẩy '
+                'năm.',
+                'Hỏi số hạng ấy là số nào.']),
+        _c('so_do_doan', 'Dựng lại hiện trường bằng sơ đồ', be=1, lon=10,
+           nhanBe='số hạng thật · 1 phần', nhanLon='số bị quên phẩy · 10 phần',
+           hienHieu=True, chuHieu='phần phình = 9 phần',
+           chuPhu='Cả 9 phần phình ấy đổ trọn vào tổng.',
+           loi=['Dựng lại hiện trường. Số hạng thật là một phần, quên phẩy làm nó '
+                'phình thành mười phần.',
+                'Chín phần phình ấy đổ trọn vào tổng.']),
+        _c('cong_thuc', 'Nên tìm số hạng thì chia 9',
+           congThuc='số hạng = mức lệch : 9',
+           thay='vì tổng chỉ tăng bằng PHẦN PHÌNH, không tăng bằng cả số mới',
+           loi=['Nên muốn tìm số hạng thì lấy mức lệch chia chín.',
+                'Vì tổng chỉ tăng bằng phần phình thôi, không tăng bằng cả số mới.']),
+        _c('y_toan', 'Phá án', '76,5 : 9 = 8,5', buoc=1, soBuoc=3,
+           loi=['Bảy mươi sáu phẩy năm chia chín, bằng tám phẩy năm.']),
+        _c('y_toan', 'Thử lại', '8,5 quên phẩy thành 85 · 85 − 8,5 = 76,5 ✓',
+           buoc=2, soBuoc=3,
+           loi=['Thử lại. Tám phẩy năm quên phẩy thành tám mươi lăm.',
+                'Tám mươi lăm trừ tám phẩy năm, đúng bằng bảy mươi sáu phẩy năm.']),
+        _c('y_toan', 'Số hạng có HAI chữ số thập phân thì chia 99',
+           'quên phẩy làm nó gấp 100 lần  →  phần phình là 99 phần',
+           buoc=3, soBuoc=3,
+           loi=['Số hạng có hai chữ số thập phân thì quên phẩy làm nó gấp một trăm '
+                'lần.',
+                'Phần phình thành chín mươi chín phần, nên phải chia chín mươi chín.']),
+        _c('y_toan', 'Có khi đề chưa cho sẵn mức lệch',
+           'mức lệch = tổng nhầm − tổng đúng — tính nó trước đã',
+           loi=['Có khi đề chưa cho sẵn mức lệch. Con lấy tổng nhầm trừ tổng đúng để '
+                'tìm nó trước đã.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='mười lần trừ một lần — còn CHÍN lần',
+           thay='đề cho MỨC LỆCH thì chia 9 hoặc 99, đừng chia 10 hay 100',
+           loi=['Con nhớ câu này. Mười lần trừ một lần còn chín lần.',
+                'Đề cho mức lệch thì chia chín, đừng chia mười.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_quen_phay_khi_tru(b):
+    """L5·B4·M3 Quên dấu phẩy trong phép trừ — hai chiều ngược nhau."""
+    return [
+        _c('bia', 'Quên dấu phẩy trong phép trừ', so_bai(b),
+           loi=['Cũng là quên một dấu phẩy, nhưng trong phép trừ thì có hai vụ khác '
+                'hẳn nhau.']),
+        _c('y_toan', 'Gọi đúng tên hai số trước đã',
+           'hiệu = SỐ BỊ TRỪ − SỐ TRỪ', buoc=1, soBuoc=3,
+           loi=['Gọi đúng tên hai số trước đã. Số bị trừ đứng trước dấu trừ, số trừ '
+                'đứng sau.']),
+        _c('so_do_doan', 'Vụ A — phình ở SỐ TRỪ', be=1, lon=10,
+           nhanBe='số trừ thật', nhanLon='số trừ bị phình',
+           hienHieu=True, chuHieu='trừ đi nhiều hơn 9 phần',
+           chuPhu='Trừ đi nhiều hơn, nên HIỆU TỤT XUỐNG.',
+           loi=['Vụ thứ nhất, phình ở số trừ. Trừ đi nhiều hơn chín phần.',
+                'Nên hiệu tụt xuống, giảm đi chín lần số trừ thật.']),
+        _c('so_do_doan', 'Vụ B — phình ở SỐ BỊ TRỪ', be=1, lon=10,
+           nhanBe='số bị trừ thật', nhanLon='số bị trừ bị phình',
+           hienHieu=True, chuHieu='có nhiều hơn 9 phần',
+           chuPhu='Có nhiều hơn để trừ, nên HIỆU VỌT LÊN.',
+           loi=['Vụ thứ hai, phình ở số bị trừ. Có nhiều hơn chín phần để mà trừ.',
+                'Nên hiệu vọt lên, tăng thêm chín lần số bị trừ thật.']),
+        _c('y_toan', 'Hai vụ, hai chiều ngược hẳn nhau',
+           'phình SỐ TRỪ → hiệu giảm   ·   phình SỐ BỊ TRỪ → hiệu tăng',
+           buoc=3, soBuoc=3,
+           loi=['Hai vụ, hai chiều ngược hẳn nhau. Cùng là quên một dấu phẩy đấy.']),
+        _c('y_toan', 'Làm thử vụ A', 'số trừ 6,3 phình thành 63 · hiệu giảm 56,7',
+           loi=['Làm thử vụ thứ nhất. Số trừ sáu phẩy ba phình thành sáu mươi ba.',
+                'Hiệu giảm đi sáu mươi ba trừ sáu phẩy ba, tức năm mươi sáu phẩy '
+                'bảy.']),
+        _c('y_toan', 'Nên trước khi tính, vẽ hiện trường ra',
+           'viết hiệu = bị trừ − trừ  →  khoanh chỗ bị phình  →  mới kết luận',
+           loi=['Nên trước khi tính, con vẽ hiện trường ra. Viết hiệu bằng số bị trừ '
+                'trừ số trừ.',
+                'Khoanh tròn chỗ bị phình, rồi mới kết luận hiệu tăng hay giảm.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='phình TRƯỚC dấu trừ → hiệu vọt lên  ·  phình SAU → hiệu tụt xuống',
+           thay='vì số bị trừ đẩy hiệu lên, còn số trừ kéo hiệu xuống',
+           loi=['Con nhớ câu này. Phình trước dấu trừ thì hiệu vọt lên, phình sau thì '
+                'hiệu tụt xuống.',
+                'Vì số bị trừ đẩy hiệu lên, còn số trừ kéo hiệu xuống.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B4.M1': kb5_thang_may_dau_phay,
+    'DL:KSN5Q1.B4.M2': kb5_quen_phay_khi_cong,
+    'DL:KSN5Q1.B4.M3': kb5_quen_phay_khi_tru,
     'DL:KSN5Q1.B3.M1': kb5_ba_cong_thuc_guong,
     'DL:KSN5Q1.B3.M2': kb5_guong_vo,
     'DL:KSN5Q1.B3.M3': kb5_hai_ho_dau_hieu,
