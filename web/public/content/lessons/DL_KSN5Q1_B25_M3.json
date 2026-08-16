@@ -36,24 +36,7 @@
   "kidText": "Đề giấu tổng và hiệu: chu vi hình chữ nhật phải chia đôi mới ra tổng; câu \"thêm 4 thì bằng nhau\" chính là hiệu."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bài tổng – hiệu ba nhịp: TÌM tổng và hiệu (chúng có thể đang trốn) — VẼ sơ đồ — TÍNH bằng cặp công thức. Nhịp một mới là nhịp khó."
-   },
-   {
-    "id": "K2",
-    "text": "Chu vi hình chữ nhật = (dài + rộng) × 2 → TỔNG dài + rộng = chu vi : 2 — chu vi là CẢ VÒNG, tổng dài rộng chỉ NỬA VÒNG. Kiểm cuối: (dài + rộng) × 2 phải trả lại đúng chu vi."
-   },
-   {
-    "id": "K3",
-    "text": "Lời khai \"thêm k vào số bé thì hai số bằng nhau\" cũng có nghĩa là số lớn hơn số bé đúng k cũng có nghĩa là HIỆU = k; \"bớt k ở số lớn thì bằng nhau\" cũng cho hiệu = k."
-   },
-   {
-    "id": "K4",
-    "text": "Lời khai kiểu CHUYỂN (nếm trước Bài 27): \"chuyển k từ thùng nhất sang thùng hai thì bằng nhau\" → hiệu = 2 × k (bên mất k, bên được k — khoảng cách khép từ hai đầu)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: THÁM TỬ KHUI DỮ KIỆN TRỐN. Đề không phát tổng – hiệu tận tay mà giấu chúng sau lớp áo. Áo một — CHU VI: \"chu vi 36, dài hơn rộng 4\" — Trí Long lắp ngay tổng = 36: nhưng chu vi là đi CẢ VÒNG quanh sân, còn tổng dài + rộng chỉ là NỬA vòng: tổng thật = 36 : 2 = 18 → dài 11, rộng 7 — kiểm (11 + 7) × 2 = 36 khớp cả vòng! Áo hai — LỜI KHAI: \"thêm 5 vào số bé thì hai số bằng nhau\" — dịch lời khai: số bé đang KÉM số lớn đúng 5 — hiệu chính là 5! Áo ba (hé cửa Bài 27) — CÚ CHUYỂN: \"chuyển 8 lít từ thùng nhất sang thùng hai thì bằng nhau\" — bên mất 8, bên được 8: khoảng cách khép từ HAI đầu — hiệu = 16, không phải 8!",
   "canonicalExamples": [
    {
@@ -90,14 +73,8 @@
     "counterExample": "Cặp 26 và 25 qua trạm tổng 51 nhưng thêm 5 vào 25 ra 30 ≠ 26 — lời khai vạch mặt."
    }
   ],
-  "vocabulary": [
-   "dữ kiện trốn sau lớp áo",
-   "cả vòng / nửa vòng",
-   "dịch lời khai",
-   "diễn lại lời khai để thử",
-   "khoảng cách khép từ hai đầu"
-  ],
-  "mantra": "CHU VI LÀ CẢ VÒNG — TỔNG CHỈ NỬA VÒNG; LỜI KHAI \"THÊM THÌ BẰNG\" CHÍNH LÀ HIỆU!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -128,51 +105,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Một hình chữ nhật có chu vi 36 cm, chiều dài hơn chiều rộng 4 cm. Tính chiều dài và chiều rộng.",
-    "display": {
-     "type": "story_panel",
-     "caption": "tổng = 36? đi thử một vòng!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đo lại vòng sân!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Chu vi là đi CẢ VÒNG: hai lần dài cộng hai lần rộng! Còn tổng dài-cộng-rộng chỉ là NỬA vòng — ba sáu chia hai bằng MƯỜI TÁM mới là tổng thật. Máy chạy: dài bằng mười tám cộng bốn chia hai — MƯỜI MỘT mét; rộng BẢY mét. Kiểm trả vòng: mười một cộng bảy, nhân hai — đúng BA SÁU! Nhịp một của mọi bài tổng – hiệu: TÌM tổng hiệu đang trốn đã, rồi mới vẽ, mới tính.",
-    "display": {
-     "type": "perimeter_walk_interactive",
-     "spec": {
-      "P": 36,
-      "half": 18,
-      "d": 4,
-      "dai": 11,
-      "rong": 7,
-      "check": "(11 + 7) × 2 = 36"
-     }
-    },
-    "interaction": {
-     "type": "halve_then_solve",
-     "answerKey": {
-      "values": [
-       11,
-       7
-      ]
-     },
-     "successMessage": "Nửa vòng 18 → dài 11, rộng 7 — trả vòng khớp 36!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -193,38 +125,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Áo trốn thứ hai — LỜI KHAI: tổng năm mốt, \"thêm năm vào số bé thì bằng nhau\" — dịch: số bé kém số lớn đúng NĂM: hiệu bằng năm! Máy chạy: hai ba và hai tám — diễn lại lời khai thử: hai ba cộng năm đúng hai tám! Áo thứ ba hé cửa bài sau — CÚ CHUYỂN: chuyển tám lít từ thùng nhất sang thùng hai thì bằng nhau — bên mất tám, bên được tám: khoảng cách khép từ HAI đầu — hiệu MƯỜI SÁU, không phải tám! Thùng nhất năm sáu, thùng hai bốn mươi.",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "lời khai 'thêm 5 thì bằng' → hiệu 5 → 23 & 28",
-      "chuyển 8 → hiệu 2 × 8 = 16 → 56 & 40",
-      "diễn lại lời khai để thử: 56 − 8 = 48 = 40 + 8 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Hai câu cần nhớ: chu vi là cả vòng — tổng chỉ nửa vòng! Lời khai thêm-thì-bằng — chính là hiệu!",
-    "display": {
-     "type": "mantra_card",
-     "text": "NỬA VÒNG · LỜI KHAI = HIỆU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -537,107 +437,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B25.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "tổng = 36? đi thử một vòng!",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Chu vi 36, dài hơn rộng 4 — tổng 36, hiệu 4, thế thì dài 20, rộng 16!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B25_M3_F1.png",
-   "sha256_16": "041eb98bd7c5df62"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Khui tổng – hiệu ẩn: nửa chu vi & lời khai \"thêm k thì bằng nhau\"",
-    "steps": [
-     {
-      "text": "lời khai 'thêm 5 thì bằng' → hiệu 5 → 23 & 28"
-     },
-     {
-      "text": "chuyển 8 → hiệu 2 × 8 = 16 → 56 & 40"
-     },
-     {
-      "text": "diễn lại lời khai để thử: 56 − 8 = 48 = 40 + 8"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B25_M3_F2.png",
-   "sha256_16": "9d9a92de395f0bd3"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Bài tổng – hiệu ba nhịp",
-      "text": "TÌM tổng và hiệu (chúng có thể đang trốn) — VẼ sơ đồ — TÍNH bằng cặp công thức. Nhịp một mới là nhịp khó.",
-      "tone": "navy"
-     },
-     {
-      "label": "Chu vi hình chữ nhật = (dài + rộng) × 2 → TỔNG dài + rộng = chu vi",
-      "text": "2 — chu vi là CẢ VÒNG, tổng dài rộng chỉ NỬA VÒNG. Kiểm cuối: (dài + rộng) × 2 phải trả lại đúng chu vi.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CHU VI LÀ CẢ VÒNG — TỔNG CHỈ NỬA VÒNG; LỜI KHAI \"THÊM THÌ BẰNG\" CHÍNH LÀ HIỆU!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B25_M3_F3.png",
-   "sha256_16": "6a175f93bc811f1d"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CHU VI 36 cm — DÙNG SỐ NÀO LÀM TỔNG?",
-    "wrong": {
-     "head": "DÙNG CẢ VÒNG",
-     "steps": [
-      "tổng = 36"
-     ],
-     "result": "dài 20 · rộng 16 ✗"
-    },
-    "right": {
-     "head": "DÙNG NỬA CHU VI",
-     "steps": [
-      "tổng = 36 : 2 = 18"
-     ],
-     "result": "dài 11 · rộng 7 ✓"
-    },
-    "verdict": "Kiểm: (11 + 7) × 2 = 36 ✓ — chu vi là HAI lần (dài + rộng)"
-   },
-   "caption": "Tổng – hiệu hay trốn sau chu vi hoặc sau lời khai \"thêm k thì bằng nhau\"",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B25_M3_F4.png",
-   "sha256_16": "f90803dde82f7b00"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B24"
@@ -649,5 +449,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Khui tổng – hiệu ẩn: nửa chu vi & lời khai \"thêm k thì bằng nhau\""
+ "titleDay": "Khui tổng – hiệu ẩn: nửa chu vi & lời khai \"thêm k thì bằng nhau\"",
+ "video": {
+  "giang": "DL_KSN5Q1_B25_M3_giang.mp4"
+ }
 }

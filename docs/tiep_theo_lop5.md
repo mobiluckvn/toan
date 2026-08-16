@@ -7,9 +7,9 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **72/168** — bài 1 tới 24, **HẾT chương 6** |
-| Còn lại | 96 micro · 32 bài lớn · bài 25 tới 56 (chương 7 tới 14) |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 24 (trọn chương 6) |
+| Đã xong | **75/168** — bài 1 tới 25 (bài 25 mở chương 7) |
+| Còn lại | 93 micro · 31 bài lớn · bài 26 tới 56 |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 24; **bài 25 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
@@ -22,7 +22,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**96**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**93**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 16 lần)
 
@@ -81,6 +81,10 @@ giây, bài 22 (13 · 13 · 14 câu) ra 62 · 57 · 59 giây, bài 23 (14 · 12 
 55 · 52 giây, bài 24 (14 · 14 · 14 câu) ra 64 · 61 · 64 giây — **cả mười lăm không
 phải rút câu nào**.
 
+⚠ Phép ước lượng cũng có đầu DƯỚI. Bài 25 M2 viết 12 câu, dựng ra **45,2 giây** —
+lọt trần dưới đúng hai phần mười giây. Dưới 13 câu là phải ngó chừng; thêm một hai
+câu cho dày là vừa.
+
 Đếm trước khi dựng, khỏi mất công sinh âm lại:
 
 ```bash
@@ -114,15 +118,20 @@ MỚI không được nợ — thêm một cái vượt 70 giây là cổng đ�
    `phan_so` là hình nói dối rằng A bằng B. Chỗ ấy dùng `so_do_doan`, có sẵn
    `phanBe` · `phanLon` để chia ô đều nhau, `hienHieu` tô chỗ nhô ra, `chuTong` vẽ
    ngoặc ôm cả hai.
-4. **Chương trung bình cộng thì dùng `san_bang`**, không phải `day_so`. Nó vẽ cột
+4. **Chương tổng – hiệu thì dùng `so_do_doan`** — nó được viết riêng cho chương này.
+   `hienHieu` tô khúc dôi ra màu vàng, `chuTong` vẽ ngoặc ôm cả hai đoạn,
+   `themVaoBe` vẽ nét đứt bù cho bằng đoạn lớn (đúng đường "(tổng + hiệu) : 2"), và
+   `botOLon` tô khúc hiệu màu đỏ cho đường bớt ra. Hai màn đặt cạnh nhau là kể trọn
+   cả hai đường về một đáp.
+5. **Chương trung bình cộng thì dùng `san_bang`**, không phải `day_so`. Nó vẽ cột
    cao thấp kèm vạch `mucTB`, nên đặt hai màn cạnh nhau là bé THẤY vạch nhích lên
    (bài 22 M1: ba cột mốc 26, rồi bốn cột mốc 29) hoặc thấy vạch đứng im (M2: cột
    thứ tư chạm đúng vạch). `deu=True` vẽ trạng thái đã san. `so` phải là SỐ, không
    phải chuỗi — bộ vẽ có gọi `sum(so)`.
-5. **`day_so` ghi nhãn hàng là "số"** — sai nghĩa khi hàng ấy không phải số của đề.
+6. **`day_so` ghi nhãn hàng là "số"** — sai nghĩa khi hàng ấy không phải số của đề.
    Bài 21 vẽ dãy PHẦN LỆCH (−3 +3 +1 −1) mà nhãn vẫn ghi "số" thì bé đọc ra một dãy
    số không có trong đề nào cả. Nay khai `nhanHang` để đổi.
-6. **`giua()` ngắt dòng theo DẤU CÁCH**, nên `7/8 = 0,875` bị xẻ đôi giữa hai dòng.
+7. **`giua()` ngắt dòng theo DẤU CÁCH**, nên `7/8 = 0,875` bị xẻ đôi giữa hai dòng.
    Viết liền `7/8=0,875` thì mỗi phép là một cụm không tách được.
 
 Và một việc dọn: **rút lời xong thì `sinh_am.py` để lại clip mồ côi** — nó chỉ sinh

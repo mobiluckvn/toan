@@ -11460,7 +11460,142 @@ def kb5_tach_tang(b):
     ]
 
 
+def kb5_so_do_tong_hieu(b):
+    """L5·B25·M1 Sơ đồ đoạn thẳng — bớt trước, chia đôi, trả sau."""
+    return [
+        _c('bia', 'Biết tổng và hiệu thì tìm được hai số', so_bai(b),
+           loi=['Đề cho tổng và hiệu. Vẽ ra sơ đồ thì cách làm hiện ngay.']),
+        _c('de_toan', 'Đề bài', de='Tổng hai số là 50, hiệu hai số là 8. Tìm hai số',
+           loi=['Tổng hai số là năm mươi, hiệu hai số là tám.']),
+        _c('so_do_doan', 'Vẽ hai đoạn thẳng', be=21, lon=29,
+           nhanBe='số bé', nhanLon='số lớn', hienHieu=True, chuHieu='hiệu 8',
+           chuTong='tổng 50',
+           chuPhu='Số lớn = đoạn bé cộng thêm phần hơn.',
+           loi=['Vẽ hai đoạn. Số lớn bằng đoạn bé cộng thêm phần hơn.',
+                'Hai đoạn gộp lại đúng bằng tổng.']),
+        _c('y_toan', 'Nhịp 1 — BỚT phần hơn ra khỏi tổng',
+           '50 − 8 = 42   →   nay hai đoạn bằng nhau', buoc=1, soBuoc=3,
+           loi=['Nhịp một, bớt phần hơn ra khỏi tổng. Năm mươi trừ tám còn bốn mươi '
+                'hai.',
+                'Nay hai đoạn bằng nhau.']),
+        _c('y_toan', 'Nhịp 2 — chia đôi', '42 : 2 = 21   →   đó là số bé',
+           buoc=2, soBuoc=3,
+           loi=['Nhịp hai, chia đôi. Bốn mươi hai chia hai được hai mươi mốt, đó là số '
+                'bé.']),
+        _c('y_toan', 'Nhịp 3 — TRẢ phần hơn cho số lớn', '21 + 8 = 29',
+           buoc=3, soBuoc=3,
+           loi=['Nhịp ba, trả phần hơn về cho số lớn. Hai mươi mốt cộng tám được hai '
+                'mươi chín.']),
+        _c('so_do_doan', 'Còn một đường nữa, cũng về một đáp', be=21, lon=29,
+           nhanBe='số bé', nhanLon='số lớn', themVaoBe=True, chuTong='tổng 50',
+           chuPhu='Bù thêm 8 vào tổng thì cả hai đoạn đều bằng đoạn lớn.',
+           loi=['Còn một đường nữa. Bù thêm tám vào tổng thì cả hai đoạn đều bằng đoạn '
+                'lớn.',
+                'Năm mươi tám chia hai, cũng ra hai mươi chín.']),
+        _c('de_toan', 'Một bẫy hay sập', de='Chia đôi trước rồi cộng thẳng: 25 + 8 = 33',
+           loi=['Một bẫy hay sập. Chia đôi trước rồi cộng thẳng tám vào, ra ba mươi '
+                'ba.']),
+        _c('cong_thuc', 'Phần hơn phải mọc từ BÊN TRONG tổng',
+           congThuc='bé = (tổng − hiệu) : 2          ·          lớn = (tổng + hiệu) : 2',
+           thay='33 và 17 qua được trạm tổng, nhưng hiệu ra 16 — gấp đôi đề',
+           loi=['Ba mươi ba với mười bảy cộng lại đúng năm mươi, nhưng hiệu ra mười '
+                'sáu, gấp đôi đề.',
+                'Con nhớ ba nhịp. Bớt trước, chia đôi, rồi trả sau.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tong_hieu_thap_phan(b):
+    """L5·B25·M2 Tổng hiệu trên số thập phân, và phép thử HAI trạm."""
+    return [
+        _c('bia', 'Dấu phẩy KHÔNG đổi luật', so_bai(b),
+           loi=['Số thập phân trông đáng ngại, nhưng máy vẫn là máy cũ.']),
+        _c('de_toan', 'Đề bài', de='Tổng hai số là 9,5 và hiệu hai số là 1,3',
+           loi=['Tổng hai số là chín phẩy năm, hiệu hai số là một phẩy ba.']),
+        _c('y_toan', 'Cặp công thức y nguyên',
+           'lớn = (tổng + hiệu) : 2      ·      bé = (tổng − hiệu) : 2',
+           buoc=1, soBuoc=3,
+           loi=['Cặp công thức y nguyên như với số tự nhiên. Dấu phẩy không đổi luật '
+                'nào cả.',
+                'Chỉ có hai chỗ phải cẩn thận hơn một chút.']),
+        _c('y_toan', 'Chỉ đòi THẲNG HÀNG dấu phẩy khi cộng trừ',
+           '9,5 + 1,3 = 10,8      →      10,8 : 2 = 5,4', buoc=2, soBuoc=3,
+           loi=['Chỉ đòi thẳng hàng dấu phẩy khi cộng trừ.',
+                'Chín phẩy năm cộng một phẩy ba được mười phẩy tám, chia hai được năm '
+                'phẩy bốn.']),
+        _c('y_toan', 'Rồi lấy tổng trừ ra số bé', '9,5 − 5,4 = 4,1', buoc=3, soBuoc=3,
+           loi=['Rồi lấy tổng trừ số lớn, được bốn phẩy một.']),
+        _c('so_do_doan', 'Sơ đồ vẫn thế', be=41, lon=54, nhanBe='bé', nhanLon='lớn',
+           hienHieu=True, chuHieu='hiệu 1,3', chuTong='tổng 9,5',
+           chuPhu='Dấu phẩy không làm sơ đồ khác đi.',
+           loi=['Sơ đồ vẫn thế. Dấu phẩy không làm nó khác đi.',
+                'Đoạn lớn vẫn bằng đoạn bé cộng phần hơn, và hai đoạn gộp lại đúng '
+                'bằng tổng.']),
+        _c('de_toan', 'Vì sao đáp phải qua đủ HAI trạm',
+           de='Cặp 33 và 17:  trạm tổng 50 ✓  —  nhưng trạm hiệu ra 16 ✗',
+           loi=['Nhớ cặp ba mươi ba với mười bảy ở bài trước.',
+                'Nó lọt được trạm tổng, nhưng trạm hiệu tuýt còi ngay.']),
+        _c('cong_thuc', 'Hai đèn xanh mới xong bài',
+           congThuc='trạm TỔNG: 5,4 + 4,1 = 9,5 ✓    ·    trạm HIỆU: 5,4 − 4,1 = 1,3 ✓',
+           thay='đề chữ thì DỊCH trước: "số lớn nhất có hai chữ số" là 99',
+           loi=['Nên phải qua cả hai trạm mới yên tâm.',
+                'Và đề nói bằng chữ thì dịch ra số trước đã, rồi mới lắp công thức.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_khui_tong_hieu(b):
+    """L5·B25·M3 Tổng và hiệu biết trốn — trong chu vi, và trong lời khai."""
+    return [
+        _c('bia', 'Nhịp khó nhất là TÌM RA tổng và hiệu', so_bai(b),
+           loi=['Máy tính thì dễ. Khó là moi ra tổng và hiệu, vì chúng hay trốn.']),
+        _c('de_toan', 'Đề bài',
+           de='Hình chữ nhật chu vi 36 cm, chiều dài hơn chiều rộng 4 cm',
+           loi=['Hình chữ nhật có chu vi ba mươi sáu xăng ti mét, chiều dài hơn chiều '
+                'rộng bốn.']),
+        _c('y_toan', 'Chu vi là đi CẢ VÒNG',
+           'chu vi = (dài + rộng) × 2   →   tổng dài rộng chỉ là NỬA vòng',
+           buoc=1, soBuoc=4,
+           loi=['Chu vi là đi cả vòng, tức hai lần dài cộng hai lần rộng.',
+                'Còn tổng dài với rộng chỉ là nửa vòng thôi.']),
+        _c('y_toan', 'Nên tổng bằng chu vi chia đôi', '36 : 2 = 18 cm',
+           buoc=2, soBuoc=4,
+           loi=['Nên tổng bằng chu vi chia đôi, là mười tám.']),
+        _c('so_do_doan', 'Nay mới lắp được cặp công thức', be=7, lon=11,
+           nhanBe='rộng', nhanLon='dài', hienHieu=True, chuHieu='hơn 4 cm',
+           chuTong='18 cm', chuPhu='Có tổng và hiệu rồi thì máy cũ chạy được.',
+           loi=['Có tổng và hiệu rồi thì máy cũ chạy được.']),
+        _c('y_toan', 'Chạy máy rồi trả lại vòng mà kiểm',
+           'dài = (18 + 4) : 2 = 11 cm   ·   rộng = 7 cm   ·   (11 + 7) × 2 = 36 ✓',
+           buoc=3, soBuoc=4,
+           loi=['Chiều dài bằng mười tám cộng bốn chia hai, là mười một. Chiều rộng '
+                'bảy.',
+                'Kiểm lại, mười một cộng bảy nhân hai, đúng ba mươi sáu.']),
+        _c('de_toan', 'Hiệu cũng biết trốn trong LỜI KHAI',
+           de='Tổng 51.  "Thêm 5 vào số bé thì hai số bằng nhau"',
+           loi=['Hiệu cũng biết trốn trong lời khai. Thêm năm vào số bé thì hai số '
+                'bằng nhau.']),
+        _c('y_toan', 'Dịch lời khai ấy ra thành HIỆU',
+           'số bé kém số lớn đúng 5   →   hiệu = 5   →   23 và 28', buoc=4, soBuoc=4,
+           loi=['Câu ấy có nghĩa là số bé kém số lớn đúng năm, tức hiệu bằng năm.',
+                'Máy chạy ra hai mươi ba và hai mươi tám. Diễn lại lời khai thì khớp.']),
+        _c('cong_thuc', 'Hai câu cần nhớ',
+           congThuc='chu vi là CẢ VÒNG — tổng chỉ NỬA vòng',
+           thay='còn "chuyển k sang bên kia thì bằng nhau" thì hiệu = 2 × k',
+           loi=['Con nhớ hai câu. Chu vi là cả vòng, tổng chỉ nửa vòng.',
+                'Và lời khai chuyển qua bên kia thì bằng nhau cho hiệu gấp đôi, vì một '
+                'bên mất một bên được.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B25.M1': kb5_so_do_tong_hieu,
+    'DL:KSN5Q1.B25.M2': kb5_tong_hieu_thap_phan,
+    'DL:KSN5Q1.B25.M3': kb5_khui_tong_hieu,
     'DL:KSN5Q1.B24.M1': kb5_gop_nhieu_nhom,
     'DL:KSN5Q1.B24.M2': kb5_don_ganh_lech,
     'DL:KSN5Q1.B24.M3': kb5_tach_tang,
