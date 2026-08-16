@@ -34,20 +34,7 @@
   "kidText": "Nhân dây chuyền phân số thì mẫu anh trước gặp tử anh sau là triệt tiêu. Chỉ tử đầu và mẫu cuối sống sót."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Dây chuyền $\\frac{a}{b}$ × $\\frac{b}{c}$ × $\\frac{c}{d}$: mẫu của phân số trước TRÙNG tử của phân số sau → rút chéo từng cặp — cuối cùng chỉ còn TỬ ĐẦU / MẪU CUỐI ($\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$ = $\\frac{2}{5}$)."
-   },
-   {
-    "id": "K2",
-    "text": "Trước khi rút phải DÒ MỘT LƯỢT: mẫu anh trước có ĐÚNG BẰNG tử anh sau không? Thiếu một mắt xích ($\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{5}{6}$: mắt 4–5 đứt) là KHÔNG rút xuyên qua được — chỉ rút những cặp thật sự trùng."
-   },
-   {
-    "id": "K3",
-    "text": "Sống sót xong vẫn phải DỌN (nghi thức Bài 14): $\\frac{2}{10}$ rút về $\\frac{1}{5}$ — đáp số luôn tối giản."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: DÂY CHUYỀN XÔ NƯỚC chữa cháy. Mỗi phân số là một người: tay TRÁI (tử) nhận xô, tay PHẢI (mẫu) chuyền đi. Người 2/3 chuyền cho người 3/4: tay phải số 3 trao đúng tay trái số 3 — xô lướt qua, hai số 3 tự xóa nhau! Chuyền suốt hàng: mọi cặp giữa tan biến, chỉ còn tay trái người ĐẦU (2) và tay phải người CUỐI (5): 2/5. Nhưng đội trưởng luôn DÒ DÂY trước hiệu lệnh: nếu người 3/4 đứng cạnh người 5/6 — tay phải 4 chìa ra mà tay trái bên kia là 5 — mắt xích ĐỨT: xô đổ tung tóe, ai trùng người nấy rút, tuyệt đối không rút xuyên chỗ đứt.",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "$\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{5}{6}$ = $\\frac{5}{12}$ (tính tay kiểm: $\\frac{30}{72}$ = $\\frac{5}{12}$) ≠ $\\frac{2}{6}$."
    }
   ],
-  "vocabulary": [
-   "dây chuyền xô nước",
-   "tay trái (tử) – tay phải (mẫu)",
-   "mắt xích trùng",
-   "dò dây một lượt",
-   "đứt là dừng tay"
-  ],
-  "mantra": "RÚT CHÉO CẦN DÂY LIỀN — ĐỨT MỘT MẮT LÀ DỪNG TAY!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -106,61 +87,6 @@
  },
  "lecture": {
   "screens": [
-   {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Tính bằng rút gọn chéo: $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$.",
-    "display": {
-     "type": "story_panel",
-     "caption": "$\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{4}{5}$ — 15 giây!"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để chuyền xô!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1"
-    ],
-    "narration": "Hàng chuyền xô: người $\\frac{2}{3}$ tay phải cầm số 3, người $\\frac{3}{4}$ tay trái cũng số 3 — xô lướt qua, HAI SỐ 3 TỰ XÓA! Tiếp: số 4 phải gặp số 4 trái — xóa! Cả dây tan biến các cặp giữa, chỉ còn tay trái người đầu — số 2 — và tay phải người cuối — số 5: HAI PHẦN NĂM. Kiểm tay: $\\frac{24}{60}$ = $\\frac{2}{5}$ ✓ — dây chuyền không ăn gian!",
-    "display": {
-     "type": "bucket_chain_interactive",
-     "spec": {
-      "chain": [
-       "2/3",
-       "3/4",
-       "4/5"
-      ],
-      "matches": [
-       [
-        3,
-        3
-       ],
-       [
-        4,
-        4
-       ]
-      ],
-      "survivors": [
-       2,
-       5
-      ],
-      "answer": "2/5"
-     }
-    },
-    "interaction": {
-     "type": "pass_buckets",
-     "answerKey": {
-      "value": "2/5"
-     },
-     "successMessage": "Chỉ tử đầu và mẫu cuối sống sót: 2/5!"
-    }
-   },
    {
     "id": "C1",
     "kind": "checkpoint",
@@ -183,46 +109,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 40,
-    "teaches": [
-     "K2"
-    ],
-    "narration": "Cáo Đề trà trộn vào hàng: $\\frac{2}{3}$ × $\\frac{3}{4}$ × $\\frac{5}{6}$ — Trí Long rút ào ào như mọi khi! Đội trưởng Su Kem hô DỪNG: dò dây đã! Số 3 gặp số 3 — khớp. Nhưng tay phải số 4 chìa ra… tay trái bên kia là số 5: MẮT ĐỨT! Chỉ rút cặp 3: còn $\\frac{2}{4}$ nhân $\\frac{5}{6}$ — một phần hai nhân năm phần sáu bằng NĂM PHẦN MƯỜI HAI. Rút xuyên chỗ đứt là xô đổ tung tóe!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "rút ào: \"2/6\"",
-       "output": "✗ xô đổ",
-       "valid": false,
-       "reason": "4 ≠ 5 — mắt đứt"
-      },
-      {
-       "input": "dò dây: chỉ rút cặp 3 → 5/12",
-       "output": "✓",
-       "valid": true,
-       "reason": "kiểm tay 30/72 = 5/12"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: rút chéo cần dây liền — đứt một mắt là dừng tay!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐỨT MỘT MẮT LÀ DỪNG TAY!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -527,115 +413,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B15.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "2/3 × 3/4 × 4/5 — 15 giây!",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "2/3 × 3/4 × 4/5 trong 15 giây á? Để tớ quy đồng ba mẫu số đã!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B15_M1_F1.png",
-   "sha256_16": "0b8ca07132a37590"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "rút ào: \"2/6\""
-     ],
-     "result": "xô đổ"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "dò dây: chỉ rút cặp 3 → 5/12"
-     ],
-     "result": ""
-    },
-    "verdict": "kiểm tay 30/72 = 5/12"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B15_M1_F2.png",
-   "sha256_16": "c6e5fea8cd52258d"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "text": "Dây chuyền a/b × b/c × c/d rút thế nào? Nghi thức trước khi rút?",
-      "tone": "navy"
-     },
-     {
-      "label": "Trước khi rút phải DÒ MỘT LƯỢT",
-      "text": "mẫu anh trước có ĐÚNG BẰNG tử anh sau không? Thiếu một mắt xích (2/3 × 3/4 × 5/6: mắt 4–5 đứt) là KHÔNG rút xuyên qua được — chỉ rút những cặp thật sự trùng.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "RÚT CHÉO CẦN DÂY LIỀN — ĐỨT MỘT MẮT LÀ DỪNG TAY!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B15_M1_F3.png",
-   "sha256_16": "7c231d3c7bc6391a"
-  },
-  {
-   "archetype": "chain_cancel",
-   "params": {
-    "title": "DÂY CHUYỀN RÚT CHÉO: 2/3 × 3/4 × 4/5",
-    "terms": [
-     "2",
-     "3",
-     "3",
-     "4",
-     "4",
-     "5"
-    ],
-    "cancel": [
-     1,
-     2,
-     3,
-     4
-    ],
-    "survive": [
-     0,
-     5
-    ],
-    "cancel_note": "mẫu anh trước gặp tử anh sau: 3–3 ✓ 4–4 ✓",
-    "result": "chỉ tử ĐẦU 2 và mẫu CUỐI 5 sống sót → 2/5",
-    "note": "Phải DÒ DÂY xem có liền không rồi mới rút"
-   },
-   "caption": "Dây liền thì cả khúc giữa triệt tiêu, hai đầu sống sót",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B15_M1_F4.png",
-   "sha256_16": "15525ea366a7f63e"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B40"
@@ -646,5 +424,8 @@
   "canCu": "chuDe",
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
+ },
+ "video": {
+  "giang": "DL_KSN5Q1_B15_M1_giang.mp4"
  }
 }

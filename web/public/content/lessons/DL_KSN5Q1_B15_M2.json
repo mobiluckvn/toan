@@ -36,24 +36,7 @@
   "kidText": "Con tính được tích dài toàn những ngoặc dạng 1 trừ một phân số — soi dấu trước đã. Nhân toàn số bé hơn 1 thì kết quả teo dần, đừng ngờ."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Quy mỗi ngoặc về MỘT phân số trước: ($1 - 1$/n) = (n − 1)/n; ($1 + 1$/n) = (n + 1)/n — rồi mới xếp dây chuyền."
-   },
-   {
-    "id": "K2",
-    "text": "Họ dấu TRỪ: (1 − $\\frac{1}{2}$)(1 − $\\frac{1}{3}$)…($1 - 1$/n) = $\\frac{1}{2}$ × $\\frac{2}{3}$ × … × (n−1)/n — dây chuyền liền: còn $\\frac{1}{n}$. Kết quả NHỎ kinh ngạc nhưng đúng."
-   },
-   {
-    "id": "K3",
-    "text": "Họ dấu CỘNG: (1 + $\\frac{1}{2}$)…($1 + 1$/n) = $\\frac{3}{2}$ × $\\frac{4}{3}$ × … × (n+1)/n — kẻ sống sót ĐỔI VAI: mẫu đầu (2) và tử cuối (n + 1): đáp (n + 1)/2."
-   },
-   {
-    "id": "K4",
-    "text": "TIN kết quả nhỏ bằng lý lẽ: mỗi thừa số ($1 - 1$/n) đều BÉ HƠN 1 — mỗi lần nhân tích lại teo đi một chút; nhân nhiều thừa số bé hơn 1 thì nhỏ là chuyện đương nhiên, không cần hoảng loạn tính tay lại."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: HAI ĐOÀN TÀU NGƯỢC CHIỀU cùng một nhà ga. Đoàn DẤU TRỪ: mỗi toa (1 − 1/n) hóa thành (n−1)/n — toa 1/2, 2/3, 3/4… móc nối răng khớp răng, sập chuyền chỉ còn TỬ ĐẦU 1 và MẪU CUỐI n: đáp 1/n — đoàn tàu CO LẠI vì mỗi toa đều bé hơn 1, nhân một lần là bị 'cắn' bớt một miếng. Đoàn DẤU CỘNG: toa (1 + 1/n) thành (n+1)/n — 3/2, 4/3, 5/4… vẫn sập chuyền nhưng kẻ sống sót ĐỔI VAI: mẫu đầu 2 và tử cuối n + 1 — đoàn tàu NỞ RA. Cáo Đề chỉ cần tráo MỘT DẤU là hai đoàn đổi hướng hoàn toàn: nghi thức nhà ga — SOI DẤU trước, sập chuyền sau!",
   "canonicalExamples": [
    {
@@ -90,14 +73,8 @@
     "counterExample": "$\\frac{1}{2}$ × $\\frac{2}{3}$ = $\\frac{1}{3}$ < $\\frac{1}{2}$: mới hai thừa số đã teo rồi."
    }
   ],
-  "vocabulary": [
-   "hai đoàn tàu ngược chiều",
-   "toa co lại / toa nở ra",
-   "sống sót đổi vai",
-   "soi dấu trước",
-   "cú cắn của thừa số bé hơn 1"
-  ],
-  "mantra": "SOI DẤU TRƯỚC — SẬP CHUYỀN SAU; NHÂN SỐ BÉ HƠN 1 THÌ TÍCH TEO DẦN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -124,58 +101,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Tính: (1 − $\\frac{1}{2}$) × (1 − $\\frac{1}{3}$) × … × (1 − $\\frac{1}{10}$).",
-    "display": {
-     "type": "story_panel",
-     "caption": "đổi mỗi cái dấu… vẫn $\\frac{1}{9}$?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để soi dấu!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 48,
-    "teaches": [
-     "K1",
-     "K2",
-     "K3"
-    ],
-    "narration": "Soi dấu, quy từng toa! Đoàn TRỪ: mỗi toa ($1 - 1$/n) thành (n−1)/n — nửa, hai phần ba, ba phần tư… móc răng khớp răng, sập chuyền: còn MỘT PHẦN CHÍN — đoàn co lại. Đoàn CỘNG: toa thành (n+1)/n — ba phần hai, bốn phần ba… vẫn sập, nhưng sống sót ĐỔI VAI: mẫu đầu 2 và tử cuối 10 — đáp MƯỜI PHẦN HAI bằng NĂM: đoàn nở ra! Một dấu đổi — một trời khác.",
-    "display": {
-     "type": "two_trains_interactive",
-     "spec": {
-      "minus": {
-       "cars": [
-        "1/2",
-        "2/3",
-        "…",
-        "8/9"
-       ],
-       "result": "1/9"
-      },
-      "plus": {
-       "cars": [
-        "3/2",
-        "4/3",
-        "…",
-        "10/9"
-       ],
-       "result": "10/2 = 5"
-      }
-     }
-    },
-    "interaction": {
-     "type": "run_both_trains",
-     "successMessage": "Trừ → 1/9 (co lại) · Cộng → 5 (nở ra): soi dấu trước!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 16,
@@ -196,37 +121,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K4"
-    ],
-    "narration": "Đáp $\\frac{1}{10}$ vừa hiện, Trí Long hoảng: \"chín thừa số nhân nhau mà bé thế — chắc sai, tính tay lại!\" Su Kem giữ tay bạn: nhìn lý lẽ đã! Mỗi thừa số họ trừ đều BÉ HƠN 1 — nhân một lần là tích bị cắn bớt một miếng: nửa nhân hai phần ba đã teo còn một phần ba rồi. Chín thừa số — chín cú cắn: nhỏ là dấu hiệu ĐÚNG! Bài sư phụ 2026 thừa số cũng vậy: đáp một phần hai nghìn không trăm hai sáu — tin bằng lý lẽ, không tin bằng nhân tay!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "(1 − 1/n) < 1 → mỗi lần nhân: TEO",
-      "1/2 × 2/3 = 1/3 — hai thừa số đã teo",
-      "B đến 1/2026 → đáp 1/2026: ĐÚNG!"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: soi dấu trước — sập chuyền sau; nhân số bé hơn một thì tích teo dần!",
-    "display": {
-     "type": "mantra_card",
-     "text": "SOI DẤU TRƯỚC — SẬP CHUYỀN SAU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -603,110 +497,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B15.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "đổi mỗi cái dấu… vẫn 1/9?",
-    "lines": [
-     {
-      "who": "Cáo Đề",
-      "say": "Câu nữa nào — chắc cũng 1/9 nhỉ?",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Câu hỏi mở bài",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B15_M2_F1.png",
-   "sha256_16": "db9919ed5fba455a"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Hai họ tích (1 − 1/n) và (1 + 1/n): soi dấu trước — sập chuyền sau",
-    "steps": [
-     {
-      "text": "(1 − 1/n) < 1 → mỗi lần nhân: TEO"
-     },
-     {
-      "text": "1/2 × 2/3 = 1/3 — hai thừa số đã teo"
-     },
-     {
-      "text": "B đến 1/2026 → đáp 1/2026: ĐÚNG!"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B15_M2_F2.png",
-   "sha256_16": "820fdf7013033e86"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Quy mỗi ngoặc về MỘT phân số trước",
-      "text": "(1 − 1/n) = (n − 1)/n; (1 + 1/n) = (n + 1)/n — rồi mới xếp dây chuyền.",
-      "tone": "navy"
-     },
-     {
-      "label": "Họ dấu TRỪ",
-      "text": "(1 − 1/2)(1 − 1/3)…(1 − 1/n) = 1/2 × 2/3 × … × (n−1)/n — dây chuyền liền: còn 1/n. Kết quả NHỎ kinh ngạc nhưng đúng.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "SOI DẤU TRƯỚC — SẬP CHUYỀN SAU; NHÂN SỐ BÉ HƠN 1 THÌ TÍCH TEO DẦN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B15_M2_F3.png",
-   "sha256_16": "feb1634c56e436fa"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "HAI HỌ TÍCH — SOI DẤU TRƯỚC RỒI MỚI SẬP CHUYỀN",
-    "neutral": true,
-    "wrong": {
-     "head": "HỌ DẤU TRỪ",
-     "steps": [
-      "(1 − 1/2)…(1 − 1/10)",
-      "= 1/2 × 2/3 × … × 9/10"
-     ],
-     "result": "= 1/10"
-    },
-    "right": {
-     "head": "HỌ DẤU CỘNG",
-     "steps": [
-      "(1 + 1/2)…(1 + 1/9)",
-      "= 3/2 × 4/3 × … × 10/9"
-     ],
-     "result": "= 10/2 = 5"
-    },
-    "verdict": "Họ trừ còn 1/n · họ cộng còn (n + 1)/2 — hai kết quả trái ngược"
-   },
-   "caption": "Chỉ khác một dấu mà một bên teo lại, một bên phình ra",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B15_M2_F4.png",
-   "sha256_16": "b1121e3faa09896a"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B40"
@@ -718,5 +509,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Hai họ tích ($1 - 1$/n) và ($1 + 1$/n): soi dấu trước — sập chuyền sau"
+ "titleDay": "Hai họ tích ($1 - 1$/n) và ($1 + 1$/n): soi dấu trước — sập chuyền sau",
+ "video": {
+  "giang": "DL_KSN5Q1_B15_M2_giang.mp4"
+ }
 }

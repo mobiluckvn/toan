@@ -10155,7 +10155,126 @@ def kb5_day_nua_dan(b):
     ]
 
 
+def kb5_rut_cheo_day_chuyen(b):
+    """L5·B15·M1 Rút chéo dây chuyền — cần dây liền mạch."""
+    return [
+        _c('bia', 'Nhân một dây phân số', so_bai(b),
+           loi=['Nhân ba phân số nối nhau. Có cách khỏi phải quy đồng.']),
+        _c('de_toan', 'Đề bài', de='2/3 × 3/4 × 4/5',
+           loi=['Hai phần ba, nhân ba phần tư, nhân bốn phần năm.']),
+        _c('y_toan', 'Xếp chúng thành một hàng rồi soi',
+           'mẫu của anh trước TRÙNG tử của anh sau', buoc=1, soBuoc=3,
+           loi=['Xếp chúng thành một hàng rồi soi. Mẫu của anh trước trùng tử của anh '
+                'sau.']),
+        _c('y_toan', 'Hai số trùng nhau thì tự xoá',
+           'số 3 gặp số 3 — xoá  ·  số 4 gặp số 4 — xoá', buoc=2, soBuoc=3,
+           loi=['Hai số trùng nhau thì tự xoá. Số ba gặp số ba, xoá. Số bốn gặp số '
+                'bốn, xoá.']),
+        _c('phan_so', 'Chỉ tử ĐẦU và mẫu CUỐI sống sót', tu=2, mau=5,
+           nhan='đáp số', chuPhu='2/3 × 3/4 × 4/5 = 2/5',
+           chuCuoi='Cả hàng giữa triệt tiêu hết.',
+           loi=['Chỉ tử đầu và mẫu cuối sống sót. Đáp số là hai phần năm.']),
+        _c('y_toan', 'Nhưng dây phải LIỀN MẠCH', '2/3 × 3/4 × 5/6 — số 4 gặp số 5',
+           buoc=3, soBuoc=3,
+           loi=['Nhưng dây phải liền mạch. Xem dãy này. Số ba gặp số ba thì xoá được.',
+                'Nhưng số bốn gặp số năm, không xoá được. Dây đứt ở đó.']),
+        _c('y_toan', 'Đứt một mắt là DỪNG TAY',
+           'phần trước mắt đứt rút được  ·  phần sau phải tính thường',
+           loi=['Đứt một mắt là dừng tay ngay. Phần trước mắt đứt rút được, phần sau '
+                'phải tính như thường.',
+                'Rút ào cả dây là sai từ chỗ đứt.']),
+        _c('cong_thuc', 'Nghi thức, và đừng quên dọn',
+           congThuc='DÒ dây một lượt  →  rút chéo  →  DỌN tối giản',
+           thay='rút xong ra 2/10 thì vẫn phải rút tiếp về 1/5',
+           loi=['Con nhớ nghi thức. Dò dây một lượt trước, rồi mới rút chéo, rồi dọn '
+                'tối giản.',
+                'Rút xong ra hai phần mười thì vẫn phải rút tiếp về một phần năm.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_hai_ho_tich(b):
+    """L5·B15·M2 Họ dấu trừ co lại, họ dấu cộng nở ra."""
+    return [
+        _c('bia', 'Một dấu đổi cả kết quả', so_bai(b),
+           loi=['Cùng một dãy ngoặc, đổi dấu trừ thành dấu cộng là kết quả khác hẳn.']),
+        _c('y_toan', 'Quy mỗi ngoặc về MỘT phân số trước đã',
+           '1 − 1/n = (n−1)/n   ·   1 + 1/n = (n+1)/n', buoc=1, soBuoc=3,
+           loi=['Quy mỗi ngoặc về một phân số trước đã.',
+                'Một trừ một phần en-nờ thành en-nờ trừ một, trên en-nờ.']),
+        _c('phan_so', 'Họ dấu TRỪ: 1/2 × 2/3 × … × 8/9', tu=1, mau=9,
+           nhan='đáp số', chuPhu='Dây liền mạch, sập chuyền còn 1/9.',
+           loi=['Họ dấu trừ cho dãy một phần hai, nhân hai phần ba, và cứ thế.',
+                'Dây liền mạch nên sập chuyền, còn một phần chín.']),
+        _c('phan_so', 'Họ dấu CỘNG: 3/2 × 4/3 × … × 10/9', tu=5, mau=1,
+           nhan='đáp số', chuPhu='Kẻ sống sót ĐỔI VAI: mẫu đầu và tử cuối  →  10/2 = 5.',
+           loi=['Họ dấu cộng cho dãy ba phần hai, nhân bốn phần ba, và cứ thế.',
+                'Kẻ sống sót đổi vai. Nay là mẫu đầu và tử cuối, được mười trên hai, '
+                'bằng năm.']),
+        _c('y_toan', 'Một đoàn CO lại, một đoàn NỞ ra', '1/9  ·  và  5',
+           buoc=3, soBuoc=3,
+           loi=['Một đoàn co lại, một đoàn nở ra. Cùng chín cái ngoặc.']),
+        _c('y_toan', 'Đáp số bé quá — có sai không?',
+           'chín thừa số nhân nhau mà chỉ ra 1/9',
+           loi=['Nhiều bạn hoảng. Chín thừa số nhân nhau mà chỉ ra một phần chín, chắc '
+                'sai.']),
+        _c('cong_thuc', 'Tin bằng lý lẽ, không tin bằng cảm giác',
+           congThuc='mỗi thừa số (1 − 1/n) đều BÉ HƠN 1',
+           thay='nhân với số bé hơn 1 thì tích teo đi — nhân càng nhiều càng teo',
+           loi=['Tin bằng lý lẽ chứ đừng tin bằng cảm giác. Mỗi thừa số họ trừ đều bé '
+                'hơn một.',
+                'Nhân với số bé hơn một thì tích teo đi. Nhân càng nhiều càng teo.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_rut_nguyen_cum(b):
+    """L5·B15·M3 Gom từng tầng rồi rút nguyên cụm."""
+    return [
+        _c('bia', 'Tử và mẫu đều là một tổng', so_bai(b),
+           loi=['Tử và mẫu đều là tổng của nhiều tích. Rút thế nào cho đúng.']),
+        _c('de_toan', 'Đề bài', de='(1×2 + 2×4 + 3×6) / (2×3 + 4×6 + 6×9)',
+           loi=['Trên là một nhân hai, cộng hai nhân bốn, cộng ba nhân sáu.',
+                'Dưới là hai nhân ba, cộng bốn nhân sáu, cộng sáu nhân chín.']),
+        _c('y_toan', 'Chớ gạch chéo ngay — trong TỔNG chưa gom thì CẤM gạch',
+           'gạch số 2 trên với số 2 dưới là sai hẳn', buoc=1, soBuoc=3,
+           loi=['Chớ gạch chéo ngay. Trong một tổng chưa gom thì cấm gạch.']),
+        _c('y_toan', 'Gom thừa số chung của TỬ trước',
+           '1×2 = 2×1  ·  2×4 = 2×4  ·  3×6 = 2×9   →   tử = 2 × (1 + 4 + 9)',
+           buoc=2, soBuoc=3,
+           loi=['Gom thừa số chung của tử trước. Mỗi số hạng đều có một thừa số hai.',
+                'Nên tử bằng hai nhân, mở ngoặc, một cộng bốn cộng chín.']),
+        _c('y_toan', 'Rồi gom MẪU y hệt',
+           '2×3 = 6×1  ·  4×6 = 6×4  ·  6×9 = 6×9   →   mẫu = 6 × (1 + 4 + 9)',
+           buoc=3, soBuoc=3,
+           loi=['Rồi gom mẫu y hệt. Mỗi số hạng đều có một thừa số sáu.',
+                'Nên mẫu bằng sáu nhân, mở ngoặc, một cộng bốn cộng chín.']),
+        _c('phan_so', 'Nay lộ ra CỤM CHUNG giống hệt nhau', tu=1, mau=3,
+           nhan='đáp số', chuPhu='Cụm (1 + 4 + 9) ở cả trên lẫn dưới — rút nguyên cụm.',
+           chuCuoi='Còn 2/6, dọn tối giản thành 1/3.',
+           loi=['Nay lộ ra cụm chung giống hệt nhau ở cả trên lẫn dưới.',
+                'Rút nguyên cụm ấy đi như rút một thừa số, còn hai phần sáu.',
+                'Dọn tối giản thành một phần ba.']),
+        _c('y_toan', 'Luật an toàn', 'cụm phải giống hệt ở TỪNG số hạng mới được rút',
+           loi=['Luật an toàn. Cụm phải giống hệt ở từng số hạng mới được rút.',
+                'Lệch một số hạng là khác bộ lõi, cấm rút.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='GOM từng tầng  →  RÚT nguyên cụm',
+           thay='trong tổng chưa gom thì cấm gạch — đó là chỗ hỏng nặng nhất',
+           loi=['Con nhớ câu này. Gom từng tầng rồi mới rút nguyên cụm.',
+                'Trong tổng chưa gom thì cấm gạch. Đó là chỗ hỏng nặng nhất của '
+                'dạng này.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B15.M1': kb5_rut_cheo_day_chuyen,
+    'DL:KSN5Q1.B15.M2': kb5_hai_ho_tich,
+    'DL:KSN5Q1.B15.M3': kb5_rut_nguyen_cum,
     'DL:KSN5Q1.B14.M1': kb5_cu_sap_domino,
     'DL:KSN5Q1.B14.M2': kb5_doi_chieu_tu_va_khoang,
     'DL:KSN5Q1.B14.M3': kb5_day_nua_dan,
