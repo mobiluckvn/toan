@@ -10792,7 +10792,139 @@ def kb5_chan_hai_bo(b):
     ]
 
 
+def kb5_ti_so_an(b):
+    """L5·B20·M1 Tỉ số ẩn — quy đồng TỬ, rồi mẫu của ai là phần của người ấy."""
+    return [
+        _c('bia', 'Phân số trong đề KHÔNG phải tỉ số của đáp', so_bai(b),
+           loi=['Đề cho hai phân số, nhưng chúng nói về hai thứ khác nhau.']),
+        _c('de_toan', 'Đề bài', de='2/3 của A  =  3/4 của B.   Tìm tỉ số A và B',
+           loi=['Hai phần ba của A bằng ba phần tư của B. Tìm tỉ số của A và B.']),
+        _c('y_toan', 'Hai phân số ấy đo trên HAI thứ khác nhau',
+           'một cái đo trên A, một cái đo trên B  →  không so thẳng được',
+           buoc=1, soBuoc=4,
+           loi=['Một phân số đo trên A, một phân số đo trên B. Không lấy thẳng chúng '
+                'làm tỉ số được.']),
+        _c('y_toan', 'Nhịp 1 — quy đồng TỬ cho hai bên bằng nhau về LƯỢNG',
+           '2/3 = 6/9   ·   3/4 = 6/8   →   6 phần của A  =  6 phần của B',
+           buoc=2, soBuoc=4,
+           loi=['Quy đồng tử, cho hai bên cùng lấy sáu phần.',
+                'Hai phần ba thành sáu phần chín, ba phần tư thành sáu phần tám.']),
+        _c('y_toan', 'Nhịp 2 — chia cả hai cho 6 thì còn MỘT phần mỗi bên',
+           '1/9 của A  =  1/8 của B   →   hai phần ấy BẰNG NHAU', buoc=3, soBuoc=4,
+           loi=['Chia cả hai cho sáu. Một phần chín của A bằng một phần tám của B, nên '
+                'hai phần ấy bằng nhau.']),
+        _c('so_do_doan', 'Vẽ ra thì thấy ngay', lon=9, be=8,
+           phanLon=9, phanBe=8, nhanLon='A', nhanBe='B',
+           chuPhu='Mọi ô bằng nhau — A gồm 9 ô, B gồm 8 ô.',
+           loi=['Vẽ ra thì thấy ngay. A chia chín ô, B chia tám ô, mà mọi ô bằng '
+                'nhau.']),
+        _c('y_toan', 'Nhịp 3 — THỬ SỐ để chắc không lộn chiều',
+           'A = 9 và B = 8  →  2/3 của 9 = 6  ·  3/4 của 8 = 6  ✓', buoc=4, soBuoc=4,
+           loi=['Thử số cho chắc. Lấy A bằng chín và B bằng tám.',
+                'Hai phần ba của chín được sáu, ba phần tư của tám cũng được sáu. Khớp.']),
+        _c('cong_thuc', 'Mẫu của ai là phần của người ấy',
+           congThuc='cùng TỬ rồi thì  A : B  =  mẫu A : mẫu B  =  9 : 8',
+           thay='lấy thẳng 2 : 3 hay lộn thành 8 : 9 thì thử số là lệch ngay',
+           loi=['Con nhớ câu này. Cùng tử rồi thì mẫu của ai là phần của người ấy.',
+                'Lấy thẳng phân số của đề, hay lộn chiều, thì thử số là lệch ngay.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_ti_so_voi_tong_hieu(b):
+    """L5·B20·M2 Có tỉ số rồi thì tổng chia tổng phần, hiệu chia hiệu phần."""
+    return [
+        _c('bia', 'Có tỉ số rồi thì ghép với tổng hoặc hiệu', so_bai(b),
+           loi=['Bài trước tìm ra tỉ số. Nay ghép nó với tổng hoặc hiệu là ra hai '
+                'số.']),
+        _c('de_toan', 'Đề bài', de='2/3 của A = 3/4 của B,  và  A + B = 34',
+           loi=['Hai phần ba của A bằng ba phần tư của B, và A cộng B bằng ba mươi '
+                'tư.']),
+        _c('so_do_doan', 'Bài trước cho A gồm 9 ô, B gồm 8 ô', lon=9, be=8,
+           phanLon=9, phanBe=8, nhanLon='A', nhanBe='B', chuTong='tổng 34',
+           chuPhu='Đếm cả hai băng: 9 + 8 = 17 ô bằng nhau.',
+           loi=['Bài trước cho A chín ô, B tám ô. Đếm cả hai băng thì được mười bảy ô '
+                'bằng nhau.']),
+        _c('y_toan', 'Cho TỔNG thì chia cho TỔNG số ô',
+           '34 : 17 = 2   →   mỗi ô đáng 2', buoc=1, soBuoc=3,
+           loi=['Cho tổng thì chia cho tổng số ô. Ba mươi tư chia mười bảy được hai.']),
+        _c('y_toan', 'Nhân ngược ra hai số', 'A = 9 × 2 = 18   ·   B = 8 × 2 = 16',
+           buoc=2, soBuoc=3,
+           loi=['Nhân ngược lại. A bằng chín nhân hai, là mười tám. B bằng tám nhân '
+                'hai, là mười sáu.']),
+        _c('y_toan', 'Thử về ĐỀ GỐC, không chỉ thử tổng',
+           '2/3 của 18 = 12   ·   3/4 của 16 = 12  ✓   ·   18 + 16 = 34  ✓',
+           buoc=3, soBuoc=3,
+           loi=['Thử về đề gốc. Hai phần ba của mười tám bằng mười hai, ba phần tư của '
+                'mười sáu cũng mười hai.']),
+        _c('de_toan', 'Đề cho HIỆU thì đổi thước',
+           de='1/2 của A = 1/3 của B,  và  B hơn A 5 đơn vị',
+           loi=['Đề khác. Một phần hai của A bằng một phần ba của B, và B hơn A năm '
+                'đơn vị.',
+                'Lần này hai phân số đã cùng tử sẵn, nên A gồm hai ô còn B gồm ba ô.']),
+        _c('so_do_doan', 'B nhô ra đúng MỘT ô', be=2, lon=3, phanBe=2, phanLon=3,
+           nhanBe='A', nhanLon='B', hienHieu=True, chuHieu='hiệu 5',
+           chuPhu='Chỗ nhô ra là 1 ô — nên một ô đáng 5.',
+           loi=['B nhô ra đúng một ô, mà chỗ nhô ra ấy bằng năm. Nên một ô đáng năm.',
+                'A hai ô là mười, B ba ô là mười lăm.']),
+        _c('cong_thuc', 'Một câu cho cả hai cửa',
+           congThuc='cho TỔNG → chia TỔNG số ô   ·   cho HIỆU → chia HIỆU số ô',
+           thay='chia nhầm sang cửa kia là ra số lẻ, hoặc ra số vô lý',
+           loi=['Con nhớ câu này. Cho tổng thì chia tổng số ô, cho hiệu thì chia hiệu '
+                'số ô.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_them_khong_la_gap_muoi(b):
+    """L5·B20·M3 Viết thêm chữ số 0 là gấp 10 — tổng chia 11, hiệu chia 9."""
+    return [
+        _c('bia', 'Viết thêm chữ số 0 vào bên phải', so_bai(b),
+           loi=['Thêm một chữ số không vào bên phải. Số ấy đi về đâu.']),
+        _c('bang_hang', 'Thêm 0 thì mọi chữ số DỌN SANG TRÁI một hàng', so='120',
+           toSang=[0], chuPhu='Số 12 thêm 0 thành 120 — chữ số 0 vào ở hàng đơn vị.',
+           loi=['Thêm chữ số không vào bên phải thì mọi chữ số dọn sang trái một hàng.',
+                'Số mười hai thành một trăm hai mươi.']),
+        _c('y_toan', 'Nên thêm 0 là GẤP 10, không phải cộng 10',
+           '12 thêm 0 → 120  (gấp 10)     ·     12 + 10 = 22  (chẳng mọc số 0 nào)',
+           buoc=1, soBuoc=3,
+           loi=['Nên thêm chữ số không là gấp mười lần, chứ không phải cộng mười.',
+                'Cộng mười thì chỉ ra hai mươi hai, chẳng có chữ số không nào mọc '
+                'thêm.']),
+        _c('de_toan', 'Dùng vào bài tổng', de='A + B = 132, và B là A viết thêm 0',
+           loi=['A cộng B bằng một trăm ba mươi hai, và B là A viết thêm chữ số '
+                'không.']),
+        _c('so_do_doan', 'B gấp 10 lần A', be=1, lon=10, phanBe=1, phanLon=10,
+           nhanBe='A', nhanLon='B', chuTong='tổng 132',
+           chuPhu='A một ô, B mười ô — cả thảy 11 ô.',
+           loi=['B gấp mười lần A, nên A một ô còn B mười ô. Cả thảy mười một ô.']),
+        _c('y_toan', 'Cho TỔNG thì chia 11', '132 : 11 = 12   →   A = 12 · B = 120',
+           buoc=2, soBuoc=3,
+           loi=['Cho tổng thì chia mười một. Một trăm ba mươi hai chia mười một được '
+                'mười hai.',
+                'Vậy A bằng mười hai, B bằng một trăm hai mươi. Thử lại thì đúng.']),
+        _c('y_toan', 'Cho HIỆU thì chia 9', '10 − 1 = 9 ô   →   phần = hiệu : 9',
+           buoc=3, soBuoc=3,
+           loi=['Cho hiệu thì đổi thước. Mười ô trừ một ô còn chín ô, nên chia cho '
+                'chín.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='thêm 0 là GẤP 10   ·   tổng chia 11   ·   hiệu chia 9',
+           thay='thử lại bằng cách viết thêm 0 vào số bé, xem có ra đúng số lớn không',
+           loi=['Con nhớ ba câu. Thêm không là gấp mười, tổng chia mười một, hiệu chia '
+                'chín.',
+                'Và thử lại bằng cách viết thêm không vào số bé, xem có ra đúng số lớn '
+                'không.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B20.M1': kb5_ti_so_an,
+    'DL:KSN5Q1.B20.M2': kb5_ti_so_voi_tong_hieu,
+    'DL:KSN5Q1.B20.M3': kb5_them_khong_la_gap_muoi,
     'DL:KSN5Q1.B19.M1': kb5_chieu_bien_thien,
     'DL:KSN5Q1.B19.M2': kb5_ai_dung_im,
     'DL:KSN5Q1.B19.M3': kb5_chan_hai_bo,
