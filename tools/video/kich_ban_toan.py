@@ -14732,6 +14732,146 @@ def kb5_ban_kinh_gap_k(b):
     ]
 
 
+def kb5_the_tich_gap_k(b):
+    """L5·B52·M1 Thể tích là sức chứa, và bộ ba gấp k đếm theo SỐ CHIỀU."""
+    return [
+        _c('bia', 'Thể tích hình hộp và bộ ba gấp k', so_bai(b),
+           loi=['Cạnh lập phương gấp đôi thì thể tích gấp mấy?',
+                'Đáp gấp đôi là trượt, mà đáp gấp bốn cũng trượt.']),
+        _c('khoi', 'Thể tích là SỨC CHỨA: xếp khối đơn vị cho đầy hộp',
+           kieu='tang', dai=8, rong=5, cao=4,
+           chuPhu='Mỗi lớp 8 × 5 = 40 khối · xếp 4 lớp',
+           chuCuoi='V = 8 × 5 × 4 = 160 dm³',
+           loi=['Thể tích là sức chứa. Xếp viên đường một đề xi mét khối vào bể cho '
+                'đầy.',
+                'Một hàng dài tám viên, năm hàng thành một lớp, tức bốn mươi viên mỗi '
+                'lớp.',
+                'Chồng bốn lớp thì được một trăm sáu mươi.']),
+        _c('y_toan', 'Nên thể tích là ba số nhân với nhau',
+           'V = dài × rộng × cao   ·   lập phương: cạnh × cạnh × cạnh = 3 × 3 × 3 = 27',
+           buoc=1, soBuoc=3,
+           loi=['Nên thể tích là ba số nhân với nhau. Lập phương thì ba số ấy đều là '
+                'cạnh.']),
+        _c('y_toan', 'Đề xi mét khối bắt tay với lít',
+           'một đề-xi-mét khối = một lít   →   bể 160 dm³ chứa tối đa 160 lít',
+           buoc=2, soBuoc=3,
+           loi=['Một đề xi mét khối đúng bằng một lít, nên bể ấy chứa tối đa một trăm '
+                'sáu mươi lít.']),
+        # Vẽ theo tầng chứ KHÔNG theo lối `chong`: hộp hai nhân hai nhân hai vẽ đặc
+        # thì viên thứ tám nấp sau lưng, bé đếm ra bảy trong khi lời đọc nói tám —
+        # hình nói ngược lại đúng điều đang dạy. Tách tầng thì đếm được cả tám.
+        _c('khoi', 'Cạnh gấp đôi thì xếp được mấy viên?', kieu='tang',
+           dai=2, rong=2, cao=2,
+           chuPhu='Cạnh 1 chứa 1 viên · cạnh 2 chứa 2 × 2 × 2 = 8 viên',
+           loi=['Cạnh một thì chứa đúng một viên. Cạnh gấp đôi thì dài gấp đôi, rộng '
+                'gấp đôi, cao cũng gấp đôi.',
+                'Đếm ra tám viên chứ không phải hai.']),
+        _c('y_toan', 'Bộ ba gấp k: đếm xem công thức ăn MẤY chiều',
+           'chu vi 1 chiều × k   ·   diện tích 2 chiều × k × k   ·   thể tích 3 chiều × k × k × k',
+           buoc=3, soBuoc=3,
+           loi=['Nhớ theo số chiều thì khỏi lẫn. Chu vi chạy một chiều nên gấp ca.',
+                'Diện tích ăn hai chiều nên gấp ca nhân ca, thể tích ngốn ba chiều nên '
+                'gấp ca nhân ca nhân ca.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='một chiều gấp k — hai chiều gấp k × k — BA chiều gấp k × k × k',
+           thay='cạnh gấp 3: chu vi × 3, diện tích × 9, thể tích × 27',
+           loi=['Con nhớ câu này. Một chiều gấp ca, hai chiều gấp ca nhân ca, ba chiều '
+                'gấp ca nhân ca nhân ca.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_be_nuoc_vat_chim(b):
+    """L5·B52·M2 Bể là cái VỎ, nước mới là hiện trạng — và nước dâng trên đáy BỂ."""
+    return [
+        _c('bia', 'Bể nước và vật chìm', so_bai(b),
+           loi=['Bể một trăm sáu mươi lít đang đầy tám mươi phần trăm. Hỏi mực nước cao '
+                'bao nhiêu?',
+                'Vơ luôn một trăm sáu mươi đem chia cho đáy là hỏng ngay dòng đầu.']),
+        _c('y_toan', 'Bể là cái VỎ — nước mới là hiện trạng',
+           'V nước = V bể × phần đầy = 160 × 0,8 = 128 lít', buoc=1, soBuoc=3,
+           loi=['Một trăm sáu mươi là sức chứa của cái vỏ, không phải lượng nước đang '
+                'có.',
+                'Dòng đầu tiên luôn là lượng nước thật, một trăm sáu mươi nhân không '
+                'phẩy tám, được một trăm hai mươi tám.']),
+        _c('y_toan', 'Nước trải đều nên chia cho diện tích đáy',
+           'cao mực nước = V nước : S đáy = 128 : (8 × 5) = 3,2 dm', buoc=2, soBuoc=3,
+           loi=['Nước trải đều trên đáy, nên mực nước bằng lượng nước chia cho diện '
+                'tích đáy, ba phẩy hai đề xi mét.']),
+        _c('hinh_cn', 'Thả hòn đá chìm hẳn: nước dâng trên KHẮP đáy bể',
+           dai=8, rong=5, oVuong=True, nhanDai='đáy bể 8 × 5 = 40 ô',
+           chuPhu='Lớp nước dâng là tấm bánh mỏng phủ TRỌN 40 ô ấy.',
+           chuCuoi='V đá = 40 × 0,5 = 20 dm³',
+           loi=['Thả hòn đá chìm hẳn thì nước dâng lên, nhưng dâng đều khắp đáy bể chứ '
+                'không nhô riêng chỗ hòn đá.',
+                'Lớp nước dâng là một tấm bánh mỏng phủ trọn bốn mươi ô đáy.']),
+        _c('y_toan', 'Nên nhân với đáy BỂ, đừng nhân với đáy hòn đá',
+           'V vật chìm = S đáy BỂ × độ dâng = 40 × 0,5 = 20 dm³', buoc=3, soBuoc=3,
+           loi=['Nên thể tích vật bằng diện tích đáy bể nhân độ dâng, hai mươi đề xi '
+                'mét khối.',
+                'Nhân với đáy hòn đá là sai, vì nước có dâng riêng ở đó đâu.']),
+        _c('hinh_cn', 'Đổ nước sang bể khác thì nước GIỮ NGUYÊN',
+           dai=10, rong=6, oVuong=True, nhanDai='đáy bể B 10 × 6 = 60 ô',
+           chuPhu='Nước 120 dm³ chỉ đổi nhà, không mất đi.',
+           chuCuoi='cao mới = 120 : 60 = 2 dm',
+           loi=['Đổ nước từ bể này sang bể khác thì lượng nước giữ nguyên, chỉ có cái '
+                'nhà là đổi.',
+                'Một trăm hai mươi chia sáu mươi, mực nước mới là hai đề xi mét.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='bể là cái VỎ — nước mới là hiện trạng; nước dâng trên đáy BỂ',
+           thay='bể 160 lít đầy 0,8 → nước 128; đá dâng 0,5 → V đá = 40 × 0,5 = 20 dm³',
+           loi=['Con nhớ câu này. Bể là cái vỏ, nước mới là hiện trạng, và nước dâng '
+                'trên đáy bể.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_khoi_son_may_mat(b):
+    """L5·B52·M3 Sơn dính theo CHỖ NGỒI, và phép soi tổng tự chấm."""
+    return [
+        _c('bia', 'Khối sơn: ba, hai, một và không mặt', so_bai(b),
+           loi=['Khối lớn sơn kín mặt ngoài rồi xẻ thành hai mươi bảy khối nhỏ.',
+                'Bốc từng khối ra đếm thì phải hai mươi bảy lượt, mà vẫn dễ sót.']),
+        _c('khoi', 'Sơn dính theo CHỖ NGỒI của khối nhỏ', kieu='chong',
+           dai=3, rong=3, cao=3,
+           chuPhu='Góc · gờ · giữa mặt · lõi — bốn chỗ ngồi khác nhau',
+           loi=['Không cần bốc ra. Sơn dính bao nhiêu mặt là do khối nhỏ ngồi ở đâu.',
+                'Có bốn chỗ ngồi: góc, gờ, giữa mặt, và lõi nằm sâu bên trong.']),
+        _c('y_toan', 'Khối ngồi ĐỈNH phơi ba mặt — và luôn có tám đỉnh',
+           'hình hộp nào cũng đúng 8 đỉnh   →   LUÔN 8 khối ba mặt, với mọi n',
+           buoc=1, soBuoc=3,
+           loi=['Khối ngồi ở đỉnh phơi ba mặt ra ngoài. Hình hộp nào cũng đúng tám '
+                'đỉnh.',
+                'Nên số khối ba mặt luôn là tám, khối lớn cỡ nào cũng vậy.']),
+        _c('y_toan', 'Ba chỗ ngồi còn lại đều đếm theo n trừ hai',
+           'cạnh: 12 × (n−2)   ·   giữa mặt: 6 × (n−2) × (n−2)   ·   lõi: (n−2) × (n−2) × (n−2)',
+           buoc=2, soBuoc=3,
+           loi=['Ba chỗ còn lại đều đếm theo en trừ hai, tức là bỏ hai đầu đi.',
+                'Mười hai cạnh, sáu mặt, còn lõi là một khối nhỏ hơn nằm gọn bên '
+                'trong.']),
+        _c('day_so', 'Phép SOI TỔNG tự chấm', so=['8', '12', '6', '1'],
+           nhanHang='ba · hai · một · lõi',
+           chuPhu='Cộng lại phải bằng n × n × n = 27. Khớp.',
+           loi=['Có một phép tự chấm rất gọn. Bốn loại cộng lại phải bằng số khối nhỏ, '
+                'ở đây là hai mươi bảy.']),
+        _c('y_toan', 'Thử với khối bốn, rồi giải ngược',
+           '8 + 24 + 24 + 8 = 64 ✓   ·   biết 24 khối hai mặt → 12 × (n−2) = 24 → n = 4',
+           buoc=3, soBuoc=3,
+           loi=['Khối bốn thì tám, hai tư, hai tư, tám, cộng lại sáu mươi tư, khớp.',
+                'Đề cho ngược cũng lần ra được: hai mươi bốn khối hai mặt thì en trừ '
+                'hai bằng hai, nên en bằng bốn.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='đỉnh luôn 8 — cạnh, mặt, lõi đếm theo (n−2); soi tổng bằng n × n × n',
+           thay='n = 4: 8 + 24 + 24 + 8 = 64 — lệch một khối là đã đếm sót',
+           loi=['Con nhớ câu này. Đỉnh luôn tám, ba loại kia đếm theo en trừ hai, rồi '
+                'soi tổng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 def kb5_tam_ao_hinh_hop(b):
     """L5·B51·M1 Bốn mặt bên trải ra là MỘT tấm áo: chu vi đáy nhân cao."""
     return [
@@ -15004,6 +15144,9 @@ def kb5_banh_xe_lan(b):
 
 
 BO = {
+    'DL:KSN5Q1.B52.M1': kb5_the_tich_gap_k,
+    'DL:KSN5Q1.B52.M2': kb5_be_nuoc_vat_chim,
+    'DL:KSN5Q1.B52.M3': kb5_khoi_son_may_mat,
     'DL:KSN5Q1.B51.M1': kb5_tam_ao_hinh_hop,
     'DL:KSN5Q1.B51.M2': kb5_thung_khong_nap,
     'DL:KSN5Q1.B51.M3': kb5_quet_voi_can_phong,

@@ -7,17 +7,17 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **153/168** — bài 1 tới 51 |
-| Còn lại | 15 micro · 5 bài lớn · bài 52 tới 56 |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 51 chưa deploy** |
+| Đã xong | **156/168** — bài 1 tới 52, **hết chương 13** |
+| Còn lại | 12 micro · 4 bài lớn · bài 53 tới 56 — chương 14, chương CUỐI |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 52 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
-## Mở đầu buổi sau: làm bài 52
+## Mở đầu buổi sau: làm bài 53
 
-Chương 13 (hình tròn · hình hộp) gồm bài 49–52; đã xong bài 49 · 50 · 51. Bài 52 là
-**thể tích hình hộp & bộ ba gấp k** — hết chương 13. Rồi chương 14 (bài 53–56,
-chuyển động) là chương CUỐI của quyển. Chạy đúng nhịp bảy bước ở dưới.
+Chương 13 XONG. Còn đúng **chương 14 — chương cuối của quyển**: bài 53 (Tam giác
+V-S-T và bài sớm–muộn) · 54 (Đuổi kịp và gặp nhau) · 55 (Chuyển động trên đường
+vòng) · 56 (Tàu dài qua mốc và qua cầu). Chạy đúng nhịp bảy bước ở dưới.
 
 ```bash
 git -C /Users/v/Documents/Code/web5/repo log --oneline -3   # commit cuối: deploy chương 8
@@ -32,7 +32,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**15**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**12**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 32 lần)
 
@@ -156,7 +156,12 @@ MỚI không được nợ — thêm một cái vượt 70 giây là cổng đ�
    `dayBe`, cách đáy LỚN một phần `dayLon` — tức nằm GẦN đáy bé hơn.
 8. **`tam_giac` cho `dinh` ra ngoài khoảng 0–1** thì chân đường cao rơi ngoài đáy và
    bộ vẽ tự kéo dài đáy bằng nét đứt — đúng ca tam giác tù, chỗ bé hay hoảng nhất.
-9. **`khoi` có `kieu='ao'` — bốn mặt bên trải thành MỘT hàng** (thêm 17-08 cho bài
+9. **Hộp vẽ đặc thì có viên NẤP SAU LƯNG.** `khoi` lối `chong` vẽ hai nhân hai
+   nhân hai ra bảy viên nhìn thấy được — viên thứ tám khuất. Lời đọc nói tám mà bé
+   đếm ra bảy là hình nói ngược lời (bài 52 M1, bắt được khi rút khung hình). Bài
+   nào cần bé ĐẾM ĐỦ thì vẽ lối `tang`; lối `chong` để dành cho bài cần thấy khối
+   ĐẶC, ví dụ bài sơn mặt ngoài — ở đó lõi khuất mới đúng ý.
+10. **`khoi` có `kieu='ao'` — bốn mặt bên trải thành MỘT hàng** (thêm 17-08 cho bài
    51). Nhánh `trai` bày sáu mặt theo hình chữ thập, đúng cái hộp nhưng KHÔNG kể
    được điều bài dạy: chiều dài tấm áo bằng chu vi đáy. `ao` xếp trước · hông · sau
    · hông liền nhau rồi kẻ ngoặc đo suốt. `hangNap` bày thêm nắp và đáy rời;
@@ -164,12 +169,12 @@ MỚI không được nợ — thêm một cái vượt 70 giây là cổng đ�
    là "KHÔNG có" — hợp thùng không nắp, nhưng SÀN phòng thì vẫn có, chỉ không quét;
    để mặc định ở đấy là hình nói sai. Tên mặt bị gạch đặt DƯỚI ô, vì đặt vào giữa
    thì hai vạch chéo cắt nát chữ (bắt được khi rút khung hình bài 51 M2).
-10. **`hinh_tron` khai `rTrong` (tỉ lệ 0–1) thì vẽ thêm vòng trong** — cảnh vành khăn
+11. **`hinh_tron` khai `rTrong` (tỉ lệ 0–1) thì vẽ thêm vòng trong** — cảnh vành khăn
    của bài 50. Khai bằng TỈ chứ không phải bán kính thật, để hai vòng chung một
    thước; khai bán kính thật là hai vòng vẽ theo hai thang, hình nói dối.
-11. **`so_do_ven` chỉ vẽ được HAI vòng** — bài Ven BA vòng (bài 44 M2) không có hình,
+12. **`so_do_ven` chỉ vẽ được HAI vòng** — bài Ven BA vòng (bài 44 M2) không có hình,
    phải diễn bằng công thức. Đừng bịa hình ba vòng.
-12. **`giua()` ngắt dòng theo DẤU CÁCH**, nên `7/8 = 0,875` bị xẻ đôi giữa hai dòng.
+13. **`giua()` ngắt dòng theo DẤU CÁCH**, nên `7/8 = 0,875` bị xẻ đôi giữa hai dòng.
    Viết liền `7/8=0,875` thì mỗi phép là một cụm không tách được.
 
 Và một việc dọn: **rút lời xong thì `sinh_am.py` để lại clip mồ côi** — nó chỉ sinh

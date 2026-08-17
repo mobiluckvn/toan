@@ -36,24 +36,7 @@
   "kidText": "Bể là cái vỏ, nước mới là hiện trạng — dòng đầu con luôn viết \"V nước = …\". Vật chìm làm nước dâng đều trên đáy BỂ."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bể là cái VỎ — nước mới là HIỆN TRẠNG: nghi thức chụp ảnh — dòng đầu luôn \"V nước = V bể × phần đầy\": bể 160 lít đầy 80% → V nước = $160  \\times  0,8 = 128$ lít (lấy 160 đi tính tiếp là tả cái vỏ, không tả nước)."
-   },
-   {
-    "id": "K2",
-    "text": "Cao mực nước = V nước : S đáy bể = 128 : ($8  \\times  5$) = 3,2 dm — nước trải đều trên đáy."
-   },
-   {
-    "id": "K3",
-    "text": "Vật CHÌM HẲN: nước dâng ĐỀU trên khắp ĐÁY BỂ → V vật = S đáy BỂ × độ dâng = ($8  \\times  5$) × $0,5 = 20$ dm³ — nhân với đáy HÒN ĐÁ là sai (nước có dâng riêng chỗ hòn đá đâu!); vật phải chìm hẳn mới kể đủ sự thật."
-   },
-   {
-    "id": "K4",
-    "text": "Đổ nước giữa hai bể: V nước GIỮ NGUYÊN (nước đổi nhà) — bể A $6  \\times  5  \\times  4$ đầy → V = 120 dm³; sang bể B đáy $10  \\times  6$: cao mới = $120 : 60 = 2$ dm."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: CHỤP ẢNH HIỆN TRẠNG VÀ MẶT NƯỚC THỀ. Bể một trăm sáu mươi lít ĐANG ĐẦY TÁM MƯƠI PHẦN TRĂM — hỏi mực nước. Trí Long vơ nguyên một trăm sáu mươi đi chia! Khoan — một trăm sáu mươi là cái VỎ bể: NƯỚC mới là hiện trạng! Nghi thức CHỤP ẢNH: dòng đầu tiên của bài luôn là tấm ảnh hiện trạng — V nước bằng một trăm sáu mươi nhân không phẩy tám: MỘT TRĂM HAI MƯƠI TÁM lít! Rồi mới hỏi cao: nước trải đều trên đáy tám-nhân-năm — một trăm hai tám chia bốn mươi: BA PHẨY HAI đề-xi-mét! Trận hai — thả hòn đá chìm hẳn, nước dâng nửa đề-xi-mét: thể tích đá? Nhìn MẶT NƯỚC mà thề: nước dâng ĐỀU trên KHẮP đáy BỂ — đâu có dâng riêng chỗ hòn đá! Lớp nước dâng là cái bánh mỏng phủ trọn đáy bể: V đá bằng S đáy BỂ nhân độ dâng — bốn mươi nhân không phẩy năm: HAI MƯƠI đề-xi-mét khối! Trận ba — đổ hết nước bể A sang bể B: nước chỉ ĐỔI NHÀ, thể tích GIỮ NGUYÊN một trăm hai mươi — đáy mới sáu mươi: cao mới HAI đề-xi-mét!",
   "canonicalExamples": [
    {
@@ -84,14 +67,8 @@
     "counterExample": "Nếu nước chỉ dâng riêng chỗ hòn đá thì mặt nước lồi cục u — múc thìa nước đổ vào có bao giờ nổi cục đâu!"
    }
   ],
-  "vocabulary": [
-   "chụp ảnh hiện trạng",
-   "bể là cái vỏ",
-   "mặt nước thề",
-   "lớp bánh mỏng phủ đáy",
-   "nước đổi nhà"
-  ],
-  "mantra": "BỂ LÀ CÁI VỎ — NƯỚC MỚI LÀ HIỆN TRẠNG; NƯỚC DÂNG TRÊN ĐÁY BỂ!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -113,48 +90,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Bể $8  \\times  5  \\times  4$ dm đang chứa nước đến 80% thể tích. Hỏi bể đang chứa bao nhiêu lít, và mực nước cao bao nhiêu dm?",
-    "display": {
-     "type": "story_panel",
-     "caption": "lấy nguyên 160 đi tính??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để chụp ảnh!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Nghi thức CHỤP ẢNH HIỆN TRẠNG: dòng đầu tiên của bài luôn là tấm ảnh — V nước bằng V bể nhân phần đầy: một trăm sáu mươi nhân không phẩy tám — MỘT TRĂM HAI MƯƠI TÁM lít! Rồi mới hỏi cao: nước trải đều trên đáy tám-nhân-năm bằng bốn mươi — một trăm hai tám chia bốn mươi: BA PHẨY HAI đề-xi-mét!",
-    "display": {
-     "type": "snapshot_interactive",
-     "spec": {
-      "photo": "ảnh hiện trạng: V nước = 160 × 0,8 = 128 lít",
-      "height": "cao = 128 : 40 = 3,2 dm",
-      "shell": "160 = cái vỏ ✗"
-     }
-    },
-    "interaction": {
-     "type": "snapshot_first",
-     "answerKey": {
-      "values": [
-       128,
-       3.2
-      ]
-     },
-     "successMessage": "Ảnh chụp: 128 lít → cao 3,2 dm!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -175,38 +110,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Thả hòn đá CHÌM HẲN — nước dâng nửa đề-xi-mét: nước dâng ĐỀU trên KHẮP đáy BỂ — đâu dâng riêng chỗ hòn đá thành cục u! Lớp nước dâng là cái bánh mỏng phủ trọn đáy: V đá bằng S đáy BỂ nhân độ dâng — bốn mươi nhân không phẩy năm: HAI MƯƠI đề-xi-mét khối! Trận ba — đổ hết nước bể A sang bể B: nước chỉ ĐỔI NHÀ, thể tích GIỮ NGUYÊN một trăm hai mươi; đáy mới mười-nhân-sáu bằng sáu mươi: cao mới HAI đề-xi-mét!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "đá: V = S đáy BỂ × dâng = 40 × 0,5 = 20",
-      "đổi nhà: V giữ 120 → cao B = 120 : 60 = 2",
-      "mặt nước dâng đều — không cục u"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: bể là cái vỏ — nước mới là hiện trạng; nước dâng trên đáy bể!",
-    "display": {
-     "type": "mantra_card",
-     "text": "CHỤP ẢNH NƯỚC — DÂNG TRÊN ĐÁY BỂ!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -502,136 +405,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B52.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "lấy nguyên 160 đi tính??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Bể 160 lít — lấy 160 chia cho diện tích đáy là ra mực nước chứ gì!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B52_M2_F1.png",
-   "sha256_16": "dd2ebcf581ba7187"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Bể nước chụp ảnh hiện trạng (V nước ≠ V bể) & vật chìm: V vật = S đáy BỂ × độ dâng",
-    "steps": [
-     {
-      "text": "đá: V = S đáy BỂ × dâng = 40 × 0,5 = 20"
-     },
-     {
-      "text": "đổi nhà: V giữ 120 → cao B = 120 : 60 = 2"
-     },
-     {
-      "text": "mặt nước dâng đều — không cục u"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B52_M2_F2.png",
-   "sha256_16": "fee5d71bc7eb3d96"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Bể là cái VỎ",
-      "text": "nước mới là HIỆN TRẠNG: nghi thức chụp ảnh — dòng đầu luôn \"V nước = V bể × phần đầy\": bể 160 lít đầy 80% → V nước = 160 × 0,8 = 128 lít (lấy 160 đi tính tiếp là tả cái vỏ, không tả nước).",
-      "tone": "navy"
-     },
-     {
-      "label": "Cao mực nước = V nước",
-      "text": "S đáy bể = 128 : (8 × 5) = 3,2 dm — nước trải đều trên đáy.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "BỂ LÀ CÁI VỎ — NƯỚC MỚI LÀ HIỆN TRẠNG; NƯỚC DÂNG TRÊN ĐÁY BỂ!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B52_M2_F3.png",
-   "sha256_16": "ada1e34300cfa375"
-  },
-  {
-   "archetype": "stack_compare",
-   "params": {
-    "title": "BỂ LÀ CÁI VỎ — NƯỚC MỚI LÀ HIỆN TRẠNG",
-    "cols": [
-     {
-      "tag": "bể 160 lít",
-      "total": 160,
-      "total_label": "V bể = 160",
-      "parts": [
-       {
-        "label": "nước 128 lít (80%)",
-        "val": 128,
-        "color": "water"
-       },
-       {
-        "label": "phần trống 32",
-        "val": 32,
-        "color": ""
-       }
-      ]
-     },
-     {
-      "tag": "thả hòn đá",
-      "total": 160,
-      "total_label": "dâng 0,5 dm",
-      "parts": [
-       {
-        "label": "nước 128 lít",
-        "val": 128,
-        "color": "water"
-       },
-       {
-        "label": "đá 20 dm³",
-        "val": 20,
-        "color": "anchor"
-       },
-       {
-        "label": "trống 12",
-        "val": 12,
-        "color": ""
-       }
-      ]
-     }
-    ],
-    "anchor_label": "V đá = S đáy BỂ × độ dâng = 40 × 0,5 = 20 dm³",
-    "formula": "V nước = 160 × 0,8 = 128 lít → cao nước = 128 : 40 = 3,2 dm",
-    "note": "Nước dâng ĐỀU trên khắp đáy bể — không dâng riêng chỗ hòn đá"
-   },
-   "caption": "Chụp ảnh hiện trạng trước: dòng đầu luôn là \"V nước = ...\"",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B52_M2_F4.png",
-   "sha256_16": "c1245957d162939f"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B46"
@@ -643,5 +417,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Bể nước chụp ảnh hiện trạng (V nước ≠ V bể) & vật chìm: V vật = S đáy BỂ × độ dâng"
+ "titleDay": "Bể nước chụp ảnh hiện trạng (V nước ≠ V bể) & vật chìm: V vật = S đáy BỂ × độ dâng",
+ "video": {
+  "giang": "DL_KSN5Q1_B52_M2_giang.mp4"
+ }
 }

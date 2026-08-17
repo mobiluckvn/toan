@@ -34,20 +34,7 @@
   "kidText": "Thể tích bằng dài nhân rộng nhân cao, và 1 dm³ đúng bằng 1 lít. Cạnh gấp đôi thì thể tích gấp tận 8 lần."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Thể tích là SỨC CHỨA — xếp khối 1 dm³ đầy hộp: V = dài × rộng × cao = $8  \\times  5  \\times  4 = 160$ dm³; lập phương: cạnh × cạnh × cạnh = $3  \\times  3  \\times  3 = 27$ dm³."
-   },
-   {
-    "id": "K2",
-    "text": "dm³ bắt tay lít: 1 dm³ = 1 lít → bể 160 dm³ chứa tối đa 160 lít nước."
-   },
-   {
-    "id": "K3",
-    "text": "Bộ ba gấp k một dòng — đếm số chiều trong công thức: chu vi (1 chiều) × k; diện tích (2 chiều) × k × k; THỂ TÍCH (3 chiều) × k × k × k: cạnh gấp 2 → chu vi mặt ×2, diện tích mặt ×4, V × 8 — leo thang từ hệ-số-kép B48 và đếm-chữ-r B49!"
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: XẾP KHỐI ĐƯỜNG VÀ CẦU THANG BA BƯỚC NHÂN. Thể tích là SỨC CHỨA: xếp những viên đường một đề-xi-mét khối vào bể — hàng dài TÁM viên, NĂM hàng một lớp, BỐN lớp chồng lên: tám nhân năm nhân bốn — MỘT TRĂM SÁU MƯƠI đề-xi-mét khối! Và đề-xi-mét khối bắt tay LÍT: một đề-xi-mét khối đúng một lít — bể chứa tối đa MỘT TRĂM SÁU MƯƠI lít! Lập phương cạnh ba: ba nhân ba nhân ba — HAI MƯƠI BẢY! Giờ bộ ba câu lừa kinh điển: cạnh gấp ĐÔI — thể tích gấp mấy? Trí Long lần lượt hô \"hai!\" rồi \"bốn!\" — đều trượt! Ghim BỘ BA một dòng bằng cách ĐẾM CHIỀU: chu vi chạy MỘT chiều — gấp k; diện tích ăn HAI chiều — gấp k nhân k; thể tích ngốn BA chiều: dài gấp đôi, rộng gấp đôi, CAO cũng gấp đôi — hai nhân hai nhân hai: TÁM! Cạnh đi một bước — chu vi một bước nhân, diện tích hai bước, thể tích BA BƯỚC NHÂN: cầu thang leo thẳng từ hệ-số-kép hình vuông và kính-lúp-đếm-r hình tròn!",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "Lập phương cạnh 1 chứa 1 viên đường; cạnh 2 xếp thử: $2  \\times  2  \\times  2 = 8$ viên — đếm tay là thấy tám!"
    }
   ],
-  "vocabulary": [
-   "xếp viên đường",
-   "sức chứa",
-   "dm³ bắt tay lít",
-   "đếm chiều mà gấp",
-   "ba bước nhân"
-  ],
-  "mantra": "MỘT CHIỀU GẤP k — BA CHIỀU GẤP k NHÂN k NHÂN k!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -107,45 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Bể hình hộp chữ nhật dài 8 dm, rộng 5 dm, cao 4 dm. Tính thể tích bể — bể chứa được tối đa bao nhiêu lít nước?",
-    "display": {
-     "type": "story_panel",
-     "caption": "cạnh ×2 → V ×2? ×4??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để xếp viên đường!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Thể tích là SỨC CHỨA — xếp viên đường một đề-xi-mét khối vào bể: hàng dài TÁM viên, NĂM hàng một lớp, BỐN lớp chồng: tám nhân năm nhân bốn — MỘT TRĂM SÁU MƯƠI đề-xi-mét khối! Và đề-xi-mét khối bắt tay LÍT: một đề-xi-mét khối đúng một lít — bể chứa tối đa MỘT TRĂM SÁU MƯƠI lít! Lập phương cạnh ba: ba nhân ba nhân ba — HAI MƯƠI BẢY đề-xi-mét khối!",
-    "display": {
-     "type": "sugar_cubes_interactive",
-     "spec": {
-      "stack": "8 viên × 5 hàng × 4 lớp = 160 dm³",
-      "handshake": "1 dm³ = 1 lít → 160 lít",
-      "cube": "3 × 3 × 3 = 27"
-     }
-    },
-    "interaction": {
-     "type": "stack_cubes",
-     "answerKey": {
-      "value": 160
-     },
-     "successMessage": "Xếp đầy 160 viên = 160 lít!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -161,46 +103,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 44,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Bộ ba gấp k — ghim một dòng bằng cách ĐẾM CHIỀU! Chu vi chạy MỘT chiều — gấp k; diện tích ăn HAI chiều — gấp k nhân k; thể tích ngốn BA chiều: dài gấp đôi, rộng gấp đôi, CAO cũng gấp đôi — hai nhân hai nhân hai: TÁM! Xếp tay kiểm chứng: cạnh một chứa MỘT viên đường — cạnh hai xếp được TÁM viên! Cầu thang leo thẳng: hệ-số-kép hình vuông hai bước — nay thể tích BA BƯỚC NHÂN!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "cạnh ×2 → V = 2×2×2",
-       "output": "✓ ×8 (đếm 8 viên)",
-       "valid": true,
-       "reason": "ba chiều ba bước"
-      },
-      {
-       "input": "V ×2 hay ×4",
-       "output": "✗ dừng giữa cầu thang",
-       "valid": false,
-       "reason": "thiếu bước nhân"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: một chiều gấp k — ba chiều gấp k nhân k nhân k!",
-    "display": {
-     "type": "mantra_card",
-     "text": "BA CHIỀU — BA BƯỚC NHÂN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -493,114 +395,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B52.M1",
- "figureSpec": [
-  {
-   "archetype": "solid_3d",
-   "params": {
-    "title": "",
-    "kind": "box",
-    "dims": {
-     "a": "dài 8 dm",
-     "b": "rộng 5 dm",
-     "c": "cao 4 dm"
-    },
-    "layers": 4,
-    "memo": [
-     "V = 8 × 5 × 4 = 160 dm³",
-     "1 dm³ = 1 lít",
-     "bể chứa 160 lít"
-    ],
-    "caption": "Hàng 8 viên · 5 hàng một lớp · 4 lớp chồng lên"
-   },
-   "caption": "Đề bài — số đo đã cho",
-   "id": "F0",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B52_M1_F0.png",
-   "sha256_16": "afce63fdc647ca83"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "V ×2 hay ×4"
-     ],
-     "result": "dừng giữa cầu thang"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "cạnh ×2 → V = 2×2×2"
-     ],
-     "result": "×8 (đếm 8 viên)"
-    },
-    "verdict": "ba chiều ba bước"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B52_M1_F2.png",
-   "sha256_16": "43fe5f445e9e3a22"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Thể tích là SỨC CHỨA",
-      "text": "xếp khối 1 dm³ đầy hộp: V = dài × rộng × cao = 8 × 5 × 4 = 160 dm³; lập phương: cạnh × cạnh × cạnh = 3 × 3 × 3 = 27 dm³.",
-      "tone": "navy"
-     },
-     {
-      "label": "dm³ bắt tay lít",
-      "text": "1 dm³ = 1 lít → bể 160 dm³ chứa tối đa 160…",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MỘT CHIỀU GẤP k — BA CHIỀU GẤP k NHÂN k NHÂN k!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B52_M1_F3.png",
-   "sha256_16": "32c8662993a9016c"
-  },
-  {
-   "archetype": "solid_3d",
-   "params": {
-    "title": "XẾP VIÊN ĐƯỜNG 1 dm³ ĐẦY BỂ",
-    "kind": "box",
-    "dims": {
-     "a": "dài 8 dm",
-     "b": "rộng 5 dm",
-     "c": "cao 4 dm"
-    },
-    "layers": 4,
-    "memo": [
-     "V = 8 × 5 × 4 = 160 dm³",
-     "1 dm³ = 1 lít",
-     "bể chứa 160 lít"
-    ],
-    "caption": "Hàng 8 viên · 5 hàng một lớp · 4 lớp chồng lên"
-   },
-   "caption": "Bộ ba gấp k: chu vi × k — diện tích × k × k — thể tích × k × k × k",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B52_M1_F4.png",
-   "sha256_16": "2835fd3d053a87ff"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B46"
@@ -612,5 +407,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "V = dài × rộng × cao · 1 dm³ = 1 lít — bộ ba gấp k: k — k×k — k×k×k"
+ "titleDay": "V = dài × rộng × cao · 1 dm³ = 1 lít — bộ ba gấp k: k — k×k — k×k×k",
+ "video": {
+  "giang": "DL_KSN5Q1_B52_M1_giang.mp4"
+ }
 }

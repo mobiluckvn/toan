@@ -32,24 +32,7 @@
   "kidText": "Khối lập phương sơn ngoài rồi xẻ nhỏ: đỉnh 3 mặt, cạnh 2 mặt, mặt 1 mặt, lõi 0 mặt. Cộng lại phải đúng bằng n nhân n nhân n."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Bản đồ vị trí — sơn dính theo CHỖ NGỒI: khối nằm ĐỈNH phơi 3 mặt — hình hộp nào cũng đúng 8 đỉnh → LUÔN 8 khối 3-mặt với mọi n; khối nằm CẠNH phơi 2 mặt — 12 cạnh, mỗi cạnh (n − 2) khối giữa → 12 × (n − 2)."
-   },
-   {
-    "id": "K2",
-    "text": "Khối nằm giữa MẶT phơi 1 mặt: 6 mặt × (n − 2)² mỗi mặt; khối LÕI kín mít 0 mặt: (n − 2)³ — củ hành bóc vỏ: lõi là khối (n − 2)³ thu nhỏ."
-   },
-   {
-    "id": "K3",
-    "text": "Nghi thức SOI TỔNG tự chấm: bốn loại cộng lại phải bằng n³: 3³: $8 + 12 + 6 + 1 = 27$ ✓; 4³: $8 + 24 + 24 + 8 = 64$ ✓ — lệch một khối là đếm sót."
-   },
-   {
-    "id": "K4",
-    "text": "Giải ngược của sư phụ: đúng 24 khối 2-mặt → 12 × (n − 2) = 24 → n − $2 = 2$ → n = 4 → tra bản đồ: $8 - 24 - 24 - 8$ (soi 64 ✓)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: BẢN ĐỒ CHỖ NGỒI TRONG RẠP SƠN. Khối lập phương ba-nhân-ba-nhân-ba sơn kín ngoài rồi xẻ thành hai mươi bảy khối nhỏ — sơn dính theo CHỖ NGỒI trong rạp! Ghế ĐỈNH — góc phòng phơi BA mặt: hình hộp nào cũng đúng TÁM đỉnh — luôn TÁM khối ba-mặt, bất kể n! Ghế CẠNH — gờ tường phơi HAI mặt: mười hai cạnh, mỗi cạnh trừ hai đầu đỉnh còn n-trừ-hai khối: ba-trừ-hai bằng một — MƯỜI HAI khối hai-mặt! Ghế MẶT — giữa tường phơi MỘT mặt: sáu mặt nhân n-trừ-hai bình phương — SÁU khối! Ghế LÕI — kín mít KHÔNG mặt: củ hành bóc vỏ còn lõi n-trừ-hai lập phương — MỘT khối! Nghi thức SOI TỔNG tự chấm: tám cộng mười hai cộng sáu cộng một — HAI MƯƠI BẢY: khớp n lập phương! Khối bốn: tám — hai tư — hai tư — tám: SOI sáu tư khớp! Sư phụ đố ngược: đúng hai mươi bốn khối hai-mặt — mười hai nhân n-trừ-hai bằng hai tư: n bằng BỐN!",
   "canonicalExamples": [
    {
@@ -80,14 +63,8 @@
     "counterExample": "Khối 100³ vẫn chỉ 8 góc nhà — đứng góc phòng nào cũng thấy đúng ba bức tường, và phòng chỉ có tám góc!"
    }
   ],
-  "vocabulary": [
-   "bản đồ chỗ ngồi",
-   "ghế đỉnh - cạnh - mặt - lõi",
-   "củ hành bóc vỏ",
-   "soi tổng tự chấm",
-   "lần ngược bản đồ"
-  ],
-  "mantra": "ĐỈNH 8 — CẠNH 12(n−2) — MẶT 6(n−2)² — LÕI (n−2)³: SOI TỔNG n³!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -109,51 +86,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Khối lập phương $3  \\times  3  \\times  3$ sơn kín ngoài rồi xẻ thành 27 khối nhỏ. Đếm số khối có 3 mặt, 2 mặt, 1 mặt, 0 mặt sơn.",
-    "display": {
-     "type": "story_panel",
-     "caption": "bốc 27 khối đếm tay??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để mở bản đồ!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Bản đồ chỗ ngồi trong rạp sơn! Ghế ĐỈNH — góc phòng phơi BA mặt: hình hộp nào cũng đúng TÁM đỉnh — luôn TÁM khối, bất kể n! Ghế CẠNH — gờ tường phơi HAI mặt: mười hai cạnh nhân n-trừ-hai — khối ba: MƯỜI HAI! Ghế MẶT giữa tường phơi MỘT mặt: sáu nhân n-trừ-hai bình phương — SÁU! Ghế LÕI kín mít: củ hành bóc vỏ còn lõi n-trừ-hai lập phương — MỘT!",
-    "display": {
-     "type": "seat_map_interactive",
-     "spec": {
-      "dinh": "đỉnh: 3 mặt — luôn 8",
-      "canh": "cạnh: 2 mặt — 12(n−2)",
-      "mat": "mặt: 1 mặt — 6(n−2)²",
-      "loi": "lõi: 0 mặt — (n−2)³"
-     }
-    },
-    "interaction": {
-     "type": "assign_seats",
-     "answerKey": {
-      "values": [
-       8,
-       12,
-       6,
-       1
-      ]
-     },
-     "successMessage": "Bản đồ 3³: 8 - 12 - 6 - 1!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -174,38 +106,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Nghi thức SOI TỔNG tự chấm: bốn loại cộng lại phải bằng n lập phương! Khối ba: tám cộng mười hai cộng sáu cộng một — HAI MƯƠI BẢY: khớp! Khối bốn: tám — hai tư — hai tư — tám: SOI sáu mươi tư — khớp! Lệch một khối là đếm sót ghế! Sư phụ đố NGƯỢC: xẻ ra đúng hai mươi bốn khối hai-mặt — tìm n: mười hai nhân n-trừ-hai bằng hai tư — n-trừ-hai bằng hai: n bằng BỐN, tra bản đồ tám — hai tư — hai tư — tám!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "soi 3³: 8+12+6+1 = 27 ✓ · 4³: 8+24+24+8 = 64 ✓",
-      "ngược: 12(n−2) = 24 → n = 4",
-      "lệch tổng = sót ghế"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 14,
-    "narration": "Câu cần nhớ: đỉnh tám — cạnh — mặt — lõi: soi tổng n lập phương!",
-    "display": {
-     "type": "mantra_card",
-     "text": "8 — 12(n−2) — 6(n−2)² — (n−2)³!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào kỳ sát hạch chương 13!"
     }
    }
   ]
@@ -548,150 +448,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B52.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "bốc 27 khối đếm tay??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "Khối 3 × 3 × 3 sơn kín ngoài, xẻ thành 27 khối nhỏ — khối nào dính mấy mặt sơn?",
-      "tone": "normal"
-     }
-    ]
-   },
-   "caption": "Câu hỏi mở bài",
-   "id": "F1",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B52_M3_F1.png",
-   "sha256_16": "8233f2f7aa813f87"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Khối sơn 3-2-1-0 mặt: 8 đỉnh — 12(n−2) cạnh — 6(n−2)² mặt — (n−2)³ lõi, soi tổng n³",
-    "steps": [
-     {
-      "text": "soi 3³: 8+12+6+1 = 27 · 4³: 8+24+24+8 = 64"
-     },
-     {
-      "text": "ngược: 12(n−2) = 24 → n = 4"
-     },
-     {
-      "text": "lệch tổng = sót ghế"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B52_M3_F2.png",
-   "sha256_16": "ebcc7ddad4c11191"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Bản đồ vị trí",
-      "text": "sơn dính theo CHỖ NGỒI: khối nằm ĐỈNH phơi 3 mặt — hình hộp nào cũng đúng 8 đỉnh → LUÔN 8 khối 3-mặt với mọi n; khối nằm CẠNH phơi 2 mặt — 12 cạnh, mỗi cạnh (n − 2) khối giữa → 12 × (n − 2).",
-      "tone": "navy"
-     },
-     {
-      "label": "Khối nằm giữa MẶT phơi 1 mặt",
-      "text": "6 mặt × (n − 2)² mỗi mặt; khối LÕI kín mít 0 mặt: (n − 2)³ — củ hành bóc vỏ: lõi là khối (n − 2)³ thu nhỏ.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "ĐỈNH 8 — CẠNH 12(n−2) — MẶT 6(n−2)² — LÕI (n−2)³: SOI TỔNG n³!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B52_M3_F3.png",
-   "sha256_16": "29a25b18cc48d744"
-  },
-  {
-   "archetype": "place_value_chart",
-   "params": {
-    "title": "BẢN ĐỒ CHỖ NGỒI TRONG RẠP SƠN",
-    "headers": [
-     "chỗ ngồi",
-     "số mặt sơn",
-     "công thức",
-     "khối 3³",
-     "khối 4³"
-    ],
-    "comma_after": null,
-    "rows": [
-     {
-      "label": "",
-      "cells": [
-       "ĐỈNH",
-       "3 mặt",
-       "luôn 8",
-       "8",
-       "8"
-      ],
-      "color": "#FFF4DF",
-      "highlight": [
-       2
-      ]
-     },
-     {
-      "label": "",
-      "cells": [
-       "CẠNH",
-       "2 mặt",
-       "12(n−2)",
-       "12",
-       "24"
-      ],
-      "color": "#E6FAF5"
-     },
-     {
-      "label": "",
-      "cells": [
-       "MẶT",
-       "1 mặt",
-       "6(n−2)²",
-       "6",
-       "24"
-      ],
-      "color": "white"
-     },
-     {
-      "label": "",
-      "cells": [
-       "LÕI",
-       "0 mặt",
-       "(n−2)³",
-       "1",
-       "8"
-      ],
-      "color": "#EAF2FB"
-     }
-    ],
-    "note": "SOI TỔNG tự chấm: 8 + 12 + 6 + 1 = 27 ✓ · 8 + 24 + 24 + 8 = 64 ✓"
-   },
-   "caption": "Khối 3 mặt LUÔN là 8 với mọi n — vì hình hộp nào cũng chỉ có 8 đỉnh",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B52_M3_F4.png",
-   "sha256_16": "c592a555d88e195c"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B46"
@@ -703,5 +460,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Khối sơn 3-2-1-0 mặt: 8 đỉnh — 12(n−2) cạnh — 6(n−2)² mặt — (n−2)³ lõi, soi tổng n³"
+ "titleDay": "Khối sơn 3-2-1-0 mặt: 8 đỉnh — 12(n−2) cạnh — 6(n−2)² mặt — (n−2)³ lõi, soi tổng n³",
+ "video": {
+  "giang": "DL_KSN5Q1_B52_M3_giang.mp4"
+ }
 }
