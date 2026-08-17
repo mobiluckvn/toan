@@ -14345,7 +14345,141 @@ def kb5_chuoi_ti_noi_tiep(b):
     ]
 
 
+def kb5_duong_phu_khai_sinh(b):
+    """L5·B47·M1 Kẻ thêm một nét — khai sinh một dòng."""
+    return [
+        _c('bia', 'Kẻ thêm đường thì phải khai báo', so_bai(b),
+           loi=['Vẽ thêm một nét vào hình là được. Nhưng phải khai báo đàng hoàng.']),
+        _c('de_toan', 'Đề bài',
+           de='Hình chữ nhật có S = 96 cm². Kẻ thêm đường để chia thành\nhai tam giác bằng nhau — trình bày đúng luật',
+           loi=['Hình chữ nhật có diện tích chín mươi sáu xăng ti mét vuông.',
+                'Kẻ thêm một đường để chia nó thành hai tam giác bằng nhau.']),
+        _c('hinh_cn', 'Nối hai đỉnh đối nhau', dai=12, rong=8, duongCheo=True,
+           nhanDai='12 cm', nhanRong='8 cm',
+           chuPhu='Đường chéo chia hình thành hai tam giác bằng nhau.',
+           chuCuoi='Mỗi tam giác 96 : 2 = 48 cm².',
+           loi=['Nối hai đỉnh đối nhau thì được đường chéo, và nó chia hình thành hai '
+                'tam giác bằng nhau.',
+                'Mỗi tam giác bốn mươi tám xăng ti mét vuông.']),
+        _c('y_toan', 'Nhưng nét ấy phải có GIẤY KHAI SINH',
+           'một dòng trong bài: "Nối A với C, ta được hai tam giác ABC và ACD"',
+           buoc=1, soBuoc=3,
+           loi=['Nhưng nét ấy phải có một dòng khai báo trong bài làm.',
+                'Kẻ chay mà không khai thì là hình vẽ lậu, mất điểm trình bày.']),
+        _c('de_toan', 'Một định lý con cưng của chương',
+           de='Đáy là một cạnh, ĐỈNH chạy bất kỳ trên cạnh đối diện',
+           loi=['Có một định lý con cưng của chương này. Đỉnh chạy bất kỳ trên cạnh đối '
+                'diện.']),
+        _c('y_toan', 'Đỉnh chạy thì tam giác đổi DÁNG, mà không đổi DIỆN TÍCH',
+           'đáy KHÔNG đổi   ·   cao luôn bằng chiều rộng   →   S = 96 : 2 = 48',
+           buoc=2, soBuoc=3,
+           loi=['Đỉnh chạy thì tam giác đổi dáng liên tục, lệch trái rồi lệch phải.',
+                'Nhưng đáy không đổi, mà cao luôn bằng chiều rộng, nên diện tích y '
+                'nguyên.']),
+        _c('y_toan', 'Đỉnh chạy trên đường SONG SONG với đáy',
+           'nên khoảng cách tới đáy không nhúc nhích', buoc=3, soBuoc=3,
+           loi=['Vì đỉnh chạy trên một đường song song với đáy, nên khoảng cách tới đáy '
+                'không nhúc nhích.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='kẻ thêm MỘT NÉT — khai sinh MỘT DÒNG',
+           thay='và nhớ định lý con cưng: đỉnh chạy trên cạnh đối diện thì S không đổi',
+           loi=['Con nhớ câu này. Kẻ thêm một nét thì khai sinh một dòng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_tong_tru_phan_trang(b):
+    """L5·B47·M2 Vu hồi bằng tổng trừ phần trắng; cộng hai hình thì hỏi mảnh dính đúp."""
+    return [
+        _c('bia', 'Mảnh khó tính thẳng thì đánh vòng', so_bai(b),
+           loi=['Có mảnh tính thẳng rất khó. Nhưng đánh vòng thì lại dễ.']),
+        _c('de_toan', 'Đề bài',
+           de='Hình chữ nhật S = 96 cm². M trung điểm cạnh trên, N trung điểm cạnh trái.\nTính diện tích mảnh ở giữa',
+           loi=['Hình chữ nhật diện tích chín mươi sáu. Hai điểm là trung điểm hai '
+                'cạnh.']),
+        _c('y_toan', 'Chiêu vu hồi: TỔNG trừ phần TRẮNG',
+           'mảnh đậm khó tính thẳng   →   ba mảnh trắng đều bám góc, ngoan ngoãn',
+           buoc=1, soBuoc=3,
+           loi=['Chiêu vu hồi. Mảnh đậm khó tính thẳng, nhưng ba mảnh trắng đều bám góc '
+                'nên rất ngoan.']),
+        _c('day_so', 'Ba mảnh trắng', so=['12', '24', '24'], nhanHang='phần trắng',
+           chuPhu='góc trên trái 1/8 tấm   ·   hai mảnh kia mỗi cái 1/4 tấm.',
+           loi=['Mảnh góc là nửa đáy nhân nửa cao chia hai, tức một phần tám tấm, được '
+                'mười hai.',
+                'Hai mảnh kia mỗi cái một phần tư tấm, hai mươi tư.']),
+        _c('y_toan', 'Lấy cả tấm trừ đi ba mảnh ấy',
+           '96 − 12 − 24 − 24 = 36 cm²', buoc=2, soBuoc=3,
+           loi=['Lấy cả tấm trừ đi ba mảnh trắng, mảnh ở giữa là ba mươi sáu.']),
+        _c('de_toan', 'Trận thứ hai: HAI hình CHỒNG mép',
+           de='Hai tấm bìa vuông 36 cm² chồng nhau, phần chung là vuông cạnh 2',
+           loi=['Trận thứ hai. Hai tấm bìa vuông chồng mép nhau, phần chung là một hình '
+                'vuông nhỏ.']),
+        _c('y_toan', 'Hỏi ngay: MẢNH NÀO đang bị cộng HAI LẦN?',
+           'tổng phủ = 36 + 36 − 4 = 68 cm²   ·   cộng thẳng ra 72 là phủ khống',
+           buoc=3, soBuoc=3,
+           loi=['Hỏi ngay mảnh nào đang bị cộng hai lần. Đó là phần chung, bốn xăng ti '
+                'mét vuông.',
+                'Cộng thẳng ra bảy mươi hai là phủ khống, phải trừ phần chung đi một '
+                'lần.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='cộng hai hình — hỏi ngay MẢNH NÀO DÍNH ĐÚP',
+           thay='đây chính là sơ đồ Ven của bài 44, đội mũ hình học',
+           loi=['Con nhớ câu này. Cộng hai hình thì hỏi ngay mảnh nào dính đúp.',
+                'Đây chính là sơ đồ Ven của bài bốn mươi tư, đội mũ hình học.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_doi_hinh_dat_phan(b):
+    """L5·B47·M3 Dời hình giữ nguyên S; đếm phần xong phải ĐỔI về đơn vị thật."""
+    return [
+        _c('bia', 'Xén một mảnh dời sang chỗ khác', so_bai(b),
+           loi=['Xén một mảnh rồi dời sang chỗ khác. Diện tích có đổi không.']),
+        _c('de_toan', 'Đề bài',
+           de='Vì sao hình bình hành đáy 12 cm, cao 8 cm lại có S = 12 × 8?',
+           loi=['Vì sao hình bình hành đáy mười hai, cao tám lại có diện tích bằng mười '
+                'hai nhân tám.']),
+        _c('y_toan', 'Xén mảnh NHÔ ra một đầu, dời sang LẤP chỗ hõm đầu kia',
+           'chỉ đổi chỗ, không thêm cũng không bớt   →   diện tích GIỮ NGUYÊN',
+           buoc=1, soBuoc=3,
+           loi=['Xén mảnh nhô ra ở một đầu, dời sang lấp chỗ hõm đầu kia.',
+                'Chỉ đổi chỗ chứ không thêm không bớt, nên diện tích giữ nguyên.']),
+        _c('hinh_cn', 'Dời xong thì đứng thẳng thành chữ nhật', dai=12, rong=8,
+           nhanDai='đáy 12 cm', nhanRong='cao 8 cm',
+           chuPhu='Hình bình hành nghiêng nghiêng nay đứng thẳng.',
+           chuCuoi='S = 12 × 8 = 96 cm².',
+           loi=['Dời xong thì hình đứng thẳng thành chữ nhật, mười hai nhân tám bằng '
+                'chín mươi sáu.']),
+        _c('y_toan', 'Chiêu ĐẶT PHẦN cũng ba nhịp',
+           'ĐẶT mảnh nhỏ nhất = 1 phần   ·   ĐẾM   ·   rồi ĐỔI về đơn vị thật',
+           buoc=2, soBuoc=3,
+           loi=['Chiêu đặt phần cũng ba nhịp. Đặt mảnh nhỏ nhất là một phần, rồi đếm.']),
+        _c('y_toan', 'Nhịp hay quên nhất là nhịp ĐỔI',
+           'cả hình 8 phần, tô 3 phần   →   1 phần = 96 : 8 = 12   →   tô = 36 cm²',
+           buoc=3, soBuoc=3,
+           loi=['Nhịp hay quên nhất là nhịp đổi. Dừng ở ba phần là chưa trả lời câu '
+                'hỏi.',
+                'Một phần bằng mười hai, nên phần tô là ba mươi sáu xăng ti mét '
+                'vuông.']),
+        _c('de_toan', 'Bài vườn cũng dùng ý dời hình',
+           de='Tăng dài 4 m thì S tăng 32 m²  ·  tăng rộng 3 m thì S tăng 45 m²',
+           loi=['Bài vườn cũng dùng ý ấy. Phần tăng là một dải chữ nhật.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='đếm phần xong phải ĐỔI TIỀN — về đúng đơn vị thật',
+           thay='dải 4 × rộng = 32 → rộng 8 m · dải 3 × dài = 45 → dài 15 m → S = 120 m²',
+           loi=['Dải bốn nhân rộng bằng ba mươi hai, nên rộng tám mét.',
+                'Dải ba nhân dài bằng bốn mươi lăm, nên dài mười lăm mét.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B47.M1': kb5_duong_phu_khai_sinh,
+    'DL:KSN5Q1.B47.M2': kb5_tong_tru_phan_trang,
+    'DL:KSN5Q1.B47.M3': kb5_doi_hinh_dat_phan,
     'DL:KSN5Q1.B46.M1': kb5_chung_cao_chung_day,
     'DL:KSN5Q1.B46.M2': kb5_diem_chia_hai_mau,
     'DL:KSN5Q1.B46.M3': kb5_chuoi_ti_noi_tiep,

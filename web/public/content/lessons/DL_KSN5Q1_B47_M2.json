@@ -35,20 +35,7 @@
   "kidText": "Phần tô đậm khó tính thẳng thì lấy TỔNG trừ phần trắng. Cộng hai hình chồng nhau thì hỏi ngay: mảnh nào bị cộng hai lần?"
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Chiêu vu hồi: phần tô đậm khó tính thẳng → TỔNG trừ phần TRẮNG: mỗi phần trắng là tam giác góc bám hai cạnh chữ nhật, tính bằng phân số của tấm (nửa-của-nửa = $\\frac{1}{8}$; nửa-của-cả = $\\frac{1}{4}$)."
-   },
-   {
-    "id": "K2",
-    "text": "Ca chuẩn M, N trung điểm AB, AD: S(AMN) = $96 : 8 = 12$ (¼ × ¼... đúng ra ½ đáy × ½ cao : $2 = 1$/8 tấm); S(MBC) = $96 : 4 = 24$; S(NDC) = $96 : 4 = 24$ → S(MNC) = $96 - 12 - 24 - 24 = 36 cm^2$."
-   },
-   {
-    "id": "K3",
-    "text": "Hai hình CHỒNG: cộng thẳng thì phần chung bị đếm HAI lần — nghi thức hỏi \"mảnh nào dính đúp?\": tổng phủ = S₁ + S₂ − phần chung = $36 + 36 - 4 = 68 cm^2$ (họ hàng Ven B44 đội mũ hình học!)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: ĐÁNH VU HỒI VÀ MẢNH DÍNH ĐÚP. Chữ nhật chín mươi sáu; M trung điểm AB, N trung điểm AD — tính tam giác MNC nằm chéo giữa tấm. Trí Long dí thước đo trực tiếp: chẳng cạnh nào song song, chẳng cao nào lộ ra — bí! Su Kem phất cờ VU HỒI: không đánh chính diện được thì đánh vòng — tam giác đậm bằng CẢ TẤM trừ BA PHẦN TRẮNG! Ba phần trắng đều là tam giác góc ngoan ngoãn bám hai cạnh: AMN nửa-của-nửa-của-nửa — mười hai; MBC một phần tư tấm — hai mươi tư; NDC cũng hai mươi tư. Đậm bằng chín sáu trừ mười hai trừ hai tư trừ hai tư: BA MƯƠI SÁU! Trận hai: hai tấm bìa vuông ba sáu chồng mép nhau, phần chung bốn. Trí Long cộng thẳng: bảy mươi hai! Câu hỏi nghi thức: MẢNH NÀO ĐANG BỊ CỘNG HAI LẦN? Mảnh chung bốn nằm dưới CẢ hai tấm — nó bỏ phiếu hai lần như nhóm giao Ven! Tổng phủ bằng ba sáu cộng ba sáu TRỪ bốn: SÁU MƯƠI TÁM!",
   "canonicalExamples": [
    {
@@ -79,14 +66,8 @@
     "counterExample": "$72 = 36 + 36$ nghĩa là mảnh chung 4 $cm^2$ được lát gạch HAI tầng — sàn nhà đâu có dày lên!"
    }
   ],
-  "vocabulary": [
-   "đánh vu hồi",
-   "tổng trừ phần trắng",
-   "tam giác góc ngoan ngoãn",
-   "mảnh dính đúp",
-   "Ven đội mũ hình học"
-  ],
-  "mantra": "CỘNG HAI HÌNH — HỎI NGAY MẢNH NÀO DÍNH ĐÚP!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -108,48 +89,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Hình chữ nhật ABCD có S = 96 cm²; M trung điểm AB, N trung điểm AD. Tính S(MNC) bằng chiêu tổng trừ phần trắng.",
-    "display": {
-     "type": "story_panel",
-     "caption": "tam giác chéo giữa tấm — bó tay??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để phất cờ vu hồi!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Đánh vu hồi: tam giác đậm bằng CẢ TẤM trừ BA PHẦN TRẮNG! Ba phần trắng đều bám góc, ngoan ngoãn: AMN — nửa đáy nhân nửa cao chia hai: một phần tám tấm — MƯỜI HAI; MBC — một phần tư tấm: HAI MƯƠI TƯ; NDC cũng HAI MƯƠI TƯ! Phần đậm: chín sáu trừ mười hai trừ hai tư trừ hai tư — BA MƯƠI SÁU xăng-ti-mét vuông! Không đo được trực tiếp — thì bao vây bằng những mảnh đo được!",
-    "display": {
-     "type": "flank_attack_interactive",
-     "spec": {
-      "whites": [
-       "AMN = 96:8 = 12",
-       "MBC = 96:4 = 24",
-       "NDC = 96:4 = 24"
-      ],
-      "dark": "96 − 12 − 24 − 24 = 36"
-     }
-    },
-    "interaction": {
-     "type": "subtract_whites",
-     "answerKey": {
-      "value": 36
-     },
-     "successMessage": "Bao vây ba mảnh trắng — đậm 36!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -170,46 +109,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "trap",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Trận hai: hai tấm bìa vuông ba sáu chồng mép nhau, phần chung là vuông cạnh hai — bốn xăng-ti-mét vuông. Trí Long cộng thẳng: bảy mươi hai phủ kín! Câu hỏi nghi thức: MẢNH NÀO ĐANG BỊ CỘNG HAI LẦN? Mảnh chung nằm dưới CẢ HAI tấm — nó bỏ phiếu hai lần y nhóm giao Ven! Sàn nhà đâu có dày lên: tổng phủ bằng ba sáu cộng ba sáu TRỪ BỐN — SÁU MƯƠI TÁM! Cộng hai hình — trừ phần chung đúng một lần!",
-    "display": {
-     "type": "counter_example",
-     "cases": [
-      {
-       "input": "36 + 36 − 4 (mảnh chung trừ 1 lần)",
-       "output": "✓ 68 cm²",
-       "valid": true,
-       "reason": "dính đúp đã gỡ"
-      },
-      {
-       "input": "36 + 36 = 72",
-       "output": "✗ mảnh chung lát gạch 2 tầng",
-       "valid": false,
-       "reason": "đếm đúp"
-      }
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: cộng hai hình — hỏi ngay mảnh nào dính đúp!",
-    "display": {
-     "type": "mantra_card",
-     "text": "MẢNH NÀO DÍNH ĐÚP?"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -506,251 +405,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B47.M2",
- "figureSpec": [
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "",
-    "points": {
-     "A": [
-      0,
-      8
-     ],
-     "B": [
-      12,
-      8
-     ],
-     "C": [
-      12,
-      0
-     ],
-     "D": [
-      0,
-      0
-     ],
-     "M": [
-      6,
-      8
-     ],
-     "N": [
-      0,
-      4
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "A",
-       "B",
-       "C",
-       "D"
-      ],
-      "fill": "none"
-     },
-     {
-      "pts": [
-       "M",
-       "N",
-       "C"
-      ],
-      "fill": "teal"
-     },
-     {
-      "pts": [
-       "A",
-       "M",
-       "N"
-      ],
-      "fill": "white",
-      "label": "12"
-     },
-     {
-      "pts": [
-       "M",
-       "B",
-       "C"
-      ],
-      "fill": "white",
-      "label": "24"
-     },
-     {
-      "pts": [
-       "N",
-       "D",
-       "C"
-      ],
-      "fill": "white",
-      "label": "24"
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C",
-     "D",
-     "M",
-     "N"
-    ]
-   },
-   "caption": "Đề bài — số đo đã cho",
-   "id": "F0",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B47_M2_F0.png",
-   "sha256_16": "83b591c425ec8ae8"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "CÙNG MỘT ĐỀ — HAI CÁCH LÀM",
-    "wrong": {
-     "head": "CÁCH SAI",
-     "steps": [
-      "36 + 36 = 72"
-     ],
-     "result": "mảnh chung lát gạch 2 tầng"
-    },
-    "right": {
-     "head": "CÁCH ĐÚNG",
-     "steps": [
-      "36 + 36 − 4 (mảnh chung trừ 1 lần)"
-     ],
-     "result": "68 cm²"
-    },
-    "verdict": "dính đúp đã gỡ"
-   },
-   "caption": "Hai ngả — một đúng một sai, khác nhau đúng một bước",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B47_M2_F2.png",
-   "sha256_16": "d469e90d97f6ee97"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Chiêu vu hồi",
-      "text": "phần tô đậm khó tính thẳng → TỔNG trừ phần TRẮNG: mỗi phần trắng là tam giác góc bám hai cạnh chữ nhật, tính bằng phân số của tấm (nửa-của-nửa = 1/8; nửa-của-cả = 1/4).",
-      "tone": "navy"
-     },
-     {
-      "label": "Ca chuẩn M, N trung điểm AB, AD",
-      "text": "S(AMN) = 96 : 8 = 12 (¼ × ¼... đúng ra ½ đáy × ½ cao : 2 = 1/8 tấm); S(MBC) = 96 : 4 = 24; S(NDC) = 96 : 4 = 24 → S(MNC) = 96 − 12 − 24 − 24 = 36 cm².",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CỘNG HAI HÌNH — HỎI NGAY MẢNH NÀO DÍNH ĐÚP!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B47_M2_F3.png",
-   "sha256_16": "66c23ea565ac6637"
-  },
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "VU HỒI: LẤY TỔNG TRỪ BA PHẦN TRẮNG",
-    "points": {
-     "A": [
-      0,
-      8
-     ],
-     "B": [
-      12,
-      8
-     ],
-     "C": [
-      12,
-      0
-     ],
-     "D": [
-      0,
-      0
-     ],
-     "M": [
-      6,
-      8
-     ],
-     "N": [
-      0,
-      4
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "A",
-       "B",
-       "C",
-       "D"
-      ],
-      "fill": "none"
-     },
-     {
-      "pts": [
-       "M",
-       "N",
-       "C"
-      ],
-      "fill": "teal",
-      "label": "S(MNC) = 36"
-     },
-     {
-      "pts": [
-       "A",
-       "M",
-       "N"
-      ],
-      "fill": "white",
-      "label": "12"
-     },
-     {
-      "pts": [
-       "M",
-       "B",
-       "C"
-      ],
-      "fill": "white",
-      "label": "24"
-     },
-     {
-      "pts": [
-       "N",
-       "D",
-       "C"
-      ],
-      "fill": "white",
-      "label": "24"
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C",
-     "D",
-     "M",
-     "N"
-    ],
-    "formula": "96 − 12 − 24 − 24 = 36 cm²",
-    "note": "Mỗi phần trắng đều là tam giác vuông có cặp đáy - cao lộ sẵn — tính rất nhanh"
-   },
-   "caption": "Phần tô đậm khó tính thẳng thì đánh vu hồi từ phía các phần trắng",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B47_M2_F4.png",
-   "sha256_16": "ead6d79a4e1c7942"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B43",
@@ -764,5 +419,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Tổng trừ phần trắng & hai hình chồng: hỏi ngay mảnh nào dính đúp"
+ "titleDay": "Tổng trừ phần trắng & hai hình chồng: hỏi ngay mảnh nào dính đúp",
+ "video": {
+  "giang": "DL_KSN5Q1_B47_M2_giang.mp4"
+ }
 }

@@ -34,20 +34,7 @@
   "kidText": "Xén mảnh nhô rồi lấp chỗ hõm thì diện tích giữ nguyên. Đếm ra \"3 phần\" chưa xong đâu — phải đổi về cm² thật."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Chiêu dời hình: xén mảnh NHÔ ra một đầu, dời sang LẤP chỗ hõm đầu kia — diện tích GIỮ NGUYÊN (chỉ đổi chỗ, không thêm bớt): hình bình hành đáy 12 cao 8 hóa chữ nhật $12  \\times  8 = 96 cm^2$."
-   },
-   {
-    "id": "K2",
-    "text": "Chiêu đặt phần ba nhịp: ĐẶT (S nhỏ nhất = 1 phần) — ĐẾM (mảnh tô = 3 phần, cả hình = 8 phần) — ĐỔI về đơn vị thật: 1 phần = $96 : 8 = 12$ → mảnh tô = $3  \\times  12 = 36 cm^2$ (dừng ở \"3 phần\" là chưa trả tiền thật!)."
-   },
-   {
-    "id": "K3",
-    "text": "Tổng - hiệu vườn: tăng dài 4 m (giữ rộng) thì S tăng 32 $m^2$ — phần tăng là dải chữ nhật 4 × rộng → RỘNG = $32 : 4 = 8$ m; tăng rộng 3 m (giữ dài) tăng 45 $m^2$ → DÀI = $45 : 3 = 15$ m → S = $15  \\times  8 = 120 m^2$; thử: ($15 + 4$) × $8 = 152 = 120 + 32$ ✓."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: XÉN - DỜI - LẤP VÀ QUY ĐỔI TIỀN PHẦN. Chiêu một — DỜI HÌNH: hình bình hành nghiêng nghiêng đáy mười hai cao tám. Xén tam giác NHÔ ra ở đầu trái — dời nguyên mảnh sang LẤP chỗ hõm đầu phải: hình bình hành đứng thẳng thành CHỮ NHẬT mười hai nhân tám — chín mươi sáu! Dời chỗ không đổi diện tích: mảnh vẫn là mảnh ấy, chỉ chuyển nhà! Chiêu hai — ĐẶT PHẦN: hình chia tám mảnh bằng nhau, tô ba mảnh, cả hình chín sáu. Ba nhịp: ĐẶT mảnh nhỏ bằng một phần — ĐẾM phần tô ba phần — và nhịp hay quên nhất: ĐỔI VỀ TIỀN THẬT! Một phần bằng chín sáu chia tám: mười hai — phần tô bằng ba nhân mười hai: BA MƯƠI SÁU xăng-ti-mét vuông! Viết \"3 phần\" vào đáp số là chưa trả tiền — phải đổi về cm² thật! Chiêu ba — TỔNG HIỆU VƯỜN của sư phụ: tăng dài bốn mét thì S tăng ba hai — dải tăng là chữ nhật bốn-nhân-rộng: RỘNG bằng ba hai chia bốn — TÁM; tăng rộng ba mét tăng bốn lăm: DÀI bằng bốn lăm chia ba — MƯỜI LĂM: vườn bằng mười lăm nhân tám — MỘT TRĂM HAI MƯƠI mét vuông!",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "Cầm \"3 phần\" ra chợ ai bán cho — phải đổi về tiền cm² thật mới tiêu được!"
    }
   ],
-  "vocabulary": [
-   "xén — dời — lấp",
-   "chuyển nhà không đổi diện tích",
-   "đặt — đếm — đổi",
-   "tiền phần — tiền thật",
-   "dải tăng chia cạnh giữ nguyên"
-  ],
-  "mantra": "ĐẾM PHẦN XONG PHẢI ĐỔI TIỀN — VỀ ĐÚNG CM² THẬT!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -107,44 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Giải thích bằng chiêu \"dời hình\": vì sao hình bình hành có đáy 12 cm, chiều cao 8 cm lại có diện tích $12  \\times  8 = 96 cm^2$?",
-    "display": {
-     "type": "story_panel",
-     "caption": "đáp số: '3 phần'??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đổi tiền!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K2"
-    ],
-    "narration": "Quy trình đặt phần BA NHỊP: ĐẶT — mảnh nhỏ nhất bằng MỘT phần; ĐẾM — phần tô ba phần, cả hình tám phần; và nhịp hay quên nhất: ĐỔI VỀ TIỀN THẬT! Một phần bằng chín sáu chia tám — MƯỜI HAI xăng-ti-mét vuông; phần tô bằng ba nhân mười hai: BA MƯƠI SÁU! Đáp số phải mặc áo cm² — con số \"3 phần\" chỉ là phiếu ghi nợ!",
-    "display": {
-     "type": "exchange_interactive",
-     "spec": {
-      "dat": "1 phần (mảnh nhỏ nhất)",
-      "dem": "tô 3 phần / cả hình 8 phần",
-      "doi": "1 phần = 96 : 8 = 12 → 3 × 12 = 36 cm²"
-     }
-    },
-    "interaction": {
-     "type": "exchange_currency",
-     "answerKey": {
-      "value": 36
-     },
-     "successMessage": "Đổi tiền: 3 phần = 36 cm² thật!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -165,38 +108,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Chiêu DỜI HÌNH: hình bình hành nghiêng nghiêng đáy mười hai cao tám — xén tam giác NHÔ đầu trái, dời sang LẤP chỗ hõm đầu phải: đứng thẳng thành CHỮ NHẬT mười hai nhân tám — chín mươi sáu! Dời chỗ không đổi diện tích: mảnh chỉ chuyển nhà! Tổng hiệu vườn của sư phụ: tăng dài BỐN mét thì S tăng ba hai — dải tăng là chữ nhật bốn-nhân-rộng: RỘNG bằng ba hai chia bốn — TÁM; tăng rộng ba tăng bốn lăm: DÀI bốn lăm chia ba — MƯỜI LĂM: vườn MỘT TRĂM HAI MƯƠI mét vuông, thử cộng dải khớp!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "xén — dời — lấp: bình hành → chữ nhật 96",
-      "vườn: rộng = 32:4 = 8 · dài = 45:3 = 15",
-      "S = 120 m² (thử 152 = 120 + 32 ✓)"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: đếm phần xong phải đổi tiền — về đúng xăng-ti-mét vuông thật!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐỔI VỀ CM² THẬT!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -514,101 +425,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B47.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "đáp số: '3 phần'??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "phần tô đậm = 3 phần!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B47_M3_F1.png",
-   "sha256_16": "b512d4e516833546"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Dời hình giữ S, đặt S nhỏ = 1 phần & tổng - hiệu vườn — đếm phần xong đổi về đơn vị thật",
-    "steps": [
-     {
-      "text": "xén — dời — lấp: bình hành → chữ nhật 96"
-     },
-     {
-      "text": "vườn: rộng = 32:4 = 8 · dài = 45:3 = 15"
-     },
-     {
-      "text": "S = 120 m² (thử 152 = 120 + 32 )"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B47_M3_F2.png",
-   "sha256_16": "6308888d8097709b"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Chiêu dời hình",
-      "text": "xén mảnh NHÔ ra một đầu",
-      "tone": "navy"
-     },
-     {
-      "label": "Chiêu đặt phần ba nhịp",
-      "text": "ĐẶT (S nhỏ nhất = 1 phần) — ĐẾM (mảnh tô = 3 phần, cả hình = 8 phần) — ĐỔI về đơn vị thật: 1 phần = 96 : 8 = 12 → mảnh tô = 3 × 12 = 36 cm² (dừng ở \"3 phần\" là chưa trả tiền thật!).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "ĐẾM PHẦN XONG PHẢI ĐỔI TIỀN — VỀ ĐÚNG CM² THẬT!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B47_M3_F3.png",
-   "sha256_16": "a6eb2e386ed699df"
-  },
-  {
-   "archetype": "fraction_split",
-   "params": {
-    "title": "ĐẶT S NHỎ = 1 PHẦN — RỒI NHỚ ĐỔI VỀ cm² THẬT",
-    "shapes": [
-     {
-      "parts": 8,
-      "shaded": 3,
-      "label": "tô đậm 3/8 = 36 cm²",
-      "kind": "bar"
-     }
-    ],
-    "note": "1 phần = 96 : 8 = 12 cm² → 3 phần = 36 cm² · đừng dừng ở \"3 phần\""
-   },
-   "caption": "Chiêu dời hình: xén mảnh nhô lấp chỗ hõm — hình bình hành 12 × 8 hóa chữ nhật 96",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B47_M3_F4.png",
-   "sha256_16": "4a6cc419fd23b9a5"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B43",
@@ -622,5 +439,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Dời hình giữ S, đặt S nhỏ = 1 phần & tổng - hiệu vườn — đếm phần xong đổi về đơn vị thật"
+ "titleDay": "Dời hình giữ S, đặt S nhỏ = 1 phần & tổng - hiệu vườn — đếm phần xong đổi về đơn vị thật",
+ "video": {
+  "giang": "DL_KSN5Q1_B47_M3_giang.mp4"
+ }
 }
