@@ -77,8 +77,13 @@ const mt = readFileSync(
 t('`ManToan` truyền `onGhiRoiThoat` xuống bộ chơi', /onGhiRoiThoat=\{/.test(mt));
 const day = mt.slice(mt.indexOf('onGhiRoiThoat={'), mt.indexOf('onGhiRoiThoat={') + 260);
 t('và đường ấy dẫn tới `finishMicro`', /finishMicro\(/.test(day));
+/* Điều cần canh là "finishMicro có ghi kết quả không", nên chỉ đòi `recordMicro`
+   nằm trong một lần `setProgress`. Bản đầu ghim nguyên văn cả dòng, và 17-08 nó đỏ
+   oan khi lượt cập nhật ấy được bọc thêm `congGio(...)` để ghi giờ học trong CÙNG
+   một lần — bọc thế là đúng, vì hai lần `setProgress` liên tiếp thì lần sau đọc phải
+   sổ cũ. Ghim nguyên văn là cổng canh CÁCH VIẾT chứ không canh việc phải làm. */
 t('`finishMicro` là chỗ gọi `recordMicro`',
-  /setProgress\(\(p\) => recordMicro\(p, microId, grade\)\)/.test(mt));
+  /setProgress\(\(p\) =>[^;]*recordMicro\(p, microId, grade\)/.test(mt));
 
 /* ── ④ hai đường ra dùng CHUNG một nguồn kết quả ──
    Nút "Micro tiếp theo ▶" và nút Thoát phải chấm y hệt nhau. Bản đầu chép

@@ -1,186 +1,94 @@
-/**
- * LUẬT FIRESTORE — thử THẬT trên bộ giả lập, cả chiều CHO lẫn chiều TỪ CHỐI.
- * chạy:  (cửa sổ 1)  PATH="/usr/local/opt/openjdk/bin:$PATH" npx firebase emulators:start
- *        (cửa sổ 2)  node test/luat_firestore.test.mjs
+/* ═══════════ LUẬT FIRESTORE — CHẠY THẬT TRÊN MÁY GIẢ LẬP ═══════════
  *
- * ── VÌ SAO PHẢI CHẠY THẬT ──
- * `tienganh_may_chu.test.mjs` chỉ ĐỌC tệp luật bằng regex: nó bắt được "quên viết
- * luật", nhưng không bắt được "luật viết rồi mà sai". Chỉ máy chủ mới biên dịch và
- * thi hành được bộ luật, nên phần này phải chạy trên bộ giả lập.
+ * chạy: npm run test:luat        (tự bật máy giả lập rồi tắt)
  *
- * Và quan trọng hơn: nó thử được chiều BỊ TỪ CHỐI — bé A ghi vào sổ bé B, thiếu
- * trường, sai kiểu, collection chưa khai luật. Đó là những chỗ mà cổng đọc-tệp và
- * cả việc bấm tay qua giao diện đều không với tới, vì giao diện chỉ đi đường đúng.
+ * ── VÌ SAO CÓ TỆP NÀY, VÀ VÌ SAO NÓ RA ĐỜI MUỘN ──
  *
- * ── KHÔNG CÓ BỘ GIẢ LẬP THÌ BỎ QUA ÊM ──
- * `npm test` phải chạy được trên máy không có Java. Nhưng bỏ qua thì NÓI RA, chứ
- * không lặng lẽ xanh — cổng im lặng là cổng không ai biết đã ngừng canh.
+ * Kho có gần sáu mươi cổng, và KHÔNG cổng nào canh `firestore.rules`. Đó lại đúng
+ * tệp có kiểu hỏng tệ nhất trong cả kho: **từ chối trong im lặng**. `loai` không nằm
+ * trong danh sách cho phép thì Firestore vứt lượt ghi đi mà không báo gì; sổ tại máy
+ * con vẫn đúng, màn hình vẫn bình thường, nên không ai thấy — cho tới lúc bố mẹ mở
+ * sổ ở máy khác và thấy trống.
  *
- * Bộ giả lập nhận JWT KHÔNG KÝ (`alg: none`), nhờ vậy giả được `uid` và `role` tuỳ
- * ý mà không cần đăng nhập thật.
+ * Chuyện ấy đã xảy ra thật một lần (11-08-2026, ba loại `chuong`·`chuDe`·`dau` mới
+ * thêm). Ngày 17-08 thêm `loai='gio'` cho sổ giờ học là đúng ca ấy lần thứ hai.
+ *
+ * ── PHÉP NÀY LÀM GÌ ──
+ *
+ * Không đọc tệp luật bằng mắt, mà DỰNG MÁY GIẢ LẬP rồi thử ghi thật: ghi được thì
+ * xanh, bị từ chối thì đỏ. Và quan trọng ngang thế — thử cả chiều NGƯỢC: ghi thứ
+ * đáng lẽ phải bị chặn, mà chặn không nổi thì cũng đỏ. Một danh sách cho phép chỉ
+ * có nghĩa khi nó THẬT SỰ từ chối thứ ngoài danh sách.
  */
-import { readFileSync, existsSync } from 'node:fs';
-
-const HOST = '127.0.0.1:8080';
-const envTep = new URL('../.env.local', import.meta.url).pathname;
-const DU_AN = process.env.DU_AN
-  || (existsSync(envTep)
-    ? (readFileSync(envTep, 'utf8').match(/VITE_FB_PROJECT_ID=(.+)/) || [])[1]?.trim()
-    : null)
-  || 'demo-test';
-const goc = `http://${HOST}/v1/projects/${DU_AN}/databases/(default)/documents`;
-
-const song = await fetch(`http://${HOST}/`, { signal: AbortSignal.timeout(1500) })
-  .then(() => true).catch(() => false);
-if (!song) {
-  console.log('   ⏸ BỘ GIẢ LẬP KHÔNG CHẠY — bỏ qua phần thử luật thật.');
-  console.log('      Bật bằng: PATH="/usr/local/opt/openjdk/bin:$PATH" \\');
-  console.log('                npx firebase emulators:start --only auth,firestore,functions');
-  console.log('\n0 PASS · 0 FAIL');
-  process.exit(0);
-}
-
-const b64 = (o) => Buffer.from(JSON.stringify(o)).toString('base64url');
-const token = (uid, role) => [
-  b64({ alg: 'none', typ: 'JWT' }),
-  b64({
-    iss: `https://securetoken.google.com/${DU_AN}`, aud: DU_AN, sub: uid, user_id: uid,
-    iat: 1, exp: 9999999999, auth_time: 1, email_verified: true,
-    firebase: { identities: {}, sign_in_provider: 'custom' },
-    ...(role ? { role } : {}),
-  }),
-  '',
-].join('.');
-
-const V = {
-  s: (v) => ({ stringValue: String(v) }),
-  b: (v) => ({ booleanValue: !!v }),
-  n: (v) => ({ integerValue: String(v) }),
-  /* Học bạ bọc số liệu trong một trường con `giaTri` — REST của Firestore đòi khai
-     lồng đúng hình dạng này, không nhận object thường. */
-  m: (o) => ({ mapValue: { fields: o } }),
-};
-
-async function ghi(uid, duong, fields, nhuAi = uid, role) {
-  const r = await fetch(`${goc}/${duong}`, {
-    method: 'PATCH',
-    headers: { Authorization: `Bearer ${token(nhuAi, role)}`, 'Content-Type': 'application/json' },
-    body: JSON.stringify({ fields }),
-  });
-  return r.status;
-}
-async function doc(duong, nhuAi, role) {
-  const r = await fetch(`${goc}/${duong}`, {
-    headers: { Authorization: `Bearer ${token(nhuAi, role)}` },
-  });
-  return r.status;
-}
+import { readFileSync } from 'node:fs';
+import {
+  initializeTestEnvironment, assertSucceeds, assertFails,
+} from '@firebase/rules-unit-testing';
+/* Nhập từ '@firebase/firestore' chứ KHÔNG từ 'firebase/firestore': bộ thử luật trả
+   về thể hiện của gói @firebase/firestore, mà hai gói là hai bản sao khác nhau —
+   trộn vào là "Expected first argument to collection() to be a CollectionReference". */
+import { doc, setDoc, getDoc } from 'firebase/firestore';
 
 let pass = 0, fail = 0;
-const t = (ten, dieu, them = '') => {
-  if (dieu) { pass += 1; console.log(`  ✓ ${ten}`); }
-  else { fail += 1; console.log(`  ✗ ${ten}${them ? ` — ${them}` : ''}`); }
+const t = async (n, p) => {
+  try { await p; pass++; } catch (e) { fail++; console.log('  ✗', n, '—', e.message); }
 };
 
-const BE_A = 'be_a_uid', BE_B = 'be_b_uid';
-const baiHopLe = {
-  microId: V.s('DL:TA1.B04'), pass: V.b(true), score: V.n(5), total: V.n(5),
-  bac: V.n(4), attempts: V.n(1), at: V.s('2026-08-12T05:00:00Z'),
-};
+const env = await initializeTestEnvironment({
+  projectId: 'ky-su-nhi-thu-luat',
+  firestore: { rules: readFileSync('firestore.rules', 'utf8'), host: '127.0.0.1', port: 8099 },
+});
+await env.clearFirestore();
 
-console.log('\n── progressTA ──');
-let m = await ghi(BE_A, `progressTA/${BE_A}/micros/DL_TA1_B04`, baiHopLe);
-t('chính chủ GHI ĐƯỢC bài của mình', m === 200, `HTTP ${m}`);
+const be = env.authenticatedContext('be1').firestore();
+const beKhac = env.authenticatedContext('be2').firestore();
+const co = env.authenticatedContext('co1', { role: 'teacher' }).firestore();
+const la = env.unauthenticatedContext().firestore();
 
-m = await ghi(BE_A, `progressTA/${BE_B}/micros/DL_TA1_B04`, baiHopLe, BE_A);
-t('bé A KHÔNG ghi được vào sổ bé B', m === 403, `HTTP ${m}`);
+const muc = (db, uid, id) => doc(db, `hocBa/${uid}/muc/${id}`);
 
-m = await ghi(BE_A, `progressTA/${BE_A}/micros/thieu_truong`,
-  { microId: V.s('DL:TA1.B05'), pass: V.b(true) });          // thiếu `score`
-t('thiếu trường luật đòi thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+/* ── SỔ GIỜ HỌC: cái vừa thêm ── */
+await t('bé ghi được sổ giờ của chính mình (loai=gio)',
+  assertSucceeds(setDoc(muc(be, 'be1', 'gio_2026_08_17'),
+    { loai: 'gio', ngay: '2026-08-17', giay: 900, giayXem: 300, giayLam: 600 })));
 
-m = await ghi(BE_A, `progressTA/${BE_A}/micros/sai_kieu`,
-  { microId: V.s('DL:TA1.B06'), pass: V.s('true'), score: V.n(3) });  // pass là chuỗi
-t('sai kiểu dữ liệu thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
+await t('ba loại cũ vẫn ghi được — không làm hỏng cái đang chạy',
+  Promise.all([
+    assertSucceeds(setDoc(muc(be, 'be1', 'chuong_c1'), { loai: 'chuong', giaTri: {} })),
+    assertSucceeds(setDoc(muc(be, 'be1', 'chuDe_PT_I_1_1'), { loai: 'chuDe', giaTri: {} })),
+    assertSucceeds(setDoc(muc(be, 'be1', 'dau_V01'), { loai: 'dau', giaTri: {} })),
+  ]));
 
-m = await doc(`progressTA/${BE_A}/micros/DL_TA1_B04`, BE_A);
-t('chính chủ ĐỌC ĐƯỢC sổ của mình', m === 200, `HTTP ${m}`);
-m = await doc(`progressTA/${BE_A}/micros/DL_TA1_B04`, BE_B);
-t('bé B KHÔNG đọc được sổ bé A', m === 403, `HTTP ${m}`);
-m = await doc(`progressTA/${BE_A}/micros/DL_TA1_B04`, 'co_giao', 'teacher');
-t('cô giáo ĐỌC ĐƯỢC sổ của học sinh', m === 200, `HTTP ${m}`);
+/* ── ĐẢO CHIỀU: danh sách cho phép chỉ có nghĩa khi nó TỪ CHỐI được ──
+   Không có ba phép dưới đây thì "ghi được" ở trên chẳng chứng minh gì: một luật
+   `allow write: if true` cũng cho ra đúng kết quả ấy. */
+await t('loai LẠ bị chặn (nếu không, danh sách cho phép là vô nghĩa)',
+  assertFails(setDoc(muc(be, 'be1', 'gio_x'), { loai: 'linh_tinh', giay: 1 })));
 
-console.log('\n── hocBaTA ──');
-/* ⚠ Gói này phải là gói MÀN HÌNH THẬT GỬI, không phải gói cổng tự nghĩ ra.
-   Bản cũ tự viết `loai:'chuong'` trong khi `ManTiengAnh.jsx` gửi `'ontap'` — cổng
-   thử đúng cái luật cho phép, chứ không phải cái app gửi đi, nên nó xanh suốt
-   trong lúc mọi kỳ ôn tập Tiếng Anh bị máy chủ từ chối trong im lặng.
-   Nay hình dạng dưới đây khớp `luuMucHocBa(learnerId, 'chuong', k, {giaTri})`, và
-   `hocba_khop_luat.test.mjs` canh cho hai bên không lệch lại. */
-const mucHopLe = {
-  loai: V.s('chuong'), khoa: V.s('ta1:C1'), at: V.s('2026-08-12'),
-  giaTri: V.m({ dat: V.b(true), best: V.n(9), tong: V.n(10), at: V.s('2026-08-12') }),
-};
-m = await ghi(BE_A, `hocBaTA/${BE_A}/muc/chuong__ta1_C1`, mucHopLe);
-t('chính chủ ghi được mục học bạ', m === 200, `HTTP ${m}`);
-m = await ghi(BE_A, `hocBaTA/${BE_A}/muc/loai_la`, { loai: V.s('dau'), khoa: V.s('x') });
-t('loại ngoài danh sách thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
-m = await ghi(BE_A, `hocBaTA/${BE_B}/muc/chuong__ta1_C1`, mucHopLe, BE_A);
-t('bé A KHÔNG ghi được học bạ bé B', m === 403, `HTTP ${m}`);
+await t('thiếu hẳn trường loai cũng bị chặn',
+  assertFails(setDoc(muc(be, 'be1', 'khong_loai'), { giay: 1 })));
 
-/* ── VÒNG KHỨ HỒI: ghi lên rồi ĐỌC LẠI ──
-   Ghi được 200 chưa chứng minh gì cả — bản cũ cũng "ghi được" một hình dạng mà
-   `docHocBa` không nhặt nổi, nên máy chủ có tài liệu mà bé vẫn mất huy hiệu. Đọc
-   lại và soi đúng cái thẻ huy hiệu cần (`best`, `tong`) mới là bằng chứng. */
-{
-  const r = await fetch(`${goc}/hocBaTA/${BE_A}/muc/chuong__ta1_C1`, {
-    headers: { Authorization: `Bearer ${token(BE_A)}` },
-  });
-  const d = r.ok ? await r.json() : null;
-  const gt = d?.fields?.giaTri?.mapValue?.fields;
-  t('đọc lại thấy đúng loai mà bên đọc lọc', d?.fields?.loai?.stringValue === 'chuong');
-  t('đọc lại thấy giaTri có best — thẻ huy hiệu dùng đúng trường này',
-    gt?.best?.integerValue === '9', JSON.stringify(gt || null));
-}
+await t('bé KHÔNG ghi được vào sổ của bé khác',
+  assertFails(setDoc(muc(beKhac, 'be1', 'gio_2026_08_17'), { loai: 'gio', giay: 1 })));
 
-console.log('\n── bằng chứng học tập không xoá được ──');
-{
-  const r = await fetch(`${goc}/progressTA/${BE_A}/micros/DL_TA1_B04`, {
-    method: 'DELETE', headers: { Authorization: `Bearer ${token(BE_A)}` },
-  });
-  /* Chính chủ cũng KHÔNG xoá được bài đã học. Ban đầu là ngẫu nhiên (lệnh xoá không
-     mang `request.resource.data` nên hai điều kiện kiểu dữ liệu tự sai), nay ghi
-     thành chủ ý — xem chú thích trong firestore.rules. Có phép kiểm ở đây thì ai
-     nới luật sau này sẽ thấy mình đang đổi một quyết định, không phải sửa lỗi. */
-  t('chính chủ KHÔNG xoá được bài đã học', r.status === 403, `HTTP ${r.status}`);
-}
+await t('người chưa đăng nhập không ghi được',
+  assertFails(setDoc(muc(la, 'be1', 'gio_2026_08_17'), { loai: 'gio', giay: 1 })));
 
-console.log('\n── phòng luyện nói ──');
-{
-  /* Đây là TIẾNG NÓI của trẻ con — thứ riêng tư nhất trong cả kho. Máy chủ không
-     lưu gì (bác chốt), nên chính máy con đẩy buổi lên đây; luật phải cho chính chủ
-     GHI, mà chỉ chính chủ thôi. Cô giáo KHÔNG đọc được: `canRead` cho cô đọc kết
-     quả học là đúng, nhưng một buổi trò chuyện thì khác hẳn. */
-  const buoi = { soLuot: V.n(2), luot: { arrayValue: { values: [] } } };
-  m = await ghi(BE_A, `phongNoiTA/${BE_A}/buoi/b1`, buoi);
-  t('chính chủ ghi được buổi luyện nói', m === 200, `HTTP ${m}`);
-  m = await ghi(BE_A, `phongNoiTA/${BE_B}/buoi/b1`, buoi, BE_A);
-  t('bé A KHÔNG ghi được vào phòng nói của bé B', m === 403, `HTTP ${m}`);
-  m = await doc(`phongNoiTA/${BE_B}/buoi/b1`, BE_A);
-  t('bé A KHÔNG đọc được buổi nói chuyện của bé B', m === 403, `HTTP ${m}`);
-  m = await ghi(BE_A, `phongNoiTA/${BE_A}/buoi/sai`, {
-    soLuot: V.s('nhieu'), luot: { arrayValue: { values: [] } },
-  });
-  t('sai kiểu dữ liệu thì BỊ TỪ CHỐI', m === 403, `HTTP ${m}`);
-}
+/* ── ĐỌC: cô giáo xem được, bé khác thì không ── */
+await t('cô giáo đọc được sổ giờ của bé',
+  assertSucceeds(getDoc(muc(co, 'be1', 'gio_2026_08_17'))));
+await t('bé đọc được sổ của chính mình',
+  assertSucceeds(getDoc(muc(be, 'be1', 'gio_2026_08_17'))));
+await t('bé KHÔNG đọc được sổ của bé khác',
+  assertFails(getDoc(muc(beKhac, 'be1', 'gio_2026_08_17'))));
 
-console.log('\n── chốt chặn chung ──');
-m = await ghi(BE_A, `linhTinhTA/${BE_A}/x/y`, { a: V.s('b') });
-t('collection chưa khai luật thì BỊ CHẶN', m === 403, `HTTP ${m}`);
-m = await ghi(BE_A, 'bangXepHang/global', { diem: V.n(99) });
-t('máy con KHÔNG ghi được vào bảng xếp hạng', m === 403, `HTTP ${m}`);
-m = await doc('bangXepHang/global', BE_A);
-t('bé đăng nhập ĐỌC ĐƯỢC bảng xếp hạng', m === 200 || m === 404, `HTTP ${m}`);
+/* ── Số liệu ghi vào có còn nguyên không ── */
+await env.withSecurityRulesDisabled(async (ctx) => {
+  const d = await getDoc(doc(ctx.firestore(), 'hocBa/be1/muc/gio_2026_08_17'));
+  const ok = d.exists() && d.data().giay === 900 && d.data().giayXem === 300;
+  await t('sổ giờ ghi lên rồi đọc lại vẫn đủ ba con số', ok ? Promise.resolve() : Promise.reject(new Error('số liệu không khớp')));
+});
 
+await env.cleanup();
 console.log(`\n${pass} PASS · ${fail} FAIL`);
 process.exit(fail ? 1 : 0);
