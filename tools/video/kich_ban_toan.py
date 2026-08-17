@@ -13835,7 +13835,138 @@ def kb5_ti_le_nghich(b):
     ]
 
 
+def kb5_luu_do_hai_chieu(b):
+    """L5·B43·M1 Con số đang cầm là PHẦN CÒN — đi ngược thì nhân nghịch đảo."""
+    return [
+        _c('bia', 'Đi ngược một chuỗi tầng', so_bai(b),
+           loi=['Đề kể xuôi từ đầu tới cuối, nhưng chỉ cho con số ở cuối. Phải gỡ '
+                'ngược.']),
+        _c('de_toan', 'Đề bài',
+           de='Dùng 1/2 số kẹo, rồi 1/3 chỗ CÒN LẠI, rồi 1/4 chỗ còn lại.\nCuối cùng còn 9 viên. Lúc đầu có mấy viên?',
+           loi=['Dùng một phần hai số kẹo, rồi một phần ba chỗ còn lại, rồi một phần tư '
+                'chỗ còn lại.',
+                'Cuối cùng còn chín viên. Hỏi lúc đầu có mấy viên.']),
+        _c('y_toan', 'Con số đang cầm là PHẦN CÒN, không phải phần dùng',
+           'tầng "dùng 1/4 chỗ còn lại"   →   phần còn là 3/4', buoc=1, soBuoc=3,
+           loi=['Nhìn con số đang cầm trên tay. Nó là phần còn, chứ không phải phần đã '
+                'dùng.',
+                'Tầng dùng một phần tư thì phần còn là ba phần tư.']),
+        _c('y_toan', 'Đi ngược thì nhân NGHỊCH ĐẢO phần còn',
+           'còn 3/4   →   nhân 4/3      ·      nhân 3 là lấy nhầm hệ số của phần DÙNG',
+           buoc=2, soBuoc=3,
+           loi=['Đi ngược thì nhân nghịch đảo của phần còn.',
+                'Nhân bốn phần ba, chứ nhân ba là lấy nhầm hệ số của phần đã dùng.']),
+        _c('day_so', 'Gỡ ngược từng tầng', so=['9', '12', '18', '36'],
+           nhanHang='gỡ ngược', chuPhu='× 4/3   ·   × 3/2   ·   × 2   →   lúc đầu 36 viên.',
+           loi=['Gỡ ngược từng tầng. Chín nhân bốn phần ba được mười hai.',
+                'Rồi nhân ba phần hai được mười tám, rồi nhân hai được ba mươi sáu.']),
+        _c('y_toan', 'Kiểm nhanh bằng TÍCH các phần còn',
+           '1/2 × 2/3 × 3/4 = 1/4   →   9 đúng là 1/4 của 36 ✓', buoc=3, soBuoc=3,
+           loi=['Kiểm nhanh bằng tích các phần còn. Tử mẫu rút cho nhau đẹp như xếp '
+                'quân cờ.',
+                'Được một phần tư, mà chín đúng là một phần tư của ba mươi sáu.']),
+        _c('de_toan', 'Gỡ đúng THỨ TỰ NGƯỢC dòng thời gian',
+           de='tầng xảy ra SAU thì gỡ TRƯỚC',
+           loi=['Và phải gỡ đúng thứ tự ngược dòng thời gian. Tầng xảy ra sau thì gỡ '
+                'trước.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='con số đang cầm là PHẦN CÒN — nhân NGHỊCH ĐẢO phần còn',
+           thay='lấy nhầm hệ số của phần dùng là ra gấp đôi số thật, oan uổng',
+           loi=['Con nhớ câu này. Con số đang cầm là phần còn, nên nhân nghịch đảo phần '
+                'còn.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_hai_chu_con_lai(b):
+    """L5·B43·M2 Khoanh tròn chữ "còn lại" trước khi đặt bút."""
+    return [
+        _c('bia', 'Hai chữ đổi cả đáp số', so_bai(b),
+           loi=['Có hai chữ trong đề mà bỏ sót là sai cả bài. Hai chữ còn lại.']),
+        _c('de_toan', 'Hai đề chỉ khác hai chữ',
+           de='Túi 24 viên, ăn một nửa còn 12.\nĐề A cho "1/3 chỗ CÒN LẠI"  ·  đề B cho "1/3 TỔNG"',
+           loi=['Túi hai mươi tư viên, ăn một nửa còn mười hai.',
+                'Đề A cho một phần ba chỗ còn lại, đề B cho một phần ba tổng.']),
+        _c('y_toan', 'Hai phân số ăn trên HAI đoạn khác nhau',
+           '"chỗ còn lại" ăn trên đoạn MỚI (12)   ·   "tổng" ăn trên đoạn GỐC (24)',
+           buoc=1, soBuoc=3,
+           loi=['Hai phân số ấy ăn trên hai đoạn khác nhau.',
+                'Chỗ còn lại ăn trên đoạn mới là mười hai, còn tổng ăn trên đoạn gốc là '
+                'hai mươi tư.']),
+        _c('day_so', 'Hai đáp khác hẳn nhau', so=['8', '4'], nhanHang='còn lại',
+           chuPhu='đề A: cho 4 → còn 8   ·   đề B: cho 8 → còn 4.',
+           loi=['Đề A cho bốn viên nên còn tám. Đề B cho tám viên nên chỉ còn bốn.',
+                'Hai chữ thôi mà hai đáp khác một trời.']),
+        _c('y_toan', 'Tầng CỘNG TRỪ thì gỡ bằng phép ĐỐI',
+           'được THÊM 3   →   ngược lại TRỪ 3      ·      bị BỚT   →   ngược lại CỘNG',
+           buoc=2, soBuoc=3,
+           loi=['Tầng cộng trừ thì gỡ bằng phép đối. Được thêm thì ngược lại là trừ '
+                'đi.']),
+        _c('de_toan', 'Chuỗi trộn nhân với cộng',
+           de='Dùng 1/2 mua sách → 1/2 chỗ còn lại mua vở → ĐƯỢC THƯỞNG 3 nghìn\n→ còn 15 nghìn',
+           loi=['Chuỗi trộn cả nhân lẫn cộng. Mua sách, mua vở, rồi được thưởng ba '
+                'nghìn, còn mười lăm nghìn.']),
+        _c('y_toan', 'Thưởng xảy ra SAU CÙNG nên gỡ TRƯỚC TIÊN',
+           '15 − 3 = 12   →   × 2 = 24   →   × 2 = 48 nghìn', buoc=3, soBuoc=3,
+           loi=['Thưởng xảy ra sau cùng nên gỡ trước tiên. Mười lăm trừ ba còn mười '
+                'hai.',
+                'Rồi nhân hai hai lượt, lúc đầu có bốn mươi tám nghìn.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='hai chữ CÒN LẠI — khoanh tròn TRƯỚC, đặt bút SAU',
+           thay='và gỡ đúng thứ tự ngược: tầng xảy ra sau thì gỡ trước',
+           loi=['Con nhớ câu này. Khoanh tròn hai chữ còn lại trước, rồi hãy đặt bút.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_gia_thiet_tam(b):
+    """L5·B43·M3 Giả thiết tạm ba nhịp; thừa – thiếu thì khoảng cách là thừa CỘNG thiếu."""
+    return [
+        _c('bia', 'Cứ giả vờ một đằng rồi đo xem lệch bao nhiêu', so_bai(b),
+           loi=['Có một chiêu rất lạ mà rất mạnh. Cứ giả vờ cực đoan rồi đo phần '
+                'lệch.']),
+        _c('de_toan', 'Đề bài', de='Vừa gà vừa chó có 10 con, đếm được 28 chân.\nTìm số gà, số chó',
+           loi=['Vừa gà vừa chó có mười con, đếm được hai mươi tám chân.']),
+        _c('y_toan', 'Nhịp 1 — GIẢ cực đoan một loại',
+           'giả cả 10 con đều là gà   →   chỉ có 20 chân', buoc=1, soBuoc=3,
+           loi=['Nhịp một, giả cực đoan. Giả cả mười con đều là gà thì chỉ có hai mươi '
+                'chân.']),
+        _c('day_so', 'Nhịp 2 — ĐO phần lệch', so=['20', '28'], nhanHang='chân',
+           chuPhu='Giả ra 20 — mà đề cho 28, nên thiếu 8 chân.',
+           loi=['Nhịp hai, đo phần lệch. Giả ra hai mươi mà đề cho hai mươi tám, thiếu '
+                'tám chân.']),
+        _c('y_toan', 'Nhịp 3 — CHIA cho chênh mỗi suất đổi',
+           'đổi 1 gà thành 1 chó thì thêm đúng 2 chân   →   chó = 8 : 2 = 4 · gà = 6',
+           buoc=2, soBuoc=3,
+           loi=['Nhịp ba, mỗi lần đổi một gà thành một chó thì thêm đúng hai chân.',
+                'Tám chia hai được bốn con chó, còn lại sáu con gà.']),
+        _c('de_toan', 'Bài thưởng – phạt cũng ba nhịp ấy',
+           de='20 phát: trúng được 5 điểm, trượt bị phạt 2. Được 65 điểm — trượt mấy phát?',
+           loi=['Bài thưởng phạt cũng ba nhịp ấy, chỉ khác chỗ mỗi suất đổi mất cả hai '
+                'đầu.']),
+        _c('y_toan', 'Còn bài THỪA – THIẾU thì đo cả hai phía',
+           '"mỗi bạn 3 thừa 8" · "mỗi bạn 5 thiếu 4"   →   khoảng cách = 8 + 4 = 12',
+           buoc=3, soBuoc=3,
+           loi=['Bài thừa thiếu thì một kịch bản dừng dưới kho, một kịch bản vọt trên '
+                'kho.',
+                'Khoảng cách đo từ đáy lên đỉnh là thừa cộng thiếu, chứ trừ nhau là đo '
+                'cụt nửa đường.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='thừa một phía, thiếu một phía — khoảng cách là THỪA CỘNG THIẾU',
+           thay='mỗi bạn chênh 2 quả → 12 : 2 = 6 bạn → kho = 6 × 3 + 8 = 26 quả',
+           loi=['Con nhớ câu này. Thừa một phía thiếu một phía thì khoảng cách là thừa '
+                'cộng thiếu.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B43.M1': kb5_luu_do_hai_chieu,
+    'DL:KSN5Q1.B43.M2': kb5_hai_chu_con_lai,
+    'DL:KSN5Q1.B43.M3': kb5_gia_thiet_tam,
     'DL:KSN5Q1.B42.M1': kb5_voi_vao_voi_ra,
     'DL:KSN5Q1.B42.M2': kb5_be_co_san_be_ro,
     'DL:KSN5Q1.B42.M3': kb5_ti_le_nghich,

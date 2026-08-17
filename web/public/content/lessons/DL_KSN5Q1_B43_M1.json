@@ -34,20 +34,7 @@
   "kidText": "Bài tính ngược nhiều tầng: con gỡ từ số cuối đi lên. Dùng $\\frac{1}{3}$ thì còn $\\frac{2}{3}$, nên tầng ấy phải nhân $\\frac{3}{2}$ chứ không nhân 3."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Lưu đồ hai chiều: chiều XUÔI mỗi tầng \"dùng $\\frac{m}{n}$ chỗ còn lại\" nghĩa là nhân với phần còn (n − m)/n; chiều NGƯỢC gỡ từ số cuối — nhân với NGHỊCH ĐẢO phần còn: $\\frac{n}{n - m}$."
-   },
-   {
-    "id": "K2",
-    "text": "Con số đang cầm là PHẦN CÒN: tầng \"dùng $\\frac{1}{3}$ chỗ còn lại\" → còn $\\frac{2}{3}$ → đi ngược nhân $\\frac{3}{2}$ (nhân 3 là lấy nhầm hệ số từ phần DÙNG — gấp đôi oan!); \"dùng $\\frac{1}{2}$\" → còn $\\frac{1}{2}$ → nhân 2; \"dùng $\\frac{1}{4}$\" → còn $\\frac{3}{4}$ → nhân $\\frac{4}{3}$."
-   },
-   {
-    "id": "K3",
-    "text": "Chuỗi ba tầng gỡ đúng thứ tự ngược: còn 9 viên sau dùng $\\frac{1}{2}$ → $\\frac{1}{3}$ còn lại → $\\frac{1}{4}$ còn lại: 9 × $\\frac{4}{3}$ = 12 → × $\\frac{3}{2}$ = 18 → × $2 = 36$ viên; kiểm nhanh bằng TÍCH PHẦN CÒN: $\\frac{1}{2}$ × $\\frac{2}{3}$ × $\\frac{3}{4}$ = $\\frac{1}{4}$ → $9 = 1$/4 tổng → 36 ✓."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: LƯU ĐỒ HAI CHIỀU — ĐI XUÔI GHI, ĐI NGƯỢC NHÂN. Túi kẹo bị dùng 1/2, rồi 1/3 chỗ còn lại, rồi 1/4 chỗ còn lại — cuối cùng còn CHÍN viên. Tìm túi lúc đầu? Trí Long gỡ ngược hùng hổ: \"dùng 1/4 thì nhân 4, dùng 1/3 nhân 3, dùng 1/2 nhân 2: 9 × 4 × 3 × 2 = 216 viên!\" — túi kẹo nào chứa nổi! Nhìn lại tay mình: sau tầng \"dùng 1/4\", con số 9 đang cầm là PHẦN CÒN — ba phần tư! Hệ số ngược phải là nghịch đảo phần CÒN: chín nhân BỐN PHẦN BA bằng mười hai. Tầng \"dùng 1/3\": còn hai phần ba — nhân BA PHẦN HAI: mười tám. Tầng \"dùng 1/2\": còn một nửa — nhân HAI: BA MƯƠI SÁU viên! Kiểm nhanh bằng tích phần còn: 1/2 nhân 2/3 nhân 3/4 — rút gọn đẹp như xếp domino — bằng MỘT PHẦN TƯ: chín viên đúng là một phần tư của ba sáu. Con số đang cầm là phần còn — nghịch đảo phần còn!",
   "canonicalExamples": [
    {
@@ -84,14 +71,8 @@
     "counterExample": "$9  \\times  4  \\times  3  \\times  2 = 216$: thử xuôi 216 → 108 → 72 → 54 ≠ 9 — lệch xa sáu lần!"
    }
   ],
-  "vocabulary": [
-   "lưu đồ hai chiều",
-   "gỡ từ số cuối",
-   "phần còn — phần dùng",
-   "nghịch đảo phần còn",
-   "kiểm tích domino"
-  ],
-  "mantra": "CON SỐ ĐANG CẦM LÀ PHẦN CÒN — NGHỊCH ĐẢO PHẦN CÒN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -113,48 +94,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Su Bống dùng $\\frac{1}{2}$ số kẹo thì còn lại 12 viên. Hỏi lúc đầu có bao nhiêu viên?",
-    "display": {
-     "type": "story_panel",
-     "caption": "$9  \\times  4  \\times  3  \\times  2 = 216$ viên??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để soi phần còn!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Nhìn tay mình: sau tầng \"dùng MỘT PHẦN TƯ\", con số chín đang cầm là PHẦN CÒN — ba phần tư! Hệ số ngược là NGHỊCH ĐẢO phần còn: chín nhân BỐN PHẦN BA bằng mười hai! Tầng \"dùng một phần ba\": còn hai phần ba — nhân BA PHẦN HAI: mười tám! Tầng \"dùng một phần hai\": còn một nửa — nhân HAI: BA MƯƠI SÁU viên! Nhân 3 hay nhân 4 là lấy nhầm hệ số từ phần DÙNG — túi phình thành hai trăm mười sáu!",
-    "display": {
-     "type": "flow_reverse_interactive",
-     "spec": {
-      "steps": [
-       "9 × 4/3 = 12 (còn 3/4)",
-       "12 × 3/2 = 18 (còn 2/3)",
-       "18 × 2 = 36 (còn 1/2)"
-      ],
-      "wrong": "× $4  \\times  3  \\times  2 = 216$ ✗"
-     }
-    },
-    "interaction": {
-     "type": "reverse_ladder",
-     "answerKey": {
-      "value": 36
-     },
-     "successMessage": "4/3 → 3/2 → 2: túi 36 viên!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -170,37 +109,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Kiểm nhanh bằng TÍCH PHẦN CÒN: một phần hai nhân hai phần ba nhân ba phần tư — tử mẫu rút nhau đẹp như xếp domino — bằng MỘT PHẦN TƯ: chín viên đúng là một phần tư của ba mươi sáu! Bài hai tầng của Cáo Đề cùng máy: còn tám viên sau ăn một phần hai rồi cho một phần ba chỗ còn lại — ngược: tám nhân ba phần hai bằng mười hai, nhân hai bằng HAI MƯƠI TƯ viên; thử xuôi hai tư về mười hai về tám: khớp!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "tích còn: 1/2 × 2/3 × 3/4 = 1/4 → 9 = 1/4 × 36 ✓",
-      "Cáo Đề: 8 × 3/2 = 12 → × 2 = 24",
-      "thử xuôi 24 → 12 → 8 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: con số đang cầm là phần còn — nghịch đảo phần còn!",
-    "display": {
-     "type": "mantra_card",
-     "text": "NGHỊCH ĐẢO PHẦN CÒN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -516,107 +424,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B43.M1",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "9 × 4 × 3 × 2 = 216 viên??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "nhân 4, nhân 3, nhân 2: 216 viên!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B43_M1_F1.png",
-   "sha256_16": "d134fd640506adde"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Lưu đồ hai chiều: gỡ từ số cuối — hệ số ngược lấy từ phần CÒN (nhân n/(n−m))",
-    "steps": [
-     {
-      "text": "tích còn: 1/2 × 2/3 × 3/4 = 1/4 → 9 = 1/4 × 36"
-     },
-     {
-      "text": "Cáo Đề: 8 × 3/2 = 12 → × 2 = 24"
-     },
-     {
-      "text": "thử xuôi 24 → 12 → 8"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B43_M1_F2.png",
-   "sha256_16": "8b851e5b01cb313c"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Lưu đồ hai chiều",
-      "text": "chiều XUÔI mỗi tầng \"dùng m/n chỗ còn lại\" nghĩa là nhân với phần còn (n − m)/n; chiều NGƯỢC gỡ từ số cuối — nhân với NGHỊCH ĐẢO phần còn: n/(n − m).",
-      "tone": "navy"
-     },
-     {
-      "label": "Con số đang cầm là PHẦN CÒN (n−m)/n → nhân NGHỊCH ĐẢO n/(n−m)",
-      "text": "dùng 1/3 → ×3/2 (không phải ×3 — túi phình 216!). Chuỗi: 9 × 4/3 × 3/2 × 2 = 36. Kiểm tích domino: 1/2 × 2/3 × 3/4 = 1/4 → 9 = 1/4 tổng.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CON SỐ ĐANG CẦM LÀ PHẦN CÒN — NGHỊCH ĐẢO PHẦN CÒN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B43_M1_F3.png",
-   "sha256_16": "1c0ae0d99243c891"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "GỠ NGƯỢC TỪ SỐ CUỐI — ĐỌC ĐÚNG HỆ SỐ NGƯỢC",
-    "steps": [
-     {
-      "text": "Số cuối cùng",
-      "sub": "còn 12 viên"
-     },
-     {
-      "text": "Tầng \"dùng 1/2\" → nhân 2",
-      "sub": "12 × 2 = 24"
-     },
-     {
-      "text": "Tầng \"dùng 1/3 CHỖ CÒN\" → nhân 3/2",
-      "sub": "vì sau tầng ấy CÒN 2/3"
-     }
-    ],
-    "note": "Nhân 3 là lấy nhầm hệ số — con số đang cầm là phần CÒN, không phải phần dùng"
-   },
-   "caption": "Lưu đồ hai chiều: xuôi ghi từng tầng, ngược gỡ từ số cuối",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B43_M1_F4.png",
-   "sha256_16": "3fb2216230318d96"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B34",
@@ -630,5 +438,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Lưu đồ hai chiều: gỡ từ số cuối — hệ số ngược lấy từ phần CÒN (nhân $\\frac{n}{n - m}$)"
+ "titleDay": "Lưu đồ hai chiều: gỡ từ số cuối — hệ số ngược lấy từ phần CÒN (nhân $\\frac{n}{n - m}$)",
+ "video": {
+  "giang": "DL_KSN5Q1_B43_M1_giang.mp4"
+ }
 }

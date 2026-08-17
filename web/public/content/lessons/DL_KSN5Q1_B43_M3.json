@@ -35,20 +35,7 @@
   "kidText": "Gà và chó: con giả hết là gà, đo xem thiếu bao nhiêu chân, rồi chia cho chênh mỗi con. Bài thừa – thiếu thì CỘNG hai phía."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Giả thiết tạm ba nhịp: GIẢ cực đoan một loại (cả 36 con là gà: 72 chân) — ĐO lệch với đề ($100 - 72$ = thiếu 28) — CHIA cho chênh-mỗi-suất (đổi 1 gà → 1 chó: +2 chân): chó = $28 : 2 = 14$; gà = 22. Thử: $44 + 56 = 100$ ✓."
-   },
-   {
-    "id": "K2",
-    "text": "Thưởng – phạt: mỗi suất đổi mất CẢ HAI đầu — giả trúng cả 20 phát: 100 điểm; đề cho 65 → hụt 35; mỗi phát trượt mất thưởng 5 LẪN chịu phạt $2 = 7$ điểm → trượt = $35 : 7 = 5$ phát."
-   },
-   {
-    "id": "K3",
-    "text": "Thừa – thiếu trên trục kho: kịch bản \"mỗi bạn 3\" dừng DƯỚI kho 8 quả; \"mỗi bạn 5\" vọt TRÊN kho 4 quả — khoảng cách hai kịch bản = thừa CỘNG thiếu = $8 + 4 = 12$ (trừ $8 - 4$ là đo cụt nửa đường!); mỗi bạn chênh 2 → 6 bạn; cam = $3  \\times  6 + 8 = 26$ quả."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: SÂN KHẤU GIẢ VỜ VÀ TRỤC KHO CAM. Gà chó 36 con, 100 chân. Lên sân khấu GIẢ VỜ: cả 36 con đều là GÀ — đếm chân: 72. Đề đòi 100: THIẾU HAI MƯƠI TÁM chân! Ai bù? Mỗi lần đổi một gà thành một chó, sân khấu thêm ĐÚNG HAI chân. Số chó = 28 : 2 = MƯỜI BỐN — gà hai mươi hai. Thử: 44 + 56 = 100, tròn vành! Bắn bia thưởng phạt hiểm hơn: 20 phát, trúng +5, trượt −2, được 65 điểm. Giả trúng CẢ: 100 điểm — hụt ba mươi lăm. Mỗi phát trượt mất những GÌ? Mất 5 điểm thưởng KHÔNG được, lại CHỊU 2 điểm phạt: bảy điểm một phát! Trượt = 35 : 7 = NĂM phát. Còn thừa – thiếu: chia cam mỗi bạn 3 thì THỪA 8; mỗi bạn 5 thì THIẾU 4. Dựng trục kho: kịch bản một dừng DƯỚI kho 8 — kịch bản hai vọt TRÊN kho 4: khoảng cách hai kịch bản là 8 CỘNG 4 = MƯỜI HAI (thừa một phía, thiếu một phía — đo từ đáy lên đỉnh!); mỗi bạn chênh 2 quả → SÁU bạn, cam 3 × 6 + 8 = HAI MƯƠI SÁU quả!",
   "canonicalExamples": [
    {
@@ -85,14 +72,8 @@
     "counterExample": "$8 - 4 = 4$ → 2 bạn: mỗi bạn 3 quả thừa 8 nghĩa là kho 14 quả — mà 2 bạn mỗi bạn 5 chỉ cần 10: thừa 4 chứ thiếu đâu?!"
    }
   ],
-  "vocabulary": [
-   "sân khấu giả vờ",
-   "giả — đo — chia",
-   "chênh mỗi suất",
-   "mất thưởng lẫn chịu phạt",
-   "trục kho thừa – thiếu"
-  ],
-  "mantra": "THỪA MỘT PHÍA, THIẾU MỘT PHÍA — KHOẢNG CÁCH LÀ THỪA CỘNG THIẾU!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -114,45 +95,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Vừa gà vừa chó có 10 con, 28 chân. Tìm số gà, số chó.",
-    "display": {
-     "type": "story_panel",
-     "caption": "tổng chênh = $8 - 4$??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để dựng trục kho!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Trục kho cam: kịch bản mỗi-bạn-BA dừng DƯỚI kho tám quả — kịch bản mỗi-bạn-NĂM vọt TRÊN kho bốn quả! Khoảng cách hai kịch bản đo từ đáy lên đỉnh: tám CỘNG bốn bằng MƯỜI HAI — thừa một phía, thiếu một phía! Mỗi bạn giữa hai kịch bản chênh năm trừ ba bằng HAI quả: số bạn bằng mười hai chia hai — SÁU bạn! Cam bằng ba nhân sáu cộng tám — HAI MƯƠI SÁU quả. Thử: sáu bạn nhân năm là ba mươi, thiếu đúng bốn!",
-    "display": {
-     "type": "axis_bank_interactive",
-     "spec": {
-      "below": "mỗi bạn 3: dưới kho 8",
-      "above": "mỗi bạn 5: trên kho 4",
-      "gap": "8 + 4 = 12",
-      "per": "chênh 2/bạn → 6 bạn · cam 26"
-     }
-    },
-    "interaction": {
-     "type": "measure_gap",
-     "answerKey": {
-      "value": 12
-     },
-     "successMessage": "Đáy lên đỉnh: 8 + 4 = 12 → 6 bạn, 26 cam!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -173,38 +115,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Sân khấu giả vờ cho gà chó: ba sáu con một trăm chân — GIẢ cả ba sáu là GÀ: bảy hai chân, THIẾU hai tám! Mỗi lần đổi một gà thành chó sân khấu thêm ĐÚNG HAI chân: chó bằng hai tám chia hai — MƯỜI BỐN, gà hai hai; thử bốn tư cộng năm sáu đúng một trăm! Bắn bia của sư phụ: hai mươi phát, được sáu lăm điểm — giả trúng CẢ: một trăm, hụt ba lăm. Mỗi phát trượt mất thưởng NĂM lẫn chịu phạt HAI: bảy điểm! Trượt bằng ba lăm chia bảy — NĂM phát!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "giả toàn gà: 72 → thiếu 28 → chó 14, gà 22 ✓",
-      "bia: 100 − 65 = 35 → mỗi trượt −(5+2) = 7",
-      "trượt = 35 : 7 = 5 phát ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: thừa một phía, thiếu một phía — khoảng cách là thừa cộng thiếu!",
-    "display": {
-     "type": "mantra_card",
-     "text": "THỪA CỘNG THIẾU!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -547,107 +457,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B43.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "tổng chênh = 8 − 4??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "chênh là 8 trừ 4 bằng 4!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B43_M3_F1.png",
-   "sha256_16": "dfe0402090851347"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Giả thiết tạm: giả cực đoan — độ lệch : chênh-mỗi-suất; thừa-thiếu CỘNG hai phía",
-    "steps": [
-     {
-      "text": "giả toàn gà: 72 → thiếu 28 → chó 14, gà 22"
-     },
-     {
-      "text": "bia: 100 − 65 = 35 → mỗi trượt −(5+2) = 7"
-     },
-     {
-      "text": "trượt = 35 : 7 = 5 phát"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B43_M3_F2.png",
-   "sha256_16": "040267a5bad4279f"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "text": "Giả thiết tạm ba nhịp? Thừa-thiếu cộng hay trừ?",
-      "tone": "navy"
-     },
-     {
-      "label": "Thưởng – phạt",
-      "text": "mỗi suất đổi mất CẢ HAI đầu",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "THỪA MỘT PHÍA, THIẾU MỘT PHÍA — KHOẢNG CÁCH LÀ THỪA CỘNG THIẾU!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B43_M3_F3.png",
-   "sha256_16": "6eca5f63a4f09be9"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "GIẢ THIẾT TẠM: 36 CON · 100 CHÂN",
-    "neutral": true,
-    "wrong": {
-     "head": "GIẢ CẢ 36 LÀ GÀ",
-     "steps": [
-      "36 × 2 = 72 chân"
-     ],
-     "result": "thiếu 28 chân"
-    },
-    "right": {
-     "head": "ĐỔI GÀ THÀNH CHÓ",
-     "steps": [
-      "mỗi lần đổi thêm 2 chân"
-     ],
-     "result": "28 : 2 = 14 chó"
-    },
-    "verdict": "Gà = 36 − 14 = 22 · thử: 22 × 2 + 14 × 4 = 100 ✓"
-   },
-   "caption": "Giả kịch bản cực đoan — đo độ lệch — chia cho chênh mỗi suất",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B43_M3_F4.png",
-   "sha256_16": "aeb54ce3ab73f473"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B34",
@@ -661,5 +471,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Giả thiết tạm: giả cực đoan — độ lệch : chênh-mỗi-suất; thừa-thiếu CỘNG hai phía"
+ "titleDay": "Giả thiết tạm: giả cực đoan — độ lệch : chênh-mỗi-suất; thừa-thiếu CỘNG hai phía",
+ "video": {
+  "giang": "DL_KSN5Q1_B43_M3_giang.mp4"
+ }
 }
