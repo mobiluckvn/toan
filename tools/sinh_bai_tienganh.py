@@ -56,6 +56,15 @@ DAN_DIEN_KHONG_HINH = "Chọn từ điền vào chỗ trống."
 THE_TOI_DA = 5          # trùng THE_TOI_DA của mon/tienganh/lib/cham.js
 
 
+def canh_doc(u: dict) -> str:
+    """Phần TIẾNG VIỆT của tên cảnh — dùng cho lời đọc và mọi câu tiếng Việt.
+
+    Tên cảnh từ lớp 2 là song ngữ, ngăn bằng " · ". Tên để nhìn thì cần cả hai;
+    giọng đọc tiếng Việt thì chỉ đọc được vế đầu.
+    """
+    return (u.get("canh") or "").split(" · ")[0].strip()
+
+
 def am_id(loai: str, khoa: str) -> str:
     """Mã clip âm. Dùng chung giữa các bài: từ `dog` chỉ sinh MỘT lần cho cả quyển."""
     sach = "".join(c if c.isalnum() else "_" for c in khoa.lower()).strip("_")
@@ -747,8 +756,14 @@ def dung_bai(u: dict, lop: int, truoc: str | None, sau: str | None,
         })
 
     man = [{"id": "S1", "kind": "hook",
-            "narration": f"Cảnh hôm nay: {u['canh']}.",
-            "doanAm": [(f"Cảnh hôm nay: {u['canh']}.", "vi")]}]
+            # ⚠ LỜI ĐỌC CHỈ LẤY PHẦN TIẾNG VIỆT.
+            #
+            # Từ lớp 2, tên cảnh để SONG NGỮ "Ở tiệc sinh nhật · At my birthday party"
+            # (bác chốt 17-08). Nhưng đó là tên để NHÌN. Đưa nguyên cả cụm vào dòng
+            # khai `vi` thì giọng đọc tiếng Việt đọc luôn phần tiếng Anh — nghe sai
+            # hẳn, và cổng `tienganh_am` bắt đúng 17 dòng như thế.
+            "narration": f"Cảnh hôm nay: {canh_doc(u)}.",
+            "doanAm": [(f"Cảnh hôm nay: {canh_doc(u)}.", "vi")]}]
     man += [{"id": f"S{i + 2}", "kind": "explain", "narration": "", "teaches": [k["id"]]}
             for i, k in enumerate(K)]
 

@@ -31,6 +31,13 @@ const CO_DAU = /[àáảãạăằắẳẵặâầấẩẫậèéẻẽẹê�
  * Chữ Việt KHÔNG dấu hay lọt vào câu tiếng Anh mà mắt thường bỏ qua.
  * Cố ý KHÔNG có "can" — đó là từ tiếng Anh thật của Unit 3 (cái lon).
  */
+/* Chữ Việt không dấu KHÁC, gặp trong nghĩa của từ vựng. Danh sách này chỉ để phép
+   đoán ngôn ngữ bớt báo oan — thêm chữ vào đây không nới lỏng gì về nội dung. */
+const VIET_KHAC = new Set([
+  'anh', 'em', 'trai', 'chi', 'ba', 'ma', 'bo', 'me', 'ong', 'ban',
+  'cam', 'canh', 'xanh', 'do', 'den', 'hoa', 'qua', 'cai', 'chim', 'ca',
+]);
+
 const VIET_KHONG_DAU = new Set([
   'con', 'cua', 'cho', 'va', 'la', 'co', 'khong', 'nhe', 'hay', 'bam',
   'nghe', 'nhin', 'chon', 'dung', 'sai', 'roi', 'moi', 'hinh', 'tu', 'cau',
@@ -63,7 +70,17 @@ function soatDong(m) {
        Việt); HAI từ trở lên thì đúng là câu tiếng Việt khai nhầm. */
     if (lot.length >= 2) return `khai 'en' mà nhiều chữ Việt không dấu (${lot.join(', ')}): "${chu}"`;
   } else {
-    if (!CO_DAU.test(chu) && chu.split(/\s+/).length >= 3) {
+    /* ⚠ "Không chữ nào có dấu" KHÔNG đủ để kết luận là tiếng Anh. Tiếng Việt có
+       hẳn một lớp từ không dấu, và nghĩa của `brother` là "anh, em trai" — ba từ,
+       không từ nào có dấu, mà vẫn là tiếng Việt trăm phần trăm. Lớp 2 báo đỏ đúng
+       hai dòng như thế.
+
+       Nên đòi thêm một dấu hiệu ĐỘC LẬP: có chữ nào KHÔNG PHẢI tiếng Việt không?
+       Chuỗi mà mọi chữ đều đọc được bằng vần Việt thì Kokoro-VI đọc ra vẫn đúng —
+       đó mới là điều phép kiểm này thật sự lo. */
+    const chuCai = (chu.toLowerCase().match(/[a-z]+/g) || []);
+    const laVietDuoc = (w) => VIET_KHONG_DAU.has(w) || VIET_KHAC.has(w);
+    if (!CO_DAU.test(chu) && chuCai.length >= 3 && !chuCai.every(laVietDuoc)) {
       return `khai 'vi' mà không chữ nào có dấu: "${chu}"`;
     }
     /* Chỗ này bản đầu để lọt, và lọt đúng một dòng do chính bộ sinh đẻ ra:
