@@ -34,24 +34,7 @@
   "kidText": "Người sau xuất phát muộn: con chụp ảnh khoảng cách THẬT lúc người đó lên đường rồi mới chia, đừng lấy khoảng cách gốc."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Nghi thức chụp ảnh khác giờ: dòng đầu tiên của bài luôn là \"lúc người sau xuất phát, người trước đã đi được...\": quãng đi trước = V × thời gian chênh — rồi mới lấy khoảng cách THẬT đem chia."
-   },
-   {
-    "id": "K2",
-    "text": "Đuổi cùng điểm khác giờ: 7 giờ người thứ nhất rời A với 10 km/h; 8 giờ 30 người thứ hai đuổi với 16 km/h → ảnh lúc 8:30: cách nhau $10  \\times  1,5 = 15$ km → t = 15 : ($16 - 10$) = 2,5 giờ."
-   },
-   {
-    "id": "K3",
-    "text": "Ngược chiều khác giờ AB = 46: lúc 8 giờ xe thứ nhất (đi từ 7 giờ, 10 km/h) đã đi 10 km → khoảng cách thật = $46 - 10 = 36$ → t = 36 : ($10 + 8$) = 2 giờ → gặp lúc $8 + 2 = 10$ giờ (mốc đồng hồ thật!)."
-   },
-   {
-    "id": "K4",
-    "text": "Ca sư phụ: 7 giờ xe máy rời A với 40; 7 giờ 30 ô tô đuổi với 60 → ảnh: $40  \\times  0,5 = 20$ km; t = $20 : 20 = 1$ giờ → đuổi kịp lúc 8 giờ 30, cách A $60  \\times  1 = 60$ km."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: TẤM ẢNH LÚC NGƯỜI SAU LÊN ĐƯỜNG. Quãng AB bốn mươi sáu cây; bảy giờ xe thứ nhất rời A — TÁM giờ xe thứ hai mới rời B ngược chiều. Trí Long vơ nguyên bốn sáu đem chia tổng! Khoan — con đang tính với TẤM ẢNH CŨ chụp lúc bảy giờ: suốt một tiếng người ta đã đi rồi! Nghi thức chụp ảnh — họ hàng bể-nước-tám-mươi-phần-trăm: dòng đầu tiên của bài luôn là tấm ảnh MỚI, chụp đúng lúc người sau lên đường: tám giờ — xe thứ nhất đã đi mười nhân một: MƯỜI cây! Khoảng cách THẬT bằng bốn sáu trừ mười — BA MƯƠI SÁU! Giờ mới chia tổng: ba sáu chia mười tám — HAI giờ: gặp lúc tám cộng hai — MƯỜI giờ, mốc đồng hồ thật! Đuổi cùng điểm cũng vậy: bảy giờ đi trước với mười cây giờ, tám rưỡi mới đuổi — ảnh lúc tám rưỡi: mười nhân một phẩy năm — MƯỜI LĂM cây; chia hiệu sáu: HAI GIỜ RƯỠI! Chụp ảnh khoảng cách thật lúc người sau lên đường — rồi hãy chia!",
   "canonicalExamples": [
    {
@@ -82,14 +65,8 @@
     "counterExample": "$46 : 18 = 2$ giờ 33 phút — nhưng suốt 1 giờ đầu xe kia đã gặm mất 10 km rồi: hai đáp lệch nhau hẳn nửa tiếng đồng hồ!"
    }
   ],
-  "vocabulary": [
-   "tấm ảnh lúc lên đường",
-   "khoảng cách thật",
-   "tấm ảnh cũ",
-   "trừ trước chia sau",
-   "mốc đồng hồ thật"
-  ],
-  "mantra": "CHỤP ẢNH KHOẢNG CÁCH THẬT LÚC NGƯỜI SAU LÊN ĐƯỜNG!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,48 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Lúc 7 giờ, người thứ nhất rời A với 10 km/h. Lúc 8 giờ 30 phút, người thứ hai rời A đuổi theo với 16 km/h. Hỏi sau bao lâu đuổi kịp?",
-    "display": {
-     "type": "story_panel",
-     "caption": "chia thẳng 46??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để chụp ảnh mới!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K3"
-    ],
-    "narration": "Nghi thức chụp ảnh — họ hàng bể-nước-tám-mươi-phần-trăm: dòng đầu tiên luôn là tấm ảnh MỚI, chụp đúng lúc người sau lên đường! Tám giờ — xe thứ nhất đã đi mười nhân một: MƯỜI cây! Khoảng cách THẬT bằng bốn sáu trừ mười — BA MƯƠI SÁU! Giờ mới chia tổng: ba sáu chia mười tám — HAI giờ: gặp lúc tám cộng hai — MƯỜI giờ, mốc đồng hồ thật!",
-    "display": {
-     "type": "snapshot_race_interactive",
-     "spec": {
-      "photo": "ảnh 8:00: đã đi 10 × 1 = 10 km",
-      "real": "thật = 46 − 10 = 36",
-      "divide": "36 : 18 = 2 giờ → gặp 10 giờ"
-     }
-    },
-    "interaction": {
-     "type": "snapshot_then_divide",
-     "answerKey": {
-      "values": [
-       36,
-       2
-      ]
-     },
-     "successMessage": "Ảnh mới 36 km → 2 giờ → gặp 10 giờ!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -168,38 +103,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K2",
-     "K4"
-    ],
-    "narration": "Đuổi cùng điểm cũng một nghi thức: bảy giờ đi trước với mười cây giờ — tám rưỡi mới đuổi với mười sáu: ảnh lúc tám rưỡi — mười nhân một phẩy năm: MƯỜI LĂM cây! Chia hiệu sáu: HAI GIỜ RƯỠI đuổi kịp! Ca sư phụ trọn gói: xe máy đi bảy giờ với bốn mươi — ô tô bảy rưỡi đuổi với sáu mươi: ảnh — hai mươi cây; chia hiệu hai mươi: MỘT giờ — kịp lúc TÁM GIỜ BA MƯƠI, cách A sáu mươi nhân một: SÁU MƯƠI cây!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "đuổi: ảnh 15 km → 15 : 6 = 2,5 giờ",
-      "sư phụ: ảnh 20 → 20 : 20 = 1 giờ",
-      "kịp 8:30 — cách A 60 km"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: chụp ảnh khoảng cách thật lúc người sau lên đường!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ẢNH MỚI RỒI MỚI CHIA!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -491,117 +394,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B54.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "chia thẳng 46??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "46 : 18!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B54_M2_F1.png",
-   "sha256_16": "0f438bc07b71d7ea"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Xuất phát khác giờ: chụp ảnh khoảng cách THẬT lúc người sau lên đường rồi mới chia",
-    "steps": [
-     {
-      "text": "đuổi: ảnh 15 km → 15 : 6 = 2,5 giờ"
-     },
-     {
-      "text": "sư phụ: ảnh 20 → 20 : 20 = 1 giờ"
-     },
-     {
-      "text": "kịp 8:30 — cách A 60 km"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B54_M2_F2.png",
-   "sha256_16": "858e784abaeb6ff5"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Nghi thức chụp ảnh khác giờ",
-      "text": "dòng đầu tiên của bài luôn là \"lúc người sau xuất phát, người trước đã đi được...\": quãng đi trước = V × thời gian chênh — rồi mới lấy khoảng cách THẬT đem chia.",
-      "tone": "navy"
-     },
-     {
-      "label": "Đuổi cùng điểm khác giờ",
-      "text": "7 giờ người thứ nhất rời A với 10 km/h; 8 giờ 30 người thứ hai đuổi với 16 km/h → ảnh lúc 8:30: cách nhau 10 × 1,5 = 15 km → t = 15 : (16 − 10) = 2,5 giờ.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CHỤP ẢNH KHOẢNG CÁCH THẬT LÚC NGƯỜI SAU LÊN ĐƯỜNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B54_M2_F3.png",
-   "sha256_16": "84fc1574d3a72c8a"
-  },
-  {
-   "archetype": "motion_track",
-   "params": {
-    "title": "XUẤT PHÁT KHÁC GIỜ — CHỤP ẢNH KHOẢNG CÁCH THẬT",
-    "from_label": "A",
-    "to_label": "B",
-    "length_label": "AB = 46 km",
-    "movers": [
-     {
-      "name": "xe 1 đi từ 7 giờ",
-      "from": 0.05,
-      "dir": ">",
-      "speed": "10 km/h"
-     },
-     {
-      "name": "xe 2 đi từ 8 giờ",
-      "from": 0.95,
-      "dir": "<",
-      "speed": "8 km/h"
-     }
-    ],
-    "meet": {
-     "at": 0.22,
-     "label": "lúc 8 giờ xe 1 đã đi 10 km"
-    },
-    "notes": [
-     "khoảng cách THẬT = 46 − 10 = 36",
-     "36 : 18 = 2 giờ → gặp lúc 10 giờ"
-    ]
-   },
-   "caption": "Chia thẳng 46 là tính với tấm ảnh cũ chụp lúc 7 giờ",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B54_M2_F4.png",
-   "sha256_16": "467099a2eb54d5a5"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B48"
@@ -613,5 +406,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Xuất phát khác giờ: chụp ảnh khoảng cách THẬT lúc người sau lên đường rồi mới chia"
+ "titleDay": "Xuất phát khác giờ: chụp ảnh khoảng cách THẬT lúc người sau lên đường rồi mới chia",
+ "video": {
+  "giang": "DL_KSN5Q1_B54_M2_giang.mp4"
+ }
 }

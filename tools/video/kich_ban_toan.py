@@ -14732,6 +14732,170 @@ def kb5_ban_kinh_gap_k(b):
     ]
 
 
+def kb5_duoi_kip_gap_nhau(b):
+    """L5·B54·M1 Vẽ hai mũi tên trước: cùng chiều chia HIỆU, đối đầu chia TỔNG."""
+    return [
+        _c('bia', 'Đuổi kịp và gặp nhau', so_bai(b),
+           loi=['Hai đề sinh đôi, chỉ khác đúng hai chữ ở cuối câu: cùng chiều hay '
+                'ngược chiều.',
+                'Chia nhầm chỗ thì đáp vẫn ra một con số đẹp, chẳng có gì kêu lên '
+                'cả.']),
+        _c('duong_di', 'Cùng chiều: người sau ĐUỔI người trước',
+           # Đoạn vẽ ra CHÍNH LÀ khoảng cách giữa hai người, nên hai mũi tên phải
+           # đặt đúng hai đầu. Bản đầu đặt ở 0,05 và 0,35 rồi vẫn kẻ ngoặc "cách
+           # nhau 5 km" ôm cả đoạn — hình nói đoạn đường dài năm cây trong khi hai
+           # người chỉ cách nhau chưa tới một phần ba đoạn ấy.
+           dauA='người sau', dauB='người trước', xe1Dau=0.0, xe1Huong='phai',
+           xe1Nhan='15 km/giờ', xe2Dau=1.0, xe2Huong='phai',
+           xe2Nhan='10 km/giờ',
+           nhanDai='cách nhau 5 km',
+           chuPhu='Mỗi giờ chỉ co lại phần CHÊNH: 15 − 10 = 5 km',
+           chuCuoi='t = 5 : 5 = 1 giờ',
+           loi=['Hai mũi tên cùng quay về một phía. Người sau nhanh hơn nên đang '
+                'đuổi.',
+                'Mỗi giờ khoảng cách chỉ co lại đúng phần chênh, tức hiệu hai vận '
+                'tốc, nên năm cây chia hiệu năm là một giờ.']),
+        _c('duong_di', 'Đối đầu: hai bên cùng gặm khoảng cách',
+           dauA='A', dauB='B', xe1Dau=0.02, xe1Huong='phai',
+           xe1Nhan='10 km/giờ', xe2Dau=0.98, xe2Huong='trai',
+           xe2Nhan='8 km/giờ', nhanDai='AB = 36 km',
+           chuPhu='Mỗi giờ co lại bằng TỔNG: 10 + 8 = 18 km',
+           chuCuoi='t = 36 : 18 = 2 giờ',
+           loi=['Hai mũi tên chụm đầu vào nhau thì mỗi giờ cả hai cùng gặm, nên co lại '
+                'bằng tổng.',
+                'Ba mươi sáu chia mười tám, hai giờ thì gặp.']),
+        _c('y_toan', 'Vẽ mũi tên TRƯỚC khi đụng phép tính',
+           'cùng hướng →→ chia HIỆU   ·   chụm đầu →← chia TỔNG', buoc=1, soBuoc=3,
+           loi=['Nên cứ vẽ hai mũi tên trước khi đụng phép tính, khỏi phải đọc đi đọc '
+                'lại đề.']),
+        _c('duong_di', 'Đề còn hỏi GẶP Ở ĐÂU', dauA='A', dauB='B',
+           sao=0.556, nhanSao='điểm gặp', nhanDai='AB = 36 km',
+           chuPhu='Người 10 km/giờ đi 2 giờ → cách A 20 km',
+           chuCuoi='Kiểm phía kia: 8 × 2 = 16 · 20 + 16 = 36 ✓',
+           loi=['Đề thường hỏi thêm gặp ở đâu. Lấy vận tốc một bên nhân thời gian vừa '
+                'tìm được.',
+                'Người mười cây giờ đi hai giờ nên điểm gặp cách A hai mươi cây.']),
+        _c('y_toan', 'Kiểm bằng cách cộng hai phía',
+           '20 + 16 = 36 = AB   →   khớp thì mới yên tâm', buoc=2, soBuoc=3,
+           loi=['Kiểm rất nhanh: quãng của hai phía cộng lại phải đúng bằng cả đoạn '
+                'đường.']),
+        _c('y_toan', 'Đổi hai chữ ở cuối câu là đổi cả phép chia',
+           '"cùng chiều" → chia hiệu   ·   "ngược chiều" → chia tổng', buoc=3,
+           soBuoc=3,
+           loi=['Đổi hai chữ cuối câu là đổi luôn phép chia, mà mũi tên vẽ ra thì không '
+                'lẫn được.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='vẽ hai mũi tên TRƯỚC — cùng hướng chia HIỆU, đối đầu chia TỔNG',
+           thay='đuổi: 5 : (15 − 10) = 1 giờ   ·   gặp: 36 : (10 + 8) = 2 giờ',
+           loi=['Con nhớ câu này. Vẽ hai mũi tên trước, cùng hướng chia hiệu, đối đầu '
+                'chia tổng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_xuat_phat_khac_gio(b):
+    """L5·B54·M2 Chụp lại khoảng cách THẬT đúng lúc người sau lên đường."""
+    return [
+        _c('bia', 'Xuất phát khác giờ nhau', so_bai(b),
+           loi=['Đoạn AB bốn mươi sáu cây. Xe một rời A lúc bảy giờ, xe hai rời B lúc '
+                'tám giờ.',
+                'Vơ nguyên bốn mươi sáu đem chia là hỏng, vì lúc tám giờ hai xe đâu còn '
+                'cách nhau bấy nhiêu.']),
+        _c('duong_di', 'Chụp lại khoảng cách THẬT lúc tám giờ',
+           dauA='A', dauB='B', toTu=0, toDen=0.217,
+           nhanTo='xe một đã đi 10 × 1 = 10 km trước khi xe hai lên đường',
+           xe1Dau=0.217, xe1Huong='phai', xe1Nhan='10 km/giờ',
+           xe2Dau=0.98, xe2Huong='trai', xe2Nhan='8 km/giờ',
+           nhanDai='AB = 46 km',
+           chuPhu='Khoảng cách THẬT lúc 8 giờ = 46 − 10 = 36 km',
+           chuCuoi='t = 36 : (10 + 8) = 2 giờ → gặp lúc 10 giờ',
+           loi=['Dòng đầu tiên của bài luôn là chụp lại khoảng cách thật, đúng lúc '
+                'người sau lên đường.',
+                'Xe một đi trước một giờ nên đã đi được mười cây. Khúc tô vàng ấy không '
+                'còn là khoảng cách nữa.',
+                'Còn lại ba mươi sáu, chia tổng mười tám, hai giờ nữa thì gặp, tức mười '
+                'giờ.']),
+        _c('y_toan', 'Quãng đi trước = vận tốc × thời gian CHÊNH',
+           'đi trước 1 giờ với 10 km/giờ   →   10 km', buoc=1, soBuoc=3,
+           loi=['Quãng đi trước bằng vận tốc nhân thời gian chênh giữa hai lúc xuất '
+                'phát.']),
+        _c('duong_di', 'Đuổi cùng điểm mà khác giờ cũng vậy',
+           dauA='A', dauB='đích', toTu=0, toDen=0.28,
+           nhanTo='7 giờ đi trước · 8 giờ 30 mới đuổi → 10 × 1,5 = 15 km',
+           xe1Dau=0.02, xe1Huong='phai', xe1Nhan='người đuổi 16 km/giờ',
+           xe2Dau=0.28, xe2Huong='phai', xe2Nhan='người trước 10 km/giờ',
+           chuPhu='Cách nhau 15 km · chia HIỆU 16 − 10 = 6',
+           chuCuoi='t = 15 : 6 = 2,5 giờ → đuổi kịp lúc 11 giờ',
+           loi=['Đuổi cùng một điểm mà khác giờ thì cũng chụp ảnh y hệt.',
+                'Đi trước một giờ rưỡi với mười cây giờ là mười lăm cây, chia hiệu sáu, '
+                'hai giờ rưỡi thì đuổi kịp.']),
+        _c('y_toan', 'Chụp ảnh xong mới quay về hai mũi tên',
+           'ảnh mới → khoảng cách thật → chia HIỆU hoặc chia TỔNG', buoc=2, soBuoc=3,
+           loi=['Chụp ảnh xong thì bài quay lại đúng bài cũ, chỉ khác con số khoảng '
+                'cách.']),
+        _c('y_toan', 'Thêm một bài để quen tay',
+           '7 giờ xe máy 40 · 7 giờ 30 ô tô 60   →   ảnh 20 km   →   t = 20 : 20 = 1 giờ',
+           buoc=3, soBuoc=3,
+           loi=['Xe máy bảy giờ đi bốn mươi, ô tô bảy rưỡi đuổi sáu mươi, ảnh chụp ra '
+                'hai mươi cây.',
+                'Chia hiệu hai mươi, đúng một giờ, tức tám giờ ba mươi thì đuổi kịp.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='chụp lại khoảng cách THẬT đúng lúc người sau lên đường',
+           thay='AB 46, đi trước 10 → còn 36; 36 : 18 = 2 giờ',
+           loi=['Con nhớ câu này. Chụp lại khoảng cách thật đúng lúc người sau lên '
+                'đường.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_sau_khi_gap_lan_hai(b):
+    """L5·B54·M3 Sau điểm gặp còn bao xa, và vì sao lần gặp hai là BA lần AB."""
+    return [
+        _c('bia', 'Sau khi gặp và lần gặp thứ hai', so_bai(b),
+           loi=['Hai xe từ hai đầu quãng ba mươi sáu cây, đi hết đường thì quay lại '
+                'ngay.',
+                'Đoán lần gặp thứ hai gấp đôi lần đầu là trượt.']),
+        _c('duong_di', 'Sau khi gặp thì mỗi xe còn bao xa?',
+           dauA='A', dauB='B', sao=0.556, nhanSao='điểm gặp ở km 20',
+           xe1Dau=0.556, xe1Huong='phai', xe1Nhan='còn 36 − 20 = 16 km',
+           nhanDai='AB = 36 km',
+           chuPhu='Người 10 km/giờ: 16 : 10 = 1,6 giờ = 1 giờ 36 phút nữa mới hết đường',
+           loi=['Đánh dấu điểm gặp lên đoạn đường rồi nhìn là thấy phần còn lại.',
+                'Người mười cây giờ còn mười sáu cây, tức một phẩy sáu giờ, là một giờ '
+                'ba mươi sáu phút.']),
+        _c('y_toan', 'Đổi phần lẻ của giờ ra phút thì nhân sáu mươi',
+           '0,6 giờ = 0,6 × 60 = 36 phút', buoc=1, soBuoc=3,
+           loi=['Phần lẻ của giờ muốn ra phút thì nhân sáu mươi, không phải đọc thẳng '
+                'thành sáu phút.',
+                'Không phẩy sáu giờ là ba mươi sáu phút, khác hẳn nhau.']),
+        _c('y_toan', 'Tới lần gặp MỘT, hai xe gộp đủ một lần AB',
+           'quãng của xe này + quãng của xe kia = 1 × AB', buoc=2, soBuoc=3,
+           loi=['Tới lần gặp thứ nhất, quãng hai xe gộp lại vừa đúng một lần đoạn '
+                'đường.',
+                'Đó là điều đã dùng ở màn trước, giờ dùng lại để đếm tiếp.']),
+        _c('y_toan', 'Từ đó tới lần gặp HAI, gộp thêm đúng hai lần AB',
+           'mỗi xe chạy nốt tới đầu kia rồi VÒNG lại   →   tổng cộng 3 × AB',
+           buoc=3, soBuoc=3,
+           loi=['Từ đó tới lần gặp thứ hai, mỗi xe chạy nốt tới đầu kia rồi vòng lại.',
+                'Hai hành trình ấy đắp thêm đúng hai lần đoạn đường nữa, nên tổng cộng '
+                'là ba lần.']),
+        _c('day_so', 'Nên lần gặp hai gấp BA lần gặp một', so=['2', '6'],
+           nhanHang='giờ · lần gặp 1 và 2',
+           chuPhu='(3 × 36) : 18 = 108 : 18 = 6 giờ — quãng gấp ba mà vận tốc gộp giữ nguyên.',
+           loi=['Nên lần gặp thứ hai đúng gấp ba lần gặp đầu, vì quãng gấp ba mà vận '
+                'tốc gộp vẫn thế.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='lần gặp một gộp 1 × AB — lần gặp hai gộp 3 × AB',
+           thay='AB = 36, tổng V = 18: lần một 2 giờ · lần hai 108 : 18 = 6 giờ',
+           loi=['Con nhớ câu này. Lần gặp một gộp một lần đoạn đường, lần gặp hai gộp '
+                'ba lần.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 def kb5_tam_giac_vst(b):
     """L5·B53·M1 Một tam giác thay ba công thức, và bài sớm muộn cần mốc thật."""
     return [
@@ -15289,6 +15453,9 @@ def kb5_banh_xe_lan(b):
 
 
 BO = {
+    'DL:KSN5Q1.B54.M1': kb5_duoi_kip_gap_nhau,
+    'DL:KSN5Q1.B54.M2': kb5_xuat_phat_khac_gio,
+    'DL:KSN5Q1.B54.M3': kb5_sau_khi_gap_lan_hai,
     'DL:KSN5Q1.B53.M1': kb5_tam_giac_vst,
     'DL:KSN5Q1.B53.M2': kb5_doi_km_gio_met_giay,
     'DL:KSN5Q1.B53.M3': kb5_van_toc_trung_binh,

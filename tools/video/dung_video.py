@@ -774,6 +774,93 @@ def khung(c: dict) -> Image.Image:
         if c.get("chuPhu"):
             giua(d, cy + r + 66, c["chuPhu"], phong(36), INK, rong=W - 180)
 
+    elif L == "duong_di":
+        # ══ ĐOẠN ĐƯỜNG VÀ HAI MŨI TÊN ══
+        # Cả chương chuyển động đứng hay đổ ở MỘT câu hỏi: hai bên đi cùng chiều hay
+        # đối đầu? Cùng chiều thì mỗi giờ khoảng cách co lại bằng HIỆU vận tốc, đối
+        # đầu thì bằng TỔNG. Hai đề chỉ khác đúng hai chữ ở cuối câu, nên đọc lướt là
+        # chia nhầm — mà chia nhầm thì không có gì kêu lên cả.
+        #
+        # Vẽ hai mũi tên ra thì bé KHÔNG CẦN đọc kỹ nữa: hai mũi cùng quay phải là
+        # đuổi, chụm đầu vào nhau là gặp. `xe1Huong` · `xe2Huong` nhận 'phai' hoặc
+        # 'trai'; `xe1Dau` · `xe2Dau` là chỗ xuất phát, tính theo TỈ LỆ trên đoạn.
+        #
+        # `toTu` · `toDen` tô một khúc — dùng cho bài xuất phát khác giờ, khúc tô là
+        # đoạn người trước đã đi xong trước khi người sau lên đường. `sao` đánh dấu
+        # điểm gặp.
+        giua(d, 40, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        x0, x1, y = 150, 1130, 330
+        span = x1 - x0
+
+        def px(f):
+            return x0 + span * float(f)
+
+        if c.get("toDen") is not None:
+            d.rectangle([px(c.get("toTu", 0)), y - 22, px(c["toDen"]), y + 22],
+                        fill=GOLD_PALE)
+            if c.get("nhanTo"):
+                giua(d, y - 62, c["nhanTo"], phong(30), GOLD_DARK, rong=W - 200)
+        d.line([x0, y, x1, y], fill=TEAL_DARK, width=8)
+        f_d = phong(36, dam=True)
+        for xx, ten, lech in ((x0, c.get("dauA", "A"), -1), (x1, c.get("dauB", "B"), 1)):
+            d.line([xx, y - 34, xx, y + 34], fill=TEAL_DARK, width=8)
+            t = str(ten)
+            w_ = d.textlength(t, font=f_d)
+            # Tên đầu đoạn không phải lúc nào cũng là MỘT CHỮ CÁI. "người sau" ·
+            # "người trước" thì lề hai bên không chứa nổi: đặt theo lối cũ là chữ
+            # tràn ra ngoài mép màn hình, kẹp lại thì nó đè lên chính vạch đường.
+            # Nên tên dài thì cho leo LÊN TRÊN vạch đầu đoạn.
+            le = (x0 if lech < 0 else W - x1) - 16
+            if w_ + 26 <= le:
+                d.text((xx - w_ / 2 + lech * (w_ / 2 + 26), y - 24), t, font=f_d,
+                       fill=TEAL_DARK)
+            else:
+                d.text((min(max(xx - w_ / 2, 16), W - 16 - w_), y - 78), t,
+                       font=f_d, fill=TEAL_DARK)
+        if c.get("sao") is not None:
+            xs = px(c["sao"])
+            d.ellipse([xs - 16, y - 16, xs + 16, y + 16], fill=ALERT)
+            if c.get("nhanSao"):
+                t = c["nhanSao"]
+                f_s = phong(30)
+                w_ = d.textlength(t, font=f_s)
+                d.text((min(max(xs - w_ / 2, 20), W - 20 - w_), y + 28), t,
+                       font=f_s, fill=ALERT)
+
+        def mui_ten(yy, dau, huong, nhan, mau):
+            if dau is None:
+                return
+            xs, sang_phai = px(dau), huong != "trai"
+            # Mũi tên của người xuất phát ngay ở đầu đoạn chạy quá mép màn hình —
+            # kẹp lại, thà ngắn còn hơn cụt đầu.
+            xe = min(xs + 170, W - 24) if sang_phai else max(xs - 170, 24)
+            d.line([xs, yy, xe, yy], fill=mau, width=8)
+            k = 20 if sang_phai else -20
+            d.polygon([(xe, yy), (xe - k, yy - 14), (xe - k, yy + 14)], fill=mau)
+            d.line([xs, yy - 18, xs, yy + 18], fill=mau, width=5)
+            if nhan:
+                f_n = phong(28)
+                w_ = d.textlength(nhan, font=f_n)
+                d.text((min(max(min(xs, xe), 20), W - 20 - w_), yy - 48), nhan,
+                       font=f_n, fill=mau)
+
+        mui_ten(y - 100, c.get("xe1Dau"), c.get("xe1Huong", "phai"),
+                c.get("xe1Nhan"), NAVY)
+        mui_ten(y + 118, c.get("xe2Dau"), c.get("xe2Huong", "trai"),
+                c.get("xe2Nhan"), GOLD_DARK)
+
+        y_cuoi = y + 170
+        if c.get("nhanDai"):
+            d.line([x0, y_cuoi, x1, y_cuoi], fill=MUTE, width=3)
+            for xn in (x0, x1):
+                d.line([xn, y_cuoi - 10, xn, y_cuoi + 10], fill=MUTE, width=3)
+            y_cuoi = giua(d, y_cuoi + 10, c["nhanDai"], phong(32), MUTE,
+                          rong=W - 200)
+        if c.get("chuPhu"):
+            y_cuoi = giua(d, y_cuoi + 14, c["chuPhu"], phong(36), INK, rong=W - 180)
+        if c.get("chuCuoi"):
+            giua(d, y_cuoi + 12, c["chuCuoi"], phong(30), TEAL_DARK, rong=W - 200)
+
     elif L == "tam_giac_ct":
         # ══ TAM GIÁC CÔNG THỨC — CHE Ô CẦN TÌM LÀ LỘ PHÉP TÍNH ══
         # Đây KHÔNG phải hình tam giác của hình học; nó là cách xếp ba đại lượng để

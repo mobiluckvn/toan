@@ -34,20 +34,7 @@
   "kidText": "Gặp nhau lần hai thì hai xe đi tổng cộng 3 lần quãng đường ban đầu chứ không phải gấp đôi. Vẽ sơ đồ là thấy ngay."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Sau khi gặp — sơ đồ một vạch: đánh dấu SAO điểm gặp (km 20); người 10 km/h còn $36 - 20 = 16$ km → $16 : 10 = 1,6$ giờ = 1 giờ 36 phút mới hết đường."
-   },
-   {
-    "id": "K2",
-    "text": "Hệ số 3 thần thánh — chứng minh bằng sơ đồ gập: gặp lần 1 hai xe gộp đủ 1 × AB; từ đó đến gặp lần 2: mỗi xe chạm đầu kia rồi quay lại — hai hành trình gập thêm đúng 2 × AB nữa → tổng = 3 × AB (đoán \"gấp đôi\" là hụt nguyên một lần quãng)."
-   },
-   {
-    "id": "K3",
-    "text": "Áp dụng: AB = 36, tổng V = 18 → t gặp lần 2 = ($3  \\times  36$) : $18 = 108 : 18 = 6$ giờ — đúng gấp BA lần t gặp lần 1 (2 giờ), vì quãng gấp ba mà tốc độ gộp giữ nguyên."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: NGÔI SAO TRÊN VẠCH VÀ SƠ ĐỒ GẬP BA TẤM. Gặp nhau xong chưa hết chuyện! Sơ đồ MỘT VẠCH: kẻ đoạn AB ba mươi sáu, đánh dấu SAO tại điểm gặp — km hai mươi. Người mười cây giờ còn mười sáu cây phía trước: mười sáu chia mười — MỘT PHẨY SÁU giờ: một giờ ba mươi sáu phút nữa mới hết đường! Trận trùm — GẶP LẦN HAI: hai xe đi hết đường thì quay lại ngay. Trí Long đoán: \"chắc gấp đôi — hai lần quãng!\" Dựng SƠ ĐỒ GẬP mà xem: đến gặp lần MỘT, hai xe gộp đủ đúng MỘT lần AB. Từ đó, mỗi xe chạy nốt tới đầu kia rồi VÒNG lại — hai hành trình gập vào nhau đắp thêm đúng HAI lần AB nữa: tổng cộng BA LẦN QUÃNG! Đoán gấp đôi là hụt nguyên một lần đường! Ba nhân ba sáu — một trăm linh tám; chia tổng mười tám: SÁU giờ — đúng gấp BA thời gian gặp lần một, sơ đồ nói, khỏi cần tin ai!",
   "canonicalExamples": [
    {
@@ -72,14 +59,8 @@
     "counterExample": "Thử 4 giờ: xe nhanh đi 40 km = hết 36 + quay 4 km; xe chậm đi 32 km — hai xe đang ở km 32 và km 32 tính từ HAI ĐẦU KHÁC NHAU: $32 + 4$... chưa chạm nhau: 4 giờ chưa gặp!"
    }
   ],
-  "vocabulary": [
-   "sơ đồ một vạch",
-   "ngôi sao điểm gặp",
-   "sơ đồ gập ba tấm",
-   "hệ số 3 thần thánh",
-   "hụt nguyên một lần đường"
-  ],
-  "mantra": "LẦN HAI BẰNG BA LẦN QUÃNG — SƠ ĐỒ NÓI, KHỎI CẦN TIN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -101,45 +82,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Với bài 36 km ngược chiều (gặp sau 2 giờ tại km 20): sau khi gặp, người đi 10 km/h còn phải đi bao lâu nữa mới hết quãng đường?",
-    "display": {
-     "type": "story_panel",
-     "caption": "lần hai = 2 × AB??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để gập sơ đồ!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K2",
-     "K3"
-    ],
-    "narration": "Dựng SƠ ĐỒ GẬP: đến gặp lần MỘT — hai xe gộp đủ đúng MỘT lần AB! Từ đó, mỗi xe chạy nốt tới đầu kia rồi VÒNG lại — hai hành trình gập vào nhau đắp thêm đúng HAI lần AB nữa: tổng cộng BA LẦN QUÃNG! Ba nhân ba sáu — một trăm linh tám; chia mười tám: SÁU giờ — gấp BA thời gian gặp lần một!",
-    "display": {
-     "type": "fold_diagram_interactive",
-     "spec": {
-      "fold1": "gặp 1: gộp 1 × AB",
-      "fold23": "vòng lại: đắp thêm 2 × AB",
-      "total": "tổng 3 × 36 = 108 → 108 : 18 = 6 giờ"
-     }
-    },
-    "interaction": {
-     "type": "fold_three",
-     "answerKey": {
-      "value": 6
-     },
-     "successMessage": "Ba tấm gập: 108 : 18 = 6 giờ!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -160,37 +102,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 40,
-    "teaches": [
-     "K1"
-    ],
-    "narration": "Còn phần SAU KHI GẶP — sơ đồ MỘT VẠCH: kẻ đoạn ba mươi sáu, đánh dấu NGÔI SAO tại điểm gặp km hai mươi! Người mười cây giờ nhìn sao là thấy phần còn lại: ba sáu trừ hai mươi — MƯỜI SÁU cây phía trước: mười sáu chia mười — MỘT PHẨY SÁU giờ: MỘT GIỜ BA MƯƠI SÁU PHÚT nữa mới hết đường! Mọi câu hỏi sau-khi-gặp đọc ra từ ngôi sao!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "vạch 36 · sao tại km 20",
-      "còn lại 16 → 16 : 10 = 1,6 giờ",
-      "= 1 giờ 36 phút"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: lần hai bằng ba lần quãng — sơ đồ nói, khỏi cần tin!",
-    "display": {
-     "type": "mantra_card",
-     "text": "LẦN HAI = 3 LẦN QUÃNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -478,117 +389,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B54.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "lần hai = 2 × AB??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "lần một gộp một lần quãng thì lần hai chắc gấp đôi — 72 km!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B54_M3_F1.png",
-   "sha256_16": "8d019f249718119f"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Sau khi gặp & gặp lần hai: hệ số 3 thần thánh — tổng quãng = 3 × khoảng cách ban đầu",
-    "steps": [
-     {
-      "text": "vạch 36 · sao tại km 20"
-     },
-     {
-      "text": "còn lại 16 → 16 : 10 = 1,6 giờ"
-     },
-     {
-      "text": "= 1 giờ 36 phút"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B54_M3_F2.png",
-   "sha256_16": "8e0f2dab7fc824de"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Sau khi gặp",
-      "text": "sơ đồ một vạch: đánh dấu SAO điểm gặp (km 20); người 10 km/h còn 36 − 20 = 16 km → 16 : 10 = 1,6 giờ = 1 giờ 36 phút mới hết đường.",
-      "tone": "navy"
-     },
-     {
-      "label": "Hệ số 3 thần thánh",
-      "text": "chứng minh bằng sơ đồ gập: gặp lần 1 hai xe gộp đủ 1 × AB; từ đó đến gặp lần 2: mỗi xe chạm đầu kia rồi quay lại — hai hành trình gập thêm đúng 2 × AB nữa → tổng = 3 × AB (đoán \"gấp đôi\" là hụt nguyên một lần quãng).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "LẦN HAI BẰNG BA LẦN QUÃNG — SƠ ĐỒ NÓI, KHỎI CẦN TIN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B54_M3_F3.png",
-   "sha256_16": "ccc6e2176d6923d3"
-  },
-  {
-   "archetype": "motion_track",
-   "params": {
-    "title": "GẶP LẦN HAI: TỔNG QUÃNG = 3 LẦN AB",
-    "from_label": "A",
-    "to_label": "B",
-    "length_label": "AB = 36 km",
-    "movers": [
-     {
-      "name": "lần 1: gộp 1 × AB",
-      "from": 0.1,
-      "dir": ">",
-      "speed": "10 km/h"
-     },
-     {
-      "name": "vòng lại: thêm 2 × AB",
-      "from": 0.9,
-      "dir": "<",
-      "speed": "8 km/h"
-     }
-    ],
-    "meet": {
-     "at": 0.555,
-     "label": "★ gặp lần 1 sau 2 giờ"
-    },
-    "notes": [
-     "3 × 36 = 108 km → 108 : 18 = 6 giờ",
-     "đoán \"gấp đôi\" là hụt nguyên một lần đường"
-    ]
-   },
-   "caption": "Sau khi gặp: sơ đồ một vạch, sao tại km 20 → còn 16 km → 1 giờ 36 phút",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B54_M3_F4.png",
-   "sha256_16": "bdcdb2a37f8c80a7"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B48"
@@ -600,5 +401,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Sau khi gặp & gặp lần hai: hệ số 3 thần thánh — tổng quãng = 3 × khoảng cách ban đầu"
+ "titleDay": "Sau khi gặp & gặp lần hai: hệ số 3 thần thánh — tổng quãng = 3 × khoảng cách ban đầu",
+ "video": {
+  "giang": "DL_KSN5Q1_B54_M3_giang.mp4"
+ }
 }
