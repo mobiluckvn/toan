@@ -34,20 +34,7 @@
   "kidText": "Bánh xe lăn một vòng thì đi được đúng một CHU VI, không phải một đường kính. Đổi về cùng đơn vị trước khi chia."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Vệt sơn trên lốp: bánh lăn đúng MỘT vòng thì vệt sơn chấm xuống đường sau đoạn bằng đúng MỘT CHU VI → số vòng = quãng đường : chu vi ($157 : 1,57 = 100$ vòng)."
-   },
-   {
-    "id": "K2",
-    "text": "Đề cho đường kính thì dựng chu vi trước: d = 0,5 m → C = $0,5  \\times  3,14 = 1,57$ m → $314 : 1,57 = 200$ vòng — chia cho đường kính là mỗi vòng bánh chỉ đi một gang!"
-   },
-   {
-    "id": "K3",
-    "text": "Nghi thức ĐƠN VỊ BẮT TAY: quãng đường và chu vi phải CÙNG đơn vị trước phép chia: bánh d = 50 cm → C = 157 cm = 1,57 m; quãng 3,14 km = 3 140 m → 3 $140 : 1,57 = 2$ 000 vòng (chia lệch đơn vị là sai gấp trăm nghìn lần)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: VỆT SƠN TRÊN LỐP VÀ CÁI BẮT TAY ĐƠN VỊ. Chấm một vệt sơn đỏ lên lốp xe rồi đẩy bánh lăn: vệt sơn chạm đường — lăn — chạm đường lần nữa: khoảng cách giữa hai dấu chấm đúng bằng MỘT CHU VI bánh! Mỗi vòng một chu vi — nên số vòng bằng quãng đường CHIA CHU VI: bánh chu vi một phẩy năm bảy lăn hết một trăm năm bảy mét — một trăm VÒNG tròn trĩnh! Đề cho đường kính thì dựng chu vi trước: bánh xe đạp nửa mét — chu vi một phẩy năm bảy: ba trăm mười bốn mét là HAI TRĂM vòng. Chia nhầm cho đường kính? Mỗi vòng bánh chỉ được tính một gang — xe đi kiểu giật cục! Trận trùm của sư phụ gài HAI lỗi ôm nhau: bánh NĂM MƯƠI XĂNG-TI-MÉT, quãng đường BA PHẨY MƯỜI BỐN KI-LÔ-MÉT — hai đơn vị còn chưa quen nhau! Nghi thức bắt tay: chu vi bằng năm mươi nhân ba phẩy mười bốn — một trăm năm bảy xăng-ti-mét — MỘT PHẨY NĂM BẢY MÉT; quãng đường — BA NGHÌN MỘT TRĂM BỐN MƯƠI MÉT: giờ mới chia: HAI NGHÌN vòng! Một vòng một chu vi — và đơn vị bắt tay trước phép chia!",
   "canonicalExamples": [
    {
@@ -78,14 +65,8 @@
     "counterExample": "Chia 3,14 cho 50 kiểu số-trần: 0,06 vòng — đạp xe ba cây số mà bánh chưa quay nổi một vòng?!"
    }
   ],
-  "vocabulary": [
-   "vệt sơn trên lốp",
-   "mỗi vòng một chu vi",
-   "dựng chu vi trước",
-   "đơn vị bắt tay",
-   "hai lỗi ôm nhau"
-  ],
-  "mantra": "MỘT VÒNG MỘT CHU VI — VÀ ĐƠN VỊ BẮT TAY TRƯỚC PHÉP CHIA!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -107,45 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Bánh xe có chu vi 1,57 m lăn hết quãng đường 157 m. Hỏi bánh quay bao nhiêu vòng?",
-    "display": {
-     "type": "story_panel",
-     "caption": "$3,14 : 50$ = ?? (hai lỗi ôm nhau)"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để chấm vệt sơn!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Chấm vệt sơn đỏ lên lốp rồi đẩy bánh lăn: vệt chạm đường — lăn — chạm lần nữa: khoảng cách hai dấu chấm đúng bằng MỘT CHU VI! Mỗi vòng một chu vi — số vòng bằng quãng đường CHIA CHU VI: bánh chu vi một phẩy năm bảy lăn một trăm năm bảy mét — MỘT TRĂM vòng! Đề cho đường kính: dựng chu vi trước — bánh nửa mét: chu vi một phẩy năm bảy — HAI TRĂM vòng!",
-    "display": {
-     "type": "paint_dot_interactive",
-     "spec": {
-      "law": "mỗi vòng = 1 chu vi (hai dấu sơn cách nhau C)",
-      "ex1": "157 : 1,57 = 100 vòng",
-      "ex2": "d 0,5 → C 1,57 → 314 : 1,57 = 200"
-     }
-    },
-    "interaction": {
-     "type": "roll_and_dot",
-     "answerKey": {
-      "value": 100
-     },
-     "successMessage": "Hai dấu sơn cách nhau đúng một chu vi: 100 vòng!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -166,37 +108,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Trận trùm gài HAI lỗi ôm nhau: bánh NĂM MƯƠI XĂNG-TI-MÉT — quãng đường BA PHẨY MƯỜI BỐN KI-LÔ-MÉT: hai đơn vị còn chưa quen nhau! Nghi thức bắt tay: chu vi bằng năm mươi nhân ba phẩy mười bốn — một trăm năm bảy xăng-ti-mét, tức MỘT PHẨY NĂM BẢY MÉT; quãng đường — BA NGHÌN MỘT TRĂM BỐN MƯƠI MÉT! Giờ hai bên cùng mét mới được chia: ba nghìn một trăm bốn mươi chia một phẩy năm bảy — HAI NGHÌN vòng!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "C = 157 cm = 1,57 m",
-      "3,14 km = 3 140 m (bắt tay!)",
-      "3 140 : 1,57 = 2 000 vòng"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: một vòng một chu vi — và đơn vị bắt tay trước phép chia!",
-    "display": {
-     "type": "mantra_card",
-     "text": "ĐƠN VỊ BẮT TAY TRƯỚC!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -481,109 +392,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B50.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "3,14 : 50 = ?? (hai lỗi ôm nhau)",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "3,14 : 50… lẻ quá!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B50_M3_F1.png",
-   "sha256_16": "067073423d25194d"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Bánh xe lăn: mỗi vòng một chu vi — đơn vị bắt tay trước phép chia",
-    "steps": [
-     {
-      "text": "C = 157 cm = 1,57 m"
-     },
-     {
-      "text": "3,14 km = 3 140 m (bắt tay!)"
-     },
-     {
-      "text": "3 140 : 1,57 = 2 000 vòng."
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B50_M3_F2.png",
-   "sha256_16": "0b0b45b31bb60d69"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Vệt sơn trên lốp",
-      "text": "1,57 = 100 vòng).",
-      "tone": "navy"
-     },
-     {
-      "label": "Đề cho đường kính thì dựng chu vi trước",
-      "text": "d = 0,5 m → C = 0,5 × 3,14 = 1,57 m → 314 : 1,57 = 200 vòng — chia cho đường kính là mỗi vòng bánh chỉ đi một gang!",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MỘT VÒNG MỘT CHU VI — VÀ ĐƠN VỊ BẮT TAY TRƯỚC PHÉP CHIA!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B50_M3_F3.png",
-   "sha256_16": "3c660e8fbecd5112"
-  },
-  {
-   "archetype": "fence_posts",
-   "params": {
-    "title": "BÁNH XE LĂN: MỖI VÒNG ĐI ĐƯỢC ĐÚNG MỘT CHU VI",
-    "first": 0,
-    "last": 314,
-    "step": "1,57 m",
-    "show": 6,
-    "show_step": true,
-    "labels": [
-     "0",
-     "1,57",
-     "3,14",
-     "…",
-     "312,4",
-     "314 m"
-    ],
-    "gap_at": 3,
-    "gap_note": "mỗi bước = 1 vòng = 1 chu vi",
-    "formula": "C = 0,5 × 3,14 = 1,57 m → số vòng = 314 : 1,57 = 200 vòng",
-    "note": "Đơn vị phải bắt tay trước phép chia — mét với mét, xăng-ti-mét với xăng-ti-mét"
-   },
-   "caption": "Dựng chu vi từ đường kính trước, rồi mới chia quãng đường",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B50_M3_F4.png",
-   "sha256_16": "5d5e2cfbd2dd4154"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B45"
@@ -595,5 +404,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Bánh xe lăn: mỗi vòng một chu vi — đơn vị bắt tay trước phép chia"
+ "titleDay": "Bánh xe lăn: mỗi vòng một chu vi — đơn vị bắt tay trước phép chia",
+ "video": {
+  "giang": "DL_KSN5Q1_B50_M3_giang.mp4"
+ }
 }

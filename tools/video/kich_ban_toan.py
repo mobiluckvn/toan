@@ -14732,7 +14732,141 @@ def kb5_ban_kinh_gap_k(b):
     ]
 
 
+def kb5_vanh_khan(b):
+    """L5·B50·M1 Vành khăn là HIỆU hai diện tích — bề rộng vành không phải bán kính."""
+    return [
+        _c('bia', 'Cái vành giữa hai đường tròn', so_bai(b),
+           loi=['Hai đường tròn đồng tâm, phần nằm giữa gọi là vành khăn.']),
+        _c('de_toan', 'Đề bài',
+           de='Vành khăn giữa hai đường tròn đồng tâm r = 5 cm và r = 3 cm.\nTính diện tích vành',
+           loi=['Vành khăn giữa hai đường tròn đồng tâm, bán kính năm và ba xăng ti '
+                'mét.']),
+        _c('hinh_tron', 'Vành khăn là phần bị KHOÉT còn lại', hienR=True,
+           rTrong=0.6, nhanR='r ngoài = 5 cm',
+           chuPhu='Vòng trong r = 3 cm — phần giữa hai vòng mới là vành khăn.',
+           loi=['Vành khăn là chỗ còn lại sau khi khoét đường tròn bé khỏi đường tròn '
+                'lớn.']),
+        _c('y_toan', 'Nên quy trình đúng là BA DÒNG',
+           'S ngoài = 78,5   ·   S trong = 28,26   ·   HIỆU = 50,24 cm²',
+           buoc=1, soBuoc=3,
+           loi=['Quy trình đúng là ba dòng. Tính tròn ngoài, tính tròn trong, rồi lấy '
+                'hiệu.',
+                'Bảy mươi tám phẩy năm trừ hai mươi tám phẩy hai sáu, được năm mươi '
+                'phẩy hai tư.']),
+        _c('de_toan', 'Một công thức GIẢ rất dễ tin',
+           de='(5 − 3) × (5 − 3) × 3,14 = 12,56',
+           loi=['Có một công thức giả rất dễ tin. Lấy hiệu hai bán kính rồi nhân chính '
+                'nó.']),
+        _c('y_toan', 'Con số ấy là diện tích của một hình tròn KHÁC',
+           'nó là tròn bán kính 2 — mà trong hình chẳng có đường tròn nào r = 2',
+           buoc=2, soBuoc=3,
+           loi=['Con số ấy là diện tích một hình tròn bán kính hai.',
+                'Mà nhìn vào hình thì chẳng có đường tròn nào bán kính hai cả. Bề rộng '
+                'vành không phải bán kính.']),
+        _c('y_toan', 'Chuông soi rất nhanh',
+           'vành phải NHỎ hơn tròn lớn, mà LỚN hơn tròn trong   ·   50,24 nằm giữa 28,26 và 78,5 ✓',
+           buoc=3, soBuoc=3,
+           loi=['Chuông soi rất nhanh. Vành phải nhỏ hơn tròn lớn nhưng lớn hơn tròn '
+                'trong.',
+                'Còn mười hai phẩy năm sáu thì bé hơn cả tròn trong, gãy ngay.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='vành khăn = HIỆU hai diện tích, tính riêng từng vòng',
+           thay='bề rộng vành KHÔNG phải bán kính của hình tròn nào cả',
+           loi=['Con nhớ câu này. Vành khăn là hiệu hai diện tích, tính riêng từng '
+                'vòng đã.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_chu_vi_hinh_ghep(b):
+    """L5·B50·M2 Chu vi là MỘT VÒNG KÍN — ngón tay đi đến đâu cộng đến đó."""
+    return [
+        _c('bia', 'Chu vi hình ghép: lần ngón tay một vòng', so_bai(b),
+           loi=['Hình ghép thì chu vi rất dễ đếm thiếu hoặc đếm thừa.']),
+        _c('de_toan', 'Đề bài', de='Nửa hình tròn đường kính 10 cm. Tính chu vi',
+           loi=['Nửa hình tròn đường kính mười xăng ti mét. Tính chu vi.']),
+        _c('y_toan', 'Nghi thức NGÓN TAY: chu vi là MỘT VÒNG KÍN quanh mép',
+           'ngón tay đi đến đâu thì cộng đến đó', buoc=1, soBuoc=3,
+           loi=['Nghi thức ngón tay. Chu vi là một vòng kín quanh mép, ngón tay đi đến '
+                'đâu cộng đến đó.']),
+        _c('y_toan', 'Nửa tròn thì có CẢ đoạn thẳng',
+           'phần cong 31,4 : 2 = 15,7   CỘNG   đoạn đáy thẳng 10   =   25,7 cm',
+           buoc=2, soBuoc=3,
+           loi=['Nửa tròn thì phần cong là mười lăm phẩy bảy, nhưng còn đoạn đáy thẳng '
+                'mười nữa.',
+                'Cộng lại hai mươi lăm phẩy bảy. Bỏ đáy là ngón tay rơi xuống giữa '
+                'chừng.']),
+        _c('de_toan', 'Hình ghép thì có cạnh BỊ NUỐT',
+           de='Chữ nhật 10 × 6 đội nửa tròn d = 10 úp khít một cạnh',
+           loi=['Hình ghép thì có cạnh bị nuốt. Chữ nhật đội một nửa hình tròn úp khít '
+                'lên cạnh trên.']),
+        _c('y_toan', 'Diện tích thì CỘNG, chu vi thì lần vòng ngoài',
+           'S = 60 + 39,25 = 99,25   ·   C = 6 + 10 + 6 + cong 15,7 = 37,7 cm',
+           buoc=3, soBuoc=3,
+           loi=['Diện tích thì cộng hai mảnh, chín mươi chín phẩy hai lăm.',
+                'Còn chu vi chỉ lần ba cạnh lộ ra cộng phần cong, vì cạnh chung nằm '
+                'trong ruột.']),
+        _c('day_so', 'Hai đại lượng, hai cách đếm', so=['99,25', '37,7'],
+           nhanHang='S và C', chuPhu='Diện tích cộng cả hai mảnh · chu vi bỏ cạnh chung.',
+           loi=['Hai đại lượng đếm theo hai cách khác nhau.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='chu vi là MỘT VÒNG KÍN — cạnh nằm trong ruột thì không tính',
+           thay='chữ nhật 8 × 5 đội nửa tròn d = 8: C = 5 + 8 + 5 + cong 12,56 = 30,56 cm',
+           loi=['Con nhớ câu này. Chu vi là một vòng kín, cạnh nằm trong ruột thì không '
+                'tính.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_banh_xe_lan(b):
+    """L5·B50·M3 Mỗi vòng một chu vi — và đơn vị phải bắt tay nhau trước phép chia."""
+    return [
+        _c('bia', 'Bánh xe lăn được bao nhiêu vòng', so_bai(b),
+           loi=['Bánh xe lăn trên đường. Mỗi vòng nó đi được đúng một đoạn.']),
+        _c('de_toan', 'Đề bài', de='Bánh xe có chu vi 1,57 m, lăn được quãng đường 157 m.\nHỏi mấy vòng?',
+           loi=['Bánh xe có chu vi một phẩy năm bảy mét, lăn được quãng đường một trăm '
+                'năm mươi bảy mét.']),
+        _c('y_toan', 'Vệt sơn trên lốp kể hết',
+           'lăn đúng MỘT vòng thì vệt sơn chấm xuống đường sau đoạn bằng đúng MỘT CHU VI',
+           buoc=1, soBuoc=3,
+           loi=['Chấm một vệt sơn lên lốp là thấy ngay. Lăn đúng một vòng thì vệt sơn '
+                'chấm xuống đường.',
+                'Khoảng cách hai vệt bằng đúng một chu vi.']),
+        _c('y_toan', 'Nên số vòng = quãng đường chia CHU VI',
+           '157 : 1,57 = 100 vòng', buoc=2, soBuoc=3,
+           loi=['Nên số vòng bằng quãng đường chia chu vi. Một trăm năm mươi bảy chia '
+                'một phẩy năm bảy, được một trăm vòng.']),
+        _c('de_toan', 'Đề thường cho ĐƯỜNG KÍNH, không cho chu vi',
+           de='d = 0,5 m   →   phải dựng chu vi trước',
+           loi=['Đề thường cho đường kính chứ không cho chu vi, nên phải dựng chu vi '
+                'trước.']),
+        _c('y_toan', 'Chia thẳng cho đường kính là mỗi vòng chỉ đi một gang',
+           'C = 0,5 × 3,14 = 1,57 m   →   314 : 1,57 = 200 vòng', buoc=3, soBuoc=3,
+           loi=['Chia thẳng cho đường kính thì hoá ra mỗi vòng bánh chỉ đi được một '
+                'gang tay.',
+                'Dựng chu vi trước, rồi mới chia.']),
+        _c('day_so', 'Nghi thức ĐƠN VỊ BẮT TAY', so=['3 140', '1,57'],
+           nhanHang='cùng mét', chuPhu='Quãng đường và chu vi phải CÙNG đơn vị trước phép chia.',
+           loi=['Còn một nghi thức nữa. Quãng đường và chu vi phải cùng đơn vị trước '
+                'khi chia.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='mỗi vòng một CHU VI — và đơn vị phải BẮT TAY trước phép chia',
+           thay='bánh d = 50 cm → C = 1,57 m; quãng 3,14 km = 3 140 m → 2 000 vòng',
+           loi=['Bánh đường kính năm mươi xăng ti mét thì chu vi một phẩy năm bảy '
+                'mét.',
+                'Quãng ba phẩy mười bốn ki lô mét là ba nghìn một trăm bốn mươi mét, '
+                'chia ra hai nghìn vòng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B50.M1': kb5_vanh_khan,
+    'DL:KSN5Q1.B50.M2': kb5_chu_vi_hinh_ghep,
+    'DL:KSN5Q1.B50.M3': kb5_banh_xe_lan,
     'DL:KSN5Q1.B49.M1': kb5_chu_vi_dien_tich_tron,
     'DL:KSN5Q1.B49.M2': kb5_nguoc_tu_chu_vi_dien_tich,
     'DL:KSN5Q1.B49.M3': kb5_ban_kinh_gap_k,
