@@ -1,23 +1,37 @@
 # Điểm dừng — HỌC THEO CHỦ ĐỀ
 
-Cập nhật 2026-08-10. Đọc tệp này TRƯỚC khi động vào bản đồ chủ đề.
+Cập nhật 2026-08-17. Đọc tệp này TRƯỚC khi động vào bản đồ chủ đề.
 
 Nguồn ma trận: `docs/Ma_tran_kien_thuc_Toan5_HSG_Cap4.xlsx` — **đối chiếu ra thì nó
 chính là `data/km_v1_38.json` đã có sẵn trong kho.**
 
 > **XONG TRỌN.** Bản đồ chủ đề · màn xem theo chủ đề · vòng luyện tự lùi tự tiến ·
-> Mùa giải · bảng cô giáo lọc theo dạng. Cổng: **30 tệp kiểm · 861 PASS · 0 FAIL**.
-> **ĐANG CHẠY trên ky-su-nhi.web.app** (deploy 2026-08-11, bản `aa441d6`, chỉ hosting).
-> Ba việc tồn của đợt đầu ĐÃ XONG (11-08-2026) — xem cuối tệp.
+> Mùa giải · bảng cô giáo lọc theo dạng. Cổng riêng: **27 phép kiểm**.
+> **ĐANG CHẠY trên ky-su-nhi.web.app.**
+>
+> **Đợt ba (17-08-2026): nối bản đồ cho kịp cái kho đang có.** Ma trận chỉ biết một
+> cái kho nhỏ hơn — 91/368 bài đi từ màn chủ đề không tới được. Nay **364/368**;
+> mối nối 321 → **408**; số câu chấm máy đi từ chủ đề tới được **946 → 2 655**.
 
 ---
 
 ## MAI VÀO VIỆC TỪ ĐÂU
 
-**Không còn việc tồn nào chắn đường** — ba hướng của đợt đầu đã làm xong cả ba
-(11-08-2026). Đọc `docs/tiep_theo_dinh_dang.md` để biết hiện đang đứng ở đâu.
+Không còn việc tồn nào chắn đường. Món còn để ngỏ, ghi rõ để ai muốn thì làm tiếp:
 
----
+**Nối tiếp `km_v1_38.json` cho đủ ba quyển.** Ma trận dựng lúc lớp 2 mới 33 bài,
+lớp 3 32, lớp 4 44 — nay là 71 · 34 · 95. Đợt ba vá 87 bài ấy vào thang bằng
+`data/chu_de_tay.json`, nhưng đó là chỗ vá, không phải chỗ chữa. Chữa tận gốc là
+thêm `adj.teaches` cho 87 bài vào bản đồ tri thức, rồi xoá bớt dòng vá.
+
+**Bốn bài cố ý để ngoài thang**, lý do ghi trong `chu_de_tay.json`:
+`DL:KSN3.B17` (bài toán hai bước — kỹ năng nền) · `DL:KSN3.B33` (cân đong — ma trận
+không có mảng đo lường) · `DL:KSN4.B68` (phân số là gì — khái niệm mở mảng) ·
+`DL:KSN4.B75` (đơn vị đo diện tích).
+
+**Mười bảy bậc rút ra dưới 6 câu** (đều là bậc lớp 5 chỉ có một micro). Vòng luyện
+vẫn chạy, tự hạ ngưỡng theo số câu thật; dưới 3 câu thì nó mời học thẳng bài. Cổng
+niêm phong con số 17, chỉ cho giảm.
 
 ## Dây chuyền — chạy đúng thứ tự
 
@@ -33,7 +47,8 @@ chính là `data/km_v1_38.json` đã có sẵn trong kho.**
 dùng để soi bằng mắt (82 dòng, đọc một lượt hết chừng năm phút).
 
 Sửa tay thì sửa `data/chu_de_tay.json`, **không sửa `chu_de.json`** — tệp ấy dựng lại
-là mất. Đợt đầu không có dòng sửa tay nào; đợt hai có **5 dòng**, xem cuối tệp.
+là mất. Đợt đầu không có dòng sửa tay nào; đợt hai có 5 dòng; đợt ba thêm 47 dạng
+(87 bài), lý do từng chỗ ghi ngay trong tệp ấy.
 
 ---
 

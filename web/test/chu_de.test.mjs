@@ -130,6 +130,51 @@ lech.slice(0, 5).forEach((x) => console.log('     ', x));
 t('mã dạng trong baiDang đều có thật',
   Object.values(baiDang).every((ds) => ds.every((m) => dang[m])));
 
+/* ── BẬC PHẢI RÚT RA ĐƯỢC CÂU, KHÔNG CHỈ MỞ ĐƯỢC TỆP ──
+ *
+ * Phép trên hỏi "mã bài này có tệp không". Đó là câu hỏi ĐÚNG nhưng CHƯA ĐỦ, và chỗ
+ * hụt đúng bằng chỗ đã hụt với mã Mùa giải ở trên: `LuyenChuDe.jsx` nạp bài rồi rút
+ * câu từ `practice.pools`, chỉ lấy câu CÓ `answerKey`. Tệp có thật mà hồ chứa rỗng
+ * thì bé bấm vào bậc và gặp một vòng luyện không câu nào — dữ liệu hợp lệ, cổng
+ * xanh, màn trắng.
+ *
+ * Đếm y hệt `cauCua` bên ấy: ba hồ warmup · standard · challenge, lọc `answerKey`.
+ * Đổi cách rút câu bên kia mà quên chỗ này thì con số dưới đây lệch, và nó lệch to
+ * chứ không lệch thầm.
+ */
+const HO = ['warmup', 'standard', 'challenge'];
+const demCau = (b) => HO.reduce((n, h) =>
+  n + ((b?.practice?.pools?.[h] || []).filter((c) => c.answerKey).length), 0);
+const doc = (id) => {
+  for (const ct of Object.values(dk.chuongTrinh || {})) {
+    const f = join(D, ct.thuMuc, idFile(id));
+    if (existsSync(f)) return JSON.parse(readFileSync(f, 'utf8'));
+  }
+  return null;
+};
+const cauCuaBac = (b) => b.bai.reduce((n, id) => n + demCau(doc(id)), 0);
+const bacRong = bacs.filter((b) => cauCuaBac(b) === 0);
+t(`bậc nào cũng rút ra được câu chấm máy (rỗng: ${bacRong.length})`, bacRong.length === 0);
+bacRong.slice(0, 5).forEach((b) => console.log('     ', b.lop, b.bai.join(', ')));
+
+/* Dưới SO_CAU thì vòng luyện vẫn chạy, chỉ là ngắn hơn thiết kế — `LuyenChuDe` tự
+   hạ ngưỡng theo số câu thật, và dưới 3 câu thì nó mời học thẳng bài. Nên đây KHÔNG
+   phải lỗi, mà là món nợ niêm phong: chỉ được giảm. Nhích lên là có bậc vừa mỏng đi. */
+const SO_CAU = 6;
+const NO_MONG = 17;
+const bacMong = bacs.filter((b) => { const n = cauCuaBac(b); return n > 0 && n < SO_CAU; });
+t(`bậc dưới ${SO_CAU} câu không được nhiều hơn ${NO_MONG} (đang ${bacMong.length})`,
+  bacMong.length <= NO_MONG);
+if (bacMong.length < NO_MONG) {
+  console.log(`     ↓ đã dày thêm: ${bacMong.length}/${NO_MONG} — hạ NO_MONG xuống để chốt.`);
+}
+
+/* Đảo chiều: hai phép trên chỉ có nghĩa nếu bộ đếm THẬT SỰ đếm ra câu. Đếm ra 0 câu
+   ở mọi bậc thì "không bậc nào rỗng" là câu nói suông. */
+const tongCau = bacs.reduce((s, b) => s + cauCuaBac(b), 0);
+t(`bộ đếm có đếm ra câu thật (${tongCau} câu chấm máy đi từ chủ đề tới được)`,
+  tongCau > 1000);
+
 const trong = Object.entries(dang).filter(([, d]) => !(d.thang || []).length);
 const tongBai = bacs.reduce((s, b) => s + b.bai.length, 0);
 const theoLop = {};

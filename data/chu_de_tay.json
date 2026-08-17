@@ -1,42 +1,532 @@
 {
-  "_doc": "SỬA TAY bản đồ chủ đề — đè lên mọi thứ tools/dung_chu_de.py suy ra. Khoá là mã dạng bài ('PT:I.3.1'), giá trị {themBac: {'<lớp>': ['<id bài>', ...]}}. Chỉ THÊM bậc, không xoá — muốn bỏ một bậc thì sửa nguồn (km_v1_38.json hoặc skills.primary của micro), vì bỏ ở đây là giấu lỗi chứ không chữa lỗi.",
-
-  "_da_soat": "Đợt đầu KHÔNG có dòng sửa tay nào. Ba phép đối chiếu đều sạch: (1) ma trận Excel khớp km_v1_38 264/264 trường hợp; (2) khai của bản đồ khớp `dangGoc` do người soạn ghi tay 105/111 bài lớp 2-3-4; (3) 9 micro lớp 5 khai số hiệu không có trong ma trận đã được vá bằng khai ở mức bài, và ba chỗ ấy đã đọc lại nhan đề micro để xác nhận.",
-
-  "_vi_sao_trong": "Hai luật đã THỬ RỒI PHẢI BỎ, ghi lại để đừng dựng lại: (a) lấy `duongLui` canCu='sach' làm bậc thang — 30/78 bậc rơi vào bài dạy chủ đề khác, vì đường lùi nói 'bài này dựng trên bài kia' chứ không nói 'cùng chủ đề'; (b) lớp 5 lấy khai ở mức BÀI khi micro không khai — kéo cả ba micro chữ số tận cùng của bài 11 vào thang dãy số.",
-
-  "_dot_hai_nam_dang_tuong_thung": [
-    "NĂM DẠNG BÀI TỪNG BỊ GHI LÀ 'CHƯA QUYỂN NÀO DẠY' — SOÁT LẠI THÌ SÁCH CÓ DẠY ĐỦ CẢ NĂM.",
-    "",
-    "Sổ cũ (docs/tiep_theo_chu_de.md) kết luận đây là lỗ hổng chương trình, cần soạn nội",
-    "dung mới. Sai. Đọc mục tiêu và câu chốt của từng micro thì thấy nội dung khớp từng",
-    "chữ với lời tả dạng bài trong ma trận:",
-    "",
-    "  IV.5.3 Bể nước                 ← B52.M2 'chốt: BỂ LÀ CÁI VỎ — NƯỚC MỚI LÀ HIỆN TRẠNG'",
-    "  V.1.2  Vận tốc trung bình      ← B53.M3 'Vtb = tổng S : tổng T, KHÔNG phải 45'",
-    "  V.3.2  Đường vòng khép kín     ← B55.M1 'khoảng cách cần gặm là cả MỘT VÒNG'",
-    "                                 ← B56.M3 'hai kim đồng hồ là bài ĐUỔI KỊP trên đường vòng'",
-    "  V.5.1  Tàu qua vật đứng yên    ← B56.M1 'qua mốc là ĐIỂM — quãng = đúng THÂN TÀU'",
-    "  V.5.2  Tàu và vật chuyển động  ← B56.M2 'MỐC BIẾT CHẠY — ngược chiều chia TỔNG'",
-    "",
-    "GỐC RỄ: chương 55 và 56 khai `skills.primary` theo số hiệu CHƯƠNG chứ không theo số",
-    "hiệu DẠNG BÀI — cả sáu micro đánh 'CASE:V.3.1#1..3' và 'CASE:V.4.1#1..3', tức lấy",
-    "dạng đầu tiên của chương rồi đánh số thứ tự micro phía sau. Vì thế cả mảng V lệch",
-    "đúng một nấc, và năm dạng cuối rơi ra ngoài bản đồ.",
-    "",
-    "VÌ SAO KHÔNG SỬA THẲNG `skills.primary`: trường ấy đẻ ra luôn `bktUnit`, mà `bktUnit`",
-    "đã nằm trong nhật ký trả lời đã gửi lên máy chủ và trong sổ mức thạo. Đổi nó là mọi",
-    "bản ghi cũ mồ côi — mất lịch sử học của con để đổi lấy một nhãn phân loại. Không đáng.",
-    "Tệp sửa tay này chính là chỗ dựng ra để xử đúng ca ấy.",
-    "",
-    "Lưu ý còn lại: vì luật ở đây chỉ THÊM chứ không XOÁ, sáu micro trên hiện ra ở CẢ dạng",
-    "khai lẫn dạng thật. Trên màn chủ đề đó là bài xuất hiện ở hai thang — chấp nhận được",
-    "và thà thế còn hơn giấu; muốn dứt điểm thì phải sửa nguồn km_v1_38.json."
-  ],
-
-  "PT:IV.5.3": { "themBac": { "5": ["DL:KSN5Q1.B52.M2"] } },
-  "PT:V.1.2":  { "themBac": { "5": ["DL:KSN5Q1.B53.M3"] } },
-  "PT:V.3.2":  { "themBac": { "5": ["DL:KSN5Q1.B55.M1", "DL:KSN5Q1.B56.M3"] } },
-  "PT:V.5.1":  { "themBac": { "5": ["DL:KSN5Q1.B56.M1"] } },
-  "PT:V.5.2":  { "themBac": { "5": ["DL:KSN5Q1.B56.M2"] } }
+ "_doc": "SỬA TAY bản đồ chủ đề — đè lên mọi thứ tools/dung_chu_de.py suy ra. Khoá là mã dạng bài ('PT:I.3.1'), giá trị {themBac: {'<lớp>': ['<id bài>', ...]}}. Chỉ THÊM bậc, không xoá — muốn bỏ một bậc thì sửa nguồn (km_v1_38.json hoặc skills.primary của micro), vì bỏ ở đây là giấu lỗi chứ không chữa lỗi.",
+ "_da_soat": "Đợt đầu KHÔNG có dòng sửa tay nào. Ba phép đối chiếu đều sạch: (1) ma trận Excel khớp km_v1_38 264/264 trường hợp; (2) khai của bản đồ khớp `dangGoc` do người soạn ghi tay 105/111 bài lớp 2-3-4; (3) 9 micro lớp 5 khai số hiệu không có trong ma trận đã được vá bằng khai ở mức bài, và ba chỗ ấy đã đọc lại nhan đề micro để xác nhận.",
+ "_vi_sao_trong": "Hai luật đã THỬ RỒI PHẢI BỎ, ghi lại để đừng dựng lại: (a) lấy `duongLui` canCu='sach' làm bậc thang — 30/78 bậc rơi vào bài dạy chủ đề khác, vì đường lùi nói 'bài này dựng trên bài kia' chứ không nói 'cùng chủ đề'; (b) lớp 5 lấy khai ở mức BÀI khi micro không khai — kéo cả ba micro chữ số tận cùng của bài 11 vào thang dãy số.",
+ "_dot_hai_nam_dang_tuong_thung": [
+  "NĂM DẠNG BÀI TỪNG BỊ GHI LÀ 'CHƯA QUYỂN NÀO DẠY' — SOÁT LẠI THÌ SÁCH CÓ DẠY ĐỦ CẢ NĂM.",
+  "",
+  "Sổ cũ (docs/tiep_theo_chu_de.md) kết luận đây là lỗ hổng chương trình, cần soạn nội",
+  "dung mới. Sai. Đọc mục tiêu và câu chốt của từng micro thì thấy nội dung khớp từng",
+  "chữ với lời tả dạng bài trong ma trận:",
+  "",
+  "  IV.5.3 Bể nước                 ← B52.M2 'chốt: BỂ LÀ CÁI VỎ — NƯỚC MỚI LÀ HIỆN TRẠNG'",
+  "  V.1.2  Vận tốc trung bình      ← B53.M3 'Vtb = tổng S : tổng T, KHÔNG phải 45'",
+  "  V.3.2  Đường vòng khép kín     ← B55.M1 'khoảng cách cần gặm là cả MỘT VÒNG'",
+  "                                 ← B56.M3 'hai kim đồng hồ là bài ĐUỔI KỊP trên đường vòng'",
+  "  V.5.1  Tàu qua vật đứng yên    ← B56.M1 'qua mốc là ĐIỂM — quãng = đúng THÂN TÀU'",
+  "  V.5.2  Tàu và vật chuyển động  ← B56.M2 'MỐC BIẾT CHẠY — ngược chiều chia TỔNG'",
+  "",
+  "GỐC RỄ: chương 55 và 56 khai `skills.primary` theo số hiệu CHƯƠNG chứ không theo số",
+  "hiệu DẠNG BÀI — cả sáu micro đánh 'CASE:V.3.1#1..3' và 'CASE:V.4.1#1..3', tức lấy",
+  "dạng đầu tiên của chương rồi đánh số thứ tự micro phía sau. Vì thế cả mảng V lệch",
+  "đúng một nấc, và năm dạng cuối rơi ra ngoài bản đồ.",
+  "",
+  "VÌ SAO KHÔNG SỬA THẲNG `skills.primary`: trường ấy đẻ ra luôn `bktUnit`, mà `bktUnit`",
+  "đã nằm trong nhật ký trả lời đã gửi lên máy chủ và trong sổ mức thạo. Đổi nó là mọi",
+  "bản ghi cũ mồ côi — mất lịch sử học của con để đổi lấy một nhãn phân loại. Không đáng.",
+  "Tệp sửa tay này chính là chỗ dựng ra để xử đúng ca ấy.",
+  "",
+  "Lưu ý còn lại: vì luật ở đây chỉ THÊM chứ không XOÁ, sáu micro trên hiện ra ở CẢ dạng",
+  "khai lẫn dạng thật. Trên màn chủ đề đó là bài xuất hiện ở hai thang — chấp nhận được",
+  "và thà thế còn hơn giấu; muốn dứt điểm thì phải sửa nguồn km_v1_38.json."
+ ],
+ "PT:IV.5.3": {
+  "themBac": {
+   "5": [
+    "DL:KSN5Q1.B52.M2"
+   ]
+  }
+ },
+ "PT:V.1.2": {
+  "themBac": {
+   "5": [
+    "DL:KSN5Q1.B53.M3"
+   ]
+  }
+ },
+ "PT:V.3.2": {
+  "themBac": {
+   "5": [
+    "DL:KSN5Q1.B55.M1",
+    "DL:KSN5Q1.B56.M3"
+   ]
+  }
+ },
+ "PT:V.5.1": {
+  "themBac": {
+   "5": [
+    "DL:KSN5Q1.B56.M1"
+   ]
+  }
+ },
+ "PT:V.5.2": {
+  "themBac": {
+   "5": [
+    "DL:KSN5Q1.B56.M2"
+   ]
+  }
+ },
+ "_dot_ba_ma_tran_biet_kho_cu": [
+  "ĐỢT BA (17-08-2026) — MA TRẬN BIẾT MỘT CÁI KHO NHỎ HƠN CÁI KHO ĐANG CÓ.",
+  "",
+  "Soát sau khi lớp 5 xong trọn: 91 trong 368 bài của kho đi từ MÀN CHỦ ĐỀ không tới",
+  "được. Lớp 5 phủ trọn 168/168, nhưng lớp 2 hụt 38/71 và lớp 4 hụt 51/95.",
+  "",
+  "GỐC RỄ — và nó gọn đến mức không thể là trùng hợp: `km_v1_38.json` chỉ biết TTD2:",
+  "33 bài · TTD3: 32 · KSN4: 44. Cộng với số hụt thì ra đúng số bài đang có (33+38=71,",
+  "32+2=34, 44+51=95). Tức ma trận dựng lúc ba quyển ấy còn nhỏ, rồi sách lớn thêm mà",
+  "ma trận không ai nối tiếp. Không phải lỗi ghép, không phải thủng chương trình.",
+  "",
+  "CÁCH VÁ: 91 bài ấy đều CÓ `dangGoc` — trường người soạn ghi tay từng bài, đúng quan",
+  "hệ THÀNH VIÊN mà thang cần ('bài này dạy dạng ấy'), không phải quan hệ BÀI NỀN đã",
+  "thử và phải bỏ. Đọc số hiệu trong `dangGoc` rồi ghép sang mã ma trận.",
+  "",
+  "NHƯNG KHÔNG ÁP THẲNG. Thử bộ đọc ấy trên 109 bài lớp 2·3·4 ĐÃ nằm trong thang —",
+  "tập đã biết đáp án — thì đúng 99/107, tức 93%. Bảy phần trăm sai là chừng năm bậc",
+  "đẩy trẻ sang bài lạc đề, đúng cái hại mà luật `duongLui` từng gây ra.",
+  "",
+  "Chẻ nhỏ ra theo (quyển · mảng · chương) thì lộ: bộ đọc ĐÚNG 100% ở mọi họ, trừ đúng",
+  "BỐN họ — lop4·SỐ·3 (1/4), lop4·LV·1 (1/3), lop3·LV·8 (3/5), lop2·SỐ·7 (2/3). Bốn họ",
+  "ấy đánh số theo CHƯƠNG CỦA SÁCH chứ không theo số hiệu ma trận — cùng một dòng họ",
+  "với lỗi `skills.primary` của mảng V đã ghi ở đợt hai.",
+  "",
+  "Nên: 70 bài lấy theo bộ đọc (chỉ ở họ đọc đúng 100%), 17 bài XẾP TAY, 4 bài để",
+  "NGOÀI. Ba chỗ bộ đọc trả lời sai đã bắt được khi soi tay:",
+  "",
+  "  DL:KSN2.B49 'DÃY LẺ SỐ THÌ CÓ MỘT BẠN ĐỨNG GIỮA' — bộ đọc ra I.7.1 tính nhanh,",
+  "      nhưng lấy số giữa nhân số số hạng là bài DÃY SỐ CÁCH ĐỀU → I.5.1. Đúng cái",
+  "      bẫy mà DL:KSN2.B13 đã dính, và thang vốn xếp B13 ở I.5.1.",
+  "  DL:KSN4.B51 'DẤU HIỆU CHIA HẾT CHO 5' — bộ đọc ra I.3.2 lập số có điều kiện.",
+  "      Hai bài anh em B09 B10 (dấu hiệu cho 2, cho 9) đang đứng ở I.6.1, mà tên dạng",
+  "      I.6.1 ghi thẳng '2, 3, 5, 9' → I.6.1.",
+  "  DL:KSN4.B56 · B57 (tìm tổng từ TBC · tìm số còn thiếu) — bộ đọc ra III.1.2 và",
+  "      III.1.3 (hơn-kém · đổi số lượng), cả hai đều không phải. Tên III.1.1 ghi rõ",
+  "      'TBC cơ bản VÀ BÀI TOÁN NGƯỢC', và anh em B21 đang đứng ở đấy → III.1.1.",
+  "  DL:KSN4.B79 'CẮT RỒI GHÉP — DIỆN TÍCH KHÔNG SINH KHÔNG MẤT' — bộ đọc ra IV.4.1,",
+  "      tức HÌNH TRÒN. Mục tiêu bài ghi rõ nó dùng luật bảo toàn để tính diện tích",
+  "      NỬA HÌNH CHỮ NHẬT — đó là nền của diện tích tam giác → IV.2.1.",
+  "  DL:KSN4.B80 'HÌNH TRÒN — BÁN KÍNH VÀ ĐƯỜNG KÍNH' — bộ đọc ra IV.3.1, tức HÌNH",
+  "      THANG. Sai hẳn chủ đề → IV.4.1 Hình Tròn.",
+  "",
+  "  Hai chỗ ấy lộ ra một lỗ trong chính phép thử: họ nào KHÔNG có ví dụ nào trong tập",
+  "  đã biết thì cháu tin mặc định, mà lop4·HH·3 và lop4·HH·4 đúng là không có ví dụ",
+  "  nào. Sách lớp 4 đánh chương 3 là hình tròn, chương 4 là cắt ghép; ma trận đánh",
+  "  IV.3 là hình thang, IV.4 là hình tròn — lệch nhau hẳn một chủ đề. Cổng bắt được",
+  "  gián tiếp: bậc mới ở IV.3.1 lớp 4 không có lời giới thiệu, và lần theo dòng ấy thì",
+  "  ra cả hai chỗ đặt sai. Nay hai họ ấy cũng nằm trong danh sách phải xếp tay.",
+  "",
+  "Mười bài `dangGoc` ghi số hiệu ma trận KHÔNG CÓ (phần lớn là số .0, tức bài khái",
+  "niệm mở chương) thì xếp theo tên dạng: B50 B54 → I.6.3 phép chia có dư · B52 →",
+  "I.6.2 dấu hiệu mở rộng (chia hết cho cả 2 và 5 là chia hết cho 10) · B53 → I.6.1 ·",
+  "B55 → III.1.1 · B58 → III.2.1 · B61 → III.3.1 · B70 → II.1.2 so sánh bằng kỹ thuật",
+  "đặc biệt (so với 1, phần bù) · B74 B76 → IV.1.1.",
+  "",
+  "BỐN BÀI ĐỂ NGOÀI, và ghi rõ vì sao chứ không lặng lẽ bỏ:",
+  "  DL:KSN3.B17 'BÀI TOÁN HAI BƯỚC TÍNH'  — kỹ năng nền, không phải một dạng.",
+  "  DL:KSN3.B33 'CÂN VÀ ĐONG — GAM & ML'  — đo lường, ma trận không có mảng ấy.",
+  "  DL:KSN4.B68 'PHÂN SỐ LÀ GÌ'           — khái niệm mở mảng II, mảng ấy bắt đầu",
+  "                                          từ SO SÁNH, không có dạng khái niệm.",
+  "  DL:KSN4.B75 'ĐƠN VỊ ĐO DIỆN TÍCH'     — đổi đơn vị, không phải một dạng.",
+  "",
+  "Muốn dứt điểm thì nối tiếp `km_v1_38.json` cho đủ ba quyển; tệp này chỉ là chỗ vá."
+ ],
+ "PT:I.1.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B34",
+    "DL:KSN2.B35"
+   ],
+   "4": [
+    "DL:KSN4.B82",
+    "DL:KSN4.B83"
+   ]
+  }
+ },
+ "PT:I.1.2": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B84"
+   ]
+  }
+ },
+ "PT:I.1.3": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B36"
+   ],
+   "4": [
+    "DL:KSN4.B85"
+   ]
+  }
+ },
+ "PT:I.1.4": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B37"
+   ]
+  }
+ },
+ "PT:I.3.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B38"
+   ]
+  }
+ },
+ "PT:I.4.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B39"
+   ]
+  }
+ },
+ "PT:I.4.2": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B40"
+   ],
+   "4": [
+    "DL:KSN4.B92"
+   ]
+  }
+ },
+ "PT:I.4.3": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B41"
+   ],
+   "4": [
+    "DL:KSN4.B91"
+   ]
+  }
+ },
+ "PT:I.5.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B42",
+    "DL:KSN2.B43",
+    "DL:KSN2.B49"
+   ],
+   "4": [
+    "DL:KSN4.B13",
+    "DL:KSN4.B14",
+    "DL:KSN4.B15",
+    "DL:KSN4.B16",
+    "DL:KSN4.B17"
+   ]
+  }
+ },
+ "PT:I.5.2": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B44",
+    "DL:KSN2.B45"
+   ]
+  }
+ },
+ "PT:I.6.1": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B51",
+    "DL:KSN4.B53"
+   ]
+  }
+ },
+ "PT:I.6.2": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B52"
+   ]
+  }
+ },
+ "PT:I.6.3": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B52",
+    "DL:KSN2.B53"
+   ],
+   "4": [
+    "DL:KSN4.B50",
+    "DL:KSN4.B54"
+   ]
+  }
+ },
+ "PT:I.6.4": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B46",
+    "DL:KSN2.B47"
+   ]
+  }
+ },
+ "PT:I.7.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B48"
+   ],
+   "4": [
+    "DL:KSN4.B86",
+    "DL:KSN4.B87",
+    "DL:KSN4.B88"
+   ]
+  }
+ },
+ "PT:I.7.2": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B50",
+    "DL:KSN2.B51"
+   ],
+   "4": [
+    "DL:KSN4.B89",
+    "DL:KSN4.B90"
+   ]
+  }
+ },
+ "PT:II.1.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B69"
+   ]
+  }
+ },
+ "PT:II.1.2": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B69",
+    "DL:KSN4.B70"
+   ]
+  }
+ },
+ "PT:II.2.2": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B72"
+   ]
+  }
+ },
+ "PT:II.3.2": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B73"
+   ]
+  }
+ },
+ "PT:II.4.2": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B71"
+   ]
+  }
+ },
+ "PT:II.5.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B70"
+   ]
+  }
+ },
+ "PT:III.1.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B54"
+   ],
+   "4": [
+    "DL:KSN4.B55",
+    "DL:KSN4.B56",
+    "DL:KSN4.B57"
+   ]
+  }
+ },
+ "PT:III.2.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B55",
+    "DL:KSN2.B56"
+   ],
+   "4": [
+    "DL:KSN4.B58",
+    "DL:KSN4.B59"
+   ]
+  }
+ },
+ "PT:III.2.5": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B60"
+   ]
+  }
+ },
+ "PT:III.3.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B57"
+   ],
+   "4": [
+    "DL:KSN4.B61"
+   ]
+  }
+ },
+ "PT:III.3.2": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B62"
+   ]
+  }
+ },
+ "PT:III.5.1": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B63"
+   ]
+  }
+ },
+ "PT:III.6.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B58"
+   ]
+  }
+ },
+ "PT:III.6.2": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B64"
+   ]
+  }
+ },
+ "PT:III.7.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B59"
+   ]
+  }
+ },
+ "PT:III.7.2": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B65"
+   ]
+  }
+ },
+ "PT:III.8.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B60"
+   ]
+  }
+ },
+ "PT:III.8.2": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B61"
+   ]
+  }
+ },
+ "PT:III.8.3": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B66"
+   ]
+  }
+ },
+ "PT:III.8.4": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B62",
+    "DL:KSN2.B63"
+   ],
+   "4": [
+    "DL:KSN4.B67"
+   ]
+  }
+ },
+ "PT:IV.1.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B64"
+   ],
+   "4": [
+    "DL:KSN4.B74",
+    "DL:KSN4.B76"
+   ]
+  }
+ },
+ "PT:IV.1.2": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B77"
+   ]
+  }
+ },
+ "PT:IV.2.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B65"
+   ],
+   "4": [
+    "DL:KSN4.B79"
+   ]
+  }
+ },
+ "PT:IV.2.3": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B78"
+   ]
+  }
+ },
+ "PT:IV.4.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B66"
+   ],
+   "4": [
+    "DL:KSN4.B80"
+   ]
+  }
+ },
+ "PT:IV.5.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B67"
+   ]
+  }
+ },
+ "PT:IV.5.2": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B81"
+   ]
+  }
+ },
+ "PT:IV.6.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B68"
+   ]
+  }
+ },
+ "PT:V.1.1": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B93",
+    "DL:KSN4.B94"
+   ]
+  }
+ },
+ "PT:V.3.1": {
+  "themBac": {
+   "4": [
+    "DL:KSN4.B95"
+   ]
+  }
+ },
+ "PT:V.6.1": {
+  "themBac": {
+   "2": [
+    "DL:KSN2.B71"
+   ]
+  }
+ }
 }
