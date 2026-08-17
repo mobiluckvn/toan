@@ -48,6 +48,9 @@ TIEN_TO = {1: "DL:TA1.", 2: "DL:TA2.", 3: "DL:TA3."}
 # Gõ được thì gõ; dài hơn ngần này thì bậc 4 chuyển sang GHÉP THẺ CHỮ CÁI.
 # Bé 6 tuổi gõ ~10 ký tự/phút — từ 10 ký tự là bỏ cuộc chứ không phải làm sai.
 GO_TOI_DA = 5
+# Ô gõ CẢ CÂU. Trùng ngưỡng của `tienganh_bai.test.mjs` — hai bên lệch nhau thì bộ
+# sinh đẻ ra thứ cổng không nhận, mà không ai biết cho tới lúc chạy cổng.
+GO_CAU_TOI_DA = 46
 DAN_DIEN = "Nhìn hình rồi chọn từ điền vào chỗ trống."
 # Ô trống là TÊN NGƯỜI (`Hi, I'm + [Name].`) thì không có hình nào vẽ được, mà câu
 # vẫn dùng tốt — manh mối nằm ở chính câu. Bảo bé "nhìn hình" khi không có hình là
@@ -460,14 +463,31 @@ def cau_hoi(u: dict, lop: int, them: dict, sua_slot: dict) -> tuple[list, list, 
                 "hints": [f"Từ này dài {len(t['tu'])} chữ cái."],
             })
     n = len(challenge)
-    for i, c in enumerate(cau[:2], 1):     # chỉ 2 câu — gõ cả câu là việc nặng nhất
+    # Gõ VẾ ĐẦU thôi, và chỉ những câu gõ nổi.
+    #
+    # Lớp 1 mẫu câu nào cũng là một câu trần thuật ngắn ("It's a pen."). Lớp 2 quá
+    # nửa là HỎI - ĐÁP có cả hai phương án:
+    #     "Is she flying a kite? - Yes, she is. / No, she isn't."   53 ký tự
+    # Bắt bé bảy tuổi gõ ngần ấy, kèm dấu gạch chéo, là bỏ cuộc chứ không phải làm
+    # sai — bé gõ chừng mười ký tự một phút. Cổng `tienganh_bai` bắt đúng 12 chỗ.
+    #
+    # Vế trước " - " chính là câu bé cần nói ra; vế sau là lời đáp mẫu. Cắt xong mà
+    # vẫn quá dài thì BỎ câu ấy khỏi bậc gõ, đừng cắt cụt giữa chừng.
+    dem = 0
+    for c in cau:
+        if dem >= 2:                        # chỉ 2 câu — gõ cả câu là việc nặng nhất
+            break
+        go = c["cau"].split(" - ")[0].strip()
+        if len(go) > GO_CAU_TOI_DA or not re.fullmatch(r"[A-Za-z0-9 '\-.,?!]+", go):
+            continue
+        dem += 1
         challenge.append({
-            "id": f"T{n + i}",
+            "id": f"T{n + dem}",
             "bac": 4,
             "text": "Nghe rồi gõ lại cả câu.",
-            "am": am_id("cau", c["cau"]),
-            "answerKey": {"value": c["cau"]},
-            "solutionNarrative": c["cau"],
+            "am": am_id("cau", go),
+            "answerKey": {"value": go},
+            "solutionNarrative": go,
             "hints": ["Nhớ viết hoa chữ đầu câu và chấm ở cuối.",
                       "Gõ thiếu chữ “a” là câu sai — tiếng Anh bắt buộc phải có."],
         })
@@ -568,9 +588,19 @@ def cho_de_nham(cau: str, tu: list[dict]) -> dict | None:
         if rut in d:
             day = {"'s ": "is", "'re ": "are", "'m ": "am"}[rut]
             thieu = d.replace(rut, " ", 1).replace("  ", " ")
+            # CÂU ĐÚNG hiện DẠNG ĐẦY ĐỦ, không hiện dạng rút.
+            #
+            # Hai lý do, và cả hai đều quan trọng hơn việc chép y câu SGK:
+            #  · Dạy rõ hơn — bé thấy tận mắt "'re" thay cho chữ gì.
+            #  · Neo được chữ đang giảng. Cổng `tienganh_bai` đòi mọi từ tiếng Anh
+            #    đặt trong ngoặc kép phải có mặt trong câu đúng hoặc câu sai; viết
+            #    "They're" thì chữ “are” không nằm ở đâu cả và bị báo là từ lạ.
+            #    Lớp 1 thoát vì "is"/"am" chỉ hai chữ cái, dưới ngưỡng cổng soi.
+            day_du = d.replace(rut, f" {day} ", 1).replace("  ", " ")
             return {
-                "wrong": thieu, "right": d,
-                "why": f"Câu này bắt buộc phải có “{day}”, viết rút thành “{rut.strip()}”. "
+                "wrong": thieu, "right": day_du,
+                "why": f"Câu này bắt buộc phải có “{day}”, nói nhanh thì rút lại "
+                       f"thành {rut.strip()} như trong bài. "
                        f"Tiếng Việt bỏ được chỗ ấy, tiếng Anh thì không: "
                        f"“{thieu}” là câu chưa đủ.",
             }

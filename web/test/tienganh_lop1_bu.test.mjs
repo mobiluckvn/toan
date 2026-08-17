@@ -212,7 +212,23 @@ const veHong = Object.entries(veTay).filter(([k]) => !k.startsWith('_'))
 t(`bảy từ nợ đều đã có hình vẽ tay (${veHong.length} chưa)`, veHong.length === 0);
 in5(veHong);
 
-const dungVe = new Set(Object.values(veTay).map((v) => v.ve).filter(Boolean));
+/* ⚠ GOM `_ve_tay` CỦA MỌI QUYỂN, đừng chỉ lấy lớp 1.
+   Bộ hình `lib/hinh_ve.json` là MỘT nguồn dùng chung cho cả môn. Đọc `_ve_tay` của
+   riêng lớp 1 rồi kết luận "5 hình nằm im" là báo oan đúng 5 hình mà lớp 2 đang
+   dùng — cổng đỏ vì một lý do KHÔNG PHẢI lỗi, và người sửa dễ nới bừa cho xanh
+   (bẫy 5 ở §3 sổ dây chuyền). */
+const veTayMoiQuyen = {};
+for (const f of readdirSync(new URL('../../data/tienganh/', import.meta.url))
+  .filter((x) => /^lop\d+_bu\.json$/.test(x))) {
+  const b = JSON.parse(readFileSync(new URL(`../../data/tienganh/${f}`, import.meta.url)));
+  for (const [k, v] of Object.entries((b.hinh || {})._ve_tay || {})) {
+    if (!k.startsWith('_')) veTayMoiQuyen[k] = v;
+  }
+}
+t(`đọc được phần bù của mọi quyển (${Object.keys(veTayMoiQuyen).length} từ nợ hình vẽ tay)`,
+  Object.keys(veTayMoiQuyen).length >= Object.keys(veTay).filter((k) => !k.startsWith('_')).length);
+
+const dungVe = new Set(Object.values(veTayMoiQuyen).map((v) => v.ve).filter(Boolean));
 const veThua = Object.keys(boHinh).filter((k) => !dungVe.has(k));
 t(`không hình vẽ nào nằm im không ai dùng (${veThua.length} thừa)`, veThua.length === 0);
 in5(veThua);

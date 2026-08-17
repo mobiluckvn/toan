@@ -645,21 +645,6 @@
     ]
    }
   },
-  "_u16_con_no": {
-   "_cau": "Is the + [Noun] + near the + [Noun]? - No, it isn't. It's in/on the + [Noun].",
-   "_vi_sao_chua_khai": [
-    "Ba ô CÙNG TÊN [Noun]. `sinh_cau` dùng TÊN Ô làm khoá của kho (`kho[o]`), nên ba",
-    "ô gộp thành một — câu nền sẽ điền cùng một từ vào cả ba chỗ và ra",
-    "'Is the tent near the tent? … It's in the tent.'",
-    "",
-    "Khai bừa vào đây là ĐẺ RA CÂU SAI chứ không cứu được mẫu câu. Chỗ chữa đúng là",
-    "`chuan_tienganh.py`: đánh số ô trùng tên thành [Noun1] [Noun2] [Noun3] ngay khi",
-    "chuẩn hoá công thức — sửa ở tầng chuẩn hoá, đừng thêm nhánh `if lop == 2` vào bộ",
-    "sinh (luật §5 của docs/day_chuyen_du_lieu_tienganh.md).",
-    "",
-    "Chừng nào chưa chữa: U16 chỉ có câu SGK, không có câu thay ô. Bài vẫn chạy."
-   ]
-  },
   "sp_g2_u12_1": {
    "_cau": "The + [Singular Noun] + is + on the table.",
    "_ghi": "Bỏ `table`: 'The table is on the table.' tự nói về chính nó.",
@@ -680,7 +665,20 @@
     ]
    }
   },
-  "_khai_bang_tu": "Ô nào khai bằng TÊN TỪ đích danh thay vì vai, thì mọi mục phải là tên từ. Dùng khi vai rộng quá đẻ ra câu vô nghĩa: ô [Verb] nhận mọi động từ nên ra 'Can you do a van?', ô [Verb-ing] ra 'Is she doing a kite?'. Câu đúng ngữ pháp, sai hẳn nghĩa — máy không hiểu 'doing a kite' là gì nên không cổng nào bắt được."
+  "_khai_bang_tu": "Ô nào khai bằng TÊN TỪ đích danh thay vì vai, thì mọi mục phải là tên từ. Dùng khi vai rộng quá đẻ ra câu vô nghĩa: ô [Verb] nhận mọi động từ nên ra 'Can you do a van?', ô [Verb-ing] ra 'Is she doing a kite?'. Câu đúng ngữ pháp, sai hẳn nghĩa — máy không hiểu 'doing a kite' là gì nên không cổng nào bắt được.",
+  "sp_g2_u16_1": {
+   "_cau": "Is the + [Noun A] + near the + [Noun B]? - No, it isn't. It's in the + [Noun B].",
+   "_ghi": "Hai vật KHÁC nhau. `near` là từ chỉ vị trí nên không được rơi vào ô nào.",
+   "o": {
+    "Noun A": [
+     "blanket",
+     "teapot"
+    ],
+    "Noun B": [
+     "tent"
+    ]
+   }
+  }
  },
  "them": {
   "_vi_sao": [
@@ -864,5 +862,26 @@
   }
  },
  "kich_ban_noi": {},
- "_khoa_tu": "`tu` khoá bằng MÃ NODE (v_g2_u1_pasta), không phải bằng chữ — chuan_tienganh.py tra `tu_bu.get(ma)`. Khoá bằng chữ thì mọi khai rơi im lặng: vai rỗng, và bộ sinh câu điền bừa. Trường là `sonhieu` · `ing` · `soit`, không phải `so_nhieu` · `dang_ing`."
+ "_khoa_tu": "`tu` khoá bằng MÃ NODE (v_g2_u1_pasta), không phải bằng chữ — chuan_tienganh.py tra `tu_bu.get(ma)`. Khoá bằng chữ thì mọi khai rơi im lặng: vai rỗng, và bộ sinh câu điền bừa. Trường là `sonhieu` · `ing` · `soit`, không phải `so_nhieu` · `dang_ing`.",
+ "mau_cau": {
+  "_vi_sao": [
+   "Khoá `mau_cau` đè lên mẫu câu lấy từ bản đồ (chuan_tienganh.py dòng 149 rải thẳng",
+   "vào). Dùng để ĐẶT LẠI TÊN Ô khi bản đồ đặt trùng tên."
+  ],
+  "sp_g2_u16_1": {
+   "_goc": "Is the + [Noun] + near the + [Noun]? - No, it isn't. It's in/on the + [Noun].",
+   "_vi_sao_doi": [
+    "Bản đồ đặt CẢ BA ô cùng tên [Noun]. `sinh_cau` khoá kho ứng viên bằng TÊN ô, nên",
+    "ba ô gộp làm một và câu nền điền cùng một từ vào cả ba chỗ:",
+    "    'Is the blanket near the blanket? … It's in the blanket.'",
+    "",
+    "Đặt tên khác nhau thì mỗi ô một kho. Ô thứ hai và thứ ba CỐ Ý cùng tên [Noun B]:",
+    "vật kia là MỘT vật, câu hỏi và câu đáp phải nói về đúng nó.",
+    "",
+    "Bỏ luôn 'in/on' — dấu gạch chéo giữa câu làm bé bảy tuổi không biết đọc thế nào,",
+    "và câu SGK dùng 'in'."
+   ],
+   "cong_thuc": "Is the + [Noun A] + near the + [Noun B]? - No, it isn't. It's in the + [Noun B]."
+  }
+ }
 }

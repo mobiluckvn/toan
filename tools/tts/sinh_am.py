@@ -250,11 +250,25 @@ def main() -> int:
         print(f"   ✓ {ten}  [{tieng}/{giong}/×{td}]  {m['chu'][:46]}")
 
     if a.so:
+        # ⚠ GỘP VÀO SỔ CŨ, ĐỪNG GHI ĐÈ.
+        #
+        # `so` chỉ chứa những dòng của LẦN CHẠY NÀY. Chạy với một danh sách CON —
+        # cách vẫn dùng để sinh bù mấy clip còn thiếu — mà ghi đè thì sổ mất sạch
+        # phần còn lại: 553 clip lớp 1 tụt xuống 5, trong khi 558 tệp mp3 vẫn nằm
+        # nguyên trên đĩa. Sổ nói không có, đĩa nói có; màn hình nghe theo sổ nên
+        # bé mất tiếng ở gần hết quyển. Đã xảy ra thật 17-08-2026.
+        #
+        # `--lam-lai` thì mới quét sạch, vì khi ấy người chạy CỐ Ý dựng lại tất.
+        gop = {} if a.lam_lai else dict(so_cu)
+        for c in so:
+            gop[c["id"]] = c
+        ds = list(gop.values())
         a.so.parent.mkdir(parents=True, exist_ok=True)
         a.so.write_text(json.dumps(
-            {"_doc": "Sổ tra clip âm. Sửa chữ thì `van_tay` đổi → phải sinh lại clip ấy.",
-             "mau_hz": MAU, "clip": so}, ensure_ascii=False, indent=1), "utf8")
-        print(f"\n→ sổ tra: {a.so}")
+            {"_doc": "Sổ tra clip âm. Sửa chữ thì `van_tay` đổi → phải sinh lại clip ấy. "
+                     "Chạy với danh sách CON thì sổ được GỘP, không bị ghi đè.",
+             "mau_hz": MAU, "clip": ds}, ensure_ascii=False, indent=1), "utf8")
+        print(f"\n→ sổ tra: {a.so}  ({len(ds)} clip)")
 
     print(f"\nXong {len(so)} clip → {a.ra}"
           + (f"   (sinh mới {sinh} · dùng lại {dung})" if dung else ""))

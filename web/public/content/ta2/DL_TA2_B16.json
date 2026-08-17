@@ -107,7 +107,7 @@
    },
    {
     "id": "K4",
-    "text": "Mẫu câu: Is the + [Noun] + near the + [Noun]? - No, it isn't. It's in/on the + [Noun]. — ví dụ: Is the blanket near the tent? - No, it isn't. It's in the tent.",
+    "text": "Mẫu câu: Is the + [Noun A] + near the + [Noun B]? - No, it isn't. It's in the + [Noun B]. — ví dụ: Is the blanket near the tent? - No, it isn't. It's in the tent.",
     "doanAm": [
      [
       "Con nghe mẫu câu rồi nhắc lại nhé.",
@@ -151,17 +151,26 @@
     "amO": "dau"
    }
   ],
-  "canonicalExamples": [],
+  "canonicalExamples": [
+   "Is the blanket near the tent? - No, it isn't. It's in the tent.",
+   "Is the teapot near the tent? - No, it isn't. It's in the tent."
+  ],
   "mauCauDs": [],
   "mauCau": {
    "cau": "Is the blanket near the tent? - No, it isn't. It's in the tent.",
-   "congThuc": "Is the + [Noun] + near the + [Noun]? - No, it isn't. It's in/on the + [Noun].",
+   "congThuc": "Is the + [Noun A] + near the + [Noun B]? - No, it isn't. It's in the + [Noun B].",
    "dungDe": null,
    "tinhHuong": null,
    "phan": [],
    "khacVoi": null
   },
-  "misconceptions": [],
+  "misconceptions": [
+   {
+    "wrong": "Is the blanket near the tent? - No, it isn't. It in the tent.",
+    "right": "Is the blanket near the tent? - No, it isn't. It is in the tent.",
+    "why": "Câu này bắt buộc phải có “is”, nói nhanh thì rút lại thành 's như trong bài. Tiếng Việt bỏ được chỗ ấy, tiếng Anh thì không: “Is the blanket near the tent? - No, it isn't. It in the tent.” là câu chưa đủ."
+   }
+  ],
   "hoiThoai": null
  },
  "lecture": {
@@ -208,13 +217,50 @@
     "teaches": [
      "K4"
     ]
+   },
+   {
+    "id": "S6",
+    "kind": "trap",
+    "teaches": [],
+    "narration": "Nghe câu này: Is the blanket near the tent? - No, it isn't. It in the tent. — câu này có một chỗ chưa đúng. Con nghe lại rồi tìm xem sai ở đâu nhé.",
+    "doanAm": [
+     [
+      "Nghe câu này.",
+      "vi"
+     ],
+     [
+      "Is the blanket near the tent? - No, it isn't. It in the tent.",
+      "en"
+     ],
+     [
+      "Câu vừa rồi có một chỗ chưa đúng. Con nghe lại câu đúng nhé.",
+      "vi"
+     ],
+     [
+      "Is the blanket near the tent? - No, it isn't. It is in the tent.",
+      "en"
+     ]
+    ]
    }
   ]
  },
  "workedExample": {
   "title": "Bài mẫu",
-  "problem": "tent",
-  "steps": []
+  "problem": "Is the blanket near the tent? - No, it isn't. It's in the tent.",
+  "steps": [
+   {
+    "show": "Nghe cả câu: Is the blanket near the tent? - No, it isn't. It's in the tent.",
+    "phan": "giai"
+   },
+   {
+    "show": "Tách ra từng thẻ: Is | the | blanket | near | the | tent? | - | No, | it | isn't. | It's | in | the | tent.",
+    "phan": "giai"
+   },
+   {
+    "show": "Chữ cuối là “tent” — lều, rạp. Đổi chữ ấy là được câu mới.",
+    "phan": "giai"
+   }
+  ]
  },
  "practice": {
   "pools": {
@@ -516,7 +562,54 @@
      ]
     }
    ],
-   "standard": [],
+   "standard": [
+    {
+     "id": "S1",
+     "bac": 3,
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Is the blanket near the ___? - No, it isn't. It's in the tent.",
+     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": "⛺",
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "teapot",
+      "blanket",
+      "near",
+      "tent"
+     ],
+     "answerKey": {
+      "choice": "tent"
+     },
+     "solutionNarrative": "Is the blanket near the tent? - No, it isn't. It's in the tent.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    },
+    {
+     "id": "S2",
+     "bac": 3,
+     "text": "Nhìn hình rồi chọn từ điền vào chỗ trống:  Is the ___ near the tent? - No, it isn't. It's in the tent.",
+     "am": "loi_nhìn_hình_rồi_chọn_từ_điền_vào_chỗ_trống",
+     "anh": "🫖",
+     "anhVe": null,
+     "format": "chon",
+     "choices": [
+      "tent",
+      "teapot",
+      "blanket",
+      "near"
+     ],
+     "answerKey": {
+      "choice": "teapot"
+     },
+     "solutionNarrative": "Is the teapot near the tent? - No, it isn't. It's in the tent.",
+     "hints": [
+      "Nhìn hình xem đó là con gì, cái gì.",
+      "Rồi nhớ lại từ tiếng Anh của nó."
+     ]
+    }
+   ],
    "challenge": [
     {
      "id": "T1",
@@ -603,6 +696,34 @@
       "Từ này có 4 chữ cái.",
       "Bắt đầu bằng chữ “n”."
      ]
+    },
+    {
+     "id": "T5",
+     "bac": 4,
+     "text": "Nghe rồi gõ lại cả câu.",
+     "am": "cau_is_the_blanket_near_the_tent",
+     "answerKey": {
+      "value": "Is the blanket near the tent?"
+     },
+     "solutionNarrative": "Is the blanket near the tent?",
+     "hints": [
+      "Nhớ viết hoa chữ đầu câu và chấm ở cuối.",
+      "Gõ thiếu chữ “a” là câu sai — tiếng Anh bắt buộc phải có."
+     ]
+    },
+    {
+     "id": "T6",
+     "bac": 4,
+     "text": "Nghe rồi gõ lại cả câu.",
+     "am": "cau_is_the_teapot_near_the_tent",
+     "answerKey": {
+      "value": "Is the teapot near the tent?"
+     },
+     "solutionNarrative": "Is the teapot near the tent?",
+     "hints": [
+      "Nhớ viết hoa chữ đầu câu và chấm ở cuối.",
+      "Gõ thiếu chữ “a” là câu sai — tiếng Anh bắt buộc phải có."
+     ]
     }
    ]
   }
@@ -678,7 +799,7 @@
   ]
  },
  "parentNote": {
-  "onComplete": "Chỉ vào đồ trong nhà và cho con gọi tên bằng tiếng Anh.",
+  "onComplete": "Chỉ vào đồ trong nhà rồi nói mẫu câu bài này: “Is the blanket near the tent? - No, it isn't. It's in the tent.” — cho con nhắc lại. Đổi chữ cuối để thành đồ khác.",
   "homeActivity": "Tìm trong nhà những thứ bắt đầu bằng âm . Không cần đúng hết, quan trọng là con nghe ra âm ấy.",
   "watchFor": "NÊN: cho con NGHE trước rồi mới nhìn chữ. KHÔNG NÊN: bắt con đánh vần theo kiểu tiếng Việt — tiếng Anh viết một đằng đọc một nẻo, đánh vần sẽ hại."
  },

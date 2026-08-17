@@ -62,12 +62,26 @@ test('mọi khoá `ve` trong bài đều có hình thật', () => {
   /* Đây là chỗ hỏng câm điển hình: khai `ve: "gate"` trong dữ liệu bài mà bộ hình
      không có khoá ấy thì màn hình lặng lẽ rơi về emoji, video rơi về thẻ chữ, và
      không ai biết cho tới khi nhìn tận mắt. */
-  const TA1 = new URL('../public/content/ta1/', import.meta.url);
+  /* ⚠ QUÉT MỌI QUYỂN TIẾNG ANH, đừng ghim một cái.
+     Bản đầu chỉ đọc `ta1/`. Thêm quyển lớp 2 là năm hình vẽ tay của nó bị báo
+     "không bài nào dùng" — cổng đỏ vì một lý do KHÔNG PHẢI lỗi, và người sửa dễ
+     nới bừa cho xanh. Đúng cái bẫy 5 ghi ở §3 sổ dây chuyền. */
+  const GOC = new URL('../public/content/', import.meta.url);
+  const QUYEN = readdirSync(GOC, { withFileTypes: true })
+    .filter((d) => d.isDirectory() && /^ta\d+$/.test(d.name))
+    .map((d) => d.name);
+  assert.ok(QUYEN.length, 'không thấy quyển Tiếng Anh nào — glob rỗng thì mọi phép đếm xanh trơn');
   const dung = new Set();
-  for (const f of readdirSync(TA1).filter((x) => x.startsWith('DL_TA1_B'))) {
-    const b = JSON.parse(readFileSync(new URL(f, TA1)));
-    for (const h of b.hinhTu || []) if (h.ve) dung.add(h.ve);
+  let soBai = 0;
+  for (const q of QUYEN) {
+    const T = new URL(`${q}/`, GOC);
+    for (const f of readdirSync(T).filter((x) => /^DL_TA\d+_B.*\.json$/.test(x))) {
+      const b = JSON.parse(readFileSync(new URL(f, T)));
+      soBai += 1;
+      for (const h of b.hinhTu || []) if (h.ve) dung.add(h.ve);
+    }
   }
+  assert.ok(soBai >= 16, `chỉ thấy ${soBai} bài — chạy nhầm thư mục thì phép đếm vô nghĩa`);
   for (const v of dung) assert.ok(COI.includes(v), `bài khai hình "${v}" mà bộ hình không có`);
   /* Hai chiều: bài khai hình nào thì bộ hình phải có (trên), và bộ hình có gì thì
      phải có bài dùng (dưới). Hình chết không ai thấy, nên không ai sửa khi nó hỏng. */
