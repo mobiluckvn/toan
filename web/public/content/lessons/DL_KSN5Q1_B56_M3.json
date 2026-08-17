@@ -34,24 +34,7 @@
   "kidText": "Hai kim đồng hồ là bài đuổi nhau trên vòng tròn. Mỗi lần trùng cách nhau hơn một giờ, nên 12 giờ chỉ trùng 11 lần."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Hai kim là hai vận động viên trên vòng đua 1 vòng: kim PHÚT chạy 1 vòng/giờ; kim GIỜ ì ạch $\\frac{1}{12}$ vòng/giờ → hiệu vận tốc = 1 − $\\frac{1}{12}$ = $\\frac{11}{12}$ vòng/giờ — bài ĐUỔI KỊP cùng chiều của B55 thu nhỏ vào mặt đồng hồ."
-   },
-   {
-    "id": "K2",
-    "text": "Từ lúc hai kim trùng, kim phút phải DƯ trọn 1 vòng mới trùng lại: t = 1 : $\\frac{11}{12}$ = $\\frac{12}{11}$ giờ khoảng 1 giờ 5 phút — mỗi lần trùng cách nhau HƠN một giờ."
-   },
-   {
-    "id": "K3",
-    "text": "Vì chu kỳ dài hơn 1 giờ nên trong 12 giờ số lần trùng = 12 : $\\frac{12}{11}$ = 11 LẦN — không phải 12: một \"lần\" bị nuốt mất vì mỗi chu kỳ lấn sang giờ sau một mẩu."
-   },
-   {
-    "id": "K4",
-    "text": "Bài lúc 3 giờ: kim giờ đứng số 3 — cách kim phút $\\frac{1}{4}$ vòng phía trước → thời gian đuổi kịp = $\\frac{1}{4}$ : $\\frac{11}{12}$ = $\\frac{3}{11}$ giờ khoảng 16 phút (hai kim trùng lúc khoảng 3 giờ 16 phút)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: VÒNG ĐUA TÍ HON TRÊN MẶT ĐỒNG HỒ. Câu đố khép sách: từ mười hai giờ trưa đến mười hai giờ đêm, hai kim trùng nhau mấy lần? Trí Long đếm ngay: \"mỗi giờ một lần — MƯỜI HAI!\" Nhìn lại mặt đồng hồ: đó là VÒNG ĐUA TÍ HON — kim phút là vận động viên nhanh: MỘT vòng mỗi giờ; kim giờ ì ạch: MỘT PHẦN MƯỜI HAI vòng! Bài đuổi kịp cùng chiều trên đường vòng — về ngay B55: kim phút phải DƯ TRỌN MỘT VÒNG! Hiệu vận tốc: một trừ một phần mười hai — MƯỜI MỘT PHẦN MƯỜI HAI vòng mỗi giờ! Thời gian giữa hai lần trùng: một chia mười-một-phần-mười-hai — MƯỜI HAI PHẦN MƯỜI MỘT giờ: khoảng MỘT GIỜ LINH NĂM PHÚT — mỗi lần trùng cách nhau HƠN một giờ! Vậy mười hai giờ chia chu kỳ: đúng MƯỜI MỘT lần — mỗi chu kỳ lấn sang giờ sau một mẩu, nuốt gọn một \"lần\" của Trí Long! Bài ba giờ: kim giờ đứng số ba — cách một phần tư vòng: một phần tư chia mười-một-phần-mười-hai — BA PHẦN MƯỜI MỘT giờ: khoảng MƯỜI SÁU PHÚT — hai kim ôm nhau lúc ba giờ mười sáu!",
   "canonicalExamples": [
    {
@@ -76,14 +59,8 @@
     "counterExample": "Thử đếm tay: trùng lúc 12:00, rồi ~1:05, ~2:11, ~3:16... mỗi mốc lấn dần — đến vòng cuối 10:55 là lần thứ 11, hết sạch 12 giờ: không còn chỗ cho lần 12!"
    }
   ],
-  "vocabulary": [
-   "vòng đua tí hon",
-   "kim ì ạch 1/12",
-   "dư trọn một vòng",
-   "chu kỳ hơn một giờ",
-   "nuốt mất một lần"
-  ],
-  "mantra": "MỖI LẦN TRÙNG CÁCH NHAU HƠN MỘT GIỜ — NÊN 12 GIỜ CHỈ 11 LẦN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -105,45 +82,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "(a) Từ lúc hai kim trùng, sau bao lâu trùng lại — 12 giờ trùng mấy lần? (b) Lúc 3 giờ đúng, sau bao lâu hai kim trùng nhau?",
-    "display": {
-     "type": "story_panel",
-     "caption": "12 giờ = 12 lần trùng??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để vào vòng đua!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Mặt đồng hồ là VÒNG ĐUA TÍ HON — kim phút chạy MỘT vòng mỗi giờ; kim giờ ì ạch MỘT PHẦN MƯỜI HAI vòng! Bài đuổi kịp cùng chiều trên đường vòng — về ngay bài bánh vòng: kim phút phải DƯ TRỌN MỘT VÒNG! Hiệu vận tốc: một trừ một phần mười hai — MƯỜI MỘT PHẦN MƯỜI HAI vòng mỗi giờ! Thời gian giữa hai lần trùng: một chia mười-một-phần-mười-hai — MƯỜI HAI PHẦN MƯỜI MỘT giờ: khoảng MỘT GIỜ LINH NĂM PHÚT — mỗi lần trùng cách nhau HƠN một giờ!",
-    "display": {
-     "type": "clock_race_interactive",
-     "spec": {
-      "fast": "kim phút: 1 vòng/giờ",
-      "slow": "kim giờ: 1/12 vòng/giờ",
-      "diff": "hiệu 11/12 → chu kỳ 12/11 giờ ≈ 1 giờ 05"
-     }
-    },
-    "interaction": {
-     "type": "race_the_hands",
-     "answerKey": {
-      "value": "12/11"
-     },
-     "successMessage": "Chu kỳ 12/11 giờ — hơn một giờ mỗi lần!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -164,38 +102,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Mười hai giờ chia chu kỳ mười-hai-phần-mười-một: đúng MƯỜI MỘT lần trùng — mỗi chu kỳ lấn sang giờ sau một mẩu, nuốt gọn một \"lần\" của phép đếm vội! Đếm tay mà xem: mười hai giờ, một giờ linh năm, hai giờ mười một… đến mười giờ năm lăm là lần thứ mười một — hết sạch! Bài ba giờ: kim giờ đứng số ba — cách MỘT PHẦN TƯ vòng: một phần tư chia mười-một-phần-mười-hai — BA PHẦN MƯỜI MỘT giờ: khoảng MƯỜI SÁU PHÚT — hai kim ôm nhau lúc ba giờ mười sáu!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "12 : 12/11 = 11 lần (không 12!)",
-      "3 giờ: cách 1/4 vòng",
-      "1/4 : 11/12 = 3/11 giờ ≈ 16 phút"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 14,
-    "narration": "Câu cần nhớ: mỗi lần trùng cách nhau hơn một giờ — nên mười hai giờ chỉ mười một lần!",
-    "display": {
-     "type": "mantra_card",
-     "text": "12 GIỜ — CHỈ 11 LẦN TRÙNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào KỲ SÁT HẠCH CUỐI!"
     }
    }
   ]
@@ -509,110 +415,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B56.M3",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "12 giờ = 12 lần trùng??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "mỗi giờ một lần — 12!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B56_M3_F1.png",
-   "sha256_16": "b63c4ec2e26eb916"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Hai kim đồng hồ = bài đuổi kịp: hiệu 11/12 vòng/giờ — trùng sau 12/11 giờ, 12 giờ trùng 11 lần",
-    "steps": [
-     {
-      "text": "12 : 12/11 = 11 lần (không 12!)"
-     },
-     {
-      "text": "3 giờ: cách 1/4 vòng"
-     },
-     {
-      "text": "1/4 : 11/12 = 3/11 giờ khoảng 16 phút"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B56_M3_F2.png",
-   "sha256_16": "6aeafdee74e1c090"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Hai kim là hai vận động viên trên vòng đua 1 vòng",
-      "text": "kim PHÚT chạy 1 vòng/giờ; kim GIỜ ì ạch 1/12 vòng/giờ → hiệu vận tốc = 1 − 1/12 = 11/12 vòng/giờ — bài ĐUỔI KỊP cùng chiều của B55 thu nhỏ vào mặt đồng hồ.",
-      "tone": "navy"
-     },
-     {
-      "label": "Từ lúc hai kim trùng, kim phút phải DƯ trọn 1 vòng mới trùng lại",
-      "text": "t = 1 : 11/12 = 12/11 giờ khoảng 1 giờ 5 phút — mỗi lần trùng cách nhau HƠN một giờ.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "MỖI LẦN TRÙNG CÁCH NHAU HƠN MỘT GIỜ — NÊN 12 GIỜ CHỈ 11 LẦN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B56_M3_F3.png",
-   "sha256_16": "f5b89574bca9bca6"
-  },
-  {
-   "archetype": "clock_face",
-   "params": {
-    "title": "HAI KIM TRÙNG NHAU — 12 GIỜ CHỈ 11 LẦN",
-    "clocks": [
-     {
-      "hour": 12,
-      "minute": 0,
-      "label": "12:00"
-     },
-     {
-      "hour": 1,
-      "minute": 5,
-      "label": "khoảng 1:05"
-     },
-     {
-      "hour": 3,
-      "minute": 16,
-      "label": "khoảng 3:16"
-     }
-    ],
-    "note": "hiệu 1 − 1/12 = 11/12 vòng/giờ → chu kỳ 12/11 giờ khoảng 1 giờ 05 → 12 : 12/11 = 11 lần"
-   },
-   "caption": "Bài đuổi kịp trên vòng đua tí hon: kim phút phải dư trọn một vòng",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B56_M3_F4.png",
-   "sha256_16": "7fb43d96186d3107"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B49"
@@ -624,5 +427,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Hai kim đồng hồ = bài đuổi kịp: hiệu $\\frac{11}{12}$ vòng/giờ — trùng sau $\\frac{12}{11}$ giờ, 12 giờ trùng 11 lần"
+ "titleDay": "Hai kim đồng hồ = bài đuổi kịp: hiệu $\\frac{11}{12}$ vòng/giờ — trùng sau $\\frac{12}{11}$ giờ, 12 giờ trùng 11 lần",
+ "video": {
+  "giang": "DL_KSN5Q1_B56_M3_giang.mp4"
+ }
 }

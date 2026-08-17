@@ -32,20 +32,7 @@
   "kidText": "Mốc mà biết chạy thì dùng vận tốc gặp nhau: ngược chiều thì cộng, cùng chiều thì trừ. Hai tàu qua nhau thì cộng cả hai thân."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Mốc BIẾT CHẠY: quãng đường giữ luật thân tàu (mốc điểm → thân; mốc dài → cộng chiều dài) nhưng vận tốc phải đổi thành VẬN TỐC GẶP NHAU — cách xét mũi tên ở Bài 54, áp lên tàu: ngược chiều TỔNG, cùng chiều HIỆU."
-   },
-   {
-    "id": "K2",
-    "text": "Tàu 120 m (15 m/s) qua người đi bộ NGƯỢC chiều (1 m/s): t = 120 : ($15 + 1$) = 7,5 giây — người và tàu cùng gặm thân tàu; qua xe đạp CÙNG chiều (5 m/s): t = 120 : ($15 - 5$) = 12 giây — mốc chạy trốn nên lâu hơn người đứng yên (8 giây)."
-   },
-   {
-    "id": "K3",
-    "text": "Hai tàu qua NHAU (ngược chiều 180 m + 120 m, 15 và 10 m/s): từ mũi chạm mũi đến đuôi rời đuôi — quãng gộp = CẢ HAI THÂN: ($180 + 120$) : ($15 + 10$) = $300 : 25 = 12$ giây."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: MỐC BIẾT CHẠY VÀ CÁI BẮT TAY HAI THẦN CHÚ. Tàu một trăm hai mươi mét lướt qua NGƯỜI ĐI BỘ ngược chiều một mét giây — cột đèn hôm qua nay mọc chân! Hai thần chú bắt tay: quãng đường vẫn theo luật THÂN TÀU — người là mốc điểm: một thân, một trăm hai mươi mét; nhưng vận tốc phải là VẬN TỐC GẶP NHAU — mũi tên châu nhau: chia TỔNG mười lăm cộng một — mười sáu: BẢY PHẨY NĂM giây, nhanh hơn qua cột đèn vì người cũng lao tới gặm phụ! Xe đạp CÙNG chiều năm mét giây — mốc CHẠY TRỐN: chia HIỆU mười: MƯỜI HAI giây — lâu hơn hẳn tám giây của cột đứng yên! Trận trùm — HAI TÀU qua nhau: tàu một tám mươi gặp tàu một hai mươi ngược chiều. Quay chậm: MŨI chạm MŨI — bấm; ĐUÔI rời ĐUÔI — dừng: hai thân tàu phải lướt hết qua nhau — quãng gộp CẢ HAI THÂN: ba trăm mét! Chia tổng hai lăm: MƯỜI HAI giây! Thân tàu cộng đủ — mũi tên chọn phép: hai thần chú cũ ghép thành chìa khóa mới!",
   "canonicalExamples": [
    {
@@ -76,14 +63,8 @@
     "counterExample": "Chỉ lấy một thân $180 : 25 = 7,2$ giây — lúc ấy đuôi tàu ngắn còn chưa chui hết qua: hai tàu vẫn đang kẹp nhau trên ray!"
    }
   ],
-  "vocabulary": [
-   "mốc biết chạy",
-   "cột đèn mọc chân",
-   "vận tốc gặp nhau",
-   "mốc chạy trốn",
-   "mũi chạm mũi — đuôi rời đuôi"
-  ],
-  "mantra": "THÂN TÀU CỘNG ĐỦ — MŨI TÊN CHỌN PHÉP: MỐC CHẠY THÌ TỔNG-HIỆU!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -105,48 +86,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Đoàn tàu dài 120 m chạy 15 m/s qua một người đi bộ ngược chiều với vận tốc 1 m/s. Hỏi tàu qua người đó hết bao lâu?",
-    "display": {
-     "type": "story_panel",
-     "caption": "mốc chạy vẫn chia 15??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để bắt tay hai thần chú!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Hai điều cần nhớ ghép lại! Quãng đường vẫn theo luật THÂN TÀU — người là mốc điểm: MỘT THÂN, một trăm hai mươi mét! Vận tốc là VẬN TỐC GẶP NHAU — mũi tên châu nhau: chia TỔNG mười sáu: BẢY PHẨY NĂM giây — người lao tới gặm phụ! Xe đạp CÙNG chiều năm mét giây — mốc CHẠY TRỐN: chia HIỆU mười: MƯỜI HAI giây — lâu hơn hẳn tám giây của cột đứng yên!",
-    "display": {
-     "type": "running_pole_interactive",
-     "spec": {
-      "opposite": "ngược: 120 : (15+1) = 7,5 giây",
-      "same": "cùng: 120 : (15−5) = 12 giây",
-      "rule": "thân tàu giữ luật — mũi tên chọn phép"
-     }
-    },
-    "interaction": {
-     "type": "two_mantras_handshake",
-     "answerKey": {
-      "values": [
-       7.5,
-       12
-      ]
-     },
-     "successMessage": "Bắt tay: 7,5 và 12 giây!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -167,37 +106,6 @@
       "K1"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Trận trùm — HAI TÀU qua nhau: tàu một trăm tám mươi gặp tàu một trăm hai mươi ngược chiều! Quay chậm: MŨI chạm MŨI — bấm; ĐUÔI rời ĐUÔI — dừng: hai thân tàu phải lướt hết qua nhau — quãng gộp CẢ HAI THÂN: ba trăm mét! Vận tốc gặp: hai mươi lăm — MƯỜI HAI giây! Lấy một thân — hai tàu còn kẹp nhau trên ray!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "hai tàu: quãng = 180 + 120 = 300",
-      "V gặp = 15 + 10 = 25",
-      "t = 300 : 25 = 12 giây"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: thân tàu cộng đủ — mũi tên chọn phép: mốc chạy thì tổng-hiệu!",
-    "display": {
-     "type": "mantra_card",
-     "text": "THÂN CỘNG ĐỦ — MŨI TÊN CHỌN PHÉP!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -511,110 +419,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B56.M2",
- "figureSpec": [
-  {
-   "archetype": "character_speech",
-   "params": {
-    "title": "mốc chạy vẫn chia 15??",
-    "lines": [
-     {
-      "who": "Trí Long",
-      "say": "120 : 15 = 8 giây, như cột đèn!",
-      "tone": "wrong"
-     }
-    ]
-   },
-   "caption": "Chỗ hay nhầm",
-   "id": "F1",
-   "usedIn": [
-    "trap"
-   ],
-   "file": "figures/KSN5Q1_B56_M2_F1.png",
-   "sha256_16": "5a26a035461639ce"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Mốc biết chạy: cùng chiều chia HIỆU — ngược chiều chia TỔNG; hai tàu qua nhau cộng cả hai thân",
-    "steps": [
-     {
-      "text": "hai tàu: quãng = 180 + 120 = 300"
-     },
-     {
-      "text": "V gặp = 15 + 10 = 25"
-     },
-     {
-      "text": "t = 300 : 25 = 12 giây"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B56_M2_F2.png",
-   "sha256_16": "3eb96bae29e06118"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Mốc BIẾT CHẠY",
-      "text": "quãng đường giữ luật thân tàu (mốc điểm → thân",
-      "tone": "navy"
-     },
-     {
-      "label": "Tàu 120 m (15 m/s) qua người đi bộ NGƯỢC chiều (1 m/s)",
-      "text": "t = 120 : (15 + 1) = 7,5 giây — người và tàu cùng gặm thân tàu; qua xe đạp CÙNG chiều (5 m/s): t = 120 : (15 − 5) = 12 giây — mốc chạy trốn nên lâu hơn người đứng yên (8 giây).",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "THÂN TÀU CỘNG ĐỦ — MŨI TÊN CHỌN PHÉP: MỐC CHẠY THÌ TỔNG-HIỆU!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B56_M2_F3.png",
-   "sha256_16": "c2cfcb057fb8408b"
-  },
-  {
-   "archetype": "two_way_compare",
-   "params": {
-    "title": "MỐC BIẾT CHẠY — THÂN TÀU GIỮ LUẬT, VẬN TỐC ĐỔI",
-    "neutral": true,
-    "wrong": {
-     "head": "NGƯỢC CHIỀU",
-     "steps": [
-      "người lao tới gặm phụ",
-      "120 : (15 + 1)"
-     ],
-     "result": "7,5 giây"
-    },
-    "right": {
-     "head": "CÙNG CHIỀU",
-     "steps": [
-      "mốc chạy trốn",
-      "120 : (15 − 5)"
-     ],
-     "result": "12 giây"
-    },
-    "verdict": "Hai tàu qua nhau: cộng CẢ HAI THÂN → (180 + 120) : 25 = 12 giây"
-   },
-   "caption": "Cột đèn đứng yên mất 8 giây — mốc chạy trốn thì lâu hơn, lao tới thì nhanh hơn",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B56_M2_F4.png",
-   "sha256_16": "0f2d31cd07006809"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B49"
@@ -626,5 +431,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Mốc biết chạy: cùng chiều chia HIỆU — ngược chiều chia TỔNG; hai tàu qua nhau cộng cả hai thân"
+ "titleDay": "Mốc biết chạy: cùng chiều chia HIỆU — ngược chiều chia TỔNG; hai tàu qua nhau cộng cả hai thân",
+ "video": {
+  "giang": "DL_KSN5Q1_B56_M2_giang.mp4"
+ }
 }

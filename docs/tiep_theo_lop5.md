@@ -7,37 +7,36 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **165/168** — bài 1 tới 55 |
-| Còn lại | **3 micro · bài 56** — làm xong là HẾT QUYỂN |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 55 chưa deploy** |
+| Đã xong | **168/168 — XONG TRỌN QUYỂN**, bài 1 tới 56 |
+| Còn lại | không còn bài nào. Bốn quyển Toán nay đều KHÔNG còn bài chữ. |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 56 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
-## Mở đầu buổi sau: làm bài 56 — bài CUỐI của quyển
+## XONG QUYỂN. Còn hai việc phải hỏi bác
 
-Bài 56: M1 tàu dài qua mốc và qua cầu · M2 khi cái mốc cũng biết chạy · M3 hai kim
-đồng hồ đuổi nhau. Làm xong là **hết quyển 168/168**. M1 dùng `so_do_doan` (cầu là
-đoạn ngắn, quãng tàu đi là đoạn dài, phần dôi ra chính là thân tàu); M2 dùng
-`duong_di`; M3 dùng `dong_ho` sẵn có.
+**1. Deploy.** Bài 33 tới 56 — hai mươi bốn bài lớn, 72 micro — chưa lên
+`ky-su-nhi.web.app`. Tám chương đầu đã lên từ 16-08. Trước khi đẩy thì đi thử bằng
+mắt trên bản dựng như mọi lần: mở vài micro, cho video chạy, kiểm bước `check`, và
+cố tình làm SAI một lượt.
 
-Xong bài 56 thì còn HAI việc: bật lại `khoaBai`, và deploy trọn bài 33 tới 56.
+**2. `khoaBai` của lớp 5.** Vẫn đang `false` (xem mục dưới). Bác nhờ mở để đi thử
+trọn quyển; nay quyển đã trọn, nhưng bật lại lúc nào là bác quyết.
 
-```bash
-git -C /Users/v/Documents/Code/web5/repo log --oneline -3   # commit cuối: deploy chương 8
-```
+Hết hai việc ấy thì quyển này khép. Việc kế tiếp có thể là **lớp 5 Quyển 2**, hoặc
+trả nốt **29 hình chết của lớp 4**.
 
-## ⚠ HAI MÓN NỢ ĐANG TREO
+## ⚠ MÓN NỢ ĐANG TREO
 
 **1. `khoaBai` của lớp 5 đang TẠM MỞ.** Bác nhờ mở hết để đi thử trọn quyển
 (16-08-2026). Cờ ở `chuong_trinh.json`, khối `"ma": "lop5"`, hiện là `false`.
 Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuong_trinh.json` và
 `web/public/content/chuong_trinh.json`. Lý do bật lại đã ghi ngay cạnh cờ.
 
-**2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
-lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**3**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**2. ~~`NO.lessons`~~ ĐÃ TRẢ XONG.** Con số ấy hạ 3 sau mỗi bài lớn, nay về **0**:
+lớp 5 không còn hình chết nào. Còn lớp 4 nợ 29 hình, chưa ai đụng.
 
-## Nhịp làm một bài lớn (đã chạy 32 lần)
+## Nhịp làm một bài lớn (đã chạy đủ 56 lần)
 
 ```bash
 # ① đọc nội dung ba micro

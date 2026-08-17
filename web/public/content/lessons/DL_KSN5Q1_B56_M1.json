@@ -36,20 +36,7 @@
   "kidText": "Bấm giờ từ lúc mũi tàu chạm đến lúc đuôi tàu rời. Qua cột đèn thì quãng bằng thân tàu, qua cầu thì cộng thêm cả cầu."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Quay chậm mà xem: tàu qua CỘT ĐÈN (mốc là ĐIỂM) — bấm giờ lúc MŨI chạm cột, dừng lúc ĐUÔI rời cột: cả đoạn phim tàu đi đúng MỘT THÂN TÀU: t = $120 : 15 = 8$ giây — thân tàu luôn có mặt trong quãng đường."
-   },
-   {
-    "id": "K2",
-    "text": "Qua CẦU (mốc CÓ CHIỀU DÀI): mũi chạm ĐẦU cầu — bấm; đuôi rời CUỐI cầu — dừng: tàu đi hết CẦU rồi thêm THÂN: quãng = $180 + 120 = 300$ m → t = $300 : 15 = 20$ giây; chỉ chia cầu trần ($180 : 15 = 12$) là đuôi tàu còn nằm giữa cầu!"
-   },
-   {
-    "id": "K3",
-    "text": "Ngược từ thời gian: tàu 120 m vượt cầu 480 m hết 40 giây → quãng = $480 + 120 = 600$ → V = $600 : 40 = 15$ m/s = 54 km/h (nhân 3,6 — cặp lính gác B53 tái xuất)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: QUAY CHẬM MŨI CHẠM — ĐUÔI RỜI. Tàu dài một trăm hai mươi mét chạy mười lăm mét giây qua cột đèn — Trí Long ngơ ngác: \"cột đèn có dài đâu mà tính quãng?!\" QUAY CHẬM cảnh phim: bấm giờ khi MŨI tàu chạm cột — theo dõi… thân tàu trôi qua… dừng khi ĐUÔI rời cột: suốt đoạn phim, tàu đã đi đúng MỘT THÂN TÀU — một trăm hai mươi mét! Tám giây! Mốc là điểm thì cộng KHÔNG — nhưng THÂN TÀU luôn có mặt! Qua CẦU một trăm tám mươi mét thì sao? Mũi chạm ĐẦU cầu — bấm; nhưng khoan vội dừng: đuôi phải RỜI hẳn CUỐI cầu cơ! Tàu đi hết cây cầu rồi CỘNG thêm thân mình: một tám mươi cộng một hai mươi — BA TRĂM mét: HAI MƯƠI giây! Chia mỗi cầu trần được mười hai giây — lúc ấy cái đuôi còn nằm chình ình giữa cầu! Ngược chiều kim: tàu một hai mươi vượt cầu bốn trăm tám mươi hết bốn mươi giây — quãng sáu trăm chia bốn mươi: mười lăm mét giây — nhân ba phẩy sáu: NĂM MƯƠI TƯ ki-lô-mét giờ, lính gác 36-10 gật đầu!",
   "canonicalExamples": [
    {
@@ -80,14 +67,8 @@
     "counterExample": "12 giây: mũi vừa ló khỏi cuối cầu nhưng đuôi tàu còn nằm giữa cầu — người gác chắn dám mở rào chưa?!"
    }
   ],
-  "vocabulary": [
-   "quay chậm mũi chạm đuôi rời",
-   "mốc điểm cộng không",
-   "cầu cộng cầu",
-   "thân tàu luôn có mặt",
-   "đuôi còn giữa cầu"
-  ],
-  "mantra": "BẤM GIỜ TỪ MŨI CHẠM ĐẾN ĐUÔI RỜI — THÂN TÀU LUÔN CÓ MẶT!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -109,48 +90,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Đoàn tàu dài 120 m chạy với vận tốc 15 m/s. Hỏi tàu đi qua một cột đèn hết bao lâu?",
-    "display": {
-     "type": "story_panel",
-     "caption": "cột đèn — quãng = 0??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để quay chậm!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "QUAY CHẬM: bấm giờ khi MŨI tàu chạm cột — thân tàu trôi qua — dừng khi ĐUÔI rời cột: tàu đi đúng MỘT THÂN TÀU! Một trăm hai mươi chia mười lăm — TÁM giây! Qua CẦU một trăm tám mươi: mũi chạm ĐẦU cầu — bấm; đuôi phải RỜI hẳn CUỐI cầu mới dừng: tàu đi hết cây cầu rồi CỘNG thân mình — ba trăm mét: HAI MƯƠI giây! Mốc là điểm cộng không — mốc có chiều dài thì cộng mốc: và thân tàu LUÔN có mặt!",
-    "display": {
-     "type": "slowmo_train_interactive",
-     "spec": {
-      "pole": "cột đèn: quãng = thân 120 → 8 giây",
-      "bridge": "cầu: 180 + 120 = 300 → 20 giây",
-      "rule": "đuôi RỜI mới dừng đồng hồ"
-     }
-    },
-    "interaction": {
-     "type": "slowmo_stopwatch",
-     "answerKey": {
-      "values": [
-       8,
-       20
-      ]
-     },
-     "successMessage": "Đuôi rời — 8 giây và 20 giây!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -171,37 +110,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 42,
-    "teaches": [
-     "K3"
-    ],
-    "narration": "Vạch mặt phép chia cầu trần: một tám mươi chia mười lăm — mười hai giây: mũi vừa ló khỏi cuối cầu nhưng ĐUÔI còn nằm chình ình GIỮA cầu — gác chắn chưa dám mở rào! Ngược: tàu một hai mươi vượt cầu bốn tám mươi hết bốn mươi giây — sáu trăm chia bốn mươi: MƯỜI LĂM mét giây; nhân ba phẩy sáu: NĂM MƯƠI TƯ — lính gác gật đầu!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "180 : 15 = 12 ✗ — đuôi còn giữa cầu!",
-      "ngược: (480+120) : 40 = 15 m/s",
-      "15 × 3,6 = 54 km/h"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: bấm giờ từ mũi chạm đến đuôi rời — thân tàu luôn có mặt!",
-    "display": {
-     "type": "mantra_card",
-     "text": "MŨI CHẠM — ĐUÔI RỜI!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -487,235 +395,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B56.M1",
- "figureSpec": [
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "",
-    "points": {
-     "A": [
-      0,
-      3.2
-     ],
-     "B": [
-      12,
-      3.2
-     ],
-     "C": [
-      12,
-      4.6
-     ],
-     "D": [
-      0,
-      4.6
-     ],
-     "P": [
-      3,
-      0
-     ],
-     "Q": [
-      21,
-      0
-     ],
-     "R": [
-      3,
-      1.6
-     ],
-     "S2": [
-      21,
-      1.6
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "P",
-       "Q",
-       "S2",
-       "R"
-      ],
-      "fill": "pale",
-      "label": "cầu 180 m"
-     },
-     {
-      "pts": [
-       "A",
-       "B",
-       "C",
-       "D"
-      ],
-      "fill": "navy",
-      "label": "thân tàu 120 m"
-     }
-    ],
-    "segments": [
-     {
-      "from": "A",
-      "to": "P",
-      "dashed": true,
-      "color": "#C0392B"
-     },
-     {
-      "from": "B",
-      "to": "Q",
-      "dashed": true,
-      "color": "#C0392B",
-      "label": "mũi chạm → đuôi rời",
-      "dx": -6,
-      "dy": 6
-     }
-    ],
-    "show_points": []
-   },
-   "caption": "Đề bài — số đo đã cho",
-   "id": "F0",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B56_M1_F0.png",
-   "sha256_16": "33bf7cb094a39a4f"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Tàu dài — mũi chạm đến đuôi rời: mốc là ĐIỂM cộng không, CẦU thì cộng cầu (và luôn cộng thân tàu)",
-    "steps": [
-     {
-      "text": "180 : 15 = 12 — đuôi còn giữa cầu!"
-     },
-     {
-      "text": "ngược: (480+120) : 40 = 15 m/s"
-     },
-     {
-      "text": "15 × 3,6 = 54 km/h"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B56_M1_F2.png",
-   "sha256_16": "9c4c053de6e8ebed"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Quay chậm mà xem",
-      "text": "tàu qua CỘT ĐÈN (mốc là ĐIỂM)",
-      "tone": "navy"
-     },
-     {
-      "label": "Qua CẦU (mốc CÓ CHIỀU DÀI)",
-      "text": "mũi chạm ĐẦU cầu — bấm; đuôi rời CUỐI cầu — dừng: tàu đi hết CẦU rồi thêm THÂN: quãng = 180 + 120 = 300 m → t = 300 : 15 = 20 giây; chỉ chia cầu trần (180 : 15 = 12) là đuôi tàu còn nằm giữa cầu!",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "BẤM GIỜ TỪ MŨI CHẠM ĐẾN ĐUÔI RỜI — THÂN TÀU LUÔN CÓ MẶT!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B56_M1_F3.png",
-   "sha256_16": "d56e99b449f37d4c"
-  },
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "QUAY CHẬM: MŨI CHẠM ĐẦU CẦU — ĐUÔI RỜI CUỐI CẦU",
-    "points": {
-     "A": [
-      0,
-      3.2
-     ],
-     "B": [
-      12,
-      3.2
-     ],
-     "C": [
-      12,
-      4.6
-     ],
-     "D": [
-      0,
-      4.6
-     ],
-     "P": [
-      3,
-      0
-     ],
-     "Q": [
-      21,
-      0
-     ],
-     "R": [
-      3,
-      1.6
-     ],
-     "S2": [
-      21,
-      1.6
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "P",
-       "Q",
-       "S2",
-       "R"
-      ],
-      "fill": "pale",
-      "label": "cầu 180 m"
-     },
-     {
-      "pts": [
-       "A",
-       "B",
-       "C",
-       "D"
-      ],
-      "fill": "navy",
-      "label": "thân tàu 120 m"
-     }
-    ],
-    "segments": [
-     {
-      "from": "A",
-      "to": "P",
-      "dashed": true,
-      "color": "#C0392B"
-     },
-     {
-      "from": "B",
-      "to": "Q",
-      "dashed": true,
-      "color": "#C0392B",
-      "label": "mũi chạm → đuôi rời",
-      "dx": -6,
-      "dy": 6
-     }
-    ],
-    "show_points": [],
-    "formula": "quãng = cầu + thân = 180 + 120 = 300 m → 300 : 15 = 20 giây",
-    "note": "Chia mỗi cầu trần ra 12 giây — lúc ấy ĐUÔI tàu còn nằm giữa cầu, gác chắn chưa mở rào"
-   },
-   "caption": "Mốc là ĐIỂM thì cộng không (120 : 15 = 8 giây) · mốc có chiều dài thì cộng mốc",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B56_M1_F4.png",
-   "sha256_16": "8c99add63d9d45eb"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B49"
@@ -727,5 +407,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Tàu dài — mũi chạm đến đuôi rời: mốc là ĐIỂM cộng không, CẦU thì cộng cầu (và luôn cộng thân tàu)"
+ "titleDay": "Tàu dài — mũi chạm đến đuôi rời: mốc là ĐIỂM cộng không, CẦU thì cộng cầu (và luôn cộng thân tàu)",
+ "video": {
+  "giang": "DL_KSN5Q1_B56_M1_giang.mp4"
+ }
 }

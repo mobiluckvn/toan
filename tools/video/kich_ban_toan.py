@@ -14732,6 +14732,155 @@ def kb5_ban_kinh_gap_k(b):
     ]
 
 
+def kb5_tau_qua_moc_qua_cau(b):
+    """L5·B56·M1 Quay chậm: bấm từ mũi chạm tới đuôi rời, thân tàu luôn có mặt."""
+    return [
+        _c('bia', 'Tàu dài qua mốc và qua cầu', so_bai(b),
+           loi=['Tàu dài một trăm hai mươi mét chạy qua cột đèn, hết bao lâu?',
+                'Cột đèn có dài đâu mà tính ra quãng đường được?']),
+        _c('y_toan', 'Bật chế độ quay chậm rồi hỏi: bấm giờ lúc nào?',
+           'bấm khi MŨI chạm cột   ·   dừng khi ĐUÔI rời cột   →   tàu đi đúng MỘT THÂN',
+           buoc=1, soBuoc=3,
+           loi=['Cứ quay chậm ra mà xem. Bấm giờ lúc mũi tàu chạm cột, dừng lúc đuôi '
+                'tàu rời cột.',
+                'Cả đoạn phim ấy tàu đi đúng một thân tàu, nên một trăm hai mươi chia '
+                'mười lăm là tám giây.']),
+        _c('so_do_doan', 'Qua CẦU thì mốc có chiều dài',
+           be=180, lon=300, nhanBe='cầu', nhanLon='tàu đi', hienHieu=True,
+           chuHieu='thân tàu 120',
+           chuPhu='Mũi chạm ĐẦU cầu thì bấm, đuôi rời CUỐI cầu mới dừng.',
+           chuCuoi='quãng = 180 + 120 = 300   →   t = 300 : 15 = 20 giây',
+           loi=['Qua cầu thì cái mốc có chiều dài hẳn hoi. Bấm lúc mũi chạm đầu cầu, '
+                'dừng lúc đuôi rời cuối cầu.',
+                'Nên tàu phải đi hết cả cầu rồi thêm một thân nữa, ba trăm chia mười '
+                'lăm, hai mươi giây.']),
+        _c('y_toan', 'Chia cầu trần thì đuôi còn nằm giữa cầu',
+           '180 : 15 = 12 giây   ←   lúc ấy mũi vừa ló ra, ĐUÔI vẫn trên cầu',
+           buoc=2, soBuoc=3,
+           loi=['Chia mỗi chiều dài cầu thì được mười hai giây, nhưng lúc ấy mũi vừa ló '
+                'ra khỏi cầu.',
+                'Đuôi tàu vẫn nằm chình ình trên cầu, gác chắn chưa dám mở.']),
+        _c('y_toan', 'Chiều ngược: biết thời gian, tìm vận tốc',
+           'tàu 120 vượt cầu 480 hết 40 giây   →   quãng 600   →   V = 600 : 40 = 15 m/giây',
+           buoc=3, soBuoc=3,
+           loi=['Chiều ngược cũng vậy, cộng đủ quãng trước rồi mới chia.',
+                'Bốn trăm tám mươi cộng một trăm hai mươi là sáu trăm, chia bốn mươi '
+                'giây, mười lăm mét trên giây.']),
+        _c('day_so', 'Đổi ra đơn vị quen thuộc', so=['15', '54'],
+           nhanHang='m/giây · km/giờ',
+           chuPhu='Nhân 3,6 như bài đổi đơn vị: 15 × 3,6 = 54 km/giờ.',
+           loi=['Đổi ra ki lô mét giờ thì nhân ba phẩy sáu, được năm mươi tư.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='bấm từ MŨI chạm đến ĐUÔI rời — thân tàu luôn có mặt',
+           thay='qua cột: 120 : 15 = 8 giây   ·   qua cầu: (180 + 120) : 15 = 20 giây',
+           loi=['Con nhớ câu này. Bấm từ mũi chạm đến đuôi rời, nên thân tàu luôn có '
+                'mặt trong quãng đường.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_moc_biet_chay(b):
+    """L5·B56·M2 Thân tàu chọn QUÃNG, mũi tên chọn PHÉP — hai luật bắt tay."""
+    return [
+        _c('bia', 'Khi cái mốc cũng biết chạy', so_bai(b),
+           loi=['Tàu một trăm hai mươi mét vượt qua người đi bộ ngược chiều một mét '
+                'trên giây.',
+                'Chia thẳng cho vận tốc tàu như bài cột đèn là quên mất người ấy cũng '
+                'đang đi.']),
+        _c('duong_di', 'Người là mốc ĐIỂM, nhưng mốc ấy biết chạy',
+           dauA='mũi tàu', dauB='người đi bộ',
+           xe1Dau=0.0, xe1Huong='phai', xe1Nhan='tàu 15 m/giây',
+           xe2Dau=1.0, xe2Huong='trai', xe2Nhan='người 1 m/giây',
+           nhanDai='quãng phải lướt hết = một THÂN tàu = 120 m',
+           chuPhu='Quãng theo luật thân tàu · vận tốc theo luật mũi tên.',
+           chuCuoi='t = 120 : (15 + 1) = 7,5 giây',
+           loi=['Hai luật bắt tay nhau ở đây. Quãng đường vẫn theo luật thân tàu, vì '
+                'người chỉ là mốc điểm.',
+                'Còn vận tốc thì theo luật mũi tên: hai mũi chụm đầu nên chia tổng, một '
+                'trăm hai mươi chia mười sáu, bảy phẩy năm giây.']),
+        _c('duong_di', 'Cùng chiều thì đổi mũi tên, đổi luôn phép',
+           dauA='mũi tàu', dauB='xe đạp',
+           xe1Dau=0.0, xe1Huong='phai', xe1Nhan='tàu 15 m/giây',
+           xe2Dau=1.0, xe2Huong='phai', xe2Nhan='xe đạp 5 m/giây',
+           nhanDai='vẫn một THÂN tàu = 120 m',
+           chuPhu='Mũi tên cùng hướng thì chia HIỆU, y như mọi bài đuổi.',
+           chuCuoi='t = 120 : (15 − 5) = 12 giây',
+           loi=['Đổi sang xe đạp chạy cùng chiều thì quãng vẫn một thân tàu, chỉ có '
+                'phép chia đổi.',
+                'Hai mũi tên cùng hướng nên chia hiệu, một trăm hai mươi chia mười, '
+                'mười hai giây.']),
+        _c('y_toan', 'Hai TÀU qua nhau thì mốc cũng có chiều dài',
+           'bấm khi MŨI chạm MŨI   ·   dừng khi ĐUÔI rời ĐUÔI   →   phải lướt hết CẢ HAI THÂN',
+           buoc=1, soBuoc=3,
+           loi=['Hai tàu vượt qua nhau thì cái mốc vừa biết chạy vừa có chiều dài.',
+                'Bấm lúc mũi chạm mũi, dừng lúc đuôi rời đuôi, nên phải lướt hết cả hai '
+                'thân tàu.']),
+        _c('y_toan', 'Cộng hai thân rồi chia vận tốc gặp nhau',
+           '(180 + 120) : (15 + 10) = 300 : 25 = 12 giây', buoc=2, soBuoc=3,
+           loi=['Cộng hai thân được ba trăm, chia tổng vận tốc hai mươi lăm, mười hai '
+                'giây.']),
+        _c('y_toan', 'Hai câu hỏi, hỏi theo đúng thứ tự này',
+           'quãng: mốc điểm hay mốc dài?   →   vận tốc: cùng hướng hay chụm đầu?',
+           buoc=3, soBuoc=3,
+           loi=['Cứ hỏi hai câu theo thứ tự: quãng là bao nhiêu thân, rồi mới tới vận '
+                'tốc nào.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='thân tàu chọn QUÃNG — mũi tên chọn PHÉP',
+           thay='tàu 120 gặp người ngược chiều: 120 : (15 + 1) = 7,5 giây',
+           loi=['Con nhớ câu này. Thân tàu chọn quãng đường, mũi tên chọn phép '
+                'tính.',
+                'Hai luật cũ bắt tay nhau, không có luật nào mới cả.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_hai_kim_dong_ho(b):
+    """L5·B56·M3 Mặt đồng hồ là một đường vòng, nên mười hai giờ chỉ trùng 11 lần."""
+    return [
+        _c('bia', 'Hai kim đồng hồ đuổi nhau', so_bai(b),
+           loi=['Từ mười hai giờ trưa đến mười hai giờ đêm, hai kim trùng nhau mấy '
+                'lần? Đếm mỗi giờ một lần ra mười hai là trượt.']),
+        _c('dong_ho', 'Mặt đồng hồ chính là một đường vòng', gio=12, phut=12,
+           chuPhu='Kim phút chạy 1 vòng mỗi giờ · kim giờ chỉ 1/12 vòng mỗi giờ.',
+           loi=['Mặt đồng hồ chính là một đường vòng, và hai kim là hai người chạy trên '
+                'ấy.',
+                'Kim phút mỗi giờ đi trọn một vòng, còn kim giờ ì ạch chỉ được một phần '
+                'mười hai vòng.']),
+        _c('y_toan', 'Đuổi trên đường vòng: phải DƯ ra trọn một vòng',
+           'hiệu vận tốc = 1 − 1/12 = 11/12 vòng mỗi giờ', buoc=1, soBuoc=3,
+           loi=['Đây đúng là bài đuổi trên đường vòng vừa học, nên kim phút phải dư ra '
+                'trọn một vòng.',
+                'Hiệu vận tốc là một trừ một phần mười hai, tức mười một phần mười hai '
+                'vòng mỗi giờ.']),
+        _c('y_toan', 'Nên mỗi lần trùng cách nhau HƠN một giờ',
+           't = 1 : 11/12 = 12/11 giờ ≈ 1 giờ 5 phút', buoc=2, soBuoc=3,
+           loi=['Chia một cho mười một phần mười hai được mười hai phần mười một giờ, '
+                'tức khoảng một giờ năm phút.',
+                'Mỗi lần trùng cách nhau hơn một giờ, chứ không phải đúng một giờ.']),
+        _c('y_toan', 'Vì chu kỳ dài hơn một giờ nên bị nuốt mất một lần',
+           '12 : 12/11 = 11 LẦN   ·   mười hai giờ · một giờ linh năm · … · mười giờ năm lăm',
+           buoc=3, soBuoc=3,
+           loi=['Mười hai giờ chia cho chu kỳ ấy được đúng mười một lần, không phải '
+                'mười hai.',
+                'Mỗi chu kỳ lấn sang giờ sau một mẩu, cộng dồn lại là nuốt gọn một '
+                'lần.']),
+        _c('dong_ho', 'Bài lúc ba giờ đúng', gio=3, phut=12,
+           chuPhu='Kim giờ đứng trước kim phút 1/4 vòng → t = 1/4 : 11/12 = 3/11 giờ.',
+           loi=['Lúc ba giờ đúng, kim giờ đứng trước kim phút một phần tư vòng.',
+                'Chia cho hiệu mười một phần mười hai được ba phần mười một giờ, khoảng '
+                'mười sáu phút.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='mỗi lần trùng cách nhau HƠN một giờ — nên 12 giờ chỉ 11 lần',
+           thay='hiệu 11/12 vòng mỗi giờ → chu kỳ 12/11 giờ → 12 : 12/11 = 11 lần',
+           loi=['Con nhớ câu này. Mỗi lần hai kim trùng cách nhau hơn một giờ, nên mười '
+                'hai giờ chỉ có mười một lần.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 def kb5_duong_vong(b):
     """L5·B55·M1 Cắt vòng ra trải phẳng: khoảng cách cần gặm là TRỌN một vòng."""
     return [
@@ -15594,6 +15743,9 @@ def kb5_banh_xe_lan(b):
 
 
 BO = {
+    'DL:KSN5Q1.B56.M1': kb5_tau_qua_moc_qua_cau,
+    'DL:KSN5Q1.B56.M2': kb5_moc_biet_chay,
+    'DL:KSN5Q1.B56.M3': kb5_hai_kim_dong_ho,
     'DL:KSN5Q1.B55.M1': kb5_duong_vong,
     'DL:KSN5Q1.B55.M2': kb5_bon_cong_thuc_dong_nuoc,
     'DL:KSN5Q1.B55.M3': kb5_beo_troi_khuc_song,
