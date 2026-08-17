@@ -34,24 +34,7 @@
   "kidText": "Diện tích hình thang: CỘNG HAI ĐÁY trước rồi mới nhân cao và chia 2. Đề chỉ đủ tìm tổng hai đáy thì dừng ở tổng, đừng bịa thêm."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Cấu trúc chuẩn: S = (ĐÁY LỚN + ĐÁY BÉ) × cao : 2 — cộng hai đáy TRƯỚC: ($8 + 4$) × $6 : 2 = 36 m^2$. (Phép tách $8 \\times 6$:$2 + 4 \\times 6$:2 tình cờ cũng ra 36 — nhưng cấu trúc chuẩn mới có \"tổng hai đáy\" để chạy bài ngược!)"
-   },
-   {
-    "id": "K2",
-    "text": "Bài ngược cùng cửa nhân-2 của tam giác B45: TỔNG hai đáy = S × 2 : cao = $36  \\times  2 : 6 = 12$ m."
-   },
-   {
-    "id": "K3",
-    "text": "Bản lĩnh ĐỦ LÀ DỪNG: đề không cho quan hệ giữa hai đáy → chỉ tìm được TỔNG, không tách riêng từng đáy — dừng ở 12 m là trọn điểm; bịa \"đáy lớn 8, bé 4\" là tự thêm dữ kiện."
-   },
-   {
-    "id": "K4",
-    "text": "Mở rộng thang: kéo đáy bé 4 dài ra thành 8 (bằng đáy lớn) — phần mở thêm là TAM GIÁC đáy $8 - 4 = 4$, cao 6: S thêm = $4  \\times  6 : 2 = 12 m^2$ (hình mới là hình bình hành $8  \\times  6 = 48 = 36 + 12$ ✓)."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: CHIẾC CẦU THANG VÀ CÁI ÔM HAI ĐÁY. Hình thang đáy bé 4, đáy lớn 8, cao 6. Trí Long tách đôi: \"8 nhân 6 chia 2 cộng 4 nhân 6 chia 2 — hai tư cộng mười hai: ba sáu… Ơ, vẫn ra 36?!\" Đúng số — nhưng sai CẤU TRÚC: công thức chuẩn là CÁI ÔM HAI ĐÁY: cộng đáy lớn với đáy bé TRƯỚC — tám cộng bốn bằng mười hai — rồi nhân cao chia hai: BA MƯƠI SÁU! Vì sao phải giữ cái ôm? Vì bài NGƯỢC chỉ mở cửa cho nó: \"diện tích ba sáu, cao sáu — tính TỔNG hai đáy\": tổng bằng ba sáu nhân hai chia sáu — MƯỜI HAI mét, cửa nhân-hai-trước của tam giác quen thuộc! Và bản lĩnh ĐỦ LÀ DỪNG: đề không cho hai đáy hơn kém nhau bao nhiêu — thì chỉ TỔNG là tìm được: dừng ở mười hai, không bịa số tách riêng! Bài mở rộng khép vòng: kéo đáy bé bốn thành tám — phần mở thêm là TAM GIÁC đáy bốn cao sáu: MƯỜI HAI mét vuông, và hình mới hóa bình hành bốn mươi tám — đúng ba sáu cộng mười hai!",
   "canonicalExamples": [
    {
@@ -82,14 +65,8 @@
     "counterExample": "Bài ngược hỏi tổng hai đáy: tách kiểu $8 \\times 6$:$2 + 4 \\times 6$:2 thì lấy đâu ra 'tổng' mà chia — cấu trúc chuẩn mới gánh nổi!"
    }
   ],
-  "vocabulary": [
-   "cái ôm hai đáy",
-   "cộng đáy trước",
-   "cửa nhân-2 tái xuất",
-   "đủ là dừng",
-   "thang + tam giác = bình hành"
-  ],
-  "mantra": "CỘNG ĐÁY TRƯỚC — CẤU TRÚC CHUẨN MỚI GÁNH NỔI BÀI NGƯỢC; ĐỦ LÀ DỪNG!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -111,45 +88,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 20,
-    "narration": "Tính diện tích hình thang có đáy bé 4 m, đáy lớn 8 m, chiều cao 6 m.",
-    "display": {
-     "type": "story_panel",
-     "caption": "tách đôi vẫn ra 36 — sao phải cộng trước?"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để xem cái ôm!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Công thức chuẩn là CÁI ÔM HAI ĐÁY: cộng đáy lớn với đáy bé TRƯỚC — tám cộng bốn bằng MƯỜI HAI — rồi nhân cao chia hai: BA MƯƠI SÁU mét vuông! Vì sao giữ cái ôm? Vì bài NGƯỢC chỉ mở cửa cho nó: diện tích ba sáu, cao sáu — TỔNG hai đáy bằng ba sáu nhân hai chia sáu: MƯỜI HAI mét! Cửa nhân-hai-trước của tam giác tái xuất — cộng đáy trước thì \"tổng hai đáy\" mới có mặt mà đi qua cửa!",
-    "display": {
-     "type": "trapezoid_hug_interactive",
-     "spec": {
-      "forward": "(8 + 4) × 6 : 2 = 36",
-      "reverse": "tổng đáy = 36 × 2 : 6 = 12",
-      "key": "cái ôm sinh ra chữ TỔNG"
-     }
-    },
-    "interaction": {
-     "type": "hug_then_reverse",
-     "answerKey": {
-      "value": 12
-     },
-     "successMessage": "Cái ôm 12 × 6 : 2 = 36 — ngược: tổng 12!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -170,38 +108,6 @@
       "K2"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Bản lĩnh ĐỦ LÀ DỪNG: đề không cho hai đáy hơn kém nhau bao nhiêu — chỉ TỔNG là tìm được: dừng ở mười hai mét, trọn điểm! Bịa \"đáy lớn tám bé bốn\" là tự thêm dữ kiện — mất điểm oan! Bài mở rộng khép vòng: kéo đáy bé bốn dài thành tám — phần mở thêm là TAM GIÁC đáy tám-trừ-bốn bằng bốn, cao sáu: bốn nhân sáu chia hai — MƯỜI HAI mét vuông! Kiểm đẹp: hình mới hóa BÌNH HÀNH tám nhân sáu — bốn mươi tám: đúng ba sáu cộng mười hai!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "đủ là dừng: chỉ tổng 12 — không bịa tách",
-      "mở rộng: tam giác 4 × 6 : 2 = 12",
-      "kiểm: bình hành 48 = 36 + 12 ✓"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: cộng đáy trước — cấu trúc chuẩn gánh bài ngược; đủ là dừng!",
-    "display": {
-     "type": "mantra_card",
-     "text": "CỘNG ĐÁY TRƯỚC — ĐỦ LÀ DỪNG!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào phòng luyện!"
     }
    }
   ]
@@ -500,212 +406,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B48.M1",
- "figureSpec": [
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "",
-    "points": {
-     "D": [
-      0,
-      0
-     ],
-     "C": [
-      8,
-      0
-     ],
-     "B": [
-      6,
-      6
-     ],
-     "A": [
-      2,
-      6
-     ],
-     "H": [
-      2,
-      0
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "D",
-       "C",
-       "B",
-       "A"
-      ],
-      "fill": "teal"
-     }
-    ],
-    "segments": [
-     {
-      "from": "A",
-      "to": "H",
-      "dashed": true,
-      "label": "cao 6",
-      "dx": 7
-     }
-    ],
-    "edge_labels": [
-     {
-      "from": "A",
-      "to": "B",
-      "text": "đáy bé 4",
-      "dy": 5
-     },
-     {
-      "from": "D",
-      "to": "C",
-      "text": "đáy lớn 8",
-      "dy": -5
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C",
-     "D"
-    ]
-   },
-   "caption": "Đề bài — số đo đã cho",
-   "id": "F0",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B48_M1_F0.png",
-   "sha256_16": "4c4dd8759703b2b3"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Hình thang xuôi - ngược: CỘNG HAI ĐÁY TRƯỚC — bài ngược tổng đáy = S × 2 : cao, đủ là dừng",
-    "steps": [
-     {
-      "text": "đủ là dừng: chỉ tổng 12 — không bịa tách"
-     },
-     {
-      "text": "mở rộng: tam giác 4 × 6 : 2 = 12"
-     },
-     {
-      "text": "kiểm: bình hành 48 = 36 + 12"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B48_M1_F2.png",
-   "sha256_16": "defada9588b745b0"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Cấu trúc chuẩn",
-      "text": "S = (ĐÁY LỚN + ĐÁY BÉ) × cao : 2",
-      "tone": "navy"
-     },
-     {
-      "label": "Bài ngược cùng cửa nhân-2 của tam giác B45",
-      "text": "TỔNG hai đáy = S × 2 : cao = 36 × 2 : 6 = 12 m.",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CỘNG ĐÁY TRƯỚC — CẤU TRÚC CHUẨN MỚI GÁNH NỔI BÀI NGƯỢC; ĐỦ LÀ DỪNG!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B48_M1_F3.png",
-   "sha256_16": "58586081a5ca5abb"
-  },
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "HÌNH THANG: CỘNG HAI ĐÁY TRƯỚC",
-    "points": {
-     "D": [
-      0,
-      0
-     ],
-     "C": [
-      8,
-      0
-     ],
-     "B": [
-      6,
-      6
-     ],
-     "A": [
-      2,
-      6
-     ],
-     "H": [
-      2,
-      0
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "D",
-       "C",
-       "B",
-       "A"
-      ],
-      "fill": "teal",
-      "label": "S = 36 m²"
-     }
-    ],
-    "segments": [
-     {
-      "from": "A",
-      "to": "H",
-      "dashed": true,
-      "label": "cao 6",
-      "dx": 7
-     }
-    ],
-    "edge_labels": [
-     {
-      "from": "A",
-      "to": "B",
-      "text": "đáy bé 4",
-      "dy": 5
-     },
-     {
-      "from": "D",
-      "to": "C",
-      "text": "đáy lớn 8",
-      "dy": -5
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C",
-     "D"
-    ],
-    "formula": "(8 + 4) × 6 : 2 = 36 m² · ngược: tổng đáy = 36 × 2 : 6 = 12",
-    "note": "Đề không cho quan hệ giữa hai đáy thì KHÔNG tách riêng được — đủ là dừng"
-   },
-   "caption": "Cấu trúc chuẩn \"cộng hai đáy trước\" mới gánh nổi cả bài xuôi lẫn bài ngược",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B48_M1_F4.png",
-   "sha256_16": "b55a10bb24a2d2cc"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B45"
@@ -717,5 +418,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Hình thang xuôi - ngược: CỘNG HAI ĐÁY TRƯỚC — bài ngược tổng đáy = S × 2 : cao, đủ là dừng"
+ "titleDay": "Hình thang xuôi - ngược: CỘNG HAI ĐÁY TRƯỚC — bài ngược tổng đáy = S × 2 : cao, đủ là dừng",
+ "video": {
+  "giang": "DL_KSN5Q1_B48_M1_giang.mp4"
+ }
 }

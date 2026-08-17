@@ -676,6 +676,61 @@ def khung(c: dict) -> Image.Image:
             giua(d, y_day + (74 if c.get("nhanDay") else 24), c["chuPhu"], phong(36),
                  INK, rong=W - 180)
 
+    elif L == "hinh_thang":
+        # ══ HÌNH THANG, VÀ BỐN VÙNG CỦA HAI ĐƯỜNG CHÉO ══
+        # Thêm ngày 17-08 cho lớp 5 bài 48. Cả bài "bốn vùng" gần như KHÔNG dạy được
+        # bằng lời: phải thấy hai đường chéo cắt nhau chia hình thành bốn mảnh, và
+        # thấy hai mảnh BÊN nằm đối xứng nhau. Không có hình thì bé chỉ còn cách học
+        # thuộc bốn con số.
+        #
+        # `dayLon` nằm dưới, `dayBe` căn giữa ở trên — đúng cách sách giáo khoa vẽ.
+        # `duongCheo=True` kẻ hai đường chéo và chấm giao điểm; `nhanCao` thì vẽ thêm
+        # đường cao nét đứt kèm ô vuông góc.
+        giua(d, 44, c.get("chuChinh", ""), phong(38), NAVY, rong=W - 140)
+        d_lon, d_be = c.get("dayLon", 8), c.get("dayBe", 4)
+        cao = c.get("cao", 5)
+        o = min(64, int(560 / max(d_lon, 1)), int(210 / max(cao, 1)))
+        y_duoi, h = 460, cao * o
+        y_tren = y_duoi - h
+        xl0 = (W - d_lon * o) // 2
+        xl1 = xl0 + d_lon * o
+        xb0 = (W - d_be * o) // 2
+        xb1 = xb0 + d_be * o
+        d.polygon([(xl0, y_duoi), (xl1, y_duoi), (xb1, y_tren), (xb0, y_tren)],
+                  fill=TEAL_PALE)
+        d.line([(xl0, y_duoi), (xl1, y_duoi), (xb1, y_tren), (xb0, y_tren),
+                (xl0, y_duoi)], fill=TEAL_DARK, width=6)
+        if c.get("duongCheo"):
+            d.line([xl0, y_duoi, xb1, y_tren], fill=ALERT, width=5)
+            d.line([xl1, y_duoi, xb0, y_tren], fill=ALERT, width=5)
+            # Giao điểm hai đường chéo — chấm cho bé chỉ tay vào được.
+            #
+            # ⚠ Tỉ này rất dễ viết ngược, và viết ngược thì chấm rơi lệch hẳn khỏi chỗ
+            # hai nét cắt nhau (đã dính khi mới viết nhánh này). Hai tam giác kề hai
+            # đáy đồng dạng với tỉ dayBe : dayLon, nên giao điểm cách đáy BÉ một phần
+            # dayBe và cách đáy LỚN một phần dayLon — tức nó nằm GẦN đáy bé hơn.
+            gx = W / 2
+            gy = y_duoi - h * d_lon / max(d_be + d_lon, 1)
+            d.ellipse([gx - 9, gy - 9, gx + 9, gy + 9], fill=ALERT)
+        if c.get("nhanCao"):
+            xc = xb0 + 34
+            for t in range(int(y_tren), int(y_duoi), 18):
+                d.line([xc, t, xc, min(t + 9, y_duoi)], fill=MUTE, width=4)
+            d.rectangle([xc, y_duoi - 24, xc + 24, y_duoi], outline=MUTE, width=4)
+            f = phong(30)
+            # Nhãn sát ngay đường cao — đặt xa ra là chạm cạnh xiên khi đáy bé ngắn.
+            d.text((xc + 14, (y_tren + y_duoi) // 2 - 18), c["nhanCao"], font=f,
+                   fill=MUTE)
+        g = phong(30)
+        if c.get("nhanDayBe"):
+            giua(d, y_tren - 44, c["nhanDayBe"], g, TEAL_DARK, rong=W - 200)
+        if c.get("nhanDayLon"):
+            giua(d, y_duoi + 16, c["nhanDayLon"], g, TEAL_DARK, rong=W - 200)
+        if c.get("chuPhu"):
+            giua(d, y_duoi + 64, c["chuPhu"], phong(36), INK, rong=W - 180)
+        if c.get("chuCuoi"):
+            giua(d, y_duoi + 124, c["chuCuoi"], phong(32), TEAL_DARK, rong=W - 200)
+
     elif L == "hinh_tron":
         # ══ HÌNH TRÒN — BÁN KÍNH VÀ ĐƯỜNG KÍNH ══
         # `dayLech` vẽ thêm một dây KHÔNG qua tâm. Đó là cả chỗ hay nhầm của bài:

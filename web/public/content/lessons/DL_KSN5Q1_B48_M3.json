@@ -34,24 +34,7 @@
   "kidText": "Cạnh tăng 20% thì diện tích tăng 44% chứ không phải 40% — vì nhân 1,2 hai lần. Cạnh đi một bước, diện tích đi hai bước."
  },
  "knowledgeCore": {
-  "statements": [
-   {
-    "id": "K1",
-    "text": "Chữ L hai cách tự kiểm: cách 1 — cả tấm trừ góc khoét: $8  \\times  6 - 3  \\times  2 = 48 - 6 = 42$; cách 2 — chia hai chữ nhật: $8  \\times  4 + 5  \\times  2 = 32 + 10 = 42$ — hai cách một đáp: tự kiểm không cần ai chấm."
-   },
-   {
-    "id": "K2",
-    "text": "Cắt-ghép: DIỆN TÍCH giữ nguyên (mảnh chỉ chuyển nhà — chiêu dời B47) nhưng CHU VI thay đổi theo cách ghép — hai đại lượng hai số phận, đừng gộp làm một."
-   },
-   {
-    "id": "K3",
-    "text": "Hệ số kép — chương 10 đội mũ hình học: diện tích ăn theo TÍCH hai cạnh: cạnh tăng 20% → S × $1,2  \\times  1,2 = 1,44$ → tăng 44% (cộng $20 + 20$ = 40% là đi cầu thang từng-bước-cộng thay vì hai-bước-nhân!)."
-   },
-   {
-    "id": "K4",
-    "text": "Trùm cặp nghịch đảo: dài +25%, rộng −20% → hệ số $1,25  \\times  0,8$ = $\\frac{5}{4}$ × $\\frac{4}{5}$ = 1 — diện tích KHÔNG ĐỔI: hai hệ số nghịch đảo triệt nhau tròn trịa."
-   }
-  ],
+  "statements": [],
   "mechanism": "Hình ảnh brand: MẢNH ĐẤT CHỮ L VÀ CẦU THANG HAI BƯỚC NHÂN. Trận một: mảnh chữ L — tấm tám-nhân-sáu khoét góc ba-nhân-hai. Đường một: cả tấm bốn tám TRỪ góc sáu — BỐN MƯƠI HAI! Đường hai: xẻ chữ L thành hai chữ nhật tám-nhân-bốn và năm-nhân-hai: ba hai cộng mười — BỐN MƯƠI HAI! Hai đường một đích: bài tự chấm điểm cho mình! Trận hai: cắt góc tờ giấy ghép sang chỗ khác — diện tích GIỮ (mảnh chuyển nhà) nhưng chu vi ĐỔI: hai đại lượng hai số phận! Trận ba — Cáo Đề của chương mười đội mũ hình học quay lại: \"cạnh hình vuông tăng hai mươi phần trăm — diện tích tăng bốn mươi!\" Khoan — diện tích ăn theo TÍCH hai cạnh: cạnh đi MỘT bước thì diện tích đi HAI BƯỚC NHÂN: một phẩy hai nhân một phẩy hai bằng MỘT PHẨY BỐN BỐN — tăng BỐN MƯƠI TƯ phần trăm! Trùm cuối cặp nghịch đảo: dài tăng hai lăm, rộng giảm hai mươi — năm phần tư nhân bốn phần năm bằng MỘT: diện tích KHÔNG ĐỔI, hai hệ số triệt nhau tròn trịa!",
   "canonicalExamples": [
    {
@@ -88,14 +71,8 @@
     "counterExample": "Vuông cạnh 10: S = 100 → cạnh 12: S = 144 — tăng 44 chứ 40 đâu: đếm ô vuông là thấy 4 ô lẻ ở góc!"
    }
   ],
-  "vocabulary": [
-   "chữ L hai cách tự kiểm",
-   "hai đại lượng hai số phận",
-   "cầu thang hai bước nhân",
-   "hệ số kép",
-   "cặp nghịch đảo triệt nhau"
-  ],
-  "mantra": "CẠNH ĐI MỘT BƯỚC — DIỆN TÍCH ĐI HAI BƯỚC NHÂN!"
+  "vocabulary": [],
+  "mantra": ""
  },
  "entryCheck": {
   "items": [
@@ -117,45 +94,6 @@
  "lecture": {
   "screens": [
    {
-    "id": "S1",
-    "kind": "hook",
-    "estSeconds": 18,
-    "narration": "Hình chữ L tạo từ hình chữ nhật $8  \\times  6$ khoét góc một hình chữ nhật $3  \\times  2$. Tính diện tích bằng HAI cách.",
-    "display": {
-     "type": "story_panel",
-     "caption": "+20% cạnh = +40% S??"
-    },
-    "interaction": {
-     "type": "tap_to_continue",
-     "prompt": "Chạm để đếm ô vuông!"
-    }
-   },
-   {
-    "id": "S2",
-    "kind": "guided_discovery",
-    "estSeconds": 46,
-    "teaches": [
-     "K3",
-     "K4"
-    ],
-    "narration": "Diện tích ăn theo TÍCH hai cạnh — cạnh đi MỘT bước thì diện tích đi HAI BƯỚC NHÂN: một phẩy hai nhân một phẩy hai bằng MỘT PHẨY BỐN BỐN — tăng BỐN MƯƠI TƯ phần trăm! Đếm kiểm: vuông cạnh mười — một trăm ô; cạnh mười hai — một trăm bốn tư ô: bốn ô lẻ nằm ngay góc, cộng hai mươi hai mươi là bỏ quên chúng! Trùm cặp nghịch đảo: dài tăng hai lăm, rộng giảm hai mươi — năm phần tư nhân bốn phần năm bằng MỘT: diện tích KHÔNG ĐỔI!",
-    "display": {
-     "type": "double_step_interactive",
-     "spec": {
-      "step": "1,2 × 1,2 = 1,44 → +44%",
-      "count": "10² = 100 → 12² = 144 (4 ô góc!)",
-      "boss": "1,25 × 0,8 = 1 → S không đổi"
-     }
-    },
-    "interaction": {
-     "type": "climb_two_steps",
-     "answerKey": {
-      "value": 44
-     },
-     "successMessage": "Hai bước nhân: 1,44 → +44% (4 ô góc tìm thấy)!"
-    }
-   },
-   {
     "id": "C1",
     "kind": "checkpoint",
     "estSeconds": 15,
@@ -176,38 +114,6 @@
       "K3"
      ],
      "id": "C1"
-    }
-   },
-   {
-    "id": "S3",
-    "kind": "explain",
-    "estSeconds": 44,
-    "teaches": [
-     "K1",
-     "K2"
-    ],
-    "narration": "Mảnh đất chữ L — tấm tám-nhân-sáu khoét góc ba-nhân-hai, giải bằng HAI đường: đường một — cả tấm bốn tám TRỪ góc sáu: BỐN MƯƠI HAI; đường hai — xẻ thành hai chữ nhật tám-nhân-bốn và năm-nhân-hai: ba hai cộng mười — BỐN MƯƠI HAI! Hai đường một đích: bài TỰ chấm điểm cho mình! Còn cắt-ghép: mảnh cắt ra ghép chỗ khác — diện tích GIỮ nguyên vì mảnh chỉ chuyển nhà, nhưng CHU VI thay đổi theo cách ghép: hai đại lượng — hai số phận!",
-    "display": {
-     "type": "step_by_step",
-     "lines": [
-      "L cách 1: 48 − 6 = 42 · cách 2: 32 + 10 = 42 ✓",
-      "cắt-ghép: S giữ — chu vi đổi",
-      "hai đại lượng hai số phận"
-     ]
-    }
-   },
-   {
-    "id": "S4",
-    "kind": "mantra",
-    "estSeconds": 13,
-    "narration": "Câu cần nhớ: cạnh đi một bước — diện tích đi hai bước nhân!",
-    "display": {
-     "type": "mantra_card",
-     "text": "HAI BƯỚC NHÂN!"
-    },
-    "interaction": {
-     "type": "read_aloud_or_tap",
-     "prompt": "Đọc to rồi vào kỳ sát hạch chương 12!"
     }
    }
   ]
@@ -551,226 +457,7 @@
  },
  "$schema": "digital-lesson/v2-micro",
  "id": "DL:KSN5Q1.B48.M3",
- "figureSpec": [
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "",
-    "points": {
-     "A": [
-      0,
-      6
-     ],
-     "B": [
-      8,
-      6
-     ],
-     "C": [
-      8,
-      2
-     ],
-     "D": [
-      5,
-      2
-     ],
-     "E": [
-      5,
-      0
-     ],
-     "F": [
-      0,
-      0
-     ],
-     "P": [
-      5,
-      6
-     ],
-     "Q": [
-      0,
-      2
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "A",
-       "B",
-       "C",
-       "D",
-       "E",
-       "F"
-      ],
-      "fill": "teal"
-     }
-    ],
-    "segments": [
-     {
-      "from": "P",
-      "to": "E",
-      "dashed": true,
-      "color": "#C0392B"
-     },
-     {
-      "from": "Q",
-      "to": "C",
-      "dashed": true,
-      "color": "#F9B233"
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C",
-     "D",
-     "E",
-     "F"
-    ]
-   },
-   "caption": "Đề bài — số đo đã cho",
-   "id": "F0",
-   "usedIn": [
-    "hook"
-   ],
-   "file": "figures/KSN5Q1_B48_M3_F0.png",
-   "sha256_16": "4be4e40a71ee1d8f"
-  },
-  {
-   "archetype": "ladder_steps",
-   "params": {
-    "title": "Hình ghép chữ L hai cách tự kiểm & hệ số kép: cạnh ×1,2 → S ×1,44 — chương 10 đội mũ hình học",
-    "steps": [
-     {
-      "text": "L cách 1: 48 − 6 = 42 · cách 2: 32 + 10 = 42"
-     },
-     {
-      "text": "cắt-ghép: S giữ — chu vi đổi"
-     },
-     {
-      "text": "hai đại lượng hai số phận"
-     }
-    ],
-    "note": "Làm đúng thứ tự từng bậc"
-   },
-   "caption": "Các bước leo dần — bậc dưới xong mới lên bậc trên",
-   "id": "F2",
-   "usedIn": [
-    "teach_core"
-   ],
-   "file": "figures/KSN5Q1_B48_M3_F2.png",
-   "sha256_16": "c036d6aa0af7593b"
-  },
-  {
-   "archetype": "formula_card",
-   "params": {
-    "title": "NGUYÊN TẮC CẦN NHỚ",
-    "formulas": [
-     {
-      "label": "Chữ L hai cách tự kiểm",
-      "text": "cách 1 — cả tấm trừ góc khoét: 8 × 6 − 3 × 2 = 48 − 6 = 42; cách 2 — chia hai chữ nhật: 8 × 4 + 5 × 2 = 32 + 10 = 42 — hai cách một đáp: tự kiểm không cần ai chấm.",
-      "tone": "navy"
-     },
-     {
-      "label": "Cắt-ghép",
-      "text": "DIỆN TÍCH giữ nguyên (mảnh chỉ chuyển nhà",
-      "tone": "teal"
-     }
-    ],
-    "mantra": "CẠNH ĐI MỘT BƯỚC — DIỆN TÍCH ĐI HAI BƯỚC NHÂN!"
-   },
-   "caption": "Thẻ ghi nhớ — con đọc to trước khi làm bài",
-   "id": "F3",
-   "usedIn": [
-    "mantra"
-   ],
-   "file": "figures/KSN5Q1_B48_M3_F3.png",
-   "sha256_16": "186a2eaf0efcdb98"
-  },
-  {
-   "archetype": "geo_shape",
-   "params": {
-    "title": "HÌNH CHỮ L — HAI CÁCH CHIA ĐỂ TỰ KIỂM",
-    "points": {
-     "A": [
-      0,
-      6
-     ],
-     "B": [
-      8,
-      6
-     ],
-     "C": [
-      8,
-      2
-     ],
-     "D": [
-      5,
-      2
-     ],
-     "E": [
-      5,
-      0
-     ],
-     "F": [
-      0,
-      0
-     ],
-     "P": [
-      5,
-      6
-     ],
-     "Q": [
-      0,
-      2
-     ]
-    },
-    "shapes": [
-     {
-      "pts": [
-       "A",
-       "B",
-       "C",
-       "D",
-       "E",
-       "F"
-      ],
-      "fill": "teal",
-      "label": "S = 42 cm²"
-     }
-    ],
-    "segments": [
-     {
-      "from": "P",
-      "to": "E",
-      "dashed": true,
-      "color": "#C0392B"
-     },
-     {
-      "from": "Q",
-      "to": "C",
-      "dashed": true,
-      "color": "#F9B233"
-     }
-    ],
-    "show_points": [
-     "A",
-     "B",
-     "C",
-     "D",
-     "E",
-     "F"
-    ],
-    "formula": "cách 1: 8 × 6 − 3 × 2 = 42 · cách 2: 5 × 6 + 3 × 4 = 42",
-    "note": "Cắt một góc rồi ghép chỗ khác: DIỆN TÍCH giữ nguyên ✓ nhưng CHU VI thay đổi — hai đại lượng hai số phận"
-   },
-   "caption": "Hai cách chia cho cùng một đáp thì gần như chắc chắn đã đúng",
-   "id": "F4",
-   "usedIn": [
-    "teach_domain"
-   ],
-   "file": "figures/KSN5Q1_B48_M3_F4.png",
-   "sha256_16": "faf12422264825c5"
-  }
- ],
+ "figureSpec": [],
  "duongLui": {
   "ve": [
    "DL:KSN4.B45"
@@ -782,5 +469,8 @@
   "lopDuoi": 4,
   "nhan": "Học lại bài lớp 4"
  },
- "titleDay": "Hình ghép chữ L hai cách tự kiểm & hệ số kép: cạnh ×1,2 → S ×1,44 — chương 10 đội mũ hình học"
+ "titleDay": "Hình ghép chữ L hai cách tự kiểm & hệ số kép: cạnh ×1,2 → S ×1,44 — chương 10 đội mũ hình học",
+ "video": {
+  "giang": "DL_KSN5Q1_B48_M3_giang.mp4"
+ }
 }

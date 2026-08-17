@@ -14476,7 +14476,141 @@ def kb5_doi_hinh_dat_phan(b):
     ]
 
 
+def kb5_hinh_thang_xuoi_nguoc(b):
+    """L5·B48·M1 Cộng đáy TRƯỚC — cấu trúc chuẩn gánh bài ngược; đủ là dừng."""
+    return [
+        _c('bia', 'Vì sao công thức hình thang lại ÔM hai đáy', so_bai(b),
+           loi=['Công thức hình thang có một cái ôm hai đáy. Giữ cái ôm ấy là có lý '
+                'do.']),
+        _c('de_toan', 'Đề bài', de='Tính diện tích hình thang có đáy bé 4 m, đáy lớn 8 m, cao 6 m',
+           loi=['Tính diện tích hình thang có đáy bé bốn mét, đáy lớn tám mét, chiều '
+                'cao sáu mét.']),
+        _c('hinh_thang', 'Cộng hai đáy TRƯỚC', dayLon=8, dayBe=4, cao=6,
+           nhanDayBe='đáy bé 4 m', nhanDayLon='đáy lớn 8 m', nhanCao='cao 6 m',
+           chuPhu='(8 + 4) × 6 : 2 = 36 m²',
+           chuCuoi='Cấu trúc chuẩn là cái ÔM hai đáy.',
+           loi=['Cộng đáy lớn với đáy bé trước, được mười hai. Rồi nhân cao chia hai.',
+                'Diện tích ba mươi sáu mét vuông.']),
+        _c('y_toan', 'Vì sao phải giữ cái ÔM ấy',
+           'tách ra cũng tình cờ đúng   —   nhưng chỉ cấu trúc chuẩn mở được bài NGƯỢC',
+           buoc=1, soBuoc=3,
+           loi=['Tách ra tính riêng từng đáy cũng tình cờ ra đúng số.',
+                'Nhưng chỉ cấu trúc chuẩn mới mở được cửa cho bài ngược.']),
+        _c('y_toan', 'Bài ngược đi qua cửa nhân-2 quen thuộc',
+           'TỔNG hai đáy = S × 2 : cao = 36 × 2 : 6 = 12 m', buoc=2, soBuoc=3,
+           loi=['Bài ngược đi qua cửa nhân hai của bài tam giác.',
+                'Ba mươi sáu nhân hai chia sáu, tổng hai đáy là mười hai mét.']),
+        _c('y_toan', 'Bản lĩnh ĐỦ LÀ DỪNG',
+           'đề không cho quan hệ giữa hai đáy   →   chỉ tìm được TỔNG, không tách riêng',
+           buoc=3, soBuoc=3,
+           loi=['Đây là chỗ cần bản lĩnh. Đề không cho hai đáy hơn kém nhau bao nhiêu.',
+                'Nên chỉ tìm được tổng thôi. Dừng ở mười hai mét là trọn điểm.']),
+        _c('de_toan', 'Bịa thêm là mất điểm oan',
+           de='tự nói "đáy lớn 8, đáy bé 4" là TỰ THÊM dữ kiện',
+           loi=['Bịa thêm đáy lớn tám đáy bé bốn là tự thêm dữ kiện, mất điểm oan.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='CỘNG ĐÁY trước — cấu trúc chuẩn gánh bài ngược   ·   ĐỦ LÀ DỪNG',
+           thay='kéo đáy bé thành bằng đáy lớn thì thêm một tam giác đáy 4 cao 6, tức 12 m²',
+           loi=['Con nhớ hai câu. Cộng đáy trước, và đủ thì dừng.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_bon_vung_duong_cheo(b):
+    """L5·B48·M2 Bên bằng bên — trên dưới lặp tỉ hai lần."""
+    return [
+        _c('bia', 'Hai đường chéo chia hình thang thành bốn mảnh', so_bai(b),
+           loi=['Kẻ hai đường chéo thì hình thang vỡ thành bốn mảnh. Bốn mảnh ấy quan '
+                'hệ với nhau rất đẹp.']),
+        _c('hinh_thang', 'Bốn vùng', dayLon=8, dayBe=4, cao=6, duongCheo=True,
+           nhanDayBe='đáy bé', nhanDayLon='đáy lớn',
+           chuPhu='Hai đường chéo cắt nhau ở một điểm, chia hình thành 4 mảnh.',
+           loi=['Hai đường chéo cắt nhau ở một điểm, chia hình thành bốn mảnh.',
+                'Một mảnh trên, một mảnh dưới, và hai mảnh hai bên.']),
+        _c('y_toan', 'Vế 1 — hai mảnh BÊN luôn BẰNG NHAU',
+           'hai tam giác lớn chung đáy, chung cao   →   cùng trừ phần chung   →   hai bên bằng nhau',
+           buoc=1, soBuoc=3,
+           loi=['Vế một, hai mảnh bên luôn bằng nhau, ở mọi hình thang.',
+                'Chứng minh ba nhát. Hai tam giác lớn chung đáy chung cao nên bằng '
+                'nhau, cùng trừ phần chung thì hai bên bằng nhau.']),
+        _c('y_toan', 'Vế 2 — TRÊN so DƯỚI thì tỉ đáy LẶP HAI LẦN',
+           'đáy 1 : 2   →   trên : dưới = 1 : 4   (không phải 1 : 2)', buoc=2, soBuoc=3,
+           loi=['Vế hai khác hẳn. Trên so với dưới thì tỉ hai đáy lặp lại hai lần.',
+                'Đáy một trên hai thì trên dưới là một trên bốn, chứ không phải một '
+                'trên hai.']),
+        _c('de_toan', 'Và cấm suy "đối đỉnh thì bằng nhau"',
+           de='chỉ HAI MẢNH BÊN bằng nhau — cặp trên dưới thì không',
+           loi=['Và cấm suy đối đỉnh thì bằng nhau. Chỉ hai mảnh bên mới bằng nhau.']),
+        _c('day_so', 'Đặt phần chia trọn', so=['1', '4', '2', '2'], nhanHang='phần',
+           chuPhu='trên 1 · dưới 4 · mỗi bên 2   →   cả thảy 9 phần.',
+           loi=['Đặt phần thì trên một, dưới bốn, mỗi bên hai. Cả thảy chín phần.']),
+        _c('y_toan', 'Rồi đổi về đơn vị thật',
+           'S = 36   →   1 phần = 4 m²   →   bốn vùng: 4 · 16 · 8 · 8', buoc=3, soBuoc=3,
+           loi=['Rồi đổi về đơn vị thật. Ba mươi sáu chia chín, mỗi phần bốn mét '
+                'vuông.',
+                'Bốn vùng lần lượt là bốn, mười sáu, tám và tám. Cộng lại đúng ba mươi '
+                'sáu.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='BÊN bằng BÊN   —   TRÊN với DƯỚI thì lặp tỉ HAI LẦN',
+           thay='đáy 1 : 2 cho trên : dưới = 1 : 4, vì tỉ đáy nhân với chính nó',
+           loi=['Con nhớ câu này. Bên bằng bên, còn trên với dưới thì lặp tỉ hai '
+                'lần.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
+def kb5_hinh_ghep_he_so_kep(b):
+    """L5·B48·M3 Hai cách một đáp; cạnh đi một bước thì diện tích đi hai bước nhân."""
+    return [
+        _c('bia', 'Hình ghép, và chuyện diện tích ăn hệ số hai lần', so_bai(b),
+           loi=['Hình ghép thì tính hai cách để tự kiểm. Còn diện tích thì ăn hệ số hai '
+                'lần.']),
+        _c('de_toan', 'Đề bài',
+           de='Hình chữ L: tấm 8 × 6 khoét mất góc 3 × 2.\nTính diện tích bằng HAI cách',
+           loi=['Hình chữ L làm từ tấm tám nhân sáu, khoét mất một góc ba nhân hai.']),
+        _c('y_toan', 'Cách 1 — cả tấm TRỪ góc khoét',
+           '8 × 6 − 3 × 2 = 48 − 6 = 42', buoc=1, soBuoc=3,
+           loi=['Cách một, lấy cả tấm trừ góc khoét. Bốn mươi tám trừ sáu, được bốn '
+                'mươi hai.']),
+        _c('y_toan', 'Cách 2 — XẺ thành hai chữ nhật',
+           '8 × 4 + 5 × 2 = 32 + 10 = 42   →   hai cách một đáp, tự kiểm được',
+           buoc=2, soBuoc=3,
+           loi=['Cách hai, xẻ thành hai chữ nhật rồi cộng lại. Cũng bốn mươi hai.',
+                'Hai cách một đáp, khỏi cần ai chấm hộ.']),
+        _c('de_toan', 'Cắt ghép thì hai đại lượng hai số phận',
+           de='DIỆN TÍCH giữ nguyên (mảnh chỉ chuyển nhà) · CHU VI thì đổi',
+           loi=['Cắt rồi ghép lại thì diện tích giữ nguyên, vì mảnh chỉ chuyển nhà.',
+                'Nhưng chu vi thì đổi theo cách ghép. Hai đại lượng hai số phận, đừng '
+                'gộp làm một.']),
+        _c('hinh_cn', 'Còn khi cạnh dài ra thì sao', dai=12, rong=10,
+           nhanDai='cạnh × 1,2', nhanRong='cạnh × 1,2',
+           chuPhu='Diện tích ăn theo TÍCH hai cạnh — cả hai chiều cùng phình.',
+           chuCuoi='1,2 × 1,2 = 1,44   →   tăng 44%, không phải 40%.',
+           loi=['Diện tích ăn theo tích hai cạnh, nên cả hai chiều cùng phình.',
+                'Một phẩy hai nhân một phẩy hai bằng một phẩy bốn tư, tăng bốn mươi tư '
+                'phần trăm.']),
+        _c('y_toan', 'Cộng thẳng là đi cầu thang từng bước',
+           '20 + 20 = 40% sai   —   phải NHÂN hai bước, đúng chương 10', buoc=3,
+           soBuoc=3,
+           loi=['Cộng thẳng hai mươi với hai mươi ra bốn mươi là sai, đúng như chương '
+                'phần trăm đã dạy.']),
+        _c('cong_thuc', 'Câu cần nhớ',
+           congThuc='cạnh đi MỘT bước — diện tích đi HAI bước NHÂN',
+           thay='dài +25% mà rộng −20% thì 1,25 × 0,8 = 1 — diện tích KHÔNG đổi',
+           loi=['Con nhớ câu này. Cạnh đi một bước thì diện tích đi hai bước nhân.',
+                'Dài tăng một phần tư mà rộng giảm một phần năm thì hai hệ số triệt '
+                'nhau, diện tích không đổi.']),
+        _c('ket', 'Con hiểu rồi đấy', 'Bây giờ mình làm bài nhé',
+           loi=['Con hiểu rồi đấy. Bây giờ mình làm bài nhé.']),
+    ]
+
+
 BO = {
+    'DL:KSN5Q1.B48.M1': kb5_hinh_thang_xuoi_nguoc,
+    'DL:KSN5Q1.B48.M2': kb5_bon_vung_duong_cheo,
+    'DL:KSN5Q1.B48.M3': kb5_hinh_ghep_he_so_kep,
     'DL:KSN5Q1.B47.M1': kb5_duong_phu_khai_sinh,
     'DL:KSN5Q1.B47.M2': kb5_tong_tru_phan_trang,
     'DL:KSN5Q1.B47.M3': kb5_doi_hinh_dat_phan,

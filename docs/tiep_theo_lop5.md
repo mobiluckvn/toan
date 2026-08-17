@@ -7,13 +7,13 @@
 | | |
 |---|---|
 | Tổng | 56 bài lớn × 3 micro = **168 micro**, 14 chương (4 bài lớn / chương) |
-| Đã xong | **141/168** — bài 1 tới 47 |
-| Còn lại | 27 micro · 9 bài lớn · bài 48 tới 56 |
-| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 47 chưa deploy** |
+| Đã xong | **144/168** — bài 1 tới 48, **HẾT chương 12** |
+| Còn lại | 24 micro · 8 bài lớn · chương 13 và 14 |
+| Deploy | đã lên `ky-su-nhi.web.app` tới bài 32; **bài 33 tới 48 chưa deploy** |
 
 Bốn quyển kia đã xong trọn: lớp 2 (71), lớp 3 (34), lớp 4 (95) — không còn bài chữ.
 
-## Mở đầu buổi sau: làm bài 48
+## Mở đầu buổi sau: làm bài 49
 
 Chương 12 (hình học) gồm bài 45–48; đã xong bài 45 · 46 · 47. ⚠ Bài 48 là HÌNH THANG — bộ vẽ CHƯA có cảnh ấy. Chạy đúng nhịp bảy bước ở dưới. Cây làm việc đang SẠCH,
 tám chương đầu đã deploy và đã đi thử bằng mắt trên bản thật.
@@ -31,7 +31,7 @@ Thử xong phải bật lại `true` — sửa ở **cả hai nơi**: `data/chuo
 
 **2. `NO.lessons` trong `web/test/hinh_co_ai_ve.test.mjs`** phải **hạ 3 sau mỗi bài
 lớn** — mỗi micro có video là bỏ một hình `mantra` chưa từng hiện lên. Đang là
-**27**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
+**24**. Cổng tự in dòng nhắc `↓ lessons đã dọn bớt: … — hạ con số trong NO xuống`.
 
 ## Nhịp làm một bài lớn (đã chạy 32 lần)
 
@@ -149,11 +149,15 @@ MỚI không được nợ — thêm một cái vượt 70 giây là cổng đ�
 6. **`day_so` ghi nhãn hàng là "số"** — sai nghĩa khi hàng ấy không phải số của đề.
    Bài 21 vẽ dãy PHẦN LỆCH (−3 +3 +1 −1) mà nhãn vẫn ghi "số" thì bé đọc ra một dãy
    số không có trong đề nào cả. Nay khai `nhanHang` để đổi.
-7. **`tam_giac` cho `dinh` ra ngoài khoảng 0–1** thì chân đường cao rơi ngoài đáy và
+7. **`hinh_thang` là cảnh THÊM ngày 17-08** cho bài 48 — `dayLon` · `dayBe` · `cao` ·
+   `duongCheo` (kẻ hai chéo và chấm giao điểm) · `nhanCao` (vẽ đường cao nét đứt kèm
+   ô vuông góc). ⚠ Tỉ chỗ giao điểm rất dễ viết ngược: nó cách đáy BÉ một phần
+   `dayBe`, cách đáy LỚN một phần `dayLon` — tức nằm GẦN đáy bé hơn.
+8. **`tam_giac` cho `dinh` ra ngoài khoảng 0–1** thì chân đường cao rơi ngoài đáy và
    bộ vẽ tự kéo dài đáy bằng nét đứt — đúng ca tam giác tù, chỗ bé hay hoảng nhất.
-8. **`so_do_ven` chỉ vẽ được HAI vòng** — bài Ven BA vòng (bài 44 M2) không có hình,
+9. **`so_do_ven` chỉ vẽ được HAI vòng** — bài Ven BA vòng (bài 44 M2) không có hình,
    phải diễn bằng công thức. Đừng bịa hình ba vòng.
-9. **`giua()` ngắt dòng theo DẤU CÁCH**, nên `7/8 = 0,875` bị xẻ đôi giữa hai dòng.
+10. **`giua()` ngắt dòng theo DẤU CÁCH**, nên `7/8 = 0,875` bị xẻ đôi giữa hai dòng.
    Viết liền `7/8=0,875` thì mỗi phép là một cụm không tách được.
 
 Và một việc dọn: **rút lời xong thì `sinh_am.py` để lại clip mồ côi** — nó chỉ sinh
